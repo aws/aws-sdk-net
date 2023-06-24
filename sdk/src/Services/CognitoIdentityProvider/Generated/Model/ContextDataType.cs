@@ -43,8 +43,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property EncodedData. 
         /// <para>
-        /// Encoded data containing device fingerprinting details, collected using the Amazon
-        /// Cognito context data collection library.
+        /// Encoded device-fingerprint details that your app collected with the Amazon Cognito
+        /// context data collection library. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-adaptive-authentication.html#user-pool-settings-adaptive-authentication-device-fingerprint">Adding
+        /// user device and session data to API requests</a>.
         /// </para>
         /// </summary>
         public string EncodedData
@@ -81,7 +82,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property IpAddress. 
         /// <para>
-        /// Source IP address of your user.
+        /// The source IP address of your user's device.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -119,7 +120,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property ServerPath. 
         /// <para>
-        /// Your server path where this API is invoked. 
+        /// Your server path where this API is invoked.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

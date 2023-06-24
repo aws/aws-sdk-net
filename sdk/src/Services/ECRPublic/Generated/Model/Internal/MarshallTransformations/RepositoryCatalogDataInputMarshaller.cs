@@ -34,7 +34,7 @@ namespace Amazon.ECRPublic.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RepositoryCatalogDataInput Marshaller
-    /// </summary>       
+    /// </summary>
     public class RepositoryCatalogDataInputMarshaller : IRequestMarshaller<RepositoryCatalogDataInput, JsonMarshallerContext> 
     {
         /// <summary>
@@ -95,7 +95,7 @@ namespace Amazon.ECRPublic.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RepositoryCatalogDataInputMarshaller Instance = new RepositoryCatalogDataInputMarshaller();
 
     }

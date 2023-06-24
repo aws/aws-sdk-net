@@ -64,10 +64,28 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("ActiveServicesCount", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.ActiveServicesCount = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CapacityProviders", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.CapacityProviders = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ClusterArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ClusterArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ClusterName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ClusterName = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ClusterSettings", targetDepth))
@@ -86,6 +104,24 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new ListUnmarshaller<AwsEcsClusterDefaultCapacityProviderStrategyDetails, AwsEcsClusterDefaultCapacityProviderStrategyDetailsUnmarshaller>(AwsEcsClusterDefaultCapacityProviderStrategyDetailsUnmarshaller.Instance);
                     unmarshalledObject.DefaultCapacityProviderStrategy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("RegisteredContainerInstancesCount", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.RegisteredContainerInstancesCount = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("RunningTasksCount", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.RunningTasksCount = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Status", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

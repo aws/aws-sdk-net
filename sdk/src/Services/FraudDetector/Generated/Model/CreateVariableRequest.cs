@@ -64,7 +64,7 @@ namespace Amazon.FraudDetector.Model
         /// <summary>
         /// Gets and sets the property DataType. 
         /// <para>
-        /// The data type.
+        /// The data type of the variable.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

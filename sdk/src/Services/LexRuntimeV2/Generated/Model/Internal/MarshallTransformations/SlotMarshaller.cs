@@ -34,7 +34,7 @@ namespace Amazon.LexRuntimeV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Slot Marshaller
-    /// </summary>       
+    /// </summary>
     public class SlotMarshaller : IRequestMarshaller<Slot, JsonMarshallerContext> 
     {
         /// <summary>
@@ -49,6 +49,25 @@ namespace Amazon.LexRuntimeV2.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("shape");
                 context.Writer.Write(requestObject.Shape);
+            }
+
+            if(requestObject.IsSetSubSlots())
+            {
+                context.Writer.WritePropertyName("subSlots");
+                context.Writer.WriteObjectStart();
+                foreach (var requestObjectSubSlotsKvp in requestObject.SubSlots)
+                {
+                    context.Writer.WritePropertyName(requestObjectSubSlotsKvp.Key);
+                    var requestObjectSubSlotsValue = requestObjectSubSlotsKvp.Value;
+
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = SlotMarshaller.Instance;
+                    marshaller.Marshall(requestObjectSubSlotsValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteObjectEnd();
             }
 
             if(requestObject.IsSetValue())
@@ -82,7 +101,7 @@ namespace Amazon.LexRuntimeV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SlotMarshaller Instance = new SlotMarshaller();
 
     }

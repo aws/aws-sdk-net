@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// A filter to use to search a Amazon QuickSight folder.
+    /// A filter to use to search an Amazon QuickSight folder.
     /// </summary>
     public partial class FolderSearchFilter
     {
@@ -41,8 +41,54 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property Name. 
         /// <para>
         /// The name of a value that you want to use in the filter. For example, <code>"Name":
-        /// "PARENT_FOLDER_ARN"</code>.
+        /// "QUICKSIGHT_OWNER"</code>.
         /// </para>
+        ///  
+        /// <para>
+        /// Valid values are defined as follows:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>QUICKSIGHT_VIEWER_OR_OWNER</code>: Provide an ARN of a user or group, and any
+        /// folders with that ARN listed as one of the folder's owners or viewers are returned.
+        /// Implicit permissions from folders or groups are considered.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>QUICKSIGHT_OWNER</code>: Provide an ARN of a user or group, and any folders
+        /// with that ARN listed as one of the owners of the folders are returned. Implicit permissions
+        /// from folders or groups are considered.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>DIRECT_QUICKSIGHT_SOLE_OWNER</code>: Provide an ARN of a user or group, and
+        /// any folders with that ARN listed as the only owner of the folder are returned. Implicit
+        /// permissions from folders or groups are not considered.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>DIRECT_QUICKSIGHT_OWNER</code>: Provide an ARN of a user or group, and any
+        /// folders with that ARN listed as one of the owners of the folders are returned. Implicit
+        /// permissions from folders or groups are not considered.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>DIRECT_QUICKSIGHT_VIEWER_OR_OWNER</code>: Provide an ARN of a user or group,
+        /// and any folders with that ARN listed as one of the owners or viewers of the folders
+        /// are returned. Implicit permissions from folders or groups are not considered. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>FOLDER_NAME</code>: Any folders whose names have a substring match to this
+        /// value will be returned.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>PARENT_FOLDER_ARN</code>: Provide an ARN of a folder, and any folders that
+        /// are directly under that parent folder are returned. If you choose to use this option
+        /// and leave the value blank, all root-level folders in the account are returned. 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public FolderFilterAttribute Name
         {
@@ -59,8 +105,22 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Operator. 
         /// <para>
-        /// The comparison operator that you want to use in the filter. For example, <code>"Operator":
-        /// "StringEquals"</code>.
+        /// The comparison operator that you want to use as a filter, for example <code>"Operator":
+        /// "StringEquals"</code>. Valid values are <code>"StringEquals"</code> and <code>"StringLike"</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you set the operator value to <code>"StringEquals"</code>, you need to provide
+        /// an ownership related filter in the <code>"NAME"</code> field and the arn of the user
+        /// or group whose folders you want to search in the <code>"Value"</code> field. For example,
+        /// <code>"Name":"DIRECT_QUICKSIGHT_OWNER", "Operator": "StringEquals", "Value": "arn:aws:quicksight:us-east-1:1:user/default/UserName1"</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you set the value to <code>"StringLike"</code>, you need to provide the name of
+        /// the folders you are searching for. For example, <code>"Name":"FOLDER_NAME", "Operator":
+        /// "StringLike", "Value": "Test"</code>. The <code>"StringLike"</code> operator only
+        /// supports the <code>NAME</code> value <code>FOLDER_NAME</code>.
         /// </para>
         /// </summary>
         public FilterOperator Operator

@@ -56,7 +56,7 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ElasticFileSystem");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-02-01";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-02-01";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/2015-02-01/file-systems";
@@ -86,7 +86,7 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
                 else if(!(publicRequest.IsSetCreationToken()))
                 {
                     context.Writer.WritePropertyName("CreationToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());                                                
+                    context.Writer.Write(Guid.NewGuid().ToString());
                 }
                 if(publicRequest.IsSetEncrypted())
                 {
@@ -134,7 +134,6 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ThroughputMode);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

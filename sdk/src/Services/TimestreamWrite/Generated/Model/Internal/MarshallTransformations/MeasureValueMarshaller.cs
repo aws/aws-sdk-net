@@ -34,7 +34,7 @@ namespace Amazon.TimestreamWrite.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// MeasureValue Marshaller
-    /// </summary>       
+    /// </summary>
     public class MeasureValueMarshaller : IRequestMarshaller<MeasureValue, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.TimestreamWrite.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static MeasureValueMarshaller Instance = new MeasureValueMarshaller();
 
     }

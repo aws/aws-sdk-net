@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ApplicationDiscoveryService.Model
 {
     /// <summary>
-    /// The home region is not set. Set the home region to continue.
+    /// The home Region is not set. Set the home Region to continue.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

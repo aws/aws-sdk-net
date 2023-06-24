@@ -34,7 +34,7 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ProvisioningArtifactProperties Marshaller
-    /// </summary>       
+    /// </summary>
     public class ProvisioningArtifactPropertiesMarshaller : IRequestMarshaller<ProvisioningArtifactProperties, JsonMarshallerContext> 
     {
         /// <summary>
@@ -87,7 +87,7 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ProvisioningArtifactPropertiesMarshaller Instance = new ProvisioningArtifactPropertiesMarshaller();
 
     }

@@ -55,6 +55,7 @@ namespace Amazon.Amplify.Model
         private Platform _platform;
         private ProductionBranch _productionBranch;
         private string _repository;
+        private RepositoryCloneMethod _repositoryCloneMethod;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private DateTime? _updateTime;
 
@@ -135,10 +136,11 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property BasicAuthCredentials. 
         /// <para>
-        ///  The basic authorization credentials for branches for the Amplify app. 
+        ///  The basic authorization credentials for branches for the Amplify app. You must base64-encode
+        /// the authorization credentials and provide them in the format <code>user:password</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=2000)]
+        [AWSProperty(Sensitive=true, Max=2000)]
         public string BasicAuthCredentials
         {
             get { return this._basicAuthCredentials; }
@@ -158,7 +160,7 @@ namespace Amazon.Amplify.Model
         /// 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=25000)]
+        [AWSProperty(Sensitive=true, Min=1, Max=25000)]
         public string BuildSpec
         {
             get { return this._buildSpec; }
@@ -196,7 +198,7 @@ namespace Amazon.Amplify.Model
         /// Describes the custom HTTP headers for the Amplify app.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=25000)]
+        [AWSProperty(Min=0, Max=25000)]
         public string CustomHeaders
         {
             get { return this._customHeaders; }
@@ -366,7 +368,7 @@ namespace Amazon.Amplify.Model
         /// Name (ARN) of the Amplify app. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1000)]
+        [AWSProperty(Min=0, Max=1000)]
         public string IamServiceRoleArn
         {
             get { return this._iamServiceRoleArn; }
@@ -401,7 +403,10 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property Platform. 
         /// <para>
-        ///  The platform for the Amplify app. 
+        ///  The platform for the Amplify app. For a static app, set the platform type to <code>WEB</code>.
+        /// For a dynamic server-side rendered (SSR) app, set the platform type to <code>WEB_COMPUTE</code>.
+        /// For an app requiring Amplify Hosting's original SSR support only, set the platform
+        /// type to <code>WEB_DYNAMIC</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -438,7 +443,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property Repository. 
         /// <para>
-        ///  The repository for the Amplify app. 
+        ///  The Git repository for the Amplify app. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=1000)]
@@ -455,12 +460,37 @@ namespace Amazon.Amplify.Model
         }
 
         /// <summary>
+        /// Gets and sets the property RepositoryCloneMethod. <note> 
+        /// <para>
+        /// This is for internal use.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// The Amplify service uses this parameter to specify the authentication protocol to
+        /// use to access the Git repository for an Amplify app. Amplify specifies <code>TOKEN</code>
+        /// for a GitHub repository, <code>SIGV4</code> for an Amazon Web Services CodeCommit
+        /// repository, and <code>SSH</code> for GitLab and Bitbucket repositories.
+        /// </para>
+        /// </summary>
+        public RepositoryCloneMethod RepositoryCloneMethod
+        {
+            get { return this._repositoryCloneMethod; }
+            set { this._repositoryCloneMethod = value; }
+        }
+
+        // Check to see if RepositoryCloneMethod property is set
+        internal bool IsSetRepositoryCloneMethod()
+        {
+            return this._repositoryCloneMethod != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
         ///  The tag for the Amplify app. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=50)]
+        [AWSProperty(Min=0, Max=50)]
         public Dictionary<string, string> Tags
         {
             get { return this._tags; }

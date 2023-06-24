@@ -34,7 +34,7 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// NewBGPPeer Marshaller
-    /// </summary>       
+    /// </summary>
     public class NewBGPPeerMarshaller : IRequestMarshaller<NewBGPPeer, JsonMarshallerContext> 
     {
         /// <summary>
@@ -79,7 +79,7 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static NewBGPPeerMarshaller Instance = new NewBGPPeerMarshaller();
 
     }

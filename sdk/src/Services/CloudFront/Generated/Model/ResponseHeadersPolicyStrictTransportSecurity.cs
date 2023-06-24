@@ -30,7 +30,7 @@ namespace Amazon.CloudFront.Model
 {
     /// <summary>
     /// Determines whether CloudFront includes the <code>Strict-Transport-Security</code>
-    /// HTTP response header and the header’s value.
+    /// HTTP response header and the header's value.
     /// 
     ///  
     /// <para>

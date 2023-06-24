@@ -30,9 +30,6 @@ namespace Amazon.APIGateway.Model
 {
     /// <summary>
     /// Represents a REST API.
-    /// 
-    ///  <div class="seeAlso"> <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Create
-    /// an API</a> </div>
     /// </summary>
     public partial class GetRestApiResponse : AmazonWebServiceResponse
     {
@@ -54,9 +51,9 @@ namespace Amazon.APIGateway.Model
         /// Gets and sets the property ApiKeySource. 
         /// <para>
         /// The source of the API key for metering requests according to a usage plan. Valid values
-        /// are: <ul><li><code>HEADER</code> to read the API key from the <code>X-API-Key</code>
-        /// header of a request. </li><li><code>AUTHORIZER</code> to read the API key from the
-        /// <code>UsageIdentifierKey</code> from a custom authorizer.</li></ul>
+        /// are: &gt;<code>HEADER</code> to read the API key from the <code>X-API-Key</code> header
+        /// of a request. <code>AUTHORIZER</code> to read the API key from the <code>UsageIdentifierKey</code>
+        /// from a custom authorizer.
         /// </para>
         /// </summary>
         public ApiKeySourceType ApiKeySource
@@ -74,8 +71,8 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property BinaryMediaTypes. 
         /// <para>
-        /// The list of binary media types supported by the <a>RestApi</a>. By default, the <a>RestApi</a>
-        /// supports only UTF-8-encoded text payloads.
+        /// The list of binary media types supported by the RestApi. By default, the RestApi supports
+        /// only UTF-8-encoded text payloads.
         /// </para>
         /// </summary>
         public List<string> BinaryMediaTypes
@@ -130,7 +127,7 @@ namespace Amazon.APIGateway.Model
         /// Gets and sets the property DisableExecuteApiEndpoint. 
         /// <para>
         /// Specifies whether clients can invoke your API by using the default <code>execute-api</code>
-        /// endpoint. By default, clients can invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com
+        /// endpoint. By default, clients can invoke your API with the default <code>https://{api_id}.execute-api.{region}.amazonaws.com</code>
         /// endpoint. To require that clients use a custom domain name to invoke your API, disable
         /// the default endpoint.
         /// </para>
@@ -150,8 +147,8 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property EndpointConfiguration. 
         /// <para>
-        /// The endpoint configuration of this <a>RestApi</a> showing the endpoint types of the
-        /// API.
+        /// The endpoint configuration of this RestApi showing the endpoint types of the API.
+        /// 
         /// </para>
         /// </summary>
         public EndpointConfiguration EndpointConfiguration
@@ -228,7 +225,7 @@ namespace Amazon.APIGateway.Model
         /// Gets and sets the property Policy. 
         /// <para>
         /// A stringified JSON policy document that applies to this RestApi regardless of the
-        /// caller and <a>Method</a> configuration.
+        /// caller and Method configuration.
         /// </para>
         /// </summary>
         public string Policy

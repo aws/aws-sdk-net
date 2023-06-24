@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Proton.Model
 {
     /// <summary>
-    /// The service instance detail data.
+    /// Detailed data of an Proton service instance resource.
     /// </summary>
     public partial class ServiceInstance
     {
@@ -38,6 +38,7 @@ namespace Amazon.Proton.Model
         private DeploymentStatus _deploymentStatus;
         private string _deploymentStatusMessage;
         private string _environmentName;
+        private string _lastClientRequestToken;
         private DateTime? _lastDeploymentAttemptedAt;
         private DateTime? _lastDeploymentSucceededAt;
         private string _name;
@@ -107,9 +108,10 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property DeploymentStatusMessage. 
         /// <para>
-        /// A service instance deployment status message.
+        /// The message associated with the service instance deployment status.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string DeploymentStatusMessage
         {
             get { return this._deploymentStatusMessage; }
@@ -139,6 +141,24 @@ namespace Amazon.Proton.Model
         internal bool IsSetEnvironmentName()
         {
             return this._environmentName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastClientRequestToken. 
+        /// <para>
+        /// The last client request token received.
+        /// </para>
+        /// </summary>
+        public string LastClientRequestToken
+        {
+            get { return this._lastClientRequestToken; }
+            set { this._lastClientRequestToken = value; }
+        }
+
+        // Check to see if LastClientRequestToken property is set
+        internal bool IsSetLastClientRequestToken()
+        {
+            return this._lastClientRequestToken != null;
         }
 
         /// <summary>
@@ -223,7 +243,7 @@ namespace Amazon.Proton.Model
         /// The service spec that was used to create the service instance.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=51200)]
+        [AWSProperty(Sensitive=true, Min=1, Max=51200)]
         public string Spec
         {
             get { return this._spec; }

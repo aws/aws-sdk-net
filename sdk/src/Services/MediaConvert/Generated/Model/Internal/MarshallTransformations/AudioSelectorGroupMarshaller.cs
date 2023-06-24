@@ -34,7 +34,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AudioSelectorGroup Marshaller
-    /// </summary>       
+    /// </summary>
     public class AudioSelectorGroupMarshaller : IRequestMarshaller<AudioSelectorGroup, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AudioSelectorGroupMarshaller Instance = new AudioSelectorGroupMarshaller();
 
     }

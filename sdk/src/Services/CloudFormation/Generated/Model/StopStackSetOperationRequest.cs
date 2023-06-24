@@ -31,6 +31,8 @@ namespace Amazon.CloudFormation.Model
     /// <summary>
     /// Container for the parameters to the StopStackSetOperation operation.
     /// Stops an in-progress operation on a stack set and its associated stack instances.
+    /// StackSets will cancel all the unstarted stack instance deployments and wait for those
+    /// are in-progress to complete.
     /// </summary>
     public partial class StopStackSetOperationRequest : AmazonCloudFormationRequest
     {
@@ -81,7 +83,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property OperationId. 
         /// <para>
-        /// The ID of the stack operation. 
+        /// The ID of the stack operation.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]

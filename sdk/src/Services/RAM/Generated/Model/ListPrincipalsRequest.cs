@@ -106,7 +106,7 @@ namespace Amazon.RAM.Model
         ///  </li> <li> 
         /// <para>
         /// An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resoure Name (ARN)</a> of an organization in Organizations, for example: <code>organizations::123456789012:organization/o-exampleorgid</code>
+        /// Resource Name (ARN)</a> of an organization in Organizations, for example: <code>organizations::123456789012:organization/o-exampleorgid</code>
         /// 
         /// </para>
         ///  </li> <li> 
@@ -147,7 +147,7 @@ namespace Amazon.RAM.Model
         /// <para>
         /// Specifies that you want to list principal information for the resource share with
         /// the specified <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resoure Name (ARN)</a>.
+        /// Resource Name (ARN)</a>.
         /// </para>
         /// </summary>
         public string ResourceArn
@@ -170,11 +170,12 @@ namespace Amazon.RAM.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b> <code>SELF</code> </b> – resources that you are sharing
+        ///  <b> <code>SELF</code> </b> – principals that your account is sharing resources with
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>OTHER-ACCOUNTS</code> </b> – resources that other accounts share with you
+        ///  <b> <code>OTHER-ACCOUNTS</code> </b> – principals that are sharing resources with
+        /// your account
         /// </para>
         ///  </li> </ul>
         /// </summary>

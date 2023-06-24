@@ -56,7 +56,7 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.EMRContainers");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-10-01";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-10-01";
             request.HttpMethod = "POST";
 
             if (!publicRequest.IsSetVirtualClusterId())
@@ -77,7 +77,7 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
                 else if(!(publicRequest.IsSetClientToken()))
                 {
                     context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());                                                
+                    context.Writer.Write(Guid.NewGuid().ToString());
                 }
                 if(publicRequest.IsSetConfigurationOverrides())
                 {
@@ -107,6 +107,26 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetJobTemplateId())
+                {
+                    context.Writer.WritePropertyName("jobTemplateId");
+                    context.Writer.Write(publicRequest.JobTemplateId);
+                }
+
+                if(publicRequest.IsSetJobTemplateParameters())
+                {
+                    context.Writer.WritePropertyName("jobTemplateParameters");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestJobTemplateParametersKvp in publicRequest.JobTemplateParameters)
+                    {
+                        context.Writer.WritePropertyName(publicRequestJobTemplateParametersKvp.Key);
+                        var publicRequestJobTemplateParametersValue = publicRequestJobTemplateParametersKvp.Value;
+
+                            context.Writer.Write(publicRequestJobTemplateParametersValue);
+                    }
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetName())
                 {
                     context.Writer.WritePropertyName("name");
@@ -117,6 +137,17 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("releaseLabel");
                     context.Writer.Write(publicRequest.ReleaseLabel);
+                }
+
+                if(publicRequest.IsSetRetryPolicyConfiguration())
+                {
+                    context.Writer.WritePropertyName("retryPolicyConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = RetryPolicyConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.RetryPolicyConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
                 if(publicRequest.IsSetTags())
@@ -133,7 +164,6 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

@@ -30,14 +30,15 @@ namespace Amazon.ACMPCA.Model
 {
     /// <summary>
     /// Container for the parameters to the CreatePermission operation.
-    /// Grants one or more permissions on a private CA to the AWS Certificate Manager (ACM)
-    /// service principal (<code>acm.amazonaws.com</code>). These permissions allow ACM to
-    /// issue and renew ACM certificates that reside in the same AWS account as the CA.
+    /// Grants one or more permissions on a private CA to the Certificate Manager (ACM) service
+    /// principal (<code>acm.amazonaws.com</code>). These permissions allow ACM to issue and
+    /// renew ACM certificates that reside in the same Amazon Web Services account as the
+    /// CA.
     /// 
     ///  
     /// <para>
-    /// You can list current permissions with the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListPermissions.html">ListPermissions</a>
-    /// action and revoke them with the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_DeletePermission.html">DeletePermission</a>
+    /// You can list current permissions with the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_ListPermissions.html">ListPermissions</a>
+    /// action and revoke them with the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_DeletePermission.html">DeletePermission</a>
     /// action.
     /// </para>
     ///  <p class="title"> <b>About Permissions</b> 
@@ -58,8 +59,8 @@ namespace Amazon.ACMPCA.Model
     /// If the private CA and the ACM certificates reside in different accounts, then permissions
     /// cannot be used to enable automatic renewals. Instead, the ACM certificate owner must
     /// set up a resource-based policy to enable cross-account issuance and renewals. For
-    /// more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-rbp.html">Using
-    /// a Resource Based Policy with ACM Private CA</a>.
+    /// more information, see <a href="https://docs.aws.amazon.com/privateca/latest/userguide/pca-rbp.html">Using
+    /// a Resource Based Policy with Amazon Web Services Private CA</a>.
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -73,8 +74,8 @@ namespace Amazon.ACMPCA.Model
         /// <summary>
         /// Gets and sets the property Actions. 
         /// <para>
-        /// The actions that the specified AWS service principal can use. These include <code>IssueCertificate</code>,
-        /// <code>GetCertificate</code>, and <code>ListPermissions</code>.
+        /// The actions that the specified Amazon Web Services service principal can use. These
+        /// include <code>IssueCertificate</code>, <code>GetCertificate</code>, and <code>ListPermissions</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=3)]
@@ -94,7 +95,7 @@ namespace Amazon.ACMPCA.Model
         /// Gets and sets the property CertificateAuthorityArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the CA that grants the permissions. You can find
-        /// the ARN by calling the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a>
+        /// the ARN by calling the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a>
         /// action. This must have the following form: 
         /// </para>
         ///  
@@ -119,8 +120,8 @@ namespace Amazon.ACMPCA.Model
         /// <summary>
         /// Gets and sets the property Principal. 
         /// <para>
-        /// The AWS service or identity that receives the permission. At this time, the only valid
-        /// principal is <code>acm.amazonaws.com</code>.
+        /// The Amazon Web Services service or identity that receives the permission. At this
+        /// time, the only valid principal is <code>acm.amazonaws.com</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=128)]

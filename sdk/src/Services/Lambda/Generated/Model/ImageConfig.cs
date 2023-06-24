@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lambda.Model
 {
     /// <summary>
-    /// Configuration values that override the container image Dockerfile settings. See <a
-    /// href="https://docs.aws.amazon.com/lambda/latest/dg/images-create.html#images-parms">Container
-    /// settings</a>.
+    /// Configuration values that override the container image Dockerfile settings. For more
+    /// information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/images-create.html#images-parms">Container
+    /// image settings</a>.
     /// </summary>
     public partial class ImageConfig
     {
@@ -42,7 +42,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Command. 
         /// <para>
-        /// Specifies parameters that you want to pass in with ENTRYPOINT. 
+        /// Specifies parameters that you want to pass in with ENTRYPOINT.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1500)]

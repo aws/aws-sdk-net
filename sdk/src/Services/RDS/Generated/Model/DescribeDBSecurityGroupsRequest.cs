@@ -33,6 +33,17 @@ namespace Amazon.RDS.Model
     /// Returns a list of <code>DBSecurityGroup</code> descriptions. If a <code>DBSecurityGroupName</code>
     /// is specified, the list will contain only the descriptions of the specified DB security
     /// group.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// EC2-Classic was retired on August 15, 2022. If you haven't migrated from EC2-Classic
+    /// to a VPC, we recommend that you migrate as soon as possible. For more information,
+    /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+    /// from EC2-Classic to a VPC</a> in the <i>Amazon EC2 User Guide</i>, the blog <a href="http://aws.amazon.com/blogs/aws/ec2-classic-is-retiring-heres-how-to-prepare/">EC2-Classic
+    /// Networking is Retiring – Here’s How to Prepare</a>, and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.Non-VPC2VPC.html">Moving
+    /// a DB instance not in a VPC into a VPC</a> in the <i>Amazon RDS User Guide</i>.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class DescribeDBSecurityGroupsRequest : AmazonRDSRequest
     {
@@ -85,9 +96,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        ///  An optional pagination token provided by a previous <code>DescribeDBSecurityGroups</code>
+        /// An optional pagination token provided by a previous <code>DescribeDBSecurityGroups</code>
         /// request. If this parameter is specified, the response includes only records beyond
-        /// the marker, up to the value specified by <code>MaxRecords</code>. 
+        /// the marker, up to the value specified by <code>MaxRecords</code>.
         /// </para>
         /// </summary>
         public string Marker
@@ -105,9 +116,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property MaxRecords. 
         /// <para>
-        ///  The maximum number of records to include in the response. If more records exist than
+        /// The maximum number of records to include in the response. If more records exist than
         /// the specified <code>MaxRecords</code> value, a pagination token called a marker is
-        /// included in the response so that you can retrieve the remaining results. 
+        /// included in the response so that you can retrieve the remaining results.
         /// </para>
         ///  
         /// <para>

@@ -130,6 +130,12 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                     unmarshalledObject.PrivateDomainName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("privateRegistryAccess", targetDepth))
+                {
+                    var unmarshaller = PrivateRegistryAccessUnmarshaller.Instance;
+                    unmarshalledObject.PrivateRegistryAccess = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("publicDomainNames", targetDepth))
                 {
                     var unmarshaller = new DictionaryUnmarshaller<string, List<string>, StringUnmarshaller, ListUnmarshaller<string, StringUnmarshaller>>(StringUnmarshaller.Instance, new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance));

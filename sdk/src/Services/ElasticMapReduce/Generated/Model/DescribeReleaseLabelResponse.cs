@@ -34,6 +34,7 @@ namespace Amazon.ElasticMapReduce.Model
     public partial class DescribeReleaseLabelResponse : AmazonWebServiceResponse
     {
         private List<SimplifiedApplication> _applications = new List<SimplifiedApplication>();
+        private List<OSRelease> _availableOSReleases = new List<OSRelease>();
         private string _nextToken;
         private string _releaseLabel;
 
@@ -55,6 +56,26 @@ namespace Amazon.ElasticMapReduce.Model
         internal bool IsSetApplications()
         {
             return this._applications != null && this._applications.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AvailableOSReleases. 
+        /// <para>
+        /// The list of available Amazon Linux release versions for an Amazon EMR release. Contains
+        /// a Label field that is formatted as shown in <a href="https://docs.aws.amazon.com/AL2/latest/relnotes/relnotes-al2.html">
+        /// <i>Amazon Linux 2 Release Notes</i> </a>. For example, <a href="https://docs.aws.amazon.com/AL2/latest/relnotes/relnotes-20220218.html">2.0.20220218.1</a>.
+        /// </para>
+        /// </summary>
+        public List<OSRelease> AvailableOSReleases
+        {
+            get { return this._availableOSReleases; }
+            set { this._availableOSReleases = value; }
+        }
+
+        // Check to see if AvailableOSReleases property is set
+        internal bool IsSetAvailableOSReleases()
+        {
+            return this._availableOSReleases != null && this._availableOSReleases.Count > 0; 
         }
 
         /// <summary>

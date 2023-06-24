@@ -30,7 +30,7 @@ namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
     /// Container for the parameters to the RemoveManagedScalingPolicy operation.
-    /// Removes a managed scaling policy from a specified EMR cluster.
+    /// Removes a managed scaling policy from a specified Amazon EMR cluster.
     /// </summary>
     public partial class RemoveManagedScalingPolicyRequest : AmazonElasticMapReduceRequest
     {

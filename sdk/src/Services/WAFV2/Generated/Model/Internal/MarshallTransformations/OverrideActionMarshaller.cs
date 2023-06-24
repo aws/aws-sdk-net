@@ -34,7 +34,7 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// OverrideAction Marshaller
-    /// </summary>       
+    /// </summary>
     public class OverrideActionMarshaller : IRequestMarshaller<OverrideAction, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static OverrideActionMarshaller Instance = new OverrideActionMarshaller();
 
     }

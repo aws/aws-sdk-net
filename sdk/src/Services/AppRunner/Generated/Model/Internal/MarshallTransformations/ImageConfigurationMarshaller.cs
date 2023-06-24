@@ -34,7 +34,7 @@ namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ImageConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class ImageConfigurationMarshaller : IRequestMarshaller<ImageConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -49,6 +49,20 @@ namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("Port");
                 context.Writer.Write(requestObject.Port);
+            }
+
+            if(requestObject.IsSetRuntimeEnvironmentSecrets())
+            {
+                context.Writer.WritePropertyName("RuntimeEnvironmentSecrets");
+                context.Writer.WriteObjectStart();
+                foreach (var requestObjectRuntimeEnvironmentSecretsKvp in requestObject.RuntimeEnvironmentSecrets)
+                {
+                    context.Writer.WritePropertyName(requestObjectRuntimeEnvironmentSecretsKvp.Key);
+                    var requestObjectRuntimeEnvironmentSecretsValue = requestObjectRuntimeEnvironmentSecretsKvp.Value;
+
+                        context.Writer.Write(requestObjectRuntimeEnvironmentSecretsValue);
+                }
+                context.Writer.WriteObjectEnd();
             }
 
             if(requestObject.IsSetRuntimeEnvironmentVariables())
@@ -75,7 +89,7 @@ namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ImageConfigurationMarshaller Instance = new ImageConfigurationMarshaller();
 
     }

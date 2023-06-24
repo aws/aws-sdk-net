@@ -44,7 +44,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (string.IsNullOrEmpty(listBucketInventoryConfigurationsRequest.BucketName))
                 throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "ListBucketInventoryConfigurationsRequest.BucketName");
 
-			request.ResourcePath = string.Concat("/", S3Transforms.ToStringValue(listBucketInventoryConfigurationsRequest.BucketName));
+            request.ResourcePath = "/";
             request.AddSubResource("inventory");
             if (listBucketInventoryConfigurationsRequest.IsSetContinuationToken())
             {

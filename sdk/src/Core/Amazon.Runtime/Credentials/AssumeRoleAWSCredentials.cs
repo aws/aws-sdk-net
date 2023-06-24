@@ -89,9 +89,9 @@ namespace Amazon.Runtime
 
         protected override CredentialsRefreshState GenerateNewCredentials()
         {
-            var configuredRegion = AWSConfigs.AWSRegion;
-            var region = string.IsNullOrEmpty(configuredRegion) ? DefaultSTSClientRegion : RegionEndpoint.GetBySystemName(configuredRegion);
-            ICoreAmazonSTS coreSTSClient = null;
+            var region = FallbackRegionFactory.GetRegionEndpoint() ?? DefaultSTSClientRegion;
+            ICoreAmazonSTS coreSTSClient;
+
             try
             {
                 var stsConfig = ServiceClientHelpers.CreateServiceConfig(ServiceClientHelpers.STS_ASSEMBLY_NAME, ServiceClientHelpers.STS_SERVICE_CONFIG_NAME);

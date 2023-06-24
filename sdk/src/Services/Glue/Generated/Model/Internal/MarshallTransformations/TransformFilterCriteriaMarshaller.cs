@@ -34,7 +34,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// TransformFilterCriteria Marshaller
-    /// </summary>       
+    /// </summary>
     public class TransformFilterCriteriaMarshaller : IRequestMarshaller<TransformFilterCriteria, JsonMarshallerContext> 
     {
         /// <summary>
@@ -113,7 +113,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static TransformFilterCriteriaMarshaller Instance = new TransformFilterCriteriaMarshaller();
 
     }

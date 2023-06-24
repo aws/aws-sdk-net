@@ -34,10 +34,14 @@ namespace Amazon.Rekognition.Model
     public partial class DescribeStreamProcessorResponse : AmazonWebServiceResponse
     {
         private DateTime? _creationTimestamp;
+        private StreamProcessorDataSharingPreference _dataSharingPreference;
         private StreamProcessorInput _input;
+        private string _kmsKeyId;
         private DateTime? _lastUpdateTimestamp;
         private string _name;
+        private StreamProcessorNotificationChannel _notificationChannel;
         private StreamProcessorOutput _output;
+        private List<RegionOfInterest> _regionsOfInterest = new List<RegionOfInterest>();
         private string _roleArn;
         private StreamProcessorSettings _settings;
         private StreamProcessorStatus _status;
@@ -63,6 +67,27 @@ namespace Amazon.Rekognition.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DataSharingPreference. 
+        /// <para>
+        ///  Shows whether you are sharing data with Rekognition to improve model performance.
+        /// You can choose this option at the account level or on a per-stream basis. Note that
+        /// if you opt out at the account level this setting is ignored on individual streams.
+        /// 
+        /// </para>
+        /// </summary>
+        public StreamProcessorDataSharingPreference DataSharingPreference
+        {
+            get { return this._dataSharingPreference; }
+            set { this._dataSharingPreference = value; }
+        }
+
+        // Check to see if DataSharingPreference property is set
+        internal bool IsSetDataSharingPreference()
+        {
+            return this._dataSharingPreference != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Input. 
         /// <para>
         /// Kinesis video stream that provides the source streaming video.
@@ -78,6 +103,26 @@ namespace Amazon.Rekognition.Model
         internal bool IsSetInput()
         {
             return this._input != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KmsKeyId. 
+        /// <para>
+        ///  The identifier for your AWS Key Management Service key (AWS KMS key). This is an
+        /// optional parameter for label detection stream processors. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string KmsKeyId
+        {
+            get { return this._kmsKeyId; }
+            set { this._kmsKeyId = value; }
+        }
+
+        // Check to see if KmsKeyId property is set
+        internal bool IsSetKmsKeyId()
+        {
+            return this._kmsKeyId != null;
         }
 
         /// <summary>
@@ -120,6 +165,21 @@ namespace Amazon.Rekognition.Model
         }
 
         /// <summary>
+        /// Gets and sets the property NotificationChannel.
+        /// </summary>
+        public StreamProcessorNotificationChannel NotificationChannel
+        {
+            get { return this._notificationChannel; }
+            set { this._notificationChannel = value; }
+        }
+
+        // Check to see if NotificationChannel property is set
+        internal bool IsSetNotificationChannel()
+        {
+            return this._notificationChannel != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Output. 
         /// <para>
         /// Kinesis data stream to which Amazon Rekognition Video puts the analysis results.
@@ -135,6 +195,26 @@ namespace Amazon.Rekognition.Model
         internal bool IsSetOutput()
         {
             return this._output != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RegionsOfInterest. 
+        /// <para>
+        ///  Specifies locations in the frames where Amazon Rekognition checks for objects or
+        /// people. This is an optional parameter for label detection stream processors. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=10)]
+        public List<RegionOfInterest> RegionsOfInterest
+        {
+            get { return this._regionsOfInterest; }
+            set { this._regionsOfInterest = value; }
+        }
+
+        // Check to see if RegionsOfInterest property is set
+        internal bool IsSetRegionsOfInterest()
+        {
+            return this._regionsOfInterest != null && this._regionsOfInterest.Count > 0; 
         }
 
         /// <summary>
@@ -158,8 +238,9 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property Settings. 
         /// <para>
-        /// Face recognition input parameters that are being used by the stream processor. Includes
-        /// the collection to use for face recognition and the face attributes to detect.
+        /// Input parameters used in a streaming video analyzed by a stream processor. You can
+        /// use <code>FaceSearch</code> to recognize faces in a streaming video, or you can use
+        /// <code>ConnectedHome</code> to detect labels.
         /// </para>
         /// </summary>
         public StreamProcessorSettings Settings

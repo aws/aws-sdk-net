@@ -80,7 +80,7 @@ namespace Amazon.Chime.Model
         /// The token passed by previous API calls until all requested messages are returned.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=2048)]
+        [AWSProperty(Sensitive=true, Min=0, Max=2048)]
         public string NextToken
         {
             get { return this._nextToken; }

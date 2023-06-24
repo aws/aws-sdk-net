@@ -34,7 +34,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DockerVolumeConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class DockerVolumeConfigurationMarshaller : IRequestMarshaller<DockerVolumeConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -95,7 +95,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DockerVolumeConfigurationMarshaller Instance = new DockerVolumeConfigurationMarshaller();
 
     }

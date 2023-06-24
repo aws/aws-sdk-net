@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// Provides consistent format for the contents of the Security Hub-aggregated findings.
-    /// <code>AwsSecurityFinding</code> format enables you to share findings between Amazon
-    /// Web Services security services and third-party solutions, and security standards checks.
+    /// Provides a consistent format for Security Hub findings. <code>AwsSecurityFinding</code>
+    /// format allows you to share findings between Amazon Web Services security services
+    /// and third-party solutions.
     /// 
     ///  <note> 
     /// <para>
@@ -69,10 +69,12 @@ namespace Amazon.SecurityHub.Model
         private List<RelatedFinding> _relatedFindings = new List<RelatedFinding>();
         private Remediation _remediation;
         private List<Resource> _resources = new List<Resource>();
+        private bool? _sample;
         private string _schemaVersion;
         private Severity _severity;
         private string _sourceUrl;
         private List<ThreatIntelIndicator> _threatIntelIndicators = new List<ThreatIntelIndicator>();
+        private List<Threat> _threats = new List<Threat>();
         private string _title;
         private List<string> _types = new List<string>();
         private string _updatedAt;
@@ -126,23 +128,14 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// Security Hub populates this attribute automatically for each finding. You cannot be
-        /// updated using <code>BatchImportFindings</code> or <code>BatchUpdateFindings</code>.
-        /// The exception to this is when you use a custom integration.
+        /// Security Hub populates this attribute automatically for each finding. You cannot update
+        /// this attribute with <code>BatchImportFindings</code> or <code>BatchUpdateFindings</code>.
+        /// The exception to this is a custom integration.
         /// </para>
         ///  
         /// <para>
-        /// When you use the Security Hub console to filter findings by company name, you use
-        /// this attribute.
-        /// </para>
-        ///  
-        /// <para>
-        /// When you use the Security Hub API to filter findings by company name, you use the
-        /// <code>aws/securityhub/CompanyName</code> attribute under <code>ProductFields</code>.
-        /// </para>
-        ///  
-        /// <para>
-        /// Security Hub does not synchronize those two attributes.
+        /// When you use the Security Hub console or API to filter findings by company name, you
+        /// use this attribute.
         /// </para>
         /// </summary>
         public string CompanyName
@@ -204,14 +197,14 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// Indicates when the security-findings provider created the potential security issue
+        /// Indicates when the security findings provider created the potential security issue
         /// that a finding captured.
         /// </para>
         ///  
         /// <para>
         /// Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
-        /// 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces.
-        /// For example, <code>2020-03-22T13:22:13.933Z</code>.
+        /// 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces,
+        /// and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -297,14 +290,14 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property FirstObservedAt. 
         /// <para>
-        /// Indicates when the security-findings provider first observed the potential security
+        /// Indicates when the security findings provider first observed the potential security
         /// issue that a finding captured.
         /// </para>
         ///  
         /// <para>
         /// Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
-        /// 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces.
-        /// For example, <code>2020-03-22T13:22:13.933Z</code>.
+        /// 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces,
+        /// and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.
         /// </para>
         /// </summary>
         public string FirstObservedAt
@@ -323,7 +316,7 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property GeneratorId. 
         /// <para>
         /// The identifier for the solution-specific component (a discrete unit of logic) that
-        /// generated a finding. In various security-findings providers' solutions, this generator
+        /// generated a finding. In various security findings providers' solutions, this generator
         /// can be called a rule, a check, a detector, a plugin, etc. 
         /// </para>
         /// </summary>
@@ -362,14 +355,14 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property LastObservedAt. 
         /// <para>
-        /// Indicates when the security-findings provider most recently observed the potential
+        /// Indicates when the security findings provider most recently observed the potential
         /// security issue that a finding captured.
         /// </para>
         ///  
         /// <para>
         /// Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
-        /// 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces.
-        /// For example, <code>2020-03-22T13:22:13.933Z</code>.
+        /// 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces,
+        /// and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.
         /// </para>
         /// </summary>
         public string LastObservedAt
@@ -518,7 +511,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property ProductFields. 
         /// <para>
-        /// A data type where security-findings providers can include additional solution-specific
+        /// A data type where security findings providers can include additional solution-specific
         /// details that aren't part of the defined <code>AwsSecurityFinding</code> format.
         /// </para>
         ///  
@@ -547,22 +540,13 @@ namespace Amazon.SecurityHub.Model
         ///  
         /// <para>
         /// Security Hub populates this attribute automatically for each finding. You cannot update
-        /// it using <code>BatchImportFindings</code> or <code>BatchUpdateFindings</code>. The
-        /// exception to this is when you use a custom integration.
+        /// this attribute with <code>BatchImportFindings</code> or <code>BatchUpdateFindings</code>.
+        /// The exception to this is a custom integration.
         /// </para>
         ///  
         /// <para>
-        /// When you use the Security Hub console to filter findings by product name, you use
-        /// this attribute.
-        /// </para>
-        ///  
-        /// <para>
-        /// When you use the Security Hub API to filter findings by product name, you use the
-        /// <code>aws/securityhub/ProductName</code> attribute under <code>ProductFields</code>.
-        /// </para>
-        ///  
-        /// <para>
-        /// Security Hub does not synchronize those two attributes.
+        /// When you use the Security Hub console or API to filter findings by product name, you
+        /// use this attribute.
         /// </para>
         /// </summary>
         public string ProductName
@@ -674,6 +658,24 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Sample. 
+        /// <para>
+        /// Indicates whether the finding is a sample finding.
+        /// </para>
+        /// </summary>
+        public bool Sample
+        {
+            get { return this._sample.GetValueOrDefault(); }
+            set { this._sample = value; }
+        }
+
+        // Check to see if Sample property is set
+        internal bool IsSetSample()
+        {
+            return this._sample.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property SchemaVersion. 
         /// <para>
         /// The schema version that a finding is formatted for.
@@ -713,7 +715,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property SourceUrl. 
         /// <para>
-        /// A URL that links to a page about the current finding in the security-findings provider's
+        /// A URL that links to a page about the current finding in the security findings provider's
         /// solution.
         /// </para>
         /// </summary>
@@ -745,6 +747,25 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetThreatIntelIndicators()
         {
             return this._threatIntelIndicators != null && this._threatIntelIndicators.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Threats. 
+        /// <para>
+        /// Details about the threat detected in a security finding and the file paths that were
+        /// affected by the threat. 
+        /// </para>
+        /// </summary>
+        public List<Threat> Threats
+        {
+            get { return this._threats; }
+            set { this._threats = value; }
+        }
+
+        // Check to see if Threats property is set
+        internal bool IsSetThreats()
+        {
+            return this._threats != null && this._threats.Count > 0; 
         }
 
         /// <summary>
@@ -798,13 +819,13 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property UpdatedAt. 
         /// <para>
-        /// Indicates when the security-findings provider last updated the finding record.
+        /// Indicates when the security findings provider last updated the finding record.
         /// </para>
         ///  
         /// <para>
         /// Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
-        /// 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces.
-        /// For example, <code>2020-03-22T13:22:13.933Z</code>.
+        /// 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces,
+        /// and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

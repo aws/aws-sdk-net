@@ -34,7 +34,7 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// OrganizationCustomRuleMetadata Marshaller
-    /// </summary>       
+    /// </summary>
     public class OrganizationCustomRuleMetadataMarshaller : IRequestMarshaller<OrganizationCustomRuleMetadata, JsonMarshallerContext> 
     {
         /// <summary>
@@ -113,7 +113,7 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static OrganizationCustomRuleMetadataMarshaller Instance = new OrganizationCustomRuleMetadataMarshaller();
 
     }

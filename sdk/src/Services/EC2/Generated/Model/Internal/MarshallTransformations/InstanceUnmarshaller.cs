@@ -103,6 +103,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.CpuOptions = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("currentInstanceBootMode", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.CurrentInstanceBootMode = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("ebsOptimized", targetDepth))
                     {
                         var unmarshaller = BoolUnmarshaller.Instance;
@@ -206,6 +212,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         var unmarshaller = LicenseConfigurationUnmarshaller.Instance;
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Licenses.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("maintenanceOptions", targetDepth))
+                    {
+                        var unmarshaller = InstanceMaintenanceOptionsUnmarshaller.Instance;
+                        unmarshalledObject.MaintenanceOptions = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("metadataOptions", targetDepth))
@@ -360,6 +372,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         var unmarshaller = TagUnmarshaller.Instance;
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Tags.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("tpmSupport", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.TpmSupport = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("usageOperation", targetDepth))

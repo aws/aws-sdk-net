@@ -35,6 +35,7 @@ namespace Amazon.RDS.Model
     public partial class UserAuthConfig
     {
         private AuthScheme _authScheme;
+        private ClientPasswordAuthType _clientPasswordAuthType;
         private string _description;
         private IAMAuthMode _iamAuth;
         private string _secretArn;
@@ -60,6 +61,24 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ClientPasswordAuthType. 
+        /// <para>
+        /// The type of authentication the proxy uses for connections from clients.
+        /// </para>
+        /// </summary>
+        public ClientPasswordAuthType ClientPasswordAuthType
+        {
+            get { return this._clientPasswordAuthType; }
+            set { this._clientPasswordAuthType = value; }
+        }
+
+        // Check to see if ClientPasswordAuthType property is set
+        internal bool IsSetClientPasswordAuthType()
+        {
+            return this._clientPasswordAuthType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
         /// A user-specified description about the authentication used by a proxy to log in as
@@ -82,7 +101,8 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property IAMAuth. 
         /// <para>
         /// Whether to require or disallow Amazon Web Services Identity and Access Management
-        /// (IAM) authentication for connections to the proxy.
+        /// (IAM) authentication for connections to the proxy. The <code>ENABLED</code> value
+        /// is valid only for proxies with RDS for Microsoft SQL Server.
         /// </para>
         /// </summary>
         public IAMAuthMode IAMAuth

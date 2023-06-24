@@ -30,7 +30,7 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateIntegrationAssociation operation.
-    /// Creates an AWS resource association with an Amazon Connect instance.
+    /// Creates an Amazon Web Services resource association with an Amazon Connect instance.
     /// </summary>
     public partial class CreateIntegrationAssociationRequest : AmazonConnectRequest
     {
@@ -45,8 +45,8 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The identifier of the Amazon Connect instance. You can find the instanceId in the
-        /// ARN of the instance.
+        /// The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+        /// the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
@@ -67,6 +67,12 @@ namespace Amazon.Connect.Model
         /// <para>
         /// The Amazon Resource Name (ARN) of the integration.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// When integrating with Amazon Pinpoint, the Amazon Connect and Amazon Pinpoint instances
+        /// must be in the same account.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Required=true)]
         public string IntegrationArn
@@ -162,7 +168,8 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags used to organize, track, or control access for this resource.
+        /// The tags used to organize, track, or control access for this resource. For example,
+        /// { "tags": {"key1":"value1", "key2":"value2"} }.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

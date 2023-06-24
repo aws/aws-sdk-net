@@ -20,7 +20,7 @@ namespace SDKDocGenerator
 {
     public static class NDocUtilities
     {
-        public const string MSDN_TYPE_URL_PATTERN = "http://msdn.microsoft.com/en-us/library/{0}.aspx";
+        public const string MSDN_TYPE_URL_PATTERN = "https://msdn.microsoft.com/en-us/library/{0}.aspx";
         public const string DOC_SAMPLES_SUBFOLDER = "AWSSDKDocSamples";
 
         public const string crossReferenceOpeningTagText = "<see"; // <see> and <seealso> tags
@@ -29,6 +29,7 @@ namespace SDKDocGenerator
         public const string crefAttributeName = "cref";
         public const string hrefAttributeName = "href";
         public const string nameAttributeName = "name";
+        public const string targetAttributeName = "target";
 
         // inner attribute of a cross reference tag we're interested in
         public static readonly string innerCrefAttributeText = crefAttributeName + "=\"";
@@ -401,7 +402,7 @@ namespace SDKDocGenerator
             var href = rootNode.Attribute("href");
             if (href != null)
             {
-                content += string.Format(@"<div><a href=""{0}"" target=""_blank"">{1}</a></div>", href.Value, innerXml);
+                content += string.Format(@"<div><a href=""{0}"" target=""_parent"" rel=""noopener noreferrer"">{1}</a></div>", href.Value, innerXml);
             }
 
             var cref = rootNode.Attribute("cref");
@@ -444,6 +445,9 @@ namespace SDKDocGenerator
                                 // copy over attributes
                                 if (reader.HasAttributes)
                                 {
+                                    var isAbsoluteLink = false;
+                                    var hasTarget = false;
+
                                     for (int i = 0; i < reader.AttributeCount; i++)
                                     {
                                         reader.MoveToAttribute(i);
@@ -453,6 +457,7 @@ namespace SDKDocGenerator
                                         var isCref = string.Equals(attributeName, crefAttributeName, StringComparison.Ordinal);
                                         var isHref = string.Equals(attributeName, hrefAttributeName, StringComparison.Ordinal);
                                         var isName = string.Equals(attributeName, nameAttributeName, StringComparison.Ordinal);
+                                        var isTarget = string.Equals(attributeName, targetAttributeName, StringComparison.Ordinal);
 
                                         var writeAttribute = true;
 
@@ -483,16 +488,33 @@ namespace SDKDocGenerator
                                         {
                                             // extract href value for emptyElementContents
                                             emptyElementContents = attributeValue;
+
+                                            if(attributeValue.StartsWith("http://", StringComparison.OrdinalIgnoreCase) ||
+                                                attributeValue.StartsWith("https://", StringComparison.OrdinalIgnoreCase))
+                                            {
+                                                isAbsoluteLink = true;
+                                            }
                                         }
                                         else if (isName)
                                         {
                                             emptyElementContents = attributeValue;
+                                        }
+                                        else if (isTarget)
+                                        {
+                                            hasTarget = true;
                                         }
 
                                         if(writeAttribute)
                                         {
                                             writer.WriteAttributeString(attributeName, attributeValue);
                                         }                                        
+                                    }
+
+                                    if(elementName == "a" && isAbsoluteLink && !hasTarget)
+                                    {
+                                        //Add a target=\"_blank\" to allow the absolute link to break out
+                                        //of the frame.
+                                        writer.WriteAttributeString(targetAttributeName, "_blank");
                                     }
                                 }
 

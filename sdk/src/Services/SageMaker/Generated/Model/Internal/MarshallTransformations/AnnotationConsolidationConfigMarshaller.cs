@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AnnotationConsolidationConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class AnnotationConsolidationConfigMarshaller : IRequestMarshaller<AnnotationConsolidationConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AnnotationConsolidationConfigMarshaller Instance = new AnnotationConsolidationConfigMarshaller();
 
     }

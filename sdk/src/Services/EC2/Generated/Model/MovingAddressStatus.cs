@@ -29,7 +29,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
+    /// <note> 
+    /// <para>
+    /// This action is deprecated.
+    /// </para>
+    ///  </note> 
+    /// <para>
     /// Describes the status of a moving Elastic IP address.
+    /// </para>
     /// </summary>
     public partial class MovingAddressStatus
     {
@@ -39,8 +46,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property MoveStatus. 
         /// <para>
-        /// The status of the Elastic IP address that's being moved to the EC2-VPC platform, or
-        /// restored to the EC2-Classic platform.
+        /// The status of the Elastic IP address that's being moved or restored.
         /// </para>
         /// </summary>
         public MoveStatus MoveStatus

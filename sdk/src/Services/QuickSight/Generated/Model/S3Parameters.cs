@@ -34,6 +34,7 @@ namespace Amazon.QuickSight.Model
     public partial class S3Parameters
     {
         private ManifestFileLocation _manifestFileLocation;
+        private string _roleArn;
 
         /// <summary>
         /// Gets and sets the property ManifestFileLocation. 
@@ -53,6 +54,30 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetManifestFileLocation()
         {
             return this._manifestFileLocation != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RoleArn. 
+        /// <para>
+        /// Use the <code>RoleArn</code> structure to override an account-wide role for a specific
+        /// S3 data source. For example, say an account administrator has turned off all S3 access
+        /// with an account-wide role. The administrator can then use <code>RoleArn</code> to
+        /// bypass the account-wide role and allow S3 access for the single S3 data source that
+        /// is specified in the structure, even if the account-wide role forbidding S3 access
+        /// is still active.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string RoleArn
+        {
+            get { return this._roleArn; }
+            set { this._roleArn = value; }
+        }
+
+        // Check to see if RoleArn property is set
+        internal bool IsSetRoleArn()
+        {
+            return this._roleArn != null;
         }
 
     }

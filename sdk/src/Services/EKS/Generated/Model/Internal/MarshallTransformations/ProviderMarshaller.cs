@@ -34,7 +34,7 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Provider Marshaller
-    /// </summary>       
+    /// </summary>
     public class ProviderMarshaller : IRequestMarshaller<Provider, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ProviderMarshaller Instance = new ProviderMarshaller();
 
     }

@@ -41,7 +41,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property CloudWatchLogsRoleArn. 
         /// <para>
-        /// The role ARN for the Amazon CloudWatch Logging role for the user import job.
+        /// The role ARN for the Amazon CloudWatch Logs Logging role for the user import job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]

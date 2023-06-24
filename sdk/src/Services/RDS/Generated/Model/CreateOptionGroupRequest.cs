@@ -52,7 +52,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: 
+        /// Valid Values:
         /// </para>
         ///  <ul> <li> 
         /// <para>

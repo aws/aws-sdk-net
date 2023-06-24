@@ -77,8 +77,8 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property RuleMetricName. 
         /// <para>
-        /// The metric name assigned to the <code>Rule</code> or <code>RuleGroup</code> for which
-        /// you want a sample of requests.
+        /// The metric name assigned to the <code>Rule</code> or <code>RuleGroup</code> dimension
+        /// for which you want a sample of requests.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
@@ -99,7 +99,8 @@ namespace Amazon.WAFV2.Model
         /// <para>
         /// Specifies whether this is for an Amazon CloudFront distribution or for a regional
         /// application. A regional application can be an Application Load Balancer (ALB), an
-        /// Amazon API Gateway REST API, or an AppSync GraphQL API. 
+        /// Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool,
+        /// an App Runner service, or an Amazon Web Services Verified Access instance. 
         /// </para>
         ///  
         /// <para>

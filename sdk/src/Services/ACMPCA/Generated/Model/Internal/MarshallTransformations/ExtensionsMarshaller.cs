@@ -34,7 +34,7 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Extensions Marshaller
-    /// </summary>       
+    /// </summary>
     public class ExtensionsMarshaller : IRequestMarshaller<Extensions, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,6 +55,22 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
 
                     var marshaller = PolicyInformationMarshaller.Instance;
                     marshaller.Marshall(requestObjectCertificatePoliciesListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetCustomExtensions())
+            {
+                context.Writer.WritePropertyName("CustomExtensions");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectCustomExtensionsListValue in requestObject.CustomExtensions)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = CustomExtensionMarshaller.Instance;
+                    marshaller.Marshall(requestObjectCustomExtensionsListValue, context);
 
                     context.Writer.WriteObjectEnd();
                 }
@@ -108,7 +124,7 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ExtensionsMarshaller Instance = new ExtensionsMarshaller();
 
     }

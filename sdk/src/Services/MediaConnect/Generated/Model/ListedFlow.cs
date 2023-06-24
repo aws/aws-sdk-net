@@ -36,6 +36,7 @@ namespace Amazon.MediaConnect.Model
         private string _availabilityZone;
         private string _description;
         private string _flowArn;
+        private Maintenance _maintenance;
         private string _name;
         private SourceType _sourceType;
         private Status _status;
@@ -87,6 +88,21 @@ namespace Amazon.MediaConnect.Model
         internal bool IsSetFlowArn()
         {
             return this._flowArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Maintenance.
+        /// </summary>
+        public Maintenance Maintenance
+        {
+            get { return this._maintenance; }
+            set { this._maintenance = value; }
+        }
+
+        // Check to see if Maintenance property is set
+        internal bool IsSetMaintenance()
+        {
+            return this._maintenance != null;
         }
 
         /// <summary>

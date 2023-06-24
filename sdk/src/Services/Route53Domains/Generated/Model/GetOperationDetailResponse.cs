@@ -34,9 +34,11 @@ namespace Amazon.Route53Domains.Model
     public partial class GetOperationDetailResponse : AmazonWebServiceResponse
     {
         private string _domainName;
+        private DateTime? _lastUpdatedDate;
         private string _message;
         private string _operationId;
         private OperationStatus _status;
+        private StatusFlag _statusFlag;
         private DateTime? _submittedDate;
         private OperationType _type;
 
@@ -57,6 +59,24 @@ namespace Amazon.Route53Domains.Model
         internal bool IsSetDomainName()
         {
             return this._domainName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastUpdatedDate. 
+        /// <para>
+        ///  The date when the operation was last updated. 
+        /// </para>
+        /// </summary>
+        public DateTime LastUpdatedDate
+        {
+            get { return this._lastUpdatedDate.GetValueOrDefault(); }
+            set { this._lastUpdatedDate = value; }
+        }
+
+        // Check to see if LastUpdatedDate property is set
+        internal bool IsSetLastUpdatedDate()
+        {
+            return this._lastUpdatedDate.HasValue; 
         }
 
         /// <summary>
@@ -112,6 +132,50 @@ namespace Amazon.Route53Domains.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StatusFlag. 
+        /// <para>
+        ///  Lists any outstanding operations that require customer action. Valid values are:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>PENDING_ACCEPTANCE</code>: The operation is waiting for acceptance from the
+        /// account that is receiving the domain.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>PENDING_CUSTOMER_ACTION</code>: The operation is waiting for customer action,
+        /// for example, returning an email.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>PENDING_AUTHORIZATION</code>: The operation is waiting for the form of authorization.
+        /// For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ResendOperationAuthorization.html">ResendOperationAuthorization</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>PENDING_PAYMENT_VERIFICATION</code>: The operation is waiting for the payment
+        /// method to validate.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>PENDING_SUPPORT_CASE</code>: The operation includes a support case and is waiting
+        /// for its resolution.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public StatusFlag StatusFlag
+        {
+            get { return this._statusFlag; }
+            set { this._statusFlag = value; }
+        }
+
+        // Check to see if StatusFlag property is set
+        internal bool IsSetStatusFlag()
+        {
+            return this._statusFlag != null;
         }
 
         /// <summary>

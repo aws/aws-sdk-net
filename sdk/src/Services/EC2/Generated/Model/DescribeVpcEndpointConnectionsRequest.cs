@@ -42,9 +42,13 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// One or more filters.
+        /// The filters.
         /// </para>
         ///  <ul> <li> 
+        /// <para>
+        ///  <code>ip-address-type</code> - The IP address type (<code>ipv4</code> | <code>ipv6</code>).
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         ///  <code>service-id</code> - The ID of the service.
         /// </para>

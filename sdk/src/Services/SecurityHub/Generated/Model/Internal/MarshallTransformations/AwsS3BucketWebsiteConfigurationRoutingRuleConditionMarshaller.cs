@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AwsS3BucketWebsiteConfigurationRoutingRuleCondition Marshaller
-    /// </summary>       
+    /// </summary>
     public class AwsS3BucketWebsiteConfigurationRoutingRuleConditionMarshaller : IRequestMarshaller<AwsS3BucketWebsiteConfigurationRoutingRuleCondition, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AwsS3BucketWebsiteConfigurationRoutingRuleConditionMarshaller Instance = new AwsS3BucketWebsiteConfigurationRoutingRuleConditionMarshaller();
 
     }

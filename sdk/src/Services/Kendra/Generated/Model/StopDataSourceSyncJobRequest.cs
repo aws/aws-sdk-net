@@ -30,7 +30,8 @@ namespace Amazon.Kendra.Model
 {
     /// <summary>
     /// Container for the parameters to the StopDataSourceSyncJob operation.
-    /// Stops a running synchronization job. You can't stop a scheduled synchronization job.
+    /// Stops a synchronization job that is currently running. You can't stop a scheduled
+    /// synchronization job.
     /// </summary>
     public partial class StopDataSourceSyncJobRequest : AmazonKendraRequest
     {
@@ -40,7 +41,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The identifier of the data source for which to stop the synchronization jobs.
+        /// The identifier of the data source connector for which to stop the synchronization
+        /// jobs.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
@@ -59,7 +61,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property IndexId. 
         /// <para>
-        /// The identifier of the index that contains the data source.
+        /// The identifier of the index used with the data source connector.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]

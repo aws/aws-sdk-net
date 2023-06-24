@@ -34,15 +34,19 @@ namespace Amazon.Pinpoint.Model
     public partial class WriteJourneyRequest
     {
         private Dictionary<string, Activity> _activities = new Dictionary<string, Activity>();
+        private ClosedDays _closedDays;
         private string _creationDate;
+        private JourneyChannelSettings _journeyChannelSettings;
         private string _lastModifiedDate;
         private JourneyLimits _limits;
         private bool? _localTime;
         private string _name;
+        private OpenHours _openHours;
         private QuietTime _quietTime;
         private string _refreshFrequency;
         private bool? _refreshOnSegmentUpdate;
         private JourneySchedule _schedule;
+        private bool? _sendingSchedule;
         private string _startActivity;
         private StartCondition _startCondition;
         private State _state;
@@ -70,6 +74,25 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ClosedDays. 
+        /// <para>
+        /// The time when journey will stop sending messages. QuietTime should be configured first
+        /// and SendingSchedule should be set to true.
+        /// </para>
+        /// </summary>
+        public ClosedDays ClosedDays
+        {
+            get { return this._closedDays; }
+            set { this._closedDays = value; }
+        }
+
+        // Check to see if ClosedDays property is set
+        internal bool IsSetClosedDays()
+        {
+            return this._closedDays != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property CreationDate. 
         /// <para>
         /// The date, in ISO 8601 format, when the journey was created.
@@ -85,6 +108,24 @@ namespace Amazon.Pinpoint.Model
         internal bool IsSetCreationDate()
         {
             return this._creationDate != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property JourneyChannelSettings. 
+        /// <para>
+        /// The channel-specific configurations for the journey.
+        /// </para>
+        /// </summary>
+        public JourneyChannelSettings JourneyChannelSettings
+        {
+            get { return this._journeyChannelSettings; }
+            set { this._journeyChannelSettings = value; }
+        }
+
+        // Check to see if JourneyChannelSettings property is set
+        internal bool IsSetJourneyChannelSettings()
+        {
+            return this._journeyChannelSettings != null;
         }
 
         /// <summary>
@@ -165,6 +206,25 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
+        /// Gets and sets the property OpenHours. 
+        /// <para>
+        /// The time when journey allow to send messages. QuietTime should be configured first
+        /// and SendingSchedule should be set to true.
+        /// </para>
+        /// </summary>
+        public OpenHours OpenHours
+        {
+            get { return this._openHours; }
+            set { this._openHours = value; }
+        }
+
+        // Check to see if OpenHours property is set
+        internal bool IsSetOpenHours()
+        {
+            return this._openHours != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property QuietTime. 
         /// <para>
         /// The quiet time settings for the journey. Quiet time is a specific time range when
@@ -226,7 +286,7 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property RefreshOnSegmentUpdate. 
         /// <para>
-        /// Specifies whether a journey should be refreshed on segment update.
+        /// Indicates whether the journey participants should be refreshed when a segment is updated.
         /// </para>
         /// </summary>
         public bool RefreshOnSegmentUpdate
@@ -257,6 +317,25 @@ namespace Amazon.Pinpoint.Model
         internal bool IsSetSchedule()
         {
             return this._schedule != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SendingSchedule. 
+        /// <para>
+        /// Indicates if journey has Advance Quiet Time enabled. This flag should be set to true
+        /// in order to allow using OpenHours and ClosedDays.
+        /// </para>
+        /// </summary>
+        public bool SendingSchedule
+        {
+            get { return this._sendingSchedule.GetValueOrDefault(); }
+            set { this._sendingSchedule = value; }
+        }
+
+        // Check to see if SendingSchedule property is set
+        internal bool IsSetSendingSchedule()
+        {
+            return this._sendingSchedule.HasValue; 
         }
 
         /// <summary>

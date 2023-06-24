@@ -34,7 +34,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ListenerTimeout Marshaller
-    /// </summary>       
+    /// </summary>
     public class ListenerTimeoutMarshaller : IRequestMarshaller<ListenerTimeout, JsonMarshallerContext> 
     {
         /// <summary>
@@ -93,7 +93,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ListenerTimeoutMarshaller Instance = new ListenerTimeoutMarshaller();
 
     }

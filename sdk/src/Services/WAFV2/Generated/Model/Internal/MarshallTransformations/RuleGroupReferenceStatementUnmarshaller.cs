@@ -76,6 +76,12 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.ExcludedRules = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("RuleActionOverrides", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<RuleActionOverride, RuleActionOverrideUnmarshaller>(RuleActionOverrideUnmarshaller.Instance);
+                    unmarshalledObject.RuleActionOverrides = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

@@ -60,6 +60,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("deliverCrossAccountRole", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.DeliverCrossAccountRole = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("deliverLogsErrorMessage", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

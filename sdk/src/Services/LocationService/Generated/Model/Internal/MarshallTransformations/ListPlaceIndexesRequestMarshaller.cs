@@ -56,7 +56,7 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.LocationService");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-11-19";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-11-19";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/places/v0/list-indexes";
@@ -77,7 +77,6 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.NextToken);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

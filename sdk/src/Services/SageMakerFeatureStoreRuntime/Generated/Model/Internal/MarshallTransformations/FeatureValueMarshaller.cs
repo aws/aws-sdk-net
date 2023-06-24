@@ -34,7 +34,7 @@ namespace Amazon.SageMakerFeatureStoreRuntime.Model.Internal.MarshallTransformat
 {
     /// <summary>
     /// FeatureValue Marshaller
-    /// </summary>       
+    /// </summary>
     public class FeatureValueMarshaller : IRequestMarshaller<FeatureValue, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.SageMakerFeatureStoreRuntime.Model.Internal.MarshallTransformat
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static FeatureValueMarshaller Instance = new FeatureValueMarshaller();
 
     }

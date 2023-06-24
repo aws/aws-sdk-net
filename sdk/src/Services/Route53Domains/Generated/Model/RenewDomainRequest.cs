@@ -31,7 +31,7 @@ namespace Amazon.Route53Domains.Model
     /// <summary>
     /// Container for the parameters to the RenewDomain operation.
     /// This operation renews a domain for the specified number of years. The cost of renewing
-    /// your domain is billed to your AWS account.
+    /// your domain is billed to your Amazon Web Services account.
     /// 
     ///  
     /// <para>

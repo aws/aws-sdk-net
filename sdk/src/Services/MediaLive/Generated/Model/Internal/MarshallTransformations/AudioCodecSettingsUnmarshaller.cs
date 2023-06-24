@@ -76,6 +76,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     unmarshalledObject.Ac3Settings = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("eac3AtmosSettings", targetDepth))
+                {
+                    var unmarshaller = Eac3AtmosSettingsUnmarshaller.Instance;
+                    unmarshalledObject.Eac3AtmosSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("eac3Settings", targetDepth))
                 {
                     var unmarshaller = Eac3SettingsUnmarshaller.Instance;

@@ -34,7 +34,7 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// PackageSource Marshaller
-    /// </summary>       
+    /// </summary>
     public class PackageSourceMarshaller : IRequestMarshaller<PackageSource, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static PackageSourceMarshaller Instance = new PackageSourceMarshaller();
 
     }

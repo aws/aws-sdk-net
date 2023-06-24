@@ -30,21 +30,56 @@ namespace Amazon.TranscribeService.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateCallAnalyticsCategory operation.
-    /// Creates an analytics category. Amazon Transcribe applies the conditions specified
-    /// by your analytics categories to your call analytics jobs. For each analytics category,
-    /// you specify one or more rules. For example, you can specify a rule that the customer
-    /// sentiment was neutral or negative within that category. If you start a call analytics
-    /// job, Amazon Transcribe applies the category to the analytics job that you've specified.
+    /// Creates a new Call Analytics category.
+    /// 
+    ///  
+    /// <para>
+    /// All categories are automatically applied to your Call Analytics transcriptions. Note
+    /// that in order to apply categories to your transcriptions, you must create them before
+    /// submitting your transcription request, as categories cannot be applied retroactively.
+    /// </para>
+    ///  
+    /// <para>
+    /// When creating a new category, you can use the <code>InputType</code> parameter to
+    /// label the category as a <code>POST_CALL</code> or a <code>REAL_TIME</code> category.
+    /// <code>POST_CALL</code> categories can only be applied to post-call transcriptions
+    /// and <code>REAL_TIME</code> categories can only be applied to real-time transcriptions.
+    /// If you do not include <code>InputType</code>, your category is created as a <code>POST_CALL</code>
+    /// category by default.
+    /// </para>
+    ///  
+    /// <para>
+    /// Call Analytics categories are composed of rules. For each category, you must create
+    /// between 1 and 20 rules. Rules can include these parameters: , , , and .
+    /// </para>
+    ///  
+    /// <para>
+    /// To update an existing category, see .
+    /// </para>
+    ///  
+    /// <para>
+    /// To learn more about Call Analytics categories, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-categories-batch.html">Creating
+    /// categories for post-call transcriptions</a> and <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-categories-stream.html">Creating
+    /// categories for real-time transcriptions</a>.
+    /// </para>
     /// </summary>
     public partial class CreateCallAnalyticsCategoryRequest : AmazonTranscribeServiceRequest
     {
         private string _categoryName;
+        private InputType _inputType;
         private List<Rule> _rules = new List<Rule>();
 
         /// <summary>
         /// Gets and sets the property CategoryName. 
         /// <para>
-        /// The name that you choose for your category when you create it. 
+        /// A unique name, chosen by you, for your Call Analytics category. It's helpful to use
+        /// a detailed naming system that will make sense to you in the future. For example, it's
+        /// better to use <code>sentiment-positive-last30seconds</code> for a category over a
+        /// generic name like <code>test-category</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Category names are case sensitive.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=200)]
@@ -61,12 +96,47 @@ namespace Amazon.TranscribeService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property InputType. 
+        /// <para>
+        /// Choose whether you want to create a real-time or a post-call category for your Call
+        /// Analytics transcription.
+        /// </para>
+        ///  
+        /// <para>
+        /// Specifying <code>POST_CALL</code> assigns your category to post-call transcriptions;
+        /// categories with this input type cannot be applied to streaming (real-time) transcriptions.
+        /// </para>
+        ///  
+        /// <para>
+        /// Specifying <code>REAL_TIME</code> assigns your category to streaming transcriptions;
+        /// categories with this input type cannot be applied to post-call transcriptions.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you do not include <code>InputType</code>, your category is created as a post-call
+        /// category by default.
+        /// </para>
+        /// </summary>
+        public InputType InputType
+        {
+            get { return this._inputType; }
+            set { this._inputType = value; }
+        }
+
+        // Check to see if InputType property is set
+        internal bool IsSetInputType()
+        {
+            return this._inputType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Rules. 
         /// <para>
-        /// To create a category, you must specify between 1 and 20 rules. For each rule, you
-        /// specify a filter to be applied to the attributes of the call. For example, you can
-        /// specify a sentiment filter to detect if the customer's sentiment was negative or neutral.
-        /// 
+        /// Rules define a Call Analytics category. When creating a new category, you must create
+        /// between 1 and 20 rules for that category. For each rule, you specify a filter you
+        /// want applied to the attributes of a call. For example, you can choose a sentiment
+        /// filter that detects if a customer's sentiment was positive during the last 30 seconds
+        /// of the call.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=20)]

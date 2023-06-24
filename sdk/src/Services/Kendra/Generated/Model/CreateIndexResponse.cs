@@ -38,8 +38,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The unique identifier of the index. Use this identifier when you query an index, set
-        /// up a data source, or index a document.
+        /// The identifier of the index. Use this identifier when you query an index, set up a
+        /// data source, or index a document.
         /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=36)]

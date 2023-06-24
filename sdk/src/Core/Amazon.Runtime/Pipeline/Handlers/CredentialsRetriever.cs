@@ -49,7 +49,7 @@ namespace Amazon.Runtime.Internal
         protected virtual void PreInvoke(IExecutionContext executionContext)
         {
             ImmutableCredentials ic = null;
-            if (Credentials != null && !(Credentials is AnonymousAWSCredentials))
+            if (Credentials != null && !(Credentials is AnonymousAWSCredentials) && !(executionContext.RequestContext.Signer is BearerTokenSigner))
             {
                 using(executionContext.RequestContext.Metrics.StartEvent(Metric.CredentialsRequestTime))
                 {

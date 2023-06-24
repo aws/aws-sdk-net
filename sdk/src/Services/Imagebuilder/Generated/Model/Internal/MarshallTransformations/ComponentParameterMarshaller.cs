@@ -34,7 +34,7 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ComponentParameter Marshaller
-    /// </summary>       
+    /// </summary>
     public class ComponentParameterMarshaller : IRequestMarshaller<ComponentParameter, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ComponentParameterMarshaller Instance = new ComponentParameterMarshaller();
 
     }

@@ -87,6 +87,12 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
                     response.IncidentTemplate = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("integrations", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<Integration, IntegrationUnmarshaller>(IntegrationUnmarshaller.Instance);
+                    response.Integrations = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

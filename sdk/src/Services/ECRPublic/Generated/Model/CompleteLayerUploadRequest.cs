@@ -30,14 +30,14 @@ namespace Amazon.ECRPublic.Model
 {
     /// <summary>
     /// Container for the parameters to the CompleteLayerUpload operation.
-    /// Informs Amazon ECR that the image layer upload has completed for a specified public
+    /// Informs Amazon ECR that the image layer upload is complete for a specified public
     /// registry, repository name, and upload ID. You can optionally provide a <code>sha256</code>
     /// digest of the image layer for data validation purposes.
     /// 
     ///  
     /// <para>
-    /// When an image is pushed, the CompleteLayerUpload API is called once per each new image
-    /// layer to verify that the upload has completed.
+    /// When an image is pushed, the CompleteLayerUpload API is called once for each new image
+    /// layer to verify that the upload is complete.
     /// </para>
     ///  <note> 
     /// <para>
@@ -76,11 +76,12 @@ namespace Amazon.ECRPublic.Model
         /// <summary>
         /// Gets and sets the property RegistryId. 
         /// <para>
-        /// The AWS account ID associated with the registry to which to upload layers. If you
-        /// do not specify a registry, the default public registry is assumed.
+        /// The Amazon Web Services account ID, or registry alias, associated with the registry
+        /// where layers are uploaded. If you do not specify a registry, the default public registry
+        /// is assumed.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=256)]
+        [AWSProperty(Min=2, Max=50)]
         public string RegistryId
         {
             get { return this._registryId; }

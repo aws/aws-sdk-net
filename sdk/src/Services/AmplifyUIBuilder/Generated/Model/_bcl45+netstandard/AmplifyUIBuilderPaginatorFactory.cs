@@ -36,11 +36,51 @@ namespace Amazon.AmplifyUIBuilder.Model
         }
 
         /// <summary>
+        /// Paginator for ExportComponents operation
+        ///</summary>
+        public IExportComponentsPaginator ExportComponents(ExportComponentsRequest request) 
+        {
+            return new ExportComponentsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ExportForms operation
+        ///</summary>
+        public IExportFormsPaginator ExportForms(ExportFormsRequest request) 
+        {
+            return new ExportFormsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ExportThemes operation
+        ///</summary>
+        public IExportThemesPaginator ExportThemes(ExportThemesRequest request) 
+        {
+            return new ExportThemesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListCodegenJobs operation
+        ///</summary>
+        public IListCodegenJobsPaginator ListCodegenJobs(ListCodegenJobsRequest request) 
+        {
+            return new ListCodegenJobsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListComponents operation
         ///</summary>
         public IListComponentsPaginator ListComponents(ListComponentsRequest request) 
         {
             return new ListComponentsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListForms operation
+        ///</summary>
+        public IListFormsPaginator ListForms(ListFormsRequest request) 
+        {
+            return new ListFormsPaginator(this.client, request);
         }
 
         /// <summary>

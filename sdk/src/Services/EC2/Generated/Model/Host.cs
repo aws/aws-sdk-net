@@ -35,17 +35,20 @@ namespace Amazon.EC2.Model
     {
         private DateTime? _allocationTime;
         private AllowsMultipleInstanceTypes _allowsMultipleInstanceTypes;
+        private string _assetId;
         private AutoPlacement _autoPlacement;
         private string _availabilityZone;
         private string _availabilityZoneId;
         private AvailableCapacity _availableCapacity;
         private string _clientToken;
         private string _hostId;
+        private HostMaintenance _hostMaintenance;
         private HostProperties _hostProperties;
         private HostRecovery _hostRecovery;
         private string _hostReservationId;
         private List<HostInstance> _instances = new List<HostInstance>();
         private bool? _memberOfServiceLinkedResourceGroup;
+        private string _outpostArn;
         private string _ownerId;
         private DateTime? _releaseTime;
         private AllocationState _state;
@@ -88,6 +91,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetAllowsMultipleInstanceTypes()
         {
             return this._allowsMultipleInstanceTypes != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AssetId. 
+        /// <para>
+        /// The ID of the Outpost hardware asset on which the Dedicated Host is allocated.
+        /// </para>
+        /// </summary>
+        public string AssetId
+        {
+            get { return this._assetId; }
+            set { this._assetId = value; }
+        }
+
+        // Check to see if AssetId property is set
+        internal bool IsSetAssetId()
+        {
+            return this._assetId != null;
         }
 
         /// <summary>
@@ -201,6 +222,24 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property HostMaintenance. 
+        /// <para>
+        /// Indicates whether host maintenance is enabled or disabled for the Dedicated Host.
+        /// </para>
+        /// </summary>
+        public HostMaintenance HostMaintenance
+        {
+            get { return this._hostMaintenance; }
+            set { this._hostMaintenance = value; }
+        }
+
+        // Check to see if HostMaintenance property is set
+        internal bool IsSetHostMaintenance()
+        {
+            return this._hostMaintenance != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property HostProperties. 
         /// <para>
         /// The hardware specifications of the Dedicated Host.
@@ -290,6 +329,25 @@ namespace Amazon.EC2.Model
         internal bool IsSetMemberOfServiceLinkedResourceGroup()
         {
             return this._memberOfServiceLinkedResourceGroup.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property OutpostArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the Amazon Web Services Outpost on which the Dedicated
+        /// Host is allocated.
+        /// </para>
+        /// </summary>
+        public string OutpostArn
+        {
+            get { return this._outpostArn; }
+            set { this._outpostArn = value; }
+        }
+
+        // Check to see if OutpostArn property is set
+        internal bool IsSetOutpostArn()
+        {
+            return this._outpostArn != null;
         }
 
         /// <summary>

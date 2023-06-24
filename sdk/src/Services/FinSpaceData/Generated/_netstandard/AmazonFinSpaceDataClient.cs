@@ -233,6 +233,15 @@ namespace Amazon.FinSpaceData
         } 
 
         /// <summary>
+        /// Customizes the runtime pipeline.
+        /// </summary>
+        /// <param name="pipeline">Runtime pipeline for the current client.</param>
+        protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
+        {
+            pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonFinSpaceDataEndpointResolver());
+        }
+        /// <summary>
         /// Capture metadata for the service.
         /// </summary>
         protected override IServiceMetadata ServiceMetadata
@@ -258,6 +267,59 @@ namespace Amazon.FinSpaceData
         #endregion
 
 
+        #region  AssociateUserToPermissionGroup
+
+        internal virtual AssociateUserToPermissionGroupResponse AssociateUserToPermissionGroup(AssociateUserToPermissionGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateUserToPermissionGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateUserToPermissionGroupResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateUserToPermissionGroupResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Adds a user account to a permission group to grant permissions for actions a user
+        /// can perform in FinSpace.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateUserToPermissionGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociateUserToPermissionGroup service method, as returned by FinSpaceData.</returns>
+        /// <exception cref="Amazon.FinSpaceData.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ConflictException">
+        /// The request conflicts with an existing resource.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/AssociateUserToPermissionGroup">REST API Reference for AssociateUserToPermissionGroup Operation</seealso>
+        public virtual Task<AssociateUserToPermissionGroupResponse> AssociateUserToPermissionGroupAsync(AssociateUserToPermissionGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateUserToPermissionGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateUserToPermissionGroupResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AssociateUserToPermissionGroupResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateChangeset
 
         internal virtual CreateChangesetResponse CreateChangeset(CreateChangesetRequest request)
@@ -420,6 +482,110 @@ namespace Amazon.FinSpaceData
 
         #endregion
         
+        #region  CreatePermissionGroup
+
+        internal virtual CreatePermissionGroupResponse CreatePermissionGroup(CreatePermissionGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePermissionGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePermissionGroupResponseUnmarshaller.Instance;
+
+            return Invoke<CreatePermissionGroupResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a group of permissions for various actions that a user can perform in FinSpace.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePermissionGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreatePermissionGroup service method, as returned by FinSpaceData.</returns>
+        /// <exception cref="Amazon.FinSpaceData.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ConflictException">
+        /// The request conflicts with an existing resource.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.LimitExceededException">
+        /// A limit has exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/CreatePermissionGroup">REST API Reference for CreatePermissionGroup Operation</seealso>
+        public virtual Task<CreatePermissionGroupResponse> CreatePermissionGroupAsync(CreatePermissionGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePermissionGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePermissionGroupResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreatePermissionGroupResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateUser
+
+        internal virtual CreateUserResponse CreateUser(CreateUserRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateUserRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateUserResponseUnmarshaller.Instance;
+
+            return Invoke<CreateUserResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a new user in FinSpace.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateUser service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateUser service method, as returned by FinSpaceData.</returns>
+        /// <exception cref="Amazon.FinSpaceData.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ConflictException">
+        /// The request conflicts with an existing resource.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.LimitExceededException">
+        /// A limit has exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/CreateUser">REST API Reference for CreateUser Operation</seealso>
+        public virtual Task<CreateUserResponse> CreateUserAsync(CreateUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateUserRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateUserResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateUserResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteDataset
 
         internal virtual DeleteDatasetResponse DeleteDataset(DeleteDatasetRequest request)
@@ -471,6 +637,220 @@ namespace Amazon.FinSpaceData
             options.ResponseUnmarshaller = DeleteDatasetResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteDatasetResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeletePermissionGroup
+
+        internal virtual DeletePermissionGroupResponse DeletePermissionGroup(DeletePermissionGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePermissionGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePermissionGroupResponseUnmarshaller.Instance;
+
+            return Invoke<DeletePermissionGroupResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a permission group. This action is irreversible.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePermissionGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeletePermissionGroup service method, as returned by FinSpaceData.</returns>
+        /// <exception cref="Amazon.FinSpaceData.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ConflictException">
+        /// The request conflicts with an existing resource.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.LimitExceededException">
+        /// A limit has exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/DeletePermissionGroup">REST API Reference for DeletePermissionGroup Operation</seealso>
+        public virtual Task<DeletePermissionGroupResponse> DeletePermissionGroupAsync(DeletePermissionGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePermissionGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePermissionGroupResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeletePermissionGroupResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DisableUser
+
+        internal virtual DisableUserResponse DisableUser(DisableUserRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisableUserRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisableUserResponseUnmarshaller.Instance;
+
+            return Invoke<DisableUserResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Denies access to the FinSpace web application and API for the specified user.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableUser service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisableUser service method, as returned by FinSpaceData.</returns>
+        /// <exception cref="Amazon.FinSpaceData.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ConflictException">
+        /// The request conflicts with an existing resource.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/DisableUser">REST API Reference for DisableUser Operation</seealso>
+        public virtual Task<DisableUserResponse> DisableUserAsync(DisableUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisableUserRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisableUserResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DisableUserResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DisassociateUserFromPermissionGroup
+
+        internal virtual DisassociateUserFromPermissionGroupResponse DisassociateUserFromPermissionGroup(DisassociateUserFromPermissionGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateUserFromPermissionGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateUserFromPermissionGroupResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateUserFromPermissionGroupResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Removes a user account from a permission group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateUserFromPermissionGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociateUserFromPermissionGroup service method, as returned by FinSpaceData.</returns>
+        /// <exception cref="Amazon.FinSpaceData.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ConflictException">
+        /// The request conflicts with an existing resource.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/DisassociateUserFromPermissionGroup">REST API Reference for DisassociateUserFromPermissionGroup Operation</seealso>
+        public virtual Task<DisassociateUserFromPermissionGroupResponse> DisassociateUserFromPermissionGroupAsync(DisassociateUserFromPermissionGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateUserFromPermissionGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateUserFromPermissionGroupResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DisassociateUserFromPermissionGroupResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  EnableUser
+
+        internal virtual EnableUserResponse EnableUser(EnableUserRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = EnableUserRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EnableUserResponseUnmarshaller.Instance;
+
+            return Invoke<EnableUserResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Allows the specified user to access the FinSpace web application and API.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableUser service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the EnableUser service method, as returned by FinSpaceData.</returns>
+        /// <exception cref="Amazon.FinSpaceData.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ConflictException">
+        /// The request conflicts with an existing resource.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.LimitExceededException">
+        /// A limit has exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/EnableUser">REST API Reference for EnableUser Operation</seealso>
+        public virtual Task<EnableUserResponse> EnableUserAsync(EnableUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = EnableUserRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EnableUserResponseUnmarshaller.Instance;
+
+            return InvokeAsync<EnableUserResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -628,6 +1008,116 @@ namespace Amazon.FinSpaceData
 
         #endregion
         
+        #region  GetExternalDataViewAccessDetails
+
+        internal virtual GetExternalDataViewAccessDetailsResponse GetExternalDataViewAccessDetails(GetExternalDataViewAccessDetailsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetExternalDataViewAccessDetailsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetExternalDataViewAccessDetailsResponseUnmarshaller.Instance;
+
+            return Invoke<GetExternalDataViewAccessDetailsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns the credentials to access the external Dataview from an S3 location. To call
+        /// this API:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You must retrieve the programmatic credentials.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You must be a member of a FinSpace user group, where the dataset that you want to
+        /// access has <code>Read Dataset Data</code> permissions.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetExternalDataViewAccessDetails service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetExternalDataViewAccessDetails service method, as returned by FinSpaceData.</returns>
+        /// <exception cref="Amazon.FinSpaceData.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/GetExternalDataViewAccessDetails">REST API Reference for GetExternalDataViewAccessDetails Operation</seealso>
+        public virtual Task<GetExternalDataViewAccessDetailsResponse> GetExternalDataViewAccessDetailsAsync(GetExternalDataViewAccessDetailsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetExternalDataViewAccessDetailsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetExternalDataViewAccessDetailsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetExternalDataViewAccessDetailsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetPermissionGroup
+
+        internal virtual GetPermissionGroupResponse GetPermissionGroup(GetPermissionGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetPermissionGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPermissionGroupResponseUnmarshaller.Instance;
+
+            return Invoke<GetPermissionGroupResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves the details of a specific permission group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPermissionGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetPermissionGroup service method, as returned by FinSpaceData.</returns>
+        /// <exception cref="Amazon.FinSpaceData.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/GetPermissionGroup">REST API Reference for GetPermissionGroup Operation</seealso>
+        public virtual Task<GetPermissionGroupResponse> GetPermissionGroupAsync(GetPermissionGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetPermissionGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPermissionGroupResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetPermissionGroupResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetProgrammaticAccessCredentials
 
         internal virtual GetProgrammaticAccessCredentialsResponse GetProgrammaticAccessCredentials(GetProgrammaticAccessCredentialsRequest request)
@@ -670,6 +1160,55 @@ namespace Amazon.FinSpaceData
             options.ResponseUnmarshaller = GetProgrammaticAccessCredentialsResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetProgrammaticAccessCredentialsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetUser
+
+        internal virtual GetUserResponse GetUser(GetUserRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetUserRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetUserResponseUnmarshaller.Instance;
+
+            return Invoke<GetUserResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves details for a specific user.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetUser service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetUser service method, as returned by FinSpaceData.</returns>
+        /// <exception cref="Amazon.FinSpaceData.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/GetUser">REST API Reference for GetUser Operation</seealso>
+        public virtual Task<GetUserResponse> GetUserAsync(GetUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetUserRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetUserResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetUserResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -871,6 +1410,250 @@ namespace Amazon.FinSpaceData
 
         #endregion
         
+        #region  ListPermissionGroups
+
+        internal virtual ListPermissionGroupsResponse ListPermissionGroups(ListPermissionGroupsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPermissionGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPermissionGroupsResponseUnmarshaller.Instance;
+
+            return Invoke<ListPermissionGroupsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists all available permission groups in FinSpace.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPermissionGroups service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListPermissionGroups service method, as returned by FinSpaceData.</returns>
+        /// <exception cref="Amazon.FinSpaceData.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/ListPermissionGroups">REST API Reference for ListPermissionGroups Operation</seealso>
+        public virtual Task<ListPermissionGroupsResponse> ListPermissionGroupsAsync(ListPermissionGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPermissionGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPermissionGroupsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListPermissionGroupsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListPermissionGroupsByUser
+
+        internal virtual ListPermissionGroupsByUserResponse ListPermissionGroupsByUser(ListPermissionGroupsByUserRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPermissionGroupsByUserRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPermissionGroupsByUserResponseUnmarshaller.Instance;
+
+            return Invoke<ListPermissionGroupsByUserResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists all the permission groups that are associated with a specific user account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPermissionGroupsByUser service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListPermissionGroupsByUser service method, as returned by FinSpaceData.</returns>
+        /// <exception cref="Amazon.FinSpaceData.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/ListPermissionGroupsByUser">REST API Reference for ListPermissionGroupsByUser Operation</seealso>
+        public virtual Task<ListPermissionGroupsByUserResponse> ListPermissionGroupsByUserAsync(ListPermissionGroupsByUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPermissionGroupsByUserRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPermissionGroupsByUserResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListPermissionGroupsByUserResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListUsers
+
+        internal virtual ListUsersResponse ListUsers(ListUsersRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListUsersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListUsersResponseUnmarshaller.Instance;
+
+            return Invoke<ListUsersResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists all available user accounts in FinSpace.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListUsers service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListUsers service method, as returned by FinSpaceData.</returns>
+        /// <exception cref="Amazon.FinSpaceData.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/ListUsers">REST API Reference for ListUsers Operation</seealso>
+        public virtual Task<ListUsersResponse> ListUsersAsync(ListUsersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListUsersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListUsersResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListUsersResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListUsersByPermissionGroup
+
+        internal virtual ListUsersByPermissionGroupResponse ListUsersByPermissionGroup(ListUsersByPermissionGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListUsersByPermissionGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListUsersByPermissionGroupResponseUnmarshaller.Instance;
+
+            return Invoke<ListUsersByPermissionGroupResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists details of all the users in a specific permission group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListUsersByPermissionGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListUsersByPermissionGroup service method, as returned by FinSpaceData.</returns>
+        /// <exception cref="Amazon.FinSpaceData.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/ListUsersByPermissionGroup">REST API Reference for ListUsersByPermissionGroup Operation</seealso>
+        public virtual Task<ListUsersByPermissionGroupResponse> ListUsersByPermissionGroupAsync(ListUsersByPermissionGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListUsersByPermissionGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListUsersByPermissionGroupResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListUsersByPermissionGroupResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ResetUserPassword
+
+        internal virtual ResetUserPasswordResponse ResetUserPassword(ResetUserPasswordRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ResetUserPasswordRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ResetUserPasswordResponseUnmarshaller.Instance;
+
+            return Invoke<ResetUserPasswordResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Resets the password for a specified user ID and generates a temporary one. Only a
+        /// superuser can reset password for other users. Resetting the password immediately invalidates
+        /// the previous password associated with the user.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ResetUserPassword service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ResetUserPassword service method, as returned by FinSpaceData.</returns>
+        /// <exception cref="Amazon.FinSpaceData.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ConflictException">
+        /// The request conflicts with an existing resource.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/ResetUserPassword">REST API Reference for ResetUserPassword Operation</seealso>
+        public virtual Task<ResetUserPasswordResponse> ResetUserPasswordAsync(ResetUserPasswordRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ResetUserPasswordRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ResetUserPasswordResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ResetUserPasswordResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  UpdateChangeset
 
         internal virtual UpdateChangesetResponse UpdateChangeset(UpdateChangesetRequest request)
@@ -971,6 +1754,111 @@ namespace Amazon.FinSpaceData
             options.ResponseUnmarshaller = UpdateDatasetResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateDatasetResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdatePermissionGroup
+
+        internal virtual UpdatePermissionGroupResponse UpdatePermissionGroup(UpdatePermissionGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdatePermissionGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdatePermissionGroupResponseUnmarshaller.Instance;
+
+            return Invoke<UpdatePermissionGroupResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Modifies the details of a permission group. You cannot modify a <code>permissionGroupID</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePermissionGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdatePermissionGroup service method, as returned by FinSpaceData.</returns>
+        /// <exception cref="Amazon.FinSpaceData.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ConflictException">
+        /// The request conflicts with an existing resource.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/UpdatePermissionGroup">REST API Reference for UpdatePermissionGroup Operation</seealso>
+        public virtual Task<UpdatePermissionGroupResponse> UpdatePermissionGroupAsync(UpdatePermissionGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdatePermissionGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdatePermissionGroupResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdatePermissionGroupResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateUser
+
+        internal virtual UpdateUserResponse UpdateUser(UpdateUserRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateUserRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateUserResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateUserResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Modifies the details of the specified user account. You cannot update the <code>userId</code>
+        /// for a user.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateUser service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateUser service method, as returned by FinSpaceData.</returns>
+        /// <exception cref="Amazon.FinSpaceData.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ConflictException">
+        /// The request conflicts with an existing resource.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/UpdateUser">REST API Reference for UpdateUser Operation</seealso>
+        public virtual Task<UpdateUserResponse> UpdateUserAsync(UpdateUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateUserRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateUserResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateUserResponse>(request, options, cancellationToken);
         }
 
         #endregion

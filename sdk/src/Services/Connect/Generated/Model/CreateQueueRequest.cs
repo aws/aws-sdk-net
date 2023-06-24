@@ -36,6 +36,18 @@ namespace Amazon.Connect.Model
     /// <para>
     /// Creates a new queue for the specified Amazon Connect instance.
     /// </para>
+    ///  <important> 
+    /// <para>
+    /// If the number being used in the input is claimed to a traffic distribution group,
+    /// and you are calling this API using an instance in the Amazon Web Services Region where
+    /// the traffic distribution group was created, you can use either a full phone number
+    /// ARN or UUID value for the <code>OutboundCallerIdNumberId</code> value of the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_OutboundCallerConfig">OutboundCallerConfig</a>
+    /// request body parameter. However, if the number is claimed to a traffic distribution
+    /// group and you are calling this API using an instance in the alternate Amazon Web Services
+    /// Region associated with the traffic distribution group, you must provide a full phone
+    /// number ARN. If a UUID is provided in this scenario, you will receive a <code>ResourceNotFoundException</code>.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class CreateQueueRequest : AmazonConnectRequest
     {
@@ -89,8 +101,8 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The identifier of the Amazon Connect instance. You can find the instanceId in the
-        /// ARN of the instance.
+        /// The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+        /// the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
@@ -184,7 +196,8 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags used to organize, track, or control access for this resource.
+        /// The tags used to organize, track, or control access for this resource. For example,
+        /// { "tags": {"key1":"value1", "key2":"value2"} }.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

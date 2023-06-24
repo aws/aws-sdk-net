@@ -34,7 +34,7 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ConditionExpression Marshaller
-    /// </summary>       
+    /// </summary>
     public class ConditionExpressionMarshaller : IRequestMarshaller<ConditionExpression, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ConditionExpressionMarshaller Instance = new ConditionExpressionMarshaller();
 
     }

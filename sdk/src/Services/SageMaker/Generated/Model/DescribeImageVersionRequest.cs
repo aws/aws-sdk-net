@@ -34,8 +34,28 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class DescribeImageVersionRequest : AmazonSageMakerRequest
     {
+        private string _alias;
         private string _imageName;
         private int? _version;
+
+        /// <summary>
+        /// Gets and sets the property Alias. 
+        /// <para>
+        /// The alias of the image version.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=128)]
+        public string Alias
+        {
+            get { return this._alias; }
+            set { this._alias = value; }
+        }
+
+        // Check to see if Alias property is set
+        internal bool IsSetAlias()
+        {
+            return this._alias != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ImageName. 

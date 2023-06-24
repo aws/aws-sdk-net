@@ -34,7 +34,7 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ImmunityTimeProperty Marshaller
-    /// </summary>       
+    /// </summary>
     public class ImmunityTimePropertyMarshaller : IRequestMarshaller<ImmunityTimeProperty, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ImmunityTimePropertyMarshaller Instance = new ImmunityTimePropertyMarshaller();
 
     }

@@ -65,6 +65,7 @@ namespace Amazon.LakeFormation.Model
         private string _resourceArn;
         private string _roleArn;
         private bool? _useServiceLinkedRole;
+        private bool? _withFederation;
 
         /// <summary>
         /// Gets and sets the property ResourceArn. 
@@ -112,7 +113,7 @@ namespace Amazon.LakeFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs-aws.amazon.com/lake-formation/latest/dg/service-linked-roles.html">Using
+        /// For more information, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/service-linked-roles.html">Using
         /// Service-Linked Roles for Lake Formation</a>.
         /// </para>
         /// </summary>
@@ -126,6 +127,24 @@ namespace Amazon.LakeFormation.Model
         internal bool IsSetUseServiceLinkedRole()
         {
             return this._useServiceLinkedRole.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property WithFederation. 
+        /// <para>
+        /// Whether or not the resource is a federated resource.
+        /// </para>
+        /// </summary>
+        public bool WithFederation
+        {
+            get { return this._withFederation.GetValueOrDefault(); }
+            set { this._withFederation = value; }
+        }
+
+        // Check to see if WithFederation property is set
+        internal bool IsSetWithFederation()
+        {
+            return this._withFederation.HasValue; 
         }
 
     }

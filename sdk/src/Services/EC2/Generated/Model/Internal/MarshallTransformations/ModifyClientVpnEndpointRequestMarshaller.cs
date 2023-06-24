@@ -69,6 +69,17 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         request.Parameters.Add("ClientConnectOptions" + "." + "LambdaFunctionArn", StringUtils.FromString(publicRequest.ClientConnectOptions.LambdaFunctionArn));
                     }
                 }
+                if(publicRequest.IsSetClientLoginBannerOptions())
+                {
+                    if(publicRequest.ClientLoginBannerOptions.IsSetBannerText())
+                    {
+                        request.Parameters.Add("ClientLoginBannerOptions" + "." + "BannerText", StringUtils.FromString(publicRequest.ClientLoginBannerOptions.BannerText));
+                    }
+                    if(publicRequest.ClientLoginBannerOptions.IsSetEnabled())
+                    {
+                        request.Parameters.Add("ClientLoginBannerOptions" + "." + "Enabled", StringUtils.FromBool(publicRequest.ClientLoginBannerOptions.Enabled));
+                    }
+                }
                 if(publicRequest.IsSetClientVpnEndpointId())
                 {
                     request.Parameters.Add("ClientVpnEndpointId", StringUtils.FromString(publicRequest.ClientVpnEndpointId));
@@ -124,6 +135,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetServerCertificateArn())
                 {
                     request.Parameters.Add("ServerCertificateArn", StringUtils.FromString(publicRequest.ServerCertificateArn));
+                }
+                if(publicRequest.IsSetSessionTimeoutHours())
+                {
+                    request.Parameters.Add("SessionTimeoutHours", StringUtils.FromInt(publicRequest.SessionTimeoutHours));
                 }
                 if(publicRequest.IsSetSplitTunnel())
                 {

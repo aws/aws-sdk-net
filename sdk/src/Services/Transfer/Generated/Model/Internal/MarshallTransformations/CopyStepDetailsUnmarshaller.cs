@@ -82,6 +82,12 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
                     unmarshalledObject.OverwriteExisting = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SourceFileLocation", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SourceFileLocation = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

@@ -61,7 +61,8 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property TagInfoForResource. 
         /// <para>
-        /// The collection of tagging definitions for the resource. 
+        /// The collection of tagging definitions for the resource. If you specified a <code>Limit</code>
+        /// in your request, this might not be the full list. 
         /// </para>
         /// </summary>
         public TagInfoForResource TagInfoForResource

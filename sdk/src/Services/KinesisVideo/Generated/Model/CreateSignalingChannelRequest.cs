@@ -48,7 +48,7 @@ namespace Amazon.KinesisVideo.Model
         /// Gets and sets the property ChannelName. 
         /// <para>
         /// A name for the signaling channel that you are creating. It must be unique for each
-        /// AWS account and AWS Region.
+        /// Amazon Web Services account and Amazon Web Services Region.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]

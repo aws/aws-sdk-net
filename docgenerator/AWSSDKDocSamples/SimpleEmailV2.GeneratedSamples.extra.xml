@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+    <doc>
+        <members>
+            <member name="M:Amazon.SimpleEmailV2.IAmazonSimpleEmailServiceV2.PutDedicatedIpPoolScalingAttributes(Amazon.SimpleEmailV2.Model.PutDedicatedIpPoolScalingAttributesRequest)" />
+            <member name="M:Amazon.SimpleEmailV2.AmazonSimpleEmailServiceV2Client.PutDedicatedIpPoolScalingAttributes(Amazon.SimpleEmailV2.Model.PutDedicatedIpPoolScalingAttributesRequest)" />
+            <member name="T:Amazon.SimpleEmailV2.Model.PutDedicatedIpPoolScalingAttributesRequest" />
+            <member name="T:Amazon.SimpleEmailV2.Model.PutDedicatedIpPoolScalingAttributesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example converts a dedicated IP pool from STANDARD to MANAGED.
+                </para>
+                <code
+                    title="Used to convert a dedicated IP pool to a different scaling mode."
+                    source=".\AWSSDKDocSamples\SimpleEmailV2\SimpleEmailV2.GeneratedSamples.cs"
+                    region="put-dedicated-ip-pool-scaling-attributes-example-1683639172" />
+            </example>
+        </value>
+    </doc>
+</docs>

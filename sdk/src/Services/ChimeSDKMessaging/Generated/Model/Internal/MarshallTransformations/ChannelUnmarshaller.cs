@@ -88,6 +88,18 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
                     unmarshalledObject.CreatedTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ElasticChannelConfiguration", targetDepth))
+                {
+                    var unmarshaller = ElasticChannelConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.ElasticChannelConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ExpirationSettings", targetDepth))
+                {
+                    var unmarshaller = ExpirationSettingsUnmarshaller.Instance;
+                    unmarshalledObject.ExpirationSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("LastMessageTimestamp", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

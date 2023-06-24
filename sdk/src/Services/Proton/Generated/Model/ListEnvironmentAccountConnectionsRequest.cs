@@ -34,8 +34,8 @@ namespace Amazon.Proton.Model
     /// 
     ///  
     /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment
-    /// account connections</a> in the <i>Proton Administrator guide</i>.
+    /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-env-account-connections.html">Environment
+    /// account connections</a> in the <i>Proton User guide</i>.
     /// </para>
     /// </summary>
     public partial class ListEnvironmentAccountConnectionsRequest : AmazonProtonRequest
@@ -87,9 +87,9 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// A token to indicate the location of the next environment account connection in the
-        /// array of environment account connections, after the list of environment account connections
-        /// that was previously requested.
+        /// A token that indicates the location of the next environment account connection in
+        /// the array of environment account connections, after the list of environment account
+        /// connections that was previously requested.
         /// </para>
         /// </summary>
         public string NextToken

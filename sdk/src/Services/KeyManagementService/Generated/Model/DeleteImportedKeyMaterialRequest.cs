@@ -30,10 +30,11 @@ namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteImportedKeyMaterial operation.
-    /// Deletes key material that you previously imported. This operation makes the specified
-    /// KMS key unusable. For more information about importing key material into KMS, see
+    /// Deletes key material that was previously imported. This operation makes the specified
+    /// KMS key temporarily unusable. To restore the usability of the KMS key, reimport the
+    /// same key material. For more information about importing key material into KMS, see
     /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing
-    /// Key Material</a> in the <i>Key Management Service Developer Guide</i>. 
+    /// Key Material</a> in the <i>Key Management Service Developer Guide</i>.
     /// 
     ///  
     /// <para>
@@ -43,14 +44,9 @@ namespace Amazon.KeyManagementService.Model
     /// </para>
     ///  
     /// <para>
-    /// After you delete key material, you can use <a>ImportKeyMaterial</a> to reimport the
-    /// same key material into the KMS key.
-    /// </para>
-    ///  
-    /// <para>
     /// The KMS key that you use for this operation must be in a compatible key state. For
     /// details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-    /// state: Effect on your KMS key</a> in the <i>Key Management Service Developer Guide</i>.
+    /// states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.
     /// </para>
     ///  
     /// <para>

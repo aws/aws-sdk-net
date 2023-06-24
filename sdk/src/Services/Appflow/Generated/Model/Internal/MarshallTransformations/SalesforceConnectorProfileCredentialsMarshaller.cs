@@ -34,7 +34,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SalesforceConnectorProfileCredentials Marshaller
-    /// </summary>       
+    /// </summary>
     public class SalesforceConnectorProfileCredentialsMarshaller : IRequestMarshaller<SalesforceConnectorProfileCredentials, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,6 +55,18 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("clientCredentialsArn");
                 context.Writer.Write(requestObject.ClientCredentialsArn);
+            }
+
+            if(requestObject.IsSetJwtToken())
+            {
+                context.Writer.WritePropertyName("jwtToken");
+                context.Writer.Write(requestObject.JwtToken);
+            }
+
+            if(requestObject.IsSetOAuth2GrantType())
+            {
+                context.Writer.WritePropertyName("oAuth2GrantType");
+                context.Writer.Write(requestObject.OAuth2GrantType);
             }
 
             if(requestObject.IsSetOAuthRequest())
@@ -78,7 +90,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SalesforceConnectorProfileCredentialsMarshaller Instance = new SalesforceConnectorProfileCredentialsMarshaller();
 
     }

@@ -76,6 +76,18 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     unmarshalledObject.CompanyName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ComplianceAssociatedStandardsId", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<StringFilter, StringFilterUnmarshaller>(StringFilterUnmarshaller.Instance);
+                    unmarshalledObject.ComplianceAssociatedStandardsId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ComplianceSecurityControlId", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<StringFilter, StringFilterUnmarshaller>(StringFilterUnmarshaller.Instance);
+                    unmarshalledObject.ComplianceSecurityControlId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ComplianceStatus", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<StringFilter, StringFilterUnmarshaller>(StringFilterUnmarshaller.Instance);
@@ -524,6 +536,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new ListUnmarshaller<StringFilter, StringFilterUnmarshaller>(StringFilterUnmarshaller.Instance);
                     unmarshalledObject.ResourceType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Sample", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<BooleanFilter, BooleanFilterUnmarshaller>(BooleanFilterUnmarshaller.Instance);
+                    unmarshalledObject.Sample = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("SeverityLabel", targetDepth))

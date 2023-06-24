@@ -30,8 +30,8 @@ namespace Amazon.ForecastService.Model
 {
     /// <summary>
     /// An attribute of a schema, which defines a dataset field. A schema attribute is required
-    /// for every field in a dataset. The <a>Schema</a> object contains an array of <code>SchemaAttribute</code>
-    /// objects.
+    /// for every field in a dataset. The <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_Schema.html">Schema</a>
+    /// object contains an array of <code>SchemaAttribute</code> objects.
     /// </summary>
     public partial class SchemaAttribute
     {
@@ -61,6 +61,11 @@ namespace Amazon.ForecastService.Model
         /// Gets and sets the property AttributeType. 
         /// <para>
         /// The data type of the field.
+        /// </para>
+        ///  
+        /// <para>
+        /// For a related time series dataset, other than date, item_id, and forecast dimensions
+        /// attributes, all attributes should be of numerical type (integer/float).
         /// </para>
         /// </summary>
         public AttributeType AttributeType

@@ -34,12 +34,14 @@ namespace Amazon.Panorama
     /// AWS Panorama 
     /// <para>
     ///  <b>Overview</b> 
-    /// </para>
+    /// 
     ///  
     /// <para>
     /// This is the <i>AWS Panorama API Reference</i>. For an introduction to the service,
     /// see <a href="https://docs.aws.amazon.com/panorama/latest/dev/panorama-welcome.html">What
     /// is AWS Panorama?</a> in the <i>AWS Panorama Developer Guide</i>.
+    /// </para>
+    /// 
     /// </para>
     /// </summary>
     public partial interface IAmazonPanorama : IAmazonService, IDisposable
@@ -86,7 +88,7 @@ namespace Amazon.Panorama
 
 
         /// <summary>
-        /// Creates a job to run on one or more devices.
+        /// Creates a job to run on a device. A job can update a device's software or reboot it.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateJobForDevices service method.</param>
         /// <param name="cancellationToken">
@@ -243,6 +245,13 @@ namespace Amazon.Panorama
 
         /// <summary>
         /// Deletes a package.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// To delete a package, you need permission to call <code>s3:DeleteObject</code> in addition
+        /// to permissions for the AWS Panorama API.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeletePackage service method.</param>
         /// <param name="cancellationToken">
@@ -879,9 +888,10 @@ namespace Amazon.Panorama
 
         /// <summary>
         /// Creates a device and returns a configuration archive. The configuration archive is
-        /// a ZIP file that contains a provisioning certificate that is valid for 5 minutes. Transfer
-        /// the configuration archive to the device with the included USB storage device within
-        /// 5 minutes.
+        /// a ZIP file that contains a provisioning certificate that is valid for 5 minutes. Name
+        /// the configuration archive <code>certificates-omni_<i>device-name</i>.zip</code> and
+        /// transfer it to the device within 5 minutes. Use the included USB storage device and
+        /// connect it to the USB 3.0 port next to the HDMI output.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ProvisionDevice service method.</param>
         /// <param name="cancellationToken">
@@ -969,6 +979,36 @@ namespace Amazon.Panorama
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/RemoveApplicationInstance">REST API Reference for RemoveApplicationInstance Operation</seealso>
         Task<RemoveApplicationInstanceResponse> RemoveApplicationInstanceAsync(RemoveApplicationInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  SignalApplicationInstanceNodeInstances
+
+
+
+        /// <summary>
+        /// Signal camera nodes to stop or resume.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SignalApplicationInstanceNodeInstances service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SignalApplicationInstanceNodeInstances service method, as returned by Panorama.</returns>
+        /// <exception cref="Amazon.Panorama.Model.AccessDeniedException">
+        /// The requestor does not have permission to access the target action or resource.
+        /// </exception>
+        /// <exception cref="Amazon.Panorama.Model.InternalServerException">
+        /// An internal error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Panorama.Model.ServiceQuotaExceededException">
+        /// The request would cause a limit to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Panorama.Model.ValidationException">
+        /// The request contains an invalid parameter value.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/SignalApplicationInstanceNodeInstances">REST API Reference for SignalApplicationInstanceNodeInstances Operation</seealso>
+        Task<SignalApplicationInstanceNodeInstancesResponse> SignalApplicationInstanceNodeInstancesAsync(SignalApplicationInstanceNodeInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

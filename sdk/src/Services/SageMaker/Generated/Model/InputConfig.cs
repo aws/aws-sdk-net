@@ -43,8 +43,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property DataInputConfig. 
         /// <para>
         /// Specifies the name and shape of the expected data inputs for your trained model with
-        /// a JSON dictionary form. The data inputs are <a>InputConfig$Framework</a> specific.
-        /// 
+        /// a JSON dictionary form. The data inputs are <code>Framework</code> specific. 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -190,7 +189,7 @@ namespace Amazon.SageMaker.Model
         ///  </li> </ul> 
         /// <para>
         ///  <code>DataInputConfig</code> supports the following parameters for <code>CoreML</code>
-        /// <a>OutputConfig$TargetDevice</a> (ML Model format):
+        /// <code>TargetDevice</code> (ML Model format):
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -232,8 +231,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// CoreML <code>ClassifierConfig</code> parameters can be specified using <a>OutputConfig$CompilerOptions</a>.
-        /// CoreML converter supports Tensorflow and PyTorch models. CoreML conversion examples:
+        /// CoreML <code>ClassifierConfig</code> parameters can be specified using <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html">OutputConfig</a>
+        /// <code>CompilerOptions</code>. CoreML converter supports Tensorflow and PyTorch models.
+        /// CoreML conversion examples:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -354,14 +354,15 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property FrameworkVersion. 
         /// <para>
-        /// Specifies the framework version to use.
+        /// Specifies the framework version to use. This API field is only supported for the MXNet,
+        /// PyTorch, TensorFlow and TensorFlow Lite frameworks.
         /// </para>
         ///  
         /// <para>
-        /// This API field is only supported for PyTorch framework versions <code>1.4</code>,
-        /// <code>1.5</code>, and <code>1.6</code> for cloud instance target devices: <code>ml_c4</code>,
-        /// <code>ml_c5</code>, <code>ml_m4</code>, <code>ml_m5</code>, <code>ml_p2</code>, <code>ml_p3</code>,
-        /// and <code>ml_g4dn</code>.
+        /// For information about framework versions supported for cloud targets and edge devices,
+        /// see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-supported-cloud.html">Cloud
+        /// Supported Instance Types and Frameworks</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-supported-devices-edge-frameworks.html">Edge
+        /// Supported Frameworks</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=10)]

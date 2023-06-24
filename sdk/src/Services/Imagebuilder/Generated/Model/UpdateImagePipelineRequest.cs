@@ -50,6 +50,7 @@ namespace Amazon.Imagebuilder.Model
         private bool? _enhancedImageMetadataEnabled;
         private string _imagePipelineArn;
         private string _imageRecipeArn;
+        private ImageScanningConfiguration _imageScanningConfiguration;
         private ImageTestsConfiguration _imageTestsConfiguration;
         private string _infrastructureConfigurationArn;
         private Schedule _schedule;
@@ -114,8 +115,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property DistributionConfigurationArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the distribution configuration that will be used
-        /// to configure and distribute images updated by this image pipeline.
+        /// The Amazon Resource Name (ARN) of the distribution configuration that Image Builder
+        /// uses to configure and distribute images that this image pipeline has updated.
         /// </para>
         /// </summary>
         public string DistributionConfigurationArn
@@ -133,7 +134,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property EnhancedImageMetadataEnabled. 
         /// <para>
-        ///  Collects additional information about the image being created, including the operating
+        /// Collects additional information about the image being created, including the operating
         /// system (OS) version and package list. This information is used to enhance the overall
         /// experience of using EC2 Image Builder. Enabled by default.
         /// </para>
@@ -189,6 +190,24 @@ namespace Amazon.Imagebuilder.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ImageScanningConfiguration. 
+        /// <para>
+        /// Contains settings for vulnerability scans.
+        /// </para>
+        /// </summary>
+        public ImageScanningConfiguration ImageScanningConfiguration
+        {
+            get { return this._imageScanningConfiguration; }
+            set { this._imageScanningConfiguration = value; }
+        }
+
+        // Check to see if ImageScanningConfiguration property is set
+        internal bool IsSetImageScanningConfiguration()
+        {
+            return this._imageScanningConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ImageTestsConfiguration. 
         /// <para>
         /// The image test configuration of the image pipeline.
@@ -209,8 +228,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property InfrastructureConfigurationArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the infrastructure configuration that will be used
-        /// to build images updated by this image pipeline.
+        /// The Amazon Resource Name (ARN) of the infrastructure configuration that Image Builder
+        /// uses to build images that this image pipeline has updated.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

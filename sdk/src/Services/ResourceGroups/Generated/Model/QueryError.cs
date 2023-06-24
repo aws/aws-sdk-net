@@ -30,11 +30,11 @@ namespace Amazon.ResourceGroups.Model
 {
     /// <summary>
     /// A two-part error structure that can occur in <code>ListGroupResources</code> or <code>SearchResources</code>
-    /// operations on CloudFormation stack-based queries. The error occurs if the CloudFormation
-    /// stack on which the query is based either does not exist, or has a status that renders
-    /// the stack inactive. A <code>QueryError</code> occurrence does not necessarily mean
-    /// that AWS Resource Groups could not complete the operation, but the resulting group
-    /// might have no member resources.
+    /// operations on CloudFront stack-based queries. The error occurs if the CloudFront stack
+    /// on which the query is based either does not exist, or has a status that renders the
+    /// stack inactive. A <code>QueryError</code> occurrence does not necessarily mean that
+    /// Resource Groups could not complete the operation, but the resulting group might have
+    /// no member resources.
     /// </summary>
     public partial class QueryError
     {
@@ -44,7 +44,7 @@ namespace Amazon.ResourceGroups.Model
         /// <summary>
         /// Gets and sets the property ErrorCode. 
         /// <para>
-        /// Possible values are <code>CLOUDFORMATION_STACK_INACTIVE</code> and <code>CLOUDFORMATION_STACK_NOT_EXISTING</code>.
+        /// Specifies the error code that was raised.
         /// </para>
         /// </summary>
         public QueryErrorCode ErrorCode
@@ -63,9 +63,9 @@ namespace Amazon.ResourceGroups.Model
         /// Gets and sets the property Message. 
         /// <para>
         /// A message that explains the <code>ErrorCode</code> value. Messages might state that
-        /// the specified CloudFormation stack does not exist (or no longer exists). For <code>CLOUDFORMATION_STACK_INACTIVE</code>,
-        /// the message typically states that the CloudFormation stack has a status that is not
-        /// (or no longer) active, such as <code>CREATE_FAILED</code>.
+        /// the specified CloudFront stack does not exist (or no longer exists). For <code>CLOUDFORMATION_STACK_INACTIVE</code>,
+        /// the message typically states that the CloudFront stack has a status that is not (or
+        /// no longer) active, such as <code>CREATE_FAILED</code>.
         /// </para>
         /// </summary>
         public string Message

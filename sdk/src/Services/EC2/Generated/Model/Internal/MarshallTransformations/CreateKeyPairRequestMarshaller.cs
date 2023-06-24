@@ -58,6 +58,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             if(publicRequest != null)
             {
+                if(publicRequest.IsSetKeyFormat())
+                {
+                    request.Parameters.Add("KeyFormat", StringUtils.FromString(publicRequest.KeyFormat));
+                }
                 if(publicRequest.IsSetKeyName())
                 {
                     request.Parameters.Add("KeyName", StringUtils.FromString(publicRequest.KeyName));

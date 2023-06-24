@@ -7,18 +7,18 @@
     AddLicenseHeader();
 #>
 
-
 using System;
-
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
-
+using <#=this.Config.Namespace#>.Internal;
 
 namespace <#=this.Config.Namespace#>
 {
     /// <summary>
     /// Configuration for accessing Amazon <#=this.Config.ClassName#> service
     /// </summary>
+    [AWSSignerType("<#=Config.ServiceModel.SignatureVersion#>")]
     public partial class Amazon<#=this.Config.ClassName#>Config : ClientConfig
     {
         private static readonly string UserAgentString =
@@ -30,6 +30,7 @@ namespace <#=this.Config.Namespace#>
         /// Default constructor
         /// </summary>
         public Amazon<#=this.Config.ClassName#>Config()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(Amazon<#= this.Config.ClassName#>DefaultConfiguration.GetAllConfigurations()))
         {
 <#
             if(!string.IsNullOrEmpty(this.Config.AuthenticationServiceName))
@@ -49,6 +50,14 @@ namespace <#=this.Config.Namespace#>
 #>
             var region = FallbackRegionFactory.GetRegionEndpoint(false);
             this.RegionEndpoint = region ?? RegionEndpoint.<#=this.Config.DefaultRegion#>;
+<#
+            }
+#>
+<#
+            if (this.Config.EndpointsRuleSet != null)
+            {
+#>
+            this.EndpointProvider = new Amazon<#=this.Config.ClassName#>EndpointProvider();
 <#
             }
 #>
@@ -86,5 +95,15 @@ namespace <#=this.Config.Namespace#>
                 return _userAgent;
             }
         }
+
+<# if (this.Config.EndpointsRuleSet != null)
+       foreach(var parameter in this.Config.ServiceModel.ClientContextParameters) {
+#>
+        /// <summary>
+        /// <#=parameter.documentation#>
+        /// </summary>
+        public <#=parameter.nativeType#> <#=parameter.name#> { get; set; }
+
+<#}#>
     }
 }

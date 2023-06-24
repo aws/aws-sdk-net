@@ -1,5 +1,6 @@
 {
   "active": true,
   "synopsis": "Updated Configuration APIs for Amazon OpenSearch Service (successor to Amazon Elasticsearch Service)",
-  "generate-client-constructors": true
+  "generate-client-constructors": true,
+  "legacy-service-id": "OpenSearch"
 }

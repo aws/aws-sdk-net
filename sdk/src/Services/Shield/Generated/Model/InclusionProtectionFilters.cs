@@ -1,0 +1,103 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the shield-2016-06-02.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+namespace Amazon.Shield.Model
+{
+    /// <summary>
+    /// Narrows the set of protections that the call retrieves. You can retrieve a single
+    /// protection by providing its name or the ARN (Amazon Resource Name) of its protected
+    /// resource. You can also retrieve all protections for a specific resource type. You
+    /// can provide up to one criteria per filter type. Shield Advanced returns protections
+    /// that exactly match all of the filter criteria that you provide.
+    /// </summary>
+    public partial class InclusionProtectionFilters
+    {
+        private List<string> _protectionNames = new List<string>();
+        private List<string> _resourceArns = new List<string>();
+        private List<string> _resourceTypes = new List<string>();
+
+        /// <summary>
+        /// Gets and sets the property ProtectionNames. 
+        /// <para>
+        /// The name of the protection that you want to retrieve. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1)]
+        public List<string> ProtectionNames
+        {
+            get { return this._protectionNames; }
+            set { this._protectionNames = value; }
+        }
+
+        // Check to see if ProtectionNames property is set
+        internal bool IsSetProtectionNames()
+        {
+            return this._protectionNames != null && this._protectionNames.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceArns. 
+        /// <para>
+        /// The ARN (Amazon Resource Name) of the resource whose protection you want to retrieve.
+        /// 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1)]
+        public List<string> ResourceArns
+        {
+            get { return this._resourceArns; }
+            set { this._resourceArns = value; }
+        }
+
+        // Check to see if ResourceArns property is set
+        internal bool IsSetResourceArns()
+        {
+            return this._resourceArns != null && this._resourceArns.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceTypes. 
+        /// <para>
+        /// The type of protected resource whose protections you want to retrieve. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1)]
+        public List<string> ResourceTypes
+        {
+            get { return this._resourceTypes; }
+            set { this._resourceTypes = value; }
+        }
+
+        // Check to see if ResourceTypes property is set
+        internal bool IsSetResourceTypes()
+        {
+            return this._resourceTypes != null && this._resourceTypes.Count > 0; 
+        }
+
+    }
+}

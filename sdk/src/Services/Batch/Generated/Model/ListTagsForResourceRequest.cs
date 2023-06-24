@@ -32,7 +32,7 @@ namespace Amazon.Batch.Model
     /// Container for the parameters to the ListTagsForResource operation.
     /// Lists the tags for an Batch resource. Batch resources that support tags are compute
     /// environments, jobs, job definitions, job queues, and scheduling policies. ARNs for
-    /// child jobs of array and multi-node parallel (MNP) jobs are not supported.
+    /// child jobs of array and multi-node parallel (MNP) jobs aren't supported.
     /// </summary>
     public partial class ListTagsForResourceRequest : AmazonBatchRequest
     {
@@ -44,7 +44,7 @@ namespace Amazon.Batch.Model
         /// The Amazon Resource Name (ARN) that identifies the resource that tags are listed for.
         /// Batch resources that support tags are compute environments, jobs, job definitions,
         /// job queues, and scheduling policies. ARNs for child jobs of array and multi-node parallel
-        /// (MNP) jobs are not supported.
+        /// (MNP) jobs aren't supported.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

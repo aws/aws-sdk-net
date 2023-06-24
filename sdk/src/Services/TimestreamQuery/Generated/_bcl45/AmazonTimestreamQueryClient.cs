@@ -229,6 +229,15 @@ namespace Amazon.TimestreamQuery
         }    
 
         /// <summary>
+        /// Customize the pipeline
+        /// </summary>
+        /// <param name="pipeline"></param>
+        protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
+        {
+            pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonTimestreamQueryEndpointResolver());
+        }    
+        /// <summary>
         /// Capture metadata for the service.
         /// </summary>
         protected override IServiceMetadata ServiceMetadata
@@ -288,7 +297,7 @@ namespace Amazon.TimestreamQuery
         /// Cancels a query that has been issued. Cancellation is provided only if the query
         /// has not completed running before the cancellation request was issued. Because cancellation
         /// is an idempotent operation, subsequent cancellation requests will return a <code>CancellationMessage</code>,
-        /// indicating that the query has already been canceled. See <a href="https://docs.aws.amazon.com/Timestream/latest/developerguide/code-samples.cancel-query.html">code
+        /// indicating that the query has already been canceled. See <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/code-samples.cancel-query.html">code
         /// sample</a> for details.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelQuery service method.</param>
@@ -327,7 +336,7 @@ namespace Amazon.TimestreamQuery
         /// Cancels a query that has been issued. Cancellation is provided only if the query
         /// has not completed running before the cancellation request was issued. Because cancellation
         /// is an idempotent operation, subsequent cancellation requests will return a <code>CancellationMessage</code>,
-        /// indicating that the query has already been canceled. See <a href="https://docs.aws.amazon.com/Timestream/latest/developerguide/code-samples.cancel-query.html">code
+        /// indicating that the query has already been canceled. See <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/code-samples.cancel-query.html">code
         /// sample</a> for details.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelQuery service method.</param>
@@ -559,7 +568,7 @@ namespace Amazon.TimestreamQuery
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// You are using <a href="https://docs.aws.amazon.com/Timestream/latest/developerguide/VPCEndpoints">VPC
+        /// You are using <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/VPCEndpoints">VPC
         /// endpoints (Amazon Web Services PrivateLink) with Timestream </a> 
         /// </para>
         ///  </li> <li> 
@@ -573,7 +582,7 @@ namespace Amazon.TimestreamQuery
         ///  </li> </ul> 
         /// <para>
         /// For detailed information on how and when to use and implement DescribeEndpoints, see
-        /// <a href="https://docs.aws.amazon.com/Timestream/latest/developerguide/Using.API.html#Using-API.endpoint-discovery">The
+        /// <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/Using.API.html#Using-API.endpoint-discovery">The
         /// Endpoint Discovery Pattern</a>.
         /// </para>
         /// </summary>
@@ -613,7 +622,7 @@ namespace Amazon.TimestreamQuery
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// You are using <a href="https://docs.aws.amazon.com/Timestream/latest/developerguide/VPCEndpoints">VPC
+        /// You are using <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/VPCEndpoints">VPC
         /// endpoints (Amazon Web Services PrivateLink) with Timestream </a> 
         /// </para>
         ///  </li> <li> 
@@ -627,7 +636,7 @@ namespace Amazon.TimestreamQuery
         ///  </li> </ul> 
         /// <para>
         /// For detailed information on how and when to use and implement DescribeEndpoints, see
-        /// <a href="https://docs.aws.amazon.com/Timestream/latest/developerguide/Using.API.html#Using-API.endpoint-discovery">The
+        /// <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/Using.API.html#Using-API.endpoint-discovery">The
         /// Endpoint Discovery Pattern</a>.
         /// </para>
         /// </summary>
@@ -1061,7 +1070,7 @@ namespace Amazon.TimestreamQuery
         /// <code>Query</code> is a synchronous operation that enables you to run a query against
         /// your Amazon Timestream data. <code>Query</code> will time out after 60 seconds. You
         /// must update the default timeout in the SDK to support a timeout of 60 seconds. See
-        /// the <a href="https://docs.aws.amazon.com/Timestream/latest/developerguide/code-samples.run-query.html">code
+        /// the <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/code-samples.run-query.html">code
         /// sample</a> for details. 
         /// 
         ///  
@@ -1139,7 +1148,7 @@ namespace Amazon.TimestreamQuery
         /// <code>Query</code> is a synchronous operation that enables you to run a query against
         /// your Amazon Timestream data. <code>Query</code> will time out after 60 seconds. You
         /// must update the default timeout in the SDK to support a timeout of 60 seconds. See
-        /// the <a href="https://docs.aws.amazon.com/Timestream/latest/developerguide/code-samples.run-query.html">code
+        /// the <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/code-samples.run-query.html">code
         /// sample</a> for details. 
         /// 
         ///  

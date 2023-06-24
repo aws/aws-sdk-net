@@ -93,6 +93,12 @@ namespace Amazon.Panorama.Model.Internal.MarshallTransformations
                     response.JobId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("JobType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.JobType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

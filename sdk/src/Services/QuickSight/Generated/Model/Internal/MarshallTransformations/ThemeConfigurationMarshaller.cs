@@ -34,7 +34,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ThemeConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class ThemeConfigurationMarshaller : IRequestMarshaller<ThemeConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,6 +67,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetTypography())
+            {
+                context.Writer.WritePropertyName("Typography");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = TypographyMarshaller.Instance;
+                marshaller.Marshall(requestObject.Typography, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetUIColorPalette())
             {
                 context.Writer.WritePropertyName("UIColorPalette");
@@ -82,7 +93,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ThemeConfigurationMarshaller Instance = new ThemeConfigurationMarshaller();
 
     }

@@ -34,9 +34,9 @@ namespace Amazon.Lightsail.Model
     /// 
     ///  
     /// <para>
-    /// An origin can be a Lightsail instance or load balancer. A distribution pulls content
-    /// from an origin, caches it, and serves it to viewers via a worldwide network of edge
-    /// servers.
+    /// An origin can be a Lightsail instance, bucket, or load balancer. A distribution pulls
+    /// content from an origin, caches it, and serves it to viewers via a worldwide network
+    /// of edge servers.
     /// </para>
     /// </summary>
     public partial class Origin

@@ -30,7 +30,8 @@ namespace Amazon.MediaTailor.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteProgram operation.
-    /// Deletes a specific program on a specific channel.
+    /// Deletes a program within a channel. For information about programs, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-programs.html">Working
+    /// with programs</a> in the <i>MediaTailor User Guide</i>.
     /// </summary>
     public partial class DeleteProgramRequest : AmazonMediaTailorRequest
     {
@@ -40,7 +41,7 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property ChannelName. 
         /// <para>
-        /// The identifier for the channel you are working on.
+        /// The name of the channel.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -59,7 +60,7 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property ProgramName. 
         /// <para>
-        /// The identifier for the program you are working on.
+        /// The name of the program.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -31,7 +31,7 @@ namespace Amazon.S3Control.Model
     /// <summary>
     /// Container for the parameters to the UpdateJobPriority operation.
     /// Updates an existing S3 Batch Operations job's priority. For more information, see
-    /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">S3
+    /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/batch-ops.html">S3
     /// Batch Operations</a> in the <i>Amazon S3 User Guide</i>.
     /// 
     ///   

@@ -34,7 +34,7 @@ namespace Amazon.ConnectParticipant.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// StartPosition Marshaller
-    /// </summary>       
+    /// </summary>
     public class StartPositionMarshaller : IRequestMarshaller<StartPosition, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.ConnectParticipant.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static StartPositionMarshaller Instance = new StartPositionMarshaller();
 
     }

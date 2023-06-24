@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppSync.Model
 {
     /// <summary>
-    /// You do not have access to perform this operation on this resource.
+    /// You don't have access to perform this operation on this resource.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

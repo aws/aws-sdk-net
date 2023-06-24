@@ -43,7 +43,7 @@ namespace Amazon.AuditManager.Model
         ///  The Amazon Resource Name (ARN) of the IAM role. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=20, Max=2048)]
+        [AWSProperty(Required=true, Min=20, Max=2048)]
         public string RoleArn
         {
             get { return this._roleArn; }
@@ -77,6 +77,7 @@ namespace Amazon.AuditManager.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Required=true)]
         public RoleType RoleType
         {
             get { return this._roleType; }

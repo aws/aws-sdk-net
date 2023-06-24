@@ -39,8 +39,8 @@ namespace Amazon.AutoScaling.Model
     /// </para>
     ///  
     /// <para>
-    /// To update an Auto Scaling group, specify the name of the group and the parameter that
-    /// you want to change. Any parameters that you don't specify are not changed by this
+    /// To update an Auto Scaling group, specify the name of the group and the property that
+    /// you want to change. Any properties that you don't specify are not changed by this
     /// update request. The new settings take effect on any scaling activities after this
     /// call returns. 
     /// </para>
@@ -85,7 +85,7 @@ namespace Amazon.AutoScaling.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// To see which parameters have been set, call the <a>DescribeAutoScalingGroups</a> API.
+    /// To see which properties have been set, call the <a>DescribeAutoScalingGroups</a> API.
     /// To view the scaling policies for an Auto Scaling group, call the <a>DescribePolicies</a>
     /// API. If the group has scaling policies, you can update them by calling the <a>PutScalingPolicy</a>
     /// API.
@@ -98,6 +98,7 @@ namespace Amazon.AutoScaling.Model
         private bool? _capacityRebalance;
         private string _context;
         private int? _defaultCooldown;
+        private int? _defaultInstanceWarmup;
         private int? _desiredCapacity;
         private string _desiredCapacityType;
         private int? _healthCheckGracePeriod;
@@ -154,8 +155,9 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property CapacityRebalance. 
         /// <para>
-        /// Enables or disables Capacity Rebalancing. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-capacity-rebalancing.html">Amazon
-        /// EC2 Auto Scaling Capacity Rebalancing</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+        /// Enables or disables Capacity Rebalancing. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-capacity-rebalancing.html">Use
+        /// Capacity Rebalancing to handle Amazon EC2 Spot Interruptions</a> in the <i>Amazon
+        /// EC2 Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
         public bool CapacityRebalance
@@ -191,10 +193,12 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property DefaultCooldown. 
         /// <para>
-        /// The amount of time, in seconds, after a scaling activity completes before another
-        /// scaling activity can start. The default value is <code>300</code>. This setting applies
-        /// when using simple scaling policies, but not when using other scaling policies or scheduled
-        /// scaling. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling
+        ///  <i>Only needed if you use simple scaling policies.</i> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The amount of time, in seconds, between one scaling activity ending and another one
+        /// starting due to simple scaling policies. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling
         /// cooldowns for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
@@ -208,6 +212,46 @@ namespace Amazon.AutoScaling.Model
         internal bool IsSetDefaultCooldown()
         {
             return this._defaultCooldown.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DefaultInstanceWarmup. 
+        /// <para>
+        /// The amount of time, in seconds, until a new instance is considered to have finished
+        /// initializing and resource consumption to become stable after it enters the <code>InService</code>
+        /// state. 
+        /// </para>
+        ///  
+        /// <para>
+        /// During an instance refresh, Amazon EC2 Auto Scaling waits for the warm-up period after
+        /// it replaces an instance before it moves on to replacing the next instance. Amazon
+        /// EC2 Auto Scaling also waits for the warm-up period before aggregating the metrics
+        /// for new instances with existing instances in the Amazon CloudWatch metrics that are
+        /// used for scaling, resulting in more reliable usage data. For more information, see
+        /// <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-default-instance-warmup.html">Set
+        /// the default instance warmup for an Auto Scaling group</a> in the <i>Amazon EC2 Auto
+        /// Scaling User Guide</i>.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// To manage various warm-up settings at the group level, we recommend that you set the
+        /// default instance warmup, <i>even if it is set to 0 seconds</i>. To remove a value
+        /// that you previously set, include the property but specify <code>-1</code> for the
+        /// value. However, we strongly recommend keeping the default instance warmup enabled
+        /// by specifying a value of <code>0</code> or other nominal value.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        public int DefaultInstanceWarmup
+        {
+            get { return this._defaultInstanceWarmup.GetValueOrDefault(); }
+            set { this._defaultInstanceWarmup = value; }
+        }
+
+        // Check to see if DefaultInstanceWarmup property is set
+        internal bool IsSetDefaultInstanceWarmup()
+        {
+            return this._defaultInstanceWarmup.HasValue; 
         }
 
         /// <summary>
@@ -268,13 +312,11 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         /// The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before checking
         /// the health status of an EC2 instance that has come into service and marking it unhealthy
-        /// due to a failed health check. The default value is <code>0</code>. For more information,
-        /// see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period">Health
-        /// check grace period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
-        /// </para>
-        ///  
-        /// <para>
-        /// Conditional: Required if you are adding an <code>ELB</code> health check.
+        /// due to a failed health check. This is useful if your instances do not immediately
+        /// pass their health checks after they enter the <code>InService</code> state. For more
+        /// information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/health-check-grace-period.html">Set
+        /// the health check grace period for an Auto Scaling group</a> in the <i>Amazon EC2 Auto
+        /// Scaling User Guide</i>.
         /// </para>
         /// </summary>
         public int HealthCheckGracePeriod
@@ -292,10 +334,18 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property HealthCheckType. 
         /// <para>
-        /// The service to use for the health checks. The valid values are <code>EC2</code> and
-        /// <code>ELB</code>. If you configure an Auto Scaling group to use <code>ELB</code> health
-        /// checks, it considers the instance unhealthy if it fails either the EC2 status checks
-        /// or the load balancer health checks.
+        /// A comma-separated value string of one or more health check types.
+        /// </para>
+        ///  
+        /// <para>
+        /// The valid values are <code>EC2</code>, <code>ELB</code>, and <code>VPC_LATTICE</code>.
+        /// <code>EC2</code> is the default health check and cannot be disabled. For more information,
+        /// see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html">Health
+        /// checks for Auto Scaling instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Only specify <code>EC2</code> if you must clear a value that was previously set.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=32)]
@@ -422,8 +472,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property MixedInstancesPolicy. 
         /// <para>
-        /// An embedded object that specifies a mixed instances policy. For more information,
-        /// see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups.html">Auto
+        /// The mixed instances policy. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups.html">Auto
         /// Scaling groups with multiple instance types and purchase options</a> in the <i>Amazon
         /// EC2 Auto Scaling User Guide</i>.
         /// </para>
@@ -464,12 +513,17 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property PlacementGroup. 
         /// <para>
-        /// The name of an existing placement group into which to launch your instances, if any.
-        /// A placement group is a logical grouping of instances within a single Availability
-        /// Zone. You cannot specify multiple Availability Zones and a placement group. For more
+        /// The name of an existing placement group into which to launch your instances. For more
         /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-        /// Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+        /// groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// A <i>cluster</i> placement group is a logical grouping of instances within a single
+        /// Availability Zone. You cannot specify multiple Availability Zones and a cluster placement
+        /// group. 
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
         public string PlacementGroup
@@ -511,9 +565,16 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         /// A policy or a list of policies that are used to select the instances to terminate.
         /// The policies are executed in the order that you list them. For more information, see
-        /// <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html">Controlling
-        /// which Auto Scaling instances terminate during scale in</a> in the <i>Amazon EC2 Auto
-        /// Scaling User Guide</i>.
+        /// <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-termination-policies.html">Work
+        /// with Amazon EC2 Auto Scaling termination policies</a> in the <i>Amazon EC2 Auto Scaling
+        /// User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values: <code>Default</code> | <code>AllocationStrategy</code> | <code>ClosestToNextInstanceHour</code>
+        /// | <code>NewestInstance</code> | <code>OldestInstance</code> | <code>OldestLaunchConfiguration</code>
+        /// | <code>OldestLaunchTemplate</code> | <code>arn:aws:lambda:region:account-id:function:my-function:my-alias</code>
+        /// 
         /// </para>
         /// </summary>
         public List<string> TerminationPolicies
@@ -533,7 +594,7 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         /// A comma-separated list of subnet IDs for a virtual private cloud (VPC). If you specify
         /// <code>VPCZoneIdentifier</code> with <code>AvailabilityZones</code>, the subnets that
-        /// you specify for this parameter must reside in those Availability Zones.
+        /// you specify must reside in those Availability Zones.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2047)]

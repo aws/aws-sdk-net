@@ -34,7 +34,7 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// StatefulRuleGroupReference Marshaller
-    /// </summary>       
+    /// </summary>
     public class StatefulRuleGroupReferenceMarshaller : IRequestMarshaller<StatefulRuleGroupReference, JsonMarshallerContext> 
     {
         /// <summary>
@@ -45,6 +45,17 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(StatefulRuleGroupReference requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetOverride())
+            {
+                context.Writer.WritePropertyName("Override");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = StatefulRuleGroupOverrideMarshaller.Instance;
+                marshaller.Marshall(requestObject.Override, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetPriority())
             {
                 context.Writer.WritePropertyName("Priority");
@@ -61,7 +72,7 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static StatefulRuleGroupReferenceMarshaller Instance = new StatefulRuleGroupReferenceMarshaller();
 
     }

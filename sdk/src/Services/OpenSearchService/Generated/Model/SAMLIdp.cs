@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// The SAML identity povider's information.
+    /// The SAML identity povider information.
     /// </summary>
     public partial class SAMLIdp
     {
@@ -39,7 +39,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property EntityId. 
         /// <para>
-        /// The unique entity ID of the application in SAML identity provider.
+        /// The unique entity ID of the application in the SAML identity provider.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=8, Max=512)]
@@ -58,7 +58,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property MetadataContent. 
         /// <para>
-        /// The metadata of the SAML application in XML format.
+        /// The metadata of the SAML application, in XML format.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1048576)]

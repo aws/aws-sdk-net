@@ -40,8 +40,12 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property LaunchTemplateId. 
         /// <para>
-        /// The ID of the launch template. You must specify either the launch template ID or launch
-        /// template name in the request.
+        /// The ID of the launch template.
+        /// </para>
+        ///  
+        /// <para>
+        /// You must specify either the <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>,
+        /// but not both.
         /// </para>
         /// </summary>
         public string LaunchTemplateId
@@ -59,8 +63,12 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property LaunchTemplateName. 
         /// <para>
-        /// The name of the launch template. You must specify either the launch template ID or
-        /// launch template name in the request.
+        /// The name of the launch template.
+        /// </para>
+        ///  
+        /// <para>
+        /// You must specify either the <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>,
+        /// but not both.
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=128)]

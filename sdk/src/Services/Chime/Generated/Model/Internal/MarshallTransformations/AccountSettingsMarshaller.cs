@@ -34,7 +34,7 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AccountSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class AccountSettingsMarshaller : IRequestMarshaller<AccountSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AccountSettingsMarshaller Instance = new AccountSettingsMarshaller();
 
     }

@@ -56,7 +56,9 @@ namespace Amazon.NimbleStudio.Model
         private List<string> _ec2SecurityGroupIds = new List<string>();
         private List<StudioComponentInitializationScript> _initializationScripts = new List<StudioComponentInitializationScript>();
         private string _name;
+        private string _runtimeRoleArn;
         private List<ScriptParameterKeyValue> _scriptParameters = new List<ScriptParameterKeyValue>();
+        private string _secureInitializationRoleArn;
         private StudioComponentState _state;
         private StudioComponentStatusCode _statusCode;
         private string _statusMessage;
@@ -70,7 +72,8 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The ARN of the resource.
+        /// The Amazon Resource Name (ARN) that is assigned to a studio resource and uniquely
+        /// identifies it. ARNs are unique across all Regions.
         /// </para>
         /// </summary>
         public string Arn
@@ -106,7 +109,7 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The Unix epoch timestamp in seconds for when the resource was created.
+        /// The ISO timestamp in seconds for when the resource was created.
         /// </para>
         /// </summary>
         public DateTime CreatedAt
@@ -145,7 +148,7 @@ namespace Amazon.NimbleStudio.Model
         /// A human-readable description for the studio component resource.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=256)]
+        [AWSProperty(Sensitive=true, Min=0, Max=256)]
         public string Description
         {
             get { return this._description; }
@@ -164,7 +167,7 @@ namespace Amazon.NimbleStudio.Model
         /// The EC2 security groups that control access to the studio component.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=30)]
+        [AWSProperty(Min=0, Max=30)]
         public List<string> Ec2SecurityGroupIds
         {
             get { return this._ec2SecurityGroupIds; }
@@ -201,7 +204,7 @@ namespace Amazon.NimbleStudio.Model
         /// A friendly name for the studio component resource.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=64)]
+        [AWSProperty(Sensitive=true, Min=0, Max=64)]
         public string Name
         {
             get { return this._name; }
@@ -215,12 +218,32 @@ namespace Amazon.NimbleStudio.Model
         }
 
         /// <summary>
+        /// Gets and sets the property RuntimeRoleArn. 
+        /// <para>
+        /// An IAM role attached to a Studio Component that gives the studio component access
+        /// to Amazon Web Services resources at anytime while the instance is running. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=2048)]
+        public string RuntimeRoleArn
+        {
+            get { return this._runtimeRoleArn; }
+            set { this._runtimeRoleArn = value; }
+        }
+
+        // Check to see if RuntimeRoleArn property is set
+        internal bool IsSetRuntimeRoleArn()
+        {
+            return this._runtimeRoleArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ScriptParameters. 
         /// <para>
         /// Parameters for the studio component scripts.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=30)]
+        [AWSProperty(Sensitive=true, Min=0, Max=30)]
         public List<ScriptParameterKeyValue> ScriptParameters
         {
             get { return this._scriptParameters; }
@@ -231,6 +254,27 @@ namespace Amazon.NimbleStudio.Model
         internal bool IsSetScriptParameters()
         {
             return this._scriptParameters != null && this._scriptParameters.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SecureInitializationRoleArn. 
+        /// <para>
+        /// An IAM role attached to Studio Component when the system initialization script runs
+        /// which give the studio component access to Amazon Web Services resources when the system
+        /// initialization script runs.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=2048)]
+        public string SecureInitializationRoleArn
+        {
+            get { return this._secureInitializationRoleArn; }
+            set { this._secureInitializationRoleArn = value; }
+        }
+
+        // Check to see if SecureInitializationRoleArn property is set
+        internal bool IsSetSecureInitializationRoleArn()
+        {
+            return this._secureInitializationRoleArn != null;
         }
 
         /// <summary>
@@ -327,7 +371,7 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// A collection of labels, in the form of key:value pairs, that apply to this resource.
+        /// A collection of labels, in the form of key-value pairs, that apply to this resource.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Tags
@@ -363,7 +407,7 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property UpdatedAt. 
         /// <para>
-        /// The Unix epoch timestamp in seconds for when the resource was updated.
+        /// The ISO timestamp in seconds for when the resource was updated.
         /// </para>
         /// </summary>
         public DateTime UpdatedAt

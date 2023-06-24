@@ -88,6 +88,12 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
                     unmarshalledObject.OrganizationConfigRuleName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("OrganizationCustomPolicyRuleMetadata", targetDepth))
+                {
+                    var unmarshaller = OrganizationCustomPolicyRuleMetadataNoPolicyUnmarshaller.Instance;
+                    unmarshalledObject.OrganizationCustomPolicyRuleMetadata = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("OrganizationCustomRuleMetadata", targetDepth))
                 {
                     var unmarshaller = OrganizationCustomRuleMetadataUnmarshaller.Instance;

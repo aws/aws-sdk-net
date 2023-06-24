@@ -34,7 +34,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// MqttContext Marshaller
-    /// </summary>       
+    /// </summary>
     public class MqttContextMarshaller : IRequestMarshaller<MqttContext, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static MqttContextMarshaller Instance = new MqttContextMarshaller();
 
     }

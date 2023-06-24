@@ -34,7 +34,7 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ExportingConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class ExportingConfigMarshaller : IRequestMarshaller<ExportingConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ExportingConfigMarshaller Instance = new ExportingConfigMarshaller();
 
     }

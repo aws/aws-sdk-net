@@ -79,7 +79,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property CreatedBy. 
         /// <para>
-        ///  The IAM user or role that performed the action. 
+        ///  The user or role that performed the action. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]

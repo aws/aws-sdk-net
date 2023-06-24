@@ -34,7 +34,7 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// MessageTemplateType Marshaller
-    /// </summary>       
+    /// </summary>
     public class MessageTemplateTypeMarshaller : IRequestMarshaller<MessageTemplateType, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static MessageTemplateTypeMarshaller Instance = new MessageTemplateTypeMarshaller();
 
     }

@@ -48,7 +48,7 @@ namespace Amazon.RDS.Model
     /// <para>
     /// An Amazon Aurora DB cluster automatically fails over to an Aurora Replica, if one
     /// exists, when the primary DB instance fails. A Multi-AZ DB cluster automatically fails
-    /// over to a readbable standby DB instance when the primary DB instance fails.
+    /// over to a readable standby DB instance when the primary DB instance fails.
     /// </para>
     ///  
     /// <para>
@@ -60,19 +60,13 @@ namespace Amazon.RDS.Model
     ///  
     /// <para>
     /// For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
-    /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> 
+    /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.
     /// </para>
     ///  
     /// <para>
     /// For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
-    /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS
-    /// User Guide.</i> 
+    /// Multi-AZ DB cluster deployments</a> in the <i>Amazon RDS User Guide</i>.
     /// </para>
-    ///  <note> 
-    /// <para>
-    /// The Multi-AZ DB clusters feature is in preview and is subject to change.
-    /// </para>
-    ///  </note>
     /// </summary>
     public partial class FailoverDBClusterRequest : AmazonRDSRequest
     {

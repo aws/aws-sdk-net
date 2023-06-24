@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Athena.Model
 {
     /// <summary>
-    /// The Athena engine version for running queries.
+    /// The Athena engine version for running queries, or the PySpark engine version for running
+    /// sessions.
     /// </summary>
     public partial class EngineVersion
     {
@@ -64,7 +65,7 @@ namespace Amazon.Athena.Model
         /// Gets and sets the property SelectedEngineVersion. 
         /// <para>
         /// The engine version requested by the user. Possible values are determined by the output
-        /// of <code>ListEngineVersions</code>, including Auto. The default is Auto.
+        /// of <code>ListEngineVersions</code>, including AUTO. The default is AUTO.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

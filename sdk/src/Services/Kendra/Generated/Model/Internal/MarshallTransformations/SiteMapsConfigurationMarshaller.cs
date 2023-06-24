@@ -34,7 +34,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SiteMapsConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class SiteMapsConfigurationMarshaller : IRequestMarshaller<SiteMapsConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SiteMapsConfigurationMarshaller Instance = new SiteMapsConfigurationMarshaller();
 
     }

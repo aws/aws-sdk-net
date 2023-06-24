@@ -1,0 +1,32 @@
+{
+  "version":"2.0",
+  "metadata":{
+    "apiVersion":"2022-08-24",
+    "endpointPrefix":"ep2",
+    "jsonVersion":"1.1",
+    "protocol":"json",
+    "serviceFullName":"Endpoints 2.0 s3 host-label",
+    "serviceId":"Ep2-s3-host-label",
+    "signatureVersion":"v4",
+    "targetPrefix":"",
+    "uid":"ep2-s3-host-label-2022-08-24"
+  },
+  "operations":{
+    "MyOperation":{
+        "name":"MyOperation",
+        "input":{"shape":"MyShape"},
+        "output":{"shape":"MyShape"}
+    }
+  },
+  "shapes":{
+    "MyShape":{
+        "type":"structure",
+        "members":{
+          "Name":{
+            "shape":"String"
+          }
+        }
+    },
+    "String":{"type":"string"}
+  }
+}

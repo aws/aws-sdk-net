@@ -18,6 +18,7 @@ using Amazon.S3.Model;
 using Amazon.S3.Util;
 using AWSSDK_DotNet.IntegrationTests.Utils;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Collections.Generic;
 using System.Net;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
@@ -33,7 +34,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         [TestInitialize]
         public void Init()
         {
-            bucketName = S3TestUtils.CreateBucketWithWait(Client);
+            bucketName = S3TestUtils.CreateBucketWithWait(Client, true);
         }
 
         [TestCleanup]

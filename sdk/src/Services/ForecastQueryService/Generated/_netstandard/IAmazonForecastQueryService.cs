@@ -92,6 +92,39 @@ namespace Amazon.ForecastQueryService
         Task<QueryForecastResponse> QueryForecastAsync(QueryForecastRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
+                
+        #region  QueryWhatIfForecast
+
+
+
+        /// <summary>
+        /// Retrieves a what-if forecast.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the QueryWhatIfForecast service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the QueryWhatIfForecast service method, as returned by ForecastQueryService.</returns>
+        /// <exception cref="Amazon.ForecastQueryService.Model.InvalidInputException">
+        /// The value is invalid or is too long.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastQueryService.Model.InvalidNextTokenException">
+        /// The token is not valid. Tokens expire after 24 hours.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastQueryService.Model.LimitExceededException">
+        /// The limit on the number of requests per second has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastQueryService.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastQueryService.Model.ResourceNotFoundException">
+        /// We can't find that resource. Check the information that you've provided and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecastquery-2018-06-26/QueryWhatIfForecast">REST API Reference for QueryWhatIfForecast Operation</seealso>
+        Task<QueryWhatIfForecastResponse> QueryWhatIfForecastAsync(QueryWhatIfForecastRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
         
     }
 }

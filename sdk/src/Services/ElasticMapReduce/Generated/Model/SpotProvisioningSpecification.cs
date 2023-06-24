@@ -34,9 +34,16 @@ namespace Amazon.ElasticMapReduce.Model
     /// 
     ///  <note> 
     /// <para>
-    /// The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and
+    /// The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and
     /// later, excluding 5.0.x versions. Spot Instance allocation strategy is available in
-    /// Amazon EMR version 5.12.1 and later.
+    /// Amazon EMR releases 5.12.1 and later.
+    /// </para>
+    ///  </note> <note> 
+    /// <para>
+    /// Spot Instances with a defined duration (also known as Spot blocks) are no longer available
+    /// to new customers from July 1, 2021. For customers who have previously used the feature,
+    /// we will continue to support Spot Instances with a defined duration until December
+    /// 31, 2022. 
     /// </para>
     ///  </note>
     /// </summary>
@@ -78,6 +85,14 @@ namespace Amazon.ElasticMapReduce.Model
         /// termination and provides a Spot Instance termination notice, which gives the instance
         /// a two-minute warning before it terminates. 
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Spot Instances with a defined duration (also known as Spot blocks) are no longer available
+        /// to new customers from July 1, 2021. For customers who have previously used the feature,
+        /// we will continue to support Spot Instances with a defined duration until December
+        /// 31, 2022. 
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=0)]
         public int BlockDurationMinutes
@@ -119,7 +134,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property TimeoutDurationMinutes. 
         /// <para>
-        /// The spot provisioning timeout period in minutes. If Spot Instances are not provisioned
+        /// The Spot provisioning timeout period in minutes. If Spot Instances are not provisioned
         /// within this time period, the <code>TimeOutAction</code> is taken. Minimum value is
         /// 5 and maximum value is 1440. The timeout applies only during initial provisioning,
         /// when the cluster is first created.

@@ -34,7 +34,7 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Grant Marshaller
-    /// </summary>       
+    /// </summary>
     public class GrantMarshaller : IRequestMarshaller<Grant, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static GrantMarshaller Instance = new GrantMarshaller();
 
     }

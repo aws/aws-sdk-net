@@ -34,7 +34,7 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AdBreak Marshaller
-    /// </summary>       
+    /// </summary>
     public class AdBreakMarshaller : IRequestMarshaller<AdBreak, JsonMarshallerContext> 
     {
         /// <summary>
@@ -79,11 +79,22 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetTimeSignalMessage())
+            {
+                context.Writer.WritePropertyName("TimeSignalMessage");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = TimeSignalMessageMarshaller.Instance;
+                marshaller.Marshall(requestObject.TimeSignalMessage, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AdBreakMarshaller Instance = new AdBreakMarshaller();
 
     }

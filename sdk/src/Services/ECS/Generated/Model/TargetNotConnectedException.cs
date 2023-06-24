@@ -29,8 +29,27 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// The target container isn't properly configured with the execute command agent or the
-    /// container is no longer active or running.
+    /// The execute command cannot run. This error can be caused by any of the following configuration
+    /// issues:
+    /// 
+    ///  <ul> <li> 
+    /// <para>
+    /// Incorrect IAM permissions
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The SSM agent is not installed or is not running
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  There is an interface Amazon VPC endpoint for Amazon ECS, but there is not one for
+    /// Systems Manager Session Manager
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// For information about how to troubleshoot the issues, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-exec.html">Troubleshooting
+    /// issues with ECS Exec</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+    /// </para>
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

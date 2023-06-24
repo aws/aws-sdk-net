@@ -58,8 +58,8 @@ namespace Amazon.RDS.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.html#custom-cev.delete">
-    /// Deleting a CEV</a> in the <i>Amazon RDS User Guide</i>.
+    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.html#custom-cev.delete">Deleting
+    /// a CEV</a> in the <i>Amazon RDS User Guide</i>.
     /// </para>
     /// </summary>
     public partial class DeleteCustomDBEngineVersionRequest : AmazonRDSRequest
@@ -70,7 +70,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Engine. 
         /// <para>
-        /// The database engine. The only supported engine is <code>custom-oracle-ee</code>.
+        /// The database engine. The only supported engines are <code>custom-oracle-ee</code>
+        /// and <code>custom-oracle-ee-cdb</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=35)]

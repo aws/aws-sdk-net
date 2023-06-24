@@ -34,7 +34,7 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// InferenceInputNameConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class InferenceInputNameConfigurationMarshaller : IRequestMarshaller<InferenceInputNameConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static InferenceInputNameConfigurationMarshaller Instance = new InferenceInputNameConfigurationMarshaller();
 
     }

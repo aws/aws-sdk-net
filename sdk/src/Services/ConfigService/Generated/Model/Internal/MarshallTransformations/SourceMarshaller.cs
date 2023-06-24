@@ -34,7 +34,7 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Source Marshaller
-    /// </summary>       
+    /// </summary>
     public class SourceMarshaller : IRequestMarshaller<Source, JsonMarshallerContext> 
     {
         /// <summary>
@@ -45,6 +45,17 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Source requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetCustomPolicyDetails())
+            {
+                context.Writer.WritePropertyName("CustomPolicyDetails");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = CustomPolicyDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.CustomPolicyDetails, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetOwner())
             {
                 context.Writer.WritePropertyName("Owner");
@@ -77,7 +88,7 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SourceMarshaller Instance = new SourceMarshaller();
 
     }

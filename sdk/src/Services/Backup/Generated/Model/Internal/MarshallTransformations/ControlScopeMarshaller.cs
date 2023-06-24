@@ -34,7 +34,7 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ControlScope Marshaller
-    /// </summary>       
+    /// </summary>
     public class ControlScopeMarshaller : IRequestMarshaller<ControlScope, JsonMarshallerContext> 
     {
         /// <summary>
@@ -85,7 +85,7 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ControlScopeMarshaller Instance = new ControlScopeMarshaller();
 
     }

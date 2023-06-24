@@ -33,7 +33,28 @@ namespace Amazon.NetworkManager.Model
     /// </summary>
     public partial class VpcOptions
     {
+        private bool? _applianceModeSupport;
         private bool? _ipv6Support;
+
+        /// <summary>
+        /// Gets and sets the property ApplianceModeSupport. 
+        /// <para>
+        /// Indicates whether appliance mode is supported. If enabled, traffic flow between a
+        /// source and destination use the same Availability Zone for the VPC attachment for the
+        /// lifetime of that flow. The default value is <code>false</code>.
+        /// </para>
+        /// </summary>
+        public bool ApplianceModeSupport
+        {
+            get { return this._applianceModeSupport.GetValueOrDefault(); }
+            set { this._applianceModeSupport = value; }
+        }
+
+        // Check to see if ApplianceModeSupport property is set
+        internal bool IsSetApplianceModeSupport()
+        {
+            return this._applianceModeSupport.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property Ipv6Support. 

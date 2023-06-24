@@ -34,7 +34,7 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AudioArtifactsConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class AudioArtifactsConfigurationMarshaller : IRequestMarshaller<AudioArtifactsConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AudioArtifactsConfigurationMarshaller Instance = new AudioArtifactsConfigurationMarshaller();
 
     }

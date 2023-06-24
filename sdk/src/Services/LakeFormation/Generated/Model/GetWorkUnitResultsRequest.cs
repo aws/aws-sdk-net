@@ -85,7 +85,7 @@ namespace Amazon.LakeFormation.Model
         /// A work token used to query the execution service. Token output from <code>GetWorkUnits</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1)]
         public string WorkUnitToken
         {
             get { return this._workUnitToken; }

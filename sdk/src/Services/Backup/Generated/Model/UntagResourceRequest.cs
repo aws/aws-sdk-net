@@ -64,7 +64,7 @@ namespace Amazon.Backup.Model
         /// A list of keys to identify which key-value tags to remove from a resource.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public List<string> TagKeyList
         {
             get { return this._tagKeyList; }

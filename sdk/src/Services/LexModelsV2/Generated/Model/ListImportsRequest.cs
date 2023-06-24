@@ -30,13 +30,15 @@ namespace Amazon.LexModelsV2.Model
 {
     /// <summary>
     /// Container for the parameters to the ListImports operation.
-    /// Lists the imports for a bot or bot locale. Imports are kept in the list for 7 days.
+    /// Lists the imports for a bot, bot locale, or custom vocabulary. Imports are kept in
+    /// the list for 7 days.
     /// </summary>
     public partial class ListImportsRequest : AmazonLexModelsV2Request
     {
         private string _botId;
         private string _botVersion;
         private List<ImportFilter> _filters = new List<ImportFilter>();
+        private string _localeId;
         private int? _maxResults;
         private string _nextToken;
         private ImportSortBy _sortBy;
@@ -101,6 +103,26 @@ namespace Amazon.LexModelsV2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property LocaleId. 
+        /// <para>
+        /// Specifies the locale that should be present in the list. If you don't specify a resource
+        /// type in the <code>filters</code> parameter, the list contains both bot locales and
+        /// custom vocabularies.
+        /// </para>
+        /// </summary>
+        public string LocaleId
+        {
+            get { return this._localeId; }
+            set { this._localeId = value; }
+        }
+
+        // Check to see if LocaleId property is set
+        internal bool IsSetLocaleId()
+        {
+            return this._localeId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// The maximum number of imports to return in each page of results. If there are fewer
@@ -125,8 +147,14 @@ namespace Amazon.LexModelsV2.Model
         /// <para>
         /// If the response from the <code>ListImports</code> operation contains more results
         /// than specified in the <code>maxResults</code> parameter, a token is returned in the
-        /// response. Use that token in the <code>nextToken</code> parameter to return the next
-        /// page of results.
+        /// response.
+        /// </para>
+        ///  
+        /// <para>
+        /// Use the returned token in the <code>nextToken</code> parameter of a <code>ListImports</code>
+        /// request to return the next page of results. For a complete set of results, call the
+        /// <code>ListImports</code> operation until the <code>nextToken</code> returned in the
+        /// response is null.
         /// </para>
         /// </summary>
         public string NextToken

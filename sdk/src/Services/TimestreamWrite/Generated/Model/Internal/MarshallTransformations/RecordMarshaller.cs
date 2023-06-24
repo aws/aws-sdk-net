@@ -34,7 +34,7 @@ namespace Amazon.TimestreamWrite.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Record Marshaller
-    /// </summary>       
+    /// </summary>
     public class RecordMarshaller : IRequestMarshaller<Record, JsonMarshallerContext> 
     {
         /// <summary>
@@ -117,7 +117,7 @@ namespace Amazon.TimestreamWrite.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RecordMarshaller Instance = new RecordMarshaller();
 
     }

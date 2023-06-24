@@ -34,7 +34,7 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// EndpointConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class EndpointConfigurationMarshaller : IRequestMarshaller<EndpointConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static EndpointConfigurationMarshaller Instance = new EndpointConfigurationMarshaller();
 
     }

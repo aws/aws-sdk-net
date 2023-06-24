@@ -45,7 +45,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Instantiates S3Origin with the parameterized properties
         /// </summary>
-        /// <param name="domainName">The DNS name of the Amazon S3 origin. </param>
+        /// <param name="domainName">The DNS name of the Amazon S3 origin.</param>
         public S3Origin(string domainName)
         {
             _domainName = domainName;
@@ -54,7 +54,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Instantiates S3Origin with the parameterized properties
         /// </summary>
-        /// <param name="domainName">The DNS name of the Amazon S3 origin. </param>
+        /// <param name="domainName">The DNS name of the Amazon S3 origin.</param>
         /// <param name="originAccessIdentity">The CloudFront origin access identity to associate with the distribution. Use an origin access identity to configure the distribution so that end users can only access objects in an Amazon S3 bucket through CloudFront. If you want end users to be able to access objects using either the CloudFront URL or the Amazon S3 URL, specify an empty <code>OriginAccessIdentity</code> element. To delete the origin access identity from an existing distribution, update the distribution configuration and include an empty <code>OriginAccessIdentity</code> element. To replace the origin access identity, update the distribution configuration and specify the new origin access identity. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html">Using an Origin Access Identity to Restrict Access to Your Amazon S3 Content</a> in the <i> Amazon CloudFront Developer Guide</i>.</param>
         public S3Origin(string domainName, string originAccessIdentity)
         {
@@ -65,7 +65,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property DomainName. 
         /// <para>
-        /// The DNS name of the Amazon S3 origin. 
+        /// The DNS name of the Amazon S3 origin.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

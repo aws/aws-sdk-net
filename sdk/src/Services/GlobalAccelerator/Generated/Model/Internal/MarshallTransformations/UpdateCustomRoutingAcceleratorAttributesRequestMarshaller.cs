@@ -58,7 +58,7 @@ namespace Amazon.GlobalAccelerator.Model.Internal.MarshallTransformations
             string target = "GlobalAccelerator_V20180706.UpdateCustomRoutingAcceleratorAttributes";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-08-08";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-08-08";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -91,7 +91,6 @@ namespace Amazon.GlobalAccelerator.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.FlowLogsS3Prefix);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

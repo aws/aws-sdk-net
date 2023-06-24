@@ -35,7 +35,7 @@ namespace Amazon.ServiceDiscovery.Model
     ///  <ul> <li> 
     /// <para>
     /// For public and private DNS namespaces, one of the following combinations of DNS records
-    /// in Amazon Route 53:
+    /// in Amazon Route 53:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -129,7 +129,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// <summary>
         /// Gets and sets the property DnsConfig. 
         /// <para>
-        /// A complex type that contains information about the Amazon Route 53 records that you
+        /// A complex type that contains information about the Amazon Route 53 records that you
         /// want Cloud Map to create when you register an instance. 
         /// </para>
         /// </summary>
@@ -149,8 +149,8 @@ namespace Amazon.ServiceDiscovery.Model
         /// Gets and sets the property HealthCheckConfig. 
         /// <para>
         ///  <i>Public DNS and HTTP namespaces only.</i> A complex type that contains settings
-        /// for an optional Route 53 health check. If you specify settings for a health check,
-        /// Cloud Map associates the health check with all the Route 53 DNS records that you specify
+        /// for an optional Route 53 health check. If you specify settings for a health check,
+        /// Cloud Map associates the health check with all the Route 53 DNS records that you specify
         /// in <code>DnsConfig</code>.
         /// </para>
         ///  <important> 
@@ -209,7 +209,12 @@ namespace Amazon.ServiceDiscovery.Model
         /// <para>
         /// The name that you want to assign to the service.
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        /// Do not include sensitive information in the name if the namespace is discoverable
+        /// by public DNS queries.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// If you want Cloud Map to create an <code>SRV</code> record when you register an instance
         /// and you're using a system that requires a specific <code>SRV</code> format, such as

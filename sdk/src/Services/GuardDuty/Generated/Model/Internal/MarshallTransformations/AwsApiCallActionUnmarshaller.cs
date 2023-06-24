@@ -64,6 +64,12 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("affectedResources", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.AffectedResources = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("api", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -88,6 +94,12 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                     unmarshalledObject.ErrorCode = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("remoteAccountDetails", targetDepth))
+                {
+                    var unmarshaller = RemoteAccountDetailsUnmarshaller.Instance;
+                    unmarshalledObject.RemoteAccountDetails = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("remoteIpDetails", targetDepth))
                 {
                     var unmarshaller = RemoteIpDetailsUnmarshaller.Instance;
@@ -98,6 +110,12 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ServiceName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("userAgent", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.UserAgent = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

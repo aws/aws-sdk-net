@@ -53,6 +53,11 @@ namespace Amazon.ComputeOptimizer.Model
     /// <para>
     /// Lambda functions in an account that are <code>NotOptimized</code>, or <code>Optimized</code>.
     /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Amazon ECS services in an account that are <code>Underprovisioned</code>, <code>Overprovisioned</code>,
+    /// or <code>Optimized</code>.
+    /// </para>
     ///  </li> </ul>
     /// </summary>
     public partial class GetRecommendationSummariesRequest : AmazonComputeOptimizerRequest
@@ -99,6 +104,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// value.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1000)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

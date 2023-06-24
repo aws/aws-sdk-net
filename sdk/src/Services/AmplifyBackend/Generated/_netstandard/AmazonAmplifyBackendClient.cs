@@ -233,6 +233,15 @@ namespace Amazon.AmplifyBackend
         } 
 
         /// <summary>
+        /// Customizes the runtime pipeline.
+        /// </summary>
+        /// <param name="pipeline">Runtime pipeline for the current client.</param>
+        protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
+        {
+            pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonAmplifyBackendEndpointResolver());
+        }
+        /// <summary>
         /// Capture metadata for the service.
         /// </summary>
         protected override IServiceMetadata ServiceMetadata
@@ -964,7 +973,7 @@ namespace Amazon.AmplifyBackend
 
 
         /// <summary>
-        /// Generates a model schema for existing backend API resource.
+        /// Gets a model introspection schema for an existing backend API resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBackendAPIModels service method.</param>
         /// <param name="cancellationToken">

@@ -34,7 +34,7 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AggregateResourceIdentifier Marshaller
-    /// </summary>       
+    /// </summary>
     public class AggregateResourceIdentifierMarshaller : IRequestMarshaller<AggregateResourceIdentifier, JsonMarshallerContext> 
     {
         /// <summary>
@@ -79,7 +79,7 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AggregateResourceIdentifierMarshaller Instance = new AggregateResourceIdentifierMarshaller();
 
     }

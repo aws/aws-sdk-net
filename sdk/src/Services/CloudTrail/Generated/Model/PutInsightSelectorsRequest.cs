@@ -33,7 +33,16 @@ namespace Amazon.CloudTrail.Model
     /// Lets you enable Insights event logging by specifying the Insights selectors that you
     /// want to enable on an existing trail. You also use <code>PutInsightSelectors</code>
     /// to turn off Insights event logging, by passing an empty list of insight types. The
-    /// valid Insights event type in this release is <code>ApiCallRateInsight</code>.
+    /// valid Insights event types in this release are <code>ApiErrorRateInsight</code> and
+    /// <code>ApiCallRateInsight</code>.
+    /// 
+    ///  
+    /// <para>
+    /// To log CloudTrail Insights events on API call volume, the trail must log <code>write</code>
+    /// management events. To log CloudTrail Insights events on API error rate, the trail
+    /// must log <code>read</code> or <code>write</code> management events. You can call <code>GetEventSelectors</code>
+    /// on a trail to check whether the trail logs management events.
+    /// </para>
     /// </summary>
     public partial class PutInsightSelectorsRequest : AmazonCloudTrailRequest
     {
@@ -43,8 +52,18 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property InsightSelectors. 
         /// <para>
-        /// A JSON string that contains the Insights types that you want to log on a trail. The
-        /// valid Insights type in this release is <code>ApiCallRateInsight</code>.
+        /// A JSON string that contains the insight types you want to log on a trail. <code>ApiCallRateInsight</code>
+        /// and <code>ApiErrorRateInsight</code> are valid Insight types.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <code>ApiCallRateInsight</code> Insights type analyzes write-only management API
+        /// calls that are aggregated per minute against a baseline API call volume.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <code>ApiErrorRateInsight</code> Insights type analyzes management API calls that
+        /// result in error codes. The error is shown if the API call is unsuccessful.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

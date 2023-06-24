@@ -30,21 +30,44 @@ namespace Amazon.Athena.Model
 {
     /// <summary>
     /// The configuration of the workgroup, which includes the location in Amazon S3 where
-    /// query results are stored, the encryption option, if any, used for query results, whether
-    /// the Amazon CloudWatch Metrics are enabled for the workgroup and whether workgroup
-    /// settings override query settings, and the data usage limits for the amount of data
-    /// scanned per query or per workgroup. The workgroup settings override is specified in
-    /// <code>EnforceWorkGroupConfiguration</code> (true/false) in the <code>WorkGroupConfiguration</code>.
-    /// See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.
+    /// query and calculation results are stored, the encryption option, if any, used for
+    /// query and calculation results, whether the Amazon CloudWatch Metrics are enabled for
+    /// the workgroup and whether workgroup settings override query settings, and the data
+    /// usage limits for the amount of data scanned per query or per workgroup. The workgroup
+    /// settings override is specified in <code>EnforceWorkGroupConfiguration</code> (true/false)
+    /// in the <code>WorkGroupConfiguration</code>. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.
     /// </summary>
     public partial class WorkGroupConfiguration
     {
+        private string _additionalConfiguration;
         private long? _bytesScannedCutoffPerQuery;
+        private CustomerContentEncryptionConfiguration _customerContentEncryptionConfiguration;
+        private bool? _enableMinimumEncryptionConfiguration;
         private bool? _enforceWorkGroupConfiguration;
         private EngineVersion _engineVersion;
+        private string _executionRole;
         private bool? _publishCloudWatchMetricsEnabled;
         private bool? _requesterPaysEnabled;
         private ResultConfiguration _resultConfiguration;
+
+        /// <summary>
+        /// Gets and sets the property AdditionalConfiguration. 
+        /// <para>
+        /// Specifies a user defined JSON string that is passed to the notebook engine.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=128)]
+        public string AdditionalConfiguration
+        {
+            get { return this._additionalConfiguration; }
+            set { this._additionalConfiguration = value; }
+        }
+
+        // Check to see if AdditionalConfiguration property is set
+        internal bool IsSetAdditionalConfiguration()
+        {
+            return this._additionalConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property BytesScannedCutoffPerQuery. 
@@ -64,6 +87,51 @@ namespace Amazon.Athena.Model
         internal bool IsSetBytesScannedCutoffPerQuery()
         {
             return this._bytesScannedCutoffPerQuery.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomerContentEncryptionConfiguration. 
+        /// <para>
+        /// Specifies the KMS key that is used to encrypt the user's data stores in Athena. This
+        /// setting does not apply to Athena SQL workgroups.
+        /// </para>
+        /// </summary>
+        public CustomerContentEncryptionConfiguration CustomerContentEncryptionConfiguration
+        {
+            get { return this._customerContentEncryptionConfiguration; }
+            set { this._customerContentEncryptionConfiguration = value; }
+        }
+
+        // Check to see if CustomerContentEncryptionConfiguration property is set
+        internal bool IsSetCustomerContentEncryptionConfiguration()
+        {
+            return this._customerContentEncryptionConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnableMinimumEncryptionConfiguration. 
+        /// <para>
+        /// Enforces a minimal level of encryption for the workgroup for query and calculation
+        /// results that are written to Amazon S3. When enabled, workgroup users can set encryption
+        /// only to the minimum level set by the administrator or higher when they submit queries.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <code>EnforceWorkGroupConfiguration</code> setting takes precedence over the <code>EnableMinimumEncryptionConfiguration</code>
+        /// flag. This means that if <code>EnforceWorkGroupConfiguration</code> is true, the <code>EnableMinimumEncryptionConfiguration</code>
+        /// flag is ignored, and the workgroup configuration for encryption is used.
+        /// </para>
+        /// </summary>
+        public bool EnableMinimumEncryptionConfiguration
+        {
+            get { return this._enableMinimumEncryptionConfiguration.GetValueOrDefault(); }
+            set { this._enableMinimumEncryptionConfiguration = value; }
+        }
+
+        // Check to see if EnableMinimumEncryptionConfiguration property is set
+        internal bool IsSetEnableMinimumEncryptionConfiguration()
+        {
+            return this._enableMinimumEncryptionConfiguration.HasValue; 
         }
 
         /// <summary>
@@ -103,6 +171,25 @@ namespace Amazon.Athena.Model
         internal bool IsSetEngineVersion()
         {
             return this._engineVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExecutionRole. 
+        /// <para>
+        /// Role used in a session for accessing the user's resources.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string ExecutionRole
+        {
+            get { return this._executionRole; }
+            set { this._executionRole = value; }
+        }
+
+        // Check to see if ExecutionRole property is set
+        internal bool IsSetExecutionRole()
+        {
+            return this._executionRole != null;
         }
 
         /// <summary>
@@ -150,12 +237,13 @@ namespace Amazon.Athena.Model
         /// Gets and sets the property ResultConfiguration. 
         /// <para>
         /// The configuration for the workgroup, which includes the location in Amazon S3 where
-        /// query results are stored and the encryption option, if any, used for query results.
-        /// To run the query, you must specify the query results location using one of the ways:
-        /// either in the workgroup using this setting, or for individual queries (client-side),
-        /// using <a>ResultConfiguration$OutputLocation</a>. If none of them is set, Athena issues
-        /// an error that no output location is provided. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Query
-        /// Results</a>.
+        /// query and calculation results are stored and the encryption option, if any, used for
+        /// query and calculation results. To run the query, you must specify the query results
+        /// location using one of the ways: either in the workgroup using this setting, or for
+        /// individual queries (client-side), using <a>ResultConfiguration$OutputLocation</a>.
+        /// If none of them is set, Athena issues an error that no output location is provided.
+        /// For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Working
+        /// with query results, recent queries, and output files</a>.
         /// </para>
         /// </summary>
         public ResultConfiguration ResultConfiguration

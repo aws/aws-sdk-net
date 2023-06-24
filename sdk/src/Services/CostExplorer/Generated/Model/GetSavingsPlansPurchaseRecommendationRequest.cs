@@ -30,7 +30,9 @@ namespace Amazon.CostExplorer.Model
 {
     /// <summary>
     /// Container for the parameters to the GetSavingsPlansPurchaseRecommendation operation.
-    /// Retrieves your request parameters, Savings Plan Recommendations Summary and Details.
+    /// Retrieves the Savings Plans recommendations for your account. First use <code>StartSavingsPlansPurchaseRecommendationGeneration</code>
+    /// to generate a new set of recommendations, and then use <code>GetSavingsPlansPurchaseRecommendation</code>
+    /// to retrieve them.
     /// </summary>
     public partial class GetSavingsPlansPurchaseRecommendationRequest : AmazonCostExplorerRequest
     {
@@ -70,15 +72,15 @@ namespace Amazon.CostExplorer.Model
         /// You can filter your recommendations by Account ID with the <code>LINKED_ACCOUNT</code>
         /// dimension. To filter your recommendations by Account ID, specify <code>Key</code>
         /// as <code>LINKED_ACCOUNT</code> and <code>Value</code> as the comma-separated Acount
-        /// ID(s) for which you want to see Savings Plans purchase recommendations.
+        /// ID(s) that you want to see Savings Plans purchase recommendations for.
         /// </para>
         ///  
         /// <para>
-        /// For GetSavingsPlansPurchaseRecommendation, the <code>Filter</code> does not include
+        /// For GetSavingsPlansPurchaseRecommendation, the <code>Filter</code> doesn't include
         /// <code>CostCategories</code> or <code>Tags</code>. It only includes <code>Dimensions</code>.
         /// With <code>Dimensions</code>, <code>Key</code> must be <code>LINKED_ACCOUNT</code>
         /// and <code>Value</code> can be a single Account ID or multiple comma-separated Account
-        /// IDs for which you want to see Savings Plans Purchase Recommendations. <code>AND</code>
+        /// IDs that you want to see Savings Plans Purchase Recommendations for. <code>AND</code>
         /// and <code>OR</code> operators are not supported.
         /// </para>
         /// </summary>
@@ -97,7 +99,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property LookbackPeriodInDays. 
         /// <para>
-        /// The lookback period used to generate the recommendation.
+        /// The lookback period that's used to generate the recommendation.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -155,7 +157,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property PaymentOption. 
         /// <para>
-        /// The payment option used to generate these recommendations.
+        /// The payment option that's used to generate these recommendations.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -174,7 +176,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property SavingsPlansType. 
         /// <para>
-        /// The Savings Plans recommendation type requested.
+        /// The Savings Plans recommendation type that's requested.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -193,7 +195,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property TermInYears. 
         /// <para>
-        /// The savings plan recommendation term used to generate these recommendations.
+        /// The savings plan recommendation term that's used to generate these recommendations.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

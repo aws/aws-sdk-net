@@ -34,7 +34,7 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// BatchListIndex Marshaller
-    /// </summary>       
+    /// </summary>
     public class BatchListIndexMarshaller : IRequestMarshaller<BatchListIndex, JsonMarshallerContext> 
     {
         /// <summary>
@@ -88,7 +88,7 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static BatchListIndexMarshaller Instance = new BatchListIndexMarshaller();
 
     }

@@ -58,7 +58,7 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
             string target = "Comprehend_20171127.StartEntitiesDetectionJob";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-11-27";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-11-27";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -76,7 +76,7 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
                 else if(!(publicRequest.IsSetClientRequestToken()))
                 {
                     context.Writer.WritePropertyName("ClientRequestToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());                                                
+                    context.Writer.Write(Guid.NewGuid().ToString());
                 }
                 if(publicRequest.IsSetDataAccessRoleArn())
                 {
@@ -88,6 +88,12 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("EntityRecognizerArn");
                     context.Writer.Write(publicRequest.EntityRecognizerArn);
+                }
+
+                if(publicRequest.IsSetFlywheelArn())
+                {
+                    context.Writer.WritePropertyName("FlywheelArn");
+                    context.Writer.Write(publicRequest.FlywheelArn);
                 }
 
                 if(publicRequest.IsSetInputDataConfig())
@@ -157,7 +163,6 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

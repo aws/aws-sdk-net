@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Proton.Model
 {
     /// <summary>
-    /// The version of a service template detail data.
+    /// Detailed data of an Proton service template version resource.
     /// </summary>
     public partial class ServiceTemplateVersion
     {
@@ -44,6 +44,7 @@ namespace Amazon.Proton.Model
         private string _schema;
         private TemplateVersionStatus _status;
         private string _statusMessage;
+        private List<string> _supportedComponentSources = new List<string>();
         private string _templateName;
 
         /// <summary>
@@ -110,7 +111,7 @@ namespace Amazon.Proton.Model
         /// A description of the version of a service template.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=500)]
+        [AWSProperty(Sensitive=true, Min=0, Max=500)]
         public string Description
         {
             get { return this._description; }
@@ -205,7 +206,7 @@ namespace Amazon.Proton.Model
         /// The schema of the version of a service template.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=51200)]
+        [AWSProperty(Sensitive=true, Min=1, Max=51200)]
         public string Schema
         {
             get { return this._schema; }
@@ -243,6 +244,7 @@ namespace Amazon.Proton.Model
         /// A service template version status message.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string StatusMessage
         {
             get { return this._statusMessage; }
@@ -253,6 +255,30 @@ namespace Amazon.Proton.Model
         internal bool IsSetStatusMessage()
         {
             return this._statusMessage != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SupportedComponentSources. 
+        /// <para>
+        /// An array of supported component sources. Components with supported sources can be
+        /// attached to service instances based on this service template version.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+        /// components</a> in the <i>Proton User Guide</i>.
+        /// </para>
+        /// </summary>
+        public List<string> SupportedComponentSources
+        {
+            get { return this._supportedComponentSources; }
+            set { this._supportedComponentSources = value; }
+        }
+
+        // Check to see if SupportedComponentSources property is set
+        internal bool IsSetSupportedComponentSources()
+        {
+            return this._supportedComponentSources != null && this._supportedComponentSources.Count > 0; 
         }
 
         /// <summary>

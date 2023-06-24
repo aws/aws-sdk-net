@@ -34,8 +34,28 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class LaunchTemplateCpuOptionsRequest
     {
+        private AmdSevSnpSpecification _amdSevSnp;
         private int? _coreCount;
         private int? _threadsPerCore;
+
+        /// <summary>
+        /// Gets and sets the property AmdSevSnp. 
+        /// <para>
+        /// Indicates whether to enable the instance for AMD SEV-SNP. AMD SEV-SNP is supported
+        /// with M6a, R6a, and C6a instance types only.
+        /// </para>
+        /// </summary>
+        public AmdSevSnpSpecification AmdSevSnp
+        {
+            get { return this._amdSevSnp; }
+            set { this._amdSevSnp = value; }
+        }
+
+        // Check to see if AmdSevSnp property is set
+        internal bool IsSetAmdSevSnp()
+        {
+            return this._amdSevSnp != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CoreCount. 
@@ -59,7 +79,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property ThreadsPerCore. 
         /// <para>
         /// The number of threads per CPU core. To disable multithreading for the instance, specify
-        /// a value of 1. Otherwise, specify the default value of 2.
+        /// a value of <code>1</code>. Otherwise, specify the default value of <code>2</code>.
         /// </para>
         /// </summary>
         public int ThreadsPerCore

@@ -34,7 +34,7 @@ namespace Amazon.MTurk.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// NotificationSpecification Marshaller
-    /// </summary>       
+    /// </summary>
     public class NotificationSpecificationMarshaller : IRequestMarshaller<NotificationSpecification, JsonMarshallerContext> 
     {
         /// <summary>
@@ -78,7 +78,7 @@ namespace Amazon.MTurk.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static NotificationSpecificationMarshaller Instance = new NotificationSpecificationMarshaller();
 
     }

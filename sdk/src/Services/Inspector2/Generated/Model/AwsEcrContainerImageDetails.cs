@@ -156,7 +156,7 @@ namespace Amazon.Inspector2.Model
         /// <summary>
         /// Gets and sets the property Registry. 
         /// <para>
-        /// The registry the Amazon ECR container image belongs to.
+        /// The registry for the Amazon ECR container image.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]

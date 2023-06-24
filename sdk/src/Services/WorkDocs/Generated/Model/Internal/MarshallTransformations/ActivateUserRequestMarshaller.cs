@@ -56,7 +56,7 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.WorkDocs");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-05-01";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-05-01";
             request.HttpMethod = "POST";
 
             if (!publicRequest.IsSetUserId())
@@ -64,8 +64,10 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
             request.AddPathResource("{UserId}", StringUtils.FromString(publicRequest.UserId));
             request.ResourcePath = "/api/v1/users/{UserId}/activation";
         
-            if(publicRequest.IsSetAuthenticationToken())
+            if (publicRequest.IsSetAuthenticationToken()) 
+            {
                 request.Headers["Authentication"] = publicRequest.AuthenticationToken;
+            }
 
             return request;
         }

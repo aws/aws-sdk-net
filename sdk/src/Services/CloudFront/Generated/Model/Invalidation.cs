@@ -46,7 +46,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property CreateTime. 
         /// <para>
-        /// The date and time the invalidation request was first made. 
+        /// The date and time the invalidation request was first made.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -84,7 +84,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property InvalidationBatch. 
         /// <para>
-        /// The current invalidation information for the batch request. 
+        /// The current invalidation information for the batch request.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

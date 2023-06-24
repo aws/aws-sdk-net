@@ -5,7 +5,17 @@
       "limit_key": "MaxResults",
       "output_token": "NextToken"
     },
+    "GetCurrentUserData": {
+      "input_token": "NextToken",
+      "limit_key": "MaxResults",
+      "output_token": "NextToken"
+    },
     "GetMetricData": {
+      "input_token": "NextToken",
+      "limit_key": "MaxResults",
+      "output_token": "NextToken"
+    },
+    "GetMetricDataV2": {
       "input_token": "NextToken",
       "limit_key": "MaxResults",
       "output_token": "NextToken"
@@ -28,6 +38,11 @@
       "output_token": "NextToken",
       "result_key": "LexBots"
     },
+    "ListContactEvaluations": {
+      "input_token": "NextToken",
+      "output_token": "NextToken",
+      "result_key": "EvaluationSummaryList"
+    },
     "ListContactFlowModules": {
       "input_token": "NextToken",
       "limit_key": "MaxResults",
@@ -44,6 +59,24 @@
       "input_token": "NextToken",
       "output_token": "NextToken",
       "result_key": "ReferenceSummaryList"
+    },
+    "ListDefaultVocabularies": {
+      "input_token": "NextToken",
+      "limit_key": "MaxResults",
+      "output_token": "NextToken",
+      "result_key": "DefaultVocabularyList"
+    },
+    "ListEvaluationFormVersions": {
+      "input_token": "NextToken",
+      "limit_key": "MaxResults",
+      "output_token": "NextToken",
+      "result_key": "EvaluationFormVersionSummaryList"
+    },
+    "ListEvaluationForms": {
+      "input_token": "NextToken",
+      "limit_key": "MaxResults",
+      "output_token": "NextToken",
+      "result_key": "EvaluationFormSummaryList"
     },
     "ListHoursOfOperations": {
       "input_token": "NextToken",
@@ -93,6 +126,12 @@
       "output_token": "NextToken",
       "result_key": "PhoneNumberSummaryList"
     },
+    "ListPhoneNumbersV2": {
+      "input_token": "NextToken",
+      "limit_key": "MaxResults",
+      "output_token": "NextToken",
+      "result_key": "ListPhoneNumbersSummaryList"
+    },
     "ListPrompts": {
       "input_token": "NextToken",
       "limit_key": "MaxResults",
@@ -129,6 +168,12 @@
       "output_token": "NextToken",
       "result_key": "RoutingProfileSummaryList"
     },
+    "ListRules": {
+      "input_token": "NextToken",
+      "limit_key": "MaxResults",
+      "output_token": "NextToken",
+      "result_key": "RuleSummaryList"
+    },
     "ListSecurityKeys": {
       "input_token": "NextToken",
       "limit_key": "MaxResults",
@@ -147,6 +192,18 @@
       "output_token": "NextToken",
       "result_key": "SecurityProfileSummaryList"
     },
+    "ListTaskTemplates": {
+      "input_token": "NextToken",
+      "limit_key": "MaxResults",
+      "output_token": "NextToken",
+      "result_key": "TaskTemplates"
+    },
+    "ListTrafficDistributionGroups": {
+      "input_token": "NextToken",
+      "limit_key": "MaxResults",
+      "output_token": "NextToken",
+      "result_key": "TrafficDistributionGroupSummaryList"
+    },
     "ListUseCases": {
       "input_token": "NextToken",
       "limit_key": "MaxResults",
@@ -164,6 +221,81 @@
       "limit_key": "MaxResults",
       "output_token": "NextToken",
       "result_key": "UserSummaryList"
+    },
+    "SearchAvailablePhoneNumbers": {
+      "input_token": "NextToken",
+      "limit_key": "MaxResults",
+      "output_token": "NextToken",
+      "result_key": "AvailableNumbersList"
+    },
+    "SearchHoursOfOperations": {
+      "input_token": "NextToken",
+      "limit_key": "MaxResults",
+      "non_aggregate_keys": [
+        "ApproximateTotalCount"
+      ],
+      "output_token": "NextToken",
+      "result_key": "HoursOfOperations"
+    },
+    "SearchPrompts": {
+      "input_token": "NextToken",
+      "limit_key": "MaxResults",
+      "non_aggregate_keys": [
+        "ApproximateTotalCount"
+      ],
+      "output_token": "NextToken",
+      "result_key": "Prompts"
+    },
+    "SearchQueues": {
+      "input_token": "NextToken",
+      "limit_key": "MaxResults",
+      "non_aggregate_keys": [
+        "ApproximateTotalCount"
+      ],
+      "output_token": "NextToken",
+      "result_key": "Queues"
+    },
+    "SearchQuickConnects": {
+      "input_token": "NextToken",
+      "limit_key": "MaxResults",
+      "non_aggregate_keys": [
+        "ApproximateTotalCount"
+      ],
+      "output_token": "NextToken",
+      "result_key": "QuickConnects"
+    },
+    "SearchRoutingProfiles": {
+      "input_token": "NextToken",
+      "limit_key": "MaxResults",
+      "non_aggregate_keys": [
+        "ApproximateTotalCount"
+      ],
+      "output_token": "NextToken",
+      "result_key": "RoutingProfiles"
+    },
+    "SearchSecurityProfiles": {
+      "input_token": "NextToken",
+      "limit_key": "MaxResults",
+      "non_aggregate_keys": [
+        "ApproximateTotalCount"
+      ],
+      "output_token": "NextToken",
+      "result_key": "SecurityProfiles"
+    },
+    "SearchUsers": {
+      "input_token": "NextToken",
+      "limit_key": "MaxResults",
+      "non_aggregate_keys": [
+        "ApproximateTotalCount"
+      ],
+      "output_token": "NextToken",
+      "result_key": "Users"
+    },
+    "SearchVocabularies": {
+      "input_token": "NextToken",
+      "limit_key": "MaxResults",
+      "output_token": "NextToken",
+      "result_key": "VocabularySummaryList"
     }
   }
 }

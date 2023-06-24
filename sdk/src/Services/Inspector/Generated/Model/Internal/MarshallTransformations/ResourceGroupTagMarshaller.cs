@@ -34,7 +34,7 @@ namespace Amazon.Inspector.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ResourceGroupTag Marshaller
-    /// </summary>       
+    /// </summary>
     public class ResourceGroupTagMarshaller : IRequestMarshaller<ResourceGroupTag, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Inspector.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ResourceGroupTagMarshaller Instance = new ResourceGroupTagMarshaller();
 
     }

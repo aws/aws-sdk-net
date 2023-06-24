@@ -58,7 +58,7 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
             string target = "Route53Domains_v20140515.UpdateDomainContact";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2014-05-15";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2014-05-15";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -74,6 +74,17 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
 
                     var marshaller = ContactDetailMarshaller.Instance;
                     marshaller.Marshall(publicRequest.AdminContact, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetConsent())
+                {
+                    context.Writer.WritePropertyName("Consent");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ConsentMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Consent, context);
 
                     context.Writer.WriteObjectEnd();
                 }
@@ -106,7 +117,6 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

@@ -34,7 +34,7 @@ namespace Amazon.LookoutforVision.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// InputS3Object Marshaller
-    /// </summary>       
+    /// </summary>
     public class InputS3ObjectMarshaller : IRequestMarshaller<InputS3Object, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.LookoutforVision.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static InputS3ObjectMarshaller Instance = new InputS3ObjectMarshaller();
 
     }

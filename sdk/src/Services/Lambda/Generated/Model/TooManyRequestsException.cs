@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lambda.Model
 {
     /// <summary>
-    /// The request throughput limit was exceeded.
+    /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+    /// quotas</a>.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

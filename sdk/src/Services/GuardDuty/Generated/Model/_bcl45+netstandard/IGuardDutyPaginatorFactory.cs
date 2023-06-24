@@ -26,9 +26,24 @@ namespace Amazon.GuardDuty.Model
     {
 
         /// <summary>
+        /// Paginator for DescribeMalwareScans operation
+        ///</summary>
+        IDescribeMalwareScansPaginator DescribeMalwareScans(DescribeMalwareScansRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeOrganizationConfiguration operation
+        ///</summary>
+        IDescribeOrganizationConfigurationPaginator DescribeOrganizationConfiguration(DescribeOrganizationConfigurationRequest request);
+
+        /// <summary>
         /// Paginator for GetUsageStatistics operation
         ///</summary>
         IGetUsageStatisticsPaginator GetUsageStatistics(GetUsageStatisticsRequest request);
+
+        /// <summary>
+        /// Paginator for ListCoverage operation
+        ///</summary>
+        IListCoveragePaginator ListCoverage(ListCoverageRequest request);
 
         /// <summary>
         /// Paginator for ListDetectors operation

@@ -70,6 +70,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     unmarshalledObject.CatalogTargets = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DeltaTargets", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<DeltaTarget, DeltaTargetUnmarshaller>(DeltaTargetUnmarshaller.Instance);
+                    unmarshalledObject.DeltaTargets = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DynamoDBTargets", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<DynamoDBTarget, DynamoDBTargetUnmarshaller>(DynamoDBTargetUnmarshaller.Instance);

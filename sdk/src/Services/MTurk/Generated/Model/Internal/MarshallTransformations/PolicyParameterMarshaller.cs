@@ -34,7 +34,7 @@ namespace Amazon.MTurk.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// PolicyParameter Marshaller
-    /// </summary>       
+    /// </summary>
     public class PolicyParameterMarshaller : IRequestMarshaller<PolicyParameter, JsonMarshallerContext> 
     {
         /// <summary>
@@ -82,7 +82,7 @@ namespace Amazon.MTurk.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static PolicyParameterMarshaller Instance = new PolicyParameterMarshaller();
 
     }

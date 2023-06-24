@@ -35,10 +35,13 @@ namespace Amazon.CustomerProfiles.Model
     {
         private DateTime? _createdAt;
         private string _domainName;
+        private bool? _isUnstructured;
         private DateTime? _lastUpdatedAt;
         private string _objectTypeName;
+        private Dictionary<string, string> _objectTypeNames = new Dictionary<string, string>();
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private string _uri;
+        private string _workflowId;
 
         /// <summary>
         /// Gets and sets the property CreatedAt. 
@@ -79,6 +82,25 @@ namespace Amazon.CustomerProfiles.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IsUnstructured. 
+        /// <para>
+        /// Boolean that shows if the Flow that's associated with the Integration is created in
+        /// Amazon Appflow, or with ObjectTypeName equals _unstructured via API/CLI in flowDefinition.
+        /// </para>
+        /// </summary>
+        public bool IsUnstructured
+        {
+            get { return this._isUnstructured.GetValueOrDefault(); }
+            set { this._isUnstructured = value; }
+        }
+
+        // Check to see if IsUnstructured property is set
+        internal bool IsSetIsUnstructured()
+        {
+            return this._isUnstructured.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property LastUpdatedAt. 
         /// <para>
         /// The timestamp of when the domain was most recently edited.
@@ -103,7 +125,7 @@ namespace Amazon.CustomerProfiles.Model
         /// The name of the profile object type.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=255)]
+        [AWSProperty(Min=1, Max=255)]
         public string ObjectTypeName
         {
             get { return this._objectTypeName; }
@@ -114,6 +136,28 @@ namespace Amazon.CustomerProfiles.Model
         internal bool IsSetObjectTypeName()
         {
             return this._objectTypeName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ObjectTypeNames. 
+        /// <para>
+        /// A map in which each key is an event type from an external application such as Segment
+        /// or Shopify, and each value is an <code>ObjectTypeName</code> (template) used to ingest
+        /// the event. It supports the following event types: <code>SegmentIdentify</code>, <code>ShopifyCreateCustomers</code>,
+        /// <code>ShopifyUpdateCustomers</code>, <code>ShopifyCreateDraftOrders</code>, <code>ShopifyUpdateDraftOrders</code>,
+        /// <code>ShopifyCreateOrders</code>, and <code>ShopifyUpdatedOrders</code>.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> ObjectTypeNames
+        {
+            get { return this._objectTypeNames; }
+            set { this._objectTypeNames = value; }
+        }
+
+        // Check to see if ObjectTypeNames property is set
+        internal bool IsSetObjectTypeNames()
+        {
+            return this._objectTypeNames != null && this._objectTypeNames.Count > 0; 
         }
 
         /// <summary>
@@ -152,6 +196,25 @@ namespace Amazon.CustomerProfiles.Model
         internal bool IsSetUri()
         {
             return this._uri != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WorkflowId. 
+        /// <para>
+        /// Unique identifier for the workflow.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string WorkflowId
+        {
+            get { return this._workflowId; }
+            set { this._workflowId = value; }
+        }
+
+        // Check to see if WorkflowId property is set
+        internal bool IsSetWorkflowId()
+        {
+            return this._workflowId != null;
         }
 
     }

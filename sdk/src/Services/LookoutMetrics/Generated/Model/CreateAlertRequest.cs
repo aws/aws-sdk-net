@@ -36,6 +36,7 @@ namespace Amazon.LookoutMetrics.Model
     {
         private Action _action;
         private string _alertDescription;
+        private AlertFilters _alertFilters;
         private string _alertName;
         private int? _alertSensitivityThreshold;
         private string _anomalyDetectorArn;
@@ -80,6 +81,24 @@ namespace Amazon.LookoutMetrics.Model
         }
 
         /// <summary>
+        /// Gets and sets the property AlertFilters. 
+        /// <para>
+        /// The configuration of the alert filters, containing MetricList and DimensionFilterList.
+        /// </para>
+        /// </summary>
+        public AlertFilters AlertFilters
+        {
+            get { return this._alertFilters; }
+            set { this._alertFilters = value; }
+        }
+
+        // Check to see if AlertFilters property is set
+        internal bool IsSetAlertFilters()
+        {
+            return this._alertFilters != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property AlertName. 
         /// <para>
         /// The name of the alert.
@@ -104,7 +123,7 @@ namespace Amazon.LookoutMetrics.Model
         /// An integer from 0 to 100 specifying the alert sensitivity threshold.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=100)]
+        [AWSProperty(Min=0, Max=100)]
         public int AlertSensitivityThreshold
         {
             get { return this._alertSensitivityThreshold.GetValueOrDefault(); }

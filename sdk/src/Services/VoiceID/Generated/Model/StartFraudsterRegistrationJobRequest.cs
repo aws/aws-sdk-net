@@ -45,8 +45,10 @@ namespace Amazon.VoiceID.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// The idempotency token for starting a new fraudster registration job. If not provided,
-        /// Amazon Web Services SDK populates this field.
+        /// A unique, case-sensitive identifier that you provide to ensure the idempotency of
+        /// the request. If not provided, the Amazon Web Services SDK populates this field. For
+        /// more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
+        /// retries safe with idempotent APIs</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -88,7 +90,7 @@ namespace Amazon.VoiceID.Model
         /// <summary>
         /// Gets and sets the property DomainId. 
         /// <para>
-        /// The identifier of the domain containing the fraudster registration job and in which
+        /// The identifier of the domain that contains the fraudster registration job and in which
         /// the fraudsters are registered.
         /// </para>
         /// </summary>
@@ -131,7 +133,7 @@ namespace Amazon.VoiceID.Model
         /// The name of the new fraudster registration job.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=256)]
+        [AWSProperty(Sensitive=true, Min=1, Max=256)]
         public string JobName
         {
             get { return this._jobName; }
@@ -148,7 +150,7 @@ namespace Amazon.VoiceID.Model
         /// Gets and sets the property OutputDataConfig. 
         /// <para>
         /// The output data config containing the S3 location where Voice ID writes the job output
-        /// file; you must also include a KMS Key ID to encrypt the file.
+        /// file; you must also include a KMS key ID to encrypt the file.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -169,7 +171,7 @@ namespace Amazon.VoiceID.Model
         /// <para>
         /// The registration config containing details such as the action to take when a duplicate
         /// fraudster is detected, and the similarity threshold to use for detecting a duplicate
-        /// fraudster.
+        /// fraudster. 
         /// </para>
         /// </summary>
         public RegistrationConfig RegistrationConfig

@@ -38,7 +38,9 @@ namespace Amazon.ResourceGroups.Model
         /// <summary>
         /// Gets and sets the property Group. 
         /// <para>
-        /// A full description of the resource group.
+        /// A structure that contains the metadata details for the specified resource group. Use
+        /// <a>GetGroupQuery</a> and <a>GetGroupConfiguration</a> to get those additional details
+        /// of the resource group.
         /// </para>
         /// </summary>
         public Group Group

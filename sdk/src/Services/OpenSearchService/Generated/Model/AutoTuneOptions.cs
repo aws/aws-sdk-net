@@ -29,19 +29,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// The Auto-Tune options: the Auto-Tune desired state for the domain, rollback state
-    /// when disabling Auto-Tune options and list of maintenance schedules.
+    /// Auto-Tune settings when updating a domain. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html">Auto-Tune
+    /// for Amazon OpenSearch Service</a>.
     /// </summary>
     public partial class AutoTuneOptions
     {
         private AutoTuneDesiredState _desiredState;
         private List<AutoTuneMaintenanceSchedule> _maintenanceSchedules = new List<AutoTuneMaintenanceSchedule>();
         private RollbackOnDisable _rollbackOnDisable;
+        private bool? _useOffPeakWindow;
 
         /// <summary>
         /// Gets and sets the property DesiredState. 
         /// <para>
-        /// The Auto-Tune desired state. Valid values are ENABLED and DISABLED.
+        /// Whether Auto-Tune is enabled or disabled.
         /// </para>
         /// </summary>
         public AutoTuneDesiredState DesiredState
@@ -59,9 +60,12 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property MaintenanceSchedules. 
         /// <para>
-        /// A list of maintenance schedules. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html"
-        /// target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more information.
-        /// 
+        /// DEPRECATED. Use <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/off-peak.html">off-peak
+        /// window</a> instead.
+        /// </para>
+        ///  
+        /// <para>
+        /// A list of maintenance schedules during which Auto-Tune can deploy changes.
         /// </para>
         /// </summary>
         [AWSProperty(Max=100)]
@@ -80,8 +84,10 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property RollbackOnDisable. 
         /// <para>
-        /// The rollback state while disabling Auto-Tune for the domain. Valid values are NO_ROLLBACK
-        /// and DEFAULT_ROLLBACK. 
+        /// When disabling Auto-Tune, specify <code>NO_ROLLBACK</code> to retain all prior Auto-Tune
+        /// settings or <code>DEFAULT_ROLLBACK</code> to revert to the OpenSearch Service defaults.
+        /// If you specify <code>DEFAULT_ROLLBACK</code>, you must include a <code>MaintenanceSchedule</code>
+        /// in the request. Otherwise, OpenSearch Service is unable to perform the rollback.
         /// </para>
         /// </summary>
         public RollbackOnDisable RollbackOnDisable
@@ -94,6 +100,26 @@ namespace Amazon.OpenSearchService.Model
         internal bool IsSetRollbackOnDisable()
         {
             return this._rollbackOnDisable != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UseOffPeakWindow. 
+        /// <para>
+        /// Whether to use the domain's <a href="https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_OffPeakWindow.html">off-peak
+        /// window</a> to deploy configuration changes on the domain rather than a maintenance
+        /// schedule.
+        /// </para>
+        /// </summary>
+        public bool UseOffPeakWindow
+        {
+            get { return this._useOffPeakWindow.GetValueOrDefault(); }
+            set { this._useOffPeakWindow = value; }
+        }
+
+        // Check to see if UseOffPeakWindow property is set
+        internal bool IsSetUseOffPeakWindow()
+        {
+            return this._useOffPeakWindow.HasValue; 
         }
 
     }

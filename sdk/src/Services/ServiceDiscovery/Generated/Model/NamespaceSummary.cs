@@ -122,7 +122,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// Gets and sets the property Name. 
         /// <para>
         /// The name of the namespace. When you create a namespace, Cloud Map automatically creates
-        /// a Route 53 hosted zone that has the same name as the namespace.
+        /// a Route 53 hosted zone that has the same name as the namespace.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]

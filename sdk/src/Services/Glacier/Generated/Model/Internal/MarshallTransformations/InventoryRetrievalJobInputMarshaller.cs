@@ -34,7 +34,7 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// InventoryRetrievalJobInput Marshaller
-    /// </summary>       
+    /// </summary>
     public class InventoryRetrievalJobInputMarshaller : IRequestMarshaller<InventoryRetrievalJobInput, JsonMarshallerContext> 
     {
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static InventoryRetrievalJobInputMarshaller Instance = new InventoryRetrievalJobInputMarshaller();
 
     }

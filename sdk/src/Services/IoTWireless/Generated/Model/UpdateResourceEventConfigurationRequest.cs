@@ -34,16 +34,37 @@ namespace Amazon.IoTWireless.Model
     /// </summary>
     public partial class UpdateResourceEventConfigurationRequest : AmazonIoTWirelessRequest
     {
+        private ConnectionStatusEventConfiguration _connectionStatus;
         private DeviceRegistrationStateEventConfiguration _deviceRegistrationState;
         private string _identifier;
         private IdentifierType _identifierType;
+        private JoinEventConfiguration _join;
+        private MessageDeliveryStatusEventConfiguration _messageDeliveryStatus;
         private EventNotificationPartnerType _partnerType;
         private ProximityEventConfiguration _proximity;
 
         /// <summary>
+        /// Gets and sets the property ConnectionStatus. 
+        /// <para>
+        /// Event configuration for the connection status event.
+        /// </para>
+        /// </summary>
+        public ConnectionStatusEventConfiguration ConnectionStatus
+        {
+            get { return this._connectionStatus; }
+            set { this._connectionStatus = value; }
+        }
+
+        // Check to see if ConnectionStatus property is set
+        internal bool IsSetConnectionStatus()
+        {
+            return this._connectionStatus != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property DeviceRegistrationState. 
         /// <para>
-        /// Event configuration for the device registration state event
+        /// Event configuration for the device registration state event.
         /// </para>
         /// </summary>
         public DeviceRegistrationStateEventConfiguration DeviceRegistrationState
@@ -97,9 +118,46 @@ namespace Amazon.IoTWireless.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Join. 
+        /// <para>
+        /// Event configuration for the join event.
+        /// </para>
+        /// </summary>
+        public JoinEventConfiguration Join
+        {
+            get { return this._join; }
+            set { this._join = value; }
+        }
+
+        // Check to see if Join property is set
+        internal bool IsSetJoin()
+        {
+            return this._join != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MessageDeliveryStatus. 
+        /// <para>
+        /// Event configuration for the message delivery status event.
+        /// </para>
+        /// </summary>
+        public MessageDeliveryStatusEventConfiguration MessageDeliveryStatus
+        {
+            get { return this._messageDeliveryStatus; }
+            set { this._messageDeliveryStatus = value; }
+        }
+
+        // Check to see if MessageDeliveryStatus property is set
+        internal bool IsSetMessageDeliveryStatus()
+        {
+            return this._messageDeliveryStatus != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property PartnerType. 
         /// <para>
-        /// Partner type of the resource if the identifier type is PartnerAccountId
+        /// Partner type of the resource if the identifier type is <code>PartnerAccountId</code>
+        /// 
         /// </para>
         /// </summary>
         public EventNotificationPartnerType PartnerType
@@ -117,7 +175,7 @@ namespace Amazon.IoTWireless.Model
         /// <summary>
         /// Gets and sets the property Proximity. 
         /// <para>
-        /// Event configuration for the Proximity event
+        /// Event configuration for the proximity event.
         /// </para>
         /// </summary>
         public ProximityEventConfiguration Proximity

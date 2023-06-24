@@ -49,7 +49,7 @@ namespace Amazon.IdentityManagement.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <b>Access control</b> - Include tags in IAM user-based and resource-based policies.
+    ///  <b>Access control</b> - Include tags in IAM identity-based and resource-based policies.
     /// You can use tags to restrict access to only an OIDC provider that has a specified
     /// tag attached. For examples of policies that show how to use tags to control access,
     /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Control

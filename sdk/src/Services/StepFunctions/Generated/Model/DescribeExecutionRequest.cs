@@ -30,8 +30,16 @@ namespace Amazon.StepFunctions.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeExecution operation.
-    /// Describes an execution.
+    /// Provides information about a state machine execution, such as the state machine associated
+    /// with the execution, the execution input and output, and relevant execution metadata.
+    /// Use this API action to return the Map Run Amazon Resource Name (ARN) if the execution
+    /// was dispatched by a Map Run.
     /// 
+    ///  
+    /// <para>
+    /// If you specify a version or alias ARN when you call the <a>StartExecution</a> API
+    /// action, <code>DescribeExecution</code> returns that ARN.
+    /// </para>
     ///  <note> 
     /// <para>
     /// This operation is eventually consistent. The results are best effort and may not reflect
@@ -39,7 +47,8 @@ namespace Amazon.StepFunctions.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// This API action is not supported by <code>EXPRESS</code> state machines.
+    /// Executions of an <code>EXPRESS</code> state machinearen't supported by <code>DescribeExecution</code>
+    /// unless a Map Run dispatched them.
     /// </para>
     /// </summary>
     public partial class DescribeExecutionRequest : AmazonStepFunctionsRequest

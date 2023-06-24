@@ -34,7 +34,7 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CostCategoryInheritedValueDimension Marshaller
-    /// </summary>       
+    /// </summary>
     public class CostCategoryInheritedValueDimensionMarshaller : IRequestMarshaller<CostCategoryInheritedValueDimension, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CostCategoryInheritedValueDimensionMarshaller Instance = new CostCategoryInheritedValueDimensionMarshaller();
 
     }

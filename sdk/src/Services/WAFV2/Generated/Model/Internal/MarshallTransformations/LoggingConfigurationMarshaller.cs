@@ -34,7 +34,7 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// LoggingConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class LoggingConfigurationMarshaller : IRequestMarshaller<LoggingConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -99,7 +99,7 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static LoggingConfigurationMarshaller Instance = new LoggingConfigurationMarshaller();
 
     }

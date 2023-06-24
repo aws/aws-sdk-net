@@ -60,7 +60,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property ListingTime. 
         /// <para>
-        /// The time when the blacklisting event occurred, shown in Unix time format.
+        /// The time when the blacklisting event occurred.
         /// </para>
         /// </summary>
         public DateTime ListingTime

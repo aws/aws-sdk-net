@@ -34,7 +34,7 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CheckpointConfigurationUpdate Marshaller
-    /// </summary>       
+    /// </summary>
     public class CheckpointConfigurationUpdateMarshaller : IRequestMarshaller<CheckpointConfigurationUpdate, JsonMarshallerContext> 
     {
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CheckpointConfigurationUpdateMarshaller Instance = new CheckpointConfigurationUpdateMarshaller();
 
     }

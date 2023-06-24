@@ -62,9 +62,9 @@ namespace Amazon.Runtime
             "LimitExceededException",
             "RequestThrottled",
             "SlowDown",
-            "PriorRequestNotComplete"                
+            "PriorRequestNotComplete"
         };
-                
+
         /// <summary>
         /// The standard set of timeout error codes to retry on.
         /// </summary>
@@ -153,7 +153,7 @@ namespace Amazon.Runtime
             }
             return false;
         }
-                
+
         /// <summary>
         /// Returns true if the request is in a state where it can be retried, else false.
         /// </summary>
@@ -192,7 +192,7 @@ namespace Amazon.Runtime
         /// <param name="executionContext">The execution context which contains both the
         /// requests and response context.</param>
         public virtual void NotifySuccess(IExecutionContext executionContext)
-        {            
+        {    
         }
         
         /// <summary>
@@ -562,6 +562,20 @@ namespace Amazon.Runtime
             if (errorMessages.Contains(exception.Message))
                 return true;
             return ContainErrorMessage(exception.InnerException, errorMessages);
-        }                
+        }
+
+        /// <summary>
+        /// Creates a key for storing retry capacity data.
+        /// Key is based on service's url (we store retry capacity per service's url variant).
+        /// If ClientConfig's ServiceURL override is set we use it as a key,
+        /// otherwise we construct key based on ClientConfig's schema, region, service, fips, dualstack parameters.
+        /// This value is unique key per real service's url variant.
+        /// </summary>
+        protected static string GetRetryCapacityKey(IClientConfig config)
+        {
+            return config.ServiceURL != null ? config.ServiceURL :
+                $"http:{config.UseHttp}//region:{config.RegionEndpoint?.SystemName}.service:{config.RegionEndpointServiceName}.fips:{config.UseFIPSEndpoint}.ipv6:{config.UseDualstackEndpoint}";
+        }
+
     }
 }

@@ -39,8 +39,7 @@ namespace Amazon.ConnectWisdomService.Model
         /// Gets and sets the property KmsKeyId. 
         /// <para>
         /// The KMS key. For information about valid ID values, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id">Key
-        /// identifiers (KeyId)</a> in the <i>AWS Key Management Service Developer Guide</i>.
-        /// 
+        /// identifiers (KeyId)</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=4096)]

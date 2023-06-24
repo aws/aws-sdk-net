@@ -58,7 +58,7 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
             string target = "Kinesis_20131202.UpdateShardCount";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2013-12-02";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2013-12-02";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -73,6 +73,12 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ScalingType);
                 }
 
+                if(publicRequest.IsSetStreamARN())
+                {
+                    context.Writer.WritePropertyName("StreamARN");
+                    context.Writer.Write(publicRequest.StreamARN);
+                }
+
                 if(publicRequest.IsSetStreamName())
                 {
                     context.Writer.WritePropertyName("StreamName");
@@ -85,7 +91,6 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.TargetShardCount);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

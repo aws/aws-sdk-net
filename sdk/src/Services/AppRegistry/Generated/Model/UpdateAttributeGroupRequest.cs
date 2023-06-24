@@ -42,10 +42,11 @@ namespace Amazon.AppRegistry.Model
         /// <summary>
         /// Gets and sets the property AttributeGroup. 
         /// <para>
-        /// The name or ID of the attribute group that holds the attributes to describe the application.
+        ///  The name, ID, or ARN of the attribute group that holds the attributes to describe
+        /// the application. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=256)]
+        [AWSProperty(Required=true, Min=1, Max=512)]
         public string AttributeGroup
         {
             get { return this._attributeGroup; }
@@ -100,10 +101,12 @@ namespace Amazon.AppRegistry.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The new name of the attribute group. The name must be unique in the region in which
-        /// you are updating the attribute group.
+        /// Deprecated: The new name of the attribute group. The name must be unique in the region
+        /// in which you are updating the attribute group. Please do not use this field as we
+        /// have stopped supporting name updates.
         /// </para>
         /// </summary>
+        [Obsolete("Name update for attribute group is deprecated.")]
         [AWSProperty(Min=1, Max=256)]
         public string Name
         {

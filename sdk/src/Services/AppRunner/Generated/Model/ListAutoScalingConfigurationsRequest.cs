@@ -30,10 +30,16 @@ namespace Amazon.AppRunner.Model
 {
     /// <summary>
     /// Container for the parameters to the ListAutoScalingConfigurations operation.
-    /// Returns a list of App Runner automatic scaling configurations in your Amazon Web Services
-    /// account. You can query the revisions for a specific configuration name or the revisions
-    /// for all configurations in your account. You can optionally query only the latest revision
-    /// of each requested name.
+    /// Returns a list of active App Runner automatic scaling configurations in your Amazon
+    /// Web Services account. You can query the revisions for a specific configuration name
+    /// or the revisions for all active configurations in your account. You can optionally
+    /// query only the latest revision of each requested name.
+    /// 
+    ///  
+    /// <para>
+    /// To retrieve a full description of a particular configuration revision, call and provide
+    /// one of the ARNs returned by <code>ListAutoScalingConfigurations</code>.
+    /// </para>
     /// </summary>
     public partial class ListAutoScalingConfigurationsRequest : AmazonAppRunnerRequest
     {
@@ -47,7 +53,7 @@ namespace Amazon.AppRunner.Model
         /// <para>
         /// The name of the App Runner auto scaling configuration that you want to list. If specified,
         /// App Runner lists revisions that share this name. If not specified, App Runner returns
-        /// revisions of all configurations.
+        /// revisions of all active configurations.
         /// </para>
         /// </summary>
         [AWSProperty(Min=4, Max=32)]
@@ -71,12 +77,11 @@ namespace Amazon.AppRunner.Model
         /// </para>
         ///  
         /// <para>
-        /// Keep as <code>false</code> to list all revisions for each requested configuration
-        /// name.
+        /// Set to <code>false</code> to list all revisions for each requested configuration name.
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>false</code> 
+        /// Default: <code>true</code> 
         /// </para>
         /// </summary>
         public bool LatestOnly

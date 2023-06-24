@@ -47,13 +47,14 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property Addresses. 
         /// <para>
-        /// Contains an array of strings that specify one or more IP addresses or blocks of IP
-        /// addresses in Classless Inter-Domain Routing (CIDR) notation. WAF supports all IPv4
-        /// and IPv6 CIDR ranges except for /0. 
+        /// Contains an array of strings that specifies zero or more IP addresses or blocks of
+        /// IP addresses. All addresses must be specified using Classless Inter-Domain Routing
+        /// (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges except for <code>/0</code>.
+        /// 
         /// </para>
         ///  
         /// <para>
-        /// Examples: 
+        /// Example address strings: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -81,6 +82,28 @@ namespace Amazon.WAFV2.Model
         /// For more information about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless
         /// Inter-Domain Routing</a>.
         /// </para>
+        ///  
+        /// <para>
+        /// Example JSON <code>Addresses</code> specifications: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Empty array: <code>"Addresses": []</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Array with one address: <code>"Addresses": ["192.0.2.44/32"]</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Array with three addresses: <code>"Addresses": ["192.0.2.44/32", "192.0.2.0/24", "192.0.0.0/16"]</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID specification: <code>"Addresses": [""]</code> INVALID 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public List<string> Addresses
@@ -158,7 +181,8 @@ namespace Amazon.WAFV2.Model
         /// <para>
         /// Specifies whether this is for an Amazon CloudFront distribution or for a regional
         /// application. A regional application can be an Application Load Balancer (ALB), an
-        /// Amazon API Gateway REST API, or an AppSync GraphQL API. 
+        /// Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool,
+        /// an App Runner service, or an Amazon Web Services Verified Access instance. 
         /// </para>
         ///  
         /// <para>

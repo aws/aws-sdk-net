@@ -43,7 +43,7 @@ namespace Amazon.AmplifyUIBuilder.Model
         /// The access token.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public string AccessToken
         {
             get { return this._accessToken; }
@@ -81,7 +81,7 @@ namespace Amazon.AmplifyUIBuilder.Model
         /// The token to use to refresh a previously issued access token that might have expired.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public string RefreshToken
         {
             get { return this._refreshToken; }

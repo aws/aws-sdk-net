@@ -32,8 +32,9 @@ namespace Amazon.S3Outposts.Model
     /// Amazon S3 on Outposts Access Points simplify managing data access at scale for shared
     /// datasets in S3 on Outposts. S3 on Outposts uses endpoints to connect to Outposts buckets
     /// so that you can perform actions within your virtual private cloud (VPC). For more
-    /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/AccessingS3Outposts.html">
-    /// Accessing S3 on Outposts using VPC only access points</a>.
+    /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/WorkingWithS3Outposts.html">
+    /// Accessing S3 on Outposts using VPC-only access points</a> in the <i>Amazon Simple
+    /// Storage Service User Guide</i>.
     /// </summary>
     public partial class Endpoint
     {
@@ -42,6 +43,7 @@ namespace Amazon.S3Outposts.Model
         private DateTime? _creationTime;
         private string _customerOwnedIpv4Pool;
         private string _endpointArn;
+        private FailedReason _failedReason;
         private List<NetworkInterface> _networkInterfaces = new List<NetworkInterface>();
         private string _outpostsId;
         private string _securityGroupId;
@@ -50,7 +52,10 @@ namespace Amazon.S3Outposts.Model
         private string _vpcId;
 
         /// <summary>
-        /// Gets and sets the property AccessType.
+        /// Gets and sets the property AccessType. 
+        /// <para>
+        /// The type of connectivity used to access the Amazon S3 on Outposts endpoint.
+        /// </para>
         /// </summary>
         public EndpointAccessType AccessType
         {
@@ -103,7 +108,7 @@ namespace Amazon.S3Outposts.Model
         /// <summary>
         /// Gets and sets the property CustomerOwnedIpv4Pool. 
         /// <para>
-        /// The ID of the customer-owned IPv4 pool used for the endpoint.
+        /// The ID of the customer-owned IPv4 address pool used for the endpoint.
         /// </para>
         /// </summary>
         public string CustomerOwnedIpv4Pool
@@ -137,6 +142,24 @@ namespace Amazon.S3Outposts.Model
         }
 
         /// <summary>
+        /// Gets and sets the property FailedReason. 
+        /// <para>
+        /// The failure reason, if any, for a create or delete endpoint operation.
+        /// </para>
+        /// </summary>
+        public FailedReason FailedReason
+        {
+            get { return this._failedReason; }
+            set { this._failedReason = value; }
+        }
+
+        // Check to see if FailedReason property is set
+        internal bool IsSetFailedReason()
+        {
+            return this._failedReason != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property NetworkInterfaces. 
         /// <para>
         /// The network interface of the endpoint.
@@ -157,7 +180,7 @@ namespace Amazon.S3Outposts.Model
         /// <summary>
         /// Gets and sets the property OutpostsId. 
         /// <para>
-        /// The ID of the AWS Outposts.
+        /// The ID of the Outposts.
         /// </para>
         /// </summary>
         public string OutpostsId

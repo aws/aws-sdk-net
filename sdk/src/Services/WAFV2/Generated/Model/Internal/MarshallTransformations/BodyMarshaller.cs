@@ -34,7 +34,7 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Body Marshaller
-    /// </summary>       
+    /// </summary>
     public class BodyMarshaller : IRequestMarshaller<Body, JsonMarshallerContext> 
     {
         /// <summary>
@@ -45,11 +45,17 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Body requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetOversizeHandling())
+            {
+                context.Writer.WritePropertyName("OversizeHandling");
+                context.Writer.Write(requestObject.OversizeHandling);
+            }
+
         }
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static BodyMarshaller Instance = new BodyMarshaller();
 
     }

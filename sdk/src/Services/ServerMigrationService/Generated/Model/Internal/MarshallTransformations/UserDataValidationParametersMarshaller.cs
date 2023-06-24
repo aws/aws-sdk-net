@@ -34,7 +34,7 @@ namespace Amazon.ServerMigrationService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// UserDataValidationParameters Marshaller
-    /// </summary>       
+    /// </summary>
     public class UserDataValidationParametersMarshaller : IRequestMarshaller<UserDataValidationParameters, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.ServerMigrationService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static UserDataValidationParametersMarshaller Instance = new UserDataValidationParametersMarshaller();
 
     }

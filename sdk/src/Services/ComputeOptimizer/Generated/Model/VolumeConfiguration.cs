@@ -33,12 +33,31 @@ namespace Amazon.ComputeOptimizer.Model
     /// </summary>
     public partial class VolumeConfiguration
     {
+        private bool? _rootVolume;
         private int? _volumeBaselineIOPS;
         private int? _volumeBaselineThroughput;
         private int? _volumeBurstIOPS;
         private int? _volumeBurstThroughput;
         private int? _volumeSize;
         private string _volumeType;
+
+        /// <summary>
+        /// Gets and sets the property RootVolume. 
+        /// <para>
+        ///  Contains the image used to boot the instance during launch. 
+        /// </para>
+        /// </summary>
+        public bool RootVolume
+        {
+            get { return this._rootVolume.GetValueOrDefault(); }
+            set { this._rootVolume = value; }
+        }
+
+        // Check to see if RootVolume property is set
+        internal bool IsSetRootVolume()
+        {
+            return this._rootVolume.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property VolumeBaselineIOPS. 

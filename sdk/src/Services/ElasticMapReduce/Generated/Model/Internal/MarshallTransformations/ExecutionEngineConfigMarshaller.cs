@@ -34,7 +34,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ExecutionEngineConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class ExecutionEngineConfigMarshaller : IRequestMarshaller<ExecutionEngineConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -45,6 +45,12 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ExecutionEngineConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetExecutionRoleArn())
+            {
+                context.Writer.WritePropertyName("ExecutionRoleArn");
+                context.Writer.Write(requestObject.ExecutionRoleArn);
+            }
+
             if(requestObject.IsSetId())
             {
                 context.Writer.WritePropertyName("Id");
@@ -67,7 +73,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ExecutionEngineConfigMarshaller Instance = new ExecutionEngineConfigMarshaller();
 
     }

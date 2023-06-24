@@ -34,7 +34,7 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DominantLanguageDetectionJobFilter Marshaller
-    /// </summary>       
+    /// </summary>
     public class DominantLanguageDetectionJobFilterMarshaller : IRequestMarshaller<DominantLanguageDetectionJobFilter, JsonMarshallerContext> 
     {
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DominantLanguageDetectionJobFilterMarshaller Instance = new DominantLanguageDetectionJobFilterMarshaller();
 
     }

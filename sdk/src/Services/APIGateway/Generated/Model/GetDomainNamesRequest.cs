@@ -30,7 +30,7 @@ namespace Amazon.APIGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the GetDomainNames operation.
-    /// Represents a collection of <a>DomainName</a> resources.
+    /// Represents a collection of DomainName resources.
     /// </summary>
     public partial class GetDomainNamesRequest : AmazonAPIGatewayRequest
     {

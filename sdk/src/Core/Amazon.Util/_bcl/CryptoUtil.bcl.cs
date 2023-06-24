@@ -1,32 +1,23 @@
-﻿/*******************************************************************************
- *  Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
- *  Licensed under the Apache License, Version 2.0 (the "License"). You may not use
- *  this file except in compliance with the License. A copy of the License is located at
+﻿/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
  *
  *  http://aws.amazon.com/apache2.0
  *
- *  or in the "license" file accompanying this file.
- *  This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
- *  CONDITIONS OF ANY KIND, either express or implied. See the License for the
- *  specific language governing permissions and limitations under the License.
- * *****************************************************************************
- *    __  _    _  ___
- *   (  )( \/\/ )/ __)
- *   /__\ \    / \__ \
- *  (_)(_) \/\/  (___/
- *
- *  AWS SDK for .NET
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Security.Cryptography;
-
 using Amazon.Runtime;
-using ThirdParty.MD5;
+using Amazon.Util.Internal;
+using System;
+using System.Globalization;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace Amazon.Util
 {
@@ -34,12 +25,13 @@ namespace Amazon.Util
     {
         partial class CryptoUtil : ICryptoUtil
         {
-            public string HMACSign(string data, string key, SigningAlgorithm algorithmName)
-            {
-                var binaryData = Encoding.UTF8.GetBytes(data);
-                return HMACSign(binaryData, key, algorithmName);
-            }
-
+            /// <summary>
+            /// Computes a hash-based message authentication code
+            /// </summary>
+            /// <param name="data">Input to compute the hash code for</param>
+            /// <param name="key">Signing key</param>
+            /// <param name="algorithmName">Hashing algorithm to use</param>
+            /// <returns>Computed hash code in base-64</returns>
             public string HMACSign(byte[] data, string key, SigningAlgorithm algorithmName)
             {
                 if (String.IsNullOrEmpty(key))
@@ -64,38 +56,13 @@ namespace Amazon.Util
                 }
             }
 
-
-
-            public byte[] ComputeSHA1Hash(byte[] data)
-            {
-                using (var sha1 = new SHA1Managed())
-                {
-                    return sha1.ComputeHash(data);
-                }
-            }
-
-            public byte[] ComputeSHA256Hash(byte[] data)
-            {
-                return SHA256HashAlgorithmInstance.ComputeHash(data);
-            }
-
-            public byte[] ComputeSHA256Hash(Stream steam)
-            {
-                return SHA256HashAlgorithmInstance.ComputeHash(steam);
-            }
-
-            public byte[] ComputeMD5Hash(byte[] data)
-            {
-                var hashed = new MD5Managed().ComputeHash(data);
-                return hashed;
-            }
-
-            public byte[] ComputeMD5Hash(Stream steam)
-            {
-                var hashed = new MD5Managed().ComputeHash(steam);
-                return hashed;
-            }
-
+            /// <summary>
+            /// Computes a hash-based message authentication code
+            /// </summary>
+            /// <param name="data">Input to compute the hash code for</param>
+            /// <param name="key">Signing key</param>
+            /// <param name="algorithmName">Hashing algorithm to use</param>
+            /// <returns>Computed hash code in bytes</returns>
             public byte[] HMACSignBinary(byte[] data, byte[] key, SigningAlgorithm algorithmName)
             {
                 if (key == null || key.Length == 0)
@@ -128,16 +95,21 @@ namespace Amazon.Util
                 {
                     if (null == _hashAlgorithm)
                     {
-                        try
-                        {
-                            _hashAlgorithm = HashAlgorithm.Create("SHA-256");
-                        }
-                        catch (Exception) // Managed Hash Provider is not FIPS compliant.
-                        {
-                            _hashAlgorithm = new SHA256CryptoServiceProvider();
-                        }
+                        _hashAlgorithm = CreateSHA256Instance();
                     }
                     return _hashAlgorithm;
+                }
+            }
+
+            internal static HashAlgorithm CreateSHA256Instance()
+            {
+                try
+                {
+                    return HashAlgorithm.Create("SHA-256");
+                }
+                catch (Exception) // Managed Hash Provider is not FIPS compliant.
+                {
+                    return new SHA256CryptoServiceProvider();
                 }
             }
         }

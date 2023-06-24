@@ -37,11 +37,15 @@ namespace Amazon.EC2.Model
         private string _bootMode;
         private string _description;
         private string _imageId;
+        private string _imdsSupport;
         private string _kernelId;
+        private string _lastLaunchedTime;
         private List<LaunchPermission> _launchPermissions = new List<LaunchPermission>();
         private List<ProductCode> _productCodes = new List<ProductCode>();
         private string _ramdiskId;
         private string _sriovNetSupport;
+        private string _tpmSupport;
+        private string _uefiData;
 
         /// <summary>
         /// Gets and sets the property BlockDeviceMappings. 
@@ -62,7 +66,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property BootMode.
+        /// Gets and sets the property BootMode. 
+        /// <para>
+        /// The boot mode.
+        /// </para>
         /// </summary>
         public string BootMode
         {
@@ -113,6 +120,29 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ImdsSupport. 
+        /// <para>
+        /// If <code>v2.0</code>, it indicates that IMDSv2 is specified in the AMI. Instances
+        /// launched from this AMI will have <code>HttpTokens</code> automatically set to <code>required</code>
+        /// so that, by default, the instance requires that IMDSv2 is used when requesting instance
+        /// metadata. In addition, <code>HttpPutResponseHopLimit</code> is set to <code>2</code>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration">Configure
+        /// the AMI</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        public string ImdsSupport
+        {
+            get { return this._imdsSupport; }
+            set { this._imdsSupport = value; }
+        }
+
+        // Check to see if ImdsSupport property is set
+        internal bool IsSetImdsSupport()
+        {
+            return this._imdsSupport != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property KernelId. 
         /// <para>
         /// The kernel ID.
@@ -128,6 +158,31 @@ namespace Amazon.EC2.Model
         internal bool IsSetKernelId()
         {
             return this._kernelId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastLaunchedTime. 
+        /// <para>
+        /// The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
+        /// format</a>, when the AMI was last used to launch an EC2 instance. When the AMI is
+        /// used to launch an instance, there is a 24-hour delay before that usage is reported.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        ///  <code>lastLaunchedTime</code> data is available starting April 2017.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public string LastLaunchedTime
+        {
+            get { return this._lastLaunchedTime; }
+            set { this._lastLaunchedTime = value; }
+        }
+
+        // Check to see if LastLaunchedTime property is set
+        internal bool IsSetLastLaunchedTime()
+        {
+            return this._lastLaunchedTime != null;
         }
 
         /// <summary>
@@ -201,6 +256,46 @@ namespace Amazon.EC2.Model
         internal bool IsSetSriovNetSupport()
         {
             return this._sriovNetSupport != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TpmSupport. 
+        /// <para>
+        /// If the image is configured for NitroTPM support, the value is <code>v2.0</code>.
+        /// </para>
+        /// </summary>
+        public string TpmSupport
+        {
+            get { return this._tpmSupport; }
+            set { this._tpmSupport = value; }
+        }
+
+        // Check to see if TpmSupport property is set
+        internal bool IsSetTpmSupport()
+        {
+            return this._tpmSupport != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UefiData. 
+        /// <para>
+        /// Base64 representation of the non-volatile UEFI variable store. To retrieve the UEFI
+        /// data, use the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceUefiData">GetInstanceUefiData</a>
+        /// command. You can inspect and modify the UEFI data by using the <a href="https://github.com/awslabs/python-uefivars">python-uefivars
+        /// tool</a> on GitHub. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/uefi-secure-boot.html">UEFI
+        /// Secure Boot</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        public string UefiData
+        {
+            get { return this._uefiData; }
+            set { this._uefiData = value; }
+        }
+
+        // Check to see if UefiData property is set
+        internal bool IsSetUefiData()
+        {
+            return this._uefiData != null;
         }
 
     }

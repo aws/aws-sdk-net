@@ -34,7 +34,7 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ClientAuthentication Marshaller
-    /// </summary>       
+    /// </summary>
     public class ClientAuthenticationMarshaller : IRequestMarshaller<ClientAuthentication, JsonMarshallerContext> 
     {
         /// <summary>
@@ -82,7 +82,7 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ClientAuthenticationMarshaller Instance = new ClientAuthenticationMarshaller();
 
     }

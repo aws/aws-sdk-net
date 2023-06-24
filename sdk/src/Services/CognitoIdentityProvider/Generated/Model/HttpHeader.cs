@@ -39,7 +39,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property HeaderName. 
         /// <para>
-        /// The header name
+        /// The header name.
         /// </para>
         /// </summary>
         public string HeaderName

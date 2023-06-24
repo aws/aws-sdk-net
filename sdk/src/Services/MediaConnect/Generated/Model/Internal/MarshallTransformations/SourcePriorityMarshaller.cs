@@ -34,7 +34,7 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SourcePriority Marshaller
-    /// </summary>       
+    /// </summary>
     public class SourcePriorityMarshaller : IRequestMarshaller<SourcePriority, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SourcePriorityMarshaller Instance = new SourcePriorityMarshaller();
 
     }

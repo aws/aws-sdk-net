@@ -45,8 +45,8 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property CatalogId. 
         /// <para>
-        /// The ID of the AWS Glue Data Catalog. If you don't supply this, the AWS account ID
-        /// is used by default.
+        /// The ID of the Amazon Web Services Glue Data Catalog. If you don't supply this, the
+        /// Amazon Web Services account ID is used by default.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -65,8 +65,8 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property DatabaseName. 
         /// <para>
-        /// Specifies the name of the AWS Glue database that contains the schema for the output
-        /// data.
+        /// Specifies the name of the Amazon Web Services Glue database that contains the schema
+        /// for the output data.
         /// </para>
         ///  <important> 
         /// <para>
@@ -92,7 +92,7 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property Region. 
         /// <para>
-        /// If you don't specify an AWS Region, the default is the current Region.
+        /// If you don't specify an Amazon Web Services Region, the default is the current Region.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -111,9 +111,9 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property RoleARN. 
         /// <para>
-        /// The role that Kinesis Data Firehose can use to access AWS Glue. This role must be
-        /// in the same account you use for Kinesis Data Firehose. Cross-account roles aren't
-        /// allowed.
+        /// The role that Kinesis Data Firehose can use to access Amazon Web Services Glue. This
+        /// role must be in the same account you use for Kinesis Data Firehose. Cross-account
+        /// roles aren't allowed.
         /// </para>
         ///  <important> 
         /// <para>
@@ -139,8 +139,8 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property TableName. 
         /// <para>
-        /// Specifies the AWS Glue table that contains the column information that constitutes
-        /// your data schema.
+        /// Specifies the Amazon Web Services Glue table that contains the column information
+        /// that constitutes your data schema.
         /// </para>
         ///  <important> 
         /// <para>

@@ -35,6 +35,7 @@ namespace Amazon.LocationService.Model
     public partial class ListGeofencesRequest : AmazonLocationServiceRequest
     {
         private string _collectionName;
+        private int? _maxResults;
         private string _nextToken;
 
         /// <summary>
@@ -54,6 +55,29 @@ namespace Amazon.LocationService.Model
         internal bool IsSetCollectionName()
         {
             return this._collectionName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// An optional limit for the number of geofences returned in a single call. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Default value: <code>100</code> 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=100)]
+        public int MaxResults
+        {
+            get { return this._maxResults.GetValueOrDefault(); }
+            set { this._maxResults = value; }
+        }
+
+        // Check to see if MaxResults property is set
+        internal bool IsSetMaxResults()
+        {
+            return this._maxResults.HasValue; 
         }
 
         /// <summary>

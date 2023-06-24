@@ -34,7 +34,7 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DatastorePartition Marshaller
-    /// </summary>       
+    /// </summary>
     public class DatastorePartitionMarshaller : IRequestMarshaller<DatastorePartition, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DatastorePartitionMarshaller Instance = new DatastorePartitionMarshaller();
 
     }

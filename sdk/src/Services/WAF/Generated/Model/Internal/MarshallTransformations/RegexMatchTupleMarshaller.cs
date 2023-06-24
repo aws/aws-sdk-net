@@ -34,7 +34,7 @@ namespace Amazon.WAF.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RegexMatchTuple Marshaller
-    /// </summary>       
+    /// </summary>
     public class RegexMatchTupleMarshaller : IRequestMarshaller<RegexMatchTuple, JsonMarshallerContext> 
     {
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.WAF.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RegexMatchTupleMarshaller Instance = new RegexMatchTupleMarshaller();
 
     }

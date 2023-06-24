@@ -34,7 +34,7 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// PortInfo Marshaller
-    /// </summary>       
+    /// </summary>
     public class PortInfoMarshaller : IRequestMarshaller<PortInfo, JsonMarshallerContext> 
     {
         /// <summary>
@@ -100,7 +100,7 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static PortInfoMarshaller Instance = new PortInfoMarshaller();
 
     }

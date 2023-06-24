@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisVideo.Model
 {
     /// <summary>
-    /// You have exceeded the limit of tags that you can associate with the resource. Kinesis
-    /// video streams support up to 50 tags.
+    /// You have exceeded the limit of tags that you can associate with the resource. A Kinesis
+    /// video stream can support up to 50 tags.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

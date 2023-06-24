@@ -63,7 +63,7 @@ namespace Amazon.Chime.Model
         /// The DNIS phone number to route emergency calls to, in E.164 format.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public string EmergencyPhoneNumber
         {
             get { return this._emergencyPhoneNumber; }
@@ -82,6 +82,7 @@ namespace Amazon.Chime.Model
         /// The DNIS phone number to route test emergency calls to, in E.164 format.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string TestPhoneNumber
         {
             get { return this._testPhoneNumber; }

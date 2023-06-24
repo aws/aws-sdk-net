@@ -34,7 +34,7 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ChannelMembershipPreferences Marshaller
-    /// </summary>       
+    /// </summary>
     public class ChannelMembershipPreferencesMarshaller : IRequestMarshaller<ChannelMembershipPreferences, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ChannelMembershipPreferencesMarshaller Instance = new ChannelMembershipPreferencesMarshaller();
 
     }

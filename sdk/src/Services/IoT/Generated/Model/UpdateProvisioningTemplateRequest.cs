@@ -30,7 +30,7 @@ namespace Amazon.IoT.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateProvisioningTemplate operation.
-    /// Updates a fleet provisioning template.
+    /// Updates a provisioning template.
     /// 
     ///  
     /// <para>
@@ -69,7 +69,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description of the fleet provisioning template.
+        /// The description of the provisioning template.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=500)]
@@ -88,7 +88,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property Enabled. 
         /// <para>
-        /// True to enable the fleet provisioning template, otherwise false.
+        /// True to enable the provisioning template, otherwise false.
         /// </para>
         /// </summary>
         public bool Enabled
@@ -106,7 +106,8 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property PreProvisioningHook. 
         /// <para>
-        /// Updates the pre-provisioning hook template.
+        /// Updates the pre-provisioning hook template. Only supports template of type <code>FLEET_PROVISIONING</code>.
+        /// For more information about provisioning template types, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_CreateProvisioningTemplate.html#iot-CreateProvisioningTemplate-request-type">type</a>.
         /// </para>
         /// </summary>
         public ProvisioningHook PreProvisioningHook
@@ -162,7 +163,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property TemplateName. 
         /// <para>
-        /// The name of the fleet provisioning template.
+        /// The name of the provisioning template.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=36)]

@@ -32,21 +32,22 @@ namespace Amazon.RDSDataService.Model
     /// Container for the parameters to the ExecuteStatement operation.
     /// Runs a SQL statement against a database.
     /// 
-    ///  <important> 
+    ///  <note> 
     /// <para>
     /// If a call isn't part of a transaction because it doesn't include the <code>transactionID</code>
     /// parameter, changes that result from the call are committed automatically.
     /// </para>
-    ///  </important> 
+    ///  
     /// <para>
-    /// The response size limit is 1 MB. If the call returns more than 1 MB of response data,
-    /// the call is terminated.
+    /// If the binary response data from the database is more than 1 MB, the call is terminated.
     /// </para>
+    ///  </note>
     /// </summary>
     public partial class ExecuteStatementRequest : AmazonRDSDataServiceRequest
     {
         private bool? _continueAfterTimeout;
         private string _database;
+        private RecordsFormatType _formatRecordsAs;
         private bool? _includeResultMetadata;
         private List<SqlParameter> _parameters = new List<SqlParameter>();
         private string _resourceArn;
@@ -62,13 +63,13 @@ namespace Amazon.RDSDataService.Model
         /// A value that indicates whether to continue running the statement after the call times
         /// out. By default, the statement stops running when the call times out.
         /// </para>
-        ///  <important> 
+        ///  <note> 
         /// <para>
         /// For DDL statements, we recommend continuing to run the statement after the call times
         /// out. When a DDL statement terminates before it is finished running, it can result
         /// in errors and possibly corrupted data structures.
         /// </para>
-        ///  </important>
+        ///  </note>
         /// </summary>
         public bool ContinueAfterTimeout
         {
@@ -99,6 +100,33 @@ namespace Amazon.RDSDataService.Model
         internal bool IsSetDatabase()
         {
             return this._database != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FormatRecordsAs. 
+        /// <para>
+        /// A value that indicates whether to format the result set as a single JSON string. This
+        /// parameter only applies to <code>SELECT</code> statements and is ignored for other
+        /// types of statements. Allowed values are <code>NONE</code> and <code>JSON</code>. The
+        /// default value is <code>NONE</code>. The result is returned in the <code>formattedRecords</code>
+        /// field.
+        /// </para>
+        ///  
+        /// <para>
+        /// For usage information about the JSON format for result sets, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using
+        /// the Data API</a> in the <i>Amazon Aurora User Guide</i>.
+        /// </para>
+        /// </summary>
+        public RecordsFormatType FormatRecordsAs
+        {
+            get { return this._formatRecordsAs; }
+            set { this._formatRecordsAs = value; }
+        }
+
+        // Check to see if FormatRecordsAs property is set
+        internal bool IsSetFormatRecordsAs()
+        {
+            return this._formatRecordsAs != null;
         }
 
         /// <summary>
@@ -206,7 +234,13 @@ namespace Amazon.RDSDataService.Model
         /// <summary>
         /// Gets and sets the property SecretArn. 
         /// <para>
-        /// The name or ARN of the secret that enables access to the DB cluster.
+        /// The ARN of the secret that enables access to the DB cluster. Enter the database user
+        /// name and password for the credentials in the secret.
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about creating the secret, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/create_database_secret.html">Create
+        /// a database secret</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=11, Max=100)]

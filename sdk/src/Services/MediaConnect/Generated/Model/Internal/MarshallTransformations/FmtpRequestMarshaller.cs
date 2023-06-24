@@ -34,7 +34,7 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// FmtpRequest Marshaller
-    /// </summary>       
+    /// </summary>
     public class FmtpRequestMarshaller : IRequestMarshaller<FmtpRequest, JsonMarshallerContext> 
     {
         /// <summary>
@@ -91,7 +91,7 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static FmtpRequestMarshaller Instance = new FmtpRequestMarshaller();
 
     }

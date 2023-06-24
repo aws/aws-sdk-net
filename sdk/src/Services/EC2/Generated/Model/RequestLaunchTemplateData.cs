@@ -30,6 +30,12 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// The information to include in the launch template.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// You must specify at least one parameter for the launch template data.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class RequestLaunchTemplateData
     {
@@ -37,6 +43,7 @@ namespace Amazon.EC2.Model
         private LaunchTemplateCapacityReservationSpecificationRequest _capacityReservationSpecification;
         private LaunchTemplateCpuOptionsRequest _cpuOptions;
         private CreditSpecificationRequest _creditSpecification;
+        private bool? _disableApiStop;
         private bool? _disableApiTermination;
         private bool? _ebsOptimized;
         private List<ElasticGpuSpecification> _elasticGpuSpecifications = new List<ElasticGpuSpecification>();
@@ -52,6 +59,7 @@ namespace Amazon.EC2.Model
         private string _kernelId;
         private string _keyName;
         private List<LaunchTemplateLicenseConfigurationRequest> _licenseSpecifications = new List<LaunchTemplateLicenseConfigurationRequest>();
+        private LaunchTemplateInstanceMaintenanceOptionsRequest _maintenanceOptions;
         private LaunchTemplateInstanceMetadataOptionsRequest _metadataOptions;
         private LaunchTemplatesMonitoringRequest _monitoring;
         private List<LaunchTemplateInstanceNetworkInterfaceSpecificationRequest> _networkInterfaces = new List<LaunchTemplateInstanceNetworkInterfaceSpecificationRequest>();
@@ -124,8 +132,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property CreditSpecification. 
         /// <para>
-        /// The credit option for CPU usage of the instance. Valid for T2, T3, or T3a instances
-        /// only.
+        /// The credit option for CPU usage of the instance. Valid only for T instances.
         /// </para>
         /// </summary>
         public CreditSpecificationRequest CreditSpecification
@@ -138,6 +145,26 @@ namespace Amazon.EC2.Model
         internal bool IsSetCreditSpecification()
         {
             return this._creditSpecification != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DisableApiStop. 
+        /// <para>
+        /// Indicates whether to enable the instance for stop protection. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Stop
+        /// protection</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        /// </summary>
+        public bool DisableApiStop
+        {
+            get { return this._disableApiStop.GetValueOrDefault(); }
+            set { this._disableApiStop = value; }
+        }
+
+        // Check to see if DisableApiStop property is set
+        internal bool IsSetDisableApiStop()
+        {
+            return this._disableApiStop.HasValue; 
         }
 
         /// <summary>
@@ -248,7 +275,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property HibernationOptions. 
         /// <para>
         /// Indicates whether an instance is enabled for hibernation. This parameter is valid
-        /// only if the instance meets the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#hibernating-prerequisites">hibernation
+        /// only if the instance meets the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/hibernating-prerequisites.html">hibernation
         /// prerequisites</a>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
         /// your instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
@@ -286,7 +313,44 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ImageId. 
         /// <para>
-        /// The ID of the AMI.
+        /// The ID of the AMI. Alternatively, you can specify a Systems Manager parameter, which
+        /// will resolve to an AMI ID on launch.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid formats:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>ami-17characters00000</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>resolve:ssm:parameter-name</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>resolve:ssm:parameter-name:version-number</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>resolve:ssm:parameter-name:label</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>resolve:ssm:public-parameter</code> 
+        /// </para>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// Currently, EC2 Fleet and Spot Fleet do not support specifying a Systems Manager parameter.
+        /// If the launch template will be used by an EC2 Fleet or Spot Fleet, you must specify
+        /// the AMI ID.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/create-launch-template.html#use-an-ssm-parameter-instead-of-an-ami-id">Use
+        /// a Systems Manager parameter instead of an AMI ID</a> in the <i>Amazon Elastic Compute
+        /// Cloud User Guide</i>.
         /// </para>
         /// </summary>
         public string ImageId
@@ -350,7 +414,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceTypes</code>.
+        /// If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceType</code>.
         /// </para>
         /// </summary>
         public InstanceRequirementsRequest InstanceRequirements
@@ -369,11 +433,11 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property InstanceType. 
         /// <para>
         /// The instance type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-        /// Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// If you specify <code>InstanceTypes</code>, you can't specify <code>InstanceRequirements</code>.
+        /// If you specify <code>InstanceType</code>, you can't specify <code>InstanceRequirements</code>.
         /// </para>
         /// </summary>
         public InstanceType InstanceType
@@ -397,7 +461,7 @@ namespace Amazon.EC2.Model
         /// <para>
         /// We recommend that you use PV-GRUB instead of kernels and RAM disks. For more information,
         /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">User
-        /// Provided Kernels</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// provided kernels</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  </important>
         /// </summary>
@@ -454,6 +518,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetLicenseSpecifications()
         {
             return this._licenseSpecifications != null && this._licenseSpecifications.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaintenanceOptions. 
+        /// <para>
+        /// The maintenance options for the instance.
+        /// </para>
+        /// </summary>
+        public LaunchTemplateInstanceMaintenanceOptionsRequest MaintenanceOptions
+        {
+            get { return this._maintenanceOptions; }
+            set { this._maintenanceOptions = value; }
+        }
+
+        // Check to see if MaintenanceOptions property is set
+        internal bool IsSetMaintenanceOptions()
+        {
+            return this._maintenanceOptions != null;
         }
 
         /// <summary>
@@ -557,7 +639,7 @@ namespace Amazon.EC2.Model
         /// <para>
         /// We recommend that you use PV-GRUB instead of kernels and RAM disks. For more information,
         /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">User
-        /// Provided Kernels</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// provided kernels</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  </important>
         /// </summary>
@@ -595,9 +677,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SecurityGroups. 
         /// <para>
-        /// [EC2-Classic, default VPC] One or more security group names. For a nondefault VPC,
-        /// you must use security group IDs instead. You cannot specify both a security group
-        /// ID and security name in the same request.
+        /// One or more security group names. For a nondefault VPC, you must use security group
+        /// IDs instead. You cannot specify both a security group ID and security name in the
+        /// same request.
         /// </para>
         /// </summary>
         public List<string> SecurityGroups
@@ -615,10 +697,42 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property TagSpecifications. 
         /// <para>
-        /// The tags to apply to the resources during launch. You can only tag instances and volumes
-        /// on launch. The specified tags are applied to all instances or volumes that are created
-        /// during launch. To tag a resource after it has been created, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.
+        /// The tags to apply to the resources that are created during instance launch.
         /// </para>
+        ///  
+        /// <para>
+        /// You can specify tags for the following resources only:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Instances
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Volumes
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Elastic graphics
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Spot Instance requests
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Network interfaces
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// To tag a resource after it has been created, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// To tag the launch template itself, you must use the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplate.html">TagSpecification</a>
+        /// parameter.
+        /// </para>
+        ///  </note>
         /// </summary>
         public List<LaunchTemplateTagSpecificationRequest> TagSpecifications
         {
@@ -636,9 +750,10 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property UserData. 
         /// <para>
         /// The user data to make available to the instance. You must provide base64-encoded text.
-        /// User data is limited to 16 KB. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running
-        /// Commands on Your Linux Instance at Launch</a> (Linux) or <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data">Adding
-        /// User Data</a> (Windows).
+        /// User data is limited to 16 KB. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Run
+        /// commands on your Linux instance at launch</a> (Linux) or <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/instancedata-add-user-data.html">Work
+        /// with instance user data</a> (Windows) in the <i>Amazon Elastic Compute Cloud User
+        /// Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -648,6 +763,7 @@ namespace Amazon.EC2.Model
         /// EC2 user data in launch templates</a> in the <i>Batch User Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string UserData
         {
             get { return this._userData; }

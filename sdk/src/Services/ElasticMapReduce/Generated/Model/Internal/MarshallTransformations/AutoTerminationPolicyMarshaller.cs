@@ -34,7 +34,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AutoTerminationPolicy Marshaller
-    /// </summary>       
+    /// </summary>
     public class AutoTerminationPolicyMarshaller : IRequestMarshaller<AutoTerminationPolicy, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AutoTerminationPolicyMarshaller Instance = new AutoTerminationPolicyMarshaller();
 
     }

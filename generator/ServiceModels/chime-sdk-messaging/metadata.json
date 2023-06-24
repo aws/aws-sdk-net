@@ -1,5 +1,6 @@
 {
   "active": true,
   "synopsis": "The Amazon Chime SDK Messaging APIs allow software developers to send and receive messages in custom messaging applications.",
-  "generate-client-constructors": true
+  "generate-client-constructors": true,
+  "legacy-service-id": "Chime SDK Messaging"
 }

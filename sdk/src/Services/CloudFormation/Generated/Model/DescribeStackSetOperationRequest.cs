@@ -30,7 +30,7 @@ namespace Amazon.CloudFormation.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeStackSetOperation operation.
-    /// Returns the description of the specified stack set operation.
+    /// Returns the description of the specified StackSet operation.
     /// </summary>
     public partial class DescribeStackSetOperationRequest : AmazonCloudFormationRequest
     {
@@ -81,7 +81,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property OperationId. 
         /// <para>
-        /// The unique ID of the stack set operation. 
+        /// The unique ID of the stack set operation.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]

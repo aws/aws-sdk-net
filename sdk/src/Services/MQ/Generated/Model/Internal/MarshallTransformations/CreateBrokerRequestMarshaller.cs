@@ -56,7 +56,7 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.MQ");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-11-27";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-11-27";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/v1/brokers";
@@ -103,8 +103,20 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
                 else if(!(publicRequest.IsSetCreatorRequestId()))
                 {
                     context.Writer.WritePropertyName("creatorRequestId");
-                    context.Writer.Write(Guid.NewGuid().ToString());                                                
+                    context.Writer.Write(Guid.NewGuid().ToString());
                 }
+                if(publicRequest.IsSetDataReplicationMode())
+                {
+                    context.Writer.WritePropertyName("dataReplicationMode");
+                    context.Writer.Write(publicRequest.DataReplicationMode);
+                }
+
+                if(publicRequest.IsSetDataReplicationPrimaryBrokerArn())
+                {
+                    context.Writer.WritePropertyName("dataReplicationPrimaryBrokerArn");
+                    context.Writer.Write(publicRequest.DataReplicationPrimaryBrokerArn);
+                }
+
                 if(publicRequest.IsSetDeploymentMode())
                 {
                     context.Writer.WritePropertyName("deploymentMode");
@@ -237,7 +249,6 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

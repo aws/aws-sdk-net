@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// The properties of a trial component as returned by the <a>Search</a> API.
+    /// The properties of a trial component as returned by the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a>
+    /// API.
     /// </summary>
     public partial class TrialComponent
     {
@@ -46,6 +47,7 @@ namespace Amazon.SageMaker.Model
         private Dictionary<string, TrialComponentArtifact> _outputArtifacts = new Dictionary<string, TrialComponentArtifact>();
         private Dictionary<string, TrialComponentParameterValue> _parameters = new Dictionary<string, TrialComponentParameterValue>();
         private List<Parent> _parents = new List<Parent>();
+        private string _runName;
         private TrialComponentSource _source;
         private TrialComponentSourceDetail _sourceDetail;
         private DateTime? _startTime;
@@ -290,6 +292,25 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property RunName. 
+        /// <para>
+        /// The name of the experiment run.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=120)]
+        public string RunName
+        {
+            get { return this._runName; }
+            set { this._runName = value; }
+        }
+
+        // Check to see if RunName property is set
+        internal bool IsSetRunName()
+        {
+            return this._runName != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Source. 
         /// <para>
         /// The Amazon Resource Name (ARN) and job type of the source of the component.
@@ -361,7 +382,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The list of tags that are associated with the component. You can use <a>Search</a>
+        /// The list of tags that are associated with the component. You can use <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a>
         /// API to search on the tags.
         /// </para>
         /// </summary>

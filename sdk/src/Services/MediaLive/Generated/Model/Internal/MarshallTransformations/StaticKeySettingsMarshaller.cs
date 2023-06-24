@@ -34,7 +34,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// StaticKeySettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class StaticKeySettingsMarshaller : IRequestMarshaller<StaticKeySettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static StaticKeySettingsMarshaller Instance = new StaticKeySettingsMarshaller();
 
     }

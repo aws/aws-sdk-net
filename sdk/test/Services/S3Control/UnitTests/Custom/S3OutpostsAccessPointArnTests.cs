@@ -43,17 +43,16 @@ namespace AWSSDK.UnitTests
                 @"
                 | arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint | us-west-2 | none | no | s3-outposts.us-west-2.amazonaws.com | x-amz-outpost-id: ""op-01234567890123456"", x-amz-account-id: ""123456789012"" | s3-outposts |
                 | arn:aws:s3-outposts:us-east-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint | us-west-2 | none | yes | s3-outposts.us-east-1.amazonaws.com | x-amz-outpost-id: ""op-01234567890123456"", x-amz-account-id: ""123456789012"" | s3-outposts |
-                | arn:aws:s3-outposts:us-east-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint | us-west-2 | none | no | Invalid configuration, cross region Outpost Access Point ARN | - | - |
-                | arn:aws-cn:s3-outposts:cn-north-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint | us-west-2 | none | yes | Invalid configuration, cross partition Outpost Access Point ARN | - | - |
+                | arn:aws:s3-outposts:us-east-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint | us-west-2 | none | no | Invalid configuration: region from ARN `us-east-1` does not match client region `us-west-2` and UseArnRegion is `false` | - | - |
+                | arn:aws-cn:s3-outposts:cn-north-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint | us-west-2 | none | yes | Client was configured for partition `aws` but ARN has `aws-cn` | - | - |
                 | arn:aws-us-gov:s3-outposts:us-gov-east-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint | us-gov-east-1 | none | yes | s3-outposts.us-gov-east-1.amazonaws.com | x-amz-outpost-id: ""op-01234567890123456"", x-amz-account-id: ""123456789012"" | s3-outposts |
                 | arn:aws-us-gov:s3-outposts:us-gov-west-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint | us-gov-west-1 | fips | no | s3-outposts-fips.us-gov-west-1.amazonaws.com |  x-amz-outpost-id: ""op-01234567890123456"", x-amz-account-id: ""123456789012"" | s3-outposts |
                 | arn:aws-us-gov:s3-outposts:us-gov-east-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint | us-gov-west-1 | fips | yes | s3-outposts-fips.us-gov-east-1.amazonaws.com |  x-amz-outpost-id: ""op-01234567890123456"", x-amz-account-id: ""123456789012"" | s3-outposts |
-                | arn:aws-us-gov:s3-outposts:us-gov-west-1-fips:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint | n/a | none | n/a | Invalid ARN, FIPS region not allowed in ARN | - | - |
-                | arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint | us-west-2 | dualstack | n/a | Invalid configuration Outpost Access Points do not support dualstack | - | - |
+                | arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint | us-west-2 | dualstack | n/a | Invalid configuration: Outpost Access Points do not support dual-stack | - | - |
                 | arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint | us-west-2 | accelerate | n/a | Invalid configuration Access Points do not support accelerate | - | - |
-                | arn:aws:s3-outposts:us-west-2:123456789012:outpost | us-west-2 | n/a | n/a | Invalid ARN, outpost resource format is incorrect  | - | - |
-                | arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456 | us-west-2 | n/a  | n/a | Invalid ARN, outpost resource format is incorrect | - | - |
-                | arn:aws:s3-outposts:us-west-2:123456789012:outpost:myaccesspoint | us-west-2 | n/a  | n/a | Invalid ARN, outpost resource format is incorrect | - | - |
+                | arn:aws:s3-outposts:us-west-2:123456789012:outpost | us-west-2 | n/a | n/a | Invalid ARN: The Outpost Id was not set  | - | - |
+                | arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456 | us-west-2 | n/a  | n/a | Invalid ARN: Expected a 4-component resource | - | - |
+                | arn:aws:s3-outposts:us-west-2:123456789012:outpost:myaccesspoint | us-west-2 | n/a  | n/a | Invalid ARN: Expected a 4-component resource | - | - |
                 | myaccesspoint | us-west-2 | none | N/A | {accountId field value}.s3-control.us-west-2.amazonaws.com | x-amz-account-id: ""{accountId field value}"" | s3 |
                 ";
 
@@ -128,7 +127,7 @@ namespace AWSSDK.UnitTests
                 Assert.IsNull(s3Request);
                 Assert.IsNotNull(exception);
                 // reminder, expectedEndpoint also contains expected error message.
-                AssertExtensions.AssertAreSameWithEmbellishments(expectedEndpoint, exception.Message);
+                Assert.AreEqual(expectedEndpoint, exception.Message);
             }
         }
     }

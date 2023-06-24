@@ -53,15 +53,11 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </note> 
         /// <para>
-        /// Constraints:
-        /// </para>
-        ///  
-        /// <para>
         /// Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.
         /// </para>
         ///  
         /// <para>
-        /// Example: <code>mySubnetgroup</code> 
+        /// Example: <code>mydbsubnetgroup</code> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

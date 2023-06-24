@@ -37,6 +37,8 @@ namespace Amazon.AppSync.Model
     #endif
     public partial class BadRequestException : AmazonAppSyncException
     {
+        private BadRequestDetail _detail;
+        private BadRequestReason _reason;
 
         /// <summary>
         /// Constructs a new BadRequestException with the specified error
@@ -98,6 +100,8 @@ namespace Amazon.AppSync.Model
         protected BadRequestException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
+            this.Detail = (BadRequestDetail)info.GetValue("Detail", typeof(BadRequestDetail));
+            this.Reason = (BadRequestReason)info.GetValue("Reason", typeof(BadRequestReason));
         }
 
         /// <summary>
@@ -118,8 +122,40 @@ namespace Amazon.AppSync.Model
         public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
         {
             base.GetObjectData(info, context);
+            info.AddValue("Detail", this.Detail);
+            info.AddValue("Reason", this.Reason);
         }
 #endif
+
+        /// <summary>
+        /// Gets and sets the property Detail.
+        /// </summary>
+        public BadRequestDetail Detail
+        {
+            get { return this._detail; }
+            set { this._detail = value; }
+        }
+
+        // Check to see if Detail property is set
+        internal bool IsSetDetail()
+        {
+            return this._detail != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Reason.
+        /// </summary>
+        public BadRequestReason Reason
+        {
+            get { return this._reason; }
+            set { this._reason = value; }
+        }
+
+        // Check to see if Reason property is set
+        internal bool IsSetReason()
+        {
+            return this._reason != null;
+        }
 
     }
 }

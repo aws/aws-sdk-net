@@ -31,8 +31,8 @@ namespace Amazon.GlobalAccelerator.Model
     /// <summary>
     /// Container for the parameters to the CreateEndpointGroup operation.
     /// Create an endpoint group for the specified listener. An endpoint group is a collection
-    /// of endpoints in one AWS Region. A resource must be valid and active when you add it
-    /// as an endpoint.
+    /// of endpoints in one Amazon Web Services Region. A resource must be valid and active
+    /// when you add it as an endpoint.
     /// </summary>
     public partial class CreateEndpointGroupRequest : AmazonGlobalAcceleratorRequest
     {
@@ -70,8 +70,8 @@ namespace Amazon.GlobalAccelerator.Model
         /// <summary>
         /// Gets and sets the property EndpointGroupRegion. 
         /// <para>
-        /// The AWS Region where the endpoint group is located. A listener can have only one endpoint
-        /// group in a specific Region.
+        /// The Amazon Web Services Region where the endpoint group is located. A listener can
+        /// have only one endpoint group in a specific Region.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=255)]
@@ -130,10 +130,10 @@ namespace Amazon.GlobalAccelerator.Model
         /// <summary>
         /// Gets and sets the property HealthCheckPort. 
         /// <para>
-        /// The port that AWS Global Accelerator uses to check the health of endpoints that are
-        /// part of this endpoint group. The default port is the listener port that this endpoint
-        /// group is associated with. If listener port is a list of ports, Global Accelerator
-        /// uses the first port in the list.
+        /// The port that Global Accelerator uses to check the health of endpoints that are part
+        /// of this endpoint group. The default port is the listener port that this endpoint group
+        /// is associated with. If listener port is a list of ports, Global Accelerator uses the
+        /// first port in the list.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=65535)]
@@ -152,8 +152,8 @@ namespace Amazon.GlobalAccelerator.Model
         /// <summary>
         /// Gets and sets the property HealthCheckProtocol. 
         /// <para>
-        /// The protocol that AWS Global Accelerator uses to check the health of endpoints that
-        /// are part of this endpoint group. The default value is TCP.
+        /// The protocol that Global Accelerator uses to check the health of endpoints that are
+        /// part of this endpoint group. The default value is TCP.
         /// </para>
         /// </summary>
         public HealthCheckProtocol HealthCheckProtocol
@@ -218,7 +218,7 @@ namespace Amazon.GlobalAccelerator.Model
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html">
-        /// Port overrides</a> in the <i>AWS Global Accelerator Developer Guide</i>.
+        /// Overriding listener ports</a> in the <i>Global Accelerator Developer Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=10)]
@@ -257,8 +257,8 @@ namespace Amazon.GlobalAccelerator.Model
         /// <summary>
         /// Gets and sets the property TrafficDialPercentage. 
         /// <para>
-        /// The percentage of traffic to send to an AWS Region. Additional traffic is distributed
-        /// to other endpoint groups for this listener. 
+        /// The percentage of traffic to send to an Amazon Web Services Region. Additional traffic
+        /// is distributed to other endpoint groups for this listener. 
         /// </para>
         ///  
         /// <para>

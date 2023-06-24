@@ -17,22 +17,22 @@
  * Do not modify this file. This file is generated from the migrationhubstrategy-2020-02-19.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
-
+using Amazon.MigrationHubStrategyRecommendations.Internal;
 
 namespace Amazon.MigrationHubStrategyRecommendations
 {
     /// <summary>
     /// Configuration for accessing Amazon MigrationHubStrategyRecommendations service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonMigrationHubStrategyRecommendationsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.7");
+            InternalSDKUtils.BuildUserAgentString("3.7.103.56");
 
         private string _userAgent = UserAgentString;
 
@@ -40,8 +40,10 @@ namespace Amazon.MigrationHubStrategyRecommendations
         /// Default constructor
         /// </summary>
         public AmazonMigrationHubStrategyRecommendationsConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonMigrationHubStrategyRecommendationsDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "migrationhub-strategy";
+            this.EndpointProvider = new AmazonMigrationHubStrategyRecommendationsEndpointProvider();
         }
 
         /// <summary>
@@ -76,5 +78,6 @@ namespace Amazon.MigrationHubStrategyRecommendations
                 return _userAgent;
             }
         }
+
     }
 }

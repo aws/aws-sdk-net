@@ -43,6 +43,7 @@ namespace Amazon.LocationService.Model
     {
         private string _deviceId;
         private DateTime? _endTimeExclusive;
+        private int? _maxResults;
         private string _nextToken;
         private DateTime? _startTimeInclusive;
         private string _trackerName;
@@ -93,6 +94,29 @@ namespace Amazon.LocationService.Model
         internal bool IsSetEndTimeExclusive()
         {
             return this._endTimeExclusive.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// An optional limit for the number of device positions returned in a single call.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default value: <code>100</code> 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=100)]
+        public int MaxResults
+        {
+            get { return this._maxResults.GetValueOrDefault(); }
+            set { this._maxResults = value; }
+        }
+
+        // Check to see if MaxResults property is set
+        internal bool IsSetMaxResults()
+        {
+            return this._maxResults.HasValue; 
         }
 
         /// <summary>

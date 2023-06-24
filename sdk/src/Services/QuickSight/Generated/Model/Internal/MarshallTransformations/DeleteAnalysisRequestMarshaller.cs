@@ -55,7 +55,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public IRequest Marshall(DeleteAnalysisRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.QuickSight");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-04-01";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-04-01";
             request.HttpMethod = "DELETE";
 
             if (!publicRequest.IsSetAnalysisId())

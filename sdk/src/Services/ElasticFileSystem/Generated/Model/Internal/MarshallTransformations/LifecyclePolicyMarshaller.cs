@@ -34,7 +34,7 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// LifecyclePolicy Marshaller
-    /// </summary>       
+    /// </summary>
     public class LifecyclePolicyMarshaller : IRequestMarshaller<LifecyclePolicy, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static LifecyclePolicyMarshaller Instance = new LifecyclePolicyMarshaller();
 
     }

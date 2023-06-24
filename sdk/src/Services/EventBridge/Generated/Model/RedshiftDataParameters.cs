@@ -30,7 +30,8 @@ namespace Amazon.EventBridge.Model
 {
     /// <summary>
     /// These are custom parameters to be used when the target is a Amazon Redshift cluster
-    /// to invoke the Amazon Redshift Data API ExecuteStatement based on EventBridge events.
+    /// or Redshift Serverless workgroup to invoke the Amazon Redshift Data API ExecuteStatement
+    /// based on EventBridge events.
     /// </summary>
     public partial class RedshiftDataParameters
     {
@@ -38,6 +39,7 @@ namespace Amazon.EventBridge.Model
         private string _dbUser;
         private string _secretManagerArn;
         private string _sql;
+        private List<string> _sqls = new List<string>();
         private string _statementName;
         private bool? _withEvent;
 
@@ -64,6 +66,10 @@ namespace Amazon.EventBridge.Model
         /// Gets and sets the property DbUser. 
         /// <para>
         /// The database user name. Required when authenticating using temporary credentials.
+        /// </para>
+        ///  
+        /// <para>
+        /// Do not provide this parameter when connecting to a Redshift Serverless workgroup.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -105,7 +111,7 @@ namespace Amazon.EventBridge.Model
         /// The SQL statement text to run.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=100000)]
+        [AWSProperty(Sensitive=true, Min=1, Max=100000)]
         public string Sql
         {
             get { return this._sql; }
@@ -116,6 +122,22 @@ namespace Amazon.EventBridge.Model
         internal bool IsSetSql()
         {
             return this._sql != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Sqls.
+        /// </summary>
+        [AWSProperty(Sensitive=true, Min=0, Max=40)]
+        public List<string> Sqls
+        {
+            get { return this._sqls; }
+            set { this._sqls = value; }
+        }
+
+        // Check to see if Sqls property is set
+        internal bool IsSetSqls()
+        {
+            return this._sqls != null && this._sqls.Count > 0; 
         }
 
         /// <summary>

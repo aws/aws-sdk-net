@@ -31,8 +31,10 @@ namespace Amazon.Shield.Model
     /// <summary>
     /// Container for the parameters to the CreateProtection operation.
     /// Enables Shield Advanced for a specific Amazon Web Services resource. The resource
-    /// can be an Amazon CloudFront distribution, Elastic Load Balancing load balancer, Global
-    /// Accelerator accelerator, Elastic IP Address, or an Amazon Route 53 hosted zone.
+    /// can be an Amazon CloudFront distribution, Amazon Route 53 hosted zone, Global Accelerator
+    /// standard accelerator, Elastic IP Address, Application Load Balancer, or a Classic
+    /// Load Balancer. You can protect Amazon EC2 instances and Network Load Balancers by
+    /// association with protected Amazon EC2 Elastic IP addresses.
     /// 
     ///  
     /// <para>
@@ -95,7 +97,7 @@ namespace Amazon.Shield.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For an Global Accelerator accelerator: <code>arn:aws:globalaccelerator::<i>account-id</i>:accelerator/<i>accelerator-id</i>
+        /// For an Global Accelerator standard accelerator: <code>arn:aws:globalaccelerator::<i>account-id</i>:accelerator/<i>accelerator-id</i>
         /// </code> 
         /// </para>
         ///  </li> <li> 

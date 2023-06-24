@@ -34,7 +34,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Mp4Settings Marshaller
-    /// </summary>       
+    /// </summary>
     public class Mp4SettingsMarshaller : IRequestMarshaller<Mp4Settings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -85,7 +85,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static Mp4SettingsMarshaller Instance = new Mp4SettingsMarshaller();
 
     }

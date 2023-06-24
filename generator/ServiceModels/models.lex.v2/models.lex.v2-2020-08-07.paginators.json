@@ -40,6 +40,11 @@
       "output_token": "nextToken",
       "limit_key": "maxResults"
     },
+    "ListCustomVocabularyItems": {
+      "input_token": "nextToken",
+      "output_token": "nextToken",
+      "limit_key": "maxResults"
+    },
     "ListExports": {
       "input_token": "nextToken",
       "output_token": "nextToken",
@@ -66,6 +71,26 @@
       "limit_key": "maxResults"
     },
     "ListSlots": {
+      "input_token": "nextToken",
+      "output_token": "nextToken",
+      "limit_key": "maxResults"
+    },
+    "ListTestExecutionResultItems": {
+      "input_token": "nextToken",
+      "output_token": "nextToken",
+      "limit_key": "maxResults"
+    },
+    "ListTestExecutions": {
+      "input_token": "nextToken",
+      "output_token": "nextToken",
+      "limit_key": "maxResults"
+    },
+    "ListTestSetRecords": {
+      "input_token": "nextToken",
+      "output_token": "nextToken",
+      "limit_key": "maxResults"
+    },
+    "ListTestSets": {
       "input_token": "nextToken",
       "output_token": "nextToken",
       "limit_key": "maxResults"

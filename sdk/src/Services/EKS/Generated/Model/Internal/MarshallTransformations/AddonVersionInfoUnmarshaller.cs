@@ -82,6 +82,12 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                     unmarshalledObject.Compatibilities = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("requiresConfiguration", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.RequiresConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

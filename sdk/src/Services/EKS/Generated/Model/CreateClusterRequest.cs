@@ -70,6 +70,7 @@ namespace Amazon.EKS.Model
         private KubernetesNetworkConfigRequest _kubernetesNetworkConfig;
         private Logging _logging;
         private string _name;
+        private OutpostConfigRequest _outpostConfig;
         private VpcConfigRequest _resourcesVpcConfig;
         private string _roleArn;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
@@ -179,6 +180,28 @@ namespace Amazon.EKS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property OutpostConfig. 
+        /// <para>
+        /// An object representing the configuration of your local Amazon EKS cluster on an Amazon
+        /// Web Services Outpost. Before creating a local cluster on an Outpost, review <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-local-cluster-overview.html">Local
+        /// clusters for Amazon EKS on Amazon Web Services Outposts</a> in the <i>Amazon EKS User
+        /// Guide</i>. This object isn't available for creating Amazon EKS clusters on the Amazon
+        /// Web Services cloud.
+        /// </para>
+        /// </summary>
+        public OutpostConfigRequest OutpostConfig
+        {
+            get { return this._outpostConfig; }
+            set { this._outpostConfig = value; }
+        }
+
+        // Check to see if OutpostConfig property is set
+        internal bool IsSetOutpostConfig()
+        {
+            return this._outpostConfig != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ResourcesVpcConfig. 
         /// <para>
         /// The VPC configuration that's used by the cluster control plane. Amazon EKS VPC resources
@@ -249,8 +272,13 @@ namespace Amazon.EKS.Model
         /// Gets and sets the property Version. 
         /// <para>
         /// The desired Kubernetes version for your cluster. If you don't specify a value here,
-        /// the latest version available in Amazon EKS is used.
+        /// the default version available in Amazon EKS is used.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The default version might not be the latest version available.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string Version
         {

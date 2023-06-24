@@ -34,7 +34,7 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Statement Marshaller
-    /// </summary>       
+    /// </summary>
     public class StatementMarshaller : IRequestMarshaller<Statement, JsonMarshallerContext> 
     {
         /// <summary>
@@ -214,7 +214,7 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static StatementMarshaller Instance = new StatementMarshaller();
 
     }

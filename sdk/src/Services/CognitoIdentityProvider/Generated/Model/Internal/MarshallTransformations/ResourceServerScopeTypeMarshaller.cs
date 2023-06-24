@@ -34,7 +34,7 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ResourceServerScopeType Marshaller
-    /// </summary>       
+    /// </summary>
     public class ResourceServerScopeTypeMarshaller : IRequestMarshaller<ResourceServerScopeType, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ResourceServerScopeTypeMarshaller Instance = new ResourceServerScopeTypeMarshaller();
 
     }

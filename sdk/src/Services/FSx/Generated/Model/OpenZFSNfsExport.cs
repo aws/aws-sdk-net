@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FSx.Model
 {
     /// <summary>
-    /// The Network File System NFS) configurations for mounting an Amazon FSx for OpenZFS
+    /// The Network File System (NFS) configurations for mounting an Amazon FSx for OpenZFS
     /// file system.
     /// </summary>
     public partial class OpenZFSNfsExport

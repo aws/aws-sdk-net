@@ -34,7 +34,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ConfluenceConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class ConfluenceConfigurationMarshaller : IRequestMarshaller<ConfluenceConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -54,6 +54,12 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
                 marshaller.Marshall(requestObject.AttachmentConfiguration, context);
 
                 context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetAuthenticationType())
+            {
+                context.Writer.WritePropertyName("AuthenticationType");
+                context.Writer.Write(requestObject.AuthenticationType);
             }
 
             if(requestObject.IsSetBlogConfiguration())
@@ -96,6 +102,17 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 
                 var marshaller = ConfluencePageConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.PageConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetProxyConfiguration())
+            {
+                context.Writer.WritePropertyName("ProxyConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ProxyConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.ProxyConfiguration, context);
 
                 context.Writer.WriteObjectEnd();
             }
@@ -144,7 +161,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ConfluenceConfigurationMarshaller Instance = new ConfluenceConfigurationMarshaller();
 
     }

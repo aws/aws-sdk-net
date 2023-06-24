@@ -34,7 +34,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ThingIndexingConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class ThingIndexingConfigurationMarshaller : IRequestMarshaller<ThingIndexingConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -65,6 +65,17 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("deviceDefenderIndexingMode");
                 context.Writer.Write(requestObject.DeviceDefenderIndexingMode);
+            }
+
+            if(requestObject.IsSetFilter())
+            {
+                context.Writer.WritePropertyName("filter");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = IndexingFilterMarshaller.Instance;
+                marshaller.Marshall(requestObject.Filter, context);
+
+                context.Writer.WriteObjectEnd();
             }
 
             if(requestObject.IsSetManagedFields())
@@ -105,7 +116,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ThingIndexingConfigurationMarshaller Instance = new ThingIndexingConfigurationMarshaller();
 
     }

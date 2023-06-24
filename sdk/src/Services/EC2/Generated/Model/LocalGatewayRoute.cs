@@ -33,13 +33,35 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class LocalGatewayRoute
     {
+        private string _coipPoolId;
         private string _destinationCidrBlock;
+        private string _destinationPrefixListId;
         private string _localGatewayRouteTableArn;
         private string _localGatewayRouteTableId;
         private string _localGatewayVirtualInterfaceGroupId;
+        private string _networkInterfaceId;
         private string _ownerId;
         private LocalGatewayRouteState _state;
+        private string _subnetId;
         private LocalGatewayRouteType _type;
+
+        /// <summary>
+        /// Gets and sets the property CoipPoolId. 
+        /// <para>
+        /// The ID of the customer-owned address pool.
+        /// </para>
+        /// </summary>
+        public string CoipPoolId
+        {
+            get { return this._coipPoolId; }
+            set { this._coipPoolId = value; }
+        }
+
+        // Check to see if CoipPoolId property is set
+        internal bool IsSetCoipPoolId()
+        {
+            return this._coipPoolId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DestinationCidrBlock. 
@@ -57,6 +79,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetDestinationCidrBlock()
         {
             return this._destinationCidrBlock != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DestinationPrefixListId. 
+        /// <para>
+        ///  The ID of the prefix list. 
+        /// </para>
+        /// </summary>
+        public string DestinationPrefixListId
+        {
+            get { return this._destinationPrefixListId; }
+            set { this._destinationPrefixListId = value; }
+        }
+
+        // Check to see if DestinationPrefixListId property is set
+        internal bool IsSetDestinationPrefixListId()
+        {
+            return this._destinationPrefixListId != null;
         }
 
         /// <summary>
@@ -115,6 +155,24 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property NetworkInterfaceId. 
+        /// <para>
+        /// The ID of the network interface.
+        /// </para>
+        /// </summary>
+        public string NetworkInterfaceId
+        {
+            get { return this._networkInterfaceId; }
+            set { this._networkInterfaceId = value; }
+        }
+
+        // Check to see if NetworkInterfaceId property is set
+        internal bool IsSetNetworkInterfaceId()
+        {
+            return this._networkInterfaceId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property OwnerId. 
         /// <para>
         /// The ID of the Amazon Web Services account that owns the local gateway route.
@@ -148,6 +206,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetState()
         {
             return this._state != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SubnetId. 
+        /// <para>
+        /// The ID of the subnet.
+        /// </para>
+        /// </summary>
+        public string SubnetId
+        {
+            get { return this._subnetId; }
+            set { this._subnetId = value; }
+        }
+
+        // Check to see if SubnetId property is set
+        internal bool IsSetSubnetId()
+        {
+            return this._subnetId != null;
         }
 
         /// <summary>

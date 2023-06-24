@@ -38,11 +38,11 @@ namespace Amazon.ECS
     /// Amazon Elastic Container Service 
     /// <para>
     /// Amazon Elastic Container Service (Amazon ECS) is a highly scalable, fast, container
-    /// management service. It makes it easy to run, stop, and manage Docker containers on
-    /// a cluster. You can host your cluster on a serverless infrastructure that's managed
-    /// by Amazon ECS by launching your services or tasks on Fargate. For more control, you
-    /// can host your tasks on a cluster of Amazon Elastic Compute Cloud (Amazon EC2) instances
-    /// that you manage.
+    /// management service. It makes it easy to run, stop, and manage Docker containers. You
+    /// can host your cluster on a serverless infrastructure that's managed by Amazon ECS
+    /// by launching your services or tasks on Fargate. For more control, you can host your
+    /// tasks on a cluster of Amazon Elastic Compute Cloud (Amazon EC2) or External (on-premises)
+    /// instances that you manage.
     /// </para>
     ///  
     /// <para>
@@ -251,6 +251,15 @@ namespace Amazon.ECS
         }
 
         /// <summary>
+        /// Customize the pipeline
+        /// </summary>
+        /// <param name="pipeline"></param>
+        protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
+        {
+            pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonECSEndpointResolver());
+        }
+        /// <summary>
         /// Capture metadata for the service.
         /// </summary>
         protected override IServiceMetadata ServiceMetadata
@@ -373,9 +382,9 @@ namespace Amazon.ECS
         /// When you call the <a>CreateCluster</a> API operation, Amazon ECS attempts to create
         /// the Amazon ECS service-linked role for your account. This is so that it can manage
         /// required resources in other Amazon Web Services services on your behalf. However,
-        /// if the IAM user that makes the call doesn't have permissions to create the service-linked
+        /// if the user that makes the call doesn't have permissions to create the service-linked
         /// role, it isn't created. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
-        /// Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service
+        /// service-linked roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service
         /// Developer Guide</i>.
         /// </para>
         ///  </note>
@@ -390,6 +399,9 @@ namespace Amazon.ECS
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.NamespaceNotFoundException">
+        /// The specified namespace wasn't found.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
@@ -446,22 +458,32 @@ namespace Amazon.ECS
         /// Runs and maintains your desired number of tasks from a specified task definition.
         /// If the number of tasks running in a service drops below the <code>desiredCount</code>,
         /// Amazon ECS runs another copy of the task in the specified cluster. To update an existing
-        /// service, see the UpdateService action.
+        /// service, see the <a>UpdateService</a> action.
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// Starting April 15, 2023, Amazon Web Services will not onboard new customers to Amazon
+        /// Elastic Inference (EI), and will help current customers migrate their workloads to
+        /// options that offer better price and performance. After April 15, 2023, new customers
+        /// will not be able to launch instances with Amazon EI accelerators in Amazon SageMaker,
+        /// Amazon ECS, or Amazon EC2. However, customers who have used Amazon EI at least once
+        /// during the past 30-day period are considered current customers and will be able to
+        /// continue using the service. 
+        /// </para>
+        ///  </note> 
         /// <para>
         /// In addition to maintaining the desired count of tasks in your service, you can optionally
         /// run your service behind one or more load balancers. The load balancers distribute
         /// traffic across the tasks that are associated with the service. For more information,
         /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service
-        /// Load Balancing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+        /// load balancing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// Tasks for services that don't use a load balancer are considered healthy if they're
         /// in the <code>RUNNING</code> state. Tasks for services that use a load balancer are
-        /// considered healthy if they're in the <code>RUNNING</code> state and the container
-        /// instance that they're hosted on is reported as healthy by the load balancer.
+        /// considered healthy if they're in the <code>RUNNING</code> state and are reported as
+        /// healthy by the load balancer.
         /// </para>
         ///  
         /// <para>
@@ -473,7 +495,7 @@ namespace Amazon.ECS
         /// desired number of tasks across your cluster. By default, the service scheduler spreads
         /// tasks across Availability Zones. You can use task placement strategies and constraints
         /// to customize task placement decisions. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Service
-        /// Scheduler Concepts</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+        /// scheduler concepts</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -484,7 +506,7 @@ namespace Amazon.ECS
         /// When using this strategy, you don't need to specify a desired number of tasks, a task
         /// placement strategy, or use Service Auto Scaling policies. For more information, see
         /// <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Service
-        /// Scheduler Concepts</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+        /// scheduler concepts</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -542,39 +564,14 @@ namespace Amazon.ECS
         /// you can specify only parameters that aren't controlled at the task set level. The
         /// only required parameter is the service name. You control your services using the <a>CreateTaskSet</a>
         /// operation. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
-        /// ECS Deployment Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+        /// ECS deployment types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// When the service scheduler launches new tasks, it determines task placement in your
-        /// cluster using the following logic:
+        /// When the service scheduler launches new tasks, it determines task placement. For information
+        /// about task placement and task placement strategies, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement.html">Amazon
+        /// ECS task placement</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Determine which of the container instances in your cluster can support the task definition
-        /// of your service. For example, they have the required CPU, memory, ports, and container
-        /// instance attributes.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// By default, the service scheduler attempts to balance tasks across Availability Zones
-        /// in this manner. This is the case even if you can choose a different placement strategy
-        /// with the <code>placementStrategy</code> parameter.
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Sort the valid container instances, giving priority to instances that have the fewest
-        /// number of running tasks for this service in their respective Availability Zone. For
-        /// example, if zone A has one running service task and zones B and C each have zero,
-        /// valid container instances in either zone B or C are considered optimal for placement.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Place the new service task on a valid container instance in an optimal Availability
-        /// Zone based on the previous steps, favoring container instances with the fewest number
-        /// of running tasks for this service.
-        /// </para>
-        ///  </li> </ul> </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateService service method.</param>
         /// 
@@ -593,6 +590,9 @@ namespace Amazon.ECS
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.NamespaceNotFoundException">
+        /// The specified namespace wasn't found.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.PlatformTaskDefinitionIncompatibilityException">
         /// The specified platform version doesn't satisfy the required capabilities of the task
@@ -659,7 +659,7 @@ namespace Amazon.ECS
         /// Create a task set in the specified cluster and service. This is used when a service
         /// uses the <code>EXTERNAL</code> deployment controller type. For more information, see
         /// <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
-        /// ECS Deployment Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+        /// ECS deployment types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateTaskSet service method.</param>
         /// 
@@ -678,6 +678,9 @@ namespace Amazon.ECS
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.NamespaceNotFoundException">
+        /// The specified namespace wasn't found.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.PlatformTaskDefinitionIncompatibilityException">
         /// The specified platform version doesn't satisfy the required capabilities of the task
@@ -749,8 +752,7 @@ namespace Amazon.ECS
         #region  DeleteAccountSetting
 
         /// <summary>
-        /// Disables an account setting for a specified IAM user, IAM role, or the root user for
-        /// an account.
+        /// Disables an account setting for a specified user, role, or the root user for an account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAccountSetting service method.</param>
         /// 
@@ -1156,12 +1158,115 @@ namespace Amazon.ECS
 
         #endregion
         
+        #region  DeleteTaskDefinitions
+
+        /// <summary>
+        /// Deletes one or more task definitions.
+        /// 
+        ///  
+        /// <para>
+        /// You must deregister a task definition revision before you delete it. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DeregisterTaskDefinition.html">DeregisterTaskDefinition</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you delete a task definition revision, it is immediately transitions from the
+        /// <code>INACTIVE</code> to <code>DELETE_IN_PROGRESS</code>. Existing tasks and services
+        /// that reference a <code>DELETE_IN_PROGRESS</code> task definition revision continue
+        /// to run without disruption. Existing services that reference a <code>DELETE_IN_PROGRESS</code>
+        /// task definition revision can still scale up or down by modifying the service's desired
+        /// count.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can't use a <code>DELETE_IN_PROGRESS</code> task definition revision to run new
+        /// tasks or create new services. You also can't update an existing service to reference
+        /// a <code>DELETE_IN_PROGRESS</code> task definition revision.
+        /// </para>
+        ///  
+        /// <para>
+        ///  A task definition revision will stay in <code>DELETE_IN_PROGRESS</code> status until
+        /// all the associated tasks and services have been terminated.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you delete all <code>INACTIVE</code> task definition revisions, the task definition
+        /// name is not displayed in the console and not returned in the API. If a task definition
+        /// revisions are in the <code>DELETE_IN_PROGRESS</code> state, the task definition name
+        /// is displayed in the console and returned in the API. The task definition name is retained
+        /// by Amazon ECS and the revision is incremented the next time you create a task definition
+        /// with that name.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTaskDefinitions service method.</param>
+        /// 
+        /// <returns>The response from the DeleteTaskDefinitions service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClientException">
+        /// These errors are usually caused by a client action. This client action might be using
+        /// an action or resource on behalf of a user that doesn't have permissions to use the
+        /// action or resource,. Or, it might be specifying an identifier that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteTaskDefinitions">REST API Reference for DeleteTaskDefinitions Operation</seealso>
+        public virtual DeleteTaskDefinitionsResponse DeleteTaskDefinitions(DeleteTaskDefinitionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteTaskDefinitionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTaskDefinitionsResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteTaskDefinitionsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteTaskDefinitions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTaskDefinitions operation on AmazonECSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteTaskDefinitions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteTaskDefinitions">REST API Reference for DeleteTaskDefinitions Operation</seealso>
+        public virtual IAsyncResult BeginDeleteTaskDefinitions(DeleteTaskDefinitionsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteTaskDefinitionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTaskDefinitionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteTaskDefinitions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteTaskDefinitions.</param>
+        /// 
+        /// <returns>Returns a  DeleteTaskDefinitionsResult from ECS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteTaskDefinitions">REST API Reference for DeleteTaskDefinitions Operation</seealso>
+        public virtual DeleteTaskDefinitionsResponse EndDeleteTaskDefinitions(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteTaskDefinitionsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteTaskSet
 
         /// <summary>
         /// Deletes a specified task set within a service. This is used when a service uses the
         /// <code>EXTERNAL</code> deployment controller type. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
-        /// ECS Deployment Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+        /// ECS deployment types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteTaskSet service method.</param>
         /// 
@@ -1342,7 +1447,8 @@ namespace Amazon.ECS
         /// the task definition is marked as <code>INACTIVE</code>. Existing tasks and services
         /// that reference an <code>INACTIVE</code> task definition continue to run without disruption.
         /// Existing services that reference an <code>INACTIVE</code> task definition can still
-        /// scale up or down by modifying the service's desired count.
+        /// scale up or down by modifying the service's desired count. If you want to delete a
+        /// task definition revision, you must first deregister the task definition revision.
         /// 
         ///  
         /// <para>
@@ -1358,7 +1464,11 @@ namespace Amazon.ECS
         /// recommend that you rely on <code>INACTIVE</code> task definitions persisting beyond
         /// the lifecycle of any associated tasks and services.
         /// </para>
-        ///  </note>
+        ///  </note> 
+        /// <para>
+        /// You must deregister a task definition revision before you delete it. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DeleteTaskDefinitions.html">DeleteTaskDefinitions</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeregisterTaskDefinition service method.</param>
         /// 
@@ -1767,6 +1877,11 @@ namespace Amazon.ECS
 
         /// <summary>
         /// Describes a specified task or tasks.
+        /// 
+        ///  
+        /// <para>
+        /// Currently, stopped tasks appear in the returned results for at least one hour.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeTasks service method.</param>
         /// 
@@ -1922,6 +2037,19 @@ namespace Amazon.ECS
 
         /// <summary>
         /// Runs a command remotely on a container within a task.
+        /// 
+        ///  
+        /// <para>
+        /// If you use a condition key in your IAM policy to refine the conditions for the policy
+        /// statement, for example limit the actions to a specific cluster, you receive an <code>AccessDeniedException</code>
+        /// when there is a mismatch between the condition key value and the corresponding parameter
+        /// value.
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about required permissions and considerations, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-exec.html">Using
+        /// Amazon ECS Exec for debugging</a> in the <i>Amazon ECS Developer Guide</i>. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ExecuteCommand service method.</param>
         /// 
@@ -1945,8 +2073,27 @@ namespace Amazon.ECS
         /// These errors are usually caused by a server issue.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.TargetNotConnectedException">
-        /// The target container isn't properly configured with the execute command agent or the
-        /// container is no longer active or running.
+        /// The execute command cannot run. This error can be caused by any of the following configuration
+        /// issues:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Incorrect IAM permissions
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The SSM agent is not installed or is not running
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  There is an interface Amazon VPC endpoint for Amazon ECS, but there is not one for
+        /// Systems Manager Session Manager
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For information about how to troubleshoot the issues, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-exec.html">Troubleshooting
+        /// issues with ECS Exec</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ExecuteCommand">REST API Reference for ExecuteCommand Operation</seealso>
         public virtual ExecuteCommandResponse ExecuteCommand(ExecuteCommandRequest request)
@@ -1990,6 +2137,84 @@ namespace Amazon.ECS
         public virtual ExecuteCommandResponse EndExecuteCommand(IAsyncResult asyncResult)
         {
             return EndInvoke<ExecuteCommandResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetTaskProtection
+
+        /// <summary>
+        /// Retrieves the protection status of tasks in an Amazon ECS service.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTaskProtection service method.</param>
+        /// 
+        /// <returns>The response from the GetTaskProtection service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClientException">
+        /// These errors are usually caused by a client action. This client action might be using
+        /// an action or resource on behalf of a user that doesn't have permissions to use the
+        /// action or resource,. Or, it might be specifying an identifier that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
+        /// The specified cluster wasn't found. You can view your available clusters with <a>ListClusters</a>.
+        /// Amazon ECS clusters are Region specific.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ResourceNotFoundException">
+        /// The specified resource wasn't found.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.UnsupportedFeatureException">
+        /// The specified task isn't supported in this Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/GetTaskProtection">REST API Reference for GetTaskProtection Operation</seealso>
+        public virtual GetTaskProtectionResponse GetTaskProtection(GetTaskProtectionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTaskProtectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTaskProtectionResponseUnmarshaller.Instance;
+
+            return Invoke<GetTaskProtectionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetTaskProtection operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetTaskProtection operation on AmazonECSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetTaskProtection
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/GetTaskProtection">REST API Reference for GetTaskProtection Operation</seealso>
+        public virtual IAsyncResult BeginGetTaskProtection(GetTaskProtectionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTaskProtectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTaskProtectionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetTaskProtection operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetTaskProtection.</param>
+        /// 
+        /// <returns>Returns a  GetTaskProtectionResult from ECS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/GetTaskProtection">REST API Reference for GetTaskProtection Operation</seealso>
+        public virtual GetTaskProtectionResponse EndGetTaskProtection(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetTaskProtectionResponse>(asyncResult);
         }
 
         #endregion
@@ -2333,6 +2558,79 @@ namespace Amazon.ECS
 
         #endregion
         
+        #region  ListServicesByNamespace
+
+        /// <summary>
+        /// This operation lists all of the services that are associated with a Cloud Map namespace.
+        /// This list might include services in different clusters. In contrast, <code>ListServices</code>
+        /// can only list services in one cluster at a time. If you need to filter the list of
+        /// services in a single cluster by various parameters, use <code>ListServices</code>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service
+        /// Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListServicesByNamespace service method.</param>
+        /// 
+        /// <returns>The response from the ListServicesByNamespace service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.ClientException">
+        /// These errors are usually caused by a client action. This client action might be using
+        /// an action or resource on behalf of a user that doesn't have permissions to use the
+        /// action or resource,. Or, it might be specifying an identifier that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.NamespaceNotFoundException">
+        /// The specified namespace wasn't found.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListServicesByNamespace">REST API Reference for ListServicesByNamespace Operation</seealso>
+        public virtual ListServicesByNamespaceResponse ListServicesByNamespace(ListServicesByNamespaceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListServicesByNamespaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListServicesByNamespaceResponseUnmarshaller.Instance;
+
+            return Invoke<ListServicesByNamespaceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListServicesByNamespace operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListServicesByNamespace operation on AmazonECSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListServicesByNamespace
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListServicesByNamespace">REST API Reference for ListServicesByNamespace Operation</seealso>
+        public virtual IAsyncResult BeginListServicesByNamespace(ListServicesByNamespaceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListServicesByNamespaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListServicesByNamespaceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListServicesByNamespace operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListServicesByNamespace.</param>
+        /// 
+        /// <returns>Returns a  ListServicesByNamespaceResult from ECS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListServicesByNamespace">REST API Reference for ListServicesByNamespace Operation</seealso>
+        public virtual ListServicesByNamespaceResponse EndListServicesByNamespace(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListServicesByNamespaceResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListTagsForResource
 
         /// <summary>
@@ -2631,26 +2929,26 @@ namespace Amazon.ECS
         /// 
         ///  
         /// <para>
-        /// If you change the account setting for the root user, the default settings for all
-        /// of the IAM users and roles that no individual account setting was specified are reset
-        /// for. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html">Account
+        /// If you change the root user account setting, the default settings are reset for users
+        /// and roles that do not have specified individual account settings. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html">Account
         /// Settings</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// When <code>serviceLongArnFormat</code>, <code>taskLongArnFormat</code>, or <code>containerInstanceLongArnFormat</code>
         /// are specified, the Amazon Resource Name (ARN) and resource ID format of the resource
-        /// type for a specified IAM user, IAM role, or the root user for an account is affected.
-        /// The opt-in and opt-out account setting must be set for each Amazon ECS resource separately.
+        /// type for a specified user, role, or the root user for an account is affected. The
+        /// opt-in and opt-out account setting must be set for each Amazon ECS resource separately.
         /// The ARN and resource ID format of a resource is defined by the opt-in status of the
-        /// IAM user or role that created the resource. You must enable this setting to use Amazon
+        /// user or role that created the resource. You must turn on this setting to use Amazon
         /// ECS features such as resource tagging.
         /// </para>
         ///  
         /// <para>
         /// When <code>awsvpcTrunking</code> is specified, the elastic network interface (ENI)
         /// limit for any new container instances that support the feature is changed. If <code>awsvpcTrunking</code>
-        /// is enabled, any new container instances that support the feature are launched have
+        /// is turned on, any new container instances that support the feature are launched have
         /// the increased ENI limits available to them. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-eni.html">Elastic
         /// Network Interface Trunking</a> in the <i>Amazon Elastic Container Service Developer
         /// Guide</i>.
@@ -2658,10 +2956,21 @@ namespace Amazon.ECS
         ///  
         /// <para>
         /// When <code>containerInsights</code> is specified, the default setting indicating whether
-        /// CloudWatch Container Insights is enabled for your clusters is changed. If <code>containerInsights</code>
-        /// is enabled, any new clusters that are created will have Container Insights enabled
-        /// unless you disable it during cluster creation. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cloudwatch-container-insights.html">CloudWatch
+        /// Amazon Web Services CloudWatch Container Insights is turned on for your clusters is
+        /// changed. If <code>containerInsights</code> is turned on, any new clusters that are
+        /// created will have Container Insights turned on unless you disable it during cluster
+        /// creation. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cloudwatch-container-insights.html">CloudWatch
         /// Container Insights</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Amazon ECS is introducing tagging authorization for resource creation. Users must
+        /// have permissions for actions that create the resource, such as <code>ecsCreateCluster</code>.
+        /// If tags are specified when you create a resource, Amazon Web Services performs additional
+        /// authorization to verify if users or roles have permissions to create tags. Therefore,
+        /// you must grant explicit permissions to use the <code>ecs:TagResource</code> action.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/supported-iam-actions-tagging.html">Grant
+        /// permission to tag resources on creation</a> in the <i>Amazon ECS Developer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutAccountSetting service method.</param>
@@ -2727,8 +3036,8 @@ namespace Amazon.ECS
         #region  PutAccountSettingDefault
 
         /// <summary>
-        /// Modifies an account setting for all IAM users on an account for whom no individual
-        /// account setting has been specified. Account settings are set on a per-Region basis.
+        /// Modifies an account setting for all users on an account for whom no individual account
+        /// setting has been specified. Account settings are set on a per-Region basis.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutAccountSettingDefault service method.</param>
         /// 
@@ -2975,11 +3284,11 @@ namespace Amazon.ECS
         /// 
         ///  
         /// <para>
-        /// You can specify an IAM role for your task with the <code>taskRoleArn</code> parameter.
-        /// When you specify an IAM role for a task, its containers can then use the latest versions
+        /// You can specify a role for your task with the <code>taskRoleArn</code> parameter.
+        /// When you specify a role for a task, its containers can then use the latest versions
         /// of the CLI or SDKs to make API requests to the Amazon Web Services services that are
-        /// specified in the IAM policy that's associated with the role. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
+        /// specified in the policy that's associated with the role. For more information, see
+        /// <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
         /// Roles for Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         ///  
@@ -3071,9 +3380,19 @@ namespace Amazon.ECS
         /// Alternatively, you can use <a>StartTask</a> to use your own scheduler or place tasks
         /// manually on specific container instances.
         /// </para>
-        ///  
+        ///  <note> 
         /// <para>
-        /// The Amazon ECS API follows an eventual consistency model. This is because the distributed
+        /// Starting April 15, 2023, Amazon Web Services will not onboard new customers to Amazon
+        /// Elastic Inference (EI), and will help current customers migrate their workloads to
+        /// options that offer better price and performance. After April 15, 2023, new customers
+        /// will not be able to launch instances with Amazon EI accelerators in Amazon SageMaker,
+        /// Amazon ECS, or Amazon EC2. However, customers who have used Amazon EI at least once
+        /// during the past 30-day period are considered current customers and will be able to
+        /// continue using the service. 
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// The Amazon ECS API follows an eventual consistency model. This is because of the distributed
         /// nature of the system supporting the API. This means that the result of an API command
         /// you run that affects your Amazon ECS resources might not be immediately visible to
         /// all subsequent commands you run. Keep this in mind when you carry out an API command
@@ -3186,7 +3505,17 @@ namespace Amazon.ECS
         /// Starts a new task from the specified task definition on the specified container instance
         /// or instances.
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// Starting April 15, 2023, Amazon Web Services will not onboard new customers to Amazon
+        /// Elastic Inference (EI), and will help current customers migrate their workloads to
+        /// options that offer better price and performance. After April 15, 2023, new customers
+        /// will not be able to launch instances with Amazon EI accelerators in Amazon SageMaker,
+        /// Amazon ECS, or Amazon EC2. However, customers who have used Amazon EI at least once
+        /// during the past 30-day period are considered current customers and will be able to
+        /// continue using the service. 
+        /// </para>
+        ///  </note> 
         /// <para>
         /// Alternatively, you can use <a>RunTask</a> to place tasks for you. For more information,
         /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html">Scheduling
@@ -3653,6 +3982,9 @@ namespace Amazon.ECS
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
         /// </exception>
+        /// <exception cref="Amazon.ECS.Model.NamespaceNotFoundException">
+        /// The specified namespace wasn't found.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
         /// </exception>
@@ -3789,6 +4121,12 @@ namespace Amazon.ECS
         /// the Amazon ECS container agent</a> in the <i>Amazon Elastic Container Service Developer
         /// Guide</i>.
         /// </para>
+        ///  </note> <note> 
+        /// <para>
+        /// Agent updates with the <code>UpdateContainerAgent</code> API operation do not apply
+        /// to Windows container instances. We recommend that you launch new container instances
+        /// to update the agent version in your Windows clusters.
+        /// </para>
         ///  </note> 
         /// <para>
         /// The <code>UpdateContainerAgent</code> API requires an Amazon ECS-optimized AMI or
@@ -3922,8 +4260,7 @@ namespace Amazon.ECS
         /// tasks until the replacement tasks are considered healthy. Tasks for services that
         /// do not use a load balancer are considered healthy if they're in the <code>RUNNING</code>
         /// state. Tasks for services that use a load balancer are considered healthy if they're
-        /// in the <code>RUNNING</code> state and the container instance they're hosted on is
-        /// reported as healthy by the load balancer.
+        /// in the <code>RUNNING</code> state and are reported as healthy by the load balancer.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4018,39 +4355,33 @@ namespace Amazon.ECS
         #region  UpdateService
 
         /// <summary>
-        /// <important> 
-        /// <para>
-        /// Updating the task placement strategies and constraints on an Amazon ECS service remains
-        /// in preview and is a Beta Service as defined by and subject to the Beta Service Participation
-        /// Service Terms located at <a href="https://aws.amazon.com/service-terms">https://aws.amazon.com/service-terms</a>
-        /// ("Beta Terms"). These Beta Terms apply to your participation in this preview.
-        /// </para>
-        ///  </important> 
-        /// <para>
         /// Modifies the parameters of a service.
-        /// </para>
+        /// 
         ///  
         /// <para>
-        /// For services using the rolling update (<code>ECS</code>) deployment controller, the
-        /// desired count, deployment configuration, network configuration, task placement constraints
-        /// and strategies, or task definition used can be updated.
+        /// For services using the rolling update (<code>ECS</code>) you can update the desired
+        /// count, deployment configuration, network configuration, load balancers, service registries,
+        /// enable ECS managed tags option, propagate tags option, task placement constraints
+        /// and strategies, and task definition. When you update any of these parameters, Amazon
+        /// ECS starts new tasks with the new configuration. 
         /// </para>
         ///  
         /// <para>
         /// For services using the blue/green (<code>CODE_DEPLOY</code>) deployment controller,
-        /// only the desired count, deployment configuration, task placement constraints and strategies,
-        /// and health check grace period can be updated using this API. If the network configuration,
-        /// platform version, or task definition need to be updated, a new CodeDeploy deployment
-        /// is created. For more information, see <a href="https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_CreateDeployment.html">CreateDeployment</a>
+        /// only the desired count, deployment configuration, health check grace period, task
+        /// placement constraints and strategies, enable ECS managed tags option, and propagate
+        /// tags can be updated using this API. If the network configuration, platform version,
+        /// task definition, or load balancer need to be updated, create a new CodeDeploy deployment.
+        /// For more information, see <a href="https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_CreateDeployment.html">CreateDeployment</a>
         /// in the <i>CodeDeploy API Reference</i>.
         /// </para>
         ///  
         /// <para>
         /// For services using an external deployment controller, you can update only the desired
-        /// count, task placement constraints and strategies, and health check grace period using
-        /// this API. If the launch type, load balancer, network configuration, platform version,
-        /// or task definition need to be updated, create a new task set. For more information,
-        /// see <a>CreateTaskSet</a>.
+        /// count, task placement constraints and strategies, health check grace period, enable
+        /// ECS managed tags option, and propagate tags option, using this API. If the launch
+        /// type, load balancer, network configuration, platform version, or task definition need
+        /// to be updated, create a new task set For more information, see <a>CreateTaskSet</a>.
         /// </para>
         ///  
         /// <para>
@@ -4087,8 +4418,8 @@ namespace Amazon.ECS
         /// tasks, a minimum of 50% allows the scheduler to stop two existing tasks before starting
         /// two new tasks. Tasks for services that don't use a load balancer are considered healthy
         /// if they're in the <code>RUNNING</code> state. Tasks for services that use a load balancer
-        /// are considered healthy if they're in the <code>RUNNING</code> state and the container
-        /// instance they're hosted on is reported as healthy by the load balancer.
+        /// are considered healthy if they're in the <code>RUNNING</code> state and are reported
+        /// as healthy by the load balancer.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4153,7 +4484,24 @@ namespace Amazon.ECS
         /// previous steps), favoring container instances with the largest number of running tasks
         /// for this service.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// You must have a service-linked role when you update any of the following service properties.
+        /// If you specified a custom role when you created the service, Amazon ECS automatically
+        /// replaces the <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_Service.html#ECS-Type-Service-roleArn">roleARN</a>
+        /// associated with the service with the ARN of your service-linked role. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Service-linked
+        /// roles</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>loadBalancers,</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>serviceRegistries</code> 
+        /// </para>
+        ///  </li> </ul> </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateService service method.</param>
         /// 
@@ -4172,6 +4520,9 @@ namespace Amazon.ECS
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.NamespaceNotFoundException">
+        /// The specified namespace wasn't found.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.PlatformTaskDefinitionIncompatibilityException">
         /// The specified platform version doesn't satisfy the required capabilities of the task
@@ -4324,6 +4675,123 @@ namespace Amazon.ECS
         public virtual UpdateServicePrimaryTaskSetResponse EndUpdateServicePrimaryTaskSet(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateServicePrimaryTaskSetResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateTaskProtection
+
+        /// <summary>
+        /// Updates the protection status of a task. You can set <code>protectionEnabled</code>
+        /// to <code>true</code> to protect your task from termination during scale-in events
+        /// from <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-auto-scaling.html">Service
+        /// Autoscaling</a> or <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">deployments</a>.
+        /// 
+        ///  
+        /// <para>
+        /// Task-protection, by default, expires after 2 hours at which point Amazon ECS clears
+        /// the <code>protectionEnabled</code> property making the task eligible for termination
+        /// by a subsequent scale-in event.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can specify a custom expiration period for task protection from 1 minute to up
+        /// to 2,880 minutes (48 hours). To specify the custom expiration period, set the <code>expiresInMinutes</code>
+        /// property. The <code>expiresInMinutes</code> property is always reset when you invoke
+        /// this operation for a task that already has <code>protectionEnabled</code> set to <code>true</code>.
+        /// You can keep extending the protection expiration period of a task by invoking this
+        /// operation repeatedly.
+        /// </para>
+        ///  
+        /// <para>
+        /// To learn more about Amazon ECS task protection, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-scale-in-protection.html">Task
+        /// scale-in protection</a> in the <i> <i>Amazon Elastic Container Service Developer Guide</i>
+        /// </i>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This operation is only supported for tasks belonging to an Amazon ECS service. Invoking
+        /// this operation for a standalone task will result in an <code>TASK_NOT_VALID</code>
+        /// failure. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/api_failures_messages.html">API
+        /// failure reasons</a>.
+        /// </para>
+        ///  </note> <important> 
+        /// <para>
+        /// If you prefer to set task protection from within the container, we recommend using
+        /// the <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-scale-in-protection-endpoint.html">Task
+        /// scale-in protection endpoint</a>.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTaskProtection service method.</param>
+        /// 
+        /// <returns>The response from the UpdateTaskProtection service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClientException">
+        /// These errors are usually caused by a client action. This client action might be using
+        /// an action or resource on behalf of a user that doesn't have permissions to use the
+        /// action or resource,. Or, it might be specifying an identifier that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
+        /// The specified cluster wasn't found. You can view your available clusters with <a>ListClusters</a>.
+        /// Amazon ECS clusters are Region specific.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ResourceNotFoundException">
+        /// The specified resource wasn't found.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.UnsupportedFeatureException">
+        /// The specified task isn't supported in this Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateTaskProtection">REST API Reference for UpdateTaskProtection Operation</seealso>
+        public virtual UpdateTaskProtectionResponse UpdateTaskProtection(UpdateTaskProtectionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateTaskProtectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateTaskProtectionResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateTaskProtectionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateTaskProtection operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTaskProtection operation on AmazonECSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateTaskProtection
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateTaskProtection">REST API Reference for UpdateTaskProtection Operation</seealso>
+        public virtual IAsyncResult BeginUpdateTaskProtection(UpdateTaskProtectionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateTaskProtectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateTaskProtectionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateTaskProtection operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateTaskProtection.</param>
+        /// 
+        /// <returns>Returns a  UpdateTaskProtectionResult from ECS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateTaskProtection">REST API Reference for UpdateTaskProtection Operation</seealso>
+        public virtual UpdateTaskProtectionResponse EndUpdateTaskProtection(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateTaskProtectionResponse>(asyncResult);
         }
 
         #endregion

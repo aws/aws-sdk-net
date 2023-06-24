@@ -34,7 +34,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// OracleSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class OracleSettingsMarshaller : IRequestMarshaller<OracleSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -103,6 +103,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("CharLengthSemantics");
                 context.Writer.Write(requestObject.CharLengthSemantics);
+            }
+
+            if(requestObject.IsSetConvertTimestampWithZoneToUTC())
+            {
+                context.Writer.WritePropertyName("ConvertTimestampWithZoneToUTC");
+                context.Writer.Write(requestObject.ConvertTimestampWithZoneToUTC);
             }
 
             if(requestObject.IsSetDatabaseName())
@@ -254,6 +260,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.StandbyDelayTime);
             }
 
+            if(requestObject.IsSetTrimSpaceInChar())
+            {
+                context.Writer.WritePropertyName("TrimSpaceInChar");
+                context.Writer.Write(requestObject.TrimSpaceInChar);
+            }
+
             if(requestObject.IsSetUseAlternateFolderForOnline())
             {
                 context.Writer.WritePropertyName("UseAlternateFolderForOnline");
@@ -294,7 +306,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static OracleSettingsMarshaller Instance = new OracleSettingsMarshaller();
 
     }

@@ -43,7 +43,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property FromDbClusterArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the Aurora DB cluster that is currently being demoted,
-        /// and which is associated with this state. 
+        /// and which is associated with this state.
         /// </para>
         /// </summary>
         public string FromDbClusterArn
@@ -62,7 +62,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property Status. 
         /// <para>
         /// The current status of the Aurora global database (<a>GlobalCluster</a>). Possible
-        /// values are as follows: 
+        /// values are as follows:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -75,13 +75,13 @@ namespace Amazon.RDS.Model
         /// <para>
         /// failing-over &#x96; This status covers the range of Aurora internal operations that
         /// take place during the failover process, such as demoting the primary Aurora DB cluster,
-        /// promoting the secondary Aurora DB, and synchronizing replicas. 
+        /// promoting the secondary Aurora DB, and synchronizing replicas.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// cancelling &#x96; The request to fail over the Aurora global database (<a>GlobalCluster</a>)
         /// was cancelled and the primary Aurora DB cluster and the selected secondary Aurora
-        /// DB cluster are returning to their previous states. 
+        /// DB cluster are returning to their previous states.
         /// </para>
         ///  </li> </ul>
         /// </summary>

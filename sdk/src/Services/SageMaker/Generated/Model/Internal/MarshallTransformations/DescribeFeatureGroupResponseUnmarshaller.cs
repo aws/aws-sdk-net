@@ -99,6 +99,18 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     response.FeatureGroupStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("LastModifiedTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    response.LastModifiedTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("LastUpdateStatus", targetDepth))
+                {
+                    var unmarshaller = LastUpdateStatusUnmarshaller.Instance;
+                    response.LastUpdateStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("NextToken", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -121,6 +133,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = OnlineStoreConfigUnmarshaller.Instance;
                     response.OnlineStoreConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("OnlineStoreTotalSizeBytes", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    response.OnlineStoreTotalSizeBytes = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("RecordIdentifierFeatureName", targetDepth))

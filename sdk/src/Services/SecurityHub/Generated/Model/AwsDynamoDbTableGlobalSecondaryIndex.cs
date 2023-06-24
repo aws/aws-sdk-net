@@ -120,6 +120,23 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The current status of the index.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>ACTIVE</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>CREATING</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>DELETING</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>UPDATING</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string IndexStatus
         {

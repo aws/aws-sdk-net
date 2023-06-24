@@ -30,8 +30,8 @@ namespace Amazon.CostExplorer.Model
 {
     /// <summary>
     /// Container for the parameters to the ListCostCategoryDefinitions operation.
-    /// Returns the name, ARN, <code>NumberOfRules</code> and effective dates of all Cost
-    /// Categories defined in the account. You have the option to use <code>EffectiveOn</code>
+    /// Returns the name, Amazon Resource Name (ARN), <code>NumberOfRules</code> and effective
+    /// dates of all Cost Categories defined in the account. You have the option to use <code>EffectiveOn</code>
     /// to return a list of Cost Categories that were active on a specific date. If there
     /// is no <code>EffectiveOn</code> specified, you’ll see Cost Categories that are effective
     /// on the current date. If Cost Category is still effective, <code>EffectiveEnd</code>
@@ -47,7 +47,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property EffectiveOn. 
         /// <para>
-        ///  The date when the Cost Category was effective. 
+        /// The date when the Cost Category was effective. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=25)]
@@ -66,7 +66,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        ///  The number of entries a paginated response contains. 
+        /// The number of entries a paginated response contains. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -85,7 +85,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        ///  The token to retrieve the next set of results. Amazon Web Services provides the token
+        /// The token to retrieve the next set of results. Amazon Web Services provides the token
         /// when the response from a previous call has more results than the maximum page size.
         /// 
         /// </para>

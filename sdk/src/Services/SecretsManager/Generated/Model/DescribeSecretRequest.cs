@@ -30,42 +30,23 @@ namespace Amazon.SecretsManager.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeSecret operation.
-    /// Retrieves the details of a secret. It does not include the encrypted fields. Secrets
-    /// Manager only returns fields populated with a value in the response. 
+    /// Retrieves the details of a secret. It does not include the encrypted secret value.
+    /// Secrets Manager only returns fields that have a value in the response. 
     /// 
     ///  
     /// <para>
-    ///  <b>Minimum permissions</b> 
+    /// Secrets Manager generates a CloudTrail log entry when you call this action. Do not
+    /// include sensitive information in request parameters because it might be logged. For
+    /// more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/retrieve-ct-entries.html">Logging
+    /// Secrets Manager events with CloudTrail</a>.
     /// </para>
     ///  
     /// <para>
-    /// To run this command, you must have the following permissions:
+    ///  <b>Required permissions: </b> <code>secretsmanager:DescribeSecret</code>. For more
+    /// information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions">
+    /// IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+    /// and access control in Secrets Manager</a>. 
     /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    /// secretsmanager:DescribeSecret
-    /// </para>
-    ///  </li> </ul> 
-    /// <para>
-    ///  <b>Related operations</b> 
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    /// To create a secret, use <a>CreateSecret</a>.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// To modify a secret, use <a>UpdateSecret</a>.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// To retrieve the encrypted secret information in a version of the secret, use <a>GetSecretValue</a>.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// To list all of the secrets in the Amazon Web Services account, use <a>ListSecrets</a>.
-    /// </para>
-    ///  </li> </ul>
     /// </summary>
     public partial class DescribeSecretRequest : AmazonSecretsManagerRequest
     {
@@ -74,12 +55,13 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property SecretId. 
         /// <para>
-        /// The identifier of the secret whose details you want to retrieve. You can specify either
-        /// the Amazon Resource Name (ARN) or the friendly name of the secret.
+        /// The ARN or name of the secret. 
         /// </para>
         ///  
         /// <para>
         /// For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.
+        /// See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding
+        /// a secret from a partial ARN</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]

@@ -85,6 +85,10 @@ namespace Amazon.Inspector2
     {
 
         /// <summary>
+        /// Constant CODE_VULNERABILITY for AggregationFindingType
+        /// </summary>
+        public static readonly AggregationFindingType CODE_VULNERABILITY = new AggregationFindingType("CODE_VULNERABILITY");
+        /// <summary>
         /// Constant NETWORK_REACHABILITY for AggregationFindingType
         /// </summary>
         public static readonly AggregationFindingType NETWORK_REACHABILITY = new AggregationFindingType("NETWORK_REACHABILITY");
@@ -142,6 +146,10 @@ namespace Amazon.Inspector2
         /// Constant AWS_ECR_CONTAINER_IMAGE for AggregationResourceType
         /// </summary>
         public static readonly AggregationResourceType AWS_ECR_CONTAINER_IMAGE = new AggregationResourceType("AWS_ECR_CONTAINER_IMAGE");
+        /// <summary>
+        /// Constant AWS_LAMBDA_FUNCTION for AggregationResourceType
+        /// </summary>
+        public static readonly AggregationResourceType AWS_LAMBDA_FUNCTION = new AggregationResourceType("AWS_LAMBDA_FUNCTION");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -201,6 +209,10 @@ namespace Amazon.Inspector2
         /// </summary>
         public static readonly AggregationType AWS_ECR_CONTAINER = new AggregationType("AWS_ECR_CONTAINER");
         /// <summary>
+        /// Constant AWS_LAMBDA_FUNCTION for AggregationType
+        /// </summary>
+        public static readonly AggregationType AWS_LAMBDA_FUNCTION = new AggregationType("AWS_LAMBDA_FUNCTION");
+        /// <summary>
         /// Constant FINDING_TYPE for AggregationType
         /// </summary>
         public static readonly AggregationType FINDING_TYPE = new AggregationType("FINDING_TYPE");
@@ -208,6 +220,10 @@ namespace Amazon.Inspector2
         /// Constant IMAGE_LAYER for AggregationType
         /// </summary>
         public static readonly AggregationType IMAGE_LAYER = new AggregationType("IMAGE_LAYER");
+        /// <summary>
+        /// Constant LAMBDA_LAYER for AggregationType
+        /// </summary>
+        public static readonly AggregationType LAMBDA_LAYER = new AggregationType("LAMBDA_LAYER");
         /// <summary>
         /// Constant PACKAGE for AggregationType
         /// </summary>
@@ -315,6 +331,56 @@ namespace Amazon.Inspector2
 
 
     /// <summary>
+    /// Constants used for properties of type Architecture.
+    /// </summary>
+    public class Architecture : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ARM64 for Architecture
+        /// </summary>
+        public static readonly Architecture ARM64 = new Architecture("ARM64");
+        /// <summary>
+        /// Constant X86_64 for Architecture
+        /// </summary>
+        public static readonly Architecture X86_64 = new Architecture("X86_64");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Architecture(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Architecture FindValue(string value)
+        {
+            return FindValue<Architecture>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Architecture(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AwsEcrContainerSortBy.
     /// </summary>
     public class AwsEcrContainerSortBy : ConstantClass
@@ -362,6 +428,64 @@ namespace Amazon.Inspector2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator AwsEcrContainerSortBy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CodeSnippetErrorCode.
+    /// </summary>
+    public class CodeSnippetErrorCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACCESS_DENIED for CodeSnippetErrorCode
+        /// </summary>
+        public static readonly CodeSnippetErrorCode ACCESS_DENIED = new CodeSnippetErrorCode("ACCESS_DENIED");
+        /// <summary>
+        /// Constant CODE_SNIPPET_NOT_FOUND for CodeSnippetErrorCode
+        /// </summary>
+        public static readonly CodeSnippetErrorCode CODE_SNIPPET_NOT_FOUND = new CodeSnippetErrorCode("CODE_SNIPPET_NOT_FOUND");
+        /// <summary>
+        /// Constant INTERNAL_ERROR for CodeSnippetErrorCode
+        /// </summary>
+        public static readonly CodeSnippetErrorCode INTERNAL_ERROR = new CodeSnippetErrorCode("INTERNAL_ERROR");
+        /// <summary>
+        /// Constant INVALID_INPUT for CodeSnippetErrorCode
+        /// </summary>
+        public static readonly CodeSnippetErrorCode INVALID_INPUT = new CodeSnippetErrorCode("INVALID_INPUT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CodeSnippetErrorCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CodeSnippetErrorCode FindValue(string value)
+        {
+            return FindValue<CodeSnippetErrorCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CodeSnippetErrorCode(string value)
         {
             return FindValue(value);
         }
@@ -432,6 +556,10 @@ namespace Amazon.Inspector2
         /// Constant AWS_ECR_REPOSITORY for CoverageResourceType
         /// </summary>
         public static readonly CoverageResourceType AWS_ECR_REPOSITORY = new CoverageResourceType("AWS_ECR_REPOSITORY");
+        /// <summary>
+        /// Constant AWS_LAMBDA_FUNCTION for CoverageResourceType
+        /// </summary>
+        public static readonly CoverageResourceType AWS_LAMBDA_FUNCTION = new CoverageResourceType("AWS_LAMBDA_FUNCTION");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -615,6 +743,64 @@ namespace Amazon.Inspector2
 
 
     /// <summary>
+    /// Constants used for properties of type Ec2DeepInspectionStatus.
+    /// </summary>
+    public class Ec2DeepInspectionStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVATED for Ec2DeepInspectionStatus
+        /// </summary>
+        public static readonly Ec2DeepInspectionStatus ACTIVATED = new Ec2DeepInspectionStatus("ACTIVATED");
+        /// <summary>
+        /// Constant DEACTIVATED for Ec2DeepInspectionStatus
+        /// </summary>
+        public static readonly Ec2DeepInspectionStatus DEACTIVATED = new Ec2DeepInspectionStatus("DEACTIVATED");
+        /// <summary>
+        /// Constant FAILED for Ec2DeepInspectionStatus
+        /// </summary>
+        public static readonly Ec2DeepInspectionStatus FAILED = new Ec2DeepInspectionStatus("FAILED");
+        /// <summary>
+        /// Constant PENDING for Ec2DeepInspectionStatus
+        /// </summary>
+        public static readonly Ec2DeepInspectionStatus PENDING = new Ec2DeepInspectionStatus("PENDING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Ec2DeepInspectionStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Ec2DeepInspectionStatus FindValue(string value)
+        {
+            return FindValue<Ec2DeepInspectionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Ec2DeepInspectionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Ec2InstanceSortBy.
     /// </summary>
     public class Ec2InstanceSortBy : ConstantClass
@@ -727,6 +913,114 @@ namespace Amazon.Inspector2
 
 
     /// <summary>
+    /// Constants used for properties of type EcrRescanDuration.
+    /// </summary>
+    public class EcrRescanDuration : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DAYS_180 for EcrRescanDuration
+        /// </summary>
+        public static readonly EcrRescanDuration DAYS_180 = new EcrRescanDuration("DAYS_180");
+        /// <summary>
+        /// Constant DAYS_30 for EcrRescanDuration
+        /// </summary>
+        public static readonly EcrRescanDuration DAYS_30 = new EcrRescanDuration("DAYS_30");
+        /// <summary>
+        /// Constant LIFETIME for EcrRescanDuration
+        /// </summary>
+        public static readonly EcrRescanDuration LIFETIME = new EcrRescanDuration("LIFETIME");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EcrRescanDuration(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EcrRescanDuration FindValue(string value)
+        {
+            return FindValue<EcrRescanDuration>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EcrRescanDuration(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type EcrRescanDurationStatus.
+    /// </summary>
+    public class EcrRescanDurationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED for EcrRescanDurationStatus
+        /// </summary>
+        public static readonly EcrRescanDurationStatus FAILED = new EcrRescanDurationStatus("FAILED");
+        /// <summary>
+        /// Constant PENDING for EcrRescanDurationStatus
+        /// </summary>
+        public static readonly EcrRescanDurationStatus PENDING = new EcrRescanDurationStatus("PENDING");
+        /// <summary>
+        /// Constant SUCCESS for EcrRescanDurationStatus
+        /// </summary>
+        public static readonly EcrRescanDurationStatus SUCCESS = new EcrRescanDurationStatus("SUCCESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EcrRescanDurationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EcrRescanDurationStatus FindValue(string value)
+        {
+            return FindValue<EcrRescanDurationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EcrRescanDurationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type EcrScanFrequency.
     /// </summary>
     public class EcrScanFrequency : ConstantClass
@@ -790,6 +1084,10 @@ namespace Amazon.Inspector2
         /// Constant ACCESS_DENIED for ErrorCode
         /// </summary>
         public static readonly ErrorCode ACCESS_DENIED = new ErrorCode("ACCESS_DENIED");
+        /// <summary>
+        /// Constant ACCOUNT_IS_ISOLATED for ErrorCode
+        /// </summary>
+        public static readonly ErrorCode ACCOUNT_IS_ISOLATED = new ErrorCode("ACCOUNT_IS_ISOLATED");
         /// <summary>
         /// Constant ALREADY_ENABLED for ErrorCode
         /// </summary>
@@ -868,6 +1166,56 @@ namespace Amazon.Inspector2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ErrorCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ExploitAvailable.
+    /// </summary>
+    public class ExploitAvailable : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NO for ExploitAvailable
+        /// </summary>
+        public static readonly ExploitAvailable NO = new ExploitAvailable("NO");
+        /// <summary>
+        /// Constant YES for ExploitAvailable
+        /// </summary>
+        public static readonly ExploitAvailable YES = new ExploitAvailable("YES");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ExploitAvailable(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ExploitAvailable FindValue(string value)
+        {
+            return FindValue<ExploitAvailable>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ExploitAvailable(string value)
         {
             return FindValue(value);
         }
@@ -1043,6 +1391,10 @@ namespace Amazon.Inspector2
     {
 
         /// <summary>
+        /// Constant CODE_VULNERABILITY for FindingType
+        /// </summary>
+        public static readonly FindingType CODE_VULNERABILITY = new FindingType("CODE_VULNERABILITY");
+        /// <summary>
         /// Constant NETWORK_REACHABILITY for FindingType
         /// </summary>
         public static readonly FindingType NETWORK_REACHABILITY = new FindingType("NETWORK_REACHABILITY");
@@ -1134,6 +1486,60 @@ namespace Amazon.Inspector2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator FindingTypeSortBy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FixAvailable.
+    /// </summary>
+    public class FixAvailable : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NO for FixAvailable
+        /// </summary>
+        public static readonly FixAvailable NO = new FixAvailable("NO");
+        /// <summary>
+        /// Constant PARTIAL for FixAvailable
+        /// </summary>
+        public static readonly FixAvailable PARTIAL = new FixAvailable("PARTIAL");
+        /// <summary>
+        /// Constant YES for FixAvailable
+        /// </summary>
+        public static readonly FixAvailable YES = new FixAvailable("YES");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FixAvailable(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FixAvailable FindValue(string value)
+        {
+            return FindValue<FixAvailable>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FixAvailable(string value)
         {
             return FindValue(value);
         }
@@ -1254,6 +1660,14 @@ namespace Amazon.Inspector2
         /// Constant ECR for FreeTrialType
         /// </summary>
         public static readonly FreeTrialType ECR = new FreeTrialType("ECR");
+        /// <summary>
+        /// Constant LAMBDA for FreeTrialType
+        /// </summary>
+        public static readonly FreeTrialType LAMBDA = new FreeTrialType("LAMBDA");
+        /// <summary>
+        /// Constant LAMBDA_CODE for FreeTrialType
+        /// </summary>
+        public static readonly FreeTrialType LAMBDA_CODE = new FreeTrialType("LAMBDA_CODE");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1400,6 +1814,114 @@ namespace Amazon.Inspector2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ImageLayerSortBy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type LambdaFunctionSortBy.
+    /// </summary>
+    public class LambdaFunctionSortBy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALL for LambdaFunctionSortBy
+        /// </summary>
+        public static readonly LambdaFunctionSortBy ALL = new LambdaFunctionSortBy("ALL");
+        /// <summary>
+        /// Constant CRITICAL for LambdaFunctionSortBy
+        /// </summary>
+        public static readonly LambdaFunctionSortBy CRITICAL = new LambdaFunctionSortBy("CRITICAL");
+        /// <summary>
+        /// Constant HIGH for LambdaFunctionSortBy
+        /// </summary>
+        public static readonly LambdaFunctionSortBy HIGH = new LambdaFunctionSortBy("HIGH");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LambdaFunctionSortBy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LambdaFunctionSortBy FindValue(string value)
+        {
+            return FindValue<LambdaFunctionSortBy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LambdaFunctionSortBy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type LambdaLayerSortBy.
+    /// </summary>
+    public class LambdaLayerSortBy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALL for LambdaLayerSortBy
+        /// </summary>
+        public static readonly LambdaLayerSortBy ALL = new LambdaLayerSortBy("ALL");
+        /// <summary>
+        /// Constant CRITICAL for LambdaLayerSortBy
+        /// </summary>
+        public static readonly LambdaLayerSortBy CRITICAL = new LambdaLayerSortBy("CRITICAL");
+        /// <summary>
+        /// Constant HIGH for LambdaLayerSortBy
+        /// </summary>
+        public static readonly LambdaLayerSortBy HIGH = new LambdaLayerSortBy("HIGH");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LambdaLayerSortBy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LambdaLayerSortBy FindValue(string value)
+        {
+            return FindValue<LambdaLayerSortBy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LambdaLayerSortBy(string value)
         {
             return FindValue(value);
         }
@@ -1579,6 +2101,10 @@ namespace Amazon.Inspector2
         /// </summary>
         public static readonly PackageManager COMPOSER = new PackageManager("COMPOSER");
         /// <summary>
+        /// Constant GEMSPEC for PackageManager
+        /// </summary>
+        public static readonly PackageManager GEMSPEC = new PackageManager("GEMSPEC");
+        /// <summary>
         /// Constant GOBINARY for PackageManager
         /// </summary>
         public static readonly PackageManager GOBINARY = new PackageManager("GOBINARY");
@@ -1590,6 +2116,10 @@ namespace Amazon.Inspector2
         /// Constant JAR for PackageManager
         /// </summary>
         public static readonly PackageManager JAR = new PackageManager("JAR");
+        /// <summary>
+        /// Constant NODEPKG for PackageManager
+        /// </summary>
+        public static readonly PackageManager NODEPKG = new PackageManager("NODEPKG");
         /// <summary>
         /// Constant NPM for PackageManager
         /// </summary>
@@ -1603,6 +2133,10 @@ namespace Amazon.Inspector2
         /// </summary>
         public static readonly PackageManager OS = new PackageManager("OS");
         /// <summary>
+        /// Constant PIP for PackageManager
+        /// </summary>
+        public static readonly PackageManager PIP = new PackageManager("PIP");
+        /// <summary>
         /// Constant PIPENV for PackageManager
         /// </summary>
         public static readonly PackageManager PIPENV = new PackageManager("PIPENV");
@@ -1610,6 +2144,14 @@ namespace Amazon.Inspector2
         /// Constant POETRY for PackageManager
         /// </summary>
         public static readonly PackageManager POETRY = new PackageManager("POETRY");
+        /// <summary>
+        /// Constant POM for PackageManager
+        /// </summary>
+        public static readonly PackageManager POM = new PackageManager("POM");
+        /// <summary>
+        /// Constant PYTHONPKG for PackageManager
+        /// </summary>
+        public static readonly PackageManager PYTHONPKG = new PackageManager("PYTHONPKG");
         /// <summary>
         /// Constant YARN for PackageManager
         /// </summary>
@@ -1698,6 +2240,56 @@ namespace Amazon.Inspector2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator PackageSortBy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PackageType.
+    /// </summary>
+    public class PackageType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant IMAGE for PackageType
+        /// </summary>
+        public static readonly PackageType IMAGE = new PackageType("IMAGE");
+        /// <summary>
+        /// Constant ZIP for PackageType
+        /// </summary>
+        public static readonly PackageType ZIP = new PackageType("ZIP");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PackageType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PackageType FindValue(string value)
+        {
+            return FindValue<PackageType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PackageType(string value)
         {
             return FindValue(value);
         }
@@ -1851,6 +2443,14 @@ namespace Amazon.Inspector2
     {
 
         /// <summary>
+        /// Constant BUCKET_NOT_FOUND for ReportingErrorCode
+        /// </summary>
+        public static readonly ReportingErrorCode BUCKET_NOT_FOUND = new ReportingErrorCode("BUCKET_NOT_FOUND");
+        /// <summary>
+        /// Constant INCOMPATIBLE_BUCKET_REGION for ReportingErrorCode
+        /// </summary>
+        public static readonly ReportingErrorCode INCOMPATIBLE_BUCKET_REGION = new ReportingErrorCode("INCOMPATIBLE_BUCKET_REGION");
+        /// <summary>
         /// Constant INTERNAL_ERROR for ReportingErrorCode
         /// </summary>
         public static readonly ReportingErrorCode INTERNAL_ERROR = new ReportingErrorCode("INTERNAL_ERROR");
@@ -1858,6 +2458,14 @@ namespace Amazon.Inspector2
         /// Constant INVALID_PERMISSIONS for ReportingErrorCode
         /// </summary>
         public static readonly ReportingErrorCode INVALID_PERMISSIONS = new ReportingErrorCode("INVALID_PERMISSIONS");
+        /// <summary>
+        /// Constant MALFORMED_KMS_KEY for ReportingErrorCode
+        /// </summary>
+        public static readonly ReportingErrorCode MALFORMED_KMS_KEY = new ReportingErrorCode("MALFORMED_KMS_KEY");
+        /// <summary>
+        /// Constant NO_FINDINGS_FOUND for ReportingErrorCode
+        /// </summary>
+        public static readonly ReportingErrorCode NO_FINDINGS_FOUND = new ReportingErrorCode("NO_FINDINGS_FOUND");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1953,6 +2561,52 @@ namespace Amazon.Inspector2
 
 
     /// <summary>
+    /// Constants used for properties of type ResourceMapComparison.
+    /// </summary>
+    public class ResourceMapComparison : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EQUALS for ResourceMapComparison
+        /// </summary>
+        public static readonly ResourceMapComparison EQUALS = new ResourceMapComparison("EQUALS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ResourceMapComparison(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResourceMapComparison FindValue(string value)
+        {
+            return FindValue<ResourceMapComparison>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResourceMapComparison(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ResourceScanType.
     /// </summary>
     public class ResourceScanType : ConstantClass
@@ -1966,6 +2620,14 @@ namespace Amazon.Inspector2
         /// Constant ECR for ResourceScanType
         /// </summary>
         public static readonly ResourceScanType ECR = new ResourceScanType("ECR");
+        /// <summary>
+        /// Constant LAMBDA for ResourceScanType
+        /// </summary>
+        public static readonly ResourceScanType LAMBDA = new ResourceScanType("LAMBDA");
+        /// <summary>
+        /// Constant LAMBDA_CODE for ResourceScanType
+        /// </summary>
+        public static readonly ResourceScanType LAMBDA_CODE = new ResourceScanType("LAMBDA_CODE");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -2003,6 +2665,56 @@ namespace Amazon.Inspector2
 
 
     /// <summary>
+    /// Constants used for properties of type ResourceStringComparison.
+    /// </summary>
+    public class ResourceStringComparison : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EQUALS for ResourceStringComparison
+        /// </summary>
+        public static readonly ResourceStringComparison EQUALS = new ResourceStringComparison("EQUALS");
+        /// <summary>
+        /// Constant NOT_EQUALS for ResourceStringComparison
+        /// </summary>
+        public static readonly ResourceStringComparison NOT_EQUALS = new ResourceStringComparison("NOT_EQUALS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ResourceStringComparison(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResourceStringComparison FindValue(string value)
+        {
+            return FindValue<ResourceStringComparison>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResourceStringComparison(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ResourceType.
     /// </summary>
     public class ResourceType : ConstantClass
@@ -2020,6 +2732,10 @@ namespace Amazon.Inspector2
         /// Constant AWS_ECR_REPOSITORY for ResourceType
         /// </summary>
         public static readonly ResourceType AWS_ECR_REPOSITORY = new ResourceType("AWS_ECR_REPOSITORY");
+        /// <summary>
+        /// Constant AWS_LAMBDA_FUNCTION for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWS_LAMBDA_FUNCTION = new ResourceType("AWS_LAMBDA_FUNCTION");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -2050,6 +2766,158 @@ namespace Amazon.Inspector2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ResourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Runtime.
+    /// </summary>
+    public class Runtime : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant GO_1_X for Runtime
+        /// </summary>
+        public static readonly Runtime GO_1_X = new Runtime("GO_1_X");
+        /// <summary>
+        /// Constant JAVA_11 for Runtime
+        /// </summary>
+        public static readonly Runtime JAVA_11 = new Runtime("JAVA_11");
+        /// <summary>
+        /// Constant JAVA_17 for Runtime
+        /// </summary>
+        public static readonly Runtime JAVA_17 = new Runtime("JAVA_17");
+        /// <summary>
+        /// Constant JAVA_8 for Runtime
+        /// </summary>
+        public static readonly Runtime JAVA_8 = new Runtime("JAVA_8");
+        /// <summary>
+        /// Constant JAVA_8_AL2 for Runtime
+        /// </summary>
+        public static readonly Runtime JAVA_8_AL2 = new Runtime("JAVA_8_AL2");
+        /// <summary>
+        /// Constant NODEJS for Runtime
+        /// </summary>
+        public static readonly Runtime NODEJS = new Runtime("NODEJS");
+        /// <summary>
+        /// Constant NODEJS_12_X for Runtime
+        /// </summary>
+        public static readonly Runtime NODEJS_12_X = new Runtime("NODEJS_12_X");
+        /// <summary>
+        /// Constant NODEJS_14_X for Runtime
+        /// </summary>
+        public static readonly Runtime NODEJS_14_X = new Runtime("NODEJS_14_X");
+        /// <summary>
+        /// Constant NODEJS_16_X for Runtime
+        /// </summary>
+        public static readonly Runtime NODEJS_16_X = new Runtime("NODEJS_16_X");
+        /// <summary>
+        /// Constant NODEJS_18_X for Runtime
+        /// </summary>
+        public static readonly Runtime NODEJS_18_X = new Runtime("NODEJS_18_X");
+        /// <summary>
+        /// Constant PYTHON_3_10 for Runtime
+        /// </summary>
+        public static readonly Runtime PYTHON_3_10 = new Runtime("PYTHON_3_10");
+        /// <summary>
+        /// Constant PYTHON_3_7 for Runtime
+        /// </summary>
+        public static readonly Runtime PYTHON_3_7 = new Runtime("PYTHON_3_7");
+        /// <summary>
+        /// Constant PYTHON_3_8 for Runtime
+        /// </summary>
+        public static readonly Runtime PYTHON_3_8 = new Runtime("PYTHON_3_8");
+        /// <summary>
+        /// Constant PYTHON_3_9 for Runtime
+        /// </summary>
+        public static readonly Runtime PYTHON_3_9 = new Runtime("PYTHON_3_9");
+        /// <summary>
+        /// Constant UNSUPPORTED for Runtime
+        /// </summary>
+        public static readonly Runtime UNSUPPORTED = new Runtime("UNSUPPORTED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Runtime(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Runtime FindValue(string value)
+        {
+            return FindValue<Runtime>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Runtime(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SbomReportFormat.
+    /// </summary>
+    public class SbomReportFormat : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CYCLONEDX_1_4 for SbomReportFormat
+        /// </summary>
+        public static readonly SbomReportFormat CYCLONEDX_1_4 = new SbomReportFormat("CYCLONEDX_1_4");
+        /// <summary>
+        /// Constant SPDX_2_3 for SbomReportFormat
+        /// </summary>
+        public static readonly SbomReportFormat SPDX_2_3 = new SbomReportFormat("SPDX_2_3");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SbomReportFormat(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SbomReportFormat FindValue(string value)
+        {
+            return FindValue<SbomReportFormat>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SbomReportFormat(string value)
         {
             return FindValue(value);
         }
@@ -2117,9 +2985,29 @@ namespace Amazon.Inspector2
         /// </summary>
         public static readonly ScanStatusReason ACCESS_DENIED = new ScanStatusReason("ACCESS_DENIED");
         /// <summary>
+        /// Constant DEEP_INSPECTION_COLLECTION_TIME_LIMIT_EXCEEDED for ScanStatusReason
+        /// </summary>
+        public static readonly ScanStatusReason DEEP_INSPECTION_COLLECTION_TIME_LIMIT_EXCEEDED = new ScanStatusReason("DEEP_INSPECTION_COLLECTION_TIME_LIMIT_EXCEEDED");
+        /// <summary>
+        /// Constant DEEP_INSPECTION_DAILY_SSM_INVENTORY_LIMIT_EXCEEDED for ScanStatusReason
+        /// </summary>
+        public static readonly ScanStatusReason DEEP_INSPECTION_DAILY_SSM_INVENTORY_LIMIT_EXCEEDED = new ScanStatusReason("DEEP_INSPECTION_DAILY_SSM_INVENTORY_LIMIT_EXCEEDED");
+        /// <summary>
+        /// Constant DEEP_INSPECTION_NO_INVENTORY for ScanStatusReason
+        /// </summary>
+        public static readonly ScanStatusReason DEEP_INSPECTION_NO_INVENTORY = new ScanStatusReason("DEEP_INSPECTION_NO_INVENTORY");
+        /// <summary>
+        /// Constant DEEP_INSPECTION_PACKAGE_COLLECTION_LIMIT_EXCEEDED for ScanStatusReason
+        /// </summary>
+        public static readonly ScanStatusReason DEEP_INSPECTION_PACKAGE_COLLECTION_LIMIT_EXCEEDED = new ScanStatusReason("DEEP_INSPECTION_PACKAGE_COLLECTION_LIMIT_EXCEEDED");
+        /// <summary>
         /// Constant EC2_INSTANCE_STOPPED for ScanStatusReason
         /// </summary>
         public static readonly ScanStatusReason EC2_INSTANCE_STOPPED = new ScanStatusReason("EC2_INSTANCE_STOPPED");
+        /// <summary>
+        /// Constant EXCLUDED_BY_TAG for ScanStatusReason
+        /// </summary>
+        public static readonly ScanStatusReason EXCLUDED_BY_TAG = new ScanStatusReason("EXCLUDED_BY_TAG");
         /// <summary>
         /// Constant IMAGE_SIZE_EXCEEDED for ScanStatusReason
         /// </summary>
@@ -2129,9 +3017,17 @@ namespace Amazon.Inspector2
         /// </summary>
         public static readonly ScanStatusReason INTERNAL_ERROR = new ScanStatusReason("INTERNAL_ERROR");
         /// <summary>
+        /// Constant NO_INVENTORY for ScanStatusReason
+        /// </summary>
+        public static readonly ScanStatusReason NO_INVENTORY = new ScanStatusReason("NO_INVENTORY");
+        /// <summary>
         /// Constant NO_RESOURCES_FOUND for ScanStatusReason
         /// </summary>
         public static readonly ScanStatusReason NO_RESOURCES_FOUND = new ScanStatusReason("NO_RESOURCES_FOUND");
+        /// <summary>
+        /// Constant PENDING_DISABLE for ScanStatusReason
+        /// </summary>
+        public static readonly ScanStatusReason PENDING_DISABLE = new ScanStatusReason("PENDING_DISABLE");
         /// <summary>
         /// Constant PENDING_INITIAL_SCAN for ScanStatusReason
         /// </summary>
@@ -2153,6 +3049,10 @@ namespace Amazon.Inspector2
         /// </summary>
         public static readonly ScanStatusReason SCAN_FREQUENCY_SCAN_ON_PUSH = new ScanStatusReason("SCAN_FREQUENCY_SCAN_ON_PUSH");
         /// <summary>
+        /// Constant STALE_INVENTORY for ScanStatusReason
+        /// </summary>
+        public static readonly ScanStatusReason STALE_INVENTORY = new ScanStatusReason("STALE_INVENTORY");
+        /// <summary>
         /// Constant SUCCESSFUL for ScanStatusReason
         /// </summary>
         public static readonly ScanStatusReason SUCCESSFUL = new ScanStatusReason("SUCCESSFUL");
@@ -2161,9 +3061,21 @@ namespace Amazon.Inspector2
         /// </summary>
         public static readonly ScanStatusReason UNMANAGED_EC2_INSTANCE = new ScanStatusReason("UNMANAGED_EC2_INSTANCE");
         /// <summary>
+        /// Constant UNSUPPORTED_CONFIG_FILE for ScanStatusReason
+        /// </summary>
+        public static readonly ScanStatusReason UNSUPPORTED_CONFIG_FILE = new ScanStatusReason("UNSUPPORTED_CONFIG_FILE");
+        /// <summary>
+        /// Constant UNSUPPORTED_MEDIA_TYPE for ScanStatusReason
+        /// </summary>
+        public static readonly ScanStatusReason UNSUPPORTED_MEDIA_TYPE = new ScanStatusReason("UNSUPPORTED_MEDIA_TYPE");
+        /// <summary>
         /// Constant UNSUPPORTED_OS for ScanStatusReason
         /// </summary>
         public static readonly ScanStatusReason UNSUPPORTED_OS = new ScanStatusReason("UNSUPPORTED_OS");
+        /// <summary>
+        /// Constant UNSUPPORTED_RUNTIME for ScanStatusReason
+        /// </summary>
+        public static readonly ScanStatusReason UNSUPPORTED_RUNTIME = new ScanStatusReason("UNSUPPORTED_RUNTIME");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -2206,6 +3118,10 @@ namespace Amazon.Inspector2
     public class ScanType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant CODE for ScanType
+        /// </summary>
+        public static readonly ScanType CODE = new ScanType("CODE");
         /// <summary>
         /// Constant NETWORK for ScanType
         /// </summary>
@@ -2264,6 +3180,10 @@ namespace Amazon.Inspector2
         /// Constant ECR for Service
         /// </summary>
         public static readonly Service ECR = new Service("ECR");
+        /// <summary>
+        /// Constant LAMBDA for Service
+        /// </summary>
+        public static readonly Service LAMBDA = new Service("LAMBDA");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -2392,6 +3312,10 @@ namespace Amazon.Inspector2
         /// Constant ECR_IMAGE_REPOSITORY_NAME for SortField
         /// </summary>
         public static readonly SortField ECR_IMAGE_REPOSITORY_NAME = new SortField("ECR_IMAGE_REPOSITORY_NAME");
+        /// <summary>
+        /// Constant EPSS_SCORE for SortField
+        /// </summary>
+        public static readonly SortField EPSS_SCORE = new SortField("EPSS_SCORE");
         /// <summary>
         /// Constant FINDING_STATUS for SortField
         /// </summary>
@@ -2714,6 +3638,14 @@ namespace Amazon.Inspector2
         /// Constant ECR_RESCAN for UsageType
         /// </summary>
         public static readonly UsageType ECR_RESCAN = new UsageType("ECR_RESCAN");
+        /// <summary>
+        /// Constant LAMBDA_FUNCTION_CODE_HOURS for UsageType
+        /// </summary>
+        public static readonly UsageType LAMBDA_FUNCTION_CODE_HOURS = new UsageType("LAMBDA_FUNCTION_CODE_HOURS");
+        /// <summary>
+        /// Constant LAMBDA_FUNCTION_HOURS for UsageType
+        /// </summary>
+        public static readonly UsageType LAMBDA_FUNCTION_HOURS = new UsageType("LAMBDA_FUNCTION_HOURS");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -2798,6 +3730,52 @@ namespace Amazon.Inspector2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ValidationExceptionReason(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type VulnerabilitySource.
+    /// </summary>
+    public class VulnerabilitySource : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NVD for VulnerabilitySource
+        /// </summary>
+        public static readonly VulnerabilitySource NVD = new VulnerabilitySource("NVD");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public VulnerabilitySource(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VulnerabilitySource FindValue(string value)
+        {
+            return FindValue<VulnerabilitySource>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VulnerabilitySource(string value)
         {
             return FindValue(value);
         }

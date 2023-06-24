@@ -30,10 +30,9 @@ namespace Amazon.IdentityStore.Model
 {
     /// <summary>
     /// Container for the parameters to the ListUsers operation.
-    /// Lists the attribute name and value of the user that you specified in the search. We
-    /// only support <code>UserName</code> as a valid filter attribute path currently, and
-    /// filter is required. This API returns minimum attributes, including <code>UserId</code>
-    /// and <code>UserName</code> in the response.
+    /// Lists all users in the identity store. Returns a paginated list of complete <code>User</code>
+    /// objects. Filtering for a <code>User</code> by the <code>UserName</code> attribute
+    /// is deprecated. Instead, use the <code>GetUserId</code> API action.
     /// </summary>
     public partial class ListUsersRequest : AmazonIdentityStoreRequest
     {
@@ -46,9 +45,11 @@ namespace Amazon.IdentityStore.Model
         /// Gets and sets the property Filters. 
         /// <para>
         /// A list of <code>Filter</code> objects, which is used in the <code>ListUsers</code>
-        /// and <code>ListGroups</code> request. 
+        /// and <code>ListGroups</code> requests. 
         /// </para>
         /// </summary>
+        [Obsolete("Using filters with ListUsers API is deprecated, please use GetGroupId API instead.")]
+        [AWSProperty(Min=0, Max=1)]
         public List<Filter> Filters
         {
             get { return this._filters; }
@@ -66,11 +67,11 @@ namespace Amazon.IdentityStore.Model
         /// <para>
         /// The globally unique identifier for the identity store, such as <code>d-1234567890</code>.
         /// In this example, <code>d-</code> is a fixed prefix, and <code>1234567890</code> is
-        /// a randomly generated string that contains number and lower case letters. This value
+        /// a randomly generated string that contains numbers and lower case letters. This value
         /// is generated at the time that a new identity store is created.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=12)]
+        [AWSProperty(Required=true, Min=1, Max=36)]
         public string IdentityStoreId
         {
             get { return this._identityStoreId; }
@@ -87,11 +88,11 @@ namespace Amazon.IdentityStore.Model
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// The maximum number of results to be returned per request. This parameter is used in
-        /// the <code>ListUsers</code> and <code>ListGroups</code> request to specify how many
+        /// the <code>ListUsers</code> and <code>ListGroups</code> requests to specify how many
         /// results to return in one page. The length limit is 50 characters.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=50)]
+        [AWSProperty(Min=1, Max=100)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

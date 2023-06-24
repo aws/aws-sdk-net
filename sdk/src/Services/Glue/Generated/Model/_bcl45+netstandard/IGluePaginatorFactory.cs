@@ -116,6 +116,11 @@ namespace Amazon.Glue.Model
         IGetTriggersPaginator GetTriggers(GetTriggersRequest request);
 
         /// <summary>
+        /// Paginator for GetUnfilteredPartitionsMetadata operation
+        ///</summary>
+        IGetUnfilteredPartitionsMetadataPaginator GetUnfilteredPartitionsMetadata(GetUnfilteredPartitionsMetadataRequest request);
+
+        /// <summary>
         /// Paginator for GetUserDefinedFunctions operation
         ///</summary>
         IGetUserDefinedFunctionsPaginator GetUserDefinedFunctions(GetUserDefinedFunctionsRequest request);
@@ -134,6 +139,31 @@ namespace Amazon.Glue.Model
         /// Paginator for ListCrawlers operation
         ///</summary>
         IListCrawlersPaginator ListCrawlers(ListCrawlersRequest request);
+
+        /// <summary>
+        /// Paginator for ListCustomEntityTypes operation
+        ///</summary>
+        IListCustomEntityTypesPaginator ListCustomEntityTypes(ListCustomEntityTypesRequest request);
+
+        /// <summary>
+        /// Paginator for ListDataQualityResults operation
+        ///</summary>
+        IListDataQualityResultsPaginator ListDataQualityResults(ListDataQualityResultsRequest request);
+
+        /// <summary>
+        /// Paginator for ListDataQualityRuleRecommendationRuns operation
+        ///</summary>
+        IListDataQualityRuleRecommendationRunsPaginator ListDataQualityRuleRecommendationRuns(ListDataQualityRuleRecommendationRunsRequest request);
+
+        /// <summary>
+        /// Paginator for ListDataQualityRulesetEvaluationRuns operation
+        ///</summary>
+        IListDataQualityRulesetEvaluationRunsPaginator ListDataQualityRulesetEvaluationRuns(ListDataQualityRulesetEvaluationRunsRequest request);
+
+        /// <summary>
+        /// Paginator for ListDataQualityRulesets operation
+        ///</summary>
+        IListDataQualityRulesetsPaginator ListDataQualityRulesets(ListDataQualityRulesetsRequest request);
 
         /// <summary>
         /// Paginator for ListDevEndpoints operation
@@ -164,6 +194,11 @@ namespace Amazon.Glue.Model
         /// Paginator for ListSchemaVersions operation
         ///</summary>
         IListSchemaVersionsPaginator ListSchemaVersions(ListSchemaVersionsRequest request);
+
+        /// <summary>
+        /// Paginator for ListSessions operation
+        ///</summary>
+        IListSessionsPaginator ListSessions(ListSessionsRequest request);
 
         /// <summary>
         /// Paginator for ListTriggers operation

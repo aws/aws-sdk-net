@@ -30,7 +30,7 @@ namespace Amazon.APIGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the GetSdkType operation.
-    /// 
+    /// Gets an SDK type.
     /// </summary>
     public partial class GetSdkTypeRequest : AmazonAPIGatewayRequest
     {
@@ -39,7 +39,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// [Required] The identifier of the queried <a>SdkType</a> instance.
+        /// The identifier of the queried SdkType instance.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

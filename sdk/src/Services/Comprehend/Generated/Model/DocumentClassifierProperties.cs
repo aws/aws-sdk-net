@@ -37,12 +37,14 @@ namespace Amazon.Comprehend.Model
         private string _dataAccessRoleArn;
         private string _documentClassifierArn;
         private DateTime? _endTime;
+        private string _flywheelArn;
         private DocumentClassifierInputDataConfig _inputDataConfig;
         private LanguageCode _languageCode;
         private string _message;
         private DocumentClassifierMode _mode;
         private string _modelKmsKeyId;
         private DocumentClassifierOutputDataConfig _outputDataConfig;
+        private string _sourceModelArn;
         private ModelStatus _status;
         private DateTime? _submitTime;
         private DateTime? _trainingEndTime;
@@ -59,6 +61,7 @@ namespace Amazon.Comprehend.Model
         /// and an accuracy rating.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public ClassifierMetadata ClassifierMetadata
         {
             get { return this._classifierMetadata; }
@@ -74,8 +77,8 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property DataAccessRoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role that
-        /// grants Amazon Comprehend read access to your input data.
+        /// The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read
+        /// access to your input data.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -126,6 +129,25 @@ namespace Amazon.Comprehend.Model
         internal bool IsSetEndTime()
         {
             return this._endTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property FlywheelArn. 
+        /// <para>
+        /// The Amazon Resource Number (ARN) of the flywheel
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=256)]
+        public string FlywheelArn
+        {
+            get { return this._flywheelArn; }
+            set { this._flywheelArn = value; }
+        }
+
+        // Check to see if FlywheelArn property is set
+        internal bool IsSetFlywheelArn()
+        {
+            return this._flywheelArn != null;
         }
 
         /// <summary>
@@ -208,8 +230,8 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property ModelKmsKeyId. 
         /// <para>
-        /// ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
-        /// trained custom models. The ModelKmsKeyId can be either of the following formats:
+        /// ID for the KMS key that Amazon Comprehend uses to encrypt trained custom models. The
+        /// ModelKmsKeyId can be either of the following formats:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -254,11 +276,38 @@ namespace Amazon.Comprehend.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SourceModelArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the source model. This model was imported from a
+        /// different Amazon Web Services account to create the document classifier model in your
+        /// Amazon Web Services account.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=256)]
+        public string SourceModelArn
+        {
+            get { return this._sourceModelArn; }
+            set { this._sourceModelArn = value; }
+        }
+
+        // Check to see if SourceModelArn property is set
+        internal bool IsSetSourceModelArn()
+        {
+            return this._sourceModelArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
         /// The status of the document classifier. If the status is <code>TRAINED</code> the classifier
-        /// is ready to use. If the status is <code>FAILED</code> you can see additional information
-        /// about why the classifier wasn't trained in the <code>Message</code> field.
+        /// is ready to use. If the status is <code>TRAINED_WITH_WARNINGS</code> the classifier
+        /// training succeeded, but you should review the warnings returned in the <code>CreateDocumentClassifier</code>
+        /// response.
+        /// </para>
+        ///  
+        /// <para>
+        ///  If the status is <code>FAILED</code> you can see additional information about why
+        /// the classifier wasn't trained in the <code>Message</code> field.
         /// </para>
         /// </summary>
         public ModelStatus Status
@@ -352,9 +401,9 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property VolumeKmsKeyId. 
         /// <para>
-        /// ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
-        /// data on the storage volume attached to the ML compute instance(s) that process the
-        /// analysis job. The VolumeKmsKeyId can be either of the following formats:
+        /// ID for the Amazon Web Services Key Management Service (KMS) key that Amazon Comprehend
+        /// uses to encrypt data on the storage volume attached to the ML compute instance(s)
+        /// that process the analysis job. The VolumeKmsKeyId can be either of the following formats:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -384,7 +433,7 @@ namespace Amazon.Comprehend.Model
         /// Gets and sets the property VpcConfig. 
         /// <para>
         ///  Configuration parameters for a private Virtual Private Cloud (VPC) containing the
-        /// resources you are using for your custom classifier. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
+        /// resources you are using for your custom classifier. For more information, see <a href="https://docs.aws.amazon.com/vppc/latest/userguide/what-is-amazon-vpc.html">Amazon
         /// VPC</a>. 
         /// </para>
         /// </summary>

@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RetentionPolicy Marshaller
-    /// </summary>       
+    /// </summary>
     public class RetentionPolicyMarshaller : IRequestMarshaller<RetentionPolicy, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RetentionPolicyMarshaller Instance = new RetentionPolicyMarshaller();
 
     }

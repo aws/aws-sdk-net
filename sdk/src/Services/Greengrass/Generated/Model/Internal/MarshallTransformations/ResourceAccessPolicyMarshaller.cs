@@ -34,7 +34,7 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ResourceAccessPolicy Marshaller
-    /// </summary>       
+    /// </summary>
     public class ResourceAccessPolicyMarshaller : IRequestMarshaller<ResourceAccessPolicy, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ResourceAccessPolicyMarshaller Instance = new ResourceAccessPolicyMarshaller();
 
     }

@@ -37,7 +37,7 @@ namespace Amazon.Organizations.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// AWS account
+    /// Amazon Web Services account
     /// </para>
     ///  </li> <li> 
     /// <para>

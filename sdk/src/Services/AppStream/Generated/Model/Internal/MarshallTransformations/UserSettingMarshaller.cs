@@ -34,7 +34,7 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// UserSetting Marshaller
-    /// </summary>       
+    /// </summary>
     public class UserSettingMarshaller : IRequestMarshaller<UserSetting, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static UserSettingMarshaller Instance = new UserSettingMarshaller();
 
     }

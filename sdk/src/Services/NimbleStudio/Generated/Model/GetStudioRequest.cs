@@ -30,7 +30,7 @@ namespace Amazon.NimbleStudio.Model
 {
     /// <summary>
     /// Container for the parameters to the GetStudio operation.
-    /// Get a Studio resource.
+    /// Get a studio resource.
     /// </summary>
     public partial class GetStudioRequest : AmazonNimbleStudioRequest
     {

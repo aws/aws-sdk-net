@@ -30,15 +30,15 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the GetDashboardEmbedUrl operation.
-    /// Generates a session URL and authorization code that you can use to embed an Amazon
-    /// Amazon QuickSight read-only dashboard in your web server code. Before you use this
-    /// command, make sure that you have configured the dashboards and permissions. 
+    /// Generates a temporary session URL and authorization code(bearer token) that you can
+    /// use to embed an Amazon QuickSight read-only dashboard in your website or application.
+    /// Before you use this command, make sure that you have configured the dashboards and
+    /// permissions. 
     /// 
     ///  
     /// <para>
     /// Currently, you can use <code>GetDashboardEmbedURL</code> only from the server, not
-    /// from the user's browser. The following rules apply to the combination of URL and authorization
-    /// code:
+    /// from the user's browser. The following rules apply to the generated URL:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -54,7 +54,13 @@ namespace Amazon.QuickSight.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// The resulting user session is valid for 10 hours.
+    /// You are charged only when the URL is used or there is interaction with Amazon QuickSight.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The resulting user session is valid for 15 minutes (default) up to 10 hours (maximum).
+    /// You can use the optional <code>SessionLifetimeInMinutes</code> parameter to customize
+    /// session duration.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -84,12 +90,11 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AdditionalDashboardIds. 
         /// <para>
-        /// A list of one or more dashboard IDs that you want to add to a session that includes
-        /// anonymous users. The <code>IdentityType</code> parameter must be set to <code>ANONYMOUS</code>
-        /// for this to work, because other identity types authenticate as Amazon QuickSight or
-        /// IAM users. For example, if you set "<code>--dashboard-id dash_id1 --dashboard-id dash_id2
-        /// dash_id3 identity-type ANONYMOUS</code>", the session can access all three dashboards.
-        /// 
+        /// A list of one or more dashboard IDs that you want anonymous users to have tempporary
+        /// access to. Currently, the <code>IdentityType</code> parameter must be set to <code>ANONYMOUS</code>
+        /// because other identity types authenticate as Amazon QuickSight or IAM users. For example,
+        /// if you set "<code>--dashboard-id dash_id1 --dashboard-id dash_id2 dash_id3 identity-type
+        /// ANONYMOUS</code>", the session can access all three dashboards.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=20)]
@@ -131,7 +136,7 @@ namespace Amazon.QuickSight.Model
         /// The ID for the dashboard, also added to the Identity and Access Management (IAM) policy.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=2048)]
+        [AWSProperty(Required=true, Min=1, Max=512)]
         public string DashboardId
         {
             get { return this._dashboardId; }

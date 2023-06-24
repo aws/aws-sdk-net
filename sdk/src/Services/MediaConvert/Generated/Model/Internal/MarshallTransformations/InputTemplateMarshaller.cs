@@ -34,7 +34,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// InputTemplate Marshaller
-    /// </summary>       
+    /// </summary>
     public class InputTemplateMarshaller : IRequestMarshaller<InputTemplate, JsonMarshallerContext> 
     {
         /// <summary>
@@ -45,6 +45,23 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(InputTemplate requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAdvancedInputFilter())
+            {
+                context.Writer.WritePropertyName("advancedInputFilter");
+                context.Writer.Write(requestObject.AdvancedInputFilter);
+            }
+
+            if(requestObject.IsSetAdvancedInputFilterSettings())
+            {
+                context.Writer.WritePropertyName("advancedInputFilterSettings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AdvancedInputFilterSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.AdvancedInputFilterSettings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetAudioSelectorGroups())
             {
                 context.Writer.WritePropertyName("audioSelectorGroups");
@@ -123,6 +140,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("denoiseFilter");
                 context.Writer.Write(requestObject.DenoiseFilter);
+            }
+
+            if(requestObject.IsSetDolbyVisionMetadataXml())
+            {
+                context.Writer.WritePropertyName("dolbyVisionMetadataXml");
+                context.Writer.Write(requestObject.DolbyVisionMetadataXml);
             }
 
             if(requestObject.IsSetFilterEnable())
@@ -220,7 +243,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static InputTemplateMarshaller Instance = new InputTemplateMarshaller();
 
     }

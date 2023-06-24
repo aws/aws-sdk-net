@@ -38,7 +38,7 @@ namespace Amazon.AutoScaling.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Add values for each required parameter from CloudWatch. You can use an existing metric,
+    /// Add values for each required property from CloudWatch. You can use an existing metric,
     /// or a new metric that you create. To use your own metric, you must first publish the
     /// metric to CloudWatch. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publish
     /// custom metrics</a> in the <i>Amazon CloudWatch User Guide</i>.
@@ -67,6 +67,7 @@ namespace Amazon.AutoScaling.Model
     {
         private List<MetricDimension> _dimensions = new List<MetricDimension>();
         private string _metricName;
+        private List<TargetTrackingMetricDataQuery> _metrics = new List<TargetTrackingMetricDataQuery>();
         private string _awsNamespace;
         private MetricStatistic _statistic;
         private string _unit;
@@ -102,7 +103,6 @@ namespace Amazon.AutoScaling.Model
         /// object that is returned by a call to <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListMetrics.html">ListMetrics</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string MetricName
         {
             get { return this._metricName; }
@@ -116,12 +116,30 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Metrics. 
+        /// <para>
+        /// The metrics to include in the target tracking scaling policy, as a metric data query.
+        /// This can include both raw metric and metric math expressions.
+        /// </para>
+        /// </summary>
+        public List<TargetTrackingMetricDataQuery> Metrics
+        {
+            get { return this._metrics; }
+            set { this._metrics = value; }
+        }
+
+        // Check to see if Metrics property is set
+        internal bool IsSetMetrics()
+        {
+            return this._metrics != null && this._metrics.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Namespace. 
         /// <para>
         /// The namespace of the metric.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string Namespace
         {
             get { return this._awsNamespace; }
@@ -140,7 +158,6 @@ namespace Amazon.AutoScaling.Model
         /// The statistic of the metric.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public MetricStatistic Statistic
         {
             get { return this._statistic; }

@@ -56,7 +56,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Connect");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-08-08";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-08-08";
             request.HttpMethod = "POST";
 
             if (!publicRequest.IsSetInstanceId())
@@ -71,6 +71,20 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAllowedAccessControlTags())
+                {
+                    context.Writer.WritePropertyName("AllowedAccessControlTags");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestAllowedAccessControlTagsKvp in publicRequest.AllowedAccessControlTags)
+                    {
+                        context.Writer.WritePropertyName(publicRequestAllowedAccessControlTagsKvp.Key);
+                        var publicRequestAllowedAccessControlTagsValue = publicRequestAllowedAccessControlTagsKvp.Value;
+
+                            context.Writer.Write(publicRequestAllowedAccessControlTagsValue);
+                    }
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetDescription())
                 {
                     context.Writer.WritePropertyName("Description");
@@ -88,7 +102,17 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
-        
+                if(publicRequest.IsSetTagRestrictedResources())
+                {
+                    context.Writer.WritePropertyName("TagRestrictedResources");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestTagRestrictedResourcesListValue in publicRequest.TagRestrictedResources)
+                    {
+                            context.Writer.Write(publicRequestTagRestrictedResourcesListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

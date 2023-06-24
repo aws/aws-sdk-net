@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// NestedFilters Marshaller
-    /// </summary>       
+    /// </summary>
     public class NestedFiltersMarshaller : IRequestMarshaller<NestedFilters, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static NestedFiltersMarshaller Instance = new NestedFiltersMarshaller();
 
     }

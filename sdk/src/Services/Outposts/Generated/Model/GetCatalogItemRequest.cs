@@ -30,7 +30,7 @@ namespace Amazon.Outposts.Model
 {
     /// <summary>
     /// Container for the parameters to the GetCatalogItem operation.
-    /// Gets information about a catalog item.
+    /// Gets information about the specified catalog item.
     /// </summary>
     public partial class GetCatalogItemRequest : AmazonOutpostsRequest
     {

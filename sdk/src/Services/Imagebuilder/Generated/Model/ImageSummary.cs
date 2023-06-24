@@ -34,7 +34,9 @@ namespace Amazon.Imagebuilder.Model
     public partial class ImageSummary
     {
         private string _arn;
+        private BuildType _buildType;
         private string _dateCreated;
+        private ImageSource _imageSource;
         private string _name;
         private string _osVersion;
         private OutputResources _outputResources;
@@ -64,9 +66,42 @@ namespace Amazon.Imagebuilder.Model
         }
 
         /// <summary>
+        /// Gets and sets the property BuildType. 
+        /// <para>
+        /// Indicates the type of build that created this image. The build can be initiated in
+        /// the following ways:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>USER_INITIATED</b> – A manual pipeline build request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>SCHEDULED</b> – A pipeline build initiated by a cron expression in the Image Builder
+        /// pipeline, or from EventBridge.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>IMPORT</b> – A VM import created the image to use as the base image for the recipe.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public BuildType BuildType
+        {
+            get { return this._buildType; }
+            set { this._buildType = value; }
+        }
+
+        // Check to see if BuildType property is set
+        internal bool IsSetBuildType()
+        {
+            return this._buildType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property DateCreated. 
         /// <para>
-        /// The date on which this image was created.
+        /// The date on which Image Builder created this image.
         /// </para>
         /// </summary>
         public string DateCreated
@@ -79,6 +114,24 @@ namespace Amazon.Imagebuilder.Model
         internal bool IsSetDateCreated()
         {
             return this._dateCreated != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ImageSource. 
+        /// <para>
+        /// The origin of the base image that Image Builder used to build this image.
+        /// </para>
+        /// </summary>
+        public ImageSource ImageSource
+        {
+            get { return this._imageSource; }
+            set { this._imageSource = value; }
+        }
+
+        // Check to see if ImageSource property is set
+        internal bool IsSetImageSource()
+        {
+            return this._imageSource != null;
         }
 
         /// <summary>
@@ -102,8 +155,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property OsVersion. 
         /// <para>
-        /// The operating system version of the instance. For example, Amazon Linux 2, Ubuntu
-        /// 18, or Microsoft Windows Server 2019.
+        /// The operating system version of the instances that launch from this image. For example,
+        /// Amazon Linux 2, Ubuntu 18, or Microsoft Windows Server 2019.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -122,7 +175,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property OutputResources. 
         /// <para>
-        /// The output resources produced when creating this image.
+        /// The output resources that Image Builder produced when it created this image.
         /// </para>
         /// </summary>
         public OutputResources OutputResources
@@ -159,7 +212,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Platform. 
         /// <para>
-        /// The platform of the image.
+        /// The image operating system platform, such as Linux or Windows.
         /// </para>
         /// </summary>
         public Platform Platform
@@ -195,7 +248,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags of the image.
+        /// The tags that apply to this image.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
@@ -214,7 +267,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// Specifies whether this is an AMI or container image.
+        /// Specifies whether this image produces an AMI or a container image.
         /// </para>
         /// </summary>
         public ImageType Type

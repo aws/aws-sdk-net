@@ -34,7 +34,7 @@ namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// BackendAPIAuthType Marshaller
-    /// </summary>       
+    /// </summary>
     public class BackendAPIAuthTypeMarshaller : IRequestMarshaller<BackendAPIAuthType, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static BackendAPIAuthTypeMarshaller Instance = new BackendAPIAuthTypeMarshaller();
 
     }

@@ -118,8 +118,8 @@ namespace Amazon.KinesisVideo.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The ID of the AWS Key Management Service (AWS KMS) key that you want Kinesis Video
-        /// Streams to use to encrypt stream data.
+        /// The ID of the Key Management Service (KMS) key that you want Kinesis Video Streams
+        /// to use to encrypt stream data.
         /// </para>
         ///  
         /// <para>

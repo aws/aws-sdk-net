@@ -573,6 +573,214 @@ namespace Amazon.AuditManager
 
 
     /// <summary>
+    /// Constants used for properties of type DeleteResources.
+    /// </summary>
+    public class DeleteResources : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALL for DeleteResources
+        /// </summary>
+        public static readonly DeleteResources ALL = new DeleteResources("ALL");
+        /// <summary>
+        /// Constant DEFAULT for DeleteResources
+        /// </summary>
+        public static readonly DeleteResources DEFAULT = new DeleteResources("DEFAULT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DeleteResources(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DeleteResources FindValue(string value)
+        {
+            return FindValue<DeleteResources>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DeleteResources(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type EvidenceFinderBackfillStatus.
+    /// </summary>
+    public class EvidenceFinderBackfillStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPLETED for EvidenceFinderBackfillStatus
+        /// </summary>
+        public static readonly EvidenceFinderBackfillStatus COMPLETED = new EvidenceFinderBackfillStatus("COMPLETED");
+        /// <summary>
+        /// Constant IN_PROGRESS for EvidenceFinderBackfillStatus
+        /// </summary>
+        public static readonly EvidenceFinderBackfillStatus IN_PROGRESS = new EvidenceFinderBackfillStatus("IN_PROGRESS");
+        /// <summary>
+        /// Constant NOT_STARTED for EvidenceFinderBackfillStatus
+        /// </summary>
+        public static readonly EvidenceFinderBackfillStatus NOT_STARTED = new EvidenceFinderBackfillStatus("NOT_STARTED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EvidenceFinderBackfillStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EvidenceFinderBackfillStatus FindValue(string value)
+        {
+            return FindValue<EvidenceFinderBackfillStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EvidenceFinderBackfillStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type EvidenceFinderEnablementStatus.
+    /// </summary>
+    public class EvidenceFinderEnablementStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLE_IN_PROGRESS for EvidenceFinderEnablementStatus
+        /// </summary>
+        public static readonly EvidenceFinderEnablementStatus DISABLE_IN_PROGRESS = new EvidenceFinderEnablementStatus("DISABLE_IN_PROGRESS");
+        /// <summary>
+        /// Constant DISABLED for EvidenceFinderEnablementStatus
+        /// </summary>
+        public static readonly EvidenceFinderEnablementStatus DISABLED = new EvidenceFinderEnablementStatus("DISABLED");
+        /// <summary>
+        /// Constant ENABLE_IN_PROGRESS for EvidenceFinderEnablementStatus
+        /// </summary>
+        public static readonly EvidenceFinderEnablementStatus ENABLE_IN_PROGRESS = new EvidenceFinderEnablementStatus("ENABLE_IN_PROGRESS");
+        /// <summary>
+        /// Constant ENABLED for EvidenceFinderEnablementStatus
+        /// </summary>
+        public static readonly EvidenceFinderEnablementStatus ENABLED = new EvidenceFinderEnablementStatus("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EvidenceFinderEnablementStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EvidenceFinderEnablementStatus FindValue(string value)
+        {
+            return FindValue<EvidenceFinderEnablementStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EvidenceFinderEnablementStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ExportDestinationType.
+    /// </summary>
+    public class ExportDestinationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant S3 for ExportDestinationType
+        /// </summary>
+        public static readonly ExportDestinationType S3 = new ExportDestinationType("S3");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ExportDestinationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ExportDestinationType FindValue(string value)
+        {
+            return FindValue<ExportDestinationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ExportDestinationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type FrameworkType.
     /// </summary>
     public class FrameworkType : ConstantClass
@@ -629,9 +837,17 @@ namespace Amazon.AuditManager
     {
 
         /// <summary>
+        /// Constant INPUT_TEXT for KeywordInputType
+        /// </summary>
+        public static readonly KeywordInputType INPUT_TEXT = new KeywordInputType("INPUT_TEXT");
+        /// <summary>
         /// Constant SELECT_FROM_LIST for KeywordInputType
         /// </summary>
         public static readonly KeywordInputType SELECT_FROM_LIST = new KeywordInputType("SELECT_FROM_LIST");
+        /// <summary>
+        /// Constant UPLOAD_FILE for KeywordInputType
+        /// </summary>
+        public static readonly KeywordInputType UPLOAD_FILE = new KeywordInputType("UPLOAD_FILE");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -795,9 +1011,21 @@ namespace Amazon.AuditManager
         /// </summary>
         public static readonly SettingAttribute DEFAULT_ASSESSMENT_REPORTS_DESTINATION = new SettingAttribute("DEFAULT_ASSESSMENT_REPORTS_DESTINATION");
         /// <summary>
+        /// Constant DEFAULT_EXPORT_DESTINATION for SettingAttribute
+        /// </summary>
+        public static readonly SettingAttribute DEFAULT_EXPORT_DESTINATION = new SettingAttribute("DEFAULT_EXPORT_DESTINATION");
+        /// <summary>
         /// Constant DEFAULT_PROCESS_OWNERS for SettingAttribute
         /// </summary>
         public static readonly SettingAttribute DEFAULT_PROCESS_OWNERS = new SettingAttribute("DEFAULT_PROCESS_OWNERS");
+        /// <summary>
+        /// Constant DEREGISTRATION_POLICY for SettingAttribute
+        /// </summary>
+        public static readonly SettingAttribute DEREGISTRATION_POLICY = new SettingAttribute("DEREGISTRATION_POLICY");
+        /// <summary>
+        /// Constant EVIDENCE_FINDER_ENABLEMENT for SettingAttribute
+        /// </summary>
+        public static readonly SettingAttribute EVIDENCE_FINDER_ENABLEMENT = new SettingAttribute("EVIDENCE_FINDER_ENABLEMENT");
         /// <summary>
         /// Constant IS_AWS_ORG_ENABLED for SettingAttribute
         /// </summary>

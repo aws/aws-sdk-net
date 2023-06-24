@@ -1,0 +1,59 @@
+﻿<#@ template language="C#" inherits="BaseGenerator" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#
+    AddLicenseHeader();
+#>
+
+using Amazon.Runtime;
+using Amazon.Runtime.Endpoints;
+
+namespace <#=this.Config.Namespace#>.Endpoints
+{
+    /// <summary>
+    /// Contains parameters used for resolving <#=this.Config.ClassName#> endpoints
+    /// Parameters can be sourced from client config and service operations
+    /// Used by internal <#=this.Config.ClassName#>EndpointProvider and <#=Config.ClassName#>EndpointResolver
+    /// Can be used by custom EndpointProvider, see ClientConfig.EndpointProvider
+    /// </summary>
+    public class <#=this.Config.ClassName#>EndpointParameters : EndpointParameters
+    {
+        /// <summary>
+        /// <#=this.Config.ClassName#>EndpointParameters constructor
+        /// </summary>
+        public <#=this.Config.ClassName#>EndpointParameters()
+        {
+<# foreach(var param in this.Config.EndpointsRuleSet.parameters) {
+       if (param.Value.DefaultValue != null) {
+#>
+            <#=param.Key#> = <#=param.Value.DefaultValue#>;
+<#     }
+   } #>
+        }
+<# foreach(var param in this.Config.EndpointsRuleSet.parameters) {
+        var paramType = param.Value.type.ToNativeType(true);
+        var paramName = param.Key;
+#>
+
+        /// <summary>
+        /// <#=param.Key#> parameter
+        /// </summary>
+<# if (param.Value.deprecated != null) { 
+        var message = $@"{param.Value.deprecated.message}";
+        if (param.Value.deprecated.since != null)
+        {
+            message = $@"Deprecated since {param.Value.deprecated.since}. " + message;
+        }
+#>
+        [Obsolete("<#=message#>")]
+<# } #>
+        public <#=paramType#> <#=paramName#> 
+        { 
+            get { return (<#=paramType#>)this["<#=paramName#>"]; }
+            set { this["<#=paramName#>"] = value; } 
+        }
+<# } #>
+    }
+}

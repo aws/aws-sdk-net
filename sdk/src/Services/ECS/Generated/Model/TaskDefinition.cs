@@ -131,13 +131,29 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// 2048 (2 vCPU) - Available <code>memory</code> values: Between 4096 (4 GB) and 16384
-        /// (16 GB) in increments of 1024 (1 GB)
+        /// 2048 (2 vCPU) - Available <code>memory</code> values: 4096 (4 GB) and 16384 (16 GB)
+        /// in increments of 1024 (1 GB)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// 4096 (4 vCPU) - Available <code>memory</code> values: Between 8192 (8 GB) and 30720
-        /// (30 GB) in increments of 1024 (1 GB)
+        /// 4096 (4 vCPU) - Available <code>memory</code> values: 8192 (8 GB) and 30720 (30 GB)
+        /// in increments of 1024 (1 GB)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// 8192 (8 vCPU) - Available <code>memory</code> values: 16 GB and 60 GB in 4 GB increments
+        /// </para>
+        ///  
+        /// <para>
+        /// This option requires Linux platform <code>1.4.0</code> or later.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// 16384 (16vCPU) - Available <code>memory</code> values: 32GB and 120 GB in 8 GB increments
+        /// </para>
+        ///  
+        /// <para>
+        /// This option requires Linux platform <code>1.4.0</code> or later.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -356,6 +372,24 @@ namespace Amazon.ECS.Model
         /// Between 8192 (8 GB) and 30720 (30 GB) in increments of 1024 (1 GB) - Available <code>cpu</code>
         /// values: 4096 (4 vCPU)
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Between 16 GB and 60 GB in 4 GB increments - Available <code>cpu</code> values: 8192
+        /// (8 vCPU)
+        /// </para>
+        ///  
+        /// <para>
+        /// This option requires Linux platform <code>1.4.0</code> or later.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Between 32GB and 120 GB in 8 GB increments - Available <code>cpu</code> values: 16384
+        /// (16 vCPU)
+        /// </para>
+        ///  
+        /// <para>
+        /// This option requires Linux platform <code>1.4.0</code> or later.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         public string Memory
@@ -498,8 +532,8 @@ namespace Amazon.ECS.Model
         ///  
         /// <para>
         /// Your Amazon ECS container instances require at least version 1.26.0 of the container
-        /// agent and at least version 1.26.0-1 of the <code>ecs-init</code> package to enable
-        /// a proxy configuration. If your container instances are launched from the Amazon ECS
+        /// agent and at least version 1.26.0-1 of the <code>ecs-init</code> package to use a
+        /// proxy configuration. If your container instances are launched from the Amazon ECS
         /// optimized AMI version <code>20190301</code> or later, they contain the required versions
         /// of the container agent and <code>ecs-init</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
         /// ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
@@ -585,9 +619,9 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property RequiresCompatibilities. 
         /// <para>
-        /// The task launch types the task definition was validated against. To determine which
-        /// task launch types the task definition is validated for, see the <a>TaskDefinition$compatibilities</a>
-        /// parameter.
+        /// The task launch types the task definition was validated against. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
+        /// ECS launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         /// </summary>
         public List<string> RequiresCompatibilities
@@ -722,7 +756,7 @@ namespace Amazon.ECS.Model
         ///  <note> 
         /// <para>
         /// The <code>host</code> and <code>sourcePath</code> parameters aren't supported for
-        /// tasks run on Fargate.
+        /// tasks run on Fargate. 
         /// </para>
         ///  </note>
         /// </summary>

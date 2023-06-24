@@ -106,6 +106,12 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
                     unmarshalledObject.JobDetails = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("lastAutomatedDiscoveryTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.LastAutomatedDiscoveryTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("objectCount", targetDepth))
                 {
                     var unmarshaller = LongUnmarshaller.Instance;
@@ -116,6 +122,12 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = ObjectCountByEncryptionTypeUnmarshaller.Instance;
                     unmarshalledObject.ObjectCountByEncryptionType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("sensitivityScore", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.SensitivityScore = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("sizeInBytes", targetDepth))

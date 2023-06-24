@@ -30,7 +30,7 @@ namespace Amazon.DataSync.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTasks operation.
-    /// Returns a list of all the tasks.
+    /// Returns a list of the DataSync tasks you created.
     /// </summary>
     public partial class ListTasksRequest : AmazonDataSyncRequest
     {

@@ -39,6 +39,7 @@ namespace Amazon.LookoutMetrics.Model
         private string _anomalyDetectorName;
         private DateTime? _creationTime;
         private string _failureReason;
+        private AnomalyDetectorFailureType _failureType;
         private string _kmsKeyArn;
         private DateTime? _lastModificationTime;
         private AnomalyDetectorStatus _status;
@@ -139,7 +140,7 @@ namespace Amazon.LookoutMetrics.Model
         /// <summary>
         /// Gets and sets the property FailureReason. 
         /// <para>
-        /// The reason that the detector failed, if any.
+        /// The reason that the detector failed.
         /// </para>
         /// </summary>
         [AWSProperty(Max=256)]
@@ -153,6 +154,24 @@ namespace Amazon.LookoutMetrics.Model
         internal bool IsSetFailureReason()
         {
             return this._failureReason != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FailureType. 
+        /// <para>
+        /// The process that caused the detector to fail.
+        /// </para>
+        /// </summary>
+        public AnomalyDetectorFailureType FailureType
+        {
+            get { return this._failureType; }
+            set { this._failureType = value; }
+        }
+
+        // Check to see if FailureType property is set
+        internal bool IsSetFailureType()
+        {
+            return this._failureType != null;
         }
 
         /// <summary>

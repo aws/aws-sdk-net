@@ -34,7 +34,7 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RadiusSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class RadiusSettingsMarshaller : IRequestMarshaller<RadiusSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -102,7 +102,7 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RadiusSettingsMarshaller Instance = new RadiusSettingsMarshaller();
 
     }

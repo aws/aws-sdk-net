@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AsyncInferenceOutputConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class AsyncInferenceOutputConfigMarshaller : IRequestMarshaller<AsyncInferenceOutputConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -62,6 +62,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetS3FailurePath())
+            {
+                context.Writer.WritePropertyName("S3FailurePath");
+                context.Writer.Write(requestObject.S3FailurePath);
+            }
+
             if(requestObject.IsSetS3OutputPath())
             {
                 context.Writer.WritePropertyName("S3OutputPath");
@@ -72,7 +78,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AsyncInferenceOutputConfigMarshaller Instance = new AsyncInferenceOutputConfigMarshaller();
 
     }

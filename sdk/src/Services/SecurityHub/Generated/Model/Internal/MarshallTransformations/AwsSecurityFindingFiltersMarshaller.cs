@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AwsSecurityFindingFilters Marshaller
-    /// </summary>       
+    /// </summary>
     public class AwsSecurityFindingFiltersMarshaller : IRequestMarshaller<AwsSecurityFindingFilters, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,6 +71,38 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
                     var marshaller = StringFilterMarshaller.Instance;
                     marshaller.Marshall(requestObjectCompanyNameListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetComplianceAssociatedStandardsId())
+            {
+                context.Writer.WritePropertyName("ComplianceAssociatedStandardsId");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectComplianceAssociatedStandardsIdListValue in requestObject.ComplianceAssociatedStandardsId)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = StringFilterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectComplianceAssociatedStandardsIdListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetComplianceSecurityControlId())
+            {
+                context.Writer.WritePropertyName("ComplianceSecurityControlId");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectComplianceSecurityControlIdListValue in requestObject.ComplianceSecurityControlId)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = StringFilterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectComplianceSecurityControlIdListValue, context);
 
                     context.Writer.WriteObjectEnd();
                 }
@@ -1277,6 +1309,22 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetSample())
+            {
+                context.Writer.WritePropertyName("Sample");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectSampleListValue in requestObject.Sample)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = BooleanFilterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectSampleListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetSeverityLabel())
             {
                 context.Writer.WritePropertyName("SeverityLabel");
@@ -1553,7 +1601,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AwsSecurityFindingFiltersMarshaller Instance = new AwsSecurityFindingFiltersMarshaller();
 
     }

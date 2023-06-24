@@ -32,8 +32,8 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// <summary>
     /// Container for the parameters to the SetUserSettings operation.
     /// <i>This action is no longer supported.</i> You can use it to configure only SMS MFA.
-    /// You can't use it to configure TOTP software token MFA. To configure either type of
-    /// MFA, use <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserMFAPreference.html">SetUserMFAPreference</a>
+    /// You can't use it to configure time-based one-time password (TOTP) software token MFA.
+    /// To configure either type of MFA, use <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserMFAPreference.html">SetUserMFAPreference</a>
     /// instead.
     /// </summary>
     public partial class SetUserSettingsRequest : AmazonCognitoIdentityProviderRequest
@@ -44,10 +44,11 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AccessToken. 
         /// <para>
-        /// The access token for the set user settings request.
+        /// A valid access token that Amazon Cognito issued to the user whose user settings you
+        /// want to configure.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public string AccessToken
         {
             get { return this._accessToken; }

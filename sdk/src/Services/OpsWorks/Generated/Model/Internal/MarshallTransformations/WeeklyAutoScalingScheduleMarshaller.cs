@@ -34,7 +34,7 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// WeeklyAutoScalingSchedule Marshaller
-    /// </summary>       
+    /// </summary>
     public class WeeklyAutoScalingScheduleMarshaller : IRequestMarshaller<WeeklyAutoScalingSchedule, JsonMarshallerContext> 
     {
         /// <summary>
@@ -147,7 +147,7 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static WeeklyAutoScalingScheduleMarshaller Instance = new WeeklyAutoScalingScheduleMarshaller();
 
     }

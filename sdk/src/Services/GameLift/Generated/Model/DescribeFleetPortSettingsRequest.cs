@@ -52,7 +52,7 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// If successful, a set of <a>IpPermission</a> objects is returned for the requested
+    /// If successful, a set of <code>IpPermission</code> objects is returned for the requested
     /// fleet ID. When a location is specified, a pending status is included. If the requested
     /// fleet has been deleted, the result set is empty.
     /// </para>
@@ -63,19 +63,7 @@ namespace Amazon.GameLift.Model
     ///  
     /// <para>
     ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
-    /// up GameLift fleets</a> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <b>Related actions</b> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <a>ListFleets</a> | <a>DescribeEC2InstanceLimits</a> | <a>DescribeFleetAttributes</a>
-    /// | <a>DescribeFleetCapacity</a> | <a>DescribeFleetEvents</a> | <a>DescribeFleetLocationAttributes</a>
-    /// | <a>DescribeFleetPortSettings</a> | <a>DescribeFleetUtilization</a> | <a>DescribeRuntimeConfiguration</a>
-    /// | <a>DescribeScalingPolicies</a> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
-    /// APIs by task</a> 
+    /// up Amazon GameLift fleets</a> 
     /// </para>
     /// </summary>
     public partial class DescribeFleetPortSettingsRequest : AmazonGameLiftRequest
@@ -106,8 +94,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Location. 
         /// <para>
-        /// A remote location to check for status of port setting updates. Use the AWS Region
-        /// code format, such as <code>us-west-2</code>.
+        /// A remote location to check for status of port setting updates. Use the Amazon Web
+        /// Services Region code format, such as <code>us-west-2</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

@@ -33,16 +33,57 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class AnalysisRouteTableRoute
     {
+        private string _carrierGatewayId;
+        private string _coreNetworkArn;
         private string _destinationCidr;
         private string _destinationPrefixListId;
         private string _egressOnlyInternetGatewayId;
         private string _gatewayId;
         private string _instanceId;
+        private string _localGatewayId;
         private string _natGatewayId;
         private string _networkInterfaceId;
         private string _origin;
+        private string _state;
         private string _transitGatewayId;
         private string _vpcPeeringConnectionId;
+
+        /// <summary>
+        /// Gets and sets the property CarrierGatewayId. 
+        /// <para>
+        /// The ID of a carrier gateway.
+        /// </para>
+        /// </summary>
+        public string CarrierGatewayId
+        {
+            get { return this._carrierGatewayId; }
+            set { this._carrierGatewayId = value; }
+        }
+
+        // Check to see if CarrierGatewayId property is set
+        internal bool IsSetCarrierGatewayId()
+        {
+            return this._carrierGatewayId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CoreNetworkArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of a core network.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1283)]
+        public string CoreNetworkArn
+        {
+            get { return this._coreNetworkArn; }
+            set { this._coreNetworkArn = value; }
+        }
+
+        // Check to see if CoreNetworkArn property is set
+        internal bool IsSetCoreNetworkArn()
+        {
+            return this._coreNetworkArn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DestinationCidr. 
@@ -135,6 +176,24 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property LocalGatewayId. 
+        /// <para>
+        /// The ID of a local gateway.
+        /// </para>
+        /// </summary>
+        public string LocalGatewayId
+        {
+            get { return this._localGatewayId; }
+            set { this._localGatewayId = value; }
+        }
+
+        // Check to see if LocalGatewayId property is set
+        internal bool IsSetLocalGatewayId()
+        {
+            return this._localGatewayId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property NatGatewayId. 
         /// <para>
         /// The ID of a NAT gateway.
@@ -173,20 +232,19 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Origin. 
         /// <para>
-        /// Describes how the route was created. The following are possible values:
+        /// Describes how the route was created. The following are the possible values:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>CreateRouteTable</code> - The route was automatically created when the route
-        /// table was created.
+        /// CreateRouteTable - The route was automatically created when the route table was created.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CreateRoute</code> - The route was manually added to the route table.
+        /// CreateRoute - The route was manually added to the route table.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>EnableVgwRoutePropagation</code> - The route was propagated by route propagation.
+        /// EnableVgwRoutePropagation - The route was propagated by route propagation.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -200,6 +258,33 @@ namespace Amazon.EC2.Model
         internal bool IsSetOrigin()
         {
             return this._origin != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property State. 
+        /// <para>
+        /// The state. The following are the possible values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// active
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// blackhole
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public string State
+        {
+            get { return this._state; }
+            set { this._state = value; }
+        }
+
+        // Check to see if State property is set
+        internal bool IsSetState()
+        {
+            return this._state != null;
         }
 
         /// <summary>

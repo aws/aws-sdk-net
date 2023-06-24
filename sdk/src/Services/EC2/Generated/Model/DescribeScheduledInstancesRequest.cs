@@ -55,11 +55,6 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>network-platform</code> - The network platform (<code>EC2-Classic</code> or
-        /// <code>EC2-VPC</code>).
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         ///  <code>platform</code> - The platform (<code>Linux/UNIX</code> or <code>Windows</code>).
         /// </para>
         ///  </li> </ul>

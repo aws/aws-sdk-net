@@ -38,6 +38,7 @@ namespace Amazon.EKS.Model
         private string _addonVersion;
         private string _clientRequestToken;
         private string _clusterName;
+        private string _configurationValues;
         private ResolveConflicts _resolveConflicts;
         private string _serviceAccountRoleArn;
 
@@ -120,11 +121,47 @@ namespace Amazon.EKS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ConfigurationValues. 
+        /// <para>
+        /// The set of configuration values for the add-on that's created. The values that you
+        /// provide are validated against the schema in <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonConfiguration.html">DescribeAddonConfiguration</a>.
+        /// </para>
+        /// </summary>
+        public string ConfigurationValues
+        {
+            get { return this._configurationValues; }
+            set { this._configurationValues = value; }
+        }
+
+        // Check to see if ConfigurationValues property is set
+        internal bool IsSetConfigurationValues()
+        {
+            return this._configurationValues != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ResolveConflicts. 
         /// <para>
-        /// How to resolve parameter value conflicts when applying the new version of the add-on
-        /// to the cluster.
+        /// How to resolve field value conflicts for an Amazon EKS add-on if you've changed a
+        /// value from the Amazon EKS default value. Conflicts are handled based on the option
+        /// you choose:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>None</b> – Amazon EKS doesn't change the value. The update might fail.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Overwrite</b> – Amazon EKS overwrites the changed value back to the Amazon EKS
+        /// default value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Preserve</b> – Amazon EKS preserves the value. If you choose this option, we recommend
+        /// that you test any field and value changes on a non-production cluster before updating
+        /// the add-on on your production cluster.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public ResolveConflicts ResolveConflicts
         {

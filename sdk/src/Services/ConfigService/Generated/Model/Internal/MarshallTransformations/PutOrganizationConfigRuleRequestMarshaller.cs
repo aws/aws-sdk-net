@@ -58,7 +58,7 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
             string target = "StarlingDoveService.PutOrganizationConfigRule";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2014-11-12";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2014-11-12";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -84,6 +84,17 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.OrganizationConfigRuleName);
                 }
 
+                if(publicRequest.IsSetOrganizationCustomPolicyRuleMetadata())
+                {
+                    context.Writer.WritePropertyName("OrganizationCustomPolicyRuleMetadata");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = OrganizationCustomPolicyRuleMetadataMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.OrganizationCustomPolicyRuleMetadata, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetOrganizationCustomRuleMetadata())
                 {
                     context.Writer.WritePropertyName("OrganizationCustomRuleMetadata");
@@ -106,7 +117,6 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

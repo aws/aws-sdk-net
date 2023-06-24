@@ -34,9 +34,25 @@ namespace Amazon.MediaPackageVod.Model
     /// </summary>
     public partial class SpekeKeyProvider
     {
+        private EncryptionContractConfiguration _encryptionContractConfiguration;
         private string _roleArn;
         private List<string> _systemIds = new List<string>();
         private string _url;
+
+        /// <summary>
+        /// Gets and sets the property EncryptionContractConfiguration.
+        /// </summary>
+        public EncryptionContractConfiguration EncryptionContractConfiguration
+        {
+            get { return this._encryptionContractConfiguration; }
+            set { this._encryptionContractConfiguration = value; }
+        }
+
+        // Check to see if EncryptionContractConfiguration property is set
+        internal bool IsSetEncryptionContractConfiguration()
+        {
+            return this._encryptionContractConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property RoleArn. An Amazon Resource Name (ARN) of an IAM role that

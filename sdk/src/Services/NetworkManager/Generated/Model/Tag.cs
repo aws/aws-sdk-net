@@ -46,6 +46,7 @@ namespace Amazon.NetworkManager.Model
         /// Constraints: Maximum length of 128 characters.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=10000000)]
         public string Key
         {
             get { return this._key; }
@@ -68,6 +69,7 @@ namespace Amazon.NetworkManager.Model
         /// Constraints: Maximum length of 256 characters.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=10000000)]
         public string Value
         {
             get { return this._value; }

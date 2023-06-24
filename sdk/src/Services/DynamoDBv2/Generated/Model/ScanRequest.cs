@@ -346,7 +346,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  </note> 
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter
+        /// For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Query.FilterExpression">Filter
         /// Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -541,12 +541,13 @@ namespace Amazon.DynamoDBv2.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>COUNT</code> - Returns the number of matching items, rather than the matching
-        /// items themselves.
+        /// items themselves. Note that this uses the same quantity of read capacity units as
+        /// getting the items, and is subject to the same item size calculations.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SPECIFIC_ATTRIBUTES</code> - Returns only the attributes listed in <code>AttributesToGet</code>.
-        /// This return value is equivalent to specifying <code>AttributesToGet</code> without
+        ///  <code>SPECIFIC_ATTRIBUTES</code> - Returns only the attributes listed in <code>ProjectionExpression</code>.
+        /// This return value is equivalent to specifying <code>ProjectionExpression</code> without
         /// specifying any value for <code>Select</code>.
         /// </para>
         ///  
@@ -565,12 +566,12 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If neither <code>Select</code> nor <code>AttributesToGet</code> are specified, DynamoDB
-        /// defaults to <code>ALL_ATTRIBUTES</code> when accessing a table, and <code>ALL_PROJECTED_ATTRIBUTES</code>
-        /// when accessing an index. You cannot use both <code>Select</code> and <code>AttributesToGet</code>
+        /// If neither <code>Select</code> nor <code>ProjectionExpression</code> are specified,
+        /// DynamoDB defaults to <code>ALL_ATTRIBUTES</code> when accessing a table, and <code>ALL_PROJECTED_ATTRIBUTES</code>
+        /// when accessing an index. You cannot use both <code>Select</code> and <code>ProjectionExpression</code>
         /// together in a single request, unless the value for <code>Select</code> is <code>SPECIFIC_ATTRIBUTES</code>.
-        /// (This usage is equivalent to specifying <code>AttributesToGet</code> without any value
-        /// for <code>Select</code>.)
+        /// (This usage is equivalent to specifying <code>ProjectionExpression</code> without
+        /// any value for <code>Select</code>.)
         /// </para>
         ///  <note> 
         /// <para>

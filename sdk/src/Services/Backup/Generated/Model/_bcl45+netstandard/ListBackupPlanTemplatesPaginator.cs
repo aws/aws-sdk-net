@@ -41,6 +41,12 @@ namespace Amazon.Backup.Model
         /// </summary>
         public IPaginatedEnumerable<ListBackupPlanTemplatesResponse> Responses => new PaginatedResponse<ListBackupPlanTemplatesResponse>(this);
 
+        /// <summary>
+        /// Enumerable containing all of the BackupPlanTemplatesList
+        /// </summary>
+        public IPaginatedEnumerable<BackupPlanTemplatesListMember> BackupPlanTemplatesList => 
+            new PaginatedResultKeyResponse<ListBackupPlanTemplatesResponse, BackupPlanTemplatesListMember>(this, (i) => i.BackupPlanTemplatesList);
+
         internal ListBackupPlanTemplatesPaginator(IAmazonBackup client, ListBackupPlanTemplatesRequest request)
         {
             this._client = client;

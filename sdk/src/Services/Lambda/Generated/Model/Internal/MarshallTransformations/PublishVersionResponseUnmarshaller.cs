@@ -87,6 +87,12 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                     response.Environment = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("EphemeralStorage", targetDepth))
+                {
+                    var unmarshaller = EphemeralStorageUnmarshaller.Instance;
+                    response.EphemeralStorage = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("FileSystemConfigs", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<FileSystemConfig, FileSystemConfigUnmarshaller>(FileSystemConfigUnmarshaller.Instance);
@@ -189,6 +195,12 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                     response.Runtime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("RuntimeVersionConfig", targetDepth))
+                {
+                    var unmarshaller = RuntimeVersionConfigUnmarshaller.Instance;
+                    response.RuntimeVersionConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SigningJobArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -199,6 +211,12 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.SigningProfileVersionArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SnapStart", targetDepth))
+                {
+                    var unmarshaller = SnapStartResponseUnmarshaller.Instance;
+                    response.SnapStart = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("State", targetDepth))

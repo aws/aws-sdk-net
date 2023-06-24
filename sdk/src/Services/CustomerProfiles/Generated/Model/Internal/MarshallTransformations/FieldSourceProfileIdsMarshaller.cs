@@ -34,7 +34,7 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// FieldSourceProfileIds Marshaller
-    /// </summary>       
+    /// </summary>
     public class FieldSourceProfileIdsMarshaller : IRequestMarshaller<FieldSourceProfileIds, JsonMarshallerContext> 
     {
         /// <summary>
@@ -183,7 +183,7 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static FieldSourceProfileIdsMarshaller Instance = new FieldSourceProfileIdsMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.IoTEventsData.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// VariableDefinition Marshaller
-    /// </summary>       
+    /// </summary>
     public class VariableDefinitionMarshaller : IRequestMarshaller<VariableDefinition, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.IoTEventsData.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static VariableDefinitionMarshaller Instance = new VariableDefinitionMarshaller();
 
     }

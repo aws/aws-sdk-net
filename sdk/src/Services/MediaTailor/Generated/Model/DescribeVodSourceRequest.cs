@@ -30,7 +30,8 @@ namespace Amazon.MediaTailor.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeVodSource operation.
-    /// Provides details about a specific VOD source in a specific source location.
+    /// Provides details about a specific video on demand (VOD) source in a specific source
+    /// location.
     /// </summary>
     public partial class DescribeVodSourceRequest : AmazonMediaTailorRequest
     {
@@ -40,7 +41,7 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property SourceLocationName. 
         /// <para>
-        /// The identifier for the source location you are working on.
+        /// The name of the source location associated with this VOD Source.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -59,7 +60,7 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property VodSourceName. 
         /// <para>
-        /// The identifier for the VOD source you are working on.
+        /// The name of the VOD Source.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

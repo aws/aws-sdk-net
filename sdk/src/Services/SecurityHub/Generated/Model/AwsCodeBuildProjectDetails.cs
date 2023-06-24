@@ -38,6 +38,7 @@ namespace Amazon.SecurityHub.Model
         private AwsCodeBuildProjectEnvironment _environment;
         private AwsCodeBuildProjectLogsConfigDetails _logsConfig;
         private string _name;
+        private List<AwsCodeBuildProjectArtifactsDetails> _secondaryArtifacts = new List<AwsCodeBuildProjectArtifactsDetails>();
         private string _serviceRole;
         private AwsCodeBuildProjectSource _source;
         private AwsCodeBuildProjectVpcConfig _vpcConfig;
@@ -135,6 +136,24 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SecondaryArtifacts. 
+        /// <para>
+        /// Information about the secondary artifacts for the CodeBuild project.
+        /// </para>
+        /// </summary>
+        public List<AwsCodeBuildProjectArtifactsDetails> SecondaryArtifacts
+        {
+            get { return this._secondaryArtifacts; }
+            set { this._secondaryArtifacts = value; }
+        }
+
+        // Check to see if SecondaryArtifacts property is set
+        internal bool IsSetSecondaryArtifacts()
+        {
+            return this._secondaryArtifacts != null && this._secondaryArtifacts.Count > 0; 
         }
 
         /// <summary>

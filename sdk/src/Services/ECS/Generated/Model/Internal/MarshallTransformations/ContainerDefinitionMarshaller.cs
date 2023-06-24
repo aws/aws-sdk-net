@@ -34,7 +34,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ContainerDefinition Marshaller
-    /// </summary>       
+    /// </summary>
     public class ContainerDefinitionMarshaller : IRequestMarshaller<ContainerDefinition, JsonMarshallerContext> 
     {
         /// <summary>
@@ -456,7 +456,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ContainerDefinitionMarshaller Instance = new ContainerDefinitionMarshaller();
 
     }

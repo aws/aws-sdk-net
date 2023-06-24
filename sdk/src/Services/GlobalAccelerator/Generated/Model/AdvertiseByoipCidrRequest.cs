@@ -30,9 +30,10 @@ namespace Amazon.GlobalAccelerator.Model
 {
     /// <summary>
     /// Container for the parameters to the AdvertiseByoipCidr operation.
-    /// Advertises an IPv4 address range that is provisioned for use with your AWS resources
-    /// through bring your own IP addresses (BYOIP). It can take a few minutes before traffic
-    /// to the specified addresses starts routing to AWS because of propagation delays. 
+    /// Advertises an IPv4 address range that is provisioned for use with your Amazon Web
+    /// Services resources through bring your own IP addresses (BYOIP). It can take a few
+    /// minutes before traffic to the specified addresses starts routing to Amazon Web Services
+    /// because of propagation delays. 
     /// 
     ///  
     /// <para>
@@ -42,7 +43,7 @@ namespace Amazon.GlobalAccelerator.Model
     ///  
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring
-    /// Your Own IP Addresses (BYOIP)</a> in the <i>AWS Global Accelerator Developer Guide</i>.
+    /// your own IP addresses (BYOIP)</a> in the <i>Global Accelerator Developer Guide</i>.
     /// </para>
     /// </summary>
     public partial class AdvertiseByoipCidrRequest : AmazonGlobalAcceleratorRequest

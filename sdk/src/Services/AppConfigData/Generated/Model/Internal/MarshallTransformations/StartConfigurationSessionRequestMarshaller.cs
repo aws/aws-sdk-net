@@ -56,7 +56,7 @@ namespace Amazon.AppConfigData.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.AppConfigData");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-11-11";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-11-11";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/configurationsessions";
@@ -89,7 +89,6 @@ namespace Amazon.AppConfigData.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.RequiredMinimumPollIntervalInSeconds);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

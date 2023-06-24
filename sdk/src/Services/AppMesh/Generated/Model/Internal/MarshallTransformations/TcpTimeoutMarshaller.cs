@@ -34,7 +34,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// TcpTimeout Marshaller
-    /// </summary>       
+    /// </summary>
     public class TcpTimeoutMarshaller : IRequestMarshaller<TcpTimeout, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static TcpTimeoutMarshaller Instance = new TcpTimeoutMarshaller();
 
     }

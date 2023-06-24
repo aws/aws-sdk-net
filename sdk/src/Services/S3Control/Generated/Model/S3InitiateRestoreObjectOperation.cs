@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.S3Control.Model
 {
     /// <summary>
-    /// Contains the configuration parameters for an S3 Initiate Restore Object job. S3 Batch
-    /// Operations passes every object to the underlying POST Object restore API. For more
-    /// information about the parameters for this operation, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectPOSTrestore.html#RESTObjectPOSTrestore-restore-request">RestoreObject</a>.
+    /// Contains the configuration parameters for a POST Object restore job. S3 Batch Operations
+    /// passes every object to the underlying <code>RestoreObject</code> API operation. For
+    /// more information about the parameters for this operation, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectPOSTrestore.html#RESTObjectPOSTrestore-restore-request">RestoreObject</a>.
     /// </summary>
     public partial class S3InitiateRestoreObjectOperation
     {

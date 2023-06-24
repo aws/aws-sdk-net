@@ -34,7 +34,7 @@ namespace Amazon.SSMContacts.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ContactChannelAddress Marshaller
-    /// </summary>       
+    /// </summary>
     public class ContactChannelAddressMarshaller : IRequestMarshaller<ContactChannelAddress, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.SSMContacts.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ContactChannelAddressMarshaller Instance = new ContactChannelAddressMarshaller();
 
     }

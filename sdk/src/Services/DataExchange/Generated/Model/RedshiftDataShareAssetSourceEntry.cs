@@ -36,8 +36,10 @@ namespace Amazon.DataExchange.Model
         private string _dataShareArn;
 
         /// <summary>
-        /// Gets and sets the property DataShareArn. The Amazon Resource Name (ARN) of the datashare
-        /// asset.
+        /// Gets and sets the property DataShareArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the datashare asset.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string DataShareArn

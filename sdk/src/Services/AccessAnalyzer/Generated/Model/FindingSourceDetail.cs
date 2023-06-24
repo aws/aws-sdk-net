@@ -34,7 +34,26 @@ namespace Amazon.AccessAnalyzer.Model
     /// </summary>
     public partial class FindingSourceDetail
     {
+        private string _accessPointAccount;
         private string _accessPointArn;
+
+        /// <summary>
+        /// Gets and sets the property AccessPointAccount. 
+        /// <para>
+        /// The account of the cross-account access point that generated the finding.
+        /// </para>
+        /// </summary>
+        public string AccessPointAccount
+        {
+            get { return this._accessPointAccount; }
+            set { this._accessPointAccount = value; }
+        }
+
+        // Check to see if AccessPointAccount property is set
+        internal bool IsSetAccessPointAccount()
+        {
+            return this._accessPointAccount != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AccessPointArn. 

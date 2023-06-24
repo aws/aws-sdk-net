@@ -34,7 +34,7 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// LanguageIdSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class LanguageIdSettingsMarshaller : IRequestMarshaller<LanguageIdSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static LanguageIdSettingsMarshaller Instance = new LanguageIdSettingsMarshaller();
 
     }

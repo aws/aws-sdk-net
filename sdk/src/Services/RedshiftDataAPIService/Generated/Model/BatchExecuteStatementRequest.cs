@@ -36,22 +36,50 @@ namespace Amazon.RedshiftDataAPIService.Model
     /// 
     ///  <ul> <li> 
     /// <para>
-    /// Secrets Manager - when connecting to a cluster, specify the Amazon Resource Name (ARN)
-    /// of the secret, the database name, and the cluster identifier that matches the cluster
-    /// in the secret. When connecting to a serverless endpoint, specify the Amazon Resource
-    /// Name (ARN) of the secret and the database name. 
+    /// Secrets Manager - when connecting to a cluster, provide the <code>secret-arn</code>
+    /// of a secret stored in Secrets Manager which has <code>username</code> and <code>password</code>.
+    /// The specified secret contains credentials to connect to the <code>database</code>
+    /// you specify. When you are connecting to a cluster, you also supply the database name,
+    /// If you provide a cluster identifier (<code>dbClusterIdentifier</code>), it must match
+    /// the cluster identifier stored in the secret. When you are connecting to a serverless
+    /// workgroup, you also supply the database name.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Temporary credentials - when connecting to a cluster, specify the cluster identifier,
-    /// the database name, and the database user name. Also, permission to call the <code>redshift:GetClusterCredentials</code>
-    /// operation is required. When connecting to a serverless endpoint, specify the database
-    /// name. 
+    /// Temporary credentials - when connecting to your data warehouse, choose one of the
+    /// following options:
     /// </para>
-    ///  </li> </ul>
+    ///  <ul> <li> 
+    /// <para>
+    /// When connecting to a serverless workgroup, specify the workgroup name and database
+    /// name. The database user name is derived from the IAM identity. For example, <code>arn:iam::123456789012:user:foo</code>
+    /// has the database user name <code>IAM:foo</code>. Also, permission to call the <code>redshift-serverless:GetCredentials</code>
+    /// operation is required.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// When connecting to a cluster as an IAM identity, specify the cluster identifier and
+    /// the database name. The database user name is derived from the IAM identity. For example,
+    /// <code>arn:iam::123456789012:user:foo</code> has the database user name <code>IAM:foo</code>.
+    /// Also, permission to call the <code>redshift:GetClusterCredentialsWithIAM</code> operation
+    /// is required.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// When connecting to a cluster as a database user, specify the cluster identifier, the
+    /// database name, and the database user name. Also, permission to call the <code>redshift:GetClusterCredentials</code>
+    /// operation is required.
+    /// </para>
+    ///  </li> </ul> </li> </ul> 
+    /// <para>
+    /// For more information about the Amazon Redshift Data API and CLI usage examples, see
+    /// <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the
+    /// Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>. 
+    /// </para>
     /// </summary>
     public partial class BatchExecuteStatementRequest : AmazonRedshiftDataAPIServiceRequest
     {
+        private string _clientToken;
         private string _clusterIdentifier;
         private string _database;
         private string _dbUser;
@@ -59,6 +87,27 @@ namespace Amazon.RedshiftDataAPIService.Model
         private List<string> _sqls = new List<string>();
         private string _statementName;
         private bool? _withEvent;
+        private string _workgroupName;
+
+        /// <summary>
+        /// Gets and sets the property ClientToken. 
+        /// <para>
+        /// A unique, case-sensitive identifier that you provide to ensure the idempotency of
+        /// the request.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public string ClientToken
+        {
+            get { return this._clientToken; }
+            set { this._clientToken = value; }
+        }
+
+        // Check to see if ClientToken property is set
+        internal bool IsSetClientToken()
+        {
+            return this._clientToken != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ClusterIdentifier. 
@@ -102,8 +151,8 @@ namespace Amazon.RedshiftDataAPIService.Model
         /// <summary>
         /// Gets and sets the property DbUser. 
         /// <para>
-        /// The database user name. This parameter is required when connecting to a cluster and
-        /// authenticating using temporary credentials. 
+        /// The database user name. This parameter is required when connecting to a cluster as
+        /// a database user and authenticating using temporary credentials. 
         /// </para>
         /// </summary>
         public string DbUser
@@ -140,8 +189,11 @@ namespace Amazon.RedshiftDataAPIService.Model
         /// <summary>
         /// Gets and sets the property Sqls. 
         /// <para>
-        /// One or more SQL statements to run. 
-        /// </para>
+        /// One or more SQL statements to run. <pre><code> The SQL statements are run as a single
+        /// transaction. They run serially in the order of the array. Subsequent SQL statements
+        /// don't start until the previous statement in the array completes. If any SQL statement
+        /// fails, then because they are run as one transaction, all work is rolled back.&lt;/p&gt;
+        /// </code></pre>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=40)]
         public List<string> Sqls
@@ -193,6 +245,27 @@ namespace Amazon.RedshiftDataAPIService.Model
         internal bool IsSetWithEvent()
         {
             return this._withEvent.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property WorkgroupName. 
+        /// <para>
+        /// The serverless workgroup name or Amazon Resource Name (ARN). This parameter is required
+        /// when connecting to a serverless workgroup and authenticating using either Secrets
+        /// Manager or temporary credentials.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=3, Max=128)]
+        public string WorkgroupName
+        {
+            get { return this._workgroupName; }
+            set { this._workgroupName = value; }
+        }
+
+        // Check to see if WorkgroupName property is set
+        internal bool IsSetWorkgroupName()
+        {
+            return this._workgroupName != null;
         }
 
     }

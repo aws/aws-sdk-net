@@ -43,6 +43,7 @@ namespace Amazon.CodeArtifact.Model
         ///  The name of the external connection associated with a repository. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=2, Max=100)]
         public string ExternalConnectionName
         {
             get { return this._externalConnectionName; }
@@ -73,6 +74,10 @@ namespace Amazon.CodeArtifact.Model
         /// <para>
         ///  <code>maven</code>: A Maven package that contains compiled code in a distributable
         /// format, such as a JAR file. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>nuget</code>: A NuGet package. 
         /// </para>
         ///  </li> </ul>
         /// </summary>

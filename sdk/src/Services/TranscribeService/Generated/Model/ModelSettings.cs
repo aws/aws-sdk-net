@@ -29,7 +29,15 @@ using Amazon.Runtime.Internal;
 namespace Amazon.TranscribeService.Model
 {
     /// <summary>
-    /// The object used to call your custom language model to your transcription job.
+    /// Provides the name of the custom language model that was included in the specified
+    /// transcription job.
+    /// 
+    ///  
+    /// <para>
+    /// Only use <code>ModelSettings</code> with the <code>LanguageModelName</code> sub-parameter
+    /// if you're <b>not</b> using automatic language identification (<code/>). If using <code>LanguageIdSettings</code>
+    /// in your request, this parameter contains a <code>LanguageModelName</code> sub-parameter.
+    /// </para>
     /// </summary>
     public partial class ModelSettings
     {
@@ -38,7 +46,15 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property LanguageModelName. 
         /// <para>
-        /// The name of your custom language model.
+        /// The name of the custom language model you want to use when processing your transcription
+        /// job. Note that custom language model names are case sensitive.
+        /// </para>
+        ///  
+        /// <para>
+        /// The language of the specified custom language model must match the language code that
+        /// you specify in your transcription request. If the languages don't match, the custom
+        /// language model isn't applied. There are no errors or warnings associated with a language
+        /// mismatch.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]

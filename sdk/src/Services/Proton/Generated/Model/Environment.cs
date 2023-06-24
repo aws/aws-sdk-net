@@ -29,12 +29,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Proton.Model
 {
     /// <summary>
-    /// The environment detail data. An Proton environment is a set resources shared across
-    /// an Proton service.
+    /// Detailed data of an Proton environment resource. An Proton environment is a set of
+    /// resources shared across Proton services.
     /// </summary>
     public partial class Environment
     {
         private string _arn;
+        private string _codebuildRoleArn;
+        private string _componentRoleArn;
         private DateTime? _createdAt;
         private DeploymentStatus _deploymentStatus;
         private string _deploymentStatusMessage;
@@ -69,6 +71,57 @@ namespace Amazon.Proton.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CodebuildRoleArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the IAM service role that allows Proton to provision
+        /// infrastructure using CodeBuild-based provisioning on your behalf.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string CodebuildRoleArn
+        {
+            get { return this._codebuildRoleArn; }
+            set { this._codebuildRoleArn = value; }
+        }
+
+        // Check to see if CodebuildRoleArn property is set
+        internal bool IsSetCodebuildRoleArn()
+        {
+            return this._codebuildRoleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ComponentRoleArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning
+        /// directly defined components in this environment. It determines the scope of infrastructure
+        /// that a component can provision.
+        /// </para>
+        ///  
+        /// <para>
+        /// The environment must have a <code>componentRoleArn</code> to allow directly defined
+        /// components to be associated with the environment.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+        /// components</a> in the <i>Proton User Guide</i>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string ComponentRoleArn
+        {
+            get { return this._componentRoleArn; }
+            set { this._componentRoleArn = value; }
+        }
+
+        // Check to see if ComponentRoleArn property is set
+        internal bool IsSetComponentRoleArn()
+        {
+            return this._componentRoleArn != null;
         }
 
         /// <summary>
@@ -115,6 +168,7 @@ namespace Amazon.Proton.Model
         /// An environment deployment status message.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string DeploymentStatusMessage
         {
             get { return this._deploymentStatusMessage; }
@@ -133,7 +187,7 @@ namespace Amazon.Proton.Model
         /// The description of the environment.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=500)]
+        [AWSProperty(Sensitive=true, Min=0, Max=500)]
         public string Description
         {
             get { return this._description; }
@@ -283,15 +337,10 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property ProvisioningRepository. 
         /// <para>
-        /// The repository that you provide with pull request provisioning.
+        /// The linked repository that you use to host your rendered infrastructure templates
+        /// for self-managed provisioning. A linked repository is a repository that has been registered
+        /// with Proton. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/APIReference/API_CreateRepository.html">CreateRepository</a>.
         /// </para>
-        ///  <important> 
-        /// <para>
-        /// Provisioning by pull request is currently in feature preview and is only usable with
-        /// Terraform based Proton Templates. To learn more about <a href="https://aws.amazon.com/service-terms">Amazon
-        /// Web Services Feature Preview terms</a>, see section 2 on Beta and Previews.
-        /// </para>
-        ///  </important>
         /// </summary>
         public RepositoryBranch ProvisioningRepository
         {
@@ -311,7 +360,7 @@ namespace Amazon.Proton.Model
         /// The environment spec.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=51200)]
+        [AWSProperty(Sensitive=true, Min=1, Max=51200)]
         public string Spec
         {
             get { return this._spec; }
@@ -327,7 +376,7 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property TemplateMajorVersion. 
         /// <para>
-        /// The ID of the major version of the environment template.
+        /// The major version of the environment template.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=20)]
@@ -346,7 +395,7 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property TemplateMinorVersion. 
         /// <para>
-        /// The ID of the minor version of the environment template.
+        /// The minor version of the environment template.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=20)]

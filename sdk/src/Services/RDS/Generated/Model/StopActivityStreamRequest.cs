@@ -36,8 +36,11 @@ namespace Amazon.RDS.Model
     /// 
     ///  
     /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/DBActivityStreams.html">Database
-    /// Activity Streams</a> in the <i>Amazon Aurora User Guide</i>.
+    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/DBActivityStreams.html">
+    /// Monitoring Amazon Aurora with Database Activity Streams</a> in the <i>Amazon Aurora
+    /// User Guide</i> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/DBActivityStreams.html">
+    /// Monitoring Amazon RDS with Database Activity Streams</a> in the <i>Amazon RDS User
+    /// Guide</i>.
     /// </para>
     /// </summary>
     public partial class StopActivityStreamRequest : AmazonRDSRequest
@@ -68,7 +71,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property ResourceArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the DB cluster for the database activity stream.
-        /// For example, <code>arn:aws:rds:us-east-1:12345667890:cluster:das-cluster</code>. 
+        /// For example, <code>arn:aws:rds:us-east-1:12345667890:cluster:das-cluster</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisFirehose.Model
 {
     /// <summary>
-    /// 
+    /// Describes the configuration of a destination in Amazon OpenSearch Service
     /// </summary>
     public partial class AmazonopensearchserviceDestinationConfiguration
     {
@@ -48,7 +48,11 @@ namespace Amazon.KinesisFirehose.Model
         private VpcConfiguration _vpcConfiguration;
 
         /// <summary>
-        /// Gets and sets the property BufferingHints.
+        /// Gets and sets the property BufferingHints. 
+        /// <para>
+        /// The buffering options. If no value is specified, the default values for AmazonopensearchserviceBufferingHints
+        /// are used. 
+        /// </para>
         /// </summary>
         public AmazonopensearchserviceBufferingHints BufferingHints
         {
@@ -78,7 +82,11 @@ namespace Amazon.KinesisFirehose.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ClusterEndpoint.
+        /// Gets and sets the property ClusterEndpoint. 
+        /// <para>
+        /// The endpoint to use when communicating with the cluster. Specify either this ClusterEndpoint
+        /// or the DomainARN field. 
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=512)]
         public string ClusterEndpoint
@@ -94,7 +102,12 @@ namespace Amazon.KinesisFirehose.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DomainARN.
+        /// Gets and sets the property DomainARN. 
+        /// <para>
+        /// The ARN of the Amazon OpenSearch Service domain. The IAM role must have permissions
+        /// for DescribeElasticsearchDomain, DescribeElasticsearchDomains, and DescribeElasticsearchDomainConfig
+        /// after assuming the role specified in RoleARN. 
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=512)]
         public string DomainARN
@@ -110,7 +123,10 @@ namespace Amazon.KinesisFirehose.Model
         }
 
         /// <summary>
-        /// Gets and sets the property IndexName.
+        /// Gets and sets the property IndexName. 
+        /// <para>
+        /// The ElasticsearAmazon OpenSearch Service index name.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=80)]
         public string IndexName
@@ -126,7 +142,11 @@ namespace Amazon.KinesisFirehose.Model
         }
 
         /// <summary>
-        /// Gets and sets the property IndexRotationPeriod.
+        /// Gets and sets the property IndexRotationPeriod. 
+        /// <para>
+        /// The Amazon OpenSearch Service index rotation period. Index rotation appends a timestamp
+        /// to the IndexName to facilitate the expiration of old data.
+        /// </para>
         /// </summary>
         public AmazonopensearchserviceIndexRotationPeriod IndexRotationPeriod
         {
@@ -156,7 +176,11 @@ namespace Amazon.KinesisFirehose.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RetryOptions.
+        /// Gets and sets the property RetryOptions. 
+        /// <para>
+        /// The retry behavior in case Kinesis Data Firehose is unable to deliver documents to
+        /// Amazon OpenSearch Service. The default value is 300 (5 minutes). 
+        /// </para>
         /// </summary>
         public AmazonopensearchserviceRetryOptions RetryOptions
         {
@@ -171,7 +195,11 @@ namespace Amazon.KinesisFirehose.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RoleARN.
+        /// Gets and sets the property RoleARN. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data Firehose
+        /// for calling the Amazon OpenSearch Service Configuration API and for indexing documents.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=512)]
         public string RoleARN
@@ -187,7 +215,15 @@ namespace Amazon.KinesisFirehose.Model
         }
 
         /// <summary>
-        /// Gets and sets the property S3BackupMode.
+        /// Gets and sets the property S3BackupMode. 
+        /// <para>
+        /// Defines how documents should be delivered to Amazon S3. When it is set to FailedDocumentsOnly,
+        /// Kinesis Data Firehose writes any documents that could not be indexed to the configured
+        /// Amazon S3 destination, with AmazonOpenSearchService-failed/ appended to the key prefix.
+        /// When set to AllDocuments, Kinesis Data Firehose delivers all incoming records to Amazon
+        /// S3, and also writes failed documents with AmazonOpenSearchService-failed/ appended
+        /// to the prefix. 
+        /// </para>
         /// </summary>
         public AmazonopensearchserviceS3BackupMode S3BackupMode
         {
@@ -218,7 +254,12 @@ namespace Amazon.KinesisFirehose.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TypeName.
+        /// Gets and sets the property TypeName. 
+        /// <para>
+        /// The Amazon OpenSearch Service type name. For Elasticsearch 6.x, there can be only
+        /// one type per index. If you try to specify a new type for an existing index that already
+        /// has another type, Kinesis Data Firehose returns an error during run time. 
+        /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
         public string TypeName

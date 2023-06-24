@@ -34,7 +34,7 @@ namespace Amazon.Detective.Model
     ///  <ul> <li> 
     /// <para>
     /// The request would cause the number of member accounts in the behavior graph to exceed
-    /// the maximum allowed. A behavior graph cannot have more than 1000 member accounts.
+    /// the maximum allowed. A behavior graph cannot have more than 1200 member accounts.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -44,7 +44,7 @@ namespace Amazon.Detective.Model
     ///  </li> <li> 
     /// <para>
     /// Detective is unable to verify the data rate for the member account. This is usually
-    /// because the member account is not enrolled in Amazon GuardDuty. 
+    /// because the member account is not enrolled in Amazon GuardDuty.
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -53,6 +53,7 @@ namespace Amazon.Detective.Model
     #endif
     public partial class ServiceQuotaExceededException : AmazonDetectiveException
     {
+        private List<string> _resources = new List<string>();
 
         /// <summary>
         /// Constructs a new ServiceQuotaExceededException with the specified error
@@ -114,6 +115,7 @@ namespace Amazon.Detective.Model
         protected ServiceQuotaExceededException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
+            this.Resources = (List<string>)info.GetValue("Resources", typeof(List<string>));
         }
 
         /// <summary>
@@ -134,8 +136,28 @@ namespace Amazon.Detective.Model
         public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
         {
             base.GetObjectData(info, context);
+            info.AddValue("Resources", this.Resources);
         }
 #endif
+
+        /// <summary>
+        /// Gets and sets the property Resources. 
+        /// <para>
+        /// The type of resource that has exceeded the service quota.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=50)]
+        public List<string> Resources
+        {
+            get { return this._resources; }
+            set { this._resources = value; }
+        }
+
+        // Check to see if Resources property is set
+        internal bool IsSetResources()
+        {
+            return this._resources != null && this._resources.Count > 0; 
+        }
 
     }
 }

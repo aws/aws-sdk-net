@@ -30,7 +30,8 @@ namespace Amazon.MediaTailor.Model
 {
     /// <summary>
     /// Container for the parameters to the ListSourceLocations operation.
-    /// Retrieves a list of source locations.
+    /// Lists the source locations for a channel. A source location defines the host server
+    /// URL, and contains a list of sources.
     /// </summary>
     public partial class ListSourceLocationsRequest : AmazonMediaTailorRequest
     {
@@ -40,7 +41,9 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// Upper bound on number of records to return. The maximum number of results is 100.
+        ///  The maximum number of source locations that you want MediaTailor to return in response
+        /// to the current request. If there are more than <code>MaxResults</code> source locations,
+        /// use the value of <code>NextToken</code> in the response to get the next page of results.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -59,8 +62,8 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Pagination token from the GET list request. Use the token to fetch the next page of
-        /// results.
+        /// Pagination token returned by the list request when results exceed the maximum allowed.
+        /// Use the token to fetch the next page of results.
         /// </para>
         /// </summary>
         public string NextToken

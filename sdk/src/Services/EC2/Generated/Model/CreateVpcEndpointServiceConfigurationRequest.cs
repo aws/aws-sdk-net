@@ -30,36 +30,34 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateVpcEndpointServiceConfiguration operation.
-    /// Creates a VPC endpoint service configuration to which service consumers (Amazon Web
-    /// Services accounts, IAM users, and IAM roles) can connect.
+    /// Creates a VPC endpoint service to which service consumers (Amazon Web Services accounts,
+    /// users, and IAM roles) can connect.
     /// 
     ///  
     /// <para>
-    /// To create an endpoint service configuration, you must first create one of the following
-    /// for your service:
+    /// Before you create an endpoint service, you must create one of the following for your
+    /// service:
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// A <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/introduction.html">Network
+    /// A <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/">Network
     /// Load Balancer</a>. Service consumers connect to your service using an interface endpoint.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// A <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/gateway/introduction.html">Gateway
+    /// A <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/gateway/">Gateway
     /// Load Balancer</a>. Service consumers connect to your service using a Gateway Load
     /// Balancer endpoint.
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html">VPC
-    /// Endpoint Services</a> in the <i>Amazon Virtual Private Cloud User Guide</i>. 
+    /// If you set the private DNS name, you must prove that you own the private DNS domain
+    /// name.
     /// </para>
     ///  
     /// <para>
-    /// If you set the private DNS name, you must prove that you own the private DNS domain
-    /// name. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-services-dns-validation.html">VPC
-    /// Endpoint Service Private DNS Name Verification</a> in the <i>Amazon Virtual Private
-    /// Cloud User Guide</i>.
+    /// For more information, see the <a href="https://docs.aws.amazon.com/vpc/latest/privatelink/">Amazon
+    /// Web Services PrivateLink Guide</a>.
     /// </para>
     /// </summary>
     public partial class CreateVpcEndpointServiceConfigurationRequest : AmazonEC2Request
@@ -69,13 +67,14 @@ namespace Amazon.EC2.Model
         private List<string> _gatewayLoadBalancerArns = new List<string>();
         private List<string> _networkLoadBalancerArns = new List<string>();
         private string _privateDnsName;
+        private List<string> _supportedIpAddressTypes = new List<string>();
         private List<TagSpecification> _tagSpecifications = new List<TagSpecification>();
 
         /// <summary>
         /// Gets and sets the property AcceptanceRequired. 
         /// <para>
         /// Indicates whether requests from service consumers to create an endpoint to your service
-        /// must be accepted. To accept a request, use <a>AcceptVpcEndpointConnections</a>.
+        /// must be accepted manually.
         /// </para>
         /// </summary>
         public bool AcceptanceRequired
@@ -113,7 +112,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property GatewayLoadBalancerArns. 
         /// <para>
-        /// The Amazon Resource Names (ARNs) of one or more Gateway Load Balancers.
+        /// The Amazon Resource Names (ARNs) of the Gateway Load Balancers.
         /// </para>
         /// </summary>
         public List<string> GatewayLoadBalancerArns
@@ -131,7 +130,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property NetworkLoadBalancerArns. 
         /// <para>
-        /// The Amazon Resource Names (ARNs) of one or more Network Load Balancers for your service.
+        /// The Amazon Resource Names (ARNs) of the Network Load Balancers.
         /// </para>
         /// </summary>
         public List<string> NetworkLoadBalancerArns
@@ -163,6 +162,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetPrivateDnsName()
         {
             return this._privateDnsName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SupportedIpAddressTypes. 
+        /// <para>
+        /// The supported IP address types. The possible values are <code>ipv4</code> and <code>ipv6</code>.
+        /// </para>
+        /// </summary>
+        public List<string> SupportedIpAddressTypes
+        {
+            get { return this._supportedIpAddressTypes; }
+            set { this._supportedIpAddressTypes = value; }
+        }
+
+        // Check to see if SupportedIpAddressTypes property is set
+        internal bool IsSetSupportedIpAddressTypes()
+        {
+            return this._supportedIpAddressTypes != null && this._supportedIpAddressTypes.Count > 0; 
         }
 
         /// <summary>

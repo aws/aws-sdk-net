@@ -58,7 +58,7 @@ namespace Amazon.Proton.Model.Internal.MarshallTransformations
             string target = "AwsProton20200720.UpdateServiceInstance";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.0";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-07-20";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-07-20";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -67,6 +67,17 @@ namespace Amazon.Proton.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetClientToken())
+                {
+                    context.Writer.WritePropertyName("clientToken");
+                    context.Writer.Write(publicRequest.ClientToken);
+                }
+
+                else if(!(publicRequest.IsSetClientToken()))
+                {
+                    context.Writer.WritePropertyName("clientToken");
+                    context.Writer.Write(Guid.NewGuid().ToString());
+                }
                 if(publicRequest.IsSetDeploymentType())
                 {
                     context.Writer.WritePropertyName("deploymentType");
@@ -103,7 +114,6 @@ namespace Amazon.Proton.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.TemplateMinorVersion);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

@@ -46,18 +46,19 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property AuthenticationConfiguration. 
         /// <para>
-        /// Provides configuration information required to connect to websites using authentication.
+        /// Configuration information required to connect to websites using authentication.
         /// </para>
         ///  
         /// <para>
         /// You can connect to websites using basic authentication of user name and password.
+        /// You use a secret in <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Secrets
+        /// Manager</a> to store your authentication credentials.
         /// </para>
         ///  
         /// <para>
         /// You must provide the website host name and port number. For example, the host name
         /// of https://a.example.com/page1.html is "a.example.com" and the port is 443, the standard
-        /// port for HTTPS. You use a secret in <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Secrets
-        /// Manager</a> to store your authentication credentials.
+        /// port for HTTPS.
         /// </para>
         /// </summary>
         public AuthenticationConfiguration AuthenticationConfiguration
@@ -75,18 +76,9 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property CrawlDepth. 
         /// <para>
-        /// Specifies the number of levels in a website that you want to crawl.
-        /// </para>
-        ///  
-        /// <para>
-        /// The first level begins from the website seed or starting point URL. For example, if
-        /// a website has 3 levels – index level (i.e. seed in this example), sections level,
-        /// and subsections level – and you are only interested in crawling information up to
-        /// the sections level (i.e. levels 0-1), you can set your depth to 1.
-        /// </para>
-        ///  
-        /// <para>
-        /// The default crawl depth is set to 2.
+        /// The 'depth' or number of levels from the seed level to crawl. For example, the seed
+        /// URL page is depth 1 and any hyperlinks on this page that are also crawled are depth
+        /// 2.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=10)]
@@ -105,7 +97,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property MaxContentSizePerPageInMegaBytes. 
         /// <para>
-        /// The maximum size (in MB) of a webpage or attachment to crawl.
+        /// The maximum size (in MB) of a web page or attachment to crawl.
         /// </para>
         ///  
         /// <para>
@@ -113,7 +105,7 @@ namespace Amazon.Kendra.Model
         /// </para>
         ///  
         /// <para>
-        /// The default maximum size of a webpage or attachment is set to 50 MB.
+        /// The default maximum size of a web page or attachment is set to 50 MB.
         /// </para>
         /// </summary>
         [AWSProperty(Max=50)]
@@ -132,13 +124,13 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property MaxLinksPerPage. 
         /// <para>
-        /// The maximum number of URLs on a webpage to include when crawling a website. This number
-        /// is per webpage.
+        /// The maximum number of URLs on a web page to include when crawling a website. This
+        /// number is per web page.
         /// </para>
         ///  
         /// <para>
-        /// As a website’s webpages are crawled, any URLs the webpages link to are also crawled.
-        /// URLs on a webpage are crawled in order of appearance.
+        /// As a website’s web pages are crawled, any URLs the web pages link to are also crawled.
+        /// URLs on a web page are crawled in order of appearance.
         /// </para>
         ///  
         /// <para>
@@ -188,8 +180,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property ProxyConfiguration. 
         /// <para>
-        /// Provides configuration information required to connect to your internal websites via
-        /// a web proxy.
+        /// Configuration information required to connect to your internal websites via a web
+        /// proxy.
         /// </para>
         ///  
         /// <para>
@@ -220,15 +212,13 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property UrlExclusionPatterns. 
         /// <para>
-        /// The regular expression pattern to exclude certain URLs to crawl.
-        /// </para>
-        ///  
-        /// <para>
-        /// If there is a regular expression pattern to include certain URLs that conflicts with
-        /// the exclude pattern, the exclude pattern takes precedence.
+        /// A list of regular expression patterns to exclude certain URLs to crawl. URLs that
+        /// match the patterns are excluded from the index. URLs that don't match the patterns
+        /// are included in the index. If a URL matches both an inclusion and exclusion pattern,
+        /// the exclusion pattern takes precedence and the URL file isn't included in the index.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=100)]
+        [AWSProperty(Min=0, Max=250)]
         public List<string> UrlExclusionPatterns
         {
             get { return this._urlExclusionPatterns; }
@@ -244,15 +234,13 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property UrlInclusionPatterns. 
         /// <para>
-        /// The regular expression pattern to include certain URLs to crawl.
-        /// </para>
-        ///  
-        /// <para>
-        /// If there is a regular expression pattern to exclude certain URLs that conflicts with
-        /// the include pattern, the exclude pattern takes precedence.
+        /// A list of regular expression patterns to include certain URLs to crawl. URLs that
+        /// match the patterns are included in the index. URLs that don't match the patterns are
+        /// excluded from the index. If a URL matches both an inclusion and exclusion pattern,
+        /// the exclusion pattern takes precedence and the URL file isn't included in the index.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=100)]
+        [AWSProperty(Min=0, Max=250)]
         public List<string> UrlInclusionPatterns
         {
             get { return this._urlInclusionPatterns; }
@@ -286,7 +274,7 @@ namespace Amazon.Kendra.Model
         /// <para>
         ///  <i>When selecting websites to index, you must adhere to the <a href="https://aws.amazon.com/aup/">Amazon
         /// Acceptable Use Policy</a> and all other Amazon terms. Remember that you must only
-        /// use Amazon Kendra Web Crawler to index your own webpages, or webpages that you have
+        /// use Amazon Kendra Web Crawler to index your own web pages, or web pages that you have
         /// authorization to index.</i> 
         /// </para>
         /// </summary>

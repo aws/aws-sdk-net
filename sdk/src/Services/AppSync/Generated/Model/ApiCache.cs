@@ -70,7 +70,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property AtRestEncryptionEnabled. 
         /// <para>
-        /// At rest encryption flag for cache. This setting cannot be updated after creation.
+        /// At-rest encryption flag for cache. You cannot update this setting after creation.
         /// </para>
         /// </summary>
         public bool AtRestEncryptionEnabled
@@ -127,7 +127,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property TransitEncryptionEnabled. 
         /// <para>
-        /// Transit encryption flag when connecting to cache. This setting cannot be updated after
+        /// Transit encryption flag when connecting to cache. You cannot update this setting after
         /// creation.
         /// </para>
         /// </summary>
@@ -150,7 +150,7 @@ namespace Amazon.AppSync.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values are between 1 and 3600 seconds.
+        /// Valid values are 1–3,600 seconds.
         /// </para>
         /// </summary>
         public long Ttl

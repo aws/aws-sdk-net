@@ -34,7 +34,7 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ServiceActionAssociation Marshaller
-    /// </summary>       
+    /// </summary>
     public class ServiceActionAssociationMarshaller : IRequestMarshaller<ServiceActionAssociation, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ServiceActionAssociationMarshaller Instance = new ServiceActionAssociationMarshaller();
 
     }

@@ -30,17 +30,23 @@ namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
     /// Container for the parameters to the ListInstanceTypeDetails operation.
-    /// 
+    /// Lists all instance types and available features for a given OpenSearch or Elasticsearch
+    /// version.
     /// </summary>
     public partial class ListInstanceTypeDetailsRequest : AmazonOpenSearchServiceRequest
     {
         private string _domainName;
         private string _engineVersion;
+        private string _instanceType;
         private int? _maxResults;
         private string _nextToken;
+        private bool? _retrieveAZs;
 
         /// <summary>
-        /// Gets and sets the property DomainName.
+        /// Gets and sets the property DomainName. 
+        /// <para>
+        /// The name of the domain.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=28)]
         public string DomainName
@@ -56,7 +62,11 @@ namespace Amazon.OpenSearchService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EngineVersion.
+        /// Gets and sets the property EngineVersion. 
+        /// <para>
+        /// The version of OpenSearch or Elasticsearch, in the format Elasticsearch_X.Y or OpenSearch_X.Y.
+        /// Defaults to the latest version of OpenSearch.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=14, Max=18)]
         public string EngineVersion
@@ -72,7 +82,30 @@ namespace Amazon.OpenSearchService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MaxResults.
+        /// Gets and sets the property InstanceType. 
+        /// <para>
+        /// An optional parameter that lists information for a given instance type.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=10, Max=40)]
+        public string InstanceType
+        {
+            get { return this._instanceType; }
+            set { this._instanceType = value; }
+        }
+
+        // Check to see if InstanceType property is set
+        internal bool IsSetInstanceType()
+        {
+            return this._instanceType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// An optional parameter that specifies the maximum number of results to return. You
+        /// can use <code>nextToken</code> to get the next page of results.
+        /// </para>
         /// </summary>
         [AWSProperty(Max=100)]
         public int MaxResults
@@ -88,7 +121,12 @@ namespace Amazon.OpenSearchService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// If your initial <code>ListInstanceTypeDetails</code> operation returns a <code>nextToken</code>,
+        /// you can include the returned <code>nextToken</code> in subsequent <code>ListInstanceTypeDetails</code>
+        /// operations, which returns results in the next page.
+        /// </para>
         /// </summary>
         public string NextToken
         {
@@ -100,6 +138,24 @@ namespace Amazon.OpenSearchService.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RetrieveAZs. 
+        /// <para>
+        /// An optional parameter that specifies the Availability Zones for the domain.
+        /// </para>
+        /// </summary>
+        public bool RetrieveAZs
+        {
+            get { return this._retrieveAZs.GetValueOrDefault(); }
+            set { this._retrieveAZs = value; }
+        }
+
+        // Check to see if RetrieveAZs property is set
+        internal bool IsSetRetrieveAZs()
+        {
+            return this._retrieveAZs.HasValue; 
         }
 
     }

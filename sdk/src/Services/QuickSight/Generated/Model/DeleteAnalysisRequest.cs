@@ -63,7 +63,7 @@ namespace Amazon.QuickSight.Model
         /// The ID of the analysis that you're deleting.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=2048)]
+        [AWSProperty(Required=true, Min=1, Max=512)]
         public string AnalysisId
         {
             get { return this._analysisId; }

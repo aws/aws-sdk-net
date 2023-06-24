@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ProfilerConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class ProfilerConfigMarshaller : IRequestMarshaller<ProfilerConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -45,6 +45,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ProfilerConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetDisableProfiler())
+            {
+                context.Writer.WritePropertyName("DisableProfiler");
+                context.Writer.Write(requestObject.DisableProfiler);
+            }
+
             if(requestObject.IsSetProfilingIntervalInMilliseconds())
             {
                 context.Writer.WritePropertyName("ProfilingIntervalInMilliseconds");
@@ -75,7 +81,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ProfilerConfigMarshaller Instance = new ProfilerConfigMarshaller();
 
     }

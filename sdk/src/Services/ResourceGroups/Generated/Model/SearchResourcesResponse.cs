@@ -63,9 +63,21 @@ namespace Amazon.ResourceGroups.Model
         /// Gets and sets the property QueryErrors. 
         /// <para>
         /// A list of <code>QueryError</code> objects. Each error is an object that contains <code>ErrorCode</code>
-        /// and <code>Message</code> structures. Possible values for <code>ErrorCode</code> are
-        /// <code>CLOUDFORMATION_STACK_INACTIVE</code> and <code>CLOUDFORMATION_STACK_NOT_EXISTING</code>.
+        /// and <code>Message</code> structures.
         /// </para>
+        ///  
+        /// <para>
+        /// Possible values for <code>ErrorCode</code>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>CLOUDFORMATION_STACK_INACTIVE</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>CLOUDFORMATION_STACK_NOT_EXISTING</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public List<QueryError> QueryErrors
         {

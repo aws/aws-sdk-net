@@ -56,7 +56,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Connect");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-08-08";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-08-08";
             request.HttpMethod = "POST";
 
             if (!publicRequest.IsSetInstanceId())
@@ -118,7 +118,22 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.NextToken);
                 }
 
-        
+                if(publicRequest.IsSetSortCriteria())
+                {
+                    context.Writer.WritePropertyName("SortCriteria");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestSortCriteriaListValue in publicRequest.SortCriteria)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = CurrentMetricSortCriteriaMarshaller.Instance;
+                        marshaller.Marshall(publicRequestSortCriteriaListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

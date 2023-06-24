@@ -34,7 +34,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ConfluenceBlogToIndexFieldMapping Marshaller
-    /// </summary>       
+    /// </summary>
     public class ConfluenceBlogToIndexFieldMappingMarshaller : IRequestMarshaller<ConfluenceBlogToIndexFieldMapping, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ConfluenceBlogToIndexFieldMappingMarshaller Instance = new ConfluenceBlogToIndexFieldMappingMarshaller();
 
     }

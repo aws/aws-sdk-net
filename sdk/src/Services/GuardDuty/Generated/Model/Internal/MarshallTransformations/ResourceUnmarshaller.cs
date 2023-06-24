@@ -70,10 +70,58 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                     unmarshalledObject.AccessKeyDetails = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("containerDetails", targetDepth))
+                {
+                    var unmarshaller = ContainerUnmarshaller.Instance;
+                    unmarshalledObject.ContainerDetails = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ebsVolumeDetails", targetDepth))
+                {
+                    var unmarshaller = EbsVolumeDetailsUnmarshaller.Instance;
+                    unmarshalledObject.EbsVolumeDetails = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ecsClusterDetails", targetDepth))
+                {
+                    var unmarshaller = EcsClusterDetailsUnmarshaller.Instance;
+                    unmarshalledObject.EcsClusterDetails = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("eksClusterDetails", targetDepth))
+                {
+                    var unmarshaller = EksClusterDetailsUnmarshaller.Instance;
+                    unmarshalledObject.EksClusterDetails = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("instanceDetails", targetDepth))
                 {
                     var unmarshaller = InstanceDetailsUnmarshaller.Instance;
                     unmarshalledObject.InstanceDetails = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("kubernetesDetails", targetDepth))
+                {
+                    var unmarshaller = KubernetesDetailsUnmarshaller.Instance;
+                    unmarshalledObject.KubernetesDetails = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("lambdaDetails", targetDepth))
+                {
+                    var unmarshaller = LambdaDetailsUnmarshaller.Instance;
+                    unmarshalledObject.LambdaDetails = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("rdsDbInstanceDetails", targetDepth))
+                {
+                    var unmarshaller = RdsDbInstanceDetailsUnmarshaller.Instance;
+                    unmarshalledObject.RdsDbInstanceDetails = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("rdsDbUserDetails", targetDepth))
+                {
+                    var unmarshaller = RdsDbUserDetailsUnmarshaller.Instance;
+                    unmarshalledObject.RdsDbUserDetails = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("resourceType", targetDepth))

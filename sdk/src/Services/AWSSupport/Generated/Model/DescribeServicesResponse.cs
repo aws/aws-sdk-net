@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AWSSupport.Model
 {
     /// <summary>
-    /// The list of AWS services returned by the <a>DescribeServices</a> operation.
+    /// The list of Amazon Web Services services returned by the <a>DescribeServices</a> operation.
     /// </summary>
     public partial class DescribeServicesResponse : AmazonWebServiceResponse
     {
@@ -38,7 +38,7 @@ namespace Amazon.AWSSupport.Model
         /// <summary>
         /// Gets and sets the property Services. 
         /// <para>
-        /// A JSON-formatted list of AWS services.
+        /// A JSON-formatted list of Amazon Web Services services.
         /// </para>
         /// </summary>
         public List<Service> Services

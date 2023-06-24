@@ -39,9 +39,9 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// A token to indicate the location of the next repository sync definition in the array
-        /// of repository sync definitions, after the current requested list of repository sync
-        /// definitions.
+        /// A token that indicates the location of the next repository sync definition in the
+        /// array of repository sync definitions, after the current requested list of repository
+        /// sync definitions.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=0)]

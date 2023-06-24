@@ -34,7 +34,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DeleteFileSystemLustreConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class DeleteFileSystemLustreConfigurationMarshaller : IRequestMarshaller<DeleteFileSystemLustreConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DeleteFileSystemLustreConfigurationMarshaller Instance = new DeleteFileSystemLustreConfigurationMarshaller();
 
     }

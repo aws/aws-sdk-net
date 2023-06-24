@@ -17,22 +17,22 @@
  * Do not modify this file. This file is generated from the autoscaling-2011-01-01.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
-
+using Amazon.AutoScaling.Internal;
 
 namespace Amazon.AutoScaling
 {
     /// <summary>
     /// Configuration for accessing Amazon AutoScaling service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonAutoScalingConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.8.3");
+            InternalSDKUtils.BuildUserAgentString("3.7.104.45");
 
         private string _userAgent = UserAgentString;
 
@@ -40,8 +40,10 @@ namespace Amazon.AutoScaling
         /// Default constructor
         /// </summary>
         public AmazonAutoScalingConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonAutoScalingDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "autoscaling";
+            this.EndpointProvider = new AmazonAutoScalingEndpointProvider();
         }
 
         /// <summary>
@@ -76,5 +78,6 @@ namespace Amazon.AutoScaling
                 return _userAgent;
             }
         }
+
     }
 }

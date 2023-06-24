@@ -39,7 +39,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property ChallengeName. 
         /// <para>
-        /// The challenge name
+        /// The challenge name.
         /// </para>
         /// </summary>
         public ChallengeName ChallengeName

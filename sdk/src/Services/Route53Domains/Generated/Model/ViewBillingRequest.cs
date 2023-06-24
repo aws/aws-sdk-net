@@ -30,8 +30,8 @@ namespace Amazon.Route53Domains.Model
 {
     /// <summary>
     /// Container for the parameters to the ViewBilling operation.
-    /// Returns all the domain-related billing records for the current AWS account for a specified
-    /// period
+    /// Returns all the domain-related billing records for the current Amazon Web Services
+    /// account for a specified period
     /// </summary>
     public partial class ViewBillingRequest : AmazonRoute53DomainsRequest
     {
@@ -63,10 +63,10 @@ namespace Amazon.Route53Domains.Model
         /// Gets and sets the property Marker. 
         /// <para>
         /// For an initial request for a list of billing records, omit this element. If the number
-        /// of billing records that are associated with the current AWS account during the specified
-        /// period is greater than the value that you specified for <code>MaxItems</code>, you
-        /// can use <code>Marker</code> to return additional billing records. Get the value of
-        /// <code>NextPageMarker</code> from the previous response, and submit another request
+        /// of billing records that are associated with the current Amazon Web Services account
+        /// during the specified period is greater than the value that you specified for <code>MaxItems</code>,
+        /// you can use <code>Marker</code> to return additional billing records. Get the value
+        /// of <code>NextPageMarker</code> from the previous response, and submit another request
         /// that includes the value of <code>NextPageMarker</code> in the <code>Marker</code>
         /// element. 
         /// </para>

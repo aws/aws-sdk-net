@@ -33,14 +33,36 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class JupyterServerAppSettings
     {
+        private List<CodeRepository> _codeRepositories = new List<CodeRepository>();
         private ResourceSpec _defaultResourceSpec;
         private List<string> _lifecycleConfigArns = new List<string>();
+
+        /// <summary>
+        /// Gets and sets the property CodeRepositories. 
+        /// <para>
+        /// A list of Git repositories that SageMaker automatically displays to users for cloning
+        /// in the JupyterServer application.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=10)]
+        public List<CodeRepository> CodeRepositories
+        {
+            get { return this._codeRepositories; }
+            set { this._codeRepositories = value; }
+        }
+
+        // Check to see if CodeRepositories property is set
+        internal bool IsSetCodeRepositories()
+        {
+            return this._codeRepositories != null && this._codeRepositories.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property DefaultResourceSpec. 
         /// <para>
         /// The default instance type and the Amazon Resource Name (ARN) of the default SageMaker
-        /// image used by the JupyterServer app.
+        /// image used by the JupyterServer app. If you use the <code>LifecycleConfigArns</code>
+        /// parameter, then this parameter is also required.
         /// </para>
         /// </summary>
         public ResourceSpec DefaultResourceSpec
@@ -59,7 +81,15 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property LifecycleConfigArns. 
         /// <para>
         ///  The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to the JupyterServerApp.
+        /// If you use this parameter, the <code>DefaultResourceSpec</code> parameter is also
+        /// required.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// To remove a Lifecycle Config, you must set <code>LifecycleConfigArns</code> to an
+        /// empty list.
+        /// </para>
+        ///  </note>
         /// </summary>
         public List<string> LifecycleConfigArns
         {

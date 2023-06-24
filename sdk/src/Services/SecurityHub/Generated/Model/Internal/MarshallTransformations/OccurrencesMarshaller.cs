@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Occurrences Marshaller
-    /// </summary>       
+    /// </summary>
     public class OccurrencesMarshaller : IRequestMarshaller<Occurrences, JsonMarshallerContext> 
     {
         /// <summary>
@@ -129,7 +129,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static OccurrencesMarshaller Instance = new OccurrencesMarshaller();
 
     }

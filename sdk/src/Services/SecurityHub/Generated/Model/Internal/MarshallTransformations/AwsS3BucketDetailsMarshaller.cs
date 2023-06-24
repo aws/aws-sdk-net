@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AwsS3BucketDetails Marshaller
-    /// </summary>       
+    /// </summary>
     public class AwsS3BucketDetailsMarshaller : IRequestMarshaller<AwsS3BucketDetails, JsonMarshallerContext> 
     {
         /// <summary>
@@ -84,6 +84,17 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetBucketVersioningConfiguration())
+            {
+                context.Writer.WritePropertyName("BucketVersioningConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsS3BucketBucketVersioningConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.BucketVersioningConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetBucketWebsiteConfiguration())
             {
                 context.Writer.WritePropertyName("BucketWebsiteConfiguration");
@@ -99,6 +110,17 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("CreatedAt");
                 context.Writer.Write(requestObject.CreatedAt);
+            }
+
+            if(requestObject.IsSetObjectLockConfiguration())
+            {
+                context.Writer.WritePropertyName("ObjectLockConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsS3BucketObjectLockConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.ObjectLockConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
             }
 
             if(requestObject.IsSetOwnerAccountId())
@@ -145,7 +167,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AwsS3BucketDetailsMarshaller Instance = new AwsS3BucketDetailsMarshaller();
 
     }

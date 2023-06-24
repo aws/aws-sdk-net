@@ -41,6 +41,12 @@ namespace Amazon.Backup.Model
         /// </summary>
         public IPaginatedEnumerable<ListRecoveryPointsByResourceResponse> Responses => new PaginatedResponse<ListRecoveryPointsByResourceResponse>(this);
 
+        /// <summary>
+        /// Enumerable containing all of the RecoveryPoints
+        /// </summary>
+        public IPaginatedEnumerable<RecoveryPointByResource> RecoveryPoints => 
+            new PaginatedResultKeyResponse<ListRecoveryPointsByResourceResponse, RecoveryPointByResource>(this, (i) => i.RecoveryPoints);
+
         internal ListRecoveryPointsByResourcePaginator(IAmazonBackup client, ListRecoveryPointsByResourceRequest request)
         {
             this._client = client;

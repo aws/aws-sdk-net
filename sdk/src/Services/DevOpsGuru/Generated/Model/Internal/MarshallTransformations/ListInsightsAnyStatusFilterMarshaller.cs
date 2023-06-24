@@ -34,7 +34,7 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ListInsightsAnyStatusFilter Marshaller
-    /// </summary>       
+    /// </summary>
     public class ListInsightsAnyStatusFilterMarshaller : IRequestMarshaller<ListInsightsAnyStatusFilter, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ListInsightsAnyStatusFilterMarshaller Instance = new ListInsightsAnyStatusFilterMarshaller();
 
     }

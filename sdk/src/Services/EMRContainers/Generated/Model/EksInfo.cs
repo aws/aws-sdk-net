@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EMRContainers.Model
 {
     /// <summary>
-    /// The information about the EKS cluster.
+    /// The information about the Amazon EKS cluster.
     /// </summary>
     public partial class EksInfo
     {
@@ -38,7 +38,7 @@ namespace Amazon.EMRContainers.Model
         /// <summary>
         /// Gets and sets the property Namespace. 
         /// <para>
-        /// The namespaces of the EKS cluster.
+        /// The namespaces of the Amazon EKS cluster.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=63)]

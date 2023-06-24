@@ -34,7 +34,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SalesforceDestinationProperties Marshaller
-    /// </summary>       
+    /// </summary>
     public class SalesforceDestinationPropertiesMarshaller : IRequestMarshaller<SalesforceDestinationProperties, JsonMarshallerContext> 
     {
         /// <summary>
@@ -45,6 +45,12 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SalesforceDestinationProperties requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetDataTransferApi())
+            {
+                context.Writer.WritePropertyName("dataTransferApi");
+                context.Writer.Write(requestObject.DataTransferApi);
+            }
+
             if(requestObject.IsSetErrorHandlingConfig())
             {
                 context.Writer.WritePropertyName("errorHandlingConfig");
@@ -83,7 +89,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SalesforceDestinationPropertiesMarshaller Instance = new SalesforceDestinationPropertiesMarshaller();
 
     }

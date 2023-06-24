@@ -44,8 +44,7 @@ namespace Amazon.Macie2.Model
         /// <para>
         /// The Amazon Resource Name (ARN) or unique identifier (key ID) for the KMS key that's
         /// used by default to encrypt objects that are added to the bucket. This value is null
-        /// if the bucket uses an Amazon S3 managed key to encrypt new objects or the bucket doesn't
-        /// encrypt new objects by default.
+        /// if the bucket is configured to use an Amazon S3 managed key to encrypt new objects.
         /// </para>
         /// </summary>
         public string KmsMasterKeyId
@@ -63,8 +62,8 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of server-side encryption that's used by default when storing new objects
-        /// in the bucket. Possible values are:
+        /// The server-side encryption algorithm that's used by default to encrypt objects that
+        /// are added to the bucket. Possible values are:
         /// </para>
         ///  <ul><li>
         /// <para>
@@ -78,8 +77,8 @@ namespace Amazon.Macie2.Model
         /// </para>
         /// </li> <li>
         /// <para>
-        /// NONE - New objects aren't encrypted by default. Default encryption is disabled for
-        /// the bucket.
+        /// NONE - The bucket's default encryption settings don't specify server-side encryption
+        /// behavior for new objects.
         /// </para>
         /// </li></ul>
         /// </summary>

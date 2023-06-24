@@ -60,9 +60,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 			if (!intelligentTieringConfiguration.IsSetTieringList())
 				throw new System.ArgumentException("TieringList is a required property and must be set before making this call.", "IntelligentTieringConfiguration.TieringList");
 
-			request.ResourcePath = string.Concat("/", S3Transforms.ToStringValue(PutBucketIntelligentTieringConfigurationRequest.BucketName));
+            request.ResourcePath = "/";
 
-			request.AddSubResource("intelligent-tiering");
+            request.AddSubResource("intelligent-tiering");
 
 			request.AddSubResource("id", PutBucketIntelligentTieringConfigurationRequest.IntelligentTieringId);
 
@@ -72,17 +72,17 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
 				if (intelligentTieringConfiguration != null)
 				{
-					xmlWriter.WriteStartElement("IntelligentTieringConfiguration", "http://s3.amazonaws.com/doc/2006-03-01/");
+					xmlWriter.WriteStartElement("IntelligentTieringConfiguration", S3Constants.S3RequestXmlNamespace);
 					if (intelligentTieringConfiguration != null)
 					{
 						if (intelligentTieringConfiguration.IsSetIntelligentTieringId())
 						{
-							xmlWriter.WriteElementString("Id", "http://s3.amazonaws.com/doc/2006-03-01/", S3Transforms.ToXmlStringValue(intelligentTieringConfiguration.IntelligentTieringId));
+							xmlWriter.WriteElementString("Id", S3Transforms.ToXmlStringValue(intelligentTieringConfiguration.IntelligentTieringId));
 						}
 
 						if (intelligentTieringConfiguration.IsSetIntelligentTieringFilter())
 						{
-							xmlWriter.WriteStartElement("Filter", "http://s3.amazonaws.com/doc/2006-03-01/");
+							xmlWriter.WriteStartElement("Filter");
 							var filterPredicate = intelligentTieringConfiguration.IntelligentTieringFilter.IntelligentTieringFilterPredicate;
 							filterPredicate.Accept(new IntelligentTieringPredicateVisitor(xmlWriter));
 
@@ -91,7 +91,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
 						if (intelligentTieringConfiguration.IsSetStatus())
 						{
-							xmlWriter.WriteElementString("Status", "http://s3.amazonaws.com/doc/2006-03-01/", S3Transforms.ToXmlStringValue(intelligentTieringConfiguration.Status));
+							xmlWriter.WriteElementString("Status", S3Transforms.ToXmlStringValue(intelligentTieringConfiguration.Status));
 						}
 
 						if (intelligentTieringConfiguration.IsSetTieringList())
@@ -100,9 +100,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 							{
 								if (tiering != null)
 								{
-									xmlWriter.WriteStartElement("Tiering", "http://s3.amazonaws.com/doc/2006-03-01/");
-									xmlWriter.WriteElementString("Days", "http://s3.amazonaws.com/doc/2006-03-01/", S3Transforms.ToXmlStringValue(tiering.Days));
-									xmlWriter.WriteElementString("AccessTier", "http://s3.amazonaws.com/doc/2006-03-01/", S3Transforms.ToXmlStringValue(tiering.AccessTier));
+									xmlWriter.WriteStartElement("Tiering");
+									xmlWriter.WriteElementString("Days", S3Transforms.ToXmlStringValue(tiering.Days));
+									xmlWriter.WriteElementString("AccessTier", S3Transforms.ToXmlStringValue(tiering.AccessTier));
 									xmlWriter.WriteEndElement();
 								}
 							}

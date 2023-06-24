@@ -52,7 +52,9 @@ namespace Amazon.IVS.Model
     {
         private DestinationConfiguration _destinationConfiguration;
         private string _name;
+        private int? _recordingReconnectWindowSeconds;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private ThumbnailConfiguration _thumbnailConfiguration;
 
         /// <summary>
         /// Gets and sets the property DestinationConfiguration. 
@@ -94,9 +96,34 @@ namespace Amazon.IVS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property RecordingReconnectWindowSeconds. 
+        /// <para>
+        /// If a broadcast disconnects and then reconnects within the specified interval, the
+        /// multiple streams will be considered a single broadcast and merged together. Default:
+        /// 0.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=300)]
+        public int RecordingReconnectWindowSeconds
+        {
+            get { return this._recordingReconnectWindowSeconds.GetValueOrDefault(); }
+            set { this._recordingReconnectWindowSeconds = value; }
+        }
+
+        // Check to see if RecordingReconnectWindowSeconds property is set
+        internal bool IsSetRecordingReconnectWindowSeconds()
+        {
+            return this._recordingReconnectWindowSeconds.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.
+        /// Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a
+        /// href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon
+        /// Web Services Resources</a> for more information, including restrictions that apply
+        /// to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific
+        /// constraints beyond what is documented there.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]
@@ -110,6 +137,26 @@ namespace Amazon.IVS.Model
         internal bool IsSetTags()
         {
             return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ThumbnailConfiguration. 
+        /// <para>
+        /// A complex type that allows you to enable/disable the recording of thumbnails for a
+        /// live session and modify the interval at which thumbnails are generated for the live
+        /// session.
+        /// </para>
+        /// </summary>
+        public ThumbnailConfiguration ThumbnailConfiguration
+        {
+            get { return this._thumbnailConfiguration; }
+            set { this._thumbnailConfiguration = value; }
+        }
+
+        // Check to see if ThumbnailConfiguration property is set
+        internal bool IsSetThumbnailConfiguration()
+        {
+            return this._thumbnailConfiguration != null;
         }
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ChatChannel Marshaller
-    /// </summary>       
+    /// </summary>
     public class ChatChannelMarshaller : IRequestMarshaller<ChatChannel, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ChatChannelMarshaller Instance = new ChatChannelMarshaller();
 
     }

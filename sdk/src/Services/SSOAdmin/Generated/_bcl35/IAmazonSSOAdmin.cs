@@ -29,20 +29,41 @@ namespace Amazon.SSOAdmin
     /// <summary>
     /// Interface for accessing SSOAdmin
     ///
-    /// Amazon Web Services Single Sign On (SSO) is a cloud SSO service that makes it easy
-    /// to centrally manage SSO access to multiple Amazon Web Services accounts and business
-    /// applications. This guide provides information on SSO operations which could be used
-    /// for access management of Amazon Web Services accounts. For information about Amazon
-    /// Web Services SSO features, see the <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html">Amazon
-    /// Web Services Single Sign-On User Guide</a>.
+    /// AWS IAM Identity Center (successor to AWS Single Sign-On) helps you securely create,
+    /// or connect, your workforce identities and manage their access centrally across AWS
+    /// accounts and applications. IAM Identity Center is the recommended approach for workforce
+    /// authentication and authorization in AWS, for organizations of any size and type.
     /// 
+    ///  <note> 
+    /// <para>
+    /// Although AWS Single Sign-On was renamed, the <code>sso</code> and <code>identitystore</code>
+    /// API namespaces will continue to retain their original name for backward compatibility
+    /// purposes. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html#renamed">IAM
+    /// Identity Center rename</a>.
+    /// </para>
+    ///  </note> 
+    /// <para>
+    /// This reference guide provides information on single sign-on operations which could
+    /// be used for access management of AWS accounts. For information about IAM Identity
+    /// Center features, see the <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html">IAM
+    /// Identity Center User Guide</a>.
+    /// </para>
     ///  
     /// <para>
-    /// Many operations in the SSO APIs rely on identifiers for users and groups, known as
-    /// principals. For more information about how to work with principals and principal IDs
-    /// in Amazon Web Services SSO, see the <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html">Amazon
-    /// Web Services SSO Identity Store API Reference</a>.
+    /// Many operations in the IAM Identity Center APIs rely on identifiers for users and
+    /// groups, known as principals. For more information about how to work with principals
+    /// and principal IDs in IAM Identity Center, see the <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html">Identity
+    /// Store API Reference</a>.
     /// </para>
+    ///  <note> 
+    /// <para>
+    /// AWS provides SDKs that consist of libraries and sample code for various programming
+    /// languages and platforms (Java, Ruby, .Net, iOS, Android, and more). The SDKs provide
+    /// a convenient way to create programmatic access to IAM Identity Center and other AWS
+    /// services. For more information about the AWS SDKs, including how to download and install
+    /// them, see <a href="http://aws.amazon.com/tools/">Tools for Amazon Web Services</a>.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial interface IAmazonSSOAdmin : IAmazonService, IDisposable
     {
@@ -57,11 +78,77 @@ namespace Amazon.SSOAdmin
 
 
         
+        #region  AttachCustomerManagedPolicyReferenceToPermissionSet
+
+
+        /// <summary>
+        /// Attaches the specified customer managed policy to the specified <a>PermissionSet</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AttachCustomerManagedPolicyReferenceToPermissionSet service method.</param>
+        /// 
+        /// <returns>The response from the AttachCustomerManagedPolicyReferenceToPermissionSet service method, as returned by SSOAdmin.</returns>
+        /// <exception cref="Amazon.SSOAdmin.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. This generally
+        /// occurs when the previous write did not have time to propagate to the host serving
+        /// the current request. A retry (with appropriate backoff logic) is the recommended response
+        /// to this exception.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ResourceNotFoundException">
+        /// Indicates that a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ServiceQuotaExceededException">
+        /// Indicates that the principal has crossed the permitted number of resources that can
+        /// be created.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/AttachCustomerManagedPolicyReferenceToPermissionSet">REST API Reference for AttachCustomerManagedPolicyReferenceToPermissionSet Operation</seealso>
+        AttachCustomerManagedPolicyReferenceToPermissionSetResponse AttachCustomerManagedPolicyReferenceToPermissionSet(AttachCustomerManagedPolicyReferenceToPermissionSetRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AttachCustomerManagedPolicyReferenceToPermissionSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AttachCustomerManagedPolicyReferenceToPermissionSet operation on AmazonSSOAdminClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAttachCustomerManagedPolicyReferenceToPermissionSet
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/AttachCustomerManagedPolicyReferenceToPermissionSet">REST API Reference for AttachCustomerManagedPolicyReferenceToPermissionSet Operation</seealso>
+        IAsyncResult BeginAttachCustomerManagedPolicyReferenceToPermissionSet(AttachCustomerManagedPolicyReferenceToPermissionSetRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AttachCustomerManagedPolicyReferenceToPermissionSet operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAttachCustomerManagedPolicyReferenceToPermissionSet.</param>
+        /// 
+        /// <returns>Returns a  AttachCustomerManagedPolicyReferenceToPermissionSetResult from SSOAdmin.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/AttachCustomerManagedPolicyReferenceToPermissionSet">REST API Reference for AttachCustomerManagedPolicyReferenceToPermissionSet Operation</seealso>
+        AttachCustomerManagedPolicyReferenceToPermissionSetResponse EndAttachCustomerManagedPolicyReferenceToPermissionSet(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  AttachManagedPolicyToPermissionSet
 
 
         /// <summary>
-        /// Attaches an IAM managed policy ARN to a permission set.
+        /// Attaches an AWS managed policy ARN to a permission set.
         /// 
         ///  <note> 
         /// <para>
@@ -136,22 +223,27 @@ namespace Amazon.SSOAdmin
 
 
         /// <summary>
-        /// Assigns access to a principal for a specified Amazon Web Services account using a
-        /// specified permission set.
+        /// Assigns access to a principal for a specified AWS account using a specified permission
+        /// set.
         /// 
         ///  <note> 
         /// <para>
-        /// The term <i>principal</i> here refers to a user or group that is defined in Amazon
-        /// Web Services SSO.
+        /// The term <i>principal</i> here refers to a user or group that is defined in IAM Identity
+        /// Center.
         /// </para>
         ///  </note> <note> 
         /// <para>
         /// As part of a successful <code>CreateAccountAssignment</code> call, the specified permission
         /// set will automatically be provisioned to the account in the form of an IAM policy.
-        /// That policy is attached to the SSO-created IAM role. If the permission set is subsequently
-        /// updated, the corresponding IAM policies attached to roles in your accounts will not
-        /// be updated automatically. In this case, you must call <code> <a>ProvisionPermissionSet</a>
+        /// That policy is attached to the IAM role created in IAM Identity Center. If the permission
+        /// set is subsequently updated, the corresponding IAM policies attached to roles in your
+        /// accounts will not be updated automatically. In this case, you must call <code> <a>ProvisionPermissionSet</a>
         /// </code> to make these updates.
+        /// </para>
+        ///  </note> <note> 
+        /// <para>
+        ///  After a successful response, call <code>DescribeAccountAssignmentCreationStatus</code>
+        /// to describe the status of an assignment creation request. 
         /// </para>
         ///  </note>
         /// </summary>
@@ -219,11 +311,17 @@ namespace Amazon.SSOAdmin
 
 
         /// <summary>
-        /// Enables the attributes-based access control (ABAC) feature for the specified Amazon
-        /// Web Services SSO instance. You can also specify new attributes to add to your ABAC
-        /// configuration during the enabling process. For more information about ABAC, see <a
-        /// href="/singlesignon/latest/userguide/abac.html">Attribute-Based Access Control</a>
-        /// in the <i>Amazon Web Services SSO User Guide</i>.
+        /// Enables the attributes-based access control (ABAC) feature for the specified IAM Identity
+        /// Center instance. You can also specify new attributes to add to your ABAC configuration
+        /// during the enabling process. For more information about ABAC, see <a href="/singlesignon/latest/userguide/abac.html">Attribute-Based
+        /// Access Control</a> in the <i>IAM Identity Center User Guide</i>.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// After a successful response, call <code>DescribeInstanceAccessControlAttributeConfiguration</code>
+        /// to validate that <code>InstanceAccessControlAttributeConfiguration</code> was created.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateInstanceAccessControlAttributeConfiguration service method.</param>
         /// 
@@ -285,12 +383,12 @@ namespace Amazon.SSOAdmin
 
 
         /// <summary>
-        /// Creates a permission set within a specified SSO instance.
+        /// Creates a permission set within a specified IAM Identity Center instance.
         /// 
         ///  <note> 
         /// <para>
-        /// To grant users and groups access to Amazon Web Services account resources, use <code>
-        /// <a>CreateAccountAssignment</a> </code>.
+        /// To grant users and groups access to AWS account resources, use <code> <a>CreateAccountAssignment</a>
+        /// </code>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -358,8 +456,15 @@ namespace Amazon.SSOAdmin
 
 
         /// <summary>
-        /// Deletes a principal's access from a specified Amazon Web Services account using a
-        /// specified permission set.
+        /// Deletes a principal's access from a specified AWS account using a specified permission
+        /// set.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// After a successful response, call <code>DescribeAccountAssignmentCreationStatus</code>
+        /// to describe the status of an assignment deletion request.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAccountAssignment service method.</param>
         /// 
@@ -483,12 +588,12 @@ namespace Amazon.SSOAdmin
 
 
         /// <summary>
-        /// Disables the attributes-based access control (ABAC) feature for the specified Amazon
-        /// Web Services SSO instance and deletes all of the attribute mappings that have been
+        /// Disables the attributes-based access control (ABAC) feature for the specified IAM
+        /// Identity Center instance and deletes all of the attribute mappings that have been
         /// configured. Once deleted, any attributes that are received from an identity source
         /// and any custom attributes you have previously configured will not be passed. For more
         /// information about ABAC, see <a href="/singlesignon/latest/userguide/abac.html">Attribute-Based
-        /// Access Control</a> in the <i>Amazon Web Services SSO User Guide</i>.
+        /// Access Control</a> in the <i>IAM Identity Center User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteInstanceAccessControlAttributeConfiguration service method.</param>
         /// 
@@ -543,6 +648,62 @@ namespace Amazon.SSOAdmin
         /// <returns>Returns a  DeleteInstanceAccessControlAttributeConfigurationResult from SSOAdmin.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DeleteInstanceAccessControlAttributeConfiguration">REST API Reference for DeleteInstanceAccessControlAttributeConfiguration Operation</seealso>
         DeleteInstanceAccessControlAttributeConfigurationResponse EndDeleteInstanceAccessControlAttributeConfiguration(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeletePermissionsBoundaryFromPermissionSet
+
+
+        /// <summary>
+        /// Deletes the permissions boundary from a specified <a>PermissionSet</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePermissionsBoundaryFromPermissionSet service method.</param>
+        /// 
+        /// <returns>The response from the DeletePermissionsBoundaryFromPermissionSet service method, as returned by SSOAdmin.</returns>
+        /// <exception cref="Amazon.SSOAdmin.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ResourceNotFoundException">
+        /// Indicates that a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DeletePermissionsBoundaryFromPermissionSet">REST API Reference for DeletePermissionsBoundaryFromPermissionSet Operation</seealso>
+        DeletePermissionsBoundaryFromPermissionSetResponse DeletePermissionsBoundaryFromPermissionSet(DeletePermissionsBoundaryFromPermissionSetRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeletePermissionsBoundaryFromPermissionSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeletePermissionsBoundaryFromPermissionSet operation on AmazonSSOAdminClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeletePermissionsBoundaryFromPermissionSet
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DeletePermissionsBoundaryFromPermissionSet">REST API Reference for DeletePermissionsBoundaryFromPermissionSet Operation</seealso>
+        IAsyncResult BeginDeletePermissionsBoundaryFromPermissionSet(DeletePermissionsBoundaryFromPermissionSetRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeletePermissionsBoundaryFromPermissionSet operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeletePermissionsBoundaryFromPermissionSet.</param>
+        /// 
+        /// <returns>Returns a  DeletePermissionsBoundaryFromPermissionSetResult from SSOAdmin.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DeletePermissionsBoundaryFromPermissionSet">REST API Reference for DeletePermissionsBoundaryFromPermissionSet Operation</seealso>
+        DeletePermissionsBoundaryFromPermissionSetResponse EndDeletePermissionsBoundaryFromPermissionSet(IAsyncResult asyncResult);
 
         #endregion
         
@@ -724,11 +885,11 @@ namespace Amazon.SSOAdmin
 
 
         /// <summary>
-        /// Returns the list of Amazon Web Services SSO identity store attributes that have been
-        /// configured to work with attributes-based access control (ABAC) for the specified Amazon
-        /// Web Services SSO instance. This will not return attributes configured and sent by
-        /// an external identity provider. For more information about ABAC, see <a href="/singlesignon/latest/userguide/abac.html">Attribute-Based
-        /// Access Control</a> in the <i>Amazon Web Services SSO User Guide</i>.
+        /// Returns the list of IAM Identity Center identity store attributes that have been configured
+        /// to work with attributes-based access control (ABAC) for the specified IAM Identity
+        /// Center instance. This will not return attributes configured and sent by an external
+        /// identity provider. For more information about ABAC, see <a href="/singlesignon/latest/userguide/abac.html">Attribute-Based
+        /// Access Control</a> in the <i>IAM Identity Center User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeInstanceAccessControlAttributeConfiguration service method.</param>
         /// 
@@ -892,11 +1053,73 @@ namespace Amazon.SSOAdmin
 
         #endregion
         
+        #region  DetachCustomerManagedPolicyReferenceFromPermissionSet
+
+
+        /// <summary>
+        /// Detaches the specified customer managed policy from the specified <a>PermissionSet</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DetachCustomerManagedPolicyReferenceFromPermissionSet service method.</param>
+        /// 
+        /// <returns>The response from the DetachCustomerManagedPolicyReferenceFromPermissionSet service method, as returned by SSOAdmin.</returns>
+        /// <exception cref="Amazon.SSOAdmin.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. This generally
+        /// occurs when the previous write did not have time to propagate to the host serving
+        /// the current request. A retry (with appropriate backoff logic) is the recommended response
+        /// to this exception.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ResourceNotFoundException">
+        /// Indicates that a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DetachCustomerManagedPolicyReferenceFromPermissionSet">REST API Reference for DetachCustomerManagedPolicyReferenceFromPermissionSet Operation</seealso>
+        DetachCustomerManagedPolicyReferenceFromPermissionSetResponse DetachCustomerManagedPolicyReferenceFromPermissionSet(DetachCustomerManagedPolicyReferenceFromPermissionSetRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DetachCustomerManagedPolicyReferenceFromPermissionSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DetachCustomerManagedPolicyReferenceFromPermissionSet operation on AmazonSSOAdminClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDetachCustomerManagedPolicyReferenceFromPermissionSet
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DetachCustomerManagedPolicyReferenceFromPermissionSet">REST API Reference for DetachCustomerManagedPolicyReferenceFromPermissionSet Operation</seealso>
+        IAsyncResult BeginDetachCustomerManagedPolicyReferenceFromPermissionSet(DetachCustomerManagedPolicyReferenceFromPermissionSetRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DetachCustomerManagedPolicyReferenceFromPermissionSet operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDetachCustomerManagedPolicyReferenceFromPermissionSet.</param>
+        /// 
+        /// <returns>Returns a  DetachCustomerManagedPolicyReferenceFromPermissionSetResult from SSOAdmin.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DetachCustomerManagedPolicyReferenceFromPermissionSet">REST API Reference for DetachCustomerManagedPolicyReferenceFromPermissionSet Operation</seealso>
+        DetachCustomerManagedPolicyReferenceFromPermissionSetResponse EndDetachCustomerManagedPolicyReferenceFromPermissionSet(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DetachManagedPolicyFromPermissionSet
 
 
         /// <summary>
-        /// Detaches the attached IAM managed policy ARN from the specified permission set.
+        /// Detaches the attached AWS managed policy ARN from the specified permission set.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DetachManagedPolicyFromPermissionSet service method.</param>
         /// 
@@ -1010,12 +1233,68 @@ namespace Amazon.SSOAdmin
 
         #endregion
         
+        #region  GetPermissionsBoundaryForPermissionSet
+
+
+        /// <summary>
+        /// Obtains the permissions boundary for a specified <a>PermissionSet</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPermissionsBoundaryForPermissionSet service method.</param>
+        /// 
+        /// <returns>The response from the GetPermissionsBoundaryForPermissionSet service method, as returned by SSOAdmin.</returns>
+        /// <exception cref="Amazon.SSOAdmin.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ResourceNotFoundException">
+        /// Indicates that a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/GetPermissionsBoundaryForPermissionSet">REST API Reference for GetPermissionsBoundaryForPermissionSet Operation</seealso>
+        GetPermissionsBoundaryForPermissionSetResponse GetPermissionsBoundaryForPermissionSet(GetPermissionsBoundaryForPermissionSetRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetPermissionsBoundaryForPermissionSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetPermissionsBoundaryForPermissionSet operation on AmazonSSOAdminClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetPermissionsBoundaryForPermissionSet
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/GetPermissionsBoundaryForPermissionSet">REST API Reference for GetPermissionsBoundaryForPermissionSet Operation</seealso>
+        IAsyncResult BeginGetPermissionsBoundaryForPermissionSet(GetPermissionsBoundaryForPermissionSetRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetPermissionsBoundaryForPermissionSet operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetPermissionsBoundaryForPermissionSet.</param>
+        /// 
+        /// <returns>Returns a  GetPermissionsBoundaryForPermissionSetResult from SSOAdmin.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/GetPermissionsBoundaryForPermissionSet">REST API Reference for GetPermissionsBoundaryForPermissionSet Operation</seealso>
+        GetPermissionsBoundaryForPermissionSetResponse EndGetPermissionsBoundaryForPermissionSet(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListAccountAssignmentCreationStatus
 
 
         /// <summary>
-        /// Lists the status of the Amazon Web Services account assignment creation requests for
-        /// a specified SSO instance.
+        /// Lists the status of the AWS account assignment creation requests for a specified IAM
+        /// Identity Center instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAccountAssignmentCreationStatus service method.</param>
         /// 
@@ -1071,8 +1350,8 @@ namespace Amazon.SSOAdmin
 
 
         /// <summary>
-        /// Lists the status of the Amazon Web Services account assignment deletion requests for
-        /// a specified SSO instance.
+        /// Lists the status of the AWS account assignment deletion requests for a specified IAM
+        /// Identity Center instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAccountAssignmentDeletionStatus service method.</param>
         /// 
@@ -1128,8 +1407,7 @@ namespace Amazon.SSOAdmin
 
 
         /// <summary>
-        /// Lists the assignee of the specified Amazon Web Services account with the specified
-        /// permission set.
+        /// Lists the assignee of the specified AWS account with the specified permission set.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAccountAssignments service method.</param>
         /// 
@@ -1185,7 +1463,7 @@ namespace Amazon.SSOAdmin
 
 
         /// <summary>
-        /// Lists all the Amazon Web Services accounts where the specified permission set is provisioned.
+        /// Lists all the AWS accounts where the specified permission set is provisioned.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAccountsForProvisionedPermissionSet service method.</param>
         /// 
@@ -1237,11 +1515,67 @@ namespace Amazon.SSOAdmin
 
         #endregion
         
+        #region  ListCustomerManagedPolicyReferencesInPermissionSet
+
+
+        /// <summary>
+        /// Lists all customer managed policies attached to a specified <a>PermissionSet</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCustomerManagedPolicyReferencesInPermissionSet service method.</param>
+        /// 
+        /// <returns>The response from the ListCustomerManagedPolicyReferencesInPermissionSet service method, as returned by SSOAdmin.</returns>
+        /// <exception cref="Amazon.SSOAdmin.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ResourceNotFoundException">
+        /// Indicates that a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListCustomerManagedPolicyReferencesInPermissionSet">REST API Reference for ListCustomerManagedPolicyReferencesInPermissionSet Operation</seealso>
+        ListCustomerManagedPolicyReferencesInPermissionSetResponse ListCustomerManagedPolicyReferencesInPermissionSet(ListCustomerManagedPolicyReferencesInPermissionSetRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListCustomerManagedPolicyReferencesInPermissionSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListCustomerManagedPolicyReferencesInPermissionSet operation on AmazonSSOAdminClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListCustomerManagedPolicyReferencesInPermissionSet
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListCustomerManagedPolicyReferencesInPermissionSet">REST API Reference for ListCustomerManagedPolicyReferencesInPermissionSet Operation</seealso>
+        IAsyncResult BeginListCustomerManagedPolicyReferencesInPermissionSet(ListCustomerManagedPolicyReferencesInPermissionSetRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListCustomerManagedPolicyReferencesInPermissionSet operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListCustomerManagedPolicyReferencesInPermissionSet.</param>
+        /// 
+        /// <returns>Returns a  ListCustomerManagedPolicyReferencesInPermissionSetResult from SSOAdmin.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListCustomerManagedPolicyReferencesInPermissionSet">REST API Reference for ListCustomerManagedPolicyReferencesInPermissionSet Operation</seealso>
+        ListCustomerManagedPolicyReferencesInPermissionSetResponse EndListCustomerManagedPolicyReferencesInPermissionSet(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListInstances
 
 
         /// <summary>
-        /// Lists the SSO instances that the caller has access to.
+        /// Lists the IAM Identity Center instances that the caller has access to.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListInstances service method.</param>
         /// 
@@ -1294,7 +1628,7 @@ namespace Amazon.SSOAdmin
 
 
         /// <summary>
-        /// Lists the IAM managed policy that is attached to a specified permission set.
+        /// Lists the AWS managed policy that is attached to a specified permission set.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListManagedPoliciesInPermissionSet service method.</param>
         /// 
@@ -1350,7 +1684,8 @@ namespace Amazon.SSOAdmin
 
 
         /// <summary>
-        /// Lists the status of the permission set provisioning requests for a specified SSO instance.
+        /// Lists the status of the permission set provisioning requests for a specified IAM Identity
+        /// Center instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPermissionSetProvisioningStatus service method.</param>
         /// 
@@ -1406,7 +1741,7 @@ namespace Amazon.SSOAdmin
 
 
         /// <summary>
-        /// Lists the <a>PermissionSet</a>s in an SSO instance.
+        /// Lists the <a>PermissionSet</a>s in an IAM Identity Center instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPermissionSets service method.</param>
         /// 
@@ -1462,8 +1797,7 @@ namespace Amazon.SSOAdmin
 
 
         /// <summary>
-        /// Lists all the permission sets that are provisioned to a specified Amazon Web Services
-        /// account.
+        /// Lists all the permission sets that are provisioned to a specified AWS account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPermissionSetsProvisionedToAccount service method.</param>
         /// 
@@ -1637,7 +1971,7 @@ namespace Amazon.SSOAdmin
 
 
         /// <summary>
-        /// Attaches an IAM inline policy to a permission set.
+        /// Attaches an inline policy to a permission set.
         /// 
         ///  <note> 
         /// <para>
@@ -1704,6 +2038,69 @@ namespace Amazon.SSOAdmin
         /// <returns>Returns a  PutInlinePolicyToPermissionSetResult from SSOAdmin.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/PutInlinePolicyToPermissionSet">REST API Reference for PutInlinePolicyToPermissionSet Operation</seealso>
         PutInlinePolicyToPermissionSetResponse EndPutInlinePolicyToPermissionSet(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  PutPermissionsBoundaryToPermissionSet
+
+
+        /// <summary>
+        /// Attaches an AWS managed or customer managed policy to the specified <a>PermissionSet</a>
+        /// as a permissions boundary.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutPermissionsBoundaryToPermissionSet service method.</param>
+        /// 
+        /// <returns>The response from the PutPermissionsBoundaryToPermissionSet service method, as returned by SSOAdmin.</returns>
+        /// <exception cref="Amazon.SSOAdmin.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. This generally
+        /// occurs when the previous write did not have time to propagate to the host serving
+        /// the current request. A retry (with appropriate backoff logic) is the recommended response
+        /// to this exception.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ResourceNotFoundException">
+        /// Indicates that a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/PutPermissionsBoundaryToPermissionSet">REST API Reference for PutPermissionsBoundaryToPermissionSet Operation</seealso>
+        PutPermissionsBoundaryToPermissionSetResponse PutPermissionsBoundaryToPermissionSet(PutPermissionsBoundaryToPermissionSetRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutPermissionsBoundaryToPermissionSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutPermissionsBoundaryToPermissionSet operation on AmazonSSOAdminClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutPermissionsBoundaryToPermissionSet
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/PutPermissionsBoundaryToPermissionSet">REST API Reference for PutPermissionsBoundaryToPermissionSet Operation</seealso>
+        IAsyncResult BeginPutPermissionsBoundaryToPermissionSet(PutPermissionsBoundaryToPermissionSetRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutPermissionsBoundaryToPermissionSet operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutPermissionsBoundaryToPermissionSet.</param>
+        /// 
+        /// <returns>Returns a  PutPermissionsBoundaryToPermissionSetResult from SSOAdmin.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/PutPermissionsBoundaryToPermissionSet">REST API Reference for PutPermissionsBoundaryToPermissionSet Operation</seealso>
+        PutPermissionsBoundaryToPermissionSetResponse EndPutPermissionsBoundaryToPermissionSet(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1839,14 +2236,14 @@ namespace Amazon.SSOAdmin
 
 
         /// <summary>
-        /// Updates the Amazon Web Services SSO identity store attributes that you can use with
-        /// the Amazon Web Services SSO instance for attributes-based access control (ABAC). When
-        /// using an external identity provider as an identity source, you can pass attributes
-        /// through the SAML assertion as an alternative to configuring attributes from the Amazon
-        /// Web Services SSO identity store. If a SAML assertion passes any of these attributes,
-        /// Amazon Web Services SSO replaces the attribute value with the value from the Amazon
-        /// Web Services SSO identity store. For more information about ABAC, see <a href="/singlesignon/latest/userguide/abac.html">Attribute-Based
-        /// Access Control</a> in the <i>Amazon Web Services SSO User Guide</i>.
+        /// Updates the IAM Identity Center identity store attributes that you can use with the
+        /// IAM Identity Center instance for attributes-based access control (ABAC). When using
+        /// an external identity provider as an identity source, you can pass attributes through
+        /// the SAML assertion as an alternative to configuring attributes from the IAM Identity
+        /// Center identity store. If a SAML assertion passes any of these attributes, IAM Identity
+        /// Center replaces the attribute value with the value from the IAM Identity Center identity
+        /// store. For more information about ABAC, see <a href="/singlesignon/latest/userguide/abac.html">Attribute-Based
+        /// Access Control</a> in the <i>IAM Identity Center User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateInstanceAccessControlAttributeConfiguration service method.</param>
         /// 

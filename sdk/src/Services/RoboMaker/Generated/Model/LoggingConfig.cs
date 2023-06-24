@@ -40,8 +40,13 @@ namespace Amazon.RoboMaker.Model
         /// <para>
         /// A boolean indicating whether to record all ROS topics.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// This API is no longer supported and will throw an error if used.
+        /// </para>
+        ///  </important>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [Obsolete("AWS RoboMaker is ending support for ROS software suite. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/software-support-policy.html.")]
         public bool RecordAllRosTopics
         {
             get { return this._recordAllRosTopics.GetValueOrDefault(); }

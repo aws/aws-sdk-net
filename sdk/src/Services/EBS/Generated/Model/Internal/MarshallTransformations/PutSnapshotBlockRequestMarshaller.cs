@@ -56,7 +56,7 @@ namespace Amazon.EBS.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.EBS");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-11-02";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-11-02";
             request.HttpMethod = "PUT";
 
             if (!publicRequest.IsSetBlockIndex())
@@ -67,7 +67,7 @@ namespace Amazon.EBS.Model.Internal.MarshallTransformations
             request.AddPathResource("{snapshotId}", StringUtils.FromString(publicRequest.SnapshotId));
             request.ResourcePath = "/snapshots/{snapshotId}/blocks/{blockIndex}";
             request.ContentStream =  publicRequest.BlockData ?? new MemoryStream();
-            if(request.ContentStream.CanSeek)
+            if (request.ContentStream.CanSeek)
             {
                 request.Headers[Amazon.Util.HeaderKeys.ContentLengthHeader] =  
                     request.ContentStream.Length.ToString(CultureInfo.InvariantCulture);
@@ -76,19 +76,31 @@ namespace Amazon.EBS.Model.Internal.MarshallTransformations
             {
                 request.Headers[Amazon.Util.HeaderKeys.TransferEncodingHeader] = "chunked";
             }
-            request.Headers[Amazon.Util.HeaderKeys.ContentTypeHeader] = "binary/octet-stream";
+            request.Headers[Amazon.Util.HeaderKeys.ContentTypeHeader] = "binary/octet-stream"; 
+            if (request.ContentStream != null && request.ContentStream.Length == 0)
+            {
+                request.Headers.Remove(Amazon.Util.HeaderKeys.ContentTypeHeader);
+            }
         
-            if(publicRequest.IsSetChecksum())
+            if (publicRequest.IsSetChecksum()) 
+            {
                 request.Headers["x-amz-Checksum"] = publicRequest.Checksum;
+            }
         
-            if(publicRequest.IsSetChecksumAlgorithm())
+            if (publicRequest.IsSetChecksumAlgorithm()) 
+            {
                 request.Headers["x-amz-Checksum-Algorithm"] = publicRequest.ChecksumAlgorithm;
+            }
         
-            if(publicRequest.IsSetDataLength())
+            if (publicRequest.IsSetDataLength()) 
+            {
                 request.Headers["x-amz-Data-Length"] = StringUtils.FromInt(publicRequest.DataLength);
+            }
         
-            if(publicRequest.IsSetProgress())
+            if (publicRequest.IsSetProgress()) 
+            {
                 request.Headers["x-amz-Progress"] = StringUtils.FromInt(publicRequest.Progress);
+            }
 
             return request;
         }

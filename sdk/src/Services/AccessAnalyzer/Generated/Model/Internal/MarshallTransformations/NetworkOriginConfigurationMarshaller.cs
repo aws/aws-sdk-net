@@ -34,7 +34,7 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// NetworkOriginConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class NetworkOriginConfigurationMarshaller : IRequestMarshaller<NetworkOriginConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static NetworkOriginConfigurationMarshaller Instance = new NetworkOriginConfigurationMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// KeyPhrasesDetectionJobFilter Marshaller
-    /// </summary>       
+    /// </summary>
     public class KeyPhrasesDetectionJobFilterMarshaller : IRequestMarshaller<KeyPhrasesDetectionJobFilter, JsonMarshallerContext> 
     {
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static KeyPhrasesDetectionJobFilterMarshaller Instance = new KeyPhrasesDetectionJobFilterMarshaller();
 
     }

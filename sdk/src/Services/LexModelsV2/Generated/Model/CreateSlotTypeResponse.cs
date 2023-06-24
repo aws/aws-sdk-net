@@ -35,8 +35,10 @@ namespace Amazon.LexModelsV2.Model
     {
         private string _botId;
         private string _botVersion;
+        private CompositeSlotTypeSetting _compositeSlotTypeSetting;
         private DateTime? _creationDateTime;
         private string _description;
+        private ExternalSourceSetting _externalSourceSetting;
         private string _localeId;
         private string _parentSlotTypeSignature;
         private string _slotTypeId;
@@ -83,6 +85,24 @@ namespace Amazon.LexModelsV2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CompositeSlotTypeSetting. 
+        /// <para>
+        /// Specifications for a composite slot type.
+        /// </para>
+        /// </summary>
+        public CompositeSlotTypeSetting CompositeSlotTypeSetting
+        {
+            get { return this._compositeSlotTypeSetting; }
+            set { this._compositeSlotTypeSetting = value; }
+        }
+
+        // Check to see if CompositeSlotTypeSetting property is set
+        internal bool IsSetCompositeSlotTypeSetting()
+        {
+            return this._compositeSlotTypeSetting != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property CreationDateTime. 
         /// <para>
         /// A timestamp of the date and time that the slot type was created.
@@ -117,6 +137,24 @@ namespace Amazon.LexModelsV2.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExternalSourceSetting. 
+        /// <para>
+        /// The type of external information used to create the slot type.
+        /// </para>
+        /// </summary>
+        public ExternalSourceSetting ExternalSourceSetting
+        {
+            get { return this._externalSourceSetting; }
+            set { this._externalSourceSetting = value; }
+        }
+
+        // Check to see if ExternalSourceSetting property is set
+        internal bool IsSetExternalSourceSetting()
+        {
+            return this._externalSourceSetting != null;
         }
 
         /// <summary>

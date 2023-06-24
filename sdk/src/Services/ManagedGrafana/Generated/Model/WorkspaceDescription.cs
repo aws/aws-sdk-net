@@ -48,12 +48,15 @@ namespace Amazon.ManagedGrafana.Model
         private LicenseType _licenseType;
         private DateTime? _modified;
         private string _name;
+        private NetworkAccessConfiguration _networkAccessControl;
         private List<string> _notificationDestinations = new List<string>();
         private List<string> _organizationalUnits = new List<string>();
         private string _organizationRoleName;
         private PermissionType _permissionType;
         private string _stackSetName;
         private WorkspaceStatus _status;
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private VpcConfiguration _vpcConfiguration;
         private string _workspaceRoleArn;
 
         /// <summary>
@@ -81,8 +84,8 @@ namespace Amazon.ManagedGrafana.Model
         /// <summary>
         /// Gets and sets the property Authentication. 
         /// <para>
-        /// A structure that describes whether the workspace uses SAML, Amazon Web Services SSO,
-        /// or both methods for user authentication.
+        /// A structure that describes whether the workspace uses SAML, IAM Identity Center, or
+        /// both methods for user authentication.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -124,6 +127,11 @@ namespace Amazon.ManagedGrafana.Model
         /// roles and permissions created to allow Amazon Managed Grafana to read data from these
         /// sources.
         /// </para>
+        ///  
+        /// <para>
+        /// This list is only used when the workspace was created through the Amazon Web Services
+        /// console, and the <code>permissionType</code> is <code>SERVICE_MANAGED</code>.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public List<string> DataSources
@@ -144,7 +152,7 @@ namespace Amazon.ManagedGrafana.Model
         /// The user-defined description of the workspace.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=2048)]
+        [AWSProperty(Sensitive=true, Min=0, Max=2048)]
         public string Description
         {
             get { return this._description; }
@@ -315,6 +323,7 @@ namespace Amazon.ManagedGrafana.Model
         /// The name of the workspace.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string Name
         {
             get { return this._name; }
@@ -325,6 +334,24 @@ namespace Amazon.ManagedGrafana.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkAccessControl. 
+        /// <para>
+        /// The configuration settings for network access to your workspace.
+        /// </para>
+        /// </summary>
+        public NetworkAccessConfiguration NetworkAccessControl
+        {
+            get { return this._networkAccessControl; }
+            set { this._networkAccessControl = value; }
+        }
+
+        // Check to see if NetworkAccessControl property is set
+        internal bool IsSetNetworkAccessControl()
+        {
+            return this._networkAccessControl != null;
         }
 
         /// <summary>
@@ -354,6 +381,7 @@ namespace Amazon.ManagedGrafana.Model
         /// from, if this workspace is in an account that is part of an organization.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public List<string> OrganizationalUnits
         {
             get { return this._organizationalUnits; }
@@ -372,7 +400,7 @@ namespace Amazon.ManagedGrafana.Model
         /// The name of the IAM role that is used to access resources through Organizations.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=2048)]
+        [AWSProperty(Sensitive=true, Min=1, Max=2048)]
         public string OrganizationRoleName
         {
             get { return this._organizationRoleName; }
@@ -388,21 +416,30 @@ namespace Amazon.ManagedGrafana.Model
         /// <summary>
         /// Gets and sets the property PermissionType. 
         /// <para>
-        /// If this is <code>Service Managed</code>, Amazon Managed Grafana automatically creates
+        /// If this is <code>SERVICE_MANAGED</code>, and the workplace was created through the
+        /// Amazon Managed Grafana console, then Amazon Managed Grafana automatically creates
         /// the IAM roles and provisions the permissions that the workspace needs to use Amazon
         /// Web Services data sources and notification channels.
         /// </para>
         ///  
         /// <para>
-        /// If this is <code>CUSTOMER_MANAGED</code>, you manage those roles and permissions yourself.
-        /// If you are creating this workspace in a member account of an organization and that
-        /// account is not a delegated administrator account, and you want the workspace to access
-        /// data sources in other Amazon Web Services accounts in the organization, you must choose
-        /// <code>CUSTOMER_MANAGED</code>.
+        /// If this is <code>CUSTOMER_MANAGED</code>, you must manage those roles and permissions
+        /// yourself.
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon
+        /// If you are working with a workspace in a member account of an organization and that
+        /// account is not a delegated administrator account, and you want the workspace to access
+        /// data sources in other Amazon Web Services accounts in the organization, this parameter
+        /// must be set to <code>CUSTOMER_MANAGED</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about converting between customer and service managed, see <a
+        /// href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-datasource-and-notification.html">Managing
+        /// permissions for data sources and notification channels</a>. For more information about
+        /// the roles and permissions that must be managed for customer managed workspaces, see
+        /// <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon
         /// Managed Grafana permissions and policies for Amazon Web Services data sources and
         /// notification channels</a> 
         /// </para>
@@ -458,13 +495,51 @@ namespace Amazon.ManagedGrafana.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The list of tags associated with the workspace.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=50)]
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcConfiguration. 
+        /// <para>
+        /// The configuration for connecting to data sources in a private VPC (Amazon Virtual
+        /// Private Cloud).
+        /// </para>
+        /// </summary>
+        public VpcConfiguration VpcConfiguration
+        {
+            get { return this._vpcConfiguration; }
+            set { this._vpcConfiguration = value; }
+        }
+
+        // Check to see if VpcConfiguration property is set
+        internal bool IsSetVpcConfiguration()
+        {
+            return this._vpcConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property WorkspaceRoleArn. 
         /// <para>
         /// The IAM role that grants permissions to the Amazon Web Services resources that the
         /// workspace will view data from. This role must already exist.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=2048)]
+        [AWSProperty(Sensitive=true, Min=1, Max=2048)]
         public string WorkspaceRoleArn
         {
             get { return this._workspaceRoleArn; }

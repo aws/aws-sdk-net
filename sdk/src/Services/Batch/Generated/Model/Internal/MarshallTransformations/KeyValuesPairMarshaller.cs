@@ -34,7 +34,7 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// KeyValuesPair Marshaller
-    /// </summary>       
+    /// </summary>
     public class KeyValuesPairMarshaller : IRequestMarshaller<KeyValuesPair, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static KeyValuesPairMarshaller Instance = new KeyValuesPairMarshaller();
 
     }

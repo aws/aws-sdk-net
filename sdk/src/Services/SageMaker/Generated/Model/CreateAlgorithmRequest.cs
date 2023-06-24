@@ -30,8 +30,8 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateAlgorithm operation.
-    /// Create a machine learning algorithm that you can use in Amazon SageMaker and list
-    /// in the Amazon Web Services Marketplace.
+    /// Create a machine learning algorithm that you can use in SageMaker and list in the
+    /// Amazon Web Services Marketplace.
     /// </summary>
     public partial class CreateAlgorithmRequest : AmazonSageMakerRequest
     {
@@ -207,9 +207,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ValidationSpecification. 
         /// <para>
-        /// Specifies configurations for one or more training jobs and that Amazon SageMaker runs
-        /// to test the algorithm's training code and, optionally, one or more batch transform
-        /// jobs that Amazon SageMaker runs to test the algorithm's inference code.
+        /// Specifies configurations for one or more training jobs and that SageMaker runs to
+        /// test the algorithm's training code and, optionally, one or more batch transform jobs
+        /// that SageMaker runs to test the algorithm's inference code.
         /// </para>
         /// </summary>
         public AlgorithmValidationSpecification ValidationSpecification

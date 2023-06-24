@@ -118,6 +118,12 @@
     <pattern>^[a-zA-Z0-9-_\.]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AuditManager.Model.CreateAssessmentReportRequest.QueryStatement</property>
+    <min>1</min>
+    <max>10000</max>
+    <pattern>(?s).*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AuditManager.Model.CreateControlRequest.ActionPlanInstructions</property>
     <max>1000</max>
     <pattern>^[\w\W\s\S]*$</pattern>
@@ -337,6 +343,24 @@
     <min>1</min>
     <max>1000</max>
     <pattern>^[A-Za-z0-9+\/=]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AuditManager.Model.GetEvidenceFileUploadUrlRequest.FileName</property>
+    <min>1</min>
+    <max>300</max>
+    <pattern>[^\/]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AuditManager.Model.GetEvidenceFileUploadUrlResponse.EvidenceFileName</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AuditManager.Model.GetEvidenceFileUploadUrlResponse.UploadUrl</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AuditManager.Model.GetEvidenceFolderRequest.AssessmentId</property>
@@ -844,9 +868,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AuditManager.Model.UpdateSettingsRequest.SnsTopic</property>
-    <min>20</min>
+    <min>4</min>
     <max>2048</max>
-    <pattern>^arn:.*:sns:.*</pattern>
+    <pattern>^arn:.*:sns:.*|NONE</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AuditManager.Model.ValidateAssessmentReportIntegrityRequest.S3RelativePath</property>
@@ -1472,6 +1496,11 @@
     <pattern>^arn:.*:iam:.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AuditManager.Model.DefaultExportDestination.Destination</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AuditManager.Model.Delegation.AssessmentId</property>
     <min>36</min>
     <max>36</max>
@@ -1614,6 +1643,17 @@
     <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AuditManager.Model.EvidenceFinderEnablement.Error</property>
+    <max>300</max>
+    <pattern>^[\w\W\s\S]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AuditManager.Model.EvidenceFinderEnablement.EventDataStoreArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:.*:cloudtrail:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AuditManager.Model.Framework.Arn</property>
     <min>20</min>
     <max>2048</max>
@@ -1690,9 +1730,21 @@
     <pattern>^[^\\]*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AuditManager.Model.ManualEvidence.EvidenceFileName</property>
+    <min>1</min>
+    <max>300</max>
+    <pattern>[^\/]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AuditManager.Model.ManualEvidence.S3ResourcePath</property>
     <min>1</min>
     <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AuditManager.Model.ManualEvidence.TextResponse</property>
+    <min>1</min>
+    <max>1000</max>
+    <pattern>^[\w\W\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AuditManager.Model.Notification.AssessmentId</property>
@@ -1741,6 +1793,12 @@
     <min>20</min>
     <max>2048</max>
     <pattern>^arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AuditManager.Model.Resource.ComplianceCheck</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AuditManager.Model.Resource.Value</property>

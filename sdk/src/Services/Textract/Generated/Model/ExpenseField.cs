@@ -34,10 +34,50 @@ namespace Amazon.Textract.Model
     /// </summary>
     public partial class ExpenseField
     {
+        private ExpenseCurrency _currency;
+        private List<ExpenseGroupProperty> _groupProperties = new List<ExpenseGroupProperty>();
         private ExpenseDetection _labelDetection;
         private int? _pageNumber;
         private ExpenseType _type;
         private ExpenseDetection _valueDetection;
+
+        /// <summary>
+        /// Gets and sets the property Currency. 
+        /// <para>
+        /// Shows the kind of currency, both the code and confidence associated with any monatary
+        /// value detected.
+        /// </para>
+        /// </summary>
+        public ExpenseCurrency Currency
+        {
+            get { return this._currency; }
+            set { this._currency = value; }
+        }
+
+        // Check to see if Currency property is set
+        internal bool IsSetCurrency()
+        {
+            return this._currency != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GroupProperties. 
+        /// <para>
+        /// Shows which group a response object belongs to, such as whether an address line belongs
+        /// to the vendor's address or the recipent's address.
+        /// </para>
+        /// </summary>
+        public List<ExpenseGroupProperty> GroupProperties
+        {
+            get { return this._groupProperties; }
+            set { this._groupProperties = value; }
+        }
+
+        // Check to see if GroupProperties property is set
+        internal bool IsSetGroupProperties()
+        {
+            return this._groupProperties != null && this._groupProperties.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property LabelDetection. 

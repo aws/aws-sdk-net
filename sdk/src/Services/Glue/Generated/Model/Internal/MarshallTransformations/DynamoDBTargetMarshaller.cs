@@ -34,7 +34,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DynamoDBTarget Marshaller
-    /// </summary>       
+    /// </summary>
     public class DynamoDBTargetMarshaller : IRequestMarshaller<DynamoDBTarget, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DynamoDBTargetMarshaller Instance = new DynamoDBTargetMarshaller();
 
     }

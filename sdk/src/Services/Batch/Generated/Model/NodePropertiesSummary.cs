@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Batch.Model
 {
     /// <summary>
-    /// An object representing the properties of a node that's associated with a multi-node
+    /// An object that represents the properties of a node that's associated with a multi-node
     /// parallel job.
     /// </summary>
     public partial class NodePropertiesSummary
@@ -78,7 +78,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property NumNodes. 
         /// <para>
-        /// The number of nodes associated with a multi-node parallel job.
+        /// The number of nodes that are associated with a multi-node parallel job.
         /// </para>
         /// </summary>
         public int NumNodes

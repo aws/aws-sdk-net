@@ -34,9 +34,51 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class UpdateDomainRequest : AmazonSageMakerRequest
     {
+        private AppSecurityGroupManagement _appSecurityGroupManagement;
+        private DefaultSpaceSettings _defaultSpaceSettings;
         private UserSettings _defaultUserSettings;
         private string _domainId;
         private DomainSettingsForUpdate _domainSettingsForUpdate;
+
+        /// <summary>
+        /// Gets and sets the property AppSecurityGroupManagement. 
+        /// <para>
+        /// The entity that creates and manages the required security groups for inter-app communication
+        /// in <code>VPCOnly</code> mode. Required when <code>CreateDomain.AppNetworkAccessType</code>
+        /// is <code>VPCOnly</code> and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code>
+        /// is provided. If setting up the domain for use with RStudio, this value must be set
+        /// to <code>Service</code>.
+        /// </para>
+        /// </summary>
+        public AppSecurityGroupManagement AppSecurityGroupManagement
+        {
+            get { return this._appSecurityGroupManagement; }
+            set { this._appSecurityGroupManagement = value; }
+        }
+
+        // Check to see if AppSecurityGroupManagement property is set
+        internal bool IsSetAppSecurityGroupManagement()
+        {
+            return this._appSecurityGroupManagement != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DefaultSpaceSettings. 
+        /// <para>
+        /// The default settings used to create a space within the Domain.
+        /// </para>
+        /// </summary>
+        public DefaultSpaceSettings DefaultSpaceSettings
+        {
+            get { return this._defaultSpaceSettings; }
+            set { this._defaultSpaceSettings = value; }
+        }
+
+        // Check to see if DefaultSpaceSettings property is set
+        internal bool IsSetDefaultSpaceSettings()
+        {
+            return this._defaultSpaceSettings != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DefaultUserSettings. 

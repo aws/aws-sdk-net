@@ -34,7 +34,7 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ListEntitiesFilter Marshaller
-    /// </summary>       
+    /// </summary>
     public class ListEntitiesFilterMarshaller : IRequestMarshaller<ListEntitiesFilter, JsonMarshallerContext> 
     {
         /// <summary>
@@ -51,6 +51,12 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ComponentTypeId);
             }
 
+            if(requestObject.IsSetExternalId())
+            {
+                context.Writer.WritePropertyName("externalId");
+                context.Writer.Write(requestObject.ExternalId);
+            }
+
             if(requestObject.IsSetParentEntityId())
             {
                 context.Writer.WritePropertyName("parentEntityId");
@@ -61,7 +67,7 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ListEntitiesFilterMarshaller Instance = new ListEntitiesFilterMarshaller();
 
     }

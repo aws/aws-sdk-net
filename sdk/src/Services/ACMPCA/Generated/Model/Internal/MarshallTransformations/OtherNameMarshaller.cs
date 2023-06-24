@@ -34,7 +34,7 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// OtherName Marshaller
-    /// </summary>       
+    /// </summary>
     public class OtherNameMarshaller : IRequestMarshaller<OtherName, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static OtherNameMarshaller Instance = new OtherNameMarshaller();
 
     }

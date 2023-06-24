@@ -48,8 +48,7 @@ namespace AWSSDK.UnitTests
             {
                 new NoopPipelineHandler(),
                 new Signer(),
-                new EndpointResolver(),
-                new AmazonS3PostMarshallHandler(),
+                new AmazonS3EndpointResolver(),
                 new Marshaller(),
                 new AmazonS3PreMarshallHandler(),
             });

@@ -34,7 +34,7 @@ namespace Amazon.DataPipeline.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ParameterValue Marshaller
-    /// </summary>       
+    /// </summary>
     public class ParameterValueMarshaller : IRequestMarshaller<ParameterValue, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.DataPipeline.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ParameterValueMarshaller Instance = new ParameterValueMarshaller();
 
     }

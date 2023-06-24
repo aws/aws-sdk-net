@@ -34,7 +34,7 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// LivePreRollConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class LivePreRollConfigurationMarshaller : IRequestMarshaller<LivePreRollConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static LivePreRollConfigurationMarshaller Instance = new LivePreRollConfigurationMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// JobDriver Marshaller
-    /// </summary>       
+    /// </summary>
     public class JobDriverMarshaller : IRequestMarshaller<JobDriver, JsonMarshallerContext> 
     {
         /// <summary>
@@ -45,6 +45,17 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(JobDriver requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetSparkSqlJobDriver())
+            {
+                context.Writer.WritePropertyName("sparkSqlJobDriver");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = SparkSqlJobDriverMarshaller.Instance;
+                marshaller.Marshall(requestObject.SparkSqlJobDriver, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetSparkSubmitJobDriver())
             {
                 context.Writer.WritePropertyName("sparkSubmitJobDriver");
@@ -60,7 +71,7 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static JobDriverMarshaller Instance = new JobDriverMarshaller();
 
     }

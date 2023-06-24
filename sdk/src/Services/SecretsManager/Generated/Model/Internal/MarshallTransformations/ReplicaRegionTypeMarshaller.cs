@@ -34,7 +34,7 @@ namespace Amazon.SecretsManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ReplicaRegionType Marshaller
-    /// </summary>       
+    /// </summary>
     public class ReplicaRegionTypeMarshaller : IRequestMarshaller<ReplicaRegionType, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.SecretsManager.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ReplicaRegionTypeMarshaller Instance = new ReplicaRegionTypeMarshaller();
 
     }

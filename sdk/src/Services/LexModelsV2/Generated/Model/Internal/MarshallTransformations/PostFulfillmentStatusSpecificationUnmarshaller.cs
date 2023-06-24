@@ -64,16 +64,52 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("failureConditional", targetDepth))
+                {
+                    var unmarshaller = ConditionalSpecificationUnmarshaller.Instance;
+                    unmarshalledObject.FailureConditional = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("failureNextStep", targetDepth))
+                {
+                    var unmarshaller = DialogStateUnmarshaller.Instance;
+                    unmarshalledObject.FailureNextStep = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("failureResponse", targetDepth))
                 {
                     var unmarshaller = ResponseSpecificationUnmarshaller.Instance;
                     unmarshalledObject.FailureResponse = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("successConditional", targetDepth))
+                {
+                    var unmarshaller = ConditionalSpecificationUnmarshaller.Instance;
+                    unmarshalledObject.SuccessConditional = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("successNextStep", targetDepth))
+                {
+                    var unmarshaller = DialogStateUnmarshaller.Instance;
+                    unmarshalledObject.SuccessNextStep = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("successResponse", targetDepth))
                 {
                     var unmarshaller = ResponseSpecificationUnmarshaller.Instance;
                     unmarshalledObject.SuccessResponse = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("timeoutConditional", targetDepth))
+                {
+                    var unmarshaller = ConditionalSpecificationUnmarshaller.Instance;
+                    unmarshalledObject.TimeoutConditional = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("timeoutNextStep", targetDepth))
+                {
+                    var unmarshaller = DialogStateUnmarshaller.Instance;
+                    unmarshalledObject.TimeoutNextStep = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("timeoutResponse", targetDepth))

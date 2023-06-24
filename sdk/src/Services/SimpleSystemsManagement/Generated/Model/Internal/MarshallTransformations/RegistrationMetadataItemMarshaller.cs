@@ -34,7 +34,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RegistrationMetadataItem Marshaller
-    /// </summary>       
+    /// </summary>
     public class RegistrationMetadataItemMarshaller : IRequestMarshaller<RegistrationMetadataItem, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RegistrationMetadataItemMarshaller Instance = new RegistrationMetadataItemMarshaller();
 
     }

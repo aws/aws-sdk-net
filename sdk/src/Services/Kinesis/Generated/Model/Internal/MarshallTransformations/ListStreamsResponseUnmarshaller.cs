@@ -57,10 +57,22 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
                     response.HasMoreStreams = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("NextToken", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.NextToken = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("StreamNames", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     response.StreamNames = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("StreamSummaries", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<StreamSummary, StreamSummaryUnmarshaller>(StreamSummaryUnmarshaller.Instance);
+                    response.StreamSummaries = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -86,6 +98,14 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
             using (var streamCopy = new MemoryStream(responseBodyBytes))
             using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
             {
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ExpiredNextTokenException"))
+                {
+                    return ExpiredNextTokenExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidArgumentException"))
+                {
+                    return InvalidArgumentExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("LimitExceededException"))
                 {
                     return LimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);

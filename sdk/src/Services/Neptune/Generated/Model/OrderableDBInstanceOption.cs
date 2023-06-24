@@ -54,6 +54,7 @@ namespace Amazon.Neptune.Model
         private bool? _readReplicaCapable;
         private string _storageType;
         private bool? _supportsEnhancedMonitoring;
+        private bool? _supportsGlobalDatabases;
         private bool? _supportsIAMDatabaseAuthentication;
         private bool? _supportsIops;
         private bool? _supportsPerformanceInsights;
@@ -329,6 +330,25 @@ namespace Amazon.Neptune.Model
         internal bool IsSetSupportsEnhancedMonitoring()
         {
             return this._supportsEnhancedMonitoring.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SupportsGlobalDatabases. 
+        /// <para>
+        /// A value that indicates whether you can use Neptune global databases with a specific
+        /// combination of other DB engine attributes.
+        /// </para>
+        /// </summary>
+        public bool SupportsGlobalDatabases
+        {
+            get { return this._supportsGlobalDatabases.GetValueOrDefault(); }
+            set { this._supportsGlobalDatabases = value; }
+        }
+
+        // Check to see if SupportsGlobalDatabases property is set
+        internal bool IsSetSupportsGlobalDatabases()
+        {
+            return this._supportsGlobalDatabases.HasValue; 
         }
 
         /// <summary>

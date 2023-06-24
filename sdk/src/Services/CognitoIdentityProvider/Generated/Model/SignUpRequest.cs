@@ -36,23 +36,24 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// 
     ///  <note> 
     /// <para>
-    /// This action might generate an SMS text message. Starting June 1, 2021, U.S. telecom
-    /// carriers require that you register an origination phone number before you can send
-    /// SMS messages to U.S. phone numbers. If you use SMS text messages in Amazon Cognito,
-    /// you must register a phone number with <a href="https://console.aws.amazon.com/pinpoint/home/">Amazon
-    /// Pinpoint</a>. Cognito will use the the registered number automatically. Otherwise,
-    /// Cognito users that must receive SMS messages might be unable to sign up, activate
+    /// This action might generate an SMS text message. Starting June 1, 2021, US telecom
+    /// carriers require you to register an origination phone number before you can send SMS
+    /// messages to US phone numbers. If you use SMS text messages in Amazon Cognito, you
+    /// must register a phone number with <a href="https://console.aws.amazon.com/pinpoint/home/">Amazon
+    /// Pinpoint</a>. Amazon Cognito uses the registered number automatically. Otherwise,
+    /// Amazon Cognito users who must receive SMS messages might not be able to sign up, activate
     /// their accounts, or sign in.
     /// </para>
     ///  
     /// <para>
     /// If you have never used SMS text messages with Amazon Cognito or any other Amazon Web
-    /// Service, Amazon SNS might place your account in SMS sandbox. In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
-    /// mode</a> </i>, you’ll have limitations, such as sending messages to only verified
-    /// phone numbers. After testing in the sandbox environment, you can move out of the SMS
-    /// sandbox and into production. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-sms-userpool-settings.html">
-    /// SMS message settings for Cognito User Pools</a> in the <i>Amazon Cognito Developer
-    /// Guide</i>. 
+    /// Service, Amazon Simple Notification Service might place your account in the SMS sandbox.
+    /// In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
+    /// mode</a> </i>, you can send messages only to verified phone numbers. After you test
+    /// your app while in the sandbox environment, you can move out of the sandbox and into
+    /// production. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-sms-userpool-settings.html">
+    /// SMS message settings for Amazon Cognito user pools</a> in the <i>Amazon Cognito Developer
+    /// Guide</i>.
     /// </para>
     ///  </note>
     /// </summary>
@@ -71,7 +72,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AnalyticsMetadata. 
         /// <para>
-        /// The Amazon Pinpoint analytics metadata for collecting metrics for <code>SignUp</code>
+        /// The Amazon Pinpoint analytics metadata that contributes to your metrics for <code>SignUp</code>
         /// calls.
         /// </para>
         /// </summary>
@@ -93,7 +94,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The ID of the client associated with the user pool.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=128)]
         public string ClientId
         {
             get { return this._clientId; }
@@ -110,7 +111,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// Gets and sets the property ClientMetadata. 
         /// <para>
         /// A map of custom key-value pairs that you can provide as input for any custom workflows
-        /// that this action triggers. 
+        /// that this action triggers.
         /// </para>
         ///  
         /// <para>
@@ -125,29 +126,28 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing
-        /// User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">
+        /// Customizing user pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito
+        /// Developer Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
-        /// Take the following limitations into consideration when you use the ClientMetadata
-        /// parameter:
+        /// When you use the ClientMetadata parameter, remember that Amazon Cognito won't do the
+        /// following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Amazon Cognito does not store the ClientMetadata value. This data is available only
-        /// to Lambda triggers that are assigned to a user pool to support custom workflows. If
-        /// your user pool configuration does not include triggers, the ClientMetadata parameter
-        /// serves no purpose.
+        /// Store the ClientMetadata value. This data is available only to Lambda triggers that
+        /// are assigned to a user pool to support custom workflows. If your user pool configuration
+        /// doesn't include triggers, the ClientMetadata parameter serves no purpose.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Amazon Cognito does not validate the ClientMetadata value.
+        /// Validate the ClientMetadata value.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Amazon Cognito does not encrypt the the ClientMetadata value, so don't use it to provide
-        /// sensitive information.
+        /// Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide sensitive information.
         /// </para>
         ///  </li> </ul> </note>
         /// </summary>
@@ -166,10 +166,10 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Password. 
         /// <para>
-        /// The password of the user you wish to register.
+        /// The password of the user you want to register.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=6, Max=256)]
+        [AWSProperty(Required=true, Sensitive=true, Max=256)]
         public string Password
         {
             get { return this._password; }
@@ -189,7 +189,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// a user pool client and username plus the client ID in the message.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=128)]
+        [AWSProperty(Sensitive=true, Min=1, Max=128)]
         public string SecretHash
         {
             get { return this._secretHash; }
@@ -228,8 +228,10 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property UserContextData. 
         /// <para>
-        /// Contextual data such as the user's device fingerprint, IP address, or location used
-        /// for evaluating the risk of an unexpected event by Amazon Cognito advanced security.
+        /// Contextual data about your user session, such as the device fingerprint, IP address,
+        /// or location. Amazon Cognito advanced security evaluates the risk of an authentication
+        /// event based on the context that your app generates and passes to Amazon Cognito when
+        /// it makes API requests.
         /// </para>
         /// </summary>
         public UserContextDataType UserContextData
@@ -247,10 +249,10 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Username. 
         /// <para>
-        /// The user name of the user you wish to register.
+        /// The user name of the user you want to register.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=128)]
         public string Username
         {
             get { return this._username; }

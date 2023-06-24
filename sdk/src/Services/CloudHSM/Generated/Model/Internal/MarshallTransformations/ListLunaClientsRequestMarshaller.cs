@@ -58,7 +58,7 @@ namespace Amazon.CloudHSM.Model.Internal.MarshallTransformations
             string target = "CloudHsmFrontendService.ListLunaClients";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2014-05-30";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2014-05-30";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -73,7 +73,6 @@ namespace Amazon.CloudHSM.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.NextToken);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

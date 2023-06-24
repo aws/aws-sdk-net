@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53Domains.Model
 {
     /// <summary>
-    /// Nameserver includes the following elements.
+    /// Name server includes the following elements.
     /// </summary>
     public partial class Nameserver
     {

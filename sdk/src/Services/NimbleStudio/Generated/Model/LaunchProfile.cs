@@ -33,10 +33,13 @@ namespace Amazon.NimbleStudio.Model
     /// compute farms, shared file systems, managed file systems, and license server configurations,
     /// as well as instance types and Amazon Machine Images (AMIs). 
     /// 
-    ///  <pre><code> &lt;p&gt;Studio administrators create launch profiles in the Nimble Studio
-    /// console. Artists can use their launch profiles to launch an instance from the Nimble
-    /// Studio portal. Each user’s launch profile defines how they can launch a streaming
-    /// session. By default, studio admins can use all launch profiles.&lt;/p&gt; </code></pre>
+    ///  
+    /// <para>
+    /// Studio administrators create launch profiles in the Nimble Studio console. Artists
+    /// can use their launch profiles to launch an instance from the Nimble Studio portal.
+    /// Each user’s launch profile defines how they can launch a streaming session. By default,
+    /// studio admins can use all launch profiles.
+    /// </para>
     /// </summary>
     public partial class LaunchProfile
     {
@@ -56,11 +59,13 @@ namespace Amazon.NimbleStudio.Model
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private DateTime? _updatedAt;
         private string _updatedBy;
+        private List<ValidationResult> _validationResults = new List<ValidationResult>();
 
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The ARN of the resource.
+        /// The Amazon Resource Name (ARN) that is assigned to a studio resource and uniquely
+        /// identifies it. ARNs are unique across all Regions.
         /// </para>
         /// </summary>
         public string Arn
@@ -78,7 +83,7 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The Unix epoch timestamp in seconds for when the resource was created.
+        /// The ISO timestamp in seconds for when the resource was created.
         /// </para>
         /// </summary>
         public DateTime CreatedAt
@@ -117,7 +122,7 @@ namespace Amazon.NimbleStudio.Model
         /// A human-readable description of the launch profile.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=256)]
+        [AWSProperty(Sensitive=true, Min=0, Max=256)]
         public string Description
         {
             get { return this._description; }
@@ -152,7 +157,7 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property LaunchProfileId. 
         /// <para>
-        /// The launch profile ID.
+        /// The ID of the launch profile used to control access from the streaming session.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=22)]
@@ -193,7 +198,7 @@ namespace Amazon.NimbleStudio.Model
         /// A friendly name for the launch profile.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=64)]
+        [AWSProperty(Sensitive=true, Min=1, Max=64)]
         public string Name
         {
             get { return this._name; }
@@ -301,7 +306,7 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// A collection of labels, in the form of key:value pairs, that apply to this resource.
+        /// A collection of labels, in the form of key-value pairs, that apply to this resource.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Tags
@@ -319,7 +324,7 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property UpdatedAt. 
         /// <para>
-        /// The Unix epoch timestamp in seconds for when the resource was updated.
+        /// The ISO timestamp in seconds for when the resource was updated.
         /// </para>
         /// </summary>
         public DateTime UpdatedAt
@@ -350,6 +355,24 @@ namespace Amazon.NimbleStudio.Model
         internal bool IsSetUpdatedBy()
         {
             return this._updatedBy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ValidationResults. 
+        /// <para>
+        /// The list of the latest validation results.
+        /// </para>
+        /// </summary>
+        public List<ValidationResult> ValidationResults
+        {
+            get { return this._validationResults; }
+            set { this._validationResults = value; }
+        }
+
+        // Check to see if ValidationResults property is set
+        internal bool IsSetValidationResults()
+        {
+            return this._validationResults != null && this._validationResults.Count > 0; 
         }
 
     }

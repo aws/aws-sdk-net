@@ -83,8 +83,8 @@ namespace Amazon.ForecastService.Model
         /// </para>
         ///  
         /// <para>
-        /// Specify time series by uploading a CSV file to an Amazon S3 bucket and set the location
-        /// within the <a>DataDestination</a> data type.
+        /// Specify time series by uploading a CSV or Parquet file to an Amazon S3 bucket and
+        /// set the location within the <a>DataDestination</a> data type.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

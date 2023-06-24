@@ -44,16 +44,6 @@ namespace Amazon.GameLift.Model
     ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queues-intro.html">
     /// Using Multi-Region Queues</a> 
     /// </para>
-    ///  
-    /// <para>
-    ///  <b>Related actions</b> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <a>CreateGameSessionQueue</a> | <a>DescribeGameSessionQueues</a> | <a>UpdateGameSessionQueue</a>
-    /// | <a>DeleteGameSessionQueue</a> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
-    /// APIs by task</a> 
-    /// </para>
     /// </summary>
     public partial class UpdateGameSessionQueueRequest : AmazonGameLiftRequest
     {
@@ -69,8 +59,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property CustomEventData. 
         /// <para>
-        ///  Information to be added to all events that are related to this game session queue.
-        /// 
+        /// Information to be added to all events that are related to this game session queue.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=256)]
@@ -101,19 +90,41 @@ namespace Amazon.GameLift.Model
             set { this._destinations = value; }
         }
 
+        /// <summary>
+        /// This property is set to true if the property <seealso cref="Destinations"/>
+        /// is set; false otherwise.
+        /// This property can be used to determine if the related property
+        /// was returned by a service response or if the related property
+        /// should be sent to the service during a service call.
+        /// </summary>
+        /// <returns>
+        /// True if the related property was set or will be sent to a service; false otherwise.
+        /// </returns>
+        public bool IsDestinationsSet
+        {
+            get
+            {
+                return Amazon.Util.Internal.InternalSDKUtils.GetIsSet(this._destinations);
+            }
+            set
+            {
+                Amazon.Util.Internal.InternalSDKUtils.SetIsSet(value, ref this._destinations);
+            }
+        }
+
         // Check to see if Destinations property is set
         internal bool IsSetDestinations()
         {
-            return this._destinations != null && this._destinations.Count > 0; 
+            return this.IsDestinationsSet; 
         }
 
         /// <summary>
         /// Gets and sets the property FilterConfiguration. 
         /// <para>
         /// A list of locations where a queue is allowed to place new game sessions. Locations
-        /// are specified in the form of AWS Region codes, such as <code>us-west-2</code>. If
-        /// this parameter is not set, game sessions can be placed in any queue location. To remove
-        /// an existing filter configuration, pass in an empty set.
+        /// are specified in the form of Amazon Web Services Region codes, such as <code>us-west-2</code>.
+        /// If this parameter is not set, game sessions can be placed in any queue location. To
+        /// remove an existing filter configuration, pass in an empty set.
         /// </para>
         /// </summary>
         public FilterConfiguration FilterConfiguration
@@ -186,10 +197,32 @@ namespace Amazon.GameLift.Model
             set { this._playerLatencyPolicies = value; }
         }
 
+        /// <summary>
+        /// This property is set to true if the property <seealso cref="PlayerLatencyPolicies"/>
+        /// is set; false otherwise.
+        /// This property can be used to determine if the related property
+        /// was returned by a service response or if the related property
+        /// should be sent to the service during a service call.
+        /// </summary>
+        /// <returns>
+        /// True if the related property was set or will be sent to a service; false otherwise.
+        /// </returns>
+        public bool IsPlayerLatencyPoliciesSet
+        {
+            get
+            {
+                return Amazon.Util.Internal.InternalSDKUtils.GetIsSet(this._playerLatencyPolicies);
+            }
+            set
+            {
+                Amazon.Util.Internal.InternalSDKUtils.SetIsSet(value, ref this._playerLatencyPolicies);
+            }
+        }
+
         // Check to see if PlayerLatencyPolicies property is set
         internal bool IsSetPlayerLatencyPolicies()
         {
-            return this._playerLatencyPolicies != null && this._playerLatencyPolicies.Count > 0; 
+            return this.IsPlayerLatencyPoliciesSet; 
         }
 
         /// <summary>
@@ -219,7 +252,7 @@ namespace Amazon.GameLift.Model
         /// <para>
         /// The maximum time, in seconds, that a new game session placement request remains in
         /// the queue. When a request exceeds this time, the game session placement changes to
-        /// a <code>TIMED_OUT</code> status.
+        /// a <code>TIMED_OUT</code> status. By default, this property is set to <code>600</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]

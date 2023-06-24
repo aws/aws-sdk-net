@@ -34,7 +34,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// InforNexusSourceProperties Marshaller
-    /// </summary>       
+    /// </summary>
     public class InforNexusSourcePropertiesMarshaller : IRequestMarshaller<InforNexusSourceProperties, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static InforNexusSourcePropertiesMarshaller Instance = new InforNexusSourcePropertiesMarshaller();
 
     }

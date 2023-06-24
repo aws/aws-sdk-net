@@ -34,7 +34,7 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Policy Marshaller
-    /// </summary>       
+    /// </summary>
     public class PolicyMarshaller : IRequestMarshaller<Policy, JsonMarshallerContext> 
     {
         /// <summary>
@@ -95,6 +95,12 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetPolicyDescription())
+            {
+                context.Writer.WritePropertyName("PolicyDescription");
+                context.Writer.Write(requestObject.PolicyDescription);
+            }
+
             if(requestObject.IsSetPolicyId())
             {
                 context.Writer.WritePropertyName("PolicyId");
@@ -107,6 +113,12 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.PolicyName);
             }
 
+            if(requestObject.IsSetPolicyStatus())
+            {
+                context.Writer.WritePropertyName("PolicyStatus");
+                context.Writer.Write(requestObject.PolicyStatus);
+            }
+
             if(requestObject.IsSetPolicyUpdateToken())
             {
                 context.Writer.WritePropertyName("PolicyUpdateToken");
@@ -117,6 +129,17 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("RemediationEnabled");
                 context.Writer.Write(requestObject.RemediationEnabled);
+            }
+
+            if(requestObject.IsSetResourceSetIds())
+            {
+                context.Writer.WritePropertyName("ResourceSetIds");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectResourceSetIdsListValue in requestObject.ResourceSetIds)
+                {
+                        context.Writer.Write(requestObjectResourceSetIdsListValue);
+                }
+                context.Writer.WriteArrayEnd();
             }
 
             if(requestObject.IsSetResourceTags())
@@ -167,7 +190,7 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static PolicyMarshaller Instance = new PolicyMarshaller();
 
     }

@@ -20,6 +20,7 @@
 //  */
 
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using System;
 
 namespace Amazon.S3.Model
@@ -42,16 +43,7 @@ namespace Amazon.S3.Model
     /// For more information about Amazon S3 Select, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/selecting-content-from-objects.html">Selecting
     /// Content from Objects</a> in the <i>Amazon S3 User Guide</i>.
     /// </para>
-    ///  
-    /// <para>
-    /// For more information about using SQL with Amazon S3 Select, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-glacier-select-sql-reference.html">
-    /// SQL Reference for Amazon S3 Select and S3 Glacier Select</a> in the <i>Amazon S3 User
-    /// Guide</i>.
-    /// </para>
-    ///   
-    /// <para>
-    ///  <b>Permissions</b> 
-    /// </para>
+    ///   <dl> <dt>Permissions</dt> <dd> 
     ///  
     /// <para>
     /// You must have <code>s3:GetObject</code> permission for this operation. Amazon S3 Select
@@ -60,9 +52,7 @@ namespace Amazon.S3.Model
     /// Permissions in a Policy</a> in the <i>Amazon S3 User Guide</i>.
     /// </para>
     ///   
-    /// <para>
-    ///  <i>Object Data Formats</i> 
-    /// </para>
+    ///  </dd> <dt>Object Data Formats</dt> <dd> 
     ///  
     /// <para>
     /// You can use Amazon S3 Select to query objects that have the following format properties:
@@ -99,16 +89,12 @@ namespace Amazon.S3.Model
     ///  
     /// <para>
     /// For objects that are encrypted with Amazon S3 managed encryption keys (SSE-S3) and
-    /// customer master keys (CMKs) stored in Amazon Web Services Key Management Service (SSE-KMS),
-    /// server-side encryption is handled transparently, so you don't need to specify anything.
-    /// For more information about server-side encryption, including SSE-S3 and SSE-KMS, see
-    /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Protecting
+    /// Amazon Web Services KMS keys (SSE-KMS), server-side encryption is handled transparently,
+    /// so you don't need to specify anything. For more information about server-side encryption,
+    /// including SSE-S3 and SSE-KMS, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Protecting
     /// Data Using Server-Side Encryption</a> in the <i>Amazon S3 User Guide</i>.
     /// </para>
-    ///  </li> </ul> 
-    /// <para>
-    ///  <b>Working with the Response Body</b> 
-    /// </para>
+    ///  </li> </ul> </dd> <dt>Working with the Response Body</dt> <dd> 
     ///  
     /// <para>
     /// Given the response size is unknown, Amazon S3 Select streams the response as a series
@@ -116,11 +102,7 @@ namespace Amazon.S3.Model
     /// as its value in the response. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTSelectObjectAppendix.html">Appendix:
     /// SelectObjectContent Response</a>.
     /// </para>
-    ///   
-    /// <para>
-    ///  <b>GetObject Support</b> 
-    /// </para>
-    ///  
+    ///  </dd> <dt>GetObject Support</dt> <dd> 
     /// <para>
     /// The <code>SelectObjectContent</code> action does not support the following <code>GetObject</code>
     /// functionality. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>.
@@ -139,16 +121,14 @@ namespace Amazon.S3.Model
     /// information, about storage classes see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#storage-class-intro">Storage
     /// Classes</a> in the <i>Amazon S3 User Guide</i>.
     /// </para>
-    ///  </li> </ul>  
-    /// <para>
-    ///  <b>Special Errors</b> 
-    /// </para>
-    ///  
+    ///  </li> </ul> </dd> <dt>Special Errors</dt> <dd> 
     /// <para>
     /// For a list of special errors for this operation, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#SelectObjectContentErrorCodeList">List
     /// of SELECT Object Content Error Codes</a> 
     /// </para>
-    ///  <p class="title"> <b>Related Resources</b> 
+    ///  </dd> </dl> 
+    /// <para>
+    /// The following operations are related to <code>SelectObjectContent</code>:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -172,10 +152,21 @@ namespace Amazon.S3.Model
         /// <summary>
         /// The S3 Bucket.
         /// </summary>
-        public string Bucket { get; set; }
+        [Obsolete("Use BucketName instead")]
+        public string Bucket
+        {
+            get { return BucketName; }
+            set { BucketName = value; }
+        }
+
+        /// <summary>
+        /// The S3 Bucket name.
+        /// </summary>
+        public string BucketName { get; set; }
+
         private string expectedBucketOwner;
 
-        internal bool IsSetBucket() => Bucket != null;
+        internal bool IsSetBucket() => BucketName != null;
 
         /// <summary>
         /// The Object Key.
@@ -187,9 +178,11 @@ namespace Amazon.S3.Model
         /// <summary>
         /// The SSE Algorithm used to encrypt the object.
         /// </summary>
-        /// <seealso href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">
-        /// Server-Side Encryption (Using Customer-Provided Encryption Keys.
-        /// </seealso>
+        /// <para>
+        /// The SSE algorithm used to encrypt the object. This is only needed when the object
+        /// was created using a checksum algorithm. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting
+        /// data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
         public ServerSideEncryptionCustomerMethod ServerSideCustomerEncryptionMethod { get; set; }
 
         internal bool IsSetServerSideCustomerEncryptionMethod() => ServerSideCustomerEncryptionMethod != null;
@@ -197,9 +190,12 @@ namespace Amazon.S3.Model
         /// <summary>
         /// The SSE Customer Key.
         /// </summary>
-        /// <seealso href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">
-        /// Server-Side Encryption (Using Customer-Provided Encryption Keys.
-        /// </seealso>
+        /// <para>
+        /// The SSE customer key. This is only needed when the object was cureated using a checksum
+        /// algorithm. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting
+        /// data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        [AWSProperty(Sensitive=true)]
         public string ServerSideEncryptionCustomerProvidedKey { get; set; }
 
         internal bool IsSetServerSideEncryptionCustomerProvidedKey() => ServerSideEncryptionCustomerProvidedKey != null;
@@ -207,9 +203,11 @@ namespace Amazon.S3.Model
         /// <summary>
         /// The SSE Customer Key MD5.
         /// </summary>
-        /// <seealso href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">
-        /// Server-Side Encryption (Using Customer-Provided Encryption Keys.
-        /// </seealso>
+        /// <para>
+        /// The MD5 SSE customer key. This is only needed when the object was cureated using a
+        /// checksum algorithm. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting
+        /// data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
         public string ServerSideEncryptionCustomerProvidedKeyMD5 { get; set; }
 
         internal bool IsSetServerSideEncryptionCustomerProvidedKeyMD5() =>

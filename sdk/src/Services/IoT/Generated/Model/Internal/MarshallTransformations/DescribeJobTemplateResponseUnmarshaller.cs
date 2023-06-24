@@ -69,6 +69,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     response.Description = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("destinationPackageVersions", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    response.DestinationPackageVersions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("document", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -79,6 +85,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.DocumentSource = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("jobExecutionsRetryConfig", targetDepth))
+                {
+                    var unmarshaller = JobExecutionsRetryConfigUnmarshaller.Instance;
+                    response.JobExecutionsRetryConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("jobExecutionsRolloutConfig", targetDepth))
@@ -97,6 +109,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.JobTemplateId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("maintenanceWindows", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<MaintenanceWindow, MaintenanceWindowUnmarshaller>(MaintenanceWindowUnmarshaller.Instance);
+                    response.MaintenanceWindows = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("presignedUrlConfig", targetDepth))

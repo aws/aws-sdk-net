@@ -34,7 +34,7 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CmafEncryption Marshaller
-    /// </summary>       
+    /// </summary>
     public class CmafEncryptionMarshaller : IRequestMarshaller<CmafEncryption, JsonMarshallerContext> 
     {
         /// <summary>
@@ -49,6 +49,12 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("constantInitializationVector");
                 context.Writer.Write(requestObject.ConstantInitializationVector);
+            }
+
+            if(requestObject.IsSetEncryptionMethod())
+            {
+                context.Writer.WritePropertyName("encryptionMethod");
+                context.Writer.Write(requestObject.EncryptionMethod);
             }
 
             if(requestObject.IsSetKeyRotationIntervalSeconds())
@@ -72,7 +78,7 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CmafEncryptionMarshaller Instance = new CmafEncryptionMarshaller();
 
     }

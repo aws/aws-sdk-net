@@ -58,7 +58,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             string target = "AWSGlue.StartWorkflowRun";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-03-31";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-03-31";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -73,7 +73,20 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Name);
                 }
 
-        
+                if(publicRequest.IsSetRunProperties())
+                {
+                    context.Writer.WritePropertyName("RunProperties");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestRunPropertiesKvp in publicRequest.RunProperties)
+                    {
+                        context.Writer.WritePropertyName(publicRequestRunPropertiesKvp.Key);
+                        var publicRequestRunPropertiesValue = publicRequestRunPropertiesKvp.Value;
+
+                            context.Writer.Write(publicRequestRunPropertiesValue);
+                    }
+                    context.Writer.WriteObjectEnd();
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

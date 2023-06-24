@@ -30,95 +30,45 @@ namespace Amazon.SecretsManager.Model
 {
     /// <summary>
     /// Container for the parameters to the RotateSecret operation.
-    /// Configures and starts the asynchronous process of rotating this secret. If you include
-    /// the configuration parameters, the operation sets those values for the secret and then
-    /// immediately starts a rotation. If you do not include the configuration parameters,
-    /// the operation starts a rotation with the values already stored in the secret. After
-    /// the rotation completes, the protected service and its clients all use the new version
-    /// of the secret. 
+    /// Configures and starts the asynchronous process of rotating the secret. For information
+    /// about rotation, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotating-secrets.html">Rotate
+    /// secrets</a> in the <i>Secrets Manager User Guide</i>. If you include the configuration
+    /// parameters, the operation sets the values for the secret and then immediately starts
+    /// a rotation. If you don't include the configuration parameters, the operation starts
+    /// a rotation with the values already stored in the secret. 
     /// 
     ///  
     /// <para>
-    /// This required configuration information includes the ARN of an Amazon Web Services
-    /// Lambda function and optionally, the time between scheduled rotations. The Lambda rotation
-    /// function creates a new version of the secret and creates or updates the credentials
-    /// on the protected service to match. After testing the new credentials, the function
-    /// marks the new secret with the staging label <code>AWSCURRENT</code> so that your clients
-    /// all immediately begin to use the new version. For more information about rotating
-    /// secrets and how to configure a Lambda function to rotate the secrets for your protected
-    /// service, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotating-secrets.html">Rotating
-    /// Secrets in Amazon Web Services Secrets Manager</a> in the <i>Amazon Web Services Secrets
-    /// Manager User Guide</i>.
-    /// </para>
-    ///  
-    /// <para>
-    /// Secrets Manager schedules the next rotation when the previous one completes. Secrets
-    /// Manager schedules the date by adding the rotation interval (number of days) to the
-    /// actual date of the last rotation. The service chooses the hour within that 24-hour
-    /// date window randomly. The minute is also chosen somewhat randomly, but weighted towards
-    /// the top of the hour and influenced by a variety of factors that help distribute load.
-    /// </para>
-    ///  
-    /// <para>
-    /// The rotation function must end with the versions of the secret in one of two states:
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    /// The <code>AWSPENDING</code> and <code>AWSCURRENT</code> staging labels are attached
-    /// to the same version of the secret, or
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// The <code>AWSPENDING</code> staging label is not attached to any version of the secret.
-    /// </para>
-    ///  </li> </ul> 
-    /// <para>
-    /// If the <code>AWSPENDING</code> staging label is present but not attached to the same
-    /// version as <code>AWSCURRENT</code> then any later invocation of <code>RotateSecret</code>
+    /// When rotation is successful, the <code>AWSPENDING</code> staging label might be attached
+    /// to the same version as the <code>AWSCURRENT</code> version, or it might not be attached
+    /// to any version. If the <code>AWSPENDING</code> staging label is present but not attached
+    /// to the same version as <code>AWSCURRENT</code>, then any later invocation of <code>RotateSecret</code>
     /// assumes that a previous rotation request is still in progress and returns an error.
+    /// When rotation is unsuccessful, the <code>AWSPENDING</code> staging label might be
+    /// attached to an empty secret version. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot_rotation.html">Troubleshoot
+    /// rotation</a> in the <i>Secrets Manager User Guide</i>.
     /// </para>
     ///  
     /// <para>
-    ///  <b>Minimum permissions</b> 
+    /// Secrets Manager generates a CloudTrail log entry when you call this action. Do not
+    /// include sensitive information in request parameters because it might be logged. For
+    /// more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/retrieve-ct-entries.html">Logging
+    /// Secrets Manager events with CloudTrail</a>.
     /// </para>
     ///  
     /// <para>
-    /// To run this command, you must have the following permissions:
+    ///  <b>Required permissions: </b> <code>secretsmanager:RotateSecret</code>. For more
+    /// information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions">
+    /// IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+    /// and access control in Secrets Manager</a>. You also need <code>lambda:InvokeFunction</code>
+    /// permissions on the rotation function. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotating-secrets-required-permissions-function.html">
+    /// Permissions for rotation</a>.
     /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    /// secretsmanager:RotateSecret
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// lambda:InvokeFunction (on the function specified in the secret's metadata)
-    /// </para>
-    ///  </li> </ul> 
-    /// <para>
-    ///  <b>Related operations</b> 
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    /// To list the secrets in your account, use <a>ListSecrets</a>.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// To get the details for a version of a secret, use <a>DescribeSecret</a>.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// To create a new version of a secret, use <a>CreateSecret</a>.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// To attach staging labels to or remove staging labels from a version of a secret, use
-    /// <a>UpdateSecretVersionStage</a>.
-    /// </para>
-    ///  </li> </ul>
     /// </summary>
     public partial class RotateSecretRequest : AmazonSecretsManagerRequest
     {
         private string _clientRequestToken;
+        private bool? _rotateImmediately;
         private string _rotationLambdaARN;
         private RotationRulesType _rotationRules;
         private string _secretId;
@@ -126,8 +76,10 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property ClientRequestToken. 
         /// <para>
-        /// (Optional) Specifies a unique identifier for the new version of the secret that helps
-        /// ensure idempotency. 
+        /// A unique identifier for the new version of the secret that helps ensure idempotency.
+        /// Secrets Manager uses this value to prevent the accidental creation of duplicate versions
+        /// if there are failures and retries during rotation. This value becomes the <code>VersionId</code>
+        /// of the new version.
         /// </para>
         ///  
         /// <para>
@@ -140,16 +92,10 @@ namespace Amazon.SecretsManager.Model
         /// </para>
         ///  
         /// <para>
-        /// You only need to specify your own value if you implement your own retry logic and
-        /// want to ensure that a given secret is not created twice. We recommend that you generate
-        /// a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a>
+        /// You only need to specify this value if you implement your own retry logic and you
+        /// want to ensure that Secrets Manager doesn't attempt to create a secret version twice.
+        /// We recommend that you generate a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a>
         /// value to ensure uniqueness within the specified secret. 
-        /// </para>
-        ///  
-        /// <para>
-        /// Secrets Manager uses this value to prevent the accidental creation of duplicate versions
-        /// if there are failures and retries during the function's processing. This value becomes
-        /// the <code>VersionId</code> of the new version.
         /// </para>
         /// </summary>
         [AWSProperty(Min=32, Max=64)]
@@ -166,9 +112,47 @@ namespace Amazon.SecretsManager.Model
         }
 
         /// <summary>
+        /// Gets and sets the property RotateImmediately. 
+        /// <para>
+        /// Specifies whether to rotate the secret immediately or wait until the next scheduled
+        /// rotation window. The rotation schedule is defined in <a>RotateSecretRequest$RotationRules</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For secrets that use a Lambda rotation function to rotate, if you don't immediately
+        /// rotate the secret, Secrets Manager tests the rotation configuration by running the
+        /// <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_how.html">
+        /// <code>testSecret</code> step</a> of the Lambda rotation function. The test creates
+        /// an <code>AWSPENDING</code> version of the secret and then removes it.
+        /// </para>
+        ///  
+        /// <para>
+        /// By default, Secrets Manager rotates the secret immediately.
+        /// </para>
+        /// </summary>
+        public bool RotateImmediately
+        {
+            get { return this._rotateImmediately.GetValueOrDefault(); }
+            set { this._rotateImmediately = value; }
+        }
+
+        // Check to see if RotateImmediately property is set
+        internal bool IsSetRotateImmediately()
+        {
+            return this._rotateImmediately.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property RotationLambdaARN. 
         /// <para>
-        /// (Optional) Specifies the ARN of the Lambda function that can rotate the secret.
+        /// For secrets that use a Lambda rotation function to rotate, the ARN of the Lambda rotation
+        /// function. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For secrets that use <i>managed rotation</i>, omit this field. For more information,
+        /// see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_managed.html">Managed
+        /// rotation</a> in the <i>Secrets Manager User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2048)]
@@ -205,12 +189,13 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property SecretId. 
         /// <para>
-        /// Specifies the secret that you want to rotate. You can specify either the Amazon Resource
-        /// Name (ARN) or the friendly name of the secret.
+        /// The ARN or name of the secret to rotate.
         /// </para>
         ///  
         /// <para>
         /// For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.
+        /// See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding
+        /// a secret from a partial ARN</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]

@@ -30,8 +30,8 @@ namespace Amazon.ManagedBlockchain.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteNode operation.
-    /// Deletes a node that your AWS account owns. All data on the node is lost and cannot
-    /// be recovered.
+    /// Deletes a node that your Amazon Web Services account owns. All data on the node is
+    /// lost and cannot be recovered.
     /// 
     ///  
     /// <para>
@@ -82,11 +82,11 @@ namespace Amazon.ManagedBlockchain.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>n-ethereum-rinkeby</code> 
+        ///  <code>n-ethereum-goerli</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>n-ethereum-ropsten</code> 
+        ///  <code>n-ethereum-rinkeby</code> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

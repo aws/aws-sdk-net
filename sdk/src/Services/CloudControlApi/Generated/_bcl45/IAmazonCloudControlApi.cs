@@ -31,19 +31,8 @@ namespace Amazon.CloudControlApi
     /// <summary>
     /// Interface for accessing CloudControlApi
     ///
-    /// Use Amazon Web Services Cloud Control API to create, read, update, delete, and list
-    /// (CRUD-L) your cloud resources that belong to a wide range of services--both Amazon
-    /// Web Services and third-party. With the Cloud Control API standardized set of application
-    /// programming interfaces (APIs), you can perform CRUD-L operations on any supported
-    /// resources in your Amazon Web Services account. Using Cloud Control API, you won't
-    /// have to generate code or scripts specific to each individual service responsible for
-    /// those resources.
-    /// 
-    ///  
-    /// <para>
     /// For more information about Amazon Web Services Cloud Control API, see the <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/what-is-cloudcontrolapi.html">Amazon
     /// Web Services Cloud Control API User Guide</a>.
-    /// </para>
     /// </summary>
     public partial interface IAmazonCloudControlApi : IAmazonService, IDisposable
     {
@@ -65,7 +54,7 @@ namespace Amazon.CloudControlApi
         ///  
         /// <para>
         /// Only resource operations requests with a status of <code>PENDING</code> or <code>IN_PROGRESS</code>
-        /// can be cancelled.
+        /// can be canceled.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelResourceRequest service method.</param>
@@ -75,7 +64,7 @@ namespace Amazon.CloudControlApi
         /// The resource is currently being modified by another operation.
         /// </exception>
         /// <exception cref="Amazon.CloudControlApi.Model.RequestTokenNotFoundException">
-        /// A resource operation with the specified request token cannot be found.
+        /// A resource operation with the specified request token can't be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudcontrol-2021-09-30/CancelResourceRequest">REST API Reference for CancelResourceRequest Operation</seealso>
         CancelResourceRequestResponse CancelResourceRequest(CancelResourceRequestRequest request);
@@ -90,7 +79,7 @@ namespace Amazon.CloudControlApi
         ///  
         /// <para>
         /// Only resource operations requests with a status of <code>PENDING</code> or <code>IN_PROGRESS</code>
-        /// can be cancelled.
+        /// can be canceled.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelResourceRequest service method.</param>
@@ -103,7 +92,7 @@ namespace Amazon.CloudControlApi
         /// The resource is currently being modified by another operation.
         /// </exception>
         /// <exception cref="Amazon.CloudControlApi.Model.RequestTokenNotFoundException">
-        /// A resource operation with the specified request token cannot be found.
+        /// A resource operation with the specified request token can't be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudcontrol-2021-09-30/CancelResourceRequest">REST API Reference for CancelResourceRequest Operation</seealso>
         Task<CancelResourceRequestResponse> CancelResourceRequestAsync(CancelResourceRequestRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -136,7 +125,7 @@ namespace Amazon.CloudControlApi
         /// 
         ///  
         /// <para>
-        /// It is best practice for client tokens to be unique for each resource operation request.
+        /// It's best practice for client tokens to be unique for each resource operation request.
         /// However, client token expire after 36 hours.
         /// </para>
         /// </exception>
@@ -145,7 +134,7 @@ namespace Amazon.CloudControlApi
         /// </exception>
         /// <exception cref="Amazon.CloudControlApi.Model.GeneralServiceException">
         /// The resource handler has returned that the downstream service generated an error that
-        /// does not map to any other handler error code.
+        /// doesn't map to any other handler error code.
         /// </exception>
         /// <exception cref="Amazon.CloudControlApi.Model.HandlerFailureException">
         /// The resource handler has failed without a returning a more specific error code. This
@@ -163,7 +152,7 @@ namespace Amazon.CloudControlApi
         /// generic exception.
         /// </exception>
         /// <exception cref="Amazon.CloudControlApi.Model.NetworkFailureException">
-        /// The resource handler has returned that the request could not be completed due to networking
+        /// The resource handler has returned that the request couldn't be completed due to networking
         /// issues, such as a failure to receive a response from the server.
         /// </exception>
         /// <exception cref="Amazon.CloudControlApi.Model.NotStabilizedException">
@@ -172,20 +161,20 @@ namespace Amazon.CloudControlApi
         /// </exception>
         /// <exception cref="Amazon.CloudControlApi.Model.NotUpdatableException">
         /// One or more properties included in this resource operation are defined as create-only,
-        /// and therefore cannot be updated.
+        /// and therefore can't be updated.
         /// </exception>
         /// <exception cref="Amazon.CloudControlApi.Model.PrivateTypeException">
-        /// Cloud Control API has not received a valid response from the resource handler, due
+        /// Cloud Control API hasn't received a valid response from the resource handler, due
         /// to a configuration error. This includes issues such as the resource handler returning
         /// an invalid response, or timing out.
         /// </exception>
         /// <exception cref="Amazon.CloudControlApi.Model.ResourceConflictException">
         /// The resource is temporarily unavailable to be acted upon. For example, if the resource
-        /// is currently undergoing an operation and cannot be acted upon until that operation
+        /// is currently undergoing an operation and can't be acted upon until that operation
         /// is finished.
         /// </exception>
         /// <exception cref="Amazon.CloudControlApi.Model.ResourceNotFoundException">
-        /// A resource with the specified identifier cannot be found.
+        /// A resource with the specified identifier can't be found.
         /// </exception>
         /// <exception cref="Amazon.CloudControlApi.Model.ServiceInternalErrorException">
         /// The resource handler has returned that the downstream service returned an internal
@@ -199,10 +188,10 @@ namespace Amazon.CloudControlApi
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.CloudControlApi.Model.TypeNotFoundException">
-        /// The specified extension does not exist in the CloudFormation registry.
+        /// The specified extension doesn't exist in the CloudFormation registry.
         /// </exception>
         /// <exception cref="Amazon.CloudControlApi.Model.UnsupportedActionException">
-        /// The specified resource does not support this resource operation.
+        /// The specified resource doesn't support this resource operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudcontrol-2021-09-30/CreateResource">REST API Reference for CreateResource Operation</seealso>
         CreateResourceResponse CreateResource(CreateResourceRequest request);
@@ -235,7 +224,7 @@ namespace Amazon.CloudControlApi
         /// 
         ///  
         /// <para>
-        /// It is best practice for client tokens to be unique for each resource operation request.
+        /// It's best practice for client tokens to be unique for each resource operation request.
         /// However, client token expire after 36 hours.
         /// </para>
         /// </exception>
@@ -244,7 +233,7 @@ namespace Amazon.CloudControlApi
         /// </exception>
         /// <exception cref="Amazon.CloudControlApi.Model.GeneralServiceException">
         /// The resource handler has returned that the downstream service generated an error that
-        /// does not map to any other handler error code.
+        /// doesn't map to any other handler error code.
         /// </exception>
         /// <exception cref="Amazon.CloudControlApi.Model.HandlerFailureException">
         /// The resource handler has failed without a returning a more specific error code. This
@@ -262,7 +251,7 @@ namespace Amazon.CloudControlApi
         /// generic exception.
         /// </exception>
         /// <exception cref="Amazon.CloudControlApi.Model.NetworkFailureException">
-        /// The resource handler has returned that the request could not be completed due to networking
+        /// The resource handler has returned that the request couldn't be completed due to networking
         /// issues, such as a failure to receive a response from the server.
         /// </exception>
         /// <exception cref="Amazon.CloudControlApi.Model.NotStabilizedException">
@@ -271,20 +260,20 @@ namespace Amazon.CloudControlApi
         /// </exception>
         /// <exception cref="Amazon.CloudControlApi.Model.NotUpdatableException">
         /// One or more properties included in this resource operation are defined as create-only,
-        /// and therefore cannot be updated.
+        /// and therefore can't be updated.
         /// </exception>
         /// <exception cref="Amazon.CloudControlApi.Model.PrivateTypeException">
-        /// Cloud Control API has not received a valid response from the resource handler, due
+        /// Cloud Control API hasn't received a valid response from the resource handler, due
         /// to a configuration error. This includes issues such as the resource handler returning
         /// an invalid response, or timing out.
         /// </exception>
         /// <exception cref="Amazon.CloudControlApi.Model.ResourceConflictException">
         /// The resource is temporarily unavailable to be acted upon. For example, if the resource
-        /// is currently undergoing an operation and cannot be acted upon until that operation
+        /// is currently undergoing an operation and can't be acted upon until that operation
         /// is finished.
         /// </exception>
         /// <exception cref="Amazon.CloudControlApi.Model.ResourceNotFoundException">
-        /// A resource with the specified identifier cannot be found.
+        /// A resource with the specified identifier can't be found.
         /// </exception>
         /// <exception cref="Amazon.CloudControlApi.Model.ServiceInternalErrorException">
         /// The resource handler has returned that the downstream service returned an internal
@@ -298,10 +287,10 @@ namespace Amazon.CloudControlApi
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.CloudControlApi.Model.TypeNotFoundException">
-        /// The specified extension does not exist in the CloudFormation registry.
+        /// The specified extension doesn't exist in the CloudFormation registry.
         /// </exception>
         /// <exception cref="Amazon.CloudControlApi.Model.UnsupportedActionException">
-        /// The specified resource does not support this resource operation.
+        /// The specified resource doesn't support this resource operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudcontrol-2021-09-30/CreateResource">REST API Reference for CreateResource Operation</seealso>
         Task<CreateResourceResponse> CreateResourceAsync(CreateResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -334,7 +323,7 @@ namespace Amazon.CloudControlApi
         /// 
         ///  
         /// <para>
-        /// It is best practice for client tokens to be unique for each resource operation request.
+        /// It's best practice for client tokens to be unique for each resource operation request.
         /// However, client token expire after 36 hours.
         /// </para>
         /// </exception>
@@ -343,7 +332,7 @@ namespace Amazon.CloudControlApi
         /// </exception>
         /// <exception cref="Amazon.CloudControlApi.Model.GeneralServiceException">
         /// The resource handler has returned that the downstream service generated an error that
-        /// does not map to any other handler error code.
+        /// doesn't map to any other handler error code.
         /// </exception>
         /// <exception cref="Amazon.CloudControlApi.Model.HandlerFailureException">
         /// The resource handler has failed without a returning a more specific error code. This
@@ -361,7 +350,7 @@ namespace Amazon.CloudControlApi
         /// generic exception.
         /// </exception>
         /// <exception cref="Amazon.CloudControlApi.Model.NetworkFailureException">
-        /// The resource handler has returned that the request could not be completed due to networking
+        /// The resource handler has returned that the request couldn't be completed due to networking
         /// issues, such as a failure to receive a response from the server.
         /// </exception>
         /// <exception cref="Amazon.CloudControlApi.Model.NotStabilizedException">
@@ -370,20 +359,20 @@ namespace Amazon.CloudControlApi
         /// </exception>
         /// <exception cref="Amazon.CloudControlApi.Model.NotUpdatableException">
         /// One or more properties included in this resource operation are defined as create-only,
-        /// and therefore cannot be updated.
+        /// and therefore can't be updated.
         /// </exception>
         /// <exception cref="Amazon.CloudControlApi.Model.PrivateTypeException">
-        /// Cloud Control API has not received a valid response from the resource handler, due
+        /// Cloud Control API hasn't received a valid response from the resource handler, due
         /// to a configuration error. This includes issues such as the resource handler returning
         /// an invalid response, or timing out.
         /// </exception>
         /// <exception cref="Amazon.CloudControlApi.Model.ResourceConflictException">
         /// The resource is temporarily unavailable to be acted upon. For example, if the resource
-        /// is currently undergoing an operation and cannot be acted upon until that operation
+        /// is currently undergoing an operation and can't be acted upon until that operation
         /// is finished.
         /// </exception>
         /// <exception cref="Amazon.CloudControlApi.Model.ResourceNotFoundException">
-        /// A resource with the specified identifier cannot be found.
+        /// A resource with the specified identifier can't be found.
         /// </exception>
         /// <exception cref="Amazon.CloudControlApi.Model.ServiceInternalErrorException">
         /// The resource handler has returned that the downstream service returned an internal
@@ -397,10 +386,10 @@ namespace Amazon.CloudControlApi
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.CloudControlApi.Model.TypeNotFoundException">
-        /// The specified extension does not exist in the CloudFormation registry.
+        /// The specified extension doesn't exist in the CloudFormation registry.
         /// </exception>
         /// <exception cref="Amazon.CloudControlApi.Model.UnsupportedActionException">
-        /// The specified resource does not support this resource operation.
+        /// The specified resource doesn't support this resource operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudcontrol-2021-09-30/DeleteResource">REST API Reference for DeleteResource Operation</seealso>
         DeleteResourceResponse DeleteResource(DeleteResourceRequest request);
@@ -433,7 +422,7 @@ namespace Amazon.CloudControlApi
         /// 
         ///  
         /// <para>
-        /// It is best practice for client tokens to be unique for each resource operation request.
+        /// It's best practice for client tokens to be unique for each resource operation request.
         /// However, client token expire after 36 hours.
         /// </para>
         /// </exception>
@@ -442,7 +431,7 @@ namespace Amazon.CloudControlApi
         /// </exception>
         /// <exception cref="Amazon.CloudControlApi.Model.GeneralServiceException">
         /// The resource handler has returned that the downstream service generated an error that
-        /// does not map to any other handler error code.
+        /// doesn't map to any other handler error code.
         /// </exception>
         /// <exception cref="Amazon.CloudControlApi.Model.HandlerFailureException">
         /// The resource handler has failed without a returning a more specific error code. This
@@ -460,7 +449,7 @@ namespace Amazon.CloudControlApi
         /// generic exception.
         /// </exception>
         /// <exception cref="Amazon.CloudControlApi.Model.NetworkFailureException">
-        /// The resource handler has returned that the request could not be completed due to networking
+        /// The resource handler has returned that the request couldn't be completed due to networking
         /// issues, such as a failure to receive a response from the server.
         /// </exception>
         /// <exception cref="Amazon.CloudControlApi.Model.NotStabilizedException">
@@ -469,20 +458,20 @@ namespace Amazon.CloudControlApi
         /// </exception>
         /// <exception cref="Amazon.CloudControlApi.Model.NotUpdatableException">
         /// One or more properties included in this resource operation are defined as create-only,
-        /// and therefore cannot be updated.
+        /// and therefore can't be updated.
         /// </exception>
         /// <exception cref="Amazon.CloudControlApi.Model.PrivateTypeException">
-        /// Cloud Control API has not received a valid response from the resource handler, due
+        /// Cloud Control API hasn't received a valid response from the resource handler, due
         /// to a configuration error. This includes issues such as the resource handler returning
         /// an invalid response, or timing out.
         /// </exception>
         /// <exception cref="Amazon.CloudControlApi.Model.ResourceConflictException">
         /// The resource is temporarily unavailable to be acted upon. For example, if the resource
-        /// is currently undergoing an operation and cannot be acted upon until that operation
+        /// is currently undergoing an operation and can't be acted upon until that operation
         /// is finished.
         /// </exception>
         /// <exception cref="Amazon.CloudControlApi.Model.ResourceNotFoundException">
-        /// A resource with the specified identifier cannot be found.
+        /// A resource with the specified identifier can't be found.
         /// </exception>
         /// <exception cref="Amazon.CloudControlApi.Model.ServiceInternalErrorException">
         /// The resource handler has returned that the downstream service returned an internal
@@ -496,10 +485,10 @@ namespace Amazon.CloudControlApi
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.CloudControlApi.Model.TypeNotFoundException">
-        /// The specified extension does not exist in the CloudFormation registry.
+        /// The specified extension doesn't exist in the CloudFormation registry.
         /// </exception>
         /// <exception cref="Amazon.CloudControlApi.Model.UnsupportedActionException">
-        /// The specified resource does not support this resource operation.
+        /// The specified resource doesn't support this resource operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudcontrol-2021-09-30/DeleteResource">REST API Reference for DeleteResource Operation</seealso>
         Task<DeleteResourceResponse> DeleteResourceAsync(DeleteResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -517,8 +506,8 @@ namespace Amazon.CloudControlApi
         ///  
         /// <para>
         /// You can use this action to return information about an existing resource in your account
-        /// and Amazon Web Services Region, whether or not those resources were provisioned using
-        /// Cloud Control API.
+        /// and Amazon Web Services Region, whether those resources were provisioned using Cloud
+        /// Control API.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetResource service method.</param>
@@ -529,7 +518,7 @@ namespace Amazon.CloudControlApi
         /// </exception>
         /// <exception cref="Amazon.CloudControlApi.Model.GeneralServiceException">
         /// The resource handler has returned that the downstream service generated an error that
-        /// does not map to any other handler error code.
+        /// doesn't map to any other handler error code.
         /// </exception>
         /// <exception cref="Amazon.CloudControlApi.Model.HandlerFailureException">
         /// The resource handler has failed without a returning a more specific error code. This
@@ -547,7 +536,7 @@ namespace Amazon.CloudControlApi
         /// generic exception.
         /// </exception>
         /// <exception cref="Amazon.CloudControlApi.Model.NetworkFailureException">
-        /// The resource handler has returned that the request could not be completed due to networking
+        /// The resource handler has returned that the request couldn't be completed due to networking
         /// issues, such as a failure to receive a response from the server.
         /// </exception>
         /// <exception cref="Amazon.CloudControlApi.Model.NotStabilizedException">
@@ -556,20 +545,20 @@ namespace Amazon.CloudControlApi
         /// </exception>
         /// <exception cref="Amazon.CloudControlApi.Model.NotUpdatableException">
         /// One or more properties included in this resource operation are defined as create-only,
-        /// and therefore cannot be updated.
+        /// and therefore can't be updated.
         /// </exception>
         /// <exception cref="Amazon.CloudControlApi.Model.PrivateTypeException">
-        /// Cloud Control API has not received a valid response from the resource handler, due
+        /// Cloud Control API hasn't received a valid response from the resource handler, due
         /// to a configuration error. This includes issues such as the resource handler returning
         /// an invalid response, or timing out.
         /// </exception>
         /// <exception cref="Amazon.CloudControlApi.Model.ResourceConflictException">
         /// The resource is temporarily unavailable to be acted upon. For example, if the resource
-        /// is currently undergoing an operation and cannot be acted upon until that operation
+        /// is currently undergoing an operation and can't be acted upon until that operation
         /// is finished.
         /// </exception>
         /// <exception cref="Amazon.CloudControlApi.Model.ResourceNotFoundException">
-        /// A resource with the specified identifier cannot be found.
+        /// A resource with the specified identifier can't be found.
         /// </exception>
         /// <exception cref="Amazon.CloudControlApi.Model.ServiceInternalErrorException">
         /// The resource handler has returned that the downstream service returned an internal
@@ -583,10 +572,10 @@ namespace Amazon.CloudControlApi
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.CloudControlApi.Model.TypeNotFoundException">
-        /// The specified extension does not exist in the CloudFormation registry.
+        /// The specified extension doesn't exist in the CloudFormation registry.
         /// </exception>
         /// <exception cref="Amazon.CloudControlApi.Model.UnsupportedActionException">
-        /// The specified resource does not support this resource operation.
+        /// The specified resource doesn't support this resource operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudcontrol-2021-09-30/GetResource">REST API Reference for GetResource Operation</seealso>
         GetResourceResponse GetResource(GetResourceRequest request);
@@ -601,8 +590,8 @@ namespace Amazon.CloudControlApi
         ///  
         /// <para>
         /// You can use this action to return information about an existing resource in your account
-        /// and Amazon Web Services Region, whether or not those resources were provisioned using
-        /// Cloud Control API.
+        /// and Amazon Web Services Region, whether those resources were provisioned using Cloud
+        /// Control API.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetResource service method.</param>
@@ -616,7 +605,7 @@ namespace Amazon.CloudControlApi
         /// </exception>
         /// <exception cref="Amazon.CloudControlApi.Model.GeneralServiceException">
         /// The resource handler has returned that the downstream service generated an error that
-        /// does not map to any other handler error code.
+        /// doesn't map to any other handler error code.
         /// </exception>
         /// <exception cref="Amazon.CloudControlApi.Model.HandlerFailureException">
         /// The resource handler has failed without a returning a more specific error code. This
@@ -634,7 +623,7 @@ namespace Amazon.CloudControlApi
         /// generic exception.
         /// </exception>
         /// <exception cref="Amazon.CloudControlApi.Model.NetworkFailureException">
-        /// The resource handler has returned that the request could not be completed due to networking
+        /// The resource handler has returned that the request couldn't be completed due to networking
         /// issues, such as a failure to receive a response from the server.
         /// </exception>
         /// <exception cref="Amazon.CloudControlApi.Model.NotStabilizedException">
@@ -643,20 +632,20 @@ namespace Amazon.CloudControlApi
         /// </exception>
         /// <exception cref="Amazon.CloudControlApi.Model.NotUpdatableException">
         /// One or more properties included in this resource operation are defined as create-only,
-        /// and therefore cannot be updated.
+        /// and therefore can't be updated.
         /// </exception>
         /// <exception cref="Amazon.CloudControlApi.Model.PrivateTypeException">
-        /// Cloud Control API has not received a valid response from the resource handler, due
+        /// Cloud Control API hasn't received a valid response from the resource handler, due
         /// to a configuration error. This includes issues such as the resource handler returning
         /// an invalid response, or timing out.
         /// </exception>
         /// <exception cref="Amazon.CloudControlApi.Model.ResourceConflictException">
         /// The resource is temporarily unavailable to be acted upon. For example, if the resource
-        /// is currently undergoing an operation and cannot be acted upon until that operation
+        /// is currently undergoing an operation and can't be acted upon until that operation
         /// is finished.
         /// </exception>
         /// <exception cref="Amazon.CloudControlApi.Model.ResourceNotFoundException">
-        /// A resource with the specified identifier cannot be found.
+        /// A resource with the specified identifier can't be found.
         /// </exception>
         /// <exception cref="Amazon.CloudControlApi.Model.ServiceInternalErrorException">
         /// The resource handler has returned that the downstream service returned an internal
@@ -670,10 +659,10 @@ namespace Amazon.CloudControlApi
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.CloudControlApi.Model.TypeNotFoundException">
-        /// The specified extension does not exist in the CloudFormation registry.
+        /// The specified extension doesn't exist in the CloudFormation registry.
         /// </exception>
         /// <exception cref="Amazon.CloudControlApi.Model.UnsupportedActionException">
-        /// The specified resource does not support this resource operation.
+        /// The specified resource doesn't support this resource operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudcontrol-2021-09-30/GetResource">REST API Reference for GetResource Operation</seealso>
         Task<GetResourceResponse> GetResourceAsync(GetResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -693,7 +682,7 @@ namespace Amazon.CloudControlApi
         /// 
         /// <returns>The response from the GetResourceRequestStatus service method, as returned by CloudControlApi.</returns>
         /// <exception cref="Amazon.CloudControlApi.Model.RequestTokenNotFoundException">
-        /// A resource operation with the specified request token cannot be found.
+        /// A resource operation with the specified request token can't be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudcontrol-2021-09-30/GetResourceRequestStatus">REST API Reference for GetResourceRequestStatus Operation</seealso>
         GetResourceRequestStatusResponse GetResourceRequestStatus(GetResourceRequestStatusRequest request);
@@ -713,7 +702,7 @@ namespace Amazon.CloudControlApi
         /// 
         /// <returns>The response from the GetResourceRequestStatus service method, as returned by CloudControlApi.</returns>
         /// <exception cref="Amazon.CloudControlApi.Model.RequestTokenNotFoundException">
-        /// A resource operation with the specified request token cannot be found.
+        /// A resource operation with the specified request token can't be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudcontrol-2021-09-30/GetResourceRequestStatus">REST API Reference for GetResourceRequestStatus Operation</seealso>
         Task<GetResourceRequestStatusResponse> GetResourceRequestStatusAsync(GetResourceRequestStatusRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -731,7 +720,7 @@ namespace Amazon.CloudControlApi
         /// 
         ///  <note> 
         /// <para>
-        /// Resource operation requests expire after seven days.
+        /// Resource operation requests expire after 7 days.
         /// </para>
         ///  </note>
         /// </summary>
@@ -751,7 +740,7 @@ namespace Amazon.CloudControlApi
         /// 
         ///  <note> 
         /// <para>
-        /// Resource operation requests expire after seven days.
+        /// Resource operation requests expire after 7 days.
         /// </para>
         ///  </note>
         /// </summary>
@@ -770,14 +759,14 @@ namespace Amazon.CloudControlApi
 
 
         /// <summary>
-        /// Returns information about the specified resources. For more information, see <a href="cloudcontrolapi/latest/userguide/resource-operations-list.html">Discovering
+        /// Returns information about the specified resources. For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-list.html">Discovering
         /// resources</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.
         /// 
         ///  
         /// <para>
         /// You can use this action to return information about existing resources in your account
-        /// and Amazon Web Services Region, whether or not those resources were provisioned using
-        /// Cloud Control API.
+        /// and Amazon Web Services Region, whether those resources were provisioned using Cloud
+        /// Control API.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListResources service method.</param>
@@ -788,7 +777,7 @@ namespace Amazon.CloudControlApi
         /// </exception>
         /// <exception cref="Amazon.CloudControlApi.Model.GeneralServiceException">
         /// The resource handler has returned that the downstream service generated an error that
-        /// does not map to any other handler error code.
+        /// doesn't map to any other handler error code.
         /// </exception>
         /// <exception cref="Amazon.CloudControlApi.Model.HandlerFailureException">
         /// The resource handler has failed without a returning a more specific error code. This
@@ -806,7 +795,7 @@ namespace Amazon.CloudControlApi
         /// generic exception.
         /// </exception>
         /// <exception cref="Amazon.CloudControlApi.Model.NetworkFailureException">
-        /// The resource handler has returned that the request could not be completed due to networking
+        /// The resource handler has returned that the request couldn't be completed due to networking
         /// issues, such as a failure to receive a response from the server.
         /// </exception>
         /// <exception cref="Amazon.CloudControlApi.Model.NotStabilizedException">
@@ -815,20 +804,20 @@ namespace Amazon.CloudControlApi
         /// </exception>
         /// <exception cref="Amazon.CloudControlApi.Model.NotUpdatableException">
         /// One or more properties included in this resource operation are defined as create-only,
-        /// and therefore cannot be updated.
+        /// and therefore can't be updated.
         /// </exception>
         /// <exception cref="Amazon.CloudControlApi.Model.PrivateTypeException">
-        /// Cloud Control API has not received a valid response from the resource handler, due
+        /// Cloud Control API hasn't received a valid response from the resource handler, due
         /// to a configuration error. This includes issues such as the resource handler returning
         /// an invalid response, or timing out.
         /// </exception>
         /// <exception cref="Amazon.CloudControlApi.Model.ResourceConflictException">
         /// The resource is temporarily unavailable to be acted upon. For example, if the resource
-        /// is currently undergoing an operation and cannot be acted upon until that operation
+        /// is currently undergoing an operation and can't be acted upon until that operation
         /// is finished.
         /// </exception>
         /// <exception cref="Amazon.CloudControlApi.Model.ResourceNotFoundException">
-        /// A resource with the specified identifier cannot be found.
+        /// A resource with the specified identifier can't be found.
         /// </exception>
         /// <exception cref="Amazon.CloudControlApi.Model.ServiceInternalErrorException">
         /// The resource handler has returned that the downstream service returned an internal
@@ -842,10 +831,10 @@ namespace Amazon.CloudControlApi
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.CloudControlApi.Model.TypeNotFoundException">
-        /// The specified extension does not exist in the CloudFormation registry.
+        /// The specified extension doesn't exist in the CloudFormation registry.
         /// </exception>
         /// <exception cref="Amazon.CloudControlApi.Model.UnsupportedActionException">
-        /// The specified resource does not support this resource operation.
+        /// The specified resource doesn't support this resource operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudcontrol-2021-09-30/ListResources">REST API Reference for ListResources Operation</seealso>
         ListResourcesResponse ListResources(ListResourcesRequest request);
@@ -853,14 +842,14 @@ namespace Amazon.CloudControlApi
 
 
         /// <summary>
-        /// Returns information about the specified resources. For more information, see <a href="cloudcontrolapi/latest/userguide/resource-operations-list.html">Discovering
+        /// Returns information about the specified resources. For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-list.html">Discovering
         /// resources</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.
         /// 
         ///  
         /// <para>
         /// You can use this action to return information about existing resources in your account
-        /// and Amazon Web Services Region, whether or not those resources were provisioned using
-        /// Cloud Control API.
+        /// and Amazon Web Services Region, whether those resources were provisioned using Cloud
+        /// Control API.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListResources service method.</param>
@@ -874,7 +863,7 @@ namespace Amazon.CloudControlApi
         /// </exception>
         /// <exception cref="Amazon.CloudControlApi.Model.GeneralServiceException">
         /// The resource handler has returned that the downstream service generated an error that
-        /// does not map to any other handler error code.
+        /// doesn't map to any other handler error code.
         /// </exception>
         /// <exception cref="Amazon.CloudControlApi.Model.HandlerFailureException">
         /// The resource handler has failed without a returning a more specific error code. This
@@ -892,7 +881,7 @@ namespace Amazon.CloudControlApi
         /// generic exception.
         /// </exception>
         /// <exception cref="Amazon.CloudControlApi.Model.NetworkFailureException">
-        /// The resource handler has returned that the request could not be completed due to networking
+        /// The resource handler has returned that the request couldn't be completed due to networking
         /// issues, such as a failure to receive a response from the server.
         /// </exception>
         /// <exception cref="Amazon.CloudControlApi.Model.NotStabilizedException">
@@ -901,20 +890,20 @@ namespace Amazon.CloudControlApi
         /// </exception>
         /// <exception cref="Amazon.CloudControlApi.Model.NotUpdatableException">
         /// One or more properties included in this resource operation are defined as create-only,
-        /// and therefore cannot be updated.
+        /// and therefore can't be updated.
         /// </exception>
         /// <exception cref="Amazon.CloudControlApi.Model.PrivateTypeException">
-        /// Cloud Control API has not received a valid response from the resource handler, due
+        /// Cloud Control API hasn't received a valid response from the resource handler, due
         /// to a configuration error. This includes issues such as the resource handler returning
         /// an invalid response, or timing out.
         /// </exception>
         /// <exception cref="Amazon.CloudControlApi.Model.ResourceConflictException">
         /// The resource is temporarily unavailable to be acted upon. For example, if the resource
-        /// is currently undergoing an operation and cannot be acted upon until that operation
+        /// is currently undergoing an operation and can't be acted upon until that operation
         /// is finished.
         /// </exception>
         /// <exception cref="Amazon.CloudControlApi.Model.ResourceNotFoundException">
-        /// A resource with the specified identifier cannot be found.
+        /// A resource with the specified identifier can't be found.
         /// </exception>
         /// <exception cref="Amazon.CloudControlApi.Model.ServiceInternalErrorException">
         /// The resource handler has returned that the downstream service returned an internal
@@ -928,10 +917,10 @@ namespace Amazon.CloudControlApi
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.CloudControlApi.Model.TypeNotFoundException">
-        /// The specified extension does not exist in the CloudFormation registry.
+        /// The specified extension doesn't exist in the CloudFormation registry.
         /// </exception>
         /// <exception cref="Amazon.CloudControlApi.Model.UnsupportedActionException">
-        /// The specified resource does not support this resource operation.
+        /// The specified resource doesn't support this resource operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudcontrol-2021-09-30/ListResources">REST API Reference for ListResources Operation</seealso>
         Task<ListResourcesResponse> ListResourcesAsync(ListResourcesRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -966,8 +955,7 @@ namespace Amazon.CloudControlApi
         /// <para>
         /// For more information about the properties of a specific resource, refer to the related
         /// topic for the resource in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Resource
-        /// and property types reference</a> in the <i>Amazon Web Services CloudFormation Users
-        /// Guide</i>.
+        /// and property types reference</a> in the <i>CloudFormation Users Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateResource service method.</param>
@@ -981,7 +969,7 @@ namespace Amazon.CloudControlApi
         /// 
         ///  
         /// <para>
-        /// It is best practice for client tokens to be unique for each resource operation request.
+        /// It's best practice for client tokens to be unique for each resource operation request.
         /// However, client token expire after 36 hours.
         /// </para>
         /// </exception>
@@ -990,7 +978,7 @@ namespace Amazon.CloudControlApi
         /// </exception>
         /// <exception cref="Amazon.CloudControlApi.Model.GeneralServiceException">
         /// The resource handler has returned that the downstream service generated an error that
-        /// does not map to any other handler error code.
+        /// doesn't map to any other handler error code.
         /// </exception>
         /// <exception cref="Amazon.CloudControlApi.Model.HandlerFailureException">
         /// The resource handler has failed without a returning a more specific error code. This
@@ -1008,7 +996,7 @@ namespace Amazon.CloudControlApi
         /// generic exception.
         /// </exception>
         /// <exception cref="Amazon.CloudControlApi.Model.NetworkFailureException">
-        /// The resource handler has returned that the request could not be completed due to networking
+        /// The resource handler has returned that the request couldn't be completed due to networking
         /// issues, such as a failure to receive a response from the server.
         /// </exception>
         /// <exception cref="Amazon.CloudControlApi.Model.NotStabilizedException">
@@ -1017,20 +1005,20 @@ namespace Amazon.CloudControlApi
         /// </exception>
         /// <exception cref="Amazon.CloudControlApi.Model.NotUpdatableException">
         /// One or more properties included in this resource operation are defined as create-only,
-        /// and therefore cannot be updated.
+        /// and therefore can't be updated.
         /// </exception>
         /// <exception cref="Amazon.CloudControlApi.Model.PrivateTypeException">
-        /// Cloud Control API has not received a valid response from the resource handler, due
+        /// Cloud Control API hasn't received a valid response from the resource handler, due
         /// to a configuration error. This includes issues such as the resource handler returning
         /// an invalid response, or timing out.
         /// </exception>
         /// <exception cref="Amazon.CloudControlApi.Model.ResourceConflictException">
         /// The resource is temporarily unavailable to be acted upon. For example, if the resource
-        /// is currently undergoing an operation and cannot be acted upon until that operation
+        /// is currently undergoing an operation and can't be acted upon until that operation
         /// is finished.
         /// </exception>
         /// <exception cref="Amazon.CloudControlApi.Model.ResourceNotFoundException">
-        /// A resource with the specified identifier cannot be found.
+        /// A resource with the specified identifier can't be found.
         /// </exception>
         /// <exception cref="Amazon.CloudControlApi.Model.ServiceInternalErrorException">
         /// The resource handler has returned that the downstream service returned an internal
@@ -1044,10 +1032,10 @@ namespace Amazon.CloudControlApi
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.CloudControlApi.Model.TypeNotFoundException">
-        /// The specified extension does not exist in the CloudFormation registry.
+        /// The specified extension doesn't exist in the CloudFormation registry.
         /// </exception>
         /// <exception cref="Amazon.CloudControlApi.Model.UnsupportedActionException">
-        /// The specified resource does not support this resource operation.
+        /// The specified resource doesn't support this resource operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudcontrol-2021-09-30/UpdateResource">REST API Reference for UpdateResource Operation</seealso>
         UpdateResourceResponse UpdateResource(UpdateResourceRequest request);
@@ -1079,8 +1067,7 @@ namespace Amazon.CloudControlApi
         /// <para>
         /// For more information about the properties of a specific resource, refer to the related
         /// topic for the resource in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Resource
-        /// and property types reference</a> in the <i>Amazon Web Services CloudFormation Users
-        /// Guide</i>.
+        /// and property types reference</a> in the <i>CloudFormation Users Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateResource service method.</param>
@@ -1097,7 +1084,7 @@ namespace Amazon.CloudControlApi
         /// 
         ///  
         /// <para>
-        /// It is best practice for client tokens to be unique for each resource operation request.
+        /// It's best practice for client tokens to be unique for each resource operation request.
         /// However, client token expire after 36 hours.
         /// </para>
         /// </exception>
@@ -1106,7 +1093,7 @@ namespace Amazon.CloudControlApi
         /// </exception>
         /// <exception cref="Amazon.CloudControlApi.Model.GeneralServiceException">
         /// The resource handler has returned that the downstream service generated an error that
-        /// does not map to any other handler error code.
+        /// doesn't map to any other handler error code.
         /// </exception>
         /// <exception cref="Amazon.CloudControlApi.Model.HandlerFailureException">
         /// The resource handler has failed without a returning a more specific error code. This
@@ -1124,7 +1111,7 @@ namespace Amazon.CloudControlApi
         /// generic exception.
         /// </exception>
         /// <exception cref="Amazon.CloudControlApi.Model.NetworkFailureException">
-        /// The resource handler has returned that the request could not be completed due to networking
+        /// The resource handler has returned that the request couldn't be completed due to networking
         /// issues, such as a failure to receive a response from the server.
         /// </exception>
         /// <exception cref="Amazon.CloudControlApi.Model.NotStabilizedException">
@@ -1133,20 +1120,20 @@ namespace Amazon.CloudControlApi
         /// </exception>
         /// <exception cref="Amazon.CloudControlApi.Model.NotUpdatableException">
         /// One or more properties included in this resource operation are defined as create-only,
-        /// and therefore cannot be updated.
+        /// and therefore can't be updated.
         /// </exception>
         /// <exception cref="Amazon.CloudControlApi.Model.PrivateTypeException">
-        /// Cloud Control API has not received a valid response from the resource handler, due
+        /// Cloud Control API hasn't received a valid response from the resource handler, due
         /// to a configuration error. This includes issues such as the resource handler returning
         /// an invalid response, or timing out.
         /// </exception>
         /// <exception cref="Amazon.CloudControlApi.Model.ResourceConflictException">
         /// The resource is temporarily unavailable to be acted upon. For example, if the resource
-        /// is currently undergoing an operation and cannot be acted upon until that operation
+        /// is currently undergoing an operation and can't be acted upon until that operation
         /// is finished.
         /// </exception>
         /// <exception cref="Amazon.CloudControlApi.Model.ResourceNotFoundException">
-        /// A resource with the specified identifier cannot be found.
+        /// A resource with the specified identifier can't be found.
         /// </exception>
         /// <exception cref="Amazon.CloudControlApi.Model.ServiceInternalErrorException">
         /// The resource handler has returned that the downstream service returned an internal
@@ -1160,10 +1147,10 @@ namespace Amazon.CloudControlApi
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.CloudControlApi.Model.TypeNotFoundException">
-        /// The specified extension does not exist in the CloudFormation registry.
+        /// The specified extension doesn't exist in the CloudFormation registry.
         /// </exception>
         /// <exception cref="Amazon.CloudControlApi.Model.UnsupportedActionException">
-        /// The specified resource does not support this resource operation.
+        /// The specified resource doesn't support this resource operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudcontrol-2021-09-30/UpdateResource">REST API Reference for UpdateResource Operation</seealso>
         Task<UpdateResourceResponse> UpdateResourceAsync(UpdateResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));

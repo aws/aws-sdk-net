@@ -34,7 +34,7 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// S3DataConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class S3DataConfigMarshaller : IRequestMarshaller<S3DataConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static S3DataConfigMarshaller Instance = new S3DataConfigMarshaller();
 
     }

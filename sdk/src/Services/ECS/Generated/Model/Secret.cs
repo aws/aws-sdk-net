@@ -45,7 +45,7 @@ namespace Amazon.ECS.Model
     ///  </li> </ul> 
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying
-    /// Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+    /// sensitive data</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
     /// </para>
     /// </summary>
     public partial class Secret
@@ -78,6 +78,14 @@ namespace Amazon.ECS.Model
         /// The secret to expose to the container. The supported values are either the full ARN
         /// of the Secrets Manager secret or the full ARN of the parameter in the SSM Parameter
         /// Store.
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about the require Identity and Access Management permissions, see
+        /// <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data-secrets.html#secrets-iam">Required
+        /// IAM permissions for Amazon ECS secrets</a> (for Secrets Manager) or <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data-parameters.html">Required
+        /// IAM permissions for Amazon ECS secrets</a> (for Systems Manager Parameter store) in
+        /// the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>

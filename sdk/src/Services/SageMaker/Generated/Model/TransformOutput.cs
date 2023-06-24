@@ -113,7 +113,8 @@ namespace Amazon.SageMaker.Model
         ///  
         /// <para>
         /// The KMS key policy must grant permission to the IAM role that you specify in your
-        /// <a>CreateModel</a> request. For more information, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using
+        /// <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateModel.html">CreateModel</a>
+        /// request. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using
         /// Key Policies in Amazon Web Services KMS</a> in the <i>Amazon Web Services Key Management
         /// Service Developer Guide</i>.
         /// </para>

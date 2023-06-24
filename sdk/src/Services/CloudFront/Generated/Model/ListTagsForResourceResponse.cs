@@ -38,7 +38,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        ///  A complex type that contains zero or more <code>Tag</code> elements.
+        /// A complex type that contains zero or more <code>Tag</code> elements.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AsyncInferenceClientConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class AsyncInferenceClientConfigMarshaller : IRequestMarshaller<AsyncInferenceClientConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AsyncInferenceClientConfigMarshaller Instance = new AsyncInferenceClientConfigMarshaller();
 
     }

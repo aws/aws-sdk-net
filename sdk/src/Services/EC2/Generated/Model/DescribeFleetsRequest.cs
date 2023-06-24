@@ -34,7 +34,7 @@ namespace Amazon.EC2.Model
     /// 
     ///  
     /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet.html#monitor-ec2-fleet">Monitoring
+    /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-ec2-fleet.html#monitor-ec2-fleet">Monitor
     /// your EC2 Fleet</a> in the <i>Amazon EC2 User Guide</i>.
     /// </para>
     /// </summary>
@@ -94,8 +94,14 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property FleetIds. 
         /// <para>
-        /// The ID of the EC2 Fleets.
+        /// The IDs of the EC2 Fleets.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// If a fleet is of type <code>instant</code>, you must specify the fleet ID, otherwise
+        /// it does not appear in the response.
+        /// </para>
+        ///  </note>
         /// </summary>
         public List<string> FleetIds
         {
@@ -112,9 +118,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of results to return in a single call. Specify a value between
-        /// 1 and 1000. The default value is 1000. To retrieve the remaining results, make another
-        /// call with the returned <code>NextToken</code> value.
+        /// The maximum number of items to return for this request. To get the next page of items,
+        /// make another request with the token returned in the output. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.
         /// </para>
         /// </summary>
         public int MaxResults
@@ -132,7 +138,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token for the next set of results.
+        /// The token returned from a previous paginated request. Pagination continues from the
+        /// end of the items returned by the previous request.
         /// </para>
         /// </summary>
         public string NextToken

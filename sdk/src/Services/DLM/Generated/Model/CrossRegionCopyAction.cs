@@ -29,7 +29,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DLM.Model
 {
     /// <summary>
-    /// Specifies a rule for copying shared snapshots across Regions.
+    /// <b>[Event-based policies only]</b> Specifies a cross-Region copy action for event-based
+    /// policies.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// To specify a cross-Region copy rule for snapshot and AMI policies, use <a>CrossRegionCopyRule</a>.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class CrossRegionCopyAction
     {

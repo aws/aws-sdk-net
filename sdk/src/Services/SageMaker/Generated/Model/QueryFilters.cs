@@ -141,8 +141,8 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property Properties. 
         /// <para>
         /// Filter the lineage entities connected to the <code>StartArn</code>(s) by a set if
-        /// property key value pairs. If multiple pairs are provided, an entity will be included
-        /// in the results if it matches any of the provided pairs.
+        /// property key value pairs. If multiple pairs are provided, an entity is included in
+        /// the results if it matches any of the provided pairs.
         /// </para>
         /// </summary>
         [AWSProperty(Max=5)]

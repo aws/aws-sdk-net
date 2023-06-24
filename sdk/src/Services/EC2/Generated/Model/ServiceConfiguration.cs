@@ -39,12 +39,14 @@ namespace Amazon.EC2.Model
         private List<string> _gatewayLoadBalancerArns = new List<string>();
         private bool? _managesVpcEndpoints;
         private List<string> _networkLoadBalancerArns = new List<string>();
+        private PayerResponsibility _payerResponsibility;
         private string _privateDnsName;
         private PrivateDnsNameConfiguration _privateDnsNameConfiguration;
         private string _serviceId;
         private string _serviceName;
         private ServiceState _serviceState;
         private List<ServiceTypeDetail> _serviceType = new List<ServiceTypeDetail>();
+        private List<string> _supportedIpAddressTypes = new List<string>();
         private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
@@ -158,6 +160,24 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PayerResponsibility. 
+        /// <para>
+        /// The payer responsibility.
+        /// </para>
+        /// </summary>
+        public PayerResponsibility PayerResponsibility
+        {
+            get { return this._payerResponsibility; }
+            set { this._payerResponsibility = value; }
+        }
+
+        // Check to see if PayerResponsibility property is set
+        internal bool IsSetPayerResponsibility()
+        {
+            return this._payerResponsibility != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property PrivateDnsName. 
         /// <para>
         /// The private DNS name for the service.
@@ -266,9 +286,28 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SupportedIpAddressTypes. 
+        /// <para>
+        /// The supported IP address types.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=2)]
+        public List<string> SupportedIpAddressTypes
+        {
+            get { return this._supportedIpAddressTypes; }
+            set { this._supportedIpAddressTypes = value; }
+        }
+
+        // Check to see if SupportedIpAddressTypes property is set
+        internal bool IsSetSupportedIpAddressTypes()
+        {
+            return this._supportedIpAddressTypes != null && this._supportedIpAddressTypes.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Any tags assigned to the service.
+        /// The tags assigned to the service.
         /// </para>
         /// </summary>
         public List<Tag> Tags

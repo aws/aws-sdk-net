@@ -34,7 +34,7 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// PlayReadyDrm Marshaller
-    /// </summary>       
+    /// </summary>
     public class PlayReadyDrmMarshaller : IRequestMarshaller<PlayReadyDrm, JsonMarshallerContext> 
     {
         /// <summary>
@@ -85,7 +85,7 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static PlayReadyDrmMarshaller Instance = new PlayReadyDrmMarshaller();
 
     }

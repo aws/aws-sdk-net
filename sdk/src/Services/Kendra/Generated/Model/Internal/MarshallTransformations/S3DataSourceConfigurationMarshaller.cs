@@ -34,7 +34,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// S3DataSourceConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class S3DataSourceConfigurationMarshaller : IRequestMarshaller<S3DataSourceConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -110,7 +110,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static S3DataSourceConfigurationMarshaller Instance = new S3DataSourceConfigurationMarshaller();
 
     }

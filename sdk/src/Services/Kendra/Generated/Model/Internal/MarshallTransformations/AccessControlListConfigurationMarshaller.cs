@@ -34,7 +34,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AccessControlListConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class AccessControlListConfigurationMarshaller : IRequestMarshaller<AccessControlListConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AccessControlListConfigurationMarshaller Instance = new AccessControlListConfigurationMarshaller();
 
     }

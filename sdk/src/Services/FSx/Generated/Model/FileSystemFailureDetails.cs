@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FSx.Model
 {
     /// <summary>
-    /// A structure providing details of any failures that occurred when creating a file system.
+    /// A structure providing details of any failures that occurred.
     /// </summary>
     public partial class FileSystemFailureDetails
     {
@@ -38,7 +38,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property Message. 
         /// <para>
-        /// A message describing any failures that occurred during file system creation.
+        /// A message describing any failures that occurred.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]

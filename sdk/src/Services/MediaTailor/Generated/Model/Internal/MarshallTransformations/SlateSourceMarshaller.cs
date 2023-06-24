@@ -34,7 +34,7 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SlateSource Marshaller
-    /// </summary>       
+    /// </summary>
     public class SlateSourceMarshaller : IRequestMarshaller<SlateSource, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SlateSourceMarshaller Instance = new SlateSourceMarshaller();
 
     }

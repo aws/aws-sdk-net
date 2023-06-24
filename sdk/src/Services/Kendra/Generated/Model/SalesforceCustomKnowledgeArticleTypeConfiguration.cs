@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kendra.Model
 {
     /// <summary>
-    /// Provides configuration information for indexing Salesforce custom articles.
+    /// Provides the configuration information for indexing Salesforce custom articles.
     /// </summary>
     public partial class SalesforceCustomKnowledgeArticleTypeConfiguration
     {
@@ -80,8 +80,11 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property FieldMappings. 
         /// <para>
-        /// One or more objects that map fields in the custom knowledge article to fields in the
-        /// Amazon Kendra index.
+        /// Maps attributes or field names of the custom knowledge article to Amazon Kendra index
+        /// field names. To create custom fields, use the <code>UpdateIndex</code> API before
+        /// you map to Salesforce fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
+        /// data source fields</a>. The Salesforce data source field names must exist in your
+        /// Salesforce custom metadata.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

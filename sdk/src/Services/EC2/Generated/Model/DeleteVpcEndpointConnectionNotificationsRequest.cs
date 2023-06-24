@@ -30,7 +30,7 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteVpcEndpointConnectionNotifications operation.
-    /// Deletes one or more VPC endpoint connection notifications.
+    /// Deletes the specified VPC endpoint connection notifications.
     /// </summary>
     public partial class DeleteVpcEndpointConnectionNotificationsRequest : AmazonEC2Request
     {
@@ -39,7 +39,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ConnectionNotificationIds. 
         /// <para>
-        /// One or more notification IDs.
+        /// The IDs of the notifications.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

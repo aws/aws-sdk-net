@@ -45,6 +45,7 @@ namespace Amazon.S3.Transfer
         private DateTime? unmodifiedSinceDate;
         private DateTime? modifiedSinceDateUtc;
         private DateTime? unmodifiedSinceDateUtc;
+        private bool disableSlashCorrection = false;
 
         /// <summary>
         /// 	Gets or sets the name of the bucket.
@@ -98,8 +99,13 @@ namespace Amazon.S3.Transfer
 
         /// <summary>
         /// Gets or sets the Amazon S3 directory to download from.  
-				/// This is translated to a key prefix; keys that have this prefix will be
+        /// This is translated to a key prefix; keys that have this prefix will be
         /// downloaded.
+        /// 
+        /// The TransferUtility will automatically add a / to the end when listing objects for 
+        /// to be downloaded. This treats S3Directory field as a virtual S3 directory. In some use
+        /// cases the added / slash can be undesirable. To prevent the TransferUtility from adding 
+        /// the / at the end set the DisableSlashCorrection property to true.
         /// </summary>
         public string S3Directory
         {
@@ -237,6 +243,16 @@ namespace Amazon.S3.Transfer
         {
             get { return this.downloadFilesConcurrently; }
             set { this.downloadFilesConcurrently = value; }
+        }
+
+        /// <summary>
+        /// If this is set to true then the TransferUtility will not ensure the S3Directory property has a trailing / for a virtual S3 directory. 
+        /// The default value is false.
+        /// </summary>
+        public bool DisableSlashCorrection
+        {
+            get { return this.disableSlashCorrection; }
+            set { this.disableSlashCorrection = value; }
         }
 
         /// <summary>

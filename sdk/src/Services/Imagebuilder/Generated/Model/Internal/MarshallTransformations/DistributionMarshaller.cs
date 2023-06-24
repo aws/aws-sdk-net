@@ -34,7 +34,7 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Distribution Marshaller
-    /// </summary>       
+    /// </summary>
     public class DistributionMarshaller : IRequestMarshaller<Distribution, JsonMarshallerContext> 
     {
         /// <summary>
@@ -65,6 +65,22 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
                 marshaller.Marshall(requestObject.ContainerDistributionConfiguration, context);
 
                 context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetFastLaunchConfigurations())
+            {
+                context.Writer.WritePropertyName("fastLaunchConfigurations");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectFastLaunchConfigurationsListValue in requestObject.FastLaunchConfigurations)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = FastLaunchConfigurationMarshaller.Instance;
+                    marshaller.Marshall(requestObjectFastLaunchConfigurationsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
             }
 
             if(requestObject.IsSetLaunchTemplateConfigurations())
@@ -100,11 +116,22 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Region);
             }
 
+            if(requestObject.IsSetS3ExportConfiguration())
+            {
+                context.Writer.WritePropertyName("s3ExportConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = S3ExportConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.S3ExportConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DistributionMarshaller Instance = new DistributionMarshaller();
 
     }

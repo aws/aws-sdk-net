@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Batch.Model
 {
     /// <summary>
-    /// An object representing a container instance host device.
+    /// An object that represents a container instance host device.
     /// 
     ///  <note> 
     /// <para>

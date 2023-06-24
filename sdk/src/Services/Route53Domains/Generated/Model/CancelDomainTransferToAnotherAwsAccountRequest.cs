@@ -30,14 +30,15 @@ namespace Amazon.Route53Domains.Model
 {
     /// <summary>
     /// Container for the parameters to the CancelDomainTransferToAnotherAwsAccount operation.
-    /// Cancels the transfer of a domain from the current AWS account to another AWS account.
-    /// You initiate a transfer between AWS accounts using <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomainToAnotherAwsAccount.html">TransferDomainToAnotherAwsAccount</a>.
+    /// Cancels the transfer of a domain from the current Amazon Web Services account to another
+    /// Amazon Web Services account. You initiate a transfer betweenAmazon Web Services accounts
+    /// using <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomainToAnotherAwsAccount.html">TransferDomainToAnotherAwsAccount</a>.
     /// 
     /// 
     ///  <important> 
     /// <para>
-    /// You must cancel the transfer before the other AWS account accepts the transfer using
-    /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_AcceptDomainTransferFromAnotherAwsAccount.html">AcceptDomainTransferFromAnotherAwsAccount</a>.
+    /// You must cancel the transfer before the other Amazon Web Services account accepts
+    /// the transfer using <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_AcceptDomainTransferFromAnotherAwsAccount.html">AcceptDomainTransferFromAnotherAwsAccount</a>.
     /// </para>
     ///  </important> 
     /// <para>
@@ -55,7 +56,8 @@ namespace Amazon.Route53Domains.Model
         /// <summary>
         /// Gets and sets the property DomainName. 
         /// <para>
-        /// The name of the domain for which you want to cancel the transfer to another AWS account.
+        /// The name of the domain for which you want to cancel the transfer to another Amazon
+        /// Web Services account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=255)]

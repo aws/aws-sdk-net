@@ -43,17 +43,45 @@ namespace Amazon.Textract
         /// </summary>
         public static readonly BlockType LINE = new BlockType("LINE");
         /// <summary>
+        /// Constant MERGED_CELL for BlockType
+        /// </summary>
+        public static readonly BlockType MERGED_CELL = new BlockType("MERGED_CELL");
+        /// <summary>
         /// Constant PAGE for BlockType
         /// </summary>
         public static readonly BlockType PAGE = new BlockType("PAGE");
+        /// <summary>
+        /// Constant QUERY for BlockType
+        /// </summary>
+        public static readonly BlockType QUERY = new BlockType("QUERY");
+        /// <summary>
+        /// Constant QUERY_RESULT for BlockType
+        /// </summary>
+        public static readonly BlockType QUERY_RESULT = new BlockType("QUERY_RESULT");
         /// <summary>
         /// Constant SELECTION_ELEMENT for BlockType
         /// </summary>
         public static readonly BlockType SELECTION_ELEMENT = new BlockType("SELECTION_ELEMENT");
         /// <summary>
+        /// Constant SIGNATURE for BlockType
+        /// </summary>
+        public static readonly BlockType SIGNATURE = new BlockType("SIGNATURE");
+        /// <summary>
         /// Constant TABLE for BlockType
         /// </summary>
         public static readonly BlockType TABLE = new BlockType("TABLE");
+        /// <summary>
+        /// Constant TABLE_FOOTER for BlockType
+        /// </summary>
+        public static readonly BlockType TABLE_FOOTER = new BlockType("TABLE_FOOTER");
+        /// <summary>
+        /// Constant TABLE_TITLE for BlockType
+        /// </summary>
+        public static readonly BlockType TABLE_TITLE = new BlockType("TABLE_TITLE");
+        /// <summary>
+        /// Constant TITLE for BlockType
+        /// </summary>
+        public static readonly BlockType TITLE = new BlockType("TITLE");
         /// <summary>
         /// Constant WORD for BlockType
         /// </summary>
@@ -151,9 +179,37 @@ namespace Amazon.Textract
     {
 
         /// <summary>
+        /// Constant COLUMN_HEADER for EntityType
+        /// </summary>
+        public static readonly EntityType COLUMN_HEADER = new EntityType("COLUMN_HEADER");
+        /// <summary>
         /// Constant KEY for EntityType
         /// </summary>
         public static readonly EntityType KEY = new EntityType("KEY");
+        /// <summary>
+        /// Constant SEMI_STRUCTURED_TABLE for EntityType
+        /// </summary>
+        public static readonly EntityType SEMI_STRUCTURED_TABLE = new EntityType("SEMI_STRUCTURED_TABLE");
+        /// <summary>
+        /// Constant STRUCTURED_TABLE for EntityType
+        /// </summary>
+        public static readonly EntityType STRUCTURED_TABLE = new EntityType("STRUCTURED_TABLE");
+        /// <summary>
+        /// Constant TABLE_FOOTER for EntityType
+        /// </summary>
+        public static readonly EntityType TABLE_FOOTER = new EntityType("TABLE_FOOTER");
+        /// <summary>
+        /// Constant TABLE_SECTION_TITLE for EntityType
+        /// </summary>
+        public static readonly EntityType TABLE_SECTION_TITLE = new EntityType("TABLE_SECTION_TITLE");
+        /// <summary>
+        /// Constant TABLE_SUMMARY for EntityType
+        /// </summary>
+        public static readonly EntityType TABLE_SUMMARY = new EntityType("TABLE_SUMMARY");
+        /// <summary>
+        /// Constant TABLE_TITLE for EntityType
+        /// </summary>
+        public static readonly EntityType TABLE_TITLE = new EntityType("TABLE_TITLE");
         /// <summary>
         /// Constant VALUE for EntityType
         /// </summary>
@@ -204,6 +260,14 @@ namespace Amazon.Textract
         /// Constant FORMS for FeatureType
         /// </summary>
         public static readonly FeatureType FORMS = new FeatureType("FORMS");
+        /// <summary>
+        /// Constant QUERIES for FeatureType
+        /// </summary>
+        public static readonly FeatureType QUERIES = new FeatureType("QUERIES");
+        /// <summary>
+        /// Constant SIGNATURES for FeatureType
+        /// </summary>
+        public static readonly FeatureType SIGNATURES = new FeatureType("SIGNATURES");
         /// <summary>
         /// Constant TABLES for FeatureType
         /// </summary>
@@ -309,6 +373,10 @@ namespace Amazon.Textract
     {
 
         /// <summary>
+        /// Constant ANSWER for RelationshipType
+        /// </summary>
+        public static readonly RelationshipType ANSWER = new RelationshipType("ANSWER");
+        /// <summary>
         /// Constant CHILD for RelationshipType
         /// </summary>
         public static readonly RelationshipType CHILD = new RelationshipType("CHILD");
@@ -316,6 +384,26 @@ namespace Amazon.Textract
         /// Constant COMPLEX_FEATURES for RelationshipType
         /// </summary>
         public static readonly RelationshipType COMPLEX_FEATURES = new RelationshipType("COMPLEX_FEATURES");
+        /// <summary>
+        /// Constant MERGED_CELL for RelationshipType
+        /// </summary>
+        public static readonly RelationshipType MERGED_CELL = new RelationshipType("MERGED_CELL");
+        /// <summary>
+        /// Constant TABLE for RelationshipType
+        /// </summary>
+        public static readonly RelationshipType TABLE = new RelationshipType("TABLE");
+        /// <summary>
+        /// Constant TABLE_FOOTER for RelationshipType
+        /// </summary>
+        public static readonly RelationshipType TABLE_FOOTER = new RelationshipType("TABLE_FOOTER");
+        /// <summary>
+        /// Constant TABLE_TITLE for RelationshipType
+        /// </summary>
+        public static readonly RelationshipType TABLE_TITLE = new RelationshipType("TABLE_TITLE");
+        /// <summary>
+        /// Constant TITLE for RelationshipType
+        /// </summary>
+        public static readonly RelationshipType TITLE = new RelationshipType("TITLE");
         /// <summary>
         /// Constant VALUE for RelationshipType
         /// </summary>

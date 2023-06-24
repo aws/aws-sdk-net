@@ -98,6 +98,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DirectoryService.Model.CreateConditionalForwarderRequest.RemoteDomainName</property>
+    <max>1024</max>
     <pattern>^([a-zA-Z0-9]+[\\.-])+([a-zA-Z0-9])+[.]?$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -174,13 +175,13 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DirectoryService.Model.CreateTrustRequest.RemoteDomainName</property>
+    <max>1024</max>
     <pattern>^([a-zA-Z0-9]+[\\.-])+([a-zA-Z0-9])+[.]?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DirectoryService.Model.CreateTrustRequest.TrustPassword</property>
     <min>1</min>
     <max>128</max>
-    <pattern>(.|\s)*\S(.|\s)*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DirectoryService.Model.CreateTrustResponse.TrustId</property>
@@ -192,6 +193,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DirectoryService.Model.DeleteConditionalForwarderRequest.RemoteDomainName</property>
+    <max>1024</max>
     <pattern>^([a-zA-Z0-9]+[\\.-])+([a-zA-Z0-9])+[.]?$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -296,6 +298,14 @@
     <max>32</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DirectoryService.Model.DescribeSettingsRequest.DirectoryId</property>
+    <pattern>^d-[0-9a-f]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.DescribeSettingsResponse.DirectoryId</property>
+    <pattern>^d-[0-9a-f]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DirectoryService.Model.DescribeSharedDirectoriesRequest.Limit</property>
     <min>0</min>
   </property-value-rule>
@@ -318,6 +328,15 @@
   <property-value-rule>
     <property>Amazon.DirectoryService.Model.DescribeTrustsRequest.Limit</property>
     <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.DescribeUpdateDirectoryRequest.DirectoryId</property>
+    <pattern>^d-[0-9a-f]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.DescribeUpdateDirectoryRequest.RegionName</property>
+    <min>8</min>
+    <max>32</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DirectoryService.Model.DisableClientAuthenticationRequest.DirectoryId</property>
@@ -523,7 +542,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DirectoryService.Model.UpdateConditionalForwarderRequest.RemoteDomainName</property>
+    <max>1024</max>
     <pattern>^([a-zA-Z0-9]+[\\.-])+([a-zA-Z0-9])+[.]?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.UpdateDirectorySetupRequest.DirectoryId</property>
+    <pattern>^d-[0-9a-f]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DirectoryService.Model.UpdateNumberOfDomainControllersRequest.DesiredNumber</property>
@@ -535,6 +559,14 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DirectoryService.Model.UpdateRadiusRequest.DirectoryId</property>
+    <pattern>^d-[0-9a-f]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.UpdateSettingsRequest.DirectoryId</property>
+    <pattern>^d-[0-9a-f]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.UpdateSettingsResponse.DirectoryId</property>
     <pattern>^d-[0-9a-f]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -616,6 +648,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DirectoryService.Model.ConditionalForwarder.RemoteDomainName</property>
+    <max>1024</max>
     <pattern>^([a-zA-Z0-9]+[\\.-])+([a-zA-Z0-9])+[.]?$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -687,6 +720,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DirectoryService.Model.DirectoryDoesNotExistException.RequestId</property>
+    <pattern>^([A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.DirectoryInDesiredStateException.RequestId</property>
     <pattern>^([A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12})$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -778,6 +815,10 @@
     <min>1</min>
     <max>256</max>
     <pattern>[a-zA-Z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.IncompatibleSettingsException.RequestId</property>
+    <pattern>^([A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DirectoryService.Model.InsufficientPermissionsException.RequestId</property>
@@ -931,6 +972,36 @@
     <pattern>^([A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12})$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DirectoryService.Model.Setting.Name</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[a-zA-Z0-9-/. _]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.Setting.Value</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[a-zA-Z0-9_]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.SettingEntry.AppliedValue</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[a-zA-Z0-9_]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.SettingEntry.Name</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[a-zA-Z0-9-/. _]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.SettingEntry.RequestedValue</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[a-zA-Z0-9_]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DirectoryService.Model.SharedDirectory.OwnerAccountId</property>
     <pattern>^(\d{12})$</pattern>
   </property-value-rule>
@@ -1007,6 +1078,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DirectoryService.Model.Trust.RemoteDomainName</property>
+    <max>1024</max>
     <pattern>^([a-zA-Z0-9]+[\\.-])+([a-zA-Z0-9])+[.]?$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -1021,6 +1093,15 @@
   <property-value-rule>
     <property>Amazon.DirectoryService.Model.UnsupportedOperationException.RequestId</property>
     <pattern>^([A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.UnsupportedSettingsException.RequestId</property>
+    <pattern>^([A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.UpdateInfoEntry.Region</property>
+    <min>8</min>
+    <max>32</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DirectoryService.Model.UserDoesNotExistException.RequestId</property>

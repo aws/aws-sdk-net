@@ -34,7 +34,7 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SqlRunConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class SqlRunConfigurationMarshaller : IRequestMarshaller<SqlRunConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SqlRunConfigurationMarshaller Instance = new SqlRunConfigurationMarshaller();
 
     }

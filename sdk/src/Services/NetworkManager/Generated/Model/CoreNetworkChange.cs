@@ -35,6 +35,7 @@ namespace Amazon.NetworkManager.Model
     {
         private ChangeAction _action;
         private string _identifier;
+        private string _identifierPath;
         private CoreNetworkChangeValues _newValues;
         private CoreNetworkChangeValues _previousValues;
         private ChangeType _type;
@@ -74,6 +75,26 @@ namespace Amazon.NetworkManager.Model
         internal bool IsSetIdentifier()
         {
             return this._identifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IdentifierPath. 
+        /// <para>
+        /// Uniquely identifies the path for a change within the changeset. For example, the <code>IdentifierPath</code>
+        /// for a core network segment change might be <code>"CORE_NETWORK_SEGMENT/us-east-1/devsegment"</code>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=256)]
+        public string IdentifierPath
+        {
+            get { return this._identifierPath; }
+            set { this._identifierPath = value; }
+        }
+
+        // Check to see if IdentifierPath property is set
+        internal bool IsSetIdentifierPath()
+        {
+            return this._identifierPath != null;
         }
 
         /// <summary>

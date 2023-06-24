@@ -90,7 +90,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>opt-in-status</code> - The opt-in status (<code>opted-in</code>, and <code>not-opted-in</code>
+        ///  <code>opt-in-status</code> - The opt-in status (<code>opted-in</code> | <code>not-opted-in</code>
         /// | <code>opt-in-not-required</code>).
         /// </para>
         ///  </li> <li> 
@@ -110,8 +110,7 @@ namespace Amazon.EC2.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>state</code> - The state of the Availability Zone, the Local Zone, or the Wavelength
-        /// Zone (<code>available</code> | <code>information</code> | <code>impaired</code> |
-        /// <code>unavailable</code>).
+        /// Zone (<code>available</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -121,17 +120,14 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>zone-type</code> - The type of zone, for example, <code>local-zone</code>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         ///  <code>zone-name</code> - The name of the Availability Zone (for example, <code>us-east-1a</code>),
         /// the Local Zone (for example, <code>us-west-2-lax-1a</code>), or the Wavelength Zone
         /// (for example, <code>us-east-1-wl1-bos-wlz-1</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>zone-type</code> - The type of zone, for example, <code>local-zone</code>.
+        ///  <code>zone-type</code> - The type of zone (<code>availability-zone</code> | <code>local-zone</code>
+        /// | <code>wavelength-zone</code>).
         /// </para>
         ///  </li> </ul>
         /// </summary>

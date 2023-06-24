@@ -30,24 +30,22 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the RegisterGameServer operation.
-    /// <b>This operation is used with the GameLift FleetIQ solution and game server groups.</b>
-    /// 
+    /// <b>This operation is used with the Amazon GameLift FleetIQ solution and game server
+    /// groups.</b> 
     /// 
     ///  
     /// <para>
-    /// Creates a new game server resource and notifies GameLift FleetIQ that the game server
-    /// is ready to host gameplay and players. This operation is called by a game server process
-    /// that is running on an instance in a game server group. Registering game servers enables
-    /// GameLift FleetIQ to track available game servers and enables game clients and services
-    /// to claim a game server for a new game session. 
+    /// Creates a new game server resource and notifies Amazon GameLift FleetIQ that the game
+    /// server is ready to host gameplay and players. This operation is called by a game server
+    /// process that is running on an instance in a game server group. Registering game servers
+    /// enables Amazon GameLift FleetIQ to track available game servers and enables game clients
+    /// and services to claim a game server for a new game session. 
     /// </para>
     ///  
     /// <para>
     /// To register a game server, identify the game server group and instance where the game
     /// server is running, and provide a unique identifier for the game server. You can also
-    /// include connection and game server data. When a game client or service requests a
-    /// game server by calling <a>ClaimGameServer</a>, this information is returned in the
-    /// response.
+    /// include connection and game server data.
     /// </para>
     ///  
     /// <para>
@@ -62,18 +60,8 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  
     /// <para>
-    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-intro.html">GameLift
-    /// FleetIQ Guide</a> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <b>Related actions</b> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <a>RegisterGameServer</a> | <a>ListGameServers</a> | <a>ClaimGameServer</a> | <a>DescribeGameServer</a>
-    /// | <a>UpdateGameServer</a> | <a>DeregisterGameServer</a> | <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/reference-awssdk-fleetiq.html">All
-    /// APIs by task</a> 
+    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-intro.html">Amazon
+    /// GameLift FleetIQ Guide</a> 
     /// </para>
     /// </summary>
     public partial class RegisterGameServerRequest : AmazonGameLiftRequest
@@ -108,8 +96,8 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property GameServerData. 
         /// <para>
         /// A set of custom game server properties, formatted as a single string value. This data
-        /// is passed to a game client or service when it requests information on game servers
-        /// using <a>ListGameServers</a> or <a>ClaimGameServer</a>. 
+        /// is passed to a game client or service when it requests information on game servers.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -128,8 +116,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property GameServerGroupName. 
         /// <para>
-        /// A unique identifier for the game server group where the game server is running. Use
-        /// either the <a>GameServerGroup</a> name or ARN value.
+        /// A unique identifier for the game server group where the game server is running.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
@@ -150,7 +137,7 @@ namespace Amazon.GameLift.Model
         /// <para>
         /// A custom string that uniquely identifies the game server to register. Game server
         /// IDs are developer-defined and must be unique across all game server groups in your
-        /// AWS account.
+        /// Amazon Web Services account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=3, Max=128)]

@@ -1,5 +1,6 @@
 {
   "active": true,
   "synopsis": "AWS Snow Family customers can remotely monitor and operate their connected AWS Snowcone devices.",
-  "generate-client-constructors": true
+  "generate-client-constructors": true,
+  "legacy-service-id": "Snow Device Management"
 }

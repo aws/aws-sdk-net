@@ -30,14 +30,14 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the StartOutboundVoiceContact operation.
-    /// Places an outbound call to a contact, and then initiates the contact flow. It performs
-    /// the actions in the contact flow that's specified (in <code>ContactFlowId</code>).
+    /// Places an outbound call to a contact, and then initiates the flow. It performs the
+    /// actions in the flow that's specified (in <code>ContactFlowId</code>).
     /// 
     ///  
     /// <para>
     /// Agents do not initiate the outbound API, which means that they do not dial the contact.
-    /// If the contact flow places an outbound call to a contact, and then puts the contact
-    /// in queue, the call is then routed to the agent, like any other inbound case.
+    /// If the flow places an outbound call to a contact, and then puts the contact in queue,
+    /// the call is then routed to the agent, like any other inbound case.
     /// </para>
     ///  
     /// <para>
@@ -54,9 +54,9 @@ namespace Amazon.Connect.Model
     ///  </note> <note> 
     /// <para>
     /// Campaign calls are not allowed by default. Before you can make a call with <code>TrafficType</code>
-    /// = <code>CAMPAIGN</code>, you must submit a service quota increase request. For more
-    /// information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon
-    /// Connect Service Quotas</a> in the <i>Amazon Connect Administrator Guide</i>. 
+    /// = <code>CAMPAIGN</code>, you must submit a service quota increase request to the quota
+    /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#outbound-communications-quotas">Amazon
+    /// Connect campaigns</a>. 
     /// </para>
     ///  </note>
     /// </summary>
@@ -95,8 +95,7 @@ namespace Amazon.Connect.Model
         /// Gets and sets the property Attributes. 
         /// <para>
         /// A custom key-value pair using an attribute map. The attributes are standard Amazon
-        /// Connect attributes, and can be accessed in contact flows just like any other contact
-        /// attributes.
+        /// Connect attributes, and can be accessed in flows just like any other contact attributes.
         /// </para>
         ///  
         /// <para>
@@ -139,8 +138,10 @@ namespace Amazon.Connect.Model
         /// Gets and sets the property ClientToken. 
         /// <para>
         /// A unique, case-sensitive identifier that you provide to ensure the idempotency of
-        /// the request. The token is valid for 7 days after creation. If a contact is already
-        /// started, the contact ID is returned. 
+        /// the request. If not provided, the Amazon Web Services SDK populates this field. For
+        /// more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
+        /// retries safe with idempotent APIs</a>. The token is valid for 7 days after creation.
+        /// If a contact is already started, the contact ID is returned. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=500)]
@@ -159,11 +160,11 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property ContactFlowId. 
         /// <para>
-        /// The identifier of the contact flow for the outbound call. To see the ContactFlowId
-        /// in the Amazon Connect console user interface, on the navigation menu go to <b>Routing</b>,
-        /// <b>Contact Flows</b>. Choose the contact flow. On the contact flow page, under the
-        /// name of the contact flow, choose <b>Show additional flow information</b>. The ContactFlowId
-        /// is the last part of the ARN, shown here in bold: 
+        /// The identifier of the flow for the outbound call. To see the ContactFlowId in the
+        /// Amazon Connect console user interface, on the navigation menu go to <b>Routing</b>,
+        /// <b>Contact Flows</b>. Choose the flow. On the flow page, under the name of the flow,
+        /// choose <b>Show additional flow information</b>. The ContactFlowId is the last part
+        /// of the ARN, shown here in bold: 
         /// </para>
         ///  
         /// <para>
@@ -206,8 +207,8 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The identifier of the Amazon Connect instance. You can find the instanceId in the
-        /// ARN of the instance.
+        /// The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+        /// the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
@@ -228,8 +229,8 @@ namespace Amazon.Connect.Model
         /// <para>
         /// The queue for the call. If you specify a queue, the phone displayed for caller ID
         /// is the phone number specified in the queue. If you do not specify a queue, the queue
-        /// defined in the contact flow is used. If you do not specify a queue, you must specify
-        /// a source phone number.
+        /// defined in the flow is used. If you do not specify a queue, you must specify a source
+        /// phone number.
         /// </para>
         /// </summary>
         public string QueueId

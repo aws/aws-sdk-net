@@ -36,7 +36,7 @@ namespace Amazon.Rekognition.Model
     /// 
     ///  
     /// <para>
-    /// For more information, see Recognizing Celebrities in an Image in the Amazon Rekognition
+    /// For more information, see Getting information about a celebrity in the Amazon Rekognition
     /// Developer Guide.
     /// </para>
     ///  

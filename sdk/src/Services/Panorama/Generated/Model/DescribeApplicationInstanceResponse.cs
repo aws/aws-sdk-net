@@ -43,6 +43,7 @@ namespace Amazon.Panorama.Model
         private ApplicationInstanceHealthStatus _healthStatus;
         private DateTime? _lastUpdatedTime;
         private string _name;
+        private List<ReportedRuntimeContextState> _runtimeContextStates = new List<ReportedRuntimeContextState>();
         private string _runtimeRoleArn;
         private ApplicationInstanceStatus _status;
         private string _statusDescription;
@@ -233,6 +234,24 @@ namespace Amazon.Panorama.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RuntimeContextStates. 
+        /// <para>
+        /// The application instance's state.
+        /// </para>
+        /// </summary>
+        public List<ReportedRuntimeContextState> RuntimeContextStates
+        {
+            get { return this._runtimeContextStates; }
+            set { this._runtimeContextStates = value; }
+        }
+
+        // Check to see if RuntimeContextStates property is set
+        internal bool IsSetRuntimeContextStates()
+        {
+            return this._runtimeContextStates != null && this._runtimeContextStates.Count > 0; 
         }
 
         /// <summary>

@@ -83,7 +83,7 @@ namespace Amazon.LookoutMetrics.Model
         /// bucket.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=256)]
+        [AWSProperty(Max=256)]
         public string RoleArn
         {
             get { return this._roleArn; }

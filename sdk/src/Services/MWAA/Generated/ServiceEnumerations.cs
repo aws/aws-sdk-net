@@ -43,6 +43,10 @@ namespace Amazon.MWAA
         /// </summary>
         public static readonly EnvironmentStatus CREATING = new EnvironmentStatus("CREATING");
         /// <summary>
+        /// Constant CREATING_SNAPSHOT for EnvironmentStatus
+        /// </summary>
+        public static readonly EnvironmentStatus CREATING_SNAPSHOT = new EnvironmentStatus("CREATING_SNAPSHOT");
+        /// <summary>
         /// Constant DELETED for EnvironmentStatus
         /// </summary>
         public static readonly EnvironmentStatus DELETED = new EnvironmentStatus("DELETED");
@@ -50,6 +54,10 @@ namespace Amazon.MWAA
         /// Constant DELETING for EnvironmentStatus
         /// </summary>
         public static readonly EnvironmentStatus DELETING = new EnvironmentStatus("DELETING");
+        /// <summary>
+        /// Constant ROLLING_BACK for EnvironmentStatus
+        /// </summary>
+        public static readonly EnvironmentStatus ROLLING_BACK = new EnvironmentStatus("ROLLING_BACK");
         /// <summary>
         /// Constant UNAVAILABLE for EnvironmentStatus
         /// </summary>

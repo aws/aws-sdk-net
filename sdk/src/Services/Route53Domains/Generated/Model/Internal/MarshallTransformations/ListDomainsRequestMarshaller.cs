@@ -58,7 +58,7 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
             string target = "Route53Domains_v20140515.ListDomains";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2014-05-15";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2014-05-15";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -67,6 +67,22 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetFilterConditions())
+                {
+                    context.Writer.WritePropertyName("FilterConditions");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestFilterConditionsListValue in publicRequest.FilterConditions)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = FilterConditionMarshaller.Instance;
+                        marshaller.Marshall(publicRequestFilterConditionsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetMarker())
                 {
                     context.Writer.WritePropertyName("Marker");
@@ -79,7 +95,17 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.MaxItems);
                 }
 
-        
+                if(publicRequest.IsSetSortCondition())
+                {
+                    context.Writer.WritePropertyName("SortCondition");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = SortConditionMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.SortCondition, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

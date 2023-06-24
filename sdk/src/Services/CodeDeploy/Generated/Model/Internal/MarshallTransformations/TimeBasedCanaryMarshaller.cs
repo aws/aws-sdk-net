@@ -34,7 +34,7 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// TimeBasedCanary Marshaller
-    /// </summary>       
+    /// </summary>
     public class TimeBasedCanaryMarshaller : IRequestMarshaller<TimeBasedCanary, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static TimeBasedCanaryMarshaller Instance = new TimeBasedCanaryMarshaller();
 
     }

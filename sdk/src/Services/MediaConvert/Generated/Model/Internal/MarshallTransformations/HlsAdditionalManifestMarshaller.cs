@@ -34,7 +34,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// HlsAdditionalManifest Marshaller
-    /// </summary>       
+    /// </summary>
     public class HlsAdditionalManifestMarshaller : IRequestMarshaller<HlsAdditionalManifest, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static HlsAdditionalManifestMarshaller Instance = new HlsAdditionalManifestMarshaller();
 
     }

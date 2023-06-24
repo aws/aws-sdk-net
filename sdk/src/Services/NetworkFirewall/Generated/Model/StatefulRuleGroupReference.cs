@@ -34,8 +34,28 @@ namespace Amazon.NetworkFirewall.Model
     /// </summary>
     public partial class StatefulRuleGroupReference
     {
+        private StatefulRuleGroupOverride _override;
         private int? _priority;
         private string _resourceArn;
+
+        /// <summary>
+        /// Gets and sets the property Override. 
+        /// <para>
+        /// The action that allows the policy owner to override the behavior of the rule group
+        /// within a policy.
+        /// </para>
+        /// </summary>
+        public StatefulRuleGroupOverride Override
+        {
+            get { return this._override; }
+            set { this._override = value; }
+        }
+
+        // Check to see if Override property is set
+        internal bool IsSetOverride()
+        {
+            return this._override != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Priority. 

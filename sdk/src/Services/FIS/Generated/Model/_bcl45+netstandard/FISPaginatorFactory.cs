@@ -58,5 +58,13 @@ namespace Amazon.FIS.Model
         {
             return new ListExperimentTemplatesPaginator(this.client, request);
         }
+
+        /// <summary>
+        /// Paginator for ListTargetResourceTypes operation
+        ///</summary>
+        public IListTargetResourceTypesPaginator ListTargetResourceTypes(ListTargetResourceTypesRequest request) 
+        {
+            return new ListTargetResourceTypesPaginator(this.client, request);
+        }
     }
 }

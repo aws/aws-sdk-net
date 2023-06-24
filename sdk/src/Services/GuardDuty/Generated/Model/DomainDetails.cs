@@ -38,7 +38,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property Domain. 
         /// <para>
-        /// The domain information for the AWS API call.
+        /// The domain information for the Amazon Web Services API call.
         /// </para>
         /// </summary>
         public string Domain

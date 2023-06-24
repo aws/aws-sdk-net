@@ -40,10 +40,10 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// Gets and sets the property SecretCode. 
         /// <para>
         /// A unique generated shared secret code that is used in the TOTP algorithm to generate
-        /// a one time code.
+        /// a one-time code.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=16)]
+        [AWSProperty(Sensitive=true, Min=16)]
         public string SecretCode
         {
             get { return this._secretCode; }
@@ -59,7 +59,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Session. 
         /// <para>
-        /// The session which should be passed both ways in challenge-response calls to the service.
+        /// The session that should be passed both ways in challenge-response calls to the service.
         /// This allows authentication of the user as part of the MFA setup process.
         /// </para>
         /// </summary>

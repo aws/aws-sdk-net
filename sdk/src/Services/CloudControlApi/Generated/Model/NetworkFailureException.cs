@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudControlApi.Model
 {
     /// <summary>
-    /// The resource handler has returned that the request could not be completed due to networking
+    /// The resource handler has returned that the request couldn't be completed due to networking
     /// issues, such as a failure to receive a response from the server.
     /// </summary>
     #if !NETSTANDARD

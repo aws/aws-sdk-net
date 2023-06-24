@@ -30,7 +30,7 @@ namespace Amazon.APIGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the GetRestApi operation.
-    /// Lists the <a>RestApi</a> resource in the collection.
+    /// Lists the RestApi resource in the collection.
     /// </summary>
     public partial class GetRestApiRequest : AmazonAPIGatewayRequest
     {
@@ -39,7 +39,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property RestApiId. 
         /// <para>
-        /// [Required] The string identifier of the associated <a>RestApi</a>.
+        /// The string identifier of the associated RestApi.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

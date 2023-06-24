@@ -58,7 +58,7 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
             string target = "PhotonAdminProxyService.UpdateDirectoryConfig";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-12-01";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-12-01";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -67,6 +67,17 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetCertificateBasedAuthProperties())
+                {
+                    context.Writer.WritePropertyName("CertificateBasedAuthProperties");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = CertificateBasedAuthPropertiesMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.CertificateBasedAuthProperties, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetDirectoryName())
                 {
                     context.Writer.WritePropertyName("DirectoryName");
@@ -95,7 +106,6 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

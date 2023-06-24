@@ -68,11 +68,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// Gets and sets the property HealthCheckIntervalSeconds. 
         /// <para>
         /// The approximate amount of time, in seconds, between health checks of an individual
-        /// target. For TCP health checks, the supported values are 10 or 30 seconds.
-        /// </para>
-        ///  
-        /// <para>
-        /// With Network Load Balancers, you can't modify this setting.
+        /// target.
         /// </para>
         /// </summary>
         [AWSProperty(Min=5, Max=300)]
@@ -144,10 +140,6 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// only if the protocol of the target group is TCP, TLS, UDP, or TCP_UDP. The GENEVE,
         /// TLS, UDP, and TCP_UDP protocols are not supported for health checks.
         /// </para>
-        ///  
-        /// <para>
-        /// With Network Load Balancers, you can't modify this setting.
-        /// </para>
         /// </summary>
         public ProtocolEnum HealthCheckProtocol
         {
@@ -166,10 +158,6 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <para>
         /// [HTTP/HTTPS health checks] The amount of time, in seconds, during which no response
         /// means a failed health check.
-        /// </para>
-        ///  
-        /// <para>
-        /// With Network Load Balancers, you can't modify this setting.
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=120)]
@@ -209,11 +197,9 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// Gets and sets the property Matcher. 
         /// <para>
         /// [HTTP/HTTPS health checks] The HTTP or gRPC codes to use when checking for a successful
-        /// response from a target.
-        /// </para>
-        ///  
-        /// <para>
-        /// With Network Load Balancers, you can't modify this setting.
+        /// response from a target. For target groups with a protocol of TCP, TCP_UDP, UDP or
+        /// TLS the range is 200-599. For target groups with a protocol of HTTP or HTTPS, the
+        /// range is 200-499. For target groups with a protocol of GENEVE, the range is 200-399.
         /// </para>
         /// </summary>
         public Matcher Matcher
@@ -251,8 +237,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// Gets and sets the property UnhealthyThresholdCount. 
         /// <para>
         /// The number of consecutive health check failures required before considering the target
-        /// unhealthy. For target groups with a protocol of TCP or TLS, this value must be the
-        /// same as the healthy threshold count.
+        /// unhealthy.
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=10)]

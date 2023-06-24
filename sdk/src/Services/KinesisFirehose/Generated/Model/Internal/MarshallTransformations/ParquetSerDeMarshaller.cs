@@ -34,7 +34,7 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ParquetSerDe Marshaller
-    /// </summary>       
+    /// </summary>
     public class ParquetSerDeMarshaller : IRequestMarshaller<ParquetSerDe, JsonMarshallerContext> 
     {
         /// <summary>
@@ -85,7 +85,7 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ParquetSerDeMarshaller Instance = new ParquetSerDeMarshaller();
 
     }

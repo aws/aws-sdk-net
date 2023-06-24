@@ -30,7 +30,8 @@ namespace Amazon.MWAA.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateWebLoginToken operation.
-    /// Create a JWT token to be used to login to Airflow Web UI with claims based Authentication.
+    /// Creates a web login token for the Airflow Web UI. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/call-mwaa-apis-web.html">Creating
+    /// an Apache Airflow web login token</a>.
     /// </summary>
     public partial class CreateWebLoginTokenRequest : AmazonMWAARequest
     {
@@ -39,7 +40,7 @@ namespace Amazon.MWAA.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Create an Airflow Web UI login token request for a MWAA environment.
+        /// The name of the Amazon MWAA environment. For example, <code>MyMWAAEnvironment</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=80)]

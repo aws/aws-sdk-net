@@ -41,7 +41,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property InstanceIds. 
         /// <para>
-        /// The IDs of the instances. If you omit this parameter, all Auto Scaling instances are
+        /// The IDs of the instances. If you omit this property, all Auto Scaling instances are
         /// described. If you specify an ID that does not exist, it is ignored with no error.
         /// </para>
         ///  

@@ -237,6 +237,11 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Panorama.Model.DescribeDeviceResponse.LatestAlternateSoftware</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Panorama.Model.DescribeDeviceResponse.LatestSoftware</property>
     <min>1</min>
     <max>255</max>
@@ -725,6 +730,16 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Panorama.Model.SignalApplicationInstanceNodeInstancesRequest.ApplicationInstanceId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Panorama.Model.SignalApplicationInstanceNodeInstancesResponse.ApplicationInstanceId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Panorama.Model.TagResourceRequest.ResourceArn</property>
     <min>1</min>
     <max>2048</max>
@@ -749,6 +764,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Panorama.Model.UpdateDeviceMetadataResponse.DeviceId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Panorama.Model.AlternateSoftwareMetadata.Version</property>
     <min>1</min>
     <max>255</max>
   </property-value-rule>
@@ -787,6 +807,17 @@
     <property>Amazon.Panorama.Model.ApplicationInstance.StatusDescription</property>
     <min>1</min>
     <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Panorama.Model.Device.CurrentSoftware</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Panorama.Model.Device.Description</property>
+    <min>0</min>
+    <max>255</max>
+    <pattern>^.*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Panorama.Model.Device.DeviceId</property>
@@ -833,6 +864,12 @@
     <property>Amazon.Panorama.Model.Job.JobId</property>
     <min>1</min>
     <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Panorama.Model.LatestDeviceJob.ImageVersion</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Panorama.Model.ManifestOverridesPayload.PayloadData</property>
@@ -964,6 +1001,22 @@
     <max>50</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Panorama.Model.NodeSignal.NodeInstanceId</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Panorama.Model.NtpStatus.IpAddress</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d))(:(6553[0-5]|655[0-2]\d|65[0-4]\d{2}|6[0-4]\d{3}|[1-5]\d{4}|[1-9]\d{0,3}))?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Panorama.Model.NtpStatus.NtpServerName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Panorama.Model.OTAJobConfig.ImageVersion</property>
     <min>1</min>
     <max>255</max>
@@ -1045,6 +1098,12 @@
     <min>1</min>
     <max>255</max>
     <pattern>^([0-9]+)\.([0-9]+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Panorama.Model.ReportedRuntimeContextState.RuntimeContextName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Panorama.Model.S3Location.BucketName</property>

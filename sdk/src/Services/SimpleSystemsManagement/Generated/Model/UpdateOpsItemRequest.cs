@@ -51,6 +51,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         private List<OpsItemNotification> _notifications = new List<OpsItemNotification>();
         private Dictionary<string, OpsItemDataValue> _operationalData = new Dictionary<string, OpsItemDataValue>();
         private List<string> _operationalDataToDelete = new List<string>();
+        private string _opsItemArn;
         private string _opsItemId;
         private DateTime? _plannedEndTime;
         private DateTime? _plannedStartTime;
@@ -220,6 +221,25 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetOperationalDataToDelete()
         {
             return this._operationalDataToDelete != null && this._operationalDataToDelete.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property OpsItemArn. 
+        /// <para>
+        /// The OpsItem Amazon Resource Name (ARN).
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string OpsItemArn
+        {
+            get { return this._opsItemArn; }
+            set { this._opsItemArn = value; }
+        }
+
+        // Check to see if OpsItemArn property is set
+        internal bool IsSetOpsItemArn()
+        {
+            return this._opsItemArn != null;
         }
 
         /// <summary>

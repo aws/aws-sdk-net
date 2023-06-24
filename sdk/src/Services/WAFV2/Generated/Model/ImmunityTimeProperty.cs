@@ -29,8 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WAFV2.Model
 {
     /// <summary>
-    /// Determines how long a <code>CAPTCHA</code> token remains valid after the client successfully
-    /// solves a <code>CAPTCHA</code> puzzle.
+    /// Used for CAPTCHA and challenge token settings. Determines how long a <code>CAPTCHA</code>
+    /// or challenge timestamp remains valid after WAF updates it for a successful <code>CAPTCHA</code>
+    /// or challenge response.
     /// </summary>
     public partial class ImmunityTimeProperty
     {
@@ -39,8 +40,12 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property ImmunityTime. 
         /// <para>
-        /// The amount of time, in seconds, that a <code>CAPTCHA</code> token is valid. The default
-        /// setting is 300.
+        /// The amount of time, in seconds, that a <code>CAPTCHA</code> or challenge timestamp
+        /// is considered valid by WAF. The default setting is 300. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For the Challenge action, the minimum setting is 300. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=60, Max=259200)]

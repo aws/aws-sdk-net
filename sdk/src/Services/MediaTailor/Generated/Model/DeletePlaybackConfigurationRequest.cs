@@ -30,7 +30,9 @@ namespace Amazon.MediaTailor.Model
 {
     /// <summary>
     /// Container for the parameters to the DeletePlaybackConfiguration operation.
-    /// Deletes the playback configuration for the specified name.
+    /// Deletes a playback configuration. For information about MediaTailor configurations,
+    /// see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/configurations.html">Working
+    /// with configurations in AWS Elemental MediaTailor</a>.
     /// </summary>
     public partial class DeletePlaybackConfigurationRequest : AmazonMediaTailorRequest
     {
@@ -39,7 +41,7 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The identifier for the playback configuration.
+        /// The name of the playback configuration.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

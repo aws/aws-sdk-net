@@ -34,7 +34,7 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SecurityHubConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class SecurityHubConfigurationMarshaller : IRequestMarshaller<SecurityHubConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SecurityHubConfigurationMarshaller Instance = new SecurityHubConfigurationMarshaller();
 
     }

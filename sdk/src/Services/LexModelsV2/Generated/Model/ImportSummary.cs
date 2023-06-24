@@ -36,6 +36,7 @@ namespace Amazon.LexModelsV2.Model
         private DateTime? _creationDateTime;
         private string _importedResourceId;
         private string _importedResourceName;
+        private ImportResourceType _importedResourceType;
         private string _importId;
         private ImportStatus _importStatus;
         private DateTime? _lastUpdatedDateTime;
@@ -95,6 +96,24 @@ namespace Amazon.LexModelsV2.Model
         internal bool IsSetImportedResourceName()
         {
             return this._importedResourceName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ImportedResourceType. 
+        /// <para>
+        /// The type of resource that was imported.
+        /// </para>
+        /// </summary>
+        public ImportResourceType ImportedResourceType
+        {
+            get { return this._importedResourceType; }
+            set { this._importedResourceType = value; }
+        }
+
+        // Check to see if ImportedResourceType property is set
+        internal bool IsSetImportedResourceType()
+        {
+            return this._importedResourceType != null;
         }
 
         /// <summary>

@@ -34,7 +34,7 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ManualEvidence Marshaller
-    /// </summary>       
+    /// </summary>
     public class ManualEvidenceMarshaller : IRequestMarshaller<ManualEvidence, JsonMarshallerContext> 
     {
         /// <summary>
@@ -45,17 +45,29 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ManualEvidence requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetEvidenceFileName())
+            {
+                context.Writer.WritePropertyName("evidenceFileName");
+                context.Writer.Write(requestObject.EvidenceFileName);
+            }
+
             if(requestObject.IsSetS3ResourcePath())
             {
                 context.Writer.WritePropertyName("s3ResourcePath");
                 context.Writer.Write(requestObject.S3ResourcePath);
             }
 
+            if(requestObject.IsSetTextResponse())
+            {
+                context.Writer.WritePropertyName("textResponse");
+                context.Writer.Write(requestObject.TextResponse);
+            }
+
         }
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ManualEvidenceMarshaller Instance = new ManualEvidenceMarshaller();
 
     }

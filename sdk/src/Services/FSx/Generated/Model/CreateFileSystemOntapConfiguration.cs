@@ -80,7 +80,22 @@ namespace Amazon.FSx.Model
         /// Gets and sets the property DeploymentType. 
         /// <para>
         /// Specifies the FSx for ONTAP file system deployment type to use in creating the file
-        /// system. <code>MULTI_AZ_1</code> is the supported ONTAP deployment type.
+        /// system. 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>MULTI_AZ_1</code> - (Default) A high availability file system configured for
+        /// Multi-AZ redundancy to tolerate temporary Availability Zone (AZ) unavailability. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>SINGLE_AZ_1</code> - A file system configured for Single-AZ redundancy.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For information about the use cases for Multi-AZ and Single-AZ deployments, refer
+        /// to <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/high-availability-AZ.html">Choosing
+        /// a file system deployment type</a>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -117,9 +132,13 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property EndpointIpAddressRange. 
         /// <para>
-        /// Specifies the IP address range in which the endpoints to access your file system will
-        /// be created. By default, Amazon FSx selects an unused IP address range for you from
-        /// the 198.19.* range.
+        /// (Multi-AZ only) Specifies the IP address range in which the endpoints to access your
+        /// file system will be created. By default in the Amazon FSx API, Amazon FSx selects
+        /// an unused IP address range for you from the 198.19.* range. By default in the Amazon
+        /// FSx console, Amazon FSx chooses the last 64 IP addresses from the VPC’s primary CIDR
+        /// range to use as the endpoint IP address range for the file system. You can have overlapping
+        /// endpoint IP addresses for file systems deployed in the same VPC/route tables, as long
+        /// as they don't overlap with any subnet.
         /// </para>
         /// </summary>
         [AWSProperty(Min=9, Max=17)]
@@ -142,7 +161,7 @@ namespace Amazon.FSx.Model
         /// administer your file system using the NetApp ONTAP CLI and REST API.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=8, Max=50)]
+        [AWSProperty(Sensitive=true, Min=8, Max=50)]
         public string FsxAdminPassword
         {
             get { return this._fsxAdminPassword; }
@@ -178,10 +197,10 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property RouteTableIds. 
         /// <para>
-        /// Specifies the virtual private cloud (VPC) route tables in which your file system's
-        /// endpoints will be created. You should specify all VPC route tables associated with
-        /// the subnets in which your clients are located. By default, Amazon FSx selects your
-        /// VPC's default route table.
+        /// (Multi-AZ only) Specifies the virtual private cloud (VPC) route tables in which your
+        /// file system's endpoints will be created. You should specify all VPC route tables associated
+        /// with the subnets in which your clients are located. By default, Amazon FSx selects
+        /// your VPC's default route table.
         /// </para>
         /// </summary>
         [AWSProperty(Max=50)]
@@ -201,10 +220,10 @@ namespace Amazon.FSx.Model
         /// Gets and sets the property ThroughputCapacity. 
         /// <para>
         /// Sets the throughput capacity for the file system that you're creating. Valid values
-        /// are 512, 1024, and 2048 MBps.
+        /// are 128, 256, 512, 1024, 2048, and 4096 MBps.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=8, Max=4096)]
+        [AWSProperty(Required=true, Min=8, Max=100000)]
         public int ThroughputCapacity
         {
             get { return this._throughputCapacity.GetValueOrDefault(); }

@@ -34,6 +34,7 @@ namespace Amazon.WorkSpaces.Model
     public partial class WorkspaceDirectory
     {
         private string _alias;
+        private CertificateBasedAuthProperties _certificateBasedAuthProperties;
         private string _customerUserName;
         private string _directoryId;
         private string _directoryName;
@@ -42,6 +43,7 @@ namespace Amazon.WorkSpaces.Model
         private string _iamRoleId;
         private List<string> _ipGroupIds = new List<string>();
         private string _registrationCode;
+        private SamlProperties _samlProperties;
         private SelfservicePermissions _selfservicePermissions;
         private WorkspaceDirectoryState _state;
         private List<string> _subnetIds = new List<string>();
@@ -66,6 +68,25 @@ namespace Amazon.WorkSpaces.Model
         internal bool IsSetAlias()
         {
             return this._alias != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CertificateBasedAuthProperties. 
+        /// <para>
+        /// The certificate-based authentication properties used to authenticate SAML 2.0 Identity
+        /// Provider (IdP) user identities to Active Directory for WorkSpaces login.
+        /// </para>
+        /// </summary>
+        public CertificateBasedAuthProperties CertificateBasedAuthProperties
+        {
+            get { return this._certificateBasedAuthProperties; }
+            set { this._certificateBasedAuthProperties = value; }
+        }
+
+        // Check to see if CertificateBasedAuthProperties property is set
+        internal bool IsSetCertificateBasedAuthProperties()
+        {
+            return this._certificateBasedAuthProperties != null;
         }
 
         /// <summary>
@@ -215,6 +236,25 @@ namespace Amazon.WorkSpaces.Model
         internal bool IsSetRegistrationCode()
         {
             return this._registrationCode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SamlProperties. 
+        /// <para>
+        /// Describes the enablement status, user access URL, and relay state parameter name that
+        /// are used for configuring federation with an SAML 2.0 identity provider.
+        /// </para>
+        /// </summary>
+        public SamlProperties SamlProperties
+        {
+            get { return this._samlProperties; }
+            set { this._samlProperties = value; }
+        }
+
+        // Check to see if SamlProperties property is set
+        internal bool IsSetSamlProperties()
+        {
+            return this._samlProperties != null;
         }
 
         /// <summary>

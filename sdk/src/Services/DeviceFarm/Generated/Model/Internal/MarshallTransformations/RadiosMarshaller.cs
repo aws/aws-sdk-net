@@ -34,7 +34,7 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Radios Marshaller
-    /// </summary>       
+    /// </summary>
     public class RadiosMarshaller : IRequestMarshaller<Radios, JsonMarshallerContext> 
     {
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RadiosMarshaller Instance = new RadiosMarshaller();
 
     }

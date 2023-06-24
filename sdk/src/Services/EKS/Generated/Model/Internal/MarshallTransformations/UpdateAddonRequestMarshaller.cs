@@ -56,7 +56,7 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.EKS");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-11-01";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-11-01";
             request.HttpMethod = "POST";
 
             if (!publicRequest.IsSetAddonName())
@@ -86,8 +86,14 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                 else if(!(publicRequest.IsSetClientRequestToken()))
                 {
                     context.Writer.WritePropertyName("clientRequestToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());                                                
+                    context.Writer.Write(Guid.NewGuid().ToString());
                 }
+                if(publicRequest.IsSetConfigurationValues())
+                {
+                    context.Writer.WritePropertyName("configurationValues");
+                    context.Writer.Write(publicRequest.ConfigurationValues);
+                }
+
                 if(publicRequest.IsSetResolveConflicts())
                 {
                     context.Writer.WritePropertyName("resolveConflicts");
@@ -100,7 +106,6 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ServiceAccountRoleArn);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

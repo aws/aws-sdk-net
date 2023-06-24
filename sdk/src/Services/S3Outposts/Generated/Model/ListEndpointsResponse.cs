@@ -39,7 +39,7 @@ namespace Amazon.S3Outposts.Model
         /// <summary>
         /// Gets and sets the property Endpoints. 
         /// <para>
-        /// Returns an array of endpoints associated with AWS Outposts.
+        /// The list of endpoints associated with the specified Outpost.
         /// </para>
         /// </summary>
         public List<Endpoint> Endpoints
@@ -57,7 +57,9 @@ namespace Amazon.S3Outposts.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The next endpoint returned in the list.
+        /// If the number of endpoints associated with the specified Outpost exceeds <code>MaxResults</code>,
+        /// you can include this value in subsequent calls to this operation to retrieve more
+        /// results.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

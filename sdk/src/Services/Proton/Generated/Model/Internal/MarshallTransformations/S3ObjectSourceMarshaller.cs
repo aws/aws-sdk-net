@@ -34,7 +34,7 @@ namespace Amazon.Proton.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// S3ObjectSource Marshaller
-    /// </summary>       
+    /// </summary>
     public class S3ObjectSourceMarshaller : IRequestMarshaller<S3ObjectSource, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Proton.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static S3ObjectSourceMarshaller Instance = new S3ObjectSourceMarshaller();
 
     }

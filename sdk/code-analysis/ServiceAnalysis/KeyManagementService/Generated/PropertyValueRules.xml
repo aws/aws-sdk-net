@@ -30,6 +30,7 @@
     <property>Amazon.KeyManagementService.Model.CreateCustomKeyStoreRequest.CloudHsmClusterId</property>
     <min>19</min>
     <max>24</max>
+    <pattern>cluster-[2-7a-zA-Z]{11,16}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.CreateCustomKeyStoreRequest.CustomKeyStoreName</property>
@@ -45,6 +46,24 @@
     <property>Amazon.KeyManagementService.Model.CreateCustomKeyStoreRequest.TrustAnchorCertificate</property>
     <min>1</min>
     <max>5000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.CreateCustomKeyStoreRequest.XksProxyUriEndpoint</property>
+    <min>10</min>
+    <max>128</max>
+    <pattern>^https://[a-zA-Z0-9.-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.CreateCustomKeyStoreRequest.XksProxyUriPath</property>
+    <min>10</min>
+    <max>128</max>
+    <pattern>^(/[a-zA-Z0-9\/_-]+/kms/xks/v\d{1,2})$|^(/kms/xks/v\d{1,2})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.CreateCustomKeyStoreRequest.XksProxyVpcEndpointServiceName</property>
+    <min>20</min>
+    <max>64</max>
+    <pattern>^com\.amazonaws\.vpce\.([a-z]+-){2,3}\d+\.vpce-svc-[0-9a-z]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.CreateCustomKeyStoreResponse.CustomKeyStoreId</property>
@@ -101,6 +120,12 @@
     <pattern>[\u0009\u000A\u000D\u0020-\u00FF]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.CreateKeyRequest.XksKeyId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9-_.]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.KeyManagementService.Model.DecryptRequest.CiphertextBlob</property>
     <min>1</min>
     <max>6144</max>
@@ -109,6 +134,11 @@
     <property>Amazon.KeyManagementService.Model.DecryptRequest.KeyId</property>
     <min>1</min>
     <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.DecryptResponse.CiphertextForRecipient</property>
+    <min>1</min>
+    <max>6144</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.DecryptResponse.KeyId</property>
@@ -229,6 +259,11 @@
     <max>6144</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.GenerateDataKeyResponse.CiphertextForRecipient</property>
+    <min>1</min>
+    <max>6144</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.KeyManagementService.Model.GenerateDataKeyResponse.KeyId</property>
     <min>1</min>
     <max>2048</max>
@@ -242,6 +277,11 @@
     <property>Amazon.KeyManagementService.Model.GenerateDataKeyPairRequest.KeyId</property>
     <min>1</min>
     <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.GenerateDataKeyPairResponse.CiphertextForRecipient</property>
+    <min>1</min>
+    <max>6144</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.GenerateDataKeyPairResponse.KeyId</property>
@@ -304,6 +344,26 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.GenerateMacRequest.KeyId</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.GenerateMacRequest.Message</property>
+    <min>1</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.GenerateMacResponse.KeyId</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.GenerateMacResponse.Mac</property>
+    <min>1</min>
+    <max>6144</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.KeyManagementService.Model.GenerateRandomRequest.CustomKeyStoreId</property>
     <min>1</min>
     <max>64</max>
@@ -312,6 +372,11 @@
     <property>Amazon.KeyManagementService.Model.GenerateRandomRequest.NumberOfBytes</property>
     <min>1</min>
     <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.GenerateRandomResponse.CiphertextForRecipient</property>
+    <min>1</min>
+    <max>6144</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.GenerateRandomResponse.Plaintext</property>
@@ -694,6 +759,7 @@
     <property>Amazon.KeyManagementService.Model.UpdateCustomKeyStoreRequest.CloudHsmClusterId</property>
     <min>19</min>
     <max>24</max>
+    <pattern>cluster-[2-7a-zA-Z]{11,16}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.UpdateCustomKeyStoreRequest.CustomKeyStoreId</property>
@@ -709,6 +775,24 @@
     <property>Amazon.KeyManagementService.Model.UpdateCustomKeyStoreRequest.NewCustomKeyStoreName</property>
     <min>1</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.UpdateCustomKeyStoreRequest.XksProxyUriEndpoint</property>
+    <min>10</min>
+    <max>128</max>
+    <pattern>^https://[a-zA-Z0-9.-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.UpdateCustomKeyStoreRequest.XksProxyUriPath</property>
+    <min>10</min>
+    <max>128</max>
+    <pattern>^(/[a-zA-Z0-9\/_-]+/kms/xks/v\d{1,2})$|^(/kms/xks/v\d{1,2})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.UpdateCustomKeyStoreRequest.XksProxyVpcEndpointServiceName</property>
+    <min>20</min>
+    <max>64</max>
+    <pattern>^com\.amazonaws\.vpce\.([a-z]+-){2,3}\d+\.vpce-svc-[0-9a-z]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.UpdateKeyDescriptionRequest.Description</property>
@@ -752,6 +836,26 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.VerifyMacRequest.KeyId</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.VerifyMacRequest.Mac</property>
+    <min>1</min>
+    <max>6144</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.VerifyMacRequest.Message</property>
+    <min>1</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.VerifyMacResponse.KeyId</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.KeyManagementService.Model.AliasListEntry.AliasArn</property>
     <min>20</min>
     <max>2048</max>
@@ -771,6 +875,7 @@
     <property>Amazon.KeyManagementService.Model.CustomKeyStoresListEntry.CloudHsmClusterId</property>
     <min>19</min>
     <max>24</max>
+    <pattern>cluster-[2-7a-zA-Z]{11,16}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.CustomKeyStoresListEntry.CustomKeyStoreId</property>
@@ -840,6 +945,7 @@
     <property>Amazon.KeyManagementService.Model.KeyMetadata.CloudHsmClusterId</property>
     <min>19</min>
     <max>24</max>
+    <pattern>cluster-[2-7a-zA-Z]{11,16}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.KeyMetadata.CustomKeyStoreId</property>
@@ -873,6 +979,11 @@
     <pattern>^([a-z]+-){2,3}\d+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.RecipientInfo.AttestationDocument</property>
+    <min>1</min>
+    <max>262144</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.KeyManagementService.Model.Tag.TagKey</property>
     <min>1</min>
     <max>128</max>
@@ -881,5 +992,47 @@
     <property>Amazon.KeyManagementService.Model.Tag.TagValue</property>
     <min>0</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.XksKeyConfigurationType.Id</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9-_.]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.XksProxyAuthenticationCredentialType.AccessKeyId</property>
+    <min>20</min>
+    <max>30</max>
+    <pattern>^[A-Z2-7]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.XksProxyAuthenticationCredentialType.RawSecretAccessKey</property>
+    <min>43</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9\/+=]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.XksProxyConfigurationType.AccessKeyId</property>
+    <min>20</min>
+    <max>30</max>
+    <pattern>^[A-Z2-7]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.XksProxyConfigurationType.UriEndpoint</property>
+    <min>10</min>
+    <max>128</max>
+    <pattern>^https://[a-zA-Z0-9.-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.XksProxyConfigurationType.UriPath</property>
+    <min>10</min>
+    <max>128</max>
+    <pattern>^(/[a-zA-Z0-9\/_-]+/kms/xks/v\d{1,2})$|^(/kms/xks/v\d{1,2})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.XksProxyConfigurationType.VpcEndpointServiceName</property>
+    <min>20</min>
+    <max>64</max>
+    <pattern>^com\.amazonaws\.vpce\.([a-z]+-){2,3}\d+\.vpce-svc-[0-9a-z]+$</pattern>
   </property-value-rule>
 </property-value-rules>

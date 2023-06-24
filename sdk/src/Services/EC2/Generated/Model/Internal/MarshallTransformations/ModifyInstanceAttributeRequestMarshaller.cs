@@ -93,6 +93,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+                if(publicRequest.IsSetDisableApiStop())
+                {
+                    request.Parameters.Add("DisableApiStop.Value", StringUtils.FromBool(publicRequest.DisableApiStop));
+                }
                 if(publicRequest.IsSetDisableApiTermination())
                 {
                     request.Parameters.Add("DisableApiTermination.Value", StringUtils.FromBool(publicRequest.DisableApiTermination));

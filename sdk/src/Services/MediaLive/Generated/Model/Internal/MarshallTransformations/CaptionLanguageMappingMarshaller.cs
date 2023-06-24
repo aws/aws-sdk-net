@@ -34,7 +34,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CaptionLanguageMapping Marshaller
-    /// </summary>       
+    /// </summary>
     public class CaptionLanguageMappingMarshaller : IRequestMarshaller<CaptionLanguageMapping, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CaptionLanguageMappingMarshaller Instance = new CaptionLanguageMappingMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// S3SourceConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class S3SourceConfigMarshaller : IRequestMarshaller<S3SourceConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -88,7 +88,7 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static S3SourceConfigMarshaller Instance = new S3SourceConfigMarshaller();
 
     }

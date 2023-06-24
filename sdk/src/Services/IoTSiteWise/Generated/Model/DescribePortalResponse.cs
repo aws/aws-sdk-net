@@ -133,9 +133,9 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property PortalClientId. 
         /// <para>
-        /// The Amazon Web Services SSO application generated client ID (used with Amazon Web
-        /// Services SSO APIs). IoT SiteWise includes <code>portalClientId</code> for only portals
-        /// that use Amazon Web Services SSO to authenticate users.
+        /// The IAM Identity Center application generated client ID (used with IAM Identity Center
+        /// APIs). IoT SiteWise includes <code>portalClientId</code> for only portals that use
+        /// IAM Identity Center to authenticate users.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
@@ -287,9 +287,9 @@ namespace Amazon.IoTSiteWise.Model
         /// Gets and sets the property PortalStartUrl. 
         /// <para>
         /// The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals
-        /// that use Amazon Web Services SSO for authentication. For portals that use IAM for
-        /// authentication, you must use the IoT SiteWise console to get a URL that you can use
-        /// to access the portal.
+        /// that use IAM Identity Center for authentication. For portals that use IAM for authentication,
+        /// you must use the IoT SiteWise console to get a URL that you can use to access the
+        /// portal.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]

@@ -34,7 +34,7 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// BucketAccessLogConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class BucketAccessLogConfigMarshaller : IRequestMarshaller<BucketAccessLogConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static BucketAccessLogConfigMarshaller Instance = new BucketAccessLogConfigMarshaller();
 
     }

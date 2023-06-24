@@ -130,8 +130,7 @@ namespace Amazon.Macie2.Model
         /// Gets and sets the property Count. 
         /// <para>
         /// The total number of occurrences of the finding. For sensitive data findings, this
-        /// value is always 1. All sensitive data findings are considered new (unique) because
-        /// they derive from individual classification jobs.
+        /// value is always 1. All sensitive data findings are considered unique.
         /// </para>
         /// </summary>
         public long Count
@@ -149,7 +148,8 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The date and time, in UTC and extended ISO 8601 format, when the finding was created.
+        /// The date and time, in UTC and extended ISO 8601 format, when Amazon Macie created
+        /// the finding.
         /// </para>
         /// </summary>
         public DateTime CreatedAt
@@ -367,10 +367,9 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property UpdatedAt. 
         /// <para>
-        /// The date and time, in UTC and extended ISO 8601 format, when the finding was last
-        /// updated. For sensitive data findings, this value is the same as the value for the
-        /// createdAt property. All sensitive data findings are considered new (unique) because
-        /// they derive from individual classification jobs.
+        /// The date and time, in UTC and extended ISO 8601 format, when Amazon Macie last updated
+        /// the finding. For sensitive data findings, this value is the same as the value for
+        /// the createdAt property. All sensitive data findings are considered new.
         /// </para>
         /// </summary>
         public DateTime UpdatedAt

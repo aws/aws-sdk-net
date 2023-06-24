@@ -34,7 +34,7 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RateBasedStatement Marshaller
-    /// </summary>       
+    /// </summary>
     public class RateBasedStatementMarshaller : IRequestMarshaller<RateBasedStatement, JsonMarshallerContext> 
     {
         /// <summary>
@@ -49,6 +49,22 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("AggregateKeyType");
                 context.Writer.Write(requestObject.AggregateKeyType);
+            }
+
+            if(requestObject.IsSetCustomKeys())
+            {
+                context.Writer.WritePropertyName("CustomKeys");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectCustomKeysListValue in requestObject.CustomKeys)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = RateBasedStatementCustomKeyMarshaller.Instance;
+                    marshaller.Marshall(requestObjectCustomKeysListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
             }
 
             if(requestObject.IsSetForwardedIPConfig())
@@ -83,7 +99,7 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RateBasedStatementMarshaller Instance = new RateBasedStatementMarshaller();
 
     }

@@ -42,7 +42,7 @@ namespace Amazon.SSMIncidents.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the replication set you're updating.
+        /// The Amazon Resource Name (ARN) of the replication set to update.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=1000)]
@@ -61,7 +61,7 @@ namespace Amazon.SSMIncidents.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// A token ensuring that the operation is called only once with the specified details.
+        /// A token that ensures that the operation is called only once with the specified details.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=128)]
@@ -80,7 +80,7 @@ namespace Amazon.SSMIncidents.Model
         /// <summary>
         /// Gets and sets the property DeletionProtected. 
         /// <para>
-        /// Details if deletion protection is enabled or disabled in your account.
+        /// Specifies if deletion protection is turned on or off in your account. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

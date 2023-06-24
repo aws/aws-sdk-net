@@ -34,7 +34,7 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// LambdaAuthorizerConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class LambdaAuthorizerConfigMarshaller : IRequestMarshaller<LambdaAuthorizerConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static LambdaAuthorizerConfigMarshaller Instance = new LambdaAuthorizerConfigMarshaller();
 
     }

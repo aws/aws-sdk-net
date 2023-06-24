@@ -71,6 +71,110 @@ namespace Amazon.Kendra
 
 
     /// <summary>
+    /// Constants used for properties of type AlfrescoEntity.
+    /// </summary>
+    public class AlfrescoEntity : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Blog for AlfrescoEntity
+        /// </summary>
+        public static readonly AlfrescoEntity Blog = new AlfrescoEntity("blog");
+        /// <summary>
+        /// Constant DocumentLibrary for AlfrescoEntity
+        /// </summary>
+        public static readonly AlfrescoEntity DocumentLibrary = new AlfrescoEntity("documentLibrary");
+        /// <summary>
+        /// Constant Wiki for AlfrescoEntity
+        /// </summary>
+        public static readonly AlfrescoEntity Wiki = new AlfrescoEntity("wiki");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AlfrescoEntity(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AlfrescoEntity FindValue(string value)
+        {
+            return FindValue<AlfrescoEntity>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AlfrescoEntity(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AttributeSuggestionsMode.
+    /// </summary>
+    public class AttributeSuggestionsMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for AttributeSuggestionsMode
+        /// </summary>
+        public static readonly AttributeSuggestionsMode ACTIVE = new AttributeSuggestionsMode("ACTIVE");
+        /// <summary>
+        /// Constant INACTIVE for AttributeSuggestionsMode
+        /// </summary>
+        public static readonly AttributeSuggestionsMode INACTIVE = new AttributeSuggestionsMode("INACTIVE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AttributeSuggestionsMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AttributeSuggestionsMode FindValue(string value)
+        {
+            return FindValue<AttributeSuggestionsMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AttributeSuggestionsMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ConditionOperator.
     /// </summary>
     public class ConditionOperator : ConstantClass
@@ -236,6 +340,56 @@ namespace Amazon.Kendra
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ConfluenceAttachmentFieldName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ConfluenceAuthenticationType.
+    /// </summary>
+    public class ConfluenceAuthenticationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant HTTP_BASIC for ConfluenceAuthenticationType
+        /// </summary>
+        public static readonly ConfluenceAuthenticationType HTTP_BASIC = new ConfluenceAuthenticationType("HTTP_BASIC");
+        /// <summary>
+        /// Constant PAT for ConfluenceAuthenticationType
+        /// </summary>
+        public static readonly ConfluenceAuthenticationType PAT = new ConfluenceAuthenticationType("PAT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ConfluenceAuthenticationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConfluenceAuthenticationType FindValue(string value)
+        {
+            return FindValue<ConfluenceAuthenticationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConfluenceAuthenticationType(string value)
         {
             return FindValue(value);
         }
@@ -525,9 +679,25 @@ namespace Amazon.Kendra
     {
 
         /// <summary>
+        /// Constant CSV for ContentType
+        /// </summary>
+        public static readonly ContentType CSV = new ContentType("CSV");
+        /// <summary>
         /// Constant HTML for ContentType
         /// </summary>
         public static readonly ContentType HTML = new ContentType("HTML");
+        /// <summary>
+        /// Constant JSON for ContentType
+        /// </summary>
+        public static readonly ContentType JSON = new ContentType("JSON");
+        /// <summary>
+        /// Constant MD for ContentType
+        /// </summary>
+        public static readonly ContentType MD = new ContentType("MD");
+        /// <summary>
+        /// Constant MS_EXCEL for ContentType
+        /// </summary>
+        public static readonly ContentType MS_EXCEL = new ContentType("MS_EXCEL");
         /// <summary>
         /// Constant MS_WORD for ContentType
         /// </summary>
@@ -544,6 +714,18 @@ namespace Amazon.Kendra
         /// Constant PPT for ContentType
         /// </summary>
         public static readonly ContentType PPT = new ContentType("PPT");
+        /// <summary>
+        /// Constant RTF for ContentType
+        /// </summary>
+        public static readonly ContentType RTF = new ContentType("RTF");
+        /// <summary>
+        /// Constant XML for ContentType
+        /// </summary>
+        public static readonly ContentType XML = new ContentType("XML");
+        /// <summary>
+        /// Constant XSLT for ContentType
+        /// </summary>
+        public static readonly ContentType XSLT = new ContentType("XSLT");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -777,6 +959,14 @@ namespace Amazon.Kendra
     {
 
         /// <summary>
+        /// Constant ALFRESCO for DataSourceType
+        /// </summary>
+        public static readonly DataSourceType ALFRESCO = new DataSourceType("ALFRESCO");
+        /// <summary>
+        /// Constant BOX for DataSourceType
+        /// </summary>
+        public static readonly DataSourceType BOX = new DataSourceType("BOX");
+        /// <summary>
         /// Constant CONFLUENCE for DataSourceType
         /// </summary>
         public static readonly DataSourceType CONFLUENCE = new DataSourceType("CONFLUENCE");
@@ -789,13 +979,29 @@ namespace Amazon.Kendra
         /// </summary>
         public static readonly DataSourceType DATABASE = new DataSourceType("DATABASE");
         /// <summary>
+        /// Constant FSX for DataSourceType
+        /// </summary>
+        public static readonly DataSourceType FSX = new DataSourceType("FSX");
+        /// <summary>
+        /// Constant GITHUB for DataSourceType
+        /// </summary>
+        public static readonly DataSourceType GITHUB = new DataSourceType("GITHUB");
+        /// <summary>
         /// Constant GOOGLEDRIVE for DataSourceType
         /// </summary>
         public static readonly DataSourceType GOOGLEDRIVE = new DataSourceType("GOOGLEDRIVE");
         /// <summary>
+        /// Constant JIRA for DataSourceType
+        /// </summary>
+        public static readonly DataSourceType JIRA = new DataSourceType("JIRA");
+        /// <summary>
         /// Constant ONEDRIVE for DataSourceType
         /// </summary>
         public static readonly DataSourceType ONEDRIVE = new DataSourceType("ONEDRIVE");
+        /// <summary>
+        /// Constant QUIP for DataSourceType
+        /// </summary>
+        public static readonly DataSourceType QUIP = new DataSourceType("QUIP");
         /// <summary>
         /// Constant S3 for DataSourceType
         /// </summary>
@@ -812,6 +1018,14 @@ namespace Amazon.Kendra
         /// Constant SHAREPOINT for DataSourceType
         /// </summary>
         public static readonly DataSourceType SHAREPOINT = new DataSourceType("SHAREPOINT");
+        /// <summary>
+        /// Constant SLACK for DataSourceType
+        /// </summary>
+        public static readonly DataSourceType SLACK = new DataSourceType("SLACK");
+        /// <summary>
+        /// Constant TEMPLATE for DataSourceType
+        /// </summary>
+        public static readonly DataSourceType TEMPLATE = new DataSourceType("TEMPLATE");
         /// <summary>
         /// Constant WEBCRAWLER for DataSourceType
         /// </summary>
@@ -1301,6 +1515,102 @@ namespace Amazon.Kendra
 
 
     /// <summary>
+    /// Constants used for properties of type FeaturedResultsSetStatus.
+    /// </summary>
+    public class FeaturedResultsSetStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for FeaturedResultsSetStatus
+        /// </summary>
+        public static readonly FeaturedResultsSetStatus ACTIVE = new FeaturedResultsSetStatus("ACTIVE");
+        /// <summary>
+        /// Constant INACTIVE for FeaturedResultsSetStatus
+        /// </summary>
+        public static readonly FeaturedResultsSetStatus INACTIVE = new FeaturedResultsSetStatus("INACTIVE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FeaturedResultsSetStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FeaturedResultsSetStatus FindValue(string value)
+        {
+            return FindValue<FeaturedResultsSetStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FeaturedResultsSetStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FsxFileSystemType.
+    /// </summary>
+    public class FsxFileSystemType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant WINDOWS for FsxFileSystemType
+        /// </summary>
+        public static readonly FsxFileSystemType WINDOWS = new FsxFileSystemType("WINDOWS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FsxFileSystemType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FsxFileSystemType FindValue(string value)
+        {
+            return FindValue<FsxFileSystemType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FsxFileSystemType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type HighlightType.
     /// </summary>
     public class HighlightType : ConstantClass
@@ -1526,6 +1836,60 @@ namespace Amazon.Kendra
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Interval(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type IssueSubEntity.
+    /// </summary>
+    public class IssueSubEntity : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ATTACHMENTS for IssueSubEntity
+        /// </summary>
+        public static readonly IssueSubEntity ATTACHMENTS = new IssueSubEntity("ATTACHMENTS");
+        /// <summary>
+        /// Constant COMMENTS for IssueSubEntity
+        /// </summary>
+        public static readonly IssueSubEntity COMMENTS = new IssueSubEntity("COMMENTS");
+        /// <summary>
+        /// Constant WORKLOGS for IssueSubEntity
+        /// </summary>
+        public static readonly IssueSubEntity WORKLOGS = new IssueSubEntity("WORKLOGS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public IssueSubEntity(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IssueSubEntity FindValue(string value)
+        {
+            return FindValue<IssueSubEntity>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IssueSubEntity(string value)
         {
             return FindValue(value);
         }
@@ -1954,6 +2318,56 @@ namespace Amazon.Kendra
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator QueryIdentifiersEnclosingOption(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type QueryResultFormat.
+    /// </summary>
+    public class QueryResultFormat : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant TABLE for QueryResultFormat
+        /// </summary>
+        public static readonly QueryResultFormat TABLE = new QueryResultFormat("TABLE");
+        /// <summary>
+        /// Constant TEXT for QueryResultFormat
+        /// </summary>
+        public static readonly QueryResultFormat TEXT = new QueryResultFormat("TEXT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public QueryResultFormat(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static QueryResultFormat FindValue(string value)
+        {
+            return FindValue<QueryResultFormat>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator QueryResultFormat(string value)
         {
             return FindValue(value);
         }
@@ -2607,6 +3021,56 @@ namespace Amazon.Kendra
 
 
     /// <summary>
+    /// Constants used for properties of type SharePointOnlineAuthenticationType.
+    /// </summary>
+    public class SharePointOnlineAuthenticationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant HTTP_BASIC for SharePointOnlineAuthenticationType
+        /// </summary>
+        public static readonly SharePointOnlineAuthenticationType HTTP_BASIC = new SharePointOnlineAuthenticationType("HTTP_BASIC");
+        /// <summary>
+        /// Constant OAUTH2 for SharePointOnlineAuthenticationType
+        /// </summary>
+        public static readonly SharePointOnlineAuthenticationType OAUTH2 = new SharePointOnlineAuthenticationType("OAUTH2");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SharePointOnlineAuthenticationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SharePointOnlineAuthenticationType FindValue(string value)
+        {
+            return FindValue<SharePointOnlineAuthenticationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SharePointOnlineAuthenticationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type SharePointVersion.
     /// </summary>
     public class SharePointVersion : ConstantClass
@@ -2620,6 +3084,10 @@ namespace Amazon.Kendra
         /// Constant SHAREPOINT_2016 for SharePointVersion
         /// </summary>
         public static readonly SharePointVersion SHAREPOINT_2016 = new SharePointVersion("SHAREPOINT_2016");
+        /// <summary>
+        /// Constant SHAREPOINT_2019 for SharePointVersion
+        /// </summary>
+        public static readonly SharePointVersion SHAREPOINT_2019 = new SharePointVersion("SHAREPOINT_2019");
         /// <summary>
         /// Constant SHAREPOINT_ONLINE for SharePointVersion
         /// </summary>
@@ -2654,6 +3122,64 @@ namespace Amazon.Kendra
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SharePointVersion(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SlackEntity.
+    /// </summary>
+    public class SlackEntity : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DIRECT_MESSAGE for SlackEntity
+        /// </summary>
+        public static readonly SlackEntity DIRECT_MESSAGE = new SlackEntity("DIRECT_MESSAGE");
+        /// <summary>
+        /// Constant GROUP_MESSAGE for SlackEntity
+        /// </summary>
+        public static readonly SlackEntity GROUP_MESSAGE = new SlackEntity("GROUP_MESSAGE");
+        /// <summary>
+        /// Constant PRIVATE_CHANNEL for SlackEntity
+        /// </summary>
+        public static readonly SlackEntity PRIVATE_CHANNEL = new SlackEntity("PRIVATE_CHANNEL");
+        /// <summary>
+        /// Constant PUBLIC_CHANNEL for SlackEntity
+        /// </summary>
+        public static readonly SlackEntity PUBLIC_CHANNEL = new SlackEntity("PUBLIC_CHANNEL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SlackEntity(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SlackEntity FindValue(string value)
+        {
+            return FindValue<SlackEntity>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SlackEntity(string value)
         {
             return FindValue(value);
         }
@@ -2704,6 +3230,56 @@ namespace Amazon.Kendra
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SortOrder(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SuggestionType.
+    /// </summary>
+    public class SuggestionType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DOCUMENT_ATTRIBUTES for SuggestionType
+        /// </summary>
+        public static readonly SuggestionType DOCUMENT_ATTRIBUTES = new SuggestionType("DOCUMENT_ATTRIBUTES");
+        /// <summary>
+        /// Constant QUERY for SuggestionType
+        /// </summary>
+        public static readonly SuggestionType QUERY = new SuggestionType("QUERY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SuggestionType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SuggestionType FindValue(string value)
+        {
+            return FindValue<SuggestionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SuggestionType(string value)
         {
             return FindValue(value);
         }
@@ -2770,6 +3346,56 @@ namespace Amazon.Kendra
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ThesaurusStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Type.
+    /// </summary>
+    public class Type : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ON_PREMISE for Type
+        /// </summary>
+        public static readonly Type ON_PREMISE = new Type("ON_PREMISE");
+        /// <summary>
+        /// Constant SAAS for Type
+        /// </summary>
+        public static readonly Type SAAS = new Type("SAAS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Type(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Type FindValue(string value)
+        {
+            return FindValue<Type>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Type(string value)
         {
             return FindValue(value);
         }
@@ -2870,6 +3496,52 @@ namespace Amazon.Kendra
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator UserGroupResolutionMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type WarningCode.
+    /// </summary>
+    public class WarningCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant QUERY_LANGUAGE_INVALID_SYNTAX for WarningCode
+        /// </summary>
+        public static readonly WarningCode QUERY_LANGUAGE_INVALID_SYNTAX = new WarningCode("QUERY_LANGUAGE_INVALID_SYNTAX");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public WarningCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static WarningCode FindValue(string value)
+        {
+            return FindValue<WarningCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator WarningCode(string value)
         {
             return FindValue(value);
         }

@@ -135,6 +135,10 @@ namespace Amazon.ManagedGrafana
         /// </summary>
         public static readonly DataSourceType AMAZON_OPENSEARCH_SERVICE = new DataSourceType("AMAZON_OPENSEARCH_SERVICE");
         /// <summary>
+        /// Constant ATHENA for DataSourceType
+        /// </summary>
+        public static readonly DataSourceType ATHENA = new DataSourceType("ATHENA");
+        /// <summary>
         /// Constant CLOUDWATCH for DataSourceType
         /// </summary>
         public static readonly DataSourceType CLOUDWATCH = new DataSourceType("CLOUDWATCH");
@@ -143,6 +147,10 @@ namespace Amazon.ManagedGrafana
         /// </summary>
         public static readonly DataSourceType PROMETHEUS = new DataSourceType("PROMETHEUS");
         /// <summary>
+        /// Constant REDSHIFT for DataSourceType
+        /// </summary>
+        public static readonly DataSourceType REDSHIFT = new DataSourceType("REDSHIFT");
+        /// <summary>
         /// Constant SITEWISE for DataSourceType
         /// </summary>
         public static readonly DataSourceType SITEWISE = new DataSourceType("SITEWISE");
@@ -150,6 +158,10 @@ namespace Amazon.ManagedGrafana
         /// Constant TIMESTREAM for DataSourceType
         /// </summary>
         public static readonly DataSourceType TIMESTREAM = new DataSourceType("TIMESTREAM");
+        /// <summary>
+        /// Constant TWINMAKER for DataSourceType
+        /// </summary>
+        public static readonly DataSourceType TWINMAKER = new DataSourceType("TWINMAKER");
         /// <summary>
         /// Constant XRAY for DataSourceType
         /// </summary>
@@ -350,6 +362,10 @@ namespace Amazon.ManagedGrafana
         /// Constant EDITOR for Role
         /// </summary>
         public static readonly Role EDITOR = new Role("EDITOR");
+        /// <summary>
+        /// Constant VIEWER for Role
+        /// </summary>
+        public static readonly Role VIEWER = new Role("VIEWER");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

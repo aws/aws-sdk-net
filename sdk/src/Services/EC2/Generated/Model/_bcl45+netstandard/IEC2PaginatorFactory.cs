@@ -31,6 +31,16 @@ namespace Amazon.EC2.Model
         IDescribeAddressesAttributePaginator DescribeAddressesAttribute(DescribeAddressesAttributeRequest request);
 
         /// <summary>
+        /// Paginator for DescribeAddressTransfers operation
+        ///</summary>
+        IDescribeAddressTransfersPaginator DescribeAddressTransfers(DescribeAddressTransfersRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeAwsNetworkPerformanceMetricSubscriptions operation
+        ///</summary>
+        IDescribeAwsNetworkPerformanceMetricSubscriptionsPaginator DescribeAwsNetworkPerformanceMetricSubscriptions(DescribeAwsNetworkPerformanceMetricSubscriptionsRequest request);
+
+        /// <summary>
         /// Paginator for DescribeByoipCidrs operation
         ///</summary>
         IDescribeByoipCidrsPaginator DescribeByoipCidrs(DescribeByoipCidrsRequest request);
@@ -101,6 +111,11 @@ namespace Amazon.EC2.Model
         IDescribeExportImageTasksPaginator DescribeExportImageTasks(DescribeExportImageTasksRequest request);
 
         /// <summary>
+        /// Paginator for DescribeFastLaunchImages operation
+        ///</summary>
+        IDescribeFastLaunchImagesPaginator DescribeFastLaunchImages(DescribeFastLaunchImagesRequest request);
+
+        /// <summary>
         /// Paginator for DescribeFastSnapshotRestores operation
         ///</summary>
         IDescribeFastSnapshotRestoresPaginator DescribeFastSnapshotRestores(DescribeFastSnapshotRestoresRequest request);
@@ -141,6 +156,11 @@ namespace Amazon.EC2.Model
         IDescribeIamInstanceProfileAssociationsPaginator DescribeIamInstanceProfileAssociations(DescribeIamInstanceProfileAssociationsRequest request);
 
         /// <summary>
+        /// Paginator for DescribeImages operation
+        ///</summary>
+        IDescribeImagesPaginator DescribeImages(DescribeImagesRequest request);
+
+        /// <summary>
         /// Paginator for DescribeImportImageTasks operation
         ///</summary>
         IDescribeImportImageTasksPaginator DescribeImportImageTasks(DescribeImportImageTasksRequest request);
@@ -149,6 +169,11 @@ namespace Amazon.EC2.Model
         /// Paginator for DescribeImportSnapshotTasks operation
         ///</summary>
         IDescribeImportSnapshotTasksPaginator DescribeImportSnapshotTasks(DescribeImportSnapshotTasksRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeInstanceConnectEndpoints operation
+        ///</summary>
+        IDescribeInstanceConnectEndpointsPaginator DescribeInstanceConnectEndpoints(DescribeInstanceConnectEndpointsRequest request);
 
         /// <summary>
         /// Paginator for DescribeInstanceCreditSpecifications operation
@@ -189,6 +214,16 @@ namespace Amazon.EC2.Model
         /// Paginator for DescribeIpamPools operation
         ///</summary>
         IDescribeIpamPoolsPaginator DescribeIpamPools(DescribeIpamPoolsRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeIpamResourceDiscoveries operation
+        ///</summary>
+        IDescribeIpamResourceDiscoveriesPaginator DescribeIpamResourceDiscoveries(DescribeIpamResourceDiscoveriesRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeIpamResourceDiscoveryAssociations operation
+        ///</summary>
+        IDescribeIpamResourceDiscoveryAssociationsPaginator DescribeIpamResourceDiscoveryAssociations(DescribeIpamResourceDiscoveryAssociationsRequest request);
 
         /// <summary>
         /// Paginator for DescribeIpams operation
@@ -436,6 +471,16 @@ namespace Amazon.EC2.Model
         IDescribeTransitGatewayPeeringAttachmentsPaginator DescribeTransitGatewayPeeringAttachments(DescribeTransitGatewayPeeringAttachmentsRequest request);
 
         /// <summary>
+        /// Paginator for DescribeTransitGatewayPolicyTables operation
+        ///</summary>
+        IDescribeTransitGatewayPolicyTablesPaginator DescribeTransitGatewayPolicyTables(DescribeTransitGatewayPolicyTablesRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeTransitGatewayRouteTableAnnouncements operation
+        ///</summary>
+        IDescribeTransitGatewayRouteTableAnnouncementsPaginator DescribeTransitGatewayRouteTableAnnouncements(DescribeTransitGatewayRouteTableAnnouncementsRequest request);
+
+        /// <summary>
         /// Paginator for DescribeTransitGatewayRouteTables operation
         ///</summary>
         IDescribeTransitGatewayRouteTablesPaginator DescribeTransitGatewayRouteTables(DescribeTransitGatewayRouteTablesRequest request);
@@ -454,6 +499,31 @@ namespace Amazon.EC2.Model
         /// Paginator for DescribeTrunkInterfaceAssociations operation
         ///</summary>
         IDescribeTrunkInterfaceAssociationsPaginator DescribeTrunkInterfaceAssociations(DescribeTrunkInterfaceAssociationsRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeVerifiedAccessEndpoints operation
+        ///</summary>
+        IDescribeVerifiedAccessEndpointsPaginator DescribeVerifiedAccessEndpoints(DescribeVerifiedAccessEndpointsRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeVerifiedAccessGroups operation
+        ///</summary>
+        IDescribeVerifiedAccessGroupsPaginator DescribeVerifiedAccessGroups(DescribeVerifiedAccessGroupsRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeVerifiedAccessInstanceLoggingConfigurations operation
+        ///</summary>
+        IDescribeVerifiedAccessInstanceLoggingConfigurationsPaginator DescribeVerifiedAccessInstanceLoggingConfigurations(DescribeVerifiedAccessInstanceLoggingConfigurationsRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeVerifiedAccessInstances operation
+        ///</summary>
+        IDescribeVerifiedAccessInstancesPaginator DescribeVerifiedAccessInstances(DescribeVerifiedAccessInstancesRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeVerifiedAccessTrustProviders operation
+        ///</summary>
+        IDescribeVerifiedAccessTrustProvidersPaginator DescribeVerifiedAccessTrustProviders(DescribeVerifiedAccessTrustProvidersRequest request);
 
         /// <summary>
         /// Paginator for DescribeVolumes operation
@@ -516,6 +586,11 @@ namespace Amazon.EC2.Model
         IGetAssociatedIpv6PoolCidrsPaginator GetAssociatedIpv6PoolCidrs(GetAssociatedIpv6PoolCidrsRequest request);
 
         /// <summary>
+        /// Paginator for GetAwsNetworkPerformanceData operation
+        ///</summary>
+        IGetAwsNetworkPerformanceDataPaginator GetAwsNetworkPerformanceData(GetAwsNetworkPerformanceDataRequest request);
+
+        /// <summary>
         /// Paginator for GetGroupsForCapacityReservation operation
         ///</summary>
         IGetGroupsForCapacityReservationPaginator GetGroupsForCapacityReservation(GetGroupsForCapacityReservationRequest request);
@@ -529,6 +604,16 @@ namespace Amazon.EC2.Model
         /// Paginator for GetIpamAddressHistory operation
         ///</summary>
         IGetIpamAddressHistoryPaginator GetIpamAddressHistory(GetIpamAddressHistoryRequest request);
+
+        /// <summary>
+        /// Paginator for GetIpamDiscoveredAccounts operation
+        ///</summary>
+        IGetIpamDiscoveredAccountsPaginator GetIpamDiscoveredAccounts(GetIpamDiscoveredAccountsRequest request);
+
+        /// <summary>
+        /// Paginator for GetIpamDiscoveredResourceCidrs operation
+        ///</summary>
+        IGetIpamDiscoveredResourceCidrsPaginator GetIpamDiscoveredResourceCidrs(GetIpamDiscoveredResourceCidrsRequest request);
 
         /// <summary>
         /// Paginator for GetIpamPoolAllocations operation
@@ -556,6 +641,11 @@ namespace Amazon.EC2.Model
         IGetManagedPrefixListEntriesPaginator GetManagedPrefixListEntries(GetManagedPrefixListEntriesRequest request);
 
         /// <summary>
+        /// Paginator for GetNetworkInsightsAccessScopeAnalysisFindings operation
+        ///</summary>
+        IGetNetworkInsightsAccessScopeAnalysisFindingsPaginator GetNetworkInsightsAccessScopeAnalysisFindings(GetNetworkInsightsAccessScopeAnalysisFindingsRequest request);
+
+        /// <summary>
         /// Paginator for GetSpotPlacementScores operation
         ///</summary>
         IGetSpotPlacementScoresPaginator GetSpotPlacementScores(GetSpotPlacementScoresRequest request);
@@ -569,6 +659,11 @@ namespace Amazon.EC2.Model
         /// Paginator for GetTransitGatewayMulticastDomainAssociations operation
         ///</summary>
         IGetTransitGatewayMulticastDomainAssociationsPaginator GetTransitGatewayMulticastDomainAssociations(GetTransitGatewayMulticastDomainAssociationsRequest request);
+
+        /// <summary>
+        /// Paginator for GetTransitGatewayPolicyTableAssociations operation
+        ///</summary>
+        IGetTransitGatewayPolicyTableAssociationsPaginator GetTransitGatewayPolicyTableAssociations(GetTransitGatewayPolicyTableAssociationsRequest request);
 
         /// <summary>
         /// Paginator for GetTransitGatewayPrefixListReferences operation
@@ -589,6 +684,11 @@ namespace Amazon.EC2.Model
         /// Paginator for GetVpnConnectionDeviceTypes operation
         ///</summary>
         IGetVpnConnectionDeviceTypesPaginator GetVpnConnectionDeviceTypes(GetVpnConnectionDeviceTypesRequest request);
+
+        /// <summary>
+        /// Paginator for ListImagesInRecycleBin operation
+        ///</summary>
+        IListImagesInRecycleBinPaginator ListImagesInRecycleBin(ListImagesInRecycleBinRequest request);
 
         /// <summary>
         /// Paginator for ListSnapshotsInRecycleBin operation

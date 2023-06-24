@@ -29,7 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DLM.Model
 {
     /// <summary>
-    /// Specifies the retention rule for cross-Region snapshot copies.
+    /// Specifies a retention rule for cross-Region snapshot copies created by snapshot or
+    /// event-based policies, or cross-Region AMI copies created by AMI policies. After the
+    /// retention period expires, the cross-Region copy is deleted.
     /// </summary>
     public partial class CrossRegionCopyRetainRule
     {
@@ -39,8 +41,8 @@ namespace Amazon.DLM.Model
         /// <summary>
         /// Gets and sets the property Interval. 
         /// <para>
-        /// The amount of time to retain each snapshot. The maximum is 100 years. This is equivalent
-        /// to 1200 months, 5200 weeks, or 36500 days.
+        /// The amount of time to retain a cross-Region snapshot or AMI copy. The maximum is 100
+        /// years. This is equivalent to 1200 months, 5200 weeks, or 36500 days.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -59,7 +61,8 @@ namespace Amazon.DLM.Model
         /// <summary>
         /// Gets and sets the property IntervalUnit. 
         /// <para>
-        /// The unit of time for time-based retention.
+        /// The unit of time for time-based retention. For example, to retain a cross-Region copy
+        /// for 3 months, specify <code>Interval=3</code> and <code>IntervalUnit=MONTHS</code>.
         /// </para>
         /// </summary>
         public RetentionIntervalUnitValues IntervalUnit

@@ -34,7 +34,7 @@ namespace Amazon.NimbleStudio.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ScriptParameterKeyValue Marshaller
-    /// </summary>       
+    /// </summary>
     public class ScriptParameterKeyValueMarshaller : IRequestMarshaller<ScriptParameterKeyValue, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.NimbleStudio.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ScriptParameterKeyValueMarshaller Instance = new ScriptParameterKeyValueMarshaller();
 
     }

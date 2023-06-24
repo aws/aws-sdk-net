@@ -36,7 +36,10 @@ namespace Amazon.EC2.Model
         private ByoipCidr _byoipCidr;
 
         /// <summary>
-        /// Gets and sets the property ByoipCidr.
+        /// Gets and sets the property ByoipCidr. 
+        /// <para>
+        /// The BYOIP CIDR.
+        /// </para>
         /// </summary>
         public ByoipCidr ByoipCidr
         {

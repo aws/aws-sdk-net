@@ -34,7 +34,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// UpdateFileSystemLustreConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class UpdateFileSystemLustreConfigurationMarshaller : IRequestMarshaller<UpdateFileSystemLustreConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -80,6 +80,17 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetRootSquashConfiguration())
+            {
+                context.Writer.WritePropertyName("RootSquashConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = LustreRootSquashConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.RootSquashConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetWeeklyMaintenanceStartTime())
             {
                 context.Writer.WritePropertyName("WeeklyMaintenanceStartTime");
@@ -90,7 +101,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static UpdateFileSystemLustreConfigurationMarshaller Instance = new UpdateFileSystemLustreConfigurationMarshaller();
 
     }

@@ -47,6 +47,7 @@ namespace Amazon.QuickSight.Model
         /// console.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
         public string Name
         {
             get { return this._name; }
@@ -65,7 +66,7 @@ namespace Amazon.QuickSight.Model
         /// The unique identifier associated with a sheet.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=2048)]
+        [AWSProperty(Min=1, Max=512)]
         public string SheetId
         {
             get { return this._sheetId; }

@@ -30,7 +30,7 @@ namespace Amazon.Route53RecoveryReadiness.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateRecoveryGroup operation.
-    /// Updates an existing Recovery Group.
+    /// Updates a recovery group.
     /// </summary>
     public partial class UpdateRecoveryGroupRequest : AmazonRoute53RecoveryReadinessRequest
     {
@@ -38,8 +38,11 @@ namespace Amazon.Route53RecoveryReadiness.Model
         private string _recoveryGroupName;
 
         /// <summary>
-        /// Gets and sets the property Cells. A list of Cell arns, completely replaces previous
-        /// list
+        /// Gets and sets the property Cells. 
+        /// <para>
+        /// A list of cell Amazon Resource Names (ARNs). This list completely replaces the previous
+        /// list.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public List<string> Cells
@@ -55,7 +58,10 @@ namespace Amazon.Route53RecoveryReadiness.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RecoveryGroupName. The RecoveryGroup to update
+        /// Gets and sets the property RecoveryGroupName. 
+        /// <para>
+        /// The name of a recovery group.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string RecoveryGroupName

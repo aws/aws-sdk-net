@@ -66,5 +66,21 @@ namespace Amazon.CloudWatchEvidently.Model
         {
             return new ListProjectsPaginator(this.client, request);
         }
+
+        /// <summary>
+        /// Paginator for ListSegmentReferences operation
+        ///</summary>
+        public IListSegmentReferencesPaginator ListSegmentReferences(ListSegmentReferencesRequest request) 
+        {
+            return new ListSegmentReferencesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListSegments operation
+        ///</summary>
+        public IListSegmentsPaginator ListSegments(ListSegmentsRequest request) 
+        {
+            return new ListSegmentsPaginator(this.client, request);
+        }
     }
 }

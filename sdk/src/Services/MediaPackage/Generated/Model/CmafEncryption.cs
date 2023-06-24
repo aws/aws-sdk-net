@@ -34,6 +34,7 @@ namespace Amazon.MediaPackage.Model
     public partial class CmafEncryption
     {
         private string _constantInitializationVector;
+        private CmafEncryptionMethod _encryptionMethod;
         private int? _keyRotationIntervalSeconds;
         private SpekeKeyProvider _spekeKeyProvider;
 
@@ -53,6 +54,21 @@ namespace Amazon.MediaPackage.Model
         internal bool IsSetConstantInitializationVector()
         {
             return this._constantInitializationVector != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EncryptionMethod.
+        /// </summary>
+        public CmafEncryptionMethod EncryptionMethod
+        {
+            get { return this._encryptionMethod; }
+            set { this._encryptionMethod = value; }
+        }
+
+        // Check to see if EncryptionMethod property is set
+        internal bool IsSetEncryptionMethod()
+        {
+            return this._encryptionMethod != null;
         }
 
         /// <summary>

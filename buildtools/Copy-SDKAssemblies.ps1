@@ -134,7 +134,7 @@ Function Copy-SdkAssemblies
                         return
                     }
                 }
-                Write-Verbose "Copying $assemblyName..."
+                Write-Host "Copying $($a.FullName) to $($platformDestination)"
                 Copy-Item $a.FullName $platformDestination
             }
         }
@@ -192,6 +192,7 @@ Function Copy-CoreClrSdkAssemblies
 				
 				foreach ($f in $files)
 				{
+                    Write-Host "Copying $($f.FullName) to $($targetFolder)"
 					Copy-Item -Path $f.FullName -Destination $targetFolder
 				}
 			}

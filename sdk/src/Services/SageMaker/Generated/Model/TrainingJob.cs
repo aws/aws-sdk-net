@@ -372,6 +372,10 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// An array of <code>Channel</code> objects that describes each data input channel.
         /// </para>
+        ///  
+        /// <para>
+        /// Your input must be in the same Amazon Web Services region as your training job.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=20)]
         public List<Channel> InputDataConfig
@@ -445,7 +449,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property OutputDataConfig. 
         /// <para>
         /// The S3 path where model artifacts that you configured when creating the job are stored.
-        /// Amazon SageMaker creates subfolders for model artifacts.
+        /// SageMaker creates subfolders for model artifacts.
         /// </para>
         /// </summary>
         public OutputDataConfig OutputDataConfig
@@ -522,12 +526,11 @@ namespace Amazon.SageMaker.Model
         /// <para>
         ///  Provides detailed information about the state of the training job. For detailed information
         /// about the secondary status of the training job, see <code>StatusMessage</code> under
-        /// <a>SecondaryStatusTransition</a>.
+        /// <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_SecondaryStatusTransition.html">SecondaryStatusTransition</a>.
         /// </para>
         ///  
         /// <para>
-        /// Amazon SageMaker provides primary statuses and secondary statuses that apply to each
-        /// of them:
+        /// SageMaker provides primary statuses and secondary statuses that apply to each of them:
         /// </para>
         ///  <dl> <dt>InProgress</dt> <dd> <ul> <li> 
         /// <para>
@@ -628,12 +631,12 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// Specifies a limit to how long a model training job can run. It also specifies how
         /// long a managed Spot training job has to complete. When the job reaches the time limit,
-        /// Amazon SageMaker ends the training job. Use this API to cap model training costs.
+        /// SageMaker ends the training job. Use this API to cap model training costs.
         /// </para>
         ///  
         /// <para>
-        /// To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal,
-        /// which delays job termination for 120 seconds. Algorithms can use this 120-second window
+        /// To stop a job, SageMaker sends the algorithm the <code>SIGTERM</code> signal, which
+        /// delays job termination for 120 seconds. Algorithms can use this 120-second window
         /// to save the model artifacts, so the results of training are not lost. 
         /// </para>
         /// </summary>
@@ -692,8 +695,7 @@ namespace Amazon.SageMaker.Model
         /// Indicates the time when the training job ends on training instances. You are billed
         /// for the time interval between the value of <code>TrainingStartTime</code> and this
         /// time. For successful jobs and stopped jobs, this is the time after model artifacts
-        /// are uploaded. For failed jobs, this is the time when Amazon SageMaker detects a job
-        /// failure.
+        /// are uploaded. For failed jobs, this is the time when SageMaker detects a job failure.
         /// </para>
         /// </summary>
         public DateTime TrainingEndTime
@@ -858,8 +860,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property VpcConfig. 
         /// <para>
-        /// A <a>VpcConfig</a> object that specifies the VPC that this training job has access
-        /// to. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect
+        /// A <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a>
+        /// object that specifies the VPC that this training job has access to. For more information,
+        /// see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect
         /// Training Jobs by Using an Amazon Virtual Private Cloud</a>.
         /// </para>
         /// </summary>

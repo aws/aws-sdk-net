@@ -34,7 +34,7 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// S3PublicAccessBlockConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class S3PublicAccessBlockConfigurationMarshaller : IRequestMarshaller<S3PublicAccessBlockConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static S3PublicAccessBlockConfigurationMarshaller Instance = new S3PublicAccessBlockConfigurationMarshaller();
 
     }

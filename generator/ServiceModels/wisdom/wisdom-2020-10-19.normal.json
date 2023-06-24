@@ -83,7 +83,7 @@
         {"shape":"ServiceQuotaExceededException"},
         {"shape":"AccessDeniedException"}
       ],
-      "documentation":"<p>Creates a knowledge base.</p> <note> <p>When using this API, you cannot reuse <a href=\"https://docs.aws.amazon.com/appintegrations/latest/APIReference/Welcome.html\">Amazon AppIntegrations</a> DataIntegrations with external knowledge bases such as Salesforce and ServiceNow. If you do, you'll get an <code>InvalidRequestException</code> error. </p> <pre><code> &lt;p&gt;For example, you're programmatically managing your external knowledge base, and you want to add or remove one of the fields that is being ingested from Salesforce. Do the following:&lt;/p&gt; &lt;ol&gt; &lt;li&gt; &lt;p&gt;Call &lt;a href=&quot;https://docs.aws.amazon.com/wisdom/latest/APIReference/API_DeleteKnowledgeBase.html&quot;&gt;DeleteKnowledgeBase&lt;/a&gt;.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;Call &lt;a href=&quot;https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_DeleteDataIntegration.html&quot;&gt;DeleteDataIntegration&lt;/a&gt;.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;Call &lt;a href=&quot;https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_CreateDataIntegration.html&quot;&gt;CreateDataIntegration&lt;/a&gt; to recreate the DataIntegration or a create different one.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;Call CreateKnowledgeBase.&lt;/p&gt; &lt;/li&gt; &lt;/ol&gt; &lt;/note&gt; </code></pre>",
+      "documentation":"<p>Creates a knowledge base.</p> <note> <p>When using this API, you cannot reuse <a href=\"https://docs.aws.amazon.com/appintegrations/latest/APIReference/Welcome.html\">Amazon AppIntegrations</a> DataIntegrations with external knowledge bases such as Salesforce and ServiceNow. If you do, you'll get an <code>InvalidRequestException</code> error. </p> <p>For example, you're programmatically managing your external knowledge base, and you want to add or remove one of the fields that is being ingested from Salesforce. Do the following:</p> <ol> <li> <p>Call <a href=\"https://docs.aws.amazon.com/wisdom/latest/APIReference/API_DeleteKnowledgeBase.html\">DeleteKnowledgeBase</a>.</p> </li> <li> <p>Call <a href=\"https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_DeleteDataIntegration.html\">DeleteDataIntegration</a>.</p> </li> <li> <p>Call <a href=\"https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_CreateDataIntegration.html\">CreateDataIntegration</a> to recreate the DataIntegration or a create different one.</p> </li> <li> <p>Call CreateKnowledgeBase.</p> </li> </ol> </note>",
       "idempotent":true
     },
     "CreateSession":{
@@ -165,6 +165,7 @@
       "output":{"shape":"DeleteKnowledgeBaseResponse"},
       "errors":[
         {"shape":"ConflictException"},
+        {"shape":"ValidationException"},
         {"shape":"AccessDeniedException"},
         {"shape":"ResourceNotFoundException"}
       ],
@@ -536,18 +537,15 @@
     },
     "AppIntegrationsConfiguration":{
       "type":"structure",
-      "required":[
-        "appIntegrationArn",
-        "objectFields"
-      ],
+      "required":["appIntegrationArn"],
       "members":{
         "appIntegrationArn":{
           "shape":"GenericArn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the AppIntegrations DataIntegration to use for ingesting content.</p>"
+          "documentation":"<p>The Amazon Resource Name (ARN) of the AppIntegrations DataIntegration to use for ingesting content.</p> <ul> <li> <p> For <a href=\"https://developer.salesforce.com/docs/atlas.en-us.knowledge_dev.meta/knowledge_dev/sforce_api_objects_knowledge__kav.htm\"> Salesforce</a>, your AppIntegrations DataIntegration must have an ObjectConfiguration if objectFields is not provided, including at least <code>Id</code>, <code>ArticleNumber</code>, <code>VersionNumber</code>, <code>Title</code>, <code>PublishStatus</code>, and <code>IsDeleted</code> as source fields. </p> </li> <li> <p> For <a href=\"https://developer.servicenow.com/dev.do#!/reference/api/rome/rest/knowledge-management-api\"> ServiceNow</a>, your AppIntegrations DataIntegration must have an ObjectConfiguration if objectFields is not provided, including at least <code>number</code>, <code>short_description</code>, <code>sys_mod_count</code>, <code>workflow_state</code>, and <code>active</code> as source fields. </p> </li> <li> <p> For <a href=\"https://developer.zendesk.com/api-reference/help_center/help-center-api/articles/\"> Zendesk</a>, your AppIntegrations DataIntegration must have an ObjectConfiguration if <code>objectFields</code> is not provided, including at least <code>id</code>, <code>title</code>, <code>updated_at</code>, and <code>draft</code> as source fields. </p> </li> <li> <p> For <a href=\"https://learn.microsoft.com/en-us/sharepoint/dev/sp-add-ins/sharepoint-net-server-csom-jsom-and-rest-api-index\"> SharePoint</a>, your AppIntegrations DataIntegration must have a FileConfiguration, including only file extensions that are among <code>docx</code>, <code>pdf</code>, <code>html</code>, <code>htm</code>, and <code>txt</code>. </p> </li> </ul>"
         },
         "objectFields":{
           "shape":"ObjectFieldsList",
-          "documentation":"<p>The fields from the source that are made available to your agents in Wisdom. </p> <ul> <li> <p> For <a href=\"https://developer.salesforce.com/docs/atlas.en-us.knowledge_dev.meta/knowledge_dev/sforce_api_objects_knowledge__kav.htm\"> Salesforce</a>, you must include at least <code>Id</code>, <code>ArticleNumber</code>, <code>VersionNumber</code>, <code>Title</code>, <code>PublishStatus</code>, and <code>IsDeleted</code>. </p> </li> <li> <p>For <a href=\"https://developer.servicenow.com/dev.do#!/reference/api/rome/rest/knowledge-management-api\"> ServiceNow</a>, you must include at least <code>number</code>, <code>short_description</code>, <code>sys_mod_count</code>, <code>workflow_state</code>, and <code>active</code>. </p> </li> </ul> <p>Make sure to include additional field(s); these are indexed and used to source recommendations. </p>"
+          "documentation":"<p>The fields from the source that are made available to your agents in Wisdom. Optional if ObjectConfiguration is included in the provided DataIntegration. </p> <ul> <li> <p> For <a href=\"https://developer.salesforce.com/docs/atlas.en-us.knowledge_dev.meta/knowledge_dev/sforce_api_objects_knowledge__kav.htm\"> Salesforce</a>, you must include at least <code>Id</code>, <code>ArticleNumber</code>, <code>VersionNumber</code>, <code>Title</code>, <code>PublishStatus</code>, and <code>IsDeleted</code>. </p> </li> <li> <p>For <a href=\"https://developer.servicenow.com/dev.do#!/reference/api/rome/rest/knowledge-management-api\"> ServiceNow</a>, you must include at least <code>number</code>, <code>short_description</code>, <code>sys_mod_count</code>, <code>workflow_state</code>, and <code>active</code>. </p> </li> <li> <p>For <a href=\"https://developer.zendesk.com/api-reference/help_center/help-center-api/articles/\"> Zendesk</a>, you must include at least <code>id</code>, <code>title</code>, <code>updated_at</code>, and <code>draft</code>. </p> </li> </ul> <p>Make sure to include additional fields. These fields are indexed and used to source recommendations. </p>"
         }
       },
       "documentation":"<p>Configuration information for Amazon AppIntegrations to automatically ingest content.</p>"
@@ -569,7 +567,7 @@
       "members":{
         "assistantArn":{
           "shape":"Arn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the Wisdom assistant</p>"
+          "documentation":"<p>The Amazon Resource Name (ARN) of the Wisdom assistant.</p>"
         },
         "assistantAssociationArn":{
           "shape":"Arn",
@@ -603,7 +601,7 @@
       "members":{
         "knowledgeBaseId":{
           "shape":"Uuid",
-          "documentation":"<p>The the identifier of the knowledge base.</p>"
+          "documentation":"<p>The identifier of the knowledge base.</p>"
         }
       },
       "documentation":"<p>The data that is input into Wisdom as a result of the assistant association.</p>",
@@ -633,7 +631,7 @@
       "members":{
         "assistantArn":{
           "shape":"Arn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the Wisdom assistant</p>"
+          "documentation":"<p>The Amazon Resource Name (ARN) of the Wisdom assistant.</p>"
         },
         "assistantAssociationArn":{
           "shape":"Arn",
@@ -678,7 +676,7 @@
       "members":{
         "assistantArn":{
           "shape":"Arn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the Wisdom assistant</p>"
+          "documentation":"<p>The Amazon Resource Name (ARN) of the Wisdom assistant.</p>"
         },
         "assistantId":{
           "shape":"Uuid",
@@ -738,7 +736,7 @@
       "members":{
         "assistantArn":{
           "shape":"Arn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the Wisdom assistant</p>"
+          "documentation":"<p>The Amazon Resource Name (ARN) of the Wisdom assistant.</p>"
         },
         "assistantId":{
           "shape":"Uuid",
@@ -835,7 +833,7 @@
         },
         "knowledgeBaseId":{
           "shape":"Uuid",
-          "documentation":"<p>The the identifier of the knowledge base.</p>"
+          "documentation":"<p>The identifier of the knowledge base.</p>"
         },
         "linkOutUri":{
           "shape":"Uri",
@@ -866,7 +864,7 @@
           "documentation":"<p>The title of the content.</p>"
         },
         "url":{
-          "shape":"SyntheticContentDataUrl",
+          "shape":"Url",
           "documentation":"<p>The URL of the content.</p>"
         },
         "urlExpiry":{
@@ -879,7 +877,9 @@
     "ContentMetadata":{
       "type":"map",
       "key":{"shape":"NonEmptyString"},
-      "value":{"shape":"NonEmptyString"}
+      "value":{"shape":"NonEmptyString"},
+      "max":10,
+      "min":0
     },
     "ContentReference":{
       "type":"structure",
@@ -898,7 +898,7 @@
         },
         "knowledgeBaseId":{
           "shape":"Uuid",
-          "documentation":"<p>The the identifier of the knowledge base.</p>"
+          "documentation":"<p>The identifier of the knowledge base.</p>"
         }
       },
       "documentation":"<p>Reference information about the content.</p>"
@@ -948,7 +948,7 @@
         },
         "knowledgeBaseId":{
           "shape":"Uuid",
-          "documentation":"<p>The the identifier of the knowledge base.</p>"
+          "documentation":"<p>The identifier of the knowledge base.</p>"
         },
         "metadata":{
           "shape":"ContentMetadata",
@@ -988,7 +988,7 @@
     },
     "ContentType":{
       "type":"string",
-      "pattern":"^(text/(plain|html))|(application/x\\.wisdom-json;source=(salesforce|servicenow))$"
+      "pattern":"^(text/(plain|html))|(application/(pdf|vnd\\.openxmlformats-officedocument\\.wordprocessingml\\.document))|(application/x\\.wisdom-json;source=(salesforce|servicenow|zendesk))$"
     },
     "CreateAssistantAssociationRequest":{
       "type":"structure",
@@ -1014,7 +1014,7 @@
         },
         "clientToken":{
           "shape":"ClientToken",
-          "documentation":"<p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>",
+          "documentation":"<p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href=\"https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/\">Making retries safe with idempotent APIs</a>.</p>",
           "idempotencyToken":true
         },
         "tags":{
@@ -1041,7 +1041,7 @@
       "members":{
         "clientToken":{
           "shape":"ClientToken",
-          "documentation":"<p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>",
+          "documentation":"<p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href=\"https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/\">Making retries safe with idempotent APIs</a>.</p>",
           "idempotencyToken":true
         },
         "description":{
@@ -1085,12 +1085,12 @@
       "members":{
         "clientToken":{
           "shape":"NonEmptyString",
-          "documentation":"<p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>",
+          "documentation":"<p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href=\"https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/\">Making retries safe with idempotent APIs</a>.</p>",
           "idempotencyToken":true
         },
         "knowledgeBaseId":{
           "shape":"UuidOrArn",
-          "documentation":"<p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>",
+          "documentation":"<p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>",
           "location":"uri",
           "locationName":"knowledgeBaseId"
         },
@@ -1115,7 +1115,7 @@
           "documentation":"<p>The title of the content. If not set, the title is equal to the name.</p>"
         },
         "uploadId":{
-          "shape":"NonEmptyString",
+          "shape":"UploadId",
           "documentation":"<p>A pointer to the uploaded asset. This value is returned by <a href=\"https://docs.aws.amazon.com/wisdom/latest/APIReference/API_StartContentUpload.html\">StartContentUpload</a>.</p>"
         }
       }
@@ -1138,7 +1138,7 @@
       "members":{
         "clientToken":{
           "shape":"NonEmptyString",
-          "documentation":"<p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>",
+          "documentation":"<p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href=\"https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/\">Making retries safe with idempotent APIs</a>.</p>",
           "idempotencyToken":true
         },
         "description":{
@@ -1195,7 +1195,7 @@
         },
         "clientToken":{
           "shape":"ClientToken",
-          "documentation":"<p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>",
+          "documentation":"<p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href=\"https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/\">Making retries safe with idempotent APIs</a>.</p>",
           "idempotencyToken":true
         },
         "description":{
@@ -1279,7 +1279,7 @@
         },
         "knowledgeBaseId":{
           "shape":"UuidOrArn",
-          "documentation":"<p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>",
+          "documentation":"<p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>",
           "location":"uri",
           "locationName":"knowledgeBaseId"
         }
@@ -1340,7 +1340,7 @@
           "documentation":"<p>Highlights in the document text.</p>"
         },
         "text":{
-          "shape":"SyntheticDocumentTextString",
+          "shape":"SensitiveString",
           "documentation":"<p>Text in the document.</p>"
         }
       },
@@ -1453,7 +1453,7 @@
         },
         "knowledgeBaseId":{
           "shape":"UuidOrArn",
-          "documentation":"<p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>",
+          "documentation":"<p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>",
           "location":"uri",
           "locationName":"knowledgeBaseId"
         }
@@ -1483,7 +1483,7 @@
         },
         "knowledgeBaseId":{
           "shape":"UuidOrArn",
-          "documentation":"<p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>",
+          "documentation":"<p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>",
           "location":"uri",
           "locationName":"knowledgeBaseId"
         }
@@ -1504,7 +1504,7 @@
       "members":{
         "knowledgeBaseId":{
           "shape":"UuidOrArn",
-          "documentation":"<p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>",
+          "documentation":"<p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>",
           "location":"uri",
           "locationName":"knowledgeBaseId"
         }
@@ -1559,6 +1559,10 @@
         "recommendations":{
           "shape":"RecommendationList",
           "documentation":"<p>The recommendations.</p>"
+        },
+        "triggers":{
+          "shape":"RecommendationTriggerList",
+          "documentation":"<p>The triggers corresponding to recommendations.</p>"
         }
       }
     },
@@ -1625,7 +1629,7 @@
         },
         "knowledgeBaseId":{
           "shape":"Uuid",
-          "documentation":"<p>The the identifier of the knowledge base.</p>"
+          "documentation":"<p>The identifier of the knowledge base.</p>"
         }
       },
       "documentation":"<p>Association information about the knowledge base.</p>"
@@ -1650,7 +1654,7 @@
         },
         "knowledgeBaseId":{
           "shape":"Uuid",
-          "documentation":"<p>The the identifier of the knowledge base.</p>"
+          "documentation":"<p>The identifier of the knowledge base.</p>"
         },
         "knowledgeBaseType":{
           "shape":"KnowledgeBaseType",
@@ -1722,7 +1726,7 @@
         },
         "knowledgeBaseId":{
           "shape":"Uuid",
-          "documentation":"<p>The the identifier of the knowledge base.</p>"
+          "documentation":"<p>The identifier of the knowledge base.</p>"
         },
         "knowledgeBaseType":{
           "shape":"KnowledgeBaseType",
@@ -1742,7 +1746,7 @@
         },
         "sourceConfiguration":{
           "shape":"SourceConfiguration",
-          "documentation":"<p>[KEVIN]</p>"
+          "documentation":"<p>Configuration information about the external data source.</p>"
         },
         "status":{
           "shape":"KnowledgeBaseStatus",
@@ -1837,7 +1841,7 @@
       "members":{
         "knowledgeBaseId":{
           "shape":"UuidOrArn",
-          "documentation":"<p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>",
+          "documentation":"<p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>",
           "location":"uri",
           "locationName":"knowledgeBaseId"
         },
@@ -2060,6 +2064,16 @@
         }
       }
     },
+    "QueryRecommendationTriggerData":{
+      "type":"structure",
+      "members":{
+        "text":{
+          "shape":"QueryText",
+          "documentation":"<p>The text associated with the recommendation trigger.</p>"
+        }
+      },
+      "documentation":"<p>Data associated with the QUERY RecommendationTriggerType.</p>"
+    },
     "QueryResultsList":{
       "type":"list",
       "member":{"shape":"ResultData"}
@@ -2090,6 +2104,10 @@
         "relevanceScore":{
           "shape":"RelevanceScore",
           "documentation":"<p>The relevance score of the recommendation.</p>"
+        },
+        "type":{
+          "shape":"RecommendationType",
+          "documentation":"<p>The type of recommendation.</p>"
         }
       },
       "documentation":"<p>Information about the recommendation.</p>"
@@ -2101,6 +2119,70 @@
     "RecommendationList":{
       "type":"list",
       "member":{"shape":"RecommendationData"}
+    },
+    "RecommendationSourceType":{
+      "type":"string",
+      "enum":[
+        "ISSUE_DETECTION",
+        "RULE_EVALUATION",
+        "OTHER"
+      ]
+    },
+    "RecommendationTrigger":{
+      "type":"structure",
+      "required":[
+        "data",
+        "id",
+        "recommendationIds",
+        "source",
+        "type"
+      ],
+      "members":{
+        "data":{
+          "shape":"RecommendationTriggerData",
+          "documentation":"<p>A union type containing information related to the trigger.</p>"
+        },
+        "id":{
+          "shape":"Uuid",
+          "documentation":"<p>The identifier of the recommendation trigger.</p>"
+        },
+        "recommendationIds":{
+          "shape":"RecommendationIdList",
+          "documentation":"<p>The identifiers of the recommendations.</p>"
+        },
+        "source":{
+          "shape":"RecommendationSourceType",
+          "documentation":"<p>The source of the recommendation trigger.</p> <ul> <li> <p>ISSUE_DETECTION: The corresponding recommendations were triggered by a Contact Lens issue.</p> </li> <li> <p>RULE_EVALUATION: The corresponding recommendations were triggered by a Contact Lens rule.</p> </li> </ul>"
+        },
+        "type":{
+          "shape":"RecommendationTriggerType",
+          "documentation":"<p>The type of recommendation trigger.</p>"
+        }
+      },
+      "documentation":"<p>A recommendation trigger provides context on the event that produced the referenced recommendations. Recommendations are only referenced in <code>recommendationIds</code> by a single RecommendationTrigger.</p>"
+    },
+    "RecommendationTriggerData":{
+      "type":"structure",
+      "members":{
+        "query":{
+          "shape":"QueryRecommendationTriggerData",
+          "documentation":"<p>Data associated with the QUERY RecommendationTriggerType.</p>"
+        }
+      },
+      "documentation":"<p>A union type containing information related to the trigger.</p>",
+      "union":true
+    },
+    "RecommendationTriggerList":{
+      "type":"list",
+      "member":{"shape":"RecommendationTrigger"}
+    },
+    "RecommendationTriggerType":{
+      "type":"string",
+      "enum":["QUERY"]
+    },
+    "RecommendationType":{
+      "type":"string",
+      "enum":["KNOWLEDGE_CONTENT"]
     },
     "RelevanceLevel":{
       "type":"string",
@@ -2120,7 +2202,7 @@
       "members":{
         "knowledgeBaseId":{
           "shape":"UuidOrArn",
-          "documentation":"<p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>",
+          "documentation":"<p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>",
           "location":"uri",
           "locationName":"knowledgeBaseId"
         }
@@ -2136,7 +2218,7 @@
       "members":{
         "templateUri":{
           "shape":"Uri",
-          "documentation":"<p>A URI template containing exactly one variable in <code>${variableName} </code>format. This can only be set for <code>EXTERNAL</code> knowledge bases. For Salesforce and ServiceNow, the variable must be one of the following:</p> <ul> <li> <p>Salesforce: <code>Id</code>, <code>ArticleNumber</code>, <code>VersionNumber</code>, <code>Title</code>, <code>PublishStatus</code>, or <code>IsDeleted</code> </p> </li> <li> <p>ServiceNow: <code>number</code>, <code>short_description</code>, <code>sys_mod_count</code>, <code>workflow_state</code>, or <code>active</code> </p> </li> </ul> <pre><code> &lt;p&gt;The variable is replaced with the actual value for a piece of content when calling &lt;a href=&quot;https://docs.aws.amazon.com/wisdom/latest/APIReference/API_GetContent.html&quot;&gt;GetContent&lt;/a&gt;. &lt;/p&gt; </code></pre>"
+          "documentation":"<p>A URI template containing exactly one variable in <code>${variableName} </code>format. This can only be set for <code>EXTERNAL</code> knowledge bases. For Salesforce, ServiceNow, and Zendesk, the variable must be one of the following:</p> <ul> <li> <p>Salesforce: <code>Id</code>, <code>ArticleNumber</code>, <code>VersionNumber</code>, <code>Title</code>, <code>PublishStatus</code>, or <code>IsDeleted</code> </p> </li> <li> <p>ServiceNow: <code>number</code>, <code>short_description</code>, <code>sys_mod_count</code>, <code>workflow_state</code>, or <code>active</code> </p> </li> <li> <p>Zendesk: <code>id</code>, <code>title</code>, <code>updated_at</code>, or <code>draft</code> </p> </li> </ul> <p>The variable is replaced with the actual value for a piece of content when calling <a href=\"https://docs.aws.amazon.com/wisdom/latest/APIReference/API_GetContent.html\">GetContent</a>. </p>"
         }
       },
       "documentation":"<p>Information about how to render the content.</p>"
@@ -2188,7 +2270,7 @@
       "members":{
         "knowledgeBaseId":{
           "shape":"UuidOrArn",
-          "documentation":"<p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>",
+          "documentation":"<p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>",
           "location":"uri",
           "locationName":"knowledgeBaseId"
         },
@@ -2280,12 +2362,16 @@
         }
       }
     },
+    "SensitiveString":{
+      "type":"string",
+      "sensitive":true
+    },
     "ServerSideEncryptionConfiguration":{
       "type":"structure",
       "members":{
         "kmsKeyId":{
           "shape":"NonEmptyString",
-          "documentation":"<p>The KMS key. For information about valid ID values, see <a href=\"https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id\">Key identifiers (KeyId)</a> in the <i>AWS Key Management Service Developer Guide</i>. </p>"
+          "documentation":"<p>The KMS key. For information about valid ID values, see <a href=\"https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id\">Key identifiers (KeyId)</a>.</p>"
         }
       },
       "documentation":"<p>The KMS key used for encryption.</p>"
@@ -2348,7 +2434,7 @@
       "members":{
         "assistantArn":{
           "shape":"Arn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the Wisdom assistant</p>"
+          "documentation":"<p>The Amazon Resource Name (ARN) of the Wisdom assistant.</p>"
         },
         "assistantId":{
           "shape":"Uuid",
@@ -2389,7 +2475,7 @@
         },
         "knowledgeBaseId":{
           "shape":"UuidOrArn",
-          "documentation":"<p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>",
+          "documentation":"<p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>",
           "location":"uri",
           "locationName":"knowledgeBaseId"
         }
@@ -2409,11 +2495,11 @@
           "documentation":"<p>The headers to include in the upload.</p>"
         },
         "uploadId":{
-          "shape":"NonEmptyString",
+          "shape":"UploadId",
           "documentation":"<p>The identifier of the upload.</p>"
         },
         "url":{
-          "shape":"SyntheticStartContentUploadResponseUrl",
+          "shape":"Url",
           "documentation":"<p>The URL of the upload.</p>"
         },
         "urlExpiry":{
@@ -2423,22 +2509,6 @@
       }
     },
     "String":{"type":"string"},
-    "SyntheticContentDataUrl":{
-      "type":"string",
-      "max":4096,
-      "min":1,
-      "sensitive":true
-    },
-    "SyntheticDocumentTextString":{
-      "type":"string",
-      "sensitive":true
-    },
-    "SyntheticStartContentUploadResponseUrl":{
-      "type":"string",
-      "max":4096,
-      "min":1,
-      "sensitive":true
-    },
     "SyntheticTimestamp_epoch_seconds":{
       "type":"timestamp",
       "timestampFormat":"unixTimestamp"
@@ -2546,7 +2616,7 @@
         },
         "knowledgeBaseId":{
           "shape":"UuidOrArn",
-          "documentation":"<p>The the identifier of the knowledge base. Can be either the ID or the ARN</p>",
+          "documentation":"<p>The identifier of the knowledge base. Can be either the ID or the ARN</p>",
           "location":"uri",
           "locationName":"knowledgeBaseId"
         },
@@ -2571,7 +2641,7 @@
           "documentation":"<p>The title of the content.</p>"
         },
         "uploadId":{
-          "shape":"NonEmptyString",
+          "shape":"UploadId",
           "documentation":"<p>A pointer to the uploaded asset. This value is returned by <a href=\"https://docs.aws.amazon.com/wisdom/latest/APIReference/API_StartContentUpload.html\">StartContentUpload</a>. </p>"
         }
       }
@@ -2594,7 +2664,7 @@
       "members":{
         "knowledgeBaseId":{
           "shape":"UuidOrArn",
-          "documentation":"<p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>",
+          "documentation":"<p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>",
           "location":"uri",
           "locationName":"knowledgeBaseId"
         },
@@ -2613,10 +2683,21 @@
         }
       }
     },
+    "UploadId":{
+      "type":"string",
+      "max":1200,
+      "min":1
+    },
     "Uri":{
       "type":"string",
       "max":4096,
       "min":1
+    },
+    "Url":{
+      "type":"string",
+      "max":4096,
+      "min":1,
+      "sensitive":true
     },
     "Uuid":{
       "type":"string",
@@ -2631,7 +2712,7 @@
       "members":{
         "message":{"shape":"String"}
       },
-      "documentation":"<p>The input fails to satisfy the constraints specified by an AWS service.</p>",
+      "documentation":"<p>The input fails to satisfy the constraints specified by a service.</p>",
       "error":{
         "httpStatusCode":400,
         "senderFault":true
@@ -2644,5 +2725,5 @@
       "min":0
     }
   },
-  "documentation":"<p>All Amazon Connect Wisdom functionality is accessible using the API. For example, you can create an assistant and a knowledge base.</p> <pre><code> &lt;p&gt;Some more advanced features are only accessible using the Wisdom API. For example, you can manually manage content by uploading custom files and control their lifecycle. &lt;/p&gt; </code></pre>"
+  "documentation":"<p>Amazon Connect Wisdom delivers agents the information they need to solve customer issues as they're actively speaking with customers. Agents can search across connected repositories from within their agent desktop to find answers quickly. Use Amazon Connect Wisdom to create an assistant and a knowledge base, for example, or manage content by uploading custom files.</p>"
 }

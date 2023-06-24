@@ -58,7 +58,7 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
             string target = "Lightsail_20161128.AttachDisk";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-11-28";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-11-28";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -67,6 +67,12 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAutoMounting())
+                {
+                    context.Writer.WritePropertyName("autoMounting");
+                    context.Writer.Write(publicRequest.AutoMounting);
+                }
+
                 if(publicRequest.IsSetDiskName())
                 {
                     context.Writer.WritePropertyName("diskName");
@@ -85,7 +91,6 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.InstanceName);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

@@ -17,22 +17,22 @@
  * Do not modify this file. This file is generated from the config-2014-11-12.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
-
+using Amazon.ConfigService.Internal;
 
 namespace Amazon.ConfigService
 {
     /// <summary>
     /// Configuration for accessing Amazon ConfigService service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonConfigServiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.5.24");
+            InternalSDKUtils.BuildUserAgentString("3.7.106.0");
 
         private string _userAgent = UserAgentString;
 
@@ -40,8 +40,10 @@ namespace Amazon.ConfigService
         /// Default constructor
         /// </summary>
         public AmazonConfigServiceConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonConfigServiceDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "config";
+            this.EndpointProvider = new AmazonConfigServiceEndpointProvider();
         }
 
         /// <summary>
@@ -76,5 +78,6 @@ namespace Amazon.ConfigService
                 return _userAgent;
             }
         }
+
     }
 }

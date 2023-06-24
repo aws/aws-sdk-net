@@ -46,6 +46,11 @@ namespace Amazon.SSOAdmin.Model
         IListAccountsForProvisionedPermissionSetPaginator ListAccountsForProvisionedPermissionSet(ListAccountsForProvisionedPermissionSetRequest request);
 
         /// <summary>
+        /// Paginator for ListCustomerManagedPolicyReferencesInPermissionSet operation
+        ///</summary>
+        IListCustomerManagedPolicyReferencesInPermissionSetPaginator ListCustomerManagedPolicyReferencesInPermissionSet(ListCustomerManagedPolicyReferencesInPermissionSetRequest request);
+
+        /// <summary>
         /// Paginator for ListInstances operation
         ///</summary>
         IListInstancesPaginator ListInstances(ListInstancesRequest request);

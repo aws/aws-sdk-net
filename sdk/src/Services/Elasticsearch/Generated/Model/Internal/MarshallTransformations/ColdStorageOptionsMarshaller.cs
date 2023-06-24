@@ -34,7 +34,7 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ColdStorageOptions Marshaller
-    /// </summary>       
+    /// </summary>
     public class ColdStorageOptionsMarshaller : IRequestMarshaller<ColdStorageOptions, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ColdStorageOptionsMarshaller Instance = new ColdStorageOptionsMarshaller();
 
     }

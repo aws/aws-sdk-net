@@ -88,6 +88,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     unmarshalledObject.CognitoIdentityPoolId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("deviceCertificateArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DeviceCertificateArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("deviceCertificateId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -98,6 +104,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.IamRoleArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("issuerCertificateIdentifier", targetDepth))
+                {
+                    var unmarshaller = IssuerCertificateIdentifierUnmarshaller.Instance;
+                    unmarshalledObject.IssuerCertificateIdentifier = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("policyVersionIdentifier", targetDepth))

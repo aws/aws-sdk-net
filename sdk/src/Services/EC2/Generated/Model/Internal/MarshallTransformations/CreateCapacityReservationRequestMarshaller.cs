@@ -106,6 +106,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("OutpostArn", StringUtils.FromString(publicRequest.OutpostArn));
                 }
+                if(publicRequest.IsSetPlacementGroupArn())
+                {
+                    request.Parameters.Add("PlacementGroupArn", StringUtils.FromString(publicRequest.PlacementGroupArn));
+                }
                 if(publicRequest.IsSetTagSpecifications())
                 {
                     int publicRequestlistValueIndex = 1;

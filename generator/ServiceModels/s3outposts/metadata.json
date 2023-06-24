@@ -1,5 +1,6 @@
 {
   "active": true,
   "synopsis": "Amazon S3 on Outposts expands object storage to on-premises AWS Outposts environments, enabling you to store and retrieve objects using S3 APIs and features.",
-  "generate-client-constructors": true
+  "generate-client-constructors": true,
+  "legacy-service-id": "S3Outposts"
 }

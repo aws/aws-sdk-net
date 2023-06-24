@@ -30,7 +30,7 @@ namespace Amazon.APIGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteStage operation.
-    /// Deletes a <a>Stage</a> resource.
+    /// Deletes a Stage resource.
     /// </summary>
     public partial class DeleteStageRequest : AmazonAPIGatewayRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property RestApiId. 
         /// <para>
-        /// [Required] The string identifier of the associated <a>RestApi</a>.
+        /// The string identifier of the associated RestApi.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -59,7 +59,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property StageName. 
         /// <para>
-        /// [Required] The name of the <a>Stage</a> resource to delete.
+        /// The name of the Stage resource to delete.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -30,7 +30,7 @@ namespace Amazon.APIGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the GetDeployment operation.
-    /// Gets information about a <a>Deployment</a> resource.
+    /// Gets information about a Deployment resource.
     /// </summary>
     public partial class GetDeploymentRequest : AmazonAPIGatewayRequest
     {
@@ -41,7 +41,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property DeploymentId. 
         /// <para>
-        /// [Required] The identifier of the <a>Deployment</a> resource to get information about.
+        /// The identifier of the Deployment resource to get information about.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -60,7 +60,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Embed. 
         /// <para>
-        /// A query parameter to retrieve the specified embedded resources of the returned <a>Deployment</a>
+        /// A query parameter to retrieve the specified embedded resources of the returned Deployment
         /// resource in the response. In a REST API call, this <code>embed</code> parameter value
         /// is a list of comma-separated strings, as in <code>GET /restapis/{restapi_id}/deployments/{deployment_id}?embed=var1,var2</code>.
         /// The SDK and other platform-dependent libraries might use a different format for the
@@ -84,7 +84,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property RestApiId. 
         /// <para>
-        /// [Required] The string identifier of the associated <a>RestApi</a>.
+        /// The string identifier of the associated RestApi.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

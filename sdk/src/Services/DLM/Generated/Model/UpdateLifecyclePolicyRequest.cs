@@ -31,6 +31,12 @@ namespace Amazon.DLM.Model
     /// <summary>
     /// Container for the parameters to the UpdateLifecyclePolicy operation.
     /// Updates the specified lifecycle policy.
+    /// 
+    ///  
+    /// <para>
+    /// For more information about updating a policy, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/view-modify-delete.html#modify">Modify
+    /// lifecycle policies</a>.
+    /// </para>
     /// </summary>
     public partial class UpdateLifecyclePolicyRequest : AmazonDLMRequest
     {

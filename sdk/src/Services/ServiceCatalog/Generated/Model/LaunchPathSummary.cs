@@ -78,7 +78,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the portfolio to which the user was assigned.
+        /// The name of the portfolio that contains the product. 
         /// </para>
         /// </summary>
         public string Name

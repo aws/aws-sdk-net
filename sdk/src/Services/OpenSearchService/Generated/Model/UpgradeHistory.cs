@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// History of the last 10 upgrades and upgrade eligibility checks.
+    /// History of the last 10 upgrades and upgrade eligibility checks for an Amazon OpenSearch
+    /// Service domain.
     /// </summary>
     public partial class UpgradeHistory
     {
@@ -41,7 +42,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property StartTimestamp. 
         /// <para>
-        /// UTC timestamp at which the upgrade API call was made in "yyyy-MM-ddTHH:mm:ssZ" format.
+        /// UTC timestamp at which the upgrade API call was made, in the format <code>yyyy-MM-ddTHH:mm:ssZ</code>.
         /// </para>
         /// </summary>
         public DateTime StartTimestamp
@@ -59,8 +60,8 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property StepsList. 
         /// <para>
-        ///  A list of <code> <a>UpgradeStepItem</a> </code> s representing information about
-        /// each step performed as part of a specific upgrade or upgrade eligibility check. 
+        /// A list of each step performed as part of a specific upgrade or upgrade eligibility
+        /// check.
         /// </para>
         /// </summary>
         public List<UpgradeStepItem> StepsList
@@ -78,7 +79,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property UpgradeName. 
         /// <para>
-        /// A string that briefly describes the upgrade.
+        /// A string that describes the upgrade.
         /// </para>
         /// </summary>
         public string UpgradeName
@@ -97,9 +98,25 @@ namespace Amazon.OpenSearchService.Model
         /// Gets and sets the property UpgradeStatus. 
         /// <para>
         ///  The current status of the upgrade. The status can take one of the following values:
-        /// <ul> <li>In Progress</li> <li>Succeeded</li> <li>Succeeded with Issues</li> <li>Failed</li>
-        /// </ul> 
+        /// 
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// In Progress
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Succeeded
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Succeeded with Issues
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Failed
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public UpgradeStatus UpgradeStatus
         {

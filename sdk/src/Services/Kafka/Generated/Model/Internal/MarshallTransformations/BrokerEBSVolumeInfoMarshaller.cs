@@ -34,7 +34,7 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// BrokerEBSVolumeInfo Marshaller
-    /// </summary>       
+    /// </summary>
     public class BrokerEBSVolumeInfoMarshaller : IRequestMarshaller<BrokerEBSVolumeInfo, JsonMarshallerContext> 
     {
         /// <summary>
@@ -51,6 +51,17 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.KafkaBrokerNodeId);
             }
 
+            if(requestObject.IsSetProvisionedThroughput())
+            {
+                context.Writer.WritePropertyName("provisionedThroughput");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ProvisionedThroughputMarshaller.Instance;
+                marshaller.Marshall(requestObject.ProvisionedThroughput, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetVolumeSizeGB())
             {
                 context.Writer.WritePropertyName("volumeSizeGB");
@@ -61,7 +72,7 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static BrokerEBSVolumeInfoMarshaller Instance = new BrokerEBSVolumeInfoMarshaller();
 
     }

@@ -30,8 +30,18 @@ namespace Amazon.Detective.Model
 {
     /// <summary>
     /// Container for the parameters to the ListMembers operation.
-    /// Retrieves the list of member accounts for a behavior graph. Does not return member
-    /// accounts that were removed from the behavior graph.
+    /// Retrieves the list of member accounts for a behavior graph.
+    /// 
+    ///  
+    /// <para>
+    /// For invited accounts, the results do not include member accounts that were removed
+    /// from the behavior graph.
+    /// </para>
+    ///  
+    /// <para>
+    /// For the organization behavior graph, the results do not include organization accounts
+    /// that the Detective administrator account has not enabled as member accounts.
+    /// </para>
     /// </summary>
     public partial class ListMembersRequest : AmazonDetectiveRequest
     {

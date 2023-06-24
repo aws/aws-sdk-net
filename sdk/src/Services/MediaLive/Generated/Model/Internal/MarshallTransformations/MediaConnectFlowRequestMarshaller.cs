@@ -34,7 +34,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// MediaConnectFlowRequest Marshaller
-    /// </summary>       
+    /// </summary>
     public class MediaConnectFlowRequestMarshaller : IRequestMarshaller<MediaConnectFlowRequest, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static MediaConnectFlowRequestMarshaller Instance = new MediaConnectFlowRequestMarshaller();
 
     }

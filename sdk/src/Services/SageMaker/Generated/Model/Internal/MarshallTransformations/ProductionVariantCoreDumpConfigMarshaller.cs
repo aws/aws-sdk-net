@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ProductionVariantCoreDumpConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class ProductionVariantCoreDumpConfigMarshaller : IRequestMarshaller<ProductionVariantCoreDumpConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ProductionVariantCoreDumpConfigMarshaller Instance = new ProductionVariantCoreDumpConfigMarshaller();
 
     }

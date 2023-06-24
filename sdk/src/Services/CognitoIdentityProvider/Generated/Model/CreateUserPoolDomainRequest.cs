@@ -71,7 +71,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Domain. 
         /// <para>
-        /// The domain string.
+        /// The domain string. For custom domains, this is the fully-qualified domain name, such
+        /// as <code>auth.example.com</code>. For Amazon Cognito prefix domains, this is the prefix
+        /// alone, such as <code>auth</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=63)]

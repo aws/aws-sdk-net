@@ -17,22 +17,22 @@
  * Do not modify this file. This file is generated from the machinelearning-2014-12-12.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
-
+using Amazon.MachineLearning.Internal;
 
 namespace Amazon.MachineLearning
 {
     /// <summary>
     /// Configuration for accessing Amazon MachineLearning service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonMachineLearningConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.1.101");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.147");
 
         private string _userAgent = UserAgentString;
 
@@ -40,8 +40,10 @@ namespace Amazon.MachineLearning
         /// Default constructor
         /// </summary>
         public AmazonMachineLearningConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonMachineLearningDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "machinelearning";
+            this.EndpointProvider = new AmazonMachineLearningEndpointProvider();
         }
 
         /// <summary>
@@ -76,5 +78,6 @@ namespace Amazon.MachineLearning
                 return _userAgent;
             }
         }
+
     }
 }

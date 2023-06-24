@@ -43,8 +43,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AccountTakeoverRiskConfiguration. 
         /// <para>
-        /// The account takeover risk configuration object including the <code>NotifyConfiguration</code>
-        /// object and <code>Actions</code> to take in the case of an account takeover.
+        /// The account takeover risk configuration object, including the <code>NotifyConfiguration</code>
+        /// object and <code>Actions</code> to take if there is an account takeover.
         /// </para>
         /// </summary>
         public AccountTakeoverRiskConfigurationType AccountTakeoverRiskConfiguration
@@ -65,7 +65,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The app client ID.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=128)]
+        [AWSProperty(Sensitive=true, Min=1, Max=128)]
         public string ClientId
         {
             get { return this._clientId; }
@@ -81,8 +81,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property CompromisedCredentialsRiskConfiguration. 
         /// <para>
-        /// The compromised credentials risk configuration object including the <code>EventFilter</code>
-        /// and the <code>EventAction</code> 
+        /// The compromised credentials risk configuration object, including the <code>EventFilter</code>
+        /// and the <code>EventAction</code>.
         /// </para>
         /// </summary>
         public CompromisedCredentialsRiskConfigurationType CompromisedCredentialsRiskConfiguration

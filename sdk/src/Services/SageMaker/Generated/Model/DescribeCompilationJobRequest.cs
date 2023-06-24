@@ -34,8 +34,8 @@ namespace Amazon.SageMaker.Model
     /// 
     ///  
     /// <para>
-    /// To create a model compilation job, use <a>CreateCompilationJob</a>. To get information
-    /// about multiple model compilation jobs, use <a>ListCompilationJobs</a>.
+    /// To create a model compilation job, use <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateCompilationJob.html">CreateCompilationJob</a>.
+    /// To get information about multiple model compilation jobs, use <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListCompilationJobs.html">ListCompilationJobs</a>.
     /// </para>
     /// </summary>
     public partial class DescribeCompilationJobRequest : AmazonSageMakerRequest

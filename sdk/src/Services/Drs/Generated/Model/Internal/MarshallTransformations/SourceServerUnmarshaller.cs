@@ -94,6 +94,30 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
                     unmarshalledObject.RecoveryInstanceId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("replicationDirection", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ReplicationDirection = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("reversedDirectionSourceServerArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ReversedDirectionSourceServerArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("sourceCloudProperties", targetDepth))
+                {
+                    var unmarshaller = SourceCloudPropertiesUnmarshaller.Instance;
+                    unmarshalledObject.SourceCloudProperties = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("sourceNetworkID", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SourceNetworkID = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("sourceProperties", targetDepth))
                 {
                     var unmarshaller = SourcePropertiesUnmarshaller.Instance;
@@ -104,6 +128,12 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SourceServerID = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("stagingArea", targetDepth))
+                {
+                    var unmarshaller = StagingAreaUnmarshaller.Instance;
+                    unmarshalledObject.StagingArea = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("tags", targetDepth))

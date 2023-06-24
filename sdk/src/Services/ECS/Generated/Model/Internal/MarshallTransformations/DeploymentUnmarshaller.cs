@@ -142,6 +142,18 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     unmarshalledObject.RunningCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("serviceConnectConfiguration", targetDepth))
+                {
+                    var unmarshaller = ServiceConnectConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.ServiceConnectConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("serviceConnectResources", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ServiceConnectServiceResource, ServiceConnectServiceResourceUnmarshaller>(ServiceConnectServiceResourceUnmarshaller.Instance);
+                    unmarshalledObject.ServiceConnectResources = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

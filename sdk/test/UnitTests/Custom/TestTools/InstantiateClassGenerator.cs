@@ -40,6 +40,11 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
 
         private static void InstantiateProperties(TypeCircularReference<Type> tcr, object owningObject)
         {
+            if (owningObject == null)
+            {
+                return;
+            }
+
             foreach (var info in owningObject.GetType().GetProperties())
             {
                 if (info.SetMethod == null)
@@ -193,7 +198,9 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
                     if (owningObject is Exception && 
                         (info.Name.Equals("HelpLink") || info.Name.Equals("Source") || info.Name.Equals("HResult") || info.Name.Equals("AmazonId2")))
                         continue;
-
+                    //when streaming responses we don't buffer the payload in memory fully, so the bufferSize will not be int.MaxValue. 
+                    if (info.Name.Equals("BufferSize") && owningType.BaseType.Name == "EnumerableEventStream`2")
+                        continue;
                     var type = info.PropertyType;
                     var propertyValue = info.GetMethod.Invoke(owningObject, new object[] { });
 

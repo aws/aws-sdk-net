@@ -58,7 +58,7 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
             string target = "Transcribe.CreateCallAnalyticsCategory";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-10-26";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-10-26";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -71,6 +71,12 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("CategoryName");
                     context.Writer.Write(publicRequest.CategoryName);
+                }
+
+                if(publicRequest.IsSetInputType())
+                {
+                    context.Writer.WritePropertyName("InputType");
+                    context.Writer.Write(publicRequest.InputType);
                 }
 
                 if(publicRequest.IsSetRules())
@@ -89,7 +95,6 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

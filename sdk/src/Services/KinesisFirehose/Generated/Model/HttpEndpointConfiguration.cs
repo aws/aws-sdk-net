@@ -45,7 +45,7 @@ namespace Amazon.KinesisFirehose.Model
         /// selected as the destination.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=4096)]
+        [AWSProperty(Sensitive=true, Min=0, Max=4096)]
         public string AccessKey
         {
             get { return this._accessKey; }
@@ -90,7 +90,7 @@ namespace Amazon.KinesisFirehose.Model
         /// </para>
         ///  </important>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1000)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=1000)]
         public string Url
         {
             get { return this._url; }

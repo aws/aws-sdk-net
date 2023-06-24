@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CaptureContentTypeHeader Marshaller
-    /// </summary>       
+    /// </summary>
     public class CaptureContentTypeHeaderMarshaller : IRequestMarshaller<CaptureContentTypeHeader, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CaptureContentTypeHeaderMarshaller Instance = new CaptureContentTypeHeaderMarshaller();
 
     }

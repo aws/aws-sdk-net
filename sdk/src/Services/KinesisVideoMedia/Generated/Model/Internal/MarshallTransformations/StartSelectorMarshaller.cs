@@ -34,7 +34,7 @@ namespace Amazon.KinesisVideoMedia.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// StartSelector Marshaller
-    /// </summary>       
+    /// </summary>
     public class StartSelectorMarshaller : IRequestMarshaller<StartSelector, JsonMarshallerContext> 
     {
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.KinesisVideoMedia.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static StartSelectorMarshaller Instance = new StartSelectorMarshaller();
 
     }

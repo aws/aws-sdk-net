@@ -56,7 +56,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.SecurityHub");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-10-26";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-10-26";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/actionTargets/get";
@@ -88,7 +88,6 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.NextToken);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

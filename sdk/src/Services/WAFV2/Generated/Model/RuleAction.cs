@@ -37,6 +37,7 @@ namespace Amazon.WAFV2.Model
         private AllowAction _allow;
         private BlockAction _block;
         private CaptchaAction _captcha;
+        private ChallengeAction _challenge;
         private CountAction _count;
 
         /// <summary>
@@ -94,9 +95,28 @@ namespace Amazon.WAFV2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Challenge. 
+        /// <para>
+        /// Instructs WAF to run a <code>Challenge</code> check against the web request.
+        /// </para>
+        /// </summary>
+        public ChallengeAction Challenge
+        {
+            get { return this._challenge; }
+            set { this._challenge = value; }
+        }
+
+        // Check to see if Challenge property is set
+        internal bool IsSetChallenge()
+        {
+            return this._challenge != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Count. 
         /// <para>
-        /// Instructs WAF to count the web request and allow it.
+        /// Instructs WAF to count the web request and then continue evaluating the request using
+        /// the remaining rules in the web ACL.
         /// </para>
         /// </summary>
         public CountAction Count

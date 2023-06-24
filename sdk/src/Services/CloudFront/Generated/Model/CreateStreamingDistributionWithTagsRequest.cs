@@ -41,7 +41,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property StreamingDistributionConfigWithTags. 
         /// <para>
-        ///  The streaming distribution's configuration information. 
+        /// The streaming distribution's configuration information.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

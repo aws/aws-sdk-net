@@ -34,7 +34,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// H264Settings Marshaller
-    /// </summary>       
+    /// </summary>
     public class H264SettingsMarshaller : IRequestMarshaller<H264Settings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -295,6 +295,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.TemporalAq);
             }
 
+            if(requestObject.IsSetTimecodeBurninSettings())
+            {
+                context.Writer.WritePropertyName("timecodeBurninSettings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = TimecodeBurninSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.TimecodeBurninSettings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetTimecodeInsertion())
             {
                 context.Writer.WritePropertyName("timecodeInsertion");
@@ -305,7 +316,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static H264SettingsMarshaller Instance = new H264SettingsMarshaller();
 
     }

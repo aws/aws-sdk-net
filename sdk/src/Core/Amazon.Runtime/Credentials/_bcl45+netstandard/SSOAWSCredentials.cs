@@ -23,6 +23,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Amazon.Runtime.Credentials.Internal;
 using Amazon.Util;
+using Amazon.Util.Internal;
 
 namespace Amazon.Runtime
 {
@@ -31,9 +32,8 @@ namespace Amazon.Runtime
     /// </summary>
     public class SSOAWSCredentials : RefreshingAWSCredentials
     {
-        private const string SsoClientTypePublic = "public";
-
         private readonly Logger _logger = Logger.GetLogger(typeof(SSOAWSCredentials));
+        private readonly ISSOTokenManager _ssoTokenManager;
 
         /// <summary>
         /// The AWS account ID that temporary AWS credentials will be resolved for.
@@ -94,11 +94,24 @@ namespace Amazon.Runtime
                 throw new ArgumentNullException(nameof(options));
             }
 
+            if (string.IsNullOrEmpty(region))
+                throw new ArgumentNullException(nameof(region));
+
             AccountId = accountId;
             Region = region;
             RoleName = roleName;
             StartUrl = startUrl;
             Options = options;
+
+            _ssoTokenManager = new SSOTokenManager(
+                SSOServiceClientHelpers.BuildSSOIDCClient(
+                    RegionEndpoint.GetBySystemName(region),
+                    options.ProxySettings),
+                new SSOTokenFileCache(
+                    CryptoUtilFactory.CryptoInstance,
+                    new FileRetriever(),
+                    new DirectoryRetriever())
+            );
         }
 
 #if BCL
@@ -106,17 +119,12 @@ namespace Amazon.Runtime
         {
             ValidateCredentialsInputs();
 
-            var oidcClient = CreateClient<ICoreAmazonSSOOIDC>(
-                ServiceClientHelpers.SSO_OIDC_SERVICE_CLASS_NAME,
-                ServiceClientHelpers.SSO_OIDC_SERVICE_CONFIG_NAME,
-                ServiceClientHelpers.SSO_OIDC_ASSEMBLY_NAME);
+            var ssoClient = 
+                SSOServiceClientHelpers.BuildSSOClient(
+                    RegionEndpoint.GetBySystemName(Region),
+                    Options.ProxySettings);
 
-            var ssoClient = CreateClient<ICoreAmazonSSO>(
-                ServiceClientHelpers.SSO_SERVICE_CLASS_NAME,
-                ServiceClientHelpers.SSO_SERVICE_CONFIG_NAME,
-                ServiceClientHelpers.SSO_ASSEMBLY_NAME);
-
-            var credentials = GetSsoCredentials(oidcClient, ssoClient) as SSOImmutableCredentials;
+            var credentials = GetSsoCredentials(ssoClient) as SSOImmutableCredentials;
 
             if (credentials == null)
             {
@@ -137,18 +145,13 @@ namespace Amazon.Runtime
         {
             ValidateCredentialsInputs();
 
-            var oidcClient = CreateClient<ICoreAmazonSSOOIDC>(
-                ServiceClientHelpers.SSO_OIDC_SERVICE_CLASS_NAME,
-                ServiceClientHelpers.SSO_OIDC_SERVICE_CONFIG_NAME,
-                ServiceClientHelpers.SSO_OIDC_ASSEMBLY_NAME);
-
-            var ssoClient = CreateClient<ICoreAmazonSSO>(
-                ServiceClientHelpers.SSO_SERVICE_CLASS_NAME,
-                ServiceClientHelpers.SSO_SERVICE_CONFIG_NAME,
-                ServiceClientHelpers.SSO_ASSEMBLY_NAME);
+            var ssoClient = 
+                SSOServiceClientHelpers.BuildSSOClient(
+                    RegionEndpoint.GetBySystemName(Region),
+                    Options.ProxySettings);
 
             var credentials =
-                await GetSsoCredentialsAsync(oidcClient, ssoClient).ConfigureAwait(false) as SSOImmutableCredentials;
+                await GetSsoCredentialsAsync(ssoClient).ConfigureAwait(false) as SSOImmutableCredentials;
 
             if (credentials == null)
             {
@@ -178,44 +181,6 @@ namespace Amazon.Runtime
             }
         }
 
-        /// <summary>
-        /// Attempts to get a service client at runtime which cannot be made a project reference.
-        /// </summary>
-        private T CreateClient<T>(string serviceClassName, string serviceConfigName, string parentAssemblyName) where T : class
-        {
-            try
-            {
-                var serviceConfig = ServiceClientHelpers.CreateServiceConfig(
-                    parentAssemblyName,
-                    serviceConfigName);
-
-                serviceConfig.RegionEndpoint = RegionEndpoint.GetBySystemName(Region);
-
-                if (Options?.ProxySettings != null)
-                {
-                    serviceConfig.SetWebProxy(Options.ProxySettings);
-                }
-
-                var serviceClient = ServiceClientHelpers.CreateServiceFromAssembly<T>(
-                    parentAssemblyName,
-                    serviceClassName,
-                    new AnonymousAWSCredentials(), serviceConfig) as T;
-
-                return serviceClient;
-            }
-            catch (Exception e)
-            {
-                var msg = string.Format(CultureInfo.CurrentCulture,
-                    "Assembly {0} could not be found or loaded. This assembly must be available at runtime to use {1}.",
-                    parentAssemblyName,
-                    GetType().AssemblyQualifiedName);
-
-                var exception = new InvalidOperationException(msg, e);
-                _logger.Error(exception, exception.Message);
-                throw exception;
-            }
-        }
-
 #if BCL
         /// <summary>
         /// Performs the SSO flow to authenticate and get credentials
@@ -223,121 +188,55 @@ namespace Amazon.Runtime
         /// <param name="oidc">SSO OIDC client</param>
         /// <param name="sso">SSO client</param>
         /// <returns>Resolved credentials</returns>
-        private ImmutableCredentials GetSsoCredentials(ICoreAmazonSSOOIDC oidc, ICoreAmazonSSO sso)
+        private ImmutableCredentials GetSsoCredentials(ICoreAmazonSSO sso)
         {
-            var tokenCache = new SsoTokenCache(StartUrl);
-            var token = tokenCache.GetAccessToken();
-
-            // Get and cache a SSO token if necessary
-            if (string.IsNullOrWhiteSpace(token))
+            var ssoTokenManagerGetTokenOptions = new SSOTokenManagerGetTokenOptions
             {
-                if (string.IsNullOrEmpty(Options.ClientName))
-                {
-                    throw new ArgumentNullException($"Options property cannot be empty: {nameof(Options.ClientName)}");
-                }
+                ClientName = Options.ClientName,
+                Region = Region,
+                SsoVerificationCallback = Options.SsoVerificationCallback,
+                StartUrl = StartUrl,
+                Session = Options.SessionName
+            };
 
-                if (Options.SsoVerificationCallback == null)
-                {
-                    throw new ArgumentNullException($"Options property cannot be empty: {nameof(Options.SsoVerificationCallback)}");
-                }
-
-                var response = oidc.GetSsoToken(new GetSsoTokenRequest()
-                {
-                    ClientName = GetSsoClientName(),
-                    ClientType = SsoClientTypePublic,
-                    StartUrl = StartUrl,
-                    SsoVerificationCallback = Options.SsoVerificationCallback,
-                });
-
-                // If save fails, token will not be cached
-                tokenCache.TrySave(new SsoToken()
-                {
-                    AccessToken = response.AccessToken,
-                    Region = Region,
-                    ExpiresAt = response.ExpiresAt,
-                    StartUrl = StartUrl,
-                });
-
-                token = response.AccessToken;
-            }
+            var token = _ssoTokenManager.GetToken(ssoTokenManagerGetTokenOptions);
 
             // Use SSO token to get credentials
-            return GetSsoRoleCredentials(sso, token);
+            return GetSsoRoleCredentials(sso, token.AccessToken);
         }
 #endif
 
         /// <summary>
         /// Performs the SSO flow to authenticate and get credentials
         /// </summary>
-        /// <param name="oidc">SSO OIDC client</param>
         /// <param name="sso">SSO client</param>
         /// <returns>Resolved credentials</returns>
-        private async Task<ImmutableCredentials> GetSsoCredentialsAsync(ICoreAmazonSSOOIDC oidc, ICoreAmazonSSO sso)
+        private async Task<ImmutableCredentials> GetSsoCredentialsAsync(ICoreAmazonSSO sso)
         {
-            var tokenCache = new SsoTokenCache(StartUrl);
-            var token = tokenCache.GetAccessToken();
-
-            // Get and cache a SSO token if necessary
-            if (string.IsNullOrWhiteSpace(token))
+            var ssoTokenManagerGetTokenOptions = new SSOTokenManagerGetTokenOptions
             {
-                if (string.IsNullOrEmpty(Options.ClientName))
-                {
-                    throw new ArgumentNullException($"Options property cannot be empty: {nameof(Options.ClientName)}");
-                }
+                ClientName = Options.ClientName,
+                Region = Region,
+                SsoVerificationCallback = Options.SsoVerificationCallback,
+                StartUrl = StartUrl,
+                Session = Options.SessionName
+            };
 
-                if (Options.SsoVerificationCallback == null)
-                {
-                    throw new ArgumentNullException($"Options property cannot be empty: {nameof(Options.SsoVerificationCallback)}");
-                }
-
-                var response = await oidc.GetSsoTokenAsync(new GetSsoTokenRequest()
-                {
-                    ClientName = GetSsoClientName(),
-                    ClientType = SsoClientTypePublic,
-                    StartUrl = StartUrl,
-                    SsoVerificationCallback = Options.SsoVerificationCallback,
-                }).ConfigureAwait(false);
-
-                // If save fails, token will not be cached
-                tokenCache.TrySave(new SsoToken()
-                {
-                    AccessToken = response.AccessToken,
-                    Region = Region,
-                    ExpiresAt = response.ExpiresAt,
-                    StartUrl = StartUrl,
-                });
-
-                token = response.AccessToken;
-            }
+            var token = await _ssoTokenManager.GetTokenAsync(ssoTokenManagerGetTokenOptions).ConfigureAwait(false);
 
             // Use SSO token to get credentials
-            return await GetSsoRoleCredentialsAsync(sso, token).ConfigureAwait(false);
+            return await GetSsoRoleCredentialsAsync(sso, token.AccessToken).ConfigureAwait(false);
         }
 
         /// <summary>
         /// Returns true if there is already a non-expired cached login access token in the token cache.
         /// </summary>
         /// <param name="startUrl"></param>
-        /// <returns></returns>
+        /// <returns>Obsolete: ALWAYS RETURNS FALSE</returns>
+        [Obsolete("This method is no longer used or supported and will be removed in a future version.", error: false)]
         public static bool HasCachedAccessTokenAvailable(string startUrl)
         {
-            var tokenCache = new SsoTokenCache(startUrl);
-            return !string.IsNullOrEmpty(tokenCache.GetAccessToken());
-        }
-
-        /// <summary>
-        /// Produces a client name watermarked with a timestamp for use in this provider's SSO Flow.
-        /// </summary>
-        /// <example>
-        /// "sometool" -> "sometool-1599153467"
-        /// </example>
-        /// <returns>A Client Name to use in the internal SSO flow</returns>
-        private string GetSsoClientName()
-        {
-#pragma warning disable CR1003 // Do not use DateTime.Now or DateTime.UtcNow, use AWSSDKUtils.CorrectedNow or AWSSDKUtils.CorrectedUtcNow
-            var dateStamp = AWSSDKUtils.ConvertToUnixEpochSecondsString(DateTime.UtcNow);
-#pragma warning restore CR1003 // Do not use DateTime.Now or DateTime.UtcNow, use AWSSDKUtils.CorrectedNow or AWSSDKUtils.CorrectedUtcNow
-            return $"{Options.ClientName}-{dateStamp}";
+            return false;
         }
 
 #if BCL

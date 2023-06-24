@@ -32,7 +32,15 @@ namespace Amazon.WorkSpaces.Model
     /// Container for the parameters to the ModifyWorkspaceProperties operation.
     /// Modifies the specified WorkSpace properties. For important information about how to
     /// modify the size of the root and user volumes, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/modify-workspaces.html">
-    /// Modify a WorkSpace</a>.
+    /// Modify a WorkSpace</a>. 
+    /// 
+    ///  <note> 
+    /// <para>
+    /// The <code>MANUAL</code> running mode value is only supported by Amazon WorkSpaces
+    /// Core. Contact your account team to be allow-listed to use this value. For more information,
+    /// see <a href="http://aws.amazon.com/workspaces/core/">Amazon WorkSpaces Core</a>.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class ModifyWorkspacePropertiesRequest : AmazonWorkSpacesRequest
     {

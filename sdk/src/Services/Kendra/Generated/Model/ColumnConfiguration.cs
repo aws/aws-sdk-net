@@ -81,7 +81,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property DocumentIdColumnName. 
         /// <para>
-        /// The column that provides the document's unique identifier.
+        /// The column that provides the document's identifier.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
@@ -121,7 +121,7 @@ namespace Amazon.Kendra.Model
         /// <para>
         /// An array of objects that map database column names to the corresponding fields in
         /// an index. You must first create the fields in the index using the <code>UpdateIndex</code>
-        /// operation.
+        /// API.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

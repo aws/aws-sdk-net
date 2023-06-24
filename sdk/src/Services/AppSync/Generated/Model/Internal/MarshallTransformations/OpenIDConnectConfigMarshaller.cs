@@ -34,7 +34,7 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// OpenIDConnectConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class OpenIDConnectConfigMarshaller : IRequestMarshaller<OpenIDConnectConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static OpenIDConnectConfigMarshaller Instance = new OpenIDConnectConfigMarshaller();
 
     }

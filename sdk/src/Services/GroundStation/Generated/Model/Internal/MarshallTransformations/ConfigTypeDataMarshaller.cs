@@ -34,7 +34,7 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ConfigTypeData Marshaller
-    /// </summary>       
+    /// </summary>
     public class ConfigTypeDataMarshaller : IRequestMarshaller<ConfigTypeData, JsonMarshallerContext> 
     {
         /// <summary>
@@ -126,7 +126,7 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ConfigTypeDataMarshaller Instance = new ConfigTypeDataMarshaller();
 
     }

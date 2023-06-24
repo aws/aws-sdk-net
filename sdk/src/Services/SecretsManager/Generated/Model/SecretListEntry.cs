@@ -31,7 +31,8 @@ namespace Amazon.SecretsManager.Model
     /// <summary>
     /// A structure that contains the details about a secret. It does not include the encrypted
     /// <code>SecretString</code> and <code>SecretBinary</code> values. To get those values,
-    /// use the <a>GetSecretValue</a> operation.
+    /// use <a href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_GetSecretValue.html">GetSecretValue</a>
+    /// .
     /// </summary>
     public partial class SecretListEntry
     {
@@ -44,6 +45,7 @@ namespace Amazon.SecretsManager.Model
         private DateTime? _lastChangedDate;
         private DateTime? _lastRotatedDate;
         private string _name;
+        private DateTime? _nextRotationDate;
         private string _owningService;
         private string _primaryRegion;
         private bool? _rotationEnabled;
@@ -56,11 +58,6 @@ namespace Amazon.SecretsManager.Model
         /// Gets and sets the property ARN. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the secret.
-        /// </para>
-        ///  
-        /// <para>
-        /// For more information about ARNs in Secrets Manager, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-resources">Policy
-        /// Resources</a> in the <i>Amazon Web Services Secrets Manager User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -99,8 +96,8 @@ namespace Amazon.SecretsManager.Model
         /// <para>
         /// The date and time the deletion of the secret occurred. Not present on active secrets.
         /// The secret can be recovered until the number of days in the recovery window has passed,
-        /// as specified in the <code>RecoveryWindowInDays</code> parameter of the <a>DeleteSecret</a>
-        /// operation.
+        /// as specified in the <code>RecoveryWindowInDays</code> parameter of the <a href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_DeleteSecret.html">
+        /// <code>DeleteSecret</code> </a> operation.
         /// </para>
         /// </summary>
         public DateTime DeletedDate
@@ -137,11 +134,9 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The ARN or alias of the Amazon Web Services KMS customer master key (CMK) used to
-        /// encrypt the <code>SecretString</code> and <code>SecretBinary</code> fields in each
-        /// version of the secret. If you don't provide a key, then Secrets Manager defaults to
-        /// encrypting the secret fields with the default KMS CMK, the key named <code>awssecretsmanager</code>,
-        /// for this account.
+        /// The ARN of the KMS key that Secrets Manager uses to encrypt the secret value. If the
+        /// secret is encrypted with the Amazon Web Services managed key <code>aws/secretsmanager</code>,
+        /// this field is omitted.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2048)]
@@ -160,8 +155,8 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property LastAccessedDate. 
         /// <para>
-        /// The last date that this secret was accessed. This value is truncated to midnight of
-        /// the date and therefore shows only the date, not the time.
+        /// The date that the secret was last accessed in the Region. This field is omitted if
+        /// the secret has never been retrieved in the Region.
         /// </para>
         /// </summary>
         public DateTime LastAccessedDate
@@ -236,6 +231,25 @@ namespace Amazon.SecretsManager.Model
         }
 
         /// <summary>
+        /// Gets and sets the property NextRotationDate. 
+        /// <para>
+        /// The next rotation is scheduled to occur on or before this date. If the secret isn't
+        /// configured for rotation, Secrets Manager returns null.
+        /// </para>
+        /// </summary>
+        public DateTime NextRotationDate
+        {
+            get { return this._nextRotationDate.GetValueOrDefault(); }
+            set { this._nextRotationDate = value; }
+        }
+
+        // Check to see if NextRotationDate property is set
+        internal bool IsSetNextRotationDate()
+        {
+            return this._nextRotationDate.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property OwningService. 
         /// <para>
         /// Returns the name of the service that created the secret.
@@ -296,7 +310,8 @@ namespace Amazon.SecretsManager.Model
         /// <para>
         /// The ARN of an Amazon Web Services Lambda function invoked by Secrets Manager to rotate
         /// and expire the secret either automatically per the schedule or manually by a call
-        /// to <a>RotateSecret</a>.
+        /// to <a href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_RotateSecret.html">
+        /// <code>RotateSecret</code> </a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2048)]
@@ -360,7 +375,9 @@ namespace Amazon.SecretsManager.Model
         /// Gets and sets the property Tags. 
         /// <para>
         /// The list of user-defined tags associated with the secret. To add tags to a secret,
-        /// use <a>TagResource</a>. To remove tags, use <a>UntagResource</a>.
+        /// use <a href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_TagResource.html">
+        /// <code>TagResource</code> </a>. To remove tags, use <a href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_UntagResource.html">
+        /// <code>UntagResource</code> </a>.
         /// </para>
         /// </summary>
         public List<Tag> Tags

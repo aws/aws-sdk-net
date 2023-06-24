@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// Details of a package version.
+    /// Details about a package version.
     /// </summary>
     public partial class PackageVersionHistory
     {
@@ -40,7 +40,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property CommitMessage. 
         /// <para>
-        /// A message associated with the package version.
+        /// A message associated with the package version when it was uploaded.
         /// </para>
         /// </summary>
         [AWSProperty(Max=160)]
@@ -59,7 +59,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The timestamp of when the package was created.
+        /// The date and time when the package was created.
         /// </para>
         /// </summary>
         public DateTime CreatedAt

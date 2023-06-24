@@ -66,6 +66,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.Destination = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("destinationArn", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.DestinationArn = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("destinationIp", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -76,6 +82,18 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = IntUnmarshaller.Instance;
                         unmarshalledObject.DestinationPort = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("filterAtDestination", targetDepth))
+                    {
+                        var unmarshaller = PathFilterUnmarshaller.Instance;
+                        unmarshalledObject.FilterAtDestination = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("filterAtSource", targetDepth))
+                    {
+                        var unmarshaller = PathFilterUnmarshaller.Instance;
+                        unmarshalledObject.FilterAtSource = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("networkInsightsPathArn", targetDepth))
@@ -100,6 +118,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.Source = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("sourceArn", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.SourceArn = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("sourceIp", targetDepth))

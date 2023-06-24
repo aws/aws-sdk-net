@@ -34,7 +34,7 @@ namespace Amazon.ServerMigrationService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ServerGroupValidationConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class ServerGroupValidationConfigurationMarshaller : IRequestMarshaller<ServerGroupValidationConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.ServerMigrationService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ServerGroupValidationConfigurationMarshaller Instance = new ServerGroupValidationConfigurationMarshaller();
 
     }

@@ -56,7 +56,7 @@ namespace Amazon.S3Outposts.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.S3Outposts");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-07-25";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-07-25";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/S3Outposts/CreateEndpoint";
@@ -95,7 +95,6 @@ namespace Amazon.S3Outposts.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.SubnetId);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

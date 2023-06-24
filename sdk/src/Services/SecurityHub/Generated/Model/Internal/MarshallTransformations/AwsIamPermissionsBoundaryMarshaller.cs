@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AwsIamPermissionsBoundary Marshaller
-    /// </summary>       
+    /// </summary>
     public class AwsIamPermissionsBoundaryMarshaller : IRequestMarshaller<AwsIamPermissionsBoundary, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AwsIamPermissionsBoundaryMarshaller Instance = new AwsIamPermissionsBoundaryMarshaller();
 
     }

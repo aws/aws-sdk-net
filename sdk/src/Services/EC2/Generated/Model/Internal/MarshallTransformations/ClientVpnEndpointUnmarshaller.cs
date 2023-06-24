@@ -80,6 +80,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.ClientConnectOptions = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("clientLoginBannerOptions", targetDepth))
+                    {
+                        var unmarshaller = ClientLoginBannerResponseOptionsUnmarshaller.Instance;
+                        unmarshalledObject.ClientLoginBannerOptions = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("clientVpnEndpointId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -140,6 +146,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.ServerCertificateArn = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("sessionTimeoutHours", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.SessionTimeoutHours = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("splitTunnel", targetDepth))

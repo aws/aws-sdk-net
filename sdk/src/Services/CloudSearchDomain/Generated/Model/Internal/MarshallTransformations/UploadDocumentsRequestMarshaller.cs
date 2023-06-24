@@ -56,18 +56,24 @@ namespace Amazon.CloudSearchDomain.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CloudSearchDomain");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2013-01-01";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2013-01-01";
             request.HttpMethod = "POST";
 
             request.AddSubResource("format", "sdk");
             request.ResourcePath = "/2013-01-01/documents/batch";
             request.ContentStream =  publicRequest.Documents ?? new MemoryStream();
-            request.Headers[Amazon.Util.HeaderKeys.ContentLengthHeader] =  
+            request.Headers[Amazon.Util.HeaderKeys.ContentLengthHeader] =
                 request.ContentStream.Length.ToString(CultureInfo.InvariantCulture);
-            request.Headers[Amazon.Util.HeaderKeys.ContentTypeHeader] = "binary/octet-stream";
+            request.Headers[Amazon.Util.HeaderKeys.ContentTypeHeader] = "binary/octet-stream"; 
+            if (request.ContentStream != null && request.ContentStream.Length == 0)
+            {
+                request.Headers.Remove(Amazon.Util.HeaderKeys.ContentTypeHeader);
+            }
         
-            if(publicRequest.IsSetContentType())
+            if (publicRequest.IsSetContentType()) 
+            {
                 request.Headers["Content-Type"] = publicRequest.ContentType;
+            }
 
             return request;
         }

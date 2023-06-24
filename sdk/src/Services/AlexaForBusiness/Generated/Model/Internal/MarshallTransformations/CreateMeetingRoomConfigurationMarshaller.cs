@@ -34,7 +34,7 @@ namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CreateMeetingRoomConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class CreateMeetingRoomConfigurationMarshaller : IRequestMarshaller<CreateMeetingRoomConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,6 +67,17 @@ namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetProactiveJoin())
+            {
+                context.Writer.WritePropertyName("ProactiveJoin");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = CreateProactiveJoinMarshaller.Instance;
+                marshaller.Marshall(requestObject.ProactiveJoin, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetRequireCheckIn())
             {
                 context.Writer.WritePropertyName("RequireCheckIn");
@@ -88,7 +99,7 @@ namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CreateMeetingRoomConfigurationMarshaller Instance = new CreateMeetingRoomConfigurationMarshaller();
 
     }

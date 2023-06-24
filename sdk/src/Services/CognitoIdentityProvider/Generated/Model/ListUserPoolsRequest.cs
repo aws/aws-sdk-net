@@ -30,7 +30,7 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// Container for the parameters to the ListUserPools operation.
-    /// Lists the user pools associated with an account.
+    /// Lists the user pools associated with an Amazon Web Services account.
     /// </summary>
     public partial class ListUserPoolsRequest : AmazonCognitoIdentityProviderRequest
     {

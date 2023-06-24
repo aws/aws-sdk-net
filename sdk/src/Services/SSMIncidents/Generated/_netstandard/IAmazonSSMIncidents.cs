@@ -135,9 +135,9 @@ namespace Amazon.SSMIncidents
 
         /// <summary>
         /// Creates a custom timeline event on the incident details page of an incident record.
-        /// Timeline events are automatically created by Incident Manager, marking key moment
-        /// during an incident. You can create custom timeline events to mark important events
-        /// that are automatically detected by Incident Manager.
+        /// Incident Manager automatically creates timeline events that mark key moments during
+        /// an incident. You can create custom timeline events to mark important events that Incident
+        /// Manager can detect automatically.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateTimelineEvent service method.</param>
         /// <param name="cancellationToken">
@@ -681,7 +681,10 @@ namespace Amazon.SSMIncidents
 
 
         /// <summary>
-        /// Adds a resource policy to the specified response plan.
+        /// Adds a resource policy to the specified response plan. The resource policy is used
+        /// to share the response plan using Resource Access Manager (RAM). For more information
+        /// about cross-account sharing, see <a href="https://docs.aws.amazon.com/incident-manager/latest/userguide/incident-manager-cross-account-cross-region.html">Cross-Region
+        /// and cross-account incident management</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutResourcePolicy service method.</param>
         /// <param name="cancellationToken">
@@ -944,6 +947,9 @@ namespace Amazon.SSMIncidents
         /// <returns>The response from the UpdateReplicationSet service method, as returned by SSMIncidents.</returns>
         /// <exception cref="Amazon.SSMIncidents.Model.AccessDeniedException">
         /// You don't have sufficient access to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.SSMIncidents.Model.ConflictException">
+        /// Updating or deleting a resource causes an inconsistent state.
         /// </exception>
         /// <exception cref="Amazon.SSMIncidents.Model.InternalServerException">
         /// The request processing has failed because of an unknown error, exception or failure.

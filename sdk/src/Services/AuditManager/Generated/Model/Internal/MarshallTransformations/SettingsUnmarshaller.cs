@@ -70,10 +70,28 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
                     unmarshalledObject.DefaultAssessmentReportsDestination = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("defaultExportDestination", targetDepth))
+                {
+                    var unmarshaller = DefaultExportDestinationUnmarshaller.Instance;
+                    unmarshalledObject.DefaultExportDestination = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("defaultProcessOwners", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<Role, RoleUnmarshaller>(RoleUnmarshaller.Instance);
                     unmarshalledObject.DefaultProcessOwners = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("deregistrationPolicy", targetDepth))
+                {
+                    var unmarshaller = DeregistrationPolicyUnmarshaller.Instance;
+                    unmarshalledObject.DeregistrationPolicy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("evidenceFinderEnablement", targetDepth))
+                {
+                    var unmarshaller = EvidenceFinderEnablementUnmarshaller.Instance;
+                    unmarshalledObject.EvidenceFinderEnablement = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("isAwsOrgEnabled", targetDepth))

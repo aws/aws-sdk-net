@@ -32,7 +32,7 @@ namespace Amazon.Organizations.Model
     /// You can't use the specified policy type with the feature set currently enabled for
     /// this organization. For example, you can enable SCPs only after you enable all features
     /// in the organization. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies.html#enable_policies_on_root">Managing
-    /// AWS Organizations Policies</a>in the <i>AWS Organizations User Guide.</i>
+    /// Organizations Policies</a>in the <i>Organizations User Guide.</i>
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

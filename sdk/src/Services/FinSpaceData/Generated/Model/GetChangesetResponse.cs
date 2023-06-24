@@ -33,6 +33,7 @@ namespace Amazon.FinSpaceData.Model
     /// </summary>
     public partial class GetChangesetResponse : AmazonWebServiceResponse
     {
+        private long? _activeFromTimestamp;
         private long? _activeUntilTimestamp;
         private string _changesetArn;
         private string _changesetId;
@@ -47,9 +48,29 @@ namespace Amazon.FinSpaceData.Model
         private string _updatesChangesetId;
 
         /// <summary>
+        /// Gets and sets the property ActiveFromTimestamp. 
+        /// <para>
+        /// Beginning time from which the Changeset is active. The value is determined as epoch
+        /// time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00
+        /// PM UTC is specified as 1635768000000.
+        /// </para>
+        /// </summary>
+        public long ActiveFromTimestamp
+        {
+            get { return this._activeFromTimestamp.GetValueOrDefault(); }
+            set { this._activeFromTimestamp = value; }
+        }
+
+        // Check to see if ActiveFromTimestamp property is set
+        internal bool IsSetActiveFromTimestamp()
+        {
+            return this._activeFromTimestamp.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property ActiveUntilTimestamp. 
         /// <para>
-        /// Time until which the Changeset is active. The value is determined as Epoch time in
+        /// Time until which the Changeset is active. The value is determined as epoch time in
         /// milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC
         /// is specified as 1635768000000.
         /// </para>
@@ -110,17 +131,17 @@ namespace Amazon.FinSpaceData.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>REPLACE</code> - Changeset is considered as a replacement to all prior loaded
+        ///  <code>REPLACE</code> – Changeset is considered as a replacement to all prior loaded
         /// Changesets.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>APPEND</code> - Changeset is considered as an addition to the end of all prior
+        ///  <code>APPEND</code> – Changeset is considered as an addition to the end of all prior
         /// loaded Changesets.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>MODIFY</code> - Changeset is considered as a replacement to a specific prior
+        ///  <code>MODIFY</code> – Changeset is considered as a replacement to a specific prior
         /// ingested Changeset.
         /// </para>
         ///  </li> </ul>
@@ -141,7 +162,7 @@ namespace Amazon.FinSpaceData.Model
         /// Gets and sets the property CreateTime. 
         /// <para>
         /// The timestamp at which the Changeset was created in FinSpace. The value is determined
-        /// as Epoch time in milliseconds. For example, the value for Monday, November 1, 2021
+        /// as epoch time in milliseconds. For example, the value for Monday, November 1, 2021
         /// 12:00:00 PM UTC is specified as 1635768000000.
         /// </para>
         /// </summary>

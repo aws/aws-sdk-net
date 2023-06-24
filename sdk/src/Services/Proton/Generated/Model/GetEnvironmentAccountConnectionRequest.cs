@@ -30,12 +30,12 @@ namespace Amazon.Proton.Model
 {
     /// <summary>
     /// Container for the parameters to the GetEnvironmentAccountConnection operation.
-    /// In an environment account, view the detail data for an environment account connection.
+    /// In an environment account, get the detailed data for an environment account connection.
     /// 
     ///  
     /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment
-    /// account connections</a> in the <i>Proton Administrator guide</i>.
+    /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-env-account-connections.html">Environment
+    /// account connections</a> in the <i>Proton User guide</i>.
     /// </para>
     /// </summary>
     public partial class GetEnvironmentAccountConnectionRequest : AmazonProtonRequest
@@ -45,7 +45,8 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The ID of the environment account connection.
+        /// The ID of the environment account connection that you want to get the detailed data
+        /// for.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

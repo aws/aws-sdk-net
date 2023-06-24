@@ -30,26 +30,30 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateSubnet operation.
-    /// Creates a subnet in a specified VPC.
+    /// Creates a subnet in the specified VPC. For an IPv4 only subnet, specify an IPv4 CIDR
+    /// block. If the VPC has an IPv6 CIDR block, you can create an IPv6 only subnet or a
+    /// dual stack subnet instead. For an IPv6 only subnet, specify an IPv6 CIDR block. For
+    /// a dual stack subnet, specify both an IPv4 CIDR block and an IPv6 CIDR block.
     /// 
     ///  
     /// <para>
-    /// You must specify an IPv4 CIDR block for the subnet. After you create a subnet, you
-    /// can't change its CIDR block. The allowed block size is between a /16 netmask (65,536
-    /// IP addresses) and /28 netmask (16 IP addresses). The CIDR block must not overlap with
-    /// the CIDR block of an existing subnet in the VPC.
+    /// A subnet CIDR block must not overlap the CIDR block of an existing subnet in the VPC.
+    /// After you create a subnet, you can't change its CIDR block.
     /// </para>
     ///  
     /// <para>
-    /// If you've associated an IPv6 CIDR block with your VPC, you can create a subnet with
-    /// an IPv6 CIDR block that uses a /64 prefix length. 
+    /// The allowed size for an IPv4 subnet is between a /28 netmask (16 IP addresses) and
+    /// a /16 netmask (65,536 IP addresses). Amazon Web Services reserves both the first four
+    /// and the last IPv4 address in each subnet's CIDR block. They're not available for your
+    /// use.
     /// </para>
-    ///  <important> 
+    ///  
     /// <para>
-    /// Amazon Web Services reserves both the first four and the last IPv4 address in each
-    /// subnet's CIDR block. They're not available for use.
+    /// If you've associated an IPv6 CIDR block with your VPC, you can associate an IPv6 CIDR
+    /// block with a subnet when you create it. The allowed block size for an IPv6 subnet
+    /// is a /64 netmask.
     /// </para>
-    ///  </important> 
+    ///  
     /// <para>
     /// If you add more than one subnet to a VPC, they're set up in a star topology with a
     /// logical router in the middle.
@@ -62,8 +66,8 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  
     /// <para>
-    /// For more information about subnets, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">Your
-    /// VPC and subnets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+    /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/configure-subnets.html">Subnets</a>
+    /// in the <i>Amazon Virtual Private Cloud User Guide</i>.
     /// </para>
     /// </summary>
     public partial class CreateSubnetRequest : AmazonEC2Request

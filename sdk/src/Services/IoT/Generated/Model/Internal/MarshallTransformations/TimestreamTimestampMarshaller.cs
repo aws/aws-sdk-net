@@ -34,7 +34,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// TimestreamTimestamp Marshaller
-    /// </summary>       
+    /// </summary>
     public class TimestreamTimestampMarshaller : IRequestMarshaller<TimestreamTimestamp, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static TimestreamTimestampMarshaller Instance = new TimestreamTimestampMarshaller();
 
     }

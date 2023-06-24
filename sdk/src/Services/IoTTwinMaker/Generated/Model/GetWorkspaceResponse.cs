@@ -85,7 +85,7 @@ namespace Amazon.IoTTwinMaker.Model
         /// The description of the workspace.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=512)]
+        [AWSProperty(Min=0, Max=2048)]
         public string Description
         {
             get { return this._description; }
@@ -123,7 +123,7 @@ namespace Amazon.IoTTwinMaker.Model
         /// The ARN of the S3 bucket where resources associated with the workspace are stored.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=0, Max=1024)]
         public string S3Location
         {
             get { return this._s3Location; }

@@ -58,7 +58,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             string target = "SageMaker.UpdatePipelineExecution";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-07-24";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-07-24";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -67,6 +67,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetParallelismConfiguration())
+                {
+                    context.Writer.WritePropertyName("ParallelismConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ParallelismConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ParallelismConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetPipelineExecutionArn())
                 {
                     context.Writer.WritePropertyName("PipelineExecutionArn");
@@ -85,7 +96,6 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.PipelineExecutionDisplayName);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

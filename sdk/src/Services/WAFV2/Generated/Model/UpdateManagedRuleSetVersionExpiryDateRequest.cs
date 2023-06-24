@@ -32,7 +32,7 @@ namespace Amazon.WAFV2.Model
     /// Container for the parameters to the UpdateManagedRuleSetVersionExpiryDate operation.
     /// Updates the expiration information for your managed rule set. Use this to initiate
     /// the expiration of a managed rule group version. After you initiate expiration for
-    /// a version, WAF excludes it from the reponse to <a>ListAvailableManagedRuleGroupVersions</a>
+    /// a version, WAF excludes it from the response to <a>ListAvailableManagedRuleGroupVersions</a>
     /// for the managed rule group. 
     /// 
     ///  <note> 
@@ -158,7 +158,8 @@ namespace Amazon.WAFV2.Model
         /// <para>
         /// Specifies whether this is for an Amazon CloudFront distribution or for a regional
         /// application. A regional application can be an Application Load Balancer (ALB), an
-        /// Amazon API Gateway REST API, or an AppSync GraphQL API. 
+        /// Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool,
+        /// an App Runner service, or an Amazon Web Services Verified Access instance. 
         /// </para>
         ///  
         /// <para>

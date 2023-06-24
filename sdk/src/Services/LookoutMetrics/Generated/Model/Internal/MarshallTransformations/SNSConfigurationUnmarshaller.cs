@@ -70,6 +70,12 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
                     unmarshalledObject.RoleArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SnsFormat", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SnsFormat = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SnsTopicArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

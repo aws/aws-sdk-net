@@ -32,16 +32,14 @@ namespace Amazon.CloudWatchLogs.Model
     /// Container for the parameters to the PutLogEvents operation.
     /// Uploads a batch of log events to the specified log stream.
     /// 
-    ///  
+    ///  <important> 
     /// <para>
-    /// You must include the sequence token obtained from the response of the previous call.
-    /// An upload in a newly created log stream does not require a sequence token. You can
-    /// also get the sequence token in the <code>expectedSequenceToken</code> field from <code>InvalidSequenceTokenException</code>.
-    /// If you call <code>PutLogEvents</code> twice within a narrow time period using the
-    /// same value for <code>sequenceToken</code>, both calls might be successful or one might
-    /// be rejected.
+    /// The sequence token is now ignored in <code>PutLogEvents</code> actions. <code>PutLogEvents</code>
+    /// actions are always accepted and never return <code>InvalidSequenceTokenException</code>
+    /// or <code>DataAlreadyAcceptedException</code> even if the sequence token is not valid.
+    /// You can use parallel <code>PutLogEvents</code> actions on the same log stream. 
     /// </para>
-    ///  
+    ///  </important> 
     /// <para>
     /// The batch of events must satisfy the following constraints:
     /// </para>
@@ -56,16 +54,17 @@ namespace Amazon.CloudWatchLogs.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// None of the log events in the batch can be older than 14 days or older than the retention
-    /// period of the log group.
+    /// None of the log events in the batch can be more than 14 days in the past. Also, none
+    /// of the log events can be from earlier than the retention period of the log group.
     /// </para>
     ///  </li> <li> 
     /// <para>
     /// The log events in the batch must be in chronological order by their timestamp. The
-    /// timestamp is the time the event occurred, expressed as the number of milliseconds
-    /// after Jan 1, 1970 00:00:00 UTC. (In Amazon Web Services Tools for PowerShell and the
-    /// Amazon Web Services SDK for .NET, the timestamp is specified in .NET format: yyyy-mm-ddThh:mm:ss.
-    /// For example, 2017-09-15T13:45:30.) 
+    /// timestamp is the time that the event occurred, expressed as the number of milliseconds
+    /// after <code>Jan 1, 1970 00:00:00 UTC</code>. (In Amazon Web Services Tools for PowerShell
+    /// and the Amazon Web Services SDK for .NET, the timestamp is specified in .NET format:
+    /// <code>yyyy-mm-ddThh:mm:ss</code>. For example, <code>2017-09-15T13:45:30</code>.)
+    /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -74,17 +73,22 @@ namespace Amazon.CloudWatchLogs.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// The maximum number of log events in a batch is 10,000.
+    /// Each log event can be no larger than 256 KB.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// There is a quota of 5 requests per second per log stream. Additional requests are
-    /// throttled. This quota can't be changed.
+    /// The maximum number of log events in a batch is 10,000.
     /// </para>
-    ///  </li> </ul> 
+    ///  </li> <li> <important> 
+    /// <para>
+    /// The quota of five requests per second per log stream has been removed. Instead, <code>PutLogEvents</code>
+    /// actions are throttled based on a per-second per-account quota. You can request an
+    /// increase to the per-second throttling quota by using the Service Quotas service.
+    /// </para>
+    ///  </important> </li> </ul> 
     /// <para>
     /// If a call to <code>PutLogEvents</code> returns "UnrecognizedClientException" the most
-    /// likely cause is an invalid Amazon Web Services access key ID or secret key. 
+    /// likely cause is a non-valid Amazon Web Services access key ID or secret key. 
     /// </para>
     /// </summary>
     public partial class PutLogEventsRequest : AmazonCloudWatchLogsRequest
@@ -173,12 +177,15 @@ namespace Amazon.CloudWatchLogs.Model
         /// Gets and sets the property SequenceToken. 
         /// <para>
         /// The sequence token obtained from the response of the previous <code>PutLogEvents</code>
-        /// call. An upload in a newly created log stream does not require a sequence token. You
-        /// can also get the sequence token using <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeLogStreams.html">DescribeLogStreams</a>.
-        /// If you call <code>PutLogEvents</code> twice within a narrow time period using the
-        /// same value for <code>sequenceToken</code>, both calls might be successful or one might
-        /// be rejected.
+        /// call.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// The <code>sequenceToken</code> parameter is now ignored in <code>PutLogEvents</code>
+        /// actions. <code>PutLogEvents</code> actions are now accepted and never return <code>InvalidSequenceTokenException</code>
+        /// or <code>DataAlreadyAcceptedException</code> even if the sequence token is not valid.
+        /// </para>
+        ///  </important>
         /// </summary>
         [AWSProperty(Min=1)]
         public string SequenceToken

@@ -72,7 +72,8 @@ namespace Amazon.S3.Transfer.Internal
                 Timeout = ClientConfig.GetTimeoutValue(this._config.DefaultTimeout, this._fileTransporterRequest.Timeout),
 #endif
                 DisableMD5Stream = this._fileTransporterRequest.DisableMD5Stream,
-                DisablePayloadSigning = this._fileTransporterRequest.DisablePayloadSigning
+                DisablePayloadSigning = this._fileTransporterRequest.DisablePayloadSigning,
+                ChecksumAlgorithm = this._fileTransporterRequest.ChecksumAlgorithm
             };
 
             // Avoid setting ContentType to null, as that may clear
@@ -87,6 +88,11 @@ namespace Amazon.S3.Transfer.Internal
 
             putRequest.InputStream = this._fileTransporterRequest.InputStream;
             putRequest.CalculateContentMD5Header = this._fileTransporterRequest.CalculateContentMD5Header;
+            putRequest.ObjectLockLegalHoldStatus = this._fileTransporterRequest.ObjectLockLegalHoldStatus;
+            putRequest.ObjectLockMode = this._fileTransporterRequest.ObjectLockMode;
+
+            if (this._fileTransporterRequest.IsSetObjectLockRetainUntilDate())
+                putRequest.ObjectLockRetainUntilDate = this._fileTransporterRequest.ObjectLockRetainUntilDate;
 
             return putRequest;
         }

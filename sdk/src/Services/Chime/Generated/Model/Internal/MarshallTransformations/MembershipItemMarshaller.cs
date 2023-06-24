@@ -34,7 +34,7 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// MembershipItem Marshaller
-    /// </summary>       
+    /// </summary>
     public class MembershipItemMarshaller : IRequestMarshaller<MembershipItem, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static MembershipItemMarshaller Instance = new MembershipItemMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ShareRule Marshaller
-    /// </summary>       
+    /// </summary>
     public class ShareRuleMarshaller : IRequestMarshaller<ShareRule, JsonMarshallerContext> 
     {
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ShareRuleMarshaller Instance = new ShareRuleMarshaller();
 
     }

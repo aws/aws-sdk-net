@@ -34,8 +34,28 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
     /// </summary>
     public partial class StartAssessmentRequest : AmazonMigrationHubStrategyRecommendationsRequest
     {
+        private List<AssessmentTarget> _assessmentTargets = new List<AssessmentTarget>();
         private string _s3bucketForAnalysisData;
         private string _s3bucketForReportData;
+
+        /// <summary>
+        /// Gets and sets the property AssessmentTargets. 
+        /// <para>
+        /// List of criteria for assessment.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=10)]
+        public List<AssessmentTarget> AssessmentTargets
+        {
+            get { return this._assessmentTargets; }
+            set { this._assessmentTargets = value; }
+        }
+
+        // Check to see if AssessmentTargets property is set
+        internal bool IsSetAssessmentTargets()
+        {
+            return this._assessmentTargets != null && this._assessmentTargets.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property S3bucketForAnalysisData. 

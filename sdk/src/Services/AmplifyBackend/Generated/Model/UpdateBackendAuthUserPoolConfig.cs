@@ -38,12 +38,13 @@ namespace Amazon.AmplifyBackend.Model
         private UpdateBackendAuthMFAConfig _mfa;
         private UpdateBackendAuthOAuthConfig _oAuth;
         private UpdateBackendAuthPasswordPolicyConfig _passwordPolicy;
+        private UpdateBackendAuthVerificationMessageConfig _verificationMessage;
 
         /// <summary>
         /// Gets and sets the property ForgotPassword. 
         /// <para>
-        /// Describes the forgot password policy for your Amazon Cognito user pool, configured
-        /// as a part of your Amplify project.
+        /// <b>(DEPRECATED)</b> Describes the forgot password policy for your Amazon Cognito user
+        /// pool, configured as a part of your Amplify project.
         /// </para>
         /// </summary>
         public UpdateBackendAuthForgotPasswordConfig ForgotPassword
@@ -113,6 +114,25 @@ namespace Amazon.AmplifyBackend.Model
         internal bool IsSetPasswordPolicy()
         {
             return this._passwordPolicy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VerificationMessage. 
+        /// <para>
+        /// Describes the email or SMS verification message for your Amazon Cognito user pool,
+        /// configured as a part of your Amplify project.
+        /// </para>
+        /// </summary>
+        public UpdateBackendAuthVerificationMessageConfig VerificationMessage
+        {
+            get { return this._verificationMessage; }
+            set { this._verificationMessage = value; }
+        }
+
+        // Check to see if VerificationMessage property is set
+        internal bool IsSetVerificationMessage()
+        {
+            return this._verificationMessage != null;
         }
 
     }

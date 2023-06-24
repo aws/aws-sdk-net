@@ -162,7 +162,7 @@ namespace Amazon.Runtime.Internal
         {
             if (this.InnerHandler != null)
             {
-                return InnerHandler.InvokeAsync<T>(executionContext);                
+                return InnerHandler.InvokeAsync<T>(executionContext);    
             }
             throw new InvalidOperationException("Cannot invoke InnerHandler. InnerHandler is not set.");
         }

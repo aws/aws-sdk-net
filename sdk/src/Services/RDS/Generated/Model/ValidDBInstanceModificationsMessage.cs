@@ -41,7 +41,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Storage. 
         /// <para>
-        /// Valid storage options for your DB instance. 
+        /// Valid storage options for your DB instance.
         /// </para>
         /// </summary>
         public List<ValidStorageOptions> Storage
@@ -59,7 +59,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property ValidProcessorFeatures. 
         /// <para>
-        /// Valid processor features for your DB instance. 
+        /// Valid processor features for your DB instance.
         /// </para>
         /// </summary>
         public List<AvailableProcessorFeature> ValidProcessorFeatures

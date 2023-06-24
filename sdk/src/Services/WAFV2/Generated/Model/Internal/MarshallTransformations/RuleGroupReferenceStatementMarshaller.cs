@@ -34,7 +34,7 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RuleGroupReferenceStatement Marshaller
-    /// </summary>       
+    /// </summary>
     public class RuleGroupReferenceStatementMarshaller : IRequestMarshaller<RuleGroupReferenceStatement, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,11 +67,27 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetRuleActionOverrides())
+            {
+                context.Writer.WritePropertyName("RuleActionOverrides");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectRuleActionOverridesListValue in requestObject.RuleActionOverrides)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = RuleActionOverrideMarshaller.Instance;
+                    marshaller.Marshall(requestObjectRuleActionOverridesListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
         }
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RuleGroupReferenceStatementMarshaller Instance = new RuleGroupReferenceStatementMarshaller();
 
     }

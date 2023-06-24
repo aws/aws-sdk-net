@@ -39,8 +39,8 @@ namespace Amazon.VoiceID.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// the identifier of the KMS key you want Voice ID to use to encrypt the output file
-        /// of the fraudster registration job.
+        /// The identifier of the KMS key you want Voice ID to use to encrypt the output file
+        /// of a speaker enrollment job/fraudster registration job. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
@@ -59,9 +59,9 @@ namespace Amazon.VoiceID.Model
         /// <summary>
         /// Gets and sets the property S3Uri. 
         /// <para>
-        /// The S3 path of the folder to which Voice ID writes the job output file, which has
-        /// a <code>*.out</code> extension. For example, if the input file name is <code>input-file.json</code>
-        /// and the output folder path is <code>s3://output-bucket/output-folder</code>, the full
+        /// The S3 path of the folder where Voice ID writes the job output file. It has a <code>*.out</code>
+        /// extension. For example, if the input file name is <code>input-file.json</code> and
+        /// the output folder path is <code>s3://output-bucket/output-folder</code>, the full
         /// output file path is <code>s3://output-bucket/output-folder/job-Id/input-file.json.out</code>.
         /// </para>
         /// </summary>

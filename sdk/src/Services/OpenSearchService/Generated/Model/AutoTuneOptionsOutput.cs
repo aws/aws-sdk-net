@@ -29,18 +29,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// The Auto-Tune options: the Auto-Tune desired state for the domain and list of maintenance
-    /// schedules.
+    /// The Auto-Tune settings for a domain, displayed when enabling or disabling Auto-Tune.
     /// </summary>
     public partial class AutoTuneOptionsOutput
     {
         private string _errorMessage;
         private AutoTuneState _state;
+        private bool? _useOffPeakWindow;
 
         /// <summary>
         /// Gets and sets the property ErrorMessage. 
         /// <para>
-        /// The error message while enabling or disabling Auto-Tune.
+        /// Any errors that occurred while enabling or disabling Auto-Tune.
         /// </para>
         /// </summary>
         public string ErrorMessage
@@ -58,7 +58,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// The <code>AutoTuneState</code> for the domain. 
+        /// The current state of Auto-Tune on the domain.
         /// </para>
         /// </summary>
         public AutoTuneState State
@@ -71,6 +71,25 @@ namespace Amazon.OpenSearchService.Model
         internal bool IsSetState()
         {
             return this._state != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UseOffPeakWindow. 
+        /// <para>
+        /// Whether the domain's off-peak window will be used to deploy Auto-Tune changes rather
+        /// than a maintenance schedule.
+        /// </para>
+        /// </summary>
+        public bool UseOffPeakWindow
+        {
+            get { return this._useOffPeakWindow.GetValueOrDefault(); }
+            set { this._useOffPeakWindow = value; }
+        }
+
+        // Check to see if UseOffPeakWindow property is set
+        internal bool IsSetUseOffPeakWindow()
+        {
+            return this._useOffPeakWindow.HasValue; 
         }
 
     }

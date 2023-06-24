@@ -34,7 +34,7 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// EnumerationValue Marshaller
-    /// </summary>       
+    /// </summary>
     public class EnumerationValueMarshaller : IRequestMarshaller<EnumerationValue, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static EnumerationValueMarshaller Instance = new EnumerationValueMarshaller();
 
     }

@@ -64,16 +64,34 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("ChannelType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ChannelType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CompressionType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CompressionType = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ContentType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ContentType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DataSource", targetDepth))
                 {
                     var unmarshaller = AutoMLDataSourceUnmarshaller.Instance;
                     unmarshalledObject.DataSource = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SampleWeightAttributeName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SampleWeightAttributeName = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("TargetAttributeName", targetDepth))

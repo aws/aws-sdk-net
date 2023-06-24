@@ -34,8 +34,28 @@ namespace Amazon.BackupGateway.Model
     /// </summary>
     public partial class ListVirtualMachinesRequest : AmazonBackupGatewayRequest
     {
+        private string _hypervisorArn;
         private int? _maxResults;
         private string _nextToken;
+
+        /// <summary>
+        /// Gets and sets the property HypervisorArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the hypervisor connected to your virtual machine.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=50, Max=500)]
+        public string HypervisorArn
+        {
+            get { return this._hypervisorArn; }
+            set { this._hypervisorArn = value; }
+        }
+
+        // Check to see if HypervisorArn property is set
+        internal bool IsSetHypervisorArn()
+        {
+            return this._hypervisorArn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property MaxResults. 

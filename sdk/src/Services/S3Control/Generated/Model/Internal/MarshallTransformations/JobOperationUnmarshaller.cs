@@ -103,6 +103,12 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         unmarshalledObject.S3PutObjectTagging = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("S3ReplicateObject", targetDepth))
+                    {
+                        var unmarshaller = S3ReplicateObjectOperationUnmarshaller.Instance;
+                        unmarshalledObject.S3ReplicateObject = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {

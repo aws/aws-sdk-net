@@ -491,6 +491,10 @@ namespace Amazon.LexRuntimeV2
     {
 
         /// <summary>
+        /// Constant Composite for Shape
+        /// </summary>
+        public static readonly Shape Composite = new Shape("Composite");
+        /// <summary>
         /// Constant List for Shape
         /// </summary>
         public static readonly Shape List = new Shape("List");

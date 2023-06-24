@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudTrail.Model
 {
     /// <summary>
-    /// This exception is thrown when the policy on the S3 bucket or KMS key is not sufficient.
+    /// This exception is thrown when the policy on the S3 bucket or KMS key does not have
+    /// sufficient permissions for the operation.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

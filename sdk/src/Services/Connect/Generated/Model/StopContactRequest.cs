@@ -30,7 +30,21 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the StopContact operation.
-    /// Ends the specified contact.
+    /// Ends the specified contact. This call does not work for the following initiation methods:
+    /// 
+    ///  <ul> <li> 
+    /// <para>
+    /// DISCONNECT
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// TRANSFER
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// QUEUE_TRANSFER
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class StopContactRequest : AmazonConnectRequest
     {
@@ -59,8 +73,8 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The identifier of the Amazon Connect instance. You can find the instanceId in the
-        /// ARN of the instance.
+        /// The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+        /// the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]

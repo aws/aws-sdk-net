@@ -30,8 +30,8 @@ namespace Amazon.APIGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteGatewayResponse operation.
-    /// Clears any customization of a <a>GatewayResponse</a> of a specified response type
-    /// on the given <a>RestApi</a> and resets it with the default settings.
+    /// Clears any customization of a GatewayResponse of a specified response type on the
+    /// given RestApi and resets it with the default settings.
     /// </summary>
     public partial class DeleteGatewayResponseRequest : AmazonAPIGatewayRequest
     {
@@ -41,11 +41,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property ResponseType. 
         /// <para>
-        /// [Required] 
-        /// <para>
-        /// The response type of the associated <a>GatewayResponse</a>.
-        /// </para>
-        /// 
+        /// The response type of the associated GatewayResponse.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -64,7 +60,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property RestApiId. 
         /// <para>
-        /// [Required] The string identifier of the associated <a>RestApi</a>.
+        /// The string identifier of the associated RestApi.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

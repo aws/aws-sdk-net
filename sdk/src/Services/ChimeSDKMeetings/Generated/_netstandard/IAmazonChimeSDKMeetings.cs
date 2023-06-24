@@ -34,7 +34,7 @@ namespace Amazon.ChimeSDKMeetings
     /// The Amazon Chime SDK meetings APIs in this section allow software developers to create
     /// Amazon Chime SDK meetings, set the AWS Regions for meetings, create and manage users,
     /// and send and receive meeting notifications. For more information about the meeting
-    /// APIs, see <a href="http://amazonaws.com/chime/latest/APIReference/API_Operations_Amazon_Chime_SDK_meetings">Amazon
+    /// APIs, see <a href="https://docs.aws.amazon.com/chime/latest/APIReference/API_Operations_Amazon_Chime_SDK_Meetings.html">Amazon
     /// Chime SDK meetings</a>.
     /// </summary>
     public partial interface IAmazonChimeSDKMeetings : IAmazonService, IDisposable
@@ -73,14 +73,95 @@ namespace Amazon.ChimeSDKMeetings
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
         /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.ThrottlingException">
+        /// The number of customer requests exceeds the request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.UnauthorizedException">
+        /// The user isn't authorized to request a resource.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.UnprocessableEntityException">
+        /// The request was well-formed but was unable to be followed due to semantic errors.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/BatchCreateAttendee">REST API Reference for BatchCreateAttendee Operation</seealso>
+        Task<BatchCreateAttendeeResponse> BatchCreateAttendeeAsync(BatchCreateAttendeeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  BatchUpdateAttendeeCapabilitiesExcept
+
+
+
+        /// <summary>
+        /// Updates <code>AttendeeCapabilities</code> except the capabilities listed in an <code>ExcludedAttendeeIds</code>
+        /// table.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// You use the capabilities with a set of values that control what the capabilities can
+        /// do, such as <code>SendReceive</code> data. For more information about those values,
+        /// see .
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// When using capabilities, be aware of these corner cases:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You can't set <code>content</code> capabilities to <code>SendReceive</code> or <code>Receive</code>
+        /// unless you also set <code>video</code> capabilities to <code>SendReceive</code> or
+        /// <code>Receive</code>. If you don't set the <code>video</code> capability to receive,
+        /// the response will contain an HTTP 400 Bad Request status code. However, you can set
+        /// your <code>video</code> capability to receive and you set your <code>content</code>
+        /// capability to not receive.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When you change an <code>audio</code> capability from <code>None</code> or <code>Receive</code>
+        /// to <code>Send</code> or <code>SendReceive</code> , and if the attendee left their
+        /// microphone unmuted, audio will flow from the attendee to the other meeting participants.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When you change a <code>video</code> or <code>content</code> capability from <code>None</code>
+        /// or <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if
+        /// the attendee turned on their video or content streams, remote attendees can receive
+        /// those streams, but only after media renegotiation between the client and the Amazon
+        /// Chime back-end server.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchUpdateAttendeeCapabilitiesExcept service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchUpdateAttendeeCapabilitiesExcept service method, as returned by ChimeSDKMeetings.</returns>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.ConflictException">
+        /// Multiple instances of the same request have been made simultaneously.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ServiceUnavailableException">
         /// The service is currently unavailable.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.UnauthorizedException">
         /// The user isn't authorized to request a resource.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/BatchCreateAttendee">REST API Reference for BatchCreateAttendee Operation</seealso>
-        Task<BatchCreateAttendeeResponse> BatchCreateAttendeeAsync(BatchCreateAttendeeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/BatchUpdateAttendeeCapabilitiesExcept">REST API Reference for BatchUpdateAttendeeCapabilitiesExcept Operation</seealso>
+        Task<BatchUpdateAttendeeCapabilitiesExceptResponse> BatchUpdateAttendeeCapabilitiesExceptAsync(BatchUpdateAttendeeCapabilitiesExceptRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -111,8 +192,14 @@ namespace Amazon.ChimeSDKMeetings
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
         /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ServiceUnavailableException">
         /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.ThrottlingException">
+        /// The number of customer requests exceeds the request rate limit.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.UnauthorizedException">
         /// The user isn't authorized to request a resource.
@@ -145,11 +232,20 @@ namespace Amazon.ChimeSDKMeetings
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.BadRequestException">
         /// The input parameters don't match the service's restrictions.
         /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.LimitExceededException">
         /// The request exceeds the resource limit.
         /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ServiceUnavailableException">
         /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.ThrottlingException">
+        /// The number of customer requests exceeds the request rate limit.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.UnauthorizedException">
         /// The user isn't authorized to request a resource.
@@ -179,11 +275,20 @@ namespace Amazon.ChimeSDKMeetings
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.BadRequestException">
         /// The input parameters don't match the service's restrictions.
         /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.LimitExceededException">
         /// The request exceeds the resource limit.
         /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ServiceUnavailableException">
         /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.ThrottlingException">
+        /// The number of customer requests exceeds the request rate limit.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.UnauthorizedException">
         /// The user isn't authorized to request a resource.
@@ -209,11 +314,26 @@ namespace Amazon.ChimeSDKMeetings
         /// </param>
         /// 
         /// <returns>The response from the DeleteAttendee service method, as returned by ChimeSDKMeetings.</returns>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ForbiddenException">
         /// The client is permanently forbidden from making the request.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.ThrottlingException">
+        /// The number of customer requests exceeds the request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.UnauthorizedException">
+        /// The user isn't authorized to request a resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/DeleteAttendee">REST API Reference for DeleteAttendee Operation</seealso>
         Task<DeleteAttendeeResponse> DeleteAttendeeAsync(DeleteAttendeeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -241,6 +361,21 @@ namespace Amazon.ChimeSDKMeetings
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ForbiddenException">
         /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.ThrottlingException">
+        /// The number of customer requests exceeds the request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.UnauthorizedException">
+        /// The user isn't authorized to request a resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/DeleteMeeting">REST API Reference for DeleteMeeting Operation</seealso>
         Task<DeleteMeetingResponse> DeleteMeetingAsync(DeleteMeetingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -271,6 +406,18 @@ namespace Amazon.ChimeSDKMeetings
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
         /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.ThrottlingException">
+        /// The number of customer requests exceeds the request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.UnauthorizedException">
+        /// The user isn't authorized to request a resource.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/GetAttendee">REST API Reference for GetAttendee Operation</seealso>
         Task<GetAttendeeResponse> GetAttendeeAsync(GetAttendeeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -299,6 +446,18 @@ namespace Amazon.ChimeSDKMeetings
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.ThrottlingException">
+        /// The number of customer requests exceeds the request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.UnauthorizedException">
+        /// The user isn't authorized to request a resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/GetMeeting">REST API Reference for GetMeeting Operation</seealso>
         Task<GetMeetingResponse> GetMeetingAsync(GetMeetingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -329,8 +488,41 @@ namespace Amazon.ChimeSDKMeetings
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
         /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.ThrottlingException">
+        /// The number of customer requests exceeds the request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.UnauthorizedException">
+        /// The user isn't authorized to request a resource.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/ListAttendees">REST API Reference for ListAttendees Operation</seealso>
         Task<ListAttendeesResponse> ListAttendeesAsync(ListAttendeesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListTagsForResource
+
+
+
+        /// <summary>
+        /// Returns a list of the tags available for the specified resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by ChimeSDKMeetings.</returns>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.ResourceNotFoundException">
+        /// The resource that you want to tag couldn't be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -339,7 +531,27 @@ namespace Amazon.ChimeSDKMeetings
 
 
         /// <summary>
-        /// Starts transcription for the specified <code>meetingId</code>.
+        /// Starts transcription for the specified <code>meetingId</code>. For more information,
+        /// refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/meeting-transcription.html">
+        /// Using Amazon Chime SDK live transcription </a> in the <i>Amazon Chime SDK Developer
+        /// Guide</i>.
+        /// 
+        ///  
+        /// <para>
+        /// If you specify an invalid configuration, a <code>TranscriptFailed</code> event will
+        /// be sent with the contents of the <code>BadRequestException</code> generated by Amazon
+        /// Transcribe. For more information on each parameter and which combinations are valid,
+        /// refer to the <a href="https://docs.aws.amazon.com/transcribe/latest/APIReference/API_streaming_StartStreamTranscription.html">StartStreamTranscription</a>
+        /// API in the <i>Amazon Transcribe Developer Guide</i>.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// Amazon Chime SDK live transcription is powered by Amazon Transcribe. Use of Amazon
+        /// Transcribe is subject to the <a href="https://aws.amazon.com/service-terms/">AWS Service
+        /// Terms</a>, including the terms specific to the AWS Machine Learning and Artificial
+        /// Intelligence Services.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartMeetingTranscription service method.</param>
         /// <param name="cancellationToken">
@@ -359,8 +571,14 @@ namespace Amazon.ChimeSDKMeetings
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
         /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ServiceUnavailableException">
         /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.ThrottlingException">
+        /// The number of customer requests exceeds the request rate limit.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.UnauthorizedException">
         /// The user isn't authorized to request a resource.
@@ -378,7 +596,19 @@ namespace Amazon.ChimeSDKMeetings
 
 
         /// <summary>
-        /// Stops transcription for the specified <code>meetingId</code>.
+        /// Stops transcription for the specified <code>meetingId</code>. For more information,
+        /// refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/meeting-transcription.html">
+        /// Using Amazon Chime SDK live transcription </a> in the <i>Amazon Chime SDK Developer
+        /// Guide</i>.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Amazon Chime SDK live transcription is powered by Amazon Transcribe. Use of Amazon
+        /// Transcribe is subject to the <a href="https://aws.amazon.com/service-terms/">AWS Service
+        /// Terms</a>, including the terms specific to the AWS Machine Learning and Artificial
+        /// Intelligence Services.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopMeetingTranscription service method.</param>
         /// <param name="cancellationToken">
@@ -395,8 +625,14 @@ namespace Amazon.ChimeSDKMeetings
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
         /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ServiceUnavailableException">
         /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.ThrottlingException">
+        /// The number of customer requests exceeds the request rate limit.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.UnauthorizedException">
         /// The user isn't authorized to request a resource.
@@ -406,6 +642,162 @@ namespace Amazon.ChimeSDKMeetings
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/StopMeetingTranscription">REST API Reference for StopMeetingTranscription Operation</seealso>
         Task<StopMeetingTranscriptionResponse> StopMeetingTranscriptionAsync(StopMeetingTranscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  TagResource
+
+
+
+        /// <summary>
+        /// The resource that supports tags.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by ChimeSDKMeetings.</returns>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.ResourceNotFoundException">
+        /// The resource that you want to tag couldn't be found.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.TooManyTagsException">
+        /// Too many tags were added to the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/TagResource">REST API Reference for TagResource Operation</seealso>
+        Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UntagResource
+
+
+
+        /// <summary>
+        /// Removes the specified tags from the specified resources. When you specify a tag key,
+        /// the action removes both that key and its associated value. The operation succeeds
+        /// even if you attempt to remove tags from a resource that were already removed. Note
+        /// the following:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// To remove tags from a resource, you need the necessary permissions for the service
+        /// that the resource belongs to as well as permissions for removing tags. For more information,
+        /// see the documentation for the service whose resource you want to untag.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You can only tag resources that are located in the specified AWS Region for the calling
+        /// AWS account.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Minimum permissions</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// In addition to the <code>tag:UntagResources</code> permission required by this operation,
+        /// you must also have the remove tags permission defined by the service that created
+        /// the resource. For example, to remove the tags from an Amazon EC2 instance using the
+        /// <code>UntagResources</code> operation, you must have both of the following permissions:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>tag:UntagResource</code> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>ChimeSDKMeetings:DeleteTags</code> 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by ChimeSDKMeetings.</returns>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.ResourceNotFoundException">
+        /// The resource that you want to tag couldn't be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateAttendeeCapabilities
+
+
+
+        /// <summary>
+        /// The capabilities that you want to update.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// You use the capabilities with a set of values that control what the capabilities can
+        /// do, such as <code>SendReceive</code> data. For more information about those values,
+        /// see .
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// When using capabilities, be aware of these corner cases:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You can't set <code>content</code> capabilities to <code>SendReceive</code> or <code>Receive</code>
+        /// unless you also set <code>video</code> capabilities to <code>SendReceive</code> or
+        /// <code>Receive</code>. If you don't set the <code>video</code> capability to receive,
+        /// the response will contain an HTTP 400 Bad Request status code. However, you can set
+        /// your <code>video</code> capability to receive and you set your <code>content</code>
+        /// capability to not receive.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When you change an <code>audio</code> capability from <code>None</code> or <code>Receive</code>
+        /// to <code>Send</code> or <code>SendReceive</code> , and if the attendee left their
+        /// microphone unmuted, audio will flow from the attendee to the other meeting participants.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When you change a <code>video</code> or <code>content</code> capability from <code>None</code>
+        /// or <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if
+        /// the attendee turned on their video or content streams, remote attendees can receive
+        /// those streams, but only after media renegotiation between the client and the Amazon
+        /// Chime back-end server.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAttendeeCapabilities service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateAttendeeCapabilities service method, as returned by ChimeSDKMeetings.</returns>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.ConflictException">
+        /// Multiple instances of the same request have been made simultaneously.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.UnauthorizedException">
+        /// The user isn't authorized to request a resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/UpdateAttendeeCapabilities">REST API Reference for UpdateAttendeeCapabilities Operation</seealso>
+        Task<UpdateAttendeeCapabilitiesResponse> UpdateAttendeeCapabilitiesAsync(UpdateAttendeeCapabilitiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

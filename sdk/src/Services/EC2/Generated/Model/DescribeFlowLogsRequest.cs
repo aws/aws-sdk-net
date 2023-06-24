@@ -30,9 +30,14 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeFlowLogs operation.
-    /// Describes one or more flow logs. To view the information in your flow logs (the log
-    /// streams for the network interfaces), you must use the CloudWatch Logs console or the
-    /// CloudWatch Logs API.
+    /// Describes one or more flow logs.
+    /// 
+    ///  
+    /// <para>
+    /// To view the published flow log records, you must view the log destination. For example,
+    /// the CloudWatch Logs log group, the Amazon S3 bucket, or the Kinesis Data Firehose
+    /// delivery stream.
+    /// </para>
     /// </summary>
     public partial class DescribeFlowLogsRequest : AmazonEC2Request
     {
@@ -53,9 +58,8 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>log-destination-type</code> - The type of destination to which the flow log
-        /// publishes data. Possible destination types include <code>cloud-watch-logs</code> and
-        /// <code>s3</code>.
+        ///  <code>log-destination-type</code> - The type of destination for the flow log data
+        /// (<code>cloud-watch-logs</code> | <code>s3</code> | <code>kinesis-data-firehose</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -126,8 +130,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of results to return with a single call. To retrieve the remaining
-        /// results, make another call with the returned <code>nextToken</code> value.
+        /// The maximum number of items to return for this request. To get the next page of items,
+        /// make another request with the token returned in the output. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.
         /// </para>
         /// </summary>
         public int MaxResults
@@ -145,7 +150,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token for the next page of results.
+        /// The token to request the next page of items. Pagination continues from the end of
+        /// the items returned by the previous request.
         /// </para>
         /// </summary>
         public string NextToken

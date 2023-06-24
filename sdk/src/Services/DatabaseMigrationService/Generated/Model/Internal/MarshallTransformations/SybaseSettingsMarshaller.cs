@@ -34,7 +34,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SybaseSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class SybaseSettingsMarshaller : IRequestMarshaller<SybaseSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -91,7 +91,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SybaseSettingsMarshaller Instance = new SybaseSettingsMarshaller();
 
     }

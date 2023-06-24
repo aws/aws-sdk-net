@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DateRange Marshaller
-    /// </summary>       
+    /// </summary>
     public class DateRangeMarshaller : IRequestMarshaller<DateRange, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DateRangeMarshaller Instance = new DateRangeMarshaller();
 
     }

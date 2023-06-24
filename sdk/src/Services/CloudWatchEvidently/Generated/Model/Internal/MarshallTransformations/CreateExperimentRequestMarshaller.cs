@@ -56,7 +56,7 @@ namespace Amazon.CloudWatchEvidently.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CloudWatchEvidently");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-02-01";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-02-01";
             request.HttpMethod = "POST";
 
             if (!publicRequest.IsSetProject())
@@ -119,6 +119,12 @@ namespace Amazon.CloudWatchEvidently.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.SamplingRate);
                 }
 
+                if(publicRequest.IsSetSegment())
+                {
+                    context.Writer.WritePropertyName("segment");
+                    context.Writer.Write(publicRequest.Segment);
+                }
+
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("tags");
@@ -149,7 +155,6 @@ namespace Amazon.CloudWatchEvidently.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

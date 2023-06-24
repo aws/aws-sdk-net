@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// Contains information about a user account for a Amazon Connect instance.
+    /// Contains information about a user account for an Amazon Connect instance.
     /// </summary>
     public partial class User
     {

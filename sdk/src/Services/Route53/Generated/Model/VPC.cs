@@ -31,6 +31,12 @@ namespace Amazon.Route53.Model
     /// <summary>
     /// (Private hosted zones only) A complex type that contains information about an Amazon
     /// VPC.
+    /// 
+    ///  
+    /// <para>
+    /// If you associate a private hosted zone with an Amazon VPC when you make a <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateHostedZone.html">CreateHostedZone</a>
+    /// request, the following parameters are also required.
+    /// </para>
     /// </summary>
     public partial class VPC
     {

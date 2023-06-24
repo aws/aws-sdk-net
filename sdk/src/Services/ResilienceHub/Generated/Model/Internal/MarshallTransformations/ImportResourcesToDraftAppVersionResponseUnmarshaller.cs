@@ -63,6 +63,12 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
                     response.AppVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("eksSources", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<EksSource, EksSourceUnmarshaller>(EksSourceUnmarshaller.Instance);
+                    response.EksSources = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("sourceArns", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
@@ -73,6 +79,12 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Status = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("terraformSources", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<TerraformSource, TerraformSourceUnmarshaller>(TerraformSourceUnmarshaller.Instance);
+                    response.TerraformSources = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

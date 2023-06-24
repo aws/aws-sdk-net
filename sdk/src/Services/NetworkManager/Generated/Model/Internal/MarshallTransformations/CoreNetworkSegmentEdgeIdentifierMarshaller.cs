@@ -34,7 +34,7 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CoreNetworkSegmentEdgeIdentifier Marshaller
-    /// </summary>       
+    /// </summary>
     public class CoreNetworkSegmentEdgeIdentifierMarshaller : IRequestMarshaller<CoreNetworkSegmentEdgeIdentifier, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CoreNetworkSegmentEdgeIdentifierMarshaller Instance = new CoreNetworkSegmentEdgeIdentifierMarshaller();
 
     }

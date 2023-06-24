@@ -38,9 +38,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property CategoryProperties. 
         /// <para>
-        /// The attributes describing the analytics category. You can see information such as
-        /// the rules that you've used to update the category and when the category was originally
-        /// created. 
+        /// Provides you with the properties of the Call Analytics category you specified in your
+        /// <code>UpdateCallAnalyticsCategory</code> request.
         /// </para>
         /// </summary>
         public CategoryProperties CategoryProperties

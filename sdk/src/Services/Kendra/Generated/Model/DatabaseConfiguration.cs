@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kendra.Model
 {
     /// <summary>
-    /// Provides the information necessary to connect a database to an index.
+    /// Provides the configuration information to connect to a index.
     /// </summary>
     public partial class DatabaseConfiguration
     {
@@ -80,7 +80,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property ConnectionConfiguration. 
         /// <para>
-        /// The information necessary to connect to a database.
+        /// Configuration information that's required to connect to a database.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

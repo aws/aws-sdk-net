@@ -56,7 +56,7 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Backup");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-11-15";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-11-15";
             request.HttpMethod = "PUT";
 
             if (!publicRequest.IsSetFrameworkName())
@@ -99,9 +99,8 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                 else if(!(publicRequest.IsSetIdempotencyToken()))
                 {
                     context.Writer.WritePropertyName("IdempotencyToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());                                                
+                    context.Writer.Write(Guid.NewGuid().ToString());
                 }
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

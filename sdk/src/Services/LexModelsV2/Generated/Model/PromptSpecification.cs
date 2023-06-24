@@ -36,6 +36,8 @@ namespace Amazon.LexModelsV2.Model
         private bool? _allowInterrupt;
         private int? _maxRetries;
         private List<MessageGroup> _messageGroups = new List<MessageGroup>();
+        private MessageSelectionStrategy _messageSelectionStrategy;
+        private Dictionary<string, PromptAttemptSpecification> _promptAttemptsSpecification = new Dictionary<string, PromptAttemptSpecification>();
 
         /// <summary>
         /// Gets and sets the property AllowInterrupt. 
@@ -93,6 +95,42 @@ namespace Amazon.LexModelsV2.Model
         internal bool IsSetMessageGroups()
         {
             return this._messageGroups != null && this._messageGroups.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MessageSelectionStrategy. 
+        /// <para>
+        /// Indicates how a message is selected from a message group among retries.
+        /// </para>
+        /// </summary>
+        public MessageSelectionStrategy MessageSelectionStrategy
+        {
+            get { return this._messageSelectionStrategy; }
+            set { this._messageSelectionStrategy = value; }
+        }
+
+        // Check to see if MessageSelectionStrategy property is set
+        internal bool IsSetMessageSelectionStrategy()
+        {
+            return this._messageSelectionStrategy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PromptAttemptsSpecification. 
+        /// <para>
+        /// Specifies the advanced settings on each attempt of the prompt.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, PromptAttemptSpecification> PromptAttemptsSpecification
+        {
+            get { return this._promptAttemptsSpecification; }
+            set { this._promptAttemptsSpecification = value; }
+        }
+
+        // Check to see if PromptAttemptsSpecification property is set
+        internal bool IsSetPromptAttemptsSpecification()
+        {
+            return this._promptAttemptsSpecification != null && this._promptAttemptsSpecification.Count > 0; 
         }
 
     }

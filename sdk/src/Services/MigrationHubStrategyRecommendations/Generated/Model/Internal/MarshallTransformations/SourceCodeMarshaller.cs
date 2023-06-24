@@ -34,7 +34,7 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
 {
     /// <summary>
     /// SourceCode Marshaller
-    /// </summary>       
+    /// </summary>
     public class SourceCodeMarshaller : IRequestMarshaller<SourceCode, JsonMarshallerContext> 
     {
         /// <summary>
@@ -49,6 +49,12 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
             {
                 context.Writer.WritePropertyName("location");
                 context.Writer.Write(requestObject.Location);
+            }
+
+            if(requestObject.IsSetProjectName())
+            {
+                context.Writer.WritePropertyName("projectName");
+                context.Writer.Write(requestObject.ProjectName);
             }
 
             if(requestObject.IsSetSourceVersion())
@@ -67,7 +73,7 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SourceCodeMarshaller Instance = new SourceCodeMarshaller();
 
     }

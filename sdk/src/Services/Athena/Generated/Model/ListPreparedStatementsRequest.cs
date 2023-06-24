@@ -30,7 +30,7 @@ namespace Amazon.Athena.Model
 {
     /// <summary>
     /// Container for the parameters to the ListPreparedStatements operation.
-    /// Lists the prepared statements in the specfied workgroup.
+    /// Lists the prepared statements in the specified workgroup.
     /// </summary>
     public partial class ListPreparedStatementsRequest : AmazonAthenaRequest
     {

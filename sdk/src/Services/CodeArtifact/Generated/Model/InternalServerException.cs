@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeArtifact.Model
 {
     /// <summary>
-    /// The operation did not succeed because of an error that occurred inside AWS CodeArtifact.
+    /// The operation did not succeed because of an error that occurred inside CodeArtifact.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

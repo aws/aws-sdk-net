@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// TensorBoardOutputConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class TensorBoardOutputConfigMarshaller : IRequestMarshaller<TensorBoardOutputConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static TensorBoardOutputConfigMarshaller Instance = new TensorBoardOutputConfigMarshaller();
 
     }

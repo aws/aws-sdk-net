@@ -32,6 +32,32 @@ namespace Amazon.FSx.Model
     /// Describes the data tiering policy for an ONTAP volume. When enabled, Amazon FSx for
     /// ONTAP's intelligent tiering automatically transitions a volume's data between the
     /// file system's primary storage and capacity pool storage based on your access patterns.
+    /// 
+    ///  
+    /// <para>
+    /// Valid tiering policies are the following:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <code>SNAPSHOT_ONLY</code> - (Default value) moves cold snapshots to the capacity
+    /// pool storage tier.
+    /// </para>
+    ///  </li> </ul> <ul> <li> 
+    /// <para>
+    ///  <code>AUTO</code> - moves cold user data and snapshots to the capacity pool storage
+    /// tier based on your access patterns.
+    /// </para>
+    ///  </li> </ul> <ul> <li> 
+    /// <para>
+    ///  <code>ALL</code> - moves all user data blocks in both the active file system and
+    /// Snapshot copies to the storage pool tier.
+    /// </para>
+    ///  </li> </ul> <ul> <li> 
+    /// <para>
+    ///  <code>NONE</code> - keeps a volume's data in the primary storage tier, preventing
+    /// it from being moved to the capacity pool tier.
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class TieringPolicy
     {

@@ -51,7 +51,7 @@ namespace Amazon.ManagedBlockchain.Model
         /// <para>
         /// The Amazon Resource Name (ARN) of the member. For more information about ARNs and
         /// their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
+        /// Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1011)]
@@ -126,8 +126,8 @@ namespace Amazon.ManagedBlockchain.Model
         /// <summary>
         /// Gets and sets the property IsOwned. 
         /// <para>
-        /// An indicator of whether the member is owned by your AWS account or a different AWS
-        /// account.
+        /// An indicator of whether the member is owned by your Amazon Web Services account or
+        /// a different Amazon Web Services account.
         /// </para>
         /// </summary>
         public bool IsOwned
@@ -168,7 +168,8 @@ namespace Amazon.ManagedBlockchain.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>CREATING</code> - The AWS account is in the process of creating a member.
+        ///  <code>CREATING</code> - The Amazon Web Services account is in the process of creating
+        /// a member.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -176,8 +177,8 @@ namespace Amazon.ManagedBlockchain.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CREATE_FAILED</code> - The AWS account attempted to create a member and creation
-        /// failed.
+        ///  <code>CREATE_FAILED</code> - The Amazon Web Services account attempted to create
+        /// a member and creation failed.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -186,29 +187,29 @@ namespace Amazon.ManagedBlockchain.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>DELETING</code> - The member and all associated resources are in the process
-        /// of being deleted. Either the AWS account that owns the member deleted it, or the member
-        /// is being deleted as the result of an <code>APPROVED</code> <code>PROPOSAL</code> to
-        /// remove the member.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>DELETED</code> - The member can no longer participate on the network and all
-        /// associated resources are deleted. Either the AWS account that owns the member deleted
+        /// of being deleted. Either the Amazon Web Services account that owns the member deleted
         /// it, or the member is being deleted as the result of an <code>APPROVED</code> <code>PROPOSAL</code>
         /// to remove the member.
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>DELETED</code> - The member can no longer participate on the network and all
+        /// associated resources are deleted. Either the Amazon Web Services account that owns
+        /// the member deleted it, or the member is being deleted as the result of an <code>APPROVED</code>
+        /// <code>PROPOSAL</code> to remove the member.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The member is impaired and might not function
-        /// as expected because it cannot access the specified customer managed key in AWS Key
-        /// Management Service (AWS KMS) for encryption at rest. Either the KMS key was disabled
-        /// or deleted, or the grants on the key were revoked.
+        /// as expected because it cannot access the specified customer managed key in Key Management
+        /// Service (KMS) for encryption at rest. Either the KMS key was disabled or deleted,
+        /// or the grants on the key were revoked.
         /// </para>
         ///  
         /// <para>
-        /// The effect of disabling or deleting a key, or revoking a grant is not immediate. The
-        /// member resource might take some time to find that the key is inaccessible. When a
-        /// resource is in this state, we recommend deleting and recreating the resource.
+        /// The effect of disabling or deleting a key or of revoking a grant isn't immediate.
+        /// It might take some time for the member resource to discover that the key is inaccessible.
+        /// When a resource is in this state, we recommend deleting and recreating the resource.
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -39,9 +39,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property SmsAuthenticationMessage. 
         /// <para>
-        /// The SMS authentication message that will be sent to users with the code they need
-        /// to sign in. The message must contain the ‘{####}’ placeholder, which will be replaced
-        /// with the code. If the message is not included, and default message will be used.
+        /// The SMS authentication message that will be sent to users with the code they must
+        /// sign in. The message must contain the ‘{####}’ placeholder, which is replaced with
+        /// the code. If the message isn't included, and default message will be used.
         /// </para>
         /// </summary>
         [AWSProperty(Min=6, Max=140)]
@@ -60,7 +60,11 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property SmsConfiguration. 
         /// <para>
-        /// The SMS configuration.
+        /// The SMS configuration with the settings that your Amazon Cognito user pool must use
+        /// to send an SMS message from your Amazon Web Services account through Amazon Simple
+        /// Notification Service. To request Amazon SNS in the Amazon Web Services Region that
+        /// you want, the Amazon Cognito user pool uses an Identity and Access Management (IAM)
+        /// role that you provide for your Amazon Web Services account.
         /// </para>
         /// </summary>
         public SmsConfigurationType SmsConfiguration

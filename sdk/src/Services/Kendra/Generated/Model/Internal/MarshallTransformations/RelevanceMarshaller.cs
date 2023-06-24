@@ -34,7 +34,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Relevance Marshaller
-    /// </summary>       
+    /// </summary>
     public class RelevanceMarshaller : IRequestMarshaller<Relevance, JsonMarshallerContext> 
     {
         /// <summary>
@@ -87,7 +87,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RelevanceMarshaller Instance = new RelevanceMarshaller();
 
     }

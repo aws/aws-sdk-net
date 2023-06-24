@@ -45,6 +45,8 @@ namespace Amazon.CloudFormation.Model
         private StackSetDriftDetectionDetails _stackSetDriftDetectionDetails;
         private string _stackSetId;
         private StackSetOperationStatus _status;
+        private StackSetOperationStatusDetails _statusDetails;
+        private string _statusReason;
 
         /// <summary>
         /// Gets and sets the property Action. 
@@ -52,7 +54,7 @@ namespace Amazon.CloudFormation.Model
         /// The type of stack set operation: <code>CREATE</code>, <code>UPDATE</code>, or <code>DELETE</code>.
         /// Create and delete operations affect only the specified stack set instances that are
         /// associated with the specified stack set. Update operations affect both the stack set
-        /// itself, as well as <i>all</i> associated stack set instances.
+        /// itself, in addition to <i>all</i> associated stack set instances.
         /// </para>
         /// </summary>
         public StackSetOperationAction Action
@@ -70,8 +72,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property AdministrationRoleARN. 
         /// <para>
-        /// The Amazon Resource Number (ARN) of the IAM role used to perform this stack set operation.
-        /// 
+        /// The Amazon Resource Name (ARN) of the IAM role used to perform this stack set operation.
         /// </para>
         ///  
         /// <para>
@@ -161,7 +162,7 @@ namespace Amazon.CloudFormation.Model
         ///  
         /// <para>
         /// Use customized execution roles to control which stack resources users and groups can
-        /// include in their stack sets. 
+        /// include in their stack sets.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -219,8 +220,8 @@ namespace Amazon.CloudFormation.Model
         /// <para>
         /// For stack set operations of action type <code>DELETE</code>, specifies whether to
         /// remove the stack instances from the specified stack set, but doesn't delete the stacks.
-        /// You can't reassociate a retained stack, or add an existing, saved stack to a new stack
-        /// set.
+        /// You can't re-associate a retained stack, or add an existing, saved stack to a new
+        /// stack set.
         /// </para>
         /// </summary>
         public bool RetainStacks
@@ -243,7 +244,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// this information will only be present for stack set operations whose <code>Action</code>
+        /// This information will only be present for stack set operations whose <code>Action</code>
         /// type is <code>DETECT_DRIFT</code>.
         /// </para>
         ///  
@@ -285,7 +286,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the operation. 
+        /// The status of the operation.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -310,12 +311,11 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>STOPPED</code>: The user has cancelled the operation.
+        ///  <code>STOPPED</code>: The user has canceled the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>STOPPING</code>: The operation is in the process of stopping, at user request.
-        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -334,6 +334,42 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StatusDetails. 
+        /// <para>
+        /// Detailed information about the StackSet operation.
+        /// </para>
+        /// </summary>
+        public StackSetOperationStatusDetails StatusDetails
+        {
+            get { return this._statusDetails; }
+            set { this._statusDetails = value; }
+        }
+
+        // Check to see if StatusDetails property is set
+        internal bool IsSetStatusDetails()
+        {
+            return this._statusDetails != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StatusReason. 
+        /// <para>
+        /// The status of the operation in details.
+        /// </para>
+        /// </summary>
+        public string StatusReason
+        {
+            get { return this._statusReason; }
+            set { this._statusReason = value; }
+        }
+
+        // Check to see if StatusReason property is set
+        internal bool IsSetStatusReason()
+        {
+            return this._statusReason != null;
         }
 
     }

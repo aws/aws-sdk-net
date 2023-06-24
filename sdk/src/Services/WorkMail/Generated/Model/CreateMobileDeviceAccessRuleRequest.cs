@@ -30,7 +30,7 @@ namespace Amazon.WorkMail.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateMobileDeviceAccessRule operation.
-    /// Creates a new mobile device access rule for the specified Amazon WorkMail organization.
+    /// Creates a new mobile device access rule for the specified WorkMail organization.
     /// </summary>
     public partial class CreateMobileDeviceAccessRuleRequest : AmazonWorkMailRequest
     {
@@ -281,7 +281,7 @@ namespace Amazon.WorkMail.Model
         /// <summary>
         /// Gets and sets the property OrganizationId. 
         /// <para>
-        /// The Amazon WorkMail organization under which the rule will be created.
+        /// The WorkMail organization under which the rule will be created.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=34, Max=34)]

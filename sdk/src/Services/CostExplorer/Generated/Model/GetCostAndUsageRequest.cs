@@ -62,6 +62,17 @@ namespace Amazon.CostExplorer.Model
         /// to define any combination of dimension filters. For more information, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>.
         /// 
         /// </para>
+        ///  
+        /// <para>
+        /// Valid values for <code>MatchOptions</code> for <code>Dimensions</code> are <code>EQUALS</code>
+        /// and <code>CASE_SENSITIVE</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values for <code>MatchOptions</code> for <code>CostCategories</code> and <code>Tags</code>
+        /// are <code>EQUALS</code>, <code>ABSENT</code>, and <code>CASE_SENSITIVE</code>. Default
+        /// values are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.
+        /// </para>
         /// </summary>
         public Expression Filter
         {
@@ -106,9 +117,9 @@ namespace Amazon.CostExplorer.Model
         ///  
         /// <para>
         /// Valid values for the <code>DIMENSION</code> type are <code>AZ</code>, <code>INSTANCE_TYPE</code>,
-        /// <code>LEGAL_ENTITY_NAME</code>, <code>LINKED_ACCOUNT</code>, <code>OPERATION</code>,
-        /// <code>PLATFORM</code>, <code>PURCHASE_TYPE</code>, <code>SERVICE</code>, <code>TENANCY</code>,
-        /// <code>RECORD_TYPE</code>, and <code>USAGE_TYPE</code>.
+        /// <code>LEGAL_ENTITY_NAME</code>, <code>INVOICING_ENTITY</code>, <code>LINKED_ACCOUNT</code>,
+        /// <code>OPERATION</code>, <code>PLATFORM</code>, <code>PURCHASE_TYPE</code>, <code>SERVICE</code>,
+        /// <code>TENANCY</code>, <code>RECORD_TYPE</code>, and <code>USAGE_TYPE</code>.
         /// </para>
         ///  
         /// <para>

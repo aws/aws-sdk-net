@@ -34,7 +34,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// PropertyPredicate Marshaller
-    /// </summary>       
+    /// </summary>
     public class PropertyPredicateMarshaller : IRequestMarshaller<PropertyPredicate, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static PropertyPredicateMarshaller Instance = new PropertyPredicateMarshaller();
 
     }

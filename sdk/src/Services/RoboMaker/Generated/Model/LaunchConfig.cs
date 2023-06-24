@@ -70,7 +70,7 @@ namespace Amazon.RoboMaker.Model
         /// The environment variables for the application launch.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=16)]
+        [AWSProperty(Min=0, Max=20)]
         public Dictionary<string, string> EnvironmentVariables
         {
             get { return this._environmentVariables; }

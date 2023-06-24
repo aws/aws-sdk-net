@@ -29,14 +29,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53RecoveryReadiness.Model
 {
     /// <summary>
-    /// Information relating to readiness check status
+    /// Information relating to readiness check status.
     /// </summary>
     public partial class Message
     {
         private string _messageText;
 
         /// <summary>
-        /// Gets and sets the property MessageText. The text of a readiness check message
+        /// Gets and sets the property MessageText. 
+        /// <para>
+        /// The text of a readiness check message.
+        /// </para>
         /// </summary>
         public string MessageText
         {

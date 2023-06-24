@@ -34,7 +34,7 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ScriptDetails Marshaller
-    /// </summary>       
+    /// </summary>
     public class ScriptDetailsMarshaller : IRequestMarshaller<ScriptDetails, JsonMarshallerContext> 
     {
         /// <summary>
@@ -78,7 +78,7 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ScriptDetailsMarshaller Instance = new ScriptDetailsMarshaller();
 
     }

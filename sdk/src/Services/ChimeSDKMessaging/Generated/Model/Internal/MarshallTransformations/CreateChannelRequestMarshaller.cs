@@ -56,7 +56,7 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ChimeSDKMessaging");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-05-15";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-05-15";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/channels";
@@ -71,6 +71,12 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.AppInstanceArn);
                 }
 
+                if(publicRequest.IsSetChannelId())
+                {
+                    context.Writer.WritePropertyName("ChannelId");
+                    context.Writer.Write(publicRequest.ChannelId);
+                }
+
                 if(publicRequest.IsSetClientRequestToken())
                 {
                     context.Writer.WritePropertyName("ClientRequestToken");
@@ -80,8 +86,41 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
                 else if(!(publicRequest.IsSetClientRequestToken()))
                 {
                     context.Writer.WritePropertyName("ClientRequestToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());                                                
+                    context.Writer.Write(Guid.NewGuid().ToString());
                 }
+                if(publicRequest.IsSetElasticChannelConfiguration())
+                {
+                    context.Writer.WritePropertyName("ElasticChannelConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ElasticChannelConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ElasticChannelConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetExpirationSettings())
+                {
+                    context.Writer.WritePropertyName("ExpirationSettings");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ExpirationSettingsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ExpirationSettings, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetMemberArns())
+                {
+                    context.Writer.WritePropertyName("MemberArns");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestMemberArnsListValue in publicRequest.MemberArns)
+                    {
+                            context.Writer.Write(publicRequestMemberArnsListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetMetadata())
                 {
                     context.Writer.WritePropertyName("Metadata");
@@ -92,6 +131,17 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("Mode");
                     context.Writer.Write(publicRequest.Mode);
+                }
+
+                if(publicRequest.IsSetModeratorArns())
+                {
+                    context.Writer.WritePropertyName("ModeratorArns");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestModeratorArnsListValue in publicRequest.ModeratorArns)
+                    {
+                            context.Writer.Write(publicRequestModeratorArnsListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
                 }
 
                 if(publicRequest.IsSetName())
@@ -122,15 +172,16 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
 
         
-            if(publicRequest.IsSetChimeBearer())
+            if (publicRequest.IsSetChimeBearer()) 
+            {
                 request.Headers["x-amz-chime-bearer"] = publicRequest.ChimeBearer;
+            }
 
             return request;
         }

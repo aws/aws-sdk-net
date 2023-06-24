@@ -81,8 +81,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property EventContextData. 
         /// <para>
-        /// The user context data captured at the time of an event request. It provides additional
-        /// information about the client from which event the request is received.
+        /// The user context data captured at the time of an event request. This value provides
+        /// additional information about the client from which event the request is received.
         /// </para>
         /// </summary>
         public EventContextDataType EventContextData

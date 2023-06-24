@@ -25,6 +25,106 @@ namespace Amazon.ManagedBlockchain
 {
 
     /// <summary>
+    /// Constants used for properties of type AccessorStatus.
+    /// </summary>
+    public class AccessorStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AVAILABLE for AccessorStatus
+        /// </summary>
+        public static readonly AccessorStatus AVAILABLE = new AccessorStatus("AVAILABLE");
+        /// <summary>
+        /// Constant DELETED for AccessorStatus
+        /// </summary>
+        public static readonly AccessorStatus DELETED = new AccessorStatus("DELETED");
+        /// <summary>
+        /// Constant PENDING_DELETION for AccessorStatus
+        /// </summary>
+        public static readonly AccessorStatus PENDING_DELETION = new AccessorStatus("PENDING_DELETION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AccessorStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AccessorStatus FindValue(string value)
+        {
+            return FindValue<AccessorStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AccessorStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AccessorType.
+    /// </summary>
+    public class AccessorType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BILLING_TOKEN for AccessorType
+        /// </summary>
+        public static readonly AccessorType BILLING_TOKEN = new AccessorType("BILLING_TOKEN");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AccessorType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AccessorType FindValue(string value)
+        {
+            return FindValue<AccessorType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AccessorType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Edition.
     /// </summary>
     public class Edition : ConstantClass

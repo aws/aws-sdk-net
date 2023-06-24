@@ -121,6 +121,110 @@ namespace Amazon.Appflow
 
 
     /// <summary>
+    /// Constants used for properties of type AuthenticationType.
+    /// </summary>
+    public class AuthenticationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant APIKEY for AuthenticationType
+        /// </summary>
+        public static readonly AuthenticationType APIKEY = new AuthenticationType("APIKEY");
+        /// <summary>
+        /// Constant BASIC for AuthenticationType
+        /// </summary>
+        public static readonly AuthenticationType BASIC = new AuthenticationType("BASIC");
+        /// <summary>
+        /// Constant CUSTOM for AuthenticationType
+        /// </summary>
+        public static readonly AuthenticationType CUSTOM = new AuthenticationType("CUSTOM");
+        /// <summary>
+        /// Constant OAUTH2 for AuthenticationType
+        /// </summary>
+        public static readonly AuthenticationType OAUTH2 = new AuthenticationType("OAUTH2");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AuthenticationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AuthenticationType FindValue(string value)
+        {
+            return FindValue<AuthenticationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AuthenticationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CatalogType.
+    /// </summary>
+    public class CatalogType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant GLUE for CatalogType
+        /// </summary>
+        public static readonly CatalogType GLUE = new CatalogType("GLUE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CatalogType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CatalogType FindValue(string value)
+        {
+            return FindValue<CatalogType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CatalogType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ConnectionMode.
     /// </summary>
     public class ConnectionMode : ConstantClass
@@ -171,6 +275,52 @@ namespace Amazon.Appflow
 
 
     /// <summary>
+    /// Constants used for properties of type ConnectorProvisioningType.
+    /// </summary>
+    public class ConnectorProvisioningType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant LAMBDA for ConnectorProvisioningType
+        /// </summary>
+        public static readonly ConnectorProvisioningType LAMBDA = new ConnectorProvisioningType("LAMBDA");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ConnectorProvisioningType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConnectorProvisioningType FindValue(string value)
+        {
+            return FindValue<ConnectorProvisioningType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConnectorProvisioningType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ConnectorType.
     /// </summary>
     public class ConnectorType : ConstantClass
@@ -180,6 +330,10 @@ namespace Amazon.Appflow
         /// Constant Amplitude for ConnectorType
         /// </summary>
         public static readonly ConnectorType Amplitude = new ConnectorType("Amplitude");
+        /// <summary>
+        /// Constant CustomConnector for ConnectorType
+        /// </summary>
+        public static readonly ConnectorType CustomConnector = new ConnectorType("CustomConnector");
         /// <summary>
         /// Constant CustomerProfiles for ConnectorType
         /// </summary>
@@ -216,6 +370,10 @@ namespace Amazon.Appflow
         /// Constant Marketo for ConnectorType
         /// </summary>
         public static readonly ConnectorType Marketo = new ConnectorType("Marketo");
+        /// <summary>
+        /// Constant Pardot for ConnectorType
+        /// </summary>
+        public static readonly ConnectorType Pardot = new ConnectorType("Pardot");
         /// <summary>
         /// Constant Redshift for ConnectorType
         /// </summary>
@@ -453,6 +611,60 @@ namespace Amazon.Appflow
 
 
     /// <summary>
+    /// Constants used for properties of type DataTransferApiType.
+    /// </summary>
+    public class DataTransferApiType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ASYNC for DataTransferApiType
+        /// </summary>
+        public static readonly DataTransferApiType ASYNC = new DataTransferApiType("ASYNC");
+        /// <summary>
+        /// Constant AUTOMATIC for DataTransferApiType
+        /// </summary>
+        public static readonly DataTransferApiType AUTOMATIC = new DataTransferApiType("AUTOMATIC");
+        /// <summary>
+        /// Constant SYNC for DataTransferApiType
+        /// </summary>
+        public static readonly DataTransferApiType SYNC = new DataTransferApiType("SYNC");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DataTransferApiType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DataTransferApiType FindValue(string value)
+        {
+            return FindValue<DataTransferApiType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DataTransferApiType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DynatraceConnectorOperator.
     /// </summary>
     public class DynatraceConnectorOperator : ConstantClass
@@ -560,6 +772,14 @@ namespace Amazon.Appflow
     public class ExecutionStatus : ConstantClass
     {
 
+        /// <summary>
+        /// Constant Canceled for ExecutionStatus
+        /// </summary>
+        public static readonly ExecutionStatus Canceled = new ExecutionStatus("Canceled");
+        /// <summary>
+        /// Constant CancelStarted for ExecutionStatus
+        /// </summary>
+        public static readonly ExecutionStatus CancelStarted = new ExecutionStatus("CancelStarted");
         /// <summary>
         /// Constant Error for ExecutionStatus
         /// </summary>
@@ -987,6 +1207,110 @@ namespace Amazon.Appflow
 
 
     /// <summary>
+    /// Constants used for properties of type OAuth2CustomPropType.
+    /// </summary>
+    public class OAuth2CustomPropType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AUTH_URL for OAuth2CustomPropType
+        /// </summary>
+        public static readonly OAuth2CustomPropType AUTH_URL = new OAuth2CustomPropType("AUTH_URL");
+        /// <summary>
+        /// Constant TOKEN_URL for OAuth2CustomPropType
+        /// </summary>
+        public static readonly OAuth2CustomPropType TOKEN_URL = new OAuth2CustomPropType("TOKEN_URL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OAuth2CustomPropType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OAuth2CustomPropType FindValue(string value)
+        {
+            return FindValue<OAuth2CustomPropType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OAuth2CustomPropType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type OAuth2GrantType.
+    /// </summary>
+    public class OAuth2GrantType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AUTHORIZATION_CODE for OAuth2GrantType
+        /// </summary>
+        public static readonly OAuth2GrantType AUTHORIZATION_CODE = new OAuth2GrantType("AUTHORIZATION_CODE");
+        /// <summary>
+        /// Constant CLIENT_CREDENTIALS for OAuth2GrantType
+        /// </summary>
+        public static readonly OAuth2GrantType CLIENT_CREDENTIALS = new OAuth2GrantType("CLIENT_CREDENTIALS");
+        /// <summary>
+        /// Constant JWT_BEARER for OAuth2GrantType
+        /// </summary>
+        public static readonly OAuth2GrantType JWT_BEARER = new OAuth2GrantType("JWT_BEARER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OAuth2GrantType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OAuth2GrantType FindValue(string value)
+        {
+            return FindValue<OAuth2GrantType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OAuth2GrantType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Operator.
     /// </summary>
     public class Operator : ConstantClass
@@ -1135,6 +1459,10 @@ namespace Amazon.Appflow
         /// </summary>
         public static readonly OperatorPropertiesKeys EXCLUDE_SOURCE_FIELDS_LIST = new OperatorPropertiesKeys("EXCLUDE_SOURCE_FIELDS_LIST");
         /// <summary>
+        /// Constant INCLUDE_NEW_FIELDS for OperatorPropertiesKeys
+        /// </summary>
+        public static readonly OperatorPropertiesKeys INCLUDE_NEW_FIELDS = new OperatorPropertiesKeys("INCLUDE_NEW_FIELDS");
+        /// <summary>
         /// Constant LOWER_BOUND for OperatorPropertiesKeys
         /// </summary>
         public static readonly OperatorPropertiesKeys LOWER_BOUND = new OperatorPropertiesKeys("LOWER_BOUND");
@@ -1150,6 +1478,10 @@ namespace Amazon.Appflow
         /// Constant MATH_OPERATION_FIELDS_ORDER for OperatorPropertiesKeys
         /// </summary>
         public static readonly OperatorPropertiesKeys MATH_OPERATION_FIELDS_ORDER = new OperatorPropertiesKeys("MATH_OPERATION_FIELDS_ORDER");
+        /// <summary>
+        /// Constant ORDERED_PARTITION_KEYS_LIST for OperatorPropertiesKeys
+        /// </summary>
+        public static readonly OperatorPropertiesKeys ORDERED_PARTITION_KEYS_LIST = new OperatorPropertiesKeys("ORDERED_PARTITION_KEYS_LIST");
         /// <summary>
         /// Constant SOURCE_DATA_TYPE for OperatorPropertiesKeys
         /// </summary>
@@ -1208,6 +1540,280 @@ namespace Amazon.Appflow
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator OperatorPropertiesKeys(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Operators.
+    /// </summary>
+    public class Operators : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ADDITION for Operators
+        /// </summary>
+        public static readonly Operators ADDITION = new Operators("ADDITION");
+        /// <summary>
+        /// Constant BETWEEN for Operators
+        /// </summary>
+        public static readonly Operators BETWEEN = new Operators("BETWEEN");
+        /// <summary>
+        /// Constant CONTAINS for Operators
+        /// </summary>
+        public static readonly Operators CONTAINS = new Operators("CONTAINS");
+        /// <summary>
+        /// Constant DIVISION for Operators
+        /// </summary>
+        public static readonly Operators DIVISION = new Operators("DIVISION");
+        /// <summary>
+        /// Constant EQUAL_TO for Operators
+        /// </summary>
+        public static readonly Operators EQUAL_TO = new Operators("EQUAL_TO");
+        /// <summary>
+        /// Constant GREATER_THAN for Operators
+        /// </summary>
+        public static readonly Operators GREATER_THAN = new Operators("GREATER_THAN");
+        /// <summary>
+        /// Constant GREATER_THAN_OR_EQUAL_TO for Operators
+        /// </summary>
+        public static readonly Operators GREATER_THAN_OR_EQUAL_TO = new Operators("GREATER_THAN_OR_EQUAL_TO");
+        /// <summary>
+        /// Constant LESS_THAN for Operators
+        /// </summary>
+        public static readonly Operators LESS_THAN = new Operators("LESS_THAN");
+        /// <summary>
+        /// Constant LESS_THAN_OR_EQUAL_TO for Operators
+        /// </summary>
+        public static readonly Operators LESS_THAN_OR_EQUAL_TO = new Operators("LESS_THAN_OR_EQUAL_TO");
+        /// <summary>
+        /// Constant MASK_ALL for Operators
+        /// </summary>
+        public static readonly Operators MASK_ALL = new Operators("MASK_ALL");
+        /// <summary>
+        /// Constant MASK_FIRST_N for Operators
+        /// </summary>
+        public static readonly Operators MASK_FIRST_N = new Operators("MASK_FIRST_N");
+        /// <summary>
+        /// Constant MASK_LAST_N for Operators
+        /// </summary>
+        public static readonly Operators MASK_LAST_N = new Operators("MASK_LAST_N");
+        /// <summary>
+        /// Constant MULTIPLICATION for Operators
+        /// </summary>
+        public static readonly Operators MULTIPLICATION = new Operators("MULTIPLICATION");
+        /// <summary>
+        /// Constant NO_OP for Operators
+        /// </summary>
+        public static readonly Operators NO_OP = new Operators("NO_OP");
+        /// <summary>
+        /// Constant NOT_EQUAL_TO for Operators
+        /// </summary>
+        public static readonly Operators NOT_EQUAL_TO = new Operators("NOT_EQUAL_TO");
+        /// <summary>
+        /// Constant PROJECTION for Operators
+        /// </summary>
+        public static readonly Operators PROJECTION = new Operators("PROJECTION");
+        /// <summary>
+        /// Constant SUBTRACTION for Operators
+        /// </summary>
+        public static readonly Operators SUBTRACTION = new Operators("SUBTRACTION");
+        /// <summary>
+        /// Constant VALIDATE_NON_NEGATIVE for Operators
+        /// </summary>
+        public static readonly Operators VALIDATE_NON_NEGATIVE = new Operators("VALIDATE_NON_NEGATIVE");
+        /// <summary>
+        /// Constant VALIDATE_NON_NULL for Operators
+        /// </summary>
+        public static readonly Operators VALIDATE_NON_NULL = new Operators("VALIDATE_NON_NULL");
+        /// <summary>
+        /// Constant VALIDATE_NON_ZERO for Operators
+        /// </summary>
+        public static readonly Operators VALIDATE_NON_ZERO = new Operators("VALIDATE_NON_ZERO");
+        /// <summary>
+        /// Constant VALIDATE_NUMERIC for Operators
+        /// </summary>
+        public static readonly Operators VALIDATE_NUMERIC = new Operators("VALIDATE_NUMERIC");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Operators(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Operators FindValue(string value)
+        {
+            return FindValue<Operators>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Operators(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PardotConnectorOperator.
+    /// </summary>
+    public class PardotConnectorOperator : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ADDITION for PardotConnectorOperator
+        /// </summary>
+        public static readonly PardotConnectorOperator ADDITION = new PardotConnectorOperator("ADDITION");
+        /// <summary>
+        /// Constant DIVISION for PardotConnectorOperator
+        /// </summary>
+        public static readonly PardotConnectorOperator DIVISION = new PardotConnectorOperator("DIVISION");
+        /// <summary>
+        /// Constant EQUAL_TO for PardotConnectorOperator
+        /// </summary>
+        public static readonly PardotConnectorOperator EQUAL_TO = new PardotConnectorOperator("EQUAL_TO");
+        /// <summary>
+        /// Constant MASK_ALL for PardotConnectorOperator
+        /// </summary>
+        public static readonly PardotConnectorOperator MASK_ALL = new PardotConnectorOperator("MASK_ALL");
+        /// <summary>
+        /// Constant MASK_FIRST_N for PardotConnectorOperator
+        /// </summary>
+        public static readonly PardotConnectorOperator MASK_FIRST_N = new PardotConnectorOperator("MASK_FIRST_N");
+        /// <summary>
+        /// Constant MASK_LAST_N for PardotConnectorOperator
+        /// </summary>
+        public static readonly PardotConnectorOperator MASK_LAST_N = new PardotConnectorOperator("MASK_LAST_N");
+        /// <summary>
+        /// Constant MULTIPLICATION for PardotConnectorOperator
+        /// </summary>
+        public static readonly PardotConnectorOperator MULTIPLICATION = new PardotConnectorOperator("MULTIPLICATION");
+        /// <summary>
+        /// Constant NO_OP for PardotConnectorOperator
+        /// </summary>
+        public static readonly PardotConnectorOperator NO_OP = new PardotConnectorOperator("NO_OP");
+        /// <summary>
+        /// Constant PROJECTION for PardotConnectorOperator
+        /// </summary>
+        public static readonly PardotConnectorOperator PROJECTION = new PardotConnectorOperator("PROJECTION");
+        /// <summary>
+        /// Constant SUBTRACTION for PardotConnectorOperator
+        /// </summary>
+        public static readonly PardotConnectorOperator SUBTRACTION = new PardotConnectorOperator("SUBTRACTION");
+        /// <summary>
+        /// Constant VALIDATE_NON_NEGATIVE for PardotConnectorOperator
+        /// </summary>
+        public static readonly PardotConnectorOperator VALIDATE_NON_NEGATIVE = new PardotConnectorOperator("VALIDATE_NON_NEGATIVE");
+        /// <summary>
+        /// Constant VALIDATE_NON_NULL for PardotConnectorOperator
+        /// </summary>
+        public static readonly PardotConnectorOperator VALIDATE_NON_NULL = new PardotConnectorOperator("VALIDATE_NON_NULL");
+        /// <summary>
+        /// Constant VALIDATE_NON_ZERO for PardotConnectorOperator
+        /// </summary>
+        public static readonly PardotConnectorOperator VALIDATE_NON_ZERO = new PardotConnectorOperator("VALIDATE_NON_ZERO");
+        /// <summary>
+        /// Constant VALIDATE_NUMERIC for PardotConnectorOperator
+        /// </summary>
+        public static readonly PardotConnectorOperator VALIDATE_NUMERIC = new PardotConnectorOperator("VALIDATE_NUMERIC");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PardotConnectorOperator(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PardotConnectorOperator FindValue(string value)
+        {
+            return FindValue<PardotConnectorOperator>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PardotConnectorOperator(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PathPrefix.
+    /// </summary>
+    public class PathPrefix : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EXECUTION_ID for PathPrefix
+        /// </summary>
+        public static readonly PathPrefix EXECUTION_ID = new PathPrefix("EXECUTION_ID");
+        /// <summary>
+        /// Constant SCHEMA_VERSION for PathPrefix
+        /// </summary>
+        public static readonly PathPrefix SCHEMA_VERSION = new PathPrefix("SCHEMA_VERSION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PathPrefix(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PathPrefix FindValue(string value)
+        {
+            return FindValue<PathPrefix>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PathPrefix(string value)
         {
             return FindValue(value);
         }
@@ -1738,6 +2344,60 @@ namespace Amazon.Appflow
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SalesforceConnectorOperator(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SalesforceDataTransferApi.
+    /// </summary>
+    public class SalesforceDataTransferApi : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AUTOMATIC for SalesforceDataTransferApi
+        /// </summary>
+        public static readonly SalesforceDataTransferApi AUTOMATIC = new SalesforceDataTransferApi("AUTOMATIC");
+        /// <summary>
+        /// Constant BULKV2 for SalesforceDataTransferApi
+        /// </summary>
+        public static readonly SalesforceDataTransferApi BULKV2 = new SalesforceDataTransferApi("BULKV2");
+        /// <summary>
+        /// Constant REST_SYNC for SalesforceDataTransferApi
+        /// </summary>
+        public static readonly SalesforceDataTransferApi REST_SYNC = new SalesforceDataTransferApi("REST_SYNC");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SalesforceDataTransferApi(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SalesforceDataTransferApi FindValue(string value)
+        {
+            return FindValue<SalesforceDataTransferApi>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SalesforceDataTransferApi(string value)
         {
             return FindValue(value);
         }
@@ -2279,6 +2939,56 @@ namespace Amazon.Appflow
 
 
     /// <summary>
+    /// Constants used for properties of type SupportedDataTransferType.
+    /// </summary>
+    public class SupportedDataTransferType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FILE for SupportedDataTransferType
+        /// </summary>
+        public static readonly SupportedDataTransferType FILE = new SupportedDataTransferType("FILE");
+        /// <summary>
+        /// Constant RECORD for SupportedDataTransferType
+        /// </summary>
+        public static readonly SupportedDataTransferType RECORD = new SupportedDataTransferType("RECORD");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SupportedDataTransferType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SupportedDataTransferType FindValue(string value)
+        {
+            return FindValue<SupportedDataTransferType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SupportedDataTransferType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type TaskType.
     /// </summary>
     public class TaskType : ConstantClass
@@ -2308,6 +3018,14 @@ namespace Amazon.Appflow
         /// Constant Merge for TaskType
         /// </summary>
         public static readonly TaskType Merge = new TaskType("Merge");
+        /// <summary>
+        /// Constant Partition for TaskType
+        /// </summary>
+        public static readonly TaskType Partition = new TaskType("Partition");
+        /// <summary>
+        /// Constant Passthrough for TaskType
+        /// </summary>
+        public static readonly TaskType Passthrough = new TaskType("Passthrough");
         /// <summary>
         /// Constant Truncate for TaskType
         /// </summary>
@@ -2636,6 +3354,10 @@ namespace Amazon.Appflow
     public class WriteOperationType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant DELETE for WriteOperationType
+        /// </summary>
+        public static readonly WriteOperationType DELETE = new WriteOperationType("DELETE");
         /// <summary>
         /// Constant INSERT for WriteOperationType
         /// </summary>

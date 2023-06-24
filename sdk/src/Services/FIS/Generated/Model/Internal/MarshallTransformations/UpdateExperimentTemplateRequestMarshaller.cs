@@ -56,7 +56,7 @@ namespace Amazon.FIS.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.FIS");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-12-01";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-12-01";
             request.HttpMethod = "PATCH";
 
             if (!publicRequest.IsSetId())
@@ -91,6 +91,17 @@ namespace Amazon.FIS.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("description");
                     context.Writer.Write(publicRequest.Description);
+                }
+
+                if(publicRequest.IsSetLogConfiguration())
+                {
+                    context.Writer.WritePropertyName("logConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = UpdateExperimentTemplateLogConfigurationInputMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.LogConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
                 if(publicRequest.IsSetRoleArn())
@@ -134,7 +145,6 @@ namespace Amazon.FIS.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

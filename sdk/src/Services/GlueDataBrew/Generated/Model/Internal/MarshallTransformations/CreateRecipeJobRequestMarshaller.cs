@@ -56,7 +56,7 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.GlueDataBrew");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-07-25";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-07-25";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/recipeJobs";
@@ -198,7 +198,6 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Timeout);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

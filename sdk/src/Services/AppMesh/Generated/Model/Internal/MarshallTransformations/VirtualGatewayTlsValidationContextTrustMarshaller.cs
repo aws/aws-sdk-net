@@ -34,7 +34,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// VirtualGatewayTlsValidationContextTrust Marshaller
-    /// </summary>       
+    /// </summary>
     public class VirtualGatewayTlsValidationContextTrustMarshaller : IRequestMarshaller<VirtualGatewayTlsValidationContextTrust, JsonMarshallerContext> 
     {
         /// <summary>
@@ -82,7 +82,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static VirtualGatewayTlsValidationContextTrustMarshaller Instance = new VirtualGatewayTlsValidationContextTrustMarshaller();
 
     }

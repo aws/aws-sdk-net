@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// 
+    /// Information about an Amazon OpenSearch Service domain.
     /// </summary>
     public partial class AWSDomainInformation
     {
@@ -38,7 +38,10 @@ namespace Amazon.OpenSearchService.Model
         private string _region;
 
         /// <summary>
-        /// Gets and sets the property DomainName.
+        /// Gets and sets the property DomainName. 
+        /// <para>
+        /// Name of the domain.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=3, Max=28)]
         public string DomainName
@@ -54,7 +57,10 @@ namespace Amazon.OpenSearchService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OwnerId.
+        /// Gets and sets the property OwnerId. 
+        /// <para>
+        /// The Amazon Web Services account ID of the domain owner.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=12)]
         public string OwnerId
@@ -70,7 +76,10 @@ namespace Amazon.OpenSearchService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Region.
+        /// Gets and sets the property Region. 
+        /// <para>
+        /// The Amazon Web Services Region in which the domain is located.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=5, Max=30)]
         public string Region

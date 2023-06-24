@@ -34,7 +34,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// JiraParameters Marshaller
-    /// </summary>       
+    /// </summary>
     public class JiraParametersMarshaller : IRequestMarshaller<JiraParameters, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static JiraParametersMarshaller Instance = new JiraParametersMarshaller();
 
     }

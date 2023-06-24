@@ -30,7 +30,7 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// Container for the parameters to the ListIdentityProviders operation.
-    /// Lists information about all identity providers for a user pool.
+    /// Lists information about all IdPs for a user pool.
     /// </summary>
     public partial class ListIdentityProvidersRequest : AmazonCognitoIdentityProviderRequest
     {
@@ -41,7 +41,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of identity providers to return.
+        /// The maximum number of IdPs to return.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=60)]

@@ -34,7 +34,7 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// LogSettingsRequest Marshaller
-    /// </summary>       
+    /// </summary>
     public class LogSettingsRequestMarshaller : IRequestMarshaller<LogSettingsRequest, JsonMarshallerContext> 
     {
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static LogSettingsRequestMarshaller Instance = new LogSettingsRequestMarshaller();
 
     }

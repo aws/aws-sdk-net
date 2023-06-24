@@ -58,6 +58,15 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             if(publicRequest != null)
             {
+                if(publicRequest.IsSetAssetIds())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.AssetIds)
+                    {
+                        request.Parameters.Add("AssetId" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
+                }
                 if(publicRequest.IsSetAutoPlacement())
                 {
                     request.Parameters.Add("AutoPlacement", StringUtils.FromString(publicRequest.AutoPlacement));
@@ -70,6 +79,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ClientToken", StringUtils.FromString(publicRequest.ClientToken));
                 }
+                if(publicRequest.IsSetHostMaintenance())
+                {
+                    request.Parameters.Add("HostMaintenance", StringUtils.FromString(publicRequest.HostMaintenance));
+                }
                 if(publicRequest.IsSetHostRecovery())
                 {
                     request.Parameters.Add("HostRecovery", StringUtils.FromString(publicRequest.HostRecovery));
@@ -81,6 +94,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetInstanceType())
                 {
                     request.Parameters.Add("InstanceType", StringUtils.FromString(publicRequest.InstanceType));
+                }
+                if(publicRequest.IsSetOutpostArn())
+                {
+                    request.Parameters.Add("OutpostArn", StringUtils.FromString(publicRequest.OutpostArn));
                 }
                 if(publicRequest.IsSetQuantity())
                 {

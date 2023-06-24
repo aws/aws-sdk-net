@@ -61,7 +61,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property DBClusterIdentifier. 
         /// <para>
         /// A user-supplied DB cluster identifier. This identifier is the unique key that identifies
-        /// a DB cluster. 
+        /// a DB cluster.
         /// </para>
         /// </summary>
         public string DBClusterIdentifier

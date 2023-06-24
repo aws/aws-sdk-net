@@ -70,6 +70,18 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
                     unmarshalledObject.ItemExplorationConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("minRecommendationRequestsPerSecond", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.MinRecommendationRequestsPerSecond = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("trainingDataConfig", targetDepth))
+                {
+                    var unmarshaller = TrainingDataConfigUnmarshaller.Instance;
+                    unmarshalledObject.TrainingDataConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

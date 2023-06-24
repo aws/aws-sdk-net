@@ -33,6 +33,7 @@ namespace Amazon.Kendra.Model
     /// </summary>
     public partial class DescribeQuerySuggestionsConfigResponse : AmazonWebServiceResponse
     {
+        private AttributeSuggestionsDescribeConfig _attributeSuggestionsConfig;
         private bool? _includeQueriesWithoutUserInformation;
         private DateTime? _lastClearTime;
         private DateTime? _lastSuggestionsBuildTime;
@@ -44,10 +45,29 @@ namespace Amazon.Kendra.Model
         private int? _totalSuggestionsCount;
 
         /// <summary>
+        /// Gets and sets the property AttributeSuggestionsConfig. 
+        /// <para>
+        /// Configuration information for the document fields/attributes that you want to base
+        /// query suggestions on.
+        /// </para>
+        /// </summary>
+        public AttributeSuggestionsDescribeConfig AttributeSuggestionsConfig
+        {
+            get { return this._attributeSuggestionsConfig; }
+            set { this._attributeSuggestionsConfig = value; }
+        }
+
+        // Check to see if AttributeSuggestionsConfig property is set
+        internal bool IsSetAttributeSuggestionsConfig()
+        {
+            return this._attributeSuggestionsConfig != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property IncludeQueriesWithoutUserInformation. 
         /// <para>
-        /// Shows whether Amazon Kendra uses all queries or only uses queries that include user
-        /// information to generate query suggestions.
+        ///  <code>TRUE</code> to use all queries, otherwise use only queries that include user
+        /// information to generate the query suggestions.
         /// </para>
         /// </summary>
         public bool IncludeQueriesWithoutUserInformation
@@ -65,7 +85,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property LastClearTime. 
         /// <para>
-        /// Shows the date-time query suggestions for an index was last cleared.
+        /// The Unix timestamp when query suggestions for an index was last cleared.
         /// </para>
         ///  
         /// <para>
@@ -89,7 +109,13 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property LastSuggestionsBuildTime. 
         /// <para>
-        /// Shows the date-time query suggestions for an index was last updated.
+        /// The Unix timestamp when query suggestions for an index was last updated.
+        /// </para>
+        ///  
+        /// <para>
+        /// Amazon Kendra automatically updates suggestions every 24 hours, after you change a
+        /// setting or after you apply a <a href="https://docs.aws.amazon.com/kendra/latest/dg/query-suggestions.html#query-suggestions-blocklist">block
+        /// list</a>.
         /// </para>
         /// </summary>
         public DateTime LastSuggestionsBuildTime
@@ -107,8 +133,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property MinimumNumberOfQueryingUsers. 
         /// <para>
-        /// Shows the minimum number of unique users who must search a query in order for the
-        /// query to be eligible to suggest to your users.
+        /// The minimum number of unique users who must search a query in order for the query
+        /// to be eligible to suggest to your users.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10000)]
@@ -127,8 +153,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property MinimumQueryCount. 
         /// <para>
-        /// Shows the minimum number of times a query must be searched in order for the query
-        /// to be eligible to suggest to your users.
+        /// The minimum number of times a query must be searched in order for the query to be
+        /// eligible to suggest to your users.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10000)]
@@ -147,14 +173,14 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Mode. 
         /// <para>
-        /// Shows whether query suggestions are currently in <code>ENABLED</code> mode or <code>LEARN_ONLY</code>
+        /// Whether query suggestions are currently in <code>ENABLED</code> mode or <code>LEARN_ONLY</code>
         /// mode.
         /// </para>
         ///  
         /// <para>
         /// By default, Amazon Kendra enables query suggestions.<code>LEARN_ONLY</code> turns
         /// off query suggestions for your users. You can change the mode using the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UpdateQuerySuggestionsConfig.html">UpdateQuerySuggestionsConfig</a>
-        /// operation.
+        /// API.
         /// </para>
         /// </summary>
         public Mode Mode
@@ -172,7 +198,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property QueryLogLookBackWindowInDays. 
         /// <para>
-        /// Shows how recent your queries are in your query log time window (in days).
+        /// How recent your queries are in your query log time window (in days).
         /// </para>
         /// </summary>
         public int QueryLogLookBackWindowInDays
@@ -190,7 +216,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// Shows whether the status of query suggestions settings is currently Active or Updating.
+        /// Whether the status of query suggestions settings is currently <code>ACTIVE</code>
+        /// or <code>UPDATING</code>.
         /// </para>
         ///  
         /// <para>
@@ -213,13 +240,19 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property TotalSuggestionsCount. 
         /// <para>
-        /// Shows the current total count of query suggestions for an index.
+        /// The current total count of query suggestions for an index.
         /// </para>
         ///  
         /// <para>
         /// This count can change when you update your query suggestions settings, if you filter
         /// out certain queries from suggestions using a block list, and as the query log accumulates
         /// more queries for Amazon Kendra to learn from.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the count is much lower than you expected, it could be because Amazon Kendra needs
+        /// more queries in the query history to learn from or your current query suggestions
+        /// settings are too strict.
         /// </para>
         /// </summary>
         public int TotalSuggestionsCount

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lambda.Model
 {
     /// <summary>
-    /// One of the parameters in the request is invalid.
+    /// One of the parameters in the request is not valid.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

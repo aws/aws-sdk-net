@@ -58,7 +58,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ServiceConfigurations. 
         /// <para>
-        /// Information about one or more services.
+        /// Information about the services.
         /// </para>
         /// </summary>
         public List<ServiceConfiguration> ServiceConfigurations

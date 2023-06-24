@@ -34,7 +34,7 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// InventoryFilter Marshaller
-    /// </summary>       
+    /// </summary>
     public class InventoryFilterMarshaller : IRequestMarshaller<InventoryFilter, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static InventoryFilterMarshaller Instance = new InventoryFilterMarshaller();
 
     }

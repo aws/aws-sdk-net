@@ -116,6 +116,18 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.MaxStorageSize = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("MaxStorageThroughputPerDbInstance", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.MaxStorageThroughputPerDbInstance = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("MaxStorageThroughputPerIops", targetDepth))
+                    {
+                        var unmarshaller = DoubleUnmarshaller.Instance;
+                        unmarshalledObject.MaxStorageThroughputPerIops = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("MinIopsPerDbInstance", targetDepth))
                     {
                         var unmarshaller = IntUnmarshaller.Instance;
@@ -132,6 +144,18 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = IntUnmarshaller.Instance;
                         unmarshalledObject.MinStorageSize = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("MinStorageThroughputPerDbInstance", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.MinStorageThroughputPerDbInstance = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("MinStorageThroughputPerIops", targetDepth))
+                    {
+                        var unmarshaller = DoubleUnmarshaller.Instance;
+                        unmarshalledObject.MinStorageThroughputPerIops = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("MultiAZCapable", targetDepth))
@@ -170,6 +194,13 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         var unmarshaller = StringUnmarshaller.Instance;
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.SupportedEngineModes.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("SupportedNetworkTypes/member", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.SupportedNetworkTypes.Add(item);
                         continue;
                     }
                     if (context.TestExpression("SupportsClusters", targetDepth))
@@ -224,6 +255,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = BoolUnmarshaller.Instance;
                         unmarshalledObject.SupportsStorageEncryption = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("SupportsStorageThroughput", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.SupportsStorageThroughput = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Vpc", targetDepth))

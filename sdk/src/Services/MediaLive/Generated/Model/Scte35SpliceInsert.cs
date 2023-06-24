@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
-    /// Scte35 Splice Insert
+    /// Typical configuration that applies breaks on splice inserts in addition to time signal
+    /// placement opportunities, breaks, and advertisements.
     /// </summary>
     public partial class Scte35SpliceInsert
     {

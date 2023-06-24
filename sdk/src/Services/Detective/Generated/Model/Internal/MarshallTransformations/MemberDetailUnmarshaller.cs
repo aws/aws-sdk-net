@@ -76,6 +76,12 @@ namespace Amazon.Detective.Model.Internal.MarshallTransformations
                     unmarshalledObject.AdministratorId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DatasourcePackageIngestStates", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.DatasourcePackageIngestStates = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DisabledReason", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -92,6 +98,12 @@ namespace Amazon.Detective.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.GraphArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("InvitationType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.InvitationType = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("InvitedTime", targetDepth))
@@ -128,6 +140,12 @@ namespace Amazon.Detective.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
                     unmarshalledObject.UpdatedTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("VolumeUsageByDatasourcePackage", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, DatasourcePackageUsageInfo, StringUnmarshaller, DatasourcePackageUsageInfoUnmarshaller>(StringUnmarshaller.Instance, DatasourcePackageUsageInfoUnmarshaller.Instance);
+                    unmarshalledObject.VolumeUsageByDatasourcePackage = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("VolumeUsageInBytes", targetDepth))

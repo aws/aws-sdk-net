@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lambda.Model
 {
     /// <summary>
-    /// Response to GetFunctionConfiguration request.
+    /// Response to a <code>GetFunctionConfiguration</code> request.
     /// </summary>
     public partial class ImageConfigResponse
     {
@@ -39,7 +39,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Error. 
         /// <para>
-        /// Error response to GetFunctionConfiguration.
+        /// Error response to <code>GetFunctionConfiguration</code>.
         /// </para>
         /// </summary>
         public ImageConfigError Error

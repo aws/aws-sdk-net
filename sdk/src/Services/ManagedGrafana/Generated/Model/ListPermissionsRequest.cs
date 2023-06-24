@@ -125,9 +125,9 @@ namespace Amazon.ManagedGrafana.Model
         /// <summary>
         /// Gets and sets the property UserType. 
         /// <para>
-        /// (Optional) If you specify <code>SSO_USER</code>, then only the permissions of Amazon
-        /// Web Services SSO users are returned. If you specify <code>SSO_GROUP</code>, only the
-        /// permissions of Amazon Web Services SSO groups are returned.
+        /// (Optional) If you specify <code>SSO_USER</code>, then only the permissions of IAM
+        /// Identity Center users are returned. If you specify <code>SSO_GROUP</code>, only the
+        /// permissions of IAM Identity Center groups are returned.
         /// </para>
         /// </summary>
         public UserType UserType

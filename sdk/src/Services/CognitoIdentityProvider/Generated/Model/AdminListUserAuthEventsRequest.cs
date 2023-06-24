@@ -30,8 +30,8 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// Container for the parameters to the AdminListUserAuthEvents operation.
-    /// Lists a history of user activity and any risks detected as part of Amazon Cognito
-    /// advanced security.
+    /// A history of user activity and any risks detected as part of Amazon Cognito advanced
+    /// security.
     /// </summary>
     public partial class AdminListUserAuthEventsRequest : AmazonCognitoIdentityProviderRequest
     {
@@ -43,7 +43,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of authentication events to return.
+        /// The maximum number of authentication events to return. Returns 60 events if you set
+        /// <code>MaxResults</code> to 0, or if you don't include a <code>MaxResults</code> parameter.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=60)]
@@ -84,7 +85,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The user pool username or an alias.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=128)]
         public string Username
         {
             get { return this._username; }

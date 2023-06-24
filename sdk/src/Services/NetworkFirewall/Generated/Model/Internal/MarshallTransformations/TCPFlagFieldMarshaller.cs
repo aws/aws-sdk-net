@@ -34,7 +34,7 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// TCPFlagField Marshaller
-    /// </summary>       
+    /// </summary>
     public class TCPFlagFieldMarshaller : IRequestMarshaller<TCPFlagField, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static TCPFlagFieldMarshaller Instance = new TCPFlagFieldMarshaller();
 
     }

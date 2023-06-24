@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// HyperParameterTuningJobWarmStartConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class HyperParameterTuningJobWarmStartConfigMarshaller : IRequestMarshaller<HyperParameterTuningJobWarmStartConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static HyperParameterTuningJobWarmStartConfigMarshaller Instance = new HyperParameterTuningJobWarmStartConfigMarshaller();
 
     }

@@ -84,6 +84,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.FpgaImageId = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("instanceTypes/item", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.InstanceTypes.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("name", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

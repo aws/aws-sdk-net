@@ -34,7 +34,7 @@ namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ParameterNameValue Marshaller
-    /// </summary>       
+    /// </summary>
     public class ParameterNameValueMarshaller : IRequestMarshaller<ParameterNameValue, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ParameterNameValueMarshaller Instance = new ParameterNameValueMarshaller();
 
     }

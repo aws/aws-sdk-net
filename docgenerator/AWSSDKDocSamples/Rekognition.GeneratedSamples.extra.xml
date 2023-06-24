@@ -2,6 +2,25 @@
 <docs>
     <doc>
         <members>
+            <member name="M:Amazon.Rekognition.IAmazonRekognition.AssociateFaces(Amazon.Rekognition.Model.AssociateFacesRequest)" />
+            <member name="M:Amazon.Rekognition.AmazonRekognitionClient.AssociateFaces(Amazon.Rekognition.Model.AssociateFacesRequest)" />
+            <member name="T:Amazon.Rekognition.Model.AssociateFacesRequest" />
+            <member name="T:Amazon.Rekognition.Model.AssociateFacesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This operation associates one or more faces with an existing UserID.
+                </para>
+                <code
+                    title="AssociateFaces"
+                    source=".\AWSSDKDocSamples\Rekognition\Rekognition.GeneratedSamples.cs"
+                    region="associatefaces-1686181269281" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.Rekognition.IAmazonRekognition.CompareFaces(Amazon.Rekognition.Model.CompareFacesRequest)" />
             <member name="M:Amazon.Rekognition.AmazonRekognitionClient.CompareFaces(Amazon.Rekognition.Model.CompareFacesRequest)" />
             <member name="T:Amazon.Rekognition.Model.CompareFacesRequest" />
@@ -21,6 +40,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.Rekognition.IAmazonRekognition.CopyProjectVersion(Amazon.Rekognition.Model.CopyProjectVersionRequest)" />
+            <member name="M:Amazon.Rekognition.AmazonRekognitionClient.CopyProjectVersion(Amazon.Rekognition.Model.CopyProjectVersionRequest)" />
+            <member name="T:Amazon.Rekognition.Model.CopyProjectVersionRequest" />
+            <member name="T:Amazon.Rekognition.Model.CopyProjectVersionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This operation copies a version of an Amazon Rekognition Custom Labels model from a source project to a destination project.
+                </para>
+                <code
+                    title="CopyProjectVersion"
+                    source=".\AWSSDKDocSamples\Rekognition\Rekognition.GeneratedSamples.cs"
+                    region="copyprojectversion-1658203943815" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.Rekognition.IAmazonRekognition.CreateCollection(Amazon.Rekognition.Model.CreateCollectionRequest)" />
             <member name="M:Amazon.Rekognition.AmazonRekognitionClient.CreateCollection(Amazon.Rekognition.Model.CreateCollectionRequest)" />
             <member name="T:Amazon.Rekognition.Model.CreateCollectionRequest" />
@@ -35,6 +73,25 @@
                     title="To create a collection"
                     source=".\AWSSDKDocSamples\Rekognition\Rekognition.GeneratedSamples.cs"
                     region="to-create-a-collection-1481833313674" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Rekognition.IAmazonRekognition.CreateUser(Amazon.Rekognition.Model.CreateUserRequest)" />
+            <member name="M:Amazon.Rekognition.AmazonRekognitionClient.CreateUser(Amazon.Rekognition.Model.CreateUserRequest)" />
+            <member name="T:Amazon.Rekognition.Model.CreateUserRequest" />
+            <member name="T:Amazon.Rekognition.Model.CreateUserResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Creates a new User within a collection specified by CollectionId.
+                </para>
+                <code
+                    title="CreateUser"
+                    source=".\AWSSDKDocSamples\Rekognition\Rekognition.GeneratedSamples.cs"
+                    region="createuser-1686181562299" />
             </example>
         </value>
     </doc>
@@ -78,6 +135,44 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.Rekognition.IAmazonRekognition.DeleteProjectPolicy(Amazon.Rekognition.Model.DeleteProjectPolicyRequest)" />
+            <member name="M:Amazon.Rekognition.AmazonRekognitionClient.DeleteProjectPolicy(Amazon.Rekognition.Model.DeleteProjectPolicyRequest)" />
+            <member name="T:Amazon.Rekognition.Model.DeleteProjectPolicyRequest" />
+            <member name="T:Amazon.Rekognition.Model.DeleteProjectPolicyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This operation deletes a revision of an existing project policy from an Amazon Rekognition Custom Labels project.
+                </para>
+                <code
+                    title="DeleteProjectPolicy"
+                    source=".\AWSSDKDocSamples\Rekognition\Rekognition.GeneratedSamples.cs"
+                    region="deleteprojectpolicy-1658204413810" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Rekognition.IAmazonRekognition.DeleteUser(Amazon.Rekognition.Model.DeleteUserRequest)" />
+            <member name="M:Amazon.Rekognition.AmazonRekognitionClient.DeleteUser(Amazon.Rekognition.Model.DeleteUserRequest)" />
+            <member name="T:Amazon.Rekognition.Model.DeleteUserRequest" />
+            <member name="T:Amazon.Rekognition.Model.DeleteUserResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Deletes the specified UserID within the collection.
+                </para>
+                <code
+                    title="DeleteUser"
+                    source=".\AWSSDKDocSamples\Rekognition\Rekognition.GeneratedSamples.cs"
+                    region="deleteuser-1686181913475" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.Rekognition.IAmazonRekognition.DetectFaces(Amazon.Rekognition.Model.DetectFacesRequest)" />
             <member name="M:Amazon.Rekognition.AmazonRekognitionClient.DetectFaces(Amazon.Rekognition.Model.DetectFacesRequest)" />
             <member name="T:Amazon.Rekognition.Model.DetectFacesRequest" />
@@ -111,6 +206,25 @@
                     title="To detect labels"
                     source=".\AWSSDKDocSamples\Rekognition\Rekognition.GeneratedSamples.cs"
                     region="to-detect-labels-1481834255770" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Rekognition.IAmazonRekognition.DisassociateFaces(Amazon.Rekognition.Model.DisassociateFacesRequest)" />
+            <member name="M:Amazon.Rekognition.AmazonRekognitionClient.DisassociateFaces(Amazon.Rekognition.Model.DisassociateFacesRequest)" />
+            <member name="T:Amazon.Rekognition.Model.DisassociateFacesRequest" />
+            <member name="T:Amazon.Rekognition.Model.DisassociateFacesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Removes the association between a Face supplied in an array of FaceIds and the User.
+                </para>
+                <code
+                    title="DisassociateFaces"
+                    source=".\AWSSDKDocSamples\Rekognition\Rekognition.GeneratedSamples.cs"
+                    region="disassociatefaces-1686182627295" />
             </example>
         </value>
     </doc>
@@ -173,6 +287,63 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.Rekognition.IAmazonRekognition.ListProjectPolicies(Amazon.Rekognition.Model.ListProjectPoliciesRequest)" />
+            <member name="M:Amazon.Rekognition.AmazonRekognitionClient.ListProjectPolicies(Amazon.Rekognition.Model.ListProjectPoliciesRequest)" />
+            <member name="T:Amazon.Rekognition.Model.ListProjectPoliciesRequest" />
+            <member name="T:Amazon.Rekognition.Model.ListProjectPoliciesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This operation lists the project policies that are attached to an Amazon Rekognition Custom Labels project.
+                </para>
+                <code
+                    title="ListProjectPolicies"
+                    source=".\AWSSDKDocSamples\Rekognition\Rekognition.GeneratedSamples.cs"
+                    region="listprojectpolicies-1658202290173" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Rekognition.IAmazonRekognition.ListUsers(Amazon.Rekognition.Model.ListUsersRequest)" />
+            <member name="M:Amazon.Rekognition.AmazonRekognitionClient.ListUsers(Amazon.Rekognition.Model.ListUsersRequest)" />
+            <member name="T:Amazon.Rekognition.Model.ListUsersRequest" />
+            <member name="T:Amazon.Rekognition.Model.ListUsersResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Returns metadata of the User such as UserID in the specified collection.
+                </para>
+                <code
+                    title="ListUsers"
+                    source=".\AWSSDKDocSamples\Rekognition\Rekognition.GeneratedSamples.cs"
+                    region="listusers-1686182360075" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Rekognition.IAmazonRekognition.PutProjectPolicy(Amazon.Rekognition.Model.PutProjectPolicyRequest)" />
+            <member name="M:Amazon.Rekognition.AmazonRekognitionClient.PutProjectPolicy(Amazon.Rekognition.Model.PutProjectPolicyRequest)" />
+            <member name="T:Amazon.Rekognition.Model.PutProjectPolicyRequest" />
+            <member name="T:Amazon.Rekognition.Model.PutProjectPolicyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This operation attaches a project policy to a Amazon Rekognition Custom Labels project in a trusting AWS account.
+                </para>
+                <code
+                    title="PutProjectPolicy"
+                    source=".\AWSSDKDocSamples\Rekognition\Rekognition.GeneratedSamples.cs"
+                    region="putprojectpolicy-1658201727623" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.Rekognition.IAmazonRekognition.SearchFaces(Amazon.Rekognition.Model.SearchFacesRequest)" />
             <member name="M:Amazon.Rekognition.AmazonRekognitionClient.SearchFaces(Amazon.Rekognition.Model.SearchFacesRequest)" />
             <member name="T:Amazon.Rekognition.Model.SearchFacesRequest" />
@@ -206,6 +377,44 @@
                     title="To search for faces matching a supplied image"
                     source=".\AWSSDKDocSamples\Rekognition\Rekognition.GeneratedSamples.cs"
                     region="to-search-for-faces-matching-a-supplied-image-1482175994491" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Rekognition.IAmazonRekognition.SearchUsers(Amazon.Rekognition.Model.SearchUsersRequest)" />
+            <member name="M:Amazon.Rekognition.AmazonRekognitionClient.SearchUsers(Amazon.Rekognition.Model.SearchUsersRequest)" />
+            <member name="T:Amazon.Rekognition.Model.SearchUsersRequest" />
+            <member name="T:Amazon.Rekognition.Model.SearchUsersResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Searches for UserIDs within a collection based on a FaceId or UserId.
+                </para>
+                <code
+                    title="SearchUsers"
+                    source=".\AWSSDKDocSamples\Rekognition\Rekognition.GeneratedSamples.cs"
+                    region="searchusers-1686182912030" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Rekognition.IAmazonRekognition.SearchUsersByImage(Amazon.Rekognition.Model.SearchUsersByImageRequest)" />
+            <member name="M:Amazon.Rekognition.AmazonRekognitionClient.SearchUsersByImage(Amazon.Rekognition.Model.SearchUsersByImageRequest)" />
+            <member name="T:Amazon.Rekognition.Model.SearchUsersByImageRequest" />
+            <member name="T:Amazon.Rekognition.Model.SearchUsersByImageResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Searches for UserIDs using a supplied image.
+                </para>
+                <code
+                    title="SearchUsersByImage"
+                    source=".\AWSSDKDocSamples\Rekognition\Rekognition.GeneratedSamples.cs"
+                    region="searchusersbyimage-1686183178610" />
             </example>
         </value>
     </doc>

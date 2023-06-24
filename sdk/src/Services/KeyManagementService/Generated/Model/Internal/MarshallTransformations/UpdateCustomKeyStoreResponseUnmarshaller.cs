@@ -101,6 +101,42 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
                 {
                     return KMSInternalExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("XksProxyIncorrectAuthenticationCredentialException"))
+                {
+                    return XksProxyIncorrectAuthenticationCredentialExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("XksProxyInvalidConfigurationException"))
+                {
+                    return XksProxyInvalidConfigurationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("XksProxyInvalidResponseException"))
+                {
+                    return XksProxyInvalidResponseExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("XksProxyUriEndpointInUseException"))
+                {
+                    return XksProxyUriEndpointInUseExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("XksProxyUriInUseException"))
+                {
+                    return XksProxyUriInUseExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("XksProxyUriUnreachableException"))
+                {
+                    return XksProxyUriUnreachableExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("XksProxyVpcEndpointServiceInUseException"))
+                {
+                    return XksProxyVpcEndpointServiceInUseExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("XksProxyVpcEndpointServiceInvalidConfigurationException"))
+                {
+                    return XksProxyVpcEndpointServiceInvalidConfigurationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("XksProxyVpcEndpointServiceNotFoundException"))
+                {
+                    return XksProxyVpcEndpointServiceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
             }
             return new AmazonKeyManagementServiceException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }

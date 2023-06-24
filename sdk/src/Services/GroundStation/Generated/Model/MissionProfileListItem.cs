@@ -62,6 +62,7 @@ namespace Amazon.GroundStation.Model
         /// UUID of a mission profile.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string MissionProfileId
         {
             get { return this._missionProfileId; }
@@ -80,6 +81,7 @@ namespace Amazon.GroundStation.Model
         /// Name of a mission profile.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string Name
         {
             get { return this._name; }
@@ -98,6 +100,7 @@ namespace Amazon.GroundStation.Model
         /// Region of a mission profile.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string Region
         {
             get { return this._region; }

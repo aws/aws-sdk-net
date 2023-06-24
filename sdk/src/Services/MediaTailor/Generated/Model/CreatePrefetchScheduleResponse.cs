@@ -43,7 +43,7 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the prefetch schedule.
+        /// The ARN to assign to the prefetch schedule.
         /// </para>
         /// </summary>
         public string Arn
@@ -61,10 +61,10 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property Consumption. 
         /// <para>
-        /// Consumption settings determine how, and when, MediaTailor places the prefetched ads
-        /// into ad breaks. Ad consumption occurs within a span of time that you define, called
-        /// a <i>consumption window</i>. You can designate which ad breaks that MediaTailor fills
-        /// with prefetch ads by setting avail matching criteria.
+        /// The configuration settings for MediaTailor's <i>consumption</i> of the prefetched
+        /// ads from the ad decision server. Each consumption configuration contains an end time
+        /// and an optional start time that define the <i>consumption window</i>. Prefetch schedules
+        /// automatically expire no earlier than seven days after the end time.
         /// </para>
         /// </summary>
         public PrefetchConsumption Consumption
@@ -82,8 +82,7 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the prefetch schedule. The name must be unique among all prefetch schedules
-        /// that are associated with the specified playback configuration.
+        /// The name to assign to the prefetch schedule.
         /// </para>
         /// </summary>
         public string Name
@@ -101,7 +100,7 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property PlaybackConfigurationName. 
         /// <para>
-        /// The name of the playback configuration to create the prefetch schedule for.
+        /// The name to assign to the playback configuration.
         /// </para>
         /// </summary>
         public string PlaybackConfigurationName
@@ -119,8 +118,9 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property Retrieval. 
         /// <para>
-        /// A complex type that contains settings for prefetch retrieval from the ad decision
-        /// server (ADS).
+        /// The configuration settings for retrieval of prefetched ads from the ad decision server.
+        /// Only one set of prefetched ads will be retrieved and subsequently consumed for each
+        /// ad break.
         /// </para>
         /// </summary>
         public PrefetchRetrieval Retrieval
@@ -138,8 +138,11 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property StreamId. 
         /// <para>
-        /// An optional stream identifier that you can specify in order to prefetch for multiple
-        /// streams that use the same playback configuration.
+        /// An optional stream identifier that MediaTailor uses to prefetch ads for multiple streams
+        /// that use the same playback configuration. If <code>StreamId</code> is specified, MediaTailor
+        /// returns all of the prefetch schedules with an exact match on <code>StreamId</code>.
+        /// If not specified, MediaTailor returns all of the prefetch schedules for the playback
+        /// configuration, regardless of <code>StreamId</code>.
         /// </para>
         /// </summary>
         public string StreamId

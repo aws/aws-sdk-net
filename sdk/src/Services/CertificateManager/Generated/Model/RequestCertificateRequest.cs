@@ -46,11 +46,15 @@ namespace Amazon.CertificateManager.Model
     /// </para>
     ///  <note> 
     /// <para>
-    /// ACM behavior differs from the <a href="https://tools.ietf.org/html/rfc6125#appendix-B.2">https://tools.ietf.org/html/rfc6125#appendix-B.2</a>RFC
-    /// 6125 specification of the certificate validation process. first checks for a subject
-    /// alternative name, and, if it finds one, ignores the common name (CN)
+    /// ACM behavior differs from the <a href="https://datatracker.ietf.org/doc/html/rfc6125#appendix-B.2">RFC
+    /// 6125</a> specification of the certificate validation process. ACM first checks for
+    /// a Subject Alternative Name, and, if it finds one, ignores the common name (CN).
     /// </para>
-    ///  </note>
+    ///  </note> 
+    /// <para>
+    /// After successful completion of the <code>RequestCertificate</code> action, there is
+    /// a delay of several seconds before you can retrieve information about the new certificate.
+    /// </para>
     /// </summary>
     public partial class RequestCertificateRequest : AmazonCertificateManagerRequest
     {
@@ -58,6 +62,7 @@ namespace Amazon.CertificateManager.Model
         private string _domainName;
         private List<DomainValidationOption> _domainValidationOptions = new List<DomainValidationOption>();
         private string _idempotencyToken;
+        private KeyAlgorithm _keyAlgorithm;
         private CertificateOptions _options;
         private List<string> _subjectAlternativeNames = new List<string>();
         private List<Tag> _tags = new List<Tag>();
@@ -69,9 +74,9 @@ namespace Amazon.CertificateManager.Model
         /// The Amazon Resource Name (ARN) of the private certificate authority (CA) that will
         /// be used to issue the certificate. If you do not provide an ARN and you are trying
         /// to request a private certificate, ACM will attempt to issue a public certificate.
-        /// For more information about private CAs, see the <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">Amazon
-        /// Web Services Certificate Manager Private Certificate Authority (PCA)</a> user guide.
-        /// The ARN must have the following form: 
+        /// For more information about private CAs, see the <a href="https://docs.aws.amazon.com/privateca/latest/userguide/PcaWelcome.html">Amazon
+        /// Web Services Private Certificate Authority</a> user guide. The ARN must have the following
+        /// form: 
         /// </para>
         ///  
         /// <para>
@@ -95,16 +100,18 @@ namespace Amazon.CertificateManager.Model
         /// <summary>
         /// Gets and sets the property DomainName. 
         /// <para>
-        ///  Fully qualified domain name (FQDN), such as www.example.com, that you want to secure
+        /// Fully qualified domain name (FQDN), such as www.example.com, that you want to secure
         /// with an ACM certificate. Use an asterisk (*) to create a wildcard certificate that
         /// protects several sites in the same domain. For example, *.example.com protects www.example.com,
         /// site.example.com, and images.example.com. 
         /// </para>
         ///  
         /// <para>
-        ///  The first domain name you enter cannot exceed 64 octets, including periods. Each
-        /// subsequent Subject Alternative Name (SAN), however, can be up to 253 octets in length.
-        /// 
+        /// In compliance with <a href="https://datatracker.ietf.org/doc/html/rfc5280">RFC 5280</a>,
+        /// the length of the domain name (technically, the Common Name) that you provide cannot
+        /// exceed 64 octets (characters), including periods. To add a longer domain name, specify
+        /// it in the Subject Alternative Name field, which supports names up to 253 octets in
+        /// length. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=253)]
@@ -161,6 +168,35 @@ namespace Amazon.CertificateManager.Model
         internal bool IsSetIdempotencyToken()
         {
             return this._idempotencyToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KeyAlgorithm. 
+        /// <para>
+        /// Specifies the algorithm of the public and private key pair that your certificate uses
+        /// to encrypt data. RSA is the default key algorithm for ACM certificates. Elliptic Curve
+        /// Digital Signature Algorithm (ECDSA) keys are smaller, offering security comparable
+        /// to RSA keys but with greater computing efficiency. However, ECDSA is not supported
+        /// by all network clients. Some AWS services may require RSA keys, or only support ECDSA
+        /// keys of a particular size, while others allow the use of either RSA and ECDSA keys
+        /// to ensure that compatibility is not broken. Check the requirements for the AWS service
+        /// where you plan to deploy your certificate.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: RSA_2048
+        /// </para>
+        /// </summary>
+        public KeyAlgorithm KeyAlgorithm
+        {
+            get { return this._keyAlgorithm; }
+            set { this._keyAlgorithm = value; }
+        }
+
+        // Check to see if KeyAlgorithm property is set
+        internal bool IsSetKeyAlgorithm()
+        {
+            return this._keyAlgorithm != null;
         }
 
         /// <summary>

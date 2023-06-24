@@ -129,6 +129,12 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
                     response.NluIntentConfidenceThreshold = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("recommendedActions", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    response.RecommendedActions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("slotTypesCount", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

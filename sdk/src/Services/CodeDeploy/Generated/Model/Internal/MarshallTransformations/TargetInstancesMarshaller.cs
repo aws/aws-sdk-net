@@ -34,7 +34,7 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// TargetInstances Marshaller
-    /// </summary>       
+    /// </summary>
     public class TargetInstancesMarshaller : IRequestMarshaller<TargetInstances, JsonMarshallerContext> 
     {
         /// <summary>
@@ -87,7 +87,7 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static TargetInstancesMarshaller Instance = new TargetInstancesMarshaller();
 
     }

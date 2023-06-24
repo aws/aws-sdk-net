@@ -36,14 +36,49 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class AllocateHostsRequest : AmazonEC2Request
     {
+        private List<string> _assetIds = new List<string>();
         private AutoPlacement _autoPlacement;
         private string _availabilityZone;
         private string _clientToken;
+        private HostMaintenance _hostMaintenance;
         private HostRecovery _hostRecovery;
         private string _instanceFamily;
         private string _instanceType;
+        private string _outpostArn;
         private int? _quantity;
         private List<TagSpecification> _tagSpecifications = new List<TagSpecification>();
+
+        /// <summary>
+        /// Gets and sets the property AssetIds. 
+        /// <para>
+        /// The IDs of the Outpost hardware assets on which to allocate the Dedicated Hosts. Targeting
+        /// specific hardware assets on an Outpost can help to minimize latency between your workloads.
+        /// This parameter is supported only if you specify <b>OutpostArn</b>. If you are allocating
+        /// the Dedicated Hosts in a Region, omit this parameter.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If you specify this parameter, you can omit <b>Quantity</b>. In this case, Amazon
+        /// EC2 allocates a Dedicated Host on each specified hardware asset.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you specify both <b>AssetIds</b> and <b>Quantity</b>, then the value for <b>Quantity</b>
+        /// must be equal to the number of asset IDs specified.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public List<string> AssetIds
+        {
+            get { return this._assetIds; }
+            set { this._assetIds = value; }
+        }
+
+        // Check to see if AssetIds property is set
+        internal bool IsSetAssetIds()
+        {
+            return this._assetIds != null && this._assetIds.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property AutoPlacement. 
@@ -107,6 +142,26 @@ namespace Amazon.EC2.Model
         internal bool IsSetClientToken()
         {
             return this._clientToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HostMaintenance. 
+        /// <para>
+        /// Indicates whether to enable or disable host maintenance for the Dedicated Host. For
+        /// more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-maintenance.html">Host
+        /// maintenance</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        public HostMaintenance HostMaintenance
+        {
+            get { return this._hostMaintenance; }
+            set { this._hostMaintenance = value; }
+        }
+
+        // Check to see if HostMaintenance property is set
+        internal bool IsSetHostMaintenance()
+        {
+            return this._hostMaintenance != null;
         }
 
         /// <summary>
@@ -186,12 +241,39 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Quantity. 
+        /// Gets and sets the property OutpostArn. 
         /// <para>
-        /// The number of Dedicated Hosts to allocate to your account with these parameters.
+        /// The Amazon Resource Name (ARN) of the Amazon Web Services Outpost on which to allocate
+        /// the Dedicated Host. If you specify <b>OutpostArn</b>, you can optionally specify <b>AssetIds</b>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you are allocating the Dedicated Host in a Region, omit this parameter.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        public string OutpostArn
+        {
+            get { return this._outpostArn; }
+            set { this._outpostArn = value; }
+        }
+
+        // Check to see if OutpostArn property is set
+        internal bool IsSetOutpostArn()
+        {
+            return this._outpostArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Quantity. 
+        /// <para>
+        /// The number of Dedicated Hosts to allocate to your account with these parameters. If
+        /// you are allocating the Dedicated Hosts on an Outpost, and you specify <b>AssetIds</b>,
+        /// you can omit this parameter. In this case, Amazon EC2 allocates a Dedicated Host on
+        /// each specified hardware asset. If you specify both <b>AssetIds</b> and <b>Quantity</b>,
+        /// then the value that you specify for <b>Quantity</b> must be equal to the number of
+        /// asset IDs specified.
+        /// </para>
+        /// </summary>
         public int Quantity
         {
             get { return this._quantity.GetValueOrDefault(); }

@@ -114,5 +114,21 @@ namespace Amazon.XRay.Model
         {
             return new GetTraceSummariesPaginator(this.client, request);
         }
+
+        /// <summary>
+        /// Paginator for ListResourcePolicies operation
+        ///</summary>
+        public IListResourcePoliciesPaginator ListResourcePolicies(ListResourcePoliciesRequest request) 
+        {
+            return new ListResourcePoliciesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListTagsForResource operation
+        ///</summary>
+        public IListTagsForResourcePaginator ListTagsForResource(ListTagsForResourceRequest request) 
+        {
+            return new ListTagsForResourcePaginator(this.client, request);
+        }
     }
 }

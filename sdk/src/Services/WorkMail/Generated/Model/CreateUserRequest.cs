@@ -30,7 +30,7 @@ namespace Amazon.WorkMail.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateUser operation.
-    /// Creates a user who can be used in Amazon WorkMail by calling the <a>RegisterToWorkMail</a>
+    /// Creates a user who can be used in WorkMail by calling the <a>RegisterToWorkMail</a>
     /// operation.
     /// </summary>
     public partial class CreateUserRequest : AmazonWorkMailRequest
@@ -104,7 +104,7 @@ namespace Amazon.WorkMail.Model
         /// The password for the new user.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=256)]
+        [AWSProperty(Required=true, Sensitive=true, Max=256)]
         public string Password
         {
             get { return this._password; }

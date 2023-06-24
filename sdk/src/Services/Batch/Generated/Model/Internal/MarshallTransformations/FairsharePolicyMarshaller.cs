@@ -34,7 +34,7 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// FairsharePolicy Marshaller
-    /// </summary>       
+    /// </summary>
     public class FairsharePolicyMarshaller : IRequestMarshaller<FairsharePolicy, JsonMarshallerContext> 
     {
         /// <summary>
@@ -77,7 +77,7 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static FairsharePolicyMarshaller Instance = new FairsharePolicyMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Predicate Marshaller
-    /// </summary>       
+    /// </summary>
     public class PredicateMarshaller : IRequestMarshaller<Predicate, JsonMarshallerContext> 
     {
         /// <summary>
@@ -73,6 +73,12 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Operand);
             }
 
+            if(requestObject.IsSetOperandType())
+            {
+                context.Writer.WritePropertyName("operandType");
+                context.Writer.Write(requestObject.OperandType);
+            }
+
             if(requestObject.IsSetOperator())
             {
                 context.Writer.WritePropertyName("operator");
@@ -99,7 +105,7 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static PredicateMarshaller Instance = new PredicateMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// VideoSelectorSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class VideoSelectorSettingsMarshaller : IRequestMarshaller<VideoSelectorSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static VideoSelectorSettingsMarshaller Instance = new VideoSelectorSettingsMarshaller();
 
     }

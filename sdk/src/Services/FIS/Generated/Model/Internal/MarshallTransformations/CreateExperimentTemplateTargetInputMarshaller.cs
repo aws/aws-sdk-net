@@ -34,7 +34,7 @@ namespace Amazon.FIS.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CreateExperimentTemplateTargetInput Marshaller
-    /// </summary>       
+    /// </summary>
     public class CreateExperimentTemplateTargetInputMarshaller : IRequestMarshaller<CreateExperimentTemplateTargetInput, JsonMarshallerContext> 
     {
         /// <summary>
@@ -59,6 +59,20 @@ namespace Amazon.FIS.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
                 context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetParameters())
+            {
+                context.Writer.WritePropertyName("parameters");
+                context.Writer.WriteObjectStart();
+                foreach (var requestObjectParametersKvp in requestObject.Parameters)
+                {
+                    context.Writer.WritePropertyName(requestObjectParametersKvp.Key);
+                    var requestObjectParametersValue = requestObjectParametersKvp.Value;
+
+                        context.Writer.Write(requestObjectParametersValue);
+                }
+                context.Writer.WriteObjectEnd();
             }
 
             if(requestObject.IsSetResourceArns())
@@ -102,7 +116,7 @@ namespace Amazon.FIS.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CreateExperimentTemplateTargetInputMarshaller Instance = new CreateExperimentTemplateTargetInputMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AudioCodecSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class AudioCodecSettingsMarshaller : IRequestMarshaller<AudioCodecSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -63,6 +63,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 
                 var marshaller = Ac3SettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.Ac3Settings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetEac3AtmosSettings())
+            {
+                context.Writer.WritePropertyName("eac3AtmosSettings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = Eac3AtmosSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.Eac3AtmosSettings, context);
 
                 context.Writer.WriteObjectEnd();
             }
@@ -115,7 +126,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AudioCodecSettingsMarshaller Instance = new AudioCodecSettingsMarshaller();
 
     }

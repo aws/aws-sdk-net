@@ -56,7 +56,7 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.IoTTwinMaker");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-11-29";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-11-29";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/workspaces-list";
@@ -77,7 +77,6 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.NextToken);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

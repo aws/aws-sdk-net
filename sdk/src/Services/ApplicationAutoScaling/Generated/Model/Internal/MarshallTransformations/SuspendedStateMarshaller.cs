@@ -34,7 +34,7 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SuspendedState Marshaller
-    /// </summary>       
+    /// </summary>
     public class SuspendedStateMarshaller : IRequestMarshaller<SuspendedState, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SuspendedStateMarshaller Instance = new SuspendedStateMarshaller();
 
     }

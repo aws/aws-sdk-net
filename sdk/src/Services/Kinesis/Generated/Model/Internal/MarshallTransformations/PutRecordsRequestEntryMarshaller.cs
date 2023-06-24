@@ -34,7 +34,7 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// PutRecordsRequestEntry Marshaller
-    /// </summary>       
+    /// </summary>
     public class PutRecordsRequestEntryMarshaller : IRequestMarshaller<PutRecordsRequestEntry, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static PutRecordsRequestEntryMarshaller Instance = new PutRecordsRequestEntryMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.Inspector.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DurationRange Marshaller
-    /// </summary>       
+    /// </summary>
     public class DurationRangeMarshaller : IRequestMarshaller<DurationRange, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Inspector.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DurationRangeMarshaller Instance = new DurationRangeMarshaller();
 
     }

@@ -30,7 +30,7 @@ namespace Amazon.Route53RecoveryReadiness.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateCell operation.
-    /// Updates an existing Cell.
+    /// Updates a cell to replace the list of nested cells with a new list of nested cells.
     /// </summary>
     public partial class UpdateCellRequest : AmazonRoute53RecoveryReadinessRequest
     {
@@ -38,7 +38,10 @@ namespace Amazon.Route53RecoveryReadiness.Model
         private List<string> _cells = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property CellName. The Cell to update
+        /// Gets and sets the property CellName. 
+        /// <para>
+        /// The name of the cell.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string CellName
@@ -54,8 +57,11 @@ namespace Amazon.Route53RecoveryReadiness.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Cells. A list of Cell arns, completely replaces previous
-        /// list
+        /// Gets and sets the property Cells. 
+        /// <para>
+        /// A list of cell Amazon Resource Names (ARNs), which completely replaces the previous
+        /// list.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public List<string> Cells

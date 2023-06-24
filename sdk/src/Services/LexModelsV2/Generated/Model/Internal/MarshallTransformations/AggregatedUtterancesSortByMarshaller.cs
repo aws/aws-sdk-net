@@ -34,7 +34,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AggregatedUtterancesSortBy Marshaller
-    /// </summary>       
+    /// </summary>
     public class AggregatedUtterancesSortByMarshaller : IRequestMarshaller<AggregatedUtterancesSortBy, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AggregatedUtterancesSortByMarshaller Instance = new AggregatedUtterancesSortByMarshaller();
 
     }

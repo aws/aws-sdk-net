@@ -34,7 +34,7 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ConflictResolution Marshaller
-    /// </summary>       
+    /// </summary>
     public class ConflictResolutionMarshaller : IRequestMarshaller<ConflictResolution, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ConflictResolutionMarshaller Instance = new ConflictResolutionMarshaller();
 
     }

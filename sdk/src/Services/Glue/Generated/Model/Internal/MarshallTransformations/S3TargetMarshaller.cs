@@ -34,7 +34,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// S3Target Marshaller
-    /// </summary>       
+    /// </summary>
     public class S3TargetMarshaller : IRequestMarshaller<S3Target, JsonMarshallerContext> 
     {
         /// <summary>
@@ -90,7 +90,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static S3TargetMarshaller Instance = new S3TargetMarshaller();
 
     }

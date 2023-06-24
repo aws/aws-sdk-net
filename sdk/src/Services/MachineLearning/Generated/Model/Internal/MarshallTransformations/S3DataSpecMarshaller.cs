@@ -34,7 +34,7 @@ namespace Amazon.MachineLearning.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// S3DataSpec Marshaller
-    /// </summary>       
+    /// </summary>
     public class S3DataSpecMarshaller : IRequestMarshaller<S3DataSpec, JsonMarshallerContext> 
     {
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.MachineLearning.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static S3DataSpecMarshaller Instance = new S3DataSpecMarshaller();
 
     }

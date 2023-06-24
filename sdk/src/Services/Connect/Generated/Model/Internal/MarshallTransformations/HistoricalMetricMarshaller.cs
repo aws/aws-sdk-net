@@ -34,7 +34,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// HistoricalMetric Marshaller
-    /// </summary>       
+    /// </summary>
     public class HistoricalMetricMarshaller : IRequestMarshaller<HistoricalMetric, JsonMarshallerContext> 
     {
         /// <summary>
@@ -78,7 +78,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static HistoricalMetricMarshaller Instance = new HistoricalMetricMarshaller();
 
     }

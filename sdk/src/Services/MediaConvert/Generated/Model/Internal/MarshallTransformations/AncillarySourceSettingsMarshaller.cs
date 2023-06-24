@@ -34,7 +34,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AncillarySourceSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class AncillarySourceSettingsMarshaller : IRequestMarshaller<AncillarySourceSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AncillarySourceSettingsMarshaller Instance = new AncillarySourceSettingsMarshaller();
 
     }

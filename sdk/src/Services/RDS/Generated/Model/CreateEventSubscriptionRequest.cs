@@ -30,7 +30,7 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateEventSubscription operation.
-    /// Creates an RDS event notification subscription. This action requires a topic Amazon
+    /// Creates an RDS event notification subscription. This operation requires a topic Amazon
     /// Resource Name (ARN) created by either the RDS console, the SNS console, or the SNS
     /// API. To obtain an ARN with SNS, you must create a topic in Amazon SNS and subscribe
     /// to the topic. The ARN is displayed in the SNS console.
@@ -47,20 +47,23 @@ namespace Amazon.RDS.Model
     ///  
     /// <para>
     /// If you specify both the <code>SourceType</code> and <code>SourceIds</code>, such as
-    /// <code>SourceType</code> = <code>db-instance</code> and <code>SourceIdentifier</code>
-    /// = <code>myDBInstance1</code>, you are notified of all the <code>db-instance</code>
-    /// events for the specified source. If you specify a <code>SourceType</code> but do not
-    /// specify a <code>SourceIdentifier</code>, you receive notice of the events for that
-    /// source type for all your RDS sources. If you don't specify either the SourceType or
-    /// the <code>SourceIdentifier</code>, you are notified of events generated from all RDS
-    /// sources belonging to your customer account.
+    /// <code>SourceType</code> = <code>db-instance</code> and <code>SourceIds</code> = <code>myDBInstance1</code>,
+    /// you are notified of all the <code>db-instance</code> events for the specified source.
+    /// If you specify a <code>SourceType</code> but do not specify <code>SourceIds</code>,
+    /// you receive notice of the events for that source type for all your RDS sources. If
+    /// you don't specify either the SourceType or the <code>SourceIds</code>, you are notified
+    /// of events generated from all RDS sources belonging to your customer account.
     /// </para>
-    ///  <note> 
+    ///  
     /// <para>
-    /// RDS event notification is only available for unencrypted SNS topics. If you specify
-    /// an encrypted SNS topic, event notifications aren't sent for the topic.
+    /// For more information about subscribing to an event for RDS DB engines, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.Subscribing.html">
+    /// Subscribing to Amazon RDS event notification</a> in the <i>Amazon RDS User Guide</i>.
     /// </para>
-    ///  </note>
+    ///  
+    /// <para>
+    /// For more information about subscribing to an event for Aurora DB engines, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Events.Subscribing.html">
+    /// Subscribing to Amazon RDS event notification</a> in the <i>Amazon Aurora User Guide</i>.
+    /// </para>
     /// </summary>
     public partial class CreateEventSubscriptionRequest : AmazonRDSRequest
     {
@@ -75,8 +78,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Enabled. 
         /// <para>
-        ///  A value that indicates whether to activate the subscription. If the event notification
-        /// subscription isn't activated, the subscription is created but not active. 
+        /// A value that indicates whether to activate the subscription. If the event notification
+        /// subscription isn't activated, the subscription is created but not active.
         /// </para>
         /// </summary>
         public bool Enabled
@@ -94,11 +97,12 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property EventCategories. 
         /// <para>
-        ///  A list of event categories for a particular source type (<code>SourceType</code>)
+        /// A list of event categories for a particular source type (<code>SourceType</code>)
         /// that you want to subscribe to. You can see a list of the categories for a given source
-        /// type in <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a>
-        /// in the <i>Amazon RDS User Guide</i> or by using the <code>DescribeEventCategories</code>
-        /// operation. 
+        /// type in the "Amazon RDS event categories and event messages" section of the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.Messages.html">
+        /// <i>Amazon RDS User Guide</i> </a> or the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Events.Messages.html">
+        /// <i>Amazon Aurora User Guide</i> </a>. You can also see this list by using the <code>DescribeEventCategories</code>
+        /// operation.
         /// </para>
         /// </summary>
         public List<string> EventCategories
@@ -179,6 +183,10 @@ namespace Amazon.RDS.Model
         /// If the source type is a DB cluster snapshot, a <code>DBClusterSnapshotIdentifier</code>
         /// value must be supplied.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the source type is an RDS Proxy, a <code>DBProxyName</code> value must be supplied.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         public List<string> SourceIds
@@ -198,13 +206,14 @@ namespace Amazon.RDS.Model
         /// <para>
         /// The type of source that is generating the events. For example, if you want to be notified
         /// of events generated by a DB instance, you set this parameter to <code>db-instance</code>.
-        /// If this value isn't specified, all events are returned.
+        /// For RDS Proxy events, specify <code>db-proxy</code>. If this value isn't specified,
+        /// all events are returned.
         /// </para>
         ///  
         /// <para>
         /// Valid values: <code>db-instance</code> | <code>db-cluster</code> | <code>db-parameter-group</code>
         /// | <code>db-security-group</code> | <code>db-snapshot</code> | <code>db-cluster-snapshot</code>
-        /// 
+        /// | <code>db-proxy</code> 
         /// </para>
         /// </summary>
         public string SourceType

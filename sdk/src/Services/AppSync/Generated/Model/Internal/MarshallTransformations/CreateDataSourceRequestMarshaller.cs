@@ -56,7 +56,7 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.AppSync");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-07-25";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-07-25";
             request.HttpMethod = "POST";
 
             if (!publicRequest.IsSetApiId())
@@ -92,6 +92,17 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
 
                     var marshaller = ElasticsearchDataSourceConfigMarshaller.Instance;
                     marshaller.Marshall(publicRequest.ElasticsearchConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetEventBridgeConfig())
+                {
+                    context.Writer.WritePropertyName("eventBridgeConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = EventBridgeDataSourceConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.EventBridgeConfig, context);
 
                     context.Writer.WriteObjectEnd();
                 }
@@ -158,7 +169,6 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Type);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

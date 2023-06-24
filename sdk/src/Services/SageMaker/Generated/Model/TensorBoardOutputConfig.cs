@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Configuration of storage locations for the Debugger TensorBoard output data.
+    /// Configuration of storage locations for the Amazon SageMaker Debugger TensorBoard output
+    /// data.
     /// </summary>
     public partial class TensorBoardOutputConfig
     {

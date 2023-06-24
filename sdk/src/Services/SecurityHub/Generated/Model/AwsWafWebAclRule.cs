@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// Details for a rule in an WAF WebACL.
+    /// Details for a rule in an WAF web ACL.
     /// </summary>
     public partial class AwsWafWebAclRule
     {
@@ -80,27 +80,28 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property OverrideAction. 
         /// <para>
-        /// Use the <code>OverrideAction</code> to test your RuleGroup.
+        /// Use the <code>OverrideAction</code> to test your <code>RuleGroup</code>.
         /// </para>
         ///  
         /// <para>
-        /// Any rule in a RuleGroup can potentially block a request. If you set the <code>OverrideAction</code>
-        /// to <code>None</code>, the RuleGroup blocks a request if any individual rule in the
-        /// RuleGroup matches the request and is configured to block that request.
+        /// Any rule in a <code>RuleGroup</code> can potentially block a request. If you set the
+        /// <code>OverrideAction</code> to <code>None</code>, the <code>RuleGroup</code> blocks
+        /// a request if any individual rule in the <code>RuleGroup</code> matches the request
+        /// and is configured to block that request.
         /// </para>
         ///  
         /// <para>
-        /// However, if you first want to test the RuleGroup, set the <code>OverrideAction</code>
-        /// to <code>Count</code>. The RuleGroup then overrides any block action specified by
-        /// individual rules contained within the group. Instead of blocking matching requests,
-        /// those requests are counted.
+        /// However, if you first want to test the <code>RuleGroup</code>, set the <code>OverrideAction</code>
+        /// to <code>Count</code>. The <code>RuleGroup</code> then overrides any block action
+        /// specified by individual rules contained within the group. Instead of blocking matching
+        /// requests, those requests are counted.
         /// </para>
         ///  
         /// <para>
         ///  <code>ActivatedRule</code>|<code>OverrideAction</code> applies only when updating
-        /// or adding a RuleGroup to a WebACL. In this case you do not use <code>ActivatedRule</code>|<code>Action</code>.
-        /// For all other update requests, <code>ActivatedRule</code>|<code>Action</code> is used
-        /// instead of <code>ActivatedRule</code>|<code>OverrideAction</code>. 
+        /// or adding a <code>RuleGroup</code> to a web ACL. In this case you do not use <code>ActivatedRule</code>
+        /// <code>Action</code>. For all other update requests, <code>ActivatedRule</code> <code>Action</code>
+        /// is used instead of <code>ActivatedRule</code> <code>OverrideAction</code>.
         /// </para>
         /// </summary>
         public WafOverrideAction OverrideAction
@@ -118,9 +119,9 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Priority. 
         /// <para>
-        /// Specifies the order in which the rules in a WebACL are evaluated. Rules with a lower
+        /// Specifies the order in which the rules in a web ACL are evaluated. Rules with a lower
         /// value for <code>Priority</code> are evaluated before rules with a higher value. The
-        /// value must be a unique integer. If you add multiple rules to a WebACL, the values
+        /// value must be a unique integer. If you add multiple rules to a web ACL, the values
         /// do not need to be consecutive.
         /// </para>
         /// </summary>

@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// Container for the response returned by the <code> <a>GetCompatibleVersions</a> </code>
-    /// operation.
+    /// Container for the response returned by the <code>GetCompatibleVersions</code> operation.
     /// </summary>
     public partial class GetCompatibleVersionsResponse : AmazonWebServiceResponse
     {
@@ -39,8 +38,8 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property CompatibleVersions. 
         /// <para>
-        ///  A map of compatible OpenSearch versions returned as part of the <code> <a>GetCompatibleVersions</a>
-        /// </code> operation. 
+        /// A map of OpenSearch or Elasticsearch versions and the versions you can upgrade them
+        /// to.
         /// </para>
         /// </summary>
         public List<CompatibleVersionsMap> CompatibleVersions

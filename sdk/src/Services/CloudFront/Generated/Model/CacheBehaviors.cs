@@ -58,7 +58,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Quantity. 
         /// <para>
-        /// The number of cache behaviors for this distribution. 
+        /// The number of cache behaviors for this distribution.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

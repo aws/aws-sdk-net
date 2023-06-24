@@ -35,14 +35,30 @@ namespace Amazon.ElasticFileSystem.Model
     /// path, to any file system request made through the access point. The operating system
     /// user and group override any identity information provided by the NFS client. The file
     /// system path is exposed as the access point's root directory. Applications using the
-    /// access point can only access data in its own directory and below. To learn more, see
-    /// <a href="https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html">Mounting
+    /// access point can only access data in the application's own directory and any subdirectories.
+    /// To learn more, see <a href="https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html">Mounting
     /// a file system using EFS access points</a>.
     /// 
-    ///  
+    ///  <note> 
+    /// <para>
+    /// If multiple requests to create access points on the same file system are sent in quick
+    /// succession, and the file system is near the limit of 1,000 access points, you may
+    /// experience a throttling response for these requests. This is to ensure that the file
+    /// system does not exceed the stated access point limit.
+    /// </para>
+    ///  </note> 
     /// <para>
     /// This operation requires permissions for the <code>elasticfilesystem:CreateAccessPoint</code>
     /// action.
+    /// </para>
+    ///  
+    /// <para>
+    /// Access points can be tagged on creation. If tags are specified in the creation action,
+    /// IAM performs additional authorization on the <code>elasticfilesystem:TagResource</code>
+    /// action to verify if users have permissions to create tags. Therefore, you must grant
+    /// explicit permissions to use the <code>elasticfilesystem:TagResource</code> action.
+    /// For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/using-tags-efs.html#supported-iam-actions-tagging.html">Granting
+    /// permissions to tag resources during creation</a>.
     /// </para>
     /// </summary>
     public partial class CreateAccessPointRequest : AmazonElasticFileSystemRequest
@@ -118,8 +134,8 @@ namespace Amazon.ElasticFileSystem.Model
         /// clients using the access point can only access the root directory and below. If the
         /// <code>RootDirectory</code> &gt; <code>Path</code> specified does not exist, EFS creates
         /// it and applies the <code>CreationInfo</code> settings when a client connects to an
-        /// access point. When specifying a <code>RootDirectory</code>, you need to provide the
-        /// <code>Path</code>, and the <code>CreationInfo</code>.
+        /// access point. When specifying a <code>RootDirectory</code>, you must provide the <code>Path</code>,
+        /// and the <code>CreationInfo</code>.
         /// </para>
         ///  
         /// <para>

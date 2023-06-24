@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kendra.Model
 {
     /// <summary>
-    /// Provides configuration information for a data source to index documents in an Amazon
-    /// S3 bucket.
+    /// Provides the configuration information to connect to an Amazon S3 bucket.
     /// </summary>
     public partial class S3DataSourceConfiguration
     {
@@ -124,7 +123,7 @@ namespace Amazon.Kendra.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Min=0, Max=100)]
+        [AWSProperty(Min=0, Max=250)]
         public List<string> ExclusionPatterns
         {
             get { return this._exclusionPatterns; }
@@ -164,7 +163,7 @@ namespace Amazon.Kendra.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Min=0, Max=100)]
+        [AWSProperty(Min=0, Max=250)]
         public List<string> InclusionPatterns
         {
             get { return this._inclusionPatterns; }
@@ -183,7 +182,7 @@ namespace Amazon.Kendra.Model
         /// A list of S3 prefixes for the documents that should be included in the index.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=100)]
+        [AWSProperty(Min=0, Max=250)]
         public List<string> InclusionPrefixes
         {
             get { return this._inclusionPrefixes; }

@@ -34,7 +34,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SnapshotFilter Marshaller
-    /// </summary>       
+    /// </summary>
     public class SnapshotFilterMarshaller : IRequestMarshaller<SnapshotFilter, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SnapshotFilterMarshaller Instance = new SnapshotFilterMarshaller();
 
     }

@@ -8,6 +8,7 @@ using System.Globalization;
 using ThirdParty.Json.LitJson;
 using System.Collections;
 using System.IO;
+using Amazon.Runtime.Documents;
 using Amazon.Runtime.Internal.Util;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ServiceClientGenerator;
@@ -94,7 +95,7 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
 
                 for (int i = 0; i < listX.Count; i++)
                 {
-                    Compare(listX[i], listY[i], listType);                        
+                    Compare(listX[i], listY[i], listType);            
                 }
                 return;
             }
@@ -190,7 +191,11 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
                         childObj = Unmarshall(reader, propInfo.PropertyType);
                         childObj = (float)(double)childObj;
                     }
-                    else
+                    else if (propInfo.PropertyType == typeof(Document))
+                    {
+                        childObj = ParseDocument(reader);
+                    }
+                    else 
                     {
                         childObj = Unmarshall(reader, propInfo.PropertyType);
                         if (propInfo.PropertyType == typeof(DateTime))
@@ -208,7 +213,7 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
                 else if (token == JsonToken.ArrayStart)
                 {
                     if (instanceType.GetInterface("System.Collections.IList") != null)
-                    {                        
+                    {
                         return ParseArray(reader, instanceType);
                     }                   
                 }
@@ -227,6 +232,75 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
             return instance;
         }
 
+        private static Document ParseDocument(JsonReader reader)
+        {
+            return TryParseDocument(reader, out var doc) ? doc : new Document();
+        }
+
+        private static bool TryParseDocument(JsonReader reader, out Document document)
+        {
+            document = new Document();
+
+            while (reader.Read())
+            {
+                var token = reader.Token;
+                var value = reader.Value;
+
+                switch (token)
+                {
+                    case JsonToken.None:
+                        return true;
+                    case JsonToken.Boolean:
+                        document = new Document((bool)value);
+                        return true;
+                    case JsonToken.Double:
+                        document = new Document((double)value);
+                        return true;
+                    case JsonToken.Int:
+                        document = new Document((int)value);
+                        return true;
+                    case JsonToken.Long:
+                        document = new Document((long)value);
+                        return true;
+                    case JsonToken.String:
+                        document = new Document((string)value);
+                        return true;
+                    case JsonToken.ArrayStart:
+                        var array = new List<Document>();
+
+                        while (TryParseDocument(reader, out var doc))
+                            array.Add(doc);
+
+                        document = new Document(array);
+                        return true;
+
+                    case JsonToken.ObjectStart:
+                        var dictionary = new Dictionary<string, Document>();
+
+                        while (reader.Read() && reader.Token != JsonToken.ObjectEnd)
+                        {
+                            var propertyName = reader.Value.ToString();
+
+                            dictionary.Add(propertyName, ParseDocument(reader));
+                        }
+
+                        document = new Document(dictionary);
+                        return true;
+
+                    case JsonToken.ArrayEnd:
+                    case JsonToken.ObjectEnd:
+                        return false;
+
+                    default:
+                        throw new ArgumentException($"Unknown JSON type: {token}");
+                }
+            }
+
+            return false;
+        }
+
+
+
         private static object ParseConstant(JsonReader reader, Type constantType)
         {
             //reader.Read();
@@ -243,7 +317,7 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
         {
             //reader.Read();
             if (reader.Token == JsonToken.Null)            
-                return null;            
+                return null;
             else if(reader.Token == JsonToken.String)
                 return new MemoryStream(Convert.FromBase64String((string)reader.Value));
 
@@ -252,7 +326,7 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
         }
 
         private static object ParseMap(JsonReader reader, Type mapType)
-        {            
+        {    
             var keyType = mapType.GetGenericArguments()[0];
             var valueType = mapType.GetGenericArguments()[1];
             var map = Activator.CreateInstance(mapType) as IDictionary;
@@ -317,7 +391,7 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
         }
 
         private static object ParseArray(JsonReader reader, Type listType)
-        {            
+        {    
             var itemType = listType.GetGenericArguments()[0];
             var list = Activator.CreateInstance(listType) as IList;
             while(reader.Read())
@@ -356,7 +430,7 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
                     else if (itemType == typeof(DateTime))
                         list.Add(ConvertToDateTime(value));
                     else
-                        list.Add(value);                    
+                        list.Add(value);        
                 }
                 else if (token == JsonToken.ArrayEnd)
                 {

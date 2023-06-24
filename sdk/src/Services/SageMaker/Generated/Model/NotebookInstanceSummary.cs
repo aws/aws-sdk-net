@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Provides summary information for an Amazon SageMaker notebook instance.
+    /// Provides summary information for an SageMaker notebook instance.
     /// </summary>
     public partial class NotebookInstanceSummary
     {
@@ -53,7 +53,7 @@ namespace Amazon.SageMaker.Model
         /// Web Services CodeCommit</a> or in any other Git repository. These repositories are
         /// cloned at the same level as the default repository of your notebook instance. For
         /// more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
-        /// Git Repositories with Amazon SageMaker Notebook Instances</a>.
+        /// Git Repositories with SageMaker Notebook Instances</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=3)]
@@ -96,7 +96,7 @@ namespace Amazon.SageMaker.Model
         /// Web Services CodeCommit</a> or in any other Git repository. When you open a notebook
         /// instance, it opens in the directory that contains this repository. For more information,
         /// see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
-        /// Git Repositories with Amazon SageMaker Notebook Instances</a>.
+        /// Git Repositories with SageMaker Notebook Instances</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -232,7 +232,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Url. 
         /// <para>
-        /// The URL that you use to connect to the Jupyter instance running in your notebook instance.
+        /// The URL that you use to connect to the Jupyter notebook running in your notebook instance.
         /// 
         /// </para>
         /// </summary>

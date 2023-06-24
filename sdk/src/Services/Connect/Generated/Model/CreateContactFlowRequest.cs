@@ -30,11 +30,11 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateContactFlow operation.
-    /// Creates a contact flow for the specified Amazon Connect instance.
+    /// Creates a flow for the specified Amazon Connect instance.
     /// 
     ///  
     /// <para>
-    /// You can also create and update contact flows using the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon
+    /// You can also create and update flows using the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language.html">Amazon
     /// Connect Flow language</a>.
     /// </para>
     /// </summary>
@@ -50,7 +50,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Content. 
         /// <para>
-        /// The content of the contact flow. 
+        /// The content of the flow. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -69,7 +69,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description of the contact flow. 
+        /// The description of the flow. 
         /// </para>
         /// </summary>
         public string Description
@@ -106,7 +106,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the contact flow.
+        /// The name of the flow.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
@@ -125,7 +125,8 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// One or more tags.
+        /// The tags used to organize, track, or control access for this resource. For example,
+        /// { "tags": {"key1":"value1", "key2":"value2"} }.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
@@ -144,8 +145,8 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of the contact flow. For descriptions of the available types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-contact-flow.html#contact-flow-types">Choose
-        /// a Contact Flow Type</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// The type of the flow. For descriptions of the available types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-contact-flow.html#contact-flow-types">Choose
+        /// a flow type</a> in the <i>Amazon Connect Administrator Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

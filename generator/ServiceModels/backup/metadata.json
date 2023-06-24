@@ -1,5 +1,6 @@
 {
   "active": true,
   "synopsis": "AWS Backup is a fully managed backup service that makes it easy to centralize and automate the back up of data across AWS services in the cloud as well as on-premises.",
-  "generate-client-constructors": true
+  "generate-client-constructors": true,
+  "legacy-service-id": "Backup"
 }

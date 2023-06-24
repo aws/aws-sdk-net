@@ -44,6 +44,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class CreateAssociationRequest : AmazonSimpleSystemsManagementRequest
     {
+        private AlarmConfiguration _alarmConfiguration;
         private bool? _applyOnlyAtCronInterval;
         private string _associationName;
         private string _automationTargetParameterName;
@@ -57,8 +58,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         private InstanceAssociationOutputLocation _outputLocation;
         private Dictionary<string, List<string>> _parameters = new Dictionary<string, List<string>>();
         private string _scheduleExpression;
+        private int? _scheduleOffset;
         private AssociationSyncCompliance _syncCompliance;
+        private List<Tag> _tags = new List<Tag>();
         private List<TargetLocation> _targetLocations = new List<TargetLocation>();
+        private List<Dictionary<string, List<string>>> _targetMaps = new List<Dictionary<string, List<string>>>();
         private List<Target> _targets = new List<Target>();
 
         /// <summary>
@@ -70,11 +74,26 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Instantiates CreateAssociationRequest with the parameterized properties
         /// </summary>
         /// <param name="instanceId">The managed node ID. <note>  <code>InstanceId</code> has been deprecated. To specify a managed node ID for an association, use the <code>Targets</code> parameter. Requests that include the parameter <code>InstanceID</code> with Systems Manager documents (SSM documents) that use schema version 2.0 or later will fail. In addition, if you use the parameter <code>InstanceId</code>, you can't use the parameters <code>AssociationName</code>, <code>DocumentVersion</code>, <code>MaxErrors</code>, <code>MaxConcurrency</code>, <code>OutputLocation</code>, or <code>ScheduleExpression</code>. To use these parameters, you must use the <code>Targets</code> parameter. </note></param>
-        /// <param name="name">The name of the SSM Command document or Automation runbook that contains the configuration information for the managed node. You can specify Amazon Web Services-predefined documents, documents you created, or a document that is shared with you from another account. For Systems Manager documents (SSM documents) that are shared with you from other Amazon Web Services accounts, you must specify the complete SSM document ARN, in the following format:  <code>arn:<i>partition</i>:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i> </code>  For example:  <code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code>  For Amazon Web Services-predefined documents and SSM documents you created in your account, you only need to specify the document name. For example, <code>AWS-ApplyPatchBaseline</code> or <code>My-Document</code>.</param>
+        /// <param name="name">The name of the SSM Command document or Automation runbook that contains the configuration information for the managed node. You can specify Amazon Web Services-predefined documents, documents you created, or a document that is shared with you from another Amazon Web Services account. For Systems Manager documents (SSM documents) that are shared with you from other Amazon Web Services accounts, you must specify the complete SSM document ARN, in the following format:  <code>arn:<i>partition</i>:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i> </code>  For example:  <code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code>  For Amazon Web Services-predefined documents and SSM documents you created in your account, you only need to specify the document name. For example, <code>AWS-ApplyPatchBaseline</code> or <code>My-Document</code>.</param>
         public CreateAssociationRequest(string instanceId, string name)
         {
             _instanceId = instanceId;
             _name = name;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AlarmConfiguration.
+        /// </summary>
+        public AlarmConfiguration AlarmConfiguration
+        {
+            get { return this._alarmConfiguration; }
+            set { this._alarmConfiguration = value; }
+        }
+
+        // Check to see if AlarmConfiguration property is set
+        internal bool IsSetAlarmConfiguration()
+        {
+            return this._alarmConfiguration != null;
         }
 
         /// <summary>
@@ -182,6 +201,16 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The document version you want to associate with the target(s). Can be a specific version
         /// or the default version.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// State Manager doesn't support running associations that use a new version of a document
+        /// if that document is shared from another account. State Manager always runs the <code>default</code>
+        /// version of a document if shared from another account, even though the Systems Manager
+        /// console shows that a new version was processed. If you want to run an association
+        /// using a new version of a document shared form another account, you must set the document
+        /// version to <code>default</code>.
+        /// </para>
+        ///  </important>
         /// </summary>
         public string DocumentVersion
         {
@@ -295,7 +324,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         ///  
         /// <para>
         /// You can specify Amazon Web Services-predefined documents, documents you created, or
-        /// a document that is shared with you from another account.
+        /// a document that is shared with you from another Amazon Web Services account.
         /// </para>
         ///  
         /// <para>
@@ -361,6 +390,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The parameters for the runtime configuration of the document.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public Dictionary<string, List<string>> Parameters
         {
             get { return this._parameters; }
@@ -390,6 +420,37 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetScheduleExpression()
         {
             return this._scheduleExpression != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ScheduleOffset. 
+        /// <para>
+        /// Number of days to wait after the scheduled day to run an association. For example,
+        /// if you specified a cron schedule of <code>cron(0 0 ? * THU#2 *)</code>, you could
+        /// specify an offset of 3 to run the association each Sunday after the second Thursday
+        /// of the month. For more information about cron schedules for associations, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/reference-cron-and-rate-expressions.html">Reference:
+        /// Cron and rate expressions for Systems Manager</a> in the <i>Amazon Web Services Systems
+        /// Manager User Guide</i>. 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// To use offsets, you must specify the <code>ApplyOnlyAtCronInterval</code> parameter.
+        /// This option tells the system not to run an association immediately after you create
+        /// it. 
+        /// </para>
+        ///  </note>
+        /// </summary>
+        [AWSProperty(Min=1, Max=6)]
+        public int ScheduleOffset
+        {
+            get { return this._scheduleOffset.GetValueOrDefault(); }
+            set { this._scheduleOffset = value; }
+        }
+
+        // Check to see if ScheduleOffset property is set
+        internal bool IsSetScheduleOffset()
+        {
+            return this._scheduleOffset.HasValue; 
         }
 
         /// <summary>
@@ -426,6 +487,29 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// Adds or overwrites one or more tags for a State Manager association. <i>Tags</i> are
+        /// metadata that you can assign to your Amazon Web Services resources. Tags enable you
+        /// to categorize your resources in different ways, for example, by purpose, owner, or
+        /// environment. Each tag consists of a key and an optional value, both of which you define.
+        /// 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=1000)]
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property TargetLocations. 
         /// <para>
         /// A location is a combination of Amazon Web Services Regions and Amazon Web Services
@@ -444,6 +528,26 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetTargetLocations()
         {
             return this._targetLocations != null && this._targetLocations.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TargetMaps. 
+        /// <para>
+        /// A key-value mapping of document parameters to target resources. Both Targets and TargetMaps
+        /// can't be specified together.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=300)]
+        public List<Dictionary<string, List<string>>> TargetMaps
+        {
+            get { return this._targetMaps; }
+            set { this._targetMaps = value; }
+        }
+
+        // Check to see if TargetMaps property is set
+        internal bool IsSetTargetMaps()
+        {
+            return this._targetMaps != null && this._targetMaps.Count > 0; 
         }
 
         /// <summary>

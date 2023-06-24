@@ -34,7 +34,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SystemControl Marshaller
-    /// </summary>       
+    /// </summary>
     public class SystemControlMarshaller : IRequestMarshaller<SystemControl, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SystemControlMarshaller Instance = new SystemControlMarshaller();
 
     }

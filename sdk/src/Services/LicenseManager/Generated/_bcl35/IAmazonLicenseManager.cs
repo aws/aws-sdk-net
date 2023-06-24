@@ -246,6 +246,13 @@ namespace Amazon.LicenseManager
 
         /// <summary>
         /// Checks out the specified license.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// If the account that created the license is the same that is performing the check out,
+        /// you must specify the account as the beneficiary.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CheckoutLicense service method.</param>
         /// 
@@ -318,7 +325,9 @@ namespace Amazon.LicenseManager
 
         /// <summary>
         /// Creates a grant for the specified license. A grant shares the use of license entitlements
-        /// with specific Amazon Web Services accounts.
+        /// with a specific Amazon Web Services account, an organization, or an organizational
+        /// unit (OU). For more information, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/granted-licenses.html">Granted
+        /// licenses in License Manager</a> in the <i>License Manager User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateGrant service method.</param>
         /// 
@@ -380,7 +389,8 @@ namespace Amazon.LicenseManager
 
 
         /// <summary>
-        /// Creates a new version of the specified grant.
+        /// Creates a new version of the specified grant. For more information, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/granted-licenses.html">Granted
+        /// licenses in License Manager</a> in the <i>License Manager User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateGrantVersion service method.</param>
         /// 
@@ -2220,7 +2230,9 @@ namespace Amazon.LicenseManager
 
 
         /// <summary>
-        /// Lists grants that are received but not accepted.
+        /// Lists grants that are received. Received grants are grants created while specifying
+        /// the recipient as this Amazon Web Services account, your organization, or an organizational
+        /// unit (OU) to which this member account belongs.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListReceivedGrants service method.</param>
         /// 
@@ -2275,6 +2287,68 @@ namespace Amazon.LicenseManager
         /// <returns>Returns a  ListReceivedGrantsResult from LicenseManager.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListReceivedGrants">REST API Reference for ListReceivedGrants Operation</seealso>
         ListReceivedGrantsResponse EndListReceivedGrants(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListReceivedGrantsForOrganization
+
+
+        /// <summary>
+        /// Lists the grants received for all accounts in the organization.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListReceivedGrantsForOrganization service method.</param>
+        /// 
+        /// <returns>The response from the ListReceivedGrantsForOrganization service method, as returned by LicenseManager.</returns>
+        /// <exception cref="Amazon.LicenseManager.Model.AccessDeniedException">
+        /// Access to resource denied.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
+        /// The Amazon Web Services user account does not have permission to perform the action.
+        /// Check the IAM policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
+        /// Too many requests have been submitted. Try again after a brief wait.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ResourceLimitExceededException">
+        /// Your resource limits have been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListReceivedGrantsForOrganization">REST API Reference for ListReceivedGrantsForOrganization Operation</seealso>
+        ListReceivedGrantsForOrganizationResponse ListReceivedGrantsForOrganization(ListReceivedGrantsForOrganizationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListReceivedGrantsForOrganization operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListReceivedGrantsForOrganization operation on AmazonLicenseManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListReceivedGrantsForOrganization
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListReceivedGrantsForOrganization">REST API Reference for ListReceivedGrantsForOrganization Operation</seealso>
+        IAsyncResult BeginListReceivedGrantsForOrganization(ListReceivedGrantsForOrganizationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListReceivedGrantsForOrganization operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListReceivedGrantsForOrganization.</param>
+        /// 
+        /// <returns>Returns a  ListReceivedGrantsForOrganizationResult from LicenseManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListReceivedGrantsForOrganization">REST API Reference for ListReceivedGrantsForOrganization Operation</seealso>
+        ListReceivedGrantsForOrganizationResponse EndListReceivedGrantsForOrganization(IAsyncResult asyncResult);
 
         #endregion
         
@@ -2337,6 +2411,68 @@ namespace Amazon.LicenseManager
         /// <returns>Returns a  ListReceivedLicensesResult from LicenseManager.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListReceivedLicenses">REST API Reference for ListReceivedLicenses Operation</seealso>
         ListReceivedLicensesResponse EndListReceivedLicenses(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListReceivedLicensesForOrganization
+
+
+        /// <summary>
+        /// Lists the licenses received for all accounts in the organization.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListReceivedLicensesForOrganization service method.</param>
+        /// 
+        /// <returns>The response from the ListReceivedLicensesForOrganization service method, as returned by LicenseManager.</returns>
+        /// <exception cref="Amazon.LicenseManager.Model.AccessDeniedException">
+        /// Access to resource denied.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
+        /// The Amazon Web Services user account does not have permission to perform the action.
+        /// Check the IAM policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
+        /// Too many requests have been submitted. Try again after a brief wait.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ResourceLimitExceededException">
+        /// Your resource limits have been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListReceivedLicensesForOrganization">REST API Reference for ListReceivedLicensesForOrganization Operation</seealso>
+        ListReceivedLicensesForOrganizationResponse ListReceivedLicensesForOrganization(ListReceivedLicensesForOrganizationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListReceivedLicensesForOrganization operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListReceivedLicensesForOrganization operation on AmazonLicenseManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListReceivedLicensesForOrganization
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListReceivedLicensesForOrganization">REST API Reference for ListReceivedLicensesForOrganization Operation</seealso>
+        IAsyncResult BeginListReceivedLicensesForOrganization(ListReceivedLicensesForOrganizationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListReceivedLicensesForOrganization operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListReceivedLicensesForOrganization.</param>
+        /// 
+        /// <returns>Returns a  ListReceivedLicensesForOrganizationResult from LicenseManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListReceivedLicensesForOrganization">REST API Reference for ListReceivedLicensesForOrganization Operation</seealso>
+        ListReceivedLicensesForOrganizationResponse EndListReceivedLicensesForOrganization(IAsyncResult asyncResult);
 
         #endregion
         

@@ -33,9 +33,28 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class GetCurrentMetricDataResponse : AmazonWebServiceResponse
     {
+        private long? _approximateTotalCount;
         private DateTime? _dataSnapshotTime;
         private List<CurrentMetricResult> _metricResults = new List<CurrentMetricResult>();
         private string _nextToken;
+
+        /// <summary>
+        /// Gets and sets the property ApproximateTotalCount. 
+        /// <para>
+        /// The total count of the result, regardless of the current page size. 
+        /// </para>
+        /// </summary>
+        public long ApproximateTotalCount
+        {
+            get { return this._approximateTotalCount.GetValueOrDefault(); }
+            set { this._approximateTotalCount = value; }
+        }
+
+        // Check to see if ApproximateTotalCount property is set
+        internal bool IsSetApproximateTotalCount()
+        {
+            return this._approximateTotalCount.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property DataSnapshotTime. 

@@ -49,7 +49,7 @@ namespace Amazon.FinSpaceData.Model
         /// The unique resource identifier for a Dataset.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=255)]
+        [AWSProperty(Min=1, Max=255)]
         public string Alias
         {
             get { return this._alias; }
@@ -65,7 +65,7 @@ namespace Amazon.FinSpaceData.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// A token used to ensure idempotency.
+        /// A token that ensures idempotency. This token expires in 10 minutes.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -87,7 +87,7 @@ namespace Amazon.FinSpaceData.Model
         /// Description of a Dataset.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=256)]
+        [AWSProperty(Max=1000)]
         public string DatasetDescription
         {
             get { return this._datasetDescription; }
@@ -126,11 +126,11 @@ namespace Amazon.FinSpaceData.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>TABULAR</code> - Data is structured in a tabular format.
+        ///  <code>TABULAR</code> – Data is structured in a tabular format.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NON_TABULAR</code> - Data is structured in a non-tabular format.
+        ///  <code>NON_TABULAR</code> – Data is structured in a non-tabular format.
         /// </para>
         ///  </li> </ul>
         /// </summary>

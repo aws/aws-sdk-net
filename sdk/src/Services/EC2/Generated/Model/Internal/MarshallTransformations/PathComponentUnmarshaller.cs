@@ -60,6 +60,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.AclRule = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("additionalDetailSet/item", targetDepth))
+                    {
+                        var unmarshaller = AdditionalDetailUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.AdditionalDetails.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("attachedTo", targetDepth))
                     {
                         var unmarshaller = AnalysisComponentUnmarshaller.Instance;
@@ -76,6 +83,31 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = AnalysisComponentUnmarshaller.Instance;
                         unmarshalledObject.DestinationVpc = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("elasticLoadBalancerListener", targetDepth))
+                    {
+                        var unmarshaller = AnalysisComponentUnmarshaller.Instance;
+                        unmarshalledObject.ElasticLoadBalancerListener = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("explanationSet/item", targetDepth))
+                    {
+                        var unmarshaller = ExplanationUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Explanations.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("firewallStatefulRule", targetDepth))
+                    {
+                        var unmarshaller = FirewallStatefulRuleUnmarshaller.Instance;
+                        unmarshalledObject.FirewallStatefulRule = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("firewallStatelessRule", targetDepth))
+                    {
+                        var unmarshaller = FirewallStatelessRuleUnmarshaller.Instance;
+                        unmarshalledObject.FirewallStatelessRule = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("inboundHeader", targetDepth))
@@ -108,6 +140,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.SequenceNumber = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("serviceName", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ServiceName = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("sourceVpc", targetDepth))
                     {
                         var unmarshaller = AnalysisComponentUnmarshaller.Instance;
@@ -118,6 +156,18 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = AnalysisComponentUnmarshaller.Instance;
                         unmarshalledObject.Subnet = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("transitGateway", targetDepth))
+                    {
+                        var unmarshaller = AnalysisComponentUnmarshaller.Instance;
+                        unmarshalledObject.TransitGateway = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("transitGatewayRouteTableRoute", targetDepth))
+                    {
+                        var unmarshaller = TransitGatewayRouteTableRouteUnmarshaller.Instance;
+                        unmarshalledObject.TransitGatewayRouteTableRoute = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("vpc", targetDepth))

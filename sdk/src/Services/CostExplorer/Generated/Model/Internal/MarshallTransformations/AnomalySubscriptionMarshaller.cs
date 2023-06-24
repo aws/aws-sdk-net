@@ -34,7 +34,7 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AnomalySubscription Marshaller
-    /// </summary>       
+    /// </summary>
     public class AnomalySubscriptionMarshaller : IRequestMarshaller<AnomalySubscription, JsonMarshallerContext> 
     {
         /// <summary>
@@ -102,11 +102,22 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Threshold);
             }
 
+            if(requestObject.IsSetThresholdExpression())
+            {
+                context.Writer.WritePropertyName("ThresholdExpression");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ExpressionMarshaller.Instance;
+                marshaller.Marshall(requestObject.ThresholdExpression, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AnomalySubscriptionMarshaller Instance = new AnomalySubscriptionMarshaller();
 
     }

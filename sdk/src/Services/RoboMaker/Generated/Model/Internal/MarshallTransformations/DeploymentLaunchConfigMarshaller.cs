@@ -34,7 +34,7 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DeploymentLaunchConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class DeploymentLaunchConfigMarshaller : IRequestMarshaller<DeploymentLaunchConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -87,7 +87,7 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DeploymentLaunchConfigMarshaller Instance = new DeploymentLaunchConfigMarshaller();
 
     }

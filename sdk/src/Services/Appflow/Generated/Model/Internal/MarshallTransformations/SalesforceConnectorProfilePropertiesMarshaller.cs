@@ -34,7 +34,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SalesforceConnectorProfileProperties Marshaller
-    /// </summary>       
+    /// </summary>
     public class SalesforceConnectorProfilePropertiesMarshaller : IRequestMarshaller<SalesforceConnectorProfileProperties, JsonMarshallerContext> 
     {
         /// <summary>
@@ -57,11 +57,17 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.IsSandboxEnvironment);
             }
 
+            if(requestObject.IsSetUsePrivateLinkForMetadataAndAuthorization())
+            {
+                context.Writer.WritePropertyName("usePrivateLinkForMetadataAndAuthorization");
+                context.Writer.Write(requestObject.UsePrivateLinkForMetadataAndAuthorization);
+            }
+
         }
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SalesforceConnectorProfilePropertiesMarshaller Instance = new SalesforceConnectorProfilePropertiesMarshaller();
 
     }

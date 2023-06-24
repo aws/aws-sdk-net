@@ -59,9 +59,9 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// A token to indicate the location of the next environment account connection in the
-        /// array of environment account connections, after the current requested list of environment
-        /// account connections.
+        /// A token that indicates the location of the next environment account connection in
+        /// the array of environment account connections, after the current requested list of
+        /// environment account connections.
         /// </para>
         /// </summary>
         public string NextToken

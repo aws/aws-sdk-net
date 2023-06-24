@@ -34,7 +34,7 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ImageFile Marshaller
-    /// </summary>       
+    /// </summary>
     public class ImageFileMarshaller : IRequestMarshaller<ImageFile, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ImageFileMarshaller Instance = new ImageFileMarshaller();
 
     }

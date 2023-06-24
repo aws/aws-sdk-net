@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kendra.Model
 {
     /// <summary>
-    /// Information on the processing of <code>PUT</code> and <code>DELETE</code> actions
-    /// for mapping users to their groups.
+    /// Summary information on the processing of <code>PUT</code> and <code>DELETE</code>
+    /// actions for mapping users to their groups.
     /// </summary>
     public partial class GroupOrderingIdSummary
     {
@@ -63,8 +63,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property LastUpdatedAt. 
         /// <para>
-        /// The last date-time an action was updated. An action can be a <code>PUT</code> or <code>DELETE</code>
-        /// action for mapping users to their groups.
+        /// The Unix timestamp when an action was last updated. An action can be a <code>PUT</code>
+        /// or <code>DELETE</code> action for mapping users to their groups.
         /// </para>
         /// </summary>
         public DateTime LastUpdatedAt
@@ -102,8 +102,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property ReceivedAt. 
         /// <para>
-        /// The date-time an action was received by Amazon Kendra. An action can be a <code>PUT</code>
-        /// or <code>DELETE</code> action for mapping users to their groups.
+        /// The Unix timestamp when an action was received by Amazon Kendra. An action can be
+        /// a <code>PUT</code> or <code>DELETE</code> action for mapping users to their groups.
         /// </para>
         /// </summary>
         public DateTime ReceivedAt

@@ -61,7 +61,15 @@ namespace Amazon.ForecastService.Model
     /// query or export the forecast. Use the <a>DescribeForecast</a> operation to get the
     /// status.
     /// </para>
-    ///  </note>
+    ///  </note> 
+    /// <para>
+    /// By default, a forecast includes predictions for every item (<code>item_id</code>)
+    /// in the dataset group that was used to train the predictor. However, you can use the
+    /// <code>TimeSeriesSelector</code> object to generate a forecast on a subset of time
+    /// series. Forecast creation is skipped for any time series that you specify that are
+    /// not in the input dataset. The forecast export file will not contain these time series
+    /// or their forecasted values.
+    /// </para>
     /// </summary>
     public partial class CreateForecastRequest : AmazonForecastServiceRequest
     {
@@ -69,6 +77,7 @@ namespace Amazon.ForecastService.Model
         private List<string> _forecastTypes = new List<string>();
         private string _predictorArn;
         private List<Tag> _tags = new List<Tag>();
+        private TimeSeriesSelector _timeSeriesSelector;
 
         /// <summary>
         /// Gets and sets the property ForecastName. 
@@ -96,7 +105,13 @@ namespace Amazon.ForecastService.Model
         /// specify up to 5 quantiles per forecast</b>. Accepted values include <code>0.01 to
         /// 0.99</code> (increments of .01 only) and <code>mean</code>. The mean forecast is different
         /// from the median (0.50) when the distribution is not symmetric (for example, Beta and
-        /// Negative Binomial). The default value is <code>["0.1", "0.5", "0.9"]</code>.
+        /// Negative Binomial). 
+        /// </para>
+        ///  
+        /// <para>
+        /// The default quantiles are the quantiles you specified during predictor creation. If
+        /// you didn't specify quantiles, the default values are <code>["0.1", "0.5", "0.9"]</code>.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=20)]
@@ -172,11 +187,11 @@ namespace Amazon.ForecastService.Model
         ///  </li> <li> 
         /// <para>
         /// Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination
-        /// of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete
-        /// tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code>
-        /// as its prefix but the key does not, then Forecast considers it to be a user tag and
-        /// will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code>
-        /// do not count against your tags per resource limit.
+        /// of such as a prefix for keys as it is reserved for Amazon Web Services use. You cannot
+        /// edit or delete tag keys with this prefix. Values can have this prefix. If a tag value
+        /// has <code>aws</code> as its prefix but the key does not, then Forecast considers it
+        /// to be a user tag and will count against the limit of 50 tags. Tags with only the key
+        /// prefix of <code>aws</code> do not count against your tags per resource limit.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -191,6 +206,42 @@ namespace Amazon.ForecastService.Model
         internal bool IsSetTags()
         {
             return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TimeSeriesSelector. 
+        /// <para>
+        /// Defines the set of time series that are used to create the forecasts in a <code>TimeSeriesIdentifiers</code>
+        /// object.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <code>TimeSeriesIdentifiers</code> object needs the following information:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>DataSource</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Format</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Schema</code> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public TimeSeriesSelector TimeSeriesSelector
+        {
+            get { return this._timeSeriesSelector; }
+            set { this._timeSeriesSelector = value; }
+        }
+
+        // Check to see if TimeSeriesSelector property is set
+        internal bool IsSetTimeSeriesSelector()
+        {
+            return this._timeSeriesSelector != null;
         }
 
     }

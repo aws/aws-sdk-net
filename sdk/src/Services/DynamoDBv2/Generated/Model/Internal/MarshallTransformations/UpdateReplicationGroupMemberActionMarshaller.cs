@@ -34,7 +34,7 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// UpdateReplicationGroupMemberAction Marshaller
-    /// </summary>       
+    /// </summary>
     public class UpdateReplicationGroupMemberActionMarshaller : IRequestMarshaller<UpdateReplicationGroupMemberAction, JsonMarshallerContext> 
     {
         /// <summary>
@@ -94,7 +94,7 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static UpdateReplicationGroupMemberActionMarshaller Instance = new UpdateReplicationGroupMemberActionMarshaller();
 
     }

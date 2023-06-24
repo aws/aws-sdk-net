@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.TranscribeService.Model
 {
     /// <summary>
-    /// Identifies the location of a medical transcript.
+    /// Provides you with the Amazon S3 URI you can use to access your transcript.
     /// </summary>
     public partial class MedicalTranscript
     {
@@ -38,12 +38,13 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property TranscriptFileUri. 
         /// <para>
-        /// The S3 object location of the medical transcript.
+        /// The Amazon S3 location of your transcript. You can use this URI to access or download
+        /// your transcript.
         /// </para>
         ///  
         /// <para>
-        /// Use this URI to access the medical transcript. This URI points to the S3 bucket you
-        /// created to store the medical transcript.
+        /// Note that this is the Amazon S3 location you specified in your request using the <code>OutputBucketName</code>
+        /// parameter.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2000)]

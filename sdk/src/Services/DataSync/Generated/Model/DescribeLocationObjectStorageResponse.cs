@@ -38,19 +38,18 @@ namespace Amazon.DataSync.Model
         private DateTime? _creationTime;
         private string _locationArn;
         private string _locationUri;
+        private MemoryStream _serverCertificate;
         private int? _serverPort;
         private ObjectStorageServerProtocol _serverProtocol;
 
         /// <summary>
         /// Gets and sets the property AccessKey. 
         /// <para>
-        /// Optional. The access key is used if credentials are required to access the self-managed
-        /// object storage server. If your object storage requires a user name and password to
-        /// authenticate, use <code>AccessKey</code> and <code>SecretKey</code> to provide the
-        /// user name and password, respectively.
+        /// The access key (for example, a user name) required to authenticate with the object
+        /// storage system.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=8, Max=200)]
+        [AWSProperty(Min=1, Max=200)]
         public string AccessKey
         {
             get { return this._accessKey; }
@@ -66,8 +65,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property AgentArns. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the agents associated with the self-managed object
-        /// storage server location.
+        /// The ARNs of the DataSync agents that can securely connect with your location.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=4)]
@@ -86,7 +84,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property CreationTime. 
         /// <para>
-        /// The time that the self-managed object storage server agent was created.
+        /// The time that the location was created.
         /// </para>
         /// </summary>
         public DateTime CreationTime
@@ -104,8 +102,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property LocationArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the self-managed object storage server location
-        /// to describe.
+        /// The ARN of the object storage system location.
         /// </para>
         /// </summary>
         [AWSProperty(Max=128)]
@@ -124,10 +121,10 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property LocationUri. 
         /// <para>
-        /// The URL of the source self-managed object storage server location that was described.
+        /// The URL of the object storage system location.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=4356)]
+        [AWSProperty(Max=4360)]
         public string LocationUri
         {
             get { return this._locationUri; }
@@ -141,10 +138,30 @@ namespace Amazon.DataSync.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ServerCertificate. 
+        /// <para>
+        /// The self-signed certificate that DataSync uses to securely authenticate with your
+        /// object storage system.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=32768)]
+        public MemoryStream ServerCertificate
+        {
+            get { return this._serverCertificate; }
+            set { this._serverCertificate = value; }
+        }
+
+        // Check to see if ServerCertificate property is set
+        internal bool IsSetServerCertificate()
+        {
+            return this._serverCertificate != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ServerPort. 
         /// <para>
-        /// The port that your self-managed object storage server accepts inbound network traffic
-        /// on. The server port is set by default to TCP 80 (HTTP) or TCP 443 (HTTPS).
+        /// The port that your object storage server accepts inbound network traffic on (for example,
+        /// port 443).
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=65536)]
@@ -163,8 +180,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property ServerProtocol. 
         /// <para>
-        /// The protocol that the object storage server uses to communicate. Valid values are
-        /// HTTP or HTTPS.
+        /// The protocol that your object storage system uses to communicate.
         /// </para>
         /// </summary>
         public ObjectStorageServerProtocol ServerProtocol

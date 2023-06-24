@@ -34,7 +34,7 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ResolverRuleConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class ResolverRuleConfigMarshaller : IRequestMarshaller<ResolverRuleConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -77,7 +77,7 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ResolverRuleConfigMarshaller Instance = new ResolverRuleConfigMarshaller();
 
     }

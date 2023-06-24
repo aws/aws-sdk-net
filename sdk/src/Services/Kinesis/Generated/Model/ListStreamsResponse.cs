@@ -34,7 +34,9 @@ namespace Amazon.Kinesis.Model
     public partial class ListStreamsResponse : AmazonWebServiceResponse
     {
         private bool? _hasMoreStreams;
+        private string _nextToken;
         private List<string> _streamNames = new List<string>();
+        private List<StreamSummary> _streamSummaries = new List<StreamSummary>();
 
         /// <summary>
         /// Gets and sets the property HasMoreStreams. 
@@ -56,6 +58,22 @@ namespace Amazon.Kinesis.Model
         }
 
         /// <summary>
+        /// Gets and sets the property NextToken.
+        /// </summary>
+        [AWSProperty(Min=1, Max=1048576)]
+        public string NextToken
+        {
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
+        }
+
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
+        {
+            return this._nextToken != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property StreamNames. 
         /// <para>
         /// The names of the streams that are associated with the Amazon Web Services account
@@ -73,6 +91,21 @@ namespace Amazon.Kinesis.Model
         internal bool IsSetStreamNames()
         {
             return this._streamNames != null && this._streamNames.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property StreamSummaries.
+        /// </summary>
+        public List<StreamSummary> StreamSummaries
+        {
+            get { return this._streamSummaries; }
+            set { this._streamSummaries = value; }
+        }
+
+        // Check to see if StreamSummaries property is set
+        internal bool IsSetStreamSummaries()
+        {
+            return this._streamSummaries != null && this._streamSummaries.Count > 0; 
         }
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ActionThreshold Marshaller
-    /// </summary>       
+    /// </summary>
     public class ActionThresholdMarshaller : IRequestMarshaller<ActionThreshold, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ActionThresholdMarshaller Instance = new ActionThresholdMarshaller();
 
     }

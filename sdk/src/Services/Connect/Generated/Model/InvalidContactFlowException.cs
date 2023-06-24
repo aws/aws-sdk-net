@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// The contact flow is not valid.
+    /// The flow is not valid.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
@@ -126,7 +126,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Problems. 
         /// <para>
-        /// The problems with the contact flow. Please fix before trying again.
+        /// The problems with the flow. Please fix before trying again.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

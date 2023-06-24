@@ -29,21 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.APIGateway.Model
 {
     /// <summary>
-    /// Represents a custom domain name as a user-friendly host name of an API (<a>RestApi</a>).
-    /// 
-    ///  <div class="Remarks"> 
-    /// <para>
-    /// When you deploy an API, API Gateway creates a default host name for the API. This
-    /// default API host name is of the <code>{restapi-id}.execute-api.{region}.amazonaws.com</code>
-    /// format. With the default host name, you can access the API's root resource with the
-    /// URL of <code>https://{restapi-id}.execute-api.{region}.amazonaws.com/{stage}/</code>.
-    /// When you set up a custom domain name of <code>apis.example.com</code> for this API,
-    /// you can then access the same resource using the URL of the <code>https://apis.examples.com/myApi</code>,
-    /// where <code>myApi</code> is the base path mapping (<a>BasePathMapping</a>) of your
-    /// API under the custom domain name. 
-    /// </para>
-    ///  </div> <div class="seeAlso"> <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-custom-domains.html">Set
-    /// a Custom Host Name for an API</a> </div>
+    /// Represents a custom domain name as a user-friendly host name of an API (RestApi).
     /// </summary>
     public partial class DomainName
     {
@@ -128,8 +114,7 @@ namespace Amazon.APIGateway.Model
         /// The domain name of the Amazon CloudFront distribution associated with this custom
         /// domain name for an edge-optimized endpoint. You set up this association when adding
         /// a DNS record pointing the custom domain name to this distribution name. For more information
-        /// about CloudFront distributions, see the <a href="https://aws.amazon.com/documentation/cloudfront/"
-        /// target="_blank">Amazon CloudFront documentation</a>.
+        /// about CloudFront distributions, see the Amazon CloudFront documentation.
         /// </para>
         /// </summary>
         public string DistributionDomainName
@@ -149,9 +134,8 @@ namespace Amazon.APIGateway.Model
         /// <para>
         /// The region-agnostic Amazon Route 53 Hosted Zone ID of the edge-optimized endpoint.
         /// The valid value is <code>Z2FDTNDATAQYW2</code> for all the regions. For more information,
-        /// see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set
-        /// up a Regional Custom Domain Name</a> and <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS
-        /// Regions and Endpoints for API Gateway</a>.
+        /// see Set up a Regional Custom Domain Name and AWS Regions and Endpoints for API Gateway.
+        /// 
         /// </para>
         /// </summary>
         public string DistributionHostedZoneId
@@ -169,11 +153,10 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property DomainNameStatus. 
         /// <para>
-        /// The status of the <a>DomainName</a> migration. The valid values are <code>AVAILABLE</code>,
-        /// <code>UPDATING</code>, <code>PENDING_CERTIFICATE_REIMPORT</code>, and <code>PENDING_OWNERSHIP_VERIFICATION</code>.
-        /// If the status is <code>UPDATING</code>, the domain cannot be modified further until
-        /// the existing operation is complete. If it is <code>AVAILABLE</code>, the domain can
-        /// be updated.
+        /// The status of the DomainName migration. The valid values are <code>AVAILABLE</code>
+        /// and <code>UPDATING</code>. If the status is <code>UPDATING</code>, the domain cannot
+        /// be modified further until the existing operation is complete. If it is <code>AVAILABLE</code>,
+        /// the domain can be updated.
         /// </para>
         /// </summary>
         public DomainNameStatus DomainNameStatus
@@ -191,7 +174,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property DomainNameStatusMessage. 
         /// <para>
-        /// An optional text message containing detailed information about status of the <a>DomainName</a>
+        /// An optional text message containing detailed information about status of the DomainName
         /// migration.
         /// </para>
         /// </summary>
@@ -210,8 +193,8 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property EndpointConfiguration. 
         /// <para>
-        /// The endpoint configuration of this <a>DomainName</a> showing the endpoint types of
-        /// the domain name.
+        /// The endpoint configuration of this DomainName showing the endpoint types of the domain
+        /// name. 
         /// </para>
         /// </summary>
         public EndpointConfiguration EndpointConfiguration
@@ -346,9 +329,8 @@ namespace Amazon.APIGateway.Model
         /// Gets and sets the property RegionalHostedZoneId. 
         /// <para>
         /// The region-specific Amazon Route 53 Hosted Zone ID of the regional endpoint. For more
-        /// information, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set
-        /// up a Regional Custom Domain Name</a> and <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS
-        /// Regions and Endpoints for API Gateway</a>.
+        /// information, see Set up a Regional Custom Domain Name and AWS Regions and Endpoints
+        /// for API Gateway. 
         /// </para>
         /// </summary>
         public string RegionalHostedZoneId
@@ -366,8 +348,8 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property SecurityPolicy. 
         /// <para>
-        /// The Transport Layer Security (TLS) version + cipher suite for this <a>DomainName</a>.
-        /// The valid values are <code>TLS_1_0</code> and <code>TLS_1_2</code>.
+        /// The Transport Layer Security (TLS) version + cipher suite for this DomainName. The
+        /// valid values are <code>TLS_1_0</code> and <code>TLS_1_2</code>.
         /// </para>
         /// </summary>
         public SecurityPolicy SecurityPolicy

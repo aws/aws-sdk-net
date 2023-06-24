@@ -36,8 +36,29 @@ namespace Amazon.NetworkFirewall.Model
     /// </summary>
     public partial class ListRuleGroupsRequest : AmazonNetworkFirewallRequest
     {
+        private ResourceManagedType _managedType;
         private int? _maxResults;
         private string _nextToken;
+        private ResourceManagedStatus _scope;
+        private RuleGroupType _type;
+
+        /// <summary>
+        /// Gets and sets the property ManagedType. 
+        /// <para>
+        /// Indicates the general category of the Amazon Web Services managed rule group.
+        /// </para>
+        /// </summary>
+        public ResourceManagedType ManagedType
+        {
+            get { return this._managedType; }
+            set { this._managedType = value; }
+        }
+
+        // Check to see if ManagedType property is set
+        internal bool IsSetManagedType()
+        {
+            return this._managedType != null;
+        }
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
@@ -81,6 +102,45 @@ namespace Amazon.NetworkFirewall.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Scope. 
+        /// <para>
+        /// The scope of the request. The default setting of <code>ACCOUNT</code> or a setting
+        /// of <code>NULL</code> returns all of the rule groups in your account. A setting of
+        /// <code>MANAGED</code> returns all available managed rule groups.
+        /// </para>
+        /// </summary>
+        public ResourceManagedStatus Scope
+        {
+            get { return this._scope; }
+            set { this._scope = value; }
+        }
+
+        // Check to see if Scope property is set
+        internal bool IsSetScope()
+        {
+            return this._scope != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// Indicates whether the rule group is stateless or stateful. If the rule group is stateless,
+        /// it contains stateless rules. If it is stateful, it contains stateful rules.
+        /// </para>
+        /// </summary>
+        public RuleGroupType Type
+        {
+            get { return this._type; }
+            set { this._type = value; }
+        }
+
+        // Check to see if Type property is set
+        internal bool IsSetType()
+        {
+            return this._type != null;
         }
 
     }

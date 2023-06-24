@@ -58,7 +58,7 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             string target = "RekognitionService.StartLabelDetection";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-06-27";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-06-27";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -71,6 +71,17 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("ClientRequestToken");
                     context.Writer.Write(publicRequest.ClientRequestToken);
+                }
+
+                if(publicRequest.IsSetFeatures())
+                {
+                    context.Writer.WritePropertyName("Features");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestFeaturesListValue in publicRequest.Features)
+                    {
+                            context.Writer.Write(publicRequestFeaturesListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
                 }
 
                 if(publicRequest.IsSetJobTag())
@@ -96,6 +107,17 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetSettings())
+                {
+                    context.Writer.WritePropertyName("Settings");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = LabelDetectionSettingsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Settings, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetVideo())
                 {
                     context.Writer.WritePropertyName("Video");
@@ -107,7 +129,6 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

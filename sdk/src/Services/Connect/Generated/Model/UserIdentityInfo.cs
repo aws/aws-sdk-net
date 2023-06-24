@@ -36,6 +36,8 @@ namespace Amazon.Connect.Model
         private string _email;
         private string _firstName;
         private string _lastName;
+        private string _mobile;
+        private string _secondaryEmail;
 
         /// <summary>
         /// Gets and sets the property Email. 
@@ -94,6 +96,49 @@ namespace Amazon.Connect.Model
         internal bool IsSetLastName()
         {
             return this._lastName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Mobile. 
+        /// <para>
+        /// The user's mobile number.
+        /// </para>
+        /// </summary>
+        public string Mobile
+        {
+            get { return this._mobile; }
+            set { this._mobile = value; }
+        }
+
+        // Check to see if Mobile property is set
+        internal bool IsSetMobile()
+        {
+            return this._mobile != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SecondaryEmail. 
+        /// <para>
+        /// The user's secondary email address. If you provide a secondary email, the user receives
+        /// email notifications - other than password reset notifications - to this email address
+        /// instead of to their primary email address.
+        /// </para>
+        ///  
+        /// <para>
+        /// Pattern: <code>(?=^.{0,265}$)[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,63}</code>
+        /// 
+        /// </para>
+        /// </summary>
+        public string SecondaryEmail
+        {
+            get { return this._secondaryEmail; }
+            set { this._secondaryEmail = value; }
+        }
+
+        // Check to see if SecondaryEmail property is set
+        internal bool IsSetSecondaryEmail()
+        {
+            return this._secondaryEmail != null;
         }
 
     }

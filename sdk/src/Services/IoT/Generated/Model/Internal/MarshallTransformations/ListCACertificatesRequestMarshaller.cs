@@ -55,7 +55,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         public IRequest Marshall(ListCACertificatesRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.IoT");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-05-28";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-05-28";
             request.HttpMethod = "GET";
 
             
@@ -67,6 +67,9 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetPageSize())
                 request.Parameters.Add("pageSize", StringUtils.FromInt(publicRequest.PageSize));
+            
+            if (publicRequest.IsSetTemplateName())
+                request.Parameters.Add("templateName", StringUtils.FromString(publicRequest.TemplateName));
             request.ResourcePath = "/cacertificates";
             request.UseQueryString = true;
 

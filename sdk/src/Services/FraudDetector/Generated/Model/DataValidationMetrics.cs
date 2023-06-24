@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FraudDetector.Model
 {
     /// <summary>
-    /// The model training validation messages.
+    /// The model training data validation metrics.
     /// </summary>
     public partial class DataValidationMetrics
     {
@@ -57,7 +57,7 @@ namespace Amazon.FraudDetector.Model
         /// <summary>
         /// Gets and sets the property FileLevelMessages. 
         /// <para>
-        /// The file-specific model training validation messages.
+        /// The file-specific model training data validation messages.
         /// </para>
         /// </summary>
         public List<FileValidationMessage> FileLevelMessages

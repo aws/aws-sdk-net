@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CustomImage Marshaller
-    /// </summary>       
+    /// </summary>
     public class CustomImageMarshaller : IRequestMarshaller<CustomImage, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CustomImageMarshaller Instance = new CustomImageMarshaller();
 
     }

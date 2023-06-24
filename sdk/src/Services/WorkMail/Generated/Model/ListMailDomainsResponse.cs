@@ -40,8 +40,8 @@ namespace Amazon.WorkMail.Model
         /// Gets and sets the property MailDomains. 
         /// <para>
         /// The list of mail domain summaries, specifying domains that exist in the specified
-        /// Amazon WorkMail organization, along with the information about whether the domain
-        /// is or isn't the default.
+        /// WorkMail organization, along with the information about whether the domain is or isn't
+        /// the default.
         /// </para>
         /// </summary>
         public List<MailDomainSummary> MailDomains

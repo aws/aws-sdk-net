@@ -34,7 +34,7 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Ec2Configuration Marshaller
-    /// </summary>       
+    /// </summary>
     public class Ec2ConfigurationMarshaller : IRequestMarshaller<Ec2Configuration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -51,6 +51,12 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ImageIdOverride);
             }
 
+            if(requestObject.IsSetImageKubernetesVersion())
+            {
+                context.Writer.WritePropertyName("imageKubernetesVersion");
+                context.Writer.Write(requestObject.ImageKubernetesVersion);
+            }
+
             if(requestObject.IsSetImageType())
             {
                 context.Writer.WritePropertyName("imageType");
@@ -61,7 +67,7 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static Ec2ConfigurationMarshaller Instance = new Ec2ConfigurationMarshaller();
 
     }

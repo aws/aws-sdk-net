@@ -34,7 +34,7 @@ namespace Amazon.WAFRegional.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// GeoMatchConstraint Marshaller
-    /// </summary>       
+    /// </summary>
     public class GeoMatchConstraintMarshaller : IRequestMarshaller<GeoMatchConstraint, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.WAFRegional.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static GeoMatchConstraintMarshaller Instance = new GeoMatchConstraintMarshaller();
 
     }

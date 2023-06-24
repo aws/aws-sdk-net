@@ -124,12 +124,12 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property PreferredBackupWindow. 
         /// <para>
-        ///  The daily time range during which automated backups are created if automated backups
-        /// are enabled, using the <code>BackupRetentionPeriod</code> parameter. 
+        /// The daily time range during which automated backups are created if automated backups
+        /// are enabled, using the <code>BackupRetentionPeriod</code> parameter.
         /// </para>
         ///  
         /// <para>
-        ///  The default is a 30-minute window selected at random from an 8-hour block of time
+        /// The default is a 30-minute window selected at random from an 8-hour block of time
         /// for each Amazon Web Services Region. To see the time blocks available, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
         /// Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
         /// 

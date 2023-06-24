@@ -42,14 +42,17 @@ namespace Amazon.IoT.Model
     {
         private AbortConfig _abortConfig;
         private string _description;
+        private List<string> _destinationPackageVersions = new List<string>();
         private string _document;
         private Dictionary<string, string> _documentParameters = new Dictionary<string, string>();
         private string _documentSource;
+        private JobExecutionsRetryConfig _jobExecutionsRetryConfig;
         private JobExecutionsRolloutConfig _jobExecutionsRolloutConfig;
         private string _jobId;
         private string _jobTemplateArn;
         private string _namespaceId;
         private PresignedUrlConfig _presignedUrlConfig;
+        private SchedulingConfig _schedulingConfig;
         private List<Tag> _tags = new List<Tag>();
         private List<string> _targets = new List<string>();
         private TargetSelection _targetSelection;
@@ -58,7 +61,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property AbortConfig. 
         /// <para>
-        /// Allows you to create criteria to abort a job.
+        /// Allows you to create the criteria to abort a job.
         /// </para>
         /// </summary>
         public AbortConfig AbortConfig
@@ -93,6 +96,30 @@ namespace Amazon.IoT.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DestinationPackageVersions. 
+        /// <para>
+        /// The package version Amazon Resource Names (ARNs) that are installed on the device
+        /// when the job successfully completes. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Note:</b>The following Length Constraints relates to a single string. Up to five
+        /// strings are allowed.
+        /// </para>
+        /// </summary>
+        public List<string> DestinationPackageVersions
+        {
+            get { return this._destinationPackageVersions; }
+            set { this._destinationPackageVersions = value; }
+        }
+
+        // Check to see if DestinationPackageVersions property is set
+        internal bool IsSetDestinationPackageVersions()
+        {
+            return this._destinationPackageVersions != null && this._destinationPackageVersions.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Document. 
         /// <para>
         /// The job document. Required if you don't specify a value for <code>documentSource</code>.
@@ -114,8 +141,16 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property DocumentParameters. 
         /// <para>
-        /// Parameters of a managed template that you can specify to create the job document.
+        /// Parameters of an Amazon Web Services managed template that you can specify to create
+        /// the job document.
         /// </para>
+        ///  <note> 
+        /// <para>
+        ///  <code>documentParameters</code> can only be used when creating jobs from Amazon Web
+        /// Services managed templates. This parameter can't be used with custom job templates
+        /// or to create jobs from them.
+        /// </para>
+        ///  </note>
         /// </summary>
         public Dictionary<string, string> DocumentParameters
         {
@@ -132,28 +167,19 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property DocumentSource. 
         /// <para>
-        /// An S3 link to the job document. Required if you don't specify a value for <code>document</code>.
-        /// </para>
-        ///  <note> 
-        /// <para>
-        /// If the job document resides in an S3 bucket, you must use a placeholder link when
-        /// specifying the document.
+        /// An S3 link, or S3 object URL, to the job document. The link is an Amazon S3 object
+        /// URL and is required if you don't specify a value for <code>document</code>.
         /// </para>
         ///  
         /// <para>
-        /// The placeholder link is of the following form:
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code>
+        /// For example, <code>--document-source https://s3.<i>region-code</i>.amazonaws.com/example-firmware/device-firmware.1.0</code>
         /// 
         /// </para>
         ///  
         /// <para>
-        /// where <i>bucket</i> is your bucket name and <i>key</i> is the object in the bucket
-        /// to which you are linking.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-bucket-intro.html">Methods
+        /// for accessing a bucket</a>.
         /// </para>
-        ///  </note>
         /// </summary>
         [AWSProperty(Min=1, Max=1350)]
         public string DocumentSource
@@ -166,6 +192,24 @@ namespace Amazon.IoT.Model
         internal bool IsSetDocumentSource()
         {
             return this._documentSource != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property JobExecutionsRetryConfig. 
+        /// <para>
+        /// Allows you to create the criteria to retry a job.
+        /// </para>
+        /// </summary>
+        public JobExecutionsRetryConfig JobExecutionsRetryConfig
+        {
+            get { return this._jobExecutionsRetryConfig; }
+            set { this._jobExecutionsRetryConfig = value; }
+        }
+
+        // Check to see if JobExecutionsRetryConfig property is set
+        internal bool IsSetJobExecutionsRetryConfig()
+        {
+            return this._jobExecutionsRetryConfig != null;
         }
 
         /// <summary>
@@ -246,7 +290,6 @@ namespace Amazon.IoT.Model
         /// </para>
         ///  </note>
         /// </summary>
-        [AWSProperty(Min=1, Max=64)]
         public string NamespaceId
         {
             get { return this._namespaceId; }
@@ -275,6 +318,25 @@ namespace Amazon.IoT.Model
         internal bool IsSetPresignedUrlConfig()
         {
             return this._presignedUrlConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SchedulingConfig. 
+        /// <para>
+        /// The configuration that allows you to schedule a job for a future date and time in
+        /// addition to specifying the end behavior for each job execution.
+        /// </para>
+        /// </summary>
+        public SchedulingConfig SchedulingConfig
+        {
+            get { return this._schedulingConfig; }
+            set { this._schedulingConfig = value; }
+        }
+
+        // Check to see if SchedulingConfig property is set
+        internal bool IsSetSchedulingConfig()
+        {
+            return this._schedulingConfig != null;
         }
 
         /// <summary>
@@ -323,6 +385,13 @@ namespace Amazon.IoT.Model
         /// a job will run on a thing when the thing is added to a target group, even after the
         /// job was completed by all things originally in the group.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// We recommend that you use continuous jobs instead of snapshot jobs for dynamic thing
+        /// group targets. By using continuous jobs, devices that join the group receive the job
+        /// execution even after the job has been created.
+        /// </para>
+        ///  </note>
         /// </summary>
         public TargetSelection TargetSelection
         {

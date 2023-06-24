@@ -34,7 +34,7 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AssessmentReportsDestination Marshaller
-    /// </summary>       
+    /// </summary>
     public class AssessmentReportsDestinationMarshaller : IRequestMarshaller<AssessmentReportsDestination, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AssessmentReportsDestinationMarshaller Instance = new AssessmentReportsDestinationMarshaller();
 
     }

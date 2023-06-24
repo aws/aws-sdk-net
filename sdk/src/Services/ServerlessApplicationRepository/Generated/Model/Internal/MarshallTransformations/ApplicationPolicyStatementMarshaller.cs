@@ -34,7 +34,7 @@ namespace Amazon.ServerlessApplicationRepository.Model.Internal.MarshallTransfor
 {
     /// <summary>
     /// ApplicationPolicyStatement Marshaller
-    /// </summary>       
+    /// </summary>
     public class ApplicationPolicyStatementMarshaller : IRequestMarshaller<ApplicationPolicyStatement, JsonMarshallerContext> 
     {
         /// <summary>
@@ -88,7 +88,7 @@ namespace Amazon.ServerlessApplicationRepository.Model.Internal.MarshallTransfor
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ApplicationPolicyStatementMarshaller Instance = new ApplicationPolicyStatementMarshaller();
 
     }

@@ -56,7 +56,7 @@ namespace Amazon.LookoutforVision.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.LookoutforVision");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-11-20";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-11-20";
             request.HttpMethod = "POST";
 
             if (!publicRequest.IsSetModelVersion())
@@ -71,21 +71,28 @@ namespace Amazon.LookoutforVision.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetMaxInferenceUnits())
+                {
+                    context.Writer.WritePropertyName("MaxInferenceUnits");
+                    context.Writer.Write(publicRequest.MaxInferenceUnits);
+                }
+
                 if(publicRequest.IsSetMinInferenceUnits())
                 {
                     context.Writer.WritePropertyName("MinInferenceUnits");
                     context.Writer.Write(publicRequest.MinInferenceUnits);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
 
         
-            if(publicRequest.IsSetClientToken())
+            if (publicRequest.IsSetClientToken()) 
+            {
                 request.Headers["X-Amzn-Client-Token"] = publicRequest.ClientToken;
+            }
 
             return request;
         }

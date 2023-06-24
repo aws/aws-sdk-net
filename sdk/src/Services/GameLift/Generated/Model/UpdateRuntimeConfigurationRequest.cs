@@ -30,10 +30,10 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateRuntimeConfiguration operation.
-    /// Updates the current runtime configuration for the specified fleet, which tells GameLift
-    /// how to launch server processes on all instances in the fleet. You can update a fleet's
-    /// runtime configuration at any time after the fleet is created; it does not need to
-    /// be in <code>ACTIVE</code> status.
+    /// Updates the current runtime configuration for the specified fleet, which tells Amazon
+    /// GameLift how to launch server processes on all instances in the fleet. You can update
+    /// a fleet's runtime configuration at any time after the fleet is created; it does not
+    /// need to be in <code>ACTIVE</code> status.
     /// 
     ///  
     /// <para>
@@ -55,19 +55,7 @@ namespace Amazon.GameLift.Model
     ///  
     /// <para>
     ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
-    /// up GameLift fleets</a> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <b>Related actions</b> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <a>CreateFleetLocations</a> | <a>UpdateFleetAttributes</a> | <a>UpdateFleetCapacity</a>
-    /// | <a>UpdateFleetPortSettings</a> | <a>UpdateRuntimeConfiguration</a> | <a>StopFleetActions</a>
-    /// | <a>StartFleetActions</a> | <a>PutScalingPolicy</a> | <a>DeleteFleet</a> | <a>DeleteFleetLocations</a>
-    /// | <a>DeleteScalingPolicy</a> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
-    /// APIs by task</a> 
+    /// up Amazon GameLift fleets</a> 
     /// </para>
     /// </summary>
     public partial class UpdateRuntimeConfigurationRequest : AmazonGameLiftRequest

@@ -34,7 +34,7 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RemediationExceptionResourceKey Marshaller
-    /// </summary>       
+    /// </summary>
     public class RemediationExceptionResourceKeyMarshaller : IRequestMarshaller<RemediationExceptionResourceKey, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RemediationExceptionResourceKeyMarshaller Instance = new RemediationExceptionResourceKeyMarshaller();
 
     }

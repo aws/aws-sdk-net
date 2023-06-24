@@ -85,6 +85,13 @@ namespace Amazon.IoT.Model
         /// A map of key-value pairs that you can use as guidance to specify the inputs for creating
         /// a job from a managed template.
         /// </para>
+        ///  <note> 
+        /// <para>
+        ///  <code>documentParameters</code> can only be used when creating jobs from Amazon Web
+        /// Services managed templates. This parameter can't be used with custom job templates
+        /// or to create jobs from them.
+        /// </para>
+        ///  </note>
         /// </summary>
         public List<DocumentParameter> DocumentParameters
         {

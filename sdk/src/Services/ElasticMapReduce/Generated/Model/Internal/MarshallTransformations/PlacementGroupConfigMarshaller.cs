@@ -34,7 +34,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// PlacementGroupConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class PlacementGroupConfigMarshaller : IRequestMarshaller<PlacementGroupConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static PlacementGroupConfigMarshaller Instance = new PlacementGroupConfigMarshaller();
 
     }

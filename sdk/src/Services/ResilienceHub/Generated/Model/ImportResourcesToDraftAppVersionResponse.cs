@@ -35,15 +35,18 @@ namespace Amazon.ResilienceHub.Model
     {
         private string _appArn;
         private string _appVersion;
+        private List<EksSource> _eksSources = new List<EksSource>();
         private List<string> _sourceArns = new List<string>();
         private ResourceImportStatusType _status;
+        private List<TerraformSource> _terraformSources = new List<TerraformSource>();
 
         /// <summary>
         /// Gets and sets the property AppArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
+        /// The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this
+        /// ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
         /// For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
+        /// Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -79,12 +82,29 @@ namespace Amazon.ResilienceHub.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SourceArns. 
+        /// Gets and sets the property EksSources. 
         /// <para>
-        /// The Amazon Resource Names (ARNs) for the resources that you imported.
+        /// The input sources of the Amazon Elastic Kubernetes Service resources you have imported.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        public List<EksSource> EksSources
+        {
+            get { return this._eksSources; }
+            set { this._eksSources = value; }
+        }
+
+        // Check to see if EksSources property is set
+        internal bool IsSetEksSources()
+        {
+            return this._eksSources != null && this._eksSources.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceArns. 
+        /// <para>
+        /// The Amazon Resource Names (ARNs) for the resources you have imported.
+        /// </para>
+        /// </summary>
         public List<string> SourceArns
         {
             get { return this._sourceArns; }
@@ -114,6 +134,24 @@ namespace Amazon.ResilienceHub.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TerraformSources. 
+        /// <para>
+        ///  A list of terraform file s3 URLs you have imported. 
+        /// </para>
+        /// </summary>
+        public List<TerraformSource> TerraformSources
+        {
+            get { return this._terraformSources; }
+            set { this._terraformSources = value; }
+        }
+
+        // Check to see if TerraformSources property is set
+        internal bool IsSetTerraformSources()
+        {
+            return this._terraformSources != null && this._terraformSources.Count > 0; 
         }
 
     }

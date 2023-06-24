@@ -61,11 +61,13 @@ namespace Amazon.RDS.Model
     /// </summary>
     public partial class RestoreDBInstanceFromDBSnapshotRequest : AmazonRDSRequest
     {
+        private int? _allocatedStorage;
         private bool? _autoMinorVersionUpgrade;
         private string _availabilityZone;
         private string _backupTarget;
         private bool? _copyTagsToSnapshot;
         private string _customIamInstanceProfile;
+        private string _dbClusterSnapshotIdentifier;
         private string _dbInstanceClass;
         private string _dbInstanceIdentifier;
         private string _dbName;
@@ -82,10 +84,12 @@ namespace Amazon.RDS.Model
         private int? _iops;
         private string _licenseModel;
         private bool? _multiAZ;
+        private string _networkType;
         private string _optionGroupName;
         private int? _port;
         private List<ProcessorFeature> _processorFeatures = new List<ProcessorFeature>();
         private bool? _publiclyAccessible;
+        private int? _storageThroughput;
         private string _storageType;
         private List<Tag> _tags = new List<Tag>();
         private string _tdeCredentialArn;
@@ -102,11 +106,36 @@ namespace Amazon.RDS.Model
         /// Instantiates RestoreDBInstanceFromDBSnapshotRequest with the parameterized properties
         /// </summary>
         /// <param name="dbInstanceIdentifier">Name of the DB instance to create from the DB snapshot. This parameter isn't case-sensitive. Constraints: <ul> <li> Must contain from 1 to 63 numbers, letters, or hyphens </li> <li> First character must be a letter </li> <li> Can't end with a hyphen or contain two consecutive hyphens </li> </ul> Example: <code>my-snapshot-id</code> </param>
-        /// <param name="dbSnapshotIdentifier">The identifier for the DB snapshot to restore from. Constraints: <ul> <li> Must match the identifier of an existing DBSnapshot. </li> <li> If you are restoring from a shared manual DB snapshot, the <code>DBSnapshotIdentifier</code> must be the ARN of the shared DB snapshot. </li> </ul></param>
+        /// <param name="dbSnapshotIdentifier">The identifier for the DB snapshot to restore from. Constraints: <ul> <li> Must match the identifier of an existing DBSnapshot. </li> <li> Can't be specified when <code>DBClusterSnapshotIdentifier</code> is specified. </li> <li> Must be specified when <code>DBClusterSnapshotIdentifier</code> isn't specified. </li> <li> If you are restoring from a shared manual DB snapshot, the <code>DBSnapshotIdentifier</code> must be the ARN of the shared DB snapshot. </li> </ul></param>
         public RestoreDBInstanceFromDBSnapshotRequest(string dbInstanceIdentifier, string dbSnapshotIdentifier)
         {
             _dbInstanceIdentifier = dbInstanceIdentifier;
             _dbSnapshotIdentifier = dbSnapshotIdentifier;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AllocatedStorage. 
+        /// <para>
+        /// The amount of storage (in gibibytes) to allocate initially for the DB instance. Follow
+        /// the allocation rules specified in CreateDBInstance.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Be sure to allocate enough storage for your new DB instance so that the restore operation
+        /// can succeed. You can also allocate additional storage for future growth.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public int AllocatedStorage
+        {
+            get { return this._allocatedStorage.GetValueOrDefault(); }
+            set { this._allocatedStorage = value; }
+        }
+
+        // Check to see if AllocatedStorage property is set
+        internal bool IsSetAllocatedStorage()
+        {
+            return this._allocatedStorage.HasValue; 
         }
 
         /// <summary>
@@ -196,7 +225,20 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property CopyTagsToSnapshot. 
         /// <para>
         /// A value that indicates whether to copy all tags from the restored DB instance to snapshots
-        /// of the DB instance. By default, tags are not copied.
+        /// of the DB instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// In most cases, tags aren't copied by default. However, when you restore a DB instance
+        /// from a DB snapshot, RDS checks whether you specify new tags. If yes, the new tags
+        /// are added to the restored DB instance. If there are no new tags, RDS looks for the
+        /// tags from the source DB instance for the DB snapshot, and then adds those tags to
+        /// the restored DB instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.CopyTags">
+        /// Copying tags to DB instance snapshots</a> in the <i>Amazon RDS User Guide</i>.
         /// </para>
         /// </summary>
         public bool CopyTagsToSnapshot
@@ -233,7 +275,7 @@ namespace Amazon.RDS.Model
         ///  </li> </ul> 
         /// <para>
         /// For the list of permissions required for the IAM role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc">
-        /// Configure IAM and your VPC</a> in the <i>Amazon Relational Database Service User Guide</i>.
+        /// Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -250,6 +292,59 @@ namespace Amazon.RDS.Model
         internal bool IsSetCustomIamInstanceProfile()
         {
             return this._customIamInstanceProfile != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DBClusterSnapshotIdentifier. 
+        /// <para>
+        /// The identifier for the RDS for MySQL Multi-AZ DB cluster snapshot to restore from.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
+        /// Multi-AZ DB cluster deployments</a> in the <i>Amazon RDS User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Must match the identifier of an existing Multi-AZ DB cluster snapshot.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Can't be specified when <code>DBSnapshotIdentifier</code> is specified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Must be specified when <code>DBSnapshotIdentifier</code> isn't specified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you are restoring from a shared manual Multi-AZ DB cluster snapshot, the <code>DBClusterSnapshotIdentifier</code>
+        /// must be the ARN of the shared snapshot.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Can't be the identifier of an Aurora DB cluster snapshot.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Can't be the identifier of an RDS for PostgreSQL Multi-AZ DB cluster snapshot.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public string DBClusterSnapshotIdentifier
+        {
+            get { return this._dbClusterSnapshotIdentifier; }
+            set { this._dbClusterSnapshotIdentifier = value; }
+        }
+
+        // Check to see if DBClusterSnapshotIdentifier property is set
+        internal bool IsSetDBClusterSnapshotIdentifier()
+        {
+            return this._dbClusterSnapshotIdentifier != null;
         }
 
         /// <summary>
@@ -403,12 +498,19 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// Can't be specified when <code>DBClusterSnapshotIdentifier</code> is specified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Must be specified when <code>DBClusterSnapshotIdentifier</code> isn't specified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// If you are restoring from a shared manual DB snapshot, the <code>DBSnapshotIdentifier</code>
         /// must be the ARN of the shared DB snapshot.
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string DBSnapshotIdentifier
         {
             get { return this._dbSnapshotIdentifier; }
@@ -432,7 +534,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Example: <code>mySubnetgroup</code> 
+        /// Example: <code>mydbsubnetgroup</code> 
         /// </para>
         /// </summary>
         public string DBSubnetGroupName
@@ -453,7 +555,7 @@ namespace Amazon.RDS.Model
         /// A value that indicates whether the DB instance has deletion protection enabled. The
         /// database can't be deleted when deletion protection is enabled. By default, deletion
         /// protection isn't enabled. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
-        /// Deleting a DB Instance</a>. 
+        /// Deleting a DB Instance</a>.
         /// </para>
         /// </summary>
         public bool DeletionProtection
@@ -569,7 +671,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned
+        /// For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned
         /// IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.
         /// </para>
         /// </summary>
@@ -701,14 +803,13 @@ namespace Amazon.RDS.Model
         /// per second. If this parameter isn't specified, the IOPS value is taken from the backup.
         /// If this parameter is set to 0, the new instance is converted to a non-PIOPS instance.
         /// The conversion takes additional time, though your DB instance is available for connections
-        /// before the conversion starts. 
+        /// before the conversion starts.
         /// </para>
         ///  
         /// <para>
         /// The provisioned IOPS value must follow the requirements for your database engine.
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon
-        /// RDS Provisioned IOPS Storage to Improve Performance</a> in the <i>Amazon RDS User
-        /// Guide.</i> 
+        /// RDS Provisioned IOPS storage</a> in the <i>Amazon RDS User Guide.</i> 
         /// </para>
         ///  
         /// <para>
@@ -742,7 +843,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        ///  Valid values: <code>license-included</code> | <code>bring-your-own-license</code>
+        /// Valid values: <code>license-included</code> | <code>bring-your-own-license</code>
         /// | <code>general-public-license</code> 
         /// </para>
         /// </summary>
@@ -783,6 +884,47 @@ namespace Amazon.RDS.Model
         internal bool IsSetMultiAZ()
         {
             return this._multiAZ.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkType. 
+        /// <para>
+        /// The network type of the DB instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>IPV4</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>DUAL</code> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The network type is determined by the <code>DBSubnetGroup</code> specified for the
+        /// DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the
+        /// IPv4 and the IPv6 protocols (<code>DUAL</code>).
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+        /// Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i> 
+        /// </para>
+        /// </summary>
+        public string NetworkType
+        {
+            get { return this._networkType; }
+            set { this._networkType = value; }
+        }
+
+        // Check to see if NetworkType property is set
+        internal bool IsSetNetworkType()
+        {
+            return this._networkType != null;
         }
 
         /// <summary>
@@ -899,22 +1041,44 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property StorageThroughput. 
+        /// <para>
+        /// Specifies the storage throughput value for the DB instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// This setting doesn't apply to RDS Custom or Amazon Aurora.
+        /// </para>
+        /// </summary>
+        public int StorageThroughput
+        {
+            get { return this._storageThroughput.GetValueOrDefault(); }
+            set { this._storageThroughput = value; }
+        }
+
+        // Check to see if StorageThroughput property is set
+        internal bool IsSetStorageThroughput()
+        {
+            return this._storageThroughput.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property StorageType. 
         /// <para>
         /// Specifies the storage type to be associated with the DB instance.
         /// </para>
         ///  
         /// <para>
-        ///  Valid values: <code>standard | gp2 | io1</code> 
+        /// Valid values: <code>gp2 | gp3 | io1 | standard</code> 
         /// </para>
         ///  
         /// <para>
-        ///  If you specify <code>io1</code>, you must also include a value for the <code>Iops</code>
-        /// parameter. 
+        /// If you specify <code>io1</code> or <code>gp3</code>, you must also include a value
+        /// for the <code>Iops</code> parameter.
         /// </para>
         ///  
         /// <para>
-        ///  Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise
+        /// Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise
         /// <code>gp2</code> 
         /// </para>
         /// </summary>
@@ -1015,11 +1179,11 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property VpcSecurityGroupIds. 
         /// <para>
-        ///  A list of EC2 VPC security groups to associate with this DB instance. 
+        /// A list of EC2 VPC security groups to associate with this DB instance.
         /// </para>
         ///  
         /// <para>
-        ///  Default: The default EC2 VPC security group for the DB subnet group's VPC. 
+        /// Default: The default EC2 VPC security group for the DB subnet group's VPC.
         /// </para>
         /// </summary>
         public List<string> VpcSecurityGroupIds

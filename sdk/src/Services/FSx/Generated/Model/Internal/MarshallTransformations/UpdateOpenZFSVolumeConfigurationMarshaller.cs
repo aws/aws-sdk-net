@@ -34,7 +34,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// UpdateOpenZFSVolumeConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class UpdateOpenZFSVolumeConfigurationMarshaller : IRequestMarshaller<UpdateOpenZFSVolumeConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -73,6 +73,12 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ReadOnly);
             }
 
+            if(requestObject.IsSetRecordSizeKiB())
+            {
+                context.Writer.WritePropertyName("RecordSizeKiB");
+                context.Writer.Write(requestObject.RecordSizeKiB);
+            }
+
             if(requestObject.IsSetStorageCapacityQuotaGiB())
             {
                 context.Writer.WritePropertyName("StorageCapacityQuotaGiB");
@@ -105,7 +111,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static UpdateOpenZFSVolumeConfigurationMarshaller Instance = new UpdateOpenZFSVolumeConfigurationMarshaller();
 
     }

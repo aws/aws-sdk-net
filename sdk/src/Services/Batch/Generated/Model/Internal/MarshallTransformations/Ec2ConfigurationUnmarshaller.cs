@@ -70,6 +70,12 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                     unmarshalledObject.ImageIdOverride = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("imageKubernetesVersion", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ImageKubernetesVersion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("imageType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

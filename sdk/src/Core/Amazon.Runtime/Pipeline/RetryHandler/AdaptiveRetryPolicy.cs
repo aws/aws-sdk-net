@@ -26,7 +26,7 @@ namespace Amazon.Runtime.Internal
     /// The default implementation of the adaptive retry policy.
     /// </summary>
     public partial class AdaptiveRetryPolicy : StandardRetryPolicy
-    {        
+    {
         protected TokenBucket TokenBucket { get; set; } = new TokenBucket();
 
         /// <summary>
@@ -35,7 +35,7 @@ namespace Amazon.Runtime.Internal
         /// <param name="maxRetries">The maximum number of retries before throwing
         /// back a exception. This does not count the initial request.</param>
         public AdaptiveRetryPolicy(int maxRetries) : base(maxRetries)
-        {            
+        {    
         }
 
         /// <summary>
@@ -46,7 +46,7 @@ namespace Amazon.Runtime.Internal
         /// back a exception(This does not count the initial request) and
         /// the service URL for the request.</param>
         public AdaptiveRetryPolicy(IClientConfig config) : base(config)
-        {            
+        {    
         }
 
         /// <summary>
@@ -97,7 +97,7 @@ namespace Amazon.Runtime.Internal
         public override void NotifySuccess(IExecutionContext executionContext)
         {
             TokenBucket.UpdateClientSendingRate(false);
-            base.NotifySuccess(executionContext);            
+            base.NotifySuccess(executionContext);
         }        
     }
 }

@@ -80,6 +80,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// The unique import ID associated with the error that occurred.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=200)]
         public string ImportTaskId
         {
             get { return this._importTaskId; }

@@ -66,19 +66,7 @@ namespace Amazon.GameLift.Model
     ///  
     /// <para>
     ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
-    /// up GameLift fleets</a> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <b>Related actions</b> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <a>CreateFleetLocations</a> | <a>DescribeFleetLocationAttributes</a> | <a>DescribeFleetLocationCapacity</a>
-    /// | <a>DescribeFleetLocationUtilization</a> | <a>DescribeFleetAttributes</a> | <a>DescribeFleetCapacity</a>
-    /// | <a>DescribeFleetUtilization</a> | <a>UpdateFleetCapacity</a> | <a>StopFleetActions</a>
-    /// | <a>DeleteFleetLocations</a> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
-    /// APIs by task</a> 
+    /// up Amazon GameLift fleets</a> 
     /// </para>
     /// </summary>
     public partial class DescribeFleetLocationAttributesRequest : AmazonGameLiftRequest
@@ -113,7 +101,6 @@ namespace Amazon.GameLift.Model
         /// <para>
         /// The maximum number of results to return. Use this parameter with <code>NextToken</code>
         /// to get results as a set of sequential pages. This limit is not currently enforced.
-        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -133,7 +120,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property Locations. 
         /// <para>
         /// A list of fleet locations to retrieve information for. Specify locations in the form
-        /// of an AWS Region code, such as <code>us-west-2</code>.
+        /// of an Amazon Web Services Region code, such as <code>us-west-2</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

@@ -30,8 +30,12 @@ namespace Amazon.RecycleBin.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateRule operation.
-    /// Updates an existing Recycle Bin retention rule. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin-working-with-rules.html#recycle-bin-update-rule">
-    /// Update Recycle Bin retention rules</a> in the <i>Amazon EC2 User Guide</i>.
+    /// Updates an existing Recycle Bin retention rule. You can update a retention rule's
+    /// description, resource tags, and retention period at any time after creation. You can't
+    /// update a retention rule's resource type after creation. For more information, see
+    /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin-working-with-rules.html#recycle-bin-update-rule">
+    /// Update Recycle Bin retention rules</a> in the <i>Amazon Elastic Compute Cloud User
+    /// Guide</i>.
     /// </summary>
     public partial class UpdateRuleRequest : AmazonRecycleBinRequest
     {
@@ -62,7 +66,7 @@ namespace Amazon.RecycleBin.Model
         /// <summary>
         /// Gets and sets the property Identifier. 
         /// <para>
-        /// The unique ID of the retention rule to update.
+        /// The unique ID of the retention rule.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -81,15 +85,23 @@ namespace Amazon.RecycleBin.Model
         /// <summary>
         /// Gets and sets the property ResourceTags. 
         /// <para>
-        /// Information about the resource tags to use to identify resources that are to be retained
-        /// by the retention rule. The retention rule retains only deleted snapshots that have
-        /// one or more of the specified tag key and value pairs. If a snapshot is deleted, but
-        /// it does not have any of the specified tag key and value pairs, it is immediately deleted
-        /// without being retained by the retention rule. 
+        /// Specifies the resource tags to use to identify resources that are to be retained by
+        /// a tag-level retention rule. For tag-level retention rules, only deleted resources,
+        /// of the specified resource type, that have one or more of the specified tag key and
+        /// value pairs are retained. If a resource is deleted, but it does not have any of the
+        /// specified tag key and value pairs, it is immediately deleted without being retained
+        /// by the retention rule.
         /// </para>
         ///  
         /// <para>
         /// You can add the same tag key and value pair to a maximum or five retention rules.
+        /// </para>
+        ///  
+        /// <para>
+        /// To create a Region-level retention rule, omit this parameter. A Region-level retention
+        /// rule does not have any resource tags specified. It retains all deleted resources of
+        /// the specified resource type in the Region in which the rule is created, even if the
+        /// resources are not tagged.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]
@@ -106,11 +118,12 @@ namespace Amazon.RecycleBin.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ResourceType. 
+        /// Gets and sets the property ResourceType. <note> 
         /// <para>
-        /// The resource type to be retained by the retention rule. Currently, only Amazon EBS
-        /// snapshots are supported.
+        /// This parameter is currently not supported. You can't update a retention rule's resource
+        /// type after creation.
         /// </para>
+        ///  </note>
         /// </summary>
         public ResourceType ResourceType
         {

@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Organizations.Model
 {
     /// <summary>
-    /// A structure that contains details of a service principal that represents an AWS service
-    /// that is enabled to integrate with AWS Organizations.
+    /// A structure that contains details of a service principal that represents an Amazon
+    /// Web Services service that is enabled to integrate with Organizations.
     /// </summary>
     public partial class EnabledServicePrincipal
     {
@@ -40,7 +40,7 @@ namespace Amazon.Organizations.Model
         /// <summary>
         /// Gets and sets the property DateEnabled. 
         /// <para>
-        /// The date that the service principal was enabled for integration with AWS Organizations.
+        /// The date that the service principal was enabled for integration with Organizations.
         /// </para>
         /// </summary>
         public DateTime DateEnabled

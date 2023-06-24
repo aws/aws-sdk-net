@@ -33,6 +33,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class AutomationExecution
     {
+        private AlarmConfiguration _alarmConfiguration;
         private string _associationId;
         private string _automationExecutionId;
         private AutomationExecutionStatus _automationExecutionStatus;
@@ -64,6 +65,25 @@ namespace Amazon.SimpleSystemsManagement.Model
         private List<Dictionary<string, List<string>>> _targetMaps = new List<Dictionary<string, List<string>>>();
         private string _targetParameterName;
         private List<Target> _targets = new List<Target>();
+        private List<AlarmStateInformation> _triggeredAlarms = new List<AlarmStateInformation>();
+
+        /// <summary>
+        /// Gets and sets the property AlarmConfiguration. 
+        /// <para>
+        /// The details for the CloudWatch alarm applied to your automation.
+        /// </para>
+        /// </summary>
+        public AlarmConfiguration AlarmConfiguration
+        {
+            get { return this._alarmConfiguration; }
+            set { this._alarmConfiguration = value; }
+        }
+
+        // Check to see if AlarmConfiguration property is set
+        internal bool IsSetAlarmConfiguration()
+        {
+            return this._alarmConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AssociationId. 
@@ -644,6 +664,25 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetTargets()
         {
             return this._targets != null && this._targets.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TriggeredAlarms. 
+        /// <para>
+        /// The CloudWatch alarm that was invoked by the automation.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1)]
+        public List<AlarmStateInformation> TriggeredAlarms
+        {
+            get { return this._triggeredAlarms; }
+            set { this._triggeredAlarms = value; }
+        }
+
+        // Check to see if TriggeredAlarms property is set
+        internal bool IsSetTriggeredAlarms()
+        {
+            return this._triggeredAlarms != null && this._triggeredAlarms.Count > 0; 
         }
 
     }

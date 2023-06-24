@@ -47,8 +47,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         private InstanceAssociationOutputLocation _outputLocation;
         private Dictionary<string, List<string>> _parameters = new Dictionary<string, List<string>>();
         private string _scheduleExpression;
+        private int? _scheduleOffset;
         private AssociationSyncCompliance _syncCompliance;
         private List<TargetLocation> _targetLocations = new List<TargetLocation>();
+        private List<Dictionary<string, List<string>>> _targetMaps = new List<Dictionary<string, List<string>>>();
         private List<Target> _targets = new List<Target>();
 
         /// <summary>
@@ -306,6 +308,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Parameters specified when the association version was created.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public Dictionary<string, List<string>> Parameters
         {
             get { return this._parameters; }
@@ -336,6 +339,25 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetScheduleExpression()
         {
             return this._scheduleExpression != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ScheduleOffset. 
+        /// <para>
+        /// Number of days to wait after the scheduled day to run an association.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=6)]
+        public int ScheduleOffset
+        {
+            get { return this._scheduleOffset.GetValueOrDefault(); }
+            set { this._scheduleOffset = value; }
+        }
+
+        // Check to see if ScheduleOffset property is set
+        internal bool IsSetScheduleOffset()
+        {
+            return this._scheduleOffset.HasValue; 
         }
 
         /// <summary>
@@ -389,6 +411,26 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetTargetLocations()
         {
             return this._targetLocations != null && this._targetLocations.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TargetMaps. 
+        /// <para>
+        /// A key-value mapping of document parameters to target resources. Both Targets and TargetMaps
+        /// can't be specified together.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=300)]
+        public List<Dictionary<string, List<string>>> TargetMaps
+        {
+            get { return this._targetMaps; }
+            set { this._targetMaps = value; }
+        }
+
+        // Check to see if TargetMaps property is set
+        internal bool IsSetTargetMaps()
+        {
+            return this._targetMaps != null && this._targetMaps.Count > 0; 
         }
 
         /// <summary>

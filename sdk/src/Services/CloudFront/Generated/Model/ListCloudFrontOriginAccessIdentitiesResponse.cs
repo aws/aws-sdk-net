@@ -38,7 +38,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property CloudFrontOriginAccessIdentityList. 
         /// <para>
-        /// The <code>CloudFrontOriginAccessIdentityList</code> type. 
+        /// The <code>CloudFrontOriginAccessIdentityList</code> type.
         /// </para>
         /// </summary>
         public CloudFrontOriginAccessIdentityList CloudFrontOriginAccessIdentityList

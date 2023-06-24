@@ -4,24 +4,76 @@
     <property>Amazon.Route53RecoveryCluster.Model.GetRoutingControlStateRequest.RoutingControlArn</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^[A-Za-z0-9:\/_-]*$</pattern>
+    <pattern>^[A-Za-z0-9:.\/_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53RecoveryCluster.Model.GetRoutingControlStateResponse.RoutingControlArn</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^[A-Za-z0-9:\/_-]*$</pattern>
+    <pattern>^[A-Za-z0-9:.\/_-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53RecoveryCluster.Model.GetRoutingControlStateResponse.RoutingControlName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^\S+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53RecoveryCluster.Model.ListRoutingControlsRequest.ControlPanelArn</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[A-Za-z0-9:.\/_-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53RecoveryCluster.Model.ListRoutingControlsRequest.MaxResults</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53RecoveryCluster.Model.ListRoutingControlsRequest.NextToken</property>
+    <min>1</min>
+    <max>8096</max>
+    <pattern>[\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53RecoveryCluster.Model.ListRoutingControlsResponse.NextToken</property>
+    <min>1</min>
+    <max>8096</max>
+    <pattern>[\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53RecoveryCluster.Model.UpdateRoutingControlStateRequest.RoutingControlArn</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^[A-Za-z0-9:\/_-]*$</pattern>
+    <pattern>^[A-Za-z0-9:.\/_-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53RecoveryCluster.Model.RoutingControl.ControlPanelArn</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[A-Za-z0-9:.\/_-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53RecoveryCluster.Model.RoutingControl.ControlPanelName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^\S+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53RecoveryCluster.Model.RoutingControl.RoutingControlArn</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[A-Za-z0-9:.\/_-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53RecoveryCluster.Model.RoutingControl.RoutingControlName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53RecoveryCluster.Model.UpdateRoutingControlStateEntry.RoutingControlArn</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^[A-Za-z0-9:\/_-]*$</pattern>
+    <pattern>^[A-Za-z0-9:.\/_-]*$</pattern>
   </property-value-rule>
 </property-value-rules>

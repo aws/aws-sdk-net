@@ -106,10 +106,34 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                     unmarshalledObject.RemoteId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("senderControlPort", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.SenderControlPort = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("senderIpAddress", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SenderIpAddress = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("smoothingLatency", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
                     unmarshalledObject.SmoothingLatency = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("sourceListenerAddress", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SourceListenerAddress = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("sourceListenerPort", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.SourceListenerPort = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("streamId", targetDepth))

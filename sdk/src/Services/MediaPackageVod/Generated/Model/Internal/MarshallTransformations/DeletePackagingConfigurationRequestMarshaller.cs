@@ -55,7 +55,7 @@ namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
         public IRequest Marshall(DeletePackagingConfigurationRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.MediaPackageVod");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-11-07";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-11-07";
             request.HttpMethod = "DELETE";
 
             if (!publicRequest.IsSetId())

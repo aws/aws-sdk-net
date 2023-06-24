@@ -39,7 +39,7 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// <summary>
         /// Gets and sets the property Detail. 
         /// <para>
-        /// Contains more details about the messasge status.
+        /// Contains more details about the message status.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=256)]

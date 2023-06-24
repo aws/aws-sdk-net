@@ -63,6 +63,12 @@ namespace Amazon.LexRuntimeV2.Model.Internal.MarshallTransformations
                     response.Messages = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("recognizedBotMember", targetDepth))
+                {
+                    var unmarshaller = RecognizedBotMemberUnmarshaller.Instance;
+                    response.RecognizedBotMember = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("requestAttributes", targetDepth))
                 {
                     var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);

@@ -30,7 +30,7 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// Container for the parameters to the GetIdentityProviderByIdentifier operation.
-    /// Gets the specified identity provider.
+    /// Gets the specified IdP.
     /// </summary>
     public partial class GetIdentityProviderByIdentifierRequest : AmazonCognitoIdentityProviderRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property IdpIdentifier. 
         /// <para>
-        /// The identity provider ID.
+        /// The IdP identifier.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=40)]

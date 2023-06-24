@@ -29,9 +29,9 @@ namespace Amazon.S3.Model
     ///  
     /// <para>
     /// Default encryption for a bucket can use server-side encryption with Amazon S3-managed
-    /// keys (SSE-S3) or Amazon Web Services KMS customer master keys (SSE-KMS). If you specify
-    /// default encryption using SSE-KMS, you can also configure Amazon S3 Bucket Key. For
-    /// information about default encryption, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html">Amazon
+    /// keys (SSE-S3) or customer managed keys (SSE-KMS). If you specify default encryption
+    /// using SSE-KMS, you can also configure Amazon S3 Bucket Key. For information about
+    /// default encryption, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html">Amazon
     /// S3 default bucket encryption</a> in the <i>Amazon S3 User Guide</i>. For more information
     /// about S3 Bucket Keys, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-key.html">Amazon
     /// S3 Bucket Keys</a> in the <i>Amazon S3 User Guide</i>.
@@ -50,7 +50,9 @@ namespace Amazon.S3.Model
     /// Related to Bucket Subresource Operations</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-access-control.html">Managing
     /// Access Permissions to Your Amazon S3 Resources</a> in the Amazon S3 User Guide. 
     /// </para>
-    ///  <p class="title"> <b>Related Resources</b> 
+    ///  
+    /// <para>
+    /// The following operations are related to <code>PutBucketEncryption</code>:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -67,6 +69,7 @@ namespace Amazon.S3.Model
     public class PutBucketEncryptionRequest : AmazonWebServiceRequest
     {
         private string bucketName;
+        private ChecksumAlgorithm _checksumAlgorithm;
         private string contentMD5;
         private ServerSideEncryptionConfiguration serverSideEncryptionConfiguration;
         private string expectedBucketOwner;
@@ -74,11 +77,13 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets the property BucketName. 
         /// <para>
-        /// Specifies default encryption for a bucket using server-side encryption with Amazon
-        /// S3-managed keys (SSE-S3) or customer managed keys (SSE-KMS).
-        /// For information about the Amazon S3 default encryption feature, see <a 
-        /// href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html">Amazon
-        /// S3 Default Bucket Encryption</a> in the <i>Amazon S3 User Guide</i>.
+        /// Specifies default encryption for a bucket using server-side encryption with different
+        /// key options. By default, all buckets have a default encryption configuration that
+        /// uses server-side encryption with Amazon S3 managed keys (SSE-S3). You can optionally
+        /// configure default encryption for a bucket by using server-side encryption with an
+        /// Amazon Web Services KMS key (SSE-KMS) or a customer-provided key (SSE-C). For information
+        /// about the bucket default encryption feature, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html">Amazon
+        /// S3 Bucket Default Encryption</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         /// </summary>
         public string BucketName
@@ -91,6 +96,27 @@ namespace Amazon.S3.Model
         internal bool IsSetBucketName()
         {
             return !(string.IsNullOrEmpty(this.bucketName));
+        }
+
+        /// <summary>
+        /// Gets and sets the property ChecksumAlgorithm. 
+        /// <para>
+        /// Indicates the algorithm used to create the checksum for the object. Amazon S3 will
+        /// fail the request with a 400 error if there is no checksum associated with the object.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">
+        /// Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        /// </summary>
+        public ChecksumAlgorithm ChecksumAlgorithm
+        {
+            get { return this._checksumAlgorithm; }
+            set { this._checksumAlgorithm = value; }
+        }
+
+        // Check to see if ChecksumAlgorithm property is set
+        internal bool IsSetChecksumAlgorithm()
+        {
+            return this._checksumAlgorithm != null;
         }
 
         /// <summary>

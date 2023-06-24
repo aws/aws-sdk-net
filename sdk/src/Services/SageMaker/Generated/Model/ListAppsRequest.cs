@@ -39,6 +39,7 @@ namespace Amazon.SageMaker.Model
         private string _nextToken;
         private AppSortKey _sortBy;
         private SortOrder _sortOrder;
+        private string _spaceNameEquals;
         private string _userProfileNameEquals;
 
         /// <summary>
@@ -63,7 +64,10 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// Returns a list up to a specified limit.
+        /// The total number of items to return in the response. If the total number of items
+        /// available is more than the value specified, a <code>NextToken</code> is provided in
+        /// the response. To resume pagination, provide the <code>NextToken</code> value in the
+        /// as part of a subsequent call. The default value is 10.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -136,9 +140,30 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SpaceNameEquals. 
+        /// <para>
+        /// A parameter to search by space name. If <code>UserProfileNameEquals</code> is set,
+        /// then this value cannot be set.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=63)]
+        public string SpaceNameEquals
+        {
+            get { return this._spaceNameEquals; }
+            set { this._spaceNameEquals = value; }
+        }
+
+        // Check to see if SpaceNameEquals property is set
+        internal bool IsSetSpaceNameEquals()
+        {
+            return this._spaceNameEquals != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property UserProfileNameEquals. 
         /// <para>
-        /// A parameter to search by user profile name.
+        /// A parameter to search by user profile name. If <code>SpaceNameEquals</code> is set,
+        /// then this value cannot be set.
         /// </para>
         /// </summary>
         [AWSProperty(Max=63)]

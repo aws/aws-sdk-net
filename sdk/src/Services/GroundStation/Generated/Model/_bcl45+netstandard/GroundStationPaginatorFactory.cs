@@ -60,6 +60,14 @@ namespace Amazon.GroundStation.Model
         }
 
         /// <summary>
+        /// Paginator for ListEphemerides operation
+        ///</summary>
+        public IListEphemeridesPaginator ListEphemerides(ListEphemeridesRequest request) 
+        {
+            return new ListEphemeridesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListGroundStations operation
         ///</summary>
         public IListGroundStationsPaginator ListGroundStations(ListGroundStationsRequest request) 

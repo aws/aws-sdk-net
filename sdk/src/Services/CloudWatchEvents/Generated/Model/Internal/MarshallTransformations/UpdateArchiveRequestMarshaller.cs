@@ -58,7 +58,7 @@ namespace Amazon.CloudWatchEvents.Model.Internal.MarshallTransformations
             string target = "AWSEvents.UpdateArchive";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-10-07";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-10-07";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -91,7 +91,6 @@ namespace Amazon.CloudWatchEvents.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.RetentionDays);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

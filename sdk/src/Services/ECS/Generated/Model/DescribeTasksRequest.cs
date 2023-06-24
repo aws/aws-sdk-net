@@ -31,6 +31,11 @@ namespace Amazon.ECS.Model
     /// <summary>
     /// Container for the parameters to the DescribeTasks operation.
     /// Describes a specified task or tasks.
+    /// 
+    ///  
+    /// <para>
+    /// Currently, stopped tasks appear in the returned results for at least one hour.
+    /// </para>
     /// </summary>
     public partial class DescribeTasksRequest : AmazonECSRequest
     {

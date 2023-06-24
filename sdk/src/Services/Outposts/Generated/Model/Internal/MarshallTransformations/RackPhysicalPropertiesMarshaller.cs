@@ -34,7 +34,7 @@ namespace Amazon.Outposts.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RackPhysicalProperties Marshaller
-    /// </summary>       
+    /// </summary>
     public class RackPhysicalPropertiesMarshaller : IRequestMarshaller<RackPhysicalProperties, JsonMarshallerContext> 
     {
         /// <summary>
@@ -103,7 +103,7 @@ namespace Amazon.Outposts.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RackPhysicalPropertiesMarshaller Instance = new RackPhysicalPropertiesMarshaller();
 
     }

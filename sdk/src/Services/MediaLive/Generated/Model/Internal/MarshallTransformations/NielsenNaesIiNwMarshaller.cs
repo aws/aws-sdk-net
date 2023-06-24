@@ -34,7 +34,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// NielsenNaesIiNw Marshaller
-    /// </summary>       
+    /// </summary>
     public class NielsenNaesIiNwMarshaller : IRequestMarshaller<NielsenNaesIiNw, JsonMarshallerContext> 
     {
         /// <summary>
@@ -57,11 +57,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Sid);
             }
 
+            if(requestObject.IsSetTimezone())
+            {
+                context.Writer.WritePropertyName("timezone");
+                context.Writer.Write(requestObject.Timezone);
+            }
+
         }
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static NielsenNaesIiNwMarshaller Instance = new NielsenNaesIiNwMarshaller();
 
     }

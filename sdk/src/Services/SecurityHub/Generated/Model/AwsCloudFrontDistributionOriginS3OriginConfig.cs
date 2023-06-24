@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// Information about an origin that is an S3 bucket that is not configured with static
-    /// website hosting.
+    /// Information about an origin that is an Amazon S3 bucket that is not configured with
+    /// static website hosting.
     /// </summary>
     public partial class AwsCloudFrontDistributionOriginS3OriginConfig
     {

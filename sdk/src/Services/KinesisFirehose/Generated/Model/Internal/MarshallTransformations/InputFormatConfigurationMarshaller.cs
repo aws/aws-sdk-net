@@ -34,7 +34,7 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// InputFormatConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class InputFormatConfigurationMarshaller : IRequestMarshaller<InputFormatConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static InputFormatConfigurationMarshaller Instance = new InputFormatConfigurationMarshaller();
 
     }

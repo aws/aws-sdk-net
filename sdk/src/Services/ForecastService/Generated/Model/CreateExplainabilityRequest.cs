@@ -115,7 +115,7 @@ namespace Amazon.ForecastService.Model
     /// </para>
     ///  <note> 
     /// <para>
-    /// You can specify a maximum of 50 time series and 1500 time points.
+    /// You can specify a maximum of 50 time series and 500 time points.
     /// </para>
     ///  </note> 
     /// <para>
@@ -194,7 +194,8 @@ namespace Amazon.ForecastService.Model
         /// <summary>
         /// Gets and sets the property EnableVisualization. 
         /// <para>
-        /// Create an Expainability visualization that is viewable within the AWS console.
+        /// Create an Explainability visualization that is viewable within the Amazon Web Services
+        /// console.
         /// </para>
         /// </summary>
         public bool EnableVisualization
@@ -214,6 +215,10 @@ namespace Amazon.ForecastService.Model
         /// <para>
         /// If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, define the last
         /// time point for the Explainability.
+        /// </para>
+        ///  
+        /// <para>
+        /// Use the following timestamp format: yyyy-MM-ddTHH:mm:ss (example: 2015-01-01T20:00:00)
         /// </para>
         /// </summary>
         [AWSProperty(Max=19)]
@@ -307,6 +312,10 @@ namespace Amazon.ForecastService.Model
         /// <para>
         /// If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, define the first
         /// point for the Explainability.
+        /// </para>
+        ///  
+        /// <para>
+        /// Use the following timestamp format: yyyy-MM-ddTHH:mm:ss (example: 2015-01-01T20:00:00)
         /// </para>
         /// </summary>
         [AWSProperty(Max=19)]

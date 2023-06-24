@@ -112,6 +112,12 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
                     unmarshalledObject.RecommendedInstanceType = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("supportsNitroInstances", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.SupportsNitroInstances = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

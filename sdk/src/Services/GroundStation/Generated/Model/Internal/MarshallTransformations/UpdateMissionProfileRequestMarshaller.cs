@@ -56,7 +56,7 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.GroundStation");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-05-23";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-05-23";
             request.HttpMethod = "PUT";
 
             if (!publicRequest.IsSetMissionProfileId())
@@ -108,13 +108,29 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Name);
                 }
 
+                if(publicRequest.IsSetStreamsKmsKey())
+                {
+                    context.Writer.WritePropertyName("streamsKmsKey");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = KmsKeyMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.StreamsKmsKey, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetStreamsKmsRole())
+                {
+                    context.Writer.WritePropertyName("streamsKmsRole");
+                    context.Writer.Write(publicRequest.StreamsKmsRole);
+                }
+
                 if(publicRequest.IsSetTrackingConfigArn())
                 {
                     context.Writer.WritePropertyName("trackingConfigArn");
                     context.Writer.Write(publicRequest.TrackingConfigArn);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

@@ -55,7 +55,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         public IRequest Marshall(DescribeInputDeviceThumbnailRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.MediaLive");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-10-14";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-10-14";
             request.HttpMethod = "GET";
 
             if (!publicRequest.IsSetInputDeviceId())
@@ -63,8 +63,10 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             request.AddPathResource("{inputDeviceId}", StringUtils.FromString(publicRequest.InputDeviceId));
             request.ResourcePath = "/prod/inputDevices/{inputDeviceId}/thumbnailData";
         
-            if(publicRequest.IsSetAccept())
+            if (publicRequest.IsSetAccept()) 
+            {
                 request.Headers["accept"] = publicRequest.Accept;
+            }
 
             return request;
         }

@@ -38,7 +38,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property InvalidationList. 
         /// <para>
-        /// Information about invalidation batches. 
+        /// Information about invalidation batches.
         /// </para>
         /// </summary>
         public InvalidationList InvalidationList

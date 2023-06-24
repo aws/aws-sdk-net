@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeDeploy.Model
 {
     /// <summary>
-    /// A deployment group with the specified name with the IAM user or AWS account already
-    /// exists.
+    /// A deployment group with the specified name with the IAM user or Amazon Web Services
+    /// account already exists.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

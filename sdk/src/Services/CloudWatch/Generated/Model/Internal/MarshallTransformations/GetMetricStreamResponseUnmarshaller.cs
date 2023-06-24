@@ -113,6 +113,12 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                         response.IncludeFilters.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("IncludeLinkedAccountsMetrics", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        response.IncludeLinkedAccountsMetrics = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("LastUpdateDate", targetDepth))
                     {
                         var unmarshaller = DateTimeUnmarshaller.Instance;
@@ -141,6 +147,13 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         response.State = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("StatisticsConfigurations/member", targetDepth))
+                    {
+                        var unmarshaller = MetricStreamStatisticsConfigurationUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        response.StatisticsConfigurations.Add(item);
                         continue;
                     }
                 } 

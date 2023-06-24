@@ -78,7 +78,7 @@ namespace Amazon.RDSDataService.Model
         /// <summary>
         /// Gets and sets the property DoubleValues. 
         /// <para>
-        /// An array of integers.
+        /// An array of floating-point numbers.
         /// </para>
         /// </summary>
         public List<double> DoubleValues
@@ -96,7 +96,7 @@ namespace Amazon.RDSDataService.Model
         /// <summary>
         /// Gets and sets the property LongValues. 
         /// <para>
-        /// An array of floating point numbers.
+        /// An array of integers.
         /// </para>
         /// </summary>
         public List<long> LongValues

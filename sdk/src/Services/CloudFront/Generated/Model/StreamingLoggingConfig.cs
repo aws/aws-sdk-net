@@ -65,7 +65,7 @@ namespace Amazon.CloudFront.Model
         /// for <code>Enabled</code>, and specify <code>empty Bucket</code> and <code>Prefix</code>
         /// elements. If you specify <code>false</code> for <code>Enabled</code> but you specify
         /// values for <code>Bucket</code> and <code>Prefix</code>, the values are automatically
-        /// deleted. 
+        /// deleted.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -29,10 +29,38 @@ using Amazon.Runtime.Internal;
 namespace Amazon.TranscribeService.Model
 {
     /// <summary>
-    /// An object that enables you to specify a particular customer or agent sentiment. If
-    /// at least 50 percent of the conversation turns (the back-and-forth between two speakers)
-    /// in a specified time period match the specified sentiment, Amazon Transcribe will consider
-    /// the sentiment a match.
+    /// Flag the presence or absence of specific sentiments detected in your Call Analytics
+    /// transcription output.
+    /// 
+    ///  
+    /// <para>
+    /// Rules using <code>SentimentFilter</code> are designed to match:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// The presence or absence of a positive sentiment felt by the customer, agent, or both
+    /// at specified points in the call
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The presence or absence of a negative sentiment felt by the customer, agent, or both
+    /// at specified points in the call
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The presence or absence of a neutral sentiment felt by the customer, agent, or both
+    /// at specified points in the call
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The presence or absence of a mixed sentiment felt by the customer, the agent, or both
+    /// at specified points in the call
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// See <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-categories-batch.html#tca-rules-batch">Rule
+    /// criteria for post-call categories</a> for usage examples.
+    /// </para>
     /// </summary>
     public partial class SentimentFilter
     {
@@ -45,7 +73,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property AbsoluteTimeRange. 
         /// <para>
-        /// The time range, measured in seconds, of the sentiment.
+        /// Makes it possible to specify a time range (in milliseconds) in your audio, during
+        /// which you want to search for the specified sentiments. See for more detail.
         /// </para>
         /// </summary>
         public AbsoluteTimeRange AbsoluteTimeRange
@@ -63,8 +92,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property Negate. 
         /// <para>
-        /// Set to <code>TRUE</code> to look for sentiments that weren't specified in the request.
-        /// 
+        /// Set to <code>TRUE</code> to flag the sentiments that you didn't include in your request.
+        /// Set to <code>FALSE</code> to flag the sentiments that you specified in your request.
         /// </para>
         /// </summary>
         public bool Negate
@@ -82,7 +111,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property ParticipantRole. 
         /// <para>
-        /// A value that determines whether the sentiment belongs to the customer or the agent.
+        /// Specify the participant that you want to flag. Omitting this parameter is equivalent
+        /// to specifying both participants.
         /// </para>
         /// </summary>
         public ParticipantRole ParticipantRole
@@ -100,7 +130,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property RelativeTimeRange. 
         /// <para>
-        /// The time range, set in percentages, that correspond to proportion of the call.
+        /// Makes it possible to specify a time range (in percentage) in your media file, during
+        /// which you want to search for the specified sentiments. See for more detail.
         /// </para>
         /// </summary>
         public RelativeTimeRange RelativeTimeRange
@@ -118,11 +149,10 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property Sentiments. 
         /// <para>
-        /// An array that enables you to specify sentiments for the customer or agent. You can
-        /// specify one or more values.
+        /// Specify the sentiments that you want to flag.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1)]
+        [AWSProperty(Required=true, Min=1, Max=1)]
         public List<string> Sentiments
         {
             get { return this._sentiments; }

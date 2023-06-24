@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Globalization;
+using ServiceClientGenerator.Endpoints;
 
 namespace ServiceClientGenerator
 {
@@ -22,7 +23,7 @@ namespace ServiceClientGenerator
         public const string RequiredKey = "required";
         public const string DeprecatedMessageKey = "deprecatedMessage";
         public const string HostLabelKey = "hostLabel";
-
+        public const string EventPayloadKey = "eventpayload";
         private const string UnhandledTypeDecimalErrorMessage = "Unhandled type 'decimal' : using .net's decimal type for modeled decimal type may result in loss of data.  decimal type members should explicitly opt-in via shape customization.";
 
         private const string BackwardsCompatibleDateTimePropertySuffix = "Utc";
@@ -590,6 +591,11 @@ namespace ServiceClientGenerator
                 throw new Exception("Missing extends for member " + this._name);
 
             var memberShape = this.model.DocumentRoot[ServiceModel.ShapesKey][extendsNode.ToString()];
+
+            var document = memberShape[Shape.DocumentKey];
+            if (document?.IsBoolean == true && (bool)document)
+                return "Amazon.Runtime.Documents.Internal.Transform.DocumentUnmarshaller";
+
             var typeNode = memberShape[Shape.TypeKey];
             if (typeNode == null)
                 throw new Exception("Type is missing for shape " + extendsNode.ToString());
@@ -702,10 +708,14 @@ namespace ServiceClientGenerator
                 case "float":
                     return "FloatUnmarshaller.Instance";
                 case "integer":
+                    if (this.UseNullable)
+                        return "NullableIntUnmarshaller.Instance";
                     return "IntUnmarshaller.Instance";
                 case "long":
                     return "LongUnmarshaller.Instance";
                 case "timestamp":
+                    if (this.UseNullable)
+                        return "NullableDateTimeUnmarshaller.Instance";
                     return "DateTimeUnmarshaller.Instance";
                 case "structure":
                     return (renameShape ?? extendsNode) + "Unmarshaller.Instance";
@@ -910,7 +920,18 @@ namespace ServiceClientGenerator
         {
             get { return this.model.Customizations.IsExcludedProperty(this.BasePropertyName, this.OwningShape.Name); }
         }
-
+        /// <summary>
+        /// Determines if the member is an event payload type
+        /// </summary>
+        public bool IsEventPayload
+        {
+            get
+            {
+                if (data[EventPayloadKey] != null && data[EventPayloadKey].IsBoolean)
+                    return (bool)data[EventPayloadKey];
+                return false;
+            }
+        }
         public bool IsBackwardsCompatibleDateTimeProperty
         {
             get { return this.model.Customizations.IsBackwardsCompatibleDateTimeProperty(this.BasePropertyName, this.OwningShape.Name); }
@@ -979,7 +1000,7 @@ namespace ServiceClientGenerator
         }
 
         /// <summary>
-        /// TimestampFormat that may be specified on a member or a shape.        
+        /// TimestampFormat that may be specified on a member or a shape.
         /// </summary>
         public TimestampFormat TimestampFormat
         {
@@ -998,8 +1019,8 @@ namespace ServiceClientGenerator
                 {
                     // Fallback to shape's TimestampFormat if not specified at member level
                     // Fallback to marshall location/protocol rules if not specified at shape level
-                    resolvedTimestampFormat = this.Shape.GetTimestampFormat(this.MarshallLocation);                    
-                }                
+                    resolvedTimestampFormat = this.Shape.GetTimestampFormat(this.MarshallLocation);
+                }
                 return resolvedTimestampFormat;
             }
         }
@@ -1034,7 +1055,7 @@ namespace ServiceClientGenerator
 
             }
         }
-                        
+
         /// <summary>
         /// Creates a representation of the member as a string using the member name
         /// </summary>
@@ -1048,7 +1069,7 @@ namespace ServiceClientGenerator
         {
             // Rules used to default the format if timestampFormat is not specified.
             // 1. All timestamp values serialized in HTTP headers are formatted using rfc822 by default.
-            // 2. All timestamp values serialized in query strings are formatted using iso8601 by default.    
+            // 2. All timestamp values serialized in query strings are formatted using iso8601 by default.
             if (marshallLocation == MarshallLocation.Header)
             {
                 return TimestampFormat.RFC822;
@@ -1065,7 +1086,7 @@ namespace ServiceClientGenerator
                 //     jsonrpc: unixTimestamp
                 //     rest-xml: iso8601
                 //     query: iso8601
-                //     ec2: iso8601                
+                //     ec2: iso8601
                 switch (serviceType)
                 {
                     case ServiceType.Rest_Json:
@@ -1084,5 +1105,16 @@ namespace ServiceClientGenerator
             }
         }
 
+        /// <summary>
+        /// Gets request member context parameter, used to drive endpoint resolution
+        /// </summary>
+        public ContextParameter ContextParameter
+        {
+            get
+            {
+                var parameter = data.SafeGet("contextParam");
+                return parameter == null ? null : new ContextParameter { name = parameter.SafeGetString("name") };
+            }
+        }
     }
 }

@@ -93,6 +93,12 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
                     response.DnsSec = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DnssecKeys", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<DnssecKey, DnssecKeyUnmarshaller>(DnssecKeyUnmarshaller.Instance);
+                    response.DnssecKeys = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DomainName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

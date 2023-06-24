@@ -38,7 +38,7 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property Policy. 
         /// <para>
-        /// The IAM policy for the channel.
+        /// The IAM policy for the channel. IAM policies are used to control access to your channel.
         /// </para>
         /// </summary>
         public string Policy

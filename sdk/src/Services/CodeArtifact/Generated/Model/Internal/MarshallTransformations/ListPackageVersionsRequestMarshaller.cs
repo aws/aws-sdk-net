@@ -56,7 +56,7 @@ namespace Amazon.CodeArtifact.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CodeArtifact");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-09-22";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-09-22";
             request.HttpMethod = "POST";
 
             
@@ -77,6 +77,9 @@ namespace Amazon.CodeArtifact.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("next-token", StringUtils.FromString(publicRequest.NextToken));
+            
+            if (publicRequest.IsSetOriginType())
+                request.Parameters.Add("originType", StringUtils.FromString(publicRequest.OriginType));
             
             if (publicRequest.IsSetPackage())
                 request.Parameters.Add("package", StringUtils.FromString(publicRequest.Package));

@@ -34,6 +34,7 @@ namespace Amazon.EC2.Model
     public partial class FleetLaunchTemplateOverrides
     {
         private string _availabilityZone;
+        private string _imageId;
         private InstanceRequirements _instanceRequirements;
         private InstanceType _instanceType;
         private string _maxPrice;
@@ -61,6 +62,26 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ImageId. 
+        /// <para>
+        /// The ID of the AMI. An AMI is required to launch an instance. This parameter is only
+        /// available for fleets of type <code>instant</code>. For fleets of type <code>maintain</code>
+        /// and <code>request</code>, you must specify the AMI ID in the launch template.
+        /// </para>
+        /// </summary>
+        public string ImageId
+        {
+            get { return this._imageId; }
+            set { this._imageId = value; }
+        }
+
+        // Check to see if ImageId property is set
+        internal bool IsSetImageId()
+        {
+            return this._imageId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property InstanceRequirements. 
         /// <para>
         /// The attributes for the instance types. When you specify instance attributes, Amazon
@@ -68,7 +89,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceTypes</code>.
+        /// If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceType</code>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -89,9 +110,13 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The instance type.
         /// </para>
+        ///  
+        /// <para>
+        ///  <code>mac1.metal</code> is not supported as a launch template override.
+        /// </para>
         ///  <note> 
         /// <para>
-        /// If you specify <code>InstanceTypes</code>, you can't specify <code>InstanceRequirements</code>.
+        /// If you specify <code>InstanceType</code>, you can't specify <code>InstanceRequirements</code>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -110,8 +135,16 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property MaxPrice. 
         /// <para>
-        /// The maximum price per unit hour that you are willing to pay for a Spot Instance.
+        /// The maximum price per unit hour that you are willing to pay for a Spot Instance. We
+        /// do not recommend using this parameter because it can lead to increased interruptions.
+        /// If you do not specify this parameter, you will pay the current Spot price. 
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// If you specify a maximum price, your instances will be interrupted more frequently
+        /// than if you do not specify this parameter.
+        /// </para>
+        ///  </important>
         /// </summary>
         public string MaxPrice
         {

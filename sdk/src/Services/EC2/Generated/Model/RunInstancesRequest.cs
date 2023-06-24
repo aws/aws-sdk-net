@@ -39,25 +39,13 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// [EC2-VPC] If you don't specify a subnet ID, we choose a default subnet from your default
-    /// VPC for you. If you don't have a default VPC, you must specify a subnet ID in the
-    /// request.
+    /// If you don't specify a subnet ID, we choose a default subnet from your default VPC
+    /// for you. If you don't have a default VPC, you must specify a subnet ID in the request.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// [EC2-Classic] If don't specify an Availability Zone, we choose one for you.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// Some instance types must be launched into a VPC. If you do not have a default VPC,
-    /// or if you do not specify a subnet ID, the request fails. For more information, see
-    /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-vpc.html#vpc-only-instance-types">Instance
-    /// types available only in a VPC</a>.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// [EC2-VPC] All instances have a network interface with a primary private IPv4 address.
-    /// If you don't specify this address, we choose one from the IPv4 range of your subnet.
+    /// All instances have a network interface with a primary private IPv4 address. If you
+    /// don't specify this address, we choose one from the IPv4 range of your subnet.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -118,6 +106,7 @@ namespace Amazon.EC2.Model
         private string _clientToken;
         private CpuOptionsRequest _cpuOptions;
         private CreditSpecificationRequest _creditSpecification;
+        private bool? _disableApiStop;
         private bool? _disableApiTermination;
         private bool? _ebsOptimized;
         private List<ElasticGpuSpecification> _elasticGpuSpecification = new List<ElasticGpuSpecification>();
@@ -135,6 +124,7 @@ namespace Amazon.EC2.Model
         private string _keyName;
         private LaunchTemplateSpecification _launchTemplate;
         private List<LicenseConfigurationRequest> _licenseSpecifications = new List<LicenseConfigurationRequest>();
+        private InstanceMaintenanceOptionsRequest _maintenanceOptions;
         private int? _maxCount;
         private InstanceMetadataOptionsRequest _metadataOptions;
         private int? _minCount;
@@ -286,7 +276,8 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>standard</code> (T2 instances) or <code>unlimited</code> (T3/T3a instances)
+        /// Default: <code>standard</code> (T2 instances) or <code>unlimited</code> (T3/T3a/T4g
+        /// instances)
         /// </para>
         ///  
         /// <para>
@@ -303,6 +294,26 @@ namespace Amazon.EC2.Model
         internal bool IsSetCreditSpecification()
         {
             return this._creditSpecification != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DisableApiStop. 
+        /// <para>
+        /// Indicates whether an instance is enabled for stop protection. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Stop
+        /// protection</a>. 
+        /// </para>
+        /// </summary>
+        public bool DisableApiStop
+        {
+            get { return this._disableApiStop.GetValueOrDefault(); }
+            set { this._disableApiStop = value; }
+        }
+
+        // Check to see if DisableApiStop property is set
+        internal bool IsSetDisableApiStop()
+        {
+            return this._disableApiStop.HasValue; 
         }
 
         /// <summary>
@@ -388,6 +399,17 @@ namespace Amazon.EC2.Model
         /// <para>
         /// You cannot specify accelerators from different generations in the same request.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Starting April 15, 2023, Amazon Web Services will not onboard new customers to Amazon
+        /// Elastic Inference (EI), and will help current customers migrate their workloads to
+        /// options that offer better price and performance. After April 15, 2023, new customers
+        /// will not be able to launch instances with Amazon EI accelerators in Amazon SageMaker,
+        /// Amazon ECS, or Amazon EC2. However, customers who have used Amazon EI at least once
+        /// during the past 30-day period are considered current customers and will be able to
+        /// continue using the service.
+        /// </para>
+        ///  </note>
         /// </summary>
         public List<ElasticInferenceAccelerator> ElasticInferenceAccelerators
         {
@@ -541,6 +563,14 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
+        /// When you change your EBS-backed instance type, instance restart or replacement behavior
+        /// depends on the instance type compatibility between the old and new types. An instance
+        /// that's backed by an instance store volume is always replaced. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-resize.html">Change
+        /// the instance type</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
         /// Default: <code>m1.small</code> 
         /// </para>
         /// </summary>
@@ -559,10 +589,10 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Ipv6AddressCount. 
         /// <para>
-        /// [EC2-VPC] The number of IPv6 addresses to associate with the primary network interface.
-        /// Amazon EC2 chooses the IPv6 addresses from the range of your subnet. You cannot specify
-        /// this option and the option to assign specific IPv6 addresses in the same request.
-        /// You can specify this option if you've specified a minimum number of instances to launch.
+        /// The number of IPv6 addresses to associate with the primary network interface. Amazon
+        /// EC2 chooses the IPv6 addresses from the range of your subnet. You cannot specify this
+        /// option and the option to assign specific IPv6 addresses in the same request. You can
+        /// specify this option if you've specified a minimum number of instances to launch.
         /// </para>
         ///  
         /// <para>
@@ -584,9 +614,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Ipv6Addresses. 
         /// <para>
-        /// [EC2-VPC] The IPv6 addresses from the range of the subnet to associate with the primary
-        /// network interface. You cannot specify this option and the option to assign a number
-        /// of IPv6 addresses in the same request. You cannot specify this option if you've specified
+        /// The IPv6 addresses from the range of the subnet to associate with the primary network
+        /// interface. You cannot specify this option and the option to assign a number of IPv6
+        /// addresses in the same request. You cannot specify this option if you've specified
         /// a minimum number of instances to launch.
         /// </para>
         ///  
@@ -692,6 +722,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetLicenseSpecifications()
         {
             return this._licenseSpecifications != null && this._licenseSpecifications.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaintenanceOptions. 
+        /// <para>
+        /// The maintenance and recovery options for the instance.
+        /// </para>
+        /// </summary>
+        public InstanceMaintenanceOptionsRequest MaintenanceOptions
+        {
+            get { return this._maintenanceOptions; }
+            set { this._maintenanceOptions = value; }
+        }
+
+        // Check to see if MaintenanceOptions property is set
+        internal bool IsSetMaintenanceOptions()
+        {
+            return this._maintenanceOptions != null;
         }
 
         /// <summary>
@@ -845,8 +893,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property PrivateIpAddress. 
         /// <para>
-        /// [EC2-VPC] The primary IPv4 address. You must specify a value from the IPv4 address
-        /// range of the subnet.
+        /// The primary IPv4 address. You must specify a value from the IPv4 address range of
+        /// the subnet.
         /// </para>
         ///  
         /// <para>
@@ -926,8 +974,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SecurityGroups. 
         /// <para>
-        /// [EC2-Classic, default VPC] The names of the security groups. For a nondefault VPC,
-        /// you must use security group IDs instead.
+        /// [Default VPC] The names of the security groups.
         /// </para>
         ///  
         /// <para>
@@ -954,7 +1001,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SubnetId. 
         /// <para>
-        /// [EC2-VPC] The ID of the subnet to launch the instance into.
+        /// The ID of the subnet to launch the instance into.
         /// </para>
         ///  
         /// <para>
@@ -977,9 +1024,35 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property TagSpecifications. 
         /// <para>
-        /// The tags to apply to the resources during launch. You can only tag instances and volumes
-        /// on launch. The specified tags are applied to all instances or volumes that are created
-        /// during launch. To tag a resource after it has been created, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.
+        /// The tags to apply to the resources that are created during instance launch.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can specify tags for the following resources only:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Instances
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Volumes
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Elastic graphics
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Spot Instance requests
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Network interfaces
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// To tag a resource after it has been created, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.
         /// </para>
         /// </summary>
         public List<TagSpecification> TagSpecifications
@@ -997,13 +1070,15 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property UserData. 
         /// <para>
-        /// The user data to make available to the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Run
-        /// commands on your Linux instance at launch</a> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-windows-user-data.html">Run
+        /// The user data script to make available to the instance. For more information, see
+        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Run commands
+        /// on your Linux instance at launch</a> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-windows-user-data.html">Run
         /// commands on your Windows instance at launch</a>. If you are using a command line tool,
         /// base64-encoding is performed for you, and you can load the text from a file. Otherwise,
         /// you must provide base64-encoded text. User data is limited to 16 KB.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string UserData
         {
             get { return this._userData; }

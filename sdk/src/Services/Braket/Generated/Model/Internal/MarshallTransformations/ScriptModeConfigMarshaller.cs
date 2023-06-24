@@ -34,7 +34,7 @@ namespace Amazon.Braket.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ScriptModeConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class ScriptModeConfigMarshaller : IRequestMarshaller<ScriptModeConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.Braket.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ScriptModeConfigMarshaller Instance = new ScriptModeConfigMarshaller();
 
     }

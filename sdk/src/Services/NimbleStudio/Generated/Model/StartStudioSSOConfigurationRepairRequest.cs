@@ -30,23 +30,23 @@ namespace Amazon.NimbleStudio.Model
 {
     /// <summary>
     /// Container for the parameters to the StartStudioSSOConfigurationRepair operation.
-    /// Repairs the Amazon Web Services SSO configuration for a given studio.
+    /// Repairs the IAM Identity Center configuration for a given studio.
     /// 
     ///  
     /// <para>
-    /// If the studio has a valid Amazon Web Services SSO configuration currently associated
-    /// with it, this operation will fail with a validation error.
+    /// If the studio has a valid IAM Identity Center configuration currently associated with
+    /// it, this operation will fail with a validation error.
     /// </para>
     ///  
     /// <para>
-    /// If the studio does not have a valid Amazon Web Services SSO configuration currently
-    /// associated with it, then a new Amazon Web Services SSO application is created for
-    /// the studio and the studio is changed to the READY state.
+    /// If the studio does not have a valid IAM Identity Center configuration currently associated
+    /// with it, then a new IAM Identity Center application is created for the studio and
+    /// the studio is changed to the <code>READY</code> state.
     /// </para>
     ///  
     /// <para>
-    /// After the Amazon Web Services SSO application is repaired, you must use the Amazon
-    /// Nimble Studio console to add administrators and users to your studio.
+    /// After the IAM Identity Center application is repaired, you must use the Amazon Nimble
+    /// Studio console to add administrators and users to your studio.
     /// </para>
     /// </summary>
     public partial class StartStudioSSOConfigurationRepairRequest : AmazonNimbleStudioRequest
@@ -58,8 +58,8 @@ namespace Amazon.NimbleStudio.Model
         /// Gets and sets the property ClientToken. 
         /// <para>
         /// Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. If you don’t specify a client token, the AWS SDK automatically generates
-        /// a client token and uses it for the request to ensure idempotency.
+        /// request. If you don’t specify a client token, the Amazon Web Services SDK automatically
+        /// generates a client token and uses it for the request to ensure idempotency.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

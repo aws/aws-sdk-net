@@ -35,7 +35,9 @@ namespace Amazon.SageMaker.Model
     {
         private float? _costPerHour;
         private float? _costPerInference;
+        private float? _cpuUtilization;
         private int? _maxInvocations;
+        private float? _memoryUtilization;
         private int? _modelLatency;
 
         /// <summary>
@@ -77,6 +79,29 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CpuUtilization. 
+        /// <para>
+        /// The expected CPU utilization at maximum invocations per minute for the instance.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>NaN</code> indicates that the value is not available.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0)]
+        public float CpuUtilization
+        {
+            get { return this._cpuUtilization.GetValueOrDefault(); }
+            set { this._cpuUtilization = value; }
+        }
+
+        // Check to see if CpuUtilization property is set
+        internal bool IsSetCpuUtilization()
+        {
+            return this._cpuUtilization.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property MaxInvocations. 
         /// <para>
         /// The expected maximum number of requests per minute for the instance.
@@ -93,6 +118,29 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetMaxInvocations()
         {
             return this._maxInvocations.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MemoryUtilization. 
+        /// <para>
+        /// The expected memory utilization at maximum invocations per minute for the instance.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>NaN</code> indicates that the value is not available.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0)]
+        public float MemoryUtilization
+        {
+            get { return this._memoryUtilization.GetValueOrDefault(); }
+            set { this._memoryUtilization = value; }
+        }
+
+        // Check to see if MemoryUtilization property is set
+        internal bool IsSetMemoryUtilization()
+        {
+            return this._memoryUtilization.HasValue; 
         }
 
         /// <summary>

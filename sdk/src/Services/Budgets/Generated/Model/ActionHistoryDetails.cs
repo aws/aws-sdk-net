@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Budgets.Model
 {
     /// <summary>
-    /// The description of details of the event.
+    /// The description of the details for the event.
     /// </summary>
     public partial class ActionHistoryDetails
     {
@@ -39,7 +39,7 @@ namespace Amazon.Budgets.Model
         /// <summary>
         /// Gets and sets the property Action. 
         /// <para>
-        ///  The budget action resource. 
+        /// The budget action resource. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

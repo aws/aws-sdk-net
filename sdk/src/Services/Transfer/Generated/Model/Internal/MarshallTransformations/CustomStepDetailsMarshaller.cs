@@ -34,7 +34,7 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CustomStepDetails Marshaller
-    /// </summary>       
+    /// </summary>
     public class CustomStepDetailsMarshaller : IRequestMarshaller<CustomStepDetails, JsonMarshallerContext> 
     {
         /// <summary>
@@ -49,6 +49,12 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("Name");
                 context.Writer.Write(requestObject.Name);
+            }
+
+            if(requestObject.IsSetSourceFileLocation())
+            {
+                context.Writer.WritePropertyName("SourceFileLocation");
+                context.Writer.Write(requestObject.SourceFileLocation);
             }
 
             if(requestObject.IsSetTarget())
@@ -67,7 +73,7 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CustomStepDetailsMarshaller Instance = new CustomStepDetailsMarshaller();
 
     }

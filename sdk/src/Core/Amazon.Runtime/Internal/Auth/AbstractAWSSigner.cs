@@ -16,6 +16,10 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Net;
+#if AWS_ASYNC_API
+using System.Threading;
+using System.Threading.Tasks;
+#endif
 using Amazon.Internal;
 using Amazon.Util;
 using Amazon.Runtime.Internal.Util;
@@ -63,6 +67,13 @@ namespace Amazon.Runtime.Internal.Auth
         }
 
         /// <summary>
+        /// Signals to the <see cref="Signer"/> Pipeline Handler
+        /// if a Signer requires valid <see cref="ImmutableCredentials"/> in order
+        /// to correctly <see cref="Sign(IRequest,IClientConfig,RequestMetrics,ImmutableCredentials)"/>.
+        /// </summary>
+        public virtual bool RequiresCredentials { get; } = true;
+
+        /// <summary>
         /// Computes RFC 2104-compliant HMAC signature.
         /// </summary>
         protected static string ComputeHash(string data, string secretkey, SigningAlgorithm algorithm)
@@ -99,8 +110,25 @@ namespace Amazon.Runtime.Internal.Auth
 
         public virtual void Sign(IRequest request, IClientConfig clientConfig, RequestMetrics metrics, ImmutableCredentials credentials)
         {
-            Sign(request, clientConfig, metrics, credentials.AccessKey, credentials.SecretKey);
+            Sign(request, clientConfig, metrics, credentials?.AccessKey, credentials?.SecretKey);
         }
+
+#if AWS_ASYNC_API
+        public virtual System.Threading.Tasks.Task SignAsync(
+            IRequest request, 
+            IClientConfig clientConfig,
+            RequestMetrics metrics, 
+            ImmutableCredentials credentials,
+            CancellationToken token = default)
+        {
+            Sign(request, clientConfig, metrics, credentials);
+#if NETSTANDARD
+            return Task.CompletedTask;
+#else
+            return Task.FromResult(0);
+#endif
+        }
+#endif
 
         public abstract ClientProtocol Protocol { get; }
 

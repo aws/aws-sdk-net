@@ -1,5 +1,6 @@
 <#@ template language="C#" inherits="Generators.BaseGenerator" #>
 <#@ assembly name="System.Core" #>
+<#@ import namespace="System.IO" #>
 <#@ import namespace="System.Linq" #>
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
@@ -35,7 +36,8 @@ using Amazon.Runtime.Internal.Util;
 		foreach(var member in members)
 		{
 #>		
-			if(<#=variableName#>.IsSet<#=member.PropertyName#>())
+            if (<#=variableName#>.IsSet<#=member.PropertyName#>()) 
+            {
 <#+
             if (member.CustomMarshallerTransformation != null)
             {
@@ -51,12 +53,49 @@ using Amazon.Runtime.Internal.Util;
             }
             else
             {
-				if(member.IsList || member.IsMap)
-				{
-					throw new NotImplementedException("Marshalling lists and maps as header value is not implemented");
+                if (member.IsList)
+                {
+                    if (member.ModelShape.ModelListShape.IsString || member.ModelShape.ModelListShape.IsEnum)
+                    {
+#>
+                        request.Headers["<#=member.MarshallLocationName#>"] = StringUtils.FromList(<#=variableName#>.<#=member.PropertyName#>);
+<#+
+                    }
+                    else
+                    {
+                        throw new InvalidDataException("[{member.ModelName}]: Marshalling lists as header values is only support for lists of strings or list of enums.");
+                    }
+                }
+                else if (member.IsMap)
+                {
+#>
+                //Map of headers with prefix "<#=member.MarshallLocationName#>".
+                foreach (var kvp<#=member.PropertyName#> in <#=variableName#>.<#=member.PropertyName#>)
+                {
+<#+ 
+                    // Dictionary<string, string>
+                    if (member.ModelShape.ValueShape.IsString)
+                    {
+#>
+                     request.Headers[$"<#=member.MarshallLocationName#>{kvp<#=member.PropertyName#>.Key}"] = kvp<#=member.PropertyName#>.Value;
+<#+
+                    }
+                    // Dictionary<string, List<string>>
+                    else if (member.ModelShape.ValueShape?.ListShape?.IsString == true)
+                    {
+#>
+                    request.Headers[$"<#=member.MarshallLocationName#>{kvp<#=member.PropertyName#>.Key}"] = string.Join(",", kvp<#=member.PropertyName#>.Value.ToArray());
+<#+
+                    }
+                    else
+                    {
+                        throw new InvalidDataException("[{member.ModelName}]: Invalid header map shapes.  Header Maps must have a value of either a string or a list of strings: {member.ModelShape.ValueShape.Name}");
+                    }
+#>
+                }
+<#+
 				}
-
-				if(member.Shape.IsString)
+				else if(member.Shape.IsString)
 				{
 #>
 				request.Headers["<#=member.MarshallLocationName#>"] = <#=variableName#>.<#=member.PropertyName#>;
@@ -69,6 +108,9 @@ using Amazon.Runtime.Internal.Util;
 <#+
                 }
             }
+            #>
+            }
+<#+
         }
 	}
 
@@ -237,48 +279,36 @@ using Amazon.Runtime.Internal.Util;
 <#+
 	}
 
-	protected void GetArnFieldNamesForOperation(Operation operation) {
-		if (this.Config.ServiceModel.Customizations.ArnFields != null)
-        {
-            if (string.IsNullOrEmpty(operation.RequestStructure.Name)
-            || !this.Config.ServiceModel.Customizations.ArnFields.ContainsKey(operation.RequestStructure.Name))
-            {
-                throw new ArgumentException($"Operation {operation.RequestStructure.Name} does not exist in the operationArnField customization. Please edit the service customization json file.");
-            }
-                                                                                               
-            if (this.Config.ServiceModel.Customizations.ArnFields[operation.RequestStructure.Name].ArnFieldExists)
-            {
-                var arnFieldItem = this.Config.ServiceModel.Customizations.ArnFields[operation.RequestStructure.Name].ArnFieldName;
-#>
-            if (Arn.IsArn(publicRequest.<#=arnFieldItem#>))
-            {
-                publicRequest.AccountId = Amazon.S3Control.Internal.S3ArnUtils.GetAccountIdBasedOnArn(
-                    publicRequest.AccountId,
-                    Arn.Parse(publicRequest.<#=arnFieldItem#>).AccountId
-                );
-            }
-<#+
-            }
-        }
-	}
-	protected void CheckContentMd5Header(Operation operation, string requestContent) 
+	protected void GenerateRequestChecksumHandling(Operation operation, string requestContent) 
     {
-		if (operation.HttpChecksumRequired) 
+        // If the request has a Content-MD5 property and it's set by the user, copy the value to the header.
+        // Otherwise the checksum handling in Core will calculate and set MD5 later.
+        if (operation.HttpChecksumRequired) 
         {
-#>
-                var checksum = Amazon.Util.AWSSDKUtils.GenerateChecksumForContent(<#=requestContent#>, true);
-<#+
-        var member = operation.RequestStructure.Members.FirstOrDefault(m => string.Equals(m.LocationName, "Content-MD5"));
-        if (member != default(Member)) 
-        {
+            var member = operation.RequestStructure.Members.FirstOrDefault(m => string.Equals(m.LocationName, "Content-MD5"));
+            if (member != default(Member)) 
+            {
 #>
                 if (publicRequest.IsSet<#=member.PropertyName#>())
-                    checksum = publicRequest.<#=member.PropertyName#>;
+                    request.Headers[Amazon.Util.HeaderKeys.ContentMD5Header] = publicRequest.<#=member.PropertyName#>;
 <#+
+            }
         }
+        
+        if (operation.RequiresChecksumDuringMarshalling)
+        {
+            if (!string.IsNullOrEmpty(operation.ChecksumConfiguration?.RequestAlgorithmMember))
+            {
 #>
-                request.Headers[Amazon.Util.HeaderKeys.ContentMD5Header] = checksum;
+                ChecksumUtils.SetRequestChecksum(request, request.<#=operation.ChecksumConfiguration.RequestAlgorithmMember#>, fallbackToMD5: <#=operation.HttpChecksumRequired.ToString().ToLower()#>);
+<#+            
+            }
+            else if (operation.HttpChecksumRequired) // no flexible checksum, just MD5
+            {
+#>
+                ChecksumUtils.SetRequestChecksumMD5(request);
 <#+
+            }
         }
-	}
+    }
 #>

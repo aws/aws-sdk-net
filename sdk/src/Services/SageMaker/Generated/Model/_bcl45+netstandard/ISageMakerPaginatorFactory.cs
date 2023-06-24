@@ -36,6 +36,11 @@ namespace Amazon.SageMaker.Model
         IListAlgorithmsPaginator ListAlgorithms(ListAlgorithmsRequest request);
 
         /// <summary>
+        /// Paginator for ListAliases operation
+        ///</summary>
+        IListAliasesPaginator ListAliases(ListAliasesRequest request);
+
+        /// <summary>
         /// Paginator for ListAppImageConfigs operation
         ///</summary>
         IListAppImageConfigsPaginator ListAppImageConfigs(ListAppImageConfigsRequest request);
@@ -101,6 +106,11 @@ namespace Amazon.SageMaker.Model
         IListDomainsPaginator ListDomains(ListDomainsRequest request);
 
         /// <summary>
+        /// Paginator for ListEdgeDeploymentPlans operation
+        ///</summary>
+        IListEdgeDeploymentPlansPaginator ListEdgeDeploymentPlans(ListEdgeDeploymentPlansRequest request);
+
+        /// <summary>
         /// Paginator for ListEdgePackagingJobs operation
         ///</summary>
         IListEdgePackagingJobsPaginator ListEdgePackagingJobs(ListEdgePackagingJobsRequest request);
@@ -151,9 +161,19 @@ namespace Amazon.SageMaker.Model
         IListImageVersionsPaginator ListImageVersions(ListImageVersionsRequest request);
 
         /// <summary>
+        /// Paginator for ListInferenceExperiments operation
+        ///</summary>
+        IListInferenceExperimentsPaginator ListInferenceExperiments(ListInferenceExperimentsRequest request);
+
+        /// <summary>
         /// Paginator for ListInferenceRecommendationsJobs operation
         ///</summary>
         IListInferenceRecommendationsJobsPaginator ListInferenceRecommendationsJobs(ListInferenceRecommendationsJobsRequest request);
+
+        /// <summary>
+        /// Paginator for ListInferenceRecommendationsJobSteps operation
+        ///</summary>
+        IListInferenceRecommendationsJobStepsPaginator ListInferenceRecommendationsJobSteps(ListInferenceRecommendationsJobStepsRequest request);
 
         /// <summary>
         /// Paginator for ListLabelingJobs operation
@@ -174,6 +194,21 @@ namespace Amazon.SageMaker.Model
         /// Paginator for ListModelBiasJobDefinitions operation
         ///</summary>
         IListModelBiasJobDefinitionsPaginator ListModelBiasJobDefinitions(ListModelBiasJobDefinitionsRequest request);
+
+        /// <summary>
+        /// Paginator for ListModelCardExportJobs operation
+        ///</summary>
+        IListModelCardExportJobsPaginator ListModelCardExportJobs(ListModelCardExportJobsRequest request);
+
+        /// <summary>
+        /// Paginator for ListModelCards operation
+        ///</summary>
+        IListModelCardsPaginator ListModelCards(ListModelCardsRequest request);
+
+        /// <summary>
+        /// Paginator for ListModelCardVersions operation
+        ///</summary>
+        IListModelCardVersionsPaginator ListModelCardVersions(ListModelCardVersionsRequest request);
 
         /// <summary>
         /// Paginator for ListModelExplainabilityJobDefinitions operation
@@ -204,6 +239,16 @@ namespace Amazon.SageMaker.Model
         /// Paginator for ListModels operation
         ///</summary>
         IListModelsPaginator ListModels(ListModelsRequest request);
+
+        /// <summary>
+        /// Paginator for ListMonitoringAlertHistory operation
+        ///</summary>
+        IListMonitoringAlertHistoryPaginator ListMonitoringAlertHistory(ListMonitoringAlertHistoryRequest request);
+
+        /// <summary>
+        /// Paginator for ListMonitoringAlerts operation
+        ///</summary>
+        IListMonitoringAlertsPaginator ListMonitoringAlerts(ListMonitoringAlertsRequest request);
 
         /// <summary>
         /// Paginator for ListMonitoringExecutions operation
@@ -254,6 +299,16 @@ namespace Amazon.SageMaker.Model
         /// Paginator for ListProjects operation
         ///</summary>
         IListProjectsPaginator ListProjects(ListProjectsRequest request);
+
+        /// <summary>
+        /// Paginator for ListSpaces operation
+        ///</summary>
+        IListSpacesPaginator ListSpaces(ListSpacesRequest request);
+
+        /// <summary>
+        /// Paginator for ListStageDevices operation
+        ///</summary>
+        IListStageDevicesPaginator ListStageDevices(ListStageDevicesRequest request);
 
         /// <summary>
         /// Paginator for ListStudioLifecycleConfigs operation

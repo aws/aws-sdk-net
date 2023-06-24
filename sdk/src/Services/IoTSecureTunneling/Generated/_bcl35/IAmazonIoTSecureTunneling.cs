@@ -29,15 +29,14 @@ namespace Amazon.IoTSecureTunneling
     /// <summary>
     /// Interface for accessing IoTSecureTunneling
     ///
-    /// AWS IoT Secure Tunneling 
+    /// IoT Secure Tunneling 
     /// <para>
-    /// AWS IoT Secure Tunnling enables you to create remote connections to devices deployed
-    /// in the field.
+    /// IoT Secure Tunneling creates remote connections to devices deployed in the field.
     /// </para>
     ///  
     /// <para>
-    /// For more information about how AWS IoT Secure Tunneling works, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/secure-tunneling.html">AWS
-    /// IoT Secure Tunneling</a>.
+    /// For more information about how IoT Secure Tunneling works, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/secure-tunneling.html">IoT
+    /// Secure Tunneling</a>.
     /// </para>
     /// </summary>
     public partial interface IAmazonIoTSecureTunneling : IAmazonService, IDisposable
@@ -60,6 +59,12 @@ namespace Amazon.IoTSecureTunneling
         /// Closes a tunnel identified by the unique tunnel id. When a <code>CloseTunnel</code>
         /// request is received, we close the WebSocket connections between the client and proxy
         /// server so no data can be transmitted.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CloseTunnel</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CloseTunnel service method.</param>
         /// 
@@ -103,6 +108,12 @@ namespace Amazon.IoTSecureTunneling
 
         /// <summary>
         /// Gets information about a tunnel identified by the unique tunnel id.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeTunnel</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeTunnel service method.</param>
         /// 
@@ -188,8 +199,14 @@ namespace Amazon.IoTSecureTunneling
 
 
         /// <summary>
-        /// List all tunnels for an AWS account. Tunnels are listed by creation time in descending
-        /// order, newer tunnels will be listed before older tunnels.
+        /// List all tunnels for an Amazon Web Services account. Tunnels are listed by creation
+        /// time in descending order, newer tunnels will be listed before older tunnels.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListTunnels</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTunnels service method.</param>
         /// 
@@ -230,7 +247,13 @@ namespace Amazon.IoTSecureTunneling
 
         /// <summary>
         /// Creates a new tunnel, and returns two client access tokens for clients to use to connect
-        /// to the AWS IoT Secure Tunneling proxy server.
+        /// to the IoT Secure Tunneling proxy server.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">OpenTunnel</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the OpenTunnel service method.</param>
         /// 
@@ -266,6 +289,64 @@ namespace Amazon.IoTSecureTunneling
         /// <returns>Returns a  OpenTunnelResult from IoTSecureTunneling.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsecuretunneling-2018-10-05/OpenTunnel">REST API Reference for OpenTunnel Operation</seealso>
         OpenTunnelResponse EndOpenTunnel(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  RotateTunnelAccessToken
+
+
+        /// <summary>
+        /// Revokes the current client access token (CAT) and returns new CAT for clients to use
+        /// when reconnecting to secure tunneling to access the same tunnel.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">RotateTunnelAccessToken</a>
+        /// action.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Rotating the CAT doesn't extend the tunnel duration. For example, say the tunnel duration
+        /// is 12 hours and the tunnel has already been open for 4 hours. When you rotate the
+        /// access tokens, the new tokens that are generated can only be used for the remaining
+        /// 8 hours.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RotateTunnelAccessToken service method.</param>
+        /// 
+        /// <returns>The response from the RotateTunnelAccessToken service method, as returned by IoTSecureTunneling.</returns>
+        /// <exception cref="Amazon.IoTSecureTunneling.Model.ResourceNotFoundException">
+        /// Thrown when an operation is attempted on a resource that does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsecuretunneling-2018-10-05/RotateTunnelAccessToken">REST API Reference for RotateTunnelAccessToken Operation</seealso>
+        RotateTunnelAccessTokenResponse RotateTunnelAccessToken(RotateTunnelAccessTokenRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RotateTunnelAccessToken operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RotateTunnelAccessToken operation on AmazonIoTSecureTunnelingClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRotateTunnelAccessToken
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsecuretunneling-2018-10-05/RotateTunnelAccessToken">REST API Reference for RotateTunnelAccessToken Operation</seealso>
+        IAsyncResult BeginRotateTunnelAccessToken(RotateTunnelAccessTokenRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  RotateTunnelAccessToken operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRotateTunnelAccessToken.</param>
+        /// 
+        /// <returns>Returns a  RotateTunnelAccessTokenResult from IoTSecureTunneling.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsecuretunneling-2018-10-05/RotateTunnelAccessToken">REST API Reference for RotateTunnelAccessToken Operation</seealso>
+        RotateTunnelAccessTokenResponse EndRotateTunnelAccessToken(IAsyncResult asyncResult);
 
         #endregion
         

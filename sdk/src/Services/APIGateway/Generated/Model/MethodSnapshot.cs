@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.APIGateway.Model
 {
     /// <summary>
-    /// Represents a summary of a <a>Method</a> resource, given a particular date and time.
+    /// Represents a summary of a Method resource, given a particular date and time.
     /// </summary>
     public partial class MethodSnapshot
     {
@@ -39,7 +39,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property ApiKeyRequired. 
         /// <para>
-        /// Specifies whether the method requires a valid <a>ApiKey</a>.
+        /// Specifies whether the method requires a valid ApiKey.
         /// </para>
         /// </summary>
         public bool ApiKeyRequired

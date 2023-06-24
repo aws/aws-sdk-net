@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RAM.Model
 {
     /// <summary>
-    /// The requested operation is not permitted.
+    /// The operation failed because the requested operation isn't permitted.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

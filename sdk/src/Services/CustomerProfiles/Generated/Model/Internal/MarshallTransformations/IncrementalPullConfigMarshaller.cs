@@ -34,7 +34,7 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// IncrementalPullConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class IncrementalPullConfigMarshaller : IRequestMarshaller<IncrementalPullConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static IncrementalPullConfigMarshaller Instance = new IncrementalPullConfigMarshaller();
 
     }

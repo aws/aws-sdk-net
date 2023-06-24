@@ -17,22 +17,22 @@
  * Do not modify this file. This file is generated from the swf-2012-01-25.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
-
+using Amazon.SimpleWorkflow.Internal;
 
 namespace Amazon.SimpleWorkflow
 {
     /// <summary>
     /// Configuration for accessing Amazon SimpleWorkflow service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonSimpleWorkflowConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.106");
+            InternalSDKUtils.BuildUserAgentString("3.7.102.20");
 
         private string _userAgent = UserAgentString;
 
@@ -40,8 +40,10 @@ namespace Amazon.SimpleWorkflow
         /// Default constructor
         /// </summary>
         public AmazonSimpleWorkflowConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonSimpleWorkflowDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "swf";
+            this.EndpointProvider = new AmazonSimpleWorkflowEndpointProvider();
         }
 
         /// <summary>
@@ -76,5 +78,6 @@ namespace Amazon.SimpleWorkflow
                 return _userAgent;
             }
         }
+
     }
 }

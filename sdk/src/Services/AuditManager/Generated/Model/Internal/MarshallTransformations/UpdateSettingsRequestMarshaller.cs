@@ -56,7 +56,7 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.AuditManager");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-07-25";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-07-25";
             request.HttpMethod = "PUT";
 
             request.ResourcePath = "/settings";
@@ -72,6 +72,17 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
 
                     var marshaller = AssessmentReportsDestinationMarshaller.Instance;
                     marshaller.Marshall(publicRequest.DefaultAssessmentReportsDestination, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetDefaultExportDestination())
+                {
+                    context.Writer.WritePropertyName("defaultExportDestination");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = DefaultExportDestinationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.DefaultExportDestination, context);
 
                     context.Writer.WriteObjectEnd();
                 }
@@ -92,6 +103,23 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetDeregistrationPolicy())
+                {
+                    context.Writer.WritePropertyName("deregistrationPolicy");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = DeregistrationPolicyMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.DeregistrationPolicy, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetEvidenceFinderEnabled())
+                {
+                    context.Writer.WritePropertyName("evidenceFinderEnabled");
+                    context.Writer.Write(publicRequest.EvidenceFinderEnabled);
+                }
+
                 if(publicRequest.IsSetKmsKey())
                 {
                     context.Writer.WritePropertyName("kmsKey");
@@ -104,7 +132,6 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.SnsTopic);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

@@ -39,7 +39,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property QuerySuggestionsId. 
         /// <para>
-        /// The unique identifier for a list of query suggestions for an index.
+        /// The identifier for a list of query suggestions for an index.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=36)]

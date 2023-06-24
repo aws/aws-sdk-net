@@ -34,7 +34,7 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ServerProcess Marshaller
-    /// </summary>       
+    /// </summary>
     public class ServerProcessMarshaller : IRequestMarshaller<ServerProcess, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ServerProcessMarshaller Instance = new ServerProcessMarshaller();
 
     }

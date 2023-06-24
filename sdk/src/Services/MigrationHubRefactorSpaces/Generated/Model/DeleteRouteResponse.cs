@@ -43,7 +43,7 @@ namespace Amazon.MigrationHubRefactorSpaces.Model
         /// <summary>
         /// Gets and sets the property ApplicationId. 
         /// <para>
-        /// he ID of the application that the route belongs to.
+        /// The ID of the application that the route belongs to.
         /// </para>
         /// </summary>
         [AWSProperty(Min=14, Max=14)]

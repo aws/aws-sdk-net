@@ -56,13 +56,13 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.MediaTailor");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-04-23";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-04-23";
             request.HttpMethod = "PUT";
 
             if (!publicRequest.IsSetChannelName())
                 throw new AmazonMediaTailorException("Request object does not have required field ChannelName set");
-            request.AddPathResource("{channelName}", StringUtils.FromString(publicRequest.ChannelName));
-            request.ResourcePath = "/channel/{channelName}/policy";
+            request.AddPathResource("{ChannelName}", StringUtils.FromString(publicRequest.ChannelName));
+            request.ResourcePath = "/channel/{ChannelName}/policy";
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
@@ -74,7 +74,6 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Policy);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

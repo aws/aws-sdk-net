@@ -43,9 +43,9 @@ namespace Amazon.AppConfig
     /// systems where a simple typo could cause an unexpected outage, AppConfig includes validators.
     /// A validator provides a syntactic or semantic check to ensure that the configuration
     /// you want to deploy works as intended. To validate your application configuration data,
-    /// you provide a schema or a Lambda function that runs against the configuration. The
-    /// configuration deployment or update can only proceed when the configuration data is
-    /// valid.
+    /// you provide a schema or an Amazon Web Services Lambda function that runs against the
+    /// configuration. The configuration deployment or update can only proceed when the configuration
+    /// data is valid.
     /// </para>
     ///  
     /// <para>
@@ -62,13 +62,13 @@ namespace Amazon.AppConfig
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <b>Application tuning</b>: Use AppConfig to carefully introduce changes to your application
-    /// that can only be tested with production traffic.
+    ///  <b>Feature flags</b>: Use AppConfig to turn on new features that require a timely
+    /// deployment, such as a product launch or announcement. 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <b>Feature toggle</b>: Use AppConfig to turn on new features that require a timely
-    /// deployment, such as a product launch or announcement. 
+    ///  <b>Application tuning</b>: Use AppConfig to carefully introduce changes to your application
+    /// that can only be tested with production traffic.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -99,11 +99,11 @@ namespace Amazon.AppConfig
 
 
         /// <summary>
-        /// Creates an application. An application in AppConfig is a logical unit of code that
-        /// provides capabilities for your customers. For example, an application can be a microservice
-        /// that runs on Amazon EC2 instances, a mobile application installed by your users, a
-        /// serverless application using Amazon API Gateway and Lambda, or any system you run
-        /// on behalf of others.
+        /// Creates an application. In AppConfig, an application is simply an organizational construct
+        /// like a folder. This organizational construct has a relationship with some unit of
+        /// executable code. For example, you could create an application called MyMobileApp to
+        /// organize and manage configuration data for a mobile application installed by your
+        /// users.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateApplication service method.</param>
         /// 
@@ -120,11 +120,11 @@ namespace Amazon.AppConfig
 
 
         /// <summary>
-        /// Creates an application. An application in AppConfig is a logical unit of code that
-        /// provides capabilities for your customers. For example, an application can be a microservice
-        /// that runs on Amazon EC2 instances, a mobile application installed by your users, a
-        /// serverless application using Amazon API Gateway and Lambda, or any system you run
-        /// on behalf of others.
+        /// Creates an application. In AppConfig, an application is simply an organizational construct
+        /// like a folder. This organizational construct has a relationship with some unit of
+        /// executable code. For example, you could create an application called MyMobileApp to
+        /// organize and manage configuration data for a mobile application installed by your
+        /// users.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateApplication service method.</param>
         /// <param name="cancellationToken">
@@ -148,12 +148,39 @@ namespace Amazon.AppConfig
 
         /// <summary>
         /// Creates a configuration profile, which is information that enables AppConfig to access
-        /// the configuration source. Valid configuration sources include the AppConfig hosted
-        /// configuration store, Amazon Web Services Systems Manager (SSM) documents, SSM Parameter
-        /// Store parameters, Amazon S3 objects, or any <a href="http://docs.aws.amazon.com/codepipeline/latest/userguide/integrations-action-type.html#integrations-source">integration
-        /// source action</a> supported by CodePipeline. A configuration profile includes the
-        /// following information:
+        /// the configuration source. Valid configuration sources include the following:
         /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Configuration data in YAML, JSON, and other formats stored in the AppConfig hosted
+        /// configuration store
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Configuration data stored as objects in an Amazon Simple Storage Service (Amazon S3)
+        /// bucket
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Pipelines stored in CodePipeline
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Secrets stored in Secrets Manager
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Standard and secure string parameters stored in Amazon Web Services Systems Manager
+        /// Parameter Store
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Configuration data in SSM documents stored in the Systems Manager document store
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// A configuration profile includes the following information:
+        /// </para>
         ///  <ul> <li> 
         /// <para>
         /// The URI location of the configuration data.
@@ -166,7 +193,7 @@ namespace Amazon.AppConfig
         ///  </li> <li> 
         /// <para>
         /// A validator for the configuration data. Available validators include either a JSON
-        /// Schema or an Lambda function.
+        /// Schema or an Amazon Web Services Lambda function.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -193,12 +220,39 @@ namespace Amazon.AppConfig
 
         /// <summary>
         /// Creates a configuration profile, which is information that enables AppConfig to access
-        /// the configuration source. Valid configuration sources include the AppConfig hosted
-        /// configuration store, Amazon Web Services Systems Manager (SSM) documents, SSM Parameter
-        /// Store parameters, Amazon S3 objects, or any <a href="http://docs.aws.amazon.com/codepipeline/latest/userguide/integrations-action-type.html#integrations-source">integration
-        /// source action</a> supported by CodePipeline. A configuration profile includes the
-        /// following information:
+        /// the configuration source. Valid configuration sources include the following:
         /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Configuration data in YAML, JSON, and other formats stored in the AppConfig hosted
+        /// configuration store
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Configuration data stored as objects in an Amazon Simple Storage Service (Amazon S3)
+        /// bucket
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Pipelines stored in CodePipeline
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Secrets stored in Secrets Manager
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Standard and secure string parameters stored in Amazon Web Services Systems Manager
+        /// Parameter Store
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Configuration data in SSM documents stored in the Systems Manager document store
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// A configuration profile includes the following information:
+        /// </para>
         ///  <ul> <li> 
         /// <para>
         /// The URI location of the configuration data.
@@ -211,7 +265,7 @@ namespace Amazon.AppConfig
         ///  </li> <li> 
         /// <para>
         /// A validator for the configuration data. Available validators include either a JSON
-        /// Schema or an Lambda function.
+        /// Schema or an Amazon Web Services Lambda function.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -290,12 +344,12 @@ namespace Amazon.AppConfig
 
         /// <summary>
         /// Creates an environment. For each application, you define one or more environments.
-        /// An environment is a logical deployment group of AppConfig targets, such as applications
-        /// in a <code>Beta</code> or <code>Production</code> environment. You can also define
-        /// environments for application subcomponents such as the <code>Web</code>, <code>Mobile</code>
-        /// and <code>Back-end</code> components for your application. You can configure Amazon
-        /// CloudWatch alarms for each environment. The system monitors alarms during a configuration
-        /// deployment. If an alarm is triggered, the system rolls back the configuration.
+        /// An environment is a deployment group of AppConfig targets, such as applications in
+        /// a <code>Beta</code> or <code>Production</code> environment. You can also define environments
+        /// for application subcomponents such as the <code>Web</code>, <code>Mobile</code> and
+        /// <code>Back-end</code> components for your application. You can configure Amazon CloudWatch
+        /// alarms for each environment. The system monitors alarms during a configuration deployment.
+        /// If an alarm is triggered, the system rolls back the configuration.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateEnvironment service method.</param>
         /// 
@@ -316,12 +370,12 @@ namespace Amazon.AppConfig
 
         /// <summary>
         /// Creates an environment. For each application, you define one or more environments.
-        /// An environment is a logical deployment group of AppConfig targets, such as applications
-        /// in a <code>Beta</code> or <code>Production</code> environment. You can also define
-        /// environments for application subcomponents such as the <code>Web</code>, <code>Mobile</code>
-        /// and <code>Back-end</code> components for your application. You can configure Amazon
-        /// CloudWatch alarms for each environment. The system monitors alarms during a configuration
-        /// deployment. If an alarm is triggered, the system rolls back the configuration.
+        /// An environment is a deployment group of AppConfig targets, such as applications in
+        /// a <code>Beta</code> or <code>Production</code> environment. You can also define environments
+        /// for application subcomponents such as the <code>Web</code>, <code>Mobile</code> and
+        /// <code>Back-end</code> components for your application. You can configure Amazon CloudWatch
+        /// alarms for each environment. The system monitors alarms during a configuration deployment.
+        /// If an alarm is triggered, the system rolls back the configuration.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateEnvironment service method.</param>
         /// <param name="cancellationToken">
@@ -340,6 +394,156 @@ namespace Amazon.AppConfig
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/CreateEnvironment">REST API Reference for CreateEnvironment Operation</seealso>
         Task<CreateEnvironmentResponse> CreateEnvironmentAsync(CreateEnvironmentRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateExtension
+
+
+        /// <summary>
+        /// Creates an AppConfig extension. An extension augments your ability to inject logic
+        /// or behavior at different points during the AppConfig workflow of creating or deploying
+        /// a configuration.
+        /// 
+        ///  
+        /// <para>
+        /// You can create your own extensions or use the Amazon Web Services authored extensions
+        /// provided by AppConfig. For most use cases, to create your own extension, you must
+        /// create an Lambda function to perform any computation and processing defined in the
+        /// extension. For more information about extensions, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html">Working
+        /// with AppConfig extensions</a> in the <i>AppConfig User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateExtension service method.</param>
+        /// 
+        /// <returns>The response from the CreateExtension service method, as returned by AppConfig.</returns>
+        /// <exception cref="Amazon.AppConfig.Model.BadRequestException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.InternalServerException">
+        /// There was an internal failure in the AppConfig service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.ServiceQuotaExceededException">
+        /// The number of hosted configuration versions exceeds the limit for the AppConfig hosted
+        /// configuration store. Delete one or more versions and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/CreateExtension">REST API Reference for CreateExtension Operation</seealso>
+        CreateExtensionResponse CreateExtension(CreateExtensionRequest request);
+
+
+
+        /// <summary>
+        /// Creates an AppConfig extension. An extension augments your ability to inject logic
+        /// or behavior at different points during the AppConfig workflow of creating or deploying
+        /// a configuration.
+        /// 
+        ///  
+        /// <para>
+        /// You can create your own extensions or use the Amazon Web Services authored extensions
+        /// provided by AppConfig. For most use cases, to create your own extension, you must
+        /// create an Lambda function to perform any computation and processing defined in the
+        /// extension. For more information about extensions, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html">Working
+        /// with AppConfig extensions</a> in the <i>AppConfig User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateExtension service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateExtension service method, as returned by AppConfig.</returns>
+        /// <exception cref="Amazon.AppConfig.Model.BadRequestException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.InternalServerException">
+        /// There was an internal failure in the AppConfig service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.ServiceQuotaExceededException">
+        /// The number of hosted configuration versions exceeds the limit for the AppConfig hosted
+        /// configuration store. Delete one or more versions and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/CreateExtension">REST API Reference for CreateExtension Operation</seealso>
+        Task<CreateExtensionResponse> CreateExtensionAsync(CreateExtensionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateExtensionAssociation
+
+
+        /// <summary>
+        /// When you create an extension or configure an Amazon Web Services authored extension,
+        /// you associate the extension with an AppConfig application, environment, or configuration
+        /// profile. For example, you can choose to run the <code>AppConfig deployment events
+        /// to Amazon SNS</code> Amazon Web Services authored extension and receive notifications
+        /// on an Amazon SNS topic anytime a configuration deployment is started for a specific
+        /// application. Defining which extension to associate with an AppConfig resource is called
+        /// an <i>extension association</i>. An extension association is a specified relationship
+        /// between an extension and an AppConfig resource, such as an application or a configuration
+        /// profile. For more information about extensions and associations, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html">Working
+        /// with AppConfig extensions</a> in the <i>AppConfig User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateExtensionAssociation service method.</param>
+        /// 
+        /// <returns>The response from the CreateExtensionAssociation service method, as returned by AppConfig.</returns>
+        /// <exception cref="Amazon.AppConfig.Model.BadRequestException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.InternalServerException">
+        /// There was an internal failure in the AppConfig service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.ServiceQuotaExceededException">
+        /// The number of hosted configuration versions exceeds the limit for the AppConfig hosted
+        /// configuration store. Delete one or more versions and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/CreateExtensionAssociation">REST API Reference for CreateExtensionAssociation Operation</seealso>
+        CreateExtensionAssociationResponse CreateExtensionAssociation(CreateExtensionAssociationRequest request);
+
+
+
+        /// <summary>
+        /// When you create an extension or configure an Amazon Web Services authored extension,
+        /// you associate the extension with an AppConfig application, environment, or configuration
+        /// profile. For example, you can choose to run the <code>AppConfig deployment events
+        /// to Amazon SNS</code> Amazon Web Services authored extension and receive notifications
+        /// on an Amazon SNS topic anytime a configuration deployment is started for a specific
+        /// application. Defining which extension to associate with an AppConfig resource is called
+        /// an <i>extension association</i>. An extension association is a specified relationship
+        /// between an extension and an AppConfig resource, such as an application or a configuration
+        /// profile. For more information about extensions and associations, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html">Working
+        /// with AppConfig extensions</a> in the <i>AppConfig User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateExtensionAssociation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateExtensionAssociation service method, as returned by AppConfig.</returns>
+        /// <exception cref="Amazon.AppConfig.Model.BadRequestException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.InternalServerException">
+        /// There was an internal failure in the AppConfig service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.ServiceQuotaExceededException">
+        /// The number of hosted configuration versions exceeds the limit for the AppConfig hosted
+        /// configuration store. Delete one or more versions and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/CreateExtensionAssociation">REST API Reference for CreateExtensionAssociation Operation</seealso>
+        Task<CreateExtensionAssociationResponse> CreateExtensionAssociationAsync(CreateExtensionAssociationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -619,6 +823,102 @@ namespace Amazon.AppConfig
 
         #endregion
         
+        #region  DeleteExtension
+
+
+        /// <summary>
+        /// Deletes an AppConfig extension. You must delete all associations to an extension before
+        /// you delete the extension.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteExtension service method.</param>
+        /// 
+        /// <returns>The response from the DeleteExtension service method, as returned by AppConfig.</returns>
+        /// <exception cref="Amazon.AppConfig.Model.BadRequestException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.InternalServerException">
+        /// There was an internal failure in the AppConfig service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/DeleteExtension">REST API Reference for DeleteExtension Operation</seealso>
+        DeleteExtensionResponse DeleteExtension(DeleteExtensionRequest request);
+
+
+
+        /// <summary>
+        /// Deletes an AppConfig extension. You must delete all associations to an extension before
+        /// you delete the extension.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteExtension service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteExtension service method, as returned by AppConfig.</returns>
+        /// <exception cref="Amazon.AppConfig.Model.BadRequestException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.InternalServerException">
+        /// There was an internal failure in the AppConfig service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/DeleteExtension">REST API Reference for DeleteExtension Operation</seealso>
+        Task<DeleteExtensionResponse> DeleteExtensionAsync(DeleteExtensionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteExtensionAssociation
+
+
+        /// <summary>
+        /// Deletes an extension association. This action doesn't delete extensions defined in
+        /// the association.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteExtensionAssociation service method.</param>
+        /// 
+        /// <returns>The response from the DeleteExtensionAssociation service method, as returned by AppConfig.</returns>
+        /// <exception cref="Amazon.AppConfig.Model.BadRequestException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.InternalServerException">
+        /// There was an internal failure in the AppConfig service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/DeleteExtensionAssociation">REST API Reference for DeleteExtensionAssociation Operation</seealso>
+        DeleteExtensionAssociationResponse DeleteExtensionAssociation(DeleteExtensionAssociationRequest request);
+
+
+
+        /// <summary>
+        /// Deletes an extension association. This action doesn't delete extensions defined in
+        /// the association.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteExtensionAssociation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteExtensionAssociation service method, as returned by AppConfig.</returns>
+        /// <exception cref="Amazon.AppConfig.Model.BadRequestException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.InternalServerException">
+        /// There was an internal failure in the AppConfig service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/DeleteExtensionAssociation">REST API Reference for DeleteExtensionAssociation Operation</seealso>
+        Task<DeleteExtensionAssociationResponse> DeleteExtensionAssociationAsync(DeleteExtensionAssociationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeleteHostedConfigurationVersion
 
 
@@ -715,23 +1015,24 @@ namespace Amazon.AppConfig
 
 
         /// <summary>
-        /// Retrieves information about a configuration.
+        /// (Deprecated) Retrieves the latest deployed configuration.
         /// 
         ///  <important> 
         /// <para>
-        /// AppConfig uses the value of the <code>ClientConfigurationVersion</code> parameter
-        /// to identify the configuration version on your clients. If you don’t send <code>ClientConfigurationVersion</code>
-        /// with each call to <code>GetConfiguration</code>, your clients receive the current
-        /// configuration. You are charged each time your clients receive a configuration.
+        /// Note the following important information.
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// To avoid excess charges, we recommend that you include the <code>ClientConfigurationVersion</code>
-        /// value with every call to <code>GetConfiguration</code>. This value must be saved on
-        /// your client. Subsequent calls to <code>GetConfiguration</code> must pass this value
-        /// by using the <code>ClientConfigurationVersion</code> parameter. 
+        /// This API action is deprecated. Calls to receive configuration data should use the
+        /// <a href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_appconfigdata_StartConfigurationSession.html">StartConfigurationSession</a>
+        /// and <a href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_appconfigdata_GetLatestConfiguration.html">GetLatestConfiguration</a>
+        /// APIs instead. 
         /// </para>
-        ///  </important>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>GetConfiguration</code> is a priced call. For more information, see <a href="https://aws.amazon.com/systems-manager/pricing/">Pricing</a>.
+        /// </para>
+        ///  </li> </ul> </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetConfiguration service method.</param>
         /// 
@@ -746,28 +1047,30 @@ namespace Amazon.AppConfig
         /// The requested resource could not be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/GetConfiguration">REST API Reference for GetConfiguration Operation</seealso>
+        [Obsolete("This API has been deprecated in favor of the GetLatestConfiguration API used in conjunction with StartConfigurationSession.")]
         GetConfigurationResponse GetConfiguration(GetConfigurationRequest request);
 
 
 
         /// <summary>
-        /// Retrieves information about a configuration.
+        /// (Deprecated) Retrieves the latest deployed configuration.
         /// 
         ///  <important> 
         /// <para>
-        /// AppConfig uses the value of the <code>ClientConfigurationVersion</code> parameter
-        /// to identify the configuration version on your clients. If you don’t send <code>ClientConfigurationVersion</code>
-        /// with each call to <code>GetConfiguration</code>, your clients receive the current
-        /// configuration. You are charged each time your clients receive a configuration.
+        /// Note the following important information.
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// To avoid excess charges, we recommend that you include the <code>ClientConfigurationVersion</code>
-        /// value with every call to <code>GetConfiguration</code>. This value must be saved on
-        /// your client. Subsequent calls to <code>GetConfiguration</code> must pass this value
-        /// by using the <code>ClientConfigurationVersion</code> parameter. 
+        /// This API action is deprecated. Calls to receive configuration data should use the
+        /// <a href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_appconfigdata_StartConfigurationSession.html">StartConfigurationSession</a>
+        /// and <a href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_appconfigdata_GetLatestConfiguration.html">GetLatestConfiguration</a>
+        /// APIs instead. 
         /// </para>
-        ///  </important>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>GetConfiguration</code> is a priced call. For more information, see <a href="https://aws.amazon.com/systems-manager/pricing/">Pricing</a>.
+        /// </para>
+        ///  </li> </ul> </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -785,6 +1088,7 @@ namespace Amazon.AppConfig
         /// The requested resource could not be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/GetConfiguration">REST API Reference for GetConfiguration Operation</seealso>
+        [Obsolete("This API has been deprecated in favor of the GetLatestConfiguration API used in conjunction with StartConfigurationSession.")]
         Task<GetConfigurationResponse> GetConfigurationAsync(GetConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -939,12 +1243,11 @@ namespace Amazon.AppConfig
 
 
         /// <summary>
-        /// Retrieves information about an environment. An environment is a logical deployment
-        /// group of AppConfig applications, such as applications in a <code>Production</code>
-        /// environment or in an <code>EU_Region</code> environment. Each configuration deployment
-        /// targets an environment. You can enable one or more Amazon CloudWatch alarms for an
-        /// environment. If an alarm is triggered during a deployment, AppConfig roles back the
-        /// configuration.
+        /// Retrieves information about an environment. An environment is a deployment group of
+        /// AppConfig applications, such as applications in a <code>Production</code> environment
+        /// or in an <code>EU_Region</code> environment. Each configuration deployment targets
+        /// an environment. You can enable one or more Amazon CloudWatch alarms for an environment.
+        /// If an alarm is triggered during a deployment, AppConfig roles back the configuration.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetEnvironment service method.</param>
         /// 
@@ -964,12 +1267,11 @@ namespace Amazon.AppConfig
 
 
         /// <summary>
-        /// Retrieves information about an environment. An environment is a logical deployment
-        /// group of AppConfig applications, such as applications in a <code>Production</code>
-        /// environment or in an <code>EU_Region</code> environment. Each configuration deployment
-        /// targets an environment. You can enable one or more Amazon CloudWatch alarms for an
-        /// environment. If an alarm is triggered during a deployment, AppConfig roles back the
-        /// configuration.
+        /// Retrieves information about an environment. An environment is a deployment group of
+        /// AppConfig applications, such as applications in a <code>Production</code> environment
+        /// or in an <code>EU_Region</code> environment. Each configuration deployment targets
+        /// an environment. You can enable one or more Amazon CloudWatch alarms for an environment.
+        /// If an alarm is triggered during a deployment, AppConfig roles back the configuration.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetEnvironment service method.</param>
         /// <param name="cancellationToken">
@@ -988,6 +1290,102 @@ namespace Amazon.AppConfig
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/GetEnvironment">REST API Reference for GetEnvironment Operation</seealso>
         Task<GetEnvironmentResponse> GetEnvironmentAsync(GetEnvironmentRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetExtension
+
+
+        /// <summary>
+        /// Returns information about an AppConfig extension.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetExtension service method.</param>
+        /// 
+        /// <returns>The response from the GetExtension service method, as returned by AppConfig.</returns>
+        /// <exception cref="Amazon.AppConfig.Model.BadRequestException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.InternalServerException">
+        /// There was an internal failure in the AppConfig service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/GetExtension">REST API Reference for GetExtension Operation</seealso>
+        GetExtensionResponse GetExtension(GetExtensionRequest request);
+
+
+
+        /// <summary>
+        /// Returns information about an AppConfig extension.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetExtension service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetExtension service method, as returned by AppConfig.</returns>
+        /// <exception cref="Amazon.AppConfig.Model.BadRequestException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.InternalServerException">
+        /// There was an internal failure in the AppConfig service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/GetExtension">REST API Reference for GetExtension Operation</seealso>
+        Task<GetExtensionResponse> GetExtensionAsync(GetExtensionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetExtensionAssociation
+
+
+        /// <summary>
+        /// Returns information about an AppConfig extension association. For more information
+        /// about extensions and associations, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html">Working
+        /// with AppConfig extensions</a> in the <i>AppConfig User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetExtensionAssociation service method.</param>
+        /// 
+        /// <returns>The response from the GetExtensionAssociation service method, as returned by AppConfig.</returns>
+        /// <exception cref="Amazon.AppConfig.Model.BadRequestException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.InternalServerException">
+        /// There was an internal failure in the AppConfig service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/GetExtensionAssociation">REST API Reference for GetExtensionAssociation Operation</seealso>
+        GetExtensionAssociationResponse GetExtensionAssociation(GetExtensionAssociationRequest request);
+
+
+
+        /// <summary>
+        /// Returns information about an AppConfig extension association. For more information
+        /// about extensions and associations, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html">Working
+        /// with AppConfig extensions</a> in the <i>AppConfig User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetExtensionAssociation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetExtensionAssociation service method, as returned by AppConfig.</returns>
+        /// <exception cref="Amazon.AppConfig.Model.BadRequestException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.InternalServerException">
+        /// There was an internal failure in the AppConfig service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/GetExtensionAssociation">REST API Reference for GetExtensionAssociation Operation</seealso>
+        Task<GetExtensionAssociationResponse> GetExtensionAssociationAsync(GetExtensionAssociationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1127,7 +1525,7 @@ namespace Amazon.AppConfig
 
 
         /// <summary>
-        /// Lists the deployments for an environment.
+        /// Lists the deployments for an environment in descending deployment number order.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDeployments service method.</param>
         /// 
@@ -1147,7 +1545,7 @@ namespace Amazon.AppConfig
 
 
         /// <summary>
-        /// Lists the deployments for an environment.
+        /// Lists the deployments for an environment in descending deployment number order.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDeployments service method.</param>
         /// <param name="cancellationToken">
@@ -1252,6 +1650,94 @@ namespace Amazon.AppConfig
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/ListEnvironments">REST API Reference for ListEnvironments Operation</seealso>
         Task<ListEnvironmentsResponse> ListEnvironmentsAsync(ListEnvironmentsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListExtensionAssociations
+
+
+        /// <summary>
+        /// Lists all AppConfig extension associations in the account. For more information about
+        /// extensions and associations, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html">Working
+        /// with AppConfig extensions</a> in the <i>AppConfig User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListExtensionAssociations service method.</param>
+        /// 
+        /// <returns>The response from the ListExtensionAssociations service method, as returned by AppConfig.</returns>
+        /// <exception cref="Amazon.AppConfig.Model.BadRequestException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.InternalServerException">
+        /// There was an internal failure in the AppConfig service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/ListExtensionAssociations">REST API Reference for ListExtensionAssociations Operation</seealso>
+        ListExtensionAssociationsResponse ListExtensionAssociations(ListExtensionAssociationsRequest request);
+
+
+
+        /// <summary>
+        /// Lists all AppConfig extension associations in the account. For more information about
+        /// extensions and associations, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html">Working
+        /// with AppConfig extensions</a> in the <i>AppConfig User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListExtensionAssociations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListExtensionAssociations service method, as returned by AppConfig.</returns>
+        /// <exception cref="Amazon.AppConfig.Model.BadRequestException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.InternalServerException">
+        /// There was an internal failure in the AppConfig service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/ListExtensionAssociations">REST API Reference for ListExtensionAssociations Operation</seealso>
+        Task<ListExtensionAssociationsResponse> ListExtensionAssociationsAsync(ListExtensionAssociationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListExtensions
+
+
+        /// <summary>
+        /// Lists all custom and Amazon Web Services authored AppConfig extensions in the account.
+        /// For more information about extensions, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html">Working
+        /// with AppConfig extensions</a> in the <i>AppConfig User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListExtensions service method.</param>
+        /// 
+        /// <returns>The response from the ListExtensions service method, as returned by AppConfig.</returns>
+        /// <exception cref="Amazon.AppConfig.Model.BadRequestException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.InternalServerException">
+        /// There was an internal failure in the AppConfig service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/ListExtensions">REST API Reference for ListExtensions Operation</seealso>
+        ListExtensionsResponse ListExtensions(ListExtensionsRequest request);
+
+
+
+        /// <summary>
+        /// Lists all custom and Amazon Web Services authored AppConfig extensions in the account.
+        /// For more information about extensions, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html">Working
+        /// with AppConfig extensions</a> in the <i>AppConfig User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListExtensions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListExtensions service method, as returned by AppConfig.</returns>
+        /// <exception cref="Amazon.AppConfig.Model.BadRequestException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.InternalServerException">
+        /// There was an internal failure in the AppConfig service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/ListExtensions">REST API Reference for ListExtensions Operation</seealso>
+        Task<ListExtensionsResponse> ListExtensionsAsync(ListExtensionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1726,6 +2212,112 @@ namespace Amazon.AppConfig
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/UpdateEnvironment">REST API Reference for UpdateEnvironment Operation</seealso>
         Task<UpdateEnvironmentResponse> UpdateEnvironmentAsync(UpdateEnvironmentRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateExtension
+
+
+        /// <summary>
+        /// Updates an AppConfig extension. For more information about extensions, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html">Working
+        /// with AppConfig extensions</a> in the <i>AppConfig User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateExtension service method.</param>
+        /// 
+        /// <returns>The response from the UpdateExtension service method, as returned by AppConfig.</returns>
+        /// <exception cref="Amazon.AppConfig.Model.BadRequestException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.InternalServerException">
+        /// There was an internal failure in the AppConfig service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/UpdateExtension">REST API Reference for UpdateExtension Operation</seealso>
+        UpdateExtensionResponse UpdateExtension(UpdateExtensionRequest request);
+
+
+
+        /// <summary>
+        /// Updates an AppConfig extension. For more information about extensions, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html">Working
+        /// with AppConfig extensions</a> in the <i>AppConfig User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateExtension service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateExtension service method, as returned by AppConfig.</returns>
+        /// <exception cref="Amazon.AppConfig.Model.BadRequestException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.InternalServerException">
+        /// There was an internal failure in the AppConfig service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/UpdateExtension">REST API Reference for UpdateExtension Operation</seealso>
+        Task<UpdateExtensionResponse> UpdateExtensionAsync(UpdateExtensionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateExtensionAssociation
+
+
+        /// <summary>
+        /// Updates an association. For more information about extensions and associations, see
+        /// <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html">Working
+        /// with AppConfig extensions</a> in the <i>AppConfig User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateExtensionAssociation service method.</param>
+        /// 
+        /// <returns>The response from the UpdateExtensionAssociation service method, as returned by AppConfig.</returns>
+        /// <exception cref="Amazon.AppConfig.Model.BadRequestException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.InternalServerException">
+        /// There was an internal failure in the AppConfig service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/UpdateExtensionAssociation">REST API Reference for UpdateExtensionAssociation Operation</seealso>
+        UpdateExtensionAssociationResponse UpdateExtensionAssociation(UpdateExtensionAssociationRequest request);
+
+
+
+        /// <summary>
+        /// Updates an association. For more information about extensions and associations, see
+        /// <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html">Working
+        /// with AppConfig extensions</a> in the <i>AppConfig User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateExtensionAssociation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateExtensionAssociation service method, as returned by AppConfig.</returns>
+        /// <exception cref="Amazon.AppConfig.Model.BadRequestException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.InternalServerException">
+        /// There was an internal failure in the AppConfig service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/UpdateExtensionAssociation">REST API Reference for UpdateExtensionAssociation Operation</seealso>
+        Task<UpdateExtensionAssociationResponse> UpdateExtensionAssociationAsync(UpdateExtensionAssociationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

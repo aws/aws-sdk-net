@@ -34,7 +34,7 @@ namespace Amazon.ManagedBlockchain.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RemoveAction Marshaller
-    /// </summary>       
+    /// </summary>
     public class RemoveActionMarshaller : IRequestMarshaller<RemoveAction, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.ManagedBlockchain.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RemoveActionMarshaller Instance = new RemoveActionMarshaller();
 
     }

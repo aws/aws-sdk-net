@@ -67,13 +67,13 @@ namespace Amazon.Kendra.Model
         /// </para>
         ///  
         /// <para>
-        /// This is useful if a group is tied to multiple data sources and you want to delete
-        /// a group from accessing documents in a certain data source. For example, the groups
-        /// "Research", "Engineering", and "Sales and Marketing" are all tied to the company's
-        /// documents stored in the data sources Confluence and Salesforce. You want to delete
-        /// "Research" and "Engineering" groups from Salesforce, so that these groups cannot access
-        /// customer-related documents stored in Salesforce. Only "Sales and Marketing" should
-        /// access documents in the Salesforce data source.
+        /// A group can be tied to multiple data sources. You can delete a group from accessing
+        /// documents in a certain data source. For example, the groups "Research", "Engineering",
+        /// and "Sales and Marketing" are all tied to the company's documents stored in the data
+        /// sources Confluence and Salesforce. You want to delete "Research" and "Engineering"
+        /// groups from Salesforce, so that these groups cannot access customer-related documents
+        /// stored in Salesforce. Only "Sales and Marketing" should access documents in the Salesforce
+        /// data source.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -138,7 +138,7 @@ namespace Amazon.Kendra.Model
         /// </para>
         ///  
         /// <para>
-        /// The ordering ID can be the UNIX time of the last update you made to a group members
+        /// The ordering ID can be the Unix time of the last update you made to a group members
         /// list. You would then provide this list when calling <code>PutPrincipalMapping</code>.
         /// This ensures your <code>DELETE</code> action for that updated group with the latest
         /// members list doesn't get overwritten by earlier <code>DELETE</code> actions for the
@@ -146,7 +146,7 @@ namespace Amazon.Kendra.Model
         /// </para>
         ///  
         /// <para>
-        /// The default ordering ID is the current UNIX time in milliseconds that the action was
+        /// The default ordering ID is the current Unix time in milliseconds that the action was
         /// received by Amazon Kendra. 
         /// </para>
         /// </summary>

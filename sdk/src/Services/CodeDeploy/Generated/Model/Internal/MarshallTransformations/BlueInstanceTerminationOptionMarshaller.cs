@@ -34,7 +34,7 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// BlueInstanceTerminationOption Marshaller
-    /// </summary>       
+    /// </summary>
     public class BlueInstanceTerminationOptionMarshaller : IRequestMarshaller<BlueInstanceTerminationOption, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static BlueInstanceTerminationOptionMarshaller Instance = new BlueInstanceTerminationOptionMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// FSxWindowsFileServerAuthorizationConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class FSxWindowsFileServerAuthorizationConfigMarshaller : IRequestMarshaller<FSxWindowsFileServerAuthorizationConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static FSxWindowsFileServerAuthorizationConfigMarshaller Instance = new FSxWindowsFileServerAuthorizationConfigMarshaller();
 
     }

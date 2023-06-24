@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.APIGateway.Model
 {
     /// <summary>
-    /// The binary blob response to <a>GetExport</a>, which contains the generated SDK.
+    /// The binary blob response to GetExport, which contains the generated SDK.
     /// </summary>
     public partial class GetExportResponse : AmazonWebServiceResponse
     {
@@ -40,7 +40,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Body. 
         /// <para>
-        /// The binary blob response to <a>GetExport</a>, which contains the export.
+        /// The binary blob response to GetExport, which contains the export.
         /// </para>
         /// </summary>
         public MemoryStream Body

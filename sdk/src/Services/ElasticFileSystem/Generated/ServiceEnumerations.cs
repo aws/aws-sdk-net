@@ -141,6 +141,72 @@ namespace Amazon.ElasticFileSystem
 
 
     /// <summary>
+    /// Constants used for properties of type ReplicationStatus.
+    /// </summary>
+    public class ReplicationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DELETING for ReplicationStatus
+        /// </summary>
+        public static readonly ReplicationStatus DELETING = new ReplicationStatus("DELETING");
+        /// <summary>
+        /// Constant ENABLED for ReplicationStatus
+        /// </summary>
+        public static readonly ReplicationStatus ENABLED = new ReplicationStatus("ENABLED");
+        /// <summary>
+        /// Constant ENABLING for ReplicationStatus
+        /// </summary>
+        public static readonly ReplicationStatus ENABLING = new ReplicationStatus("ENABLING");
+        /// <summary>
+        /// Constant ERROR for ReplicationStatus
+        /// </summary>
+        public static readonly ReplicationStatus ERROR = new ReplicationStatus("ERROR");
+        /// <summary>
+        /// Constant PAUSED for ReplicationStatus
+        /// </summary>
+        public static readonly ReplicationStatus PAUSED = new ReplicationStatus("PAUSED");
+        /// <summary>
+        /// Constant PAUSING for ReplicationStatus
+        /// </summary>
+        public static readonly ReplicationStatus PAUSING = new ReplicationStatus("PAUSING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ReplicationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ReplicationStatus FindValue(string value)
+        {
+            return FindValue<ReplicationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ReplicationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Resource.
     /// </summary>
     public class Resource : ConstantClass
@@ -309,6 +375,10 @@ namespace Amazon.ElasticFileSystem
         /// </summary>
         public static readonly ThroughputMode Bursting = new ThroughputMode("bursting");
         /// <summary>
+        /// Constant Elastic for ThroughputMode
+        /// </summary>
+        public static readonly ThroughputMode Elastic = new ThroughputMode("elastic");
+        /// <summary>
         /// Constant Provisioned for ThroughputMode
         /// </summary>
         public static readonly ThroughputMode Provisioned = new ThroughputMode("provisioned");
@@ -354,6 +424,10 @@ namespace Amazon.ElasticFileSystem
     public class TransitionToIARules : ConstantClass
     {
 
+        /// <summary>
+        /// Constant AFTER_1_DAY for TransitionToIARules
+        /// </summary>
+        public static readonly TransitionToIARules AFTER_1_DAY = new TransitionToIARules("AFTER_1_DAY");
         /// <summary>
         /// Constant AFTER_14_DAYS for TransitionToIARules
         /// </summary>

@@ -30,7 +30,7 @@ namespace Amazon.APIGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the GetMethod operation.
-    /// Describe an existing <a>Method</a> resource.
+    /// Describe an existing Method resource.
     /// </summary>
     public partial class GetMethodRequest : AmazonAPIGatewayRequest
     {
@@ -41,7 +41,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property HttpMethod. 
         /// <para>
-        /// [Required] Specifies the method request's HTTP method type.
+        /// Specifies the method request's HTTP method type.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -60,7 +60,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property ResourceId. 
         /// <para>
-        /// [Required] The <a>Resource</a> identifier for the <a>Method</a> resource.
+        /// The Resource identifier for the Method resource.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -79,7 +79,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property RestApiId. 
         /// <para>
-        /// [Required] The string identifier of the associated <a>RestApi</a>.
+        /// The string identifier of the associated RestApi.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

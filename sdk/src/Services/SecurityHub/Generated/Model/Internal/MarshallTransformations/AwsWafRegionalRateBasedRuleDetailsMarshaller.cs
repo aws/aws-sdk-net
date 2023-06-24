@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AwsWafRegionalRateBasedRuleDetails Marshaller
-    /// </summary>       
+    /// </summary>
     public class AwsWafRegionalRateBasedRuleDetailsMarshaller : IRequestMarshaller<AwsWafRegionalRateBasedRuleDetails, JsonMarshallerContext> 
     {
         /// <summary>
@@ -95,7 +95,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AwsWafRegionalRateBasedRuleDetailsMarshaller Instance = new AwsWafRegionalRateBasedRuleDetailsMarshaller();
 
     }

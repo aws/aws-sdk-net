@@ -64,6 +64,12 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("sparkSqlJobDriver", targetDepth))
+                {
+                    var unmarshaller = SparkSqlJobDriverUnmarshaller.Instance;
+                    unmarshalledObject.SparkSqlJobDriver = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("sparkSubmitJobDriver", targetDepth))
                 {
                     var unmarshaller = SparkSubmitJobDriverUnmarshaller.Instance;

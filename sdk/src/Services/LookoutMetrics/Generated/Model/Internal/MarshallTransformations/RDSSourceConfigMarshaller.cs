@@ -34,7 +34,7 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RDSSourceConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class RDSSourceConfigMarshaller : IRequestMarshaller<RDSSourceConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -102,7 +102,7 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RDSSourceConfigMarshaller Instance = new RDSSourceConfigMarshaller();
 
     }

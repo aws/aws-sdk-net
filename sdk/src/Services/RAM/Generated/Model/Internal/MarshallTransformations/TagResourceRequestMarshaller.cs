@@ -56,7 +56,7 @@ namespace Amazon.RAM.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.RAM");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-01-04";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-01-04";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/tagresource";
@@ -65,6 +65,12 @@ namespace Amazon.RAM.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetResourceArn())
+                {
+                    context.Writer.WritePropertyName("resourceArn");
+                    context.Writer.Write(publicRequest.ResourceArn);
+                }
+
                 if(publicRequest.IsSetResourceShareArn())
                 {
                     context.Writer.WritePropertyName("resourceShareArn");
@@ -87,7 +93,6 @@ namespace Amazon.RAM.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

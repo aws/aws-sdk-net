@@ -81,7 +81,7 @@ namespace Amazon.Glue.Model
         /// Contains the requested policy document, in JSON format.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=2, Max=10240)]
+        [AWSProperty(Min=2)]
         public string PolicyInJson
         {
             get { return this._policyInJson; }

@@ -134,7 +134,7 @@ using System.Diagnostics.CodeAnalysis;
 [module: SuppressMessage("Microsoft.Design", "CA1031:DoNotCatchGeneralExceptionTypes", Scope = "member", Target = "Amazon.Runtime.AmazonWebServiceClient.#getRequestStreamCallback(System.IAsyncResult)")]
 [module: SuppressMessage("Microsoft.Design", "CA1031:DoNotCatchGeneralExceptionTypes", Scope = "member", Target = "Amazon.Runtime.AmazonWebServiceClient.#getResponseCallback(System.IAsyncResult)")]
 [module: SuppressMessage("Microsoft.Design", "CA1031:DoNotCatchGeneralExceptionTypes", Scope = "member", Target = "Amazon.Runtime.InstanceProfileAWSCredentials.#GenerateNewCredentials()")]
-[module: SuppressMessage("Microsoft.Design", "CA1031:DoNotCatchGeneralExceptionTypes", Scope = "member", Target = "Amazon.Util.CryptoUtilFactory+CryptoUtil.#get_SHA256HashAlgorithmInstance()")]
+[module: SuppressMessage("Microsoft.Design", "CA1031:DoNotCatchGeneralExceptionTypes", Scope = "member", Target = "Amazon.Util.CryptoUtilFactory+CryptoUtil.#CreateSHA256Instance()")]
 [module: SuppressMessage("Microsoft.Design", "CA1031:DoNotCatchGeneralExceptionTypes", Scope = "member", Target = "Amazon.Util.AWSSDKUtils.#PreserveStackTrace(System.Exception)")]
 [module: SuppressMessage("Microsoft.Design", "CA1031:DoNotCatchGeneralExceptionTypes", Scope = "member", Target = "Amazon.Util.AWSSDKUtils.#ForceCanonicalPathAndQuery(System.Uri)")]
 [module: SuppressMessage("Microsoft.Design", "CA1031:DoNotCatchGeneralExceptionTypes", Scope = "member", Target = "Amazon.Util.AWSSDKUtils.#DetermineFramework()")]
@@ -277,6 +277,7 @@ using System.Diagnostics.CodeAnalysis;
 [assembly: SuppressMessage("Performance", "CA1822:Mark members as static", Scope = "member", Target = "~M:Amazon.Runtime.Internal.Auth.AWS4aSignerCRTWrapper.SignRequest(Amazon.Runtime.Internal.IRequest,Amazon.Runtime.IClientConfig,Amazon.Runtime.Internal.Util.RequestMetrics,Amazon.Runtime.ImmutableCredentials)~Amazon.Runtime.Internal.Auth.AWS4aSigningResult")]
 [assembly: SuppressMessage("Performance", "CA1822:Mark members as static", Scope = "member", Target = "~M:Amazon.Runtime.Internal.Auth.AWS4aSignerCRTWrapper.Presign4a(Amazon.Runtime.Internal.IRequest,Amazon.Runtime.IClientConfig,Amazon.Runtime.Internal.Util.RequestMetrics,Amazon.Runtime.ImmutableCredentials,System.String,System.String)~Amazon.Runtime.Internal.Auth.AWS4aSigningResult")]
 [assembly: SuppressMessage("Performance", "CA1822:Mark members as static", Scope = "member", Target = "~M:Amazon.Runtime.Internal.Auth.AWS4aSignerCRTWrapper.SignChunk(System.IO.Stream,System.String,Amazon.Runtime.Internal.Auth.AWS4aSigningResult")]
+[assembly: SuppressMessage("Performance", "CA1822:Mark members as static", Scope = "member", Target = "~M:Amazon.Runtime.Internal.Auth.AWS4aSignerCRTWrapper.SignTrailingHeaderChunk(System.Collections.Generic.IDictionary{System.String,System.String},System.String,Amazon.Runtime.Internal.Auth.AWS4aSigningResult)~System.String")]
 
 // Link demand
 [module: SuppressMessage("Microsoft.Security", "CA2122:DoNotIndirectlyExposeMethodsWithLinkDemands", Scope = "member", Target = "Amazon.Runtime.Internal.Util.TraceSourceUtil.#GetTraceSourceWithListeners(System.String,System.Diagnostics.SourceLevels)")]
@@ -313,7 +314,7 @@ using System.Diagnostics.CodeAnalysis;
 
 // Do not call overridable methods in constructors
 [module: SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors", Scope = "member", Target = "Amazon.Runtime.AbstractWebServiceClient.#.ctor(Amazon.Runtime.AWSCredentials,Amazon.Runtime.ClientConfig,Amazon.Runtime.AbstractWebServiceClient+AuthenticationTypes)")]
-[module: SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors", Scope = "member", Target = "Amazon.Runtime.ClientConfig.#.ctor()")]
+[module: SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors", Scope = "member", Target = "Amazon.Runtime.ClientConfig.#.ctor(Amazon.Runtime.Internal.IDefaultConfigurationProvider)")]
 [module: SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors", Scope = "member", Target = "Amazon.Runtime.AmazonServiceClient.#.ctor(Amazon.Runtime.AWSCredentials,Amazon.Runtime.ClientConfig)")]
 [module: SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors", Scope = "member", Target = "Amazon.Runtime.Internal.ErrorHandler.#.ctor(Amazon.Runtime.Internal.Util.ILogger)")]
 [module: SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors", Scope = "member", Target = "ThirdParty.MD5.MD5Managed.#.ctor()")]
@@ -400,7 +401,7 @@ using System.Diagnostics.CodeAnalysis;
 [module: SuppressMessage("AwsSdkRules", "CR1002:PreventStaticLoggersRule", Scope = "member", Target = "Amazon.Runtime.Internal.Util.Logger.#emptyLogger")]
 
 // Call HashAlgorithm.Create is for "SHA-256"
-[module: SuppressMessage("AwsSdkRules", "CR1001:PreventHashAlgorithmCreateRule", Scope = "member", Target = "Amazon.Util.CryptoUtilFactory+CryptoUtil.#get_SHA256HashAlgorithmInstance()")]
+[module: SuppressMessage("AwsSdkRules", "CR1001:PreventHashAlgorithmCreateRule", Scope = "member", Target = "Amazon.Util.CryptoUtilFactory+CryptoUtil.#CreateSHA256Instance()")]
 
 // Visible instance fields
 [module: SuppressMessage("Microsoft.Design", "CA1051:DoNotDeclareVisibleInstanceFields", Scope = "member", Target = "Amazon.Runtime.RefreshingAWSCredentials.#currentState")]
@@ -446,7 +447,7 @@ using System.Diagnostics.CodeAnalysis;
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1031:Do not catch general exception types", Scope = "member", Target = "~M:Amazon.Internal.RegionEndpointProviderV2.RegionEndpoint.TryLoadEndpointDefinitionsFromAssemblyDir~System.Boolean")]
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1031:Do not catch general exception types", Scope = "member", Target = "~M:Amazon.Runtime.CredentialManagement.AWSCredentialsFactory.GetCredentialSourceAWSCredentials(System.String,System.Boolean)~Amazon.Runtime.AWSCredentials")]
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1031:Do not catch general exception types", Scope = "member", Target = "~M:Amazon.Runtime.CredentialManagement.Internal.SAMLRoleSessionManager.TryGetRoleSession(System.String,Amazon.Runtime.SAMLImmutableCredentials@)~System.Boolean")]
-[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1031:Do not catch general exception types", Scope = "member", Target = "~M:Amazon.Runtime.CredentialManagement.SharedCredentialsFile.TryGetProfile(System.String,System.Boolean,Amazon.Runtime.CredentialManagement.CredentialProfile@)~System.Boolean")]
+[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1031:Do not catch general exception types", Scope = "member", Target = "~M:Amazon.Runtime.CredentialManagement.SharedCredentialsFile.TryGetProfile(System.String,System.Boolean,System.Boolean,Amazon.Runtime.CredentialManagement.CredentialProfile@)~System.Boolean")]
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1031:Do not catch general exception types", Scope = "member", Target = "~M:Amazon.Runtime.CredentialManagement.NetSDKCredentialsFile.TryGetProfile(System.String,Amazon.Runtime.CredentialManagement.CredentialProfile@)~System.Boolean")]
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1031:Do not catch general exception types", Scope = "member", Target = "~M:Amazon.Runtime.DefaultInstanceProfileAWSCredentials.RenewCredentials(System.Object)")]
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1031:Do not catch general exception types", Scope = "member", Target = "~M:Amazon.Runtime.EventStreams.Internal.EventStream`2.ProcessLoop(System.Object)")]
@@ -457,7 +458,7 @@ using System.Diagnostics.CodeAnalysis;
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1031:Do not catch general exception types", Scope = "member", Target = "~M:Amazon.Runtime.Internal.EndpointDiscoveryResolverBase.ProcessInvokeEndpointOperation(System.String,System.Func{System.Collections.Generic.IList{Amazon.Runtime.Internal.DiscoveryEndpointBase}},System.Boolean)~System.Collections.Generic.IEnumerable{Amazon.Runtime.Internal.DiscoveryEndpointBase}")]
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1031:Do not catch general exception types", Scope = "member", Target = "~M:Amazon.Runtime.Internal.HttpHandler`1.GetRequestStreamCallbackHelper(System.Object)")]
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1031:Do not catch general exception types", Scope = "member", Target = "~M:Amazon.Runtime.Internal.HttpHandler`1.GetResponseCallbackHelper(System.Object)")]
-[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1031:Do not catch general exception types", Scope = "member", Target = "~M:Amazon.Runtime.Internal.HttpWebRequestFactory.#ctor(Amazon.Runtime.Internal.IAmazonSecurityProtocolManager,Amazon.Runtime.Internal.Util.ILogger)")]
+[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1031:Do not catch general exception types", Scope = "member", Target = "~M:Amazon.Runtime.AmazonServiceClient.UpdateSecurityProtocol")]
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1031:Do not catch general exception types", Scope = "member", Target = "~M:Amazon.Runtime.Internal.RuntimeAsyncResult.InvokeCallback")]
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1031:Do not catch general exception types", Scope = "member", Target = "~M:Amazon.Runtime.Internal.Util.GuidUtils.TryParseGuid(System.String,System.Guid@)~System.Boolean")]
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1031:Do not catch general exception types", Scope = "member", Target = "~M:Amazon.Runtime.MonitoringListener.BeginPostMessagesOverUDPInvoke(System.String)")]

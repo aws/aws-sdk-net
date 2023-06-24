@@ -34,7 +34,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Hdr10Plus Marshaller
-    /// </summary>       
+    /// </summary>
     public class Hdr10PlusMarshaller : IRequestMarshaller<Hdr10Plus, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static Hdr10PlusMarshaller Instance = new Hdr10PlusMarshaller();
 
     }

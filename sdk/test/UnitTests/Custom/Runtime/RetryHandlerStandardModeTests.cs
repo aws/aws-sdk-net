@@ -37,7 +37,7 @@ namespace AWSSDK.UnitTests
             try
             {
                 if (capacityManager != null)
-                {                    
+                {
                     MockStandardRetryPolicy.SetCapacityManagerInstance(capacityManager);
                 }
 
@@ -116,7 +116,7 @@ namespace AWSSDK.UnitTests
                 Tester.Action = (int callCount) =>
                 {
                     //Expecting 3 calls
-                    throw new AmazonServiceException($"Mocked service error ({callCount})", new WebException(), HttpStatusCode.BadGateway);                    
+                    throw new AmazonServiceException($"Mocked service error ({callCount})", new WebException(), HttpStatusCode.BadGateway);        
                 };
 
                 var exception = Utils.AssertExceptionExpected<AmazonServiceException>(() =>
@@ -189,7 +189,7 @@ namespace AWSSDK.UnitTests
                     switch (callCount)
                     {
                         case 1:
-                            throw new AmazonServiceException($"Mocked service error ({callCount})", new WebException(), HttpStatusCode.InternalServerError);                        
+                            throw new AmazonServiceException($"Mocked service error ({callCount})", new WebException(), HttpStatusCode.InternalServerError);            
                         default:
                             throw new Exception($"Invalid number of calls ({callCount})");
                     }
@@ -222,7 +222,7 @@ namespace AWSSDK.UnitTests
                 Tester.Action = (int callCount) =>
                 {
                     //Expecting 5 calls
-                    throw new AmazonServiceException($"Mocked service error ({callCount})", new WebException(), HttpStatusCode.InternalServerError);                    
+                    throw new AmazonServiceException($"Mocked service error ({callCount})", new WebException(), HttpStatusCode.InternalServerError);        
                 };
 
                 var exception = Utils.AssertExceptionExpected<AmazonServiceException>(() =>
@@ -426,7 +426,7 @@ namespace AWSSDK.UnitTests
                 Tester.Reset();
                 Tester.Action = (int callCount) =>
                 {
-                    var request = executionContext.RequestContext.Request;                    
+                    var request = executionContext.RequestContext.Request;        
                     retryPolicy.RecordedSdkInvocationIds.Add(request.Headers[HeaderKeys.AmzSdkInvocationId]);
                     retryPolicy.RecordedSdkRequests.Add(request.Headers[HeaderKeys.AmzSdkRequest]);
 
@@ -447,7 +447,7 @@ namespace AWSSDK.UnitTests
 
                 var capacity = MockStandardRetryPolicy.CurrentCapacityManagerInstance.GetRetryCapacity(config.ServiceURL);
                 Assert.AreEqual(DefaultMaxRetries, executionContext.RequestContext.Retries);
-                Assert.AreEqual(3, Tester.CallCount);                                
+                Assert.AreEqual(3, Tester.CallCount);                    
 
                 retryPolicy.AssertDelaysMatch(new int[] { 1000, 1000 });
                 retryPolicy.AssertSdkInvocationIdsMatch(new string[] { retryPolicy.RecordedSdkInvocationIds[0],
@@ -483,7 +483,7 @@ namespace AWSSDK.UnitTests
                 executionContext = CreateTestContext(null, null, config);
                 RuntimePipeline.InvokeSync(executionContext);
 
-                var capacity = MockStandardRetryPolicy.CurrentCapacityManagerInstance.GetRetryCapacity(config.ServiceURL);                
+                var capacity = MockStandardRetryPolicy.CurrentCapacityManagerInstance.GetRetryCapacity(config.ServiceURL);    
                 Assert.AreEqual(3, Tester.CallCount);
                                 
                 retryPolicy.AssertSdkInvocationIdsMatch(new string[] { retryPolicy.RecordedSdkInvocationIds[0],

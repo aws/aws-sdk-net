@@ -76,10 +76,22 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.CaptchaResponse = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ChallengeResponse", targetDepth))
+                {
+                    var unmarshaller = ChallengeResponseUnmarshaller.Instance;
+                    unmarshalledObject.ChallengeResponse = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Labels", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<Label, LabelUnmarshaller>(LabelUnmarshaller.Instance);
                     unmarshalledObject.Labels = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("OverriddenAction", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.OverriddenAction = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Request", targetDepth))

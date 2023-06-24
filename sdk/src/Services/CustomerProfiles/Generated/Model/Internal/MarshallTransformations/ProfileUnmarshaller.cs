@@ -130,10 +130,22 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
                     unmarshalledObject.FirstName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("FoundByItems", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<FoundByKeyValue, FoundByKeyValueUnmarshaller>(FoundByKeyValueUnmarshaller.Instance);
+                    unmarshalledObject.FoundByItems = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Gender", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Gender = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("GenderString", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.GenderString = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("HomePhoneNumber", targetDepth))
@@ -170,6 +182,12 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PartyType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("PartyTypeString", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PartyTypeString = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("PersonalEmailAddress", targetDepth))

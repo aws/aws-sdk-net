@@ -36,9 +36,11 @@ namespace Amazon.EC2.Model
         private string _localGatewayId;
         private string _localGatewayRouteTableArn;
         private string _localGatewayRouteTableId;
+        private LocalGatewayRouteTableMode _mode;
         private string _outpostArn;
         private string _ownerId;
         private string _state;
+        private StateReason _stateReason;
         private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
@@ -97,6 +99,24 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Mode. 
+        /// <para>
+        /// The mode of the local gateway route table.
+        /// </para>
+        /// </summary>
+        public LocalGatewayRouteTableMode Mode
+        {
+            get { return this._mode; }
+            set { this._mode = value; }
+        }
+
+        // Check to see if Mode property is set
+        internal bool IsSetMode()
+        {
+            return this._mode != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property OutpostArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the Outpost.
@@ -148,6 +168,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetState()
         {
             return this._state != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StateReason. 
+        /// <para>
+        /// Information about the state change.
+        /// </para>
+        /// </summary>
+        public StateReason StateReason
+        {
+            get { return this._stateReason; }
+            set { this._stateReason = value; }
+        }
+
+        // Check to see if StateReason property is set
+        internal bool IsSetStateReason()
+        {
+            return this._stateReason != null;
         }
 
         /// <summary>

@@ -34,7 +34,7 @@ namespace Amazon.QLDBSession.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// StartSessionRequest Marshaller
-    /// </summary>       
+    /// </summary>
     public class StartSessionRequestMarshaller : IRequestMarshaller<StartSessionRequest, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.QLDBSession.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static StartSessionRequestMarshaller Instance = new StartSessionRequestMarshaller();
 
     }

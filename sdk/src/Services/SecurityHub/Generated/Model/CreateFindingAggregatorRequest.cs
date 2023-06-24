@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model
     /// 
     ///  
     /// <para>
-    /// For more details about cross-Region replication, see <a href="securityhub/latest/userguide/finding-aggregation.html">Configuring
+    /// For more details about cross-Region replication, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/finding-aggregation.html">Configuring
     /// finding aggregation</a> in the <i>Security Hub User Guide</i>. 
     /// </para>
     /// </summary>
@@ -99,13 +99,13 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property Regions. 
         /// <para>
         /// If <code>RegionLinkingMode</code> is <code>ALL_REGIONS_EXCEPT_SPECIFIED</code>, then
-        /// this is a comma-separated list of Regions that do not aggregate findings to the aggregation
+        /// this is a space-separated list of Regions that do not aggregate findings to the aggregation
         /// Region.
         /// </para>
         ///  
         /// <para>
         /// If <code>RegionLinkingMode</code> is <code>SPECIFIED_REGIONS</code>, then this is
-        /// a comma-separated list of Regions that do aggregate findings to the aggregation Region.
+        /// a space-separated list of Regions that do aggregate findings to the aggregation Region.
         /// 
         /// </para>
         /// </summary>

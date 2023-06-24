@@ -34,7 +34,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DashIsoGroupSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class DashIsoGroupSettingsMarshaller : IRequestMarshaller<DashIsoGroupSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,6 +71,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("baseUrl");
                 context.Writer.Write(requestObject.BaseUrl);
+            }
+
+            if(requestObject.IsSetDashManifestStyle())
+            {
+                context.Writer.WritePropertyName("dashManifestStyle");
+                context.Writer.Write(requestObject.DashManifestStyle);
             }
 
             if(requestObject.IsSetDestination())
@@ -142,6 +148,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.MinFinalSegmentLength);
             }
 
+            if(requestObject.IsSetMpdManifestBandwidthType())
+            {
+                context.Writer.WritePropertyName("mpdManifestBandwidthType");
+                context.Writer.Write(requestObject.MpdManifestBandwidthType);
+            }
+
             if(requestObject.IsSetMpdProfile())
             {
                 context.Writer.WritePropertyName("mpdProfile");
@@ -172,6 +184,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.SegmentLengthControl);
             }
 
+            if(requestObject.IsSetVideoCompositionOffsets())
+            {
+                context.Writer.WritePropertyName("videoCompositionOffsets");
+                context.Writer.Write(requestObject.VideoCompositionOffsets);
+            }
+
             if(requestObject.IsSetWriteSegmentTimelineInRepresentation())
             {
                 context.Writer.WritePropertyName("writeSegmentTimelineInRepresentation");
@@ -182,7 +200,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DashIsoGroupSettingsMarshaller Instance = new DashIsoGroupSettingsMarshaller();
 
     }

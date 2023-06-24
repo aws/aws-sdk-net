@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53RecoveryControlConfig.Model
 {
     /// <summary>
-    /// 409 response - ConflictException.
+    /// 409 response - ConflictException. You might be using a predefined variable.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

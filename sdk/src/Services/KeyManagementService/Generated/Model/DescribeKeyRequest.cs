@@ -40,12 +40,17 @@ namespace Amazon.KeyManagementService.Model
     /// This detailed information includes the key ARN, creation date (and deletion date,
     /// if applicable), the key state, and the origin and expiration date (if any) of the
     /// key material. It includes fields, like <code>KeySpec</code>, that help you distinguish
-    /// symmetric from asymmetric KMS keys. It also provides information that is particularly
-    /// important to asymmetric keys, such as the key usage (encryption or signing) and the
-    /// encryption algorithms or signing algorithms that the KMS key supports. For KMS keys
-    /// in custom key stores, it includes information about the custom key store, such as
-    /// the key store ID and the CloudHSM cluster ID. For multi-Region keys, it displays the
-    /// primary key and all related replica keys. 
+    /// different types of KMS keys. It also displays the key usage (encryption, signing,
+    /// or generating and verifying MACs) and the algorithms that the KMS key supports. 
+    /// </para>
+    ///  
+    /// <para>
+    /// For <a href="kms/latest/developerguide/multi-region-keys-overview.html">multi-Region
+    /// keys</a>, <code>DescribeKey</code> displays the primary key and all related replica
+    /// keys. For KMS keys in <a href="kms/latest/developerguide/keystore-cloudhsm.html">CloudHSM
+    /// key stores</a>, it includes information about the key store, such as the key store
+    /// ID and the CloudHSM cluster ID. For KMS keys in <a href="kms/latest/developerguide/keystore-external.html">external
+    /// key stores</a>, it includes the custom key store ID and the ID of the external key.
     /// </para>
     ///  
     /// <para>
@@ -60,7 +65,7 @@ namespace Amazon.KeyManagementService.Model
     /// Whether automatic key rotation is enabled on the KMS key. To get this information,
     /// use <a>GetKeyRotationStatus</a>. Also, some key states prevent a KMS key from being
     /// automatically rotated. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html#rotate-keys-how-it-works">How
-    /// Automatic Key Rotation Works</a> in <i>Key Management Service Developer Guide</i>.
+    /// Automatic Key Rotation Works</a> in the <i>Key Management Service Developer Guide</i>.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -73,12 +78,11 @@ namespace Amazon.KeyManagementService.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// If you call the <code>DescribeKey</code> operation on a <i>predefined Amazon Web Services
-    /// alias</i>, that is, an Amazon Web Services alias with no key ID, KMS creates an <a
-    /// href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
-    /// Web Services managed key</a>. Then, it associates the alias with the new KMS key,
-    /// and returns the <code>KeyId</code> and <code>Arn</code> of the new KMS key in the
-    /// response.
+    /// In general, <code>DescribeKey</code> is a non-mutating operation. It returns data
+    /// about KMS keys, but doesn't change them. However, Amazon Web Services services use
+    /// <code>DescribeKey</code> to create <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
+    /// Web Services managed keys</a> from a <i>predefined Amazon Web Services alias</i> with
+    /// no key ID.
     /// </para>
     ///  
     /// <para>

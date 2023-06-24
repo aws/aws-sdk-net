@@ -39,7 +39,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property Options. 
         /// <para>
-        /// Specifies Auto-Tune options for the domain.
+        /// Auto-Tune settings for updating a domain.
         /// </para>
         /// </summary>
         public AutoTuneOptions Options
@@ -57,7 +57,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the Auto-Tune options for the domain.
+        /// The current status of Auto-Tune for a domain.
         /// </para>
         /// </summary>
         public AutoTuneStatus Status

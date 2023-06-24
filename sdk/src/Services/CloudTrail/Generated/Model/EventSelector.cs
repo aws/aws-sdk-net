@@ -63,7 +63,7 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events">Data
+        /// For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Data
         /// Events</a> and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Limits
         /// in CloudTrail</a> in the <i>CloudTrail User Guide</i>.
         /// </para>
@@ -88,7 +88,8 @@ namespace Amazon.CloudTrail.Model
         /// or it can filter out Key Management Service or Amazon RDS Data API events by containing
         /// <code>kms.amazonaws.com</code> or <code>rdsdata.amazonaws.com</code>. By default,
         /// <code>ExcludeManagementEventSources</code> is empty, and KMS and Amazon RDS Data API
-        /// events are logged to your trail.
+        /// events are logged to your trail. You can exclude management event sources only in
+        /// Regions that support the event source.
         /// </para>
         /// </summary>
         public List<string> ExcludeManagementEventSources
@@ -110,7 +111,7 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         ///  
         /// <para>
-        ///  For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-management-events">Management
+        ///  For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-events-with-cloudtrail.html">Management
         /// Events</a> in the <i>CloudTrail User Guide</i>.
         /// </para>
         ///  
@@ -120,7 +121,7 @@ namespace Amazon.CloudTrail.Model
         ///  
         /// <para>
         /// The first copy of management events is free. You are charged for additional copies
-        /// of management events that you are logging on any subsequent trail in the same region.
+        /// of management events that you are logging on any subsequent trail in the same Region.
         /// For more information about CloudTrail pricing, see <a href="http://aws.amazon.com/cloudtrail/pricing/">CloudTrail
         /// Pricing</a>.
         /// </para>

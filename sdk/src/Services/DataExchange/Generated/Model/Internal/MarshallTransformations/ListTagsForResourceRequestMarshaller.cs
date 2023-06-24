@@ -55,13 +55,13 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
         public IRequest Marshall(ListTagsForResourceRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.DataExchange");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-07-25";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-07-25";
             request.HttpMethod = "GET";
 
             if (!publicRequest.IsSetResourceArn())
                 throw new AmazonDataExchangeException("Request object does not have required field ResourceArn set");
-            request.AddPathResource("{resource-arn}", StringUtils.FromString(publicRequest.ResourceArn));
-            request.ResourcePath = "/tags/{resource-arn}";
+            request.AddPathResource("{ResourceArn}", StringUtils.FromString(publicRequest.ResourceArn));
+            request.ResourcePath = "/tags/{ResourceArn}";
 
             return request;
         }

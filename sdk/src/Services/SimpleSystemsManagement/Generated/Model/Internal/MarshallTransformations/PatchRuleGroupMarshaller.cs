@@ -34,7 +34,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// PatchRuleGroup Marshaller
-    /// </summary>       
+    /// </summary>
     public class PatchRuleGroupMarshaller : IRequestMarshaller<PatchRuleGroup, JsonMarshallerContext> 
     {
         /// <summary>
@@ -65,7 +65,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static PatchRuleGroupMarshaller Instance = new PatchRuleGroupMarshaller();
 
     }

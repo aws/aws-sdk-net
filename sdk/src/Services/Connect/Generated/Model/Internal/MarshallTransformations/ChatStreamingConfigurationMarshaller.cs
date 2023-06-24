@@ -34,7 +34,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ChatStreamingConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class ChatStreamingConfigurationMarshaller : IRequestMarshaller<ChatStreamingConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ChatStreamingConfigurationMarshaller Instance = new ChatStreamingConfigurationMarshaller();
 
     }

@@ -38,11 +38,11 @@ namespace Amazon.ECS.Model
     /// 
     ///  
     /// <para>
-    /// You can specify an IAM role for your task with the <code>taskRoleArn</code> parameter.
-    /// When you specify an IAM role for a task, its containers can then use the latest versions
+    /// You can specify a role for your task with the <code>taskRoleArn</code> parameter.
+    /// When you specify a role for a task, its containers can then use the latest versions
     /// of the CLI or SDKs to make API requests to the Amazon Web Services services that are
-    /// specified in the IAM policy that's associated with the role. For more information,
-    /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
+    /// specified in the policy that's associated with the role. For more information, see
+    /// <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
     /// Roles for Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
     /// </para>
     ///  
@@ -114,7 +114,8 @@ namespace Amazon.ECS.Model
         /// <para>
         /// If you're using the EC2 launch type, this field is optional. Supported values are
         /// between <code>128</code> CPU units (<code>0.125</code> vCPUs) and <code>10240</code>
-        /// CPU units (<code>10</code> vCPUs).
+        /// CPU units (<code>10</code> vCPUs). If you do not specify a value, the parameter is
+        /// ignored.
         /// </para>
         ///  
         /// <para>
@@ -143,13 +144,29 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// 2048 (2 vCPU) - Available <code>memory</code> values: Between 4096 (4 GB) and 16384
-        /// (16 GB) in increments of 1024 (1 GB)
+        /// 2048 (2 vCPU) - Available <code>memory</code> values: 4096 (4 GB) and 16384 (16 GB)
+        /// in increments of 1024 (1 GB)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// 4096 (4 vCPU) - Available <code>memory</code> values: Between 8192 (8 GB) and 30720
-        /// (30 GB) in increments of 1024 (1 GB)
+        /// 4096 (4 vCPU) - Available <code>memory</code> values: 8192 (8 GB) and 30720 (30 GB)
+        /// in increments of 1024 (1 GB)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// 8192 (8 vCPU) - Available <code>memory</code> values: 16 GB and 60 GB in 4 GB increments
+        /// </para>
+        ///  
+        /// <para>
+        /// This option requires Linux platform <code>1.4.0</code> or later.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// 16384 (16vCPU) - Available <code>memory</code> values: 32GB and 120 GB in 8 GB increments
+        /// </para>
+        ///  
+        /// <para>
+        /// This option requires Linux platform <code>1.4.0</code> or later.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -175,8 +192,7 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// This parameter is only supported for tasks hosted on Fargate using the following platform
-        /// versions:
+        /// For tasks using the Fargate launch type, the task requires the following platforms:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -371,6 +387,24 @@ namespace Amazon.ECS.Model
         /// Between 8192 (8 GB) and 30720 (30 GB) in increments of 1024 (1 GB) - Available <code>cpu</code>
         /// values: 4096 (4 vCPU)
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Between 16 GB and 60 GB in 4 GB increments - Available <code>cpu</code> values: 8192
+        /// (8 vCPU)
+        /// </para>
+        ///  
+        /// <para>
+        /// This option requires Linux platform <code>1.4.0</code> or later.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Between 32GB and 120 GB in 8 GB increments - Available <code>cpu</code> values: 16384
+        /// (16 vCPU)
+        /// </para>
+        ///  
+        /// <para>
+        /// This option requires Linux platform <code>1.4.0</code> or later.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         public string Memory
@@ -511,7 +545,7 @@ namespace Amazon.ECS.Model
         /// <para>
         /// For tasks hosted on Amazon EC2 instances, the container instances require at least
         /// version <code>1.26.0</code> of the container agent and at least version <code>1.26.0-1</code>
-        /// of the <code>ecs-init</code> package to enable a proxy configuration. If your container
+        /// of the <code>ecs-init</code> package to use a proxy configuration. If your container
         /// instances are launched from the Amazon ECS-optimized AMI version <code>20190301</code>
         /// or later, then they contain the required versions of the container agent and <code>ecs-init</code>.
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-ami-versions.html">Amazon

@@ -34,14 +34,17 @@ namespace Amazon.DevOpsGuru.Model
     public partial class ProactiveAnomaly
     {
         private AnomalyReportedTimeRange _anomalyReportedTimeRange;
+        private List<AnomalyResource> _anomalyResources = new List<AnomalyResource>();
         private AnomalyTimeRange _anomalyTimeRange;
         private string _associatedInsightId;
+        private string _description;
         private string _id;
         private double? _limit;
         private PredictionTimeRange _predictionTimeRange;
         private ResourceCollection _resourceCollection;
         private AnomalySeverity _severity;
         private AnomalySourceDetails _sourceDetails;
+        private AnomalySourceMetadata _sourceMetadata;
         private AnomalyStatus _status;
         private DateTime? _updateTime;
 
@@ -62,6 +65,24 @@ namespace Amazon.DevOpsGuru.Model
         internal bool IsSetAnomalyReportedTimeRange()
         {
             return this._anomalyReportedTimeRange != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AnomalyResources. 
+        /// <para>
+        /// Information about a resource in which DevOps Guru detected anomalous behavior.
+        /// </para>
+        /// </summary>
+        public List<AnomalyResource> AnomalyResources
+        {
+            get { return this._anomalyResources; }
+            set { this._anomalyResources = value; }
+        }
+
+        // Check to see if AnomalyResources property is set
+        internal bool IsSetAnomalyResources()
+        {
+            return this._anomalyResources != null && this._anomalyResources.Count > 0; 
         }
 
         /// <summary>
@@ -97,6 +118,24 @@ namespace Amazon.DevOpsGuru.Model
         internal bool IsSetAssociatedInsightId()
         {
             return this._associatedInsightId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Description. 
+        /// <para>
+        ///  A description of the proactive anomaly. 
+        /// </para>
+        /// </summary>
+        public string Description
+        {
+            get { return this._description; }
+            set { this._description = value; }
+        }
+
+        // Check to see if Description property is set
+        internal bool IsSetDescription()
+        {
+            return this._description != null;
         }
 
         /// <summary>
@@ -204,6 +243,24 @@ namespace Amazon.DevOpsGuru.Model
         internal bool IsSetSourceDetails()
         {
             return this._sourceDetails != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceMetadata. 
+        /// <para>
+        /// The metadata for the anomaly.
+        /// </para>
+        /// </summary>
+        public AnomalySourceMetadata SourceMetadata
+        {
+            get { return this._sourceMetadata; }
+            set { this._sourceMetadata = value; }
+        }
+
+        // Check to see if SourceMetadata property is set
+        internal bool IsSetSourceMetadata()
+        {
+            return this._sourceMetadata != null;
         }
 
         /// <summary>

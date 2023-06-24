@@ -34,7 +34,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// VoiceSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class VoiceSettingsMarshaller : IRequestMarshaller<VoiceSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static VoiceSettingsMarshaller Instance = new VoiceSettingsMarshaller();
 
     }

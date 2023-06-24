@@ -34,9 +34,8 @@ namespace Amazon.SecurityToken
     /// Security Token Service 
     /// <para>
     /// Security Token Service (STS) enables you to request temporary, limited-privilege credentials
-    /// for Identity and Access Management (IAM) users or for users that you authenticate
-    /// (federated users). This guide provides descriptions of the STS API. For more information
-    /// about using this service, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp.html">Temporary
+    /// for users. This guide provides descriptions of the STS API. For more information about
+    /// using this service, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp.html">Temporary
     /// Security Credentials</a>.
     /// </para>
     /// </summary>
@@ -50,11 +49,10 @@ namespace Amazon.SecurityToken
 
         /// <summary>
         /// Returns a set of temporary security credentials that you can use to access Amazon
-        /// Web Services resources that you might not normally have access to. These temporary
-        /// credentials consist of an access key ID, a secret access key, and a security token.
-        /// Typically, you use <code>AssumeRole</code> within your account or for cross-account
-        /// access. For a comparison of <code>AssumeRole</code> with other API operations that
-        /// produce temporary credentials, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html">Requesting
+        /// Web Services resources. These temporary credentials consist of an access key ID, a
+        /// secret access key, and a security token. Typically, you use <code>AssumeRole</code>
+        /// within your account or for cross-account access. For a comparison of <code>AssumeRole</code>
+        /// with other API operations that produce temporary credentials, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html">Requesting
         /// Temporary Security Credentials</a> and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#stsapi_comparison">Comparing
         /// the Amazon Web Services STS API operations</a> in the <i>IAM User Guide</i>.
         /// 
@@ -73,22 +71,22 @@ namespace Amazon.SecurityToken
         /// <para>
         /// (Optional) You can pass inline or managed <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">session
         /// policies</a> to this operation. You can pass a single JSON policy document to use
-        /// as an inline session policy. You can also specify up to 10 managed policies to use
-        /// as managed session policies. The plaintext that you use for both inline and managed
-        /// session policies can't exceed 2,048 characters. Passing policies to this operation
-        /// returns new temporary credentials. The resulting session's permissions are the intersection
-        /// of the role's identity-based policy and the session policies. You can use the role's
-        /// temporary credentials in subsequent Amazon Web Services API calls to access resources
-        /// in the account that owns the role. You cannot use session policies to grant more permissions
-        /// than those allowed by the identity-based policy of the role that is being assumed.
-        /// For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
+        /// as an inline session policy. You can also specify up to 10 managed policy Amazon Resource
+        /// Names (ARNs) to use as managed session policies. The plaintext that you use for both
+        /// inline and managed session policies can't exceed 2,048 characters. Passing policies
+        /// to this operation returns new temporary credentials. The resulting session's permissions
+        /// are the intersection of the role's identity-based policy and the session policies.
+        /// You can use the role's temporary credentials in subsequent Amazon Web Services API
+        /// calls to access resources in the account that owns the role. You cannot use session
+        /// policies to grant more permissions than those allowed by the identity-based policy
+        /// of the role that is being assumed. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
         /// Policies</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// When you create a role, you create two policies: A role trust policy that specifies
-        /// <i>who</i> can assume the role and a permissions policy that specifies <i>what</i>
-        /// can be done with the role. You specify the trusted principal who is allowed to assume
+        /// When you create a role, you create two policies: a role trust policy that specifies
+        /// <i>who</i> can assume the role, and a permissions policy that specifies <i>what</i>
+        /// can be done with the role. You specify the trusted principal that is allowed to assume
         /// the role in the role trust policy.
         /// </para>
         ///  
@@ -101,8 +99,8 @@ namespace Amazon.SecurityToken
         ///  
         /// <para>
         /// A user who wants to access a role in a different account must also have permissions
-        /// that are delegated from the user account administrator. The administrator must attach
-        /// a policy that allows the user to call <code>AssumeRole</code> for the ARN of the role
+        /// that are delegated from the account administrator. The administrator must attach a
+        /// policy that allows the user to call <code>AssumeRole</code> for the ARN of the role
         /// in the other account.
         /// </para>
         ///  
@@ -220,11 +218,10 @@ namespace Amazon.SecurityToken
 
         /// <summary>
         /// Returns a set of temporary security credentials that you can use to access Amazon
-        /// Web Services resources that you might not normally have access to. These temporary
-        /// credentials consist of an access key ID, a secret access key, and a security token.
-        /// Typically, you use <code>AssumeRole</code> within your account or for cross-account
-        /// access. For a comparison of <code>AssumeRole</code> with other API operations that
-        /// produce temporary credentials, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html">Requesting
+        /// Web Services resources. These temporary credentials consist of an access key ID, a
+        /// secret access key, and a security token. Typically, you use <code>AssumeRole</code>
+        /// within your account or for cross-account access. For a comparison of <code>AssumeRole</code>
+        /// with other API operations that produce temporary credentials, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html">Requesting
         /// Temporary Security Credentials</a> and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#stsapi_comparison">Comparing
         /// the Amazon Web Services STS API operations</a> in the <i>IAM User Guide</i>.
         /// 
@@ -243,22 +240,22 @@ namespace Amazon.SecurityToken
         /// <para>
         /// (Optional) You can pass inline or managed <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">session
         /// policies</a> to this operation. You can pass a single JSON policy document to use
-        /// as an inline session policy. You can also specify up to 10 managed policies to use
-        /// as managed session policies. The plaintext that you use for both inline and managed
-        /// session policies can't exceed 2,048 characters. Passing policies to this operation
-        /// returns new temporary credentials. The resulting session's permissions are the intersection
-        /// of the role's identity-based policy and the session policies. You can use the role's
-        /// temporary credentials in subsequent Amazon Web Services API calls to access resources
-        /// in the account that owns the role. You cannot use session policies to grant more permissions
-        /// than those allowed by the identity-based policy of the role that is being assumed.
-        /// For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
+        /// as an inline session policy. You can also specify up to 10 managed policy Amazon Resource
+        /// Names (ARNs) to use as managed session policies. The plaintext that you use for both
+        /// inline and managed session policies can't exceed 2,048 characters. Passing policies
+        /// to this operation returns new temporary credentials. The resulting session's permissions
+        /// are the intersection of the role's identity-based policy and the session policies.
+        /// You can use the role's temporary credentials in subsequent Amazon Web Services API
+        /// calls to access resources in the account that owns the role. You cannot use session
+        /// policies to grant more permissions than those allowed by the identity-based policy
+        /// of the role that is being assumed. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
         /// Policies</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// When you create a role, you create two policies: A role trust policy that specifies
-        /// <i>who</i> can assume the role and a permissions policy that specifies <i>what</i>
-        /// can be done with the role. You specify the trusted principal who is allowed to assume
+        /// When you create a role, you create two policies: a role trust policy that specifies
+        /// <i>who</i> can assume the role, and a permissions policy that specifies <i>what</i>
+        /// can be done with the role. You specify the trusted principal that is allowed to assume
         /// the role in the role trust policy.
         /// </para>
         ///  
@@ -271,8 +268,8 @@ namespace Amazon.SecurityToken
         ///  
         /// <para>
         /// A user who wants to access a role in a different account must also have permissions
-        /// that are delegated from the user account administrator. The administrator must attach
-        /// a policy that allows the user to call <code>AssumeRole</code> for the ARN of the role
+        /// that are delegated from the account administrator. The administrator must attach a
+        /// policy that allows the user to call <code>AssumeRole</code> for the ARN of the role
         /// in the other account.
         /// </para>
         ///  
@@ -456,15 +453,15 @@ namespace Amazon.SecurityToken
         /// <para>
         /// (Optional) You can pass inline or managed <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">session
         /// policies</a> to this operation. You can pass a single JSON policy document to use
-        /// as an inline session policy. You can also specify up to 10 managed policies to use
-        /// as managed session policies. The plaintext that you use for both inline and managed
-        /// session policies can't exceed 2,048 characters. Passing policies to this operation
-        /// returns new temporary credentials. The resulting session's permissions are the intersection
-        /// of the role's identity-based policy and the session policies. You can use the role's
-        /// temporary credentials in subsequent Amazon Web Services API calls to access resources
-        /// in the account that owns the role. You cannot use session policies to grant more permissions
-        /// than those allowed by the identity-based policy of the role that is being assumed.
-        /// For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
+        /// as an inline session policy. You can also specify up to 10 managed policy Amazon Resource
+        /// Names (ARNs) to use as managed session policies. The plaintext that you use for both
+        /// inline and managed session policies can't exceed 2,048 characters. Passing policies
+        /// to this operation returns new temporary credentials. The resulting session's permissions
+        /// are the intersection of the role's identity-based policy and the session policies.
+        /// You can use the role's temporary credentials in subsequent Amazon Web Services API
+        /// calls to access resources in the account that owns the role. You cannot use session
+        /// policies to grant more permissions than those allowed by the identity-based policy
+        /// of the role that is being assumed. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
         /// Policies</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  
@@ -502,11 +499,11 @@ namespace Amazon.SecurityToken
         /// </para>
         ///  <note> 
         /// <para>
-        /// An Amazon Web Services conversion compresses the passed session policies and session
-        /// tags into a packed binary format that has a separate limit. Your request can fail
-        /// for this limit even if your plaintext meets the other requirements. The <code>PackedPolicySize</code>
-        /// response element indicates by percentage how close the policies and tags for your
-        /// request are to the upper size limit. 
+        /// An Amazon Web Services conversion compresses the passed inline session policy, managed
+        /// policy ARNs, and session tags into a packed binary format that has a separate limit.
+        /// Your request can fail for this limit even if your plaintext meets the other requirements.
+        /// The <code>PackedPolicySize</code> response element indicates by percentage how close
+        /// the policies and tags for your request are to the upper size limit.
         /// </para>
         ///  </note> 
         /// <para>
@@ -679,15 +676,15 @@ namespace Amazon.SecurityToken
         /// <para>
         /// (Optional) You can pass inline or managed <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">session
         /// policies</a> to this operation. You can pass a single JSON policy document to use
-        /// as an inline session policy. You can also specify up to 10 managed policies to use
-        /// as managed session policies. The plaintext that you use for both inline and managed
-        /// session policies can't exceed 2,048 characters. Passing policies to this operation
-        /// returns new temporary credentials. The resulting session's permissions are the intersection
-        /// of the role's identity-based policy and the session policies. You can use the role's
-        /// temporary credentials in subsequent Amazon Web Services API calls to access resources
-        /// in the account that owns the role. You cannot use session policies to grant more permissions
-        /// than those allowed by the identity-based policy of the role that is being assumed.
-        /// For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
+        /// as an inline session policy. You can also specify up to 10 managed policy Amazon Resource
+        /// Names (ARNs) to use as managed session policies. The plaintext that you use for both
+        /// inline and managed session policies can't exceed 2,048 characters. Passing policies
+        /// to this operation returns new temporary credentials. The resulting session's permissions
+        /// are the intersection of the role's identity-based policy and the session policies.
+        /// You can use the role's temporary credentials in subsequent Amazon Web Services API
+        /// calls to access resources in the account that owns the role. You cannot use session
+        /// policies to grant more permissions than those allowed by the identity-based policy
+        /// of the role that is being assumed. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
         /// Policies</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  
@@ -725,11 +722,11 @@ namespace Amazon.SecurityToken
         /// </para>
         ///  <note> 
         /// <para>
-        /// An Amazon Web Services conversion compresses the passed session policies and session
-        /// tags into a packed binary format that has a separate limit. Your request can fail
-        /// for this limit even if your plaintext meets the other requirements. The <code>PackedPolicySize</code>
-        /// response element indicates by percentage how close the policies and tags for your
-        /// request are to the upper size limit. 
+        /// An Amazon Web Services conversion compresses the passed inline session policy, managed
+        /// policy ARNs, and session tags into a packed binary format that has a separate limit.
+        /// Your request can fail for this limit even if your plaintext meets the other requirements.
+        /// The <code>PackedPolicySize</code> response element indicates by percentage how close
+        /// the policies and tags for your request are to the upper size limit.
         /// </para>
         ///  </note> 
         /// <para>
@@ -849,8 +846,9 @@ namespace Amazon.SecurityToken
         /// <summary>
         /// Returns a set of temporary security credentials for users who have been authenticated
         /// in a mobile or web application with a web identity provider. Example providers include
-        /// Amazon Cognito, Login with Amazon, Facebook, Google, or any OpenID Connect-compatible
-        /// identity provider.
+        /// the OAuth 2.0 providers Login with Amazon and Facebook, or any OpenID Connect-compatible
+        /// identity provider such as Google or <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-identity.html">Amazon
+        /// Cognito federated identities</a>.
         /// 
         ///  <note> 
         /// <para>
@@ -863,10 +861,8 @@ namespace Amazon.SecurityToken
         /// </para>
         ///  
         /// <para>
-        /// To learn more about Amazon Cognito, see <a href="https://docs.aws.amazon.com/mobile/sdkforandroid/developerguide/cognito-auth.html#d0e840">Amazon
-        /// Cognito Overview</a> in <i>Amazon Web Services SDK for Android Developer Guide</i>
-        /// and <a href="https://docs.aws.amazon.com/mobile/sdkforios/developerguide/cognito-auth.html#d0e664">Amazon
-        /// Cognito Overview</a> in the <i>Amazon Web Services SDK for iOS Developer Guide</i>.
+        /// To learn more about Amazon Cognito, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-identity.html">Amazon
+        /// Cognito identity pools</a> in <i>Amazon Cognito Developer Guide</i>.
         /// </para>
         ///  </note> 
         /// <para>
@@ -921,15 +917,15 @@ namespace Amazon.SecurityToken
         /// <para>
         /// (Optional) You can pass inline or managed <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">session
         /// policies</a> to this operation. You can pass a single JSON policy document to use
-        /// as an inline session policy. You can also specify up to 10 managed policies to use
-        /// as managed session policies. The plaintext that you use for both inline and managed
-        /// session policies can't exceed 2,048 characters. Passing policies to this operation
-        /// returns new temporary credentials. The resulting session's permissions are the intersection
-        /// of the role's identity-based policy and the session policies. You can use the role's
-        /// temporary credentials in subsequent Amazon Web Services API calls to access resources
-        /// in the account that owns the role. You cannot use session policies to grant more permissions
-        /// than those allowed by the identity-based policy of the role that is being assumed.
-        /// For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
+        /// as an inline session policy. You can also specify up to 10 managed policy Amazon Resource
+        /// Names (ARNs) to use as managed session policies. The plaintext that you use for both
+        /// inline and managed session policies can't exceed 2,048 characters. Passing policies
+        /// to this operation returns new temporary credentials. The resulting session's permissions
+        /// are the intersection of the role's identity-based policy and the session policies.
+        /// You can use the role's temporary credentials in subsequent Amazon Web Services API
+        /// calls to access resources in the account that owns the role. You cannot use session
+        /// policies to grant more permissions than those allowed by the identity-based policy
+        /// of the role that is being assumed. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
         /// Policies</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  
@@ -952,11 +948,11 @@ namespace Amazon.SecurityToken
         /// </para>
         ///  <note> 
         /// <para>
-        /// An Amazon Web Services conversion compresses the passed session policies and session
-        /// tags into a packed binary format that has a separate limit. Your request can fail
-        /// for this limit even if your plaintext meets the other requirements. The <code>PackedPolicySize</code>
-        /// response element indicates by percentage how close the policies and tags for your
-        /// request are to the upper size limit. 
+        /// An Amazon Web Services conversion compresses the passed inline session policy, managed
+        /// policy ARNs, and session tags into a packed binary format that has a separate limit.
+        /// Your request can fail for this limit even if your plaintext meets the other requirements.
+        /// The <code>PackedPolicySize</code> response element indicates by percentage how close
+        /// the policies and tags for your request are to the upper size limit.
         /// </para>
         ///  </note> 
         /// <para>
@@ -1094,8 +1090,9 @@ namespace Amazon.SecurityToken
         /// <summary>
         /// Returns a set of temporary security credentials for users who have been authenticated
         /// in a mobile or web application with a web identity provider. Example providers include
-        /// Amazon Cognito, Login with Amazon, Facebook, Google, or any OpenID Connect-compatible
-        /// identity provider.
+        /// the OAuth 2.0 providers Login with Amazon and Facebook, or any OpenID Connect-compatible
+        /// identity provider such as Google or <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-identity.html">Amazon
+        /// Cognito federated identities</a>.
         /// 
         ///  <note> 
         /// <para>
@@ -1108,10 +1105,8 @@ namespace Amazon.SecurityToken
         /// </para>
         ///  
         /// <para>
-        /// To learn more about Amazon Cognito, see <a href="https://docs.aws.amazon.com/mobile/sdkforandroid/developerguide/cognito-auth.html#d0e840">Amazon
-        /// Cognito Overview</a> in <i>Amazon Web Services SDK for Android Developer Guide</i>
-        /// and <a href="https://docs.aws.amazon.com/mobile/sdkforios/developerguide/cognito-auth.html#d0e664">Amazon
-        /// Cognito Overview</a> in the <i>Amazon Web Services SDK for iOS Developer Guide</i>.
+        /// To learn more about Amazon Cognito, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-identity.html">Amazon
+        /// Cognito identity pools</a> in <i>Amazon Cognito Developer Guide</i>.
         /// </para>
         ///  </note> 
         /// <para>
@@ -1166,15 +1161,15 @@ namespace Amazon.SecurityToken
         /// <para>
         /// (Optional) You can pass inline or managed <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">session
         /// policies</a> to this operation. You can pass a single JSON policy document to use
-        /// as an inline session policy. You can also specify up to 10 managed policies to use
-        /// as managed session policies. The plaintext that you use for both inline and managed
-        /// session policies can't exceed 2,048 characters. Passing policies to this operation
-        /// returns new temporary credentials. The resulting session's permissions are the intersection
-        /// of the role's identity-based policy and the session policies. You can use the role's
-        /// temporary credentials in subsequent Amazon Web Services API calls to access resources
-        /// in the account that owns the role. You cannot use session policies to grant more permissions
-        /// than those allowed by the identity-based policy of the role that is being assumed.
-        /// For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
+        /// as an inline session policy. You can also specify up to 10 managed policy Amazon Resource
+        /// Names (ARNs) to use as managed session policies. The plaintext that you use for both
+        /// inline and managed session policies can't exceed 2,048 characters. Passing policies
+        /// to this operation returns new temporary credentials. The resulting session's permissions
+        /// are the intersection of the role's identity-based policy and the session policies.
+        /// You can use the role's temporary credentials in subsequent Amazon Web Services API
+        /// calls to access resources in the account that owns the role. You cannot use session
+        /// policies to grant more permissions than those allowed by the identity-based policy
+        /// of the role that is being assumed. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
         /// Policies</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  
@@ -1197,11 +1192,11 @@ namespace Amazon.SecurityToken
         /// </para>
         ///  <note> 
         /// <para>
-        /// An Amazon Web Services conversion compresses the passed session policies and session
-        /// tags into a packed binary format that has a separate limit. Your request can fail
-        /// for this limit even if your plaintext meets the other requirements. The <code>PackedPolicySize</code>
-        /// response element indicates by percentage how close the policies and tags for your
-        /// request are to the upper size limit. 
+        /// An Amazon Web Services conversion compresses the passed inline session policy, managed
+        /// policy ARNs, and session tags into a packed binary format that has a separate limit.
+        /// Your request can fail for this limit even if your plaintext meets the other requirements.
+        /// The <code>PackedPolicySize</code> response element indicates by percentage how close
+        /// the policies and tags for your request are to the upper size limit.
         /// </para>
         ///  </note> 
         /// <para>
@@ -1568,11 +1563,11 @@ namespace Amazon.SecurityToken
         /// 
         ///  <note> 
         /// <para>
-        /// No permissions are required to perform this operation. If an administrator adds a
-        /// policy to your IAM user or role that explicitly denies access to the <code>sts:GetCallerIdentity</code>
+        /// No permissions are required to perform this operation. If an administrator attaches
+        /// a policy to your identity that explicitly denies access to the <code>sts:GetCallerIdentity</code>
         /// action, you can still perform this operation. Permissions are not required because
-        /// the same information is returned when an IAM user or role is denied access. To view
-        /// an example response, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_access-denied-delete-mfa">I
+        /// the same information is returned when access is denied. To view an example response,
+        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_access-denied-delete-mfa">I
         /// Am Not Authorized to Perform: iam:DeleteVirtualMFADevice</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  </note>
@@ -1591,11 +1586,11 @@ namespace Amazon.SecurityToken
         /// 
         ///  <note> 
         /// <para>
-        /// No permissions are required to perform this operation. If an administrator adds a
-        /// policy to your IAM user or role that explicitly denies access to the <code>sts:GetCallerIdentity</code>
+        /// No permissions are required to perform this operation. If an administrator attaches
+        /// a policy to your identity that explicitly denies access to the <code>sts:GetCallerIdentity</code>
         /// action, you can still perform this operation. Permissions are not required because
-        /// the same information is returned when an IAM user or role is denied access. To view
-        /// an example response, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_access-denied-delete-mfa">I
+        /// the same information is returned when access is denied. To view an example response,
+        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_access-denied-delete-mfa">I
         /// Am Not Authorized to Perform: iam:DeleteVirtualMFADevice</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  </note>
@@ -1616,16 +1611,29 @@ namespace Amazon.SecurityToken
 
         /// <summary>
         /// Returns a set of temporary security credentials (consisting of an access key ID, a
-        /// secret access key, and a security token) for a federated user. A typical use is in
-        /// a proxy application that gets temporary security credentials on behalf of distributed
-        /// applications inside a corporate network. You must call the <code>GetFederationToken</code>
-        /// operation using the long-term security credentials of an IAM user. As a result, this
-        /// call is appropriate in contexts where those credentials can be safely stored, usually
-        /// in a server-based application. For a comparison of <code>GetFederationToken</code>
-        /// with the other API operations that produce temporary credentials, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html">Requesting
+        /// secret access key, and a security token) for a user. A typical use is in a proxy application
+        /// that gets temporary security credentials on behalf of distributed applications inside
+        /// a corporate network.
+        /// 
+        ///  
+        /// <para>
+        /// You must call the <code>GetFederationToken</code> operation using the long-term security
+        /// credentials of an IAM user. As a result, this call is appropriate in contexts where
+        /// those credentials can be safeguarded, usually in a server-based application. For a
+        /// comparison of <code>GetFederationToken</code> with the other API operations that produce
+        /// temporary credentials, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html">Requesting
         /// Temporary Security Credentials</a> and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#stsapi_comparison">Comparing
         /// the Amazon Web Services STS API operations</a> in the <i>IAM User Guide</i>.
-        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// Although it is possible to call <code>GetFederationToken</code> using the security
+        /// credentials of an Amazon Web Services account root user rather than an IAM user that
+        /// you create for the purpose of a proxy application, we do not recommend it. For more
+        /// information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html#lock-away-credentials">Safeguard
+        /// your root user credentials and don't use them for everyday tasks</a> in the <i>IAM
+        /// User Guide</i>. 
+        /// </para>
         ///  <note> 
         /// <para>
         /// You can create a mobile-based or browser-based app that can authenticate users using
@@ -1637,24 +1645,14 @@ namespace Amazon.SecurityToken
         /// </para>
         ///  </note> 
         /// <para>
-        /// You can also call <code>GetFederationToken</code> using the security credentials of
-        /// an Amazon Web Services account root user, but we do not recommend it. Instead, we
-        /// recommend that you create an IAM user for the purpose of the proxy application. Then
-        /// attach a policy to the IAM user that limits federated users to only the actions and
-        /// resources that they need to access. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html">IAM
-        /// Best Practices</a> in the <i>IAM User Guide</i>. 
-        /// </para>
-        ///  
-        /// <para>
         ///  <b>Session duration</b> 
         /// </para>
         ///  
         /// <para>
         /// The temporary credentials are valid for the specified duration, from 900 seconds (15
         /// minutes) up to a maximum of 129,600 seconds (36 hours). The default session duration
-        /// is 43,200 seconds (12 hours). Temporary credentials obtained by using the Amazon Web
-        /// Services account root user credentials have a maximum duration of 3,600 seconds (1
-        /// hour).
+        /// is 43,200 seconds (12 hours). Temporary credentials obtained by using the root user
+        /// credentials have a maximum duration of 3,600 seconds (1 hour).
         /// </para>
         ///  
         /// <para>
@@ -1663,11 +1661,12 @@ namespace Amazon.SecurityToken
         ///  
         /// <para>
         /// You can use the temporary credentials created by <code>GetFederationToken</code> in
-        /// any Amazon Web Services service except the following:
+        /// any Amazon Web Services service with the following exceptions:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// You cannot call any IAM operations using the CLI or the Amazon Web Services API. 
+        /// You cannot call any IAM operations using the CLI or the Amazon Web Services API. This
+        /// limitation does not apply to console sessions.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1675,11 +1674,15 @@ namespace Amazon.SecurityToken
         /// </para>
         ///  </li> </ul> 
         /// <para>
+        /// You can use temporary credentials for single sign-on (SSO) to the console.
+        /// </para>
+        ///  
+        /// <para>
         /// You must pass an inline or managed <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">session
         /// policy</a> to this operation. You can pass a single JSON policy document to use as
-        /// an inline session policy. You can also specify up to 10 managed policies to use as
-        /// managed session policies. The plaintext that you use for both inline and managed session
-        /// policies can't exceed 2,048 characters.
+        /// an inline session policy. You can also specify up to 10 managed policy Amazon Resource
+        /// Names (ARNs) to use as managed session policies. The plaintext that you use for both
+        /// inline and managed session policies can't exceed 2,048 characters.
         /// </para>
         ///  
         /// <para>
@@ -1773,16 +1776,29 @@ namespace Amazon.SecurityToken
 
         /// <summary>
         /// Returns a set of temporary security credentials (consisting of an access key ID, a
-        /// secret access key, and a security token) for a federated user. A typical use is in
-        /// a proxy application that gets temporary security credentials on behalf of distributed
-        /// applications inside a corporate network. You must call the <code>GetFederationToken</code>
-        /// operation using the long-term security credentials of an IAM user. As a result, this
-        /// call is appropriate in contexts where those credentials can be safely stored, usually
-        /// in a server-based application. For a comparison of <code>GetFederationToken</code>
-        /// with the other API operations that produce temporary credentials, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html">Requesting
+        /// secret access key, and a security token) for a user. A typical use is in a proxy application
+        /// that gets temporary security credentials on behalf of distributed applications inside
+        /// a corporate network.
+        /// 
+        ///  
+        /// <para>
+        /// You must call the <code>GetFederationToken</code> operation using the long-term security
+        /// credentials of an IAM user. As a result, this call is appropriate in contexts where
+        /// those credentials can be safeguarded, usually in a server-based application. For a
+        /// comparison of <code>GetFederationToken</code> with the other API operations that produce
+        /// temporary credentials, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html">Requesting
         /// Temporary Security Credentials</a> and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#stsapi_comparison">Comparing
         /// the Amazon Web Services STS API operations</a> in the <i>IAM User Guide</i>.
-        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// Although it is possible to call <code>GetFederationToken</code> using the security
+        /// credentials of an Amazon Web Services account root user rather than an IAM user that
+        /// you create for the purpose of a proxy application, we do not recommend it. For more
+        /// information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html#lock-away-credentials">Safeguard
+        /// your root user credentials and don't use them for everyday tasks</a> in the <i>IAM
+        /// User Guide</i>. 
+        /// </para>
         ///  <note> 
         /// <para>
         /// You can create a mobile-based or browser-based app that can authenticate users using
@@ -1794,24 +1810,14 @@ namespace Amazon.SecurityToken
         /// </para>
         ///  </note> 
         /// <para>
-        /// You can also call <code>GetFederationToken</code> using the security credentials of
-        /// an Amazon Web Services account root user, but we do not recommend it. Instead, we
-        /// recommend that you create an IAM user for the purpose of the proxy application. Then
-        /// attach a policy to the IAM user that limits federated users to only the actions and
-        /// resources that they need to access. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html">IAM
-        /// Best Practices</a> in the <i>IAM User Guide</i>. 
-        /// </para>
-        ///  
-        /// <para>
         ///  <b>Session duration</b> 
         /// </para>
         ///  
         /// <para>
         /// The temporary credentials are valid for the specified duration, from 900 seconds (15
         /// minutes) up to a maximum of 129,600 seconds (36 hours). The default session duration
-        /// is 43,200 seconds (12 hours). Temporary credentials obtained by using the Amazon Web
-        /// Services account root user credentials have a maximum duration of 3,600 seconds (1
-        /// hour).
+        /// is 43,200 seconds (12 hours). Temporary credentials obtained by using the root user
+        /// credentials have a maximum duration of 3,600 seconds (1 hour).
         /// </para>
         ///  
         /// <para>
@@ -1820,11 +1826,12 @@ namespace Amazon.SecurityToken
         ///  
         /// <para>
         /// You can use the temporary credentials created by <code>GetFederationToken</code> in
-        /// any Amazon Web Services service except the following:
+        /// any Amazon Web Services service with the following exceptions:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// You cannot call any IAM operations using the CLI or the Amazon Web Services API. 
+        /// You cannot call any IAM operations using the CLI or the Amazon Web Services API. This
+        /// limitation does not apply to console sessions.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1832,11 +1839,15 @@ namespace Amazon.SecurityToken
         /// </para>
         ///  </li> </ul> 
         /// <para>
+        /// You can use temporary credentials for single sign-on (SSO) to the console.
+        /// </para>
+        ///  
+        /// <para>
         /// You must pass an inline or managed <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">session
         /// policy</a> to this operation. You can pass a single JSON policy document to use as
-        /// an inline session policy. You can also specify up to 10 managed policies to use as
-        /// managed session policies. The plaintext that you use for both inline and managed session
-        /// policies can't exceed 2,048 characters.
+        /// an inline session policy. You can also specify up to 10 managed policy Amazon Resource
+        /// Names (ARNs) to use as managed session policies. The plaintext that you use for both
+        /// inline and managed session policies can't exceed 2,048 characters.
         /// </para>
         ///  
         /// <para>
@@ -1939,28 +1950,39 @@ namespace Amazon.SecurityToken
         /// The credentials consist of an access key ID, a secret access key, and a security token.
         /// Typically, you use <code>GetSessionToken</code> if you want to use MFA to protect
         /// programmatic calls to specific Amazon Web Services API operations like Amazon EC2
-        /// <code>StopInstances</code>. MFA-enabled IAM users would need to call <code>GetSessionToken</code>
-        /// and submit an MFA code that is associated with their MFA device. Using the temporary
-        /// security credentials that are returned from the call, IAM users can then make programmatic
-        /// calls to API operations that require MFA authentication. If you do not supply a correct
-        /// MFA code, then the API returns an access denied error. For a comparison of <code>GetSessionToken</code>
-        /// with the other API operations that produce temporary credentials, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html">Requesting
-        /// Temporary Security Credentials</a> and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#stsapi_comparison">Comparing
-        /// the Amazon Web Services STS API operations</a> in the <i>IAM User Guide</i>.
+        /// <code>StopInstances</code>.
         /// 
         ///  
+        /// <para>
+        /// MFA-enabled IAM users must call <code>GetSessionToken</code> and submit an MFA code
+        /// that is associated with their MFA device. Using the temporary security credentials
+        /// that the call returns, IAM users can then make programmatic calls to API operations
+        /// that require MFA authentication. An incorrect MFA code causes the API to return an
+        /// access denied error. For a comparison of <code>GetSessionToken</code> with the other
+        /// API operations that produce temporary credentials, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html">Requesting
+        /// Temporary Security Credentials</a> and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#stsapi_comparison">Comparing
+        /// the Amazon Web Services STS API operations</a> in the <i>IAM User Guide</i>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// No permissions are required for users to perform this operation. The purpose of the
+        /// <code>sts:GetSessionToken</code> operation is to authenticate the user using MFA.
+        /// You cannot use policies to control authentication operations. For more information,
+        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_getsessiontoken.html">Permissions
+        /// for GetSessionToken</a> in the <i>IAM User Guide</i>.
+        /// </para>
+        ///  </note> 
         /// <para>
         ///  <b>Session Duration</b> 
         /// </para>
         ///  
         /// <para>
         /// The <code>GetSessionToken</code> operation must be called by using the long-term Amazon
-        /// Web Services security credentials of the Amazon Web Services account root user or
-        /// an IAM user. Credentials that are created by IAM users are valid for the duration
-        /// that you specify. This duration can range from 900 seconds (15 minutes) up to a maximum
-        /// of 129,600 seconds (36 hours), with a default of 43,200 seconds (12 hours). Credentials
-        /// based on account credentials can range from 900 seconds (15 minutes) up to 3,600 seconds
-        /// (1 hour), with a default of 1 hour. 
+        /// Web Services security credentials of an IAM user. Credentials that are created by
+        /// IAM users are valid for the duration that you specify. This duration can range from
+        /// 900 seconds (15 minutes) up to a maximum of 129,600 seconds (36 hours), with a default
+        /// of 43,200 seconds (12 hours). Credentials based on account credentials can range from
+        /// 900 seconds (15 minutes) up to 3,600 seconds (1 hour), with a default of 1 hour. 
         /// </para>
         ///  
         /// <para>
@@ -1980,26 +2002,25 @@ namespace Amazon.SecurityToken
         /// <para>
         /// You cannot call any STS API <i>except</i> <code>AssumeRole</code> or <code>GetCallerIdentity</code>.
         /// </para>
-        ///  </li> </ul> <note> 
+        ///  </li> </ul> 
         /// <para>
-        /// We recommend that you do not call <code>GetSessionToken</code> with Amazon Web Services
-        /// account root user credentials. Instead, follow our <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html#create-iam-users">best
-        /// practices</a> by creating one or more IAM users, giving them the necessary permissions,
-        /// and using IAM users for everyday interaction with Amazon Web Services. 
+        /// The credentials that <code>GetSessionToken</code> returns are based on permissions
+        /// associated with the IAM user whose credentials were used to call the operation. The
+        /// temporary credentials have the same permissions as the IAM user.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Although it is possible to call <code>GetSessionToken</code> using the security credentials
+        /// of an Amazon Web Services account root user rather than an IAM user, we do not recommend
+        /// it. If <code>GetSessionToken</code> is called using root user credentials, the temporary
+        /// credentials have root user permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html#lock-away-credentials">Safeguard
+        /// your root user credentials and don't use them for everyday tasks</a> in the <i>IAM
+        /// User Guide</i> 
         /// </para>
         ///  </note> 
         /// <para>
-        /// The credentials that are returned by <code>GetSessionToken</code> are based on permissions
-        /// associated with the user whose credentials were used to call the operation. If <code>GetSessionToken</code>
-        /// is called using Amazon Web Services account root user credentials, the temporary credentials
-        /// have root user permissions. Similarly, if <code>GetSessionToken</code> is called using
-        /// the credentials of an IAM user, the temporary credentials have the same permissions
-        /// as the IAM user. 
-        /// </para>
-        ///  
-        /// <para>
         /// For more information about using <code>GetSessionToken</code> to create temporary
-        /// credentials, go to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_getsessiontoken">Temporary
+        /// credentials, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_getsessiontoken">Temporary
         /// Credentials for Users in Untrusted Environments</a> in the <i>IAM User Guide</i>.
         /// 
         /// </para>
@@ -2022,28 +2043,39 @@ namespace Amazon.SecurityToken
         /// The credentials consist of an access key ID, a secret access key, and a security token.
         /// Typically, you use <code>GetSessionToken</code> if you want to use MFA to protect
         /// programmatic calls to specific Amazon Web Services API operations like Amazon EC2
-        /// <code>StopInstances</code>. MFA-enabled IAM users would need to call <code>GetSessionToken</code>
-        /// and submit an MFA code that is associated with their MFA device. Using the temporary
-        /// security credentials that are returned from the call, IAM users can then make programmatic
-        /// calls to API operations that require MFA authentication. If you do not supply a correct
-        /// MFA code, then the API returns an access denied error. For a comparison of <code>GetSessionToken</code>
-        /// with the other API operations that produce temporary credentials, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html">Requesting
-        /// Temporary Security Credentials</a> and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#stsapi_comparison">Comparing
-        /// the Amazon Web Services STS API operations</a> in the <i>IAM User Guide</i>.
+        /// <code>StopInstances</code>.
         /// 
         ///  
+        /// <para>
+        /// MFA-enabled IAM users must call <code>GetSessionToken</code> and submit an MFA code
+        /// that is associated with their MFA device. Using the temporary security credentials
+        /// that the call returns, IAM users can then make programmatic calls to API operations
+        /// that require MFA authentication. An incorrect MFA code causes the API to return an
+        /// access denied error. For a comparison of <code>GetSessionToken</code> with the other
+        /// API operations that produce temporary credentials, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html">Requesting
+        /// Temporary Security Credentials</a> and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#stsapi_comparison">Comparing
+        /// the Amazon Web Services STS API operations</a> in the <i>IAM User Guide</i>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// No permissions are required for users to perform this operation. The purpose of the
+        /// <code>sts:GetSessionToken</code> operation is to authenticate the user using MFA.
+        /// You cannot use policies to control authentication operations. For more information,
+        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_getsessiontoken.html">Permissions
+        /// for GetSessionToken</a> in the <i>IAM User Guide</i>.
+        /// </para>
+        ///  </note> 
         /// <para>
         ///  <b>Session Duration</b> 
         /// </para>
         ///  
         /// <para>
         /// The <code>GetSessionToken</code> operation must be called by using the long-term Amazon
-        /// Web Services security credentials of the Amazon Web Services account root user or
-        /// an IAM user. Credentials that are created by IAM users are valid for the duration
-        /// that you specify. This duration can range from 900 seconds (15 minutes) up to a maximum
-        /// of 129,600 seconds (36 hours), with a default of 43,200 seconds (12 hours). Credentials
-        /// based on account credentials can range from 900 seconds (15 minutes) up to 3,600 seconds
-        /// (1 hour), with a default of 1 hour. 
+        /// Web Services security credentials of an IAM user. Credentials that are created by
+        /// IAM users are valid for the duration that you specify. This duration can range from
+        /// 900 seconds (15 minutes) up to a maximum of 129,600 seconds (36 hours), with a default
+        /// of 43,200 seconds (12 hours). Credentials based on account credentials can range from
+        /// 900 seconds (15 minutes) up to 3,600 seconds (1 hour), with a default of 1 hour. 
         /// </para>
         ///  
         /// <para>
@@ -2063,26 +2095,25 @@ namespace Amazon.SecurityToken
         /// <para>
         /// You cannot call any STS API <i>except</i> <code>AssumeRole</code> or <code>GetCallerIdentity</code>.
         /// </para>
-        ///  </li> </ul> <note> 
+        ///  </li> </ul> 
         /// <para>
-        /// We recommend that you do not call <code>GetSessionToken</code> with Amazon Web Services
-        /// account root user credentials. Instead, follow our <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html#create-iam-users">best
-        /// practices</a> by creating one or more IAM users, giving them the necessary permissions,
-        /// and using IAM users for everyday interaction with Amazon Web Services. 
+        /// The credentials that <code>GetSessionToken</code> returns are based on permissions
+        /// associated with the IAM user whose credentials were used to call the operation. The
+        /// temporary credentials have the same permissions as the IAM user.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Although it is possible to call <code>GetSessionToken</code> using the security credentials
+        /// of an Amazon Web Services account root user rather than an IAM user, we do not recommend
+        /// it. If <code>GetSessionToken</code> is called using root user credentials, the temporary
+        /// credentials have root user permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html#lock-away-credentials">Safeguard
+        /// your root user credentials and don't use them for everyday tasks</a> in the <i>IAM
+        /// User Guide</i> 
         /// </para>
         ///  </note> 
         /// <para>
-        /// The credentials that are returned by <code>GetSessionToken</code> are based on permissions
-        /// associated with the user whose credentials were used to call the operation. If <code>GetSessionToken</code>
-        /// is called using Amazon Web Services account root user credentials, the temporary credentials
-        /// have root user permissions. Similarly, if <code>GetSessionToken</code> is called using
-        /// the credentials of an IAM user, the temporary credentials have the same permissions
-        /// as the IAM user. 
-        /// </para>
-        ///  
-        /// <para>
         /// For more information about using <code>GetSessionToken</code> to create temporary
-        /// credentials, go to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_getsessiontoken">Temporary
+        /// credentials, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_getsessiontoken">Temporary
         /// Credentials for Users in Untrusted Environments</a> in the <i>IAM User Guide</i>.
         /// 
         /// </para>
@@ -2106,28 +2137,39 @@ namespace Amazon.SecurityToken
         /// The credentials consist of an access key ID, a secret access key, and a security token.
         /// Typically, you use <code>GetSessionToken</code> if you want to use MFA to protect
         /// programmatic calls to specific Amazon Web Services API operations like Amazon EC2
-        /// <code>StopInstances</code>. MFA-enabled IAM users would need to call <code>GetSessionToken</code>
-        /// and submit an MFA code that is associated with their MFA device. Using the temporary
-        /// security credentials that are returned from the call, IAM users can then make programmatic
-        /// calls to API operations that require MFA authentication. If you do not supply a correct
-        /// MFA code, then the API returns an access denied error. For a comparison of <code>GetSessionToken</code>
-        /// with the other API operations that produce temporary credentials, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html">Requesting
-        /// Temporary Security Credentials</a> and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#stsapi_comparison">Comparing
-        /// the Amazon Web Services STS API operations</a> in the <i>IAM User Guide</i>.
+        /// <code>StopInstances</code>.
         /// 
         ///  
+        /// <para>
+        /// MFA-enabled IAM users must call <code>GetSessionToken</code> and submit an MFA code
+        /// that is associated with their MFA device. Using the temporary security credentials
+        /// that the call returns, IAM users can then make programmatic calls to API operations
+        /// that require MFA authentication. An incorrect MFA code causes the API to return an
+        /// access denied error. For a comparison of <code>GetSessionToken</code> with the other
+        /// API operations that produce temporary credentials, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html">Requesting
+        /// Temporary Security Credentials</a> and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#stsapi_comparison">Comparing
+        /// the Amazon Web Services STS API operations</a> in the <i>IAM User Guide</i>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// No permissions are required for users to perform this operation. The purpose of the
+        /// <code>sts:GetSessionToken</code> operation is to authenticate the user using MFA.
+        /// You cannot use policies to control authentication operations. For more information,
+        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_getsessiontoken.html">Permissions
+        /// for GetSessionToken</a> in the <i>IAM User Guide</i>.
+        /// </para>
+        ///  </note> 
         /// <para>
         ///  <b>Session Duration</b> 
         /// </para>
         ///  
         /// <para>
         /// The <code>GetSessionToken</code> operation must be called by using the long-term Amazon
-        /// Web Services security credentials of the Amazon Web Services account root user or
-        /// an IAM user. Credentials that are created by IAM users are valid for the duration
-        /// that you specify. This duration can range from 900 seconds (15 minutes) up to a maximum
-        /// of 129,600 seconds (36 hours), with a default of 43,200 seconds (12 hours). Credentials
-        /// based on account credentials can range from 900 seconds (15 minutes) up to 3,600 seconds
-        /// (1 hour), with a default of 1 hour. 
+        /// Web Services security credentials of an IAM user. Credentials that are created by
+        /// IAM users are valid for the duration that you specify. This duration can range from
+        /// 900 seconds (15 minutes) up to a maximum of 129,600 seconds (36 hours), with a default
+        /// of 43,200 seconds (12 hours). Credentials based on account credentials can range from
+        /// 900 seconds (15 minutes) up to 3,600 seconds (1 hour), with a default of 1 hour. 
         /// </para>
         ///  
         /// <para>
@@ -2147,26 +2189,25 @@ namespace Amazon.SecurityToken
         /// <para>
         /// You cannot call any STS API <i>except</i> <code>AssumeRole</code> or <code>GetCallerIdentity</code>.
         /// </para>
-        ///  </li> </ul> <note> 
+        ///  </li> </ul> 
         /// <para>
-        /// We recommend that you do not call <code>GetSessionToken</code> with Amazon Web Services
-        /// account root user credentials. Instead, follow our <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html#create-iam-users">best
-        /// practices</a> by creating one or more IAM users, giving them the necessary permissions,
-        /// and using IAM users for everyday interaction with Amazon Web Services. 
+        /// The credentials that <code>GetSessionToken</code> returns are based on permissions
+        /// associated with the IAM user whose credentials were used to call the operation. The
+        /// temporary credentials have the same permissions as the IAM user.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Although it is possible to call <code>GetSessionToken</code> using the security credentials
+        /// of an Amazon Web Services account root user rather than an IAM user, we do not recommend
+        /// it. If <code>GetSessionToken</code> is called using root user credentials, the temporary
+        /// credentials have root user permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html#lock-away-credentials">Safeguard
+        /// your root user credentials and don't use them for everyday tasks</a> in the <i>IAM
+        /// User Guide</i> 
         /// </para>
         ///  </note> 
         /// <para>
-        /// The credentials that are returned by <code>GetSessionToken</code> are based on permissions
-        /// associated with the user whose credentials were used to call the operation. If <code>GetSessionToken</code>
-        /// is called using Amazon Web Services account root user credentials, the temporary credentials
-        /// have root user permissions. Similarly, if <code>GetSessionToken</code> is called using
-        /// the credentials of an IAM user, the temporary credentials have the same permissions
-        /// as the IAM user. 
-        /// </para>
-        ///  
-        /// <para>
         /// For more information about using <code>GetSessionToken</code> to create temporary
-        /// credentials, go to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_getsessiontoken">Temporary
+        /// credentials, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_getsessiontoken">Temporary
         /// Credentials for Users in Untrusted Environments</a> in the <i>IAM User Guide</i>.
         /// 
         /// </para>
@@ -2193,28 +2234,39 @@ namespace Amazon.SecurityToken
         /// The credentials consist of an access key ID, a secret access key, and a security token.
         /// Typically, you use <code>GetSessionToken</code> if you want to use MFA to protect
         /// programmatic calls to specific Amazon Web Services API operations like Amazon EC2
-        /// <code>StopInstances</code>. MFA-enabled IAM users would need to call <code>GetSessionToken</code>
-        /// and submit an MFA code that is associated with their MFA device. Using the temporary
-        /// security credentials that are returned from the call, IAM users can then make programmatic
-        /// calls to API operations that require MFA authentication. If you do not supply a correct
-        /// MFA code, then the API returns an access denied error. For a comparison of <code>GetSessionToken</code>
-        /// with the other API operations that produce temporary credentials, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html">Requesting
-        /// Temporary Security Credentials</a> and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#stsapi_comparison">Comparing
-        /// the Amazon Web Services STS API operations</a> in the <i>IAM User Guide</i>.
+        /// <code>StopInstances</code>.
         /// 
         ///  
+        /// <para>
+        /// MFA-enabled IAM users must call <code>GetSessionToken</code> and submit an MFA code
+        /// that is associated with their MFA device. Using the temporary security credentials
+        /// that the call returns, IAM users can then make programmatic calls to API operations
+        /// that require MFA authentication. An incorrect MFA code causes the API to return an
+        /// access denied error. For a comparison of <code>GetSessionToken</code> with the other
+        /// API operations that produce temporary credentials, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html">Requesting
+        /// Temporary Security Credentials</a> and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#stsapi_comparison">Comparing
+        /// the Amazon Web Services STS API operations</a> in the <i>IAM User Guide</i>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// No permissions are required for users to perform this operation. The purpose of the
+        /// <code>sts:GetSessionToken</code> operation is to authenticate the user using MFA.
+        /// You cannot use policies to control authentication operations. For more information,
+        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_getsessiontoken.html">Permissions
+        /// for GetSessionToken</a> in the <i>IAM User Guide</i>.
+        /// </para>
+        ///  </note> 
         /// <para>
         ///  <b>Session Duration</b> 
         /// </para>
         ///  
         /// <para>
         /// The <code>GetSessionToken</code> operation must be called by using the long-term Amazon
-        /// Web Services security credentials of the Amazon Web Services account root user or
-        /// an IAM user. Credentials that are created by IAM users are valid for the duration
-        /// that you specify. This duration can range from 900 seconds (15 minutes) up to a maximum
-        /// of 129,600 seconds (36 hours), with a default of 43,200 seconds (12 hours). Credentials
-        /// based on account credentials can range from 900 seconds (15 minutes) up to 3,600 seconds
-        /// (1 hour), with a default of 1 hour. 
+        /// Web Services security credentials of an IAM user. Credentials that are created by
+        /// IAM users are valid for the duration that you specify. This duration can range from
+        /// 900 seconds (15 minutes) up to a maximum of 129,600 seconds (36 hours), with a default
+        /// of 43,200 seconds (12 hours). Credentials based on account credentials can range from
+        /// 900 seconds (15 minutes) up to 3,600 seconds (1 hour), with a default of 1 hour. 
         /// </para>
         ///  
         /// <para>
@@ -2234,26 +2286,25 @@ namespace Amazon.SecurityToken
         /// <para>
         /// You cannot call any STS API <i>except</i> <code>AssumeRole</code> or <code>GetCallerIdentity</code>.
         /// </para>
-        ///  </li> </ul> <note> 
+        ///  </li> </ul> 
         /// <para>
-        /// We recommend that you do not call <code>GetSessionToken</code> with Amazon Web Services
-        /// account root user credentials. Instead, follow our <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html#create-iam-users">best
-        /// practices</a> by creating one or more IAM users, giving them the necessary permissions,
-        /// and using IAM users for everyday interaction with Amazon Web Services. 
+        /// The credentials that <code>GetSessionToken</code> returns are based on permissions
+        /// associated with the IAM user whose credentials were used to call the operation. The
+        /// temporary credentials have the same permissions as the IAM user.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Although it is possible to call <code>GetSessionToken</code> using the security credentials
+        /// of an Amazon Web Services account root user rather than an IAM user, we do not recommend
+        /// it. If <code>GetSessionToken</code> is called using root user credentials, the temporary
+        /// credentials have root user permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html#lock-away-credentials">Safeguard
+        /// your root user credentials and don't use them for everyday tasks</a> in the <i>IAM
+        /// User Guide</i> 
         /// </para>
         ///  </note> 
         /// <para>
-        /// The credentials that are returned by <code>GetSessionToken</code> are based on permissions
-        /// associated with the user whose credentials were used to call the operation. If <code>GetSessionToken</code>
-        /// is called using Amazon Web Services account root user credentials, the temporary credentials
-        /// have root user permissions. Similarly, if <code>GetSessionToken</code> is called using
-        /// the credentials of an IAM user, the temporary credentials have the same permissions
-        /// as the IAM user. 
-        /// </para>
-        ///  
-        /// <para>
         /// For more information about using <code>GetSessionToken</code> to create temporary
-        /// credentials, go to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_getsessiontoken">Temporary
+        /// credentials, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_getsessiontoken">Temporary
         /// Credentials for Users in Untrusted Environments</a> in the <i>IAM User Guide</i>.
         /// 
         /// </para>

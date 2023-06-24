@@ -30,12 +30,12 @@ namespace Amazon.Organizations.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeAccount operation.
-    /// Retrieves AWS Organizations-related information about the specified account.
+    /// Retrieves Organizations-related information about the specified account.
     /// 
     ///  
     /// <para>
     /// This operation can be called only from the organization's management account or by
-    /// a member account that is a delegated administrator for an AWS service.
+    /// a member account that is a delegated administrator for an Amazon Web Services service.
     /// </para>
     /// </summary>
     public partial class DescribeAccountRequest : AmazonOrganizationsRequest
@@ -45,8 +45,9 @@ namespace Amazon.Organizations.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The unique identifier (ID) of the AWS account that you want information about. You
-        /// can get the ID from the <a>ListAccounts</a> or <a>ListAccountsForParent</a> operations.
+        /// The unique identifier (ID) of the Amazon Web Services account that you want information
+        /// about. You can get the ID from the <a>ListAccounts</a> or <a>ListAccountsForParent</a>
+        /// operations.
         /// </para>
         ///  
         /// <para>

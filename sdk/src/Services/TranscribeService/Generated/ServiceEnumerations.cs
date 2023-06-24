@@ -139,6 +139,10 @@ namespace Amazon.TranscribeService
     {
 
         /// <summary>
+        /// Constant DeDE for CLMLanguageCode
+        /// </summary>
+        public static readonly CLMLanguageCode DeDE = new CLMLanguageCode("de-DE");
+        /// <summary>
         /// Constant EnAU for CLMLanguageCode
         /// </summary>
         public static readonly CLMLanguageCode EnAU = new CLMLanguageCode("en-AU");
@@ -158,6 +162,10 @@ namespace Amazon.TranscribeService
         /// Constant HiIN for CLMLanguageCode
         /// </summary>
         public static readonly CLMLanguageCode HiIN = new CLMLanguageCode("hi-IN");
+        /// <summary>
+        /// Constant JaJP for CLMLanguageCode
+        /// </summary>
+        public static readonly CLMLanguageCode JaJP = new CLMLanguageCode("ja-JP");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -195,6 +203,56 @@ namespace Amazon.TranscribeService
 
 
     /// <summary>
+    /// Constants used for properties of type InputType.
+    /// </summary>
+    public class InputType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant POST_CALL for InputType
+        /// </summary>
+        public static readonly InputType POST_CALL = new InputType("POST_CALL");
+        /// <summary>
+        /// Constant REAL_TIME for InputType
+        /// </summary>
+        public static readonly InputType REAL_TIME = new InputType("REAL_TIME");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InputType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InputType FindValue(string value)
+        {
+            return FindValue<InputType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InputType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type LanguageCode.
     /// </summary>
     public class LanguageCode : ConstantClass
@@ -212,10 +270,6 @@ namespace Amazon.TranscribeService
         /// Constant ArSA for LanguageCode
         /// </summary>
         public static readonly LanguageCode ArSA = new LanguageCode("ar-SA");
-        /// <summary>
-        /// Constant CyGB for LanguageCode
-        /// </summary>
-        public static readonly LanguageCode CyGB = new LanguageCode("cy-GB");
         /// <summary>
         /// Constant DaDK for LanguageCode
         /// </summary>
@@ -285,14 +339,6 @@ namespace Amazon.TranscribeService
         /// </summary>
         public static readonly LanguageCode FrFR = new LanguageCode("fr-FR");
         /// <summary>
-        /// Constant GaIE for LanguageCode
-        /// </summary>
-        public static readonly LanguageCode GaIE = new LanguageCode("ga-IE");
-        /// <summary>
-        /// Constant GdGB for LanguageCode
-        /// </summary>
-        public static readonly LanguageCode GdGB = new LanguageCode("gd-GB");
-        /// <summary>
         /// Constant HeIL for LanguageCode
         /// </summary>
         public static readonly LanguageCode HeIL = new LanguageCode("he-IL");
@@ -337,6 +383,10 @@ namespace Amazon.TranscribeService
         /// </summary>
         public static readonly LanguageCode RuRU = new LanguageCode("ru-RU");
         /// <summary>
+        /// Constant SvSE for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode SvSE = new LanguageCode("sv-SE");
+        /// <summary>
         /// Constant TaIN for LanguageCode
         /// </summary>
         public static readonly LanguageCode TaIN = new LanguageCode("ta-IN");
@@ -352,6 +402,10 @@ namespace Amazon.TranscribeService
         /// Constant TrTR for LanguageCode
         /// </summary>
         public static readonly LanguageCode TrTR = new LanguageCode("tr-TR");
+        /// <summary>
+        /// Constant ViVN for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode ViVN = new LanguageCode("vi-VN");
         /// <summary>
         /// Constant ZhCN for LanguageCode
         /// </summary>
@@ -660,6 +714,96 @@ namespace Amazon.TranscribeService
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ParticipantRole(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PiiEntityType.
+    /// </summary>
+    public class PiiEntityType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ADDRESS for PiiEntityType
+        /// </summary>
+        public static readonly PiiEntityType ADDRESS = new PiiEntityType("ADDRESS");
+        /// <summary>
+        /// Constant ALL for PiiEntityType
+        /// </summary>
+        public static readonly PiiEntityType ALL = new PiiEntityType("ALL");
+        /// <summary>
+        /// Constant BANK_ACCOUNT_NUMBER for PiiEntityType
+        /// </summary>
+        public static readonly PiiEntityType BANK_ACCOUNT_NUMBER = new PiiEntityType("BANK_ACCOUNT_NUMBER");
+        /// <summary>
+        /// Constant BANK_ROUTING for PiiEntityType
+        /// </summary>
+        public static readonly PiiEntityType BANK_ROUTING = new PiiEntityType("BANK_ROUTING");
+        /// <summary>
+        /// Constant CREDIT_DEBIT_CVV for PiiEntityType
+        /// </summary>
+        public static readonly PiiEntityType CREDIT_DEBIT_CVV = new PiiEntityType("CREDIT_DEBIT_CVV");
+        /// <summary>
+        /// Constant CREDIT_DEBIT_EXPIRY for PiiEntityType
+        /// </summary>
+        public static readonly PiiEntityType CREDIT_DEBIT_EXPIRY = new PiiEntityType("CREDIT_DEBIT_EXPIRY");
+        /// <summary>
+        /// Constant CREDIT_DEBIT_NUMBER for PiiEntityType
+        /// </summary>
+        public static readonly PiiEntityType CREDIT_DEBIT_NUMBER = new PiiEntityType("CREDIT_DEBIT_NUMBER");
+        /// <summary>
+        /// Constant EMAIL for PiiEntityType
+        /// </summary>
+        public static readonly PiiEntityType EMAIL = new PiiEntityType("EMAIL");
+        /// <summary>
+        /// Constant NAME for PiiEntityType
+        /// </summary>
+        public static readonly PiiEntityType NAME = new PiiEntityType("NAME");
+        /// <summary>
+        /// Constant PHONE for PiiEntityType
+        /// </summary>
+        public static readonly PiiEntityType PHONE = new PiiEntityType("PHONE");
+        /// <summary>
+        /// Constant PIN for PiiEntityType
+        /// </summary>
+        public static readonly PiiEntityType PIN = new PiiEntityType("PIN");
+        /// <summary>
+        /// Constant SSN for PiiEntityType
+        /// </summary>
+        public static readonly PiiEntityType SSN = new PiiEntityType("SSN");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PiiEntityType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PiiEntityType FindValue(string value)
+        {
+            return FindValue<PiiEntityType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PiiEntityType(string value)
         {
             return FindValue(value);
         }

@@ -30,7 +30,7 @@ namespace Amazon.APIGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the GetSdkTypes operation.
-    /// 
+    /// Gets SDK types
     /// </summary>
     public partial class GetSdkTypesRequest : AmazonAPIGatewayRequest
     {

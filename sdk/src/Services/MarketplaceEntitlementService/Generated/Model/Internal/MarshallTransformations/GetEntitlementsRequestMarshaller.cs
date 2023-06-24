@@ -58,7 +58,7 @@ namespace Amazon.MarketplaceEntitlementService.Model.Internal.MarshallTransforma
             string target = "AWSMPEntitlementService.GetEntitlements";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-01-11";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-01-11";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -104,7 +104,6 @@ namespace Amazon.MarketplaceEntitlementService.Model.Internal.MarshallTransforma
                     context.Writer.Write(publicRequest.ProductCode);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

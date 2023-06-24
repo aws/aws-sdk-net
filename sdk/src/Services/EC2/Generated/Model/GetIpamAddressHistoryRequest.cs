@@ -31,8 +31,8 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Container for the parameters to the GetIpamAddressHistory operation.
     /// Retrieve historical information about a CIDR within an IPAM scope. For more information,
-    /// see <a href="/vpc/latest/ipam/view-history-cidr-ipam.html">View the history of IP
-    /// addresses</a> in the <i>Amazon VPC IPAM User Guide</i>.
+    /// see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/view-history-cidr-ipam.html">View
+    /// the history of IP addresses</a> in the <i>Amazon VPC IPAM User Guide</i>.
     /// </summary>
     public partial class GetIpamAddressHistoryRequest : AmazonEC2Request
     {

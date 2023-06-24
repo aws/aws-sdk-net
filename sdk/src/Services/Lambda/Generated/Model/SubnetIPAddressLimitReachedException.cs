@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lambda.Model
 {
     /// <summary>
-    /// Lambda was not able to set up VPC access for the Lambda function because one or more
-    /// configured subnets has no available IP addresses.
+    /// Lambda couldn't set up VPC access for the Lambda function because one or more configured
+    /// subnets has no available IP addresses.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

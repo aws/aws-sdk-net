@@ -34,7 +34,7 @@ namespace Amazon.DataPipeline.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Selector Marshaller
-    /// </summary>       
+    /// </summary>
     public class SelectorMarshaller : IRequestMarshaller<Selector, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.DataPipeline.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SelectorMarshaller Instance = new SelectorMarshaller();
 
     }

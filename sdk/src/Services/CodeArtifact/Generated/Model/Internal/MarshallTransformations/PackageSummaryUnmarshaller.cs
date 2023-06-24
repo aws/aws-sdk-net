@@ -76,6 +76,12 @@ namespace Amazon.CodeArtifact.Model.Internal.MarshallTransformations
                     unmarshalledObject.Namespace = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("originConfiguration", targetDepth))
+                {
+                    var unmarshaller = PackageOriginConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.OriginConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("package", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -34,7 +34,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// FrameCaptureSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class FrameCaptureSettingsMarshaller : IRequestMarshaller<FrameCaptureSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -57,11 +57,22 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.CaptureIntervalUnits);
             }
 
+            if(requestObject.IsSetTimecodeBurninSettings())
+            {
+                context.Writer.WritePropertyName("timecodeBurninSettings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = TimecodeBurninSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.TimecodeBurninSettings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static FrameCaptureSettingsMarshaller Instance = new FrameCaptureSettingsMarshaller();
 
     }

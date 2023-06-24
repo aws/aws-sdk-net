@@ -1,6 +1,5 @@
 ﻿<#@ template language="C#" #>
 <#@ import namespace="System.Linq" #>
-<#@ parameter name="endpoints" type="System.Collections.Generic.List<ServiceClientGenerator.EndpointConstant>" #>
 /*******************************************************************************
  *  Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *  Licensed under the Apache License, Version 2.0 (the "License"). You may not use
@@ -35,7 +34,7 @@ namespace Amazon
         /// </summary>
         private static readonly RegionEndpoint USEast1Regional = GetEndpoint("us-east-1-regional", "US East (Virginia) regional");
 
-<# foreach(var endpoint in endpoints) { #>
+<# foreach (var endpoint in Endpoints) { #>
         /// <summary>
         /// The <#= endpoint.RegionName #> endpoint.
         /// </summary>
@@ -44,3 +43,7 @@ namespace Amazon
 <# } #>
     }
 }
+
+<#+
+public System.Collections.Generic.List<ServiceClientGenerator.EndpointConstant> Endpoints { get; set; }
+#>

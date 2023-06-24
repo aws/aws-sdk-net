@@ -145,7 +145,7 @@ namespace Amazon.Runtime.Internal
                 WaitForToken(delay);
             }
 
-            return true;                        
+            return true;            
         }
 
 #if AWS_ASYNC_API
@@ -317,7 +317,7 @@ namespace Amazon.Runtime.Internal
         {
             //This is broken out into a separate calculation because it only
             //gets updated when LastMaxRate changes so it can be cached.
-            TimeWindow = Math.Pow(((LastMaxRate * (1.0 - _beta)) / _scaleConstant), (1.0 / 3.0));                         
+            TimeWindow = Math.Pow(((LastMaxRate * (1.0 - _beta)) / _scaleConstant), (1.0 / 3.0));             
         }
 
         /// <summary>
@@ -328,7 +328,7 @@ namespace Amazon.Runtime.Internal
         protected virtual double CUBICSuccess(double timestamp)
         {
             timestamp -= LastThrottleTime;
-            return (_scaleConstant * Math.Pow(timestamp - TimeWindow, 3)) + LastMaxRate;            
+            return (_scaleConstant * Math.Pow(timestamp - TimeWindow, 3)) + LastMaxRate;
         }
 
         /// <summary>
@@ -364,8 +364,8 @@ namespace Amazon.Runtime.Internal
         }
 
         private static double GetTimeInSeconds()
-        {            
-            return (DateTime.UtcNow - _epoch).TotalSeconds;            
+        {    
+            return (DateTime.UtcNow - _epoch).TotalSeconds;
         }
     }        
 }

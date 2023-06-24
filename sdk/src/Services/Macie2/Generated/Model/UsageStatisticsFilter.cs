@@ -94,7 +94,7 @@ namespace Amazon.Macie2.Model
         /// </li> <li>
         /// <para>
         /// freeTrialStartDate - The date and time, in UTC and extended ISO 8601 format, when
-        /// the free trial started for an account.
+        /// the Amazon Macie free trial started for an account.
         /// </para>
         /// </li> <li>
         /// <para>

@@ -36,6 +36,22 @@ namespace Amazon.IoTTwinMaker.Model
         }
 
         /// <summary>
+        /// Paginator for ExecuteQuery operation
+        ///</summary>
+        public IExecuteQueryPaginator ExecuteQuery(ExecuteQueryRequest request) 
+        {
+            return new ExecuteQueryPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for GetPropertyValue operation
+        ///</summary>
+        public IGetPropertyValuePaginator GetPropertyValue(GetPropertyValueRequest request) 
+        {
+            return new GetPropertyValuePaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for GetPropertyValueHistory operation
         ///</summary>
         public IGetPropertyValueHistoryPaginator GetPropertyValueHistory(GetPropertyValueHistoryRequest request) 
@@ -65,6 +81,22 @@ namespace Amazon.IoTTwinMaker.Model
         public IListScenesPaginator ListScenes(ListScenesRequest request) 
         {
             return new ListScenesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListSyncJobs operation
+        ///</summary>
+        public IListSyncJobsPaginator ListSyncJobs(ListSyncJobsRequest request) 
+        {
+            return new ListSyncJobsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListSyncResources operation
+        ///</summary>
+        public IListSyncResourcesPaginator ListSyncResources(ListSyncResourcesRequest request) 
+        {
+            return new ListSyncResourcesPaginator(this.client, request);
         }
 
         /// <summary>

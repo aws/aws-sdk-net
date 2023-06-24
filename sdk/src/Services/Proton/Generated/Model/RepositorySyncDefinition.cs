@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Proton.Model
 {
     /// <summary>
-    /// The repository sync definition.
+    /// A repository sync definition.
     /// </summary>
     public partial class RepositorySyncDefinition
     {

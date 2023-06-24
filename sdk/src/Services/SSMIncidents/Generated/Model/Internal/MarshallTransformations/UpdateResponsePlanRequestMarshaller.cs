@@ -56,7 +56,7 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.SSMIncidents");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-05-10";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-05-10";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/updateResponsePlan";
@@ -107,7 +107,7 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
                 else if(!(publicRequest.IsSetClientToken()))
                 {
                     context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());                                                
+                    context.Writer.Write(Guid.NewGuid().ToString());
                 }
                 if(publicRequest.IsSetDisplayName())
                 {
@@ -160,13 +160,42 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.IncidentTemplateSummary);
                 }
 
+                if(publicRequest.IsSetIncidentTemplateTags())
+                {
+                    context.Writer.WritePropertyName("incidentTemplateTags");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestIncidentTemplateTagsKvp in publicRequest.IncidentTemplateTags)
+                    {
+                        context.Writer.WritePropertyName(publicRequestIncidentTemplateTagsKvp.Key);
+                        var publicRequestIncidentTemplateTagsValue = publicRequestIncidentTemplateTagsKvp.Value;
+
+                            context.Writer.Write(publicRequestIncidentTemplateTagsValue);
+                    }
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetIncidentTemplateTitle())
                 {
                     context.Writer.WritePropertyName("incidentTemplateTitle");
                     context.Writer.Write(publicRequest.IncidentTemplateTitle);
                 }
 
-        
+                if(publicRequest.IsSetIntegrations())
+                {
+                    context.Writer.WritePropertyName("integrations");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestIntegrationsListValue in publicRequest.Integrations)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = IntegrationMarshaller.Instance;
+                        marshaller.Marshall(publicRequestIntegrationsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

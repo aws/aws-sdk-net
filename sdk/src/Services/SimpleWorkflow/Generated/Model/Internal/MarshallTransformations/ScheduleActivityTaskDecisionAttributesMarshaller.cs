@@ -34,7 +34,7 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ScheduleActivityTaskDecisionAttributes Marshaller
-    /// </summary>       
+    /// </summary>
     public class ScheduleActivityTaskDecisionAttributesMarshaller : IRequestMarshaller<ScheduleActivityTaskDecisionAttributes, JsonMarshallerContext> 
     {
         /// <summary>
@@ -119,7 +119,7 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ScheduleActivityTaskDecisionAttributesMarshaller Instance = new ScheduleActivityTaskDecisionAttributesMarshaller();
 
     }

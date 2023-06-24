@@ -31,6 +31,14 @@ namespace Amazon.SimpleNotificationService.Model
     /// <summary>
     /// Container for the parameters to the RemovePermission operation.
     /// Removes a statement from a topic's access control policy.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// To remove the ability to change topic permissions, you must deny permissions to the
+    /// <code>AddPermission</code>, <code>RemovePermission</code>, and <code>SetTopicAttributes</code>
+    /// actions in your IAM policy.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class RemovePermissionRequest : AmazonSimpleNotificationServiceRequest
     {

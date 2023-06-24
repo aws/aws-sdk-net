@@ -30,8 +30,9 @@ namespace Amazon.EMRContainers.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateManagedEndpoint operation.
-    /// Creates a managed endpoint. A managed endpoint is a gateway that connects EMR Studio
-    /// to Amazon EMR on EKS so that EMR Studio can communicate with your virtual cluster.
+    /// Creates a managed endpoint. A managed endpoint is a gateway that connects Amazon EMR
+    /// Studio to Amazon EMR on EKS so that Amazon EMR Studio can communicate with your virtual
+    /// cluster.
     /// </summary>
     public partial class CreateManagedEndpointRequest : AmazonEMRContainersRequest
     {
@@ -48,7 +49,7 @@ namespace Amazon.EMRContainers.Model
         /// <summary>
         /// Gets and sets the property CertificateArn. 
         /// <para>
-        /// The certificate ARN provided by users for the managed endpoint. This fiedd is under
+        /// The certificate ARN provided by users for the managed endpoint. This field is under
         /// deprecation and will be removed in future releases.
         /// </para>
         /// </summary>

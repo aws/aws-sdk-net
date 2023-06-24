@@ -42,6 +42,7 @@ namespace Amazon.CloudWatchLogs.Model
     public partial class GetLogRecordRequest : AmazonCloudWatchLogsRequest
     {
         private string _logRecordPointer;
+        private bool? _unmask;
 
         /// <summary>
         /// Gets and sets the property LogRecordPointer. 
@@ -63,6 +64,30 @@ namespace Amazon.CloudWatchLogs.Model
         internal bool IsSetLogRecordPointer()
         {
             return this._logRecordPointer != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Unmask. 
+        /// <para>
+        /// Specify <code>true</code> to display the log event fields with all sensitive data
+        /// unmasked and visible. The default is <code>false</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To use this operation with this parameter, you must be signed into an account with
+        /// the <code>logs:Unmask</code> permission.
+        /// </para>
+        /// </summary>
+        public bool Unmask
+        {
+            get { return this._unmask.GetValueOrDefault(); }
+            set { this._unmask = value; }
+        }
+
+        // Check to see if Unmask property is set
+        internal bool IsSetUnmask()
+        {
+            return this._unmask.HasValue; 
         }
 
     }

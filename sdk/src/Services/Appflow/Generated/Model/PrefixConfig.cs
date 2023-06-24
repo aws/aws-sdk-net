@@ -29,18 +29,62 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Appflow.Model
 {
     /// <summary>
-    /// Determines the prefix that Amazon AppFlow applies to the destination folder name.
-    /// You can name your destination folders according to the flow frequency and date.
+    /// Specifies elements that Amazon AppFlow includes in the file and folder names in the
+    /// flow destination.
     /// </summary>
     public partial class PrefixConfig
     {
+        private List<string> _pathPrefixHierarchy = new List<string>();
         private PrefixFormat _prefixFormat;
         private PrefixType _prefixType;
 
         /// <summary>
+        /// Gets and sets the property PathPrefixHierarchy. 
+        /// <para>
+        /// Specifies whether the destination file path includes either or both of the following
+        /// elements:
+        /// </para>
+        ///  <dl> <dt>EXECUTION_ID</dt> <dd> 
+        /// <para>
+        /// The ID that Amazon AppFlow assigns to the flow run.
+        /// </para>
+        ///  </dd> <dt>SCHEMA_VERSION</dt> <dd> 
+        /// <para>
+        /// The version number of your data schema. Amazon AppFlow assigns this version number.
+        /// The version number increases by one when you change any of the following settings
+        /// in your flow configuration:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Source-to-destination field mappings
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Field data types
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Partition keys
+        /// </para>
+        ///  </li> </ul> </dd> </dl>
+        /// </summary>
+        public List<string> PathPrefixHierarchy
+        {
+            get { return this._pathPrefixHierarchy; }
+            set { this._pathPrefixHierarchy = value; }
+        }
+
+        // Check to see if PathPrefixHierarchy property is set
+        internal bool IsSetPathPrefixHierarchy()
+        {
+            return this._pathPrefixHierarchy != null && this._pathPrefixHierarchy.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property PrefixFormat. 
         /// <para>
-        ///  Determines the level of granularity that's included in the prefix. 
+        /// Determines the level of granularity for the date and time that's included in the prefix.
+        /// 
         /// </para>
         /// </summary>
         public PrefixFormat PrefixFormat
@@ -58,7 +102,7 @@ namespace Amazon.Appflow.Model
         /// <summary>
         /// Gets and sets the property PrefixType. 
         /// <para>
-        ///  Determines the format of the prefix, and whether it applies to the file name, file
+        /// Determines the format of the prefix, and whether it applies to the file name, file
         /// path, or both. 
         /// </para>
         /// </summary>

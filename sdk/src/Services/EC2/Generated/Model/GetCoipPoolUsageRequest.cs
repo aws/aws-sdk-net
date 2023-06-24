@@ -42,23 +42,25 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// The filters. The following are the possible values:
+        /// One or more filters.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>coip-address-usage.allocation-id</code> 
+        ///  <code>coip-address-usage.allocation-id</code> - The allocation ID of the address.
         /// </para>
-        ///  </li> </ul> <ul> <li> 
+        ///  </li> <li> 
         /// <para>
-        ///  <code>coip-address-usage.aws-account-id</code> 
+        ///  <code>coip-address-usage.aws-account-id</code> - The ID of the Amazon Web Services
+        /// account that is using the customer-owned IP address.
         /// </para>
-        ///  </li> </ul> <ul> <li> 
+        ///  </li> <li> 
         /// <para>
-        ///  <code>coip-address-usage.aws-service</code> 
+        ///  <code>coip-address-usage.aws-service</code> - The Amazon Web Services service that
+        /// is using the customer-owned IP address.
         /// </para>
-        ///  </li> </ul> <ul> <li> 
+        ///  </li> <li> 
         /// <para>
-        ///  <code>coip-address-usage.co-ip</code> 
+        ///  <code>coip-address-usage.co-ip</code> - The customer-owned IP address.
         /// </para>
         ///  </li> </ul>
         /// </summary>

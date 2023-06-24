@@ -34,7 +34,7 @@ namespace Amazon.CloudControlApi.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ResourceRequestStatusFilter Marshaller
-    /// </summary>       
+    /// </summary>
     public class ResourceRequestStatusFilterMarshaller : IRequestMarshaller<ResourceRequestStatusFilter, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.CloudControlApi.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ResourceRequestStatusFilterMarshaller Instance = new ResourceRequestStatusFilterMarshaller();
 
     }

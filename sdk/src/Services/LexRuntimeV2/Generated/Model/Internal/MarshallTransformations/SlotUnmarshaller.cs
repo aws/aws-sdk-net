@@ -70,6 +70,12 @@ namespace Amazon.LexRuntimeV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.Shape = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("subSlots", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, Slot, StringUnmarshaller, SlotUnmarshaller>(StringUnmarshaller.Instance, SlotUnmarshaller.Instance);
+                    unmarshalledObject.SubSlots = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("value", targetDepth))
                 {
                     var unmarshaller = ValueUnmarshaller.Instance;

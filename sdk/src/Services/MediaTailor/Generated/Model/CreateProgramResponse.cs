@@ -36,7 +36,10 @@ namespace Amazon.MediaTailor.Model
         private List<AdBreak> _adBreaks = new List<AdBreak>();
         private string _arn;
         private string _channelName;
+        private ClipRange _clipRange;
         private DateTime? _creationTime;
+        private long? _durationMillis;
+        private string _liveSourceName;
         private string _programName;
         private DateTime? _scheduledStartTime;
         private string _sourceLocationName;
@@ -63,7 +66,7 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The ARN of the program.
+        /// The ARN to assign to the program.
         /// </para>
         /// </summary>
         public string Arn
@@ -81,7 +84,7 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property ChannelName. 
         /// <para>
-        /// The name of the channel that the program belongs to.
+        /// The name to assign to the channel for this program.
         /// </para>
         /// </summary>
         public string ChannelName
@@ -97,9 +100,27 @@ namespace Amazon.MediaTailor.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ClipRange. 
+        /// <para>
+        /// The clip range configuration settings.
+        /// </para>
+        /// </summary>
+        public ClipRange ClipRange
+        {
+            get { return this._clipRange; }
+            set { this._clipRange = value; }
+        }
+
+        // Check to see if ClipRange property is set
+        internal bool IsSetClipRange()
+        {
+            return this._clipRange != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property CreationTime. 
         /// <para>
-        /// The timestamp of when the program was created.
+        /// The time the program was created.
         /// </para>
         /// </summary>
         public DateTime CreationTime
@@ -115,9 +136,45 @@ namespace Amazon.MediaTailor.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DurationMillis. 
+        /// <para>
+        /// The duration of the live program in milliseconds.
+        /// </para>
+        /// </summary>
+        public long DurationMillis
+        {
+            get { return this._durationMillis.GetValueOrDefault(); }
+            set { this._durationMillis = value; }
+        }
+
+        // Check to see if DurationMillis property is set
+        internal bool IsSetDurationMillis()
+        {
+            return this._durationMillis.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LiveSourceName. 
+        /// <para>
+        /// The name of the LiveSource for this Program.
+        /// </para>
+        /// </summary>
+        public string LiveSourceName
+        {
+            get { return this._liveSourceName; }
+            set { this._liveSourceName = value; }
+        }
+
+        // Check to see if LiveSourceName property is set
+        internal bool IsSetLiveSourceName()
+        {
+            return this._liveSourceName != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ProgramName. 
         /// <para>
-        /// The name of the program.
+        /// The name to assign to this program.
         /// </para>
         /// </summary>
         public string ProgramName
@@ -135,9 +192,7 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property ScheduledStartTime. 
         /// <para>
-        /// The date and time that the program is scheduled to start in ISO 8601 format and Coordinated
-        /// Universal Time (UTC). For example, the value 2021-03-27T17:48:16.751Z represents March
-        /// 27, 2021 at 17:48:16.751 UTC.
+        /// The scheduled start time for this Program.
         /// </para>
         /// </summary>
         public DateTime ScheduledStartTime
@@ -155,7 +210,7 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property SourceLocationName. 
         /// <para>
-        /// The source location name.
+        /// The name to assign to the source location for this program.
         /// </para>
         /// </summary>
         public string SourceLocationName

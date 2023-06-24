@@ -30,20 +30,20 @@ namespace Amazon.S3Control.Model
 {
     /// <summary>
     /// Container for the parameters to the ListAccessPoints operation.
-    /// Returns a list of the access points currently associated with the specified bucket.
-    /// You can retrieve up to 1000 access points per call. If the specified bucket has more
-    /// than 1,000 access points (or the number specified in <code>maxResults</code>, whichever
-    /// is less), the response will include a continuation token that you can use to list
-    /// the additional access points.
+    /// Returns a list of the access points that are owned by the current account that's associated
+    /// with the specified bucket. You can retrieve up to 1000 access points per call. If
+    /// the specified bucket has more than 1,000 access points (or the number specified in
+    /// <code>maxResults</code>, whichever is less), the response will include a continuation
+    /// token that you can use to list the additional access points.
     /// 
     ///   
     /// <para>
     /// All Amazon S3 on Outposts REST API requests for this action require an additional
-    /// parameter of <code>x-amz-outpost-id</code> to be passed with the request and an S3
-    /// on Outposts endpoint hostname prefix instead of <code>s3-control</code>. For an example
-    /// of the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint
-    /// hostname prefix and the <code>x-amz-outpost-id</code> derived using the access point
-    /// ARN, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessPoint.html#API_control_GetAccessPoint_Examples">Examples</a>
+    /// parameter of <code>x-amz-outpost-id</code> to be passed with the request. In addition,
+    /// you must use an S3 on Outposts endpoint hostname prefix instead of <code>s3-control</code>.
+    /// For an example of the request syntax for Amazon S3 on Outposts that uses the S3 on
+    /// Outposts endpoint hostname prefix and the <code>x-amz-outpost-id</code> derived by
+    /// using the access point ARN, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessPoint.html#API_control_GetAccessPoint_Examples">Examples</a>
     /// section.
     /// </para>
     ///  
@@ -77,8 +77,8 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The Amazon Web Services account ID for owner of the bucket whose access points you
-        /// want to list.
+        /// The Amazon Web Services account ID for the account that owns the specified access
+        /// points.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=64)]
@@ -108,7 +108,7 @@ namespace Amazon.S3Control.Model
         /// <para>
         /// For using this parameter with S3 on Outposts with the Amazon Web Services SDK and
         /// CLI, you must specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/bucket/&lt;my-bucket-name&gt;</code>.
-        /// For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code>
+        /// For example, to access the bucket <code>reports</code> through Outpost <code>my-outpost</code>
         /// owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the
         /// URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>.
         /// The value must be URL encoded. 

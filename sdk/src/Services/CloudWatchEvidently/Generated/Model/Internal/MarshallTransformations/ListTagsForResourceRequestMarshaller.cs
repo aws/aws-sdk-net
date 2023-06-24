@@ -55,7 +55,7 @@ namespace Amazon.CloudWatchEvidently.Model.Internal.MarshallTransformations
         public IRequest Marshall(ListTagsForResourceRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CloudWatchEvidently");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-02-01";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-02-01";
             request.HttpMethod = "GET";
 
             if (!publicRequest.IsSetResourceArn())

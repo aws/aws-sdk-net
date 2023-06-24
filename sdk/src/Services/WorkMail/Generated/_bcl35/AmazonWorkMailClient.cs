@@ -35,7 +35,7 @@ namespace Amazon.WorkMail
     /// <summary>
     /// Implementation for accessing WorkMail
     ///
-    /// Amazon WorkMail is a secure, managed business email and calendaring service with support
+    /// WorkMail is a secure, managed business email and calendaring service with support
     /// for existing desktop and mobile email clients. You can access your email, contacts,
     /// and calendars using Microsoft Outlook, your browser, or other native iOS and Android
     /// email applications. You can integrate WorkMail with your existing corporate directory
@@ -268,6 +268,15 @@ namespace Amazon.WorkMail
         }
 
         /// <summary>
+        /// Customize the pipeline
+        /// </summary>
+        /// <param name="pipeline"></param>
+        protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
+        {
+            pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonWorkMailEndpointResolver());
+        }
+        /// <summary>
         /// Capture metadata for the service.
         /// </summary>
         protected override IServiceMetadata ServiceMetadata
@@ -446,6 +455,75 @@ namespace Amazon.WorkMail
 
         #endregion
         
+        #region  AssumeImpersonationRole
+
+        /// <summary>
+        /// Assumes an impersonation role for the given WorkMail organization. This method returns
+        /// an authentication token you can use to make impersonated calls.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssumeImpersonationRole service method.</param>
+        /// 
+        /// <returns>The response from the AssumeImpersonationRole service method, as returned by WorkMail.</returns>
+        /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
+        /// One or more of the input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationNotFoundException">
+        /// An operation received a valid organization identifier that either doesn't belong or
+        /// exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.ResourceNotFoundException">
+        /// The resource cannot be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/AssumeImpersonationRole">REST API Reference for AssumeImpersonationRole Operation</seealso>
+        public virtual AssumeImpersonationRoleResponse AssumeImpersonationRole(AssumeImpersonationRoleRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssumeImpersonationRoleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssumeImpersonationRoleResponseUnmarshaller.Instance;
+
+            return Invoke<AssumeImpersonationRoleResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssumeImpersonationRole operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssumeImpersonationRole operation on AmazonWorkMailClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssumeImpersonationRole
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/AssumeImpersonationRole">REST API Reference for AssumeImpersonationRole Operation</seealso>
+        public virtual IAsyncResult BeginAssumeImpersonationRole(AssumeImpersonationRoleRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssumeImpersonationRoleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssumeImpersonationRoleResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AssumeImpersonationRole operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssumeImpersonationRole.</param>
+        /// 
+        /// <returns>Returns a  AssumeImpersonationRoleResult from WorkMail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/AssumeImpersonationRole">REST API Reference for AssumeImpersonationRole Operation</seealso>
+        public virtual AssumeImpersonationRoleResponse EndAssumeImpersonationRole(IAsyncResult asyncResult)
+        {
+            return EndInvoke<AssumeImpersonationRoleResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CancelMailboxExportJob
 
         /// <summary>
@@ -523,7 +601,7 @@ namespace Amazon.WorkMail
         #region  CreateAlias
 
         /// <summary>
-        /// Adds an alias to the set of a given member (user or group) of Amazon WorkMail.
+        /// Adds an alias to the set of a given member (user or group) of WorkMail.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAlias service method.</param>
         /// 
@@ -606,10 +684,82 @@ namespace Amazon.WorkMail
 
         #endregion
         
+        #region  CreateAvailabilityConfiguration
+
+        /// <summary>
+        /// Creates an <code>AvailabilityConfiguration</code> for the given WorkMail organization
+        /// and domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAvailabilityConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the CreateAvailabilityConfiguration service method, as returned by WorkMail.</returns>
+        /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
+        /// One or more of the input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.LimitExceededException">
+        /// The request exceeds the limit of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.NameAvailabilityException">
+        /// The user, group, or resource name isn't unique in WorkMail.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationNotFoundException">
+        /// An operation received a valid organization identifier that either doesn't belong or
+        /// exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/CreateAvailabilityConfiguration">REST API Reference for CreateAvailabilityConfiguration Operation</seealso>
+        public virtual CreateAvailabilityConfigurationResponse CreateAvailabilityConfiguration(CreateAvailabilityConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAvailabilityConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAvailabilityConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<CreateAvailabilityConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateAvailabilityConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateAvailabilityConfiguration operation on AmazonWorkMailClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateAvailabilityConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/CreateAvailabilityConfiguration">REST API Reference for CreateAvailabilityConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginCreateAvailabilityConfiguration(CreateAvailabilityConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAvailabilityConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAvailabilityConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateAvailabilityConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateAvailabilityConfiguration.</param>
+        /// 
+        /// <returns>Returns a  CreateAvailabilityConfigurationResult from WorkMail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/CreateAvailabilityConfiguration">REST API Reference for CreateAvailabilityConfiguration Operation</seealso>
+        public virtual CreateAvailabilityConfigurationResponse EndCreateAvailabilityConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateAvailabilityConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateGroup
 
         /// <summary>
-        /// Creates a group that can be used in Amazon WorkMail by calling the <a>RegisterToWorkMail</a>
+        /// Creates a group that can be used in WorkMail by calling the <a>RegisterToWorkMail</a>
         /// operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateGroup service method.</param>
@@ -625,7 +775,7 @@ namespace Amazon.WorkMail
         /// One or more of the input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.NameAvailabilityException">
-        /// The user, group, or resource name isn't unique in Amazon WorkMail.
+        /// The user, group, or resource name isn't unique in WorkMail.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationNotFoundException">
         /// An operation received a valid organization identifier that either doesn't belong or
@@ -636,7 +786,7 @@ namespace Amazon.WorkMail
         /// or its members.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.ReservedNameException">
-        /// This user, group, or resource name is not allowed in Amazon WorkMail.
+        /// This user, group, or resource name is not allowed in WorkMail.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.UnsupportedOperationException">
         /// You can't perform a write operation against a read-only directory.
@@ -687,10 +837,92 @@ namespace Amazon.WorkMail
 
         #endregion
         
+        #region  CreateImpersonationRole
+
+        /// <summary>
+        /// Creates an impersonation role for the given WorkMail organization.
+        /// 
+        ///  
+        /// <para>
+        ///  <i>Idempotency</i> ensures that an API request completes no more than one time. With
+        /// an idempotent request, if the original request completes successfully, any subsequent
+        /// retries also complete successfully without performing any further actions.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateImpersonationRole service method.</param>
+        /// 
+        /// <returns>The response from the CreateImpersonationRole service method, as returned by WorkMail.</returns>
+        /// <exception cref="Amazon.WorkMail.Model.EntityNotFoundException">
+        /// The identifier supplied for the user, group, or resource does not exist in your organization.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.EntityStateException">
+        /// You are performing an operation on a user, group, or resource that isn't in the expected
+        /// state, such as trying to delete an active user.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
+        /// One or more of the input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.LimitExceededException">
+        /// The request exceeds the limit of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationNotFoundException">
+        /// An operation received a valid organization identifier that either doesn't belong or
+        /// exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/CreateImpersonationRole">REST API Reference for CreateImpersonationRole Operation</seealso>
+        public virtual CreateImpersonationRoleResponse CreateImpersonationRole(CreateImpersonationRoleRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateImpersonationRoleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateImpersonationRoleResponseUnmarshaller.Instance;
+
+            return Invoke<CreateImpersonationRoleResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateImpersonationRole operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateImpersonationRole operation on AmazonWorkMailClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateImpersonationRole
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/CreateImpersonationRole">REST API Reference for CreateImpersonationRole Operation</seealso>
+        public virtual IAsyncResult BeginCreateImpersonationRole(CreateImpersonationRoleRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateImpersonationRoleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateImpersonationRoleResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateImpersonationRole operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateImpersonationRole.</param>
+        /// 
+        /// <returns>Returns a  CreateImpersonationRoleResult from WorkMail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/CreateImpersonationRole">REST API Reference for CreateImpersonationRole Operation</seealso>
+        public virtual CreateImpersonationRoleResponse EndCreateImpersonationRole(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateImpersonationRoleResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateMobileDeviceAccessRule
 
         /// <summary>
-        /// Creates a new mobile device access rule for the specified Amazon WorkMail organization.
+        /// Creates a new mobile device access rule for the specified WorkMail organization.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateMobileDeviceAccessRule service method.</param>
         /// 
@@ -758,28 +990,26 @@ namespace Amazon.WorkMail
         #region  CreateOrganization
 
         /// <summary>
-        /// Creates a new Amazon WorkMail organization. Optionally, you can choose to associate
-        /// an existing AWS Directory Service directory with your organization. If an AWS Directory
-        /// Service directory ID is specified, the organization alias must match the directory
-        /// alias. If you choose not to associate an existing directory with your organization,
-        /// then we create a new Amazon WorkMail directory for you. For more information, see
-        /// <a href="https://docs.aws.amazon.com/workmail/latest/adminguide/add_new_organization.html">Adding
-        /// an organization</a> in the <i>Amazon WorkMail Administrator Guide</i>.
+        /// Creates a new WorkMail organization. Optionally, you can choose to associate an existing
+        /// AWS Directory Service directory with your organization. If an AWS Directory Service
+        /// directory ID is specified, the organization alias must match the directory alias.
+        /// If you choose not to associate an existing directory with your organization, then
+        /// we create a new WorkMail directory for you. For more information, see <a href="https://docs.aws.amazon.com/workmail/latest/adminguide/add_new_organization.html">Adding
+        /// an organization</a> in the <i>WorkMail Administrator Guide</i>.
         /// 
         ///  
         /// <para>
-        /// You can associate multiple email domains with an organization, then set your default
-        /// email domain from the Amazon WorkMail console. You can also associate a domain that
-        /// is managed in an Amazon Route 53 public hosted zone. For more information, see <a
-        /// href="https://docs.aws.amazon.com/workmail/latest/adminguide/add_domain.html">Adding
+        /// You can associate multiple email domains with an organization, then choose your default
+        /// email domain from the WorkMail console. You can also associate a domain that is managed
+        /// in an Amazon Route 53 public hosted zone. For more information, see <a href="https://docs.aws.amazon.com/workmail/latest/adminguide/add_domain.html">Adding
         /// a domain</a> and <a href="https://docs.aws.amazon.com/workmail/latest/adminguide/default_domain.html">Choosing
-        /// the default domain</a> in the <i>Amazon WorkMail Administrator Guide</i>.
+        /// the default domain</a> in the <i>WorkMail Administrator Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// Optionally, you can use a customer managed master key from AWS Key Management Service
-        /// (AWS KMS) to encrypt email for your organization. If you don't associate an AWS KMS
-        /// key, Amazon WorkMail creates a default AWS managed master key for you.
+        /// Optionally, you can use a customer managed key from AWS Key Management Service (AWS
+        /// KMS) to encrypt email for your organization. If you don't associate an AWS KMS key,
+        /// WorkMail creates a default, AWS managed key for you.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateOrganization service method.</param>
@@ -799,7 +1029,7 @@ namespace Amazon.WorkMail
         /// The request exceeds the limit of the resource.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.NameAvailabilityException">
-        /// The user, group, or resource name isn't unique in Amazon WorkMail.
+        /// The user, group, or resource name isn't unique in WorkMail.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/CreateOrganization">REST API Reference for CreateOrganization Operation</seealso>
         public virtual CreateOrganizationResponse CreateOrganization(CreateOrganizationRequest request)
@@ -850,7 +1080,7 @@ namespace Amazon.WorkMail
         #region  CreateResource
 
         /// <summary>
-        /// Creates a new Amazon WorkMail resource.
+        /// Creates a new WorkMail resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateResource service method.</param>
         /// 
@@ -865,7 +1095,7 @@ namespace Amazon.WorkMail
         /// One or more of the input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.NameAvailabilityException">
-        /// The user, group, or resource name isn't unique in Amazon WorkMail.
+        /// The user, group, or resource name isn't unique in WorkMail.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationNotFoundException">
         /// An operation received a valid organization identifier that either doesn't belong or
@@ -876,7 +1106,7 @@ namespace Amazon.WorkMail
         /// or its members.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.ReservedNameException">
-        /// This user, group, or resource name is not allowed in Amazon WorkMail.
+        /// This user, group, or resource name is not allowed in WorkMail.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/CreateResource">REST API Reference for CreateResource Operation</seealso>
         public virtual CreateResourceResponse CreateResource(CreateResourceRequest request)
@@ -927,7 +1157,7 @@ namespace Amazon.WorkMail
         #region  CreateUser
 
         /// <summary>
-        /// Creates a user who can be used in Amazon WorkMail by calling the <a>RegisterToWorkMail</a>
+        /// Creates a user who can be used in WorkMail by calling the <a>RegisterToWorkMail</a>
         /// operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateUser service method.</param>
@@ -947,7 +1177,7 @@ namespace Amazon.WorkMail
         /// or use of special characters.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.NameAvailabilityException">
-        /// The user, group, or resource name isn't unique in Amazon WorkMail.
+        /// The user, group, or resource name isn't unique in WorkMail.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationNotFoundException">
         /// An operation received a valid organization identifier that either doesn't belong or
@@ -958,7 +1188,7 @@ namespace Amazon.WorkMail
         /// or its members.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.ReservedNameException">
-        /// This user, group, or resource name is not allowed in Amazon WorkMail.
+        /// This user, group, or resource name is not allowed in WorkMail.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.UnsupportedOperationException">
         /// You can't perform a write operation against a read-only directory.
@@ -1150,10 +1380,138 @@ namespace Amazon.WorkMail
 
         #endregion
         
+        #region  DeleteAvailabilityConfiguration
+
+        /// <summary>
+        /// Deletes the <code>AvailabilityConfiguration</code> for the given WorkMail organization
+        /// and domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAvailabilityConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAvailabilityConfiguration service method, as returned by WorkMail.</returns>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationNotFoundException">
+        /// An operation received a valid organization identifier that either doesn't belong or
+        /// exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteAvailabilityConfiguration">REST API Reference for DeleteAvailabilityConfiguration Operation</seealso>
+        public virtual DeleteAvailabilityConfigurationResponse DeleteAvailabilityConfiguration(DeleteAvailabilityConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAvailabilityConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAvailabilityConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteAvailabilityConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteAvailabilityConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAvailabilityConfiguration operation on AmazonWorkMailClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteAvailabilityConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteAvailabilityConfiguration">REST API Reference for DeleteAvailabilityConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginDeleteAvailabilityConfiguration(DeleteAvailabilityConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAvailabilityConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAvailabilityConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteAvailabilityConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteAvailabilityConfiguration.</param>
+        /// 
+        /// <returns>Returns a  DeleteAvailabilityConfigurationResult from WorkMail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteAvailabilityConfiguration">REST API Reference for DeleteAvailabilityConfiguration Operation</seealso>
+        public virtual DeleteAvailabilityConfigurationResponse EndDeleteAvailabilityConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteAvailabilityConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteEmailMonitoringConfiguration
+
+        /// <summary>
+        /// Deletes the email monitoring configuration for a specified organization.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEmailMonitoringConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DeleteEmailMonitoringConfiguration service method, as returned by WorkMail.</returns>
+        /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
+        /// One or more of the input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationNotFoundException">
+        /// An operation received a valid organization identifier that either doesn't belong or
+        /// exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteEmailMonitoringConfiguration">REST API Reference for DeleteEmailMonitoringConfiguration Operation</seealso>
+        public virtual DeleteEmailMonitoringConfigurationResponse DeleteEmailMonitoringConfiguration(DeleteEmailMonitoringConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteEmailMonitoringConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteEmailMonitoringConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteEmailMonitoringConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteEmailMonitoringConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEmailMonitoringConfiguration operation on AmazonWorkMailClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteEmailMonitoringConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteEmailMonitoringConfiguration">REST API Reference for DeleteEmailMonitoringConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginDeleteEmailMonitoringConfiguration(DeleteEmailMonitoringConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteEmailMonitoringConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteEmailMonitoringConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteEmailMonitoringConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteEmailMonitoringConfiguration.</param>
+        /// 
+        /// <returns>Returns a  DeleteEmailMonitoringConfigurationResult from WorkMail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteEmailMonitoringConfiguration">REST API Reference for DeleteEmailMonitoringConfiguration Operation</seealso>
+        public virtual DeleteEmailMonitoringConfigurationResponse EndDeleteEmailMonitoringConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteEmailMonitoringConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteGroup
 
         /// <summary>
-        /// Deletes a group from Amazon WorkMail.
+        /// Deletes a group from WorkMail.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteGroup service method.</param>
         /// 
@@ -1224,6 +1582,71 @@ namespace Amazon.WorkMail
         public virtual DeleteGroupResponse EndDeleteGroup(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteGroupResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteImpersonationRole
+
+        /// <summary>
+        /// Deletes an impersonation role for the given WorkMail organization.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteImpersonationRole service method.</param>
+        /// 
+        /// <returns>The response from the DeleteImpersonationRole service method, as returned by WorkMail.</returns>
+        /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
+        /// One or more of the input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationNotFoundException">
+        /// An operation received a valid organization identifier that either doesn't belong or
+        /// exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteImpersonationRole">REST API Reference for DeleteImpersonationRole Operation</seealso>
+        public virtual DeleteImpersonationRoleResponse DeleteImpersonationRole(DeleteImpersonationRoleRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteImpersonationRoleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteImpersonationRoleResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteImpersonationRoleResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteImpersonationRole operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteImpersonationRole operation on AmazonWorkMailClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteImpersonationRole
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteImpersonationRole">REST API Reference for DeleteImpersonationRole Operation</seealso>
+        public virtual IAsyncResult BeginDeleteImpersonationRole(DeleteImpersonationRoleRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteImpersonationRoleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteImpersonationRoleResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteImpersonationRole operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteImpersonationRole.</param>
+        /// 
+        /// <returns>Returns a  DeleteImpersonationRoleResult from WorkMail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteImpersonationRole">REST API Reference for DeleteImpersonationRole Operation</seealso>
+        public virtual DeleteImpersonationRoleResponse EndDeleteImpersonationRole(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteImpersonationRoleResponse>(asyncResult);
         }
 
         #endregion
@@ -1379,7 +1802,7 @@ namespace Amazon.WorkMail
         #region  DeleteMobileDeviceAccessRule
 
         /// <summary>
-        /// Deletes a mobile device access rule for the specified Amazon WorkMail organization.
+        /// Deletes a mobile device access rule for the specified WorkMail organization.
         /// 
         ///  <note> 
         /// <para>
@@ -1451,10 +1874,10 @@ namespace Amazon.WorkMail
         #region  DeleteOrganization
 
         /// <summary>
-        /// Deletes an Amazon WorkMail organization and all underlying AWS resources managed by
-        /// Amazon WorkMail as part of the organization. You can choose whether to delete the
-        /// associated directory. For more information, see <a href="https://docs.aws.amazon.com/workmail/latest/adminguide/remove_organization.html">Removing
-        /// an organization</a> in the <i>Amazon WorkMail Administrator Guide</i>.
+        /// Deletes an WorkMail organization and all underlying AWS resources managed by WorkMail
+        /// as part of the organization. You can choose whether to delete the associated directory.
+        /// For more information, see <a href="https://docs.aws.amazon.com/workmail/latest/adminguide/remove_organization.html">Removing
+        /// an organization</a> in the <i>WorkMail Administrator Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteOrganization service method.</param>
         /// 
@@ -1653,9 +2076,9 @@ namespace Amazon.WorkMail
         #region  DeleteUser
 
         /// <summary>
-        /// Deletes a user from Amazon WorkMail and all subsequent systems. Before you can delete
-        /// a user, the user state must be <code>DISABLED</code>. Use the <a>DescribeUser</a>
-        /// action to confirm the user state.
+        /// Deletes a user from WorkMail and all subsequent systems. Before you can delete a user,
+        /// the user state must be <code>DISABLED</code>. Use the <a>DescribeUser</a> action to
+        /// confirm the user state.
         /// 
         ///  
         /// <para>
@@ -1739,10 +2162,9 @@ namespace Amazon.WorkMail
         #region  DeregisterFromWorkMail
 
         /// <summary>
-        /// Mark a user, group, or resource as no longer used in Amazon WorkMail. This action
-        /// disassociates the mailbox and schedules it for clean-up. WorkMail keeps mailboxes
-        /// for 30 days before they are permanently removed. The functionality in the console
-        /// is <i>Disable</i>.
+        /// Mark a user, group, or resource as no longer used in WorkMail. This action disassociates
+        /// the mailbox and schedules it for clean-up. WorkMail keeps mailboxes for 30 days before
+        /// they are permanently removed. The functionality in the console is <i>Disable</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeregisterFromWorkMail service method.</param>
         /// 
@@ -1814,17 +2236,17 @@ namespace Amazon.WorkMail
         #region  DeregisterMailDomain
 
         /// <summary>
-        /// Removes a domain from Amazon WorkMail, stops email routing to WorkMail, and removes
-        /// the authorization allowing WorkMail use. SES keeps the domain because other applications
-        /// may use it. You must first remove any email address used by WorkMail entities before
-        /// you remove the domain.
+        /// Removes a domain from WorkMail, stops email routing to WorkMail, and removes the authorization
+        /// allowing WorkMail use. SES keeps the domain because other applications may use it.
+        /// You must first remove any email address used by WorkMail entities before you remove
+        /// the domain.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeregisterMailDomain service method.</param>
         /// 
         /// <returns>The response from the DeregisterMailDomain service method, as returned by WorkMail.</returns>
         /// <exception cref="Amazon.WorkMail.Model.InvalidCustomSesConfigurationException">
-        /// You SES configuration has customizations that Amazon WorkMail cannot save. The error
-        /// message lists the invalid setting. For examples of invalid settings, refer to <a href="https://docs.aws.amazon.com/ses/latest/APIReference/API_CreateReceiptRule.html">CreateReceiptRule</a>.
+        /// You SES configuration has customizations that WorkMail cannot save. The error message
+        /// lists the invalid setting. For examples of invalid settings, refer to <a href="https://docs.aws.amazon.com/ses/latest/APIReference/API_CreateReceiptRule.html">CreateReceiptRule</a>.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
         /// One or more of the input parameters don't match the service's restrictions.
@@ -1883,6 +2305,74 @@ namespace Amazon.WorkMail
         public virtual DeregisterMailDomainResponse EndDeregisterMailDomain(IAsyncResult asyncResult)
         {
             return EndInvoke<DeregisterMailDomainResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeEmailMonitoringConfiguration
+
+        /// <summary>
+        /// Describes the current email monitoring configuration for a specified organization.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEmailMonitoringConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DescribeEmailMonitoringConfiguration service method, as returned by WorkMail.</returns>
+        /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
+        /// One or more of the input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationNotFoundException">
+        /// An operation received a valid organization identifier that either doesn't belong or
+        /// exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.ResourceNotFoundException">
+        /// The resource cannot be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DescribeEmailMonitoringConfiguration">REST API Reference for DescribeEmailMonitoringConfiguration Operation</seealso>
+        public virtual DescribeEmailMonitoringConfigurationResponse DescribeEmailMonitoringConfiguration(DescribeEmailMonitoringConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeEmailMonitoringConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeEmailMonitoringConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeEmailMonitoringConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeEmailMonitoringConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEmailMonitoringConfiguration operation on AmazonWorkMailClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeEmailMonitoringConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DescribeEmailMonitoringConfiguration">REST API Reference for DescribeEmailMonitoringConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginDescribeEmailMonitoringConfiguration(DescribeEmailMonitoringConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeEmailMonitoringConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeEmailMonitoringConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeEmailMonitoringConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeEmailMonitoringConfiguration.</param>
+        /// 
+        /// <returns>Returns a  DescribeEmailMonitoringConfigurationResult from WorkMail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DescribeEmailMonitoringConfiguration">REST API Reference for DescribeEmailMonitoringConfiguration Operation</seealso>
+        public virtual DescribeEmailMonitoringConfigurationResponse EndDescribeEmailMonitoringConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeEmailMonitoringConfigurationResponse>(asyncResult);
         }
 
         #endregion
@@ -2439,7 +2929,9 @@ namespace Amazon.WorkMail
 
         /// <summary>
         /// Gets the effects of an organization's access control rules as they apply to a specified
-        /// IPv4 address, access protocol action, or user ID.
+        /// IPv4 address, access protocol action, and user ID or impersonation role ID. You must
+        /// provide either the user ID or impersonation role ID. Impersonation role ID can only
+        /// be used with Action EWS.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAccessControlEffect service method.</param>
         /// 
@@ -2457,6 +2949,9 @@ namespace Amazon.WorkMail
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
         /// The organization must have a valid state to perform certain operations on the organization
         /// or its members.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.ResourceNotFoundException">
+        /// The resource cannot be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/GetAccessControlEffect">REST API Reference for GetAccessControlEffect Operation</seealso>
         public virtual GetAccessControlEffectResponse GetAccessControlEffect(GetAccessControlEffectRequest request)
@@ -2568,6 +3063,149 @@ namespace Amazon.WorkMail
         public virtual GetDefaultRetentionPolicyResponse EndGetDefaultRetentionPolicy(IAsyncResult asyncResult)
         {
             return EndInvoke<GetDefaultRetentionPolicyResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetImpersonationRole
+
+        /// <summary>
+        /// Gets the impersonation role details for the given WorkMail organization.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetImpersonationRole service method.</param>
+        /// 
+        /// <returns>The response from the GetImpersonationRole service method, as returned by WorkMail.</returns>
+        /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
+        /// One or more of the input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationNotFoundException">
+        /// An operation received a valid organization identifier that either doesn't belong or
+        /// exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.ResourceNotFoundException">
+        /// The resource cannot be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/GetImpersonationRole">REST API Reference for GetImpersonationRole Operation</seealso>
+        public virtual GetImpersonationRoleResponse GetImpersonationRole(GetImpersonationRoleRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetImpersonationRoleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetImpersonationRoleResponseUnmarshaller.Instance;
+
+            return Invoke<GetImpersonationRoleResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetImpersonationRole operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetImpersonationRole operation on AmazonWorkMailClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetImpersonationRole
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/GetImpersonationRole">REST API Reference for GetImpersonationRole Operation</seealso>
+        public virtual IAsyncResult BeginGetImpersonationRole(GetImpersonationRoleRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetImpersonationRoleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetImpersonationRoleResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetImpersonationRole operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetImpersonationRole.</param>
+        /// 
+        /// <returns>Returns a  GetImpersonationRoleResult from WorkMail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/GetImpersonationRole">REST API Reference for GetImpersonationRole Operation</seealso>
+        public virtual GetImpersonationRoleResponse EndGetImpersonationRole(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetImpersonationRoleResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetImpersonationRoleEffect
+
+        /// <summary>
+        /// Tests whether the given impersonation role can impersonate a target user.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetImpersonationRoleEffect service method.</param>
+        /// 
+        /// <returns>The response from the GetImpersonationRoleEffect service method, as returned by WorkMail.</returns>
+        /// <exception cref="Amazon.WorkMail.Model.EntityNotFoundException">
+        /// The identifier supplied for the user, group, or resource does not exist in your organization.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.EntityStateException">
+        /// You are performing an operation on a user, group, or resource that isn't in the expected
+        /// state, such as trying to delete an active user.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
+        /// One or more of the input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationNotFoundException">
+        /// An operation received a valid organization identifier that either doesn't belong or
+        /// exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.ResourceNotFoundException">
+        /// The resource cannot be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/GetImpersonationRoleEffect">REST API Reference for GetImpersonationRoleEffect Operation</seealso>
+        public virtual GetImpersonationRoleEffectResponse GetImpersonationRoleEffect(GetImpersonationRoleEffectRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetImpersonationRoleEffectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetImpersonationRoleEffectResponseUnmarshaller.Instance;
+
+            return Invoke<GetImpersonationRoleEffectResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetImpersonationRoleEffect operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetImpersonationRoleEffect operation on AmazonWorkMailClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetImpersonationRoleEffect
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/GetImpersonationRoleEffect">REST API Reference for GetImpersonationRoleEffect Operation</seealso>
+        public virtual IAsyncResult BeginGetImpersonationRoleEffect(GetImpersonationRoleEffectRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetImpersonationRoleEffectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetImpersonationRoleEffectResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetImpersonationRoleEffect operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetImpersonationRoleEffect.</param>
+        /// 
+        /// <returns>Returns a  GetImpersonationRoleEffectResult from WorkMail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/GetImpersonationRoleEffect">REST API Reference for GetImpersonationRoleEffect Operation</seealso>
+        public virtual GetImpersonationRoleEffectResponse EndGetImpersonationRoleEffect(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetImpersonationRoleEffectResponse>(asyncResult);
         }
 
         #endregion
@@ -2711,7 +3349,7 @@ namespace Amazon.WorkMail
         /// <summary>
         /// Simulates the effect of the mobile device access rules for the given attributes of
         /// a sample access event. Use this method to test the effects of the current set of mobile
-        /// device access rules for the Amazon WorkMail organization for a particular user's attributes.
+        /// device access rules for the WorkMail organization for a particular user's attributes.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMobileDeviceAccessEffect service method.</param>
         /// 
@@ -2979,6 +3617,68 @@ namespace Amazon.WorkMail
 
         #endregion
         
+        #region  ListAvailabilityConfigurations
+
+        /// <summary>
+        /// List all the <code>AvailabilityConfiguration</code>'s for the given WorkMail organization.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAvailabilityConfigurations service method.</param>
+        /// 
+        /// <returns>The response from the ListAvailabilityConfigurations service method, as returned by WorkMail.</returns>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationNotFoundException">
+        /// An operation received a valid organization identifier that either doesn't belong or
+        /// exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListAvailabilityConfigurations">REST API Reference for ListAvailabilityConfigurations Operation</seealso>
+        public virtual ListAvailabilityConfigurationsResponse ListAvailabilityConfigurations(ListAvailabilityConfigurationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAvailabilityConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAvailabilityConfigurationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListAvailabilityConfigurationsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAvailabilityConfigurations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAvailabilityConfigurations operation on AmazonWorkMailClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAvailabilityConfigurations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListAvailabilityConfigurations">REST API Reference for ListAvailabilityConfigurations Operation</seealso>
+        public virtual IAsyncResult BeginListAvailabilityConfigurations(ListAvailabilityConfigurationsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAvailabilityConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAvailabilityConfigurationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListAvailabilityConfigurations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAvailabilityConfigurations.</param>
+        /// 
+        /// <returns>Returns a  ListAvailabilityConfigurationsResult from WorkMail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListAvailabilityConfigurations">REST API Reference for ListAvailabilityConfigurations Operation</seealso>
+        public virtual ListAvailabilityConfigurationsResponse EndListAvailabilityConfigurations(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListAvailabilityConfigurationsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListGroupMembers
 
         /// <summary>
@@ -3120,6 +3820,71 @@ namespace Amazon.WorkMail
 
         #endregion
         
+        #region  ListImpersonationRoles
+
+        /// <summary>
+        /// Lists all the impersonation roles for the given WorkMail organization.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListImpersonationRoles service method.</param>
+        /// 
+        /// <returns>The response from the ListImpersonationRoles service method, as returned by WorkMail.</returns>
+        /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
+        /// One or more of the input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationNotFoundException">
+        /// An operation received a valid organization identifier that either doesn't belong or
+        /// exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListImpersonationRoles">REST API Reference for ListImpersonationRoles Operation</seealso>
+        public virtual ListImpersonationRolesResponse ListImpersonationRoles(ListImpersonationRolesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListImpersonationRolesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListImpersonationRolesResponseUnmarshaller.Instance;
+
+            return Invoke<ListImpersonationRolesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListImpersonationRoles operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListImpersonationRoles operation on AmazonWorkMailClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListImpersonationRoles
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListImpersonationRoles">REST API Reference for ListImpersonationRoles Operation</seealso>
+        public virtual IAsyncResult BeginListImpersonationRoles(ListImpersonationRolesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListImpersonationRolesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListImpersonationRolesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListImpersonationRoles operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListImpersonationRoles.</param>
+        /// 
+        /// <returns>Returns a  ListImpersonationRolesResult from WorkMail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListImpersonationRoles">REST API Reference for ListImpersonationRoles Operation</seealso>
+        public virtual ListImpersonationRolesResponse EndListImpersonationRoles(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListImpersonationRolesResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListMailboxExportJobs
 
         /// <summary>
@@ -3257,7 +4022,7 @@ namespace Amazon.WorkMail
         #region  ListMailDomains
 
         /// <summary>
-        /// Lists the mail domains in a given Amazon WorkMail organization.
+        /// Lists the mail domains in a given WorkMail organization.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListMailDomains service method.</param>
         /// 
@@ -3391,7 +4156,7 @@ namespace Amazon.WorkMail
         #region  ListMobileDeviceAccessRules
 
         /// <summary>
-        /// Lists the mobile device access rules for the specified Amazon WorkMail organization.
+        /// Lists the mobile device access rules for the specified WorkMail organization.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListMobileDeviceAccessRules service method.</param>
         /// 
@@ -3651,7 +4416,7 @@ namespace Amazon.WorkMail
         #region  ListTagsForResource
 
         /// <summary>
-        /// Lists the tags applied to an Amazon WorkMail organization resource.
+        /// Lists the tags applied to an WorkMail organization resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// 
@@ -3775,8 +4540,8 @@ namespace Amazon.WorkMail
         /// <summary>
         /// Adds a new access control rule for the specified organization. The rule allows or
         /// denies access to the organization for the specified IPv4 addresses, access protocol
-        /// actions, and user IDs. Adding a new rule with the same name as an existing rule replaces
-        /// the older rule.
+        /// actions, user IDs and impersonation IDs. Adding a new rule with the same name as an
+        /// existing rule replaces the older rule.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutAccessControlRule service method.</param>
         /// 
@@ -3797,6 +4562,9 @@ namespace Amazon.WorkMail
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
         /// The organization must have a valid state to perform certain operations on the organization
         /// or its members.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.ResourceNotFoundException">
+        /// The resource cannot be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/PutAccessControlRule">REST API Reference for PutAccessControlRule Operation</seealso>
         public virtual PutAccessControlRuleResponse PutAccessControlRule(PutAccessControlRuleRequest request)
@@ -3840,6 +4608,74 @@ namespace Amazon.WorkMail
         public virtual PutAccessControlRuleResponse EndPutAccessControlRule(IAsyncResult asyncResult)
         {
             return EndInvoke<PutAccessControlRuleResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  PutEmailMonitoringConfiguration
+
+        /// <summary>
+        /// Creates or updates the email monitoring configuration for a specified organization.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutEmailMonitoringConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the PutEmailMonitoringConfiguration service method, as returned by WorkMail.</returns>
+        /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
+        /// One or more of the input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationNotFoundException">
+        /// An operation received a valid organization identifier that either doesn't belong or
+        /// exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.ResourceNotFoundException">
+        /// The resource cannot be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/PutEmailMonitoringConfiguration">REST API Reference for PutEmailMonitoringConfiguration Operation</seealso>
+        public virtual PutEmailMonitoringConfigurationResponse PutEmailMonitoringConfiguration(PutEmailMonitoringConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutEmailMonitoringConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutEmailMonitoringConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<PutEmailMonitoringConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutEmailMonitoringConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutEmailMonitoringConfiguration operation on AmazonWorkMailClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutEmailMonitoringConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/PutEmailMonitoringConfiguration">REST API Reference for PutEmailMonitoringConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginPutEmailMonitoringConfiguration(PutEmailMonitoringConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutEmailMonitoringConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutEmailMonitoringConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutEmailMonitoringConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutEmailMonitoringConfiguration.</param>
+        /// 
+        /// <returns>Returns a  PutEmailMonitoringConfigurationResult from WorkMail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/PutEmailMonitoringConfiguration">REST API Reference for PutEmailMonitoringConfiguration Operation</seealso>
+        public virtual PutEmailMonitoringConfigurationResponse EndPutEmailMonitoringConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PutEmailMonitoringConfigurationResponse>(asyncResult);
         }
 
         #endregion
@@ -4122,7 +4958,7 @@ namespace Amazon.WorkMail
         #region  RegisterMailDomain
 
         /// <summary>
-        /// Registers a new domain in Amazon WorkMail and SES, and configures it for use by WorkMail.
+        /// Registers a new domain in WorkMail and SES, and configures it for use by WorkMail.
         /// Emails received by SES for this domain are routed to the specified WorkMail organization,
         /// and WorkMail has permanent permission to use the specified domain for sending your
         /// users' emails.
@@ -4197,12 +5033,11 @@ namespace Amazon.WorkMail
         #region  RegisterToWorkMail
 
         /// <summary>
-        /// Registers an existing and disabled user, group, or resource for Amazon WorkMail use
-        /// by associating a mailbox and calendaring capabilities. It performs no change if the
-        /// user, group, or resource is enabled and fails if the user, group, or resource is deleted.
-        /// This operation results in the accumulation of costs. For more information, see <a
-        /// href="https://aws.amazon.com/workmail/pricing">Pricing</a>. The equivalent console
-        /// functionality for this operation is <i>Enable</i>. 
+        /// Registers an existing and disabled user, group, or resource for WorkMail use by associating
+        /// a mailbox and calendaring capabilities. It performs no change if the user, group,
+        /// or resource is enabled and fails if the user, group, or resource is deleted. This
+        /// operation results in the accumulation of costs. For more information, see <a href="https://aws.amazon.com/workmail/pricing">Pricing</a>.
+        /// The equivalent console functionality for this operation is <i>Enable</i>.
         /// 
         ///  
         /// <para>
@@ -4388,7 +5223,7 @@ namespace Amazon.WorkMail
         /// Starts a mailbox export job to export MIME-format email messages and calendar items
         /// from the specified mailbox to the specified Amazon Simple Storage Service (Amazon
         /// S3) bucket. For more information, see <a href="https://docs.aws.amazon.com/workmail/latest/adminguide/mail-export.html">Exporting
-        /// mailbox content</a> in the <i>Amazon WorkMail Administrator Guide</i>.
+        /// mailbox content</a> in the <i>WorkMail Administrator Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartMailboxExportJob service method.</param>
         /// 
@@ -4459,7 +5294,7 @@ namespace Amazon.WorkMail
         #region  TagResource
 
         /// <summary>
-        /// Applies the specified tags to the specified Amazon WorkMail organization resource.
+        /// Applies the specified tags to the specified WorkMailorganization resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// 
@@ -4520,10 +5355,92 @@ namespace Amazon.WorkMail
 
         #endregion
         
+        #region  TestAvailabilityConfiguration
+
+        /// <summary>
+        /// Performs a test on an availability provider to ensure that access is allowed. For
+        /// EWS, it verifies the provided credentials can be used to successfully log in. For
+        /// Lambda, it verifies that the Lambda function can be invoked and that the resource
+        /// access policy was configured to deny anonymous access. An anonymous invocation is
+        /// one done without providing either a <code>SourceArn</code> or <code>SourceAccount</code>
+        /// header.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The request must contain either one provider definition (<code>EwsProvider</code>
+        /// or <code>LambdaProvider</code>) or the <code>DomainName</code> parameter. If the <code>DomainName</code>
+        /// parameter is provided, the configuration stored under the <code>DomainName</code>
+        /// will be tested.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TestAvailabilityConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the TestAvailabilityConfiguration service method, as returned by WorkMail.</returns>
+        /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
+        /// One or more of the input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationNotFoundException">
+        /// An operation received a valid organization identifier that either doesn't belong or
+        /// exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.ResourceNotFoundException">
+        /// The resource cannot be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/TestAvailabilityConfiguration">REST API Reference for TestAvailabilityConfiguration Operation</seealso>
+        public virtual TestAvailabilityConfigurationResponse TestAvailabilityConfiguration(TestAvailabilityConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TestAvailabilityConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TestAvailabilityConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<TestAvailabilityConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TestAvailabilityConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TestAvailabilityConfiguration operation on AmazonWorkMailClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTestAvailabilityConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/TestAvailabilityConfiguration">REST API Reference for TestAvailabilityConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginTestAvailabilityConfiguration(TestAvailabilityConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TestAvailabilityConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TestAvailabilityConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  TestAvailabilityConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginTestAvailabilityConfiguration.</param>
+        /// 
+        /// <returns>Returns a  TestAvailabilityConfigurationResult from WorkMail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/TestAvailabilityConfiguration">REST API Reference for TestAvailabilityConfiguration Operation</seealso>
+        public virtual TestAvailabilityConfigurationResponse EndTestAvailabilityConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<TestAvailabilityConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  UntagResource
 
         /// <summary>
-        /// Untags the specified tags from the specified Amazon WorkMail organization resource.
+        /// Untags the specified tags from the specified WorkMail organization resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// 
@@ -4573,6 +5490,75 @@ namespace Amazon.WorkMail
         public virtual UntagResourceResponse EndUntagResource(IAsyncResult asyncResult)
         {
             return EndInvoke<UntagResourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateAvailabilityConfiguration
+
+        /// <summary>
+        /// Updates an existing <code>AvailabilityConfiguration</code> for the given WorkMail
+        /// organization and domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAvailabilityConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the UpdateAvailabilityConfiguration service method, as returned by WorkMail.</returns>
+        /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
+        /// One or more of the input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationNotFoundException">
+        /// An operation received a valid organization identifier that either doesn't belong or
+        /// exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.ResourceNotFoundException">
+        /// The resource cannot be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/UpdateAvailabilityConfiguration">REST API Reference for UpdateAvailabilityConfiguration Operation</seealso>
+        public virtual UpdateAvailabilityConfigurationResponse UpdateAvailabilityConfiguration(UpdateAvailabilityConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAvailabilityConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAvailabilityConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateAvailabilityConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateAvailabilityConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAvailabilityConfiguration operation on AmazonWorkMailClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateAvailabilityConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/UpdateAvailabilityConfiguration">REST API Reference for UpdateAvailabilityConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginUpdateAvailabilityConfiguration(UpdateAvailabilityConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAvailabilityConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAvailabilityConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateAvailabilityConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateAvailabilityConfiguration.</param>
+        /// 
+        /// <returns>Returns a  UpdateAvailabilityConfigurationResult from WorkMail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/UpdateAvailabilityConfiguration">REST API Reference for UpdateAvailabilityConfiguration Operation</seealso>
+        public virtual UpdateAvailabilityConfigurationResponse EndUpdateAvailabilityConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateAvailabilityConfigurationResponse>(asyncResult);
         }
 
         #endregion
@@ -4647,6 +5633,84 @@ namespace Amazon.WorkMail
         public virtual UpdateDefaultMailDomainResponse EndUpdateDefaultMailDomain(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateDefaultMailDomainResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateImpersonationRole
+
+        /// <summary>
+        /// Updates an impersonation role for the given WorkMail organization.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateImpersonationRole service method.</param>
+        /// 
+        /// <returns>The response from the UpdateImpersonationRole service method, as returned by WorkMail.</returns>
+        /// <exception cref="Amazon.WorkMail.Model.EntityNotFoundException">
+        /// The identifier supplied for the user, group, or resource does not exist in your organization.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.EntityStateException">
+        /// You are performing an operation on a user, group, or resource that isn't in the expected
+        /// state, such as trying to delete an active user.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
+        /// One or more of the input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.LimitExceededException">
+        /// The request exceeds the limit of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationNotFoundException">
+        /// An operation received a valid organization identifier that either doesn't belong or
+        /// exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.ResourceNotFoundException">
+        /// The resource cannot be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/UpdateImpersonationRole">REST API Reference for UpdateImpersonationRole Operation</seealso>
+        public virtual UpdateImpersonationRoleResponse UpdateImpersonationRole(UpdateImpersonationRoleRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateImpersonationRoleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateImpersonationRoleResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateImpersonationRoleResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateImpersonationRole operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateImpersonationRole operation on AmazonWorkMailClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateImpersonationRole
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/UpdateImpersonationRole">REST API Reference for UpdateImpersonationRole Operation</seealso>
+        public virtual IAsyncResult BeginUpdateImpersonationRole(UpdateImpersonationRoleRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateImpersonationRoleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateImpersonationRoleResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateImpersonationRole operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateImpersonationRole.</param>
+        /// 
+        /// <returns>Returns a  UpdateImpersonationRoleResult from WorkMail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/UpdateImpersonationRole">REST API Reference for UpdateImpersonationRole Operation</seealso>
+        public virtual UpdateImpersonationRoleResponse EndUpdateImpersonationRole(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateImpersonationRoleResponse>(asyncResult);
         }
 
         #endregion
@@ -4726,7 +5790,7 @@ namespace Amazon.WorkMail
         #region  UpdateMobileDeviceAccessRule
 
         /// <summary>
-        /// Updates a mobile device access rule for the specified Amazon WorkMail organization.
+        /// Updates a mobile device access rule for the specified WorkMail organization.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateMobileDeviceAccessRule service method.</param>
         /// 
@@ -4921,7 +5985,7 @@ namespace Amazon.WorkMail
         /// is not yet verified.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.NameAvailabilityException">
-        /// The user, group, or resource name isn't unique in Amazon WorkMail.
+        /// The user, group, or resource name isn't unique in WorkMail.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationNotFoundException">
         /// An operation received a valid organization identifier that either doesn't belong or

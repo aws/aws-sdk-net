@@ -34,7 +34,7 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DomainInformation Marshaller
-    /// </summary>       
+    /// </summary>
     public class DomainInformationMarshaller : IRequestMarshaller<DomainInformation, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DomainInformationMarshaller Instance = new DomainInformationMarshaller();
 
     }

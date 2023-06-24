@@ -34,7 +34,7 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// LookupAttribute Marshaller
-    /// </summary>       
+    /// </summary>
     public class LookupAttributeMarshaller : IRequestMarshaller<LookupAttribute, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static LookupAttributeMarshaller Instance = new LookupAttributeMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ConditionalSplitActivity Marshaller
-    /// </summary>       
+    /// </summary>
     public class ConditionalSplitActivityMarshaller : IRequestMarshaller<ConditionalSplitActivity, JsonMarshallerContext> 
     {
         /// <summary>
@@ -83,7 +83,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ConditionalSplitActivityMarshaller Instance = new ConditionalSplitActivityMarshaller();
 
     }

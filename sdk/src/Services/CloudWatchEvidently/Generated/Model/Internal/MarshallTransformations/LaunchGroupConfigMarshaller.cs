@@ -34,7 +34,7 @@ namespace Amazon.CloudWatchEvidently.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// LaunchGroupConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class LaunchGroupConfigMarshaller : IRequestMarshaller<LaunchGroupConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.CloudWatchEvidently.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static LaunchGroupConfigMarshaller Instance = new LaunchGroupConfigMarshaller();
 
     }

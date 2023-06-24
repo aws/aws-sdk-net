@@ -30,7 +30,7 @@ namespace Amazon.APIGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the GetStage operation.
-    /// Gets information about a <a>Stage</a> resource.
+    /// Gets information about a Stage resource.
     /// </summary>
     public partial class GetStageRequest : AmazonAPIGatewayRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property RestApiId. 
         /// <para>
-        /// [Required] The string identifier of the associated <a>RestApi</a>.
+        /// The string identifier of the associated RestApi.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -59,7 +59,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property StageName. 
         /// <para>
-        /// [Required] The name of the <a>Stage</a> resource to get information about.
+        /// The name of the Stage resource to get information about.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

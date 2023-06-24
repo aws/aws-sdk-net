@@ -56,8 +56,7 @@ namespace Amazon.Outposts.Model
         /// <summary>
         /// Gets and sets the property FiberOpticCableType. 
         /// <para>
-        ///  Specify the type of fiber that you will use to attach the Outpost to your network.
-        /// 
+        /// The type of fiber that you will use to attach the Outpost to your network. 
         /// </para>
         /// </summary>
         public FiberOpticCableType FiberOpticCableType
@@ -75,8 +74,8 @@ namespace Amazon.Outposts.Model
         /// <summary>
         /// Gets and sets the property MaximumSupportedWeightLbs. 
         /// <para>
-        ///  Specify the maximum rack weight that this site can support. <code>NO_LIMIT</code>
-        /// is over 2000lbs. 
+        /// The maximum rack weight that this site can support. <code>NO_LIMIT</code> is over
+        /// 2000lbs. 
         /// </para>
         /// </summary>
         public MaximumSupportedWeightLbs MaximumSupportedWeightLbs
@@ -94,10 +93,9 @@ namespace Amazon.Outposts.Model
         /// <summary>
         /// Gets and sets the property OpticalStandard. 
         /// <para>
-        /// Specify the type of optical standard that you will use to attach the Outpost to your
-        /// network. This field is dependent on uplink speed, fiber type, and distance to the
-        /// upstream device. For more information about networking requirements for racks, see
-        /// <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#facility-networking">Network</a>
+        /// The type of optical standard that you will use to attach the Outpost to your network.
+        /// This field is dependent on uplink speed, fiber type, and distance to the upstream
+        /// device. For more information about networking requirements for racks, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#facility-networking">Network</a>
         /// in the Amazon Web Services Outposts User Guide. 
         /// </para>
         ///  <ul> <li> 
@@ -169,7 +167,7 @@ namespace Amazon.Outposts.Model
         /// <summary>
         /// Gets and sets the property PowerConnector. 
         /// <para>
-        ///  Specify the power connector that Amazon Web Services should plan to provide for connections
+        /// The power connector that Amazon Web Services should plan to provide for connections
         /// to the hardware. Note the correlation between <code>PowerPhase</code> and <code>PowerConnector</code>.
         /// 
         /// </para>
@@ -214,8 +212,7 @@ namespace Amazon.Outposts.Model
         /// <summary>
         /// Gets and sets the property PowerDrawKva. 
         /// <para>
-        /// Specify in kVA the power draw available at the hardware placement position for the
-        /// rack.
+        /// The power draw, in kVA, available at the hardware placement position for the rack.
         /// </para>
         /// </summary>
         public PowerDrawKva PowerDrawKva
@@ -233,7 +230,7 @@ namespace Amazon.Outposts.Model
         /// <summary>
         /// Gets and sets the property PowerFeedDrop. 
         /// <para>
-        ///  Specify whether the power feed comes above or below the rack. 
+        /// Indicates whether the power feed comes above or below the rack. 
         /// </para>
         /// </summary>
         public PowerFeedDrop PowerFeedDrop
@@ -251,7 +248,7 @@ namespace Amazon.Outposts.Model
         /// <summary>
         /// Gets and sets the property PowerPhase. 
         /// <para>
-        ///  Specify the power option that you can provide for hardware. 
+        /// The power option that you can provide for hardware. 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -276,7 +273,10 @@ namespace Amazon.Outposts.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SiteId.
+        /// Gets and sets the property SiteId. 
+        /// <para>
+        ///  The ID or the Amazon Resource Name (ARN) of the site. 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
         public string SiteId
@@ -329,8 +329,7 @@ namespace Amazon.Outposts.Model
         /// <summary>
         /// Gets and sets the property UplinkGbps. 
         /// <para>
-        ///  Specify the uplink speed the rack should support for the connection to the Region.
-        /// 
+        /// The uplink speed the rack should support for the connection to the Region. 
         /// </para>
         /// </summary>
         public UplinkGbps UplinkGbps

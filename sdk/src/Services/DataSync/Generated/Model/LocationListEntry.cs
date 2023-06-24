@@ -62,7 +62,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property LocationUri. 
         /// <para>
-        /// Represents a list of URLs of a location. <code>LocationUri</code> returns an array
+        /// Represents a list of URIs of a location. <code>LocationUri</code> returns an array
         /// that contains a list of locations when the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_ListLocations.html">ListLocations</a>
         /// operation is called.
         /// </para>
@@ -72,14 +72,14 @@ namespace Amazon.DataSync.Model
         /// </para>
         ///  
         /// <para>
-        /// TYPE designates the type of location. Valid values: NFS | EFS | S3.
+        /// TYPE designates the type of location (for example, <code>nfs</code> or <code>s3</code>).
         /// </para>
         ///  
         /// <para>
         /// GLOBAL_ID is the globally unique identifier of the resource that backs the location.
         /// An example for EFS is <code>us-east-2.fs-abcd1234</code>. An example for Amazon S3
         /// is the bucket name, such as <code>myBucket</code>. An example for NFS is a valid IPv4
-        /// address or a host name compliant with Domain Name Service (DNS).
+        /// address or a hostname that is compliant with Domain Name Service (DNS).
         /// </para>
         ///  
         /// <para>
@@ -88,7 +88,7 @@ namespace Amazon.DataSync.Model
         /// it's the prefix path that you mount to and treat as the root of the location.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=4356)]
+        [AWSProperty(Max=4360)]
         public string LocationUri
         {
             get { return this._locationUri; }

@@ -68,13 +68,7 @@ namespace Amazon.Proton
     /// </para>
     ///  
     /// <para>
-    /// To learn more about Proton administration, see the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/Welcome.html">Proton
-    /// Administrator Guide</a>.
-    /// </para>
-    ///  
-    /// <para>
-    /// To learn more about deploying serverless and containerized applications on Proton,
-    /// see the <a href="https://docs.aws.amazon.com/proton/latest/userguide/Welcome.html">Proton
+    /// To learn more about Proton, see the <a href="https://docs.aws.amazon.com/proton/latest/userguide/Welcome.html">Proton
     /// User Guide</a>.
     /// </para>
     ///  
@@ -299,8 +293,8 @@ namespace Amazon.Proton
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment
-        /// account connections</a> in the <i>Proton Administrator guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-env-account-connections.html">Environment
+        /// account connections</a> in the <i>Proton User guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AcceptEnvironmentAccountConnection service method.</param>
@@ -337,8 +331,8 @@ namespace Amazon.Proton
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment
-        /// account connections</a> in the <i>Proton Administrator guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-env-account-connections.html">Environment
+        /// account connections</a> in the <i>Proton User guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AcceptEnvironmentAccountConnection service method.</param>
@@ -370,13 +364,91 @@ namespace Amazon.Proton
 
         #endregion
         
+        #region  CancelComponentDeployment
+
+
+        /// <summary>
+        /// Attempts to cancel a component deployment (for a component that is in the <code>IN_PROGRESS</code>
+        /// deployment status).
+        /// 
+        ///  
+        /// <para>
+        /// For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+        /// components</a> in the <i>Proton User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelComponentDeployment service method.</param>
+        /// 
+        /// <returns>The response from the CancelComponentDeployment service method, as returned by Proton.</returns>
+        /// <exception cref="Amazon.Proton.Model.AccessDeniedException">
+        /// There <i>isn't</i> sufficient access for performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ConflictException">
+        /// The request <i>couldn't</i> be made due to a conflicting operation or resource.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.InternalServerException">
+        /// The request failed to register with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ResourceNotFoundException">
+        /// The requested resource <i>wasn't</i> found.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ValidationException">
+        /// The input is invalid or an out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CancelComponentDeployment">REST API Reference for CancelComponentDeployment Operation</seealso>
+        CancelComponentDeploymentResponse CancelComponentDeployment(CancelComponentDeploymentRequest request);
+
+
+
+        /// <summary>
+        /// Attempts to cancel a component deployment (for a component that is in the <code>IN_PROGRESS</code>
+        /// deployment status).
+        /// 
+        ///  
+        /// <para>
+        /// For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+        /// components</a> in the <i>Proton User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelComponentDeployment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CancelComponentDeployment service method, as returned by Proton.</returns>
+        /// <exception cref="Amazon.Proton.Model.AccessDeniedException">
+        /// There <i>isn't</i> sufficient access for performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ConflictException">
+        /// The request <i>couldn't</i> be made due to a conflicting operation or resource.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.InternalServerException">
+        /// The request failed to register with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ResourceNotFoundException">
+        /// The requested resource <i>wasn't</i> found.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ValidationException">
+        /// The input is invalid or an out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CancelComponentDeployment">REST API Reference for CancelComponentDeployment Operation</seealso>
+        Task<CancelComponentDeploymentResponse> CancelComponentDeploymentAsync(CancelComponentDeploymentRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  CancelEnvironmentDeployment
 
 
         /// <summary>
         /// Attempts to cancel an environment deployment on an <a>UpdateEnvironment</a> action,
-        /// if the deployment is <code>IN_PROGRESS</code>. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-update.html">Update
-        /// an environment</a> in the <i>Proton Administrator guide</i>.
+        /// if the deployment is <code>IN_PROGRESS</code>. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-env-update.html">Update
+        /// an environment</a> in the <i>Proton User guide</i>.
         /// 
         ///  
         /// <para>
@@ -426,8 +498,8 @@ namespace Amazon.Proton
 
         /// <summary>
         /// Attempts to cancel an environment deployment on an <a>UpdateEnvironment</a> action,
-        /// if the deployment is <code>IN_PROGRESS</code>. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-update.html">Update
-        /// an environment</a> in the <i>Proton Administrator guide</i>.
+        /// if the deployment is <code>IN_PROGRESS</code>. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-env-update.html">Update
+        /// an environment</a> in the <i>Proton User guide</i>.
         /// 
         ///  
         /// <para>
@@ -483,10 +555,9 @@ namespace Amazon.Proton
 
         /// <summary>
         /// Attempts to cancel a service instance deployment on an <a>UpdateServiceInstance</a>
-        /// action, if the deployment is <code>IN_PROGRESS</code>. For more information, see <i>Update
-        /// a service instance</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-svc-instance-update.html">Proton
-        /// Administrator guide</a> or the <a href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-instance-update.html">Proton
-        /// User guide</a>.
+        /// action, if the deployment is <code>IN_PROGRESS</code>. For more information, see <a
+        /// href="https://docs.aws.amazon.com/proton/latest/userguide/ag-svc-instance-update.html">Update
+        /// a service instance</a> in the <i>Proton User guide</i>.
         /// 
         ///  
         /// <para>
@@ -536,10 +607,9 @@ namespace Amazon.Proton
 
         /// <summary>
         /// Attempts to cancel a service instance deployment on an <a>UpdateServiceInstance</a>
-        /// action, if the deployment is <code>IN_PROGRESS</code>. For more information, see <i>Update
-        /// a service instance</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-svc-instance-update.html">Proton
-        /// Administrator guide</a> or the <a href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-instance-update.html">Proton
-        /// User guide</a>.
+        /// action, if the deployment is <code>IN_PROGRESS</code>. For more information, see <a
+        /// href="https://docs.aws.amazon.com/proton/latest/userguide/ag-svc-instance-update.html">Update
+        /// a service instance</a> in the <i>Proton User guide</i>.
         /// 
         ///  
         /// <para>
@@ -595,10 +665,9 @@ namespace Amazon.Proton
 
         /// <summary>
         /// Attempts to cancel a service pipeline deployment on an <a>UpdateServicePipeline</a>
-        /// action, if the deployment is <code>IN_PROGRESS</code>. For more information, see <i>Update
-        /// a service pipeline</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-svc-pipeline-update.html">Proton
-        /// Administrator guide</a> or the <a href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-pipeline-update.html">Proton
-        /// User guide</a>.
+        /// action, if the deployment is <code>IN_PROGRESS</code>. For more information, see <a
+        /// href="https://docs.aws.amazon.com/proton/latest/userguide/ag-svc-pipeline-update.html">Update
+        /// a service pipeline</a> in the <i>Proton User guide</i>.
         /// 
         ///  
         /// <para>
@@ -648,10 +717,9 @@ namespace Amazon.Proton
 
         /// <summary>
         /// Attempts to cancel a service pipeline deployment on an <a>UpdateServicePipeline</a>
-        /// action, if the deployment is <code>IN_PROGRESS</code>. For more information, see <i>Update
-        /// a service pipeline</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-svc-pipeline-update.html">Proton
-        /// Administrator guide</a> or the <a href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-pipeline-update.html">Proton
-        /// User guide</a>.
+        /// action, if the deployment is <code>IN_PROGRESS</code>. For more information, see <a
+        /// href="https://docs.aws.amazon.com/proton/latest/userguide/ag-svc-pipeline-update.html">Update
+        /// a service pipeline</a> in the <i>Proton User guide</i>.
         /// 
         ///  
         /// <para>
@@ -702,6 +770,92 @@ namespace Amazon.Proton
 
         #endregion
         
+        #region  CreateComponent
+
+
+        /// <summary>
+        /// Create an Proton component. A component is an infrastructure extension for a service
+        /// instance.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+        /// components</a> in the <i>Proton User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateComponent service method.</param>
+        /// 
+        /// <returns>The response from the CreateComponent service method, as returned by Proton.</returns>
+        /// <exception cref="Amazon.Proton.Model.AccessDeniedException">
+        /// There <i>isn't</i> sufficient access for performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ConflictException">
+        /// The request <i>couldn't</i> be made due to a conflicting operation or resource.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.InternalServerException">
+        /// The request failed to register with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ResourceNotFoundException">
+        /// The requested resource <i>wasn't</i> found.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ServiceQuotaExceededException">
+        /// A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-limits.html">Proton
+        /// Quotas</a> in the <i>Proton User Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ValidationException">
+        /// The input is invalid or an out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateComponent">REST API Reference for CreateComponent Operation</seealso>
+        CreateComponentResponse CreateComponent(CreateComponentRequest request);
+
+
+
+        /// <summary>
+        /// Create an Proton component. A component is an infrastructure extension for a service
+        /// instance.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+        /// components</a> in the <i>Proton User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateComponent service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateComponent service method, as returned by Proton.</returns>
+        /// <exception cref="Amazon.Proton.Model.AccessDeniedException">
+        /// There <i>isn't</i> sufficient access for performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ConflictException">
+        /// The request <i>couldn't</i> be made due to a conflicting operation or resource.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.InternalServerException">
+        /// The request failed to register with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ResourceNotFoundException">
+        /// The requested resource <i>wasn't</i> found.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ServiceQuotaExceededException">
+        /// A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-limits.html">Proton
+        /// Quotas</a> in the <i>Proton User Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ValidationException">
+        /// The input is invalid or an out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateComponent">REST API Reference for CreateComponent Operation</seealso>
+        Task<CreateComponentResponse> CreateComponentAsync(CreateComponentRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  CreateEnvironment
 
 
@@ -714,18 +868,20 @@ namespace Amazon.Proton
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Standard provisioning: Proton makes direct calls to provision your resources.
+        /// Amazon Web Services-managed provisioning: Proton makes direct calls to provision your
+        /// resources.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Pull request provisioning: Proton makes pull requests on your repository to provide
+        /// Self-managed provisioning: Proton makes pull requests on your repository to provide
         /// compiled infrastructure as code (IaC) files that your IaC engine uses to provision
         /// resources.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For more information, see the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-environments.html">Environments</a>
-        /// in the <i>Proton Administrator Guide.</i> 
+        /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-environments.html">Environments</a>
+        /// and <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-works-prov-methods.html">Provisioning
+        /// methods</a> in the <i>Proton User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateEnvironment service method.</param>
@@ -744,8 +900,8 @@ namespace Amazon.Proton
         /// The requested resource <i>wasn't</i> found.
         /// </exception>
         /// <exception cref="Amazon.Proton.Model.ServiceQuotaExceededException">
-        /// A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-limits.html">Proton
-        /// Quotas</a> in the <i>Proton Administrator Guide</i>.
+        /// A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-limits.html">Proton
+        /// Quotas</a> in the <i>Proton User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Proton.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -767,18 +923,20 @@ namespace Amazon.Proton
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Standard provisioning: Proton makes direct calls to provision your resources.
+        /// Amazon Web Services-managed provisioning: Proton makes direct calls to provision your
+        /// resources.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Pull request provisioning: Proton makes pull requests on your repository to provide
+        /// Self-managed provisioning: Proton makes pull requests on your repository to provide
         /// compiled infrastructure as code (IaC) files that your IaC engine uses to provision
         /// resources.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For more information, see the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-environments.html">Environments</a>
-        /// in the <i>Proton Administrator Guide.</i> 
+        /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-environments.html">Environments</a>
+        /// and <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-works-prov-methods.html">Provisioning
+        /// methods</a> in the <i>Proton User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateEnvironment service method.</param>
@@ -800,8 +958,8 @@ namespace Amazon.Proton
         /// The requested resource <i>wasn't</i> found.
         /// </exception>
         /// <exception cref="Amazon.Proton.Model.ServiceQuotaExceededException">
-        /// A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-limits.html">Proton
-        /// Quotas</a> in the <i>Proton Administrator Guide</i>.
+        /// A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-limits.html">Proton
+        /// Quotas</a> in the <i>Proton User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Proton.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -826,8 +984,8 @@ namespace Amazon.Proton
         /// <para>
         /// An environment account connection is a secure bi-directional connection between a
         /// <i>management account</i> and an <i>environment account</i> that maintains authorization
-        /// and permissions. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment
-        /// account connections</a> in the <i>Proton Administrator guide</i>.
+        /// and permissions. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-env-account-connections.html">Environment
+        /// account connections</a> in the <i>Proton User guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateEnvironmentAccountConnection service method.</param>
@@ -843,8 +1001,8 @@ namespace Amazon.Proton
         /// The request failed to register with the service.
         /// </exception>
         /// <exception cref="Amazon.Proton.Model.ServiceQuotaExceededException">
-        /// A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-limits.html">Proton
-        /// Quotas</a> in the <i>Proton Administrator Guide</i>.
+        /// A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-limits.html">Proton
+        /// Quotas</a> in the <i>Proton User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Proton.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -866,8 +1024,8 @@ namespace Amazon.Proton
         /// <para>
         /// An environment account connection is a secure bi-directional connection between a
         /// <i>management account</i> and an <i>environment account</i> that maintains authorization
-        /// and permissions. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment
-        /// account connections</a> in the <i>Proton Administrator guide</i>.
+        /// and permissions. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-env-account-connections.html">Environment
+        /// account connections</a> in the <i>Proton User guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateEnvironmentAccountConnection service method.</param>
@@ -886,8 +1044,8 @@ namespace Amazon.Proton
         /// The request failed to register with the service.
         /// </exception>
         /// <exception cref="Amazon.Proton.Model.ServiceQuotaExceededException">
-        /// A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-limits.html">Proton
-        /// Quotas</a> in the <i>Proton Administrator Guide</i>.
+        /// A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-limits.html">Proton
+        /// Quotas</a> in the <i>Proton User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Proton.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -904,8 +1062,8 @@ namespace Amazon.Proton
 
 
         /// <summary>
-        /// Create an environment template for Proton. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-templates.html">Environment
-        /// Templates</a> in the <i>Proton Administrator Guide</i>.
+        /// Create an environment template for Proton. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-templates.html">Environment
+        /// Templates</a> in the <i>Proton User Guide</i>.
         /// 
         ///  
         /// <para>
@@ -923,8 +1081,8 @@ namespace Amazon.Proton
         /// manage your existing provisioned infrastructure. To create an environment template
         /// for customer provisioned and managed infrastructure, include the <code>provisioning</code>
         /// parameter and set the value to <code>CUSTOMER_MANAGED</code>. For more information,
-        /// see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/template-create.html">Register
-        /// and publish an environment template</a> in the <i>Proton Administrator Guide</i>.
+        /// see <a href="https://docs.aws.amazon.com/proton/latest/userguide/template-create.html">Register
+        /// and publish an environment template</a> in the <i>Proton User Guide</i>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -941,8 +1099,8 @@ namespace Amazon.Proton
         /// The request failed to register with the service.
         /// </exception>
         /// <exception cref="Amazon.Proton.Model.ServiceQuotaExceededException">
-        /// A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-limits.html">Proton
-        /// Quotas</a> in the <i>Proton Administrator Guide</i>.
+        /// A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-limits.html">Proton
+        /// Quotas</a> in the <i>Proton User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Proton.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -956,8 +1114,8 @@ namespace Amazon.Proton
 
 
         /// <summary>
-        /// Create an environment template for Proton. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-templates.html">Environment
-        /// Templates</a> in the <i>Proton Administrator Guide</i>.
+        /// Create an environment template for Proton. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-templates.html">Environment
+        /// Templates</a> in the <i>Proton User Guide</i>.
         /// 
         ///  
         /// <para>
@@ -975,8 +1133,8 @@ namespace Amazon.Proton
         /// manage your existing provisioned infrastructure. To create an environment template
         /// for customer provisioned and managed infrastructure, include the <code>provisioning</code>
         /// parameter and set the value to <code>CUSTOMER_MANAGED</code>. For more information,
-        /// see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/template-create.html">Register
-        /// and publish an environment template</a> in the <i>Proton Administrator Guide</i>.
+        /// see <a href="https://docs.aws.amazon.com/proton/latest/userguide/template-create.html">Register
+        /// and publish an environment template</a> in the <i>Proton User Guide</i>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -996,8 +1154,8 @@ namespace Amazon.Proton
         /// The request failed to register with the service.
         /// </exception>
         /// <exception cref="Amazon.Proton.Model.ServiceQuotaExceededException">
-        /// A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-limits.html">Proton
-        /// Quotas</a> in the <i>Proton Administrator Guide</i>.
+        /// A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-limits.html">Proton
+        /// Quotas</a> in the <i>Proton User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Proton.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -1035,8 +1193,8 @@ namespace Amazon.Proton
         /// The requested resource <i>wasn't</i> found.
         /// </exception>
         /// <exception cref="Amazon.Proton.Model.ServiceQuotaExceededException">
-        /// A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-limits.html">Proton
-        /// Quotas</a> in the <i>Proton Administrator Guide</i>.
+        /// A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-limits.html">Proton
+        /// Quotas</a> in the <i>Proton User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Proton.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -1074,8 +1232,8 @@ namespace Amazon.Proton
         /// The requested resource <i>wasn't</i> found.
         /// </exception>
         /// <exception cref="Amazon.Proton.Model.ServiceQuotaExceededException">
-        /// A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-limits.html">Proton
-        /// Quotas</a> in the <i>Proton Administrator Guide</i>.
+        /// A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-limits.html">Proton
+        /// Quotas</a> in the <i>Proton User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Proton.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -1092,10 +1250,20 @@ namespace Amazon.Proton
 
 
         /// <summary>
-        /// Create and register a link to a repository that can be used with pull request provisioning
-        /// or template sync configurations. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-template-bundles.html">Template
-        /// bundles</a> and <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-template-sync-configs.html">Template
-        /// sync configurations</a> in the <i>Proton Administrator Guide</i>.
+        /// Create and register a link to a repository. Proton uses the link to repeatedly access
+        /// the repository, to either push to it (self-managed provisioning) or pull from it (template
+        /// sync). You can share a linked repository across multiple resources (like environments
+        /// using self-managed provisioning, or synced templates). When you create a repository
+        /// link, Proton creates a <a href="https://docs.aws.amazon.com/proton/latest/userguide/using-service-linked-roles.html">service-linked
+        /// role</a> for you.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-works-prov-methods.html#ag-works-prov-methods-self">Self-managed
+        /// provisioning</a>, <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-template-authoring.html#ag-template-bundles">Template
+        /// bundles</a>, and <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-template-sync-configs.html">Template
+        /// sync configurations</a> in the <i>Proton User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateRepository service method.</param>
         /// 
@@ -1110,8 +1278,8 @@ namespace Amazon.Proton
         /// The request failed to register with the service.
         /// </exception>
         /// <exception cref="Amazon.Proton.Model.ServiceQuotaExceededException">
-        /// A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-limits.html">Proton
-        /// Quotas</a> in the <i>Proton Administrator Guide</i>.
+        /// A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-limits.html">Proton
+        /// Quotas</a> in the <i>Proton User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Proton.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -1125,10 +1293,20 @@ namespace Amazon.Proton
 
 
         /// <summary>
-        /// Create and register a link to a repository that can be used with pull request provisioning
-        /// or template sync configurations. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-template-bundles.html">Template
-        /// bundles</a> and <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-template-sync-configs.html">Template
-        /// sync configurations</a> in the <i>Proton Administrator Guide</i>.
+        /// Create and register a link to a repository. Proton uses the link to repeatedly access
+        /// the repository, to either push to it (self-managed provisioning) or pull from it (template
+        /// sync). You can share a linked repository across multiple resources (like environments
+        /// using self-managed provisioning, or synced templates). When you create a repository
+        /// link, Proton creates a <a href="https://docs.aws.amazon.com/proton/latest/userguide/using-service-linked-roles.html">service-linked
+        /// role</a> for you.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-works-prov-methods.html#ag-works-prov-methods-self">Self-managed
+        /// provisioning</a>, <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-template-authoring.html#ag-template-bundles">Template
+        /// bundles</a>, and <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-template-sync-configs.html">Template
+        /// sync configurations</a> in the <i>Proton User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateRepository service method.</param>
         /// <param name="cancellationToken">
@@ -1146,8 +1324,8 @@ namespace Amazon.Proton
         /// The request failed to register with the service.
         /// </exception>
         /// <exception cref="Amazon.Proton.Model.ServiceQuotaExceededException">
-        /// A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-limits.html">Proton
-        /// Quotas</a> in the <i>Proton Administrator Guide</i>.
+        /// A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-limits.html">Proton
+        /// Quotas</a> in the <i>Proton User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Proton.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -1166,8 +1344,7 @@ namespace Amazon.Proton
         /// <summary>
         /// Create an Proton service. An Proton service is an instantiation of a service template
         /// and often includes several service instances and pipeline. For more information, see
-        /// <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-services.html">Services</a>
-        /// in the <i>Proton Administrator Guide</i> and <a href="https://docs.aws.amazon.com/proton/latest/userguide/ug-service.html">Services</a>
+        /// <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-services.html">Services</a>
         /// in the <i>Proton User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateService service method.</param>
@@ -1186,8 +1363,8 @@ namespace Amazon.Proton
         /// The requested resource <i>wasn't</i> found.
         /// </exception>
         /// <exception cref="Amazon.Proton.Model.ServiceQuotaExceededException">
-        /// A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-limits.html">Proton
-        /// Quotas</a> in the <i>Proton Administrator Guide</i>.
+        /// A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-limits.html">Proton
+        /// Quotas</a> in the <i>Proton User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Proton.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -1203,8 +1380,7 @@ namespace Amazon.Proton
         /// <summary>
         /// Create an Proton service. An Proton service is an instantiation of a service template
         /// and often includes several service instances and pipeline. For more information, see
-        /// <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-services.html">Services</a>
-        /// in the <i>Proton Administrator Guide</i> and <a href="https://docs.aws.amazon.com/proton/latest/userguide/ug-service.html">Services</a>
+        /// <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-services.html">Services</a>
         /// in the <i>Proton User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateService service method.</param>
@@ -1226,8 +1402,8 @@ namespace Amazon.Proton
         /// The requested resource <i>wasn't</i> found.
         /// </exception>
         /// <exception cref="Amazon.Proton.Model.ServiceQuotaExceededException">
-        /// A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-limits.html">Proton
-        /// Quotas</a> in the <i>Proton Administrator Guide</i>.
+        /// A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-limits.html">Proton
+        /// Quotas</a> in the <i>Proton User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Proton.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -1240,17 +1416,147 @@ namespace Amazon.Proton
 
         #endregion
         
+        #region  CreateServiceInstance
+
+
+        /// <summary>
+        /// Create a service instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateServiceInstance service method.</param>
+        /// 
+        /// <returns>The response from the CreateServiceInstance service method, as returned by Proton.</returns>
+        /// <exception cref="Amazon.Proton.Model.AccessDeniedException">
+        /// There <i>isn't</i> sufficient access for performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ConflictException">
+        /// The request <i>couldn't</i> be made due to a conflicting operation or resource.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.InternalServerException">
+        /// The request failed to register with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ResourceNotFoundException">
+        /// The requested resource <i>wasn't</i> found.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ValidationException">
+        /// The input is invalid or an out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateServiceInstance">REST API Reference for CreateServiceInstance Operation</seealso>
+        CreateServiceInstanceResponse CreateServiceInstance(CreateServiceInstanceRequest request);
+
+
+
+        /// <summary>
+        /// Create a service instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateServiceInstance service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateServiceInstance service method, as returned by Proton.</returns>
+        /// <exception cref="Amazon.Proton.Model.AccessDeniedException">
+        /// There <i>isn't</i> sufficient access for performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ConflictException">
+        /// The request <i>couldn't</i> be made due to a conflicting operation or resource.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.InternalServerException">
+        /// The request failed to register with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ResourceNotFoundException">
+        /// The requested resource <i>wasn't</i> found.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ValidationException">
+        /// The input is invalid or an out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateServiceInstance">REST API Reference for CreateServiceInstance Operation</seealso>
+        Task<CreateServiceInstanceResponse> CreateServiceInstanceAsync(CreateServiceInstanceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateServiceSyncConfig
+
+
+        /// <summary>
+        /// Create the Proton Ops configuration file.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateServiceSyncConfig service method.</param>
+        /// 
+        /// <returns>The response from the CreateServiceSyncConfig service method, as returned by Proton.</returns>
+        /// <exception cref="Amazon.Proton.Model.AccessDeniedException">
+        /// There <i>isn't</i> sufficient access for performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ConflictException">
+        /// The request <i>couldn't</i> be made due to a conflicting operation or resource.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.InternalServerException">
+        /// The request failed to register with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ServiceQuotaExceededException">
+        /// A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-limits.html">Proton
+        /// Quotas</a> in the <i>Proton User Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ValidationException">
+        /// The input is invalid or an out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateServiceSyncConfig">REST API Reference for CreateServiceSyncConfig Operation</seealso>
+        CreateServiceSyncConfigResponse CreateServiceSyncConfig(CreateServiceSyncConfigRequest request);
+
+
+
+        /// <summary>
+        /// Create the Proton Ops configuration file.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateServiceSyncConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateServiceSyncConfig service method, as returned by Proton.</returns>
+        /// <exception cref="Amazon.Proton.Model.AccessDeniedException">
+        /// There <i>isn't</i> sufficient access for performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ConflictException">
+        /// The request <i>couldn't</i> be made due to a conflicting operation or resource.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.InternalServerException">
+        /// The request failed to register with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ServiceQuotaExceededException">
+        /// A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-limits.html">Proton
+        /// Quotas</a> in the <i>Proton User Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ValidationException">
+        /// The input is invalid or an out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateServiceSyncConfig">REST API Reference for CreateServiceSyncConfig Operation</seealso>
+        Task<CreateServiceSyncConfigResponse> CreateServiceSyncConfigAsync(CreateServiceSyncConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  CreateServiceTemplate
 
 
         /// <summary>
         /// Create a service template. The administrator creates a service template to define
-        /// standardized infrastructure and an optional CICD service pipeline. Developers, in
+        /// standardized infrastructure and an optional CI/CD service pipeline. Developers, in
         /// turn, select the service template from Proton. If the selected service template includes
         /// a service pipeline definition, they provide a link to their source code repository.
         /// Proton then deploys and manages the infrastructure defined by the selected service
-        /// template. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/managing-svc-templates.html">Service
-        /// Templates</a> in the <i>Proton Administrator Guide</i>.
+        /// template. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-templates.html">Proton
+        /// templates</a> in the <i>Proton User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateServiceTemplate service method.</param>
         /// 
@@ -1265,8 +1571,8 @@ namespace Amazon.Proton
         /// The request failed to register with the service.
         /// </exception>
         /// <exception cref="Amazon.Proton.Model.ServiceQuotaExceededException">
-        /// A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-limits.html">Proton
-        /// Quotas</a> in the <i>Proton Administrator Guide</i>.
+        /// A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-limits.html">Proton
+        /// Quotas</a> in the <i>Proton User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Proton.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -1281,12 +1587,12 @@ namespace Amazon.Proton
 
         /// <summary>
         /// Create a service template. The administrator creates a service template to define
-        /// standardized infrastructure and an optional CICD service pipeline. Developers, in
+        /// standardized infrastructure and an optional CI/CD service pipeline. Developers, in
         /// turn, select the service template from Proton. If the selected service template includes
         /// a service pipeline definition, they provide a link to their source code repository.
         /// Proton then deploys and manages the infrastructure defined by the selected service
-        /// template. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/managing-svc-templates.html">Service
-        /// Templates</a> in the <i>Proton Administrator Guide</i>.
+        /// template. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-templates.html">Proton
+        /// templates</a> in the <i>Proton User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateServiceTemplate service method.</param>
         /// <param name="cancellationToken">
@@ -1304,8 +1610,8 @@ namespace Amazon.Proton
         /// The request failed to register with the service.
         /// </exception>
         /// <exception cref="Amazon.Proton.Model.ServiceQuotaExceededException">
-        /// A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-limits.html">Proton
-        /// Quotas</a> in the <i>Proton Administrator Guide</i>.
+        /// A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-limits.html">Proton
+        /// Quotas</a> in the <i>Proton User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Proton.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -1342,8 +1648,8 @@ namespace Amazon.Proton
         /// The requested resource <i>wasn't</i> found.
         /// </exception>
         /// <exception cref="Amazon.Proton.Model.ServiceQuotaExceededException">
-        /// A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-limits.html">Proton
-        /// Quotas</a> in the <i>Proton Administrator Guide</i>.
+        /// A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-limits.html">Proton
+        /// Quotas</a> in the <i>Proton User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Proton.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -1380,8 +1686,8 @@ namespace Amazon.Proton
         /// The requested resource <i>wasn't</i> found.
         /// </exception>
         /// <exception cref="Amazon.Proton.Model.ServiceQuotaExceededException">
-        /// A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-limits.html">Proton
-        /// Quotas</a> in the <i>Proton Administrator Guide</i>.
+        /// A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-limits.html">Proton
+        /// Quotas</a> in the <i>Proton User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Proton.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -1398,12 +1704,18 @@ namespace Amazon.Proton
 
 
         /// <summary>
-        /// Set up a template for automated template version creation. When a commit is pushed
-        /// to your registered <a href="https://docs.aws.amazon.com/proton/latest/APIReference/API_Repository.html">repository</a>,
-        /// Proton checks for changes to your repository template bundles. If it detects a template
-        /// bundle change, a new minor or major version of its template is created, if the version
-        /// doesn’t already exist. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-template-sync-configs.html">Template
-        /// sync configurations</a> in the <i>Proton Administrator Guide</i>.
+        /// Set up a template to create new template versions automatically by tracking a linked
+        /// repository. A linked repository is a repository that has been registered with Proton.
+        /// For more information, see <a>CreateRepository</a>.
+        /// 
+        ///  
+        /// <para>
+        /// When a commit is pushed to your linked repository, Proton checks for changes to your
+        /// repository template bundles. If it detects a template bundle change, a new major or
+        /// minor version of its template is created, if the version doesn’t already exist. For
+        /// more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-template-sync-configs.html">Template
+        /// sync configurations</a> in the <i>Proton User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateTemplateSyncConfig service method.</param>
         /// 
@@ -1418,8 +1730,8 @@ namespace Amazon.Proton
         /// The request failed to register with the service.
         /// </exception>
         /// <exception cref="Amazon.Proton.Model.ServiceQuotaExceededException">
-        /// A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-limits.html">Proton
-        /// Quotas</a> in the <i>Proton Administrator Guide</i>.
+        /// A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-limits.html">Proton
+        /// Quotas</a> in the <i>Proton User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Proton.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -1433,12 +1745,18 @@ namespace Amazon.Proton
 
 
         /// <summary>
-        /// Set up a template for automated template version creation. When a commit is pushed
-        /// to your registered <a href="https://docs.aws.amazon.com/proton/latest/APIReference/API_Repository.html">repository</a>,
-        /// Proton checks for changes to your repository template bundles. If it detects a template
-        /// bundle change, a new minor or major version of its template is created, if the version
-        /// doesn’t already exist. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-template-sync-configs.html">Template
-        /// sync configurations</a> in the <i>Proton Administrator Guide</i>.
+        /// Set up a template to create new template versions automatically by tracking a linked
+        /// repository. A linked repository is a repository that has been registered with Proton.
+        /// For more information, see <a>CreateRepository</a>.
+        /// 
+        ///  
+        /// <para>
+        /// When a commit is pushed to your linked repository, Proton checks for changes to your
+        /// repository template bundles. If it detects a template bundle change, a new major or
+        /// minor version of its template is created, if the version doesn’t already exist. For
+        /// more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-template-sync-configs.html">Template
+        /// sync configurations</a> in the <i>Proton User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateTemplateSyncConfig service method.</param>
         /// <param name="cancellationToken">
@@ -1456,8 +1774,8 @@ namespace Amazon.Proton
         /// The request failed to register with the service.
         /// </exception>
         /// <exception cref="Amazon.Proton.Model.ServiceQuotaExceededException">
-        /// A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-limits.html">Proton
-        /// Quotas</a> in the <i>Proton Administrator Guide</i>.
+        /// A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-limits.html">Proton
+        /// Quotas</a> in the <i>Proton User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Proton.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -1467,6 +1785,82 @@ namespace Amazon.Proton
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateTemplateSyncConfig">REST API Reference for CreateTemplateSyncConfig Operation</seealso>
         Task<CreateTemplateSyncConfigResponse> CreateTemplateSyncConfigAsync(CreateTemplateSyncConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteComponent
+
+
+        /// <summary>
+        /// Delete an Proton component resource.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+        /// components</a> in the <i>Proton User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteComponent service method.</param>
+        /// 
+        /// <returns>The response from the DeleteComponent service method, as returned by Proton.</returns>
+        /// <exception cref="Amazon.Proton.Model.AccessDeniedException">
+        /// There <i>isn't</i> sufficient access for performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ConflictException">
+        /// The request <i>couldn't</i> be made due to a conflicting operation or resource.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.InternalServerException">
+        /// The request failed to register with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ResourceNotFoundException">
+        /// The requested resource <i>wasn't</i> found.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ValidationException">
+        /// The input is invalid or an out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteComponent">REST API Reference for DeleteComponent Operation</seealso>
+        DeleteComponentResponse DeleteComponent(DeleteComponentRequest request);
+
+
+
+        /// <summary>
+        /// Delete an Proton component resource.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+        /// components</a> in the <i>Proton User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteComponent service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteComponent service method, as returned by Proton.</returns>
+        /// <exception cref="Amazon.Proton.Model.AccessDeniedException">
+        /// There <i>isn't</i> sufficient access for performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ConflictException">
+        /// The request <i>couldn't</i> be made due to a conflicting operation or resource.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.InternalServerException">
+        /// The request failed to register with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ResourceNotFoundException">
+        /// The requested resource <i>wasn't</i> found.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ValidationException">
+        /// The input is invalid or an out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteComponent">REST API Reference for DeleteComponent Operation</seealso>
+        Task<DeleteComponentResponse> DeleteComponentAsync(DeleteComponentRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1550,8 +1944,8 @@ namespace Amazon.Proton
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment
-        /// account connections</a> in the <i>Proton Administrator guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-env-account-connections.html">Environment
+        /// account connections</a> in the <i>Proton User guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteEnvironmentAccountConnection service method.</param>
@@ -1593,8 +1987,8 @@ namespace Amazon.Proton
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment
-        /// account connections</a> in the <i>Proton Administrator guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-env-account-connections.html">Environment
+        /// account connections</a> in the <i>Proton User guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteEnvironmentAccountConnection service method.</param>
@@ -1848,7 +2242,19 @@ namespace Amazon.Proton
 
 
         /// <summary>
-        /// Delete a service.
+        /// Delete a service, with its instances and pipeline.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// You can't delete a service if it has any service instances that have components attached
+        /// to them.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+        /// components</a> in the <i>Proton User Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteService service method.</param>
         /// 
@@ -1877,7 +2283,19 @@ namespace Amazon.Proton
 
 
         /// <summary>
-        /// Delete a service.
+        /// Delete a service, with its instances and pipeline.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// You can't delete a service if it has any service instances that have components attached
+        /// to them.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+        /// components</a> in the <i>Proton User Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteService service method.</param>
         /// <param name="cancellationToken">
@@ -1905,6 +2323,70 @@ namespace Amazon.Proton
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteService">REST API Reference for DeleteService Operation</seealso>
         Task<DeleteServiceResponse> DeleteServiceAsync(DeleteServiceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteServiceSyncConfig
+
+
+        /// <summary>
+        /// Delete the Proton Ops file.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteServiceSyncConfig service method.</param>
+        /// 
+        /// <returns>The response from the DeleteServiceSyncConfig service method, as returned by Proton.</returns>
+        /// <exception cref="Amazon.Proton.Model.AccessDeniedException">
+        /// There <i>isn't</i> sufficient access for performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ConflictException">
+        /// The request <i>couldn't</i> be made due to a conflicting operation or resource.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.InternalServerException">
+        /// The request failed to register with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ResourceNotFoundException">
+        /// The requested resource <i>wasn't</i> found.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ValidationException">
+        /// The input is invalid or an out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteServiceSyncConfig">REST API Reference for DeleteServiceSyncConfig Operation</seealso>
+        DeleteServiceSyncConfigResponse DeleteServiceSyncConfig(DeleteServiceSyncConfigRequest request);
+
+
+
+        /// <summary>
+        /// Delete the Proton Ops file.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteServiceSyncConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteServiceSyncConfig service method, as returned by Proton.</returns>
+        /// <exception cref="Amazon.Proton.Model.AccessDeniedException">
+        /// There <i>isn't</i> sufficient access for performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ConflictException">
+        /// The request <i>couldn't</i> be made due to a conflicting operation or resource.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.InternalServerException">
+        /// The request failed to register with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ResourceNotFoundException">
+        /// The requested resource <i>wasn't</i> found.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ValidationException">
+        /// The input is invalid or an out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteServiceSyncConfig">REST API Reference for DeleteServiceSyncConfig Operation</seealso>
+        Task<DeleteServiceSyncConfigResponse> DeleteServiceSyncConfigAsync(DeleteServiceSyncConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -2130,7 +2612,7 @@ namespace Amazon.Proton
 
 
         /// <summary>
-        /// Get detail data for the Proton pipeline service role.
+        /// Get detail data for Proton account-wide settings.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAccountSettings service method.</param>
         /// 
@@ -2156,7 +2638,7 @@ namespace Amazon.Proton
 
 
         /// <summary>
-        /// Get detail data for the Proton pipeline service role.
+        /// Get detail data for Proton account-wide settings.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAccountSettings service method.</param>
         /// <param name="cancellationToken">
@@ -2184,11 +2666,81 @@ namespace Amazon.Proton
 
         #endregion
         
+        #region  GetComponent
+
+
+        /// <summary>
+        /// Get detailed data for a component.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+        /// components</a> in the <i>Proton User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetComponent service method.</param>
+        /// 
+        /// <returns>The response from the GetComponent service method, as returned by Proton.</returns>
+        /// <exception cref="Amazon.Proton.Model.AccessDeniedException">
+        /// There <i>isn't</i> sufficient access for performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.InternalServerException">
+        /// The request failed to register with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ResourceNotFoundException">
+        /// The requested resource <i>wasn't</i> found.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ValidationException">
+        /// The input is invalid or an out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetComponent">REST API Reference for GetComponent Operation</seealso>
+        GetComponentResponse GetComponent(GetComponentRequest request);
+
+
+
+        /// <summary>
+        /// Get detailed data for a component.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+        /// components</a> in the <i>Proton User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetComponent service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetComponent service method, as returned by Proton.</returns>
+        /// <exception cref="Amazon.Proton.Model.AccessDeniedException">
+        /// There <i>isn't</i> sufficient access for performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.InternalServerException">
+        /// The request failed to register with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ResourceNotFoundException">
+        /// The requested resource <i>wasn't</i> found.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ValidationException">
+        /// The input is invalid or an out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetComponent">REST API Reference for GetComponent Operation</seealso>
+        Task<GetComponentResponse> GetComponentAsync(GetComponentRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetEnvironment
 
 
         /// <summary>
-        /// Get detail data for an environment.
+        /// Get detailed data for an environment.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetEnvironment service method.</param>
         /// 
@@ -2214,7 +2766,7 @@ namespace Amazon.Proton
 
 
         /// <summary>
-        /// Get detail data for an environment.
+        /// Get detailed data for an environment.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetEnvironment service method.</param>
         /// <param name="cancellationToken">
@@ -2246,12 +2798,12 @@ namespace Amazon.Proton
 
 
         /// <summary>
-        /// In an environment account, view the detail data for an environment account connection.
+        /// In an environment account, get the detailed data for an environment account connection.
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment
-        /// account connections</a> in the <i>Proton Administrator guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-env-account-connections.html">Environment
+        /// account connections</a> in the <i>Proton User guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetEnvironmentAccountConnection service method.</param>
@@ -2278,12 +2830,12 @@ namespace Amazon.Proton
 
 
         /// <summary>
-        /// In an environment account, view the detail data for an environment account connection.
+        /// In an environment account, get the detailed data for an environment account connection.
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment
-        /// account connections</a> in the <i>Proton Administrator guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-env-account-connections.html">Environment
+        /// account connections</a> in the <i>Proton User guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetEnvironmentAccountConnection service method.</param>
@@ -2316,7 +2868,7 @@ namespace Amazon.Proton
 
 
         /// <summary>
-        /// Get detail data for an environment template.
+        /// Get detailed data for an environment template.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetEnvironmentTemplate service method.</param>
         /// 
@@ -2342,7 +2894,7 @@ namespace Amazon.Proton
 
 
         /// <summary>
-        /// Get detail data for an environment template.
+        /// Get detailed data for an environment template.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetEnvironmentTemplate service method.</param>
         /// <param name="cancellationToken">
@@ -2374,7 +2926,7 @@ namespace Amazon.Proton
 
 
         /// <summary>
-        /// View detail data for a major or minor version of an environment template.
+        /// Get detailed data for a major or minor version of an environment template.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetEnvironmentTemplateVersion service method.</param>
         /// 
@@ -2400,7 +2952,7 @@ namespace Amazon.Proton
 
 
         /// <summary>
-        /// View detail data for a major or minor version of an environment template.
+        /// Get detailed data for a major or minor version of an environment template.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetEnvironmentTemplateVersion service method.</param>
         /// <param name="cancellationToken">
@@ -2432,7 +2984,7 @@ namespace Amazon.Proton
 
 
         /// <summary>
-        /// Get detail data for a repository.
+        /// Get detail data for a linked repository.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetRepository service method.</param>
         /// 
@@ -2458,7 +3010,7 @@ namespace Amazon.Proton
 
 
         /// <summary>
-        /// Get detail data for a repository.
+        /// Get detail data for a linked repository.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetRepository service method.</param>
         /// <param name="cancellationToken">
@@ -2490,7 +3042,22 @@ namespace Amazon.Proton
 
 
         /// <summary>
-        /// Get the repository sync status.
+        /// Get the sync status of a repository used for Proton template sync. For more information
+        /// about template sync, see .
+        /// 
+        ///  <note> 
+        /// <para>
+        /// A repository sync status isn't tied to the Proton Repository resource (or any other
+        /// Proton resource). Therefore, tags on an Proton Repository resource have no effect
+        /// on this action. Specifically, you can't use these tags to control access to this action
+        /// using Attribute-based access control (ABAC).
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about ABAC, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-tags">ABAC</a>
+        /// in the <i>Proton User Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetRepositorySyncStatus service method.</param>
         /// 
@@ -2516,7 +3083,22 @@ namespace Amazon.Proton
 
 
         /// <summary>
-        /// Get the repository sync status.
+        /// Get the sync status of a repository used for Proton template sync. For more information
+        /// about template sync, see .
+        /// 
+        ///  <note> 
+        /// <para>
+        /// A repository sync status isn't tied to the Proton Repository resource (or any other
+        /// Proton resource). Therefore, tags on an Proton Repository resource have no effect
+        /// on this action. Specifically, you can't use these tags to control access to this action
+        /// using Attribute-based access control (ABAC).
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about ABAC, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-tags">ABAC</a>
+        /// in the <i>Proton User Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetRepositorySyncStatus service method.</param>
         /// <param name="cancellationToken">
@@ -2544,11 +3126,117 @@ namespace Amazon.Proton
 
         #endregion
         
+        #region  GetResourcesSummary
+
+
+        /// <summary>
+        /// Get counts of Proton resources.
+        /// 
+        ///  
+        /// <para>
+        /// For infrastructure-provisioning resources (environments, services, service instances,
+        /// pipelines), the action returns staleness counts. A resource is stale when it's behind
+        /// the recommended version of the Proton template that it uses and it needs an update
+        /// to become current.
+        /// </para>
+        ///  
+        /// <para>
+        /// The action returns staleness counts (counts of resources that are up-to-date, behind
+        /// a template major version, or behind a template minor version), the total number of
+        /// resources, and the number of resources that are in a failed state, grouped by resource
+        /// type. Components, environments, and service templates return less information - see
+        /// the <code>components</code>, <code>environments</code>, and <code>serviceTemplates</code>
+        /// field descriptions.
+        /// </para>
+        ///  
+        /// <para>
+        /// For context, the action also returns the total number of each type of Proton template
+        /// in the Amazon Web Services account.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/monitoring-dashboard.html">Proton
+        /// dashboard</a> in the <i>Proton User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetResourcesSummary service method.</param>
+        /// 
+        /// <returns>The response from the GetResourcesSummary service method, as returned by Proton.</returns>
+        /// <exception cref="Amazon.Proton.Model.AccessDeniedException">
+        /// There <i>isn't</i> sufficient access for performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.InternalServerException">
+        /// The request failed to register with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ValidationException">
+        /// The input is invalid or an out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetResourcesSummary">REST API Reference for GetResourcesSummary Operation</seealso>
+        GetResourcesSummaryResponse GetResourcesSummary(GetResourcesSummaryRequest request);
+
+
+
+        /// <summary>
+        /// Get counts of Proton resources.
+        /// 
+        ///  
+        /// <para>
+        /// For infrastructure-provisioning resources (environments, services, service instances,
+        /// pipelines), the action returns staleness counts. A resource is stale when it's behind
+        /// the recommended version of the Proton template that it uses and it needs an update
+        /// to become current.
+        /// </para>
+        ///  
+        /// <para>
+        /// The action returns staleness counts (counts of resources that are up-to-date, behind
+        /// a template major version, or behind a template minor version), the total number of
+        /// resources, and the number of resources that are in a failed state, grouped by resource
+        /// type. Components, environments, and service templates return less information - see
+        /// the <code>components</code>, <code>environments</code>, and <code>serviceTemplates</code>
+        /// field descriptions.
+        /// </para>
+        ///  
+        /// <para>
+        /// For context, the action also returns the total number of each type of Proton template
+        /// in the Amazon Web Services account.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/monitoring-dashboard.html">Proton
+        /// dashboard</a> in the <i>Proton User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetResourcesSummary service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetResourcesSummary service method, as returned by Proton.</returns>
+        /// <exception cref="Amazon.Proton.Model.AccessDeniedException">
+        /// There <i>isn't</i> sufficient access for performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.InternalServerException">
+        /// The request failed to register with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ValidationException">
+        /// The input is invalid or an out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetResourcesSummary">REST API Reference for GetResourcesSummary Operation</seealso>
+        Task<GetResourcesSummaryResponse> GetResourcesSummaryAsync(GetResourcesSummaryRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetService
 
 
         /// <summary>
-        /// Get detail data for a service.
+        /// Get detailed data for a service.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetService service method.</param>
         /// 
@@ -2574,7 +3262,7 @@ namespace Amazon.Proton
 
 
         /// <summary>
-        /// Get detail data for a service.
+        /// Get detailed data for a service.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetService service method.</param>
         /// <param name="cancellationToken">
@@ -2606,8 +3294,8 @@ namespace Amazon.Proton
 
 
         /// <summary>
-        /// Get detail data for a service instance. A service instance is an instantiation of
-        /// service template, which is running in a specific environment.
+        /// Get detailed data for a service instance. A service instance is an instantiation of
+        /// service template and it runs in a specific environment.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetServiceInstance service method.</param>
         /// 
@@ -2633,8 +3321,8 @@ namespace Amazon.Proton
 
 
         /// <summary>
-        /// Get detail data for a service instance. A service instance is an instantiation of
-        /// service template, which is running in a specific environment.
+        /// Get detailed data for a service instance. A service instance is an instantiation of
+        /// service template and it runs in a specific environment.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetServiceInstance service method.</param>
         /// <param name="cancellationToken">
@@ -2662,11 +3350,185 @@ namespace Amazon.Proton
 
         #endregion
         
+        #region  GetServiceInstanceSyncStatus
+
+
+        /// <summary>
+        /// Get the status of the synced service instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetServiceInstanceSyncStatus service method.</param>
+        /// 
+        /// <returns>The response from the GetServiceInstanceSyncStatus service method, as returned by Proton.</returns>
+        /// <exception cref="Amazon.Proton.Model.AccessDeniedException">
+        /// There <i>isn't</i> sufficient access for performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.InternalServerException">
+        /// The request failed to register with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ResourceNotFoundException">
+        /// The requested resource <i>wasn't</i> found.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ValidationException">
+        /// The input is invalid or an out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetServiceInstanceSyncStatus">REST API Reference for GetServiceInstanceSyncStatus Operation</seealso>
+        GetServiceInstanceSyncStatusResponse GetServiceInstanceSyncStatus(GetServiceInstanceSyncStatusRequest request);
+
+
+
+        /// <summary>
+        /// Get the status of the synced service instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetServiceInstanceSyncStatus service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetServiceInstanceSyncStatus service method, as returned by Proton.</returns>
+        /// <exception cref="Amazon.Proton.Model.AccessDeniedException">
+        /// There <i>isn't</i> sufficient access for performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.InternalServerException">
+        /// The request failed to register with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ResourceNotFoundException">
+        /// The requested resource <i>wasn't</i> found.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ValidationException">
+        /// The input is invalid or an out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetServiceInstanceSyncStatus">REST API Reference for GetServiceInstanceSyncStatus Operation</seealso>
+        Task<GetServiceInstanceSyncStatusResponse> GetServiceInstanceSyncStatusAsync(GetServiceInstanceSyncStatusRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetServiceSyncBlockerSummary
+
+
+        /// <summary>
+        /// Get detailed data for the service sync blocker summary.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetServiceSyncBlockerSummary service method.</param>
+        /// 
+        /// <returns>The response from the GetServiceSyncBlockerSummary service method, as returned by Proton.</returns>
+        /// <exception cref="Amazon.Proton.Model.AccessDeniedException">
+        /// There <i>isn't</i> sufficient access for performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.InternalServerException">
+        /// The request failed to register with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ResourceNotFoundException">
+        /// The requested resource <i>wasn't</i> found.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ValidationException">
+        /// The input is invalid or an out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetServiceSyncBlockerSummary">REST API Reference for GetServiceSyncBlockerSummary Operation</seealso>
+        GetServiceSyncBlockerSummaryResponse GetServiceSyncBlockerSummary(GetServiceSyncBlockerSummaryRequest request);
+
+
+
+        /// <summary>
+        /// Get detailed data for the service sync blocker summary.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetServiceSyncBlockerSummary service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetServiceSyncBlockerSummary service method, as returned by Proton.</returns>
+        /// <exception cref="Amazon.Proton.Model.AccessDeniedException">
+        /// There <i>isn't</i> sufficient access for performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.InternalServerException">
+        /// The request failed to register with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ResourceNotFoundException">
+        /// The requested resource <i>wasn't</i> found.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ValidationException">
+        /// The input is invalid or an out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetServiceSyncBlockerSummary">REST API Reference for GetServiceSyncBlockerSummary Operation</seealso>
+        Task<GetServiceSyncBlockerSummaryResponse> GetServiceSyncBlockerSummaryAsync(GetServiceSyncBlockerSummaryRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetServiceSyncConfig
+
+
+        /// <summary>
+        /// Get detailed information for the service sync configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetServiceSyncConfig service method.</param>
+        /// 
+        /// <returns>The response from the GetServiceSyncConfig service method, as returned by Proton.</returns>
+        /// <exception cref="Amazon.Proton.Model.AccessDeniedException">
+        /// There <i>isn't</i> sufficient access for performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.InternalServerException">
+        /// The request failed to register with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ResourceNotFoundException">
+        /// The requested resource <i>wasn't</i> found.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ValidationException">
+        /// The input is invalid or an out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetServiceSyncConfig">REST API Reference for GetServiceSyncConfig Operation</seealso>
+        GetServiceSyncConfigResponse GetServiceSyncConfig(GetServiceSyncConfigRequest request);
+
+
+
+        /// <summary>
+        /// Get detailed information for the service sync configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetServiceSyncConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetServiceSyncConfig service method, as returned by Proton.</returns>
+        /// <exception cref="Amazon.Proton.Model.AccessDeniedException">
+        /// There <i>isn't</i> sufficient access for performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.InternalServerException">
+        /// The request failed to register with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ResourceNotFoundException">
+        /// The requested resource <i>wasn't</i> found.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ValidationException">
+        /// The input is invalid or an out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetServiceSyncConfig">REST API Reference for GetServiceSyncConfig Operation</seealso>
+        Task<GetServiceSyncConfigResponse> GetServiceSyncConfigAsync(GetServiceSyncConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetServiceTemplate
 
 
         /// <summary>
-        /// Get detail data for a service template.
+        /// Get detailed data for a service template.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetServiceTemplate service method.</param>
         /// 
@@ -2692,7 +3554,7 @@ namespace Amazon.Proton
 
 
         /// <summary>
-        /// Get detail data for a service template.
+        /// Get detailed data for a service template.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetServiceTemplate service method.</param>
         /// <param name="cancellationToken">
@@ -2724,7 +3586,7 @@ namespace Amazon.Proton
 
 
         /// <summary>
-        /// View detail data for a major or minor version of a service template.
+        /// Get detailed data for a major or minor version of a service template.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetServiceTemplateVersion service method.</param>
         /// 
@@ -2750,7 +3612,7 @@ namespace Amazon.Proton
 
 
         /// <summary>
-        /// View detail data for a major or minor version of a service template.
+        /// Get detailed data for a major or minor version of a service template.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetServiceTemplateVersion service method.</param>
         /// <param name="cancellationToken">
@@ -2894,6 +3756,212 @@ namespace Amazon.Proton
 
         #endregion
         
+        #region  ListComponentOutputs
+
+
+        /// <summary>
+        /// Get a list of component Infrastructure as Code (IaC) outputs.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+        /// components</a> in the <i>Proton User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListComponentOutputs service method.</param>
+        /// 
+        /// <returns>The response from the ListComponentOutputs service method, as returned by Proton.</returns>
+        /// <exception cref="Amazon.Proton.Model.AccessDeniedException">
+        /// There <i>isn't</i> sufficient access for performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.InternalServerException">
+        /// The request failed to register with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ResourceNotFoundException">
+        /// The requested resource <i>wasn't</i> found.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ValidationException">
+        /// The input is invalid or an out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListComponentOutputs">REST API Reference for ListComponentOutputs Operation</seealso>
+        ListComponentOutputsResponse ListComponentOutputs(ListComponentOutputsRequest request);
+
+
+
+        /// <summary>
+        /// Get a list of component Infrastructure as Code (IaC) outputs.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+        /// components</a> in the <i>Proton User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListComponentOutputs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListComponentOutputs service method, as returned by Proton.</returns>
+        /// <exception cref="Amazon.Proton.Model.AccessDeniedException">
+        /// There <i>isn't</i> sufficient access for performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.InternalServerException">
+        /// The request failed to register with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ResourceNotFoundException">
+        /// The requested resource <i>wasn't</i> found.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ValidationException">
+        /// The input is invalid or an out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListComponentOutputs">REST API Reference for ListComponentOutputs Operation</seealso>
+        Task<ListComponentOutputsResponse> ListComponentOutputsAsync(ListComponentOutputsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListComponentProvisionedResources
+
+
+        /// <summary>
+        /// List provisioned resources for a component with details.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+        /// components</a> in the <i>Proton User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListComponentProvisionedResources service method.</param>
+        /// 
+        /// <returns>The response from the ListComponentProvisionedResources service method, as returned by Proton.</returns>
+        /// <exception cref="Amazon.Proton.Model.AccessDeniedException">
+        /// There <i>isn't</i> sufficient access for performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.InternalServerException">
+        /// The request failed to register with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ResourceNotFoundException">
+        /// The requested resource <i>wasn't</i> found.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ValidationException">
+        /// The input is invalid or an out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListComponentProvisionedResources">REST API Reference for ListComponentProvisionedResources Operation</seealso>
+        ListComponentProvisionedResourcesResponse ListComponentProvisionedResources(ListComponentProvisionedResourcesRequest request);
+
+
+
+        /// <summary>
+        /// List provisioned resources for a component with details.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+        /// components</a> in the <i>Proton User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListComponentProvisionedResources service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListComponentProvisionedResources service method, as returned by Proton.</returns>
+        /// <exception cref="Amazon.Proton.Model.AccessDeniedException">
+        /// There <i>isn't</i> sufficient access for performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.InternalServerException">
+        /// The request failed to register with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ResourceNotFoundException">
+        /// The requested resource <i>wasn't</i> found.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ValidationException">
+        /// The input is invalid or an out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListComponentProvisionedResources">REST API Reference for ListComponentProvisionedResources Operation</seealso>
+        Task<ListComponentProvisionedResourcesResponse> ListComponentProvisionedResourcesAsync(ListComponentProvisionedResourcesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListComponents
+
+
+        /// <summary>
+        /// List components with summary data. You can filter the result list by environment,
+        /// service, or a single service instance.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+        /// components</a> in the <i>Proton User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListComponents service method.</param>
+        /// 
+        /// <returns>The response from the ListComponents service method, as returned by Proton.</returns>
+        /// <exception cref="Amazon.Proton.Model.AccessDeniedException">
+        /// There <i>isn't</i> sufficient access for performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.InternalServerException">
+        /// The request failed to register with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ValidationException">
+        /// The input is invalid or an out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListComponents">REST API Reference for ListComponents Operation</seealso>
+        ListComponentsResponse ListComponents(ListComponentsRequest request);
+
+
+
+        /// <summary>
+        /// List components with summary data. You can filter the result list by environment,
+        /// service, or a single service instance.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+        /// components</a> in the <i>Proton User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListComponents service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListComponents service method, as returned by Proton.</returns>
+        /// <exception cref="Amazon.Proton.Model.AccessDeniedException">
+        /// There <i>isn't</i> sufficient access for performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.InternalServerException">
+        /// The request failed to register with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ValidationException">
+        /// The input is invalid or an out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListComponents">REST API Reference for ListComponents Operation</seealso>
+        Task<ListComponentsResponse> ListComponentsAsync(ListComponentsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListEnvironmentAccountConnections
 
 
@@ -2902,8 +3970,8 @@ namespace Amazon.Proton
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment
-        /// account connections</a> in the <i>Proton Administrator guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-env-account-connections.html">Environment
+        /// account connections</a> in the <i>Proton User guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListEnvironmentAccountConnections service method.</param>
@@ -2931,8 +3999,8 @@ namespace Amazon.Proton
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment
-        /// account connections</a> in the <i>Proton Administrator guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-env-account-connections.html">Environment
+        /// account connections</a> in the <i>Proton User guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListEnvironmentAccountConnections service method.</param>
@@ -3246,7 +4314,7 @@ namespace Amazon.Proton
 
 
         /// <summary>
-        /// List repositories with detail data.
+        /// List linked repositories with detail data.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListRepositories service method.</param>
         /// 
@@ -3272,7 +4340,7 @@ namespace Amazon.Proton
 
 
         /// <summary>
-        /// List repositories with detail data.
+        /// List linked repositories with detail data.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListRepositories service method.</param>
         /// <param name="cancellationToken">
@@ -3356,7 +4424,7 @@ namespace Amazon.Proton
 
 
         /// <summary>
-        /// View a list service instance infrastructure as code outputs with detail data.
+        /// Get a list service of instance Infrastructure as Code (IaC) outputs.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListServiceInstanceOutputs service method.</param>
         /// 
@@ -3382,7 +4450,7 @@ namespace Amazon.Proton
 
 
         /// <summary>
-        /// View a list service instance infrastructure as code outputs with detail data.
+        /// Get a list service of instance Infrastructure as Code (IaC) outputs.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListServiceInstanceOutputs service method.</param>
         /// <param name="cancellationToken">
@@ -3472,7 +4540,8 @@ namespace Amazon.Proton
 
 
         /// <summary>
-        /// List service instances with summaries of detail data.
+        /// List service instances with summary data. This action lists service instances of all
+        /// services in the Amazon Web Services account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListServiceInstances service method.</param>
         /// 
@@ -3498,7 +4567,8 @@ namespace Amazon.Proton
 
 
         /// <summary>
-        /// List service instances with summaries of detail data.
+        /// List service instances with summary data. This action lists service instances of all
+        /// services in the Amazon Web Services account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListServiceInstances service method.</param>
         /// <param name="cancellationToken">
@@ -3530,7 +4600,7 @@ namespace Amazon.Proton
 
 
         /// <summary>
-        /// View a list service pipeline infrastructure as code outputs with detail.
+        /// Get a list of service pipeline Infrastructure as Code (IaC) outputs.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListServicePipelineOutputs service method.</param>
         /// 
@@ -3556,7 +4626,7 @@ namespace Amazon.Proton
 
 
         /// <summary>
-        /// View a list service pipeline infrastructure as code outputs with detail.
+        /// Get a list of service pipeline Infrastructure as Code (IaC) outputs.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListServicePipelineOutputs service method.</param>
         /// <param name="cancellationToken">
@@ -3808,10 +4878,8 @@ namespace Amazon.Proton
 
 
         /// <summary>
-        /// List tags for a resource. For more information, see <i>Proton resources and tagging</i>
-        /// in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
-        /// Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
-        /// User Guide</a>.
+        /// List tags for a resource. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
+        /// resources and tagging</a> in the <i>Proton User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// 
@@ -3837,10 +4905,8 @@ namespace Amazon.Proton
 
 
         /// <summary>
-        /// List tags for a resource. For more information, see <i>Proton resources and tagging</i>
-        /// in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
-        /// Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
-        /// User Guide</a>.
+        /// List tags for a resource. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
+        /// resources and tagging</a> in the <i>Proton User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// <param name="cancellationToken">
@@ -3872,17 +4938,14 @@ namespace Amazon.Proton
 
 
         /// <summary>
-        /// Notify Proton of status changes to a provisioned resource when you use pull request
-        /// provisioning. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-template-bundles.html">Template
-        /// bundles</a>.
+        /// Notify Proton of status changes to a provisioned resource when you use self-managed
+        /// provisioning.
         /// 
-        ///  <important> 
+        ///  
         /// <para>
-        /// Provisioning by pull request is currently in feature preview and is only usable with
-        /// Terraform based Proton Templates. To learn more about <a href="https://aws.amazon.com/service-terms">Amazon
-        /// Web Services Feature Preview terms</a>, see section 2 on Beta and Previews.
+        /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-works-prov-methods.html#ag-works-prov-methods-self">Self-managed
+        /// provisioning</a> in the <i>Proton User Guide</i>.
         /// </para>
-        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the NotifyResourceDeploymentStatusChange service method.</param>
         /// 
@@ -3900,8 +4963,8 @@ namespace Amazon.Proton
         /// The requested resource <i>wasn't</i> found.
         /// </exception>
         /// <exception cref="Amazon.Proton.Model.ServiceQuotaExceededException">
-        /// A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-limits.html">Proton
-        /// Quotas</a> in the <i>Proton Administrator Guide</i>.
+        /// A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-limits.html">Proton
+        /// Quotas</a> in the <i>Proton User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Proton.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -3915,17 +4978,14 @@ namespace Amazon.Proton
 
 
         /// <summary>
-        /// Notify Proton of status changes to a provisioned resource when you use pull request
-        /// provisioning. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-template-bundles.html">Template
-        /// bundles</a>.
+        /// Notify Proton of status changes to a provisioned resource when you use self-managed
+        /// provisioning.
         /// 
-        ///  <important> 
+        ///  
         /// <para>
-        /// Provisioning by pull request is currently in feature preview and is only usable with
-        /// Terraform based Proton Templates. To learn more about <a href="https://aws.amazon.com/service-terms">Amazon
-        /// Web Services Feature Preview terms</a>, see section 2 on Beta and Previews.
+        /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-works-prov-methods.html#ag-works-prov-methods-self">Self-managed
+        /// provisioning</a> in the <i>Proton User Guide</i>.
         /// </para>
-        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the NotifyResourceDeploymentStatusChange service method.</param>
         /// <param name="cancellationToken">
@@ -3946,8 +5006,8 @@ namespace Amazon.Proton
         /// The requested resource <i>wasn't</i> found.
         /// </exception>
         /// <exception cref="Amazon.Proton.Model.ServiceQuotaExceededException">
-        /// A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-limits.html">Proton
-        /// Quotas</a> in the <i>Proton Administrator Guide</i>.
+        /// A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-limits.html">Proton
+        /// Quotas</a> in the <i>Proton User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Proton.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -3969,18 +5029,17 @@ namespace Amazon.Proton
         /// 
         ///  
         /// <para>
-        /// After you reject an environment account connection request, you <i>won’t</i> be able
-        /// to accept or use the rejected environment account connection.
+        /// After you reject an environment account connection request, you <i>can't</i> accept
+        /// or use the rejected environment account connection.
         /// </para>
         ///  
         /// <para>
-        /// You <i>can’t</i> reject an environment account connection that is connected to an
-        /// environment.
+        /// You <i>can’t</i> reject an environment account connection that's connected to an environment.
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment
-        /// account connections</a> in the <i>Proton Administrator guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-env-account-connections.html">Environment
+        /// account connections</a> in the <i>Proton User guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RejectEnvironmentAccountConnection service method.</param>
@@ -4015,18 +5074,17 @@ namespace Amazon.Proton
         /// 
         ///  
         /// <para>
-        /// After you reject an environment account connection request, you <i>won’t</i> be able
-        /// to accept or use the rejected environment account connection.
+        /// After you reject an environment account connection request, you <i>can't</i> accept
+        /// or use the rejected environment account connection.
         /// </para>
         ///  
         /// <para>
-        /// You <i>can’t</i> reject an environment account connection that is connected to an
-        /// environment.
+        /// You <i>can’t</i> reject an environment account connection that's connected to an environment.
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment
-        /// account connections</a> in the <i>Proton Administrator guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-env-account-connections.html">Environment
+        /// account connections</a> in the <i>Proton User guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RejectEnvironmentAccountConnection service method.</param>
@@ -4062,10 +5120,14 @@ namespace Amazon.Proton
 
 
         /// <summary>
-        /// Tag a resource. For more information, see <i>Proton resources and tagging</i> in the
-        /// <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
-        /// Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
-        /// User Guide</a>.
+        /// Tag a resource. A tag is a key-value pair of metadata that you associate with an Proton
+        /// resource.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
+        /// resources and tagging</a> in the <i>Proton User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// 
@@ -4094,10 +5156,14 @@ namespace Amazon.Proton
 
 
         /// <summary>
-        /// Tag a resource. For more information, see <i>Proton resources and tagging</i> in the
-        /// <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
-        /// Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
-        /// User Guide</a>.
+        /// Tag a resource. A tag is a key-value pair of metadata that you associate with an Proton
+        /// resource.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
+        /// resources and tagging</a> in the <i>Proton User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// <param name="cancellationToken">
@@ -4132,10 +5198,14 @@ namespace Amazon.Proton
 
 
         /// <summary>
-        /// Remove a tag from a resource. For more information, see <i>Proton resources and tagging</i>
-        /// in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
-        /// Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
-        /// User Guide</a>.
+        /// Remove a customer tag from a resource. A tag is a key-value pair of metadata associated
+        /// with an Proton resource.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
+        /// resources and tagging</a> in the <i>Proton User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// 
@@ -4164,10 +5234,14 @@ namespace Amazon.Proton
 
 
         /// <summary>
-        /// Remove a tag from a resource. For more information, see <i>Proton resources and tagging</i>
-        /// in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
-        /// Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
-        /// User Guide</a>.
+        /// Remove a customer tag from a resource. A tag is a key-value pair of metadata associated
+        /// with an Proton resource.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
+        /// resources and tagging</a> in the <i>Proton User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// <param name="cancellationToken">
@@ -4202,7 +5276,8 @@ namespace Amazon.Proton
 
 
         /// <summary>
-        /// Update the Proton service pipeline role or repository settings.
+        /// Update Proton settings that are used for multiple services in the Amazon Web Services
+        /// account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAccountSettings service method.</param>
         /// 
@@ -4228,7 +5303,8 @@ namespace Amazon.Proton
 
 
         /// <summary>
-        /// Update the Proton service pipeline role or repository settings.
+        /// Update Proton settings that are used for multiple services in the Amazon Web Services
+        /// account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAccountSettings service method.</param>
         /// <param name="cancellationToken">
@@ -4256,6 +5332,110 @@ namespace Amazon.Proton
 
         #endregion
         
+        #region  UpdateComponent
+
+
+        /// <summary>
+        /// Update a component.
+        /// 
+        ///  
+        /// <para>
+        /// There are a few modes for updating a component. The <code>deploymentType</code> field
+        /// defines the mode.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// You can't update a component while its deployment status, or the deployment status
+        /// of a service instance attached to it, is <code>IN_PROGRESS</code>.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+        /// components</a> in the <i>Proton User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateComponent service method.</param>
+        /// 
+        /// <returns>The response from the UpdateComponent service method, as returned by Proton.</returns>
+        /// <exception cref="Amazon.Proton.Model.AccessDeniedException">
+        /// There <i>isn't</i> sufficient access for performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ConflictException">
+        /// The request <i>couldn't</i> be made due to a conflicting operation or resource.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.InternalServerException">
+        /// The request failed to register with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ResourceNotFoundException">
+        /// The requested resource <i>wasn't</i> found.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ServiceQuotaExceededException">
+        /// A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-limits.html">Proton
+        /// Quotas</a> in the <i>Proton User Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ValidationException">
+        /// The input is invalid or an out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateComponent">REST API Reference for UpdateComponent Operation</seealso>
+        UpdateComponentResponse UpdateComponent(UpdateComponentRequest request);
+
+
+
+        /// <summary>
+        /// Update a component.
+        /// 
+        ///  
+        /// <para>
+        /// There are a few modes for updating a component. The <code>deploymentType</code> field
+        /// defines the mode.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// You can't update a component while its deployment status, or the deployment status
+        /// of a service instance attached to it, is <code>IN_PROGRESS</code>.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+        /// components</a> in the <i>Proton User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateComponent service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateComponent service method, as returned by Proton.</returns>
+        /// <exception cref="Amazon.Proton.Model.AccessDeniedException">
+        /// There <i>isn't</i> sufficient access for performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ConflictException">
+        /// The request <i>couldn't</i> be made due to a conflicting operation or resource.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.InternalServerException">
+        /// The request failed to register with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ResourceNotFoundException">
+        /// The requested resource <i>wasn't</i> found.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ServiceQuotaExceededException">
+        /// A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-limits.html">Proton
+        /// Quotas</a> in the <i>Proton User Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ValidationException">
+        /// The input is invalid or an out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateComponent">REST API Reference for UpdateComponent Operation</seealso>
+        Task<UpdateComponentResponse> UpdateComponentAsync(UpdateComponentRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  UpdateEnvironment
 
 
@@ -4270,15 +5450,16 @@ namespace Amazon.Proton
         /// </para>
         ///  
         /// <para>
-        /// You can only update to a new environment account connection if it was created in the
-        /// same environment account that the current environment account connection was created
-        /// in and is associated with the current environment.
+        /// You can only update to a new environment account connection if that connection was
+        /// created in the same environment account that the current environment account connection
+        /// was created in. The account connection must also be associated with the current environment.
         /// </para>
         ///  
         /// <para>
         /// If the environment <i>isn't</i> associated with an environment account connection,
-        /// <i>don't</i> update or include the <code>environmentAccountConnectionId</code> parameter
-        /// to update or connect to an environment account connection.
+        /// <i>don't</i> update or include the <code>environmentAccountConnectionId</code> parameter.
+        /// You <i>can't</i> update or connect the environment to an environment account connection
+        /// if it <i>isn't</i> already associated with an environment connection.
         /// </para>
         ///  
         /// <para>
@@ -4287,19 +5468,25 @@ namespace Amazon.Proton
         /// </para>
         ///  
         /// <para>
-        /// If the environment was provisioned with pull request provisioning, include the <code>provisioningRepository</code>
+        /// If the environment was configured for Amazon Web Services-managed provisioning, omit
+        /// the <code>provisioningRepository</code> parameter.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the environment was configured for self-managed provisioning, specify the <code>provisioningRepository</code>
         /// parameter and omit the <code>protonServiceRoleArn</code> and <code>environmentAccountConnectionId</code>
         /// parameters.
         /// </para>
         ///  
         /// <para>
-        /// If the environment wasn't provisioned with pull request provisioning, omit the <code>provisioningRepository</code>
-        /// parameter.
+        /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-environments.html">Environments</a>
+        /// and <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-works-prov-methods.html">Provisioning
+        /// methods</a> in the <i>Proton User Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// There are four modes for updating an environment as described in the following. The
-        /// <code>deploymentType</code> field defines the mode.
+        /// There are four modes for updating an environment. The <code>deploymentType</code>
+        /// field defines the mode.
         /// </para>
         ///  <dl> <dt/> <dd> 
         /// <para>
@@ -4339,7 +5526,7 @@ namespace Amazon.Proton
         /// In this mode, the environment is deployed and updated with the published, recommended
         /// (latest) major and minor version of the current template, by default. You can also
         /// specify a different major version that's higher than the major version in use and
-        /// a minor version (optional).
+        /// a minor version.
         /// </para>
         ///  </dd> </dl>
         /// </summary>
@@ -4380,15 +5567,16 @@ namespace Amazon.Proton
         /// </para>
         ///  
         /// <para>
-        /// You can only update to a new environment account connection if it was created in the
-        /// same environment account that the current environment account connection was created
-        /// in and is associated with the current environment.
+        /// You can only update to a new environment account connection if that connection was
+        /// created in the same environment account that the current environment account connection
+        /// was created in. The account connection must also be associated with the current environment.
         /// </para>
         ///  
         /// <para>
         /// If the environment <i>isn't</i> associated with an environment account connection,
-        /// <i>don't</i> update or include the <code>environmentAccountConnectionId</code> parameter
-        /// to update or connect to an environment account connection.
+        /// <i>don't</i> update or include the <code>environmentAccountConnectionId</code> parameter.
+        /// You <i>can't</i> update or connect the environment to an environment account connection
+        /// if it <i>isn't</i> already associated with an environment connection.
         /// </para>
         ///  
         /// <para>
@@ -4397,19 +5585,25 @@ namespace Amazon.Proton
         /// </para>
         ///  
         /// <para>
-        /// If the environment was provisioned with pull request provisioning, include the <code>provisioningRepository</code>
+        /// If the environment was configured for Amazon Web Services-managed provisioning, omit
+        /// the <code>provisioningRepository</code> parameter.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the environment was configured for self-managed provisioning, specify the <code>provisioningRepository</code>
         /// parameter and omit the <code>protonServiceRoleArn</code> and <code>environmentAccountConnectionId</code>
         /// parameters.
         /// </para>
         ///  
         /// <para>
-        /// If the environment wasn't provisioned with pull request provisioning, omit the <code>provisioningRepository</code>
-        /// parameter.
+        /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-environments.html">Environments</a>
+        /// and <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-works-prov-methods.html">Provisioning
+        /// methods</a> in the <i>Proton User Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// There are four modes for updating an environment as described in the following. The
-        /// <code>deploymentType</code> field defines the mode.
+        /// There are four modes for updating an environment. The <code>deploymentType</code>
+        /// field defines the mode.
         /// </para>
         ///  <dl> <dt/> <dd> 
         /// <para>
@@ -4449,7 +5643,7 @@ namespace Amazon.Proton
         /// In this mode, the environment is deployed and updated with the published, recommended
         /// (latest) major and minor version of the current template, by default. You can also
         /// specify a different major version that's higher than the major version in use and
-        /// a minor version (optional).
+        /// a minor version.
         /// </para>
         ///  </dd> </dl>
         /// </summary>
@@ -4491,8 +5685,8 @@ namespace Amazon.Proton
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment
-        /// account connections</a> in the <i>Proton Administrator guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-env-account-connections.html">Environment
+        /// account connections</a> in the <i>Proton User guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateEnvironmentAccountConnection service method.</param>
@@ -4527,8 +5721,8 @@ namespace Amazon.Proton
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment
-        /// account connections</a> in the <i>Proton Administrator guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-env-account-connections.html">Environment
+        /// account connections</a> in the <i>Proton User guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateEnvironmentAccountConnection service method.</param>
@@ -4707,6 +5901,17 @@ namespace Amazon.Proton
         /// <para>
         /// Edit the <code>spec</code> parameter to add or delete instances.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// You can't delete a service instance (remove it from the spec) if it has an attached
+        /// component.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+        /// components</a> in the <i>Proton User Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateService service method.</param>
         /// 
@@ -4724,8 +5929,8 @@ namespace Amazon.Proton
         /// The requested resource <i>wasn't</i> found.
         /// </exception>
         /// <exception cref="Amazon.Proton.Model.ServiceQuotaExceededException">
-        /// A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-limits.html">Proton
-        /// Quotas</a> in the <i>Proton Administrator Guide</i>.
+        /// A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-limits.html">Proton
+        /// Quotas</a> in the <i>Proton User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Proton.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -4754,6 +5959,17 @@ namespace Amazon.Proton
         /// <para>
         /// Edit the <code>spec</code> parameter to add or delete instances.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// You can't delete a service instance (remove it from the spec) if it has an attached
+        /// component.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+        /// components</a> in the <i>Proton User Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateService service method.</param>
         /// <param name="cancellationToken">
@@ -4774,8 +5990,8 @@ namespace Amazon.Proton
         /// The requested resource <i>wasn't</i> found.
         /// </exception>
         /// <exception cref="Amazon.Proton.Model.ServiceQuotaExceededException">
-        /// A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-limits.html">Proton
-        /// Quotas</a> in the <i>Proton Administrator Guide</i>.
+        /// A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-limits.html">Proton
+        /// Quotas</a> in the <i>Proton User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Proton.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -4796,50 +6012,20 @@ namespace Amazon.Proton
         /// 
         ///  
         /// <para>
-        /// There are four modes for updating a service instance as described in the following.
-        /// The <code>deploymentType</code> field defines the mode.
+        /// There are a few modes for updating a service instance. The <code>deploymentType</code>
+        /// field defines the mode.
         /// </para>
-        ///  <dl> <dt/> <dd> 
+        ///  <note> 
         /// <para>
-        ///  <code>NONE</code> 
+        /// You can't update a service instance while its deployment status, or the deployment
+        /// status of a component attached to it, is <code>IN_PROGRESS</code>.
         /// </para>
         ///  
         /// <para>
-        /// In this mode, a deployment <i>doesn't</i> occur. Only the requested metadata parameters
-        /// are updated.
+        /// For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+        /// components</a> in the <i>Proton User Guide</i>.
         /// </para>
-        ///  </dd> <dt/> <dd> 
-        /// <para>
-        ///  <code>CURRENT_VERSION</code> 
-        /// </para>
-        ///  
-        /// <para>
-        /// In this mode, the service instance is deployed and updated with the new spec that
-        /// you provide. Only requested parameters are updated. <i>Don’t</i> include minor or
-        /// major version parameters when you use this <code>deployment-type</code>.
-        /// </para>
-        ///  </dd> <dt/> <dd> 
-        /// <para>
-        ///  <code>MINOR_VERSION</code> 
-        /// </para>
-        ///  
-        /// <para>
-        /// In this mode, the service instance is deployed and updated with the published, recommended
-        /// (latest) minor version of the current major version in use, by default. You can also
-        /// specify a different minor version of the current major version in use.
-        /// </para>
-        ///  </dd> <dt/> <dd> 
-        /// <para>
-        ///  <code>MAJOR_VERSION</code> 
-        /// </para>
-        ///  
-        /// <para>
-        /// In this mode, the service instance is deployed and updated with the published, recommended
-        /// (latest) major and minor version of the current template, by default. You can also
-        /// specify a different major version that is higher than the major version in use and
-        /// a minor version (optional).
-        /// </para>
-        ///  </dd> </dl>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateServiceInstance service method.</param>
         /// 
@@ -4872,50 +6058,20 @@ namespace Amazon.Proton
         /// 
         ///  
         /// <para>
-        /// There are four modes for updating a service instance as described in the following.
-        /// The <code>deploymentType</code> field defines the mode.
+        /// There are a few modes for updating a service instance. The <code>deploymentType</code>
+        /// field defines the mode.
         /// </para>
-        ///  <dl> <dt/> <dd> 
+        ///  <note> 
         /// <para>
-        ///  <code>NONE</code> 
+        /// You can't update a service instance while its deployment status, or the deployment
+        /// status of a component attached to it, is <code>IN_PROGRESS</code>.
         /// </para>
         ///  
         /// <para>
-        /// In this mode, a deployment <i>doesn't</i> occur. Only the requested metadata parameters
-        /// are updated.
+        /// For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+        /// components</a> in the <i>Proton User Guide</i>.
         /// </para>
-        ///  </dd> <dt/> <dd> 
-        /// <para>
-        ///  <code>CURRENT_VERSION</code> 
-        /// </para>
-        ///  
-        /// <para>
-        /// In this mode, the service instance is deployed and updated with the new spec that
-        /// you provide. Only requested parameters are updated. <i>Don’t</i> include minor or
-        /// major version parameters when you use this <code>deployment-type</code>.
-        /// </para>
-        ///  </dd> <dt/> <dd> 
-        /// <para>
-        ///  <code>MINOR_VERSION</code> 
-        /// </para>
-        ///  
-        /// <para>
-        /// In this mode, the service instance is deployed and updated with the published, recommended
-        /// (latest) minor version of the current major version in use, by default. You can also
-        /// specify a different minor version of the current major version in use.
-        /// </para>
-        ///  </dd> <dt/> <dd> 
-        /// <para>
-        ///  <code>MAJOR_VERSION</code> 
-        /// </para>
-        ///  
-        /// <para>
-        /// In this mode, the service instance is deployed and updated with the published, recommended
-        /// (latest) major and minor version of the current template, by default. You can also
-        /// specify a different major version that is higher than the major version in use and
-        /// a minor version (optional).
-        /// </para>
-        ///  </dd> </dl>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateServiceInstance service method.</param>
         /// <param name="cancellationToken">
@@ -4954,8 +6110,8 @@ namespace Amazon.Proton
         /// 
         ///  
         /// <para>
-        /// There are four modes for updating a service pipeline as described in the following.
-        /// The <code>deploymentType</code> field defines the mode.
+        /// There are four modes for updating a service pipeline. The <code>deploymentType</code>
+        /// field defines the mode.
         /// </para>
         ///  <dl> <dt/> <dd> 
         /// <para>
@@ -4973,8 +6129,8 @@ namespace Amazon.Proton
         ///  
         /// <para>
         /// In this mode, the service pipeline is deployed and updated with the new spec that
-        /// you provide. Only requested parameters are updated. <i>Don’t</i> include minor or
-        /// major version parameters when you use this <code>deployment-type</code>.
+        /// you provide. Only requested parameters are updated. <i>Don’t</i> include major or
+        /// minor version parameters when you use this <code>deployment-type</code>.
         /// </para>
         ///  </dd> <dt/> <dd> 
         /// <para>
@@ -4983,8 +6139,8 @@ namespace Amazon.Proton
         ///  
         /// <para>
         /// In this mode, the service pipeline is deployed and updated with the published, recommended
-        /// (latest) minor version of the current major version in use, by default. You can also
-        /// specify a different minor version of the current major version in use.
+        /// (latest) minor version of the current major version in use, by default. You can specify
+        /// a different minor version of the current major version in use.
         /// </para>
         ///  </dd> <dt/> <dd> 
         /// <para>
@@ -4993,9 +6149,9 @@ namespace Amazon.Proton
         ///  
         /// <para>
         /// In this mode, the service pipeline is deployed and updated with the published, recommended
-        /// (latest) major and minor version of the current template by default. You can also
-        /// specify a different major version that is higher than the major version in use and
-        /// a minor version (optional).
+        /// (latest) major and minor version of the current template by default. You can specify
+        /// a different major version that's higher than the major version in use and a minor
+        /// version.
         /// </para>
         ///  </dd> </dl>
         /// </summary>
@@ -5030,8 +6186,8 @@ namespace Amazon.Proton
         /// 
         ///  
         /// <para>
-        /// There are four modes for updating a service pipeline as described in the following.
-        /// The <code>deploymentType</code> field defines the mode.
+        /// There are four modes for updating a service pipeline. The <code>deploymentType</code>
+        /// field defines the mode.
         /// </para>
         ///  <dl> <dt/> <dd> 
         /// <para>
@@ -5049,8 +6205,8 @@ namespace Amazon.Proton
         ///  
         /// <para>
         /// In this mode, the service pipeline is deployed and updated with the new spec that
-        /// you provide. Only requested parameters are updated. <i>Don’t</i> include minor or
-        /// major version parameters when you use this <code>deployment-type</code>.
+        /// you provide. Only requested parameters are updated. <i>Don’t</i> include major or
+        /// minor version parameters when you use this <code>deployment-type</code>.
         /// </para>
         ///  </dd> <dt/> <dd> 
         /// <para>
@@ -5059,8 +6215,8 @@ namespace Amazon.Proton
         ///  
         /// <para>
         /// In this mode, the service pipeline is deployed and updated with the published, recommended
-        /// (latest) minor version of the current major version in use, by default. You can also
-        /// specify a different minor version of the current major version in use.
+        /// (latest) minor version of the current major version in use, by default. You can specify
+        /// a different minor version of the current major version in use.
         /// </para>
         ///  </dd> <dt/> <dd> 
         /// <para>
@@ -5069,9 +6225,9 @@ namespace Amazon.Proton
         ///  
         /// <para>
         /// In this mode, the service pipeline is deployed and updated with the published, recommended
-        /// (latest) major and minor version of the current template by default. You can also
-        /// specify a different major version that is higher than the major version in use and
-        /// a minor version (optional).
+        /// (latest) major and minor version of the current template by default. You can specify
+        /// a different major version that's higher than the major version in use and a minor
+        /// version.
         /// </para>
         ///  </dd> </dl>
         /// </summary>
@@ -5101,6 +6257,134 @@ namespace Amazon.Proton
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateServicePipeline">REST API Reference for UpdateServicePipeline Operation</seealso>
         Task<UpdateServicePipelineResponse> UpdateServicePipelineAsync(UpdateServicePipelineRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateServiceSyncBlocker
+
+
+        /// <summary>
+        /// Update the service sync blocker by resolving it.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateServiceSyncBlocker service method.</param>
+        /// 
+        /// <returns>The response from the UpdateServiceSyncBlocker service method, as returned by Proton.</returns>
+        /// <exception cref="Amazon.Proton.Model.AccessDeniedException">
+        /// There <i>isn't</i> sufficient access for performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ConflictException">
+        /// The request <i>couldn't</i> be made due to a conflicting operation or resource.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.InternalServerException">
+        /// The request failed to register with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ResourceNotFoundException">
+        /// The requested resource <i>wasn't</i> found.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ValidationException">
+        /// The input is invalid or an out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateServiceSyncBlocker">REST API Reference for UpdateServiceSyncBlocker Operation</seealso>
+        UpdateServiceSyncBlockerResponse UpdateServiceSyncBlocker(UpdateServiceSyncBlockerRequest request);
+
+
+
+        /// <summary>
+        /// Update the service sync blocker by resolving it.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateServiceSyncBlocker service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateServiceSyncBlocker service method, as returned by Proton.</returns>
+        /// <exception cref="Amazon.Proton.Model.AccessDeniedException">
+        /// There <i>isn't</i> sufficient access for performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ConflictException">
+        /// The request <i>couldn't</i> be made due to a conflicting operation or resource.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.InternalServerException">
+        /// The request failed to register with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ResourceNotFoundException">
+        /// The requested resource <i>wasn't</i> found.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ValidationException">
+        /// The input is invalid or an out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateServiceSyncBlocker">REST API Reference for UpdateServiceSyncBlocker Operation</seealso>
+        Task<UpdateServiceSyncBlockerResponse> UpdateServiceSyncBlockerAsync(UpdateServiceSyncBlockerRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateServiceSyncConfig
+
+
+        /// <summary>
+        /// Update the Proton Ops config file.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateServiceSyncConfig service method.</param>
+        /// 
+        /// <returns>The response from the UpdateServiceSyncConfig service method, as returned by Proton.</returns>
+        /// <exception cref="Amazon.Proton.Model.AccessDeniedException">
+        /// There <i>isn't</i> sufficient access for performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ConflictException">
+        /// The request <i>couldn't</i> be made due to a conflicting operation or resource.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.InternalServerException">
+        /// The request failed to register with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ResourceNotFoundException">
+        /// The requested resource <i>wasn't</i> found.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ValidationException">
+        /// The input is invalid or an out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateServiceSyncConfig">REST API Reference for UpdateServiceSyncConfig Operation</seealso>
+        UpdateServiceSyncConfigResponse UpdateServiceSyncConfig(UpdateServiceSyncConfigRequest request);
+
+
+
+        /// <summary>
+        /// Update the Proton Ops config file.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateServiceSyncConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateServiceSyncConfig service method, as returned by Proton.</returns>
+        /// <exception cref="Amazon.Proton.Model.AccessDeniedException">
+        /// There <i>isn't</i> sufficient access for performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ConflictException">
+        /// The request <i>couldn't</i> be made due to a conflicting operation or resource.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.InternalServerException">
+        /// The request failed to register with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ResourceNotFoundException">
+        /// The requested resource <i>wasn't</i> found.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ValidationException">
+        /// The input is invalid or an out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateServiceSyncConfig">REST API Reference for UpdateServiceSyncConfig Operation</seealso>
+        Task<UpdateServiceSyncConfigResponse> UpdateServiceSyncConfigAsync(UpdateServiceSyncConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -5237,7 +6521,9 @@ namespace Amazon.Proton
 
         /// <summary>
         /// Update template sync configuration parameters, except for the <code>templateName</code>
-        /// and <code>templateType</code>.
+        /// and <code>templateType</code>. Repository details (branch, name, and provider) should
+        /// be of a linked repository. A linked repository is a repository that has been registered
+        /// with Proton. For more information, see <a>CreateRepository</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateTemplateSyncConfig service method.</param>
         /// 
@@ -5267,7 +6553,9 @@ namespace Amazon.Proton
 
         /// <summary>
         /// Update template sync configuration parameters, except for the <code>templateName</code>
-        /// and <code>templateType</code>.
+        /// and <code>templateType</code>. Repository details (branch, name, and provider) should
+        /// be of a linked repository. A linked repository is a repository that has been registered
+        /// with Proton. For more information, see <a>CreateRepository</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateTemplateSyncConfig service method.</param>
         /// <param name="cancellationToken">

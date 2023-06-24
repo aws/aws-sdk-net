@@ -55,7 +55,7 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
         public IRequest Marshall(ListManagedEndpointsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.EMRContainers");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-10-01";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-10-01";
             request.HttpMethod = "GET";
 
             if (!publicRequest.IsSetVirtualClusterId())

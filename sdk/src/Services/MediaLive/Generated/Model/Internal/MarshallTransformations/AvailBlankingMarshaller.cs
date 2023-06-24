@@ -34,7 +34,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AvailBlanking Marshaller
-    /// </summary>       
+    /// </summary>
     public class AvailBlankingMarshaller : IRequestMarshaller<AvailBlanking, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AvailBlankingMarshaller Instance = new AvailBlankingMarshaller();
 
     }

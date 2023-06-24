@@ -34,7 +34,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// JobCommand Marshaller
-    /// </summary>       
+    /// </summary>
     public class JobCommandMarshaller : IRequestMarshaller<JobCommand, JsonMarshallerContext> 
     {
         /// <summary>
@@ -57,6 +57,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.PythonVersion);
             }
 
+            if(requestObject.IsSetRuntime())
+            {
+                context.Writer.WritePropertyName("Runtime");
+                context.Writer.Write(requestObject.Runtime);
+            }
+
             if(requestObject.IsSetScriptLocation())
             {
                 context.Writer.WritePropertyName("ScriptLocation");
@@ -67,7 +73,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static JobCommandMarshaller Instance = new JobCommandMarshaller();
 
     }

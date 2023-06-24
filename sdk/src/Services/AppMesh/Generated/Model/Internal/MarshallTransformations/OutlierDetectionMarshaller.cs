@@ -34,7 +34,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// OutlierDetection Marshaller
-    /// </summary>       
+    /// </summary>
     public class OutlierDetectionMarshaller : IRequestMarshaller<OutlierDetection, JsonMarshallerContext> 
     {
         /// <summary>
@@ -83,7 +83,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static OutlierDetectionMarshaller Instance = new OutlierDetectionMarshaller();
 
     }

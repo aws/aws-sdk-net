@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WorkMail.Model
 {
     /// <summary>
-    /// The user, group, or resource name isn't unique in Amazon WorkMail.
+    /// The user, group, or resource name isn't unique in WorkMail.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

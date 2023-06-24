@@ -163,8 +163,8 @@ namespace Amazon.Macie2.Model
         /// Gets and sets the property Keywords. 
         /// <para>
         /// An array that lists specific character sequences (<i>keywords</i>), one of which must
-        /// be within proximity (maximumMatchDistance) of the regular expression to match. Keywords
-        /// aren't case sensitive.
+        /// precede and be within proximity (maximumMatchDistance) of the regular expression to
+        /// match. Keywords aren't case sensitive.
         /// </para>
         /// </summary>
         public List<string> Keywords
@@ -182,10 +182,11 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property MaximumMatchDistance. 
         /// <para>
-        /// The maximum number of characters that can exist between text that matches the regular
-        /// expression and the character sequences specified by the keywords array. Amazon Macie
-        /// includes or excludes a result based on the proximity of a keyword to text that matches
-        /// the regular expression.
+        /// The maximum number of characters that can exist between the end of at least one complete
+        /// character sequence specified by the keywords array and the end of the text that matches
+        /// the regex pattern. If a complete keyword precedes all the text that matches the pattern
+        /// and the keyword is within the specified distance, Amazon Macie includes the result.
+        /// Otherwise, Macie excludes the result.
         /// </para>
         /// </summary>
         public int MaximumMatchDistance

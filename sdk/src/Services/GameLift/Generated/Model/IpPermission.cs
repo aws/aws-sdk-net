@@ -32,17 +32,8 @@ namespace Amazon.GameLift.Model
     /// A range of IP addresses and port settings that allow inbound traffic to connect to
     /// server processes on an instance in a fleet. New game sessions are assigned an IP address/port
     /// number combination, which must fall into the fleet's allowed ranges. Fleets with custom
-    /// game builds must have permissions explicitly set. For Realtime Servers fleets, GameLift
-    /// automatically opens two port ranges, one for TCP messaging and one for UDP.
-    /// 
-    ///  
-    /// <para>
-    ///  <b>Related actions</b> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <a>DescribeFleetPortSettings</a> 
-    /// </para>
+    /// game builds must have permissions explicitly set. For Realtime Servers fleets, Amazon
+    /// GameLift automatically opens two port ranges, one for TCP messaging and one for UDP.
     /// </summary>
     public partial class IpPermission
     {
@@ -55,6 +46,15 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property FromPort. 
         /// <para>
         /// A starting value for a range of allowed port numbers.
+        /// </para>
+        ///  
+        /// <para>
+        /// For fleets using Linux builds, only ports <code>22</code> and <code>1026-60000</code>
+        /// are valid.
+        /// </para>
+        ///  
+        /// <para>
+        /// For fleets using Windows builds, only ports <code>1026-60000</code> are valid.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=60000)]
@@ -114,7 +114,16 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property ToPort. 
         /// <para>
         /// An ending value for a range of allowed port numbers. Port numbers are end-inclusive.
-        /// This value must be higher than <code>FromPort</code>.
+        /// This value must be equal to or greater than <code>FromPort</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For fleets using Linux builds, only ports <code>22</code> and <code>1026-60000</code>
+        /// are valid.
+        /// </para>
+        ///  
+        /// <para>
+        /// For fleets using Windows builds, only ports <code>1026-60000</code> are valid.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=60000)]

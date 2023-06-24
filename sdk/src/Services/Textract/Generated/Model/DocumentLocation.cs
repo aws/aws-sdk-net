@@ -30,7 +30,7 @@ namespace Amazon.Textract.Model
 {
     /// <summary>
     /// The Amazon S3 bucket that contains the document to be processed. It's used by asynchronous
-    /// operations such as <a>StartDocumentTextDetection</a>.
+    /// operations.
     /// 
     ///  
     /// <para>

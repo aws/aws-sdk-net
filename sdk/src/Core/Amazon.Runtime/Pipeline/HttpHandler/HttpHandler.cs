@@ -17,6 +17,7 @@ using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Util;
+using Amazon.Util.Internal;
 using System;
 using System.Globalization;
 using System.Net;
@@ -267,7 +268,7 @@ namespace Amazon.Runtime.Internal
                 }
 
                 if (httpRequest != null)
-                {                    
+                {
                     httpRequest.Dispose();
                 }
 
@@ -302,7 +303,7 @@ namespace Amazon.Runtime.Internal
 
                 var requestContent = httpRequest.EndGetRequestContent(result);
                 WriteContentToRequestBody(requestContent, httpRequest, executionContext.RequestContext);
-                //var requestStream = httpRequest.EndSetRequestBody(result);                
+                //var requestStream = httpRequest.EndSetRequestBody(result);    
                 httpRequest.BeginGetResponse(new AsyncCallback(GetResponseCallback), executionContext);
             }
             catch (Exception exception)
@@ -488,7 +489,7 @@ namespace Amazon.Runtime.Internal
                     }
                     else
                     {
-                        request.Content = new Byte[0];
+                        request.Content = ArrayEx.Empty<byte>();
                     }
                 }
 
@@ -535,16 +536,44 @@ namespace Amazon.Runtime.Internal
             var requestHasConfigForChunkStream = wrappedRequest.UseChunkEncoding && (wrappedRequest.AWS4SignerResult != null || wrappedRequest.AWS4aSignerResult != null);
             var hasTransferEncodingHeader = wrappedRequest.Headers.ContainsKey(HeaderKeys.TransferEncodingHeader);
             var isTransferEncodingHeaderChunked = hasTransferEncodingHeader && wrappedRequest.Headers[HeaderKeys.TransferEncodingHeader] == "chunked";
+            var hasTrailingHeaders = wrappedRequest.TrailingHeaders?.Count > 0;
 
             if (requestHasConfigForChunkStream || isTransferEncodingHeaderChunked)
             {
-                if (wrappedRequest.AWS4SignerResult != null)
+                AWSSigningResultBase signingResult;
+                if (wrappedRequest.AWS4aSignerResult != null)
                 {
-                    return new ChunkedUploadWrapperStream(originalStream, requestContext.ClientConfig.BufferSize, wrappedRequest.AWS4SignerResult);
+                    signingResult = wrappedRequest.AWS4aSignerResult;
                 }
-                else // SigV4a
+                else
                 {
-                    return new ChunkedUploadWrapperStream(originalStream, requestContext.ClientConfig.BufferSize, wrappedRequest.AWS4aSignerResult);
+                    signingResult = wrappedRequest.AWS4SignerResult;
+                }
+
+                if (hasTrailingHeaders)
+                {
+                        return new ChunkedUploadWrapperStream(originalStream,
+                                                     requestContext.ClientConfig.BufferSize,
+                                                     signingResult,
+                                                     wrappedRequest.SelectedChecksum,
+                                                     wrappedRequest.TrailingHeaders);
+                }
+                else // no trailing headers
+                {
+                        return new ChunkedUploadWrapperStream(originalStream,
+                                                     requestContext.ClientConfig.BufferSize,
+                                                     signingResult);
+                }
+            }
+            else if (hasTrailingHeaders) // and is unsigned/unchunked
+            {
+                if (wrappedRequest.SelectedChecksum != CoreChecksumAlgorithm.NONE)
+                {
+                    return new TrailingHeadersWrapperStream(originalStream, wrappedRequest.TrailingHeaders, wrappedRequest.SelectedChecksum);
+                }
+                else
+                {
+                    return new TrailingHeadersWrapperStream(originalStream, wrappedRequest.TrailingHeaders);
                 }
             }
             else

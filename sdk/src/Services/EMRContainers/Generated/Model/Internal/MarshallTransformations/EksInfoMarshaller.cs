@@ -34,7 +34,7 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// EksInfo Marshaller
-    /// </summary>       
+    /// </summary>
     public class EksInfoMarshaller : IRequestMarshaller<EksInfo, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static EksInfoMarshaller Instance = new EksInfoMarshaller();
 
     }

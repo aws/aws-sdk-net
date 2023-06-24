@@ -34,7 +34,7 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// OrganizationResourceDetailedStatusFilters Marshaller
-    /// </summary>       
+    /// </summary>
     public class OrganizationResourceDetailedStatusFiltersMarshaller : IRequestMarshaller<OrganizationResourceDetailedStatusFilters, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static OrganizationResourceDetailedStatusFiltersMarshaller Instance = new OrganizationResourceDetailedStatusFiltersMarshaller();
 
     }

@@ -4,6 +4,9 @@
     "MaxErrorRetry": 6,
     "Timeout": 1000,
     "AuthenticationRegion": "us-east-1",
-    "Region": "us-west-2"
+    "Region": "us-west-2",
+    "DefaultsMode": "Standard",
+    "ForcePathStyle":  true,
+    "RetryMode": "Standard"
   }
 }

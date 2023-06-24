@@ -35,6 +35,7 @@ namespace Amazon.GuardDuty.Model
     {
         private string _accountId;
         private DataSourceConfigurationsResult _dataSources;
+        private List<MemberFeaturesConfigurationResult> _features = new List<MemberFeaturesConfigurationResult>();
 
         /// <summary>
         /// Gets and sets the property AccountId. 
@@ -61,7 +62,7 @@ namespace Amazon.GuardDuty.Model
         /// Contains information on the status of data sources for the account.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [Obsolete("This parameter is deprecated, use Features instead")]
         public DataSourceConfigurationsResult DataSources
         {
             get { return this._dataSources; }
@@ -72,6 +73,24 @@ namespace Amazon.GuardDuty.Model
         internal bool IsSetDataSources()
         {
             return this._dataSources != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Features. 
+        /// <para>
+        /// Contains information about the status of the features for the member account.
+        /// </para>
+        /// </summary>
+        public List<MemberFeaturesConfigurationResult> Features
+        {
+            get { return this._features; }
+            set { this._features = value; }
+        }
+
+        // Check to see if Features property is set
+        internal bool IsSetFeatures()
+        {
+            return this._features != null && this._features.Count > 0; 
         }
 
     }

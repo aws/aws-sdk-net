@@ -345,6 +345,52 @@ namespace Amazon.ApplicationInsights
 
 
     /// <summary>
+    /// Constants used for properties of type GroupingType.
+    /// </summary>
+    public class GroupingType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACCOUNT_BASED for GroupingType
+        /// </summary>
+        public static readonly GroupingType ACCOUNT_BASED = new GroupingType("ACCOUNT_BASED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GroupingType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GroupingType FindValue(string value)
+        {
+            return FindValue<GroupingType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GroupingType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type LogFilter.
     /// </summary>
     public class LogFilter : ConstantClass
@@ -459,6 +505,10 @@ namespace Amazon.ApplicationInsights
         /// </summary>
         public static readonly SeverityLevel High = new SeverityLevel("High");
         /// <summary>
+        /// Constant Informative for SeverityLevel
+        /// </summary>
+        public static readonly SeverityLevel Informative = new SeverityLevel("Informative");
+        /// <summary>
         /// Constant Low for SeverityLevel
         /// </summary>
         public static readonly SeverityLevel Low = new SeverityLevel("Low");
@@ -567,6 +617,10 @@ namespace Amazon.ApplicationInsights
     {
 
         /// <summary>
+        /// Constant ACTIVE_DIRECTORY for Tier
+        /// </summary>
+        public static readonly Tier ACTIVE_DIRECTORY = new Tier("ACTIVE_DIRECTORY");
+        /// <summary>
         /// Constant CUSTOM for Tier
         /// </summary>
         public static readonly Tier CUSTOM = new Tier("CUSTOM");
@@ -618,6 +672,10 @@ namespace Amazon.ApplicationInsights
         /// Constant SAP_HANA_SINGLE_NODE for Tier
         /// </summary>
         public static readonly Tier SAP_HANA_SINGLE_NODE = new Tier("SAP_HANA_SINGLE_NODE");
+        /// <summary>
+        /// Constant SHAREPOINT for Tier
+        /// </summary>
+        public static readonly Tier SHAREPOINT = new Tier("SHAREPOINT");
         /// <summary>
         /// Constant SQL_SERVER for Tier
         /// </summary>

@@ -34,13 +34,17 @@ namespace Amazon.GuardDuty.Model
     public partial class Service
     {
         private Action _action;
+        private ServiceAdditionalInfo _additionalInfo;
         private bool? _archived;
         private int? _count;
         private string _detectorId;
+        private EbsVolumeScanDetails _ebsVolumeScanDetails;
         private string _eventFirstSeen;
         private string _eventLastSeen;
         private Evidence _evidence;
+        private string _featureName;
         private string _resourceRole;
+        private RuntimeDetails _runtimeDetails;
         private string _serviceName;
         private string _userFeedback;
 
@@ -60,6 +64,24 @@ namespace Amazon.GuardDuty.Model
         internal bool IsSetAction()
         {
             return this._action != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AdditionalInfo. 
+        /// <para>
+        /// Contains additional information about the generated finding.
+        /// </para>
+        /// </summary>
+        public ServiceAdditionalInfo AdditionalInfo
+        {
+            get { return this._additionalInfo; }
+            set { this._additionalInfo = value; }
+        }
+
+        // Check to see if AdditionalInfo property is set
+        internal bool IsSetAdditionalInfo()
+        {
+            return this._additionalInfo != null;
         }
 
         /// <summary>
@@ -118,6 +140,24 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EbsVolumeScanDetails. 
+        /// <para>
+        /// Returns details from the malware scan that created a finding.
+        /// </para>
+        /// </summary>
+        public EbsVolumeScanDetails EbsVolumeScanDetails
+        {
+            get { return this._ebsVolumeScanDetails; }
+            set { this._ebsVolumeScanDetails = value; }
+        }
+
+        // Check to see if EbsVolumeScanDetails property is set
+        internal bool IsSetEbsVolumeScanDetails()
+        {
+            return this._ebsVolumeScanDetails != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property EventFirstSeen. 
         /// <para>
         /// The first-seen timestamp of the activity that prompted GuardDuty to generate this
@@ -173,6 +213,24 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
+        /// Gets and sets the property FeatureName. 
+        /// <para>
+        /// The name of the feature that generated a finding.
+        /// </para>
+        /// </summary>
+        public string FeatureName
+        {
+            get { return this._featureName; }
+            set { this._featureName = value; }
+        }
+
+        // Check to see if FeatureName property is set
+        internal bool IsSetFeatureName()
+        {
+            return this._featureName != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ResourceRole. 
         /// <para>
         /// The resource role information for this finding.
@@ -191,9 +249,27 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
+        /// Gets and sets the property RuntimeDetails. 
+        /// <para>
+        /// Information about the process and any required context values for a specific finding
+        /// </para>
+        /// </summary>
+        public RuntimeDetails RuntimeDetails
+        {
+            get { return this._runtimeDetails; }
+            set { this._runtimeDetails = value; }
+        }
+
+        // Check to see if RuntimeDetails property is set
+        internal bool IsSetRuntimeDetails()
+        {
+            return this._runtimeDetails != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ServiceName. 
         /// <para>
-        /// The name of the AWS service (GuardDuty) that generated a finding.
+        /// The name of the Amazon Web Services service (GuardDuty) that generated a finding.
         /// </para>
         /// </summary>
         public string ServiceName

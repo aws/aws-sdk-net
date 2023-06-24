@@ -40,7 +40,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property DomainName. 
         /// <para>
-        /// [Required] The name of the <a>DomainName</a> resource.
+        /// The name of the DomainName resource.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -34,7 +34,7 @@ namespace Amazon.MigrationHubRefactorSpaces.Model.Internal.MarshallTransformatio
 {
     /// <summary>
     /// LambdaEndpointInput Marshaller
-    /// </summary>       
+    /// </summary>
     public class LambdaEndpointInputMarshaller : IRequestMarshaller<LambdaEndpointInput, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.MigrationHubRefactorSpaces.Model.Internal.MarshallTransformatio
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static LambdaEndpointInputMarshaller Instance = new LambdaEndpointInputMarshaller();
 
     }

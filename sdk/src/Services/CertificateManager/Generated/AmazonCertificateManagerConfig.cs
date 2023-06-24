@@ -17,22 +17,22 @@
  * Do not modify this file. This file is generated from the acm-2015-12-08.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
-
+using Amazon.CertificateManager.Internal;
 
 namespace Amazon.CertificateManager
 {
     /// <summary>
     /// Configuration for accessing Amazon CertificateManager service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonCertificateManagerConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.1.63");
+            InternalSDKUtils.BuildUserAgentString("3.7.101.136");
 
         private string _userAgent = UserAgentString;
 
@@ -40,8 +40,10 @@ namespace Amazon.CertificateManager
         /// Default constructor
         /// </summary>
         public AmazonCertificateManagerConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonCertificateManagerDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "acm";
+            this.EndpointProvider = new AmazonCertificateManagerEndpointProvider();
         }
 
         /// <summary>
@@ -76,5 +78,6 @@ namespace Amazon.CertificateManager
                 return _userAgent;
             }
         }
+
     }
 }

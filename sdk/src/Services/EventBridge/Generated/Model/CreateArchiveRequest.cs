@@ -88,6 +88,7 @@ namespace Amazon.EventBridge.Model
         /// An event pattern to use to filter events sent to the archive.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=4096)]
         public string EventPattern
         {
             get { return this._eventPattern; }

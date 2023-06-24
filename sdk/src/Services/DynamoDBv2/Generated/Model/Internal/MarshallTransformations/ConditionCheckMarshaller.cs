@@ -34,7 +34,7 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ConditionCheck Marshaller
-    /// </summary>       
+    /// </summary>
     public class ConditionCheckMarshaller : IRequestMarshaller<ConditionCheck, JsonMarshallerContext> 
     {
         /// <summary>
@@ -119,7 +119,7 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ConditionCheckMarshaller Instance = new ConditionCheckMarshaller();
 
     }

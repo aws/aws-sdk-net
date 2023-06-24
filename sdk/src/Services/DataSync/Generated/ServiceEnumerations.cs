@@ -125,6 +125,272 @@ namespace Amazon.DataSync
 
 
     /// <summary>
+    /// Constants used for properties of type DiscoveryJobStatus.
+    /// </summary>
+    public class DiscoveryJobStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPLETED for DiscoveryJobStatus
+        /// </summary>
+        public static readonly DiscoveryJobStatus COMPLETED = new DiscoveryJobStatus("COMPLETED");
+        /// <summary>
+        /// Constant COMPLETED_WITH_ISSUES for DiscoveryJobStatus
+        /// </summary>
+        public static readonly DiscoveryJobStatus COMPLETED_WITH_ISSUES = new DiscoveryJobStatus("COMPLETED_WITH_ISSUES");
+        /// <summary>
+        /// Constant FAILED for DiscoveryJobStatus
+        /// </summary>
+        public static readonly DiscoveryJobStatus FAILED = new DiscoveryJobStatus("FAILED");
+        /// <summary>
+        /// Constant RUNNING for DiscoveryJobStatus
+        /// </summary>
+        public static readonly DiscoveryJobStatus RUNNING = new DiscoveryJobStatus("RUNNING");
+        /// <summary>
+        /// Constant STOPPED for DiscoveryJobStatus
+        /// </summary>
+        public static readonly DiscoveryJobStatus STOPPED = new DiscoveryJobStatus("STOPPED");
+        /// <summary>
+        /// Constant TERMINATED for DiscoveryJobStatus
+        /// </summary>
+        public static readonly DiscoveryJobStatus TERMINATED = new DiscoveryJobStatus("TERMINATED");
+        /// <summary>
+        /// Constant WARNING for DiscoveryJobStatus
+        /// </summary>
+        public static readonly DiscoveryJobStatus WARNING = new DiscoveryJobStatus("WARNING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DiscoveryJobStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DiscoveryJobStatus FindValue(string value)
+        {
+            return FindValue<DiscoveryJobStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DiscoveryJobStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DiscoveryResourceFilter.
+    /// </summary>
+    public class DiscoveryResourceFilter : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SVM for DiscoveryResourceFilter
+        /// </summary>
+        public static readonly DiscoveryResourceFilter SVM = new DiscoveryResourceFilter("SVM");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DiscoveryResourceFilter(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DiscoveryResourceFilter FindValue(string value)
+        {
+            return FindValue<DiscoveryResourceFilter>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DiscoveryResourceFilter(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DiscoveryResourceType.
+    /// </summary>
+    public class DiscoveryResourceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CLUSTER for DiscoveryResourceType
+        /// </summary>
+        public static readonly DiscoveryResourceType CLUSTER = new DiscoveryResourceType("CLUSTER");
+        /// <summary>
+        /// Constant SVM for DiscoveryResourceType
+        /// </summary>
+        public static readonly DiscoveryResourceType SVM = new DiscoveryResourceType("SVM");
+        /// <summary>
+        /// Constant VOLUME for DiscoveryResourceType
+        /// </summary>
+        public static readonly DiscoveryResourceType VOLUME = new DiscoveryResourceType("VOLUME");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DiscoveryResourceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DiscoveryResourceType FindValue(string value)
+        {
+            return FindValue<DiscoveryResourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DiscoveryResourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DiscoverySystemType.
+    /// </summary>
+    public class DiscoverySystemType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NetAppONTAP for DiscoverySystemType
+        /// </summary>
+        public static readonly DiscoverySystemType NetAppONTAP = new DiscoverySystemType("NetAppONTAP");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DiscoverySystemType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DiscoverySystemType FindValue(string value)
+        {
+            return FindValue<DiscoverySystemType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DiscoverySystemType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type EfsInTransitEncryption.
+    /// </summary>
+    public class EfsInTransitEncryption : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NONE for EfsInTransitEncryption
+        /// </summary>
+        public static readonly EfsInTransitEncryption NONE = new EfsInTransitEncryption("NONE");
+        /// <summary>
+        /// Constant TLS1_2 for EfsInTransitEncryption
+        /// </summary>
+        public static readonly EfsInTransitEncryption TLS1_2 = new EfsInTransitEncryption("TLS1_2");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EfsInTransitEncryption(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EfsInTransitEncryption FindValue(string value)
+        {
+            return FindValue<EfsInTransitEncryption>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EfsInTransitEncryption(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type EndpointType.
     /// </summary>
     public class EndpointType : ConstantClass
@@ -715,6 +981,56 @@ namespace Amazon.DataSync
 
 
     /// <summary>
+    /// Constants used for properties of type ObjectTags.
+    /// </summary>
+    public class ObjectTags : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NONE for ObjectTags
+        /// </summary>
+        public static readonly ObjectTags NONE = new ObjectTags("NONE");
+        /// <summary>
+        /// Constant PRESERVE for ObjectTags
+        /// </summary>
+        public static readonly ObjectTags PRESERVE = new ObjectTags("PRESERVE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ObjectTags(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ObjectTags FindValue(string value)
+        {
+            return FindValue<ObjectTags>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ObjectTags(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Operator.
     /// </summary>
     public class Operator : ConstantClass
@@ -1051,6 +1367,64 @@ namespace Amazon.DataSync
 
 
     /// <summary>
+    /// Constants used for properties of type RecommendationStatus.
+    /// </summary>
+    public class RecommendationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPLETED for RecommendationStatus
+        /// </summary>
+        public static readonly RecommendationStatus COMPLETED = new RecommendationStatus("COMPLETED");
+        /// <summary>
+        /// Constant FAILED for RecommendationStatus
+        /// </summary>
+        public static readonly RecommendationStatus FAILED = new RecommendationStatus("FAILED");
+        /// <summary>
+        /// Constant IN_PROGRESS for RecommendationStatus
+        /// </summary>
+        public static readonly RecommendationStatus IN_PROGRESS = new RecommendationStatus("IN_PROGRESS");
+        /// <summary>
+        /// Constant NONE for RecommendationStatus
+        /// </summary>
+        public static readonly RecommendationStatus NONE = new RecommendationStatus("NONE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RecommendationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RecommendationStatus FindValue(string value)
+        {
+            return FindValue<RecommendationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RecommendationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type S3StorageClass.
     /// </summary>
     public class S3StorageClass : ConstantClass
@@ -1064,6 +1438,10 @@ namespace Amazon.DataSync
         /// Constant GLACIER for S3StorageClass
         /// </summary>
         public static readonly S3StorageClass GLACIER = new S3StorageClass("GLACIER");
+        /// <summary>
+        /// Constant GLACIER_INSTANT_RETRIEVAL for S3StorageClass
+        /// </summary>
+        public static readonly S3StorageClass GLACIER_INSTANT_RETRIEVAL = new S3StorageClass("GLACIER_INSTANT_RETRIEVAL");
         /// <summary>
         /// Constant INTELLIGENT_TIERING for S3StorageClass
         /// </summary>
@@ -1185,9 +1563,17 @@ namespace Amazon.DataSync
         /// </summary>
         public static readonly SmbVersion AUTOMATIC = new SmbVersion("AUTOMATIC");
         /// <summary>
+        /// Constant SMB1 for SmbVersion
+        /// </summary>
+        public static readonly SmbVersion SMB1 = new SmbVersion("SMB1");
+        /// <summary>
         /// Constant SMB2 for SmbVersion
         /// </summary>
         public static readonly SmbVersion SMB2 = new SmbVersion("SMB2");
+        /// <summary>
+        /// Constant SMB2_0 for SmbVersion
+        /// </summary>
+        public static readonly SmbVersion SMB2_0 = new SmbVersion("SMB2_0");
         /// <summary>
         /// Constant SMB3 for SmbVersion
         /// </summary>
@@ -1222,6 +1608,60 @@ namespace Amazon.DataSync
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SmbVersion(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type StorageSystemConnectivityStatus.
+    /// </summary>
+    public class StorageSystemConnectivityStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAIL for StorageSystemConnectivityStatus
+        /// </summary>
+        public static readonly StorageSystemConnectivityStatus FAIL = new StorageSystemConnectivityStatus("FAIL");
+        /// <summary>
+        /// Constant PASS for StorageSystemConnectivityStatus
+        /// </summary>
+        public static readonly StorageSystemConnectivityStatus PASS = new StorageSystemConnectivityStatus("PASS");
+        /// <summary>
+        /// Constant UNKNOWN for StorageSystemConnectivityStatus
+        /// </summary>
+        public static readonly StorageSystemConnectivityStatus UNKNOWN = new StorageSystemConnectivityStatus("UNKNOWN");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public StorageSystemConnectivityStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StorageSystemConnectivityStatus FindValue(string value)
+        {
+            return FindValue<StorageSystemConnectivityStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StorageSystemConnectivityStatus(string value)
         {
             return FindValue(value);
         }

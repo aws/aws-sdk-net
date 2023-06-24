@@ -104,9 +104,17 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 {
                     return CNAMEAlreadyExistsExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ContinuousDeploymentPolicyInUse"))
+                {
+                    return ContinuousDeploymentPolicyInUseExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior"))
                 {
                     return IllegalFieldLevelEncryptionConfigAssociationWithCacheBehaviorExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("IllegalOriginAccessConfiguration"))
+                {
+                    return IllegalOriginAccessConfigurationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("IllegalUpdate"))
                 {
@@ -123,6 +131,10 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidDefaultRootObject"))
                 {
                     return InvalidDefaultRootObjectExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidDomainNameForOriginAccessControl"))
+                {
+                    return InvalidDomainNameForOriginAccessControlExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidErrorCode"))
                 {
@@ -159,6 +171,10 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidMinimumProtocolVersion"))
                 {
                     return InvalidMinimumProtocolVersionExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidOriginAccessControl"))
+                {
+                    return InvalidOriginAccessControlExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidOriginAccessIdentity"))
                 {
@@ -208,6 +224,10 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 {
                     return NoSuchCachePolicyExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("NoSuchContinuousDeploymentPolicy"))
+                {
+                    return NoSuchContinuousDeploymentPolicyExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("NoSuchDistribution"))
                 {
                     return NoSuchDistributionExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
@@ -239,6 +259,10 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 if (errorResponse.Code != null && errorResponse.Code.Equals("RealtimeLogConfigOwnerMismatch"))
                 {
                     return RealtimeLogConfigOwnerMismatchExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("StagingDistributionInUse"))
+                {
+                    return StagingDistributionInUseExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("TooManyCacheBehaviors"))
                 {

@@ -35,6 +35,7 @@ namespace Amazon.Backup.Model
     {
         private DateTime? _lastBackupTime;
         private string _resourceArn;
+        private string _resourceName;
         private string _resourceType;
 
         /// <summary>
@@ -75,6 +76,24 @@ namespace Amazon.Backup.Model
         internal bool IsSetResourceArn()
         {
             return this._resourceArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceName. 
+        /// <para>
+        /// This is the non-unique name of the resource that belongs to the specified backup.
+        /// </para>
+        /// </summary>
+        public string ResourceName
+        {
+            get { return this._resourceName; }
+            set { this._resourceName = value; }
+        }
+
+        // Check to see if ResourceName property is set
+        internal bool IsSetResourceName()
+        {
+            return this._resourceName != null;
         }
 
         /// <summary>

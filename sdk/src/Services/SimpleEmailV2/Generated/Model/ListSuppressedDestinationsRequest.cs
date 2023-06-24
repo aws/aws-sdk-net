@@ -44,8 +44,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// Gets and sets the property EndDate. 
         /// <para>
         /// Used to filter the list of suppressed email destinations so that it only includes
-        /// addresses that were added to the list before a specific date. The date that you specify
-        /// should be in Unix time format.
+        /// addresses that were added to the list before a specific date.
         /// </para>
         /// </summary>
         public DateTime EndDate
@@ -122,8 +121,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// Gets and sets the property StartDate. 
         /// <para>
         /// Used to filter the list of suppressed email destinations so that it only includes
-        /// addresses that were added to the list after a specific date. The date that you specify
-        /// should be in Unix time format.
+        /// addresses that were added to the list after a specific date.
         /// </para>
         /// </summary>
         public DateTime StartDate

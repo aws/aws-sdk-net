@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GameLift.Model
 {
     /// <summary>
-    /// Represents the returned data in response to a request operation.
+    /// This is the response object from the RequestUploadCredentials operation.
     /// </summary>
     public partial class RequestUploadCredentialsResponse : AmazonWebServiceResponse
     {
@@ -57,11 +57,12 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property UploadCredentials. 
         /// <para>
-        /// AWS credentials required when uploading a game build to the storage location. These
-        /// credentials have a limited lifespan and are valid only for the build they were issued
-        /// for.
+        /// Amazon Web Services credentials required when uploading a game build to the storage
+        /// location. These credentials have a limited lifespan and are valid only for the build
+        /// they were issued for.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public Credentials UploadCredentials
         {
             get { return this._uploadCredentials; }

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// Identifies a network interface for the EC2 instance.
+    /// Identifies a network interface for the Amazon EC2 instance.
     /// </summary>
     public partial class AwsEc2InstanceNetworkInterfacesDetails
     {

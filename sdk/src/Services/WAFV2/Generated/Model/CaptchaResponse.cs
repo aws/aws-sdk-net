@@ -79,7 +79,7 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property SolveTimestamp. 
         /// <para>
-        /// The time that the <code>CAPTCHA</code> puzzle was solved for the supplied token. 
+        /// The time that the <code>CAPTCHA</code> was last solved for the supplied token. 
         /// </para>
         /// </summary>
         public long SolveTimestamp

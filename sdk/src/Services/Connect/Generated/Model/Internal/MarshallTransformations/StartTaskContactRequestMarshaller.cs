@@ -56,7 +56,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Connect");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-08-08";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-08-08";
             request.HttpMethod = "PUT";
 
             request.ResourcePath = "/contact/task";
@@ -88,7 +88,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 else if(!(publicRequest.IsSetClientToken()))
                 {
                     context.Writer.WritePropertyName("ClientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());                                                
+                    context.Writer.Write(Guid.NewGuid().ToString());
                 }
                 if(publicRequest.IsSetContactFlowId())
                 {
@@ -120,6 +120,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.PreviousContactId);
                 }
 
+                if(publicRequest.IsSetQuickConnectId())
+                {
+                    context.Writer.WritePropertyName("QuickConnectId");
+                    context.Writer.Write(publicRequest.QuickConnectId);
+                }
+
                 if(publicRequest.IsSetReferences())
                 {
                     context.Writer.WritePropertyName("References");
@@ -139,13 +145,24 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetRelatedContactId())
+                {
+                    context.Writer.WritePropertyName("RelatedContactId");
+                    context.Writer.Write(publicRequest.RelatedContactId);
+                }
+
                 if(publicRequest.IsSetScheduledTime())
                 {
                     context.Writer.WritePropertyName("ScheduledTime");
                     context.Writer.Write(publicRequest.ScheduledTime);
                 }
 
-        
+                if(publicRequest.IsSetTaskTemplateId())
+                {
+                    context.Writer.WritePropertyName("TaskTemplateId");
+                    context.Writer.Write(publicRequest.TaskTemplateId);
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

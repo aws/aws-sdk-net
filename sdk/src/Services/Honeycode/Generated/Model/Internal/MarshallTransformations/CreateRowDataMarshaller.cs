@@ -34,7 +34,7 @@ namespace Amazon.Honeycode.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CreateRowData Marshaller
-    /// </summary>       
+    /// </summary>
     public class CreateRowDataMarshaller : IRequestMarshaller<CreateRowData, JsonMarshallerContext> 
     {
         /// <summary>
@@ -74,7 +74,7 @@ namespace Amazon.Honeycode.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CreateRowDataMarshaller Instance = new CreateRowDataMarshaller();
 
     }

@@ -56,6 +56,7 @@ namespace Amazon.CustomerProfiles.Model
         private ConflictResolution _conflictResolution;
         private Consolidation _consolidation;
         private string _domainName;
+        private double? _minAllowedConfidenceScoreForMerging;
 
         /// <summary>
         /// Gets and sets the property ConflictResolution. 
@@ -112,6 +113,26 @@ namespace Amazon.CustomerProfiles.Model
         internal bool IsSetDomainName()
         {
             return this._domainName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MinAllowedConfidenceScoreForMerging. 
+        /// <para>
+        /// Minimum confidence score required for profiles within a matching group to be merged
+        /// during the auto-merge process.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1)]
+        public double MinAllowedConfidenceScoreForMerging
+        {
+            get { return this._minAllowedConfidenceScoreForMerging.GetValueOrDefault(); }
+            set { this._minAllowedConfidenceScoreForMerging = value; }
+        }
+
+        // Check to see if MinAllowedConfidenceScoreForMerging property is set
+        internal bool IsSetMinAllowedConfidenceScoreForMerging()
+        {
+            return this._minAllowedConfidenceScoreForMerging.HasValue; 
         }
 
     }

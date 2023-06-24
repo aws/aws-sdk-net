@@ -39,8 +39,8 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property Items. 
         /// <para>
-        /// Lists the prefetch schedules. An empty Items list doesn't mean there aren't more items
-        /// to fetch, just that that page was empty.
+        /// Lists the prefetch schedules. An empty <code>Items</code> list doesn't mean there
+        /// aren't more items to fetch, just that that page was empty.
         /// </para>
         /// </summary>
         public List<PrefetchSchedule> Items
@@ -58,8 +58,8 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The value that you will use forNextToken in the next ListPrefetchSchedulesRequest
-        /// request.
+        /// Pagination token returned by the list request when results exceed the maximum allowed.
+        /// Use the token to fetch the next page of results.
         /// </para>
         /// </summary>
         public string NextToken

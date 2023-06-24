@@ -14,6 +14,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeArtifact.Model.AssociateExternalConnectionRequest.ExternalConnection</property>
+    <min>2</min>
+    <max>100</max>
     <pattern>[A-Za-z0-9][A-Za-z0-9._\-:]{1,99}</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -44,13 +46,13 @@
     <property>Amazon.CodeArtifact.Model.CopyPackageVersionsRequest.Namespace</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[^!#/\s]+</pattern>
+    <pattern>[^#/\s]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeArtifact.Model.CopyPackageVersionsRequest.Package</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[^!#/\s]+</pattern>
+    <pattern>[^#/\s]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeArtifact.Model.CopyPackageVersionsRequest.SourceRepository</property>
@@ -73,7 +75,7 @@
   <property-value-rule>
     <property>Amazon.CodeArtifact.Model.CreateRepositoryRequest.Description</property>
     <max>1000</max>
-    <pattern>\P{C}+</pattern>
+    <pattern>\P{C}*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeArtifact.Model.CreateRepositoryRequest.Domain</property>
@@ -124,6 +126,36 @@
     <pattern>\S+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CodeArtifact.Model.DeletePackageRequest.Domain</property>
+    <min>2</min>
+    <max>50</max>
+    <pattern>[a-z][a-z0-9\-]{0,48}[a-z0-9]</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeArtifact.Model.DeletePackageRequest.DomainOwner</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>[0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeArtifact.Model.DeletePackageRequest.Namespace</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[^#/\s]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeArtifact.Model.DeletePackageRequest.Package</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[^#/\s]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeArtifact.Model.DeletePackageRequest.Repository</property>
+    <min>2</min>
+    <max>100</max>
+    <pattern>[A-Za-z0-9][A-Za-z0-9._\-]{1,99}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CodeArtifact.Model.DeletePackageVersionsRequest.Domain</property>
     <min>2</min>
     <max>50</max>
@@ -139,13 +171,13 @@
     <property>Amazon.CodeArtifact.Model.DeletePackageVersionsRequest.Namespace</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[^!#/\s]+</pattern>
+    <pattern>[^#/\s]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeArtifact.Model.DeletePackageVersionsRequest.Package</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[^!#/\s]+</pattern>
+    <pattern>[^#/\s]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeArtifact.Model.DeletePackageVersionsRequest.Repository</property>
@@ -208,6 +240,36 @@
     <pattern>[0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CodeArtifact.Model.DescribePackageRequest.Domain</property>
+    <min>2</min>
+    <max>50</max>
+    <pattern>[a-z][a-z0-9\-]{0,48}[a-z0-9]</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeArtifact.Model.DescribePackageRequest.DomainOwner</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>[0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeArtifact.Model.DescribePackageRequest.Namespace</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[^#/\s]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeArtifact.Model.DescribePackageRequest.Package</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[^#/\s]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeArtifact.Model.DescribePackageRequest.Repository</property>
+    <min>2</min>
+    <max>100</max>
+    <pattern>[A-Za-z0-9][A-Za-z0-9._\-]{1,99}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CodeArtifact.Model.DescribePackageVersionRequest.Domain</property>
     <min>2</min>
     <max>50</max>
@@ -223,19 +285,19 @@
     <property>Amazon.CodeArtifact.Model.DescribePackageVersionRequest.Namespace</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[^!#/\s]+</pattern>
+    <pattern>[^#/\s]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeArtifact.Model.DescribePackageVersionRequest.Package</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[^!#/\s]+</pattern>
+    <pattern>[^#/\s]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeArtifact.Model.DescribePackageVersionRequest.PackageVersion</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[^!#/\s]+</pattern>
+    <pattern>[^#/\s]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeArtifact.Model.DescribePackageVersionRequest.Repository</property>
@@ -275,6 +337,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeArtifact.Model.DisassociateExternalConnectionRequest.ExternalConnection</property>
+    <min>2</min>
+    <max>100</max>
     <pattern>[A-Za-z0-9][A-Za-z0-9._\-:]{1,99}</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -299,13 +363,13 @@
     <property>Amazon.CodeArtifact.Model.DisposePackageVersionsRequest.Namespace</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[^!#/\s]+</pattern>
+    <pattern>[^#/\s]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeArtifact.Model.DisposePackageVersionsRequest.Package</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[^!#/\s]+</pattern>
+    <pattern>[^#/\s]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeArtifact.Model.DisposePackageVersionsRequest.Repository</property>
@@ -364,19 +428,19 @@
     <property>Amazon.CodeArtifact.Model.GetPackageVersionAssetRequest.Namespace</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[^!#/\s]+</pattern>
+    <pattern>[^#/\s]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeArtifact.Model.GetPackageVersionAssetRequest.Package</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[^!#/\s]+</pattern>
+    <pattern>[^#/\s]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeArtifact.Model.GetPackageVersionAssetRequest.PackageVersion</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[^!#/\s]+</pattern>
+    <pattern>[^#/\s]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeArtifact.Model.GetPackageVersionAssetRequest.PackageVersionRevision</property>
@@ -400,7 +464,7 @@
     <property>Amazon.CodeArtifact.Model.GetPackageVersionAssetResponse.PackageVersion</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[^!#/\s]+</pattern>
+    <pattern>[^#/\s]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeArtifact.Model.GetPackageVersionAssetResponse.PackageVersionRevision</property>
@@ -424,19 +488,19 @@
     <property>Amazon.CodeArtifact.Model.GetPackageVersionReadmeRequest.Namespace</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[^!#/\s]+</pattern>
+    <pattern>[^#/\s]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeArtifact.Model.GetPackageVersionReadmeRequest.Package</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[^!#/\s]+</pattern>
+    <pattern>[^#/\s]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeArtifact.Model.GetPackageVersionReadmeRequest.PackageVersion</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[^!#/\s]+</pattern>
+    <pattern>[^#/\s]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeArtifact.Model.GetPackageVersionReadmeRequest.Repository</property>
@@ -448,19 +512,19 @@
     <property>Amazon.CodeArtifact.Model.GetPackageVersionReadmeResponse.Namespace</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[^!#/\s]+</pattern>
+    <pattern>[^#/\s]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeArtifact.Model.GetPackageVersionReadmeResponse.Package</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[^!#/\s]+</pattern>
+    <pattern>[^#/\s]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeArtifact.Model.GetPackageVersionReadmeResponse.Version</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[^!#/\s]+</pattern>
+    <pattern>[^#/\s]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeArtifact.Model.GetPackageVersionReadmeResponse.VersionRevision</property>
@@ -542,7 +606,7 @@
     <property>Amazon.CodeArtifact.Model.ListPackagesRequest.Namespace</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[^!#/\s]+</pattern>
+    <pattern>[^#/\s]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeArtifact.Model.ListPackagesRequest.NextToken</property>
@@ -554,7 +618,7 @@
     <property>Amazon.CodeArtifact.Model.ListPackagesRequest.PackagePrefix</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[^!#/\s]+</pattern>
+    <pattern>[^#/\s]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeArtifact.Model.ListPackagesRequest.Repository</property>
@@ -589,7 +653,7 @@
     <property>Amazon.CodeArtifact.Model.ListPackageVersionAssetsRequest.Namespace</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[^!#/\s]+</pattern>
+    <pattern>[^#/\s]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeArtifact.Model.ListPackageVersionAssetsRequest.NextToken</property>
@@ -601,13 +665,13 @@
     <property>Amazon.CodeArtifact.Model.ListPackageVersionAssetsRequest.Package</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[^!#/\s]+</pattern>
+    <pattern>[^#/\s]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeArtifact.Model.ListPackageVersionAssetsRequest.PackageVersion</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[^!#/\s]+</pattern>
+    <pattern>[^#/\s]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeArtifact.Model.ListPackageVersionAssetsRequest.Repository</property>
@@ -619,7 +683,7 @@
     <property>Amazon.CodeArtifact.Model.ListPackageVersionAssetsResponse.Namespace</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[^!#/\s]+</pattern>
+    <pattern>[^#/\s]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeArtifact.Model.ListPackageVersionAssetsResponse.NextToken</property>
@@ -631,13 +695,13 @@
     <property>Amazon.CodeArtifact.Model.ListPackageVersionAssetsResponse.Package</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[^!#/\s]+</pattern>
+    <pattern>[^#/\s]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeArtifact.Model.ListPackageVersionAssetsResponse.Version</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[^!#/\s]+</pattern>
+    <pattern>[^#/\s]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeArtifact.Model.ListPackageVersionAssetsResponse.VersionRevision</property>
@@ -661,7 +725,7 @@
     <property>Amazon.CodeArtifact.Model.ListPackageVersionDependenciesRequest.Namespace</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[^!#/\s]+</pattern>
+    <pattern>[^#/\s]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeArtifact.Model.ListPackageVersionDependenciesRequest.NextToken</property>
@@ -673,13 +737,13 @@
     <property>Amazon.CodeArtifact.Model.ListPackageVersionDependenciesRequest.Package</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[^!#/\s]+</pattern>
+    <pattern>[^#/\s]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeArtifact.Model.ListPackageVersionDependenciesRequest.PackageVersion</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[^!#/\s]+</pattern>
+    <pattern>[^#/\s]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeArtifact.Model.ListPackageVersionDependenciesRequest.Repository</property>
@@ -691,7 +755,7 @@
     <property>Amazon.CodeArtifact.Model.ListPackageVersionDependenciesResponse.Namespace</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[^!#/\s]+</pattern>
+    <pattern>[^#/\s]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeArtifact.Model.ListPackageVersionDependenciesResponse.NextToken</property>
@@ -703,13 +767,13 @@
     <property>Amazon.CodeArtifact.Model.ListPackageVersionDependenciesResponse.Package</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[^!#/\s]+</pattern>
+    <pattern>[^#/\s]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeArtifact.Model.ListPackageVersionDependenciesResponse.Version</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[^!#/\s]+</pattern>
+    <pattern>[^#/\s]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeArtifact.Model.ListPackageVersionDependenciesResponse.VersionRevision</property>
@@ -738,7 +802,7 @@
     <property>Amazon.CodeArtifact.Model.ListPackageVersionsRequest.Namespace</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[^!#/\s]+</pattern>
+    <pattern>[^#/\s]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeArtifact.Model.ListPackageVersionsRequest.NextToken</property>
@@ -750,7 +814,7 @@
     <property>Amazon.CodeArtifact.Model.ListPackageVersionsRequest.Package</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[^!#/\s]+</pattern>
+    <pattern>[^#/\s]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeArtifact.Model.ListPackageVersionsRequest.Repository</property>
@@ -762,13 +826,13 @@
     <property>Amazon.CodeArtifact.Model.ListPackageVersionsResponse.DefaultDisplayVersion</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[^!#/\s]+</pattern>
+    <pattern>[^#/\s]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeArtifact.Model.ListPackageVersionsResponse.Namespace</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[^!#/\s]+</pattern>
+    <pattern>[^#/\s]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeArtifact.Model.ListPackageVersionsResponse.NextToken</property>
@@ -780,7 +844,7 @@
     <property>Amazon.CodeArtifact.Model.ListPackageVersionsResponse.Package</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[^!#/\s]+</pattern>
+    <pattern>[^#/\s]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeArtifact.Model.ListRepositoriesRequest.MaxResults</property>
@@ -853,6 +917,78 @@
     <pattern>\S+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CodeArtifact.Model.PublishPackageVersionRequest.AssetName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>\P{C}+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeArtifact.Model.PublishPackageVersionRequest.AssetSHA256</property>
+    <min>64</min>
+    <max>64</max>
+    <pattern>[0-9a-f]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeArtifact.Model.PublishPackageVersionRequest.Domain</property>
+    <min>2</min>
+    <max>50</max>
+    <pattern>[a-z][a-z0-9\-]{0,48}[a-z0-9]</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeArtifact.Model.PublishPackageVersionRequest.DomainOwner</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>[0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeArtifact.Model.PublishPackageVersionRequest.Namespace</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[^#/\s]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeArtifact.Model.PublishPackageVersionRequest.Package</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[^#/\s]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeArtifact.Model.PublishPackageVersionRequest.PackageVersion</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[^#/\s]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeArtifact.Model.PublishPackageVersionRequest.Repository</property>
+    <min>2</min>
+    <max>100</max>
+    <pattern>[A-Za-z0-9][A-Za-z0-9._\-]{1,99}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeArtifact.Model.PublishPackageVersionResponse.Namespace</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[^#/\s]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeArtifact.Model.PublishPackageVersionResponse.Package</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[^#/\s]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeArtifact.Model.PublishPackageVersionResponse.Version</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[^#/\s]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeArtifact.Model.PublishPackageVersionResponse.VersionRevision</property>
+    <min>1</min>
+    <max>50</max>
+    <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CodeArtifact.Model.PutDomainPermissionsPolicyRequest.Domain</property>
     <min>2</min>
     <max>50</max>
@@ -867,13 +1003,44 @@
   <property-value-rule>
     <property>Amazon.CodeArtifact.Model.PutDomainPermissionsPolicyRequest.PolicyDocument</property>
     <min>1</min>
-    <max>5120</max>
+    <max>7168</max>
+    <pattern>[\P{C}\s]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeArtifact.Model.PutDomainPermissionsPolicyRequest.PolicyRevision</property>
     <min>1</min>
     <max>100</max>
     <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeArtifact.Model.PutPackageOriginConfigurationRequest.Domain</property>
+    <min>2</min>
+    <max>50</max>
+    <pattern>[a-z][a-z0-9\-]{0,48}[a-z0-9]</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeArtifact.Model.PutPackageOriginConfigurationRequest.DomainOwner</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>[0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeArtifact.Model.PutPackageOriginConfigurationRequest.Namespace</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[^#/\s]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeArtifact.Model.PutPackageOriginConfigurationRequest.Package</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[^#/\s]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeArtifact.Model.PutPackageOriginConfigurationRequest.Repository</property>
+    <min>2</min>
+    <max>100</max>
+    <pattern>[A-Za-z0-9][A-Za-z0-9._\-]{1,99}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeArtifact.Model.PutRepositoryPermissionsPolicyRequest.Domain</property>
@@ -890,7 +1057,8 @@
   <property-value-rule>
     <property>Amazon.CodeArtifact.Model.PutRepositoryPermissionsPolicyRequest.PolicyDocument</property>
     <min>1</min>
-    <max>5120</max>
+    <max>7168</max>
+    <pattern>[\P{C}\s]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeArtifact.Model.PutRepositoryPermissionsPolicyRequest.PolicyRevision</property>
@@ -932,13 +1100,13 @@
     <property>Amazon.CodeArtifact.Model.UpdatePackageVersionsStatusRequest.Namespace</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[^!#/\s]+</pattern>
+    <pattern>[^#/\s]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeArtifact.Model.UpdatePackageVersionsStatusRequest.Package</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[^!#/\s]+</pattern>
+    <pattern>[^#/\s]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeArtifact.Model.UpdatePackageVersionsStatusRequest.Repository</property>
@@ -949,7 +1117,7 @@
   <property-value-rule>
     <property>Amazon.CodeArtifact.Model.UpdateRepositoryRequest.Description</property>
     <max>1000</max>
-    <pattern>\P{C}+</pattern>
+    <pattern>\P{C}*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeArtifact.Model.UpdateRepositoryRequest.Domain</property>
@@ -1006,6 +1174,18 @@
     <pattern>\S+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CodeArtifact.Model.DomainEntryPoint.ExternalConnectionName</property>
+    <min>2</min>
+    <max>100</max>
+    <pattern>[A-Za-z0-9][A-Za-z0-9._\-:]{1,99}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeArtifact.Model.DomainEntryPoint.RepositoryName</property>
+    <min>2</min>
+    <max>100</max>
+    <pattern>[A-Za-z0-9][A-Za-z0-9._\-]{1,99}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CodeArtifact.Model.DomainSummary.Arn</property>
     <min>1</min>
     <max>1011</max>
@@ -1033,25 +1213,37 @@
     <property>Amazon.CodeArtifact.Model.PackageDependency.Namespace</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[^!#/\s]+</pattern>
+    <pattern>[^#/\s]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeArtifact.Model.PackageDependency.Package</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[^!#/\s]+</pattern>
+    <pattern>[^#/\s]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeArtifact.Model.PackageDescription.Name</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[^#/\s]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeArtifact.Model.PackageDescription.Namespace</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[^#/\s]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeArtifact.Model.PackageSummary.Namespace</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[^!#/\s]+</pattern>
+    <pattern>[^#/\s]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeArtifact.Model.PackageSummary.Package</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[^!#/\s]+</pattern>
+    <pattern>[^#/\s]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeArtifact.Model.PackageVersionDescription.DisplayName</property>
@@ -1062,13 +1254,13 @@
     <property>Amazon.CodeArtifact.Model.PackageVersionDescription.Namespace</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[^!#/\s]+</pattern>
+    <pattern>[^#/\s]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeArtifact.Model.PackageVersionDescription.PackageName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[^!#/\s]+</pattern>
+    <pattern>[^#/\s]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeArtifact.Model.PackageVersionDescription.Revision</property>
@@ -1080,7 +1272,7 @@
     <property>Amazon.CodeArtifact.Model.PackageVersionDescription.Version</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[^!#/\s]+</pattern>
+    <pattern>[^#/\s]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeArtifact.Model.PackageVersionSummary.Revision</property>
@@ -1092,7 +1284,7 @@
     <property>Amazon.CodeArtifact.Model.PackageVersionSummary.Version</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[^!#/\s]+</pattern>
+    <pattern>[^#/\s]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeArtifact.Model.RepositoryDescription.AdministratorAccount</property>
@@ -1109,7 +1301,7 @@
   <property-value-rule>
     <property>Amazon.CodeArtifact.Model.RepositoryDescription.Description</property>
     <max>1000</max>
-    <pattern>\P{C}+</pattern>
+    <pattern>\P{C}*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeArtifact.Model.RepositoryDescription.DomainName</property>
@@ -1131,6 +1323,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeArtifact.Model.RepositoryExternalConnectionInfo.ExternalConnectionName</property>
+    <min>2</min>
+    <max>100</max>
     <pattern>[A-Za-z0-9][A-Za-z0-9._\-:]{1,99}</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -1148,7 +1342,7 @@
   <property-value-rule>
     <property>Amazon.CodeArtifact.Model.RepositorySummary.Description</property>
     <max>1000</max>
-    <pattern>\P{C}+</pattern>
+    <pattern>\P{C}*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeArtifact.Model.RepositorySummary.DomainName</property>
@@ -1171,7 +1365,8 @@
   <property-value-rule>
     <property>Amazon.CodeArtifact.Model.ResourcePolicy.Document</property>
     <min>1</min>
-    <max>5120</max>
+    <max>7168</max>
+    <pattern>[\P{C}\s]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeArtifact.Model.ResourcePolicy.ResourceArn</property>
@@ -1189,11 +1384,13 @@
     <property>Amazon.CodeArtifact.Model.Tag.Key</property>
     <min>1</min>
     <max>128</max>
+    <pattern>\P{C}+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeArtifact.Model.Tag.Value</property>
     <min>0</min>
     <max>256</max>
+    <pattern>\P{C}*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeArtifact.Model.UpstreamRepository.RepositoryName</property>

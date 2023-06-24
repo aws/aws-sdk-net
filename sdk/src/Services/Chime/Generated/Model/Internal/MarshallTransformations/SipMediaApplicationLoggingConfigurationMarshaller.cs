@@ -34,7 +34,7 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SipMediaApplicationLoggingConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class SipMediaApplicationLoggingConfigurationMarshaller : IRequestMarshaller<SipMediaApplicationLoggingConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SipMediaApplicationLoggingConfigurationMarshaller Instance = new SipMediaApplicationLoggingConfigurationMarshaller();
 
     }

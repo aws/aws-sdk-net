@@ -228,6 +228,22 @@ namespace Amazon.IoT.Model
         }
 
         /// <summary>
+        /// Paginator for ListManagedJobTemplates operation
+        ///</summary>
+        public IListManagedJobTemplatesPaginator ListManagedJobTemplates(ListManagedJobTemplatesRequest request) 
+        {
+            return new ListManagedJobTemplatesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListMetricValues operation
+        ///</summary>
+        public IListMetricValuesPaginator ListMetricValues(ListMetricValuesRequest request) 
+        {
+            return new ListMetricValuesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListMitigationActions operation
         ///</summary>
         public IListMitigationActionsPaginator ListMitigationActions(ListMitigationActionsRequest request) 
@@ -249,6 +265,22 @@ namespace Amazon.IoT.Model
         public IListOutgoingCertificatesPaginator ListOutgoingCertificates(ListOutgoingCertificatesRequest request) 
         {
             return new ListOutgoingCertificatesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListPackages operation
+        ///</summary>
+        public IListPackagesPaginator ListPackages(ListPackagesRequest request) 
+        {
+            return new ListPackagesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListPackageVersions operation
+        ///</summary>
+        public IListPackageVersionsPaginator ListPackageVersions(ListPackageVersionsRequest request) 
+        {
+            return new ListPackageVersionsPaginator(this.client, request);
         }
 
         /// <summary>
@@ -289,6 +321,14 @@ namespace Amazon.IoT.Model
         public IListProvisioningTemplateVersionsPaginator ListProvisioningTemplateVersions(ListProvisioningTemplateVersionsRequest request) 
         {
             return new ListProvisioningTemplateVersionsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListRelatedResourcesForAuditFinding operation
+        ///</summary>
+        public IListRelatedResourcesForAuditFindingPaginator ListRelatedResourcesForAuditFinding(ListRelatedResourcesForAuditFindingRequest request) 
+        {
+            return new ListRelatedResourcesForAuditFindingPaginator(this.client, request);
         }
 
         /// <summary>

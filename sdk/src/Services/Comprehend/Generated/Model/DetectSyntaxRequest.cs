@@ -31,7 +31,8 @@ namespace Amazon.Comprehend.Model
     /// <summary>
     /// Container for the parameters to the DetectSyntax operation.
     /// Inspects text for syntax and the part of speech of words in the document. For more
-    /// information, <a>how-syntax</a>.
+    /// information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-syntax.html">Syntax</a>
+    /// in the Comprehend Developer Guide.
     /// </summary>
     public partial class DetectSyntaxRequest : AmazonComprehendRequest
     {
@@ -62,10 +63,10 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property Text. 
         /// <para>
-        /// A UTF-8 string. Each string must contain fewer that 5,000 bytes of UTF encoded characters.
+        /// A UTF-8 string. The maximum string size is 5 KB.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1)]
         public string Text
         {
             get { return this._text; }

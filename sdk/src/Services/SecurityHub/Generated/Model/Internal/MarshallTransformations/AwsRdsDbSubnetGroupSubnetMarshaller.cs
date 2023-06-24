@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AwsRdsDbSubnetGroupSubnet Marshaller
-    /// </summary>       
+    /// </summary>
     public class AwsRdsDbSubnetGroupSubnetMarshaller : IRequestMarshaller<AwsRdsDbSubnetGroupSubnet, JsonMarshallerContext> 
     {
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AwsRdsDbSubnetGroupSubnetMarshaller Instance = new AwsRdsDbSubnetGroupSubnetMarshaller();
 
     }

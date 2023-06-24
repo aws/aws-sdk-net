@@ -98,7 +98,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Owner. 
         /// <para>
-        /// The AWS account Id of the owner account that created the TagOption.
+        /// The Amazon Web Services account Id of the owner account that created the TagOption.
         /// </para>
         /// </summary>
         public string Owner

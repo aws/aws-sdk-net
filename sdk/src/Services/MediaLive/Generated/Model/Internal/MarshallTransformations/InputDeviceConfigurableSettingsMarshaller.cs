@@ -34,7 +34,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// InputDeviceConfigurableSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class InputDeviceConfigurableSettingsMarshaller : IRequestMarshaller<InputDeviceConfigurableSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -51,6 +51,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ConfiguredInput);
             }
 
+            if(requestObject.IsSetLatencyMs())
+            {
+                context.Writer.WritePropertyName("latencyMs");
+                context.Writer.Write(requestObject.LatencyMs);
+            }
+
             if(requestObject.IsSetMaxBitrate())
             {
                 context.Writer.WritePropertyName("maxBitrate");
@@ -61,7 +67,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static InputDeviceConfigurableSettingsMarshaller Instance = new InputDeviceConfigurableSettingsMarshaller();
 
     }

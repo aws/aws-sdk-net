@@ -34,7 +34,7 @@ namespace Amazon.CloudWatchEvents.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SageMakerPipelineParameters Marshaller
-    /// </summary>       
+    /// </summary>
     public class SageMakerPipelineParametersMarshaller : IRequestMarshaller<SageMakerPipelineParameters, JsonMarshallerContext> 
     {
         /// <summary>
@@ -65,7 +65,7 @@ namespace Amazon.CloudWatchEvents.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SageMakerPipelineParametersMarshaller Instance = new SageMakerPipelineParametersMarshaller();
 
     }

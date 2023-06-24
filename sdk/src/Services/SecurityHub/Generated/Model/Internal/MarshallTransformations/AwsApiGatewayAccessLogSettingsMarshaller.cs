@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AwsApiGatewayAccessLogSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class AwsApiGatewayAccessLogSettingsMarshaller : IRequestMarshaller<AwsApiGatewayAccessLogSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AwsApiGatewayAccessLogSettingsMarshaller Instance = new AwsApiGatewayAccessLogSettingsMarshaller();
 
     }

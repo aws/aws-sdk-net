@@ -34,7 +34,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// PathFormat Marshaller
-    /// </summary>       
+    /// </summary>
     public class PathFormatMarshaller : IRequestMarshaller<PathFormat, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static PathFormatMarshaller Instance = new PathFormatMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// StreamFilters Marshaller
-    /// </summary>       
+    /// </summary>
     public class StreamFiltersMarshaller : IRequestMarshaller<StreamFilters, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static StreamFiltersMarshaller Instance = new StreamFiltersMarshaller();
 
     }

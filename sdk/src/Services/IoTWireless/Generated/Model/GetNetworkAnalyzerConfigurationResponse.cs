@@ -33,9 +33,83 @@ namespace Amazon.IoTWireless.Model
     /// </summary>
     public partial class GetNetworkAnalyzerConfigurationResponse : AmazonWebServiceResponse
     {
+        private string _arn;
+        private string _description;
+        private List<string> _multicastGroups = new List<string>();
+        private string _name;
         private TraceContent _traceContent;
         private List<string> _wirelessDevices = new List<string>();
         private List<string> _wirelessGateways = new List<string>();
+
+        /// <summary>
+        /// Gets and sets the property Arn. 
+        /// <para>
+        /// The Amazon Resource Name of the new resource.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=1124)]
+        public string Arn
+        {
+            get { return this._arn; }
+            set { this._arn = value; }
+        }
+
+        // Check to see if Arn property is set
+        internal bool IsSetArn()
+        {
+            return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Description.
+        /// </summary>
+        [AWSProperty(Max=2048)]
+        public string Description
+        {
+            get { return this._description; }
+            set { this._description = value; }
+        }
+
+        // Check to see if Description property is set
+        internal bool IsSetDescription()
+        {
+            return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MulticastGroups. 
+        /// <para>
+        /// List of multicast group resources that have been added to the network analyzer configuration.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=10)]
+        public List<string> MulticastGroups
+        {
+            get { return this._multicastGroups; }
+            set { this._multicastGroups = value; }
+        }
+
+        // Check to see if MulticastGroups property is set
+        internal bool IsSetMulticastGroups()
+        {
+            return this._multicastGroups != null && this._multicastGroups.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Name.
+        /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
+        public string Name
+        {
+            get { return this._name; }
+            set { this._name = value; }
+        }
+
+        // Check to see if Name property is set
+        internal bool IsSetName()
+        {
+            return this._name != null;
+        }
 
         /// <summary>
         /// Gets and sets the property TraceContent.
@@ -55,7 +129,7 @@ namespace Amazon.IoTWireless.Model
         /// <summary>
         /// Gets and sets the property WirelessDevices. 
         /// <para>
-        /// List of WirelessDevices in the NetworkAnalyzerConfiguration.
+        /// List of wireless gateway resources that have been added to the network analyzer configuration.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=250)]
@@ -74,7 +148,7 @@ namespace Amazon.IoTWireless.Model
         /// <summary>
         /// Gets and sets the property WirelessGateways. 
         /// <para>
-        /// List of WirelessGateways in the NetworkAnalyzerConfiguration.
+        /// List of wireless gateway resources that have been added to the network analyzer configuration.
         /// </para>
         /// </summary>
         public List<string> WirelessGateways

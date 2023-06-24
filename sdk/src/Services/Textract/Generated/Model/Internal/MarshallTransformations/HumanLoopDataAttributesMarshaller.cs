@@ -34,7 +34,7 @@ namespace Amazon.Textract.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// HumanLoopDataAttributes Marshaller
-    /// </summary>       
+    /// </summary>
     public class HumanLoopDataAttributesMarshaller : IRequestMarshaller<HumanLoopDataAttributes, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.Textract.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static HumanLoopDataAttributesMarshaller Instance = new HumanLoopDataAttributesMarshaller();
 
     }

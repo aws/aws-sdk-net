@@ -55,7 +55,7 @@ namespace Amazon.CodeGuruProfiler.Model.Internal.MarshallTransformations
         public IRequest Marshall(GetProfileRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CodeGuruProfiler");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-07-18";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-07-18";
             request.HttpMethod = "GET";
 
             if (!publicRequest.IsSetProfilingGroupName())
@@ -75,8 +75,10 @@ namespace Amazon.CodeGuruProfiler.Model.Internal.MarshallTransformations
                 request.Parameters.Add("startTime", StringUtils.FromDateTimeToISO8601(publicRequest.StartTime));
             request.ResourcePath = "/profilingGroups/{profilingGroupName}/profile";
         
-            if(publicRequest.IsSetAccept())
+            if (publicRequest.IsSetAccept()) 
+            {
                 request.Headers["Accept"] = publicRequest.Accept;
+            }
             request.UseQueryString = true;
 
             return request;

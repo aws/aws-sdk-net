@@ -34,7 +34,9 @@ namespace Amazon.EC2.Model
     public partial class TransitGatewayPeeringAttachment
     {
         private PeeringTgwInfo _accepterTgwInfo;
+        private string _accepterTransitGatewayAttachmentId;
         private DateTime? _creationTime;
+        private TransitGatewayPeeringAttachmentOptions _options;
         private PeeringTgwInfo _requesterTgwInfo;
         private TransitGatewayAttachmentState _state;
         private PeeringAttachmentStatus _status;
@@ -60,6 +62,24 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property AccepterTransitGatewayAttachmentId. 
+        /// <para>
+        /// The ID of the accepter transit gateway attachment.
+        /// </para>
+        /// </summary>
+        public string AccepterTransitGatewayAttachmentId
+        {
+            get { return this._accepterTransitGatewayAttachmentId; }
+            set { this._accepterTransitGatewayAttachmentId = value; }
+        }
+
+        // Check to see if AccepterTransitGatewayAttachmentId property is set
+        internal bool IsSetAccepterTransitGatewayAttachmentId()
+        {
+            return this._accepterTransitGatewayAttachmentId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property CreationTime. 
         /// <para>
         /// The time the transit gateway peering attachment was created.
@@ -75,6 +95,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetCreationTime()
         {
             return this._creationTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Options. 
+        /// <para>
+        /// Details about the transit gateway peering attachment.
+        /// </para>
+        /// </summary>
+        public TransitGatewayPeeringAttachmentOptions Options
+        {
+            get { return this._options; }
+            set { this._options = value; }
+        }
+
+        // Check to see if Options property is set
+        internal bool IsSetOptions()
+        {
+            return this._options != null;
         }
 
         /// <summary>

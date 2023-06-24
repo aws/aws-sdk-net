@@ -34,7 +34,7 @@ namespace Amazon.Route53RecoveryControlConfig.Model.Internal.MarshallTransformat
 {
     /// <summary>
     /// NewGatingRule Marshaller
-    /// </summary>       
+    /// </summary>
     public class NewGatingRuleMarshaller : IRequestMarshaller<NewGatingRule, JsonMarshallerContext> 
     {
         /// <summary>
@@ -100,7 +100,7 @@ namespace Amazon.Route53RecoveryControlConfig.Model.Internal.MarshallTransformat
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static NewGatingRuleMarshaller Instance = new NewGatingRuleMarshaller();
 
     }

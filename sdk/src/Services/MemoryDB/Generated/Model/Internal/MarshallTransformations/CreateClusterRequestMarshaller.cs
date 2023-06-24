@@ -58,7 +58,7 @@ namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
             string target = "AmazonMemoryDB.CreateCluster";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-01-01";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-01-01";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -83,6 +83,12 @@ namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("ClusterName");
                     context.Writer.Write(publicRequest.ClusterName);
+                }
+
+                if(publicRequest.IsSetDataTiering())
+                {
+                    context.Writer.WritePropertyName("DataTiering");
+                    context.Writer.Write(publicRequest.DataTiering);
                 }
 
                 if(publicRequest.IsSetDescription())
@@ -213,7 +219,6 @@ namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.TLSEnabled);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

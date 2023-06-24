@@ -58,7 +58,7 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
             string target = "AWSCognitoIdentityProviderService.CreateUserPool";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-04-18";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-04-18";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -109,6 +109,12 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                             context.Writer.Write(publicRequestAutoVerifiedAttributesListValue);
                     }
                     context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetDeletionProtection())
+                {
+                    context.Writer.WritePropertyName("DeletionProtection");
+                    context.Writer.Write(publicRequest.DeletionProtection);
                 }
 
                 if(publicRequest.IsSetDeviceConfiguration())
@@ -218,6 +224,17 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.SmsVerificationMessage);
                 }
 
+                if(publicRequest.IsSetUserAttributeUpdateSettings())
+                {
+                    context.Writer.WritePropertyName("UserAttributeUpdateSettings");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = UserAttributeUpdateSettingsTypeMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.UserAttributeUpdateSettings, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetUsernameAttributes())
                 {
                     context.Writer.WritePropertyName("UsernameAttributes");
@@ -276,7 +293,6 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

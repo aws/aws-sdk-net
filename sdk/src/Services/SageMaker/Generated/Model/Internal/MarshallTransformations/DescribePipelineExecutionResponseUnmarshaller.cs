@@ -81,6 +81,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     response.LastModifiedTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ParallelismConfiguration", targetDepth))
+                {
+                    var unmarshaller = ParallelismConfigurationUnmarshaller.Instance;
+                    response.ParallelismConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("PipelineArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -115,6 +121,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = PipelineExperimentConfigUnmarshaller.Instance;
                     response.PipelineExperimentConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SelectiveExecutionConfig", targetDepth))
+                {
+                    var unmarshaller = SelectiveExecutionConfigUnmarshaller.Instance;
+                    response.SelectiveExecutionConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

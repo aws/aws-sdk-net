@@ -17,22 +17,22 @@
  * Do not modify this file. This file is generated from the iotwireless-2020-11-22.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
-
+using Amazon.IoTWireless.Internal;
 
 namespace Amazon.IoTWireless
 {
     /// <summary>
     /// Configuration for accessing Amazon IoTWireless service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonIoTWirelessConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.8.2");
+            InternalSDKUtils.BuildUserAgentString("3.7.105.11");
 
         private string _userAgent = UserAgentString;
 
@@ -40,8 +40,10 @@ namespace Amazon.IoTWireless
         /// Default constructor
         /// </summary>
         public AmazonIoTWirelessConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonIoTWirelessDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "iotwireless";
+            this.EndpointProvider = new AmazonIoTWirelessEndpointProvider();
         }
 
         /// <summary>
@@ -76,5 +78,6 @@ namespace Amazon.IoTWireless
                 return _userAgent;
             }
         }
+
     }
 }

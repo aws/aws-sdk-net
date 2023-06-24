@@ -35,10 +35,30 @@ namespace Amazon.IoTSiteWise.Model
     /// </summary>
     public partial class CreateAssetRequest : AmazonIoTSiteWiseRequest
     {
+        private string _assetDescription;
         private string _assetModelId;
         private string _assetName;
         private string _clientToken;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
+
+        /// <summary>
+        /// Gets and sets the property AssetDescription. 
+        /// <para>
+        /// A description for the asset.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string AssetDescription
+        {
+            get { return this._assetDescription; }
+            set { this._assetDescription = value; }
+        }
+
+        // Check to see if AssetDescription property is set
+        internal bool IsSetAssetDescription()
+        {
+            return this._assetDescription != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AssetModelId. 
@@ -62,7 +82,7 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property AssetName. 
         /// <para>
-        /// A unique, friendly name for the asset.
+        /// A friendly name for the asset.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]

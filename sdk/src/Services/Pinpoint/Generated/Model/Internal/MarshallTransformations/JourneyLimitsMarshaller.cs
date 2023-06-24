@@ -34,7 +34,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// JourneyLimits Marshaller
-    /// </summary>       
+    /// </summary>
     public class JourneyLimitsMarshaller : IRequestMarshaller<JourneyLimits, JsonMarshallerContext> 
     {
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static JourneyLimitsMarshaller Instance = new JourneyLimitsMarshaller();
 
     }

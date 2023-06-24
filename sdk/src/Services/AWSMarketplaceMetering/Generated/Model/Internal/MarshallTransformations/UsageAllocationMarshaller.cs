@@ -34,7 +34,7 @@ namespace Amazon.AWSMarketplaceMetering.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// UsageAllocation Marshaller
-    /// </summary>       
+    /// </summary>
     public class UsageAllocationMarshaller : IRequestMarshaller<UsageAllocation, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.AWSMarketplaceMetering.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static UsageAllocationMarshaller Instance = new UsageAllocationMarshaller();
 
     }

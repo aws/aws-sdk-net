@@ -34,7 +34,7 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ComputeEnvironmentOrder Marshaller
-    /// </summary>       
+    /// </summary>
     public class ComputeEnvironmentOrderMarshaller : IRequestMarshaller<ComputeEnvironmentOrder, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ComputeEnvironmentOrderMarshaller Instance = new ComputeEnvironmentOrderMarshaller();
 
     }

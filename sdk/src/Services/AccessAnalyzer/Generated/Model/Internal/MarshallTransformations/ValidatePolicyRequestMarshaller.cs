@@ -56,7 +56,7 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.AccessAnalyzer");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-11-01";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-11-01";
             request.HttpMethod = "POST";
 
             
@@ -95,7 +95,6 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ValidatePolicyResourceType);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

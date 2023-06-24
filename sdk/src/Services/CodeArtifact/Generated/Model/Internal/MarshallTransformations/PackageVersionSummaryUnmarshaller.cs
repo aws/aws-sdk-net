@@ -64,6 +64,12 @@ namespace Amazon.CodeArtifact.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("origin", targetDepth))
+                {
+                    var unmarshaller = PackageVersionOriginUnmarshaller.Instance;
+                    unmarshalledObject.Origin = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("revision", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -1321,6 +1321,12 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DeviceFarm.Model.VpcConfig.VpcId</property>
+    <min>1</min>
+    <max>4096</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DeviceFarm.Model.VPCEConfiguration.Arn</property>
     <min>32</min>
     <max>1011</max>

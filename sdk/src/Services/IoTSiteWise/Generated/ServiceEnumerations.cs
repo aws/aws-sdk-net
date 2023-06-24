@@ -361,6 +361,218 @@ namespace Amazon.IoTSiteWise
 
 
     /// <summary>
+    /// Constants used for properties of type BatchEntryCompletionStatus.
+    /// </summary>
+    public class BatchEntryCompletionStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ERROR for BatchEntryCompletionStatus
+        /// </summary>
+        public static readonly BatchEntryCompletionStatus ERROR = new BatchEntryCompletionStatus("ERROR");
+        /// <summary>
+        /// Constant SUCCESS for BatchEntryCompletionStatus
+        /// </summary>
+        public static readonly BatchEntryCompletionStatus SUCCESS = new BatchEntryCompletionStatus("SUCCESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BatchEntryCompletionStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BatchEntryCompletionStatus FindValue(string value)
+        {
+            return FindValue<BatchEntryCompletionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BatchEntryCompletionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type BatchGetAssetPropertyAggregatesErrorCode.
+    /// </summary>
+    public class BatchGetAssetPropertyAggregatesErrorCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AccessDeniedException for BatchGetAssetPropertyAggregatesErrorCode
+        /// </summary>
+        public static readonly BatchGetAssetPropertyAggregatesErrorCode AccessDeniedException = new BatchGetAssetPropertyAggregatesErrorCode("AccessDeniedException");
+        /// <summary>
+        /// Constant InvalidRequestException for BatchGetAssetPropertyAggregatesErrorCode
+        /// </summary>
+        public static readonly BatchGetAssetPropertyAggregatesErrorCode InvalidRequestException = new BatchGetAssetPropertyAggregatesErrorCode("InvalidRequestException");
+        /// <summary>
+        /// Constant ResourceNotFoundException for BatchGetAssetPropertyAggregatesErrorCode
+        /// </summary>
+        public static readonly BatchGetAssetPropertyAggregatesErrorCode ResourceNotFoundException = new BatchGetAssetPropertyAggregatesErrorCode("ResourceNotFoundException");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BatchGetAssetPropertyAggregatesErrorCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BatchGetAssetPropertyAggregatesErrorCode FindValue(string value)
+        {
+            return FindValue<BatchGetAssetPropertyAggregatesErrorCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BatchGetAssetPropertyAggregatesErrorCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type BatchGetAssetPropertyValueErrorCode.
+    /// </summary>
+    public class BatchGetAssetPropertyValueErrorCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AccessDeniedException for BatchGetAssetPropertyValueErrorCode
+        /// </summary>
+        public static readonly BatchGetAssetPropertyValueErrorCode AccessDeniedException = new BatchGetAssetPropertyValueErrorCode("AccessDeniedException");
+        /// <summary>
+        /// Constant InvalidRequestException for BatchGetAssetPropertyValueErrorCode
+        /// </summary>
+        public static readonly BatchGetAssetPropertyValueErrorCode InvalidRequestException = new BatchGetAssetPropertyValueErrorCode("InvalidRequestException");
+        /// <summary>
+        /// Constant ResourceNotFoundException for BatchGetAssetPropertyValueErrorCode
+        /// </summary>
+        public static readonly BatchGetAssetPropertyValueErrorCode ResourceNotFoundException = new BatchGetAssetPropertyValueErrorCode("ResourceNotFoundException");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BatchGetAssetPropertyValueErrorCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BatchGetAssetPropertyValueErrorCode FindValue(string value)
+        {
+            return FindValue<BatchGetAssetPropertyValueErrorCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BatchGetAssetPropertyValueErrorCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type BatchGetAssetPropertyValueHistoryErrorCode.
+    /// </summary>
+    public class BatchGetAssetPropertyValueHistoryErrorCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AccessDeniedException for BatchGetAssetPropertyValueHistoryErrorCode
+        /// </summary>
+        public static readonly BatchGetAssetPropertyValueHistoryErrorCode AccessDeniedException = new BatchGetAssetPropertyValueHistoryErrorCode("AccessDeniedException");
+        /// <summary>
+        /// Constant InvalidRequestException for BatchGetAssetPropertyValueHistoryErrorCode
+        /// </summary>
+        public static readonly BatchGetAssetPropertyValueHistoryErrorCode InvalidRequestException = new BatchGetAssetPropertyValueHistoryErrorCode("InvalidRequestException");
+        /// <summary>
+        /// Constant ResourceNotFoundException for BatchGetAssetPropertyValueHistoryErrorCode
+        /// </summary>
+        public static readonly BatchGetAssetPropertyValueHistoryErrorCode ResourceNotFoundException = new BatchGetAssetPropertyValueHistoryErrorCode("ResourceNotFoundException");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BatchGetAssetPropertyValueHistoryErrorCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BatchGetAssetPropertyValueHistoryErrorCode FindValue(string value)
+        {
+            return FindValue<BatchGetAssetPropertyValueHistoryErrorCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BatchGetAssetPropertyValueHistoryErrorCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type BatchPutAssetPropertyValueErrorCode.
     /// </summary>
     public class BatchPutAssetPropertyValueErrorCode : ConstantClass
@@ -490,6 +702,80 @@ namespace Amazon.IoTSiteWise
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator CapabilitySyncStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ColumnName.
+    /// </summary>
+    public class ColumnName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALIAS for ColumnName
+        /// </summary>
+        public static readonly ColumnName ALIAS = new ColumnName("ALIAS");
+        /// <summary>
+        /// Constant ASSET_ID for ColumnName
+        /// </summary>
+        public static readonly ColumnName ASSET_ID = new ColumnName("ASSET_ID");
+        /// <summary>
+        /// Constant DATA_TYPE for ColumnName
+        /// </summary>
+        public static readonly ColumnName DATA_TYPE = new ColumnName("DATA_TYPE");
+        /// <summary>
+        /// Constant PROPERTY_ID for ColumnName
+        /// </summary>
+        public static readonly ColumnName PROPERTY_ID = new ColumnName("PROPERTY_ID");
+        /// <summary>
+        /// Constant QUALITY for ColumnName
+        /// </summary>
+        public static readonly ColumnName QUALITY = new ColumnName("QUALITY");
+        /// <summary>
+        /// Constant TIMESTAMP_NANO_OFFSET for ColumnName
+        /// </summary>
+        public static readonly ColumnName TIMESTAMP_NANO_OFFSET = new ColumnName("TIMESTAMP_NANO_OFFSET");
+        /// <summary>
+        /// Constant TIMESTAMP_SECONDS for ColumnName
+        /// </summary>
+        public static readonly ColumnName TIMESTAMP_SECONDS = new ColumnName("TIMESTAMP_SECONDS");
+        /// <summary>
+        /// Constant VALUE for ColumnName
+        /// </summary>
+        public static readonly ColumnName VALUE = new ColumnName("VALUE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ColumnName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ColumnName FindValue(string value)
+        {
+            return FindValue<ColumnName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ColumnName(string value)
         {
             return FindValue(value);
         }
@@ -951,6 +1237,172 @@ namespace Amazon.IoTSiteWise
 
 
     /// <summary>
+    /// Constants used for properties of type JobStatus.
+    /// </summary>
+    public class JobStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CANCELLED for JobStatus
+        /// </summary>
+        public static readonly JobStatus CANCELLED = new JobStatus("CANCELLED");
+        /// <summary>
+        /// Constant COMPLETED for JobStatus
+        /// </summary>
+        public static readonly JobStatus COMPLETED = new JobStatus("COMPLETED");
+        /// <summary>
+        /// Constant COMPLETED_WITH_FAILURES for JobStatus
+        /// </summary>
+        public static readonly JobStatus COMPLETED_WITH_FAILURES = new JobStatus("COMPLETED_WITH_FAILURES");
+        /// <summary>
+        /// Constant FAILED for JobStatus
+        /// </summary>
+        public static readonly JobStatus FAILED = new JobStatus("FAILED");
+        /// <summary>
+        /// Constant PENDING for JobStatus
+        /// </summary>
+        public static readonly JobStatus PENDING = new JobStatus("PENDING");
+        /// <summary>
+        /// Constant RUNNING for JobStatus
+        /// </summary>
+        public static readonly JobStatus RUNNING = new JobStatus("RUNNING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public JobStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static JobStatus FindValue(string value)
+        {
+            return FindValue<JobStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator JobStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ListAssetModelPropertiesFilter.
+    /// </summary>
+    public class ListAssetModelPropertiesFilter : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALL for ListAssetModelPropertiesFilter
+        /// </summary>
+        public static readonly ListAssetModelPropertiesFilter ALL = new ListAssetModelPropertiesFilter("ALL");
+        /// <summary>
+        /// Constant BASE for ListAssetModelPropertiesFilter
+        /// </summary>
+        public static readonly ListAssetModelPropertiesFilter BASE = new ListAssetModelPropertiesFilter("BASE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ListAssetModelPropertiesFilter(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ListAssetModelPropertiesFilter FindValue(string value)
+        {
+            return FindValue<ListAssetModelPropertiesFilter>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ListAssetModelPropertiesFilter(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ListAssetPropertiesFilter.
+    /// </summary>
+    public class ListAssetPropertiesFilter : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALL for ListAssetPropertiesFilter
+        /// </summary>
+        public static readonly ListAssetPropertiesFilter ALL = new ListAssetPropertiesFilter("ALL");
+        /// <summary>
+        /// Constant BASE for ListAssetPropertiesFilter
+        /// </summary>
+        public static readonly ListAssetPropertiesFilter BASE = new ListAssetPropertiesFilter("BASE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ListAssetPropertiesFilter(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ListAssetPropertiesFilter FindValue(string value)
+        {
+            return FindValue<ListAssetPropertiesFilter>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ListAssetPropertiesFilter(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ListAssetsFilter.
     /// </summary>
     public class ListAssetsFilter : ConstantClass
@@ -994,6 +1446,76 @@ namespace Amazon.IoTSiteWise
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ListAssetsFilter(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ListBulkImportJobsFilter.
+    /// </summary>
+    public class ListBulkImportJobsFilter : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALL for ListBulkImportJobsFilter
+        /// </summary>
+        public static readonly ListBulkImportJobsFilter ALL = new ListBulkImportJobsFilter("ALL");
+        /// <summary>
+        /// Constant CANCELLED for ListBulkImportJobsFilter
+        /// </summary>
+        public static readonly ListBulkImportJobsFilter CANCELLED = new ListBulkImportJobsFilter("CANCELLED");
+        /// <summary>
+        /// Constant COMPLETED for ListBulkImportJobsFilter
+        /// </summary>
+        public static readonly ListBulkImportJobsFilter COMPLETED = new ListBulkImportJobsFilter("COMPLETED");
+        /// <summary>
+        /// Constant COMPLETED_WITH_FAILURES for ListBulkImportJobsFilter
+        /// </summary>
+        public static readonly ListBulkImportJobsFilter COMPLETED_WITH_FAILURES = new ListBulkImportJobsFilter("COMPLETED_WITH_FAILURES");
+        /// <summary>
+        /// Constant FAILED for ListBulkImportJobsFilter
+        /// </summary>
+        public static readonly ListBulkImportJobsFilter FAILED = new ListBulkImportJobsFilter("FAILED");
+        /// <summary>
+        /// Constant PENDING for ListBulkImportJobsFilter
+        /// </summary>
+        public static readonly ListBulkImportJobsFilter PENDING = new ListBulkImportJobsFilter("PENDING");
+        /// <summary>
+        /// Constant RUNNING for ListBulkImportJobsFilter
+        /// </summary>
+        public static readonly ListBulkImportJobsFilter RUNNING = new ListBulkImportJobsFilter("RUNNING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ListBulkImportJobsFilter(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ListBulkImportJobsFilter FindValue(string value)
+        {
+            return FindValue<ListBulkImportJobsFilter>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ListBulkImportJobsFilter(string value)
         {
             return FindValue(value);
         }

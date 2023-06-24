@@ -36,8 +36,8 @@ namespace Amazon.KeyManagementService.Model
     ///  <note> 
     /// <para>
     /// Tagging or untagging a KMS key can allow or deny permission to the KMS key. For details,
-    /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">Using
-    /// ABAC in KMS</a> in the <i>Key Management Service Developer Guide</i>.
+    /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC
+    /// for KMS</a> in the <i>Key Management Service Developer Guide</i>.
     /// </para>
     ///  </note> 
     /// <para>
@@ -69,7 +69,7 @@ namespace Amazon.KeyManagementService.Model
     /// <para>
     /// The KMS key that you use for this operation must be in a compatible key state. For
     /// details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-    /// state: Effect on your KMS key</a> in the <i>Key Management Service Developer Guide</i>.
+    /// states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -151,14 +151,15 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// One or more tags. 
+        /// One or more tags. Each tag consists of a tag key and a tag value. The tag value can
+        /// be an empty (null) string. 
         /// </para>
-        ///  
+        ///  <important> 
         /// <para>
-        /// Each tag consists of a tag key and a tag value. The tag value can be an empty (null)
-        /// string. 
+        /// Do not include confidential or sensitive information in this field. This field may
+        /// be displayed in plaintext in CloudTrail logs and other output.
         /// </para>
-        ///  
+        ///  </important> 
         /// <para>
         /// You cannot have more than one tag on a KMS key with the same tag key. If you specify
         /// an existing tag key with a different tag value, KMS replaces the current tag value

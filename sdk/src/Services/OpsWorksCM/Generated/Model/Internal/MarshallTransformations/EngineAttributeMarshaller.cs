@@ -34,7 +34,7 @@ namespace Amazon.OpsWorksCM.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// EngineAttribute Marshaller
-    /// </summary>       
+    /// </summary>
     public class EngineAttributeMarshaller : IRequestMarshaller<EngineAttribute, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.OpsWorksCM.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static EngineAttributeMarshaller Instance = new EngineAttributeMarshaller();
 
     }

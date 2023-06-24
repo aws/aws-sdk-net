@@ -56,7 +56,7 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.IoTTwinMaker");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-11-29";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-11-29";
             request.HttpMethod = "POST";
 
             if (!publicRequest.IsSetComponentTypeId())
@@ -71,6 +71,12 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetComponentTypeName())
+                {
+                    context.Writer.WritePropertyName("componentTypeName");
+                    context.Writer.Write(publicRequest.ComponentTypeName);
+                }
+
                 if(publicRequest.IsSetDescription())
                 {
                     context.Writer.WritePropertyName("description");
@@ -132,6 +138,25 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetPropertyGroups())
+                {
+                    context.Writer.WritePropertyName("propertyGroups");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestPropertyGroupsKvp in publicRequest.PropertyGroups)
+                    {
+                        context.Writer.WritePropertyName(publicRequestPropertyGroupsKvp.Key);
+                        var publicRequestPropertyGroupsValue = publicRequestPropertyGroupsKvp.Value;
+
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = PropertyGroupRequestMarshaller.Instance;
+                        marshaller.Marshall(publicRequestPropertyGroupsValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("tags");
@@ -146,7 +171,6 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

@@ -31,6 +31,7 @@ namespace Amazon.GuardDuty.Model
     /// <summary>
     /// This is the response object from the DisassociateFromMasterAccount operation.
     /// </summary>
+    [Obsolete("This output is deprecated, use DisassociateFromAdministratorAccountResponse instead")]
     public partial class DisassociateFromMasterAccountResponse : AmazonWebServiceResponse
     {
 

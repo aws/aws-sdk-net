@@ -51,7 +51,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property AllocationId. 
         /// <para>
-        /// The ID representing the allocation of the address for use with EC2-VPC.
+        /// The ID representing the allocation of the address.
         /// </para>
         /// </summary>
         public string AllocationId
@@ -69,7 +69,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property AssociationId. 
         /// <para>
-        /// The ID representing the association of the address with an instance in a VPC.
+        /// The ID representing the association of the address with an instance.
         /// </para>
         /// </summary>
         public string AssociationId
@@ -142,8 +142,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Domain. 
         /// <para>
-        /// Indicates whether this Elastic IP address is for use with instances in EC2-Classic
-        /// (<code>standard</code>) or instances in a VPC (<code>vpc</code>).
+        /// The network (<code>vpc</code>).
         /// </para>
         /// </summary>
         public DomainType Domain

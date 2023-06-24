@@ -56,7 +56,7 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ResilienceHub");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-04-30";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-04-30";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/create-app";
@@ -65,6 +65,12 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAssessmentSchedule())
+                {
+                    context.Writer.WritePropertyName("assessmentSchedule");
+                    context.Writer.Write(publicRequest.AssessmentSchedule);
+                }
+
                 if(publicRequest.IsSetClientToken())
                 {
                     context.Writer.WritePropertyName("clientToken");
@@ -74,7 +80,7 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
                 else if(!(publicRequest.IsSetClientToken()))
                 {
                     context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());                                                
+                    context.Writer.Write(Guid.NewGuid().ToString());
                 }
                 if(publicRequest.IsSetDescription())
                 {
@@ -108,7 +114,6 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

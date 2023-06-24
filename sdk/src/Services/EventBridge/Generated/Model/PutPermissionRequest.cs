@@ -199,6 +199,11 @@ namespace Amazon.EventBridge.Model
         /// If you later want to revoke the permission for this external account, specify this
         /// <code>StatementId</code> when you run <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_RemovePermission.html">RemovePermission</a>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Each <code>StatementId</code> must be unique.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
         public string StatementId

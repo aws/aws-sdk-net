@@ -56,7 +56,7 @@ namespace Amazon.IotData.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.IotData");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-05-28";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-05-28";
             request.HttpMethod = "POST";
 
             if (!publicRequest.IsSetThingName())
@@ -67,9 +67,13 @@ namespace Amazon.IotData.Model.Internal.MarshallTransformations
                 request.Parameters.Add("name", StringUtils.FromString(publicRequest.ShadowName));
             request.ResourcePath = "/things/{thingName}/shadow";
             request.ContentStream =  publicRequest.Payload ?? new MemoryStream();
-            request.Headers[Amazon.Util.HeaderKeys.ContentLengthHeader] =  
+            request.Headers[Amazon.Util.HeaderKeys.ContentLengthHeader] =
                 request.ContentStream.Length.ToString(CultureInfo.InvariantCulture);
-            request.Headers[Amazon.Util.HeaderKeys.ContentTypeHeader] = "binary/octet-stream";
+            request.Headers[Amazon.Util.HeaderKeys.ContentTypeHeader] = "binary/octet-stream"; 
+            if (request.ContentStream != null && request.ContentStream.Length == 0)
+            {
+                request.Headers.Remove(Amazon.Util.HeaderKeys.ContentTypeHeader);
+            }
             request.UseQueryString = true;
 
             return request;

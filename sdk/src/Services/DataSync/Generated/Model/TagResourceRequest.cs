@@ -30,7 +30,13 @@ namespace Amazon.DataSync.Model
 {
     /// <summary>
     /// Container for the parameters to the TagResource operation.
-    /// Applies a key-value pair to an Amazon Web Services resource.
+    /// Applies a <i>tag</i> to an Amazon Web Services resource. Tags are key-value pairs
+    /// that can help you manage, filter, and search for your resources.
+    /// 
+    ///  
+    /// <para>
+    /// These include DataSync resources, such as locations, tasks, and task executions.
+    /// </para>
     /// </summary>
     public partial class TagResourceRequest : AmazonDataSyncRequest
     {
@@ -40,7 +46,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the resource to apply the tag to.
+        /// Specifies the Amazon Resource Name (ARN) of the resource to apply the tag to.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=128)]
@@ -59,7 +65,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags to apply.
+        /// Specifies the tags that you want to apply to the resource.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=50)]

@@ -30,8 +30,8 @@ namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
     /// An operation requiring TagOptions failed because the TagOptions migration process
-    /// has not been performed for this account. Please use the AWS console to perform the
-    /// migration process before retrying the operation.
+    /// has not been performed for this account. Use the Amazon Web Services Management Console
+    /// to perform the migration process before retrying the operation.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

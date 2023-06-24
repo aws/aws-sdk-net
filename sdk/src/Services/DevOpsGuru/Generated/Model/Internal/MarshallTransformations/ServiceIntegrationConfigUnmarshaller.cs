@@ -64,6 +64,18 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("KMSServerSideEncryption", targetDepth))
+                {
+                    var unmarshaller = KMSServerSideEncryptionIntegrationUnmarshaller.Instance;
+                    unmarshalledObject.KMSServerSideEncryption = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("LogsAnomalyDetection", targetDepth))
+                {
+                    var unmarshaller = LogsAnomalyDetectionIntegrationUnmarshaller.Instance;
+                    unmarshalledObject.LogsAnomalyDetection = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("OpsCenter", targetDepth))
                 {
                     var unmarshaller = OpsCenterIntegrationUnmarshaller.Instance;

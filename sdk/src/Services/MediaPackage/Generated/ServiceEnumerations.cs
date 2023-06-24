@@ -261,6 +261,56 @@ namespace Amazon.MediaPackage
 
 
     /// <summary>
+    /// Constants used for properties of type CmafEncryptionMethod.
+    /// </summary>
+    public class CmafEncryptionMethod : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AES_CTR for CmafEncryptionMethod
+        /// </summary>
+        public static readonly CmafEncryptionMethod AES_CTR = new CmafEncryptionMethod("AES_CTR");
+        /// <summary>
+        /// Constant SAMPLE_AES for CmafEncryptionMethod
+        /// </summary>
+        public static readonly CmafEncryptionMethod SAMPLE_AES = new CmafEncryptionMethod("SAMPLE_AES");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CmafEncryptionMethod(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CmafEncryptionMethod FindValue(string value)
+        {
+            return FindValue<CmafEncryptionMethod>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CmafEncryptionMethod(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type EncryptionMethod.
     /// </summary>
     public class EncryptionMethod : ConstantClass
@@ -474,6 +524,22 @@ namespace Amazon.MediaPackage
         /// Constant PRESETAUDIO1 for PresetSpeke20Audio
         /// </summary>
         public static readonly PresetSpeke20Audio PRESETAUDIO1 = new PresetSpeke20Audio("PRESET-AUDIO-1");
+        /// <summary>
+        /// Constant PRESETAUDIO2 for PresetSpeke20Audio
+        /// </summary>
+        public static readonly PresetSpeke20Audio PRESETAUDIO2 = new PresetSpeke20Audio("PRESET-AUDIO-2");
+        /// <summary>
+        /// Constant PRESETAUDIO3 for PresetSpeke20Audio
+        /// </summary>
+        public static readonly PresetSpeke20Audio PRESETAUDIO3 = new PresetSpeke20Audio("PRESET-AUDIO-3");
+        /// <summary>
+        /// Constant SHARED for PresetSpeke20Audio
+        /// </summary>
+        public static readonly PresetSpeke20Audio SHARED = new PresetSpeke20Audio("SHARED");
+        /// <summary>
+        /// Constant UNENCRYPTED for PresetSpeke20Audio
+        /// </summary>
+        public static readonly PresetSpeke20Audio UNENCRYPTED = new PresetSpeke20Audio("UNENCRYPTED");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -520,6 +586,42 @@ namespace Amazon.MediaPackage
         /// Constant PRESETVIDEO1 for PresetSpeke20Video
         /// </summary>
         public static readonly PresetSpeke20Video PRESETVIDEO1 = new PresetSpeke20Video("PRESET-VIDEO-1");
+        /// <summary>
+        /// Constant PRESETVIDEO2 for PresetSpeke20Video
+        /// </summary>
+        public static readonly PresetSpeke20Video PRESETVIDEO2 = new PresetSpeke20Video("PRESET-VIDEO-2");
+        /// <summary>
+        /// Constant PRESETVIDEO3 for PresetSpeke20Video
+        /// </summary>
+        public static readonly PresetSpeke20Video PRESETVIDEO3 = new PresetSpeke20Video("PRESET-VIDEO-3");
+        /// <summary>
+        /// Constant PRESETVIDEO4 for PresetSpeke20Video
+        /// </summary>
+        public static readonly PresetSpeke20Video PRESETVIDEO4 = new PresetSpeke20Video("PRESET-VIDEO-4");
+        /// <summary>
+        /// Constant PRESETVIDEO5 for PresetSpeke20Video
+        /// </summary>
+        public static readonly PresetSpeke20Video PRESETVIDEO5 = new PresetSpeke20Video("PRESET-VIDEO-5");
+        /// <summary>
+        /// Constant PRESETVIDEO6 for PresetSpeke20Video
+        /// </summary>
+        public static readonly PresetSpeke20Video PRESETVIDEO6 = new PresetSpeke20Video("PRESET-VIDEO-6");
+        /// <summary>
+        /// Constant PRESETVIDEO7 for PresetSpeke20Video
+        /// </summary>
+        public static readonly PresetSpeke20Video PRESETVIDEO7 = new PresetSpeke20Video("PRESET-VIDEO-7");
+        /// <summary>
+        /// Constant PRESETVIDEO8 for PresetSpeke20Video
+        /// </summary>
+        public static readonly PresetSpeke20Video PRESETVIDEO8 = new PresetSpeke20Video("PRESET-VIDEO-8");
+        /// <summary>
+        /// Constant SHARED for PresetSpeke20Video
+        /// </summary>
+        public static readonly PresetSpeke20Video SHARED = new PresetSpeke20Video("SHARED");
+        /// <summary>
+        /// Constant UNENCRYPTED for PresetSpeke20Video
+        /// </summary>
+        public static readonly PresetSpeke20Video UNENCRYPTED = new PresetSpeke20Video("UNENCRYPTED");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -563,9 +665,17 @@ namespace Amazon.MediaPackage
     {
 
         /// <summary>
+        /// Constant DVB_DASH_2014 for Profile
+        /// </summary>
+        public static readonly Profile DVB_DASH_2014 = new Profile("DVB_DASH_2014");
+        /// <summary>
         /// Constant HBBTV_1_5 for Profile
         /// </summary>
         public static readonly Profile HBBTV_1_5 = new Profile("HBBTV_1_5");
+        /// <summary>
+        /// Constant HYBRIDCAST for Profile
+        /// </summary>
+        public static readonly Profile HYBRIDCAST = new Profile("HYBRIDCAST");
         /// <summary>
         /// Constant NONE for Profile
         /// </summary>
@@ -782,6 +892,10 @@ namespace Amazon.MediaPackage
         /// Constant HTTPISO for UtcTiming
         /// </summary>
         public static readonly UtcTiming HTTPISO = new UtcTiming("HTTP-ISO");
+        /// <summary>
+        /// Constant HTTPXSDATE for UtcTiming
+        /// </summary>
+        public static readonly UtcTiming HTTPXSDATE = new UtcTiming("HTTP-XSDATE");
         /// <summary>
         /// Constant NONE for UtcTiming
         /// </summary>

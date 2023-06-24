@@ -34,7 +34,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// FileLocation Marshaller
-    /// </summary>       
+    /// </summary>
     public class FileLocationMarshaller : IRequestMarshaller<FileLocation, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static FileLocationMarshaller Instance = new FileLocationMarshaller();
 
     }

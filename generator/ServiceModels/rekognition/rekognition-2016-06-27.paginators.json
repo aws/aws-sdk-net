@@ -76,10 +76,22 @@
       "output_token": "NextToken",
       "result_key": "Faces"
     },
+    "ListProjectPolicies": {
+      "input_token": "NextToken",
+      "limit_key": "MaxResults",
+      "output_token": "NextToken",
+      "result_key": "ProjectPolicies"
+    },
     "ListStreamProcessors": {
       "input_token": "NextToken",
       "limit_key": "MaxResults",
       "output_token": "NextToken"
+    },
+    "ListUsers": {
+      "input_token": "NextToken",
+      "limit_key": "MaxResults",
+      "output_token": "NextToken",
+      "result_key": "Users"
     }
   }
 }

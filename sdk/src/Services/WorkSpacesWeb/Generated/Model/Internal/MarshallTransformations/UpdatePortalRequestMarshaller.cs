@@ -56,7 +56,7 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.WorkSpacesWeb");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-07-08";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-07-08";
             request.HttpMethod = "PUT";
 
             if (!publicRequest.IsSetPortalArn())
@@ -68,13 +68,18 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAuthenticationType())
+                {
+                    context.Writer.WritePropertyName("authenticationType");
+                    context.Writer.Write(publicRequest.AuthenticationType);
+                }
+
                 if(publicRequest.IsSetDisplayName())
                 {
                     context.Writer.WritePropertyName("displayName");
                     context.Writer.Write(publicRequest.DisplayName);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

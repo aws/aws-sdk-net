@@ -61,8 +61,8 @@ namespace Amazon.Shield
         ///  
         /// <para>
         /// To use the services of the SRT and make an <code>AssociateDRTLogBucket</code> request,
-        /// you must be subscribed to the <a href="https://docs.aws.amazon.com/premiumsupport/business-support/">Business
-        /// Support plan</a> or the <a href="https://docs.aws.amazon.com/premiumsupport/enterprise-support/">Enterprise
+        /// you must be subscribed to the <a href="http://aws.amazon.com/premiumsupport/business-support/">Business
+        /// Support plan</a> or the <a href="http://aws.amazon.com/premiumsupport/enterprise-support/">Enterprise
         /// Support plan</a>.
         /// </para>
         /// </summary>
@@ -91,7 +91,7 @@ namespace Amazon.Shield
         /// Exception that indicates that the operation would exceed a limit.
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.NoAssociatedRoleException">
-        /// The ARN of the role that you specifed does not exist.
+        /// The ARN of the role that you specified does not exist.
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.OptimisticLockException">
         /// Exception that indicates that the resource state has been modified by another client.
@@ -115,8 +115,8 @@ namespace Amazon.Shield
         ///  
         /// <para>
         /// To use the services of the SRT and make an <code>AssociateDRTLogBucket</code> request,
-        /// you must be subscribed to the <a href="https://docs.aws.amazon.com/premiumsupport/business-support/">Business
-        /// Support plan</a> or the <a href="https://docs.aws.amazon.com/premiumsupport/enterprise-support/">Enterprise
+        /// you must be subscribed to the <a href="http://aws.amazon.com/premiumsupport/business-support/">Business
+        /// Support plan</a> or the <a href="http://aws.amazon.com/premiumsupport/enterprise-support/">Enterprise
         /// Support plan</a>.
         /// </para>
         /// </summary>
@@ -148,7 +148,7 @@ namespace Amazon.Shield
         /// Exception that indicates that the operation would exceed a limit.
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.NoAssociatedRoleException">
-        /// The ARN of the role that you specifed does not exist.
+        /// The ARN of the role that you specified does not exist.
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.OptimisticLockException">
         /// Exception that indicates that the resource state has been modified by another client.
@@ -205,8 +205,8 @@ namespace Amazon.Shield
         ///  
         /// <para>
         /// To use the services of the SRT and make an <code>AssociateDRTRole</code> request,
-        /// you must be subscribed to the <a href="https://docs.aws.amazon.com/premiumsupport/business-support/">Business
-        /// Support plan</a> or the <a href="https://docs.aws.amazon.com/premiumsupport/enterprise-support/">Enterprise
+        /// you must be subscribed to the <a href="http://aws.amazon.com/premiumsupport/business-support/">Business
+        /// Support plan</a> or the <a href="http://aws.amazon.com/premiumsupport/enterprise-support/">Enterprise
         /// Support plan</a>.
         /// </para>
         /// </summary>
@@ -283,8 +283,8 @@ namespace Amazon.Shield
         ///  
         /// <para>
         /// To use the services of the SRT and make an <code>AssociateDRTRole</code> request,
-        /// you must be subscribed to the <a href="https://docs.aws.amazon.com/premiumsupport/business-support/">Business
-        /// Support plan</a> or the <a href="https://docs.aws.amazon.com/premiumsupport/enterprise-support/">Enterprise
+        /// you must be subscribed to the <a href="http://aws.amazon.com/premiumsupport/business-support/">Business
+        /// Support plan</a> or the <a href="http://aws.amazon.com/premiumsupport/enterprise-support/">Enterprise
         /// Support plan</a>.
         /// </para>
         /// </summary>
@@ -532,8 +532,10 @@ namespace Amazon.Shield
 
         /// <summary>
         /// Enables Shield Advanced for a specific Amazon Web Services resource. The resource
-        /// can be an Amazon CloudFront distribution, Elastic Load Balancing load balancer, Global
-        /// Accelerator accelerator, Elastic IP Address, or an Amazon Route 53 hosted zone.
+        /// can be an Amazon CloudFront distribution, Amazon Route 53 hosted zone, Global Accelerator
+        /// standard accelerator, Elastic IP Address, Application Load Balancer, or a Classic
+        /// Load Balancer. You can protect Amazon EC2 instances and Network Load Balancers by
+        /// association with protected Amazon EC2 Elastic IP addresses.
         /// 
         ///  
         /// <para>
@@ -585,8 +587,10 @@ namespace Amazon.Shield
 
         /// <summary>
         /// Enables Shield Advanced for a specific Amazon Web Services resource. The resource
-        /// can be an Amazon CloudFront distribution, Elastic Load Balancing load balancer, Global
-        /// Accelerator accelerator, Elastic IP Address, or an Amazon Route 53 hosted zone.
+        /// can be an Amazon CloudFront distribution, Amazon Route 53 hosted zone, Global Accelerator
+        /// standard accelerator, Elastic IP Address, Application Load Balancer, or a Classic
+        /// Load Balancer. You can protect Amazon EC2 instances and Network Load Balancers by
+        /// association with protected Amazon EC2 Elastic IP addresses.
         /// 
         ///  
         /// <para>
@@ -721,9 +725,15 @@ namespace Amazon.Shield
         /// <summary>
         /// Activates Shield Advanced for an account.
         /// 
-        ///  
+        ///  <note> 
         /// <para>
-        /// When you initally create a subscription, your subscription is set to be automatically
+        /// For accounts that are members of an Organizations organization, Shield Advanced subscriptions
+        /// are billed against the organization's payer account, regardless of whether the payer
+        /// account itself is subscribed. 
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// When you initially create a subscription, your subscription is set to be automatically
         /// renewed at the end of the existing subscription period. You can change this by submitting
         /// an <code>UpdateSubscription</code> request. 
         /// </para>
@@ -747,9 +757,15 @@ namespace Amazon.Shield
         /// <summary>
         /// Activates Shield Advanced for an account.
         /// 
-        ///  
+        ///  <note> 
         /// <para>
-        /// When you initally create a subscription, your subscription is set to be automatically
+        /// For accounts that are members of an Organizations organization, Shield Advanced subscriptions
+        /// are billed against the organization's payer account, regardless of whether the payer
+        /// account itself is subscribed. 
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// When you initially create a subscription, your subscription is set to be automatically
         /// renewed at the end of the existing subscription period. You can change this by submitting
         /// an <code>UpdateSubscription</code> request. 
         /// </para>
@@ -1290,8 +1306,8 @@ namespace Amazon.Shield
 
         /// <summary>
         /// Disable the Shield Advanced automatic application layer DDoS mitigation feature for
-        /// the resource. This stops Shield Advanced from creating, verifying, and applying WAF
-        /// rules for attacks that it detects for the resource.
+        /// the protected resource. This stops Shield Advanced from creating, verifying, and applying
+        /// WAF rules for attacks that it detects for the resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisableApplicationLayerAutomaticResponse service method.</param>
         /// 
@@ -1322,8 +1338,8 @@ namespace Amazon.Shield
 
         /// <summary>
         /// Disable the Shield Advanced automatic application layer DDoS mitigation feature for
-        /// the resource. This stops Shield Advanced from creating, verifying, and applying WAF
-        /// rules for attacks that it detects for the resource.
+        /// the protected resource. This stops Shield Advanced from creating, verifying, and applying
+        /// WAF rules for attacks that it detects for the resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisableApplicationLayerAutomaticResponse service method.</param>
         /// <param name="cancellationToken">
@@ -1448,7 +1464,7 @@ namespace Amazon.Shield
         /// Exception that indicates that the operation would not cause any change to occur.
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.NoAssociatedRoleException">
-        /// The ARN of the role that you specifed does not exist.
+        /// The ARN of the role that you specified does not exist.
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.OptimisticLockException">
         /// Exception that indicates that the resource state has been modified by another client.
@@ -1488,7 +1504,7 @@ namespace Amazon.Shield
         /// Exception that indicates that the operation would not cause any change to occur.
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.NoAssociatedRoleException">
-        /// The ARN of the role that you specifed does not exist.
+        /// The ARN of the role that you specified does not exist.
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.OptimisticLockException">
         /// Exception that indicates that the resource state has been modified by another client.
@@ -1653,12 +1669,13 @@ namespace Amazon.Shield
 
 
         /// <summary>
-        /// Enable the Shield Advanced automatic application layer DDoS mitigation for the resource.
-        /// 
+        /// Enable the Shield Advanced automatic application layer DDoS mitigation for the protected
+        /// resource. 
         /// 
         ///  <note> 
         /// <para>
-        /// This feature is available for Amazon CloudFront distributions only.
+        /// This feature is available for Amazon CloudFront distributions and Application Load
+        /// Balancers only.
         /// </para>
         ///  </note> 
         /// <para>
@@ -1668,25 +1685,21 @@ namespace Amazon.Shield
         /// about how automatic mitigation works and the requirements for using it, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/ddos-advanced-automatic-app-layer-response.html">Shield
         /// Advanced automatic application layer DDoS mitigation</a>.
         /// </para>
-        ///  
+        ///  <note> 
         /// <para>
         /// Don't use this action to make changes to automatic mitigation settings when it's already
         /// enabled for a resource. Instead, use <a>UpdateApplicationLayerAutomaticResponse</a>.
         /// </para>
-        ///  
+        ///  </note> 
         /// <para>
         /// To use this feature, you must associate a web ACL with the protected resource. The
         /// web ACL must be created using the latest version of WAF (v2). You can associate the
         /// web ACL through the Shield Advanced console at <a href="https://console.aws.amazon.com/wafv2/shieldv2#/">https://console.aws.amazon.com/wafv2/shieldv2#/</a>.
         /// For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/getting-started-ddos.html">Getting
-        /// Started with Shield Advanced</a>.
-        /// </para>
-        ///  
-        /// <para>
-        /// You can also do this through the WAF console or the WAF API, but you must manage Shield
-        /// Advanced automatic mitigation through Shield Advanced. For information about WAF,
-        /// see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/">WAF Developer
-        /// Guide</a>.
+        /// Started with Shield Advanced</a>. You can also associate the web ACL to the resource
+        /// through the WAF console or the WAF API, but you must manage Shield Advanced automatic
+        /// mitigation through Shield Advanced. For information about WAF, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/">WAF
+        /// Developer Guide</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnableApplicationLayerAutomaticResponse service method.</param>
@@ -1720,12 +1733,13 @@ namespace Amazon.Shield
 
 
         /// <summary>
-        /// Enable the Shield Advanced automatic application layer DDoS mitigation for the resource.
-        /// 
+        /// Enable the Shield Advanced automatic application layer DDoS mitigation for the protected
+        /// resource. 
         /// 
         ///  <note> 
         /// <para>
-        /// This feature is available for Amazon CloudFront distributions only.
+        /// This feature is available for Amazon CloudFront distributions and Application Load
+        /// Balancers only.
         /// </para>
         ///  </note> 
         /// <para>
@@ -1735,25 +1749,21 @@ namespace Amazon.Shield
         /// about how automatic mitigation works and the requirements for using it, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/ddos-advanced-automatic-app-layer-response.html">Shield
         /// Advanced automatic application layer DDoS mitigation</a>.
         /// </para>
-        ///  
+        ///  <note> 
         /// <para>
         /// Don't use this action to make changes to automatic mitigation settings when it's already
         /// enabled for a resource. Instead, use <a>UpdateApplicationLayerAutomaticResponse</a>.
         /// </para>
-        ///  
+        ///  </note> 
         /// <para>
         /// To use this feature, you must associate a web ACL with the protected resource. The
         /// web ACL must be created using the latest version of WAF (v2). You can associate the
         /// web ACL through the Shield Advanced console at <a href="https://console.aws.amazon.com/wafv2/shieldv2#/">https://console.aws.amazon.com/wafv2/shieldv2#/</a>.
         /// For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/getting-started-ddos.html">Getting
-        /// Started with Shield Advanced</a>.
-        /// </para>
-        ///  
-        /// <para>
-        /// You can also do this through the WAF console or the WAF API, but you must manage Shield
-        /// Advanced automatic mitigation through Shield Advanced. For information about WAF,
-        /// see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/">WAF Developer
-        /// Guide</a>.
+        /// Started with Shield Advanced</a>. You can also associate the web ACL to the resource
+        /// through the WAF console or the WAF API, but you must manage Shield Advanced automatic
+        /// mitigation through Shield Advanced. For information about WAF, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/">WAF
+        /// Developer Guide</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnableApplicationLayerAutomaticResponse service method.</param>
@@ -1947,7 +1957,9 @@ namespace Amazon.Shield
 
 
         /// <summary>
-        /// Retrieves the <a>ProtectionGroup</a> objects for the account.
+        /// Retrieves <a>ProtectionGroup</a> objects for the account. You can retrieve all protection
+        /// groups or you can provide filtering criteria and retrieve just the subset of protection
+        /// groups that match the criteria.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListProtectionGroups service method.</param>
         /// 
@@ -1971,7 +1983,9 @@ namespace Amazon.Shield
 
 
         /// <summary>
-        /// Retrieves the <a>ProtectionGroup</a> objects for the account.
+        /// Retrieves <a>ProtectionGroup</a> objects for the account. You can retrieve all protection
+        /// groups or you can provide filtering criteria and retrieve just the subset of protection
+        /// groups that match the criteria.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListProtectionGroups service method.</param>
         /// <param name="cancellationToken">
@@ -2001,7 +2015,9 @@ namespace Amazon.Shield
 
 
         /// <summary>
-        /// Lists all <a>Protection</a> objects for the account.
+        /// Retrieves <a>Protection</a> objects for the account. You can retrieve all protections
+        /// or you can provide filtering criteria and retrieve just the subset of protections
+        /// that match the criteria.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListProtections service method.</param>
         /// 
@@ -2025,7 +2041,9 @@ namespace Amazon.Shield
 
 
         /// <summary>
-        /// Lists all <a>Protection</a> objects for the account.
+        /// Retrieves <a>Protection</a> objects for the account. You can retrieve all protections
+        /// or you can provide filtering criteria and retrieve just the subset of protections
+        /// that match the criteria.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListProtections service method.</param>
         /// <param name="cancellationToken">
@@ -2481,6 +2499,14 @@ namespace Amazon.Shield
         /// <summary>
         /// Updates the details of an existing subscription. Only enter values for parameters
         /// you want to change. Empty parameters are not updated.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// For accounts that are members of an Organizations organization, Shield Advanced subscriptions
+        /// are billed against the organization's payer account, regardless of whether the payer
+        /// account itself is subscribed. 
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateSubscription service method.</param>
         /// 
@@ -2515,6 +2541,14 @@ namespace Amazon.Shield
         /// <summary>
         /// Updates the details of an existing subscription. Only enter values for parameters
         /// you want to change. Empty parameters are not updated.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// For accounts that are members of an Organizations organization, Shield Advanced subscriptions
+        /// are billed against the organization's payer account, regardless of whether the payer
+        /// account itself is subscribed. 
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateSubscription service method.</param>
         /// <param name="cancellationToken">

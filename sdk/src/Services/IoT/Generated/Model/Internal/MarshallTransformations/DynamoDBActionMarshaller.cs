@@ -34,7 +34,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DynamoDBAction Marshaller
-    /// </summary>       
+    /// </summary>
     public class DynamoDBActionMarshaller : IRequestMarshaller<DynamoDBAction, JsonMarshallerContext> 
     {
         /// <summary>
@@ -109,7 +109,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DynamoDBActionMarshaller Instance = new DynamoDBActionMarshaller();
 
     }

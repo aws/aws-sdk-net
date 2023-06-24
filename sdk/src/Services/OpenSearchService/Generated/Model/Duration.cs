@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// The maintenance schedule duration: duration value and duration unit. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html"
-    /// target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more information.
+    /// The duration of a maintenance schedule. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html">Auto-Tune
+    /// for Amazon OpenSearch Service</a>.
     /// </summary>
     public partial class Duration
     {
@@ -40,9 +40,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property Unit. 
         /// <para>
-        /// The unit of a maintenance schedule duration. Valid value is HOURS. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html"
-        /// target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more information.
-        /// 
+        /// The unit of measurement for the duration of a maintenance schedule.
         /// </para>
         /// </summary>
         public TimeUnit Unit
@@ -60,9 +58,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// Integer to specify the value of a maintenance schedule duration. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html"
-        /// target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more information.
-        /// 
+        /// Integer to specify the value of a maintenance schedule duration.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=24)]

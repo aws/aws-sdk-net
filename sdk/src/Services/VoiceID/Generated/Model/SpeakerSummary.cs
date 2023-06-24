@@ -37,6 +37,7 @@ namespace Amazon.VoiceID.Model
         private string _customerSpeakerId;
         private string _domainId;
         private string _generatedSpeakerId;
+        private DateTime? _lastAccessedAt;
         private SpeakerStatus _status;
         private DateTime? _updatedAt;
 
@@ -64,7 +65,7 @@ namespace Amazon.VoiceID.Model
         /// The client-provided identifier for the speaker.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=256)]
+        [AWSProperty(Sensitive=true, Min=1, Max=256)]
         public string CustomerSpeakerId
         {
             get { return this._customerSpeakerId; }
@@ -113,6 +114,25 @@ namespace Amazon.VoiceID.Model
         internal bool IsSetGeneratedSpeakerId()
         {
             return this._generatedSpeakerId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastAccessedAt. 
+        /// <para>
+        /// The timestamp when the speaker was last accessed for enrollment, re-enrollment or
+        /// a successful authentication. This timestamp is accurate to one hour.
+        /// </para>
+        /// </summary>
+        public DateTime LastAccessedAt
+        {
+            get { return this._lastAccessedAt.GetValueOrDefault(); }
+            set { this._lastAccessedAt = value; }
+        }
+
+        // Check to see if LastAccessedAt property is set
+        internal bool IsSetLastAccessedAt()
+        {
+            return this._lastAccessedAt.HasValue; 
         }
 
         /// <summary>

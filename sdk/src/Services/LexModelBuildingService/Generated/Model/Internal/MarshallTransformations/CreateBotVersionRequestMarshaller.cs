@@ -56,7 +56,7 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.LexModelBuildingService");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-04-19";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-04-19";
             request.HttpMethod = "POST";
 
             if (!publicRequest.IsSetName())
@@ -74,7 +74,6 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Checksum);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

@@ -42,6 +42,7 @@ namespace Amazon.DatabaseMigrationService.Model
         private bool? _heartbeatEnable;
         private int? _heartbeatFrequency;
         private string _heartbeatSchema;
+        private bool? _mapBooleanAsBoolean;
         private int? _maxFileSize;
         private string _password;
         private PluginNameValue _pluginName;
@@ -50,6 +51,7 @@ namespace Amazon.DatabaseMigrationService.Model
         private string _secretsManagerSecretId;
         private string _serverName;
         private string _slotName;
+        private bool? _trimSpaceInChar;
         private string _username;
 
         /// <summary>
@@ -244,6 +246,25 @@ namespace Amazon.DatabaseMigrationService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MapBooleanAsBoolean. 
+        /// <para>
+        /// When true, lets PostgreSQL migrate the boolean type as boolean. By default, PostgreSQL
+        /// migrates booleans as <code>varchar(5)</code>.
+        /// </para>
+        /// </summary>
+        public bool MapBooleanAsBoolean
+        {
+            get { return this._mapBooleanAsBoolean.GetValueOrDefault(); }
+            set { this._mapBooleanAsBoolean = value; }
+        }
+
+        // Check to see if MapBooleanAsBoolean property is set
+        internal bool IsSetMapBooleanAsBoolean()
+        {
+            return this._mapBooleanAsBoolean.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property MaxFileSize. 
         /// <para>
         /// Specifies the maximum size (in KB) of any .csv file used to transfer data to PostgreSQL.
@@ -271,6 +292,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Endpoint connection password.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string Password
         {
             get { return this._password; }
@@ -375,7 +397,18 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property ServerName. 
         /// <para>
-        /// Fully qualified domain name of the endpoint.
+        /// The host name of the endpoint database. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For an Amazon RDS PostgreSQL instance, this is the output of <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBInstances.html">DescribeDBInstances</a>,
+        /// in the <code> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Endpoint.html">Endpoint</a>.Address</code>
+        /// field.
+        /// </para>
+        ///  
+        /// <para>
+        /// For an Aurora PostgreSQL instance, this is the output of <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBClusters.html">DescribeDBClusters</a>,
+        /// in the <code>Endpoint</code> field.
         /// </para>
         /// </summary>
         public string ServerName
@@ -425,6 +458,25 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetSlotName()
         {
             return this._slotName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TrimSpaceInChar. 
+        /// <para>
+        /// Use the <code>TrimSpaceInChar</code> source endpoint setting to trim data on CHAR
+        /// and NCHAR data types during migration. The default value is <code>true</code>.
+        /// </para>
+        /// </summary>
+        public bool TrimSpaceInChar
+        {
+            get { return this._trimSpaceInChar.GetValueOrDefault(); }
+            set { this._trimSpaceInChar = value; }
+        }
+
+        // Check to see if TrimSpaceInChar property is set
+        internal bool IsSetTrimSpaceInChar()
+        {
+            return this._trimSpaceInChar.HasValue; 
         }
 
         /// <summary>

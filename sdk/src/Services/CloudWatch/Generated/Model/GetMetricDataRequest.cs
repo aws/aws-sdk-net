@@ -30,15 +30,29 @@ namespace Amazon.CloudWatch.Model
 {
     /// <summary>
     /// Container for the parameters to the GetMetricData operation.
-    /// You can use the <code>GetMetricData</code> API to retrieve as many as 500 different
-    /// metrics in a single request, with a total of as many as 100,800 data points. You can
-    /// also optionally perform math expressions on the values of the returned statistics,
-    /// to create new time series that represent new insights into your data. For example,
-    /// using Lambda metrics, you could divide the Errors metric by the Invocations metric
-    /// to get an error rate time series. For more information about metric math expressions,
-    /// see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax">Metric
-    /// Math Syntax and Functions</a> in the <i>Amazon CloudWatch User Guide</i>.
+    /// You can use the <code>GetMetricData</code> API to retrieve CloudWatch metric values.
+    /// The operation can also include a CloudWatch Metrics Insights query, and one or more
+    /// metric math functions.
     /// 
+    ///  
+    /// <para>
+    /// A <code>GetMetricData</code> operation that does not include a query can retrieve
+    /// as many as 500 different metrics in a single request, with a total of as many as 100,800
+    /// data points. You can also optionally perform metric math expressions on the values
+    /// of the returned statistics, to create new time series that represent new insights
+    /// into your data. For example, using Lambda metrics, you could divide the Errors metric
+    /// by the Invocations metric to get an error rate time series. For more information about
+    /// metric math expressions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax">Metric
+    /// Math Syntax and Functions</a> in the <i>Amazon CloudWatch User Guide</i>.
+    /// </para>
+    ///  
+    /// <para>
+    /// If you include a Metrics Insights query, each <code>GetMetricData</code> operation
+    /// can include only one query. But the same <code>GetMetricData</code> operation can
+    /// also retrieve other metrics. Metrics Insights queries can query only the most recent
+    /// three hours of metric data. For more information about Metrics Insights, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/query_with_cloudwatch-metrics-insights.html">Query
+    /// your metrics with CloudWatch Metrics Insights</a>.
+    /// </para>
     ///  
     /// <para>
     /// Calls to the <code>GetMetricData</code> API have a different pricing structure than
@@ -85,6 +99,20 @@ namespace Amazon.CloudWatch.Model
     /// data that was collected with that unit specified. If you specify a unit that does
     /// not match the data collected, the results of the operation are null. CloudWatch does
     /// not perform unit conversions.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Using Metrics Insights queries with metric math</b> 
+    /// </para>
+    ///  
+    /// <para>
+    /// You can't mix a Metric Insights query and metric math syntax in the same expression,
+    /// but you can reference results from a Metrics Insights query within other Metric math
+    /// expressions. A Metrics Insights query without a <b>GROUP BY</b> clause returns a single
+    /// time-series (TS), and can be used as input for a metric math expression that expects
+    /// a single time series. A Metrics Insights query with a <b>GROUP BY</b> clause returns
+    /// an array of time-series (TS[]), and can be used as input for a metric math expression
+    /// that expects an array of time series. 
     /// </para>
     /// </summary>
     public partial class GetMetricDataRequest : AmazonCloudWatchRequest
@@ -173,8 +201,8 @@ namespace Amazon.CloudWatch.Model
         /// <para>
         /// The metric queries to be returned. A single <code>GetMetricData</code> call can include
         /// as many as 500 <code>MetricDataQuery</code> structures. Each of these structures can
-        /// specify either a metric to retrieve, or a math expression to perform on retrieved
-        /// data. 
+        /// specify either a metric to retrieve, a Metrics Insights query, or a math expression
+        /// to perform on retrieved data. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

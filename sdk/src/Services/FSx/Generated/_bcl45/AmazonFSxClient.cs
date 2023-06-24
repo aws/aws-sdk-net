@@ -230,6 +230,15 @@ namespace Amazon.FSx
         }    
 
         /// <summary>
+        /// Customize the pipeline
+        /// </summary>
+        /// <param name="pipeline"></param>
+        protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
+        {
+            pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonFSxEndpointResolver());
+        }    
+        /// <summary>
         /// Capture metadata for the service.
         /// </summary>
         protected override IServiceMetadata ServiceMetadata
@@ -743,7 +752,7 @@ namespace Amazon.FSx
         /// The requested operation is not supported for this resource or API.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.VolumeNotFoundException">
-        /// No Amazon FSx for NetApp ONTAP volumes were found based upon the supplied parameters.
+        /// No Amazon FSx volumes were found based upon the supplied parameters.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateBackup">REST API Reference for CreateBackup Operation</seealso>
         public virtual CreateBackupResponse CreateBackup(CreateBackupRequest request)
@@ -865,7 +874,7 @@ namespace Amazon.FSx
         /// The requested operation is not supported for this resource or API.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.VolumeNotFoundException">
-        /// No Amazon FSx for NetApp ONTAP volumes were found based upon the supplied parameters.
+        /// No Amazon FSx volumes were found based upon the supplied parameters.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateBackup">REST API Reference for CreateBackup Operation</seealso>
         public virtual Task<CreateBackupResponse> CreateBackupAsync(CreateBackupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -886,8 +895,8 @@ namespace Amazon.FSx
         /// Creates an Amazon FSx for Lustre data repository association (DRA). A data repository
         /// association is a link between a directory on the file system and an Amazon S3 bucket
         /// or prefix. You can have a maximum of 8 data repository associations on a file system.
-        /// Data repository associations are supported only for file systems with the <code>Persistent_2</code>
-        /// deployment type.
+        /// Data repository associations are supported on all FSx for Lustre 2.12 and newer file
+        /// systems, excluding <code>scratch_1</code> deployment type.
         /// 
         ///  
         /// <para>
@@ -897,6 +906,13 @@ namespace Amazon.FSx
         /// learn more about linking a data repository to your file system, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/create-dra-linked-data-repo.html">Linking
         /// your file system to an S3 bucket</a>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        ///  <code>CreateDataRepositoryAssociation</code> isn't supported on Amazon File Cache
+        /// resources. To create a DRA on Amazon File Cache, use the <code>CreateFileCache</code>
+        /// operation.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDataRepositoryAssociation service method.</param>
         /// 
@@ -937,8 +953,8 @@ namespace Amazon.FSx
         /// Creates an Amazon FSx for Lustre data repository association (DRA). A data repository
         /// association is a link between a directory on the file system and an Amazon S3 bucket
         /// or prefix. You can have a maximum of 8 data repository associations on a file system.
-        /// Data repository associations are supported only for file systems with the <code>Persistent_2</code>
-        /// deployment type.
+        /// Data repository associations are supported on all FSx for Lustre 2.12 and newer file
+        /// systems, excluding <code>scratch_1</code> deployment type.
         /// 
         ///  
         /// <para>
@@ -948,6 +964,13 @@ namespace Amazon.FSx
         /// learn more about linking a data repository to your file system, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/create-dra-linked-data-repo.html">Linking
         /// your file system to an S3 bucket</a>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        ///  <code>CreateDataRepositoryAssociation</code> isn't supported on Amazon File Cache
+        /// resources. To create a DRA on Amazon File Cache, use the <code>CreateFileCache</code>
+        /// operation.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDataRepositoryAssociation service method.</param>
         /// <param name="cancellationToken">
@@ -1097,6 +1120,153 @@ namespace Amazon.FSx
 
         #endregion
         
+        #region  CreateFileCache
+
+
+        /// <summary>
+        /// Creates a new Amazon File Cache resource.
+        /// 
+        ///  
+        /// <para>
+        /// You can use this operation with a client request token in the request that Amazon
+        /// File Cache uses to ensure idempotent creation. If a cache with the specified client
+        /// request token exists and the parameters match, <code>CreateFileCache</code> returns
+        /// the description of the existing cache. If a cache with the specified client request
+        /// token exists and the parameters don't match, this call returns <code>IncompatibleParameterError</code>.
+        /// If a file cache with the specified client request token doesn't exist, <code>CreateFileCache</code>
+        /// does the following: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Creates a new, empty Amazon File Cache resourcewith an assigned ID, and an initial
+        /// lifecycle state of <code>CREATING</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Returns the description of the cache in JSON format.
+        /// </para>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// The <code>CreateFileCache</code> call returns while the cache's lifecycle state is
+        /// still <code>CREATING</code>. You can check the cache creation status by calling the
+        /// <a href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_DescribeFileCaches.html">DescribeFileCaches</a>
+        /// operation, which returns the cache state along with other information.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateFileCache service method.</param>
+        /// 
+        /// <returns>The response from the CreateFileCache service method, as returned by FSx.</returns>
+        /// <exception cref="Amazon.FSx.Model.BadRequestException">
+        /// A generic error indicating a failure with a client request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.IncompatibleParameterErrorException">
+        /// The error returned when a second request is received with the same client request
+        /// token but different parameters settings. A client request token should always uniquely
+        /// identify a single request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.InternalServerErrorException">
+        /// A generic error indicating a server-side failure.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.InvalidNetworkSettingsException">
+        /// One or more network settings specified in the request are invalid.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.InvalidPerUnitStorageThroughputException">
+        /// An invalid value for <code>PerUnitStorageThroughput</code> was provided. Please create
+        /// your file system again, using a valid value.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.MissingFileCacheConfigurationException">
+        /// A cache configuration is required for this operation.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.ServiceLimitExceededException">
+        /// An error indicating that a particular service limit was exceeded. You can increase
+        /// some service limits by contacting Amazon Web Services Support.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateFileCache">REST API Reference for CreateFileCache Operation</seealso>
+        public virtual CreateFileCacheResponse CreateFileCache(CreateFileCacheRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateFileCacheRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateFileCacheResponseUnmarshaller.Instance;
+
+            return Invoke<CreateFileCacheResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a new Amazon File Cache resource.
+        /// 
+        ///  
+        /// <para>
+        /// You can use this operation with a client request token in the request that Amazon
+        /// File Cache uses to ensure idempotent creation. If a cache with the specified client
+        /// request token exists and the parameters match, <code>CreateFileCache</code> returns
+        /// the description of the existing cache. If a cache with the specified client request
+        /// token exists and the parameters don't match, this call returns <code>IncompatibleParameterError</code>.
+        /// If a file cache with the specified client request token doesn't exist, <code>CreateFileCache</code>
+        /// does the following: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Creates a new, empty Amazon File Cache resourcewith an assigned ID, and an initial
+        /// lifecycle state of <code>CREATING</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Returns the description of the cache in JSON format.
+        /// </para>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// The <code>CreateFileCache</code> call returns while the cache's lifecycle state is
+        /// still <code>CREATING</code>. You can check the cache creation status by calling the
+        /// <a href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_DescribeFileCaches.html">DescribeFileCaches</a>
+        /// operation, which returns the cache state along with other information.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateFileCache service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateFileCache service method, as returned by FSx.</returns>
+        /// <exception cref="Amazon.FSx.Model.BadRequestException">
+        /// A generic error indicating a failure with a client request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.IncompatibleParameterErrorException">
+        /// The error returned when a second request is received with the same client request
+        /// token but different parameters settings. A client request token should always uniquely
+        /// identify a single request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.InternalServerErrorException">
+        /// A generic error indicating a server-side failure.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.InvalidNetworkSettingsException">
+        /// One or more network settings specified in the request are invalid.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.InvalidPerUnitStorageThroughputException">
+        /// An invalid value for <code>PerUnitStorageThroughput</code> was provided. Please create
+        /// your file system again, using a valid value.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.MissingFileCacheConfigurationException">
+        /// A cache configuration is required for this operation.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.ServiceLimitExceededException">
+        /// An error indicating that a particular service limit was exceeded. You can increase
+        /// some service limits by contacting Amazon Web Services Support.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateFileCache">REST API Reference for CreateFileCache Operation</seealso>
+        public virtual Task<CreateFileCacheResponse> CreateFileCacheAsync(CreateFileCacheRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateFileCacheRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateFileCacheResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateFileCacheResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateFileSystem
 
 
@@ -1111,6 +1281,10 @@ namespace Amazon.FSx
         ///  </li> <li> 
         /// <para>
         /// Amazon FSx for NetApp ONTAP
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Amazon FSx for OpenZFS
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1144,21 +1318,9 @@ namespace Amazon.FSx
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Returns the description of the file system.
+        /// Returns the description of the file system in JSON format.
         /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// This operation requires a client request token in the request that Amazon FSx uses
-        /// to ensure idempotent creation. This means that calling the operation multiple times
-        /// with the same client request token has no effect. By using the idempotent operation,
-        /// you can retry a <code>CreateFileSystem</code> operation without the risk of creating
-        /// an extra file system. This approach can be useful when an initial call fails in a
-        /// way that makes it unclear whether a file system was created. Examples are if a transport-level
-        /// timeout occurred, or your connection was reset. If you use the same client request
-        /// token and the initial call created a file system, the client receives a success message
-        /// as long as the parameters are the same.
-        /// </para>
-        ///  <note> 
+        ///  </li> </ul> <note> 
         /// <para>
         /// The <code>CreateFileSystem</code> call returns while the file system's lifecycle state
         /// is still <code>CREATING</code>. You can check the file-system creation status by calling
@@ -1229,6 +1391,10 @@ namespace Amazon.FSx
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// Amazon FSx for OpenZFS
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// Amazon FSx for Windows File Server
         /// </para>
         ///  </li> </ul> 
@@ -1259,21 +1425,9 @@ namespace Amazon.FSx
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Returns the description of the file system.
+        /// Returns the description of the file system in JSON format.
         /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// This operation requires a client request token in the request that Amazon FSx uses
-        /// to ensure idempotent creation. This means that calling the operation multiple times
-        /// with the same client request token has no effect. By using the idempotent operation,
-        /// you can retry a <code>CreateFileSystem</code> operation without the risk of creating
-        /// an extra file system. This approach can be useful when an initial call fails in a
-        /// way that makes it unclear whether a file system was created. Examples are if a transport-level
-        /// timeout occurred, or your connection was reset. If you use the same client request
-        /// token and the initial call created a file system, the client receives a success message
-        /// as long as the parameters are the same.
-        /// </para>
-        ///  <note> 
+        ///  </li> </ul> <note> 
         /// <para>
         /// The <code>CreateFileSystem</code> call returns while the file system's lifecycle state
         /// is still <code>CREATING</code>. You can check the file-system creation status by calling
@@ -1344,10 +1498,10 @@ namespace Amazon.FSx
         ///  
         /// <para>
         /// If a file system with the specified client request token exists and the parameters
-        /// match, this operation returns the description of the file system. If a client request
-        /// token with the specified by the file system exists and the parameters don't match,
-        /// this call returns <code>IncompatibleParameterError</code>. If a file system with the
-        /// specified client request token doesn't exist, this operation does the following:
+        /// match, this operation returns the description of the file system. If a file system
+        /// with the specified client request token exists but the parameters don't match, this
+        /// call returns <code>IncompatibleParameterError</code>. If a file system with the specified
+        /// client request token doesn't exist, this operation does the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -1435,10 +1589,10 @@ namespace Amazon.FSx
         ///  
         /// <para>
         /// If a file system with the specified client request token exists and the parameters
-        /// match, this operation returns the description of the file system. If a client request
-        /// token with the specified by the file system exists and the parameters don't match,
-        /// this call returns <code>IncompatibleParameterError</code>. If a file system with the
-        /// specified client request token doesn't exist, this operation does the following:
+        /// match, this operation returns the description of the file system. If a file system
+        /// with the specified client request token exists but the parameters don't match, this
+        /// call returns <code>IncompatibleParameterError</code>. If a file system with the specified
+        /// client request token doesn't exist, this operation does the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -1527,9 +1681,9 @@ namespace Amazon.FSx
 
 
         /// <summary>
-        /// Creates a snapshot of an existing Amazon FSx for OpenZFS file system. With snapshots,
-        /// you can easily undo file changes and compare file versions by restoring the volume
-        /// to a previous version.
+        /// Creates a snapshot of an existing Amazon FSx for OpenZFS volume. With snapshots, you
+        /// can easily undo file changes and compare file versions by restoring the volume to
+        /// a previous version.
         /// 
         ///  
         /// <para>
@@ -1538,7 +1692,6 @@ namespace Amazon.FSx
         /// the specified client request token exists, and the parameters don't match, this operation
         /// returns <code>IncompatibleParameterError</code>. If a snapshot with the specified
         /// client request token doesn't exist, <code>CreateSnapshot</code> does the following:
-        /// 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -1562,7 +1715,7 @@ namespace Amazon.FSx
         /// The <code>CreateSnapshot</code> operation returns while the snapshot's lifecycle state
         /// is still <code>CREATING</code>. You can check the snapshot creation status by calling
         /// the <a href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_DescribeSnapshots.html">DescribeSnapshots</a>
-        /// operation, which returns the snapshot state along with other information. 
+        /// operation, which returns the snapshot state along with other information.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSnapshot service method.</param>
@@ -1579,7 +1732,7 @@ namespace Amazon.FSx
         /// some service limits by contacting Amazon Web Services Support.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.VolumeNotFoundException">
-        /// No Amazon FSx for NetApp ONTAP volumes were found based upon the supplied parameters.
+        /// No Amazon FSx volumes were found based upon the supplied parameters.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateSnapshot">REST API Reference for CreateSnapshot Operation</seealso>
         public virtual CreateSnapshotResponse CreateSnapshot(CreateSnapshotRequest request)
@@ -1593,9 +1746,9 @@ namespace Amazon.FSx
 
 
         /// <summary>
-        /// Creates a snapshot of an existing Amazon FSx for OpenZFS file system. With snapshots,
-        /// you can easily undo file changes and compare file versions by restoring the volume
-        /// to a previous version.
+        /// Creates a snapshot of an existing Amazon FSx for OpenZFS volume. With snapshots, you
+        /// can easily undo file changes and compare file versions by restoring the volume to
+        /// a previous version.
         /// 
         ///  
         /// <para>
@@ -1604,7 +1757,6 @@ namespace Amazon.FSx
         /// the specified client request token exists, and the parameters don't match, this operation
         /// returns <code>IncompatibleParameterError</code>. If a snapshot with the specified
         /// client request token doesn't exist, <code>CreateSnapshot</code> does the following:
-        /// 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -1628,7 +1780,7 @@ namespace Amazon.FSx
         /// The <code>CreateSnapshot</code> operation returns while the snapshot's lifecycle state
         /// is still <code>CREATING</code>. You can check the snapshot creation status by calling
         /// the <a href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_DescribeSnapshots.html">DescribeSnapshots</a>
-        /// operation, which returns the snapshot state along with other information. 
+        /// operation, which returns the snapshot state along with other information.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSnapshot service method.</param>
@@ -1648,7 +1800,7 @@ namespace Amazon.FSx
         /// some service limits by contacting Amazon Web Services Support.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.VolumeNotFoundException">
-        /// No Amazon FSx for NetApp ONTAP volumes were found based upon the supplied parameters.
+        /// No Amazon FSx volumes were found based upon the supplied parameters.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateSnapshot">REST API Reference for CreateSnapshot Operation</seealso>
         public virtual Task<CreateSnapshotResponse> CreateSnapshotAsync(CreateSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1755,7 +1907,7 @@ namespace Amazon.FSx
 
 
         /// <summary>
-        /// Creates an Amazon FSx for NetApp ONTAP or Amazon FSx for OpenZFS storage volume.
+        /// Creates an FSx for ONTAP or Amazon FSx for OpenZFS storage volume.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateVolume service method.</param>
         /// 
@@ -1782,7 +1934,7 @@ namespace Amazon.FSx
         /// some service limits by contacting Amazon Web Services Support.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.StorageVirtualMachineNotFoundException">
-        /// No Amazon FSx for NetApp ONTAP SVMs were found based upon the supplied parameters.
+        /// No FSx for ONTAP SVMs were found based upon the supplied parameters.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.UnsupportedOperationException">
         /// The requested operation is not supported for this resource or API.
@@ -1799,7 +1951,7 @@ namespace Amazon.FSx
 
 
         /// <summary>
-        /// Creates an Amazon FSx for NetApp ONTAP or Amazon FSx for OpenZFS storage volume.
+        /// Creates an FSx for ONTAP or Amazon FSx for OpenZFS storage volume.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateVolume service method.</param>
         /// <param name="cancellationToken">
@@ -1829,7 +1981,7 @@ namespace Amazon.FSx
         /// some service limits by contacting Amazon Web Services Support.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.StorageVirtualMachineNotFoundException">
-        /// No Amazon FSx for NetApp ONTAP SVMs were found based upon the supplied parameters.
+        /// No FSx for ONTAP SVMs were found based upon the supplied parameters.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.UnsupportedOperationException">
         /// The requested operation is not supported for this resource or API.
@@ -1881,7 +2033,7 @@ namespace Amazon.FSx
         /// some service limits by contacting Amazon Web Services Support.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.StorageVirtualMachineNotFoundException">
-        /// No Amazon FSx for NetApp ONTAP SVMs were found based upon the supplied parameters.
+        /// No FSx for ONTAP SVMs were found based upon the supplied parameters.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateVolumeFromBackup">REST API Reference for CreateVolumeFromBackup Operation</seealso>
         public virtual CreateVolumeFromBackupResponse CreateVolumeFromBackup(CreateVolumeFromBackupRequest request)
@@ -1929,7 +2081,7 @@ namespace Amazon.FSx
         /// some service limits by contacting Amazon Web Services Support.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.StorageVirtualMachineNotFoundException">
-        /// No Amazon FSx for NetApp ONTAP SVMs were found based upon the supplied parameters.
+        /// No FSx for ONTAP SVMs were found based upon the supplied parameters.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateVolumeFromBackup">REST API Reference for CreateVolumeFromBackup Operation</seealso>
         public virtual Task<CreateVolumeFromBackupResponse> CreateVolumeFromBackupAsync(CreateVolumeFromBackupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2064,8 +2216,8 @@ namespace Amazon.FSx
         /// the data repository association unlinks the file system from the Amazon S3 bucket.
         /// When deleting a data repository association, you have the option of deleting the data
         /// in the file system that corresponds to the data repository association. Data repository
-        /// associations are supported only for file systems with the <code>Persistent_2</code>
-        /// deployment type.
+        /// associations are supported on all FSx for Lustre 2.12 and newer file systems, excluding
+        /// <code>scratch_1</code> deployment type.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDataRepositoryAssociation service method.</param>
         /// 
@@ -2104,8 +2256,8 @@ namespace Amazon.FSx
         /// the data repository association unlinks the file system from the Amazon S3 bucket.
         /// When deleting a data repository association, you have the option of deleting the data
         /// in the file system that corresponds to the data repository association. Data repository
-        /// associations are supported only for file systems with the <code>Persistent_2</code>
-        /// deployment type.
+        /// associations are supported on all FSx for Lustre 2.12 and newer file systems, excluding
+        /// <code>scratch_1</code> deployment type.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDataRepositoryAssociation service method.</param>
         /// <param name="cancellationToken">
@@ -2139,6 +2291,113 @@ namespace Amazon.FSx
             options.ResponseUnmarshaller = DeleteDataRepositoryAssociationResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeleteDataRepositoryAssociationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteFileCache
+
+
+        /// <summary>
+        /// Deletes an Amazon File Cache resource. After deletion, the cache no longer exists,
+        /// and its data is gone.
+        /// 
+        ///  
+        /// <para>
+        /// The <code>DeleteFileCache</code> operation returns while the cache has the <code>DELETING</code>
+        /// status. You can check the cache deletion status by calling the <a href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_DescribeFileCaches.html">DescribeFileCaches</a>
+        /// operation, which returns a list of caches in your account. If you pass the cache ID
+        /// for a deleted cache, the <code>DescribeFileCaches</code> operation returns a <code>FileCacheNotFound</code>
+        /// error.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// The data in a deleted cache is also deleted and can't be recovered by any means.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFileCache service method.</param>
+        /// 
+        /// <returns>The response from the DeleteFileCache service method, as returned by FSx.</returns>
+        /// <exception cref="Amazon.FSx.Model.BadRequestException">
+        /// A generic error indicating a failure with a client request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.FileCacheNotFoundException">
+        /// No caches were found based upon supplied parameters.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.IncompatibleParameterErrorException">
+        /// The error returned when a second request is received with the same client request
+        /// token but different parameters settings. A client request token should always uniquely
+        /// identify a single request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.InternalServerErrorException">
+        /// A generic error indicating a server-side failure.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.ServiceLimitExceededException">
+        /// An error indicating that a particular service limit was exceeded. You can increase
+        /// some service limits by contacting Amazon Web Services Support.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DeleteFileCache">REST API Reference for DeleteFileCache Operation</seealso>
+        public virtual DeleteFileCacheResponse DeleteFileCache(DeleteFileCacheRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteFileCacheRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteFileCacheResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteFileCacheResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes an Amazon File Cache resource. After deletion, the cache no longer exists,
+        /// and its data is gone.
+        /// 
+        ///  
+        /// <para>
+        /// The <code>DeleteFileCache</code> operation returns while the cache has the <code>DELETING</code>
+        /// status. You can check the cache deletion status by calling the <a href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_DescribeFileCaches.html">DescribeFileCaches</a>
+        /// operation, which returns a list of caches in your account. If you pass the cache ID
+        /// for a deleted cache, the <code>DescribeFileCaches</code> operation returns a <code>FileCacheNotFound</code>
+        /// error.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// The data in a deleted cache is also deleted and can't be recovered by any means.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFileCache service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteFileCache service method, as returned by FSx.</returns>
+        /// <exception cref="Amazon.FSx.Model.BadRequestException">
+        /// A generic error indicating a failure with a client request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.FileCacheNotFoundException">
+        /// No caches were found based upon supplied parameters.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.IncompatibleParameterErrorException">
+        /// The error returned when a second request is received with the same client request
+        /// token but different parameters settings. A client request token should always uniquely
+        /// identify a single request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.InternalServerErrorException">
+        /// A generic error indicating a server-side failure.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.ServiceLimitExceededException">
+        /// An error indicating that a particular service limit was exceeded. You can increase
+        /// some service limits by contacting Amazon Web Services Support.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DeleteFileCache">REST API Reference for DeleteFileCache Operation</seealso>
+        public virtual Task<DeleteFileCacheResponse> DeleteFileCacheAsync(DeleteFileCacheRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteFileCacheRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteFileCacheResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteFileCacheResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2292,9 +2551,9 @@ namespace Amazon.FSx
 
 
         /// <summary>
-        /// Deletes the Amazon FSx snapshot. After deletion, the snapshot no longer exists, and
-        /// its data is gone. Deleting a snapshot doesn't affect snapshots stored in a file system
-        /// backup. 
+        /// Deletes an Amazon FSx for OpenZFS snapshot. After deletion, the snapshot no longer
+        /// exists, and its data is gone. Deleting a snapshot doesn't affect snapshots stored
+        /// in a file system backup. 
         /// 
         ///  
         /// <para>
@@ -2326,9 +2585,9 @@ namespace Amazon.FSx
 
 
         /// <summary>
-        /// Deletes the Amazon FSx snapshot. After deletion, the snapshot no longer exists, and
-        /// its data is gone. Deleting a snapshot doesn't affect snapshots stored in a file system
-        /// backup. 
+        /// Deletes an Amazon FSx for OpenZFS snapshot. After deletion, the snapshot no longer
+        /// exists, and its data is gone. Deleting a snapshot doesn't affect snapshots stored
+        /// in a file system backup. 
         /// 
         ///  
         /// <para>
@@ -2386,7 +2645,7 @@ namespace Amazon.FSx
         /// A generic error indicating a server-side failure.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.StorageVirtualMachineNotFoundException">
-        /// No Amazon FSx for NetApp ONTAP SVMs were found based upon the supplied parameters.
+        /// No FSx for ONTAP SVMs were found based upon the supplied parameters.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DeleteStorageVirtualMachine">REST API Reference for DeleteStorageVirtualMachine Operation</seealso>
         public virtual DeleteStorageVirtualMachineResponse DeleteStorageVirtualMachine(DeleteStorageVirtualMachineRequest request)
@@ -2422,7 +2681,7 @@ namespace Amazon.FSx
         /// A generic error indicating a server-side failure.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.StorageVirtualMachineNotFoundException">
-        /// No Amazon FSx for NetApp ONTAP SVMs were found based upon the supplied parameters.
+        /// No FSx for ONTAP SVMs were found based upon the supplied parameters.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DeleteStorageVirtualMachine">REST API Reference for DeleteStorageVirtualMachine Operation</seealso>
         public virtual Task<DeleteStorageVirtualMachineResponse> DeleteStorageVirtualMachineAsync(DeleteStorageVirtualMachineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2456,8 +2715,12 @@ namespace Amazon.FSx
         /// <exception cref="Amazon.FSx.Model.InternalServerErrorException">
         /// A generic error indicating a server-side failure.
         /// </exception>
+        /// <exception cref="Amazon.FSx.Model.ServiceLimitExceededException">
+        /// An error indicating that a particular service limit was exceeded. You can increase
+        /// some service limits by contacting Amazon Web Services Support.
+        /// </exception>
         /// <exception cref="Amazon.FSx.Model.VolumeNotFoundException">
-        /// No Amazon FSx for NetApp ONTAP volumes were found based upon the supplied parameters.
+        /// No Amazon FSx volumes were found based upon the supplied parameters.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DeleteVolume">REST API Reference for DeleteVolume Operation</seealso>
         public virtual DeleteVolumeResponse DeleteVolume(DeleteVolumeRequest request)
@@ -2490,8 +2753,12 @@ namespace Amazon.FSx
         /// <exception cref="Amazon.FSx.Model.InternalServerErrorException">
         /// A generic error indicating a server-side failure.
         /// </exception>
+        /// <exception cref="Amazon.FSx.Model.ServiceLimitExceededException">
+        /// An error indicating that a particular service limit was exceeded. You can increase
+        /// some service limits by contacting Amazon Web Services Support.
+        /// </exception>
         /// <exception cref="Amazon.FSx.Model.VolumeNotFoundException">
-        /// No Amazon FSx for NetApp ONTAP volumes were found based upon the supplied parameters.
+        /// No Amazon FSx volumes were found based upon the supplied parameters.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DeleteVolume">REST API Reference for DeleteVolume Operation</seealso>
         public virtual Task<DeleteVolumeResponse> DeleteVolumeAsync(DeleteVolumeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2563,7 +2830,7 @@ namespace Amazon.FSx
         /// A generic error indicating a server-side failure.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.VolumeNotFoundException">
-        /// No Amazon FSx for NetApp ONTAP volumes were found based upon the supplied parameters.
+        /// No Amazon FSx volumes were found based upon the supplied parameters.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeBackups">REST API Reference for DescribeBackups Operation</seealso>
         public virtual DescribeBackupsResponse DescribeBackups(DescribeBackupsRequest request)
@@ -2634,7 +2901,7 @@ namespace Amazon.FSx
         /// A generic error indicating a server-side failure.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.VolumeNotFoundException">
-        /// No Amazon FSx for NetApp ONTAP volumes were found based upon the supplied parameters.
+        /// No Amazon FSx volumes were found based upon the supplied parameters.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeBackups">REST API Reference for DescribeBackups Operation</seealso>
         public virtual Task<DescribeBackupsResponse> DescribeBackupsAsync(DescribeBackupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2652,17 +2919,19 @@ namespace Amazon.FSx
 
 
         /// <summary>
-        /// Returns the description of specific Amazon FSx for Lustre data repository associations,
-        /// if one or more <code>AssociationIds</code> values are provided in the request, or
-        /// if filters are used in the request. Data repository associations are supported only
-        /// for file systems with the <code>Persistent_2</code> deployment type.
+        /// Returns the description of specific Amazon FSx for Lustre or Amazon File Cache data
+        /// repository associations, if one or more <code>AssociationIds</code> values are provided
+        /// in the request, or if filters are used in the request. Data repository associations
+        /// are supported on Amazon File Cache resources and all FSx for Lustre 2.12 and newer
+        /// file systems, excluding <code>scratch_1</code> deployment type.
         /// 
         ///  
         /// <para>
         /// You can use filters to narrow the response to include just data repository associations
         /// for specific file systems (use the <code>file-system-id</code> filter with the ID
-        /// of the file system) or data repository associations for a specific repository type
-        /// (use the <code>data-repository-type</code> filter with a value of <code>S3</code>).
+        /// of the file system) or caches (use the <code>file-cache-id</code> filter with the
+        /// ID of the cache), or data repository associations for a specific repository type (use
+        /// the <code>data-repository-type</code> filter with a value of <code>S3</code> or <code>NFS</code>).
         /// If you don't use filters, the response returns all data repository associations owned
         /// by your Amazon Web Services account in the Amazon Web Services Region of the endpoint
         /// that you're calling.
@@ -2672,9 +2941,9 @@ namespace Amazon.FSx
         /// When retrieving all data repository associations, you can paginate the response by
         /// using the optional <code>MaxResults</code> parameter to limit the number of data repository
         /// associations returned in a response. If more data repository associations remain,
-        /// Amazon FSx returns a <code>NextToken</code> value in the response. In this case, send
-        /// a later request with the <code>NextToken</code> request parameter set to the value
-        /// of <code>NextToken</code> from the last response.
+        /// a <code>NextToken</code> value is returned in the response. In this case, send a later
+        /// request with the <code>NextToken</code> request parameter set to the value of <code>NextToken</code>
+        /// from the last response.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDataRepositoryAssociations service method.</param>
@@ -2707,17 +2976,19 @@ namespace Amazon.FSx
 
 
         /// <summary>
-        /// Returns the description of specific Amazon FSx for Lustre data repository associations,
-        /// if one or more <code>AssociationIds</code> values are provided in the request, or
-        /// if filters are used in the request. Data repository associations are supported only
-        /// for file systems with the <code>Persistent_2</code> deployment type.
+        /// Returns the description of specific Amazon FSx for Lustre or Amazon File Cache data
+        /// repository associations, if one or more <code>AssociationIds</code> values are provided
+        /// in the request, or if filters are used in the request. Data repository associations
+        /// are supported on Amazon File Cache resources and all FSx for Lustre 2.12 and newer
+        /// file systems, excluding <code>scratch_1</code> deployment type.
         /// 
         ///  
         /// <para>
         /// You can use filters to narrow the response to include just data repository associations
         /// for specific file systems (use the <code>file-system-id</code> filter with the ID
-        /// of the file system) or data repository associations for a specific repository type
-        /// (use the <code>data-repository-type</code> filter with a value of <code>S3</code>).
+        /// of the file system) or caches (use the <code>file-cache-id</code> filter with the
+        /// ID of the cache), or data repository associations for a specific repository type (use
+        /// the <code>data-repository-type</code> filter with a value of <code>S3</code> or <code>NFS</code>).
         /// If you don't use filters, the response returns all data repository associations owned
         /// by your Amazon Web Services account in the Amazon Web Services Region of the endpoint
         /// that you're calling.
@@ -2727,9 +2998,9 @@ namespace Amazon.FSx
         /// When retrieving all data repository associations, you can paginate the response by
         /// using the optional <code>MaxResults</code> parameter to limit the number of data repository
         /// associations returned in a response. If more data repository associations remain,
-        /// Amazon FSx returns a <code>NextToken</code> value in the response. In this case, send
-        /// a later request with the <code>NextToken</code> request parameter set to the value
-        /// of <code>NextToken</code> from the last response.
+        /// a <code>NextToken</code> value is returned in the response. In this case, send a later
+        /// request with the <code>NextToken</code> request parameter set to the value of <code>NextToken</code>
+        /// from the last response.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDataRepositoryAssociations service method.</param>
@@ -2769,20 +3040,21 @@ namespace Amazon.FSx
 
 
         /// <summary>
-        /// Returns the description of specific Amazon FSx for Lustre data repository tasks, if
-        /// one or more <code>TaskIds</code> values are provided in the request, or if filters
-        /// are used in the request. You can use filters to narrow the response to include just
-        /// tasks for specific file systems, or tasks in a specific lifecycle state. Otherwise,
-        /// it returns all data repository tasks owned by your Amazon Web Services account in
-        /// the Amazon Web Services Region of the endpoint that you're calling.
+        /// Returns the description of specific Amazon FSx for Lustre or Amazon File Cache data
+        /// repository tasks, if one or more <code>TaskIds</code> values are provided in the request,
+        /// or if filters are used in the request. You can use filters to narrow the response
+        /// to include just tasks for specific file systems or caches, or tasks in a specific
+        /// lifecycle state. Otherwise, it returns all data repository tasks owned by your Amazon
+        /// Web Services account in the Amazon Web Services Region of the endpoint that you're
+        /// calling.
         /// 
         ///  
         /// <para>
         /// When retrieving all tasks, you can paginate the response by using the optional <code>MaxResults</code>
         /// parameter to limit the number of tasks returned in a response. If more tasks remain,
-        /// Amazon FSx returns a <code>NextToken</code> value in the response. In this case, send
-        /// a later request with the <code>NextToken</code> request parameter set to the value
-        /// of <code>NextToken</code> from the last response.
+        /// a <code>NextToken</code> value is returned in the response. In this case, send a later
+        /// request with the <code>NextToken</code> request parameter set to the value of <code>NextToken</code>
+        /// from the last response.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDataRepositoryTasks service method.</param>
@@ -2812,20 +3084,21 @@ namespace Amazon.FSx
 
 
         /// <summary>
-        /// Returns the description of specific Amazon FSx for Lustre data repository tasks, if
-        /// one or more <code>TaskIds</code> values are provided in the request, or if filters
-        /// are used in the request. You can use filters to narrow the response to include just
-        /// tasks for specific file systems, or tasks in a specific lifecycle state. Otherwise,
-        /// it returns all data repository tasks owned by your Amazon Web Services account in
-        /// the Amazon Web Services Region of the endpoint that you're calling.
+        /// Returns the description of specific Amazon FSx for Lustre or Amazon File Cache data
+        /// repository tasks, if one or more <code>TaskIds</code> values are provided in the request,
+        /// or if filters are used in the request. You can use filters to narrow the response
+        /// to include just tasks for specific file systems or caches, or tasks in a specific
+        /// lifecycle state. Otherwise, it returns all data repository tasks owned by your Amazon
+        /// Web Services account in the Amazon Web Services Region of the endpoint that you're
+        /// calling.
         /// 
         ///  
         /// <para>
         /// When retrieving all tasks, you can paginate the response by using the optional <code>MaxResults</code>
         /// parameter to limit the number of tasks returned in a response. If more tasks remain,
-        /// Amazon FSx returns a <code>NextToken</code> value in the response. In this case, send
-        /// a later request with the <code>NextToken</code> request parameter set to the value
-        /// of <code>NextToken</code> from the last response.
+        /// a <code>NextToken</code> value is returned in the response. In this case, send a later
+        /// request with the <code>NextToken</code> request parameter set to the value of <code>NextToken</code>
+        /// from the last response.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDataRepositoryTasks service method.</param>
@@ -2854,6 +3127,137 @@ namespace Amazon.FSx
             options.ResponseUnmarshaller = DescribeDataRepositoryTasksResponseUnmarshaller.Instance;
             
             return InvokeAsync<DescribeDataRepositoryTasksResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeFileCaches
+
+
+        /// <summary>
+        /// Returns the description of a specific Amazon File Cache resource, if a <code>FileCacheIds</code>
+        /// value is provided for that cache. Otherwise, it returns descriptions of all caches
+        /// owned by your Amazon Web Services account in the Amazon Web Services Region of the
+        /// endpoint that you're calling.
+        /// 
+        ///  
+        /// <para>
+        /// When retrieving all cache descriptions, you can optionally specify the <code>MaxResults</code>
+        /// parameter to limit the number of descriptions in a response. If more cache descriptions
+        /// remain, the operation returns a <code>NextToken</code> value in the response. In this
+        /// case, send a later request with the <code>NextToken</code> request parameter set to
+        /// the value of <code>NextToken</code> from the last response.
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation is used in an iterative process to retrieve a list of your cache descriptions.
+        /// <code>DescribeFileCaches</code> is called first without a <code>NextToken</code>value.
+        /// Then the operation continues to be called with the <code>NextToken</code> parameter
+        /// set to the value of the last <code>NextToken</code> value until a response has no
+        /// <code>NextToken</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// When using this operation, keep the following in mind:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The implementation might return fewer than <code>MaxResults</code> cache descriptions
+        /// while still including a <code>NextToken</code> value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The order of caches returned in the response of one <code>DescribeFileCaches</code>
+        /// call and the order of caches returned across the responses of a multicall iteration
+        /// is unspecified.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeFileCaches service method.</param>
+        /// 
+        /// <returns>The response from the DescribeFileCaches service method, as returned by FSx.</returns>
+        /// <exception cref="Amazon.FSx.Model.BadRequestException">
+        /// A generic error indicating a failure with a client request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.FileCacheNotFoundException">
+        /// No caches were found based upon supplied parameters.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.InternalServerErrorException">
+        /// A generic error indicating a server-side failure.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeFileCaches">REST API Reference for DescribeFileCaches Operation</seealso>
+        public virtual DescribeFileCachesResponse DescribeFileCaches(DescribeFileCachesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeFileCachesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeFileCachesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeFileCachesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns the description of a specific Amazon File Cache resource, if a <code>FileCacheIds</code>
+        /// value is provided for that cache. Otherwise, it returns descriptions of all caches
+        /// owned by your Amazon Web Services account in the Amazon Web Services Region of the
+        /// endpoint that you're calling.
+        /// 
+        ///  
+        /// <para>
+        /// When retrieving all cache descriptions, you can optionally specify the <code>MaxResults</code>
+        /// parameter to limit the number of descriptions in a response. If more cache descriptions
+        /// remain, the operation returns a <code>NextToken</code> value in the response. In this
+        /// case, send a later request with the <code>NextToken</code> request parameter set to
+        /// the value of <code>NextToken</code> from the last response.
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation is used in an iterative process to retrieve a list of your cache descriptions.
+        /// <code>DescribeFileCaches</code> is called first without a <code>NextToken</code>value.
+        /// Then the operation continues to be called with the <code>NextToken</code> parameter
+        /// set to the value of the last <code>NextToken</code> value until a response has no
+        /// <code>NextToken</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// When using this operation, keep the following in mind:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The implementation might return fewer than <code>MaxResults</code> cache descriptions
+        /// while still including a <code>NextToken</code> value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The order of caches returned in the response of one <code>DescribeFileCaches</code>
+        /// call and the order of caches returned across the responses of a multicall iteration
+        /// is unspecified.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeFileCaches service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeFileCaches service method, as returned by FSx.</returns>
+        /// <exception cref="Amazon.FSx.Model.BadRequestException">
+        /// A generic error indicating a failure with a client request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.FileCacheNotFoundException">
+        /// No caches were found based upon supplied parameters.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.InternalServerErrorException">
+        /// A generic error indicating a server-side failure.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeFileCaches">REST API Reference for DescribeFileCaches Operation</seealso>
+        public virtual Task<DescribeFileCachesResponse> DescribeFileCachesAsync(DescribeFileCachesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeFileCachesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeFileCachesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeFileCachesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3058,7 +3462,7 @@ namespace Amazon.FSx
 
 
         /// <summary>
-        /// Returns the description of specific Amazon FSx snapshots, if a <code>SnapshotIds</code>
+        /// Returns the description of specific Amazon FSx for OpenZFS snapshots, if a <code>SnapshotIds</code>
         /// value is provided. Otherwise, this operation returns all snapshots owned by your Amazon
         /// Web Services account in the Amazon Web Services Region of the endpoint that you're
         /// calling.
@@ -3119,7 +3523,7 @@ namespace Amazon.FSx
 
 
         /// <summary>
-        /// Returns the description of specific Amazon FSx snapshots, if a <code>SnapshotIds</code>
+        /// Returns the description of specific Amazon FSx for OpenZFS snapshots, if a <code>SnapshotIds</code>
         /// value is provided. Otherwise, this operation returns all snapshots owned by your Amazon
         /// Web Services account in the Amazon Web Services Region of the endpoint that you're
         /// calling.
@@ -3199,7 +3603,7 @@ namespace Amazon.FSx
         /// A generic error indicating a server-side failure.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.StorageVirtualMachineNotFoundException">
-        /// No Amazon FSx for NetApp ONTAP SVMs were found based upon the supplied parameters.
+        /// No FSx for ONTAP SVMs were found based upon the supplied parameters.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeStorageVirtualMachines">REST API Reference for DescribeStorageVirtualMachines Operation</seealso>
         public virtual DescribeStorageVirtualMachinesResponse DescribeStorageVirtualMachines(DescribeStorageVirtualMachinesRequest request)
@@ -3228,7 +3632,7 @@ namespace Amazon.FSx
         /// A generic error indicating a server-side failure.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.StorageVirtualMachineNotFoundException">
-        /// No Amazon FSx for NetApp ONTAP SVMs were found based upon the supplied parameters.
+        /// No FSx for ONTAP SVMs were found based upon the supplied parameters.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeStorageVirtualMachines">REST API Reference for DescribeStorageVirtualMachines Operation</seealso>
         public virtual Task<DescribeStorageVirtualMachinesResponse> DescribeStorageVirtualMachinesAsync(DescribeStorageVirtualMachinesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3258,7 +3662,7 @@ namespace Amazon.FSx
         /// A generic error indicating a server-side failure.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.VolumeNotFoundException">
-        /// No Amazon FSx for NetApp ONTAP volumes were found based upon the supplied parameters.
+        /// No Amazon FSx volumes were found based upon the supplied parameters.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeVolumes">REST API Reference for DescribeVolumes Operation</seealso>
         public virtual DescribeVolumesResponse DescribeVolumes(DescribeVolumesRequest request)
@@ -3287,7 +3691,7 @@ namespace Amazon.FSx
         /// A generic error indicating a server-side failure.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.VolumeNotFoundException">
-        /// No Amazon FSx for NetApp ONTAP volumes were found based upon the supplied parameters.
+        /// No Amazon FSx volumes were found based upon the supplied parameters.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeVolumes">REST API Reference for DescribeVolumes Operation</seealso>
         public virtual Task<DescribeVolumesResponse> DescribeVolumesAsync(DescribeVolumesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3386,8 +3790,7 @@ namespace Amazon.FSx
 
 
         /// <summary>
-        /// Lists tags for an Amazon FSx file systems and backups in the case of Amazon FSx for
-        /// Windows File Server.
+        /// Lists tags for Amazon FSx resources.
         /// 
         ///  
         /// <para>
@@ -3452,8 +3855,7 @@ namespace Amazon.FSx
 
 
         /// <summary>
-        /// Lists tags for an Amazon FSx file systems and backups in the case of Amazon FSx for
-        /// Windows File Server.
+        /// Lists tags for Amazon FSx resources.
         /// 
         ///  
         /// <para>
@@ -3614,7 +4016,7 @@ namespace Amazon.FSx
         /// A generic error indicating a server-side failure.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.VolumeNotFoundException">
-        /// No Amazon FSx for NetApp ONTAP volumes were found based upon the supplied parameters.
+        /// No Amazon FSx volumes were found based upon the supplied parameters.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/RestoreVolumeFromSnapshot">REST API Reference for RestoreVolumeFromSnapshot Operation</seealso>
         public virtual RestoreVolumeFromSnapshotResponse RestoreVolumeFromSnapshot(RestoreVolumeFromSnapshotRequest request)
@@ -3643,7 +4045,7 @@ namespace Amazon.FSx
         /// A generic error indicating a server-side failure.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.VolumeNotFoundException">
-        /// No Amazon FSx for NetApp ONTAP volumes were found based upon the supplied parameters.
+        /// No Amazon FSx volumes were found based upon the supplied parameters.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/RestoreVolumeFromSnapshot">REST API Reference for RestoreVolumeFromSnapshot Operation</seealso>
         public virtual Task<RestoreVolumeFromSnapshotResponse> RestoreVolumeFromSnapshotAsync(RestoreVolumeFromSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3808,8 +4210,9 @@ namespace Amazon.FSx
 
         /// <summary>
         /// Updates the configuration of an existing data repository association on an Amazon
-        /// FSx for Lustre file system. Data repository associations are supported only for file
-        /// systems with the <code>Persistent_2</code> deployment type.
+        /// FSx for Lustre file system. Data repository associations are supported on all FSx
+        /// for Lustre 2.12 and newer file systems, excluding <code>scratch_1</code> deployment
+        /// type.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateDataRepositoryAssociation service method.</param>
         /// 
@@ -3845,8 +4248,9 @@ namespace Amazon.FSx
 
         /// <summary>
         /// Updates the configuration of an existing data repository association on an Amazon
-        /// FSx for Lustre file system. Data repository associations are supported only for file
-        /// systems with the <code>Persistent_2</code> deployment type.
+        /// FSx for Lustre file system. Data repository associations are supported on all FSx
+        /// for Lustre 2.12 and newer file systems, excluding <code>scratch_1</code> deployment
+        /// type.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateDataRepositoryAssociation service method.</param>
         /// <param name="cancellationToken">
@@ -3884,6 +4288,97 @@ namespace Amazon.FSx
 
         #endregion
         
+        #region  UpdateFileCache
+
+
+        /// <summary>
+        /// Updates the configuration of an existing Amazon File Cache resource. You can update
+        /// multiple properties in a single request.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateFileCache service method.</param>
+        /// 
+        /// <returns>The response from the UpdateFileCache service method, as returned by FSx.</returns>
+        /// <exception cref="Amazon.FSx.Model.BadRequestException">
+        /// A generic error indicating a failure with a client request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.FileCacheNotFoundException">
+        /// No caches were found based upon supplied parameters.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.IncompatibleParameterErrorException">
+        /// The error returned when a second request is received with the same client request
+        /// token but different parameters settings. A client request token should always uniquely
+        /// identify a single request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.InternalServerErrorException">
+        /// A generic error indicating a server-side failure.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.MissingFileCacheConfigurationException">
+        /// A cache configuration is required for this operation.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.ServiceLimitExceededException">
+        /// An error indicating that a particular service limit was exceeded. You can increase
+        /// some service limits by contacting Amazon Web Services Support.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.UnsupportedOperationException">
+        /// The requested operation is not supported for this resource or API.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/UpdateFileCache">REST API Reference for UpdateFileCache Operation</seealso>
+        public virtual UpdateFileCacheResponse UpdateFileCache(UpdateFileCacheRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateFileCacheRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateFileCacheResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateFileCacheResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates the configuration of an existing Amazon File Cache resource. You can update
+        /// multiple properties in a single request.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateFileCache service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateFileCache service method, as returned by FSx.</returns>
+        /// <exception cref="Amazon.FSx.Model.BadRequestException">
+        /// A generic error indicating a failure with a client request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.FileCacheNotFoundException">
+        /// No caches were found based upon supplied parameters.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.IncompatibleParameterErrorException">
+        /// The error returned when a second request is received with the same client request
+        /// token but different parameters settings. A client request token should always uniquely
+        /// identify a single request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.InternalServerErrorException">
+        /// A generic error indicating a server-side failure.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.MissingFileCacheConfigurationException">
+        /// A cache configuration is required for this operation.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.ServiceLimitExceededException">
+        /// An error indicating that a particular service limit was exceeded. You can increase
+        /// some service limits by contacting Amazon Web Services Support.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.UnsupportedOperationException">
+        /// The requested operation is not supported for this resource or API.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/UpdateFileCache">REST API Reference for UpdateFileCache Operation</seealso>
+        public virtual Task<UpdateFileCacheResponse> UpdateFileCacheAsync(UpdateFileCacheRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateFileCacheRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateFileCacheResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateFileCacheResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  UpdateFileSystem
 
 
@@ -3893,8 +4388,7 @@ namespace Amazon.FSx
         /// 
         ///  
         /// <para>
-        /// For Amazon FSx for Windows File Server file systems, you can update the following
-        /// properties:
+        /// For FSx for Windows File Server file systems, you can update the following properties:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -3946,6 +4440,10 @@ namespace Amazon.FSx
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>LustreRootSquashConfiguration</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>StorageCapacity</code> 
         /// </para>
         ///  </li> <li> 
@@ -3958,6 +4456,10 @@ namespace Amazon.FSx
         /// </para>
         ///  <ul> <li> 
         /// <para>
+        ///  <code>AddRouteTableIds</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>AutomaticBackupRetentionDays</code> 
         /// </para>
         ///  </li> <li> 
@@ -3966,7 +4468,23 @@ namespace Amazon.FSx
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>DiskIopsConfiguration</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>FsxAdminPassword</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>RemoveRouteTableIds</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>StorageCapacity</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ThroughputCapacity</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3974,7 +4492,7 @@ namespace Amazon.FSx
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For the Amazon FSx for OpenZFS file systems, you can update the following properties:
+        /// For FSx for OpenZFS file systems, you can update the following properties:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -3995,6 +4513,10 @@ namespace Amazon.FSx
         ///  </li> <li> 
         /// <para>
         ///  <code>DiskIopsConfiguration</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>StorageCapacity</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4023,6 +4545,9 @@ namespace Amazon.FSx
         /// <exception cref="Amazon.FSx.Model.InternalServerErrorException">
         /// A generic error indicating a server-side failure.
         /// </exception>
+        /// <exception cref="Amazon.FSx.Model.InvalidNetworkSettingsException">
+        /// One or more network settings specified in the request are invalid.
+        /// </exception>
         /// <exception cref="Amazon.FSx.Model.MissingFileSystemConfigurationException">
         /// A file system configuration is required for this operation.
         /// </exception>
@@ -4050,8 +4575,7 @@ namespace Amazon.FSx
         /// 
         ///  
         /// <para>
-        /// For Amazon FSx for Windows File Server file systems, you can update the following
-        /// properties:
+        /// For FSx for Windows File Server file systems, you can update the following properties:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -4103,6 +4627,10 @@ namespace Amazon.FSx
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>LustreRootSquashConfiguration</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>StorageCapacity</code> 
         /// </para>
         ///  </li> <li> 
@@ -4115,6 +4643,10 @@ namespace Amazon.FSx
         /// </para>
         ///  <ul> <li> 
         /// <para>
+        ///  <code>AddRouteTableIds</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>AutomaticBackupRetentionDays</code> 
         /// </para>
         ///  </li> <li> 
@@ -4123,7 +4655,23 @@ namespace Amazon.FSx
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>DiskIopsConfiguration</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>FsxAdminPassword</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>RemoveRouteTableIds</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>StorageCapacity</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ThroughputCapacity</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4131,7 +4679,7 @@ namespace Amazon.FSx
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For the Amazon FSx for OpenZFS file systems, you can update the following properties:
+        /// For FSx for OpenZFS file systems, you can update the following properties:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -4152,6 +4700,10 @@ namespace Amazon.FSx
         ///  </li> <li> 
         /// <para>
         ///  <code>DiskIopsConfiguration</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>StorageCapacity</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4183,6 +4735,9 @@ namespace Amazon.FSx
         /// <exception cref="Amazon.FSx.Model.InternalServerErrorException">
         /// A generic error indicating a server-side failure.
         /// </exception>
+        /// <exception cref="Amazon.FSx.Model.InvalidNetworkSettingsException">
+        /// One or more network settings specified in the request are invalid.
+        /// </exception>
         /// <exception cref="Amazon.FSx.Model.MissingFileSystemConfigurationException">
         /// A file system configuration is required for this operation.
         /// </exception>
@@ -4209,7 +4764,7 @@ namespace Amazon.FSx
 
 
         /// <summary>
-        /// Updates the name of a snapshot.
+        /// Updates the name of an Amazon FSx for OpenZFS snapshot.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateSnapshot service method.</param>
         /// 
@@ -4235,7 +4790,7 @@ namespace Amazon.FSx
 
 
         /// <summary>
-        /// Updates the name of a snapshot.
+        /// Updates the name of an Amazon FSx for OpenZFS snapshot.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateSnapshot service method.</param>
         /// <param name="cancellationToken">
@@ -4268,7 +4823,7 @@ namespace Amazon.FSx
 
 
         /// <summary>
-        /// Updates an Amazon FSx for ONTAP storage virtual machine (SVM).
+        /// Updates an FSx for ONTAP storage virtual machine (SVM).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateStorageVirtualMachine service method.</param>
         /// 
@@ -4285,7 +4840,7 @@ namespace Amazon.FSx
         /// A generic error indicating a server-side failure.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.StorageVirtualMachineNotFoundException">
-        /// No Amazon FSx for NetApp ONTAP SVMs were found based upon the supplied parameters.
+        /// No FSx for ONTAP SVMs were found based upon the supplied parameters.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.UnsupportedOperationException">
         /// The requested operation is not supported for this resource or API.
@@ -4302,7 +4857,7 @@ namespace Amazon.FSx
 
 
         /// <summary>
-        /// Updates an Amazon FSx for ONTAP storage virtual machine (SVM).
+        /// Updates an FSx for ONTAP storage virtual machine (SVM).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateStorageVirtualMachine service method.</param>
         /// <param name="cancellationToken">
@@ -4322,7 +4877,7 @@ namespace Amazon.FSx
         /// A generic error indicating a server-side failure.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.StorageVirtualMachineNotFoundException">
-        /// No Amazon FSx for NetApp ONTAP SVMs were found based upon the supplied parameters.
+        /// No FSx for ONTAP SVMs were found based upon the supplied parameters.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.UnsupportedOperationException">
         /// The requested operation is not supported for this resource or API.
@@ -4364,7 +4919,7 @@ namespace Amazon.FSx
         /// A volume configuration is required for this operation.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.VolumeNotFoundException">
-        /// No Amazon FSx for NetApp ONTAP volumes were found based upon the supplied parameters.
+        /// No Amazon FSx volumes were found based upon the supplied parameters.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/UpdateVolume">REST API Reference for UpdateVolume Operation</seealso>
         public virtual UpdateVolumeResponse UpdateVolume(UpdateVolumeRequest request)
@@ -4402,7 +4957,7 @@ namespace Amazon.FSx
         /// A volume configuration is required for this operation.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.VolumeNotFoundException">
-        /// No Amazon FSx for NetApp ONTAP volumes were found based upon the supplied parameters.
+        /// No Amazon FSx volumes were found based upon the supplied parameters.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/UpdateVolume">REST API Reference for UpdateVolume Operation</seealso>
         public virtual Task<UpdateVolumeResponse> UpdateVolumeAsync(UpdateVolumeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))

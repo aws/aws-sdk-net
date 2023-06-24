@@ -50,6 +50,7 @@ namespace Amazon.CloudFront.Model
         private Origins _origins;
         private PriceClass _priceClass;
         private Restrictions _restrictions;
+        private bool? _staging;
         private string _status;
         private ViewerCertificate _viewerCertificate;
         private string _webACLId;
@@ -245,7 +246,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property HttpVersion. 
         /// <para>
-        ///  Specify the maximum HTTP version that you want viewers to use to communicate with
+        /// Specify the maximum HTTP version that you want viewers to use to communicate with
         /// CloudFront. The default value for new web distributions is <code>http2</code>. Viewers
         /// that don't support <code>HTTP/2</code> will automatically use an earlier version.
         /// </para>
@@ -323,7 +324,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property OriginGroups. 
         /// <para>
-        ///  A complex type that contains information about origin groups for this distribution.
+        /// A complex type that contains information about origin groups for this distribution.
         /// </para>
         /// </summary>
         public OriginGroups OriginGroups
@@ -361,7 +362,6 @@ namespace Amazon.CloudFront.Model
         /// Gets and sets the property PriceClass. 
         /// <para>
         /// A complex type that contains information about price class for this streaming distribution.
-        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -398,6 +398,25 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Staging. 
+        /// <para>
+        /// Whether the primary distribution has a staging distribution enabled.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public bool Staging
+        {
+            get { return this._staging.GetValueOrDefault(); }
+            set { this._staging = value; }
+        }
+
+        // Check to see if Staging property is set
+        internal bool IsSetStaging()
+        {
+            return this._staging.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
         /// The current status of the distribution. When the status is <code>Deployed</code>,
@@ -420,7 +439,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property ViewerCertificate. 
         /// <para>
-        /// A complex type that determines the distribution’s SSL/TLS configuration for communicating
+        /// A complex type that determines the distribution's SSL/TLS configuration for communicating
         /// with viewers.
         /// </para>
         /// </summary>

@@ -73,6 +73,20 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Description.Value", StringUtils.FromString(publicRequest.Description));
                 }
+                if(publicRequest.IsSetEnaSrdSpecification())
+                {
+                    if(publicRequest.EnaSrdSpecification.IsSetEnaSrdEnabled())
+                    {
+                        request.Parameters.Add("EnaSrdSpecification" + "." + "EnaSrdEnabled", StringUtils.FromBool(publicRequest.EnaSrdSpecification.EnaSrdEnabled));
+                    }
+                    if(publicRequest.EnaSrdSpecification.IsSetEnaSrdUdpSpecification())
+                    {
+                        if(publicRequest.EnaSrdSpecification.EnaSrdUdpSpecification.IsSetEnaSrdUdpEnabled())
+                        {
+                            request.Parameters.Add("EnaSrdSpecification" + "." + "EnaSrdUdpSpecification" + "." + "EnaSrdUdpEnabled", StringUtils.FromBool(publicRequest.EnaSrdSpecification.EnaSrdUdpSpecification.EnaSrdUdpEnabled));
+                        }
+                    }
+                }
                 if(publicRequest.IsSetGroups())
                 {
                     int publicRequestlistValueIndex = 1;

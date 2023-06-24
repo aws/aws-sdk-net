@@ -75,16 +75,12 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>availability-zone-id</code> - The Availability Zone ID of the Capacity Reservation.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         ///  <code>instance-platform</code> - The type of operating system for which the Capacity
         /// Reservation reserves capacity.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>availability-zone</code> - The Availability Zone ID of the Capacity Reservation.
+        ///  <code>availability-zone</code> - The Availability Zone of the Capacity Reservation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -184,7 +180,12 @@ namespace Amazon.EC2.Model
         /// target the Capacity Reservation. This ensures that only permitted instances can use
         /// the reserved capacity.
         /// </para>
-        ///  </li> </ul> </li> </ul>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        ///  <code>placement-group-arn</code> - The ARN of the cluster placement group in which
+        /// the Capacity Reservation was created.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public List<Filter> Filters
         {

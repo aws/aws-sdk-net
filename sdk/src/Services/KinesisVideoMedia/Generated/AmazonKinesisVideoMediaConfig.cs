@@ -17,22 +17,22 @@
  * Do not modify this file. This file is generated from the kinesis-video-media-2017-09-30.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
-
+using Amazon.KinesisVideoMedia.Internal;
 
 namespace Amazon.KinesisVideoMedia
 {
     /// <summary>
     /// Configuration for accessing Amazon KinesisVideoMedia service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonKinesisVideoMediaConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.105");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.147");
 
         private string _userAgent = UserAgentString;
 
@@ -40,8 +40,10 @@ namespace Amazon.KinesisVideoMedia
         /// Default constructor
         /// </summary>
         public AmazonKinesisVideoMediaConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonKinesisVideoMediaDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "kinesisvideo";
+            this.EndpointProvider = new AmazonKinesisVideoMediaEndpointProvider();
         }
 
         /// <summary>
@@ -76,5 +78,6 @@ namespace Amazon.KinesisVideoMedia
                 return _userAgent;
             }
         }
+
     }
 }

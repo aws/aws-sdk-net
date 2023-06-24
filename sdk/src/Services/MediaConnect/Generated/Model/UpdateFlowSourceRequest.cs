@@ -38,6 +38,7 @@ namespace Amazon.MediaConnect.Model
         private string _description;
         private string _entitlementArn;
         private string _flowArn;
+        private UpdateGatewayBridgeSourceRequest _gatewayBridgeSource;
         private int? _ingestPort;
         private int? _maxBitrate;
         private int? _maxLatency;
@@ -45,14 +46,18 @@ namespace Amazon.MediaConnect.Model
         private List<MediaStreamSourceConfigurationRequest> _mediaStreamSourceConfigurations = new List<MediaStreamSourceConfigurationRequest>();
         private int? _minLatency;
         private Protocol _protocol;
+        private int? _senderControlPort;
+        private string _senderIpAddress;
         private string _sourceArn;
+        private string _sourceListenerAddress;
+        private int? _sourceListenerPort;
         private string _streamId;
         private string _vpcInterfaceName;
         private string _whitelistCidr;
 
         /// <summary>
         /// Gets and sets the property Decryption. The type of encryption used on the content
-        /// ingested from this source.
+        /// ingested from this source. Allowable encryption types: static-key.
         /// </summary>
         public UpdateEncryption Decryption
         {
@@ -117,6 +122,22 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
+        /// Gets and sets the property GatewayBridgeSource. The source configuration for cloud
+        /// flows receiving a stream from a bridge.
+        /// </summary>
+        public UpdateGatewayBridgeSourceRequest GatewayBridgeSource
+        {
+            get { return this._gatewayBridgeSource; }
+            set { this._gatewayBridgeSource = value; }
+        }
+
+        // Check to see if GatewayBridgeSource property is set
+        internal bool IsSetGatewayBridgeSource()
+        {
+            return this._gatewayBridgeSource != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property IngestPort. The port that the flow will be listening on
         /// for incoming content.
         /// </summary>
@@ -133,8 +154,8 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MaxBitrate. The smoothing max bitrate for RIST, RTP, and
-        /// RTP-FEC streams.
+        /// Gets and sets the property MaxBitrate. The smoothing max bitrate (in bps) for RIST,
+        /// RTP, and RTP-FEC streams.
         /// </summary>
         public int MaxBitrate
         {
@@ -150,7 +171,7 @@ namespace Amazon.MediaConnect.Model
 
         /// <summary>
         /// Gets and sets the property MaxLatency. The maximum latency in milliseconds. This parameter
-        /// applies only to RIST-based and Zixi-based streams.
+        /// applies only to RIST-based, Zixi-based, and Fujitsu-based streams.
         /// </summary>
         public int MaxLatency
         {
@@ -231,6 +252,38 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SenderControlPort. The port that the flow uses to send
+        /// outbound requests to initiate connection with the sender.
+        /// </summary>
+        public int SenderControlPort
+        {
+            get { return this._senderControlPort.GetValueOrDefault(); }
+            set { this._senderControlPort = value; }
+        }
+
+        // Check to see if SenderControlPort property is set
+        internal bool IsSetSenderControlPort()
+        {
+            return this._senderControlPort.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SenderIpAddress. The IP address that the flow communicates
+        /// with to initiate connection with the sender.
+        /// </summary>
+        public string SenderIpAddress
+        {
+            get { return this._senderIpAddress; }
+            set { this._senderIpAddress = value; }
+        }
+
+        // Check to see if SenderIpAddress property is set
+        internal bool IsSetSenderIpAddress()
+        {
+            return this._senderIpAddress != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SourceArn. The ARN of the source that you want to update.
         /// </summary>
         [AWSProperty(Required=true)]
@@ -247,8 +300,39 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SourceListenerAddress. Source IP or domain name for SRT-caller
+        /// protocol.
+        /// </summary>
+        public string SourceListenerAddress
+        {
+            get { return this._sourceListenerAddress; }
+            set { this._sourceListenerAddress = value; }
+        }
+
+        // Check to see if SourceListenerAddress property is set
+        internal bool IsSetSourceListenerAddress()
+        {
+            return this._sourceListenerAddress != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceListenerPort. Source port for SRT-caller protocol.
+        /// </summary>
+        public int SourceListenerPort
+        {
+            get { return this._sourceListenerPort.GetValueOrDefault(); }
+            set { this._sourceListenerPort = value; }
+        }
+
+        // Check to see if SourceListenerPort property is set
+        internal bool IsSetSourceListenerPort()
+        {
+            return this._sourceListenerPort.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property StreamId. The stream ID that you want to use for this transport.
-        /// This parameter applies only to Zixi-based streams.
+        /// This parameter applies only to Zixi and SRT caller-based streams.
         /// </summary>
         public string StreamId
         {

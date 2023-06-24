@@ -58,7 +58,7 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
             string target = "AmazonForecast.CreateForecastExportJob";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-06-26";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-06-26";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -90,6 +90,12 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ForecastExportJobName);
                 }
 
+                if(publicRequest.IsSetFormat())
+                {
+                    context.Writer.WritePropertyName("Format");
+                    context.Writer.Write(publicRequest.Format);
+                }
+
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("Tags");
@@ -106,7 +112,6 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

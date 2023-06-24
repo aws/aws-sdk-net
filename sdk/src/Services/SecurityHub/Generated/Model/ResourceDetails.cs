@@ -50,65 +50,115 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class ResourceDetails
     {
+        private AwsAmazonMqBrokerDetails _awsAmazonMqBroker;
         private AwsApiGatewayRestApiDetails _awsApiGatewayRestApi;
         private AwsApiGatewayStageDetails _awsApiGatewayStage;
         private AwsApiGatewayV2ApiDetails _awsApiGatewayV2Api;
         private AwsApiGatewayV2StageDetails _awsApiGatewayV2Stage;
+        private AwsAppSyncGraphQlApiDetails _awsAppSyncGraphQlApi;
         private AwsAutoScalingAutoScalingGroupDetails _awsAutoScalingAutoScalingGroup;
         private AwsAutoScalingLaunchConfigurationDetails _awsAutoScalingLaunchConfiguration;
+        private AwsBackupBackupPlanDetails _awsBackupBackupPlan;
+        private AwsBackupBackupVaultDetails _awsBackupBackupVault;
+        private AwsBackupRecoveryPointDetails _awsBackupRecoveryPoint;
         private AwsCertificateManagerCertificateDetails _awsCertificateManagerCertificate;
+        private AwsCloudFormationStackDetails _awsCloudFormationStack;
         private AwsCloudFrontDistributionDetails _awsCloudFrontDistribution;
         private AwsCloudTrailTrailDetails _awsCloudTrailTrail;
+        private AwsCloudWatchAlarmDetails _awsCloudWatchAlarm;
         private AwsCodeBuildProjectDetails _awsCodeBuildProject;
         private AwsDynamoDbTableDetails _awsDynamoDbTable;
         private AwsEc2EipDetails _awsEc2Eip;
         private AwsEc2InstanceDetails _awsEc2Instance;
+        private AwsEc2LaunchTemplateDetails _awsEc2LaunchTemplate;
         private AwsEc2NetworkAclDetails _awsEc2NetworkAcl;
         private AwsEc2NetworkInterfaceDetails _awsEc2NetworkInterface;
+        private AwsEc2RouteTableDetails _awsEc2RouteTable;
         private AwsEc2SecurityGroupDetails _awsEc2SecurityGroup;
         private AwsEc2SubnetDetails _awsEc2Subnet;
+        private AwsEc2TransitGatewayDetails _awsEc2TransitGateway;
         private AwsEc2VolumeDetails _awsEc2Volume;
         private AwsEc2VpcDetails _awsEc2Vpc;
         private AwsEc2VpcEndpointServiceDetails _awsEc2VpcEndpointService;
+        private AwsEc2VpcPeeringConnectionDetails _awsEc2VpcPeeringConnection;
         private AwsEc2VpnConnectionDetails _awsEc2VpnConnection;
         private AwsEcrContainerImageDetails _awsEcrContainerImage;
         private AwsEcrRepositoryDetails _awsEcrRepository;
         private AwsEcsClusterDetails _awsEcsCluster;
+        private AwsEcsContainerDetails _awsEcsContainer;
         private AwsEcsServiceDetails _awsEcsService;
+        private AwsEcsTaskDetails _awsEcsTask;
         private AwsEcsTaskDefinitionDetails _awsEcsTaskDefinition;
+        private AwsEfsAccessPointDetails _awsEfsAccessPoint;
         private AwsEksClusterDetails _awsEksCluster;
         private AwsElasticBeanstalkEnvironmentDetails _awsElasticBeanstalkEnvironment;
         private AwsElasticsearchDomainDetails _awsElasticsearchDomain;
         private AwsElbLoadBalancerDetails _awsElbLoadBalancer;
         private AwsElbv2LoadBalancerDetails _awsElbv2LoadBalancer;
+        private AwsEventSchemasRegistryDetails _awsEventSchemasRegistry;
+        private AwsGuardDutyDetectorDetails _awsGuardDutyDetector;
         private AwsIamAccessKeyDetails _awsIamAccessKey;
         private AwsIamGroupDetails _awsIamGroup;
         private AwsIamPolicyDetails _awsIamPolicy;
         private AwsIamRoleDetails _awsIamRole;
         private AwsIamUserDetails _awsIamUser;
+        private AwsKinesisStreamDetails _awsKinesisStream;
         private AwsKmsKeyDetails _awsKmsKey;
         private AwsLambdaFunctionDetails _awsLambdaFunction;
         private AwsLambdaLayerVersionDetails _awsLambdaLayerVersion;
+        private AwsNetworkFirewallFirewallDetails _awsNetworkFirewallFirewall;
+        private AwsNetworkFirewallFirewallPolicyDetails _awsNetworkFirewallFirewallPolicy;
+        private AwsNetworkFirewallRuleGroupDetails _awsNetworkFirewallRuleGroup;
         private AwsOpenSearchServiceDomainDetails _awsOpenSearchServiceDomain;
         private AwsRdsDbClusterDetails _awsRdsDbCluster;
         private AwsRdsDbClusterSnapshotDetails _awsRdsDbClusterSnapshot;
         private AwsRdsDbInstanceDetails _awsRdsDbInstance;
+        private AwsRdsDbSecurityGroupDetails _awsRdsDbSecurityGroup;
         private AwsRdsDbSnapshotDetails _awsRdsDbSnapshot;
         private AwsRdsEventSubscriptionDetails _awsRdsEventSubscription;
         private AwsRedshiftClusterDetails _awsRedshiftCluster;
         private AwsS3AccountPublicAccessBlockDetails _awsS3AccountPublicAccessBlock;
         private AwsS3BucketDetails _awsS3Bucket;
         private AwsS3ObjectDetails _awsS3Object;
+        private AwsSageMakerNotebookInstanceDetails _awsSageMakerNotebookInstance;
         private AwsSecretsManagerSecretDetails _awsSecretsManagerSecret;
         private AwsSnsTopicDetails _awsSnsTopic;
         private AwsSqsQueueDetails _awsSqsQueue;
         private AwsSsmPatchComplianceDetails _awsSsmPatchCompliance;
+        private AwsStepFunctionStateMachineDetails _awsStepFunctionStateMachine;
         private AwsWafRateBasedRuleDetails _awsWafRateBasedRule;
         private AwsWafRegionalRateBasedRuleDetails _awsWafRegionalRateBasedRule;
+        private AwsWafRegionalRuleDetails _awsWafRegionalRule;
+        private AwsWafRegionalRuleGroupDetails _awsWafRegionalRuleGroup;
+        private AwsWafRegionalWebAclDetails _awsWafRegionalWebAcl;
+        private AwsWafRuleDetails _awsWafRule;
+        private AwsWafRuleGroupDetails _awsWafRuleGroup;
+        private AwsWafv2RuleGroupDetails _awsWafv2RuleGroup;
+        private AwsWafv2WebAclDetails _awsWafv2WebAcl;
         private AwsWafWebAclDetails _awsWafWebAcl;
         private AwsXrayEncryptionConfigDetails _awsXrayEncryptionConfig;
         private ContainerDetails _container;
         private Dictionary<string, string> _other = new Dictionary<string, string>();
+
+        /// <summary>
+        /// Gets and sets the property AwsAmazonMqBroker. 
+        /// <para>
+        ///  Provides details about AppSync message broker. A message broker allows software applications
+        /// and components to communicate using various programming languages, operating systems,
+        /// and formal messaging protocols. 
+        /// </para>
+        /// </summary>
+        public AwsAmazonMqBrokerDetails AwsAmazonMqBroker
+        {
+            get { return this._awsAmazonMqBroker; }
+            set { this._awsAmazonMqBroker = value; }
+        }
+
+        // Check to see if AwsAmazonMqBroker property is set
+        internal bool IsSetAwsAmazonMqBroker()
+        {
+            return this._awsAmazonMqBroker != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AwsApiGatewayRestApi. 
@@ -183,6 +233,25 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
+        /// Gets and sets the property AwsAppSyncGraphQlApi. 
+        /// <para>
+        ///  Provides details about an AppSync Graph QL API, which lets you query multiple databases,
+        /// microservices, and APIs from a single GraphQL endpoint. 
+        /// </para>
+        /// </summary>
+        public AwsAppSyncGraphQlApiDetails AwsAppSyncGraphQlApi
+        {
+            get { return this._awsAppSyncGraphQlApi; }
+            set { this._awsAppSyncGraphQlApi = value; }
+        }
+
+        // Check to see if AwsAppSyncGraphQlApi property is set
+        internal bool IsSetAwsAppSyncGraphQlApi()
+        {
+            return this._awsAppSyncGraphQlApi != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property AwsAutoScalingAutoScalingGroup. 
         /// <para>
         /// Details for an autoscaling group.
@@ -219,6 +288,60 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
+        /// Gets and sets the property AwsBackupBackupPlan. 
+        /// <para>
+        /// Provides details about an Backup backup plan. 
+        /// </para>
+        /// </summary>
+        public AwsBackupBackupPlanDetails AwsBackupBackupPlan
+        {
+            get { return this._awsBackupBackupPlan; }
+            set { this._awsBackupBackupPlan = value; }
+        }
+
+        // Check to see if AwsBackupBackupPlan property is set
+        internal bool IsSetAwsBackupBackupPlan()
+        {
+            return this._awsBackupBackupPlan != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AwsBackupBackupVault. 
+        /// <para>
+        /// Provides details about an Backup backup vault. 
+        /// </para>
+        /// </summary>
+        public AwsBackupBackupVaultDetails AwsBackupBackupVault
+        {
+            get { return this._awsBackupBackupVault; }
+            set { this._awsBackupBackupVault = value; }
+        }
+
+        // Check to see if AwsBackupBackupVault property is set
+        internal bool IsSetAwsBackupBackupVault()
+        {
+            return this._awsBackupBackupVault != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AwsBackupRecoveryPoint. 
+        /// <para>
+        /// Provides details about an Backup backup, or recovery point. 
+        /// </para>
+        /// </summary>
+        public AwsBackupRecoveryPointDetails AwsBackupRecoveryPoint
+        {
+            get { return this._awsBackupRecoveryPoint; }
+            set { this._awsBackupRecoveryPoint = value; }
+        }
+
+        // Check to see if AwsBackupRecoveryPoint property is set
+        internal bool IsSetAwsBackupRecoveryPoint()
+        {
+            return this._awsBackupRecoveryPoint != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property AwsCertificateManagerCertificate. 
         /// <para>
         /// Provides details about an Certificate Manager certificate.
@@ -234,6 +357,25 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetAwsCertificateManagerCertificate()
         {
             return this._awsCertificateManagerCertificate != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AwsCloudFormationStack. 
+        /// <para>
+        /// Details about an CloudFormation stack. A stack is a collection of Amazon Web Services
+        /// resources that you can manage as a single unit.
+        /// </para>
+        /// </summary>
+        public AwsCloudFormationStackDetails AwsCloudFormationStack
+        {
+            get { return this._awsCloudFormationStack; }
+            set { this._awsCloudFormationStack = value; }
+        }
+
+        // Check to see if AwsCloudFormationStack property is set
+        internal bool IsSetAwsCloudFormationStack()
+        {
+            return this._awsCloudFormationStack != null;
         }
 
         /// <summary>
@@ -270,6 +412,25 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetAwsCloudTrailTrail()
         {
             return this._awsCloudTrailTrail != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AwsCloudWatchAlarm. 
+        /// <para>
+        /// Details about an Amazon CloudWatch alarm. An alarm allows you to monitor and receive
+        /// alerts about your Amazon Web Services resources and applications across multiple Regions.
+        /// </para>
+        /// </summary>
+        public AwsCloudWatchAlarmDetails AwsCloudWatchAlarm
+        {
+            get { return this._awsCloudWatchAlarm; }
+            set { this._awsCloudWatchAlarm = value; }
+        }
+
+        // Check to see if AwsCloudWatchAlarm property is set
+        internal bool IsSetAwsCloudWatchAlarm()
+        {
+            return this._awsCloudWatchAlarm != null;
         }
 
         /// <summary>
@@ -345,6 +506,21 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
+        /// Gets and sets the property AwsEc2LaunchTemplate.
+        /// </summary>
+        public AwsEc2LaunchTemplateDetails AwsEc2LaunchTemplate
+        {
+            get { return this._awsEc2LaunchTemplate; }
+            set { this._awsEc2LaunchTemplate = value; }
+        }
+
+        // Check to see if AwsEc2LaunchTemplate property is set
+        internal bool IsSetAwsEc2LaunchTemplate()
+        {
+            return this._awsEc2LaunchTemplate != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property AwsEc2NetworkAcl. 
         /// <para>
         /// Details about an EC2 network access control list (ACL).
@@ -378,6 +554,26 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetAwsEc2NetworkInterface()
         {
             return this._awsEc2NetworkInterface != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AwsEc2RouteTable. 
+        /// <para>
+        ///  Provides details about a route table. A route table contains a set of rules, called
+        /// routes, that determine where to direct network traffic from your subnet or gateway.
+        /// 
+        /// </para>
+        /// </summary>
+        public AwsEc2RouteTableDetails AwsEc2RouteTable
+        {
+            get { return this._awsEc2RouteTable; }
+            set { this._awsEc2RouteTable = value; }
+        }
+
+        // Check to see if AwsEc2RouteTable property is set
+        internal bool IsSetAwsEc2RouteTable()
+        {
+            return this._awsEc2RouteTable != null;
         }
 
         /// <summary>
@@ -417,9 +613,28 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
+        /// Gets and sets the property AwsEc2TransitGateway. 
+        /// <para>
+        /// Details about an Amazon EC2 transit gateway that interconnects your virtual private
+        /// clouds (VPC) and on-premises networks.
+        /// </para>
+        /// </summary>
+        public AwsEc2TransitGatewayDetails AwsEc2TransitGateway
+        {
+            get { return this._awsEc2TransitGateway; }
+            set { this._awsEc2TransitGateway = value; }
+        }
+
+        // Check to see if AwsEc2TransitGateway property is set
+        internal bool IsSetAwsEc2TransitGateway()
+        {
+            return this._awsEc2TransitGateway != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property AwsEc2Volume. 
         /// <para>
-        /// Details for an EC2 volume.
+        /// Details for an Amazon EC2 volume.
         /// </para>
         /// </summary>
         public AwsEc2VolumeDetails AwsEc2Volume
@@ -437,7 +652,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property AwsEc2Vpc. 
         /// <para>
-        /// Details for an EC2 VPC.
+        /// Details for an Amazon EC2 VPC.
         /// </para>
         /// </summary>
         public AwsEc2VpcDetails AwsEc2Vpc
@@ -471,9 +686,29 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
+        /// Gets and sets the property AwsEc2VpcPeeringConnection. 
+        /// <para>
+        /// Details about an Amazon EC2 VPC peering connection. A VPC peering connection is a
+        /// networking connection between two VPCs that enables you to route traffic between them
+        /// privately. 
+        /// </para>
+        /// </summary>
+        public AwsEc2VpcPeeringConnectionDetails AwsEc2VpcPeeringConnection
+        {
+            get { return this._awsEc2VpcPeeringConnection; }
+            set { this._awsEc2VpcPeeringConnection = value; }
+        }
+
+        // Check to see if AwsEc2VpcPeeringConnection property is set
+        internal bool IsSetAwsEc2VpcPeeringConnection()
+        {
+            return this._awsEc2VpcPeeringConnection != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property AwsEc2VpnConnection. 
         /// <para>
-        /// Details about an EC2 VPN connection.
+        /// Details about an Amazon EC2 VPN connection.
         /// </para>
         /// </summary>
         public AwsEc2VpnConnectionDetails AwsEc2VpnConnection
@@ -527,7 +762,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property AwsEcsCluster. 
         /// <para>
-        /// Details about an ECS cluster.
+        /// Details about an Amazon ECS cluster.
         /// </para>
         /// </summary>
         public AwsEcsClusterDetails AwsEcsCluster
@@ -540,6 +775,24 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetAwsEcsCluster()
         {
             return this._awsEcsCluster != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AwsEcsContainer. 
+        /// <para>
+        /// Provides information about a Docker container that's part of a task. 
+        /// </para>
+        /// </summary>
+        public AwsEcsContainerDetails AwsEcsContainer
+        {
+            get { return this._awsEcsContainer; }
+            set { this._awsEcsContainer = value; }
+        }
+
+        // Check to see if AwsEcsContainer property is set
+        internal bool IsSetAwsEcsContainer()
+        {
+            return this._awsEcsContainer != null;
         }
 
         /// <summary>
@@ -561,6 +814,24 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
+        /// Gets and sets the property AwsEcsTask. 
+        /// <para>
+        /// Details about a task in a cluster. 
+        /// </para>
+        /// </summary>
+        public AwsEcsTaskDetails AwsEcsTask
+        {
+            get { return this._awsEcsTask; }
+            set { this._awsEcsTask = value; }
+        }
+
+        // Check to see if AwsEcsTask property is set
+        internal bool IsSetAwsEcsTask()
+        {
+            return this._awsEcsTask != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property AwsEcsTaskDefinition. 
         /// <para>
         /// Details about a task definition. A task definition describes the container and volume
@@ -577,6 +848,26 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetAwsEcsTaskDefinition()
         {
             return this._awsEcsTaskDefinition != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AwsEfsAccessPoint. 
+        /// <para>
+        /// Details about an Amazon EFS access point. An access point is an application-specific
+        /// view into an EFS file system that applies an operating system user and group, and
+        /// a file system path, to any file system request made through the access point. 
+        /// </para>
+        /// </summary>
+        public AwsEfsAccessPointDetails AwsEfsAccessPoint
+        {
+            get { return this._awsEfsAccessPoint; }
+            set { this._awsEfsAccessPoint = value; }
+        }
+
+        // Check to see if AwsEfsAccessPoint property is set
+        internal bool IsSetAwsEfsAccessPoint()
+        {
+            return this._awsEfsAccessPoint != null;
         }
 
         /// <summary>
@@ -670,6 +961,46 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
+        /// Gets and sets the property AwsEventSchemasRegistry. 
+        /// <para>
+        ///  A schema defines the structure of events that are sent to Amazon EventBridge. Schema
+        /// registries are containers for schemas. They collect and organize schemas so that your
+        /// schemas are in logical groups. 
+        /// </para>
+        /// </summary>
+        public AwsEventSchemasRegistryDetails AwsEventSchemasRegistry
+        {
+            get { return this._awsEventSchemasRegistry; }
+            set { this._awsEventSchemasRegistry = value; }
+        }
+
+        // Check to see if AwsEventSchemasRegistry property is set
+        internal bool IsSetAwsEventSchemasRegistry()
+        {
+            return this._awsEventSchemasRegistry != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AwsGuardDutyDetector. 
+        /// <para>
+        ///  Provides details about an Amazon GuardDuty detector. A detector is an object that
+        /// represents the GuardDuty service. A detector is required for GuardDuty to become operational.
+        /// 
+        /// </para>
+        /// </summary>
+        public AwsGuardDutyDetectorDetails AwsGuardDutyDetector
+        {
+            get { return this._awsGuardDutyDetector; }
+            set { this._awsGuardDutyDetector = value; }
+        }
+
+        // Check to see if AwsGuardDutyDetector property is set
+        internal bool IsSetAwsGuardDutyDetector()
+        {
+            return this._awsGuardDutyDetector != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property AwsIamAccessKey. 
         /// <para>
         /// Details about an IAM access key related to a finding.
@@ -760,6 +1091,24 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
+        /// Gets and sets the property AwsKinesisStream. 
+        /// <para>
+        /// Details about an Amazon Kinesis data stream.
+        /// </para>
+        /// </summary>
+        public AwsKinesisStreamDetails AwsKinesisStream
+        {
+            get { return this._awsKinesisStream; }
+            set { this._awsKinesisStream = value; }
+        }
+
+        // Check to see if AwsKinesisStream property is set
+        internal bool IsSetAwsKinesisStream()
+        {
+            return this._awsKinesisStream != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property AwsKmsKey. 
         /// <para>
         /// Details about an KMS key.
@@ -811,6 +1160,60 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetAwsLambdaLayerVersion()
         {
             return this._awsLambdaLayerVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AwsNetworkFirewallFirewall. 
+        /// <para>
+        /// Details about an Network Firewall firewall.
+        /// </para>
+        /// </summary>
+        public AwsNetworkFirewallFirewallDetails AwsNetworkFirewallFirewall
+        {
+            get { return this._awsNetworkFirewallFirewall; }
+            set { this._awsNetworkFirewallFirewall = value; }
+        }
+
+        // Check to see if AwsNetworkFirewallFirewall property is set
+        internal bool IsSetAwsNetworkFirewallFirewall()
+        {
+            return this._awsNetworkFirewallFirewall != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AwsNetworkFirewallFirewallPolicy. 
+        /// <para>
+        /// Details about an Network Firewall firewall policy.
+        /// </para>
+        /// </summary>
+        public AwsNetworkFirewallFirewallPolicyDetails AwsNetworkFirewallFirewallPolicy
+        {
+            get { return this._awsNetworkFirewallFirewallPolicy; }
+            set { this._awsNetworkFirewallFirewallPolicy = value; }
+        }
+
+        // Check to see if AwsNetworkFirewallFirewallPolicy property is set
+        internal bool IsSetAwsNetworkFirewallFirewallPolicy()
+        {
+            return this._awsNetworkFirewallFirewallPolicy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AwsNetworkFirewallRuleGroup. 
+        /// <para>
+        /// Details about an Network Firewall rule group.
+        /// </para>
+        /// </summary>
+        public AwsNetworkFirewallRuleGroupDetails AwsNetworkFirewallRuleGroup
+        {
+            get { return this._awsNetworkFirewallRuleGroup; }
+            set { this._awsNetworkFirewallRuleGroup = value; }
+        }
+
+        // Check to see if AwsNetworkFirewallRuleGroup property is set
+        internal bool IsSetAwsNetworkFirewallRuleGroup()
+        {
+            return this._awsNetworkFirewallRuleGroup != null;
         }
 
         /// <summary>
@@ -883,6 +1286,24 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetAwsRdsDbInstance()
         {
             return this._awsRdsDbInstance != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AwsRdsDbSecurityGroup. 
+        /// <para>
+        /// Details about an Amazon RDS DB security group.
+        /// </para>
+        /// </summary>
+        public AwsRdsDbSecurityGroupDetails AwsRdsDbSecurityGroup
+        {
+            get { return this._awsRdsDbSecurityGroup; }
+            set { this._awsRdsDbSecurityGroup = value; }
+        }
+
+        // Check to see if AwsRdsDbSecurityGroup property is set
+        internal bool IsSetAwsRdsDbSecurityGroup()
+        {
+            return this._awsRdsDbSecurityGroup != null;
         }
 
         /// <summary>
@@ -994,6 +1415,21 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
+        /// Gets and sets the property AwsSageMakerNotebookInstance.
+        /// </summary>
+        public AwsSageMakerNotebookInstanceDetails AwsSageMakerNotebookInstance
+        {
+            get { return this._awsSageMakerNotebookInstance; }
+            set { this._awsSageMakerNotebookInstance = value; }
+        }
+
+        // Check to see if AwsSageMakerNotebookInstance property is set
+        internal bool IsSetAwsSageMakerNotebookInstance()
+        {
+            return this._awsSageMakerNotebookInstance != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property AwsSecretsManagerSecret. 
         /// <para>
         /// Details about a Secrets Manager secret.
@@ -1067,6 +1503,25 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
+        /// Gets and sets the property AwsStepFunctionStateMachine. 
+        /// <para>
+        ///  Provides details about an Step Functions state machine, which is a workflow consisting
+        /// of a series of event-driven steps. 
+        /// </para>
+        /// </summary>
+        public AwsStepFunctionStateMachineDetails AwsStepFunctionStateMachine
+        {
+            get { return this._awsStepFunctionStateMachine; }
+            set { this._awsStepFunctionStateMachine = value; }
+        }
+
+        // Check to see if AwsStepFunctionStateMachine property is set
+        internal bool IsSetAwsStepFunctionStateMachine()
+        {
+            return this._awsStepFunctionStateMachine != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property AwsWafRateBasedRule. 
         /// <para>
         /// Details about a rate-based rule for global resources.
@@ -1103,9 +1558,129 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
+        /// Gets and sets the property AwsWafRegionalRule. 
+        /// <para>
+        /// Details about an WAF rule for Regional resources. 
+        /// </para>
+        /// </summary>
+        public AwsWafRegionalRuleDetails AwsWafRegionalRule
+        {
+            get { return this._awsWafRegionalRule; }
+            set { this._awsWafRegionalRule = value; }
+        }
+
+        // Check to see if AwsWafRegionalRule property is set
+        internal bool IsSetAwsWafRegionalRule()
+        {
+            return this._awsWafRegionalRule != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AwsWafRegionalRuleGroup. 
+        /// <para>
+        /// Details about an WAF rule group for Regional resources. 
+        /// </para>
+        /// </summary>
+        public AwsWafRegionalRuleGroupDetails AwsWafRegionalRuleGroup
+        {
+            get { return this._awsWafRegionalRuleGroup; }
+            set { this._awsWafRegionalRuleGroup = value; }
+        }
+
+        // Check to see if AwsWafRegionalRuleGroup property is set
+        internal bool IsSetAwsWafRegionalRuleGroup()
+        {
+            return this._awsWafRegionalRuleGroup != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AwsWafRegionalWebAcl. 
+        /// <para>
+        /// Details about an WAF web access control list (web ACL) for Regional resources. 
+        /// </para>
+        /// </summary>
+        public AwsWafRegionalWebAclDetails AwsWafRegionalWebAcl
+        {
+            get { return this._awsWafRegionalWebAcl; }
+            set { this._awsWafRegionalWebAcl = value; }
+        }
+
+        // Check to see if AwsWafRegionalWebAcl property is set
+        internal bool IsSetAwsWafRegionalWebAcl()
+        {
+            return this._awsWafRegionalWebAcl != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AwsWafRule. 
+        /// <para>
+        /// Details about an WAF rule for global resources. 
+        /// </para>
+        /// </summary>
+        public AwsWafRuleDetails AwsWafRule
+        {
+            get { return this._awsWafRule; }
+            set { this._awsWafRule = value; }
+        }
+
+        // Check to see if AwsWafRule property is set
+        internal bool IsSetAwsWafRule()
+        {
+            return this._awsWafRule != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AwsWafRuleGroup. 
+        /// <para>
+        /// Details about an WAF rule group for global resources. 
+        /// </para>
+        /// </summary>
+        public AwsWafRuleGroupDetails AwsWafRuleGroup
+        {
+            get { return this._awsWafRuleGroup; }
+            set { this._awsWafRuleGroup = value; }
+        }
+
+        // Check to see if AwsWafRuleGroup property is set
+        internal bool IsSetAwsWafRuleGroup()
+        {
+            return this._awsWafRuleGroup != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AwsWafv2RuleGroup.
+        /// </summary>
+        public AwsWafv2RuleGroupDetails AwsWafv2RuleGroup
+        {
+            get { return this._awsWafv2RuleGroup; }
+            set { this._awsWafv2RuleGroup = value; }
+        }
+
+        // Check to see if AwsWafv2RuleGroup property is set
+        internal bool IsSetAwsWafv2RuleGroup()
+        {
+            return this._awsWafv2RuleGroup != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AwsWafv2WebAcl.
+        /// </summary>
+        public AwsWafv2WebAclDetails AwsWafv2WebAcl
+        {
+            get { return this._awsWafv2WebAcl; }
+            set { this._awsWafv2WebAcl = value; }
+        }
+
+        // Check to see if AwsWafv2WebAcl property is set
+        internal bool IsSetAwsWafv2WebAcl()
+        {
+            return this._awsWafv2WebAcl != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property AwsWafWebAcl. 
         /// <para>
-        /// Details for an WAF WebACL.
+        /// Details for an WAF web ACL.
         /// </para>
         /// </summary>
         public AwsWafWebAclDetails AwsWafWebAcl

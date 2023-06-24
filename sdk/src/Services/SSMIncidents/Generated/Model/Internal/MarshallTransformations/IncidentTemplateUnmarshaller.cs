@@ -76,6 +76,12 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
                     unmarshalledObject.Impact = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("incidentTags", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.IncidentTags = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("notificationTargets", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<NotificationTargetItem, NotificationTargetItemUnmarshaller>(NotificationTargetItemUnmarshaller.Instance);

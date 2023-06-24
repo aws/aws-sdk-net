@@ -82,6 +82,12 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
                     unmarshalledObject.EntityRecognizerArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("FlywheelArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.FlywheelArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("InputDataConfig", targetDepth))
                 {
                     var unmarshaller = EntityRecognizerInputDataConfigUnmarshaller.Instance;
@@ -106,10 +112,22 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
                     unmarshalledObject.ModelKmsKeyId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("OutputDataConfig", targetDepth))
+                {
+                    var unmarshaller = EntityRecognizerOutputDataConfigUnmarshaller.Instance;
+                    unmarshalledObject.OutputDataConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("RecognizerMetadata", targetDepth))
                 {
                     var unmarshaller = EntityRecognizerMetadataUnmarshaller.Instance;
                     unmarshalledObject.RecognizerMetadata = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SourceModelArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SourceModelArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Status", targetDepth))

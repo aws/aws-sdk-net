@@ -34,7 +34,7 @@ namespace Amazon.AugmentedAIRuntime.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// HumanLoopInput Marshaller
-    /// </summary>       
+    /// </summary>
     public class HumanLoopInputMarshaller : IRequestMarshaller<HumanLoopInput, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.AugmentedAIRuntime.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static HumanLoopInputMarshaller Instance = new HumanLoopInputMarshaller();
 
     }

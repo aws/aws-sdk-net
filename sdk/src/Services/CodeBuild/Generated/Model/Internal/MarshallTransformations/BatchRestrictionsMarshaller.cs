@@ -34,7 +34,7 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// BatchRestrictions Marshaller
-    /// </summary>       
+    /// </summary>
     public class BatchRestrictionsMarshaller : IRequestMarshaller<BatchRestrictions, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static BatchRestrictionsMarshaller Instance = new BatchRestrictionsMarshaller();
 
     }

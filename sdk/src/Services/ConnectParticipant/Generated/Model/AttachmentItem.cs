@@ -81,7 +81,7 @@ namespace Amazon.ConnectParticipant.Model
         /// Gets and sets the property ContentType. 
         /// <para>
         /// Describes the MIME file type of the attachment. For a list of supported file types,
-        /// see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#feature-limits">Feature
+        /// see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/feature-limits.html">Feature
         /// specifications</a> in the <i>Amazon Connect Administrator Guide</i>.
         /// </para>
         /// </summary>

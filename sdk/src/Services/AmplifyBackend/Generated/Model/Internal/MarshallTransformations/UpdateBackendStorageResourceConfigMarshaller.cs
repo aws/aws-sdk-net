@@ -34,7 +34,7 @@ namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// UpdateBackendStorageResourceConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class UpdateBackendStorageResourceConfigMarshaller : IRequestMarshaller<UpdateBackendStorageResourceConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static UpdateBackendStorageResourceConfigMarshaller Instance = new UpdateBackendStorageResourceConfigMarshaller();
 
     }

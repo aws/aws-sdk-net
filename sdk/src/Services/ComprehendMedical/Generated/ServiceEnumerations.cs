@@ -35,9 +35,29 @@ namespace Amazon.ComprehendMedical
         /// </summary>
         public static readonly AttributeName DIAGNOSIS = new AttributeName("DIAGNOSIS");
         /// <summary>
+        /// Constant FUTURE for AttributeName
+        /// </summary>
+        public static readonly AttributeName FUTURE = new AttributeName("FUTURE");
+        /// <summary>
+        /// Constant HYPOTHETICAL for AttributeName
+        /// </summary>
+        public static readonly AttributeName HYPOTHETICAL = new AttributeName("HYPOTHETICAL");
+        /// <summary>
+        /// Constant LOW_CONFIDENCE for AttributeName
+        /// </summary>
+        public static readonly AttributeName LOW_CONFIDENCE = new AttributeName("LOW_CONFIDENCE");
+        /// <summary>
         /// Constant NEGATION for AttributeName
         /// </summary>
         public static readonly AttributeName NEGATION = new AttributeName("NEGATION");
+        /// <summary>
+        /// Constant PAST_HISTORY for AttributeName
+        /// </summary>
+        public static readonly AttributeName PAST_HISTORY = new AttributeName("PAST_HISTORY");
+        /// <summary>
+        /// Constant PERTAINS_TO_FAMILY for AttributeName
+        /// </summary>
+        public static readonly AttributeName PERTAINS_TO_FAMILY = new AttributeName("PERTAINS_TO_FAMILY");
         /// <summary>
         /// Constant SIGN for AttributeName
         /// </summary>
@@ -101,6 +121,18 @@ namespace Amazon.ComprehendMedical
         /// </summary>
         public static readonly EntitySubType AGE = new EntitySubType("AGE");
         /// <summary>
+        /// Constant ALCOHOL_CONSUMPTION for EntitySubType
+        /// </summary>
+        public static readonly EntitySubType ALCOHOL_CONSUMPTION = new EntitySubType("ALCOHOL_CONSUMPTION");
+        /// <summary>
+        /// Constant ALLERGIES for EntitySubType
+        /// </summary>
+        public static readonly EntitySubType ALLERGIES = new EntitySubType("ALLERGIES");
+        /// <summary>
+        /// Constant AMOUNT for EntitySubType
+        /// </summary>
+        public static readonly EntitySubType AMOUNT = new EntitySubType("AMOUNT");
+        /// <summary>
         /// Constant BRAND_NAME for EntitySubType
         /// </summary>
         public static readonly EntitySubType BRAND_NAME = new EntitySubType("BRAND_NAME");
@@ -125,6 +157,10 @@ namespace Amazon.ComprehendMedical
         /// </summary>
         public static readonly EntitySubType DURATION = new EntitySubType("DURATION");
         /// <summary>
+        /// Constant DX_NAME for EntitySubType
+        /// </summary>
+        public static readonly EntitySubType DX_NAME = new EntitySubType("DX_NAME");
+        /// <summary>
         /// Constant EMAIL for EntitySubType
         /// </summary>
         public static readonly EntitySubType EMAIL = new EntitySubType("EMAIL");
@@ -137,9 +173,17 @@ namespace Amazon.ComprehendMedical
         /// </summary>
         public static readonly EntitySubType FREQUENCY = new EntitySubType("FREQUENCY");
         /// <summary>
+        /// Constant GENDER for EntitySubType
+        /// </summary>
+        public static readonly EntitySubType GENDER = new EntitySubType("GENDER");
+        /// <summary>
         /// Constant GENERIC_NAME for EntitySubType
         /// </summary>
         public static readonly EntitySubType GENERIC_NAME = new EntitySubType("GENERIC_NAME");
+        /// <summary>
+        /// Constant ID for EntitySubType
+        /// </summary>
+        public static readonly EntitySubType ID = new EntitySubType("ID");
         /// <summary>
         /// Constant IDENTIFIER for EntitySubType
         /// </summary>
@@ -148,6 +192,10 @@ namespace Amazon.ComprehendMedical
         /// Constant NAME for EntitySubType
         /// </summary>
         public static readonly EntitySubType NAME = new EntitySubType("NAME");
+        /// <summary>
+        /// Constant PHONE_OR_FAX for EntitySubType
+        /// </summary>
+        public static readonly EntitySubType PHONE_OR_FAX = new EntitySubType("PHONE_OR_FAX");
         /// <summary>
         /// Constant PROCEDURE_NAME for EntitySubType
         /// </summary>
@@ -165,9 +213,17 @@ namespace Amazon.ComprehendMedical
         /// </summary>
         public static readonly EntitySubType QUANTITY = new EntitySubType("QUANTITY");
         /// <summary>
+        /// Constant RACE_ETHNICITY for EntitySubType
+        /// </summary>
+        public static readonly EntitySubType RACE_ETHNICITY = new EntitySubType("RACE_ETHNICITY");
+        /// <summary>
         /// Constant RATE for EntitySubType
         /// </summary>
         public static readonly EntitySubType RATE = new EntitySubType("RATE");
+        /// <summary>
+        /// Constant REC_DRUG_USE for EntitySubType
+        /// </summary>
+        public static readonly EntitySubType REC_DRUG_USE = new EntitySubType("REC_DRUG_USE");
         /// <summary>
         /// Constant ROUTE_OR_MODE for EntitySubType
         /// </summary>
@@ -184,6 +240,10 @@ namespace Amazon.ComprehendMedical
         /// Constant TEST_NAME for EntitySubType
         /// </summary>
         public static readonly EntitySubType TEST_NAME = new EntitySubType("TEST_NAME");
+        /// <summary>
+        /// Constant TEST_UNIT for EntitySubType
+        /// </summary>
+        public static readonly EntitySubType TEST_UNIT = new EntitySubType("TEST_UNIT");
         /// <summary>
         /// Constant TEST_UNITS for EntitySubType
         /// </summary>
@@ -216,6 +276,10 @@ namespace Amazon.ComprehendMedical
         /// Constant TIME_TO_TREATMENT_NAME for EntitySubType
         /// </summary>
         public static readonly EntitySubType TIME_TO_TREATMENT_NAME = new EntitySubType("TIME_TO_TREATMENT_NAME");
+        /// <summary>
+        /// Constant TOBACCO_USE for EntitySubType
+        /// </summary>
+        public static readonly EntitySubType TOBACCO_USE = new EntitySubType("TOBACCO_USE");
         /// <summary>
         /// Constant TREATMENT_NAME for EntitySubType
         /// </summary>
@@ -270,6 +334,10 @@ namespace Amazon.ComprehendMedical
         /// Constant ANATOMY for EntityType
         /// </summary>
         public static readonly EntityType ANATOMY = new EntityType("ANATOMY");
+        /// <summary>
+        /// Constant BEHAVIORAL_ENVIRONMENTAL_SOCIAL for EntityType
+        /// </summary>
+        public static readonly EntityType BEHAVIORAL_ENVIRONMENTAL_SOCIAL = new EntityType("BEHAVIORAL_ENVIRONMENTAL_SOCIAL");
         /// <summary>
         /// Constant MEDICAL_CONDITION for EntityType
         /// </summary>
@@ -503,6 +571,10 @@ namespace Amazon.ComprehendMedical
         /// </summary>
         public static readonly ICD10CMRelationshipType OVERLAP = new ICD10CMRelationshipType("OVERLAP");
         /// <summary>
+        /// Constant QUALITY for ICD10CMRelationshipType
+        /// </summary>
+        public static readonly ICD10CMRelationshipType QUALITY = new ICD10CMRelationshipType("QUALITY");
+        /// <summary>
         /// Constant SYSTEM_ORGAN_SITE for ICD10CMRelationshipType
         /// </summary>
         public static readonly ICD10CMRelationshipType SYSTEM_ORGAN_SITE = new ICD10CMRelationshipType("SYSTEM_ORGAN_SITE");
@@ -553,9 +625,21 @@ namespace Amazon.ComprehendMedical
         /// </summary>
         public static readonly ICD10CMTraitName DIAGNOSIS = new ICD10CMTraitName("DIAGNOSIS");
         /// <summary>
+        /// Constant HYPOTHETICAL for ICD10CMTraitName
+        /// </summary>
+        public static readonly ICD10CMTraitName HYPOTHETICAL = new ICD10CMTraitName("HYPOTHETICAL");
+        /// <summary>
+        /// Constant LOW_CONFIDENCE for ICD10CMTraitName
+        /// </summary>
+        public static readonly ICD10CMTraitName LOW_CONFIDENCE = new ICD10CMTraitName("LOW_CONFIDENCE");
+        /// <summary>
         /// Constant NEGATION for ICD10CMTraitName
         /// </summary>
         public static readonly ICD10CMTraitName NEGATION = new ICD10CMTraitName("NEGATION");
+        /// <summary>
+        /// Constant PERTAINS_TO_FAMILY for ICD10CMTraitName
+        /// </summary>
+        public static readonly ICD10CMTraitName PERTAINS_TO_FAMILY = new ICD10CMTraitName("PERTAINS_TO_FAMILY");
         /// <summary>
         /// Constant SIGN for ICD10CMTraitName
         /// </summary>
@@ -731,6 +815,10 @@ namespace Amazon.ComprehendMedical
         /// </summary>
         public static readonly RelationshipType ADMINISTERED_VIA = new RelationshipType("ADMINISTERED_VIA");
         /// <summary>
+        /// Constant AMOUNT for RelationshipType
+        /// </summary>
+        public static readonly RelationshipType AMOUNT = new RelationshipType("AMOUNT");
+        /// <summary>
         /// Constant DIRECTION for RelationshipType
         /// </summary>
         public static readonly RelationshipType DIRECTION = new RelationshipType("DIRECTION");
@@ -767,6 +855,10 @@ namespace Amazon.ComprehendMedical
         /// </summary>
         public static readonly RelationshipType OVERLAP = new RelationshipType("OVERLAP");
         /// <summary>
+        /// Constant QUALITY for RelationshipType
+        /// </summary>
+        public static readonly RelationshipType QUALITY = new RelationshipType("QUALITY");
+        /// <summary>
         /// Constant RATE for RelationshipType
         /// </summary>
         public static readonly RelationshipType RATE = new RelationshipType("RATE");
@@ -783,6 +875,10 @@ namespace Amazon.ComprehendMedical
         /// </summary>
         public static readonly RelationshipType SYSTEM_ORGAN_SITE = new RelationshipType("SYSTEM_ORGAN_SITE");
         /// <summary>
+        /// Constant TEST_UNIT for RelationshipType
+        /// </summary>
+        public static readonly RelationshipType TEST_UNIT = new RelationshipType("TEST_UNIT");
+        /// <summary>
         /// Constant TEST_UNITS for RelationshipType
         /// </summary>
         public static readonly RelationshipType TEST_UNITS = new RelationshipType("TEST_UNITS");
@@ -790,6 +886,10 @@ namespace Amazon.ComprehendMedical
         /// Constant TEST_VALUE for RelationshipType
         /// </summary>
         public static readonly RelationshipType TEST_VALUE = new RelationshipType("TEST_VALUE");
+        /// <summary>
+        /// Constant USAGE for RelationshipType
+        /// </summary>
+        public static readonly RelationshipType USAGE = new RelationshipType("USAGE");
         /// <summary>
         /// Constant WITH_DOSAGE for RelationshipType
         /// </summary>
@@ -1006,6 +1106,10 @@ namespace Amazon.ComprehendMedical
         /// Constant NEGATION for RxNormTraitName
         /// </summary>
         public static readonly RxNormTraitName NEGATION = new RxNormTraitName("NEGATION");
+        /// <summary>
+        /// Constant PAST_HISTORY for RxNormTraitName
+        /// </summary>
+        public static readonly RxNormTraitName PAST_HISTORY = new RxNormTraitName("PAST_HISTORY");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1036,6 +1140,332 @@ namespace Amazon.ComprehendMedical
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator RxNormTraitName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SNOMEDCTAttributeType.
+    /// </summary>
+    public class SNOMEDCTAttributeType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACUITY for SNOMEDCTAttributeType
+        /// </summary>
+        public static readonly SNOMEDCTAttributeType ACUITY = new SNOMEDCTAttributeType("ACUITY");
+        /// <summary>
+        /// Constant DIRECTION for SNOMEDCTAttributeType
+        /// </summary>
+        public static readonly SNOMEDCTAttributeType DIRECTION = new SNOMEDCTAttributeType("DIRECTION");
+        /// <summary>
+        /// Constant QUALITY for SNOMEDCTAttributeType
+        /// </summary>
+        public static readonly SNOMEDCTAttributeType QUALITY = new SNOMEDCTAttributeType("QUALITY");
+        /// <summary>
+        /// Constant SYSTEM_ORGAN_SITE for SNOMEDCTAttributeType
+        /// </summary>
+        public static readonly SNOMEDCTAttributeType SYSTEM_ORGAN_SITE = new SNOMEDCTAttributeType("SYSTEM_ORGAN_SITE");
+        /// <summary>
+        /// Constant TEST_UNIT for SNOMEDCTAttributeType
+        /// </summary>
+        public static readonly SNOMEDCTAttributeType TEST_UNIT = new SNOMEDCTAttributeType("TEST_UNIT");
+        /// <summary>
+        /// Constant TEST_VALUE for SNOMEDCTAttributeType
+        /// </summary>
+        public static readonly SNOMEDCTAttributeType TEST_VALUE = new SNOMEDCTAttributeType("TEST_VALUE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SNOMEDCTAttributeType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SNOMEDCTAttributeType FindValue(string value)
+        {
+            return FindValue<SNOMEDCTAttributeType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SNOMEDCTAttributeType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SNOMEDCTEntityCategory.
+    /// </summary>
+    public class SNOMEDCTEntityCategory : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ANATOMY for SNOMEDCTEntityCategory
+        /// </summary>
+        public static readonly SNOMEDCTEntityCategory ANATOMY = new SNOMEDCTEntityCategory("ANATOMY");
+        /// <summary>
+        /// Constant MEDICAL_CONDITION for SNOMEDCTEntityCategory
+        /// </summary>
+        public static readonly SNOMEDCTEntityCategory MEDICAL_CONDITION = new SNOMEDCTEntityCategory("MEDICAL_CONDITION");
+        /// <summary>
+        /// Constant TEST_TREATMENT_PROCEDURE for SNOMEDCTEntityCategory
+        /// </summary>
+        public static readonly SNOMEDCTEntityCategory TEST_TREATMENT_PROCEDURE = new SNOMEDCTEntityCategory("TEST_TREATMENT_PROCEDURE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SNOMEDCTEntityCategory(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SNOMEDCTEntityCategory FindValue(string value)
+        {
+            return FindValue<SNOMEDCTEntityCategory>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SNOMEDCTEntityCategory(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SNOMEDCTEntityType.
+    /// </summary>
+    public class SNOMEDCTEntityType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DX_NAME for SNOMEDCTEntityType
+        /// </summary>
+        public static readonly SNOMEDCTEntityType DX_NAME = new SNOMEDCTEntityType("DX_NAME");
+        /// <summary>
+        /// Constant PROCEDURE_NAME for SNOMEDCTEntityType
+        /// </summary>
+        public static readonly SNOMEDCTEntityType PROCEDURE_NAME = new SNOMEDCTEntityType("PROCEDURE_NAME");
+        /// <summary>
+        /// Constant TEST_NAME for SNOMEDCTEntityType
+        /// </summary>
+        public static readonly SNOMEDCTEntityType TEST_NAME = new SNOMEDCTEntityType("TEST_NAME");
+        /// <summary>
+        /// Constant TREATMENT_NAME for SNOMEDCTEntityType
+        /// </summary>
+        public static readonly SNOMEDCTEntityType TREATMENT_NAME = new SNOMEDCTEntityType("TREATMENT_NAME");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SNOMEDCTEntityType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SNOMEDCTEntityType FindValue(string value)
+        {
+            return FindValue<SNOMEDCTEntityType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SNOMEDCTEntityType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SNOMEDCTRelationshipType.
+    /// </summary>
+    public class SNOMEDCTRelationshipType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACUITY for SNOMEDCTRelationshipType
+        /// </summary>
+        public static readonly SNOMEDCTRelationshipType ACUITY = new SNOMEDCTRelationshipType("ACUITY");
+        /// <summary>
+        /// Constant DIRECTION for SNOMEDCTRelationshipType
+        /// </summary>
+        public static readonly SNOMEDCTRelationshipType DIRECTION = new SNOMEDCTRelationshipType("DIRECTION");
+        /// <summary>
+        /// Constant QUALITY for SNOMEDCTRelationshipType
+        /// </summary>
+        public static readonly SNOMEDCTRelationshipType QUALITY = new SNOMEDCTRelationshipType("QUALITY");
+        /// <summary>
+        /// Constant SYSTEM_ORGAN_SITE for SNOMEDCTRelationshipType
+        /// </summary>
+        public static readonly SNOMEDCTRelationshipType SYSTEM_ORGAN_SITE = new SNOMEDCTRelationshipType("SYSTEM_ORGAN_SITE");
+        /// <summary>
+        /// Constant TEST_UNIT for SNOMEDCTRelationshipType
+        /// </summary>
+        public static readonly SNOMEDCTRelationshipType TEST_UNIT = new SNOMEDCTRelationshipType("TEST_UNIT");
+        /// <summary>
+        /// Constant TEST_UNITS for SNOMEDCTRelationshipType
+        /// </summary>
+        public static readonly SNOMEDCTRelationshipType TEST_UNITS = new SNOMEDCTRelationshipType("TEST_UNITS");
+        /// <summary>
+        /// Constant TEST_VALUE for SNOMEDCTRelationshipType
+        /// </summary>
+        public static readonly SNOMEDCTRelationshipType TEST_VALUE = new SNOMEDCTRelationshipType("TEST_VALUE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SNOMEDCTRelationshipType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SNOMEDCTRelationshipType FindValue(string value)
+        {
+            return FindValue<SNOMEDCTRelationshipType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SNOMEDCTRelationshipType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SNOMEDCTTraitName.
+    /// </summary>
+    public class SNOMEDCTTraitName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DIAGNOSIS for SNOMEDCTTraitName
+        /// </summary>
+        public static readonly SNOMEDCTTraitName DIAGNOSIS = new SNOMEDCTTraitName("DIAGNOSIS");
+        /// <summary>
+        /// Constant FUTURE for SNOMEDCTTraitName
+        /// </summary>
+        public static readonly SNOMEDCTTraitName FUTURE = new SNOMEDCTTraitName("FUTURE");
+        /// <summary>
+        /// Constant HYPOTHETICAL for SNOMEDCTTraitName
+        /// </summary>
+        public static readonly SNOMEDCTTraitName HYPOTHETICAL = new SNOMEDCTTraitName("HYPOTHETICAL");
+        /// <summary>
+        /// Constant LOW_CONFIDENCE for SNOMEDCTTraitName
+        /// </summary>
+        public static readonly SNOMEDCTTraitName LOW_CONFIDENCE = new SNOMEDCTTraitName("LOW_CONFIDENCE");
+        /// <summary>
+        /// Constant NEGATION for SNOMEDCTTraitName
+        /// </summary>
+        public static readonly SNOMEDCTTraitName NEGATION = new SNOMEDCTTraitName("NEGATION");
+        /// <summary>
+        /// Constant PAST_HISTORY for SNOMEDCTTraitName
+        /// </summary>
+        public static readonly SNOMEDCTTraitName PAST_HISTORY = new SNOMEDCTTraitName("PAST_HISTORY");
+        /// <summary>
+        /// Constant PERTAINS_TO_FAMILY for SNOMEDCTTraitName
+        /// </summary>
+        public static readonly SNOMEDCTTraitName PERTAINS_TO_FAMILY = new SNOMEDCTTraitName("PERTAINS_TO_FAMILY");
+        /// <summary>
+        /// Constant SIGN for SNOMEDCTTraitName
+        /// </summary>
+        public static readonly SNOMEDCTTraitName SIGN = new SNOMEDCTTraitName("SIGN");
+        /// <summary>
+        /// Constant SYMPTOM for SNOMEDCTTraitName
+        /// </summary>
+        public static readonly SNOMEDCTTraitName SYMPTOM = new SNOMEDCTTraitName("SYMPTOM");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SNOMEDCTTraitName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SNOMEDCTTraitName FindValue(string value)
+        {
+            return FindValue<SNOMEDCTTraitName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SNOMEDCTTraitName(string value)
         {
             return FindValue(value);
         }

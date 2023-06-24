@@ -251,6 +251,15 @@ namespace Amazon.CostExplorer
         }    
 
         /// <summary>
+        /// Customize the pipeline
+        /// </summary>
+        /// <param name="pipeline"></param>
+        protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
+        {
+            pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonCostExplorerEndpointResolver());
+        }    
+        /// <summary>
         /// Capture metadata for the service.
         /// </summary>
         protected override IServiceMetadata ServiceMetadata
@@ -327,9 +336,9 @@ namespace Amazon.CostExplorer
 
 
         /// <summary>
-        /// Adds a subscription to a cost anomaly detection monitor. You can use each subscription
-        /// to define subscribers with email or SNS notifications. Email subscribers can set a
-        /// dollar threshold and a time frequency for receiving notifications.
+        /// Adds an alert subscription to a cost anomaly detection monitor. You can use each subscription
+        /// to define subscribers with email or SNS notifications. Email subscribers can set an
+        /// absolute or percentage threshold and a time frequency for receiving notifications.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAnomalySubscription service method.</param>
         /// 
@@ -352,9 +361,9 @@ namespace Amazon.CostExplorer
 
 
         /// <summary>
-        /// Adds a subscription to a cost anomaly detection monitor. You can use each subscription
-        /// to define subscribers with email or SNS notifications. Email subscribers can set a
-        /// dollar threshold and a time frequency for receiving notifications.
+        /// Adds an alert subscription to a cost anomaly detection monitor. You can use each subscription
+        /// to define subscribers with email or SNS notifications. Email subscribers can set an
+        /// absolute or percentage threshold and a time frequency for receiving notifications.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAnomalySubscription service method.</param>
         /// <param name="cancellationToken">
@@ -600,15 +609,15 @@ namespace Amazon.CostExplorer
 
 
         /// <summary>
-        /// Returns the name, ARN, rules, definition, and effective dates of a Cost Category that's
-        /// defined in the account.
+        /// Returns the name, Amazon Resource Name (ARN), rules, definition, and effective dates
+        /// of a Cost Category that's defined in the account.
         /// 
         ///  
         /// <para>
-        /// You have the option to use <code>EffectiveOn</code> to return a Cost Category that
-        /// is active on a specific date. If there is no <code>EffectiveOn</code> specified, you’ll
-        /// see a Cost Category that is effective on the current date. If Cost Category is still
-        /// effective, <code>EffectiveEnd</code> is omitted in the response. 
+        /// You have the option to use <code>EffectiveOn</code> to return a Cost Category that's
+        /// active on a specific date. If there's no <code>EffectiveOn</code> specified, you see
+        /// a Cost Category that's effective on the current date. If Cost Category is still effective,
+        /// <code>EffectiveEnd</code> is omitted in the response. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeCostCategoryDefinition service method.</param>
@@ -632,15 +641,15 @@ namespace Amazon.CostExplorer
 
 
         /// <summary>
-        /// Returns the name, ARN, rules, definition, and effective dates of a Cost Category that's
-        /// defined in the account.
+        /// Returns the name, Amazon Resource Name (ARN), rules, definition, and effective dates
+        /// of a Cost Category that's defined in the account.
         /// 
         ///  
         /// <para>
-        /// You have the option to use <code>EffectiveOn</code> to return a Cost Category that
-        /// is active on a specific date. If there is no <code>EffectiveOn</code> specified, you’ll
-        /// see a Cost Category that is effective on the current date. If Cost Category is still
-        /// effective, <code>EffectiveEnd</code> is omitted in the response. 
+        /// You have the option to use <code>EffectiveOn</code> to return a Cost Category that's
+        /// active on a specific date. If there's no <code>EffectiveOn</code> specified, you see
+        /// a Cost Category that's effective on the current date. If Cost Category is still effective,
+        /// <code>EffectiveEnd</code> is omitted in the response. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeCostCategoryDefinition service method.</param>
@@ -672,7 +681,8 @@ namespace Amazon.CostExplorer
 
         /// <summary>
         /// Retrieves all of the cost anomalies detected on your account during the time period
-        /// that's specified by the <code>DateInterval</code> object.
+        /// that's specified by the <code>DateInterval</code> object. Anomalies are available
+        /// for up to 90 days.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAnomalies service method.</param>
         /// 
@@ -696,7 +706,8 @@ namespace Amazon.CostExplorer
 
         /// <summary>
         /// Retrieves all of the cost anomalies detected on your account during the time period
-        /// that's specified by the <code>DateInterval</code> object.
+        /// that's specified by the <code>DateInterval</code> object. Anomalies are available
+        /// for up to 90 days.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAnomalies service method.</param>
         /// <param name="cancellationToken">
@@ -957,7 +968,7 @@ namespace Amazon.CostExplorer
         ///  <note> 
         /// <para>
         /// This is an opt-in only feature. You can enable this feature from the Cost Explorer
-        /// Settings page. For information on how to access the Settings page, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/ce-access.html">Controlling
+        /// Settings page. For information about how to access the Settings page, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/ce-access.html">Controlling
         /// Access for Cost Explorer</a> in the <i>Billing and Cost Management User Guide</i>.
         /// </para>
         ///  </note>
@@ -1005,7 +1016,7 @@ namespace Amazon.CostExplorer
         ///  <note> 
         /// <para>
         /// This is an opt-in only feature. You can enable this feature from the Cost Explorer
-        /// Settings page. For information on how to access the Settings page, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/ce-access.html">Controlling
+        /// Settings page. For information about how to access the Settings page, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/ce-access.html">Controlling
         /// Access for Cost Explorer</a> in the <i>Billing and Cost Management User Guide</i>.
         /// </para>
         ///  </note>
@@ -1265,8 +1276,8 @@ namespace Amazon.CostExplorer
 
 
         /// <summary>
-        /// Retrieves the reservation coverage for your account. This enables you to see how much
-        /// of your Amazon Elastic Compute Cloud, Amazon ElastiCache, Amazon Relational Database
+        /// Retrieves the reservation coverage for your account, which you can use to see how
+        /// much of your Amazon Elastic Compute Cloud, Amazon ElastiCache, Amazon Relational Database
         /// Service, or Amazon Redshift usage is covered by a reservation. An organization's management
         /// account can see the coverage of the associated member accounts. This supports dimensions,
         /// Cost Categories, and nested expressions. For any time period, you can filter data
@@ -1350,8 +1361,8 @@ namespace Amazon.CostExplorer
 
 
         /// <summary>
-        /// Retrieves the reservation coverage for your account. This enables you to see how much
-        /// of your Amazon Elastic Compute Cloud, Amazon ElastiCache, Amazon Relational Database
+        /// Retrieves the reservation coverage for your account, which you can use to see how
+        /// much of your Amazon Elastic Compute Cloud, Amazon ElastiCache, Amazon Relational Database
         /// Service, or Amazon Redshift usage is covered by a reservation. An organization's management
         /// account can see the coverage of the associated member accounts. This supports dimensions,
         /// Cost Categories, and nested expressions. For any time period, you can filter data
@@ -1442,9 +1453,9 @@ namespace Amazon.CostExplorer
 
 
         /// <summary>
-        /// Gets recommendations for which reservations to purchase. These recommendations could
-        /// help you reduce your costs. Reservations provide a discounted hourly rate (up to 75%)
-        /// compared to On-Demand pricing.
+        /// Gets recommendations for reservation purchases. These recommendations might help you
+        /// to reduce your costs. Reservations provide a discounted hourly rate (up to 75%) compared
+        /// to On-Demand pricing.
         /// 
         ///  
         /// <para>
@@ -1452,7 +1463,8 @@ namespace Amazon.CostExplorer
         /// during a specific time period and collecting your usage into categories that are eligible
         /// for a reservation. After Amazon Web Services has these categories, it simulates every
         /// combination of reservations in each category of usage to identify the best number
-        /// of each type of RI to purchase to maximize your estimated savings. 
+        /// of each type of Reserved Instance (RI) to purchase to maximize your estimated savings.
+        /// 
         /// </para>
         ///  
         /// <para>
@@ -1460,10 +1472,10 @@ namespace Amazon.CostExplorer
         /// tenancy, and c4 family usage in the US West (Oregon) Region and recommends that you
         /// buy size-flexible regional reservations to apply to the c4 family usage. Amazon Web
         /// Services recommends the smallest size instance in an instance family. This makes it
-        /// easier to purchase a size-flexible RI. Amazon Web Services also shows the equal number
-        /// of normalized units so that you can purchase any instance size that you want. For
-        /// this example, your RI recommendation would be for <code>c4.large</code> because that
-        /// is the smallest size instance in the c4 instance family.
+        /// easier to purchase a size-flexible Reserved Instance (RI). Amazon Web Services also
+        /// shows the equal number of normalized units. This way, you can purchase any instance
+        /// size that you want. For this example, your RI recommendation is for <code>c4.large</code>
+        /// because that is the smallest size instance in the c4 instance family.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetReservationPurchaseRecommendation service method.</param>
@@ -1490,9 +1502,9 @@ namespace Amazon.CostExplorer
 
 
         /// <summary>
-        /// Gets recommendations for which reservations to purchase. These recommendations could
-        /// help you reduce your costs. Reservations provide a discounted hourly rate (up to 75%)
-        /// compared to On-Demand pricing.
+        /// Gets recommendations for reservation purchases. These recommendations might help you
+        /// to reduce your costs. Reservations provide a discounted hourly rate (up to 75%) compared
+        /// to On-Demand pricing.
         /// 
         ///  
         /// <para>
@@ -1500,7 +1512,8 @@ namespace Amazon.CostExplorer
         /// during a specific time period and collecting your usage into categories that are eligible
         /// for a reservation. After Amazon Web Services has these categories, it simulates every
         /// combination of reservations in each category of usage to identify the best number
-        /// of each type of RI to purchase to maximize your estimated savings. 
+        /// of each type of Reserved Instance (RI) to purchase to maximize your estimated savings.
+        /// 
         /// </para>
         ///  
         /// <para>
@@ -1508,10 +1521,10 @@ namespace Amazon.CostExplorer
         /// tenancy, and c4 family usage in the US West (Oregon) Region and recommends that you
         /// buy size-flexible regional reservations to apply to the c4 family usage. Amazon Web
         /// Services recommends the smallest size instance in an instance family. This makes it
-        /// easier to purchase a size-flexible RI. Amazon Web Services also shows the equal number
-        /// of normalized units so that you can purchase any instance size that you want. For
-        /// this example, your RI recommendation would be for <code>c4.large</code> because that
-        /// is the smallest size instance in the c4 instance family.
+        /// easier to purchase a size-flexible Reserved Instance (RI). Amazon Web Services also
+        /// shows the equal number of normalized units. This way, you can purchase any instance
+        /// size that you want. For this example, your RI recommendation is for <code>c4.large</code>
+        /// because that is the smallest size instance in the c4 instance family.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetReservationPurchaseRecommendation service method.</param>
@@ -1616,8 +1629,8 @@ namespace Amazon.CostExplorer
         ///  
         /// <para>
         /// Recommendations are generated to either downsize or terminate instances, along with
-        /// providing savings detail and metrics. For details on calculation and function, see
-        /// <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/ce-rightsizing.html">Optimizing
+        /// providing savings detail and metrics. For more information about calculation and function,
+        /// see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/ce-rightsizing.html">Optimizing
         /// Your Cost with Rightsizing Recommendations</a> in the <i>Billing and Cost Management
         /// User Guide</i>.
         /// </para>
@@ -1649,8 +1662,8 @@ namespace Amazon.CostExplorer
         ///  
         /// <para>
         /// Recommendations are generated to either downsize or terminate instances, along with
-        /// providing savings detail and metrics. For details on calculation and function, see
-        /// <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/ce-rightsizing.html">Optimizing
+        /// providing savings detail and metrics. For more information about calculation and function,
+        /// see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/ce-rightsizing.html">Optimizing
         /// Your Cost with Rightsizing Recommendations</a> in the <i>Billing and Cost Management
         /// User Guide</i>.
         /// </para>
@@ -1794,7 +1807,9 @@ namespace Amazon.CostExplorer
 
 
         /// <summary>
-        /// Retrieves your request parameters, Savings Plan Recommendations Summary and Details.
+        /// Retrieves the Savings Plans recommendations for your account. First use <code>StartSavingsPlansPurchaseRecommendationGeneration</code>
+        /// to generate a new set of recommendations, and then use <code>GetSavingsPlansPurchaseRecommendation</code>
+        /// to retrieve them.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetSavingsPlansPurchaseRecommendation service method.</param>
         /// 
@@ -1817,7 +1832,9 @@ namespace Amazon.CostExplorer
 
 
         /// <summary>
-        /// Retrieves your request parameters, Savings Plan Recommendations Summary and Details.
+        /// Retrieves the Savings Plans recommendations for your account. First use <code>StartSavingsPlansPurchaseRecommendationGeneration</code>
+        /// to generate a new set of recommendations, and then use <code>GetSavingsPlansPurchaseRecommendation</code>
+        /// to retrieve them.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetSavingsPlansPurchaseRecommendation service method.</param>
         /// <param name="cancellationToken">
@@ -1854,7 +1871,7 @@ namespace Amazon.CostExplorer
         /// 
         ///  <note> 
         /// <para>
-        /// You cannot group by any dimension values for <code>GetSavingsPlansUtilization</code>.
+        /// You can't group by any dimension values for <code>GetSavingsPlansUtilization</code>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1886,7 +1903,7 @@ namespace Amazon.CostExplorer
         /// 
         ///  <note> 
         /// <para>
-        /// You cannot group by any dimension values for <code>GetSavingsPlansUtilization</code>.
+        /// You can't group by any dimension values for <code>GetSavingsPlansUtilization</code>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -2133,12 +2150,67 @@ namespace Amazon.CostExplorer
 
         #endregion
         
+        #region  ListCostAllocationTags
+
+
+        /// <summary>
+        /// Get a list of cost allocation tags. All inputs in the API are optional and serve as
+        /// filters. By default, all cost allocation tags are returned.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCostAllocationTags service method.</param>
+        /// 
+        /// <returns>The response from the ListCostAllocationTags service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.InvalidNextTokenException">
+        /// The pagination token is invalid. Try again without a pagination token.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/ListCostAllocationTags">REST API Reference for ListCostAllocationTags Operation</seealso>
+        public virtual ListCostAllocationTagsResponse ListCostAllocationTags(ListCostAllocationTagsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCostAllocationTagsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCostAllocationTagsResponseUnmarshaller.Instance;
+
+            return Invoke<ListCostAllocationTagsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Get a list of cost allocation tags. All inputs in the API are optional and serve as
+        /// filters. By default, all cost allocation tags are returned.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCostAllocationTags service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListCostAllocationTags service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.InvalidNextTokenException">
+        /// The pagination token is invalid. Try again without a pagination token.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/ListCostAllocationTags">REST API Reference for ListCostAllocationTags Operation</seealso>
+        public virtual Task<ListCostAllocationTagsResponse> ListCostAllocationTagsAsync(ListCostAllocationTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCostAllocationTagsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCostAllocationTagsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListCostAllocationTagsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListCostCategoryDefinitions
 
 
         /// <summary>
-        /// Returns the name, ARN, <code>NumberOfRules</code> and effective dates of all Cost
-        /// Categories defined in the account. You have the option to use <code>EffectiveOn</code>
+        /// Returns the name, Amazon Resource Name (ARN), <code>NumberOfRules</code> and effective
+        /// dates of all Cost Categories defined in the account. You have the option to use <code>EffectiveOn</code>
         /// to return a list of Cost Categories that were active on a specific date. If there
         /// is no <code>EffectiveOn</code> specified, you’ll see Cost Categories that are effective
         /// on the current date. If Cost Category is still effective, <code>EffectiveEnd</code>
@@ -2163,8 +2235,8 @@ namespace Amazon.CostExplorer
 
 
         /// <summary>
-        /// Returns the name, ARN, <code>NumberOfRules</code> and effective dates of all Cost
-        /// Categories defined in the account. You have the option to use <code>EffectiveOn</code>
+        /// Returns the name, Amazon Resource Name (ARN), <code>NumberOfRules</code> and effective
+        /// dates of all Cost Categories defined in the account. You have the option to use <code>EffectiveOn</code>
         /// to return a list of Cost Categories that were active on a specific date. If there
         /// is no <code>EffectiveOn</code> specified, you’ll see Cost Categories that are effective
         /// on the current date. If Cost Category is still effective, <code>EffectiveEnd</code>
@@ -2188,6 +2260,116 @@ namespace Amazon.CostExplorer
             options.ResponseUnmarshaller = ListCostCategoryDefinitionsResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListCostCategoryDefinitionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListSavingsPlansPurchaseRecommendationGeneration
+
+
+        /// <summary>
+        /// Retrieves a list of your historical recommendation generations within the past 30
+        /// days.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSavingsPlansPurchaseRecommendationGeneration service method.</param>
+        /// 
+        /// <returns>The response from the ListSavingsPlansPurchaseRecommendationGeneration service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.InvalidNextTokenException">
+        /// The pagination token is invalid. Try again without a pagination token.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/ListSavingsPlansPurchaseRecommendationGeneration">REST API Reference for ListSavingsPlansPurchaseRecommendationGeneration Operation</seealso>
+        public virtual ListSavingsPlansPurchaseRecommendationGenerationResponse ListSavingsPlansPurchaseRecommendationGeneration(ListSavingsPlansPurchaseRecommendationGenerationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSavingsPlansPurchaseRecommendationGenerationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSavingsPlansPurchaseRecommendationGenerationResponseUnmarshaller.Instance;
+
+            return Invoke<ListSavingsPlansPurchaseRecommendationGenerationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves a list of your historical recommendation generations within the past 30
+        /// days.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSavingsPlansPurchaseRecommendationGeneration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListSavingsPlansPurchaseRecommendationGeneration service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.InvalidNextTokenException">
+        /// The pagination token is invalid. Try again without a pagination token.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/ListSavingsPlansPurchaseRecommendationGeneration">REST API Reference for ListSavingsPlansPurchaseRecommendationGeneration Operation</seealso>
+        public virtual Task<ListSavingsPlansPurchaseRecommendationGenerationResponse> ListSavingsPlansPurchaseRecommendationGenerationAsync(ListSavingsPlansPurchaseRecommendationGenerationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSavingsPlansPurchaseRecommendationGenerationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSavingsPlansPurchaseRecommendationGenerationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListSavingsPlansPurchaseRecommendationGenerationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListTagsForResource
+
+
+        /// <summary>
+        /// Returns a list of resource tags associated with the resource specified by the Amazon
+        /// Resource Name (ARN).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+
+            return Invoke<ListTagsForResourceResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns a list of resource tags associated with the resource specified by the Amazon
+        /// Resource Name (ARN).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2239,12 +2421,237 @@ namespace Amazon.CostExplorer
 
         #endregion
         
+        #region  StartSavingsPlansPurchaseRecommendationGeneration
+
+
+        /// <summary>
+        /// Requests a Savings Plans recommendation generation. This enables you to calculate
+        /// a fresh set of Savings Plans recommendations that takes your latest usage data and
+        /// current Savings Plans inventory into account. You can refresh Savings Plans recommendations
+        /// up to three times daily for a consolidated billing family.
+        /// 
+        ///  <note> 
+        /// <para>
+        ///  <code>StartSavingsPlansPurchaseRecommendationGeneration</code> has no request syntax
+        /// because no input parameters are needed to support this operation.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartSavingsPlansPurchaseRecommendationGeneration service method.</param>
+        /// 
+        /// <returns>The response from the StartSavingsPlansPurchaseRecommendationGeneration service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.GenerationExistsException">
+        /// A request to generate a recommendation is already in progress.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.ServiceQuotaExceededException">
+        /// You've reached the limit on the number of resources you can create, or exceeded the
+        /// size of an individual resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/StartSavingsPlansPurchaseRecommendationGeneration">REST API Reference for StartSavingsPlansPurchaseRecommendationGeneration Operation</seealso>
+        public virtual StartSavingsPlansPurchaseRecommendationGenerationResponse StartSavingsPlansPurchaseRecommendationGeneration(StartSavingsPlansPurchaseRecommendationGenerationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartSavingsPlansPurchaseRecommendationGenerationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartSavingsPlansPurchaseRecommendationGenerationResponseUnmarshaller.Instance;
+
+            return Invoke<StartSavingsPlansPurchaseRecommendationGenerationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Requests a Savings Plans recommendation generation. This enables you to calculate
+        /// a fresh set of Savings Plans recommendations that takes your latest usage data and
+        /// current Savings Plans inventory into account. You can refresh Savings Plans recommendations
+        /// up to three times daily for a consolidated billing family.
+        /// 
+        ///  <note> 
+        /// <para>
+        ///  <code>StartSavingsPlansPurchaseRecommendationGeneration</code> has no request syntax
+        /// because no input parameters are needed to support this operation.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartSavingsPlansPurchaseRecommendationGeneration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartSavingsPlansPurchaseRecommendationGeneration service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.GenerationExistsException">
+        /// A request to generate a recommendation is already in progress.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.ServiceQuotaExceededException">
+        /// You've reached the limit on the number of resources you can create, or exceeded the
+        /// size of an individual resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/StartSavingsPlansPurchaseRecommendationGeneration">REST API Reference for StartSavingsPlansPurchaseRecommendationGeneration Operation</seealso>
+        public virtual Task<StartSavingsPlansPurchaseRecommendationGenerationResponse> StartSavingsPlansPurchaseRecommendationGenerationAsync(StartSavingsPlansPurchaseRecommendationGenerationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartSavingsPlansPurchaseRecommendationGenerationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartSavingsPlansPurchaseRecommendationGenerationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StartSavingsPlansPurchaseRecommendationGenerationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  TagResource
+
+
+        /// <summary>
+        /// An API operation for adding one or more tags (key-value pairs) to a resource.
+        /// 
+        ///  
+        /// <para>
+        /// You can use the <code>TagResource</code> operation with a resource that already has
+        /// tags. If you specify a new tag key for the resource, this tag is appended to the list
+        /// of tags associated with the resource. If you specify a tag key that is already associated
+        /// with the resource, the new tag value you specify replaces the previous value for that
+        /// tag.
+        /// </para>
+        ///  
+        /// <para>
+        /// Although the maximum number of array members is 200, user-tag maximum is 50. The remaining
+        /// are reserved for Amazon Web Services use.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.TooManyTagsException">
+        /// Can occur if you specify a number of tags for a resource greater than the maximum
+        /// 50 user tags per resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/TagResource">REST API Reference for TagResource Operation</seealso>
+        public virtual TagResourceResponse TagResource(TagResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<TagResourceResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// An API operation for adding one or more tags (key-value pairs) to a resource.
+        /// 
+        ///  
+        /// <para>
+        /// You can use the <code>TagResource</code> operation with a resource that already has
+        /// tags. If you specify a new tag key for the resource, this tag is appended to the list
+        /// of tags associated with the resource. If you specify a tag key that is already associated
+        /// with the resource, the new tag value you specify replaces the previous value for that
+        /// tag.
+        /// </para>
+        ///  
+        /// <para>
+        /// Although the maximum number of array members is 200, user-tag maximum is 50. The remaining
+        /// are reserved for Amazon Web Services use.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.TooManyTagsException">
+        /// Can occur if you specify a number of tags for a resource greater than the maximum
+        /// 50 user tags per resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/TagResource">REST API Reference for TagResource Operation</seealso>
+        public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UntagResource
+
+
+        /// <summary>
+        /// Removes one or more tags from a resource. Specify only tag keys in your request. Don't
+        /// specify the value.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<UntagResourceResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Removes one or more tags from a resource. Specify only tag keys in your request. Don't
+        /// specify the value.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  UpdateAnomalyMonitor
 
 
         /// <summary>
         /// Updates an existing cost anomaly monitor. The changes made are applied going forward,
-        /// and doesn'tt change anomalies detected in the past.
+        /// and doesn't change anomalies detected in the past.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAnomalyMonitor service method.</param>
         /// 
@@ -2268,7 +2675,7 @@ namespace Amazon.CostExplorer
 
         /// <summary>
         /// Updates an existing cost anomaly monitor. The changes made are applied going forward,
-        /// and doesn'tt change anomalies detected in the past.
+        /// and doesn't change anomalies detected in the past.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAnomalyMonitor service method.</param>
         /// <param name="cancellationToken">
@@ -2349,6 +2756,59 @@ namespace Amazon.CostExplorer
             options.ResponseUnmarshaller = UpdateAnomalySubscriptionResponseUnmarshaller.Instance;
             
             return InvokeAsync<UpdateAnomalySubscriptionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateCostAllocationTagsStatus
+
+
+        /// <summary>
+        /// Updates status for cost allocation tags in bulk, with maximum batch size of 20. If
+        /// the tag status that's updated is the same as the existing tag status, the request
+        /// doesn't fail. Instead, it doesn't have any effect on the tag status (for example,
+        /// activating the active tag).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCostAllocationTagsStatus service method.</param>
+        /// 
+        /// <returns>The response from the UpdateCostAllocationTagsStatus service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/UpdateCostAllocationTagsStatus">REST API Reference for UpdateCostAllocationTagsStatus Operation</seealso>
+        public virtual UpdateCostAllocationTagsStatusResponse UpdateCostAllocationTagsStatus(UpdateCostAllocationTagsStatusRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateCostAllocationTagsStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateCostAllocationTagsStatusResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateCostAllocationTagsStatusResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates status for cost allocation tags in bulk, with maximum batch size of 20. If
+        /// the tag status that's updated is the same as the existing tag status, the request
+        /// doesn't fail. Instead, it doesn't have any effect on the tag status (for example,
+        /// activating the active tag).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCostAllocationTagsStatus service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateCostAllocationTagsStatus service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/UpdateCostAllocationTagsStatus">REST API Reference for UpdateCostAllocationTagsStatus Operation</seealso>
+        public virtual Task<UpdateCostAllocationTagsStatusResponse> UpdateCostAllocationTagsStatusAsync(UpdateCostAllocationTagsStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateCostAllocationTagsStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateCostAllocationTagsStatusResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateCostAllocationTagsStatusResponse>(request, options, cancellationToken);
         }
 
         #endregion

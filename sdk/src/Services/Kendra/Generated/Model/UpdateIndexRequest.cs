@@ -47,13 +47,14 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property CapacityUnits. 
         /// <para>
-        /// Sets the number of additional storage and query capacity units that should be used
-        /// by the index. You can change the capacity of the index up to 5 times per day.
+        /// Sets the number of additional document storage and query capacity units that should
+        /// be used by the index. You can change the capacity of the index up to 5 times per day,
+        /// or make 5 API calls.
         /// </para>
         ///  
         /// <para>
         /// If you are using extra storage units, you can't reduce the storage capacity below
-        /// that required to meet the storage needs for your index.
+        /// what is required to meet the storage needs for your index.
         /// </para>
         /// </summary>
         public CapacityUnitsConfiguration CapacityUnits
@@ -90,7 +91,9 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property DocumentMetadataConfigurationUpdates. 
         /// <para>
-        /// The document metadata to update. 
+        /// The document metadata configuration you want to update for the index. Document metadata
+        /// are fields or attributes associated with your documents. For example, the company
+        /// department name associated with each document.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=500)]
@@ -109,7 +112,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The identifier of the index to update.
+        /// The identifier of the index you want to update.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]
@@ -128,7 +131,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the index to update.
+        /// The name of the index you want to update.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
@@ -147,8 +150,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// A new IAM role that gives Amazon Kendra permission to access your Amazon CloudWatch
-        /// logs.
+        /// An Identity and Access Management (IAM) role that gives Amazon Kendra permission to
+        /// access Amazon CloudWatch logs and metrics.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1284)]
@@ -185,8 +188,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property UserGroupResolutionConfiguration. 
         /// <para>
-        /// Enables fetching access levels of groups and users from an Amazon Web Services Single
-        /// Sign On identity source. To configure this, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.
+        /// Enables fetching access levels of groups and users from an IAM Identity Center (successor
+        /// to Single Sign-On) identity source. To configure this, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.
         /// </para>
         /// </summary>
         public UserGroupResolutionConfiguration UserGroupResolutionConfiguration

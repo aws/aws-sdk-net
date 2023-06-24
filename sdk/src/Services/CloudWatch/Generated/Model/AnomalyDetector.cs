@@ -71,7 +71,7 @@ namespace Amazon.CloudWatch.Model
         /// </para>
         /// </summary>
         [Obsolete("Use SingleMetricAnomalyDetector.Dimensions property.")]
-        [AWSProperty(Max=10)]
+        [AWSProperty(Max=30)]
         public List<Dimension> Dimensions
         {
             get { return this._dimensions; }

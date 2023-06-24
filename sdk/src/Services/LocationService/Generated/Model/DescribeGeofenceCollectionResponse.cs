@@ -47,7 +47,7 @@ namespace Amazon.LocationService.Model
         /// Gets and sets the property CollectionArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) for the geofence collection resource. Used when you
-        /// need to specify a resource across all AWS. 
+        /// need to specify a resource across all Amazon Web Services. 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -130,8 +130,8 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS
-        /// KMS customer managed key</a> assigned to the Amazon Location resource
+        /// A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon
+        /// Web Services KMS customer managed key</a> assigned to the Amazon Location resource
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
@@ -150,15 +150,10 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property PricingPlan. 
         /// <para>
-        /// The pricing plan selected for the specified geofence collection.
-        /// </para>
-        ///  
-        /// <para>
-        /// For additional details and restrictions on each pricing plan option, see the <a href="https://aws.amazon.com/location/pricing/">Amazon
-        /// Location Service pricing page</a>.
+        /// No longer used. Always returns <code>RequestBasedUsage</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [Obsolete("Deprecated. Always returns RequestBasedUsage.")]
         public PricingPlan PricingPlan
         {
             get { return this._pricingPlan; }
@@ -174,9 +169,10 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property PricingPlanDataSource. 
         /// <para>
-        /// The specified data provider for the geofence collection.
+        /// No longer used. Always returns an empty string.
         /// </para>
         /// </summary>
+        [Obsolete("Deprecated. Unused.")]
         public string PricingPlanDataSource
         {
             get { return this._pricingPlanDataSource; }

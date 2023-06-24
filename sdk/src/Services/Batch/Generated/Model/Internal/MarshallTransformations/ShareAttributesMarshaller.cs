@@ -34,7 +34,7 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ShareAttributes Marshaller
-    /// </summary>       
+    /// </summary>
     public class ShareAttributesMarshaller : IRequestMarshaller<ShareAttributes, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ShareAttributesMarshaller Instance = new ShareAttributesMarshaller();
 
     }

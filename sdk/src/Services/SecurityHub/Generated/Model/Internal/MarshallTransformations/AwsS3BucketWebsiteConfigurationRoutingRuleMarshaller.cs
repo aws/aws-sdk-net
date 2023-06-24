@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AwsS3BucketWebsiteConfigurationRoutingRule Marshaller
-    /// </summary>       
+    /// </summary>
     public class AwsS3BucketWebsiteConfigurationRoutingRuleMarshaller : IRequestMarshaller<AwsS3BucketWebsiteConfigurationRoutingRule, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AwsS3BucketWebsiteConfigurationRoutingRuleMarshaller Instance = new AwsS3BucketWebsiteConfigurationRoutingRuleMarshaller();
 
     }

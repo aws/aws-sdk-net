@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AutoRollbackConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class AutoRollbackConfigMarshaller : IRequestMarshaller<AutoRollbackConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -65,7 +65,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AutoRollbackConfigMarshaller Instance = new AutoRollbackConfigMarshaller();
 
     }

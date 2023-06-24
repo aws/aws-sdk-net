@@ -64,6 +64,12 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("Beaconing", targetDepth))
+                {
+                    var unmarshaller = BeaconingUnmarshaller.Instance;
+                    unmarshalledObject.Beaconing = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("GatewayEui", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -74,6 +80,12 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new ListUnmarshaller<List<string>, ListUnmarshaller<string, StringUnmarshaller>>(new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance));
                     unmarshalledObject.JoinEuiFilters = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("MaxEirp", targetDepth))
+                {
+                    var unmarshaller = FloatUnmarshaller.Instance;
+                    unmarshalledObject.MaxEirp = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("NetIdFilters", targetDepth))

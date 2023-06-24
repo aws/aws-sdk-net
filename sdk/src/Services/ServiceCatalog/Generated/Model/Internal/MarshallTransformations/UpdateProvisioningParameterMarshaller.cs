@@ -34,7 +34,7 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// UpdateProvisioningParameter Marshaller
-    /// </summary>       
+    /// </summary>
     public class UpdateProvisioningParameterMarshaller : IRequestMarshaller<UpdateProvisioningParameter, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static UpdateProvisioningParameterMarshaller Instance = new UpdateProvisioningParameterMarshaller();
 
     }

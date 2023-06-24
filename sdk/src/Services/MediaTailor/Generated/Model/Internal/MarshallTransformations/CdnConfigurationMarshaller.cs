@@ -34,7 +34,7 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CdnConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class CdnConfigurationMarshaller : IRequestMarshaller<CdnConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CdnConfigurationMarshaller Instance = new CdnConfigurationMarshaller();
 
     }

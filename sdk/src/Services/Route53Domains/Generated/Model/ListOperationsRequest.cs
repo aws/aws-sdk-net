@@ -31,13 +31,22 @@ namespace Amazon.Route53Domains.Model
     /// <summary>
     /// Container for the parameters to the ListOperations operation.
     /// Returns information about all of the operations that return an operation ID and that
-    /// have ever been performed on domains that were registered by the current account.
+    /// have ever been performed on domains that were registered by the current account. 
+    /// 
+    ///  
+    /// <para>
+    /// This command runs only in the us-east-1 Region.
+    /// </para>
     /// </summary>
     public partial class ListOperationsRequest : AmazonRoute53DomainsRequest
     {
         private string _marker;
         private int? _maxItems;
+        private ListOperationsSortAttributeName _sortBy;
+        private SortOrder _sortOrder;
+        private List<string> _status = new List<string>();
         private DateTime? _submittedSince;
+        private List<string> _type = new List<string>();
 
         /// <summary>
         /// Gets and sets the property Marker. 
@@ -87,6 +96,61 @@ namespace Amazon.Route53Domains.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SortBy. 
+        /// <para>
+        ///  The sort type for returned values. 
+        /// </para>
+        /// </summary>
+        public ListOperationsSortAttributeName SortBy
+        {
+            get { return this._sortBy; }
+            set { this._sortBy = value; }
+        }
+
+        // Check to see if SortBy property is set
+        internal bool IsSetSortBy()
+        {
+            return this._sortBy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SortOrder. 
+        /// <para>
+        ///  The sort order ofr returned values, either ascending or descending. 
+        /// </para>
+        /// </summary>
+        public SortOrder SortOrder
+        {
+            get { return this._sortOrder; }
+            set { this._sortOrder = value; }
+        }
+
+        // Check to see if SortOrder property is set
+        internal bool IsSetSortOrder()
+        {
+            return this._sortOrder != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        ///  The status of the operations. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=5)]
+        public List<string> Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null && this._status.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property SubmittedSince. 
         /// <para>
         /// An optional parameter that lets you get information about all the operations that
@@ -104,6 +168,25 @@ namespace Amazon.Route53Domains.Model
         internal bool IsSetSubmittedSince()
         {
             return this._submittedSince.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        ///  An arrays of the domains operation types. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=18)]
+        public List<string> Type
+        {
+            get { return this._type; }
+            set { this._type = value; }
+        }
+
+        // Check to see if Type property is set
+        internal bool IsSetType()
+        {
+            return this._type != null && this._type.Count > 0; 
         }
 
     }

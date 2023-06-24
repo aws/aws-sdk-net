@@ -55,7 +55,7 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
         public IRequest Marshall(ListDeploymentsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.GreengrassV2");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-11-30";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-11-30";
             request.HttpMethod = "GET";
 
             
@@ -67,6 +67,9 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
+            
+            if (publicRequest.IsSetParentTargetArn())
+                request.Parameters.Add("parentTargetArn", StringUtils.FromString(publicRequest.ParentTargetArn));
             
             if (publicRequest.IsSetTargetArn())
                 request.Parameters.Add("targetArn", StringUtils.FromString(publicRequest.TargetArn));

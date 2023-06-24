@@ -34,7 +34,7 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CachingConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class CachingConfigMarshaller : IRequestMarshaller<CachingConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CachingConfigMarshaller Instance = new CachingConfigMarshaller();
 
     }

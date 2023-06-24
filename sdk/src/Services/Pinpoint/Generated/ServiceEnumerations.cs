@@ -515,6 +515,76 @@ namespace Amazon.Pinpoint
 
 
     /// <summary>
+    /// Constants used for properties of type DayOfWeek.
+    /// </summary>
+    public class DayOfWeek : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FRIDAY for DayOfWeek
+        /// </summary>
+        public static readonly DayOfWeek FRIDAY = new DayOfWeek("FRIDAY");
+        /// <summary>
+        /// Constant MONDAY for DayOfWeek
+        /// </summary>
+        public static readonly DayOfWeek MONDAY = new DayOfWeek("MONDAY");
+        /// <summary>
+        /// Constant SATURDAY for DayOfWeek
+        /// </summary>
+        public static readonly DayOfWeek SATURDAY = new DayOfWeek("SATURDAY");
+        /// <summary>
+        /// Constant SUNDAY for DayOfWeek
+        /// </summary>
+        public static readonly DayOfWeek SUNDAY = new DayOfWeek("SUNDAY");
+        /// <summary>
+        /// Constant THURSDAY for DayOfWeek
+        /// </summary>
+        public static readonly DayOfWeek THURSDAY = new DayOfWeek("THURSDAY");
+        /// <summary>
+        /// Constant TUESDAY for DayOfWeek
+        /// </summary>
+        public static readonly DayOfWeek TUESDAY = new DayOfWeek("TUESDAY");
+        /// <summary>
+        /// Constant WEDNESDAY for DayOfWeek
+        /// </summary>
+        public static readonly DayOfWeek WEDNESDAY = new DayOfWeek("WEDNESDAY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DayOfWeek(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DayOfWeek FindValue(string value)
+        {
+            return FindValue<DayOfWeek>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DayOfWeek(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DeliveryStatus.
     /// </summary>
     public class DeliveryStatus : ConstantClass
@@ -988,6 +1058,64 @@ namespace Amazon.Pinpoint
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator JobStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type JourneyRunStatus.
+    /// </summary>
+    public class JourneyRunStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CANCELLED for JourneyRunStatus
+        /// </summary>
+        public static readonly JourneyRunStatus CANCELLED = new JourneyRunStatus("CANCELLED");
+        /// <summary>
+        /// Constant COMPLETED for JourneyRunStatus
+        /// </summary>
+        public static readonly JourneyRunStatus COMPLETED = new JourneyRunStatus("COMPLETED");
+        /// <summary>
+        /// Constant RUNNING for JourneyRunStatus
+        /// </summary>
+        public static readonly JourneyRunStatus RUNNING = new JourneyRunStatus("RUNNING");
+        /// <summary>
+        /// Constant SCHEDULED for JourneyRunStatus
+        /// </summary>
+        public static readonly JourneyRunStatus SCHEDULED = new JourneyRunStatus("SCHEDULED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public JourneyRunStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static JourneyRunStatus FindValue(string value)
+        {
+            return FindValue<JourneyRunStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator JourneyRunStatus(string value)
         {
             return FindValue(value);
         }

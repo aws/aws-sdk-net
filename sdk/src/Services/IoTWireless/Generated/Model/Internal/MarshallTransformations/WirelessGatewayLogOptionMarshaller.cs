@@ -34,7 +34,7 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// WirelessGatewayLogOption Marshaller
-    /// </summary>       
+    /// </summary>
     public class WirelessGatewayLogOptionMarshaller : IRequestMarshaller<WirelessGatewayLogOption, JsonMarshallerContext> 
     {
         /// <summary>
@@ -77,7 +77,7 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static WirelessGatewayLogOptionMarshaller Instance = new WirelessGatewayLogOptionMarshaller();
 
     }

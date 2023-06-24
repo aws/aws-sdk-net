@@ -91,6 +91,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (initiateMultipartUploadRequest.IsSetBucketKeyEnabled())
                 request.Headers.Add(S3Constants.AmzHeaderBucketKeyEnabled, S3Transforms.ToStringValue(initiateMultipartUploadRequest.BucketKeyEnabled));
 
+            if (initiateMultipartUploadRequest.IsSetChecksumAlgorithm())
+                request.Headers.Add(S3Constants.AmzHeaderChecksumAlgorithm, S3Transforms.ToStringValue(initiateMultipartUploadRequest.ChecksumAlgorithm));
+
             AmazonS3Util.SetMetadataHeaders(request, initiateMultipartUploadRequest.Metadata);
 
             if (string.IsNullOrEmpty(initiateMultipartUploadRequest.BucketName))
@@ -98,8 +101,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (string.IsNullOrEmpty(initiateMultipartUploadRequest.Key))
                 throw new System.ArgumentException("Key is a required property and must be set before making this call.", "InitiateMultipartUploadRequest.Key");
 
-			request.ResourcePath = string.Format(CultureInfo.InvariantCulture, "/{0}/{1}",
-                                                 S3Transforms.ToStringValue(initiateMultipartUploadRequest.BucketName),
+            request.ResourcePath = string.Format(CultureInfo.InvariantCulture, "/{0}",
                                                  S3Transforms.ToStringValue(initiateMultipartUploadRequest.Key));
 
             request.AddSubResource("uploads");

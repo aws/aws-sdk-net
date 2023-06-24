@@ -34,7 +34,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// MsSmoothEncryptionSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class MsSmoothEncryptionSettingsMarshaller : IRequestMarshaller<MsSmoothEncryptionSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static MsSmoothEncryptionSettingsMarshaller Instance = new MsSmoothEncryptionSettingsMarshaller();
 
     }

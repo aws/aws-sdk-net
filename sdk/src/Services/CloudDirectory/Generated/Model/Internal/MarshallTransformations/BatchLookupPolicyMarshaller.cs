@@ -34,7 +34,7 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// BatchLookupPolicy Marshaller
-    /// </summary>       
+    /// </summary>
     public class BatchLookupPolicyMarshaller : IRequestMarshaller<BatchLookupPolicy, JsonMarshallerContext> 
     {
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static BatchLookupPolicyMarshaller Instance = new BatchLookupPolicyMarshaller();
 
     }

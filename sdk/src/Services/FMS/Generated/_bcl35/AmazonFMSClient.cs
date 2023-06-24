@@ -43,8 +43,8 @@ namespace Amazon.FMS
     ///  
     /// <para>
     /// Some API actions require explicit resource permissions. For information, see the developer
-    /// guide topic <a href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-api-permissions-ref.html">Firewall
-    /// Manager required permissions for API actions</a>. 
+    /// guide topic <a href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-security_iam_service-with-iam.html#fms-security_iam_service-with-iam-roles-service">Service
+    /// roles for Firewall Manager</a>. 
     /// </para>
     /// </summary>
     public partial class AmazonFMSClient : AmazonServiceClient, IAmazonFMS
@@ -240,6 +240,15 @@ namespace Amazon.FMS
         }
 
         /// <summary>
+        /// Customize the pipeline
+        /// </summary>
+        /// <param name="pipeline"></param>
+        protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
+        {
+            pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonFMSEndpointResolver());
+        }
+        /// <summary>
         /// Capture metadata for the service.
         /// </summary>
         protected override IServiceMetadata ServiceMetadata
@@ -268,14 +277,17 @@ namespace Amazon.FMS
         #region  AssociateAdminAccount
 
         /// <summary>
-        /// Sets the Firewall Manager administrator account. The account must be a member of the
-        /// organization in Organizations whose resources you want to protect. Firewall Manager
-        /// sets the permissions that allow the account to administer your Firewall Manager policies.
+        /// Sets a Firewall Manager default administrator account. The Firewall Manager default
+        /// administrator account can manage third-party firewalls and has full administrative
+        /// scope that allows administration of all policy types, accounts, organizational units,
+        /// and Regions. This account must be a member account of the organization in Organizations
+        /// whose resources you want to protect.
         /// 
         ///  
         /// <para>
-        /// The account that you associate with Firewall Manager is called the Firewall Manager
-        /// administrator account. 
+        /// For information about working with Firewall Manager administrator accounts, see <a
+        /// href="https://docs.aws.amazon.com/organizations/latest/userguide/fms-administrators.html">Managing
+        /// Firewall Manager administrators</a> in the <i>Firewall Manager Developer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateAdminAccount service method.</param>
@@ -347,6 +359,230 @@ namespace Amazon.FMS
         public virtual AssociateAdminAccountResponse EndAssociateAdminAccount(IAsyncResult asyncResult)
         {
             return EndInvoke<AssociateAdminAccountResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  AssociateThirdPartyFirewall
+
+        /// <summary>
+        /// Sets the Firewall Manager policy administrator as a tenant administrator of a third-party
+        /// firewall service. A tenant is an instance of the third-party firewall service that's
+        /// associated with your Amazon Web Services customer account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateThirdPartyFirewall service method.</param>
+        /// 
+        /// <returns>The response from the AssociateThirdPartyFirewall service method, as returned by FMS.</returns>
+        /// <exception cref="Amazon.FMS.Model.InternalErrorException">
+        /// The operation failed because of a system problem, even though the request was valid.
+        /// Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.InvalidInputException">
+        /// The parameters of the request were invalid.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.InvalidOperationException">
+        /// The operation failed because there was nothing to do or the operation wasn't possible.
+        /// For example, you might have submitted an <code>AssociateAdminAccount</code> request
+        /// for an account ID that was already set as the Firewall Manager administrator. Or you
+        /// might have tried to access a Region that's disabled by default, and that you need
+        /// to enable for the Firewall Manager administrator account and for Organizations before
+        /// you can access it.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/AssociateThirdPartyFirewall">REST API Reference for AssociateThirdPartyFirewall Operation</seealso>
+        public virtual AssociateThirdPartyFirewallResponse AssociateThirdPartyFirewall(AssociateThirdPartyFirewallRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateThirdPartyFirewallRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateThirdPartyFirewallResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateThirdPartyFirewallResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateThirdPartyFirewall operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateThirdPartyFirewall operation on AmazonFMSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateThirdPartyFirewall
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/AssociateThirdPartyFirewall">REST API Reference for AssociateThirdPartyFirewall Operation</seealso>
+        public virtual IAsyncResult BeginAssociateThirdPartyFirewall(AssociateThirdPartyFirewallRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateThirdPartyFirewallRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateThirdPartyFirewallResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AssociateThirdPartyFirewall operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssociateThirdPartyFirewall.</param>
+        /// 
+        /// <returns>Returns a  AssociateThirdPartyFirewallResult from FMS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/AssociateThirdPartyFirewall">REST API Reference for AssociateThirdPartyFirewall Operation</seealso>
+        public virtual AssociateThirdPartyFirewallResponse EndAssociateThirdPartyFirewall(IAsyncResult asyncResult)
+        {
+            return EndInvoke<AssociateThirdPartyFirewallResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  BatchAssociateResource
+
+        /// <summary>
+        /// Associate resources to a Firewall Manager resource set.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchAssociateResource service method.</param>
+        /// 
+        /// <returns>The response from the BatchAssociateResource service method, as returned by FMS.</returns>
+        /// <exception cref="Amazon.FMS.Model.InternalErrorException">
+        /// The operation failed because of a system problem, even though the request was valid.
+        /// Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.InvalidInputException">
+        /// The parameters of the request were invalid.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.InvalidOperationException">
+        /// The operation failed because there was nothing to do or the operation wasn't possible.
+        /// For example, you might have submitted an <code>AssociateAdminAccount</code> request
+        /// for an account ID that was already set as the Firewall Manager administrator. Or you
+        /// might have tried to access a Region that's disabled by default, and that you need
+        /// to enable for the Firewall Manager administrator account and for Organizations before
+        /// you can access it.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.LimitExceededException">
+        /// The operation exceeds a resource limit, for example, the maximum number of <code>policy</code>
+        /// objects that you can create for an Amazon Web Services account. For more information,
+        /// see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-limits.html">Firewall
+        /// Manager Limits</a> in the <i>WAF Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/BatchAssociateResource">REST API Reference for BatchAssociateResource Operation</seealso>
+        public virtual BatchAssociateResourceResponse BatchAssociateResource(BatchAssociateResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchAssociateResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchAssociateResourceResponseUnmarshaller.Instance;
+
+            return Invoke<BatchAssociateResourceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchAssociateResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchAssociateResource operation on AmazonFMSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchAssociateResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/BatchAssociateResource">REST API Reference for BatchAssociateResource Operation</seealso>
+        public virtual IAsyncResult BeginBatchAssociateResource(BatchAssociateResourceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchAssociateResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchAssociateResourceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchAssociateResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchAssociateResource.</param>
+        /// 
+        /// <returns>Returns a  BatchAssociateResourceResult from FMS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/BatchAssociateResource">REST API Reference for BatchAssociateResource Operation</seealso>
+        public virtual BatchAssociateResourceResponse EndBatchAssociateResource(IAsyncResult asyncResult)
+        {
+            return EndInvoke<BatchAssociateResourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  BatchDisassociateResource
+
+        /// <summary>
+        /// Disassociates resources from a Firewall Manager resource set.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchDisassociateResource service method.</param>
+        /// 
+        /// <returns>The response from the BatchDisassociateResource service method, as returned by FMS.</returns>
+        /// <exception cref="Amazon.FMS.Model.InternalErrorException">
+        /// The operation failed because of a system problem, even though the request was valid.
+        /// Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.InvalidInputException">
+        /// The parameters of the request were invalid.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.InvalidOperationException">
+        /// The operation failed because there was nothing to do or the operation wasn't possible.
+        /// For example, you might have submitted an <code>AssociateAdminAccount</code> request
+        /// for an account ID that was already set as the Firewall Manager administrator. Or you
+        /// might have tried to access a Region that's disabled by default, and that you need
+        /// to enable for the Firewall Manager administrator account and for Organizations before
+        /// you can access it.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/BatchDisassociateResource">REST API Reference for BatchDisassociateResource Operation</seealso>
+        public virtual BatchDisassociateResourceResponse BatchDisassociateResource(BatchDisassociateResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchDisassociateResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDisassociateResourceResponseUnmarshaller.Instance;
+
+            return Invoke<BatchDisassociateResourceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchDisassociateResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchDisassociateResource operation on AmazonFMSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchDisassociateResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/BatchDisassociateResource">REST API Reference for BatchDisassociateResource Operation</seealso>
+        public virtual IAsyncResult BeginBatchDisassociateResource(BatchDisassociateResourceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchDisassociateResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDisassociateResourceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchDisassociateResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchDisassociateResource.</param>
+        /// 
+        /// <returns>Returns a  BatchDisassociateResourceResult from FMS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/BatchDisassociateResource">REST API Reference for BatchDisassociateResource Operation</seealso>
+        public virtual BatchDisassociateResourceResponse EndBatchDisassociateResource(IAsyncResult asyncResult)
+        {
+            return EndInvoke<BatchDisassociateResourceResponse>(asyncResult);
         }
 
         #endregion
@@ -637,12 +873,93 @@ namespace Amazon.FMS
 
         #endregion
         
+        #region  DeleteResourceSet
+
+        /// <summary>
+        /// Deletes the specified <a>ResourceSet</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteResourceSet service method.</param>
+        /// 
+        /// <returns>The response from the DeleteResourceSet service method, as returned by FMS.</returns>
+        /// <exception cref="Amazon.FMS.Model.InternalErrorException">
+        /// The operation failed because of a system problem, even though the request was valid.
+        /// Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.InvalidInputException">
+        /// The parameters of the request were invalid.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.InvalidOperationException">
+        /// The operation failed because there was nothing to do or the operation wasn't possible.
+        /// For example, you might have submitted an <code>AssociateAdminAccount</code> request
+        /// for an account ID that was already set as the Firewall Manager administrator. Or you
+        /// might have tried to access a Region that's disabled by default, and that you need
+        /// to enable for the Firewall Manager administrator account and for Organizations before
+        /// you can access it.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/DeleteResourceSet">REST API Reference for DeleteResourceSet Operation</seealso>
+        public virtual DeleteResourceSetResponse DeleteResourceSet(DeleteResourceSetRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteResourceSetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteResourceSetResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteResourceSetResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteResourceSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteResourceSet operation on AmazonFMSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteResourceSet
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/DeleteResourceSet">REST API Reference for DeleteResourceSet Operation</seealso>
+        public virtual IAsyncResult BeginDeleteResourceSet(DeleteResourceSetRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteResourceSetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteResourceSetResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteResourceSet operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteResourceSet.</param>
+        /// 
+        /// <returns>Returns a  DeleteResourceSetResult from FMS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/DeleteResourceSet">REST API Reference for DeleteResourceSet Operation</seealso>
+        public virtual DeleteResourceSetResponse EndDeleteResourceSet(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteResourceSetResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DisassociateAdminAccount
 
         /// <summary>
-        /// Disassociates the account that has been set as the Firewall Manager administrator
-        /// account. To set a different account as the administrator account, you must submit
-        /// an <code>AssociateAdminAccount</code> request.
+        /// Disassociates an Firewall Manager administrator account. To set a different account
+        /// as an Firewall Manager administrator, submit a <a>PutAdminAccount</a> request. To
+        /// set an account as a default administrator account, you must submit an <a>AssociateAdminAccount</a>
+        /// request.
+        /// 
+        ///  
+        /// <para>
+        /// Disassociation of the default administrator account follows the first in, last out
+        /// principle. If you are the default administrator, all Firewall Manager administrators
+        /// within the organization must first disassociate their accounts before you can disassociate
+        /// your account.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateAdminAccount service method.</param>
         /// 
@@ -708,11 +1025,85 @@ namespace Amazon.FMS
 
         #endregion
         
+        #region  DisassociateThirdPartyFirewall
+
+        /// <summary>
+        /// Disassociates a Firewall Manager policy administrator from a third-party firewall
+        /// tenant. When you call <code>DisassociateThirdPartyFirewall</code>, the third-party
+        /// firewall vendor deletes all of the firewalls that are associated with the account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateThirdPartyFirewall service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateThirdPartyFirewall service method, as returned by FMS.</returns>
+        /// <exception cref="Amazon.FMS.Model.InternalErrorException">
+        /// The operation failed because of a system problem, even though the request was valid.
+        /// Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.InvalidInputException">
+        /// The parameters of the request were invalid.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.InvalidOperationException">
+        /// The operation failed because there was nothing to do or the operation wasn't possible.
+        /// For example, you might have submitted an <code>AssociateAdminAccount</code> request
+        /// for an account ID that was already set as the Firewall Manager administrator. Or you
+        /// might have tried to access a Region that's disabled by default, and that you need
+        /// to enable for the Firewall Manager administrator account and for Organizations before
+        /// you can access it.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/DisassociateThirdPartyFirewall">REST API Reference for DisassociateThirdPartyFirewall Operation</seealso>
+        public virtual DisassociateThirdPartyFirewallResponse DisassociateThirdPartyFirewall(DisassociateThirdPartyFirewallRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateThirdPartyFirewallRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateThirdPartyFirewallResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateThirdPartyFirewallResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateThirdPartyFirewall operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateThirdPartyFirewall operation on AmazonFMSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateThirdPartyFirewall
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/DisassociateThirdPartyFirewall">REST API Reference for DisassociateThirdPartyFirewall Operation</seealso>
+        public virtual IAsyncResult BeginDisassociateThirdPartyFirewall(DisassociateThirdPartyFirewallRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateThirdPartyFirewallRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateThirdPartyFirewallResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisassociateThirdPartyFirewall operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisassociateThirdPartyFirewall.</param>
+        /// 
+        /// <returns>Returns a  DisassociateThirdPartyFirewallResult from FMS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/DisassociateThirdPartyFirewall">REST API Reference for DisassociateThirdPartyFirewall Operation</seealso>
+        public virtual DisassociateThirdPartyFirewallResponse EndDisassociateThirdPartyFirewall(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DisassociateThirdPartyFirewallResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetAdminAccount
 
         /// <summary>
         /// Returns the Organizations account that is associated with Firewall Manager as the
-        /// Firewall Manager administrator.
+        /// Firewall Manager default administrator.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAdminAccount service method.</param>
         /// 
@@ -774,6 +1165,85 @@ namespace Amazon.FMS
         public virtual GetAdminAccountResponse EndGetAdminAccount(IAsyncResult asyncResult)
         {
             return EndInvoke<GetAdminAccountResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetAdminScope
+
+        /// <summary>
+        /// Returns information about the specified account's administrative scope. The admistrative
+        /// scope defines the resources that an Firewall Manager administrator can manage.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAdminScope service method.</param>
+        /// 
+        /// <returns>The response from the GetAdminScope service method, as returned by FMS.</returns>
+        /// <exception cref="Amazon.FMS.Model.InternalErrorException">
+        /// The operation failed because of a system problem, even though the request was valid.
+        /// Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.InvalidInputException">
+        /// The parameters of the request were invalid.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.InvalidOperationException">
+        /// The operation failed because there was nothing to do or the operation wasn't possible.
+        /// For example, you might have submitted an <code>AssociateAdminAccount</code> request
+        /// for an account ID that was already set as the Firewall Manager administrator. Or you
+        /// might have tried to access a Region that's disabled by default, and that you need
+        /// to enable for the Firewall Manager administrator account and for Organizations before
+        /// you can access it.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.LimitExceededException">
+        /// The operation exceeds a resource limit, for example, the maximum number of <code>policy</code>
+        /// objects that you can create for an Amazon Web Services account. For more information,
+        /// see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-limits.html">Firewall
+        /// Manager Limits</a> in the <i>WAF Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetAdminScope">REST API Reference for GetAdminScope Operation</seealso>
+        public virtual GetAdminScopeResponse GetAdminScope(GetAdminScopeRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAdminScopeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAdminScopeResponseUnmarshaller.Instance;
+
+            return Invoke<GetAdminScopeResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAdminScope operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAdminScope operation on AmazonFMSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAdminScope
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetAdminScope">REST API Reference for GetAdminScope Operation</seealso>
+        public virtual IAsyncResult BeginGetAdminScope(GetAdminScopeRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAdminScopeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAdminScopeResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetAdminScope operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetAdminScope.</param>
+        /// 
+        /// <returns>Returns a  GetAdminScopeResult from FMS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetAdminScope">REST API Reference for GetAdminScope Operation</seealso>
+        public virtual GetAdminScopeResponse EndGetAdminScope(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetAdminScopeResponse>(asyncResult);
         }
 
         #endregion
@@ -1222,6 +1692,151 @@ namespace Amazon.FMS
 
         #endregion
         
+        #region  GetResourceSet
+
+        /// <summary>
+        /// Gets information about a specific resource set.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetResourceSet service method.</param>
+        /// 
+        /// <returns>The response from the GetResourceSet service method, as returned by FMS.</returns>
+        /// <exception cref="Amazon.FMS.Model.InternalErrorException">
+        /// The operation failed because of a system problem, even though the request was valid.
+        /// Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.InvalidInputException">
+        /// The parameters of the request were invalid.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.InvalidOperationException">
+        /// The operation failed because there was nothing to do or the operation wasn't possible.
+        /// For example, you might have submitted an <code>AssociateAdminAccount</code> request
+        /// for an account ID that was already set as the Firewall Manager administrator. Or you
+        /// might have tried to access a Region that's disabled by default, and that you need
+        /// to enable for the Firewall Manager administrator account and for Organizations before
+        /// you can access it.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetResourceSet">REST API Reference for GetResourceSet Operation</seealso>
+        public virtual GetResourceSetResponse GetResourceSet(GetResourceSetRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetResourceSetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResourceSetResponseUnmarshaller.Instance;
+
+            return Invoke<GetResourceSetResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetResourceSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetResourceSet operation on AmazonFMSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetResourceSet
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetResourceSet">REST API Reference for GetResourceSet Operation</seealso>
+        public virtual IAsyncResult BeginGetResourceSet(GetResourceSetRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetResourceSetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResourceSetResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetResourceSet operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetResourceSet.</param>
+        /// 
+        /// <returns>Returns a  GetResourceSetResult from FMS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetResourceSet">REST API Reference for GetResourceSet Operation</seealso>
+        public virtual GetResourceSetResponse EndGetResourceSet(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetResourceSetResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetThirdPartyFirewallAssociationStatus
+
+        /// <summary>
+        /// The onboarding status of a Firewall Manager admin account to third-party firewall
+        /// vendor tenant.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetThirdPartyFirewallAssociationStatus service method.</param>
+        /// 
+        /// <returns>The response from the GetThirdPartyFirewallAssociationStatus service method, as returned by FMS.</returns>
+        /// <exception cref="Amazon.FMS.Model.InternalErrorException">
+        /// The operation failed because of a system problem, even though the request was valid.
+        /// Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.InvalidInputException">
+        /// The parameters of the request were invalid.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.InvalidOperationException">
+        /// The operation failed because there was nothing to do or the operation wasn't possible.
+        /// For example, you might have submitted an <code>AssociateAdminAccount</code> request
+        /// for an account ID that was already set as the Firewall Manager administrator. Or you
+        /// might have tried to access a Region that's disabled by default, and that you need
+        /// to enable for the Firewall Manager administrator account and for Organizations before
+        /// you can access it.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetThirdPartyFirewallAssociationStatus">REST API Reference for GetThirdPartyFirewallAssociationStatus Operation</seealso>
+        public virtual GetThirdPartyFirewallAssociationStatusResponse GetThirdPartyFirewallAssociationStatus(GetThirdPartyFirewallAssociationStatusRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetThirdPartyFirewallAssociationStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetThirdPartyFirewallAssociationStatusResponseUnmarshaller.Instance;
+
+            return Invoke<GetThirdPartyFirewallAssociationStatusResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetThirdPartyFirewallAssociationStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetThirdPartyFirewallAssociationStatus operation on AmazonFMSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetThirdPartyFirewallAssociationStatus
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetThirdPartyFirewallAssociationStatus">REST API Reference for GetThirdPartyFirewallAssociationStatus Operation</seealso>
+        public virtual IAsyncResult BeginGetThirdPartyFirewallAssociationStatus(GetThirdPartyFirewallAssociationStatusRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetThirdPartyFirewallAssociationStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetThirdPartyFirewallAssociationStatusResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetThirdPartyFirewallAssociationStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetThirdPartyFirewallAssociationStatus.</param>
+        /// 
+        /// <returns>Returns a  GetThirdPartyFirewallAssociationStatusResult from FMS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetThirdPartyFirewallAssociationStatus">REST API Reference for GetThirdPartyFirewallAssociationStatus Operation</seealso>
+        public virtual GetThirdPartyFirewallAssociationStatusResponse EndGetThirdPartyFirewallAssociationStatus(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetThirdPartyFirewallAssociationStatusResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetViolationDetails
 
         /// <summary>
@@ -1283,6 +1898,154 @@ namespace Amazon.FMS
         public virtual GetViolationDetailsResponse EndGetViolationDetails(IAsyncResult asyncResult)
         {
             return EndInvoke<GetViolationDetailsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListAdminAccountsForOrganization
+
+        /// <summary>
+        /// Returns a <code>AdminAccounts</code> object that lists the Firewall Manager administrators
+        /// within the organization that are onboarded to Firewall Manager by <a>AssociateAdminAccount</a>.
+        /// 
+        ///  
+        /// <para>
+        /// This operation can be called only from the organization's management account.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAdminAccountsForOrganization service method.</param>
+        /// 
+        /// <returns>The response from the ListAdminAccountsForOrganization service method, as returned by FMS.</returns>
+        /// <exception cref="Amazon.FMS.Model.InternalErrorException">
+        /// The operation failed because of a system problem, even though the request was valid.
+        /// Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.InvalidOperationException">
+        /// The operation failed because there was nothing to do or the operation wasn't possible.
+        /// For example, you might have submitted an <code>AssociateAdminAccount</code> request
+        /// for an account ID that was already set as the Firewall Manager administrator. Or you
+        /// might have tried to access a Region that's disabled by default, and that you need
+        /// to enable for the Firewall Manager administrator account and for Organizations before
+        /// you can access it.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.LimitExceededException">
+        /// The operation exceeds a resource limit, for example, the maximum number of <code>policy</code>
+        /// objects that you can create for an Amazon Web Services account. For more information,
+        /// see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-limits.html">Firewall
+        /// Manager Limits</a> in the <i>WAF Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListAdminAccountsForOrganization">REST API Reference for ListAdminAccountsForOrganization Operation</seealso>
+        public virtual ListAdminAccountsForOrganizationResponse ListAdminAccountsForOrganization(ListAdminAccountsForOrganizationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAdminAccountsForOrganizationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAdminAccountsForOrganizationResponseUnmarshaller.Instance;
+
+            return Invoke<ListAdminAccountsForOrganizationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAdminAccountsForOrganization operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAdminAccountsForOrganization operation on AmazonFMSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAdminAccountsForOrganization
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListAdminAccountsForOrganization">REST API Reference for ListAdminAccountsForOrganization Operation</seealso>
+        public virtual IAsyncResult BeginListAdminAccountsForOrganization(ListAdminAccountsForOrganizationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAdminAccountsForOrganizationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAdminAccountsForOrganizationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListAdminAccountsForOrganization operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAdminAccountsForOrganization.</param>
+        /// 
+        /// <returns>Returns a  ListAdminAccountsForOrganizationResult from FMS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListAdminAccountsForOrganization">REST API Reference for ListAdminAccountsForOrganization Operation</seealso>
+        public virtual ListAdminAccountsForOrganizationResponse EndListAdminAccountsForOrganization(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListAdminAccountsForOrganizationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListAdminsManagingAccount
+
+        /// <summary>
+        /// Lists the accounts that are managing the specified Organizations member account. This
+        /// is useful for any member account so that they can view the accounts who are managing
+        /// their account. This operation only returns the managing administrators that have the
+        /// requested account within their <a>AdminScope</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAdminsManagingAccount service method.</param>
+        /// 
+        /// <returns>The response from the ListAdminsManagingAccount service method, as returned by FMS.</returns>
+        /// <exception cref="Amazon.FMS.Model.InternalErrorException">
+        /// The operation failed because of a system problem, even though the request was valid.
+        /// Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.InvalidInputException">
+        /// The parameters of the request were invalid.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListAdminsManagingAccount">REST API Reference for ListAdminsManagingAccount Operation</seealso>
+        public virtual ListAdminsManagingAccountResponse ListAdminsManagingAccount(ListAdminsManagingAccountRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAdminsManagingAccountRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAdminsManagingAccountResponseUnmarshaller.Instance;
+
+            return Invoke<ListAdminsManagingAccountResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAdminsManagingAccount operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAdminsManagingAccount operation on AmazonFMSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAdminsManagingAccount
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListAdminsManagingAccount">REST API Reference for ListAdminsManagingAccount Operation</seealso>
+        public virtual IAsyncResult BeginListAdminsManagingAccount(ListAdminsManagingAccountRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAdminsManagingAccountRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAdminsManagingAccountResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListAdminsManagingAccount operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAdminsManagingAccount.</param>
+        /// 
+        /// <returns>Returns a  ListAdminsManagingAccountResult from FMS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListAdminsManagingAccount">REST API Reference for ListAdminsManagingAccount Operation</seealso>
+        public virtual ListAdminsManagingAccountResponse EndListAdminsManagingAccount(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListAdminsManagingAccountResponse>(asyncResult);
         }
 
         #endregion
@@ -1424,6 +2187,76 @@ namespace Amazon.FMS
 
         #endregion
         
+        #region  ListDiscoveredResources
+
+        /// <summary>
+        /// Returns an array of resources in the organization's accounts that are available to
+        /// be associated with a resource set.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDiscoveredResources service method.</param>
+        /// 
+        /// <returns>The response from the ListDiscoveredResources service method, as returned by FMS.</returns>
+        /// <exception cref="Amazon.FMS.Model.InternalErrorException">
+        /// The operation failed because of a system problem, even though the request was valid.
+        /// Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.InvalidInputException">
+        /// The parameters of the request were invalid.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.InvalidOperationException">
+        /// The operation failed because there was nothing to do or the operation wasn't possible.
+        /// For example, you might have submitted an <code>AssociateAdminAccount</code> request
+        /// for an account ID that was already set as the Firewall Manager administrator. Or you
+        /// might have tried to access a Region that's disabled by default, and that you need
+        /// to enable for the Firewall Manager administrator account and for Organizations before
+        /// you can access it.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListDiscoveredResources">REST API Reference for ListDiscoveredResources Operation</seealso>
+        public virtual ListDiscoveredResourcesResponse ListDiscoveredResources(ListDiscoveredResourcesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDiscoveredResourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDiscoveredResourcesResponseUnmarshaller.Instance;
+
+            return Invoke<ListDiscoveredResourcesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListDiscoveredResources operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListDiscoveredResources operation on AmazonFMSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDiscoveredResources
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListDiscoveredResources">REST API Reference for ListDiscoveredResources Operation</seealso>
+        public virtual IAsyncResult BeginListDiscoveredResources(ListDiscoveredResourcesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDiscoveredResourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDiscoveredResourcesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListDiscoveredResources operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListDiscoveredResources.</param>
+        /// 
+        /// <returns>Returns a  ListDiscoveredResourcesResult from FMS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListDiscoveredResources">REST API Reference for ListDiscoveredResources Operation</seealso>
+        public virtual ListDiscoveredResourcesResponse EndListDiscoveredResources(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListDiscoveredResourcesResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListMemberAccounts
 
         /// <summary>
@@ -1432,8 +2265,8 @@ namespace Amazon.FMS
         /// 
         ///  
         /// <para>
-        /// The <code>ListMemberAccounts</code> must be submitted by the account that is set as
-        /// the Firewall Manager administrator.
+        /// Either an Firewall Manager administrator or the organization's management account
+        /// can make this request.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListMemberAccounts service method.</param>
@@ -1636,6 +2469,147 @@ namespace Amazon.FMS
 
         #endregion
         
+        #region  ListResourceSetResources
+
+        /// <summary>
+        /// Returns an array of resources that are currently associated to a resource set.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListResourceSetResources service method.</param>
+        /// 
+        /// <returns>The response from the ListResourceSetResources service method, as returned by FMS.</returns>
+        /// <exception cref="Amazon.FMS.Model.InternalErrorException">
+        /// The operation failed because of a system problem, even though the request was valid.
+        /// Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.InvalidInputException">
+        /// The parameters of the request were invalid.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.InvalidOperationException">
+        /// The operation failed because there was nothing to do or the operation wasn't possible.
+        /// For example, you might have submitted an <code>AssociateAdminAccount</code> request
+        /// for an account ID that was already set as the Firewall Manager administrator. Or you
+        /// might have tried to access a Region that's disabled by default, and that you need
+        /// to enable for the Firewall Manager administrator account and for Organizations before
+        /// you can access it.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListResourceSetResources">REST API Reference for ListResourceSetResources Operation</seealso>
+        public virtual ListResourceSetResourcesResponse ListResourceSetResources(ListResourceSetResourcesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListResourceSetResourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResourceSetResourcesResponseUnmarshaller.Instance;
+
+            return Invoke<ListResourceSetResourcesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListResourceSetResources operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListResourceSetResources operation on AmazonFMSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListResourceSetResources
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListResourceSetResources">REST API Reference for ListResourceSetResources Operation</seealso>
+        public virtual IAsyncResult BeginListResourceSetResources(ListResourceSetResourcesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListResourceSetResourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResourceSetResourcesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListResourceSetResources operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListResourceSetResources.</param>
+        /// 
+        /// <returns>Returns a  ListResourceSetResourcesResult from FMS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListResourceSetResources">REST API Reference for ListResourceSetResources Operation</seealso>
+        public virtual ListResourceSetResourcesResponse EndListResourceSetResources(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListResourceSetResourcesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListResourceSets
+
+        /// <summary>
+        /// Returns an array of <code>ResourceSetSummary</code> objects.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListResourceSets service method.</param>
+        /// 
+        /// <returns>The response from the ListResourceSets service method, as returned by FMS.</returns>
+        /// <exception cref="Amazon.FMS.Model.InternalErrorException">
+        /// The operation failed because of a system problem, even though the request was valid.
+        /// Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.InvalidInputException">
+        /// The parameters of the request were invalid.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.InvalidOperationException">
+        /// The operation failed because there was nothing to do or the operation wasn't possible.
+        /// For example, you might have submitted an <code>AssociateAdminAccount</code> request
+        /// for an account ID that was already set as the Firewall Manager administrator. Or you
+        /// might have tried to access a Region that's disabled by default, and that you need
+        /// to enable for the Firewall Manager administrator account and for Organizations before
+        /// you can access it.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListResourceSets">REST API Reference for ListResourceSets Operation</seealso>
+        public virtual ListResourceSetsResponse ListResourceSets(ListResourceSetsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListResourceSetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResourceSetsResponseUnmarshaller.Instance;
+
+            return Invoke<ListResourceSetsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListResourceSets operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListResourceSets operation on AmazonFMSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListResourceSets
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListResourceSets">REST API Reference for ListResourceSets Operation</seealso>
+        public virtual IAsyncResult BeginListResourceSets(ListResourceSetsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListResourceSetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResourceSetsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListResourceSets operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListResourceSets.</param>
+        /// 
+        /// <returns>Returns a  ListResourceSetsResult from FMS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListResourceSets">REST API Reference for ListResourceSets Operation</seealso>
+        public virtual ListResourceSetsResponse EndListResourceSets(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListResourceSetsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListTagsForResource
 
         /// <summary>
@@ -1704,6 +2678,162 @@ namespace Amazon.FMS
         public virtual ListTagsForResourceResponse EndListTagsForResource(IAsyncResult asyncResult)
         {
             return EndInvoke<ListTagsForResourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListThirdPartyFirewallFirewallPolicies
+
+        /// <summary>
+        /// Retrieves a list of all of the third-party firewall policies that are associated with
+        /// the third-party firewall administrator's account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListThirdPartyFirewallFirewallPolicies service method.</param>
+        /// 
+        /// <returns>The response from the ListThirdPartyFirewallFirewallPolicies service method, as returned by FMS.</returns>
+        /// <exception cref="Amazon.FMS.Model.InternalErrorException">
+        /// The operation failed because of a system problem, even though the request was valid.
+        /// Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.InvalidInputException">
+        /// The parameters of the request were invalid.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.InvalidOperationException">
+        /// The operation failed because there was nothing to do or the operation wasn't possible.
+        /// For example, you might have submitted an <code>AssociateAdminAccount</code> request
+        /// for an account ID that was already set as the Firewall Manager administrator. Or you
+        /// might have tried to access a Region that's disabled by default, and that you need
+        /// to enable for the Firewall Manager administrator account and for Organizations before
+        /// you can access it.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListThirdPartyFirewallFirewallPolicies">REST API Reference for ListThirdPartyFirewallFirewallPolicies Operation</seealso>
+        public virtual ListThirdPartyFirewallFirewallPoliciesResponse ListThirdPartyFirewallFirewallPolicies(ListThirdPartyFirewallFirewallPoliciesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListThirdPartyFirewallFirewallPoliciesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListThirdPartyFirewallFirewallPoliciesResponseUnmarshaller.Instance;
+
+            return Invoke<ListThirdPartyFirewallFirewallPoliciesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListThirdPartyFirewallFirewallPolicies operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListThirdPartyFirewallFirewallPolicies operation on AmazonFMSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListThirdPartyFirewallFirewallPolicies
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListThirdPartyFirewallFirewallPolicies">REST API Reference for ListThirdPartyFirewallFirewallPolicies Operation</seealso>
+        public virtual IAsyncResult BeginListThirdPartyFirewallFirewallPolicies(ListThirdPartyFirewallFirewallPoliciesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListThirdPartyFirewallFirewallPoliciesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListThirdPartyFirewallFirewallPoliciesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListThirdPartyFirewallFirewallPolicies operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListThirdPartyFirewallFirewallPolicies.</param>
+        /// 
+        /// <returns>Returns a  ListThirdPartyFirewallFirewallPoliciesResult from FMS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListThirdPartyFirewallFirewallPolicies">REST API Reference for ListThirdPartyFirewallFirewallPolicies Operation</seealso>
+        public virtual ListThirdPartyFirewallFirewallPoliciesResponse EndListThirdPartyFirewallFirewallPolicies(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListThirdPartyFirewallFirewallPoliciesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  PutAdminAccount
+
+        /// <summary>
+        /// Creates or updates an Firewall Manager administrator account. The account must be
+        /// a member of the organization that was onboarded to Firewall Manager by <a>AssociateAdminAccount</a>.
+        /// Only the organization's management account can create an Firewall Manager administrator
+        /// account. When you create an Firewall Manager administrator account, the service checks
+        /// to see if the account is already a delegated administrator within Organizations. If
+        /// the account isn't a delegated administrator, Firewall Manager calls Organizations
+        /// to delegate the account within Organizations. For more information about administrator
+        /// accounts within Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts.html">Managing
+        /// the Amazon Web Services Accounts in Your Organization</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutAdminAccount service method.</param>
+        /// 
+        /// <returns>The response from the PutAdminAccount service method, as returned by FMS.</returns>
+        /// <exception cref="Amazon.FMS.Model.InternalErrorException">
+        /// The operation failed because of a system problem, even though the request was valid.
+        /// Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.InvalidInputException">
+        /// The parameters of the request were invalid.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.InvalidOperationException">
+        /// The operation failed because there was nothing to do or the operation wasn't possible.
+        /// For example, you might have submitted an <code>AssociateAdminAccount</code> request
+        /// for an account ID that was already set as the Firewall Manager administrator. Or you
+        /// might have tried to access a Region that's disabled by default, and that you need
+        /// to enable for the Firewall Manager administrator account and for Organizations before
+        /// you can access it.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.LimitExceededException">
+        /// The operation exceeds a resource limit, for example, the maximum number of <code>policy</code>
+        /// objects that you can create for an Amazon Web Services account. For more information,
+        /// see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-limits.html">Firewall
+        /// Manager Limits</a> in the <i>WAF Developer Guide</i>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/PutAdminAccount">REST API Reference for PutAdminAccount Operation</seealso>
+        public virtual PutAdminAccountResponse PutAdminAccount(PutAdminAccountRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutAdminAccountRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutAdminAccountResponseUnmarshaller.Instance;
+
+            return Invoke<PutAdminAccountResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutAdminAccount operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutAdminAccount operation on AmazonFMSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutAdminAccount
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/PutAdminAccount">REST API Reference for PutAdminAccount Operation</seealso>
+        public virtual IAsyncResult BeginPutAdminAccount(PutAdminAccountRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutAdminAccountRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutAdminAccountResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutAdminAccount operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutAdminAccount.</param>
+        /// 
+        /// <returns>Returns a  PutAdminAccountResult from FMS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/PutAdminAccount">REST API Reference for PutAdminAccount Operation</seealso>
+        public virtual PutAdminAccountResponse EndPutAdminAccount(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PutAdminAccountResponse>(asyncResult);
         }
 
         #endregion
@@ -1794,11 +2924,13 @@ namespace Amazon.FMS
         /// 
         ///  
         /// <para>
-        /// To perform this action outside of the console, you must configure the SNS topic to
-        /// allow the Firewall Manager role <code>AWSServiceRoleForFMS</code> to publish SNS logs.
-        /// For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-api-permissions-ref.html">Firewall
-        /// Manager required permissions for API actions</a> in the <i>Firewall Manager Developer
-        /// Guide</i>.
+        /// To perform this action outside of the console, you must first configure the SNS topic's
+        /// access policy to allow the <code>SnsRoleName</code> to publish SNS logs. If the <code>SnsRoleName</code>
+        /// provided is a role other than the <code>AWSServiceRoleForFMS</code> service-linked
+        /// role, this role must have a trust relationship configured to allow the Firewall Manager
+        /// service principal <code>fms.amazonaws.com</code> to assume this role. For information
+        /// about configuring an SNS access policy, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-security_iam_service-with-iam.html#fms-security_iam_service-with-iam-roles-service">Service
+        /// roles for Firewall Manager</a> in the <i>Firewall Manager Developer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutNotificationChannel service method.</param>
@@ -1900,7 +3032,7 @@ namespace Amazon.FMS
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// A DNS Firewall policy, which provides Route 53 Resolver DNS Firewall rules to filter
+        /// A DNS Firewall policy, which provides Route 53 Resolver DNS Firewall rules to filter
         /// DNS queries for specified VPCs.
         /// </para>
         ///  </li> </ul> 
@@ -2065,6 +3197,87 @@ namespace Amazon.FMS
         public virtual PutProtocolsListResponse EndPutProtocolsList(IAsyncResult asyncResult)
         {
             return EndInvoke<PutProtocolsListResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  PutResourceSet
+
+        /// <summary>
+        /// Creates the resource set.
+        /// 
+        ///  
+        /// <para>
+        /// An Firewall Manager resource set defines the resources to import into an Firewall
+        /// Manager policy from another Amazon Web Services service.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutResourceSet service method.</param>
+        /// 
+        /// <returns>The response from the PutResourceSet service method, as returned by FMS.</returns>
+        /// <exception cref="Amazon.FMS.Model.InternalErrorException">
+        /// The operation failed because of a system problem, even though the request was valid.
+        /// Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.InvalidInputException">
+        /// The parameters of the request were invalid.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.InvalidOperationException">
+        /// The operation failed because there was nothing to do or the operation wasn't possible.
+        /// For example, you might have submitted an <code>AssociateAdminAccount</code> request
+        /// for an account ID that was already set as the Firewall Manager administrator. Or you
+        /// might have tried to access a Region that's disabled by default, and that you need
+        /// to enable for the Firewall Manager administrator account and for Organizations before
+        /// you can access it.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.LimitExceededException">
+        /// The operation exceeds a resource limit, for example, the maximum number of <code>policy</code>
+        /// objects that you can create for an Amazon Web Services account. For more information,
+        /// see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-limits.html">Firewall
+        /// Manager Limits</a> in the <i>WAF Developer Guide</i>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/PutResourceSet">REST API Reference for PutResourceSet Operation</seealso>
+        public virtual PutResourceSetResponse PutResourceSet(PutResourceSetRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutResourceSetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutResourceSetResponseUnmarshaller.Instance;
+
+            return Invoke<PutResourceSetResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutResourceSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutResourceSet operation on AmazonFMSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutResourceSet
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/PutResourceSet">REST API Reference for PutResourceSet Operation</seealso>
+        public virtual IAsyncResult BeginPutResourceSet(PutResourceSetRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutResourceSetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutResourceSetResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutResourceSet operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutResourceSet.</param>
+        /// 
+        /// <returns>Returns a  PutResourceSetResult from FMS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/PutResourceSet">REST API Reference for PutResourceSet Operation</seealso>
+        public virtual PutResourceSetResponse EndPutResourceSet(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PutResourceSetResponse>(asyncResult);
         }
 
         #endregion

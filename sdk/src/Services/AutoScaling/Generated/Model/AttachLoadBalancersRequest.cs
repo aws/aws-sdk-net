@@ -32,8 +32,11 @@ namespace Amazon.AutoScaling.Model
     /// Container for the parameters to the AttachLoadBalancers operation.
     /// <note> 
     /// <para>
-    /// To attach an Application Load Balancer, Network Load Balancer, or Gateway Load Balancer,
-    /// use the <a>AttachLoadBalancerTargetGroups</a> API operation instead.
+    /// This API operation is superseded by <a>AttachTrafficSources</a>, which can attach
+    /// multiple traffic sources types. We recommend using <code>AttachTrafficSources</code>
+    /// to simplify how you manage traffic sources. However, we continue to support <code>AttachLoadBalancers</code>.
+    /// You can use both the original <code>AttachLoadBalancers</code> API operation and <code>AttachTrafficSources</code>
+    /// on the same Auto Scaling group.
     /// </para>
     ///  </note> 
     /// <para>
@@ -43,7 +46,7 @@ namespace Amazon.AutoScaling.Model
     ///  
     /// <para>
     /// To describe the load balancers for an Auto Scaling group, call the <a>DescribeLoadBalancers</a>
-    /// API. To detach the load balancer from the Auto Scaling group, call the <a>DetachLoadBalancers</a>
+    /// API. To detach a load balancer from the Auto Scaling group, call the <a>DetachLoadBalancers</a>
     /// API.
     /// </para>
     ///  
@@ -53,9 +56,9 @@ namespace Amazon.AutoScaling.Model
     /// </para>
     ///  
     /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Elastic
-    /// Load Balancing and Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User
-    /// Guide</i>. 
+    /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Use
+    /// Elastic Load Balancing to distribute traffic across the instances in your Auto Scaling
+    /// group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
     /// </para>
     /// </summary>
     public partial class AttachLoadBalancersRequest : AmazonAutoScalingRequest

@@ -63,6 +63,18 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
                     response.ConnectionId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ConnectionMode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ConnectionMode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ConnectionProperties", targetDepth))
+                {
+                    var unmarshaller = ConnectionPropertiesUnmarshaller.Instance;
+                    response.ConnectionProperties = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ConnectionStatus", targetDepth))
                 {
                     var unmarshaller = OutboundConnectionStatusUnmarshaller.Instance;

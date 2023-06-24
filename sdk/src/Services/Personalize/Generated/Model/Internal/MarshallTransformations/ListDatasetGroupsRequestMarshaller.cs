@@ -58,7 +58,7 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
             string target = "AmazonPersonalize.ListDatasetGroups";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-05-22";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-05-22";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -79,7 +79,6 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.NextToken);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

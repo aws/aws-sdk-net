@@ -83,7 +83,8 @@ namespace Amazon.CodeArtifact.Model
         /// <summary>
         /// Gets and sets the property SuccessfulVersions. 
         /// <para>
-        ///  A list of the package versions that were successfully deleted. 
+        ///  A list of the package versions that were successfully deleted. The status of every
+        /// successful version will be <code>Deleted</code>. 
         /// </para>
         /// </summary>
         public Dictionary<string, SuccessfulPackageVersionInfo> SuccessfulVersions

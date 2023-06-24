@@ -59,7 +59,7 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The friendly name of the secret that the resource-based policy was retrieved for.
+        /// The name of the secret that the resource-based policy was retrieved for.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=512)]
@@ -78,13 +78,9 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property ResourcePolicy. 
         /// <para>
-        /// A JSON-formatted string that describes the permissions that are associated with the
-        /// attached secret. These permissions are combined with any permissions that are associated
-        /// with the user or role that attempts to access this secret. The combined permissions
-        /// specify who can access the secret and what actions they can perform. For more information,
-        /// see <a href="http://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
-        /// and Access Control for Amazon Web Services Secrets Manager</a> in the <i>Amazon Web
-        /// Services Secrets Manager User Guide</i>.
+        /// A JSON-formatted string that contains the permissions policy attached to the secret.
+        /// For more information about permissions policies, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+        /// and access control for Secrets Manager</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=20480)]

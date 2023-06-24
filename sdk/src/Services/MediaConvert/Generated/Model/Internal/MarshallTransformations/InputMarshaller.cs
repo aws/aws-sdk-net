@@ -34,7 +34,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Input Marshaller
-    /// </summary>       
+    /// </summary>
     public class InputMarshaller : IRequestMarshaller<Input, JsonMarshallerContext> 
     {
         /// <summary>
@@ -45,6 +45,23 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Input requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAdvancedInputFilter())
+            {
+                context.Writer.WritePropertyName("advancedInputFilter");
+                context.Writer.Write(requestObject.AdvancedInputFilter);
+            }
+
+            if(requestObject.IsSetAdvancedInputFilterSettings())
+            {
+                context.Writer.WritePropertyName("advancedInputFilterSettings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AdvancedInputFilterSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.AdvancedInputFilterSettings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetAudioSelectorGroups())
             {
                 context.Writer.WritePropertyName("audioSelectorGroups");
@@ -134,6 +151,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("denoiseFilter");
                 context.Writer.Write(requestObject.DenoiseFilter);
+            }
+
+            if(requestObject.IsSetDolbyVisionMetadataXml())
+            {
+                context.Writer.WritePropertyName("dolbyVisionMetadataXml");
+                context.Writer.Write(requestObject.DolbyVisionMetadataXml);
             }
 
             if(requestObject.IsSetFileInput())
@@ -233,6 +256,17 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.TimecodeStart);
             }
 
+            if(requestObject.IsSetVideoGenerator())
+            {
+                context.Writer.WritePropertyName("videoGenerator");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = InputVideoGeneratorMarshaller.Instance;
+                marshaller.Marshall(requestObject.VideoGenerator, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetVideoSelector())
             {
                 context.Writer.WritePropertyName("videoSelector");
@@ -248,7 +282,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static InputMarshaller Instance = new InputMarshaller();
 
     }

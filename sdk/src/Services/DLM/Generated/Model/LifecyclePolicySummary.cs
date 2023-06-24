@@ -82,7 +82,9 @@ namespace Amazon.DLM.Model
         /// <para>
         /// The type of policy. <code>EBS_SNAPSHOT_MANAGEMENT</code> indicates that the policy
         /// manages the lifecycle of Amazon EBS snapshots. <code>IMAGE_MANAGEMENT</code> indicates
-        /// that the policy manages the lifecycle of EBS-backed AMIs.
+        /// that the policy manages the lifecycle of EBS-backed AMIs. <code>EVENT_BASED_POLICY</code>
+        /// indicates that the policy automates cross-account snapshot copies for snapshots that
+        /// are shared with your account.
         /// </para>
         /// </summary>
         public PolicyTypeValues PolicyType

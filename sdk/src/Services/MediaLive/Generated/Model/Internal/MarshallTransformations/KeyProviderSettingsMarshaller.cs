@@ -34,7 +34,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// KeyProviderSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class KeyProviderSettingsMarshaller : IRequestMarshaller<KeyProviderSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static KeyProviderSettingsMarshaller Instance = new KeyProviderSettingsMarshaller();
 
     }

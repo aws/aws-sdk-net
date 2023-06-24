@@ -60,6 +60,7 @@ namespace Amazon.CloudTrail.Model
         /// A list of tags.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=200)]
         public List<Tag> TagsList
         {
             get { return this._tagsList; }

@@ -45,6 +45,17 @@ namespace Amazon.Proton.Model
     /// <para>
     /// Edit the <code>spec</code> parameter to add or delete instances.
     /// </para>
+    ///  <note> 
+    /// <para>
+    /// You can't delete a service instance (remove it from the spec) if it has an attached
+    /// component.
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+    /// components</a> in the <i>Proton User Guide</i>.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class UpdateServiceRequest : AmazonProtonRequest
     {
@@ -58,7 +69,7 @@ namespace Amazon.Proton.Model
         /// The edited service description.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=500)]
+        [AWSProperty(Sensitive=true, Min=0, Max=500)]
         public string Description
         {
             get { return this._description; }
@@ -95,13 +106,11 @@ namespace Amazon.Proton.Model
         /// <para>
         /// Lists the service instances to add and the existing service instances to remain. Omit
         /// the existing service instances to delete from the list. <i>Don't</i> include edits
-        /// to the existing service instances or pipeline. For more information, see <i>Edit a
-        /// service</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-svc-update.html">Proton
-        /// Administrator Guide</a> or the <a href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-update.html">Proton
-        /// User Guide</a>.
+        /// to the existing service instances or pipeline. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-svc-update.html">Edit
+        /// a service</a> in the <i>Proton User Guide</i>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=51200)]
+        [AWSProperty(Sensitive=true, Min=1, Max=51200)]
         public string Spec
         {
             get { return this._spec; }

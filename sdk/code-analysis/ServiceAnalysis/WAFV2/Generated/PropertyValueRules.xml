@@ -17,6 +17,12 @@
     <min>0</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WAFV2.Model.CreateAPIKeyResponse.APIKey</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WAFV2.Model.CreateIPSetRequest.Description</property>
     <min>1</min>
     <max>256</max>
@@ -171,6 +177,12 @@
     <pattern>^[\w\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WAFV2.Model.DescribeManagedProductsByVendorRequest.VendorName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WAFV2.Model.DescribeManagedRuleGroupRequest.Name</property>
     <min>1</min>
     <max>128</max>
@@ -217,6 +229,18 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WAFV2.Model.GenerateMobileSdkReleaseUrlRequest.ReleaseVersion</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[\w#:\.\-/]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.GetDecryptedAPIKeyRequest.APIKey</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WAFV2.Model.GetIPSetRequest.Id</property>
     <min>1</min>
     <max>36</max>
@@ -257,6 +281,12 @@
     <min>1</min>
     <max>36</max>
     <pattern>^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.GetMobileSdkReleaseRequest.ReleaseVersion</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[\w#:\.\-/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WAFV2.Model.GetPermissionPolicyRequest.ResourceArn</property>
@@ -378,6 +408,23 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WAFV2.Model.ListAPIKeysRequest.Limit</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.ListAPIKeysRequest.NextMarker</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.ListAPIKeysResponse.NextMarker</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WAFV2.Model.ListAvailableManagedRuleGroupsRequest.Limit</property>
     <min>1</min>
     <max>100</max>
@@ -416,6 +463,12 @@
     <min>1</min>
     <max>128</max>
     <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.ListAvailableManagedRuleGroupVersionsResponse.CurrentDefaultVersion</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[\w#:\.\-/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WAFV2.Model.ListAvailableManagedRuleGroupVersionsResponse.NextMarker</property>
@@ -470,6 +523,23 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WAFV2.Model.ListManagedRuleSetsResponse.NextMarker</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.ListMobileSdkReleasesRequest.Limit</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.ListMobileSdkReleasesRequest.NextMarker</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.ListMobileSdkReleasesResponse.NextMarker</property>
     <min>1</min>
     <max>256</max>
     <pattern>.*\S.*</pattern>
@@ -765,6 +835,34 @@
     <pattern>^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WAFV2.Model.AddressField.Identifier</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.APIKeySummary.APIKey</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.APIKeySummary.Version</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.AWSManagedRulesACFPRuleSet.CreationPath</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.AWSManagedRulesACFPRuleSet.RegistrationPagePath</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WAFV2.Model.CustomHTTPHeader.Name</property>
     <min>1</min>
     <max>64</max>
@@ -792,6 +890,12 @@
     <min>1</min>
     <max>10240</max>
     <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.EmailField.Identifier</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WAFV2.Model.ExcludedRule.Name</property>
@@ -914,6 +1018,52 @@
     <property>Amazon.WAFV2.Model.LoggingConfiguration.ResourceArn</property>
     <min>20</min>
     <max>2048</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.ManagedProductDescriptor.ManagedRuleSetName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[\w\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.ManagedProductDescriptor.ProductDescription</property>
+    <min>1</min>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.ManagedProductDescriptor.ProductId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.ManagedProductDescriptor.ProductLink</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.ManagedProductDescriptor.ProductTitle</property>
+    <min>1</min>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.ManagedProductDescriptor.SnsTopicArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.ManagedProductDescriptor.VendorName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.ManagedRuleGroupConfig.LoginPath</property>
+    <min>1</min>
+    <max>256</max>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -1045,9 +1195,51 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WAFV2.Model.MobileSdkRelease.ReleaseVersion</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[\w#:\.\-/]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.PasswordField.Identifier</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.PhoneNumberField.Identifier</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WAFV2.Model.RateBasedStatement.Limit</property>
     <min>100</min>
     <max>2000000000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.RateLimitCookie.Name</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.RateLimitHeader.Name</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.RateLimitLabelNamespace.Namespace</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^[0-9A-Za-z_\-:]+:$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.RateLimitQueryArgument.Name</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WAFV2.Model.Regex.RegexString</property>
@@ -1122,6 +1314,24 @@
     <pattern>^[\w\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WAFV2.Model.ReleaseSummary.ReleaseVersion</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[\w#:\.\-/]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.ResponseInspectionHeader.Name</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.ResponseInspectionJson.Identifier</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WAFV2.Model.Rule.Name</property>
     <min>1</min>
     <max>128</max>
@@ -1130,6 +1340,12 @@
   <property-value-rule>
     <property>Amazon.WAFV2.Model.Rule.Priority</property>
     <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.RuleActionOverride.Name</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[\w\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WAFV2.Model.RuleGroup.ARN</property>
@@ -1260,6 +1476,12 @@
   <property-value-rule>
     <property>Amazon.WAFV2.Model.TextTransformation.Priority</property>
     <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.UsernameField.Identifier</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WAFV2.Model.VersionToPublish.AssociatedRuleGroupArn</property>

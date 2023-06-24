@@ -38,6 +38,7 @@ namespace Amazon.Connect.Model
         private string _id;
         private DirectoryType _identityManagementType;
         private bool? _inboundCallsEnabled;
+        private string _instanceAccessUrl;
         private string _instanceAlias;
         private InstanceStatus _instanceStatus;
         private bool? _outboundCallsEnabled;
@@ -135,12 +136,30 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Gets and sets the property InstanceAccessUrl. 
+        /// <para>
+        /// This URL allows contact center users to access Amazon Connect admin website.
+        /// </para>
+        /// </summary>
+        public string InstanceAccessUrl
+        {
+            get { return this._instanceAccessUrl; }
+            set { this._instanceAccessUrl = value; }
+        }
+
+        // Check to see if InstanceAccessUrl property is set
+        internal bool IsSetInstanceAccessUrl()
+        {
+            return this._instanceAccessUrl != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property InstanceAlias. 
         /// <para>
         /// The alias of the instance.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=62)]
+        [AWSProperty(Sensitive=true, Min=1, Max=45)]
         public string InstanceAlias
         {
             get { return this._instanceAlias; }

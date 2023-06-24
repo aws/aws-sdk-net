@@ -40,7 +40,7 @@ namespace Amazon.VoiceID.Model
         /// <summary>
         /// Gets and sets the property DomainId. 
         /// <para>
-        /// The identifier of the domain containing the fraudster.
+        /// The identifier of the domain that contains the fraudster.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=22, Max=22)]
@@ -62,7 +62,7 @@ namespace Amazon.VoiceID.Model
         /// The identifier of the fraudster you are describing.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=25, Max=25)]
+        [AWSProperty(Required=true, Sensitive=true, Min=25, Max=25)]
         public string FraudsterId
         {
             get { return this._fraudsterId; }

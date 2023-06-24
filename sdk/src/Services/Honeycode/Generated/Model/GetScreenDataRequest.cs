@@ -46,7 +46,7 @@ namespace Amazon.Honeycode.Model
         /// <summary>
         /// Gets and sets the property AppId. 
         /// <para>
-        /// The ID of the app that contains the screem.
+        /// The ID of the app that contains the screen.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]
@@ -140,6 +140,7 @@ namespace Amazon.Honeycode.Model
         /// rawValue, which holds the value of the variable to be passed to the screen. 
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public Dictionary<string, VariableValue> Variables
         {
             get { return this._variables; }

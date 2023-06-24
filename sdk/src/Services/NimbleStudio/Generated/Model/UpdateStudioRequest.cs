@@ -51,6 +51,7 @@ namespace Amazon.NimbleStudio.Model
         /// The IAM role that Studio Admins will assume when logging in to the Nimble Studio portal.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=2048)]
         public string AdminRoleArn
         {
             get { return this._adminRoleArn; }
@@ -67,8 +68,8 @@ namespace Amazon.NimbleStudio.Model
         /// Gets and sets the property ClientToken. 
         /// <para>
         /// Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. If you don’t specify a client token, the AWS SDK automatically generates
-        /// a client token and uses it for the request to ensure idempotency.
+        /// request. If you don’t specify a client token, the Amazon Web Services SDK automatically
+        /// generates a client token and uses it for the request to ensure idempotency.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -90,7 +91,7 @@ namespace Amazon.NimbleStudio.Model
         /// A friendly name for the studio.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=64)]
+        [AWSProperty(Sensitive=true, Min=0, Max=64)]
         public string DisplayName
         {
             get { return this._displayName; }
@@ -128,6 +129,7 @@ namespace Amazon.NimbleStudio.Model
         /// The IAM role that Studio Users will assume when logging in to the Nimble Studio portal.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=2048)]
         public string UserRoleArn
         {
             get { return this._userRoleArn; }

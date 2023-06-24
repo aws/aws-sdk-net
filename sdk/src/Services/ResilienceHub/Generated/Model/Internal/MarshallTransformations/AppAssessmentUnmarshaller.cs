@@ -142,6 +142,12 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
                     unmarshalledObject.ResiliencyScore = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("resourceErrorsDetails", targetDepth))
+                {
+                    var unmarshaller = ResourceErrorsDetailsUnmarshaller.Instance;
+                    unmarshalledObject.ResourceErrorsDetails = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("startTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

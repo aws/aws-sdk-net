@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kendra.Model
 {
     /// <summary>
-    /// Summary information for a Amazon Kendra data source. Returned in a call to the <code>DescribeDataSource</code>
-    /// operation.
+    /// Summary information for a Amazon Kendra data source.
     /// </summary>
     public partial class DataSourceSummary
     {
@@ -45,7 +44,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The UNIX datetime that the data source was created.
+        /// The Unix timestamp when the data source connector was created.
         /// </para>
         /// </summary>
         public DateTime CreatedAt
@@ -63,7 +62,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The unique identifier for the data source.
+        /// The identifier for the data source.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -160,7 +159,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property UpdatedAt. 
         /// <para>
-        /// The UNIX datetime that the data source was lasted updated. 
+        /// The Unix timestamp when the data source connector was last updated.
         /// </para>
         /// </summary>
         public DateTime UpdatedAt

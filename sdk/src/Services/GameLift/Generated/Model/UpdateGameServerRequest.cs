@@ -30,14 +30,14 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateGameServer operation.
-    /// <b>This operation is used with the GameLift FleetIQ solution and game server groups.</b>
-    /// 
+    /// <b>This operation is used with the Amazon GameLift FleetIQ solution and game server
+    /// groups.</b> 
     /// 
     ///  
     /// <para>
-    /// Updates information about a registered game server to help GameLift FleetIQ to track
-    /// game server availability. This operation is called by a game server process that is
-    /// running on an instance in a game server group. 
+    /// Updates information about a registered game server to help Amazon GameLift FleetIQ
+    /// to track game server availability. This operation is called by a game server process
+    /// that is running on an instance in a game server group. 
     /// </para>
     ///  
     /// <para>
@@ -73,18 +73,8 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  
     /// <para>
-    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-intro.html">GameLift
-    /// FleetIQ Guide</a> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <b>Related actions</b> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <a>RegisterGameServer</a> | <a>ListGameServers</a> | <a>ClaimGameServer</a> | <a>DescribeGameServer</a>
-    /// | <a>UpdateGameServer</a> | <a>DeregisterGameServer</a> | <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/reference-awssdk-fleetiq.html">All
-    /// APIs by task</a> 
+    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-intro.html">Amazon
+    /// GameLift FleetIQ Guide</a> 
     /// </para>
     /// </summary>
     public partial class UpdateGameServerRequest : AmazonGameLiftRequest
@@ -99,8 +89,8 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property GameServerData. 
         /// <para>
         /// A set of custom game server properties, formatted as a single string value. This data
-        /// is passed to a game client or service when it requests information on game servers
-        /// using <a>ListGameServers</a> or <a>ClaimGameServer</a>. 
+        /// is passed to a game client or service when it requests information on game servers.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -119,8 +109,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property GameServerGroupName. 
         /// <para>
-        /// A unique identifier for the game server group where the game server is running. Use
-        /// either the <a>GameServerGroup</a> name or ARN value.
+        /// A unique identifier for the game server group where the game server is running.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]

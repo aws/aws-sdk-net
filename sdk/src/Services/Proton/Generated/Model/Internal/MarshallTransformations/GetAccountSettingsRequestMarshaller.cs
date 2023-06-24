@@ -58,7 +58,7 @@ namespace Amazon.Proton.Model.Internal.MarshallTransformations
             string target = "AwsProton20200720.GetAccountSettings";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.0";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-07-20";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-07-20";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";

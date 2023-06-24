@@ -35,7 +35,7 @@ namespace Amazon.LexRuntimeV2
     /// <summary>
     /// Implementation for accessing LexRuntimeV2
     ///
-    /// 
+    /// This section contains documentation for the Amazon Lex V2 Runtime V2 API operations.
     /// </summary>
     public partial class AmazonLexRuntimeV2Client : AmazonServiceClient, IAmazonLexRuntimeV2
     {
@@ -211,6 +211,15 @@ namespace Amazon.LexRuntimeV2
             return new AWS4Signer();
         }
 
+        /// <summary>
+        /// Customize the pipeline
+        /// </summary>
+        /// <param name="pipeline"></param>
+        protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
+        {
+            pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonLexRuntimeV2EndpointResolver());
+        }
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

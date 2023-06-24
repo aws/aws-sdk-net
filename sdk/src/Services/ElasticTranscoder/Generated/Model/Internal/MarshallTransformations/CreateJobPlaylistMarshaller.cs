@@ -34,7 +34,7 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CreateJobPlaylist Marshaller
-    /// </summary>       
+    /// </summary>
     public class CreateJobPlaylistMarshaller : IRequestMarshaller<CreateJobPlaylist, JsonMarshallerContext> 
     {
         /// <summary>
@@ -94,7 +94,7 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CreateJobPlaylistMarshaller Instance = new CreateJobPlaylistMarshaller();
 
     }

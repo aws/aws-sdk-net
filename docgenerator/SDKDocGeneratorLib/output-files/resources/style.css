@@ -65,9 +65,11 @@ body {
 #search #sfrm {
     background-color: #F7F7F7;
     border: 1px solid #F0F0F0;
-    height: 33px;
-    padding: 0;
-    width: 480px;
+    padding: 6px;
+}
+
+#searchInputContainer {
+    display: inline-block;
 }
 
 #sfrm #lbl {
@@ -124,8 +126,6 @@ body {
 .newline { clear:both; }
 
 #summaryblock { margin-top: 15px; }
-
-a { text-decoration: none; }
 
 p {
     color: #2a2a2a;

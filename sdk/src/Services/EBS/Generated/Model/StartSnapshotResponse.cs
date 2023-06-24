@@ -88,7 +88,7 @@ namespace Amazon.EBS.Model
         /// the snapshot.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=2048)]
+        [AWSProperty(Sensitive=true, Min=1, Max=2048)]
         public string KmsKeyArn
         {
             get { return this._kmsKeyArn; }

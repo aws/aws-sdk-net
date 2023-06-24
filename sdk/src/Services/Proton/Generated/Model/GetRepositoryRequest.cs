@@ -30,7 +30,7 @@ namespace Amazon.Proton.Model
 {
     /// <summary>
     /// Container for the parameters to the GetRepository operation.
-    /// Get detail data for a repository.
+    /// Get detail data for a linked repository.
     /// </summary>
     public partial class GetRepositoryRequest : AmazonProtonRequest
     {

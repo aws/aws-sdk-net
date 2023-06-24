@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
-    /// The status that stack instances are filtered by.
+    /// The filter to apply to stack instances
     /// </summary>
     public partial class StackInstanceFilter
     {
@@ -60,7 +60,7 @@ namespace Amazon.CloudFormation.Model
         /// The status to filter by.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=6, Max=10)]
+        [AWSProperty(Min=1, Max=128)]
         public string Values
         {
             get { return this._values; }

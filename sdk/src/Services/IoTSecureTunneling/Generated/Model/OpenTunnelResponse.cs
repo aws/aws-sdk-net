@@ -41,9 +41,10 @@ namespace Amazon.IoTSecureTunneling.Model
         /// <summary>
         /// Gets and sets the property DestinationAccessToken. 
         /// <para>
-        /// The access token the destination local proxy uses to connect to AWS IoT Secure Tunneling.
+        /// The access token the destination local proxy uses to connect to IoT Secure Tunneling.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string DestinationAccessToken
         {
             get { return this._destinationAccessToken; }
@@ -59,9 +60,10 @@ namespace Amazon.IoTSecureTunneling.Model
         /// <summary>
         /// Gets and sets the property SourceAccessToken. 
         /// <para>
-        /// The access token the source local proxy uses to connect to AWS IoT Secure Tunneling.
+        /// The access token the source local proxy uses to connect to IoT Secure Tunneling.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string SourceAccessToken
         {
             get { return this._sourceAccessToken; }
@@ -77,8 +79,7 @@ namespace Amazon.IoTSecureTunneling.Model
         /// <summary>
         /// Gets and sets the property TunnelArn. 
         /// <para>
-        /// The Amazon Resource Name for the tunnel. The tunnel ARN format is <code>arn:aws:tunnel:&lt;region&gt;:&lt;account-id&gt;:tunnel/&lt;tunnel-id&gt;</code>
-        /// 
+        /// The Amazon Resource Name for the tunnel.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1600)]

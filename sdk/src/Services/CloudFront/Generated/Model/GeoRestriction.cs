@@ -55,9 +55,9 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Items. 
         /// <para>
-        ///  A complex type that contains a <code>Location</code> element for each country in
-        /// which you want CloudFront either to distribute your content (<code>whitelist</code>)
-        /// or not distribute your content (<code>blacklist</code>).
+        /// A complex type that contains a <code>Location</code> element for each country in which
+        /// you want CloudFront either to distribute your content (<code>whitelist</code>) or
+        /// not distribute your content (<code>blacklist</code>).
         /// </para>
         ///  
         /// <para>

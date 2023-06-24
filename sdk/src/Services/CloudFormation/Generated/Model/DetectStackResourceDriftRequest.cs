@@ -31,7 +31,7 @@ namespace Amazon.CloudFormation.Model
     /// <summary>
     /// Container for the parameters to the DetectStackResourceDrift operation.
     /// Returns information about whether a resource's actual configuration differs, or has
-    /// <i>drifted</i>, from it's expected configuration, as defined in the stack template
+    /// <i>drifted</i>, from its expected configuration, as defined in the stack template
     /// and any values specified as template parameters. This information includes actual
     /// and expected property values for resources in which CloudFormation detects drift.
     /// Only resource properties explicitly defined in the stack template are checked for
@@ -46,7 +46,7 @@ namespace Amazon.CloudFormation.Model
     /// </para>
     ///  
     /// <para>
-    /// Resources that do not currently support drift detection cannot be checked. For a list
+    /// Resources that don't currently support drift detection can't be checked. For a list
     /// of resources that support drift detection, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources
     /// that Support Drift Detection</a>.
     /// </para>

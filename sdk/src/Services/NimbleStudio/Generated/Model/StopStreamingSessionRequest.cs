@@ -30,21 +30,23 @@ namespace Amazon.NimbleStudio.Model
 {
     /// <summary>
     /// Container for the parameters to the StopStreamingSession operation.
-    /// Transitions sessions from the READY state into the STOPPED state. The STOP_IN_PROGRESS
-    /// state is the intermediate state between the READY and STOPPED states.
+    /// Transitions sessions from the <code>READY</code> state into the <code>STOPPED</code>
+    /// state. The <code>STOP_IN_PROGRESS</code> state is the intermediate state between the
+    /// <code>READY</code> and <code>STOPPED</code> states.
     /// </summary>
     public partial class StopStreamingSessionRequest : AmazonNimbleStudioRequest
     {
         private string _clientToken;
         private string _sessionId;
         private string _studioId;
+        private VolumeRetentionMode _volumeRetentionMode;
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
         /// Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. If you don’t specify a client token, the AWS SDK automatically generates
-        /// a client token and uses it for the request to ensure idempotency.
+        /// request. If you don’t specify a client token, the Amazon Web Services SDK automatically
+        /// generates a client token and uses it for the request to ensure idempotency.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -63,7 +65,7 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property SessionId. 
         /// <para>
-        /// The streaming session ID for the StopStreamingSessionRequest.
+        /// The streaming session ID for the <code>StopStreamingSessionRequest</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -96,6 +98,25 @@ namespace Amazon.NimbleStudio.Model
         internal bool IsSetStudioId()
         {
             return this._studioId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VolumeRetentionMode. 
+        /// <para>
+        /// Adds additional instructions to a streaming session stop action to either retain the
+        /// EBS volumes or delete the EBS volumes.
+        /// </para>
+        /// </summary>
+        public VolumeRetentionMode VolumeRetentionMode
+        {
+            get { return this._volumeRetentionMode; }
+            set { this._volumeRetentionMode = value; }
+        }
+
+        // Check to see if VolumeRetentionMode property is set
+        internal bool IsSetVolumeRetentionMode()
+        {
+            return this._volumeRetentionMode != null;
         }
 
     }

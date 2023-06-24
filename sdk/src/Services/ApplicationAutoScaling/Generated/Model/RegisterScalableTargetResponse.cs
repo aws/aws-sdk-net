@@ -33,6 +33,25 @@ namespace Amazon.ApplicationAutoScaling.Model
     /// </summary>
     public partial class RegisterScalableTargetResponse : AmazonWebServiceResponse
     {
+        private string _scalableTargetARN;
+
+        /// <summary>
+        /// Gets and sets the property ScalableTargetARN. 
+        /// <para>
+        /// The ARN of the scalable target.
+        /// </para>
+        /// </summary>
+        public string ScalableTargetARN
+        {
+            get { return this._scalableTargetARN; }
+            set { this._scalableTargetARN = value; }
+        }
+
+        // Check to see if ScalableTargetARN property is set
+        internal bool IsSetScalableTargetARN()
+        {
+            return this._scalableTargetARN != null;
+        }
 
     }
 }

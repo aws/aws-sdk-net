@@ -58,7 +58,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             string target = "AWSGlue.CreateCrawler";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-03-31";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-03-31";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -100,6 +100,17 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("Description");
                     context.Writer.Write(publicRequest.Description);
+                }
+
+                if(publicRequest.IsSetLakeFormationConfiguration())
+                {
+                    context.Writer.WritePropertyName("LakeFormationConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = LakeFormationConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.LakeFormationConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
                 if(publicRequest.IsSetLineageConfiguration())
@@ -184,7 +195,6 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

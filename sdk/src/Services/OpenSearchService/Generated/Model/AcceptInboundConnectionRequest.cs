@@ -30,7 +30,9 @@ namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
     /// Container for the parameters to the AcceptInboundConnection operation.
-    /// Allows the remote domain owner to accept an inbound cross-cluster connection request.
+    /// Allows the destination Amazon OpenSearch Service domain owner to accept an inbound
+    /// cross-cluster search connection request. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/cross-cluster-search.html">Cross-cluster
+    /// search for Amazon OpenSearch Service</a>.
     /// </summary>
     public partial class AcceptInboundConnectionRequest : AmazonOpenSearchServiceRequest
     {
@@ -39,7 +41,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property ConnectionId. 
         /// <para>
-        /// The ID of the inbound connection you want to accept.
+        /// The ID of the inbound connection to accept.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=10, Max=256)]

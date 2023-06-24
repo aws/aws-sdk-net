@@ -58,7 +58,7 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
             string target = "TrentService.Decrypt";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2014-11-01";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2014-11-01";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -110,7 +110,17 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.KeyId);
                 }
 
-        
+                if(publicRequest.IsSetRecipient())
+                {
+                    context.Writer.WritePropertyName("Recipient");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = RecipientInfoMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Recipient, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

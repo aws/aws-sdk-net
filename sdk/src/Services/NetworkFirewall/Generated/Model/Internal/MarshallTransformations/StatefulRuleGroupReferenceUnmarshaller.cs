@@ -64,6 +64,12 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("Override", targetDepth))
+                {
+                    var unmarshaller = StatefulRuleGroupOverrideUnmarshaller.Instance;
+                    unmarshalledObject.Override = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Priority", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

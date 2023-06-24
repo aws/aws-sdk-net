@@ -36,6 +36,7 @@ namespace Amazon.SecurityHub.Model
     public partial class UpdateOrganizationConfigurationRequest : AmazonSecurityHubRequest
     {
         private bool? _autoEnable;
+        private AutoEnableStandards _autoEnableStandards;
 
         /// <summary>
         /// Gets and sets the property AutoEnable. 
@@ -62,6 +63,35 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetAutoEnable()
         {
             return this._autoEnable.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AutoEnableStandards. 
+        /// <para>
+        /// Whether to automatically enable Security Hub <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-enable-disable.html">default
+        /// standards</a> for new member accounts in the organization.
+        /// </para>
+        ///  
+        /// <para>
+        /// By default, this parameter is equal to <code>DEFAULT</code>, and new member accounts
+        /// are automatically enabled with default Security Hub standards.
+        /// </para>
+        ///  
+        /// <para>
+        /// To opt out of enabling default standards for new member accounts, set this parameter
+        /// equal to <code>NONE</code>.
+        /// </para>
+        /// </summary>
+        public AutoEnableStandards AutoEnableStandards
+        {
+            get { return this._autoEnableStandards; }
+            set { this._autoEnableStandards = value; }
+        }
+
+        // Check to see if AutoEnableStandards property is set
+        internal bool IsSetAutoEnableStandards()
+        {
+            return this._autoEnableStandards != null;
         }
 
     }

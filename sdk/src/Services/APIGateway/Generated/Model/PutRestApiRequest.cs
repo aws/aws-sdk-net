@@ -45,9 +45,9 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Body. 
         /// <para>
-        /// [Required] The PUT request body containing external API definitions. Currently, only
-        /// OpenAPI definition JSON/YAML files are supported. The maximum size of the API definition
-        /// file is 6MB.
+        /// The PUT request body containing external API definitions. Currently, only OpenAPI
+        /// definition JSON/YAML files are supported. The maximum size of the API definition file
+        /// is 6MB.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -104,7 +104,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Parameters. 
         /// <para>
-        /// Custom header parameters as part of the request. For example, to exclude <a>DocumentationParts</a>
+        /// Custom header parameters as part of the request. For example, to exclude DocumentationParts
         /// from an imported API, set <code>ignore=documentation</code> as a <code>parameters</code>
         /// value, as in the AWS CLI command of <code>aws apigateway import-rest-api --parameters
         /// ignore=documentation --body 'file:///path/to/imported-api-body.json'</code>.
@@ -125,7 +125,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property RestApiId. 
         /// <para>
-        /// [Required] The string identifier of the associated <a>RestApi</a>.
+        /// The string identifier of the associated RestApi.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

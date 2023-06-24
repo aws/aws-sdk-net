@@ -36,6 +36,14 @@ namespace Amazon.Comprehend.Model
         }
 
         /// <summary>
+        /// Paginator for ListDatasets operation
+        ///</summary>
+        public IListDatasetsPaginator ListDatasets(ListDatasetsRequest request) 
+        {
+            return new ListDatasetsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListDocumentClassificationJobs operation
         ///</summary>
         public IListDocumentClassificationJobsPaginator ListDocumentClassificationJobs(ListDocumentClassificationJobsRequest request) 
@@ -65,6 +73,14 @@ namespace Amazon.Comprehend.Model
         public IListDominantLanguageDetectionJobsPaginator ListDominantLanguageDetectionJobs(ListDominantLanguageDetectionJobsRequest request) 
         {
             return new ListDominantLanguageDetectionJobsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListEndpoints operation
+        ///</summary>
+        public IListEndpointsPaginator ListEndpoints(ListEndpointsRequest request) 
+        {
+            return new ListEndpointsPaginator(this.client, request);
         }
 
         /// <summary>
@@ -100,6 +116,22 @@ namespace Amazon.Comprehend.Model
         }
 
         /// <summary>
+        /// Paginator for ListFlywheelIterationHistory operation
+        ///</summary>
+        public IListFlywheelIterationHistoryPaginator ListFlywheelIterationHistory(ListFlywheelIterationHistoryRequest request) 
+        {
+            return new ListFlywheelIterationHistoryPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListFlywheels operation
+        ///</summary>
+        public IListFlywheelsPaginator ListFlywheels(ListFlywheelsRequest request) 
+        {
+            return new ListFlywheelsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListKeyPhrasesDetectionJobs operation
         ///</summary>
         public IListKeyPhrasesDetectionJobsPaginator ListKeyPhrasesDetectionJobs(ListKeyPhrasesDetectionJobsRequest request) 
@@ -108,11 +140,27 @@ namespace Amazon.Comprehend.Model
         }
 
         /// <summary>
+        /// Paginator for ListPiiEntitiesDetectionJobs operation
+        ///</summary>
+        public IListPiiEntitiesDetectionJobsPaginator ListPiiEntitiesDetectionJobs(ListPiiEntitiesDetectionJobsRequest request) 
+        {
+            return new ListPiiEntitiesDetectionJobsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListSentimentDetectionJobs operation
         ///</summary>
         public IListSentimentDetectionJobsPaginator ListSentimentDetectionJobs(ListSentimentDetectionJobsRequest request) 
         {
             return new ListSentimentDetectionJobsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListTargetedSentimentDetectionJobs operation
+        ///</summary>
+        public IListTargetedSentimentDetectionJobsPaginator ListTargetedSentimentDetectionJobs(ListTargetedSentimentDetectionJobsRequest request) 
+        {
+            return new ListTargetedSentimentDetectionJobsPaginator(this.client, request);
         }
 
         /// <summary>

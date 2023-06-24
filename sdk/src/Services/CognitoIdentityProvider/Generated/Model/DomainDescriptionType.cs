@@ -45,7 +45,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AWSAccountId. 
         /// <para>
-        /// The account ID for the user pool owner.
+        /// The Amazon Web Services ID for the user pool owner.
         /// </para>
         /// </summary>
         public string AWSAccountId
@@ -63,7 +63,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property CloudFrontDistribution. 
         /// <para>
-        /// The ARN of the CloudFront distribution.
+        /// The Amazon Resource Name (ARN) of the Amazon CloudFront distribution.
         /// </para>
         /// </summary>
         public string CloudFrontDistribution
@@ -100,7 +100,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Domain. 
         /// <para>
-        /// The domain string.
+        /// The domain string. For custom domains, this is the fully-qualified domain name, such
+        /// as <code>auth.example.com</code>. For Amazon Cognito prefix domains, this is the prefix
+        /// alone, such as <code>auth</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=63)]
@@ -119,7 +121,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property S3Bucket. 
         /// <para>
-        /// The S3 bucket where the static files for this domain are stored.
+        /// The Amazon S3 bucket where the static files for this domain are stored.
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=1024)]

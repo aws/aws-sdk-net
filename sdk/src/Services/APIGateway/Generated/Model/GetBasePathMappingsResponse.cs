@@ -29,10 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.APIGateway.Model
 {
     /// <summary>
-    /// Represents a collection of <a>BasePathMapping</a> resources.
-    /// 
-    ///  <div class="seeAlso"> <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-custom-domains.html">Use
-    /// Custom Domain Names</a> </div>
+    /// Represents a collection of BasePathMapping resources.
     /// </summary>
     public partial class GetBasePathMappingsResponse : AmazonWebServiceResponse
     {

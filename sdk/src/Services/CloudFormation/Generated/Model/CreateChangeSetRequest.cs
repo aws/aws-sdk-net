@@ -58,7 +58,7 @@ namespace Amazon.CloudFormation.Model
     /// </para>
     ///  
     /// <para>
-    /// To create a change set for the entire stack hierachy, set <code>IncludeNestedStacks</code>
+    /// To create a change set for the entire stack hierarchy, set <code>IncludeNestedStacks</code>
     /// to <code>True</code>.
     /// </para>
     /// </summary>
@@ -71,6 +71,7 @@ namespace Amazon.CloudFormation.Model
         private string _description;
         private bool? _includeNestedStacks;
         private List<string> _notificationARNs = new List<string>();
+        private OnStackFailure _onStackFailure;
         private List<Parameter> _parameters = new List<Parameter>();
         private List<ResourceToImport> _resourcesToImport = new List<ResourceToImport>();
         private List<string> _resourceTypes = new List<string>();
@@ -119,8 +120,8 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If your stack template contains these resources, we recommend that you review all
-        /// permissions associated with them and edit their permissions if necessary.
+        /// If your stack template contains these resources, we suggest that you review all permissions
+        /// associated with them and edit their permissions if necessary.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -134,8 +135,8 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
-        /// AWS::IAM::InstanceProfile</a> 
+        ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">AWS::IAM::InstanceProfile</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -154,13 +155,13 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">
-        /// AWS::IAM::UserToGroupAddition</a> 
+        ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>
+        /// 
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
-        /// IAM Resources in CloudFormation Templates</a>.
+        /// IAM resources in CloudFormation templates</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -181,7 +182,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// This capacity does not apply to creating change sets, and specifying it when creating
+        /// This capacity doesn't apply to creating change sets, and specifying it when creating
         /// change sets has no effect.
         /// </para>
         ///  
@@ -192,8 +193,8 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  </note> 
         /// <para>
-        /// For more information on macros, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
-        /// CloudFormation Macros to Perform Custom Processing on Templates</a>.
+        /// For more information about macros, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
+        /// CloudFormation macros to perform custom processing on templates</a>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -217,8 +218,8 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// A change set name can contain only alphanumeric, case sensitive characters and hyphens.
-        /// It must start with an alphabetic character and cannot exceed 128 characters.
+        /// A change set name can contain only alphanumeric, case sensitive characters, and hyphens.
+        /// It must start with an alphabetical character and can't exceed 128 characters.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -244,8 +245,8 @@ namespace Amazon.CloudFormation.Model
         ///  
         /// <para>
         /// If you create a change set for a new stack, CloudFormation creates a stack with a
-        /// unique stack ID, but no template or resources. The stack will be in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995">
-        /// <code>REVIEW_IN_PROGRESS</code> </a> state until you execute the change set.
+        /// unique stack ID, but no template or resources. The stack will be in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995">REVIEW_IN_PROGRESS</a>
+        /// state until you execute the change set.
         /// </para>
         ///  
         /// <para>
@@ -349,6 +350,52 @@ namespace Amazon.CloudFormation.Model
         }
 
         /// <summary>
+        /// Gets and sets the property OnStackFailure. 
+        /// <para>
+        /// Determines what action will be taken if stack creation fails. If this parameter is
+        /// specified, the <code>DisableRollback</code> parameter to the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">ExecuteChangeSet</a>
+        /// API operation must not be specified. This must be one of these values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>DELETE</code> - Deletes the change set if the stack creation fails. This is
+        /// only valid when the <code>ChangeSetType</code> parameter is set to <code>CREATE</code>.
+        /// If the deletion of the stack fails, the status of the stack is <code>DELETE_FAILED</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>DO_NOTHING</code> - if the stack creation fails, do nothing. This is equivalent
+        /// to specifying <code>true</code> for the <code>DisableRollback</code> parameter to
+        /// the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">ExecuteChangeSet</a>
+        /// API operation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ROLLBACK</code> - if the stack creation fails, roll back the stack. This is
+        /// equivalent to specifying <code>false</code> for the <code>DisableRollback</code> parameter
+        /// to the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">ExecuteChangeSet</a>
+        /// API operation.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For nested stacks, when the <code>OnStackFailure</code> parameter is set to <code>DELETE</code>
+        /// for the change set for the parent stack, any failure in a child stack will cause the
+        /// parent stack creation to fail and all stacks to be deleted.
+        /// </para>
+        /// </summary>
+        public OnStackFailure OnStackFailure
+        {
+            get { return this._onStackFailure; }
+            set { this._onStackFailure = value; }
+        }
+
+        // Check to see if OnStackFailure property is set
+        internal bool IsSetOnStackFailure()
+        {
+            return this._onStackFailure != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Parameters. 
         /// <para>
         /// A list of <code>Parameter</code> structures that specify input parameters for the
@@ -399,7 +446,7 @@ namespace Amazon.CloudFormation.Model
         /// the stack update fails. By default, CloudFormation grants permissions to all resource
         /// types. Identity and Access Management (IAM) uses this parameter for condition keys
         /// in IAM policies for CloudFormation. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
-        /// Access with Identity and Access Management</a> in the CloudFormation User Guide.
+        /// access with Identity and Access Management</a> in the CloudFormation User Guide.
         /// </para>
         /// </summary>
         public List<string> ResourceTypes
@@ -420,9 +467,9 @@ namespace Amazon.CloudFormation.Model
         /// The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role that
         /// CloudFormation assumes when executing the change set. CloudFormation uses the role's
         /// credentials to make calls on your behalf. CloudFormation uses this role for all future
-        /// operations on the stack. As long as users have permission to operate on the stack,
+        /// operations on the stack. Provided that users have permission to operate on the stack,
         /// CloudFormation uses this role even if the users don't have permission to pass it.
-        /// Ensure that the role grants least privilege.
+        /// Ensure that the role grants least permission.
         /// </para>
         ///  
         /// <para>
@@ -533,7 +580,7 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property TemplateURL. 
         /// <para>
         /// The location of the file that contains the revised template. The URL must point to
-        /// a template (max size: 460,800 bytes) that is located in an S3 bucket or a Systems
+        /// a template (max size: 460,800 bytes) that's located in an Amazon S3 bucket or a Systems
         /// Manager document. CloudFormation generates the change set by comparing this template
         /// with the stack that you specified.
         /// </para>
@@ -558,7 +605,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property UsePreviousTemplate. 
         /// <para>
-        /// Whether to reuse the template that is associated with the stack to create the change
+        /// Whether to reuse the template that's associated with the stack to create the change
         /// set.
         /// </para>
         /// </summary>

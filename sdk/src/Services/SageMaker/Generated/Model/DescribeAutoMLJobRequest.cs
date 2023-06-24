@@ -30,7 +30,14 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeAutoMLJob operation.
-    /// Returns information about an Amazon SageMaker AutoML job.
+    /// Returns information about an AutoML job created by calling <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJob.html">CreateAutoMLJob</a>.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// AutoML jobs created by calling <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJobV2.html">CreateAutoMLJobV2</a>
+    /// cannot be described by <code>DescribeAutoMLJob</code>.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class DescribeAutoMLJobRequest : AmazonSageMakerRequest
     {

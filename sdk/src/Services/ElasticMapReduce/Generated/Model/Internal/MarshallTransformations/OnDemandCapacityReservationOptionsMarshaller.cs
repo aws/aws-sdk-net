@@ -34,7 +34,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// OnDemandCapacityReservationOptions Marshaller
-    /// </summary>       
+    /// </summary>
     public class OnDemandCapacityReservationOptionsMarshaller : IRequestMarshaller<OnDemandCapacityReservationOptions, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static OnDemandCapacityReservationOptionsMarshaller Instance = new OnDemandCapacityReservationOptionsMarshaller();
 
     }

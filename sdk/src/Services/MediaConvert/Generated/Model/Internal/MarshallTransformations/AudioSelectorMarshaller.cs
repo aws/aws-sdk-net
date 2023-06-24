@@ -34,7 +34,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AudioSelector Marshaller
-    /// </summary>       
+    /// </summary>
     public class AudioSelectorMarshaller : IRequestMarshaller<AudioSelector, JsonMarshallerContext> 
     {
         /// <summary>
@@ -45,6 +45,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AudioSelector requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAudioDurationCorrection())
+            {
+                context.Writer.WritePropertyName("audioDurationCorrection");
+                context.Writer.Write(requestObject.AudioDurationCorrection);
+            }
+
             if(requestObject.IsSetCustomLanguageCode())
             {
                 context.Writer.WritePropertyName("customLanguageCode");
@@ -135,7 +141,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AudioSelectorMarshaller Instance = new AudioSelectorMarshaller();
 
     }

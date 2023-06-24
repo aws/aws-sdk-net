@@ -17,22 +17,22 @@
  * Do not modify this file. This file is generated from the proton-2020-07-20.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
-
+using Amazon.Proton.Internal;
 
 namespace Amazon.Proton
 {
     /// <summary>
     /// Configuration for accessing Amazon Proton service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonProtonConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.2.2");
+            InternalSDKUtils.BuildUserAgentString("3.7.105.40");
 
         private string _userAgent = UserAgentString;
 
@@ -40,8 +40,10 @@ namespace Amazon.Proton
         /// Default constructor
         /// </summary>
         public AmazonProtonConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonProtonDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "proton";
+            this.EndpointProvider = new AmazonProtonEndpointProvider();
         }
 
         /// <summary>
@@ -76,5 +78,6 @@ namespace Amazon.Proton
                 return _userAgent;
             }
         }
+
     }
 }

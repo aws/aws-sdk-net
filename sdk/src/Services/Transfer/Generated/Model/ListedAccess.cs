@@ -43,9 +43,8 @@ namespace Amazon.Transfer.Model
         /// <para>
         /// A unique identifier that is required to identify specific groups within your directory.
         /// The users of the group that you associate have access to your Amazon S3 or Amazon
-        /// EFS resources over the enabled protocols using Amazon Web Services Transfer Family.
-        /// If you know the group name, you can view the SID values by running the following command
-        /// using Windows PowerShell.
+        /// EFS resources over the enabled protocols using Transfer Family. If you know the group
+        /// name, you can view the SID values by running the following command using Windows PowerShell.
         /// </para>
         ///  
         /// <para>
@@ -59,8 +58,8 @@ namespace Amazon.Transfer.Model
         /// </para>
         ///  
         /// <para>
-        /// The regex used to validate this parameter is a string of characters consisting of
-        /// uppercase and lowercase alphanumeric characters with no spaces. You can also include
+        /// The regular expression used to validate this parameter is a string of characters consisting
+        /// of uppercase and lowercase alphanumeric characters with no spaces. You can also include
         /// underscores or any of the following characters: =,.@:/-
         /// </para>
         /// </summary>
@@ -104,11 +103,11 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property HomeDirectoryType. 
         /// <para>
-        /// The type of landing directory (folder) you want your users' home directory to be when
-        /// they log into the server. If you set it to <code>PATH</code>, the user will see the
-        /// absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients.
-        /// If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code>
-        /// for how you want to make Amazon S3 or EFS paths visible to your users.
+        /// The type of landing directory (folder) that you want your users' home directory to
+        /// be when they log in to the server. If you set it to <code>PATH</code>, the user will
+        /// see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol
+        /// clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code>
+        /// for how you want to make Amazon S3 or Amazon EFS paths visible to your users.
         /// </para>
         /// </summary>
         public HomeDirectoryType HomeDirectoryType
@@ -126,12 +125,12 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property Role. 
         /// <para>
-        /// Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users'
-        /// access to your Amazon S3 bucket or EFS file system. The policies attached to this
-        /// role determine the level of access that you want to provide your users when transferring
-        /// files into and out of your Amazon S3 bucket or EFS file system. The IAM role should
-        /// also contain a trust relationship that allows the server to access your resources
-        /// when servicing your users' transfer requests.
+        /// The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that
+        /// controls your users' access to your Amazon S3 bucket or Amazon EFS file system. The
+        /// policies attached to this role determine the level of access that you want to provide
+        /// your users when transferring files into and out of your Amazon S3 bucket or Amazon
+        /// EFS file system. The IAM role should also contain a trust relationship that allows
+        /// the server to access your resources when servicing your users' transfer requests.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]

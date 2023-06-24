@@ -34,7 +34,7 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SelectParameters Marshaller
-    /// </summary>       
+    /// </summary>
     public class SelectParametersMarshaller : IRequestMarshaller<SelectParameters, JsonMarshallerContext> 
     {
         /// <summary>
@@ -83,7 +83,7 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SelectParametersMarshaller Instance = new SelectParametersMarshaller();
 
     }

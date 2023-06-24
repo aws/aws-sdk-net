@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AwsAutoScalingAutoScalingGroupDetails Marshaller
-    /// </summary>       
+    /// </summary>
     public class AwsAutoScalingAutoScalingGroupDetailsMarshaller : IRequestMarshaller<AwsAutoScalingAutoScalingGroupDetails, JsonMarshallerContext> 
     {
         /// <summary>
@@ -45,6 +45,28 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AwsAutoScalingAutoScalingGroupDetails requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAvailabilityZones())
+            {
+                context.Writer.WritePropertyName("AvailabilityZones");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectAvailabilityZonesListValue in requestObject.AvailabilityZones)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetailsMarshaller.Instance;
+                    marshaller.Marshall(requestObjectAvailabilityZonesListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetCapacityRebalance())
+            {
+                context.Writer.WritePropertyName("CapacityRebalance");
+                context.Writer.Write(requestObject.CapacityRebalance);
+            }
+
             if(requestObject.IsSetCreatedTime())
             {
                 context.Writer.WritePropertyName("CreatedTime");
@@ -69,6 +91,17 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.LaunchConfigurationName);
             }
 
+            if(requestObject.IsSetLaunchTemplate())
+            {
+                context.Writer.WritePropertyName("LaunchTemplate");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecificationMarshaller.Instance;
+                marshaller.Marshall(requestObject.LaunchTemplate, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetLoadBalancerNames())
             {
                 context.Writer.WritePropertyName("LoadBalancerNames");
@@ -80,11 +113,22 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetMixedInstancesPolicy())
+            {
+                context.Writer.WritePropertyName("MixedInstancesPolicy");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.MixedInstancesPolicy, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AwsAutoScalingAutoScalingGroupDetailsMarshaller Instance = new AwsAutoScalingAutoScalingGroupDetailsMarshaller();
 
     }

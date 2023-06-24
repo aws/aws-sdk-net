@@ -38,6 +38,7 @@ namespace Amazon.ChimeSDKIdentity.Model
         private string _appInstanceArn;
         private string _appInstanceUserId;
         private string _clientRequestToken;
+        private ExpirationSettings _expirationSettings;
         private string _metadata;
         private string _name;
         private List<Tag> _tags = new List<Tag>();
@@ -67,7 +68,7 @@ namespace Amazon.ChimeSDKIdentity.Model
         /// The user ID of the <code>AppInstance</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=64)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=64)]
         public string AppInstanceUserId
         {
             get { return this._appInstanceUserId; }
@@ -83,7 +84,7 @@ namespace Amazon.ChimeSDKIdentity.Model
         /// <summary>
         /// Gets and sets the property ClientRequestToken. 
         /// <para>
-        /// The token assigned to the user requesting an <code>AppInstance</code>.
+        /// The unique ID of the request. Use different tokens to request additional <code>AppInstances</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=64)]
@@ -100,12 +101,31 @@ namespace Amazon.ChimeSDKIdentity.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ExpirationSettings. 
+        /// <para>
+        /// Settings that control the interval after which the <code>AppInstanceUser</code> is
+        /// automatically deleted.
+        /// </para>
+        /// </summary>
+        public ExpirationSettings ExpirationSettings
+        {
+            get { return this._expirationSettings; }
+            set { this._expirationSettings = value; }
+        }
+
+        // Check to see if ExpirationSettings property is set
+        internal bool IsSetExpirationSettings()
+        {
+            return this._expirationSettings != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Metadata. 
         /// <para>
         /// The request's metadata. Limited to a 1KB string in UTF-8.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=1024)]
+        [AWSProperty(Sensitive=true, Min=0, Max=1024)]
         public string Metadata
         {
             get { return this._metadata; }
@@ -124,7 +144,7 @@ namespace Amazon.ChimeSDKIdentity.Model
         /// The user's name.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=100)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=100)]
         public string Name
         {
             get { return this._name; }

@@ -56,7 +56,7 @@ namespace Amazon.AppIntegrationsService.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.AppIntegrationsService");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-07-29";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-07-29";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/dataIntegrations";
@@ -74,12 +74,23 @@ namespace Amazon.AppIntegrationsService.Model.Internal.MarshallTransformations
                 else if(!(publicRequest.IsSetClientToken()))
                 {
                     context.Writer.WritePropertyName("ClientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());                                                
+                    context.Writer.Write(Guid.NewGuid().ToString());
                 }
                 if(publicRequest.IsSetDescription())
                 {
                     context.Writer.WritePropertyName("Description");
                     context.Writer.Write(publicRequest.Description);
+                }
+
+                if(publicRequest.IsSetFileConfiguration())
+                {
+                    context.Writer.WritePropertyName("FileConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = FileConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.FileConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
                 if(publicRequest.IsSetKmsKey())
@@ -92,6 +103,33 @@ namespace Amazon.AppIntegrationsService.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("Name");
                     context.Writer.Write(publicRequest.Name);
+                }
+
+                if(publicRequest.IsSetObjectConfiguration())
+                {
+                    context.Writer.WritePropertyName("ObjectConfiguration");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestObjectConfigurationKvp in publicRequest.ObjectConfiguration)
+                    {
+                        context.Writer.WritePropertyName(publicRequestObjectConfigurationKvp.Key);
+                        var publicRequestObjectConfigurationValue = publicRequestObjectConfigurationKvp.Value;
+
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestObjectConfigurationValueKvp in publicRequestObjectConfigurationValue)
+                        {
+                            context.Writer.WritePropertyName(publicRequestObjectConfigurationValueKvp.Key);
+                            var publicRequestObjectConfigurationValueValue = publicRequestObjectConfigurationValueKvp.Value;
+
+                            context.Writer.WriteArrayStart();
+                            foreach(var publicRequestObjectConfigurationValueValueListValue in publicRequestObjectConfigurationValueValue)
+                            {
+                                    context.Writer.Write(publicRequestObjectConfigurationValueValueListValue);
+                            }
+                            context.Writer.WriteArrayEnd();
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteObjectEnd();
                 }
 
                 if(publicRequest.IsSetScheduleConfig())
@@ -125,7 +163,6 @@ namespace Amazon.AppIntegrationsService.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

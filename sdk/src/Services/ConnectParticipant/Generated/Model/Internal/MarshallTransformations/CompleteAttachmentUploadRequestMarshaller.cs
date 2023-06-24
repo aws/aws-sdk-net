@@ -56,7 +56,7 @@ namespace Amazon.ConnectParticipant.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ConnectParticipant");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-09-07";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-09-07";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/participant/complete-attachment-upload";
@@ -85,17 +85,18 @@ namespace Amazon.ConnectParticipant.Model.Internal.MarshallTransformations
                 else if(!(publicRequest.IsSetClientToken()))
                 {
                     context.Writer.WritePropertyName("ClientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());                                                
+                    context.Writer.Write(Guid.NewGuid().ToString());
                 }
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
 
         
-            if(publicRequest.IsSetConnectionToken())
+            if (publicRequest.IsSetConnectionToken()) 
+            {
                 request.Headers["X-Amz-Bearer"] = publicRequest.ConnectionToken;
+            }
 
             return request;
         }

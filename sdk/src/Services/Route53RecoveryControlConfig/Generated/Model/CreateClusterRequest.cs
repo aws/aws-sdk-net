@@ -34,21 +34,22 @@ namespace Amazon.Route53RecoveryControlConfig.Model
     /// you can run API calls to update or get the state of one or more routing controls.
     /// Each cluster has a name, status, Amazon Resource Name (ARN), and an array of the five
     /// cluster endpoints (one for each supported Amazon Web Services Region) that you can
-    /// use with API calls to the Amazon Route 53 Application Recovery Controller cluster
-    /// data plane.
+    /// use with API calls to the cluster data plane.
     /// </summary>
     public partial class CreateClusterRequest : AmazonRoute53RecoveryControlConfigRequest
     {
         private string _clientToken;
         private string _clusterName;
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// Unique client idempotency token.
+        /// A unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent
+        /// API request with an action, specify a client token in the request.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=64)]
+        [AWSProperty(Min=1, Max=64)]
         public string ClientToken
         {
             get { return this._clientToken; }
@@ -78,6 +79,24 @@ namespace Amazon.Route53RecoveryControlConfig.Model
         internal bool IsSetClusterName()
         {
             return this._clusterName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags associated with the cluster.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

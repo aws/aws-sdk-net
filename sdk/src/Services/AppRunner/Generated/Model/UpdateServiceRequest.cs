@@ -53,6 +53,8 @@ namespace Amazon.AppRunner.Model
         private string _autoScalingConfigurationArn;
         private HealthCheckConfiguration _healthCheckConfiguration;
         private InstanceConfiguration _instanceConfiguration;
+        private NetworkConfiguration _networkConfiguration;
+        private ServiceObservabilityConfiguration _observabilityConfiguration;
         private string _serviceArn;
         private SourceConfiguration _sourceConfiguration;
 
@@ -60,7 +62,7 @@ namespace Amazon.AppRunner.Model
         /// Gets and sets the property AutoScalingConfigurationArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of an App Runner automatic scaling configuration resource
-        /// that you want to associate with your service.
+        /// that you want to associate with the App Runner service.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1011)]
@@ -80,7 +82,7 @@ namespace Amazon.AppRunner.Model
         /// Gets and sets the property HealthCheckConfiguration. 
         /// <para>
         /// The settings for the health check that App Runner performs to monitor the health of
-        /// your service.
+        /// the App Runner service.
         /// </para>
         /// </summary>
         public HealthCheckConfiguration HealthCheckConfiguration
@@ -98,8 +100,7 @@ namespace Amazon.AppRunner.Model
         /// <summary>
         /// Gets and sets the property InstanceConfiguration. 
         /// <para>
-        /// The runtime configuration to apply to instances (scaling units) of the App Runner
-        /// service.
+        /// The runtime configuration to apply to instances (scaling units) of your service.
         /// </para>
         /// </summary>
         public InstanceConfiguration InstanceConfiguration
@@ -112,6 +113,43 @@ namespace Amazon.AppRunner.Model
         internal bool IsSetInstanceConfiguration()
         {
             return this._instanceConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkConfiguration. 
+        /// <para>
+        /// Configuration settings related to network traffic of the web application that the
+        /// App Runner service runs.
+        /// </para>
+        /// </summary>
+        public NetworkConfiguration NetworkConfiguration
+        {
+            get { return this._networkConfiguration; }
+            set { this._networkConfiguration = value; }
+        }
+
+        // Check to see if NetworkConfiguration property is set
+        internal bool IsSetNetworkConfiguration()
+        {
+            return this._networkConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ObservabilityConfiguration. 
+        /// <para>
+        /// The observability configuration of your service.
+        /// </para>
+        /// </summary>
+        public ServiceObservabilityConfiguration ObservabilityConfiguration
+        {
+            get { return this._observabilityConfiguration; }
+            set { this._observabilityConfiguration = value; }
+        }
+
+        // Check to see if ObservabilityConfiguration property is set
+        internal bool IsSetObservabilityConfiguration()
+        {
+            return this._observabilityConfiguration != null;
         }
 
         /// <summary>

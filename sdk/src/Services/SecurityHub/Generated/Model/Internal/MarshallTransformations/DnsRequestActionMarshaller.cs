@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DnsRequestAction Marshaller
-    /// </summary>       
+    /// </summary>
     public class DnsRequestActionMarshaller : IRequestMarshaller<DnsRequestAction, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DnsRequestActionMarshaller Instance = new DnsRequestActionMarshaller();
 
     }

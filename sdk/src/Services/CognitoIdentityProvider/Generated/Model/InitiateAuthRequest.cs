@@ -31,27 +31,31 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// Container for the parameters to the InitiateAuth operation.
-    /// Initiates the authentication flow.
+    /// Initiates sign-in for a user in the Amazon Cognito user directory. You can't sign
+    /// in a user with a federated IdP with <code>InitiateAuth</code>. For more information,
+    /// see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-identity-federation.html">
+    /// Adding user pool sign-in through a third party</a>.
     /// 
     ///  <note> 
     /// <para>
-    /// This action might generate an SMS text message. Starting June 1, 2021, U.S. telecom
-    /// carriers require that you register an origination phone number before you can send
-    /// SMS messages to U.S. phone numbers. If you use SMS text messages in Amazon Cognito,
-    /// you must register a phone number with <a href="https://console.aws.amazon.com/pinpoint/home/">Amazon
-    /// Pinpoint</a>. Cognito will use the the registered number automatically. Otherwise,
-    /// Cognito users that must receive SMS messages might be unable to sign up, activate
+    /// This action might generate an SMS text message. Starting June 1, 2021, US telecom
+    /// carriers require you to register an origination phone number before you can send SMS
+    /// messages to US phone numbers. If you use SMS text messages in Amazon Cognito, you
+    /// must register a phone number with <a href="https://console.aws.amazon.com/pinpoint/home/">Amazon
+    /// Pinpoint</a>. Amazon Cognito uses the registered number automatically. Otherwise,
+    /// Amazon Cognito users who must receive SMS messages might not be able to sign up, activate
     /// their accounts, or sign in.
     /// </para>
     ///  
     /// <para>
     /// If you have never used SMS text messages with Amazon Cognito or any other Amazon Web
-    /// Service, Amazon SNS might place your account in SMS sandbox. In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
-    /// mode</a> </i>, you’ll have limitations, such as sending messages to only verified
-    /// phone numbers. After testing in the sandbox environment, you can move out of the SMS
-    /// sandbox and into production. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-sms-userpool-settings.html">
-    /// SMS message settings for Cognito User Pools</a> in the <i>Amazon Cognito Developer
-    /// Guide</i>. 
+    /// Service, Amazon Simple Notification Service might place your account in the SMS sandbox.
+    /// In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
+    /// mode</a> </i>, you can send messages only to verified phone numbers. After you test
+    /// your app while in the sandbox environment, you can move out of the sandbox and into
+    /// production. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-sms-userpool-settings.html">
+    /// SMS message settings for Amazon Cognito user pools</a> in the <i>Amazon Cognito Developer
+    /// Guide</i>.
     /// </para>
     ///  </note>
     /// </summary>
@@ -67,7 +71,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AnalyticsMetadata. 
         /// <para>
-        /// The Amazon Pinpoint analytics metadata for collecting metrics for <code>InitiateAuth</code>
+        /// The Amazon Pinpoint analytics metadata that contributes to your metrics for <code>InitiateAuth</code>
         /// calls.
         /// </para>
         /// </summary>
@@ -86,23 +90,22 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AuthFlow. 
         /// <para>
-        /// The authentication flow for this call to execute. The API action will depend on this
-        /// value. For example: 
+        /// The authentication flow for this call to run. The API action will depend on this value.
+        /// For example:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>REFRESH_TOKEN_AUTH</code> will take in a valid refresh token and return new
-        /// tokens.
+        ///  <code>REFRESH_TOKEN_AUTH</code> takes in a valid refresh token and returns new tokens.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>USER_SRP_AUTH</code> will take in <code>USERNAME</code> and <code>SRP_A</code>
-        /// and return the SRP variables to be used for next challenge execution.
+        ///  <code>USER_SRP_AUTH</code> takes in <code>USERNAME</code> and <code>SRP_A</code>
+        /// and returns the SRP variables to be used for next challenge execution.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>USER_PASSWORD_AUTH</code> will take in <code>USERNAME</code> and <code>PASSWORD</code>
-        /// and return the next challenge or tokens.
+        ///  <code>USER_PASSWORD_AUTH</code> takes in <code>USERNAME</code> and <code>PASSWORD</code>
+        /// and returns the next challenge or tokens.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -124,20 +127,13 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>USER_PASSWORD_AUTH</code>: Non-SRP authentication flow; USERNAME and PASSWORD
+        ///  <code>USER_PASSWORD_AUTH</code>: Non-SRP authentication flow; user name and password
         /// are passed directly. If a user migration Lambda trigger is set, this flow will invoke
-        /// the user migration Lambda if the USERNAME is not found in the user pool. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>ADMIN_USER_PASSWORD_AUTH</code>: Admin-based user password authentication.
-        /// This replaces the <code>ADMIN_NO_SRP_AUTH</code> authentication flow. In this flow,
-        /// Cognito receives the password in the request instead of using the SRP process to verify
-        /// passwords.
+        /// the user migration Lambda if it doesn't find the user name in the user pool. 
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  <code>ADMIN_NO_SRP_AUTH</code> is not a valid value.
+        ///  <code>ADMIN_NO_SRP_AUTH</code> isn't a valid value.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -157,7 +153,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// Gets and sets the property AuthParameters. 
         /// <para>
         /// The authentication parameters. These are inputs corresponding to the <code>AuthFlow</code>
-        /// that you are invoking. The required values depend on the value of <code>AuthFlow</code>:
+        /// that you're invoking. The required values depend on the value of <code>AuthFlow</code>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -180,6 +176,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public Dictionary<string, string> AuthParameters
         {
             get { return this._authParameters; }
@@ -198,7 +195,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The app client ID.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=128)]
         public string ClientId
         {
             get { return this._clientId; }
@@ -247,7 +244,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         ///  
         /// <para>
         /// When you use the InitiateAuth API action, Amazon Cognito also invokes the functions
-        /// for the following triggers, but it does not provide the ClientMetadata value as input:
+        /// for the following triggers, but it doesn't provide the ClientMetadata value as input:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -275,29 +272,28 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing
-        /// User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">
+        /// Customizing user pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito
+        /// Developer Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
-        /// Take the following limitations into consideration when you use the ClientMetadata
-        /// parameter:
+        /// When you use the ClientMetadata parameter, remember that Amazon Cognito won't do the
+        /// following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Amazon Cognito does not store the ClientMetadata value. This data is available only
-        /// to Lambda triggers that are assigned to a user pool to support custom workflows. If
-        /// your user pool configuration does not include triggers, the ClientMetadata parameter
-        /// serves no purpose.
+        /// Store the ClientMetadata value. This data is available only to Lambda triggers that
+        /// are assigned to a user pool to support custom workflows. If your user pool configuration
+        /// doesn't include triggers, the ClientMetadata parameter serves no purpose.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Amazon Cognito does not validate the ClientMetadata value.
+        /// Validate the ClientMetadata value.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Amazon Cognito does not encrypt the the ClientMetadata value, so don't use it to provide
-        /// sensitive information.
+        /// Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide sensitive information.
         /// </para>
         ///  </li> </ul> </note>
         /// </summary>
@@ -316,8 +312,10 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property UserContextData. 
         /// <para>
-        /// Contextual data such as the user's device fingerprint, IP address, or location used
-        /// for evaluating the risk of an unexpected event by Amazon Cognito advanced security.
+        /// Contextual data about your user session, such as the device fingerprint, IP address,
+        /// or location. Amazon Cognito advanced security evaluates the risk of an authentication
+        /// event based on the context that your app generates and passes to Amazon Cognito when
+        /// it makes API requests.
         /// </para>
         /// </summary>
         public UserContextDataType UserContextData

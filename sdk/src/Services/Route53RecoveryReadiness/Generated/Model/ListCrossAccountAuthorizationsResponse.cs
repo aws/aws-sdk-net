@@ -37,7 +37,10 @@ namespace Amazon.Route53RecoveryReadiness.Model
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property CrossAccountAuthorizations. A list of CrossAccountAuthorizations
+        /// Gets and sets the property CrossAccountAuthorizations. 
+        /// <para>
+        /// A list of cross-account authorizations.
+        /// </para>
         /// </summary>
         public List<string> CrossAccountAuthorizations
         {
@@ -52,8 +55,10 @@ namespace Amazon.Route53RecoveryReadiness.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken. A token that can be used to resume pagination
-        /// from the end of the collection.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The token that identifies which batch of results you want to see.
+        /// </para>
         /// </summary>
         public string NextToken
         {

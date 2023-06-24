@@ -34,7 +34,7 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// KinesisStreamSourceConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class KinesisStreamSourceConfigurationMarshaller : IRequestMarshaller<KinesisStreamSourceConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static KinesisStreamSourceConfigurationMarshaller Instance = new KinesisStreamSourceConfigurationMarshaller();
 
     }

@@ -33,7 +33,27 @@ namespace Amazon.AppMesh.Model
     /// </summary>
     public partial class GatewayRouteTarget
     {
+        private int? _port;
         private GatewayRouteVirtualService _virtualService;
+
+        /// <summary>
+        /// Gets and sets the property Port. 
+        /// <para>
+        /// The port number of the gateway route target.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=65535)]
+        public int Port
+        {
+            get { return this._port.GetValueOrDefault(); }
+            set { this._port = value; }
+        }
+
+        // Check to see if Port property is set
+        internal bool IsSetPort()
+        {
+            return this._port.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property VirtualService. 

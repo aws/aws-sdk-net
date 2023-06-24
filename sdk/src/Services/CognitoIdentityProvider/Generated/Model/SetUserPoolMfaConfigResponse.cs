@@ -44,7 +44,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>OFF</code> MFA will not be used for any users.
+        ///  <code>OFF</code> MFA won't be used for any users.
         /// </para>
         ///  </li> <li> 
         /// <para>

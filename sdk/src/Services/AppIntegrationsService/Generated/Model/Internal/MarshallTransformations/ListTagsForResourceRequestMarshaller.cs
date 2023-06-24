@@ -55,7 +55,7 @@ namespace Amazon.AppIntegrationsService.Model.Internal.MarshallTransformations
         public IRequest Marshall(ListTagsForResourceRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.AppIntegrationsService");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-07-29";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-07-29";
             request.HttpMethod = "GET";
 
             if (!publicRequest.IsSetResourceArn())

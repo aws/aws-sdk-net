@@ -58,7 +58,7 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
             string target = "CodeDeploy_20141006.CreateDeployment";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2014-10-06";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2014-10-06";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -114,6 +114,17 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.IgnoreApplicationStopFailures);
                 }
 
+                if(publicRequest.IsSetOverrideAlarmConfiguration())
+                {
+                    context.Writer.WritePropertyName("overrideAlarmConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = AlarmConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.OverrideAlarmConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetRevision())
                 {
                     context.Writer.WritePropertyName("revision");
@@ -142,7 +153,6 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.UpdateOutdatedInstancesOnly);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

@@ -108,6 +108,22 @@ namespace Amazon.Personalize.Model
         }
 
         /// <summary>
+        /// Paginator for ListMetricAttributionMetrics operation
+        ///</summary>
+        public IListMetricAttributionMetricsPaginator ListMetricAttributionMetrics(ListMetricAttributionMetricsRequest request) 
+        {
+            return new ListMetricAttributionMetricsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListMetricAttributions operation
+        ///</summary>
+        public IListMetricAttributionsPaginator ListMetricAttributions(ListMetricAttributionsRequest request) 
+        {
+            return new ListMetricAttributionsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListRecipes operation
         ///</summary>
         public IListRecipesPaginator ListRecipes(ListRecipesRequest request) 

@@ -34,7 +34,7 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ContainerProperties Marshaller
-    /// </summary>       
+    /// </summary>
     public class ContainerPropertiesMarshaller : IRequestMarshaller<ContainerProperties, JsonMarshallerContext> 
     {
         /// <summary>
@@ -70,6 +70,17 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
                 context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetEphemeralStorage())
+            {
+                context.Writer.WritePropertyName("ephemeralStorage");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = EphemeralStorageMarshaller.Instance;
+                marshaller.Marshall(requestObject.EphemeralStorage, context);
+
+                context.Writer.WriteObjectEnd();
             }
 
             if(requestObject.IsSetExecutionRoleArn())
@@ -254,7 +265,7 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ContainerPropertiesMarshaller Instance = new ContainerPropertiesMarshaller();
 
     }

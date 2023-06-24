@@ -30,8 +30,9 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateTemplate operation.
-    /// Creates a template from an existing Amazon QuickSight analysis or template. You can
-    /// use the resulting template to create a dashboard.
+    /// Creates a template either from a <code>TemplateDefinition</code> or from an existing
+    /// Amazon QuickSight analysis or template. You can use the resulting template to create
+    /// additional dashboards, templates, or analyses.
     /// 
     ///  
     /// <para>
@@ -46,6 +47,7 @@ namespace Amazon.QuickSight.Model
     public partial class CreateTemplateRequest : AmazonQuickSightRequest
     {
         private string _awsAccountId;
+        private TemplateVersionDefinition _definition;
         private string _name;
         private List<ResourcePermission> _permissions = new List<ResourcePermission>();
         private TemplateSourceEntity _sourceEntity;
@@ -71,6 +73,33 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetAwsAccountId()
         {
             return this._awsAccountId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Definition. 
+        /// <para>
+        /// The definition of a template.
+        /// </para>
+        ///  
+        /// <para>
+        /// A definition is the data model of all features in a Dashboard, Template, or Analysis.
+        /// </para>
+        ///  
+        /// <para>
+        /// Either a <code>SourceEntity</code> or a <code>Definition</code> must be provided in
+        /// order for the request to be valid.
+        /// </para>
+        /// </summary>
+        public TemplateVersionDefinition Definition
+        {
+            get { return this._definition; }
+            set { this._definition = value; }
+        }
+
+        // Check to see if Definition property is set
+        internal bool IsSetDefinition()
+        {
+            return this._definition != null;
         }
 
         /// <summary>
@@ -128,8 +157,12 @@ namespace Amazon.QuickSight.Model
         /// <code>SourceAnalysis</code> to list the replacement datasets for the placeholders
         /// listed in the original. The schema in each dataset must match its placeholder. 
         /// </para>
+        ///  
+        /// <para>
+        /// Either a <code>SourceEntity</code> or a <code>Definition</code> must be provided in
+        /// order for the request to be valid.
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public TemplateSourceEntity SourceEntity
         {
             get { return this._sourceEntity; }
@@ -169,7 +202,7 @@ namespace Amazon.QuickSight.Model
         /// Web Services Region; in each Amazon Web Services account.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=2048)]
+        [AWSProperty(Required=true, Min=1, Max=512)]
         public string TemplateId
         {
             get { return this._templateId; }

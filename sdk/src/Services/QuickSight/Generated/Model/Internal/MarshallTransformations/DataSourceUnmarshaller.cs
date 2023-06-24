@@ -112,6 +112,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SecretArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SecretArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SslProperties", targetDepth))
                 {
                     var unmarshaller = SslPropertiesUnmarshaller.Instance;

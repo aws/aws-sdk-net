@@ -34,7 +34,7 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// MathActivity Marshaller
-    /// </summary>       
+    /// </summary>
     public class MathActivityMarshaller : IRequestMarshaller<MathActivity, JsonMarshallerContext> 
     {
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static MathActivityMarshaller Instance = new MathActivityMarshaller();
 
     }

@@ -31,7 +31,26 @@ namespace Amazon.SSO.Model
 {
     /// <summary>
     /// Container for the parameters to the Logout operation.
-    /// Removes the client- and server-side session that is associated with the user.
+    /// Removes the locally stored SSO tokens from the client-side cache and sends an API
+    /// call to the IAM Identity Center service to invalidate the corresponding server-side
+    /// IAM Identity Center sign in session.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// If a user uses IAM Identity Center to access the AWS CLI, the user’s IAM Identity
+    /// Center sign in session is used to obtain an IAM session, as specified in the corresponding
+    /// IAM Identity Center permission set. More specifically, IAM Identity Center assumes
+    /// an IAM role in the target account on behalf of the user, and the corresponding temporary
+    /// AWS credentials are returned to the client.
+    /// </para>
+    ///  
+    /// <para>
+    /// After user logout, any existing IAM role sessions that were created by using IAM Identity
+    /// Center permission sets continue based on the duration configured in the permission
+    /// set. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/authconcept.html">User
+    /// authentications</a> in the <i>IAM Identity Center User Guide</i>.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class LogoutRequest : AmazonSSORequest
     {
@@ -42,10 +61,10 @@ namespace Amazon.SSO.Model
         /// <para>
         /// The token issued by the <code>CreateToken</code> API call. For more information, see
         /// <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html">CreateToken</a>
-        /// in the <i>AWS SSO OIDC API Reference Guide</i>.
+        /// in the <i>IAM Identity Center OIDC API Reference Guide</i>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public string AccessToken
         {
             get { return this._accessToken; }

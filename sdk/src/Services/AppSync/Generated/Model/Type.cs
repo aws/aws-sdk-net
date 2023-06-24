@@ -42,7 +42,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The type ARN.
+        /// The type Amazon Resource Name (ARN).
         /// </para>
         /// </summary>
         public string Arn

@@ -44,9 +44,19 @@ namespace Amazon.ECS.Model
     /// Alternatively, you can use <a>StartTask</a> to use your own scheduler or place tasks
     /// manually on specific container instances.
     /// </para>
-    ///  
+    ///  <note> 
     /// <para>
-    /// The Amazon ECS API follows an eventual consistency model. This is because the distributed
+    /// Starting April 15, 2023, Amazon Web Services will not onboard new customers to Amazon
+    /// Elastic Inference (EI), and will help current customers migrate their workloads to
+    /// options that offer better price and performance. After April 15, 2023, new customers
+    /// will not be able to launch instances with Amazon EI accelerators in Amazon SageMaker,
+    /// Amazon ECS, or Amazon EC2. However, customers who have used Amazon EI at least once
+    /// during the past 30-day period are considered current customers and will be able to
+    /// continue using the service. 
+    /// </para>
+    ///  </note> 
+    /// <para>
+    /// The Amazon ECS API follows an eventual consistency model. This is because of the distributed
     /// nature of the system supporting the API. This means that the result of an API command
     /// you run that affects your Amazon ECS resources might not be immediately visible to
     /// all subsequent commands you run. Keep this in mind when you carry out an API command
@@ -167,7 +177,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property EnableECSManagedTags. 
         /// <para>
-        /// Specifies whether to enable Amazon ECS managed tags for the task. For more information,
+        /// Specifies whether to use Amazon ECS managed tags for the task. For more information,
         /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging
         /// Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service Developer
         /// Guide</i>.
@@ -188,9 +198,14 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property EnableExecuteCommand. 
         /// <para>
-        /// Determines whether to enable the execute command functionality for the containers
-        /// in this task. If <code>true</code>, this enables execute command functionality on
-        /// all containers in the task.
+        /// Determines whether to use the execute command functionality for the containers in
+        /// this task. If <code>true</code>, this enables execute command functionality on all
+        /// containers in the task.
+        /// </para>
+        ///  
+        /// <para>
+        /// If <code>true</code>, then the task definition must have a task role, or you must
+        /// provide one as an override.
         /// </para>
         /// </summary>
         public bool EnableExecuteCommand
@@ -526,10 +541,31 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
+        /// When you create a policy for run-task, you can set the resource to be the latest task
+        /// definition revision, or a specific revision.
+        /// </para>
+        ///  
+        /// <para>
         /// The full ARN value must match the value that you specified as the <code>Resource</code>
-        /// of the IAM principal's permissions policy. For example, if the <code>Resource</code>
-        /// is arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:*, the <code>taskDefinition</code>
-        /// ARN value must be <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName</code>.
+        /// of the principal's permissions policy.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you specify the policy resource as the latest task definition version (by setting
+        /// the <code>Resource</code> in the policy to <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName</code>),
+        /// then set this value to <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you specify the policy resource as a specific task definition version (by setting
+        /// the <code>Resource</code> in the policy to <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:1</code>
+        /// or <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:*</code>),
+        /// then set this value to <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:1</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-resources">Policy
+        /// Resources for Amazon ECS</a> in the Amazon Elastic Container Service developer Guide.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

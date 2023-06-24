@@ -84,7 +84,10 @@ namespace Amazon.S3.Util
             AmzHeaderTagging                = "x-amz-tagging",
             AmzHeaderTaggingDirective       = "x-amz-tagging-directive",
             AmzHeaderTaggingCount           = "x-amz-tagging-count",
-            AmzHeaderSkipDestinationValidation = "x-amz-skip-destination-validation";
+            AmzHeaderSkipDestinationValidation = "x-amz-skip-destination-validation",
+            AmzHeaderChecksumAlgorithm      = "x-amz-checksum-algorithm",
+            AmzHeaderSdkChecksumAlgorithm   = "x-amz-sdk-checksum-algorithm",
+            AmzHeaderChecksumMode           = "x-amz-checksum-mode";
 
         internal static string
             AmzHeaderRestoreOutputPath      = "x-amz-restore-output-path";
@@ -122,5 +125,8 @@ namespace Amazon.S3.Util
             ResponseHeaderOverrides.RESPONSE_CONTENT_TYPE,
             ResponseHeaderOverrides.RESPONSE_EXPIRES
         };
+
+        // S3 Request xmlns sttribute value
+        internal const string S3RequestXmlNamespace = "http://s3.amazonaws.com/doc/2006-03-01/";
     }
 }

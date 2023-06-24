@@ -60,6 +60,14 @@ namespace Amazon.Appflow.Model
         }
 
         /// <summary>
+        /// Paginator for ListConnectors operation
+        ///</summary>
+        public IListConnectorsPaginator ListConnectors(ListConnectorsRequest request) 
+        {
+            return new ListConnectorsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListFlows operation
         ///</summary>
         public IListFlowsPaginator ListFlows(ListFlowsRequest request) 

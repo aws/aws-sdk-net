@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Specifies configurations for one or more training jobs that Amazon SageMaker runs
-    /// to test the algorithm.
+    /// Specifies configurations for one or more training jobs that SageMaker runs to test
+    /// the algorithm.
     /// </summary>
     public partial class AlgorithmValidationSpecification
     {
@@ -41,8 +41,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property ValidationProfiles. 
         /// <para>
         /// An array of <code>AlgorithmValidationProfile</code> objects, each of which specifies
-        /// a training job and batch transform job that Amazon SageMaker runs to validate your
-        /// algorithm.
+        /// a training job and batch transform job that SageMaker runs to validate your algorithm.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1)]
@@ -61,7 +60,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ValidationRole. 
         /// <para>
-        /// The IAM roles that Amazon SageMaker uses to run the training jobs.
+        /// The IAM roles that SageMaker uses to run the training jobs.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]

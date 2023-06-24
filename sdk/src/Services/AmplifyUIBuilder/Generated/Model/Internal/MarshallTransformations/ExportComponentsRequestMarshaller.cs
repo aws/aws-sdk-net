@@ -55,7 +55,7 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
         public IRequest Marshall(ExportComponentsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.AmplifyUIBuilder");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-08-11";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-08-11";
             request.HttpMethod = "GET";
 
             if (!publicRequest.IsSetAppId())
@@ -64,7 +64,11 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetEnvironmentName())
                 throw new AmazonAmplifyUIBuilderException("Request object does not have required field EnvironmentName set");
             request.AddPathResource("{environmentName}", StringUtils.FromString(publicRequest.EnvironmentName));
+            
+            if (publicRequest.IsSetNextToken())
+                request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
             request.ResourcePath = "/export/app/{appId}/environment/{environmentName}/components";
+            request.UseQueryString = true;
 
             return request;
         }

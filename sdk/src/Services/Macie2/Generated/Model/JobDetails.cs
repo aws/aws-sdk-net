@@ -64,10 +64,7 @@ namespace Amazon.Macie2.Model
         /// UNKNOWN - An exception occurred when Amazon Macie attempted to retrieve job data for
         /// the bucket.
         /// </para>
-        /// </li></ul> 
-        /// <para>
-        /// 
-        /// </para>
+        /// </li></ul>
         /// </summary>
         public IsDefinedInJob IsDefinedInJob
         {

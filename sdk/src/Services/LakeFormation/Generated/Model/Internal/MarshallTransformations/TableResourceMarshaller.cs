@@ -34,7 +34,7 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// TableResource Marshaller
-    /// </summary>       
+    /// </summary>
     public class TableResourceMarshaller : IRequestMarshaller<TableResource, JsonMarshallerContext> 
     {
         /// <summary>
@@ -78,7 +78,7 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static TableResourceMarshaller Instance = new TableResourceMarshaller();
 
     }

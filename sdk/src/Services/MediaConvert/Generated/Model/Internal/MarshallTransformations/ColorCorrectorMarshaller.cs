@@ -34,7 +34,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ColorCorrector Marshaller
-    /// </summary>       
+    /// </summary>
     public class ColorCorrectorMarshaller : IRequestMarshaller<ColorCorrector, JsonMarshallerContext> 
     {
         /// <summary>
@@ -49,6 +49,17 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("brightness");
                 context.Writer.Write(requestObject.Brightness);
+            }
+
+            if(requestObject.IsSetClipLimits())
+            {
+                context.Writer.WritePropertyName("clipLimits");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ClipLimitsMarshaller.Instance;
+                marshaller.Marshall(requestObject.ClipLimits, context);
+
+                context.Writer.WriteObjectEnd();
             }
 
             if(requestObject.IsSetColorSpaceConversion())
@@ -74,6 +85,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetHdrToSdrToneMapper())
+            {
+                context.Writer.WritePropertyName("hdrToSdrToneMapper");
+                context.Writer.Write(requestObject.HdrToSdrToneMapper);
+            }
+
             if(requestObject.IsSetHue())
             {
                 context.Writer.WritePropertyName("hue");
@@ -92,11 +109,17 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Saturation);
             }
 
+            if(requestObject.IsSetSdrReferenceWhiteLevel())
+            {
+                context.Writer.WritePropertyName("sdrReferenceWhiteLevel");
+                context.Writer.Write(requestObject.SdrReferenceWhiteLevel);
+            }
+
         }
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ColorCorrectorMarshaller Instance = new ColorCorrectorMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AutoMLChannel Marshaller
-    /// </summary>       
+    /// </summary>
     public class AutoMLChannelMarshaller : IRequestMarshaller<AutoMLChannel, JsonMarshallerContext> 
     {
         /// <summary>
@@ -45,10 +45,22 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AutoMLChannel requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetChannelType())
+            {
+                context.Writer.WritePropertyName("ChannelType");
+                context.Writer.Write(requestObject.ChannelType);
+            }
+
             if(requestObject.IsSetCompressionType())
             {
                 context.Writer.WritePropertyName("CompressionType");
                 context.Writer.Write(requestObject.CompressionType);
+            }
+
+            if(requestObject.IsSetContentType())
+            {
+                context.Writer.WritePropertyName("ContentType");
+                context.Writer.Write(requestObject.ContentType);
             }
 
             if(requestObject.IsSetDataSource())
@@ -62,6 +74,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetSampleWeightAttributeName())
+            {
+                context.Writer.WritePropertyName("SampleWeightAttributeName");
+                context.Writer.Write(requestObject.SampleWeightAttributeName);
+            }
+
             if(requestObject.IsSetTargetAttributeName())
             {
                 context.Writer.WritePropertyName("TargetAttributeName");
@@ -72,7 +90,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AutoMLChannelMarshaller Instance = new AutoMLChannelMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// PosixUser Marshaller
-    /// </summary>       
+    /// </summary>
     public class PosixUserMarshaller : IRequestMarshaller<PosixUser, JsonMarshallerContext> 
     {
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static PosixUserMarshaller Instance = new PosixUserMarshaller();
 
     }

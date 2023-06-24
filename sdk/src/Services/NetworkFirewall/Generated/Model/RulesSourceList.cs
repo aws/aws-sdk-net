@@ -43,7 +43,7 @@ namespace Amazon.NetworkFirewall.Model
     /// of the deployment VPC, you set the <code>HOME_NET</code> rule variable to include
     /// the CIDR range of the deployment VPC plus the other CIDR ranges. For more information,
     /// see <a>RuleVariables</a> in this guide and <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/stateful-rule-groups-domain-names.html">Stateful
-    /// domain list rule groups in AWS Network Firewall</a> in the <i>Network Firewall Developer
+    /// domain list rule groups in Network Firewall</a> in the <i>Network Firewall Developer
     /// Guide</i>.
     /// </para>
     /// </summary>
@@ -75,8 +75,8 @@ namespace Amazon.NetworkFirewall.Model
         /// <summary>
         /// Gets and sets the property Targets. 
         /// <para>
-        /// The domains that you want to inspect for in your traffic flows. To provide multiple
-        /// domains, separate them with commas. Valid domain specifications are the following:
+        /// The domains that you want to inspect for in your traffic flows. Valid domain specifications
+        /// are the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>

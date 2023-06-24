@@ -47,6 +47,17 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
         {
             StartStreamProcessorResponse response = new StartStreamProcessorResponse();
 
+            context.Read();
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
+            {
+                if (context.TestExpression("SessionId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.SessionId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+            }
 
             return response;
         }

@@ -34,7 +34,7 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// UsageStatisticsFilter Marshaller
-    /// </summary>       
+    /// </summary>
     public class UsageStatisticsFilterMarshaller : IRequestMarshaller<UsageStatisticsFilter, JsonMarshallerContext> 
     {
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static UsageStatisticsFilterMarshaller Instance = new UsageStatisticsFilterMarshaller();
 
     }

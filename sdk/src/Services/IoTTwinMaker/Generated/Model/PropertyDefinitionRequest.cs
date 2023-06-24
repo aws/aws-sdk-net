@@ -36,6 +36,7 @@ namespace Amazon.IoTTwinMaker.Model
         private Dictionary<string, string> _configuration = new Dictionary<string, string>();
         private DataType _dataType;
         private DataValue _defaultValue;
+        private string _displayName;
         private bool? _isExternalId;
         private bool? _isRequiredInEntity;
         private bool? _isStoredExternally;
@@ -94,6 +95,25 @@ namespace Amazon.IoTTwinMaker.Model
         internal bool IsSetDefaultValue()
         {
             return this._defaultValue != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DisplayName. 
+        /// <para>
+        /// A friendly name for the property.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=256)]
+        public string DisplayName
+        {
+            get { return this._displayName; }
+            set { this._displayName = value; }
+        }
+
+        // Check to see if DisplayName property is set
+        internal bool IsSetDisplayName()
+        {
+            return this._displayName != null;
         }
 
         /// <summary>

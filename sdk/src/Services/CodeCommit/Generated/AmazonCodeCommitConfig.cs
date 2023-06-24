@@ -17,22 +17,22 @@
  * Do not modify this file. This file is generated from the codecommit-2015-04-13.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
-
+using Amazon.CodeCommit.Internal;
 
 namespace Amazon.CodeCommit
 {
     /// <summary>
     /// Configuration for accessing Amazon CodeCommit service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonCodeCommitConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.105");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.147");
 
         private string _userAgent = UserAgentString;
 
@@ -40,8 +40,10 @@ namespace Amazon.CodeCommit
         /// Default constructor
         /// </summary>
         public AmazonCodeCommitConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonCodeCommitDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "codecommit";
+            this.EndpointProvider = new AmazonCodeCommitEndpointProvider();
         }
 
         /// <summary>
@@ -76,5 +78,6 @@ namespace Amazon.CodeCommit
                 return _userAgent;
             }
         }
+
     }
 }

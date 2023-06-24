@@ -55,15 +55,27 @@ namespace Amazon.Panorama.Model.Internal.MarshallTransformations
         public IRequest Marshall(ListDevicesRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Panorama");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-07-24";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-07-24";
             request.HttpMethod = "GET";
 
+            
+            if (publicRequest.IsSetDeviceAggregatedStatusFilter())
+                request.Parameters.Add("DeviceAggregatedStatusFilter", StringUtils.FromString(publicRequest.DeviceAggregatedStatusFilter));
             
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("MaxResults", StringUtils.FromInt(publicRequest.MaxResults));
             
+            if (publicRequest.IsSetNameFilter())
+                request.Parameters.Add("NameFilter", StringUtils.FromString(publicRequest.NameFilter));
+            
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("NextToken", StringUtils.FromString(publicRequest.NextToken));
+            
+            if (publicRequest.IsSetSortBy())
+                request.Parameters.Add("SortBy", StringUtils.FromString(publicRequest.SortBy));
+            
+            if (publicRequest.IsSetSortOrder())
+                request.Parameters.Add("SortOrder", StringUtils.FromString(publicRequest.SortOrder));
             request.ResourcePath = "/devices";
             request.UseQueryString = true;
 

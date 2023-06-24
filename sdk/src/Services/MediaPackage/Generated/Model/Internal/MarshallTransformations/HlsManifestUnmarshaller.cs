@@ -70,6 +70,18 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
                     unmarshalledObject.AdMarkers = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("adsOnDeliveryRestrictions", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AdsOnDeliveryRestrictions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("adTriggers", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.AdTriggers = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("id", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

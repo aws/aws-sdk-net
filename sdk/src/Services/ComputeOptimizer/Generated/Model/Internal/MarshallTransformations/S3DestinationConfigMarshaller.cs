@@ -34,7 +34,7 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// S3DestinationConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class S3DestinationConfigMarshaller : IRequestMarshaller<S3DestinationConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static S3DestinationConfigMarshaller Instance = new S3DestinationConfigMarshaller();
 
     }

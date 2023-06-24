@@ -29,10 +29,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WAFV2.Model
 {
     /// <summary>
-    /// One query argument in a web request, identified by name, for example <i>UserName</i>
-    /// or <i>SalesRegion</i>. The name can be up to 30 characters long and isn't case sensitive.
+    /// Inspect one query argument in the web request, identified by name, for example <i>UserName</i>
+    /// or <i>SalesRegion</i>. The name isn't case sensitive. 
     /// 
-    /// 
+    ///  
+    /// <para>
+    /// This is used to indicate the web request component to inspect, in the <a>FieldToMatch</a>
+    /// specification. 
+    /// </para>
     ///  
     /// <para>
     /// Example JSON: <code>"SingleQueryArgument": { "Name": "myArgument" }</code> 

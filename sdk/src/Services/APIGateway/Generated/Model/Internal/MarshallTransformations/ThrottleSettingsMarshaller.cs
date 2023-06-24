@@ -34,7 +34,7 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ThrottleSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class ThrottleSettingsMarshaller : IRequestMarshaller<ThrottleSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ThrottleSettingsMarshaller Instance = new ThrottleSettingsMarshaller();
 
     }

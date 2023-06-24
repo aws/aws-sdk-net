@@ -82,6 +82,12 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.SampleUtterances = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("slotCaptureSetting", targetDepth))
+                {
+                    var unmarshaller = SlotCaptureSettingUnmarshaller.Instance;
+                    unmarshalledObject.SlotCaptureSetting = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("slotConstraint", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

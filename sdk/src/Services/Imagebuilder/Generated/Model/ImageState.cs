@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
-    /// Image state shows the image status and the reason for that status.
+    /// Image status and the reason for that status.
     /// </summary>
     public partial class ImageState
     {
@@ -39,7 +39,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Reason. 
         /// <para>
-        /// The reason for the image's status.
+        /// The reason for the status of the image.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

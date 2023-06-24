@@ -34,7 +34,7 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// BatchPolicy Marshaller
-    /// </summary>       
+    /// </summary>
     public class BatchPolicyMarshaller : IRequestMarshaller<BatchPolicy, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static BatchPolicyMarshaller Instance = new BatchPolicyMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// PatchFilter Marshaller
-    /// </summary>       
+    /// </summary>
     public class PatchFilterMarshaller : IRequestMarshaller<PatchFilter, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static PatchFilterMarshaller Instance = new PatchFilterMarshaller();
 
     }

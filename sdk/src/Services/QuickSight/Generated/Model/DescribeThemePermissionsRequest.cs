@@ -62,7 +62,7 @@ namespace Amazon.QuickSight.Model
         /// The ID for the theme that you want to describe permissions for.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=2048)]
+        [AWSProperty(Required=true, Min=1, Max=512)]
         public string ThemeId
         {
             get { return this._themeId; }

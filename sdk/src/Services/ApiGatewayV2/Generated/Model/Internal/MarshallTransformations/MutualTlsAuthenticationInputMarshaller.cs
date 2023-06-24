@@ -34,7 +34,7 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// MutualTlsAuthenticationInput Marshaller
-    /// </summary>       
+    /// </summary>
     public class MutualTlsAuthenticationInputMarshaller : IRequestMarshaller<MutualTlsAuthenticationInput, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static MutualTlsAuthenticationInputMarshaller Instance = new MutualTlsAuthenticationInputMarshaller();
 
     }

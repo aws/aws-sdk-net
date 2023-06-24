@@ -115,8 +115,29 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property ReplicaStatus. 
         /// <para>
-        /// The current status of the replica.
+        /// The current status of the replica. Valid values are as follows:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>ACTIVE</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>CREATING</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>CREATION_FAILED</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>DELETING</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>UPDATING</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string ReplicaStatus
         {

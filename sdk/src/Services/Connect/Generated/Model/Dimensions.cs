@@ -35,6 +35,7 @@ namespace Amazon.Connect.Model
     {
         private Channel _channel;
         private QueueReference _queue;
+        private RoutingProfileReference _routingProfile;
 
         /// <summary>
         /// Gets and sets the property Channel. 
@@ -70,6 +71,21 @@ namespace Amazon.Connect.Model
         internal bool IsSetQueue()
         {
             return this._queue != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RoutingProfile.
+        /// </summary>
+        public RoutingProfileReference RoutingProfile
+        {
+            get { return this._routingProfile; }
+            set { this._routingProfile = value; }
+        }
+
+        // Check to see if RoutingProfile property is set
+        internal bool IsSetRoutingProfile()
+        {
+            return this._routingProfile != null;
         }
 
     }

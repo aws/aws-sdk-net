@@ -60,6 +60,7 @@ namespace Amazon.Neptune.Model
         private bool? _enableIAMDatabaseAuthentication;
         private string _engine;
         private string _engineVersion;
+        private string _globalClusterIdentifier;
         private string _kmsKeyId;
         private string _masterUsername;
         private string _masterUserPassword;
@@ -69,6 +70,7 @@ namespace Amazon.Neptune.Model
         private string _preferredMaintenanceWindow;
         private string _preSignedUrl;
         private string _replicationSourceIdentifier;
+        private ServerlessV2ScalingConfiguration _serverlessV2ScalingConfiguration;
         private bool? _storageEncrypted;
         private List<Tag> _tags = new List<Tag>();
         private List<string> _vpcSecurityGroupIds = new List<string>();
@@ -379,6 +381,25 @@ namespace Amazon.Neptune.Model
         }
 
         /// <summary>
+        /// Gets and sets the property GlobalClusterIdentifier. 
+        /// <para>
+        /// The ID of the Neptune global database to which this new DB cluster should be added.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string GlobalClusterIdentifier
+        {
+            get { return this._globalClusterIdentifier; }
+            set { this._globalClusterIdentifier = value; }
+        }
+
+        // Check to see if GlobalClusterIdentifier property is set
+        internal bool IsSetGlobalClusterIdentifier()
+        {
+            return this._globalClusterIdentifier != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
         /// The Amazon KMS key identifier for an encrypted DB cluster.
@@ -626,6 +647,21 @@ namespace Amazon.Neptune.Model
         internal bool IsSetReplicationSourceIdentifier()
         {
             return this._replicationSourceIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServerlessV2ScalingConfiguration.
+        /// </summary>
+        public ServerlessV2ScalingConfiguration ServerlessV2ScalingConfiguration
+        {
+            get { return this._serverlessV2ScalingConfiguration; }
+            set { this._serverlessV2ScalingConfiguration = value; }
+        }
+
+        // Check to see if ServerlessV2ScalingConfiguration property is set
+        internal bool IsSetServerlessV2ScalingConfiguration()
+        {
+            return this._serverlessV2ScalingConfiguration != null;
         }
 
         /// <summary>

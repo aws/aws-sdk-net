@@ -34,7 +34,7 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SessionKeysAbpV1_0_x Marshaller
-    /// </summary>       
+    /// </summary>
     public class SessionKeysAbpV1_0_xMarshaller : IRequestMarshaller<SessionKeysAbpV1_0_x, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SessionKeysAbpV1_0_xMarshaller Instance = new SessionKeysAbpV1_0_xMarshaller();
 
     }

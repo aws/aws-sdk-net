@@ -34,7 +34,7 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SidewalkEventNotificationConfigurations Marshaller
-    /// </summary>       
+    /// </summary>
     public class SidewalkEventNotificationConfigurationsMarshaller : IRequestMarshaller<SidewalkEventNotificationConfigurations, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SidewalkEventNotificationConfigurationsMarshaller Instance = new SidewalkEventNotificationConfigurationsMarshaller();
 
     }

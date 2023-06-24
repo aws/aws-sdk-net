@@ -56,7 +56,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.QuickSight");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-04-01";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-04-01";
             request.HttpMethod = "POST";
 
             if (!publicRequest.IsSetAwsAccountId())
@@ -78,6 +78,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 
                     var marshaller = DashboardPublishOptionsMarshaller.Instance;
                     marshaller.Marshall(publicRequest.DashboardPublishOptions, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetDefinition())
+                {
+                    context.Writer.WritePropertyName("Definition");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = DashboardVersionDefinitionMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Definition, context);
 
                     context.Writer.WriteObjectEnd();
                 }
@@ -154,7 +165,6 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.VersionDescription);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

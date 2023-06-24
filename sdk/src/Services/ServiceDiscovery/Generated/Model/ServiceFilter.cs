@@ -49,16 +49,6 @@ namespace Amazon.ServiceDiscovery.Model
         ///  <code>EQ</code>: When you specify <code>EQ</code>, specify one namespace ID for <code>Values</code>.
         /// <code>EQ</code> is the default condition and can be omitted.
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>IN</code>: When you specify <code>IN</code>, specify a list of the IDs for
-        /// the namespaces that you want <code>ListServices</code> to return a list of services
-        /// for.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>BETWEEN</code>: Not applicable.
-        /// </para>
         ///  </li> </ul>
         /// </summary>
         public FilterCondition Condition

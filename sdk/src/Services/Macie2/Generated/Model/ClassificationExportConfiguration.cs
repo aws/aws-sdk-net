@@ -30,8 +30,7 @@ namespace Amazon.Macie2.Model
 {
     /// <summary>
     /// Specifies where to store data classification results, and the encryption settings
-    /// to use when storing results in that location. Currently, you can store classification
-    /// results only in an S3 bucket.
+    /// to use when storing results in that location. The location must be an S3 bucket.
     /// </summary>
     public partial class ClassificationExportConfiguration
     {

@@ -92,9 +92,17 @@ namespace Amazon.S3.Transfer.Internal
 
                     // Valid for serial uploads when
                     // TransferUtilityDownloadDirectoryRequest.DownloadFilesConcurrently is set to false.
-                    this._currentFile = s3o.Key.Substring(listRequest.Prefix.Length);
+                    int prefixLength = listRequest.Prefix.Length;
 
-                    var downloadRequest = ConstructTransferUtilityDownloadRequest(s3o, listRequest.Prefix.Length);
+                    // If DisableSlashCorrection is enabled (i.e. S3Directory is a key prefix) and it doesn't end with '/' then we need the parent directory to properly construct download path.
+                    if (_request.DisableSlashCorrection && !listRequest.Prefix.EndsWith("/"))
+                    {
+                        prefixLength = listRequest.Prefix.LastIndexOf("/") + 1;
+                    }
+
+                    this._currentFile = s3o.Key.Substring(prefixLength);
+
+                    var downloadRequest = ConstructTransferUtilityDownloadRequest(s3o, prefixLength);
                     var command = new DownloadCommand(this._s3Client, downloadRequest);
 
                     var task = ExecuteCommandAsync(command, internalCts, asyncThrottler);

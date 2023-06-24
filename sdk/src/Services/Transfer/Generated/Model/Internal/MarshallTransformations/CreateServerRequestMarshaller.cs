@@ -58,7 +58,7 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
             string target = "TransferService.CreateServer";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-11-05";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-11-05";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -125,6 +125,29 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.LoggingRole);
                 }
 
+                if(publicRequest.IsSetPostAuthenticationLoginBanner())
+                {
+                    context.Writer.WritePropertyName("PostAuthenticationLoginBanner");
+                    context.Writer.Write(publicRequest.PostAuthenticationLoginBanner);
+                }
+
+                if(publicRequest.IsSetPreAuthenticationLoginBanner())
+                {
+                    context.Writer.WritePropertyName("PreAuthenticationLoginBanner");
+                    context.Writer.Write(publicRequest.PreAuthenticationLoginBanner);
+                }
+
+                if(publicRequest.IsSetProtocolDetails())
+                {
+                    context.Writer.WritePropertyName("ProtocolDetails");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ProtocolDetailsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ProtocolDetails, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetProtocols())
                 {
                     context.Writer.WritePropertyName("Protocols");
@@ -140,6 +163,17 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("SecurityPolicyName");
                     context.Writer.Write(publicRequest.SecurityPolicyName);
+                }
+
+                if(publicRequest.IsSetStructuredLogDestinations())
+                {
+                    context.Writer.WritePropertyName("StructuredLogDestinations");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestStructuredLogDestinationsListValue in publicRequest.StructuredLogDestinations)
+                    {
+                            context.Writer.Write(publicRequestStructuredLogDestinationsListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
                 }
 
                 if(publicRequest.IsSetTags())
@@ -169,7 +203,6 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

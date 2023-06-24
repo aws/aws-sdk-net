@@ -75,10 +75,10 @@ namespace Amazon.DevOpsGuru
         ///  
         /// <para>
         /// If you use an Amazon SNS topic in another account, you must attach a policy to it
-        /// that grants DevOps Guru permission to it notifications. DevOps Guru adds the required
-        /// policy on your behalf to send notifications using Amazon SNS in your account. For
-        /// more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/sns-required-permissions.html">Permissions
-        /// for cross account Amazon SNS topics</a>.
+        /// that grants DevOps Guru permission to send it notifications. DevOps Guru adds the
+        /// required policy on your behalf to send notifications using Amazon SNS in your account.
+        /// DevOps Guru only supports standard SNS topics. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/sns-required-permissions.html">Permissions
+        /// for Amazon SNS topics</a>.
         /// </para>
         ///  
         /// <para>
@@ -144,6 +144,68 @@ namespace Amazon.DevOpsGuru
         /// <returns>Returns a  AddNotificationChannelResult from DevOpsGuru.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/AddNotificationChannel">REST API Reference for AddNotificationChannel Operation</seealso>
         AddNotificationChannelResponse EndAddNotificationChannel(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteInsight
+
+
+        /// <summary>
+        /// Deletes the insight along with the associated anomalies, events and recommendations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteInsight service method.</param>
+        /// 
+        /// <returns>The response from the DeleteInsight service method, as returned by DevOpsGuru.</returns>
+        /// <exception cref="Amazon.DevOpsGuru.Model.AccessDeniedException">
+        /// You don't have permissions to perform the requested operation. The user or role that
+        /// is making the request must have at least one IAM permissions policy attached that
+        /// grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// Management</a> in the <i>IAM User Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsGuru.Model.ConflictException">
+        /// An exception that is thrown when a conflict occurs.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsGuru.Model.InternalServerException">
+        /// An internal failure in an Amazon service occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsGuru.Model.ResourceNotFoundException">
+        /// A requested resource could not be found
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsGuru.Model.ThrottlingException">
+        /// The request was denied due to a request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsGuru.Model.ValidationException">
+        /// Contains information about data passed in to a field during a request that is not
+        /// valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/DeleteInsight">REST API Reference for DeleteInsight Operation</seealso>
+        DeleteInsightResponse DeleteInsight(DeleteInsightRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteInsight operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteInsight operation on AmazonDevOpsGuruClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteInsight
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/DeleteInsight">REST API Reference for DeleteInsight Operation</seealso>
+        IAsyncResult BeginDeleteInsight(DeleteInsightRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteInsight operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteInsight.</param>
+        /// 
+        /// <returns>Returns a  DeleteInsightResult from DevOpsGuru.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/DeleteInsight">REST API Reference for DeleteInsight Operation</seealso>
+        DeleteInsightResponse EndDeleteInsight(IAsyncResult asyncResult);
 
         #endregion
         
@@ -319,6 +381,65 @@ namespace Amazon.DevOpsGuru
         /// <returns>Returns a  DescribeAnomalyResult from DevOpsGuru.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/DescribeAnomaly">REST API Reference for DescribeAnomaly Operation</seealso>
         DescribeAnomalyResponse EndDescribeAnomaly(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeEventSourcesConfig
+
+
+        /// <summary>
+        /// Returns the integration status of services that are integrated with DevOps Guru as
+        /// Consumer via EventBridge. The one service that can be integrated with DevOps Guru
+        /// is Amazon CodeGuru Profiler, which can produce proactive recommendations which can
+        /// be stored and viewed in DevOps Guru.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEventSourcesConfig service method.</param>
+        /// 
+        /// <returns>The response from the DescribeEventSourcesConfig service method, as returned by DevOpsGuru.</returns>
+        /// <exception cref="Amazon.DevOpsGuru.Model.AccessDeniedException">
+        /// You don't have permissions to perform the requested operation. The user or role that
+        /// is making the request must have at least one IAM permissions policy attached that
+        /// grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// Management</a> in the <i>IAM User Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsGuru.Model.InternalServerException">
+        /// An internal failure in an Amazon service occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsGuru.Model.ThrottlingException">
+        /// The request was denied due to a request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsGuru.Model.ValidationException">
+        /// Contains information about data passed in to a field during a request that is not
+        /// valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/DescribeEventSourcesConfig">REST API Reference for DescribeEventSourcesConfig Operation</seealso>
+        DescribeEventSourcesConfigResponse DescribeEventSourcesConfig(DescribeEventSourcesConfigRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeEventSourcesConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEventSourcesConfig operation on AmazonDevOpsGuruClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeEventSourcesConfig
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/DescribeEventSourcesConfig">REST API Reference for DescribeEventSourcesConfig Operation</seealso>
+        IAsyncResult BeginDescribeEventSourcesConfig(DescribeEventSourcesConfigRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeEventSourcesConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeEventSourcesConfig.</param>
+        /// 
+        /// <returns>Returns a  DescribeEventSourcesConfigResult from DevOpsGuru.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/DescribeEventSourcesConfig">REST API Reference for DescribeEventSourcesConfig Operation</seealso>
+        DescribeEventSourcesConfigResponse EndDescribeEventSourcesConfig(IAsyncResult asyncResult);
 
         #endregion
         
@@ -696,6 +817,9 @@ namespace Amazon.DevOpsGuru
         /// <exception cref="Amazon.DevOpsGuru.Model.InternalServerException">
         /// An internal failure in an Amazon service occurred.
         /// </exception>
+        /// <exception cref="Amazon.DevOpsGuru.Model.ResourceNotFoundException">
+        /// A requested resource could not be found
+        /// </exception>
         /// <exception cref="Amazon.DevOpsGuru.Model.ThrottlingException">
         /// The request was denied due to a request throttling.
         /// </exception>
@@ -921,6 +1045,65 @@ namespace Amazon.DevOpsGuru
 
         #endregion
         
+        #region  ListAnomalousLogGroups
+
+
+        /// <summary>
+        /// Returns the list of log groups that contain log anomalies.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAnomalousLogGroups service method.</param>
+        /// 
+        /// <returns>The response from the ListAnomalousLogGroups service method, as returned by DevOpsGuru.</returns>
+        /// <exception cref="Amazon.DevOpsGuru.Model.AccessDeniedException">
+        /// You don't have permissions to perform the requested operation. The user or role that
+        /// is making the request must have at least one IAM permissions policy attached that
+        /// grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// Management</a> in the <i>IAM User Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsGuru.Model.InternalServerException">
+        /// An internal failure in an Amazon service occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsGuru.Model.ResourceNotFoundException">
+        /// A requested resource could not be found
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsGuru.Model.ThrottlingException">
+        /// The request was denied due to a request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsGuru.Model.ValidationException">
+        /// Contains information about data passed in to a field during a request that is not
+        /// valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/ListAnomalousLogGroups">REST API Reference for ListAnomalousLogGroups Operation</seealso>
+        ListAnomalousLogGroupsResponse ListAnomalousLogGroups(ListAnomalousLogGroupsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAnomalousLogGroups operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAnomalousLogGroups operation on AmazonDevOpsGuruClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAnomalousLogGroups
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/ListAnomalousLogGroups">REST API Reference for ListAnomalousLogGroups Operation</seealso>
+        IAsyncResult BeginListAnomalousLogGroups(ListAnomalousLogGroupsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListAnomalousLogGroups operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAnomalousLogGroups.</param>
+        /// 
+        /// <returns>Returns a  ListAnomalousLogGroupsResult from DevOpsGuru.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/ListAnomalousLogGroups">REST API Reference for ListAnomalousLogGroups Operation</seealso>
+        ListAnomalousLogGroupsResponse EndListAnomalousLogGroups(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListEvents
 
 
@@ -1036,6 +1219,60 @@ namespace Amazon.DevOpsGuru
         /// <returns>Returns a  ListInsightsResult from DevOpsGuru.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/ListInsights">REST API Reference for ListInsights Operation</seealso>
         ListInsightsResponse EndListInsights(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListMonitoredResources
+
+
+        /// <summary>
+        /// Returns the list of all log groups that are being monitored and tagged by DevOps
+        /// Guru.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMonitoredResources service method.</param>
+        /// 
+        /// <returns>The response from the ListMonitoredResources service method, as returned by DevOpsGuru.</returns>
+        /// <exception cref="Amazon.DevOpsGuru.Model.InternalServerException">
+        /// An internal failure in an Amazon service occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsGuru.Model.ResourceNotFoundException">
+        /// A requested resource could not be found
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsGuru.Model.ThrottlingException">
+        /// The request was denied due to a request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsGuru.Model.ValidationException">
+        /// Contains information about data passed in to a field during a request that is not
+        /// valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/ListMonitoredResources">REST API Reference for ListMonitoredResources Operation</seealso>
+        ListMonitoredResourcesResponse ListMonitoredResources(ListMonitoredResourcesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListMonitoredResources operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListMonitoredResources operation on AmazonDevOpsGuruClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListMonitoredResources
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/ListMonitoredResources">REST API Reference for ListMonitoredResources Operation</seealso>
+        IAsyncResult BeginListMonitoredResources(ListMonitoredResourcesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListMonitoredResources operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListMonitoredResources.</param>
+        /// 
+        /// <returns>Returns a  ListMonitoredResourcesResult from DevOpsGuru.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/ListMonitoredResources">REST API Reference for ListMonitoredResources Operation</seealso>
+        ListMonitoredResourcesResponse EndListMonitoredResources(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1345,9 +1582,9 @@ namespace Amazon.DevOpsGuru
 
         /// <summary>
         /// Returns a list of insights in your Amazon Web Services account. You can specify which
-        /// insights are returned by their start time, one or more statuses (<code>ONGOING</code>,
-        /// <code>CLOSED</code>, and <code>CLOSED</code>), one or more severities (<code>LOW</code>,
-        /// <code>MEDIUM</code>, and <code>HIGH</code>), and type (<code>REACTIVE</code> or <code>PROACTIVE</code>).
+        /// insights are returned by their start time, one or more statuses (<code>ONGOING</code>
+        /// or <code>CLOSED</code>), one or more severities (<code>LOW</code>, <code>MEDIUM</code>,
+        /// and <code>HIGH</code>), and type (<code>REACTIVE</code> or <code>PROACTIVE</code>).
         /// 
         /// 
         ///  
@@ -1534,6 +1771,65 @@ namespace Amazon.DevOpsGuru
         /// <returns>Returns a  StartCostEstimationResult from DevOpsGuru.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/StartCostEstimation">REST API Reference for StartCostEstimation Operation</seealso>
         StartCostEstimationResponse EndStartCostEstimation(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateEventSourcesConfig
+
+
+        /// <summary>
+        /// Enables or disables integration with a service that can be integrated with DevOps
+        /// Guru. The one service that can be integrated with DevOps Guru is Amazon CodeGuru Profiler,
+        /// which can produce proactive recommendations which can be stored and viewed in DevOps
+        /// Guru.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateEventSourcesConfig service method.</param>
+        /// 
+        /// <returns>The response from the UpdateEventSourcesConfig service method, as returned by DevOpsGuru.</returns>
+        /// <exception cref="Amazon.DevOpsGuru.Model.AccessDeniedException">
+        /// You don't have permissions to perform the requested operation. The user or role that
+        /// is making the request must have at least one IAM permissions policy attached that
+        /// grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// Management</a> in the <i>IAM User Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsGuru.Model.InternalServerException">
+        /// An internal failure in an Amazon service occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsGuru.Model.ThrottlingException">
+        /// The request was denied due to a request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsGuru.Model.ValidationException">
+        /// Contains information about data passed in to a field during a request that is not
+        /// valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/UpdateEventSourcesConfig">REST API Reference for UpdateEventSourcesConfig Operation</seealso>
+        UpdateEventSourcesConfigResponse UpdateEventSourcesConfig(UpdateEventSourcesConfigRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateEventSourcesConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateEventSourcesConfig operation on AmazonDevOpsGuruClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateEventSourcesConfig
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/UpdateEventSourcesConfig">REST API Reference for UpdateEventSourcesConfig Operation</seealso>
+        IAsyncResult BeginUpdateEventSourcesConfig(UpdateEventSourcesConfigRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateEventSourcesConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateEventSourcesConfig.</param>
+        /// 
+        /// <returns>Returns a  UpdateEventSourcesConfigResult from DevOpsGuru.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/UpdateEventSourcesConfig">REST API Reference for UpdateEventSourcesConfig Operation</seealso>
+        UpdateEventSourcesConfigResponse EndUpdateEventSourcesConfig(IAsyncResult asyncResult);
 
         #endregion
         

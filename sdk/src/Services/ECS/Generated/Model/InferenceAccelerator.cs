@@ -42,7 +42,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property DeviceName. 
         /// <para>
         /// The Elastic Inference accelerator device name. The <code>deviceName</code> must also
-        /// be referenced in a container definition as a <a>ResourceRequirement</a>.
+        /// be referenced in a container definition as a <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ResourceRequirement.html">ResourceRequirement</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

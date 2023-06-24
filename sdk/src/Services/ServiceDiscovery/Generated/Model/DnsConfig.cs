@@ -29,8 +29,15 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ServiceDiscovery.Model
 {
     /// <summary>
-    /// A complex type that contains information about the Amazon Route 53 DNS records that
+    /// A complex type that contains information about the Amazon Route 53 DNS records that
     /// you want Cloud Map to create when you register an instance.
+    /// 
+    ///  <important> 
+    /// <para>
+    /// The record types of a service can only be changed by deleting the service and recreating
+    /// it with a new <code>Dnsconfig</code>.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class DnsConfig
     {
@@ -41,7 +48,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// <summary>
         /// Gets and sets the property DnsRecords. 
         /// <para>
-        /// An array that contains one <code>DnsRecord</code> object for each Route 53 DNS record
+        /// An array that contains one <code>DnsRecord</code> object for each Route 53 DNS record
         /// that you want Cloud Map to create when you register an instance.
         /// </para>
         /// </summary>
@@ -60,6 +67,11 @@ namespace Amazon.ServiceDiscovery.Model
 
         /// <summary>
         /// Gets and sets the property NamespaceId. 
+        /// <para>
+        ///  <i>Use NamespaceId in <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_Service.html">Service</a>
+        /// instead.</i> 
+        /// </para>
+        ///  
         /// <para>
         /// The ID of the namespace to use for DNS configuration.
         /// </para>
@@ -81,7 +93,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// <summary>
         /// Gets and sets the property RoutingPolicy. 
         /// <para>
-        /// The routing policy that you want to apply to all Route 53 DNS records that Cloud Map
+        /// The routing policy that you want to apply to all Route 53 DNS records that Cloud Map
         /// creates when you register an instance and specify this service.
         /// </para>
         ///  <note> 
@@ -95,50 +107,50 @@ namespace Amazon.ServiceDiscovery.Model
         /// </para>
         ///  <dl> <dt>MULTIVALUE</dt> <dd> 
         /// <para>
-        /// If you define a health check for the service and the health check is healthy, Route
-        /// 53 returns the applicable value for up to eight instances.
+        /// If you define a health check for the service and the health check is healthy, Route 53
+        /// returns the applicable value for up to eight instances.
         /// </para>
         ///  
         /// <para>
         /// For example, suppose that the service includes configurations for one <code>A</code>
-        /// record and a health check. You use the service to register 10 instances. Route 53
+        /// record and a health check. You use the service to register 10 instances. Route 53
         /// responds to DNS queries with IP addresses for up to eight healthy instances. If fewer
-        /// than eight instances are healthy, Route 53 responds to every DNS query with the IP
+        /// than eight instances are healthy, Route 53 responds to every DNS query with the IP
         /// addresses for all of the healthy instances.
         /// </para>
         ///  
         /// <para>
-        /// If you don't define a health check for the service, Route 53 assumes that all instances
+        /// If you don't define a health check for the service, Route 53 assumes that all instances
         /// are healthy and returns the values for up to eight instances.
         /// </para>
         ///  
         /// <para>
         /// For more information about the multivalue routing policy, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-multivalue">Multivalue
-        /// Answer Routing</a> in the <i>Route 53 Developer Guide</i>.
+        /// Answer Routing</a> in the <i>Route 53 Developer Guide</i>.
         /// </para>
         ///  </dd> <dt>WEIGHTED</dt> <dd> 
         /// <para>
-        /// Route 53 returns the applicable value from one randomly selected instance from among
+        /// Route 53 returns the applicable value from one randomly selected instance from among
         /// the instances that you registered using the same service. Currently, all records have
         /// the same weight, so you can't route more or less traffic to any instances.
         /// </para>
         ///  
         /// <para>
         /// For example, suppose that the service includes configurations for one <code>A</code>
-        /// record and a health check. You use the service to register 10 instances. Route 53
+        /// record and a health check. You use the service to register 10 instances. Route 53
         /// responds to DNS queries with the IP address for one randomly selected instance from
-        /// among the healthy instances. If no instances are healthy, Route 53 responds to DNS
+        /// among the healthy instances. If no instances are healthy, Route 53 responds to DNS
         /// queries as if all of the instances were healthy.
         /// </para>
         ///  
         /// <para>
-        /// If you don't define a health check for the service, Route 53 assumes that all instances
+        /// If you don't define a health check for the service, Route 53 assumes that all instances
         /// are healthy and returns the applicable value for one randomly selected instance.
         /// </para>
         ///  
         /// <para>
         /// For more information about the weighted routing policy, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-weighted">Weighted
-        /// Routing</a> in the <i>Route 53 Developer Guide</i>.
+        /// Routing</a> in the <i>Route 53 Developer Guide</i>.
         /// </para>
         ///  </dd> </dl>
         /// </summary>

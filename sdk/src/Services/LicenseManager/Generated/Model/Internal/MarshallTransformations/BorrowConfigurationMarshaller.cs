@@ -34,7 +34,7 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// BorrowConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class BorrowConfigurationMarshaller : IRequestMarshaller<BorrowConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static BorrowConfigurationMarshaller Instance = new BorrowConfigurationMarshaller();
 
     }

@@ -176,7 +176,7 @@ namespace Amazon.StorageGateway.Model
         /// Gets and sets the property DefaultStorageClass. 
         /// <para>
         /// The default storage class for objects put into an Amazon S3 bucket by the S3 File
-        /// Gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>. Optional.
+        /// Gateway. The default value is <code>S3_STANDARD</code>. Optional.
         /// </para>
         ///  
         /// <para>

@@ -58,7 +58,7 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             string target = "AWSWAF_20190729.UpdateWebACL";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-07-29";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-07-29";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -67,6 +67,17 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAssociationConfig())
+                {
+                    context.Writer.WritePropertyName("AssociationConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = AssociationConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.AssociationConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetCaptchaConfig())
                 {
                     context.Writer.WritePropertyName("CaptchaConfig");
@@ -74,6 +85,17 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 
                     var marshaller = CaptchaConfigMarshaller.Instance;
                     marshaller.Marshall(publicRequest.CaptchaConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetChallengeConfig())
+                {
+                    context.Writer.WritePropertyName("ChallengeConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ChallengeConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ChallengeConfig, context);
 
                     context.Writer.WriteObjectEnd();
                 }
@@ -154,6 +176,17 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Scope);
                 }
 
+                if(publicRequest.IsSetTokenDomains())
+                {
+                    context.Writer.WritePropertyName("TokenDomains");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestTokenDomainsListValue in publicRequest.TokenDomains)
+                    {
+                            context.Writer.Write(publicRequestTokenDomainsListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetVisibilityConfig())
                 {
                     context.Writer.WritePropertyName("VisibilityConfig");
@@ -165,7 +198,6 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

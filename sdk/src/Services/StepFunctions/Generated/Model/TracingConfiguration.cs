@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.StepFunctions.Model
 {
     /// <summary>
-    /// Selects whether or not the state machine's AWS X-Ray tracing is enabled. Default is
-    /// <code>false</code>
+    /// Selects whether or not the state machine's X-Ray tracing is enabled. Default is <code>false</code>
     /// </summary>
     public partial class TracingConfiguration
     {
@@ -39,7 +38,7 @@ namespace Amazon.StepFunctions.Model
         /// <summary>
         /// Gets and sets the property Enabled. 
         /// <para>
-        /// When set to <code>true</code>, AWS X-Ray tracing is enabled.
+        /// When set to <code>true</code>, X-Ray tracing is enabled.
         /// </para>
         /// </summary>
         public bool Enabled

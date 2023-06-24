@@ -30,7 +30,9 @@ namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
     /// Container for the parameters to the ListDomainsForPackage operation.
-    /// Lists all Amazon OpenSearch Service domains associated with the package.
+    /// Lists all Amazon OpenSearch Service domains associated with a given package. For more
+    /// information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/custom-packages.html">Custom
+    /// packages for Amazon OpenSearch Service</a>.
     /// </summary>
     public partial class ListDomainsForPackageRequest : AmazonOpenSearchServiceRequest
     {
@@ -41,7 +43,8 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// Limits the results to a maximum number of domains.
+        /// An optional parameter that specifies the maximum number of results to return. You
+        /// can use <code>nextToken</code> to get the next page of results.
         /// </para>
         /// </summary>
         [AWSProperty(Max=100)]
@@ -60,8 +63,9 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Used for pagination. Only necessary if a previous API call includes a non-null NextToken
-        /// value. If provided, returns results for the next page. 
+        /// If your initial <code>ListDomainsForPackage</code> operation returns a <code>nextToken</code>,
+        /// you can include the returned <code>nextToken</code> in subsequent <code>ListDomainsForPackage</code>
+        /// operations, which returns results in the next page.
         /// </para>
         /// </summary>
         public string NextToken
@@ -79,7 +83,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property PackageID. 
         /// <para>
-        /// The package for which to list associated domains.
+        /// The unique identifier of the package for which to list associated domains.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

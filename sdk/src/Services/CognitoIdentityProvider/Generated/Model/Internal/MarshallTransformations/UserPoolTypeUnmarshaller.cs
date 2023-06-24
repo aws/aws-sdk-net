@@ -106,6 +106,12 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                     unmarshalledObject.CustomDomain = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DeletionProtection", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DeletionProtection = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DeviceConfiguration", targetDepth))
                 {
                     var unmarshaller = DeviceConfigurationTypeUnmarshaller.Instance;
@@ -218,6 +224,12 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("UserAttributeUpdateSettings", targetDepth))
+                {
+                    var unmarshaller = UserAttributeUpdateSettingsTypeUnmarshaller.Instance;
+                    unmarshalledObject.UserAttributeUpdateSettings = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("UsernameAttributes", targetDepth))

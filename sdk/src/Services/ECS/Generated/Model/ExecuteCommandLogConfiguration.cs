@@ -43,8 +43,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property CloudWatchEncryptionEnabled. 
         /// <para>
-        /// Determines whether to enable encryption on the CloudWatch logs. If not specified,
-        /// encryption will be disabled.
+        /// Determines whether to use encryption on the CloudWatch logs. If not specified, encryption
+        /// will be off.
         /// </para>
         /// </summary>
         public bool CloudWatchEncryptionEnabled

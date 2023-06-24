@@ -35,11 +35,15 @@ namespace Amazon.SecurityHub.Model
     {
         private List<AwsEc2VolumeAttachment> _attachments = new List<AwsEc2VolumeAttachment>();
         private string _createTime;
+        private string _deviceName;
         private bool? _encrypted;
         private string _kmsKeyId;
         private int? _size;
         private string _snapshotId;
         private string _status;
+        private string _volumeId;
+        private string _volumeScanStatus;
+        private string _volumeType;
 
         /// <summary>
         /// Gets and sets the property Attachments. 
@@ -67,8 +71,8 @@ namespace Amazon.SecurityHub.Model
         ///  
         /// <para>
         /// Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
-        /// 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces.
-        /// For example, <code>2020-03-22T13:22:13.933Z</code>.
+        /// 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces,
+        /// and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.
         /// </para>
         /// </summary>
         public string CreateTime
@@ -84,9 +88,27 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DeviceName. 
+        /// <para>
+        /// The device name for the volume that is attached to the instance. 
+        /// </para>
+        /// </summary>
+        public string DeviceName
+        {
+            get { return this._deviceName; }
+            set { this._deviceName = value; }
+        }
+
+        // Check to see if DeviceName property is set
+        internal bool IsSetDeviceName()
+        {
+            return this._deviceName != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Encrypted. 
         /// <para>
-        /// Whether the volume is encrypted.
+        /// Specifies whether the volume is encrypted.
         /// </para>
         /// </summary>
         public bool Encrypted
@@ -159,8 +181,33 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The volume state.
+        /// The volume state. Valid values are as follows:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>available</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>creating</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>deleted</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>deleting</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>error</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>in-use</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string Status
         {
@@ -172,6 +219,60 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VolumeId. 
+        /// <para>
+        /// The ID of the volume. 
+        /// </para>
+        /// </summary>
+        public string VolumeId
+        {
+            get { return this._volumeId; }
+            set { this._volumeId = value; }
+        }
+
+        // Check to see if VolumeId property is set
+        internal bool IsSetVolumeId()
+        {
+            return this._volumeId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VolumeScanStatus. 
+        /// <para>
+        /// Indicates whether the volume was scanned or skipped. 
+        /// </para>
+        /// </summary>
+        public string VolumeScanStatus
+        {
+            get { return this._volumeScanStatus; }
+            set { this._volumeScanStatus = value; }
+        }
+
+        // Check to see if VolumeScanStatus property is set
+        internal bool IsSetVolumeScanStatus()
+        {
+            return this._volumeScanStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VolumeType. 
+        /// <para>
+        /// The volume type. 
+        /// </para>
+        /// </summary>
+        public string VolumeType
+        {
+            get { return this._volumeType; }
+            set { this._volumeType = value; }
+        }
+
+        // Check to see if VolumeType property is set
+        internal bool IsSetVolumeType()
+        {
+            return this._volumeType != null;
         }
 
     }

@@ -29,7 +29,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DLM.Model
 {
     /// <summary>
-    /// Specifies an AMI deprecation rule for a schedule.
+    /// <b>[AMI policies only]</b> Specifies an AMI deprecation rule for AMIs created by
+    /// an AMI lifecycle policy.
+    /// 
+    ///  
+    /// <para>
+    /// For age-based schedules, you must specify <b>Interval</b> and <b>IntervalUnit</b>.
+    /// For count-based schedules, you must specify <b>Count</b>.
+    /// </para>
     /// </summary>
     public partial class DeprecateRule
     {

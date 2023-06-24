@@ -33,8 +33,28 @@ namespace Amazon.LexModelsV2.Model
     /// </summary>
     public partial class SlotValueSelectionSetting
     {
+        private AdvancedRecognitionSetting _advancedRecognitionSetting;
         private SlotValueRegexFilter _regexFilter;
         private SlotValueResolutionStrategy _resolutionStrategy;
+
+        /// <summary>
+        /// Gets and sets the property AdvancedRecognitionSetting. 
+        /// <para>
+        /// Provides settings that enable advanced recognition settings for slot values. You can
+        /// use this to enable using slot values as a custom vocabulary for recognizing user utterances.
+        /// </para>
+        /// </summary>
+        public AdvancedRecognitionSetting AdvancedRecognitionSetting
+        {
+            get { return this._advancedRecognitionSetting; }
+            set { this._advancedRecognitionSetting = value; }
+        }
+
+        // Check to see if AdvancedRecognitionSetting property is set
+        internal bool IsSetAdvancedRecognitionSetting()
+        {
+            return this._advancedRecognitionSetting != null;
+        }
 
         /// <summary>
         /// Gets and sets the property RegexFilter. 
@@ -62,18 +82,18 @@ namespace Amazon.LexModelsV2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// OriginalValue - Returns the value entered by the user, if the user value is similar
-        /// to the slot value.
+        ///  <code>ORIGINAL_VALUE</code> - Returns the value entered by the user, if the user
+        /// value is similar to the slot value.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// TopResolution - If there is a resolution list for the slot, return the first value
-        /// in the resolution list as the slot type value. If there is no resolution list, null
-        /// is returned.
+        ///  <code>TOP_RESOLUTION</code> - If there is a resolution list for the slot, return
+        /// the first value in the resolution list as the slot type value. If there is no resolution
+        /// list, null is returned.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If you don't specify the valueSelectionStrategy, the default is OriginalValue. 
+        /// If you don't specify the <code>valueSelectionStrategy</code>, the default is <code>ORIGINAL_VALUE</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

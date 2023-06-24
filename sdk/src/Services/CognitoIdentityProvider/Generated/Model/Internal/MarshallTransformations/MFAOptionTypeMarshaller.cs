@@ -34,7 +34,7 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// MFAOptionType Marshaller
-    /// </summary>       
+    /// </summary>
     public class MFAOptionTypeMarshaller : IRequestMarshaller<MFAOptionType, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static MFAOptionTypeMarshaller Instance = new MFAOptionTypeMarshaller();
 
     }

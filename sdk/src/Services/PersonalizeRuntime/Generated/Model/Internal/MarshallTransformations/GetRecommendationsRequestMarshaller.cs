@@ -56,7 +56,7 @@ namespace Amazon.PersonalizeRuntime.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.PersonalizeRuntime");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-05-22";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-05-22";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/recommendations";
@@ -117,6 +117,22 @@ namespace Amazon.PersonalizeRuntime.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.NumResults);
                 }
 
+                if(publicRequest.IsSetPromotions())
+                {
+                    context.Writer.WritePropertyName("promotions");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestPromotionsListValue in publicRequest.Promotions)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = PromotionMarshaller.Instance;
+                        marshaller.Marshall(publicRequestPromotionsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetRecommenderArn())
                 {
                     context.Writer.WritePropertyName("recommenderArn");
@@ -129,7 +145,6 @@ namespace Amazon.PersonalizeRuntime.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.UserId);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

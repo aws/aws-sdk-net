@@ -34,7 +34,7 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// TriggerConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class TriggerConfigMarshaller : IRequestMarshaller<TriggerConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static TriggerConfigMarshaller Instance = new TriggerConfigMarshaller();
 
     }

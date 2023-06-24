@@ -58,7 +58,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             string target = "SageMaker.ListInferenceRecommendationsJobs";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-07-24";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-07-24";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -97,6 +97,18 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.MaxResults);
                 }
 
+                if(publicRequest.IsSetModelNameEquals())
+                {
+                    context.Writer.WritePropertyName("ModelNameEquals");
+                    context.Writer.Write(publicRequest.ModelNameEquals);
+                }
+
+                if(publicRequest.IsSetModelPackageVersionArnEquals())
+                {
+                    context.Writer.WritePropertyName("ModelPackageVersionArnEquals");
+                    context.Writer.Write(publicRequest.ModelPackageVersionArnEquals);
+                }
+
                 if(publicRequest.IsSetNameContains())
                 {
                     context.Writer.WritePropertyName("NameContains");
@@ -127,7 +139,6 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.StatusEquals);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

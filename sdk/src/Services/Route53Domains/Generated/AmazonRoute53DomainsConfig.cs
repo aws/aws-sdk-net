@@ -17,22 +17,22 @@
  * Do not modify this file. This file is generated from the route53domains-2014-05-15.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
-
+using Amazon.Route53Domains.Internal;
 
 namespace Amazon.Route53Domains
 {
     /// <summary>
     /// Configuration for accessing Amazon Route53Domains service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonRoute53DomainsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.105");
+            InternalSDKUtils.BuildUserAgentString("3.7.102.1");
 
         private string _userAgent = UserAgentString;
 
@@ -40,8 +40,10 @@ namespace Amazon.Route53Domains
         /// Default constructor
         /// </summary>
         public AmazonRoute53DomainsConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonRoute53DomainsDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "route53domains";
+            this.EndpointProvider = new AmazonRoute53DomainsEndpointProvider();
         }
 
         /// <summary>
@@ -76,5 +78,6 @@ namespace Amazon.Route53Domains
                 return _userAgent;
             }
         }
+
     }
 }

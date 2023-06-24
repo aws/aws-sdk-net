@@ -31,15 +31,14 @@ namespace Amazon.GameLift.Model
     /// <summary>
     /// Container for the parameters to the DeleteVpcPeeringConnection operation.
     /// Removes a VPC peering connection. To delete the connection, you must have a valid
-    /// authorization for the VPC peering connection that you want to delete. You can check
-    /// for an authorization by calling <a>DescribeVpcPeeringAuthorizations</a> or request
-    /// a new one using <a>CreateVpcPeeringAuthorization</a>. 
+    /// authorization for the VPC peering connection that you want to delete.. 
     /// 
     ///  
     /// <para>
-    /// Once a valid authorization exists, call this operation from the AWS account that is
-    /// used to manage the Amazon GameLift fleets. Identify the connection to delete by the
-    /// connection ID and fleet ID. If successful, the connection is removed. 
+    /// Once a valid authorization exists, call this operation from the Amazon Web Services
+    /// account that is used to manage the Amazon GameLift fleets. Identify the connection
+    /// to delete by the connection ID and fleet ID. If successful, the connection is removed.
+    /// 
     /// </para>
     ///  
     /// <para>
@@ -47,9 +46,7 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  
     /// <para>
-    ///  <a>CreateVpcPeeringAuthorization</a> | <a>DescribeVpcPeeringAuthorizations</a> |
-    /// <a>DeleteVpcPeeringAuthorization</a> | <a>CreateVpcPeeringConnection</a> | <a>DescribeVpcPeeringConnections</a>
-    /// | <a>DeleteVpcPeeringConnection</a> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
+    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
     /// APIs by task</a> 
     /// </para>
     /// </summary>
@@ -81,8 +78,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property VpcPeeringConnectionId. 
         /// <para>
-        /// A unique identifier for a VPC peering connection. This value is included in the <a>VpcPeeringConnection</a>
-        /// object, which can be retrieved by calling <a>DescribeVpcPeeringConnections</a>.
+        /// A unique identifier for a VPC peering connection.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1024)]

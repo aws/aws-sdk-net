@@ -70,6 +70,12 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
                     unmarshalledObject.AppFlowConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("AthenaSourceConfig", targetDepth))
+                {
+                    var unmarshaller = AthenaSourceConfigUnmarshaller.Instance;
+                    unmarshalledObject.AthenaSourceConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CloudWatchConfig", targetDepth))
                 {
                     var unmarshaller = CloudWatchConfigUnmarshaller.Instance;

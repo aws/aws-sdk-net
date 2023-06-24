@@ -29,14 +29,40 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// provides details about an ECS cluster.
+    /// Provides details about an Amazon ECS cluster.
     /// </summary>
     public partial class AwsEcsClusterDetails
     {
+        private int? _activeServicesCount;
         private List<string> _capacityProviders = new List<string>();
+        private string _clusterArn;
+        private string _clusterName;
         private List<AwsEcsClusterClusterSettingsDetails> _clusterSettings = new List<AwsEcsClusterClusterSettingsDetails>();
         private AwsEcsClusterConfigurationDetails _configuration;
         private List<AwsEcsClusterDefaultCapacityProviderStrategyDetails> _defaultCapacityProviderStrategy = new List<AwsEcsClusterDefaultCapacityProviderStrategyDetails>();
+        private int? _registeredContainerInstancesCount;
+        private int? _runningTasksCount;
+        private string _status;
+
+        /// <summary>
+        /// Gets and sets the property ActiveServicesCount. 
+        /// <para>
+        /// The number of services that are running on the cluster in an <code>ACTIVE</code> state.
+        /// You can view these services with the Amazon ECS <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListServices.html">
+        /// <code>ListServices</code> </a> API operation. 
+        /// </para>
+        /// </summary>
+        public int ActiveServicesCount
+        {
+            get { return this._activeServicesCount.GetValueOrDefault(); }
+            set { this._activeServicesCount = value; }
+        }
+
+        // Check to see if ActiveServicesCount property is set
+        internal bool IsSetActiveServicesCount()
+        {
+            return this._activeServicesCount.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property CapacityProviders. 
@@ -54,6 +80,42 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetCapacityProviders()
         {
             return this._capacityProviders != null && this._capacityProviders.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ClusterArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) that identifies the cluster. 
+        /// </para>
+        /// </summary>
+        public string ClusterArn
+        {
+            get { return this._clusterArn; }
+            set { this._clusterArn = value; }
+        }
+
+        // Check to see if ClusterArn property is set
+        internal bool IsSetClusterArn()
+        {
+            return this._clusterArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ClusterName. 
+        /// <para>
+        /// A name that you use to identify your cluster. 
+        /// </para>
+        /// </summary>
+        public string ClusterName
+        {
+            get { return this._clusterName; }
+            set { this._clusterName = value; }
+        }
+
+        // Check to see if ClusterName property is set
+        internal bool IsSetClusterName()
+        {
+            return this._clusterName != null;
         }
 
         /// <summary>
@@ -111,6 +173,61 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetDefaultCapacityProviderStrategy()
         {
             return this._defaultCapacityProviderStrategy != null && this._defaultCapacityProviderStrategy.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RegisteredContainerInstancesCount. 
+        /// <para>
+        /// The number of container instances registered into the cluster. This includes container
+        /// instances in both <code>ACTIVE</code> and <code>DRAINING</code> status. 
+        /// </para>
+        /// </summary>
+        public int RegisteredContainerInstancesCount
+        {
+            get { return this._registeredContainerInstancesCount.GetValueOrDefault(); }
+            set { this._registeredContainerInstancesCount = value; }
+        }
+
+        // Check to see if RegisteredContainerInstancesCount property is set
+        internal bool IsSetRegisteredContainerInstancesCount()
+        {
+            return this._registeredContainerInstancesCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RunningTasksCount. 
+        /// <para>
+        /// The number of tasks in the cluster that are in the <code>RUNNING</code> state. 
+        /// </para>
+        /// </summary>
+        public int RunningTasksCount
+        {
+            get { return this._runningTasksCount.GetValueOrDefault(); }
+            set { this._runningTasksCount = value; }
+        }
+
+        // Check to see if RunningTasksCount property is set
+        internal bool IsSetRunningTasksCount()
+        {
+            return this._runningTasksCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The status of the cluster. 
+        /// </para>
+        /// </summary>
+        public string Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null;
         }
 
     }

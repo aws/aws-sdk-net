@@ -98,7 +98,7 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property LastModifiedTime. 
         /// <para>
-        /// The ARN for the VOD source.
+        /// The last modified time of the VOD source.
         /// </para>
         /// </summary>
         public DateTime LastModifiedTime
@@ -134,7 +134,10 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags assigned to the VOD source.
+        /// The tags assigned to the VOD source. Tags are key-value pairs that you can associate
+        /// with Amazon resources to help with organization, access control, and cost tracking.
+        /// For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+        /// AWS Elemental MediaTailor Resources</a>.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Tags

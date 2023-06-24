@@ -62,6 +62,23 @@ namespace AWSSDKDocSamples.Amazon.AutoScaling.Generated
             #endregion
         }
 
+        public void AutoScalingAttachTrafficSources()
+        {
+            #region to-attach-a-target-group-to-an-auto-scaling-group-1680036570089
+
+            var client = new AmazonAutoScalingClient();
+            var response = client.AttachTrafficSources(new AttachTrafficSourcesRequest 
+            {
+                AutoScalingGroupName = "my-auto-scaling-group",
+                TrafficSources = new List<TrafficSourceIdentifier> {
+                    new TrafficSourceIdentifier { Identifier = "arn:aws:elasticloadbalancing:us-west-2:123456789012:targetgroup/my-targets/73e2d6bc24d8a067" }
+                }
+            });
+
+
+            #endregion
+        }
+
         public void AutoScalingCancelInstanceRefresh()
         {
             #region to-cancel-an-instance-refresh-1592960979817
@@ -103,7 +120,7 @@ namespace AWSSDKDocSamples.Amazon.AutoScaling.Generated
             {
                 AutoScalingGroupName = "my-auto-scaling-group",
                 LaunchTemplate = new LaunchTemplateSpecification {
-                    LaunchTemplateId = "lt-0a20c965061f64abc",
+                    LaunchTemplateName = "my-template-for-auto-scaling",
                     Version = "$Latest"
                 },
                 MaxInstanceLifetime = 2592000,
@@ -127,8 +144,8 @@ namespace AWSSDKDocSamples.Amazon.AutoScaling.Generated
                 HealthCheckGracePeriod = 300,
                 HealthCheckType = "ELB",
                 LaunchTemplate = new LaunchTemplateSpecification {
-                    LaunchTemplateId = "lt-0a20c965061f64abc",
-                    Version = "$Default"
+                    LaunchTemplateName = "my-template-for-auto-scaling",
+                    Version = "$Latest"
                 },
                 MaxSize = 3,
                 MinSize = 1,
@@ -654,6 +671,22 @@ namespace AWSSDKDocSamples.Amazon.AutoScaling.Generated
             #endregion
         }
 
+        public void AutoScalingDescribeTrafficSources()
+        {
+            #region to-describe-the-target-groups-for-an-auto-scaling-group-1680040714521
+
+            var client = new AmazonAutoScalingClient();
+            var response = client.DescribeTrafficSources(new DescribeTrafficSourcesRequest 
+            {
+                AutoScalingGroupName = "my-auto-scaling-group"
+            });
+
+            string nextToken = response.NextToken;
+            List<TrafficSourceState> trafficSources = response.TrafficSources;
+
+            #endregion
+        }
+
         public void AutoScalingDetachInstances()
         {
             #region autoscaling-detach-instances-1
@@ -700,6 +733,23 @@ namespace AWSSDKDocSamples.Amazon.AutoScaling.Generated
                 AutoScalingGroupName = "my-auto-scaling-group",
                 TargetGroupARNs = new List<string> {
                     "arn:aws:elasticloadbalancing:us-west-2:123456789012:targetgroup/my-targets/73e2d6bc24d8a067"
+                }
+            });
+
+
+            #endregion
+        }
+
+        public void AutoScalingDetachTrafficSources()
+        {
+            #region to-detach-a-target-group-from-an-auto-scaling-group-1680040404169
+
+            var client = new AmazonAutoScalingClient();
+            var response = client.DetachTrafficSources(new DetachTrafficSourcesRequest 
+            {
+                AutoScalingGroupName = "my-auto-scaling-group",
+                TrafficSources = new List<TrafficSourceIdentifier> {
+                    new TrafficSourceIdentifier { Identifier = "arn:aws:elasticloadbalancing:us-west-2:123456789012:targetgroup/my-targets/73e2d6bc24d8a067" }
                 }
             });
 
@@ -801,10 +851,10 @@ namespace AWSSDKDocSamples.Amazon.AutoScaling.Generated
             var response = client.PutLifecycleHook(new PutLifecycleHookRequest 
             {
                 AutoScalingGroupName = "my-auto-scaling-group",
-                LifecycleHookName = "my-lifecycle-hook",
-                LifecycleTransition = "autoscaling:EC2_INSTANCE_LAUNCHING",
-                NotificationTargetARN = "arn:aws:sns:us-west-2:123456789012:my-sns-topic --role-arn",
-                RoleARN = "arn:aws:iam::123456789012:role/my-auto-scaling-role"
+                DefaultResult = "CONTINUE",
+                HeartbeatTimeout = 300,
+                LifecycleHookName = "my-launch-lifecycle-hook",
+                LifecycleTransition = "autoscaling:EC2_INSTANCE_LAUNCHING"
             });
 
 
@@ -882,8 +932,9 @@ namespace AWSSDKDocSamples.Amazon.AutoScaling.Generated
             var response = client.PutWarmPool(new PutWarmPoolRequest 
             {
                 AutoScalingGroupName = "my-auto-scaling-group",
+                InstanceReusePolicy = new InstanceReusePolicy { ReuseOnScaleIn = true },
                 MinSize = 30,
-                PoolState = "Stopped"
+                PoolState = "Hibernated"
             });
 
 
@@ -998,9 +1049,14 @@ namespace AWSSDKDocSamples.Amazon.AutoScaling.Generated
             var response = client.StartInstanceRefresh(new StartInstanceRefreshRequest 
             {
                 AutoScalingGroupName = "my-auto-scaling-group",
+                DesiredConfiguration = new DesiredConfiguration { LaunchTemplate = new LaunchTemplateSpecification {
+                    LaunchTemplateName = "my-template-for-auto-scaling",
+                    Version = "$Latest"
+                } },
                 Preferences = new RefreshPreferences {
                     InstanceWarmup = 400,
-                    MinHealthyPercentage = 50
+                    MinHealthyPercentage = 90,
+                    SkipMatching = true
                 }
             });
 
@@ -1049,37 +1105,12 @@ namespace AWSSDKDocSamples.Amazon.AutoScaling.Generated
             var response = client.UpdateAutoScalingGroup(new UpdateAutoScalingGroupRequest 
             {
                 AutoScalingGroupName = "my-auto-scaling-group",
-                LaunchConfigurationName = "new-launch-config"
-            });
-
-
-            #endregion
-        }
-
-        public void AutoScalingUpdateAutoScalingGroup()
-        {
-            #region autoscaling-update-auto-scaling-group-2
-
-            var client = new AmazonAutoScalingClient();
-            var response = client.UpdateAutoScalingGroup(new UpdateAutoScalingGroupRequest 
-            {
-                AutoScalingGroupName = "my-auto-scaling-group",
-                MaxSize = 3,
-                MinSize = 1
-            });
-
-
-            #endregion
-        }
-
-        public void AutoScalingUpdateAutoScalingGroup()
-        {
-            #region autoscaling-update-auto-scaling-group-3
-
-            var client = new AmazonAutoScalingClient();
-            var response = client.UpdateAutoScalingGroup(new UpdateAutoScalingGroupRequest 
-            {
-                AutoScalingGroupName = "my-auto-scaling-group",
+                LaunchTemplate = new LaunchTemplateSpecification {
+                    LaunchTemplateName = "my-template-for-auto-scaling",
+                    Version = "2"
+                },
+                MaxSize = 5,
+                MinSize = 1,
                 NewInstancesProtectedFromScaleIn = true
             });
 

@@ -34,7 +34,7 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// UsageCriteria Marshaller
-    /// </summary>       
+    /// </summary>
     public class UsageCriteriaMarshaller : IRequestMarshaller<UsageCriteria, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,6 +67,17 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetFeatures())
+            {
+                context.Writer.WritePropertyName("features");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectFeaturesListValue in requestObject.Features)
+                {
+                        context.Writer.Write(requestObjectFeaturesListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetResources())
             {
                 context.Writer.WritePropertyName("resources");
@@ -82,7 +93,7 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static UsageCriteriaMarshaller Instance = new UsageCriteriaMarshaller();
 
     }

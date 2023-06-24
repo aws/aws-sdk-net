@@ -33,7 +33,7 @@ namespace Amazon.TimestreamQuery.Model
     /// <code>Query</code> is a synchronous operation that enables you to run a query against
     /// your Amazon Timestream data. <code>Query</code> will time out after 60 seconds. You
     /// must update the default timeout in the SDK to support a timeout of 60 seconds. See
-    /// the <a href="https://docs.aws.amazon.com/Timestream/latest/developerguide/code-samples.run-query.html">code
+    /// the <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/code-samples.run-query.html">code
     /// sample</a> for details. 
     /// 
     ///  
@@ -110,7 +110,7 @@ namespace Amazon.TimestreamQuery.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Min=32, Max=128)]
+        [AWSProperty(Sensitive=true, Min=32, Max=128)]
         public string ClientToken
         {
             get { return this._clientToken; }
@@ -233,7 +233,7 @@ namespace Amazon.TimestreamQuery.Model
         ///  The query to be run by Timestream. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=262144)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=262144)]
         public string QueryString
         {
             get { return this._queryString; }

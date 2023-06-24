@@ -479,6 +479,10 @@ namespace Amazon.MigrationHubRefactorSpaces
     {
 
         /// <summary>
+        /// Constant NONE for NetworkFabricType
+        /// </summary>
+        public static readonly NetworkFabricType NONE = new NetworkFabricType("NONE");
+        /// <summary>
         /// Constant TRANSIT_GATEWAY for NetworkFabricType
         /// </summary>
         public static readonly NetworkFabricType TRANSIT_GATEWAY = new NetworkFabricType("TRANSIT_GATEWAY");
@@ -574,6 +578,10 @@ namespace Amazon.MigrationHubRefactorSpaces
         /// Constant ACTIVE for RouteActivationState
         /// </summary>
         public static readonly RouteActivationState ACTIVE = new RouteActivationState("ACTIVE");
+        /// <summary>
+        /// Constant INACTIVE for RouteActivationState
+        /// </summary>
+        public static readonly RouteActivationState INACTIVE = new RouteActivationState("INACTIVE");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

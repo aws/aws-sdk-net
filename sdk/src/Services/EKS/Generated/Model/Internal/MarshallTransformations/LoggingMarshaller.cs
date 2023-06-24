@@ -34,7 +34,7 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Logging Marshaller
-    /// </summary>       
+    /// </summary>
     public class LoggingMarshaller : IRequestMarshaller<Logging, JsonMarshallerContext> 
     {
         /// <summary>
@@ -65,7 +65,7 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static LoggingMarshaller Instance = new LoggingMarshaller();
 
     }

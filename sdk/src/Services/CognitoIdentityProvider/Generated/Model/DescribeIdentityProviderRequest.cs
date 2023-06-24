@@ -30,7 +30,7 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeIdentityProvider operation.
-    /// Gets information about a specific identity provider.
+    /// Gets information about a specific IdP.
     /// </summary>
     public partial class DescribeIdentityProviderRequest : AmazonCognitoIdentityProviderRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property ProviderName. 
         /// <para>
-        /// The identity provider name.
+        /// The IdP name.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=32)]

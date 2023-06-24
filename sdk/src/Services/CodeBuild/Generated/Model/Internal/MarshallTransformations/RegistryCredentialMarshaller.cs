@@ -34,7 +34,7 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RegistryCredential Marshaller
-    /// </summary>       
+    /// </summary>
     public class RegistryCredentialMarshaller : IRequestMarshaller<RegistryCredential, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RegistryCredentialMarshaller Instance = new RegistryCredentialMarshaller();
 
     }

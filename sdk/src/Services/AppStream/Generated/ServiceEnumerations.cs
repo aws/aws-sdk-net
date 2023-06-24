@@ -191,6 +191,56 @@ namespace Amazon.AppStream
 
 
     /// <summary>
+    /// Constants used for properties of type AppVisibility.
+    /// </summary>
+    public class AppVisibility : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALL for AppVisibility
+        /// </summary>
+        public static readonly AppVisibility ALL = new AppVisibility("ALL");
+        /// <summary>
+        /// Constant ASSOCIATED for AppVisibility
+        /// </summary>
+        public static readonly AppVisibility ASSOCIATED = new AppVisibility("ASSOCIATED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AppVisibility(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AppVisibility FindValue(string value)
+        {
+            return FindValue<AppVisibility>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AppVisibility(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AuthenticationType.
     /// </summary>
     public class AuthenticationType : ConstantClass
@@ -200,6 +250,10 @@ namespace Amazon.AppStream
         /// Constant API for AuthenticationType
         /// </summary>
         public static readonly AuthenticationType API = new AuthenticationType("API");
+        /// <summary>
+        /// Constant AWS_AD for AuthenticationType
+        /// </summary>
+        public static readonly AuthenticationType AWS_AD = new AuthenticationType("AWS_AD");
         /// <summary>
         /// Constant SAML for AuthenticationType
         /// </summary>
@@ -245,6 +299,60 @@ namespace Amazon.AppStream
 
 
     /// <summary>
+    /// Constants used for properties of type CertificateBasedAuthStatus.
+    /// </summary>
+    public class CertificateBasedAuthStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for CertificateBasedAuthStatus
+        /// </summary>
+        public static readonly CertificateBasedAuthStatus DISABLED = new CertificateBasedAuthStatus("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for CertificateBasedAuthStatus
+        /// </summary>
+        public static readonly CertificateBasedAuthStatus ENABLED = new CertificateBasedAuthStatus("ENABLED");
+        /// <summary>
+        /// Constant ENABLED_NO_DIRECTORY_LOGIN_FALLBACK for CertificateBasedAuthStatus
+        /// </summary>
+        public static readonly CertificateBasedAuthStatus ENABLED_NO_DIRECTORY_LOGIN_FALLBACK = new CertificateBasedAuthStatus("ENABLED_NO_DIRECTORY_LOGIN_FALLBACK");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CertificateBasedAuthStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CertificateBasedAuthStatus FindValue(string value)
+        {
+            return FindValue<CertificateBasedAuthStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CertificateBasedAuthStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type FleetAttribute.
     /// </summary>
     public class FleetAttribute : ConstantClass
@@ -258,6 +366,10 @@ namespace Amazon.AppStream
         /// Constant IAM_ROLE_ARN for FleetAttribute
         /// </summary>
         public static readonly FleetAttribute IAM_ROLE_ARN = new FleetAttribute("IAM_ROLE_ARN");
+        /// <summary>
+        /// Constant SESSION_SCRIPT_S3_LOCATION for FleetAttribute
+        /// </summary>
+        public static readonly FleetAttribute SESSION_SCRIPT_S3_LOCATION = new FleetAttribute("SESSION_SCRIPT_S3_LOCATION");
         /// <summary>
         /// Constant USB_DEVICE_FILTER_STRINGS for FleetAttribute
         /// </summary>
@@ -999,6 +1111,56 @@ namespace Amazon.AppStream
 
 
     /// <summary>
+    /// Constants used for properties of type PreferredProtocol.
+    /// </summary>
+    public class PreferredProtocol : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant TCP for PreferredProtocol
+        /// </summary>
+        public static readonly PreferredProtocol TCP = new PreferredProtocol("TCP");
+        /// <summary>
+        /// Constant UDP for PreferredProtocol
+        /// </summary>
+        public static readonly PreferredProtocol UDP = new PreferredProtocol("UDP");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PreferredProtocol(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PreferredProtocol FindValue(string value)
+        {
+            return FindValue<PreferredProtocol>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PreferredProtocol(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type SessionConnectionState.
     /// </summary>
     public class SessionConnectionState : ConstantClass
@@ -1090,6 +1252,10 @@ namespace Amazon.AppStream
         /// Constant STORAGE_CONNECTORS for StackAttribute
         /// </summary>
         public static readonly StackAttribute STORAGE_CONNECTORS = new StackAttribute("STORAGE_CONNECTORS");
+        /// <summary>
+        /// Constant STREAMING_EXPERIENCE_SETTINGS for StackAttribute
+        /// </summary>
+        public static readonly StackAttribute STREAMING_EXPERIENCE_SETTINGS = new StackAttribute("STREAMING_EXPERIENCE_SETTINGS");
         /// <summary>
         /// Constant THEME_NAME for StackAttribute
         /// </summary>

@@ -118,6 +118,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     unmarshalledObject.HeartbeatSchema = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("MapBooleanAsBoolean", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.MapBooleanAsBoolean = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("MaxFileSize", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
@@ -164,6 +170,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SlotName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("TrimSpaceInChar", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.TrimSpaceInChar = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Username", targetDepth))

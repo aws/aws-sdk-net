@@ -56,7 +56,7 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Imagebuilder");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-12-02";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-12-02";
             request.HttpMethod = "PUT";
 
             request.ResourcePath = "/CreateImagePipeline";
@@ -74,7 +74,7 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
                 else if(!(publicRequest.IsSetClientToken()))
                 {
                     context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());                                                
+                    context.Writer.Write(Guid.NewGuid().ToString());
                 }
                 if(publicRequest.IsSetContainerRecipeArn())
                 {
@@ -104,6 +104,17 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("imageRecipeArn");
                     context.Writer.Write(publicRequest.ImageRecipeArn);
+                }
+
+                if(publicRequest.IsSetImageScanningConfiguration())
+                {
+                    context.Writer.WritePropertyName("imageScanningConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ImageScanningConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ImageScanningConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
                 if(publicRequest.IsSetImageTestsConfiguration())
@@ -160,7 +171,6 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

@@ -37,15 +37,18 @@ namespace Amazon.CloudFormation.Model
         private DateTime? _creationTimestamp;
         private DateTime? _endTimestamp;
         private string _operationId;
+        private StackSetOperationPreferences _operationPreferences;
         private StackSetOperationStatus _status;
+        private StackSetOperationStatusDetails _statusDetails;
+        private string _statusReason;
 
         /// <summary>
         /// Gets and sets the property Action. 
         /// <para>
         /// The type of operation: <code>CREATE</code>, <code>UPDATE</code>, or <code>DELETE</code>.
         /// Create and delete operations affect only the specified stack instances that are associated
-        /// with the specified stack set. Update operations affect both the stack set itself as
-        /// well as <i>all</i> associated stack set instances.
+        /// with the specified stack set. Update operations affect both the stack set itself and
+        /// <i>all</i> associated stack set instances.
         /// </para>
         /// </summary>
         public StackSetOperationAction Action
@@ -122,6 +125,30 @@ namespace Amazon.CloudFormation.Model
         }
 
         /// <summary>
+        /// Gets and sets the property OperationPreferences. 
+        /// <para>
+        /// The user-specified preferences for how CloudFormation performs a stack set operation.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about maximum concurrent accounts and failure tolerance, see
+        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack
+        /// set operation options</a>.
+        /// </para>
+        /// </summary>
+        public StackSetOperationPreferences OperationPreferences
+        {
+            get { return this._operationPreferences; }
+            set { this._operationPreferences = value; }
+        }
+
+        // Check to see if OperationPreferences property is set
+        internal bool IsSetOperationPreferences()
+        {
+            return this._operationPreferences != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
         /// The overall status of the operation.
@@ -149,12 +176,11 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>STOPPED</code>: The user has cancelled the operation.
+        ///  <code>STOPPED</code>: The user has canceled the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>STOPPING</code>: The operation is in the process of stopping, at user request.
-        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -173,6 +199,42 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StatusDetails. 
+        /// <para>
+        /// Detailed information about the stack set operation.
+        /// </para>
+        /// </summary>
+        public StackSetOperationStatusDetails StatusDetails
+        {
+            get { return this._statusDetails; }
+            set { this._statusDetails = value; }
+        }
+
+        // Check to see if StatusDetails property is set
+        internal bool IsSetStatusDetails()
+        {
+            return this._statusDetails != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StatusReason. 
+        /// <para>
+        /// The status of the operation in details.
+        /// </para>
+        /// </summary>
+        public string StatusReason
+        {
+            get { return this._statusReason; }
+            set { this._statusReason = value; }
+        }
+
+        // Check to see if StatusReason property is set
+        internal bool IsSetStatusReason()
+        {
+            return this._statusReason != null;
         }
 
     }

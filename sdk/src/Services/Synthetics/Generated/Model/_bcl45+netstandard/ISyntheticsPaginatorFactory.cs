@@ -44,5 +44,20 @@ namespace Amazon.Synthetics.Model
         /// Paginator for GetCanaryRuns operation
         ///</summary>
         IGetCanaryRunsPaginator GetCanaryRuns(GetCanaryRunsRequest request);
+
+        /// <summary>
+        /// Paginator for ListAssociatedGroups operation
+        ///</summary>
+        IListAssociatedGroupsPaginator ListAssociatedGroups(ListAssociatedGroupsRequest request);
+
+        /// <summary>
+        /// Paginator for ListGroupResources operation
+        ///</summary>
+        IListGroupResourcesPaginator ListGroupResources(ListGroupResourcesRequest request);
+
+        /// <summary>
+        /// Paginator for ListGroups operation
+        ///</summary>
+        IListGroupsPaginator ListGroups(ListGroupsRequest request);
     }
 }

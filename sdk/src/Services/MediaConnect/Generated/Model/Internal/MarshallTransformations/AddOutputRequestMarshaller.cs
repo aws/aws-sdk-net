@@ -34,7 +34,7 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AddOutputRequest Marshaller
-    /// </summary>       
+    /// </summary>
     public class AddOutputRequestMarshaller : IRequestMarshaller<AddOutputRequest, JsonMarshallerContext> 
     {
         /// <summary>
@@ -131,6 +131,12 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.RemoteId);
             }
 
+            if(requestObject.IsSetSenderControlPort())
+            {
+                context.Writer.WritePropertyName("senderControlPort");
+                context.Writer.Write(requestObject.SenderControlPort);
+            }
+
             if(requestObject.IsSetSmoothingLatency())
             {
                 context.Writer.WritePropertyName("smoothingLatency");
@@ -158,7 +164,7 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AddOutputRequestMarshaller Instance = new AddOutputRequestMarshaller();
 
     }

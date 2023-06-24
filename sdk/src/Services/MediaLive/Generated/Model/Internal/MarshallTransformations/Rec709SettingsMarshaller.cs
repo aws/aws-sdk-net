@@ -34,7 +34,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Rec709Settings Marshaller
-    /// </summary>       
+    /// </summary>
     public class Rec709SettingsMarshaller : IRequestMarshaller<Rec709Settings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -49,7 +49,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static Rec709SettingsMarshaller Instance = new Rec709SettingsMarshaller();
 
     }

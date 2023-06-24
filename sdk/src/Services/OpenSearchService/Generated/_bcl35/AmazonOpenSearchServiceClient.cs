@@ -35,23 +35,19 @@ namespace Amazon.OpenSearchService
     /// <summary>
     /// Implementation for accessing OpenSearchService
     ///
-    /// Amazon OpenSearch Configuration Service 
-    /// <para>
-    /// Use the Amazon OpenSearch configuration API to create, configure, and manage Amazon
+    /// Use the Amazon OpenSearch Service configuration API to create, configure, and manage
     /// OpenSearch Service domains.
-    /// </para>
+    /// 
     ///  
     /// <para>
     /// For sample code that uses the configuration API, see the <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/opensearch-configuration-samples.html">
-    /// Amazon OpenSearch Service Developer Guide</a>. The guide also contains <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/request-signing.html">
-    /// sample code for sending signed HTTP requests to the OpenSearch APIs</a>. 
-    /// </para>
-    ///  
-    /// <para>
-    /// The endpoint for configuration service requests is region-specific: es.<i>region</i>.amazonaws.com.
-    /// For example, es.us-east-1.amazonaws.com. For a current list of supported regions and
-    /// endpoints, see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#service-regions"
-    /// target="_blank">Regions and Endpoints</a>. 
+    /// <i>Amazon OpenSearch Service Developer Guide</i> </a>. The guide also contains <a
+    /// href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/request-signing.html">sample
+    /// code</a> for sending signed HTTP requests to the OpenSearch APIs. The endpoint for
+    /// configuration service requests is Region specific: es.<i>region</i>.amazonaws.com.
+    /// For example, es.us-east-1.amazonaws.com. For a current list of supported Regions and
+    /// endpoints, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#service-regions">Amazon
+    /// Web Services service endpoints</a>.
     /// </para>
     /// </summary>
     public partial class AmazonOpenSearchServiceClient : AmazonServiceClient, IAmazonOpenSearchService
@@ -247,6 +243,15 @@ namespace Amazon.OpenSearchService
         }
 
         /// <summary>
+        /// Customize the pipeline
+        /// </summary>
+        /// <param name="pipeline"></param>
+        protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
+        {
+            pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonOpenSearchServiceEndpointResolver());
+        }
+        /// <summary>
         /// Capture metadata for the service.
         /// </summary>
         protected override IServiceMetadata ServiceMetadata
@@ -275,22 +280,21 @@ namespace Amazon.OpenSearchService
         #region  AcceptInboundConnection
 
         /// <summary>
-        /// Allows the remote domain owner to accept an inbound cross-cluster connection request.
+        /// Allows the destination Amazon OpenSearch Service domain owner to accept an inbound
+        /// cross-cluster search connection request. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/cross-cluster-search.html">Cross-cluster
+        /// search for Amazon OpenSearch Service</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AcceptInboundConnection service method.</param>
         /// 
         /// <returns>The response from the AcceptInboundConnection service method, as returned by OpenSearchService.</returns>
         /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
-        /// An error occured because the client wanted to access a not supported operation. Gives
-        /// http status code of 409.
+        /// An error occured because the client wanted to access an unsupported operation.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.LimitExceededException">
-        /// An exception for trying to create more than allowed resources or sub-resources. Gives
-        /// http status code of 409.
+        /// An exception for trying to create more than the allowed number of resources or sub-resources.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
-        /// An exception for accessing or deleting a resource that does not exist. Gives http
-        /// status code of 400.
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/AcceptInboundConnection">REST API Reference for AcceptInboundConnection Operation</seealso>
         public virtual AcceptInboundConnectionResponse AcceptInboundConnection(AcceptInboundConnectionRequest request)
@@ -341,9 +345,9 @@ namespace Amazon.OpenSearchService
         #region  AddTags
 
         /// <summary>
-        /// Attaches tags to an existing domain. Tags are a set of case-sensitive key value pairs.
-        /// An domain can have up to 10 tags. See <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains.html#managedomains-awsresorcetagging"
-        /// target="_blank"> Tagging Amazon OpenSearch Service domains</a> for more information.
+        /// Attaches tags to an existing Amazon OpenSearch Service domain. Tags are a set of case-sensitive
+        /// key-value pairs. A domain can have up to 10 tags. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-awsresourcetagging.html">Tagging
+        /// Amazon OpenSearch Service domains</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AddTags service method.</param>
         /// 
@@ -352,15 +356,13 @@ namespace Amazon.OpenSearchService
         /// An error occurred while processing the request.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
-        /// The request processing has failed because of an unknown error, exception or failure
-        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// Request processing failed because of an unknown error, exception, or internal failure.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.LimitExceededException">
-        /// An exception for trying to create more than allowed resources or sub-resources. Gives
-        /// http status code of 409.
+        /// An exception for trying to create more than the allowed number of resources or sub-resources.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
-        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/AddTags">REST API Reference for AddTags Operation</seealso>
         public virtual AddTagsResponse AddTags(AddTagsRequest request)
@@ -411,32 +413,31 @@ namespace Amazon.OpenSearchService
         #region  AssociatePackage
 
         /// <summary>
-        /// Associates a package with an Amazon OpenSearch Service domain.
+        /// Associates a package with an Amazon OpenSearch Service domain. For more information,
+        /// see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/custom-packages.html">Custom
+        /// packages for Amazon OpenSearch Service</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociatePackage service method.</param>
         /// 
         /// <returns>The response from the AssociatePackage service method, as returned by OpenSearchService.</returns>
         /// <exception cref="Amazon.OpenSearchService.Model.AccessDeniedException">
-        /// An error occurred because user does not have permissions to access the resource. Returns
-        /// HTTP status code 403.
+        /// An error occurred because you don't have permissions to access the resource.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.BaseException">
         /// An error occurred while processing the request.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ConflictException">
         /// An error occurred because the client attempts to remove a resource that is currently
-        /// in use. Returns HTTP status code 409.
+        /// in use.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
-        /// The request processing has failed because of an unknown error, exception or failure
-        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// Request processing failed because of an unknown error, exception, or internal failure.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
-        /// An exception for accessing or deleting a resource that does not exist. Gives http
-        /// status code of 400.
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
-        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/AssociatePackage">REST API Reference for AssociatePackage Operation</seealso>
         public virtual AssociatePackageResponse AssociatePackage(AssociatePackageRequest request)
@@ -484,12 +485,87 @@ namespace Amazon.OpenSearchService
 
         #endregion
         
+        #region  AuthorizeVpcEndpointAccess
+
+        /// <summary>
+        /// Provides access to an Amazon OpenSearch Service domain through the use of an interface
+        /// VPC endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AuthorizeVpcEndpointAccess service method.</param>
+        /// 
+        /// <returns>The response from the AuthorizeVpcEndpointAccess service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access an unsupported operation.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.LimitExceededException">
+        /// An exception for trying to create more than the allowed number of resources or sub-resources.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/AuthorizeVpcEndpointAccess">REST API Reference for AuthorizeVpcEndpointAccess Operation</seealso>
+        public virtual AuthorizeVpcEndpointAccessResponse AuthorizeVpcEndpointAccess(AuthorizeVpcEndpointAccessRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AuthorizeVpcEndpointAccessRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AuthorizeVpcEndpointAccessResponseUnmarshaller.Instance;
+
+            return Invoke<AuthorizeVpcEndpointAccessResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AuthorizeVpcEndpointAccess operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AuthorizeVpcEndpointAccess operation on AmazonOpenSearchServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAuthorizeVpcEndpointAccess
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/AuthorizeVpcEndpointAccess">REST API Reference for AuthorizeVpcEndpointAccess Operation</seealso>
+        public virtual IAsyncResult BeginAuthorizeVpcEndpointAccess(AuthorizeVpcEndpointAccessRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AuthorizeVpcEndpointAccessRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AuthorizeVpcEndpointAccessResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AuthorizeVpcEndpointAccess operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAuthorizeVpcEndpointAccess.</param>
+        /// 
+        /// <returns>Returns a  AuthorizeVpcEndpointAccessResult from OpenSearchService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/AuthorizeVpcEndpointAccess">REST API Reference for AuthorizeVpcEndpointAccess Operation</seealso>
+        public virtual AuthorizeVpcEndpointAccessResponse EndAuthorizeVpcEndpointAccess(IAsyncResult asyncResult)
+        {
+            return EndInvoke<AuthorizeVpcEndpointAccessResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CancelServiceSoftwareUpdate
 
         /// <summary>
         /// Cancels a scheduled service software update for an Amazon OpenSearch Service domain.
         /// You can only perform this operation before the <code>AutomatedUpdateDate</code> and
-        /// when the <code>UpdateStatus</code> is in the <code>PENDING_UPDATE</code> state.
+        /// when the domain's <code>UpdateStatus</code> is <code>PENDING_UPDATE</code>. For more
+        /// information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/service-software.html">Service
+        /// software updates in Amazon OpenSearch Service</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelServiceSoftwareUpdate service method.</param>
         /// 
@@ -498,15 +574,13 @@ namespace Amazon.OpenSearchService
         /// An error occurred while processing the request.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
-        /// The request processing has failed because of an unknown error, exception or failure
-        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// Request processing failed because of an unknown error, exception, or internal failure.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
-        /// An exception for accessing or deleting a resource that does not exist. Gives http
-        /// status code of 400.
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
-        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/CancelServiceSoftwareUpdate">REST API Reference for CancelServiceSoftwareUpdate Operation</seealso>
         public virtual CancelServiceSoftwareUpdateResponse CancelServiceSoftwareUpdate(CancelServiceSoftwareUpdateRequest request)
@@ -557,9 +631,8 @@ namespace Amazon.OpenSearchService
         #region  CreateDomain
 
         /// <summary>
-        /// Creates a new Amazon OpenSearch Service domain. For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html"
-        /// target="_blank">Creating and managing Amazon OpenSearch Service domains </a> in the
-        /// <i>Amazon OpenSearch Service Developer Guide</i>.
+        /// Creates an Amazon OpenSearch Service domain. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html">Creating
+        /// and managing Amazon OpenSearch Service domains</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDomain service method.</param>
         /// 
@@ -568,27 +641,23 @@ namespace Amazon.OpenSearchService
         /// An error occurred while processing the request.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
-        /// An error occured because the client wanted to access a not supported operation. Gives
-        /// http status code of 409.
+        /// An error occured because the client wanted to access an unsupported operation.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
-        /// The request processing has failed because of an unknown error, exception or failure
-        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// Request processing failed because of an unknown error, exception, or internal failure.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.InvalidTypeException">
-        /// An exception for trying to create or access sub-resource that is either invalid or
-        /// not supported. Gives http status code of 409.
+        /// An exception for trying to create or access a sub-resource that's either invalid or
+        /// not supported.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.LimitExceededException">
-        /// An exception for trying to create more than allowed resources or sub-resources. Gives
-        /// http status code of 409.
+        /// An exception for trying to create more than the allowed number of resources or sub-resources.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceAlreadyExistsException">
-        /// An exception for creating a resource that already exists. Gives http status code of
-        /// 400.
+        /// An exception for creating a resource that already exists.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
-        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/CreateDomain">REST API Reference for CreateDomain Operation</seealso>
         public virtual CreateDomainResponse CreateDomain(CreateDomainRequest request)
@@ -639,27 +708,24 @@ namespace Amazon.OpenSearchService
         #region  CreateOutboundConnection
 
         /// <summary>
-        /// Creates a new cross-cluster connection from a local OpenSearch domain to a remote
-        /// OpenSearch domain.
+        /// Creates a new cross-cluster search connection from a source Amazon OpenSearch Service
+        /// domain to a destination domain. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/cross-cluster-search.html">Cross-cluster
+        /// search for Amazon OpenSearch Service</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateOutboundConnection service method.</param>
         /// 
         /// <returns>The response from the CreateOutboundConnection service method, as returned by OpenSearchService.</returns>
         /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
-        /// An error occured because the client wanted to access a not supported operation. Gives
-        /// http status code of 409.
+        /// An error occured because the client wanted to access an unsupported operation.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
-        /// The request processing has failed because of an unknown error, exception or failure
-        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// Request processing failed because of an unknown error, exception, or internal failure.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.LimitExceededException">
-        /// An exception for trying to create more than allowed resources or sub-resources. Gives
-        /// http status code of 409.
+        /// An exception for trying to create more than the allowed number of resources or sub-resources.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceAlreadyExistsException">
-        /// An exception for creating a resource that already exists. Gives http status code of
-        /// 400.
+        /// An exception for creating a resource that already exists.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/CreateOutboundConnection">REST API Reference for CreateOutboundConnection Operation</seealso>
         public virtual CreateOutboundConnectionResponse CreateOutboundConnection(CreateOutboundConnectionRequest request)
@@ -710,36 +776,34 @@ namespace Amazon.OpenSearchService
         #region  CreatePackage
 
         /// <summary>
-        /// Create a package for use with Amazon OpenSearch Service domains.
+        /// Creates a package for use with Amazon OpenSearch Service domains. For more information,
+        /// see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/custom-packages.html">Custom
+        /// packages for Amazon OpenSearch Service</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePackage service method.</param>
         /// 
         /// <returns>The response from the CreatePackage service method, as returned by OpenSearchService.</returns>
         /// <exception cref="Amazon.OpenSearchService.Model.AccessDeniedException">
-        /// An error occurred because user does not have permissions to access the resource. Returns
-        /// HTTP status code 403.
+        /// An error occurred because you don't have permissions to access the resource.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.BaseException">
         /// An error occurred while processing the request.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
-        /// The request processing has failed because of an unknown error, exception or failure
-        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// Request processing failed because of an unknown error, exception, or internal failure.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.InvalidTypeException">
-        /// An exception for trying to create or access sub-resource that is either invalid or
-        /// not supported. Gives http status code of 409.
+        /// An exception for trying to create or access a sub-resource that's either invalid or
+        /// not supported.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.LimitExceededException">
-        /// An exception for trying to create more than allowed resources or sub-resources. Gives
-        /// http status code of 409.
+        /// An exception for trying to create more than the allowed number of resources or sub-resources.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceAlreadyExistsException">
-        /// An exception for creating a resource that already exists. Gives http status code of
-        /// 400.
+        /// An exception for creating a resource that already exists.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
-        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/CreatePackage">REST API Reference for CreatePackage Operation</seealso>
         public virtual CreatePackageResponse CreatePackage(CreatePackageRequest request)
@@ -787,11 +851,84 @@ namespace Amazon.OpenSearchService
 
         #endregion
         
+        #region  CreateVpcEndpoint
+
+        /// <summary>
+        /// Creates an Amazon OpenSearch Service-managed VPC endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateVpcEndpoint service method.</param>
+        /// 
+        /// <returns>The response from the CreateVpcEndpoint service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ConflictException">
+        /// An error occurred because the client attempts to remove a resource that is currently
+        /// in use.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access an unsupported operation.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.LimitExceededException">
+        /// An exception for trying to create more than the allowed number of resources or sub-resources.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/CreateVpcEndpoint">REST API Reference for CreateVpcEndpoint Operation</seealso>
+        public virtual CreateVpcEndpointResponse CreateVpcEndpoint(CreateVpcEndpointRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateVpcEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateVpcEndpointResponseUnmarshaller.Instance;
+
+            return Invoke<CreateVpcEndpointResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateVpcEndpoint operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateVpcEndpoint operation on AmazonOpenSearchServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateVpcEndpoint
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/CreateVpcEndpoint">REST API Reference for CreateVpcEndpoint Operation</seealso>
+        public virtual IAsyncResult BeginCreateVpcEndpoint(CreateVpcEndpointRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateVpcEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateVpcEndpointResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateVpcEndpoint operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateVpcEndpoint.</param>
+        /// 
+        /// <returns>Returns a  CreateVpcEndpointResult from OpenSearchService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/CreateVpcEndpoint">REST API Reference for CreateVpcEndpoint Operation</seealso>
+        public virtual CreateVpcEndpointResponse EndCreateVpcEndpoint(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateVpcEndpointResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteDomain
 
         /// <summary>
-        /// Permanently deletes the specified domain and all of its data. Once a domain is deleted,
-        /// it cannot be recovered.
+        /// Deletes an Amazon OpenSearch Service domain and all of its data. You can't recover
+        /// a domain after you delete it.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDomain service method.</param>
         /// 
@@ -800,15 +937,13 @@ namespace Amazon.OpenSearchService
         /// An error occurred while processing the request.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
-        /// The request processing has failed because of an unknown error, exception or failure
-        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// Request processing failed because of an unknown error, exception, or internal failure.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
-        /// An exception for accessing or deleting a resource that does not exist. Gives http
-        /// status code of 400.
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
-        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DeleteDomain">REST API Reference for DeleteDomain Operation</seealso>
         public virtual DeleteDomainResponse DeleteDomain(DeleteDomainRequest request)
@@ -859,18 +994,18 @@ namespace Amazon.OpenSearchService
         #region  DeleteInboundConnection
 
         /// <summary>
-        /// Allows the remote domain owner to delete an existing inbound cross-cluster connection.
+        /// Allows the destination Amazon OpenSearch Service domain owner to delete an existing
+        /// inbound cross-cluster search connection. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/cross-cluster-search.html">Cross-cluster
+        /// search for Amazon OpenSearch Service</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteInboundConnection service method.</param>
         /// 
         /// <returns>The response from the DeleteInboundConnection service method, as returned by OpenSearchService.</returns>
         /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
-        /// An error occured because the client wanted to access a not supported operation. Gives
-        /// http status code of 409.
+        /// An error occured because the client wanted to access an unsupported operation.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
-        /// An exception for accessing or deleting a resource that does not exist. Gives http
-        /// status code of 400.
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DeleteInboundConnection">REST API Reference for DeleteInboundConnection Operation</seealso>
         public virtual DeleteInboundConnectionResponse DeleteInboundConnection(DeleteInboundConnectionRequest request)
@@ -921,18 +1056,18 @@ namespace Amazon.OpenSearchService
         #region  DeleteOutboundConnection
 
         /// <summary>
-        /// Allows the local domain owner to delete an existing outbound cross-cluster connection.
+        /// Allows the source Amazon OpenSearch Service domain owner to delete an existing outbound
+        /// cross-cluster search connection. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/cross-cluster-search.html">Cross-cluster
+        /// search for Amazon OpenSearch Service</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteOutboundConnection service method.</param>
         /// 
         /// <returns>The response from the DeleteOutboundConnection service method, as returned by OpenSearchService.</returns>
         /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
-        /// An error occured because the client wanted to access a not supported operation. Gives
-        /// http status code of 409.
+        /// An error occured because the client wanted to access an unsupported operation.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
-        /// An exception for accessing or deleting a resource that does not exist. Gives http
-        /// status code of 400.
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DeleteOutboundConnection">REST API Reference for DeleteOutboundConnection Operation</seealso>
         public virtual DeleteOutboundConnectionResponse DeleteOutboundConnection(DeleteOutboundConnectionRequest request)
@@ -983,32 +1118,30 @@ namespace Amazon.OpenSearchService
         #region  DeletePackage
 
         /// <summary>
-        /// Deletes the package.
+        /// Deletes an Amazon OpenSearch Service package. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/custom-packages.html">Custom
+        /// packages for Amazon OpenSearch Service</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeletePackage service method.</param>
         /// 
         /// <returns>The response from the DeletePackage service method, as returned by OpenSearchService.</returns>
         /// <exception cref="Amazon.OpenSearchService.Model.AccessDeniedException">
-        /// An error occurred because user does not have permissions to access the resource. Returns
-        /// HTTP status code 403.
+        /// An error occurred because you don't have permissions to access the resource.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.BaseException">
         /// An error occurred while processing the request.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ConflictException">
         /// An error occurred because the client attempts to remove a resource that is currently
-        /// in use. Returns HTTP status code 409.
+        /// in use.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
-        /// The request processing has failed because of an unknown error, exception or failure
-        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// Request processing failed because of an unknown error, exception, or internal failure.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
-        /// An exception for accessing or deleting a resource that does not exist. Gives http
-        /// status code of 400.
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
-        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DeletePackage">REST API Reference for DeletePackage Operation</seealso>
         public virtual DeletePackageResponse DeletePackage(DeletePackageRequest request)
@@ -1056,11 +1189,77 @@ namespace Amazon.OpenSearchService
 
         #endregion
         
+        #region  DeleteVpcEndpoint
+
+        /// <summary>
+        /// Deletes an Amazon OpenSearch Service-managed interface VPC endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVpcEndpoint service method.</param>
+        /// 
+        /// <returns>The response from the DeleteVpcEndpoint service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access an unsupported operation.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DeleteVpcEndpoint">REST API Reference for DeleteVpcEndpoint Operation</seealso>
+        public virtual DeleteVpcEndpointResponse DeleteVpcEndpoint(DeleteVpcEndpointRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteVpcEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteVpcEndpointResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteVpcEndpointResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteVpcEndpoint operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVpcEndpoint operation on AmazonOpenSearchServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteVpcEndpoint
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DeleteVpcEndpoint">REST API Reference for DeleteVpcEndpoint Operation</seealso>
+        public virtual IAsyncResult BeginDeleteVpcEndpoint(DeleteVpcEndpointRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteVpcEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteVpcEndpointResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteVpcEndpoint operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteVpcEndpoint.</param>
+        /// 
+        /// <returns>Returns a  DeleteVpcEndpointResult from OpenSearchService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DeleteVpcEndpoint">REST API Reference for DeleteVpcEndpoint Operation</seealso>
+        public virtual DeleteVpcEndpointResponse EndDeleteVpcEndpoint(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteVpcEndpointResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeDomain
 
         /// <summary>
-        /// Returns domain configuration information about the specified domain, including the
-        /// domain ID, domain endpoint, and domain ARN.
+        /// Describes the domain configuration for the specified Amazon OpenSearch Service domain,
+        /// including the domain ID, domain service endpoint, and domain ARN.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDomain service method.</param>
         /// 
@@ -1069,15 +1268,13 @@ namespace Amazon.OpenSearchService
         /// An error occurred while processing the request.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
-        /// The request processing has failed because of an unknown error, exception or failure
-        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// Request processing failed because of an unknown error, exception, or internal failure.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
-        /// An exception for accessing or deleting a resource that does not exist. Gives http
-        /// status code of 400.
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
-        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeDomain">REST API Reference for DescribeDomain Operation</seealso>
         public virtual DescribeDomainResponse DescribeDomain(DescribeDomainRequest request)
@@ -1128,8 +1325,9 @@ namespace Amazon.OpenSearchService
         #region  DescribeDomainAutoTunes
 
         /// <summary>
-        /// Provides scheduled Auto-Tune action details for the domain, such as Auto-Tune action
-        /// type, description, severity, and scheduled date.
+        /// Returns the list of optimizations that Auto-Tune has made to an Amazon OpenSearch
+        /// Service domain. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html">Auto-Tune
+        /// for Amazon OpenSearch Service</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDomainAutoTunes service method.</param>
         /// 
@@ -1138,15 +1336,13 @@ namespace Amazon.OpenSearchService
         /// An error occurred while processing the request.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
-        /// The request processing has failed because of an unknown error, exception or failure
-        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// Request processing failed because of an unknown error, exception, or internal failure.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
-        /// An exception for accessing or deleting a resource that does not exist. Gives http
-        /// status code of 400.
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
-        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeDomainAutoTunes">REST API Reference for DescribeDomainAutoTunes Operation</seealso>
         public virtual DescribeDomainAutoTunesResponse DescribeDomainAutoTunes(DescribeDomainAutoTunesRequest request)
@@ -1194,11 +1390,78 @@ namespace Amazon.OpenSearchService
 
         #endregion
         
+        #region  DescribeDomainChangeProgress
+
+        /// <summary>
+        /// Returns information about the current blue/green deployment happening on an Amazon
+        /// OpenSearch Service domain. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-configuration-changes.html">Making
+        /// configuration changes in Amazon OpenSearch Service</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDomainChangeProgress service method.</param>
+        /// 
+        /// <returns>The response from the DescribeDomainChangeProgress service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeDomainChangeProgress">REST API Reference for DescribeDomainChangeProgress Operation</seealso>
+        public virtual DescribeDomainChangeProgressResponse DescribeDomainChangeProgress(DescribeDomainChangeProgressRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDomainChangeProgressRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDomainChangeProgressResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeDomainChangeProgressResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeDomainChangeProgress operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDomainChangeProgress operation on AmazonOpenSearchServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeDomainChangeProgress
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeDomainChangeProgress">REST API Reference for DescribeDomainChangeProgress Operation</seealso>
+        public virtual IAsyncResult BeginDescribeDomainChangeProgress(DescribeDomainChangeProgressRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDomainChangeProgressRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDomainChangeProgressResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeDomainChangeProgress operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeDomainChangeProgress.</param>
+        /// 
+        /// <returns>Returns a  DescribeDomainChangeProgressResult from OpenSearchService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeDomainChangeProgress">REST API Reference for DescribeDomainChangeProgress Operation</seealso>
+        public virtual DescribeDomainChangeProgressResponse EndDescribeDomainChangeProgress(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeDomainChangeProgressResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeDomainConfig
 
         /// <summary>
-        /// Provides cluster configuration information about the specified domain, such as the
-        /// state, creation date, update version, and update date for cluster options.
+        /// Returns the configuration of an Amazon OpenSearch Service domain.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDomainConfig service method.</param>
         /// 
@@ -1207,15 +1470,13 @@ namespace Amazon.OpenSearchService
         /// An error occurred while processing the request.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
-        /// The request processing has failed because of an unknown error, exception or failure
-        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// Request processing failed because of an unknown error, exception, or internal failure.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
-        /// An exception for accessing or deleting a resource that does not exist. Gives http
-        /// status code of 400.
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
-        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeDomainConfig">REST API Reference for DescribeDomainConfig Operation</seealso>
         public virtual DescribeDomainConfigResponse DescribeDomainConfig(DescribeDomainConfigRequest request)
@@ -1263,11 +1524,155 @@ namespace Amazon.OpenSearchService
 
         #endregion
         
+        #region  DescribeDomainHealth
+
+        /// <summary>
+        /// Returns information about domain and node health, the standby Availability Zone, number
+        /// of nodes per Availability Zone, and shard count per node.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDomainHealth service method.</param>
+        /// 
+        /// <returns>The response from the DescribeDomainHealth service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access an unsupported operation.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeDomainHealth">REST API Reference for DescribeDomainHealth Operation</seealso>
+        public virtual DescribeDomainHealthResponse DescribeDomainHealth(DescribeDomainHealthRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDomainHealthRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDomainHealthResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeDomainHealthResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeDomainHealth operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDomainHealth operation on AmazonOpenSearchServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeDomainHealth
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeDomainHealth">REST API Reference for DescribeDomainHealth Operation</seealso>
+        public virtual IAsyncResult BeginDescribeDomainHealth(DescribeDomainHealthRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDomainHealthRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDomainHealthResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeDomainHealth operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeDomainHealth.</param>
+        /// 
+        /// <returns>Returns a  DescribeDomainHealthResult from OpenSearchService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeDomainHealth">REST API Reference for DescribeDomainHealth Operation</seealso>
+        public virtual DescribeDomainHealthResponse EndDescribeDomainHealth(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeDomainHealthResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeDomainNodes
+
+        /// <summary>
+        /// Returns information about domain and nodes, including data nodes, master nodes, ultrawarm
+        /// nodes, Availability Zone(s), standby nodes, node configurations, and node states.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDomainNodes service method.</param>
+        /// 
+        /// <returns>The response from the DescribeDomainNodes service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DependencyFailureException">
+        /// An exception for when a failure in one of the dependencies results in the service
+        /// being unable to fetch details about the resource.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access an unsupported operation.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeDomainNodes">REST API Reference for DescribeDomainNodes Operation</seealso>
+        public virtual DescribeDomainNodesResponse DescribeDomainNodes(DescribeDomainNodesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDomainNodesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDomainNodesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeDomainNodesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeDomainNodes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDomainNodes operation on AmazonOpenSearchServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeDomainNodes
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeDomainNodes">REST API Reference for DescribeDomainNodes Operation</seealso>
+        public virtual IAsyncResult BeginDescribeDomainNodes(DescribeDomainNodesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDomainNodesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDomainNodesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeDomainNodes operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeDomainNodes.</param>
+        /// 
+        /// <returns>Returns a  DescribeDomainNodesResult from OpenSearchService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeDomainNodes">REST API Reference for DescribeDomainNodes Operation</seealso>
+        public virtual DescribeDomainNodesResponse EndDescribeDomainNodes(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeDomainNodesResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeDomains
 
         /// <summary>
-        /// Returns domain configuration information about the specified domains, including the
-        /// domain ID, domain endpoint, and domain ARN.
+        /// Returns domain configuration information about the specified Amazon OpenSearch Service
+        /// domains.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDomains service method.</param>
         /// 
@@ -1276,11 +1681,10 @@ namespace Amazon.OpenSearchService
         /// An error occurred while processing the request.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
-        /// The request processing has failed because of an unknown error, exception or failure
-        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// Request processing failed because of an unknown error, exception, or internal failure.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
-        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeDomains">REST API Reference for DescribeDomains Operation</seealso>
         public virtual DescribeDomainsResponse DescribeDomains(DescribeDomainsRequest request)
@@ -1328,21 +1732,92 @@ namespace Amazon.OpenSearchService
 
         #endregion
         
+        #region  DescribeDryRunProgress
+
+        /// <summary>
+        /// Describes the progress of a pre-update dry run analysis on an Amazon OpenSearch Service
+        /// domain. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-configuration-changes#dryrun">Determining
+        /// whether a change will cause a blue/green deployment</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDryRunProgress service method.</param>
+        /// 
+        /// <returns>The response from the DescribeDryRunProgress service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access an unsupported operation.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeDryRunProgress">REST API Reference for DescribeDryRunProgress Operation</seealso>
+        public virtual DescribeDryRunProgressResponse DescribeDryRunProgress(DescribeDryRunProgressRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDryRunProgressRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDryRunProgressResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeDryRunProgressResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeDryRunProgress operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDryRunProgress operation on AmazonOpenSearchServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeDryRunProgress
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeDryRunProgress">REST API Reference for DescribeDryRunProgress Operation</seealso>
+        public virtual IAsyncResult BeginDescribeDryRunProgress(DescribeDryRunProgressRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDryRunProgressRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDryRunProgressResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeDryRunProgress operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeDryRunProgress.</param>
+        /// 
+        /// <returns>Returns a  DescribeDryRunProgressResult from OpenSearchService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeDryRunProgress">REST API Reference for DescribeDryRunProgress Operation</seealso>
+        public virtual DescribeDryRunProgressResponse EndDescribeDryRunProgress(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeDryRunProgressResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeInboundConnections
 
         /// <summary>
-        /// Lists all the inbound cross-cluster connections for a remote domain.
+        /// Lists all the inbound cross-cluster search connections for a destination (remote)
+        /// Amazon OpenSearch Service domain. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/cross-cluster-search.html">Cross-cluster
+        /// search for Amazon OpenSearch Service</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeInboundConnections service method.</param>
         /// 
         /// <returns>The response from the DescribeInboundConnections service method, as returned by OpenSearchService.</returns>
         /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
-        /// An error occured because the client wanted to access a not supported operation. Gives
-        /// http status code of 409.
+        /// An error occured because the client wanted to access an unsupported operation.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.InvalidPaginationTokenException">
-        /// The request processing has failed because of invalid pagination token provided by
-        /// customer. Returns an HTTP status code of 400.
+        /// Request processing failed because you provided an invalid pagination token.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeInboundConnections">REST API Reference for DescribeInboundConnections Operation</seealso>
         public virtual DescribeInboundConnectionsResponse DescribeInboundConnections(DescribeInboundConnectionsRequest request)
@@ -1393,9 +1868,8 @@ namespace Amazon.OpenSearchService
         #region  DescribeInstanceTypeLimits
 
         /// <summary>
-        /// Describe the limits for a given instance type and OpenSearch or Elasticsearch version.
-        /// When modifying an existing domain, specify the <code> <a>DomainName</a> </code> to
-        /// see which limits you can modify.
+        /// Describes the instance count, storage, and master node limits for a given OpenSearch
+        /// or Elasticsearch version and instance type.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeInstanceTypeLimits service method.</param>
         /// 
@@ -1404,23 +1878,20 @@ namespace Amazon.OpenSearchService
         /// An error occurred while processing the request.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
-        /// The request processing has failed because of an unknown error, exception or failure
-        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// Request processing failed because of an unknown error, exception, or internal failure.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.InvalidTypeException">
-        /// An exception for trying to create or access sub-resource that is either invalid or
-        /// not supported. Gives http status code of 409.
+        /// An exception for trying to create or access a sub-resource that's either invalid or
+        /// not supported.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.LimitExceededException">
-        /// An exception for trying to create more than allowed resources or sub-resources. Gives
-        /// http status code of 409.
+        /// An exception for trying to create more than the allowed number of resources or sub-resources.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
-        /// An exception for accessing or deleting a resource that does not exist. Gives http
-        /// status code of 400.
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
-        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeInstanceTypeLimits">REST API Reference for DescribeInstanceTypeLimits Operation</seealso>
         public virtual DescribeInstanceTypeLimitsResponse DescribeInstanceTypeLimits(DescribeInstanceTypeLimitsRequest request)
@@ -1471,18 +1942,18 @@ namespace Amazon.OpenSearchService
         #region  DescribeOutboundConnections
 
         /// <summary>
-        /// Lists all the outbound cross-cluster connections for a local domain.
+        /// Lists all the outbound cross-cluster connections for a local (source) Amazon OpenSearch
+        /// Service domain. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/cross-cluster-search.html">Cross-cluster
+        /// search for Amazon OpenSearch Service</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeOutboundConnections service method.</param>
         /// 
         /// <returns>The response from the DescribeOutboundConnections service method, as returned by OpenSearchService.</returns>
         /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
-        /// An error occured because the client wanted to access a not supported operation. Gives
-        /// http status code of 409.
+        /// An error occured because the client wanted to access an unsupported operation.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.InvalidPaginationTokenException">
-        /// The request processing has failed because of invalid pagination token provided by
-        /// customer. Returns an HTTP status code of 400.
+        /// Request processing failed because you provided an invalid pagination token.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeOutboundConnections">REST API Reference for DescribeOutboundConnections Operation</seealso>
         public virtual DescribeOutboundConnectionsResponse DescribeOutboundConnections(DescribeOutboundConnectionsRequest request)
@@ -1533,29 +2004,27 @@ namespace Amazon.OpenSearchService
         #region  DescribePackages
 
         /// <summary>
-        /// Describes all packages available to Amazon OpenSearch Service domains. Includes options
-        /// for filtering, limiting the number of results, and pagination.
+        /// Describes all packages available to OpenSearch Service. For more information, see
+        /// <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/custom-packages.html">Custom
+        /// packages for Amazon OpenSearch Service</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribePackages service method.</param>
         /// 
         /// <returns>The response from the DescribePackages service method, as returned by OpenSearchService.</returns>
         /// <exception cref="Amazon.OpenSearchService.Model.AccessDeniedException">
-        /// An error occurred because user does not have permissions to access the resource. Returns
-        /// HTTP status code 403.
+        /// An error occurred because you don't have permissions to access the resource.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.BaseException">
         /// An error occurred while processing the request.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
-        /// The request processing has failed because of an unknown error, exception or failure
-        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// Request processing failed because of an unknown error, exception, or internal failure.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
-        /// An exception for accessing or deleting a resource that does not exist. Gives http
-        /// status code of 400.
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
-        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribePackages">REST API Reference for DescribePackages Operation</seealso>
         public virtual DescribePackagesResponse DescribePackages(DescribePackagesRequest request)
@@ -1606,25 +2075,24 @@ namespace Amazon.OpenSearchService
         #region  DescribeReservedInstanceOfferings
 
         /// <summary>
-        /// Lists available reserved OpenSearch instance offerings.
+        /// Describes the available Amazon OpenSearch Service Reserved Instance offerings for
+        /// a given Region. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/ri.html">Reserved
+        /// Instances in Amazon OpenSearch Service</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeReservedInstanceOfferings service method.</param>
         /// 
         /// <returns>The response from the DescribeReservedInstanceOfferings service method, as returned by OpenSearchService.</returns>
         /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
-        /// An error occured because the client wanted to access a not supported operation. Gives
-        /// http status code of 409.
+        /// An error occured because the client wanted to access an unsupported operation.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
-        /// The request processing has failed because of an unknown error, exception or failure
-        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// Request processing failed because of an unknown error, exception, or internal failure.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
-        /// An exception for accessing or deleting a resource that does not exist. Gives http
-        /// status code of 400.
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
-        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeReservedInstanceOfferings">REST API Reference for DescribeReservedInstanceOfferings Operation</seealso>
         public virtual DescribeReservedInstanceOfferingsResponse DescribeReservedInstanceOfferings(DescribeReservedInstanceOfferingsRequest request)
@@ -1675,25 +2143,24 @@ namespace Amazon.OpenSearchService
         #region  DescribeReservedInstances
 
         /// <summary>
-        /// Returns information about reserved OpenSearch instances for this account.
+        /// Describes the Amazon OpenSearch Service instances that you have reserved in a given
+        /// Region. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/ri.html">Reserved
+        /// Instances in Amazon OpenSearch Service</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeReservedInstances service method.</param>
         /// 
         /// <returns>The response from the DescribeReservedInstances service method, as returned by OpenSearchService.</returns>
         /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
-        /// An error occured because the client wanted to access a not supported operation. Gives
-        /// http status code of 409.
+        /// An error occured because the client wanted to access an unsupported operation.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
-        /// The request processing has failed because of an unknown error, exception or failure
-        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// Request processing failed because of an unknown error, exception, or internal failure.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
-        /// An exception for accessing or deleting a resource that does not exist. Gives http
-        /// status code of 400.
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
-        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeReservedInstances">REST API Reference for DescribeReservedInstances Operation</seealso>
         public virtual DescribeReservedInstancesResponse DescribeReservedInstances(DescribeReservedInstancesRequest request)
@@ -1741,35 +2208,102 @@ namespace Amazon.OpenSearchService
 
         #endregion
         
+        #region  DescribeVpcEndpoints
+
+        /// <summary>
+        /// Describes one or more Amazon OpenSearch Service-managed VPC endpoints.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVpcEndpoints service method.</param>
+        /// 
+        /// <returns>The response from the DescribeVpcEndpoints service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access an unsupported operation.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeVpcEndpoints">REST API Reference for DescribeVpcEndpoints Operation</seealso>
+        public virtual DescribeVpcEndpointsResponse DescribeVpcEndpoints(DescribeVpcEndpointsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeVpcEndpointsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeVpcEndpointsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeVpcEndpointsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeVpcEndpoints operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVpcEndpoints operation on AmazonOpenSearchServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeVpcEndpoints
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeVpcEndpoints">REST API Reference for DescribeVpcEndpoints Operation</seealso>
+        public virtual IAsyncResult BeginDescribeVpcEndpoints(DescribeVpcEndpointsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeVpcEndpointsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeVpcEndpointsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeVpcEndpoints operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeVpcEndpoints.</param>
+        /// 
+        /// <returns>Returns a  DescribeVpcEndpointsResult from OpenSearchService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeVpcEndpoints">REST API Reference for DescribeVpcEndpoints Operation</seealso>
+        public virtual DescribeVpcEndpointsResponse EndDescribeVpcEndpoints(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeVpcEndpointsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DissociatePackage
 
         /// <summary>
-        /// Dissociates a package from the Amazon OpenSearch Service domain.
+        /// Removes a package from the specified Amazon OpenSearch Service domain. The package
+        /// can't be in use with any OpenSearch index for the dissociation to succeed. The package
+        /// is still available in OpenSearch Service for association later. For more information,
+        /// see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/custom-packages.html">Custom
+        /// packages for Amazon OpenSearch Service</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DissociatePackage service method.</param>
         /// 
         /// <returns>The response from the DissociatePackage service method, as returned by OpenSearchService.</returns>
         /// <exception cref="Amazon.OpenSearchService.Model.AccessDeniedException">
-        /// An error occurred because user does not have permissions to access the resource. Returns
-        /// HTTP status code 403.
+        /// An error occurred because you don't have permissions to access the resource.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.BaseException">
         /// An error occurred while processing the request.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ConflictException">
         /// An error occurred because the client attempts to remove a resource that is currently
-        /// in use. Returns HTTP status code 409.
+        /// in use.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
-        /// The request processing has failed because of an unknown error, exception or failure
-        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// Request processing failed because of an unknown error, exception, or internal failure.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
-        /// An exception for accessing or deleting a resource that does not exist. Gives http
-        /// status code of 400.
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
-        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DissociatePackage">REST API Reference for DissociatePackage Operation</seealso>
         public virtual DissociatePackageResponse DissociatePackage(DissociatePackageRequest request)
@@ -1820,9 +2354,8 @@ namespace Amazon.OpenSearchService
         #region  GetCompatibleVersions
 
         /// <summary>
-        /// Returns a list of upgrade-compatible versions of OpenSearch/Elasticsearch. You can
-        /// optionally pass a <code> <a>DomainName</a> </code> to get all upgrade-compatible versions
-        /// of OpenSearch/Elasticsearch for that specific domain.
+        /// Returns a map of OpenSearch or Elasticsearch versions and the versions you can upgrade
+        /// them to.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetCompatibleVersions service method.</param>
         /// 
@@ -1831,19 +2364,16 @@ namespace Amazon.OpenSearchService
         /// An error occurred while processing the request.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
-        /// An error occured because the client wanted to access a not supported operation. Gives
-        /// http status code of 409.
+        /// An error occured because the client wanted to access an unsupported operation.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
-        /// The request processing has failed because of an unknown error, exception or failure
-        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// Request processing failed because of an unknown error, exception, or internal failure.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
-        /// An exception for accessing or deleting a resource that does not exist. Gives http
-        /// status code of 400.
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
-        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/GetCompatibleVersions">REST API Reference for GetCompatibleVersions Operation</seealso>
         public virtual GetCompatibleVersionsResponse GetCompatibleVersions(GetCompatibleVersionsRequest request)
@@ -1894,28 +2424,28 @@ namespace Amazon.OpenSearchService
         #region  GetPackageVersionHistory
 
         /// <summary>
-        /// Returns a list of package versions, along with their creation time and commit message.
+        /// Returns a list of Amazon OpenSearch Service package versions, along with their creation
+        /// time, commit message, and plugin properties (if the package is a zip plugin package).
+        /// For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/custom-packages.html">Custom
+        /// packages for Amazon OpenSearch Service</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetPackageVersionHistory service method.</param>
         /// 
         /// <returns>The response from the GetPackageVersionHistory service method, as returned by OpenSearchService.</returns>
         /// <exception cref="Amazon.OpenSearchService.Model.AccessDeniedException">
-        /// An error occurred because user does not have permissions to access the resource. Returns
-        /// HTTP status code 403.
+        /// An error occurred because you don't have permissions to access the resource.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.BaseException">
         /// An error occurred while processing the request.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
-        /// The request processing has failed because of an unknown error, exception or failure
-        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// Request processing failed because of an unknown error, exception, or internal failure.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
-        /// An exception for accessing or deleting a resource that does not exist. Gives http
-        /// status code of 400.
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
-        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/GetPackageVersionHistory">REST API Reference for GetPackageVersionHistory Operation</seealso>
         public virtual GetPackageVersionHistoryResponse GetPackageVersionHistory(GetPackageVersionHistoryRequest request)
@@ -1966,7 +2496,8 @@ namespace Amazon.OpenSearchService
         #region  GetUpgradeHistory
 
         /// <summary>
-        /// Retrieves the complete history of the last 10 upgrades performed on the domain.
+        /// Retrieves the complete history of the last 10 upgrades performed on an Amazon OpenSearch
+        /// Service domain.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetUpgradeHistory service method.</param>
         /// 
@@ -1975,19 +2506,16 @@ namespace Amazon.OpenSearchService
         /// An error occurred while processing the request.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
-        /// An error occured because the client wanted to access a not supported operation. Gives
-        /// http status code of 409.
+        /// An error occured because the client wanted to access an unsupported operation.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
-        /// The request processing has failed because of an unknown error, exception or failure
-        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// Request processing failed because of an unknown error, exception, or internal failure.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
-        /// An exception for accessing or deleting a resource that does not exist. Gives http
-        /// status code of 400.
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
-        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/GetUpgradeHistory">REST API Reference for GetUpgradeHistory Operation</seealso>
         public virtual GetUpgradeHistoryResponse GetUpgradeHistory(GetUpgradeHistoryRequest request)
@@ -2038,8 +2566,8 @@ namespace Amazon.OpenSearchService
         #region  GetUpgradeStatus
 
         /// <summary>
-        /// Retrieves the latest status of the last upgrade or upgrade eligibility check performed
-        /// on the domain.
+        /// Returns the most recent status of the last upgrade or upgrade eligibility check performed
+        /// on an Amazon OpenSearch Service domain.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetUpgradeStatus service method.</param>
         /// 
@@ -2048,19 +2576,16 @@ namespace Amazon.OpenSearchService
         /// An error occurred while processing the request.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
-        /// An error occured because the client wanted to access a not supported operation. Gives
-        /// http status code of 409.
+        /// An error occured because the client wanted to access an unsupported operation.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
-        /// The request processing has failed because of an unknown error, exception or failure
-        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// Request processing failed because of an unknown error, exception, or internal failure.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
-        /// An exception for accessing or deleting a resource that does not exist. Gives http
-        /// status code of 400.
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
-        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/GetUpgradeStatus">REST API Reference for GetUpgradeStatus Operation</seealso>
         public virtual GetUpgradeStatusResponse GetUpgradeStatus(GetUpgradeStatusRequest request)
@@ -2111,7 +2636,8 @@ namespace Amazon.OpenSearchService
         #region  ListDomainNames
 
         /// <summary>
-        /// Returns the names of all domains owned by the current user's account.
+        /// Returns the names of all Amazon OpenSearch Service domains owned by the current user
+        /// in the active Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDomainNames service method.</param>
         /// 
@@ -2120,7 +2646,7 @@ namespace Amazon.OpenSearchService
         /// An error occurred while processing the request.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
-        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ListDomainNames">REST API Reference for ListDomainNames Operation</seealso>
         public virtual ListDomainNamesResponse ListDomainNames(ListDomainNamesRequest request)
@@ -2171,28 +2697,27 @@ namespace Amazon.OpenSearchService
         #region  ListDomainsForPackage
 
         /// <summary>
-        /// Lists all Amazon OpenSearch Service domains associated with the package.
+        /// Lists all Amazon OpenSearch Service domains associated with a given package. For more
+        /// information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/custom-packages.html">Custom
+        /// packages for Amazon OpenSearch Service</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDomainsForPackage service method.</param>
         /// 
         /// <returns>The response from the ListDomainsForPackage service method, as returned by OpenSearchService.</returns>
         /// <exception cref="Amazon.OpenSearchService.Model.AccessDeniedException">
-        /// An error occurred because user does not have permissions to access the resource. Returns
-        /// HTTP status code 403.
+        /// An error occurred because you don't have permissions to access the resource.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.BaseException">
         /// An error occurred while processing the request.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
-        /// The request processing has failed because of an unknown error, exception or failure
-        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// Request processing failed because of an unknown error, exception, or internal failure.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
-        /// An exception for accessing or deleting a resource that does not exist. Gives http
-        /// status code of 400.
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
-        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ListDomainsForPackage">REST API Reference for ListDomainsForPackage Operation</seealso>
         public virtual ListDomainsForPackageResponse ListDomainsForPackage(ListDomainsForPackageRequest request)
@@ -2243,7 +2768,8 @@ namespace Amazon.OpenSearchService
         #region  ListInstanceTypeDetails
 
         /// <summary>
-        /// 
+        /// Lists all instance types and available features for a given OpenSearch or Elasticsearch
+        /// version.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListInstanceTypeDetails service method.</param>
         /// 
@@ -2252,15 +2778,13 @@ namespace Amazon.OpenSearchService
         /// An error occurred while processing the request.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
-        /// The request processing has failed because of an unknown error, exception or failure
-        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// Request processing failed because of an unknown error, exception, or internal failure.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
-        /// An exception for accessing or deleting a resource that does not exist. Gives http
-        /// status code of 400.
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
-        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ListInstanceTypeDetails">REST API Reference for ListInstanceTypeDetails Operation</seealso>
         public virtual ListInstanceTypeDetailsResponse ListInstanceTypeDetails(ListInstanceTypeDetailsRequest request)
@@ -2311,28 +2835,27 @@ namespace Amazon.OpenSearchService
         #region  ListPackagesForDomain
 
         /// <summary>
-        /// Lists all packages associated with the Amazon OpenSearch Service domain.
+        /// Lists all packages associated with an Amazon OpenSearch Service domain. For more information,
+        /// see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/custom-packages.html">Custom
+        /// packages for Amazon OpenSearch Service</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPackagesForDomain service method.</param>
         /// 
         /// <returns>The response from the ListPackagesForDomain service method, as returned by OpenSearchService.</returns>
         /// <exception cref="Amazon.OpenSearchService.Model.AccessDeniedException">
-        /// An error occurred because user does not have permissions to access the resource. Returns
-        /// HTTP status code 403.
+        /// An error occurred because you don't have permissions to access the resource.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.BaseException">
         /// An error occurred while processing the request.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
-        /// The request processing has failed because of an unknown error, exception or failure
-        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// Request processing failed because of an unknown error, exception, or internal failure.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
-        /// An exception for accessing or deleting a resource that does not exist. Gives http
-        /// status code of 400.
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
-        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ListPackagesForDomain">REST API Reference for ListPackagesForDomain Operation</seealso>
         public virtual ListPackagesForDomainResponse ListPackagesForDomain(ListPackagesForDomainRequest request)
@@ -2380,10 +2903,84 @@ namespace Amazon.OpenSearchService
 
         #endregion
         
+        #region  ListScheduledActions
+
+        /// <summary>
+        /// Retrieves a list of configuration changes that are scheduled for a domain. These changes
+        /// can be <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/service-software.html">service
+        /// software updates</a> or <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html#auto-tune-types">blue/green
+        /// Auto-Tune enhancements</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListScheduledActions service method.</param>
+        /// 
+        /// <returns>The response from the ListScheduledActions service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InvalidPaginationTokenException">
+        /// Request processing failed because you provided an invalid pagination token.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ListScheduledActions">REST API Reference for ListScheduledActions Operation</seealso>
+        public virtual ListScheduledActionsResponse ListScheduledActions(ListScheduledActionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListScheduledActionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListScheduledActionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListScheduledActionsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListScheduledActions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListScheduledActions operation on AmazonOpenSearchServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListScheduledActions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ListScheduledActions">REST API Reference for ListScheduledActions Operation</seealso>
+        public virtual IAsyncResult BeginListScheduledActions(ListScheduledActionsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListScheduledActionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListScheduledActionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListScheduledActions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListScheduledActions.</param>
+        /// 
+        /// <returns>Returns a  ListScheduledActionsResult from OpenSearchService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ListScheduledActions">REST API Reference for ListScheduledActions Operation</seealso>
+        public virtual ListScheduledActionsResponse EndListScheduledActions(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListScheduledActionsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListTags
 
         /// <summary>
-        /// Returns all tags for the given domain.
+        /// Returns all resource tags for an Amazon OpenSearch Service domain. For more information,
+        /// see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-awsresourcetagging.html">Tagging
+        /// Amazon OpenSearch Service domains</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTags service method.</param>
         /// 
@@ -2392,15 +2989,13 @@ namespace Amazon.OpenSearchService
         /// An error occurred while processing the request.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
-        /// The request processing has failed because of an unknown error, exception or failure
-        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// Request processing failed because of an unknown error, exception, or internal failure.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
-        /// An exception for accessing or deleting a resource that does not exist. Gives http
-        /// status code of 400.
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
-        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ListTags">REST API Reference for ListTags Operation</seealso>
         public virtual ListTagsResponse ListTags(ListTagsRequest request)
@@ -2451,7 +3046,8 @@ namespace Amazon.OpenSearchService
         #region  ListVersions
 
         /// <summary>
-        /// List all supported versions of OpenSearch and Elasticsearch.
+        /// Lists all versions of OpenSearch and Elasticsearch that Amazon OpenSearch Service
+        /// supports.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListVersions service method.</param>
         /// 
@@ -2460,15 +3056,13 @@ namespace Amazon.OpenSearchService
         /// An error occurred while processing the request.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
-        /// The request processing has failed because of an unknown error, exception or failure
-        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// Request processing failed because of an unknown error, exception, or internal failure.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
-        /// An exception for accessing or deleting a resource that does not exist. Gives http
-        /// status code of 400.
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
-        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ListVersions">REST API Reference for ListVersions Operation</seealso>
         public virtual ListVersionsResponse ListVersions(ListVersionsRequest request)
@@ -2516,36 +3110,230 @@ namespace Amazon.OpenSearchService
 
         #endregion
         
+        #region  ListVpcEndpointAccess
+
+        /// <summary>
+        /// Retrieves information about each Amazon Web Services principal that is allowed to
+        /// access a given Amazon OpenSearch Service domain through the use of an interface VPC
+        /// endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListVpcEndpointAccess service method.</param>
+        /// 
+        /// <returns>The response from the ListVpcEndpointAccess service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access an unsupported operation.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ListVpcEndpointAccess">REST API Reference for ListVpcEndpointAccess Operation</seealso>
+        public virtual ListVpcEndpointAccessResponse ListVpcEndpointAccess(ListVpcEndpointAccessRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListVpcEndpointAccessRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListVpcEndpointAccessResponseUnmarshaller.Instance;
+
+            return Invoke<ListVpcEndpointAccessResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListVpcEndpointAccess operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListVpcEndpointAccess operation on AmazonOpenSearchServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListVpcEndpointAccess
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ListVpcEndpointAccess">REST API Reference for ListVpcEndpointAccess Operation</seealso>
+        public virtual IAsyncResult BeginListVpcEndpointAccess(ListVpcEndpointAccessRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListVpcEndpointAccessRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListVpcEndpointAccessResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListVpcEndpointAccess operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListVpcEndpointAccess.</param>
+        /// 
+        /// <returns>Returns a  ListVpcEndpointAccessResult from OpenSearchService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ListVpcEndpointAccess">REST API Reference for ListVpcEndpointAccess Operation</seealso>
+        public virtual ListVpcEndpointAccessResponse EndListVpcEndpointAccess(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListVpcEndpointAccessResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListVpcEndpoints
+
+        /// <summary>
+        /// Retrieves all Amazon OpenSearch Service-managed VPC endpoints in the current Amazon
+        /// Web Services account and Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListVpcEndpoints service method.</param>
+        /// 
+        /// <returns>The response from the ListVpcEndpoints service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access an unsupported operation.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ListVpcEndpoints">REST API Reference for ListVpcEndpoints Operation</seealso>
+        public virtual ListVpcEndpointsResponse ListVpcEndpoints(ListVpcEndpointsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListVpcEndpointsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListVpcEndpointsResponseUnmarshaller.Instance;
+
+            return Invoke<ListVpcEndpointsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListVpcEndpoints operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListVpcEndpoints operation on AmazonOpenSearchServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListVpcEndpoints
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ListVpcEndpoints">REST API Reference for ListVpcEndpoints Operation</seealso>
+        public virtual IAsyncResult BeginListVpcEndpoints(ListVpcEndpointsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListVpcEndpointsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListVpcEndpointsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListVpcEndpoints operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListVpcEndpoints.</param>
+        /// 
+        /// <returns>Returns a  ListVpcEndpointsResult from OpenSearchService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ListVpcEndpoints">REST API Reference for ListVpcEndpoints Operation</seealso>
+        public virtual ListVpcEndpointsResponse EndListVpcEndpoints(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListVpcEndpointsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListVpcEndpointsForDomain
+
+        /// <summary>
+        /// Retrieves all Amazon OpenSearch Service-managed VPC endpoints associated with a particular
+        /// domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListVpcEndpointsForDomain service method.</param>
+        /// 
+        /// <returns>The response from the ListVpcEndpointsForDomain service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access an unsupported operation.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ListVpcEndpointsForDomain">REST API Reference for ListVpcEndpointsForDomain Operation</seealso>
+        public virtual ListVpcEndpointsForDomainResponse ListVpcEndpointsForDomain(ListVpcEndpointsForDomainRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListVpcEndpointsForDomainRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListVpcEndpointsForDomainResponseUnmarshaller.Instance;
+
+            return Invoke<ListVpcEndpointsForDomainResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListVpcEndpointsForDomain operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListVpcEndpointsForDomain operation on AmazonOpenSearchServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListVpcEndpointsForDomain
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ListVpcEndpointsForDomain">REST API Reference for ListVpcEndpointsForDomain Operation</seealso>
+        public virtual IAsyncResult BeginListVpcEndpointsForDomain(ListVpcEndpointsForDomainRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListVpcEndpointsForDomainRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListVpcEndpointsForDomainResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListVpcEndpointsForDomain operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListVpcEndpointsForDomain.</param>
+        /// 
+        /// <returns>Returns a  ListVpcEndpointsForDomainResult from OpenSearchService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ListVpcEndpointsForDomain">REST API Reference for ListVpcEndpointsForDomain Operation</seealso>
+        public virtual ListVpcEndpointsForDomainResponse EndListVpcEndpointsForDomain(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListVpcEndpointsForDomainResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  PurchaseReservedInstanceOffering
 
         /// <summary>
-        /// Allows you to purchase reserved OpenSearch instances.
+        /// Allows you to purchase Amazon OpenSearch Service Reserved Instances.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PurchaseReservedInstanceOffering service method.</param>
         /// 
         /// <returns>The response from the PurchaseReservedInstanceOffering service method, as returned by OpenSearchService.</returns>
         /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
-        /// An error occured because the client wanted to access a not supported operation. Gives
-        /// http status code of 409.
+        /// An error occured because the client wanted to access an unsupported operation.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
-        /// The request processing has failed because of an unknown error, exception or failure
-        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// Request processing failed because of an unknown error, exception, or internal failure.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.LimitExceededException">
-        /// An exception for trying to create more than allowed resources or sub-resources. Gives
-        /// http status code of 409.
+        /// An exception for trying to create more than the allowed number of resources or sub-resources.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceAlreadyExistsException">
-        /// An exception for creating a resource that already exists. Gives http status code of
-        /// 400.
+        /// An exception for creating a resource that already exists.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
-        /// An exception for accessing or deleting a resource that does not exist. Gives http
-        /// status code of 400.
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
-        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/PurchaseReservedInstanceOffering">REST API Reference for PurchaseReservedInstanceOffering Operation</seealso>
         public virtual PurchaseReservedInstanceOfferingResponse PurchaseReservedInstanceOffering(PurchaseReservedInstanceOfferingRequest request)
@@ -2596,18 +3384,17 @@ namespace Amazon.OpenSearchService
         #region  RejectInboundConnection
 
         /// <summary>
-        /// Allows the remote domain owner to reject an inbound cross-cluster connection request.
+        /// Allows the remote Amazon OpenSearch Service domain owner to reject an inbound cross-cluster
+        /// connection request.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RejectInboundConnection service method.</param>
         /// 
         /// <returns>The response from the RejectInboundConnection service method, as returned by OpenSearchService.</returns>
         /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
-        /// An error occured because the client wanted to access a not supported operation. Gives
-        /// http status code of 409.
+        /// An error occured because the client wanted to access an unsupported operation.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
-        /// An exception for accessing or deleting a resource that does not exist. Gives http
-        /// status code of 400.
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/RejectInboundConnection">REST API Reference for RejectInboundConnection Operation</seealso>
         public virtual RejectInboundConnectionResponse RejectInboundConnection(RejectInboundConnectionRequest request)
@@ -2658,7 +3445,9 @@ namespace Amazon.OpenSearchService
         #region  RemoveTags
 
         /// <summary>
-        /// Removes the specified set of tags from the given domain.
+        /// Removes the specified set of tags from an Amazon OpenSearch Service domain. For more
+        /// information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains.html#managedomains-awsresorcetagging">
+        /// Tagging Amazon OpenSearch Service domains</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RemoveTags service method.</param>
         /// 
@@ -2667,11 +3456,10 @@ namespace Amazon.OpenSearchService
         /// An error occurred while processing the request.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
-        /// The request processing has failed because of an unknown error, exception or failure
-        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// Request processing failed because of an unknown error, exception, or internal failure.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
-        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/RemoveTags">REST API Reference for RemoveTags Operation</seealso>
         public virtual RemoveTagsResponse RemoveTags(RemoveTagsRequest request)
@@ -2719,10 +3507,82 @@ namespace Amazon.OpenSearchService
 
         #endregion
         
+        #region  RevokeVpcEndpointAccess
+
+        /// <summary>
+        /// Revokes access to an Amazon OpenSearch Service domain that was provided through an
+        /// interface VPC endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RevokeVpcEndpointAccess service method.</param>
+        /// 
+        /// <returns>The response from the RevokeVpcEndpointAccess service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access an unsupported operation.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/RevokeVpcEndpointAccess">REST API Reference for RevokeVpcEndpointAccess Operation</seealso>
+        public virtual RevokeVpcEndpointAccessResponse RevokeVpcEndpointAccess(RevokeVpcEndpointAccessRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RevokeVpcEndpointAccessRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RevokeVpcEndpointAccessResponseUnmarshaller.Instance;
+
+            return Invoke<RevokeVpcEndpointAccessResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RevokeVpcEndpointAccess operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RevokeVpcEndpointAccess operation on AmazonOpenSearchServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRevokeVpcEndpointAccess
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/RevokeVpcEndpointAccess">REST API Reference for RevokeVpcEndpointAccess Operation</seealso>
+        public virtual IAsyncResult BeginRevokeVpcEndpointAccess(RevokeVpcEndpointAccessRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RevokeVpcEndpointAccessRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RevokeVpcEndpointAccessResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  RevokeVpcEndpointAccess operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRevokeVpcEndpointAccess.</param>
+        /// 
+        /// <returns>Returns a  RevokeVpcEndpointAccessResult from OpenSearchService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/RevokeVpcEndpointAccess">REST API Reference for RevokeVpcEndpointAccess Operation</seealso>
+        public virtual RevokeVpcEndpointAccessResponse EndRevokeVpcEndpointAccess(IAsyncResult asyncResult)
+        {
+            return EndInvoke<RevokeVpcEndpointAccessResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  StartServiceSoftwareUpdate
 
         /// <summary>
-        /// Schedules a service software update for an Amazon OpenSearch Service domain.
+        /// Schedules a service software update for an Amazon OpenSearch Service domain. For more
+        /// information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/service-software.html">Service
+        /// software updates in Amazon OpenSearch Service</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartServiceSoftwareUpdate service method.</param>
         /// 
@@ -2731,15 +3591,13 @@ namespace Amazon.OpenSearchService
         /// An error occurred while processing the request.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
-        /// The request processing has failed because of an unknown error, exception or failure
-        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// Request processing failed because of an unknown error, exception, or internal failure.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
-        /// An exception for accessing or deleting a resource that does not exist. Gives http
-        /// status code of 400.
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
-        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/StartServiceSoftwareUpdate">REST API Reference for StartServiceSoftwareUpdate Operation</seealso>
         public virtual StartServiceSoftwareUpdateResponse StartServiceSoftwareUpdate(StartServiceSoftwareUpdateRequest request)
@@ -2790,8 +3648,7 @@ namespace Amazon.OpenSearchService
         #region  UpdateDomainConfig
 
         /// <summary>
-        /// Modifies the cluster configuration of the specified domain, such as setting the instance
-        /// type and the number of instances.
+        /// Modifies the cluster configuration of the specified Amazon OpenSearch Service domain.sl
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateDomainConfig service method.</param>
         /// 
@@ -2800,23 +3657,20 @@ namespace Amazon.OpenSearchService
         /// An error occurred while processing the request.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
-        /// The request processing has failed because of an unknown error, exception or failure
-        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// Request processing failed because of an unknown error, exception, or internal failure.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.InvalidTypeException">
-        /// An exception for trying to create or access sub-resource that is either invalid or
-        /// not supported. Gives http status code of 409.
+        /// An exception for trying to create or access a sub-resource that's either invalid or
+        /// not supported.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.LimitExceededException">
-        /// An exception for trying to create more than allowed resources or sub-resources. Gives
-        /// http status code of 409.
+        /// An exception for trying to create more than the allowed number of resources or sub-resources.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
-        /// An exception for accessing or deleting a resource that does not exist. Gives http
-        /// status code of 400.
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
-        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/UpdateDomainConfig">REST API Reference for UpdateDomainConfig Operation</seealso>
         public virtual UpdateDomainConfigResponse UpdateDomainConfig(UpdateDomainConfigRequest request)
@@ -2867,32 +3721,30 @@ namespace Amazon.OpenSearchService
         #region  UpdatePackage
 
         /// <summary>
-        /// Updates a package for use with Amazon OpenSearch Service domains.
+        /// Updates a package for use with Amazon OpenSearch Service domains. For more information,
+        /// see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/custom-packages.html">Custom
+        /// packages for Amazon OpenSearch Service</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdatePackage service method.</param>
         /// 
         /// <returns>The response from the UpdatePackage service method, as returned by OpenSearchService.</returns>
         /// <exception cref="Amazon.OpenSearchService.Model.AccessDeniedException">
-        /// An error occurred because user does not have permissions to access the resource. Returns
-        /// HTTP status code 403.
+        /// An error occurred because you don't have permissions to access the resource.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.BaseException">
         /// An error occurred while processing the request.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
-        /// The request processing has failed because of an unknown error, exception or failure
-        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// Request processing failed because of an unknown error, exception, or internal failure.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.LimitExceededException">
-        /// An exception for trying to create more than allowed resources or sub-resources. Gives
-        /// http status code of 409.
+        /// An exception for trying to create more than the allowed number of resources or sub-resources.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
-        /// An exception for accessing or deleting a resource that does not exist. Gives http
-        /// status code of 400.
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
-        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/UpdatePackage">REST API Reference for UpdatePackage Operation</seealso>
         public virtual UpdatePackageResponse UpdatePackage(UpdatePackageRequest request)
@@ -2940,11 +3792,164 @@ namespace Amazon.OpenSearchService
 
         #endregion
         
+        #region  UpdateScheduledAction
+
+        /// <summary>
+        /// Reschedules a planned domain configuration change for a later time. This change can
+        /// be a scheduled <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/service-software.html">service
+        /// software update</a> or a <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html#auto-tune-types">blue/green
+        /// Auto-Tune enhancement</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateScheduledAction service method.</param>
+        /// 
+        /// <returns>The response from the UpdateScheduledAction service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ConflictException">
+        /// An error occurred because the client attempts to remove a resource that is currently
+        /// in use.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.LimitExceededException">
+        /// An exception for trying to create more than the allowed number of resources or sub-resources.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.SlotNotAvailableException">
+        /// An exception for attempting to schedule a domain action during an unavailable time
+        /// slot.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/UpdateScheduledAction">REST API Reference for UpdateScheduledAction Operation</seealso>
+        public virtual UpdateScheduledActionResponse UpdateScheduledAction(UpdateScheduledActionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateScheduledActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateScheduledActionResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateScheduledActionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateScheduledAction operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateScheduledAction operation on AmazonOpenSearchServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateScheduledAction
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/UpdateScheduledAction">REST API Reference for UpdateScheduledAction Operation</seealso>
+        public virtual IAsyncResult BeginUpdateScheduledAction(UpdateScheduledActionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateScheduledActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateScheduledActionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateScheduledAction operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateScheduledAction.</param>
+        /// 
+        /// <returns>Returns a  UpdateScheduledActionResult from OpenSearchService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/UpdateScheduledAction">REST API Reference for UpdateScheduledAction Operation</seealso>
+        public virtual UpdateScheduledActionResponse EndUpdateScheduledAction(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateScheduledActionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateVpcEndpoint
+
+        /// <summary>
+        /// Modifies an Amazon OpenSearch Service-managed interface VPC endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateVpcEndpoint service method.</param>
+        /// 
+        /// <returns>The response from the UpdateVpcEndpoint service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ConflictException">
+        /// An error occurred because the client attempts to remove a resource that is currently
+        /// in use.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access an unsupported operation.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/UpdateVpcEndpoint">REST API Reference for UpdateVpcEndpoint Operation</seealso>
+        public virtual UpdateVpcEndpointResponse UpdateVpcEndpoint(UpdateVpcEndpointRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateVpcEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateVpcEndpointResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateVpcEndpointResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateVpcEndpoint operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateVpcEndpoint operation on AmazonOpenSearchServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateVpcEndpoint
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/UpdateVpcEndpoint">REST API Reference for UpdateVpcEndpoint Operation</seealso>
+        public virtual IAsyncResult BeginUpdateVpcEndpoint(UpdateVpcEndpointRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateVpcEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateVpcEndpointResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateVpcEndpoint operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateVpcEndpoint.</param>
+        /// 
+        /// <returns>Returns a  UpdateVpcEndpointResult from OpenSearchService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/UpdateVpcEndpoint">REST API Reference for UpdateVpcEndpoint Operation</seealso>
+        public virtual UpdateVpcEndpointResponse EndUpdateVpcEndpoint(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateVpcEndpointResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  UpgradeDomain
 
         /// <summary>
-        /// Allows you to either upgrade your domain or perform an upgrade eligibility check to
-        /// a compatible version of OpenSearch or Elasticsearch.
+        /// Allows you to either upgrade your Amazon OpenSearch Service domain or perform an upgrade
+        /// eligibility check to a compatible version of OpenSearch or Elasticsearch.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpgradeDomain service method.</param>
         /// 
@@ -2953,23 +3958,19 @@ namespace Amazon.OpenSearchService
         /// An error occurred while processing the request.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
-        /// An error occured because the client wanted to access a not supported operation. Gives
-        /// http status code of 409.
+        /// An error occured because the client wanted to access an unsupported operation.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
-        /// The request processing has failed because of an unknown error, exception or failure
-        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// Request processing failed because of an unknown error, exception, or internal failure.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceAlreadyExistsException">
-        /// An exception for creating a resource that already exists. Gives http status code of
-        /// 400.
+        /// An exception for creating a resource that already exists.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
-        /// An exception for accessing or deleting a resource that does not exist. Gives http
-        /// status code of 400.
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
-        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/UpgradeDomain">REST API Reference for UpgradeDomain Operation</seealso>
         public virtual UpgradeDomainResponse UpgradeDomain(UpgradeDomainRequest request)

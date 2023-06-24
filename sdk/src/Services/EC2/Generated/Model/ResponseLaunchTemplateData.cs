@@ -37,6 +37,7 @@ namespace Amazon.EC2.Model
         private LaunchTemplateCapacityReservationSpecificationResponse _capacityReservationSpecification;
         private LaunchTemplateCpuOptions _cpuOptions;
         private CreditSpecification _creditSpecification;
+        private bool? _disableApiStop;
         private bool? _disableApiTermination;
         private bool? _ebsOptimized;
         private List<ElasticGpuSpecificationResponse> _elasticGpuSpecifications = new List<ElasticGpuSpecificationResponse>();
@@ -52,6 +53,7 @@ namespace Amazon.EC2.Model
         private string _kernelId;
         private string _keyName;
         private List<LaunchTemplateLicenseConfiguration> _licenseSpecifications = new List<LaunchTemplateLicenseConfiguration>();
+        private LaunchTemplateInstanceMaintenanceOptions _maintenanceOptions;
         private LaunchTemplateInstanceMetadataOptions _metadataOptions;
         private LaunchTemplatesMonitoring _monitoring;
         private List<LaunchTemplateInstanceNetworkInterfaceSpecification> _networkInterfaces = new List<LaunchTemplateInstanceNetworkInterfaceSpecification>();
@@ -134,6 +136,26 @@ namespace Amazon.EC2.Model
         internal bool IsSetCreditSpecification()
         {
             return this._creditSpecification != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DisableApiStop. 
+        /// <para>
+        /// Indicates whether the instance is enabled for stop protection. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Stop
+        /// protection</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        /// </summary>
+        public bool DisableApiStop
+        {
+            get { return this._disableApiStop.GetValueOrDefault(); }
+            set { this._disableApiStop = value; }
+        }
+
+        // Check to see if DisableApiStop property is set
+        internal bool IsSetDisableApiStop()
+        {
+            return this._disableApiStop.HasValue; 
         }
 
         /// <summary>
@@ -268,7 +290,33 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ImageId. 
         /// <para>
-        /// The ID of the AMI that was used to launch the instance.
+        /// The ID of the AMI or a Systems Manager parameter. The Systems Manager parameter will
+        /// resolve to the ID of the AMI at instance launch.
+        /// </para>
+        ///  
+        /// <para>
+        /// The value depends on what you specified in the request. The possible values are:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If an AMI ID was specified in the request, then this is the AMI ID.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If a Systems Manager parameter was specified in the request, and <code>ResolveAlias</code>
+        /// was configured as <code>true</code>, then this is the AMI ID that the parameter is
+        /// mapped to in the Parameter Store.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If a Systems Manager parameter was specified in the request, and <code>ResolveAlias</code>
+        /// was configured as <code>false</code>, then this is the parameter value.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#use-an-ssm-parameter-instead-of-an-ami-id">Use
+        /// a Systems Manager parameter instead of an AMI ID</a> in the <i>Amazon Elastic Compute
+        /// Cloud User Guide</i>.
         /// </para>
         /// </summary>
         public string ImageId
@@ -413,6 +461,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetLicenseSpecifications()
         {
             return this._licenseSpecifications != null && this._licenseSpecifications.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaintenanceOptions. 
+        /// <para>
+        /// The maintenance options for your instance.
+        /// </para>
+        /// </summary>
+        public LaunchTemplateInstanceMaintenanceOptions MaintenanceOptions
+        {
+            get { return this._maintenanceOptions; }
+            set { this._maintenanceOptions = value; }
+        }
+
+        // Check to see if MaintenanceOptions property is set
+        internal bool IsSetMaintenanceOptions()
+        {
+            return this._maintenanceOptions != null;
         }
 
         /// <summary>
@@ -563,7 +629,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property TagSpecifications. 
         /// <para>
-        /// The tags.
+        /// The tags that are applied to the resources that are created during instance launch.
         /// </para>
         /// </summary>
         public List<LaunchTemplateTagSpecification> TagSpecifications
@@ -584,6 +650,7 @@ namespace Amazon.EC2.Model
         /// The user data for the instance. 
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string UserData
         {
             get { return this._userData; }

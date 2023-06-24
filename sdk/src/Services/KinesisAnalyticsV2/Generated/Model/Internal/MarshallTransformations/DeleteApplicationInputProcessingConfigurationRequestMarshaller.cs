@@ -58,7 +58,7 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
             string target = "KinesisAnalytics_20180523.DeleteApplicationInputProcessingConfiguration";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-05-23";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-05-23";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -85,7 +85,6 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.InputId);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

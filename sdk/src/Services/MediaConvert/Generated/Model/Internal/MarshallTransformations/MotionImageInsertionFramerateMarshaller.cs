@@ -34,7 +34,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// MotionImageInsertionFramerate Marshaller
-    /// </summary>       
+    /// </summary>
     public class MotionImageInsertionFramerateMarshaller : IRequestMarshaller<MotionImageInsertionFramerate, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static MotionImageInsertionFramerateMarshaller Instance = new MotionImageInsertionFramerateMarshaller();
 
     }

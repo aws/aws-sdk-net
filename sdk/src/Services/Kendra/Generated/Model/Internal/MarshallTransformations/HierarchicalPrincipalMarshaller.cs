@@ -34,7 +34,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// HierarchicalPrincipal Marshaller
-    /// </summary>       
+    /// </summary>
     public class HierarchicalPrincipalMarshaller : IRequestMarshaller<HierarchicalPrincipal, JsonMarshallerContext> 
     {
         /// <summary>
@@ -65,7 +65,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static HierarchicalPrincipalMarshaller Instance = new HierarchicalPrincipalMarshaller();
 
     }

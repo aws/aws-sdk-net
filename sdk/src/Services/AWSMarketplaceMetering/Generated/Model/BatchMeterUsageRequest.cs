@@ -30,8 +30,8 @@ namespace Amazon.AWSMarketplaceMetering.Model
 {
     /// <summary>
     /// Container for the parameters to the BatchMeterUsage operation.
-    /// BatchMeterUsage is called from a SaaS application listed on the AWS Marketplace to
-    /// post metering records for a set of customers.
+    /// <code>BatchMeterUsage</code> is called from a SaaS application listed on AWS Marketplace
+    /// to post metering records for a set of customers.
     /// 
     ///  
     /// <para>
@@ -40,23 +40,41 @@ namespace Amazon.AWSMarketplaceMetering.Model
     /// </para>
     ///  
     /// <para>
-    /// Every request to BatchMeterUsage is for one product. If you need to meter usage for
-    /// multiple products, you must make multiple calls to BatchMeterUsage.
+    /// Every request to <code>BatchMeterUsage</code> is for one product. If you need to meter
+    /// usage for multiple products, you must make multiple calls to <code>BatchMeterUsage</code>.
     /// </para>
     ///  
     /// <para>
-    /// BatchMeterUsage can process up to 25 UsageRecords at a time.
+    /// Usage records are expected to be submitted as quickly as possible after the event
+    /// that is being recorded, and are not accepted more than 6 hours after the event.
     /// </para>
     ///  
     /// <para>
-    /// A UsageRecord can optionally include multiple usage allocations, to provide customers
-    /// with usagedata split into buckets by tags that you define (or allow the customer to
-    /// define).
+    ///  <code>BatchMeterUsage</code> can process up to 25 <code>UsageRecords</code> at a
+    /// time.
     /// </para>
     ///  
     /// <para>
-    /// BatchMeterUsage requests must be less than 1MB in size.
+    /// A <code>UsageRecord</code> can optionally include multiple usage allocations, to provide
+    /// customers with usage data split into buckets by tags that you define (or allow the
+    /// customer to define).
     /// </para>
+    ///  
+    /// <para>
+    ///  <code>BatchMeterUsage</code> returns a list of <code>UsageRecordResult</code> objects,
+    /// showing the result for each <code>UsageRecord</code>, as well as a list of <code>UnprocessedRecords</code>,
+    /// indicating errors in the service side that you should retry.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <code>BatchMeterUsage</code> requests must be less than 1MB in size.
+    /// </para>
+    ///  <note> 
+    /// <para>
+    /// For an example of using <code>BatchMeterUsage</code>, see <a href="https://docs.aws.amazon.com/marketplace/latest/userguide/saas-code-examples.html#saas-batchmeterusage-example">
+    /// BatchMeterUsage code example</a> in the <i>AWS Marketplace Seller Guide</i>.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class BatchMeterUsageRequest : AmazonAWSMarketplaceMeteringRequest
     {
@@ -86,8 +104,8 @@ namespace Amazon.AWSMarketplaceMetering.Model
         /// <summary>
         /// Gets and sets the property UsageRecords. 
         /// <para>
-        /// The set of UsageRecords to submit. BatchMeterUsage accepts up to 25 UsageRecords at
-        /// a time.
+        /// The set of <code>UsageRecords</code> to submit. <code>BatchMeterUsage</code> accepts
+        /// up to 25 <code>UsageRecords</code> at a time.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=25)]

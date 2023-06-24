@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Translate.Model
 {
     /// <summary>
-    /// The Amazon Translate service is temporarily unavailable. Please wait a bit and then
-    /// retry your request.
+    /// The Amazon Translate service is temporarily unavailable. Wait a bit and then retry
+    /// your request.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

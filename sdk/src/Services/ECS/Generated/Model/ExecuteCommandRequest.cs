@@ -31,6 +31,19 @@ namespace Amazon.ECS.Model
     /// <summary>
     /// Container for the parameters to the ExecuteCommand operation.
     /// Runs a command remotely on a container within a task.
+    /// 
+    ///  
+    /// <para>
+    /// If you use a condition key in your IAM policy to refine the conditions for the policy
+    /// statement, for example limit the actions to a specific cluster, you receive an <code>AccessDeniedException</code>
+    /// when there is a mismatch between the condition key value and the corresponding parameter
+    /// value.
+    /// </para>
+    ///  
+    /// <para>
+    /// For information about required permissions and considerations, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-exec.html">Using
+    /// Amazon ECS Exec for debugging</a> in the <i>Amazon ECS Developer Guide</i>. 
+    /// </para>
     /// </summary>
     public partial class ExecuteCommandRequest : AmazonECSRequest
     {

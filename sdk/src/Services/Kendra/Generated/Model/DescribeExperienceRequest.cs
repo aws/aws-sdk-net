@@ -61,8 +61,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property IndexId. 
         /// <para>
-        /// The identifier of the index for your Amazon Kendra experience you want to get information
-        /// on.
+        /// The identifier of the index for your Amazon Kendra experience.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]

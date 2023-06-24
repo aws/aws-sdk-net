@@ -34,7 +34,7 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// TimeInNanos Marshaller
-    /// </summary>       
+    /// </summary>
     public class TimeInNanosMarshaller : IRequestMarshaller<TimeInNanos, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static TimeInNanosMarshaller Instance = new TimeInNanosMarshaller();
 
     }

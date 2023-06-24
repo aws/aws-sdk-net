@@ -55,7 +55,7 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
         public IRequest Marshall(DescribeAddonVersionsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.EKS");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-11-01";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-11-01";
             request.HttpMethod = "GET";
 
             
@@ -70,6 +70,15 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
+            
+            if (publicRequest.IsSetOwners())
+                request.ParameterCollection.Add("owners", publicRequest.Owners);
+            
+            if (publicRequest.IsSetPublishers())
+                request.ParameterCollection.Add("publishers", publicRequest.Publishers);
+            
+            if (publicRequest.IsSetTypes())
+                request.ParameterCollection.Add("types", publicRequest.Types);
             request.ResourcePath = "/addons/supported-versions";
             request.UseQueryString = true;
 

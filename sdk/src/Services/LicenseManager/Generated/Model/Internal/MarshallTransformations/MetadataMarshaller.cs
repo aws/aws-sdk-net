@@ -34,7 +34,7 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Metadata Marshaller
-    /// </summary>       
+    /// </summary>
     public class MetadataMarshaller : IRequestMarshaller<Metadata, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static MetadataMarshaller Instance = new MetadataMarshaller();
 
     }

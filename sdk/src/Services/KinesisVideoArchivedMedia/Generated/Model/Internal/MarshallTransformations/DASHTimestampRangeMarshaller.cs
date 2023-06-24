@@ -34,7 +34,7 @@ namespace Amazon.KinesisVideoArchivedMedia.Model.Internal.MarshallTransformation
 {
     /// <summary>
     /// DASHTimestampRange Marshaller
-    /// </summary>       
+    /// </summary>
     public class DASHTimestampRangeMarshaller : IRequestMarshaller<DASHTimestampRange, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.KinesisVideoArchivedMedia.Model.Internal.MarshallTransformation
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DASHTimestampRangeMarshaller Instance = new DASHTimestampRangeMarshaller();
 
     }

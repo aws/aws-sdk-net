@@ -34,7 +34,7 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CrlConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class CrlConfigurationMarshaller : IRequestMarshaller<CrlConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -79,7 +79,7 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CrlConfigurationMarshaller Instance = new CrlConfigurationMarshaller();
 
     }

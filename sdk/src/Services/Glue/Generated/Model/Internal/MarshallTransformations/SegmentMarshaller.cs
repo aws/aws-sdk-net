@@ -34,7 +34,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Segment Marshaller
-    /// </summary>       
+    /// </summary>
     public class SegmentMarshaller : IRequestMarshaller<Segment, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SegmentMarshaller Instance = new SegmentMarshaller();
 
     }

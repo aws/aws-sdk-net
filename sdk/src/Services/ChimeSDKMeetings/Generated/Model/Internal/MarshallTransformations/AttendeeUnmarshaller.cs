@@ -70,6 +70,12 @@ namespace Amazon.ChimeSDKMeetings.Model.Internal.MarshallTransformations
                     unmarshalledObject.AttendeeId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Capabilities", targetDepth))
+                {
+                    var unmarshaller = AttendeeCapabilitiesUnmarshaller.Instance;
+                    unmarshalledObject.Capabilities = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ExternalUserId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

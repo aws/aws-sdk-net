@@ -38,8 +38,8 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property ManifestWindowSeconds. 
         /// <para>
-        /// The total duration (in seconds) of each manifest. Minimum value: 30 seconds. Maximum
-        /// value: 3600 seconds.
+        /// The total duration (in seconds) of each manifest. Minimum value: <code>30</code> seconds.
+        /// Maximum value: <code>3600</code> seconds.
         /// </para>
         /// </summary>
         public int ManifestWindowSeconds

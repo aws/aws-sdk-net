@@ -30,17 +30,14 @@ namespace Amazon.Proton.Model
 {
     /// <summary>
     /// Container for the parameters to the NotifyResourceDeploymentStatusChange operation.
-    /// Notify Proton of status changes to a provisioned resource when you use pull request
-    /// provisioning. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-template-bundles.html">Template
-    /// bundles</a>.
+    /// Notify Proton of status changes to a provisioned resource when you use self-managed
+    /// provisioning.
     /// 
-    ///  <important> 
+    ///  
     /// <para>
-    /// Provisioning by pull request is currently in feature preview and is only usable with
-    /// Terraform based Proton Templates. To learn more about <a href="https://aws.amazon.com/service-terms">Amazon
-    /// Web Services Feature Preview terms</a>, see section 2 on Beta and Previews.
+    /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-works-prov-methods.html#ag-works-prov-methods-self">Self-managed
+    /// provisioning</a> in the <i>Proton User Guide</i>.
     /// </para>
-    ///  </important>
     /// </summary>
     public partial class NotifyResourceDeploymentStatusChangeRequest : AmazonProtonRequest
     {
@@ -112,7 +109,6 @@ namespace Amazon.Proton.Model
         /// The status of your provisioned resource.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public ResourceDeploymentStatus Status
         {
             get { return this._status; }
@@ -131,7 +127,7 @@ namespace Amazon.Proton.Model
         /// The deployment status message for your provisioned resource.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=5000)]
+        [AWSProperty(Sensitive=true, Min=0, Max=5000)]
         public string StatusMessage
         {
             get { return this._statusMessage; }

@@ -33,7 +33,26 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class RegisteredUserDashboardEmbeddingConfiguration
     {
+        private RegisteredUserDashboardFeatureConfigurations _featureConfigurations;
         private string _initialDashboardId;
+
+        /// <summary>
+        /// Gets and sets the property FeatureConfigurations. 
+        /// <para>
+        /// The feature configurations of an embbedded Amazon QuickSight dashboard.
+        /// </para>
+        /// </summary>
+        public RegisteredUserDashboardFeatureConfigurations FeatureConfigurations
+        {
+            get { return this._featureConfigurations; }
+            set { this._featureConfigurations = value; }
+        }
+
+        // Check to see if FeatureConfigurations property is set
+        internal bool IsSetFeatureConfigurations()
+        {
+            return this._featureConfigurations != null;
+        }
 
         /// <summary>
         /// Gets and sets the property InitialDashboardId. 
@@ -48,7 +67,7 @@ namespace Amazon.QuickSight.Model
         /// error message.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=2048)]
+        [AWSProperty(Required=true, Min=1, Max=512)]
         public string InitialDashboardId
         {
             get { return this._initialDashboardId; }

@@ -82,6 +82,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.PipelineExecutionDisplayName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("PipelineExecutionFailureReason", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PipelineExecutionFailureReason = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("PipelineExecutionStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -40,8 +40,8 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property ServerId. 
         /// <para>
-        /// A system-assigned unique identifier for a server instance that the user account is
-        /// assigned to.
+        /// A system-assigned unique identifier for a Transfer Family server instance that the
+        /// account is assigned to.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=19, Max=19)]

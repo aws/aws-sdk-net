@@ -55,12 +55,12 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
         public IRequest Marshall(GetChannelScheduleRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.MediaTailor");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-04-23";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-04-23";
             request.HttpMethod = "GET";
 
             if (!publicRequest.IsSetChannelName())
                 throw new AmazonMediaTailorException("Request object does not have required field ChannelName set");
-            request.AddPathResource("{channelName}", StringUtils.FromString(publicRequest.ChannelName));
+            request.AddPathResource("{ChannelName}", StringUtils.FromString(publicRequest.ChannelName));
             
             if (publicRequest.IsSetDurationMinutes())
                 request.Parameters.Add("durationMinutes", StringUtils.FromString(publicRequest.DurationMinutes));
@@ -70,7 +70,7 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
-            request.ResourcePath = "/channel/{channelName}/schedule";
+            request.ResourcePath = "/channel/{ChannelName}/schedule";
             request.UseQueryString = true;
 
             return request;

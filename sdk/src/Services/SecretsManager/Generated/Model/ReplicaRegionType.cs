@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecretsManager.Model
 {
     /// <summary>
-    /// (Optional) Custom type consisting of a <code>Region</code> (required) and the <code>KmsKeyId</code>
-    /// which can be an <code>ARN</code>, <code>Key ID</code>, or <code>Alias</code>.
+    /// A custom type that specifies a <code>Region</code> and the <code>KmsKeyId</code> for
+    /// a replica secret.
     /// </summary>
     public partial class ReplicaRegionType
     {
@@ -40,7 +40,8 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// Can be an <code>ARN</code>, <code>Key ID</code>, or <code>Alias</code>. 
+        /// The ARN, key ID, or alias of the KMS key to encrypt the secret. If you don't include
+        /// this field, Secrets Manager uses <code>aws/secretsmanager</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2048)]
@@ -59,7 +60,8 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property Region. 
         /// <para>
-        /// Describes a single instance of Region objects.
+        /// A Region code. For a list of Region codes, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#regional-endpoints">Name
+        /// and code of Regions</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

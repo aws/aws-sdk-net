@@ -34,7 +34,7 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RegionOfInterest Marshaller
-    /// </summary>       
+    /// </summary>
     public class RegionOfInterestMarshaller : IRequestMarshaller<RegionOfInterest, JsonMarshallerContext> 
     {
         /// <summary>
@@ -56,11 +56,27 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetPolygon())
+            {
+                context.Writer.WritePropertyName("Polygon");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectPolygonListValue in requestObject.Polygon)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = PointMarshaller.Instance;
+                    marshaller.Marshall(requestObjectPolygonListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
         }
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RegionOfInterestMarshaller Instance = new RegionOfInterestMarshaller();
 
     }

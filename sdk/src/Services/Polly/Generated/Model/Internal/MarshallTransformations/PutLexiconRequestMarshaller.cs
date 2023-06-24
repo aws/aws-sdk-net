@@ -56,7 +56,7 @@ namespace Amazon.Polly.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Polly");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-06-10";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-06-10";
             request.HttpMethod = "PUT";
 
             if (!publicRequest.IsSetName())
@@ -74,7 +74,6 @@ namespace Amazon.Polly.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Content);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

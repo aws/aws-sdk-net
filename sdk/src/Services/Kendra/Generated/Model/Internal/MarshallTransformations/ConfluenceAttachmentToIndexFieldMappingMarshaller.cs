@@ -34,7 +34,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ConfluenceAttachmentToIndexFieldMapping Marshaller
-    /// </summary>       
+    /// </summary>
     public class ConfluenceAttachmentToIndexFieldMappingMarshaller : IRequestMarshaller<ConfluenceAttachmentToIndexFieldMapping, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ConfluenceAttachmentToIndexFieldMappingMarshaller Instance = new ConfluenceAttachmentToIndexFieldMappingMarshaller();
 
     }

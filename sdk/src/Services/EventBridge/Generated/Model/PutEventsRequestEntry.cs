@@ -44,7 +44,7 @@ namespace Amazon.EventBridge.Model
         /// <summary>
         /// Gets and sets the property Detail. 
         /// <para>
-        /// A valid JSON string. There is no other schema imposed. The JSON string may contain
+        /// A valid JSON object. There is no other schema imposed. The JSON object may contain
         /// fields and nested subobjects.
         /// </para>
         /// </summary>
@@ -63,7 +63,8 @@ namespace Amazon.EventBridge.Model
         /// <summary>
         /// Gets and sets the property DetailType. 
         /// <para>
-        /// Free-form string used to decide what fields to expect in the event detail.
+        /// Free-form string, with a maximum of 128 characters, used to decide what fields to
+        /// expect in the event detail.
         /// </para>
         /// </summary>
         public string DetailType
@@ -85,6 +86,14 @@ namespace Amazon.EventBridge.Model
         /// with this event bus are used to match the event. If you omit this, the default event
         /// bus is used.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// If you're using a global endpoint with a custom bus, you must enter the name, not
+        /// the ARN, of the event bus in either the primary or secondary Region here and the corresponding
+        /// event bus in the other Region will be determined based on the endpoint referenced
+        /// by the <code>EndpointId</code>.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=1, Max=1600)]
         public string EventBusName
@@ -159,7 +168,7 @@ namespace Amazon.EventBridge.Model
         /// <summary>
         /// Gets and sets the property TraceHeader. 
         /// <para>
-        /// An X-Ray trade header, which is an http header (X-Amzn-Trace-Id) that contains the
+        /// An X-Ray trace header, which is an http header (X-Amzn-Trace-Id) that contains the
         /// trace-id associated with the event.
         /// </para>
         ///  

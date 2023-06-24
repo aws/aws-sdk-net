@@ -239,6 +239,60 @@ namespace Amazon.AppSync
 
 
     /// <summary>
+    /// Constants used for properties of type AssociationStatus.
+    /// </summary>
+    public class AssociationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED for AssociationStatus
+        /// </summary>
+        public static readonly AssociationStatus FAILED = new AssociationStatus("FAILED");
+        /// <summary>
+        /// Constant PROCESSING for AssociationStatus
+        /// </summary>
+        public static readonly AssociationStatus PROCESSING = new AssociationStatus("PROCESSING");
+        /// <summary>
+        /// Constant SUCCESS for AssociationStatus
+        /// </summary>
+        public static readonly AssociationStatus SUCCESS = new AssociationStatus("SUCCESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AssociationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AssociationStatus FindValue(string value)
+        {
+            return FindValue<AssociationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AssociationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AuthenticationType.
     /// </summary>
     public class AuthenticationType : ConstantClass
@@ -340,6 +394,52 @@ namespace Amazon.AppSync
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator AuthorizationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type BadRequestReason.
+    /// </summary>
+    public class BadRequestReason : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CODE_ERROR for BadRequestReason
+        /// </summary>
+        public static readonly BadRequestReason CODE_ERROR = new BadRequestReason("CODE_ERROR");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BadRequestReason(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BadRequestReason FindValue(string value)
+        {
+            return FindValue<BadRequestReason>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BadRequestReason(string value)
         {
             return FindValue(value);
         }
@@ -468,6 +568,10 @@ namespace Amazon.AppSync
         /// Constant AMAZON_ELASTICSEARCH for DataSourceType
         /// </summary>
         public static readonly DataSourceType AMAZON_ELASTICSEARCH = new DataSourceType("AMAZON_ELASTICSEARCH");
+        /// <summary>
+        /// Constant AMAZON_EVENTBRIDGE for DataSourceType
+        /// </summary>
+        public static readonly DataSourceType AMAZON_EVENTBRIDGE = new DataSourceType("AMAZON_EVENTBRIDGE");
         /// <summary>
         /// Constant AMAZON_OPENSEARCH_SERVICE for DataSourceType
         /// </summary>
@@ -629,6 +733,156 @@ namespace Amazon.AppSync
 
 
     /// <summary>
+    /// Constants used for properties of type GraphQLApiType.
+    /// </summary>
+    public class GraphQLApiType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant GRAPHQL for GraphQLApiType
+        /// </summary>
+        public static readonly GraphQLApiType GRAPHQL = new GraphQLApiType("GRAPHQL");
+        /// <summary>
+        /// Constant MERGED for GraphQLApiType
+        /// </summary>
+        public static readonly GraphQLApiType MERGED = new GraphQLApiType("MERGED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GraphQLApiType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GraphQLApiType FindValue(string value)
+        {
+            return FindValue<GraphQLApiType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GraphQLApiType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type GraphQLApiVisibility.
+    /// </summary>
+    public class GraphQLApiVisibility : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant GLOBAL for GraphQLApiVisibility
+        /// </summary>
+        public static readonly GraphQLApiVisibility GLOBAL = new GraphQLApiVisibility("GLOBAL");
+        /// <summary>
+        /// Constant PRIVATE for GraphQLApiVisibility
+        /// </summary>
+        public static readonly GraphQLApiVisibility PRIVATE = new GraphQLApiVisibility("PRIVATE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GraphQLApiVisibility(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GraphQLApiVisibility FindValue(string value)
+        {
+            return FindValue<GraphQLApiVisibility>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GraphQLApiVisibility(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MergeType.
+    /// </summary>
+    public class MergeType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AUTO_MERGE for MergeType
+        /// </summary>
+        public static readonly MergeType AUTO_MERGE = new MergeType("AUTO_MERGE");
+        /// <summary>
+        /// Constant MANUAL_MERGE for MergeType
+        /// </summary>
+        public static readonly MergeType MANUAL_MERGE = new MergeType("MANUAL_MERGE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MergeType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MergeType FindValue(string value)
+        {
+            return FindValue<MergeType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MergeType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type OutputType.
     /// </summary>
     public class OutputType : ConstantClass
@@ -672,6 +926,56 @@ namespace Amazon.AppSync
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator OutputType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Ownership.
+    /// </summary>
+    public class Ownership : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CURRENT_ACCOUNT for Ownership
+        /// </summary>
+        public static readonly Ownership CURRENT_ACCOUNT = new Ownership("CURRENT_ACCOUNT");
+        /// <summary>
+        /// Constant OTHER_ACCOUNTS for Ownership
+        /// </summary>
+        public static readonly Ownership OTHER_ACCOUNTS = new Ownership("OTHER_ACCOUNTS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Ownership(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Ownership FindValue(string value)
+        {
+            return FindValue<Ownership>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Ownership(string value)
         {
             return FindValue(value);
         }
@@ -775,6 +1079,52 @@ namespace Amazon.AppSync
 
 
     /// <summary>
+    /// Constants used for properties of type RuntimeName.
+    /// </summary>
+    public class RuntimeName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant APPSYNC_JS for RuntimeName
+        /// </summary>
+        public static readonly RuntimeName APPSYNC_JS = new RuntimeName("APPSYNC_JS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RuntimeName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RuntimeName FindValue(string value)
+        {
+            return FindValue<RuntimeName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RuntimeName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type SchemaStatus.
     /// </summary>
     public class SchemaStatus : ConstantClass
@@ -834,6 +1184,80 @@ namespace Amazon.AppSync
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SchemaStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SourceApiAssociationStatus.
+    /// </summary>
+    public class SourceApiAssociationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AUTO_MERGE_SCHEDULE_FAILED for SourceApiAssociationStatus
+        /// </summary>
+        public static readonly SourceApiAssociationStatus AUTO_MERGE_SCHEDULE_FAILED = new SourceApiAssociationStatus("AUTO_MERGE_SCHEDULE_FAILED");
+        /// <summary>
+        /// Constant DELETION_FAILED for SourceApiAssociationStatus
+        /// </summary>
+        public static readonly SourceApiAssociationStatus DELETION_FAILED = new SourceApiAssociationStatus("DELETION_FAILED");
+        /// <summary>
+        /// Constant DELETION_IN_PROGRESS for SourceApiAssociationStatus
+        /// </summary>
+        public static readonly SourceApiAssociationStatus DELETION_IN_PROGRESS = new SourceApiAssociationStatus("DELETION_IN_PROGRESS");
+        /// <summary>
+        /// Constant DELETION_SCHEDULED for SourceApiAssociationStatus
+        /// </summary>
+        public static readonly SourceApiAssociationStatus DELETION_SCHEDULED = new SourceApiAssociationStatus("DELETION_SCHEDULED");
+        /// <summary>
+        /// Constant MERGE_FAILED for SourceApiAssociationStatus
+        /// </summary>
+        public static readonly SourceApiAssociationStatus MERGE_FAILED = new SourceApiAssociationStatus("MERGE_FAILED");
+        /// <summary>
+        /// Constant MERGE_IN_PROGRESS for SourceApiAssociationStatus
+        /// </summary>
+        public static readonly SourceApiAssociationStatus MERGE_IN_PROGRESS = new SourceApiAssociationStatus("MERGE_IN_PROGRESS");
+        /// <summary>
+        /// Constant MERGE_SCHEDULED for SourceApiAssociationStatus
+        /// </summary>
+        public static readonly SourceApiAssociationStatus MERGE_SCHEDULED = new SourceApiAssociationStatus("MERGE_SCHEDULED");
+        /// <summary>
+        /// Constant MERGE_SUCCESS for SourceApiAssociationStatus
+        /// </summary>
+        public static readonly SourceApiAssociationStatus MERGE_SUCCESS = new SourceApiAssociationStatus("MERGE_SUCCESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SourceApiAssociationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SourceApiAssociationStatus FindValue(string value)
+        {
+            return FindValue<SourceApiAssociationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SourceApiAssociationStatus(string value)
         {
             return FindValue(value);
         }

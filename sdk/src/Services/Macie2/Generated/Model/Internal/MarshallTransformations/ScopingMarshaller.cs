@@ -34,7 +34,7 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Scoping Marshaller
-    /// </summary>       
+    /// </summary>
     public class ScopingMarshaller : IRequestMarshaller<Scoping, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ScopingMarshaller Instance = new ScopingMarshaller();
 
     }

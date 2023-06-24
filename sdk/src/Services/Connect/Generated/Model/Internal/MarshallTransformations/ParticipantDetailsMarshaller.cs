@@ -34,7 +34,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ParticipantDetails Marshaller
-    /// </summary>       
+    /// </summary>
     public class ParticipantDetailsMarshaller : IRequestMarshaller<ParticipantDetails, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ParticipantDetailsMarshaller Instance = new ParticipantDetailsMarshaller();
 
     }

@@ -70,6 +70,12 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
                     unmarshalledObject.EgressFilter = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("serviceDiscovery", targetDepth))
+                {
+                    var unmarshaller = MeshServiceDiscoveryUnmarshaller.Instance;
+                    unmarshalledObject.ServiceDiscovery = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

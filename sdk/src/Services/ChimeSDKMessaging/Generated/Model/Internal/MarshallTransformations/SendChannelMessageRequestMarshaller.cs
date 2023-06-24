@@ -56,7 +56,7 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ChimeSDKMessaging");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-05-15";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-05-15";
             request.HttpMethod = "POST";
 
             if (!publicRequest.IsSetChannelArn())
@@ -77,12 +77,18 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
                 else if(!(publicRequest.IsSetClientRequestToken()))
                 {
                     context.Writer.WritePropertyName("ClientRequestToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());                                                
+                    context.Writer.Write(Guid.NewGuid().ToString());
                 }
                 if(publicRequest.IsSetContent())
                 {
                     context.Writer.WritePropertyName("Content");
                     context.Writer.Write(publicRequest.Content);
+                }
+
+                if(publicRequest.IsSetContentType())
+                {
+                    context.Writer.WritePropertyName("ContentType");
+                    context.Writer.Write(publicRequest.ContentType);
                 }
 
                 if(publicRequest.IsSetMessageAttributes())
@@ -127,21 +133,44 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetSubChannelId())
+                {
+                    context.Writer.WritePropertyName("SubChannelId");
+                    context.Writer.Write(publicRequest.SubChannelId);
+                }
+
+                if(publicRequest.IsSetTarget())
+                {
+                    context.Writer.WritePropertyName("Target");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestTargetListValue in publicRequest.Target)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = TargetMarshaller.Instance;
+                        marshaller.Marshall(publicRequestTargetListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetType())
                 {
                     context.Writer.WritePropertyName("Type");
                     context.Writer.Write(publicRequest.Type);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
 
         
-            if(publicRequest.IsSetChimeBearer())
+            if (publicRequest.IsSetChimeBearer()) 
+            {
                 request.Headers["x-amz-chime-bearer"] = publicRequest.ChimeBearer;
+            }
 
             return request;
         }

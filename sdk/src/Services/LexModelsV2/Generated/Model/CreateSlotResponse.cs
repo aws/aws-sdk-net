@@ -44,6 +44,7 @@ namespace Amazon.LexModelsV2.Model
         private string _slotId;
         private string _slotName;
         private string _slotTypeId;
+        private SubSlotSetting _subSlotSetting;
         private SlotValueElicitationSetting _valueElicitationSetting;
 
         /// <summary>
@@ -251,6 +252,25 @@ namespace Amazon.LexModelsV2.Model
         internal bool IsSetSlotTypeId()
         {
             return this._slotTypeId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SubSlotSetting. 
+        /// <para>
+        /// Specifications for the constituent sub slots and the expression for the composite
+        /// slot.
+        /// </para>
+        /// </summary>
+        public SubSlotSetting SubSlotSetting
+        {
+            get { return this._subSlotSetting; }
+            set { this._subSlotSetting = value; }
+        }
+
+        // Check to see if SubSlotSetting property is set
+        internal bool IsSetSubSlotSetting()
+        {
+            return this._subSlotSetting != null;
         }
 
         /// <summary>

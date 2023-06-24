@@ -230,6 +230,15 @@ namespace Amazon.KinesisVideo
         }
 
         /// <summary>
+        /// Customize the pipeline
+        /// </summary>
+        /// <param name="pipeline"></param>
+        protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
+        {
+            pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonKinesisVideoEndpointResolver());
+        }
+        /// <summary>
         /// Capture metadata for the service.
         /// </summary>
         protected override IServiceMetadata ServiceMetadata
@@ -272,8 +281,8 @@ namespace Amazon.KinesisVideo
         /// You do not have required permissions to perform this operation.
         /// </exception>
         /// <exception cref="Amazon.KinesisVideo.Model.AccountChannelLimitExceededException">
-        /// You have reached the maximum limit of active signaling channels for this AWS account
-        /// in this region.
+        /// You have reached the maximum limit of active signaling channels for this Amazon Web
+        /// Services account in this region.
         /// </exception>
         /// <exception cref="Amazon.KinesisVideo.Model.ClientLimitExceededException">
         /// Kinesis Video Streams has throttled the request because you have exceeded the limit
@@ -283,11 +292,31 @@ namespace Amazon.KinesisVideo
         /// The value for this input parameter is invalid.
         /// </exception>
         /// <exception cref="Amazon.KinesisVideo.Model.ResourceInUseException">
-        /// The signaling channel is currently not available for this operation.
+        /// When the input <code>StreamARN</code> or <code>ChannelARN</code> in <code>CLOUD_STORAGE_MODE</code>
+        /// is already mapped to a different Kinesis Video Stream resource, or if the provided
+        /// input <code>StreamARN</code> or <code>ChannelARN</code> is not in Active status, try
+        /// one of the following : 
+        /// 
+        ///  <ol> <li> 
+        /// <para>
+        /// The <code>DescribeMediaStorageConfiguration</code> API to determine what the stream
+        /// given channel is mapped to. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The <code>DescribeMappedResourceConfiguration</code> API to determine the channel
+        /// that the given stream is mapped to. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The <code>DescribeStream</code> or <code>DescribeSignalingChannel</code> API to determine
+        /// the status of the resource. 
+        /// </para>
+        ///  </li> </ol>
         /// </exception>
         /// <exception cref="Amazon.KinesisVideo.Model.TagsPerResourceExceededLimitException">
-        /// You have exceeded the limit of tags that you can associate with the resource. Kinesis
-        /// video streams support up to 50 tags.
+        /// You have exceeded the limit of tags that you can associate with the resource. A Kinesis
+        /// video stream can support up to 50 tags.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/CreateSignalingChannel">REST API Reference for CreateSignalingChannel Operation</seealso>
         public virtual CreateSignalingChannelResponse CreateSignalingChannel(CreateSignalingChannelRequest request)
@@ -379,11 +408,31 @@ namespace Amazon.KinesisVideo
         /// Not implemented.
         /// </exception>
         /// <exception cref="Amazon.KinesisVideo.Model.ResourceInUseException">
-        /// The signaling channel is currently not available for this operation.
+        /// When the input <code>StreamARN</code> or <code>ChannelARN</code> in <code>CLOUD_STORAGE_MODE</code>
+        /// is already mapped to a different Kinesis Video Stream resource, or if the provided
+        /// input <code>StreamARN</code> or <code>ChannelARN</code> is not in Active status, try
+        /// one of the following : 
+        /// 
+        ///  <ol> <li> 
+        /// <para>
+        /// The <code>DescribeMediaStorageConfiguration</code> API to determine what the stream
+        /// given channel is mapped to. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The <code>DescribeMappedResourceConfiguration</code> API to determine the channel
+        /// that the given stream is mapped to. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The <code>DescribeStream</code> or <code>DescribeSignalingChannel</code> API to determine
+        /// the status of the resource. 
+        /// </para>
+        ///  </li> </ol>
         /// </exception>
         /// <exception cref="Amazon.KinesisVideo.Model.TagsPerResourceExceededLimitException">
-        /// You have exceeded the limit of tags that you can associate with the resource. Kinesis
-        /// video streams support up to 50 tags.
+        /// You have exceeded the limit of tags that you can associate with the resource. A Kinesis
+        /// video stream can support up to 50 tags.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/CreateStream">REST API Reference for CreateStream Operation</seealso>
         public virtual CreateStreamResponse CreateStream(CreateStreamRequest request)
@@ -452,7 +501,27 @@ namespace Amazon.KinesisVideo
         /// The value for this input parameter is invalid.
         /// </exception>
         /// <exception cref="Amazon.KinesisVideo.Model.ResourceInUseException">
-        /// The signaling channel is currently not available for this operation.
+        /// When the input <code>StreamARN</code> or <code>ChannelARN</code> in <code>CLOUD_STORAGE_MODE</code>
+        /// is already mapped to a different Kinesis Video Stream resource, or if the provided
+        /// input <code>StreamARN</code> or <code>ChannelARN</code> is not in Active status, try
+        /// one of the following : 
+        /// 
+        ///  <ol> <li> 
+        /// <para>
+        /// The <code>DescribeMediaStorageConfiguration</code> API to determine what the stream
+        /// given channel is mapped to. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The <code>DescribeMappedResourceConfiguration</code> API to determine the channel
+        /// that the given stream is mapped to. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The <code>DescribeStream</code> or <code>DescribeSignalingChannel</code> API to determine
+        /// the status of the resource. 
+        /// </para>
+        ///  </li> </ol>
         /// </exception>
         /// <exception cref="Amazon.KinesisVideo.Model.ResourceNotFoundException">
         /// Amazon Kinesis Video Streams can't find the stream that you specified.
@@ -549,7 +618,27 @@ namespace Amazon.KinesisVideo
         /// The caller is not authorized to perform this operation.
         /// </exception>
         /// <exception cref="Amazon.KinesisVideo.Model.ResourceInUseException">
-        /// The signaling channel is currently not available for this operation.
+        /// When the input <code>StreamARN</code> or <code>ChannelARN</code> in <code>CLOUD_STORAGE_MODE</code>
+        /// is already mapped to a different Kinesis Video Stream resource, or if the provided
+        /// input <code>StreamARN</code> or <code>ChannelARN</code> is not in Active status, try
+        /// one of the following : 
+        /// 
+        ///  <ol> <li> 
+        /// <para>
+        /// The <code>DescribeMediaStorageConfiguration</code> API to determine what the stream
+        /// given channel is mapped to. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The <code>DescribeMappedResourceConfiguration</code> API to determine the channel
+        /// that the given stream is mapped to. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The <code>DescribeStream</code> or <code>DescribeSignalingChannel</code> API to determine
+        /// the status of the resource. 
+        /// </para>
+        ///  </li> </ol>
         /// </exception>
         /// <exception cref="Amazon.KinesisVideo.Model.ResourceNotFoundException">
         /// Amazon Kinesis Video Streams can't find the stream that you specified.
@@ -601,6 +690,355 @@ namespace Amazon.KinesisVideo
         public virtual DeleteStreamResponse EndDeleteStream(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteStreamResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeEdgeConfiguration
+
+        /// <summary>
+        /// Describes a stream’s edge configuration that was set using the <code>StartEdgeConfigurationUpdate</code>
+        /// API. Use this API to get the status of the configuration if the configuration is in
+        /// sync with the Edge Agent.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEdgeConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DescribeEdgeConfiguration service method, as returned by KinesisVideo.</returns>
+        /// <exception cref="Amazon.KinesisVideo.Model.AccessDeniedException">
+        /// You do not have required permissions to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisVideo.Model.ClientLimitExceededException">
+        /// Kinesis Video Streams has throttled the request because you have exceeded the limit
+        /// of allowed client calls. Try making the call later.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisVideo.Model.InvalidArgumentException">
+        /// The value for this input parameter is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisVideo.Model.ResourceNotFoundException">
+        /// Amazon Kinesis Video Streams can't find the stream that you specified.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisVideo.Model.StreamEdgeConfigurationNotFoundException">
+        /// The Exception rendered when the Amazon Kinesis Video Stream can't find a stream's
+        /// edge configuration that you specified.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/DescribeEdgeConfiguration">REST API Reference for DescribeEdgeConfiguration Operation</seealso>
+        public virtual DescribeEdgeConfigurationResponse DescribeEdgeConfiguration(DescribeEdgeConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeEdgeConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeEdgeConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeEdgeConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeEdgeConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEdgeConfiguration operation on AmazonKinesisVideoClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeEdgeConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/DescribeEdgeConfiguration">REST API Reference for DescribeEdgeConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginDescribeEdgeConfiguration(DescribeEdgeConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeEdgeConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeEdgeConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeEdgeConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeEdgeConfiguration.</param>
+        /// 
+        /// <returns>Returns a  DescribeEdgeConfigurationResult from KinesisVideo.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/DescribeEdgeConfiguration">REST API Reference for DescribeEdgeConfiguration Operation</seealso>
+        public virtual DescribeEdgeConfigurationResponse EndDescribeEdgeConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeEdgeConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeImageGenerationConfiguration
+
+        /// <summary>
+        /// Gets the <code>ImageGenerationConfiguration</code> for a given Kinesis video stream.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeImageGenerationConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DescribeImageGenerationConfiguration service method, as returned by KinesisVideo.</returns>
+        /// <exception cref="Amazon.KinesisVideo.Model.AccessDeniedException">
+        /// You do not have required permissions to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisVideo.Model.ClientLimitExceededException">
+        /// Kinesis Video Streams has throttled the request because you have exceeded the limit
+        /// of allowed client calls. Try making the call later.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisVideo.Model.InvalidArgumentException">
+        /// The value for this input parameter is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisVideo.Model.ResourceNotFoundException">
+        /// Amazon Kinesis Video Streams can't find the stream that you specified.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/DescribeImageGenerationConfiguration">REST API Reference for DescribeImageGenerationConfiguration Operation</seealso>
+        public virtual DescribeImageGenerationConfigurationResponse DescribeImageGenerationConfiguration(DescribeImageGenerationConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeImageGenerationConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeImageGenerationConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeImageGenerationConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeImageGenerationConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeImageGenerationConfiguration operation on AmazonKinesisVideoClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeImageGenerationConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/DescribeImageGenerationConfiguration">REST API Reference for DescribeImageGenerationConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginDescribeImageGenerationConfiguration(DescribeImageGenerationConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeImageGenerationConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeImageGenerationConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeImageGenerationConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeImageGenerationConfiguration.</param>
+        /// 
+        /// <returns>Returns a  DescribeImageGenerationConfigurationResult from KinesisVideo.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/DescribeImageGenerationConfiguration">REST API Reference for DescribeImageGenerationConfiguration Operation</seealso>
+        public virtual DescribeImageGenerationConfigurationResponse EndDescribeImageGenerationConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeImageGenerationConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeMappedResourceConfiguration
+
+        /// <summary>
+        /// Returns the most current information about the stream. Either streamName or streamARN
+        /// should be provided in the input.
+        /// 
+        ///  
+        /// <para>
+        /// Returns the most current information about the stream. The <code>streamName</code>
+        /// or <code>streamARN</code> should be provided in the input.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMappedResourceConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DescribeMappedResourceConfiguration service method, as returned by KinesisVideo.</returns>
+        /// <exception cref="Amazon.KinesisVideo.Model.AccessDeniedException">
+        /// You do not have required permissions to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisVideo.Model.ClientLimitExceededException">
+        /// Kinesis Video Streams has throttled the request because you have exceeded the limit
+        /// of allowed client calls. Try making the call later.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisVideo.Model.InvalidArgumentException">
+        /// The value for this input parameter is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisVideo.Model.ResourceNotFoundException">
+        /// Amazon Kinesis Video Streams can't find the stream that you specified.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/DescribeMappedResourceConfiguration">REST API Reference for DescribeMappedResourceConfiguration Operation</seealso>
+        public virtual DescribeMappedResourceConfigurationResponse DescribeMappedResourceConfiguration(DescribeMappedResourceConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeMappedResourceConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeMappedResourceConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeMappedResourceConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeMappedResourceConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMappedResourceConfiguration operation on AmazonKinesisVideoClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeMappedResourceConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/DescribeMappedResourceConfiguration">REST API Reference for DescribeMappedResourceConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginDescribeMappedResourceConfiguration(DescribeMappedResourceConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeMappedResourceConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeMappedResourceConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeMappedResourceConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeMappedResourceConfiguration.</param>
+        /// 
+        /// <returns>Returns a  DescribeMappedResourceConfigurationResult from KinesisVideo.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/DescribeMappedResourceConfiguration">REST API Reference for DescribeMappedResourceConfiguration Operation</seealso>
+        public virtual DescribeMappedResourceConfigurationResponse EndDescribeMappedResourceConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeMappedResourceConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeMediaStorageConfiguration
+
+        /// <summary>
+        /// Returns the most current information about the channel. Specify the <code>ChannelName</code>
+        /// or <code>ChannelARN</code> in the input.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMediaStorageConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DescribeMediaStorageConfiguration service method, as returned by KinesisVideo.</returns>
+        /// <exception cref="Amazon.KinesisVideo.Model.AccessDeniedException">
+        /// You do not have required permissions to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisVideo.Model.ClientLimitExceededException">
+        /// Kinesis Video Streams has throttled the request because you have exceeded the limit
+        /// of allowed client calls. Try making the call later.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisVideo.Model.InvalidArgumentException">
+        /// The value for this input parameter is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisVideo.Model.ResourceNotFoundException">
+        /// Amazon Kinesis Video Streams can't find the stream that you specified.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/DescribeMediaStorageConfiguration">REST API Reference for DescribeMediaStorageConfiguration Operation</seealso>
+        public virtual DescribeMediaStorageConfigurationResponse DescribeMediaStorageConfiguration(DescribeMediaStorageConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeMediaStorageConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeMediaStorageConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeMediaStorageConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeMediaStorageConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMediaStorageConfiguration operation on AmazonKinesisVideoClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeMediaStorageConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/DescribeMediaStorageConfiguration">REST API Reference for DescribeMediaStorageConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginDescribeMediaStorageConfiguration(DescribeMediaStorageConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeMediaStorageConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeMediaStorageConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeMediaStorageConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeMediaStorageConfiguration.</param>
+        /// 
+        /// <returns>Returns a  DescribeMediaStorageConfigurationResult from KinesisVideo.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/DescribeMediaStorageConfiguration">REST API Reference for DescribeMediaStorageConfiguration Operation</seealso>
+        public virtual DescribeMediaStorageConfigurationResponse EndDescribeMediaStorageConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeMediaStorageConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeNotificationConfiguration
+
+        /// <summary>
+        /// Gets the <code>NotificationConfiguration</code> for a given Kinesis video stream.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeNotificationConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DescribeNotificationConfiguration service method, as returned by KinesisVideo.</returns>
+        /// <exception cref="Amazon.KinesisVideo.Model.AccessDeniedException">
+        /// You do not have required permissions to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisVideo.Model.ClientLimitExceededException">
+        /// Kinesis Video Streams has throttled the request because you have exceeded the limit
+        /// of allowed client calls. Try making the call later.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisVideo.Model.InvalidArgumentException">
+        /// The value for this input parameter is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisVideo.Model.ResourceNotFoundException">
+        /// Amazon Kinesis Video Streams can't find the stream that you specified.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/DescribeNotificationConfiguration">REST API Reference for DescribeNotificationConfiguration Operation</seealso>
+        public virtual DescribeNotificationConfigurationResponse DescribeNotificationConfiguration(DescribeNotificationConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeNotificationConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeNotificationConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeNotificationConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeNotificationConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeNotificationConfiguration operation on AmazonKinesisVideoClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeNotificationConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/DescribeNotificationConfiguration">REST API Reference for DescribeNotificationConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginDescribeNotificationConfiguration(DescribeNotificationConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeNotificationConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeNotificationConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeNotificationConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeNotificationConfiguration.</param>
+        /// 
+        /// <returns>Returns a  DescribeNotificationConfigurationResult from KinesisVideo.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/DescribeNotificationConfiguration">REST API Reference for DescribeNotificationConfiguration Operation</seealso>
+        public virtual DescribeNotificationConfigurationResponse EndDescribeNotificationConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeNotificationConfigurationResponse>(asyncResult);
         }
 
         #endregion
@@ -859,7 +1297,27 @@ namespace Amazon.KinesisVideo
         /// The value for this input parameter is invalid.
         /// </exception>
         /// <exception cref="Amazon.KinesisVideo.Model.ResourceInUseException">
-        /// The signaling channel is currently not available for this operation.
+        /// When the input <code>StreamARN</code> or <code>ChannelARN</code> in <code>CLOUD_STORAGE_MODE</code>
+        /// is already mapped to a different Kinesis Video Stream resource, or if the provided
+        /// input <code>StreamARN</code> or <code>ChannelARN</code> is not in Active status, try
+        /// one of the following : 
+        /// 
+        ///  <ol> <li> 
+        /// <para>
+        /// The <code>DescribeMediaStorageConfiguration</code> API to determine what the stream
+        /// given channel is mapped to. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The <code>DescribeMappedResourceConfiguration</code> API to determine the channel
+        /// that the given stream is mapped to. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The <code>DescribeStream</code> or <code>DescribeSignalingChannel</code> API to determine
+        /// the status of the resource. 
+        /// </para>
+        ///  </li> </ol>
         /// </exception>
         /// <exception cref="Amazon.KinesisVideo.Model.ResourceNotFoundException">
         /// Amazon Kinesis Video Streams can't find the stream that you specified.
@@ -1181,14 +1639,124 @@ namespace Amazon.KinesisVideo
 
         #endregion
         
+        #region  StartEdgeConfigurationUpdate
+
+        /// <summary>
+        /// An asynchronous API that updates a stream’s existing edge configuration. The Kinesis
+        /// Video Stream will sync the stream’s edge configuration with the Edge Agent IoT Greengrass
+        /// component that runs on an IoT Hub Device, setup at your premise. The time to sync
+        /// can vary and depends on the connectivity of the Hub Device. The <code>SyncStatus</code>
+        /// will be updated as the edge configuration is acknowledged, and synced with the Edge
+        /// Agent. 
+        /// 
+        ///  
+        /// <para>
+        /// If this API is invoked for the first time, a new edge configuration will be created
+        /// for the stream, and the sync status will be set to <code>SYNCING</code>. You will
+        /// have to wait for the sync status to reach a terminal state such as: <code>IN_SYNC</code>,
+        /// or <code>SYNC_FAILED</code>, before using this API again. If you invoke this API during
+        /// the syncing process, a <code>ResourceInUseException</code> will be thrown. The connectivity
+        /// of the stream’s edge configuration and the Edge Agent will be retried for 15 minutes.
+        /// After 15 minutes, the status will transition into the <code>SYNC_FAILED</code> state.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartEdgeConfigurationUpdate service method.</param>
+        /// 
+        /// <returns>The response from the StartEdgeConfigurationUpdate service method, as returned by KinesisVideo.</returns>
+        /// <exception cref="Amazon.KinesisVideo.Model.AccessDeniedException">
+        /// You do not have required permissions to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisVideo.Model.ClientLimitExceededException">
+        /// Kinesis Video Streams has throttled the request because you have exceeded the limit
+        /// of allowed client calls. Try making the call later.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisVideo.Model.InvalidArgumentException">
+        /// The value for this input parameter is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisVideo.Model.NoDataRetentionException">
+        /// The Stream data retention in hours is equal to zero.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisVideo.Model.ResourceInUseException">
+        /// When the input <code>StreamARN</code> or <code>ChannelARN</code> in <code>CLOUD_STORAGE_MODE</code>
+        /// is already mapped to a different Kinesis Video Stream resource, or if the provided
+        /// input <code>StreamARN</code> or <code>ChannelARN</code> is not in Active status, try
+        /// one of the following : 
+        /// 
+        ///  <ol> <li> 
+        /// <para>
+        /// The <code>DescribeMediaStorageConfiguration</code> API to determine what the stream
+        /// given channel is mapped to. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The <code>DescribeMappedResourceConfiguration</code> API to determine the channel
+        /// that the given stream is mapped to. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The <code>DescribeStream</code> or <code>DescribeSignalingChannel</code> API to determine
+        /// the status of the resource. 
+        /// </para>
+        ///  </li> </ol>
+        /// </exception>
+        /// <exception cref="Amazon.KinesisVideo.Model.ResourceNotFoundException">
+        /// Amazon Kinesis Video Streams can't find the stream that you specified.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/StartEdgeConfigurationUpdate">REST API Reference for StartEdgeConfigurationUpdate Operation</seealso>
+        public virtual StartEdgeConfigurationUpdateResponse StartEdgeConfigurationUpdate(StartEdgeConfigurationUpdateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartEdgeConfigurationUpdateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartEdgeConfigurationUpdateResponseUnmarshaller.Instance;
+
+            return Invoke<StartEdgeConfigurationUpdateResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartEdgeConfigurationUpdate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartEdgeConfigurationUpdate operation on AmazonKinesisVideoClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartEdgeConfigurationUpdate
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/StartEdgeConfigurationUpdate">REST API Reference for StartEdgeConfigurationUpdate Operation</seealso>
+        public virtual IAsyncResult BeginStartEdgeConfigurationUpdate(StartEdgeConfigurationUpdateRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartEdgeConfigurationUpdateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartEdgeConfigurationUpdateResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartEdgeConfigurationUpdate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartEdgeConfigurationUpdate.</param>
+        /// 
+        /// <returns>Returns a  StartEdgeConfigurationUpdateResult from KinesisVideo.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/StartEdgeConfigurationUpdate">REST API Reference for StartEdgeConfigurationUpdate Operation</seealso>
+        public virtual StartEdgeConfigurationUpdateResponse EndStartEdgeConfigurationUpdate(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartEdgeConfigurationUpdateResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  TagResource
 
         /// <summary>
         /// Adds one or more tags to a signaling channel. A <i>tag</i> is a key-value pair (the
-        /// value is optional) that you can define and assign to AWS resources. If you specify
-        /// a tag that already exists, the tag value is replaced with the value that you specify
-        /// in the request. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
-        /// Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+        /// value is optional) that you can define and assign to Amazon Web Services resources.
+        /// If you specify a tag that already exists, the tag value is replaced with the value
+        /// that you specify in the request. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
+        /// Cost Allocation Tags</a> in the <i>Billing and Cost Management and Cost Management
+        /// User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// 
@@ -1207,8 +1775,8 @@ namespace Amazon.KinesisVideo
         /// Amazon Kinesis Video Streams can't find the stream that you specified.
         /// </exception>
         /// <exception cref="Amazon.KinesisVideo.Model.TagsPerResourceExceededLimitException">
-        /// You have exceeded the limit of tags that you can associate with the resource. Kinesis
-        /// video streams support up to 50 tags.
+        /// You have exceeded the limit of tags that you can associate with the resource. A Kinesis
+        /// video stream can support up to 50 tags.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
@@ -1260,11 +1828,11 @@ namespace Amazon.KinesisVideo
 
         /// <summary>
         /// Adds one or more tags to a stream. A <i>tag</i> is a key-value pair (the value is
-        /// optional) that you can define and assign to AWS resources. If you specify a tag that
-        /// already exists, the tag value is replaced with the value that you specify in the request.
-        /// For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
-        /// Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
-        /// 
+        /// optional) that you can define and assign to Amazon Web Services resources. If you
+        /// specify a tag that already exists, the tag value is replaced with the value that you
+        /// specify in the request. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
+        /// Cost Allocation Tags</a> in the <i>Billing and Cost Management and Cost Management
+        /// User Guide</i>. 
         /// 
         ///  
         /// <para>
@@ -1276,7 +1844,7 @@ namespace Amazon.KinesisVideo
         /// </para>
         ///  
         /// <para>
-        /// Kinesis video streams support up to 50 tags.
+        /// A Kinesis video stream can support up to 50 tags.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagStream service method.</param>
@@ -1299,8 +1867,8 @@ namespace Amazon.KinesisVideo
         /// Amazon Kinesis Video Streams can't find the stream that you specified.
         /// </exception>
         /// <exception cref="Amazon.KinesisVideo.Model.TagsPerResourceExceededLimitException">
-        /// You have exceeded the limit of tags that you can associate with the resource. Kinesis
-        /// video streams support up to 50 tags.
+        /// You have exceeded the limit of tags that you can associate with the resource. A Kinesis
+        /// video stream can support up to 50 tags.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/TagStream">REST API Reference for TagStream Operation</seealso>
         public virtual TagStreamResponse TagStream(TagStreamRequest request)
@@ -1544,7 +2112,27 @@ namespace Amazon.KinesisVideo
         /// The caller is not authorized to perform this operation.
         /// </exception>
         /// <exception cref="Amazon.KinesisVideo.Model.ResourceInUseException">
-        /// The signaling channel is currently not available for this operation.
+        /// When the input <code>StreamARN</code> or <code>ChannelARN</code> in <code>CLOUD_STORAGE_MODE</code>
+        /// is already mapped to a different Kinesis Video Stream resource, or if the provided
+        /// input <code>StreamARN</code> or <code>ChannelARN</code> is not in Active status, try
+        /// one of the following : 
+        /// 
+        ///  <ol> <li> 
+        /// <para>
+        /// The <code>DescribeMediaStorageConfiguration</code> API to determine what the stream
+        /// given channel is mapped to. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The <code>DescribeMappedResourceConfiguration</code> API to determine the channel
+        /// that the given stream is mapped to. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The <code>DescribeStream</code> or <code>DescribeSignalingChannel</code> API to determine
+        /// the status of the resource. 
+        /// </para>
+        ///  </li> </ol>
         /// </exception>
         /// <exception cref="Amazon.KinesisVideo.Model.ResourceNotFoundException">
         /// Amazon Kinesis Video Streams can't find the stream that you specified.
@@ -1600,6 +2188,299 @@ namespace Amazon.KinesisVideo
 
         #endregion
         
+        #region  UpdateImageGenerationConfiguration
+
+        /// <summary>
+        /// Updates the <code>StreamInfo</code> and <code>ImageProcessingConfiguration</code>
+        /// fields.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateImageGenerationConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the UpdateImageGenerationConfiguration service method, as returned by KinesisVideo.</returns>
+        /// <exception cref="Amazon.KinesisVideo.Model.AccessDeniedException">
+        /// You do not have required permissions to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisVideo.Model.ClientLimitExceededException">
+        /// Kinesis Video Streams has throttled the request because you have exceeded the limit
+        /// of allowed client calls. Try making the call later.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisVideo.Model.InvalidArgumentException">
+        /// The value for this input parameter is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisVideo.Model.NoDataRetentionException">
+        /// The Stream data retention in hours is equal to zero.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisVideo.Model.ResourceInUseException">
+        /// When the input <code>StreamARN</code> or <code>ChannelARN</code> in <code>CLOUD_STORAGE_MODE</code>
+        /// is already mapped to a different Kinesis Video Stream resource, or if the provided
+        /// input <code>StreamARN</code> or <code>ChannelARN</code> is not in Active status, try
+        /// one of the following : 
+        /// 
+        ///  <ol> <li> 
+        /// <para>
+        /// The <code>DescribeMediaStorageConfiguration</code> API to determine what the stream
+        /// given channel is mapped to. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The <code>DescribeMappedResourceConfiguration</code> API to determine the channel
+        /// that the given stream is mapped to. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The <code>DescribeStream</code> or <code>DescribeSignalingChannel</code> API to determine
+        /// the status of the resource. 
+        /// </para>
+        ///  </li> </ol>
+        /// </exception>
+        /// <exception cref="Amazon.KinesisVideo.Model.ResourceNotFoundException">
+        /// Amazon Kinesis Video Streams can't find the stream that you specified.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/UpdateImageGenerationConfiguration">REST API Reference for UpdateImageGenerationConfiguration Operation</seealso>
+        public virtual UpdateImageGenerationConfigurationResponse UpdateImageGenerationConfiguration(UpdateImageGenerationConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateImageGenerationConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateImageGenerationConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateImageGenerationConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateImageGenerationConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateImageGenerationConfiguration operation on AmazonKinesisVideoClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateImageGenerationConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/UpdateImageGenerationConfiguration">REST API Reference for UpdateImageGenerationConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginUpdateImageGenerationConfiguration(UpdateImageGenerationConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateImageGenerationConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateImageGenerationConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateImageGenerationConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateImageGenerationConfiguration.</param>
+        /// 
+        /// <returns>Returns a  UpdateImageGenerationConfigurationResult from KinesisVideo.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/UpdateImageGenerationConfiguration">REST API Reference for UpdateImageGenerationConfiguration Operation</seealso>
+        public virtual UpdateImageGenerationConfigurationResponse EndUpdateImageGenerationConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateImageGenerationConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateMediaStorageConfiguration
+
+        /// <summary>
+        /// Associates a <code>SignalingChannel</code> to a stream to store the media. There are
+        /// two signaling modes that can specified :
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// If the <code>StorageStatus</code> is disabled, no data will be stored, and the <code>StreamARN</code>
+        /// parameter will not be needed. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the <code>StorageStatus</code> is enabled, the data will be stored in the <code>StreamARN</code>
+        /// provided. 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateMediaStorageConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the UpdateMediaStorageConfiguration service method, as returned by KinesisVideo.</returns>
+        /// <exception cref="Amazon.KinesisVideo.Model.AccessDeniedException">
+        /// You do not have required permissions to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisVideo.Model.ClientLimitExceededException">
+        /// Kinesis Video Streams has throttled the request because you have exceeded the limit
+        /// of allowed client calls. Try making the call later.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisVideo.Model.InvalidArgumentException">
+        /// The value for this input parameter is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisVideo.Model.NoDataRetentionException">
+        /// The Stream data retention in hours is equal to zero.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisVideo.Model.ResourceInUseException">
+        /// When the input <code>StreamARN</code> or <code>ChannelARN</code> in <code>CLOUD_STORAGE_MODE</code>
+        /// is already mapped to a different Kinesis Video Stream resource, or if the provided
+        /// input <code>StreamARN</code> or <code>ChannelARN</code> is not in Active status, try
+        /// one of the following : 
+        /// 
+        ///  <ol> <li> 
+        /// <para>
+        /// The <code>DescribeMediaStorageConfiguration</code> API to determine what the stream
+        /// given channel is mapped to. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The <code>DescribeMappedResourceConfiguration</code> API to determine the channel
+        /// that the given stream is mapped to. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The <code>DescribeStream</code> or <code>DescribeSignalingChannel</code> API to determine
+        /// the status of the resource. 
+        /// </para>
+        ///  </li> </ol>
+        /// </exception>
+        /// <exception cref="Amazon.KinesisVideo.Model.ResourceNotFoundException">
+        /// Amazon Kinesis Video Streams can't find the stream that you specified.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/UpdateMediaStorageConfiguration">REST API Reference for UpdateMediaStorageConfiguration Operation</seealso>
+        public virtual UpdateMediaStorageConfigurationResponse UpdateMediaStorageConfiguration(UpdateMediaStorageConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateMediaStorageConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateMediaStorageConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateMediaStorageConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateMediaStorageConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateMediaStorageConfiguration operation on AmazonKinesisVideoClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateMediaStorageConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/UpdateMediaStorageConfiguration">REST API Reference for UpdateMediaStorageConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginUpdateMediaStorageConfiguration(UpdateMediaStorageConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateMediaStorageConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateMediaStorageConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateMediaStorageConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateMediaStorageConfiguration.</param>
+        /// 
+        /// <returns>Returns a  UpdateMediaStorageConfigurationResult from KinesisVideo.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/UpdateMediaStorageConfiguration">REST API Reference for UpdateMediaStorageConfiguration Operation</seealso>
+        public virtual UpdateMediaStorageConfigurationResponse EndUpdateMediaStorageConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateMediaStorageConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateNotificationConfiguration
+
+        /// <summary>
+        /// Updates the notification information for a stream.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateNotificationConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the UpdateNotificationConfiguration service method, as returned by KinesisVideo.</returns>
+        /// <exception cref="Amazon.KinesisVideo.Model.AccessDeniedException">
+        /// You do not have required permissions to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisVideo.Model.ClientLimitExceededException">
+        /// Kinesis Video Streams has throttled the request because you have exceeded the limit
+        /// of allowed client calls. Try making the call later.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisVideo.Model.InvalidArgumentException">
+        /// The value for this input parameter is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisVideo.Model.NoDataRetentionException">
+        /// The Stream data retention in hours is equal to zero.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisVideo.Model.ResourceInUseException">
+        /// When the input <code>StreamARN</code> or <code>ChannelARN</code> in <code>CLOUD_STORAGE_MODE</code>
+        /// is already mapped to a different Kinesis Video Stream resource, or if the provided
+        /// input <code>StreamARN</code> or <code>ChannelARN</code> is not in Active status, try
+        /// one of the following : 
+        /// 
+        ///  <ol> <li> 
+        /// <para>
+        /// The <code>DescribeMediaStorageConfiguration</code> API to determine what the stream
+        /// given channel is mapped to. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The <code>DescribeMappedResourceConfiguration</code> API to determine the channel
+        /// that the given stream is mapped to. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The <code>DescribeStream</code> or <code>DescribeSignalingChannel</code> API to determine
+        /// the status of the resource. 
+        /// </para>
+        ///  </li> </ol>
+        /// </exception>
+        /// <exception cref="Amazon.KinesisVideo.Model.ResourceNotFoundException">
+        /// Amazon Kinesis Video Streams can't find the stream that you specified.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/UpdateNotificationConfiguration">REST API Reference for UpdateNotificationConfiguration Operation</seealso>
+        public virtual UpdateNotificationConfigurationResponse UpdateNotificationConfiguration(UpdateNotificationConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateNotificationConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateNotificationConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateNotificationConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateNotificationConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateNotificationConfiguration operation on AmazonKinesisVideoClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateNotificationConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/UpdateNotificationConfiguration">REST API Reference for UpdateNotificationConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginUpdateNotificationConfiguration(UpdateNotificationConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateNotificationConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateNotificationConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateNotificationConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateNotificationConfiguration.</param>
+        /// 
+        /// <returns>Returns a  UpdateNotificationConfigurationResult from KinesisVideo.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/UpdateNotificationConfiguration">REST API Reference for UpdateNotificationConfiguration Operation</seealso>
+        public virtual UpdateNotificationConfigurationResponse EndUpdateNotificationConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateNotificationConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  UpdateSignalingChannel
 
         /// <summary>
@@ -1627,7 +2508,27 @@ namespace Amazon.KinesisVideo
         /// The value for this input parameter is invalid.
         /// </exception>
         /// <exception cref="Amazon.KinesisVideo.Model.ResourceInUseException">
-        /// The signaling channel is currently not available for this operation.
+        /// When the input <code>StreamARN</code> or <code>ChannelARN</code> in <code>CLOUD_STORAGE_MODE</code>
+        /// is already mapped to a different Kinesis Video Stream resource, or if the provided
+        /// input <code>StreamARN</code> or <code>ChannelARN</code> is not in Active status, try
+        /// one of the following : 
+        /// 
+        ///  <ol> <li> 
+        /// <para>
+        /// The <code>DescribeMediaStorageConfiguration</code> API to determine what the stream
+        /// given channel is mapped to. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The <code>DescribeMappedResourceConfiguration</code> API to determine the channel
+        /// that the given stream is mapped to. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The <code>DescribeStream</code> or <code>DescribeSignalingChannel</code> API to determine
+        /// the status of the resource. 
+        /// </para>
+        ///  </li> </ol>
         /// </exception>
         /// <exception cref="Amazon.KinesisVideo.Model.ResourceNotFoundException">
         /// Amazon Kinesis Video Streams can't find the stream that you specified.
@@ -1718,7 +2619,27 @@ namespace Amazon.KinesisVideo
         /// The caller is not authorized to perform this operation.
         /// </exception>
         /// <exception cref="Amazon.KinesisVideo.Model.ResourceInUseException">
-        /// The signaling channel is currently not available for this operation.
+        /// When the input <code>StreamARN</code> or <code>ChannelARN</code> in <code>CLOUD_STORAGE_MODE</code>
+        /// is already mapped to a different Kinesis Video Stream resource, or if the provided
+        /// input <code>StreamARN</code> or <code>ChannelARN</code> is not in Active status, try
+        /// one of the following : 
+        /// 
+        ///  <ol> <li> 
+        /// <para>
+        /// The <code>DescribeMediaStorageConfiguration</code> API to determine what the stream
+        /// given channel is mapped to. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The <code>DescribeMappedResourceConfiguration</code> API to determine the channel
+        /// that the given stream is mapped to. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The <code>DescribeStream</code> or <code>DescribeSignalingChannel</code> API to determine
+        /// the status of the resource. 
+        /// </para>
+        ///  </li> </ol>
         /// </exception>
         /// <exception cref="Amazon.KinesisVideo.Model.ResourceNotFoundException">
         /// Amazon Kinesis Video Streams can't find the stream that you specified.

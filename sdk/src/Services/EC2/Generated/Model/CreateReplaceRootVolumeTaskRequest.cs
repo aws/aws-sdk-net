@@ -30,19 +30,22 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateReplaceRootVolumeTask operation.
-    /// Creates a root volume replacement task for an Amazon EC2 instance. The root volume
-    /// can either be restored to its initial launch state, or it can be restored using a
-    /// specific snapshot.
+    /// Replaces the EBS-backed root volume for a <code>running</code> instance with a new
+    /// volume that is restored to the original root volume's launch state, that is restored
+    /// to a specific snapshot taken from the original root volume, or that is restored from
+    /// an AMI that has the same key characteristics as that of the instance.
     /// 
     ///  
     /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-restoring-volume.html#replace-root">Replace
+    /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/replace-root.html">Replace
     /// a root volume</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
     /// </para>
     /// </summary>
     public partial class CreateReplaceRootVolumeTaskRequest : AmazonEC2Request
     {
         private string _clientToken;
+        private bool? _deleteReplacedRootVolume;
+        private string _imageId;
         private string _instanceId;
         private string _snapshotId;
         private List<TagSpecification> _tagSpecifications = new List<TagSpecification>();
@@ -69,6 +72,52 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DeleteReplacedRootVolume. 
+        /// <para>
+        /// Indicates whether to automatically delete the original root volume after the root
+        /// volume replacement task completes. To delete the original root volume, specify <code>true</code>.
+        /// If you choose to keep the original root volume after the replacement task completes,
+        /// you must manually delete it when you no longer need it.
+        /// </para>
+        /// </summary>
+        public bool DeleteReplacedRootVolume
+        {
+            get { return this._deleteReplacedRootVolume.GetValueOrDefault(); }
+            set { this._deleteReplacedRootVolume = value; }
+        }
+
+        // Check to see if DeleteReplacedRootVolume property is set
+        internal bool IsSetDeleteReplacedRootVolume()
+        {
+            return this._deleteReplacedRootVolume.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ImageId. 
+        /// <para>
+        /// The ID of the AMI to use to restore the root volume. The specified AMI must have the
+        /// same product code, billing information, architecture type, and virtualization type
+        /// as that of the instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you want to restore the replacement volume from a specific snapshot, or if you
+        /// want to restore it to its launch state, omit this parameter.
+        /// </para>
+        /// </summary>
+        public string ImageId
+        {
+            get { return this._imageId; }
+            set { this._imageId = value; }
+        }
+
+        // Check to see if ImageId property is set
+        internal bool IsSetImageId()
+        {
+            return this._imageId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
         /// The ID of the instance for which to replace the root volume.
@@ -90,8 +139,13 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SnapshotId. 
         /// <para>
-        /// The ID of the snapshot from which to restore the replacement root volume. If you want
-        /// to restore the volume to the initial launch state, omit this parameter.
+        /// The ID of the snapshot from which to restore the replacement root volume. The specified
+        /// snapshot must be a snapshot that you previously created from the original root volume.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you want to restore the replacement root volume to the initial launch state, or
+        /// if you want to restore the replacement root volume from an AMI, omit this parameter.
         /// </para>
         /// </summary>
         public string SnapshotId

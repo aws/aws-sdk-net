@@ -70,6 +70,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     unmarshalledObject.ColorSpacePassthroughSettings = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("dolbyVision81Settings", targetDepth))
+                {
+                    var unmarshaller = DolbyVision81SettingsUnmarshaller.Instance;
+                    unmarshalledObject.DolbyVision81Settings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("hdr10Settings", targetDepth))
                 {
                     var unmarshaller = Hdr10SettingsUnmarshaller.Instance;

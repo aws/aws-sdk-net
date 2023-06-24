@@ -34,7 +34,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// IntentFilter Marshaller
-    /// </summary>       
+    /// </summary>
     public class IntentFilterMarshaller : IRequestMarshaller<IntentFilter, JsonMarshallerContext> 
     {
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static IntentFilterMarshaller Instance = new IntentFilterMarshaller();
 
     }

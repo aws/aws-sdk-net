@@ -30,7 +30,7 @@ namespace Amazon.Proton.Model
 {
     /// <summary>
     /// Container for the parameters to the GetEnvironment operation.
-    /// Get detail data for an environment.
+    /// Get detailed data for an environment.
     /// </summary>
     public partial class GetEnvironmentRequest : AmazonProtonRequest
     {
@@ -39,7 +39,7 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the environment that you want to get the detail data for.
+        /// The name of the environment that you want to get the detailed data for.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]

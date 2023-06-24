@@ -31,12 +31,12 @@ namespace Amazon.CloudFront.Model
     /// <summary>
     /// Container for the parameters to the DescribeFunction operation.
     /// Gets configuration information and metadata about a CloudFront function, but not the
-    /// function’s code. To get a function’s code, use <code>GetFunction</code>.
+    /// function's code. To get a function's code, use <code>GetFunction</code>.
     /// 
     ///  
     /// <para>
     /// To get configuration information and metadata about a function, you must provide the
-    /// function’s name and stage. To get these values, you can use <code>ListFunctions</code>.
+    /// function's name and stage. To get these values, you can use <code>ListFunctions</code>.
     /// </para>
     /// </summary>
     public partial class DescribeFunctionRequest : AmazonCloudFrontRequest
@@ -66,7 +66,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Stage. 
         /// <para>
-        /// The function’s stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.
+        /// The function's stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.
         /// </para>
         /// </summary>
         public FunctionStage Stage

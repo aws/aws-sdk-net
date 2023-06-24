@@ -34,7 +34,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// LineageConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class LineageConfigurationMarshaller : IRequestMarshaller<LineageConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static LineageConfigurationMarshaller Instance = new LineageConfigurationMarshaller();
 
     }

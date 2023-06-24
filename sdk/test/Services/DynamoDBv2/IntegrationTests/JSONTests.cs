@@ -77,6 +77,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             TestPutGet();
 
             TestArrayMethods();
+
+            TestFromJsonCanHandleAllDataTypes();
         }
 
         private void TestPutGet()
@@ -324,6 +326,70 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             var bRt = b.ToJson();
 
             Assert.AreEqual(aRt, bRt);
+        }
+
+        private static void TestFromJsonCanHandleAllDataTypes()
+        {
+            var json = @"
+                {
+                  ""StringValue"": ""test string"",
+                  ""BoolValue"": true,
+                  ""IntValue"": 200,
+                  ""DateValue"": ""2022-12-29T12:46:14.097Z"",
+                  ""NullableBoolValue"": null,
+                  ""NullableIntValue"": null,
+                  ""NullableDateValue"": null,
+                  ""SubData"": null,
+                  ""SubData2"": {
+                    ""StringValue"": null,
+                    ""NullableBoolValue"": false,
+                    ""NullableIntValue"": 500,
+                    ""NullableDateValue"": ""2022-12-28T12:46:14.097Z""
+                  }
+                }";
+
+            using (var dbClient = new AmazonDynamoDBClient())
+            using (var context = new DynamoDBContext(dbClient))
+            {
+                var document = Document.FromJson(json);
+                var container = context.FromDocument<DataContainer>(document);
+
+                Assert.IsNotNull(container);
+                Assert.AreEqual(container.StringValue, "test string");
+                Assert.AreEqual(container.BoolValue, true);
+                Assert.AreEqual(container.IntValue, 200);
+                Assert.AreEqual(container.DateValue, DateTime.Parse("2022-12-29T12:46:14.097Z"));
+                Assert.IsNull(container.NullableBoolValue);
+                Assert.IsNull(container.NullableIntValue);
+                Assert.IsNull(container.NullableDateValue);
+                Assert.IsNull(container.SubData);
+                Assert.IsNotNull(container.SubData2);
+                Assert.IsNull(container.SubData2.StringValue);
+                Assert.IsNotNull(container.SubData2.NullableIntValue);
+            }
+        }
+
+        private class DataContainer
+        {
+            public string StringValue { get; set; }
+            public bool BoolValue { get; set; }
+            public int IntValue { get; set; }
+            public DateTime DateValue { get; set; }
+
+            public bool? NullableBoolValue { get; set; }
+            public int? NullableIntValue { get; set; }
+            public DateTime? NullableDateValue { get; set; }
+
+            public SubContainer SubData { get; set; }
+            public SubContainer SubData2 { get; set; }
+
+            public class SubContainer
+            {
+                public string StringValue { get; set; }
+                public bool? NullableBoolValue { get; set; }
+                public int? NullableIntValue { get; set; }
+                public DateTime? NullableDateValue { get; set; }
+            }
         }
     }
 }

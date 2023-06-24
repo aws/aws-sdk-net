@@ -34,7 +34,7 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// FederationParameters Marshaller
-    /// </summary>       
+    /// </summary>
     public class FederationParametersMarshaller : IRequestMarshaller<FederationParameters, JsonMarshallerContext> 
     {
         /// <summary>
@@ -93,7 +93,7 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static FederationParametersMarshaller Instance = new FederationParametersMarshaller();
 
     }

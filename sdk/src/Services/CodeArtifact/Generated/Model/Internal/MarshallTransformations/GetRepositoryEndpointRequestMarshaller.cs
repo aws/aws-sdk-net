@@ -55,7 +55,7 @@ namespace Amazon.CodeArtifact.Model.Internal.MarshallTransformations
         public IRequest Marshall(GetRepositoryEndpointRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CodeArtifact");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-09-22";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-09-22";
             request.HttpMethod = "GET";
 
             

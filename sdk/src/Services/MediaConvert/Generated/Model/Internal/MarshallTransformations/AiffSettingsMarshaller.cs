@@ -34,7 +34,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AiffSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class AiffSettingsMarshaller : IRequestMarshaller<AiffSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AiffSettingsMarshaller Instance = new AiffSettingsMarshaller();
 
     }

@@ -38,7 +38,7 @@ namespace Amazon.CodeGuruReviewer.Model
         /// <summary>
         /// Gets and sets the property RecommendationFeedback. 
         /// <para>
-        ///  The recommendation feedback given by the user. 
+        /// The recommendation feedback given by the user.
         /// </para>
         /// </summary>
         public RecommendationFeedback RecommendationFeedback

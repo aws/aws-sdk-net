@@ -87,6 +87,24 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
                     response.Id = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("RevocationComment", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.RevocationComment = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Revoked", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    response.Revoked = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("RevokedAt", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    response.RevokedAt = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SourceId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

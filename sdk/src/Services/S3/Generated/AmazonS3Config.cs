@@ -17,22 +17,22 @@
  * Do not modify this file. This file is generated from the s3-2006-03-01.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
-
+using Amazon.S3.Internal;
 
 namespace Amazon.S3
 {
     /// <summary>
     /// Configuration for accessing Amazon S3 service
     /// </summary>
+    [AWSSignerType("s3")]
     public partial class AmazonS3Config : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.7.1");
+            InternalSDKUtils.BuildUserAgentString("3.7.106.1");
 
         private string _userAgent = UserAgentString;
 
@@ -40,8 +40,10 @@ namespace Amazon.S3
         /// Default constructor
         /// </summary>
         public AmazonS3Config()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonS3DefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "s3";
+            this.EndpointProvider = new AmazonS3EndpointProvider();
         }
 
         /// <summary>
@@ -76,5 +78,6 @@ namespace Amazon.S3
                 return _userAgent;
             }
         }
+
     }
 }

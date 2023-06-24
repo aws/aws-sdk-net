@@ -34,7 +34,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// NeptuneSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class NeptuneSettingsMarshaller : IRequestMarshaller<NeptuneSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -91,7 +91,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static NeptuneSettingsMarshaller Instance = new NeptuneSettingsMarshaller();
 
     }

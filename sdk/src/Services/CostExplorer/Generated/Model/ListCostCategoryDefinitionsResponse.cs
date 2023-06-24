@@ -39,7 +39,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property CostCategoryReferences. 
         /// <para>
-        ///  A reference to a Cost Category containing enough information to identify the Cost
+        /// A reference to a Cost Category that contains enough information to identify the Cost
         /// Category. 
         /// </para>
         /// </summary>
@@ -58,7 +58,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        ///  The token to retrieve the next set of results. Amazon Web Services provides the token
+        /// The token to retrieve the next set of results. Amazon Web Services provides the token
         /// when the response from a previous call has more results than the maximum page size.
         /// 
         /// </para>

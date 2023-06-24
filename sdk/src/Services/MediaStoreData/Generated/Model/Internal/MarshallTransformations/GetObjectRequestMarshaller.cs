@@ -55,7 +55,7 @@ namespace Amazon.MediaStoreData.Model.Internal.MarshallTransformations
         public IRequest Marshall(GetObjectRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.MediaStoreData");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-09-01";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-09-01";
             request.HttpMethod = "GET";
 
             if (!publicRequest.IsSetPath())
@@ -63,8 +63,10 @@ namespace Amazon.MediaStoreData.Model.Internal.MarshallTransformations
             request.AddPathResource("{Path+}", StringUtils.FromString(publicRequest.Path.TrimStart('/')));
             request.ResourcePath = "/{Path+}";
         
-            if(publicRequest.IsSetRange())
+            if (publicRequest.IsSetRange()) 
+            {
                 request.Headers["Range"] = publicRequest.Range;
+            }
 
             return request;
         }

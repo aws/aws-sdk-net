@@ -56,7 +56,7 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Macie2");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-01-01";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-01-01";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/jobs";
@@ -65,6 +65,17 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAllowListIds())
+                {
+                    context.Writer.WritePropertyName("allowListIds");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestAllowListIdsListValue in publicRequest.AllowListIds)
+                    {
+                            context.Writer.Write(publicRequestAllowListIdsListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetClientToken())
                 {
                     context.Writer.WritePropertyName("clientToken");
@@ -74,7 +85,7 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
                 else if(!(publicRequest.IsSetClientToken()))
                 {
                     context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());                                                
+                    context.Writer.Write(Guid.NewGuid().ToString());
                 }
                 if(publicRequest.IsSetCustomDataIdentifierIds())
                 {
@@ -170,7 +181,6 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

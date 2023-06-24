@@ -34,7 +34,7 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RootStorage Marshaller
-    /// </summary>       
+    /// </summary>
     public class RootStorageMarshaller : IRequestMarshaller<RootStorage, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RootStorageMarshaller Instance = new RootStorageMarshaller();
 
     }

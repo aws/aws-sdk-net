@@ -34,7 +34,7 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Eirp Marshaller
-    /// </summary>       
+    /// </summary>
     public class EirpMarshaller : IRequestMarshaller<Eirp, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static EirpMarshaller Instance = new EirpMarshaller();
 
     }

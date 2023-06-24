@@ -41,8 +41,8 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// A token to indicate the location of the next provisioned resource in the array of
-        /// provisioned resources, after the list of provisioned resources that was previously
+        /// A token that indicates the location of the next provisioned resource in the array
+        /// of provisioned resources, after the list of provisioned resources that was previously
         /// requested.
         /// </para>
         /// </summary>
@@ -62,7 +62,7 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property ServiceInstanceName. 
         /// <para>
-        /// The service instance name.
+        /// The name of the service instance whose provisioned resources you want.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
@@ -81,7 +81,7 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property ServiceName. 
         /// <para>
-        /// The service name.
+        /// The name of the service that <code>serviceInstanceName</code> is associated to.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]

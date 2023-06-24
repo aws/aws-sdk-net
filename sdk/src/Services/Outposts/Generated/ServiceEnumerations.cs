@@ -75,6 +75,102 @@ namespace Amazon.Outposts
 
 
     /// <summary>
+    /// Constants used for properties of type AssetState.
+    /// </summary>
+    public class AssetState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for AssetState
+        /// </summary>
+        public static readonly AssetState ACTIVE = new AssetState("ACTIVE");
+        /// <summary>
+        /// Constant RETIRING for AssetState
+        /// </summary>
+        public static readonly AssetState RETIRING = new AssetState("RETIRING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AssetState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AssetState FindValue(string value)
+        {
+            return FindValue<AssetState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AssetState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AssetType.
+    /// </summary>
+    public class AssetType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPUTE for AssetType
+        /// </summary>
+        public static readonly AssetType COMPUTE = new AssetType("COMPUTE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AssetType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AssetType FindValue(string value)
+        {
+            return FindValue<AssetType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AssetType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type CatalogItemClass.
     /// </summary>
     public class CatalogItemClass : ConstantClass
@@ -175,6 +271,60 @@ namespace Amazon.Outposts
 
 
     /// <summary>
+    /// Constants used for properties of type ComputeAssetState.
+    /// </summary>
+    public class ComputeAssetState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for ComputeAssetState
+        /// </summary>
+        public static readonly ComputeAssetState ACTIVE = new ComputeAssetState("ACTIVE");
+        /// <summary>
+        /// Constant ISOLATED for ComputeAssetState
+        /// </summary>
+        public static readonly ComputeAssetState ISOLATED = new ComputeAssetState("ISOLATED");
+        /// <summary>
+        /// Constant RETIRING for ComputeAssetState
+        /// </summary>
+        public static readonly ComputeAssetState RETIRING = new ComputeAssetState("RETIRING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ComputeAssetState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ComputeAssetState FindValue(string value)
+        {
+            return FindValue<ComputeAssetState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ComputeAssetState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type FiberOpticCableType.
     /// </summary>
     public class FiberOpticCableType : ConstantClass
@@ -258,6 +408,10 @@ namespace Amazon.Outposts
         /// Constant PREPARING for LineItemStatus
         /// </summary>
         public static readonly LineItemStatus PREPARING = new LineItemStatus("PREPARING");
+        /// <summary>
+        /// Constant REPLACED for LineItemStatus
+        /// </summary>
+        public static readonly LineItemStatus REPLACED = new LineItemStatus("REPLACED");
         /// <summary>
         /// Constant SHIPPED for LineItemStatus
         /// </summary>
@@ -647,6 +801,10 @@ namespace Amazon.Outposts
     {
 
         /// <summary>
+        /// Constant ONE_YEAR for PaymentTerm
+        /// </summary>
+        public static readonly PaymentTerm ONE_YEAR = new PaymentTerm("ONE_YEAR");
+        /// <summary>
         /// Constant THREE_YEARS for PaymentTerm
         /// </summary>
         public static readonly PaymentTerm THREE_YEARS = new PaymentTerm("THREE_YEARS");
@@ -758,6 +916,10 @@ namespace Amazon.Outposts
         /// Constant POWER_15_KVA for PowerDrawKva
         /// </summary>
         public static readonly PowerDrawKva POWER_15_KVA = new PowerDrawKva("POWER_15_KVA");
+        /// <summary>
+        /// Constant POWER_30_KVA for PowerDrawKva
+        /// </summary>
+        public static readonly PowerDrawKva POWER_30_KVA = new PowerDrawKva("POWER_30_KVA");
         /// <summary>
         /// Constant POWER_5_KVA for PowerDrawKva
         /// </summary>
@@ -942,6 +1104,64 @@ namespace Amazon.Outposts
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ResourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ShipmentCarrier.
+    /// </summary>
+    public class ShipmentCarrier : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DBS for ShipmentCarrier
+        /// </summary>
+        public static readonly ShipmentCarrier DBS = new ShipmentCarrier("DBS");
+        /// <summary>
+        /// Constant DHL for ShipmentCarrier
+        /// </summary>
+        public static readonly ShipmentCarrier DHL = new ShipmentCarrier("DHL");
+        /// <summary>
+        /// Constant FEDEX for ShipmentCarrier
+        /// </summary>
+        public static readonly ShipmentCarrier FEDEX = new ShipmentCarrier("FEDEX");
+        /// <summary>
+        /// Constant UPS for ShipmentCarrier
+        /// </summary>
+        public static readonly ShipmentCarrier UPS = new ShipmentCarrier("UPS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ShipmentCarrier(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ShipmentCarrier FindValue(string value)
+        {
+            return FindValue<ShipmentCarrier>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ShipmentCarrier(string value)
         {
             return FindValue(value);
         }

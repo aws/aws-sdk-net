@@ -41,10 +41,13 @@ namespace Amazon.SageMaker.Model
         private string _featureGroupArn;
         private string _featureGroupName;
         private FeatureGroupStatus _featureGroupStatus;
+        private DateTime? _lastModifiedTime;
+        private LastUpdateStatus _lastUpdateStatus;
         private string _nextToken;
         private OfflineStoreConfig _offlineStoreConfig;
         private OfflineStoreStatus _offlineStoreStatus;
         private OnlineStoreConfig _onlineStoreConfig;
+        private long? _onlineStoreTotalSizeBytes;
         private string _recordIdentifierFeatureName;
         private string _roleArn;
 
@@ -217,6 +220,42 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property LastModifiedTime. 
+        /// <para>
+        /// A timestamp indicating when the feature group was last updated.
+        /// </para>
+        /// </summary>
+        public DateTime LastModifiedTime
+        {
+            get { return this._lastModifiedTime.GetValueOrDefault(); }
+            set { this._lastModifiedTime = value; }
+        }
+
+        // Check to see if LastModifiedTime property is set
+        internal bool IsSetLastModifiedTime()
+        {
+            return this._lastModifiedTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastUpdateStatus. 
+        /// <para>
+        /// A value indicating whether the update made to the feature group was successful.
+        /// </para>
+        /// </summary>
+        public LastUpdateStatus LastUpdateStatus
+        {
+            get { return this._lastUpdateStatus; }
+            set { this._lastUpdateStatus = value; }
+        }
+
+        // Check to see if LastUpdateStatus property is set
+        internal bool IsSetLastUpdateStatus()
+        {
+            return this._lastUpdateStatus != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
         /// A token to resume pagination of the list of <code>Features</code> (<code>FeatureDefinitions</code>).
@@ -238,10 +277,29 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property OfflineStoreConfig. 
         /// <para>
-        /// The configuration of the <code>OfflineStore</code>, inducing the S3 location of the
-        /// <code>OfflineStore</code>, Amazon Web Services Glue or Amazon Web Services Hive data
-        /// catalogue configurations, and the security configuration.
+        /// The configuration of the offline store. It includes the following configurations:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Amazon S3 location of the offline store.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Configuration of the Glue data catalog.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Table format of the offline store.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Option to disable the automatic creation of a Glue table for the offline store.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Encryption configuration.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public OfflineStoreConfig OfflineStoreConfig
         {
@@ -294,6 +352,24 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property OnlineStoreTotalSizeBytes. 
+        /// <para>
+        /// The size of the <code>OnlineStore</code> in bytes.
+        /// </para>
+        /// </summary>
+        public long OnlineStoreTotalSizeBytes
+        {
+            get { return this._onlineStoreTotalSizeBytes.GetValueOrDefault(); }
+            set { this._onlineStoreTotalSizeBytes = value; }
+        }
+
+        // Check to see if OnlineStoreTotalSizeBytes property is set
+        internal bool IsSetOnlineStoreTotalSizeBytes()
+        {
+            return this._onlineStoreTotalSizeBytes.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property RecordIdentifierFeatureName. 
         /// <para>
         /// The name of the <code>Feature</code> used for <code>RecordIdentifier</code>, whose
@@ -317,7 +393,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property RoleArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the IAM execution role used to persist data into
-        /// the <code>OfflineStore</code> if an <code>OfflineStoreConfig</code> is provided.
+        /// the OfflineStore if an OfflineStoreConfig is provided.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]

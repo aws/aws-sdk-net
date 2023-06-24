@@ -35,13 +35,7 @@ namespace Amazon.Macie2
     /// <summary>
     /// Implementation for accessing Macie2
     ///
-    /// Amazon Macie is a fully managed data security and data privacy service that uses machine
-    /// learning and pattern matching to discover and protect your sensitive data in AWS.
-    /// Macie automates the discovery of sensitive data, such as PII and intellectual property,
-    /// to provide you with insight into the data that your organization stores in AWS. Macie
-    /// also provides an inventory of your Amazon S3 buckets, which it continually monitors
-    /// for you. If Macie detects sensitive data or potential data access issues, it generates
-    /// detailed findings for you to review and act upon as necessary.
+    /// Amazon Macie
     /// </summary>
     public partial class AmazonMacie2Client : AmazonServiceClient, IAmazonMacie2
     {
@@ -236,6 +230,15 @@ namespace Amazon.Macie2
         }
 
         /// <summary>
+        /// Customize the pipeline
+        /// </summary>
+        /// <param name="pipeline"></param>
+        protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
+        {
+            pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonMacie2EndpointResolver());
+        }
+        /// <summary>
         /// Capture metadata for the service.
         /// </summary>
         protected override IServiceMetadata ServiceMetadata
@@ -419,6 +422,87 @@ namespace Amazon.Macie2
         public virtual BatchGetCustomDataIdentifiersResponse EndBatchGetCustomDataIdentifiers(IAsyncResult asyncResult)
         {
             return EndInvoke<BatchGetCustomDataIdentifiersResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateAllowList
+
+        /// <summary>
+        /// Creates and defines the settings for an allow list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAllowList service method.</param>
+        /// 
+        /// <returns>The response from the CreateAllowList service method, as returned by Macie2.</returns>
+        /// <exception cref="Amazon.Macie2.Model.AccessDeniedException">
+        /// Provides information about an error that occurred due to insufficient access to a
+        /// specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ConflictException">
+        /// Provides information about an error that occurred due to a versioning conflict for
+        /// a specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.InternalServerException">
+        /// Provides information about an error that occurred due to an unknown internal server
+        /// error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ResourceNotFoundException">
+        /// Provides information about an error that occurred because a specified resource wasn't
+        /// found.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ServiceQuotaExceededException">
+        /// Provides information about an error that occurred due to one or more service quotas
+        /// for an account.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ThrottlingException">
+        /// Provides information about an error that occurred because too many requests were sent
+        /// during a certain amount of time.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ValidationException">
+        /// Provides information about an error that occurred due to a syntax error in a request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/CreateAllowList">REST API Reference for CreateAllowList Operation</seealso>
+        public virtual CreateAllowListResponse CreateAllowList(CreateAllowListRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAllowListRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAllowListResponseUnmarshaller.Instance;
+
+            return Invoke<CreateAllowListResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateAllowList operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateAllowList operation on AmazonMacie2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateAllowList
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/CreateAllowList">REST API Reference for CreateAllowList Operation</seealso>
+        public virtual IAsyncResult BeginCreateAllowList(CreateAllowListRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAllowListRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAllowListResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateAllowList operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateAllowList.</param>
+        /// 
+        /// <returns>Returns a  CreateAllowListResult from Macie2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/CreateAllowList">REST API Reference for CreateAllowList Operation</seealso>
+        public virtual CreateAllowListResponse EndCreateAllowList(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateAllowListResponse>(asyncResult);
         }
 
         #endregion
@@ -990,6 +1074,79 @@ namespace Amazon.Macie2
 
         #endregion
         
+        #region  DeleteAllowList
+
+        /// <summary>
+        /// Deletes an allow list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAllowList service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAllowList service method, as returned by Macie2.</returns>
+        /// <exception cref="Amazon.Macie2.Model.AccessDeniedException">
+        /// Provides information about an error that occurred due to insufficient access to a
+        /// specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.InternalServerException">
+        /// Provides information about an error that occurred due to an unknown internal server
+        /// error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ResourceNotFoundException">
+        /// Provides information about an error that occurred because a specified resource wasn't
+        /// found.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ThrottlingException">
+        /// Provides information about an error that occurred because too many requests were sent
+        /// during a certain amount of time.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ValidationException">
+        /// Provides information about an error that occurred due to a syntax error in a request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DeleteAllowList">REST API Reference for DeleteAllowList Operation</seealso>
+        public virtual DeleteAllowListResponse DeleteAllowList(DeleteAllowListRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAllowListRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAllowListResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteAllowListResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteAllowList operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAllowList operation on AmazonMacie2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteAllowList
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DeleteAllowList">REST API Reference for DeleteAllowList Operation</seealso>
+        public virtual IAsyncResult BeginDeleteAllowList(DeleteAllowListRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAllowListRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAllowListResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteAllowList operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteAllowList.</param>
+        /// 
+        /// <returns>Returns a  DeleteAllowListResult from Macie2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DeleteAllowList">REST API Reference for DeleteAllowList Operation</seealso>
+        public virtual DeleteAllowListResponse EndDeleteAllowList(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteAllowListResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteCustomDataIdentifier
 
         /// <summary>
@@ -1318,7 +1475,7 @@ namespace Amazon.Macie2
 
         /// <summary>
         /// Retrieves (queries) statistical data and other information about one or more S3 buckets
-        /// that Amazon Macie monitors and analyzes.
+        /// that Amazon Macie monitors and analyzes for an account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeBuckets service method.</param>
         /// 
@@ -2210,11 +2367,154 @@ namespace Amazon.Macie2
 
         #endregion
         
+        #region  GetAllowList
+
+        /// <summary>
+        /// Retrieves the settings and status of an allow list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAllowList service method.</param>
+        /// 
+        /// <returns>The response from the GetAllowList service method, as returned by Macie2.</returns>
+        /// <exception cref="Amazon.Macie2.Model.AccessDeniedException">
+        /// Provides information about an error that occurred due to insufficient access to a
+        /// specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.InternalServerException">
+        /// Provides information about an error that occurred due to an unknown internal server
+        /// error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ResourceNotFoundException">
+        /// Provides information about an error that occurred because a specified resource wasn't
+        /// found.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ThrottlingException">
+        /// Provides information about an error that occurred because too many requests were sent
+        /// during a certain amount of time.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ValidationException">
+        /// Provides information about an error that occurred due to a syntax error in a request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetAllowList">REST API Reference for GetAllowList Operation</seealso>
+        public virtual GetAllowListResponse GetAllowList(GetAllowListRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAllowListRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAllowListResponseUnmarshaller.Instance;
+
+            return Invoke<GetAllowListResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAllowList operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAllowList operation on AmazonMacie2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAllowList
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetAllowList">REST API Reference for GetAllowList Operation</seealso>
+        public virtual IAsyncResult BeginGetAllowList(GetAllowListRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAllowListRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAllowListResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetAllowList operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetAllowList.</param>
+        /// 
+        /// <returns>Returns a  GetAllowListResult from Macie2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetAllowList">REST API Reference for GetAllowList Operation</seealso>
+        public virtual GetAllowListResponse EndGetAllowList(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetAllowListResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetAutomatedDiscoveryConfiguration
+
+        /// <summary>
+        /// Retrieves the configuration settings and status of automated sensitive data discovery
+        /// for an account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAutomatedDiscoveryConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the GetAutomatedDiscoveryConfiguration service method, as returned by Macie2.</returns>
+        /// <exception cref="Amazon.Macie2.Model.AccessDeniedException">
+        /// Provides information about an error that occurred due to insufficient access to a
+        /// specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.InternalServerException">
+        /// Provides information about an error that occurred due to an unknown internal server
+        /// error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ThrottlingException">
+        /// Provides information about an error that occurred because too many requests were sent
+        /// during a certain amount of time.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ValidationException">
+        /// Provides information about an error that occurred due to a syntax error in a request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetAutomatedDiscoveryConfiguration">REST API Reference for GetAutomatedDiscoveryConfiguration Operation</seealso>
+        public virtual GetAutomatedDiscoveryConfigurationResponse GetAutomatedDiscoveryConfiguration(GetAutomatedDiscoveryConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAutomatedDiscoveryConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAutomatedDiscoveryConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<GetAutomatedDiscoveryConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAutomatedDiscoveryConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAutomatedDiscoveryConfiguration operation on AmazonMacie2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAutomatedDiscoveryConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetAutomatedDiscoveryConfiguration">REST API Reference for GetAutomatedDiscoveryConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginGetAutomatedDiscoveryConfiguration(GetAutomatedDiscoveryConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAutomatedDiscoveryConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAutomatedDiscoveryConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetAutomatedDiscoveryConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetAutomatedDiscoveryConfiguration.</param>
+        /// 
+        /// <returns>Returns a  GetAutomatedDiscoveryConfigurationResult from Macie2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetAutomatedDiscoveryConfiguration">REST API Reference for GetAutomatedDiscoveryConfiguration Operation</seealso>
+        public virtual GetAutomatedDiscoveryConfigurationResponse EndGetAutomatedDiscoveryConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetAutomatedDiscoveryConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetBucketStatistics
 
         /// <summary>
-        /// Retrieves (queries) aggregated statistical data about S3 buckets that Amazon Macie
-        /// monitors and analyzes.
+        /// Retrieves (queries) aggregated statistical data about all the S3 buckets that Amazon
+        /// Macie monitors and analyzes for an account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBucketStatistics service method.</param>
         /// 
@@ -2369,6 +2669,79 @@ namespace Amazon.Macie2
         public virtual GetClassificationExportConfigurationResponse EndGetClassificationExportConfiguration(IAsyncResult asyncResult)
         {
             return EndInvoke<GetClassificationExportConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetClassificationScope
+
+        /// <summary>
+        /// Retrieves the classification scope settings for an account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetClassificationScope service method.</param>
+        /// 
+        /// <returns>The response from the GetClassificationScope service method, as returned by Macie2.</returns>
+        /// <exception cref="Amazon.Macie2.Model.AccessDeniedException">
+        /// Provides information about an error that occurred due to insufficient access to a
+        /// specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.InternalServerException">
+        /// Provides information about an error that occurred due to an unknown internal server
+        /// error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ResourceNotFoundException">
+        /// Provides information about an error that occurred because a specified resource wasn't
+        /// found.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ThrottlingException">
+        /// Provides information about an error that occurred because too many requests were sent
+        /// during a certain amount of time.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ValidationException">
+        /// Provides information about an error that occurred due to a syntax error in a request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetClassificationScope">REST API Reference for GetClassificationScope Operation</seealso>
+        public virtual GetClassificationScopeResponse GetClassificationScope(GetClassificationScopeRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetClassificationScopeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetClassificationScopeResponseUnmarshaller.Instance;
+
+            return Invoke<GetClassificationScopeResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetClassificationScope operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetClassificationScope operation on AmazonMacie2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetClassificationScope
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetClassificationScope">REST API Reference for GetClassificationScope Operation</seealso>
+        public virtual IAsyncResult BeginGetClassificationScope(GetClassificationScopeRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetClassificationScopeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetClassificationScopeResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetClassificationScope operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetClassificationScope.</param>
+        /// 
+        /// <returns>Returns a  GetClassificationScopeResult from Macie2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetClassificationScope">REST API Reference for GetClassificationScope Operation</seealso>
+        public virtual GetClassificationScopeResponse EndGetClassificationScope(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetClassificationScopeResponse>(asyncResult);
         }
 
         #endregion
@@ -2863,7 +3236,7 @@ namespace Amazon.Macie2
         #region  GetMacieSession
 
         /// <summary>
-        /// Retrieves the current status and configuration settings for an Amazon Macie account.
+        /// Retrieves the status and configuration settings for an Amazon Macie account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMacieSession service method.</param>
         /// 
@@ -3106,6 +3479,374 @@ namespace Amazon.Macie2
 
         #endregion
         
+        #region  GetResourceProfile
+
+        /// <summary>
+        /// Retrieves (queries) sensitive data discovery statistics and the sensitivity score
+        /// for an S3 bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetResourceProfile service method.</param>
+        /// 
+        /// <returns>The response from the GetResourceProfile service method, as returned by Macie2.</returns>
+        /// <exception cref="Amazon.Macie2.Model.AccessDeniedException">
+        /// Provides information about an error that occurred due to insufficient access to a
+        /// specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.InternalServerException">
+        /// Provides information about an error that occurred due to an unknown internal server
+        /// error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ResourceNotFoundException">
+        /// Provides information about an error that occurred because a specified resource wasn't
+        /// found.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ServiceQuotaExceededException">
+        /// Provides information about an error that occurred due to one or more service quotas
+        /// for an account.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ThrottlingException">
+        /// Provides information about an error that occurred because too many requests were sent
+        /// during a certain amount of time.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ValidationException">
+        /// Provides information about an error that occurred due to a syntax error in a request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetResourceProfile">REST API Reference for GetResourceProfile Operation</seealso>
+        public virtual GetResourceProfileResponse GetResourceProfile(GetResourceProfileRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetResourceProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResourceProfileResponseUnmarshaller.Instance;
+
+            return Invoke<GetResourceProfileResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetResourceProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetResourceProfile operation on AmazonMacie2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetResourceProfile
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetResourceProfile">REST API Reference for GetResourceProfile Operation</seealso>
+        public virtual IAsyncResult BeginGetResourceProfile(GetResourceProfileRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetResourceProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResourceProfileResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetResourceProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetResourceProfile.</param>
+        /// 
+        /// <returns>Returns a  GetResourceProfileResult from Macie2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetResourceProfile">REST API Reference for GetResourceProfile Operation</seealso>
+        public virtual GetResourceProfileResponse EndGetResourceProfile(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetResourceProfileResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetRevealConfiguration
+
+        /// <summary>
+        /// Retrieves the status and configuration settings for retrieving occurrences of sensitive
+        /// data reported by findings.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRevealConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the GetRevealConfiguration service method, as returned by Macie2.</returns>
+        /// <exception cref="Amazon.Macie2.Model.AccessDeniedException">
+        /// Provides information about an error that occurred due to insufficient access to a
+        /// specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.InternalServerException">
+        /// Provides information about an error that occurred due to an unknown internal server
+        /// error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ThrottlingException">
+        /// Provides information about an error that occurred because too many requests were sent
+        /// during a certain amount of time.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ValidationException">
+        /// Provides information about an error that occurred due to a syntax error in a request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetRevealConfiguration">REST API Reference for GetRevealConfiguration Operation</seealso>
+        public virtual GetRevealConfigurationResponse GetRevealConfiguration(GetRevealConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetRevealConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRevealConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<GetRevealConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetRevealConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetRevealConfiguration operation on AmazonMacie2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetRevealConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetRevealConfiguration">REST API Reference for GetRevealConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginGetRevealConfiguration(GetRevealConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetRevealConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRevealConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetRevealConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetRevealConfiguration.</param>
+        /// 
+        /// <returns>Returns a  GetRevealConfigurationResult from Macie2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetRevealConfiguration">REST API Reference for GetRevealConfiguration Operation</seealso>
+        public virtual GetRevealConfigurationResponse EndGetRevealConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetRevealConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetSensitiveDataOccurrences
+
+        /// <summary>
+        /// Retrieves occurrences of sensitive data reported by a finding.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSensitiveDataOccurrences service method.</param>
+        /// 
+        /// <returns>The response from the GetSensitiveDataOccurrences service method, as returned by Macie2.</returns>
+        /// <exception cref="Amazon.Macie2.Model.AccessDeniedException">
+        /// Provides information about an error that occurred due to insufficient access to a
+        /// specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.InternalServerException">
+        /// Provides information about an error that occurred due to an unknown internal server
+        /// error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ResourceNotFoundException">
+        /// Provides information about an error that occurred because a specified resource wasn't
+        /// found.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ServiceQuotaExceededException">
+        /// Provides information about an error that occurred due to one or more service quotas
+        /// for an account.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ThrottlingException">
+        /// Provides information about an error that occurred because too many requests were sent
+        /// during a certain amount of time.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.UnprocessableEntityException">
+        /// Provides information about an error that occurred due to an unprocessable entity.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetSensitiveDataOccurrences">REST API Reference for GetSensitiveDataOccurrences Operation</seealso>
+        public virtual GetSensitiveDataOccurrencesResponse GetSensitiveDataOccurrences(GetSensitiveDataOccurrencesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSensitiveDataOccurrencesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSensitiveDataOccurrencesResponseUnmarshaller.Instance;
+
+            return Invoke<GetSensitiveDataOccurrencesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetSensitiveDataOccurrences operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetSensitiveDataOccurrences operation on AmazonMacie2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSensitiveDataOccurrences
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetSensitiveDataOccurrences">REST API Reference for GetSensitiveDataOccurrences Operation</seealso>
+        public virtual IAsyncResult BeginGetSensitiveDataOccurrences(GetSensitiveDataOccurrencesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSensitiveDataOccurrencesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSensitiveDataOccurrencesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetSensitiveDataOccurrences operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetSensitiveDataOccurrences.</param>
+        /// 
+        /// <returns>Returns a  GetSensitiveDataOccurrencesResult from Macie2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetSensitiveDataOccurrences">REST API Reference for GetSensitiveDataOccurrences Operation</seealso>
+        public virtual GetSensitiveDataOccurrencesResponse EndGetSensitiveDataOccurrences(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetSensitiveDataOccurrencesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetSensitiveDataOccurrencesAvailability
+
+        /// <summary>
+        /// Checks whether occurrences of sensitive data can be retrieved for a finding.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSensitiveDataOccurrencesAvailability service method.</param>
+        /// 
+        /// <returns>The response from the GetSensitiveDataOccurrencesAvailability service method, as returned by Macie2.</returns>
+        /// <exception cref="Amazon.Macie2.Model.AccessDeniedException">
+        /// Provides information about an error that occurred due to insufficient access to a
+        /// specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.InternalServerException">
+        /// Provides information about an error that occurred due to an unknown internal server
+        /// error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ResourceNotFoundException">
+        /// Provides information about an error that occurred because a specified resource wasn't
+        /// found.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ThrottlingException">
+        /// Provides information about an error that occurred because too many requests were sent
+        /// during a certain amount of time.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetSensitiveDataOccurrencesAvailability">REST API Reference for GetSensitiveDataOccurrencesAvailability Operation</seealso>
+        public virtual GetSensitiveDataOccurrencesAvailabilityResponse GetSensitiveDataOccurrencesAvailability(GetSensitiveDataOccurrencesAvailabilityRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSensitiveDataOccurrencesAvailabilityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSensitiveDataOccurrencesAvailabilityResponseUnmarshaller.Instance;
+
+            return Invoke<GetSensitiveDataOccurrencesAvailabilityResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetSensitiveDataOccurrencesAvailability operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetSensitiveDataOccurrencesAvailability operation on AmazonMacie2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSensitiveDataOccurrencesAvailability
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetSensitiveDataOccurrencesAvailability">REST API Reference for GetSensitiveDataOccurrencesAvailability Operation</seealso>
+        public virtual IAsyncResult BeginGetSensitiveDataOccurrencesAvailability(GetSensitiveDataOccurrencesAvailabilityRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSensitiveDataOccurrencesAvailabilityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSensitiveDataOccurrencesAvailabilityResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetSensitiveDataOccurrencesAvailability operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetSensitiveDataOccurrencesAvailability.</param>
+        /// 
+        /// <returns>Returns a  GetSensitiveDataOccurrencesAvailabilityResult from Macie2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetSensitiveDataOccurrencesAvailability">REST API Reference for GetSensitiveDataOccurrencesAvailability Operation</seealso>
+        public virtual GetSensitiveDataOccurrencesAvailabilityResponse EndGetSensitiveDataOccurrencesAvailability(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetSensitiveDataOccurrencesAvailabilityResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetSensitivityInspectionTemplate
+
+        /// <summary>
+        /// Retrieves the settings for the sensitivity inspection template for an account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSensitivityInspectionTemplate service method.</param>
+        /// 
+        /// <returns>The response from the GetSensitivityInspectionTemplate service method, as returned by Macie2.</returns>
+        /// <exception cref="Amazon.Macie2.Model.AccessDeniedException">
+        /// Provides information about an error that occurred due to insufficient access to a
+        /// specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.InternalServerException">
+        /// Provides information about an error that occurred due to an unknown internal server
+        /// error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ResourceNotFoundException">
+        /// Provides information about an error that occurred because a specified resource wasn't
+        /// found.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ThrottlingException">
+        /// Provides information about an error that occurred because too many requests were sent
+        /// during a certain amount of time.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ValidationException">
+        /// Provides information about an error that occurred due to a syntax error in a request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetSensitivityInspectionTemplate">REST API Reference for GetSensitivityInspectionTemplate Operation</seealso>
+        public virtual GetSensitivityInspectionTemplateResponse GetSensitivityInspectionTemplate(GetSensitivityInspectionTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSensitivityInspectionTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSensitivityInspectionTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<GetSensitivityInspectionTemplateResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetSensitivityInspectionTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetSensitivityInspectionTemplate operation on AmazonMacie2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSensitivityInspectionTemplate
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetSensitivityInspectionTemplate">REST API Reference for GetSensitivityInspectionTemplate Operation</seealso>
+        public virtual IAsyncResult BeginGetSensitivityInspectionTemplate(GetSensitivityInspectionTemplateRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSensitivityInspectionTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSensitivityInspectionTemplateResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetSensitivityInspectionTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetSensitivityInspectionTemplate.</param>
+        /// 
+        /// <returns>Returns a  GetSensitivityInspectionTemplateResult from Macie2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetSensitivityInspectionTemplate">REST API Reference for GetSensitivityInspectionTemplate Operation</seealso>
+        public virtual GetSensitivityInspectionTemplateResponse EndGetSensitivityInspectionTemplate(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetSensitivityInspectionTemplateResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetUsageStatistics
 
         /// <summary>
@@ -3268,6 +4009,75 @@ namespace Amazon.Macie2
 
         #endregion
         
+        #region  ListAllowLists
+
+        /// <summary>
+        /// Retrieves a subset of information about all the allow lists for an account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAllowLists service method.</param>
+        /// 
+        /// <returns>The response from the ListAllowLists service method, as returned by Macie2.</returns>
+        /// <exception cref="Amazon.Macie2.Model.AccessDeniedException">
+        /// Provides information about an error that occurred due to insufficient access to a
+        /// specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.InternalServerException">
+        /// Provides information about an error that occurred due to an unknown internal server
+        /// error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ThrottlingException">
+        /// Provides information about an error that occurred because too many requests were sent
+        /// during a certain amount of time.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ValidationException">
+        /// Provides information about an error that occurred due to a syntax error in a request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListAllowLists">REST API Reference for ListAllowLists Operation</seealso>
+        public virtual ListAllowListsResponse ListAllowLists(ListAllowListsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAllowListsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAllowListsResponseUnmarshaller.Instance;
+
+            return Invoke<ListAllowListsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAllowLists operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAllowLists operation on AmazonMacie2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAllowLists
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListAllowLists">REST API Reference for ListAllowLists Operation</seealso>
+        public virtual IAsyncResult BeginListAllowLists(ListAllowListsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAllowListsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAllowListsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListAllowLists operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAllowLists.</param>
+        /// 
+        /// <returns>Returns a  ListAllowListsResult from Macie2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListAllowLists">REST API Reference for ListAllowLists Operation</seealso>
+        public virtual ListAllowListsResponse EndListAllowLists(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListAllowListsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListClassificationJobs
 
         /// <summary>
@@ -3345,6 +4155,75 @@ namespace Amazon.Macie2
         public virtual ListClassificationJobsResponse EndListClassificationJobs(IAsyncResult asyncResult)
         {
             return EndInvoke<ListClassificationJobsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListClassificationScopes
+
+        /// <summary>
+        /// Retrieves a subset of information about the classification scope for an account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListClassificationScopes service method.</param>
+        /// 
+        /// <returns>The response from the ListClassificationScopes service method, as returned by Macie2.</returns>
+        /// <exception cref="Amazon.Macie2.Model.AccessDeniedException">
+        /// Provides information about an error that occurred due to insufficient access to a
+        /// specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.InternalServerException">
+        /// Provides information about an error that occurred due to an unknown internal server
+        /// error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ThrottlingException">
+        /// Provides information about an error that occurred because too many requests were sent
+        /// during a certain amount of time.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ValidationException">
+        /// Provides information about an error that occurred due to a syntax error in a request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListClassificationScopes">REST API Reference for ListClassificationScopes Operation</seealso>
+        public virtual ListClassificationScopesResponse ListClassificationScopes(ListClassificationScopesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListClassificationScopesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListClassificationScopesResponseUnmarshaller.Instance;
+
+            return Invoke<ListClassificationScopesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListClassificationScopes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListClassificationScopes operation on AmazonMacie2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListClassificationScopes
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListClassificationScopes">REST API Reference for ListClassificationScopes Operation</seealso>
+        public virtual IAsyncResult BeginListClassificationScopes(ListClassificationScopesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListClassificationScopesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListClassificationScopesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListClassificationScopes operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListClassificationScopes.</param>
+        /// 
+        /// <returns>Returns a  ListClassificationScopesResult from Macie2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListClassificationScopes">REST API Reference for ListClassificationScopes Operation</seealso>
+        public virtual ListClassificationScopesResponse EndListClassificationScopes(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListClassificationScopesResponse>(asyncResult);
         }
 
         #endregion
@@ -3893,11 +4772,236 @@ namespace Amazon.Macie2
 
         #endregion
         
+        #region  ListResourceProfileArtifacts
+
+        /// <summary>
+        /// Retrieves information about objects that were selected from an S3 bucket for automated
+        /// sensitive data discovery.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListResourceProfileArtifacts service method.</param>
+        /// 
+        /// <returns>The response from the ListResourceProfileArtifacts service method, as returned by Macie2.</returns>
+        /// <exception cref="Amazon.Macie2.Model.AccessDeniedException">
+        /// Provides information about an error that occurred due to insufficient access to a
+        /// specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.InternalServerException">
+        /// Provides information about an error that occurred due to an unknown internal server
+        /// error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ResourceNotFoundException">
+        /// Provides information about an error that occurred because a specified resource wasn't
+        /// found.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ThrottlingException">
+        /// Provides information about an error that occurred because too many requests were sent
+        /// during a certain amount of time.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ValidationException">
+        /// Provides information about an error that occurred due to a syntax error in a request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListResourceProfileArtifacts">REST API Reference for ListResourceProfileArtifacts Operation</seealso>
+        public virtual ListResourceProfileArtifactsResponse ListResourceProfileArtifacts(ListResourceProfileArtifactsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListResourceProfileArtifactsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResourceProfileArtifactsResponseUnmarshaller.Instance;
+
+            return Invoke<ListResourceProfileArtifactsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListResourceProfileArtifacts operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListResourceProfileArtifacts operation on AmazonMacie2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListResourceProfileArtifacts
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListResourceProfileArtifacts">REST API Reference for ListResourceProfileArtifacts Operation</seealso>
+        public virtual IAsyncResult BeginListResourceProfileArtifacts(ListResourceProfileArtifactsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListResourceProfileArtifactsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResourceProfileArtifactsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListResourceProfileArtifacts operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListResourceProfileArtifacts.</param>
+        /// 
+        /// <returns>Returns a  ListResourceProfileArtifactsResult from Macie2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListResourceProfileArtifacts">REST API Reference for ListResourceProfileArtifacts Operation</seealso>
+        public virtual ListResourceProfileArtifactsResponse EndListResourceProfileArtifacts(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListResourceProfileArtifactsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListResourceProfileDetections
+
+        /// <summary>
+        /// Retrieves information about the types and amount of sensitive data that Amazon Macie
+        /// found in an S3 bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListResourceProfileDetections service method.</param>
+        /// 
+        /// <returns>The response from the ListResourceProfileDetections service method, as returned by Macie2.</returns>
+        /// <exception cref="Amazon.Macie2.Model.AccessDeniedException">
+        /// Provides information about an error that occurred due to insufficient access to a
+        /// specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.InternalServerException">
+        /// Provides information about an error that occurred due to an unknown internal server
+        /// error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ResourceNotFoundException">
+        /// Provides information about an error that occurred because a specified resource wasn't
+        /// found.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ServiceQuotaExceededException">
+        /// Provides information about an error that occurred due to one or more service quotas
+        /// for an account.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ThrottlingException">
+        /// Provides information about an error that occurred because too many requests were sent
+        /// during a certain amount of time.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ValidationException">
+        /// Provides information about an error that occurred due to a syntax error in a request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListResourceProfileDetections">REST API Reference for ListResourceProfileDetections Operation</seealso>
+        public virtual ListResourceProfileDetectionsResponse ListResourceProfileDetections(ListResourceProfileDetectionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListResourceProfileDetectionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResourceProfileDetectionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListResourceProfileDetectionsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListResourceProfileDetections operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListResourceProfileDetections operation on AmazonMacie2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListResourceProfileDetections
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListResourceProfileDetections">REST API Reference for ListResourceProfileDetections Operation</seealso>
+        public virtual IAsyncResult BeginListResourceProfileDetections(ListResourceProfileDetectionsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListResourceProfileDetectionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResourceProfileDetectionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListResourceProfileDetections operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListResourceProfileDetections.</param>
+        /// 
+        /// <returns>Returns a  ListResourceProfileDetectionsResult from Macie2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListResourceProfileDetections">REST API Reference for ListResourceProfileDetections Operation</seealso>
+        public virtual ListResourceProfileDetectionsResponse EndListResourceProfileDetections(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListResourceProfileDetectionsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListSensitivityInspectionTemplates
+
+        /// <summary>
+        /// Retrieves a subset of information about the sensitivity inspection template for an
+        /// account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSensitivityInspectionTemplates service method.</param>
+        /// 
+        /// <returns>The response from the ListSensitivityInspectionTemplates service method, as returned by Macie2.</returns>
+        /// <exception cref="Amazon.Macie2.Model.AccessDeniedException">
+        /// Provides information about an error that occurred due to insufficient access to a
+        /// specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.InternalServerException">
+        /// Provides information about an error that occurred due to an unknown internal server
+        /// error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ServiceQuotaExceededException">
+        /// Provides information about an error that occurred due to one or more service quotas
+        /// for an account.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ThrottlingException">
+        /// Provides information about an error that occurred because too many requests were sent
+        /// during a certain amount of time.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ValidationException">
+        /// Provides information about an error that occurred due to a syntax error in a request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListSensitivityInspectionTemplates">REST API Reference for ListSensitivityInspectionTemplates Operation</seealso>
+        public virtual ListSensitivityInspectionTemplatesResponse ListSensitivityInspectionTemplates(ListSensitivityInspectionTemplatesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSensitivityInspectionTemplatesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSensitivityInspectionTemplatesResponseUnmarshaller.Instance;
+
+            return Invoke<ListSensitivityInspectionTemplatesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListSensitivityInspectionTemplates operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListSensitivityInspectionTemplates operation on AmazonMacie2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListSensitivityInspectionTemplates
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListSensitivityInspectionTemplates">REST API Reference for ListSensitivityInspectionTemplates Operation</seealso>
+        public virtual IAsyncResult BeginListSensitivityInspectionTemplates(ListSensitivityInspectionTemplatesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSensitivityInspectionTemplatesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSensitivityInspectionTemplatesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListSensitivityInspectionTemplates operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListSensitivityInspectionTemplates.</param>
+        /// 
+        /// <returns>Returns a  ListSensitivityInspectionTemplatesResult from Macie2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListSensitivityInspectionTemplates">REST API Reference for ListSensitivityInspectionTemplates Operation</seealso>
+        public virtual ListSensitivityInspectionTemplatesResponse EndListSensitivityInspectionTemplates(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListSensitivityInspectionTemplatesResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListTagsForResource
 
         /// <summary>
-        /// Retrieves the tags (keys and values) that are associated with a classification job,
-        /// custom data identifier, findings filter, or member account.
+        /// Retrieves the tags (keys and values) that are associated with an Amazon Macie resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// 
@@ -4195,8 +5299,8 @@ namespace Amazon.Macie2
         #region  TagResource
 
         /// <summary>
-        /// Adds or updates one or more tags (keys and values) that are associated with a classification
-        /// job, custom data identifier, findings filter, or member account.
+        /// Adds or updates one or more tags (keys and values) that are associated with an Amazon
+        /// Macie resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// 
@@ -4331,8 +5435,7 @@ namespace Amazon.Macie2
         #region  UntagResource
 
         /// <summary>
-        /// Removes one or more tags (keys and values) from a classification job, custom data
-        /// identifier, findings filter, or member account.
+        /// Removes one or more tags (keys and values) from an Amazon Macie resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// 
@@ -4379,6 +5482,148 @@ namespace Amazon.Macie2
         public virtual UntagResourceResponse EndUntagResource(IAsyncResult asyncResult)
         {
             return EndInvoke<UntagResourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateAllowList
+
+        /// <summary>
+        /// Updates the settings for an allow list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAllowList service method.</param>
+        /// 
+        /// <returns>The response from the UpdateAllowList service method, as returned by Macie2.</returns>
+        /// <exception cref="Amazon.Macie2.Model.AccessDeniedException">
+        /// Provides information about an error that occurred due to insufficient access to a
+        /// specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.InternalServerException">
+        /// Provides information about an error that occurred due to an unknown internal server
+        /// error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ResourceNotFoundException">
+        /// Provides information about an error that occurred because a specified resource wasn't
+        /// found.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ThrottlingException">
+        /// Provides information about an error that occurred because too many requests were sent
+        /// during a certain amount of time.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ValidationException">
+        /// Provides information about an error that occurred due to a syntax error in a request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateAllowList">REST API Reference for UpdateAllowList Operation</seealso>
+        public virtual UpdateAllowListResponse UpdateAllowList(UpdateAllowListRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAllowListRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAllowListResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateAllowListResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateAllowList operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAllowList operation on AmazonMacie2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateAllowList
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateAllowList">REST API Reference for UpdateAllowList Operation</seealso>
+        public virtual IAsyncResult BeginUpdateAllowList(UpdateAllowListRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAllowListRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAllowListResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateAllowList operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateAllowList.</param>
+        /// 
+        /// <returns>Returns a  UpdateAllowListResult from Macie2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateAllowList">REST API Reference for UpdateAllowList Operation</seealso>
+        public virtual UpdateAllowListResponse EndUpdateAllowList(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateAllowListResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateAutomatedDiscoveryConfiguration
+
+        /// <summary>
+        /// Enables or disables automated sensitive data discovery for an account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAutomatedDiscoveryConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the UpdateAutomatedDiscoveryConfiguration service method, as returned by Macie2.</returns>
+        /// <exception cref="Amazon.Macie2.Model.AccessDeniedException">
+        /// Provides information about an error that occurred due to insufficient access to a
+        /// specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.InternalServerException">
+        /// Provides information about an error that occurred due to an unknown internal server
+        /// error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ThrottlingException">
+        /// Provides information about an error that occurred because too many requests were sent
+        /// during a certain amount of time.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ValidationException">
+        /// Provides information about an error that occurred due to a syntax error in a request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateAutomatedDiscoveryConfiguration">REST API Reference for UpdateAutomatedDiscoveryConfiguration Operation</seealso>
+        public virtual UpdateAutomatedDiscoveryConfigurationResponse UpdateAutomatedDiscoveryConfiguration(UpdateAutomatedDiscoveryConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAutomatedDiscoveryConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAutomatedDiscoveryConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateAutomatedDiscoveryConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateAutomatedDiscoveryConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAutomatedDiscoveryConfiguration operation on AmazonMacie2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateAutomatedDiscoveryConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateAutomatedDiscoveryConfiguration">REST API Reference for UpdateAutomatedDiscoveryConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginUpdateAutomatedDiscoveryConfiguration(UpdateAutomatedDiscoveryConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAutomatedDiscoveryConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAutomatedDiscoveryConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateAutomatedDiscoveryConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateAutomatedDiscoveryConfiguration.</param>
+        /// 
+        /// <returns>Returns a  UpdateAutomatedDiscoveryConfigurationResult from Macie2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateAutomatedDiscoveryConfiguration">REST API Reference for UpdateAutomatedDiscoveryConfiguration Operation</seealso>
+        public virtual UpdateAutomatedDiscoveryConfigurationResponse EndUpdateAutomatedDiscoveryConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateAutomatedDiscoveryConfigurationResponse>(asyncResult);
         }
 
         #endregion
@@ -4460,6 +5705,79 @@ namespace Amazon.Macie2
         public virtual UpdateClassificationJobResponse EndUpdateClassificationJob(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateClassificationJobResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateClassificationScope
+
+        /// <summary>
+        /// Updates the classification scope settings for an account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateClassificationScope service method.</param>
+        /// 
+        /// <returns>The response from the UpdateClassificationScope service method, as returned by Macie2.</returns>
+        /// <exception cref="Amazon.Macie2.Model.AccessDeniedException">
+        /// Provides information about an error that occurred due to insufficient access to a
+        /// specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.InternalServerException">
+        /// Provides information about an error that occurred due to an unknown internal server
+        /// error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ResourceNotFoundException">
+        /// Provides information about an error that occurred because a specified resource wasn't
+        /// found.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ThrottlingException">
+        /// Provides information about an error that occurred because too many requests were sent
+        /// during a certain amount of time.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ValidationException">
+        /// Provides information about an error that occurred due to a syntax error in a request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateClassificationScope">REST API Reference for UpdateClassificationScope Operation</seealso>
+        public virtual UpdateClassificationScopeResponse UpdateClassificationScope(UpdateClassificationScopeRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateClassificationScopeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateClassificationScopeResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateClassificationScopeResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateClassificationScope operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateClassificationScope operation on AmazonMacie2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateClassificationScope
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateClassificationScope">REST API Reference for UpdateClassificationScope Operation</seealso>
+        public virtual IAsyncResult BeginUpdateClassificationScope(UpdateClassificationScopeRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateClassificationScopeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateClassificationScopeResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateClassificationScope operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateClassificationScope.</param>
+        /// 
+        /// <returns>Returns a  UpdateClassificationScopeResult from Macie2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateClassificationScope">REST API Reference for UpdateClassificationScope Operation</seealso>
+        public virtual UpdateClassificationScopeResponse EndUpdateClassificationScope(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateClassificationScopeResponse>(asyncResult);
         }
 
         #endregion
@@ -4785,6 +6103,303 @@ namespace Amazon.Macie2
         public virtual UpdateOrganizationConfigurationResponse EndUpdateOrganizationConfiguration(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateOrganizationConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateResourceProfile
+
+        /// <summary>
+        /// Updates the sensitivity score for an S3 bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateResourceProfile service method.</param>
+        /// 
+        /// <returns>The response from the UpdateResourceProfile service method, as returned by Macie2.</returns>
+        /// <exception cref="Amazon.Macie2.Model.AccessDeniedException">
+        /// Provides information about an error that occurred due to insufficient access to a
+        /// specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.InternalServerException">
+        /// Provides information about an error that occurred due to an unknown internal server
+        /// error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ResourceNotFoundException">
+        /// Provides information about an error that occurred because a specified resource wasn't
+        /// found.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ServiceQuotaExceededException">
+        /// Provides information about an error that occurred due to one or more service quotas
+        /// for an account.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ThrottlingException">
+        /// Provides information about an error that occurred because too many requests were sent
+        /// during a certain amount of time.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ValidationException">
+        /// Provides information about an error that occurred due to a syntax error in a request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateResourceProfile">REST API Reference for UpdateResourceProfile Operation</seealso>
+        public virtual UpdateResourceProfileResponse UpdateResourceProfile(UpdateResourceProfileRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateResourceProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateResourceProfileResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateResourceProfileResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateResourceProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateResourceProfile operation on AmazonMacie2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateResourceProfile
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateResourceProfile">REST API Reference for UpdateResourceProfile Operation</seealso>
+        public virtual IAsyncResult BeginUpdateResourceProfile(UpdateResourceProfileRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateResourceProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateResourceProfileResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateResourceProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateResourceProfile.</param>
+        /// 
+        /// <returns>Returns a  UpdateResourceProfileResult from Macie2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateResourceProfile">REST API Reference for UpdateResourceProfile Operation</seealso>
+        public virtual UpdateResourceProfileResponse EndUpdateResourceProfile(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateResourceProfileResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateResourceProfileDetections
+
+        /// <summary>
+        /// Updates the sensitivity scoring settings for an S3 bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateResourceProfileDetections service method.</param>
+        /// 
+        /// <returns>The response from the UpdateResourceProfileDetections service method, as returned by Macie2.</returns>
+        /// <exception cref="Amazon.Macie2.Model.AccessDeniedException">
+        /// Provides information about an error that occurred due to insufficient access to a
+        /// specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.InternalServerException">
+        /// Provides information about an error that occurred due to an unknown internal server
+        /// error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ResourceNotFoundException">
+        /// Provides information about an error that occurred because a specified resource wasn't
+        /// found.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ServiceQuotaExceededException">
+        /// Provides information about an error that occurred due to one or more service quotas
+        /// for an account.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ThrottlingException">
+        /// Provides information about an error that occurred because too many requests were sent
+        /// during a certain amount of time.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ValidationException">
+        /// Provides information about an error that occurred due to a syntax error in a request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateResourceProfileDetections">REST API Reference for UpdateResourceProfileDetections Operation</seealso>
+        public virtual UpdateResourceProfileDetectionsResponse UpdateResourceProfileDetections(UpdateResourceProfileDetectionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateResourceProfileDetectionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateResourceProfileDetectionsResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateResourceProfileDetectionsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateResourceProfileDetections operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateResourceProfileDetections operation on AmazonMacie2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateResourceProfileDetections
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateResourceProfileDetections">REST API Reference for UpdateResourceProfileDetections Operation</seealso>
+        public virtual IAsyncResult BeginUpdateResourceProfileDetections(UpdateResourceProfileDetectionsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateResourceProfileDetectionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateResourceProfileDetectionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateResourceProfileDetections operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateResourceProfileDetections.</param>
+        /// 
+        /// <returns>Returns a  UpdateResourceProfileDetectionsResult from Macie2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateResourceProfileDetections">REST API Reference for UpdateResourceProfileDetections Operation</seealso>
+        public virtual UpdateResourceProfileDetectionsResponse EndUpdateResourceProfileDetections(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateResourceProfileDetectionsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateRevealConfiguration
+
+        /// <summary>
+        /// Updates the status and configuration settings for retrieving occurrences of sensitive
+        /// data reported by findings.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRevealConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the UpdateRevealConfiguration service method, as returned by Macie2.</returns>
+        /// <exception cref="Amazon.Macie2.Model.AccessDeniedException">
+        /// Provides information about an error that occurred due to insufficient access to a
+        /// specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.InternalServerException">
+        /// Provides information about an error that occurred due to an unknown internal server
+        /// error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ThrottlingException">
+        /// Provides information about an error that occurred because too many requests were sent
+        /// during a certain amount of time.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ValidationException">
+        /// Provides information about an error that occurred due to a syntax error in a request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateRevealConfiguration">REST API Reference for UpdateRevealConfiguration Operation</seealso>
+        public virtual UpdateRevealConfigurationResponse UpdateRevealConfiguration(UpdateRevealConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateRevealConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateRevealConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateRevealConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateRevealConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRevealConfiguration operation on AmazonMacie2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateRevealConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateRevealConfiguration">REST API Reference for UpdateRevealConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginUpdateRevealConfiguration(UpdateRevealConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateRevealConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateRevealConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateRevealConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateRevealConfiguration.</param>
+        /// 
+        /// <returns>Returns a  UpdateRevealConfigurationResult from Macie2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateRevealConfiguration">REST API Reference for UpdateRevealConfiguration Operation</seealso>
+        public virtual UpdateRevealConfigurationResponse EndUpdateRevealConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateRevealConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateSensitivityInspectionTemplate
+
+        /// <summary>
+        /// Updates the settings for the sensitivity inspection template for an account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSensitivityInspectionTemplate service method.</param>
+        /// 
+        /// <returns>The response from the UpdateSensitivityInspectionTemplate service method, as returned by Macie2.</returns>
+        /// <exception cref="Amazon.Macie2.Model.AccessDeniedException">
+        /// Provides information about an error that occurred due to insufficient access to a
+        /// specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.InternalServerException">
+        /// Provides information about an error that occurred due to an unknown internal server
+        /// error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ResourceNotFoundException">
+        /// Provides information about an error that occurred because a specified resource wasn't
+        /// found.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ThrottlingException">
+        /// Provides information about an error that occurred because too many requests were sent
+        /// during a certain amount of time.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ValidationException">
+        /// Provides information about an error that occurred due to a syntax error in a request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateSensitivityInspectionTemplate">REST API Reference for UpdateSensitivityInspectionTemplate Operation</seealso>
+        public virtual UpdateSensitivityInspectionTemplateResponse UpdateSensitivityInspectionTemplate(UpdateSensitivityInspectionTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateSensitivityInspectionTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateSensitivityInspectionTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateSensitivityInspectionTemplateResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateSensitivityInspectionTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSensitivityInspectionTemplate operation on AmazonMacie2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateSensitivityInspectionTemplate
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateSensitivityInspectionTemplate">REST API Reference for UpdateSensitivityInspectionTemplate Operation</seealso>
+        public virtual IAsyncResult BeginUpdateSensitivityInspectionTemplate(UpdateSensitivityInspectionTemplateRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateSensitivityInspectionTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateSensitivityInspectionTemplateResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateSensitivityInspectionTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateSensitivityInspectionTemplate.</param>
+        /// 
+        /// <returns>Returns a  UpdateSensitivityInspectionTemplateResult from Macie2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateSensitivityInspectionTemplate">REST API Reference for UpdateSensitivityInspectionTemplate Operation</seealso>
+        public virtual UpdateSensitivityInspectionTemplateResponse EndUpdateSensitivityInspectionTemplate(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateSensitivityInspectionTemplateResponse>(asyncResult);
         }
 
         #endregion

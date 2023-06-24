@@ -37,7 +37,10 @@ namespace Amazon.Route53RecoveryControlConfig.Model
         private GatingRule _gatingRule;
 
         /// <summary>
-        /// Gets and sets the property AssertionRule.
+        /// Gets and sets the property AssertionRule. 
+        /// <para>
+        /// The assertion rule in the response.
+        /// </para>
         /// </summary>
         public AssertionRule AssertionRule
         {
@@ -52,7 +55,10 @@ namespace Amazon.Route53RecoveryControlConfig.Model
         }
 
         /// <summary>
-        /// Gets and sets the property GatingRule.
+        /// Gets and sets the property GatingRule. 
+        /// <para>
+        /// The gating rule in the response.
+        /// </para>
         /// </summary>
         public GatingRule GatingRule
         {

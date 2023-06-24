@@ -58,7 +58,7 @@ namespace Amazon.Proton.Model.Internal.MarshallTransformations
             string target = "AwsProton20200720.UpdateAccountSettings";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.0";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-07-20";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-07-20";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -67,6 +67,18 @@ namespace Amazon.Proton.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetDeletePipelineProvisioningRepository())
+                {
+                    context.Writer.WritePropertyName("deletePipelineProvisioningRepository");
+                    context.Writer.Write(publicRequest.DeletePipelineProvisioningRepository);
+                }
+
+                if(publicRequest.IsSetPipelineCodebuildRoleArn())
+                {
+                    context.Writer.WritePropertyName("pipelineCodebuildRoleArn");
+                    context.Writer.Write(publicRequest.PipelineCodebuildRoleArn);
+                }
+
                 if(publicRequest.IsSetPipelineProvisioningRepository())
                 {
                     context.Writer.WritePropertyName("pipelineProvisioningRepository");
@@ -84,7 +96,6 @@ namespace Amazon.Proton.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.PipelineServiceRoleArn);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

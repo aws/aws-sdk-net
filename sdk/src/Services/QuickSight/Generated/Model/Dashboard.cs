@@ -62,7 +62,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property CreatedTime. 
         /// <para>
-        /// The time that this dataset was created.
+        /// The time that this dashboard was created.
         /// </para>
         /// </summary>
         public DateTime CreatedTime
@@ -83,7 +83,7 @@ namespace Amazon.QuickSight.Model
         /// Dashboard ID.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=2048)]
+        [AWSProperty(Min=1, Max=512)]
         public string DashboardId
         {
             get { return this._dashboardId; }
@@ -99,7 +99,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property LastPublishedTime. 
         /// <para>
-        /// The last time that this dataset was published.
+        /// The last time that this dashboard was published.
         /// </para>
         /// </summary>
         public DateTime LastPublishedTime
@@ -117,7 +117,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property LastUpdatedTime. 
         /// <para>
-        /// The last time that this dataset was updated.
+        /// The last time that this dashboard was updated.
         /// </para>
         /// </summary>
         public DateTime LastUpdatedTime

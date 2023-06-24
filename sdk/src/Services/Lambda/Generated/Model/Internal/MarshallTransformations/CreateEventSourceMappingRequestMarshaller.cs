@@ -56,7 +56,7 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Lambda");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-03-31";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-03-31";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/2015-03-31/event-source-mappings/";
@@ -65,6 +65,17 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAmazonManagedKafkaEventSourceConfig())
+                {
+                    context.Writer.WritePropertyName("AmazonManagedKafkaEventSourceConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = AmazonManagedKafkaEventSourceConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.AmazonManagedKafkaEventSourceConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetBatchSize())
                 {
                     context.Writer.WritePropertyName("BatchSize");
@@ -84,6 +95,17 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
 
                     var marshaller = DestinationConfigMarshaller.Instance;
                     marshaller.Marshall(publicRequest.DestinationConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetDocumentDBEventSourceConfig())
+                {
+                    context.Writer.WritePropertyName("DocumentDBEventSourceConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = DocumentDBEventSourceConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.DocumentDBEventSourceConfig, context);
 
                     context.Writer.WriteObjectEnd();
                 }
@@ -163,6 +185,17 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetScalingConfig())
+                {
+                    context.Writer.WritePropertyName("ScalingConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ScalingConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ScalingConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetSelfManagedEventSource())
                 {
                     context.Writer.WritePropertyName("SelfManagedEventSource");
@@ -170,6 +203,17 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
 
                     var marshaller = SelfManagedEventSourceMarshaller.Instance;
                     marshaller.Marshall(publicRequest.SelfManagedEventSource, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetSelfManagedKafkaEventSourceConfig())
+                {
+                    context.Writer.WritePropertyName("SelfManagedKafkaEventSourceConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = SelfManagedKafkaEventSourceConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.SelfManagedKafkaEventSourceConfig, context);
 
                     context.Writer.WriteObjectEnd();
                 }
@@ -219,7 +263,6 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.TumblingWindowInSeconds);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

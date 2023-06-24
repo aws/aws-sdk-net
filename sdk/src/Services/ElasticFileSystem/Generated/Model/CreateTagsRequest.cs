@@ -32,8 +32,8 @@ namespace Amazon.ElasticFileSystem.Model
     /// Container for the parameters to the CreateTags operation.
     /// <note> 
     /// <para>
-    /// DEPRECATED - CreateTags is deprecated and not maintained. Please use the API action
-    /// to create tags for EFS resources.
+    /// DEPRECATED - <code>CreateTags</code> is deprecated and not maintained. To create tags
+    /// for EFS resources, use the API action.
     /// </para>
     ///  </note> 
     /// <para>

@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Organizations.Model
 {
     /// <summary>
-    /// We can't find an AWS account with the <code>AccountId</code> that you specified,
-    /// or the account whose credentials you used to make this request isn't a member of an
-    /// organization.
+    /// We can't find an Amazon Web Services account with the <code>AccountId</code> that
+    /// you specified, or the account whose credentials you used to make this request isn't
+    /// a member of an organization.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

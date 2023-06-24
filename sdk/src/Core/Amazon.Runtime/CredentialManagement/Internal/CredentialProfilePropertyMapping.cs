@@ -70,8 +70,11 @@ namespace Amazon.Runtime.CredentialManagement.Internal
         /// <param name="profileOptions">The resulting CredentialProfileOptions</param>
         /// <param name="reservedProperties">The resulting reserved properties</param>
         /// <param name="userProperties">The properties that are left</param>
-        public void ExtractProfileParts(Dictionary<string, string> profileDictionary, HashSet<string> reservedKeys,
-            out CredentialProfileOptions profileOptions, out Dictionary<string, string> reservedProperties,
+        public void ExtractProfileParts(
+            Dictionary<string, string> profileDictionary,
+            HashSet<string> reservedKeys,
+            out CredentialProfileOptions profileOptions,
+            out Dictionary<string, string> reservedProperties,
             out Dictionary<string, string> userProperties)
         {
             // profileDictionary = profileOptions + reservedProperties + userProperties
@@ -130,7 +133,7 @@ namespace Amazon.Runtime.CredentialManagement.Internal
             ValidateNoProfileOptionsProperties(userProperties);
             ValidateNoReservedProperties(reservedPropertyNames, userProperties);
 
-            var profileDictionary = new Dictionary<string, string>();
+            var profileDictionary = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
             foreach (var pair in Convert(profileOptions).Concat(reservedProperties).Concat(userProperties))
             {
                 profileDictionary.Add(pair.Key, pair.Value);

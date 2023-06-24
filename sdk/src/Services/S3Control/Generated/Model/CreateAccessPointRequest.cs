@@ -47,11 +47,11 @@ namespace Amazon.S3Control.Model
     ///  </note> 
     /// <para>
     /// All Amazon S3 on Outposts REST API requests for this action require an additional
-    /// parameter of <code>x-amz-outpost-id</code> to be passed with the request and an S3
-    /// on Outposts endpoint hostname prefix instead of <code>s3-control</code>. For an example
-    /// of the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint
-    /// hostname prefix and the <code>x-amz-outpost-id</code> derived using the access point
-    /// ARN, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateAccessPoint.html#API_control_CreateAccessPoint_Examples">Examples</a>
+    /// parameter of <code>x-amz-outpost-id</code> to be passed with the request. In addition,
+    /// you must use an S3 on Outposts endpoint hostname prefix instead of <code>s3-control</code>.
+    /// For an example of the request syntax for Amazon S3 on Outposts that uses the S3 on
+    /// Outposts endpoint hostname prefix and the <code>x-amz-outpost-id</code> derived by
+    /// using the access point ARN, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateAccessPoint.html#API_control_CreateAccessPoint_Examples">Examples</a>
     /// section.
     /// </para>
     ///   
@@ -79,6 +79,7 @@ namespace Amazon.S3Control.Model
     {
         private string _accountId;
         private string _bucket;
+        private string _bucketAccountId;
         private string _name;
         private PublicAccessBlockConfiguration _publicAccessBlockConfiguration;
         private VpcConfiguration _vpcConfiguration;
@@ -86,8 +87,8 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The Amazon Web Services account ID for the owner of the bucket for which you want
-        /// to create an access point.
+        /// The Amazon Web Services account ID for the account that owns the specified access
+        /// point.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=64)]
@@ -117,7 +118,7 @@ namespace Amazon.S3Control.Model
         /// <para>
         /// For using this parameter with S3 on Outposts with the Amazon Web Services SDK and
         /// CLI, you must specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/bucket/&lt;my-bucket-name&gt;</code>.
-        /// For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code>
+        /// For example, to access the bucket <code>reports</code> through Outpost <code>my-outpost</code>
         /// owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the
         /// URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>.
         /// The value must be URL encoded. 
@@ -137,12 +138,32 @@ namespace Amazon.S3Control.Model
         }
 
         /// <summary>
+        /// Gets and sets the property BucketAccountId. 
+        /// <para>
+        /// The Amazon Web Services account ID associated with the S3 bucket associated with this
+        /// access point.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=64)]
+        public string BucketAccountId
+        {
+            get { return this._bucketAccountId; }
+            set { this._bucketAccountId = value; }
+        }
+
+        // Check to see if BucketAccountId property is set
+        internal bool IsSetBucketAccountId()
+        {
+            return this._bucketAccountId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
         /// The name you want to assign to this access point.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=3, Max=63)]
+        [AWSProperty(Required=true, Min=3, Max=255)]
         public string Name
         {
             get { return this._name; }

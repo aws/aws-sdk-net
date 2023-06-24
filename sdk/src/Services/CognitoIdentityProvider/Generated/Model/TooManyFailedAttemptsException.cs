@@ -30,7 +30,7 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// This exception is thrown when the user has made too many failed attempts for a given
-    /// action (e.g., sign in).
+    /// action, such as sign-in.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

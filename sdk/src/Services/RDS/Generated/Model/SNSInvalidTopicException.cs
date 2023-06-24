@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// SNS has responded that there is a problem with the SND topic specified.
+    /// SNS has responded that there is a problem with the SNS topic specified.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

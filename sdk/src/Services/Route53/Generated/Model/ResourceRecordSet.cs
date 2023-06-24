@@ -46,6 +46,7 @@ namespace Amazon.Route53.Model
         private AliasTarget _aliasTarget;
         private string _healthCheckId;
         private string _trafficPolicyInstanceId;
+        private CidrRoutingConfig _cidrRoutingConfig;
 
         /// <summary>
         /// Empty constructor used to set  properties independently even when a simple constructor is available
@@ -335,12 +336,7 @@ namespace Amazon.Route53.Model
         /// Amazon Web Services resource, such as an EC2 instance or an ELB load balancer, and
         /// is referred to by an IP address or a DNS domain name, depending on the record type.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// Although creating latency and latency alias resource record sets in a private hosted
-        /// zone is allowed, it's not supported.
-        /// </para>
-        ///  </note> 
+        ///  
         /// <para>
         /// When Amazon Route 53 receives a DNS query for a domain name and type for which you
         /// have created latency resource record sets, Route 53 selects the latency resource record
@@ -673,11 +669,6 @@ namespace Amazon.Route53.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Creating geolocation alias resource record sets or latency alias resource record sets
-        /// in a private hosted zone is unsupported.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         /// For information about creating failover resource record sets in a private hosted zone,
         /// see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">Configuring
         /// Failover in a Private Hosted Zone</a> in the <i>Amazon Route 53 Developer Guide</i>.
@@ -916,6 +907,21 @@ namespace Amazon.Route53.Model
         internal bool IsSetTrafficPolicyInstanceId()
         {
             return this._trafficPolicyInstanceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CidrRoutingConfig.
+        /// </summary>
+        public CidrRoutingConfig CidrRoutingConfig
+        {
+            get { return this._cidrRoutingConfig; }
+            set { this._cidrRoutingConfig = value; }
+        }
+
+        // Check to see if CidrRoutingConfig property is set
+        internal bool IsSetCidrRoutingConfig()
+        {
+            return this._cidrRoutingConfig != null;
         }
 
     }

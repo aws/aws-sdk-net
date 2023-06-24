@@ -39,6 +39,7 @@ namespace Amazon.QLDB.Model
         private string _exportId;
         private DateTime? _inclusiveStartTime;
         private string _ledgerName;
+        private OutputFormat _outputFormat;
         private string _roleArn;
         private S3ExportConfiguration _s3ExportConfiguration;
         private ExportStatus _status;
@@ -46,7 +47,7 @@ namespace Amazon.QLDB.Model
         /// <summary>
         /// Gets and sets the property ExclusiveEndTime. 
         /// <para>
-        /// The exclusive end date and time for the range of journal contents that are specified
+        /// The exclusive end date and time for the range of journal contents that was specified
         /// in the original export request.
         /// </para>
         /// </summary>
@@ -105,7 +106,7 @@ namespace Amazon.QLDB.Model
         /// <summary>
         /// Gets and sets the property InclusiveStartTime. 
         /// <para>
-        /// The inclusive start date and time for the range of journal contents that are specified
+        /// The inclusive start date and time for the range of journal contents that was specified
         /// in the original export request.
         /// </para>
         /// </summary>
@@ -142,6 +143,24 @@ namespace Amazon.QLDB.Model
         }
 
         /// <summary>
+        /// Gets and sets the property OutputFormat. 
+        /// <para>
+        /// The output format of the exported journal data.
+        /// </para>
+        /// </summary>
+        public OutputFormat OutputFormat
+        {
+            get { return this._outputFormat; }
+            set { this._outputFormat = value; }
+        }
+
+        // Check to see if OutputFormat property is set
+        internal bool IsSetOutputFormat()
+        {
+            return this._outputFormat != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a
@@ -153,8 +172,8 @@ namespace Amazon.QLDB.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// (Optional) Use your customer master key (CMK) in Key Management Service (KMS) for
-        /// server-side encryption of your exported data.
+        /// (Optional) Use your customer managed key in Key Management Service (KMS) for server-side
+        /// encryption of your exported data.
         /// </para>
         ///  </li> </ul>
         /// </summary>

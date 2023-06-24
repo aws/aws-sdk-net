@@ -33,7 +33,29 @@ namespace Amazon.WorkSpaces.Model
     /// </summary>
     public partial class ClientProperties
     {
+        private LogUploadEnum _logUploadEnabled;
         private ReconnectEnum _reconnectEnabled;
+
+        /// <summary>
+        /// Gets and sets the property LogUploadEnabled. 
+        /// <para>
+        /// Specifies whether users can upload diagnostic log files of Amazon WorkSpaces client
+        /// directly to WorkSpaces to troubleshoot issues when using the WorkSpaces client. When
+        /// enabled, the log files will be sent to WorkSpaces automatically and will be applied
+        /// to all users in the specified directory.
+        /// </para>
+        /// </summary>
+        public LogUploadEnum LogUploadEnabled
+        {
+            get { return this._logUploadEnabled; }
+            set { this._logUploadEnabled = value; }
+        }
+
+        // Check to see if LogUploadEnabled property is set
+        internal bool IsSetLogUploadEnabled()
+        {
+            return this._logUploadEnabled != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ReconnectEnabled. 

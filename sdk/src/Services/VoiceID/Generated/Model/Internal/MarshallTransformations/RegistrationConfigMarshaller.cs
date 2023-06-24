@@ -34,7 +34,7 @@ namespace Amazon.VoiceID.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RegistrationConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class RegistrationConfigMarshaller : IRequestMarshaller<RegistrationConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -57,11 +57,22 @@ namespace Amazon.VoiceID.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.FraudsterSimilarityThreshold);
             }
 
+            if(requestObject.IsSetWatchlistIds())
+            {
+                context.Writer.WritePropertyName("WatchlistIds");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectWatchlistIdsListValue in requestObject.WatchlistIds)
+                {
+                        context.Writer.Write(requestObjectWatchlistIdsListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
         }
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RegistrationConfigMarshaller Instance = new RegistrationConfigMarshaller();
 
     }

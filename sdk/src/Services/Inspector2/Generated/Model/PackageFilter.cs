@@ -37,6 +37,7 @@ namespace Amazon.Inspector2.Model
         private NumberFilter _epoch;
         private StringFilter _name;
         private StringFilter _release;
+        private StringFilter _sourceLambdaLayerArn;
         private StringFilter _sourceLayerHash;
         private StringFilter _version;
 
@@ -110,6 +111,21 @@ namespace Amazon.Inspector2.Model
         internal bool IsSetRelease()
         {
             return this._release != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceLambdaLayerArn.
+        /// </summary>
+        public StringFilter SourceLambdaLayerArn
+        {
+            get { return this._sourceLambdaLayerArn; }
+            set { this._sourceLambdaLayerArn = value; }
+        }
+
+        // Check to see if SourceLambdaLayerArn property is set
+        internal bool IsSetSourceLambdaLayerArn()
+        {
+            return this._sourceLambdaLayerArn != null;
         }
 
         /// <summary>

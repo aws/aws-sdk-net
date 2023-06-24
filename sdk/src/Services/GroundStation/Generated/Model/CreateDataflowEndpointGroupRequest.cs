@@ -46,8 +46,54 @@ namespace Amazon.GroundStation.Model
     /// </summary>
     public partial class CreateDataflowEndpointGroupRequest : AmazonGroundStationRequest
     {
+        private int? _contactPostPassDurationSeconds;
+        private int? _contactPrePassDurationSeconds;
         private List<EndpointDetails> _endpointDetails = new List<EndpointDetails>();
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
+
+        /// <summary>
+        /// Gets and sets the property ContactPostPassDurationSeconds. 
+        /// <para>
+        /// Amount of time, in seconds, after a contact ends that the Ground Station Dataflow
+        /// Endpoint Group will be in a <code>POSTPASS</code> state. A Ground Station Dataflow
+        /// Endpoint Group State Change event will be emitted when the Dataflow Endpoint Group
+        /// enters and exits the <code>POSTPASS</code> state.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=120, Max=480)]
+        public int ContactPostPassDurationSeconds
+        {
+            get { return this._contactPostPassDurationSeconds.GetValueOrDefault(); }
+            set { this._contactPostPassDurationSeconds = value; }
+        }
+
+        // Check to see if ContactPostPassDurationSeconds property is set
+        internal bool IsSetContactPostPassDurationSeconds()
+        {
+            return this._contactPostPassDurationSeconds.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ContactPrePassDurationSeconds. 
+        /// <para>
+        /// Amount of time, in seconds, before a contact starts that the Ground Station Dataflow
+        /// Endpoint Group will be in a <code>PREPASS</code> state. A Ground Station Dataflow
+        /// Endpoint Group State Change event will be emitted when the Dataflow Endpoint Group
+        /// enters and exits the <code>PREPASS</code> state.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=120, Max=480)]
+        public int ContactPrePassDurationSeconds
+        {
+            get { return this._contactPrePassDurationSeconds.GetValueOrDefault(); }
+            set { this._contactPrePassDurationSeconds = value; }
+        }
+
+        // Check to see if ContactPrePassDurationSeconds property is set
+        internal bool IsSetContactPrePassDurationSeconds()
+        {
+            return this._contactPrePassDurationSeconds.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property EndpointDetails. 
@@ -55,7 +101,7 @@ namespace Amazon.GroundStation.Model
         /// Endpoint details of each endpoint in the dataflow endpoint group.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=0, Max=500)]
         public List<EndpointDetails> EndpointDetails
         {
             get { return this._endpointDetails; }

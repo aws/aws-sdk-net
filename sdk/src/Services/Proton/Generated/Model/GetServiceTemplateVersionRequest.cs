@@ -30,7 +30,7 @@ namespace Amazon.Proton.Model
 {
     /// <summary>
     /// Container for the parameters to the GetServiceTemplateVersion operation.
-    /// View detail data for a major or minor version of a service template.
+    /// Get detailed data for a major or minor version of a service template.
     /// </summary>
     public partial class GetServiceTemplateVersionRequest : AmazonProtonRequest
     {
@@ -41,7 +41,7 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property MajorVersion. 
         /// <para>
-        /// To view service template major version detail data, include <code>major Version</code>.
+        /// To get service template major version detail data, include <code>major Version</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=20)]
@@ -60,7 +60,7 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property MinorVersion. 
         /// <para>
-        /// To view service template minor version detail data, include <code>minorVersion</code>.
+        /// To get service template minor version detail data, include <code>minorVersion</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=20)]
@@ -79,7 +79,8 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property TemplateName. 
         /// <para>
-        /// The name of the service template.
+        /// The name of the service template a version of which you want to get detailed data
+        /// for.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]

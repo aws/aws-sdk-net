@@ -34,7 +34,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// StandardHlsSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class StandardHlsSettingsMarshaller : IRequestMarshaller<StandardHlsSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static StandardHlsSettingsMarshaller Instance = new StandardHlsSettingsMarshaller();
 
     }

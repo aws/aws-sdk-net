@@ -56,7 +56,7 @@ namespace Amazon.MediaStoreData.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.MediaStoreData");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-09-01";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-09-01";
             request.HttpMethod = "PUT";
 
             if (!publicRequest.IsSetPath())
@@ -64,7 +64,7 @@ namespace Amazon.MediaStoreData.Model.Internal.MarshallTransformations
             request.AddPathResource("{Path+}", StringUtils.FromString(publicRequest.Path.TrimStart('/')));
             request.ResourcePath = "/{Path+}";
             request.ContentStream =  publicRequest.Body ?? new MemoryStream();
-            if(request.ContentStream.CanSeek)
+            if (request.ContentStream.CanSeek)
             {
                 request.Headers[Amazon.Util.HeaderKeys.ContentLengthHeader] =  
                     request.ContentStream.Length.ToString(CultureInfo.InvariantCulture);
@@ -73,19 +73,31 @@ namespace Amazon.MediaStoreData.Model.Internal.MarshallTransformations
             {
                 request.Headers[Amazon.Util.HeaderKeys.TransferEncodingHeader] = "chunked";
             }
-            request.Headers[Amazon.Util.HeaderKeys.ContentTypeHeader] = "binary/octet-stream";
+            request.Headers[Amazon.Util.HeaderKeys.ContentTypeHeader] = "binary/octet-stream"; 
+            if (request.ContentStream != null && request.ContentStream.Length == 0)
+            {
+                request.Headers.Remove(Amazon.Util.HeaderKeys.ContentTypeHeader);
+            }
         
-            if(publicRequest.IsSetCacheControl())
+            if (publicRequest.IsSetCacheControl()) 
+            {
                 request.Headers["Cache-Control"] = publicRequest.CacheControl;
+            }
         
-            if(publicRequest.IsSetContentType())
+            if (publicRequest.IsSetContentType()) 
+            {
                 request.Headers["Content-Type"] = publicRequest.ContentType;
+            }
         
-            if(publicRequest.IsSetStorageClass())
+            if (publicRequest.IsSetStorageClass()) 
+            {
                 request.Headers["x-amz-storage-class"] = publicRequest.StorageClass;
+            }
         
-            if(publicRequest.IsSetUploadAvailability())
+            if (publicRequest.IsSetUploadAvailability()) 
+            {
                 request.Headers["x-amz-upload-availability"] = publicRequest.UploadAvailability;
+            }
 
             return request;
         }

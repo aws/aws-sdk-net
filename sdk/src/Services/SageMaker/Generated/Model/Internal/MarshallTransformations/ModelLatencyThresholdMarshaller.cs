@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ModelLatencyThreshold Marshaller
-    /// </summary>       
+    /// </summary>
     public class ModelLatencyThresholdMarshaller : IRequestMarshaller<ModelLatencyThreshold, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ModelLatencyThresholdMarshaller Instance = new ModelLatencyThresholdMarshaller();
 
     }

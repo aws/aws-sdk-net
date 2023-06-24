@@ -34,7 +34,7 @@ namespace Amazon.NimbleStudio.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// NewLaunchProfileMember Marshaller
-    /// </summary>       
+    /// </summary>
     public class NewLaunchProfileMemberMarshaller : IRequestMarshaller<NewLaunchProfileMember, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.NimbleStudio.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static NewLaunchProfileMemberMarshaller Instance = new NewLaunchProfileMemberMarshaller();
 
     }

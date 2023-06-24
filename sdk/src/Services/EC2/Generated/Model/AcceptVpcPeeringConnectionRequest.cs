@@ -51,6 +51,7 @@ namespace Amazon.EC2.Model
         /// The ID of the VPC peering connection. You must specify this parameter in the request.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string VpcPeeringConnectionId
         {
             get { return this._vpcPeeringConnectionId; }

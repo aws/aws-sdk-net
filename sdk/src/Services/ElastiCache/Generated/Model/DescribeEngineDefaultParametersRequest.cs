@@ -47,7 +47,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Instantiates DescribeEngineDefaultParametersRequest with the parameterized properties
         /// </summary>
-        /// <param name="cacheParameterGroupFamily">The name of the cache parameter group family. Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>memcached1.6</code> | <code>redis2.6</code> | <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> | <code>redis6.x</code> | <code>redis6.2</code> </param>
+        /// <param name="cacheParameterGroupFamily">The name of the cache parameter group family. Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>memcached1.6</code> | <code>redis2.6</code> | <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> | <code>redis6.x</code> | <code>redis6.2</code> | <code>redis7</code> </param>
         public DescribeEngineDefaultParametersRequest(string cacheParameterGroupFamily)
         {
             _cacheParameterGroupFamily = cacheParameterGroupFamily;
@@ -62,7 +62,8 @@ namespace Amazon.ElastiCache.Model
         /// <para>
         /// Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>memcached1.6</code>
         /// | <code>redis2.6</code> | <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code>
-        /// | <code>redis5.0</code> | <code>redis6.x</code> | <code>redis6.2</code> 
+        /// | <code>redis5.0</code> | <code>redis6.x</code> | <code>redis6.2</code> | <code>redis7</code>
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

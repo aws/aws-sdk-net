@@ -34,7 +34,7 @@ namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SimpleRule Marshaller
-    /// </summary>       
+    /// </summary>
     public class SimpleRuleMarshaller : IRequestMarshaller<SimpleRule, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SimpleRuleMarshaller Instance = new SimpleRuleMarshaller();
 
     }

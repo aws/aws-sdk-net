@@ -34,7 +34,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// EventsRequest Marshaller
-    /// </summary>       
+    /// </summary>
     public class EventsRequestMarshaller : IRequestMarshaller<EventsRequest, JsonMarshallerContext> 
     {
         /// <summary>
@@ -68,7 +68,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static EventsRequestMarshaller Instance = new EventsRequestMarshaller();
 
     }

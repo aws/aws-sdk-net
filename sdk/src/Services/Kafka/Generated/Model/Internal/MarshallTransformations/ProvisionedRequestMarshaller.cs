@@ -34,7 +34,7 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ProvisionedRequest Marshaller
-    /// </summary>       
+    /// </summary>
     public class ProvisionedRequestMarshaller : IRequestMarshaller<ProvisionedRequest, JsonMarshallerContext> 
     {
         /// <summary>
@@ -129,11 +129,17 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetStorageMode())
+            {
+                context.Writer.WritePropertyName("storageMode");
+                context.Writer.Write(requestObject.StorageMode);
+            }
+
         }
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ProvisionedRequestMarshaller Instance = new ProvisionedRequestMarshaller();
 
     }

@@ -30,7 +30,8 @@ namespace Amazon.Redshift.Model
 {
     /// <summary>
     /// Container for the parameters to the ModifyAquaConfiguration operation.
-    /// Modifies whether a cluster can use AQUA (Advanced Query Accelerator).
+    /// This operation is retired. Calling this operation does not change AQUA configuration.
+    /// Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).
     /// </summary>
     public partial class ModifyAquaConfigurationRequest : AmazonRedshiftRequest
     {
@@ -40,22 +41,9 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property AquaConfigurationStatus. 
         /// <para>
-        /// The new value of AQUA configuration status. Possible values include the following.
+        /// This parameter is retired. Amazon Redshift automatically determines whether to use
+        /// AQUA (Advanced Query Accelerator).
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// enabled - Use AQUA if it is available for the current Amazon Web Services Region and
-        /// Amazon Redshift node type.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// disabled - Don't use AQUA. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// auto - Amazon Redshift determines whether to use AQUA.
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         public AquaConfigurationStatus AquaConfigurationStatus
         {

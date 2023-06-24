@@ -34,7 +34,45 @@ namespace Amazon.GuardDuty.Model
     /// </summary>
     public partial class OrganizationDataSourceConfigurations
     {
+        private OrganizationKubernetesConfiguration _kubernetes;
+        private OrganizationMalwareProtectionConfiguration _malwareProtection;
         private OrganizationS3LogsConfiguration _s3Logs;
+
+        /// <summary>
+        /// Gets and sets the property Kubernetes. 
+        /// <para>
+        /// Describes the configuration of Kubernetes data sources for new members of the organization.
+        /// </para>
+        /// </summary>
+        public OrganizationKubernetesConfiguration Kubernetes
+        {
+            get { return this._kubernetes; }
+            set { this._kubernetes = value; }
+        }
+
+        // Check to see if Kubernetes property is set
+        internal bool IsSetKubernetes()
+        {
+            return this._kubernetes != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MalwareProtection. 
+        /// <para>
+        /// Describes the configuration of Malware Protection for new members of the organization.
+        /// </para>
+        /// </summary>
+        public OrganizationMalwareProtectionConfiguration MalwareProtection
+        {
+            get { return this._malwareProtection; }
+            set { this._malwareProtection = value; }
+        }
+
+        // Check to see if MalwareProtection property is set
+        internal bool IsSetMalwareProtection()
+        {
+            return this._malwareProtection != null;
+        }
 
         /// <summary>
         /// Gets and sets the property S3Logs. 

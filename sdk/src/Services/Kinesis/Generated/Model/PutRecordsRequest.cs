@@ -34,7 +34,12 @@ namespace Amazon.Kinesis.Model
     /// to as a <code>PutRecords</code> request). Use this operation to send data into the
     /// stream for data ingestion and processing. 
     /// 
-    ///  
+    ///  <note> 
+    /// <para>
+    /// When invoking this API, it is recommended you use the <code>StreamARN</code> input
+    /// parameter rather than the <code>StreamName</code> input parameter.
+    /// </para>
+    ///  </note> 
     /// <para>
     /// Each <code>PutRecords</code> request can support up to 500 records. Each record in
     /// the request can be as large as 1 MiB, up to a limit of 5 MiB for the entire request,
@@ -122,6 +127,7 @@ namespace Amazon.Kinesis.Model
     public partial class PutRecordsRequest : AmazonKinesisRequest
     {
         private List<PutRecordsRequestEntry> _records = new List<PutRecordsRequestEntry>();
+        private string _streamARN;
         private string _streamName;
 
         /// <summary>
@@ -144,12 +150,31 @@ namespace Amazon.Kinesis.Model
         }
 
         /// <summary>
+        /// Gets and sets the property StreamARN. 
+        /// <para>
+        /// The ARN of the stream.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string StreamARN
+        {
+            get { return this._streamARN; }
+            set { this._streamARN = value; }
+        }
+
+        // Check to see if StreamARN property is set
+        internal bool IsSetStreamARN()
+        {
+            return this._streamARN != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property StreamName. 
         /// <para>
         /// The stream name associated with the request.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [AWSProperty(Min=1, Max=128)]
         public string StreamName
         {
             get { return this._streamName; }

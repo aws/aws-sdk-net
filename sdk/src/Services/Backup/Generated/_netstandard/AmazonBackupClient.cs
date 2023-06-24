@@ -238,6 +238,15 @@ namespace Amazon.Backup
         } 
 
         /// <summary>
+        /// Customizes the runtime pipeline.
+        /// </summary>
+        /// <param name="pipeline">Runtime pipeline for the current client.</param>
+        protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
+        {
+            pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonBackupEndpointResolver());
+        }
+        /// <summary>
         /// Capture metadata for the service.
         /// </summary>
         protected override IServiceMetadata ServiceMetadata
@@ -263,6 +272,58 @@ namespace Amazon.Backup
         #endregion
 
 
+        #region  CancelLegalHold
+
+        internal virtual CancelLegalHoldResponse CancelLegalHold(CancelLegalHoldRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelLegalHoldRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelLegalHoldResponseUnmarshaller.Instance;
+
+            return Invoke<CancelLegalHoldResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// This action removes the specified legal hold on a recovery point. This action can
+        /// only be performed by a user with sufficient permissions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelLegalHold service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CancelLegalHold service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.InvalidResourceStateException">
+        /// Backup is already performing an action on this recovery point. It can't perform the
+        /// action you requested until the first action finishes. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.MissingParameterValueException">
+        /// Indicates that a required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/CancelLegalHold">REST API Reference for CancelLegalHold Operation</seealso>
+        public virtual Task<CancelLegalHoldResponse> CancelLegalHoldAsync(CancelLegalHoldRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelLegalHoldRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelLegalHoldResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CancelLegalHoldResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateBackupPlan
 
         internal virtual CreateBackupPlanResponse CreateBackupPlan(CreateBackupPlanRequest request)
@@ -337,7 +398,7 @@ namespace Amazon.Backup
 
         /// <summary>
         /// Creates a JSON document that specifies a set of resources to assign to a backup plan.
-        /// For examples, see <a href="https://docs.aws.amazon.com/assigning-resources.html#assigning-resources-json">Assigning
+        /// For examples, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/assigning-resources.html#assigning-resources-json">Assigning
         /// resources programmatically</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateBackupSelection service method.</param>
@@ -484,6 +545,57 @@ namespace Amazon.Backup
             options.ResponseUnmarshaller = CreateFrameworkResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateFrameworkResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateLegalHold
+
+        internal virtual CreateLegalHoldResponse CreateLegalHold(CreateLegalHoldRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateLegalHoldRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateLegalHoldResponseUnmarshaller.Instance;
+
+            return Invoke<CreateLegalHoldResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// This action creates a legal hold on a recovery point (backup). A legal hold is a restraint
+        /// on altering or deleting a backup until an authorized user cancels the legal hold.
+        /// Any actions to delete or disassociate a recovery point will fail with an error if
+        /// one or more active legal holds are on the recovery point.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateLegalHold service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateLegalHold service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.LimitExceededException">
+        /// A limit in the request has been exceeded; for example, a maximum number of items allowed
+        /// in a request.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.MissingParameterValueException">
+        /// Indicates that a required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/CreateLegalHold">REST API Reference for CreateLegalHold Operation</seealso>
+        public virtual Task<CreateLegalHoldResponse> CreateLegalHoldAsync(CreateLegalHoldRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateLegalHoldRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateLegalHoldResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateLegalHoldResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -923,6 +1035,24 @@ namespace Amazon.Backup
         /// <para>
         /// If the recovery point ID belongs to a continuous backup, calling this endpoint deletes
         /// the existing continuous backup and stops future continuous backup.
+        /// </para>
+        ///  
+        /// <para>
+        /// When an IAM role's permissions are insufficient to call this API, the service sends
+        /// back an HTTP 200 response with an empty HTTP body, but the recovery point is not deleted.
+        /// Instead, it enters an <code>EXPIRED</code> state.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>EXPIRED</code> recovery points can be deleted with this API once the IAM role
+        /// has the <code>iam:CreateServiceLinkedRole</code> action. To learn more about adding
+        /// this role, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/deleting-backups.html#deleting-backups-troubleshooting">
+        /// Troubleshooting manual deletions</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the user or role is deleted or the permission within the role is removed, the deletion
+        /// will not be successful and will enter an <code>EXPIRED</code> state.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteRecoveryPoint service method.</param>
@@ -1592,6 +1722,58 @@ namespace Amazon.Backup
 
         #endregion
         
+        #region  DisassociateRecoveryPointFromParent
+
+        internal virtual DisassociateRecoveryPointFromParentResponse DisassociateRecoveryPointFromParent(DisassociateRecoveryPointFromParentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateRecoveryPointFromParentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateRecoveryPointFromParentResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateRecoveryPointFromParentResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// This action to a specific child (nested) recovery point removes the relationship between
+        /// the specified recovery point and its parent (composite) recovery point.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateRecoveryPointFromParent service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociateRecoveryPointFromParent service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a parameter
+        /// is of the wrong type.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.MissingParameterValueException">
+        /// Indicates that a required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DisassociateRecoveryPointFromParent">REST API Reference for DisassociateRecoveryPointFromParent Operation</seealso>
+        public virtual Task<DisassociateRecoveryPointFromParentResponse> DisassociateRecoveryPointFromParentAsync(DisassociateRecoveryPointFromParentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateRecoveryPointFromParentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateRecoveryPointFromParentResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DisassociateRecoveryPointFromParentResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ExportBackupPlanTemplate
 
         internal virtual ExportBackupPlanTemplateResponse ExportBackupPlanTemplate(ExportBackupPlanTemplateRequest request)
@@ -1924,6 +2106,54 @@ namespace Amazon.Backup
             options.ResponseUnmarshaller = GetBackupVaultNotificationsResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetBackupVaultNotificationsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetLegalHold
+
+        internal virtual GetLegalHoldResponse GetLegalHold(GetLegalHoldRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetLegalHoldRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetLegalHoldResponseUnmarshaller.Instance;
+
+            return Invoke<GetLegalHoldResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// This action returns details for a specified legal hold. The details are the body of
+        /// a legal hold in JSON format, in addition to metadata.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetLegalHold service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetLegalHold service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.MissingParameterValueException">
+        /// Indicates that a required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/GetLegalHold">REST API Reference for GetLegalHold Operation</seealso>
+        public virtual Task<GetLegalHoldResponse> GetLegalHoldAsync(GetLegalHoldRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetLegalHoldRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetLegalHoldResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetLegalHoldResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2378,6 +2608,47 @@ namespace Amazon.Backup
 
         #endregion
         
+        #region  ListLegalHolds
+
+        internal virtual ListLegalHoldsResponse ListLegalHolds(ListLegalHoldsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListLegalHoldsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListLegalHoldsResponseUnmarshaller.Instance;
+
+            return Invoke<ListLegalHoldsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// This action returns metadata about active and previous legal holds.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListLegalHolds service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListLegalHolds service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListLegalHolds">REST API Reference for ListLegalHolds Operation</seealso>
+        public virtual Task<ListLegalHoldsResponse> ListLegalHoldsAsync(ListLegalHoldsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListLegalHoldsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListLegalHoldsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListLegalHoldsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListProtectedResources
 
         internal virtual ListProtectedResourcesResponse ListProtectedResources(ListProtectedResourcesRequest request)
@@ -2468,6 +2739,51 @@ namespace Amazon.Backup
 
         #endregion
         
+        #region  ListRecoveryPointsByLegalHold
+
+        internal virtual ListRecoveryPointsByLegalHoldResponse ListRecoveryPointsByLegalHold(ListRecoveryPointsByLegalHoldRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListRecoveryPointsByLegalHoldRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRecoveryPointsByLegalHoldResponseUnmarshaller.Instance;
+
+            return Invoke<ListRecoveryPointsByLegalHoldResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// This action returns recovery point ARNs (Amazon Resource Names) of the specified legal
+        /// hold.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRecoveryPointsByLegalHold service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListRecoveryPointsByLegalHold service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.MissingParameterValueException">
+        /// Indicates that a required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListRecoveryPointsByLegalHold">REST API Reference for ListRecoveryPointsByLegalHold Operation</seealso>
+        public virtual Task<ListRecoveryPointsByLegalHoldResponse> ListRecoveryPointsByLegalHoldAsync(ListRecoveryPointsByLegalHoldRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListRecoveryPointsByLegalHoldRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRecoveryPointsByLegalHoldResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListRecoveryPointsByLegalHoldResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListRecoveryPointsByResource
 
         internal virtual ListRecoveryPointsByResourceResponse ListRecoveryPointsByResource(ListRecoveryPointsByResourceRequest request)
@@ -2547,6 +2863,9 @@ namespace Amazon.Backup
         /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
         /// Indicates that something is wrong with a parameter's value. For example, the value
         /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
         /// The request failed due to a temporary failure of the server.
@@ -2670,11 +2989,13 @@ namespace Amazon.Backup
         /// Returns a list of key-value pairs assigned to a target recovery point, backup plan,
         /// or backup vault.
         /// 
-        ///  <note> 
+        ///  
         /// <para>
-        ///  <code>ListTags</code> are currently only supported with Amazon EFS backups.
+        ///  <code>ListTags</code> only works for resource types that support full Backup management
+        /// of their backups. Those resource types are listed in the "Full Backup management"
+        /// section of the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource">
+        /// Feature availability by resource</a> table.
         /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTags service method.</param>
         /// <param name="cancellationToken">
@@ -2777,8 +3098,10 @@ namespace Amazon.Backup
         /// 
         ///  <note> 
         /// <para>
-        /// Backup Vault Lock has yet to receive a third-party assessment for SEC 17a-4(f) and
-        /// CFTC.
+        /// Backup Vault Lock has been assessed by Cohasset Associates for use in environments
+        /// that are subject to SEC 17a-4, CFTC, and FINRA regulations. For more information about
+        /// how Backup Vault Lock relates to these regulations, see the <a href="samples/cohassetreport.zip">Cohasset
+        /// Associates Compliance Assessment.</a> 
         /// </para>
         ///  </note>
         /// </summary>
@@ -3052,6 +3375,10 @@ namespace Amazon.Backup
         /// Indicates that something is wrong with a parameter's value. For example, the value
         /// is out of range.
         /// </exception>
+        /// <exception cref="Amazon.Backup.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a parameter
+        /// is of the wrong type.
+        /// </exception>
         /// <exception cref="Amazon.Backup.Model.MissingParameterValueException">
         /// Indicates that a required parameter is missing.
         /// </exception>
@@ -3088,6 +3415,13 @@ namespace Amazon.Backup
 
         /// <summary>
         /// Attempts to cancel a job to create a one-time backup of a resource.
+        /// 
+        ///  
+        /// <para>
+        /// This action is not supported for the following services: Amazon FSx for Windows File
+        /// Server, Amazon FSx for Lustre, FSx for ONTAP , Amazon FSx for OpenZFS, Amazon DocumentDB
+        /// (with MongoDB compatibility), Amazon RDS, Amazon Aurora, and Amazon Neptune.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopBackupJob service method.</param>
         /// <param name="cancellationToken">
@@ -3406,17 +3740,20 @@ namespace Amazon.Backup
         ///  
         /// <para>
         /// Backups transitioned to cold storage must be stored in cold storage for a minimum
-        /// of 90 days. Therefore, the “expire after days” setting must be 90 days greater than
-        /// the “transition to cold after days” setting. The “transition to cold after days” setting
-        /// cannot be changed after a backup has been transitioned to cold.
+        /// of 90 days. Therefore, the “retention” setting must be 90 days greater than the “transition
+        /// to cold after days” setting. The “transition to cold after days” setting cannot be
+        /// changed after a backup has been transitioned to cold.
         /// </para>
         ///  
         /// <para>
-        /// Only Amazon EFS file system backups can be transitioned to cold storage.
+        /// Resource types that are able to be transitioned to cold storage are listed in the
+        /// "Lifecycle to cold storage" section of the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource">
+        /// Feature availability by resource</a> table. Backup ignores this expression for other
+        /// resource types.
         /// </para>
         ///  
         /// <para>
-        /// Does not support continuous backups.
+        /// This operation does not support continuous backups.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateRecoveryPointLifecycle service method.</param>

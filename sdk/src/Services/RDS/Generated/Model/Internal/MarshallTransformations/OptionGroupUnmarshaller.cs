@@ -60,6 +60,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.AllowsVpcAndNonVpcInstanceMemberships = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("CopyTimestamp", targetDepth))
+                    {
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        unmarshalledObject.CopyTimestamp = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("EngineName", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -95,6 +101,18 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         var unmarshaller = OptionUnmarshaller.Instance;
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Options.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("SourceAccountId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.SourceAccountId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("SourceOptionGroup", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.SourceOptionGroup = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("VpcId", targetDepth))

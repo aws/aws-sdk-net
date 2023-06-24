@@ -55,7 +55,7 @@ namespace Amazon.ManagedBlockchain.Model.Internal.MarshallTransformations
         public IRequest Marshall(ListProposalsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ManagedBlockchain");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-09-24";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-09-24";
             request.HttpMethod = "GET";
 
             if (!publicRequest.IsSetNetworkId())

@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// LabelingJobS3DataSource Marshaller
-    /// </summary>       
+    /// </summary>
     public class LabelingJobS3DataSourceMarshaller : IRequestMarshaller<LabelingJobS3DataSource, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static LabelingJobS3DataSourceMarshaller Instance = new LabelingJobS3DataSourceMarshaller();
 
     }

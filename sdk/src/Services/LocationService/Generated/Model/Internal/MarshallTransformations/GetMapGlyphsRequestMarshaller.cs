@@ -55,7 +55,7 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
         public IRequest Marshall(GetMapGlyphsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.LocationService");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-11-19";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-11-19";
             request.HttpMethod = "GET";
 
             if (!publicRequest.IsSetFontStack())
@@ -67,7 +67,11 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetMapName())
                 throw new AmazonLocationServiceException("Request object does not have required field MapName set");
             request.AddPathResource("{MapName}", StringUtils.FromString(publicRequest.MapName));
+            
+            if (publicRequest.IsSetKey())
+                request.Parameters.Add("key", StringUtils.FromString(publicRequest.Key));
             request.ResourcePath = "/maps/v0/maps/{MapName}/glyphs/{FontStack}/{FontUnicodeRange}";
+            request.UseQueryString = true;
             
             request.HostPrefix = $"maps.";
 

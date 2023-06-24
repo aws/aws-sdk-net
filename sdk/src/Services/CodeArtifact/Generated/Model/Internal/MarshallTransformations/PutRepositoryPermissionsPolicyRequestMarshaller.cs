@@ -56,7 +56,7 @@ namespace Amazon.CodeArtifact.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CodeArtifact");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-09-22";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-09-22";
             request.HttpMethod = "PUT";
 
             
@@ -86,7 +86,6 @@ namespace Amazon.CodeArtifact.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.PolicyRevision);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

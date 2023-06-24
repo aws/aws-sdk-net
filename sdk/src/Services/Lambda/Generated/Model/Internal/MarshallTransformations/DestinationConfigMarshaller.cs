@@ -34,7 +34,7 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DestinationConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class DestinationConfigMarshaller : IRequestMarshaller<DestinationConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DestinationConfigMarshaller Instance = new DestinationConfigMarshaller();
 
     }

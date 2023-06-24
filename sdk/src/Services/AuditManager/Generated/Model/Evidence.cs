@@ -31,7 +31,7 @@ namespace Amazon.AuditManager.Model
     /// <summary>
     /// A record that contains the information needed to demonstrate compliance with the
     /// requirements specified by a control. Examples of evidence include change activity
-    /// triggered by a user, or a system configuration snapshot.
+    /// invoked by a user, or a system configuration snapshot.
     /// </summary>
     public partial class Evidence
     {
@@ -132,11 +132,29 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property ComplianceCheck. 
         /// <para>
-        ///  The evaluation status for evidence that falls under the compliance check category.
-        /// For evidence collected from Security Hub, a <i>Pass</i> or <i>Fail</i> result is shown.
-        /// For evidence collected from Config, a <i>Compliant</i> or <i>Noncompliant</i> result
-        /// is shown. 
+        /// The evaluation status for automated evidence that falls under the compliance check
+        /// category.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Audit Manager classes evidence as non-compliant if Security Hub reports a <i>Fail</i>
+        /// result, or if Config reports a <i>Non-compliant</i> result.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Audit Manager classes evidence as compliant if Security Hub reports a <i>Pass</i>
+        /// result, or if Config reports a <i>Compliant</i> result.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If a compliance check isn't available or applicable, then no compliance evaluation
+        /// can be made for that evidence. This is the case if the evidence uses Config or Security
+        /// Hub as the underlying data source type, but those services aren't enabled. This is
+        /// also the case if the evidence uses an underlying data source type that doesn't support
+        /// compliance checks (such as manual evidence, Amazon Web Services API calls, or CloudTrail).
+        /// 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Min=0, Max=2048)]
         public string ComplianceCheck
@@ -268,8 +286,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property IamId. 
         /// <para>
-        ///  The unique identifier for the IAM user or role that's associated with the evidence.
-        /// 
+        ///  The unique identifier for the user or role that's associated with the evidence. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]

@@ -38,9 +38,9 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property Values. 
         /// <para>
-        /// One or more host names. The maximum size of each name is 128 characters. The comparison
-        /// is case insensitive. The following wildcard characters are supported: * (matches 0
-        /// or more characters) and ? (matches exactly 1 character).
+        /// The host names. The maximum size of each name is 128 characters. The comparison is
+        /// case insensitive. The following wildcard characters are supported: * (matches 0 or
+        /// more characters) and ? (matches exactly 1 character).
         /// </para>
         ///  
         /// <para>

@@ -47,8 +47,7 @@ namespace Amazon.Route53RecoveryControlConfig.Model
         /// <summary>
         /// Gets and sets the property RoutingControlArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the routing control that you're getting details
-        /// for.
+        /// The Amazon Resource Name (ARN) of the routing control.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -58,7 +58,7 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
             string target = "FmrsService.CreateLocationEfs";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-11-09";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-11-09";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -67,6 +67,12 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAccessPointArn())
+                {
+                    context.Writer.WritePropertyName("AccessPointArn");
+                    context.Writer.Write(publicRequest.AccessPointArn);
+                }
+
                 if(publicRequest.IsSetEc2Config())
                 {
                     context.Writer.WritePropertyName("Ec2Config");
@@ -82,6 +88,18 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("EfsFilesystemArn");
                     context.Writer.Write(publicRequest.EfsFilesystemArn);
+                }
+
+                if(publicRequest.IsSetFileSystemAccessRoleArn())
+                {
+                    context.Writer.WritePropertyName("FileSystemAccessRoleArn");
+                    context.Writer.Write(publicRequest.FileSystemAccessRoleArn);
+                }
+
+                if(publicRequest.IsSetInTransitEncryption())
+                {
+                    context.Writer.WritePropertyName("InTransitEncryption");
+                    context.Writer.Write(publicRequest.InTransitEncryption);
                 }
 
                 if(publicRequest.IsSetSubdirectory())
@@ -106,7 +124,6 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

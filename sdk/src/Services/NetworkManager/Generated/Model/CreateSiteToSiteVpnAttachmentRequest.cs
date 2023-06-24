@@ -30,7 +30,8 @@ namespace Amazon.NetworkManager.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateSiteToSiteVpnAttachment operation.
-    /// Creates a site-to-site VPN attachment on an edge location of a core network.
+    /// Creates an Amazon Web Services site-to-site VPN attachment on an edge location of
+    /// a core network.
     /// </summary>
     public partial class CreateSiteToSiteVpnAttachmentRequest : AmazonNetworkManagerRequest
     {

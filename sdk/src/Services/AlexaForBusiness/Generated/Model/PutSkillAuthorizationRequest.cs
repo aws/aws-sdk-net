@@ -47,7 +47,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// in the AuthorizationResult map to establish the authorization.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public Dictionary<string, string> AuthorizationResult
         {
             get { return this._authorizationResult; }

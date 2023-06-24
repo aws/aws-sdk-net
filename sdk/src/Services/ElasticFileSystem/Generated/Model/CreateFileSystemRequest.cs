@@ -103,8 +103,17 @@ namespace Amazon.ElasticFileSystem.Model
     /// </para>
     ///  
     /// <para>
-    ///  This operation requires permissions for the <code>elasticfilesystem:CreateFileSystem</code>
+    /// This operation requires permissions for the <code>elasticfilesystem:CreateFileSystem</code>
     /// action. 
+    /// </para>
+    ///  
+    /// <para>
+    /// File systems can be tagged on creation. If tags are specified in the creation action,
+    /// IAM performs additional authorization on the <code>elasticfilesystem:TagResource</code>
+    /// action to verify if users have permissions to create tags. Therefore, you must grant
+    /// explicit permissions to use the <code>elasticfilesystem:TagResource</code> action.
+    /// For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/using-tags-efs.html#supported-iam-actions-tagging.html">Granting
+    /// permissions to tag resources during creation</a>.
     /// </para>
     /// </summary>
     public partial class CreateFileSystemRequest : AmazonElasticFileSystemRequest
@@ -178,7 +187,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// Backup is not available in all Amazon Web Services Regionswhere Amazon EFS is available.
+        /// Backup is not available in all Amazon Web Services Regions where Amazon EFS is available.
         /// </para>
         ///  </note>
         /// </summary>
@@ -217,10 +226,10 @@ namespace Amazon.ElasticFileSystem.Model
         /// Gets and sets the property Encrypted. 
         /// <para>
         /// A Boolean value that, if true, creates an encrypted file system. When creating an
-        /// encrypted file system, you have the option of specifying <a>CreateFileSystemRequest$KmsKeyId</a>
-        /// for an existing Key Management Service (KMS customer master key (CMK). If you don't
-        /// specify a CMK, then the default CMK for Amazon EFS, <code>/aws/elasticfilesystem</code>,
-        /// is used to protect the encrypted file system. 
+        /// encrypted file system, you have the option of specifying an existing Key Management
+        /// Service key (KMS key). If you don't specify a KMS key, then the default KMS key for
+        /// Amazon EFS, <code>/aws/elasticfilesystem</code>, is used to protect the encrypted
+        /// file system. 
         /// </para>
         /// </summary>
         public bool Encrypted
@@ -238,10 +247,10 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The ID of the KMS CMK that you want to use to protect the encrypted file system. This
-        /// parameter is only required if you want to use a non-default KMS key. If this parameter
-        /// is not specified, the default CMK for Amazon EFS is used. This ID can be in one of
-        /// the following formats:
+        /// The ID of the KMS key that you want to use to protect the encrypted file system. This
+        /// parameter is required only if you want to use a non-default KMS key. If this parameter
+        /// is not specified, the default KMS key for Amazon EFS is used. You can specify a KMS
+        /// key ID using the following formats:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -261,13 +270,13 @@ namespace Amazon.ElasticFileSystem.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If <code>KmsKeyId</code> is specified, the <a>CreateFileSystemRequest$Encrypted</a>
-        /// parameter must be set to true.
+        /// If you use <code>KmsKeyId</code>, you must set the <a>CreateFileSystemRequest$Encrypted</a>
+        /// parameter to true.
         /// </para>
         ///  <important> 
         /// <para>
-        /// EFS accepts only symmetric KMS keys. You cannot use asymmetric KMS keys with EFS file
-        /// systems.
+        /// EFS accepts only symmetric KMS keys. You cannot use asymmetric KMS keys with Amazon
+        /// EFS file systems.
         /// </para>
         ///  </important>
         /// </summary>
@@ -361,13 +370,12 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property ThroughputMode. 
         /// <para>
-        /// Specifies the throughput mode for the file system, either <code>bursting</code> or
-        /// <code>provisioned</code>. If you set <code>ThroughputMode</code> to <code>provisioned</code>,
-        /// you must also set a value for <code>ProvisionedThroughputInMibps</code>. After you
-        /// create the file system, you can decrease your file system's throughput in Provisioned
-        /// Throughput mode or change between the throughput modes, as long as it’s been more
-        /// than 24 hours since the last decrease or throughput mode change. For more information,
-        /// see <a href="https://docs.aws.amazon.com/efs/latest/ug/performance.html#provisioned-throughput">Specifying
+        /// Specifies the throughput mode for the file system. The mode can be <code>bursting</code>,
+        /// <code>provisioned</code>, or <code>elastic</code>. If you set <code>ThroughputMode</code>
+        /// to <code>provisioned</code>, you must also set a value for <code>ProvisionedThroughputInMibps</code>.
+        /// After you create the file system, you can decrease your file system's throughput in
+        /// Provisioned Throughput mode or change between the throughput modes, with certain time
+        /// restrictions. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/performance.html#provisioned-throughput">Specifying
         /// throughput with provisioned mode</a> in the <i>Amazon EFS User Guide</i>. 
         /// </para>
         ///  

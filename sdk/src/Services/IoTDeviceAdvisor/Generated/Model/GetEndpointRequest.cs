@@ -34,8 +34,28 @@ namespace Amazon.IoTDeviceAdvisor.Model
     /// </summary>
     public partial class GetEndpointRequest : AmazonIoTDeviceAdvisorRequest
     {
+        private AuthenticationMethod _authenticationMethod;
         private string _certificateArn;
+        private string _deviceRoleArn;
         private string _thingArn;
+
+        /// <summary>
+        /// Gets and sets the property AuthenticationMethod. 
+        /// <para>
+        /// The authentication method used during the device connection.
+        /// </para>
+        /// </summary>
+        public AuthenticationMethod AuthenticationMethod
+        {
+            get { return this._authenticationMethod; }
+            set { this._authenticationMethod = value; }
+        }
+
+        // Check to see if AuthenticationMethod property is set
+        internal bool IsSetAuthenticationMethod()
+        {
+            return this._authenticationMethod != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CertificateArn. 
@@ -54,6 +74,25 @@ namespace Amazon.IoTDeviceAdvisor.Model
         internal bool IsSetCertificateArn()
         {
             return this._certificateArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeviceRoleArn. 
+        /// <para>
+        /// The device role ARN of the device. This is an optional parameter.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string DeviceRoleArn
+        {
+            get { return this._deviceRoleArn; }
+            set { this._deviceRoleArn = value; }
+        }
+
+        // Check to see if DeviceRoleArn property is set
+        internal bool IsSetDeviceRoleArn()
+        {
+            return this._deviceRoleArn != null;
         }
 
         /// <summary>

@@ -52,7 +52,8 @@ namespace Amazon.QuickSight.Model
     /// </para>
     ///  
     /// <para>
-    /// The resulting user session is valid for 15 minutes (default) to 10 hours (maximum).
+    /// The resulting user session is valid for 15 minutes (minimum) to 10 hours (maximum).
+    /// The default session duration is 10 hours.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -72,10 +73,39 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class GenerateEmbedUrlForRegisteredUserRequest : AmazonQuickSightRequest
     {
+        private List<string> _allowedDomains = new List<string>();
         private string _awsAccountId;
         private RegisteredUserEmbeddingExperienceConfiguration _experienceConfiguration;
         private long? _sessionLifetimeInMinutes;
         private string _userArn;
+
+        /// <summary>
+        /// Gets and sets the property AllowedDomains. 
+        /// <para>
+        /// The domains that you want to add to the allow list for access to the generated URL
+        /// that is then embedded. This optional parameter overrides the static domains that are
+        /// configured in the Manage QuickSight menu in the Amazon QuickSight console. Instead,
+        /// it allows only the domains that you include in this parameter. You can list up to
+        /// three domains or subdomains in each API call.
+        /// </para>
+        ///  
+        /// <para>
+        /// To include all subdomains under a specific domain to the allow list, use <code>*</code>.
+        /// For example, <code>https://*.sapp.amazon.com</code> includes all subdomains under
+        /// <code>https://sapp.amazon.com</code>.
+        /// </para>
+        /// </summary>
+        public List<string> AllowedDomains
+        {
+            get { return this._allowedDomains; }
+            set { this._allowedDomains = value; }
+        }
+
+        // Check to see if AllowedDomains property is set
+        internal bool IsSetAllowedDomains()
+        {
+            return this._allowedDomains != null && this._allowedDomains.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
@@ -101,7 +131,8 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property ExperienceConfiguration. 
         /// <para>
         /// The experience you are embedding. For registered users, you can embed Amazon QuickSight
-        /// dashboards or the entire Amazon QuickSight console.
+        /// dashboards, Amazon QuickSight visuals, the Amazon QuickSight Q search bar, or the
+        /// entire Amazon QuickSight console.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

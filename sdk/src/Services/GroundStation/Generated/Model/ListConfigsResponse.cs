@@ -61,6 +61,7 @@ namespace Amazon.GroundStation.Model
         /// to get the next page of results.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=3, Max=1000)]
         public string NextToken
         {
             get { return this._nextToken; }

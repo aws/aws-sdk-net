@@ -34,7 +34,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RegisteredUserQuickSightConsoleEmbeddingConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class RegisteredUserQuickSightConsoleEmbeddingConfigurationMarshaller : IRequestMarshaller<RegisteredUserQuickSightConsoleEmbeddingConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -45,6 +45,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(RegisteredUserQuickSightConsoleEmbeddingConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetFeatureConfigurations())
+            {
+                context.Writer.WritePropertyName("FeatureConfigurations");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = RegisteredUserConsoleFeatureConfigurationsMarshaller.Instance;
+                marshaller.Marshall(requestObject.FeatureConfigurations, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetInitialPath())
             {
                 context.Writer.WritePropertyName("InitialPath");
@@ -55,7 +66,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RegisteredUserQuickSightConsoleEmbeddingConfigurationMarshaller Instance = new RegisteredUserQuickSightConsoleEmbeddingConfigurationMarshaller();
 
     }

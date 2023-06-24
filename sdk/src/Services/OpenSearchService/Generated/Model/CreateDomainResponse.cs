@@ -30,7 +30,7 @@ namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
     /// The result of a <code>CreateDomain</code> operation. Contains the status of the newly
-    /// created Amazon OpenSearch Service domain.
+    /// created domain.
     /// </summary>
     public partial class CreateDomainResponse : AmazonWebServiceResponse
     {

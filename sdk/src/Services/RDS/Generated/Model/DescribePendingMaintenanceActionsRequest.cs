@@ -53,14 +53,14 @@ namespace Amazon.RDS.Model
         ///  <ul> <li> 
         /// <para>
         ///  <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon
-        /// Resource Names (ARNs). The results list will only include pending maintenance actions
+        /// Resource Names (ARNs). The results list only includes pending maintenance actions
         /// for the DB clusters identified by these ARNs.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance ARNs.
-        /// The results list will only include pending maintenance actions for the DB instances
-        /// identified by these ARNs.
+        /// The results list only includes pending maintenance actions for the DB instances identified
+        /// by these ARNs.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -79,9 +79,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        ///  An optional pagination token provided by a previous <code>DescribePendingMaintenanceActions</code>
+        /// An optional pagination token provided by a previous <code>DescribePendingMaintenanceActions</code>
         /// request. If this parameter is specified, the response includes only records beyond
-        /// the marker, up to a number of records specified by <code>MaxRecords</code>. 
+        /// the marker, up to a number of records specified by <code>MaxRecords</code>.
         /// </para>
         /// </summary>
         public string Marker
@@ -99,9 +99,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property MaxRecords. 
         /// <para>
-        ///  The maximum number of records to include in the response. If more records exist than
+        /// The maximum number of records to include in the response. If more records exist than
         /// the specified <code>MaxRecords</code> value, a pagination token called a marker is
-        /// included in the response so that you can retrieve the remaining results. 
+        /// included in the response so that you can retrieve the remaining results.
         /// </para>
         ///  
         /// <para>

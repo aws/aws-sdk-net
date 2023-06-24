@@ -36,45 +36,46 @@ namespace Amazon.ACMPCA.Model
     /// 
     ///  
     /// <para>
-    /// If you delete a policy that was applied through AWS Resource Access Manager (RAM),
-    /// the CA will be removed from all shares in which it was included. 
+    /// If you delete a policy that was applied through Amazon Web Services Resource Access
+    /// Manager (RAM), the CA will be removed from all shares in which it was included. 
     /// </para>
     ///  
     /// <para>
-    /// The AWS Certificate Manager Service Linked Role that the policy supports is not affected
+    /// The Certificate Manager Service Linked Role that the policy supports is not affected
     /// when you delete the policy. 
     /// </para>
     ///  
     /// <para>
-    /// The current policy can be shown with <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_GetPolicy.html">GetPolicy</a>
-    /// and updated with <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_PutPolicy.html">PutPolicy</a>.
+    /// The current policy can be shown with <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_GetPolicy.html">GetPolicy</a>
+    /// and updated with <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_PutPolicy.html">PutPolicy</a>.
     /// </para>
     ///  <p class="title"> <b>About Policies</b> 
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// A policy grants access on a private CA to an AWS customer account, to AWS Organizations,
-    /// or to an AWS Organizations unit. Policies are under the control of a CA administrator.
-    /// For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-rbp.html">Using
-    /// a Resource Based Policy with ACM Private CA</a>.
+    /// A policy grants access on a private CA to an Amazon Web Services customer account,
+    /// to Amazon Web Services Organizations, or to an Amazon Web Services Organizations unit.
+    /// Policies are under the control of a CA administrator. For more information, see <a
+    /// href="https://docs.aws.amazon.com/privateca/latest/userguide/pca-rbp.html">Using a
+    /// Resource Based Policy with Amazon Web Services Private CA</a>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// A policy permits a user of AWS Certificate Manager (ACM) to issue ACM certificates
-    /// signed by a CA in another account.
+    /// A policy permits a user of Certificate Manager (ACM) to issue ACM certificates signed
+    /// by a CA in another account.
     /// </para>
     ///  </li> <li> 
     /// <para>
     /// For ACM to manage automatic renewal of these certificates, the ACM user must configure
     /// a Service Linked Role (SLR). The SLR allows the ACM service to assume the identity
-    /// of the user, subject to confirmation against the ACM Private CA policy. For more information,
-    /// see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-slr.html">Using
+    /// of the user, subject to confirmation against the Amazon Web Services Private CA policy.
+    /// For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-slr.html">Using
     /// a Service Linked Role with ACM</a>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Updates made in AWS Resource Manager (RAM) are reflected in policies. For more information,
-    /// see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-ram.html">Attach
+    /// Updates made in Amazon Web Services Resource Manager (RAM) are reflected in policies.
+    /// For more information, see <a href="https://docs.aws.amazon.com/privateca/latest/userguide/pca-ram.html">Attach
     /// a Policy for Cross-Account Access</a>.
     /// </para>
     ///  </li> </ul>
@@ -87,7 +88,7 @@ namespace Amazon.ACMPCA.Model
         /// Gets and sets the property ResourceArn. 
         /// <para>
         /// The Amazon Resource Number (ARN) of the private CA that will have its policy deleted.
-        /// You can find the CA's ARN by calling the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a>
+        /// You can find the CA's ARN by calling the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a>
         /// action. The ARN value must have the form <code>arn:aws:acm-pca:region:account:certificate-authority/01234567-89ab-cdef-0123-0123456789ab</code>.
         /// 
         /// </para>

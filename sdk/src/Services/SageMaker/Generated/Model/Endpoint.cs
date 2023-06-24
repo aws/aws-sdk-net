@@ -43,6 +43,7 @@ namespace Amazon.SageMaker.Model
         private DateTime? _lastModifiedTime;
         private List<MonitoringSchedule> _monitoringSchedules = new List<MonitoringSchedule>();
         private List<ProductionVariantSummary> _productionVariants = new List<ProductionVariantSummary>();
+        private List<ProductionVariantSummary> _shadowProductionVariants = new List<ProductionVariantSummary>();
         private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
@@ -231,6 +232,26 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetProductionVariants()
         {
             return this._productionVariants != null && this._productionVariants.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ShadowProductionVariants. 
+        /// <para>
+        /// A list of the shadow variants hosted on the endpoint. Each shadow variant is a model
+        /// in shadow mode with production traffic replicated from the production variant.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public List<ProductionVariantSummary> ShadowProductionVariants
+        {
+            get { return this._shadowProductionVariants; }
+            set { this._shadowProductionVariants = value; }
+        }
+
+        // Check to see if ShadowProductionVariants property is set
+        internal bool IsSetShadowProductionVariants()
+        {
+            return this._shadowProductionVariants != null && this._shadowProductionVariants.Count > 0; 
         }
 
         /// <summary>

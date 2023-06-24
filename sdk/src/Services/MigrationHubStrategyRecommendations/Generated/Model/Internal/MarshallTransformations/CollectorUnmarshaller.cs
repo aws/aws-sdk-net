@@ -82,6 +82,12 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
                     unmarshalledObject.CollectorVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("configurationSummary", targetDepth))
+                {
+                    var unmarshaller = ConfigurationSummaryUnmarshaller.Instance;
+                    unmarshalledObject.ConfigurationSummary = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("hostName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

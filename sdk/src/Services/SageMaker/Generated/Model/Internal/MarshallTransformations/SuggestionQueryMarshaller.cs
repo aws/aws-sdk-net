@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SuggestionQuery Marshaller
-    /// </summary>       
+    /// </summary>
     public class SuggestionQueryMarshaller : IRequestMarshaller<SuggestionQuery, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SuggestionQueryMarshaller Instance = new SuggestionQueryMarshaller();
 
     }

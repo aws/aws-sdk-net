@@ -30,7 +30,7 @@ namespace Amazon.Proton.Model
 {
     /// <summary>
     /// Container for the parameters to the ListServiceInstanceOutputs operation.
-    /// View a list service instance infrastructure as code outputs with detail data.
+    /// Get a list service of instance Infrastructure as Code (IaC) outputs.
     /// </summary>
     public partial class ListServiceInstanceOutputsRequest : AmazonProtonRequest
     {
@@ -41,7 +41,7 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// A token to indicate the location of the next output in the array of outputs, after
+        /// A token that indicates the location of the next output in the array of outputs, after
         /// the list of outputs that was previously requested.
         /// </para>
         /// </summary>
@@ -61,7 +61,7 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property ServiceInstanceName. 
         /// <para>
-        /// The service instance name.
+        /// The name of the service instance whose outputs you want.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
@@ -80,7 +80,7 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property ServiceName. 
         /// <para>
-        /// The service name.
+        /// The name of the service that <code>serviceInstanceName</code> is associated to.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]

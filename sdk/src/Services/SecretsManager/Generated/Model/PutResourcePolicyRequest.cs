@@ -30,45 +30,29 @@ namespace Amazon.SecretsManager.Model
 {
     /// <summary>
     /// Container for the parameters to the PutResourcePolicy operation.
-    /// Attaches the contents of the specified resource-based permission policy to a secret.
-    /// A resource-based policy is optional. Alternatively, you can use IAM identity-based
-    /// policies that specify the secret's Amazon Resource Name (ARN) in the policy statement's
-    /// <code>Resources</code> element. You can also use a combination of both identity-based
-    /// and resource-based policies. The affected users and roles receive the permissions
-    /// that are permitted by all of the relevant policies. For more information, see <a href="http://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_resource-based-policies.html">Using
-    /// Resource-Based Policies for Amazon Web Services Secrets Manager</a>. For the complete
-    /// description of the Amazon Web Services policy syntax and grammar, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM
-    /// JSON Policy Reference</a> in the <i>IAM User Guide</i>.
+    /// Attaches a resource-based permission policy to a secret. A resource-based policy is
+    /// optional. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+    /// and access control for Secrets Manager</a> 
     /// 
     ///  
     /// <para>
-    ///  <b>Minimum permissions</b> 
+    /// For information about attaching a policy in the console, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_resource-based-policies.html">Attach
+    /// a permissions policy to a secret</a>.
     /// </para>
     ///  
     /// <para>
-    /// To run this command, you must have the following permissions:
+    /// Secrets Manager generates a CloudTrail log entry when you call this action. Do not
+    /// include sensitive information in request parameters because it might be logged. For
+    /// more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/retrieve-ct-entries.html">Logging
+    /// Secrets Manager events with CloudTrail</a>.
     /// </para>
-    ///  <ul> <li> 
+    ///  
     /// <para>
-    /// secretsmanager:PutResourcePolicy
+    ///  <b>Required permissions: </b> <code>secretsmanager:PutResourcePolicy</code>. For
+    /// more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions">
+    /// IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+    /// and access control in Secrets Manager</a>. 
     /// </para>
-    ///  </li> </ul> 
-    /// <para>
-    ///  <b>Related operations</b> 
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    /// To retrieve the resource policy attached to a secret, use <a>GetResourcePolicy</a>.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// To delete the resource-based policy attached to a secret, use <a>DeleteResourcePolicy</a>.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// To list all of the currently available secrets, use <a>ListSecrets</a>.
-    /// </para>
-    ///  </li> </ul>
     /// </summary>
     public partial class PutResourcePolicyRequest : AmazonSecretsManagerRequest
     {
@@ -79,8 +63,9 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property BlockPublicPolicy. 
         /// <para>
-        /// (Optional) If you set the parameter, <code>BlockPublicPolicy</code> to true, then
-        /// you block resource-based policies that allow broad access to the secret.
+        /// Specifies whether to block resource-based policies that allow broad access to the
+        /// secret, for example those that use a wildcard for the principal. By default, public
+        /// policies aren't blocked.
         /// </para>
         /// </summary>
         public bool BlockPublicPolicy
@@ -98,11 +83,9 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property ResourcePolicy. 
         /// <para>
-        /// A JSON-formatted string constructed according to the grammar and syntax for an Amazon
-        /// Web Services resource-based policy. The policy in the string identifies who can access
-        /// or manage this secret and its versions. For information on how to format a JSON parameter
-        /// for the various command line tool environments, see <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
-        /// JSON for Parameters</a> in the <i>CLI User Guide</i>.
+        /// A JSON-formatted string for an Amazon Web Services resource-based policy. For example
+        /// policies, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_examples.html">Permissions
+        /// policy examples</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=20480)]
@@ -121,12 +104,13 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property SecretId. 
         /// <para>
-        /// Specifies the secret that you want to attach the resource-based policy. You can specify
-        /// either the ARN or the friendly name of the secret.
+        /// The ARN or name of the secret to attach the resource-based policy.
         /// </para>
         ///  
         /// <para>
         /// For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.
+        /// See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding
+        /// a secret from a partial ARN</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]

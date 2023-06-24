@@ -56,7 +56,7 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Batch");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-08-10";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-08-10";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/v1/createcomputeenvironment";
@@ -78,6 +78,17 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
 
                     var marshaller = ComputeResourceMarshaller.Instance;
                     marshaller.Marshall(publicRequest.ComputeResources, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetEksConfiguration())
+                {
+                    context.Writer.WritePropertyName("eksConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = EksConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.EksConfiguration, context);
 
                     context.Writer.WriteObjectEnd();
                 }
@@ -120,7 +131,6 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.UnmanagedvCpus);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

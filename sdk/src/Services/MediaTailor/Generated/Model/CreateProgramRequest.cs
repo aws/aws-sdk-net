@@ -30,12 +30,14 @@ namespace Amazon.MediaTailor.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateProgram operation.
-    /// Creates a program.
+    /// Creates a program within a channel. For information about programs, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-programs.html">Working
+    /// with programs</a> in the <i>MediaTailor User Guide</i>.
     /// </summary>
     public partial class CreateProgramRequest : AmazonMediaTailorRequest
     {
         private List<AdBreak> _adBreaks = new List<AdBreak>();
         private string _channelName;
+        private string _liveSourceName;
         private string _programName;
         private ScheduleConfiguration _scheduleConfiguration;
         private string _sourceLocationName;
@@ -62,7 +64,7 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property ChannelName. 
         /// <para>
-        /// The identifier for the channel you are working on.
+        /// The name of the channel for this Program.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -79,9 +81,27 @@ namespace Amazon.MediaTailor.Model
         }
 
         /// <summary>
+        /// Gets and sets the property LiveSourceName. 
+        /// <para>
+        /// The name of the LiveSource for this Program.
+        /// </para>
+        /// </summary>
+        public string LiveSourceName
+        {
+            get { return this._liveSourceName; }
+            set { this._liveSourceName = value; }
+        }
+
+        // Check to see if LiveSourceName property is set
+        internal bool IsSetLiveSourceName()
+        {
+            return this._liveSourceName != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ProgramName. 
         /// <para>
-        /// The identifier for the program you are working on.
+        /// The name of the Program.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -141,7 +161,6 @@ namespace Amazon.MediaTailor.Model
         /// The name that's used to refer to a VOD source.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string VodSourceName
         {
             get { return this._vodSourceName; }

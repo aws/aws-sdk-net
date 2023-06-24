@@ -31,7 +31,8 @@ namespace Amazon.Comprehend.Model
     /// <summary>
     /// Container for the parameters to the CreateEntityRecognizer operation.
     /// Creates an entity recognizer using submitted files. After your <code>CreateEntityRecognizer</code>
-    /// request is submitted, you can check job status using the API.
+    /// request is submitted, you can check job status using the <code>DescribeEntityRecognizer</code>
+    /// API.
     /// </summary>
     public partial class CreateEntityRecognizerRequest : AmazonComprehendRequest
     {
@@ -40,6 +41,7 @@ namespace Amazon.Comprehend.Model
         private EntityRecognizerInputDataConfig _inputDataConfig;
         private LanguageCode _languageCode;
         private string _modelKmsKeyId;
+        private string _modelPolicy;
         private string _recognizerName;
         private List<Tag> _tags = new List<Tag>();
         private string _versionName;
@@ -69,8 +71,8 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property DataAccessRoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role that
-        /// grants Amazon Comprehend read access to your input data.
+        /// The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read
+        /// access to your input data.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]
@@ -90,7 +92,7 @@ namespace Amazon.Comprehend.Model
         /// Gets and sets the property InputDataConfig. 
         /// <para>
         /// Specifies the format and location of the input data. The S3 bucket containing the
-        /// input data must be located in the same region as the entity recognizer being created.
+        /// input data must be located in the same Region as the entity recognizer being created.
         /// 
         /// </para>
         /// </summary>
@@ -110,9 +112,10 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property LanguageCode. 
         /// <para>
-        ///  You can specify any of the following languages supported by Amazon Comprehend: English
-        /// ("en"), Spanish ("es"), French ("fr"), Italian ("it"), German ("de"), or Portuguese
-        /// ("pt"). All documents must be in the same language.
+        ///  You can specify any of the following languages: English ("en"), Spanish ("es"), French
+        /// ("fr"), Italian ("it"), German ("de"), or Portuguese ("pt"). If you plan to use this
+        /// entity recognizer with PDF, Word, or image input files, you must specify English as
+        /// the language. All training documents must be in the same language.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -131,8 +134,8 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property ModelKmsKeyId. 
         /// <para>
-        /// ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
-        /// trained custom models. The ModelKmsKeyId can be either of the following formats
+        /// ID for the KMS key that Amazon Comprehend uses to encrypt trained custom models. The
+        /// ModelKmsKeyId can be either of the following formats:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -159,11 +162,52 @@ namespace Amazon.Comprehend.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ModelPolicy. 
+        /// <para>
+        /// The JSON resource-based policy to attach to your custom entity recognizer model. You
+        /// can use this policy to allow another Amazon Web Services account to import your custom
+        /// model.
+        /// </para>
+        ///  
+        /// <para>
+        /// Provide your JSON as a UTF-8 encoded string without line breaks. To provide valid
+        /// JSON for your policy, enclose the attribute names and values in double quotes. If
+        /// the JSON body is also enclosed in double quotes, then you must escape the double quotes
+        /// that are inside the policy:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>"{\"attribute\": \"value\", \"attribute\": [\"value\"]}"</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// To avoid escaping quotes, you can use single quotes to enclose the policy and double
+        /// quotes to enclose the JSON names and values:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>'{"attribute": "value", "attribute": ["value"]}'</code> 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=20000)]
+        public string ModelPolicy
+        {
+            get { return this._modelPolicy; }
+            set { this._modelPolicy = value; }
+        }
+
+        // Check to see if ModelPolicy property is set
+        internal bool IsSetModelPolicy()
+        {
+            return this._modelPolicy != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property RecognizerName. 
         /// <para>
         /// The name given to the newly created recognizer. Recognizer names can be a maximum
         /// of 256 characters. Alphanumeric characters, hyphens (-) and underscores (_) are allowed.
-        /// The name must be unique in the account/region.
+        /// The name must be unique in the account/Region.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=63)]
@@ -182,10 +226,10 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Tags to be associated with the entity recognizer being created. A tag is a key-value
-        /// pair that adds as a metadata to a resource used by Amazon Comprehend. For example,
-        /// a tag with "Sales" as the key might be added to a resource to indicate its use by
-        /// the sales department. 
+        /// Tags to associate with the entity recognizer. A tag is a key-value pair that adds
+        /// as a metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales"
+        /// as the key might be added to a resource to indicate its use by the sales department.
+        /// 
         /// </para>
         /// </summary>
         public List<Tag> Tags
@@ -206,7 +250,7 @@ namespace Amazon.Comprehend.Model
         /// The version name given to the newly created recognizer. Version names can be a maximum
         /// of 256 characters. Alphanumeric characters, hyphens (-) and underscores (_) are allowed.
         /// The version name must be unique among all models with the same recognizer name in
-        /// the account/ AWS Region.
+        /// the account/Region.
         /// </para>
         /// </summary>
         [AWSProperty(Max=63)]
@@ -225,9 +269,9 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property VolumeKmsKeyId. 
         /// <para>
-        /// ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
-        /// data on the storage volume attached to the ML compute instance(s) that process the
-        /// analysis job. The VolumeKmsKeyId can be either of the following formats:
+        /// ID for the Amazon Web Services Key Management Service (KMS) key that Amazon Comprehend
+        /// uses to encrypt data on the storage volume attached to the ML compute instance(s)
+        /// that process the analysis job. The VolumeKmsKeyId can be either of the following formats:
         /// </para>
         ///  <ul> <li> 
         /// <para>

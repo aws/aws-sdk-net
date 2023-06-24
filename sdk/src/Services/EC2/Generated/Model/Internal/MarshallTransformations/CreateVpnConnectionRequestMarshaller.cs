@@ -76,6 +76,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         request.Parameters.Add("Options" + "." + "LocalIpv6NetworkCidr", StringUtils.FromString(publicRequest.Options.LocalIpv6NetworkCidr));
                     }
+                    if(publicRequest.Options.IsSetOutsideIpAddressType())
+                    {
+                        request.Parameters.Add("Options" + "." + "OutsideIpAddressType", StringUtils.FromString(publicRequest.Options.OutsideIpAddressType));
+                    }
                     if(publicRequest.Options.IsSetRemoteIpv4NetworkCidr())
                     {
                         request.Parameters.Add("Options" + "." + "RemoteIpv4NetworkCidr", StringUtils.FromString(publicRequest.Options.RemoteIpv4NetworkCidr));
@@ -87,6 +91,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if(publicRequest.Options.IsSetStaticRoutesOnly())
                     {
                         request.Parameters.Add("Options" + "." + "StaticRoutesOnly", StringUtils.FromBool(publicRequest.Options.StaticRoutesOnly));
+                    }
+                    if(publicRequest.Options.IsSetTransportTransitGatewayAttachmentId())
+                    {
+                        request.Parameters.Add("Options" + "." + "TransportTransitGatewayAttachmentId", StringUtils.FromString(publicRequest.Options.TransportTransitGatewayAttachmentId));
                     }
                     if(publicRequest.Options.IsSetTunnelInsideIpVersion())
                     {
@@ -105,6 +113,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                             {
                                 request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "DPDTimeoutSeconds", StringUtils.FromInt(publicRequestOptionslistValue.DPDTimeoutSeconds));
                             }
+                            if(publicRequestOptionslistValue.IsSetEnableTunnelLifecycleControl())
+                            {
+                                request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "EnableTunnelLifecycleControl", StringUtils.FromBool(publicRequestOptionslistValue.EnableTunnelLifecycleControl));
+                            }
                             if(publicRequestOptionslistValue.IsSetIKEVersions())
                             {
                                 int publicRequestOptionslistValuelistValueIndex = 1;
@@ -115,6 +127,24 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                         request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "IKEVersion" + "." + publicRequestOptionslistValuelistValueIndex + "." + "Value", StringUtils.FromString(publicRequestOptionslistValuelistValue.Value));
                                     }
                                     publicRequestOptionslistValuelistValueIndex++;
+                                }
+                            }
+                            if(publicRequestOptionslistValue.IsSetLogOptions())
+                            {
+                                if(publicRequestOptionslistValue.LogOptions.IsSetCloudWatchLogOptions())
+                                {
+                                    if(publicRequestOptionslistValue.LogOptions.CloudWatchLogOptions.IsSetLogEnabled())
+                                    {
+                                        request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "LogOptions" + "." + "CloudWatchLogOptions" + "." + "LogEnabled", StringUtils.FromBool(publicRequestOptionslistValue.LogOptions.CloudWatchLogOptions.LogEnabled));
+                                    }
+                                    if(publicRequestOptionslistValue.LogOptions.CloudWatchLogOptions.IsSetLogGroupArn())
+                                    {
+                                        request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "LogOptions" + "." + "CloudWatchLogOptions" + "." + "LogGroupArn", StringUtils.FromString(publicRequestOptionslistValue.LogOptions.CloudWatchLogOptions.LogGroupArn));
+                                    }
+                                    if(publicRequestOptionslistValue.LogOptions.CloudWatchLogOptions.IsSetLogOutputFormat())
+                                    {
+                                        request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "LogOptions" + "." + "CloudWatchLogOptions" + "." + "LogOutputFormat", StringUtils.FromString(publicRequestOptionslistValue.LogOptions.CloudWatchLogOptions.LogOutputFormat));
+                                    }
                                 }
                             }
                             if(publicRequestOptionslistValue.IsSetPhase1DHGroupNumbers())

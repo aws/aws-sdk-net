@@ -17,22 +17,22 @@
  * Do not modify this file. This file is generated from the iotanalytics-2017-11-27.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
-
+using Amazon.IoTAnalytics.Internal;
 
 namespace Amazon.IoTAnalytics
 {
     /// <summary>
     /// Configuration for accessing Amazon IoTAnalytics service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonIoTAnalyticsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.2.60");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.147");
 
         private string _userAgent = UserAgentString;
 
@@ -40,8 +40,10 @@ namespace Amazon.IoTAnalytics
         /// Default constructor
         /// </summary>
         public AmazonIoTAnalyticsConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonIoTAnalyticsDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "iotanalytics";
+            this.EndpointProvider = new AmazonIoTAnalyticsEndpointProvider();
         }
 
         /// <summary>
@@ -76,5 +78,6 @@ namespace Amazon.IoTAnalytics
                 return _userAgent;
             }
         }
+
     }
 }

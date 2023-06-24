@@ -56,9 +56,12 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CustomerProfiles");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-08-15";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-08-15";
             request.HttpMethod = "POST";
 
+            
+            if (publicRequest.IsSetIncludeHidden())
+                request.Parameters.Add("include-hidden", StringUtils.FromBool(publicRequest.IncludeHidden));
             
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("max-results", StringUtils.FromInt(publicRequest.MaxResults));
@@ -77,7 +80,6 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Uri);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

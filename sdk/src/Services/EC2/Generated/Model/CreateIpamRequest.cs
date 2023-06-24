@@ -30,15 +30,15 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateIpam operation.
-    /// Create an IPAM. Amazon VCP IP Address Manager (IPAM) is a VPC feature that you can
+    /// Create an IPAM. Amazon VPC IP Address Manager (IPAM) is a VPC feature that you can
     /// use to automate your IP address management workflows including assigning, tracking,
     /// troubleshooting, and auditing IP addresses across Amazon Web Services Regions and
     /// accounts throughout your Amazon Web Services Organization.
     /// 
     ///  
     /// <para>
-    /// For more information, see <a href="/vpc/latest/ipam/create-ipam.html">Create an IPAM</a>
-    /// in the <i>Amazon VPC IPAM User Guide</i>. 
+    /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/create-ipam.html">Create
+    /// an IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>. 
     /// </para>
     /// </summary>
     public partial class CreateIpamRequest : AmazonEC2Request
@@ -91,11 +91,11 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The operating Regions for the IPAM. Operating Regions are Amazon Web Services Regions
         /// where the IPAM is allowed to manage IP address CIDRs. IPAM only discovers and monitors
-        /// resources in the Amazon Web Services Regions you select as operating Regions.
+        /// resources in the Amazon Web Services Regions you select as operating Regions. 
         /// </para>
         ///  
         /// <para>
-        /// For more information about operating Regions, see <a href="/vpc/latest/ipam/create-ipam.html">Create
+        /// For more information about operating Regions, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/create-ipam.html">Create
         /// an IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>. 
         /// </para>
         /// </summary>

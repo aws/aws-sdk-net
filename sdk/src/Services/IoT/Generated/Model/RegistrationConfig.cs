@@ -35,6 +35,7 @@ namespace Amazon.IoT.Model
     {
         private string _roleArn;
         private string _templateBody;
+        private string _templateName;
 
         /// <summary>
         /// Gets and sets the property RoleArn. 
@@ -61,6 +62,7 @@ namespace Amazon.IoT.Model
         /// The template body.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=10240)]
         public string TemplateBody
         {
             get { return this._templateBody; }
@@ -71,6 +73,25 @@ namespace Amazon.IoT.Model
         internal bool IsSetTemplateBody()
         {
             return this._templateBody != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TemplateName. 
+        /// <para>
+        /// The name of the provisioning template.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=36)]
+        public string TemplateName
+        {
+            get { return this._templateName; }
+            set { this._templateName = value; }
+        }
+
+        // Check to see if TemplateName property is set
+        internal bool IsSetTemplateName()
+        {
+            return this._templateName != null;
         }
 
     }

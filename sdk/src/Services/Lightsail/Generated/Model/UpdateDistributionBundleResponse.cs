@@ -36,7 +36,11 @@ namespace Amazon.Lightsail.Model
         private Operation _operation;
 
         /// <summary>
-        /// Gets and sets the property Operation.
+        /// Gets and sets the property Operation. 
+        /// <para>
+        /// An object that describes the result of the action, such as the status of the request,
+        /// the timestamp of the request, and the resources affected by the request.
+        /// </para>
         /// </summary>
         public Operation Operation
         {

@@ -34,7 +34,7 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Ec2Config Marshaller
-    /// </summary>       
+    /// </summary>
     public class Ec2ConfigMarshaller : IRequestMarshaller<Ec2Config, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static Ec2ConfigMarshaller Instance = new Ec2ConfigMarshaller();
 
     }

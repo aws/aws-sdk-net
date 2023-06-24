@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Batch.Model
 {
     /// <summary>
-    /// An object representing the details of a multi-node parallel job node.
+    /// An object that represents the details of a multi-node parallel job node.
     /// </summary>
     public partial class NodeDetails
     {
@@ -57,7 +57,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property NodeIndex. 
         /// <para>
-        /// The node index for the node. Node index numbering begins at zero. This index is also
+        /// The node index for the node. Node index numbering starts at zero. This index is also
         /// available on the node with the <code>AWS_BATCH_JOB_NODE_INDEX</code> environment variable.
         /// </para>
         /// </summary>

@@ -53,7 +53,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetLatestConfigurationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("GetLatestConfiguration", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("GetLatestConfiguration", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -61,6 +61,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"Content-Type","Content-Type_Value"},
                     {"Next-Poll-Configuration-Token","Next-Poll-Configuration-Token_Value"},
                     {"Next-Poll-Interval-In-Seconds",int.MaxValue.ToString(CultureInfo.InvariantCulture)},
+                    {"Version-Label","Version-Label_Value"},
                     {"x-amzn-RequestId", Guid.NewGuid().ToString()},
                     {"x-amz-crc32","0"}
                 }
@@ -70,9 +71,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = GetLatestConfigurationResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as GetLatestConfigurationResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as GetLatestConfigurationResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -96,6 +96,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"Content-Type","Content-Type_Value"},
                     {"Next-Poll-Configuration-Token","Next-Poll-Configuration-Token_Value"},
                     {"Next-Poll-Interval-In-Seconds",int.MaxValue.ToString(CultureInfo.InvariantCulture)},
+                    {"Version-Label","Version-Label_Value"},
                     {"x-amzn-RequestId", Guid.NewGuid().ToString()},
                     {"x-amz-crc32","0"},
                     {"x-amzn-ErrorType","BadRequestException"},
@@ -131,6 +132,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"Content-Type","Content-Type_Value"},
                     {"Next-Poll-Configuration-Token","Next-Poll-Configuration-Token_Value"},
                     {"Next-Poll-Interval-In-Seconds",int.MaxValue.ToString(CultureInfo.InvariantCulture)},
+                    {"Version-Label","Version-Label_Value"},
                     {"x-amzn-RequestId", Guid.NewGuid().ToString()},
                     {"x-amz-crc32","0"},
                     {"x-amzn-ErrorType","InternalServerException"},
@@ -166,6 +168,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"Content-Type","Content-Type_Value"},
                     {"Next-Poll-Configuration-Token","Next-Poll-Configuration-Token_Value"},
                     {"Next-Poll-Interval-In-Seconds",int.MaxValue.ToString(CultureInfo.InvariantCulture)},
+                    {"Version-Label","Version-Label_Value"},
                     {"x-amzn-RequestId", Guid.NewGuid().ToString()},
                     {"x-amz-crc32","0"},
                     {"x-amzn-ErrorType","ResourceNotFoundException"},
@@ -201,6 +204,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"Content-Type","Content-Type_Value"},
                     {"Next-Poll-Configuration-Token","Next-Poll-Configuration-Token_Value"},
                     {"Next-Poll-Interval-In-Seconds",int.MaxValue.ToString(CultureInfo.InvariantCulture)},
+                    {"Version-Label","Version-Label_Value"},
                     {"x-amzn-RequestId", Guid.NewGuid().ToString()},
                     {"x-amz-crc32","0"},
                     {"x-amzn-ErrorType","ThrottlingException"},
@@ -227,7 +231,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new StartConfigurationSessionRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("StartConfigurationSession", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("StartConfigurationSession", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -241,9 +245,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = StartConfigurationSessionResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as StartConfigurationSessionResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as StartConfigurationSessionResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]

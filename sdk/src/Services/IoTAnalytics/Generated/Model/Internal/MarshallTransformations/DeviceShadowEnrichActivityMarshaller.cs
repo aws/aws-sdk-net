@@ -34,7 +34,7 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DeviceShadowEnrichActivity Marshaller
-    /// </summary>       
+    /// </summary>
     public class DeviceShadowEnrichActivityMarshaller : IRequestMarshaller<DeviceShadowEnrichActivity, JsonMarshallerContext> 
     {
         /// <summary>
@@ -79,7 +79,7 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DeviceShadowEnrichActivityMarshaller Instance = new DeviceShadowEnrichActivityMarshaller();
 
     }

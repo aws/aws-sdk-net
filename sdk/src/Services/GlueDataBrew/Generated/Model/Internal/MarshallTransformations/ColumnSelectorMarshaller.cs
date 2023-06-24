@@ -34,7 +34,7 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ColumnSelector Marshaller
-    /// </summary>       
+    /// </summary>
     public class ColumnSelectorMarshaller : IRequestMarshaller<ColumnSelector, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ColumnSelectorMarshaller Instance = new ColumnSelectorMarshaller();
 
     }

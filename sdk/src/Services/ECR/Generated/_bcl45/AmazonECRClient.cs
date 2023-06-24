@@ -243,6 +243,15 @@ namespace Amazon.ECR
         }    
 
         /// <summary>
+        /// Customize the pipeline
+        /// </summary>
+        /// <param name="pipeline"></param>
+        protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
+        {
+            pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonECREndpointResolver());
+        }    
+        /// <summary>
         /// Capture metadata for the service.
         /// </summary>
         protected override IServiceMetadata ServiceMetadata
@@ -2551,7 +2560,16 @@ namespace Amazon.ECR
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// The <code>PutImageScanningConfiguration</code> API is being deprecated, in favor of
+        /// specifying the image scanning configuration at the registry level. For more information,
+        /// see <a>PutRegistryScanningConfiguration</a>.
+        /// </para>
+        ///  </important> 
+        /// <para>
         /// Updates the image scanning configuration for the specified repository.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutImageScanningConfiguration service method.</param>
         /// 
@@ -2581,7 +2599,16 @@ namespace Amazon.ECR
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// The <code>PutImageScanningConfiguration</code> API is being deprecated, in favor of
+        /// specifying the image scanning configuration at the registry level. For more information,
+        /// see <a>PutRegistryScanningConfiguration</a>.
+        /// </para>
+        ///  </important> 
+        /// <para>
         /// Updates the image scanning configuration for the specified repository.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutImageScanningConfiguration service method.</param>
         /// <param name="cancellationToken">

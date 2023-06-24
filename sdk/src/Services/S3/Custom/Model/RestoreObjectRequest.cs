@@ -18,6 +18,7 @@ using System.Xml;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.S3.Model.Internal.MarshallTransformations;
+using Amazon.S3.Util;
 
 namespace Amazon.S3.Model
 {
@@ -43,41 +44,6 @@ namespace Amazon.S3.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// To use this operation, you must have permissions to perform the <code>s3:RestoreObject</code>
-    /// action. The bucket owner has this permission by default and can grant this permission
-    /// to others. For more information about permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">Permissions
-    /// Related to Bucket Subresource Operations</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-access-control.html">Managing
-    /// Access Permissions to Your Amazon S3 Resources</a> in the <i>Amazon S3 User Guide</i>.
-    /// </para>
-    ///  
-    /// <para>
-    ///  <b>Querying Archives with Select Requests</b> 
-    /// </para>
-    ///  
-    /// <para>
-    /// You use a select type of request to perform SQL queries on archived objects. The archived
-    /// objects that are being queried by the select request must be formatted as uncompressed
-    /// comma-separated values (CSV) files. You can run queries and custom analytics on your
-    /// archived data without having to restore your data to a hotter Amazon S3 tier. For
-    /// an overview about select requests, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/querying-glacier-archives.html">Querying
-    /// Archived Objects</a> in the <i>Amazon S3 User Guide</i>.
-    /// </para>
-    ///  
-    /// <para>
-    /// When making a select request, do the following:
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    /// Define an output location for the select query's output. This must be an Amazon S3
-    /// bucket in the same Amazon Web Services Region as the bucket that contains the archive
-    /// object that is being queried. The Amazon Web Services account that initiates the job
-    /// must have permissions to write to the S3 bucket. You can specify the storage class
-    /// and encryption for the output objects stored in the bucket. For more information about
-    /// output, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/querying-glacier-archives.html">Querying
-    /// Archived Objects</a> in the <i>Amazon S3 User Guide</i>.
-    /// </para>
-    ///  
-    /// <para>
     /// For more information about the <code>S3</code> structure in the request body, see
     /// the following:
     /// </para>
@@ -96,7 +62,7 @@ namespace Amazon.S3.Model
     ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Protecting
     /// Data Using Server-Side Encryption</a> in the <i>Amazon S3 User Guide</i> 
     /// </para>
-    ///  </li> </ul> </li> <li> 
+    ///  </li> </ul>
     /// <para>
     /// Define the SQL expression for the <code>SELECT</code> type of restoration for your
     /// query in the request body's <code>SelectParameters</code> structure. You can use expressions
@@ -131,12 +97,7 @@ namespace Amazon.S3.Model
     /// <para>
     ///  <code>SELECT s.Id, s.FirstName, s.SSN FROM S3Object s</code> 
     /// </para>
-    ///  </li> </ul> </li> </ul> 
-    /// <para>
-    /// For more information about using SQL with S3 Glacier Select restore, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-glacier-select-sql-reference.html">SQL
-    /// Reference for Amazon S3 Select and S3 Glacier Select</a> in the <i>Amazon S3 User
-    /// Guide</i>. 
-    /// </para>
+    ///  </li> </ul>
     ///  
     /// <para>
     /// When making a select request, you can also do the following:
@@ -170,20 +131,26 @@ namespace Amazon.S3.Model
     ///  Amazon S3 accepts a select request even if the object has already been restored.
     /// A select request doesn’t return error response <code>409</code>.
     /// </para>
-    ///  </li> </ul> 
+    ///  </li> </ul> <dl> <dt>Permissions</dt> <dd> 
     /// <para>
-    ///  <b>Restoring objects</b> 
+    /// To use this operation, you must have permissions to perform the <code>s3:RestoreObject</code>
+    /// action. The bucket owner has this permission by default and can grant this permission
+    /// to others. For more information about permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">Permissions
+    /// Related to Bucket Subresource Operations</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-access-control.html">Managing
+    /// Access Permissions to Your Amazon S3 Resources</a> in the <i>Amazon S3 User Guide</i>.
     /// </para>
-    ///  
+    ///  </dd> <dt>Restoring objects</dt> <dd> 
     /// <para>
-    /// Objects that you archive to the S3 Glacier or S3 Glacier Deep Archive storage class,
-    /// and S3 Intelligent-Tiering Archive or S3 Intelligent-Tiering Deep Archive tiers are
-    /// not accessible in real time. For objects in Archive Access or Deep Archive Access
-    /// tiers you must first initiate a restore request, and then wait until the object is
-    /// moved into the Frequent Access tier. For objects in S3 Glacier or S3 Glacier Deep
-    /// Archive storage classes you must first initiate a restore request, and then wait until
-    /// a temporary copy of the object is available. To access an archived object, you must
-    /// restore the object for the duration (number of days) that you specify.
+    /// Objects that you archive to the S3 Glacier Flexible Retrieval or S3 Glacier Deep Archive
+    /// storage class, and S3 Intelligent-Tiering Archive or S3 Intelligent-Tiering Deep Archive
+    /// tiers, are not accessible in real time. For objects in the S3 Glacier Flexible Retrieval
+    /// or S3 Glacier Deep Archive storage classes, you must first initiate a restore request,
+    /// and then wait until a temporary copy of the object is available. If you want a permanent
+    /// copy of the object, create a copy of it in the Amazon S3 Standard storage class in
+    /// your S3 bucket. To access an archived object, you must restore the object for the
+    /// duration (number of days) that you specify. For objects in the Archive Access or Deep
+    /// Archive Access tiers of S3 Intelligent-Tiering, you must first initiate a restore
+    /// request, and then wait until the object is moved into the Frequent Access tier.
     /// </para>
     ///  
     /// <para>
@@ -192,18 +159,17 @@ namespace Amazon.S3.Model
     /// </para>
     ///  
     /// <para>
-    /// When restoring an archived object (or using a select request), you can specify one
-    /// of the following data access tier options in the <code>Tier</code> element of the
-    /// request body: 
+    /// When restoring an archived object, you can specify one of the following data access
+    /// tier options in the <code>Tier</code> element of the request body: 
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <b> <code>Expedited</code> </b> - Expedited retrievals allow you to quickly access
-    /// your data stored in the S3 Glacier storage class or S3 Intelligent-Tiering Archive
-    /// tier when occasional urgent requests for a subset of archives are required. For all
-    /// but the largest archived objects (250 MB+), data accessed using Expedited retrievals
-    /// is typically made available within 1–5 minutes. Provisioned capacity ensures that
-    /// retrieval capacity for Expedited retrievals is available when you need it. Expedited
+    ///  <code>Expedited</code> - Expedited retrievals allow you to quickly access your data
+    /// stored in the S3 Glacier Flexible Retrieval storage class or S3 Intelligent-Tiering
+    /// Archive tier when occasional urgent requests for restoring archives are required.
+    /// For all but the largest archived objects (250 MB+), data accessed using Expedited
+    /// retrievals is typically made available within 1–5 minutes. Provisioned capacity ensures
+    /// that retrieval capacity for Expedited retrievals is available when you need it. Expedited
     /// retrievals and provisioned capacity are not available for objects stored in the S3
     /// Glacier Deep Archive storage class or S3 Intelligent-Tiering Deep Archive tier.
     /// </para>
@@ -219,12 +185,14 @@ namespace Amazon.S3.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <b> <code>Bulk</code> </b> - Bulk retrievals are the lowest-cost retrieval option
-    /// in S3 Glacier, enabling you to retrieve large amounts, even petabytes, of data inexpensively.
-    /// Bulk retrievals typically finish within 5–12 hours for objects stored in the S3 Glacier
-    /// storage class or S3 Intelligent-Tiering Archive tier. They typically finish within
-    /// 48 hours for objects stored in the S3 Glacier Deep Archive storage class or S3 Intelligent-Tiering
-    /// Deep Archive tier. Bulk retrievals are free for objects stored in S3 Intelligent-Tiering.
+    ///  <code>Bulk</code> - Bulk retrievals free for objects stored in the S3 Glacier Flexible
+    /// Retrieval and S3 Intelligent-Tiering storage classes, enabling you to retrieve large
+    /// amounts, even petabytes, of data at no cost. Bulk retrievals typically finish within
+    /// 5–12 hours for objects stored in the S3 Glacier Flexible Retrieval storage class or
+    /// S3 Intelligent-Tiering Archive tier. Bulk retrievals are also the lowest-cost retrieval
+    /// option when restoring objects from S3 Glacier Deep Archive. They typically finish
+    /// within 48 hours for objects stored in the S3 Glacier Deep Archive storage class or
+    /// S3 Intelligent-Tiering Deep Archive tier. 
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -266,11 +234,7 @@ namespace Amazon.S3.Model
     /// and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html">Object
     /// Lifecycle Management</a> in <i>Amazon S3 User Guide</i>.
     /// </para>
-    ///  
-    /// <para>
-    ///  <b>Responses</b> 
-    /// </para>
-    ///  
+    ///  </dd> <dt>Responses</dt> <dd> 
     /// <para>
     /// A successful action returns either the <code>200 OK</code> or <code>202 Accepted</code>
     /// status code. 
@@ -285,9 +249,11 @@ namespace Amazon.S3.Model
     /// If the object is previously restored, Amazon S3 returns <code>200 OK</code> in the
     /// response. 
     /// </para>
-    ///  </li> </ul> <para class="title"> <b>Special Errors</b> 
+    ///  </li> </ul> <ul> <li> 
+    /// <para>
+    /// Special errors:
     /// </para>
-    ///  <ul> <li> <ul> <li> 
+    ///  <ul> <li> 
     /// <para>
     ///  <i>Code: RestoreAlreadyInProgress</i> 
     /// </para>
@@ -322,7 +288,9 @@ namespace Amazon.S3.Model
     /// <para>
     ///  <i>SOAP Fault Code Prefix: N/A</i> 
     /// </para>
-    ///  </li> </ul> </li> </ul> <para class="title"> <b>Related Resources</b> 
+    ///  </li> </ul> </li> </ul> </dd> </dl> 
+    /// <para>
+    /// The following operations are related to <code>RestoreObject</code>:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -334,22 +302,17 @@ namespace Amazon.S3.Model
     ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketNotificationConfiguration.html">GetBucketNotificationConfiguration</a>
     /// 
     /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-glacier-select-sql-reference.html">SQL
-    /// Reference for Amazon S3 Select and S3 Glacier Select </a> in the <i>Amazon S3 User
-    /// Guide</i> 
-    /// </para>
     ///  </li> </ul>
     /// </summary>
     public partial class RestoreObjectRequest : AmazonWebServiceRequest
     {
         private string bucketName;
+        private ChecksumAlgorithm _checksumAlgorithm;
         private int? days;
         private string expectedBucketOwner;
         private string description;
         private string key;
-		private GlacierJobTier tier;
+        private GlacierJobTier tier;
         private GlacierJobTier retrievalTier;
         private RestoreRequestType type;
         private SelectParameters selectParameters;
@@ -373,12 +336,12 @@ namespace Amazon.S3.Model
         /// </para>
         ///  
         /// <para>
-        /// When using this action with Amazon S3 on Outposts, you must direct requests to the
-        /// S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
-        /// When using this action using S3 on Outposts through the Amazon Web Services SDKs,
-        /// you provide the Outposts bucket ARN in place of the bucket name. For more information
-        /// about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
-        /// S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.
+        /// When you use this action with Amazon S3 on Outposts, you must direct requests to the
+        /// S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
+        /// When you use this action with S3 on Outposts through the Amazon Web Services SDKs,
+        /// you provide the Outposts access point ARN in place of the bucket name. For more information
+        /// about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
+        /// is S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         /// </summary>
         public string BucketName
@@ -391,6 +354,27 @@ namespace Amazon.S3.Model
         internal bool IsSetBucketName()
         {
             return this.bucketName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ChecksumAlgorithm. 
+        /// <para>
+        /// Indicates the algorithm used to create the checksum for the object. Amazon S3 will
+        /// fail the request with a 400 error if there is no checksum associated with the object.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">
+        /// Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        /// </summary>
+        public ChecksumAlgorithm ChecksumAlgorithm
+        {
+            get { return this._checksumAlgorithm; }
+            set { this._checksumAlgorithm = value; }
+        }
+
+        // Check to see if ChecksumAlgorithm property is set
+        internal bool IsSetChecksumAlgorithm()
+        {
+            return this._checksumAlgorithm != null;
         }
 
         /// <summary>
@@ -541,7 +525,7 @@ namespace Amazon.S3.Model
 
         internal void Marshall(string propertyName, XmlWriter xmlWriter)
         {
-            xmlWriter.WriteStartElement(propertyName);
+            xmlWriter.WriteStartElement(propertyName, S3Constants.S3RequestXmlNamespace);
             {
                 if (IsSetRetrievalTier())
                     xmlWriter.WriteElementString("Tier", S3Transforms.ToXmlStringValue(RetrievalTier));

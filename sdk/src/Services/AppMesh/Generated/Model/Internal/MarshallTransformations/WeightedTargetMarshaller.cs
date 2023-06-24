@@ -34,7 +34,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// WeightedTarget Marshaller
-    /// </summary>       
+    /// </summary>
     public class WeightedTargetMarshaller : IRequestMarshaller<WeightedTarget, JsonMarshallerContext> 
     {
         /// <summary>
@@ -45,6 +45,12 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(WeightedTarget requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetPort())
+            {
+                context.Writer.WritePropertyName("port");
+                context.Writer.Write(requestObject.Port);
+            }
+
             if(requestObject.IsSetVirtualNode())
             {
                 context.Writer.WritePropertyName("virtualNode");
@@ -61,7 +67,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static WeightedTargetMarshaller Instance = new WeightedTargetMarshaller();
 
     }

@@ -36,8 +36,10 @@ namespace Amazon.ElasticMapReduce.Model
     {
         private string _editorId;
         private DateTime? _endTime;
+        private string _executionEngineId;
         private string _notebookExecutionId;
         private string _notebookExecutionName;
+        private NotebookS3LocationForOutput _notebookS3Location;
         private DateTime? _startTime;
         private NotebookExecutionStatus _status;
 
@@ -79,6 +81,25 @@ namespace Amazon.ElasticMapReduce.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ExecutionEngineId. 
+        /// <para>
+        /// The unique ID of the execution engine for the notebook execution.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=10280)]
+        public string ExecutionEngineId
+        {
+            get { return this._executionEngineId; }
+            set { this._executionEngineId = value; }
+        }
+
+        // Check to see if ExecutionEngineId property is set
+        internal bool IsSetExecutionEngineId()
+        {
+            return this._executionEngineId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property NotebookExecutionId. 
         /// <para>
         /// The unique identifier of the notebook execution.
@@ -114,6 +135,24 @@ namespace Amazon.ElasticMapReduce.Model
         internal bool IsSetNotebookExecutionName()
         {
             return this._notebookExecutionName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NotebookS3Location. 
+        /// <para>
+        /// The Amazon S3 location that stores the notebook execution input.
+        /// </para>
+        /// </summary>
+        public NotebookS3LocationForOutput NotebookS3Location
+        {
+            get { return this._notebookS3Location; }
+            set { this._notebookS3Location = value; }
+        }
+
+        // Check to see if NotebookS3Location property is set
+        internal bool IsSetNotebookS3Location()
+        {
+            return this._notebookS3Location != null;
         }
 
         /// <summary>

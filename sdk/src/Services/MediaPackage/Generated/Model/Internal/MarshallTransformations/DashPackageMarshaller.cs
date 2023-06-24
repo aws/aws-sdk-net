@@ -34,7 +34,7 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DashPackage Marshaller
-    /// </summary>       
+    /// </summary>
     public class DashPackageMarshaller : IRequestMarshaller<DashPackage, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,6 +71,12 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
                 marshaller.Marshall(requestObject.Encryption, context);
 
                 context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetIncludeIframeOnlyStream())
+            {
+                context.Writer.WritePropertyName("includeIframeOnlyStream");
+                context.Writer.Write(requestObject.IncludeIframeOnlyStream);
             }
 
             if(requestObject.IsSetManifestLayout())
@@ -159,7 +165,7 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DashPackageMarshaller Instance = new DashPackageMarshaller();
 
     }

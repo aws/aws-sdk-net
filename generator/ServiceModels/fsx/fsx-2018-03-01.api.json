@@ -124,6 +124,25 @@
       ],
       "idempotent":true
     },
+    "CreateFileCache":{
+      "name":"CreateFileCache",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"CreateFileCacheRequest"},
+      "output":{"shape":"CreateFileCacheResponse"},
+      "errors":[
+        {"shape":"BadRequest"},
+        {"shape":"IncompatibleParameterError"},
+        {"shape":"InvalidNetworkSettings"},
+        {"shape":"InvalidPerUnitStorageThroughput"},
+        {"shape":"ServiceLimitExceeded"},
+        {"shape":"InternalServerError"},
+        {"shape":"MissingFileCacheConfiguration"}
+      ],
+      "idempotent":true
+    },
     "CreateFileSystem":{
       "name":"CreateFileSystem",
       "http":{
@@ -273,6 +292,23 @@
       ],
       "idempotent":true
     },
+    "DeleteFileCache":{
+      "name":"DeleteFileCache",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DeleteFileCacheRequest"},
+      "output":{"shape":"DeleteFileCacheResponse"},
+      "errors":[
+        {"shape":"BadRequest"},
+        {"shape":"IncompatibleParameterError"},
+        {"shape":"FileCacheNotFound"},
+        {"shape":"ServiceLimitExceeded"},
+        {"shape":"InternalServerError"}
+      ],
+      "idempotent":true
+    },
     "DeleteFileSystem":{
       "name":"DeleteFileSystem",
       "http":{
@@ -332,7 +368,8 @@
         {"shape":"BadRequest"},
         {"shape":"IncompatibleParameterError"},
         {"shape":"InternalServerError"},
-        {"shape":"VolumeNotFound"}
+        {"shape":"VolumeNotFound"},
+        {"shape":"ServiceLimitExceeded"}
       ]
     },
     "DescribeBackups":{
@@ -382,6 +419,21 @@
         {"shape":"DataRepositoryTaskNotFound"},
         {"shape":"InternalServerError"}
       ]
+    },
+    "DescribeFileCaches":{
+      "name":"DescribeFileCaches",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DescribeFileCachesRequest"},
+      "output":{"shape":"DescribeFileCachesResponse"},
+      "errors":[
+        {"shape":"BadRequest"},
+        {"shape":"FileCacheNotFound"},
+        {"shape":"InternalServerError"}
+      ],
+      "idempotent":true
     },
     "DescribeFileSystemAliases":{
       "name":"DescribeFileSystemAliases",
@@ -566,6 +618,25 @@
       ],
       "idempotent":true
     },
+    "UpdateFileCache":{
+      "name":"UpdateFileCache",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"UpdateFileCacheRequest"},
+      "output":{"shape":"UpdateFileCacheResponse"},
+      "errors":[
+        {"shape":"BadRequest"},
+        {"shape":"UnsupportedOperation"},
+        {"shape":"IncompatibleParameterError"},
+        {"shape":"InternalServerError"},
+        {"shape":"FileCacheNotFound"},
+        {"shape":"MissingFileCacheConfiguration"},
+        {"shape":"ServiceLimitExceeded"}
+      ],
+      "idempotent":true
+    },
     "UpdateFileSystem":{
       "name":"UpdateFileSystem",
       "http":{
@@ -578,6 +649,7 @@
         {"shape":"BadRequest"},
         {"shape":"UnsupportedOperation"},
         {"shape":"IncompatibleParameterError"},
+        {"shape":"InvalidNetworkSettings"},
         {"shape":"InternalServerError"},
         {"shape":"FileSystemNotFound"},
         {"shape":"MissingFileSystemConfiguration"},
@@ -707,7 +779,8 @@
         "FILE_SYSTEM_ALIAS_DISASSOCIATION",
         "VOLUME_UPDATE",
         "SNAPSHOT_UPDATE",
-        "RELEASE_NFS_V3_LOCKS"
+        "RELEASE_NFS_V3_LOCKS",
+        "VOLUME_RESTORE"
       ]
     },
     "AdministrativeActions":{
@@ -923,6 +996,11 @@
         "TaskId":{"shape":"TaskId"}
       }
     },
+    "CapacityToRelease":{
+      "type":"long",
+      "max":2147483647,
+      "min":1
+    },
     "ClientRequestToken":{
       "type":"string",
       "max":63,
@@ -965,6 +1043,7 @@
         "Backup":{"shape":"Backup"}
       }
     },
+    "CopyTagsToDataRepositoryAssociations":{"type":"boolean"},
     "CreateBackupRequest":{
       "type":"structure",
       "members":{
@@ -987,7 +1066,6 @@
       "type":"structure",
       "required":[
         "FileSystemId",
-        "FileSystemPath",
         "DataRepositoryPath"
       ],
       "members":{
@@ -1026,13 +1104,64 @@
           "shape":"ClientRequestToken",
           "idempotencyToken":true
         },
-        "Tags":{"shape":"Tags"}
+        "Tags":{"shape":"Tags"},
+        "CapacityToRelease":{"shape":"CapacityToRelease"}
       }
     },
     "CreateDataRepositoryTaskResponse":{
       "type":"structure",
       "members":{
         "DataRepositoryTask":{"shape":"DataRepositoryTask"}
+      }
+    },
+    "CreateFileCacheDataRepositoryAssociations":{
+      "type":"list",
+      "member":{"shape":"FileCacheDataRepositoryAssociation"},
+      "max":8
+    },
+    "CreateFileCacheLustreConfiguration":{
+      "type":"structure",
+      "required":[
+        "PerUnitStorageThroughput",
+        "DeploymentType",
+        "MetadataConfiguration"
+      ],
+      "members":{
+        "PerUnitStorageThroughput":{"shape":"PerUnitStorageThroughput"},
+        "DeploymentType":{"shape":"FileCacheLustreDeploymentType"},
+        "WeeklyMaintenanceStartTime":{"shape":"WeeklyTime"},
+        "MetadataConfiguration":{"shape":"FileCacheLustreMetadataConfiguration"}
+      }
+    },
+    "CreateFileCacheRequest":{
+      "type":"structure",
+      "required":[
+        "FileCacheType",
+        "FileCacheTypeVersion",
+        "StorageCapacity",
+        "SubnetIds"
+      ],
+      "members":{
+        "ClientRequestToken":{
+          "shape":"ClientRequestToken",
+          "idempotencyToken":true
+        },
+        "FileCacheType":{"shape":"FileCacheType"},
+        "FileCacheTypeVersion":{"shape":"FileSystemTypeVersion"},
+        "StorageCapacity":{"shape":"StorageCapacity"},
+        "SubnetIds":{"shape":"SubnetIds"},
+        "SecurityGroupIds":{"shape":"SecurityGroupIds"},
+        "Tags":{"shape":"Tags"},
+        "CopyTagsToDataRepositoryAssociations":{"shape":"CopyTagsToDataRepositoryAssociations"},
+        "KmsKeyId":{"shape":"KmsKeyId"},
+        "LustreConfiguration":{"shape":"CreateFileCacheLustreConfiguration"},
+        "DataRepositoryAssociations":{"shape":"CreateFileCacheDataRepositoryAssociations"}
+      }
+    },
+    "CreateFileCacheResponse":{
+      "type":"structure",
+      "members":{
+        "FileCache":{"shape":"FileCacheCreating"}
       }
     },
     "CreateFileSystemFromBackupRequest":{
@@ -1055,7 +1184,8 @@
         "StorageType":{"shape":"StorageType"},
         "KmsKeyId":{"shape":"KmsKeyId"},
         "FileSystemTypeVersion":{"shape":"FileSystemTypeVersion"},
-        "OpenZFSConfiguration":{"shape":"CreateFileSystemOpenZFSConfiguration"}
+        "OpenZFSConfiguration":{"shape":"CreateFileSystemOpenZFSConfiguration"},
+        "StorageCapacity":{"shape":"StorageCapacity"}
       }
     },
     "CreateFileSystemFromBackupResponse":{
@@ -1079,7 +1209,8 @@
         "CopyTagsToBackups":{"shape":"Flag"},
         "DriveCacheType":{"shape":"DriveCacheType"},
         "DataCompressionType":{"shape":"DataCompressionType"},
-        "LogConfiguration":{"shape":"LustreLogCreateConfiguration"}
+        "LogConfiguration":{"shape":"LustreLogCreateConfiguration"},
+        "RootSquashConfiguration":{"shape":"LustreRootSquashConfiguration"}
       }
     },
     "CreateFileSystemOntapConfiguration":{
@@ -1171,9 +1302,7 @@
     "CreateOntapVolumeConfiguration":{
       "type":"structure",
       "required":[
-        "JunctionPath",
         "SizeInMegabytes",
-        "StorageEfficiencyEnabled",
         "StorageVirtualMachineId"
       ],
       "members":{
@@ -1182,7 +1311,10 @@
         "SizeInMegabytes":{"shape":"VolumeCapacity"},
         "StorageEfficiencyEnabled":{"shape":"Flag"},
         "StorageVirtualMachineId":{"shape":"StorageVirtualMachineId"},
-        "TieringPolicy":{"shape":"TieringPolicy"}
+        "TieringPolicy":{"shape":"TieringPolicy"},
+        "OntapVolumeType":{"shape":"InputOntapVolumeType"},
+        "SnapshotPolicy":{"shape":"SnapshotPolicy"},
+        "CopyTagsToBackups":{"shape":"Flag"}
       }
     },
     "CreateOpenZFSOriginSnapshotConfiguration":{
@@ -1201,8 +1333,9 @@
       "required":["ParentVolumeId"],
       "members":{
         "ParentVolumeId":{"shape":"VolumeId"},
-        "StorageCapacityReservationGiB":{"shape":"IntegerNoMax"},
-        "StorageCapacityQuotaGiB":{"shape":"IntegerNoMax"},
+        "StorageCapacityReservationGiB":{"shape":"IntegerNoMaxFromNegativeOne"},
+        "StorageCapacityQuotaGiB":{"shape":"IntegerNoMaxFromNegativeOne"},
+        "RecordSizeKiB":{"shape":"IntegerRecordSizeKiB"},
         "DataCompressionType":{"shape":"OpenZFSDataCompressionType"},
         "CopyTagsToSnapshots":{"shape":"Flag"},
         "OriginSnapshot":{"shape":"CreateOpenZFSOriginSnapshotConfiguration"},
@@ -1318,7 +1451,7 @@
       "type":"string",
       "max":275,
       "min":16,
-      "pattern":"^(fsi?-[0-9a-f]{8,}\\..{4,253})$"
+      "pattern":"^((fs|fc)i?-[0-9a-f]{8,}\\..{4,253})$"
     },
     "DailyTime":{
       "type":"string",
@@ -1347,7 +1480,11 @@
         "ImportedFileChunkSize":{"shape":"Megabytes"},
         "S3":{"shape":"S3DataRepositoryConfiguration"},
         "Tags":{"shape":"Tags"},
-        "CreationTime":{"shape":"CreationTime"}
+        "CreationTime":{"shape":"CreationTime"},
+        "FileCacheId":{"shape":"FileCacheId"},
+        "FileCachePath":{"shape":"Namespace"},
+        "DataRepositorySubdirectories":{"shape":"SubDirectoriesPaths"},
+        "NFS":{"shape":"NFSDataRepositoryConfiguration"}
       }
     },
     "DataRepositoryAssociationId":{
@@ -1407,8 +1544,7 @@
         "TaskId",
         "Lifecycle",
         "Type",
-        "CreationTime",
-        "FileSystemId"
+        "CreationTime"
       ],
       "members":{
         "TaskId":{"shape":"TaskId"},
@@ -1423,7 +1559,9 @@
         "Paths":{"shape":"DataRepositoryTaskPaths"},
         "FailureDetails":{"shape":"DataRepositoryTaskFailureDetails"},
         "Status":{"shape":"DataRepositoryTaskStatus"},
-        "Report":{"shape":"CompletionReport"}
+        "Report":{"shape":"CompletionReport"},
+        "CapacityToRelease":{"shape":"CapacityToRelease"},
+        "FileCacheId":{"shape":"FileCacheId"}
       }
     },
     "DataRepositoryTaskEnded":{
@@ -1458,7 +1596,8 @@
       "enum":[
         "file-system-id",
         "task-lifecycle",
-        "data-repository-association-id"
+        "data-repository-association-id",
+        "file-cache-id"
       ]
     },
     "DataRepositoryTaskFilterValue":{
@@ -1512,14 +1651,17 @@
         "TotalCount":{"shape":"TotalCount"},
         "SucceededCount":{"shape":"SucceededCount"},
         "FailedCount":{"shape":"FailedCount"},
-        "LastUpdatedTime":{"shape":"LastUpdatedTime"}
+        "LastUpdatedTime":{"shape":"LastUpdatedTime"},
+        "ReleasedCapacity":{"shape":"ReleasedCapacity"}
       }
     },
     "DataRepositoryTaskType":{
       "type":"string",
       "enum":[
         "EXPORT_TO_REPOSITORY",
-        "IMPORT_METADATA_FROM_REPOSITORY"
+        "IMPORT_METADATA_FROM_REPOSITORY",
+        "RELEASE_DATA_FROM_FILESYSTEM",
+        "AUTO_RELEASE_DATA"
       ]
     },
     "DataRepositoryTasks":{
@@ -1548,10 +1690,7 @@
     "DeleteDataInFileSystem":{"type":"boolean"},
     "DeleteDataRepositoryAssociationRequest":{
       "type":"structure",
-      "required":[
-        "AssociationId",
-        "DeleteDataInFileSystem"
-      ],
+      "required":["AssociationId"],
       "members":{
         "AssociationId":{"shape":"DataRepositoryAssociationId"},
         "ClientRequestToken":{
@@ -1567,6 +1706,24 @@
         "AssociationId":{"shape":"DataRepositoryAssociationId"},
         "Lifecycle":{"shape":"DataRepositoryLifecycle"},
         "DeleteDataInFileSystem":{"shape":"DeleteDataInFileSystem"}
+      }
+    },
+    "DeleteFileCacheRequest":{
+      "type":"structure",
+      "required":["FileCacheId"],
+      "members":{
+        "FileCacheId":{"shape":"FileCacheId"},
+        "ClientRequestToken":{
+          "shape":"ClientRequestToken",
+          "idempotencyToken":true
+        }
+      }
+    },
+    "DeleteFileCacheResponse":{
+      "type":"structure",
+      "members":{
+        "FileCacheId":{"shape":"FileCacheId"},
+        "Lifecycle":{"shape":"FileCacheLifecycle"}
       }
     },
     "DeleteFileSystemLustreConfiguration":{
@@ -1587,8 +1744,18 @@
       "type":"structure",
       "members":{
         "SkipFinalBackup":{"shape":"Flag"},
-        "FinalBackupTags":{"shape":"Tags"}
+        "FinalBackupTags":{"shape":"Tags"},
+        "Options":{"shape":"DeleteFileSystemOpenZFSOptions"}
       }
+    },
+    "DeleteFileSystemOpenZFSOption":{
+      "type":"string",
+      "enum":["DELETE_CHILD_VOLUMES_AND_SNAPSHOTS"]
+    },
+    "DeleteFileSystemOpenZFSOptions":{
+      "type":"list",
+      "member":{"shape":"DeleteFileSystemOpenZFSOption"},
+      "max":1
     },
     "DeleteFileSystemOpenZFSResponse":{
       "type":"structure",
@@ -1769,6 +1936,21 @@
         "NextToken":{"shape":"NextToken"}
       }
     },
+    "DescribeFileCachesRequest":{
+      "type":"structure",
+      "members":{
+        "FileCacheIds":{"shape":"FileCacheIds"},
+        "MaxResults":{"shape":"MaxResults"},
+        "NextToken":{"shape":"NextToken"}
+      }
+    },
+    "DescribeFileCachesResponse":{
+      "type":"structure",
+      "members":{
+        "FileCaches":{"shape":"FileCaches"},
+        "NextToken":{"shape":"NextToken"}
+      }
+    },
     "DescribeFileSystemAliasesRequest":{
       "type":"structure",
       "required":["FileSystemId"],
@@ -1939,6 +2121,136 @@
       "max":3
     },
     "FailedCount":{"type":"long"},
+    "FileCache":{
+      "type":"structure",
+      "members":{
+        "OwnerId":{"shape":"AWSAccountId"},
+        "CreationTime":{"shape":"CreationTime"},
+        "FileCacheId":{"shape":"FileCacheId"},
+        "FileCacheType":{"shape":"FileCacheType"},
+        "FileCacheTypeVersion":{"shape":"FileSystemTypeVersion"},
+        "Lifecycle":{"shape":"FileCacheLifecycle"},
+        "FailureDetails":{"shape":"FileCacheFailureDetails"},
+        "StorageCapacity":{"shape":"StorageCapacity"},
+        "VpcId":{"shape":"VpcId"},
+        "SubnetIds":{"shape":"SubnetIds"},
+        "NetworkInterfaceIds":{"shape":"NetworkInterfaceIds"},
+        "DNSName":{"shape":"DNSName"},
+        "KmsKeyId":{"shape":"KmsKeyId"},
+        "ResourceARN":{"shape":"ResourceARN"},
+        "LustreConfiguration":{"shape":"FileCacheLustreConfiguration"},
+        "DataRepositoryAssociationIds":{"shape":"DataRepositoryAssociationIds"}
+      }
+    },
+    "FileCacheCreating":{
+      "type":"structure",
+      "members":{
+        "OwnerId":{"shape":"AWSAccountId"},
+        "CreationTime":{"shape":"CreationTime"},
+        "FileCacheId":{"shape":"FileCacheId"},
+        "FileCacheType":{"shape":"FileCacheType"},
+        "FileCacheTypeVersion":{"shape":"FileSystemTypeVersion"},
+        "Lifecycle":{"shape":"FileCacheLifecycle"},
+        "FailureDetails":{"shape":"FileCacheFailureDetails"},
+        "StorageCapacity":{"shape":"StorageCapacity"},
+        "VpcId":{"shape":"VpcId"},
+        "SubnetIds":{"shape":"SubnetIds"},
+        "NetworkInterfaceIds":{"shape":"NetworkInterfaceIds"},
+        "DNSName":{"shape":"DNSName"},
+        "KmsKeyId":{"shape":"KmsKeyId"},
+        "ResourceARN":{"shape":"ResourceARN"},
+        "Tags":{"shape":"Tags"},
+        "CopyTagsToDataRepositoryAssociations":{"shape":"CopyTagsToDataRepositoryAssociations"},
+        "LustreConfiguration":{"shape":"FileCacheLustreConfiguration"},
+        "DataRepositoryAssociationIds":{"shape":"DataRepositoryAssociationIds"}
+      }
+    },
+    "FileCacheDataRepositoryAssociation":{
+      "type":"structure",
+      "required":[
+        "FileCachePath",
+        "DataRepositoryPath"
+      ],
+      "members":{
+        "FileCachePath":{"shape":"Namespace"},
+        "DataRepositoryPath":{"shape":"ArchivePath"},
+        "DataRepositorySubdirectories":{"shape":"SubDirectoriesPaths"},
+        "NFS":{"shape":"FileCacheNFSConfiguration"}
+      }
+    },
+    "FileCacheFailureDetails":{
+      "type":"structure",
+      "members":{
+        "Message":{"shape":"ErrorMessage"}
+      }
+    },
+    "FileCacheId":{
+      "type":"string",
+      "max":21,
+      "min":11,
+      "pattern":"^(fc-[0-9a-f]{8,})$"
+    },
+    "FileCacheIds":{
+      "type":"list",
+      "member":{"shape":"FileCacheId"},
+      "max":50
+    },
+    "FileCacheLifecycle":{
+      "type":"string",
+      "enum":[
+        "AVAILABLE",
+        "CREATING",
+        "DELETING",
+        "UPDATING",
+        "FAILED"
+      ]
+    },
+    "FileCacheLustreConfiguration":{
+      "type":"structure",
+      "members":{
+        "PerUnitStorageThroughput":{"shape":"PerUnitStorageThroughput"},
+        "DeploymentType":{"shape":"FileCacheLustreDeploymentType"},
+        "MountName":{"shape":"LustreFileSystemMountName"},
+        "WeeklyMaintenanceStartTime":{"shape":"WeeklyTime"},
+        "MetadataConfiguration":{"shape":"FileCacheLustreMetadataConfiguration"},
+        "LogConfiguration":{"shape":"LustreLogConfiguration"}
+      }
+    },
+    "FileCacheLustreDeploymentType":{
+      "type":"string",
+      "enum":["CACHE_1"]
+    },
+    "FileCacheLustreMetadataConfiguration":{
+      "type":"structure",
+      "required":["StorageCapacity"],
+      "members":{
+        "StorageCapacity":{"shape":"MetadataStorageCapacity"}
+      }
+    },
+    "FileCacheNFSConfiguration":{
+      "type":"structure",
+      "required":["Version"],
+      "members":{
+        "Version":{"shape":"NfsVersion"},
+        "DnsIps":{"shape":"RepositoryDnsIps"}
+      }
+    },
+    "FileCacheNotFound":{
+      "type":"structure",
+      "members":{
+        "Message":{"shape":"ErrorMessage"}
+      },
+      "exception":true
+    },
+    "FileCacheType":{
+      "type":"string",
+      "enum":["LUSTRE"]
+    },
+    "FileCaches":{
+      "type":"list",
+      "member":{"shape":"FileCache"},
+      "max":50
+    },
     "FileSystem":{
       "type":"structure",
       "members":{
@@ -2010,7 +2322,8 @@
         "FAILED",
         "DELETING",
         "MISCONFIGURED",
-        "UPDATING"
+        "UPDATING",
+        "MISCONFIGURED_UNAVAILABLE"
       ]
     },
     "FileSystemMaintenanceOperation":{
@@ -2066,7 +2379,9 @@
         "backup-type",
         "file-system-type",
         "volume-id",
-        "data-repository-type"
+        "data-repository-type",
+        "file-cache-id",
+        "file-cache-type"
       ]
     },
     "FilterValue":{
@@ -2116,10 +2431,27 @@
       },
       "exception":true
     },
+    "InputOntapVolumeType":{
+      "type":"string",
+      "enum":[
+        "RW",
+        "DP"
+      ]
+    },
     "IntegerNoMax":{
       "type":"integer",
       "max":2147483647,
       "min":0
+    },
+    "IntegerNoMaxFromNegativeOne":{
+      "type":"integer",
+      "max":2147483647,
+      "min":-1
+    },
+    "IntegerRecordSizeKiB":{
+      "type":"integer",
+      "max":1024,
+      "min":4
     },
     "InternalServerError":{
       "type":"structure",
@@ -2190,7 +2522,7 @@
     },
     "Iops":{
       "type":"long",
-      "max":160000,
+      "max":1000000,
       "min":0
     },
     "IpAddress":{
@@ -2276,7 +2608,8 @@
         "CopyTagsToBackups":{"shape":"Flag"},
         "DriveCacheType":{"shape":"DriveCacheType"},
         "DataCompressionType":{"shape":"DataCompressionType"},
-        "LogConfiguration":{"shape":"LustreLogConfiguration"}
+        "LogConfiguration":{"shape":"LustreLogConfiguration"},
+        "RootSquashConfiguration":{"shape":"LustreRootSquashConfiguration"}
       }
     },
     "LustreFileSystemMountName":{
@@ -2301,6 +2634,30 @@
         "Destination":{"shape":"GeneralARN"}
       }
     },
+    "LustreNoSquashNid":{
+      "type":"string",
+      "max":43,
+      "min":11,
+      "pattern":"^([0-9\\[\\]\\-]*\\.){3}([0-9\\[\\]\\-]*)@tcp$"
+    },
+    "LustreNoSquashNids":{
+      "type":"list",
+      "member":{"shape":"LustreNoSquashNid"},
+      "max":64
+    },
+    "LustreRootSquash":{
+      "type":"string",
+      "max":21,
+      "min":3,
+      "pattern":"^([0-9]{1,10}):([0-9]{1,10})$"
+    },
+    "LustreRootSquashConfiguration":{
+      "type":"structure",
+      "members":{
+        "RootSquash":{"shape":"LustreRootSquash"},
+        "NoSquashNids":{"shape":"LustreNoSquashNids"}
+      }
+    },
     "MaxResults":{
       "type":"integer",
       "max":2147483647,
@@ -2313,8 +2670,20 @@
     },
     "MegabytesPerSecond":{
       "type":"integer",
-      "max":4096,
+      "max":100000,
       "min":8
+    },
+    "MetadataStorageCapacity":{
+      "type":"integer",
+      "max":2147483647,
+      "min":0
+    },
+    "MissingFileCacheConfiguration":{
+      "type":"structure",
+      "members":{
+        "Message":{"shape":"ErrorMessage"}
+      },
+      "exception":true
     },
     "MissingFileSystemConfiguration":{
       "type":"structure",
@@ -2330,11 +2699,20 @@
       },
       "exception":true
     },
+    "NFSDataRepositoryConfiguration":{
+      "type":"structure",
+      "required":["Version"],
+      "members":{
+        "Version":{"shape":"NfsVersion"},
+        "DnsIps":{"shape":"RepositoryDnsIps"},
+        "AutoExportPolicy":{"shape":"AutoExportPolicy"}
+      }
+    },
     "Namespace":{
       "type":"string",
       "max":4096,
       "min":1,
-      "pattern":"^[^\\u0000\\u0085\\u2028\\u2029\\r\\n]{3,4096}$"
+      "pattern":"^[^\\u0000\\u0085\\u2028\\u2029\\r\\n]{1,4096}$"
     },
     "NetBiosAlias":{
       "type":"string",
@@ -2359,6 +2737,10 @@
       "min":1,
       "pattern":"^(?:[A-Za-z0-9+\\/]{4})*(?:[A-Za-z0-9+\\/]{2}==|[A-Za-z0-9+\\/]{3}=)?$"
     },
+    "NfsVersion":{
+      "type":"string",
+      "enum":["NFS3"]
+    },
     "NotServiceResourceError":{
       "type":"structure",
       "required":["ResourceARN"],
@@ -2370,7 +2752,10 @@
     },
     "OntapDeploymentType":{
       "type":"string",
-      "enum":["MULTI_AZ_1"]
+      "enum":[
+        "MULTI_AZ_1",
+        "SINGLE_AZ_1"
+      ]
     },
     "OntapEndpointIpAddresses":{
       "type":"list",
@@ -2390,7 +2775,8 @@
         "PreferredSubnetId":{"shape":"SubnetId"},
         "RouteTableIds":{"shape":"RouteTableIds"},
         "ThroughputCapacity":{"shape":"MegabytesPerSecond"},
-        "WeeklyMaintenanceStartTime":{"shape":"WeeklyTime"}
+        "WeeklyMaintenanceStartTime":{"shape":"WeeklyTime"},
+        "FsxAdminPassword":{"shape":"AdminPassword"}
       }
     },
     "OntapVolumeConfiguration":{
@@ -2405,7 +2791,9 @@
         "StorageVirtualMachineRoot":{"shape":"Flag"},
         "TieringPolicy":{"shape":"TieringPolicy"},
         "UUID":{"shape":"UUID"},
-        "OntapVolumeType":{"shape":"OntapVolumeType"}
+        "OntapVolumeType":{"shape":"OntapVolumeType"},
+        "SnapshotPolicy":{"shape":"SnapshotPolicy"},
+        "CopyTagsToBackups":{"shape":"Flag"}
       }
     },
     "OntapVolumeType":{
@@ -2448,6 +2836,7 @@
     "OpenZFSCreateRootVolumeConfiguration":{
       "type":"structure",
       "members":{
+        "RecordSizeKiB":{"shape":"IntegerRecordSizeKiB"},
         "DataCompressionType":{"shape":"OpenZFSDataCompressionType"},
         "NfsExports":{"shape":"OpenZFSNfsExports"},
         "UserAndGroupQuotas":{"shape":"OpenZFSUserAndGroupQuotas"},
@@ -2459,12 +2848,16 @@
       "type":"string",
       "enum":[
         "NONE",
-        "ZSTD"
+        "ZSTD",
+        "LZ4"
       ]
     },
     "OpenZFSDeploymentType":{
       "type":"string",
-      "enum":["SINGLE_AZ_1"]
+      "enum":[
+        "SINGLE_AZ_1",
+        "SINGLE_AZ_2"
+      ]
     },
     "OpenZFSFileSystemConfiguration":{
       "type":"structure",
@@ -2521,7 +2914,7 @@
     "OpenZFSUserAndGroupQuotas":{
       "type":"list",
       "member":{"shape":"OpenZFSUserOrGroupQuota"},
-      "max":100
+      "max":500
     },
     "OpenZFSUserOrGroupQuota":{
       "type":"structure",
@@ -2543,12 +2936,16 @@
         "VolumePath":{"shape":"VolumePath"},
         "StorageCapacityReservationGiB":{"shape":"IntegerNoMax"},
         "StorageCapacityQuotaGiB":{"shape":"IntegerNoMax"},
+        "RecordSizeKiB":{"shape":"IntegerRecordSizeKiB"},
         "DataCompressionType":{"shape":"OpenZFSDataCompressionType"},
         "CopyTagsToSnapshots":{"shape":"Flag"},
         "OriginSnapshot":{"shape":"OpenZFSOriginSnapshotConfiguration"},
         "ReadOnly":{"shape":"ReadOnly"},
         "NfsExports":{"shape":"OpenZFSNfsExports"},
-        "UserAndGroupQuotas":{"shape":"OpenZFSUserAndGroupQuotas"}
+        "UserAndGroupQuotas":{"shape":"OpenZFSUserAndGroupQuotas"},
+        "RestoreToSnapshot":{"shape":"SnapshotId"},
+        "DeleteIntermediateSnaphots":{"shape":"Flag"},
+        "DeleteClonedVolumes":{"shape":"Flag"}
       }
     },
     "OrganizationalUnitDistinguishedName":{
@@ -2595,6 +2992,7 @@
         "FileSystem":{"shape":"FileSystem"}
       }
     },
+    "ReleasedCapacity":{"type":"long"},
     "ReportFormat":{
       "type":"string",
       "enum":["REPORT_CSV_20191124"]
@@ -2602,6 +3000,11 @@
     "ReportScope":{
       "type":"string",
       "enum":["FAILED_FILES_ONLY"]
+    },
+    "RepositoryDnsIps":{
+      "type":"list",
+      "member":{"shape":"IpAddress"},
+      "max":10
     },
     "RequestTime":{"type":"timestamp"},
     "ResourceARN":{
@@ -2667,7 +3070,8 @@
       "type":"structure",
       "members":{
         "VolumeId":{"shape":"VolumeId"},
-        "Lifecycle":{"shape":"VolumeLifecycle"}
+        "Lifecycle":{"shape":"VolumeLifecycle"},
+        "AdministrativeActions":{"shape":"AdministrativeActions"}
       }
     },
     "RouteTableId":{
@@ -2739,7 +3143,10 @@
       "members":{
         "UserName":{"shape":"DirectoryUserName"},
         "Password":{"shape":"DirectoryPassword"},
-        "DnsIps":{"shape":"DnsIps"}
+        "DnsIps":{"shape":"DnsIps"},
+        "DomainName":{"shape":"ActiveDirectoryFullyQualifiedName"},
+        "OrganizationalUnitDistinguishedName":{"shape":"OrganizationalUnitDistinguishedName"},
+        "FileSystemAdministratorsGroup":{"shape":"FileSystemAdministratorsGroupName"}
       }
     },
     "ServiceLimit":{
@@ -2753,7 +3160,8 @@
         "TOTAL_IN_PROGRESS_COPY_BACKUPS",
         "STORAGE_VIRTUAL_MACHINES_PER_FILE_SYSTEM",
         "VOLUMES_PER_FILE_SYSTEM",
-        "TOTAL_SSD_IOPS"
+        "TOTAL_SSD_IOPS",
+        "FILE_CACHE_COUNT"
       ]
     },
     "ServiceLimitExceeded":{
@@ -2774,6 +3182,7 @@
         "VolumeId":{"shape":"VolumeId"},
         "CreationTime":{"shape":"CreationTime"},
         "Lifecycle":{"shape":"SnapshotLifecycle"},
+        "LifecycleTransitionReason":{"shape":"LifecycleTransitionReason"},
         "Tags":{"shape":"Tags"},
         "AdministrativeActions":{"shape":"AdministrativeActions"}
       }
@@ -2840,6 +3249,11 @@
         "Message":{"shape":"ErrorMessage"}
       },
       "exception":true
+    },
+    "SnapshotPolicy":{
+      "type":"string",
+      "max":255,
+      "min":1
     },
     "Snapshots":{
       "type":"list",
@@ -2984,6 +3398,11 @@
       "type":"list",
       "member":{"shape":"StorageVirtualMachine"},
       "max":50
+    },
+    "SubDirectoriesPaths":{
+      "type":"list",
+      "member":{"shape":"Namespace"},
+      "max":500
     },
     "SubnetId":{
       "type":"string",
@@ -3146,6 +3565,30 @@
         "Association":{"shape":"DataRepositoryAssociation"}
       }
     },
+    "UpdateFileCacheLustreConfiguration":{
+      "type":"structure",
+      "members":{
+        "WeeklyMaintenanceStartTime":{"shape":"WeeklyTime"}
+      }
+    },
+    "UpdateFileCacheRequest":{
+      "type":"structure",
+      "required":["FileCacheId"],
+      "members":{
+        "FileCacheId":{"shape":"FileCacheId"},
+        "ClientRequestToken":{
+          "shape":"ClientRequestToken",
+          "idempotencyToken":true
+        },
+        "LustreConfiguration":{"shape":"UpdateFileCacheLustreConfiguration"}
+      }
+    },
+    "UpdateFileCacheResponse":{
+      "type":"structure",
+      "members":{
+        "FileCache":{"shape":"FileCache"}
+      }
+    },
     "UpdateFileSystemLustreConfiguration":{
       "type":"structure",
       "members":{
@@ -3154,7 +3597,8 @@
         "AutomaticBackupRetentionDays":{"shape":"AutomaticBackupRetentionDays"},
         "AutoImportPolicy":{"shape":"AutoImportPolicyType"},
         "DataCompressionType":{"shape":"DataCompressionType"},
-        "LogConfiguration":{"shape":"LustreLogCreateConfiguration"}
+        "LogConfiguration":{"shape":"LustreLogCreateConfiguration"},
+        "RootSquashConfiguration":{"shape":"LustreRootSquashConfiguration"}
       }
     },
     "UpdateFileSystemOntapConfiguration":{
@@ -3163,7 +3607,11 @@
         "AutomaticBackupRetentionDays":{"shape":"AutomaticBackupRetentionDays"},
         "DailyAutomaticBackupStartTime":{"shape":"DailyTime"},
         "FsxAdminPassword":{"shape":"AdminPassword"},
-        "WeeklyMaintenanceStartTime":{"shape":"WeeklyTime"}
+        "WeeklyMaintenanceStartTime":{"shape":"WeeklyTime"},
+        "DiskIopsConfiguration":{"shape":"DiskIopsConfiguration"},
+        "ThroughputCapacity":{"shape":"MegabytesPerSecond"},
+        "AddRouteTableIds":{"shape":"RouteTableIds"},
+        "RemoveRouteTableIds":{"shape":"RouteTableIds"}
       }
     },
     "UpdateFileSystemOpenZFSConfiguration":{
@@ -3218,14 +3666,17 @@
         "SecurityStyle":{"shape":"SecurityStyle"},
         "SizeInMegabytes":{"shape":"VolumeCapacity"},
         "StorageEfficiencyEnabled":{"shape":"Flag"},
-        "TieringPolicy":{"shape":"TieringPolicy"}
+        "TieringPolicy":{"shape":"TieringPolicy"},
+        "SnapshotPolicy":{"shape":"SnapshotPolicy"},
+        "CopyTagsToBackups":{"shape":"Flag"}
       }
     },
     "UpdateOpenZFSVolumeConfiguration":{
       "type":"structure",
       "members":{
-        "StorageCapacityReservationGiB":{"shape":"IntegerNoMax"},
-        "StorageCapacityQuotaGiB":{"shape":"IntegerNoMax"},
+        "StorageCapacityReservationGiB":{"shape":"IntegerNoMaxFromNegativeOne"},
+        "StorageCapacityQuotaGiB":{"shape":"IntegerNoMaxFromNegativeOne"},
+        "RecordSizeKiB":{"shape":"IntegerRecordSizeKiB"},
         "DataCompressionType":{"shape":"OpenZFSDataCompressionType"},
         "NfsExports":{"shape":"OpenZFSNfsExports"},
         "UserAndGroupQuotas":{"shape":"OpenZFSUserAndGroupQuotas"},
@@ -3275,7 +3726,8 @@
     "UpdateSvmActiveDirectoryConfiguration":{
       "type":"structure",
       "members":{
-        "SelfManagedActiveDirectoryConfiguration":{"shape":"SelfManagedActiveDirectoryConfigurationUpdates"}
+        "SelfManagedActiveDirectoryConfiguration":{"shape":"SelfManagedActiveDirectoryConfigurationUpdates"},
+        "NetBiosName":{"shape":"NetBiosAlias"}
       }
     },
     "UpdateVolumeRequest":{

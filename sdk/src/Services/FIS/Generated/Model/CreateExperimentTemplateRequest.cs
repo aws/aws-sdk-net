@@ -34,13 +34,13 @@ namespace Amazon.FIS.Model
     /// 
     ///  
     /// <para>
-    /// To create a template, specify the following information: 
+    /// An experiment template includes the following components:
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <b>Targets</b>: A target can be a specific resource in your AWS environment, or one
-    /// or more resources that match criteria that you specify, for example, resources that
-    /// have specific tags.
+    ///  <b>Targets</b>: A target can be a specific resource in your Amazon Web Services environment,
+    /// or one or more resources that match criteria that you specify, for example, resources
+    /// that have specific tags.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -55,8 +55,8 @@ namespace Amazon.FIS.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// For more information, see the <a href="https://docs.aws.amazon.com/fis/latest/userguide/">AWS
-    /// Fault Injection Simulator User Guide</a>.
+    /// For more information, see <a href="https://docs.aws.amazon.com/fis/latest/userguide/experiment-templates.html">Experiment
+    /// templates</a> in the <i>Fault Injection Simulator User Guide</i>.
     /// </para>
     /// </summary>
     public partial class CreateExperimentTemplateRequest : AmazonFISRequest
@@ -64,6 +64,7 @@ namespace Amazon.FIS.Model
         private Dictionary<string, CreateExperimentTemplateActionInput> _actions = new Dictionary<string, CreateExperimentTemplateActionInput>();
         private string _clientToken;
         private string _description;
+        private CreateExperimentTemplateLogConfigurationInput _logConfiguration;
         private string _roleArn;
         private List<CreateExperimentTemplateStopConditionInput> _stopConditions = new List<CreateExperimentTemplateStopConditionInput>();
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
@@ -111,7 +112,7 @@ namespace Amazon.FIS.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// A description for the experiment template. Can contain up to 64 letters (A-Z and a-z).
+        /// A description for the experiment template.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=512)]
@@ -128,9 +129,27 @@ namespace Amazon.FIS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property LogConfiguration. 
+        /// <para>
+        /// The configuration for experiment logging.
+        /// </para>
+        /// </summary>
+        public CreateExperimentTemplateLogConfigurationInput LogConfiguration
+        {
+            get { return this._logConfiguration; }
+            set { this._logConfiguration = value; }
+        }
+
+        // Check to see if LogConfiguration property is set
+        internal bool IsSetLogConfiguration()
+        {
+            return this._logConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of an IAM role that grants the AWS FIS service permission
+        /// The Amazon Resource Name (ARN) of an IAM role that grants the FIS service permission
         /// to perform service actions on your behalf.
         /// </para>
         /// </summary>

@@ -59,8 +59,8 @@ namespace Amazon.WorkMail.Model
         /// <summary>
         /// Gets and sets the property Overrides. 
         /// <para>
-        /// The list of mobile device access overrides that exist for the specified Amazon WorkMail
-        /// organization and user.
+        /// The list of mobile device access overrides that exist for the specified WorkMail organization
+        /// and user.
         /// </para>
         /// </summary>
         public List<MobileDeviceAccessOverride> Overrides

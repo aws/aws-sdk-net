@@ -30,8 +30,9 @@ namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeDomainAutoTunes operation.
-    /// Provides scheduled Auto-Tune action details for the domain, such as Auto-Tune action
-    /// type, description, severity, and scheduled date.
+    /// Returns the list of optimizations that Auto-Tune has made to an Amazon OpenSearch
+    /// Service domain. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html">Auto-Tune
+    /// for Amazon OpenSearch Service</a>.
     /// </summary>
     public partial class DescribeDomainAutoTunesRequest : AmazonOpenSearchServiceRequest
     {
@@ -42,7 +43,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property DomainName. 
         /// <para>
-        /// The domain name for which you want Auto-Tune action details.
+        /// Name of the domain that you want Auto-Tune details about.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=3, Max=28)]
@@ -61,8 +62,8 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// Set this value to limit the number of results returned. If not specified, defaults
-        /// to 100.
+        /// An optional parameter that specifies the maximum number of results to return. You
+        /// can use <code>nextToken</code> to get the next page of results.
         /// </para>
         /// </summary>
         [AWSProperty(Max=100)]
@@ -81,8 +82,9 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// NextToken is sent in case the earlier API call results contain the NextToken. Used
-        /// for pagination.
+        /// If your initial <code>DescribeDomainAutoTunes</code> operation returns a <code>nextToken</code>,
+        /// you can include the returned <code>nextToken</code> in subsequent <code>DescribeDomainAutoTunes</code>
+        /// operations, which returns results in the next page.
         /// </para>
         /// </summary>
         public string NextToken

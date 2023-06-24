@@ -76,6 +76,12 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
                     unmarshalledObject.CustomStepDetails = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DecryptStepDetails", targetDepth))
+                {
+                    var unmarshaller = DecryptStepDetailsUnmarshaller.Instance;
+                    unmarshalledObject.DecryptStepDetails = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DeleteStepDetails", targetDepth))
                 {
                     var unmarshaller = DeleteStepDetailsUnmarshaller.Instance;

@@ -32,6 +32,12 @@ namespace Amazon.Kendra.Model
     /// Container for the parameters to the CreateThesaurus operation.
     /// Creates a thesaurus for an index. The thesaurus contains a list of synonyms in Solr
     /// format.
+    /// 
+    ///  
+    /// <para>
+    /// For an example of adding a thesaurus file to an index, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/index-synonyms-adding-thesaurus-file.html">Adding
+    /// custom synonyms to an index</a>.
+    /// </para>
     /// </summary>
     public partial class CreateThesaurusRequest : AmazonKendraRequest
     {
@@ -47,8 +53,8 @@ namespace Amazon.Kendra.Model
         /// Gets and sets the property ClientToken. 
         /// <para>
         /// A token that you provide to identify the request to create a thesaurus. Multiple calls
-        /// to the <code>CreateThesaurus</code> operation with the same client token will create
-        /// only one thesaurus. 
+        /// to the <code>CreateThesaurus</code> API with the same client token will create only
+        /// one thesaurus. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -67,7 +73,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description for the new thesaurus.
+        /// A description for the thesaurus.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1000)]
@@ -86,7 +92,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property IndexId. 
         /// <para>
-        /// The unique identifier of the index for the new thesaurus. 
+        /// The identifier of the index for the thesaurus.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]
@@ -105,7 +111,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name for the new thesaurus.
+        /// A name for the thesaurus.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
@@ -124,8 +130,9 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// An IAM role that gives Amazon Kendra permissions to access thesaurus file specified
-        /// in <code>SourceS3Path</code>. 
+        /// The Amazon Resource Name (ARN) of an IAM role with permission to access your S3 bucket
+        /// that contains the thesaurus file. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM
+        /// access roles for Amazon Kendra</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=1284)]
@@ -144,7 +151,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property SourceS3Path. 
         /// <para>
-        /// The thesaurus file Amazon S3 source path. 
+        /// The path to the thesaurus file in S3.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -163,8 +170,10 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// A list of key-value pairs that identify the thesaurus. You can use the tags to identify
-        /// and organize your resources and to control access to resources. 
+        /// A list of key-value pairs that identify or categorize the thesaurus. You can also
+        /// use tags to help control access to the thesaurus. Tag keys and values can consist
+        /// of Unicode letters, digits, white space, and any of the following symbols: _ . : /
+        /// = + - @.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=200)]

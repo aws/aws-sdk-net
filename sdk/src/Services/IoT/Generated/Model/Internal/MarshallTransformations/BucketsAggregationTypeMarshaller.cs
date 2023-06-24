@@ -34,7 +34,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// BucketsAggregationType Marshaller
-    /// </summary>       
+    /// </summary>
     public class BucketsAggregationTypeMarshaller : IRequestMarshaller<BucketsAggregationType, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static BucketsAggregationTypeMarshaller Instance = new BucketsAggregationTypeMarshaller();
 
     }

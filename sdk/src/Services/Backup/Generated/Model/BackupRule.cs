@@ -112,13 +112,16 @@ namespace Amazon.Backup.Model
         ///  
         /// <para>
         /// Backups transitioned to cold storage must be stored in cold storage for a minimum
-        /// of 90 days. Therefore, the “expire after days” setting must be 90 days greater than
-        /// the “transition to cold after days” setting. The “transition to cold after days” setting
-        /// cannot be changed after a backup has been transitioned to cold. 
+        /// of 90 days. Therefore, the “retention” setting must be 90 days greater than the “transition
+        /// to cold after days” setting. The “transition to cold after days” setting cannot be
+        /// changed after a backup has been transitioned to cold. 
         /// </para>
         ///  
         /// <para>
-        /// Only Amazon EFS file system backups can be transitioned to cold storage.
+        /// Resource types that are able to be transitioned to cold storage are listed in the
+        /// "Lifecycle to cold storage" section of the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource">
+        /// Feature availability by resource</a> table. Backup ignores this expression for other
+        /// resource types.
         /// </para>
         /// </summary>
         public Lifecycle Lifecycle
@@ -140,6 +143,7 @@ namespace Amazon.Backup.Model
         /// with this rule when restored from backup.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public Dictionary<string, string> RecoveryPointTags
         {
             get { return this._recoveryPointTags; }
@@ -217,7 +221,18 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property StartWindowMinutes. 
         /// <para>
         /// A value in minutes after a backup is scheduled before a job will be canceled if it
-        /// doesn't start successfully. This value is optional.
+        /// doesn't start successfully. This value is optional. If this value is included, it
+        /// must be at least 60 minutes to avoid errors.
+        /// </para>
+        ///  
+        /// <para>
+        /// During the start window, the backup job status remains in <code>CREATED</code> status
+        /// until it has successfully begun or until the start window time has run out. If within
+        /// the start window time Backup receives an error that allows the job to be retried,
+        /// Backup will automatically retry to begin the job at least every 10 minutes until the
+        /// backup successfully begins (the job status changes to <code>RUNNING</code>) or until
+        /// the job status changes to <code>EXPIRED</code> (which is expected to occur when the
+        /// start window time is over).
         /// </para>
         /// </summary>
         public long StartWindowMinutes

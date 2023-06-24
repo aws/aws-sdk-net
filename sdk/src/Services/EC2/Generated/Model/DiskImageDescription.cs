@@ -88,6 +88,7 @@ namespace Amazon.EC2.Model
         /// Import Manifest</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string ImportManifestUrl
         {
             get { return this._importManifestUrl; }

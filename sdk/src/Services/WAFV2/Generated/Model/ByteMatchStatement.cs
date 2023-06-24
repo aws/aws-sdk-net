@@ -33,7 +33,7 @@ namespace Amazon.WAFV2.Model
     /// The byte match statement provides the bytes to search for, the location in requests
     /// that you want WAF to search, and other settings. The bytes to search for are typically
     /// a string that corresponds with ASCII characters. In the WAF console and the developer
-    /// guide, this is refered to as a string match statement.
+    /// guide, this is called a string match statement.
     /// </summary>
     public partial class ByteMatchStatement
     {
@@ -45,8 +45,7 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property FieldToMatch. 
         /// <para>
-        /// The part of a web request that you want WAF to inspect. For more information, see
-        /// <a>FieldToMatch</a>. 
+        /// The part of the web request that you want WAF to inspect. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -65,7 +64,7 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property PositionalConstraint. 
         /// <para>
-        /// The area within the portion of a web request that you want WAF to search for <code>SearchString</code>.
+        /// The area within the portion of the web request that you want WAF to search for <code>SearchString</code>.
         /// Valid values include the following:
         /// </para>
         ///  
@@ -146,7 +145,7 @@ namespace Amazon.WAFV2.Model
         /// <para>
         /// A string value that you want WAF to search for. WAF searches only in the part of web
         /// requests that you designate for inspection in <a>FieldToMatch</a>. The maximum length
-        /// of the value is 50 bytes.
+        /// of the value is 200 bytes.
         /// </para>
         ///  
         /// <para>
@@ -162,6 +161,12 @@ namespace Amazon.WAFV2.Model
         ///  <code>UriPath</code>: The value that you want WAF to search for in the URI path,
         /// for example, <code>/images/daily-ad.jpg</code>. 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>HeaderOrder</code>: The comma-separated list of header names to match for.
+        /// WAF creates a string that contains the ordered list of header names, from the headers
+        /// in the web request, and then matches against that string. 
+        /// </para>
         ///  </li> </ul> 
         /// <para>
         /// If <code>SearchString</code> includes alphabetic characters A-Z and a-z, note that
@@ -174,7 +179,7 @@ namespace Amazon.WAFV2.Model
         ///  
         /// <para>
         /// Specify a base64-encoded version of the value. The maximum length of the value before
-        /// you base64-encode it is 50 bytes.
+        /// you base64-encode it is 200 bytes.
         /// </para>
         ///  
         /// <para>
@@ -211,10 +216,12 @@ namespace Amazon.WAFV2.Model
         /// Gets and sets the property TextTransformations. 
         /// <para>
         /// Text transformations eliminate some of the unusual formatting that attackers use in
-        /// web requests in an effort to bypass detection. If you specify one or more transformations
-        /// in a rule statement, WAF performs all transformations on the content of the request
-        /// component identified by <code>FieldToMatch</code>, starting from the lowest priority
-        /// setting, before inspecting the content for a match.
+        /// web requests in an effort to bypass detection. Text transformations are used in rule
+        /// match statements, to transform the <code>FieldToMatch</code> request component before
+        /// inspecting it, and they're used in rate-based rule statements, to transform request
+        /// components before using them as custom aggregation keys. If you specify one or more
+        /// transformations to apply, WAF performs all transformations on the specified content,
+        /// starting from the lowest priority setting, and then uses the component contents. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]

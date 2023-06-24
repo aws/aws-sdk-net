@@ -34,7 +34,7 @@ namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Authorization Marshaller
-    /// </summary>       
+    /// </summary>
     public class AuthorizationMarshaller : IRequestMarshaller<Authorization, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AuthorizationMarshaller Instance = new AuthorizationMarshaller();
 
     }

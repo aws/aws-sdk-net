@@ -58,7 +58,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             string target = "ElasticMapReduce.StartNotebookExecution";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2009-03-31";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2009-03-31";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -71,6 +71,20 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("EditorId");
                     context.Writer.Write(publicRequest.EditorId);
+                }
+
+                if(publicRequest.IsSetEnvironmentVariables())
+                {
+                    context.Writer.WritePropertyName("EnvironmentVariables");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestEnvironmentVariablesKvp in publicRequest.EnvironmentVariables)
+                    {
+                        context.Writer.WritePropertyName(publicRequestEnvironmentVariablesKvp.Key);
+                        var publicRequestEnvironmentVariablesValue = publicRequestEnvironmentVariablesKvp.Value;
+
+                            context.Writer.Write(publicRequestEnvironmentVariablesValue);
+                    }
+                    context.Writer.WriteObjectEnd();
                 }
 
                 if(publicRequest.IsSetExecutionEngine())
@@ -102,6 +116,34 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.NotebookParams);
                 }
 
+                if(publicRequest.IsSetNotebookS3Location())
+                {
+                    context.Writer.WritePropertyName("NotebookS3Location");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = NotebookS3LocationFromInputMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.NotebookS3Location, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetOutputNotebookFormat())
+                {
+                    context.Writer.WritePropertyName("OutputNotebookFormat");
+                    context.Writer.Write(publicRequest.OutputNotebookFormat);
+                }
+
+                if(publicRequest.IsSetOutputNotebookS3Location())
+                {
+                    context.Writer.WritePropertyName("OutputNotebookS3Location");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = OutputNotebookS3LocationFromInputMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.OutputNotebookS3Location, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetRelativePath())
                 {
                     context.Writer.WritePropertyName("RelativePath");
@@ -130,7 +172,6 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

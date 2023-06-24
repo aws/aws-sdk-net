@@ -17,22 +17,22 @@
  * Do not modify this file. This file is generated from the grafana-2020-08-18.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
-
+using Amazon.ManagedGrafana.Internal;
 
 namespace Amazon.ManagedGrafana
 {
     /// <summary>
     /// Configuration for accessing Amazon ManagedGrafana service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonManagedGrafanaConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.27");
+            InternalSDKUtils.BuildUserAgentString("3.7.103.25");
 
         private string _userAgent = UserAgentString;
 
@@ -40,8 +40,10 @@ namespace Amazon.ManagedGrafana
         /// Default constructor
         /// </summary>
         public AmazonManagedGrafanaConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonManagedGrafanaDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "grafana";
+            this.EndpointProvider = new AmazonManagedGrafanaEndpointProvider();
         }
 
         /// <summary>
@@ -76,5 +78,6 @@ namespace Amazon.ManagedGrafana
                 return _userAgent;
             }
         }
+
     }
 }

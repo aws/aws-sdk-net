@@ -30,13 +30,15 @@ namespace Amazon.Personalize.Model
 {
     /// <summary>
     /// Provides a summary of the properties of a solution. For a complete listing, call the
-    /// <a>DescribeSolution</a> API.
+    /// <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeSolution.html">DescribeSolution</a>
+    /// API.
     /// </summary>
     public partial class SolutionSummary
     {
         private DateTime? _creationDateTime;
         private DateTime? _lastUpdatedDateTime;
         private string _name;
+        private string _recipeArn;
         private string _solutionArn;
         private string _status;
 
@@ -93,6 +95,25 @@ namespace Amazon.Personalize.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RecipeArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the recipe used by the solution.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=256)]
+        public string RecipeArn
+        {
+            get { return this._recipeArn; }
+            set { this._recipeArn = value; }
+        }
+
+        // Check to see if RecipeArn property is set
+        internal bool IsSetRecipeArn()
+        {
+            return this._recipeArn != null;
         }
 
         /// <summary>

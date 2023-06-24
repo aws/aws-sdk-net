@@ -34,7 +34,7 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ZeppelinApplicationConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class ZeppelinApplicationConfigurationMarshaller : IRequestMarshaller<ZeppelinApplicationConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -98,7 +98,7 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ZeppelinApplicationConfigurationMarshaller Instance = new ZeppelinApplicationConfigurationMarshaller();
 
     }

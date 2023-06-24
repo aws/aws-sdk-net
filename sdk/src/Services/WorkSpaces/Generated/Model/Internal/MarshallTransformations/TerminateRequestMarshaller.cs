@@ -34,7 +34,7 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// TerminateRequest Marshaller
-    /// </summary>       
+    /// </summary>
     public class TerminateRequestMarshaller : IRequestMarshaller<TerminateRequest, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static TerminateRequestMarshaller Instance = new TerminateRequestMarshaller();
 
     }

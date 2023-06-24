@@ -29,18 +29,19 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// The Auto-Tune options: the Auto-Tune desired state for the domain and list of maintenance
-    /// schedules.
+    /// Options for configuring Auto-Tune. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html">Auto-Tune
+    /// for Amazon OpenSearch Service</a>
     /// </summary>
     public partial class AutoTuneOptionsInput
     {
         private AutoTuneDesiredState _desiredState;
         private List<AutoTuneMaintenanceSchedule> _maintenanceSchedules = new List<AutoTuneMaintenanceSchedule>();
+        private bool? _useOffPeakWindow;
 
         /// <summary>
         /// Gets and sets the property DesiredState. 
         /// <para>
-        /// The Auto-Tune desired state. Valid values are ENABLED and DISABLED.
+        /// Whether Auto-Tune is enabled or disabled.
         /// </para>
         /// </summary>
         public AutoTuneDesiredState DesiredState
@@ -58,9 +59,9 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property MaintenanceSchedules. 
         /// <para>
-        /// A list of maintenance schedules. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html"
-        /// target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more information.
-        /// 
+        /// A list of maintenance schedules during which Auto-Tune can deploy changes. Maintenance
+        /// windows are deprecated and have been replaced with <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/off-peak.html">off-peak
+        /// windows</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=100)]
@@ -74,6 +75,25 @@ namespace Amazon.OpenSearchService.Model
         internal bool IsSetMaintenanceSchedules()
         {
             return this._maintenanceSchedules != null && this._maintenanceSchedules.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UseOffPeakWindow. 
+        /// <para>
+        /// Whether to schedule Auto-Tune optimizations that require blue/green deployments during
+        /// the domain's configured daily off-peak window.
+        /// </para>
+        /// </summary>
+        public bool UseOffPeakWindow
+        {
+            get { return this._useOffPeakWindow.GetValueOrDefault(); }
+            set { this._useOffPeakWindow = value; }
+        }
+
+        // Check to see if UseOffPeakWindow property is set
+        internal bool IsSetUseOffPeakWindow()
+        {
+            return this._useOffPeakWindow.HasValue; 
         }
 
     }

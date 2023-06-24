@@ -30,20 +30,20 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeGameServerGroup operation.
-    /// <b>This operation is used with the GameLift FleetIQ solution and game server groups.</b>
-    /// 
+    /// <b>This operation is used with the Amazon GameLift FleetIQ solution and game server
+    /// groups.</b> 
     /// 
     ///  
     /// <para>
     /// Retrieves information on a game server group. This operation returns only properties
-    /// related to GameLift FleetIQ. To view or update properties for the corresponding Auto
-    /// Scaling group, such as launch template, auto scaling policies, and maximum/minimum
+    /// related to Amazon GameLift FleetIQ. To view or update properties for the corresponding
+    /// Auto Scaling group, such as launch template, auto scaling policies, and maximum/minimum
     /// group size, access the Auto Scaling group directly.
     /// </para>
     ///  
     /// <para>
     /// To get attributes for a game server group, provide a group name or ARN value. If successful,
-    /// a <a>GameServerGroup</a> object is returned.
+    /// a <code>GameServerGroup</code> object is returned.
     /// </para>
     ///  
     /// <para>
@@ -51,19 +51,8 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  
     /// <para>
-    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-intro.html">GameLift
-    /// FleetIQ Guide</a> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <b>Related actions</b> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <a>CreateGameServerGroup</a> | <a>ListGameServerGroups</a> | <a>DescribeGameServerGroup</a>
-    /// | <a>UpdateGameServerGroup</a> | <a>DeleteGameServerGroup</a> | <a>ResumeGameServerGroup</a>
-    /// | <a>SuspendGameServerGroup</a> | <a>DescribeGameServerInstances</a> | <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/reference-awssdk-fleetiq.html">All
-    /// APIs by task</a> 
+    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-intro.html">Amazon
+    /// GameLift FleetIQ Guide</a> 
     /// </para>
     /// </summary>
     public partial class DescribeGameServerGroupRequest : AmazonGameLiftRequest
@@ -73,8 +62,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property GameServerGroupName. 
         /// <para>
-        /// A unique identifier for the game server group. Use either the <a>GameServerGroup</a>
-        /// name or ARN value.
+        /// A unique identifier for the game server group. Use either the name or ARN value.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]

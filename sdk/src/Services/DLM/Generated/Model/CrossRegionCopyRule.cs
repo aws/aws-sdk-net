@@ -29,7 +29,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DLM.Model
 {
     /// <summary>
-    /// Specifies a rule for cross-Region snapshot copies.
+    /// <b>[Snapshot and AMI policies only]</b> Specifies a cross-Region copy rule for snapshot
+    /// and AMI policies.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// To specify a cross-Region copy action for event-based polices, use <a>CrossRegionCopyAction</a>.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class CrossRegionCopyRule
     {
@@ -64,8 +71,8 @@ namespace Amazon.DLM.Model
         /// <summary>
         /// Gets and sets the property CopyTags. 
         /// <para>
-        /// Indicates whether to copy all user-defined tags from the source snapshot to the cross-Region
-        /// snapshot copy.
+        /// Indicates whether to copy all user-defined tags from the source snapshot or AMI to
+        /// the cross-Region copy.
         /// </para>
         /// </summary>
         public bool CopyTags
@@ -83,7 +90,8 @@ namespace Amazon.DLM.Model
         /// <summary>
         /// Gets and sets the property DeprecateRule. 
         /// <para>
-        /// The AMI deprecation rule for cross-Region AMI copies created by the rule.
+        ///  <b>[AMI policies only]</b> The AMI deprecation rule for cross-Region AMI copies created
+        /// by the rule.
         /// </para>
         /// </summary>
         public CrossRegionCopyDeprecateRule DeprecateRule
@@ -122,8 +130,8 @@ namespace Amazon.DLM.Model
         /// <summary>
         /// Gets and sets the property RetainRule. 
         /// <para>
-        /// The retention rule that indicates how long snapshot copies are to be retained in the
-        /// destination Region.
+        /// The retention rule that indicates how long the cross-Region snapshot or AMI copies
+        /// are to be retained in the destination Region.
         /// </para>
         /// </summary>
         public CrossRegionCopyRetainRule RetainRule
@@ -163,7 +171,7 @@ namespace Amazon.DLM.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TargetRegion. 
+        /// Gets and sets the property TargetRegion. <note> 
         /// <para>
         /// Avoid using this parameter when creating new policies. Instead, use <b>Target</b>
         /// to specify a target Region or a target Outpost for snapshot copies.
@@ -173,6 +181,7 @@ namespace Amazon.DLM.Model
         /// For policies created before the <b>Target</b> parameter was introduced, this parameter
         /// indicates the target Region for snapshot copies.
         /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=0, Max=16)]
         public string TargetRegion

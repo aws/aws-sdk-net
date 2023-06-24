@@ -34,7 +34,7 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// FieldToMatch Marshaller
-    /// </summary>       
+    /// </summary>
     public class FieldToMatchMarshaller : IRequestMarshaller<FieldToMatch, JsonMarshallerContext> 
     {
         /// <summary>
@@ -63,6 +63,39 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 
                 var marshaller = BodyMarshaller.Instance;
                 marshaller.Marshall(requestObject.Body, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetCookies())
+            {
+                context.Writer.WritePropertyName("Cookies");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = CookiesMarshaller.Instance;
+                marshaller.Marshall(requestObject.Cookies, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetHeaderOrder())
+            {
+                context.Writer.WritePropertyName("HeaderOrder");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = HeaderOrderMarshaller.Instance;
+                marshaller.Marshall(requestObject.HeaderOrder, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetHeaders())
+            {
+                context.Writer.WritePropertyName("Headers");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = HeadersMarshaller.Instance;
+                marshaller.Marshall(requestObject.Headers, context);
 
                 context.Writer.WriteObjectEnd();
             }
@@ -137,7 +170,7 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static FieldToMatchMarshaller Instance = new FieldToMatchMarshaller();
 
     }

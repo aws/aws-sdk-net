@@ -42,7 +42,7 @@ namespace Amazon.NetworkManager.Model
         /// The message for the field.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=0, Max=10000000)]
         public string Message
         {
             get { return this._message; }
@@ -61,7 +61,7 @@ namespace Amazon.NetworkManager.Model
         /// The name of the field.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=0, Max=10000000)]
         public string Name
         {
             get { return this._name; }

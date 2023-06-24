@@ -34,7 +34,7 @@ namespace Amazon.SnowDeviceManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Command Marshaller
-    /// </summary>       
+    /// </summary>
     public class CommandMarshaller : IRequestMarshaller<Command, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.SnowDeviceManagement.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CommandMarshaller Instance = new CommandMarshaller();
 
     }

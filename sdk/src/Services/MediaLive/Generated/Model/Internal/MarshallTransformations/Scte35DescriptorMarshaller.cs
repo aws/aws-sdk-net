@@ -34,7 +34,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Scte35Descriptor Marshaller
-    /// </summary>       
+    /// </summary>
     public class Scte35DescriptorMarshaller : IRequestMarshaller<Scte35Descriptor, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static Scte35DescriptorMarshaller Instance = new Scte35DescriptorMarshaller();
 
     }

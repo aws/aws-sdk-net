@@ -131,6 +131,10 @@ namespace Amazon.Organizations
         /// </summary>
         public static readonly AccountStatus ACTIVE = new AccountStatus("ACTIVE");
         /// <summary>
+        /// Constant PENDING_CLOSURE for AccountStatus
+        /// </summary>
+        public static readonly AccountStatus PENDING_CLOSURE = new AccountStatus("PENDING_CLOSURE");
+        /// <summary>
         /// Constant SUSPENDED for AccountStatus
         /// </summary>
         public static readonly AccountStatus SUSPENDED = new AccountStatus("SUSPENDED");
@@ -297,6 +301,10 @@ namespace Amazon.Organizations
         /// </summary>
         public static readonly ConstraintViolationExceptionReason ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION = new ConstraintViolationExceptionReason("ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION");
         /// <summary>
+        /// Constant ACCOUNT_CREATION_NOT_COMPLETE for ConstraintViolationExceptionReason
+        /// </summary>
+        public static readonly ConstraintViolationExceptionReason ACCOUNT_CREATION_NOT_COMPLETE = new ConstraintViolationExceptionReason("ACCOUNT_CREATION_NOT_COMPLETE");
+        /// <summary>
         /// Constant ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED for ConstraintViolationExceptionReason
         /// </summary>
         public static readonly ConstraintViolationExceptionReason ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED = new ConstraintViolationExceptionReason("ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED");
@@ -305,6 +313,10 @@ namespace Amazon.Organizations
         /// </summary>
         public static readonly ConstraintViolationExceptionReason ACCOUNT_NUMBER_LIMIT_EXCEEDED = new ConstraintViolationExceptionReason("ACCOUNT_NUMBER_LIMIT_EXCEEDED");
         /// <summary>
+        /// Constant CANNOT_CLOSE_MANAGEMENT_ACCOUNT for ConstraintViolationExceptionReason
+        /// </summary>
+        public static readonly ConstraintViolationExceptionReason CANNOT_CLOSE_MANAGEMENT_ACCOUNT = new ConstraintViolationExceptionReason("CANNOT_CLOSE_MANAGEMENT_ACCOUNT");
+        /// <summary>
         /// Constant CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR for ConstraintViolationExceptionReason
         /// </summary>
         public static readonly ConstraintViolationExceptionReason CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR = new ConstraintViolationExceptionReason("CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR");
@@ -312,6 +324,14 @@ namespace Amazon.Organizations
         /// Constant CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG for ConstraintViolationExceptionReason
         /// </summary>
         public static readonly ConstraintViolationExceptionReason CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG = new ConstraintViolationExceptionReason("CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG");
+        /// <summary>
+        /// Constant CLOSE_ACCOUNT_QUOTA_EXCEEDED for ConstraintViolationExceptionReason
+        /// </summary>
+        public static readonly ConstraintViolationExceptionReason CLOSE_ACCOUNT_QUOTA_EXCEEDED = new ConstraintViolationExceptionReason("CLOSE_ACCOUNT_QUOTA_EXCEEDED");
+        /// <summary>
+        /// Constant CLOSE_ACCOUNT_REQUESTS_LIMIT_EXCEEDED for ConstraintViolationExceptionReason
+        /// </summary>
+        public static readonly ConstraintViolationExceptionReason CLOSE_ACCOUNT_REQUESTS_LIMIT_EXCEEDED = new ConstraintViolationExceptionReason("CLOSE_ACCOUNT_REQUESTS_LIMIT_EXCEEDED");
         /// <summary>
         /// Constant CREATE_ORGANIZATION_IN_BILLING_MODE_UNSUPPORTED_REGION for ConstraintViolationExceptionReason
         /// </summary>
@@ -328,6 +348,10 @@ namespace Amazon.Organizations
         /// Constant HANDSHAKE_RATE_LIMIT_EXCEEDED for ConstraintViolationExceptionReason
         /// </summary>
         public static readonly ConstraintViolationExceptionReason HANDSHAKE_RATE_LIMIT_EXCEEDED = new ConstraintViolationExceptionReason("HANDSHAKE_RATE_LIMIT_EXCEEDED");
+        /// <summary>
+        /// Constant INVALID_PAYMENT_INSTRUMENT for ConstraintViolationExceptionReason
+        /// </summary>
+        public static readonly ConstraintViolationExceptionReason INVALID_PAYMENT_INSTRUMENT = new ConstraintViolationExceptionReason("INVALID_PAYMENT_INSTRUMENT");
         /// <summary>
         /// Constant MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE for ConstraintViolationExceptionReason
         /// </summary>
@@ -388,6 +412,10 @@ namespace Amazon.Organizations
         /// Constant POLICY_NUMBER_LIMIT_EXCEEDED for ConstraintViolationExceptionReason
         /// </summary>
         public static readonly ConstraintViolationExceptionReason POLICY_NUMBER_LIMIT_EXCEEDED = new ConstraintViolationExceptionReason("POLICY_NUMBER_LIMIT_EXCEEDED");
+        /// <summary>
+        /// Constant SERVICE_ACCESS_NOT_ENABLED for ConstraintViolationExceptionReason
+        /// </summary>
+        public static readonly ConstraintViolationExceptionReason SERVICE_ACCESS_NOT_ENABLED = new ConstraintViolationExceptionReason("SERVICE_ACCESS_NOT_ENABLED");
         /// <summary>
         /// Constant TAG_POLICY_VIOLATION for ConstraintViolationExceptionReason
         /// </summary>
@@ -475,6 +503,10 @@ namespace Amazon.Organizations
         /// </summary>
         public static readonly CreateAccountFailureReason INVALID_IDENTITY_FOR_BUSINESS_VALIDATION = new CreateAccountFailureReason("INVALID_IDENTITY_FOR_BUSINESS_VALIDATION");
         /// <summary>
+        /// Constant INVALID_PAYMENT_INSTRUMENT for CreateAccountFailureReason
+        /// </summary>
+        public static readonly CreateAccountFailureReason INVALID_PAYMENT_INSTRUMENT = new CreateAccountFailureReason("INVALID_PAYMENT_INSTRUMENT");
+        /// <summary>
         /// Constant MISSING_BUSINESS_VALIDATION for CreateAccountFailureReason
         /// </summary>
         public static readonly CreateAccountFailureReason MISSING_BUSINESS_VALIDATION = new CreateAccountFailureReason("MISSING_BUSINESS_VALIDATION");
@@ -490,6 +522,10 @@ namespace Amazon.Organizations
         /// Constant UNKNOWN_BUSINESS_VALIDATION for CreateAccountFailureReason
         /// </summary>
         public static readonly CreateAccountFailureReason UNKNOWN_BUSINESS_VALIDATION = new CreateAccountFailureReason("UNKNOWN_BUSINESS_VALIDATION");
+        /// <summary>
+        /// Constant UPDATE_EXISTING_RESOURCE_POLICY_WITH_TAGS_NOT_SUPPORTED for CreateAccountFailureReason
+        /// </summary>
+        public static readonly CreateAccountFailureReason UPDATE_EXISTING_RESOURCE_POLICY_WITH_TAGS_NOT_SUPPORTED = new CreateAccountFailureReason("UPDATE_EXISTING_RESOURCE_POLICY_WITH_TAGS_NOT_SUPPORTED");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -656,6 +692,10 @@ namespace Amazon.Organizations
         /// Constant INVITE_DISABLED_DURING_ENABLE_ALL_FEATURES for HandshakeConstraintViolationExceptionReason
         /// </summary>
         public static readonly HandshakeConstraintViolationExceptionReason INVITE_DISABLED_DURING_ENABLE_ALL_FEATURES = new HandshakeConstraintViolationExceptionReason("INVITE_DISABLED_DURING_ENABLE_ALL_FEATURES");
+        /// <summary>
+        /// Constant MANAGEMENT_ACCOUNT_EMAIL_NOT_VERIFIED for HandshakeConstraintViolationExceptionReason
+        /// </summary>
+        public static readonly HandshakeConstraintViolationExceptionReason MANAGEMENT_ACCOUNT_EMAIL_NOT_VERIFIED = new HandshakeConstraintViolationExceptionReason("MANAGEMENT_ACCOUNT_EMAIL_NOT_VERIFIED");
         /// <summary>
         /// Constant ORGANIZATION_ALREADY_HAS_ALL_FEATURES for HandshakeConstraintViolationExceptionReason
         /// </summary>
@@ -1011,6 +1051,10 @@ namespace Amazon.Organizations
         /// </summary>
         public static readonly InvalidInputExceptionReason INVALID_PATTERN_TARGET_ID = new InvalidInputExceptionReason("INVALID_PATTERN_TARGET_ID");
         /// <summary>
+        /// Constant INVALID_RESOURCE_POLICY_JSON for InvalidInputExceptionReason
+        /// </summary>
+        public static readonly InvalidInputExceptionReason INVALID_RESOURCE_POLICY_JSON = new InvalidInputExceptionReason("INVALID_RESOURCE_POLICY_JSON");
+        /// <summary>
         /// Constant INVALID_ROLE_NAME for InvalidInputExceptionReason
         /// </summary>
         public static readonly InvalidInputExceptionReason INVALID_ROLE_NAME = new InvalidInputExceptionReason("INVALID_ROLE_NAME");
@@ -1058,6 +1102,18 @@ namespace Amazon.Organizations
         /// Constant UNRECOGNIZED_SERVICE_PRINCIPAL for InvalidInputExceptionReason
         /// </summary>
         public static readonly InvalidInputExceptionReason UNRECOGNIZED_SERVICE_PRINCIPAL = new InvalidInputExceptionReason("UNRECOGNIZED_SERVICE_PRINCIPAL");
+        /// <summary>
+        /// Constant UNSUPPORTED_ACTION_IN_RESOURCE_POLICY for InvalidInputExceptionReason
+        /// </summary>
+        public static readonly InvalidInputExceptionReason UNSUPPORTED_ACTION_IN_RESOURCE_POLICY = new InvalidInputExceptionReason("UNSUPPORTED_ACTION_IN_RESOURCE_POLICY");
+        /// <summary>
+        /// Constant UNSUPPORTED_POLICY_TYPE_IN_RESOURCE_POLICY for InvalidInputExceptionReason
+        /// </summary>
+        public static readonly InvalidInputExceptionReason UNSUPPORTED_POLICY_TYPE_IN_RESOURCE_POLICY = new InvalidInputExceptionReason("UNSUPPORTED_POLICY_TYPE_IN_RESOURCE_POLICY");
+        /// <summary>
+        /// Constant UNSUPPORTED_RESOURCE_IN_RESOURCE_POLICY for InvalidInputExceptionReason
+        /// </summary>
+        public static readonly InvalidInputExceptionReason UNSUPPORTED_RESOURCE_IN_RESOURCE_POLICY = new InvalidInputExceptionReason("UNSUPPORTED_RESOURCE_IN_RESOURCE_POLICY");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

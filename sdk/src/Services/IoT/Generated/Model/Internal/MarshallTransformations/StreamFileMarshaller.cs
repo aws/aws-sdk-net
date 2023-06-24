@@ -34,7 +34,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// StreamFile Marshaller
-    /// </summary>       
+    /// </summary>
     public class StreamFileMarshaller : IRequestMarshaller<StreamFile, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static StreamFileMarshaller Instance = new StreamFileMarshaller();
 
     }

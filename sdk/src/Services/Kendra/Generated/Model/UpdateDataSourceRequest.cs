@@ -30,7 +30,7 @@ namespace Amazon.Kendra.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateDataSource operation.
-    /// Updates an existing Amazon Kendra data source.
+    /// Updates an existing Amazon Kendra data source connector.
     /// </summary>
     public partial class UpdateDataSourceRequest : AmazonKendraRequest
     {
@@ -43,11 +43,12 @@ namespace Amazon.Kendra.Model
         private string _name;
         private string _roleArn;
         private string _schedule;
+        private DataSourceVpcConfiguration _vpcConfiguration;
 
         /// <summary>
         /// Gets and sets the property Configuration. 
         /// <para>
-        /// Configuration information for an Amazon Kendra data source.
+        /// Configuration information you want to update for the data source connector.
         /// </para>
         /// </summary>
         public DataSourceConfiguration Configuration
@@ -65,8 +66,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property CustomDocumentEnrichmentConfiguration. 
         /// <para>
-        /// Configuration information for altering document metadata and content during the document
-        /// ingestion process when you update a data source.
+        /// Configuration information you want to update for altering document metadata and content
+        /// during the document ingestion process.
         /// </para>
         ///  
         /// <para>
@@ -90,7 +91,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The new description for the data source.
+        /// A new description for the data source connector.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1000)]
@@ -109,7 +110,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The unique identifier of the data source to update.
+        /// The identifier of the data source connector you want to update.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
@@ -128,7 +129,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property IndexId. 
         /// <para>
-        /// The identifier of the index that contains the data source to update.
+        /// The identifier of the index used with the data source connector.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]
@@ -147,9 +148,10 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property LanguageCode. 
         /// <para>
-        /// The code for a language. This allows you to support a language for all documents when
-        /// updating the data source. English is supported by default. For more information on
-        /// supported languages, including their codes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding
+        /// The code for a language you want to update for the data source connector. This allows
+        /// you to support a language for all documents when updating the data source. English
+        /// is supported by default. For more information on supported languages, including their
+        /// codes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding
         /// documents in languages other than English</a>.
         /// </para>
         /// </summary>
@@ -169,8 +171,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the data source to update. The name of the data source can't be updated.
-        /// To rename a data source you must delete the data source and re-create it.
+        /// A new name for the data source connector.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
@@ -189,8 +190,9 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the new role to use when the data source is accessing
-        /// resources on your behalf.
+        /// The Amazon Resource Name (ARN) of a role with permission to access the data source
+        /// and required resources. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM
+        /// roles for Amazon Kendra</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1284)]
@@ -209,7 +211,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Schedule. 
         /// <para>
-        /// The new update schedule for the data source.
+        /// The sync schedule you want to update for the data source connector.
         /// </para>
         /// </summary>
         public string Schedule
@@ -222,6 +224,26 @@ namespace Amazon.Kendra.Model
         internal bool IsSetSchedule()
         {
             return this._schedule != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcConfiguration. 
+        /// <para>
+        /// Configuration information for an Amazon Virtual Private Cloud to connect to your data
+        /// source. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring
+        /// a VPC</a>.
+        /// </para>
+        /// </summary>
+        public DataSourceVpcConfiguration VpcConfiguration
+        {
+            get { return this._vpcConfiguration; }
+            set { this._vpcConfiguration = value; }
+        }
+
+        // Check to see if VpcConfiguration property is set
+        internal bool IsSetVpcConfiguration()
+        {
+            return this._vpcConfiguration != null;
         }
 
     }

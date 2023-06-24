@@ -34,6 +34,7 @@ namespace Amazon.MediaLive.Model
     public partial class InputDeviceConfigurableSettings
     {
         private InputDeviceConfiguredInput _configuredInput;
+        private int? _latencyMs;
         private int? _maxBitrate;
 
         /// <summary>
@@ -52,6 +53,22 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetConfiguredInput()
         {
             return this._configuredInput != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LatencyMs. The Link device's buffer size (latency) in milliseconds
+        /// (ms).
+        /// </summary>
+        public int LatencyMs
+        {
+            get { return this._latencyMs.GetValueOrDefault(); }
+            set { this._latencyMs = value; }
+        }
+
+        // Check to see if LatencyMs property is set
+        internal bool IsSetLatencyMs()
+        {
+            return this._latencyMs.HasValue; 
         }
 
         /// <summary>

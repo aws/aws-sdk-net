@@ -17,22 +17,22 @@
  * Do not modify this file. This file is generated from the workspaces-2015-04-08.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
-
+using Amazon.WorkSpaces.Internal;
 
 namespace Amazon.WorkSpaces
 {
     /// <summary>
     /// Configuration for accessing Amazon WorkSpaces service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonWorkSpacesConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.2.32");
+            InternalSDKUtils.BuildUserAgentString("3.7.104.127");
 
         private string _userAgent = UserAgentString;
 
@@ -40,8 +40,10 @@ namespace Amazon.WorkSpaces
         /// Default constructor
         /// </summary>
         public AmazonWorkSpacesConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonWorkSpacesDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "workspaces";
+            this.EndpointProvider = new AmazonWorkSpacesEndpointProvider();
         }
 
         /// <summary>
@@ -76,5 +78,6 @@ namespace Amazon.WorkSpaces
                 return _userAgent;
             }
         }
+
     }
 }

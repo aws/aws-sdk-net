@@ -76,6 +76,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.L6Mode = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("mapping", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Mapping = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("profile", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

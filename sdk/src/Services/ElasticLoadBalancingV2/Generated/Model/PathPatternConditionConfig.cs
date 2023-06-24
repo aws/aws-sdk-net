@@ -38,10 +38,9 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property Values. 
         /// <para>
-        /// One or more path patterns to compare against the request URL. The maximum size of
-        /// each string is 128 characters. The comparison is case sensitive. The following wildcard
-        /// characters are supported: * (matches 0 or more characters) and ? (matches exactly
-        /// 1 character).
+        /// The path patterns to compare against the request URL. The maximum size of each string
+        /// is 128 characters. The comparison is case sensitive. The following wildcard characters
+        /// are supported: * (matches 0 or more characters) and ? (matches exactly 1 character).
         /// </para>
         ///  
         /// <para>

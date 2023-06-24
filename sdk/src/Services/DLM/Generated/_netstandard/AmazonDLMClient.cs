@@ -46,9 +46,9 @@ namespace Amazon.DLM
     /// </para>
     ///  
     /// <para>
-    /// Amazon DLM supports Amazon EBS volumes and snapshots. For information about using
-    /// Amazon DLM with Amazon EBS, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshot-lifecycle.html">Automating
-    /// the Amazon EBS Snapshot Lifecycle</a> in the <i>Amazon EC2 User Guide</i>.
+    /// Amazon Data Lifecycle Manager supports Amazon EBS volumes and snapshots. For information
+    /// about using Amazon Data Lifecycle Manager with Amazon EBS, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshot-lifecycle.html">
+    /// Amazon Data Lifecycle Manager</a> in the <i>Amazon EC2 User Guide</i>.
     /// </para>
     /// </summary>
     public partial class AmazonDLMClient : AmazonServiceClient, IAmazonDLM
@@ -226,6 +226,15 @@ namespace Amazon.DLM
         } 
 
         /// <summary>
+        /// Customizes the runtime pipeline.
+        /// </summary>
+        /// <param name="pipeline">Runtime pipeline for the current client.</param>
+        protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
+        {
+            pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonDLMEndpointResolver());
+        }
+        /// <summary>
         /// Capture metadata for the service.
         /// </summary>
         protected override IServiceMetadata ServiceMetadata
@@ -311,6 +320,12 @@ namespace Amazon.DLM
         /// <summary>
         /// Deletes the specified lifecycle policy and halts the automated operations that the
         /// policy specified.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about deleting a policy, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/view-modify-delete.html#delete">Delete
+        /// lifecycle policies</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteLifecyclePolicy service method.</param>
         /// <param name="cancellationToken">
@@ -577,6 +592,12 @@ namespace Amazon.DLM
 
         /// <summary>
         /// Updates the specified lifecycle policy.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about updating a policy, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/view-modify-delete.html#modify">Modify
+        /// lifecycle policies</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateLifecyclePolicy service method.</param>
         /// <param name="cancellationToken">

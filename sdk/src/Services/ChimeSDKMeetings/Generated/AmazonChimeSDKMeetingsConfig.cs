@@ -17,22 +17,22 @@
  * Do not modify this file. This file is generated from the chime-sdk-meetings-2021-07-15.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
-
+using Amazon.ChimeSDKMeetings.Internal;
 
 namespace Amazon.ChimeSDKMeetings
 {
     /// <summary>
     /// Configuration for accessing Amazon ChimeSDKMeetings service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonChimeSDKMeetingsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.3.2");
+            InternalSDKUtils.BuildUserAgentString("3.7.101.31");
 
         private string _userAgent = UserAgentString;
 
@@ -40,8 +40,10 @@ namespace Amazon.ChimeSDKMeetings
         /// Default constructor
         /// </summary>
         public AmazonChimeSDKMeetingsConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonChimeSDKMeetingsDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "chime";
+            this.EndpointProvider = new AmazonChimeSDKMeetingsEndpointProvider();
         }
 
         /// <summary>
@@ -76,5 +78,6 @@ namespace Amazon.ChimeSDKMeetings
                 return _userAgent;
             }
         }
+
     }
 }

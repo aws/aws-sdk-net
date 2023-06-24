@@ -31,7 +31,7 @@ namespace Amazon.Detective.Model
     /// <summary>
     /// Container for the parameters to the DeleteGraph operation.
     /// Disables the specified behavior graph and queues it to be deleted. This operation
-    /// removes the graph from each member account's list of behavior graphs.
+    /// removes the behavior graph from each member account's list of behavior graphs.
     /// 
     ///  
     /// <para>

@@ -78,6 +78,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.ActivityStreamMode = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("ActivityStreamPolicyStatus", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ActivityStreamPolicyStatus = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("ActivityStreamStatus", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -143,6 +149,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.CACertificateIdentifier = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("CertificateDetails", targetDepth))
+                    {
+                        var unmarshaller = CertificateDetailsUnmarshaller.Instance;
+                        unmarshalledObject.CertificateDetails = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("CharacterSetName", targetDepth))
@@ -244,6 +256,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.DBSubnetGroup = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("DBSystemId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.DBSystemId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("DeletionProtection", targetDepth))
                     {
                         var unmarshaller = BoolUnmarshaller.Instance;
@@ -336,6 +354,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.MasterUsername = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("MasterUserSecret", targetDepth))
+                    {
+                        var unmarshaller = MasterUserSecretUnmarshaller.Instance;
+                        unmarshalledObject.MasterUserSecret = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("MaxAllocatedStorage", targetDepth))
                     {
                         var unmarshaller = IntUnmarshaller.Instance;
@@ -364,6 +388,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.NcharCharacterSetName = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("NetworkType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.NetworkType = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("OptionGroupMemberships/OptionGroupMembership", targetDepth))
@@ -442,6 +472,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.ReadReplicaDBInstanceIdentifiers.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("ReadReplicaSourceDBClusterIdentifier", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ReadReplicaSourceDBClusterIdentifier = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("ReadReplicaSourceDBInstanceIdentifier", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -477,6 +513,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = BoolUnmarshaller.Instance;
                         unmarshalledObject.StorageEncrypted = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("StorageThroughput", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.StorageThroughput = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("StorageType", targetDepth))

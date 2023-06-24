@@ -34,7 +34,7 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// LdapServerMetadataInput Marshaller
-    /// </summary>       
+    /// </summary>
     public class LdapServerMetadataInputMarshaller : IRequestMarshaller<LdapServerMetadataInput, JsonMarshallerContext> 
     {
         /// <summary>
@@ -120,7 +120,7 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static LdapServerMetadataInputMarshaller Instance = new LdapServerMetadataInputMarshaller();
 
     }

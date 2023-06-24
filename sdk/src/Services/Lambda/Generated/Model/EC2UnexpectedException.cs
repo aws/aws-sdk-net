@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lambda.Model
 {
     /// <summary>
-    /// Lambda received an unexpected EC2 client exception while setting up for the Lambda
-    /// function.
+    /// Lambda received an unexpected Amazon EC2 client exception while setting up for the
+    /// Lambda function.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

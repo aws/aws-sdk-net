@@ -34,7 +34,7 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// TaskSchedule Marshaller
-    /// </summary>       
+    /// </summary>
     public class TaskScheduleMarshaller : IRequestMarshaller<TaskSchedule, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static TaskScheduleMarshaller Instance = new TaskScheduleMarshaller();
 
     }

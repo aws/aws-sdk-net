@@ -34,7 +34,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SharePointConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class SharePointConfigurationMarshaller : IRequestMarshaller<SharePointConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -45,6 +45,12 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SharePointConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAuthenticationType())
+            {
+                context.Writer.WritePropertyName("AuthenticationType");
+                context.Writer.Write(requestObject.AuthenticationType);
+            }
+
             if(requestObject.IsSetCrawlAttachments())
             {
                 context.Writer.WritePropertyName("CrawlAttachments");
@@ -99,6 +105,17 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
                         context.Writer.Write(requestObjectInclusionPatternsListValue);
                 }
                 context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetProxyConfiguration())
+            {
+                context.Writer.WritePropertyName("ProxyConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ProxyConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.ProxyConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
             }
 
             if(requestObject.IsSetSecretArn())
@@ -156,7 +173,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SharePointConfigurationMarshaller Instance = new SharePointConfigurationMarshaller();
 
     }

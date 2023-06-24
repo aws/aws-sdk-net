@@ -34,7 +34,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DeploymentConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class DeploymentConfigurationMarshaller : IRequestMarshaller<DeploymentConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -45,6 +45,17 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DeploymentConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAlarms())
+            {
+                context.Writer.WritePropertyName("alarms");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = DeploymentAlarmsMarshaller.Instance;
+                marshaller.Marshall(requestObject.Alarms, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetDeploymentCircuitBreaker())
             {
                 context.Writer.WritePropertyName("deploymentCircuitBreaker");
@@ -72,7 +83,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DeploymentConfigurationMarshaller Instance = new DeploymentConfigurationMarshaller();
 
     }

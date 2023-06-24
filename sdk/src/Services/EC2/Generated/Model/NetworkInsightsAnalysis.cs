@@ -33,6 +33,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class NetworkInsightsAnalysis
     {
+        private List<string> _additionalAccounts = new List<string>();
         private List<AlternatePathHint> _alternatePathHints = new List<AlternatePathHint>();
         private List<Explanation> _explanations = new List<Explanation>();
         private List<string> _filterInArns = new List<string>();
@@ -45,8 +46,27 @@ namespace Amazon.EC2.Model
         private DateTime? _startDate;
         private AnalysisStatus _status;
         private string _statusMessage;
+        private List<string> _suggestedAccounts = new List<string>();
         private List<Tag> _tags = new List<Tag>();
         private string _warningMessage;
+
+        /// <summary>
+        /// Gets and sets the property AdditionalAccounts. 
+        /// <para>
+        /// The member accounts that contain resources that the path can traverse.
+        /// </para>
+        /// </summary>
+        public List<string> AdditionalAccounts
+        {
+            get { return this._additionalAccounts; }
+            set { this._additionalAccounts = value; }
+        }
+
+        // Check to see if AdditionalAccounts property is set
+        internal bool IsSetAdditionalAccounts()
+        {
+            return this._additionalAccounts != null && this._additionalAccounts.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property AlternatePathHints. 
@@ -88,8 +108,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property FilterInArns. 
         /// <para>
-        /// The Amazon Resource Names (ARN) of the Amazon Web Services resources that the path
-        /// must traverse.
+        /// The Amazon Resource Names (ARN) of the resources that the path must traverse.
         /// </para>
         /// </summary>
         public List<string> FilterInArns
@@ -265,6 +284,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetStatusMessage()
         {
             return this._statusMessage != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SuggestedAccounts. 
+        /// <para>
+        /// Potential intermediate accounts.
+        /// </para>
+        /// </summary>
+        public List<string> SuggestedAccounts
+        {
+            get { return this._suggestedAccounts; }
+            set { this._suggestedAccounts = value; }
+        }
+
+        // Check to see if SuggestedAccounts property is set
+        internal bool IsSetSuggestedAccounts()
+        {
+            return this._suggestedAccounts != null && this._suggestedAccounts.Count > 0; 
         }
 
         /// <summary>

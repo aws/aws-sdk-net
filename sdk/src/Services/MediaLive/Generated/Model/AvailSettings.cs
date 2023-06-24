@@ -33,8 +33,24 @@ namespace Amazon.MediaLive.Model
     /// </summary>
     public partial class AvailSettings
     {
+        private Esam _esam;
         private Scte35SpliceInsert _scte35SpliceInsert;
         private Scte35TimeSignalApos _scte35TimeSignalApos;
+
+        /// <summary>
+        /// Gets and sets the property Esam.
+        /// </summary>
+        public Esam Esam
+        {
+            get { return this._esam; }
+            set { this._esam = value; }
+        }
+
+        // Check to see if Esam property is set
+        internal bool IsSetEsam()
+        {
+            return this._esam != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Scte35SpliceInsert.

@@ -34,12 +34,13 @@ namespace Amazon.Kendra.Model
     public partial class Suggestion
     {
         private string _id;
+        private List<SourceDocument> _sourceDocuments = new List<SourceDocument>();
         private SuggestionValue _value;
 
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The unique UUID (universally unique identifier) of a single query suggestion.
+        /// The UUID (universally unique identifier) of a single query suggestion.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=73)]
@@ -56,9 +57,28 @@ namespace Amazon.Kendra.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SourceDocuments. 
+        /// <para>
+        /// The list of document IDs and their fields/attributes that are used for a single query
+        /// suggestion, if document fields set to use for query suggestions.
+        /// </para>
+        /// </summary>
+        public List<SourceDocument> SourceDocuments
+        {
+            get { return this._sourceDocuments; }
+            set { this._sourceDocuments = value; }
+        }
+
+        // Check to see if SourceDocuments property is set
+        internal bool IsSetSourceDocuments()
+        {
+            return this._sourceDocuments != null && this._sourceDocuments.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// The value for the unique UUID (universally unique identifier) of a single query suggestion.
+        /// The value for the UUID (universally unique identifier) of a single query suggestion.
         /// </para>
         ///  
         /// <para>

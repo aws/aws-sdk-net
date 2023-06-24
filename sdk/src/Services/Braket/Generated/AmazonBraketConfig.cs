@@ -17,22 +17,22 @@
  * Do not modify this file. This file is generated from the braket-2019-09-01.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
-
+using Amazon.Braket.Internal;
 
 namespace Amazon.Braket
 {
     /// <summary>
     /// Configuration for accessing Amazon Braket service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonBraketConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.2.2");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.147");
 
         private string _userAgent = UserAgentString;
 
@@ -40,8 +40,10 @@ namespace Amazon.Braket
         /// Default constructor
         /// </summary>
         public AmazonBraketConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonBraketDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "braket";
+            this.EndpointProvider = new AmazonBraketEndpointProvider();
         }
 
         /// <summary>
@@ -76,5 +78,6 @@ namespace Amazon.Braket
                 return _userAgent;
             }
         }
+
     }
 }

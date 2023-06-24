@@ -34,7 +34,7 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CloudWatchConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class CloudWatchConfigMarshaller : IRequestMarshaller<CloudWatchConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -45,6 +45,17 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CloudWatchConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetBackTestConfiguration())
+            {
+                context.Writer.WritePropertyName("BackTestConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = BackTestConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.BackTestConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetRoleArn())
             {
                 context.Writer.WritePropertyName("RoleArn");
@@ -55,7 +66,7 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CloudWatchConfigMarshaller Instance = new CloudWatchConfigMarshaller();
 
     }

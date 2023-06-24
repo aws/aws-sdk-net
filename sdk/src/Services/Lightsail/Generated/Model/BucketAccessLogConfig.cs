@@ -48,8 +48,9 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property Destination. 
         /// <para>
-        /// The name of the bucket where the access is saved. The destination can be a Lightsail
-        /// bucket in the same account, and in the same AWS Region as the source bucket.
+        /// The name of the bucket where the access logs are saved. The destination can be a Lightsail
+        /// bucket in the same account, and in the same Amazon Web Services Region as the source
+        /// bucket.
         /// </para>
         ///  <note> 
         /// <para>

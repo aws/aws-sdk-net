@@ -58,7 +58,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             string target = "AmazonSSM.CreateOpsItem";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2014-11-06";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2014-11-06";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -67,6 +67,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAccountId())
+                {
+                    context.Writer.WritePropertyName("AccountId");
+                    context.Writer.Write(publicRequest.AccountId);
+                }
+
                 if(publicRequest.IsSetActualEndTime())
                 {
                     context.Writer.WritePropertyName("ActualEndTime");
@@ -200,7 +206,6 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Title);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

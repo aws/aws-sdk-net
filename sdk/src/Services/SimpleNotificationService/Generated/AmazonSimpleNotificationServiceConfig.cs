@@ -17,22 +17,22 @@
  * Do not modify this file. This file is generated from the sns-2010-03-31.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
-
+using Amazon.SimpleNotificationService.Internal;
 
 namespace Amazon.SimpleNotificationService
 {
     /// <summary>
     /// Configuration for accessing Amazon SimpleNotificationService service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonSimpleNotificationServiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.3.5");
+            InternalSDKUtils.BuildUserAgentString("3.7.101.83");
 
         private string _userAgent = UserAgentString;
 
@@ -40,8 +40,10 @@ namespace Amazon.SimpleNotificationService
         /// Default constructor
         /// </summary>
         public AmazonSimpleNotificationServiceConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonSimpleNotificationServiceDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "sns";
+            this.EndpointProvider = new AmazonSimpleNotificationServiceEndpointProvider();
         }
 
         /// <summary>
@@ -76,5 +78,6 @@ namespace Amazon.SimpleNotificationService
                 return _userAgent;
             }
         }
+
     }
 }

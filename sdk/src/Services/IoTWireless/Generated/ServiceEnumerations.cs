@@ -25,6 +25,52 @@ namespace Amazon.IoTWireless
 {
 
     /// <summary>
+    /// Constants used for properties of type ApplicationConfigType.
+    /// </summary>
+    public class ApplicationConfigType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SemtechGeolocation for ApplicationConfigType
+        /// </summary>
+        public static readonly ApplicationConfigType SemtechGeolocation = new ApplicationConfigType("SemtechGeolocation");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ApplicationConfigType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ApplicationConfigType FindValue(string value)
+        {
+            return FindValue<ApplicationConfigType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ApplicationConfigType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type BatteryLevel.
     /// </summary>
     public class BatteryLevel : ConstantClass
@@ -122,6 +168,56 @@ namespace Amazon.IoTWireless
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ConnectionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DeviceProfileType.
+    /// </summary>
+    public class DeviceProfileType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant LoRaWAN for DeviceProfileType
+        /// </summary>
+        public static readonly DeviceProfileType LoRaWAN = new DeviceProfileType("LoRaWAN");
+        /// <summary>
+        /// Constant Sidewalk for DeviceProfileType
+        /// </summary>
+        public static readonly DeviceProfileType Sidewalk = new DeviceProfileType("Sidewalk");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DeviceProfileType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DeviceProfileType FindValue(string value)
+        {
+            return FindValue<DeviceProfileType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DeviceProfileType(string value)
         {
             return FindValue(value);
         }
@@ -237,6 +333,60 @@ namespace Amazon.IoTWireless
 
 
     /// <summary>
+    /// Constants used for properties of type DownlinkMode.
+    /// </summary>
+    public class DownlinkMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CONCURRENT for DownlinkMode
+        /// </summary>
+        public static readonly DownlinkMode CONCURRENT = new DownlinkMode("CONCURRENT");
+        /// <summary>
+        /// Constant SEQUENTIAL for DownlinkMode
+        /// </summary>
+        public static readonly DownlinkMode SEQUENTIAL = new DownlinkMode("SEQUENTIAL");
+        /// <summary>
+        /// Constant USING_UPLINK_GATEWAY for DownlinkMode
+        /// </summary>
+        public static readonly DownlinkMode USING_UPLINK_GATEWAY = new DownlinkMode("USING_UPLINK_GATEWAY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DownlinkMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DownlinkMode FindValue(string value)
+        {
+            return FindValue<DownlinkMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DownlinkMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Event.
     /// </summary>
     public class Event : ConstantClass
@@ -338,6 +488,60 @@ namespace Amazon.IoTWireless
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator EventNotificationPartnerType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type EventNotificationResourceType.
+    /// </summary>
+    public class EventNotificationResourceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SidewalkAccount for EventNotificationResourceType
+        /// </summary>
+        public static readonly EventNotificationResourceType SidewalkAccount = new EventNotificationResourceType("SidewalkAccount");
+        /// <summary>
+        /// Constant WirelessDevice for EventNotificationResourceType
+        /// </summary>
+        public static readonly EventNotificationResourceType WirelessDevice = new EventNotificationResourceType("WirelessDevice");
+        /// <summary>
+        /// Constant WirelessGateway for EventNotificationResourceType
+        /// </summary>
+        public static readonly EventNotificationResourceType WirelessGateway = new EventNotificationResourceType("WirelessGateway");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EventNotificationResourceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EventNotificationResourceType FindValue(string value)
+        {
+            return FindValue<EventNotificationResourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EventNotificationResourceType(string value)
         {
             return FindValue(value);
         }
@@ -599,9 +803,25 @@ namespace Amazon.IoTWireless
     {
 
         /// <summary>
+        /// Constant DevEui for IdentifierType
+        /// </summary>
+        public static readonly IdentifierType DevEui = new IdentifierType("DevEui");
+        /// <summary>
+        /// Constant GatewayEui for IdentifierType
+        /// </summary>
+        public static readonly IdentifierType GatewayEui = new IdentifierType("GatewayEui");
+        /// <summary>
         /// Constant PartnerAccountId for IdentifierType
         /// </summary>
         public static readonly IdentifierType PartnerAccountId = new IdentifierType("PartnerAccountId");
+        /// <summary>
+        /// Constant WirelessDeviceId for IdentifierType
+        /// </summary>
+        public static readonly IdentifierType WirelessDeviceId = new IdentifierType("WirelessDeviceId");
+        /// <summary>
+        /// Constant WirelessGatewayId for IdentifierType
+        /// </summary>
+        public static readonly IdentifierType WirelessGatewayId = new IdentifierType("WirelessGatewayId");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -632,6 +852,72 @@ namespace Amazon.IoTWireless
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator IdentifierType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ImportTaskStatus.
+    /// </summary>
+    public class ImportTaskStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPLETE for ImportTaskStatus
+        /// </summary>
+        public static readonly ImportTaskStatus COMPLETE = new ImportTaskStatus("COMPLETE");
+        /// <summary>
+        /// Constant DELETING for ImportTaskStatus
+        /// </summary>
+        public static readonly ImportTaskStatus DELETING = new ImportTaskStatus("DELETING");
+        /// <summary>
+        /// Constant FAILED for ImportTaskStatus
+        /// </summary>
+        public static readonly ImportTaskStatus FAILED = new ImportTaskStatus("FAILED");
+        /// <summary>
+        /// Constant INITIALIZED for ImportTaskStatus
+        /// </summary>
+        public static readonly ImportTaskStatus INITIALIZED = new ImportTaskStatus("INITIALIZED");
+        /// <summary>
+        /// Constant INITIALIZING for ImportTaskStatus
+        /// </summary>
+        public static readonly ImportTaskStatus INITIALIZING = new ImportTaskStatus("INITIALIZING");
+        /// <summary>
+        /// Constant PENDING for ImportTaskStatus
+        /// </summary>
+        public static readonly ImportTaskStatus PENDING = new ImportTaskStatus("PENDING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ImportTaskStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ImportTaskStatus FindValue(string value)
+        {
+            return FindValue<ImportTaskStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ImportTaskStatus(string value)
         {
             return FindValue(value);
         }
@@ -751,6 +1037,114 @@ namespace Amazon.IoTWireless
 
 
     /// <summary>
+    /// Constants used for properties of type MulticastFrameInfo.
+    /// </summary>
+    public class MulticastFrameInfo : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for MulticastFrameInfo
+        /// </summary>
+        public static readonly MulticastFrameInfo DISABLED = new MulticastFrameInfo("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for MulticastFrameInfo
+        /// </summary>
+        public static readonly MulticastFrameInfo ENABLED = new MulticastFrameInfo("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MulticastFrameInfo(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MulticastFrameInfo FindValue(string value)
+        {
+            return FindValue<MulticastFrameInfo>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MulticastFrameInfo(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type OnboardStatus.
+    /// </summary>
+    public class OnboardStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED for OnboardStatus
+        /// </summary>
+        public static readonly OnboardStatus FAILED = new OnboardStatus("FAILED");
+        /// <summary>
+        /// Constant INITIALIZED for OnboardStatus
+        /// </summary>
+        public static readonly OnboardStatus INITIALIZED = new OnboardStatus("INITIALIZED");
+        /// <summary>
+        /// Constant ONBOARDED for OnboardStatus
+        /// </summary>
+        public static readonly OnboardStatus ONBOARDED = new OnboardStatus("ONBOARDED");
+        /// <summary>
+        /// Constant PENDING for OnboardStatus
+        /// </summary>
+        public static readonly OnboardStatus PENDING = new OnboardStatus("PENDING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OnboardStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OnboardStatus FindValue(string value)
+        {
+            return FindValue<OnboardStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OnboardStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type PartnerType.
     /// </summary>
     public class PartnerType : ConstantClass
@@ -790,6 +1184,298 @@ namespace Amazon.IoTWireless
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator PartnerType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PositionConfigurationFec.
+    /// </summary>
+    public class PositionConfigurationFec : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NONE for PositionConfigurationFec
+        /// </summary>
+        public static readonly PositionConfigurationFec NONE = new PositionConfigurationFec("NONE");
+        /// <summary>
+        /// Constant ROSE for PositionConfigurationFec
+        /// </summary>
+        public static readonly PositionConfigurationFec ROSE = new PositionConfigurationFec("ROSE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PositionConfigurationFec(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PositionConfigurationFec FindValue(string value)
+        {
+            return FindValue<PositionConfigurationFec>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PositionConfigurationFec(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PositionConfigurationStatus.
+    /// </summary>
+    public class PositionConfigurationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Disabled for PositionConfigurationStatus
+        /// </summary>
+        public static readonly PositionConfigurationStatus Disabled = new PositionConfigurationStatus("Disabled");
+        /// <summary>
+        /// Constant Enabled for PositionConfigurationStatus
+        /// </summary>
+        public static readonly PositionConfigurationStatus Enabled = new PositionConfigurationStatus("Enabled");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PositionConfigurationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PositionConfigurationStatus FindValue(string value)
+        {
+            return FindValue<PositionConfigurationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PositionConfigurationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PositioningConfigStatus.
+    /// </summary>
+    public class PositioningConfigStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Disabled for PositioningConfigStatus
+        /// </summary>
+        public static readonly PositioningConfigStatus Disabled = new PositioningConfigStatus("Disabled");
+        /// <summary>
+        /// Constant Enabled for PositioningConfigStatus
+        /// </summary>
+        public static readonly PositioningConfigStatus Enabled = new PositioningConfigStatus("Enabled");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PositioningConfigStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PositioningConfigStatus FindValue(string value)
+        {
+            return FindValue<PositioningConfigStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PositioningConfigStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PositionResourceType.
+    /// </summary>
+    public class PositionResourceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant WirelessDevice for PositionResourceType
+        /// </summary>
+        public static readonly PositionResourceType WirelessDevice = new PositionResourceType("WirelessDevice");
+        /// <summary>
+        /// Constant WirelessGateway for PositionResourceType
+        /// </summary>
+        public static readonly PositionResourceType WirelessGateway = new PositionResourceType("WirelessGateway");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PositionResourceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PositionResourceType FindValue(string value)
+        {
+            return FindValue<PositionResourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PositionResourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PositionSolverProvider.
+    /// </summary>
+    public class PositionSolverProvider : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Semtech for PositionSolverProvider
+        /// </summary>
+        public static readonly PositionSolverProvider Semtech = new PositionSolverProvider("Semtech");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PositionSolverProvider(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PositionSolverProvider FindValue(string value)
+        {
+            return FindValue<PositionSolverProvider>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PositionSolverProvider(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PositionSolverType.
+    /// </summary>
+    public class PositionSolverType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant GNSS for PositionSolverType
+        /// </summary>
+        public static readonly PositionSolverType GNSS = new PositionSolverType("GNSS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PositionSolverType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PositionSolverType FindValue(string value)
+        {
+            return FindValue<PositionSolverType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PositionSolverType(string value)
         {
             return FindValue(value);
         }
@@ -857,13 +1543,49 @@ namespace Amazon.IoTWireless
         /// </summary>
         public static readonly SupportedRfRegion AS9231 = new SupportedRfRegion("AS923-1");
         /// <summary>
+        /// Constant AS9232 for SupportedRfRegion
+        /// </summary>
+        public static readonly SupportedRfRegion AS9232 = new SupportedRfRegion("AS923-2");
+        /// <summary>
+        /// Constant AS9233 for SupportedRfRegion
+        /// </summary>
+        public static readonly SupportedRfRegion AS9233 = new SupportedRfRegion("AS923-3");
+        /// <summary>
+        /// Constant AS9234 for SupportedRfRegion
+        /// </summary>
+        public static readonly SupportedRfRegion AS9234 = new SupportedRfRegion("AS923-4");
+        /// <summary>
         /// Constant AU915 for SupportedRfRegion
         /// </summary>
         public static readonly SupportedRfRegion AU915 = new SupportedRfRegion("AU915");
         /// <summary>
+        /// Constant CN470 for SupportedRfRegion
+        /// </summary>
+        public static readonly SupportedRfRegion CN470 = new SupportedRfRegion("CN470");
+        /// <summary>
+        /// Constant CN779 for SupportedRfRegion
+        /// </summary>
+        public static readonly SupportedRfRegion CN779 = new SupportedRfRegion("CN779");
+        /// <summary>
+        /// Constant EU433 for SupportedRfRegion
+        /// </summary>
+        public static readonly SupportedRfRegion EU433 = new SupportedRfRegion("EU433");
+        /// <summary>
         /// Constant EU868 for SupportedRfRegion
         /// </summary>
         public static readonly SupportedRfRegion EU868 = new SupportedRfRegion("EU868");
+        /// <summary>
+        /// Constant IN865 for SupportedRfRegion
+        /// </summary>
+        public static readonly SupportedRfRegion IN865 = new SupportedRfRegion("IN865");
+        /// <summary>
+        /// Constant KR920 for SupportedRfRegion
+        /// </summary>
+        public static readonly SupportedRfRegion KR920 = new SupportedRfRegion("KR920");
+        /// <summary>
+        /// Constant RU864 for SupportedRfRegion
+        /// </summary>
+        public static readonly SupportedRfRegion RU864 = new SupportedRfRegion("RU864");
         /// <summary>
         /// Constant US915 for SupportedRfRegion
         /// </summary>
@@ -1068,6 +1790,64 @@ namespace Amazon.IoTWireless
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator WirelessDeviceIdType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type WirelessDeviceSidewalkStatus.
+    /// </summary>
+    public class WirelessDeviceSidewalkStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVATED for WirelessDeviceSidewalkStatus
+        /// </summary>
+        public static readonly WirelessDeviceSidewalkStatus ACTIVATED = new WirelessDeviceSidewalkStatus("ACTIVATED");
+        /// <summary>
+        /// Constant PROVISIONED for WirelessDeviceSidewalkStatus
+        /// </summary>
+        public static readonly WirelessDeviceSidewalkStatus PROVISIONED = new WirelessDeviceSidewalkStatus("PROVISIONED");
+        /// <summary>
+        /// Constant REGISTERED for WirelessDeviceSidewalkStatus
+        /// </summary>
+        public static readonly WirelessDeviceSidewalkStatus REGISTERED = new WirelessDeviceSidewalkStatus("REGISTERED");
+        /// <summary>
+        /// Constant UNKNOWN for WirelessDeviceSidewalkStatus
+        /// </summary>
+        public static readonly WirelessDeviceSidewalkStatus UNKNOWN = new WirelessDeviceSidewalkStatus("UNKNOWN");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public WirelessDeviceSidewalkStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static WirelessDeviceSidewalkStatus FindValue(string value)
+        {
+            return FindValue<WirelessDeviceSidewalkStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator WirelessDeviceSidewalkStatus(string value)
         {
             return FindValue(value);
         }

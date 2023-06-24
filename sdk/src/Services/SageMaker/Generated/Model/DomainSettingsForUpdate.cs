@@ -33,12 +33,36 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class DomainSettingsForUpdate
     {
+        private ExecutionRoleIdentityConfig _executionRoleIdentityConfig;
         private RStudioServerProDomainSettingsForUpdate _rStudioServerProDomainSettingsForUpdate;
+        private List<string> _securityGroupIds = new List<string>();
+
+        /// <summary>
+        /// Gets and sets the property ExecutionRoleIdentityConfig. 
+        /// <para>
+        /// The configuration for attaching a SageMaker user profile name to the execution role
+        /// as a <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">sts:SourceIdentity
+        /// key</a>. This configuration can only be modified if there are no apps in the <code>InService</code>
+        /// or <code>Pending</code> state.
+        /// </para>
+        /// </summary>
+        public ExecutionRoleIdentityConfig ExecutionRoleIdentityConfig
+        {
+            get { return this._executionRoleIdentityConfig; }
+            set { this._executionRoleIdentityConfig = value; }
+        }
+
+        // Check to see if ExecutionRoleIdentityConfig property is set
+        internal bool IsSetExecutionRoleIdentityConfig()
+        {
+            return this._executionRoleIdentityConfig != null;
+        }
 
         /// <summary>
         /// Gets and sets the property RStudioServerProDomainSettingsForUpdate. 
         /// <para>
         /// A collection of <code>RStudioServerPro</code> Domain-level app settings to update.
+        /// A single <code>RStudioServerPro</code> application is created for a domain.
         /// </para>
         /// </summary>
         public RStudioServerProDomainSettingsForUpdate RStudioServerProDomainSettingsForUpdate
@@ -51,6 +75,26 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetRStudioServerProDomainSettingsForUpdate()
         {
             return this._rStudioServerProDomainSettingsForUpdate != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SecurityGroupIds. 
+        /// <para>
+        /// The security groups for the Amazon Virtual Private Cloud that the <code>Domain</code>
+        /// uses for communication between Domain-level apps and user apps.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=3)]
+        public List<string> SecurityGroupIds
+        {
+            get { return this._securityGroupIds; }
+            set { this._securityGroupIds = value; }
+        }
+
+        // Check to see if SecurityGroupIds property is set
+        internal bool IsSetSecurityGroupIds()
+        {
+            return this._securityGroupIds != null && this._securityGroupIds.Count > 0; 
         }
 
     }

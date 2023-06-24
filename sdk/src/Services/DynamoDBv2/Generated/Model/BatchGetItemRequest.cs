@@ -37,10 +37,10 @@ namespace Amazon.DynamoDBv2.Model
     /// <para>
     /// A single operation can retrieve up to 16 MB of data, which can contain as many as
     /// 100 items. <code>BatchGetItem</code> returns a partial result if the response size
-    /// limit is exceeded, the table's provisioned throughput is exceeded, or an internal
-    /// processing failure occurs. If a partial result is returned, the operation returns
-    /// a value for <code>UnprocessedKeys</code>. You can use this value to retry the operation
-    /// starting with the next item to get.
+    /// limit is exceeded, the table's provisioned throughput is exceeded, more than 1MB per
+    /// partition is requested, or an internal processing failure occurs. If a partial result
+    /// is returned, the operation returns a value for <code>UnprocessedKeys</code>. You can
+    /// use this value to retry the operation starting with the next item to get.
     /// </para>
     ///  <important> 
     /// <para>
@@ -84,8 +84,8 @@ namespace Amazon.DynamoDBv2.Model
     /// </para>
     ///  
     /// <para>
-    /// In order to minimize response latency, <code>BatchGetItem</code> retrieves items in
-    /// parallel.
+    /// In order to minimize response latency, <code>BatchGetItem</code> may retrieve items
+    /// in parallel.
     /// </para>
     ///  
     /// <para>

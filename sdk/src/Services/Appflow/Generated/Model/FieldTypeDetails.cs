@@ -34,9 +34,31 @@ namespace Amazon.Appflow.Model
     /// </summary>
     public partial class FieldTypeDetails
     {
+        private Range _fieldLengthRange;
         private string _fieldType;
+        private Range _fieldValueRange;
         private List<string> _filterOperators = new List<string>();
+        private string _supportedDateFormat;
         private List<string> _supportedValues = new List<string>();
+        private string _valueRegexPattern;
+
+        /// <summary>
+        /// Gets and sets the property FieldLengthRange. 
+        /// <para>
+        /// This is the allowable length range for this field's value.
+        /// </para>
+        /// </summary>
+        public Range FieldLengthRange
+        {
+            get { return this._fieldLengthRange; }
+            set { this._fieldLengthRange = value; }
+        }
+
+        // Check to see if FieldLengthRange property is set
+        internal bool IsSetFieldLengthRange()
+        {
+            return this._fieldLengthRange != null;
+        }
 
         /// <summary>
         /// Gets and sets the property FieldType. 
@@ -55,6 +77,24 @@ namespace Amazon.Appflow.Model
         internal bool IsSetFieldType()
         {
             return this._fieldType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FieldValueRange. 
+        /// <para>
+        /// The range of values this field can hold.
+        /// </para>
+        /// </summary>
+        public Range FieldValueRange
+        {
+            get { return this._fieldValueRange; }
+            set { this._fieldValueRange = value; }
+        }
+
+        // Check to see if FieldValueRange property is set
+        internal bool IsSetFieldValueRange()
+        {
+            return this._fieldValueRange != null;
         }
 
         /// <summary>
@@ -77,6 +117,25 @@ namespace Amazon.Appflow.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SupportedDateFormat. 
+        /// <para>
+        /// The date format that the field supports.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=2048)]
+        public string SupportedDateFormat
+        {
+            get { return this._supportedDateFormat; }
+            set { this._supportedDateFormat = value; }
+        }
+
+        // Check to see if SupportedDateFormat property is set
+        internal bool IsSetSupportedDateFormat()
+        {
+            return this._supportedDateFormat != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SupportedValues. 
         /// <para>
         ///  The list of values that a field can contain. For example, a Boolean <code>fieldType</code>
@@ -93,6 +152,25 @@ namespace Amazon.Appflow.Model
         internal bool IsSetSupportedValues()
         {
             return this._supportedValues != null && this._supportedValues.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ValueRegexPattern. 
+        /// <para>
+        /// The regular expression pattern for the field name.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=2048)]
+        public string ValueRegexPattern
+        {
+            get { return this._valueRegexPattern; }
+            set { this._valueRegexPattern = value; }
+        }
+
+        // Check to see if ValueRegexPattern property is set
+        internal bool IsSetValueRegexPattern()
+        {
+            return this._valueRegexPattern != null;
         }
 
     }

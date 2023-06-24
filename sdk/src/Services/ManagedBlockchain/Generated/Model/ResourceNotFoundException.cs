@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ManagedBlockchain.Model
 {
     /// <summary>
-    /// A requested resource does not exist. It may have been deleted or referenced inaccurately.
+    /// A requested resource doesn't exist. It may have been deleted or referenced incorrectly.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
@@ -126,7 +126,7 @@ namespace Amazon.ManagedBlockchain.Model
         /// <summary>
         /// Gets and sets the property ResourceName. 
         /// <para>
-        /// A requested resource does not exist. It may have been deleted or referenced inaccurately.
+        /// A requested resource doesn't exist. It may have been deleted or referenced inaccurately.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1011)]

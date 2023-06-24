@@ -40,6 +40,7 @@ namespace Amazon.Appflow.Model
     public partial class DescribeConnectorsRequest : AmazonAppflowRequest
     {
         private List<string> _connectorTypes = new List<string>();
+        private int? _maxResults;
         private string _nextToken;
 
         /// <summary>
@@ -59,6 +60,26 @@ namespace Amazon.Appflow.Model
         internal bool IsSetConnectorTypes()
         {
             return this._connectorTypes != null && this._connectorTypes.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// The maximum number of items that should be returned in the result set. The default
+        /// is 20.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=100)]
+        public int MaxResults
+        {
+            get { return this._maxResults.GetValueOrDefault(); }
+            set { this._maxResults = value; }
+        }
+
+        // Check to see if MaxResults property is set
+        internal bool IsSetMaxResults()
+        {
+            return this._maxResults.HasValue; 
         }
 
         /// <summary>

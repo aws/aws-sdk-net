@@ -55,13 +55,13 @@ namespace Amazon.Panorama.Model.Internal.MarshallTransformations
         public IRequest Marshall(DescribeApplicationInstanceRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Panorama");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-07-24";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-07-24";
             request.HttpMethod = "GET";
 
             if (!publicRequest.IsSetApplicationInstanceId())
                 throw new AmazonPanoramaException("Request object does not have required field ApplicationInstanceId set");
-            request.AddPathResource("{applicationInstanceId}", StringUtils.FromString(publicRequest.ApplicationInstanceId));
-            request.ResourcePath = "/application-instances/{applicationInstanceId}";
+            request.AddPathResource("{ApplicationInstanceId}", StringUtils.FromString(publicRequest.ApplicationInstanceId));
+            request.ResourcePath = "/application-instances/{ApplicationInstanceId}";
 
             return request;
         }

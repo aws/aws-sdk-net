@@ -30,13 +30,16 @@ namespace Amazon.MediaTailor.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateSourceLocation operation.
-    /// Updates a source location on a specific channel.
+    /// Updates a source location. A source location is a container for sources. For more
+    /// information about source locations, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-source-locations.html">Working
+    /// with source locations</a> in the <i>MediaTailor User Guide</i>.
     /// </summary>
     public partial class UpdateSourceLocationRequest : AmazonMediaTailorRequest
     {
         private AccessConfiguration _accessConfiguration;
         private DefaultSegmentDeliveryConfiguration _defaultSegmentDeliveryConfiguration;
         private HttpConfiguration _httpConfiguration;
+        private List<SegmentDeliveryConfiguration> _segmentDeliveryConfigurations = new List<SegmentDeliveryConfiguration>();
         private string _sourceLocationName;
 
         /// <summary>
@@ -96,9 +99,27 @@ namespace Amazon.MediaTailor.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SegmentDeliveryConfigurations. 
+        /// <para>
+        /// A list of the segment delivery configurations associated with this resource.
+        /// </para>
+        /// </summary>
+        public List<SegmentDeliveryConfiguration> SegmentDeliveryConfigurations
+        {
+            get { return this._segmentDeliveryConfigurations; }
+            set { this._segmentDeliveryConfigurations = value; }
+        }
+
+        // Check to see if SegmentDeliveryConfigurations property is set
+        internal bool IsSetSegmentDeliveryConfigurations()
+        {
+            return this._segmentDeliveryConfigurations != null && this._segmentDeliveryConfigurations.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property SourceLocationName. 
         /// <para>
-        /// The identifier for the source location you are working on.
+        /// The name of the source location.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -29,10 +29,19 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
-    /// In addition to your infrastruction configuration, these settings provide an extra
-    /// layer of control over your build instances. For instances where Image Builder installs
-    /// the Systems Manager agent, you can choose whether to keep it for the AMI that you
-    /// create. You can also specify commands to run on launch for all of your build instances.
+    /// In addition to your infrastructure configuration, these settings provide an extra
+    /// layer of control over your build instances. You can also specify commands to run on
+    /// launch for all of your build instances.
+    /// 
+    ///  
+    /// <para>
+    /// Image Builder does not automatically install the Systems Manager agent on Windows
+    /// instances. If your base image includes the Systems Manager agent, then the AMI that
+    /// you create will also include the agent. For Linux instances, if the base image does
+    /// not already include the Systems Manager agent, Image Builder installs it. For Linux
+    /// instances where Image Builder installs the Systems Manager agent, you can choose whether
+    /// to keep it for the AMI that you create.
+    /// </para>
     /// </summary>
     public partial class AdditionalInstanceConfiguration
     {
@@ -63,12 +72,29 @@ namespace Amazon.Imagebuilder.Model
         /// Use this property to provide commands or a command script to run when you launch your
         /// build instance.
         /// </para>
-        ///  <note> 
+        ///  
         /// <para>
         /// The userDataOverride property replaces any commands that Image Builder might have
         /// added to ensure that Systems Manager is installed on your Linux build instance. If
         /// you override the user data, make sure that you add commands to install Systems Manager,
         /// if it is not pre-installed on your base image.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The user data is always base 64 encoded. For example, the following commands are encoded
+        /// as <code>IyEvYmluL2Jhc2gKbWtkaXIgLXAgL3Zhci9iYi8KdG91Y2ggL3Zhci$</code>:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <i>#!/bin/bash</i> 
+        /// </para>
+        ///  
+        /// <para>
+        /// mkdir -p /var/bb/
+        /// </para>
+        ///  
+        /// <para>
+        /// touch /var
         /// </para>
         ///  </note>
         /// </summary>

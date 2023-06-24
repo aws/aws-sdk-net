@@ -17,8 +17,10 @@ namespace ServiceClientGenerator
         /// Compiles all files in the namespace *.customizations*.json into one large json file in bin\Release|Debug\customizations folder
         /// </summary>
         /// <param name="modelsPath">The path the to customization models to be compiled</param>
-        public static void CompileServiceCustomizations(string modelsPath)
+        public static void CompileServiceCustomizations(GeneratorOptions options)
         {
+            var modelsPath = options.ModelsFolder;
+
             string compiledCustomizationsDirectory = "customizations";
             Console.WriteLine("Compiling service customizations from {0}", modelsPath);
 
@@ -32,7 +34,9 @@ namespace ServiceClientGenerator
                 Directory.CreateDirectory(compiledCustomizationsDirectory);
             }
 
-            foreach (string serviceDirectory in Directory.GetDirectories(modelsPath))
+            var serviceDirectories = Utils.GetServiceDirectories(options);
+
+            foreach (string serviceDirectory in serviceDirectories)
             {
                 var s = Path.GetFileName(serviceDirectory);
                 var compiledFilePath = Path.Combine(compiledCustomizationsDirectory, s + ".customizations.json");

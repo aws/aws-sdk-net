@@ -37,16 +37,16 @@ namespace Amazon.KeyManagementService.Model
     ///  <note> 
     /// <para>
     /// Adding, deleting, or updating an alias can allow or deny permission to the KMS key.
-    /// For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">Using
-    /// ABAC in KMS</a> in the <i>Key Management Service Developer Guide</i>.
+    /// For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC
+    /// for KMS</a> in the <i>Key Management Service Developer Guide</i>.
     /// </para>
     ///  </note> 
     /// <para>
-    /// The current and new KMS key must be the same type (both symmetric or both asymmetric),
-    /// and they must have the same key usage (<code>ENCRYPT_DECRYPT</code> or <code>SIGN_VERIFY</code>).
-    /// This restriction prevents errors in code that uses aliases. If you must assign an
-    /// alias to a different type of KMS key, use <a>DeleteAlias</a> to delete the old alias
-    /// and <a>CreateAlias</a> to create a new alias.
+    /// The current and new KMS key must be the same type (both symmetric or both asymmetric
+    /// or both HMAC), and they must have the same key usage. This restriction prevents errors
+    /// in code that uses aliases. If you must assign an alias to a different type of KMS
+    /// key, use <a>DeleteAlias</a> to delete the old alias and <a>CreateAlias</a> to create
+    /// a new alias.
     /// </para>
     ///  
     /// <para>
@@ -65,7 +65,7 @@ namespace Amazon.KeyManagementService.Model
     /// <para>
     /// The KMS key that you use for this operation must be in a compatible key state. For
     /// details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-    /// state: Effect on your KMS key</a> in the <i>Key Management Service Developer Guide</i>.
+    /// states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -124,8 +124,14 @@ namespace Amazon.KeyManagementService.Model
         /// <para>
         /// Identifies the alias that is changing its KMS key. This value must begin with <code>alias/</code>
         /// followed by the alias name, such as <code>alias/ExampleAlias</code>. You cannot use
-        /// UpdateAlias to change the alias name.
+        /// <code>UpdateAlias</code> to change the alias name.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// Do not include confidential or sensitive information in this field. This field may
+        /// be displayed in plaintext in CloudTrail logs and other output.
+        /// </para>
+        ///  </important>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
         public string AliasName
@@ -152,7 +158,8 @@ namespace Amazon.KeyManagementService.Model
         /// <para>
         /// The KMS key must be in the same Amazon Web Services account and Region as the alias.
         /// Also, the new target KMS key must be the same type as the current target KMS key (both
-        /// symmetric or both asymmetric) and they must have the same key usage. 
+        /// symmetric or both asymmetric or both HMAC) and they must have the same key usage.
+        /// 
         /// </para>
         ///  
         /// <para>

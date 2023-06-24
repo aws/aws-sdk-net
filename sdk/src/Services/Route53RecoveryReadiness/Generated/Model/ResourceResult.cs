@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53RecoveryReadiness.Model
 {
     /// <summary>
-    /// Result with status for an individual resource.
+    /// The result of a successful Resource request, with status for an individual resource.
     /// </summary>
     public partial class ResourceResult
     {
@@ -39,7 +39,10 @@ namespace Amazon.Route53RecoveryReadiness.Model
         private string _resourceArn;
 
         /// <summary>
-        /// Gets and sets the property ComponentId. The component id of the resource
+        /// Gets and sets the property ComponentId. 
+        /// <para>
+        /// The component id of the resource.
+        /// </para>
         /// </summary>
         public string ComponentId
         {
@@ -54,8 +57,10 @@ namespace Amazon.Route53RecoveryReadiness.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LastCheckedTimestamp. The time the resource was last checked
-        /// for readiness, in ISO-8601 format, UTC.
+        /// Gets and sets the property LastCheckedTimestamp. 
+        /// <para>
+        /// The time (UTC) that the resource was last checked for readiness, in ISO-8601 format.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public DateTime LastCheckedTimestamp
@@ -71,7 +76,10 @@ namespace Amazon.Route53RecoveryReadiness.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Readiness. The readiness of the resource.
+        /// Gets and sets the property Readiness. 
+        /// <para>
+        /// The readiness of a resource.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public Readiness Readiness
@@ -87,7 +95,10 @@ namespace Amazon.Route53RecoveryReadiness.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ResourceArn. The ARN of the resource
+        /// Gets and sets the property ResourceArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the resource.
+        /// </para>
         /// </summary>
         public string ResourceArn
         {

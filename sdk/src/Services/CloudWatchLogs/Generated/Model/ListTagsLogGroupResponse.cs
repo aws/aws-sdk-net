@@ -31,6 +31,7 @@ namespace Amazon.CloudWatchLogs.Model
     /// <summary>
     /// This is the response object from the ListTagsLogGroup operation.
     /// </summary>
+    [Obsolete("Please use the generic tagging API model ListTagsForResourceRequest and ListTagsForResourceResponse")]
     public partial class ListTagsLogGroupResponse : AmazonWebServiceResponse
     {
         private Dictionary<string, string> _tags = new Dictionary<string, string>();

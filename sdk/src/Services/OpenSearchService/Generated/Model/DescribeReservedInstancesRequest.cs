@@ -30,7 +30,9 @@ namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeReservedInstances operation.
-    /// Returns information about reserved OpenSearch instances for this account.
+    /// Describes the Amazon OpenSearch Service instances that you have reserved in a given
+    /// Region. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/ri.html">Reserved
+    /// Instances in Amazon OpenSearch Service</a>.
     /// </summary>
     public partial class DescribeReservedInstancesRequest : AmazonOpenSearchServiceRequest
     {
@@ -41,8 +43,8 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// Set this value to limit the number of results returned. If not specified, defaults
-        /// to 100.
+        /// An optional parameter that specifies the maximum number of results to return. You
+        /// can use <code>nextToken</code> to get the next page of results.
         /// </para>
         /// </summary>
         [AWSProperty(Max=100)]
@@ -61,7 +63,9 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Provides an identifier to allow retrieval of paginated results. 
+        /// If your initial <code>DescribeReservedInstances</code> operation returns a <code>nextToken</code>,
+        /// you can include the returned <code>nextToken</code> in subsequent <code>DescribeReservedInstances</code>
+        /// operations, which returns results in the next page.
         /// </para>
         /// </summary>
         public string NextToken
@@ -80,7 +84,7 @@ namespace Amazon.OpenSearchService.Model
         /// Gets and sets the property ReservedInstanceId. 
         /// <para>
         /// The reserved instance identifier filter value. Use this parameter to show only the
-        /// reservation that matches the specified reserved OpenSearch instance ID. 
+        /// reservation that matches the specified reserved OpenSearch instance ID.
         /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=36)]

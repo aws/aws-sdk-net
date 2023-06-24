@@ -34,7 +34,7 @@ namespace Amazon.Outposts.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// LineItemRequest Marshaller
-    /// </summary>       
+    /// </summary>
     public class LineItemRequestMarshaller : IRequestMarshaller<LineItemRequest, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Outposts.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static LineItemRequestMarshaller Instance = new LineItemRequestMarshaller();
 
     }

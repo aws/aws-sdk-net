@@ -35,9 +35,9 @@ namespace Amazon.CloudWatchLogs.Model
     /// 
     ///  
     /// <para>
-    /// A destination encapsulates a physical resource (such as an Amazon Kinesis stream)
-    /// and enables you to subscribe to a real-time stream of log events for a different account,
-    /// ingested using <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutLogEvents.html">PutLogEvents</a>.
+    /// A destination encapsulates a physical resource (such as an Amazon Kinesis stream).
+    /// With a destination, you can subscribe to a real-time stream of log events for a different
+    /// account, ingested using <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutLogEvents.html">PutLogEvents</a>.
     /// </para>
     ///  
     /// <para>
@@ -57,6 +57,7 @@ namespace Amazon.CloudWatchLogs.Model
     {
         private string _destinationName;
         private string _roleArn;
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private string _targetArn;
 
         /// <summary>
@@ -96,6 +97,30 @@ namespace Amazon.CloudWatchLogs.Model
         internal bool IsSetRoleArn()
         {
             return this._roleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// An optional list of key-value pairs to associate with the resource.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about tagging, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+        /// Amazon Web Services resources</a> 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=50)]
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>

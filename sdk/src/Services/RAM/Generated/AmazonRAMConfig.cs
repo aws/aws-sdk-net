@@ -17,22 +17,22 @@
  * Do not modify this file. This file is generated from the ram-2018-01-04.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
-
+using Amazon.RAM.Internal;
 
 namespace Amazon.RAM
 {
     /// <summary>
     /// Configuration for accessing Amazon RAM service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonRAMConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.2.0");
+            InternalSDKUtils.BuildUserAgentString("3.7.102.32");
 
         private string _userAgent = UserAgentString;
 
@@ -40,8 +40,10 @@ namespace Amazon.RAM
         /// Default constructor
         /// </summary>
         public AmazonRAMConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonRAMDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "ram";
+            this.EndpointProvider = new AmazonRAMEndpointProvider();
         }
 
         /// <summary>
@@ -76,5 +78,6 @@ namespace Amazon.RAM
                 return _userAgent;
             }
         }
+
     }
 }

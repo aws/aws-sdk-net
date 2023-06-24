@@ -36,6 +36,7 @@ namespace Amazon.IoT.Model
         private AutoRegistrationStatus _autoRegistrationStatus;
         private string _certificateArn;
         private string _certificateId;
+        private CertificateMode _certificateMode;
         private string _certificatePem;
         private DateTime? _creationDate;
         private int? _customerVersion;
@@ -99,6 +100,31 @@ namespace Amazon.IoT.Model
         internal bool IsSetCertificateId()
         {
             return this._certificateId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CertificateMode. 
+        /// <para>
+        /// The mode of the CA. 
+        /// </para>
+        ///  
+        /// <para>
+        /// All the device certificates that are registered using this CA will be registered in
+        /// the same mode as the CA. For more information about certificate mode for device certificates,
+        /// see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_CertificateDescription.html#iot-Type-CertificateDescription-certificateMode">certificate
+        /// mode</a>.
+        /// </para>
+        /// </summary>
+        public CertificateMode CertificateMode
+        {
+            get { return this._certificateMode; }
+            set { this._certificateMode = value; }
+        }
+
+        // Check to see if CertificateMode property is set
+        internal bool IsSetCertificateMode()
+        {
+            return this._certificateMode != null;
         }
 
         /// <summary>

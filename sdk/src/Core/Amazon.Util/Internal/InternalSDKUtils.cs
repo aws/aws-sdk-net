@@ -16,7 +16,7 @@
 using System;
 using System.Collections.Generic;
 using System.Globalization;
-
+using System.IO;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Util.Internal.PlatformServices;
 
@@ -212,6 +212,34 @@ namespace Amazon.Util.Internal
             }
 
             return userAgentString;
+        }
+
+        /// <summary>
+        /// Tests if the filePath is rooted with the directoryPath when resolved. The filePath and
+        /// directoryPath do not need to exist to call this method.
+        /// </summary>
+        /// <param name="filePath">The filePath to test against the directoryPath.</param>
+        /// <param name="directoryPath">The directoryPath to use as root in the test.</param>
+        /// <returns>true if directoryPath is root of filePath else false</returns>
+        public static bool IsFilePathRootedWithDirectoryPath(string filePath, string directoryPath)
+        {
+            //Construct a local directory path that always ends with the directory separator char. This
+            //ensures our directory starts with test doesn't allow files that start with the directory
+            //to be popped off the path to fake out the test: 
+            //LocalDirectory = a\b\c
+            //FilePath = a\b\c\..\ctest.txt            
+
+            var dirTestPath = directoryPath;
+            if (!dirTestPath.EndsWith(Path.DirectorySeparatorChar.ToString()))
+            {
+                dirTestPath += Path.DirectorySeparatorChar;
+            }
+
+            var dirInfo = new DirectoryInfo(dirTestPath);
+            var fileInfo = new FileInfo(filePath);
+
+            //Test if the target file is a child of directoryPath
+            return fileInfo.FullName.StartsWith(dirInfo.FullName);
         }
 
         #region IsSet methods

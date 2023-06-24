@@ -30,10 +30,10 @@ namespace Amazon.Kendra.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteDataSource operation.
-    /// Deletes an Amazon Kendra data source. An exception is not thrown if the data source
-    /// is already being deleted. While the data source is being deleted, the <code>Status</code>
-    /// field returned by a call to the <code>DescribeDataSource</code> operation is set to
-    /// <code>DELETING</code>. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/delete-data-source.html">Deleting
+    /// Deletes an Amazon Kendra data source connector. An exception is not thrown if the
+    /// data source is already being deleted. While the data source is being deleted, the
+    /// <code>Status</code> field returned by a call to the <code>DescribeDataSource</code>
+    /// API is set to <code>DELETING</code>. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/delete-data-source.html">Deleting
     /// Data Sources</a>.
     /// </summary>
     public partial class DeleteDataSourceRequest : AmazonKendraRequest
@@ -44,7 +44,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The unique identifier of the data source to delete.
+        /// The identifier of the data source connector you want to delete.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
@@ -63,7 +63,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property IndexId. 
         /// <para>
-        /// The unique identifier of the index associated with the data source.
+        /// The identifier of the index used with the data source connector.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]

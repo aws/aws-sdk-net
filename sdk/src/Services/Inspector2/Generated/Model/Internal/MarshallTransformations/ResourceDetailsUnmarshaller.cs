@@ -76,6 +76,12 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
                     unmarshalledObject.AwsEcrContainerImage = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("awsLambdaFunction", targetDepth))
+                {
+                    var unmarshaller = AwsLambdaFunctionDetailsUnmarshaller.Instance;
+                    unmarshalledObject.AwsLambdaFunction = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

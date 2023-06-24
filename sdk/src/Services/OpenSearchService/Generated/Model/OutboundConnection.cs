@@ -29,12 +29,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// Specifies details about an outbound connection.
+    /// Specifies details about an outbound cross-cluster connection.
     /// </summary>
     public partial class OutboundConnection
     {
         private string _connectionAlias;
         private string _connectionId;
+        private ConnectionMode _connectionMode;
+        private ConnectionProperties _connectionProperties;
         private OutboundConnectionStatus _connectionStatus;
         private DomainInformationContainer _localDomainInfo;
         private DomainInformationContainer _remoteDomainInfo;
@@ -42,7 +44,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property ConnectionAlias. 
         /// <para>
-        /// The connection alias for the outbound cross-cluster connection.
+        /// Name of the connection.
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=100)]
@@ -61,7 +63,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property ConnectionId. 
         /// <para>
-        /// The connection ID for the outbound cross-cluster connection.
+        /// Unique identifier of the connection.
         /// </para>
         /// </summary>
         [AWSProperty(Min=10, Max=256)]
@@ -78,9 +80,45 @@ namespace Amazon.OpenSearchService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ConnectionMode. 
+        /// <para>
+        /// The connection mode.
+        /// </para>
+        /// </summary>
+        public ConnectionMode ConnectionMode
+        {
+            get { return this._connectionMode; }
+            set { this._connectionMode = value; }
+        }
+
+        // Check to see if ConnectionMode property is set
+        internal bool IsSetConnectionMode()
+        {
+            return this._connectionMode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ConnectionProperties. 
+        /// <para>
+        /// Properties for the outbound connection.
+        /// </para>
+        /// </summary>
+        public ConnectionProperties ConnectionProperties
+        {
+            get { return this._connectionProperties; }
+            set { this._connectionProperties = value; }
+        }
+
+        // Check to see if ConnectionProperties property is set
+        internal bool IsSetConnectionProperties()
+        {
+            return this._connectionProperties != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ConnectionStatus. 
         /// <para>
-        /// The <code> <a>OutboundConnectionStatus</a> </code> for the outbound connection. 
+        /// Status of the connection.
         /// </para>
         /// </summary>
         public OutboundConnectionStatus ConnectionStatus
@@ -98,7 +136,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property LocalDomainInfo. 
         /// <para>
-        /// The <code> <a>DomainInformation</a> </code> for the local OpenSearch domain. 
+        /// Information about the source (local) domain.
         /// </para>
         /// </summary>
         public DomainInformationContainer LocalDomainInfo
@@ -116,7 +154,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property RemoteDomainInfo. 
         /// <para>
-        /// The <code> <a>DomainInformation</a> </code> for the remote OpenSearch domain. 
+        /// Information about the destination (remote) domain.
         /// </para>
         /// </summary>
         public DomainInformationContainer RemoteDomainInfo

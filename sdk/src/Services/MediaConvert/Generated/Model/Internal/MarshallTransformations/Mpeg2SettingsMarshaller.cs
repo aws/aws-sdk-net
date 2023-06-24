@@ -34,7 +34,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Mpeg2Settings Marshaller
-    /// </summary>       
+    /// </summary>
     public class Mpeg2SettingsMarshaller : IRequestMarshaller<Mpeg2Settings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -115,6 +115,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("gopSizeUnits");
                 context.Writer.Write(requestObject.GopSizeUnits);
+            }
+
+            if(requestObject.IsSetHrdBufferFinalFillPercentage())
+            {
+                context.Writer.WritePropertyName("hrdBufferFinalFillPercentage");
+                context.Writer.Write(requestObject.HrdBufferFinalFillPercentage);
             }
 
             if(requestObject.IsSetHrdBufferInitialFillPercentage())
@@ -241,7 +247,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static Mpeg2SettingsMarshaller Instance = new Mpeg2SettingsMarshaller();
 
     }

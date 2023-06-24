@@ -89,6 +89,7 @@ namespace Amazon.Chime.Model
         /// The display name of the user.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string DisplayName
         {
             get { return this._displayName; }
@@ -161,6 +162,7 @@ namespace Amazon.Chime.Model
         /// The primary email address of the user.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string PrimaryEmail
         {
             get { return this._primaryEmail; }
@@ -179,6 +181,7 @@ namespace Amazon.Chime.Model
         /// The primary phone number associated with the user.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string PrimaryProvisionedNumber
         {
             get { return this._primaryProvisionedNumber; }

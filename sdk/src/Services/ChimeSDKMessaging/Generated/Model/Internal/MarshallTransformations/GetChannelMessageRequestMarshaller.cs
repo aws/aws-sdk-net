@@ -55,7 +55,7 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
         public IRequest Marshall(GetChannelMessageRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ChimeSDKMessaging");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-05-15";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-05-15";
             request.HttpMethod = "GET";
 
             if (!publicRequest.IsSetChannelArn())
@@ -64,10 +64,16 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetMessageId())
                 throw new AmazonChimeSDKMessagingException("Request object does not have required field MessageId set");
             request.AddPathResource("{messageId}", StringUtils.FromString(publicRequest.MessageId));
+            
+            if (publicRequest.IsSetSubChannelId())
+                request.Parameters.Add("sub-channel-id", StringUtils.FromString(publicRequest.SubChannelId));
             request.ResourcePath = "/channels/{channelArn}/messages/{messageId}";
         
-            if(publicRequest.IsSetChimeBearer())
+            if (publicRequest.IsSetChimeBearer()) 
+            {
                 request.Headers["x-amz-chime-bearer"] = publicRequest.ChimeBearer;
+            }
+            request.UseQueryString = true;
 
             return request;
         }

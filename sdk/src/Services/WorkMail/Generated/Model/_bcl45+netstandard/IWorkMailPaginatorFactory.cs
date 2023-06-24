@@ -31,6 +31,11 @@ namespace Amazon.WorkMail.Model
         IListAliasesPaginator ListAliases(ListAliasesRequest request);
 
         /// <summary>
+        /// Paginator for ListAvailabilityConfigurations operation
+        ///</summary>
+        IListAvailabilityConfigurationsPaginator ListAvailabilityConfigurations(ListAvailabilityConfigurationsRequest request);
+
+        /// <summary>
         /// Paginator for ListGroupMembers operation
         ///</summary>
         IListGroupMembersPaginator ListGroupMembers(ListGroupMembersRequest request);
@@ -39,6 +44,11 @@ namespace Amazon.WorkMail.Model
         /// Paginator for ListGroups operation
         ///</summary>
         IListGroupsPaginator ListGroups(ListGroupsRequest request);
+
+        /// <summary>
+        /// Paginator for ListImpersonationRoles operation
+        ///</summary>
+        IListImpersonationRolesPaginator ListImpersonationRoles(ListImpersonationRolesRequest request);
 
         /// <summary>
         /// Paginator for ListMailboxExportJobs operation

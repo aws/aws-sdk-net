@@ -36,6 +36,8 @@ namespace Amazon.WellArchitected.Model
         private string _lensArn;
         private string _lensName;
         private PermissionType _permissionType;
+        private string _profileArn;
+        private string _profileName;
         private string _sharedBy;
         private string _sharedWith;
         private string _shareInvitationId;
@@ -93,8 +95,47 @@ namespace Amazon.WellArchitected.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ProfileArn. 
+        /// <para>
+        /// The profile ARN.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=2084)]
+        public string ProfileArn
+        {
+            get { return this._profileArn; }
+            set { this._profileArn = value; }
+        }
+
+        // Check to see if ProfileArn property is set
+        internal bool IsSetProfileArn()
+        {
+            return this._profileArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProfileName. 
+        /// <para>
+        /// The profile name.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=3, Max=100)]
+        public string ProfileName
+        {
+            get { return this._profileName; }
+            set { this._profileName = value; }
+        }
+
+        // Check to see if ProfileName property is set
+        internal bool IsSetProfileName()
+        {
+            return this._profileName != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SharedBy.
         /// </summary>
+        [AWSProperty(Min=12, Max=12)]
         public string SharedBy
         {
             get { return this._sharedBy; }
@@ -162,6 +203,7 @@ namespace Amazon.WellArchitected.Model
         /// <summary>
         /// Gets and sets the property WorkloadId.
         /// </summary>
+        [AWSProperty(Min=32, Max=32)]
         public string WorkloadId
         {
             get { return this._workloadId; }

@@ -39,8 +39,11 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property CpuCredits. 
         /// <para>
-        /// The credit option for CPU usage of the instance. Valid values are <code>standard</code>
-        /// and <code>unlimited</code>.
+        /// The credit option for CPU usage of the instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values: <code>standard</code> | <code>unlimited</code> 
         /// </para>
         /// </summary>
         public string CpuCredits

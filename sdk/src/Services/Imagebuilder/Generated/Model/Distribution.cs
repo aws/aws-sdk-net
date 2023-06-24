@@ -35,9 +35,11 @@ namespace Amazon.Imagebuilder.Model
     {
         private AmiDistributionConfiguration _amiDistributionConfiguration;
         private ContainerDistributionConfiguration _containerDistributionConfiguration;
+        private List<FastLaunchConfiguration> _fastLaunchConfigurations = new List<FastLaunchConfiguration>();
         private List<LaunchTemplateConfiguration> _launchTemplateConfigurations = new List<LaunchTemplateConfiguration>();
         private List<string> _licenseConfigurationArns = new List<string>();
         private string _region;
+        private S3ExportConfiguration _s3ExportConfiguration;
 
         /// <summary>
         /// Gets and sets the property AmiDistributionConfiguration. 
@@ -74,6 +76,25 @@ namespace Amazon.Imagebuilder.Model
         internal bool IsSetContainerDistributionConfiguration()
         {
             return this._containerDistributionConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FastLaunchConfigurations. 
+        /// <para>
+        /// The Windows faster-launching configurations to use for AMI distribution.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1000)]
+        public List<FastLaunchConfiguration> FastLaunchConfigurations
+        {
+            get { return this._fastLaunchConfigurations; }
+            set { this._fastLaunchConfigurations = value; }
+        }
+
+        // Check to see if FastLaunchConfigurations property is set
+        internal bool IsSetFastLaunchConfigurations()
+        {
+            return this._fastLaunchConfigurations != null && this._fastLaunchConfigurations.Count > 0; 
         }
 
         /// <summary>
@@ -132,6 +153,25 @@ namespace Amazon.Imagebuilder.Model
         internal bool IsSetRegion()
         {
             return this._region != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property S3ExportConfiguration. 
+        /// <para>
+        /// Configure export settings to deliver disk images created from your image build, using
+        /// a file format that is compatible with your VMs in that Region.
+        /// </para>
+        /// </summary>
+        public S3ExportConfiguration S3ExportConfiguration
+        {
+            get { return this._s3ExportConfiguration; }
+            set { this._s3ExportConfiguration = value; }
+        }
+
+        // Check to see if S3ExportConfiguration property is set
+        internal bool IsSetS3ExportConfiguration()
+        {
+            return this._s3ExportConfiguration != null;
         }
 
     }

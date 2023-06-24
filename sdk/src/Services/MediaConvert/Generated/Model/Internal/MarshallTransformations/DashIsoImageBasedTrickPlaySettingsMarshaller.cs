@@ -34,7 +34,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DashIsoImageBasedTrickPlaySettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class DashIsoImageBasedTrickPlaySettingsMarshaller : IRequestMarshaller<DashIsoImageBasedTrickPlaySettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -85,7 +85,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DashIsoImageBasedTrickPlaySettingsMarshaller Instance = new DashIsoImageBasedTrickPlaySettingsMarshaller();
 
     }

@@ -124,7 +124,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property CreatedBy. 
         /// <para>
-        ///  The IAM user or role that created the delegation. 
+        ///  The user or role that created the delegation. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

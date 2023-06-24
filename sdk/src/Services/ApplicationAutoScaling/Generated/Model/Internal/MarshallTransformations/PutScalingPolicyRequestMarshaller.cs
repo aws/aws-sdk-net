@@ -58,7 +58,7 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
             string target = "AnyScaleFrontendService.PutScalingPolicy";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-02-06";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-02-06";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -119,7 +119,6 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

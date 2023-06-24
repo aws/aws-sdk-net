@@ -1,64 +1,97 @@
 {
   "version": "2.0",
-  "service": "<fullname>Amazon Connect Customer Profiles</fullname> <p>Welcome to the Amazon Connect Customer Profiles API Reference. This guide provides information about the Amazon Connect Customer Profiles API, including supported operations, data types, parameters, and schemas.</p> <p>Amazon Connect Customer Profiles is a unified customer profile for your contact center that has pre-built connectors powered by AppFlow that make it easy to combine customer information from third party applications, such as Salesforce (CRM), ServiceNow (ITSM), and your enterprise resource planning (ERP), with contact history from your Amazon Connect contact center.</p> <p>If you're new to Amazon Connect , you might find it helpful to also review the <a href=\"https://docs.aws.amazon.com/connect/latest/adminguide/what-is-amazon-connect.html\">Amazon Connect Administrator Guide</a>.</p>",
+  "service": "<fullname>Amazon Connect Customer Profiles</fullname> <p>Amazon Connect Customer Profiles is a unified customer profile for your contact center that has pre-built connectors powered by AppFlow that make it easy to combine customer information from third party applications, such as Salesforce (CRM), ServiceNow (ITSM), and your enterprise resource planning (ERP), with contact history from your Amazon Connect contact center. If you're new to Amazon Connect, you might find it helpful to review the <a href=\"https://docs.aws.amazon.com/connect/latest/adminguide/\">Amazon Connect Administrator Guide</a>.</p>",
   "operations": {
-    "AddProfileKey": "<p>Associates a new key value with a specific profile, such as a Contact Trace Record (CTR) ContactId.</p> <p>A profile object can have a single unique key and any number of additional keys that can be used to identify the profile that it belongs to.</p>",
+    "AddProfileKey": "<p>Associates a new key value with a specific profile, such as a Contact Record ContactId.</p> <p>A profile object can have a single unique key and any number of additional keys that can be used to identify the profile that it belongs to.</p>",
+    "CreateCalculatedAttributeDefinition": "<p>Creates a new calculated attribute definition. After creation, new object data ingested into Customer Profiles will be included in the calculated attribute, which can be retrieved for a profile using the <a href=\"https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetCalculatedAttributeForProfile.html\">GetCalculatedAttributeForProfile</a> API. Defining a calculated attribute makes it available for all profiles within a domain. Each calculated attribute can only reference one <code>ObjectType</code> and at most, two fields from that <code>ObjectType</code>.</p>",
     "CreateDomain": "<p>Creates a domain, which is a container for all customer data, such as customer profile attributes, object types, profile keys, and encryption keys. You can create multiple domains, and each domain can have multiple third-party integrations.</p> <p>Each Amazon Connect instance can be associated with only one domain. Multiple Amazon Connect instances can be associated with one domain.</p> <p>Use this API or <a href=\"https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_UpdateDomain.html\">UpdateDomain</a> to enable <a href=\"https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html\">identity resolution</a>: set <code>Matching</code> to true. </p> <p>To prevent cross-service impersonation when you call this API, see <a href=\"https://docs.aws.amazon.com/connect/latest/adminguide/cross-service-confused-deputy-prevention.html\">Cross-service confused deputy prevention</a> for sample policies that you should apply. </p>",
+    "CreateEventStream": "<p>Creates an event stream, which is a subscription to real-time events, such as when profiles are created and updated through Amazon Connect Customer Profiles.</p> <p>Each event stream can be associated with only one Kinesis Data Stream destination in the same region and Amazon Web Services account as the customer profiles domain</p>",
+    "CreateIntegrationWorkflow": "<p> Creates an integration workflow. An integration workflow is an async process which ingests historic data and sets up an integration for ongoing updates. The supported Amazon AppFlow sources are Salesforce, ServiceNow, and Marketo. </p>",
     "CreateProfile": "<p>Creates a standard profile.</p> <p>A standard profile represents the following attributes for a customer profile in a domain.</p>",
+    "DeleteCalculatedAttributeDefinition": "<p>Deletes an existing calculated attribute definition. Note that deleting a default calculated attribute is possible, however once deleted, you will be unable to undo that action and will need to recreate it on your own using the CreateCalculatedAttributeDefinition API if you want it back.</p>",
     "DeleteDomain": "<p>Deletes a specific domain and all of its customer data, such as customer profile attributes and their related objects.</p>",
+    "DeleteEventStream": "<p>Disables and deletes the specified event stream.</p>",
     "DeleteIntegration": "<p>Removes an integration from a specific domain.</p>",
     "DeleteProfile": "<p>Deletes the standard customer profile and all data pertaining to the profile.</p>",
     "DeleteProfileKey": "<p>Removes a searchable key from a customer profile.</p>",
     "DeleteProfileObject": "<p>Removes an object associated with a profile of a given ProfileObjectType.</p>",
     "DeleteProfileObjectType": "<p>Removes a ProfileObjectType from a specific domain as well as removes all the ProfileObjects of that type. It also disables integrations from this specific ProfileObjectType. In addition, it scrubs all of the fields of the standard profile that were populated from this ProfileObjectType.</p>",
+    "DeleteWorkflow": "<p>Deletes the specified workflow and all its corresponding resources. This is an async process.</p>",
     "GetAutoMergingPreview": "<p>Tests the auto-merging settings of your Identity Resolution Job without merging your data. It randomly selects a sample of matching groups from the existing matching results, and applies the automerging settings that you provided. You can then view the number of profiles in the sample, the number of matches, and the number of profiles identified to be merged. This enables you to evaluate the accuracy of the attributes in your matching list. </p> <p>You can't view which profiles are matched and would be merged.</p> <important> <p>We strongly recommend you use this API to do a dry run of the automerging process before running the Identity Resolution Job. Include <b>at least</b> two matching attributes. If your matching list includes too few attributes (such as only <code>FirstName</code> or only <code>LastName</code>), there may be a large number of matches. This increases the chances of erroneous merges.</p> </important>",
+    "GetCalculatedAttributeDefinition": "<p>Provides more information on a calculated attribute definition for Customer Profiles.</p>",
+    "GetCalculatedAttributeForProfile": "<p>Retrieve a calculated attribute for a customer profile.</p>",
     "GetDomain": "<p>Returns information about a specific domain.</p>",
+    "GetEventStream": "<p>Returns information about the specified event stream in a specific domain.</p>",
     "GetIdentityResolutionJob": "<p>Returns information about an Identity Resolution Job in a specific domain. </p> <p>Identity Resolution Jobs are set up using the Amazon Connect admin console. For more information, see <a href=\"https://docs.aws.amazon.com/connect/latest/adminguide/use-identity-resolution.html\">Use Identity Resolution to consolidate similar profiles</a>.</p>",
     "GetIntegration": "<p>Returns an integration for a domain.</p>",
-    "GetMatches": "<p>This API is in preview release for Amazon Connect and subject to change.</p> <p>Before calling this API, use <a href=\"https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_CreateDomain.html\">CreateDomain</a> or <a href=\"https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_UpdateDomain.html\">UpdateDomain</a> to enable identity resolution: set <code>Matching</code> to true.</p> <p>GetMatches returns potentially matching profiles, based on the results of the latest run of a machine learning process. </p> <important> <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every Saturday at 12AM UTC to detect duplicate profiles in your domains. </p> <p>After the Identity Resolution Job completes, use the <a href=\"https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html\">GetMatches</a> API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from S3.</p> </important> <p>Amazon Connect uses the following profile attributes to identify matches:</p> <ul> <li> <p>PhoneNumber</p> </li> <li> <p>HomePhoneNumber</p> </li> <li> <p>BusinessPhoneNumber</p> </li> <li> <p>MobilePhoneNumber</p> </li> <li> <p>EmailAddress</p> </li> <li> <p>PersonalEmailAddress</p> </li> <li> <p>BusinessEmailAddress</p> </li> <li> <p>FullName</p> </li> <li> <p>BusinessName</p> </li> </ul> <p>For example, two or more profiles—with spelling mistakes such as <b>John Doe</b> and <b>Jhn Doe</b>, or different casing email addresses such as <b>JOHN_DOE@ANYCOMPANY.COM</b> and <b>johndoe@anycompany.com</b>, or different phone number formats such as <b>555-010-0000</b> and <b>+1-555-010-0000</b>—can be detected as belonging to the same customer <b>John Doe</b> and merged into a unified profile.</p>",
+    "GetMatches": "<p>Before calling this API, use <a href=\"https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_CreateDomain.html\">CreateDomain</a> or <a href=\"https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_UpdateDomain.html\">UpdateDomain</a> to enable identity resolution: set <code>Matching</code> to true.</p> <p>GetMatches returns potentially matching profiles, based on the results of the latest run of a machine learning process. </p> <important> <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every Saturday at 12AM UTC to detect duplicate profiles in your domains. </p> <p>After the Identity Resolution Job completes, use the <a href=\"https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html\">GetMatches</a> API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from S3.</p> </important> <p>Amazon Connect uses the following profile attributes to identify matches:</p> <ul> <li> <p>PhoneNumber</p> </li> <li> <p>HomePhoneNumber</p> </li> <li> <p>BusinessPhoneNumber</p> </li> <li> <p>MobilePhoneNumber</p> </li> <li> <p>EmailAddress</p> </li> <li> <p>PersonalEmailAddress</p> </li> <li> <p>BusinessEmailAddress</p> </li> <li> <p>FullName</p> </li> </ul> <p>For example, two or more profiles—with spelling mistakes such as <b>John Doe</b> and <b>Jhn Doe</b>, or different casing email addresses such as <b>JOHN_DOE@ANYCOMPANY.COM</b> and <b>johndoe@anycompany.com</b>, or different phone number formats such as <b>555-010-0000</b> and <b>+1-555-010-0000</b>—can be detected as belonging to the same customer <b>John Doe</b> and merged into a unified profile.</p>",
     "GetProfileObjectType": "<p>Returns the object types for a specific domain.</p>",
     "GetProfileObjectTypeTemplate": "<p>Returns the template information for a specific object type.</p> <p>A template is a predefined ProfileObjectType, such as “Salesforce-Account” or “Salesforce-Contact.” When a user sends a ProfileObject, using the PutProfileObject API, with an ObjectTypeName that matches one of the TemplateIds, it uses the mappings from the template.</p>",
+    "GetWorkflow": "<p>Get details of specified workflow.</p>",
+    "GetWorkflowSteps": "<p>Get granular list of steps in workflow.</p>",
     "ListAccountIntegrations": "<p>Lists all of the integrations associated to a specific URI in the AWS account.</p>",
+    "ListCalculatedAttributeDefinitions": "<p>Lists calculated attribute definitions for Customer Profiles</p>",
+    "ListCalculatedAttributesForProfile": "<p>Retrieve a list of calculated attributes for a customer profile.</p>",
     "ListDomains": "<p>Returns a list of all the domains for an AWS account that have been created.</p>",
+    "ListEventStreams": "<p>Returns a list of all the event streams in a specific domain.</p>",
     "ListIdentityResolutionJobs": "<p>Lists all of the Identity Resolution Jobs in your domain. The response sorts the list by <code>JobStartTime</code>.</p>",
     "ListIntegrations": "<p>Lists all of the integrations in your domain.</p>",
     "ListProfileObjectTypeTemplates": "<p>Lists all of the template information for object types.</p>",
     "ListProfileObjectTypes": "<p>Lists all of the templates available within the service.</p>",
     "ListProfileObjects": "<p>Returns a list of objects associated with a profile of a given ProfileObjectType.</p>",
     "ListTagsForResource": "<p>Displays the tags associated with an Amazon Connect Customer Profiles resource. In Connect Customer Profiles, domains, profile object types, and integrations can be tagged.</p>",
-    "MergeProfiles": "<p>This API is in preview release for Amazon Connect and subject to change.</p> <p>Runs an AWS Lambda job that does the following:</p> <ol> <li> <p>All the profileKeys in the <code>ProfileToBeMerged</code> will be moved to the main profile.</p> </li> <li> <p>All the objects in the <code>ProfileToBeMerged</code> will be moved to the main profile.</p> </li> <li> <p>All the <code>ProfileToBeMerged</code> will be deleted at the end.</p> </li> <li> <p>All the profileKeys in the <code>ProfileIdsToBeMerged</code> will be moved to the main profile.</p> </li> <li> <p>Standard fields are merged as follows:</p> <ol> <li> <p>Fields are always \"union\"-ed if there are no conflicts in standard fields or attributeKeys.</p> </li> <li> <p>When there are conflicting fields:</p> <ol> <li> <p>If no <code>SourceProfileIds</code> entry is specified, the main Profile value is always taken. </p> </li> <li> <p>If a <code>SourceProfileIds</code> entry is specified, the specified profileId is always taken, even if it is a NULL value.</p> </li> </ol> </li> </ol> </li> </ol> <p>You can use MergeProfiles together with <a href=\"https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html\">GetMatches</a>, which returns potentially matching profiles, or use it with the results of another matching system. After profiles have been merged, they cannot be separated (unmerged).</p>",
-    "PutIntegration": "<p>Adds an integration between the service and a third-party service, which includes Amazon AppFlow and Amazon Connect.</p> <p>An integration can belong to only one domain.</p>",
-    "PutProfileObject": "<p>Adds additional objects to customer profiles of a given ObjectType.</p> <p>When adding a specific profile object, like a Contact Trace Record (CTR), an inferred profile can get created if it is not mapped to an existing profile. The resulting profile will only have a phone number populated in the standard ProfileObject. Any additional CTRs with the same phone number will be mapped to the same inferred profile.</p> <p>When a ProfileObject is created and if a ProfileObjectType already exists for the ProfileObject, it will provide data to a standard profile depending on the ProfileObjectType definition.</p> <p>PutProfileObject needs an ObjectType, which can be created using PutProfileObjectType.</p>",
-    "PutProfileObjectType": "<p>Defines a ProfileObjectType.</p>",
-    "SearchProfiles": "<p>Searches for profiles within a specific domain name using name, phone number, email address, account number, or a custom defined index.</p>",
+    "ListWorkflows": "<p>Query to list all workflows.</p>",
+    "MergeProfiles": "<p>Runs an AWS Lambda job that does the following:</p> <ol> <li> <p>All the profileKeys in the <code>ProfileToBeMerged</code> will be moved to the main profile.</p> </li> <li> <p>All the objects in the <code>ProfileToBeMerged</code> will be moved to the main profile.</p> </li> <li> <p>All the <code>ProfileToBeMerged</code> will be deleted at the end.</p> </li> <li> <p>All the profileKeys in the <code>ProfileIdsToBeMerged</code> will be moved to the main profile.</p> </li> <li> <p>Standard fields are merged as follows:</p> <ol> <li> <p>Fields are always \"union\"-ed if there are no conflicts in standard fields or attributeKeys.</p> </li> <li> <p>When there are conflicting fields:</p> <ol> <li> <p>If no <code>SourceProfileIds</code> entry is specified, the main Profile value is always taken. </p> </li> <li> <p>If a <code>SourceProfileIds</code> entry is specified, the specified profileId is always taken, even if it is a NULL value.</p> </li> </ol> </li> </ol> </li> </ol> <p>You can use MergeProfiles together with <a href=\"https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html\">GetMatches</a>, which returns potentially matching profiles, or use it with the results of another matching system. After profiles have been merged, they cannot be separated (unmerged).</p>",
+    "PutIntegration": "<p>Adds an integration between the service and a third-party service, which includes Amazon AppFlow and Amazon Connect.</p> <p>An integration can belong to only one domain.</p> <p>To add or remove tags on an existing Integration, see <a href=\"https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_TagResource.html\"> TagResource </a>/<a href=\"https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_UntagResource.html\"> UntagResource</a>.</p>",
+    "PutProfileObject": "<p>Adds additional objects to customer profiles of a given ObjectType.</p> <p>When adding a specific profile object, like a Contact Record, an inferred profile can get created if it is not mapped to an existing profile. The resulting profile will only have a phone number populated in the standard ProfileObject. Any additional Contact Records with the same phone number will be mapped to the same inferred profile.</p> <p>When a ProfileObject is created and if a ProfileObjectType already exists for the ProfileObject, it will provide data to a standard profile depending on the ProfileObjectType definition.</p> <p>PutProfileObject needs an ObjectType, which can be created using PutProfileObjectType.</p>",
+    "PutProfileObjectType": "<p>Defines a ProfileObjectType.</p> <p>To add or remove tags on an existing ObjectType, see <a href=\"https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_TagResource.html\"> TagResource</a>/<a href=\"https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_UntagResource.html\">UntagResource</a>.</p>",
+    "SearchProfiles": "<p>Searches for profiles within a specific domain using one or more predefined search keys (e.g., _fullName, _phone, _email, _account, etc.) and/or custom-defined search keys. A search key is a data type pair that consists of a <code>KeyName</code> and <code>Values</code> list.</p> <p>This operation supports searching for profiles with a minimum of 1 key-value(s) pair and up to 5 key-value(s) pairs using either <code>AND</code> or <code>OR</code> logic.</p>",
     "TagResource": "<p>Assigns one or more tags (key-value pairs) to the specified Amazon Connect Customer Profiles resource. Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values. In Connect Customer Profiles, domains, profile object types, and integrations can be tagged.</p> <p>Tags don't have any semantic meaning to AWS and are interpreted strictly as strings of characters.</p> <p>You can use the TagResource action with a resource that already has tags. If you specify a new tag key, this tag is appended to the list of tags associated with the resource. If you specify a tag key that is already associated with the resource, the new tag value that you specify replaces the previous value for that tag.</p> <p>You can associate as many as 50 tags with a resource.</p>",
     "UntagResource": "<p>Removes one or more tags from the specified Amazon Connect Customer Profiles resource. In Connect Customer Profiles, domains, profile object types, and integrations can be tagged.</p>",
-    "UpdateDomain": "<p>Updates the properties of a domain, including creating or selecting a dead letter queue or an encryption key.</p> <p>After a domain is created, the name can’t be changed.</p> <p>Use this API or <a href=\"https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_CreateDomain.html\">CreateDomain</a> to enable <a href=\"https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html\">identity resolution</a>: set <code>Matching</code> to true. </p> <p>To prevent cross-service impersonation when you call this API, see <a href=\"https://docs.aws.amazon.com/connect/latest/adminguide/cross-service-confused-deputy-prevention.html\">Cross-service confused deputy prevention</a> for sample policies that you should apply. </p>",
+    "UpdateCalculatedAttributeDefinition": "<p>Updates an existing calculated attribute definition. When updating the Conditions, note that increasing the date range of a calculated attribute will not trigger inclusion of historical data greater than the current date range.</p>",
+    "UpdateDomain": "<p>Updates the properties of a domain, including creating or selecting a dead letter queue or an encryption key.</p> <p>After a domain is created, the name can’t be changed.</p> <p>Use this API or <a href=\"https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_CreateDomain.html\">CreateDomain</a> to enable <a href=\"https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html\">identity resolution</a>: set <code>Matching</code> to true. </p> <p>To prevent cross-service impersonation when you call this API, see <a href=\"https://docs.aws.amazon.com/connect/latest/adminguide/cross-service-confused-deputy-prevention.html\">Cross-service confused deputy prevention</a> for sample policies that you should apply. </p> <p>To add or remove tags on an existing Domain, see <a href=\"https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_TagResource.html\">TagResource</a>/<a href=\"https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_UntagResource.html\">UntagResource</a>.</p>",
     "UpdateProfile": "<p>Updates the properties of a profile. The ProfileId is required for updating a customer profile.</p> <p>When calling the UpdateProfile API, specifying an empty string value means that any existing value will be removed. Not specifying a string value means that any value already there will be kept.</p>"
   },
   "shapes": {
     "name": {
       "base": null,
       "refs": {
-        "AddProfileKeyRequest$KeyName": "<p>A searchable identifier of a customer profile.</p>",
+        "AddProfileKeyRequest$KeyName": "<p>A searchable identifier of a customer profile. The predefined keys you can use include: _account, _profileId, _assetId, _caseId, _orderId, _fullName, _phone, _email, _ctrContactId, _marketoLeadId, _salesforceAccountId, _salesforceContactId, _salesforceAssetId, _zendeskUserId, _zendeskExternalId, _zendeskTicketId, _serviceNowSystemId, _serviceNowIncidentId, _segmentUserId, _shopifyCustomerId, _shopifyOrderId.</p>",
         "AddProfileKeyRequest$DomainName": "<p>The unique name of the domain.</p>",
         "AddProfileKeyResponse$KeyName": "<p>A searchable identifier of a customer profile.</p>",
+        "AdditionalSearchKey$KeyName": "<p>A searchable identifier of a customer profile.</p>",
+        "CreateCalculatedAttributeDefinitionRequest$DomainName": "<p>The unique name of the domain.</p>",
         "CreateDomainRequest$DomainName": "<p>The unique name of the domain.</p>",
         "CreateDomainResponse$DomainName": "<p>The unique name of the domain.</p>",
+        "CreateEventStreamRequest$DomainName": "<p>The unique name of the domain.</p>",
+        "CreateEventStreamRequest$EventStreamName": "<p>The name of the event stream.</p>",
+        "CreateIntegrationWorkflowRequest$DomainName": "<p>The unique name of the domain.</p>",
         "CreateProfileRequest$DomainName": "<p>The unique name of the domain.</p>",
+        "DeleteCalculatedAttributeDefinitionRequest$DomainName": "<p>The unique name of the domain.</p>",
         "DeleteDomainRequest$DomainName": "<p>The unique name of the domain.</p>",
+        "DeleteEventStreamRequest$DomainName": "<p>The unique name of the domain.</p>",
+        "DeleteEventStreamRequest$EventStreamName": "<p>The name of the event stream</p>",
         "DeleteIntegrationRequest$DomainName": "<p>The unique name of the domain.</p>",
         "DeleteProfileKeyRequest$KeyName": "<p>A searchable identifier of a customer profile.</p>",
         "DeleteProfileKeyRequest$DomainName": "<p>The unique name of the domain.</p>",
         "DeleteProfileObjectRequest$DomainName": "<p>The unique name of the domain.</p>",
         "DeleteProfileObjectTypeRequest$DomainName": "<p>The unique name of the domain.</p>",
         "DeleteProfileRequest$DomainName": "<p>The unique name of the domain.</p>",
+        "DeleteWorkflowRequest$DomainName": "<p>The unique name of the domain.</p>",
+        "EventStreamSummary$DomainName": "<p>The unique name of the domain.</p>",
+        "EventStreamSummary$EventStreamName": "<p>The name of the event stream.</p>",
         "FieldMap$key": null,
         "FieldNameList$member": null,
+        "FoundByKeyValue$KeyName": "<p>A searchable identifier of a customer profile.</p>",
         "GetAutoMergingPreviewRequest$DomainName": "<p>The unique name of the domain.</p>",
         "GetAutoMergingPreviewResponse$DomainName": "<p>The unique name of the domain.</p>",
+        "GetCalculatedAttributeDefinitionRequest$DomainName": "<p>The unique name of the domain.</p>",
+        "GetCalculatedAttributeForProfileRequest$DomainName": "<p>The unique name of the domain.</p>",
         "GetDomainRequest$DomainName": "<p>The unique name of the domain.</p>",
         "GetDomainResponse$DomainName": "<p>The unique name of the domain.</p>",
+        "GetEventStreamRequest$DomainName": "<p>The unique name of the domain.</p>",
+        "GetEventStreamRequest$EventStreamName": "<p>The name of the event stream provided during create operations.</p>",
+        "GetEventStreamResponse$DomainName": "<p>The unique name of the domain.</p>",
         "GetIdentityResolutionJobRequest$DomainName": "<p>The unique name of the domain.</p>",
         "GetIdentityResolutionJobResponse$DomainName": "<p>The unique name of the domain.</p>",
         "GetIntegrationRequest$DomainName": "<p>The unique name of the domain.</p>",
@@ -70,9 +103,14 @@
         "GetProfileObjectTypeTemplateResponse$TemplateId": "<p>A unique identifier for the object template.</p>",
         "GetProfileObjectTypeTemplateResponse$SourceName": "<p>The name of the source of the object template.</p>",
         "GetProfileObjectTypeTemplateResponse$SourceObject": "<p>The source of the object template.</p>",
+        "GetWorkflowRequest$DomainName": "<p>The unique name of the domain.</p>",
+        "GetWorkflowStepsRequest$DomainName": "<p>The unique name of the domain.</p>",
         "IdentityResolutionJob$DomainName": "<p>The unique name of the domain.</p>",
         "KeyMap$key": null,
+        "ListCalculatedAttributeDefinitionsRequest$DomainName": "<p>The unique name of the domain.</p>",
+        "ListCalculatedAttributesForProfileRequest$DomainName": "<p>The unique name of the domain.</p>",
         "ListDomainItem$DomainName": "<p>The unique name of the domain.</p>",
+        "ListEventStreamsRequest$DomainName": "<p>The unique name of the domain.</p>",
         "ListIdentityResolutionJobsRequest$DomainName": "<p>The unique name of the domain.</p>",
         "ListIntegrationItem$DomainName": "<p>The unique name of the domain.</p>",
         "ListIntegrationsRequest$DomainName": "<p>The unique name of the domain.</p>",
@@ -81,16 +119,18 @@
         "ListProfileObjectTypeTemplateItem$SourceObject": "<p>The source of the object template.</p>",
         "ListProfileObjectTypesRequest$DomainName": "<p>The unique name of the domain.</p>",
         "ListProfileObjectsRequest$DomainName": "<p>The unique name of the domain.</p>",
+        "ListWorkflowsRequest$DomainName": "<p>The unique name of the domain.</p>",
         "MergeProfilesRequest$DomainName": "<p>The unique name of the domain.</p>",
-        "ObjectFilter$KeyName": "<p>A searchable identifier of a standard profile object. The predefined keys you can use to search for _asset include: _assetId, _assetName, _serialNumber. The predefined keys you can use to search for _case include: _caseId.</p>",
+        "ObjectFilter$KeyName": "<p>A searchable identifier of a profile object. The predefined keys you can use to search for <code>_asset</code> include: <code>_assetId</code>, <code>_assetName</code>, and <code>_serialNumber</code>. The predefined keys you can use to search for <code>_case</code> include: <code>_caseId</code>. The predefined keys you can use to search for <code>_order</code> include: <code>_orderId</code>.</p>",
         "PutIntegrationRequest$DomainName": "<p>The unique name of the domain.</p>",
         "PutIntegrationResponse$DomainName": "<p>The unique name of the domain.</p>",
         "PutProfileObjectRequest$DomainName": "<p>The unique name of the domain.</p>",
         "PutProfileObjectTypeRequest$DomainName": "<p>The unique name of the domain.</p>",
-        "PutProfileObjectTypeRequest$TemplateId": "<p>A unique identifier for the object template.</p>",
+        "PutProfileObjectTypeRequest$TemplateId": "<p>A unique identifier for the object template. For some attributes in the request, the service will use the default value from the object template when TemplateId is present. If these attributes are present in the request, the service may return a <code>BadRequestException</code>. These attributes include: AllowProfileCreation, SourceLastUpdatedTimestampFormat, Fields, and Keys. For example, if AllowProfileCreation is set to true when TemplateId is set, the service may return a <code>BadRequestException</code>.</p>",
         "PutProfileObjectTypeResponse$TemplateId": "<p>A unique identifier for the object template.</p>",
         "SearchProfilesRequest$DomainName": "<p>The unique name of the domain.</p>",
-        "SearchProfilesRequest$KeyName": "<p>A searchable identifier of a customer profile. The predefined keys you can use to search include: _account, _profileId, _fullName, _phone, _email, _ctrContactId, _marketoLeadId, _salesforceAccountId, _salesforceContactId, _zendeskUserId, _zendeskExternalId, _serviceNowSystemId.</p>",
+        "SearchProfilesRequest$KeyName": "<p>A searchable identifier of a customer profile. The predefined keys you can use to search include: _account, _profileId, _assetId, _caseId, _orderId, _fullName, _phone, _email, _ctrContactId, _marketoLeadId, _salesforceAccountId, _salesforceContactId, _salesforceAssetId, _zendeskUserId, _zendeskExternalId, _zendeskTicketId, _serviceNowSystemId, _serviceNowIncidentId, _segmentUserId, _shopifyCustomerId, _shopifyOrderId.</p>",
+        "UpdateCalculatedAttributeDefinitionRequest$DomainName": "<p>The unique name of the domain.</p>",
         "UpdateDomainRequest$DomainName": "<p>The unique name of the domain.</p>",
         "UpdateDomainResponse$DomainName": "<p>The unique name of the domain.</p>",
         "UpdateProfileRequest$DomainName": "<p>The unique name of the domain.</p>"
@@ -111,6 +151,12 @@
       "refs": {
       }
     },
+    "AdditionalSearchKey": {
+      "base": "<p>A data type pair that consists of a <code>KeyName</code> and <code>Values</code> list that is used in conjunction with the <a href=\"https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html#customerprofiles-SearchProfiles-request-KeyName\">KeyName</a> and <a href=\"https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html#customerprofiles-SearchProfiles-request-Values\">Values</a> parameters to search for profiles using the <a href=\"https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html\">SearchProfiles</a> API.</p>",
+      "refs": {
+        "additionalSearchKeysList$member": null
+      }
+    },
     "Address": {
       "base": "<p>A generic address associated with the customer that is not mailing, shipping, or billing.</p>",
       "refs": {
@@ -122,6 +168,51 @@
         "Profile$ShippingAddress": "<p>The customer’s shipping address.</p>",
         "Profile$MailingAddress": "<p>The customer’s mailing address.</p>",
         "Profile$BillingAddress": "<p>The customer’s billing address.</p>"
+      }
+    },
+    "AppflowIntegration": {
+      "base": "<p>Details for workflow of type <code>APPFLOW_INTEGRATION</code>.</p>",
+      "refs": {
+        "IntegrationConfig$AppflowIntegration": "<p>Configuration data for <code>APPFLOW_INTEGRATION</code> workflow type.</p>"
+      }
+    },
+    "AppflowIntegrationWorkflowAttributes": {
+      "base": "<p>Structure holding all <code>APPFLOW_INTEGRATION</code> specific workflow attributes.</p>",
+      "refs": {
+        "WorkflowAttributes$AppflowIntegration": "<p>Workflow attributes specific to <code>APPFLOW_INTEGRATION</code> workflow.</p>"
+      }
+    },
+    "AppflowIntegrationWorkflowMetrics": {
+      "base": "<p>Workflow specific execution metrics for <code>APPFLOW_INTEGRATION</code> workflow.</p>",
+      "refs": {
+        "WorkflowMetrics$AppflowIntegration": "<p>Workflow execution metrics for <code>APPFLOW_INTEGRATION</code> workflow.</p>"
+      }
+    },
+    "AppflowIntegrationWorkflowStep": {
+      "base": "<p>Workflow step details for <code>APPFLOW_INTEGRATION</code> workflow.</p>",
+      "refs": {
+        "WorkflowStepItem$AppflowIntegration": "<p>Workflow step information specific to <code>APPFLOW_INTEGRATION</code> workflow.</p>"
+      }
+    },
+    "AttributeDetails": {
+      "base": "<p>Mathematical expression and a list of attribute items specified in that expression.</p>",
+      "refs": {
+        "CreateCalculatedAttributeDefinitionRequest$AttributeDetails": "<p>Mathematical expression and a list of attribute items specified in that expression.</p>",
+        "CreateCalculatedAttributeDefinitionResponse$AttributeDetails": "<p>Mathematical expression and a list of attribute items specified in that expression.</p>",
+        "GetCalculatedAttributeDefinitionResponse$AttributeDetails": "<p>Mathematical expression and a list of attribute items specified in that expression.</p>",
+        "UpdateCalculatedAttributeDefinitionResponse$AttributeDetails": "<p>The mathematical expression and a list of attribute items specified in that expression.</p>"
+      }
+    },
+    "AttributeItem": {
+      "base": "<p>The details of a single attribute item specified in the mathematical expression.</p>",
+      "refs": {
+        "AttributeList$member": null
+      }
+    },
+    "AttributeList": {
+      "base": null,
+      "refs": {
+        "AttributeDetails$Attributes": "<p>A list of attribute items specified in the mathematical expression.</p>"
       }
     },
     "AttributeSourceIdMap": {
@@ -150,6 +241,18 @@
       "refs": {
       }
     },
+    "Batch": {
+      "base": "<p>Batch defines the boundaries for ingestion for each step in <code>APPFLOW_INTEGRATION</code> workflow. <code>APPFLOW_INTEGRATION</code> workflow splits ingestion based on these boundaries.</p>",
+      "refs": {
+        "Batches$member": null
+      }
+    },
+    "Batches": {
+      "base": null,
+      "refs": {
+        "AppflowIntegration$Batches": "<p>Batches in workflow of type <code>APPFLOW_INTEGRATION</code>.</p>"
+      }
+    },
     "BucketName": {
       "base": null,
       "refs": {
@@ -160,6 +263,28 @@
       "base": null,
       "refs": {
         "S3SourceProperties$BucketPrefix": "<p>The object key for the Amazon S3 bucket in which the source files are stored.</p>"
+      }
+    },
+    "CalculatedAttributeDefinitionsList": {
+      "base": null,
+      "refs": {
+        "ListCalculatedAttributeDefinitionsResponse$Items": "<p>The list of calculated attribute definitions.</p>"
+      }
+    },
+    "CalculatedAttributesForProfileList": {
+      "base": null,
+      "refs": {
+        "ListCalculatedAttributesForProfileResponse$Items": "<p>The list of calculated attributes.</p>"
+      }
+    },
+    "Conditions": {
+      "base": "<p>The conditions including range, object count, and threshold for the calculated attribute.</p>",
+      "refs": {
+        "CreateCalculatedAttributeDefinitionRequest$Conditions": "<p>The conditions including range, object count, and threshold for the calculated attribute.</p>",
+        "CreateCalculatedAttributeDefinitionResponse$Conditions": "<p>The conditions including range, object count, and threshold for the calculated attribute.</p>",
+        "GetCalculatedAttributeDefinitionResponse$Conditions": "<p>The conditions including range, object count, and threshold for the calculated attribute.</p>",
+        "UpdateCalculatedAttributeDefinitionRequest$Conditions": "<p>The conditions including range, object count, and threshold for the calculated attribute.</p>",
+        "UpdateCalculatedAttributeDefinitionResponse$Conditions": "<p>The conditions including range, object count, and threshold for the calculated attribute.</p>"
       }
     },
     "ConflictResolution": {
@@ -184,6 +309,7 @@
     "ConnectorProfileName": {
       "base": null,
       "refs": {
+        "AppflowIntegrationWorkflowAttributes$ConnectorProfileName": "<p>The name of the AppFlow connector profile used for ingestion.</p>",
         "SourceFlowConfig$ConnectorProfileName": "<p>The name of the AppFlow connector profile. This name must be unique for each connector profile in the AWS account.</p>"
       }
     },
@@ -194,12 +320,42 @@
         "GetAutoMergingPreviewRequest$Consolidation": "<p>A list of matching attributes that represent matching criteria.</p>"
       }
     },
+    "CreateCalculatedAttributeDefinitionRequest": {
+      "base": null,
+      "refs": {
+      }
+    },
+    "CreateCalculatedAttributeDefinitionResponse": {
+      "base": null,
+      "refs": {
+      }
+    },
     "CreateDomainRequest": {
       "base": null,
       "refs": {
       }
     },
     "CreateDomainResponse": {
+      "base": null,
+      "refs": {
+      }
+    },
+    "CreateEventStreamRequest": {
+      "base": null,
+      "refs": {
+      }
+    },
+    "CreateEventStreamResponse": {
+      "base": null,
+      "refs": {
+      }
+    },
+    "CreateIntegrationWorkflowRequest": {
+      "base": null,
+      "refs": {
+      }
+    },
+    "CreateIntegrationWorkflowResponse": {
       "base": null,
       "refs": {
       }
@@ -234,12 +390,32 @@
         "IncrementalPullConfig$DatetimeTypeFieldName": "<p>A field that specifies the date time or timestamp field as the criteria to use when importing incremental records from the source.</p>"
       }
     },
+    "DeleteCalculatedAttributeDefinitionRequest": {
+      "base": null,
+      "refs": {
+      }
+    },
+    "DeleteCalculatedAttributeDefinitionResponse": {
+      "base": null,
+      "refs": {
+      }
+    },
     "DeleteDomainRequest": {
       "base": null,
       "refs": {
       }
     },
     "DeleteDomainResponse": {
+      "base": null,
+      "refs": {
+      }
+    },
+    "DeleteEventStreamRequest": {
+      "base": null,
+      "refs": {
+      }
+    },
+    "DeleteEventStreamResponse": {
       "base": null,
       "refs": {
       }
@@ -294,10 +470,26 @@
       "refs": {
       }
     },
+    "DeleteWorkflowRequest": {
+      "base": null,
+      "refs": {
+      }
+    },
+    "DeleteWorkflowResponse": {
+      "base": null,
+      "refs": {
+      }
+    },
     "DestinationField": {
       "base": null,
       "refs": {
         "Task$DestinationField": "<p>A field in a destination connector, or a field value against which Amazon AppFlow validates a source field.</p>"
+      }
+    },
+    "DestinationSummary": {
+      "base": "<p>Summary information about the Kinesis data stream</p>",
+      "refs": {
+        "EventStreamSummary$DestinationSummary": "<p>Summary information about the Kinesis data stream.</p>"
       }
     },
     "DomainList": {
@@ -315,7 +507,46 @@
     "Double": {
       "base": null,
       "refs": {
-        "MatchItem$ConfidenceScore": "<p>A number between 0 and 1 that represents the confidence level of assigning profiles to a matching group. A score of 1 likely indicates an exact match.</p>"
+        "MatchItem$ConfidenceScore": "<p>A number between 0 and 1, where a higher score means higher similarity. Examining match confidence scores lets you distinguish between groups of similar records in which the system is highly confident (which you may decide to merge), groups of similar records about which the system is uncertain (which you may decide to have reviewed by a human), and groups of similar records that the system deems to be unlikely (which you may decide to reject). Given confidence scores vary as per the data input, it should not be used an absolute measure of matching quality.</p>"
+      }
+    },
+    "Double0To1": {
+      "base": null,
+      "refs": {
+        "AutoMerging$MinAllowedConfidenceScoreForMerging": "<p>A number between 0 and 1 that represents the minimum confidence score required for profiles within a matching group to be merged during the auto-merge process. A higher score means higher similarity required to merge profiles. </p>",
+        "GetAutoMergingPreviewRequest$MinAllowedConfidenceScoreForMerging": "<p>Minimum confidence score required for profiles within a matching group to be merged during the auto-merge process.</p>"
+      }
+    },
+    "EventStreamDestinationDetails": {
+      "base": "<p>Details of the destination being used for the EventStream.</p>",
+      "refs": {
+        "GetEventStreamResponse$DestinationDetails": "<p>Details regarding the Kinesis stream.</p>"
+      }
+    },
+    "EventStreamDestinationStatus": {
+      "base": null,
+      "refs": {
+        "DestinationSummary$Status": "<p>The status of enabling the Kinesis stream as a destination for export.</p>",
+        "EventStreamDestinationDetails$Status": "<p>The status of enabling the Kinesis stream as a destination for export.</p>"
+      }
+    },
+    "EventStreamState": {
+      "base": null,
+      "refs": {
+        "EventStreamSummary$State": "<p>The operational state of destination stream for export.</p>",
+        "GetEventStreamResponse$State": "<p>The operational state of destination stream for export.</p>"
+      }
+    },
+    "EventStreamSummary": {
+      "base": "<p>An instance of EventStream in a list of EventStreams.</p>",
+      "refs": {
+        "EventStreamSummaryList$member": null
+      }
+    },
+    "EventStreamSummaryList": {
+      "base": null,
+      "refs": {
+        "ListEventStreamsResponse$Items": "<p>Contains summary information about an EventStream.</p>"
       }
     },
     "ExportingConfig": {
@@ -362,6 +593,7 @@
     "FlowDefinition": {
       "base": "<p>The configurations that control how Customer Profiles retrieves data from the source, Amazon AppFlow. Customer Profiles uses this information to create an AppFlow flow on behalf of customers.</p>",
       "refs": {
+        "AppflowIntegration$FlowDefinition": null,
         "PutIntegrationRequest$FlowDefinition": "<p>The configuration that controls how Customer Profiles retrieves data from the source.</p>"
       }
     },
@@ -374,7 +606,14 @@
     "FlowName": {
       "base": null,
       "refs": {
+        "AppflowIntegrationWorkflowStep$FlowName": "<p>Name of the flow created during execution of workflow step. <code>APPFLOW_INTEGRATION</code> workflow type creates an appflow flow during workflow step execution on the customers behalf.</p>",
         "FlowDefinition$FlowName": "<p>The specified name of the flow. Use underscores (_) or hyphens (-) only. Spaces are not allowed.</p>"
+      }
+    },
+    "FoundByKeyValue": {
+      "base": "<p>A data type pair that consists of a <code>KeyName</code> and <code>Values</code> list that were used to find a profile returned in response to a <a href=\"https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html\">SearchProfiles</a> request. </p>",
+      "refs": {
+        "foundByList$member": null
       }
     },
     "Gender": {
@@ -395,12 +634,42 @@
       "refs": {
       }
     },
+    "GetCalculatedAttributeDefinitionRequest": {
+      "base": null,
+      "refs": {
+      }
+    },
+    "GetCalculatedAttributeDefinitionResponse": {
+      "base": null,
+      "refs": {
+      }
+    },
+    "GetCalculatedAttributeForProfileRequest": {
+      "base": null,
+      "refs": {
+      }
+    },
+    "GetCalculatedAttributeForProfileResponse": {
+      "base": null,
+      "refs": {
+      }
+    },
     "GetDomainRequest": {
       "base": null,
       "refs": {
       }
     },
     "GetDomainResponse": {
+      "base": null,
+      "refs": {
+      }
+    },
+    "GetEventStreamRequest": {
+      "base": null,
+      "refs": {
+      }
+    },
+    "GetEventStreamResponse": {
       "base": null,
       "refs": {
       }
@@ -455,6 +724,26 @@
       "refs": {
       }
     },
+    "GetWorkflowRequest": {
+      "base": null,
+      "refs": {
+      }
+    },
+    "GetWorkflowResponse": {
+      "base": null,
+      "refs": {
+      }
+    },
+    "GetWorkflowStepsRequest": {
+      "base": null,
+      "refs": {
+      }
+    },
+    "GetWorkflowStepsResponse": {
+      "base": null,
+      "refs": {
+      }
+    },
     "IdentityResolutionJob": {
       "base": "<p>Information about the Identity Resolution Job.</p>",
       "refs": {
@@ -478,6 +767,12 @@
       "base": "<p>Specifies the configuration used when importing incremental records from the source.</p>",
       "refs": {
         "SourceFlowConfig$IncrementalPullConfig": "<p>Defines the configuration for a scheduled incremental data pull. If a valid configuration is provided, the fields specified in the configuration are used when querying for the incremental data pull.</p>"
+      }
+    },
+    "IntegrationConfig": {
+      "base": "<p>Configuration data for integration workflow.</p>",
+      "refs": {
+        "CreateIntegrationWorkflowRequest$IntegrationConfig": "<p>Configuration data for integration workflow.</p>"
       }
     },
     "IntegrationList": {
@@ -543,6 +838,38 @@
       "refs": {
       }
     },
+    "ListCalculatedAttributeDefinitionItem": {
+      "base": "<p>The details of a single calculated attribute definition.</p>",
+      "refs": {
+        "CalculatedAttributeDefinitionsList$member": null
+      }
+    },
+    "ListCalculatedAttributeDefinitionsRequest": {
+      "base": null,
+      "refs": {
+      }
+    },
+    "ListCalculatedAttributeDefinitionsResponse": {
+      "base": null,
+      "refs": {
+      }
+    },
+    "ListCalculatedAttributeForProfileItem": {
+      "base": "<p>The details of a single calculated attribute for a profile.</p>",
+      "refs": {
+        "CalculatedAttributesForProfileList$member": null
+      }
+    },
+    "ListCalculatedAttributesForProfileRequest": {
+      "base": null,
+      "refs": {
+      }
+    },
+    "ListCalculatedAttributesForProfileResponse": {
+      "base": null,
+      "refs": {
+      }
+    },
     "ListDomainItem": {
       "base": "<p>An object in a list that represents a domain.</p>",
       "refs": {
@@ -555,6 +882,16 @@
       }
     },
     "ListDomainsResponse": {
+      "base": null,
+      "refs": {
+      }
+    },
+    "ListEventStreamsRequest": {
+      "base": null,
+      "refs": {
+      }
+    },
+    "ListEventStreamsResponse": {
       "base": null,
       "refs": {
       }
@@ -643,6 +980,22 @@
       "refs": {
       }
     },
+    "ListWorkflowsItem": {
+      "base": "<p>A workflow in list of workflows.</p>",
+      "refs": {
+        "WorkflowList$member": null
+      }
+    },
+    "ListWorkflowsRequest": {
+      "base": null,
+      "refs": {
+      }
+    },
+    "ListWorkflowsResponse": {
+      "base": null,
+      "refs": {
+      }
+    },
     "MarketoConnectorOperator": {
       "base": null,
       "refs": {
@@ -713,10 +1066,16 @@
         "ZendeskSourceProperties$Object": "<p>The object specified in the Zendesk flow source.</p>"
       }
     },
-    "ObjectFilter": {
-      "base": "<p>The filter applied to ListProfileObjects response to include profile objects with the specified index values. This filter is only supported for ObjectTypeName _asset and _case.</p>",
+    "ObjectCount": {
+      "base": null,
       "refs": {
-        "ListProfileObjectsRequest$ObjectFilter": "<p>Applies a filter to the response to include profile objects with the specified index values. This filter is only supported for ObjectTypeName _asset and _case.</p>"
+        "Conditions$ObjectCount": "<p>The number of profile objects used for the calculated attribute.</p>"
+      }
+    },
+    "ObjectFilter": {
+      "base": "<p>The filter applied to <code>ListProfileObjects</code> response to include profile objects with the specified index values.</p>",
+      "refs": {
+        "ListProfileObjectsRequest$ObjectFilter": "<p>Applies a filter to the response to include profile objects with the specified index values.</p>"
       }
     },
     "ObjectTypeField": {
@@ -735,6 +1094,21 @@
       "base": null,
       "refs": {
         "KeyMap$value": null
+      }
+    },
+    "ObjectTypeNames": {
+      "base": null,
+      "refs": {
+        "GetIntegrationResponse$ObjectTypeNames": "<p>A map in which each key is an event type from an external application such as Segment or Shopify, and each value is an <code>ObjectTypeName</code> (template) used to ingest the event. It supports the following event types: <code>SegmentIdentify</code>, <code>ShopifyCreateCustomers</code>, <code>ShopifyUpdateCustomers</code>, <code>ShopifyCreateDraftOrders</code>, <code>ShopifyUpdateDraftOrders</code>, <code>ShopifyCreateOrders</code>, and <code>ShopifyUpdatedOrders</code>.</p>",
+        "ListIntegrationItem$ObjectTypeNames": "<p>A map in which each key is an event type from an external application such as Segment or Shopify, and each value is an <code>ObjectTypeName</code> (template) used to ingest the event. It supports the following event types: <code>SegmentIdentify</code>, <code>ShopifyCreateCustomers</code>, <code>ShopifyUpdateCustomers</code>, <code>ShopifyCreateDraftOrders</code>, <code>ShopifyUpdateDraftOrders</code>, <code>ShopifyCreateOrders</code>, and <code>ShopifyUpdatedOrders</code>.</p>",
+        "PutIntegrationRequest$ObjectTypeNames": "<p>A map in which each key is an event type from an external application such as Segment or Shopify, and each value is an <code>ObjectTypeName</code> (template) used to ingest the event. It supports the following event types: <code>SegmentIdentify</code>, <code>ShopifyCreateCustomers</code>, <code>ShopifyUpdateCustomers</code>, <code>ShopifyCreateDraftOrders</code>, <code>ShopifyUpdateDraftOrders</code>, <code>ShopifyCreateOrders</code>, and <code>ShopifyUpdatedOrders</code>.</p>",
+        "PutIntegrationResponse$ObjectTypeNames": "<p>A map in which each key is an event type from an external application such as Segment or Shopify, and each value is an <code>ObjectTypeName</code> (template) used to ingest the event. It supports the following event types: <code>SegmentIdentify</code>, <code>ShopifyCreateCustomers</code>, <code>ShopifyUpdateCustomers</code>, <code>ShopifyCreateDraftOrders</code>, <code>ShopifyUpdateDraftOrders</code>, <code>ShopifyCreateOrders</code>, and <code>ShopifyUpdatedOrders</code>.</p>"
+      }
+    },
+    "Operator": {
+      "base": null,
+      "refs": {
+        "Threshold$Operator": "<p>The operator of the threshold.</p>"
       }
     },
     "OperatorPropertiesKeys": {
@@ -772,7 +1146,7 @@
     "ProfileList": {
       "base": null,
       "refs": {
-        "SearchProfilesResponse$Items": "<p>The list of SearchProfiles instances.</p>"
+        "SearchProfilesResponse$Items": "<p>The list of Profiles matching the search criteria.</p>"
       }
     },
     "ProfileObjectList": {
@@ -829,9 +1203,21 @@
       "refs": {
       }
     },
+    "Range": {
+      "base": "<p>The relative time period over which data is included in the aggregation.</p>",
+      "refs": {
+        "Conditions$Range": "<p>The relative time period over which data is included in the aggregation.</p>"
+      }
+    },
     "ResourceNotFoundException": {
       "base": "<p>The requested resource does not exist, or access was denied.</p>",
       "refs": {
+      }
+    },
+    "RoleArn": {
+      "base": null,
+      "refs": {
+        "CreateIntegrationWorkflowRequest$RoleArn": "<p>The Amazon Resource Name (ARN) of the IAM role. Customer Profiles assumes this role to create resources on your behalf as part of workflow execution.</p>"
       }
     },
     "S3ConnectorOperator": {
@@ -919,6 +1305,7 @@
     "SourceConnectorType": {
       "base": null,
       "refs": {
+        "AppflowIntegrationWorkflowAttributes$SourceConnectorType": "<p>Specifies the source connector type, such as Salesforce, ServiceNow, and Marketo. Indicates source of ingestion.</p>",
         "SourceFlowConfig$ConnectorType": "<p>The type of connector, such as Salesforce, Marketo, and so on.</p>"
       }
     },
@@ -943,7 +1330,25 @@
     "StandardIdentifierList": {
       "base": null,
       "refs": {
-        "ObjectTypeKey$StandardIdentifiers": "<p>The types of keys that a ProfileObject can have. Each ProfileObject can have only 1 UNIQUE key but multiple PROFILE keys. PROFILE, ASSET or CASE means that this key can be used to tie an object to a PROFILE, ASSET or CASE respectively. UNIQUE means that it can be used to uniquely identify an object. If a key a is marked as SECONDARY, it will be used to search for profiles after all other PROFILE keys have been searched. A LOOKUP_ONLY key is only used to match a profile but is not persisted to be used for searching of the profile. A NEW_ONLY key is only used if the profile does not already exist before the object is ingested, otherwise it is only used for matching objects to profiles.</p>"
+        "ObjectTypeKey$StandardIdentifiers": "<p>The types of keys that a ProfileObject can have. Each ProfileObject can have only 1 UNIQUE key but multiple PROFILE keys. PROFILE, ASSET, CASE, or ORDER means that this key can be used to tie an object to a PROFILE, ASSET, CASE, or ORDER respectively. UNIQUE means that it can be used to uniquely identify an object. If a key a is marked as SECONDARY, it will be used to search for profiles after all other PROFILE keys have been searched. A LOOKUP_ONLY key is only used to match a profile but is not persisted to be used for searching of the profile. A NEW_ONLY key is only used if the profile does not already exist before the object is ingested, otherwise it is only used for matching objects to profiles.</p>"
+      }
+    },
+    "Statistic": {
+      "base": null,
+      "refs": {
+        "CreateCalculatedAttributeDefinitionRequest$Statistic": "<p>The aggregation operation to perform for the calculated attribute.</p>",
+        "CreateCalculatedAttributeDefinitionResponse$Statistic": "<p>The aggregation operation to perform for the calculated attribute.</p>",
+        "GetCalculatedAttributeDefinitionResponse$Statistic": "<p>The aggregation operation to perform for the calculated attribute.</p>",
+        "UpdateCalculatedAttributeDefinitionResponse$Statistic": "<p>The aggregation operation to perform for the calculated attribute.</p>"
+      }
+    },
+    "Status": {
+      "base": null,
+      "refs": {
+        "AppflowIntegrationWorkflowStep$Status": "<p>Workflow step status for <code>APPFLOW_INTEGRATION</code> workflow.</p>",
+        "GetWorkflowResponse$Status": "<p>Status of workflow execution.</p>",
+        "ListWorkflowsItem$Status": "<p>Status of workflow execution.</p>",
+        "ListWorkflowsRequest$Status": "<p>Status of workflow execution.</p>"
       }
     },
     "TagArn": {
@@ -970,11 +1375,20 @@
     "TagMap": {
       "base": null,
       "refs": {
+        "CreateCalculatedAttributeDefinitionRequest$Tags": "<p>The tags used to organize, track, or control access for this resource.</p>",
+        "CreateCalculatedAttributeDefinitionResponse$Tags": "<p>The tags used to organize, track, or control access for this resource.</p>",
         "CreateDomainRequest$Tags": "<p>The tags used to organize, track, or control access for this resource.</p>",
         "CreateDomainResponse$Tags": "<p>The tags used to organize, track, or control access for this resource.</p>",
+        "CreateEventStreamRequest$Tags": "<p>The tags used to organize, track, or control access for this resource.</p>",
+        "CreateEventStreamResponse$Tags": "<p>The tags used to organize, track, or control access for this resource.</p>",
+        "CreateIntegrationWorkflowRequest$Tags": "<p>The tags used to organize, track, or control access for this resource.</p>",
+        "EventStreamSummary$Tags": "<p>The tags used to organize, track, or control access for this resource.</p>",
+        "GetCalculatedAttributeDefinitionResponse$Tags": "<p>The tags used to organize, track, or control access for this resource.</p>",
         "GetDomainResponse$Tags": "<p>The tags used to organize, track, or control access for this resource.</p>",
+        "GetEventStreamResponse$Tags": "<p>The tags used to organize, track, or control access for this resource.</p>",
         "GetIntegrationResponse$Tags": "<p>The tags used to organize, track, or control access for this resource.</p>",
         "GetProfileObjectTypeResponse$Tags": "<p>The tags used to organize, track, or control access for this resource.</p>",
+        "ListCalculatedAttributeDefinitionItem$Tags": "<p>The tags used to organize, track, or control access for this resource.</p>",
         "ListDomainItem$Tags": "<p>The tags used to organize, track, or control access for this resource.</p>",
         "ListIntegrationItem$Tags": "<p>The tags used to organize, track, or control access for this resource.</p>",
         "ListProfileObjectTypeItem$Tags": "<p>The tags used to organize, track, or control access for this resource.</p>",
@@ -984,6 +1398,7 @@
         "PutProfileObjectTypeRequest$Tags": "<p>The tags used to organize, track, or control access for this resource.</p>",
         "PutProfileObjectTypeResponse$Tags": "<p>The tags used to organize, track, or control access for this resource.</p>",
         "TagResourceRequest$tags": "<p>The tags used to organize, track, or control access for this resource.</p>",
+        "UpdateCalculatedAttributeDefinitionResponse$Tags": "<p>The tags used to organize, track, or control access for this resource.</p>",
         "UpdateDomainRequest$Tags": "<p>The tags used to organize, track, or control access for this resource.</p>",
         "UpdateDomainResponse$Tags": "<p>The tags used to organize, track, or control access for this resource.</p>"
       }
@@ -1028,6 +1443,12 @@
         "FlowDefinition$Tasks": "<p>A list of tasks that Customer Profiles performs while transferring the data in the flow run.</p>"
       }
     },
+    "Threshold": {
+      "base": "<p>The threshold for the calculated attribute.</p>",
+      "refs": {
+        "Conditions$Threshold": "<p>The threshold for the calculated attribute.</p>"
+      }
+    },
     "ThrottlingException": {
       "base": "<p>You exceeded the maximum number of requests.</p>",
       "refs": {
@@ -1057,6 +1478,12 @@
         "TriggerConfig$TriggerType": "<p>Specifies the type of flow trigger. It can be OnDemand, Scheduled, or Event.</p>"
       }
     },
+    "Unit": {
+      "base": null,
+      "refs": {
+        "Range$Unit": "<p>The unit of time.</p>"
+      }
+    },
     "UntagResourceRequest": {
       "base": null,
       "refs": {
@@ -1082,6 +1509,16 @@
         "UpdateProfileRequest$Attributes": "<p>A key value pair of attributes of a customer profile.</p>"
       }
     },
+    "UpdateCalculatedAttributeDefinitionRequest": {
+      "base": null,
+      "refs": {
+      }
+    },
+    "UpdateCalculatedAttributeDefinitionResponse": {
+      "base": null,
+      "refs": {
+      }
+    },
     "UpdateDomainRequest": {
       "base": null,
       "refs": {
@@ -1102,6 +1539,52 @@
       "refs": {
       }
     },
+    "Value": {
+      "base": null,
+      "refs": {
+        "Range$Value": "<p>The amount of time of the specified unit.</p>"
+      }
+    },
+    "WorkflowAttributes": {
+      "base": "<p>Structure to hold workflow attributes.</p>",
+      "refs": {
+        "GetWorkflowResponse$Attributes": "<p>Attributes provided for workflow execution.</p>"
+      }
+    },
+    "WorkflowList": {
+      "base": null,
+      "refs": {
+        "ListWorkflowsResponse$Items": "<p>List containing workflow details.</p>"
+      }
+    },
+    "WorkflowMetrics": {
+      "base": "<p>Generic object containing workflow execution metrics.</p>",
+      "refs": {
+        "GetWorkflowResponse$Metrics": "<p>Workflow specific execution metrics.</p>"
+      }
+    },
+    "WorkflowStepItem": {
+      "base": "<p>List containing steps in workflow.</p>",
+      "refs": {
+        "WorkflowStepsList$member": null
+      }
+    },
+    "WorkflowStepsList": {
+      "base": null,
+      "refs": {
+        "GetWorkflowStepsResponse$Items": "<p>List containing workflow step details.</p>"
+      }
+    },
+    "WorkflowType": {
+      "base": null,
+      "refs": {
+        "CreateIntegrationWorkflowRequest$WorkflowType": "<p>The type of workflow. The only supported value is APPFLOW_INTEGRATION.</p>",
+        "GetWorkflowResponse$WorkflowType": "<p>The type of workflow. The only supported value is APPFLOW_INTEGRATION.</p>",
+        "GetWorkflowStepsResponse$WorkflowType": "<p>The type of workflow. The only supported value is APPFLOW_INTEGRATION.</p>",
+        "ListWorkflowsItem$WorkflowType": "<p>The type of workflow. The only supported value is APPFLOW_INTEGRATION.</p>",
+        "ListWorkflowsRequest$WorkflowType": "<p>The type of workflow. The only supported value is APPFLOW_INTEGRATION.</p>"
+      }
+    },
     "ZendeskConnectorOperator": {
       "base": null,
       "refs": {
@@ -1114,6 +1597,18 @@
         "SourceConnectorProperties$Zendesk": "<p>The properties that are applied when using Zendesk as a flow source.</p>"
       }
     },
+    "additionalSearchKeysList": {
+      "base": null,
+      "refs": {
+        "SearchProfilesRequest$AdditionalSearchKeys": "<p>A list of <code>AdditionalSearchKey</code> objects that are each searchable identifiers of a profile. Each <code>AdditionalSearchKey</code> object contains a <code>KeyName</code> and a list of <code>Values</code> associated with that specific key (i.e., a key-value(s) pair). These additional search keys will be used in conjunction with the <code>LogicalOperator</code> and the required <code>KeyName</code> and <code>Values</code> parameters to search for profiles that satisfy the search criteria. </p>"
+      }
+    },
+    "attributeName": {
+      "base": null,
+      "refs": {
+        "AttributeItem$Name": "<p>The name of an attribute defined in a profile object type.</p>"
+      }
+    },
     "boolean": {
       "base": null,
       "refs": {
@@ -1123,6 +1618,19 @@
         "PutProfileObjectTypeResponse$AllowProfileCreation": "<p>Indicates whether a profile should be created when data is received if one doesn’t exist for an object of this type. The default is <code>FALSE</code>. If the AllowProfileCreation flag is set to <code>FALSE</code>, then the service tries to fetch a standard profile and associate this object with the profile. If it is set to <code>TRUE</code>, and if no match is found, then the service creates a new standard profile.</p>",
         "SalesforceSourceProperties$EnableDynamicFieldUpdate": "<p>The flag that enables dynamic fetching of new (recently added) fields in the Salesforce objects while running a flow.</p>",
         "SalesforceSourceProperties$IncludeDeletedRecords": "<p>Indicates whether Amazon AppFlow includes deleted files in the flow run.</p>"
+      }
+    },
+    "displayName": {
+      "base": null,
+      "refs": {
+        "CreateCalculatedAttributeDefinitionRequest$DisplayName": "<p>The display name of the calculated attribute.</p>",
+        "CreateCalculatedAttributeDefinitionResponse$DisplayName": "<p>The display name of the calculated attribute.</p>",
+        "GetCalculatedAttributeDefinitionResponse$DisplayName": "<p>The display name of the calculated attribute.</p>",
+        "GetCalculatedAttributeForProfileResponse$DisplayName": "<p>The display name of the calculated attribute.</p>",
+        "ListCalculatedAttributeDefinitionItem$DisplayName": "<p>The display name of the calculated attribute.</p>",
+        "ListCalculatedAttributeForProfileItem$DisplayName": "<p>The display name of the calculated attribute.</p>",
+        "UpdateCalculatedAttributeDefinitionRequest$DisplayName": "<p>The display name of the calculated attribute.</p>",
+        "UpdateCalculatedAttributeDefinitionResponse$DisplayName": "<p>The display name of the calculated attribute.</p>"
       }
     },
     "encryptionKey": {
@@ -1151,9 +1659,25 @@
         "UpdateDomainResponse$DefaultExpirationDays": "<p>The default number of days until the data within the domain expires.</p>"
       }
     },
+    "foundByList": {
+      "base": null,
+      "refs": {
+        "Profile$FoundByItems": "<p>A list of items used to find a profile returned in a <a href=\"https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html\">SearchProfiles</a> response. An item is a key-value(s) pair that matches an attribute in the profile.</p> <p>If the optional <code>AdditionalSearchKeys</code> parameter was included in the <a href=\"https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html\">SearchProfiles</a> request, the <code>FoundByItems</code> list should be interpreted based on the <code>LogicalOperator</code> used in the request:</p> <ul> <li> <p> <code>AND</code> - The profile included in the response matched all of the search keys specified in the request. The <code>FoundByItems</code> will include all of the key-value(s) pairs that were specified in the request (as this is a requirement of <code>AND</code> search logic).</p> </li> <li> <p> <code>OR</code> - The profile included in the response matched at least one of the search keys specified in the request. The <code>FoundByItems</code> will include each of the key-value(s) pairs that the profile was found by.</p> </li> </ul> <p>The <code>OR</code> relationship is the default behavior if the <code>LogicalOperator</code> parameter is not included in the <a href=\"https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html\">SearchProfiles</a> request.</p>"
+      }
+    },
+    "logicalOperator": {
+      "base": null,
+      "refs": {
+        "SearchProfilesRequest$LogicalOperator": "<p>Relationship between all specified search keys that will be used to search for profiles. This includes the required <code>KeyName</code> and <code>Values</code> parameters as well as any key-value(s) pairs specified in the <code>AdditionalSearchKeys</code> list.</p> <p>This parameter influences which profiles will be returned in the response in the following manner:</p> <ul> <li> <p> <code>AND</code> - The response only includes profiles that match all of the search keys.</p> </li> <li> <p> <code>OR</code> - The response includes profiles that match at least one of the search keys.</p> </li> </ul> <p>The <code>OR</code> relationship is the default behavior if this parameter is not included in the request.</p>"
+      }
+    },
     "long": {
       "base": null,
       "refs": {
+        "AppflowIntegrationWorkflowMetrics$RecordsProcessed": "<p>Number of records processed in <code>APPFLOW_INTEGRATION</code> workflow.</p>",
+        "AppflowIntegrationWorkflowMetrics$StepsCompleted": "<p>Total steps completed in <code>APPFLOW_INTEGRATION</code> workflow.</p>",
+        "AppflowIntegrationWorkflowMetrics$TotalSteps": "<p>Total steps in <code>APPFLOW_INTEGRATION</code> workflow.</p>",
+        "AppflowIntegrationWorkflowStep$RecordsProcessed": "<p>Total number of records processed during execution of workflow step for <code>APPFLOW_INTEGRATION</code> workflow.</p>",
         "DomainStats$ProfileCount": "<p>The total number of profiles currently in the domain.</p>",
         "DomainStats$MeteringProfileCount": "<p>The number of profiles that you are currently paying for in the domain. If you have more than 100 objects associated with a single profile, that profile counts as two profiles. If you have more than 200 objects, that profile counts as three, and so on.</p>",
         "DomainStats$ObjectCount": "<p>The total number of objects in domain.</p>",
@@ -1176,14 +1700,19 @@
       "base": null,
       "refs": {
         "GetMatchesRequest$MaxResults": "<p>The maximum number of results to return per page.</p>",
+        "GetWorkflowStepsRequest$MaxResults": "<p>The maximum number of results to return per page.</p>",
         "ListAccountIntegrationsRequest$MaxResults": "<p>The maximum number of objects returned per page.</p>",
+        "ListCalculatedAttributeDefinitionsRequest$MaxResults": "<p>The maximum number of calculated attribute definitions returned per page.</p>",
+        "ListCalculatedAttributesForProfileRequest$MaxResults": "<p>The maximum number of calculated attributes returned per page.</p>",
         "ListDomainsRequest$MaxResults": "<p>The maximum number of objects returned per page.</p>",
+        "ListEventStreamsRequest$MaxResults": "<p>The maximum number of objects returned per page.</p>",
         "ListIdentityResolutionJobsRequest$MaxResults": "<p>The maximum number of results to return per page.</p>",
         "ListIntegrationsRequest$MaxResults": "<p>The maximum number of objects returned per page.</p>",
         "ListProfileObjectTypeTemplatesRequest$MaxResults": "<p>The maximum number of objects returned per page.</p>",
         "ListProfileObjectTypesRequest$MaxResults": "<p>The maximum number of objects returned per page.</p>",
         "ListProfileObjectsRequest$MaxResults": "<p>The maximum number of objects returned per page.</p>",
-        "SearchProfilesRequest$MaxResults": "<p>The maximum number of objects returned per page.</p>"
+        "ListWorkflowsRequest$MaxResults": "<p>The maximum number of results to return per page.</p>",
+        "SearchProfilesRequest$MaxResults": "<p>The maximum number of objects returned per page.</p> <p>The default is 20 if this parameter is not included in the request.</p>"
       }
     },
     "message": {
@@ -1207,8 +1736,13 @@
       "base": null,
       "refs": {
         "AutoMerging$Enabled": "<p>The flag that enables the auto-merging of duplicate profiles.</p>",
+        "GetIntegrationResponse$IsUnstructured": "<p>Boolean that shows if the Flow that's associated with the Integration is created in Amazon Appflow, or with ObjectTypeName equals _unstructured via API/CLI in flowDefinition.</p>",
+        "ListAccountIntegrationsRequest$IncludeHidden": "<p>Boolean to indicate if hidden integration should be returned. Defaults to <code>False</code>.</p>",
+        "ListIntegrationItem$IsUnstructured": "<p>Boolean that shows if the Flow that's associated with the Integration is created in Amazon Appflow, or with ObjectTypeName equals _unstructured via API/CLI in flowDefinition.</p>",
+        "ListIntegrationsRequest$IncludeHidden": "<p>Boolean to indicate if hidden integration should be returned. Defaults to <code>False</code>.</p>",
         "MatchingRequest$Enabled": "<p>The flag that enables the matching process of duplicate profiles.</p>",
-        "MatchingResponse$Enabled": "<p>The flag that enables the matching process of duplicate profiles.</p>"
+        "MatchingResponse$Enabled": "<p>The flag that enables the matching process of duplicate profiles.</p>",
+        "PutIntegrationResponse$IsUnstructured": "<p>Boolean that shows if the Flow that's associated with the Integration is created in Amazon Appflow, or with ObjectTypeName equals _unstructured via API/CLI in flowDefinition.</p>"
       }
     },
     "requestValueList": {
@@ -1216,7 +1750,9 @@
       "refs": {
         "AddProfileKeyRequest$Values": "<p>A list of key values.</p>",
         "AddProfileKeyResponse$Values": "<p>A list of key values.</p>",
+        "AdditionalSearchKey$Values": "<p>A list of key values.</p>",
         "DeleteProfileKeyRequest$Values": "<p>A list of key values.</p>",
+        "FoundByKeyValue$Values": "<p>A list of key values.</p>",
         "ObjectFilter$Values": "<p>A list of key values.</p>",
         "SearchProfilesRequest$Values": "<p>A list of key values.</p>"
       }
@@ -1282,13 +1818,16 @@
         "UpdateProfileRequest$BusinessPhoneNumber": "<p>The customer’s business phone number.</p>",
         "UpdateProfileRequest$EmailAddress": "<p>The customer’s email address, which has not been specified as a personal or business address. </p>",
         "UpdateProfileRequest$PersonalEmailAddress": "<p>The customer’s personal email address.</p>",
-        "UpdateProfileRequest$BusinessEmailAddress": "<p>The customer’s business email address.</p>"
+        "UpdateProfileRequest$BusinessEmailAddress": "<p>The customer’s business email address.</p>",
+        "UpdateProfileRequest$PartyTypeString": "<p>An alternative to <code>PartyType</code> which accepts any string as input.</p>",
+        "UpdateProfileRequest$GenderString": "<p>An alternative to <code>Gender</code> which accepts any string as input.</p>"
       }
     },
     "string1To1000": {
       "base": null,
       "refs": {
         "CreateProfileRequest$AdditionalInformation": "<p>Any additional information relevant to the customer’s profile.</p>",
+        "EventStreamDestinationDetails$Message": "<p>The human-readable string that corresponds to the error or success while enabling the streaming destination.</p>",
         "Profile$AdditionalInformation": "<p>Any additional information relevant to the customer’s profile.</p>"
       }
     },
@@ -1305,10 +1844,18 @@
         "Address$Province": "<p>The province in which a customer lives.</p>",
         "Address$Country": "<p>The country in which a customer lives.</p>",
         "Address$PostalCode": "<p>The postal code of a customer address.</p>",
+        "AppflowIntegrationWorkflowAttributes$RoleArn": "<p>The Amazon Resource Name (ARN) of the IAM role. Customer Profiles assumes this role to create resources on your behalf as part of workflow execution.</p>",
+        "AppflowIntegrationWorkflowStep$ExecutionMessage": "<p>Message indicating execution of workflow step for <code>APPFLOW_INTEGRATION</code> workflow.</p>",
+        "AppflowIntegrationWorkflowStep$BatchRecordsStartTime": "<p>Start datetime of records pulled in batch during execution of workflow step for <code>APPFLOW_INTEGRATION</code> workflow.</p>",
+        "AppflowIntegrationWorkflowStep$BatchRecordsEndTime": "<p>End datetime of records pulled in batch during execution of workflow step for <code>APPFLOW_INTEGRATION</code> workflow.</p>",
+        "AttributeDetails$Expression": "<p>Mathematical expression that is performed on attribute items provided in the attribute list. Each element in the expression should follow the structure of \\\"{ObjectTypeName.AttributeName}\\\".</p>",
         "AttributeSourceIdMap$key": null,
         "Attributes$key": null,
         "Attributes$value": null,
         "ConflictResolution$SourceName": "<p>The <code>ObjectType</code> name that is used to resolve profile merging conflicts when choosing <code>SOURCE</code> as the <code>ConflictResolvingModel</code>.</p>",
+        "CreateEventStreamRequest$Uri": "<p>The StreamARN of the destination to deliver profile events to. For example, arn:aws:kinesis:region:account-id:stream/stream-name</p>",
+        "CreateEventStreamResponse$EventStreamArn": "<p>A unique identifier for the event stream.</p>",
+        "CreateIntegrationWorkflowResponse$Message": "<p>A message indicating create request was received.</p>",
         "CreateProfileRequest$AccountNumber": "<p>A unique account number that you have given to the customer.</p>",
         "CreateProfileRequest$BusinessName": "<p>The name of the customer’s business.</p>",
         "CreateProfileRequest$FirstName": "<p>The customer’s first name.</p>",
@@ -1322,17 +1869,34 @@
         "CreateProfileRequest$EmailAddress": "<p>The customer’s email address, which has not been specified as a personal or business address. </p>",
         "CreateProfileRequest$PersonalEmailAddress": "<p>The customer’s personal email address.</p>",
         "CreateProfileRequest$BusinessEmailAddress": "<p>The customer’s business email address.</p>",
+        "CreateProfileRequest$PartyTypeString": "<p>An alternative to <code>PartyType</code> which accepts any string as input.</p>",
+        "CreateProfileRequest$GenderString": "<p>An alternative to <code>Gender</code> which accepts any string as input.</p>",
         "DeleteIntegrationRequest$Uri": "<p>The URI of the S3 bucket or any other type of data source.</p>",
         "DeleteProfileObjectRequest$ProfileObjectUniqueKey": "<p>The unique identifier of the profile object generated by the service.</p>",
+        "DeleteWorkflowRequest$WorkflowId": "<p>Unique identifier for the workflow.</p>",
+        "DestinationSummary$Uri": "<p>The StreamARN of the destination to deliver profile events to. For example, arn:aws:kinesis:region:account-id:stream/stream-name.</p>",
+        "EventStreamDestinationDetails$Uri": "<p>The StreamARN of the destination to deliver profile events to. For example, arn:aws:kinesis:region:account-id:stream/stream-name.</p>",
+        "EventStreamSummary$EventStreamArn": "<p>A unique identifier for the event stream.</p>",
+        "GetCalculatedAttributeForProfileResponse$IsDataPartial": "<p>Indicates whether the calculated attribute’s value is based on partial data. If data is partial, it is set to true.</p>",
+        "GetCalculatedAttributeForProfileResponse$Value": "<p>The value of the calculated attribute.</p>",
+        "GetEventStreamResponse$EventStreamArn": "<p>A unique identifier for the event stream.</p>",
         "GetIntegrationRequest$Uri": "<p>The URI of the S3 bucket or any other type of data source.</p>",
         "GetIntegrationResponse$Uri": "<p>The URI of the S3 bucket or any other type of data source.</p>",
+        "GetIntegrationResponse$WorkflowId": "<p>Unique identifier for the workflow.</p>",
         "GetProfileObjectTypeResponse$SourceLastUpdatedTimestampFormat": "<p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set up.</p>",
         "GetProfileObjectTypeTemplateResponse$SourceLastUpdatedTimestampFormat": "<p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set up.</p>",
+        "GetWorkflowResponse$ErrorDescription": "<p>Workflow error messages during execution (if any).</p>",
         "ListAccountIntegrationsRequest$Uri": "<p>The URI of the S3 bucket or any other type of data source.</p>",
+        "ListCalculatedAttributeForProfileItem$IsDataPartial": "<p>Indicates whether the calculated attribute’s value is based on partial data. If data is partial, it is set to true.</p>",
+        "ListCalculatedAttributeForProfileItem$Value": "<p>The value of the calculated attribute.</p>",
         "ListIntegrationItem$Uri": "<p>The URI of the S3 bucket or any other type of data source.</p>",
+        "ListIntegrationItem$WorkflowId": "<p>Unique identifier for the workflow.</p>",
         "ListProfileObjectsItem$ProfileObjectUniqueKey": "<p>The unique identifier of the ProfileObject generated by the service.</p>",
+        "ListWorkflowsItem$WorkflowId": "<p>Unique identifier for the workflow.</p>",
+        "ListWorkflowsItem$StatusDescription": "<p>Description for workflow execution status.</p>",
         "MatchItem$MatchId": "<p>The unique identifiers for this group of profiles that match.</p>",
         "MatchingAttributes$member": null,
+        "ObjectTypeNames$key": null,
         "Profile$AccountNumber": "<p>A unique account number that you have given to the customer.</p>",
         "Profile$BusinessName": "<p>The name of the customer’s business.</p>",
         "Profile$FirstName": "<p>The customer’s first name.</p>",
@@ -1346,11 +1910,15 @@
         "Profile$EmailAddress": "<p>The customer’s email address, which has not been specified as a personal or business address. </p>",
         "Profile$PersonalEmailAddress": "<p>The customer’s personal email address.</p>",
         "Profile$BusinessEmailAddress": "<p>The customer’s business email address.</p>",
+        "Profile$PartyTypeString": "<p>An alternative to PartyType which accepts any string as input.</p>",
+        "Profile$GenderString": "<p>An alternative to Gender which accepts any string as input.</p>",
         "PutIntegrationRequest$Uri": "<p>The URI of the S3 bucket or any other type of data source.</p>",
         "PutIntegrationResponse$Uri": "<p>The URI of the S3 bucket or any other type of data source.</p>",
+        "PutIntegrationResponse$WorkflowId": "<p>Unique identifier for the workflow.</p>",
         "PutProfileObjectResponse$ProfileObjectUniqueKey": "<p>The unique identifier of the profile object generated by the service.</p>",
         "PutProfileObjectTypeRequest$SourceLastUpdatedTimestampFormat": "<p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set up. </p>",
         "PutProfileObjectTypeResponse$SourceLastUpdatedTimestampFormat": "<p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set up in fields that were parsed using <a href=\"https://docs.oracle.com/javase/10/docs/api/java/text/SimpleDateFormat.html\">SimpleDateFormat</a>. If you have <code>sourceLastUpdatedTimestamp</code> in your field, you must set up <code>sourceLastUpdatedTimestampFormat</code>.</p>",
+        "Threshold$Value": "<p>The value of the threshold.</p>",
         "UpdateAttributes$key": null,
         "requestValueList$member": null
       }
@@ -1373,21 +1941,40 @@
     "text": {
       "base": null,
       "refs": {
+        "CreateCalculatedAttributeDefinitionRequest$Description": "<p>The description of the calculated attribute.</p>",
+        "CreateCalculatedAttributeDefinitionResponse$Description": "<p>The description of the calculated attribute.</p>",
+        "GetCalculatedAttributeDefinitionResponse$Description": "<p>The description of the calculated attribute.</p>",
         "GetProfileObjectTypeResponse$Description": "<p>The description of the profile object type.</p>",
+        "ListCalculatedAttributeDefinitionItem$Description": "<p>The threshold for the calculated attribute.</p>",
         "ListProfileObjectTypeItem$Description": "<p>Description of the profile object type.</p>",
         "ObjectTypeField$Source": "<p>A field of a ProfileObject. For example: _source.FirstName, where “_source” is a ProfileObjectType of a Zendesk user and “FirstName” is a field in that ObjectType.</p>",
         "ObjectTypeField$Target": "<p>The location of the data in the standard ProfileObject model. For example: _profile.Address.PostalCode.</p>",
         "PutProfileObjectTypeRequest$Description": "<p>Description of the profile object type.</p>",
-        "PutProfileObjectTypeResponse$Description": "<p>Description of the profile object type.</p>"
+        "PutProfileObjectTypeResponse$Description": "<p>Description of the profile object type.</p>",
+        "UpdateCalculatedAttributeDefinitionRequest$Description": "<p>The description of the calculated attribute.</p>",
+        "UpdateCalculatedAttributeDefinitionResponse$Description": "<p>The description of the calculated attribute.</p>"
       }
     },
     "timestamp": {
       "base": null,
       "refs": {
+        "AppflowIntegrationWorkflowStep$CreatedAt": "<p>Creation timestamp of workflow step for <code>APPFLOW_INTEGRATION</code> workflow.</p>",
+        "AppflowIntegrationWorkflowStep$LastUpdatedAt": "<p>Last updated timestamp for workflow step for <code>APPFLOW_INTEGRATION</code> workflow.</p>",
+        "Batch$StartTime": "<p>Start time of batch to split ingestion.</p>",
+        "Batch$EndTime": "<p>End time of batch to split ingestion.</p>",
+        "CreateCalculatedAttributeDefinitionResponse$CreatedAt": "<p>The timestamp of when the calculated attribute definition was created.</p>",
+        "CreateCalculatedAttributeDefinitionResponse$LastUpdatedAt": "<p>The timestamp of when the calculated attribute definition was most recently edited.</p>",
         "CreateDomainResponse$CreatedAt": "<p>The timestamp of when the domain was created.</p>",
         "CreateDomainResponse$LastUpdatedAt": "<p>The timestamp of when the domain was most recently edited.</p>",
+        "DestinationSummary$UnhealthySince": "<p>The timestamp when the status last changed to <code>UNHEALHY</code>.</p>",
+        "EventStreamDestinationDetails$UnhealthySince": "<p>The timestamp when the status last changed to <code>UNHEALHY</code>.</p>",
+        "EventStreamSummary$StoppedSince": "<p>The timestamp when the <code>State</code> changed to <code>STOPPED</code>.</p>",
+        "GetCalculatedAttributeDefinitionResponse$CreatedAt": "<p>The timestamp of when the calculated attribute definition was created.</p>",
+        "GetCalculatedAttributeDefinitionResponse$LastUpdatedAt": "<p>The timestamp of when the calculated attribute definition was most recently edited.</p>",
         "GetDomainResponse$CreatedAt": "<p>The timestamp of when the domain was created.</p>",
         "GetDomainResponse$LastUpdatedAt": "<p>The timestamp of when the domain was most recently edited.</p>",
+        "GetEventStreamResponse$CreatedAt": "<p>The timestamp of when the export was created.</p>",
+        "GetEventStreamResponse$StoppedSince": "<p>The timestamp when the <code>State</code> changed to <code>STOPPED</code>.</p>",
         "GetIdentityResolutionJobResponse$JobStartTime": "<p>The timestamp of when the Identity Resolution Job was started or will be started.</p>",
         "GetIdentityResolutionJobResponse$JobEndTime": "<p>The timestamp of when the Identity Resolution Job was completed.</p>",
         "GetIdentityResolutionJobResponse$LastUpdatedAt": "<p>The timestamp of when the Identity Resolution Job was most recently edited.</p>",
@@ -1397,18 +1984,28 @@
         "GetMatchesResponse$MatchGenerationDate": "<p>The timestamp this version of Match Result generated.</p>",
         "GetProfileObjectTypeResponse$CreatedAt": "<p>The timestamp of when the domain was created.</p>",
         "GetProfileObjectTypeResponse$LastUpdatedAt": "<p>The timestamp of when the domain was most recently edited.</p>",
+        "GetWorkflowResponse$StartDate": "<p>The timestamp that represents when workflow execution started.</p>",
+        "GetWorkflowResponse$LastUpdatedAt": "<p>The timestamp that represents when workflow execution last updated.</p>",
         "IdentityResolutionJob$JobStartTime": "<p>The timestamp of when the job was started or will be started.</p>",
         "IdentityResolutionJob$JobEndTime": "<p>The timestamp of when the job was completed.</p>",
+        "ListCalculatedAttributeDefinitionItem$CreatedAt": "<p>The threshold for the calculated attribute.</p>",
+        "ListCalculatedAttributeDefinitionItem$LastUpdatedAt": "<p>The timestamp of when the calculated attribute definition was most recently edited.</p>",
         "ListDomainItem$CreatedAt": "<p>The timestamp of when the domain was created.</p>",
         "ListDomainItem$LastUpdatedAt": "<p>The timestamp of when the domain was most recently edited.</p>",
         "ListIntegrationItem$CreatedAt": "<p>The timestamp of when the domain was created.</p>",
         "ListIntegrationItem$LastUpdatedAt": "<p>The timestamp of when the domain was most recently edited.</p>",
         "ListProfileObjectTypeItem$CreatedAt": "<p>The timestamp of when the domain was created.</p>",
         "ListProfileObjectTypeItem$LastUpdatedAt": "<p>The timestamp of when the domain was most recently edited.</p>",
+        "ListWorkflowsItem$CreatedAt": "<p>Creation timestamp for workflow.</p>",
+        "ListWorkflowsItem$LastUpdatedAt": "<p>Last updated timestamp for workflow.</p>",
+        "ListWorkflowsRequest$QueryStartDate": "<p>Retrieve workflows started after timestamp.</p>",
+        "ListWorkflowsRequest$QueryEndDate": "<p>Retrieve workflows ended after timestamp.</p>",
         "PutIntegrationResponse$CreatedAt": "<p>The timestamp of when the domain was created.</p>",
         "PutIntegrationResponse$LastUpdatedAt": "<p>The timestamp of when the domain was most recently edited.</p>",
         "PutProfileObjectTypeResponse$CreatedAt": "<p>The timestamp of when the domain was created.</p>",
         "PutProfileObjectTypeResponse$LastUpdatedAt": "<p>The timestamp of when the domain was most recently edited.</p>",
+        "UpdateCalculatedAttributeDefinitionResponse$CreatedAt": "<p>The timestamp of when the calculated attribute definition was created.</p>",
+        "UpdateCalculatedAttributeDefinitionResponse$LastUpdatedAt": "<p>The timestamp of when the calculated attribute definition was most recently edited.</p>",
         "UpdateDomainResponse$CreatedAt": "<p>The timestamp of when the domain was created.</p>",
         "UpdateDomainResponse$LastUpdatedAt": "<p>The timestamp of when the domain was most recently edited.</p>"
       }
@@ -1418,10 +2015,18 @@
       "refs": {
         "GetMatchesRequest$NextToken": "<p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>",
         "GetMatchesResponse$NextToken": "<p>If there are additional results, this is the token for the next set of results.</p>",
+        "GetWorkflowStepsRequest$NextToken": "<p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>",
+        "GetWorkflowStepsResponse$NextToken": "<p>If there are additional results, this is the token for the next set of results.</p>",
         "ListAccountIntegrationsRequest$NextToken": "<p>The pagination token from the previous ListAccountIntegrations API call.</p>",
         "ListAccountIntegrationsResponse$NextToken": "<p>The pagination token from the previous ListAccountIntegrations API call.</p>",
+        "ListCalculatedAttributeDefinitionsRequest$NextToken": "<p>The pagination token from the previous call to ListCalculatedAttributeDefinitions.</p>",
+        "ListCalculatedAttributeDefinitionsResponse$NextToken": "<p>The pagination token from the previous call to ListCalculatedAttributeDefinitions.</p>",
+        "ListCalculatedAttributesForProfileRequest$NextToken": "<p>The pagination token from the previous call to ListCalculatedAttributesForProfile.</p>",
+        "ListCalculatedAttributesForProfileResponse$NextToken": "<p>The pagination token from the previous call to ListCalculatedAttributesForProfile.</p>",
         "ListDomainsRequest$NextToken": "<p>The pagination token from the previous ListDomain API call.</p>",
         "ListDomainsResponse$NextToken": "<p>The pagination token from the previous ListDomains API call.</p>",
+        "ListEventStreamsRequest$NextToken": "<p>Identifies the next page of results to return.</p>",
+        "ListEventStreamsResponse$NextToken": "<p>Identifies the next page of results to return.</p>",
         "ListIdentityResolutionJobsRequest$NextToken": "<p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>",
         "ListIdentityResolutionJobsResponse$NextToken": "<p>If there are additional results, this is the token for the next set of results.</p>",
         "ListIntegrationsRequest$NextToken": "<p>The pagination token from the previous ListIntegrations API call.</p>",
@@ -1432,6 +2037,8 @@
         "ListProfileObjectTypesResponse$NextToken": "<p>Identifies the next page of results to return.</p>",
         "ListProfileObjectsRequest$NextToken": "<p>The pagination token from the previous call to ListProfileObjects.</p>",
         "ListProfileObjectsResponse$NextToken": "<p>The pagination token from the previous call to ListProfileObjects.</p>",
+        "ListWorkflowsRequest$NextToken": "<p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>",
+        "ListWorkflowsResponse$NextToken": "<p>If there are additional results, this is the token for the next set of results.</p>",
         "SearchProfilesRequest$NextToken": "<p>The pagination token from the previous SearchProfiles API call.</p>",
         "SearchProfilesResponse$NextToken": "<p>The pagination token from the previous SearchProfiles API call.</p>"
       }
@@ -1439,20 +2046,33 @@
     "typeName": {
       "base": null,
       "refs": {
+        "CreateCalculatedAttributeDefinitionRequest$CalculatedAttributeName": "<p>The unique name of the calculated attribute.</p>",
+        "CreateCalculatedAttributeDefinitionResponse$CalculatedAttributeName": "<p>The unique name of the calculated attribute.</p>",
+        "CreateIntegrationWorkflowRequest$ObjectTypeName": "<p>The name of the profile object type.</p>",
+        "DeleteCalculatedAttributeDefinitionRequest$CalculatedAttributeName": "<p>The unique name of the calculated attribute.</p>",
         "DeleteProfileObjectRequest$ObjectTypeName": "<p>The name of the profile object type.</p>",
         "DeleteProfileObjectTypeRequest$ObjectTypeName": "<p>The name of the profile object type.</p>",
+        "GetCalculatedAttributeDefinitionRequest$CalculatedAttributeName": "<p>The unique name of the calculated attribute.</p>",
+        "GetCalculatedAttributeDefinitionResponse$CalculatedAttributeName": "<p>The unique name of the calculated attribute.</p>",
+        "GetCalculatedAttributeForProfileRequest$CalculatedAttributeName": "<p>The unique name of the calculated attribute.</p>",
+        "GetCalculatedAttributeForProfileResponse$CalculatedAttributeName": "<p>The unique name of the calculated attribute.</p>",
         "GetIntegrationResponse$ObjectTypeName": "<p>The name of the profile object type.</p>",
         "GetProfileObjectTypeRequest$ObjectTypeName": "<p>The name of the profile object type.</p>",
         "GetProfileObjectTypeResponse$ObjectTypeName": "<p>The name of the profile object type.</p>",
+        "ListCalculatedAttributeDefinitionItem$CalculatedAttributeName": "<p>The unique name of the calculated attribute.</p>",
+        "ListCalculatedAttributeForProfileItem$CalculatedAttributeName": "<p>The unique name of the calculated attribute.</p>",
         "ListIntegrationItem$ObjectTypeName": "<p>The name of the profile object type.</p>",
         "ListProfileObjectTypeItem$ObjectTypeName": "<p>The name of the profile object type.</p>",
         "ListProfileObjectsItem$ObjectTypeName": "<p>Specifies the kind of object being added to a profile, such as \"Salesforce-Account.\"</p>",
         "ListProfileObjectsRequest$ObjectTypeName": "<p>The name of the profile object type.</p>",
+        "ObjectTypeNames$value": null,
         "PutIntegrationRequest$ObjectTypeName": "<p>The name of the profile object type.</p>",
         "PutIntegrationResponse$ObjectTypeName": "<p>The name of the profile object type.</p>",
         "PutProfileObjectRequest$ObjectTypeName": "<p>The name of the profile object type.</p>",
         "PutProfileObjectTypeRequest$ObjectTypeName": "<p>The name of the profile object type.</p>",
-        "PutProfileObjectTypeResponse$ObjectTypeName": "<p>The name of the profile object type.</p>"
+        "PutProfileObjectTypeResponse$ObjectTypeName": "<p>The name of the profile object type.</p>",
+        "UpdateCalculatedAttributeDefinitionRequest$CalculatedAttributeName": "<p>The unique name of the calculated attribute.</p>",
+        "UpdateCalculatedAttributeDefinitionResponse$CalculatedAttributeName": "<p>The unique name of the calculated attribute.</p>"
       }
     },
     "uuid": {
@@ -1460,6 +2080,7 @@
       "refs": {
         "AddProfileKeyRequest$ProfileId": "<p>The unique identifier of a customer profile.</p>",
         "AttributeSourceIdMap$value": null,
+        "CreateIntegrationWorkflowResponse$WorkflowId": "<p>Unique identifier for the workflow.</p>",
         "CreateProfileResponse$ProfileId": "<p>The unique identifier of a customer profile.</p>",
         "DeleteProfileKeyRequest$ProfileId": "<p>The unique identifier of a customer profile.</p>",
         "DeleteProfileObjectRequest$ProfileId": "<p>The unique identifier of a customer profile.</p>",
@@ -1484,9 +2105,15 @@
         "FieldSourceProfileIds$ShippingAddress": "<p>A unique identifier for the shipping address field to be merged.</p>",
         "FieldSourceProfileIds$MailingAddress": "<p>A unique identifier for the mailing address field to be merged.</p>",
         "FieldSourceProfileIds$BillingAddress": "<p>A unique identifier for the billing type field to be merged.</p>",
+        "GetCalculatedAttributeForProfileRequest$ProfileId": "<p>The unique identifier of a customer profile.</p>",
         "GetIdentityResolutionJobRequest$JobId": "<p>The unique identifier of the Identity Resolution Job.</p>",
         "GetIdentityResolutionJobResponse$JobId": "<p>The unique identifier of the Identity Resolution Job.</p>",
+        "GetWorkflowRequest$WorkflowId": "<p>Unique identifier for the workflow.</p>",
+        "GetWorkflowResponse$WorkflowId": "<p>Unique identifier for the workflow.</p>",
+        "GetWorkflowStepsRequest$WorkflowId": "<p>Unique identifier for the workflow.</p>",
+        "GetWorkflowStepsResponse$WorkflowId": "<p>Unique identifier for the workflow.</p>",
         "IdentityResolutionJob$JobId": "<p>The unique identifier of the Identity Resolution Job.</p>",
+        "ListCalculatedAttributesForProfileRequest$ProfileId": "<p>The unique identifier of a customer profile.</p>",
         "ListProfileObjectsRequest$ProfileId": "<p>The unique identifier of a customer profile.</p>",
         "MergeProfilesRequest$MainProfileId": "<p>The identifier of the profile to be taken.</p>",
         "Profile$ProfileId": "<p>The unique identifier of a customer profile.</p>",

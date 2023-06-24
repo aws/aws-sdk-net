@@ -60,7 +60,7 @@ namespace Amazon.Macie2.Model
         /// Gets and sets the property Records. 
         /// <para>
         /// An array of objects that contains the results of the query. Each object contains the
-        /// data for an account that meets the filter criteria specified in the request.
+        /// data for an account that matches the filter criteria specified in the request.
         /// </para>
         /// </summary>
         public List<UsageRecord> Records

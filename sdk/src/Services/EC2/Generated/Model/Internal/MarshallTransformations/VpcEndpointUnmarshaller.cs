@@ -67,11 +67,23 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.DnsEntries.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("dnsOptions", targetDepth))
+                    {
+                        var unmarshaller = DnsOptionsUnmarshaller.Instance;
+                        unmarshalledObject.DnsOptions = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("groupSet/item", targetDepth))
                     {
                         var unmarshaller = SecurityGroupIdentifierUnmarshaller.Instance;
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Groups.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("ipAddressType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.IpAddressType = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("lastError", targetDepth))

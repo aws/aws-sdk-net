@@ -60,7 +60,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property S3Uri. 
         /// <para>
-        /// Identifies the S3 path where you want Amazon SageMaker to store checkpoints. For example,
+        /// Identifies the S3 path where you want SageMaker to store checkpoints. For example,
         /// <code>s3://bucket-name/key-name-prefix</code>.
         /// </para>
         /// </summary>

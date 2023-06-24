@@ -30,19 +30,39 @@ namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
     /// Specifies the execution engine (cluster) to run the notebook and perform the notebook
-    /// execution, for example, an EMR cluster.
+    /// execution, for example, an Amazon EMR cluster.
     /// </summary>
     public partial class ExecutionEngineConfig
     {
+        private string _executionRoleArn;
         private string _id;
         private string _masterInstanceSecurityGroupId;
         private ExecutionEngineType _type;
 
         /// <summary>
+        /// Gets and sets the property ExecutionRoleArn. 
+        /// <para>
+        /// The execution role ARN required for the notebook execution.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string ExecutionRoleArn
+        {
+            get { return this._executionRoleArn; }
+            set { this._executionRoleArn = value; }
+        }
+
+        // Check to see if ExecutionRoleArn property is set
+        internal bool IsSetExecutionRoleArn()
+        {
+            return this._executionRoleArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The unique identifier of the execution engine. For an EMR cluster, this is the cluster
-        /// ID.
+        /// The unique identifier of the execution engine. For an Amazon EMR cluster, this is
+        /// the cluster ID.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=256)]
@@ -61,9 +81,10 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property MasterInstanceSecurityGroupId. 
         /// <para>
-        /// An optional unique ID of an EC2 security group to associate with the master instance
-        /// of the EMR cluster for this notebook execution. For more information see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks-security-groups.html">Specifying
-        /// EC2 Security Groups for EMR Notebooks</a> in the <i>EMR Management Guide</i>.
+        /// An optional unique ID of an Amazon EC2 security group to associate with the master
+        /// instance of the Amazon EMR cluster for this notebook execution. For more information
+        /// see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks-security-groups.html">Specifying
+        /// Amazon EC2 Security Groups for Amazon EMR Notebooks</a> in the <i>EMR Management Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=256)]
@@ -82,7 +103,8 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of execution engine. A value of <code>EMR</code> specifies an EMR cluster.
+        /// The type of execution engine. A value of <code>EMR</code> specifies an Amazon EMR
+        /// cluster.
         /// </para>
         /// </summary>
         public ExecutionEngineType Type

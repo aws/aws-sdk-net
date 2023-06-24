@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kendra.Model
 {
     /// <summary>
-    /// Provides configuration information for data sources that connect to OneDrive.
+    /// Provides the configuration information to connect to OneDrive as your data source.
     /// </summary>
     public partial class OneDriveConfiguration
     {
@@ -44,8 +44,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property DisableLocalGroups. 
         /// <para>
-        /// A Boolean value that specifies whether local groups are disabled (<code>True</code>)
-        /// or enabled (<code>False</code>). 
+        ///  <code>TRUE</code> to disable local groups information.
         /// </para>
         /// </summary>
         public bool DisableLocalGroups
@@ -63,16 +62,18 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property ExclusionPatterns. 
         /// <para>
-        /// List of regular expressions applied to documents. Items that match the exclusion pattern
-        /// are not indexed. If you provide both an inclusion pattern and an exclusion pattern,
-        /// any item that matches the exclusion pattern isn't indexed. 
+        /// A list of regular expression patterns to exclude certain documents in your OneDrive.
+        /// Documents that match the patterns are excluded from the index. Documents that don't
+        /// match the patterns are included in the index. If a document matches both an inclusion
+        /// and exclusion pattern, the exclusion pattern takes precedence and the document isn't
+        /// included in the index.
         /// </para>
         ///  
         /// <para>
-        /// The exclusion pattern is applied to the file name.
+        /// The pattern is applied to the file name.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=100)]
+        [AWSProperty(Min=0, Max=250)]
         public List<string> ExclusionPatterns
         {
             get { return this._exclusionPatterns; }
@@ -88,9 +89,12 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property FieldMappings. 
         /// <para>
-        /// A list of <code>DataSourceToIndexFieldMapping</code> objects that map Microsoft OneDrive
-        /// fields to custom fields in the Amazon Kendra index. You must first create the index
-        /// fields before you map OneDrive fields.
+        /// A list of <code>DataSourceToIndexFieldMapping</code> objects that map OneDrive data
+        /// source attributes or field names to Amazon Kendra index field names. To create custom
+        /// fields, use the <code>UpdateIndex</code> API before you map to OneDrive fields. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
+        /// data source fields</a>. The OneDrive data source field names must exist in your OneDrive
+        /// custom metadata.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -109,17 +113,18 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property InclusionPatterns. 
         /// <para>
-        /// A list of regular expression patterns. Documents that match the pattern are included
-        /// in the index. Documents that don't match the pattern are excluded from the index.
-        /// If a document matches both an inclusion pattern and an exclusion pattern, the document
-        /// is not included in the index. 
+        /// A list of regular expression patterns to include certain documents in your OneDrive.
+        /// Documents that match the patterns are included in the index. Documents that don't
+        /// match the patterns are excluded from the index. If a document matches both an inclusion
+        /// and exclusion pattern, the exclusion pattern takes precedence and the document isn't
+        /// included in the index.
         /// </para>
         ///  
         /// <para>
-        /// The exclusion pattern is applied to the file name.
+        /// The pattern is applied to the file name.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=100)]
+        [AWSProperty(Min=0, Max=250)]
         public List<string> InclusionPatterns
         {
             get { return this._inclusionPatterns; }
@@ -155,7 +160,7 @@ namespace Amazon.Kendra.Model
         /// Gets and sets the property SecretArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of an Secrets Managersecret that contains the user
-        /// name and password to connect to OneDrive. The user namd should be the application
+        /// name and password to connect to OneDrive. The user name should be the application
         /// ID for the OneDrive application, and the password is the application key for the OneDrive
         /// application.
         /// </para>

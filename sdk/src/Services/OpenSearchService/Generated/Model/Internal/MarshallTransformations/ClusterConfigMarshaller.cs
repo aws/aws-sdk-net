@@ -34,7 +34,7 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ClusterConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class ClusterConfigMarshaller : IRequestMarshaller<ClusterConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -86,6 +86,12 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.InstanceType);
             }
 
+            if(requestObject.IsSetMultiAZWithStandbyEnabled())
+            {
+                context.Writer.WritePropertyName("MultiAZWithStandbyEnabled");
+                context.Writer.Write(requestObject.MultiAZWithStandbyEnabled);
+            }
+
             if(requestObject.IsSetWarmCount())
             {
                 context.Writer.WritePropertyName("WarmCount");
@@ -125,7 +131,7 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ClusterConfigMarshaller Instance = new ClusterConfigMarshaller();
 
     }

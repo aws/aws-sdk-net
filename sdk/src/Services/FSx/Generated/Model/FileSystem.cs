@@ -170,7 +170,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property FileSystemTypeVersion. 
         /// <para>
-        /// The Lustre version of the Amazon FSx for Lustrefile system, either <code>2.10</code>
+        /// The Lustre version of the Amazon FSx for Lustre file system, either <code>2.10</code>
         /// or <code>2.12</code>.
         /// </para>
         /// </summary>
@@ -190,14 +190,32 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The ID of the Key Management Service (KMS) key used to encrypt the file system's data
-        /// for Amazon FSx for Windows File Server file systems, Amazon FSx for NetApp ONTAP file
-        /// systems, and <code>PERSISTENT</code> Amazon FSx for Lustre file systems at rest. If
-        /// this ID isn't specified, the Amazon FSx-managed key for your account is used. The
-        /// scratch Amazon FSx for Lustre file systems are always encrypted at rest using the
-        /// Amazon FSx-managed key for your account. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a>
-        /// in the <i>Key Management Service API Reference</i>.
+        /// The ID of the Key Management Service (KMS) key used to encrypt Amazon FSx file system
+        /// data. Used as follows with Amazon FSx file system types:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Amazon FSx for Lustre <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> deployment
+        /// types only.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>SCRATCH_1</code> and <code>SCRATCH_2</code> types are encrypted using the Amazon
+        /// FSx service KMS key for your account.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Amazon FSx for NetApp ONTAP
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Amazon FSx for OpenZFS
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Amazon FSx for Windows File Server
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
         public string KmsKeyId
@@ -239,6 +257,12 @@ namespace Amazon.FSx.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>MISCONFIGURED</code> - The file system is in a failed but recoverable state.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>MISCONFIGURED_UNAVAILABLE</code> - (Amazon FSx for Windows File Server only)
+        /// The file system is currently unavailable due to a change in your Active Directory
+        /// configuration.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -304,7 +328,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property OntapConfiguration. 
         /// <para>
-        /// The configuration for this FSx for ONTAP file system.
+        /// The configuration for this Amazon FSx for NetApp ONTAP file system.
         /// </para>
         /// </summary>
         public OntapFileSystemConfiguration OntapConfiguration
@@ -341,8 +365,8 @@ namespace Amazon.FSx.Model
         /// Gets and sets the property OwnerId. 
         /// <para>
         /// The Amazon Web Services account that created the file system. If the file system was
-        /// created by an Identity and Access Management (IAM) user, the Amazon Web Services account
-        /// to which the IAM user belongs is the owner.
+        /// created by a user in IAM Identity Center, the Amazon Web Services account to which
+        /// the IAM user belongs is the owner.
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=12)]
@@ -361,7 +385,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property ResourceARN. 
         /// <para>
-        /// The Amazon Resource Name (ARN) for the file system resource.
+        /// The Amazon Resource Name (ARN) of the file system resource.
         /// </para>
         /// </summary>
         [AWSProperty(Min=8, Max=512)]
@@ -487,7 +511,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property WindowsConfiguration. 
         /// <para>
-        /// The configuration for this FSx for Windows File Server file system.
+        /// The configuration for this Amazon FSx for Windows File Server file system.
         /// </para>
         /// </summary>
         public WindowsFileSystemConfiguration WindowsConfiguration

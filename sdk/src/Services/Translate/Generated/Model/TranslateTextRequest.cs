@@ -31,7 +31,8 @@ namespace Amazon.Translate.Model
     /// <summary>
     /// Container for the parameters to the TranslateText operation.
     /// Translates input text from the source language to the target language. For a list
-    /// of available languages and language codes, see <a>what-is-languages</a>.
+    /// of available languages and language codes, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported
+    /// languages</a>.
     /// </summary>
     public partial class TranslateTextRequest : AmazonTranslateRequest
     {
@@ -44,8 +45,8 @@ namespace Amazon.Translate.Model
         /// <summary>
         /// Gets and sets the property Settings. 
         /// <para>
-        /// Settings to configure your translation output, including the option to mask profane
-        /// words and phrases.
+        /// Settings to configure your translation output, including the option to set the formality
+        /// level of the output text and the option to mask profane words and phrases.
         /// </para>
         /// </summary>
         public TranslationSettings Settings
@@ -63,8 +64,9 @@ namespace Amazon.Translate.Model
         /// <summary>
         /// Gets and sets the property SourceLanguageCode. 
         /// <para>
-        /// The language code for the language of the source text. The language must be a language
-        /// supported by Amazon Translate. For a list of language codes, see <a>what-is-languages</a>.
+        /// The language code for the language of the source text. For a list of language codes,
+        /// see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported
+        /// languages</a>.
         /// </para>
         ///  
         /// <para>
@@ -73,6 +75,13 @@ namespace Amazon.Translate.Model
         /// Amazon Translate will call <a href="https://docs.aws.amazon.com/comprehend/latest/dg/comprehend-general.html">Amazon
         /// Comprehend</a> to determine the source language.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// If you specify <code>auto</code>, you must send the <code>TranslateText</code> request
+        /// in a region that supports Amazon Comprehend. Otherwise, the request returns an error
+        /// indicating that autodetect is not supported. 
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Required=true, Min=2, Max=5)]
         public string SourceLanguageCode
@@ -90,8 +99,9 @@ namespace Amazon.Translate.Model
         /// <summary>
         /// Gets and sets the property TargetLanguageCode. 
         /// <para>
-        /// The language code requested for the language of the target text. The language must
-        /// be a language supported by Amazon Translate.
+        /// The language code requested for the language of the target text. For a list of language
+        /// codes, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported
+        /// languages</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=2, Max=5)]
@@ -110,9 +120,19 @@ namespace Amazon.Translate.Model
         /// <summary>
         /// Gets and sets the property TerminologyNames. 
         /// <para>
-        /// The name of the terminology list file to be used in the TranslateText request. You
-        /// can use 1 terminology list at most in a <code>TranslateText</code> request. Terminology
-        /// lists can contain a maximum of 256 terms.
+        /// The name of a terminology list file to add to the translation job. This file provides
+        /// source terms and the desired translation for each term. A terminology list can contain
+        /// a maximum of 256 terms. You can use one custom terminology resource in your translation
+        /// request.
+        /// </para>
+        ///  
+        /// <para>
+        /// Use the <a>ListTerminologies</a> operation to get the available terminology lists.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about custom terminology lists, see <a href="https://docs.aws.amazon.com/translate/latest/dg/how-custom-terminology.html">Custom
+        /// terminology</a>.
         /// </para>
         /// </summary>
         public List<string> TerminologyNames
@@ -130,11 +150,11 @@ namespace Amazon.Translate.Model
         /// <summary>
         /// Gets and sets the property Text. 
         /// <para>
-        /// The text to translate. The text string can be a maximum of 5,000 bytes long. Depending
-        /// on your character set, this may be fewer than 5,000 characters.
+        /// The text to translate. The text string can be a maximum of 10,000 bytes long. Depending
+        /// on your character set, this may be fewer than 10,000 characters.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=5000)]
+        [AWSProperty(Required=true, Min=1, Max=10000)]
         public string Text
         {
             get { return this._text; }

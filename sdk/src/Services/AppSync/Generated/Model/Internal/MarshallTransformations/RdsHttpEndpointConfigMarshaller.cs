@@ -34,7 +34,7 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RdsHttpEndpointConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class RdsHttpEndpointConfigMarshaller : IRequestMarshaller<RdsHttpEndpointConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -79,7 +79,7 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RdsHttpEndpointConfigMarshaller Instance = new RdsHttpEndpointConfigMarshaller();
 
     }

@@ -75,7 +75,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The log router to use. 
+        /// The log router to use. Valid values are <code>fluentbit</code> or <code>fluentd</code>.
         /// </para>
         /// </summary>
         public string Type

@@ -56,11 +56,13 @@ namespace Amazon.ForecastService.Model
     /// <para>
     /// After creating a dataset, you import your training data into it and add the dataset
     /// to a dataset group. You use the dataset group to create a predictor. For more information,
-    /// see <a>howitworks-datasets-groups</a>.
+    /// see <a href="https://docs.aws.amazon.com/forecast/latest/dg/howitworks-datasets-groups.html">Importing
+    /// datasets</a>.
     /// </para>
     ///  
     /// <para>
-    /// To get a list of all your datasets, use the <a>ListDatasets</a> operation.
+    /// To get a list of all your datasets, use the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_ListDatasets.html">ListDatasets</a>
+    /// operation.
     /// </para>
     ///  
     /// <para>
@@ -70,7 +72,8 @@ namespace Amazon.ForecastService.Model
     ///  <note> 
     /// <para>
     /// The <code>Status</code> of a dataset must be <code>ACTIVE</code> before you can import
-    /// training data. Use the <a>DescribeDataset</a> operation to get the status.
+    /// training data. Use the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_DescribeDataset.html">DescribeDataset</a>
+    /// operation to get the status.
     /// </para>
     ///  </note>
     /// </summary>
@@ -92,9 +95,41 @@ namespace Amazon.ForecastService.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid intervals are Y (Year), M (Month), W (Week), D (Day), H (Hour), 30min (30 minutes),
-        /// 15min (15 minutes), 10min (10 minutes), 5min (5 minutes), and 1min (1 minute). For
-        /// example, "D" indicates every day and "15min" indicates every 15 minutes.
+        /// Valid intervals are an integer followed by Y (Year), M (Month), W (Week), D (Day),
+        /// H (Hour), and min (Minute). For example, "1D" indicates every day and "15min" indicates
+        /// every 15 minutes. You cannot specify a value that would overlap with the next larger
+        /// frequency. That means, for example, you cannot specify a frequency of 60 minutes,
+        /// because that is equivalent to 1 hour. The valid values for each frequency are the
+        /// following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Minute - 1-59
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Hour - 1-23
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Day - 1-6
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Week - 1-4
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Month - 1-11
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Year - 1
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Thus, if you want every other week forecasts, specify "2W". Or, if you want quarterly
+        /// forecasts, you specify "3M".
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=5)]
@@ -152,7 +187,8 @@ namespace Amazon.ForecastService.Model
         /// Gets and sets the property Domain. 
         /// <para>
         /// The domain associated with the dataset. When you add a dataset to a dataset group,
-        /// this value and the value specified for the <code>Domain</code> parameter of the <a>CreateDatasetGroup</a>
+        /// this value and the value specified for the <code>Domain</code> parameter of the <a
+        /// href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetGroup.html">CreateDatasetGroup</a>
         /// operation must match.
         /// </para>
         ///  
@@ -162,7 +198,8 @@ namespace Amazon.ForecastService.Model
         /// example, if you choose the <code>RETAIL</code> domain and <code>TARGET_TIME_SERIES</code>
         /// as the <code>DatasetType</code>, Amazon Forecast requires <code>item_id</code>, <code>timestamp</code>,
         /// and <code>demand</code> fields to be present in your data. For more information, see
-        /// <a>howitworks-datasets-groups</a>.
+        /// <a href="https://docs.aws.amazon.com/forecast/latest/dg/howitworks-datasets-groups.html">Importing
+        /// datasets</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -181,8 +218,8 @@ namespace Amazon.ForecastService.Model
         /// <summary>
         /// Gets and sets the property EncryptionConfig. 
         /// <para>
-        /// An AWS Key Management Service (KMS) key and the AWS Identity and Access Management
-        /// (IAM) role that Amazon Forecast can assume to access the key.
+        /// An Key Management Service (KMS) key and the Identity and Access Management (IAM) role
+        /// that Amazon Forecast can assume to access the key.
         /// </para>
         /// </summary>
         public EncryptionConfig EncryptionConfig
@@ -203,7 +240,8 @@ namespace Amazon.ForecastService.Model
         /// The schema for the dataset. The schema attributes and their order must match the fields
         /// in your data. The dataset <code>Domain</code> and <code>DatasetType</code> that you
         /// choose determine the minimum required fields in your training data. For information
-        /// about the required fields for a specific dataset domain and type, see <a>howitworks-domains-ds-types</a>.
+        /// about the required fields for a specific dataset domain and type, see <a href="https://docs.aws.amazon.com/forecast/latest/dg/howitworks-domains-ds-types.html">Dataset
+        /// Domains and Dataset Types</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -260,11 +298,11 @@ namespace Amazon.ForecastService.Model
         ///  </li> <li> 
         /// <para>
         /// Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination
-        /// of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete
-        /// tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code>
-        /// as its prefix but the key does not, then Forecast considers it to be a user tag and
-        /// will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code>
-        /// do not count against your tags per resource limit.
+        /// of such as a prefix for keys as it is reserved for Amazon Web Services use. You cannot
+        /// edit or delete tag keys with this prefix. Values can have this prefix. If a tag value
+        /// has <code>aws</code> as its prefix but the key does not, then Forecast considers it
+        /// to be a user tag and will count against the limit of 50 tags. Tags with only the key
+        /// prefix of <code>aws</code> do not count against your tags per resource limit.
         /// </para>
         ///  </li> </ul>
         /// </summary>

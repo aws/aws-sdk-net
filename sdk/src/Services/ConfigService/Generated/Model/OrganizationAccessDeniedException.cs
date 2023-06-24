@@ -59,7 +59,7 @@ namespace Amazon.ConfigService.Model
     /// <para>
     /// For all <code>OrganizationConfigRule</code> and <code>OrganizationConformancePack</code>
     /// APIs, Config throws an exception if APIs are called from member accounts. All APIs
-    /// must be called from organization master account.
+    /// must be called from organization management account.
     /// </para>
     /// </summary>
     #if !NETSTANDARD

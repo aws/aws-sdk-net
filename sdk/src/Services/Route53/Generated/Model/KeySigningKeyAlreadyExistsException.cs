@@ -30,7 +30,7 @@ namespace Amazon.Route53.Model
 {
     /// <summary>
     /// You've already created a key-signing key (KSK) with this name or with the same customer
-    /// managed customer master key (CMK) ARN.
+    /// managed key ARN.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

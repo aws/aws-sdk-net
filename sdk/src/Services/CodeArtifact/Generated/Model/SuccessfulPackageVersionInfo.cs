@@ -57,29 +57,8 @@ namespace Amazon.CodeArtifact.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        ///  The status of a package version. Valid statuses are: 
+        ///  The status of a package version. 
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>Published</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>Unfinished</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>Unlisted</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>Archived</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>Disposed</code> 
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         public PackageVersionStatus Status
         {

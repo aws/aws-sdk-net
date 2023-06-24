@@ -50,10 +50,12 @@ namespace Amazon.CognitoIdentityProvider.Model
         private bool? _allowedOAuthFlowsUserPoolClient;
         private List<string> _allowedOAuthScopes = new List<string>();
         private AnalyticsConfigurationType _analyticsConfiguration;
+        private int? _authSessionValidity;
         private List<string> _callbackURLs = new List<string>();
         private string _clientId;
         private string _clientName;
         private string _defaultRedirectURI;
+        private bool? _enablePropagateAdditionalUserContextData;
         private bool? _enableTokenRevocation;
         private List<string> _explicitAuthFlows = new List<string>();
         private int? _idTokenValidity;
@@ -69,7 +71,26 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AccessTokenValidity. 
         /// <para>
-        /// The time limit, after which the access token is no longer valid and cannot be used.
+        /// The access token time limit. After this limit expires, your user can't use their access
+        /// token. To specify the time unit for <code>AccessTokenValidity</code> as <code>seconds</code>,
+        /// <code>minutes</code>, <code>hours</code>, or <code>days</code>, set a <code>TokenValidityUnits</code>
+        /// value in your API request.
+        /// </para>
+        ///  
+        /// <para>
+        /// For example, when you set <code>AccessTokenValidity</code> to <code>10</code> and
+        /// <code>TokenValidityUnits</code> to <code>hours</code>, your user can authorize access
+        /// with their access token for 10 hours.
+        /// </para>
+        ///  
+        /// <para>
+        /// The default time unit for <code>AccessTokenValidity</code> in an API request is hours.
+        /// <i>Valid range</i> is displayed below in seconds.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you don't specify otherwise in the configuration of your app client, your access
+        /// tokens are valid for one hour.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=86400)]
@@ -90,23 +111,22 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <para>
         /// The allowed OAuth flows.
         /// </para>
-        ///  
+        ///  <dl> <dt>code</dt> <dd> 
         /// <para>
-        /// Set to <code>code</code> to initiate a code grant flow, which provides an authorization
-        /// code as the response. This code can be exchanged for access tokens with the token
-        /// endpoint.
+        /// Use a code grant flow, which provides an authorization code as the response. This
+        /// code can be exchanged for access tokens with the <code>/oauth2/token</code> endpoint.
         /// </para>
-        ///  
+        ///  </dd> <dt>implicit</dt> <dd> 
         /// <para>
-        /// Set to <code>implicit</code> to specify that the client should get the access token
-        /// (and, optionally, ID token, based on scopes) directly.
+        /// Issue the access token (and, optionally, ID token, based on scopes) directly to your
+        /// user.
         /// </para>
-        ///  
+        ///  </dd> <dt>client_credentials</dt> <dd> 
         /// <para>
-        /// Set to <code>client_credentials</code> to specify that the client should get the access
-        /// token (and, optionally, ID token, based on scopes) from the token endpoint using a
-        /// combination of client and client_secret.
+        /// Issue the access token from the <code>/oauth2/token</code> endpoint directly to a
+        /// non-person user using a combination of the client ID and client secret.
         /// </para>
+        ///  </dd> </dl>
         /// </summary>
         [AWSProperty(Min=0, Max=3)]
         public List<string> AllowedOAuthFlows
@@ -125,7 +145,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// Gets and sets the property AllowedOAuthFlowsUserPoolClient. 
         /// <para>
         /// Set to true if the client is allowed to follow the OAuth protocol when interacting
-        /// with Cognito user pools.
+        /// with Amazon Cognito user pools.
         /// </para>
         /// </summary>
         public bool AllowedOAuthFlowsUserPoolClient
@@ -143,9 +163,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AllowedOAuthScopes. 
         /// <para>
-        /// The allowed OAuth scopes. Possible values provided by OAuth are: <code>phone</code>,
+        /// The allowed OAuth scopes. Possible values provided by OAuth are <code>phone</code>,
         /// <code>email</code>, <code>openid</code>, and <code>profile</code>. Possible values
-        /// provided by Amazon Web Services are: <code>aws.cognito.signin.user.admin</code>. Custom
+        /// provided by Amazon Web Services are <code>aws.cognito.signin.user.admin</code>. Custom
         /// scopes created in Resource Servers are also supported.
         /// </para>
         /// </summary>
@@ -165,14 +185,15 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AnalyticsConfiguration. 
         /// <para>
-        /// The Amazon Pinpoint analytics configuration for collecting metrics for this user pool.
+        /// The Amazon Pinpoint analytics configuration necessary to collect metrics for this
+        /// user pool.
         /// </para>
         ///  <note> 
         /// <para>
-        /// In regions where Pinpoint is not available, Cognito User Pools only supports sending
-        /// events to Amazon Pinpoint projects in us-east-1. In regions where Pinpoint is available,
-        /// Cognito User Pools will support sending events to Amazon Pinpoint projects within
-        /// that same region. 
+        /// In Amazon Web Services Regions where Amazon Pinpoint isn't available, user pools only
+        /// support sending events to Amazon Pinpoint projects in us-east-1. In Regions where
+        /// Amazon Pinpoint is available, user pools support sending events to Amazon Pinpoint
+        /// projects within that same Region.
         /// </para>
         ///  </note>
         /// </summary>
@@ -189,9 +210,31 @@ namespace Amazon.CognitoIdentityProvider.Model
         }
 
         /// <summary>
+        /// Gets and sets the property AuthSessionValidity. 
+        /// <para>
+        /// Amazon Cognito creates a session token for each API request in an authentication flow.
+        /// <code>AuthSessionValidity</code> is the duration, in minutes, of that session token.
+        /// Your user pool native user must respond to each authentication challenge before the
+        /// session expires.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=3, Max=15)]
+        public int AuthSessionValidity
+        {
+            get { return this._authSessionValidity.GetValueOrDefault(); }
+            set { this._authSessionValidity = value; }
+        }
+
+        // Check to see if AuthSessionValidity property is set
+        internal bool IsSetAuthSessionValidity()
+        {
+            return this._authSessionValidity.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property CallbackURLs. 
         /// <para>
-        /// A list of allowed redirect (callback) URLs for the identity providers.
+        /// A list of allowed redirect (callback) URLs for the IdPs.
         /// </para>
         ///  
         /// <para>
@@ -221,7 +264,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  
         /// <para>
-        /// App callback URLs such as myapp://example are also supported.
+        /// App callback URLs such as <code>myapp://example</code> are also supported.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
@@ -243,7 +286,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The ID of the client associated with the user pool.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=128)]
         public string ClientId
         {
             get { return this._clientId; }
@@ -303,12 +346,12 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  
         /// <para>
-        /// Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes
-        /// only.
+        /// Amazon Cognito requires HTTPS over HTTP except for <code>http://localhost</code> for
+        /// testing purposes only.
         /// </para>
         ///  
         /// <para>
-        /// App callback URLs such as myapp://example are also supported.
+        /// App callback URLs such as <code>myapp://example</code> are also supported.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -325,9 +368,32 @@ namespace Amazon.CognitoIdentityProvider.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EnablePropagateAdditionalUserContextData. 
+        /// <para>
+        /// Activates the propagation of additional user context data. For more information about
+        /// propagation of user context data, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html">
+        /// Adding advanced security to a user pool</a>. If you don’t include this parameter,
+        /// you can't send device fingerprint information, including source IP address, to Amazon
+        /// Cognito advanced security. You can only activate <code>EnablePropagateAdditionalUserContextData</code>
+        /// in an app client that has a client secret.
+        /// </para>
+        /// </summary>
+        public bool EnablePropagateAdditionalUserContextData
+        {
+            get { return this._enablePropagateAdditionalUserContextData.GetValueOrDefault(); }
+            set { this._enablePropagateAdditionalUserContextData = value; }
+        }
+
+        // Check to see if EnablePropagateAdditionalUserContextData property is set
+        internal bool IsSetEnablePropagateAdditionalUserContextData()
+        {
+            return this._enablePropagateAdditionalUserContextData.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property EnableTokenRevocation. 
         /// <para>
-        /// Enables or disables token revocation. For more information about revoking tokens,
+        /// Activates or deactivates token revocation. For more information about revoking tokens,
         /// see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RevokeToken.html">RevokeToken</a>.
         /// </para>
         /// </summary>
@@ -346,12 +412,19 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property ExplicitAuthFlows. 
         /// <para>
-        /// The authentication flows that are supported by the user pool clients. Flow names without
-        /// the <code>ALLOW_</code> prefix are deprecated in favor of new names with the <code>ALLOW_</code>
-        /// prefix. Note that values with <code>ALLOW_</code> prefix cannot be used along with
-        /// values without <code>ALLOW_</code> prefix.
+        /// The authentication flows that you want your user pool client to support. For each
+        /// app client in your user pool, you can sign in your users with any combination of one
+        /// or more flows, including with a user name and Secure Remote Password (SRP), a user
+        /// name and password, or a custom authentication process that you define with Lambda
+        /// functions.
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        /// If you don't specify a value for <code>ExplicitAuthFlows</code>, your user client
+        /// supports <code>ALLOW_REFRESH_TOKEN_AUTH</code>, <code>ALLOW_USER_SRP_AUTH</code>,
+        /// and <code>ALLOW_CUSTOM_AUTH</code>.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// Valid values include:
         /// </para>
@@ -359,8 +432,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <para>
         ///  <code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user password authentication
         /// flow <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting replaces the <code>ADMIN_NO_SRP_AUTH</code>
-        /// setting. With this authentication flow, Cognito receives the password in the request
-        /// instead of using the SRP (Secure Remote Password protocol) protocol to verify passwords.
+        /// setting. With this authentication flow, your app passes a user name and password to
+        /// Amazon Cognito in the request, instead of using the Secure Remote Password (SRP) protocol
+        /// to securely transmit the password.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -369,18 +443,24 @@ namespace Amazon.CognitoIdentityProvider.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>ALLOW_USER_PASSWORD_AUTH</code>: Enable user password-based authentication.
-        /// In this flow, Cognito receives the password in the request instead of using the SRP
-        /// protocol to verify passwords.
+        /// In this flow, Amazon Cognito receives the password in the request instead of using
+        /// the SRP protocol to verify passwords.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ALLOW_USER_SRP_AUTH</code>: Enable SRP based authentication.
+        ///  <code>ALLOW_USER_SRP_AUTH</code>: Enable SRP-based authentication.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>ALLOW_REFRESH_TOKEN_AUTH</code>: Enable authflow to refresh tokens.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        /// In some environments, you will see the values <code>ADMIN_NO_SRP_AUTH</code>, <code>CUSTOM_AUTH_FLOW_ONLY</code>,
+        /// or <code>USER_PASSWORD_AUTH</code>. You can't assign these legacy <code>ExplicitAuthFlows</code>
+        /// values to user pool clients at the same time as values that begin with <code>ALLOW_</code>,
+        /// like <code>ALLOW_USER_SRP_AUTH</code>.
+        /// </para>
         /// </summary>
         public List<string> ExplicitAuthFlows
         {
@@ -397,7 +477,26 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property IdTokenValidity. 
         /// <para>
-        /// The time limit, after which the ID token is no longer valid and cannot be used.
+        /// The ID token time limit. After this limit expires, your user can't use their ID token.
+        /// To specify the time unit for <code>IdTokenValidity</code> as <code>seconds</code>,
+        /// <code>minutes</code>, <code>hours</code>, or <code>days</code>, set a <code>TokenValidityUnits</code>
+        /// value in your API request.
+        /// </para>
+        ///  
+        /// <para>
+        /// For example, when you set <code>IdTokenValidity</code> as <code>10</code> and <code>TokenValidityUnits</code>
+        /// as <code>hours</code>, your user can authenticate their session with their ID token
+        /// for 10 hours.
+        /// </para>
+        ///  
+        /// <para>
+        /// The default time unit for <code>AccessTokenValidity</code> in an API request is hours.
+        /// <i>Valid range</i> is displayed below in seconds.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you don't specify otherwise in the configuration of your app client, your ID tokens
+        /// are valid for one hour.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=86400)]
@@ -416,7 +515,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property LogoutURLs. 
         /// <para>
-        /// A list of allowed logout URLs for the identity providers.
+        /// A list of allowed logout URLs for the IdPs.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
@@ -435,14 +534,13 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property PreventUserExistenceErrors. 
         /// <para>
-        /// Use this setting to choose which errors and responses are returned by Cognito APIs
-        /// during authentication, account confirmation, and password recovery when the user does
-        /// not exist in the user pool. When set to <code>ENABLED</code> and the user does not
-        /// exist, authentication returns an error indicating either the username or password
-        /// was incorrect, and account confirmation and password recovery return a response indicating
-        /// a code was sent to a simulated destination. When set to <code>LEGACY</code>, those
-        /// APIs will return a <code>UserNotFoundException</code> exception if the user does not
-        /// exist in the user pool.
+        /// Errors and responses that you want Amazon Cognito APIs to return during authentication,
+        /// account confirmation, and password recovery when the user doesn't exist in the user
+        /// pool. When set to <code>ENABLED</code> and the user doesn't exist, authentication
+        /// returns an error indicating either the username or password was incorrect. Account
+        /// confirmation and password recovery return a response indicating a code was sent to
+        /// a simulated destination. When set to <code>LEGACY</code>, those APIs return a <code>UserNotFoundException</code>
+        /// exception if the user doesn't exist in the user pool.
         /// </para>
         ///  
         /// <para>
@@ -454,16 +552,10 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>LEGACY</code> - This represents the old behavior of Cognito where user existence
-        /// related errors are not prevented.
+        ///  <code>LEGACY</code> - This represents the early behavior of Amazon Cognito where
+        /// user existence related errors aren't prevented.
         /// </para>
-        ///  </li> </ul> <note> 
-        /// <para>
-        /// After February 15th 2020, the value of <code>PreventUserExistenceErrors</code> will
-        /// default to <code>ENABLED</code> for newly created user pool clients if no value is
-        /// provided.
-        /// </para>
-        ///  </note>
+        ///  </li> </ul>
         /// </summary>
         public PreventUserExistenceErrorTypes PreventUserExistenceErrors
         {
@@ -498,8 +590,28 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property RefreshTokenValidity. 
         /// <para>
-        /// The time limit, in days, after which the refresh token is no longer valid and cannot
-        /// be used.
+        /// The refresh token time limit. After this limit expires, your user can't use their
+        /// refresh token. To specify the time unit for <code>RefreshTokenValidity</code> as <code>seconds</code>,
+        /// <code>minutes</code>, <code>hours</code>, or <code>days</code>, set a <code>TokenValidityUnits</code>
+        /// value in your API request.
+        /// </para>
+        ///  
+        /// <para>
+        /// For example, when you set <code>RefreshTokenValidity</code> as <code>10</code> and
+        /// <code>TokenValidityUnits</code> as <code>days</code>, your user can refresh their
+        /// session and retrieve new access and ID tokens for 10 days.
+        /// </para>
+        ///  
+        /// <para>
+        /// The default time unit for <code>RefreshTokenValidity</code> in an API request is days.
+        /// You can't set <code>RefreshTokenValidity</code> to 0. If you do, Amazon Cognito overrides
+        /// the value with the default value of 30 days. <i>Valid range</i> is displayed below
+        /// in seconds.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you don't specify otherwise in the configuration of your app client, your refresh
+        /// tokens are valid for 30 days.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=315360000)]
@@ -518,7 +630,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property SupportedIdentityProviders. 
         /// <para>
-        /// A list of provider names for the identity providers that are supported on this client.
+        /// A list of provider names for the IdPs that this client supports. The following are
+        /// supported: <code>COGNITO</code>, <code>Facebook</code>, <code>Google</code>, <code>SignInWithApple</code>,
+        /// <code>LoginWithAmazon</code>, and the names of your own SAML and OIDC providers.
         /// </para>
         /// </summary>
         public List<string> SupportedIdentityProviders
@@ -536,8 +650,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property TokenValidityUnits. 
         /// <para>
-        /// The units in which the validity times are represented in. Default for RefreshToken
-        /// is days, and default for ID and access tokens are hours.
+        /// The units in which the validity times are represented. The default unit for RefreshToken
+        /// is days, and the default for ID and access tokens is hours.
         /// </para>
         /// </summary>
         public TokenValidityUnitsType TokenValidityUnits

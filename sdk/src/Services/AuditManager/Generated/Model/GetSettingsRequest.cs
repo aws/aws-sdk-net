@@ -30,7 +30,7 @@ namespace Amazon.AuditManager.Model
 {
     /// <summary>
     /// Container for the parameters to the GetSettings operation.
-    /// Returns the settings for the specified Amazon Web Services account.
+    /// Gets the settings for a specified Amazon Web Services account.
     /// </summary>
     public partial class GetSettingsRequest : AmazonAuditManagerRequest
     {
@@ -39,7 +39,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property Attribute. 
         /// <para>
-        ///  The list of <code>SettingAttribute</code> enum values. 
+        ///  The list of setting attribute enum values. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

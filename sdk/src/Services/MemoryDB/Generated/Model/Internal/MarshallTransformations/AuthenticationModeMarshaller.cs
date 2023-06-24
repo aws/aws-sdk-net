@@ -34,7 +34,7 @@ namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AuthenticationMode Marshaller
-    /// </summary>       
+    /// </summary>
     public class AuthenticationModeMarshaller : IRequestMarshaller<AuthenticationMode, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AuthenticationModeMarshaller Instance = new AuthenticationModeMarshaller();
 
     }

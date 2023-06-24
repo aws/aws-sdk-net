@@ -34,7 +34,7 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ModelVersion Marshaller
-    /// </summary>       
+    /// </summary>
     public class ModelVersionMarshaller : IRequestMarshaller<ModelVersion, JsonMarshallerContext> 
     {
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ModelVersionMarshaller Instance = new ModelVersionMarshaller();
 
     }

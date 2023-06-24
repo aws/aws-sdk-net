@@ -57,8 +57,8 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// An identifier to be passed in the next request to this operation to return the next
-        /// set of items in the list.
+        /// An identifier to pass in the next request to this operation to return the next set
+        /// of items in the list.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=65536)]

@@ -29,11 +29,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTWireless.Model
 {
     /// <summary>
-    /// Trace Content for resources.
+    /// Trace content for your wireless gateway and wireless device resources.
     /// </summary>
     public partial class TraceContent
     {
         private LogLevel _logLevel;
+        private MulticastFrameInfo _multicastFrameInfo;
         private WirelessDeviceFrameInfo _wirelessDeviceFrameInfo;
 
         /// <summary>
@@ -49,6 +50,21 @@ namespace Amazon.IoTWireless.Model
         internal bool IsSetLogLevel()
         {
             return this._logLevel != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MulticastFrameInfo.
+        /// </summary>
+        public MulticastFrameInfo MulticastFrameInfo
+        {
+            get { return this._multicastFrameInfo; }
+            set { this._multicastFrameInfo = value; }
+        }
+
+        // Check to see if MulticastFrameInfo property is set
+        internal bool IsSetMulticastFrameInfo()
+        {
+            return this._multicastFrameInfo != null;
         }
 
         /// <summary>

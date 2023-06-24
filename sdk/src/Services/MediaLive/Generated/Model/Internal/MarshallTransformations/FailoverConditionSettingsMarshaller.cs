@@ -34,7 +34,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// FailoverConditionSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class FailoverConditionSettingsMarshaller : IRequestMarshaller<FailoverConditionSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -82,7 +82,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static FailoverConditionSettingsMarshaller Instance = new FailoverConditionSettingsMarshaller();
 
     }

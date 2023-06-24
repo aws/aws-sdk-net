@@ -29,7 +29,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.TranscribeService.Model
 {
     /// <summary>
-    /// A time range, set in seconds, between two points in the call.
+    /// A time range, in milliseconds, between two points in your media file.
+    /// 
+    ///  
+    /// <para>
+    /// You can use <code>StartTime</code> and <code>EndTime</code> to search a custom segment.
+    /// For example, setting <code>StartTime</code> to 10000 and <code>EndTime</code> to 50000
+    /// only searches for your specified criteria in the audio contained between the 10,000
+    /// millisecond mark and the 50,000 millisecond mark of your media file. You must use
+    /// <code>StartTime</code> and <code>EndTime</code> as a set; that is, if you include
+    /// one, you must include both.
+    /// </para>
+    ///  
+    /// <para>
+    /// You can use also <code>First</code> to search from the start of the audio until the
+    /// time that you specify, or <code>Last</code> to search from the time that you specify
+    /// until the end of the audio. For example, setting <code>First</code> to 50000 only
+    /// searches for your specified criteria in the audio contained between the start of the
+    /// media file to the 50,000 millisecond mark. You can use <code>First</code> and <code>Last</code>
+    /// independently of each other.
+    /// </para>
+    ///  
+    /// <para>
+    /// If you prefer to use percentage instead of milliseconds, see .
+    /// </para>
     /// </summary>
     public partial class AbsoluteTimeRange
     {
@@ -41,22 +64,9 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property EndTime. 
         /// <para>
-        /// A value that indicates the end of the time range in milliseconds. To set absolute
-        /// time range, you must specify a start time and an end time. For example, if you specify
-        /// the following values:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// StartTime - 10000
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Endtime - 50000
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// The time range is set between 10,000 milliseconds and 50,000 milliseconds into the
-        /// call. 
+        /// The time, in milliseconds, when Amazon Transcribe stops searching for the specified
+        /// criteria in your audio. If you include <code>EndTime</code> in your request, you must
+        /// also include <code>StartTime</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=14400000)]
@@ -75,9 +85,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property First. 
         /// <para>
-        /// A time range from the beginning of the call to the value that you've specified. For
-        /// example, if you specify 100000, the time range is set to the first 100,000 milliseconds
-        /// of the call.
+        /// The time, in milliseconds, from the start of your media file until the specified value.
+        /// Amazon Transcribe searches for your specified criteria in this time segment.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=14400000)]
@@ -96,9 +105,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property Last. 
         /// <para>
-        /// A time range from the value that you've specified to the end of the call. For example,
-        /// if you specify 100000, the time range is set to the last 100,000 milliseconds of the
-        /// call.
+        /// The time, in milliseconds, from the specified value until the end of your media file.
+        /// Amazon Transcribe searches for your specified criteria in this time segment.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=14400000)]
@@ -117,22 +125,9 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
-        /// A value that indicates the beginning of the time range in seconds. To set absolute
-        /// time range, you must specify a start time and an end time. For example, if you specify
-        /// the following values:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// StartTime - 10000
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Endtime - 50000
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// The time range is set between 10,000 milliseconds and 50,000 milliseconds into the
-        /// call.
+        /// The time, in milliseconds, when Amazon Transcribe starts searching for the specified
+        /// criteria in your audio. If you include <code>StartTime</code> in your request, you
+        /// must also include <code>EndTime</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=14400000)]

@@ -112,6 +112,12 @@ namespace Amazon.IoTDeviceAdvisor.Model.Internal.MarshallTransformations
                     unmarshalledObject.TestCaseRunId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("testScenarios", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<TestCaseScenario, TestCaseScenarioUnmarshaller>(TestCaseScenarioUnmarshaller.Instance);
+                    unmarshalledObject.TestScenarios = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("warnings", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

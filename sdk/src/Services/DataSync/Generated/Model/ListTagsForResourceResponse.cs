@@ -39,8 +39,8 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// An opaque string that indicates the position at which to begin returning the next
-        /// list of resource tags.
+        /// The opaque string that indicates the position to begin the next list of results in
+        /// the response.
         /// </para>
         /// </summary>
         [AWSProperty(Max=65535)]
@@ -59,7 +59,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Array of resource tags.
+        /// An array of tags applied to the specified resource.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=55)]

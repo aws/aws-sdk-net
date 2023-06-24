@@ -46,9 +46,12 @@ namespace Amazon.Backup.Model
         private DateTime? _creationDate;
         private DateTime? _expectedCompletionDate;
         private string _iamRoleArn;
+        private bool? _isParent;
+        private string _parentJobId;
         private string _percentDone;
         private string _recoveryPointArn;
         private string _resourceArn;
+        private string _resourceName;
         private string _resourceType;
         private DateTime? _startBy;
         private BackupJobState _state;
@@ -315,6 +318,43 @@ namespace Amazon.Backup.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IsParent. 
+        /// <para>
+        /// This is a boolean value indicating this is a parent (composite) backup job.
+        /// </para>
+        /// </summary>
+        public bool IsParent
+        {
+            get { return this._isParent.GetValueOrDefault(); }
+            set { this._isParent = value; }
+        }
+
+        // Check to see if IsParent property is set
+        internal bool IsSetIsParent()
+        {
+            return this._isParent.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ParentJobId. 
+        /// <para>
+        /// This uniquely identifies a request to Backup to back up a resource. The return will
+        /// be the parent (composite) job ID.
+        /// </para>
+        /// </summary>
+        public string ParentJobId
+        {
+            get { return this._parentJobId; }
+            set { this._parentJobId = value; }
+        }
+
+        // Check to see if ParentJobId property is set
+        internal bool IsSetParentJobId()
+        {
+            return this._parentJobId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property PercentDone. 
         /// <para>
         /// Contains an estimated percentage complete of a job at the time the job status was
@@ -368,6 +408,24 @@ namespace Amazon.Backup.Model
         internal bool IsSetResourceArn()
         {
             return this._resourceArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceName. 
+        /// <para>
+        /// This is the non-unique name of the resource that belongs to the specified backup.
+        /// </para>
+        /// </summary>
+        public string ResourceName
+        {
+            get { return this._resourceName; }
+            set { this._resourceName = value; }
+        }
+
+        // Check to see if ResourceName property is set
+        internal bool IsSetResourceName()
+        {
+            return this._resourceName != null;
         }
 
         /// <summary>

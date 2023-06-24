@@ -106,7 +106,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <dl> <dt>Auto</dt> <dd> 
         /// <para>
-        /// Amazon SageMaker hyperparameter tuning chooses the best scale for the hyperparameter.
+        /// SageMaker hyperparameter tuning chooses the best scale for the hyperparameter.
         /// </para>
         ///  </dd> <dt>Linear</dt> <dd> 
         /// <para>

@@ -35,11 +35,13 @@ namespace Amazon.IoTTwinMaker.Model
     public partial class UpdateComponentTypeRequest : AmazonIoTTwinMakerRequest
     {
         private string _componentTypeId;
+        private string _componentTypeName;
         private string _description;
         private List<string> _extendsFrom = new List<string>();
         private Dictionary<string, FunctionRequest> _functions = new Dictionary<string, FunctionRequest>();
         private bool? _isSingleton;
         private Dictionary<string, PropertyDefinitionRequest> _propertyDefinitions = new Dictionary<string, PropertyDefinitionRequest>();
+        private Dictionary<string, PropertyGroupRequest> _propertyGroups = new Dictionary<string, PropertyGroupRequest>();
         private string _workspaceId;
 
         /// <summary>
@@ -62,12 +64,31 @@ namespace Amazon.IoTTwinMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ComponentTypeName. 
+        /// <para>
+        /// The component type name.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=256)]
+        public string ComponentTypeName
+        {
+            get { return this._componentTypeName; }
+            set { this._componentTypeName = value; }
+        }
+
+        // Check to see if ComponentTypeName property is set
+        internal bool IsSetComponentTypeName()
+        {
+            return this._componentTypeName != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
         /// The description of the component type.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=512)]
+        [AWSProperty(Min=0, Max=2048)]
         public string Description
         {
             get { return this._description; }
@@ -156,9 +177,27 @@ namespace Amazon.IoTTwinMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PropertyGroups. 
+        /// <para>
+        /// The property groups.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, PropertyGroupRequest> PropertyGroups
+        {
+            get { return this._propertyGroups; }
+            set { this._propertyGroups = value; }
+        }
+
+        // Check to see if PropertyGroups property is set
+        internal bool IsSetPropertyGroups()
+        {
+            return this._propertyGroups != null && this._propertyGroups.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property WorkspaceId. 
         /// <para>
-        /// The ID of the workspace that contains the component type.
+        /// The ID of the workspace.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]

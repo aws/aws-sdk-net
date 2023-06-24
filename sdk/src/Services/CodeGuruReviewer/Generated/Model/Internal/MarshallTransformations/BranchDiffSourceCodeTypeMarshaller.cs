@@ -34,7 +34,7 @@ namespace Amazon.CodeGuruReviewer.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// BranchDiffSourceCodeType Marshaller
-    /// </summary>       
+    /// </summary>
     public class BranchDiffSourceCodeTypeMarshaller : IRequestMarshaller<BranchDiffSourceCodeType, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.CodeGuruReviewer.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static BranchDiffSourceCodeTypeMarshaller Instance = new BranchDiffSourceCodeTypeMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// NetworkConnectionAction Marshaller
-    /// </summary>       
+    /// </summary>
     public class NetworkConnectionActionMarshaller : IRequestMarshaller<NetworkConnectionAction, JsonMarshallerContext> 
     {
         /// <summary>
@@ -100,7 +100,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static NetworkConnectionActionMarshaller Instance = new NetworkConnectionActionMarshaller();
 
     }

@@ -41,8 +41,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property IsDefaultVersion. 
         /// <para>
-        /// True if the fleet provisioning template version is the default version, otherwise
-        /// false.
+        /// True if the provisioning template version is the default version, otherwise false.
         /// </para>
         /// </summary>
         public bool IsDefaultVersion
@@ -78,7 +77,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property TemplateName. 
         /// <para>
-        /// The name of the fleet provisioning template.
+        /// The name of the provisioning template.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=36)]
@@ -97,7 +96,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property VersionId. 
         /// <para>
-        /// The version of the fleet provisioning template.
+        /// The version of the provisioning template.
         /// </para>
         /// </summary>
         public int VersionId

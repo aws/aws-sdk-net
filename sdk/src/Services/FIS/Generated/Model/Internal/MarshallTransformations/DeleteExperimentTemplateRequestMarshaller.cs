@@ -55,7 +55,7 @@ namespace Amazon.FIS.Model.Internal.MarshallTransformations
         public IRequest Marshall(DeleteExperimentTemplateRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.FIS");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-12-01";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-12-01";
             request.HttpMethod = "DELETE";
 
             if (!publicRequest.IsSetId())

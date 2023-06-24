@@ -17,22 +17,22 @@
  * Do not modify this file. This file is generated from the pricing-2017-10-15.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
-
+using Amazon.Pricing.Internal;
 
 namespace Amazon.Pricing
 {
     /// <summary>
     /// Configuration for accessing Amazon Pricing service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonPricingConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.1.101");
+            InternalSDKUtils.BuildUserAgentString("3.7.102.1");
 
         private string _userAgent = UserAgentString;
 
@@ -40,8 +40,10 @@ namespace Amazon.Pricing
         /// Default constructor
         /// </summary>
         public AmazonPricingConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonPricingDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "pricing";
+            this.EndpointProvider = new AmazonPricingEndpointProvider();
         }
 
         /// <summary>
@@ -76,5 +78,6 @@ namespace Amazon.Pricing
                 return _userAgent;
             }
         }
+
     }
 }

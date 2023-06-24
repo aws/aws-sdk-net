@@ -34,7 +34,7 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// S3Logs Marshaller
-    /// </summary>       
+    /// </summary>
     public class S3LogsMarshaller : IRequestMarshaller<S3Logs, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static S3LogsMarshaller Instance = new S3LogsMarshaller();
 
     }

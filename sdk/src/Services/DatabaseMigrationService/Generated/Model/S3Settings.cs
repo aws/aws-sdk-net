@@ -34,6 +34,7 @@ namespace Amazon.DatabaseMigrationService.Model
     public partial class S3Settings
     {
         private bool? _addColumnName;
+        private bool? _addTrailingPaddingCharacter;
         private string _bucketFolder;
         private string _bucketName;
         private CannedAclForObjectsValue _cannedAclForObjects;
@@ -57,7 +58,9 @@ namespace Amazon.DatabaseMigrationService.Model
         private bool? _enableStatistics;
         private EncodingTypeValue _encodingType;
         private EncryptionModeValue _encryptionMode;
+        private string _expectedBucketOwner;
         private string _externalTableDefinition;
+        private bool? _glueCatalogGeneration;
         private int? _ignoreHeaderRows;
         private bool? _includeOpForFullLoad;
         private int? _maxFileSize;
@@ -94,6 +97,25 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetAddColumnName()
         {
             return this._addColumnName.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AddTrailingPaddingCharacter. 
+        /// <para>
+        /// Use the S3 target endpoint setting <code>AddTrailingPaddingCharacter</code> to add
+        /// padding on string data. The default value is <code>false</code>.
+        /// </para>
+        /// </summary>
+        public bool AddTrailingPaddingCharacter
+        {
+            get { return this._addTrailingPaddingCharacter.GetValueOrDefault(); }
+            set { this._addTrailingPaddingCharacter = value; }
+        }
+
+        // Check to see if AddTrailingPaddingCharacter property is set
+        internal bool IsSetAddTrailingPaddingCharacter()
+        {
+            return this._addTrailingPaddingCharacter.HasValue; 
         }
 
         /// <summary>
@@ -288,7 +310,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property CdcMinFileSize. 
         /// <para>
-        /// Minimum file size, defined in megabytes, to reach for a file output to Amazon S3.
+        /// Minimum file size, defined in kilobytes, to reach for a file output to Amazon S3.
         /// </para>
         ///  
         /// <para>
@@ -768,6 +790,35 @@ namespace Amazon.DatabaseMigrationService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ExpectedBucketOwner. 
+        /// <para>
+        /// To specify a bucket owner and prevent sniping, you can use the <code>ExpectedBucketOwner</code>
+        /// endpoint setting. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Example: <code>--s3-settings='{"ExpectedBucketOwner": "<i>AWS_Account_ID</i>"}'</code>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// When you make a request to test a connection or perform a migration, S3 checks the
+        /// account ID of the bucket owner against the specified parameter.
+        /// </para>
+        /// </summary>
+        public string ExpectedBucketOwner
+        {
+            get { return this._expectedBucketOwner; }
+            set { this._expectedBucketOwner = value; }
+        }
+
+        // Check to see if ExpectedBucketOwner property is set
+        internal bool IsSetExpectedBucketOwner()
+        {
+            return this._expectedBucketOwner != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ExternalTableDefinition. 
         /// <para>
         ///  Specifies how tables are defined in the S3 source files only. 
@@ -783,6 +834,25 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetExternalTableDefinition()
         {
             return this._externalTableDefinition != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GlueCatalogGeneration. 
+        /// <para>
+        /// When true, allows Glue to catalog your S3 bucket. Creating an Glue catalog lets you
+        /// use Athena to query your data.
+        /// </para>
+        /// </summary>
+        public bool GlueCatalogGeneration
+        {
+            get { return this._glueCatalogGeneration.GetValueOrDefault(); }
+            set { this._glueCatalogGeneration = value; }
+        }
+
+        // Check to see if GlueCatalogGeneration property is set
+        internal bool IsSetGlueCatalogGeneration()
+        {
+            return this._glueCatalogGeneration.HasValue; 
         }
 
         /// <summary>

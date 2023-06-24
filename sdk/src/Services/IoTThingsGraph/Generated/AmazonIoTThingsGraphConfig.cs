@@ -17,22 +17,22 @@
  * Do not modify this file. This file is generated from the iotthingsgraph-2018-09-06.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
-
+using Amazon.IoTThingsGraph.Internal;
 
 namespace Amazon.IoTThingsGraph
 {
     /// <summary>
     /// Configuration for accessing Amazon IoTThingsGraph service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonIoTThingsGraphConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.105");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.147");
 
         private string _userAgent = UserAgentString;
 
@@ -40,8 +40,10 @@ namespace Amazon.IoTThingsGraph
         /// Default constructor
         /// </summary>
         public AmazonIoTThingsGraphConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonIoTThingsGraphDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "iotthingsgraph";
+            this.EndpointProvider = new AmazonIoTThingsGraphEndpointProvider();
         }
 
         /// <summary>
@@ -76,5 +78,6 @@ namespace Amazon.IoTThingsGraph
                 return _userAgent;
             }
         }
+
     }
 }

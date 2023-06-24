@@ -34,7 +34,7 @@ namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// HlsManifest Marshaller
-    /// </summary>       
+    /// </summary>
     public class HlsManifestMarshaller : IRequestMarshaller<HlsManifest, JsonMarshallerContext> 
     {
         /// <summary>
@@ -90,7 +90,7 @@ namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static HlsManifestMarshaller Instance = new HlsManifestMarshaller();
 
     }

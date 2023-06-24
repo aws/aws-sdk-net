@@ -34,7 +34,7 @@ namespace Amazon.ManagedBlockchain.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// NetworkFrameworkConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class NetworkFrameworkConfigurationMarshaller : IRequestMarshaller<NetworkFrameworkConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.ManagedBlockchain.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static NetworkFrameworkConfigurationMarshaller Instance = new NetworkFrameworkConfigurationMarshaller();
 
     }

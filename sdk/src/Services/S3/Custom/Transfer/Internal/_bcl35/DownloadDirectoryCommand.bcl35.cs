@@ -60,9 +60,16 @@ namespace Amazon.S3.Transfer.Internal
                 if (s3o.Key.EndsWith("/", StringComparison.Ordinal))
                     continue;
 
-                this._currentFile = s3o.Key.Substring(listRequest.Prefix.Length);
+                int prefixLength = listRequest.Prefix.Length;
+                // If DisableSlashCorrection is enabled (i.e. S3Directory is a key prefix) and it doesn't end with '/' then we need the parent directory to properly construct download path.
+                if (this._request.DisableSlashCorrection && !listRequest.Prefix.EndsWith("/"))
+                {
+                    prefixLength = listRequest.Prefix.LastIndexOf("/") + 1;
+                }
 
-                var downloadRequest = ConstructTransferUtilityDownloadRequest(s3o, listRequest.Prefix.Length);
+                this._currentFile = s3o.Key.Substring(prefixLength);
+
+                var downloadRequest = ConstructTransferUtilityDownloadRequest(s3o, prefixLength);
                 DownloadCommand command = new DownloadCommand(this._s3Client, downloadRequest);
                 command.Execute();
             }

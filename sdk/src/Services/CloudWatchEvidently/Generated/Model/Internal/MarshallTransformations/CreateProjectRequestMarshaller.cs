@@ -56,7 +56,7 @@ namespace Amazon.CloudWatchEvidently.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CloudWatchEvidently");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-02-01";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-02-01";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/projects";
@@ -65,6 +65,17 @@ namespace Amazon.CloudWatchEvidently.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAppConfigResource())
+                {
+                    context.Writer.WritePropertyName("appConfigResource");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ProjectAppConfigResourceConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.AppConfigResource, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetDataDelivery())
                 {
                     context.Writer.WritePropertyName("dataDelivery");
@@ -102,7 +113,6 @@ namespace Amazon.CloudWatchEvidently.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

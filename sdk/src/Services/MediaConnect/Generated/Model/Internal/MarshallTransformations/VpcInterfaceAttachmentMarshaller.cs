@@ -34,7 +34,7 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// VpcInterfaceAttachment Marshaller
-    /// </summary>       
+    /// </summary>
     public class VpcInterfaceAttachmentMarshaller : IRequestMarshaller<VpcInterfaceAttachment, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static VpcInterfaceAttachmentMarshaller Instance = new VpcInterfaceAttachmentMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// FilterExpression Marshaller
-    /// </summary>       
+    /// </summary>
     public class FilterExpressionMarshaller : IRequestMarshaller<FilterExpression, JsonMarshallerContext> 
     {
         /// <summary>
@@ -69,7 +69,7 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static FilterExpressionMarshaller Instance = new FilterExpressionMarshaller();
 
     }

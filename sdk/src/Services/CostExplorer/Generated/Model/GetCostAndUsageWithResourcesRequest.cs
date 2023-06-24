@@ -42,7 +42,7 @@ namespace Amazon.CostExplorer.Model
     ///  <note> 
     /// <para>
     /// This is an opt-in only feature. You can enable this feature from the Cost Explorer
-    /// Settings page. For information on how to access the Settings page, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/ce-access.html">Controlling
+    /// Settings page. For information about how to access the Settings page, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/ce-access.html">Controlling
     /// Access for Cost Explorer</a> in the <i>Billing and Cost Management User Guide</i>.
     /// </para>
     ///  </note>
@@ -70,6 +70,17 @@ namespace Amazon.CostExplorer.Model
         /// The <code>GetCostAndUsageWithResources</code> operation requires that you either group
         /// by or filter by a <code>ResourceId</code>. It requires the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
         /// <code>"SERVICE = Amazon Elastic Compute Cloud - Compute"</code> in the filter.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values for <code>MatchOptions</code> for <code>Dimensions</code> are <code>EQUALS</code>
+        /// and <code>CASE_SENSITIVE</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values for <code>MatchOptions</code> for <code>CostCategories</code> and <code>Tags</code>
+        /// are <code>EQUALS</code>, <code>ABSENT</code>, and <code>CASE_SENSITIVE</code>. Default
+        /// values are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -144,7 +155,7 @@ namespace Amazon.CostExplorer.Model
         /// If you return the <code>UsageQuantity</code> metric, the service aggregates all usage
         /// numbers without taking the units into account. For example, if you aggregate <code>usageQuantity</code>
         /// across all of Amazon EC2, the results aren't meaningful because Amazon EC2 compute
-        /// hours and data transfer are measured in different units (for example, hours vs. GB).
+        /// hours and data transfer are measured in different units (for example, hour or GB).
         /// To get more meaningful <code>UsageQuantity</code> metrics, filter by <code>UsageType</code>
         /// or <code>UsageTypeGroups</code>. 
         /// </para>

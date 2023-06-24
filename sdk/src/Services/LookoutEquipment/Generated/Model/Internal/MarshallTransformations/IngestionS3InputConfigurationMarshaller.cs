@@ -34,7 +34,7 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// IngestionS3InputConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class IngestionS3InputConfigurationMarshaller : IRequestMarshaller<IngestionS3InputConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -51,6 +51,12 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Bucket);
             }
 
+            if(requestObject.IsSetKeyPattern())
+            {
+                context.Writer.WritePropertyName("KeyPattern");
+                context.Writer.Write(requestObject.KeyPattern);
+            }
+
             if(requestObject.IsSetPrefix())
             {
                 context.Writer.WritePropertyName("Prefix");
@@ -61,7 +67,7 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static IngestionS3InputConfigurationMarshaller Instance = new IngestionS3InputConfigurationMarshaller();
 
     }

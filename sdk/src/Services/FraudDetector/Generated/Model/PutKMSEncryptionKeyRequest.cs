@@ -41,6 +41,11 @@ namespace Amazon.FraudDetector.Model
         /// <para>
         /// The KMS encryption key ARN.
         /// </para>
+        ///  
+        /// <para>
+        /// The KMS key must be single-Region key. Amazon Fraud Detector does not support multi-Region
+        /// KMS key.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=7, Max=90)]
         public string KmsEncryptionKeyArn

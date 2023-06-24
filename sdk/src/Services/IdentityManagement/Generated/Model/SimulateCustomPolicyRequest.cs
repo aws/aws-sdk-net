@@ -57,11 +57,17 @@ namespace Amazon.IdentityManagement.Model
     /// If the output is long, you can use <code>MaxItems</code> and <code>Marker</code> parameters
     /// to paginate the results.
     /// </para>
-    ///  
+    ///  <note> 
     /// <para>
-    /// For more information about using the policy simulator, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_testing-policies.html">Testing
+    /// The IAM policy simulator evaluates statements in the identity-based policy and the
+    /// inputs that you provide during simulation. The policy simulator results can differ
+    /// from your live Amazon Web Services environment. We recommend that you check your policies
+    /// against your live Amazon Web Services environment after testing using the policy simulator
+    /// to confirm that you have the desired results. For more information about using the
+    /// policy simulator, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_testing-policies.html">Testing
     /// IAM policies with the IAM policy simulator </a>in the <i>IAM User Guide</i>.
     /// </para>
+    ///  </note>
     /// </summary>
     public partial class SimulateCustomPolicyRequest : AmazonIdentityManagementServiceRequest
     {
@@ -328,6 +334,11 @@ namespace Amazon.IdentityManagement.Model
         /// For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
         /// Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Simulation of resource-based policies isn't supported for IAM roles.
+        /// </para>
+        ///  </note>
         /// </summary>
         public List<string> ResourceArns
         {
@@ -354,36 +365,20 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// Each of the EC2 scenarios requires that you specify instance, image, and security-group
-        /// resources. If your scenario includes an EBS volume, then you must specify that volume
-        /// as a resource. If the EC2 scenario includes VPC, then you must supply the network-interface
-        /// resource. If it includes an IP subnet, then you must specify the subnet resource.
-        /// For more information on the EC2 scenario options, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
+        /// Each of the EC2 scenarios requires that you specify instance, image, and security
+        /// group resources. If your scenario includes an EBS volume, then you must specify that
+        /// volume as a resource. If the EC2 scenario includes VPC, then you must supply the network
+        /// interface resource. If it includes an IP subnet, then you must specify the subnet
+        /// resource. For more information on the EC2 scenario options, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
         /// platforms</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  <ul> <li> 
-        /// <para>
-        ///  <b>EC2-Classic-InstanceStore</b> 
-        /// </para>
-        ///  
-        /// <para>
-        /// instance, image, security-group
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <b>EC2-Classic-EBS</b> 
-        /// </para>
-        ///  
-        /// <para>
-        /// instance, image, security-group, volume
-        /// </para>
-        ///  </li> <li> 
         /// <para>
         ///  <b>EC2-VPC-InstanceStore</b> 
         /// </para>
         ///  
         /// <para>
-        /// instance, image, security-group, network-interface
+        /// instance, image, security group, network interface
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -391,7 +386,7 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// instance, image, security-group, network-interface, subnet
+        /// instance, image, security group, network interface, subnet
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -399,7 +394,7 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// instance, image, security-group, network-interface, volume
+        /// instance, image, security group, network interface, volume
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -407,7 +402,7 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// instance, image, security-group, network-interface, subnet, volume
+        /// instance, image, security group, network interface, subnet, volume
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -491,7 +486,11 @@ namespace Amazon.IdentityManagement.Model
         /// The special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>),
         /// and carriage return (<code>\u000D</code>)
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// Simulation of resource-based policies isn't supported for IAM roles.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=1, Max=131072)]
         public string ResourcePolicy

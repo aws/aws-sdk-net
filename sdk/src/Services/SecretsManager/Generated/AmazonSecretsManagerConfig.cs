@@ -17,22 +17,22 @@
  * Do not modify this file. This file is generated from the secretsmanager-2017-10-17.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
-
+using Amazon.SecretsManager.Internal;
 
 namespace Amazon.SecretsManager
 {
     /// <summary>
     /// Configuration for accessing Amazon SecretsManager service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonSecretsManagerConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.1.58");
+            InternalSDKUtils.BuildUserAgentString("3.7.102.59");
 
         private string _userAgent = UserAgentString;
 
@@ -40,8 +40,10 @@ namespace Amazon.SecretsManager
         /// Default constructor
         /// </summary>
         public AmazonSecretsManagerConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonSecretsManagerDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "secretsmanager";
+            this.EndpointProvider = new AmazonSecretsManagerEndpointProvider();
         }
 
         /// <summary>
@@ -76,5 +78,6 @@ namespace Amazon.SecretsManager
                 return _userAgent;
             }
         }
+
     }
 }

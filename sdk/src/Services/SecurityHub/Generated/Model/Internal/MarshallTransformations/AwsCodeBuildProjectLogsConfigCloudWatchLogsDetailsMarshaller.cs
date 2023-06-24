@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails Marshaller
-    /// </summary>       
+    /// </summary>
     public class AwsCodeBuildProjectLogsConfigCloudWatchLogsDetailsMarshaller : IRequestMarshaller<AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AwsCodeBuildProjectLogsConfigCloudWatchLogsDetailsMarshaller Instance = new AwsCodeBuildProjectLogsConfigCloudWatchLogsDetailsMarshaller();
 
     }

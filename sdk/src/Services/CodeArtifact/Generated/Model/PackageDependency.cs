@@ -42,10 +42,32 @@ namespace Amazon.CodeArtifact.Model
         /// Gets and sets the property DependencyType. 
         /// <para>
         ///  The type of a package dependency. The possible values depend on the package type.
-        /// Example types are <code>compile</code>, <code>runtime</code>, and <code>test</code>
-        /// for Maven packages, and <code>dev</code>, <code>prod</code>, and <code>optional</code>
-        /// for npm packages. 
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// npm: <code>regular</code>, <code>dev</code>, <code>peer</code>, <code>optional</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// maven: <code>optional</code>, <code>parent</code>, <code>compile</code>, <code>runtime</code>,
+        /// <code>test</code>, <code>system</code>, <code>provided</code>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Note that <code>parent</code> is not a regular Maven dependency type; instead this
+        /// is extracted from the <code>&lt;parent&gt;</code> element if one is defined in the
+        /// package version's POM file.
+        /// </para>
+        ///  </note> </li> <li> 
+        /// <para>
+        /// nuget: The <code>dependencyType</code> field is never set for NuGet packages.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// pypi: <code>Requires-Dist</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string DependencyType
         {
@@ -62,8 +84,8 @@ namespace Amazon.CodeArtifact.Model
         /// <summary>
         /// Gets and sets the property Namespace. 
         /// <para>
-        ///  The namespace of the package. The package component that specifies its namespace
-        /// depends on its type. For example: 
+        /// The namespace of the package that this package depends on. The package component that
+        /// specifies its namespace depends on its type. For example:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -75,8 +97,8 @@ namespace Amazon.CodeArtifact.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  A Python package does not contain a corresponding component, so Python packages do
-        /// not have a namespace. 
+        ///  Python and NuGet packages do not contain a corresponding component, packages of those
+        /// formats do not have a namespace. 
         /// </para>
         ///  </li> </ul>
         /// </summary>

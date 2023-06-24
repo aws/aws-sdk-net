@@ -34,6 +34,7 @@ namespace Amazon.Appflow.Model
     public partial class DescribeConnectorsResponse : AmazonWebServiceResponse
     {
         private Dictionary<string, ConnectorConfiguration> _connectorConfigurations = new Dictionary<string, ConnectorConfiguration>();
+        private List<ConnectorDetail> _connectors = new List<ConnectorDetail>();
         private string _nextToken;
 
         /// <summary>
@@ -52,6 +53,24 @@ namespace Amazon.Appflow.Model
         internal bool IsSetConnectorConfigurations()
         {
             return this._connectorConfigurations != null && this._connectorConfigurations.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Connectors. 
+        /// <para>
+        /// Information about the connectors supported in Amazon AppFlow.
+        /// </para>
+        /// </summary>
+        public List<ConnectorDetail> Connectors
+        {
+            get { return this._connectors; }
+            set { this._connectors = value; }
+        }
+
+        // Check to see if Connectors property is set
+        internal bool IsSetConnectors()
+        {
+            return this._connectors != null && this._connectors.Count > 0; 
         }
 
         /// <summary>

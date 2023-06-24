@@ -38,7 +38,9 @@ namespace Amazon.WAFV2.Model
     {
         private string _action;
         private CaptchaResponse _captchaResponse;
+        private ChallengeResponse _challengeResponse;
         private List<Label> _labels = new List<Label>();
+        private string _overriddenAction;
         private HTTPRequest _request;
         private List<HTTPHeader> _requestHeadersInserted = new List<HTTPHeader>();
         private int? _responseCodeSent;
@@ -49,8 +51,7 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property Action. 
         /// <para>
-        /// The action for the <code>Rule</code> that the request matched: <code>Allow</code>,
-        /// <code>Block</code>, or <code>Count</code>.
+        /// The action that WAF applied to the request.
         /// </para>
         /// </summary>
         public string Action
@@ -84,6 +85,24 @@ namespace Amazon.WAFV2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ChallengeResponse. 
+        /// <para>
+        /// The <code>Challenge</code> response for the request.
+        /// </para>
+        /// </summary>
+        public ChallengeResponse ChallengeResponse
+        {
+            get { return this._challengeResponse; }
+            set { this._challengeResponse = value; }
+        }
+
+        // Check to see if ChallengeResponse property is set
+        internal bool IsSetChallengeResponse()
+        {
+            return this._challengeResponse != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Labels. 
         /// <para>
         /// Labels applied to the web request by matching rules. WAF applies fully qualified labels
@@ -107,6 +126,27 @@ namespace Amazon.WAFV2.Model
         internal bool IsSetLabels()
         {
             return this._labels != null && this._labels.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property OverriddenAction. 
+        /// <para>
+        /// Used only for rule group rules that have a rule action override in place in the web
+        /// ACL. This is the action that the rule group rule is configured for, and not the action
+        /// that was applied to the request. The action that WAF applied is the <code>Action</code>
+        /// value. 
+        /// </para>
+        /// </summary>
+        public string OverriddenAction
+        {
+            get { return this._overriddenAction; }
+            set { this._overriddenAction = value; }
+        }
+
+        // Check to see if OverriddenAction property is set
+        internal bool IsSetOverriddenAction()
+        {
+            return this._overriddenAction != null;
         }
 
         /// <summary>

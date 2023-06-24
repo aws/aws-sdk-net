@@ -52,15 +52,26 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// One or more filters.
+        /// The filters.
         /// </para>
         ///  <ul> <li> 
+        /// <para>
+        ///  <code>owner</code> - The ID or alias of the Amazon Web Services account that owns
+        /// the service.
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         ///  <code>service-name</code> - The name of the service.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>service-type</code> - The type of service (<code>Interface</code> | <code>Gateway</code>).
+        ///  <code>service-type</code> - The type of service (<code>Interface</code> | <code>Gateway</code>
+        /// | <code>GatewayLoadBalancer</code>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>supported-ip-address-types</code> - The IP address type (<code>ipv4</code>
+        /// | <code>ipv6</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -134,7 +145,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ServiceNames. 
         /// <para>
-        /// One or more service names.
+        /// The service names.
         /// </para>
         /// </summary>
         public List<string> ServiceNames

@@ -51,6 +51,12 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("applicationMode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ApplicationMode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("applicationPreferences", targetDepth))
                 {
                     var unmarshaller = ApplicationPreferencesUnmarshaller.Instance;

@@ -38,7 +38,7 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property EnvironmentTemplate. 
         /// <para>
-        /// The environment template detail data that's returned by Proton.
+        /// The detailed data of the environment template being deleted.
         /// </para>
         /// </summary>
         public EnvironmentTemplate EnvironmentTemplate

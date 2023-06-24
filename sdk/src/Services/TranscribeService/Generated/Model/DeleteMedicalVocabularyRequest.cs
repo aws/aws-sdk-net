@@ -30,7 +30,9 @@ namespace Amazon.TranscribeService.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteMedicalVocabulary operation.
-    /// Deletes a vocabulary from Amazon Transcribe Medical.
+    /// Deletes a custom medical vocabulary. To use this operation, specify the name of the
+    /// custom vocabulary you want to delete using <code>VocabularyName</code>. Custom vocabulary
+    /// names are case sensitive.
     /// </summary>
     public partial class DeleteMedicalVocabularyRequest : AmazonTranscribeServiceRequest
     {
@@ -39,7 +41,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property VocabularyName. 
         /// <para>
-        /// The name of the vocabulary that you want to delete.
+        /// The name of the custom medical vocabulary you want to delete. Custom medical vocabulary
+        /// names are case sensitive.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=200)]

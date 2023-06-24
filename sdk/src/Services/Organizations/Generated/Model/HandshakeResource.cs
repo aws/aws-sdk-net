@@ -63,7 +63,7 @@ namespace Amazon.Organizations.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ACCOUNT</code> - Specifies an AWS account ID number.
+        ///  <code>ACCOUNT</code> - Specifies an Amazon Web Services account ID number.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -110,6 +110,7 @@ namespace Amazon.Organizations.Model
         /// the value string must match the requirements of the specified type.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string Value
         {
             get { return this._value; }

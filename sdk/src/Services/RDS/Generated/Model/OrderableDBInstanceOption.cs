@@ -33,8 +33,8 @@ namespace Amazon.RDS.Model
     /// 
     ///  
     /// <para>
-    ///  This data type is used as a response element in the <code>DescribeOrderableDBInstanceOptions</code>
-    /// action. 
+    /// This data type is used as a response element in the <code>DescribeOrderableDBInstanceOptions</code>
+    /// action.
     /// </para>
     /// </summary>
     public partial class OrderableDBInstanceOption
@@ -49,15 +49,20 @@ namespace Amazon.RDS.Model
         private int? _maxIopsPerDbInstance;
         private double? _maxIopsPerGib;
         private int? _maxStorageSize;
+        private int? _maxStorageThroughputPerDbInstance;
+        private double? _maxStorageThroughputPerIops;
         private int? _minIopsPerDbInstance;
         private double? _minIopsPerGib;
         private int? _minStorageSize;
+        private int? _minStorageThroughputPerDbInstance;
+        private double? _minStorageThroughputPerIops;
         private bool? _multiAZCapable;
         private bool? _outpostCapable;
         private bool? _readReplicaCapable;
         private string _storageType;
         private List<string> _supportedActivityStreamModes = new List<string>();
         private List<string> _supportedEngineModes = new List<string>();
+        private List<string> _supportedNetworkTypes = new List<string>();
         private bool? _supportsClusters;
         private bool? _supportsEnhancedMonitoring;
         private bool? _supportsGlobalDatabases;
@@ -67,6 +72,7 @@ namespace Amazon.RDS.Model
         private bool? _supportsPerformanceInsights;
         private bool? _supportsStorageAutoscaling;
         private bool? _supportsStorageEncryption;
+        private bool? _supportsStorageThroughput;
         private bool? _vpc;
 
         /// <summary>
@@ -250,6 +256,42 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MaxStorageThroughputPerDbInstance. 
+        /// <para>
+        /// Maximum storage throughput for a DB instance.
+        /// </para>
+        /// </summary>
+        public int MaxStorageThroughputPerDbInstance
+        {
+            get { return this._maxStorageThroughputPerDbInstance.GetValueOrDefault(); }
+            set { this._maxStorageThroughputPerDbInstance = value; }
+        }
+
+        // Check to see if MaxStorageThroughputPerDbInstance property is set
+        internal bool IsSetMaxStorageThroughputPerDbInstance()
+        {
+            return this._maxStorageThroughputPerDbInstance.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxStorageThroughputPerIops. 
+        /// <para>
+        /// Maximum storage throughput to provisioned IOPS ratio for a DB instance.
+        /// </para>
+        /// </summary>
+        public double MaxStorageThroughputPerIops
+        {
+            get { return this._maxStorageThroughputPerIops.GetValueOrDefault(); }
+            set { this._maxStorageThroughputPerIops = value; }
+        }
+
+        // Check to see if MaxStorageThroughputPerIops property is set
+        internal bool IsSetMaxStorageThroughputPerIops()
+        {
+            return this._maxStorageThroughputPerIops.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property MinIopsPerDbInstance. 
         /// <para>
         /// Minimum total provisioned IOPS for a DB instance.
@@ -301,6 +343,42 @@ namespace Amazon.RDS.Model
         internal bool IsSetMinStorageSize()
         {
             return this._minStorageSize.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MinStorageThroughputPerDbInstance. 
+        /// <para>
+        /// Minimum storage throughput for a DB instance.
+        /// </para>
+        /// </summary>
+        public int MinStorageThroughputPerDbInstance
+        {
+            get { return this._minStorageThroughputPerDbInstance.GetValueOrDefault(); }
+            set { this._minStorageThroughputPerDbInstance = value; }
+        }
+
+        // Check to see if MinStorageThroughputPerDbInstance property is set
+        internal bool IsSetMinStorageThroughputPerDbInstance()
+        {
+            return this._minStorageThroughputPerDbInstance.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MinStorageThroughputPerIops. 
+        /// <para>
+        /// Minimum storage throughput to provisioned IOPS ratio for a DB instance.
+        /// </para>
+        /// </summary>
+        public double MinStorageThroughputPerIops
+        {
+            get { return this._minStorageThroughputPerIops.GetValueOrDefault(); }
+            set { this._minStorageThroughputPerIops = value; }
+        }
+
+        // Check to see if MinStorageThroughputPerIops property is set
+        internal bool IsSetMinStorageThroughputPerIops()
+        {
+            return this._minStorageThroughputPerIops.HasValue; 
         }
 
         /// <summary>
@@ -419,13 +497,37 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SupportsClusters. 
+        /// Gets and sets the property SupportedNetworkTypes. 
         /// <para>
-        /// Whether DB instances can be configured as a Multi-AZ DB cluster.
+        /// The network types supported by the DB instance (<code>IPV4</code> or <code>DUAL</code>).
         /// </para>
         ///  
         /// <para>
-        /// The Multi-AZ DB clusters feature is in preview and is subject to change.
+        /// A DB instance can support only the IPv4 protocol or the IPv4 and the IPv6 protocols
+        /// (<code>DUAL</code>).
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+        /// Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i> 
+        /// </para>
+        /// </summary>
+        public List<string> SupportedNetworkTypes
+        {
+            get { return this._supportedNetworkTypes; }
+            set { this._supportedNetworkTypes = value; }
+        }
+
+        // Check to see if SupportedNetworkTypes property is set
+        internal bool IsSetSupportedNetworkTypes()
+        {
+            return this._supportedNetworkTypes != null && this._supportedNetworkTypes.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SupportsClusters. 
+        /// <para>
+        /// Whether DB instances can be configured as a Multi-AZ DB cluster.
         /// </para>
         ///  
         /// <para>
@@ -591,6 +693,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetSupportsStorageEncryption()
         {
             return this._supportsStorageEncryption.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SupportsStorageThroughput. 
+        /// <para>
+        /// Indicates whether a DB instance supports storage throughput.
+        /// </para>
+        /// </summary>
+        public bool SupportsStorageThroughput
+        {
+            get { return this._supportsStorageThroughput.GetValueOrDefault(); }
+            set { this._supportsStorageThroughput = value; }
+        }
+
+        // Check to see if SupportsStorageThroughput property is set
+        internal bool IsSetSupportsStorageThroughput()
+        {
+            return this._supportsStorageThroughput.HasValue; 
         }
 
         /// <summary>

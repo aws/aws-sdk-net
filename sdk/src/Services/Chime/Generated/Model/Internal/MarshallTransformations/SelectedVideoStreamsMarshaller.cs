@@ -34,7 +34,7 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SelectedVideoStreams Marshaller
-    /// </summary>       
+    /// </summary>
     public class SelectedVideoStreamsMarshaller : IRequestMarshaller<SelectedVideoStreams, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SelectedVideoStreamsMarshaller Instance = new SelectedVideoStreamsMarshaller();
 
     }

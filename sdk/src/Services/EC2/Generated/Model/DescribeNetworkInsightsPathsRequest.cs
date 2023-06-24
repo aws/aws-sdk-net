@@ -42,27 +42,51 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// The filters. The following are possible values:
+        /// The filters. The following are the possible values:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Destination - The ID of the resource.
+        /// destination - The ID of the resource.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// DestinationPort - The destination port.
+        /// filter-at-source.source-address - The source IPv4 address at the source.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Name - The path name.
+        /// filter-at-source.source-port-range - The source port range at the source.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Protocol - The protocol.
+        /// filter-at-source.destination-address - The destination IPv4 address at the source.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Source - The ID of the resource.
+        /// filter-at-source.destination-port-range - The destination port range at the source.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// filter-at-destination.source-address - The source IPv4 address at the destination.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// filter-at-destination.source-port-range - The source port range at the destination.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// filter-at-destination.destination-address - The destination IPv4 address at the destination.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// filter-at-destination.destination-port-range - The destination port range at the destination.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// protocol - The protocol.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// source - The ID of the resource.
         /// </para>
         ///  </li> </ul>
         /// </summary>

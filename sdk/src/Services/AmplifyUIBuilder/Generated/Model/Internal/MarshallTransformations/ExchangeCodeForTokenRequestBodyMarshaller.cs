@@ -34,7 +34,7 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ExchangeCodeForTokenRequestBody Marshaller
-    /// </summary>       
+    /// </summary>
     public class ExchangeCodeForTokenRequestBodyMarshaller : IRequestMarshaller<ExchangeCodeForTokenRequestBody, JsonMarshallerContext> 
     {
         /// <summary>
@@ -45,6 +45,12 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ExchangeCodeForTokenRequestBody requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetClientId())
+            {
+                context.Writer.WritePropertyName("clientId");
+                context.Writer.Write(requestObject.ClientId);
+            }
+
             if(requestObject.IsSetCode())
             {
                 context.Writer.WritePropertyName("code");
@@ -61,7 +67,7 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ExchangeCodeForTokenRequestBodyMarshaller Instance = new ExchangeCodeForTokenRequestBodyMarshaller();
 
     }

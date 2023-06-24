@@ -34,7 +34,7 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
 {
     /// <summary>
     /// DatabaseMigrationPreference Marshaller
-    /// </summary>       
+    /// </summary>
     public class DatabaseMigrationPreferenceMarshaller : IRequestMarshaller<DatabaseMigrationPreference, JsonMarshallerContext> 
     {
         /// <summary>
@@ -82,7 +82,7 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DatabaseMigrationPreferenceMarshaller Instance = new DatabaseMigrationPreferenceMarshaller();
 
     }

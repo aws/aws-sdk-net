@@ -25,6 +25,64 @@ namespace Amazon.GroundStation
 {
 
     /// <summary>
+    /// Constants used for properties of type AgentStatus.
+    /// </summary>
+    public class AgentStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for AgentStatus
+        /// </summary>
+        public static readonly AgentStatus ACTIVE = new AgentStatus("ACTIVE");
+        /// <summary>
+        /// Constant FAILED for AgentStatus
+        /// </summary>
+        public static readonly AgentStatus FAILED = new AgentStatus("FAILED");
+        /// <summary>
+        /// Constant INACTIVE for AgentStatus
+        /// </summary>
+        public static readonly AgentStatus INACTIVE = new AgentStatus("INACTIVE");
+        /// <summary>
+        /// Constant SUCCESS for AgentStatus
+        /// </summary>
+        public static readonly AgentStatus SUCCESS = new AgentStatus("SUCCESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AgentStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AgentStatus FindValue(string value)
+        {
+            return FindValue<AgentStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AgentStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AngleUnits.
     /// </summary>
     public class AngleUnits : ConstantClass
@@ -68,6 +126,56 @@ namespace Amazon.GroundStation
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator AngleUnits(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AuditResults.
+    /// </summary>
+    public class AuditResults : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant HEALTHY for AuditResults
+        /// </summary>
+        public static readonly AuditResults HEALTHY = new AuditResults("HEALTHY");
+        /// <summary>
+        /// Constant UNHEALTHY for AuditResults
+        /// </summary>
+        public static readonly AuditResults UNHEALTHY = new AuditResults("UNHEALTHY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AuditResults(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AuditResults FindValue(string value)
+        {
+            return FindValue<AuditResults>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AuditResults(string value)
         {
             return FindValue(value);
         }
@@ -122,6 +230,126 @@ namespace Amazon.GroundStation
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator BandwidthUnits(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CapabilityHealth.
+    /// </summary>
+    public class CapabilityHealth : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant HEALTHY for CapabilityHealth
+        /// </summary>
+        public static readonly CapabilityHealth HEALTHY = new CapabilityHealth("HEALTHY");
+        /// <summary>
+        /// Constant UNHEALTHY for CapabilityHealth
+        /// </summary>
+        public static readonly CapabilityHealth UNHEALTHY = new CapabilityHealth("UNHEALTHY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CapabilityHealth(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CapabilityHealth FindValue(string value)
+        {
+            return FindValue<CapabilityHealth>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CapabilityHealth(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CapabilityHealthReason.
+    /// </summary>
+    public class CapabilityHealthReason : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DATAPLANE_FAILURE for CapabilityHealthReason
+        /// </summary>
+        public static readonly CapabilityHealthReason DATAPLANE_FAILURE = new CapabilityHealthReason("DATAPLANE_FAILURE");
+        /// <summary>
+        /// Constant HEALTHY for CapabilityHealthReason
+        /// </summary>
+        public static readonly CapabilityHealthReason HEALTHY = new CapabilityHealthReason("HEALTHY");
+        /// <summary>
+        /// Constant INITIALIZING_DATAPLANE for CapabilityHealthReason
+        /// </summary>
+        public static readonly CapabilityHealthReason INITIALIZING_DATAPLANE = new CapabilityHealthReason("INITIALIZING_DATAPLANE");
+        /// <summary>
+        /// Constant INVALID_IP_OWNERSHIP for CapabilityHealthReason
+        /// </summary>
+        public static readonly CapabilityHealthReason INVALID_IP_OWNERSHIP = new CapabilityHealthReason("INVALID_IP_OWNERSHIP");
+        /// <summary>
+        /// Constant NO_REGISTERED_AGENT for CapabilityHealthReason
+        /// </summary>
+        public static readonly CapabilityHealthReason NO_REGISTERED_AGENT = new CapabilityHealthReason("NO_REGISTERED_AGENT");
+        /// <summary>
+        /// Constant NOT_AUTHORIZED_TO_CREATE_SLR for CapabilityHealthReason
+        /// </summary>
+        public static readonly CapabilityHealthReason NOT_AUTHORIZED_TO_CREATE_SLR = new CapabilityHealthReason("NOT_AUTHORIZED_TO_CREATE_SLR");
+        /// <summary>
+        /// Constant UNVERIFIED_IP_OWNERSHIP for CapabilityHealthReason
+        /// </summary>
+        public static readonly CapabilityHealthReason UNVERIFIED_IP_OWNERSHIP = new CapabilityHealthReason("UNVERIFIED_IP_OWNERSHIP");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CapabilityHealthReason(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CapabilityHealthReason FindValue(string value)
+        {
+            return FindValue<CapabilityHealthReason>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CapabilityHealthReason(string value)
         {
             return FindValue(value);
         }
@@ -448,6 +676,184 @@ namespace Amazon.GroundStation
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator EndpointStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type EphemerisInvalidReason.
+    /// </summary>
+    public class EphemerisInvalidReason : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant KMS_KEY_INVALID for EphemerisInvalidReason
+        /// </summary>
+        public static readonly EphemerisInvalidReason KMS_KEY_INVALID = new EphemerisInvalidReason("KMS_KEY_INVALID");
+        /// <summary>
+        /// Constant METADATA_INVALID for EphemerisInvalidReason
+        /// </summary>
+        public static readonly EphemerisInvalidReason METADATA_INVALID = new EphemerisInvalidReason("METADATA_INVALID");
+        /// <summary>
+        /// Constant TIME_RANGE_INVALID for EphemerisInvalidReason
+        /// </summary>
+        public static readonly EphemerisInvalidReason TIME_RANGE_INVALID = new EphemerisInvalidReason("TIME_RANGE_INVALID");
+        /// <summary>
+        /// Constant TRAJECTORY_INVALID for EphemerisInvalidReason
+        /// </summary>
+        public static readonly EphemerisInvalidReason TRAJECTORY_INVALID = new EphemerisInvalidReason("TRAJECTORY_INVALID");
+        /// <summary>
+        /// Constant VALIDATION_ERROR for EphemerisInvalidReason
+        /// </summary>
+        public static readonly EphemerisInvalidReason VALIDATION_ERROR = new EphemerisInvalidReason("VALIDATION_ERROR");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EphemerisInvalidReason(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EphemerisInvalidReason FindValue(string value)
+        {
+            return FindValue<EphemerisInvalidReason>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EphemerisInvalidReason(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type EphemerisSource.
+    /// </summary>
+    public class EphemerisSource : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CUSTOMER_PROVIDED for EphemerisSource
+        /// </summary>
+        public static readonly EphemerisSource CUSTOMER_PROVIDED = new EphemerisSource("CUSTOMER_PROVIDED");
+        /// <summary>
+        /// Constant SPACE_TRACK for EphemerisSource
+        /// </summary>
+        public static readonly EphemerisSource SPACE_TRACK = new EphemerisSource("SPACE_TRACK");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EphemerisSource(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EphemerisSource FindValue(string value)
+        {
+            return FindValue<EphemerisSource>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EphemerisSource(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type EphemerisStatus.
+    /// </summary>
+    public class EphemerisStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for EphemerisStatus
+        /// </summary>
+        public static readonly EphemerisStatus DISABLED = new EphemerisStatus("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for EphemerisStatus
+        /// </summary>
+        public static readonly EphemerisStatus ENABLED = new EphemerisStatus("ENABLED");
+        /// <summary>
+        /// Constant ERROR for EphemerisStatus
+        /// </summary>
+        public static readonly EphemerisStatus ERROR = new EphemerisStatus("ERROR");
+        /// <summary>
+        /// Constant EXPIRED for EphemerisStatus
+        /// </summary>
+        public static readonly EphemerisStatus EXPIRED = new EphemerisStatus("EXPIRED");
+        /// <summary>
+        /// Constant INVALID for EphemerisStatus
+        /// </summary>
+        public static readonly EphemerisStatus INVALID = new EphemerisStatus("INVALID");
+        /// <summary>
+        /// Constant VALIDATING for EphemerisStatus
+        /// </summary>
+        public static readonly EphemerisStatus VALIDATING = new EphemerisStatus("VALIDATING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EphemerisStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EphemerisStatus FindValue(string value)
+        {
+            return FindValue<EphemerisStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EphemerisStatus(string value)
         {
             return FindValue(value);
         }

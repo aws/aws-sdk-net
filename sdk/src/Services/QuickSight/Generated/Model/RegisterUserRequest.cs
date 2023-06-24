@@ -30,8 +30,15 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the RegisterUser operation.
-    /// Creates an Amazon QuickSight user, whose identity is associated with the Identity
-    /// and Access Management (IAM) identity or role specified in the request.
+    /// Creates an Amazon QuickSight user whose identity is associated with the Identity and
+    /// Access Management (IAM) identity or role specified in the request. When you register
+    /// a new user from the Amazon QuickSight API, Amazon QuickSight generates a registration
+    /// URL. The user accesses this registration URL to create their account. Amazon QuickSight
+    /// doesn't send a registration email to users who are registered from the Amazon QuickSight
+    /// API. If you want new users to receive a registration email, then add those users in
+    /// the Amazon QuickSight console. For more information on registering a new user in the
+    /// Amazon QuickSight console, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/managing-users.html#inviting-users">
+    /// Inviting users to access Amazon QuickSight</a>.
     /// </summary>
     public partial class RegisterUserRequest : AmazonQuickSightRequest
     {
@@ -122,7 +129,7 @@ namespace Amazon.QuickSight.Model
         /// A set of custom permissions includes any combination of these restrictions. Currently,
         /// you need to create the profile names for custom permission sets by using the Amazon
         /// QuickSight console. Then, you use the <code>RegisterUser</code> API operation to assign
-        /// the named set of permissions to a QuickSight user. 
+        /// the named set of permissions to a Amazon QuickSight user. 
         /// </para>
         ///  
         /// <para>

@@ -58,7 +58,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             string target = "AmazonEC2ContainerServiceV20141113.UpdateCluster";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2014-11-13";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2014-11-13";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -84,6 +84,17 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetServiceConnectDefaults())
+                {
+                    context.Writer.WritePropertyName("serviceConnectDefaults");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ClusterServiceConnectDefaultsRequestMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ServiceConnectDefaults, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetSettings())
                 {
                     context.Writer.WritePropertyName("settings");
@@ -100,7 +111,6 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

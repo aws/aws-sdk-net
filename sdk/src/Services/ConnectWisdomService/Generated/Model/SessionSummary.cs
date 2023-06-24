@@ -41,7 +41,7 @@ namespace Amazon.ConnectWisdomService.Model
         /// <summary>
         /// Gets and sets the property AssistantArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the Wisdom assistant
+        /// The Amazon Resource Name (ARN) of the Wisdom assistant.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

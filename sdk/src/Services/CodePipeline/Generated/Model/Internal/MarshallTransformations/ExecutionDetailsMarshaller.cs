@@ -34,7 +34,7 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ExecutionDetails Marshaller
-    /// </summary>       
+    /// </summary>
     public class ExecutionDetailsMarshaller : IRequestMarshaller<ExecutionDetails, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ExecutionDetailsMarshaller Instance = new ExecutionDetailsMarshaller();
 
     }

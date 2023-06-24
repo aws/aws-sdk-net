@@ -34,7 +34,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// LongColumnStatisticsData Marshaller
-    /// </summary>       
+    /// </summary>
     public class LongColumnStatisticsDataMarshaller : IRequestMarshaller<LongColumnStatisticsData, JsonMarshallerContext> 
     {
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static LongColumnStatisticsDataMarshaller Instance = new LongColumnStatisticsDataMarshaller();
 
     }

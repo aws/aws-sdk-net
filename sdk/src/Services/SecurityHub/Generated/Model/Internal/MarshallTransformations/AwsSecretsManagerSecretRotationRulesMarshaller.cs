@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AwsSecretsManagerSecretRotationRules Marshaller
-    /// </summary>       
+    /// </summary>
     public class AwsSecretsManagerSecretRotationRulesMarshaller : IRequestMarshaller<AwsSecretsManagerSecretRotationRules, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AwsSecretsManagerSecretRotationRulesMarshaller Instance = new AwsSecretsManagerSecretRotationRulesMarshaller();
 
     }

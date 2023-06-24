@@ -34,7 +34,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DatabaseIdentifier Marshaller
-    /// </summary>       
+    /// </summary>
     public class DatabaseIdentifierMarshaller : IRequestMarshaller<DatabaseIdentifier, JsonMarshallerContext> 
     {
         /// <summary>
@@ -57,11 +57,17 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.DatabaseName);
             }
 
+            if(requestObject.IsSetRegion())
+            {
+                context.Writer.WritePropertyName("Region");
+                context.Writer.Write(requestObject.Region);
+            }
+
         }
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DatabaseIdentifierMarshaller Instance = new DatabaseIdentifierMarshaller();
 
     }

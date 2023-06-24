@@ -34,7 +34,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// TcpRouteAction Marshaller
-    /// </summary>       
+    /// </summary>
     public class TcpRouteActionMarshaller : IRequestMarshaller<TcpRouteAction, JsonMarshallerContext> 
     {
         /// <summary>
@@ -65,7 +65,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static TcpRouteActionMarshaller Instance = new TcpRouteActionMarshaller();
 
     }

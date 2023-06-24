@@ -34,7 +34,7 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// GameProperty Marshaller
-    /// </summary>       
+    /// </summary>
     public class GamePropertyMarshaller : IRequestMarshaller<GameProperty, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static GamePropertyMarshaller Instance = new GamePropertyMarshaller();
 
     }

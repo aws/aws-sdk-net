@@ -232,6 +232,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     unmarshalledObject.Tier = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("timecodeBurninSettings", targetDepth))
+                {
+                    var unmarshaller = TimecodeBurninSettingsUnmarshaller.Instance;
+                    unmarshalledObject.TimecodeBurninSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("timecodeInsertion", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

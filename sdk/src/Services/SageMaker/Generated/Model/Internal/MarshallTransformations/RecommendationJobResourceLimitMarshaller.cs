@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RecommendationJobResourceLimit Marshaller
-    /// </summary>       
+    /// </summary>
     public class RecommendationJobResourceLimitMarshaller : IRequestMarshaller<RecommendationJobResourceLimit, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RecommendationJobResourceLimitMarshaller Instance = new RecommendationJobResourceLimitMarshaller();
 
     }

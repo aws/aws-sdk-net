@@ -34,7 +34,7 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CmafPackageCreateOrUpdateParameters Marshaller
-    /// </summary>       
+    /// </summary>
     public class CmafPackageCreateOrUpdateParametersMarshaller : IRequestMarshaller<CmafPackageCreateOrUpdateParameters, JsonMarshallerContext> 
     {
         /// <summary>
@@ -99,7 +99,7 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CmafPackageCreateOrUpdateParametersMarshaller Instance = new CmafPackageCreateOrUpdateParametersMarshaller();
 
     }

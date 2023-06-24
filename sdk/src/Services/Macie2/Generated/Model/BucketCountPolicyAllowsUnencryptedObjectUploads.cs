@@ -30,7 +30,7 @@ namespace Amazon.Macie2.Model
 {
     /// <summary>
     /// Provides information about the number of S3 buckets whose bucket policies do or don't
-    /// require server-side encryption of objects when objects are uploaded to the buckets.
+    /// require server-side encryption of objects when objects are added to the buckets.
     /// </summary>
     public partial class BucketCountPolicyAllowsUnencryptedObjectUploads
     {
@@ -43,8 +43,9 @@ namespace Amazon.Macie2.Model
         /// <para>
         /// The total number of buckets that don't have a bucket policy or have a bucket policy
         /// that doesn't require server-side encryption of new objects. If a bucket policy exists,
-        /// the policy doesn't require PutObject requests to include the x-amz-server-side-encryption
-        /// header and it doesn't require the value for that header to be AES256 or aws:kms.
+        /// the policy doesn't require PutObject requests to include a valid server-side encryption
+        /// header: the x-amz-server-side-encryption header with a value of AES256 or aws:kms,
+        /// or the x-amz-server-side-encryption-customer-algorithm header with a value of AES256.
         /// </para>
         /// </summary>
         public long AllowsUnencryptedObjectUploads
@@ -63,8 +64,10 @@ namespace Amazon.Macie2.Model
         /// Gets and sets the property DeniesUnencryptedObjectUploads. 
         /// <para>
         /// The total number of buckets whose bucket policies require server-side encryption of
-        /// new objects. PutObject requests for these buckets must include the x-amz-server-side-encryption
-        /// header and the value for that header must be AES256 or aws:kms.
+        /// new objects. PutObject requests for these buckets must include a valid server-side
+        /// encryption header: the x-amz-server-side-encryption header with a value of AES256
+        /// or aws:kms, or the x-amz-server-side-encryption-customer-algorithm header with a value
+        /// of AES256.
         /// </para>
         /// </summary>
         public long DeniesUnencryptedObjectUploads

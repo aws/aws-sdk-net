@@ -39,6 +39,7 @@ namespace Amazon.MediaLive.Model
         private InputDeviceState _deviceState;
         private double? _framerate;
         private int? _height;
+        private int? _latencyMs;
         private int? _maxBitrate;
         private InputDeviceScanType _scanType;
         private int? _width;
@@ -118,6 +119,22 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetHeight()
         {
             return this._height.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LatencyMs. The Link device's buffer size (latency) in milliseconds
+        /// (ms). You can specify this value.
+        /// </summary>
+        public int LatencyMs
+        {
+            get { return this._latencyMs.GetValueOrDefault(); }
+            set { this._latencyMs = value; }
+        }
+
+        // Check to see if LatencyMs property is set
+        internal bool IsSetLatencyMs()
+        {
+            return this._latencyMs.HasValue; 
         }
 
         /// <summary>

@@ -31,15 +31,18 @@ namespace Amazon.AppRunner.Model
     /// <summary>
     /// Container for the parameters to the CreateAutoScalingConfiguration operation.
     /// Create an App Runner automatic scaling configuration resource. App Runner requires
-    /// this resource when you create App Runner services that require non-default auto scaling
-    /// settings. You can share an auto scaling configuration across multiple services.
+    /// this resource when you create or update App Runner services and you require non-default
+    /// auto scaling settings. You can share an auto scaling configuration across multiple
+    /// services.
     /// 
     ///  
     /// <para>
-    /// Create multiple revisions of a configuration by using the same <code>AutoScalingConfigurationName</code>
-    /// and different <code>AutoScalingConfigurationRevision</code> values. When you create
-    /// a service, you can set it to use the latest active revision of an auto scaling configuration
-    /// or a specific revision.
+    /// Create multiple revisions of a configuration by calling this action multiple times
+    /// using the same <code>AutoScalingConfigurationName</code>. The call returns incremental
+    /// <code>AutoScalingConfigurationRevision</code> values. When you create a service and
+    /// configure an auto scaling configuration resource, the service uses the latest active
+    /// revision of the auto scaling configuration by default. You can optionally configure
+    /// the service to use a specific revision.
     /// </para>
     ///  
     /// <para>
@@ -69,6 +72,19 @@ namespace Amazon.AppRunner.Model
         /// name. When you use the same name in subsequent calls, App Runner creates incremental
         /// revisions of the configuration.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The name <code>DefaultConfiguration</code> is reserved (it's the configuration that
+        /// App Runner uses if you don't provide a custome one). You can't use it to create a
+        /// new auto scaling configuration, and you can't create a revision of it.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you want to use your own auto scaling configuration for your App Runner service,
+        /// <i>create a configuration with a different name</i>, and then provide it when you
+        /// create or update your service.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Required=true, Min=4, Max=32)]
         public string AutoScalingConfigurationName
@@ -118,7 +134,7 @@ namespace Amazon.AppRunner.Model
         /// Default: <code>25</code> 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=25)]
+        [AWSProperty(Min=1)]
         public int MaxSize
         {
             get { return this._maxSize.GetValueOrDefault(); }

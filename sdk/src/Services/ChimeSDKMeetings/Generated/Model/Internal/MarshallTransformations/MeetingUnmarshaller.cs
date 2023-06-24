@@ -82,6 +82,12 @@ namespace Amazon.ChimeSDKMeetings.Model.Internal.MarshallTransformations
                     unmarshalledObject.MediaRegion = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("MeetingArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.MeetingArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("MeetingFeatures", targetDepth))
                 {
                     var unmarshaller = MeetingFeaturesConfigurationUnmarshaller.Instance;
@@ -98,6 +104,18 @@ namespace Amazon.ChimeSDKMeetings.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MeetingId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("PrimaryMeetingId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PrimaryMeetingId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("TenantIds", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.TenantIds = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

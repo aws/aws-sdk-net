@@ -29,19 +29,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GameLift.Model
 {
     /// <summary>
-    /// The GameLift service limits for an EC2 instance type and current utilization. GameLift
-    /// allows AWS accounts a maximum number of instances, per instance type, per AWS Region
-    /// or location, for use with GameLift. You can request an limit increase for your account
-    /// by using the <b>Service limits</b> page in the GameLift console.
-    /// 
-    ///  
-    /// <para>
-    ///  <b>Related actions</b> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <a>DescribeEC2InstanceLimits</a> 
-    /// </para>
+    /// The Amazon GameLift service limits for an Amazon EC2 instance type and current utilization.
+    /// Amazon GameLift allows Amazon Web Services accounts a maximum number of instances,
+    /// per instance type, per Amazon Web Services Region or location, for use with Amazon
+    /// GameLift. You can request an limit increase for your account by using the <b>Service
+    /// limits</b> page in the Amazon GameLift console.
     /// </summary>
     public partial class EC2InstanceLimit
     {
@@ -54,7 +46,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property CurrentInstances. 
         /// <para>
         /// The number of instances for the specified type and location that are currently being
-        /// used by the AWS account. 
+        /// used by the Amazon Web Services account. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -73,8 +65,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property EC2InstanceType. 
         /// <para>
-        /// The name of an EC2 instance type. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon
-        /// EC2 Instance Types</a> for detailed descriptions. 
+        /// The name of an Amazon EC2 instance type. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon
+        /// Elastic Compute Cloud Instance Types</a> for detailed descriptions. 
         /// </para>
         /// </summary>
         public EC2InstanceType EC2InstanceType
@@ -111,7 +103,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Location. 
         /// <para>
-        /// An AWS Region code, such as <code>us-west-2</code>. 
+        /// An Amazon Web Services Region code, such as <code>us-west-2</code>. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

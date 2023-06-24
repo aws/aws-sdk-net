@@ -34,7 +34,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CrawlerTargets Marshaller
-    /// </summary>       
+    /// </summary>
     public class CrawlerTargetsMarshaller : IRequestMarshaller<CrawlerTargets, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,6 +55,22 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 
                     var marshaller = CatalogTargetMarshaller.Instance;
                     marshaller.Marshall(requestObjectCatalogTargetsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetDeltaTargets())
+            {
+                context.Writer.WritePropertyName("DeltaTargets");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectDeltaTargetsListValue in requestObject.DeltaTargets)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = DeltaTargetMarshaller.Instance;
+                    marshaller.Marshall(requestObjectDeltaTargetsListValue, context);
 
                     context.Writer.WriteObjectEnd();
                 }
@@ -129,7 +145,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CrawlerTargetsMarshaller Instance = new CrawlerTargetsMarshaller();
 
     }

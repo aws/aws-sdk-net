@@ -31,7 +31,7 @@ namespace Amazon.Organizations.Model
     /// <summary>
     /// Contains details about a root. A root is a top-level parent node in the hierarchy
     /// of an organization that can contain organizational units (OUs) and accounts. The root
-    /// contains every AWS account in the organization.
+    /// contains every Amazon Web Services account in the organization.
     /// </summary>
     public partial class Root
     {
@@ -48,7 +48,8 @@ namespace Amazon.Organizations.Model
         ///  
         /// <para>
         /// For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN
-        /// Formats Supported by Organizations</a> in the <i>AWS Service Authorization Reference</i>.
+        /// Formats Supported by Organizations</a> in the <i>Amazon Web Services Service Authorization
+        /// Reference</i>.
         /// </para>
         /// </summary>
         public string Arn

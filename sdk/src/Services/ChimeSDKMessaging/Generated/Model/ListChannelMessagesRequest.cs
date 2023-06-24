@@ -41,8 +41,9 @@ namespace Amazon.ChimeSDKMessaging.Model
     /// </para>
     ///  
     /// <para>
-    /// Also, the x-amz-chime-bearer request header is mandatory. Use the <code>AppInstanceUserArn</code>
-    /// of the user that makes the API call as the value in the header.
+    /// Also, the <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN
+    /// of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the
+    /// API call as the value in the header.
     /// </para>
     ///  </note>
     /// </summary>
@@ -55,6 +56,7 @@ namespace Amazon.ChimeSDKMessaging.Model
         private DateTime? _notAfter;
         private DateTime? _notBefore;
         private SortOrder _sortOrder;
+        private string _subChannelId;
 
         /// <summary>
         /// Gets and sets the property ChannelArn. 
@@ -78,7 +80,8 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// <summary>
         /// Gets and sets the property ChimeBearer. 
         /// <para>
-        /// The <code>AppInstanceUserArn</code> of the user that makes the API call.
+        /// The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes
+        /// the API call.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=5, Max=1600)]
@@ -119,7 +122,7 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// The token passed by previous API calls until all requested messages are returned.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=2048)]
+        [AWSProperty(Sensitive=true, Min=0, Max=2048)]
         public string NextToken
         {
             get { return this._nextToken; }
@@ -185,6 +188,30 @@ namespace Amazon.ChimeSDKMessaging.Model
         internal bool IsSetSortOrder()
         {
             return this._sortOrder != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SubChannelId. 
+        /// <para>
+        /// The ID of the SubChannel in the request.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Only required when listing the messages in a SubChannel that the user belongs to.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        [AWSProperty(Min=1, Max=128)]
+        public string SubChannelId
+        {
+            get { return this._subChannelId; }
+            set { this._subChannelId = value; }
+        }
+
+        // Check to see if SubChannelId property is set
+        internal bool IsSetSubChannelId()
+        {
+            return this._subChannelId != null;
         }
 
     }

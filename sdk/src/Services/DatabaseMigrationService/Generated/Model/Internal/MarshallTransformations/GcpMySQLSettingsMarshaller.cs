@@ -34,7 +34,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// GcpMySQLSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class GcpMySQLSettingsMarshaller : IRequestMarshaller<GcpMySQLSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -133,7 +133,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static GcpMySQLSettingsMarshaller Instance = new GcpMySQLSettingsMarshaller();
 
     }

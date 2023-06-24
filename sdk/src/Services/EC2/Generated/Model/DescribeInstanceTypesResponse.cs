@@ -42,6 +42,14 @@ namespace Amazon.EC2.Model
         /// The instance type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
         /// types</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
+        ///  
+        /// <para>
+        /// When you change your EBS-backed instance type, instance restart or replacement behavior
+        /// depends on the instance type compatibility between the old and new types. An instance
+        /// that's backed by an instance store volume is always replaced. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-resize.html">Change
+        /// the instance type</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
         /// </summary>
         public List<InstanceTypeInfo> InstanceTypes
         {
@@ -58,8 +66,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token to use to retrieve the next page of results. This value is <code>null</code>
-        /// when there are no more results to return.
+        /// The token to include in another request to get the next page of items. This value
+        /// is <code>null</code> when there are no more items to return.
         /// </para>
         /// </summary>
         public string NextToken

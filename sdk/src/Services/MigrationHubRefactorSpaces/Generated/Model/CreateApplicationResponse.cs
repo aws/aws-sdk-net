@@ -202,7 +202,8 @@ namespace Amazon.MigrationHubRefactorSpaces.Model
         /// <summary>
         /// Gets and sets the property OwnerAccountId. 
         /// <para>
-        /// The Amazon Web Services account ID of the application owner.
+        /// The Amazon Web Services account ID of the application owner (which is always the same
+        /// as the environment owner account ID).
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=12)]
@@ -261,7 +262,7 @@ namespace Amazon.MigrationHubRefactorSpaces.Model
         /// Web Services resource. Each tag consists of a key-value pair. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=50)]
+        [AWSProperty(Sensitive=true, Min=0, Max=50)]
         public Dictionary<string, string> Tags
         {
             get { return this._tags; }

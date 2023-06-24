@@ -39,21 +39,42 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// The filter key name to describe your managed nodes. For example:
+        /// The filter key name to describe your managed nodes.
         /// </para>
         ///  
         /// <para>
-        /// "InstanceIds"|"AgentVersion"|"PingStatus"|"PlatformTypes"|"ActivationIds"|"IamRole"|"ResourceType"|"AssociationStatus"|"Tag
-        /// Key"
+        /// Valid filter key values: ActivationIds | AgentVersion | AssociationStatus | IamRole
+        /// | InstanceIds | PingStatus | PlatformTypes | ResourceType | SourceIds | SourceTypes
+        /// | "tag-key" | "tag:<code>{keyname}</code> 
         /// </para>
-        ///  <important> 
+        ///  <ul> <li> 
         /// <para>
-        ///  <code>Tag key</code> isn't a valid filter. You must specify either <code>tag-key</code>
-        /// or <code>tag:keyname</code> and a string. Here are some valid examples: tag-key, tag:123,
-        /// tag:al!, tag:Windows. Here are some <i>invalid</i> examples: tag-keys, Tag Key, tag:,
-        /// tagKey, abc:keyname.
+        /// Valid values for the <code>AssociationStatus</code> filter key: Success | Pending
+        /// | Failed
         /// </para>
-        ///  </important>
+        ///  </li> <li> 
+        /// <para>
+        /// Valid values for the <code>PingStatus</code> filter key: Online | ConnectionLost |
+        /// Inactive (deprecated)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Valid values for the <code>PlatformType</code> filter key: Windows | Linux | MacOS
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Valid values for the <code>ResourceType</code> filter key: EC2Instance | ManagedInstance
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Valid values for the <code>SourceType</code> filter key: AWS::EC2::Instance | AWS::SSM::ManagedInstance
+        /// | AWS::IoT::Thing
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Valid tag examples: <code>Key=tag-key,Values=Purpose</code> | <code>Key=tag:Purpose,Values=Test</code>.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
         public string Key

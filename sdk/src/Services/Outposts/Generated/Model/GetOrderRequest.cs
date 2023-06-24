@@ -30,7 +30,7 @@ namespace Amazon.Outposts.Model
 {
     /// <summary>
     /// Container for the parameters to the GetOrder operation.
-    /// Gets an order.
+    /// Gets information about the specified order.
     /// </summary>
     public partial class GetOrderRequest : AmazonOutpostsRequest
     {

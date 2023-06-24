@@ -34,7 +34,7 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// TrackingConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class TrackingConfigMarshaller : IRequestMarshaller<TrackingConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static TrackingConfigMarshaller Instance = new TrackingConfigMarshaller();
 
     }

@@ -42,13 +42,15 @@ namespace Amazon.CodeArtifact.Model
         private string _awsNamespace;
         private string _nextToken;
         private string _packagePrefix;
+        private AllowPublish _publish;
         private string _repository;
+        private AllowUpstream _upstream;
 
         /// <summary>
         /// Gets and sets the property Domain. 
         /// <para>
-        ///  The name of the domain that contains the repository that contains the requested list
-        /// of packages. 
+        ///  The name of the domain that contains the repository that contains the requested packages.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=2, Max=50)]
@@ -67,8 +69,8 @@ namespace Amazon.CodeArtifact.Model
         /// <summary>
         /// Gets and sets the property DomainOwner. 
         /// <para>
-        ///  The 12-digit account number of the AWS account that owns the domain. It does not
-        /// include dashes or spaces. 
+        ///  The 12-digit account number of the Amazon Web Services account that owns the domain.
+        /// It does not include dashes or spaces. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=12)]
@@ -87,22 +89,9 @@ namespace Amazon.CodeArtifact.Model
         /// <summary>
         /// Gets and sets the property Format. 
         /// <para>
-        ///  The format of the packages. The valid package types are: 
+        /// The format used to filter requested packages. Only packages from the provided format
+        /// will be returned.
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>npm</code>: A Node Package Manager (npm) package. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>pypi</code>: A Python Package Index (PyPI) package. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>maven</code>: A Maven package that contains compiled code in a distributable
-        /// format, such as a JAR file. 
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         public PackageFormat Format
         {
@@ -138,8 +127,14 @@ namespace Amazon.CodeArtifact.Model
         /// <summary>
         /// Gets and sets the property Namespace. 
         /// <para>
-        ///  The namespace of the package. The package component that specifies its namespace
-        /// depends on its type. For example: 
+        /// The namespace prefix used to filter requested packages. Only packages with a namespace
+        /// that starts with the provided string value are returned. Note that although this option
+        /// is called <code>--namespace</code> and not <code>--namespace-prefix</code>, it has
+        /// prefix-matching behavior.
+        /// </para>
+        ///  
+        /// <para>
+        /// Each package format uses namespace as follows:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -151,8 +146,12 @@ namespace Amazon.CodeArtifact.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  A Python package does not contain a corresponding component, so Python packages do
-        /// not have a namespace. 
+        ///  Python and NuGet packages do not contain a corresponding component, packages of those
+        /// formats do not have a namespace. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  The namespace of a generic package is its <code>namespace</code>. 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -192,7 +191,7 @@ namespace Amazon.CodeArtifact.Model
         /// <summary>
         /// Gets and sets the property PackagePrefix. 
         /// <para>
-        ///  A prefix used to filter returned packages. Only packages with names that start with
+        ///  A prefix used to filter requested packages. Only packages with names that start with
         /// <code>packagePrefix</code> are returned. 
         /// </para>
         /// </summary>
@@ -210,9 +209,29 @@ namespace Amazon.CodeArtifact.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Publish. 
+        /// <para>
+        /// The value of the <code>Publish</code> package origin control restriction used to filter
+        /// requested packages. Only packages with the provided restriction are returned. For
+        /// more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html">PackageOriginRestrictions</a>.
+        /// </para>
+        /// </summary>
+        public AllowPublish Publish
+        {
+            get { return this._publish; }
+            set { this._publish = value; }
+        }
+
+        // Check to see if Publish property is set
+        internal bool IsSetPublish()
+        {
+            return this._publish != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Repository. 
         /// <para>
-        ///  The name of the repository from which packages are to be listed. 
+        ///  The name of the repository that contains the requested packages. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=2, Max=100)]
@@ -226,6 +245,26 @@ namespace Amazon.CodeArtifact.Model
         internal bool IsSetRepository()
         {
             return this._repository != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Upstream. 
+        /// <para>
+        /// The value of the <code>Upstream</code> package origin control restriction used to
+        /// filter requested packages. Only packages with the provided restriction are returned.
+        /// For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html">PackageOriginRestrictions</a>.
+        /// </para>
+        /// </summary>
+        public AllowUpstream Upstream
+        {
+            get { return this._upstream; }
+            set { this._upstream = value; }
+        }
+
+        // Check to see if Upstream property is set
+        internal bool IsSetUpstream()
+        {
+            return this._upstream != null;
         }
 
     }

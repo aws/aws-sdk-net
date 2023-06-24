@@ -31,8 +31,8 @@ namespace Amazon.ApplicationDiscoveryService.Model
     /// <summary>
     /// Container for the parameters to the DescribeContinuousExports operation.
     /// Lists exports as specified by ID. All continuous exports associated with your user
-    /// account can be listed if you call <code>DescribeContinuousExports</code> as is without
-    /// passing any parameters.
+    /// can be listed if you call <code>DescribeContinuousExports</code> as is without passing
+    /// any parameters.
     /// </summary>
     public partial class DescribeContinuousExportsRequest : AmazonApplicationDiscoveryServiceRequest
     {

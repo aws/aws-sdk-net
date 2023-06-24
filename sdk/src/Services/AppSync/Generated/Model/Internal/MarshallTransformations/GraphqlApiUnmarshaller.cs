@@ -76,6 +76,12 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
                     unmarshalledObject.ApiId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("apiType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ApiType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("arn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -86,6 +92,12 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AuthenticationType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("dns", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.Dns = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("lambdaAuthorizerConfig", targetDepth))
@@ -100,6 +112,12 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
                     unmarshalledObject.LogConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("mergedApiExecutionRoleArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.MergedApiExecutionRoleArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -110,6 +128,18 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = OpenIDConnectConfigUnmarshaller.Instance;
                     unmarshalledObject.OpenIDConnectConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("owner", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Owner = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ownerContact", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.OwnerContact = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("tags", targetDepth))
@@ -128,6 +158,12 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = UserPoolConfigUnmarshaller.Instance;
                     unmarshalledObject.UserPoolConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("visibility", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Visibility = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("wafWebAclArn", targetDepth))

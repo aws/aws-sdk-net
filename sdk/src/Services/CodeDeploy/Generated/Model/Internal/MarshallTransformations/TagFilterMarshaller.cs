@@ -34,7 +34,7 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// TagFilter Marshaller
-    /// </summary>       
+    /// </summary>
     public class TagFilterMarshaller : IRequestMarshaller<TagFilter, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static TagFilterMarshaller Instance = new TagFilterMarshaller();
 
     }

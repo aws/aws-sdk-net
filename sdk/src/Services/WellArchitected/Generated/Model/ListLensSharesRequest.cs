@@ -38,6 +38,7 @@ namespace Amazon.WellArchitected.Model
         private int? _maxResults;
         private string _nextToken;
         private string _sharedWithPrefix;
+        private ShareStatus _status;
 
         /// <summary>
         /// Gets and sets the property LensAlias.
@@ -92,7 +93,8 @@ namespace Amazon.WellArchitected.Model
         /// <summary>
         /// Gets and sets the property SharedWithPrefix. 
         /// <para>
-        /// The Amazon Web Services account ID or IAM role with which the lens is shared.
+        /// The Amazon Web Services account ID, IAM role, organization ID, or organizational unit
+        /// (OU) ID with which the lens is shared.
         /// </para>
         /// </summary>
         [AWSProperty(Max=100)]
@@ -106,6 +108,21 @@ namespace Amazon.WellArchitected.Model
         internal bool IsSetSharedWithPrefix()
         {
             return this._sharedWithPrefix != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Status.
+        /// </summary>
+        public ShareStatus Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null;
         }
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.Translate.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ParallelDataConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class ParallelDataConfigMarshaller : IRequestMarshaller<ParallelDataConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Translate.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ParallelDataConfigMarshaller Instance = new ParallelDataConfigMarshaller();
 
     }

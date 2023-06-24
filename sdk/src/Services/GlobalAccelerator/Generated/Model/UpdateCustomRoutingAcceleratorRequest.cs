@@ -85,7 +85,8 @@ namespace Amazon.GlobalAccelerator.Model
         /// <summary>
         /// Gets and sets the property IpAddressType. 
         /// <para>
-        /// The value for the address type must be IPv4.
+        /// The IP address type that an accelerator supports. For a custom routing accelerator,
+        /// the value must be IPV4.
         /// </para>
         /// </summary>
         public IpAddressType IpAddressType
@@ -103,8 +104,9 @@ namespace Amazon.GlobalAccelerator.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the accelerator. The name can have a maximum of 32 characters, must contain
-        /// only alphanumeric characters or hyphens (-), and must not begin or end with a hyphen.
+        /// The name of the accelerator. The name can have a maximum of 64 characters, must contain
+        /// only alphanumeric characters, periods (.), or hyphens (-), and must not begin or end
+        /// with a hyphen or period.
         /// </para>
         /// </summary>
         [AWSProperty(Max=255)]

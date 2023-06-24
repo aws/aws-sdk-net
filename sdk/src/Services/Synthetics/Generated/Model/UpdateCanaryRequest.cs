@@ -30,7 +30,7 @@ namespace Amazon.Synthetics.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateCanary operation.
-    /// Use this operation to change the settings of a canary that has already been created.
+    /// Updates the configuration of a canary that has already been created.
     /// 
     ///  
     /// <para>
@@ -212,6 +212,12 @@ namespace Amazon.Synthetics.Model
         /// A structure that contains the timeout value that is used for each individual run of
         /// the canary.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// The environment variables keys and values are not encrypted. Do not store sensitive
+        /// information in this field.
+        /// </para>
+        ///  </important>
         /// </summary>
         public CanaryRunConfigInput RunConfig
         {

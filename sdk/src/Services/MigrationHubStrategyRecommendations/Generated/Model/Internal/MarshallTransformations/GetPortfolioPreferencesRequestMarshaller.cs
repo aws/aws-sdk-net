@@ -55,7 +55,7 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
         public IRequest Marshall(GetPortfolioPreferencesRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.MigrationHubStrategyRecommendations");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-02-19";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-02-19";
             request.HttpMethod = "GET";
 
             request.ResourcePath = "/get-portfolio-preferences";

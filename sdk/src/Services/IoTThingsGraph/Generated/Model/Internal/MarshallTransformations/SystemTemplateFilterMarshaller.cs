@@ -34,7 +34,7 @@ namespace Amazon.IoTThingsGraph.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SystemTemplateFilter Marshaller
-    /// </summary>       
+    /// </summary>
     public class SystemTemplateFilterMarshaller : IRequestMarshaller<SystemTemplateFilter, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.IoTThingsGraph.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SystemTemplateFilterMarshaller Instance = new SystemTemplateFilterMarshaller();
 
     }

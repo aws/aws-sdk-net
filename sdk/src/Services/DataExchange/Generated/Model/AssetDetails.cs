@@ -29,12 +29,51 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataExchange.Model
 {
     /// <summary>
-    /// Information about the asset.
+    /// Details about the asset.
     /// </summary>
     public partial class AssetDetails
     {
+        private ApiGatewayApiAsset _apiGatewayApiAsset;
+        private LakeFormationDataPermissionAsset _lakeFormationDataPermissionAsset;
         private RedshiftDataShareAsset _redshiftDataShareAsset;
+        private S3DataAccessAsset _s3DataAccessAsset;
         private S3SnapshotAsset _s3SnapshotAsset;
+
+        /// <summary>
+        /// Gets and sets the property ApiGatewayApiAsset. 
+        /// <para>
+        /// Information about the API Gateway API asset.
+        /// </para>
+        /// </summary>
+        public ApiGatewayApiAsset ApiGatewayApiAsset
+        {
+            get { return this._apiGatewayApiAsset; }
+            set { this._apiGatewayApiAsset = value; }
+        }
+
+        // Check to see if ApiGatewayApiAsset property is set
+        internal bool IsSetApiGatewayApiAsset()
+        {
+            return this._apiGatewayApiAsset != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LakeFormationDataPermissionAsset. 
+        /// <para>
+        /// The AWS Lake Formation data permission that is the asset.
+        /// </para>
+        /// </summary>
+        public LakeFormationDataPermissionAsset LakeFormationDataPermissionAsset
+        {
+            get { return this._lakeFormationDataPermissionAsset; }
+            set { this._lakeFormationDataPermissionAsset = value; }
+        }
+
+        // Check to see if LakeFormationDataPermissionAsset property is set
+        internal bool IsSetLakeFormationDataPermissionAsset()
+        {
+            return this._lakeFormationDataPermissionAsset != null;
+        }
 
         /// <summary>
         /// Gets and sets the property RedshiftDataShareAsset. 
@@ -55,9 +94,27 @@ namespace Amazon.DataExchange.Model
         }
 
         /// <summary>
+        /// Gets and sets the property S3DataAccessAsset. 
+        /// <para>
+        /// The Amazon S3 data access that is the asset.
+        /// </para>
+        /// </summary>
+        public S3DataAccessAsset S3DataAccessAsset
+        {
+            get { return this._s3DataAccessAsset; }
+            set { this._s3DataAccessAsset = value; }
+        }
+
+        // Check to see if S3DataAccessAsset property is set
+        internal bool IsSetS3DataAccessAsset()
+        {
+            return this._s3DataAccessAsset != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property S3SnapshotAsset. 
         /// <para>
-        /// The S3 object that is the asset.
+        /// The Amazon S3 object that is the asset.
         /// </para>
         /// </summary>
         public S3SnapshotAsset S3SnapshotAsset

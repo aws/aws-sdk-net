@@ -34,7 +34,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AwsJobTimeoutConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class AwsJobTimeoutConfigMarshaller : IRequestMarshaller<AwsJobTimeoutConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AwsJobTimeoutConfigMarshaller Instance = new AwsJobTimeoutConfigMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// HierarchyStructureUpdate Marshaller
-    /// </summary>       
+    /// </summary>
     public class HierarchyStructureUpdateMarshaller : IRequestMarshaller<HierarchyStructureUpdate, JsonMarshallerContext> 
     {
         /// <summary>
@@ -104,7 +104,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static HierarchyStructureUpdateMarshaller Instance = new HierarchyStructureUpdateMarshaller();
 
     }

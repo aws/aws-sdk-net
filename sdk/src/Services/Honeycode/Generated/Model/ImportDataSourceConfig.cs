@@ -42,7 +42,7 @@ namespace Amazon.Honeycode.Model
         ///  The URL from which source data will be downloaded for the import request. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=8000)]
+        [AWSProperty(Sensitive=true, Min=1, Max=8000)]
         public string DataSourceUrl
         {
             get { return this._dataSourceUrl; }

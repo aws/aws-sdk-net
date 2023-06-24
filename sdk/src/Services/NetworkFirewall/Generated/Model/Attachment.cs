@@ -30,12 +30,13 @@ namespace Amazon.NetworkFirewall.Model
 {
     /// <summary>
     /// The configuration and status for a single subnet that you've specified for use by
-    /// the AWS Network Firewall firewall. This is part of the <a>FirewallStatus</a>.
+    /// the Network Firewall firewall. This is part of the <a>FirewallStatus</a>.
     /// </summary>
     public partial class Attachment
     {
         private string _endpointId;
         private AttachmentStatus _status;
+        private string _statusMessage;
         private string _subnetId;
 
         /// <summary>
@@ -65,8 +66,8 @@ namespace Amazon.NetworkFirewall.Model
         /// the instantiation of the endpoint in the VPC subnet and the sync states that are reported
         /// in the <code>Config</code> settings. When this value is <code>READY</code>, the endpoint
         /// is available and configured properly to handle network traffic. When the endpoint
-        /// isn't available for traffic, this value will reflect its state, for example <code>CREATING</code>,
-        /// <code>DELETING</code>, or <code>FAILED</code>.
+        /// isn't available for traffic, this value will reflect its state, for example <code>CREATING</code>
+        /// or <code>DELETING</code>.
         /// </para>
         /// </summary>
         public AttachmentStatus Status
@@ -79,6 +80,30 @@ namespace Amazon.NetworkFirewall.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StatusMessage. 
+        /// <para>
+        /// If Network Firewall fails to create or delete the firewall endpoint in the subnet,
+        /// it populates this with the reason for the error or failure and how to resolve it.
+        /// A <code>FAILED</code> status indicates a non-recoverable state, and a <code>ERROR</code>
+        /// status indicates an issue that you can fix. Depending on the error, it can take as
+        /// many as 15 minutes to populate this field. For more information about the causes for
+        /// failiure or errors and solutions available for this field, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/firewall-troubleshooting-endpoint-failures.html">Troubleshooting
+        /// firewall endpoint failures</a> in the <i>Network Firewall Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        public string StatusMessage
+        {
+            get { return this._statusMessage; }
+            set { this._statusMessage = value; }
+        }
+
+        // Check to see if StatusMessage property is set
+        internal bool IsSetStatusMessage()
+        {
+            return this._statusMessage != null;
         }
 
         /// <summary>

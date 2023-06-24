@@ -34,7 +34,7 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AvailSuppression Marshaller
-    /// </summary>       
+    /// </summary>
     public class AvailSuppressionMarshaller : IRequestMarshaller<AvailSuppression, JsonMarshallerContext> 
     {
         /// <summary>
@@ -45,6 +45,12 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AvailSuppression requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetFillPolicy())
+            {
+                context.Writer.WritePropertyName("FillPolicy");
+                context.Writer.Write(requestObject.FillPolicy);
+            }
+
             if(requestObject.IsSetMode())
             {
                 context.Writer.WritePropertyName("Mode");
@@ -61,7 +67,7 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AvailSuppressionMarshaller Instance = new AvailSuppressionMarshaller();
 
     }

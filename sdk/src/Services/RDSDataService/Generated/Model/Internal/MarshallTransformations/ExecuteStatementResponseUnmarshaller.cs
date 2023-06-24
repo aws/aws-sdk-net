@@ -57,6 +57,12 @@ namespace Amazon.RDSDataService.Model.Internal.MarshallTransformations
                     response.ColumnMetadata = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("formattedRecords", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.FormattedRecords = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("generatedFields", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<Field, FieldUnmarshaller>(FieldUnmarshaller.Instance);
@@ -98,6 +104,10 @@ namespace Amazon.RDSDataService.Model.Internal.MarshallTransformations
             using (var streamCopy = new MemoryStream(responseBodyBytes))
             using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
             {
+                if (errorResponse.Code != null && errorResponse.Code.Equals("AccessDeniedException"))
+                {
+                    return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("BadRequestException"))
                 {
                     return BadRequestExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);

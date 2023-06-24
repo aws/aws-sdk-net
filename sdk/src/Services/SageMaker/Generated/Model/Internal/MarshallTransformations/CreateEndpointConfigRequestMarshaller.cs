@@ -58,7 +58,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             string target = "SageMaker.CreateEndpointConfig";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-07-24";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-07-24";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -95,6 +95,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.EndpointConfigName);
                 }
 
+                if(publicRequest.IsSetExplainerConfig())
+                {
+                    context.Writer.WritePropertyName("ExplainerConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ExplainerConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ExplainerConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetKmsKeyId())
                 {
                     context.Writer.WritePropertyName("KmsKeyId");
@@ -117,6 +128,22 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetShadowProductionVariants())
+                {
+                    context.Writer.WritePropertyName("ShadowProductionVariants");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestShadowProductionVariantsListValue in publicRequest.ShadowProductionVariants)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ProductionVariantMarshaller.Instance;
+                        marshaller.Marshall(publicRequestShadowProductionVariantsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("Tags");
@@ -133,7 +160,6 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

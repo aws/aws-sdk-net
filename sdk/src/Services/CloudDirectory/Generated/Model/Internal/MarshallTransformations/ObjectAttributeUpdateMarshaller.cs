@@ -34,7 +34,7 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ObjectAttributeUpdate Marshaller
-    /// </summary>       
+    /// </summary>
     public class ObjectAttributeUpdateMarshaller : IRequestMarshaller<ObjectAttributeUpdate, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ObjectAttributeUpdateMarshaller Instance = new ObjectAttributeUpdateMarshaller();
 
     }

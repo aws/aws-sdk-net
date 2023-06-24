@@ -88,6 +88,12 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
                     unmarshalledObject.ChannelName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("LiveSourceName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.LiveSourceName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ProgramName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

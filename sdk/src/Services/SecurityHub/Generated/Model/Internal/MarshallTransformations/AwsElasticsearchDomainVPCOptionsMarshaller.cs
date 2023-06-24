@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AwsElasticsearchDomainVPCOptions Marshaller
-    /// </summary>       
+    /// </summary>
     public class AwsElasticsearchDomainVPCOptionsMarshaller : IRequestMarshaller<AwsElasticsearchDomainVPCOptions, JsonMarshallerContext> 
     {
         /// <summary>
@@ -88,7 +88,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AwsElasticsearchDomainVPCOptionsMarshaller Instance = new AwsElasticsearchDomainVPCOptionsMarshaller();
 
     }

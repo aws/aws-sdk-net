@@ -485,15 +485,15 @@ namespace Amazon.S3.Util
 
         internal static void SerializeTagToXml(XmlWriter xmlWriter, Tag tag)
         {
-            xmlWriter.WriteStartElement("Tag", "");
+            xmlWriter.WriteStartElement("Tag");
 
             if (tag.IsSetKey())
             {
-                xmlWriter.WriteElementString("Key", "", S3Transforms.ToXmlStringValue(tag.Key));
+                xmlWriter.WriteElementString("Key", S3Transforms.ToXmlStringValue(tag.Key));
             }
             if (tag.IsSetValue())
             {
-                xmlWriter.WriteElementString("Value", "", S3Transforms.ToXmlStringValue(tag.Value));
+                xmlWriter.WriteElementString("Value", S3Transforms.ToXmlStringValue(tag.Value));
             }
 
             xmlWriter.WriteEndElement();
@@ -501,7 +501,7 @@ namespace Amazon.S3.Util
 
         internal static void SerializeTagSetToXml(XmlWriter xmlWriter, List<Tag> tagset)
         {
-            xmlWriter.WriteStartElement("TagSet", "");
+            xmlWriter.WriteStartElement("TagSet");
 
             if (tagset != null && tagset.Count > 0)
             {
@@ -518,7 +518,7 @@ namespace Amazon.S3.Util
             var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {
-                xmlWriter.WriteStartElement("Tagging", "");
+                xmlWriter.WriteStartElement("Tagging", S3Constants.S3RequestXmlNamespace);
 
                 SerializeTagSetToXml(xmlWriter, tagging.TagSet);
 

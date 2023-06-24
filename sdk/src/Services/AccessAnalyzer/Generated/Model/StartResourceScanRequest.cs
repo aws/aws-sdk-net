@@ -36,6 +36,7 @@ namespace Amazon.AccessAnalyzer.Model
     {
         private string _analyzerArn;
         private string _resourceArn;
+        private string _resourceOwnerAccount;
 
         /// <summary>
         /// Gets and sets the property AnalyzerArn. 
@@ -74,6 +75,25 @@ namespace Amazon.AccessAnalyzer.Model
         internal bool IsSetResourceArn()
         {
             return this._resourceArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceOwnerAccount. 
+        /// <para>
+        /// The Amazon Web Services account ID that owns the resource. For most Amazon Web Services
+        /// resources, the owning account is the account in which the resource was created.
+        /// </para>
+        /// </summary>
+        public string ResourceOwnerAccount
+        {
+            get { return this._resourceOwnerAccount; }
+            set { this._resourceOwnerAccount = value; }
+        }
+
+        // Check to see if ResourceOwnerAccount property is set
+        internal bool IsSetResourceOwnerAccount()
+        {
+            return this._resourceOwnerAccount != null;
         }
 
     }

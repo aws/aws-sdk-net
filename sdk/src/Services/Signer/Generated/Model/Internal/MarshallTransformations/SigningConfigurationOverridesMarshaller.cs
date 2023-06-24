@@ -34,7 +34,7 @@ namespace Amazon.Signer.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SigningConfigurationOverrides Marshaller
-    /// </summary>       
+    /// </summary>
     public class SigningConfigurationOverridesMarshaller : IRequestMarshaller<SigningConfigurationOverrides, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Signer.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SigningConfigurationOverridesMarshaller Instance = new SigningConfigurationOverridesMarshaller();
 
     }

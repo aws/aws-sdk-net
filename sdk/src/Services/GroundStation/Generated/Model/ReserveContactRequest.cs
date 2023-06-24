@@ -44,7 +44,7 @@ namespace Amazon.GroundStation.Model
         /// <summary>
         /// Gets and sets the property EndTime. 
         /// <para>
-        /// End time of a contact.
+        /// End time of a contact in UTC.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -66,7 +66,7 @@ namespace Amazon.GroundStation.Model
         /// Name of a ground station.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=4, Max=500)]
         public string GroundStation
         {
             get { return this._groundStation; }
@@ -120,7 +120,7 @@ namespace Amazon.GroundStation.Model
         /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
-        /// Start time of a contact.
+        /// Start time of a contact in UTC.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

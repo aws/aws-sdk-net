@@ -39,7 +39,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// Gets and sets the property BackupPolicy. 
         /// <para>
         /// Describes the file system's backup policy, indicating whether automatic backups are
-        /// turned on or off..
+        /// turned on or off.
         /// </para>
         /// </summary>
         public BackupPolicy BackupPolicy

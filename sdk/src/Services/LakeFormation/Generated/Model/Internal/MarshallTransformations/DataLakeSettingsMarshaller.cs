@@ -34,7 +34,7 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DataLakeSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class DataLakeSettingsMarshaller : IRequestMarshaller<DataLakeSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -45,6 +45,23 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DataLakeSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAllowExternalDataFiltering())
+            {
+                context.Writer.WritePropertyName("AllowExternalDataFiltering");
+                context.Writer.Write(requestObject.AllowExternalDataFiltering);
+            }
+
+            if(requestObject.IsSetAuthorizedSessionTagValueList())
+            {
+                context.Writer.WritePropertyName("AuthorizedSessionTagValueList");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectAuthorizedSessionTagValueListListValue in requestObject.AuthorizedSessionTagValueList)
+                {
+                        context.Writer.Write(requestObjectAuthorizedSessionTagValueListListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetCreateDatabaseDefaultPermissions())
             {
                 context.Writer.WritePropertyName("CreateDatabaseDefaultPermissions");
@@ -93,6 +110,36 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetExternalDataFilteringAllowList())
+            {
+                context.Writer.WritePropertyName("ExternalDataFilteringAllowList");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectExternalDataFilteringAllowListListValue in requestObject.ExternalDataFilteringAllowList)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = DataLakePrincipalMarshaller.Instance;
+                    marshaller.Marshall(requestObjectExternalDataFilteringAllowListListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetParameters())
+            {
+                context.Writer.WritePropertyName("Parameters");
+                context.Writer.WriteObjectStart();
+                foreach (var requestObjectParametersKvp in requestObject.Parameters)
+                {
+                    context.Writer.WritePropertyName(requestObjectParametersKvp.Key);
+                    var requestObjectParametersValue = requestObjectParametersKvp.Value;
+
+                        context.Writer.Write(requestObjectParametersValue);
+                }
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetTrustedResourceOwners())
             {
                 context.Writer.WritePropertyName("TrustedResourceOwners");
@@ -108,7 +155,7 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DataLakeSettingsMarshaller Instance = new DataLakeSettingsMarshaller();
 
     }

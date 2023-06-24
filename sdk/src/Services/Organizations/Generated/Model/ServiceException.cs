@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Organizations.Model
 {
     /// <summary>
-    /// AWS Organizations can't complete your request because of an internal service error.
-    /// Try again later.
+    /// Organizations can't complete your request because of an internal service error. Try
+    /// again later.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

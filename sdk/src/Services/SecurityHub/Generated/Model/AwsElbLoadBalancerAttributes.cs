@@ -34,6 +34,7 @@ namespace Amazon.SecurityHub.Model
     public partial class AwsElbLoadBalancerAttributes
     {
         private AwsElbLoadBalancerAccessLog _accessLog;
+        private List<AwsElbLoadBalancerAdditionalAttribute> _additionalAttributes = new List<AwsElbLoadBalancerAdditionalAttribute>();
         private AwsElbLoadBalancerConnectionDraining _connectionDraining;
         private AwsElbLoadBalancerConnectionSettings _connectionSettings;
         private AwsElbLoadBalancerCrossZoneLoadBalancing _crossZoneLoadBalancing;
@@ -59,6 +60,24 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetAccessLog()
         {
             return this._accessLog != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AdditionalAttributes. 
+        /// <para>
+        /// Any additional attributes for a load balancer.
+        /// </para>
+        /// </summary>
+        public List<AwsElbLoadBalancerAdditionalAttribute> AdditionalAttributes
+        {
+            get { return this._additionalAttributes; }
+            set { this._additionalAttributes = value; }
+        }
+
+        // Check to see if AdditionalAttributes property is set
+        internal bool IsSetAdditionalAttributes()
+        {
+            return this._additionalAttributes != null && this._additionalAttributes.Count > 0; 
         }
 
         /// <summary>

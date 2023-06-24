@@ -35,8 +35,13 @@ namespace Amazon.Appflow.Model
     {
         private string _bucketName;
         private string _bucketPrefix;
+        private string _clusterIdentifier;
+        private string _dataApiRoleArn;
+        private string _databaseName;
         private string _databaseUrl;
+        private bool? _isRedshiftServerless;
         private string _roleArn;
+        private string _workgroupName;
 
         /// <summary>
         /// Gets and sets the property BucketName. 
@@ -78,12 +83,72 @@ namespace Amazon.Appflow.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ClusterIdentifier. 
+        /// <para>
+        /// The unique ID that's assigned to an Amazon Redshift cluster.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=512)]
+        public string ClusterIdentifier
+        {
+            get { return this._clusterIdentifier; }
+            set { this._clusterIdentifier = value; }
+        }
+
+        // Check to see if ClusterIdentifier property is set
+        internal bool IsSetClusterIdentifier()
+        {
+            return this._clusterIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DataApiRoleArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of an IAM role that permits Amazon AppFlow to access
+        /// your Amazon Redshift database through the Data API. For more information, and for
+        /// the polices that you attach to this role, see <a href="https://docs.aws.amazon.com/appflow/latest/userguide/security_iam_service-role-policies.html#access-redshift">Allow
+        /// Amazon AppFlow to access Amazon Redshift databases with the Data API</a>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=512)]
+        public string DataApiRoleArn
+        {
+            get { return this._dataApiRoleArn; }
+            set { this._dataApiRoleArn = value; }
+        }
+
+        // Check to see if DataApiRoleArn property is set
+        internal bool IsSetDataApiRoleArn()
+        {
+            return this._dataApiRoleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DatabaseName. 
+        /// <para>
+        /// The name of an Amazon Redshift database.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=512)]
+        public string DatabaseName
+        {
+            get { return this._databaseName; }
+            set { this._databaseName = value; }
+        }
+
+        // Check to see if DatabaseName property is set
+        internal bool IsSetDatabaseName()
+        {
+            return this._databaseName != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property DatabaseUrl. 
         /// <para>
         ///  The JDBC URL of the Amazon Redshift cluster. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=512)]
+        [AWSProperty(Max=512)]
         public string DatabaseUrl
         {
             get { return this._databaseUrl; }
@@ -97,9 +162,31 @@ namespace Amazon.Appflow.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IsRedshiftServerless. 
+        /// <para>
+        /// Indicates whether the connector profile defines a connection to an Amazon Redshift
+        /// Serverless data warehouse.
+        /// </para>
+        /// </summary>
+        public bool IsRedshiftServerless
+        {
+            get { return this._isRedshiftServerless.GetValueOrDefault(); }
+            set { this._isRedshiftServerless = value; }
+        }
+
+        // Check to see if IsRedshiftServerless property is set
+        internal bool IsSetIsRedshiftServerless()
+        {
+            return this._isRedshiftServerless.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        ///  The Amazon Resource Name (ARN) of the IAM role. 
+        ///  The Amazon Resource Name (ARN) of IAM role that grants Amazon Redshift read-only
+        /// access to Amazon S3. For more information, and for the polices that you attach to
+        /// this role, see <a href="https://docs.aws.amazon.com/appflow/latest/userguide/security_iam_service-role-policies.html#redshift-access-s3">Allow
+        /// Amazon Redshift to access your Amazon AppFlow data in Amazon S3</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=512)]
@@ -113,6 +200,25 @@ namespace Amazon.Appflow.Model
         internal bool IsSetRoleArn()
         {
             return this._roleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WorkgroupName. 
+        /// <para>
+        /// The name of an Amazon Redshift workgroup.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=512)]
+        public string WorkgroupName
+        {
+            get { return this._workgroupName; }
+            set { this._workgroupName = value; }
+        }
+
+        // Check to see if WorkgroupName property is set
+        internal bool IsSetWorkgroupName()
+        {
+            return this._workgroupName != null;
         }
 
     }

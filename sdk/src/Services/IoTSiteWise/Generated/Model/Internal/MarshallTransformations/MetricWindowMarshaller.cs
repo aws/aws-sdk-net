@@ -34,7 +34,7 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// MetricWindow Marshaller
-    /// </summary>       
+    /// </summary>
     public class MetricWindowMarshaller : IRequestMarshaller<MetricWindow, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static MetricWindowMarshaller Instance = new MetricWindowMarshaller();
 
     }

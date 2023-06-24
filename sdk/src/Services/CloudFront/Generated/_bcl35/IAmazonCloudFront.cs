@@ -59,7 +59,7 @@ namespace Amazon.CloudFront
         /// 
         ///  
         /// <para>
-        /// With this operation you can move an alias that’s already in use on a CloudFront distribution
+        /// With this operation you can move an alias that's already in use on a CloudFront distribution
         /// to a different distribution in one step. This prevents the downtime that could occur
         /// if you first remove the alias from one distribution and then separately add the alias
         /// to another distribution.
@@ -123,6 +123,281 @@ namespace Amazon.CloudFront
 
         #endregion
         
+        #region  CopyDistribution
+
+
+        /// <summary>
+        /// Creates a staging distribution using the configuration of the provided primary distribution.
+        /// A staging distribution is a copy of an existing distribution (called the primary distribution)
+        /// that you can use in a continuous deployment workflow.
+        /// 
+        ///  
+        /// <para>
+        /// After you create a staging distribution, you can use <code>UpdateDistribution</code>
+        /// to modify the staging distribution's configuration. Then you can use <code>CreateContinuousDeploymentPolicy</code>
+        /// to incrementally move traffic to the staging distribution.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CopyDistribution service method.</param>
+        /// 
+        /// <returns>The response from the CopyDistribution service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.CNAMEAlreadyExistsException">
+        /// The CNAME specified is already defined for CloudFront.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.DistributionAlreadyExistsException">
+        /// The caller reference you attempted to create the distribution with is associated with
+        /// another distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.IllegalFieldLevelEncryptionConfigAssociationWithCacheBehaviorException">
+        /// The specified configuration for field-level encryption can't be associated with the
+        /// specified cache behavior.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
+        /// The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidDefaultRootObjectException">
+        /// The default root object file name is too big or contains an invalid character.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidErrorCodeException">
+        /// An invalid error code was specified.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidForwardCookiesException">
+        /// Your request contains forward cookies option which doesn't match with the expectation
+        /// for the <code>whitelisted</code> list of cookie names. Either list of cookie names
+        /// has been specified when not allowed or list of cookie names is missing when expected.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidFunctionAssociationException">
+        /// A CloudFront function association is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidGeoRestrictionParameterException">
+        /// The specified geo restriction parameter is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidHeadersForS3OriginException">
+        /// The headers specified are not valid for an Amazon S3 origin.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <code>If-Match</code> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidLambdaFunctionAssociationException">
+        /// The specified Lambda@Edge function association is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidLocationCodeException">
+        /// The location code specified is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidMinimumProtocolVersionException">
+        /// The minimum protocol version specified is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginAccessControlException">
+        /// The origin access control is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginAccessIdentityException">
+        /// The origin access identity is not valid or doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginException">
+        /// The Amazon S3 origin server specified does not refer to a valid Amazon S3 bucket.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginKeepaliveTimeoutException">
+        /// The keep alive timeout specified for the origin is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginReadTimeoutException">
+        /// The read timeout specified for the origin is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidProtocolSettingsException">
+        /// You cannot specify SSLv3 as the minimum protocol version if you only want to support
+        /// only clients that support Server Name Indication (SNI).
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidQueryStringParametersException">
+        /// The query string parameters specified are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidRelativePathException">
+        /// The relative path is too big, is not URL-encoded, or does not begin with a slash (/).
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidRequiredProtocolException">
+        /// This operation requires the HTTPS protocol. Ensure that you specify the HTTPS protocol
+        /// in your request, or omit the <code>RequiredProtocols</code> element from your distribution
+        /// configuration.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidResponseCodeException">
+        /// A response code is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidTTLOrderException">
+        /// The TTL order specified is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidViewerCertificateException">
+        /// A viewer certificate specified is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidWebACLIdException">
+        /// A web ACL ID specified is not valid. To specify a web ACL created using the latest
+        /// version of WAF, use the ACL ARN, for example <code>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/473e64fd-f30b-4765-81a0-62ad96dd167a</code>.
+        /// To specify a web ACL created using WAF Classic, use the ACL ID, for example <code>473e64fd-f30b-4765-81a0-62ad96dd167a</code>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.MissingBodyException">
+        /// This operation requires a body. Ensure that the body is present and the <code>Content-Type</code>
+        /// header is set.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchCachePolicyException">
+        /// The cache policy does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
+        /// The specified distribution does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchFieldLevelEncryptionConfigException">
+        /// The specified configuration for field-level encryption doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchOriginException">
+        /// No origin exists with the specified <code>Origin Id</code>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchOriginRequestPolicyException">
+        /// The origin request policy does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchRealtimeLogConfigException">
+        /// The real-time log configuration does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchResponseHeadersPolicyException">
+        /// The response headers policy does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <code>false</code>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.RealtimeLogConfigOwnerMismatchException">
+        /// The specified real-time log configuration belongs to a different Amazon Web Services
+        /// account.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyCacheBehaviorsException">
+        /// You cannot create more cache behaviors for the distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyCertificatesException">
+        /// You cannot create anymore custom SSL/TLS certificates.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyCookieNamesInWhiteListException">
+        /// Your request contains more cookie names in the whitelist than are allowed per cache
+        /// behavior.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionCNAMEsException">
+        /// Your request contains more CNAMEs than are allowed per distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToCachePolicyException">
+        /// The maximum number of distributions have been associated with the specified cache
+        /// policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToFieldLevelEncryptionConfigException">
+        /// The maximum number of distributions have been associated with the specified configuration
+        /// for field-level encryption.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToKeyGroupException">
+        /// The number of distributions that reference this key group is more than the maximum
+        /// allowed. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToOriginRequestPolicyException">
+        /// The maximum number of distributions have been associated with the specified origin
+        /// request policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToResponseHeadersPolicyException">
+        /// The maximum number of distributions have been associated with the specified response
+        /// headers policy.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsException">
+        /// Processing your request would cause you to exceed the maximum number of distributions
+        /// allowed.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsWithFunctionAssociationsException">
+        /// You have reached the maximum number of distributions that are associated with a CloudFront
+        /// function. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsWithLambdaAssociationsException">
+        /// Processing your request would cause the maximum number of distributions with Lambda@Edge
+        /// function associations per owner to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsWithSingleFunctionARNException">
+        /// The maximum number of distributions have been associated with the specified Lambda@Edge
+        /// function.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyFunctionAssociationsException">
+        /// You have reached the maximum number of CloudFront function associations for this distribution.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyHeadersInForwardedValuesException">
+        /// Your request contains too many headers in forwarded values.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyKeyGroupsAssociatedToDistributionException">
+        /// The number of key groups referenced by this distribution is more than the maximum
+        /// allowed. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyLambdaFunctionAssociationsException">
+        /// Your request contains more Lambda@Edge function associations than are allowed per
+        /// distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyOriginCustomHeadersException">
+        /// Your request contains too many origin custom headers.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyOriginGroupsPerDistributionException">
+        /// Processing your request would cause you to exceed the maximum number of origin groups
+        /// allowed.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyOriginsException">
+        /// You cannot create more origins for the distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyQueryStringParametersException">
+        /// Your request contains too many query string parameters.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyTrustedSignersException">
+        /// Your request contains more trusted signers than are allowed per distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TrustedKeyGroupDoesNotExistException">
+        /// The specified key group does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TrustedSignerDoesNotExistException">
+        /// One or more of your trusted signers don't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CopyDistribution">REST API Reference for CopyDistribution Operation</seealso>
+        CopyDistributionResponse CopyDistribution(CopyDistributionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CopyDistribution operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CopyDistribution operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCopyDistribution
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CopyDistribution">REST API Reference for CopyDistribution Operation</seealso>
+        IAsyncResult BeginCopyDistribution(CopyDistributionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CopyDistribution operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCopyDistribution.</param>
+        /// 
+        /// <returns>Returns a  CopyDistributionResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CopyDistribution">REST API Reference for CopyDistribution Operation</seealso>
+        CopyDistributionResponse EndCopyDistribution(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateCachePolicy
 
 
@@ -132,7 +407,7 @@ namespace Amazon.CloudFront
         ///  
         /// <para>
         /// After you create a cache policy, you can attach it to one or more cache behaviors.
-        /// When it’s attached to a cache behavior, the cache policy determines the following:
+        /// When it's attached to a cache behavior, the cache policy determines the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -147,9 +422,9 @@ namespace Amazon.CloudFront
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The headers, cookies, and query strings that are included in the cache key are automatically
+        /// The headers, cookies, and query strings that are included in the cache key are also
         /// included in requests that CloudFront sends to the origin. CloudFront sends a request
-        /// when it can’t find an object in its cache that matches the request’s cache key. If
+        /// when it can't find an object in its cache that matches the request's cache key. If
         /// you want to send values to the origin but <i>not</i> include them in the cache key,
         /// use <code>OriginRequestPolicy</code>.
         /// </para>
@@ -290,26 +565,85 @@ namespace Amazon.CloudFront
 
         #endregion
         
+        #region  CreateContinuousDeploymentPolicy
+
+
+        /// <summary>
+        /// Creates a continuous deployment policy that distributes traffic for a custom domain
+        /// name to two different CloudFront distributions.
+        /// 
+        ///  
+        /// <para>
+        /// To use a continuous deployment policy, first use <code>CopyDistribution</code> to
+        /// create a staging distribution, then use <code>UpdateDistribution</code> to modify
+        /// the staging distribution's configuration.
+        /// </para>
+        ///  
+        /// <para>
+        /// After you create and update a staging distribution, you can use a continuous deployment
+        /// policy to incrementally move traffic to the staging distribution. This workflow enables
+        /// you to test changes to a distribution's configuration before moving all of your domain's
+        /// production traffic to the new configuration.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateContinuousDeploymentPolicy service method.</param>
+        /// 
+        /// <returns>The response from the CreateContinuousDeploymentPolicy service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.ContinuousDeploymentPolicyAlreadyExistsException">
+        /// A continuous deployment policy with this configuration already exists.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
+        /// The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.StagingDistributionInUseException">
+        /// A continuous deployment policy for this staging distribution already exists.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyContinuousDeploymentPoliciesException">
+        /// You have reached the maximum number of continuous deployment policies for this Amazon
+        /// Web Services account.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateContinuousDeploymentPolicy">REST API Reference for CreateContinuousDeploymentPolicy Operation</seealso>
+        CreateContinuousDeploymentPolicyResponse CreateContinuousDeploymentPolicy(CreateContinuousDeploymentPolicyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateContinuousDeploymentPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateContinuousDeploymentPolicy operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateContinuousDeploymentPolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateContinuousDeploymentPolicy">REST API Reference for CreateContinuousDeploymentPolicy Operation</seealso>
+        IAsyncResult BeginCreateContinuousDeploymentPolicy(CreateContinuousDeploymentPolicyRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateContinuousDeploymentPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateContinuousDeploymentPolicy.</param>
+        /// 
+        /// <returns>Returns a  CreateContinuousDeploymentPolicyResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateContinuousDeploymentPolicy">REST API Reference for CreateContinuousDeploymentPolicy Operation</seealso>
+        CreateContinuousDeploymentPolicyResponse EndCreateContinuousDeploymentPolicy(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateDistribution
 
 
         /// <summary>
-        /// Creates a new web distribution. You create a CloudFront distribution to tell CloudFront
-        /// where you want content to be delivered from, and the details about how to track and
-        /// manage content delivery. Send a <code>POST</code> request to the <code>/<i>CloudFront
-        /// API version</i>/distribution</code>/<code>distribution ID</code> resource.
-        /// 
-        ///  <important> 
-        /// <para>
-        /// When you update a distribution, there are more required fields than when you create
-        /// a distribution. When you update your distribution by using <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a>,
-        /// follow the steps included in the documentation to get the current configuration and
-        /// then make your updates. This helps to make sure that you include all of the required
-        /// fields. To view a summary, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-overview-required-fields.html">Required
-        /// Fields for Create Distribution and Update Distribution</a> in the <i>Amazon CloudFront
-        /// Developer Guide</i>.
-        /// </para>
-        ///  </important>
+        /// Creates a CloudFront distribution.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDistribution service method.</param>
         /// 
@@ -320,6 +654,10 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.CNAMEAlreadyExistsException">
         /// The CNAME specified is already defined for CloudFront.
         /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.ContinuousDeploymentPolicyInUseException">
+        /// You cannot delete a continuous deployment policy that is associated with a primary
+        /// distribution.
+        /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.DistributionAlreadyExistsException">
         /// The caller reference you attempted to create the distribution with is associated with
         /// another distribution.
@@ -327,6 +665,10 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.IllegalFieldLevelEncryptionConfigAssociationWithCacheBehaviorException">
         /// The specified configuration for field-level encryption can't be associated with the
         /// specified cache behavior.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.IllegalOriginAccessConfigurationException">
+        /// An origin cannot contain both an origin access control (OAC) and an origin access
+        /// identity (OAI).
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
         /// The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
@@ -336,6 +678,9 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidDefaultRootObjectException">
         /// The default root object file name is too big or contains an invalid character.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidDomainNameForOriginAccessControlException">
+        /// An origin access control is associated with an origin whose domain name is not supported.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidErrorCodeException">
         /// An invalid error code was specified.
@@ -362,6 +707,9 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidMinimumProtocolVersionException">
         /// The minimum protocol version specified is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginAccessControlException">
+        /// The origin access control is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidOriginAccessIdentityException">
         /// The origin access identity is not valid or doesn't exist.
@@ -411,6 +759,9 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.NoSuchCachePolicyException">
         /// The cache policy does not exist.
         /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchContinuousDeploymentPolicyException">
+        /// The continuous deployment policy doesn't exist.
+        /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchFieldLevelEncryptionConfigException">
         /// The specified configuration for field-level encryption doesn't exist.
         /// </exception>
@@ -456,6 +807,16 @@ namespace Amazon.CloudFront
         /// The number of distributions that reference this key group is more than the maximum
         /// allowed. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
         /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToOriginAccessControlException">
+        /// The maximum number of distributions have been associated with the specified origin
+        /// access control.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToOriginRequestPolicyException">
         /// The maximum number of distributions have been associated with the specified origin
@@ -574,6 +935,10 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.CNAMEAlreadyExistsException">
         /// The CNAME specified is already defined for CloudFront.
         /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.ContinuousDeploymentPolicyInUseException">
+        /// You cannot delete a continuous deployment policy that is associated with a primary
+        /// distribution.
+        /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.DistributionAlreadyExistsException">
         /// The caller reference you attempted to create the distribution with is associated with
         /// another distribution.
@@ -590,6 +955,9 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidDefaultRootObjectException">
         /// The default root object file name is too big or contains an invalid character.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidDomainNameForOriginAccessControlException">
+        /// An origin access control is associated with an origin whose domain name is not supported.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidErrorCodeException">
         /// An invalid error code was specified.
@@ -616,6 +984,9 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidMinimumProtocolVersionException">
         /// The minimum protocol version specified is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginAccessControlException">
+        /// The origin access control is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidOriginAccessIdentityException">
         /// The origin access identity is not valid or doesn't exist.
@@ -667,6 +1038,9 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchCachePolicyException">
         /// The cache policy does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchContinuousDeploymentPolicyException">
+        /// The continuous deployment policy doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchFieldLevelEncryptionConfigException">
         /// The specified configuration for field-level encryption doesn't exist.
@@ -958,15 +1332,15 @@ namespace Amazon.CloudFront
         /// </para>
         ///  
         /// <para>
-        /// When you create a function, it’s in the <code>DEVELOPMENT</code> stage. In this stage,
+        /// When you create a function, it's in the <code>DEVELOPMENT</code> stage. In this stage,
         /// you can test the function with <code>TestFunction</code>, and update it with <code>UpdateFunction</code>.
         /// </para>
         ///  
         /// <para>
-        /// When you’re ready to use your function with a CloudFront distribution, use <code>PublishFunction</code>
+        /// When you're ready to use your function with a CloudFront distribution, use <code>PublishFunction</code>
         /// to copy the function from the <code>DEVELOPMENT</code> stage to <code>LIVE</code>.
-        /// When it’s live, you can attach the function to a distribution’s cache behavior, using
-        /// the function’s ARN.
+        /// When it's live, you can attach the function to a distribution's cache behavior, using
+        /// the function's ARN.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateFunction service method.</param>
@@ -1176,6 +1550,9 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
         /// Access denied.
         /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.MonitoringSubscriptionAlreadyExistsException">
+        /// A monitoring subscription already exists for the specified distribution.
+        /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
         /// The specified distribution does not exist.
         /// </exception>
@@ -1213,6 +1590,76 @@ namespace Amazon.CloudFront
 
         #endregion
         
+        #region  CreateOriginAccessControl
+
+
+        /// <summary>
+        /// Creates a new origin access control in CloudFront. After you create an origin access
+        /// control, you can add it to an origin in a CloudFront distribution so that CloudFront
+        /// sends authenticated (signed) requests to the origin.
+        /// 
+        ///  
+        /// <para>
+        /// This makes it possible to block public access to the origin, allowing viewers (users)
+        /// to access the origin's content only through CloudFront.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about using a CloudFront origin access control, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-origin.html">Restricting
+        /// access to an Amazon Web Services origin</a> in the <i>Amazon CloudFront Developer
+        /// Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateOriginAccessControl service method.</param>
+        /// 
+        /// <returns>The response from the CreateOriginAccessControl service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.OriginAccessControlAlreadyExistsException">
+        /// An origin access control with the specified parameters already exists.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyOriginAccessControlsException">
+        /// The number of origin access controls in your Amazon Web Services account exceeds the
+        /// maximum allowed.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateOriginAccessControl">REST API Reference for CreateOriginAccessControl Operation</seealso>
+        CreateOriginAccessControlResponse CreateOriginAccessControl(CreateOriginAccessControlRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateOriginAccessControl operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateOriginAccessControl operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateOriginAccessControl
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateOriginAccessControl">REST API Reference for CreateOriginAccessControl Operation</seealso>
+        IAsyncResult BeginCreateOriginAccessControl(CreateOriginAccessControlRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateOriginAccessControl operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateOriginAccessControl.</param>
+        /// 
+        /// <returns>Returns a  CreateOriginAccessControlResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateOriginAccessControl">REST API Reference for CreateOriginAccessControl Operation</seealso>
+        CreateOriginAccessControlResponse EndCreateOriginAccessControl(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateOriginRequestPolicy
 
 
@@ -1222,7 +1669,7 @@ namespace Amazon.CloudFront
         ///  
         /// <para>
         /// After you create an origin request policy, you can attach it to one or more cache
-        /// behaviors. When it’s attached to a cache behavior, the origin request policy determines
+        /// behaviors. When it's attached to a cache behavior, the origin request policy determines
         /// the values that CloudFront includes in requests that it sends to the origin. Each
         /// request that CloudFront sends to the origin includes the following:
         /// </para>
@@ -1243,7 +1690,7 @@ namespace Amazon.CloudFront
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// CloudFront sends a request when it can’t find a valid object in its cache that matches
+        /// CloudFront sends a request when it can't find a valid object in its cache that matches
         /// the request. If you want to send values to the origin and also include them in the
         /// cache key, use <code>CachePolicy</code>.
         /// </para>
@@ -1446,16 +1893,23 @@ namespace Amazon.CloudFront
         /// 
         ///  
         /// <para>
-        /// A response headers policy contains information about a set of HTTP response headers
-        /// and their values. To create a response headers policy, you provide some metadata about
-        /// the policy, and a set of configurations that specify the response headers.
+        /// A response headers policy contains information about a set of HTTP headers. To create
+        /// a response headers policy, you provide some metadata about the policy and a set of
+        /// configurations that specify the headers.
         /// </para>
         ///  
         /// <para>
         /// After you create a response headers policy, you can use its ID to attach it to one
-        /// or more cache behaviors in a CloudFront distribution. When it’s attached to a cache
-        /// behavior, CloudFront adds the headers in the policy to HTTP responses that it sends
-        /// for requests that match the cache behavior.
+        /// or more cache behaviors in a CloudFront distribution. When it's attached to a cache
+        /// behavior, the response headers policy affects the HTTP headers that CloudFront includes
+        /// in HTTP responses to requests that match the cache behavior. CloudFront adds or removes
+        /// response headers according to the configuration of the response headers policy.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/modifying-response-headers.html">Adding
+        /// or removing HTTP headers in CloudFront responses</a> in the <i>Amazon CloudFront Developer
+        /// Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateResponseHeadersPolicy service method.</param>
@@ -1474,8 +1928,28 @@ namespace Amazon.CloudFront
         /// A response headers policy with this name already exists. You must provide a unique
         /// name. To modify an existing response headers policy, use <code>UpdateResponseHeadersPolicy</code>.
         /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooLongCSPInResponseHeadersPolicyException">
+        /// The length of the <code>Content-Security-Policy</code> header value in the response
+        /// headers policy exceeds the maximum.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyCustomHeadersInResponseHeadersPolicyException">
         /// The number of custom headers in the response headers policy exceeds the maximum.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyRemoveHeadersInResponseHeadersPolicyException">
+        /// The number of headers in <code>RemoveHeadersConfig</code> in the response headers
+        /// policy exceeds the maximum.
         /// 
         ///  
         /// <para>
@@ -1546,6 +2020,9 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginAccessControlException">
+        /// The origin access control is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidOriginAccessIdentityException">
         /// The origin access identity is not valid or doesn't exist.
@@ -1628,6 +2105,9 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// An argument is invalid.
         /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginAccessControlException">
+        /// The origin access control is not valid.
+        /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidOriginAccessIdentityException">
         /// The origin access identity is not valid or doesn't exist.
         /// </exception>
@@ -1697,13 +2177,13 @@ namespace Amazon.CloudFront
         /// 
         ///  
         /// <para>
-        /// You cannot delete a cache policy if it’s attached to a cache behavior. First update
+        /// You cannot delete a cache policy if it's attached to a cache behavior. First update
         /// your distributions to remove the cache policy from all cache behaviors, then delete
         /// the cache policy.
         /// </para>
         ///  
         /// <para>
-        /// To delete a cache policy, you must provide the policy’s identifier and version. To
+        /// To delete a cache policy, you must provide the policy's identifier and version. To
         /// get these values, you can use <code>ListCachePolicies</code> or <code>GetCachePolicy</code>.
         /// </para>
         /// </summary>
@@ -1834,6 +2314,72 @@ namespace Amazon.CloudFront
         /// <returns>Returns a  DeleteCloudFrontOriginAccessIdentityResult from CloudFront.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteCloudFrontOriginAccessIdentity">REST API Reference for DeleteCloudFrontOriginAccessIdentity Operation</seealso>
         DeleteCloudFrontOriginAccessIdentityResponse EndDeleteCloudFrontOriginAccessIdentity(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteContinuousDeploymentPolicy
+
+
+        /// <summary>
+        /// Deletes a continuous deployment policy.
+        /// 
+        ///  
+        /// <para>
+        /// You cannot delete a continuous deployment policy that's attached to a primary distribution.
+        /// First update your distribution to remove the continuous deployment policy, then you
+        /// can delete the policy.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteContinuousDeploymentPolicy service method.</param>
+        /// 
+        /// <returns>The response from the DeleteContinuousDeploymentPolicy service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.ContinuousDeploymentPolicyInUseException">
+        /// You cannot delete a continuous deployment policy that is associated with a primary
+        /// distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <code>If-Match</code> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchContinuousDeploymentPolicyException">
+        /// The continuous deployment policy doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <code>false</code>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteContinuousDeploymentPolicy">REST API Reference for DeleteContinuousDeploymentPolicy Operation</seealso>
+        DeleteContinuousDeploymentPolicyResponse DeleteContinuousDeploymentPolicy(DeleteContinuousDeploymentPolicyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteContinuousDeploymentPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteContinuousDeploymentPolicy operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteContinuousDeploymentPolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteContinuousDeploymentPolicy">REST API Reference for DeleteContinuousDeploymentPolicy Operation</seealso>
+        IAsyncResult BeginDeleteContinuousDeploymentPolicy(DeleteContinuousDeploymentPolicyRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteContinuousDeploymentPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteContinuousDeploymentPolicy.</param>
+        /// 
+        /// <returns>Returns a  DeleteContinuousDeploymentPolicyResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteContinuousDeploymentPolicy">REST API Reference for DeleteContinuousDeploymentPolicy Operation</seealso>
+        DeleteContinuousDeploymentPolicyResponse EndDeleteContinuousDeploymentPolicy(IAsyncResult asyncResult);
 
         #endregion
         
@@ -2035,13 +2581,13 @@ namespace Amazon.CloudFront
         /// 
         ///  
         /// <para>
-        /// You cannot delete a function if it’s associated with a cache behavior. First, update
+        /// You cannot delete a function if it's associated with a cache behavior. First, update
         /// your distributions to remove the function association from all cache behaviors, then
         /// delete the function.
         /// </para>
         ///  
         /// <para>
-        /// To delete a function, you must provide the function’s name and version (<code>ETag</code>
+        /// To delete a function, you must provide the function's name and version (<code>ETag</code>
         /// value). To get these values, you can use <code>ListFunctions</code> and <code>DescribeFunction</code>.
         /// </para>
         /// </summary>
@@ -2049,7 +2595,7 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>The response from the DeleteFunction service method, as returned by CloudFront.</returns>
         /// <exception cref="Amazon.CloudFront.Model.FunctionInUseException">
-        /// Cannot delete the function because it’s attached to one or more cache behaviors.
+        /// Cannot delete the function because it's attached to one or more cache behaviors.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
         /// The <code>If-Match</code> version is missing or not valid.
@@ -2108,7 +2654,7 @@ namespace Amazon.CloudFront
         /// </para>
         ///  
         /// <para>
-        /// To delete a key group, you must provide the key group’s identifier and version. To
+        /// To delete a key group, you must provide the key group's identifier and version. To
         /// get these values, use <code>ListKeyGroups</code> followed by <code>GetKeyGroup</code>
         /// or <code>GetKeyGroupConfig</code>.
         /// </para>
@@ -2174,6 +2720,9 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
         /// The specified distribution does not exist.
         /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchMonitoringSubscriptionException">
+        /// A monitoring subscription does not exist for the specified distribution.
+        /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
         /// This operation is not supported in this region.
         /// </exception>
@@ -2208,6 +2757,68 @@ namespace Amazon.CloudFront
 
         #endregion
         
+        #region  DeleteOriginAccessControl
+
+
+        /// <summary>
+        /// Deletes a CloudFront origin access control.
+        /// 
+        ///  
+        /// <para>
+        /// You cannot delete an origin access control if it's in use. First, update all distributions
+        /// to remove the origin access control from all origins, then delete the origin access
+        /// control.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteOriginAccessControl service method.</param>
+        /// 
+        /// <returns>The response from the DeleteOriginAccessControl service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <code>If-Match</code> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchOriginAccessControlException">
+        /// The origin access control does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.OriginAccessControlInUseException">
+        /// Cannot delete the origin access control because it's in use by one or more distributions.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <code>false</code>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteOriginAccessControl">REST API Reference for DeleteOriginAccessControl Operation</seealso>
+        DeleteOriginAccessControlResponse DeleteOriginAccessControl(DeleteOriginAccessControlRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteOriginAccessControl operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteOriginAccessControl operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteOriginAccessControl
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteOriginAccessControl">REST API Reference for DeleteOriginAccessControl Operation</seealso>
+        IAsyncResult BeginDeleteOriginAccessControl(DeleteOriginAccessControlRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteOriginAccessControl operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteOriginAccessControl.</param>
+        /// 
+        /// <returns>Returns a  DeleteOriginAccessControlResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteOriginAccessControl">REST API Reference for DeleteOriginAccessControl Operation</seealso>
+        DeleteOriginAccessControlResponse EndDeleteOriginAccessControl(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeleteOriginRequestPolicy
 
 
@@ -2216,13 +2827,13 @@ namespace Amazon.CloudFront
         /// 
         ///  
         /// <para>
-        /// You cannot delete an origin request policy if it’s attached to any cache behaviors.
+        /// You cannot delete an origin request policy if it's attached to any cache behaviors.
         /// First update your distributions to remove the origin request policy from all cache
         /// behaviors, then delete the origin request policy.
         /// </para>
         ///  
         /// <para>
-        /// To delete an origin request policy, you must provide the policy’s identifier and version.
+        /// To delete an origin request policy, you must provide the policy's identifier and version.
         /// To get the identifier, you can use <code>ListOriginRequestPolicies</code> or <code>GetOriginRequestPolicy</code>.
         /// </para>
         /// </summary>
@@ -2342,13 +2953,13 @@ namespace Amazon.CloudFront
         /// 
         ///  
         /// <para>
-        /// You cannot delete a real-time log configuration if it’s attached to a cache behavior.
+        /// You cannot delete a real-time log configuration if it's attached to a cache behavior.
         /// First update your distributions to remove the real-time log configuration from all
         /// cache behaviors, then delete the real-time log configuration.
         /// </para>
         ///  
         /// <para>
-        /// To delete a real-time log configuration, you can provide the configuration’s name
+        /// To delete a real-time log configuration, you can provide the configuration's name
         /// or its Amazon Resource Name (ARN). You must provide at least one. If you provide both,
         /// CloudFront uses the name to identify the real-time log configuration to delete.
         /// </para>
@@ -2408,15 +3019,15 @@ namespace Amazon.CloudFront
         /// 
         ///  
         /// <para>
-        /// You cannot delete a response headers policy if it’s attached to a cache behavior.
+        /// You cannot delete a response headers policy if it's attached to a cache behavior.
         /// First update your distributions to remove the response headers policy from all cache
         /// behaviors, then delete the response headers policy.
         /// </para>
         ///  
         /// <para>
-        /// To delete a response headers policy, you must provide the policy’s identifier and
+        /// To delete a response headers policy, you must provide the policy's identifier and
         /// version. To get these values, you can use <code>ListResponseHeadersPolicies</code>
-        /// or <code>GetResponseHeadersPolicy</code>. 
+        /// or <code>GetResponseHeadersPolicy</code>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteResponseHeadersPolicy service method.</param>
@@ -2673,12 +3284,12 @@ namespace Amazon.CloudFront
 
         /// <summary>
         /// Gets configuration information and metadata about a CloudFront function, but not the
-        /// function’s code. To get a function’s code, use <code>GetFunction</code>.
+        /// function's code. To get a function's code, use <code>GetFunction</code>.
         /// 
         ///  
         /// <para>
         /// To get configuration information and metadata about a function, you must provide the
-        /// function’s name and stage. To get these values, you can use <code>ListFunctions</code>.
+        /// function's name and stage. To get these values, you can use <code>ListFunctions</code>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeFunction service method.</param>
@@ -2729,7 +3340,7 @@ namespace Amazon.CloudFront
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// The policy’s identifier.
+        /// The policy's identifier.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2737,8 +3348,8 @@ namespace Amazon.CloudFront
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// To get a cache policy, you must provide the policy’s identifier. If the cache policy
-        /// is attached to a distribution’s cache behavior, you can get the policy’s identifier
+        /// To get a cache policy, you must provide the policy's identifier. If the cache policy
+        /// is attached to a distribution's cache behavior, you can get the policy's identifier
         /// using <code>ListDistributions</code> or <code>GetDistribution</code>. If the cache
         /// policy is not attached to a cache behavior, you can get the identifier using <code>ListCachePolicies</code>.
         /// </para>
@@ -2791,8 +3402,8 @@ namespace Amazon.CloudFront
         /// 
         ///  
         /// <para>
-        /// To get a cache policy configuration, you must provide the policy’s identifier. If
-        /// the cache policy is attached to a distribution’s cache behavior, you can get the policy’s
+        /// To get a cache policy configuration, you must provide the policy's identifier. If
+        /// the cache policy is attached to a distribution's cache behavior, you can get the policy's
         /// identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If
         /// the cache policy is not attached to a cache behavior, you can get the identifier using
         /// <code>ListCachePolicies</code>.
@@ -2955,6 +3566,99 @@ namespace Amazon.CloudFront
         /// <returns>Returns a  GetCloudFrontOriginAccessIdentityConfigResult from CloudFront.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetCloudFrontOriginAccessIdentityConfig">REST API Reference for GetCloudFrontOriginAccessIdentityConfig Operation</seealso>
         GetCloudFrontOriginAccessIdentityConfigResponse EndGetCloudFrontOriginAccessIdentityConfig(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetContinuousDeploymentPolicy
+
+
+        /// <summary>
+        /// Gets a continuous deployment policy, including metadata (the policy's identifier and
+        /// the date and time when the policy was last modified).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetContinuousDeploymentPolicy service method.</param>
+        /// 
+        /// <returns>The response from the GetContinuousDeploymentPolicy service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchContinuousDeploymentPolicyException">
+        /// The continuous deployment policy doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetContinuousDeploymentPolicy">REST API Reference for GetContinuousDeploymentPolicy Operation</seealso>
+        GetContinuousDeploymentPolicyResponse GetContinuousDeploymentPolicy(GetContinuousDeploymentPolicyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetContinuousDeploymentPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetContinuousDeploymentPolicy operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetContinuousDeploymentPolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetContinuousDeploymentPolicy">REST API Reference for GetContinuousDeploymentPolicy Operation</seealso>
+        IAsyncResult BeginGetContinuousDeploymentPolicy(GetContinuousDeploymentPolicyRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetContinuousDeploymentPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetContinuousDeploymentPolicy.</param>
+        /// 
+        /// <returns>Returns a  GetContinuousDeploymentPolicyResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetContinuousDeploymentPolicy">REST API Reference for GetContinuousDeploymentPolicy Operation</seealso>
+        GetContinuousDeploymentPolicyResponse EndGetContinuousDeploymentPolicy(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetContinuousDeploymentPolicyConfig
+
+
+        /// <summary>
+        /// Gets configuration information about a continuous deployment policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetContinuousDeploymentPolicyConfig service method.</param>
+        /// 
+        /// <returns>The response from the GetContinuousDeploymentPolicyConfig service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchContinuousDeploymentPolicyException">
+        /// The continuous deployment policy doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetContinuousDeploymentPolicyConfig">REST API Reference for GetContinuousDeploymentPolicyConfig Operation</seealso>
+        GetContinuousDeploymentPolicyConfigResponse GetContinuousDeploymentPolicyConfig(GetContinuousDeploymentPolicyConfigRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetContinuousDeploymentPolicyConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetContinuousDeploymentPolicyConfig operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetContinuousDeploymentPolicyConfig
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetContinuousDeploymentPolicyConfig">REST API Reference for GetContinuousDeploymentPolicyConfig Operation</seealso>
+        IAsyncResult BeginGetContinuousDeploymentPolicyConfig(GetContinuousDeploymentPolicyConfigRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetContinuousDeploymentPolicyConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetContinuousDeploymentPolicyConfig.</param>
+        /// 
+        /// <returns>Returns a  GetContinuousDeploymentPolicyConfigResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetContinuousDeploymentPolicyConfig">REST API Reference for GetContinuousDeploymentPolicyConfig Operation</seealso>
+        GetContinuousDeploymentPolicyConfigResponse EndGetContinuousDeploymentPolicyConfig(IAsyncResult asyncResult);
 
         #endregion
         
@@ -3271,7 +3975,7 @@ namespace Amazon.CloudFront
         /// 
         ///  
         /// <para>
-        /// To get a function’s code, you must provide the function’s name and stage. To get these
+        /// To get a function's code, you must provide the function's name and stage. To get these
         /// values, you can use <code>ListFunctions</code>.
         /// </para>
         /// </summary>
@@ -3372,8 +4076,8 @@ namespace Amazon.CloudFront
         /// 
         ///  
         /// <para>
-        /// To get a key group, you must provide the key group’s identifier. If the key group
-        /// is referenced in a distribution’s cache behavior, you can get the key group’s identifier
+        /// To get a key group, you must provide the key group's identifier. If the key group
+        /// is referenced in a distribution's cache behavior, you can get the key group's identifier
         /// using <code>ListDistributions</code> or <code>GetDistribution</code>. If the key group
         /// is not referenced in a cache behavior, you can get the identifier using <code>ListKeyGroups</code>.
         /// </para>
@@ -3423,9 +4127,9 @@ namespace Amazon.CloudFront
         /// 
         ///  
         /// <para>
-        /// To get a key group configuration, you must provide the key group’s identifier. If
-        /// the key group is referenced in a distribution’s cache behavior, you can get the key
-        /// group’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>.
+        /// To get a key group configuration, you must provide the key group's identifier. If
+        /// the key group is referenced in a distribution's cache behavior, you can get the key
+        /// group's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>.
         /// If the key group is not referenced in a cache behavior, you can get the identifier
         /// using <code>ListKeyGroups</code>.
         /// </para>
@@ -3483,6 +4187,9 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
         /// The specified distribution does not exist.
         /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchMonitoringSubscriptionException">
+        /// A monitoring subscription does not exist for the specified distribution.
+        /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
         /// This operation is not supported in this region.
         /// </exception>
@@ -3517,6 +4224,98 @@ namespace Amazon.CloudFront
 
         #endregion
         
+        #region  GetOriginAccessControl
+
+
+        /// <summary>
+        /// Gets a CloudFront origin access control, including its unique identifier.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetOriginAccessControl service method.</param>
+        /// 
+        /// <returns>The response from the GetOriginAccessControl service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchOriginAccessControlException">
+        /// The origin access control does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetOriginAccessControl">REST API Reference for GetOriginAccessControl Operation</seealso>
+        GetOriginAccessControlResponse GetOriginAccessControl(GetOriginAccessControlRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetOriginAccessControl operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetOriginAccessControl operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetOriginAccessControl
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetOriginAccessControl">REST API Reference for GetOriginAccessControl Operation</seealso>
+        IAsyncResult BeginGetOriginAccessControl(GetOriginAccessControlRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetOriginAccessControl operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetOriginAccessControl.</param>
+        /// 
+        /// <returns>Returns a  GetOriginAccessControlResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetOriginAccessControl">REST API Reference for GetOriginAccessControl Operation</seealso>
+        GetOriginAccessControlResponse EndGetOriginAccessControl(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetOriginAccessControlConfig
+
+
+        /// <summary>
+        /// Gets a CloudFront origin access control configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetOriginAccessControlConfig service method.</param>
+        /// 
+        /// <returns>The response from the GetOriginAccessControlConfig service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchOriginAccessControlException">
+        /// The origin access control does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetOriginAccessControlConfig">REST API Reference for GetOriginAccessControlConfig Operation</seealso>
+        GetOriginAccessControlConfigResponse GetOriginAccessControlConfig(GetOriginAccessControlConfigRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetOriginAccessControlConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetOriginAccessControlConfig operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetOriginAccessControlConfig
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetOriginAccessControlConfig">REST API Reference for GetOriginAccessControlConfig Operation</seealso>
+        IAsyncResult BeginGetOriginAccessControlConfig(GetOriginAccessControlConfigRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetOriginAccessControlConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetOriginAccessControlConfig.</param>
+        /// 
+        /// <returns>Returns a  GetOriginAccessControlConfigResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetOriginAccessControlConfig">REST API Reference for GetOriginAccessControlConfig Operation</seealso>
+        GetOriginAccessControlConfigResponse EndGetOriginAccessControlConfig(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetOriginRequestPolicy
 
 
@@ -3525,7 +4324,7 @@ namespace Amazon.CloudFront
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// The policy’s identifier.
+        /// The policy's identifier.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3533,9 +4332,9 @@ namespace Amazon.CloudFront
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// To get an origin request policy, you must provide the policy’s identifier. If the
-        /// origin request policy is attached to a distribution’s cache behavior, you can get
-        /// the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>.
+        /// To get an origin request policy, you must provide the policy's identifier. If the
+        /// origin request policy is attached to a distribution's cache behavior, you can get
+        /// the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>.
         /// If the origin request policy is not attached to a cache behavior, you can get the
         /// identifier using <code>ListOriginRequestPolicies</code>.
         /// </para>
@@ -3588,9 +4387,9 @@ namespace Amazon.CloudFront
         /// 
         ///  
         /// <para>
-        /// To get an origin request policy configuration, you must provide the policy’s identifier.
-        /// If the origin request policy is attached to a distribution’s cache behavior, you can
-        /// get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>.
+        /// To get an origin request policy configuration, you must provide the policy's identifier.
+        /// If the origin request policy is attached to a distribution's cache behavior, you can
+        /// get the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>.
         /// If the origin request policy is not attached to a cache behavior, you can get the
         /// identifier using <code>ListOriginRequestPolicies</code>.
         /// </para>
@@ -3735,7 +4534,7 @@ namespace Amazon.CloudFront
         /// 
         ///  
         /// <para>
-        /// To get a real-time log configuration, you can provide the configuration’s name or
+        /// To get a real-time log configuration, you can provide the configuration's name or
         /// its Amazon Resource Name (ARN). You must provide at least one. If you provide both,
         /// CloudFront uses the name to identify the real-time log configuration to get.
         /// </para>
@@ -3787,14 +4586,14 @@ namespace Amazon.CloudFront
 
 
         /// <summary>
-        /// Gets a response headers policy, including metadata (the policy’s identifier and the
+        /// Gets a response headers policy, including metadata (the policy's identifier and the
         /// date and time when the policy was last modified).
         /// 
         ///  
         /// <para>
-        /// To get a response headers policy, you must provide the policy’s identifier. If the
-        /// response headers policy is attached to a distribution’s cache behavior, you can get
-        /// the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>.
+        /// To get a response headers policy, you must provide the policy's identifier. If the
+        /// response headers policy is attached to a distribution's cache behavior, you can get
+        /// the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>.
         /// If the response headers policy is not attached to a cache behavior, you can get the
         /// identifier using <code>ListResponseHeadersPolicies</code>.
         /// </para>
@@ -3847,9 +4646,9 @@ namespace Amazon.CloudFront
         /// 
         ///  
         /// <para>
-        /// To get a response headers policy configuration, you must provide the policy’s identifier.
-        /// If the response headers policy is attached to a distribution’s cache behavior, you
-        /// can get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>.
+        /// To get a response headers policy configuration, you must provide the policy's identifier.
+        /// If the response headers policy is attached to a distribution's cache behavior, you
+        /// can get the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>.
         /// If the response headers policy is not attached to a cache behavior, you can get the
         /// identifier using <code>ListResponseHeadersPolicies</code>.
         /// </para>
@@ -4140,7 +4939,7 @@ namespace Amazon.CloudFront
         /// Amazon Web Services accounts for each conflicting alias. In the returned list, the
         /// distribution and account IDs are partially hidden, which allows you to identify the
         /// distributions and accounts that you own, but helps to protect the information of ones
-        /// that you don’t own.
+        /// that you don't own.
         /// 
         ///  
         /// <para>
@@ -4210,6 +5009,64 @@ namespace Amazon.CloudFront
 
         #endregion
         
+        #region  ListContinuousDeploymentPolicies
+
+
+        /// <summary>
+        /// Gets a list of the continuous deployment policies in your Amazon Web Services account.
+        /// 
+        ///  
+        /// <para>
+        /// You can optionally specify the maximum number of items to receive in the response.
+        /// If the total number of items in the list exceeds the maximum that you specify, or
+        /// the default maximum, the response is paginated. To get the next page of items, send
+        /// a subsequent request that specifies the <code>NextMarker</code> value from the current
+        /// response as the <code>Marker</code> value in the subsequent request.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListContinuousDeploymentPolicies service method.</param>
+        /// 
+        /// <returns>The response from the ListContinuousDeploymentPolicies service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchContinuousDeploymentPolicyException">
+        /// The continuous deployment policy doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListContinuousDeploymentPolicies">REST API Reference for ListContinuousDeploymentPolicies Operation</seealso>
+        ListContinuousDeploymentPoliciesResponse ListContinuousDeploymentPolicies(ListContinuousDeploymentPoliciesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListContinuousDeploymentPolicies operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListContinuousDeploymentPolicies operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListContinuousDeploymentPolicies
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListContinuousDeploymentPolicies">REST API Reference for ListContinuousDeploymentPolicies Operation</seealso>
+        IAsyncResult BeginListContinuousDeploymentPolicies(ListContinuousDeploymentPoliciesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListContinuousDeploymentPolicies operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListContinuousDeploymentPolicies.</param>
+        /// 
+        /// <returns>Returns a  ListContinuousDeploymentPoliciesResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListContinuousDeploymentPolicies">REST API Reference for ListContinuousDeploymentPolicies Operation</seealso>
+        ListContinuousDeploymentPoliciesResponse EndListContinuousDeploymentPolicies(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListDistributions
 
 
@@ -4268,7 +5125,7 @@ namespace Amazon.CloudFront
 
 
         /// <summary>
-        /// Gets a list of distribution IDs for distributions that have a cache behavior that’s
+        /// Gets a list of distribution IDs for distributions that have a cache behavior that's
         /// associated with the specified cache policy.
         /// 
         ///  
@@ -4383,7 +5240,7 @@ namespace Amazon.CloudFront
 
 
         /// <summary>
-        /// Gets a list of distribution IDs for distributions that have a cache behavior that’s
+        /// Gets a list of distribution IDs for distributions that have a cache behavior that's
         /// associated with the specified origin request policy.
         /// 
         ///  
@@ -4442,7 +5299,7 @@ namespace Amazon.CloudFront
 
 
         /// <summary>
-        /// Gets a list of distributions that have a cache behavior that’s associated with the
+        /// Gets a list of distributions that have a cache behavior that's associated with the
         /// specified real-time log configuration.
         /// 
         ///  
@@ -4457,7 +5314,7 @@ namespace Amazon.CloudFront
         /// If the total number of items in the list exceeds the maximum that you specify, or
         /// the default maximum, the response is paginated. To get the next page of items, send
         /// a subsequent request that specifies the <code>NextMarker</code> value from the current
-        /// response as the <code>Marker</code> value in the subsequent request. 
+        /// response as the <code>Marker</code> value in the subsequent request.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDistributionsByRealtimeLogConfig service method.</param>
@@ -4501,7 +5358,7 @@ namespace Amazon.CloudFront
 
 
         /// <summary>
-        /// Gets a list of distribution IDs for distributions that have a cache behavior that’s
+        /// Gets a list of distribution IDs for distributions that have a cache behavior that's
         /// associated with the specified response headers policy.
         /// 
         ///  
@@ -4853,6 +5710,58 @@ namespace Amazon.CloudFront
 
         #endregion
         
+        #region  ListOriginAccessControls
+
+
+        /// <summary>
+        /// Gets the list of CloudFront origin access controls in this Amazon Web Services account.
+        /// 
+        ///  
+        /// <para>
+        /// You can optionally specify the maximum number of items to receive in the response.
+        /// If the total number of items in the list exceeds the maximum that you specify, or
+        /// the default maximum, the response is paginated. To get the next page of items, send
+        /// another request that specifies the <code>NextMarker</code> value from the current
+        /// response as the <code>Marker</code> value in the next request.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListOriginAccessControls service method.</param>
+        /// 
+        /// <returns>The response from the ListOriginAccessControls service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListOriginAccessControls">REST API Reference for ListOriginAccessControls Operation</seealso>
+        ListOriginAccessControlsResponse ListOriginAccessControls(ListOriginAccessControlsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListOriginAccessControls operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListOriginAccessControls operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListOriginAccessControls
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListOriginAccessControls">REST API Reference for ListOriginAccessControls Operation</seealso>
+        IAsyncResult BeginListOriginAccessControls(ListOriginAccessControlsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListOriginAccessControls operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListOriginAccessControls.</param>
+        /// 
+        /// <returns>Returns a  ListOriginAccessControlsResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListOriginAccessControls">REST API Reference for ListOriginAccessControls Operation</seealso>
+        ListOriginAccessControlsResponse EndListOriginAccessControls(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListOriginRequestPolicies
 
 
@@ -4971,7 +5880,7 @@ namespace Amazon.CloudFront
         /// If the total number of items in the list exceeds the maximum that you specify, or
         /// the default maximum, the response is paginated. To get the next page of items, send
         /// a subsequent request that specifies the <code>NextMarker</code> value from the current
-        /// response as the <code>Marker</code> value in the subsequent request. 
+        /// response as the <code>Marker</code> value in the subsequent request.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListRealtimeLogConfigs service method.</param>
@@ -5197,11 +6106,11 @@ namespace Amazon.CloudFront
         ///  
         /// <para>
         /// When a function is published to the <code>LIVE</code> stage, you can attach the function
-        /// to a distribution’s cache behavior, using the function’s Amazon Resource Name (ARN).
+        /// to a distribution's cache behavior, using the function's Amazon Resource Name (ARN).
         /// </para>
         ///  
         /// <para>
-        /// To publish a function, you must provide the function’s name and version (<code>ETag</code>
+        /// To publish a function, you must provide the function's name and version (<code>ETag</code>
         /// value). To get these values, you can use <code>ListFunctions</code> and <code>DescribeFunction</code>.
         /// </para>
         /// </summary>
@@ -5317,15 +6226,15 @@ namespace Amazon.CloudFront
         /// To test a function, you provide an <i>event object</i> that represents an HTTP request
         /// or response that your CloudFront distribution could receive in production. CloudFront
         /// runs the function, passing it the event object that you provided, and returns the
-        /// function’s result (the modified event object) in the response. The response also contains
+        /// function's result (the modified event object) in the response. The response also contains
         /// function logs and error messages, if any exist. For more information about testing
         /// functions, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/managing-functions.html#test-function">Testing
         /// functions</a> in the <i>Amazon CloudFront Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// To test a function, you provide the function’s name and version (<code>ETag</code>
-        /// value) along with the event object. To get the function’s name and version, you can
+        /// To test a function, you provide the function's name and version (<code>ETag</code>
+        /// value) along with the event object. To get the function's name and version, you can
         /// use <code>ListFunctions</code> and <code>DescribeFunction</code>.
         /// </para>
         /// </summary>
@@ -5453,7 +6362,7 @@ namespace Amazon.CloudFront
         ///  </li> <li> 
         /// <para>
         /// Call <code>UpdateCachePolicy</code> by providing the entire cache policy configuration,
-        /// including the fields that you modified and those that you didn’t.
+        /// including the fields that you modified and those that you didn't.
         /// </para>
         ///  </li> </ol>
         /// </summary>
@@ -5596,32 +6505,104 @@ namespace Amazon.CloudFront
 
         #endregion
         
+        #region  UpdateContinuousDeploymentPolicy
+
+
+        /// <summary>
+        /// Updates a continuous deployment policy. You can update a continuous deployment policy
+        /// to enable or disable it, to change the percentage of traffic that it sends to the
+        /// staging distribution, or to change the staging distribution that it sends traffic
+        /// to.
+        /// 
+        ///  
+        /// <para>
+        /// When you update a continuous deployment policy configuration, all the fields are updated
+        /// with the values that are provided in the request. You cannot update some fields independent
+        /// of others. To update a continuous deployment policy configuration:
+        /// </para>
+        ///  <ol> <li> 
+        /// <para>
+        /// Use <code>GetContinuousDeploymentPolicyConfig</code> to get the current configuration.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Locally modify the fields in the continuous deployment policy configuration that you
+        /// want to update.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use <code>UpdateContinuousDeploymentPolicy</code>, providing the entire continuous
+        /// deployment policy configuration, including the fields that you modified and those
+        /// that you didn't.
+        /// </para>
+        ///  </li> </ol>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateContinuousDeploymentPolicy service method.</param>
+        /// 
+        /// <returns>The response from the UpdateContinuousDeploymentPolicy service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
+        /// The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <code>If-Match</code> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchContinuousDeploymentPolicyException">
+        /// The continuous deployment policy doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <code>false</code>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.StagingDistributionInUseException">
+        /// A continuous deployment policy for this staging distribution already exists.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateContinuousDeploymentPolicy">REST API Reference for UpdateContinuousDeploymentPolicy Operation</seealso>
+        UpdateContinuousDeploymentPolicyResponse UpdateContinuousDeploymentPolicy(UpdateContinuousDeploymentPolicyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateContinuousDeploymentPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateContinuousDeploymentPolicy operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateContinuousDeploymentPolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateContinuousDeploymentPolicy">REST API Reference for UpdateContinuousDeploymentPolicy Operation</seealso>
+        IAsyncResult BeginUpdateContinuousDeploymentPolicy(UpdateContinuousDeploymentPolicyRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateContinuousDeploymentPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateContinuousDeploymentPolicy.</param>
+        /// 
+        /// <returns>Returns a  UpdateContinuousDeploymentPolicyResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateContinuousDeploymentPolicy">REST API Reference for UpdateContinuousDeploymentPolicy Operation</seealso>
+        UpdateContinuousDeploymentPolicyResponse EndUpdateContinuousDeploymentPolicy(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  UpdateDistribution
 
 
         /// <summary>
-        /// Updates the configuration for a web distribution. 
+        /// Updates the configuration for a CloudFront distribution.
         /// 
-        ///  <important> 
-        /// <para>
-        /// When you update a distribution, there are more required fields than when you create
-        /// a distribution. When you update your distribution by using this API action, follow
-        /// the steps here to get the current configuration and then make your updates, to make
-        /// sure that you include all of the required fields. To view a summary, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-overview-required-fields.html">Required
-        /// Fields for Create Distribution and Update Distribution</a> in the <i>Amazon CloudFront
-        /// Developer Guide</i>.
-        /// </para>
-        ///  </important> 
-        /// <para>
-        /// The update process includes getting the current distribution configuration, updating
-        /// the XML document that is returned to make your changes, and then submitting an <code>UpdateDistribution</code>
-        /// request to make the updates.
-        /// </para>
         ///  
         /// <para>
-        /// For information about updating a distribution using the CloudFront console instead,
-        /// see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-creating-console.html">Creating
-        /// a Distribution</a> in the <i>Amazon CloudFront Developer Guide</i>.
+        /// The update process includes getting the current distribution configuration, updating
+        /// it to make your changes, and then submitting an <code>UpdateDistribution</code> request
+        /// to make the updates.
         /// </para>
         ///  
         /// <para>
@@ -5629,78 +6610,322 @@ namespace Amazon.CloudFront
         /// </para>
         ///  <ol> <li> 
         /// <para>
-        /// Submit a <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetDistributionConfig.html">GetDistributionConfig</a>
-        /// request to get the current configuration and an <code>Etag</code> header for the distribution.
+        /// Use <code>GetDistributionConfig</code> to get the current configuration, including
+        /// the version identifier (<code>ETag</code>).
         /// </para>
-        ///  <note> 
+        ///  </li> <li> 
         /// <para>
-        /// If you update the distribution again, you must get a new <code>Etag</code> header.
-        /// </para>
-        ///  </note> </li> <li> 
-        /// <para>
-        /// Update the XML document that was returned in the response to your <code>GetDistributionConfig</code>
-        /// request to include your changes. 
-        /// </para>
-        ///  <important> 
-        /// <para>
-        /// When you edit the XML file, be aware of the following:
+        /// Update the distribution configuration that was returned in the response. Note the
+        /// following important requirements and restrictions:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// You must strip out the ETag parameter that is returned.
+        /// You must rename the <code>ETag</code> field to <code>IfMatch</code>, leaving the value
+        /// unchanged. (Set the value of <code>IfMatch</code> to the value of <code>ETag</code>,
+        /// then remove the <code>ETag</code> field.)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Additional fields are required when you update a distribution. There may be fields
-        /// included in the XML file for features that you haven't configured for your distribution.
-        /// This is expected and required to successfully update the distribution.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// You can't change the value of <code>CallerReference</code>. If you try to change this
-        /// value, CloudFront returns an <code>IllegalUpdate</code> error. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// The new configuration replaces the existing configuration; the values that you specify
-        /// in an <code>UpdateDistribution</code> request are not merged into your existing configuration.
-        /// When you add, delete, or replace values in an element that allows multiple values
-        /// (for example, <code>CNAME</code>), you must specify all of the values that you want
-        /// to appear in the updated distribution. In addition, you must update the corresponding
-        /// <code>Quantity</code> element.
-        /// </para>
-        ///  </li> </ul> </important> </li> <li> 
-        /// <para>
-        /// Submit an <code>UpdateDistribution</code> request to update the configuration for
-        /// your distribution:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// In the request body, include the XML document that you updated in Step 2. The request
-        /// body must include an XML document with a <code>DistributionConfig</code> element.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Set the value of the HTTP <code>If-Match</code> header to the value of the <code>ETag</code>
-        /// header that CloudFront returned when you submitted the <code>GetDistributionConfig</code>
-        /// request in Step 1.
+        /// You can't change the value of <code>CallerReference</code>.
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        /// Review the response to the <code>UpdateDistribution</code> request to confirm that
-        /// the configuration was successfully updated.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Optional: Submit a <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetDistribution.html">GetDistribution</a>
-        /// request to confirm that your changes have propagated. When propagation is complete,
-        /// the value of <code>Status</code> is <code>Deployed</code>.
+        /// Submit an <code>UpdateDistribution</code> request, providing the distribution configuration.
+        /// The new configuration replaces the existing configuration. The values that you specify
+        /// in an <code>UpdateDistribution</code> request are not merged into your existing configuration.
+        /// Make sure to include all fields: the ones that you modified and also the ones that
+        /// you didn't.
         /// </para>
         ///  </li> </ol>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateDistribution service method.</param>
         /// 
         /// <returns>The response from the UpdateDistribution service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.CNAMEAlreadyExistsException">
+        /// The CNAME specified is already defined for CloudFront.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.ContinuousDeploymentPolicyInUseException">
+        /// You cannot delete a continuous deployment policy that is associated with a primary
+        /// distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.IllegalFieldLevelEncryptionConfigAssociationWithCacheBehaviorException">
+        /// The specified configuration for field-level encryption can't be associated with the
+        /// specified cache behavior.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.IllegalOriginAccessConfigurationException">
+        /// An origin cannot contain both an origin access control (OAC) and an origin access
+        /// identity (OAI).
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.IllegalUpdateException">
+        /// The update contains modifications that are not allowed.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
+        /// The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidDefaultRootObjectException">
+        /// The default root object file name is too big or contains an invalid character.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidDomainNameForOriginAccessControlException">
+        /// An origin access control is associated with an origin whose domain name is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidErrorCodeException">
+        /// An invalid error code was specified.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidForwardCookiesException">
+        /// Your request contains forward cookies option which doesn't match with the expectation
+        /// for the <code>whitelisted</code> list of cookie names. Either list of cookie names
+        /// has been specified when not allowed or list of cookie names is missing when expected.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidFunctionAssociationException">
+        /// A CloudFront function association is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidGeoRestrictionParameterException">
+        /// The specified geo restriction parameter is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidHeadersForS3OriginException">
+        /// The headers specified are not valid for an Amazon S3 origin.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <code>If-Match</code> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidLambdaFunctionAssociationException">
+        /// The specified Lambda@Edge function association is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidLocationCodeException">
+        /// The location code specified is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidMinimumProtocolVersionException">
+        /// The minimum protocol version specified is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginAccessControlException">
+        /// The origin access control is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginAccessIdentityException">
+        /// The origin access identity is not valid or doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginKeepaliveTimeoutException">
+        /// The keep alive timeout specified for the origin is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginReadTimeoutException">
+        /// The read timeout specified for the origin is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidQueryStringParametersException">
+        /// The query string parameters specified are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidRelativePathException">
+        /// The relative path is too big, is not URL-encoded, or does not begin with a slash (/).
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidRequiredProtocolException">
+        /// This operation requires the HTTPS protocol. Ensure that you specify the HTTPS protocol
+        /// in your request, or omit the <code>RequiredProtocols</code> element from your distribution
+        /// configuration.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidResponseCodeException">
+        /// A response code is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidTTLOrderException">
+        /// The TTL order specified is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidViewerCertificateException">
+        /// A viewer certificate specified is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidWebACLIdException">
+        /// A web ACL ID specified is not valid. To specify a web ACL created using the latest
+        /// version of WAF, use the ACL ARN, for example <code>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/473e64fd-f30b-4765-81a0-62ad96dd167a</code>.
+        /// To specify a web ACL created using WAF Classic, use the ACL ID, for example <code>473e64fd-f30b-4765-81a0-62ad96dd167a</code>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.MissingBodyException">
+        /// This operation requires a body. Ensure that the body is present and the <code>Content-Type</code>
+        /// header is set.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchCachePolicyException">
+        /// The cache policy does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchContinuousDeploymentPolicyException">
+        /// The continuous deployment policy doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
+        /// The specified distribution does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchFieldLevelEncryptionConfigException">
+        /// The specified configuration for field-level encryption doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchOriginException">
+        /// No origin exists with the specified <code>Origin Id</code>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchOriginRequestPolicyException">
+        /// The origin request policy does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchRealtimeLogConfigException">
+        /// The real-time log configuration does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchResponseHeadersPolicyException">
+        /// The response headers policy does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <code>false</code>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.RealtimeLogConfigOwnerMismatchException">
+        /// The specified real-time log configuration belongs to a different Amazon Web Services
+        /// account.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.StagingDistributionInUseException">
+        /// A continuous deployment policy for this staging distribution already exists.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyCacheBehaviorsException">
+        /// You cannot create more cache behaviors for the distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyCertificatesException">
+        /// You cannot create anymore custom SSL/TLS certificates.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyCookieNamesInWhiteListException">
+        /// Your request contains more cookie names in the whitelist than are allowed per cache
+        /// behavior.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionCNAMEsException">
+        /// Your request contains more CNAMEs than are allowed per distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToCachePolicyException">
+        /// The maximum number of distributions have been associated with the specified cache
+        /// policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToFieldLevelEncryptionConfigException">
+        /// The maximum number of distributions have been associated with the specified configuration
+        /// for field-level encryption.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToKeyGroupException">
+        /// The number of distributions that reference this key group is more than the maximum
+        /// allowed. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToOriginRequestPolicyException">
+        /// The maximum number of distributions have been associated with the specified origin
+        /// request policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToResponseHeadersPolicyException">
+        /// The maximum number of distributions have been associated with the specified response
+        /// headers policy.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsWithFunctionAssociationsException">
+        /// You have reached the maximum number of distributions that are associated with a CloudFront
+        /// function. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsWithLambdaAssociationsException">
+        /// Processing your request would cause the maximum number of distributions with Lambda@Edge
+        /// function associations per owner to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsWithSingleFunctionARNException">
+        /// The maximum number of distributions have been associated with the specified Lambda@Edge
+        /// function.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyFunctionAssociationsException">
+        /// You have reached the maximum number of CloudFront function associations for this distribution.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyHeadersInForwardedValuesException">
+        /// Your request contains too many headers in forwarded values.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyKeyGroupsAssociatedToDistributionException">
+        /// The number of key groups referenced by this distribution is more than the maximum
+        /// allowed. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyLambdaFunctionAssociationsException">
+        /// Your request contains more Lambda@Edge function associations than are allowed per
+        /// distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyOriginCustomHeadersException">
+        /// Your request contains too many origin custom headers.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyOriginGroupsPerDistributionException">
+        /// Processing your request would cause you to exceed the maximum number of origin groups
+        /// allowed.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyOriginsException">
+        /// You cannot create more origins for the distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyQueryStringParametersException">
+        /// Your request contains too many query string parameters.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyTrustedSignersException">
+        /// Your request contains more trusted signers than are allowed per distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TrustedKeyGroupDoesNotExistException">
+        /// The specified key group does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TrustedSignerDoesNotExistException">
+        /// One or more of your trusted signers don't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateDistribution">REST API Reference for UpdateDistribution Operation</seealso>
+        UpdateDistributionResponse UpdateDistribution(UpdateDistributionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateDistribution operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDistribution operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateDistribution
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateDistribution">REST API Reference for UpdateDistribution Operation</seealso>
+        IAsyncResult BeginUpdateDistribution(UpdateDistributionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateDistribution operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateDistribution.</param>
+        /// 
+        /// <returns>Returns a  UpdateDistributionResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateDistribution">REST API Reference for UpdateDistribution Operation</seealso>
+        UpdateDistributionResponse EndUpdateDistribution(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateDistributionWithStagingConfig
+
+
+        /// <summary>
+        /// Copies the staging distribution's configuration to its corresponding primary distribution.
+        /// The primary distribution retains its <code>Aliases</code> (also known as alternate
+        /// domain names or CNAMEs) and <code>ContinuousDeploymentPolicyId</code> value, but otherwise
+        /// its configuration is overwritten to match the staging distribution.
+        /// 
+        ///  
+        /// <para>
+        /// You can use this operation in a continuous deployment workflow after you have tested
+        /// configuration changes on the staging distribution. After using a continuous deployment
+        /// policy to move a portion of your domain name's traffic to the staging distribution
+        /// and verifying that it works as intended, you can use this operation to copy the staging
+        /// distribution's configuration to the primary distribution. This action will disable
+        /// the continuous deployment policy and move your domain's traffic back to the primary
+        /// distribution.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDistributionWithStagingConfig service method.</param>
+        /// 
+        /// <returns>The response from the UpdateDistributionWithStagingConfig service method, as returned by CloudFront.</returns>
         /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
         /// Access denied.
         /// </exception>
@@ -5751,6 +6976,9 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidMinimumProtocolVersionException">
         /// The minimum protocol version specified is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginAccessControlException">
+        /// The origin access control is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidOriginAccessIdentityException">
         /// The origin access identity is not valid or doesn't exist.
@@ -5912,34 +7140,34 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.TrustedSignerDoesNotExistException">
         /// One or more of your trusted signers don't exist.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateDistribution">REST API Reference for UpdateDistribution Operation</seealso>
-        UpdateDistributionResponse UpdateDistribution(UpdateDistributionRequest request);
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateDistributionWithStagingConfig">REST API Reference for UpdateDistributionWithStagingConfig Operation</seealso>
+        UpdateDistributionWithStagingConfigResponse UpdateDistributionWithStagingConfig(UpdateDistributionWithStagingConfigRequest request);
 
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateDistribution operation.
+        /// Initiates the asynchronous execution of the UpdateDistributionWithStagingConfig operation.
         /// </summary>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateDistribution operation on AmazonCloudFrontClient.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDistributionWithStagingConfig operation on AmazonCloudFrontClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateDistribution
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateDistributionWithStagingConfig
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateDistribution">REST API Reference for UpdateDistribution Operation</seealso>
-        IAsyncResult BeginUpdateDistribution(UpdateDistributionRequest request, AsyncCallback callback, object state);
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateDistributionWithStagingConfig">REST API Reference for UpdateDistributionWithStagingConfig Operation</seealso>
+        IAsyncResult BeginUpdateDistributionWithStagingConfig(UpdateDistributionWithStagingConfigRequest request, AsyncCallback callback, object state);
 
 
 
         /// <summary>
-        /// Finishes the asynchronous execution of the  UpdateDistribution operation.
+        /// Finishes the asynchronous execution of the  UpdateDistributionWithStagingConfig operation.
         /// </summary>
         /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateDistribution.</param>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateDistributionWithStagingConfig.</param>
         /// 
-        /// <returns>Returns a  UpdateDistributionResult from CloudFront.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateDistribution">REST API Reference for UpdateDistribution Operation</seealso>
-        UpdateDistributionResponse EndUpdateDistribution(IAsyncResult asyncResult);
+        /// <returns>Returns a  UpdateDistributionWithStagingConfigResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateDistributionWithStagingConfig">REST API Reference for UpdateDistributionWithStagingConfig Operation</seealso>
+        UpdateDistributionWithStagingConfigResponse EndUpdateDistributionWithStagingConfig(IAsyncResult asyncResult);
 
         #endregion
         
@@ -6100,12 +7328,12 @@ namespace Amazon.CloudFront
         /// 
         ///  
         /// <para>
-        /// You can update a function’s code or the comment that describes the function. You cannot
-        /// update a function’s name.
+        /// You can update a function's code or the comment that describes the function. You cannot
+        /// update a function's name.
         /// </para>
         ///  
         /// <para>
-        /// To update a function, you provide the function’s name and version (<code>ETag</code>
+        /// To update a function, you provide the function's name and version (<code>ETag</code>
         /// value) along with the updated function code. To get the name and version, you can
         /// use <code>ListFunctions</code> and <code>DescribeFunction</code>.
         /// </para>
@@ -6187,7 +7415,7 @@ namespace Amazon.CloudFront
         ///  </li> <li> 
         /// <para>
         /// Call <code>UpdateKeyGroup</code> with the entire key group object, including the fields
-        /// that you modified and those that you didn’t.
+        /// that you modified and those that you didn't.
         /// </para>
         ///  </li> </ol>
         /// </summary>
@@ -6246,6 +7474,67 @@ namespace Amazon.CloudFront
 
         #endregion
         
+        #region  UpdateOriginAccessControl
+
+
+        /// <summary>
+        /// Updates a CloudFront origin access control.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateOriginAccessControl service method.</param>
+        /// 
+        /// <returns>The response from the UpdateOriginAccessControl service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.IllegalUpdateException">
+        /// The update contains modifications that are not allowed.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <code>If-Match</code> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchOriginAccessControlException">
+        /// The origin access control does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.OriginAccessControlAlreadyExistsException">
+        /// An origin access control with the specified parameters already exists.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <code>false</code>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateOriginAccessControl">REST API Reference for UpdateOriginAccessControl Operation</seealso>
+        UpdateOriginAccessControlResponse UpdateOriginAccessControl(UpdateOriginAccessControlRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateOriginAccessControl operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateOriginAccessControl operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateOriginAccessControl
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateOriginAccessControl">REST API Reference for UpdateOriginAccessControl Operation</seealso>
+        IAsyncResult BeginUpdateOriginAccessControl(UpdateOriginAccessControlRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateOriginAccessControl operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateOriginAccessControl.</param>
+        /// 
+        /// <returns>Returns a  UpdateOriginAccessControlResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateOriginAccessControl">REST API Reference for UpdateOriginAccessControl Operation</seealso>
+        UpdateOriginAccessControlResponse EndUpdateOriginAccessControl(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  UpdateOriginRequestPolicy
 
 
@@ -6270,7 +7559,7 @@ namespace Amazon.CloudFront
         ///  </li> <li> 
         /// <para>
         /// Call <code>UpdateOriginRequestPolicy</code> by providing the entire origin request
-        /// policy configuration, including the fields that you modified and those that you didn’t.
+        /// policy configuration, including the fields that you modified and those that you didn't.
         /// </para>
         ///  </li> </ol>
         /// </summary>
@@ -6433,11 +7722,11 @@ namespace Amazon.CloudFront
         ///  </li> <li> 
         /// <para>
         /// Call this API (<code>UpdateRealtimeLogConfig</code>) by providing the entire real-time
-        /// log configuration, including the parameters that you modified and those that you didn’t.
+        /// log configuration, including the parameters that you modified and those that you didn't.
         /// </para>
         ///  </li> </ol> 
         /// <para>
-        /// You cannot update a real-time log configuration’s <code>Name</code> or <code>ARN</code>.
+        /// You cannot update a real-time log configuration's <code>Name</code> or <code>ARN</code>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateRealtimeLogConfig service method.</param>
@@ -6497,7 +7786,7 @@ namespace Amazon.CloudFront
         /// </para>
         ///  <ol> <li> 
         /// <para>
-        /// Use <code>GetResponseHeadersPolicyConfig</code> to get the current policy’s configuration.
+        /// Use <code>GetResponseHeadersPolicyConfig</code> to get the current policy's configuration.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -6506,7 +7795,7 @@ namespace Amazon.CloudFront
         ///  </li> <li> 
         /// <para>
         /// Call <code>UpdateResponseHeadersPolicy</code>, providing the entire response headers
-        /// policy configuration, including the fields that you modified and those that you didn’t.
+        /// policy configuration, including the fields that you modified and those that you didn't.
         /// </para>
         ///  </li> </ol>
         /// </summary>
@@ -6538,8 +7827,28 @@ namespace Amazon.CloudFront
         /// A response headers policy with this name already exists. You must provide a unique
         /// name. To modify an existing response headers policy, use <code>UpdateResponseHeadersPolicy</code>.
         /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooLongCSPInResponseHeadersPolicyException">
+        /// The length of the <code>Content-Security-Policy</code> header value in the response
+        /// headers policy exceeds the maximum.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyCustomHeadersInResponseHeadersPolicyException">
         /// The number of custom headers in the response headers policy exceeds the maximum.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyRemoveHeadersInResponseHeadersPolicyException">
+        /// The number of headers in <code>RemoveHeadersConfig</code> in the response headers
+        /// policy exceeds the maximum.
         /// 
         ///  
         /// <para>
@@ -6604,6 +7913,9 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
         /// The <code>If-Match</code> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginAccessControlException">
+        /// The origin access control is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidOriginAccessIdentityException">
         /// The origin access identity is not valid or doesn't exist.

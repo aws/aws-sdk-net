@@ -37,6 +37,7 @@ namespace Amazon.CodeGuruReviewer.Model
         private List<string> _analysisTypes = new List<string>();
         private string _associationArn;
         private string _codeReviewArn;
+        private ConfigFileState _configFileState;
         private DateTime? _createdTimeStamp;
         private DateTime? _lastUpdatedTimeStamp;
         private Metrics _metrics;
@@ -53,7 +54,7 @@ namespace Amazon.CodeGuruReviewer.Model
         /// <summary>
         /// Gets and sets the property AnalysisTypes. 
         /// <para>
-        /// They types of analysis performed during a repository analysis or a pull request review.
+        /// The types of analysis performed during a repository analysis or a pull request review.
         /// You can specify either <code>Security</code>, <code>CodeQuality</code>, or both.
         /// </para>
         /// </summary>
@@ -72,10 +73,9 @@ namespace Amazon.CodeGuruReviewer.Model
         /// <summary>
         /// Gets and sets the property AssociationArn. 
         /// <para>
-        ///  The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
-        /// <code>RepositoryAssociation</code> </a> that contains the reviewed source code. You
-        /// can retrieve associated repository ARNs by calling <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
-        /// <code>ListRepositoryAssociations</code> </a>. 
+        /// The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">RepositoryAssociation</a>
+        /// that contains the reviewed source code. You can retrieve associated repository ARNs
+        /// by calling <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">ListRepositoryAssociations</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1600)]
@@ -94,8 +94,8 @@ namespace Amazon.CodeGuruReviewer.Model
         /// <summary>
         /// Gets and sets the property CodeReviewArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">
-        /// <code>CodeReview</code> </a> object. 
+        /// The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a>
+        /// object. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1600)]
@@ -112,9 +112,29 @@ namespace Amazon.CodeGuruReviewer.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ConfigFileState. 
+        /// <para>
+        /// The state of the <code>aws-codeguru-reviewer.yml</code> configuration file that allows
+        /// the configuration of the CodeGuru Reviewer analysis. The file either exists, doesn't
+        /// exist, or exists with errors at the root directory of your repository.
+        /// </para>
+        /// </summary>
+        public ConfigFileState ConfigFileState
+        {
+            get { return this._configFileState; }
+            set { this._configFileState = value; }
+        }
+
+        // Check to see if ConfigFileState property is set
+        internal bool IsSetConfigFileState()
+        {
+            return this._configFileState != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property CreatedTimeStamp. 
         /// <para>
-        ///  The time, in milliseconds since the epoch, when the code review was created. 
+        /// The time, in milliseconds since the epoch, when the code review was created.
         /// </para>
         /// </summary>
         public DateTime CreatedTimeStamp
@@ -132,8 +152,7 @@ namespace Amazon.CodeGuruReviewer.Model
         /// <summary>
         /// Gets and sets the property LastUpdatedTimeStamp. 
         /// <para>
-        ///  The time, in milliseconds since the epoch, when the code review was last updated.
-        /// 
+        /// The time, in milliseconds since the epoch, when the code review was last updated.
         /// </para>
         /// </summary>
         public DateTime LastUpdatedTimeStamp
@@ -151,7 +170,7 @@ namespace Amazon.CodeGuruReviewer.Model
         /// <summary>
         /// Gets and sets the property Metrics. 
         /// <para>
-        ///  The statistics from the code review. 
+        /// The statistics from the code review.
         /// </para>
         /// </summary>
         public Metrics Metrics
@@ -169,7 +188,7 @@ namespace Amazon.CodeGuruReviewer.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        ///  The name of the code review. 
+        /// The name of the code review.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -211,8 +230,7 @@ namespace Amazon.CodeGuruReviewer.Model
         /// <summary>
         /// Gets and sets the property ProviderType. 
         /// <para>
-        ///  The type of repository that contains the reviewed code (for example, GitHub or Bitbucket).
-        /// 
+        /// The type of repository that contains the reviewed code (for example, GitHub or Bitbucket).
         /// </para>
         /// </summary>
         public ProviderType ProviderType
@@ -230,7 +248,7 @@ namespace Amazon.CodeGuruReviewer.Model
         /// <summary>
         /// Gets and sets the property PullRequestId. 
         /// <para>
-        ///  The pull request ID for the code review. 
+        /// The pull request ID for the code review.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -249,7 +267,7 @@ namespace Amazon.CodeGuruReviewer.Model
         /// <summary>
         /// Gets and sets the property RepositoryName. 
         /// <para>
-        ///  The name of the repository. 
+        /// The name of the repository.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -268,7 +286,7 @@ namespace Amazon.CodeGuruReviewer.Model
         /// <summary>
         /// Gets and sets the property SourceCodeType. 
         /// <para>
-        ///  The type of the source code for the code review. 
+        /// The type of the source code for the code review.
         /// </para>
         /// </summary>
         public SourceCodeType SourceCodeType
@@ -290,19 +308,19 @@ namespace Amazon.CodeGuruReviewer.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Completed</code>: The code review is complete. 
+        ///  <code>Completed</code>: The code review is complete.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Pending</code>: The code review started and has not completed or failed. 
+        ///  <code>Pending</code>: The code review started and has not completed or failed.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Failed</code>: The code review failed. 
+        ///  <code>Failed</code>: The code review failed.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Deleting</code>: The code review is being deleted. 
+        ///  <code>Deleting</code>: The code review is being deleted.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -321,7 +339,7 @@ namespace Amazon.CodeGuruReviewer.Model
         /// <summary>
         /// Gets and sets the property StateReason. 
         /// <para>
-        ///  The reason for the state of the code review. 
+        /// The reason for the state of the code review.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=256)]
@@ -340,7 +358,7 @@ namespace Amazon.CodeGuruReviewer.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        ///  The type of code review. 
+        /// The type of code review.
         /// </para>
         /// </summary>
         public Type Type

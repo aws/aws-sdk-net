@@ -34,7 +34,7 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// IpRoute Marshaller
-    /// </summary>       
+    /// </summary>
     public class IpRouteMarshaller : IRequestMarshaller<IpRoute, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static IpRouteMarshaller Instance = new IpRouteMarshaller();
 
     }

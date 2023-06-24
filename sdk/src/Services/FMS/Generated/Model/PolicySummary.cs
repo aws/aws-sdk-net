@@ -37,6 +37,7 @@ namespace Amazon.FMS.Model
         private string _policyArn;
         private string _policyId;
         private string _policyName;
+        private CustomerPolicyStatus _policyStatus;
         private bool? _remediationEnabled;
         private string _resourceType;
         private SecurityServiceType _securityServiceType;
@@ -44,10 +45,20 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property DeleteUnusedFMManagedResources. 
         /// <para>
-        /// Indicates whether Firewall Manager should delete Firewall Manager managed resources,
-        /// such as web ACLs and security groups, when they are not in use by the Firewall Manager
-        /// policy. By default, Firewall Manager doesn't delete unused Firewall Manager managed
-        /// resources. This option is not available for Shield Advanced or WAF Classic policies.
+        /// Indicates whether Firewall Manager should automatically remove protections from resources
+        /// that leave the policy scope and clean up resources that Firewall Manager is managing
+        /// for accounts when those accounts leave policy scope. For example, Firewall Manager
+        /// will disassociate a Firewall Manager managed web ACL from a protected customer resource
+        /// when the customer resource leaves policy scope. 
+        /// </para>
+        ///  
+        /// <para>
+        /// By default, Firewall Manager doesn't remove protections or delete Firewall Manager
+        /// managed resources. 
+        /// </para>
+        ///  
+        /// <para>
+        /// This option is not available for Shield Advanced or WAF Classic policies.
         /// </para>
         /// </summary>
         public bool DeleteUnusedFMManagedResources
@@ -117,6 +128,35 @@ namespace Amazon.FMS.Model
         internal bool IsSetPolicyName()
         {
             return this._policyName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PolicyStatus. 
+        /// <para>
+        /// Indicates whether the policy is in or out of an admin's policy or Region scope.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>ACTIVE</code> - The administrator can manage and delete the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>OUT_OF_ADMIN_SCOPE</code> - The administrator can view the policy, but they
+        /// can't edit or delete the policy. Existing policy protections stay in place. Any new
+        /// resources that come into scope of the policy won't be protected.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public CustomerPolicyStatus PolicyStatus
+        {
+            get { return this._policyStatus; }
+            set { this._policyStatus = value; }
+        }
+
+        // Check to see if PolicyStatus property is set
+        internal bool IsSetPolicyStatus()
+        {
+            return this._policyStatus != null;
         }
 
         /// <summary>

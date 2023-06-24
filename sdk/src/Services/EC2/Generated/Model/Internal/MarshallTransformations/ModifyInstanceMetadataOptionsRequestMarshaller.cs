@@ -78,6 +78,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("InstanceId", StringUtils.FromString(publicRequest.InstanceId));
                 }
+                if(publicRequest.IsSetInstanceMetadataTags())
+                {
+                    request.Parameters.Add("InstanceMetadataTags", StringUtils.FromString(publicRequest.InstanceMetadataTags));
+                }
             }
             return request;
         }

@@ -17,22 +17,22 @@
  * Do not modify this file. This file is generated from the cloudhsmv2-2017-04-28.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
-
+using Amazon.CloudHSMV2.Internal;
 
 namespace Amazon.CloudHSMV2
 {
     /// <summary>
     /// Configuration for accessing Amazon CloudHSMV2 service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonCloudHSMV2Config : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.105");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.147");
 
         private string _userAgent = UserAgentString;
 
@@ -40,8 +40,10 @@ namespace Amazon.CloudHSMV2
         /// Default constructor
         /// </summary>
         public AmazonCloudHSMV2Config()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonCloudHSMV2DefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "cloudhsm";
+            this.EndpointProvider = new AmazonCloudHSMV2EndpointProvider();
         }
 
         /// <summary>
@@ -76,5 +78,6 @@ namespace Amazon.CloudHSMV2
                 return _userAgent;
             }
         }
+
     }
 }

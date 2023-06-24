@@ -39,9 +39,9 @@ namespace Amazon.ECS.Model
     /// When you call the <a>CreateCluster</a> API operation, Amazon ECS attempts to create
     /// the Amazon ECS service-linked role for your account. This is so that it can manage
     /// required resources in other Amazon Web Services services on your behalf. However,
-    /// if the IAM user that makes the call doesn't have permissions to create the service-linked
+    /// if the user that makes the call doesn't have permissions to create the service-linked
     /// role, it isn't created. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
-    /// Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service
+    /// service-linked roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service
     /// Developer Guide</i>.
     /// </para>
     ///  </note>
@@ -52,6 +52,7 @@ namespace Amazon.ECS.Model
         private string _clusterName;
         private ClusterConfiguration _configuration;
         private List<CapacityProviderStrategyItem> _defaultCapacityProviderStrategy = new List<CapacityProviderStrategyItem>();
+        private ClusterServiceConnectDefaultsRequest _serviceConnectDefaults;
         private List<ClusterSetting> _settings = new List<ClusterSetting>();
         private List<Tag> _tags = new List<Tag>();
 
@@ -61,13 +62,16 @@ namespace Amazon.ECS.Model
         /// The short name of one or more capacity providers to associate with the cluster. A
         /// capacity provider must be associated with a cluster before it can be included as part
         /// of the default capacity provider strategy of the cluster or used in a capacity provider
-        /// strategy when calling the <a>CreateService</a> or <a>RunTask</a> actions.
+        /// strategy when calling the <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateService.html">CreateService</a>
+        /// or <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_RunTask.html">RunTask</a>
+        /// actions.
         /// </para>
         ///  
         /// <para>
         /// If specifying a capacity provider that uses an Auto Scaling group, the capacity provider
         /// must be created but not associated with another cluster. New Auto Scaling group capacity
-        /// providers can be created with the <a>CreateCapacityProvider</a> API operation.
+        /// providers can be created with the <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateCapacityProvider.html">CreateCapacityProvider</a>
+        /// API operation.
         /// </para>
         ///  
         /// <para>
@@ -77,8 +81,9 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// The <a>PutClusterCapacityProviders</a> API operation is used to update the list of
-        /// available capacity providers for a cluster after the cluster is created.
+        /// The <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutCapacityProvider.html">PutCapacityProvider</a>
+        /// API operation is used to update the list of available capacity providers for a cluster
+        /// after the cluster is created.
         /// </para>
         /// </summary>
         public List<string> CapacityProviders
@@ -116,7 +121,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Configuration. 
         /// <para>
-        /// The execute command configuration for the cluster.
+        /// The <code>execute</code> command configuration for the cluster.
         /// </para>
         /// </summary>
         public ClusterConfiguration Configuration
@@ -135,9 +140,10 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property DefaultCapacityProviderStrategy. 
         /// <para>
         /// The capacity provider strategy to set as the default for the cluster. After a default
-        /// capacity provider strategy is set for a cluster, when you call the <a>RunTask</a>
-        /// or <a>CreateService</a> APIs with no capacity provider strategy or launch type specified,
-        /// the default capacity provider strategy for the cluster is used.
+        /// capacity provider strategy is set for a cluster, when you call the <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateService.html">CreateService</a>
+        /// or <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_RunTask.html">RunTask</a>
+        /// APIs with no capacity provider strategy or launch type specified, the default capacity
+        /// provider strategy for the cluster is used.
         /// </para>
         ///  
         /// <para>
@@ -158,9 +164,42 @@ namespace Amazon.ECS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ServiceConnectDefaults. 
+        /// <para>
+        /// Use this parameter to set a default Service Connect namespace. After you set a default
+        /// Service Connect namespace, any new services with Service Connect turned on that are
+        /// created in the cluster are added as client services in the namespace. This setting
+        /// only applies to new services that set the <code>enabled</code> parameter to <code>true</code>
+        /// in the <code>ServiceConnectConfiguration</code>. You can set the namespace of each
+        /// service individually in the <code>ServiceConnectConfiguration</code> to override this
+        /// default parameter.
+        /// </para>
+        ///  
+        /// <para>
+        /// Tasks that run in a namespace can use short names to connect to services in the namespace.
+        /// Tasks can connect to services across all of the clusters in the namespace. Tasks connect
+        /// through a managed proxy container that collects logs and metrics for increased visibility.
+        /// Only the tasks that Amazon ECS services create are supported with Service Connect.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service
+        /// Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        public ClusterServiceConnectDefaultsRequest ServiceConnectDefaults
+        {
+            get { return this._serviceConnectDefaults; }
+            set { this._serviceConnectDefaults = value; }
+        }
+
+        // Check to see if ServiceConnectDefaults property is set
+        internal bool IsSetServiceConnectDefaults()
+        {
+            return this._serviceConnectDefaults != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Settings. 
         /// <para>
-        /// The setting to use when creating a cluster. This parameter is used to enable CloudWatch
+        /// The setting to use when creating a cluster. This parameter is used to turn on CloudWatch
         /// Container Insights for a cluster. If this value is specified, it overrides the <code>containerInsights</code>
         /// value set with <a>PutAccountSetting</a> or <a>PutAccountSettingDefault</a>.
         /// </para>

@@ -27,6 +27,7 @@ namespace Amazon.S3.Model
     /// </summary>
     public class S3Object
     {
+        private List<string> _checksumAlgorithm = new List<string>();
         private string eTag;
         private string key;
         private DateTime? lastModified;
@@ -34,6 +35,24 @@ namespace Amazon.S3.Model
         private long? size;
         private S3StorageClass storageClass;
         private string bucketName;
+
+        /// <summary>
+        /// Gets and sets the property ChecksumAlgorithm. 
+        /// <para>
+        /// The algorithm that was used to create a checksum of the object.
+        /// </para>
+        /// </summary>
+        public List<string> ChecksumAlgorithm
+        {
+            get { return this._checksumAlgorithm; }
+            set { this._checksumAlgorithm = value; }
+        }
+
+        // Check to see if ChecksumAlgorithm property is set
+        internal bool IsSetChecksumAlgorithm()
+        {
+            return this._checksumAlgorithm != null && this._checksumAlgorithm.Count > 0;
+        }
 
         /// <summary>
         /// Gets and sets the property ETag. 
@@ -58,7 +77,9 @@ namespace Amazon.S3.Model
         ///  </li> <li> 
         /// <para>
         /// If an object is created by either the Multipart Upload or Part Copy operation, the
-        /// ETag is not an MD5 digest, regardless of the method of encryption.
+        /// ETag is not an MD5 digest, regardless of the method of encryption. If an object is
+        /// larger than 16 MB, the Amazon Web Services Management Console will upload or copy
+        /// that object as a Multipart Upload, and therefore the ETag will not be an MD5 digest.
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -80,7 +80,10 @@ namespace Amazon.LookoutforVision.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ImageStats.
+        /// Gets and sets the property ImageStats. 
+        /// <para>
+        /// Statistics about the images in a dataset.
+        /// </para>
         /// </summary>
         public DatasetImageStats ImageStats
         {

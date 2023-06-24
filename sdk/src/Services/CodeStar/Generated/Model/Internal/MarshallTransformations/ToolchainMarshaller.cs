@@ -34,7 +34,7 @@ namespace Amazon.CodeStar.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Toolchain Marshaller
-    /// </summary>       
+    /// </summary>
     public class ToolchainMarshaller : IRequestMarshaller<Toolchain, JsonMarshallerContext> 
     {
         /// <summary>
@@ -80,7 +80,7 @@ namespace Amazon.CodeStar.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ToolchainMarshaller Instance = new ToolchainMarshaller();
 
     }

@@ -36,6 +36,7 @@ namespace Amazon.CostExplorer.Model
     #endif
     public partial class ResourceNotFoundException : AmazonCostExplorerException
     {
+        private string _resourceName;
 
         /// <summary>
         /// Constructs a new ResourceNotFoundException with the specified error
@@ -97,6 +98,7 @@ namespace Amazon.CostExplorer.Model
         protected ResourceNotFoundException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
+            this.ResourceName = (string)info.GetValue("ResourceName", typeof(string));
         }
 
         /// <summary>
@@ -117,8 +119,25 @@ namespace Amazon.CostExplorer.Model
         public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
         {
             base.GetObjectData(info, context);
+            info.AddValue("ResourceName", this.ResourceName);
         }
 #endif
+
+        /// <summary>
+        /// Gets and sets the property ResourceName.
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string ResourceName
+        {
+            get { return this._resourceName; }
+            set { this._resourceName = value; }
+        }
+
+        // Check to see if ResourceName property is set
+        internal bool IsSetResourceName()
+        {
+            return this._resourceName != null;
+        }
 
     }
 }

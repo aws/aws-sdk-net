@@ -34,7 +34,7 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ArrayProperties Marshaller
-    /// </summary>       
+    /// </summary>
     public class ArrayPropertiesMarshaller : IRequestMarshaller<ArrayProperties, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ArrayPropertiesMarshaller Instance = new ArrayPropertiesMarshaller();
 
     }

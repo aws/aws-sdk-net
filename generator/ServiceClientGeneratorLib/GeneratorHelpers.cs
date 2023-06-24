@@ -11,6 +11,14 @@ namespace ServiceClientGenerator
     {
         public static string DetermineSigner(string signatureVersion, string serviceBasename)
         {
+            switch (serviceBasename)
+            {
+                case "EventBridge":
+                    // we should not continue to add new hardcoded service specific signers
+                    // and instead implement a solution based on a signer selection specification
+                    return "EventBridgeSigner";
+            }
+
             switch (signatureVersion)
             {
                 case "v2":
@@ -23,6 +31,8 @@ namespace ServiceClientGenerator
                     return "Amazon.S3.Internal.S3Signer";
                 case "s3v4":
                     return "S3Signer";
+                case "bearer":
+                    return "BearerTokenSigner";
                 case "":
                     return "NullSigner";
                 default:
@@ -297,7 +307,6 @@ namespace ServiceClientGenerator
         /// 'Result' class suppressed (due to a void return type)
         /// </summary>
         /// <param name="operation"></param>
-        /// <returns></returns>
         public static bool HasSuppressedResult(Operation operation)
         {
             return operation.model.Customizations.ResultGenerationSuppressions.Contains(operation.Name);
@@ -326,8 +335,17 @@ namespace ServiceClientGenerator
         /// </summary>
         /// <param name="param">The name of the parameter name for the constructor</param>
         /// <returns>The parameter as a camel cased name</returns>
-        public static string CamelCaseParam(string param)
+        public static string CamelCaseParam(string param, bool removeUnderscoresAndDashes = false)
         {
+            param = param ?? "";
+
+            if (removeUnderscoresAndDashes)
+            {
+                // handle kebab-case and snake_case
+                param = string.Join("", param.Split('-').Select((s, i) => i == 0 ? s : s.ToUpperFirstCharacter()));
+                param = string.Join("", param.Split('_').Select((s, i) => i == 0 ? s : s.ToUpperFirstCharacter()));
+            }
+
             if (param.Length < 2 || char.IsUpper(param.ToCharArray()[0]) && char.IsLower(param.ToCharArray()[1]))
             {
                 if ((char.ToLower(param.ToCharArray()[0]) + param.Substring(1)).Equals("namespace"))
@@ -337,7 +355,7 @@ namespace ServiceClientGenerator
                 return param.Length < 2 ? param.ToLower() : char.ToLower(param.ToCharArray()[0]) + param.Substring(1);
             }
 
-            // If it gets here it's an accronym
+            // If it gets here it's an acronym
 
             int secondWord = 0;
             for (int i = 0; i < param.ToCharArray().Length - 1; i++)
@@ -380,6 +398,11 @@ namespace ServiceClientGenerator
 
     public static class StringExtensions
     {
+        public static string ToPascalCase(this string s)
+        {
+            return GeneratorHelpers.CamelCaseParam(s, removeUnderscoresAndDashes: true).ToUpperFirstCharacter();
+        }
+
         public static string ToCamelCase(this string s)
         {
             return GeneratorHelpers.CamelCaseParam(s);
@@ -410,6 +433,35 @@ namespace ServiceClientGenerator
             if (s.Length > 1)
                 txt += s.Substring(1);
             return txt;
+        }
+
+        public static string ToNativeType(this string type, bool useNullableTypes = false)
+        {
+            switch (type.ToLower())
+            {
+                case "string": return "string";
+                case "boolean": return "bool" + (useNullableTypes ? "?" : "");
+                default:
+                    throw new Exception("Unsupported type");
+            }
+        }
+
+        public static string ToNativeValue(this JsonData value)
+        {
+            if (value.IsBoolean) return value.ToString().ToLower();
+            if (value.IsString) return $"\"{(string)value}\"";
+            if (value.IsInt) return $"{(int)value}";
+            throw new Exception("Unsupported type");
+        }
+
+        public static string SanitizeQuotes(this string s)
+        {
+            return s.Replace("\"", "\"\"");
+        }
+
+        public static string ToVariableName(this string s)
+        {
+            return s.Replace("-", "_");
         }
     }
 }

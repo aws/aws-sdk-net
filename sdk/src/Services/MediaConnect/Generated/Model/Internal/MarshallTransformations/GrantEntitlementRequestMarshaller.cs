@@ -34,7 +34,7 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// GrantEntitlementRequest Marshaller
-    /// </summary>       
+    /// </summary>
     public class GrantEntitlementRequestMarshaller : IRequestMarshaller<GrantEntitlementRequest, JsonMarshallerContext> 
     {
         /// <summary>
@@ -95,7 +95,7 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static GrantEntitlementRequestMarshaller Instance = new GrantEntitlementRequestMarshaller();
 
     }

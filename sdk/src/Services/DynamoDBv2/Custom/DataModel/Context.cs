@@ -227,6 +227,42 @@ namespace Amazon.DynamoDBv2.DataModel
         }
 
         /// <summary>
+        /// Creates a strongly-typed BatchWrite object, allowing
+        /// a batch-write operation against DynamoDB.
+        /// 
+        /// This is intended for use only when the valuesType is not known at compile-time, for example,
+        /// when hooking into EF's ChangeTracker to record audit logs from EF into DynamoDB.
+        /// 
+        /// In scenarios when the valuesType is known at compile-time, the `BatchWrite<T> CreateBatchWrite<T>()`
+        /// method is generally preferred.
+        /// </summary>
+        /// <param name="valuesType">Type of objects to write</param>
+        /// <returns>Empty strongly-typed BatchWrite object</returns>
+        public BatchWrite<object> CreateBatchWrite(Type valuesType)
+        {
+            return CreateBatchWrite(valuesType, null);
+        }
+
+        /// <summary>
+        /// Creates a strongly-typed BatchWrite object, allowing
+        /// a batch-write operation against DynamoDB.
+        /// 
+        /// This is intended for use only when the valuesType is not known at compile-time, for example,
+        /// when hooking into EF's ChangeTracker to record audit logs from EF into DynamoDB.
+        /// 
+        /// In scenarios when the valuesType is known at compile-time, the 
+        /// `BatchWrite<T> CreateBatchWrite<T>(DynamoDBOperationConfig operationConfig)` method is generally preferred.
+        /// </summary>
+        /// <param name="valuesType">Type of objects to write</param>
+        /// <param name="operationConfig">Config object which can be used to override that table used.</param>
+        /// <returns>Empty strongly-typed BatchWrite object</returns>
+        public BatchWrite<object> CreateBatchWrite(Type valuesType, DynamoDBOperationConfig operationConfig)
+        {
+            DynamoDBFlatConfig config = new DynamoDBFlatConfig(operationConfig, this.Config);
+            return new BatchWrite<object>(this, valuesType, config);
+        }
+
+        /// <summary>
         /// Creates a MultiTableBatchWrite object, composed of multiple
         /// individual BatchWrite objects.
         /// </summary>
@@ -237,6 +273,75 @@ namespace Amazon.DynamoDBv2.DataModel
             return new MultiTableBatchWrite(batches);
         }
 
+        /// <summary>
+        /// Creates a strongly-typed TransactGet object, allowing
+        /// a transactional get operation against DynamoDB.
+        /// </summary>
+        /// <typeparam name="T">Type of objects to get.</typeparam>
+        /// <returns>Empty strongly-typed TransactGet object.</returns>
+        public TransactGet<T> CreateTransactGet<T>()
+        {
+            return CreateTransactGet<T>(null);
+        }
+
+        /// <summary>
+        /// Creates a strongly-typed TransactGet object, allowing
+        /// a transactional get operation against DynamoDB.
+        /// </summary>
+        /// <typeparam name="T">Type of objects to get.</typeparam>
+        /// <param name="operationConfig">Config object which can be used to override that table used.</param>
+        /// <returns>Empty strongly-typed TransactGet object.</returns>
+        public TransactGet<T> CreateTransactGet<T>(DynamoDBOperationConfig operationConfig)
+        {
+            DynamoDBFlatConfig config = new DynamoDBFlatConfig(operationConfig, this.Config);
+            return new TransactGet<T>(this, config);
+        }
+
+        /// <summary>
+        /// Creates a MultiTableTransactGet object, composed of multiple
+        /// individual TransactGet objects.
+        /// </summary>
+        /// <param name="transactionParts">Individual TransactGet objects.</param>
+        /// <returns>Composite MultiTableTransactGet object.</returns>
+        public MultiTableTransactGet CreateMultiTableTransactGet(params TransactGet[] transactionParts)
+        {
+            return new MultiTableTransactGet(transactionParts);
+        }
+
+        /// <summary>
+        /// Creates a strongly-typed TransactWrite object, allowing
+        /// a transactional write operation against DynamoDB.
+        /// </summary>
+        /// <typeparam name="T">Type of objects to write.</typeparam>
+        /// <returns>Empty strongly-typed TransactWrite object.</returns>
+        public TransactWrite<T> CreateTransactWrite<T>()
+        {
+            return CreateTransactWrite<T>(null);
+        }
+
+        /// <summary>
+        /// Creates a strongly-typed TransactWrite object, allowing
+        /// a transactional write operation against DynamoDB.
+        /// </summary>
+        /// <typeparam name="T">Type of objects to write.</typeparam>
+        /// <param name="operationConfig">Config object which can be used to override that table used.</param>
+        /// <returns>Empty strongly-typed TransactWrite object.</returns>
+        public TransactWrite<T> CreateTransactWrite<T>(DynamoDBOperationConfig operationConfig)
+        {
+            DynamoDBFlatConfig config = new DynamoDBFlatConfig(operationConfig, this.Config);
+            return new TransactWrite<T>(this, config);
+        }
+
+        /// <summary>
+        /// Creates a MultiTableTransactWrite object, composed of multiple
+        /// individual TransactWrite objects.
+        /// </summary>
+        /// <param name="transactionParts">Individual TransactWrite objects.</param>
+        /// <returns>Composite MultiTableTransactWrite object.</returns>
+        public MultiTableTransactWrite CreateMultiTableTransactWrite(params TransactWrite[] transactionParts)
+        {
+            return new MultiTableTransactWrite(transactionParts);
+        }
 
         #endregion
 
@@ -272,10 +377,15 @@ namespace Amazon.DynamoDBv2.DataModel
 #if AWS_ASYNC_API 
         private async Task SaveHelperAsync<T>(T value, DynamoDBOperationConfig operationConfig, CancellationToken cancellationToken)
         {
+            await SaveHelperAsync(typeof(T), value, operationConfig, cancellationToken).ConfigureAwait(false);
+        }
+
+        private async Task SaveHelperAsync(Type valueType, object value, DynamoDBOperationConfig operationConfig, CancellationToken cancellationToken)
+        {
             if (value == null) return;
 
             DynamoDBFlatConfig flatConfig = new DynamoDBFlatConfig(operationConfig, this.Config);
-            ItemStorage storage = ObjectToItemStorage(value, false, flatConfig);
+            ItemStorage storage = ObjectToItemStorage(value, valueType, false, flatConfig);
             if (storage == null) return;
 
             Table table = GetTargetTable(storage.Config, flatConfig);

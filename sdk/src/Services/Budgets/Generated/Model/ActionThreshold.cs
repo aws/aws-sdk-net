@@ -55,7 +55,7 @@ namespace Amazon.Budgets.Model
         /// <summary>
         /// Gets and sets the property ActionThresholdValue.
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=40000000000)]
+        [AWSProperty(Required=true, Min=0, Max=15000000000000)]
         public double ActionThresholdValue
         {
             get { return this._actionThresholdValue.GetValueOrDefault(); }

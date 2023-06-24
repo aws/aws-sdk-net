@@ -30,25 +30,50 @@ namespace Amazon.ResilienceHub.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateApp operation.
-    /// Creates a Resilience Hub application. A Resilience Hub application is a collection
+    /// Creates an Resilience Hub application. An Resilience Hub application is a collection
     /// of Amazon Web Services resources structured to prevent and recover Amazon Web Services
-    /// application disruptions. To describe a Resilience Hub application, you provide an
-    /// application name, resources from one or more–up to five–CloudFormation stacks, and
-    /// an appropriate resiliency policy.
+    /// application disruptions. To describe an Resilience Hub application, you provide an
+    /// application name, resources from one or more CloudFormation stacks, Resource Groups,
+    /// Terraform state files, AppRegistry applications, and an appropriate resiliency policy.
+    /// For more information about the number of resources supported per application, see
+    /// <a href="https://docs.aws.amazon.com/general/latest/gr/resiliencehub.html#limits_resiliencehub">Service
+    /// Quotas</a>.
     /// 
-    ///  <pre><code> &lt;p&gt;After you create a Resilience Hub application, you publish it
-    /// so that you can run a resiliency assessment on it. You can then use recommendations
-    /// from the assessment to improve resiliency by running another assessment, comparing
-    /// results, and then iterating the process until you achieve your goals for recovery
-    /// time objective (RTO) and recovery point objective (RPO).&lt;/p&gt; </code></pre>
+    ///  
+    /// <para>
+    /// After you create an Resilience Hub application, you publish it so that you can run
+    /// a resiliency assessment on it. You can then use recommendations from the assessment
+    /// to improve resiliency by running another assessment, comparing results, and then iterating
+    /// the process until you achieve your goals for recovery time objective (RTO) and recovery
+    /// point objective (RPO).
+    /// </para>
     /// </summary>
     public partial class CreateAppRequest : AmazonResilienceHubRequest
     {
+        private AppAssessmentScheduleType _assessmentSchedule;
         private string _clientToken;
         private string _description;
         private string _name;
         private string _policyArn;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
+
+        /// <summary>
+        /// Gets and sets the property AssessmentSchedule. 
+        /// <para>
+        ///  Assessment execution schedule with 'Daily' or 'Disabled' values. 
+        /// </para>
+        /// </summary>
+        public AppAssessmentScheduleType AssessmentSchedule
+        {
+            get { return this._assessmentSchedule; }
+            set { this._assessmentSchedule = value; }
+        }
+
+        // Check to see if AssessmentSchedule property is set
+        internal bool IsSetAssessmentSchedule()
+        {
+            return this._assessmentSchedule != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
@@ -113,9 +138,9 @@ namespace Amazon.ResilienceHub.Model
         /// Gets and sets the property PolicyArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>.
+        /// arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>.
         /// For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
+        /// Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.
         /// </para>
         /// </summary>
         public string PolicyArn
@@ -137,7 +162,7 @@ namespace Amazon.ResilienceHub.Model
         /// Services resource. Each tag consists of a key/value pair.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=50)]
+        [AWSProperty(Sensitive=true, Min=1, Max=50)]
         public Dictionary<string, string> Tags
         {
             get { return this._tags; }

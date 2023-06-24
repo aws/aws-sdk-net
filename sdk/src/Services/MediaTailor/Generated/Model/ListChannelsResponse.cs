@@ -39,7 +39,7 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property Items. 
         /// <para>
-        /// An array of channels that are associated with this account.
+        /// A list of channels that are associated with this account.
         /// </para>
         /// </summary>
         public List<Channel> Items

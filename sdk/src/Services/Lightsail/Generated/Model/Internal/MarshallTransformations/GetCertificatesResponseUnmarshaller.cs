@@ -57,6 +57,12 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                     response.Certificates = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("nextPageToken", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.NextPageToken = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

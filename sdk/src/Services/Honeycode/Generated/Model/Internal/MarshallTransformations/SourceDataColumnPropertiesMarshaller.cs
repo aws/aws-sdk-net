@@ -34,7 +34,7 @@ namespace Amazon.Honeycode.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SourceDataColumnProperties Marshaller
-    /// </summary>       
+    /// </summary>
     public class SourceDataColumnPropertiesMarshaller : IRequestMarshaller<SourceDataColumnProperties, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.Honeycode.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SourceDataColumnPropertiesMarshaller Instance = new SourceDataColumnPropertiesMarshaller();
 
     }

@@ -34,12 +34,12 @@ namespace Amazon.CodeDeploy.Model
     /// <para>
     ///  The newer <code>BatchGetDeploymentTargets</code> should be used instead because it
     /// works with all compute types. <code>ListDeploymentInstances</code> throws an exception
-    /// if it is used with a compute platform other than EC2/On-premises or AWS Lambda. 
+    /// if it is used with a compute platform other than EC2/On-premises or Lambda. 
     /// </para>
     ///  </note> 
     /// <para>
-    ///  Lists the instance for a deployment associated with the IAM user or AWS account.
-    /// 
+    ///  Lists the instance for a deployment associated with the IAM user or Amazon Web Services
+    /// account. 
     /// </para>
     /// </summary>
     public partial class ListDeploymentInstancesRequest : AmazonCodeDeployRequest

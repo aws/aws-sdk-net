@@ -67,6 +67,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         response.EnableDnsSupport = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("enableNetworkAddressUsageMetrics/value", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        response.EnableNetworkAddressUsageMetrics = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("vpcId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

@@ -30,7 +30,7 @@ namespace Amazon.Mgn.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeJobLogItems operation.
-    /// Retrieves detailed Job log with paging.
+    /// Retrieves detailed job log items with paging.
     /// </summary>
     public partial class DescribeJobLogItemsRequest : AmazonMgnRequest
     {
@@ -63,7 +63,7 @@ namespace Amazon.Mgn.Model
         /// Request to describe Job log item maximum results.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
+        [AWSProperty(Min=1, Max=1000)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

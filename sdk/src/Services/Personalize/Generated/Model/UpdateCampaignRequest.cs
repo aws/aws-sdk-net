@@ -36,16 +36,19 @@ namespace Amazon.Personalize.Model
     ///  
     /// <para>
     /// To update a campaign, the campaign status must be ACTIVE or CREATE FAILED. Check the
-    /// campaign status using the <a>DescribeCampaign</a> API.
+    /// campaign status using the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeCampaign.html">DescribeCampaign</a>
+    /// operation.
     /// </para>
     ///  <note> 
     /// <para>
-    /// You must wait until the <code>status</code> of the updated campaign is <code>ACTIVE</code>
-    /// before asking the campaign for recommendations.
+    /// You can still get recommendations from a campaign while an update is in progress.
+    /// The campaign will use the previous solution version and campaign configuration to
+    /// generate recommendations until the latest campaign update status is <code>Active</code>.
+    /// 
     /// </para>
     ///  </note> 
     /// <para>
-    /// For more information on campaigns, see <a>CreateCampaign</a>.
+    /// For more information on campaigns, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateCampaign.html">CreateCampaign</a>.
     /// </para>
     /// </summary>
     public partial class UpdateCampaignRequest : AmazonPersonalizeRequest
@@ -96,7 +99,10 @@ namespace Amazon.Personalize.Model
         /// Gets and sets the property MinProvisionedTPS. 
         /// <para>
         /// Specifies the requested minimum provisioned transactions (recommendations) per second
-        /// that Amazon Personalize will support.
+        /// that Amazon Personalize will support. A high <code>minProvisionedTPS</code> will increase
+        /// your bill. We recommend starting with 1 for <code>minProvisionedTPS</code> (the default).
+        /// Track your usage using Amazon CloudWatch metrics, and increase the <code>minProvisionedTPS</code>
+        /// as necessary.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

@@ -54,6 +54,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("additionalAccountSet/item", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.AdditionalAccounts.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("alternatePathHintSet/item", targetDepth))
                     {
                         var unmarshaller = AlternatePathHintUnmarshaller.Instance;
@@ -129,6 +136,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.StatusMessage = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("suggestedAccountSet/item", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.SuggestedAccounts.Add(item);
                         continue;
                     }
                     if (context.TestExpression("tagSet/item", targetDepth))

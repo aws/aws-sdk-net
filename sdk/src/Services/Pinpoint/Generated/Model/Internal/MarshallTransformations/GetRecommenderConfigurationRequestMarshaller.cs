@@ -55,7 +55,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         public IRequest Marshall(GetRecommenderConfigurationRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Pinpoint");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-12-01";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-12-01";
             request.HttpMethod = "GET";
 
             if (!publicRequest.IsSetRecommenderId())

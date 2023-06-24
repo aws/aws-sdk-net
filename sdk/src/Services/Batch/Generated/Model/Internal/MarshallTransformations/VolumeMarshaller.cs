@@ -34,7 +34,7 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Volume Marshaller
-    /// </summary>       
+    /// </summary>
     public class VolumeMarshaller : IRequestMarshaller<Volume, JsonMarshallerContext> 
     {
         /// <summary>
@@ -77,7 +77,7 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static VolumeMarshaller Instance = new VolumeMarshaller();
 
     }

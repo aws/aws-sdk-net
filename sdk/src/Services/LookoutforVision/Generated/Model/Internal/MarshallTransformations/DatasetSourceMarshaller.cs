@@ -34,7 +34,7 @@ namespace Amazon.LookoutforVision.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DatasetSource Marshaller
-    /// </summary>       
+    /// </summary>
     public class DatasetSourceMarshaller : IRequestMarshaller<DatasetSource, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.LookoutforVision.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DatasetSourceMarshaller Instance = new DatasetSourceMarshaller();
 
     }

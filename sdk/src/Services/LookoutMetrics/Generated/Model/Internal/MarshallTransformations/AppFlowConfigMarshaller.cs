@@ -34,7 +34,7 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AppFlowConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class AppFlowConfigMarshaller : IRequestMarshaller<AppFlowConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AppFlowConfigMarshaller Instance = new AppFlowConfigMarshaller();
 
     }

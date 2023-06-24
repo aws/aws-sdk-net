@@ -34,7 +34,7 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SecretsManagerSecretResourceData Marshaller
-    /// </summary>       
+    /// </summary>
     public class SecretsManagerSecretResourceDataMarshaller : IRequestMarshaller<SecretsManagerSecretResourceData, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SecretsManagerSecretResourceDataMarshaller Instance = new SecretsManagerSecretResourceDataMarshaller();
 
     }

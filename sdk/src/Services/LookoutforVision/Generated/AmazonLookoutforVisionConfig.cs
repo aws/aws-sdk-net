@@ -17,22 +17,22 @@
  * Do not modify this file. This file is generated from the lookoutvision-2020-11-20.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
-
+using Amazon.LookoutforVision.Internal;
 
 namespace Amazon.LookoutforVision
 {
     /// <summary>
     /// Configuration for accessing Amazon LookoutforVision service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonLookoutforVisionConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.105");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.147");
 
         private string _userAgent = UserAgentString;
 
@@ -40,8 +40,10 @@ namespace Amazon.LookoutforVision
         /// Default constructor
         /// </summary>
         public AmazonLookoutforVisionConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonLookoutforVisionDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "lookoutvision";
+            this.EndpointProvider = new AmazonLookoutforVisionEndpointProvider();
         }
 
         /// <summary>
@@ -76,5 +78,6 @@ namespace Amazon.LookoutforVision
                 return _userAgent;
             }
         }
+
     }
 }

@@ -34,7 +34,7 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RemediationParameterValue Marshaller
-    /// </summary>       
+    /// </summary>
     public class RemediationParameterValueMarshaller : IRequestMarshaller<RemediationParameterValue, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RemediationParameterValueMarshaller Instance = new RemediationParameterValueMarshaller();
 
     }

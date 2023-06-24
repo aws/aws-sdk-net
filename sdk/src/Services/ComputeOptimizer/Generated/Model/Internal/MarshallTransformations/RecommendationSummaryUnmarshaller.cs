@@ -76,6 +76,12 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
                     unmarshalledObject.CurrentPerformanceRiskRatings = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("inferredWorkloadSavings", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<InferredWorkloadSaving, InferredWorkloadSavingUnmarshaller>(InferredWorkloadSavingUnmarshaller.Instance);
+                    unmarshalledObject.InferredWorkloadSavings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("recommendationResourceType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

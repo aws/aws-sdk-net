@@ -33,8 +33,10 @@ namespace Amazon.Mgn.Model
     /// </summary>
     public partial class StartReplicationResponse : AmazonWebServiceResponse
     {
+        private string _applicationid;
         private string _arn;
         private DataReplicationInfo _dataReplicationInfo;
+        private string _fqdnForActionFramework;
         private bool? _isArchived;
         private LaunchedInstance _launchedInstance;
         private LifeCycle _lifeCycle;
@@ -42,7 +44,27 @@ namespace Amazon.Mgn.Model
         private SourceProperties _sourceProperties;
         private string _sourceServerID;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private string _userProvidedID;
         private string _vcenterClientID;
+
+        /// <summary>
+        /// Gets and sets the property ApplicationID. 
+        /// <para>
+        /// Source server application ID.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=21, Max=21)]
+        public string ApplicationID
+        {
+            get { return this._applicationid; }
+            set { this._applicationid = value; }
+        }
+
+        // Check to see if ApplicationID property is set
+        internal bool IsSetApplicationID()
+        {
+            return this._applicationid != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -79,6 +101,25 @@ namespace Amazon.Mgn.Model
         internal bool IsSetDataReplicationInfo()
         {
             return this._dataReplicationInfo != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FqdnForActionFramework. 
+        /// <para>
+        /// Source server fqdn for action framework.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=256)]
+        public string FqdnForActionFramework
+        {
+            get { return this._fqdnForActionFramework; }
+            set { this._fqdnForActionFramework = value; }
+        }
+
+        // Check to see if FqdnForActionFramework property is set
+        internal bool IsSetFqdnForActionFramework()
+        {
+            return this._fqdnForActionFramework != null;
         }
 
         /// <summary>
@@ -196,6 +237,7 @@ namespace Amazon.Mgn.Model
         /// Source server Tags.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public Dictionary<string, string> Tags
         {
             get { return this._tags; }
@@ -206,6 +248,25 @@ namespace Amazon.Mgn.Model
         internal bool IsSetTags()
         {
             return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UserProvidedID. 
+        /// <para>
+        /// Source server user provided ID.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=256)]
+        public string UserProvidedID
+        {
+            get { return this._userProvidedID; }
+            set { this._userProvidedID = value; }
+        }
+
+        // Check to see if UserProvidedID property is set
+        internal bool IsSetUserProvidedID()
+        {
+            return this._userProvidedID != null;
         }
 
         /// <summary>

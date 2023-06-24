@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CostExplorer.Model
 {
     /// <summary>
-    /// Details on the resource.
+    /// Details for the resource.
     /// </summary>
     public partial class ResourceDetails
     {
@@ -38,7 +38,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property EC2ResourceDetails. 
         /// <para>
-        /// Details on the Amazon EC2 resource.
+        /// Details for the Amazon EC2 resource.
         /// </para>
         /// </summary>
         public EC2ResourceDetails EC2ResourceDetails

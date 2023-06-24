@@ -32,7 +32,7 @@ namespace Amazon.S3Control.Model
     /// Container for the parameters to the ListJobs operation.
     /// Lists current S3 Batch Operations jobs and jobs that have ended within the last 30
     /// days for the Amazon Web Services account making the request. For more information,
-    /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">S3
+    /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/batch-ops.html">S3
     /// Batch Operations</a> in the <i>Amazon S3 User Guide</i>.
     /// 
     ///  

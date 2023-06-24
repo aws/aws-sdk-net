@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ResourceConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class ResourceConfigMarshaller : IRequestMarshaller<ResourceConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -51,10 +51,32 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.InstanceCount);
             }
 
+            if(requestObject.IsSetInstanceGroups())
+            {
+                context.Writer.WritePropertyName("InstanceGroups");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectInstanceGroupsListValue in requestObject.InstanceGroups)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = InstanceGroupMarshaller.Instance;
+                    marshaller.Marshall(requestObjectInstanceGroupsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetInstanceType())
             {
                 context.Writer.WritePropertyName("InstanceType");
                 context.Writer.Write(requestObject.InstanceType);
+            }
+
+            if(requestObject.IsSetKeepAlivePeriodInSeconds())
+            {
+                context.Writer.WritePropertyName("KeepAlivePeriodInSeconds");
+                context.Writer.Write(requestObject.KeepAlivePeriodInSeconds);
             }
 
             if(requestObject.IsSetVolumeKmsKeyId())
@@ -73,7 +95,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ResourceConfigMarshaller Instance = new ResourceConfigMarshaller();
 
     }

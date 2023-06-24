@@ -34,7 +34,7 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// HttpDataSourceConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class HttpDataSourceConfigMarshaller : IRequestMarshaller<HttpDataSourceConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static HttpDataSourceConfigMarshaller Instance = new HttpDataSourceConfigMarshaller();
 
     }

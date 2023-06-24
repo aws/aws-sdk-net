@@ -56,7 +56,7 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.WorkSpacesWeb");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-07-08";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-07-08";
             request.HttpMethod = "PATCH";
 
             if (!publicRequest.IsSetIdentityProviderArn())
@@ -77,7 +77,7 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
                 else if(!(publicRequest.IsSetClientToken()))
                 {
                     context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());                                                
+                    context.Writer.Write(Guid.NewGuid().ToString());
                 }
                 if(publicRequest.IsSetIdentityProviderDetails())
                 {
@@ -105,7 +105,6 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.IdentityProviderType);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

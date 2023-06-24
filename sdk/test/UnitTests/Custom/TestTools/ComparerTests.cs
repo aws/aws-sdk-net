@@ -45,7 +45,7 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
 
         [TestMethod][TestCategory("UnitTest")]
         public void TestBasicComparisions()
-        {           
+        {   
             Comparer.CompareObjects<string>(null, null);
 
             Utils.AssertExceptionExpected(()=>Comparer.CompareObjects<string>(null, string.Empty));

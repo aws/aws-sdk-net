@@ -83,8 +83,8 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The identifier of the Amazon Connect instance. You can find the instanceId in the
-        /// ARN of the instance.
+        /// The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+        /// the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
@@ -145,6 +145,14 @@ namespace Amazon.Connect.Model
         /// The inbound queues associated with the routing profile. If no queue is added, the
         /// agent can make only outbound calls.
         /// </para>
+        ///  
+        /// <para>
+        /// The limit of 10 array members applies to the maximum number of <code>RoutingProfileQueueConfig</code>
+        /// objects that can be passed during a CreateRoutingProfile API request. It is different
+        /// from the quota of 50 queues per routing profile per instance that is listed in <a
+        /// href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon
+        /// Connect service quotas</a>. 
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
         public List<RoutingProfileQueueConfig> QueueConfigs
@@ -162,7 +170,8 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// One or more tags.
+        /// The tags used to organize, track, or control access for this resource. For example,
+        /// { "tags": {"key1":"value1", "key2":"value2"} }.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

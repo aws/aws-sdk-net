@@ -55,7 +55,7 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
         public IRequest Marshall(GetChannelMembershipPreferencesRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ChimeSDKMessaging");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-05-15";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-05-15";
             request.HttpMethod = "GET";
 
             if (!publicRequest.IsSetChannelArn())
@@ -66,8 +66,10 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
             request.AddPathResource("{memberArn}", StringUtils.FromString(publicRequest.MemberArn));
             request.ResourcePath = "/channels/{channelArn}/memberships/{memberArn}/preferences";
         
-            if(publicRequest.IsSetChimeBearer())
+            if (publicRequest.IsSetChimeBearer()) 
+            {
                 request.Headers["x-amz-chime-bearer"] = publicRequest.ChimeBearer;
+            }
 
             return request;
         }

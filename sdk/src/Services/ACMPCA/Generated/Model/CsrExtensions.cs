@@ -59,7 +59,7 @@ namespace Amazon.ACMPCA.Model
         /// Gets and sets the property SubjectInformationAccess. 
         /// <para>
         /// For CA certificates, provides a path to additional information pertaining to the CA,
-        /// such as revocation and policy. For more information, see <a href="https://tools.ietf.org/html/rfc5280#section-4.2.2.2">Subject
+        /// such as revocation and policy. For more information, see <a href="https://datatracker.ietf.org/doc/html/rfc5280#section-4.2.2.2">Subject
         /// Information Access</a> in RFC 5280.
         /// </para>
         /// </summary>

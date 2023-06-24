@@ -31,7 +31,8 @@ namespace Amazon.CostExplorer.Model
     /// <summary>
     /// Container for the parameters to the GetAnomalies operation.
     /// Retrieves all of the cost anomalies detected on your account during the time period
-    /// that's specified by the <code>DateInterval</code> object.
+    /// that's specified by the <code>DateInterval</code> object. Anomalies are available
+    /// for up to 90 days.
     /// </summary>
     public partial class GetAnomaliesRequest : AmazonCostExplorerRequest
     {

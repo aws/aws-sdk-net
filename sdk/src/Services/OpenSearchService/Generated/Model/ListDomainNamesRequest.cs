@@ -30,7 +30,8 @@ namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
     /// Container for the parameters to the ListDomainNames operation.
-    /// Returns the names of all domains owned by the current user's account.
+    /// Returns the names of all Amazon OpenSearch Service domains owned by the current user
+    /// in the active Region.
     /// </summary>
     public partial class ListDomainNamesRequest : AmazonOpenSearchServiceRequest
     {
@@ -39,8 +40,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property EngineType. 
         /// <para>
-        ///  Optional parameter to filter the output by domain engine type. Acceptable values
-        /// are 'Elasticsearch' and 'OpenSearch'. 
+        /// Filters the output by domain engine type.
         /// </para>
         /// </summary>
         public EngineType EngineType

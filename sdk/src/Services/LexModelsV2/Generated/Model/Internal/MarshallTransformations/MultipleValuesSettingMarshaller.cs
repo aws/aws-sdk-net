@@ -34,7 +34,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// MultipleValuesSetting Marshaller
-    /// </summary>       
+    /// </summary>
     public class MultipleValuesSettingMarshaller : IRequestMarshaller<MultipleValuesSetting, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static MultipleValuesSettingMarshaller Instance = new MultipleValuesSettingMarshaller();
 
     }

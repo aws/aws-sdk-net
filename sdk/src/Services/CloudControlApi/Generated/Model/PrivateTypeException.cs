@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudControlApi.Model
 {
     /// <summary>
-    /// Cloud Control API has not received a valid response from the resource handler, due
+    /// Cloud Control API hasn't received a valid response from the resource handler, due
     /// to a configuration error. This includes issues such as the resource handler returning
     /// an invalid response, or timing out.
     /// </summary>

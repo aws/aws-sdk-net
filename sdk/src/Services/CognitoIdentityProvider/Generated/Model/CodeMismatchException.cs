@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// This exception is thrown if the provided code does not match what the server was expecting.
+    /// This exception is thrown if the provided code doesn't match what the server was expecting.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

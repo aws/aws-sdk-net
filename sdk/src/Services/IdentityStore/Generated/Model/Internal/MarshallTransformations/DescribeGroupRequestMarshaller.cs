@@ -58,7 +58,7 @@ namespace Amazon.IdentityStore.Model.Internal.MarshallTransformations
             string target = "AWSIdentityStore.DescribeGroup";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-06-15";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-06-15";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -79,7 +79,6 @@ namespace Amazon.IdentityStore.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.IdentityStoreId);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

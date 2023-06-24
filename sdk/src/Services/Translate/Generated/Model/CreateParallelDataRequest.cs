@@ -42,6 +42,7 @@ namespace Amazon.Translate.Model
         private EncryptionKey _encryptionKey;
         private string _name;
         private ParallelDataConfig _parallelDataConfig;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
@@ -134,6 +135,28 @@ namespace Amazon.Translate.Model
         internal bool IsSetParallelDataConfig()
         {
             return this._parallelDataConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// Tags to be associated with this resource. A tag is a key-value pair that adds metadata
+        /// to a resource. Each tag key for the resource must be unique. For more information,
+        /// see <a href="https://docs.aws.amazon.com/translate/latest/dg/tagging.html"> Tagging
+        /// your resources</a>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=200)]
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

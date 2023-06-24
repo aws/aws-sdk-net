@@ -100,6 +100,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.Mode = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ModelDataSource", targetDepth))
+                {
+                    var unmarshaller = ModelDataSourceUnmarshaller.Instance;
+                    unmarshalledObject.ModelDataSource = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ModelDataUrl", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

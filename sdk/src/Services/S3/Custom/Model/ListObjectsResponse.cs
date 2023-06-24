@@ -34,6 +34,7 @@ namespace Amazon.S3.Model
         private int? maxKeys;
         private List<string> commonPrefixes = new List<string>();
         private string delimiter;
+        private RequestCharged _requestCharged;
 
         /// <summary>
         /// A flag that indicates whether or not Amazon S3 returned all of the results that satisfied 
@@ -129,6 +130,21 @@ namespace Amazon.S3.Model
         internal bool IsSetPrefix()
         {
             return this.prefix != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RequestCharged.
+        /// </summary>
+        public RequestCharged RequestCharged
+        {
+            get { return this._requestCharged; }
+            set { this._requestCharged = value; }
+        }
+
+        // Check to see if RequestCharged property is set
+        internal bool IsSetRequestCharged()
+        {
+            return this._requestCharged != null;
         }
 
         /// <summary>

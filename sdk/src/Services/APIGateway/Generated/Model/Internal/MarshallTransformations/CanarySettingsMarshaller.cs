@@ -34,7 +34,7 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CanarySettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class CanarySettingsMarshaller : IRequestMarshaller<CanarySettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -81,7 +81,7 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CanarySettingsMarshaller Instance = new CanarySettingsMarshaller();
 
     }

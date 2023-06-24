@@ -34,7 +34,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// HoursOfOperationConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class HoursOfOperationConfigMarshaller : IRequestMarshaller<HoursOfOperationConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -77,7 +77,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static HoursOfOperationConfigMarshaller Instance = new HoursOfOperationConfigMarshaller();
 
     }

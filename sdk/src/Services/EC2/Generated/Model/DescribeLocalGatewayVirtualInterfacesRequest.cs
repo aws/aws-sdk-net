@@ -44,6 +44,41 @@ namespace Amazon.EC2.Model
         /// <para>
         /// One or more filters.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>local-address</code> - The local address.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>local-bgp-asn</code> - The Border Gateway Protocol (BGP) Autonomous System
+        /// Number (ASN) of the local gateway.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>local-gateway-id</code> - The ID of the local gateway.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>local-gateway-virtual-interface-id</code> - The ID of the virtual interface.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>owner-id</code> - The ID of the Amazon Web Services account that owns the local
+        /// gateway virtual interface.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>peer-address</code> - The peer address.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>peer-bgp-asn</code> - The peer BGP ASN.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>vlan</code> - The ID of the VLAN.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public List<Filter> Filters
         {

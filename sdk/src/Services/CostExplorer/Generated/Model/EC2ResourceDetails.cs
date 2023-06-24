@@ -199,7 +199,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property Vcpu. 
         /// <para>
-        ///  The number of VCPU cores in the Amazon Web Services instance type.
+        /// The number of VCPU cores in the Amazon Web Services instance type.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]

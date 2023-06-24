@@ -34,7 +34,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ProvisioningHook Marshaller
-    /// </summary>       
+    /// </summary>
     public class ProvisioningHookMarshaller : IRequestMarshaller<ProvisioningHook, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ProvisioningHookMarshaller Instance = new ProvisioningHookMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SalesforceStandardKnowledgeArticleTypeConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class SalesforceStandardKnowledgeArticleTypeConfigurationMarshaller : IRequestMarshaller<SalesforceStandardKnowledgeArticleTypeConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -77,7 +77,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SalesforceStandardKnowledgeArticleTypeConfigurationMarshaller Instance = new SalesforceStandardKnowledgeArticleTypeConfigurationMarshaller();
 
     }

@@ -38,7 +38,7 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property ServiceTemplateVersion. 
         /// <para>
-        /// The service template version detail data that's returned by Proton.
+        /// The detailed data of the service template version being deleted.
         /// </para>
         /// </summary>
         public ServiceTemplateVersion ServiceTemplateVersion

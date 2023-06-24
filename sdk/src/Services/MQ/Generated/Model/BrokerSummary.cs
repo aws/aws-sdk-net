@@ -81,9 +81,9 @@ namespace Amazon.MQ.Model
         /// <summary>
         /// Gets and sets the property BrokerName. 
         /// <para>
-        /// The broker's name. This value is unique in your AWS account, 1-50 characters long,
-        /// and containing only letters, numbers, dashes, and underscores, and must not contain
-        /// white spaces, brackets, wildcard characters, or special characters.
+        /// The broker's name. This value is unique in your Amazon Web Services account, 1-50
+        /// characters long, and containing only letters, numbers, dashes, and underscores, and
+        /// must not contain white spaces, brackets, wildcard characters, or special characters.
         /// </para>
         /// </summary>
         public string BrokerName

@@ -35,12 +35,9 @@ namespace Amazon.AutoScaling.Model
     ///  
     /// <para>
     /// If the group has instances or scaling activities in progress, you must specify the
-    /// option to force the deletion in order for it to succeed.
-    /// </para>
-    ///  
-    /// <para>
-    /// If the group has policies, deleting the group deletes the policies, the underlying
-    /// alarm actions, and any alarm that no longer has an associated action.
+    /// option to force the deletion in order for it to succeed. The force delete operation
+    /// will also terminate the EC2 instances. If the group has a warm pool, the force delete
+    /// option also deletes the warm pool.
     /// </para>
     ///  
     /// <para>
@@ -52,6 +49,16 @@ namespace Amazon.AutoScaling.Model
     /// <para>
     /// To terminate all instances before deleting the Auto Scaling group, call the <a>UpdateAutoScalingGroup</a>
     /// API and set the minimum size and desired capacity of the Auto Scaling group to zero.
+    /// </para>
+    ///  
+    /// <para>
+    /// If the group has scaling policies, deleting the group deletes the policies, the underlying
+    /// alarm actions, and any alarm that no longer has an associated action.
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-process-shutdown.html">Delete
+    /// your Auto Scaling infrastructure</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
     /// </para>
     /// </summary>
     public partial class DeleteAutoScalingGroupRequest : AmazonAutoScalingRequest
@@ -82,8 +89,8 @@ namespace Amazon.AutoScaling.Model
         /// Gets and sets the property ForceDelete. 
         /// <para>
         /// Specifies that the group is to be deleted along with all instances associated with
-        /// the group, without waiting for all instances to be terminated. This parameter also
-        /// deletes any outstanding lifecycle actions associated with the group.
+        /// the group, without waiting for all instances to be terminated. This action also deletes
+        /// any outstanding lifecycle actions associated with the group.
         /// </para>
         /// </summary>
         public bool ForceDelete

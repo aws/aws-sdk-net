@@ -40,7 +40,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property Message. 
         /// <para>
-        /// The raw event message.
+        /// The raw event message. Each log event can be no larger than 256 KB.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
@@ -59,8 +59,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property Timestamp. 
         /// <para>
-        /// The time the event occurred, expressed as the number of milliseconds after Jan 1,
-        /// 1970 00:00:00 UTC.
+        /// The time the event occurred, expressed as the number of milliseconds after <code>Jan
+        /// 1, 1970 00:00:00 UTC</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]

@@ -48,8 +48,8 @@ namespace Amazon.Synthetics.Model
         /// <summary>
         /// Gets and sets the property BaseCanaryRunId. 
         /// <para>
-        /// The ID of the canary run that produced the screenshots that are used as the baseline
-        /// for visual monitoring comparisons during future runs of this canary.
+        /// The ID of the canary run that produced the baseline screenshots that are used for
+        /// visual monitoring comparisons by this canary.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

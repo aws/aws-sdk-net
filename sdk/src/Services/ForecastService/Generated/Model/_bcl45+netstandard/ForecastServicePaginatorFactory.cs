@@ -60,6 +60,22 @@ namespace Amazon.ForecastService.Model
         }
 
         /// <summary>
+        /// Paginator for ListExplainabilities operation
+        ///</summary>
+        public IListExplainabilitiesPaginator ListExplainabilities(ListExplainabilitiesRequest request) 
+        {
+            return new ListExplainabilitiesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListExplainabilityExports operation
+        ///</summary>
+        public IListExplainabilityExportsPaginator ListExplainabilityExports(ListExplainabilityExportsRequest request) 
+        {
+            return new ListExplainabilityExportsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListForecastExportJobs operation
         ///</summary>
         public IListForecastExportJobsPaginator ListForecastExportJobs(ListForecastExportJobsRequest request) 
@@ -76,6 +92,22 @@ namespace Amazon.ForecastService.Model
         }
 
         /// <summary>
+        /// Paginator for ListMonitorEvaluations operation
+        ///</summary>
+        public IListMonitorEvaluationsPaginator ListMonitorEvaluations(ListMonitorEvaluationsRequest request) 
+        {
+            return new ListMonitorEvaluationsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListMonitors operation
+        ///</summary>
+        public IListMonitorsPaginator ListMonitors(ListMonitorsRequest request) 
+        {
+            return new ListMonitorsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListPredictorBacktestExportJobs operation
         ///</summary>
         public IListPredictorBacktestExportJobsPaginator ListPredictorBacktestExportJobs(ListPredictorBacktestExportJobsRequest request) 
@@ -89,6 +121,30 @@ namespace Amazon.ForecastService.Model
         public IListPredictorsPaginator ListPredictors(ListPredictorsRequest request) 
         {
             return new ListPredictorsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListWhatIfAnalyses operation
+        ///</summary>
+        public IListWhatIfAnalysesPaginator ListWhatIfAnalyses(ListWhatIfAnalysesRequest request) 
+        {
+            return new ListWhatIfAnalysesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListWhatIfForecastExports operation
+        ///</summary>
+        public IListWhatIfForecastExportsPaginator ListWhatIfForecastExports(ListWhatIfForecastExportsRequest request) 
+        {
+            return new ListWhatIfForecastExportsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListWhatIfForecasts operation
+        ///</summary>
+        public IListWhatIfForecastsPaginator ListWhatIfForecasts(ListWhatIfForecastsRequest request) 
+        {
+            return new ListWhatIfForecastsPaginator(this.client, request);
         }
     }
 }

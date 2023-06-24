@@ -34,7 +34,7 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ComputeResourceUpdate Marshaller
-    /// </summary>       
+    /// </summary>
     public class ComputeResourceUpdateMarshaller : IRequestMarshaller<ComputeResourceUpdate, JsonMarshallerContext> 
     {
         /// <summary>
@@ -45,10 +45,78 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ComputeResourceUpdate requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAllocationStrategy())
+            {
+                context.Writer.WritePropertyName("allocationStrategy");
+                context.Writer.Write(requestObject.AllocationStrategy);
+            }
+
+            if(requestObject.IsSetBidPercentage())
+            {
+                context.Writer.WritePropertyName("bidPercentage");
+                context.Writer.Write(requestObject.BidPercentage);
+            }
+
             if(requestObject.IsSetDesiredvCpus())
             {
                 context.Writer.WritePropertyName("desiredvCpus");
                 context.Writer.Write(requestObject.DesiredvCpus);
+            }
+
+            if(requestObject.IsSetEc2Configuration())
+            {
+                context.Writer.WritePropertyName("ec2Configuration");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectEc2ConfigurationListValue in requestObject.Ec2Configuration)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = Ec2ConfigurationMarshaller.Instance;
+                    marshaller.Marshall(requestObjectEc2ConfigurationListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetEc2KeyPair())
+            {
+                context.Writer.WritePropertyName("ec2KeyPair");
+                context.Writer.Write(requestObject.Ec2KeyPair);
+            }
+
+            if(requestObject.IsSetImageId())
+            {
+                context.Writer.WritePropertyName("imageId");
+                context.Writer.Write(requestObject.ImageId);
+            }
+
+            if(requestObject.IsSetInstanceRole())
+            {
+                context.Writer.WritePropertyName("instanceRole");
+                context.Writer.Write(requestObject.InstanceRole);
+            }
+
+            if(requestObject.IsSetInstanceTypes())
+            {
+                context.Writer.WritePropertyName("instanceTypes");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectInstanceTypesListValue in requestObject.InstanceTypes)
+                {
+                        context.Writer.Write(requestObjectInstanceTypesListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetLaunchTemplate())
+            {
+                context.Writer.WritePropertyName("launchTemplate");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = LaunchTemplateSpecificationMarshaller.Instance;
+                marshaller.Marshall(requestObject.LaunchTemplate, context);
+
+                context.Writer.WriteObjectEnd();
             }
 
             if(requestObject.IsSetMaxvCpus())
@@ -61,6 +129,12 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("minvCpus");
                 context.Writer.Write(requestObject.MinvCpus);
+            }
+
+            if(requestObject.IsSetPlacementGroup())
+            {
+                context.Writer.WritePropertyName("placementGroup");
+                context.Writer.Write(requestObject.PlacementGroup);
             }
 
             if(requestObject.IsSetSecurityGroupIds())
@@ -85,11 +159,37 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetTags())
+            {
+                context.Writer.WritePropertyName("tags");
+                context.Writer.WriteObjectStart();
+                foreach (var requestObjectTagsKvp in requestObject.Tags)
+                {
+                    context.Writer.WritePropertyName(requestObjectTagsKvp.Key);
+                    var requestObjectTagsValue = requestObjectTagsKvp.Value;
+
+                        context.Writer.Write(requestObjectTagsValue);
+                }
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetType())
+            {
+                context.Writer.WritePropertyName("type");
+                context.Writer.Write(requestObject.Type);
+            }
+
+            if(requestObject.IsSetUpdateToLatestImageVersion())
+            {
+                context.Writer.WritePropertyName("updateToLatestImageVersion");
+                context.Writer.Write(requestObject.UpdateToLatestImageVersion);
+            }
+
         }
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ComputeResourceUpdateMarshaller Instance = new ComputeResourceUpdateMarshaller();
 
     }

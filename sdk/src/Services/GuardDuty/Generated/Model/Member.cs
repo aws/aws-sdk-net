@@ -34,6 +34,7 @@ namespace Amazon.GuardDuty.Model
     public partial class Member
     {
         private string _accountId;
+        private string _administratorId;
         private string _detectorId;
         private string _email;
         private string _invitedAt;
@@ -58,6 +59,24 @@ namespace Amazon.GuardDuty.Model
         internal bool IsSetAccountId()
         {
             return this._accountId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AdministratorId. 
+        /// <para>
+        /// The administrator account ID.
+        /// </para>
+        /// </summary>
+        public string AdministratorId
+        {
+            get { return this._administratorId; }
+            set { this._administratorId = value; }
+        }
+
+        // Check to see if AdministratorId property is set
+        internal bool IsSetAdministratorId()
+        {
+            return this._administratorId != null;
         }
 
         /// <summary>

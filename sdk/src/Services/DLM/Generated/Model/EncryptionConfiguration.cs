@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DLM.Model
 {
     /// <summary>
-    /// Specifies the encryption settings for shared snapshots that are copied across Regions.
+    /// <b>[Event-based policies only]</b> Specifies the encryption settings for cross-Region
+    /// snapshot copies created by event-based policies.
     /// </summary>
     public partial class EncryptionConfiguration
     {

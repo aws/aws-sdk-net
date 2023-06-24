@@ -60,7 +60,8 @@ namespace Amazon.MQ.Model
         /// <summary>
         /// Gets and sets the property Data. 
         /// <para>
-        /// Required. The base64-encoded XML configuration.
+        /// Amazon MQ for Active MQ: The base64-encoded XML configuration. Amazon MQ for RabbitMQ:
+        /// the base64-encoded Cuttlefish configuration.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

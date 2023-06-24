@@ -40,7 +40,8 @@ namespace Amazon.AmplifyUIBuilder.Model
         /// Gets and sets the property Overrides. 
         /// <para>
         /// The properties of the component variant that can be overriden when customizing an
-        /// instance of the component.
+        /// instance of the component. You can't specify <code>tags</code> as a valid property
+        /// for <code>overrides</code>.
         /// </para>
         /// </summary>
         public Dictionary<string, Dictionary<string, string>> Overrides
@@ -58,7 +59,8 @@ namespace Amazon.AmplifyUIBuilder.Model
         /// <summary>
         /// Gets and sets the property VariantValues. 
         /// <para>
-        /// The combination of variants that comprise this variant.
+        /// The combination of variants that comprise this variant. You can't specify <code>tags</code>
+        /// as a valid property for <code>variantValues</code>.
         /// </para>
         /// </summary>
         public Dictionary<string, string> VariantValues

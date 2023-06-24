@@ -34,7 +34,7 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// EventTimeRange Marshaller
-    /// </summary>       
+    /// </summary>
     public class EventTimeRangeMarshaller : IRequestMarshaller<EventTimeRange, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static EventTimeRangeMarshaller Instance = new EventTimeRangeMarshaller();
 
     }

@@ -45,6 +45,10 @@ namespace ServiceClientGenerator
                         new ProjectFileCreator.ProjectReference
                         {
                             IncludePath = $@"..\..\src\Services\*\*.{configuration.Name}.csproj"
+                        },
+                        new ProjectFileCreator.ProjectReference
+                        {
+                            IncludePath = $@"..\..\test\Services\*\*.{configuration.Name}.csproj"
                         }
                     };
                 }
@@ -95,33 +99,6 @@ namespace ServiceClientGenerator
                 if (serviceProjectReferences != null)
                 {
                     Array.ForEach(serviceProjectReferences.ToArray(), x => projectReferences.Add(x));
-                }
-
-                // For S3's Multi-Region Access Points, multiple unit tests rely on SigV4a signing provided by the CRT,
-                // which is not a dependency for all users of S3 so we must add this directly to the generated UnitTest projects
-                // (either the full ones or S3-specific UnitTest.csprojs).
-                //
-                // Once CRT integration is more widespread, this should likely be done for all services
-                // via _manifest.json and this S3-specific case removed.
-                if (_serviceName == "S3")
-                {
-                    var crtExtensionAsProjectReference = new ProjectFileCreator.ProjectReference
-                    {
-                        Name = string.Format("AWSSDK.Extensions.CrtIntegration.{0}", configuration.Name),
-                        IncludePath = Path.Combine(new string[] {"..", "..", "..", "..", "..", "extensions", "src",
-                            "AWSSDK.Extensions.CrtIntegration", $"AWSSDK.Extensions.CrtIntegration.{configuration.Name}.csproj"})
-                    };
-                    projectReferences.Add(crtExtensionAsProjectReference);
-                }
-                else if (_isLegacyProj) // unit test projects with all services, which need CRT also but have a different relative path
-                {
-                    var crtExtensionAsProjectReference = new ProjectFileCreator.ProjectReference
-                    {
-                        Name = string.Format("AWSSDK.Extensions.CrtIntegration.{0}", configuration.Name),
-                        IncludePath = Path.Combine(new string[] { "..", "..", "..", "extensions", "src", 
-                            "AWSSDK.Extensions.CrtIntegration", $"AWSSDK.Extensions.CrtIntegration.{configuration.Name}.csproj" })
-                    };
-                    projectReferences.Add(crtExtensionAsProjectReference);
                 }
 
                 projectProperties.ProjectReferences = projectReferences;
@@ -187,6 +164,25 @@ namespace ServiceClientGenerator
                 Name = projectName,
                 IncludePath = projectPath
             });
+
+            // Add reference to CRT extension to all unit test projects now
+            // that any service can start using flexible checksums
+            var crtExtension = new ProjectFileCreator.ProjectReference
+            {
+                Name = $"AWSSDK.Extensions.CrtIntegration.{projectType}"
+            };
+            if (_isLegacyProj) // unit test projects with all services, which need CRT also but have a different relative path
+            {
+                crtExtension.IncludePath = Path.Combine(new string[] { "..", "..", "..", "extensions", "src",
+                    "AWSSDK.Extensions.CrtIntegration", $"AWSSDK.Extensions.CrtIntegration.{projectType}.csproj" });
+            }
+            else // service-specific project
+            {
+                crtExtension.IncludePath = Path.Combine(new string[] {"..", "..", "..", "..", "..", "extensions", "src",
+                    "AWSSDK.Extensions.CrtIntegration", $"AWSSDK.Extensions.CrtIntegration.{projectType}.csproj"});
+            }
+            references.Add(crtExtension);
+
             return references;
         }
 
@@ -201,10 +197,18 @@ namespace ServiceClientGenerator
             {
                 string projectName = string.Format("{0}.{1}", configuration.AssemblyTitle, projectType);
                 string includePath = Path.Combine("..", "..", "src", "Services", configuration.ServiceFolderName, projectName + ".csproj");
+
                 if (!_isLegacyProj)
                 {
                     includePath = Path.Combine("..", "..", includePath);
                 }
+
+                // for test service unit tests project the actual service is generated one level up the tree
+                if (configuration.IsTestService)
+                {
+                    includePath = Path.Combine("..", projectName + ".csproj");
+                }
+
                 string guid = Utils.GetProjectGuid(Path.Combine(unitTestRoot, includePath));
 
                 if (guidSet.Contains(guid))

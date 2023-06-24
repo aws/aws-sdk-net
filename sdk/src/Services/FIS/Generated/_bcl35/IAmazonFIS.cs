@@ -29,9 +29,10 @@ namespace Amazon.FIS
     /// <summary>
     /// Interface for accessing FIS
     ///
-    /// AWS Fault Injection Simulator is a managed service that enables you to perform fault
-    /// injection experiments on your AWS workloads. For more information, see the <a href="https://docs.aws.amazon.com/fis/latest/userguide/">AWS
-    /// Fault Injection Simulator User Guide</a>.
+    /// Fault Injection Simulator is a managed service that enables you to perform fault injection
+    /// experiments on your Amazon Web Services workloads. For more information, see the <a
+    /// href="https://docs.aws.amazon.com/fis/latest/userguide/">Fault Injection Simulator
+    /// User Guide</a>.
     /// </summary>
     public partial interface IAmazonFIS : IAmazonService, IDisposable
     {
@@ -54,13 +55,13 @@ namespace Amazon.FIS
         /// 
         ///  
         /// <para>
-        /// To create a template, specify the following information: 
+        /// An experiment template includes the following components:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b>Targets</b>: A target can be a specific resource in your AWS environment, or one
-        /// or more resources that match criteria that you specify, for example, resources that
-        /// have specific tags.
+        ///  <b>Targets</b>: A target can be a specific resource in your Amazon Web Services environment,
+        /// or one or more resources that match criteria that you specify, for example, resources
+        /// that have specific tags.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -75,8 +76,8 @@ namespace Amazon.FIS
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For more information, see the <a href="https://docs.aws.amazon.com/fis/latest/userguide/">AWS
-        /// Fault Injection Simulator User Guide</a>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/fis/latest/userguide/experiment-templates.html">Experiment
+        /// templates</a> in the <i>Fault Injection Simulator User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateExperimentTemplate service method.</param>
@@ -175,7 +176,7 @@ namespace Amazon.FIS
 
 
         /// <summary>
-        /// Gets information about the specified AWS FIS action.
+        /// Gets information about the specified FIS action.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAction service method.</param>
         /// 
@@ -309,11 +310,57 @@ namespace Amazon.FIS
 
         #endregion
         
+        #region  GetTargetResourceType
+
+
+        /// <summary>
+        /// Gets information about the specified resource type.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTargetResourceType service method.</param>
+        /// 
+        /// <returns>The response from the GetTargetResourceType service method, as returned by FIS.</returns>
+        /// <exception cref="Amazon.FIS.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.FIS.Model.ValidationException">
+        /// The specified input is not valid, or fails to satisfy the constraints for the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/GetTargetResourceType">REST API Reference for GetTargetResourceType Operation</seealso>
+        GetTargetResourceTypeResponse GetTargetResourceType(GetTargetResourceTypeRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetTargetResourceType operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetTargetResourceType operation on AmazonFISClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetTargetResourceType
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/GetTargetResourceType">REST API Reference for GetTargetResourceType Operation</seealso>
+        IAsyncResult BeginGetTargetResourceType(GetTargetResourceTypeRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetTargetResourceType operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetTargetResourceType.</param>
+        /// 
+        /// <returns>Returns a  GetTargetResourceTypeResult from FIS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/GetTargetResourceType">REST API Reference for GetTargetResourceType Operation</seealso>
+        GetTargetResourceTypeResponse EndGetTargetResourceType(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListActions
 
 
         /// <summary>
-        /// Lists the available AWS FIS actions.
+        /// Lists the available FIS actions.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListActions service method.</param>
         /// 
@@ -475,6 +522,49 @@ namespace Amazon.FIS
         /// <returns>Returns a  ListTagsForResourceResult from FIS.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         ListTagsForResourceResponse EndListTagsForResource(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListTargetResourceTypes
+
+
+        /// <summary>
+        /// Lists the target resource types.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTargetResourceTypes service method.</param>
+        /// 
+        /// <returns>The response from the ListTargetResourceTypes service method, as returned by FIS.</returns>
+        /// <exception cref="Amazon.FIS.Model.ValidationException">
+        /// The specified input is not valid, or fails to satisfy the constraints for the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/ListTargetResourceTypes">REST API Reference for ListTargetResourceTypes Operation</seealso>
+        ListTargetResourceTypesResponse ListTargetResourceTypes(ListTargetResourceTypesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTargetResourceTypes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTargetResourceTypes operation on AmazonFISClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTargetResourceTypes
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/ListTargetResourceTypes">REST API Reference for ListTargetResourceTypes Operation</seealso>
+        IAsyncResult BeginListTargetResourceTypes(ListTargetResourceTypesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListTargetResourceTypes operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTargetResourceTypes.</param>
+        /// 
+        /// <returns>Returns a  ListTargetResourceTypesResult from FIS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/ListTargetResourceTypes">REST API Reference for ListTargetResourceTypes Operation</seealso>
+        ListTargetResourceTypesResponse EndListTargetResourceTypes(IAsyncResult asyncResult);
 
         #endregion
         

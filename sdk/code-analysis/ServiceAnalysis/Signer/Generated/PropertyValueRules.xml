@@ -43,6 +43,16 @@
     <pattern>^[a-zA-Z0-9]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Signer.Model.GetRevocationStatusRequest.JobArn</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Signer.Model.GetRevocationStatusRequest.ProfileVersionArn</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Signer.Model.GetSigningProfileRequest.ProfileName</property>
     <min>2</min>
     <max>64</max>
@@ -148,6 +158,29 @@
     <property>Amazon.Signer.Model.RevokeSigningProfileRequest.Reason</property>
     <min>1</min>
     <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Signer.Model.SignPayloadRequest.Payload</property>
+    <min>1</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Signer.Model.SignPayloadRequest.ProfileName</property>
+    <min>2</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9_]{2,}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Signer.Model.SignPayloadRequest.ProfileOwner</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Signer.Model.SignPayloadResponse.JobOwner</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Signer.Model.StartSigningJobRequest.ProfileName</property>

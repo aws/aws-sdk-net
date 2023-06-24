@@ -30,15 +30,14 @@ namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
     /// Container for the parameters to the DisassociateKmsKey operation.
-    /// Disassociates the associated Key Management Service customer master key (CMK) from
-    /// the specified log group.
+    /// Disassociates the associated KMS key from the specified log group.
     /// 
     ///  
     /// <para>
-    /// After the KMS CMK is disassociated from the log group, CloudWatch Logs stops encrypting
+    /// After the KMS key is disassociated from the log group, CloudWatch Logs stops encrypting
     /// newly ingested data for the log group. All previously ingested data remains encrypted,
-    /// and CloudWatch Logs requires permissions for the CMK whenever the encrypted data is
-    /// requested.
+    /// and CloudWatch Logs requires permissions for the KMS key whenever the encrypted data
+    /// is requested.
     /// </para>
     ///  
     /// <para>

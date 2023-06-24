@@ -30,7 +30,7 @@ namespace Amazon.AppSync.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateApiKey operation.
-    /// Creates a unique key that you can distribute to clients who are executing your API.
+    /// Creates a unique key that you can distribute to clients who invoke your API.
     /// </summary>
     public partial class CreateApiKeyRequest : AmazonAppSyncRequest
     {
@@ -78,7 +78,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property Expires. 
         /// <para>
-        /// The time from creation time after which the API key expires. The date is represented
+        /// From the creation time, the time after which the API key expires. The date is represented
         /// as seconds since the epoch, rounded down to the nearest hour. The default value for
         /// this parameter is 7 days from creation time. For more information, see .
         /// </para>

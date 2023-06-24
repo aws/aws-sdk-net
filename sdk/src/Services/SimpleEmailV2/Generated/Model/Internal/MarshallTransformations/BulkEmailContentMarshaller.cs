@@ -34,7 +34,7 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// BulkEmailContent Marshaller
-    /// </summary>       
+    /// </summary>
     public class BulkEmailContentMarshaller : IRequestMarshaller<BulkEmailContent, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static BulkEmailContentMarshaller Instance = new BulkEmailContentMarshaller();
 
     }

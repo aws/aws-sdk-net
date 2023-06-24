@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Ipv6CidrBlockAssociation Marshaller
-    /// </summary>       
+    /// </summary>
     public class Ipv6CidrBlockAssociationMarshaller : IRequestMarshaller<Ipv6CidrBlockAssociation, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static Ipv6CidrBlockAssociationMarshaller Instance = new Ipv6CidrBlockAssociationMarshaller();
 
     }

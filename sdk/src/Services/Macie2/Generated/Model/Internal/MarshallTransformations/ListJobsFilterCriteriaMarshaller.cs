@@ -34,7 +34,7 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ListJobsFilterCriteria Marshaller
-    /// </summary>       
+    /// </summary>
     public class ListJobsFilterCriteriaMarshaller : IRequestMarshaller<ListJobsFilterCriteria, JsonMarshallerContext> 
     {
         /// <summary>
@@ -81,7 +81,7 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ListJobsFilterCriteriaMarshaller Instance = new ListJobsFilterCriteriaMarshaller();
 
     }

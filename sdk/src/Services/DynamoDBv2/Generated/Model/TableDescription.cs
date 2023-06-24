@@ -37,6 +37,7 @@ namespace Amazon.DynamoDBv2.Model
         private List<AttributeDefinition> _attributeDefinitions = new List<AttributeDefinition>();
         private BillingModeSummary _billingModeSummary;
         private DateTime? _creationDateTime;
+        private bool? _deletionProtectionEnabled;
         private List<GlobalSecondaryIndexDescription> _globalSecondaryIndexes = new List<GlobalSecondaryIndexDescription>();
         private string _globalTableVersion;
         private long? _itemCount;
@@ -149,6 +150,25 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DeletionProtectionEnabled. 
+        /// <para>
+        /// Indicates whether deletion protection is enabled (true) or disabled (false) on the
+        /// table.
+        /// </para>
+        /// </summary>
+        public bool DeletionProtectionEnabled
+        {
+            get { return this._deletionProtectionEnabled.GetValueOrDefault(); }
+            set { this._deletionProtectionEnabled = value; }
+        }
+
+        // Check to see if DeletionProtectionEnabled property is set
+        internal bool IsSetDeletionProtectionEnabled()
+        {
+            return this._deletionProtectionEnabled.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property GlobalSecondaryIndexes. 
         /// <para>
         /// The global secondary indexes, if any, on the table. Each index is scoped to a given
@@ -241,7 +261,7 @@ namespace Amazon.DynamoDBv2.Model
         ///  <code>NonKeyAttributes</code> - A list of one or more non-key attribute names that
         /// are projected into the secondary index. The total count of attributes provided in
         /// <code>NonKeyAttributes</code>, summed across all of the secondary indexes, must not
-        /// exceed 20. If you project the same attribute into two different indexes, this counts
+        /// exceed 100. If you project the same attribute into two different indexes, this counts
         /// as two distinct attributes when determining the total.
         /// </para>
         ///  </li> </ul> </li> <li> 
@@ -463,7 +483,7 @@ namespace Amazon.DynamoDBv2.Model
         ///  <code>NonKeyAttributes</code> - A list of one or more non-key attribute names that
         /// are projected into the secondary index. The total count of attributes provided in
         /// <code>NonKeyAttributes</code>, summed across all of the secondary indexes, must not
-        /// exceed 20. If you project the same attribute into two different indexes, this counts
+        /// exceed 100. If you project the same attribute into two different indexes, this counts
         /// as two distinct attributes when determining the total.
         /// </para>
         ///  </li> </ul> </li> <li> 
@@ -690,7 +710,8 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>UPDATING</code> - The table is being updated.
+        ///  <code>UPDATING</code> - The table/index configuration is being updated. The table/index
+        /// remains available for data operations when <code>UPDATING</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>

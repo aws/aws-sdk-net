@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AwsLambdaFunctionVpcConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class AwsLambdaFunctionVpcConfigMarshaller : IRequestMarshaller<AwsLambdaFunctionVpcConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -77,7 +77,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AwsLambdaFunctionVpcConfigMarshaller Instance = new AwsLambdaFunctionVpcConfigMarshaller();
 
     }

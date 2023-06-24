@@ -416,8 +416,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) that Amazon SageMaker assumes to perform tasks on your
-        /// behalf during data labeling.
+        /// The Amazon Resource Name (ARN) that SageMaker assumes to perform tasks on your behalf
+        /// during data labeling.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]

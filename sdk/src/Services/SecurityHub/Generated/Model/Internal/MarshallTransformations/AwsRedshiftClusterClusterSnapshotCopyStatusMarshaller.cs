@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AwsRedshiftClusterClusterSnapshotCopyStatus Marshaller
-    /// </summary>       
+    /// </summary>
     public class AwsRedshiftClusterClusterSnapshotCopyStatusMarshaller : IRequestMarshaller<AwsRedshiftClusterClusterSnapshotCopyStatus, JsonMarshallerContext> 
     {
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AwsRedshiftClusterClusterSnapshotCopyStatusMarshaller Instance = new AwsRedshiftClusterClusterSnapshotCopyStatusMarshaller();
 
     }

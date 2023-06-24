@@ -56,7 +56,7 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.IoTWireless");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-11-22";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-11-22";
             request.HttpMethod = "PATCH";
 
             if (!publicRequest.IsSetIdentifier())
@@ -74,6 +74,17 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetConnectionStatus())
+                {
+                    context.Writer.WritePropertyName("ConnectionStatus");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ConnectionStatusEventConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ConnectionStatus, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetDeviceRegistrationState())
                 {
                     context.Writer.WritePropertyName("DeviceRegistrationState");
@@ -81,6 +92,28 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
 
                     var marshaller = DeviceRegistrationStateEventConfigurationMarshaller.Instance;
                     marshaller.Marshall(publicRequest.DeviceRegistrationState, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetJoin())
+                {
+                    context.Writer.WritePropertyName("Join");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = JoinEventConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Join, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetMessageDeliveryStatus())
+                {
+                    context.Writer.WritePropertyName("MessageDeliveryStatus");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = MessageDeliveryStatusEventConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.MessageDeliveryStatus, context);
 
                     context.Writer.WriteObjectEnd();
                 }
@@ -96,7 +129,6 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

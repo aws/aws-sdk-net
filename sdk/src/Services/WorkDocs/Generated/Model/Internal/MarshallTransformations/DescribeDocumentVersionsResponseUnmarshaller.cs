@@ -98,6 +98,10 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
                 {
                     return InvalidArgumentExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidPasswordException"))
+                {
+                    return InvalidPasswordExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ProhibitedStateException"))
                 {
                     return ProhibitedStateExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);

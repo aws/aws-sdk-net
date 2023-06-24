@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53RecoveryCluster.Model
 {
     /// <summary>
-    /// A routing control state.
+    /// A routing control state entry.
     /// </summary>
     public partial class UpdateRoutingControlStateEntry
     {
@@ -39,7 +39,7 @@ namespace Amazon.Route53RecoveryCluster.Model
         /// <summary>
         /// Gets and sets the property RoutingControlArn. 
         /// <para>
-        /// The Amazon Resource Number (ARN) for the routing control state entry.
+        /// The Amazon Resource Name (ARN) for a routing control state entry.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]

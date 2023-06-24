@@ -30,8 +30,9 @@ namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribePackages operation.
-    /// Describes all packages available to Amazon OpenSearch Service domains. Includes options
-    /// for filtering, limiting the number of results, and pagination.
+    /// Describes all packages available to OpenSearch Service. For more information, see
+    /// <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/custom-packages.html">Custom
+    /// packages for Amazon OpenSearch Service</a>.
     /// </summary>
     public partial class DescribePackagesRequest : AmazonOpenSearchServiceRequest
     {
@@ -43,7 +44,6 @@ namespace Amazon.OpenSearchService.Model
         /// Gets and sets the property Filters. 
         /// <para>
         /// Only returns packages that match the <code>DescribePackagesFilterList</code> values.
-        /// 
         /// </para>
         /// </summary>
         public List<DescribePackagesFilter> Filters
@@ -61,7 +61,8 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// Limits results to a maximum number of packages.
+        /// An optional parameter that specifies the maximum number of results to return. You
+        /// can use <code>nextToken</code> to get the next page of results.
         /// </para>
         /// </summary>
         [AWSProperty(Max=100)]
@@ -80,8 +81,9 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Used for pagination. Only necessary if a previous API call includes a non-null NextToken
-        /// value. If provided, returns results for the next page. 
+        /// If your initial <code>DescribePackageFilters</code> operation returns a <code>nextToken</code>,
+        /// you can include the returned <code>nextToken</code> in subsequent <code>DescribePackageFilters</code>
+        /// operations, which returns results in the next page.
         /// </para>
         /// </summary>
         public string NextToken

@@ -63,6 +63,7 @@ namespace Amazon.Redshift.Model
         private string _clusterSubnetGroupName;
         private string _defaultIamRoleArn;
         private string _elasticIp;
+        private bool? _encrypted;
         private bool? _enhancedVpcRouting;
         private string _hsmClientCertificateIdentifier;
         private string _hsmConfigurationIdentifier;
@@ -77,6 +78,7 @@ namespace Amazon.Redshift.Model
         private string _preferredMaintenanceWindow;
         private bool? _publiclyAccessible;
         private string _reservedNodeId;
+        private string _snapshotArn;
         private string _snapshotClusterIdentifier;
         private string _snapshotIdentifier;
         private string _snapshotScheduleIdentifier;
@@ -128,23 +130,9 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property AquaConfigurationStatus. 
         /// <para>
-        /// The value represents how the cluster is configured to use AQUA (Advanced Query Accelerator)
-        /// after the cluster is restored. Possible values include the following.
+        /// This parameter is retired. It does not set the AQUA configuration status. Amazon Redshift
+        /// automatically determines whether to use AQUA (Advanced Query Accelerator).
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// enabled - Use AQUA if it is available for the current Amazon Web Services Region and
-        /// Amazon Redshift node type.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// disabled - Don't use AQUA. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// auto - Amazon Redshift determines whether to use AQUA.
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         public AquaConfigurationStatus AquaConfigurationStatus
         {
@@ -396,7 +384,8 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ElasticIp. 
         /// <para>
-        /// The elastic IP (EIP) address for the cluster.
+        /// The Elastic IP (EIP) address for the cluster. Don't specify the Elastic IP address
+        /// for a publicly accessible cluster with availability zone relocation turned on.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2147483647)]
@@ -410,6 +399,25 @@ namespace Amazon.Redshift.Model
         internal bool IsSetElasticIp()
         {
             return this._elasticIp != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Encrypted. 
+        /// <para>
+        /// Enables support for restoring an unencrypted snapshot to a cluster encrypted with
+        /// Key Management Service (KMS) and a customer managed key.
+        /// </para>
+        /// </summary>
+        public bool Encrypted
+        {
+            get { return this._encrypted.GetValueOrDefault(); }
+            set { this._encrypted = value; }
+        }
+
+        // Check to see if Encrypted property is set
+        internal bool IsSetEncrypted()
+        {
+            return this._encrypted.HasValue; 
         }
 
         /// <summary>
@@ -486,11 +494,13 @@ namespace Amazon.Redshift.Model
         /// <para>
         /// A list of Identity and Access Management (IAM) roles that can be used by the cluster
         /// to access other Amazon Web Services services. You must supply the IAM roles in their
-        /// Amazon Resource Name (ARN) format. You can supply up to 10 IAM roles in a single request.
+        /// Amazon Resource Name (ARN) format. 
         /// </para>
         ///  
         /// <para>
-        /// A cluster can have up to 10 IAM roles associated at any time.
+        /// The maximum number of IAM roles that you can associate is subject to a quota. For
+        /// more information, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Quotas
+        /// and limits</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
         /// </para>
         /// </summary>
         public List<string> IamRoles
@@ -508,8 +518,12 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The Key Management Service (KMS) key ID of the encryption key that you want to use
-        /// to encrypt data in the cluster that you restore from a shared snapshot.
+        /// The Key Management Service (KMS) key ID of the encryption key that encrypts data in
+        /// the cluster restored from a shared snapshot. You can also provide the key ID when
+        /// you restore from an unencrypted snapshot to an encrypted cluster in the same account.
+        /// Additionally, you can specify a new KMS key ID when you restore from an encrypted
+        /// snapshot in the same account in order to change it. In that case, the restored cluster
+        /// is encrypted with the new KMS key ID.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2147483647)]
@@ -745,6 +759,27 @@ namespace Amazon.Redshift.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SnapshotArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the snapshot associated with the message to restore
+        /// from a cluster. You must specify this parameter or <code>snapshotIdentifier</code>,
+        /// but not both.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=2147483647)]
+        public string SnapshotArn
+        {
+            get { return this._snapshotArn; }
+            set { this._snapshotArn = value; }
+        }
+
+        // Check to see if SnapshotArn property is set
+        internal bool IsSetSnapshotArn()
+        {
+            return this._snapshotArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SnapshotClusterIdentifier. 
         /// <para>
         /// The name of the cluster the source snapshot was created from. This parameter is required
@@ -769,14 +804,15 @@ namespace Amazon.Redshift.Model
         /// Gets and sets the property SnapshotIdentifier. 
         /// <para>
         /// The name of the snapshot from which to create the new cluster. This parameter isn't
-        /// case sensitive.
+        /// case sensitive. You must specify this parameter or <code>snapshotArn</code>, but not
+        /// both.
         /// </para>
         ///  
         /// <para>
         /// Example: <code>my-snapshot-id</code> 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=2147483647)]
+        [AWSProperty(Max=2147483647)]
         public string SnapshotIdentifier
         {
             get { return this._snapshotIdentifier; }

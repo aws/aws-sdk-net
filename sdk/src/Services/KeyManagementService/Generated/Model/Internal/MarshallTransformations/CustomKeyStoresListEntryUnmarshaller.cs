@@ -100,10 +100,22 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
                     unmarshalledObject.CustomKeyStoreName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("CustomKeyStoreType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CustomKeyStoreType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("TrustAnchorCertificate", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TrustAnchorCertificate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("XksProxyConfiguration", targetDepth))
+                {
+                    var unmarshaller = XksProxyConfigurationTypeUnmarshaller.Instance;
+                    unmarshalledObject.XksProxyConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

@@ -77,10 +77,13 @@ namespace AWSSDK.UnitTests
             .AppendLine("use_fips_endpoint=false")
             .ToString();
 
-        [TestMethod]
-        public void TestDefaultProfile()
+        [DataTestMethod]
+        [DataRow(null)]
+        [DataRow("")]
+        [DataRow("  ")]
+        public void TestDefaultProfile(string awsProfileValue)
         {
-            using (new FallbackFactoryTestFixture(ProfileText, null))
+            using (new FallbackFactoryTestFixture(ProfileText, awsProfileValue))
             {
                 var creds = FallbackCredentialsFactory.GetCredentials();
                 Assert.AreEqual("default_aws_access_key_id", creds.GetCredentials().AccessKey);
@@ -100,12 +103,18 @@ namespace AWSSDK.UnitTests
                 var maxAttempts = FallbackInternalConfigurationFactory.MaxAttempts;
                 Assert.IsFalse(maxAttempts.HasValue);
             }
-        }               
+        }
 
         [TestMethod]
         public void TestOtherProfile()
         {
-            using (new FallbackFactoryTestFixture(ProfileText, "other"))
+            var newEnvVariables = new Dictionary<string, string>()
+            {
+                { EnvironmentVariableAWSRegion.ENVIRONMENT_VARIABLE_REGION, string.Empty },
+                { EnvironmentVariableAWSRegion.ENVIRONMENT_VARIABLE_DEFAULT_REGION, string.Empty },
+            };
+
+            using (new FallbackFactoryTestFixture(ProfileText, "other", newEnvVariables))
             {
                 var creds = FallbackCredentialsFactory.GetCredentials();
                 Assert.AreEqual("other_aws_access_key_id", creds.GetCredentials().AccessKey);
@@ -127,7 +136,7 @@ namespace AWSSDK.UnitTests
         public void TestOther2Profile()
         {
             using (new FallbackFactoryTestFixture(ProfileText, "other2"))
-            {                
+            {            
                 var enabled = FallbackEndpointDiscoveryEnabledFactory.GetEnabled();
                 Assert.IsTrue(enabled.HasValue);
                 Assert.IsTrue(enabled.Value);
@@ -141,7 +150,13 @@ namespace AWSSDK.UnitTests
         [TestMethod]
         public void TestProcessCredentialProfile()
         {
-            using (new FallbackFactoryTestFixture(ProfileText, "processCredential"))
+            var newEnvVariables = new Dictionary<string, string>()
+            {
+                { EnvironmentVariableAWSRegion.ENVIRONMENT_VARIABLE_REGION, string.Empty },
+                { EnvironmentVariableAWSRegion.ENVIRONMENT_VARIABLE_DEFAULT_REGION, string.Empty },
+            };
+
+            using (new FallbackFactoryTestFixture(ProfileText, "processCredential", newEnvVariables))
             {
                 var credentials = FallbackCredentialsFactory.GetCredentials().GetCredentials();
                 Assert.AreEqual(ProcessAWSCredentialsTest.ActualAccessKey, credentials.AccessKey);
@@ -155,7 +170,13 @@ namespace AWSSDK.UnitTests
         [TestMethod]
         public void TestAwsConfigsAwsProfileNameProfile()
         {
-            using (new FallbackFactoryTestFixture(ProfileText, "awsConfigsAwsProfileName", null, true))
+            var newEnvVariables = new Dictionary<string, string>()
+            {
+                { EnvironmentVariableAWSRegion.ENVIRONMENT_VARIABLE_REGION, string.Empty },
+                { EnvironmentVariableAWSRegion.ENVIRONMENT_VARIABLE_DEFAULT_REGION, string.Empty },
+            };
+
+            using (new FallbackFactoryTestFixture(ProfileText, "awsConfigsAwsProfileName", newEnvVariables, true))
             {
                 var creds = FallbackCredentialsFactory.GetCredentials();
                 Assert.AreEqual("awsprofilename_aws_access_key_id", creds.GetCredentials().AccessKey);
@@ -177,7 +198,7 @@ namespace AWSSDK.UnitTests
 
                 var maxAttempts = FallbackInternalConfigurationFactory.MaxAttempts;
                 Assert.IsTrue(maxAttempts.HasValue);
-                Assert.AreEqual(100, maxAttempts.Value);                                
+                Assert.AreEqual(100, maxAttempts.Value);                    
             }
         }
 
@@ -205,7 +226,7 @@ namespace AWSSDK.UnitTests
         public void TestRetriesConfigurationEnvVariables()
         {
             var envVariables = new Dictionary<string, string>()
-            {                
+            {            
                 {  AWS_RETRY_MODE_ENVIRONMENT_VARIABLE, "adaptive" },
                 {  AWS_MAX_ATTEMPTS_ENVIRONMENT_VARIABLE, "6" }
             };
@@ -707,7 +728,7 @@ namespace AWSSDK.UnitTests
 
         public class FallbackFactoryTestFixture : IDisposable
         {
-            private const string AWS_PROFILE_ENVIRONMENT_VARIABLE = "AWS_PROFILE";            
+            private const string AWS_PROFILE_ENVIRONMENT_VARIABLE = "AWS_PROFILE";
 
             private readonly SharedCredentialsFileTestFixture sharedFixture;
             private readonly NetSDKCredentialsFileTestFixture netSdkFixture;

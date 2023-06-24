@@ -34,7 +34,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SourceConnectorProperties Marshaller
-    /// </summary>       
+    /// </summary>
     public class SourceConnectorPropertiesMarshaller : IRequestMarshaller<SourceConnectorProperties, JsonMarshallerContext> 
     {
         /// <summary>
@@ -52,6 +52,17 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 
                 var marshaller = AmplitudeSourcePropertiesMarshaller.Instance;
                 marshaller.Marshall(requestObject.Amplitude, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetCustomConnector())
+            {
+                context.Writer.WritePropertyName("CustomConnector");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = CustomConnectorSourcePropertiesMarshaller.Instance;
+                marshaller.Marshall(requestObject.CustomConnector, context);
 
                 context.Writer.WriteObjectEnd();
             }
@@ -107,6 +118,17 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 
                 var marshaller = MarketoSourcePropertiesMarshaller.Instance;
                 marshaller.Marshall(requestObject.Marketo, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetPardot())
+            {
+                context.Writer.WritePropertyName("Pardot");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = PardotSourcePropertiesMarshaller.Instance;
+                marshaller.Marshall(requestObject.Pardot, context);
 
                 context.Writer.WriteObjectEnd();
             }
@@ -214,7 +236,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SourceConnectorPropertiesMarshaller Instance = new SourceConnectorPropertiesMarshaller();
 
     }

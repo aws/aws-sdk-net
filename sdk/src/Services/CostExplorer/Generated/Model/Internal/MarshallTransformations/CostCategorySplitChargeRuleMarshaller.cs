@@ -34,7 +34,7 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CostCategorySplitChargeRule Marshaller
-    /// </summary>       
+    /// </summary>
     public class CostCategorySplitChargeRuleMarshaller : IRequestMarshaller<CostCategorySplitChargeRule, JsonMarshallerContext> 
     {
         /// <summary>
@@ -88,7 +88,7 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CostCategorySplitChargeRuleMarshaller Instance = new CostCategorySplitChargeRuleMarshaller();
 
     }

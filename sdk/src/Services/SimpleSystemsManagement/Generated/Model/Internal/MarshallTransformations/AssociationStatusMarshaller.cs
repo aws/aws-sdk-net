@@ -34,7 +34,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AssociationStatus Marshaller
-    /// </summary>       
+    /// </summary>
     public class AssociationStatusMarshaller : IRequestMarshaller<AssociationStatus, JsonMarshallerContext> 
     {
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AssociationStatusMarshaller Instance = new AssociationStatusMarshaller();
 
     }

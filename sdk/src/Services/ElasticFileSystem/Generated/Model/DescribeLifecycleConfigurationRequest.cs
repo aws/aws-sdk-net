@@ -38,7 +38,7 @@ namespace Amazon.ElasticFileSystem.Model
     /// 
     ///  
     /// <para>
-    /// When EFS Intelligent Tiering is enabled, <code>TransitionToPrimaryStorageClass</code>
+    /// When EFS Intelligent-Tiering is enabled, <code>TransitionToPrimaryStorageClass</code>
     /// has a value of <code>AFTER_1_ACCESS</code>.
     /// </para>
     ///  

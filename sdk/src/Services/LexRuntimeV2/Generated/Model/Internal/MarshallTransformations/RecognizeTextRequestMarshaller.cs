@@ -56,7 +56,7 @@ namespace Amazon.LexRuntimeV2.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.LexRuntimeV2");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-08-07";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-08-07";
             request.HttpMethod = "POST";
 
             if (!publicRequest.IsSetBotAliasId())
@@ -108,7 +108,6 @@ namespace Amazon.LexRuntimeV2.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Text);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

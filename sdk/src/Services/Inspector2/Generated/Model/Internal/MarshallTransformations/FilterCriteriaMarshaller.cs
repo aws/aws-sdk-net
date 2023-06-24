@@ -34,7 +34,7 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// FilterCriteria Marshaller
-    /// </summary>       
+    /// </summary>
     public class FilterCriteriaMarshaller : IRequestMarshaller<FilterCriteria, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,6 +55,54 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
 
                     var marshaller = StringFilterMarshaller.Instance;
                     marshaller.Marshall(requestObjectAwsAccountIdListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetCodeVulnerabilityDetectorName())
+            {
+                context.Writer.WritePropertyName("codeVulnerabilityDetectorName");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectCodeVulnerabilityDetectorNameListValue in requestObject.CodeVulnerabilityDetectorName)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = StringFilterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectCodeVulnerabilityDetectorNameListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetCodeVulnerabilityDetectorTags())
+            {
+                context.Writer.WritePropertyName("codeVulnerabilityDetectorTags");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectCodeVulnerabilityDetectorTagsListValue in requestObject.CodeVulnerabilityDetectorTags)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = StringFilterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectCodeVulnerabilityDetectorTagsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetCodeVulnerabilityFilePath())
+            {
+                context.Writer.WritePropertyName("codeVulnerabilityFilePath");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectCodeVulnerabilityFilePathListValue in requestObject.CodeVulnerabilityFilePath)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = StringFilterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectCodeVulnerabilityFilePathListValue, context);
 
                     context.Writer.WriteObjectEnd();
                 }
@@ -237,6 +285,38 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetEpssScore())
+            {
+                context.Writer.WritePropertyName("epssScore");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectEpssScoreListValue in requestObject.EpssScore)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = NumberFilterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectEpssScoreListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetExploitAvailable())
+            {
+                context.Writer.WritePropertyName("exploitAvailable");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectExploitAvailableListValue in requestObject.ExploitAvailable)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = StringFilterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectExploitAvailableListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetFindingArn())
             {
                 context.Writer.WritePropertyName("findingArn");
@@ -301,6 +381,22 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetFixAvailable())
+            {
+                context.Writer.WritePropertyName("fixAvailable");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectFixAvailableListValue in requestObject.FixAvailable)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = StringFilterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectFixAvailableListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetInspectorScore())
             {
                 context.Writer.WritePropertyName("inspectorScore");
@@ -311,6 +407,86 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
 
                     var marshaller = NumberFilterMarshaller.Instance;
                     marshaller.Marshall(requestObjectInspectorScoreListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetLambdaFunctionExecutionRoleArn())
+            {
+                context.Writer.WritePropertyName("lambdaFunctionExecutionRoleArn");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectLambdaFunctionExecutionRoleArnListValue in requestObject.LambdaFunctionExecutionRoleArn)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = StringFilterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectLambdaFunctionExecutionRoleArnListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetLambdaFunctionLastModifiedAt())
+            {
+                context.Writer.WritePropertyName("lambdaFunctionLastModifiedAt");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectLambdaFunctionLastModifiedAtListValue in requestObject.LambdaFunctionLastModifiedAt)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = DateFilterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectLambdaFunctionLastModifiedAtListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetLambdaFunctionLayers())
+            {
+                context.Writer.WritePropertyName("lambdaFunctionLayers");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectLambdaFunctionLayersListValue in requestObject.LambdaFunctionLayers)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = StringFilterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectLambdaFunctionLayersListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetLambdaFunctionName())
+            {
+                context.Writer.WritePropertyName("lambdaFunctionName");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectLambdaFunctionNameListValue in requestObject.LambdaFunctionName)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = StringFilterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectLambdaFunctionNameListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetLambdaFunctionRuntime())
+            {
+                context.Writer.WritePropertyName("lambdaFunctionRuntime");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectLambdaFunctionRuntimeListValue in requestObject.LambdaFunctionRuntime)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = StringFilterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectLambdaFunctionRuntimeListValue, context);
 
                     context.Writer.WriteObjectEnd();
                 }
@@ -545,7 +721,7 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static FilterCriteriaMarshaller Instance = new FilterCriteriaMarshaller();
 
     }

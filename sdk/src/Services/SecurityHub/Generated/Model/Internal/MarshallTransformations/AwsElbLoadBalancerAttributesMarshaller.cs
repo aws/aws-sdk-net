@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AwsElbLoadBalancerAttributes Marshaller
-    /// </summary>       
+    /// </summary>
     public class AwsElbLoadBalancerAttributesMarshaller : IRequestMarshaller<AwsElbLoadBalancerAttributes, JsonMarshallerContext> 
     {
         /// <summary>
@@ -54,6 +54,22 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 marshaller.Marshall(requestObject.AccessLog, context);
 
                 context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetAdditionalAttributes())
+            {
+                context.Writer.WritePropertyName("AdditionalAttributes");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectAdditionalAttributesListValue in requestObject.AdditionalAttributes)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = AwsElbLoadBalancerAdditionalAttributeMarshaller.Instance;
+                    marshaller.Marshall(requestObjectAdditionalAttributesListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
             }
 
             if(requestObject.IsSetConnectionDraining())
@@ -93,7 +109,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AwsElbLoadBalancerAttributesMarshaller Instance = new AwsElbLoadBalancerAttributesMarshaller();
 
     }

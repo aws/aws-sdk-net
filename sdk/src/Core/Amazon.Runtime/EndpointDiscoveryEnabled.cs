@@ -78,9 +78,7 @@ namespace Amazon.Runtime
         /// <param name="source">The ICredentialProfileSource to read the profile from.</param>
         public ProfileAWSEndpointDiscoveryEnabled(ICredentialProfileSource source)
         {
-            var profileName = Environment.GetEnvironmentVariable(FallbackCredentialsFactory.AWS_PROFILE_ENVIRONMENT_VARIABLE);
-            if (profileName == null)
-                profileName = FallbackCredentialsFactory.DefaultProfileName;
+            var profileName = FallbackCredentialsFactory.GetProfileName();
             Setup(source, profileName);
         }
 
@@ -140,10 +138,10 @@ namespace Amazon.Runtime
         {
             endpointDiscoveryEnabled = null;
             EnabledGenerators = new List<ConfigGenerator>
-            {                
+            {        
                 () => (new EnvironmentVariableAWSEndpointDiscoveryEnabled()).Enabled,
                 () => (new ProfileAWSEndpointDiscoveryEnabled(credentialProfileChain)).Enabled,
-            };                        
+            };            
         }
 
         private static bool? endpointDiscoveryEnabled;

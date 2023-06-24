@@ -26,6 +26,8 @@ namespace Amazon.SimpleNotificationService.Util
     public class Message
     {
         private const int MAX_RETRIES = 3;
+        private const string SHA1_SIGNATURE_VERSION = "1";
+        private const string SHA256_SIGNATURE_VERSION = "2";
 
         /// <summary>
         /// The value of the Type property for a subscription confirmation message
@@ -73,7 +75,7 @@ namespace Amazon.SimpleNotificationService.Util
             message.MessageId = extractField("MessageId");
             message.MessageText = extractField("Message");
             message.Signature = extractField("Signature");
-            message.SignatureVersion = extractField("SignatureVersion");
+            message.SignatureVersion = ValidateSignatureVersion(extractField("SignatureVersion"));
             message.SigningCertURL = ValidateCertUrl(extractField("SigningCertURL"));
             message.SubscribeURL = extractField("SubscribeURL");
             message.Subject = extractField("Subject");
@@ -105,7 +107,7 @@ namespace Amazon.SimpleNotificationService.Util
         }
 
         /// <summary>
-        /// Gets the Base64-encoded "SHA1withRSA" signature of the Message, MessageId, Subject (if present), Type, Timestamp, and TopicArn values.
+        /// Gets the Base64-encoded "SHA1withRSA" or "SHA256withRSA" signature of the Message, MessageId, Subject (if present), Type, Timestamp, and TopicArn values.
         /// </summary>
         public string Signature
         {
@@ -255,6 +257,27 @@ namespace Amazon.SimpleNotificationService.Util
             throw new AmazonClientException("Signing certificate url is not from a recognised source.");
         }
 
+        /// <summary>
+        /// Verifies the SignatureVersion is either 1 for SHA1 or 2 for SHA256
+        /// Returns true if is a valid value, otherwise throws an exception
+        /// </summary>
+        /// <param name="signatureVersion">SignatureVersion in a SNS message</param>
+        /// <returns>Returns the SignatureVersion if it's a valid value, otherwise throws an exception</returns>
+        private static string ValidateSignatureVersion(string signatureVersion)
+        {
+            if (signatureVersion == null)
+            {
+                throw new AmazonClientException("SignatureVersion is missing");
+            }
+
+            if (!signatureVersion.Equals(SHA1_SIGNATURE_VERSION) && !signatureVersion.Equals(SHA256_SIGNATURE_VERSION))
+            {
+                throw new AmazonClientException("SignatureVersion is not a valid value");
+            }
+
+            return signatureVersion;
+        }
+
         #region Message Verification
         /// <summary>
         /// Verifies the authenticity of a message sent by Amazon SNS. This is done by computing a signature from the fields in the message and then comparing 
@@ -267,11 +290,23 @@ namespace Amazon.SimpleNotificationService.Util
             var certificate = GetX509Certificate();
 
 #if BCL
+            string cryptoConfig;
+            if (this.SignatureVersion.Equals(SHA1_SIGNATURE_VERSION))
+                cryptoConfig = CryptoConfig.MapNameToOID("SHA1");
+            else
+                cryptoConfig = CryptoConfig.MapNameToOID("SHA256");
+
             var rsa = certificate.PublicKey.Key as RSACryptoServiceProvider;
-            return rsa.VerifyData(bytesToSign, CryptoConfig.MapNameToOID("SHA1"), Convert.FromBase64String(this.Signature));
+            return rsa.VerifyData(bytesToSign, cryptoConfig, Convert.FromBase64String(this.Signature));
 #else
+            HashAlgorithmName hashAlgorithmName;
+            if (this.SignatureVersion.Equals(SHA1_SIGNATURE_VERSION))
+                hashAlgorithmName = HashAlgorithmName.SHA1;
+            else
+                hashAlgorithmName = HashAlgorithmName.SHA256;
+
             var rsa = certificate.GetRSAPublicKey();
-            return rsa.VerifyData(bytesToSign, Convert.FromBase64String(this.Signature), HashAlgorithmName.SHA1, RSASignaturePadding.Pkcs1);
+            return rsa.VerifyData(bytesToSign, Convert.FromBase64String(this.Signature), hashAlgorithmName, RSASignaturePadding.Pkcs1);
 #endif
         }
 

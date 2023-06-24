@@ -30,9 +30,9 @@ namespace Amazon.CloudTrail.Model
 {
     /// <summary>
     /// This exception is thrown when the specified resource is not ready for an operation.
-    /// This can occur when you try to run an operation on a trail before CloudTrail has time
-    /// to fully load the trail. If this exception occurs, wait a few minutes, and then try
-    /// the operation again.
+    /// This can occur when you try to run an operation on a resource before CloudTrail has
+    /// time to fully load the resource, or because another operation is modifying the resource.
+    /// If this exception occurs, wait a few minutes, and then try the operation again.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

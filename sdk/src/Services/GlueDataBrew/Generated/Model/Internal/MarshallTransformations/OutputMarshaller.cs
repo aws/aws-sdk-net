@@ -34,7 +34,7 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Output Marshaller
-    /// </summary>       
+    /// </summary>
     public class OutputMarshaller : IRequestMarshaller<Output, JsonMarshallerContext> 
     {
         /// <summary>
@@ -79,6 +79,12 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetMaxOutputFiles())
+            {
+                context.Writer.WritePropertyName("MaxOutputFiles");
+                context.Writer.Write(requestObject.MaxOutputFiles);
+            }
+
             if(requestObject.IsSetOverwrite())
             {
                 context.Writer.WritePropertyName("Overwrite");
@@ -100,7 +106,7 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static OutputMarshaller Instance = new OutputMarshaller();
 
     }

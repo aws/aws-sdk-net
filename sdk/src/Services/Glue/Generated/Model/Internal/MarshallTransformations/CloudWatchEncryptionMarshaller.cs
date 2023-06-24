@@ -34,7 +34,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CloudWatchEncryption Marshaller
-    /// </summary>       
+    /// </summary>
     public class CloudWatchEncryptionMarshaller : IRequestMarshaller<CloudWatchEncryption, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CloudWatchEncryptionMarshaller Instance = new CloudWatchEncryptionMarshaller();
 
     }

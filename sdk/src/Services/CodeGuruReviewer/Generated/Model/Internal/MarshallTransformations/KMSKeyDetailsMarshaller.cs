@@ -34,7 +34,7 @@ namespace Amazon.CodeGuruReviewer.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// KMSKeyDetails Marshaller
-    /// </summary>       
+    /// </summary>
     public class KMSKeyDetailsMarshaller : IRequestMarshaller<KMSKeyDetails, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.CodeGuruReviewer.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static KMSKeyDetailsMarshaller Instance = new KMSKeyDetailsMarshaller();
 
     }

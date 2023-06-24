@@ -86,7 +86,7 @@ namespace Amazon.IdentityManagement.Model
         /// The generated password for the service-specific credential.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public string ServicePassword
         {
             get { return this._servicePassword; }

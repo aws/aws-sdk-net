@@ -29,12 +29,34 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FSx.Model
 {
     /// <summary>
-    /// Updates the Microsoft Active Directory (AD) configuration of an SVM joined to an AD.
-    /// Please note, account credentials are not returned in the response payload.
+    /// Specifies updates to an FSx for ONTAP storage virtual machine's (SVM) Microsoft Active
+    /// Directory (AD) configuration. Note that account credentials are not returned in the
+    /// response payload.
     /// </summary>
     public partial class UpdateSvmActiveDirectoryConfiguration
     {
+        private string _netBiosName;
         private SelfManagedActiveDirectoryConfigurationUpdates _selfManagedActiveDirectoryConfiguration;
+
+        /// <summary>
+        /// Gets and sets the property NetBiosName. 
+        /// <para>
+        /// Specifies an updated NetBIOS name of the AD computer object <code>NetBiosName</code>
+        /// to which an SVM is joined.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=15)]
+        public string NetBiosName
+        {
+            get { return this._netBiosName; }
+            set { this._netBiosName = value; }
+        }
+
+        // Check to see if NetBiosName property is set
+        internal bool IsSetNetBiosName()
+        {
+            return this._netBiosName != null;
+        }
 
         /// <summary>
         /// Gets and sets the property SelfManagedActiveDirectoryConfiguration.

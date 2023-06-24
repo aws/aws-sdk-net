@@ -30,8 +30,7 @@ namespace Amazon.APIGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDeployment operation.
-    /// Creates a <a>Deployment</a> resource, which makes a specified <a>RestApi</a> callable
-    /// over the internet.
+    /// Creates a Deployment resource, which makes a specified RestApi callable over the internet.
     /// </summary>
     public partial class CreateDeploymentRequest : AmazonAPIGatewayRequest
     {
@@ -48,7 +47,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property CacheClusterEnabled. 
         /// <para>
-        /// Enables a cache cluster for the <a>Stage</a> resource specified in the input.
+        /// Enables a cache cluster for the Stage resource specified in the input.
         /// </para>
         /// </summary>
         public bool CacheClusterEnabled
@@ -66,8 +65,9 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property CacheClusterSize. 
         /// <para>
-        /// Specifies the cache cluster size for the <a>Stage</a> resource specified in the input,
-        /// if a cache cluster is enabled.
+        /// The stage's cache capacity in GB. For more information about choosing a cache size,
+        /// see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-caching.html">Enabling
+        /// API caching to enhance responsiveness</a>.
         /// </para>
         /// </summary>
         public CacheClusterSize CacheClusterSize
@@ -104,7 +104,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description for the <a>Deployment</a> resource to create.
+        /// The description for the Deployment resource to create.
         /// </para>
         /// </summary>
         public string Description
@@ -122,7 +122,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property RestApiId. 
         /// <para>
-        /// [Required] The string identifier of the associated <a>RestApi</a>.
+        /// The string identifier of the associated RestApi.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -141,8 +141,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property StageDescription. 
         /// <para>
-        /// The description of the <a>Stage</a> resource for the <a>Deployment</a> resource to
-        /// create.
+        /// The description of the Stage resource for the Deployment resource to create.
         /// </para>
         /// </summary>
         public string StageDescription
@@ -160,7 +159,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property StageName. 
         /// <para>
-        /// The name of the <a>Stage</a> resource for the <a>Deployment</a> resource to create.
+        /// The name of the Stage resource for the Deployment resource to create.
         /// </para>
         /// </summary>
         public string StageName
@@ -178,7 +177,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property TracingEnabled. 
         /// <para>
-        /// Specifies whether active tracing with X-ray is enabled for the <a>Stage</a>.
+        /// Specifies whether active tracing with X-ray is enabled for the Stage.
         /// </para>
         /// </summary>
         public bool TracingEnabled
@@ -196,8 +195,8 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Variables. 
         /// <para>
-        /// A map that defines the stage variables for the <a>Stage</a> resource that is associated
-        /// with the new deployment. Variable names can have alphanumeric and underscore characters,
+        /// A map that defines the stage variables for the Stage resource that is associated with
+        /// the new deployment. Variable names can have alphanumeric and underscore characters,
         /// and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.
         /// </para>
         /// </summary>

@@ -34,7 +34,7 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DescribeSourceServersRequestFilters Marshaller
-    /// </summary>       
+    /// </summary>
     public class DescribeSourceServersRequestFiltersMarshaller : IRequestMarshaller<DescribeSourceServersRequestFilters, JsonMarshallerContext> 
     {
         /// <summary>
@@ -62,11 +62,22 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetStagingAccountIDs())
+            {
+                context.Writer.WritePropertyName("stagingAccountIDs");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectStagingAccountIDsListValue in requestObject.StagingAccountIDs)
+                {
+                        context.Writer.Write(requestObjectStagingAccountIDsListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
         }
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DescribeSourceServersRequestFiltersMarshaller Instance = new DescribeSourceServersRequestFiltersMarshaller();
 
     }

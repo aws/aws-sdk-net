@@ -82,10 +82,22 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                     unmarshalledObject.ComputeResources = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("containerOrchestrationType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ContainerOrchestrationType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ecsClusterArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EcsClusterArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("eksConfiguration", targetDepth))
+                {
+                    var unmarshaller = EksConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.EksConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("serviceRole", targetDepth))
@@ -128,6 +140,18 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
                     unmarshalledObject.UnmanagedvCpus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("updatePolicy", targetDepth))
+                {
+                    var unmarshaller = UpdatePolicyUnmarshaller.Instance;
+                    unmarshalledObject.UpdatePolicy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("uuid", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Uuid = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

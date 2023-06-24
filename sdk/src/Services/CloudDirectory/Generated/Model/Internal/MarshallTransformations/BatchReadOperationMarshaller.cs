@@ -34,7 +34,7 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// BatchReadOperation Marshaller
-    /// </summary>       
+    /// </summary>
     public class BatchReadOperationMarshaller : IRequestMarshaller<BatchReadOperation, JsonMarshallerContext> 
     {
         /// <summary>
@@ -203,7 +203,7 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static BatchReadOperationMarshaller Instance = new BatchReadOperationMarshaller();
 
     }

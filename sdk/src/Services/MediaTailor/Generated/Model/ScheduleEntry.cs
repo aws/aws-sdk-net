@@ -37,6 +37,7 @@ namespace Amazon.MediaTailor.Model
         private DateTime? _approximateStartTime;
         private string _arn;
         private string _channelName;
+        private string _liveSourceName;
         private string _programName;
         private List<ScheduleAdBreak> _scheduleAdBreaks = new List<ScheduleAdBreak>();
         private ScheduleEntryType _scheduleEntryType;
@@ -118,6 +119,24 @@ namespace Amazon.MediaTailor.Model
         }
 
         /// <summary>
+        /// Gets and sets the property LiveSourceName. 
+        /// <para>
+        /// The name of the live source used for the program.
+        /// </para>
+        /// </summary>
+        public string LiveSourceName
+        {
+            get { return this._liveSourceName; }
+            set { this._liveSourceName = value; }
+        }
+
+        // Check to see if LiveSourceName property is set
+        internal bool IsSetLiveSourceName()
+        {
+            return this._liveSourceName != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ProgramName. 
         /// <para>
         /// The name of the program.
@@ -159,10 +178,6 @@ namespace Amazon.MediaTailor.Model
         /// <para>
         /// The type of schedule entry.
         /// </para>
-        ///  
-        /// <para>
-        /// Valid values: PROGRAM or FILLER_SLATE.
-        /// </para>
         /// </summary>
         public ScheduleEntryType ScheduleEntryType
         {
@@ -201,7 +216,6 @@ namespace Amazon.MediaTailor.Model
         /// The name of the VOD source.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string VodSourceName
         {
             get { return this._vodSourceName; }

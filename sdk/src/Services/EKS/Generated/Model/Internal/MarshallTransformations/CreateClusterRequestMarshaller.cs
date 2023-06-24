@@ -56,7 +56,7 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.EKS");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-11-01";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-11-01";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/clusters";
@@ -74,7 +74,7 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                 else if(!(publicRequest.IsSetClientRequestToken()))
                 {
                     context.Writer.WritePropertyName("clientRequestToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());                                                
+                    context.Writer.Write(Guid.NewGuid().ToString());
                 }
                 if(publicRequest.IsSetEncryptionConfig())
                 {
@@ -120,6 +120,17 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Name);
                 }
 
+                if(publicRequest.IsSetOutpostConfig())
+                {
+                    context.Writer.WritePropertyName("outpostConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = OutpostConfigRequestMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.OutpostConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetResourcesVpcConfig())
                 {
                     context.Writer.WritePropertyName("resourcesVpcConfig");
@@ -157,7 +168,6 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Version);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

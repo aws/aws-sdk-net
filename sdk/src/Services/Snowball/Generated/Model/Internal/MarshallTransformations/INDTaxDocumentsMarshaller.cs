@@ -34,7 +34,7 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// INDTaxDocuments Marshaller
-    /// </summary>       
+    /// </summary>
     public class INDTaxDocumentsMarshaller : IRequestMarshaller<INDTaxDocuments, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static INDTaxDocumentsMarshaller Instance = new INDTaxDocumentsMarshaller();
 
     }

@@ -56,7 +56,7 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Backup");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-11-15";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-11-15";
             request.HttpMethod = "PUT";
 
             request.ResourcePath = "/restore-jobs";
@@ -65,6 +65,12 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetCopySourceTagsToRestoredResource())
+                {
+                    context.Writer.WritePropertyName("CopySourceTagsToRestoredResource");
+                    context.Writer.Write(publicRequest.CopySourceTagsToRestoredResource);
+                }
+
                 if(publicRequest.IsSetIamRoleArn())
                 {
                     context.Writer.WritePropertyName("IamRoleArn");
@@ -103,7 +109,6 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ResourceType);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

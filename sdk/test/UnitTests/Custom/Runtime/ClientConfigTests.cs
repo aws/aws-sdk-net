@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Amazon;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace AWSSDK.UnitTests.Custom.Net45.Custom.Runtime
@@ -44,8 +45,28 @@ namespace AWSSDK.UnitTests.Custom.Net45.Custom.Runtime
     /// </summary>
     public class TestClientConfig : ClientConfig
     {
+        public TestClientConfig() :
+            base(new DummyDefaultConfigurationProvider())
+        {
+        }
+
+        public TestClientConfig(IDefaultConfigurationProvider provider) :
+            base(provider)
+        {
+        }
+
         public override string RegionEndpointServiceName { get; } = "Testing";
         public override string ServiceVersion { get; } = "Test";
         public override string UserAgent { get; } = "Test";
+
+        private class DummyDefaultConfigurationProvider : IDefaultConfigurationProvider
+        {
+            public IDefaultConfiguration GetDefaultConfiguration(
+                RegionEndpoint clientRegion,
+                DefaultConfigurationMode? requestedConfigurationMode = null)
+            {
+                return new DefaultConfiguration();
+            }
+        }
     }
 }

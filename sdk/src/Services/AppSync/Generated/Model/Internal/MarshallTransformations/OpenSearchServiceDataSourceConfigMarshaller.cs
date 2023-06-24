@@ -34,7 +34,7 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// OpenSearchServiceDataSourceConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class OpenSearchServiceDataSourceConfigMarshaller : IRequestMarshaller<OpenSearchServiceDataSourceConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static OpenSearchServiceDataSourceConfigMarshaller Instance = new OpenSearchServiceDataSourceConfigMarshaller();
 
     }

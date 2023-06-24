@@ -127,7 +127,7 @@ namespace Amazon.ConnectWisdomService.Model
         /// <summary>
         /// Gets and sets the property KnowledgeBaseId. 
         /// <para>
-        /// The the identifier of the knowledge base.
+        /// The identifier of the knowledge base.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -170,7 +170,7 @@ namespace Amazon.ConnectWisdomService.Model
         /// store an external version identifier as metadata to utilize for determining drift.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=0, Max=10)]
         public Dictionary<string, string> Metadata
         {
             get { return this._metadata; }
@@ -283,7 +283,7 @@ namespace Amazon.ConnectWisdomService.Model
         /// The URL of the content.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=4096)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=4096)]
         public string Url
         {
             get { return this._url; }

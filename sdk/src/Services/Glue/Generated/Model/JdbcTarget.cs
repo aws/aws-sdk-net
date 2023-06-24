@@ -34,6 +34,7 @@ namespace Amazon.Glue.Model
     public partial class JdbcTarget
     {
         private string _connectionName;
+        private List<string> _enableAdditionalMetadata = new List<string>();
         private List<string> _exclusions = new List<string>();
         private string _path;
 
@@ -53,6 +54,30 @@ namespace Amazon.Glue.Model
         internal bool IsSetConnectionName()
         {
             return this._connectionName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnableAdditionalMetadata. 
+        /// <para>
+        /// Specify a value of <code>RAWTYPES</code> or <code>COMMENTS</code> to enable additional
+        /// metadata in table responses. <code>RAWTYPES</code> provides the native-level datatype.
+        /// <code>COMMENTS</code> provides comments associated with a column or table in the database.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you do not need additional metadata, keep the field empty.
+        /// </para>
+        /// </summary>
+        public List<string> EnableAdditionalMetadata
+        {
+            get { return this._enableAdditionalMetadata; }
+            set { this._enableAdditionalMetadata = value; }
+        }
+
+        // Check to see if EnableAdditionalMetadata property is set
+        internal bool IsSetEnableAdditionalMetadata()
+        {
+            return this._enableAdditionalMetadata != null && this._enableAdditionalMetadata.Count > 0; 
         }
 
         /// <summary>

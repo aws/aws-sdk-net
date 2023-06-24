@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AwsElasticsearchDomainLogPublishingOptionsLogConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class AwsElasticsearchDomainLogPublishingOptionsLogConfigMarshaller : IRequestMarshaller<AwsElasticsearchDomainLogPublishingOptionsLogConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AwsElasticsearchDomainLogPublishingOptionsLogConfigMarshaller Instance = new AwsElasticsearchDomainLogPublishingOptionsLogConfigMarshaller();
 
     }

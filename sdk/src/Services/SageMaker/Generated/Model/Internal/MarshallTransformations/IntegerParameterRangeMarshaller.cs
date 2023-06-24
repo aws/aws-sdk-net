@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// IntegerParameterRange Marshaller
-    /// </summary>       
+    /// </summary>
     public class IntegerParameterRangeMarshaller : IRequestMarshaller<IntegerParameterRange, JsonMarshallerContext> 
     {
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static IntegerParameterRangeMarshaller Instance = new IntegerParameterRangeMarshaller();
 
     }

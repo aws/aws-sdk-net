@@ -49,8 +49,8 @@ namespace Amazon.CodeGuruReviewer.Model
         /// <summary>
         /// Gets and sets the property CodeReviewArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">
-        /// <code>CodeReview</code> </a> object. 
+        /// The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a>
+        /// object. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1600)]
@@ -69,7 +69,7 @@ namespace Amazon.CodeGuruReviewer.Model
         /// <summary>
         /// Gets and sets the property CreatedTimeStamp. 
         /// <para>
-        ///  The time, in milliseconds since the epoch, when the code review was created. 
+        /// The time, in milliseconds since the epoch, when the code review was created.
         /// </para>
         /// </summary>
         public DateTime CreatedTimeStamp
@@ -87,8 +87,7 @@ namespace Amazon.CodeGuruReviewer.Model
         /// <summary>
         /// Gets and sets the property LastUpdatedTimeStamp. 
         /// <para>
-        ///  The time, in milliseconds since the epoch, when the code review was last updated.
-        /// 
+        /// The time, in milliseconds since the epoch, when the code review was last updated.
         /// </para>
         /// </summary>
         public DateTime LastUpdatedTimeStamp
@@ -106,7 +105,7 @@ namespace Amazon.CodeGuruReviewer.Model
         /// <summary>
         /// Gets and sets the property MetricsSummary. 
         /// <para>
-        ///  The statistics from the code review. 
+        /// The statistics from the code review.
         /// </para>
         /// </summary>
         public MetricsSummary MetricsSummary
@@ -124,7 +123,7 @@ namespace Amazon.CodeGuruReviewer.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        ///  The name of the code review. 
+        /// The name of the code review.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -166,7 +165,7 @@ namespace Amazon.CodeGuruReviewer.Model
         /// <summary>
         /// Gets and sets the property ProviderType. 
         /// <para>
-        ///  The provider type of the repository association. 
+        /// The provider type of the repository association.
         /// </para>
         /// </summary>
         public ProviderType ProviderType
@@ -184,7 +183,7 @@ namespace Amazon.CodeGuruReviewer.Model
         /// <summary>
         /// Gets and sets the property PullRequestId. 
         /// <para>
-        ///  The pull request ID for the code review. 
+        /// The pull request ID for the code review.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -203,7 +202,7 @@ namespace Amazon.CodeGuruReviewer.Model
         /// <summary>
         /// Gets and sets the property RepositoryName. 
         /// <para>
-        ///  The name of the repository. 
+        /// The name of the repository.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -237,7 +236,7 @@ namespace Amazon.CodeGuruReviewer.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        ///  The state of the code review. 
+        /// The state of the code review.
         /// </para>
         ///  
         /// <para>
@@ -245,19 +244,19 @@ namespace Amazon.CodeGuruReviewer.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Completed</code>: The code review is complete. 
+        ///  <code>Completed</code>: The code review is complete.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Pending</code>: The code review started and has not completed or failed. 
+        ///  <code>Pending</code>: The code review started and has not completed or failed.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Failed</code>: The code review failed. 
+        ///  <code>Failed</code>: The code review failed.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Deleting</code>: The code review is being deleted. 
+        ///  <code>Deleting</code>: The code review is being deleted.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -276,7 +275,7 @@ namespace Amazon.CodeGuruReviewer.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        ///  The type of the code review. 
+        /// The type of the code review.
         /// </para>
         /// </summary>
         public Type Type

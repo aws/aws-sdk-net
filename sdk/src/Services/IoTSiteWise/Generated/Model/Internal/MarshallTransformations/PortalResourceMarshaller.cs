@@ -34,7 +34,7 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// PortalResource Marshaller
-    /// </summary>       
+    /// </summary>
     public class PortalResourceMarshaller : IRequestMarshaller<PortalResource, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static PortalResourceMarshaller Instance = new PortalResourceMarshaller();
 
     }

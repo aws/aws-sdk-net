@@ -34,7 +34,7 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// LoRaWANUpdateDevice Marshaller
-    /// </summary>       
+    /// </summary>
     public class LoRaWANUpdateDeviceMarshaller : IRequestMarshaller<LoRaWANUpdateDevice, JsonMarshallerContext> 
     {
         /// <summary>
@@ -45,10 +45,43 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(LoRaWANUpdateDevice requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAbpV1_0_x())
+            {
+                context.Writer.WritePropertyName("AbpV1_0_x");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = UpdateAbpV1_0_xMarshaller.Instance;
+                marshaller.Marshall(requestObject.AbpV1_0_x, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetAbpV1_1())
+            {
+                context.Writer.WritePropertyName("AbpV1_1");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = UpdateAbpV1_1Marshaller.Instance;
+                marshaller.Marshall(requestObject.AbpV1_1, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetDeviceProfileId())
             {
                 context.Writer.WritePropertyName("DeviceProfileId");
                 context.Writer.Write(requestObject.DeviceProfileId);
+            }
+
+            if(requestObject.IsSetFPorts())
+            {
+                context.Writer.WritePropertyName("FPorts");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = UpdateFPortsMarshaller.Instance;
+                marshaller.Marshall(requestObject.FPorts, context);
+
+                context.Writer.WriteObjectEnd();
             }
 
             if(requestObject.IsSetServiceProfileId())
@@ -61,7 +94,7 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static LoRaWANUpdateDeviceMarshaller Instance = new LoRaWANUpdateDeviceMarshaller();
 
     }

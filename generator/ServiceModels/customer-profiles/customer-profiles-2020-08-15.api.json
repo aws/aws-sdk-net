@@ -29,6 +29,22 @@
         {"shape":"InternalServerException"}
       ]
     },
+    "CreateCalculatedAttributeDefinition":{
+      "name":"CreateCalculatedAttributeDefinition",
+      "http":{
+        "method":"POST",
+        "requestUri":"/domains/{DomainName}/calculated-attributes/{CalculatedAttributeName}"
+      },
+      "input":{"shape":"CreateCalculatedAttributeDefinitionRequest"},
+      "output":{"shape":"CreateCalculatedAttributeDefinitionResponse"},
+      "errors":[
+        {"shape":"BadRequestException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ]
+    },
     "CreateDomain":{
       "name":"CreateDomain",
       "http":{
@@ -37,6 +53,38 @@
       },
       "input":{"shape":"CreateDomainRequest"},
       "output":{"shape":"CreateDomainResponse"},
+      "errors":[
+        {"shape":"BadRequestException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ]
+    },
+    "CreateEventStream":{
+      "name":"CreateEventStream",
+      "http":{
+        "method":"POST",
+        "requestUri":"/domains/{DomainName}/event-streams/{EventStreamName}"
+      },
+      "input":{"shape":"CreateEventStreamRequest"},
+      "output":{"shape":"CreateEventStreamResponse"},
+      "errors":[
+        {"shape":"BadRequestException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ]
+    },
+    "CreateIntegrationWorkflow":{
+      "name":"CreateIntegrationWorkflow",
+      "http":{
+        "method":"POST",
+        "requestUri":"/domains/{DomainName}/workflows/integrations"
+      },
+      "input":{"shape":"CreateIntegrationWorkflowRequest"},
+      "output":{"shape":"CreateIntegrationWorkflowResponse"},
       "errors":[
         {"shape":"BadRequestException"},
         {"shape":"ResourceNotFoundException"},
@@ -61,6 +109,22 @@
         {"shape":"InternalServerException"}
       ]
     },
+    "DeleteCalculatedAttributeDefinition":{
+      "name":"DeleteCalculatedAttributeDefinition",
+      "http":{
+        "method":"DELETE",
+        "requestUri":"/domains/{DomainName}/calculated-attributes/{CalculatedAttributeName}"
+      },
+      "input":{"shape":"DeleteCalculatedAttributeDefinitionRequest"},
+      "output":{"shape":"DeleteCalculatedAttributeDefinitionResponse"},
+      "errors":[
+        {"shape":"BadRequestException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ]
+    },
     "DeleteDomain":{
       "name":"DeleteDomain",
       "http":{
@@ -76,6 +140,23 @@
         {"shape":"ThrottlingException"},
         {"shape":"InternalServerException"}
       ]
+    },
+    "DeleteEventStream":{
+      "name":"DeleteEventStream",
+      "http":{
+        "method":"DELETE",
+        "requestUri":"/domains/{DomainName}/event-streams/{EventStreamName}"
+      },
+      "input":{"shape":"DeleteEventStreamRequest"},
+      "output":{"shape":"DeleteEventStreamResponse"},
+      "errors":[
+        {"shape":"BadRequestException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ],
+      "idempotent":true
     },
     "DeleteIntegration":{
       "name":"DeleteIntegration",
@@ -157,6 +238,22 @@
         {"shape":"InternalServerException"}
       ]
     },
+    "DeleteWorkflow":{
+      "name":"DeleteWorkflow",
+      "http":{
+        "method":"DELETE",
+        "requestUri":"/domains/{DomainName}/workflows/{WorkflowId}"
+      },
+      "input":{"shape":"DeleteWorkflowRequest"},
+      "output":{"shape":"DeleteWorkflowResponse"},
+      "errors":[
+        {"shape":"BadRequestException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ]
+    },
     "GetAutoMergingPreview":{
       "name":"GetAutoMergingPreview",
       "http":{
@@ -173,6 +270,38 @@
         {"shape":"InternalServerException"}
       ]
     },
+    "GetCalculatedAttributeDefinition":{
+      "name":"GetCalculatedAttributeDefinition",
+      "http":{
+        "method":"GET",
+        "requestUri":"/domains/{DomainName}/calculated-attributes/{CalculatedAttributeName}"
+      },
+      "input":{"shape":"GetCalculatedAttributeDefinitionRequest"},
+      "output":{"shape":"GetCalculatedAttributeDefinitionResponse"},
+      "errors":[
+        {"shape":"BadRequestException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ]
+    },
+    "GetCalculatedAttributeForProfile":{
+      "name":"GetCalculatedAttributeForProfile",
+      "http":{
+        "method":"GET",
+        "requestUri":"/domains/{DomainName}/profile/{ProfileId}/calculated-attributes/{CalculatedAttributeName}"
+      },
+      "input":{"shape":"GetCalculatedAttributeForProfileRequest"},
+      "output":{"shape":"GetCalculatedAttributeForProfileResponse"},
+      "errors":[
+        {"shape":"BadRequestException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ]
+    },
     "GetDomain":{
       "name":"GetDomain",
       "http":{
@@ -181,6 +310,22 @@
       },
       "input":{"shape":"GetDomainRequest"},
       "output":{"shape":"GetDomainResponse"},
+      "errors":[
+        {"shape":"BadRequestException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ]
+    },
+    "GetEventStream":{
+      "name":"GetEventStream",
+      "http":{
+        "method":"GET",
+        "requestUri":"/domains/{DomainName}/event-streams/{EventStreamName}"
+      },
+      "input":{"shape":"GetEventStreamRequest"},
+      "output":{"shape":"GetEventStreamResponse"},
       "errors":[
         {"shape":"BadRequestException"},
         {"shape":"ResourceNotFoundException"},
@@ -269,6 +414,38 @@
         {"shape":"InternalServerException"}
       ]
     },
+    "GetWorkflow":{
+      "name":"GetWorkflow",
+      "http":{
+        "method":"GET",
+        "requestUri":"/domains/{DomainName}/workflows/{WorkflowId}"
+      },
+      "input":{"shape":"GetWorkflowRequest"},
+      "output":{"shape":"GetWorkflowResponse"},
+      "errors":[
+        {"shape":"BadRequestException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ]
+    },
+    "GetWorkflowSteps":{
+      "name":"GetWorkflowSteps",
+      "http":{
+        "method":"GET",
+        "requestUri":"/domains/{DomainName}/workflows/{WorkflowId}/steps"
+      },
+      "input":{"shape":"GetWorkflowStepsRequest"},
+      "output":{"shape":"GetWorkflowStepsResponse"},
+      "errors":[
+        {"shape":"BadRequestException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ]
+    },
     "ListAccountIntegrations":{
       "name":"ListAccountIntegrations",
       "http":{
@@ -285,6 +462,38 @@
         {"shape":"InternalServerException"}
       ]
     },
+    "ListCalculatedAttributeDefinitions":{
+      "name":"ListCalculatedAttributeDefinitions",
+      "http":{
+        "method":"GET",
+        "requestUri":"/domains/{DomainName}/calculated-attributes"
+      },
+      "input":{"shape":"ListCalculatedAttributeDefinitionsRequest"},
+      "output":{"shape":"ListCalculatedAttributeDefinitionsResponse"},
+      "errors":[
+        {"shape":"BadRequestException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ]
+    },
+    "ListCalculatedAttributesForProfile":{
+      "name":"ListCalculatedAttributesForProfile",
+      "http":{
+        "method":"GET",
+        "requestUri":"/domains/{DomainName}/profile/{ProfileId}/calculated-attributes"
+      },
+      "input":{"shape":"ListCalculatedAttributesForProfileRequest"},
+      "output":{"shape":"ListCalculatedAttributesForProfileResponse"},
+      "errors":[
+        {"shape":"BadRequestException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ]
+    },
     "ListDomains":{
       "name":"ListDomains",
       "http":{
@@ -293,6 +502,22 @@
       },
       "input":{"shape":"ListDomainsRequest"},
       "output":{"shape":"ListDomainsResponse"},
+      "errors":[
+        {"shape":"BadRequestException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ]
+    },
+    "ListEventStreams":{
+      "name":"ListEventStreams",
+      "http":{
+        "method":"GET",
+        "requestUri":"/domains/{DomainName}/event-streams"
+      },
+      "input":{"shape":"ListEventStreamsRequest"},
+      "output":{"shape":"ListEventStreamsResponse"},
       "errors":[
         {"shape":"BadRequestException"},
         {"shape":"ResourceNotFoundException"},
@@ -393,6 +618,22 @@
         {"shape":"InternalServerException"},
         {"shape":"BadRequestException"},
         {"shape":"ResourceNotFoundException"}
+      ]
+    },
+    "ListWorkflows":{
+      "name":"ListWorkflows",
+      "http":{
+        "method":"POST",
+        "requestUri":"/domains/{DomainName}/workflows"
+      },
+      "input":{"shape":"ListWorkflowsRequest"},
+      "output":{"shape":"ListWorkflowsResponse"},
+      "errors":[
+        {"shape":"BadRequestException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
       ]
     },
     "MergeProfiles":{
@@ -502,6 +743,22 @@
         {"shape":"ResourceNotFoundException"}
       ]
     },
+    "UpdateCalculatedAttributeDefinition":{
+      "name":"UpdateCalculatedAttributeDefinition",
+      "http":{
+        "method":"PUT",
+        "requestUri":"/domains/{DomainName}/calculated-attributes/{CalculatedAttributeName}"
+      },
+      "input":{"shape":"UpdateCalculatedAttributeDefinitionRequest"},
+      "output":{"shape":"UpdateCalculatedAttributeDefinitionResponse"},
+      "errors":[
+        {"shape":"BadRequestException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ]
+    },
     "UpdateDomain":{
       "name":"UpdateDomain",
       "http":{
@@ -576,6 +833,17 @@
         "Values":{"shape":"requestValueList"}
       }
     },
+    "AdditionalSearchKey":{
+      "type":"structure",
+      "required":[
+        "KeyName",
+        "Values"
+      ],
+      "members":{
+        "KeyName":{"shape":"name"},
+        "Values":{"shape":"requestValueList"}
+      }
+    },
     "Address":{
       "type":"structure",
       "members":{
@@ -590,6 +858,86 @@
         "Country":{"shape":"string1To255"},
         "PostalCode":{"shape":"string1To255"}
       }
+    },
+    "AppflowIntegration":{
+      "type":"structure",
+      "required":["FlowDefinition"],
+      "members":{
+        "FlowDefinition":{"shape":"FlowDefinition"},
+        "Batches":{"shape":"Batches"}
+      }
+    },
+    "AppflowIntegrationWorkflowAttributes":{
+      "type":"structure",
+      "required":[
+        "SourceConnectorType",
+        "ConnectorProfileName"
+      ],
+      "members":{
+        "SourceConnectorType":{"shape":"SourceConnectorType"},
+        "ConnectorProfileName":{"shape":"ConnectorProfileName"},
+        "RoleArn":{"shape":"string1To255"}
+      }
+    },
+    "AppflowIntegrationWorkflowMetrics":{
+      "type":"structure",
+      "required":[
+        "RecordsProcessed",
+        "StepsCompleted",
+        "TotalSteps"
+      ],
+      "members":{
+        "RecordsProcessed":{"shape":"long"},
+        "StepsCompleted":{"shape":"long"},
+        "TotalSteps":{"shape":"long"}
+      }
+    },
+    "AppflowIntegrationWorkflowStep":{
+      "type":"structure",
+      "required":[
+        "FlowName",
+        "Status",
+        "ExecutionMessage",
+        "RecordsProcessed",
+        "BatchRecordsStartTime",
+        "BatchRecordsEndTime",
+        "CreatedAt",
+        "LastUpdatedAt"
+      ],
+      "members":{
+        "FlowName":{"shape":"FlowName"},
+        "Status":{"shape":"Status"},
+        "ExecutionMessage":{"shape":"string1To255"},
+        "RecordsProcessed":{"shape":"long"},
+        "BatchRecordsStartTime":{"shape":"string1To255"},
+        "BatchRecordsEndTime":{"shape":"string1To255"},
+        "CreatedAt":{"shape":"timestamp"},
+        "LastUpdatedAt":{"shape":"timestamp"}
+      }
+    },
+    "AttributeDetails":{
+      "type":"structure",
+      "required":[
+        "Attributes",
+        "Expression"
+      ],
+      "members":{
+        "Attributes":{"shape":"AttributeList"},
+        "Expression":{"shape":"string1To255"}
+      }
+    },
+    "AttributeItem":{
+      "type":"structure",
+      "required":["Name"],
+      "members":{
+        "Name":{"shape":"attributeName"}
+      }
+    },
+    "AttributeList":{
+      "type":"list",
+      "member":{"shape":"AttributeItem"},
+      "max":2,
+      "min":1
     },
     "AttributeSourceIdMap":{
       "type":"map",
@@ -607,7 +955,8 @@
       "members":{
         "Enabled":{"shape":"optionalBoolean"},
         "Consolidation":{"shape":"Consolidation"},
-        "ConflictResolution":{"shape":"ConflictResolution"}
+        "ConflictResolution":{"shape":"ConflictResolution"},
+        "MinAllowedConfidenceScoreForMerging":{"shape":"Double0To1"}
       }
     },
     "BadRequestException":{
@@ -617,6 +966,21 @@
       },
       "error":{"httpStatusCode":400},
       "exception":true
+    },
+    "Batch":{
+      "type":"structure",
+      "required":[
+        "StartTime",
+        "EndTime"
+      ],
+      "members":{
+        "StartTime":{"shape":"timestamp"},
+        "EndTime":{"shape":"timestamp"}
+      }
+    },
+    "Batches":{
+      "type":"list",
+      "member":{"shape":"Batch"}
     },
     "BucketName":{
       "type":"string",
@@ -628,6 +992,22 @@
       "type":"string",
       "max":512,
       "pattern":".*"
+    },
+    "CalculatedAttributeDefinitionsList":{
+      "type":"list",
+      "member":{"shape":"ListCalculatedAttributeDefinitionItem"}
+    },
+    "CalculatedAttributesForProfileList":{
+      "type":"list",
+      "member":{"shape":"ListCalculatedAttributeForProfileItem"}
+    },
+    "Conditions":{
+      "type":"structure",
+      "members":{
+        "Range":{"shape":"Range"},
+        "ObjectCount":{"shape":"ObjectCount"},
+        "Threshold":{"shape":"Threshold"}
+      }
     },
     "ConflictResolution":{
       "type":"structure",
@@ -664,6 +1044,47 @@
       "required":["MatchingAttributesList"],
       "members":{
         "MatchingAttributesList":{"shape":"MatchingAttributesList"}
+      }
+    },
+    "CreateCalculatedAttributeDefinitionRequest":{
+      "type":"structure",
+      "required":[
+        "DomainName",
+        "CalculatedAttributeName",
+        "AttributeDetails",
+        "Statistic"
+      ],
+      "members":{
+        "DomainName":{
+          "shape":"name",
+          "location":"uri",
+          "locationName":"DomainName"
+        },
+        "CalculatedAttributeName":{
+          "shape":"typeName",
+          "location":"uri",
+          "locationName":"CalculatedAttributeName"
+        },
+        "DisplayName":{"shape":"displayName"},
+        "Description":{"shape":"text"},
+        "AttributeDetails":{"shape":"AttributeDetails"},
+        "Conditions":{"shape":"Conditions"},
+        "Statistic":{"shape":"Statistic"},
+        "Tags":{"shape":"TagMap"}
+      }
+    },
+    "CreateCalculatedAttributeDefinitionResponse":{
+      "type":"structure",
+      "members":{
+        "CalculatedAttributeName":{"shape":"typeName"},
+        "DisplayName":{"shape":"displayName"},
+        "Description":{"shape":"text"},
+        "AttributeDetails":{"shape":"AttributeDetails"},
+        "Conditions":{"shape":"Conditions"},
+        "Statistic":{"shape":"Statistic"},
+        "CreatedAt":{"shape":"timestamp"},
+        "LastUpdatedAt":{"shape":"timestamp"},
+        "Tags":{"shape":"TagMap"}
       }
     },
     "CreateDomainRequest":{
@@ -704,6 +1125,69 @@
         "Tags":{"shape":"TagMap"}
       }
     },
+    "CreateEventStreamRequest":{
+      "type":"structure",
+      "required":[
+        "DomainName",
+        "Uri",
+        "EventStreamName"
+      ],
+      "members":{
+        "DomainName":{
+          "shape":"name",
+          "location":"uri",
+          "locationName":"DomainName"
+        },
+        "Uri":{"shape":"string1To255"},
+        "EventStreamName":{
+          "shape":"name",
+          "location":"uri",
+          "locationName":"EventStreamName"
+        },
+        "Tags":{"shape":"TagMap"}
+      }
+    },
+    "CreateEventStreamResponse":{
+      "type":"structure",
+      "required":["EventStreamArn"],
+      "members":{
+        "EventStreamArn":{"shape":"string1To255"},
+        "Tags":{"shape":"TagMap"}
+      }
+    },
+    "CreateIntegrationWorkflowRequest":{
+      "type":"structure",
+      "required":[
+        "DomainName",
+        "WorkflowType",
+        "IntegrationConfig",
+        "ObjectTypeName",
+        "RoleArn"
+      ],
+      "members":{
+        "DomainName":{
+          "shape":"name",
+          "location":"uri",
+          "locationName":"DomainName"
+        },
+        "WorkflowType":{"shape":"WorkflowType"},
+        "IntegrationConfig":{"shape":"IntegrationConfig"},
+        "ObjectTypeName":{"shape":"typeName"},
+        "RoleArn":{"shape":"RoleArn"},
+        "Tags":{"shape":"TagMap"}
+      }
+    },
+    "CreateIntegrationWorkflowResponse":{
+      "type":"structure",
+      "required":[
+        "WorkflowId",
+        "Message"
+      ],
+      "members":{
+        "WorkflowId":{"shape":"uuid"},
+        "Message":{"shape":"string1To255"}
+      }
+    },
     "CreateProfileRequest":{
       "type":"structure",
       "required":["DomainName"],
@@ -733,7 +1217,9 @@
         "ShippingAddress":{"shape":"Address"},
         "MailingAddress":{"shape":"Address"},
         "BillingAddress":{"shape":"Address"},
-        "Attributes":{"shape":"Attributes"}
+        "Attributes":{"shape":"Attributes"},
+        "PartyTypeString":{"shape":"string1To255"},
+        "GenderString":{"shape":"string1To255"}
       }
     },
     "CreateProfileResponse":{
@@ -756,6 +1242,30 @@
       "max":256,
       "pattern":".*"
     },
+    "DeleteCalculatedAttributeDefinitionRequest":{
+      "type":"structure",
+      "required":[
+        "DomainName",
+        "CalculatedAttributeName"
+      ],
+      "members":{
+        "DomainName":{
+          "shape":"name",
+          "location":"uri",
+          "locationName":"DomainName"
+        },
+        "CalculatedAttributeName":{
+          "shape":"typeName",
+          "location":"uri",
+          "locationName":"CalculatedAttributeName"
+        }
+      }
+    },
+    "DeleteCalculatedAttributeDefinitionResponse":{
+      "type":"structure",
+      "members":{
+      }
+    },
     "DeleteDomainRequest":{
       "type":"structure",
       "required":["DomainName"],
@@ -772,6 +1282,30 @@
       "required":["Message"],
       "members":{
         "Message":{"shape":"message"}
+      }
+    },
+    "DeleteEventStreamRequest":{
+      "type":"structure",
+      "required":[
+        "DomainName",
+        "EventStreamName"
+      ],
+      "members":{
+        "DomainName":{
+          "shape":"name",
+          "location":"uri",
+          "locationName":"DomainName"
+        },
+        "EventStreamName":{
+          "shape":"name",
+          "location":"uri",
+          "locationName":"EventStreamName"
+        }
+      }
+    },
+    "DeleteEventStreamResponse":{
+      "type":"structure",
+      "members":{
       }
     },
     "DeleteIntegrationRequest":{
@@ -893,10 +1427,46 @@
         "Message":{"shape":"message"}
       }
     },
+    "DeleteWorkflowRequest":{
+      "type":"structure",
+      "required":[
+        "DomainName",
+        "WorkflowId"
+      ],
+      "members":{
+        "DomainName":{
+          "shape":"name",
+          "location":"uri",
+          "locationName":"DomainName"
+        },
+        "WorkflowId":{
+          "shape":"string1To255",
+          "location":"uri",
+          "locationName":"WorkflowId"
+        }
+      }
+    },
+    "DeleteWorkflowResponse":{
+      "type":"structure",
+      "members":{
+      }
+    },
     "DestinationField":{
       "type":"string",
       "max":256,
       "pattern":".*"
+    },
+    "DestinationSummary":{
+      "type":"structure",
+      "required":[
+        "Uri",
+        "Status"
+      ],
+      "members":{
+        "Uri":{"shape":"string1To255"},
+        "Status":{"shape":"EventStreamDestinationStatus"},
+        "UnhealthySince":{"shape":"timestamp"}
+      }
     },
     "DomainList":{
       "type":"list",
@@ -912,6 +1482,60 @@
       }
     },
     "Double":{"type":"double"},
+    "Double0To1":{
+      "type":"double",
+      "max":1.0,
+      "min":0.0
+    },
+    "EventStreamDestinationDetails":{
+      "type":"structure",
+      "required":[
+        "Uri",
+        "Status"
+      ],
+      "members":{
+        "Uri":{"shape":"string1To255"},
+        "Status":{"shape":"EventStreamDestinationStatus"},
+        "UnhealthySince":{"shape":"timestamp"},
+        "Message":{"shape":"string1To1000"}
+      }
+    },
+    "EventStreamDestinationStatus":{
+      "type":"string",
+      "enum":[
+        "HEALTHY",
+        "UNHEALTHY"
+      ]
+    },
+    "EventStreamState":{
+      "type":"string",
+      "enum":[
+        "RUNNING",
+        "STOPPED"
+      ]
+    },
+    "EventStreamSummary":{
+      "type":"structure",
+      "required":[
+        "DomainName",
+        "EventStreamName",
+        "EventStreamArn",
+        "State"
+      ],
+      "members":{
+        "DomainName":{"shape":"name"},
+        "EventStreamName":{"shape":"name"},
+        "EventStreamArn":{"shape":"string1To255"},
+        "State":{"shape":"EventStreamState"},
+        "StoppedSince":{"shape":"timestamp"},
+        "DestinationSummary":{"shape":"DestinationSummary"},
+        "Tags":{"shape":"TagMap"}
+      }
+    },
+    "EventStreamSummaryList":{
+      "type":"list",
+      "member":{"shape":"EventStreamSummary"}
+    },
     "ExportingConfig":{
       "type":"structure",
       "members":{
@@ -997,8 +1621,16 @@
       "max":256,
       "pattern":"[a-zA-Z0-9][\\w!@#.-]+"
     },
+    "FoundByKeyValue":{
+      "type":"structure",
+      "members":{
+        "KeyName":{"shape":"name"},
+        "Values":{"shape":"requestValueList"}
+      }
+    },
     "Gender":{
       "type":"string",
+      "deprecated":true,
       "enum":[
         "MALE",
         "FEMALE",
@@ -1019,7 +1651,8 @@
           "locationName":"DomainName"
         },
         "Consolidation":{"shape":"Consolidation"},
-        "ConflictResolution":{"shape":"ConflictResolution"}
+        "ConflictResolution":{"shape":"ConflictResolution"},
+        "MinAllowedConfidenceScoreForMerging":{"shape":"Double0To1"}
       }
     },
     "GetAutoMergingPreviewResponse":{
@@ -1030,6 +1663,73 @@
         "NumberOfMatchesInSample":{"shape":"long"},
         "NumberOfProfilesInSample":{"shape":"long"},
         "NumberOfProfilesWillBeMerged":{"shape":"long"}
+      }
+    },
+    "GetCalculatedAttributeDefinitionRequest":{
+      "type":"structure",
+      "required":[
+        "DomainName",
+        "CalculatedAttributeName"
+      ],
+      "members":{
+        "DomainName":{
+          "shape":"name",
+          "location":"uri",
+          "locationName":"DomainName"
+        },
+        "CalculatedAttributeName":{
+          "shape":"typeName",
+          "location":"uri",
+          "locationName":"CalculatedAttributeName"
+        }
+      }
+    },
+    "GetCalculatedAttributeDefinitionResponse":{
+      "type":"structure",
+      "members":{
+        "CalculatedAttributeName":{"shape":"typeName"},
+        "DisplayName":{"shape":"displayName"},
+        "Description":{"shape":"text"},
+        "CreatedAt":{"shape":"timestamp"},
+        "LastUpdatedAt":{"shape":"timestamp"},
+        "Statistic":{"shape":"Statistic"},
+        "Conditions":{"shape":"Conditions"},
+        "AttributeDetails":{"shape":"AttributeDetails"},
+        "Tags":{"shape":"TagMap"}
+      }
+    },
+    "GetCalculatedAttributeForProfileRequest":{
+      "type":"structure",
+      "required":[
+        "DomainName",
+        "ProfileId",
+        "CalculatedAttributeName"
+      ],
+      "members":{
+        "DomainName":{
+          "shape":"name",
+          "location":"uri",
+          "locationName":"DomainName"
+        },
+        "ProfileId":{
+          "shape":"uuid",
+          "location":"uri",
+          "locationName":"ProfileId"
+        },
+        "CalculatedAttributeName":{
+          "shape":"typeName",
+          "location":"uri",
+          "locationName":"CalculatedAttributeName"
+        }
+      }
+    },
+    "GetCalculatedAttributeForProfileResponse":{
+      "type":"structure",
+      "members":{
+        "CalculatedAttributeName":{"shape":"typeName"},
+        "DisplayName":{"shape":"displayName"},
+        "IsDataPartial":{"shape":"string1To255"},
+        "Value":{"shape":"string1To255"}
       }
     },
     "GetDomainRequest":{
@@ -1059,6 +1759,44 @@
         "Matching":{"shape":"MatchingResponse"},
         "CreatedAt":{"shape":"timestamp"},
         "LastUpdatedAt":{"shape":"timestamp"},
+        "Tags":{"shape":"TagMap"}
+      }
+    },
+    "GetEventStreamRequest":{
+      "type":"structure",
+      "required":[
+        "DomainName",
+        "EventStreamName"
+      ],
+      "members":{
+        "DomainName":{
+          "shape":"name",
+          "location":"uri",
+          "locationName":"DomainName"
+        },
+        "EventStreamName":{
+          "shape":"name",
+          "location":"uri",
+          "locationName":"EventStreamName"
+        }
+      }
+    },
+    "GetEventStreamResponse":{
+      "type":"structure",
+      "required":[
+        "DomainName",
+        "EventStreamArn",
+        "CreatedAt",
+        "State",
+        "DestinationDetails"
+      ],
+      "members":{
+        "DomainName":{"shape":"name"},
+        "EventStreamArn":{"shape":"string1To255"},
+        "CreatedAt":{"shape":"timestamp"},
+        "State":{"shape":"EventStreamState"},
+        "StoppedSince":{"shape":"timestamp"},
+        "DestinationDetails":{"shape":"EventStreamDestinationDetails"},
         "Tags":{"shape":"TagMap"}
       }
     },
@@ -1117,7 +1855,6 @@
       "required":[
         "DomainName",
         "Uri",
-        "ObjectTypeName",
         "CreatedAt",
         "LastUpdatedAt"
       ],
@@ -1127,7 +1864,10 @@
         "ObjectTypeName":{"shape":"typeName"},
         "CreatedAt":{"shape":"timestamp"},
         "LastUpdatedAt":{"shape":"timestamp"},
-        "Tags":{"shape":"TagMap"}
+        "Tags":{"shape":"TagMap"},
+        "ObjectTypeNames":{"shape":"ObjectTypeNames"},
+        "WorkflowId":{"shape":"string1To255"},
+        "IsUnstructured":{"shape":"optionalBoolean"}
       }
     },
     "GetMatchesRequest":{
@@ -1223,6 +1963,76 @@
         "Keys":{"shape":"KeyMap"}
       }
     },
+    "GetWorkflowRequest":{
+      "type":"structure",
+      "required":[
+        "DomainName",
+        "WorkflowId"
+      ],
+      "members":{
+        "DomainName":{
+          "shape":"name",
+          "location":"uri",
+          "locationName":"DomainName"
+        },
+        "WorkflowId":{
+          "shape":"uuid",
+          "location":"uri",
+          "locationName":"WorkflowId"
+        }
+      }
+    },
+    "GetWorkflowResponse":{
+      "type":"structure",
+      "members":{
+        "WorkflowId":{"shape":"uuid"},
+        "WorkflowType":{"shape":"WorkflowType"},
+        "Status":{"shape":"Status"},
+        "ErrorDescription":{"shape":"string1To255"},
+        "StartDate":{"shape":"timestamp"},
+        "LastUpdatedAt":{"shape":"timestamp"},
+        "Attributes":{"shape":"WorkflowAttributes"},
+        "Metrics":{"shape":"WorkflowMetrics"}
+      }
+    },
+    "GetWorkflowStepsRequest":{
+      "type":"structure",
+      "required":[
+        "DomainName",
+        "WorkflowId"
+      ],
+      "members":{
+        "DomainName":{
+          "shape":"name",
+          "location":"uri",
+          "locationName":"DomainName"
+        },
+        "WorkflowId":{
+          "shape":"uuid",
+          "location":"uri",
+          "locationName":"WorkflowId"
+        },
+        "NextToken":{
+          "shape":"token",
+          "location":"querystring",
+          "locationName":"next-token"
+        },
+        "MaxResults":{
+          "shape":"maxSize100",
+          "location":"querystring",
+          "locationName":"max-results"
+        }
+      }
+    },
+    "GetWorkflowStepsResponse":{
+      "type":"structure",
+      "members":{
+        "WorkflowId":{"shape":"uuid"},
+        "WorkflowType":{"shape":"WorkflowType"},
+        "Items":{"shape":"WorkflowStepsList"},
+        "NextToken":{"shape":"token"}
+      }
+    },
     "IdentityResolutionJob":{
       "type":"structure",
       "members":{
@@ -1256,6 +2066,12 @@
       "type":"structure",
       "members":{
         "DatetimeTypeFieldName":{"shape":"DatetimeTypeFieldName"}
+      }
+    },
+    "IntegrationConfig":{
+      "type":"structure",
+      "members":{
+        "AppflowIntegration":{"shape":"AppflowIntegration"}
       }
     },
     "IntegrationList":{
@@ -1333,6 +2149,11 @@
           "shape":"maxSize100",
           "location":"querystring",
           "locationName":"max-results"
+        },
+        "IncludeHidden":{
+          "shape":"optionalBoolean",
+          "location":"querystring",
+          "locationName":"include-hidden"
         }
       }
     },
@@ -1340,6 +2161,90 @@
       "type":"structure",
       "members":{
         "Items":{"shape":"IntegrationList"},
+        "NextToken":{"shape":"token"}
+      }
+    },
+    "ListCalculatedAttributeDefinitionItem":{
+      "type":"structure",
+      "members":{
+        "CalculatedAttributeName":{"shape":"typeName"},
+        "DisplayName":{"shape":"displayName"},
+        "Description":{"shape":"text"},
+        "CreatedAt":{"shape":"timestamp"},
+        "LastUpdatedAt":{"shape":"timestamp"},
+        "Tags":{"shape":"TagMap"}
+      }
+    },
+    "ListCalculatedAttributeDefinitionsRequest":{
+      "type":"structure",
+      "required":["DomainName"],
+      "members":{
+        "DomainName":{
+          "shape":"name",
+          "location":"uri",
+          "locationName":"DomainName"
+        },
+        "NextToken":{
+          "shape":"token",
+          "location":"querystring",
+          "locationName":"next-token"
+        },
+        "MaxResults":{
+          "shape":"maxSize100",
+          "location":"querystring",
+          "locationName":"max-results"
+        }
+      }
+    },
+    "ListCalculatedAttributeDefinitionsResponse":{
+      "type":"structure",
+      "members":{
+        "Items":{"shape":"CalculatedAttributeDefinitionsList"},
+        "NextToken":{"shape":"token"}
+      }
+    },
+    "ListCalculatedAttributeForProfileItem":{
+      "type":"structure",
+      "members":{
+        "CalculatedAttributeName":{"shape":"typeName"},
+        "DisplayName":{"shape":"displayName"},
+        "IsDataPartial":{"shape":"string1To255"},
+        "Value":{"shape":"string1To255"}
+      }
+    },
+    "ListCalculatedAttributesForProfileRequest":{
+      "type":"structure",
+      "required":[
+        "DomainName",
+        "ProfileId"
+      ],
+      "members":{
+        "NextToken":{
+          "shape":"token",
+          "location":"querystring",
+          "locationName":"next-token"
+        },
+        "MaxResults":{
+          "shape":"maxSize100",
+          "location":"querystring",
+          "locationName":"max-results"
+        },
+        "DomainName":{
+          "shape":"name",
+          "location":"uri",
+          "locationName":"DomainName"
+        },
+        "ProfileId":{
+          "shape":"uuid",
+          "location":"uri",
+          "locationName":"ProfileId"
+        }
+      }
+    },
+    "ListCalculatedAttributesForProfileResponse":{
+      "type":"structure",
+      "members":{
+        "Items":{"shape":"CalculatedAttributesForProfileList"},
         "NextToken":{"shape":"token"}
       }
     },
@@ -1379,6 +2284,34 @@
         "NextToken":{"shape":"token"}
       }
     },
+    "ListEventStreamsRequest":{
+      "type":"structure",
+      "required":["DomainName"],
+      "members":{
+        "DomainName":{
+          "shape":"name",
+          "location":"uri",
+          "locationName":"DomainName"
+        },
+        "NextToken":{
+          "shape":"token",
+          "location":"querystring",
+          "locationName":"next-token"
+        },
+        "MaxResults":{
+          "shape":"maxSize100",
+          "location":"querystring",
+          "locationName":"max-results"
+        }
+      }
+    },
+    "ListEventStreamsResponse":{
+      "type":"structure",
+      "members":{
+        "Items":{"shape":"EventStreamSummaryList"},
+        "NextToken":{"shape":"token"}
+      }
+    },
     "ListIdentityResolutionJobsRequest":{
       "type":"structure",
       "required":["DomainName"],
@@ -1412,7 +2345,6 @@
       "required":[
         "DomainName",
         "Uri",
-        "ObjectTypeName",
         "CreatedAt",
         "LastUpdatedAt"
       ],
@@ -1422,7 +2354,10 @@
         "ObjectTypeName":{"shape":"typeName"},
         "CreatedAt":{"shape":"timestamp"},
         "LastUpdatedAt":{"shape":"timestamp"},
-        "Tags":{"shape":"TagMap"}
+        "Tags":{"shape":"TagMap"},
+        "ObjectTypeNames":{"shape":"ObjectTypeNames"},
+        "WorkflowId":{"shape":"string1To255"},
+        "IsUnstructured":{"shape":"optionalBoolean"}
       }
     },
     "ListIntegrationsRequest":{
@@ -1443,6 +2378,11 @@
           "shape":"maxSize100",
           "location":"querystring",
           "locationName":"max-results"
+        },
+        "IncludeHidden":{
+          "shape":"optionalBoolean",
+          "location":"querystring",
+          "locationName":"include-hidden"
         }
       }
     },
@@ -1585,6 +2525,57 @@
         "tags":{"shape":"TagMap"}
       }
     },
+    "ListWorkflowsItem":{
+      "type":"structure",
+      "required":[
+        "WorkflowType",
+        "WorkflowId",
+        "Status",
+        "StatusDescription",
+        "CreatedAt",
+        "LastUpdatedAt"
+      ],
+      "members":{
+        "WorkflowType":{"shape":"WorkflowType"},
+        "WorkflowId":{"shape":"string1To255"},
+        "Status":{"shape":"Status"},
+        "StatusDescription":{"shape":"string1To255"},
+        "CreatedAt":{"shape":"timestamp"},
+        "LastUpdatedAt":{"shape":"timestamp"}
+      }
+    },
+    "ListWorkflowsRequest":{
+      "type":"structure",
+      "required":["DomainName"],
+      "members":{
+        "DomainName":{
+          "shape":"name",
+          "location":"uri",
+          "locationName":"DomainName"
+        },
+        "WorkflowType":{"shape":"WorkflowType"},
+        "Status":{"shape":"Status"},
+        "QueryStartDate":{"shape":"timestamp"},
+        "QueryEndDate":{"shape":"timestamp"},
+        "NextToken":{
+          "shape":"token",
+          "location":"querystring",
+          "locationName":"next-token"
+        },
+        "MaxResults":{
+          "shape":"maxSize100",
+          "location":"querystring",
+          "locationName":"max-results"
+        }
+      }
+    },
+    "ListWorkflowsResponse":{
+      "type":"structure",
+      "members":{
+        "Items":{"shape":"WorkflowList"},
+        "NextToken":{"shape":"token"}
+      }
+    },
     "MarketoConnectorOperator":{
       "type":"string",
       "enum":[
@@ -1685,6 +2676,11 @@
       "max":512,
       "pattern":"\\S+"
     },
+    "ObjectCount":{
+      "type":"integer",
+      "max":100,
+      "min":1
+    },
     "ObjectFilter":{
       "type":"structure",
       "required":[
@@ -1715,6 +2711,20 @@
       "type":"list",
       "member":{"shape":"ObjectTypeKey"}
     },
+    "ObjectTypeNames":{
+      "type":"map",
+      "key":{"shape":"string1To255"},
+      "value":{"shape":"typeName"}
+    },
+    "Operator":{
+      "type":"string",
+      "enum":[
+        "EQUAL_TO",
+        "GREATER_THAN",
+        "LESS_THAN",
+        "NOT_EQUAL_TO"
+      ]
+    },
     "OperatorPropertiesKeys":{
       "type":"string",
       "enum":[
@@ -1736,6 +2746,7 @@
     },
     "PartyType":{
       "type":"string",
+      "deprecated":true,
       "enum":[
         "INDIVIDUAL",
         "BUSINESS",
@@ -1766,7 +2777,10 @@
         "ShippingAddress":{"shape":"Address"},
         "MailingAddress":{"shape":"Address"},
         "BillingAddress":{"shape":"Address"},
-        "Attributes":{"shape":"Attributes"}
+        "Attributes":{"shape":"Attributes"},
+        "FoundByItems":{"shape":"foundByList"},
+        "PartyTypeString":{"shape":"string1To255"},
+        "GenderString":{"shape":"string1To255"}
       }
     },
     "ProfileIdList":{
@@ -1802,10 +2816,7 @@
     },
     "PutIntegrationRequest":{
       "type":"structure",
-      "required":[
-        "DomainName",
-        "ObjectTypeName"
-      ],
+      "required":["DomainName"],
       "members":{
         "DomainName":{
           "shape":"name",
@@ -1815,7 +2826,8 @@
         "Uri":{"shape":"string1To255"},
         "ObjectTypeName":{"shape":"typeName"},
         "Tags":{"shape":"TagMap"},
-        "FlowDefinition":{"shape":"FlowDefinition"}
+        "FlowDefinition":{"shape":"FlowDefinition"},
+        "ObjectTypeNames":{"shape":"ObjectTypeNames"}
       }
     },
     "PutIntegrationResponse":{
@@ -1823,7 +2835,6 @@
       "required":[
         "DomainName",
         "Uri",
-        "ObjectTypeName",
         "CreatedAt",
         "LastUpdatedAt"
       ],
@@ -1833,7 +2844,10 @@
         "ObjectTypeName":{"shape":"typeName"},
         "CreatedAt":{"shape":"timestamp"},
         "LastUpdatedAt":{"shape":"timestamp"},
-        "Tags":{"shape":"TagMap"}
+        "Tags":{"shape":"TagMap"},
+        "ObjectTypeNames":{"shape":"ObjectTypeNames"},
+        "WorkflowId":{"shape":"string1To255"},
+        "IsUnstructured":{"shape":"optionalBoolean"}
       }
     },
     "PutProfileObjectRequest":{
@@ -1909,6 +2923,17 @@
         "Tags":{"shape":"TagMap"}
       }
     },
+    "Range":{
+      "type":"structure",
+      "required":[
+        "Value",
+        "Unit"
+      ],
+      "members":{
+        "Value":{"shape":"Value"},
+        "Unit":{"shape":"Unit"}
+      }
+    },
     "ResourceNotFoundException":{
       "type":"structure",
       "members":{
@@ -1916,6 +2941,11 @@
       },
       "error":{"httpStatusCode":404},
       "exception":true
+    },
+    "RoleArn":{
+      "type":"string",
+      "max":512,
+      "pattern":"arn:aws:iam:.*:[0-9]+:.*"
     },
     "S3ConnectorOperator":{
       "type":"string",
@@ -2050,7 +3080,9 @@
           "locationName":"DomainName"
         },
         "KeyName":{"shape":"name"},
-        "Values":{"shape":"requestValueList"}
+        "Values":{"shape":"requestValueList"},
+        "AdditionalSearchKeys":{"shape":"additionalSearchKeysList"},
+        "LogicalOperator":{"shape":"logicalOperator"}
       }
     },
     "SearchProfilesResponse":{
@@ -2139,12 +3171,38 @@
         "UNIQUE",
         "SECONDARY",
         "LOOKUP_ONLY",
-        "NEW_ONLY"
+        "NEW_ONLY",
+        "ORDER"
       ]
     },
     "StandardIdentifierList":{
       "type":"list",
       "member":{"shape":"StandardIdentifier"}
+    },
+    "Statistic":{
+      "type":"string",
+      "enum":[
+        "FIRST_OCCURRENCE",
+        "LAST_OCCURRENCE",
+        "COUNT",
+        "SUM",
+        "MINIMUM",
+        "MAXIMUM",
+        "AVERAGE",
+        "MAX_OCCURRENCE"
+      ]
+    },
+    "Status":{
+      "type":"string",
+      "enum":[
+        "NOT_STARTED",
+        "IN_PROGRESS",
+        "COMPLETE",
+        "FAILED",
+        "SPLIT",
+        "RETRY",
+        "CANCELLED"
+      ]
     },
     "TagArn":{
       "type":"string",
@@ -2229,6 +3287,17 @@
       "type":"list",
       "member":{"shape":"Task"}
     },
+    "Threshold":{
+      "type":"structure",
+      "required":[
+        "Value",
+        "Operator"
+      ],
+      "members":{
+        "Value":{"shape":"string1To255"},
+        "Operator":{"shape":"Operator"}
+      }
+    },
     "ThrottlingException":{
       "type":"structure",
       "members":{
@@ -2263,6 +3332,10 @@
         "Event",
         "OnDemand"
       ]
+    },
+    "Unit":{
+      "type":"string",
+      "enum":["DAYS"]
     },
     "UntagResourceRequest":{
       "type":"structure",
@@ -2307,6 +3380,42 @@
       "type":"map",
       "key":{"shape":"string1To255"},
       "value":{"shape":"string0To255"}
+    },
+    "UpdateCalculatedAttributeDefinitionRequest":{
+      "type":"structure",
+      "required":[
+        "DomainName",
+        "CalculatedAttributeName"
+      ],
+      "members":{
+        "DomainName":{
+          "shape":"name",
+          "location":"uri",
+          "locationName":"DomainName"
+        },
+        "CalculatedAttributeName":{
+          "shape":"typeName",
+          "location":"uri",
+          "locationName":"CalculatedAttributeName"
+        },
+        "DisplayName":{"shape":"displayName"},
+        "Description":{"shape":"text"},
+        "Conditions":{"shape":"Conditions"}
+      }
+    },
+    "UpdateCalculatedAttributeDefinitionResponse":{
+      "type":"structure",
+      "members":{
+        "CalculatedAttributeName":{"shape":"typeName"},
+        "DisplayName":{"shape":"displayName"},
+        "Description":{"shape":"text"},
+        "CreatedAt":{"shape":"timestamp"},
+        "LastUpdatedAt":{"shape":"timestamp"},
+        "Statistic":{"shape":"Statistic"},
+        "Conditions":{"shape":"Conditions"},
+        "AttributeDetails":{"shape":"AttributeDetails"},
+        "Tags":{"shape":"TagMap"}
+      }
     },
     "UpdateDomainRequest":{
       "type":"structure",
@@ -2375,7 +3484,9 @@
         "ShippingAddress":{"shape":"UpdateAddress"},
         "MailingAddress":{"shape":"UpdateAddress"},
         "BillingAddress":{"shape":"UpdateAddress"},
-        "Attributes":{"shape":"UpdateAttributes"}
+        "Attributes":{"shape":"UpdateAttributes"},
+        "PartyTypeString":{"shape":"string0To255"},
+        "GenderString":{"shape":"string0To255"}
       }
     },
     "UpdateProfileResponse":{
@@ -2384,6 +3495,41 @@
       "members":{
         "ProfileId":{"shape":"uuid"}
       }
+    },
+    "Value":{
+      "type":"integer",
+      "max":366,
+      "min":1
+    },
+    "WorkflowAttributes":{
+      "type":"structure",
+      "members":{
+        "AppflowIntegration":{"shape":"AppflowIntegrationWorkflowAttributes"}
+      }
+    },
+    "WorkflowList":{
+      "type":"list",
+      "member":{"shape":"ListWorkflowsItem"}
+    },
+    "WorkflowMetrics":{
+      "type":"structure",
+      "members":{
+        "AppflowIntegration":{"shape":"AppflowIntegrationWorkflowMetrics"}
+      }
+    },
+    "WorkflowStepItem":{
+      "type":"structure",
+      "members":{
+        "AppflowIntegration":{"shape":"AppflowIntegrationWorkflowStep"}
+      }
+    },
+    "WorkflowStepsList":{
+      "type":"list",
+      "member":{"shape":"WorkflowStepItem"}
+    },
+    "WorkflowType":{
+      "type":"string",
+      "enum":["APPFLOW_INTEGRATION"]
     },
     "ZendeskConnectorOperator":{
       "type":"string",
@@ -2411,7 +3557,25 @@
         "Object":{"shape":"Object"}
       }
     },
+    "additionalSearchKeysList":{
+      "type":"list",
+      "member":{"shape":"AdditionalSearchKey"},
+      "max":4,
+      "min":1
+    },
+    "attributeName":{
+      "type":"string",
+      "max":64,
+      "min":1,
+      "pattern":"^[a-zA-Z0-9_.-]+$"
+    },
     "boolean":{"type":"boolean"},
+    "displayName":{
+      "type":"string",
+      "max":255,
+      "min":1,
+      "pattern":"^[a-zA-Z_][a-zA-Z_0-9-\\s]*$"
+    },
     "encryptionKey":{
       "type":"string",
       "max":255,
@@ -2421,6 +3585,19 @@
       "type":"integer",
       "max":1098,
       "min":1
+    },
+    "foundByList":{
+      "type":"list",
+      "member":{"shape":"FoundByKeyValue"},
+      "max":5,
+      "min":1
+    },
+    "logicalOperator":{
+      "type":"string",
+      "enum":[
+        "AND",
+        "OR"
+      ]
     },
     "long":{"type":"long"},
     "matchesNumber":{

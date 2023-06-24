@@ -40,7 +40,7 @@ namespace Amazon.Runtime.Internal.Transform
 
             this.StatusCode = response.StatusCode;
             this.IsSuccessStatusCode = this.StatusCode >= HttpStatusCode.OK && this.StatusCode <= (HttpStatusCode)299;
-            this.ContentType = response.ContentType;            
+            this.ContentType = response.ContentType;
             this.ContentLength = response.ContentLength;
             CopyHeaderValues(response);
         }
@@ -60,7 +60,7 @@ namespace Amazon.Runtime.Internal.Transform
 
         public string[] GetHeaderNames()
         {
-            return _headerNames;            
+            return _headerNames;
         }
 
         public string GetHeaderValue(string name)

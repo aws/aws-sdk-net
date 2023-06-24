@@ -70,6 +70,12 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
                     unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("buildType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.BuildType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("containerRecipe", targetDepth))
                 {
                     var unmarshaller = ContainerRecipeUnmarshaller.Instance;
@@ -98,6 +104,18 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = ImageRecipeUnmarshaller.Instance;
                     unmarshalledObject.ImageRecipe = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("imageScanningConfiguration", targetDepth))
+                {
+                    var unmarshaller = ImageScanningConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.ImageScanningConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("imageSource", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ImageSource = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("imageTestsConfiguration", targetDepth))
@@ -134,6 +152,12 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Platform = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("scanState", targetDepth))
+                {
+                    var unmarshaller = ImageScanStateUnmarshaller.Instance;
+                    unmarshalledObject.ScanState = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("sourcePipelineArn", targetDepth))

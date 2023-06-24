@@ -99,7 +99,8 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property PublicKey. 
         /// <para>
-        /// The public key (in plaintext).
+        /// The public key (in plaintext). When you use the HTTP API or the Amazon Web Services
+        /// CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=8192)]

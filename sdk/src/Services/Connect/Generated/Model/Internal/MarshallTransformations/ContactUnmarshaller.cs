@@ -142,10 +142,22 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     unmarshalledObject.QueueInfo = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("RelatedContactId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RelatedContactId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ScheduledTimestamp", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
                     unmarshalledObject.ScheduledTimestamp = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("WisdomInfo", targetDepth))
+                {
+                    var unmarshaller = WisdomInfoUnmarshaller.Instance;
+                    unmarshalledObject.WisdomInfo = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

@@ -38,6 +38,7 @@ namespace Amazon.AppConfig.Model
         private string _location;
         private string _reason;
         private string _type;
+        private string _value;
 
         /// <summary>
         /// Gets and sets the property Constraint. 
@@ -111,6 +112,25 @@ namespace Amazon.AppConfig.Model
         internal bool IsSetType()
         {
             return this._type != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Value. 
+        /// <para>
+        /// Details about an error with Lambda when a synchronous extension experiences an error
+        /// during an invocation.
+        /// </para>
+        /// </summary>
+        public string Value
+        {
+            get { return this._value; }
+            set { this._value = value; }
+        }
+
+        // Check to see if Value property is set
+        internal bool IsSetValue()
+        {
+            return this._value != null;
         }
 
     }

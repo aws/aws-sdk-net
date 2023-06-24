@@ -256,6 +256,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     unmarshalledObject.ProgramDateTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("programDateTimeClock", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ProgramDateTimeClock = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("programDateTimePeriod", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

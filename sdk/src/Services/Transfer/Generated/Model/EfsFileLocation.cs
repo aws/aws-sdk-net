@@ -29,7 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Transfer.Model
 {
     /// <summary>
-    /// Reserved for future use.
+    /// Specifies the details for the file location for the file that's being used in the
+    /// workflow. Only applicable if you are using Amazon Elastic File Systems (Amazon EFS)
+    /// for storage.
     /// 
     ///  
     /// <para>
@@ -44,7 +46,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property FileSystemId. 
         /// <para>
-        /// The ID of the file system, assigned by Amazon EFS.
+        /// The identifier of the file system, assigned by Amazon EFS.
         /// </para>
         /// </summary>
         [AWSProperty(Max=128)]
@@ -66,7 +68,7 @@ namespace Amazon.Transfer.Model
         /// The pathname for the folder being used by a workflow.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
+        [AWSProperty(Min=1, Max=65536)]
         public string Path
         {
             get { return this._path; }

@@ -29,11 +29,19 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 <#
     var payload = this.Operation.ResponsePayloadMember;
     var unmarshallPayload = payload != null && payload.IsStructure;
-    var payloadIsStream= payload != null && !unmarshallPayload;
-    if( this.Operation.ResponseHasBodyMembers || payload != null )
+    var payloadIsStream = payload != null && !unmarshallPayload;
+    bool isEventStreamOutput = this.Operation.IsEventStreamOutput;
+    if (this.Operation.ResponseHasBodyMembers || payload != null)
     {
-        if(this.Operation.AllowEmptyResult){
+        if (this.Operation.AllowEmptyResult)
+        {
             throw new NotImplementedException("AllowEmptyResult is not implemented for JSON unmarshallers");
+        }
+        if (isEventStreamOutput)
+        {
+#>
+            response.<#=payload.PropertyName#> = new <#=payload.Shape.Name#>(context.Stream);
+<#
         }
         else if (payloadIsStream)
         {
@@ -43,7 +51,16 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
             response.<#=payload.PropertyName#> = context.Stream;
 <#
             }
-            else
+            else if (payload.ModelShape.IsString)
+            {
+#>
+            using (var sr = new StreamReader(context.Stream))
+            {
+                response.<#=payload.PropertyName#> = sr.ReadToEnd();
+            }
+<#
+            }
+            else if (payload.ModelShape.IsMemoryStream)
             {
 #>
             var ms = new MemoryStream();
@@ -51,6 +68,14 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
             ms.Seek(0, SeekOrigin.Begin);
             response.<#=payload.PropertyName#> = ms;
 <#
+            }
+            else
+            {
+                // At this point, all valid configurations have been handled.  Valid use of payload is defined:
+                // https://awslabs.github.io/smithy/1.0/spec/core/http-traits.html#httppayload-trait
+                throw new Exception(
+                    $"{payload.PropertyName} can not be a Payload as Type {payload.Shape.Type} is not a valid target for the httpPayload trait.  " +
+                    "The httpPayload trait can be applied to structure members that target a string, blob, structure, union, document, set, map, or list.");
             }
         }
         else if (unmarshallPayload)
@@ -60,7 +85,7 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
             response.<#=payload.PropertyName#> = unmarshaller.Unmarshall(context);
 <#
         }
-		else if(this.IsWrapped)
+		else if (this.IsWrapped)
 		{
 #>
 			response.<#=this.WrappedResultMember#> = <#=this.Structure.Name#>Unmarshaller.Instance.Unmarshall(context);
@@ -114,7 +139,22 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
             var responseBodyBytes = context.GetResponseBodyBytes();
 
             using (var streamCopy = new MemoryStream(responseBodyBytes))
+<#
+            if  (this.Config.ServiceModel.IsAwsQueryCompatible)
+            {
+#>
+<# // Create a copy of context with headers in the response #>
+
+            using (var contextCopy = new JsonUnmarshallerContext(streamCopy, true, context.ResponseData))
+<#
+            }
+            else
+            {
+#>
             using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
+<#
+            }
+#>
             {
 <#
     foreach (var exception in this.Operation.Exceptions)
@@ -128,7 +168,21 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
     }
 #>
             }
+<#
+            if  (this.Config.ServiceModel.IsAwsQueryCompatible)
+            {
+                GenerateAWSQueryCompatibleBlock();
+#>
+            return new <#=this.BaseException#>(errorResponse.Message, errorResponse.InnerException, errorType, errorCode, errorResponse.RequestId, errorResponse.StatusCode);
+<#
+            }
+            else
+            {
+#>
             return new <#=this.BaseException#>(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
+<#
+            }
+#>
         }
 
 <#
@@ -149,6 +203,21 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 <#
 	}
     this.AddResponseSingletonMethod();
+#>
+<#
+    if(isEventStreamOutput)
+    {
+#>
+        protected override bool ShouldReadEntireResponse(IWebResponseData response, bool readEntireResponse)
+        {
+            return false;
+        }
+        /// <summary>
+        /// Specifies that the response should be streamed
+        /// </summary>
+        public override bool HasStreamingProperty => true;
+<#
+    }
 #>
     }
 }

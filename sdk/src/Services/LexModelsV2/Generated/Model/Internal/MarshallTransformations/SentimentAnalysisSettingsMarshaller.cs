@@ -34,7 +34,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SentimentAnalysisSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class SentimentAnalysisSettingsMarshaller : IRequestMarshaller<SentimentAnalysisSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SentimentAnalysisSettingsMarshaller Instance = new SentimentAnalysisSettingsMarshaller();
 
     }

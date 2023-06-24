@@ -38,7 +38,7 @@ namespace Amazon.ChimeSDKMeetings.Model
         /// <summary>
         /// Gets and sets the property Audio. 
         /// <para>
-        /// The configuration settings for the audio features available to a meeting. 
+        /// The configuration settings for the audio features available to a meeting.
         /// </para>
         /// </summary>
         public AudioFeatures Audio

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kendra.Model
 {
     /// <summary>
-    /// Provides the configuration information of the endpoint for your Amazon Kendra experience.
+    /// Provides the configuration information for the endpoint for your Amazon Kendra experience.
     /// </summary>
     public partial class ExperienceEndpoint
     {

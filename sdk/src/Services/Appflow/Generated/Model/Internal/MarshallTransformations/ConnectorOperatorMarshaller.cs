@@ -34,7 +34,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ConnectorOperator Marshaller
-    /// </summary>       
+    /// </summary>
     public class ConnectorOperatorMarshaller : IRequestMarshaller<ConnectorOperator, JsonMarshallerContext> 
     {
         /// <summary>
@@ -49,6 +49,12 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("Amplitude");
                 context.Writer.Write(requestObject.Amplitude);
+            }
+
+            if(requestObject.IsSetCustomConnector())
+            {
+                context.Writer.WritePropertyName("CustomConnector");
+                context.Writer.Write(requestObject.CustomConnector);
             }
 
             if(requestObject.IsSetDatadog())
@@ -79,6 +85,12 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("Marketo");
                 context.Writer.Write(requestObject.Marketo);
+            }
+
+            if(requestObject.IsSetPardot())
+            {
+                context.Writer.WritePropertyName("Pardot");
+                context.Writer.Write(requestObject.Pardot);
             }
 
             if(requestObject.IsSetS3())
@@ -139,7 +151,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ConnectorOperatorMarshaller Instance = new ConnectorOperatorMarshaller();
 
     }

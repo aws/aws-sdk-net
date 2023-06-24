@@ -479,6 +479,10 @@ namespace Amazon.GreengrassV2
         /// </summary>
         public static readonly EffectiveDeploymentExecutionStatus REJECTED = new EffectiveDeploymentExecutionStatus("REJECTED");
         /// <summary>
+        /// Constant SUCCEEDED for EffectiveDeploymentExecutionStatus
+        /// </summary>
+        public static readonly EffectiveDeploymentExecutionStatus SUCCEEDED = new EffectiveDeploymentExecutionStatus("SUCCEEDED");
+        /// <summary>
         /// Constant TIMED_OUT for EffectiveDeploymentExecutionStatus
         /// </summary>
         public static readonly EffectiveDeploymentExecutionStatus TIMED_OUT = new EffectiveDeploymentExecutionStatus("TIMED_OUT");
@@ -586,6 +590,56 @@ namespace Amazon.GreengrassV2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator InstalledComponentLifecycleState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type InstalledComponentTopologyFilter.
+    /// </summary>
+    public class InstalledComponentTopologyFilter : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALL for InstalledComponentTopologyFilter
+        /// </summary>
+        public static readonly InstalledComponentTopologyFilter ALL = new InstalledComponentTopologyFilter("ALL");
+        /// <summary>
+        /// Constant ROOT for InstalledComponentTopologyFilter
+        /// </summary>
+        public static readonly InstalledComponentTopologyFilter ROOT = new InstalledComponentTopologyFilter("ROOT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InstalledComponentTopologyFilter(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InstalledComponentTopologyFilter FindValue(string value)
+        {
+            return FindValue<InstalledComponentTopologyFilter>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InstalledComponentTopologyFilter(string value)
         {
             return FindValue(value);
         }
@@ -998,6 +1052,60 @@ namespace Amazon.GreengrassV2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ValidationExceptionReason(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type VendorGuidance.
+    /// </summary>
+    public class VendorGuidance : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for VendorGuidance
+        /// </summary>
+        public static readonly VendorGuidance ACTIVE = new VendorGuidance("ACTIVE");
+        /// <summary>
+        /// Constant DELETED for VendorGuidance
+        /// </summary>
+        public static readonly VendorGuidance DELETED = new VendorGuidance("DELETED");
+        /// <summary>
+        /// Constant DISCONTINUED for VendorGuidance
+        /// </summary>
+        public static readonly VendorGuidance DISCONTINUED = new VendorGuidance("DISCONTINUED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public VendorGuidance(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VendorGuidance FindValue(string value)
+        {
+            return FindValue<VendorGuidance>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VendorGuidance(string value)
         {
             return FindValue(value);
         }

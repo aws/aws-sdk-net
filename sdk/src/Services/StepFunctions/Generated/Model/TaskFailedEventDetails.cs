@@ -44,7 +44,7 @@ namespace Amazon.StepFunctions.Model
         /// A more detailed explanation of the cause of the failure.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=32768)]
+        [AWSProperty(Sensitive=true, Min=0, Max=32768)]
         public string Cause
         {
             get { return this._cause; }
@@ -63,7 +63,7 @@ namespace Amazon.StepFunctions.Model
         /// The error code of the failure.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=256)]
+        [AWSProperty(Sensitive=true, Min=0, Max=256)]
         public string Error
         {
             get { return this._error; }
@@ -79,7 +79,7 @@ namespace Amazon.StepFunctions.Model
         /// <summary>
         /// Gets and sets the property Resource. 
         /// <para>
-        /// The service name of the resource in a task state.
+        /// The action of the resource called by a task state.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=80)]
@@ -98,7 +98,7 @@ namespace Amazon.StepFunctions.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The action of the resource called by a task state.
+        /// The service name of the resource in a task state.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=80)]

@@ -74,7 +74,7 @@ namespace Amazon.AuditManager
     ///  </li> <li> 
     /// <para>
     ///  <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/CommonParameters.html">Common
-    /// parameters</a>: Parameters that all Query operations can use.
+    /// parameters</a>: Parameters that all operations can use.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -280,6 +280,15 @@ namespace Amazon.AuditManager
         } 
 
         /// <summary>
+        /// Customizes the runtime pipeline.
+        /// </summary>
+        /// <param name="pipeline">Runtime pipeline for the current client.</param>
+        protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
+        {
+            pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonAuditManagerEndpointResolver());
+        }
+        /// <summary>
         /// Capture metadata for the service.
         /// </summary>
         protected override IServiceMetadata ServiceMetadata
@@ -319,7 +328,7 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Associates an evidence folder to an assessment report in a Audit Manager assessment.
+        /// Associates an evidence folder to an assessment report in an Audit Manager assessment.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateAssessmentReportEvidenceFolder service method.</param>
         /// <param name="cancellationToken">
@@ -559,7 +568,41 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Uploads one or more pieces of evidence to a control in an Audit Manager assessment.
+        /// Adds one or more pieces of evidence to a control in an Audit Manager assessment. 
+        /// 
+        ///  
+        /// <para>
+        /// You can import manual evidence from any S3 bucket by specifying the S3 URI of the
+        /// object. You can also upload a file from your browser, or enter plain text in response
+        /// to a risk assessment question. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The following restrictions apply to this action:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>manualEvidence</code> can be only one of the following: <code>evidenceFileName</code>,
+        /// <code>s3ResourcePath</code>, or <code>textResponse</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Maximum size of an individual evidence file: 100 MB
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Number of daily manual evidence uploads per control: 100
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Supported file formats: See <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/upload-evidence.html#supported-manual-evidence-files">Supported
+        /// file types for manual evidence</a> in the <i>Audit Manager User Guide</i> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information about Audit Manager service restrictions, see <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/service-quotas.html">Quotas
+        /// and restrictions for Audit Manager</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchImportEvidenceToAssessmentControl service method.</param>
         /// <param name="cancellationToken">
@@ -577,6 +620,9 @@ namespace Amazon.AuditManager
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.ResourceNotFoundException">
         /// The resource that's specified in the request can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.AuditManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.ValidationException">
         /// The request has invalid or missing parameters.
@@ -626,6 +672,13 @@ namespace Amazon.AuditManager
         /// <exception cref="Amazon.AuditManager.Model.ResourceNotFoundException">
         /// The resource that's specified in the request can't be found.
         /// </exception>
+        /// <exception cref="Amazon.AuditManager.Model.ServiceQuotaExceededException">
+        /// You've reached your account quota for this resource type. To perform the requested
+        /// action, delete some existing resources or <a href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">request
+        /// a quota increase</a> from the Service Quotas console. For a list of Audit Manager
+        /// service quotas, see <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/service-quotas.html">Quotas
+        /// and restrictions for Audit Manager</a>.
+        /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.ValidationException">
         /// The request has invalid or missing parameters.
         /// </exception>
@@ -673,6 +726,13 @@ namespace Amazon.AuditManager
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.ResourceNotFoundException">
         /// The resource that's specified in the request can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.AuditManager.Model.ServiceQuotaExceededException">
+        /// You've reached your account quota for this resource type. To perform the requested
+        /// action, delete some existing resources or <a href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">request
+        /// a quota increase</a> from the Service Quotas console. For a list of Audit Manager
+        /// service quotas, see <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/service-quotas.html">Quotas
+        /// and restrictions for Audit Manager</a>.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.ValidationException">
         /// The request has invalid or missing parameters.
@@ -769,6 +829,13 @@ namespace Amazon.AuditManager
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.ResourceNotFoundException">
         /// The resource that's specified in the request can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.AuditManager.Model.ServiceQuotaExceededException">
+        /// You've reached your account quota for this resource type. To perform the requested
+        /// action, delete some existing resources or <a href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">request
+        /// a quota increase</a> from the Service Quotas console. For a list of Audit Manager
+        /// service quotas, see <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/service-quotas.html">Quotas
+        /// and restrictions for Audit Manager</a>.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.ValidationException">
         /// The request has invalid or missing parameters.
@@ -943,7 +1010,40 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Deletes an assessment report from an assessment in Audit Manager.
+        /// Deletes an assessment report in Audit Manager. 
+        /// 
+        ///  
+        /// <para>
+        /// When you run the <code>DeleteAssessmentReport</code> operation, Audit Manager attempts
+        /// to delete the following data:
+        /// </para>
+        ///  <ol> <li> 
+        /// <para>
+        /// The specified assessment report that’s stored in your S3 bucket
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The associated metadata that’s stored in Audit Manager
+        /// </para>
+        ///  </li> </ol> 
+        /// <para>
+        /// If Audit Manager can’t access the assessment report in your S3 bucket, the report
+        /// isn’t deleted. In this event, the <code>DeleteAssessmentReport</code> operation doesn’t
+        /// fail. Instead, it proceeds to delete the associated metadata only. You must then delete
+        /// the assessment report from the S3 bucket yourself. 
+        /// </para>
+        ///  
+        /// <para>
+        /// This scenario happens when Audit Manager receives a <code>403 (Forbidden)</code> or
+        /// <code>404 (Not Found)</code> error from Amazon S3. To avoid this, make sure that your
+        /// S3 bucket is available, and that you configured the correct permissions for Audit
+        /// Manager to delete resources in your S3 bucket. For an example permissions policy that
+        /// you can use, see <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/security_iam_id-based-policy-examples.html#full-administrator-access-assessment-report-destination">Assessment
+        /// report destination permissions</a> in the <i>Audit Manager User Guide</i>. For information
+        /// about the issues that could cause a <code>403 (Forbidden)</code> or <code>404 (Not
+        /// Found</code>) error from Amazon S3, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#ErrorCodeList">List
+        /// of Error Codes</a> in the <i>Amazon Simple Storage Service API Reference</i>. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAssessmentReport service method.</param>
         /// <param name="cancellationToken">
@@ -991,7 +1091,16 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Deletes a custom control in Audit Manager.
+        /// Deletes a custom control in Audit Manager. 
+        /// 
+        ///  <important> 
+        /// <para>
+        /// When you invoke this operation, the custom control is deleted from any frameworks
+        /// or assessments that it’s currently part of. As a result, Audit Manager will stop collecting
+        /// evidence for that custom control in all of your assessments. This includes assessments
+        /// that you previously created before you deleted the custom control.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteControl service method.</param>
         /// <param name="cancellationToken">
@@ -1039,7 +1148,21 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Deregisters an account in Audit Manager.
+        /// Deregisters an account in Audit Manager. 
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Before you deregister, you can use the <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_UpdateSettings.html">UpdateSettings</a>
+        /// API operation to set your preferred data retention policy. By default, Audit Manager
+        /// retains your data. If you want to delete your data, you can use the <code>DeregistrationPolicy</code>
+        /// attribute to request the deletion of your data. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about data retention, see <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/data-protection.html">Data
+        /// Protection</a> in the <i>Audit Manager User Guide</i>. 
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeregisterAccount service method.</param>
         /// <param name="cancellationToken">
@@ -1087,18 +1210,88 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Removes the specified member Amazon Web Services account as a delegated administrator
-        /// for Audit Manager. 
+        /// Removes the specified Amazon Web Services account as a delegated administrator for
+        /// Audit Manager. 
         /// 
-        ///  <important> 
+        ///  
         /// <para>
         /// When you remove a delegated administrator from your Audit Manager settings, you continue
         /// to have access to the evidence that you previously collected under that account. This
-        /// is also the case when you deregister a delegated administrator from Audit Manager.
-        /// However, Audit Manager will stop collecting and attaching evidence to that delegated
-        /// administrator account moving forward.
+        /// is also the case when you deregister a delegated administrator from Organizations.
+        /// However, Audit Manager stops collecting and attaching evidence to that delegated administrator
+        /// account moving forward.
         /// </para>
-        ///  </important>
+        ///  <important> 
+        /// <para>
+        /// Keep in mind the following cleanup task if you use evidence finder:
+        /// </para>
+        ///  
+        /// <para>
+        /// Before you use your management account to remove a delegated administrator, make sure
+        /// that the current delegated administrator account signs in to Audit Manager and disables
+        /// evidence finder first. Disabling evidence finder automatically deletes the event data
+        /// store that was created in their account when they enabled evidence finder. If this
+        /// task isn’t completed, the event data store remains in their account. In this case,
+        /// we recommend that the original delegated administrator goes to CloudTrail Lake and
+        /// manually <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-eds-disable-termination.html">deletes
+        /// the event data store</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This cleanup task is necessary to ensure that you don't end up with multiple event
+        /// data stores. Audit Manager ignores an unused event data store after you remove or
+        /// change a delegated administrator account. However, the unused event data store continues
+        /// to incur storage costs from CloudTrail Lake if you don't delete it.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// When you deregister a delegated administrator account for Audit Manager, the data
+        /// for that account isn’t deleted. If you want to delete resource data for a delegated
+        /// administrator account, you must perform that task separately before you deregister
+        /// the account. Either, you can do this in the Audit Manager console. Or, you can use
+        /// one of the delete API operations that are provided by Audit Manager. 
+        /// </para>
+        ///  
+        /// <para>
+        /// To delete your Audit Manager resource data, see the following instructions: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeleteAssessment.html">DeleteAssessment</a>
+        /// (see also: <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/delete-assessment.html">Deleting
+        /// an assessment</a> in the <i>Audit Manager User Guide</i>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeleteAssessmentFramework.html">DeleteAssessmentFramework</a>
+        /// (see also: <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/delete-custom-framework.html">Deleting
+        /// a custom framework</a> in the <i>Audit Manager User Guide</i>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeleteAssessmentFrameworkShare.html">DeleteAssessmentFrameworkShare</a>
+        /// (see also: <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/deleting-shared-framework-requests.html">Deleting
+        /// a share request</a> in the <i>Audit Manager User Guide</i>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeleteAssessmentReport.html">DeleteAssessmentReport</a>
+        /// (see also: <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/generate-assessment-report.html#delete-assessment-report-steps">Deleting
+        /// an assessment report</a> in the <i>Audit Manager User Guide</i>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeleteControl.html">DeleteControl</a>
+        /// (see also: <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/delete-controls.html">Deleting
+        /// a custom control</a> in the <i>Audit Manager User Guide</i>)
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// At this time, Audit Manager doesn't provide an option to delete evidence for a specific
+        /// delegated administrator. Instead, when your management account deregisters Audit Manager,
+        /// we perform a cleanup for the current delegated administrator account at the time of
+        /// deregistration.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeregisterOrganizationAdminAccount service method.</param>
         /// <param name="cancellationToken">
@@ -1194,7 +1387,7 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Returns the registration status of an account in Audit Manager.
+        /// Gets the registration status of an account in Audit Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAccountStatus service method.</param>
         /// <param name="cancellationToken">
@@ -1232,7 +1425,7 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Returns an assessment from Audit Manager.
+        /// Gets information about a specified assessment.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAssessment service method.</param>
         /// <param name="cancellationToken">
@@ -1280,7 +1473,7 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Returns a framework from Audit Manager.
+        /// Gets information about a specified framework.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAssessmentFramework service method.</param>
         /// <param name="cancellationToken">
@@ -1328,7 +1521,7 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Returns the URL of an assessment report in Audit Manager.
+        /// Gets the URL of an assessment report in Audit Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAssessmentReportUrl service method.</param>
         /// <param name="cancellationToken">
@@ -1376,7 +1569,7 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Returns a list of changelogs from Audit Manager.
+        /// Gets a list of changelogs from Audit Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetChangeLogs service method.</param>
         /// <param name="cancellationToken">
@@ -1424,7 +1617,7 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Returns a control from Audit Manager.
+        /// Gets information about a specified control.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetControl service method.</param>
         /// <param name="cancellationToken">
@@ -1472,7 +1665,7 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Returns a list of delegations from an audit owner to a delegate.
+        /// Gets a list of delegations from an audit owner to a delegate.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDelegations service method.</param>
         /// <param name="cancellationToken">
@@ -1517,7 +1710,7 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Returns evidence from Audit Manager.
+        /// Gets information about a specified evidence item.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetEvidence service method.</param>
         /// <param name="cancellationToken">
@@ -1565,7 +1758,7 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Returns all evidence from a specified evidence folder in Audit Manager.
+        /// Gets all evidence from a specified evidence folder in Audit Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetEvidenceByEvidenceFolder service method.</param>
         /// <param name="cancellationToken">
@@ -1599,6 +1792,79 @@ namespace Amazon.AuditManager
 
         #endregion
         
+        #region  GetEvidenceFileUploadUrl
+
+        internal virtual GetEvidenceFileUploadUrlResponse GetEvidenceFileUploadUrl(GetEvidenceFileUploadUrlRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetEvidenceFileUploadUrlRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetEvidenceFileUploadUrlResponseUnmarshaller.Instance;
+
+            return Invoke<GetEvidenceFileUploadUrlResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a presigned Amazon S3 URL that can be used to upload a file as manual evidence.
+        /// For instructions on how to use this operation, see <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/upload-evidence.html#how-to-upload-manual-evidence-files">Upload
+        /// a file from your browser </a> in the <i>Audit Manager User Guide</i>.
+        /// 
+        ///  
+        /// <para>
+        /// The following restrictions apply to this operation:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Maximum size of an individual evidence file: 100 MB
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Number of daily manual evidence uploads per control: 100
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Supported file formats: See <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/upload-evidence.html#supported-manual-evidence-files">Supported
+        /// file types for manual evidence</a> in the <i>Audit Manager User Guide</i> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information about Audit Manager service restrictions, see <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/service-quotas.html">Quotas
+        /// and restrictions for Audit Manager</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetEvidenceFileUploadUrl service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetEvidenceFileUploadUrl service method, as returned by AuditManager.</returns>
+        /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
+        /// Your account isn't registered with Audit Manager. Check the delegated administrator
+        /// setup on the Audit Manager settings page, and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
+        /// An internal service error occurred during the processing of your request. Try again
+        /// later.
+        /// </exception>
+        /// <exception cref="Amazon.AuditManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.AuditManager.Model.ValidationException">
+        /// The request has invalid or missing parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetEvidenceFileUploadUrl">REST API Reference for GetEvidenceFileUploadUrl Operation</seealso>
+        public virtual Task<GetEvidenceFileUploadUrlResponse> GetEvidenceFileUploadUrlAsync(GetEvidenceFileUploadUrlRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetEvidenceFileUploadUrlRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetEvidenceFileUploadUrlResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetEvidenceFileUploadUrlResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetEvidenceFolder
 
         internal virtual GetEvidenceFolderResponse GetEvidenceFolder(GetEvidenceFolderRequest request)
@@ -1613,7 +1879,7 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Returns an evidence folder from the specified assessment in Audit Manager.
+        /// Gets an evidence folder from a specified assessment in Audit Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetEvidenceFolder service method.</param>
         /// <param name="cancellationToken">
@@ -1661,7 +1927,7 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Returns the evidence folders from a specified assessment in Audit Manager.
+        /// Gets the evidence folders from a specified assessment in Audit Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetEvidenceFoldersByAssessment service method.</param>
         /// <param name="cancellationToken">
@@ -1709,8 +1975,8 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Returns a list of evidence folders that are associated with a specified control of
-        /// an assessment in Audit Manager.
+        /// Gets a list of evidence folders that are associated with a specified control in an
+        /// Audit Manager assessment.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetEvidenceFoldersByAssessmentControl service method.</param>
         /// <param name="cancellationToken">
@@ -1848,7 +2114,7 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Returns the name of the delegated Amazon Web Services administrator account for the
+        /// Gets the name of the delegated Amazon Web Services administrator account for a specified
         /// organization.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetOrganizationAdminAccount service method.</param>
@@ -1897,7 +2163,10 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Returns a list of the in-scope Amazon Web Services services for the specified assessment.
+        /// Gets a list of all of the Amazon Web Services that you can choose to include in your
+        /// assessment. When you <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_CreateAssessment.html">create
+        /// an assessment</a>, specify which of these services you want to include to narrow the
+        /// assessment's <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_Scope.html">scope</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetServicesInScope service method.</param>
         /// <param name="cancellationToken">
@@ -1942,7 +2211,7 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Returns the settings for the specified Amazon Web Services account.
+        /// Gets the settings for a specified Amazon Web Services account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetSettings service method.</param>
         /// <param name="cancellationToken">
@@ -2593,6 +2862,9 @@ namespace Amazon.AuditManager
         /// <exception cref="Amazon.AuditManager.Model.ResourceNotFoundException">
         /// The resource that's specified in the request can't be found.
         /// </exception>
+        /// <exception cref="Amazon.AuditManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.ValidationException">
         /// The request has invalid or missing parameters.
         /// </exception>
@@ -2678,6 +2950,45 @@ namespace Amazon.AuditManager
         /// The share request specifies a recipient and notifies them that a custom framework
         /// is available. Recipients have 120 days to accept or decline the request. If no action
         /// is taken, the share request expires.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you create a share request, Audit Manager stores a snapshot of your custom framework
+        /// in the US East (N. Virginia) Amazon Web Services Region. Audit Manager also stores
+        /// a backup of the same snapshot in the US West (Oregon) Amazon Web Services Region.
+        /// </para>
+        ///  
+        /// <para>
+        /// Audit Manager deletes the snapshot and the backup snapshot when one of the following
+        /// events occurs:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The sender revokes the share request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The recipient declines the share request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The recipient encounters an error and doesn't successfully accept the share request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The share request expires before the recipient responds to the request.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When a sender <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/framework-sharing.html#framework-sharing-resend">resends
+        /// a share request</a>, the snapshot is replaced with an updated version that corresponds
+        /// with the latest version of the custom framework. 
+        /// </para>
+        ///  
+        /// <para>
+        /// When a recipient accepts a share request, the snapshot is replicated into their Amazon
+        /// Web Services account under the Amazon Web Services Region that was specified in the
+        /// share request. 
         /// </para>
         ///  <important> 
         /// <para>
@@ -3036,6 +3347,13 @@ namespace Amazon.AuditManager
         /// <exception cref="Amazon.AuditManager.Model.ResourceNotFoundException">
         /// The resource that's specified in the request can't be found.
         /// </exception>
+        /// <exception cref="Amazon.AuditManager.Model.ServiceQuotaExceededException">
+        /// You've reached your account quota for this resource type. To perform the requested
+        /// action, delete some existing resources or <a href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">request
+        /// a quota increase</a> from the Service Quotas console. For a list of Audit Manager
+        /// service quotas, see <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/service-quotas.html">Quotas
+        /// and restrictions for Audit Manager</a>.
+        /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.ValidationException">
         /// The request has invalid or missing parameters.
         /// </exception>
@@ -3083,6 +3401,13 @@ namespace Amazon.AuditManager
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.ResourceNotFoundException">
         /// The resource that's specified in the request can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.AuditManager.Model.ServiceQuotaExceededException">
+        /// You've reached your account quota for this resource type. To perform the requested
+        /// action, delete some existing resources or <a href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">request
+        /// a quota increase</a> from the Service Quotas console. For a list of Audit Manager
+        /// service quotas, see <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/service-quotas.html">Quotas
+        /// and restrictions for Audit Manager</a>.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.ValidationException">
         /// The request has invalid or missing parameters.
@@ -3161,7 +3486,7 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Updates Audit Manager settings for the current user account.
+        /// Updates Audit Manager settings for the current account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateSettings service method.</param>
         /// <param name="cancellationToken">

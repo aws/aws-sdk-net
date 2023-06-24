@@ -76,6 +76,12 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
                     unmarshalledObject.ContainerDistributionConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("fastLaunchConfigurations", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<FastLaunchConfiguration, FastLaunchConfigurationUnmarshaller>(FastLaunchConfigurationUnmarshaller.Instance);
+                    unmarshalledObject.FastLaunchConfigurations = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("launchTemplateConfigurations", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<LaunchTemplateConfiguration, LaunchTemplateConfigurationUnmarshaller>(LaunchTemplateConfigurationUnmarshaller.Instance);
@@ -92,6 +98,12 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Region = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("s3ExportConfiguration", targetDepth))
+                {
+                    var unmarshaller = S3ExportConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.S3ExportConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

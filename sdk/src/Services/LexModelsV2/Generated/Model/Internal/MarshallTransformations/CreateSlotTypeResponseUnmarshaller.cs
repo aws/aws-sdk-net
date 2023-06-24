@@ -63,6 +63,12 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
                     response.BotVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("compositeSlotTypeSetting", targetDepth))
+                {
+                    var unmarshaller = CompositeSlotTypeSettingUnmarshaller.Instance;
+                    response.CompositeSlotTypeSetting = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("creationDateTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
@@ -73,6 +79,12 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Description = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("externalSourceSetting", targetDepth))
+                {
+                    var unmarshaller = ExternalSourceSettingUnmarshaller.Instance;
+                    response.ExternalSourceSetting = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("localeId", targetDepth))

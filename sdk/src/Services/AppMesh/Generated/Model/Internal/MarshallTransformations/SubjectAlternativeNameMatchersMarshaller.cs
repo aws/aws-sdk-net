@@ -34,7 +34,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SubjectAlternativeNameMatchers Marshaller
-    /// </summary>       
+    /// </summary>
     public class SubjectAlternativeNameMatchersMarshaller : IRequestMarshaller<SubjectAlternativeNameMatchers, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SubjectAlternativeNameMatchersMarshaller Instance = new SubjectAlternativeNameMatchersMarshaller();
 
     }

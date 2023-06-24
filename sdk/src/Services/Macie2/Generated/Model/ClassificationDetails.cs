@@ -29,20 +29,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Macie2.Model
 {
     /// <summary>
-    /// Provides information about a sensitive data finding, including the classification
-    /// job that produced the finding.
+    /// Provides information about a sensitive data finding and the details of the finding.
     /// </summary>
     public partial class ClassificationDetails
     {
         private string _detailedResultsLocation;
         private string _jobArn;
         private string _jobId;
+        private OriginType _originType;
         private ClassificationResult _result;
 
         /// <summary>
         /// Gets and sets the property DetailedResultsLocation. 
         /// <para>
-        /// The path to the folder or file (in Amazon S3) that contains the corresponding sensitive
+        /// The path to the folder or file in Amazon S3 that contains the corresponding sensitive
         /// data discovery result for the finding. If a finding applies to a large archive or
         /// compressed file, this value is the path to a folder. Otherwise, this value is the
         /// path to a file.
@@ -64,6 +64,7 @@ namespace Amazon.Macie2.Model
         /// Gets and sets the property JobArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the classification job that produced the finding.
+        /// This value is null if the origin of the finding (originType) is AUTOMATED_SENSITIVE_DATA_DISCOVERY.
         /// </para>
         /// </summary>
         public string JobArn
@@ -81,7 +82,8 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property JobId. 
         /// <para>
-        /// The unique identifier for the classification job that produced the finding.
+        /// The unique identifier for the classification job that produced the finding. This value
+        /// is null if the origin of the finding (originType) is AUTOMATED_SENSITIVE_DATA_DISCOVERY.
         /// </para>
         /// </summary>
         public string JobId
@@ -94,6 +96,26 @@ namespace Amazon.Macie2.Model
         internal bool IsSetJobId()
         {
             return this._jobId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OriginType. 
+        /// <para>
+        /// Specifies how Amazon Macie found the sensitive data that produced the finding. Possible
+        /// values are: SENSITIVE_DATA_DISCOVERY_JOB, for a classification job; and, AUTOMATED_SENSITIVE_DATA_DISCOVERY,
+        /// for automated sensitive data discovery.
+        /// </para>
+        /// </summary>
+        public OriginType OriginType
+        {
+            get { return this._originType; }
+            set { this._originType = value; }
+        }
+
+        // Check to see if OriginType property is set
+        internal bool IsSetOriginType()
+        {
+            return this._originType != null;
         }
 
         /// <summary>

@@ -29,9 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// Limits for a given InstanceType and for each of its roles. <br/> Limits contains
-    /// the following: <code> <a>StorageTypes</a> </code>, <code> <a>InstanceLimits</a> </code>,
-    /// and <code> <a>AdditionalLimits</a> </code>
+    /// Limits for a given instance type and for each of its roles.
     /// </summary>
     public partial class Limits
     {
@@ -42,8 +40,8 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property AdditionalLimits. 
         /// <para>
-        ///  List of additional limits that are specific to a given InstanceType and for each
-        /// of its <code> <a>InstanceRole</a> </code> . 
+        /// List of additional limits that are specific to a given instance type for each of its
+        /// instance roles.
         /// </para>
         /// </summary>
         public List<AdditionalLimit> AdditionalLimits
@@ -59,7 +57,10 @@ namespace Amazon.OpenSearchService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property InstanceLimits.
+        /// Gets and sets the property InstanceLimits. 
+        /// <para>
+        /// The limits for a given instance type.
+        /// </para>
         /// </summary>
         public InstanceLimits InstanceLimits
         {
@@ -76,8 +77,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property StorageTypes. 
         /// <para>
-        /// Storage-related types and attributes that are available for a given InstanceType.
-        /// 
+        /// Storage-related attributes that are available for a given instance type.
         /// </para>
         /// </summary>
         public List<StorageType> StorageTypes

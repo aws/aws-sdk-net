@@ -29,14 +29,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// A channel is a named input source that training algorithms can consume. For more information,
-    /// see .
+    /// A channel is a named input source that training algorithms can consume. The validation
+    /// dataset size is limited to less than 2 GB. The training dataset size must be less
+    /// than 100 GB. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Channel.html">
+    /// Channel</a>.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// A validation dataset must contain the same headers as the training dataset.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class AutoMLChannel
     {
+        private AutoMLChannelType _channelType;
         private CompressionType _compressionType;
+        private string _contentType;
         private AutoMLDataSource _dataSource;
+        private string _sampleWeightAttributeName;
         private string _targetAttributeName;
+
+        /// <summary>
+        /// Gets and sets the property ChannelType. 
+        /// <para>
+        /// The channel type (optional) is an <code>enum</code> string. The default value is <code>training</code>.
+        /// Channels for training and validation must share the same <code>ContentType</code>
+        /// and <code>TargetAttributeName</code>. For information on specifying training and validation
+        /// channel types, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-data-sources-training-or-validation">How
+        /// to specify training and validation datasets</a>.
+        /// </para>
+        /// </summary>
+        public AutoMLChannelType ChannelType
+        {
+            get { return this._channelType; }
+            set { this._channelType = value; }
+        }
+
+        // Check to see if ChannelType property is set
+        internal bool IsSetChannelType()
+        {
+            return this._channelType != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CompressionType. 
@@ -57,6 +90,26 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ContentType. 
+        /// <para>
+        /// The content type of the data from the input source. You can use <code>text/csv;header=present</code>
+        /// or <code>x-application/vnd.amazon+parquet</code>. The default value is <code>text/csv;header=present</code>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=256)]
+        public string ContentType
+        {
+            get { return this._contentType; }
+            set { this._contentType = value; }
+        }
+
+        // Check to see if ContentType property is set
+        internal bool IsSetContentType()
+        {
+            return this._contentType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property DataSource. 
         /// <para>
         /// The data source for an AutoML channel.
@@ -73,6 +126,40 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetDataSource()
         {
             return this._dataSource != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SampleWeightAttributeName. 
+        /// <para>
+        /// If specified, this column name indicates which column of the dataset should be treated
+        /// as sample weights for use by the objective metric during the training, evaluation,
+        /// and the selection of the best model. This column is not considered as a predictive
+        /// feature. For more information on Autopilot metrics, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-metrics-validation.html">Metrics
+        /// and validation</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Sample weights should be numeric, non-negative, with larger values indicating which
+        /// rows are more important than others. Data points that have invalid or no weight value
+        /// are excluded.
+        /// </para>
+        ///  
+        /// <para>
+        /// Support for sample weights is available in <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLAlgorithmConfig.html">Ensembling</a>
+        /// mode only.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string SampleWeightAttributeName
+        {
+            get { return this._sampleWeightAttributeName; }
+            set { this._sampleWeightAttributeName = value; }
+        }
+
+        // Check to see if SampleWeightAttributeName property is set
+        internal bool IsSetSampleWeightAttributeName()
+        {
+            return this._sampleWeightAttributeName != null;
         }
 
         /// <summary>

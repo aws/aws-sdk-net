@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AwsRdsDbInstanceVpcSecurityGroup Marshaller
-    /// </summary>       
+    /// </summary>
     public class AwsRdsDbInstanceVpcSecurityGroupMarshaller : IRequestMarshaller<AwsRdsDbInstanceVpcSecurityGroup, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AwsRdsDbInstanceVpcSecurityGroupMarshaller Instance = new AwsRdsDbInstanceVpcSecurityGroupMarshaller();
 
     }

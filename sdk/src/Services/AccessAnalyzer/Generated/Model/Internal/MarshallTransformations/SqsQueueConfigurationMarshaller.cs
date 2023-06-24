@@ -34,7 +34,7 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SqsQueueConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class SqsQueueConfigurationMarshaller : IRequestMarshaller<SqsQueueConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SqsQueueConfigurationMarshaller Instance = new SqsQueueConfigurationMarshaller();
 
     }

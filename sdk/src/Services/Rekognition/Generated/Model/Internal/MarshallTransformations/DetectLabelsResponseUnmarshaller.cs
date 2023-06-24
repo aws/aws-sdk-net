@@ -51,6 +51,12 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("ImageProperties", targetDepth))
+                {
+                    var unmarshaller = DetectLabelsImagePropertiesUnmarshaller.Instance;
+                    response.ImageProperties = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("LabelModelVersion", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

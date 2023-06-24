@@ -34,12 +34,14 @@ namespace Amazon.Appflow.Model
     public partial class ConnectorProfileCredentials
     {
         private AmplitudeConnectorProfileCredentials _amplitude;
+        private CustomConnectorProfileCredentials _customConnector;
         private DatadogConnectorProfileCredentials _datadog;
         private DynatraceConnectorProfileCredentials _dynatrace;
         private GoogleAnalyticsConnectorProfileCredentials _googleAnalytics;
         private HoneycodeConnectorProfileCredentials _honeycode;
         private InforNexusConnectorProfileCredentials _inforNexus;
         private MarketoConnectorProfileCredentials _marketo;
+        private PardotConnectorProfileCredentials _pardot;
         private RedshiftConnectorProfileCredentials _redshift;
         private SalesforceConnectorProfileCredentials _salesforce;
         private SAPODataConnectorProfileCredentials _sapoData;
@@ -67,6 +69,21 @@ namespace Amazon.Appflow.Model
         internal bool IsSetAmplitude()
         {
             return this._amplitude != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomConnector.
+        /// </summary>
+        public CustomConnectorProfileCredentials CustomConnector
+        {
+            get { return this._customConnector; }
+            set { this._customConnector = value; }
+        }
+
+        // Check to see if CustomConnector property is set
+        internal bool IsSetCustomConnector()
+        {
+            return this._customConnector != null;
         }
 
         /// <summary>
@@ -175,6 +192,24 @@ namespace Amazon.Appflow.Model
         internal bool IsSetMarketo()
         {
             return this._marketo != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Pardot. 
+        /// <para>
+        /// The connector-specific credentials required when using Salesforce Pardot.
+        /// </para>
+        /// </summary>
+        public PardotConnectorProfileCredentials Pardot
+        {
+            get { return this._pardot; }
+            set { this._pardot = value; }
+        }
+
+        // Check to see if Pardot property is set
+        internal bool IsSetPardot()
+        {
+            return this._pardot != null;
         }
 
         /// <summary>

@@ -36,7 +36,10 @@ namespace Amazon.EC2.Model
         private InstanceStatusEvent _event;
 
         /// <summary>
-        /// Gets and sets the property Event.
+        /// Gets and sets the property Event. 
+        /// <para>
+        /// Information about the event.
+        /// </para>
         /// </summary>
         public InstanceStatusEvent Event
         {

@@ -58,6 +58,7 @@ namespace Amazon.MediaConvert.Model
         private M2tsEsRateInPes _esRateInPes;
         private M2tsForceTsVideoEbpOrder _forceTsVideoEbpOrder;
         private double? _fragmentTime;
+        private M2tsKlvMetadata _klvMetadata;
         private int? _maxPcrInterval;
         private int? _minEbpInterval;
         private M2tsNielsenId3 _nielsenId3;
@@ -176,7 +177,7 @@ namespace Amazon.MediaConvert.Model
 
         /// <summary>
         /// Gets and sets the property BufferModel. Controls what buffer model to use for accurate
-        /// interleaving. If set to MULTIPLEX, use multiplex  buffer model. If set to NONE, this
+        /// interleaving. If set to MULTIPLEX, use multiplex buffer model. If set to NONE, this
         /// can lead to lower latency, but low-memory devices may not be able to play back the
         /// stream without interruptions.
         /// </summary>
@@ -383,6 +384,24 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetFragmentTime()
         {
             return this._fragmentTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property KlvMetadata. To include key-length-value metadata in this
+        /// output: Set KLV metadata insertion to Passthrough. MediaConvert reads KLV metadata
+        /// present in your input and passes it through to the output transport stream. To exclude
+        /// this KLV metadata: Set KLV metadata insertion to None or leave blank.
+        /// </summary>
+        public M2tsKlvMetadata KlvMetadata
+        {
+            get { return this._klvMetadata; }
+            set { this._klvMetadata = value; }
+        }
+
+        // Check to see if KlvMetadata property is set
+        internal bool IsSetKlvMetadata()
+        {
+            return this._klvMetadata != null;
         }
 
         /// <summary>
@@ -714,8 +733,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TimedMetadataPid. Specify the packet identifier (PID) for
-        /// timed metadata in this output. Default is 502.
+        /// Gets and sets the property TimedMetadataPid. Packet Identifier (PID) of the ID3 metadata
+        /// stream in the transport stream.
         /// </summary>
         [AWSProperty(Min=32, Max=8182)]
         public int TimedMetadataPid

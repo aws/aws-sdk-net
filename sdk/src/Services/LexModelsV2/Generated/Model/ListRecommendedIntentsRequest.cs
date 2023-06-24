@@ -31,7 +31,7 @@ namespace Amazon.LexModelsV2.Model
     /// <summary>
     /// Container for the parameters to the ListRecommendedIntents operation.
     /// Gets a list of recommended intents provided by the bot recommendation that you can
-    /// use in your bot.
+    /// use in your bot. Intents in the response are ordered by relevance.
     /// </summary>
     public partial class ListRecommendedIntentsRequest : AmazonLexModelsV2Request
     {

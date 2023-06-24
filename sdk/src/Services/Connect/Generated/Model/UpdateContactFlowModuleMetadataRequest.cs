@@ -30,7 +30,7 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateContactFlowModuleMetadata operation.
-    /// Updates metadata about specified contact flow module.
+    /// Updates metadata about specified flow module.
     /// </summary>
     public partial class UpdateContactFlowModuleMetadataRequest : AmazonConnectRequest
     {
@@ -43,7 +43,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property ContactFlowModuleId. 
         /// <para>
-        /// The identifier of the contact flow module.
+        /// The identifier of the flow module.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
@@ -62,7 +62,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description of the contact flow module.
+        /// The description of the flow module.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=500)]
@@ -81,8 +81,8 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The identifier of the Amazon Connect instance. You can find the instanceId in the
-        /// ARN of the instance.
+        /// The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+        /// the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
@@ -101,7 +101,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the contact flow module.
+        /// The name of the flow module.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=127)]
@@ -120,7 +120,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// The state of contact flow module.
+        /// The state of flow module.
         /// </para>
         /// </summary>
         public ContactFlowModuleState State

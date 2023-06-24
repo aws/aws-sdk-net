@@ -36,6 +36,11 @@ namespace Amazon.Drs.Model
         IDescribeJobsPaginator DescribeJobs(DescribeJobsRequest request);
 
         /// <summary>
+        /// Paginator for DescribeLaunchConfigurationTemplates operation
+        ///</summary>
+        IDescribeLaunchConfigurationTemplatesPaginator DescribeLaunchConfigurationTemplates(DescribeLaunchConfigurationTemplatesRequest request);
+
+        /// <summary>
         /// Paginator for DescribeRecoveryInstances operation
         ///</summary>
         IDescribeRecoveryInstancesPaginator DescribeRecoveryInstances(DescribeRecoveryInstancesRequest request);
@@ -51,8 +56,23 @@ namespace Amazon.Drs.Model
         IDescribeReplicationConfigurationTemplatesPaginator DescribeReplicationConfigurationTemplates(DescribeReplicationConfigurationTemplatesRequest request);
 
         /// <summary>
+        /// Paginator for DescribeSourceNetworks operation
+        ///</summary>
+        IDescribeSourceNetworksPaginator DescribeSourceNetworks(DescribeSourceNetworksRequest request);
+
+        /// <summary>
         /// Paginator for DescribeSourceServers operation
         ///</summary>
         IDescribeSourceServersPaginator DescribeSourceServers(DescribeSourceServersRequest request);
+
+        /// <summary>
+        /// Paginator for ListExtensibleSourceServers operation
+        ///</summary>
+        IListExtensibleSourceServersPaginator ListExtensibleSourceServers(ListExtensibleSourceServersRequest request);
+
+        /// <summary>
+        /// Paginator for ListStagingAccounts operation
+        ///</summary>
+        IListStagingAccountsPaginator ListStagingAccounts(ListStagingAccountsRequest request);
     }
 }

@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// KeywordFilter Marshaller
-    /// </summary>       
+    /// </summary>
     public class KeywordFilterMarshaller : IRequestMarshaller<KeywordFilter, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static KeywordFilterMarshaller Instance = new KeywordFilterMarshaller();
 
     }

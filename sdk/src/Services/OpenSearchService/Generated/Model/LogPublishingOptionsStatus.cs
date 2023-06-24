@@ -57,8 +57,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the log publishing options for the domain. See <code>OptionStatus</code>
-        /// for the status information that's included. 
+        /// The status of the log publishing options for the domain.
         /// </para>
         /// </summary>
         public OptionStatus Status

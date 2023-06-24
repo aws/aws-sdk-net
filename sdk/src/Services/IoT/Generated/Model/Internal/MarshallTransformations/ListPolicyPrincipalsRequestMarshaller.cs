@@ -55,7 +55,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         public IRequest Marshall(ListPolicyPrincipalsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.IoT");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-05-28";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-05-28";
             request.HttpMethod = "GET";
 
             
@@ -69,8 +69,10 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 request.Parameters.Add("pageSize", StringUtils.FromInt(publicRequest.PageSize));
             request.ResourcePath = "/policy-principals";
         
-            if(publicRequest.IsSetPolicyName())
+            if (publicRequest.IsSetPolicyName()) 
+            {
                 request.Headers["x-amzn-iot-policy"] = publicRequest.PolicyName;
+            }
             request.UseQueryString = true;
 
             return request;

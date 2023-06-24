@@ -34,6 +34,9 @@ namespace Amazon.Inspector2.Model
     public partial class FilterCriteria
     {
         private List<StringFilter> _awsAccountId = new List<StringFilter>();
+        private List<StringFilter> _codeVulnerabilityDetectorName = new List<StringFilter>();
+        private List<StringFilter> _codeVulnerabilityDetectorTags = new List<StringFilter>();
+        private List<StringFilter> _codeVulnerabilityFilePath = new List<StringFilter>();
         private List<StringFilter> _componentId = new List<StringFilter>();
         private List<StringFilter> _componentType = new List<StringFilter>();
         private List<StringFilter> _ec2InstanceImageId = new List<StringFilter>();
@@ -45,11 +48,19 @@ namespace Amazon.Inspector2.Model
         private List<StringFilter> _ecrImageRegistry = new List<StringFilter>();
         private List<StringFilter> _ecrImageRepositoryName = new List<StringFilter>();
         private List<StringFilter> _ecrImageTags = new List<StringFilter>();
+        private List<NumberFilter> _epssScore = new List<NumberFilter>();
+        private List<StringFilter> _exploitAvailable = new List<StringFilter>();
         private List<StringFilter> _findingArn = new List<StringFilter>();
         private List<StringFilter> _findingStatus = new List<StringFilter>();
         private List<StringFilter> _findingType = new List<StringFilter>();
         private List<DateFilter> _firstObservedAt = new List<DateFilter>();
+        private List<StringFilter> _fixAvailable = new List<StringFilter>();
         private List<NumberFilter> _inspectorScore = new List<NumberFilter>();
+        private List<StringFilter> _lambdaFunctionExecutionRoleArn = new List<StringFilter>();
+        private List<DateFilter> _lambdaFunctionLastModifiedAt = new List<DateFilter>();
+        private List<StringFilter> _lambdaFunctionLayers = new List<StringFilter>();
+        private List<StringFilter> _lambdaFunctionName = new List<StringFilter>();
+        private List<StringFilter> _lambdaFunctionRuntime = new List<StringFilter>();
         private List<DateFilter> _lastObservedAt = new List<DateFilter>();
         private List<StringFilter> _networkProtocol = new List<StringFilter>();
         private List<PortRangeFilter> _portRange = new List<PortRangeFilter>();
@@ -82,6 +93,69 @@ namespace Amazon.Inspector2.Model
         internal bool IsSetAwsAccountId()
         {
             return this._awsAccountId != null && this._awsAccountId.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CodeVulnerabilityDetectorName. 
+        /// <para>
+        /// The name of the detector used to identify a code vulnerability in a Lambda function
+        /// used to filter findings.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<StringFilter> CodeVulnerabilityDetectorName
+        {
+            get { return this._codeVulnerabilityDetectorName; }
+            set { this._codeVulnerabilityDetectorName = value; }
+        }
+
+        // Check to see if CodeVulnerabilityDetectorName property is set
+        internal bool IsSetCodeVulnerabilityDetectorName()
+        {
+            return this._codeVulnerabilityDetectorName != null && this._codeVulnerabilityDetectorName.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CodeVulnerabilityDetectorTags. 
+        /// <para>
+        /// The detector type tag associated with the vulnerability used to filter findings. Detector
+        /// tags group related vulnerabilities by common themes or tactics. For a list of available
+        /// tags by programming language, see <a href="https://docs.aws.amazon.com/codeguru/detector-library/java/tags/">Java
+        /// tags</a>, or <a href="https://docs.aws.amazon.com/codeguru/detector-library/python/tags/">Python
+        /// tags</a>. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<StringFilter> CodeVulnerabilityDetectorTags
+        {
+            get { return this._codeVulnerabilityDetectorTags; }
+            set { this._codeVulnerabilityDetectorTags = value; }
+        }
+
+        // Check to see if CodeVulnerabilityDetectorTags property is set
+        internal bool IsSetCodeVulnerabilityDetectorTags()
+        {
+            return this._codeVulnerabilityDetectorTags != null && this._codeVulnerabilityDetectorTags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CodeVulnerabilityFilePath. 
+        /// <para>
+        /// The file path to the file in a Lambda function that contains a code vulnerability
+        /// used to filter findings.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<StringFilter> CodeVulnerabilityFilePath
+        {
+            get { return this._codeVulnerabilityFilePath; }
+            set { this._codeVulnerabilityFilePath = value; }
+        }
+
+        // Check to see if CodeVulnerabilityFilePath property is set
+        internal bool IsSetCodeVulnerabilityFilePath()
+        {
+            return this._codeVulnerabilityFilePath != null && this._codeVulnerabilityFilePath.Count > 0; 
         }
 
         /// <summary>
@@ -294,6 +368,44 @@ namespace Amazon.Inspector2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EpssScore. 
+        /// <para>
+        /// The EPSS score used to filter findings.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<NumberFilter> EpssScore
+        {
+            get { return this._epssScore; }
+            set { this._epssScore = value; }
+        }
+
+        // Check to see if EpssScore property is set
+        internal bool IsSetEpssScore()
+        {
+            return this._epssScore != null && this._epssScore.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExploitAvailable. 
+        /// <para>
+        /// Filters the list of AWS Lambda findings by the availability of exploits.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<StringFilter> ExploitAvailable
+        {
+            get { return this._exploitAvailable; }
+            set { this._exploitAvailable = value; }
+        }
+
+        // Check to see if ExploitAvailable property is set
+        internal bool IsSetExploitAvailable()
+        {
+            return this._exploitAvailable != null && this._exploitAvailable.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property FindingArn. 
         /// <para>
         /// Details on the finding ARNs used to filter findings.
@@ -370,6 +482,28 @@ namespace Amazon.Inspector2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property FixAvailable. 
+        /// <para>
+        /// Details on whether a fix is available through a version update. This value can be
+        /// <code>YES</code>, <code>NO</code>, or <code>PARTIAL</code>. A <code>PARTIAL</code>
+        /// fix means that some, but not all, of the packages identified in the finding have fixes
+        /// available through updated versions.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<StringFilter> FixAvailable
+        {
+            get { return this._fixAvailable; }
+            set { this._fixAvailable = value; }
+        }
+
+        // Check to see if FixAvailable property is set
+        internal bool IsSetFixAvailable()
+        {
+            return this._fixAvailable != null && this._fixAvailable.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property InspectorScore. 
         /// <para>
         /// The Amazon Inspector score to filter on.
@@ -386,6 +520,105 @@ namespace Amazon.Inspector2.Model
         internal bool IsSetInspectorScore()
         {
             return this._inspectorScore != null && this._inspectorScore.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LambdaFunctionExecutionRoleArn. 
+        /// <para>
+        /// Filters the list of AWS Lambda functions by execution role.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<StringFilter> LambdaFunctionExecutionRoleArn
+        {
+            get { return this._lambdaFunctionExecutionRoleArn; }
+            set { this._lambdaFunctionExecutionRoleArn = value; }
+        }
+
+        // Check to see if LambdaFunctionExecutionRoleArn property is set
+        internal bool IsSetLambdaFunctionExecutionRoleArn()
+        {
+            return this._lambdaFunctionExecutionRoleArn != null && this._lambdaFunctionExecutionRoleArn.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LambdaFunctionLastModifiedAt. 
+        /// <para>
+        /// Filters the list of AWS Lambda functions by the date and time that a user last updated
+        /// the configuration, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO
+        /// 8601 format</a> 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<DateFilter> LambdaFunctionLastModifiedAt
+        {
+            get { return this._lambdaFunctionLastModifiedAt; }
+            set { this._lambdaFunctionLastModifiedAt = value; }
+        }
+
+        // Check to see if LambdaFunctionLastModifiedAt property is set
+        internal bool IsSetLambdaFunctionLastModifiedAt()
+        {
+            return this._lambdaFunctionLastModifiedAt != null && this._lambdaFunctionLastModifiedAt.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LambdaFunctionLayers. 
+        /// <para>
+        /// Filters the list of AWS Lambda functions by the function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">
+        /// layers</a>. A Lambda function can have up to five layers.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<StringFilter> LambdaFunctionLayers
+        {
+            get { return this._lambdaFunctionLayers; }
+            set { this._lambdaFunctionLayers = value; }
+        }
+
+        // Check to see if LambdaFunctionLayers property is set
+        internal bool IsSetLambdaFunctionLayers()
+        {
+            return this._lambdaFunctionLayers != null && this._lambdaFunctionLayers.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LambdaFunctionName. 
+        /// <para>
+        /// Filters the list of AWS Lambda functions by the name of the function.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<StringFilter> LambdaFunctionName
+        {
+            get { return this._lambdaFunctionName; }
+            set { this._lambdaFunctionName = value; }
+        }
+
+        // Check to see if LambdaFunctionName property is set
+        internal bool IsSetLambdaFunctionName()
+        {
+            return this._lambdaFunctionName != null && this._lambdaFunctionName.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LambdaFunctionRuntime. 
+        /// <para>
+        /// Filters the list of AWS Lambda functions by the runtime environment for the Lambda
+        /// function.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<StringFilter> LambdaFunctionRuntime
+        {
+            get { return this._lambdaFunctionRuntime; }
+            set { this._lambdaFunctionRuntime = value; }
+        }
+
+        // Check to see if LambdaFunctionRuntime property is set
+        internal bool IsSetLambdaFunctionRuntime()
+        {
+            return this._lambdaFunctionRuntime != null && this._lambdaFunctionRuntime.Count > 0; 
         }
 
         /// <summary>

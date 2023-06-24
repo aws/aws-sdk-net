@@ -52,7 +52,7 @@ namespace Amazon.ForecastService
         /// <para>
         /// Amazon Forecast creates predictors with AutoPredictor, which involves applying the
         /// optimal combination of algorithms to each time series in your datasets. You can use
-        /// CreateAutoPredictor to create new predictors or upgrade/retrain existing predictors.
+        /// <a>CreateAutoPredictor</a> to create new predictors or upgrade/retrain existing predictors.
         /// </para>
         ///  
         /// <para>
@@ -77,7 +77,8 @@ namespace Amazon.ForecastService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ForecastHorizon</code> - The number of time steps being forecasted.
+        ///  <code>ForecastHorizon</code> - The number of time-steps that the model predicts.
+        /// The forecast horizon is also called the prediction length.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -137,7 +138,7 @@ namespace Amazon.ForecastService
         /// <para>
         /// Amazon Forecast creates predictors with AutoPredictor, which involves applying the
         /// optimal combination of algorithms to each time series in your datasets. You can use
-        /// CreateAutoPredictor to create new predictors or upgrade/retrain existing predictors.
+        /// <a>CreateAutoPredictor</a> to create new predictors or upgrade/retrain existing predictors.
         /// </para>
         ///  
         /// <para>
@@ -162,7 +163,8 @@ namespace Amazon.ForecastService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ForecastHorizon</code> - The number of time steps being forecasted.
+        ///  <code>ForecastHorizon</code> - The number of time-steps that the model predicts.
+        /// The forecast horizon is also called the prediction length.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -248,11 +250,13 @@ namespace Amazon.ForecastService
         /// <para>
         /// After creating a dataset, you import your training data into it and add the dataset
         /// to a dataset group. You use the dataset group to create a predictor. For more information,
-        /// see <a>howitworks-datasets-groups</a>.
+        /// see <a href="https://docs.aws.amazon.com/forecast/latest/dg/howitworks-datasets-groups.html">Importing
+        /// datasets</a>.
         /// </para>
         ///  
         /// <para>
-        /// To get a list of all your datasets, use the <a>ListDatasets</a> operation.
+        /// To get a list of all your datasets, use the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_ListDatasets.html">ListDatasets</a>
+        /// operation.
         /// </para>
         ///  
         /// <para>
@@ -262,7 +266,8 @@ namespace Amazon.ForecastService
         ///  <note> 
         /// <para>
         /// The <code>Status</code> of a dataset must be <code>ACTIVE</code> before you can import
-        /// training data. Use the <a>DescribeDataset</a> operation to get the status.
+        /// training data. Use the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_DescribeDataset.html">DescribeDataset</a>
+        /// operation to get the status.
         /// </para>
         ///  </note>
         /// </summary>
@@ -311,11 +316,13 @@ namespace Amazon.ForecastService
         /// <para>
         /// After creating a dataset, you import your training data into it and add the dataset
         /// to a dataset group. You use the dataset group to create a predictor. For more information,
-        /// see <a>howitworks-datasets-groups</a>.
+        /// see <a href="https://docs.aws.amazon.com/forecast/latest/dg/howitworks-datasets-groups.html">Importing
+        /// datasets</a>.
         /// </para>
         ///  
         /// <para>
-        /// To get a list of all your datasets, use the <a>ListDatasets</a> operation.
+        /// To get a list of all your datasets, use the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_ListDatasets.html">ListDatasets</a>
+        /// operation.
         /// </para>
         ///  
         /// <para>
@@ -325,7 +332,8 @@ namespace Amazon.ForecastService
         ///  <note> 
         /// <para>
         /// The <code>Status</code> of a dataset must be <code>ACTIVE</code> before you can import
-        /// training data. Use the <a>DescribeDataset</a> operation to get the status.
+        /// training data. Use the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_DescribeDataset.html">DescribeDataset</a>
+        /// operation to get the status.
         /// </para>
         ///  </note>
         /// </summary>
@@ -356,21 +364,24 @@ namespace Amazon.ForecastService
         /// <summary>
         /// Creates a dataset group, which holds a collection of related datasets. You can add
         /// datasets to the dataset group when you create the dataset group, or later by using
-        /// the <a>UpdateDatasetGroup</a> operation.
+        /// the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_UpdateDatasetGroup.html">UpdateDatasetGroup</a>
+        /// operation.
         /// 
         ///  
         /// <para>
         /// After creating a dataset group and adding datasets, you use the dataset group when
-        /// you create a predictor. For more information, see <a>howitworks-datasets-groups</a>.
+        /// you create a predictor. For more information, see <a href="https://docs.aws.amazon.com/forecast/latest/dg/howitworks-datasets-groups.html">Dataset
+        /// groups</a>.
         /// </para>
         ///  
         /// <para>
-        /// To get a list of all your datasets groups, use the <a>ListDatasetGroups</a> operation.
+        /// To get a list of all your datasets groups, use the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_ListDatasetGroups.html">ListDatasetGroups</a>
+        /// operation.
         /// </para>
         ///  <note> 
         /// <para>
         /// The <code>Status</code> of a dataset group must be <code>ACTIVE</code> before you
-        /// can use the dataset group to create a predictor. To get the status, use the <a>DescribeDatasetGroup</a>
+        /// can use the dataset group to create a predictor. To get the status, use the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_DescribeDatasetGroup.html">DescribeDatasetGroup</a>
         /// operation.
         /// </para>
         ///  </note>
@@ -403,21 +414,24 @@ namespace Amazon.ForecastService
         /// <summary>
         /// Creates a dataset group, which holds a collection of related datasets. You can add
         /// datasets to the dataset group when you create the dataset group, or later by using
-        /// the <a>UpdateDatasetGroup</a> operation.
+        /// the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_UpdateDatasetGroup.html">UpdateDatasetGroup</a>
+        /// operation.
         /// 
         ///  
         /// <para>
         /// After creating a dataset group and adding datasets, you use the dataset group when
-        /// you create a predictor. For more information, see <a>howitworks-datasets-groups</a>.
+        /// you create a predictor. For more information, see <a href="https://docs.aws.amazon.com/forecast/latest/dg/howitworks-datasets-groups.html">Dataset
+        /// groups</a>.
         /// </para>
         ///  
         /// <para>
-        /// To get a list of all your datasets groups, use the <a>ListDatasetGroups</a> operation.
+        /// To get a list of all your datasets groups, use the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_ListDatasetGroups.html">ListDatasetGroups</a>
+        /// operation.
         /// </para>
         ///  <note> 
         /// <para>
         /// The <code>Status</code> of a dataset group must be <code>ACTIVE</code> before you
-        /// can use the dataset group to create a predictor. To get the status, use the <a>DescribeDatasetGroup</a>
+        /// can use the dataset group to create a predictor. To get the status, use the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_DescribeDatasetGroup.html">DescribeDatasetGroup</a>
         /// operation.
         /// </para>
         ///  </note>
@@ -460,20 +474,22 @@ namespace Amazon.ForecastService
         /// 
         ///  
         /// <para>
-        /// You must specify a <a>DataSource</a> object that includes an AWS Identity and Access
-        /// Management (IAM) role that Amazon Forecast can assume to access the data, as Amazon
-        /// Forecast makes a copy of your data and processes it in an internal AWS system. For
-        /// more information, see <a>aws-forecast-iam-roles</a>.
+        /// You must specify a <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_DataSource.html">DataSource</a>
+        /// object that includes an Identity and Access Management (IAM) role that Amazon Forecast
+        /// can assume to access the data, as Amazon Forecast makes a copy of your data and processes
+        /// it in an internal Amazon Web Services system. For more information, see <a href="https://docs.aws.amazon.com/forecast/latest/dg/aws-forecast-iam-roles.html">Set
+        /// up permissions</a>.
         /// </para>
         ///  
         /// <para>
-        /// The training data must be in CSV format. The delimiter must be a comma (,).
+        /// The training data must be in CSV or Parquet format. The delimiter must be a comma
+        /// (,).
         /// </para>
         ///  
         /// <para>
-        /// You can specify the path to a specific CSV file, the S3 bucket, or to a folder in
-        /// the S3 bucket. For the latter two cases, Amazon Forecast imports all files up to the
-        /// limit of 10,000 files.
+        /// You can specify the path to a specific file, the S3 bucket, or to a folder in the
+        /// S3 bucket. For the latter two cases, Amazon Forecast imports all files up to the limit
+        /// of 10,000 files.
         /// </para>
         ///  
         /// <para>
@@ -485,7 +501,8 @@ namespace Amazon.ForecastService
         ///  
         /// <para>
         /// To get a list of all your dataset import jobs, filtered by specified criteria, use
-        /// the <a>ListDatasetImportJobs</a> operation.
+        /// the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_ListDatasetImportJobs.html">ListDatasetImportJobs</a>
+        /// operation.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDatasetImportJob service method.</param>
@@ -520,20 +537,22 @@ namespace Amazon.ForecastService
         /// 
         ///  
         /// <para>
-        /// You must specify a <a>DataSource</a> object that includes an AWS Identity and Access
-        /// Management (IAM) role that Amazon Forecast can assume to access the data, as Amazon
-        /// Forecast makes a copy of your data and processes it in an internal AWS system. For
-        /// more information, see <a>aws-forecast-iam-roles</a>.
+        /// You must specify a <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_DataSource.html">DataSource</a>
+        /// object that includes an Identity and Access Management (IAM) role that Amazon Forecast
+        /// can assume to access the data, as Amazon Forecast makes a copy of your data and processes
+        /// it in an internal Amazon Web Services system. For more information, see <a href="https://docs.aws.amazon.com/forecast/latest/dg/aws-forecast-iam-roles.html">Set
+        /// up permissions</a>.
         /// </para>
         ///  
         /// <para>
-        /// The training data must be in CSV format. The delimiter must be a comma (,).
+        /// The training data must be in CSV or Parquet format. The delimiter must be a comma
+        /// (,).
         /// </para>
         ///  
         /// <para>
-        /// You can specify the path to a specific CSV file, the S3 bucket, or to a folder in
-        /// the S3 bucket. For the latter two cases, Amazon Forecast imports all files up to the
-        /// limit of 10,000 files.
+        /// You can specify the path to a specific file, the S3 bucket, or to a folder in the
+        /// S3 bucket. For the latter two cases, Amazon Forecast imports all files up to the limit
+        /// of 10,000 files.
         /// </para>
         ///  
         /// <para>
@@ -545,7 +564,8 @@ namespace Amazon.ForecastService
         ///  
         /// <para>
         /// To get a list of all your dataset import jobs, filtered by specified criteria, use
-        /// the <a>ListDatasetImportJobs</a> operation.
+        /// the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_ListDatasetImportJobs.html">ListDatasetImportJobs</a>
+        /// operation.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDatasetImportJob service method.</param>
@@ -665,7 +685,7 @@ namespace Amazon.ForecastService
         /// </para>
         ///  <note> 
         /// <para>
-        /// You can specify a maximum of 50 time series and 1500 time points.
+        /// You can specify a maximum of 50 time series and 500 time points.
         /// </para>
         ///  </note> 
         /// <para>
@@ -825,7 +845,7 @@ namespace Amazon.ForecastService
         /// </para>
         ///  <note> 
         /// <para>
-        /// You can specify a maximum of 50 time series and 1500 time points.
+        /// You can specify a maximum of 50 time series and 500 time points.
         /// </para>
         ///  </note> 
         /// <para>
@@ -912,8 +932,8 @@ namespace Amazon.ForecastService
         ///  
         /// <para>
         /// You must specify a <a>DataDestination</a> object that includes an Amazon S3 bucket
-        /// and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume
-        /// to access the Amazon S3 bucket. For more information, see <a>aws-forecast-iam-roles</a>.
+        /// and an Identity and Access Management (IAM) role that Amazon Forecast can assume to
+        /// access the Amazon S3 bucket. For more information, see <a>aws-forecast-iam-roles</a>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -955,8 +975,8 @@ namespace Amazon.ForecastService
         ///  
         /// <para>
         /// You must specify a <a>DataDestination</a> object that includes an Amazon S3 bucket
-        /// and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume
-        /// to access the Amazon S3 bucket. For more information, see <a>aws-forecast-iam-roles</a>.
+        /// and an Identity and Access Management (IAM) role that Amazon Forecast can assume to
+        /// access the Amazon S3 bucket. For more information, see <a>aws-forecast-iam-roles</a>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -1029,7 +1049,15 @@ namespace Amazon.ForecastService
         /// query or export the forecast. Use the <a>DescribeForecast</a> operation to get the
         /// status.
         /// </para>
-        ///  </note>
+        ///  </note> 
+        /// <para>
+        /// By default, a forecast includes predictions for every item (<code>item_id</code>)
+        /// in the dataset group that was used to train the predictor. However, you can use the
+        /// <code>TimeSeriesSelector</code> object to generate a forecast on a subset of time
+        /// series. Forecast creation is skipped for any time series that you specify that are
+        /// not in the input dataset. The forecast export file will not contain these time series
+        /// or their forecasted values.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateForecast service method.</param>
         /// 
@@ -1088,7 +1116,15 @@ namespace Amazon.ForecastService
         /// query or export the forecast. Use the <a>DescribeForecast</a> operation to get the
         /// status.
         /// </para>
-        ///  </note>
+        ///  </note> 
+        /// <para>
+        /// By default, a forecast includes predictions for every item (<code>item_id</code>)
+        /// in the dataset group that was used to train the predictor. However, you can use the
+        /// <code>TimeSeriesSelector</code> object to generate a forecast on a subset of time
+        /// series. Forecast creation is skipped for any time series that you specify that are
+        /// not in the input dataset. The forecast export file will not contain these time series
+        /// or their forecasted values.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateForecast service method.</param>
         /// <param name="cancellationToken">
@@ -1136,9 +1172,9 @@ namespace Amazon.ForecastService
         /// </para>
         ///  
         /// <para>
-        /// You must specify a <a>DataDestination</a> object that includes an AWS Identity and
-        /// Access Management (IAM) role that Amazon Forecast can assume to access the Amazon
-        /// S3 bucket. For more information, see <a>aws-forecast-iam-roles</a>.
+        /// You must specify a <a>DataDestination</a> object that includes an Identity and Access
+        /// Management (IAM) role that Amazon Forecast can assume to access the Amazon S3 bucket.
+        /// For more information, see <a>aws-forecast-iam-roles</a>.
         /// </para>
         ///  
         /// <para>
@@ -1197,9 +1233,9 @@ namespace Amazon.ForecastService
         /// </para>
         ///  
         /// <para>
-        /// You must specify a <a>DataDestination</a> object that includes an AWS Identity and
-        /// Access Management (IAM) role that Amazon Forecast can assume to access the Amazon
-        /// S3 bucket. For more information, see <a>aws-forecast-iam-roles</a>.
+        /// You must specify a <a>DataDestination</a> object that includes an Identity and Access
+        /// Management (IAM) role that Amazon Forecast can assume to access the Amazon S3 bucket.
+        /// For more information, see <a>aws-forecast-iam-roles</a>.
         /// </para>
         ///  
         /// <para>
@@ -1246,6 +1282,74 @@ namespace Amazon.ForecastService
 
         #endregion
         
+        #region  CreateMonitor
+
+
+        /// <summary>
+        /// Creates a predictor monitor resource for an existing auto predictor. Predictor monitoring
+        /// allows you to see how your predictor's performance changes over time. For more information,
+        /// see <a href="https://docs.aws.amazon.com/forecast/latest/dg/predictor-monitoring.html">Predictor
+        /// Monitoring</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateMonitor service method.</param>
+        /// 
+        /// <returns>The response from the CreateMonitor service method, as returned by ForecastService.</returns>
+        /// <exception cref="Amazon.ForecastService.Model.InvalidInputException">
+        /// We can't process the request because it includes an invalid value or a value that
+        /// exceeds the valid range.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.LimitExceededException">
+        /// The limit on the number of resources per account has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceAlreadyExistsException">
+        /// There is already a resource with this name. Try again with a different name.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceNotFoundException">
+        /// We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
+        /// again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/CreateMonitor">REST API Reference for CreateMonitor Operation</seealso>
+        CreateMonitorResponse CreateMonitor(CreateMonitorRequest request);
+
+
+
+        /// <summary>
+        /// Creates a predictor monitor resource for an existing auto predictor. Predictor monitoring
+        /// allows you to see how your predictor's performance changes over time. For more information,
+        /// see <a href="https://docs.aws.amazon.com/forecast/latest/dg/predictor-monitoring.html">Predictor
+        /// Monitoring</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateMonitor service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateMonitor service method, as returned by ForecastService.</returns>
+        /// <exception cref="Amazon.ForecastService.Model.InvalidInputException">
+        /// We can't process the request because it includes an invalid value or a value that
+        /// exceeds the valid range.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.LimitExceededException">
+        /// The limit on the number of resources per account has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceAlreadyExistsException">
+        /// There is already a resource with this name. Try again with a different name.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceNotFoundException">
+        /// We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
+        /// again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/CreateMonitor">REST API Reference for CreateMonitor Operation</seealso>
+        Task<CreateMonitorResponse> CreateMonitorAsync(CreateMonitorRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  CreatePredictor
 
 
@@ -1254,7 +1358,7 @@ namespace Amazon.ForecastService
         /// <para>
         ///  This operation creates a legacy predictor that does not include all the predictor
         /// functionalities provided by Amazon Forecast. To create a predictor that is compatible
-        /// with all aspects of Forecast, use CreateAutoPredictor.
+        /// with all aspects of Forecast, use <a>CreateAutoPredictor</a>.
         /// </para>
         ///  </note> 
         /// <para>
@@ -1369,7 +1473,7 @@ namespace Amazon.ForecastService
         /// <para>
         ///  This operation creates a legacy predictor that does not include all the predictor
         /// functionalities provided by Amazon Forecast. To create a predictor that is compatible
-        /// with all aspects of Forecast, use CreateAutoPredictor.
+        /// with all aspects of Forecast, use <a>CreateAutoPredictor</a>.
         /// </para>
         ///  </note> 
         /// <para>
@@ -1486,8 +1590,9 @@ namespace Amazon.ForecastService
 
 
         /// <summary>
-        /// Exports backtest forecasts and accuracy metrics generated by the <a>CreatePredictor</a>
-        /// operation. Two folders containing CSV files are exported to your specified S3 bucket.
+        /// Exports backtest forecasts and accuracy metrics generated by the <a>CreateAutoPredictor</a>
+        /// or <a>CreatePredictor</a> operations. Two folders containing CSV or Parquet files
+        /// are exported to your specified S3 bucket.
         /// 
         ///  
         /// <para>
@@ -1505,8 +1610,8 @@ namespace Amazon.ForecastService
         ///  
         /// <para>
         /// You must specify a <a>DataDestination</a> object that includes an Amazon S3 bucket
-        /// and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume
-        /// to access the Amazon S3 bucket. For more information, see <a>aws-forecast-iam-roles</a>.
+        /// and an Identity and Access Management (IAM) role that Amazon Forecast can assume to
+        /// access the Amazon S3 bucket. For more information, see <a>aws-forecast-iam-roles</a>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -1542,8 +1647,9 @@ namespace Amazon.ForecastService
 
 
         /// <summary>
-        /// Exports backtest forecasts and accuracy metrics generated by the <a>CreatePredictor</a>
-        /// operation. Two folders containing CSV files are exported to your specified S3 bucket.
+        /// Exports backtest forecasts and accuracy metrics generated by the <a>CreateAutoPredictor</a>
+        /// or <a>CreatePredictor</a> operations. Two folders containing CSV or Parquet files
+        /// are exported to your specified S3 bucket.
         /// 
         ///  
         /// <para>
@@ -1561,8 +1667,8 @@ namespace Amazon.ForecastService
         ///  
         /// <para>
         /// You must specify a <a>DataDestination</a> object that includes an Amazon S3 bucket
-        /// and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume
-        /// to access the Amazon S3 bucket. For more information, see <a>aws-forecast-iam-roles</a>.
+        /// and an Identity and Access Management (IAM) role that Amazon Forecast can assume to
+        /// access the Amazon S3 bucket. For more information, see <a>aws-forecast-iam-roles</a>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -1600,19 +1706,340 @@ namespace Amazon.ForecastService
 
         #endregion
         
+        #region  CreateWhatIfAnalysis
+
+
+        /// <summary>
+        /// What-if analysis is a scenario modeling technique where you make a hypothetical change
+        /// to a time series and compare the forecasts generated by these changes against the
+        /// baseline, unchanged time series. It is important to remember that the purpose of a
+        /// what-if analysis is to understand how a forecast can change given different modifications
+        /// to the baseline time series.
+        /// 
+        ///  
+        /// <para>
+        /// For example, imagine you are a clothing retailer who is considering an end of season
+        /// sale to clear space for new styles. After creating a baseline forecast, you can use
+        /// a what-if analysis to investigate how different sales tactics might affect your goals.
+        /// </para>
+        ///  
+        /// <para>
+        /// You could create a scenario where everything is given a 25% markdown, and another
+        /// where everything is given a fixed dollar markdown. You could create a scenario where
+        /// the sale lasts for one week and another where the sale lasts for one month. With a
+        /// what-if analysis, you can compare many different scenarios against each other.
+        /// </para>
+        ///  
+        /// <para>
+        /// Note that a what-if analysis is meant to display what the forecasting model has learned
+        /// and how it will behave in the scenarios that you are evaluating. Do not blindly use
+        /// the results of the what-if analysis to make business decisions. For instance, forecasts
+        /// might not be accurate for novel scenarios where there is no reference available to
+        /// determine whether a forecast is good.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <a>TimeSeriesSelector</a> object defines the items that you want in the what-if
+        /// analysis.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateWhatIfAnalysis service method.</param>
+        /// 
+        /// <returns>The response from the CreateWhatIfAnalysis service method, as returned by ForecastService.</returns>
+        /// <exception cref="Amazon.ForecastService.Model.InvalidInputException">
+        /// We can't process the request because it includes an invalid value or a value that
+        /// exceeds the valid range.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.LimitExceededException">
+        /// The limit on the number of resources per account has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceAlreadyExistsException">
+        /// There is already a resource with this name. Try again with a different name.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceNotFoundException">
+        /// We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
+        /// again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/CreateWhatIfAnalysis">REST API Reference for CreateWhatIfAnalysis Operation</seealso>
+        CreateWhatIfAnalysisResponse CreateWhatIfAnalysis(CreateWhatIfAnalysisRequest request);
+
+
+
+        /// <summary>
+        /// What-if analysis is a scenario modeling technique where you make a hypothetical change
+        /// to a time series and compare the forecasts generated by these changes against the
+        /// baseline, unchanged time series. It is important to remember that the purpose of a
+        /// what-if analysis is to understand how a forecast can change given different modifications
+        /// to the baseline time series.
+        /// 
+        ///  
+        /// <para>
+        /// For example, imagine you are a clothing retailer who is considering an end of season
+        /// sale to clear space for new styles. After creating a baseline forecast, you can use
+        /// a what-if analysis to investigate how different sales tactics might affect your goals.
+        /// </para>
+        ///  
+        /// <para>
+        /// You could create a scenario where everything is given a 25% markdown, and another
+        /// where everything is given a fixed dollar markdown. You could create a scenario where
+        /// the sale lasts for one week and another where the sale lasts for one month. With a
+        /// what-if analysis, you can compare many different scenarios against each other.
+        /// </para>
+        ///  
+        /// <para>
+        /// Note that a what-if analysis is meant to display what the forecasting model has learned
+        /// and how it will behave in the scenarios that you are evaluating. Do not blindly use
+        /// the results of the what-if analysis to make business decisions. For instance, forecasts
+        /// might not be accurate for novel scenarios where there is no reference available to
+        /// determine whether a forecast is good.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <a>TimeSeriesSelector</a> object defines the items that you want in the what-if
+        /// analysis.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateWhatIfAnalysis service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateWhatIfAnalysis service method, as returned by ForecastService.</returns>
+        /// <exception cref="Amazon.ForecastService.Model.InvalidInputException">
+        /// We can't process the request because it includes an invalid value or a value that
+        /// exceeds the valid range.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.LimitExceededException">
+        /// The limit on the number of resources per account has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceAlreadyExistsException">
+        /// There is already a resource with this name. Try again with a different name.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceNotFoundException">
+        /// We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
+        /// again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/CreateWhatIfAnalysis">REST API Reference for CreateWhatIfAnalysis Operation</seealso>
+        Task<CreateWhatIfAnalysisResponse> CreateWhatIfAnalysisAsync(CreateWhatIfAnalysisRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateWhatIfForecast
+
+
+        /// <summary>
+        /// A what-if forecast is a forecast that is created from a modified version of the baseline
+        /// forecast. Each what-if forecast incorporates either a replacement dataset or a set
+        /// of transformations to the original dataset.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateWhatIfForecast service method.</param>
+        /// 
+        /// <returns>The response from the CreateWhatIfForecast service method, as returned by ForecastService.</returns>
+        /// <exception cref="Amazon.ForecastService.Model.InvalidInputException">
+        /// We can't process the request because it includes an invalid value or a value that
+        /// exceeds the valid range.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.LimitExceededException">
+        /// The limit on the number of resources per account has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceAlreadyExistsException">
+        /// There is already a resource with this name. Try again with a different name.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceNotFoundException">
+        /// We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
+        /// again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/CreateWhatIfForecast">REST API Reference for CreateWhatIfForecast Operation</seealso>
+        CreateWhatIfForecastResponse CreateWhatIfForecast(CreateWhatIfForecastRequest request);
+
+
+
+        /// <summary>
+        /// A what-if forecast is a forecast that is created from a modified version of the baseline
+        /// forecast. Each what-if forecast incorporates either a replacement dataset or a set
+        /// of transformations to the original dataset.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateWhatIfForecast service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateWhatIfForecast service method, as returned by ForecastService.</returns>
+        /// <exception cref="Amazon.ForecastService.Model.InvalidInputException">
+        /// We can't process the request because it includes an invalid value or a value that
+        /// exceeds the valid range.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.LimitExceededException">
+        /// The limit on the number of resources per account has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceAlreadyExistsException">
+        /// There is already a resource with this name. Try again with a different name.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceNotFoundException">
+        /// We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
+        /// again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/CreateWhatIfForecast">REST API Reference for CreateWhatIfForecast Operation</seealso>
+        Task<CreateWhatIfForecastResponse> CreateWhatIfForecastAsync(CreateWhatIfForecastRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateWhatIfForecastExport
+
+
+        /// <summary>
+        /// Exports a forecast created by the <a>CreateWhatIfForecast</a> operation to your Amazon
+        /// Simple Storage Service (Amazon S3) bucket. The forecast file name will match the following
+        /// conventions:
+        /// 
+        ///  
+        /// <para>
+        ///  <code>≈&lt;ForecastExportJobName&gt;_&lt;ExportTimestamp&gt;_&lt;PartNumber&gt;</code>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// The &lt;ExportTimestamp&gt; component is in Java SimpleDateFormat (yyyy-MM-ddTHH-mm-ssZ).
+        /// </para>
+        ///  
+        /// <para>
+        /// You must specify a <a>DataDestination</a> object that includes an Identity and Access
+        /// Management (IAM) role that Amazon Forecast can assume to access the Amazon S3 bucket.
+        /// For more information, see <a>aws-forecast-iam-roles</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a>howitworks-forecast</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To get a list of all your what-if forecast export jobs, use the <a>ListWhatIfForecastExports</a>
+        /// operation.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <code>Status</code> of the forecast export job must be <code>ACTIVE</code> before
+        /// you can access the forecast in your Amazon S3 bucket. To get the status, use the <a>DescribeWhatIfForecastExport</a>
+        /// operation.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateWhatIfForecastExport service method.</param>
+        /// 
+        /// <returns>The response from the CreateWhatIfForecastExport service method, as returned by ForecastService.</returns>
+        /// <exception cref="Amazon.ForecastService.Model.InvalidInputException">
+        /// We can't process the request because it includes an invalid value or a value that
+        /// exceeds the valid range.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.LimitExceededException">
+        /// The limit on the number of resources per account has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceAlreadyExistsException">
+        /// There is already a resource with this name. Try again with a different name.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceNotFoundException">
+        /// We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
+        /// again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/CreateWhatIfForecastExport">REST API Reference for CreateWhatIfForecastExport Operation</seealso>
+        CreateWhatIfForecastExportResponse CreateWhatIfForecastExport(CreateWhatIfForecastExportRequest request);
+
+
+
+        /// <summary>
+        /// Exports a forecast created by the <a>CreateWhatIfForecast</a> operation to your Amazon
+        /// Simple Storage Service (Amazon S3) bucket. The forecast file name will match the following
+        /// conventions:
+        /// 
+        ///  
+        /// <para>
+        ///  <code>≈&lt;ForecastExportJobName&gt;_&lt;ExportTimestamp&gt;_&lt;PartNumber&gt;</code>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// The &lt;ExportTimestamp&gt; component is in Java SimpleDateFormat (yyyy-MM-ddTHH-mm-ssZ).
+        /// </para>
+        ///  
+        /// <para>
+        /// You must specify a <a>DataDestination</a> object that includes an Identity and Access
+        /// Management (IAM) role that Amazon Forecast can assume to access the Amazon S3 bucket.
+        /// For more information, see <a>aws-forecast-iam-roles</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a>howitworks-forecast</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To get a list of all your what-if forecast export jobs, use the <a>ListWhatIfForecastExports</a>
+        /// operation.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <code>Status</code> of the forecast export job must be <code>ACTIVE</code> before
+        /// you can access the forecast in your Amazon S3 bucket. To get the status, use the <a>DescribeWhatIfForecastExport</a>
+        /// operation.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateWhatIfForecastExport service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateWhatIfForecastExport service method, as returned by ForecastService.</returns>
+        /// <exception cref="Amazon.ForecastService.Model.InvalidInputException">
+        /// We can't process the request because it includes an invalid value or a value that
+        /// exceeds the valid range.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.LimitExceededException">
+        /// The limit on the number of resources per account has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceAlreadyExistsException">
+        /// There is already a resource with this name. Try again with a different name.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceNotFoundException">
+        /// We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
+        /// again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/CreateWhatIfForecastExport">REST API Reference for CreateWhatIfForecastExport Operation</seealso>
+        Task<CreateWhatIfForecastExportResponse> CreateWhatIfForecastExportAsync(CreateWhatIfForecastExportRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeleteDataset
 
 
         /// <summary>
-        /// Deletes an Amazon Forecast dataset that was created using the <a>CreateDataset</a>
+        /// Deletes an Amazon Forecast dataset that was created using the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDataset.html">CreateDataset</a>
         /// operation. You can only delete datasets that have a status of <code>ACTIVE</code>
-        /// or <code>CREATE_FAILED</code>. To get the status use the <a>DescribeDataset</a> operation.
+        /// or <code>CREATE_FAILED</code>. To get the status use the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_DescribeDataset.html">DescribeDataset</a>
+        /// operation.
         /// 
         ///  <note> 
         /// <para>
         /// Forecast does not automatically update any dataset groups that contain the deleted
-        /// dataset. In order to update the dataset group, use the operation, omitting the deleted
-        /// dataset's ARN.
+        /// dataset. In order to update the dataset group, use the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_UpdateDatasetGroup.html">UpdateDatasetGroup</a>
+        /// operation, omitting the deleted dataset's ARN.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1636,15 +2063,16 @@ namespace Amazon.ForecastService
 
 
         /// <summary>
-        /// Deletes an Amazon Forecast dataset that was created using the <a>CreateDataset</a>
+        /// Deletes an Amazon Forecast dataset that was created using the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDataset.html">CreateDataset</a>
         /// operation. You can only delete datasets that have a status of <code>ACTIVE</code>
-        /// or <code>CREATE_FAILED</code>. To get the status use the <a>DescribeDataset</a> operation.
+        /// or <code>CREATE_FAILED</code>. To get the status use the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_DescribeDataset.html">DescribeDataset</a>
+        /// operation.
         /// 
         ///  <note> 
         /// <para>
         /// Forecast does not automatically update any dataset groups that contain the deleted
-        /// dataset. In order to update the dataset group, use the operation, omitting the deleted
-        /// dataset's ARN.
+        /// dataset. In order to update the dataset group, use the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_UpdateDatasetGroup.html">UpdateDatasetGroup</a>
+        /// operation, omitting the deleted dataset's ARN.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1674,9 +2102,10 @@ namespace Amazon.ForecastService
 
 
         /// <summary>
-        /// Deletes a dataset group created using the <a>CreateDatasetGroup</a> operation. You
-        /// can only delete dataset groups that have a status of <code>ACTIVE</code>, <code>CREATE_FAILED</code>,
-        /// or <code>UPDATE_FAILED</code>. To get the status, use the <a>DescribeDatasetGroup</a>
+        /// Deletes a dataset group created using the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetGroup.html">CreateDatasetGroup</a>
+        /// operation. You can only delete dataset groups that have a status of <code>ACTIVE</code>,
+        /// <code>CREATE_FAILED</code>, or <code>UPDATE_FAILED</code>. To get the status, use
+        /// the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_DescribeDatasetGroup.html">DescribeDatasetGroup</a>
         /// operation.
         /// 
         ///  
@@ -1704,9 +2133,10 @@ namespace Amazon.ForecastService
 
 
         /// <summary>
-        /// Deletes a dataset group created using the <a>CreateDatasetGroup</a> operation. You
-        /// can only delete dataset groups that have a status of <code>ACTIVE</code>, <code>CREATE_FAILED</code>,
-        /// or <code>UPDATE_FAILED</code>. To get the status, use the <a>DescribeDatasetGroup</a>
+        /// Deletes a dataset group created using the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetGroup.html">CreateDatasetGroup</a>
+        /// operation. You can only delete dataset groups that have a status of <code>ACTIVE</code>,
+        /// <code>CREATE_FAILED</code>, or <code>UPDATE_FAILED</code>. To get the status, use
+        /// the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_DescribeDatasetGroup.html">DescribeDatasetGroup</a>
         /// operation.
         /// 
         ///  
@@ -1740,9 +2170,9 @@ namespace Amazon.ForecastService
 
 
         /// <summary>
-        /// Deletes a dataset import job created using the <a>CreateDatasetImportJob</a> operation.
-        /// You can delete only dataset import jobs that have a status of <code>ACTIVE</code>
-        /// or <code>CREATE_FAILED</code>. To get the status, use the <a>DescribeDatasetImportJob</a>
+        /// Deletes a dataset import job created using the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetImportJob.html">CreateDatasetImportJob</a>
+        /// operation. You can delete only dataset import jobs that have a status of <code>ACTIVE</code>
+        /// or <code>CREATE_FAILED</code>. To get the status, use the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_DescribeDatasetImportJob.html">DescribeDatasetImportJob</a>
         /// operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDatasetImportJob service method.</param>
@@ -1765,9 +2195,9 @@ namespace Amazon.ForecastService
 
 
         /// <summary>
-        /// Deletes a dataset import job created using the <a>CreateDatasetImportJob</a> operation.
-        /// You can delete only dataset import jobs that have a status of <code>ACTIVE</code>
-        /// or <code>CREATE_FAILED</code>. To get the status, use the <a>DescribeDatasetImportJob</a>
+        /// Deletes a dataset import job created using the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetImportJob.html">CreateDatasetImportJob</a>
+        /// operation. You can delete only dataset import jobs that have a status of <code>ACTIVE</code>
+        /// or <code>CREATE_FAILED</code>. To get the status, use the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_DescribeDatasetImportJob.html">DescribeDatasetImportJob</a>
         /// operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDatasetImportJob service method.</param>
@@ -1858,7 +2288,7 @@ namespace Amazon.ForecastService
 
 
         /// <summary>
-        /// Deletes an Explainability export job.
+        /// Deletes an Explainability export.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteExplainabilityExport service method.</param>
         /// 
@@ -1880,7 +2310,7 @@ namespace Amazon.ForecastService
 
 
         /// <summary>
-        /// Deletes an Explainability export job.
+        /// Deletes an Explainability export.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteExplainabilityExport service method.</param>
         /// <param name="cancellationToken">
@@ -2024,13 +2454,66 @@ namespace Amazon.ForecastService
 
         #endregion
         
+        #region  DeleteMonitor
+
+
+        /// <summary>
+        /// Deletes a monitor resource. You can only delete a monitor resource with a status of
+        /// <code>ACTIVE</code>, <code>ACTIVE_STOPPED</code>, <code>CREATE_FAILED</code>, or <code>CREATE_STOPPED</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMonitor service method.</param>
+        /// 
+        /// <returns>The response from the DeleteMonitor service method, as returned by ForecastService.</returns>
+        /// <exception cref="Amazon.ForecastService.Model.InvalidInputException">
+        /// We can't process the request because it includes an invalid value or a value that
+        /// exceeds the valid range.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceNotFoundException">
+        /// We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
+        /// again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DeleteMonitor">REST API Reference for DeleteMonitor Operation</seealso>
+        DeleteMonitorResponse DeleteMonitor(DeleteMonitorRequest request);
+
+
+
+        /// <summary>
+        /// Deletes a monitor resource. You can only delete a monitor resource with a status of
+        /// <code>ACTIVE</code>, <code>ACTIVE_STOPPED</code>, <code>CREATE_FAILED</code>, or <code>CREATE_STOPPED</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMonitor service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteMonitor service method, as returned by ForecastService.</returns>
+        /// <exception cref="Amazon.ForecastService.Model.InvalidInputException">
+        /// We can't process the request because it includes an invalid value or a value that
+        /// exceeds the valid range.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceNotFoundException">
+        /// We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
+        /// again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DeleteMonitor">REST API Reference for DeleteMonitor Operation</seealso>
+        Task<DeleteMonitorResponse> DeleteMonitorAsync(DeleteMonitorRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeletePredictor
 
 
         /// <summary>
-        /// Deletes a predictor created using the <a>CreatePredictor</a> operation. You can delete
-        /// only predictor that have a status of <code>ACTIVE</code> or <code>CREATE_FAILED</code>.
-        /// To get the status, use the <a>DescribePredictor</a> operation.
+        /// Deletes a predictor created using the <a>DescribePredictor</a> or <a>CreatePredictor</a>
+        /// operations. You can delete only predictor that have a status of <code>ACTIVE</code>
+        /// or <code>CREATE_FAILED</code>. To get the status, use the <a>DescribePredictor</a>
+        /// operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeletePredictor service method.</param>
         /// 
@@ -2052,9 +2535,10 @@ namespace Amazon.ForecastService
 
 
         /// <summary>
-        /// Deletes a predictor created using the <a>CreatePredictor</a> operation. You can delete
-        /// only predictor that have a status of <code>ACTIVE</code> or <code>CREATE_FAILED</code>.
-        /// To get the status, use the <a>DescribePredictor</a> operation.
+        /// Deletes a predictor created using the <a>DescribePredictor</a> or <a>CreatePredictor</a>
+        /// operations. You can delete only predictor that have a status of <code>ACTIVE</code>
+        /// or <code>CREATE_FAILED</code>. To get the status, use the <a>DescribePredictor</a>
+        /// operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeletePredictor service method.</param>
         /// <param name="cancellationToken">
@@ -2248,6 +2732,196 @@ namespace Amazon.ForecastService
 
         #endregion
         
+        #region  DeleteWhatIfAnalysis
+
+
+        /// <summary>
+        /// Deletes a what-if analysis created using the <a>CreateWhatIfAnalysis</a> operation.
+        /// You can delete only what-if analyses that have a status of <code>ACTIVE</code> or
+        /// <code>CREATE_FAILED</code>. To get the status, use the <a>DescribeWhatIfAnalysis</a>
+        /// operation. 
+        /// 
+        ///  
+        /// <para>
+        /// You can't delete a what-if analysis while any of its forecasts are being exported.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteWhatIfAnalysis service method.</param>
+        /// 
+        /// <returns>The response from the DeleteWhatIfAnalysis service method, as returned by ForecastService.</returns>
+        /// <exception cref="Amazon.ForecastService.Model.InvalidInputException">
+        /// We can't process the request because it includes an invalid value or a value that
+        /// exceeds the valid range.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceNotFoundException">
+        /// We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
+        /// again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DeleteWhatIfAnalysis">REST API Reference for DeleteWhatIfAnalysis Operation</seealso>
+        DeleteWhatIfAnalysisResponse DeleteWhatIfAnalysis(DeleteWhatIfAnalysisRequest request);
+
+
+
+        /// <summary>
+        /// Deletes a what-if analysis created using the <a>CreateWhatIfAnalysis</a> operation.
+        /// You can delete only what-if analyses that have a status of <code>ACTIVE</code> or
+        /// <code>CREATE_FAILED</code>. To get the status, use the <a>DescribeWhatIfAnalysis</a>
+        /// operation. 
+        /// 
+        ///  
+        /// <para>
+        /// You can't delete a what-if analysis while any of its forecasts are being exported.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteWhatIfAnalysis service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteWhatIfAnalysis service method, as returned by ForecastService.</returns>
+        /// <exception cref="Amazon.ForecastService.Model.InvalidInputException">
+        /// We can't process the request because it includes an invalid value or a value that
+        /// exceeds the valid range.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceNotFoundException">
+        /// We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
+        /// again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DeleteWhatIfAnalysis">REST API Reference for DeleteWhatIfAnalysis Operation</seealso>
+        Task<DeleteWhatIfAnalysisResponse> DeleteWhatIfAnalysisAsync(DeleteWhatIfAnalysisRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteWhatIfForecast
+
+
+        /// <summary>
+        /// Deletes a what-if forecast created using the <a>CreateWhatIfForecast</a> operation.
+        /// You can delete only what-if forecasts that have a status of <code>ACTIVE</code> or
+        /// <code>CREATE_FAILED</code>. To get the status, use the <a>DescribeWhatIfForecast</a>
+        /// operation. 
+        /// 
+        ///  
+        /// <para>
+        /// You can't delete a what-if forecast while it is being exported. After a what-if forecast
+        /// is deleted, you can no longer query the what-if analysis.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteWhatIfForecast service method.</param>
+        /// 
+        /// <returns>The response from the DeleteWhatIfForecast service method, as returned by ForecastService.</returns>
+        /// <exception cref="Amazon.ForecastService.Model.InvalidInputException">
+        /// We can't process the request because it includes an invalid value or a value that
+        /// exceeds the valid range.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceNotFoundException">
+        /// We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
+        /// again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DeleteWhatIfForecast">REST API Reference for DeleteWhatIfForecast Operation</seealso>
+        DeleteWhatIfForecastResponse DeleteWhatIfForecast(DeleteWhatIfForecastRequest request);
+
+
+
+        /// <summary>
+        /// Deletes a what-if forecast created using the <a>CreateWhatIfForecast</a> operation.
+        /// You can delete only what-if forecasts that have a status of <code>ACTIVE</code> or
+        /// <code>CREATE_FAILED</code>. To get the status, use the <a>DescribeWhatIfForecast</a>
+        /// operation. 
+        /// 
+        ///  
+        /// <para>
+        /// You can't delete a what-if forecast while it is being exported. After a what-if forecast
+        /// is deleted, you can no longer query the what-if analysis.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteWhatIfForecast service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteWhatIfForecast service method, as returned by ForecastService.</returns>
+        /// <exception cref="Amazon.ForecastService.Model.InvalidInputException">
+        /// We can't process the request because it includes an invalid value or a value that
+        /// exceeds the valid range.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceNotFoundException">
+        /// We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
+        /// again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DeleteWhatIfForecast">REST API Reference for DeleteWhatIfForecast Operation</seealso>
+        Task<DeleteWhatIfForecastResponse> DeleteWhatIfForecastAsync(DeleteWhatIfForecastRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteWhatIfForecastExport
+
+
+        /// <summary>
+        /// Deletes a what-if forecast export created using the <a>CreateWhatIfForecastExport</a>
+        /// operation. You can delete only what-if forecast exports that have a status of <code>ACTIVE</code>
+        /// or <code>CREATE_FAILED</code>. To get the status, use the <a>DescribeWhatIfForecastExport</a>
+        /// operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteWhatIfForecastExport service method.</param>
+        /// 
+        /// <returns>The response from the DeleteWhatIfForecastExport service method, as returned by ForecastService.</returns>
+        /// <exception cref="Amazon.ForecastService.Model.InvalidInputException">
+        /// We can't process the request because it includes an invalid value or a value that
+        /// exceeds the valid range.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceNotFoundException">
+        /// We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
+        /// again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DeleteWhatIfForecastExport">REST API Reference for DeleteWhatIfForecastExport Operation</seealso>
+        DeleteWhatIfForecastExportResponse DeleteWhatIfForecastExport(DeleteWhatIfForecastExportRequest request);
+
+
+
+        /// <summary>
+        /// Deletes a what-if forecast export created using the <a>CreateWhatIfForecastExport</a>
+        /// operation. You can delete only what-if forecast exports that have a status of <code>ACTIVE</code>
+        /// or <code>CREATE_FAILED</code>. To get the status, use the <a>DescribeWhatIfForecastExport</a>
+        /// operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteWhatIfForecastExport service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteWhatIfForecastExport service method, as returned by ForecastService.</returns>
+        /// <exception cref="Amazon.ForecastService.Model.InvalidInputException">
+        /// We can't process the request because it includes an invalid value or a value that
+        /// exceeds the valid range.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceNotFoundException">
+        /// We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
+        /// again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DeleteWhatIfForecastExport">REST API Reference for DeleteWhatIfForecastExport Operation</seealso>
+        Task<DeleteWhatIfForecastExportResponse> DeleteWhatIfForecastExportAsync(DeleteWhatIfForecastExportRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DescribeAutoPredictor
 
 
@@ -2296,7 +2970,8 @@ namespace Amazon.ForecastService
 
 
         /// <summary>
-        /// Describes an Amazon Forecast dataset created using the <a>CreateDataset</a> operation.
+        /// Describes an Amazon Forecast dataset created using the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDataset.html">CreateDataset</a>
+        /// operation.
         /// 
         ///  
         /// <para>
@@ -2334,7 +3009,8 @@ namespace Amazon.ForecastService
 
 
         /// <summary>
-        /// Describes an Amazon Forecast dataset created using the <a>CreateDataset</a> operation.
+        /// Describes an Amazon Forecast dataset created using the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDataset.html">CreateDataset</a>
+        /// operation.
         /// 
         ///  
         /// <para>
@@ -2378,7 +3054,8 @@ namespace Amazon.ForecastService
 
 
         /// <summary>
-        /// Describes a dataset group created using the <a>CreateDatasetGroup</a> operation.
+        /// Describes a dataset group created using the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetGroup.html">CreateDatasetGroup</a>
+        /// operation.
         /// 
         ///  
         /// <para>
@@ -2420,7 +3097,8 @@ namespace Amazon.ForecastService
 
 
         /// <summary>
-        /// Describes a dataset group created using the <a>CreateDatasetGroup</a> operation.
+        /// Describes a dataset group created using the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetGroup.html">CreateDatasetGroup</a>
+        /// operation.
         /// 
         ///  
         /// <para>
@@ -2468,7 +3146,8 @@ namespace Amazon.ForecastService
 
 
         /// <summary>
-        /// Describes a dataset import job created using the <a>CreateDatasetImportJob</a> operation.
+        /// Describes a dataset import job created using the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetImportJob.html">CreateDatasetImportJob</a>
+        /// operation.
         /// 
         ///  
         /// <para>
@@ -2518,7 +3197,8 @@ namespace Amazon.ForecastService
 
 
         /// <summary>
-        /// Describes a dataset import job created using the <a>CreateDatasetImportJob</a> operation.
+        /// Describes a dataset import job created using the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetImportJob.html">CreateDatasetImportJob</a>
+        /// operation.
         /// 
         ///  
         /// <para>
@@ -2850,6 +3530,112 @@ namespace Amazon.ForecastService
 
         #endregion
         
+        #region  DescribeMonitor
+
+
+        /// <summary>
+        /// Describes a monitor resource. In addition to listing the properties provided in the
+        /// <a>CreateMonitor</a> request, this operation lists the following properties:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>Baseline</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>CreationTime</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>LastEvaluationTime</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>LastEvaluationState</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>LastModificationTime</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Message</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Status</code> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMonitor service method.</param>
+        /// 
+        /// <returns>The response from the DescribeMonitor service method, as returned by ForecastService.</returns>
+        /// <exception cref="Amazon.ForecastService.Model.InvalidInputException">
+        /// We can't process the request because it includes an invalid value or a value that
+        /// exceeds the valid range.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceNotFoundException">
+        /// We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
+        /// again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DescribeMonitor">REST API Reference for DescribeMonitor Operation</seealso>
+        DescribeMonitorResponse DescribeMonitor(DescribeMonitorRequest request);
+
+
+
+        /// <summary>
+        /// Describes a monitor resource. In addition to listing the properties provided in the
+        /// <a>CreateMonitor</a> request, this operation lists the following properties:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>Baseline</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>CreationTime</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>LastEvaluationTime</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>LastEvaluationState</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>LastModificationTime</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Message</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Status</code> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMonitor service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeMonitor service method, as returned by ForecastService.</returns>
+        /// <exception cref="Amazon.ForecastService.Model.InvalidInputException">
+        /// We can't process the request because it includes an invalid value or a value that
+        /// exceeds the valid range.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceNotFoundException">
+        /// We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
+        /// again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DescribeMonitor">REST API Reference for DescribeMonitor Operation</seealso>
+        Task<DescribeMonitorResponse> DescribeMonitorAsync(DescribeMonitorRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DescribePredictor
 
 
@@ -2857,11 +3643,7 @@ namespace Amazon.ForecastService
         /// <note> 
         /// <para>
         ///  This operation is only valid for legacy predictors created with CreatePredictor.
-        /// If you are not using a legacy predictor, use DescribeAutoPredictor.
-        /// </para>
-        ///  
-        /// <para>
-        /// To upgrade a legacy predictor to AutoPredictor, see Upgrading to AutoPredictor.
+        /// If you are not using a legacy predictor, use <a>DescribeAutoPredictor</a>.
         /// </para>
         ///  </note> 
         /// <para>
@@ -2920,11 +3702,7 @@ namespace Amazon.ForecastService
         /// <note> 
         /// <para>
         ///  This operation is only valid for legacy predictors created with CreatePredictor.
-        /// If you are not using a legacy predictor, use DescribeAutoPredictor.
-        /// </para>
-        ///  
-        /// <para>
-        /// To upgrade a legacy predictor to AutoPredictor, see Upgrading to AutoPredictor.
+        /// If you are not using a legacy predictor, use <a>DescribeAutoPredictor</a>.
         /// </para>
         ///  </note> 
         /// <para>
@@ -3074,6 +3852,278 @@ namespace Amazon.ForecastService
 
         #endregion
         
+        #region  DescribeWhatIfAnalysis
+
+
+        /// <summary>
+        /// Describes the what-if analysis created using the <a>CreateWhatIfAnalysis</a> operation.
+        /// 
+        ///  
+        /// <para>
+        /// In addition to listing the properties provided in the <code>CreateWhatIfAnalysis</code>
+        /// request, this operation lists the following properties:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>CreationTime</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>LastModificationTime</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Message</code> - If an error occurred, information about the error.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Status</code> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeWhatIfAnalysis service method.</param>
+        /// 
+        /// <returns>The response from the DescribeWhatIfAnalysis service method, as returned by ForecastService.</returns>
+        /// <exception cref="Amazon.ForecastService.Model.InvalidInputException">
+        /// We can't process the request because it includes an invalid value or a value that
+        /// exceeds the valid range.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceNotFoundException">
+        /// We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
+        /// again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DescribeWhatIfAnalysis">REST API Reference for DescribeWhatIfAnalysis Operation</seealso>
+        DescribeWhatIfAnalysisResponse DescribeWhatIfAnalysis(DescribeWhatIfAnalysisRequest request);
+
+
+
+        /// <summary>
+        /// Describes the what-if analysis created using the <a>CreateWhatIfAnalysis</a> operation.
+        /// 
+        ///  
+        /// <para>
+        /// In addition to listing the properties provided in the <code>CreateWhatIfAnalysis</code>
+        /// request, this operation lists the following properties:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>CreationTime</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>LastModificationTime</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Message</code> - If an error occurred, information about the error.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Status</code> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeWhatIfAnalysis service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeWhatIfAnalysis service method, as returned by ForecastService.</returns>
+        /// <exception cref="Amazon.ForecastService.Model.InvalidInputException">
+        /// We can't process the request because it includes an invalid value or a value that
+        /// exceeds the valid range.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceNotFoundException">
+        /// We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
+        /// again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DescribeWhatIfAnalysis">REST API Reference for DescribeWhatIfAnalysis Operation</seealso>
+        Task<DescribeWhatIfAnalysisResponse> DescribeWhatIfAnalysisAsync(DescribeWhatIfAnalysisRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeWhatIfForecast
+
+
+        /// <summary>
+        /// Describes the what-if forecast created using the <a>CreateWhatIfForecast</a> operation.
+        /// 
+        ///  
+        /// <para>
+        /// In addition to listing the properties provided in the <code>CreateWhatIfForecast</code>
+        /// request, this operation lists the following properties:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>CreationTime</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>LastModificationTime</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Message</code> - If an error occurred, information about the error.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Status</code> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeWhatIfForecast service method.</param>
+        /// 
+        /// <returns>The response from the DescribeWhatIfForecast service method, as returned by ForecastService.</returns>
+        /// <exception cref="Amazon.ForecastService.Model.InvalidInputException">
+        /// We can't process the request because it includes an invalid value or a value that
+        /// exceeds the valid range.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceNotFoundException">
+        /// We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
+        /// again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DescribeWhatIfForecast">REST API Reference for DescribeWhatIfForecast Operation</seealso>
+        DescribeWhatIfForecastResponse DescribeWhatIfForecast(DescribeWhatIfForecastRequest request);
+
+
+
+        /// <summary>
+        /// Describes the what-if forecast created using the <a>CreateWhatIfForecast</a> operation.
+        /// 
+        ///  
+        /// <para>
+        /// In addition to listing the properties provided in the <code>CreateWhatIfForecast</code>
+        /// request, this operation lists the following properties:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>CreationTime</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>LastModificationTime</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Message</code> - If an error occurred, information about the error.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Status</code> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeWhatIfForecast service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeWhatIfForecast service method, as returned by ForecastService.</returns>
+        /// <exception cref="Amazon.ForecastService.Model.InvalidInputException">
+        /// We can't process the request because it includes an invalid value or a value that
+        /// exceeds the valid range.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceNotFoundException">
+        /// We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
+        /// again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DescribeWhatIfForecast">REST API Reference for DescribeWhatIfForecast Operation</seealso>
+        Task<DescribeWhatIfForecastResponse> DescribeWhatIfForecastAsync(DescribeWhatIfForecastRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeWhatIfForecastExport
+
+
+        /// <summary>
+        /// Describes the what-if forecast export created using the <a>CreateWhatIfForecastExport</a>
+        /// operation.
+        /// 
+        ///  
+        /// <para>
+        /// In addition to listing the properties provided in the <code>CreateWhatIfForecastExport</code>
+        /// request, this operation lists the following properties:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>CreationTime</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>LastModificationTime</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Message</code> - If an error occurred, information about the error.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Status</code> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeWhatIfForecastExport service method.</param>
+        /// 
+        /// <returns>The response from the DescribeWhatIfForecastExport service method, as returned by ForecastService.</returns>
+        /// <exception cref="Amazon.ForecastService.Model.InvalidInputException">
+        /// We can't process the request because it includes an invalid value or a value that
+        /// exceeds the valid range.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceNotFoundException">
+        /// We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
+        /// again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DescribeWhatIfForecastExport">REST API Reference for DescribeWhatIfForecastExport Operation</seealso>
+        DescribeWhatIfForecastExportResponse DescribeWhatIfForecastExport(DescribeWhatIfForecastExportRequest request);
+
+
+
+        /// <summary>
+        /// Describes the what-if forecast export created using the <a>CreateWhatIfForecastExport</a>
+        /// operation.
+        /// 
+        ///  
+        /// <para>
+        /// In addition to listing the properties provided in the <code>CreateWhatIfForecastExport</code>
+        /// request, this operation lists the following properties:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>CreationTime</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>LastModificationTime</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Message</code> - If an error occurred, information about the error.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Status</code> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeWhatIfForecastExport service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeWhatIfForecastExport service method, as returned by ForecastService.</returns>
+        /// <exception cref="Amazon.ForecastService.Model.InvalidInputException">
+        /// We can't process the request because it includes an invalid value or a value that
+        /// exceeds the valid range.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceNotFoundException">
+        /// We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
+        /// again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DescribeWhatIfForecastExport">REST API Reference for DescribeWhatIfForecastExport Operation</seealso>
+        Task<DescribeWhatIfForecastExportResponse> DescribeWhatIfForecastExportAsync(DescribeWhatIfForecastExportRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetAccuracyMetrics
 
 
@@ -3180,10 +4230,11 @@ namespace Amazon.ForecastService
 
 
         /// <summary>
-        /// Returns a list of dataset groups created using the <a>CreateDatasetGroup</a> operation.
-        /// For each dataset group, this operation returns a summary of its properties, including
-        /// its Amazon Resource Name (ARN). You can retrieve the complete set of properties by
-        /// using the dataset group ARN with the <a>DescribeDatasetGroup</a> operation.
+        /// Returns a list of dataset groups created using the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetGroup.html">CreateDatasetGroup</a>
+        /// operation. For each dataset group, this operation returns a summary of its properties,
+        /// including its Amazon Resource Name (ARN). You can retrieve the complete set of properties
+        /// by using the dataset group ARN with the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_DescribeDatasetGroup.html">DescribeDatasetGroup</a>
+        /// operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDatasetGroups service method.</param>
         /// 
@@ -3197,10 +4248,11 @@ namespace Amazon.ForecastService
 
 
         /// <summary>
-        /// Returns a list of dataset groups created using the <a>CreateDatasetGroup</a> operation.
-        /// For each dataset group, this operation returns a summary of its properties, including
-        /// its Amazon Resource Name (ARN). You can retrieve the complete set of properties by
-        /// using the dataset group ARN with the <a>DescribeDatasetGroup</a> operation.
+        /// Returns a list of dataset groups created using the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetGroup.html">CreateDatasetGroup</a>
+        /// operation. For each dataset group, this operation returns a summary of its properties,
+        /// including its Amazon Resource Name (ARN). You can retrieve the complete set of properties
+        /// by using the dataset group ARN with the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_DescribeDatasetGroup.html">DescribeDatasetGroup</a>
+        /// operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDatasetGroups service method.</param>
         /// <param name="cancellationToken">
@@ -3220,11 +4272,12 @@ namespace Amazon.ForecastService
 
 
         /// <summary>
-        /// Returns a list of dataset import jobs created using the <a>CreateDatasetImportJob</a>
+        /// Returns a list of dataset import jobs created using the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetImportJob.html">CreateDatasetImportJob</a>
         /// operation. For each import job, this operation returns a summary of its properties,
         /// including its Amazon Resource Name (ARN). You can retrieve the complete set of properties
-        /// by using the ARN with the <a>DescribeDatasetImportJob</a> operation. You can filter
-        /// the list by providing an array of <a>Filter</a> objects.
+        /// by using the ARN with the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_DescribeDatasetImportJob.html">DescribeDatasetImportJob</a>
+        /// operation. You can filter the list by providing an array of <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_Filter.html">Filter</a>
+        /// objects.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDatasetImportJobs service method.</param>
         /// 
@@ -3242,11 +4295,12 @@ namespace Amazon.ForecastService
 
 
         /// <summary>
-        /// Returns a list of dataset import jobs created using the <a>CreateDatasetImportJob</a>
+        /// Returns a list of dataset import jobs created using the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetImportJob.html">CreateDatasetImportJob</a>
         /// operation. For each import job, this operation returns a summary of its properties,
         /// including its Amazon Resource Name (ARN). You can retrieve the complete set of properties
-        /// by using the ARN with the <a>DescribeDatasetImportJob</a> operation. You can filter
-        /// the list by providing an array of <a>Filter</a> objects.
+        /// by using the ARN with the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_DescribeDatasetImportJob.html">DescribeDatasetImportJob</a>
+        /// operation. You can filter the list by providing an array of <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_Filter.html">Filter</a>
+        /// objects.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDatasetImportJobs service method.</param>
         /// <param name="cancellationToken">
@@ -3270,9 +4324,10 @@ namespace Amazon.ForecastService
 
 
         /// <summary>
-        /// Returns a list of datasets created using the <a>CreateDataset</a> operation. For each
-        /// dataset, a summary of its properties, including its Amazon Resource Name (ARN), is
-        /// returned. To retrieve the complete set of properties, use the ARN with the <a>DescribeDataset</a>
+        /// Returns a list of datasets created using the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDataset.html">CreateDataset</a>
+        /// operation. For each dataset, a summary of its properties, including its Amazon Resource
+        /// Name (ARN), is returned. To retrieve the complete set of properties, use the ARN with
+        /// the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_DescribeDataset.html">DescribeDataset</a>
         /// operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDatasets service method.</param>
@@ -3287,9 +4342,10 @@ namespace Amazon.ForecastService
 
 
         /// <summary>
-        /// Returns a list of datasets created using the <a>CreateDataset</a> operation. For each
-        /// dataset, a summary of its properties, including its Amazon Resource Name (ARN), is
-        /// returned. To retrieve the complete set of properties, use the ARN with the <a>DescribeDataset</a>
+        /// Returns a list of datasets created using the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDataset.html">CreateDataset</a>
+        /// operation. For each dataset, a summary of its properties, including its Amazon Resource
+        /// Name (ARN), is returned. To retrieve the complete set of properties, use the ARN with
+        /// the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_DescribeDataset.html">DescribeDataset</a>
         /// operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDatasets service method.</param>
@@ -3522,6 +4578,120 @@ namespace Amazon.ForecastService
 
         #endregion
         
+        #region  ListMonitorEvaluations
+
+
+        /// <summary>
+        /// Returns a list of the monitoring evaluation results and predictor events collected
+        /// by the monitor resource during different windows of time.
+        /// 
+        ///  
+        /// <para>
+        /// For information about monitoring see <a>predictor-monitoring</a>. For more information
+        /// about retrieving monitoring results see <a href="https://docs.aws.amazon.com/forecast/latest/dg/predictor-monitoring-results.html">Viewing
+        /// Monitoring Results</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMonitorEvaluations service method.</param>
+        /// 
+        /// <returns>The response from the ListMonitorEvaluations service method, as returned by ForecastService.</returns>
+        /// <exception cref="Amazon.ForecastService.Model.InvalidInputException">
+        /// We can't process the request because it includes an invalid value or a value that
+        /// exceeds the valid range.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.InvalidNextTokenException">
+        /// The token is not valid. Tokens expire after 24 hours.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceNotFoundException">
+        /// We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
+        /// again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ListMonitorEvaluations">REST API Reference for ListMonitorEvaluations Operation</seealso>
+        ListMonitorEvaluationsResponse ListMonitorEvaluations(ListMonitorEvaluationsRequest request);
+
+
+
+        /// <summary>
+        /// Returns a list of the monitoring evaluation results and predictor events collected
+        /// by the monitor resource during different windows of time.
+        /// 
+        ///  
+        /// <para>
+        /// For information about monitoring see <a>predictor-monitoring</a>. For more information
+        /// about retrieving monitoring results see <a href="https://docs.aws.amazon.com/forecast/latest/dg/predictor-monitoring-results.html">Viewing
+        /// Monitoring Results</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMonitorEvaluations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListMonitorEvaluations service method, as returned by ForecastService.</returns>
+        /// <exception cref="Amazon.ForecastService.Model.InvalidInputException">
+        /// We can't process the request because it includes an invalid value or a value that
+        /// exceeds the valid range.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.InvalidNextTokenException">
+        /// The token is not valid. Tokens expire after 24 hours.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceNotFoundException">
+        /// We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
+        /// again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ListMonitorEvaluations">REST API Reference for ListMonitorEvaluations Operation</seealso>
+        Task<ListMonitorEvaluationsResponse> ListMonitorEvaluationsAsync(ListMonitorEvaluationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListMonitors
+
+
+        /// <summary>
+        /// Returns a list of monitors created with the <a>CreateMonitor</a> operation and <a>CreateAutoPredictor</a>
+        /// operation. For each monitor resource, this operation returns of a summary of its properties,
+        /// including its Amazon Resource Name (ARN). You can retrieve a complete set of properties
+        /// of a monitor resource by specify the monitor's ARN in the <a>DescribeMonitor</a> operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMonitors service method.</param>
+        /// 
+        /// <returns>The response from the ListMonitors service method, as returned by ForecastService.</returns>
+        /// <exception cref="Amazon.ForecastService.Model.InvalidInputException">
+        /// We can't process the request because it includes an invalid value or a value that
+        /// exceeds the valid range.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.InvalidNextTokenException">
+        /// The token is not valid. Tokens expire after 24 hours.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ListMonitors">REST API Reference for ListMonitors Operation</seealso>
+        ListMonitorsResponse ListMonitors(ListMonitorsRequest request);
+
+
+
+        /// <summary>
+        /// Returns a list of monitors created with the <a>CreateMonitor</a> operation and <a>CreateAutoPredictor</a>
+        /// operation. For each monitor resource, this operation returns of a summary of its properties,
+        /// including its Amazon Resource Name (ARN). You can retrieve a complete set of properties
+        /// of a monitor resource by specify the monitor's ARN in the <a>DescribeMonitor</a> operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMonitors service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListMonitors service method, as returned by ForecastService.</returns>
+        /// <exception cref="Amazon.ForecastService.Model.InvalidInputException">
+        /// We can't process the request because it includes an invalid value or a value that
+        /// exceeds the valid range.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.InvalidNextTokenException">
+        /// The token is not valid. Tokens expire after 24 hours.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ListMonitors">REST API Reference for ListMonitors Operation</seealso>
+        Task<ListMonitorsResponse> ListMonitorsAsync(ListMonitorsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListPredictorBacktestExportJobs
 
 
@@ -3584,11 +4754,16 @@ namespace Amazon.ForecastService
 
 
         /// <summary>
-        /// Returns a list of predictors created using the <a>CreatePredictor</a> operation. For
-        /// each predictor, this operation returns a summary of its properties, including its
-        /// Amazon Resource Name (ARN). You can retrieve the complete set of properties by using
-        /// the ARN with the <a>DescribePredictor</a> operation. You can filter the list using
-        /// an array of <a>Filter</a> objects.
+        /// Returns a list of predictors created using the <a>CreateAutoPredictor</a> or <a>CreatePredictor</a>
+        /// operations. For each predictor, this operation returns a summary of its properties,
+        /// including its Amazon Resource Name (ARN). 
+        /// 
+        ///  
+        /// <para>
+        /// You can retrieve the complete set of properties by using the ARN with the <a>DescribeAutoPredictor</a>
+        /// and <a>DescribePredictor</a> operations. You can filter the list using an array of
+        /// <a>Filter</a> objects.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPredictors service method.</param>
         /// 
@@ -3606,11 +4781,16 @@ namespace Amazon.ForecastService
 
 
         /// <summary>
-        /// Returns a list of predictors created using the <a>CreatePredictor</a> operation. For
-        /// each predictor, this operation returns a summary of its properties, including its
-        /// Amazon Resource Name (ARN). You can retrieve the complete set of properties by using
-        /// the ARN with the <a>DescribePredictor</a> operation. You can filter the list using
-        /// an array of <a>Filter</a> objects.
+        /// Returns a list of predictors created using the <a>CreateAutoPredictor</a> or <a>CreatePredictor</a>
+        /// operations. For each predictor, this operation returns a summary of its properties,
+        /// including its Amazon Resource Name (ARN). 
+        /// 
+        ///  
+        /// <para>
+        /// You can retrieve the complete set of properties by using the ARN with the <a>DescribeAutoPredictor</a>
+        /// and <a>DescribePredictor</a> operations. You can filter the list using an array of
+        /// <a>Filter</a> objects.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPredictors service method.</param>
         /// <param name="cancellationToken">
@@ -3674,6 +4854,208 @@ namespace Amazon.ForecastService
 
         #endregion
         
+        #region  ListWhatIfAnalyses
+
+
+        /// <summary>
+        /// Returns a list of what-if analyses created using the <a>CreateWhatIfAnalysis</a> operation.
+        /// For each what-if analysis, this operation returns a summary of its properties, including
+        /// its Amazon Resource Name (ARN). You can retrieve the complete set of properties by
+        /// using the what-if analysis ARN with the <a>DescribeWhatIfAnalysis</a> operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListWhatIfAnalyses service method.</param>
+        /// 
+        /// <returns>The response from the ListWhatIfAnalyses service method, as returned by ForecastService.</returns>
+        /// <exception cref="Amazon.ForecastService.Model.InvalidInputException">
+        /// We can't process the request because it includes an invalid value or a value that
+        /// exceeds the valid range.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.InvalidNextTokenException">
+        /// The token is not valid. Tokens expire after 24 hours.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ListWhatIfAnalyses">REST API Reference for ListWhatIfAnalyses Operation</seealso>
+        ListWhatIfAnalysesResponse ListWhatIfAnalyses(ListWhatIfAnalysesRequest request);
+
+
+
+        /// <summary>
+        /// Returns a list of what-if analyses created using the <a>CreateWhatIfAnalysis</a> operation.
+        /// For each what-if analysis, this operation returns a summary of its properties, including
+        /// its Amazon Resource Name (ARN). You can retrieve the complete set of properties by
+        /// using the what-if analysis ARN with the <a>DescribeWhatIfAnalysis</a> operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListWhatIfAnalyses service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListWhatIfAnalyses service method, as returned by ForecastService.</returns>
+        /// <exception cref="Amazon.ForecastService.Model.InvalidInputException">
+        /// We can't process the request because it includes an invalid value or a value that
+        /// exceeds the valid range.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.InvalidNextTokenException">
+        /// The token is not valid. Tokens expire after 24 hours.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ListWhatIfAnalyses">REST API Reference for ListWhatIfAnalyses Operation</seealso>
+        Task<ListWhatIfAnalysesResponse> ListWhatIfAnalysesAsync(ListWhatIfAnalysesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListWhatIfForecastExports
+
+
+        /// <summary>
+        /// Returns a list of what-if forecast exports created using the <a>CreateWhatIfForecastExport</a>
+        /// operation. For each what-if forecast export, this operation returns a summary of its
+        /// properties, including its Amazon Resource Name (ARN). You can retrieve the complete
+        /// set of properties by using the what-if forecast export ARN with the <a>DescribeWhatIfForecastExport</a>
+        /// operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListWhatIfForecastExports service method.</param>
+        /// 
+        /// <returns>The response from the ListWhatIfForecastExports service method, as returned by ForecastService.</returns>
+        /// <exception cref="Amazon.ForecastService.Model.InvalidInputException">
+        /// We can't process the request because it includes an invalid value or a value that
+        /// exceeds the valid range.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.InvalidNextTokenException">
+        /// The token is not valid. Tokens expire after 24 hours.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ListWhatIfForecastExports">REST API Reference for ListWhatIfForecastExports Operation</seealso>
+        ListWhatIfForecastExportsResponse ListWhatIfForecastExports(ListWhatIfForecastExportsRequest request);
+
+
+
+        /// <summary>
+        /// Returns a list of what-if forecast exports created using the <a>CreateWhatIfForecastExport</a>
+        /// operation. For each what-if forecast export, this operation returns a summary of its
+        /// properties, including its Amazon Resource Name (ARN). You can retrieve the complete
+        /// set of properties by using the what-if forecast export ARN with the <a>DescribeWhatIfForecastExport</a>
+        /// operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListWhatIfForecastExports service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListWhatIfForecastExports service method, as returned by ForecastService.</returns>
+        /// <exception cref="Amazon.ForecastService.Model.InvalidInputException">
+        /// We can't process the request because it includes an invalid value or a value that
+        /// exceeds the valid range.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.InvalidNextTokenException">
+        /// The token is not valid. Tokens expire after 24 hours.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ListWhatIfForecastExports">REST API Reference for ListWhatIfForecastExports Operation</seealso>
+        Task<ListWhatIfForecastExportsResponse> ListWhatIfForecastExportsAsync(ListWhatIfForecastExportsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListWhatIfForecasts
+
+
+        /// <summary>
+        /// Returns a list of what-if forecasts created using the <a>CreateWhatIfForecast</a>
+        /// operation. For each what-if forecast, this operation returns a summary of its properties,
+        /// including its Amazon Resource Name (ARN). You can retrieve the complete set of properties
+        /// by using the what-if forecast ARN with the <a>DescribeWhatIfForecast</a> operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListWhatIfForecasts service method.</param>
+        /// 
+        /// <returns>The response from the ListWhatIfForecasts service method, as returned by ForecastService.</returns>
+        /// <exception cref="Amazon.ForecastService.Model.InvalidInputException">
+        /// We can't process the request because it includes an invalid value or a value that
+        /// exceeds the valid range.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.InvalidNextTokenException">
+        /// The token is not valid. Tokens expire after 24 hours.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ListWhatIfForecasts">REST API Reference for ListWhatIfForecasts Operation</seealso>
+        ListWhatIfForecastsResponse ListWhatIfForecasts(ListWhatIfForecastsRequest request);
+
+
+
+        /// <summary>
+        /// Returns a list of what-if forecasts created using the <a>CreateWhatIfForecast</a>
+        /// operation. For each what-if forecast, this operation returns a summary of its properties,
+        /// including its Amazon Resource Name (ARN). You can retrieve the complete set of properties
+        /// by using the what-if forecast ARN with the <a>DescribeWhatIfForecast</a> operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListWhatIfForecasts service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListWhatIfForecasts service method, as returned by ForecastService.</returns>
+        /// <exception cref="Amazon.ForecastService.Model.InvalidInputException">
+        /// We can't process the request because it includes an invalid value or a value that
+        /// exceeds the valid range.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.InvalidNextTokenException">
+        /// The token is not valid. Tokens expire after 24 hours.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ListWhatIfForecasts">REST API Reference for ListWhatIfForecasts Operation</seealso>
+        Task<ListWhatIfForecastsResponse> ListWhatIfForecastsAsync(ListWhatIfForecastsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ResumeResource
+
+
+        /// <summary>
+        /// Resumes a stopped monitor resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ResumeResource service method.</param>
+        /// 
+        /// <returns>The response from the ResumeResource service method, as returned by ForecastService.</returns>
+        /// <exception cref="Amazon.ForecastService.Model.InvalidInputException">
+        /// We can't process the request because it includes an invalid value or a value that
+        /// exceeds the valid range.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.LimitExceededException">
+        /// The limit on the number of resources per account has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceNotFoundException">
+        /// We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
+        /// again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ResumeResource">REST API Reference for ResumeResource Operation</seealso>
+        ResumeResourceResponse ResumeResource(ResumeResourceRequest request);
+
+
+
+        /// <summary>
+        /// Resumes a stopped monitor resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ResumeResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ResumeResource service method, as returned by ForecastService.</returns>
+        /// <exception cref="Amazon.ForecastService.Model.InvalidInputException">
+        /// We can't process the request because it includes an invalid value or a value that
+        /// exceeds the valid range.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.LimitExceededException">
+        /// The limit on the number of resources per account has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceNotFoundException">
+        /// We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
+        /// again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ResumeResource">REST API Reference for ResumeResource Operation</seealso>
+        Task<ResumeResourceResponse> ResumeResourceAsync(ResumeResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  StopResource
 
 
@@ -3709,6 +5091,14 @@ namespace Amazon.ForecastService
         ///  </li> <li> 
         /// <para>
         /// Predictor Backtest Export Job
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Explainability Job
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Explainability Export Job
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -3763,6 +5153,14 @@ namespace Amazon.ForecastService
         ///  </li> <li> 
         /// <para>
         /// Predictor Backtest Export Job
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Explainability Job
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Explainability Export Job
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -3897,7 +5295,7 @@ namespace Amazon.ForecastService
         ///  <note> 
         /// <para>
         /// The <code>Status</code> of the dataset group must be <code>ACTIVE</code> before you
-        /// can use the dataset group to create a predictor. Use the <a>DescribeDatasetGroup</a>
+        /// can use the dataset group to create a predictor. Use the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_DescribeDatasetGroup.html">DescribeDatasetGroup</a>
         /// operation to get the status.
         /// </para>
         ///  </note>
@@ -3927,7 +5325,7 @@ namespace Amazon.ForecastService
         ///  <note> 
         /// <para>
         /// The <code>Status</code> of the dataset group must be <code>ACTIVE</code> before you
-        /// can use the dataset group to create a predictor. Use the <a>DescribeDatasetGroup</a>
+        /// can use the dataset group to create a predictor. Use the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_DescribeDatasetGroup.html">DescribeDatasetGroup</a>
         /// operation to get the status.
         /// </para>
         ///  </note>

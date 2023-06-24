@@ -34,6 +34,8 @@ namespace Amazon.S3Control.Model
     public partial class LifecycleRuleFilter
     {
         private LifecycleRuleAndOperator _and;
+        private long? _objectSizeGreaterThan;
+        private long? _objectSizeLessThan;
         private string _prefix;
         private S3Tag _tag;
 
@@ -56,15 +58,52 @@ namespace Amazon.S3Control.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ObjectSizeGreaterThan. 
+        /// <para>
+        /// Minimum object size to which the rule applies.
+        /// </para>
+        /// </summary>
+        public long ObjectSizeGreaterThan
+        {
+            get { return this._objectSizeGreaterThan.GetValueOrDefault(); }
+            set { this._objectSizeGreaterThan = value; }
+        }
+
+        // Check to see if ObjectSizeGreaterThan property is set
+        internal bool IsSetObjectSizeGreaterThan()
+        {
+            return this._objectSizeGreaterThan.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ObjectSizeLessThan. 
+        /// <para>
+        /// Maximum object size to which the rule applies.
+        /// </para>
+        /// </summary>
+        public long ObjectSizeLessThan
+        {
+            get { return this._objectSizeLessThan.GetValueOrDefault(); }
+            set { this._objectSizeLessThan = value; }
+        }
+
+        // Check to see if ObjectSizeLessThan property is set
+        internal bool IsSetObjectSizeLessThan()
+        {
+            return this._objectSizeLessThan.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Prefix. 
         /// <para>
         /// Prefix identifying one or more objects to which the rule applies.
         /// </para>
         ///  <important> 
         /// <para>
-        /// Replacement must be made for object keys containing special characters (such as carriage
-        /// returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
-        /// XML related object key constraints</a>.
+        /// When you're using XML requests, you must replace special characters (such as carriage
+        /// returns) in object keys with their equivalent XML entity codes. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
+        /// XML-related object key constraints</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  </important>
         /// </summary>

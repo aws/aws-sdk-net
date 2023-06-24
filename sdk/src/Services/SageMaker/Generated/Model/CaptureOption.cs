@@ -29,14 +29,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// 
+    /// Specifies data Model Monitor will capture.
     /// </summary>
     public partial class CaptureOption
     {
         private CaptureMode _captureMode;
 
         /// <summary>
-        /// Gets and sets the property CaptureMode.
+        /// Gets and sets the property CaptureMode. 
+        /// <para>
+        /// Specify the boundary of data to capture.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public CaptureMode CaptureMode

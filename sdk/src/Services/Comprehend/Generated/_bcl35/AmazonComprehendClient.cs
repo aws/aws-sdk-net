@@ -35,10 +35,10 @@ namespace Amazon.Comprehend
     /// <summary>
     /// Implementation for accessing Comprehend
     ///
-    /// Amazon Comprehend is an AWS service for gaining insight into the content of documents.
-    /// Use these actions to determine the topics contained in your documents, the topics
-    /// they discuss, the predominant sentiment expressed in them, the predominant language
-    /// used, and more.
+    /// Amazon Comprehend is an Amazon Web Services service for gaining insight into the content
+    /// of documents. Use these actions to determine the topics contained in your documents,
+    /// the topics they discuss, the predominant sentiment expressed in them, the predominant
+    /// language used, and more.
     /// </summary>
     public partial class AmazonComprehendClient : AmazonServiceClient, IAmazonComprehend
     {
@@ -233,6 +233,15 @@ namespace Amazon.Comprehend
         }
 
         /// <summary>
+        /// Customize the pipeline
+        /// </summary>
+        /// <param name="pipeline"></param>
+        protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
+        {
+            pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonComprehendEndpointResolver());
+        }
+        /// <summary>
         /// Capture metadata for the service.
         /// </summary>
         protected override IServiceMetadata ServiceMetadata
@@ -331,7 +340,8 @@ namespace Amazon.Comprehend
 
         /// <summary>
         /// Inspects the text of a batch of documents for named entities and returns information
-        /// about them. For more information about named entities, see <a>how-entities</a>
+        /// about them. For more information about named entities, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-entities.html">Entities</a>
+        /// in the Comprehend Developer Guide.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchDetectEntities service method.</param>
         /// 
@@ -352,7 +362,8 @@ namespace Amazon.Comprehend
         /// <exception cref="Amazon.Comprehend.Model.UnsupportedLanguageException">
         /// Amazon Comprehend can't process the language of the input text. For custom entity
         /// recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are
-        /// accepted. For a list of supported languages, see <a>supported-languages</a>.
+        /// accepted. For a list of supported languages, <a href="https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html">Supported
+        /// languages</a> in the Comprehend Developer Guide.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/BatchDetectEntities">REST API Reference for BatchDetectEntities Operation</seealso>
         public virtual BatchDetectEntitiesResponse BatchDetectEntities(BatchDetectEntitiesRequest request)
@@ -424,7 +435,8 @@ namespace Amazon.Comprehend
         /// <exception cref="Amazon.Comprehend.Model.UnsupportedLanguageException">
         /// Amazon Comprehend can't process the language of the input text. For custom entity
         /// recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are
-        /// accepted. For a list of supported languages, see <a>supported-languages</a>.
+        /// accepted. For a list of supported languages, <a href="https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html">Supported
+        /// languages</a> in the Comprehend Developer Guide.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/BatchDetectKeyPhrases">REST API Reference for BatchDetectKeyPhrases Operation</seealso>
         public virtual BatchDetectKeyPhrasesResponse BatchDetectKeyPhrases(BatchDetectKeyPhrasesRequest request)
@@ -498,7 +510,8 @@ namespace Amazon.Comprehend
         /// <exception cref="Amazon.Comprehend.Model.UnsupportedLanguageException">
         /// Amazon Comprehend can't process the language of the input text. For custom entity
         /// recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are
-        /// accepted. For a list of supported languages, see <a>supported-languages</a>.
+        /// accepted. For a list of supported languages, <a href="https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html">Supported
+        /// languages</a> in the Comprehend Developer Guide.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/BatchDetectSentiment">REST API Reference for BatchDetectSentiment Operation</seealso>
         public virtual BatchDetectSentimentResponse BatchDetectSentiment(BatchDetectSentimentRequest request)
@@ -551,7 +564,8 @@ namespace Amazon.Comprehend
         /// <summary>
         /// Inspects the text of a batch of documents for the syntax and part of speech of the
         /// words in the document and returns information about them. For more information, see
-        /// <a>how-syntax</a>.
+        /// <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-syntax.html">Syntax</a>
+        /// in the Comprehend Developer Guide.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchDetectSyntax service method.</param>
         /// 
@@ -572,7 +586,8 @@ namespace Amazon.Comprehend
         /// <exception cref="Amazon.Comprehend.Model.UnsupportedLanguageException">
         /// Amazon Comprehend can't process the language of the input text. For custom entity
         /// recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are
-        /// accepted. For a list of supported languages, see <a>supported-languages</a>.
+        /// accepted. For a list of supported languages, <a href="https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html">Supported
+        /// languages</a> in the Comprehend Developer Guide.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/BatchDetectSyntax">REST API Reference for BatchDetectSyntax Operation</seealso>
         public virtual BatchDetectSyntaxResponse BatchDetectSyntax(BatchDetectSyntaxRequest request)
@@ -620,11 +635,109 @@ namespace Amazon.Comprehend
 
         #endregion
         
+        #region  BatchDetectTargetedSentiment
+
+        /// <summary>
+        /// Inspects a batch of documents and returns a sentiment analysis for each entity identified
+        /// in the documents.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about targeted sentiment, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-targeted-sentiment.html">Targeted
+        /// sentiment</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchDetectTargetedSentiment service method.</param>
+        /// 
+        /// <returns>The response from the BatchDetectTargetedSentiment service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.BatchSizeLimitExceededException">
+        /// The number of documents in the request exceeds the limit of 25. Try your request again
+        /// with fewer documents.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TextSizeLimitExceededException">
+        /// The size of the input text exceeds the limit. Use a smaller document.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.UnsupportedLanguageException">
+        /// Amazon Comprehend can't process the language of the input text. For custom entity
+        /// recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are
+        /// accepted. For a list of supported languages, <a href="https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html">Supported
+        /// languages</a> in the Comprehend Developer Guide.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/BatchDetectTargetedSentiment">REST API Reference for BatchDetectTargetedSentiment Operation</seealso>
+        public virtual BatchDetectTargetedSentimentResponse BatchDetectTargetedSentiment(BatchDetectTargetedSentimentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchDetectTargetedSentimentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDetectTargetedSentimentResponseUnmarshaller.Instance;
+
+            return Invoke<BatchDetectTargetedSentimentResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchDetectTargetedSentiment operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchDetectTargetedSentiment operation on AmazonComprehendClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchDetectTargetedSentiment
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/BatchDetectTargetedSentiment">REST API Reference for BatchDetectTargetedSentiment Operation</seealso>
+        public virtual IAsyncResult BeginBatchDetectTargetedSentiment(BatchDetectTargetedSentimentRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchDetectTargetedSentimentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDetectTargetedSentimentResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchDetectTargetedSentiment operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchDetectTargetedSentiment.</param>
+        /// 
+        /// <returns>Returns a  BatchDetectTargetedSentimentResult from Comprehend.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/BatchDetectTargetedSentiment">REST API Reference for BatchDetectTargetedSentiment Operation</seealso>
+        public virtual BatchDetectTargetedSentimentResponse EndBatchDetectTargetedSentiment(IAsyncResult asyncResult)
+        {
+            return EndInvoke<BatchDetectTargetedSentimentResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ClassifyDocument
 
         /// <summary>
         /// Creates a new document classification request to analyze a single document in real-time,
         /// using a previously created and trained custom model and an endpoint.
+        /// 
+        ///  
+        /// <para>
+        /// You can input plain text or you can upload a single-page input document (text, PDF,
+        /// Word, or image). 
+        /// </para>
+        ///  
+        /// <para>
+        /// If the system detects errors while processing a page in the input document, the API
+        /// response includes an entry in <code>Errors</code> that describes the errors.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the system detects a document-level error in your input document, the API returns
+        /// an <code>InvalidRequestException</code> error response. For details about this exception,
+        /// see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/idp-inputs-sync-err.html">
+        /// Errors in semi-structured documents</a> in the Comprehend Developer Guide. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ClassifyDocument service method.</param>
         /// 
@@ -709,7 +822,8 @@ namespace Amazon.Comprehend
         /// <exception cref="Amazon.Comprehend.Model.UnsupportedLanguageException">
         /// Amazon Comprehend can't process the language of the input text. For custom entity
         /// recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are
-        /// accepted. For a list of supported languages, see <a>supported-languages</a>.
+        /// accepted. For a list of supported languages, <a href="https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html">Supported
+        /// languages</a> in the Comprehend Developer Guide.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ContainsPiiEntities">REST API Reference for ContainsPiiEntities Operation</seealso>
         public virtual ContainsPiiEntitiesResponse ContainsPiiEntities(ContainsPiiEntitiesRequest request)
@@ -757,13 +871,94 @@ namespace Amazon.Comprehend
 
         #endregion
         
+        #region  CreateDataset
+
+        /// <summary>
+        /// Creates a dataset to upload training or test data for a model associated with a flywheel.
+        /// For more information about datasets, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/flywheels-about.html">
+        /// Flywheel overview</a> in the <i>Amazon Comprehend Developer Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDataset service method.</param>
+        /// 
+        /// <returns>The response from the CreateDataset service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.ResourceInUseException">
+        /// The specified resource name is already in use. Use a different name and try your request
+        /// again.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.ResourceLimitExceededException">
+        /// The maximum number of resources per account has been exceeded. Review the resources,
+        /// and then try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.ResourceNotFoundException">
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyTagsException">
+        /// The request contains more tags than can be associated with a resource (50 tags per
+        /// resource). The maximum number of tags includes both existing tags and those included
+        /// in your current request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/CreateDataset">REST API Reference for CreateDataset Operation</seealso>
+        public virtual CreateDatasetResponse CreateDataset(CreateDatasetRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDatasetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDatasetResponseUnmarshaller.Instance;
+
+            return Invoke<CreateDatasetResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateDataset operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateDataset operation on AmazonComprehendClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateDataset
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/CreateDataset">REST API Reference for CreateDataset Operation</seealso>
+        public virtual IAsyncResult BeginCreateDataset(CreateDatasetRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDatasetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDatasetResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateDataset operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateDataset.</param>
+        /// 
+        /// <returns>Returns a  CreateDatasetResult from Comprehend.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/CreateDataset">REST API Reference for CreateDataset Operation</seealso>
+        public virtual CreateDatasetResponse EndCreateDataset(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateDatasetResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateDocumentClassifier
 
         /// <summary>
         /// Creates a new document classifier that you can use to categorize documents. To create
-        /// a classifier, you provide a set of training documents that labeled with the categories
-        /// that you want to use. After the classifier is trained you can use it to categorize
-        /// a set of labeled documents into the categories. For more information, see <a>how-document-classification</a>.
+        /// a classifier, you provide a set of training documents that are labeled with the categories
+        /// that you want to use. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/training-classifier-model.html">Training
+        /// classifier models</a> in the Comprehend Developer Guide.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDocumentClassifier service method.</param>
         /// 
@@ -797,7 +992,8 @@ namespace Amazon.Comprehend
         /// <exception cref="Amazon.Comprehend.Model.UnsupportedLanguageException">
         /// Amazon Comprehend can't process the language of the input text. For custom entity
         /// recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are
-        /// accepted. For a list of supported languages, see <a>supported-languages</a>.
+        /// accepted. For a list of supported languages, <a href="https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html">Supported
+        /// languages</a> in the Comprehend Developer Guide.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/CreateDocumentClassifier">REST API Reference for CreateDocumentClassifier Operation</seealso>
         public virtual CreateDocumentClassifierResponse CreateDocumentClassifier(CreateDocumentClassifierRequest request)
@@ -849,7 +1045,8 @@ namespace Amazon.Comprehend
 
         /// <summary>
         /// Creates a model-specific endpoint for synchronous inference for a previously trained
-        /// custom model
+        /// custom model For information about endpoints, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html">Managing
+        /// endpoints</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateEndpoint service method.</param>
         /// 
@@ -932,7 +1129,8 @@ namespace Amazon.Comprehend
 
         /// <summary>
         /// Creates an entity recognizer using submitted files. After your <code>CreateEntityRecognizer</code>
-        /// request is submitted, you can check job status using the API.
+        /// request is submitted, you can check job status using the <code>DescribeEntityRecognizer</code>
+        /// API.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateEntityRecognizer service method.</param>
         /// 
@@ -966,7 +1164,8 @@ namespace Amazon.Comprehend
         /// <exception cref="Amazon.Comprehend.Model.UnsupportedLanguageException">
         /// Amazon Comprehend can't process the language of the input text. For custom entity
         /// recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are
-        /// accepted. For a list of supported languages, see <a>supported-languages</a>.
+        /// accepted. For a list of supported languages, <a href="https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html">Supported
+        /// languages</a> in the Comprehend Developer Guide.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/CreateEntityRecognizer">REST API Reference for CreateEntityRecognizer Operation</seealso>
         public virtual CreateEntityRecognizerResponse CreateEntityRecognizer(CreateEntityRecognizerRequest request)
@@ -1010,6 +1209,123 @@ namespace Amazon.Comprehend
         public virtual CreateEntityRecognizerResponse EndCreateEntityRecognizer(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateEntityRecognizerResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateFlywheel
+
+        /// <summary>
+        /// A flywheel is an Amazon Web Services resource that orchestrates the ongoing training
+        /// of a model for custom classification or custom entity recognition. You can create
+        /// a flywheel to start with an existing trained model, or Comprehend can create and train
+        /// a new model.
+        /// 
+        ///  
+        /// <para>
+        /// When you create the flywheel, Comprehend creates a data lake in your account. The
+        /// data lake holds the training data and test data for all versions of the model.
+        /// </para>
+        ///  
+        /// <para>
+        /// To use a flywheel with an existing trained model, you specify the active model version.
+        /// Comprehend copies the model's training data and test data into the flywheel's data
+        /// lake.
+        /// </para>
+        ///  
+        /// <para>
+        /// To use the flywheel with a new model, you need to provide a dataset for training data
+        /// (and optional test data) when you create the flywheel.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about flywheels, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/flywheels-about.html">
+        /// Flywheel overview</a> in the <i>Amazon Comprehend Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateFlywheel service method.</param>
+        /// 
+        /// <returns>The response from the CreateFlywheel service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.KmsKeyValidationException">
+        /// The KMS customer managed key (CMK) entered cannot be validated. Verify the key and
+        /// re-enter it.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.ResourceInUseException">
+        /// The specified resource name is already in use. Use a different name and try your request
+        /// again.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.ResourceLimitExceededException">
+        /// The maximum number of resources per account has been exceeded. Review the resources,
+        /// and then try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.ResourceNotFoundException">
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.ResourceUnavailableException">
+        /// The specified resource is not available. Check the resource and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyTagsException">
+        /// The request contains more tags than can be associated with a resource (50 tags per
+        /// resource). The maximum number of tags includes both existing tags and those included
+        /// in your current request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.UnsupportedLanguageException">
+        /// Amazon Comprehend can't process the language of the input text. For custom entity
+        /// recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are
+        /// accepted. For a list of supported languages, <a href="https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html">Supported
+        /// languages</a> in the Comprehend Developer Guide.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/CreateFlywheel">REST API Reference for CreateFlywheel Operation</seealso>
+        public virtual CreateFlywheelResponse CreateFlywheel(CreateFlywheelRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateFlywheelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateFlywheelResponseUnmarshaller.Instance;
+
+            return Invoke<CreateFlywheelResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateFlywheel operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateFlywheel operation on AmazonComprehendClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateFlywheel
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/CreateFlywheel">REST API Reference for CreateFlywheel Operation</seealso>
+        public virtual IAsyncResult BeginCreateFlywheel(CreateFlywheelRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateFlywheelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateFlywheelResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateFlywheel operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateFlywheel.</param>
+        /// 
+        /// <returns>Returns a  CreateFlywheelResult from Comprehend.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/CreateFlywheel">REST API Reference for CreateFlywheel Operation</seealso>
+        public virtual CreateFlywheelResponse EndCreateFlywheel(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateFlywheelResponse>(asyncResult);
         }
 
         #endregion
@@ -1104,7 +1420,9 @@ namespace Amazon.Comprehend
 
         /// <summary>
         /// Deletes a model-specific endpoint for a previously-trained custom model. All endpoints
-        /// must be deleted in order for the model to be deleted.
+        /// must be deleted in order for the model to be deleted. For information about endpoints,
+        /// see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html">Managing
+        /// endpoints</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteEndpoint service method.</param>
         /// 
@@ -1253,6 +1571,217 @@ namespace Amazon.Comprehend
         public virtual DeleteEntityRecognizerResponse EndDeleteEntityRecognizer(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteEntityRecognizerResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteFlywheel
+
+        /// <summary>
+        /// Deletes a flywheel. When you delete the flywheel, Amazon Comprehend does not delete
+        /// the data lake or the model associated with the flywheel.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about flywheels, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/flywheels-about.html">
+        /// Flywheel overview</a> in the <i>Amazon Comprehend Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFlywheel service method.</param>
+        /// 
+        /// <returns>The response from the DeleteFlywheel service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.ResourceInUseException">
+        /// The specified resource name is already in use. Use a different name and try your request
+        /// again.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.ResourceNotFoundException">
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.ResourceUnavailableException">
+        /// The specified resource is not available. Check the resource and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DeleteFlywheel">REST API Reference for DeleteFlywheel Operation</seealso>
+        public virtual DeleteFlywheelResponse DeleteFlywheel(DeleteFlywheelRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteFlywheelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteFlywheelResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteFlywheelResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteFlywheel operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFlywheel operation on AmazonComprehendClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteFlywheel
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DeleteFlywheel">REST API Reference for DeleteFlywheel Operation</seealso>
+        public virtual IAsyncResult BeginDeleteFlywheel(DeleteFlywheelRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteFlywheelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteFlywheelResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteFlywheel operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteFlywheel.</param>
+        /// 
+        /// <returns>Returns a  DeleteFlywheelResult from Comprehend.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DeleteFlywheel">REST API Reference for DeleteFlywheel Operation</seealso>
+        public virtual DeleteFlywheelResponse EndDeleteFlywheel(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteFlywheelResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteResourcePolicy
+
+        /// <summary>
+        /// Deletes a resource-based policy that is attached to a custom model.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteResourcePolicy service method.</param>
+        /// 
+        /// <returns>The response from the DeleteResourcePolicy service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.ResourceNotFoundException">
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
+        public virtual DeleteResourcePolicyResponse DeleteResourcePolicy(DeleteResourcePolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteResourcePolicyResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteResourcePolicyResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteResourcePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteResourcePolicy operation on AmazonComprehendClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteResourcePolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
+        public virtual IAsyncResult BeginDeleteResourcePolicy(DeleteResourcePolicyRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteResourcePolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteResourcePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteResourcePolicy.</param>
+        /// 
+        /// <returns>Returns a  DeleteResourcePolicyResult from Comprehend.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
+        public virtual DeleteResourcePolicyResponse EndDeleteResourcePolicy(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteResourcePolicyResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeDataset
+
+        /// <summary>
+        /// Returns information about the dataset that you specify. For more information about
+        /// datasets, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/flywheels-about.html">
+        /// Flywheel overview</a> in the <i>Amazon Comprehend Developer Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDataset service method.</param>
+        /// 
+        /// <returns>The response from the DescribeDataset service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.ResourceNotFoundException">
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeDataset">REST API Reference for DescribeDataset Operation</seealso>
+        public virtual DescribeDatasetResponse DescribeDataset(DescribeDatasetRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDatasetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDatasetResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeDatasetResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeDataset operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDataset operation on AmazonComprehendClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeDataset
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeDataset">REST API Reference for DescribeDataset Operation</seealso>
+        public virtual IAsyncResult BeginDescribeDataset(DescribeDatasetRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDatasetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDatasetResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeDataset operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeDataset.</param>
+        /// 
+        /// <returns>Returns a  DescribeDatasetResult from Comprehend.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeDataset">REST API Reference for DescribeDataset Operation</seealso>
+        public virtual DescribeDatasetResponse EndDescribeDataset(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeDatasetResponse>(asyncResult);
         }
 
         #endregion
@@ -1461,7 +1990,8 @@ namespace Amazon.Comprehend
 
         /// <summary>
         /// Gets the properties associated with a specific endpoint. Use this operation to get
-        /// the status of an endpoint.
+        /// the status of an endpoint. For information about endpoints, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html">Managing
+        /// endpoints</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeEndpoint service method.</param>
         /// 
@@ -1724,6 +2254,142 @@ namespace Amazon.Comprehend
 
         #endregion
         
+        #region  DescribeFlywheel
+
+        /// <summary>
+        /// Provides configuration information about the flywheel. For more information about
+        /// flywheels, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/flywheels-about.html">
+        /// Flywheel overview</a> in the <i>Amazon Comprehend Developer Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeFlywheel service method.</param>
+        /// 
+        /// <returns>The response from the DescribeFlywheel service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.ResourceNotFoundException">
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeFlywheel">REST API Reference for DescribeFlywheel Operation</seealso>
+        public virtual DescribeFlywheelResponse DescribeFlywheel(DescribeFlywheelRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeFlywheelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeFlywheelResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeFlywheelResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeFlywheel operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeFlywheel operation on AmazonComprehendClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeFlywheel
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeFlywheel">REST API Reference for DescribeFlywheel Operation</seealso>
+        public virtual IAsyncResult BeginDescribeFlywheel(DescribeFlywheelRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeFlywheelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeFlywheelResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeFlywheel operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeFlywheel.</param>
+        /// 
+        /// <returns>Returns a  DescribeFlywheelResult from Comprehend.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeFlywheel">REST API Reference for DescribeFlywheel Operation</seealso>
+        public virtual DescribeFlywheelResponse EndDescribeFlywheel(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeFlywheelResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeFlywheelIteration
+
+        /// <summary>
+        /// Retrieve the configuration properties of a flywheel iteration. For more information
+        /// about flywheels, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/flywheels-about.html">
+        /// Flywheel overview</a> in the <i>Amazon Comprehend Developer Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeFlywheelIteration service method.</param>
+        /// 
+        /// <returns>The response from the DescribeFlywheelIteration service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.ResourceNotFoundException">
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeFlywheelIteration">REST API Reference for DescribeFlywheelIteration Operation</seealso>
+        public virtual DescribeFlywheelIterationResponse DescribeFlywheelIteration(DescribeFlywheelIterationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeFlywheelIterationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeFlywheelIterationResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeFlywheelIterationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeFlywheelIteration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeFlywheelIteration operation on AmazonComprehendClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeFlywheelIteration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeFlywheelIteration">REST API Reference for DescribeFlywheelIteration Operation</seealso>
+        public virtual IAsyncResult BeginDescribeFlywheelIteration(DescribeFlywheelIterationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeFlywheelIterationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeFlywheelIterationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeFlywheelIteration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeFlywheelIteration.</param>
+        /// 
+        /// <returns>Returns a  DescribeFlywheelIterationResult from Comprehend.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeFlywheelIteration">REST API Reference for DescribeFlywheelIteration Operation</seealso>
+        public virtual DescribeFlywheelIterationResponse EndDescribeFlywheelIteration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeFlywheelIterationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeKeyPhrasesDetectionJob
 
         /// <summary>
@@ -1858,6 +2524,70 @@ namespace Amazon.Comprehend
 
         #endregion
         
+        #region  DescribeResourcePolicy
+
+        /// <summary>
+        /// Gets the details of a resource-based policy that is attached to a custom model, including
+        /// the JSON body of the policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeResourcePolicy service method.</param>
+        /// 
+        /// <returns>The response from the DescribeResourcePolicy service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.ResourceNotFoundException">
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeResourcePolicy">REST API Reference for DescribeResourcePolicy Operation</seealso>
+        public virtual DescribeResourcePolicyResponse DescribeResourcePolicy(DescribeResourcePolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeResourcePolicyResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeResourcePolicyResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeResourcePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeResourcePolicy operation on AmazonComprehendClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeResourcePolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeResourcePolicy">REST API Reference for DescribeResourcePolicy Operation</seealso>
+        public virtual IAsyncResult BeginDescribeResourcePolicy(DescribeResourcePolicyRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeResourcePolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeResourcePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeResourcePolicy.</param>
+        /// 
+        /// <returns>Returns a  DescribeResourcePolicyResult from Comprehend.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeResourcePolicy">REST API Reference for DescribeResourcePolicy Operation</seealso>
+        public virtual DescribeResourcePolicyResponse EndDescribeResourcePolicy(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeResourcePolicyResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeSentimentDetectionJob
 
         /// <summary>
@@ -1921,6 +2651,73 @@ namespace Amazon.Comprehend
         public virtual DescribeSentimentDetectionJobResponse EndDescribeSentimentDetectionJob(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeSentimentDetectionJobResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeTargetedSentimentDetectionJob
+
+        /// <summary>
+        /// Gets the properties associated with a targeted sentiment detection job. Use this operation
+        /// to get the status of the job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTargetedSentimentDetectionJob service method.</param>
+        /// 
+        /// <returns>The response from the DescribeTargetedSentimentDetectionJob service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.JobNotFoundException">
+        /// The specified job was not found. Check the job ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeTargetedSentimentDetectionJob">REST API Reference for DescribeTargetedSentimentDetectionJob Operation</seealso>
+        public virtual DescribeTargetedSentimentDetectionJobResponse DescribeTargetedSentimentDetectionJob(DescribeTargetedSentimentDetectionJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeTargetedSentimentDetectionJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTargetedSentimentDetectionJobResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeTargetedSentimentDetectionJobResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeTargetedSentimentDetectionJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTargetedSentimentDetectionJob operation on AmazonComprehendClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeTargetedSentimentDetectionJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeTargetedSentimentDetectionJob">REST API Reference for DescribeTargetedSentimentDetectionJob Operation</seealso>
+        public virtual IAsyncResult BeginDescribeTargetedSentimentDetectionJob(DescribeTargetedSentimentDetectionJobRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeTargetedSentimentDetectionJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTargetedSentimentDetectionJobResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeTargetedSentimentDetectionJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeTargetedSentimentDetectionJob.</param>
+        /// 
+        /// <returns>Returns a  DescribeTargetedSentimentDetectionJobResult from Comprehend.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeTargetedSentimentDetectionJob">REST API Reference for DescribeTargetedSentimentDetectionJob Operation</seealso>
+        public virtual DescribeTargetedSentimentDetectionJobResponse EndDescribeTargetedSentimentDetectionJob(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeTargetedSentimentDetectionJobResponse>(asyncResult);
         }
 
         #endregion
@@ -2060,8 +2857,32 @@ namespace Amazon.Comprehend
         #region  DetectEntities
 
         /// <summary>
-        /// Inspects text for named entities, and returns information about them. For more information,
-        /// about named entities, see <a>how-entities</a>.
+        /// Detects named entities in input text when you use the pre-trained model. Detects custom
+        /// entities if you have a custom entity recognition model. 
+        /// 
+        ///  
+        /// <para>
+        ///  When detecting named entities using the pre-trained model, use plain text as the
+        /// input. For more information about named entities, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-entities.html">Entities</a>
+        /// in the Comprehend Developer Guide.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you use a custom entity recognition model, you can input plain text or you can
+        /// upload a single-page input document (text, PDF, Word, or image). 
+        /// </para>
+        ///  
+        /// <para>
+        /// If the system detects errors while processing a page in the input document, the API
+        /// response includes an entry in <code>Errors</code> for each error. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If the system detects a document-level error in your input document, the API returns
+        /// an <code>InvalidRequestException</code> error response. For details about this exception,
+        /// see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/idp-inputs-sync-err.html">
+        /// Errors in semi-structured documents</a> in the Comprehend Developer Guide. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DetectEntities service method.</param>
         /// 
@@ -2081,7 +2902,8 @@ namespace Amazon.Comprehend
         /// <exception cref="Amazon.Comprehend.Model.UnsupportedLanguageException">
         /// Amazon Comprehend can't process the language of the input text. For custom entity
         /// recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are
-        /// accepted. For a list of supported languages, see <a>supported-languages</a>.
+        /// accepted. For a list of supported languages, <a href="https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html">Supported
+        /// languages</a> in the Comprehend Developer Guide.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DetectEntities">REST API Reference for DetectEntities Operation</seealso>
         public virtual DetectEntitiesResponse DetectEntities(DetectEntitiesRequest request)
@@ -2149,7 +2971,8 @@ namespace Amazon.Comprehend
         /// <exception cref="Amazon.Comprehend.Model.UnsupportedLanguageException">
         /// Amazon Comprehend can't process the language of the input text. For custom entity
         /// recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are
-        /// accepted. For a list of supported languages, see <a>supported-languages</a>.
+        /// accepted. For a list of supported languages, <a href="https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html">Supported
+        /// languages</a> in the Comprehend Developer Guide.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DetectKeyPhrases">REST API Reference for DetectKeyPhrases Operation</seealso>
         public virtual DetectKeyPhrasesResponse DetectKeyPhrases(DetectKeyPhrasesRequest request)
@@ -2218,7 +3041,8 @@ namespace Amazon.Comprehend
         /// <exception cref="Amazon.Comprehend.Model.UnsupportedLanguageException">
         /// Amazon Comprehend can't process the language of the input text. For custom entity
         /// recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are
-        /// accepted. For a list of supported languages, see <a>supported-languages</a>.
+        /// accepted. For a list of supported languages, <a href="https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html">Supported
+        /// languages</a> in the Comprehend Developer Guide.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DetectPiiEntities">REST API Reference for DetectPiiEntities Operation</seealso>
         public virtual DetectPiiEntitiesResponse DetectPiiEntities(DetectPiiEntitiesRequest request)
@@ -2287,7 +3111,8 @@ namespace Amazon.Comprehend
         /// <exception cref="Amazon.Comprehend.Model.UnsupportedLanguageException">
         /// Amazon Comprehend can't process the language of the input text. For custom entity
         /// recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are
-        /// accepted. For a list of supported languages, see <a>supported-languages</a>.
+        /// accepted. For a list of supported languages, <a href="https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html">Supported
+        /// languages</a> in the Comprehend Developer Guide.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DetectSentiment">REST API Reference for DetectSentiment Operation</seealso>
         public virtual DetectSentimentResponse DetectSentiment(DetectSentimentRequest request)
@@ -2339,7 +3164,8 @@ namespace Amazon.Comprehend
 
         /// <summary>
         /// Inspects text for syntax and the part of speech of words in the document. For more
-        /// information, <a>how-syntax</a>.
+        /// information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-syntax.html">Syntax</a>
+        /// in the Comprehend Developer Guide.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DetectSyntax service method.</param>
         /// 
@@ -2356,7 +3182,8 @@ namespace Amazon.Comprehend
         /// <exception cref="Amazon.Comprehend.Model.UnsupportedLanguageException">
         /// Amazon Comprehend can't process the language of the input text. For custom entity
         /// recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are
-        /// accepted. For a list of supported languages, see <a>supported-languages</a>.
+        /// accepted. For a list of supported languages, <a href="https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html">Supported
+        /// languages</a> in the Comprehend Developer Guide.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DetectSyntax">REST API Reference for DetectSyntax Operation</seealso>
         public virtual DetectSyntaxResponse DetectSyntax(DetectSyntaxRequest request)
@@ -2400,6 +3227,251 @@ namespace Amazon.Comprehend
         public virtual DetectSyntaxResponse EndDetectSyntax(IAsyncResult asyncResult)
         {
             return EndInvoke<DetectSyntaxResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DetectTargetedSentiment
+
+        /// <summary>
+        /// Inspects the input text and returns a sentiment analysis for each entity identified
+        /// in the text.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about targeted sentiment, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-targeted-sentiment.html">Targeted
+        /// sentiment</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DetectTargetedSentiment service method.</param>
+        /// 
+        /// <returns>The response from the DetectTargetedSentiment service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TextSizeLimitExceededException">
+        /// The size of the input text exceeds the limit. Use a smaller document.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.UnsupportedLanguageException">
+        /// Amazon Comprehend can't process the language of the input text. For custom entity
+        /// recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are
+        /// accepted. For a list of supported languages, <a href="https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html">Supported
+        /// languages</a> in the Comprehend Developer Guide.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DetectTargetedSentiment">REST API Reference for DetectTargetedSentiment Operation</seealso>
+        public virtual DetectTargetedSentimentResponse DetectTargetedSentiment(DetectTargetedSentimentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DetectTargetedSentimentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DetectTargetedSentimentResponseUnmarshaller.Instance;
+
+            return Invoke<DetectTargetedSentimentResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DetectTargetedSentiment operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DetectTargetedSentiment operation on AmazonComprehendClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDetectTargetedSentiment
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DetectTargetedSentiment">REST API Reference for DetectTargetedSentiment Operation</seealso>
+        public virtual IAsyncResult BeginDetectTargetedSentiment(DetectTargetedSentimentRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DetectTargetedSentimentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DetectTargetedSentimentResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DetectTargetedSentiment operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDetectTargetedSentiment.</param>
+        /// 
+        /// <returns>Returns a  DetectTargetedSentimentResult from Comprehend.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DetectTargetedSentiment">REST API Reference for DetectTargetedSentiment Operation</seealso>
+        public virtual DetectTargetedSentimentResponse EndDetectTargetedSentiment(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DetectTargetedSentimentResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ImportModel
+
+        /// <summary>
+        /// Creates a new custom model that replicates a source custom model that you import.
+        /// The source model can be in your Amazon Web Services account or another one.
+        /// 
+        ///  
+        /// <para>
+        /// If the source model is in another Amazon Web Services account, then it must have a
+        /// resource-based policy that authorizes you to import it.
+        /// </para>
+        ///  
+        /// <para>
+        /// The source model must be in the same Amazon Web Services Region that you're using
+        /// when you import. You can't import a model that's in a different Region.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ImportModel service method.</param>
+        /// 
+        /// <returns>The response from the ImportModel service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.KmsKeyValidationException">
+        /// The KMS customer managed key (CMK) entered cannot be validated. Verify the key and
+        /// re-enter it.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.ResourceInUseException">
+        /// The specified resource name is already in use. Use a different name and try your request
+        /// again.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.ResourceLimitExceededException">
+        /// The maximum number of resources per account has been exceeded. Review the resources,
+        /// and then try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.ResourceNotFoundException">
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.ResourceUnavailableException">
+        /// The specified resource is not available. Check the resource and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyTagsException">
+        /// The request contains more tags than can be associated with a resource (50 tags per
+        /// resource). The maximum number of tags includes both existing tags and those included
+        /// in your current request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ImportModel">REST API Reference for ImportModel Operation</seealso>
+        public virtual ImportModelResponse ImportModel(ImportModelRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ImportModelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ImportModelResponseUnmarshaller.Instance;
+
+            return Invoke<ImportModelResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ImportModel operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ImportModel operation on AmazonComprehendClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndImportModel
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ImportModel">REST API Reference for ImportModel Operation</seealso>
+        public virtual IAsyncResult BeginImportModel(ImportModelRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ImportModelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ImportModelResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ImportModel operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginImportModel.</param>
+        /// 
+        /// <returns>Returns a  ImportModelResult from Comprehend.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ImportModel">REST API Reference for ImportModel Operation</seealso>
+        public virtual ImportModelResponse EndImportModel(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ImportModelResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListDatasets
+
+        /// <summary>
+        /// List the datasets that you have configured in this Region. For more information about
+        /// datasets, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/flywheels-about.html">
+        /// Flywheel overview</a> in the <i>Amazon Comprehend Developer Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDatasets service method.</param>
+        /// 
+        /// <returns>The response from the ListDatasets service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidFilterException">
+        /// The filter specified for the operation is invalid. Specify a different filter.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.ResourceNotFoundException">
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListDatasets">REST API Reference for ListDatasets Operation</seealso>
+        public virtual ListDatasetsResponse ListDatasets(ListDatasetsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDatasetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDatasetsResponseUnmarshaller.Instance;
+
+            return Invoke<ListDatasetsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListDatasets operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListDatasets operation on AmazonComprehendClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDatasets
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListDatasets">REST API Reference for ListDatasets Operation</seealso>
+        public virtual IAsyncResult BeginListDatasets(ListDatasetsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDatasetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDatasetsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListDatasets operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListDatasets.</param>
+        /// 
+        /// <returns>Returns a  ListDatasetsResult from Comprehend.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListDatasets">REST API Reference for ListDatasets Operation</seealso>
+        public virtual ListDatasetsResponse EndListDatasets(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListDatasetsResponse>(asyncResult);
         }
 
         #endregion
@@ -2668,7 +3740,9 @@ namespace Amazon.Comprehend
         #region  ListEndpoints
 
         /// <summary>
-        /// Gets a list of all existing endpoints that you've created.
+        /// Gets a list of all existing endpoints that you've created. For information about endpoints,
+        /// see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html">Managing
+        /// endpoints</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListEndpoints service method.</param>
         /// 
@@ -2998,6 +4072,143 @@ namespace Amazon.Comprehend
 
         #endregion
         
+        #region  ListFlywheelIterationHistory
+
+        /// <summary>
+        /// Information about the history of a flywheel iteration. For more information about
+        /// flywheels, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/flywheels-about.html">
+        /// Flywheel overview</a> in the <i>Amazon Comprehend Developer Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListFlywheelIterationHistory service method.</param>
+        /// 
+        /// <returns>The response from the ListFlywheelIterationHistory service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidFilterException">
+        /// The filter specified for the operation is invalid. Specify a different filter.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.ResourceNotFoundException">
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListFlywheelIterationHistory">REST API Reference for ListFlywheelIterationHistory Operation</seealso>
+        public virtual ListFlywheelIterationHistoryResponse ListFlywheelIterationHistory(ListFlywheelIterationHistoryRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListFlywheelIterationHistoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListFlywheelIterationHistoryResponseUnmarshaller.Instance;
+
+            return Invoke<ListFlywheelIterationHistoryResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListFlywheelIterationHistory operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListFlywheelIterationHistory operation on AmazonComprehendClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListFlywheelIterationHistory
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListFlywheelIterationHistory">REST API Reference for ListFlywheelIterationHistory Operation</seealso>
+        public virtual IAsyncResult BeginListFlywheelIterationHistory(ListFlywheelIterationHistoryRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListFlywheelIterationHistoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListFlywheelIterationHistoryResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListFlywheelIterationHistory operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListFlywheelIterationHistory.</param>
+        /// 
+        /// <returns>Returns a  ListFlywheelIterationHistoryResult from Comprehend.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListFlywheelIterationHistory">REST API Reference for ListFlywheelIterationHistory Operation</seealso>
+        public virtual ListFlywheelIterationHistoryResponse EndListFlywheelIterationHistory(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListFlywheelIterationHistoryResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListFlywheels
+
+        /// <summary>
+        /// Gets a list of the flywheels that you have created.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListFlywheels service method.</param>
+        /// 
+        /// <returns>The response from the ListFlywheels service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidFilterException">
+        /// The filter specified for the operation is invalid. Specify a different filter.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListFlywheels">REST API Reference for ListFlywheels Operation</seealso>
+        public virtual ListFlywheelsResponse ListFlywheels(ListFlywheelsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListFlywheelsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListFlywheelsResponseUnmarshaller.Instance;
+
+            return Invoke<ListFlywheelsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListFlywheels operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListFlywheels operation on AmazonComprehendClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListFlywheels
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListFlywheels">REST API Reference for ListFlywheels Operation</seealso>
+        public virtual IAsyncResult BeginListFlywheels(ListFlywheelsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListFlywheelsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListFlywheelsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListFlywheels operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListFlywheels.</param>
+        /// 
+        /// <returns>Returns a  ListFlywheelsResult from Comprehend.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListFlywheels">REST API Reference for ListFlywheels Operation</seealso>
+        public virtual ListFlywheelsResponse EndListFlywheels(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListFlywheelsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListKeyPhrasesDetectionJobs
 
         /// <summary>
@@ -3259,6 +4470,72 @@ namespace Amazon.Comprehend
 
         #endregion
         
+        #region  ListTargetedSentimentDetectionJobs
+
+        /// <summary>
+        /// Gets a list of targeted sentiment detection jobs that you have submitted.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTargetedSentimentDetectionJobs service method.</param>
+        /// 
+        /// <returns>The response from the ListTargetedSentimentDetectionJobs service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidFilterException">
+        /// The filter specified for the operation is invalid. Specify a different filter.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListTargetedSentimentDetectionJobs">REST API Reference for ListTargetedSentimentDetectionJobs Operation</seealso>
+        public virtual ListTargetedSentimentDetectionJobsResponse ListTargetedSentimentDetectionJobs(ListTargetedSentimentDetectionJobsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTargetedSentimentDetectionJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTargetedSentimentDetectionJobsResponseUnmarshaller.Instance;
+
+            return Invoke<ListTargetedSentimentDetectionJobsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTargetedSentimentDetectionJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTargetedSentimentDetectionJobs operation on AmazonComprehendClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTargetedSentimentDetectionJobs
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListTargetedSentimentDetectionJobs">REST API Reference for ListTargetedSentimentDetectionJobs Operation</seealso>
+        public virtual IAsyncResult BeginListTargetedSentimentDetectionJobs(ListTargetedSentimentDetectionJobsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTargetedSentimentDetectionJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTargetedSentimentDetectionJobsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListTargetedSentimentDetectionJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTargetedSentimentDetectionJobs.</param>
+        /// 
+        /// <returns>Returns a  ListTargetedSentimentDetectionJobsResult from Comprehend.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListTargetedSentimentDetectionJobs">REST API Reference for ListTargetedSentimentDetectionJobs Operation</seealso>
+        public virtual ListTargetedSentimentDetectionJobsResponse EndListTargetedSentimentDetectionJobs(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListTargetedSentimentDetectionJobsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListTopicsDetectionJobs
 
         /// <summary>
@@ -3325,11 +4602,76 @@ namespace Amazon.Comprehend
 
         #endregion
         
+        #region  PutResourcePolicy
+
+        /// <summary>
+        /// Attaches a resource-based policy to a custom model. You can use this policy to authorize
+        /// an entity in another Amazon Web Services account to import the custom model, which
+        /// replicates it in Amazon Comprehend in their account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutResourcePolicy service method.</param>
+        /// 
+        /// <returns>The response from the PutResourcePolicy service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.ResourceNotFoundException">
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
+        public virtual PutResourcePolicyResponse PutResourcePolicy(PutResourcePolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutResourcePolicyResponseUnmarshaller.Instance;
+
+            return Invoke<PutResourcePolicyResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutResourcePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutResourcePolicy operation on AmazonComprehendClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutResourcePolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
+        public virtual IAsyncResult BeginPutResourcePolicy(PutResourcePolicyRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutResourcePolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutResourcePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutResourcePolicy.</param>
+        /// 
+        /// <returns>Returns a  PutResourcePolicyResult from Comprehend.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
+        public virtual PutResourcePolicyResponse EndPutResourcePolicy(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PutResourcePolicyResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  StartDocumentClassificationJob
 
         /// <summary>
-        /// Starts an asynchronous document classification job. Use the operation to track the
-        /// progress of the job.
+        /// Starts an asynchronous document classification job. Use the <code>DescribeDocumentClassificationJob</code>
+        /// operation to track the progress of the job.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartDocumentClassificationJob service method.</param>
         /// 
@@ -3343,6 +4685,10 @@ namespace Amazon.Comprehend
         /// <exception cref="Amazon.Comprehend.Model.KmsKeyValidationException">
         /// The KMS customer managed key (CMK) entered cannot be validated. Verify the key and
         /// re-enter it.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.ResourceInUseException">
+        /// The specified resource name is already in use. Use a different name and try your request
+        /// again.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.ResourceNotFoundException">
         /// The specified resource ARN was not found. Check the ARN and try your request again.
@@ -3422,6 +4768,10 @@ namespace Amazon.Comprehend
         /// <exception cref="Amazon.Comprehend.Model.KmsKeyValidationException">
         /// The KMS customer managed key (CMK) entered cannot be validated. Verify the key and
         /// re-enter it.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.ResourceInUseException">
+        /// The specified resource name is already in use. Use a different name and try your request
+        /// again.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
         /// The number of requests exceeds the limit. Resubmit your request later.
@@ -3504,6 +4854,10 @@ namespace Amazon.Comprehend
         /// The KMS customer managed key (CMK) entered cannot be validated. Verify the key and
         /// re-enter it.
         /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.ResourceInUseException">
+        /// The specified resource name is already in use. Use a different name and try your request
+        /// again.
+        /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.ResourceNotFoundException">
         /// The specified resource ARN was not found. Check the ARN and try your request again.
         /// </exception>
@@ -3582,6 +4936,10 @@ namespace Amazon.Comprehend
         /// The KMS customer managed key (CMK) entered cannot be validated. Verify the key and
         /// re-enter it.
         /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.ResourceInUseException">
+        /// The specified resource name is already in use. Use a different name and try your request
+        /// again.
+        /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
         /// The number of requests exceeds the limit. Resubmit your request later.
         /// </exception>
@@ -3636,6 +4994,78 @@ namespace Amazon.Comprehend
 
         #endregion
         
+        #region  StartFlywheelIteration
+
+        /// <summary>
+        /// Start the flywheel iteration.This operation uses any new datasets to train a new model
+        /// version. For more information about flywheels, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/flywheels-about.html">
+        /// Flywheel overview</a> in the <i>Amazon Comprehend Developer Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartFlywheelIteration service method.</param>
+        /// 
+        /// <returns>The response from the StartFlywheelIteration service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.ResourceInUseException">
+        /// The specified resource name is already in use. Use a different name and try your request
+        /// again.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.ResourceNotFoundException">
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StartFlywheelIteration">REST API Reference for StartFlywheelIteration Operation</seealso>
+        public virtual StartFlywheelIterationResponse StartFlywheelIteration(StartFlywheelIterationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartFlywheelIterationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartFlywheelIterationResponseUnmarshaller.Instance;
+
+            return Invoke<StartFlywheelIterationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartFlywheelIteration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartFlywheelIteration operation on AmazonComprehendClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartFlywheelIteration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StartFlywheelIteration">REST API Reference for StartFlywheelIteration Operation</seealso>
+        public virtual IAsyncResult BeginStartFlywheelIteration(StartFlywheelIterationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartFlywheelIterationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartFlywheelIterationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartFlywheelIteration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartFlywheelIteration.</param>
+        /// 
+        /// <returns>Returns a  StartFlywheelIterationResult from Comprehend.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StartFlywheelIteration">REST API Reference for StartFlywheelIteration Operation</seealso>
+        public virtual StartFlywheelIterationResponse EndStartFlywheelIteration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartFlywheelIterationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  StartKeyPhrasesDetectionJob
 
         /// <summary>
@@ -3654,6 +5084,10 @@ namespace Amazon.Comprehend
         /// <exception cref="Amazon.Comprehend.Model.KmsKeyValidationException">
         /// The KMS customer managed key (CMK) entered cannot be validated. Verify the key and
         /// re-enter it.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.ResourceInUseException">
+        /// The specified resource name is already in use. Use a different name and try your request
+        /// again.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
         /// The number of requests exceeds the limit. Resubmit your request later.
@@ -3727,6 +5161,10 @@ namespace Amazon.Comprehend
         /// The KMS customer managed key (CMK) entered cannot be validated. Verify the key and
         /// re-enter it.
         /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.ResourceInUseException">
+        /// The specified resource name is already in use. Use a different name and try your request
+        /// again.
+        /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
         /// The number of requests exceeds the limit. Resubmit your request later.
         /// </exception>
@@ -3784,7 +5222,7 @@ namespace Amazon.Comprehend
         #region  StartSentimentDetectionJob
 
         /// <summary>
-        /// Starts an asynchronous sentiment detection job for a collection of documents. use
+        /// Starts an asynchronous sentiment detection job for a collection of documents. Use
         /// the operation to track the status of a job.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartSentimentDetectionJob service method.</param>
@@ -3799,6 +5237,10 @@ namespace Amazon.Comprehend
         /// <exception cref="Amazon.Comprehend.Model.KmsKeyValidationException">
         /// The KMS customer managed key (CMK) entered cannot be validated. Verify the key and
         /// re-enter it.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.ResourceInUseException">
+        /// The specified resource name is already in use. Use a different name and try your request
+        /// again.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
         /// The number of requests exceeds the limit. Resubmit your request later.
@@ -3854,6 +5296,84 @@ namespace Amazon.Comprehend
 
         #endregion
         
+        #region  StartTargetedSentimentDetectionJob
+
+        /// <summary>
+        /// Starts an asynchronous targeted sentiment detection job for a collection of documents.
+        /// Use the <code>DescribeTargetedSentimentDetectionJob</code> operation to track the
+        /// status of a job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartTargetedSentimentDetectionJob service method.</param>
+        /// 
+        /// <returns>The response from the StartTargetedSentimentDetectionJob service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.KmsKeyValidationException">
+        /// The KMS customer managed key (CMK) entered cannot be validated. Verify the key and
+        /// re-enter it.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.ResourceInUseException">
+        /// The specified resource name is already in use. Use a different name and try your request
+        /// again.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyTagsException">
+        /// The request contains more tags than can be associated with a resource (50 tags per
+        /// resource). The maximum number of tags includes both existing tags and those included
+        /// in your current request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StartTargetedSentimentDetectionJob">REST API Reference for StartTargetedSentimentDetectionJob Operation</seealso>
+        public virtual StartTargetedSentimentDetectionJobResponse StartTargetedSentimentDetectionJob(StartTargetedSentimentDetectionJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartTargetedSentimentDetectionJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartTargetedSentimentDetectionJobResponseUnmarshaller.Instance;
+
+            return Invoke<StartTargetedSentimentDetectionJobResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartTargetedSentimentDetectionJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartTargetedSentimentDetectionJob operation on AmazonComprehendClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartTargetedSentimentDetectionJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StartTargetedSentimentDetectionJob">REST API Reference for StartTargetedSentimentDetectionJob Operation</seealso>
+        public virtual IAsyncResult BeginStartTargetedSentimentDetectionJob(StartTargetedSentimentDetectionJobRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartTargetedSentimentDetectionJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartTargetedSentimentDetectionJobResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartTargetedSentimentDetectionJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartTargetedSentimentDetectionJob.</param>
+        /// 
+        /// <returns>Returns a  StartTargetedSentimentDetectionJobResult from Comprehend.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StartTargetedSentimentDetectionJob">REST API Reference for StartTargetedSentimentDetectionJob Operation</seealso>
+        public virtual StartTargetedSentimentDetectionJobResponse EndStartTargetedSentimentDetectionJob(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartTargetedSentimentDetectionJobResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  StartTopicsDetectionJob
 
         /// <summary>
@@ -3872,6 +5392,10 @@ namespace Amazon.Comprehend
         /// <exception cref="Amazon.Comprehend.Model.KmsKeyValidationException">
         /// The KMS customer managed key (CMK) entered cannot be validated. Verify the key and
         /// re-enter it.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.ResourceInUseException">
+        /// The specified resource name is already in use. Use a different name and try your request
+        /// again.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
         /// The number of requests exceeds the limit. Resubmit your request later.
@@ -4303,7 +5827,7 @@ namespace Amazon.Comprehend
         /// 
         ///  
         /// <para>
-        /// If the job state is <code>IN_PROGRESS</code> the job is marked for termination and
+        /// If the job state is <code>IN_PROGRESS</code>, the job is marked for termination and
         /// put into the <code>STOP_REQUESTED</code> state. If the job completes before it can
         /// be stopped, it is put into the <code>COMPLETED</code> state; otherwise the job is
         /// be stopped and put into the <code>STOPPED</code> state.
@@ -4373,6 +5897,87 @@ namespace Amazon.Comprehend
         public virtual StopSentimentDetectionJobResponse EndStopSentimentDetectionJob(IAsyncResult asyncResult)
         {
             return EndInvoke<StopSentimentDetectionJobResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StopTargetedSentimentDetectionJob
+
+        /// <summary>
+        /// Stops a targeted sentiment detection job in progress.
+        /// 
+        ///  
+        /// <para>
+        /// If the job state is <code>IN_PROGRESS</code>, the job is marked for termination and
+        /// put into the <code>STOP_REQUESTED</code> state. If the job completes before it can
+        /// be stopped, it is put into the <code>COMPLETED</code> state; otherwise the job is
+        /// be stopped and put into the <code>STOPPED</code> state.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the job is in the <code>COMPLETED</code> or <code>FAILED</code> state when you
+        /// call the <code>StopDominantLanguageDetectionJob</code> operation, the operation returns
+        /// a 400 Internal Request Exception. 
+        /// </para>
+        ///  
+        /// <para>
+        /// When a job is stopped, any documents already processed are written to the output location.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopTargetedSentimentDetectionJob service method.</param>
+        /// 
+        /// <returns>The response from the StopTargetedSentimentDetectionJob service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.JobNotFoundException">
+        /// The specified job was not found. Check the job ID and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StopTargetedSentimentDetectionJob">REST API Reference for StopTargetedSentimentDetectionJob Operation</seealso>
+        public virtual StopTargetedSentimentDetectionJobResponse StopTargetedSentimentDetectionJob(StopTargetedSentimentDetectionJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopTargetedSentimentDetectionJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopTargetedSentimentDetectionJobResponseUnmarshaller.Instance;
+
+            return Invoke<StopTargetedSentimentDetectionJobResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopTargetedSentimentDetectionJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopTargetedSentimentDetectionJob operation on AmazonComprehendClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStopTargetedSentimentDetectionJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StopTargetedSentimentDetectionJob">REST API Reference for StopTargetedSentimentDetectionJob Operation</seealso>
+        public virtual IAsyncResult BeginStopTargetedSentimentDetectionJob(StopTargetedSentimentDetectionJobRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopTargetedSentimentDetectionJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopTargetedSentimentDetectionJobResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StopTargetedSentimentDetectionJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStopTargetedSentimentDetectionJob.</param>
+        /// 
+        /// <returns>Returns a  StopTargetedSentimentDetectionJobResult from Comprehend.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StopTargetedSentimentDetectionJob">REST API Reference for StopTargetedSentimentDetectionJob Operation</seealso>
+        public virtual StopTargetedSentimentDetectionJobResponse EndStopTargetedSentimentDetectionJob(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StopTargetedSentimentDetectionJobResponse>(asyncResult);
         }
 
         #endregion
@@ -4676,7 +6281,9 @@ namespace Amazon.Comprehend
         #region  UpdateEndpoint
 
         /// <summary>
-        /// Updates information about the specified endpoint.
+        /// Updates information about the specified endpoint. For information about endpoints,
+        /// see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html">Managing
+        /// endpoints</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateEndpoint service method.</param>
         /// 
@@ -4746,6 +6353,76 @@ namespace Amazon.Comprehend
         public virtual UpdateEndpointResponse EndUpdateEndpoint(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateEndpointResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateFlywheel
+
+        /// <summary>
+        /// Update the configuration information for an existing flywheel.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateFlywheel service method.</param>
+        /// 
+        /// <returns>The response from the UpdateFlywheel service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.KmsKeyValidationException">
+        /// The KMS customer managed key (CMK) entered cannot be validated. Verify the key and
+        /// re-enter it.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.ResourceNotFoundException">
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/UpdateFlywheel">REST API Reference for UpdateFlywheel Operation</seealso>
+        public virtual UpdateFlywheelResponse UpdateFlywheel(UpdateFlywheelRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateFlywheelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateFlywheelResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateFlywheelResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateFlywheel operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateFlywheel operation on AmazonComprehendClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateFlywheel
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/UpdateFlywheel">REST API Reference for UpdateFlywheel Operation</seealso>
+        public virtual IAsyncResult BeginUpdateFlywheel(UpdateFlywheelRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateFlywheelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateFlywheelResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateFlywheel operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateFlywheel.</param>
+        /// 
+        /// <returns>Returns a  UpdateFlywheelResult from Comprehend.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/UpdateFlywheel">REST API Reference for UpdateFlywheel Operation</seealso>
+        public virtual UpdateFlywheelResponse EndUpdateFlywheel(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateFlywheelResponse>(asyncResult);
         }
 
         #endregion

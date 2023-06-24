@@ -34,7 +34,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// UpdateFileSystemWindowsConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class UpdateFileSystemWindowsConfigurationMarshaller : IRequestMarshaller<UpdateFileSystemWindowsConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -95,7 +95,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static UpdateFileSystemWindowsConfigurationMarshaller Instance = new UpdateFileSystemWindowsConfigurationMarshaller();
 
     }

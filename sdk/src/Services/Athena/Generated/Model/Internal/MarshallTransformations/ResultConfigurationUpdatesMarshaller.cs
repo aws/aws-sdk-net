@@ -34,7 +34,7 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ResultConfigurationUpdates Marshaller
-    /// </summary>       
+    /// </summary>
     public class ResultConfigurationUpdatesMarshaller : IRequestMarshaller<ResultConfigurationUpdates, JsonMarshallerContext> 
     {
         /// <summary>
@@ -45,6 +45,17 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ResultConfigurationUpdates requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAclConfiguration())
+            {
+                context.Writer.WritePropertyName("AclConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AclConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.AclConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetEncryptionConfiguration())
             {
                 context.Writer.WritePropertyName("EncryptionConfiguration");
@@ -56,16 +67,34 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetExpectedBucketOwner())
+            {
+                context.Writer.WritePropertyName("ExpectedBucketOwner");
+                context.Writer.Write(requestObject.ExpectedBucketOwner);
+            }
+
             if(requestObject.IsSetOutputLocation())
             {
                 context.Writer.WritePropertyName("OutputLocation");
                 context.Writer.Write(requestObject.OutputLocation);
             }
 
+            if(requestObject.IsSetRemoveAclConfiguration())
+            {
+                context.Writer.WritePropertyName("RemoveAclConfiguration");
+                context.Writer.Write(requestObject.RemoveAclConfiguration);
+            }
+
             if(requestObject.IsSetRemoveEncryptionConfiguration())
             {
                 context.Writer.WritePropertyName("RemoveEncryptionConfiguration");
                 context.Writer.Write(requestObject.RemoveEncryptionConfiguration);
+            }
+
+            if(requestObject.IsSetRemoveExpectedBucketOwner())
+            {
+                context.Writer.WritePropertyName("RemoveExpectedBucketOwner");
+                context.Writer.Write(requestObject.RemoveExpectedBucketOwner);
             }
 
             if(requestObject.IsSetRemoveOutputLocation())
@@ -78,7 +107,7 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ResultConfigurationUpdatesMarshaller Instance = new ResultConfigurationUpdatesMarshaller();
 
     }

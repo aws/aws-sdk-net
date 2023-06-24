@@ -34,7 +34,7 @@ namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// HealthCheckConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class HealthCheckConfigurationMarshaller : IRequestMarshaller<HealthCheckConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -85,7 +85,7 @@ namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static HealthCheckConfigurationMarshaller Instance = new HealthCheckConfigurationMarshaller();
 
     }

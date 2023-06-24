@@ -67,11 +67,11 @@ namespace Amazon.ForecastService.Model
     ///  </li> <li> 
     /// <para>
     /// Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination
-    /// of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete
-    /// tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code>
-    /// as its prefix but the key does not, then Forecast considers it to be a user tag and
-    /// will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code>
-    /// do not count against your tags per resource limit.
+    /// of such as a prefix for keys as it is reserved for Amazon Web Services use. You cannot
+    /// edit or delete tag keys with this prefix. Values can have this prefix. If a tag value
+    /// has <code>aws</code> as its prefix but the key does not, then Forecast considers it
+    /// to be a user tag and will count against the limit of 50 tags. Tags with only the key
+    /// prefix of <code>aws</code> do not count against your tags per resource limit.
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -87,7 +87,7 @@ namespace Amazon.ForecastService.Model
         /// label that acts like a category for more specific tag values.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=128)]
         public string Key
         {
             get { return this._key; }
@@ -107,7 +107,7 @@ namespace Amazon.ForecastService.Model
         /// as a descriptor within a tag category (key).
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=256)]
+        [AWSProperty(Required=true, Sensitive=true, Min=0, Max=256)]
         public string Value
         {
             get { return this._value; }

@@ -17,22 +17,22 @@
  * Do not modify this file. This file is generated from the iotfleethub-2020-11-03.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
-
+using Amazon.IoTFleetHub.Internal;
 
 namespace Amazon.IoTFleetHub
 {
     /// <summary>
     /// Configuration for accessing Amazon IoTFleetHub service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonIoTFleetHubConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.105");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.147");
 
         private string _userAgent = UserAgentString;
 
@@ -40,8 +40,10 @@ namespace Amazon.IoTFleetHub
         /// Default constructor
         /// </summary>
         public AmazonIoTFleetHubConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonIoTFleetHubDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "iotfleethub";
+            this.EndpointProvider = new AmazonIoTFleetHubEndpointProvider();
         }
 
         /// <summary>
@@ -76,5 +78,6 @@ namespace Amazon.IoTFleetHub
                 return _userAgent;
             }
         }
+
     }
 }

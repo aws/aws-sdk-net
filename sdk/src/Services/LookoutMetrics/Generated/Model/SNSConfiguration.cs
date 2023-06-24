@@ -35,6 +35,7 @@ namespace Amazon.LookoutMetrics.Model
     public partial class SNSConfiguration
     {
         private string _roleArn;
+        private SnsFormat _snsFormat;
         private string _snsTopicArn;
 
         /// <summary>
@@ -54,6 +55,40 @@ namespace Amazon.LookoutMetrics.Model
         internal bool IsSetRoleArn()
         {
             return this._roleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SnsFormat. 
+        /// <para>
+        /// The format of the SNS topic.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>JSON</code> – Send JSON alerts with an anomaly ID and a link to the anomaly
+        /// detail page. This is the default.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>LONG_TEXT</code> – Send human-readable alerts with information about the impacted
+        /// timeseries and a link to the anomaly detail page. We recommend this for email.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>SHORT_TEXT</code> – Send human-readable alerts with a link to the anomaly detail
+        /// page. We recommend this for SMS.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public SnsFormat SnsFormat
+        {
+            get { return this._snsFormat; }
+            set { this._snsFormat = value; }
+        }
+
+        // Check to see if SnsFormat property is set
+        internal bool IsSetSnsFormat()
+        {
+            return this._snsFormat != null;
         }
 
         /// <summary>

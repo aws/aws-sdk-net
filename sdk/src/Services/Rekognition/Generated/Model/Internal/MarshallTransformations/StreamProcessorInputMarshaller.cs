@@ -34,7 +34,7 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// StreamProcessorInput Marshaller
-    /// </summary>       
+    /// </summary>
     public class StreamProcessorInputMarshaller : IRequestMarshaller<StreamProcessorInput, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static StreamProcessorInputMarshaller Instance = new StreamProcessorInputMarshaller();
 
     }

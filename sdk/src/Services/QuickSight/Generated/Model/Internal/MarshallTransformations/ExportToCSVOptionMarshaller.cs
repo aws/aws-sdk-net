@@ -34,7 +34,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ExportToCSVOption Marshaller
-    /// </summary>       
+    /// </summary>
     public class ExportToCSVOptionMarshaller : IRequestMarshaller<ExportToCSVOption, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ExportToCSVOptionMarshaller Instance = new ExportToCSVOptionMarshaller();
 
     }

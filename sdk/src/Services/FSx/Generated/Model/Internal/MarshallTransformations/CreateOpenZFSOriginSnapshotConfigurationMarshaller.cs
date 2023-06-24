@@ -34,7 +34,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CreateOpenZFSOriginSnapshotConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class CreateOpenZFSOriginSnapshotConfigurationMarshaller : IRequestMarshaller<CreateOpenZFSOriginSnapshotConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CreateOpenZFSOriginSnapshotConfigurationMarshaller Instance = new CreateOpenZFSOriginSnapshotConfigurationMarshaller();
 
     }

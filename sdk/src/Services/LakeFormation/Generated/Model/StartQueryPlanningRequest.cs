@@ -68,7 +68,7 @@ namespace Amazon.LakeFormation.Model
         /// A PartiQL query statement used as an input to the planner service.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1)]
         public string QueryString
         {
             get { return this._queryString; }

@@ -34,7 +34,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ArchiveCdnSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class ArchiveCdnSettingsMarshaller : IRequestMarshaller<ArchiveCdnSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ArchiveCdnSettingsMarshaller Instance = new ArchiveCdnSettingsMarshaller();
 
     }

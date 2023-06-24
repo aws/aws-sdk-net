@@ -43,6 +43,10 @@ namespace Amazon.QuickSight.Model
         /// The Amazon QuickSight settings for this Amazon Web Services account. This information
         /// includes the edition of Amazon Amazon QuickSight that you subscribed to (Standard
         /// or Enterprise) and the notification email for the Amazon QuickSight subscription.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
         /// In the QuickSight console, the Amazon QuickSight subscription is sometimes referred
         /// to as a QuickSight "account" even though it's technically not an account by itself.
         /// Instead, it's a subscription to the Amazon QuickSight service for your Amazon Web

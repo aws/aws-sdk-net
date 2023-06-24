@@ -99,8 +99,9 @@ namespace Amazon.Translate.Model
         /// <summary>
         /// Gets and sets the property S3Uri. 
         /// <para>
-        /// The URI of the AWS S3 folder that contains the input file. The folder must be in the
-        /// same Region as the API endpoint you are calling.
+        /// The URI of the AWS S3 folder that contains the input files. Amazon Translate translates
+        /// all the files in the folder and all its sub-folders. The folder must be in the same
+        /// Region as the API endpoint you are calling.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=1024)]

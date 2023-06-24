@@ -44,7 +44,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property FromPort. 
         /// <para>
         /// The start of the port range for the TCP and UDP protocols, or an ICMP type number.
-        /// A value of <code>-1</code> indicates all ICMP types. 
+        /// A value of -1 indicates all ICMP types. 
         /// </para>
         /// </summary>
         public int FromPort

@@ -42,7 +42,7 @@ namespace Amazon.KinesisFirehose.Model
         /// The name of the HTTP endpoint common attribute.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=256)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=256)]
         public string AttributeName
         {
             get { return this._attributeName; }
@@ -61,7 +61,7 @@ namespace Amazon.KinesisFirehose.Model
         /// The value of the HTTP endpoint common attribute.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=1024)]
+        [AWSProperty(Required=true, Sensitive=true, Min=0, Max=1024)]
         public string AttributeValue
         {
             get { return this._attributeValue; }

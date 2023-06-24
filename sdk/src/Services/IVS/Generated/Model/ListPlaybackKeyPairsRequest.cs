@@ -41,11 +41,11 @@ namespace Amazon.IVS.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The first key pair to retrieve. This is used for pagination; see the <code>nextToken</code>
-        /// response field. Default: 50.
+        /// Maximum number of key pairs to return. Default: your service quota or 100, whichever
+        /// is smaller.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=50)]
+        [AWSProperty(Min=1, Max=100)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -61,7 +61,8 @@ namespace Amazon.IVS.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Maximum number of key pairs to return.
+        /// The first key pair to retrieve. This is used for pagination; see the <code>nextToken</code>
+        /// response field.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]

@@ -56,7 +56,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.LexModelsV2");
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-08-07";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-08-07";
             request.HttpMethod = "PUT";
 
             if (!publicRequest.IsSetBotId())
@@ -98,6 +98,17 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 
                     var marshaller = FulfillmentCodeHookSettingsMarshaller.Instance;
                     marshaller.Marshall(publicRequest.FulfillmentCodeHook, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetInitialResponseSetting())
+                {
+                    context.Writer.WritePropertyName("initialResponseSetting");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = InitialResponseSettingMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.InitialResponseSetting, context);
 
                     context.Writer.WriteObjectEnd();
                 }
@@ -195,7 +206,6 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

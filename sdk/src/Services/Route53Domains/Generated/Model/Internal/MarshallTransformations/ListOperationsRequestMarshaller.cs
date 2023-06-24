@@ -58,7 +58,7 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
             string target = "Route53Domains_v20140515.ListOperations";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2014-05-15";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2014-05-15";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -79,13 +79,46 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.MaxItems);
                 }
 
+                if(publicRequest.IsSetSortBy())
+                {
+                    context.Writer.WritePropertyName("SortBy");
+                    context.Writer.Write(publicRequest.SortBy);
+                }
+
+                if(publicRequest.IsSetSortOrder())
+                {
+                    context.Writer.WritePropertyName("SortOrder");
+                    context.Writer.Write(publicRequest.SortOrder);
+                }
+
+                if(publicRequest.IsSetStatus())
+                {
+                    context.Writer.WritePropertyName("Status");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestStatusListValue in publicRequest.Status)
+                    {
+                            context.Writer.Write(publicRequestStatusListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetSubmittedSince())
                 {
                     context.Writer.WritePropertyName("SubmittedSince");
                     context.Writer.Write(publicRequest.SubmittedSince);
                 }
 
-        
+                if(publicRequest.IsSetType())
+                {
+                    context.Writer.WritePropertyName("Type");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestTypeListValue in publicRequest.Type)
+                    {
+                            context.Writer.Write(publicRequestTypeListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

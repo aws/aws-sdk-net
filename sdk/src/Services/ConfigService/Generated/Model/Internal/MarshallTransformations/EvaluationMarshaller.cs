@@ -34,7 +34,7 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Evaluation Marshaller
-    /// </summary>       
+    /// </summary>
     public class EvaluationMarshaller : IRequestMarshaller<Evaluation, JsonMarshallerContext> 
     {
         /// <summary>
@@ -79,7 +79,7 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static EvaluationMarshaller Instance = new EvaluationMarshaller();
 
     }

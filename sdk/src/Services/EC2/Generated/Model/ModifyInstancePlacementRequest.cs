@@ -67,6 +67,7 @@ namespace Amazon.EC2.Model
     public partial class ModifyInstancePlacementRequest : AmazonEC2Request
     {
         private Affinity _affinity;
+        private string _groupId;
         private string _groupName;
         private string _hostId;
         private string _hostResourceGroupArn;
@@ -90,6 +91,25 @@ namespace Amazon.EC2.Model
         internal bool IsSetAffinity()
         {
             return this._affinity != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GroupId. 
+        /// <para>
+        /// The Group Id of a placement group. You must specify the Placement Group <b>Group Id</b>
+        /// to launch an instance in a shared placement group.
+        /// </para>
+        /// </summary>
+        public string GroupId
+        {
+            get { return this._groupId; }
+            set { this._groupId = value; }
+        }
+
+        // Check to see if GroupId property is set
+        internal bool IsSetGroupId()
+        {
+            return this._groupId != null;
         }
 
         /// <summary>
@@ -138,7 +158,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property HostResourceGroupArn. 
         /// <para>
-        /// The ARN of the host resource group in which to place the instance.
+        /// The ARN of the host resource group in which to place the instance. The instance must
+        /// have a tenancy of <code>host</code> to specify this parameter.
         /// </para>
         /// </summary>
         public string HostResourceGroupArn
@@ -198,9 +219,10 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// For T3 instances, you can't change the tenancy from <code>dedicated</code> to <code>host</code>,
-        /// or from <code>host</code> to <code>dedicated</code>. Attempting to make one of these
-        /// unsupported tenancy changes results in the <code>InvalidTenancy</code> error code.
+        /// For T3 instances, you must launch the instance on a Dedicated Host to use a tenancy
+        /// of <code>host</code>. You can't change the tenancy from <code>host</code> to <code>dedicated</code>
+        /// or <code>default</code>. Attempting to make one of these unsupported tenancy changes
+        /// results in an <code>InvalidRequest</code> error code.
         /// </para>
         ///  </note>
         /// </summary>

@@ -34,7 +34,10 @@ namespace Amazon.AuditManager.Model
     public partial class Settings
     {
         private AssessmentReportsDestination _defaultAssessmentReportsDestination;
+        private DefaultExportDestination _defaultExportDestination;
         private List<Role> _defaultProcessOwners = new List<Role>();
+        private DeregistrationPolicy _deregistrationPolicy;
+        private EvidenceFinderEnablement _evidenceFinderEnablement;
         private bool? _isAwsOrgEnabled;
         private string _kmsKey;
         private string _snsTopic;
@@ -42,7 +45,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property DefaultAssessmentReportsDestination. 
         /// <para>
-        ///  The default storage destination for assessment reports. 
+        /// The default S3 destination bucket for storing assessment reports.
         /// </para>
         /// </summary>
         public AssessmentReportsDestination DefaultAssessmentReportsDestination
@@ -55,6 +58,24 @@ namespace Amazon.AuditManager.Model
         internal bool IsSetDefaultAssessmentReportsDestination()
         {
             return this._defaultAssessmentReportsDestination != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DefaultExportDestination. 
+        /// <para>
+        /// The default S3 destination bucket for storing evidence finder exports.
+        /// </para>
+        /// </summary>
+        public DefaultExportDestination DefaultExportDestination
+        {
+            get { return this._defaultExportDestination; }
+            set { this._defaultExportDestination = value; }
+        }
+
+        // Check to see if DefaultExportDestination property is set
+        internal bool IsSetDefaultExportDestination()
+        {
+            return this._defaultExportDestination != null;
         }
 
         /// <summary>
@@ -73,6 +94,43 @@ namespace Amazon.AuditManager.Model
         internal bool IsSetDefaultProcessOwners()
         {
             return this._defaultProcessOwners != null && this._defaultProcessOwners.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeregistrationPolicy. 
+        /// <para>
+        /// The deregistration policy for your Audit Manager data. You can use this attribute
+        /// to determine how your data is handled when you deregister Audit Manager.
+        /// </para>
+        /// </summary>
+        public DeregistrationPolicy DeregistrationPolicy
+        {
+            get { return this._deregistrationPolicy; }
+            set { this._deregistrationPolicy = value; }
+        }
+
+        // Check to see if DeregistrationPolicy property is set
+        internal bool IsSetDeregistrationPolicy()
+        {
+            return this._deregistrationPolicy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EvidenceFinderEnablement. 
+        /// <para>
+        /// The current evidence finder status and event data store details.
+        /// </para>
+        /// </summary>
+        public EvidenceFinderEnablement EvidenceFinderEnablement
+        {
+            get { return this._evidenceFinderEnablement; }
+            set { this._evidenceFinderEnablement = value; }
+        }
+
+        // Check to see if EvidenceFinderEnablement property is set
+        internal bool IsSetEvidenceFinderEnablement()
+        {
+            return this._evidenceFinderEnablement != null;
         }
 
         /// <summary>

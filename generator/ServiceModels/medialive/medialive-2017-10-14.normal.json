@@ -1131,7 +1131,7 @@
         },
         {
           "shape": "GatewayTimeoutException",
-          "documentation": "Gateway Timeout Error"
+          "documentation": "Gateway Timeout"
         },
         {
           "shape": "TooManyRequestsException",
@@ -1713,7 +1713,7 @@
         },
         {
           "shape": "GatewayTimeoutException",
-          "documentation": "Gateway Timeout Error"
+          "documentation": "Gateway Timeout"
         },
         {
           "shape": "TooManyRequestsException",
@@ -1978,6 +1978,56 @@
       ],
       "documentation": "Purchase an offering and create a reservation."
     },
+    "RebootInputDevice": {
+      "name": "RebootInputDevice",
+      "http": {
+        "method": "POST",
+        "requestUri": "/prod/inputDevices/{inputDeviceId}/reboot",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "RebootInputDeviceRequest"
+      },
+      "output": {
+        "shape": "RebootInputDeviceResponse",
+        "documentation": "Your reboot request has succeeded."
+      },
+      "errors": [
+        {
+          "shape": "BadRequestException",
+          "documentation": "This request was invalid."
+        },
+        {
+          "shape": "UnprocessableEntityException",
+          "documentation": "Reboot operation failed, input could not be validated."
+        },
+        {
+          "shape": "InternalServerErrorException",
+          "documentation": "Unexpected internal service error."
+        },
+        {
+          "shape": "ForbiddenException",
+          "documentation": "You do not have permission to reboot input device."
+        },
+        {
+          "shape": "BadGatewayException",
+          "documentation": "Bad gateway error."
+        },
+        {
+          "shape": "NotFoundException",
+          "documentation": "Input device not found."
+        },
+        {
+          "shape": "GatewayTimeoutException",
+          "documentation": "Gateway Timeout Error"
+        },
+        {
+          "shape": "TooManyRequestsException",
+          "documentation": "Request limit exceeded on reboot device calls to the input device service."
+        }
+      ],
+      "documentation": "Send a reboot command to the specified input device. The device will begin rebooting within a few seconds of sending the command. When the reboot is complete, the device\u2019s connection status will change to connected."
+    },
     "RejectInputDeviceTransfer": {
       "name": "RejectInputDeviceTransfer",
       "http": {
@@ -2081,6 +2131,56 @@
         }
       ],
       "documentation": "Starts an existing channel"
+    },
+    "StartInputDeviceMaintenanceWindow": {
+      "name": "StartInputDeviceMaintenanceWindow",
+      "http": {
+        "method": "POST",
+        "requestUri": "/prod/inputDevices/{inputDeviceId}/startInputDeviceMaintenanceWindow",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "StartInputDeviceMaintenanceWindowRequest"
+      },
+      "output": {
+        "shape": "StartInputDeviceMaintenanceWindowResponse",
+        "documentation": "Your start maintenance window request has succeeded."
+      },
+      "errors": [
+        {
+          "shape": "BadRequestException",
+          "documentation": "This request was invalid."
+        },
+        {
+          "shape": "UnprocessableEntityException",
+          "documentation": "Start maintenance window operation failed, input could not be validated."
+        },
+        {
+          "shape": "InternalServerErrorException",
+          "documentation": "Unexpected internal service error."
+        },
+        {
+          "shape": "ForbiddenException",
+          "documentation": "You do not have permission to start a maintenance window for this input device."
+        },
+        {
+          "shape": "BadGatewayException",
+          "documentation": "Bad gateway error."
+        },
+        {
+          "shape": "NotFoundException",
+          "documentation": "Input device not found."
+        },
+        {
+          "shape": "GatewayTimeoutException",
+          "documentation": "Gateway Timeout Error"
+        },
+        {
+          "shape": "TooManyRequestsException",
+          "documentation": "Request limit exceeded on start maintenance window calls to the input device service."
+        }
+      ],
+      "documentation": "Start a maintenance window for the specified input device. Starting a maintenance window will give the device up to two hours to install software. If the device was streaming prior to the maintenance, it will resume streaming when the software is fully installed. Devices automatically install updates while they are powered on and their MediaLive channels are stopped. A maintenance window allows you to update a device without having to stop MediaLive channels that use the device. The device must remain powered on and connected to the internet for the duration of the maintenance."
     },
     "StartMultiplex": {
       "name": "StartMultiplex",
@@ -2913,6 +3013,14 @@
       },
       "documentation": "Placeholder documentation for AccessDenied"
     },
+    "AccessibilityType": {
+      "type": "string",
+      "documentation": "Accessibility Type",
+      "enum": [
+        "DOES_NOT_IMPLEMENT_ACCESSIBILITY_FEATURES",
+        "IMPLEMENTS_ACCESSIBILITY_FEATURES"
+      ]
+    },
     "AfdSignaling": {
       "type": "string",
       "documentation": "Afd Signaling",
@@ -3067,6 +3175,10 @@
           "shape": "Ac3Settings",
           "locationName": "ac3Settings"
         },
+        "Eac3AtmosSettings": {
+          "shape": "Eac3AtmosSettings",
+          "locationName": "eac3AtmosSettings"
+        },
         "Eac3Settings": {
           "shape": "Eac3Settings",
           "locationName": "eac3Settings"
@@ -3130,7 +3242,7 @@
           "documentation": "Choosing followInput will cause the ISO 639 language code of the output to follow the ISO 639 language code of the input. The languageCode will be used when useConfigured is set, or when followInput is selected but there is no ISO 639 language code specified by the input."
         },
         "Name": {
-          "shape": "__string",
+          "shape": "__stringMax255",
           "locationName": "name",
           "documentation": "The name of this AudioDescription. Outputs will use this name to uniquely identify this AudioDescription.  Description names should be unique within this Live Event."
         },
@@ -3165,6 +3277,20 @@
       "enum": [
         "FOLLOW_INPUT",
         "USE_CONFIGURED"
+      ]
+    },
+    "AudioDolbyEDecode": {
+      "type": "structure",
+      "members": {
+        "ProgramSelection": {
+          "shape": "DolbyEProgramSelection",
+          "locationName": "programSelection",
+          "documentation": "Applies only to Dolby E. Enter the program ID (according to the metadata in the audio) of the Dolby E program to extract from the specified track. One program extracted per audio selector. To select multiple programs, create multiple selectors with the same Track and different Program numbers. \u201cAll channels\u201d means to ignore the program IDs and include all the channels in this selector; useful if metadata is known to be incorrect."
+        }
+      },
+      "documentation": "Audio Dolby EDecode",
+      "required": [
+        "ProgramSelection"
       ]
     },
     "AudioHlsRenditionSelection": {
@@ -3389,6 +3515,11 @@
           "shape": "__listOfAudioTrack",
           "locationName": "tracks",
           "documentation": "Selects one or more unique audio tracks from within a source."
+        },
+        "DolbyEDecode": {
+          "shape": "AudioDolbyEDecode",
+          "locationName": "dolbyEDecode",
+          "documentation": "Configure decoding options for Dolby E streams - these should be Dolby E frames carried in PCM streams tagged with SMPTE-337"
         }
       },
       "documentation": "Audio Track Selection",
@@ -3484,7 +3615,7 @@
         "AvailSettings": {
           "shape": "AvailSettings",
           "locationName": "availSettings",
-          "documentation": "Ad avail settings."
+          "documentation": "Controls how SCTE-35 messages create cues. Splice Insert mode treats all segmentation signals traditionally. With Time Signal APOS mode only Time Signal Placement Opportunity and Break messages create segment breaks. With ESAM mode, signals are forwarded to an ESAM server for possible update."
         }
       },
       "documentation": "Avail Configuration"
@@ -3492,6 +3623,10 @@
     "AvailSettings": {
       "type": "structure",
       "members": {
+        "Esam": {
+          "shape": "Esam",
+          "locationName": "esam"
+        },
         "Scte35SpliceInsert": {
           "shape": "Scte35SpliceInsert",
           "locationName": "scte35SpliceInsert"
@@ -4124,6 +4259,11 @@
     "CaptionDescription": {
       "type": "structure",
       "members": {
+        "Accessibility": {
+          "shape": "AccessibilityType",
+          "locationName": "accessibility",
+          "documentation": "Indicates whether the caption track implements accessibility features such as written descriptions of spoken dialog, music, and sounds."
+        },
         "CaptionSelectorName": {
           "shape": "__string",
           "locationName": "captionSelectorName",
@@ -4291,7 +4431,7 @@
           "documentation": "Caption selector settings."
         }
       },
-      "documentation": "Output groups for this Live Event. Output groups contain information about where streams should be distributed.",
+      "documentation": "Caption Selector",
       "required": [
         "Name"
       ]
@@ -4402,6 +4542,11 @@
           "shape": "LogLevel",
           "locationName": "logLevel",
           "documentation": "The log level being written to CloudWatch Logs."
+        },
+        "Maintenance": {
+          "shape": "MaintenanceStatus",
+          "locationName": "maintenance",
+          "documentation": "Maintenance settings for this channel."
         },
         "Name": {
           "shape": "__string",
@@ -4539,6 +4684,11 @@
           "locationName": "logLevel",
           "documentation": "The log level being written to CloudWatch Logs."
         },
+        "Maintenance": {
+          "shape": "MaintenanceStatus",
+          "locationName": "maintenance",
+          "documentation": "Maintenance settings for this channel."
+        },
         "Name": {
           "shape": "__string",
           "locationName": "name",
@@ -4644,6 +4794,11 @@
           "locationName": "logLevel",
           "documentation": "The log level to write to CloudWatch Logs."
         },
+        "Maintenance": {
+          "shape": "MaintenanceCreateSettings",
+          "locationName": "maintenance",
+          "documentation": "Maintenance settings for this channel."
+        },
         "Name": {
           "shape": "__string",
           "locationName": "name",
@@ -4714,6 +4869,11 @@
           "shape": "LogLevel",
           "locationName": "logLevel",
           "documentation": "The log level to write to CloudWatch Logs."
+        },
+        "Maintenance": {
+          "shape": "MaintenanceCreateSettings",
+          "locationName": "maintenance",
+          "documentation": "Maintenance settings for this channel."
         },
         "Name": {
           "shape": "__string",
@@ -5275,6 +5435,11 @@
           "locationName": "logLevel",
           "documentation": "The log level being written to CloudWatch Logs."
         },
+        "Maintenance": {
+          "shape": "MaintenanceStatus",
+          "locationName": "maintenance",
+          "documentation": "Maintenance settings for this channel."
+        },
         "Name": {
           "shape": "__string",
           "locationName": "name",
@@ -5556,6 +5721,11 @@
           "locationName": "region",
           "documentation": "AWS region, e.g. 'us-west-2'"
         },
+        "RenewalSettings": {
+          "shape": "RenewalSettings",
+          "locationName": "renewalSettings",
+          "documentation": "Renewal settings for the reservation"
+        },
         "ReservationId": {
           "shape": "__string",
           "locationName": "reservationId",
@@ -5698,6 +5868,11 @@
           "locationName": "logLevel",
           "documentation": "The log level being written to CloudWatch Logs."
         },
+        "Maintenance": {
+          "shape": "MaintenanceStatus",
+          "locationName": "maintenance",
+          "documentation": "Maintenance settings for this channel."
+        },
         "Name": {
           "shape": "__string",
           "locationName": "name",
@@ -5812,6 +5987,11 @@
           "shape": "InputDeviceUhdSettings",
           "locationName": "uhdDeviceSettings",
           "documentation": "Settings that describe an input device that is type UHD."
+        },
+	 "Tags": {
+          "shape": "Tags",
+          "locationName": "tags",
+          "documentation": "A collection of key-value pairs."
         }
       },
       "documentation": "Placeholder documentation for DescribeInputDeviceResponse"
@@ -6302,6 +6482,11 @@
           "locationName": "region",
           "documentation": "AWS region, e.g. 'us-west-2'"
         },
+        "RenewalSettings": {
+          "shape": "RenewalSettings",
+          "locationName": "renewalSettings",
+          "documentation": "Renewal settings for the reservation"
+        },
         "ReservationId": {
           "shape": "__string",
           "locationName": "reservationId",
@@ -6389,8 +6574,30 @@
       "documentation": "The status of software on the input device.",
       "enum": [
         "UP_TO_DATE",
-        "NOT_UP_TO_DATE"
+        "NOT_UP_TO_DATE",
+        "UPDATING"
       ]
+    },
+    "DolbyEProgramSelection": {
+      "type": "string",
+      "documentation": "Dolby EProgram Selection",
+      "enum": [
+        "ALL_CHANNELS",
+        "PROGRAM_1",
+        "PROGRAM_2",
+        "PROGRAM_3",
+        "PROGRAM_4",
+        "PROGRAM_5",
+        "PROGRAM_6",
+        "PROGRAM_7",
+        "PROGRAM_8"
+      ]
+    },
+    "DolbyVision81Settings": {
+      "type": "structure",
+      "members": {
+      },
+      "documentation": "Dolby Vision81 Settings"
     },
     "DvbNitSettings": {
       "type": "structure",
@@ -6642,6 +6849,80 @@
       },
       "documentation": "DVB Time and Date Table (SDT)"
     },
+    "Eac3AtmosCodingMode": {
+      "type": "string",
+      "documentation": "Eac3 Atmos Coding Mode",
+      "enum": [
+        "CODING_MODE_5_1_4",
+        "CODING_MODE_7_1_4",
+        "CODING_MODE_9_1_6"
+      ]
+    },
+    "Eac3AtmosDrcLine": {
+      "type": "string",
+      "documentation": "Eac3 Atmos Drc Line",
+      "enum": [
+        "FILM_LIGHT",
+        "FILM_STANDARD",
+        "MUSIC_LIGHT",
+        "MUSIC_STANDARD",
+        "NONE",
+        "SPEECH"
+      ]
+    },
+    "Eac3AtmosDrcRf": {
+      "type": "string",
+      "documentation": "Eac3 Atmos Drc Rf",
+      "enum": [
+        "FILM_LIGHT",
+        "FILM_STANDARD",
+        "MUSIC_LIGHT",
+        "MUSIC_STANDARD",
+        "NONE",
+        "SPEECH"
+      ]
+    },
+    "Eac3AtmosSettings": {
+      "type": "structure",
+      "members": {
+        "Bitrate": {
+          "shape": "__double",
+          "locationName": "bitrate",
+          "documentation": "Average bitrate in bits/second. Valid bitrates depend on the coding mode.\n//  * @affectsRightSizing true"
+        },
+        "CodingMode": {
+          "shape": "Eac3AtmosCodingMode",
+          "locationName": "codingMode",
+          "documentation": "Dolby Digital Plus with Dolby Atmos coding mode. Determines number of channels."
+        },
+        "Dialnorm": {
+          "shape": "__integerMin1Max31",
+          "locationName": "dialnorm",
+          "documentation": "Sets the dialnorm for the output. Default 23."
+        },
+        "DrcLine": {
+          "shape": "Eac3AtmosDrcLine",
+          "locationName": "drcLine",
+          "documentation": "Sets the Dolby dynamic range compression profile."
+        },
+        "DrcRf": {
+          "shape": "Eac3AtmosDrcRf",
+          "locationName": "drcRf",
+          "documentation": "Sets the profile for heavy Dolby dynamic range compression, ensures that the instantaneous signal peaks do not exceed specified levels."
+        },
+        "HeightTrim": {
+          "shape": "__double",
+          "locationName": "heightTrim",
+          "documentation": "Height dimensional trim. Sets the maximum amount to attenuate the height channels when the downstream player isn??t configured to handle Dolby Digital Plus with Dolby Atmos and must remix the channels."
+        },
+        "SurroundTrim": {
+          "shape": "__double",
+          "locationName": "surroundTrim",
+          "documentation": "Surround dimensional trim. Sets the maximum amount to attenuate the surround channels when the downstream player isn't configured to handle Dolby Digital Plus with Dolby Atmos and must remix the channels."
+        }
+      },
+      "documentation": "Eac3 Atmos Settings"
+    },
     "Eac3AttenuationControl": {
       "type": "string",
       "documentation": "Eac3 Attenuation Control",
@@ -6882,7 +7163,7 @@
         "CopyrightHolder": {
           "shape": "__stringMax1000",
           "locationName": "copyrightHolder",
-          "documentation": "Applies only if you plan to convert these source captions to EBU-TT-D or TTML in an output. Complete this field if you want to include the name of the copyright holder in the copyright metadata tag in the TTML"
+          "documentation": "Complete this field if you want to include the name of the copyright holder in the copyright tag in the captions metadata."
         },
         "FillLineGap": {
           "shape": "EbuTtDFillLineGapControl",
@@ -7045,6 +7326,46 @@
         "AudioDescriptions",
         "OutputGroups",
         "TimecodeConfig"
+      ]
+    },
+    "Esam": {
+      "type": "structure",
+      "members": {
+        "AcquisitionPointId": {
+          "shape": "__stringMax256",
+          "locationName": "acquisitionPointId",
+          "documentation": "Sent as acquisitionPointIdentity to identify the MediaLive channel to the POIS."
+        },
+        "AdAvailOffset": {
+          "shape": "__integerMinNegative1000Max1000",
+          "locationName": "adAvailOffset",
+          "documentation": "When specified, this offset (in milliseconds) is added to the input Ad Avail PTS time. This only applies to embedded SCTE 104/35 messages and does not apply to OOB messages."
+        },
+        "PasswordParam": {
+          "shape": "__string",
+          "locationName": "passwordParam",
+          "documentation": "Documentation update needed"
+        },
+        "PoisEndpoint": {
+          "shape": "__stringMax2048",
+          "locationName": "poisEndpoint",
+          "documentation": "The URL of the signal conditioner endpoint on the Placement Opportunity Information System (POIS). MediaLive sends SignalProcessingEvents here when SCTE-35 messages are read."
+        },
+        "Username": {
+          "shape": "__string",
+          "locationName": "username",
+          "documentation": "Documentation update needed"
+        },
+        "ZoneIdentity": {
+          "shape": "__stringMax256",
+          "locationName": "zoneIdentity",
+          "documentation": "Optional data sent as zoneIdentity to identify the MediaLive channel to the POIS."
+        }
+      },
+      "documentation": "Esam",
+      "required": [
+        "AcquisitionPointId",
+        "PoisEndpoint"
       ]
     },
     "FailoverCondition": {
@@ -7322,6 +7643,11 @@
           "shape": "FrameCaptureIntervalUnit",
           "locationName": "captureIntervalUnits",
           "documentation": "Unit for the frame capture interval."
+        },
+        "TimecodeBurninSettings": {
+          "shape": "TimecodeBurninSettings",
+          "locationName": "timecodeBurninSettings",
+          "documentation": "Timecode burn-in settings"
         }
       },
       "documentation": "Frame Capture Settings"
@@ -7798,6 +8124,11 @@
           "shape": "H264TimecodeInsertionBehavior",
           "locationName": "timecodeInsertion",
           "documentation": "Determines how timecodes should be inserted into the video elementary stream.\n- 'disabled': Do not include timecodes\n- 'picTimingSei': Pass through picture timing SEI messages from the source specified in Timecode Config"
+        },
+        "TimecodeBurninSettings": {
+          "shape": "TimecodeBurninSettings",
+          "locationName": "timecodeBurninSettings",
+          "documentation": "Timecode burn-in settings"
         }
       },
       "documentation": "H264 Settings"
@@ -7877,6 +8208,10 @@
         "ColorSpacePassthroughSettings": {
           "shape": "ColorSpacePassthroughSettings",
           "locationName": "colorSpacePassthroughSettings"
+        },
+        "DolbyVision81Settings": {
+          "shape": "DolbyVision81Settings",
+          "locationName": "dolbyVision81Settings"
         },
         "Hdr10Settings": {
           "shape": "Hdr10Settings",
@@ -8128,6 +8463,11 @@
           "shape": "H265TimecodeInsertionBehavior",
           "locationName": "timecodeInsertion",
           "documentation": "Determines how timecodes should be inserted into the video elementary stream.\n- 'disabled': Do not include timecodes\n- 'picTimingSei': Pass through picture timing SEI messages from the source specified in Timecode Config"
+        },
+        "TimecodeBurninSettings": {
+          "shape": "TimecodeBurninSettings",
+          "locationName": "timecodeBurninSettings",
+          "documentation": "Timecode burn-in settings"
         }
       },
       "documentation": "H265 Settings",
@@ -8206,7 +8546,7 @@
         "NumRetries": {
           "shape": "__integerMin0",
           "locationName": "numRetries",
-          "documentation": "Number of retry attempts that will be made before the Live Event is put into an error state."
+          "documentation": "Number of retry attempts that will be made before the Live Event is put into an error state. Applies only if the CDN destination URI begins with \"s3\" or \"mediastore\". For other URIs, the value is always 3."
         },
         "RestartDelay": {
           "shape": "__integerMin0Max15",
@@ -8242,7 +8582,7 @@
         "NumRetries": {
           "shape": "__integerMin0",
           "locationName": "numRetries",
-          "documentation": "Number of retry attempts that will be made before the Live Event is put into an error state."
+          "documentation": "Number of retry attempts that will be made before the Live Event is put into an error state. Applies only if the CDN destination URI begins with \"s3\" or \"mediastore\". For other URIs, the value is always 3."
         },
         "RestartDelay": {
           "shape": "__integerMin0Max15",
@@ -8473,7 +8813,7 @@
         "MinSegmentLength": {
           "shape": "__integerMin0",
           "locationName": "minSegmentLength",
-          "documentation": "When set, minimumSegmentLength is enforced by looking ahead and back within the specified range for a nearby avail and extending the segment size if needed."
+          "documentation": "Minimum length of MPEG-2 Transport Stream segments in seconds. When set, minimum segment length is enforced by looking ahead and back within the specified range for a nearby avail and extending the segment size if needed."
         },
         "Mode": {
           "shape": "HlsMode",
@@ -8488,7 +8828,12 @@
         "ProgramDateTime": {
           "shape": "HlsProgramDateTime",
           "locationName": "programDateTime",
-          "documentation": "Includes or excludes EXT-X-PROGRAM-DATE-TIME tag in .m3u8 manifest files. The value is calculated as follows: either the program date and time are initialized using the input timecode source, or the time is initialized using the input timecode source and the date is initialized using the timestampOffset."
+          "documentation": "Includes or excludes EXT-X-PROGRAM-DATE-TIME tag in .m3u8 manifest files. The value is calculated using the program date time clock."
+        },
+        "ProgramDateTimeClock": {
+          "shape": "HlsProgramDateTimeClock",
+          "locationName": "programDateTimeClock",
+          "documentation": "Specifies the algorithm used to drive the HLS EXT-X-PROGRAM-DATE-TIME clock. Options include:\n\nINITIALIZE_FROM_OUTPUT_TIMECODE: The PDT clock is initialized as a function of the first output timecode, then incremented by the EXTINF duration of each encoded segment.\n\nSYSTEM_CLOCK: The PDT clock is initialized as a function of the UTC wall clock, then incremented by the EXTINF duration of each encoded segment. If the PDT clock diverges from the wall clock by more than 500ms, it is resynchronized to the wall clock."
         },
         "ProgramDateTimePeriod": {
           "shape": "__integerMin0Max3600",
@@ -8503,7 +8848,7 @@
         "SegmentLength": {
           "shape": "__integerMin1",
           "locationName": "segmentLength",
-          "documentation": "Length of MPEG-2 Transport Stream segments to create (in seconds). Note that segments will end on the next keyframe after this number of seconds, so actual segment length may be longer."
+          "documentation": "Length of MPEG-2 Transport Stream segments to create in seconds. Note that segments will end on the next keyframe after this duration, so actual segment length may be longer."
         },
         "SegmentationMode": {
           "shape": "HlsSegmentationMode",
@@ -8561,12 +8906,14 @@
           "shape": "__string",
           "locationName": "tag",
           "documentation": "ID3 tag to insert into each segment. Supports special keyword identifiers to substitute in segment-related values.\\nSupported keyword identifiers: https://docs.aws.amazon.com/medialive/latest/ug/variable-data-identifiers.html"
+        },
+        "Id3": {
+          "shape": "__string",
+          "locationName": "id3",
+          "documentation": "Base64 string formatted according to the ID3 specification: http://id3.org/id3v2.4.0-structure"
         }
       },
-      "documentation": "Settings for the action to insert a user-defined ID3 tag in each HLS segment",
-      "required": [
-        "Tag"
-      ]
+      "documentation": "Settings for the action to insert a user-defined ID3 tag in each HLS segment"
     },
     "HlsId3SegmentTaggingState": {
       "type": "string",
@@ -8668,7 +9015,7 @@
         "NumRetries": {
           "shape": "__integerMin0",
           "locationName": "numRetries",
-          "documentation": "Number of retry attempts that will be made before the Live Event is put into an error state."
+          "documentation": "Number of retry attempts that will be made before the Live Event is put into an error state. Applies only if the CDN destination URI begins with \"s3\" or \"mediastore\". For other URIs, the value is always 3."
         },
         "RestartDelay": {
           "shape": "__integerMin0Max15",
@@ -8737,6 +9084,14 @@
       "enum": [
         "EXCLUDE",
         "INCLUDE"
+      ]
+    },
+    "HlsProgramDateTimeClock": {
+      "type": "string",
+      "documentation": "Hls Program Date Time Clock",
+      "enum": [
+        "INITIALIZE_FROM_OUTPUT_TIMECODE",
+        "SYSTEM_CLOCK"
       ]
     },
     "HlsRedundantManifest": {
@@ -8872,7 +9227,7 @@
         "NumRetries": {
           "shape": "__integerMin0",
           "locationName": "numRetries",
-          "documentation": "Number of retry attempts that will be made before the Live Event is put into an error state."
+          "documentation": "Number of retry attempts that will be made before the Live Event is put into an error state. Applies only if the CDN destination URI begins with \"s3\" or \"mediastore\". For other URIs, the value is always 3."
         },
         "RestartDelay": {
           "shape": "__integerMin0Max15",
@@ -9203,6 +9558,11 @@
           "shape": "InputDeviceUhdSettings",
           "locationName": "uhdDeviceSettings",
           "documentation": "Settings that describe an input device that is type UHD."
+        },
+	"Tags": {
+          "shape": "Tags",
+          "locationName": "tags",
+          "documentation": "A collection of key-value pairs."
         }
       },
       "documentation": "An input device."
@@ -9227,6 +9587,11 @@
           "shape": "__integer",
           "locationName": "maxBitrate",
           "documentation": "The maximum bitrate in bits per second. Set a value here to throttle the bitrate of the source video."
+        },
+        "LatencyMs": {
+          "shape": "__integer",
+          "locationName": "latencyMs",
+          "documentation": "The Link device's buffer size (latency) in milliseconds (ms)."
         }
       },
       "documentation": "Configurable settings for the input device."
@@ -9306,6 +9671,11 @@
           "shape": "__integer",
           "locationName": "width",
           "documentation": "The width of the video source, in pixels."
+        },
+        "LatencyMs": {
+          "shape": "__integer",
+          "locationName": "latencyMs",
+          "documentation": "The Link device's buffer size (latency) in milliseconds (ms). You can specify this value."
         }
       },
       "documentation": "Settings that describe the active source from the input device, and the video characteristics of that source."
@@ -9449,6 +9819,11 @@
           "shape": "InputDeviceUhdSettings",
           "locationName": "uhdDeviceSettings",
           "documentation": "Settings that describe an input device that is type UHD."
+        },
+	"Tags": {
+          "shape": "Tags",
+          "locationName": "tags",
+          "documentation": "A collection of key-value pairs."
         }
       },
       "documentation": "Details of the input device."
@@ -9465,7 +9840,8 @@
       "type": "string",
       "documentation": "The type of the input device. For an AWS Elemental Link device that outputs resolutions up to 1080, choose \"HD\".",
       "enum": [
-        "HD"
+        "HD",
+        "UHD"
       ]
     },
     "InputDeviceUhdSettings": {
@@ -9510,6 +9886,11 @@
           "shape": "__integer",
           "locationName": "width",
           "documentation": "The width of the video source, in pixels."
+        },
+        "LatencyMs": {
+          "shape": "__integer",
+          "locationName": "latencyMs",
+          "documentation": "The Link device's buffer size (latency) in milliseconds (ms). You can specify this value."
         }
       },
       "documentation": "Settings that describe the active source from the input device, and the video characteristics of that source."
@@ -9532,7 +9913,7 @@
           "documentation": "key used to extract the password from EC2 Parameter store"
         },
         "Uri": {
-          "shape": "__string",
+          "shape": "__stringMax2048",
           "locationName": "uri",
           "documentation": "Uniform Resource Identifier - This should be a path to a file accessible to the Live system (eg. a http:// URI) depending on the output type. For example, a RTMP destination should have a uri simliar to: \"rtmp://fmsserver/live\"."
         },
@@ -11012,6 +11393,11 @@
           "shape": "__string",
           "locationName": "videoPid",
           "documentation": "Packet Identifier (PID) of the elementary video stream in the transport stream. Can be entered as a decimal or hexadecimal value.  Valid values are 32 (or 0x20)..8182 (or 0x1ff6)."
+        },
+        "Scte35PrerollPullupMilliseconds": {
+          "shape": "__doubleMin0Max5000",
+          "locationName": "scte35PrerollPullupMilliseconds",
+          "documentation": "Defines the amount SCTE-35 preroll will be increased (in milliseconds) on the output. Preroll is the amount of time between the presence of a SCTE-35 indication in a transport stream and the PTS of the video frame it references. Zero means don't add pullup (it doesn't mean set the preroll to zero). Negative pullup is not supported, which means that you can't make the preroll shorter. Be aware that latency in the output will increase by the pullup amount."
         }
       },
       "documentation": "M2ts Settings"
@@ -11146,6 +11532,82 @@
         "NO_PASSTHROUGH",
         "PASSTHROUGH"
       ]
+    },
+    "MaintenanceCreateSettings": {
+      "type": "structure",
+      "members": {
+        "MaintenanceDay": {
+          "shape": "MaintenanceDay",
+          "locationName": "maintenanceDay",
+          "documentation": "Choose one day of the week for maintenance. The chosen day is used for all future maintenance windows."
+        },
+        "MaintenanceStartTime": {
+          "shape": "__stringPattern010920300",
+          "locationName": "maintenanceStartTime",
+          "documentation": "Choose the hour that maintenance will start. The chosen time is used for all future maintenance windows."
+        }
+      },
+      "documentation": "Placeholder documentation for MaintenanceCreateSettings"
+    },
+    "MaintenanceDay": {
+      "type": "string",
+      "documentation": "The currently selected maintenance day.",
+      "enum": [
+        "MONDAY",
+        "TUESDAY",
+        "WEDNESDAY",
+        "THURSDAY",
+        "FRIDAY",
+        "SATURDAY",
+        "SUNDAY"
+      ]
+    },
+    "MaintenanceStatus": {
+      "type": "structure",
+      "members": {
+        "MaintenanceDay": {
+          "shape": "MaintenanceDay",
+          "locationName": "maintenanceDay",
+          "documentation": "The currently selected maintenance day."
+        },
+        "MaintenanceDeadline": {
+          "shape": "__string",
+          "locationName": "maintenanceDeadline",
+          "documentation": "Maintenance is required by the displayed date and time. Date and time is in ISO."
+        },
+        "MaintenanceScheduledDate": {
+          "shape": "__string",
+          "locationName": "maintenanceScheduledDate",
+          "documentation": "The currently scheduled maintenance date and time. Date and time is in ISO."
+        },
+        "MaintenanceStartTime": {
+          "shape": "__string",
+          "locationName": "maintenanceStartTime",
+          "documentation": "The currently selected maintenance start time. Time is in UTC."
+        }
+      },
+      "documentation": "Placeholder documentation for MaintenanceStatus"
+    },
+    "MaintenanceUpdateSettings": {
+      "type": "structure",
+      "members": {
+        "MaintenanceDay": {
+          "shape": "MaintenanceDay",
+          "locationName": "maintenanceDay",
+          "documentation": "Choose one day of the week for maintenance. The chosen day is used for all future maintenance windows."
+        },
+        "MaintenanceScheduledDate": {
+          "shape": "__string",
+          "locationName": "maintenanceScheduledDate",
+          "documentation": "Choose a specific date for maintenance to occur. The chosen date is used for the next maintenance window only."
+        },
+        "MaintenanceStartTime": {
+          "shape": "__stringPattern010920300",
+          "locationName": "maintenanceStartTime",
+          "documentation": "Choose the hour that maintenance will start. The chosen time is used for all future maintenance windows."
+        }
+      },
+      "documentation": "Placeholder documentation for MaintenanceUpdateSettings"
     },
     "MaxResults": {
       "type": "integer",
@@ -11446,6 +11908,11 @@
           "shape": "Mpeg2TimecodeInsertionBehavior",
           "locationName": "timecodeInsertion",
           "documentation": "Determines how MediaLive inserts timecodes in the output video. For detailed information about setting up the input and the output for a timecode, see the section on \\\"MediaLive Features - Timecode configuration\\\" in the MediaLive User Guide.\nDISABLED: do not include timecodes.\nGOP_TIMECODE: Include timecode metadata in the GOP header."
+        },
+        "TimecodeBurninSettings": {
+          "shape": "TimecodeBurninSettings",
+          "locationName": "timecodeBurninSettings",
+          "documentation": "Timecode burn-in settings"
         }
       },
       "documentation": "Mpeg2 Settings",
@@ -12120,6 +12587,11 @@
           "shape": "__doubleMin1Max65535",
           "locationName": "sid",
           "documentation": "Enter the Nielsen Source ID (SID) to include in the watermark"
+        },
+        "Timezone": {
+          "shape": "NielsenWatermarkTimezones",
+          "locationName": "timezone",
+          "documentation": "Choose the timezone for the time stamps in the watermark. If not provided,\nthe timestamps will be in Coordinated Universal Time (UTC)"
         }
       },
       "documentation": "Nielsen Naes Ii Nw",
@@ -12134,6 +12606,22 @@
       "enum": [
         "DISABLED",
         "ENABLED"
+      ]
+    },
+    "NielsenWatermarkTimezones": {
+      "type": "string",
+      "documentation": "Nielsen Watermark Timezones",
+      "enum": [
+        "AMERICA_PUERTO_RICO",
+        "US_ALASKA",
+        "US_ARIZONA",
+        "US_CENTRAL",
+        "US_EASTERN",
+        "US_HAWAII",
+        "US_MOUNTAIN",
+        "US_PACIFIC",
+        "US_SAMOA",
+        "UTC"
       ]
     },
     "NielsenWatermarksCbetStepaside": {
@@ -12354,7 +12842,7 @@
         "Name": {
           "shape": "__stringMax32",
           "locationName": "name",
-          "documentation": "Custom output group name optionally defined by the user.  Only letters, numbers, and the underscore character allowed; only 32 characters allowed."
+          "documentation": "Custom output group name optionally defined by the user."
         },
         "OutputGroupSettings": {
           "shape": "OutputGroupSettings",
@@ -12549,6 +13037,11 @@
           "locationName": "name",
           "documentation": "Name for the new reservation"
         },
+        "RenewalSettings": {
+          "shape": "RenewalSettings",
+          "locationName": "renewalSettings",
+          "documentation": "Renewal settings for the reservation"
+        },
         "RequestId": {
           "shape": "__string",
           "locationName": "requestId",
@@ -12589,6 +13082,11 @@
           "location": "uri",
           "locationName": "offeringId",
           "documentation": "Offering to purchase, e.g. '87654321'"
+        },
+        "RenewalSettings": {
+          "shape": "RenewalSettings",
+          "locationName": "renewalSettings",
+          "documentation": "Renewal settings for the reservation"
         },
         "RequestId": {
           "shape": "__string",
@@ -12638,6 +13136,51 @@
       "members": {
       },
       "documentation": "Raw Settings"
+    },
+    "RebootInputDevice": {
+      "type": "structure",
+      "members": {
+        "Force": {
+          "shape": "RebootInputDeviceForce",
+          "locationName": "force",
+          "documentation": "Force a reboot of an input device. If the device is streaming, it will stop streaming and begin rebooting within a few seconds of sending the command. If the device was streaming prior to the reboot, the device will resume streaming when the reboot completes."
+        }
+      },
+      "documentation": "Placeholder documentation for RebootInputDevice"
+    },
+    "RebootInputDeviceForce": {
+      "type": "string",
+      "documentation": "Whether or not to force reboot the input device.",
+      "enum": [
+        "NO",
+        "YES"
+      ]
+    },
+    "RebootInputDeviceRequest": {
+      "type": "structure",
+      "members": {
+        "Force": {
+          "shape": "RebootInputDeviceForce",
+          "locationName": "force",
+          "documentation": "Force a reboot of an input device. If the device is streaming, it will stop streaming and begin rebooting within a few seconds of sending the command. If the device was streaming prior to the reboot, the device will resume streaming when the reboot completes."
+        },
+        "InputDeviceId": {
+          "shape": "__string",
+          "location": "uri",
+          "locationName": "inputDeviceId",
+          "documentation": "The unique ID of the input device to reboot. For example, hd-123456789abcdef."
+        }
+      },
+      "documentation": "A request to reboot an AWS Elemental device.",
+      "required": [
+        "InputDeviceId"
+      ]
+    },
+    "RebootInputDeviceResponse": {
+      "type": "structure",
+      "members": {
+      },
+      "documentation": "Placeholder documentation for RebootInputDeviceResponse"
     },
     "Rec601Settings": {
       "type": "structure",
@@ -12695,6 +13238,22 @@
       "required": [
         "ChannelMappings"
       ]
+    },
+    "RenewalSettings": {
+      "type": "structure",
+      "members": {
+        "AutomaticRenewal": {
+          "shape": "ReservationAutomaticRenewal",
+          "locationName": "automaticRenewal",
+          "documentation": "Automatic renewal status for the reservation"
+        },
+        "RenewalCount": {
+          "shape": "__integerMin1",
+          "locationName": "renewalCount",
+          "documentation": "Count for the reservation renewal"
+        }
+      },
+      "documentation": "The Renewal settings for Reservations"
     },
     "Reservation": {
       "type": "structure",
@@ -12759,6 +13318,11 @@
           "locationName": "region",
           "documentation": "AWS region, e.g. 'us-west-2'"
         },
+        "RenewalSettings": {
+          "shape": "RenewalSettings",
+          "locationName": "renewalSettings",
+          "documentation": "Renewal settings for the reservation"
+        },
         "ReservationId": {
           "shape": "__string",
           "locationName": "reservationId",
@@ -12791,6 +13355,15 @@
         }
       },
       "documentation": "Reserved resources available to use"
+    },
+    "ReservationAutomaticRenewal": {
+      "type": "string",
+      "documentation": "Automatic Renewal Status for Reservation",
+      "enum": [
+        "DISABLED",
+        "ENABLED",
+        "UNAVAILABLE"
+      ]
     },
     "ReservationCodec": {
       "type": "string",
@@ -13117,6 +13690,11 @@
           "locationName": "pauseStateSettings",
           "documentation": "Action to pause or unpause one or both channel pipelines"
         },
+        "Scte35InputSettings": {
+          "shape": "Scte35InputScheduleActionSettings",
+          "locationName": "scte35InputSettings",
+          "documentation": "Action to specify scte35 input"
+        },
         "Scte35ReturnToNetworkSettings": {
           "shape": "Scte35ReturnToNetworkScheduleActionSettings",
           "locationName": "scte35ReturnToNetworkSettings",
@@ -13349,6 +13927,33 @@
         "RESTRICT_GROUP2"
       ]
     },
+    "Scte35InputMode": {
+      "type": "string",
+      "documentation": "Whether the SCTE-35 input should be the active input or a fixed input.",
+      "enum": [
+        "FIXED",
+        "FOLLOW_ACTIVE"
+      ]
+    },
+    "Scte35InputScheduleActionSettings": {
+      "type": "structure",
+      "members": {
+        "InputAttachmentNameReference": {
+          "shape": "__string",
+          "locationName": "inputAttachmentNameReference",
+          "documentation": "In fixed mode, enter the name of the input attachment that you want to use as a SCTE-35 input. (Don't enter the ID of the input.)\""
+        },
+        "Mode": {
+          "shape": "Scte35InputMode",
+          "locationName": "mode",
+          "documentation": "Whether the SCTE-35 input should be the active input or a fixed input."
+        }
+      },
+      "documentation": "Scte35Input Schedule Action Settings",
+      "required": [
+        "Mode"
+      ]
+    },
     "Scte35NoRegionalBlackoutFlag": {
       "type": "string",
       "documentation": "Corresponds to the no_regional_blackout_flag parameter. A value of REGIONAL_BLACKOUT corresponds to 0 (false) in the SCTE-35 specification. If you include one of the \"restriction\" flags then you must include all four of them.",
@@ -13463,7 +14068,7 @@
           "documentation": "When set to ignore, Segment Descriptors with webDeliveryAllowedFlag set to 0 will no longer trigger blackouts or Ad Avail slates"
         }
       },
-      "documentation": "Scte35 Splice Insert"
+      "documentation": "Typical configuration that applies breaks on splice inserts in addition to time signal placement opportunities, breaks, and advertisements."
     },
     "Scte35SpliceInsertNoRegionalBlackoutBehavior": {
       "type": "string",
@@ -13519,7 +14124,7 @@
           "documentation": "When set to ignore, Segment Descriptors with webDeliveryAllowedFlag set to 0 will no longer trigger blackouts or Ad Avail slates"
         }
       },
-      "documentation": "Scte35 Time Signal Apos"
+      "documentation": "Atypical configuration that applies segment breaks only on SCTE-35 time signal placement opportunities and breaks."
     },
     "Scte35TimeSignalScheduleActionSettings": {
       "type": "structure",
@@ -13708,6 +14313,11 @@
           "locationName": "logLevel",
           "documentation": "The log level being written to CloudWatch Logs."
         },
+        "Maintenance": {
+          "shape": "MaintenanceStatus",
+          "locationName": "maintenance",
+          "documentation": "Maintenance settings for this channel."
+        },
         "Name": {
           "shape": "__string",
           "locationName": "name",
@@ -13744,6 +14354,27 @@
         }
       },
       "documentation": "Placeholder documentation for StartChannelResponse"
+    },
+    "StartInputDeviceMaintenanceWindowRequest": {
+      "type": "structure",
+      "members": {
+        "InputDeviceId": {
+          "shape": "__string",
+          "location": "uri",
+          "locationName": "inputDeviceId",
+          "documentation": "The unique ID of the input device to start a maintenance window for. For example, hd-123456789abcdef."
+        }
+      },
+      "required": [
+        "InputDeviceId"
+      ],
+      "documentation": "Placeholder documentation for StartInputDeviceMaintenanceWindowRequest"
+    },
+    "StartInputDeviceMaintenanceWindowResponse": {
+      "type": "structure",
+      "members": {
+      },
+      "documentation": "Placeholder documentation for StartInputDeviceMaintenanceWindowResponse"
     },
     "StartMultiplexRequest": {
       "type": "structure",
@@ -13988,6 +14619,11 @@
           "locationName": "logLevel",
           "documentation": "The log level being written to CloudWatch Logs."
         },
+        "Maintenance": {
+          "shape": "MaintenanceStatus",
+          "locationName": "maintenance",
+          "documentation": "Maintenance settings for this channel."
+        },
         "Name": {
           "shape": "__string",
           "locationName": "name",
@@ -14213,6 +14849,56 @@
       },
       "documentation": "The binary data for the thumbnail that the Link device has most recently sent to MediaLive."
     },
+    "TimecodeBurninFontSize": {
+      "type": "string",
+      "documentation": "Timecode Burnin Font Size",
+      "enum": [
+        "EXTRA_SMALL_10",
+        "LARGE_48",
+        "MEDIUM_32",
+        "SMALL_16"
+      ]
+    },
+    "TimecodeBurninPosition": {
+      "type": "string",
+      "documentation": "Timecode Burnin Position",
+      "enum": [
+        "BOTTOM_CENTER",
+        "BOTTOM_LEFT",
+        "BOTTOM_RIGHT",
+        "MIDDLE_CENTER",
+        "MIDDLE_LEFT",
+        "MIDDLE_RIGHT",
+        "TOP_CENTER",
+        "TOP_LEFT",
+        "TOP_RIGHT"
+      ]
+    },
+    "TimecodeBurninSettings": {
+      "type": "structure",
+      "members": {
+        "FontSize": {
+          "shape": "TimecodeBurninFontSize",
+          "locationName": "fontSize",
+          "documentation": "Choose a timecode burn-in font size"
+        },
+        "Position": {
+          "shape": "TimecodeBurninPosition",
+          "locationName": "position",
+          "documentation": "Choose a timecode burn-in output position"
+        },
+        "Prefix": {
+          "shape": "__stringMax255",
+          "locationName": "prefix",
+          "documentation": "Create a timecode burn-in prefix (optional)"
+        }
+      },
+      "documentation": "Timecode Burnin Settings",
+      "required": [
+        "Position",
+        "FontSize"
+      ]
+    },
     "TimecodeConfig": {
       "type": "structure",
       "members": {
@@ -14344,7 +15030,7 @@
         "StyleControl": {
           "shape": "TtmlDestinationStyleControl",
           "locationName": "styleControl",
-          "documentation": "When set to passthrough, passes through style and position information from a TTML-like input source (TTML, SMPTE-TT, CFF-TT) to the CFF-TT output or TTML output."
+          "documentation": "This field is not currently supported and will not affect the output styling. Leave the default value."
         }
       },
       "documentation": "Ttml Destination Settings"
@@ -14478,6 +15164,11 @@
           "locationName": "logLevel",
           "documentation": "The log level to write to CloudWatch Logs."
         },
+        "Maintenance": {
+          "shape": "MaintenanceUpdateSettings",
+          "locationName": "maintenance",
+          "documentation": "Maintenance settings for this channel."
+        },
         "Name": {
           "shape": "__string",
           "locationName": "name",
@@ -14583,6 +15274,11 @@
           "shape": "LogLevel",
           "locationName": "logLevel",
           "documentation": "The log level to write to CloudWatch Logs."
+        },
+        "Maintenance": {
+          "shape": "MaintenanceUpdateSettings",
+          "locationName": "maintenance",
+          "documentation": "Maintenance settings for this channel."
         },
         "Name": {
           "shape": "__string",
@@ -14774,6 +15470,11 @@
           "shape": "InputDeviceUhdSettings",
           "locationName": "uhdDeviceSettings",
           "documentation": "Settings that describe an input device that is type UHD."
+        },
+	  "Tags": {
+          "shape": "Tags",
+          "locationName": "tags",
+          "documentation": "A collection of key-value pairs."
         }
       },
       "documentation": "Placeholder documentation for UpdateInputDeviceResponse"
@@ -15023,6 +15724,11 @@
           "shape": "__string",
           "locationName": "name",
           "documentation": "Name of the reservation"
+        },
+        "RenewalSettings": {
+          "shape": "RenewalSettings",
+          "locationName": "renewalSettings",
+          "documentation": "Renewal settings for the reservation"
         }
       },
       "documentation": "UpdateReservation request"
@@ -15034,6 +15740,11 @@
           "shape": "__string",
           "locationName": "name",
           "documentation": "Name of the reservation"
+        },
+        "RenewalSettings": {
+          "shape": "RenewalSettings",
+          "locationName": "renewalSettings",
+          "documentation": "Renewal settings for the reservation"
         },
         "ReservationId": {
           "shape": "__string",
@@ -15392,6 +16103,10 @@
     "__doubleMin0Max100": {
       "type": "double",
       "documentation": "Placeholder documentation for __doubleMin0Max100"
+    },
+    "__doubleMin0Max5000": {
+      "type": "double",
+      "documentation": "Placeholder documentation for __doubleMin0Max5000"
     },
     "__doubleMin1": {
       "type": "double",
@@ -16089,6 +16804,16 @@
       "max": 1000,
       "documentation": "Placeholder documentation for __stringMax1000"
     },
+    "__stringMax2048": {
+      "type": "string",
+      "max": 2048,
+      "documentation": "Placeholder documentation for __stringMax2048"
+    },
+    "__stringMax255": {
+      "type": "string",
+      "max": 255,
+      "documentation": "Placeholder documentation for __stringMax255"
+    },
     "__stringMax256": {
       "type": "string",
       "max": 256,
@@ -16157,6 +16882,11 @@
       "min": 6,
       "max": 6,
       "documentation": "Placeholder documentation for __stringMin6Max6"
+    },
+    "__stringPattern010920300": {
+      "type": "string",
+      "pattern": "^([0,1]?[0-9]|2[0-3]):00$",
+      "documentation": "Placeholder documentation for __stringPattern010920300"
     },
     "__timestampIso8601": {
       "type": "timestamp",

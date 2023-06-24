@@ -41,6 +41,12 @@ namespace Amazon.CloudControlApi.Model
         /// </summary>
         public IPaginatedEnumerable<ListResourcesResponse> Responses => new PaginatedResponse<ListResourcesResponse>(this);
 
+        /// <summary>
+        /// Enumerable containing all of the ResourceDescriptions
+        /// </summary>
+        public IPaginatedEnumerable<ResourceDescription> ResourceDescriptions => 
+            new PaginatedResultKeyResponse<ListResourcesResponse, ResourceDescription>(this, (i) => i.ResourceDescriptions);
+
         internal ListResourcesPaginator(IAmazonCloudControlApi client, ListResourcesRequest request)
         {
             this._client = client;

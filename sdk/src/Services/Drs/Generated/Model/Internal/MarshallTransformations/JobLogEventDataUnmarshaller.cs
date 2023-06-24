@@ -64,10 +64,22 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("conversionProperties", targetDepth))
+                {
+                    var unmarshaller = ConversionPropertiesUnmarshaller.Instance;
+                    unmarshalledObject.ConversionProperties = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("conversionServerID", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ConversionServerID = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("eventResourceData", targetDepth))
+                {
+                    var unmarshaller = EventResourceDataUnmarshaller.Instance;
+                    unmarshalledObject.EventResourceData = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("rawError", targetDepth))

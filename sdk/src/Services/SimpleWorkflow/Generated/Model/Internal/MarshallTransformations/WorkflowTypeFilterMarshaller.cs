@@ -34,7 +34,7 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// WorkflowTypeFilter Marshaller
-    /// </summary>       
+    /// </summary>
     public class WorkflowTypeFilterMarshaller : IRequestMarshaller<WorkflowTypeFilter, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static WorkflowTypeFilterMarshaller Instance = new WorkflowTypeFilterMarshaller();
 
     }

@@ -66,6 +66,11 @@ namespace Amazon.LexModelsV2.Model
         IListBuiltInSlotTypesPaginator ListBuiltInSlotTypes(ListBuiltInSlotTypesRequest request);
 
         /// <summary>
+        /// Paginator for ListCustomVocabularyItems operation
+        ///</summary>
+        IListCustomVocabularyItemsPaginator ListCustomVocabularyItems(ListCustomVocabularyItemsRequest request);
+
+        /// <summary>
         /// Paginator for ListExports operation
         ///</summary>
         IListExportsPaginator ListExports(ListExportsRequest request);
@@ -94,5 +99,25 @@ namespace Amazon.LexModelsV2.Model
         /// Paginator for ListSlotTypes operation
         ///</summary>
         IListSlotTypesPaginator ListSlotTypes(ListSlotTypesRequest request);
+
+        /// <summary>
+        /// Paginator for ListTestExecutionResultItems operation
+        ///</summary>
+        IListTestExecutionResultItemsPaginator ListTestExecutionResultItems(ListTestExecutionResultItemsRequest request);
+
+        /// <summary>
+        /// Paginator for ListTestExecutions operation
+        ///</summary>
+        IListTestExecutionsPaginator ListTestExecutions(ListTestExecutionsRequest request);
+
+        /// <summary>
+        /// Paginator for ListTestSetRecords operation
+        ///</summary>
+        IListTestSetRecordsPaginator ListTestSetRecords(ListTestSetRecordsRequest request);
+
+        /// <summary>
+        /// Paginator for ListTestSets operation
+        ///</summary>
+        IListTestSetsPaginator ListTestSets(ListTestSetsRequest request);
     }
 }

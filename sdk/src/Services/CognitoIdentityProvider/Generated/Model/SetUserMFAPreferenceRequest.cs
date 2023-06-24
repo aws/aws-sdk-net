@@ -31,13 +31,13 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// <summary>
     /// Container for the parameters to the SetUserMFAPreference operation.
     /// Set the user's multi-factor authentication (MFA) method preference, including which
-    /// MFA factors are enabled and if any are preferred. Only one factor can be set as preferred.
-    /// The preferred MFA factor will be used to authenticate a user if multiple factors are
-    /// enabled. If multiple options are enabled and no preference is set, a challenge to
-    /// choose an MFA option will be returned during sign in. If an MFA type is enabled for
-    /// a user, the user will be prompted for MFA during all sign in attempts, unless device
-    /// tracking is turned on and the device has been trusted. If you would like MFA to be
-    /// applied selectively based on the assessed risk level of sign in attempts, disable
+    /// MFA factors are activated and if any are preferred. Only one factor can be set as
+    /// preferred. The preferred MFA factor will be used to authenticate a user if multiple
+    /// factors are activated. If multiple options are activated and no preference is set,
+    /// a challenge to choose an MFA option will be returned during sign-in. If an MFA type
+    /// is activated for a user, the user will be prompted for MFA during all sign-in attempts
+    /// unless device tracking is turned on and the device has been trusted. If you want MFA
+    /// to be applied selectively based on the assessed risk level of sign-in attempts, deactivate
     /// MFA for users and turn on Adaptive Authentication for the user pool.
     /// </summary>
     public partial class SetUserMFAPreferenceRequest : AmazonCognitoIdentityProviderRequest
@@ -49,10 +49,11 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AccessToken. 
         /// <para>
-        /// The access token for the user.
+        /// A valid access token that Amazon Cognito issued to the user whose MFA preference you
+        /// want to set.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public string AccessToken
         {
             get { return this._accessToken; }
@@ -86,7 +87,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property SoftwareTokenMfaSettings. 
         /// <para>
-        /// The time-based one-time password software token MFA settings.
+        /// The time-based one-time password (TOTP) software token MFA settings.
         /// </para>
         /// </summary>
         public SoftwareTokenMfaSettingsType SoftwareTokenMfaSettings

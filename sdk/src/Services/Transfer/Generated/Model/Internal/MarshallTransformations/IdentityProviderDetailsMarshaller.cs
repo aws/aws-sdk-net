@@ -34,7 +34,7 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// IdentityProviderDetails Marshaller
-    /// </summary>       
+    /// </summary>
     public class IdentityProviderDetailsMarshaller : IRequestMarshaller<IdentityProviderDetails, JsonMarshallerContext> 
     {
         /// <summary>
@@ -63,6 +63,12 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.InvocationRole);
             }
 
+            if(requestObject.IsSetSftpAuthenticationMethods())
+            {
+                context.Writer.WritePropertyName("SftpAuthenticationMethods");
+                context.Writer.Write(requestObject.SftpAuthenticationMethods);
+            }
+
             if(requestObject.IsSetUrl())
             {
                 context.Writer.WritePropertyName("Url");
@@ -73,7 +79,7 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static IdentityProviderDetailsMarshaller Instance = new IdentityProviderDetailsMarshaller();
 
     }

@@ -38,8 +38,11 @@ namespace Amazon.Route53RecoveryReadiness.Model
         private List<Recommendation> _recommendations = new List<Recommendation>();
 
         /// <summary>
-        /// Gets and sets the property LastAuditTimestamp. The time a Recovery Group was last
-        /// assessed for recommendations in UTC ISO-8601 format.
+        /// Gets and sets the property LastAuditTimestamp. 
+        /// <para>
+        /// The time that a recovery group was last assessed for recommendations, in UTC ISO-8601
+        /// format.
+        /// </para>
         /// </summary>
         public DateTime LastAuditTimestamp
         {
@@ -54,8 +57,10 @@ namespace Amazon.Route53RecoveryReadiness.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken. A token that can be used to resume pagination
-        /// from the end of the collection
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The token that identifies which batch of results you want to see.
+        /// </para>
         /// </summary>
         public string NextToken
         {
@@ -70,8 +75,10 @@ namespace Amazon.Route53RecoveryReadiness.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Recommendations. A list of recommendations for the customer's
-        /// application
+        /// Gets and sets the property Recommendations. 
+        /// <para>
+        /// A list of the recommendations for the customer's application.
+        /// </para>
         /// </summary>
         public List<Recommendation> Recommendations
         {

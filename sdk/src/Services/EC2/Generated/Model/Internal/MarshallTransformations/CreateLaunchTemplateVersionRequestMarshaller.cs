@@ -139,6 +139,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                     if(publicRequest.LaunchTemplateData.IsSetCpuOptions())
                     {
+                        if(publicRequest.LaunchTemplateData.CpuOptions.IsSetAmdSevSnp())
+                        {
+                            request.Parameters.Add("LaunchTemplateData" + "." + "CpuOptions" + "." + "AmdSevSnp", StringUtils.FromString(publicRequest.LaunchTemplateData.CpuOptions.AmdSevSnp));
+                        }
                         if(publicRequest.LaunchTemplateData.CpuOptions.IsSetCoreCount())
                         {
                             request.Parameters.Add("LaunchTemplateData" + "." + "CpuOptions" + "." + "CoreCount", StringUtils.FromInt(publicRequest.LaunchTemplateData.CpuOptions.CoreCount));
@@ -154,6 +158,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("LaunchTemplateData" + "." + "CreditSpecification" + "." + "CpuCredits", StringUtils.FromString(publicRequest.LaunchTemplateData.CreditSpecification.CpuCredits));
                         }
+                    }
+                    if(publicRequest.LaunchTemplateData.IsSetDisableApiStop())
+                    {
+                        request.Parameters.Add("LaunchTemplateData" + "." + "DisableApiStop", StringUtils.FromBool(publicRequest.LaunchTemplateData.DisableApiStop));
                     }
                     if(publicRequest.LaunchTemplateData.IsSetDisableApiTermination())
                     {
@@ -305,6 +313,15 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                 publicRequestLaunchTemplateDataInstanceRequirementslistValueIndex++;
                             }
                         }
+                        if(publicRequest.LaunchTemplateData.InstanceRequirements.IsSetAllowedInstanceTypes())
+                        {
+                            int publicRequestLaunchTemplateDataInstanceRequirementslistValueIndex = 1;
+                            foreach(var publicRequestLaunchTemplateDataInstanceRequirementslistValue in publicRequest.LaunchTemplateData.InstanceRequirements.AllowedInstanceTypes)
+                            {
+                                request.Parameters.Add("LaunchTemplateData" + "." + "InstanceRequirements" + "." + "AllowedInstanceType" + "." + publicRequestLaunchTemplateDataInstanceRequirementslistValueIndex, StringUtils.FromString(publicRequestLaunchTemplateDataInstanceRequirementslistValue));
+                                publicRequestLaunchTemplateDataInstanceRequirementslistValueIndex++;
+                            }
+                        }
                         if(publicRequest.LaunchTemplateData.InstanceRequirements.IsSetBareMetal())
                         {
                             request.Parameters.Add("LaunchTemplateData" + "." + "InstanceRequirements" + "." + "BareMetal", StringUtils.FromString(publicRequest.LaunchTemplateData.InstanceRequirements.BareMetal));
@@ -386,6 +403,17 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                 request.Parameters.Add("LaunchTemplateData" + "." + "InstanceRequirements" + "." + "MemoryMiB" + "." + "Min", StringUtils.FromInt(publicRequest.LaunchTemplateData.InstanceRequirements.MemoryMiB.Min));
                             }
                         }
+                        if(publicRequest.LaunchTemplateData.InstanceRequirements.IsSetNetworkBandwidthGbps())
+                        {
+                            if(publicRequest.LaunchTemplateData.InstanceRequirements.NetworkBandwidthGbps.IsSetMax())
+                            {
+                                request.Parameters.Add("LaunchTemplateData" + "." + "InstanceRequirements" + "." + "NetworkBandwidthGbps" + "." + "Max", StringUtils.FromDouble(publicRequest.LaunchTemplateData.InstanceRequirements.NetworkBandwidthGbps.Max));
+                            }
+                            if(publicRequest.LaunchTemplateData.InstanceRequirements.NetworkBandwidthGbps.IsSetMin())
+                            {
+                                request.Parameters.Add("LaunchTemplateData" + "." + "InstanceRequirements" + "." + "NetworkBandwidthGbps" + "." + "Min", StringUtils.FromDouble(publicRequest.LaunchTemplateData.InstanceRequirements.NetworkBandwidthGbps.Min));
+                            }
+                        }
                         if(publicRequest.LaunchTemplateData.InstanceRequirements.IsSetNetworkInterfaceCount())
                         {
                             if(publicRequest.LaunchTemplateData.InstanceRequirements.NetworkInterfaceCount.IsSetMax())
@@ -456,6 +484,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                             publicRequestLaunchTemplateDatalistValueIndex++;
                         }
                     }
+                    if(publicRequest.LaunchTemplateData.IsSetMaintenanceOptions())
+                    {
+                        if(publicRequest.LaunchTemplateData.MaintenanceOptions.IsSetAutoRecovery())
+                        {
+                            request.Parameters.Add("LaunchTemplateData" + "." + "MaintenanceOptions" + "." + "AutoRecovery", StringUtils.FromString(publicRequest.LaunchTemplateData.MaintenanceOptions.AutoRecovery));
+                        }
+                    }
                     if(publicRequest.LaunchTemplateData.IsSetMetadataOptions())
                     {
                         if(publicRequest.LaunchTemplateData.MetadataOptions.IsSetHttpEndpoint())
@@ -473,6 +508,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         if(publicRequest.LaunchTemplateData.MetadataOptions.IsSetHttpTokens())
                         {
                             request.Parameters.Add("LaunchTemplateData" + "." + "MetadataOptions" + "." + "HttpTokens", StringUtils.FromString(publicRequest.LaunchTemplateData.MetadataOptions.HttpTokens));
+                        }
+                        if(publicRequest.LaunchTemplateData.MetadataOptions.IsSetInstanceMetadataTags())
+                        {
+                            request.Parameters.Add("LaunchTemplateData" + "." + "MetadataOptions" + "." + "InstanceMetadataTags", StringUtils.FromString(publicRequest.LaunchTemplateData.MetadataOptions.InstanceMetadataTags));
                         }
                     }
                     if(publicRequest.LaunchTemplateData.IsSetMonitoring())
@@ -617,6 +656,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("LaunchTemplateData" + "." + "Placement" + "." + "AvailabilityZone", StringUtils.FromString(publicRequest.LaunchTemplateData.Placement.AvailabilityZone));
                         }
+                        if(publicRequest.LaunchTemplateData.Placement.IsSetGroupId())
+                        {
+                            request.Parameters.Add("LaunchTemplateData" + "." + "Placement" + "." + "GroupId", StringUtils.FromString(publicRequest.LaunchTemplateData.Placement.GroupId));
+                        }
                         if(publicRequest.LaunchTemplateData.Placement.IsSetGroupName())
                         {
                             request.Parameters.Add("LaunchTemplateData" + "." + "Placement" + "." + "GroupName", StringUtils.FromString(publicRequest.LaunchTemplateData.Placement.GroupName));
@@ -719,6 +762,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetLaunchTemplateName())
                 {
                     request.Parameters.Add("LaunchTemplateName", StringUtils.FromString(publicRequest.LaunchTemplateName));
+                }
+                if(publicRequest.IsSetResolveAlias())
+                {
+                    request.Parameters.Add("ResolveAlias", StringUtils.FromBool(publicRequest.ResolveAlias));
                 }
                 if(publicRequest.IsSetSourceVersion())
                 {

@@ -29,10 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// An object that specifies organization managed rule metadata such as resource type
-    /// and ID of Amazon Web Services resource along with the rule identifier. It also provides
-    /// the frequency with which you want Config to run evaluations for the rule if the trigger
-    /// type is periodic.
+    /// organization managed rule metadata such as resource type and ID of Amazon Web Services
+    /// resource along with the rule identifier. It also provides the frequency with which
+    /// you want Config to run evaluations for the rule if the trigger type is periodic.
     /// </summary>
     public partial class OrganizationManagedRuleMetadata
     {
@@ -48,7 +47,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description that you provide for organization config rule.
+        /// The description that you provide for your organization Config rule.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=256)]
@@ -67,7 +66,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property InputParameters. 
         /// <para>
-        /// A string, in JSON format, that is passed to organization config rule Lambda function.
+        /// A string, in JSON format, that is passed to your organization Config rule Lambda function.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
@@ -86,8 +85,8 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property MaximumExecutionFrequency. 
         /// <para>
-        /// The maximum frequency with which Config runs evaluations for a rule. You are using
-        /// an Config managed rule that is triggered at a periodic frequency.
+        /// The maximum frequency with which Config runs evaluations for a rule. This is for an
+        /// Config managed rule that is triggered at a periodic frequency.
         /// </para>
         ///  <note> 
         /// <para>

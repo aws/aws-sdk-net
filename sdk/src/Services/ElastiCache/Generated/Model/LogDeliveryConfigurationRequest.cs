@@ -116,7 +116,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property LogType. 
         /// <para>
-        /// Refers to <a href="https://redis.io/commands/slowlog">slow-log</a>.
+        /// Refers to <a href="https://redis.io/commands/slowlog">slow-log</a> or engine-log..
         /// </para>
         /// </summary>
         public LogType LogType

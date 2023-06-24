@@ -56,7 +56,7 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.AppSync");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-07-25";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-07-25";
             request.HttpMethod = "POST";
 
             if (!publicRequest.IsSetApiId())
@@ -112,6 +112,12 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetMergedApiExecutionRoleArn())
+                {
+                    context.Writer.WritePropertyName("mergedApiExecutionRoleArn");
+                    context.Writer.Write(publicRequest.MergedApiExecutionRoleArn);
+                }
+
                 if(publicRequest.IsSetName())
                 {
                     context.Writer.WritePropertyName("name");
@@ -127,6 +133,12 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
                     marshaller.Marshall(publicRequest.OpenIDConnectConfig, context);
 
                     context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetOwnerContact())
+                {
+                    context.Writer.WritePropertyName("ownerContact");
+                    context.Writer.Write(publicRequest.OwnerContact);
                 }
 
                 if(publicRequest.IsSetUserPoolConfig())
@@ -146,7 +158,6 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.XrayEnabled);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

@@ -51,6 +51,12 @@ namespace Amazon.CloudWatchEvidently.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("details", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Details = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("reports", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<ExperimentReport, ExperimentReportUnmarshaller>(ExperimentReportUnmarshaller.Instance);

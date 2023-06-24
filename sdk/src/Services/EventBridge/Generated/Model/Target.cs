@@ -142,13 +142,13 @@ namespace Amazon.EventBridge.Model
         /// <summary>
         /// Gets and sets the property HttpParameters. 
         /// <para>
-        /// Contains the HTTP parameters to use when the target is a API Gateway REST endpoint
-        /// or EventBridge ApiDestination.
+        /// Contains the HTTP parameters to use when the target is a API Gateway endpoint or EventBridge
+        /// ApiDestination.
         /// </para>
         ///  
         /// <para>
-        /// If you specify an API Gateway REST API or EventBridge ApiDestination as a target,
-        /// you can use this parameter to specify headers, path parameters, and query string keys/values
+        /// If you specify an API Gateway API or EventBridge ApiDestination as a target, you can
+        /// use this parameter to specify headers, path parameters, and query string keys/values
         /// as part of your target invoking request. If you're using ApiDestinations, the corresponding
         /// Connection can also have these values configured. In case of any conflicting keys,
         /// values from the Connection take precedence.
@@ -169,7 +169,8 @@ namespace Amazon.EventBridge.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The ID of the target. We recommend using a memorable and unique string.
+        /// The ID of the target within the specified rule. Use this ID to reference the target
+        /// when updating the rule. We recommend using a memorable and unique string.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]
@@ -210,8 +211,8 @@ namespace Amazon.EventBridge.Model
         /// Gets and sets the property InputPath. 
         /// <para>
         /// The value of the JSONPath that is used for extracting part of the matched event when
-        /// passing it to the target. You must use JSON dot notation, not bracket notation. For
-        /// more information about JSON paths, see <a href="http://goessner.net/articles/JsonPath/">JSONPath</a>.
+        /// passing it to the target. You may use JSON dot notation or bracket notation. For more
+        /// information about JSON paths, see <a href="http://goessner.net/articles/JsonPath/">JSONPath</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=256)]

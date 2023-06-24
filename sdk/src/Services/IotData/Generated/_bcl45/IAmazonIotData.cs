@@ -170,7 +170,7 @@ namespace Amazon.IotData
         ///  
         /// <para>
         /// This action returns the message payload of the retained message, which can incur messaging
-        /// costs. To list only the topic names of the retained messages, call <a href="/iot/latest/developerguide/API_iotdata_ListRetainedMessages.html">ListRetainedMessages</a>.
+        /// costs. To list only the topic names of the retained messages, call <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_iotdata_ListRetainedMessages.html">ListRetainedMessages</a>.
         /// </para>
         ///  
         /// <para>
@@ -179,8 +179,8 @@ namespace Amazon.IotData
         /// </para>
         ///  
         /// <para>
-        /// For more information about messaging costs, see <a href="http://aws.amazon.com/iot-core/pricing/#Messaging">IoT
-        /// Core pricing - Messaging</a>.
+        /// For more information about messaging costs, see <a href="http://aws.amazon.com/iot-core/pricing/#Messaging">Amazon
+        /// Web Services IoT Core pricing - Messaging</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetRetainedMessage service method.</param>
@@ -218,7 +218,7 @@ namespace Amazon.IotData
         ///  
         /// <para>
         /// This action returns the message payload of the retained message, which can incur messaging
-        /// costs. To list only the topic names of the retained messages, call <a href="/iot/latest/developerguide/API_iotdata_ListRetainedMessages.html">ListRetainedMessages</a>.
+        /// costs. To list only the topic names of the retained messages, call <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_iotdata_ListRetainedMessages.html">ListRetainedMessages</a>.
         /// </para>
         ///  
         /// <para>
@@ -227,8 +227,8 @@ namespace Amazon.IotData
         /// </para>
         ///  
         /// <para>
-        /// For more information about messaging costs, see <a href="http://aws.amazon.com/iot-core/pricing/#Messaging">IoT
-        /// Core pricing - Messaging</a>.
+        /// For more information about messaging costs, see <a href="http://aws.amazon.com/iot-core/pricing/#Messaging">Amazon
+        /// Web Services IoT Core pricing - Messaging</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetRetainedMessage service method.</param>
@@ -457,7 +457,7 @@ namespace Amazon.IotData
         /// </para>
         ///  
         /// <para>
-        /// To get the message payload of a retained message, call <a href="https://docs.aws.amazon.com/iot/latest/developerguide/API_iotdata_GetRetainedMessage.html">GetRetainedMessage</a>
+        /// To get the message payload of a retained message, call <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_iotdata_GetRetainedMessage.html">GetRetainedMessage</a>
         /// with the topic name of the retained message.
         /// </para>
         ///  
@@ -467,8 +467,8 @@ namespace Amazon.IotData
         /// </para>
         ///  
         /// <para>
-        /// For more information about messaging costs, see <a href="http://aws.amazon.com/iot-core/pricing/#Messaging">IoT
-        /// Core pricing - Messaging</a>.
+        /// For more information about messaging costs, see <a href="http://aws.amazon.com/iot-core/pricing/#Messaging">Amazon
+        /// Web Services IoT Core pricing - Messaging</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListRetainedMessages service method.</param>
@@ -508,7 +508,7 @@ namespace Amazon.IotData
         /// </para>
         ///  
         /// <para>
-        /// To get the message payload of a retained message, call <a href="https://docs.aws.amazon.com/iot/latest/developerguide/API_iotdata_GetRetainedMessage.html">GetRetainedMessage</a>
+        /// To get the message payload of a retained message, call <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_iotdata_GetRetainedMessage.html">GetRetainedMessage</a>
         /// with the topic name of the retained message.
         /// </para>
         ///  
@@ -518,8 +518,8 @@ namespace Amazon.IotData
         /// </para>
         ///  
         /// <para>
-        /// For more information about messaging costs, see <a href="http://aws.amazon.com/iot-core/pricing/#Messaging">IoT
-        /// Core pricing - Messaging</a>.
+        /// For more information about messaging costs, see <a href="http://aws.amazon.com/iot-core/pricing/#Messaging">Amazon
+        /// Web Services IoT Core pricing - Messaging</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListRetainedMessages service method.</param>
@@ -569,8 +569,8 @@ namespace Amazon.IotData
         /// </para>
         ///  
         /// <para>
-        /// For more information about messaging costs, see <a href="http://aws.amazon.com/iot-core/pricing/#Messaging">IoT
-        /// Core pricing - Messaging</a>.
+        /// For more information about messaging costs, see <a href="http://aws.amazon.com/iot-core/pricing/#Messaging">Amazon
+        /// Web Services IoT Core pricing - Messaging</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the Publish service method.</param>
@@ -584,6 +584,9 @@ namespace Amazon.IotData
         /// </exception>
         /// <exception cref="Amazon.IotData.Model.MethodNotAllowedException">
         /// The specified combination of HTTP verb and URI is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.IotData.Model.ThrottlingException">
+        /// The rate exceeds the limit.
         /// </exception>
         /// <exception cref="Amazon.IotData.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
@@ -608,8 +611,8 @@ namespace Amazon.IotData
         /// </para>
         ///  
         /// <para>
-        /// For more information about messaging costs, see <a href="http://aws.amazon.com/iot-core/pricing/#Messaging">IoT
-        /// Core pricing - Messaging</a>.
+        /// For more information about messaging costs, see <a href="http://aws.amazon.com/iot-core/pricing/#Messaging">Amazon
+        /// Web Services IoT Core pricing - Messaging</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the Publish service method.</param>
@@ -626,6 +629,9 @@ namespace Amazon.IotData
         /// </exception>
         /// <exception cref="Amazon.IotData.Model.MethodNotAllowedException">
         /// The specified combination of HTTP verb and URI is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.IotData.Model.ThrottlingException">
+        /// The rate exceeds the limit.
         /// </exception>
         /// <exception cref="Amazon.IotData.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.

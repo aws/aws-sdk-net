@@ -30,7 +30,9 @@ namespace Amazon.Route53RecoveryReadiness.Model
 {
     /// <summary>
     /// Container for the parameters to the GetReadinessCheckStatus operation.
-    /// Returns information about the status of a Readiness Check.
+    /// Gets the readiness status for an individual readiness check. To see the overall readiness
+    /// status for a recovery group, that considers the readiness status for all the readiness
+    /// checks in a recovery group, use GetRecoveryGroupReadinessSummary.
     /// </summary>
     public partial class GetReadinessCheckStatusRequest : AmazonRoute53RecoveryReadinessRequest
     {
@@ -39,7 +41,10 @@ namespace Amazon.Route53RecoveryReadiness.Model
         private string _readinessCheckName;
 
         /// <summary>
-        /// Gets and sets the property MaxResults. Upper bound on number of records to return.
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// The number of objects that you want to return with this call.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
         public int MaxResults
@@ -55,8 +60,10 @@ namespace Amazon.Route53RecoveryReadiness.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken. A token used to resume pagination from the end
-        /// of a previous request.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The token that identifies which batch of results you want to see.
+        /// </para>
         /// </summary>
         public string NextToken
         {
@@ -71,7 +78,10 @@ namespace Amazon.Route53RecoveryReadiness.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ReadinessCheckName. The ReadinessCheck to get
+        /// Gets and sets the property ReadinessCheckName. 
+        /// <para>
+        /// Name of a readiness check.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string ReadinessCheckName

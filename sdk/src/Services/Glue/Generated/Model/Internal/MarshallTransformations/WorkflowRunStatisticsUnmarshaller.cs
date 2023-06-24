@@ -64,6 +64,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("ErroredActions", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.ErroredActions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("FailedActions", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
@@ -98,6 +104,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
                     unmarshalledObject.TotalActions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("WaitingActions", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.WaitingActions = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

@@ -31,21 +31,17 @@ namespace Amazon.IoTTwinMaker.Model
     /// <summary>
     /// Container for the parameters to the CreateComponentType operation.
     /// Creates a component type.
-    /// 
-    ///  <important> 
-    /// <para>
-    ///  TwinMaker is in public preview and is subject to change. 
-    /// </para>
-    ///  </important>
     /// </summary>
     public partial class CreateComponentTypeRequest : AmazonIoTTwinMakerRequest
     {
         private string _componentTypeId;
+        private string _componentTypeName;
         private string _description;
         private List<string> _extendsFrom = new List<string>();
         private Dictionary<string, FunctionRequest> _functions = new Dictionary<string, FunctionRequest>();
         private bool? _isSingleton;
         private Dictionary<string, PropertyDefinitionRequest> _propertyDefinitions = new Dictionary<string, PropertyDefinitionRequest>();
+        private Dictionary<string, PropertyGroupRequest> _propertyGroups = new Dictionary<string, PropertyGroupRequest>();
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private string _workspaceId;
 
@@ -69,12 +65,31 @@ namespace Amazon.IoTTwinMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ComponentTypeName. 
+        /// <para>
+        /// A friendly name for the component type.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=256)]
+        public string ComponentTypeName
+        {
+            get { return this._componentTypeName; }
+            set { this._componentTypeName = value; }
+        }
+
+        // Check to see if ComponentTypeName property is set
+        internal bool IsSetComponentTypeName()
+        {
+            return this._componentTypeName != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
         /// The description of the component type.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=512)]
+        [AWSProperty(Min=0, Max=2048)]
         public string Description
         {
             get { return this._description; }
@@ -160,6 +175,21 @@ namespace Amazon.IoTTwinMaker.Model
         internal bool IsSetPropertyDefinitions()
         {
             return this._propertyDefinitions != null && this._propertyDefinitions.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PropertyGroups.
+        /// </summary>
+        public Dictionary<string, PropertyGroupRequest> PropertyGroups
+        {
+            get { return this._propertyGroups; }
+            set { this._propertyGroups = value; }
+        }
+
+        // Check to see if PropertyGroups property is set
+        internal bool IsSetPropertyGroups()
+        {
+            return this._propertyGroups != null && this._propertyGroups.Count > 0; 
         }
 
         /// <summary>

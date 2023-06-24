@@ -34,7 +34,7 @@ namespace Amazon.MTurk.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ParameterMapEntry Marshaller
-    /// </summary>       
+    /// </summary>
     public class ParameterMapEntryMarshaller : IRequestMarshaller<ParameterMapEntry, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.MTurk.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ParameterMapEntryMarshaller Instance = new ParameterMapEntryMarshaller();
 
     }

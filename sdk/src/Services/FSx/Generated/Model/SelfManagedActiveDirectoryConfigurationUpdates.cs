@@ -29,20 +29,24 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FSx.Model
 {
     /// <summary>
-    /// The configuration that Amazon FSx uses to join the Windows File Server instance to
-    /// a self-managed Microsoft Active Directory (AD) directory.
+    /// Specifies changes you are making to the self-managed Microsoft Active Directory (AD)
+    /// configuration to which an FSx for Windows File Server file system or an FSx for ONTAP
+    /// SVM is joined.
     /// </summary>
     public partial class SelfManagedActiveDirectoryConfigurationUpdates
     {
         private List<string> _dnsIps = new List<string>();
+        private string _domainName;
+        private string _fileSystemAdministratorsGroup;
+        private string _organizationalUnitDistinguishedName;
         private string _password;
         private string _userName;
 
         /// <summary>
         /// Gets and sets the property DnsIps. 
         /// <para>
-        /// A list of up to three IP addresses of DNS servers or domain controllers in the self-managed
-        /// AD directory.
+        /// A list of up to three DNS server or domain controller IP addresses in your self-managed
+        /// AD domain.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=3)]
@@ -59,13 +63,72 @@ namespace Amazon.FSx.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Password. 
+        /// Gets and sets the property DomainName. 
         /// <para>
-        /// The password for the service account on your self-managed AD domain that Amazon FSx
-        /// will use to join to your AD domain.
+        /// Specifies an updated fully qualified domain name of your self-managed AD configuration.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string DomainName
+        {
+            get { return this._domainName; }
+            set { this._domainName = value; }
+        }
+
+        // Check to see if DomainName property is set
+        internal bool IsSetDomainName()
+        {
+            return this._domainName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FileSystemAdministratorsGroup. 
+        /// <para>
+        /// Specifies the updated name of the self-managed AD domain group whose members are granted
+        /// administrative privileges for the Amazon FSx resource.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
+        public string FileSystemAdministratorsGroup
+        {
+            get { return this._fileSystemAdministratorsGroup; }
+            set { this._fileSystemAdministratorsGroup = value; }
+        }
+
+        // Check to see if FileSystemAdministratorsGroup property is set
+        internal bool IsSetFileSystemAdministratorsGroup()
+        {
+            return this._fileSystemAdministratorsGroup != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OrganizationalUnitDistinguishedName. 
+        /// <para>
+        /// Specifies an updated fully qualified distinguished name of the organization unit within
+        /// your self-managed AD.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2000)]
+        public string OrganizationalUnitDistinguishedName
+        {
+            get { return this._organizationalUnitDistinguishedName; }
+            set { this._organizationalUnitDistinguishedName = value; }
+        }
+
+        // Check to see if OrganizationalUnitDistinguishedName property is set
+        internal bool IsSetOrganizationalUnitDistinguishedName()
+        {
+            return this._organizationalUnitDistinguishedName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Password. 
+        /// <para>
+        /// Specifies the updated password for the service account on your self-managed AD domain.
+        /// Amazon FSx uses this account to join to your self-managed AD domain.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Min=1, Max=256)]
         public string Password
         {
             get { return this._password; }
@@ -81,9 +144,13 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property UserName. 
         /// <para>
-        /// The user name for the service account on your self-managed AD domain that Amazon FSx
-        /// will use to join to your AD domain. This account must have the permission to join
-        /// computers to the domain in the organizational unit provided in <code>OrganizationalUnitDistinguishedName</code>.
+        /// Specifies the updated user name for the service account on your self-managed AD domain.
+        /// Amazon FSx uses this account to join to your self-managed AD domain.
+        /// </para>
+        ///  
+        /// <para>
+        /// This account must have the permissions required to join computers to the domain in
+        /// the organizational unit provided in <code>OrganizationalUnitDistinguishedName</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]

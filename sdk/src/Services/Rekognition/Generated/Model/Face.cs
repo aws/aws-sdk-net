@@ -39,6 +39,8 @@ namespace Amazon.Rekognition.Model
         private string _externalImageId;
         private string _faceId;
         private string _imageId;
+        private string _indexFacesModelVersion;
+        private string _userId;
 
         /// <summary>
         /// Gets and sets the property BoundingBox. 
@@ -131,6 +133,44 @@ namespace Amazon.Rekognition.Model
         internal bool IsSetImageId()
         {
             return this._imageId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IndexFacesModelVersion. 
+        /// <para>
+        ///  The version of the face detect and storage model that was used when indexing the
+        /// face vector. 
+        /// </para>
+        /// </summary>
+        public string IndexFacesModelVersion
+        {
+            get { return this._indexFacesModelVersion; }
+            set { this._indexFacesModelVersion = value; }
+        }
+
+        // Check to see if IndexFacesModelVersion property is set
+        internal bool IsSetIndexFacesModelVersion()
+        {
+            return this._indexFacesModelVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UserId. 
+        /// <para>
+        /// Unique identifier assigned to the user.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=128)]
+        public string UserId
+        {
+            get { return this._userId; }
+            set { this._userId = value; }
+        }
+
+        // Check to see if UserId property is set
+        internal bool IsSetUserId()
+        {
+            return this._userId != null;
         }
 
     }

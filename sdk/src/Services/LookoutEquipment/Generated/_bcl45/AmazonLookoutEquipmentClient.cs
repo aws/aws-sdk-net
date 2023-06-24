@@ -230,6 +230,15 @@ namespace Amazon.LookoutEquipment
         }    
 
         /// <summary>
+        /// Customize the pipeline
+        /// </summary>
+        /// <param name="pipeline"></param>
+        protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
+        {
+            pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonLookoutEquipmentEndpointResolver());
+        }    
+        /// <summary>
         /// Capture metadata for the service.
         /// </summary>
         protected override IServiceMetadata ServiceMetadata
@@ -441,6 +450,176 @@ namespace Amazon.LookoutEquipment
 
         #endregion
         
+        #region  CreateLabel
+
+
+        /// <summary>
+        /// Creates a label for an event.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateLabel service method.</param>
+        /// 
+        /// <returns>The response from the CreateLabel service method, as returned by LookoutEquipment.</returns>
+        /// <exception cref="Amazon.LookoutEquipment.Model.AccessDeniedException">
+        /// The request could not be completed because you do not have access to the resource.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.InternalServerException">
+        /// Processing of the request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ResourceNotFoundException">
+        /// The resource requested could not be found. Verify the resource ID and retry your
+        /// request.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ServiceQuotaExceededException">
+        /// Resource limitations have been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
+        /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
+        /// or a related AWS service that's being utilized.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/CreateLabel">REST API Reference for CreateLabel Operation</seealso>
+        public virtual CreateLabelResponse CreateLabel(CreateLabelRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateLabelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateLabelResponseUnmarshaller.Instance;
+
+            return Invoke<CreateLabelResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a label for an event.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateLabel service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateLabel service method, as returned by LookoutEquipment.</returns>
+        /// <exception cref="Amazon.LookoutEquipment.Model.AccessDeniedException">
+        /// The request could not be completed because you do not have access to the resource.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.InternalServerException">
+        /// Processing of the request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ResourceNotFoundException">
+        /// The resource requested could not be found. Verify the resource ID and retry your
+        /// request.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ServiceQuotaExceededException">
+        /// Resource limitations have been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
+        /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
+        /// or a related AWS service that's being utilized.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/CreateLabel">REST API Reference for CreateLabel Operation</seealso>
+        public virtual Task<CreateLabelResponse> CreateLabelAsync(CreateLabelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateLabelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateLabelResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateLabelResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateLabelGroup
+
+
+        /// <summary>
+        /// Creates a group of labels.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateLabelGroup service method.</param>
+        /// 
+        /// <returns>The response from the CreateLabelGroup service method, as returned by LookoutEquipment.</returns>
+        /// <exception cref="Amazon.LookoutEquipment.Model.AccessDeniedException">
+        /// The request could not be completed because you do not have access to the resource.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.InternalServerException">
+        /// Processing of the request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ServiceQuotaExceededException">
+        /// Resource limitations have been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
+        /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
+        /// or a related AWS service that's being utilized.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/CreateLabelGroup">REST API Reference for CreateLabelGroup Operation</seealso>
+        public virtual CreateLabelGroupResponse CreateLabelGroup(CreateLabelGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateLabelGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateLabelGroupResponseUnmarshaller.Instance;
+
+            return Invoke<CreateLabelGroupResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a group of labels.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateLabelGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateLabelGroup service method, as returned by LookoutEquipment.</returns>
+        /// <exception cref="Amazon.LookoutEquipment.Model.AccessDeniedException">
+        /// The request could not be completed because you do not have access to the resource.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.InternalServerException">
+        /// Processing of the request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ServiceQuotaExceededException">
+        /// Resource limitations have been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
+        /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
+        /// or a related AWS service that's being utilized.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/CreateLabelGroup">REST API Reference for CreateLabelGroup Operation</seealso>
+        public virtual Task<CreateLabelGroupResponse> CreateLabelGroupAsync(CreateLabelGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateLabelGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateLabelGroupResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateLabelGroupResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateModel
 
 
@@ -590,6 +769,10 @@ namespace Amazon.LookoutEquipment
         /// <exception cref="Amazon.LookoutEquipment.Model.ThrottlingException">
         /// The request was denied due to request throttling.
         /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
+        /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
+        /// or a related AWS service that's being utilized.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteDataset">REST API Reference for DeleteDataset Operation</seealso>
         public virtual DeleteDatasetResponse DeleteDataset(DeleteDatasetRequest request)
         {
@@ -630,6 +813,10 @@ namespace Amazon.LookoutEquipment
         /// </exception>
         /// <exception cref="Amazon.LookoutEquipment.Model.ThrottlingException">
         /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
+        /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
+        /// or a related AWS service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteDataset">REST API Reference for DeleteDataset Operation</seealso>
         public virtual Task<DeleteDatasetResponse> DeleteDatasetAsync(DeleteDatasetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -728,6 +915,172 @@ namespace Amazon.LookoutEquipment
 
         #endregion
         
+        #region  DeleteLabel
+
+
+        /// <summary>
+        /// Deletes a label.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLabel service method.</param>
+        /// 
+        /// <returns>The response from the DeleteLabel service method, as returned by LookoutEquipment.</returns>
+        /// <exception cref="Amazon.LookoutEquipment.Model.AccessDeniedException">
+        /// The request could not be completed because you do not have access to the resource.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.InternalServerException">
+        /// Processing of the request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ResourceNotFoundException">
+        /// The resource requested could not be found. Verify the resource ID and retry your
+        /// request.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
+        /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
+        /// or a related AWS service that's being utilized.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteLabel">REST API Reference for DeleteLabel Operation</seealso>
+        public virtual DeleteLabelResponse DeleteLabel(DeleteLabelRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteLabelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteLabelResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteLabelResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes a label.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLabel service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteLabel service method, as returned by LookoutEquipment.</returns>
+        /// <exception cref="Amazon.LookoutEquipment.Model.AccessDeniedException">
+        /// The request could not be completed because you do not have access to the resource.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.InternalServerException">
+        /// Processing of the request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ResourceNotFoundException">
+        /// The resource requested could not be found. Verify the resource ID and retry your
+        /// request.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
+        /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
+        /// or a related AWS service that's being utilized.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteLabel">REST API Reference for DeleteLabel Operation</seealso>
+        public virtual Task<DeleteLabelResponse> DeleteLabelAsync(DeleteLabelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteLabelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteLabelResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteLabelResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteLabelGroup
+
+
+        /// <summary>
+        /// Deletes a group of labels.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLabelGroup service method.</param>
+        /// 
+        /// <returns>The response from the DeleteLabelGroup service method, as returned by LookoutEquipment.</returns>
+        /// <exception cref="Amazon.LookoutEquipment.Model.AccessDeniedException">
+        /// The request could not be completed because you do not have access to the resource.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.InternalServerException">
+        /// Processing of the request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ResourceNotFoundException">
+        /// The resource requested could not be found. Verify the resource ID and retry your
+        /// request.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
+        /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
+        /// or a related AWS service that's being utilized.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteLabelGroup">REST API Reference for DeleteLabelGroup Operation</seealso>
+        public virtual DeleteLabelGroupResponse DeleteLabelGroup(DeleteLabelGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteLabelGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteLabelGroupResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteLabelGroupResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes a group of labels.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLabelGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteLabelGroup service method, as returned by LookoutEquipment.</returns>
+        /// <exception cref="Amazon.LookoutEquipment.Model.AccessDeniedException">
+        /// The request could not be completed because you do not have access to the resource.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.InternalServerException">
+        /// Processing of the request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ResourceNotFoundException">
+        /// The resource requested could not be found. Verify the resource ID and retry your
+        /// request.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
+        /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
+        /// or a related AWS service that's being utilized.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteLabelGroup">REST API Reference for DeleteLabelGroup Operation</seealso>
+        public virtual Task<DeleteLabelGroupResponse> DeleteLabelGroupAsync(DeleteLabelGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteLabelGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteLabelGroupResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteLabelGroupResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteModel
 
 
@@ -755,6 +1108,10 @@ namespace Amazon.LookoutEquipment
         /// </exception>
         /// <exception cref="Amazon.LookoutEquipment.Model.ThrottlingException">
         /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
+        /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
+        /// or a related AWS service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteModel">REST API Reference for DeleteModel Operation</seealso>
         public virtual DeleteModelResponse DeleteModel(DeleteModelRequest request)
@@ -795,6 +1152,10 @@ namespace Amazon.LookoutEquipment
         /// <exception cref="Amazon.LookoutEquipment.Model.ThrottlingException">
         /// The request was denied due to request throttling.
         /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
+        /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
+        /// or a related AWS service that's being utilized.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteModel">REST API Reference for DeleteModel Operation</seealso>
         public virtual Task<DeleteModelResponse> DeleteModelAsync(DeleteModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -812,7 +1173,7 @@ namespace Amazon.LookoutEquipment
 
         /// <summary>
         /// Provides information on a specific data ingestion job such as creation time, dataset
-        /// ARN, status, and so on.
+        /// ARN, and status.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDataIngestionJob service method.</param>
         /// 
@@ -847,7 +1208,7 @@ namespace Amazon.LookoutEquipment
 
         /// <summary>
         /// Provides information on a specific data ingestion job such as creation time, dataset
-        /// ARN, status, and so on.
+        /// ARN, and status.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDataIngestionJob service method.</param>
         /// <param name="cancellationToken">
@@ -888,8 +1249,8 @@ namespace Amazon.LookoutEquipment
 
 
         /// <summary>
-        /// Provides a JSON description of the data that is in each time series dataset, including
-        /// names, column names, and data types.
+        /// Provides a JSON description of the data in each time series dataset, including names,
+        /// column names, and data types.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDataset service method.</param>
         /// 
@@ -923,8 +1284,8 @@ namespace Amazon.LookoutEquipment
 
 
         /// <summary>
-        /// Provides a JSON description of the data that is in each time series dataset, including
-        /// names, column names, and data types.
+        /// Provides a JSON description of the data in each time series dataset, including names,
+        /// column names, and data types.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDataset service method.</param>
         /// <param name="cancellationToken">
@@ -1034,6 +1395,156 @@ namespace Amazon.LookoutEquipment
             options.ResponseUnmarshaller = DescribeInferenceSchedulerResponseUnmarshaller.Instance;
             
             return InvokeAsync<DescribeInferenceSchedulerResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeLabel
+
+
+        /// <summary>
+        /// Returns the name of the label.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeLabel service method.</param>
+        /// 
+        /// <returns>The response from the DescribeLabel service method, as returned by LookoutEquipment.</returns>
+        /// <exception cref="Amazon.LookoutEquipment.Model.AccessDeniedException">
+        /// The request could not be completed because you do not have access to the resource.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.InternalServerException">
+        /// Processing of the request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ResourceNotFoundException">
+        /// The resource requested could not be found. Verify the resource ID and retry your
+        /// request.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
+        /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
+        /// or a related AWS service that's being utilized.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeLabel">REST API Reference for DescribeLabel Operation</seealso>
+        public virtual DescribeLabelResponse DescribeLabel(DescribeLabelRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeLabelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeLabelResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeLabelResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns the name of the label.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeLabel service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeLabel service method, as returned by LookoutEquipment.</returns>
+        /// <exception cref="Amazon.LookoutEquipment.Model.AccessDeniedException">
+        /// The request could not be completed because you do not have access to the resource.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.InternalServerException">
+        /// Processing of the request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ResourceNotFoundException">
+        /// The resource requested could not be found. Verify the resource ID and retry your
+        /// request.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
+        /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
+        /// or a related AWS service that's being utilized.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeLabel">REST API Reference for DescribeLabel Operation</seealso>
+        public virtual Task<DescribeLabelResponse> DescribeLabelAsync(DescribeLabelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeLabelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeLabelResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeLabelResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeLabelGroup
+
+
+        /// <summary>
+        /// Returns information about the label group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeLabelGroup service method.</param>
+        /// 
+        /// <returns>The response from the DescribeLabelGroup service method, as returned by LookoutEquipment.</returns>
+        /// <exception cref="Amazon.LookoutEquipment.Model.AccessDeniedException">
+        /// The request could not be completed because you do not have access to the resource.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.InternalServerException">
+        /// Processing of the request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ResourceNotFoundException">
+        /// The resource requested could not be found. Verify the resource ID and retry your
+        /// request.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
+        /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
+        /// or a related AWS service that's being utilized.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeLabelGroup">REST API Reference for DescribeLabelGroup Operation</seealso>
+        public virtual DescribeLabelGroupResponse DescribeLabelGroup(DescribeLabelGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeLabelGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeLabelGroupResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeLabelGroupResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns information about the label group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeLabelGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeLabelGroup service method, as returned by LookoutEquipment.</returns>
+        /// <exception cref="Amazon.LookoutEquipment.Model.AccessDeniedException">
+        /// The request could not be completed because you do not have access to the resource.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.InternalServerException">
+        /// Processing of the request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ResourceNotFoundException">
+        /// The resource requested could not be found. Verify the resource ID and retry your
+        /// request.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
+        /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
+        /// or a related AWS service that's being utilized.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeLabelGroup">REST API Reference for DescribeLabelGroup Operation</seealso>
+        public virtual Task<DescribeLabelGroupResponse> DescribeLabelGroupAsync(DescribeLabelGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeLabelGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeLabelGroupResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeLabelGroupResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1251,6 +1762,81 @@ namespace Amazon.LookoutEquipment
 
         #endregion
         
+        #region  ListInferenceEvents
+
+
+        /// <summary>
+        /// Lists all inference events that have been found for the specified inference scheduler.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListInferenceEvents service method.</param>
+        /// 
+        /// <returns>The response from the ListInferenceEvents service method, as returned by LookoutEquipment.</returns>
+        /// <exception cref="Amazon.LookoutEquipment.Model.AccessDeniedException">
+        /// The request could not be completed because you do not have access to the resource.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.InternalServerException">
+        /// Processing of the request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ResourceNotFoundException">
+        /// The resource requested could not be found. Verify the resource ID and retry your
+        /// request.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
+        /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
+        /// or a related AWS service that's being utilized.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListInferenceEvents">REST API Reference for ListInferenceEvents Operation</seealso>
+        public virtual ListInferenceEventsResponse ListInferenceEvents(ListInferenceEventsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListInferenceEventsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListInferenceEventsResponseUnmarshaller.Instance;
+
+            return Invoke<ListInferenceEventsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists all inference events that have been found for the specified inference scheduler.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListInferenceEvents service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListInferenceEvents service method, as returned by LookoutEquipment.</returns>
+        /// <exception cref="Amazon.LookoutEquipment.Model.AccessDeniedException">
+        /// The request could not be completed because you do not have access to the resource.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.InternalServerException">
+        /// Processing of the request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ResourceNotFoundException">
+        /// The resource requested could not be found. Verify the resource ID and retry your
+        /// request.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
+        /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
+        /// or a related AWS service that's being utilized.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListInferenceEvents">REST API Reference for ListInferenceEvents Operation</seealso>
+        public virtual Task<ListInferenceEventsResponse> ListInferenceEventsAsync(ListInferenceEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListInferenceEventsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListInferenceEventsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListInferenceEventsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListInferenceExecutions
 
 
@@ -1395,6 +1981,140 @@ namespace Amazon.LookoutEquipment
 
         #endregion
         
+        #region  ListLabelGroups
+
+
+        /// <summary>
+        /// Returns a list of the label groups.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListLabelGroups service method.</param>
+        /// 
+        /// <returns>The response from the ListLabelGroups service method, as returned by LookoutEquipment.</returns>
+        /// <exception cref="Amazon.LookoutEquipment.Model.AccessDeniedException">
+        /// The request could not be completed because you do not have access to the resource.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.InternalServerException">
+        /// Processing of the request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
+        /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
+        /// or a related AWS service that's being utilized.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListLabelGroups">REST API Reference for ListLabelGroups Operation</seealso>
+        public virtual ListLabelGroupsResponse ListLabelGroups(ListLabelGroupsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListLabelGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListLabelGroupsResponseUnmarshaller.Instance;
+
+            return Invoke<ListLabelGroupsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns a list of the label groups.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListLabelGroups service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListLabelGroups service method, as returned by LookoutEquipment.</returns>
+        /// <exception cref="Amazon.LookoutEquipment.Model.AccessDeniedException">
+        /// The request could not be completed because you do not have access to the resource.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.InternalServerException">
+        /// Processing of the request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
+        /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
+        /// or a related AWS service that's being utilized.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListLabelGroups">REST API Reference for ListLabelGroups Operation</seealso>
+        public virtual Task<ListLabelGroupsResponse> ListLabelGroupsAsync(ListLabelGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListLabelGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListLabelGroupsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListLabelGroupsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListLabels
+
+
+        /// <summary>
+        /// Provides a list of labels.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListLabels service method.</param>
+        /// 
+        /// <returns>The response from the ListLabels service method, as returned by LookoutEquipment.</returns>
+        /// <exception cref="Amazon.LookoutEquipment.Model.AccessDeniedException">
+        /// The request could not be completed because you do not have access to the resource.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.InternalServerException">
+        /// Processing of the request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
+        /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
+        /// or a related AWS service that's being utilized.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListLabels">REST API Reference for ListLabels Operation</seealso>
+        public virtual ListLabelsResponse ListLabels(ListLabelsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListLabelsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListLabelsResponseUnmarshaller.Instance;
+
+            return Invoke<ListLabelsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Provides a list of labels.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListLabels service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListLabels service method, as returned by LookoutEquipment.</returns>
+        /// <exception cref="Amazon.LookoutEquipment.Model.AccessDeniedException">
+        /// The request could not be completed because you do not have access to the resource.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.InternalServerException">
+        /// Processing of the request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
+        /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
+        /// or a related AWS service that's being utilized.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListLabels">REST API Reference for ListLabels Operation</seealso>
+        public virtual Task<ListLabelsResponse> ListLabelsAsync(ListLabelsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListLabelsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListLabelsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListLabelsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListModels
 
 
@@ -1460,6 +2180,85 @@ namespace Amazon.LookoutEquipment
             options.ResponseUnmarshaller = ListModelsResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListModelsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListSensorStatistics
+
+
+        /// <summary>
+        /// Lists statistics about the data collected for each of the sensors that have been
+        /// successfully ingested in the particular dataset. Can also be used to retreive Sensor
+        /// Statistics for a previous ingestion job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSensorStatistics service method.</param>
+        /// 
+        /// <returns>The response from the ListSensorStatistics service method, as returned by LookoutEquipment.</returns>
+        /// <exception cref="Amazon.LookoutEquipment.Model.AccessDeniedException">
+        /// The request could not be completed because you do not have access to the resource.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.InternalServerException">
+        /// Processing of the request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ResourceNotFoundException">
+        /// The resource requested could not be found. Verify the resource ID and retry your
+        /// request.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
+        /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
+        /// or a related AWS service that's being utilized.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListSensorStatistics">REST API Reference for ListSensorStatistics Operation</seealso>
+        public virtual ListSensorStatisticsResponse ListSensorStatistics(ListSensorStatisticsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSensorStatisticsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSensorStatisticsResponseUnmarshaller.Instance;
+
+            return Invoke<ListSensorStatisticsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists statistics about the data collected for each of the sensors that have been
+        /// successfully ingested in the particular dataset. Can also be used to retreive Sensor
+        /// Statistics for a previous ingestion job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSensorStatistics service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListSensorStatistics service method, as returned by LookoutEquipment.</returns>
+        /// <exception cref="Amazon.LookoutEquipment.Model.AccessDeniedException">
+        /// The request could not be completed because you do not have access to the resource.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.InternalServerException">
+        /// Processing of the request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ResourceNotFoundException">
+        /// The resource requested could not be found. Verify the resource ID and retry your
+        /// request.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
+        /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
+        /// or a related AWS service that's being utilized.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListSensorStatistics">REST API Reference for ListSensorStatistics Operation</seealso>
+        public virtual Task<ListSensorStatisticsResponse> ListSensorStatisticsAsync(ListSensorStatisticsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSensorStatisticsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSensorStatisticsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListSensorStatisticsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2037,6 +2836,89 @@ namespace Amazon.LookoutEquipment
             options.ResponseUnmarshaller = UpdateInferenceSchedulerResponseUnmarshaller.Instance;
             
             return InvokeAsync<UpdateInferenceSchedulerResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateLabelGroup
+
+
+        /// <summary>
+        /// Updates the label group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateLabelGroup service method.</param>
+        /// 
+        /// <returns>The response from the UpdateLabelGroup service method, as returned by LookoutEquipment.</returns>
+        /// <exception cref="Amazon.LookoutEquipment.Model.AccessDeniedException">
+        /// The request could not be completed because you do not have access to the resource.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.InternalServerException">
+        /// Processing of the request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ResourceNotFoundException">
+        /// The resource requested could not be found. Verify the resource ID and retry your
+        /// request.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
+        /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
+        /// or a related AWS service that's being utilized.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/UpdateLabelGroup">REST API Reference for UpdateLabelGroup Operation</seealso>
+        public virtual UpdateLabelGroupResponse UpdateLabelGroup(UpdateLabelGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateLabelGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateLabelGroupResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateLabelGroupResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates the label group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateLabelGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateLabelGroup service method, as returned by LookoutEquipment.</returns>
+        /// <exception cref="Amazon.LookoutEquipment.Model.AccessDeniedException">
+        /// The request could not be completed because you do not have access to the resource.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.InternalServerException">
+        /// Processing of the request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ResourceNotFoundException">
+        /// The resource requested could not be found. Verify the resource ID and retry your
+        /// request.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
+        /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
+        /// or a related AWS service that's being utilized.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/UpdateLabelGroup">REST API Reference for UpdateLabelGroup Operation</seealso>
+        public virtual Task<UpdateLabelGroupResponse> UpdateLabelGroupAsync(UpdateLabelGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateLabelGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateLabelGroupResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateLabelGroupResponse>(request, options, cancellationToken);
         }
 
         #endregion

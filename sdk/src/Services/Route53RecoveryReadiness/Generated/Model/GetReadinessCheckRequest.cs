@@ -30,14 +30,17 @@ namespace Amazon.Route53RecoveryReadiness.Model
 {
     /// <summary>
     /// Container for the parameters to the GetReadinessCheck operation.
-    /// Returns information about a ReadinessCheck.
+    /// Gets details about a readiness check.
     /// </summary>
     public partial class GetReadinessCheckRequest : AmazonRoute53RecoveryReadinessRequest
     {
         private string _readinessCheckName;
 
         /// <summary>
-        /// Gets and sets the property ReadinessCheckName. The ReadinessCheck to get
+        /// Gets and sets the property ReadinessCheckName. 
+        /// <para>
+        /// Name of a readiness check.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string ReadinessCheckName

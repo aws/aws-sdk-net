@@ -58,7 +58,7 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
             string target = "StarlingDoveService.DescribeConfigRules";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2014-11-12";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2014-11-12";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -78,13 +78,23 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetFilters())
+                {
+                    context.Writer.WritePropertyName("Filters");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = DescribeConfigRulesFiltersMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Filters, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetNextToken())
                 {
                     context.Writer.WritePropertyName("NextToken");
                     context.Writer.Write(publicRequest.NextToken);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

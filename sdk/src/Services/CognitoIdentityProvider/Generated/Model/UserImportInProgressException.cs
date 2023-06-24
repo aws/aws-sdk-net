@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// This exception is thrown when you are trying to modify a user pool while a user import
+    /// This exception is thrown when you're trying to modify a user pool while a user import
     /// job is in progress for that pool.
     /// </summary>
     #if !NETSTANDARD

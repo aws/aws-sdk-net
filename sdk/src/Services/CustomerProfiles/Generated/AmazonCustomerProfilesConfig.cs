@@ -17,22 +17,22 @@
  * Do not modify this file. This file is generated from the customer-profiles-2020-08-15.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
-
+using Amazon.CustomerProfiles.Internal;
 
 namespace Amazon.CustomerProfiles
 {
     /// <summary>
     /// Configuration for accessing Amazon CustomerProfiles service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonCustomerProfilesConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.4.2");
+            InternalSDKUtils.BuildUserAgentString("3.7.105.5");
 
         private string _userAgent = UserAgentString;
 
@@ -40,8 +40,10 @@ namespace Amazon.CustomerProfiles
         /// Default constructor
         /// </summary>
         public AmazonCustomerProfilesConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonCustomerProfilesDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "profile";
+            this.EndpointProvider = new AmazonCustomerProfilesEndpointProvider();
         }
 
         /// <summary>
@@ -76,5 +78,6 @@ namespace Amazon.CustomerProfiles
                 return _userAgent;
             }
         }
+
     }
 }

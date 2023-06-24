@@ -58,7 +58,7 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
             string target = "GameLift.ClaimGameServer";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-10-01";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-10-01";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -67,6 +67,17 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetFilterOption())
+                {
+                    context.Writer.WritePropertyName("FilterOption");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ClaimFilterOptionMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.FilterOption, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetGameServerData())
                 {
                     context.Writer.WritePropertyName("GameServerData");
@@ -85,7 +96,6 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.GameServerId);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

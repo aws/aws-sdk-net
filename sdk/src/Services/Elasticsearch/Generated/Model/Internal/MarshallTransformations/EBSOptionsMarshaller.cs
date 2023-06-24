@@ -34,7 +34,7 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// EBSOptions Marshaller
-    /// </summary>       
+    /// </summary>
     public class EBSOptionsMarshaller : IRequestMarshaller<EBSOptions, JsonMarshallerContext> 
     {
         /// <summary>
@@ -57,6 +57,12 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Iops);
             }
 
+            if(requestObject.IsSetThroughput())
+            {
+                context.Writer.WritePropertyName("Throughput");
+                context.Writer.Write(requestObject.Throughput);
+            }
+
             if(requestObject.IsSetVolumeSize())
             {
                 context.Writer.WritePropertyName("VolumeSize");
@@ -73,7 +79,7 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static EBSOptionsMarshaller Instance = new EBSOptionsMarshaller();
 
     }

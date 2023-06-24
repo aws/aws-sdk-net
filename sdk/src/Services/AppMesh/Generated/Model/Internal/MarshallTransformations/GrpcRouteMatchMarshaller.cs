@@ -34,7 +34,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// GrpcRouteMatch Marshaller
-    /// </summary>       
+    /// </summary>
     public class GrpcRouteMatchMarshaller : IRequestMarshaller<GrpcRouteMatch, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,6 +67,12 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.MethodName);
             }
 
+            if(requestObject.IsSetPort())
+            {
+                context.Writer.WritePropertyName("port");
+                context.Writer.Write(requestObject.Port);
+            }
+
             if(requestObject.IsSetServiceName())
             {
                 context.Writer.WritePropertyName("serviceName");
@@ -77,7 +83,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static GrpcRouteMatchMarshaller Instance = new GrpcRouteMatchMarshaller();
 
     }

@@ -35,11 +35,38 @@ namespace Amazon.WAFV2.Model
     ///  <note> 
     /// <para>
     /// This operation completely replaces the mutable specifications that you already have
-    /// for the IP set with the ones that you provide to this call. To modify the IP set,
-    /// retrieve it by calling <a>GetIPSet</a>, update the settings as needed, and then provide
-    /// the complete IP set specification to this call.
+    /// for the IP set with the ones that you provide to this call. 
     /// </para>
-    ///  </note>
+    ///  
+    /// <para>
+    /// To modify an IP set, do the following: 
+    /// </para>
+    ///  <ol> <li> 
+    /// <para>
+    /// Retrieve it by calling <a>GetIPSet</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Update its settings as needed
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Provide the complete IP set specification to this call
+    /// </para>
+    ///  </li> </ol> </note> 
+    /// <para>
+    /// When you make changes to web ACLs or web ACL components, like rules and rule groups,
+    /// WAF propagates the changes everywhere that the web ACL and its components are stored
+    /// and used. Your changes are applied within seconds, but there might be a brief period
+    /// of inconsistency when the changes have arrived in some places and not in others. So,
+    /// for example, if you change a rule action setting, the action might be the old action
+    /// in one area and the new action in another area. Or if you add an IP address to an
+    /// IP set used in a blocking rule, the new address might briefly be blocked in one area
+    /// while still allowed in another. This temporary inconsistency can occur when you first
+    /// associate a web ACL with an Amazon Web Services resource and when you change a web
+    /// ACL that is already associated with a resource. Generally, any inconsistencies of
+    /// this type last only a few seconds.
+    /// </para>
     /// </summary>
     public partial class UpdateIPSetRequest : AmazonWAFV2Request
     {
@@ -53,13 +80,14 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property Addresses. 
         /// <para>
-        /// Contains an array of strings that specify one or more IP addresses or blocks of IP
-        /// addresses in Classless Inter-Domain Routing (CIDR) notation. WAF supports all IPv4
-        /// and IPv6 CIDR ranges except for /0. 
+        /// Contains an array of strings that specifies zero or more IP addresses or blocks of
+        /// IP addresses. All addresses must be specified using Classless Inter-Domain Routing
+        /// (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges except for <code>/0</code>.
+        /// 
         /// </para>
         ///  
         /// <para>
-        /// Examples: 
+        /// Example address strings: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -87,6 +115,28 @@ namespace Amazon.WAFV2.Model
         /// For more information about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless
         /// Inter-Domain Routing</a>.
         /// </para>
+        ///  
+        /// <para>
+        /// Example JSON <code>Addresses</code> specifications: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Empty array: <code>"Addresses": []</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Array with one address: <code>"Addresses": ["192.0.2.44/32"]</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Array with three addresses: <code>"Addresses": ["192.0.2.44/32", "192.0.2.0/24", "192.0.0.0/16"]</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID specification: <code>"Addresses": [""]</code> INVALID 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public List<string> Addresses
@@ -191,7 +241,8 @@ namespace Amazon.WAFV2.Model
         /// <para>
         /// Specifies whether this is for an Amazon CloudFront distribution or for a regional
         /// application. A regional application can be an Application Load Balancer (ALB), an
-        /// Amazon API Gateway REST API, or an AppSync GraphQL API. 
+        /// Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool,
+        /// an App Runner service, or an Amazon Web Services Verified Access instance. 
         /// </para>
         ///  
         /// <para>

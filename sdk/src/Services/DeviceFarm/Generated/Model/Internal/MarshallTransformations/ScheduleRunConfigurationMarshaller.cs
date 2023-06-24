@@ -34,7 +34,7 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ScheduleRunConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class ScheduleRunConfigurationMarshaller : IRequestMarshaller<ScheduleRunConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -128,7 +128,7 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ScheduleRunConfigurationMarshaller Instance = new ScheduleRunConfigurationMarshaller();
 
     }

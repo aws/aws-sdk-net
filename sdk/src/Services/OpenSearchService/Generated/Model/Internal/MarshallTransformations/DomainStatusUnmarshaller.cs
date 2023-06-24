@@ -94,6 +94,12 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
                     unmarshalledObject.AutoTuneOptions = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ChangeProgressDetails", targetDepth))
+                {
+                    var unmarshaller = ChangeProgressDetailsUnmarshaller.Instance;
+                    unmarshalledObject.ChangeProgressDetails = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ClusterConfig", targetDepth))
                 {
                     var unmarshaller = ClusterConfigUnmarshaller.Instance;
@@ -178,6 +184,12 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
                     unmarshalledObject.NodeToNodeEncryptionOptions = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("OffPeakWindowOptions", targetDepth))
+                {
+                    var unmarshaller = OffPeakWindowOptionsUnmarshaller.Instance;
+                    unmarshalledObject.OffPeakWindowOptions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Processing", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
@@ -194,6 +206,12 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = SnapshotOptionsUnmarshaller.Instance;
                     unmarshalledObject.SnapshotOptions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SoftwareUpdateOptions", targetDepth))
+                {
+                    var unmarshaller = SoftwareUpdateOptionsUnmarshaller.Instance;
+                    unmarshalledObject.SoftwareUpdateOptions = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("UpgradeProcessing", targetDepth))

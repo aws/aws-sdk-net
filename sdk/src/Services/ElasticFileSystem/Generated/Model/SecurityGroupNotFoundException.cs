@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticFileSystem.Model
 {
     /// <summary>
-    /// Returned if one of the specified security groups doesn't exist in the subnet's VPC.
+    /// Returned if one of the specified security groups doesn't exist in the subnet's virtual
+    /// private cloud (VPC).
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

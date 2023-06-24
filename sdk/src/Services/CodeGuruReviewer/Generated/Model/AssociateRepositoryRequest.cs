@@ -30,7 +30,7 @@ namespace Amazon.CodeGuruReviewer.Model
 {
     /// <summary>
     /// Container for the parameters to the AssociateRepository operation.
-    /// Use to associate an Amazon Web Services CodeCommit repository or a repostory managed
+    /// Use to associate an Amazon Web Services CodeCommit repository or a repository managed
     /// by Amazon Web Services CodeStar Connections with Amazon CodeGuru Reviewer. When you
     /// associate a repository, CodeGuru Reviewer reviews source code changes in the repository's
     /// pull requests and provides automatic recommendations. You can view recommendations
@@ -53,7 +53,7 @@ namespace Amazon.CodeGuruReviewer.Model
     /// </para>
     ///  <note> 
     /// <para>
-    ///  You cannot use the CodeGuru Reviewer SDK or the Amazon Web Services CLI to associate
+    /// You cannot use the CodeGuru Reviewer SDK or the Amazon Web Services CLI to associate
     /// a GitHub repository with Amazon CodeGuru Reviewer. To associate a GitHub repository,
     /// use the console. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/getting-started-with-guru.html">Getting
     /// started with CodeGuru Reviewer</a> in the <i>CodeGuru Reviewer User Guide.</i> 
@@ -71,7 +71,7 @@ namespace Amazon.CodeGuruReviewer.Model
         /// Gets and sets the property ClientRequestToken. 
         /// <para>
         /// Amazon CodeGuru Reviewer uses this value to prevent the accidental creation of duplicate
-        /// repository associations if there are failures and retries. 
+        /// repository associations if there are failures and retries.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -100,7 +100,7 @@ namespace Amazon.CodeGuruReviewer.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The ID of the Amazon Web Services KMS key that is associated with this respository
+        /// The ID of the Amazon Web Services KMS key that is associated with this repository
         /// association.
         /// </para>
         ///  </li> </ul>
@@ -139,8 +139,8 @@ namespace Amazon.CodeGuruReviewer.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        ///  An array of key-value pairs used to tag an associated repository. A tag is a custom
-        /// attribute label with two parts: 
+        /// An array of key-value pairs used to tag an associated repository. A tag is a custom
+        /// attribute label with two parts:
         /// </para>
         ///  <ul> <li> 
         /// <para>

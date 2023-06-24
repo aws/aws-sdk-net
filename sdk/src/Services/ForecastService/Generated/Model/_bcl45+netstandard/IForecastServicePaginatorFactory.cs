@@ -41,6 +41,16 @@ namespace Amazon.ForecastService.Model
         IListDatasetsPaginator ListDatasets(ListDatasetsRequest request);
 
         /// <summary>
+        /// Paginator for ListExplainabilities operation
+        ///</summary>
+        IListExplainabilitiesPaginator ListExplainabilities(ListExplainabilitiesRequest request);
+
+        /// <summary>
+        /// Paginator for ListExplainabilityExports operation
+        ///</summary>
+        IListExplainabilityExportsPaginator ListExplainabilityExports(ListExplainabilityExportsRequest request);
+
+        /// <summary>
         /// Paginator for ListForecastExportJobs operation
         ///</summary>
         IListForecastExportJobsPaginator ListForecastExportJobs(ListForecastExportJobsRequest request);
@@ -51,6 +61,16 @@ namespace Amazon.ForecastService.Model
         IListForecastsPaginator ListForecasts(ListForecastsRequest request);
 
         /// <summary>
+        /// Paginator for ListMonitorEvaluations operation
+        ///</summary>
+        IListMonitorEvaluationsPaginator ListMonitorEvaluations(ListMonitorEvaluationsRequest request);
+
+        /// <summary>
+        /// Paginator for ListMonitors operation
+        ///</summary>
+        IListMonitorsPaginator ListMonitors(ListMonitorsRequest request);
+
+        /// <summary>
         /// Paginator for ListPredictorBacktestExportJobs operation
         ///</summary>
         IListPredictorBacktestExportJobsPaginator ListPredictorBacktestExportJobs(ListPredictorBacktestExportJobsRequest request);
@@ -59,5 +79,20 @@ namespace Amazon.ForecastService.Model
         /// Paginator for ListPredictors operation
         ///</summary>
         IListPredictorsPaginator ListPredictors(ListPredictorsRequest request);
+
+        /// <summary>
+        /// Paginator for ListWhatIfAnalyses operation
+        ///</summary>
+        IListWhatIfAnalysesPaginator ListWhatIfAnalyses(ListWhatIfAnalysesRequest request);
+
+        /// <summary>
+        /// Paginator for ListWhatIfForecastExports operation
+        ///</summary>
+        IListWhatIfForecastExportsPaginator ListWhatIfForecastExports(ListWhatIfForecastExportsRequest request);
+
+        /// <summary>
+        /// Paginator for ListWhatIfForecasts operation
+        ///</summary>
+        IListWhatIfForecastsPaginator ListWhatIfForecasts(ListWhatIfForecastsRequest request);
     }
 }

@@ -29,5 +29,10 @@ namespace Amazon.Backup.Model
         /// Enumerable containing all full responses for the operation
         /// </summary>
         IPaginatedEnumerable<ListBackupVaultsResponse> Responses { get; }
+
+        /// <summary>
+        /// Enumerable containing all of the BackupVaultList
+        /// </summary>
+        IPaginatedEnumerable<BackupVaultListMember> BackupVaultList { get; }
     }
 }

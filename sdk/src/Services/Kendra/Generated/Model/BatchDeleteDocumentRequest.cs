@@ -31,7 +31,7 @@ namespace Amazon.Kendra.Model
     /// <summary>
     /// Container for the parameters to the BatchDeleteDocument operation.
     /// Removes one or more documents from an index. The documents must have been added with
-    /// the <code>BatchPutDocument</code> operation.
+    /// the <code>BatchPutDocument</code> API.
     /// 
     ///  
     /// <para>

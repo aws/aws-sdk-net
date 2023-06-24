@@ -34,7 +34,7 @@ namespace Amazon.ServerMigrationService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ServerGroupLaunchConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class ServerGroupLaunchConfigurationMarshaller : IRequestMarshaller<ServerGroupLaunchConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -77,7 +77,7 @@ namespace Amazon.ServerMigrationService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ServerGroupLaunchConfigurationMarshaller Instance = new ServerGroupLaunchConfigurationMarshaller();
 
     }

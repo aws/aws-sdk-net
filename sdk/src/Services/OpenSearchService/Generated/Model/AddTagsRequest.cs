@@ -30,9 +30,9 @@ namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
     /// Container for the parameters to the AddTags operation.
-    /// Attaches tags to an existing domain. Tags are a set of case-sensitive key value pairs.
-    /// An domain can have up to 10 tags. See <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains.html#managedomains-awsresorcetagging"
-    /// target="_blank"> Tagging Amazon OpenSearch Service domains</a> for more information.
+    /// Attaches tags to an existing Amazon OpenSearch Service domain. Tags are a set of case-sensitive
+    /// key-value pairs. A domain can have up to 10 tags. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-awsresourcetagging.html">Tagging
+    /// Amazon OpenSearch Service domains</a>.
     /// </summary>
     public partial class AddTagsRequest : AmazonOpenSearchServiceRequest
     {
@@ -42,7 +42,8 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property ARN. 
         /// <para>
-        /// Specify the <code>ARN</code> of the domain you want to add tags to. 
+        /// Amazon Resource Name (ARN) for the OpenSearch Service domain to which you want to
+        /// attach resource tags.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]
@@ -61,7 +62,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property TagList. 
         /// <para>
-        /// List of <code>Tag</code> to add to the domain. 
+        /// List of resource tags.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

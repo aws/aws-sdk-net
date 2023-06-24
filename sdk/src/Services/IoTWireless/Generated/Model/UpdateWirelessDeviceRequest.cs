@@ -39,6 +39,7 @@ namespace Amazon.IoTWireless.Model
         private string _id;
         private LoRaWANUpdateDevice _loRaWAN;
         private string _name;
+        private PositioningConfigStatus _positioning;
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -132,6 +133,24 @@ namespace Amazon.IoTWireless.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Positioning. 
+        /// <para>
+        /// FPort values for the GNSS, stream, and ClockSync functions of the positioning information.
+        /// </para>
+        /// </summary>
+        public PositioningConfigStatus Positioning
+        {
+            get { return this._positioning; }
+            set { this._positioning = value; }
+        }
+
+        // Check to see if Positioning property is set
+        internal bool IsSetPositioning()
+        {
+            return this._positioning != null;
         }
 
     }

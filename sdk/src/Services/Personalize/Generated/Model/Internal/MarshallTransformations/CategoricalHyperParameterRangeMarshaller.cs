@@ -34,7 +34,7 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CategoricalHyperParameterRange Marshaller
-    /// </summary>       
+    /// </summary>
     public class CategoricalHyperParameterRangeMarshaller : IRequestMarshaller<CategoricalHyperParameterRange, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CategoricalHyperParameterRangeMarshaller Instance = new CategoricalHyperParameterRangeMarshaller();
 
     }

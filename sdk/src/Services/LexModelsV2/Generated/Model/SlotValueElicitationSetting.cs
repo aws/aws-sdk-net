@@ -29,13 +29,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LexModelsV2.Model
 {
     /// <summary>
-    /// Settings that you can use for eliciting a slot value.
+    /// Specifies the elicitation setting details eliciting a slot.
     /// </summary>
     public partial class SlotValueElicitationSetting
     {
         private SlotDefaultValueSpecification _defaultValueSpecification;
         private PromptSpecification _promptSpecification;
         private List<SampleUtterance> _sampleUtterances = new List<SampleUtterance>();
+        private SlotCaptureSetting _slotCaptureSetting;
         private SlotConstraint _slotConstraint;
         private WaitAndContinueSpecification _waitAndContinueSpecification;
 
@@ -95,6 +96,25 @@ namespace Amazon.LexModelsV2.Model
         internal bool IsSetSampleUtterances()
         {
             return this._sampleUtterances != null && this._sampleUtterances.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SlotCaptureSetting. 
+        /// <para>
+        /// Specifies the settings that Amazon Lex uses when a slot value is successfully entered
+        /// by a user.
+        /// </para>
+        /// </summary>
+        public SlotCaptureSetting SlotCaptureSetting
+        {
+            get { return this._slotCaptureSetting; }
+            set { this._slotCaptureSetting = value; }
+        }
+
+        // Check to see if SlotCaptureSetting property is set
+        internal bool IsSetSlotCaptureSetting()
+        {
+            return this._slotCaptureSetting != null;
         }
 
         /// <summary>

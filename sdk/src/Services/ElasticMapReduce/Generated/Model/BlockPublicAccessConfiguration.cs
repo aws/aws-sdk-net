@@ -44,8 +44,8 @@ namespace Amazon.ElasticMapReduce.Model
         /// <para>
         /// Indicates whether Amazon EMR block public access is enabled (<code>true</code>) or
         /// disabled (<code>false</code>). By default, the value is <code>false</code> for accounts
-        /// that have created EMR clusters before July 2019. For accounts created after this,
-        /// the default is <code>true</code>.
+        /// that have created Amazon EMR clusters before July 2019. For accounts created after
+        /// this, the default is <code>true</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -72,8 +72,8 @@ namespace Amazon.ElasticMapReduce.Model
         /// </para>
         ///  
         /// <para>
-        /// By default, Port 22, which is used for SSH access to the cluster EC2 instances, is
-        /// in the list of <code>PermittedPublicSecurityGroupRuleRanges</code>.
+        /// By default, Port 22, which is used for SSH access to the cluster Amazon EC2 instances,
+        /// is in the list of <code>PermittedPublicSecurityGroupRuleRanges</code>.
         /// </para>
         /// </summary>
         public List<PortRange> PermittedPublicSecurityGroupRuleRanges

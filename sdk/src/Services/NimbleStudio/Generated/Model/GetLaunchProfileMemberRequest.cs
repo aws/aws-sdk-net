@@ -41,7 +41,7 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property LaunchProfileId. 
         /// <para>
-        /// The Launch Profile ID.
+        /// The ID of the launch profile used to control access from the streaming session.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -60,7 +60,7 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property PrincipalId. 
         /// <para>
-        /// The principal ID. This currently supports a Amazon Web Services SSO UserId. 
+        /// The principal ID. This currently supports a IAM Identity Center UserId. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

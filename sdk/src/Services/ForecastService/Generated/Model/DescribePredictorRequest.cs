@@ -33,11 +33,7 @@ namespace Amazon.ForecastService.Model
     /// <note> 
     /// <para>
     ///  This operation is only valid for legacy predictors created with CreatePredictor.
-    /// If you are not using a legacy predictor, use DescribeAutoPredictor.
-    /// </para>
-    ///  
-    /// <para>
-    /// To upgrade a legacy predictor to AutoPredictor, see Upgrading to AutoPredictor.
+    /// If you are not using a legacy predictor, use <a>DescribeAutoPredictor</a>.
     /// </para>
     ///  </note> 
     /// <para>

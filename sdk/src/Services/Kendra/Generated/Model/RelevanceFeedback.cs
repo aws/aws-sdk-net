@@ -30,7 +30,7 @@ namespace Amazon.Kendra.Model
 {
     /// <summary>
     /// Provides feedback on how relevant a document is to a search. Your application uses
-    /// the <code>SubmitFeedback</code> operation to provide relevance information.
+    /// the <code>SubmitFeedback</code> API to provide relevance information.
     /// </summary>
     public partial class RelevanceFeedback
     {
@@ -40,7 +40,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property RelevanceValue. 
         /// <para>
-        /// Whether to document was relevant or not relevant to the search.
+        /// Whether the document was relevant or not relevant to the search.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -59,8 +59,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property ResultId. 
         /// <para>
-        /// The unique identifier of the search result that the user provided relevance feedback
-        /// for.
+        /// The identifier of the search result that the user provided relevance feedback for.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=73)]

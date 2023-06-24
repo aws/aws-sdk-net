@@ -34,7 +34,7 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// IoTJobTimeoutConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class IoTJobTimeoutConfigMarshaller : IRequestMarshaller<IoTJobTimeoutConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static IoTJobTimeoutConfigMarshaller Instance = new IoTJobTimeoutConfigMarshaller();
 
     }

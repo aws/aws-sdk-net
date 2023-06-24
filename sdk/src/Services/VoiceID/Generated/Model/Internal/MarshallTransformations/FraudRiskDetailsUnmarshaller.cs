@@ -70,6 +70,12 @@ namespace Amazon.VoiceID.Model.Internal.MarshallTransformations
                     unmarshalledObject.KnownFraudsterRisk = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("VoiceSpoofingRisk", targetDepth))
+                {
+                    var unmarshaller = VoiceSpoofingRiskUnmarshaller.Instance;
+                    unmarshalledObject.VoiceSpoofingRisk = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

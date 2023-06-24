@@ -34,11 +34,13 @@ namespace Amazon.ResilienceHub.Model
     public partial class ResourceMapping
     {
         private string _appRegistryAppName;
+        private string _eksSourceName;
         private string _logicalStackName;
         private ResourceMappingType _mappingType;
         private PhysicalResourceId _physicalResourceId;
         private string _resourceGroupName;
         private string _resourceName;
+        private string _terraformSourceName;
 
         /// <summary>
         /// Gets and sets the property AppRegistryAppName. 
@@ -56,6 +58,31 @@ namespace Amazon.ResilienceHub.Model
         internal bool IsSetAppRegistryAppName()
         {
             return this._appRegistryAppName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EksSourceName. 
+        /// <para>
+        /// The name of the Amazon Elastic Kubernetes Service cluster and namespace this resource
+        /// belongs to.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This parameter accepts values in "eks-cluster/namespace" format.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string EksSourceName
+        {
+            get { return this._eksSourceName; }
+            set { this._eksSourceName = value; }
+        }
+
+        // Check to see if EksSourceName property is set
+        internal bool IsSetEksSourceName()
+        {
+            return this._eksSourceName != null;
         }
 
         /// <summary>
@@ -99,7 +126,7 @@ namespace Amazon.ResilienceHub.Model
         /// </para>
         ///  </dd> <dt>ResourceGroup</dt> <dd> 
         /// <para>
-        /// The resource is mapped to a resource group. The name of the resource group is contained
+        /// The resource is mapped to Resource Groups. The name of the resource group is contained
         /// in the <code>resourceGroupName</code> property.
         /// </para>
         ///  </dd> </dl>
@@ -170,6 +197,25 @@ namespace Amazon.ResilienceHub.Model
         internal bool IsSetResourceName()
         {
             return this._resourceName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TerraformSourceName. 
+        /// <para>
+        ///  The short name of the Terraform source. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string TerraformSourceName
+        {
+            get { return this._terraformSourceName; }
+            set { this._terraformSourceName = value; }
+        }
+
+        // Check to see if TerraformSourceName property is set
+        internal bool IsSetTerraformSourceName()
+        {
+            return this._terraformSourceName != null;
         }
 
     }

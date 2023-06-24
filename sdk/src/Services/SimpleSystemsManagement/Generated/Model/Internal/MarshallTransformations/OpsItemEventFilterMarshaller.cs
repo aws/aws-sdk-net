@@ -34,7 +34,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// OpsItemEventFilter Marshaller
-    /// </summary>       
+    /// </summary>
     public class OpsItemEventFilterMarshaller : IRequestMarshaller<OpsItemEventFilter, JsonMarshallerContext> 
     {
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static OpsItemEventFilterMarshaller Instance = new OpsItemEventFilterMarshaller();
 
     }

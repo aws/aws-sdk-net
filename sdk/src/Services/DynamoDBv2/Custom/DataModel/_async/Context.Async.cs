@@ -60,6 +60,33 @@ namespace Amazon.DynamoDBv2.DataModel
             return SaveHelperAsync(value, operationConfig, cancellationToken);
         }
 
+        /// <summary>
+        /// Initiates the asynchronous execution of the Save operation.
+        /// <seealso cref="Amazon.DynamoDBv2.DataModel.DynamoDBContext.Save"/>
+        /// </summary>
+        /// <param name="valueType">Type of the Object to save.</param>
+        /// <param name="value">Object to save.</param>
+        /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
+        /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
+        public Task SaveAsync(Type valueType, object value, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return SaveHelperAsync(valueType, value, null, cancellationToken);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the Save operation.
+        /// <seealso cref="Amazon.DynamoDBv2.DataModel.DynamoDBContext.Save"/>
+        /// </summary>
+        /// <param name="valueType">Type of the Object to save.</param>
+        /// <param name="value">Object to save.</param>
+        /// <param name="operationConfig">Overriding configuration.</param>
+        /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
+        /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
+        public Task SaveAsync(Type valueType, object value, DynamoDBOperationConfig operationConfig, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return SaveHelperAsync(valueType, value, operationConfig, cancellationToken);
+        }
+
         #endregion
 
         #region Load async
@@ -285,6 +312,39 @@ namespace Amazon.DynamoDBv2.DataModel
         {
             MultiTableBatchWrite superBatch = new MultiTableBatchWrite(batches);
             return superBatch.ExecuteAsync(cancellationToken);
+        }
+
+        #endregion
+
+        #region TransactGet async
+
+        /// <summary>
+        /// Issues a transactional get request with multiple TransactGet objects.
+        /// Results are stored in the individual TransactGet objects.
+        /// </summary>
+        /// <param name="transactionParts">Configured TransactGet objects.</param>
+        /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
+        /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
+        public Task ExecuteTransactGetAsync(TransactGet[] transactionParts, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            MultiTableTransactGet transaction = new MultiTableTransactGet(transactionParts);
+            return transaction.ExecuteAsync(cancellationToken);
+        }
+
+        #endregion
+
+        #region TransactWrite async
+
+        /// <summary>
+        /// Issues a transactional write request with multiple TransactWrite objects.
+        /// </summary>
+        /// <param name="transactionParts">Configured TransactWrite objects.</param>
+        /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
+        /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
+        public Task ExecuteTransactWriteAsync(TransactWrite[] transactionParts, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            MultiTableTransactWrite transaction = new MultiTableTransactWrite(transactionParts);
+            return transaction.ExecuteAsync(cancellationToken);
         }
 
         #endregion

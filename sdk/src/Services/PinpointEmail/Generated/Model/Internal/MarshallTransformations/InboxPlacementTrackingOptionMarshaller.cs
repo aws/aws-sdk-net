@@ -34,7 +34,7 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// InboxPlacementTrackingOption Marshaller
-    /// </summary>       
+    /// </summary>
     public class InboxPlacementTrackingOptionMarshaller : IRequestMarshaller<InboxPlacementTrackingOption, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static InboxPlacementTrackingOptionMarshaller Instance = new InboxPlacementTrackingOptionMarshaller();
 
     }

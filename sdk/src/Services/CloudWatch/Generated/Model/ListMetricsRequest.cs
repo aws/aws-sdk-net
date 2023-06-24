@@ -32,7 +32,7 @@ namespace Amazon.CloudWatch.Model
     /// Container for the parameters to the ListMetrics operation.
     /// List the specified metrics. You can use the returned metrics with <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html">GetMetricData</a>
     /// or <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html">GetMetricStatistics</a>
-    /// to obtain statistical data.
+    /// to get statistical data.
     /// 
     ///  
     /// <para>
@@ -41,9 +41,16 @@ namespace Amazon.CloudWatch.Model
     /// </para>
     ///  
     /// <para>
-    /// After you create a metric, allow up to 15 minutes before the metric appears. You can
-    /// see statistics about the metric sooner by using <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html">GetMetricData</a>
+    /// After you create a metric, allow up to 15 minutes for the metric to appear. To see
+    /// metric statistics sooner, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html">GetMetricData</a>
     /// or <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html">GetMetricStatistics</a>.
+    /// </para>
+    ///  
+    /// <para>
+    /// If you are using CloudWatch cross-account observability, you can use this operation
+    /// in a monitoring account and view metrics from the linked source accounts. For more
+    /// information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html">CloudWatch
+    /// cross-account observability</a>.
     /// </para>
     ///  
     /// <para>
@@ -55,9 +62,11 @@ namespace Amazon.CloudWatch.Model
     public partial class ListMetricsRequest : AmazonCloudWatchRequest
     {
         private List<DimensionFilter> _dimensions = new List<DimensionFilter>();
+        private bool? _includeLinkedAccounts;
         private string _metricName;
         private string _awsNamespace;
         private string _nextToken;
+        private string _owningAccount;
         private RecentlyActive _recentlyActive;
 
         /// <summary>
@@ -77,6 +86,29 @@ namespace Amazon.CloudWatch.Model
         internal bool IsSetDimensions()
         {
             return this._dimensions != null && this._dimensions.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IncludeLinkedAccounts. 
+        /// <para>
+        /// If you are using this operation in a monitoring account, specify <code>true</code>
+        /// to include metrics from source accounts in the returned data.
+        /// </para>
+        ///  
+        /// <para>
+        /// The default is <code>false</code>.
+        /// </para>
+        /// </summary>
+        public bool IncludeLinkedAccounts
+        {
+            get { return this._includeLinkedAccounts.GetValueOrDefault(); }
+            set { this._includeLinkedAccounts = value; }
+        }
+
+        // Check to see if IncludeLinkedAccounts property is set
+        internal bool IsSetIncludeLinkedAccounts()
+        {
+            return this._includeLinkedAccounts.HasValue; 
         }
 
         /// <summary>
@@ -135,6 +167,27 @@ namespace Amazon.CloudWatch.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OwningAccount. 
+        /// <para>
+        /// When you use this operation in a monitoring account, use this field to return metrics
+        /// only from one source account. To do so, specify that source account ID in this field,
+        /// and also specify <code>true</code> for <code>IncludeLinkedAccounts</code>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string OwningAccount
+        {
+            get { return this._owningAccount; }
+            set { this._owningAccount = value; }
+        }
+
+        // Check to see if OwningAccount property is set
+        internal bool IsSetOwningAccount()
+        {
+            return this._owningAccount != null;
         }
 
         /// <summary>

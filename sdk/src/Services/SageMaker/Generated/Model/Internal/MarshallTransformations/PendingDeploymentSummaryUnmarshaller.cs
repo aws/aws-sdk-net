@@ -76,6 +76,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.ProductionVariants = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ShadowProductionVariants", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<PendingProductionVariantSummary, PendingProductionVariantSummaryUnmarshaller>(PendingProductionVariantSummaryUnmarshaller.Instance);
+                    unmarshalledObject.ShadowProductionVariants = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("StartTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

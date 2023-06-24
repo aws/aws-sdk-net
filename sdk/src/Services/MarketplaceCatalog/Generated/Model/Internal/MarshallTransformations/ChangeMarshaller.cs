@@ -34,7 +34,7 @@ namespace Amazon.MarketplaceCatalog.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Change Marshaller
-    /// </summary>       
+    /// </summary>
     public class ChangeMarshaller : IRequestMarshaller<Change, JsonMarshallerContext> 
     {
         /// <summary>
@@ -74,11 +74,27 @@ namespace Amazon.MarketplaceCatalog.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetEntityTags())
+            {
+                context.Writer.WritePropertyName("EntityTags");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectEntityTagsListValue in requestObject.EntityTags)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = TagMarshaller.Instance;
+                    marshaller.Marshall(requestObjectEntityTagsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
         }
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ChangeMarshaller Instance = new ChangeMarshaller();
 
     }

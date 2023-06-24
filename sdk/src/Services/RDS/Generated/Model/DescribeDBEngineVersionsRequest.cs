@@ -103,19 +103,19 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: 
+        /// Valid Values:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>aurora</code> (for MySQL 5.6-compatible Aurora)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>aurora-mysql</code> (for MySQL 5.7-compatible Aurora)
+        ///  <code>aurora-mysql</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>aurora-postgresql</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>custom-oracle-ee</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -200,8 +200,69 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// This parameter isn't currently supported.
+        /// A filter that specifies one or more DB engine versions to describe.
         /// </para>
+        ///  
+        /// <para>
+        /// Supported filters:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>db-parameter-group-family</code> - Accepts parameter groups family names. The
+        /// results list only includes information about the DB engine versions for these parameter
+        /// group families.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>engine</code> - Accepts engine names. The results list only includes information
+        /// about the DB engine versions for these engines.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>engine-mode</code> - Accepts DB engine modes. The results list only includes
+        /// information about the DB engine versions for these engine modes. Valid DB engine modes
+        /// are the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>global</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>multimaster</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>parallelquery</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>provisioned</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>serverless</code> 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        ///  <code>engine-version</code> - Accepts engine versions. The results list only includes
+        /// information about the DB engine versions for these engine versions.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>status</code> - Accepts engine version statuses. The results list only includes
+        /// information about the DB engine versions for these statuses. Valid statuses are the
+        /// following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>available</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>deprecated</code> 
+        /// </para>
+        ///  </li> </ul> </li> </ul>
         /// </summary>
         public List<Filter> Filters
         {
@@ -249,7 +310,7 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// For RDS Custom, the default is not to list supported character sets. If you set <code>ListSupportedCharacterSets</code>
-        /// to <code>true</code>, RDS Custom returns no results. 
+        /// to <code>true</code>, RDS Custom returns no results.
         /// </para>
         /// </summary>
         public bool ListSupportedCharacterSets
@@ -273,12 +334,12 @@ namespace Amazon.RDS.Model
         /// <para>
         /// If this parameter is enabled and the requested engine supports the <code>TimeZone</code>
         /// parameter for <code>CreateDBInstance</code>, the response includes a list of supported
-        /// time zones for each engine version. 
+        /// time zones for each engine version.
         /// </para>
         ///  
         /// <para>
         /// For RDS Custom, the default is not to list supported time zones. If you set <code>ListSupportedTimezones</code>
-        /// to <code>true</code>, RDS Custom returns no results. 
+        /// to <code>true</code>, RDS Custom returns no results.
         /// </para>
         /// </summary>
         public bool ListSupportedTimezones
@@ -296,9 +357,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        ///  An optional pagination token provided by a previous request. If this parameter is
+        /// An optional pagination token provided by a previous request. If this parameter is
         /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>. 
+        /// by <code>MaxRecords</code>.
         /// </para>
         /// </summary>
         public string Marker
@@ -316,9 +377,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property MaxRecords. 
         /// <para>
-        ///  The maximum number of records to include in the response. If more than the <code>MaxRecords</code>
+        /// The maximum number of records to include in the response. If more than the <code>MaxRecords</code>
         /// value is available, a pagination token called a marker is included in the response
-        /// so you can retrieve the remaining results. 
+        /// so you can retrieve the remaining results.
         /// </para>
         ///  
         /// <para>

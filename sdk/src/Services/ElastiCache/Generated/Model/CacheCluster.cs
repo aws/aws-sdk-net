@@ -50,7 +50,9 @@ namespace Amazon.ElastiCache.Model
         private Endpoint _configurationEndpoint;
         private string _engine;
         private string _engineVersion;
+        private IpDiscovery _ipDiscovery;
         private List<LogDeliveryConfiguration> _logDeliveryConfigurations = new List<LogDeliveryConfiguration>();
+        private NetworkType _networkType;
         private NotificationConfiguration _notificationConfiguration;
         private int? _numCacheNodes;
         private PendingModifiedValues _pendingModifiedValues;
@@ -63,6 +65,7 @@ namespace Amazon.ElastiCache.Model
         private int? _snapshotRetentionLimit;
         private string _snapshotWindow;
         private bool? _transitEncryptionEnabled;
+        private TransitEncryptionMode _transitEncryptionMode;
 
         /// <summary>
         /// Gets and sets the property ARN. 
@@ -273,8 +276,8 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  
         /// <para>
-        ///  <b>M6g node types:</b> (available only for Redis engine version 5.0.6 onward and
-        /// for Memcached engine version 1.5.16 onward): <code>cache.m6g.large</code>, <code>cache.m6g.xlarge</code>,
+        ///  <b>M6g node types</b> (available only for Redis engine version 5.0.6 onward and for
+        /// Memcached engine version 1.5.16 onward): <code>cache.m6g.large</code>, <code>cache.m6g.xlarge</code>,
         /// <code>cache.m6g.2xlarge</code>, <code>cache.m6g.4xlarge</code>, <code>cache.m6g.8xlarge</code>,
         /// <code>cache.m6g.12xlarge</code>, <code>cache.m6g.16xlarge</code> 
         /// </para>
@@ -297,8 +300,8 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  
         /// <para>
-        ///  <b>T4g node types</b> (available only for Redis engine version 5.0.6 onward and for
-        /// Memcached engine version 1.5.16 onward): <code>cache.t4g.micro</code>, <code>cache.t4g.small</code>,
+        ///  <b>T4g node types</b> (available only for Redis engine version 5.0.6 onward and Memcached
+        /// engine version 1.5.16 onward): <code>cache.t4g.micro</code>, <code>cache.t4g.small</code>,
         /// <code>cache.t4g.medium</code> 
         /// </para>
         ///  
@@ -313,7 +316,8 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Previous generation: (not recommended)
+        /// Previous generation: (not recommended. Existing clusters are still supported but creation
+        /// of new clusters is not supported for these types.)
         /// </para>
         ///  
         /// <para>
@@ -335,29 +339,12 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Previous generation: (not recommended)
+        /// Previous generation: (not recommended. Existing clusters are still supported but creation
+        /// of new clusters is not supported for these types.)
         /// </para>
         ///  
         /// <para>
         ///  <b>C1 node types:</b> <code>cache.c1.xlarge</code> 
-        /// </para>
-        ///  </li> </ul> </li> <li> 
-        /// <para>
-        /// Memory optimized with data tiering:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Current generation: 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <b>R6gd node types</b> (available only for Redis engine version 6.2 onward).
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>cache.r6gd.xlarge</code>, <code>cache.r6gd.2xlarge</code>, <code>cache.r6gd.4xlarge</code>,
-        /// <code>cache.r6gd.8xlarge</code>, <code>cache.r6gd.12xlarge</code>, <code>cache.r6gd.16xlarge</code>
-        /// 
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
@@ -397,7 +384,8 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Previous generation: (not recommended)
+        /// Previous generation: (not recommended. Existing clusters are still supported but creation
+        /// of new clusters is not supported for these types.)
         /// </para>
         ///  
         /// <para>
@@ -579,6 +567,27 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IpDiscovery. 
+        /// <para>
+        /// The network type associated with the cluster, either <code>ipv4</code> | <code>ipv6</code>.
+        /// IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached
+        /// engine version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro
+        /// system</a>.
+        /// </para>
+        /// </summary>
+        public IpDiscovery IpDiscovery
+        {
+            get { return this._ipDiscovery; }
+            set { this._ipDiscovery = value; }
+        }
+
+        // Check to see if IpDiscovery property is set
+        internal bool IsSetIpDiscovery()
+        {
+            return this._ipDiscovery != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property LogDeliveryConfigurations. 
         /// <para>
         /// Returns the destination, format and type of the logs.
@@ -594,6 +603,27 @@ namespace Amazon.ElastiCache.Model
         internal bool IsSetLogDeliveryConfigurations()
         {
             return this._logDeliveryConfigurations != null && this._logDeliveryConfigurations.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkType. 
+        /// <para>
+        /// Must be either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6
+        /// is supported for workloads using Redis engine version 6.2 onward or Memcached engine
+        /// version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro
+        /// system</a>.
+        /// </para>
+        /// </summary>
+        public NetworkType NetworkType
+        {
+            get { return this._networkType; }
+            set { this._networkType = value; }
+        }
+
+        // Check to see if NetworkType property is set
+        internal bool IsSetNetworkType()
+        {
+            return this._networkType != null;
         }
 
         /// <summary>
@@ -857,12 +887,6 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  
         /// <para>
-        /// You cannot modify the value of <code>TransitEncryptionEnabled</code> after the cluster
-        /// is created. To enable in-transit encryption on a cluster you must set <code>TransitEncryptionEnabled</code>
-        /// to <code>true</code> when you create a cluster.
-        /// </para>
-        ///  
-        /// <para>
         ///  <b>Required:</b> Only available when creating a replication group in an Amazon VPC
         /// using redis version <code>3.2.6</code>, <code>4.x</code> or later.
         /// </para>
@@ -881,6 +905,25 @@ namespace Amazon.ElastiCache.Model
         internal bool IsSetTransitEncryptionEnabled()
         {
             return this._transitEncryptionEnabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TransitEncryptionMode. 
+        /// <para>
+        /// A setting that allows you to migrate your clients to use in-transit encryption, with
+        /// no downtime.
+        /// </para>
+        /// </summary>
+        public TransitEncryptionMode TransitEncryptionMode
+        {
+            get { return this._transitEncryptionMode; }
+            set { this._transitEncryptionMode = value; }
+        }
+
+        // Check to see if TransitEncryptionMode property is set
+        internal bool IsSetTransitEncryptionMode()
+        {
+            return this._transitEncryptionMode != null;
         }
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AppInstanceStreamingConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class AppInstanceStreamingConfigurationMarshaller : IRequestMarshaller<AppInstanceStreamingConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AppInstanceStreamingConfigurationMarshaller Instance = new AppInstanceStreamingConfigurationMarshaller();
 
     }

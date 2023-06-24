@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Batch.Model
 {
     /// <summary>
-    /// The retry strategy associated with a job. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/job_retries.html">Automated
+    /// The retry strategy that's associated with a job. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/job_retries.html">Automated
     /// job retries</a> in the <i>Batch User Guide</i>.
     /// </summary>
     public partial class RetryStrategy
@@ -60,9 +60,9 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property EvaluateOnExit. 
         /// <para>
-        /// Array of up to 5 objects that specify conditions under which the job should be retried
-        /// or failed. If this parameter is specified, then the <code>attempts</code> parameter
-        /// must also be specified.
+        /// Array of up to 5 objects that specify the conditions where jobs are retried or failed.
+        /// If this parameter is specified, then the <code>attempts</code> parameter must also
+        /// be specified. If none of the listed conditions match, then the job is retried.
         /// </para>
         /// </summary>
         public List<EvaluateOnExit> EvaluateOnExit

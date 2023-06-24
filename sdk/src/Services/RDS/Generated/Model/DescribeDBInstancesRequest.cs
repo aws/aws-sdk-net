@@ -30,7 +30,7 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeDBInstances operation.
-    /// Returns information about provisioned RDS instances. This API supports pagination.
+    /// Describes provisioned RDS instances. This API supports pagination.
     /// 
     ///  <note> 
     /// <para>
@@ -54,8 +54,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBInstanceIdentifier. 
         /// <para>
-        /// The user-supplied instance identifier. If this parameter is specified, information
-        /// from only the specific DB instance is returned. This parameter isn't case-sensitive.
+        /// The user-supplied instance identifier or the Amazon Resource Name (ARN) of the DB
+        /// instance. If this parameter is specified, information from only the specific DB instance
+        /// is returned. This parameter isn't case-sensitive.
         /// </para>
         ///  
         /// <para>
@@ -63,7 +64,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If supplied, must match the identifier of an existing DBInstance.
+        /// If supplied, must match the identifier of an existing DB instance.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -86,34 +87,34 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Supported filters:
+        /// Supported Filters:
         /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon
-        /// Resource Names (ARNs). The results list will only include information about the DB
-        /// instances associated with the DB clusters identified by these ARNs.
+        /// Resource Names (ARNs). The results list only includes information about the DB instances
+        /// associated with the DB clusters identified by these ARNs.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance Amazon
-        /// Resource Names (ARNs). The results list will only include information about the DB
-        /// instances identified by these ARNs.
+        /// Resource Names (ARNs). The results list only includes information about the DB instances
+        /// identified by these ARNs.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>dbi-resource-id</code> - Accepts DB instance resource identifiers. The results
-        /// list will only include information about the DB instances identified by these DB instance
+        /// list only includes information about the DB instances identified by these DB instance
         /// resource identifiers.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>domain</code> - Accepts Active Directory directory IDs. The results list will
-        /// only include information about the DB instances associated with these domains.
+        ///  <code>domain</code> - Accepts Active Directory directory IDs. The results list only
+        /// includes information about the DB instances associated with these domains.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>engine</code> - Accepts engine names. The results list will only include information
+        ///  <code>engine</code> - Accepts engine names. The results list only includes information
         /// about the DB instances for these engines.
         /// </para>
         ///  </li> </ul>
@@ -133,9 +134,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        ///  An optional pagination token provided by a previous <code>DescribeDBInstances</code>
+        /// An optional pagination token provided by a previous <code>DescribeDBInstances</code>
         /// request. If this parameter is specified, the response includes only records beyond
-        /// the marker, up to the value specified by <code>MaxRecords</code>. 
+        /// the marker, up to the value specified by <code>MaxRecords</code>.
         /// </para>
         /// </summary>
         public string Marker
@@ -153,9 +154,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property MaxRecords. 
         /// <para>
-        ///  The maximum number of records to include in the response. If more records exist than
+        /// The maximum number of records to include in the response. If more records exist than
         /// the specified <code>MaxRecords</code> value, a pagination token called a marker is
-        /// included in the response so that you can retrieve the remaining results. 
+        /// included in the response so that you can retrieve the remaining results.
         /// </para>
         ///  
         /// <para>

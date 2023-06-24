@@ -34,7 +34,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// MediaPackageOutputDestinationSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class MediaPackageOutputDestinationSettingsMarshaller : IRequestMarshaller<MediaPackageOutputDestinationSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static MediaPackageOutputDestinationSettingsMarshaller Instance = new MediaPackageOutputDestinationSettingsMarshaller();
 
     }

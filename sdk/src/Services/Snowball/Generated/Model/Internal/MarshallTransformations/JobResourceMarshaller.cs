@@ -34,7 +34,7 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// JobResource Marshaller
-    /// </summary>       
+    /// </summary>
     public class JobResourceMarshaller : IRequestMarshaller<JobResource, JsonMarshallerContext> 
     {
         /// <summary>
@@ -97,7 +97,7 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static JobResourceMarshaller Instance = new JobResourceMarshaller();
 
     }

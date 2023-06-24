@@ -35,15 +35,14 @@ namespace Amazon.IoTEventsData
     /// <summary>
     /// Implementation for accessing IoTEventsData
     ///
-    /// AWS IoT Events monitors your equipment or device fleets for failures or changes in
-    /// operation, and triggers actions when such events occur. You can use AWS IoT Events
-    /// Data API commands to send inputs to detectors, list detectors, and view or update
-    /// a detector's status.
+    /// IoT Events monitors your equipment or device fleets for failures or changes in operation,
+    /// and triggers actions when such events occur. You can use IoT Events Data API commands
+    /// to send inputs to detectors, list detectors, and view or update a detector's status.
     /// 
     ///  
     /// <para>
     ///  For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/what-is-iotevents.html">What
-    /// is AWS IoT Events?</a> in the <i>AWS IoT Events Developer Guide</i>.
+    /// is IoT Events?</a> in the <i>IoT Events Developer Guide</i>.
     /// </para>
     /// </summary>
     public partial class AmazonIoTEventsDataClient : AmazonServiceClient, IAmazonIoTEventsData
@@ -221,6 +220,15 @@ namespace Amazon.IoTEventsData
         }
 
         /// <summary>
+        /// Customize the pipeline
+        /// </summary>
+        /// <param name="pipeline"></param>
+        protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
+        {
+            pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonIoTEventsDataEndpointResolver());
+        }
+        /// <summary>
         /// Capture metadata for the service.
         /// </summary>
         protected override IServiceMetadata ServiceMetadata
@@ -309,6 +317,75 @@ namespace Amazon.IoTEventsData
         public virtual BatchAcknowledgeAlarmResponse EndBatchAcknowledgeAlarm(IAsyncResult asyncResult)
         {
             return EndInvoke<BatchAcknowledgeAlarmResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  BatchDeleteDetector
+
+        /// <summary>
+        /// Deletes one or more detectors that were created. When a detector is deleted, its state
+        /// will be cleared and the detector will be removed from the list of detectors. The deleted
+        /// detector will no longer appear if referenced in the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_ListDetectors.html">ListDetectors</a>
+        /// API call.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchDeleteDetector service method.</param>
+        /// 
+        /// <returns>The response from the BatchDeleteDetector service method, as returned by IoTEventsData.</returns>
+        /// <exception cref="Amazon.IoTEventsData.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEventsData.Model.InvalidRequestException">
+        /// The request was invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEventsData.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEventsData.Model.ThrottlingException">
+        /// The request could not be completed due to throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/BatchDeleteDetector">REST API Reference for BatchDeleteDetector Operation</seealso>
+        public virtual BatchDeleteDetectorResponse BatchDeleteDetector(BatchDeleteDetectorRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchDeleteDetectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDeleteDetectorResponseUnmarshaller.Instance;
+
+            return Invoke<BatchDeleteDetectorResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchDeleteDetector operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchDeleteDetector operation on AmazonIoTEventsDataClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchDeleteDetector
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/BatchDeleteDetector">REST API Reference for BatchDeleteDetector Operation</seealso>
+        public virtual IAsyncResult BeginBatchDeleteDetector(BatchDeleteDetectorRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchDeleteDetectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDeleteDetectorResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchDeleteDetector operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchDeleteDetector.</param>
+        /// 
+        /// <returns>Returns a  BatchDeleteDetectorResult from IoTEventsData.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/BatchDeleteDetector">REST API Reference for BatchDeleteDetector Operation</seealso>
+        public virtual BatchDeleteDetectorResponse EndBatchDeleteDetector(IAsyncResult asyncResult)
+        {
+            return EndInvoke<BatchDeleteDetectorResponse>(asyncResult);
         }
 
         #endregion
@@ -450,7 +527,7 @@ namespace Amazon.IoTEventsData
         #region  BatchPutMessage
 
         /// <summary>
-        /// Sends a set of messages to the AWS IoT Events system. Each message payload is transformed
+        /// Sends a set of messages to the IoT Events system. Each message payload is transformed
         /// into the input you specify (<code>"inputName"</code>) and ingested into any detectors
         /// that monitor that input. If multiple messages are sent, the order in which the messages
         /// are processed isn't guaranteed. To guarantee ordering, you must send messages one

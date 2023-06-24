@@ -1,0 +1,60 @@
+﻿<#@ template language="C#" inherits="Generators.BaseGenerator" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#
+    AddLicenseHeader();
+#>
+
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Amazon.Runtime;
+using <#=this.Config.Namespace#>.Endpoints;
+using <#=this.Config.Namespace#>.Internal;
+
+namespace AWSSDK_DotNet35.UnitTests.Endpoints
+{
+    [TestClass]
+    public partial class <#=this.Config.ClassName#>EndpointsTests
+    {
+<#
+        foreach(var test in this.Config.EndpointTests.testCases)
+        {
+#>
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("<#=this.Config.TestCategory#>")]
+        [Description("<#=test.documentation#>")]
+<#if (test.expect.error != null) {#>
+        [ExpectedException(typeof(AmazonClientException), @"<#=test.expect.error.SanitizeQuotes()#>")]
+<#}#>
+        public void <#=ToTestName(test.documentation)#>_Test()
+        {
+            var parameters = new <#=this.Config.ClassName#>EndpointParameters();
+<#
+            if (test.@params != null)
+            foreach(var param in test.@params)
+            {
+#>
+            parameters["<#=param.Key#>"] = <#=param.Value.ToNativeValue()#>;
+<#
+            }
+#>
+            var endpoint = new Amazon<#=this.Config.ClassName#>EndpointProvider().ResolveEndpoint(parameters);
+<#
+            if (test.expect.endpoint != null)
+            {
+#>
+            Assert.AreEqual("<#=test.expect.endpoint.url#>", endpoint.URL);
+<#
+            }
+#>
+        }
+
+<#
+        }
+#>
+    }
+}

@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
 using System.Text;
+using Amazon;
+using Amazon.Runtime.Internal;
 
 namespace UnitTests
 {
@@ -13,7 +15,22 @@ namespace UnitTests
 
         public override string UserAgent => throw new NotImplementedException();
 
-        public override string RegionEndpointServiceName => throw new NotImplementedException();
+        public override string RegionEndpointServiceName => "";
+
+        public MyClientConfig() 
+            : base(new DummyDefaultConfigurationProvider())
+        {
+        }
+
+        private class DummyDefaultConfigurationProvider : IDefaultConfigurationProvider
+        {
+            public IDefaultConfiguration GetDefaultConfiguration(
+                RegionEndpoint clientRegion,
+                DefaultConfigurationMode? requestedConfigurationMode = null)
+            {
+                return new DefaultConfiguration();
+            }
+        }
     }
 
     public class MyHttpClient : HttpClient

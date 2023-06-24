@@ -31,11 +31,14 @@ namespace Amazon.WorkMail.Model
     /// <summary>
     /// Container for the parameters to the GetAccessControlEffect operation.
     /// Gets the effects of an organization's access control rules as they apply to a specified
-    /// IPv4 address, access protocol action, or user ID.
+    /// IPv4 address, access protocol action, and user ID or impersonation role ID. You must
+    /// provide either the user ID or impersonation role ID. Impersonation role ID can only
+    /// be used with Action EWS.
     /// </summary>
     public partial class GetAccessControlEffectRequest : AmazonWorkMailRequest
     {
         private string _action;
+        private string _impersonationRoleId;
         private string _ipAddress;
         private string _organizationId;
         private string _userId;
@@ -59,6 +62,25 @@ namespace Amazon.WorkMail.Model
         internal bool IsSetAction()
         {
             return this._action != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ImpersonationRoleId. 
+        /// <para>
+        /// The impersonation role ID.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public string ImpersonationRoleId
+        {
+            get { return this._impersonationRoleId; }
+            set { this._impersonationRoleId = value; }
+        }
+
+        // Check to see if ImpersonationRoleId property is set
+        internal bool IsSetImpersonationRoleId()
+        {
+            return this._impersonationRoleId != null;
         }
 
         /// <summary>
@@ -105,7 +127,7 @@ namespace Amazon.WorkMail.Model
         /// The user ID.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=12, Max=256)]
+        [AWSProperty(Min=12, Max=256)]
         public string UserId
         {
             get { return this._userId; }

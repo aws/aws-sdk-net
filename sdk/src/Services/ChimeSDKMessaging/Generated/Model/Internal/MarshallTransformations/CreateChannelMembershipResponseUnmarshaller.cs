@@ -63,6 +63,12 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
                     response.Member = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SubChannelId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.SubChannelId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;
@@ -97,6 +103,10 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ForbiddenException"))
                 {
                     return ForbiddenExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("NotFoundException"))
+                {
+                    return NotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceLimitExceededException"))
                 {

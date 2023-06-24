@@ -232,9 +232,18 @@ namespace Amazon.EventBridge
         /// </summary>
         protected override AbstractAWSSigner CreateSigner()
         {
-            return new AWS4Signer();
+            return new EventBridgeSigner();
         }
 
+        /// <summary>
+        /// Customize the pipeline
+        /// </summary>
+        /// <param name="pipeline"></param>
+        protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
+        {
+            pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonEventBridgeEndpointResolver());
+        }
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>
@@ -604,6 +613,75 @@ namespace Amazon.EventBridge
         public virtual CreateConnectionResponse EndCreateConnection(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateConnectionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateEndpoint
+
+        /// <summary>
+        /// Creates a global endpoint. Global endpoints improve your application's availability
+        /// by making it regional-fault tolerant. To do this, you define a primary and secondary
+        /// Region with event buses in each Region. You also create a Amazon Route 53 health check
+        /// that will tell EventBridge to route events to the secondary Region when an "unhealthy"
+        /// state is encountered and events will be routed back to the primary Region when the
+        /// health check reports a "healthy" state.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateEndpoint service method.</param>
+        /// 
+        /// <returns>The response from the CreateEndpoint service method, as returned by EventBridge.</returns>
+        /// <exception cref="Amazon.EventBridge.Model.InternalException">
+        /// This exception occurs due to unexpected causes.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.LimitExceededException">
+        /// The request failed because it attempted to create resource beyond the allowed service
+        /// quota.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.ResourceAlreadyExistsException">
+        /// The resource you are trying to create already exists.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/CreateEndpoint">REST API Reference for CreateEndpoint Operation</seealso>
+        public virtual CreateEndpointResponse CreateEndpoint(CreateEndpointRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateEndpointResponseUnmarshaller.Instance;
+
+            return Invoke<CreateEndpointResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateEndpoint operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateEndpoint operation on AmazonEventBridgeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateEndpoint
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/CreateEndpoint">REST API Reference for CreateEndpoint Operation</seealso>
+        public virtual IAsyncResult BeginCreateEndpoint(CreateEndpointRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateEndpointResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateEndpoint operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateEndpoint.</param>
+        /// 
+        /// <returns>Returns a  CreateEndpointResult from EventBridge.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/CreateEndpoint">REST API Reference for CreateEndpoint Operation</seealso>
+        public virtual CreateEndpointResponse EndCreateEndpoint(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateEndpointResponse>(asyncResult);
         }
 
         #endregion
@@ -1127,6 +1205,72 @@ namespace Amazon.EventBridge
 
         #endregion
         
+        #region  DeleteEndpoint
+
+        /// <summary>
+        /// Delete an existing global endpoint. For more information about global endpoints, see
+        /// <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-global-endpoints.html">Making
+        /// applications Regional-fault tolerant with global endpoints and event replication</a>
+        /// in the Amazon EventBridge User Guide.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEndpoint service method.</param>
+        /// 
+        /// <returns>The response from the DeleteEndpoint service method, as returned by EventBridge.</returns>
+        /// <exception cref="Amazon.EventBridge.Model.ConcurrentModificationException">
+        /// There is concurrent modification on a rule, target, archive, or replay.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.InternalException">
+        /// This exception occurs due to unexpected causes.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.ResourceNotFoundException">
+        /// An entity that you specified does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DeleteEndpoint">REST API Reference for DeleteEndpoint Operation</seealso>
+        public virtual DeleteEndpointResponse DeleteEndpoint(DeleteEndpointRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteEndpointResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteEndpointResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteEndpoint operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEndpoint operation on AmazonEventBridgeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteEndpoint
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DeleteEndpoint">REST API Reference for DeleteEndpoint Operation</seealso>
+        public virtual IAsyncResult BeginDeleteEndpoint(DeleteEndpointRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteEndpointResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteEndpoint operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteEndpoint.</param>
+        /// 
+        /// <returns>Returns a  DeleteEndpointResult from EventBridge.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DeleteEndpoint">REST API Reference for DeleteEndpoint Operation</seealso>
+        public virtual DeleteEndpointResponse EndDeleteEndpoint(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteEndpointResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteEventBus
 
         /// <summary>
@@ -1533,6 +1677,69 @@ namespace Amazon.EventBridge
         public virtual DescribeConnectionResponse EndDescribeConnection(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeConnectionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeEndpoint
+
+        /// <summary>
+        /// Get the information about an existing global endpoint. For more information about
+        /// global endpoints, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-global-endpoints.html">Making
+        /// applications Regional-fault tolerant with global endpoints and event replication</a>
+        /// in the Amazon EventBridge User Guide..
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEndpoint service method.</param>
+        /// 
+        /// <returns>The response from the DescribeEndpoint service method, as returned by EventBridge.</returns>
+        /// <exception cref="Amazon.EventBridge.Model.InternalException">
+        /// This exception occurs due to unexpected causes.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.ResourceNotFoundException">
+        /// An entity that you specified does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DescribeEndpoint">REST API Reference for DescribeEndpoint Operation</seealso>
+        public virtual DescribeEndpointResponse DescribeEndpoint(DescribeEndpointRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeEndpointResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeEndpointResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeEndpoint operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEndpoint operation on AmazonEventBridgeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeEndpoint
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DescribeEndpoint">REST API Reference for DescribeEndpoint Operation</seealso>
+        public virtual IAsyncResult BeginDescribeEndpoint(DescribeEndpointRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeEndpointResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeEndpoint operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeEndpoint.</param>
+        /// 
+        /// <returns>Returns a  DescribeEndpointResult from EventBridge.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DescribeEndpoint">REST API Reference for DescribeEndpoint Operation</seealso>
+        public virtual DescribeEndpointResponse EndDescribeEndpoint(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeEndpointResponse>(asyncResult);
         }
 
         #endregion
@@ -2204,6 +2411,66 @@ namespace Amazon.EventBridge
 
         #endregion
         
+        #region  ListEndpoints
+
+        /// <summary>
+        /// List the global endpoints associated with this account. For more information about
+        /// global endpoints, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-global-endpoints.html">Making
+        /// applications Regional-fault tolerant with global endpoints and event replication</a>
+        /// in the Amazon EventBridge User Guide..
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListEndpoints service method.</param>
+        /// 
+        /// <returns>The response from the ListEndpoints service method, as returned by EventBridge.</returns>
+        /// <exception cref="Amazon.EventBridge.Model.InternalException">
+        /// This exception occurs due to unexpected causes.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/ListEndpoints">REST API Reference for ListEndpoints Operation</seealso>
+        public virtual ListEndpointsResponse ListEndpoints(ListEndpointsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListEndpointsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListEndpointsResponseUnmarshaller.Instance;
+
+            return Invoke<ListEndpointsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListEndpoints operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListEndpoints operation on AmazonEventBridgeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListEndpoints
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/ListEndpoints">REST API Reference for ListEndpoints Operation</seealso>
+        public virtual IAsyncResult BeginListEndpoints(ListEndpointsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListEndpointsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListEndpointsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListEndpoints operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListEndpoints.</param>
+        /// 
+        /// <returns>Returns a  ListEndpointsResult from EventBridge.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/ListEndpoints">REST API Reference for ListEndpoints Operation</seealso>
+        public virtual ListEndpointsResponse EndListEndpoints(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListEndpointsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListEventBuses
 
         /// <summary>
@@ -2761,6 +3028,12 @@ namespace Amazon.EventBridge
 
         /// <summary>
         /// Sends custom events to Amazon EventBridge so that they can be matched to rules.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// PutEvents will only process nested JSON up to 1100 levels deep.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutEvents service method.</param>
         /// 
@@ -3135,7 +3408,11 @@ namespace Amazon.EventBridge
         /// <para>
         /// Targets are the resources that are invoked when a rule is triggered.
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        /// Each rule can have up to five (5) targets associated with it at one time.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// You can configure the following as targets for Events:
         /// </para>
@@ -3146,11 +3423,8 @@ namespace Amazon.EventBridge
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Amazon API Gateway REST API endpoints
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// API Gateway
+        ///  <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-api-gateway-target.html">API
+        /// Gateway</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3158,7 +3432,7 @@ namespace Amazon.EventBridge
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// CloudWatch Logs group
+        /// CloudWatch group
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3170,44 +3444,58 @@ namespace Amazon.EventBridge
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Amazon EC2 <code>CreateSnapshot</code> API call
+        /// EC2 <code>CreateSnapshot</code> API call
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Amazon EC2 <code>RebootInstances</code> API call
+        /// EC2 Image Builder
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Amazon EC2 <code>StopInstances</code> API call
+        /// EC2 <code>RebootInstances</code> API call
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Amazon EC2 <code>TerminateInstances</code> API call
+        /// EC2 <code>StopInstances</code> API call
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Amazon ECS tasks
+        /// EC2 <code>TerminateInstances</code> API call
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Event bus in a different Amazon Web Services account or Region.
-        /// </para>
-        ///  
-        /// <para>
-        /// You can use an event bus in the US East (N. Virginia) us-east-1, US West (Oregon)
-        /// us-west-2, or Europe (Ireland) eu-west-1 Regions as a target for a rule.
+        /// ECS task
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Firehose delivery stream (Kinesis Data Firehose)
+        ///  <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-cross-account.html">Event
+        /// bus in a different account or Region</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Inspector assessment template (Amazon Inspector)
+        ///  <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-bus-to-bus.html">Event
+        /// bus in the same account and Region</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Kinesis stream (Kinesis Data Stream)
+        /// Firehose delivery stream
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Glue workflow
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/incident-manager/latest/userguide/incident-creation.html#incident-tracking-auto-eventbridge">Incident
+        /// Manager response plan</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Inspector assessment template
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Kinesis stream
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3215,31 +3503,39 @@ namespace Amazon.EventBridge
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Redshift clusters (Data API statement execution)
+        /// Redshift cluster
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Amazon SNS topic
+        /// Redshift Serverless workgroup
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Amazon SQS queues (includes FIFO queues
+        /// SageMaker Pipeline
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// SSM Automation
+        /// SNS topic
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// SSM OpsItem
+        /// SQS queue
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// SSM Run Command
+        /// Step Functions state machine
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Step Functions state machines
+        /// Systems Manager Automation
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Systems Manager OpsItem
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Systems Manager Run Command
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -3261,9 +3557,9 @@ namespace Amazon.EventBridge
         /// To be able to make API calls against the resources that you own, Amazon EventBridge
         /// needs the appropriate permissions. For Lambda and Amazon SNS resources, EventBridge
         /// relies on resource-based policies. For EC2 instances, Kinesis Data Streams, Step Functions
-        /// state machines and API Gateway REST APIs, EventBridge relies on IAM roles that you
-        /// specify in the <code>RoleARN</code> argument in <code>PutTargets</code>. For more
-        /// information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/auth-and-access-control-eventbridge.html">Authentication
+        /// state machines and API Gateway APIs, EventBridge relies on IAM roles that you specify
+        /// in the <code>RoleARN</code> argument in <code>PutTargets</code>. For more information,
+        /// see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/auth-and-access-control-eventbridge.html">Authentication
         /// and Access Control</a> in the <i>Amazon EventBridge User Guide</i>.
         /// </para>
         ///  
@@ -3488,7 +3784,12 @@ namespace Amazon.EventBridge
         /// Removes the specified targets from the specified rule. When the rule is triggered,
         /// those targets are no longer be invoked.
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// A successful execution of <code>RemoveTargets</code> doesn't guarantee all targets
+        /// are removed from the rule, it means that the target(s) listed in the request are removed.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// When you remove a target, when the associated rule triggers, removed targets might
         /// continue to be invoked. Allow a short period of time for changes to take effect.
@@ -4075,6 +4376,71 @@ namespace Amazon.EventBridge
         public virtual UpdateConnectionResponse EndUpdateConnection(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateConnectionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateEndpoint
+
+        /// <summary>
+        /// Update an existing endpoint. For more information about global endpoints, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-global-endpoints.html">Making
+        /// applications Regional-fault tolerant with global endpoints and event replication</a>
+        /// in the Amazon EventBridge User Guide..
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateEndpoint service method.</param>
+        /// 
+        /// <returns>The response from the UpdateEndpoint service method, as returned by EventBridge.</returns>
+        /// <exception cref="Amazon.EventBridge.Model.ConcurrentModificationException">
+        /// There is concurrent modification on a rule, target, archive, or replay.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.InternalException">
+        /// This exception occurs due to unexpected causes.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.ResourceNotFoundException">
+        /// An entity that you specified does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/UpdateEndpoint">REST API Reference for UpdateEndpoint Operation</seealso>
+        public virtual UpdateEndpointResponse UpdateEndpoint(UpdateEndpointRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateEndpointResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateEndpointResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateEndpoint operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateEndpoint operation on AmazonEventBridgeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateEndpoint
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/UpdateEndpoint">REST API Reference for UpdateEndpoint Operation</seealso>
+        public virtual IAsyncResult BeginUpdateEndpoint(UpdateEndpointRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateEndpointResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateEndpoint operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateEndpoint.</param>
+        /// 
+        /// <returns>Returns a  UpdateEndpointResult from EventBridge.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/UpdateEndpoint">REST API Reference for UpdateEndpoint Operation</seealso>
+        public virtual UpdateEndpointResponse EndUpdateEndpoint(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateEndpointResponse>(asyncResult);
         }
 
         #endregion

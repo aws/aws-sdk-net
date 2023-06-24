@@ -96,7 +96,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property CurrentTaskExecutionArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the task execution that is syncing files.
+        /// The Amazon Resource Name (ARN) of the task execution that is transferring files.
         /// </para>
         /// </summary>
         [AWSProperty(Max=128)]
@@ -134,8 +134,9 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property DestinationNetworkInterfaceArns. 
         /// <para>
-        /// The Amazon Resource Names (ARNs) of the destination elastic network interfaces (ENIs)
-        /// that were created for your subnet.
+        /// The Amazon Resource Names (ARNs) of the network interfaces created for your destination
+        /// location. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">Network
+        /// interface requirements</a>.
         /// </para>
         /// </summary>
         public List<string> DestinationNetworkInterfaceArns
@@ -191,14 +192,9 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property Excludes. 
         /// <para>
-        /// A list of filter rules that determines which files to exclude from a task. The list
-        /// should contain a single filter string that consists of the patterns to exclude. The
-        /// patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.
-        /// 
-        /// </para>
-        ///  
-        /// <para>
-        ///  
+        /// A list of filter rules that exclude specific data during your transfer. For more information
+        /// and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering
+        /// data transferred by DataSync</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]
@@ -217,9 +213,9 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property Includes. 
         /// <para>
-        /// A list of filter rules that determines which files to include when running a task.
-        /// The pattern contains a single filter string that consists of the patterns to include.
-        /// The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2</code>".
+        /// A list of filter rules that include specific data during your transfer. For more information
+        /// and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering
+        /// data transferred by DataSync</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]
@@ -257,16 +253,14 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property Options. 
         /// <para>
-        /// The set of configuration options that control the behavior of a single execution of
-        /// the task that occurs when you call <code>StartTaskExecution</code>. You can configure
-        /// these options to preserve metadata such as user ID (UID) and group (GID), file permissions,
-        /// data integrity verification, and so on.
+        /// The configuration options that control the behavior of the <code>StartTaskExecution</code>
+        /// operation. Some options include preserving file or object metadata and verifying data
+        /// integrity.
         /// </para>
         ///  
         /// <para>
-        /// For each individual task execution, you can override these options by specifying the
-        /// overriding <code>OverrideOptions</code> value to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>
-        /// operation. 
+        /// You can override these options for each task execution. For more information, see
+        /// <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.
         /// </para>
         /// </summary>
         public Options Options
@@ -321,8 +315,9 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property SourceNetworkInterfaceArns. 
         /// <para>
-        /// The Amazon Resource Names (ARNs) of the source elastic network interfaces (ENIs) that
-        /// were created for your subnet.
+        /// The Amazon Resource Names (ARNs) of the network interfaces created for your source
+        /// location. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">Network
+        /// interface requirements</a>.
         /// </para>
         /// </summary>
         public List<string> SourceNetworkInterfaceArns

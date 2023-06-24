@@ -34,7 +34,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// IntentConfirmationSetting Marshaller
-    /// </summary>       
+    /// </summary>
     public class IntentConfirmationSettingMarshaller : IRequestMarshaller<IntentConfirmationSetting, JsonMarshallerContext> 
     {
         /// <summary>
@@ -51,6 +51,72 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Active);
             }
 
+            if(requestObject.IsSetCodeHook())
+            {
+                context.Writer.WritePropertyName("codeHook");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = DialogCodeHookInvocationSettingMarshaller.Instance;
+                marshaller.Marshall(requestObject.CodeHook, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetConfirmationConditional())
+            {
+                context.Writer.WritePropertyName("confirmationConditional");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ConditionalSpecificationMarshaller.Instance;
+                marshaller.Marshall(requestObject.ConfirmationConditional, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetConfirmationNextStep())
+            {
+                context.Writer.WritePropertyName("confirmationNextStep");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = DialogStateMarshaller.Instance;
+                marshaller.Marshall(requestObject.ConfirmationNextStep, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetConfirmationResponse())
+            {
+                context.Writer.WritePropertyName("confirmationResponse");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ResponseSpecificationMarshaller.Instance;
+                marshaller.Marshall(requestObject.ConfirmationResponse, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetDeclinationConditional())
+            {
+                context.Writer.WritePropertyName("declinationConditional");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ConditionalSpecificationMarshaller.Instance;
+                marshaller.Marshall(requestObject.DeclinationConditional, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetDeclinationNextStep())
+            {
+                context.Writer.WritePropertyName("declinationNextStep");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = DialogStateMarshaller.Instance;
+                marshaller.Marshall(requestObject.DeclinationNextStep, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetDeclinationResponse())
             {
                 context.Writer.WritePropertyName("declinationResponse");
@@ -58,6 +124,50 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 
                 var marshaller = ResponseSpecificationMarshaller.Instance;
                 marshaller.Marshall(requestObject.DeclinationResponse, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetElicitationCodeHook())
+            {
+                context.Writer.WritePropertyName("elicitationCodeHook");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ElicitationCodeHookInvocationSettingMarshaller.Instance;
+                marshaller.Marshall(requestObject.ElicitationCodeHook, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetFailureConditional())
+            {
+                context.Writer.WritePropertyName("failureConditional");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ConditionalSpecificationMarshaller.Instance;
+                marshaller.Marshall(requestObject.FailureConditional, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetFailureNextStep())
+            {
+                context.Writer.WritePropertyName("failureNextStep");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = DialogStateMarshaller.Instance;
+                marshaller.Marshall(requestObject.FailureNextStep, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetFailureResponse())
+            {
+                context.Writer.WritePropertyName("failureResponse");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ResponseSpecificationMarshaller.Instance;
+                marshaller.Marshall(requestObject.FailureResponse, context);
 
                 context.Writer.WriteObjectEnd();
             }
@@ -77,7 +187,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static IntentConfirmationSettingMarshaller Instance = new IntentConfirmationSettingMarshaller();
 
     }

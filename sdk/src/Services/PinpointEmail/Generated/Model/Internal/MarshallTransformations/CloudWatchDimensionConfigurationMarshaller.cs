@@ -34,7 +34,7 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CloudWatchDimensionConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class CloudWatchDimensionConfigurationMarshaller : IRequestMarshaller<CloudWatchDimensionConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CloudWatchDimensionConfigurationMarshaller Instance = new CloudWatchDimensionConfigurationMarshaller();
 
     }

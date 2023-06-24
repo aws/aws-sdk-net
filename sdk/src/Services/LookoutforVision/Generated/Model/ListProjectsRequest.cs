@@ -30,8 +30,15 @@ namespace Amazon.LookoutforVision.Model
 {
     /// <summary>
     /// Container for the parameters to the ListProjects operation.
-    /// Lists the Amazon Lookout for Vision projects in your AWS account.
+    /// Lists the Amazon Lookout for Vision projects in your AWS account that are in the AWS
+    /// Region in which you call <code>ListProjects</code>.
     /// 
+    ///  
+    /// <para>
+    /// The <code>ListProjects</code> operation is eventually consistent. Recent calls to
+    /// <code>CreateProject</code> and <code>DeleteProject</code> might take a while to appear
+    /// in the response from <code>ListProjects</code>.
+    /// </para>
     ///  
     /// <para>
     /// This operation requires permissions to perform the <code>lookoutvision:ListProjects</code>

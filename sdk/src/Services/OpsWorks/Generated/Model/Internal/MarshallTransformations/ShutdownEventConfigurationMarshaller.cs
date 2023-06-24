@@ -34,7 +34,7 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ShutdownEventConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class ShutdownEventConfigurationMarshaller : IRequestMarshaller<ShutdownEventConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ShutdownEventConfigurationMarshaller Instance = new ShutdownEventConfigurationMarshaller();
 
     }

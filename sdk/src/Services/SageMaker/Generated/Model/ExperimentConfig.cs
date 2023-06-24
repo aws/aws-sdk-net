@@ -34,28 +34,32 @@ namespace Amazon.SageMaker.Model
     /// 
     ///  <ul> <li> 
     /// <para>
-    ///  <a>CreateProcessingJob</a> 
+    ///  <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateProcessingJob.html">CreateProcessingJob</a>
+    /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>CreateTrainingJob</a> 
+    ///  <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html">CreateTrainingJob</a>
+    /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>CreateTransformJob</a> 
+    ///  <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTransformJob.html">CreateTransformJob</a>
+    /// 
     /// </para>
     ///  </li> </ul>
     /// </summary>
     public partial class ExperimentConfig
     {
         private string _experimentName;
+        private string _runName;
         private string _trialComponentDisplayName;
         private string _trialName;
 
         /// <summary>
         /// Gets and sets the property ExperimentName. 
         /// <para>
-        /// The name of an existing experiment to associate the trial component with.
+        /// The name of an existing experiment to associate with the trial component.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=120)]
@@ -69,6 +73,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetExperimentName()
         {
             return this._experimentName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RunName. 
+        /// <para>
+        /// The name of the experiment run to associate with the trial component.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=120)]
+        public string RunName
+        {
+            get { return this._runName; }
+            set { this._runName = value; }
+        }
+
+        // Check to see if RunName property is set
+        internal bool IsSetRunName()
+        {
+            return this._runName != null;
         }
 
         /// <summary>

@@ -34,7 +34,7 @@ namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CreateEndOfMeetingReminder Marshaller
-    /// </summary>       
+    /// </summary>
     public class CreateEndOfMeetingReminderMarshaller : IRequestMarshaller<CreateEndOfMeetingReminder, JsonMarshallerContext> 
     {
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CreateEndOfMeetingReminderMarshaller Instance = new CreateEndOfMeetingReminderMarshaller();
 
     }

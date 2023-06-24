@@ -30,7 +30,8 @@ namespace Amazon.TranscribeService.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteCallAnalyticsJob operation.
-    /// Deletes a call analytics job using its name.
+    /// Deletes a Call Analytics job. To use this operation, specify the name of the job you
+    /// want to delete using <code>CallAnalyticsJobName</code>. Job names are case sensitive.
     /// </summary>
     public partial class DeleteCallAnalyticsJobRequest : AmazonTranscribeServiceRequest
     {
@@ -39,7 +40,7 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property CallAnalyticsJobName. 
         /// <para>
-        /// The name of the call analytics job you want to delete.
+        /// The name of the Call Analytics job you want to delete. Job names are case sensitive.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=200)]

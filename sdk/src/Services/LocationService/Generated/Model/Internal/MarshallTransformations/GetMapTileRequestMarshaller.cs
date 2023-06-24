@@ -55,7 +55,7 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
         public IRequest Marshall(GetMapTileRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.LocationService");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-11-19";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-11-19";
             request.HttpMethod = "GET";
 
             if (!publicRequest.IsSetMapName())
@@ -70,7 +70,11 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetZ())
                 throw new AmazonLocationServiceException("Request object does not have required field Z set");
             request.AddPathResource("{Z}", StringUtils.FromString(publicRequest.Z));
+            
+            if (publicRequest.IsSetKey())
+                request.Parameters.Add("key", StringUtils.FromString(publicRequest.Key));
             request.ResourcePath = "/maps/v0/maps/{MapName}/tiles/{Z}/{X}/{Y}";
+            request.UseQueryString = true;
             
             request.HostPrefix = $"maps.";
 

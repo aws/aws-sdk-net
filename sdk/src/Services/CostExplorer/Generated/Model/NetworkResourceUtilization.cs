@@ -42,7 +42,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property NetworkInBytesPerSecond. 
         /// <para>
-        ///  The network inbound throughput utilization measured in Bytes per second. 
+        /// The network inbound throughput utilization measured in Bytes per second (Bps). 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -61,7 +61,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property NetworkOutBytesPerSecond. 
         /// <para>
-        ///  The network outbound throughput utilization measured in Bytes per second. 
+        /// The network outbound throughput utilization measured in Bytes per second (Bps). 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -80,7 +80,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property NetworkPacketsInPerSecond. 
         /// <para>
-        ///  The network ingress packets that are measured in packets per second. 
+        /// The network inbound packets that are measured in packets per second. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -99,7 +99,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property NetworkPacketsOutPerSecond. 
         /// <para>
-        ///  The network outgress packets that are measured in packets per second. 
+        /// The network outbound packets that are measured in packets per second. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]

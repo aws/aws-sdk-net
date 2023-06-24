@@ -30,34 +30,36 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the ClaimGameServer operation.
-    /// <b>This operation is used with the GameLift FleetIQ solution and game server groups.</b>
-    /// 
+    /// <b>This operation is used with the Amazon GameLift FleetIQ solution and game server
+    /// groups.</b> 
     /// 
     ///  
     /// <para>
     /// Locates an available game server and temporarily reserves it to host gameplay and
     /// players. This operation is called from a game client or client service (such as a
-    /// matchmaker) to request hosting resources for a new game session. In response, GameLift
-    /// FleetIQ locates an available game server, places it in <code>CLAIMED</code> status
-    /// for 60 seconds, and returns connection information that players can use to connect
-    /// to the game server. 
+    /// matchmaker) to request hosting resources for a new game session. In response, Amazon
+    /// GameLift FleetIQ locates an available game server, places it in <code>CLAIMED</code>
+    /// status for 60 seconds, and returns connection information that players can use to
+    /// connect to the game server. 
     /// </para>
     ///  
     /// <para>
     /// To claim a game server, identify a game server group. You can also specify a game
-    /// server ID, although this approach bypasses GameLift FleetIQ placement optimization.
+    /// server ID, although this approach bypasses Amazon GameLift FleetIQ placement optimization.
     /// Optionally, include game data to pass to the game server at the start of a game session,
-    /// such as a game map or player information. 
+    /// such as a game map or player information. Filter options may be included to further
+    /// restrict how a game server is chosen, such as only allowing game servers on <code>ACTIVE</code>
+    /// instances to be claimed.
     /// </para>
     ///  
     /// <para>
     /// When a game server is successfully claimed, connection information is returned. A
     /// claimed game server's utilization status remains <code>AVAILABLE</code> while the
     /// claim status is set to <code>CLAIMED</code> for up to 60 seconds. This time period
-    /// gives the game server time to update its status to <code>UTILIZED</code> (using <a>UpdateGameServer</a>)
-    /// once players join. If the game server's status is not updated within 60 seconds, the
-    /// game server reverts to unclaimed status and is available to be claimed by another
-    /// request. The claim time period is a fixed value and is not configurable.
+    /// gives the game server time to update its status to <code>UTILIZED</code> after players
+    /// join. If the game server's status is not updated within 60 seconds, the game server
+    /// reverts to unclaimed status and is available to be claimed by another request. The
+    /// claim time period is a fixed value and is not configurable.
     /// </para>
     ///  
     /// <para>
@@ -72,44 +74,52 @@ namespace Amazon.GameLift.Model
     /// <para>
     /// If the game server claim status is <code>CLAIMED</code>.
     /// </para>
-    ///  </li> </ul> <note> 
+    ///  </li> <li> 
     /// <para>
-    /// When claiming a specific game server, this request will succeed even if the game server
-    /// is running on an instance in <code>DRAINING</code> status. To avoid this, first check
-    /// the instance status by calling <a>DescribeGameServerInstances</a>.
+    /// If the game server is running on an instance in <code>DRAINING</code> status and provided
+    /// filter option does not allow placing on <code>DRAINING</code> instances.
     /// </para>
-    ///  </note> 
+    ///  </li> </ul> 
     /// <para>
     ///  <b>Learn more</b> 
     /// </para>
     ///  
     /// <para>
-    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-intro.html">GameLift
-    /// FleetIQ Guide</a> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <b>Related actions</b> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <a>RegisterGameServer</a> | <a>ListGameServers</a> | <a>ClaimGameServer</a> | <a>DescribeGameServer</a>
-    /// | <a>UpdateGameServer</a> | <a>DeregisterGameServer</a> | <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/reference-awssdk-fleetiq.html">All
-    /// APIs by task</a> 
+    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-intro.html">Amazon
+    /// GameLift FleetIQ Guide</a> 
     /// </para>
     /// </summary>
     public partial class ClaimGameServerRequest : AmazonGameLiftRequest
     {
+        private ClaimFilterOption _filterOption;
         private string _gameServerData;
         private string _gameServerGroupName;
         private string _gameServerId;
 
         /// <summary>
+        /// Gets and sets the property FilterOption. 
+        /// <para>
+        /// Object that restricts how a claimed game server is chosen.
+        /// </para>
+        /// </summary>
+        public ClaimFilterOption FilterOption
+        {
+            get { return this._filterOption; }
+            set { this._filterOption = value; }
+        }
+
+        // Check to see if FilterOption property is set
+        internal bool IsSetFilterOption()
+        {
+            return this._filterOption != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property GameServerData. 
         /// <para>
         /// A set of custom game server properties, formatted as a single string value. This data
-        /// is passed to a game client or service when it requests information on game servers
-        /// using <a>ListGameServers</a> or <a>ClaimGameServer</a>. 
+        /// is passed to a game client or service when it requests information on game servers.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -128,10 +138,9 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property GameServerGroupName. 
         /// <para>
-        /// A unique identifier for the game server group where the game server is running. Use
-        /// either the <a>GameServerGroup</a> name or ARN value. If you are not specifying a game
-        /// server to claim, this value identifies where you want GameLift FleetIQ to look for
-        /// an available game server to claim. 
+        /// A unique identifier for the game server group where the game server is running. If
+        /// you are not specifying a game server to claim, this value identifies where you want
+        /// Amazon GameLift FleetIQ to look for an available game server to claim. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
@@ -151,8 +160,8 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property GameServerId. 
         /// <para>
         /// A custom string that uniquely identifies the game server to claim. If this parameter
-        /// is left empty, GameLift FleetIQ searches for an available game server in the specified
-        /// game server group.
+        /// is left empty, Amazon GameLift FleetIQ searches for an available game server in the
+        /// specified game server group.
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=128)]

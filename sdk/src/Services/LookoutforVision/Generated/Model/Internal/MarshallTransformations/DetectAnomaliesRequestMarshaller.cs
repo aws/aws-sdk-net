@@ -56,7 +56,7 @@ namespace Amazon.LookoutforVision.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.LookoutforVision");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-11-20";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-11-20";
             request.HttpMethod = "POST";
 
             if (!publicRequest.IsSetModelVersion())
@@ -67,16 +67,22 @@ namespace Amazon.LookoutforVision.Model.Internal.MarshallTransformations
             request.AddPathResource("{projectName}", StringUtils.FromString(publicRequest.ProjectName));
             request.ResourcePath = "/2020-11-20/projects/{projectName}/models/{modelVersion}/detect";
             request.ContentStream =  publicRequest.Body ?? new MemoryStream();
-            if(!request.ContentStream.CanSeek)
+            if (!request.ContentStream.CanSeek)
             {
                 throw new System.InvalidOperationException("Cannot determine stream length for the payload when content-length is required.");
             }
-            request.Headers[Amazon.Util.HeaderKeys.ContentLengthHeader] =  
+            request.Headers[Amazon.Util.HeaderKeys.ContentLengthHeader] =
                 request.ContentStream.Length.ToString(CultureInfo.InvariantCulture);
-            request.Headers[Amazon.Util.HeaderKeys.ContentTypeHeader] = "binary/octet-stream";
+            request.Headers[Amazon.Util.HeaderKeys.ContentTypeHeader] = "binary/octet-stream"; 
+            if (request.ContentStream != null && request.ContentStream.Length == 0)
+            {
+                request.Headers.Remove(Amazon.Util.HeaderKeys.ContentTypeHeader);
+            }
         
-            if(publicRequest.IsSetContentType())
+            if (publicRequest.IsSetContentType()) 
+            {
                 request.Headers["Content-Type"] = publicRequest.ContentType;
+            }
 
             return request;
         }

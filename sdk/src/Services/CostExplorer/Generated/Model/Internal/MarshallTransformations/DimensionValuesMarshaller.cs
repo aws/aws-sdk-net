@@ -34,7 +34,7 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DimensionValues Marshaller
-    /// </summary>       
+    /// </summary>
     public class DimensionValuesMarshaller : IRequestMarshaller<DimensionValues, JsonMarshallerContext> 
     {
         /// <summary>
@@ -77,7 +77,7 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DimensionValuesMarshaller Instance = new DimensionValuesMarshaller();
 
     }

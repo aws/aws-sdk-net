@@ -70,6 +70,30 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     unmarshalledObject.Attachment = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Date", targetDepth))
+                {
+                    var unmarshaller = DateReferenceUnmarshaller.Instance;
+                    unmarshalledObject.Date = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Email", targetDepth))
+                {
+                    var unmarshaller = EmailReferenceUnmarshaller.Instance;
+                    unmarshalledObject.Email = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Number", targetDepth))
+                {
+                    var unmarshaller = NumberReferenceUnmarshaller.Instance;
+                    unmarshalledObject.Number = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("String", targetDepth))
+                {
+                    var unmarshaller = StringReferenceUnmarshaller.Instance;
+                    unmarshalledObject.String = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Url", targetDepth))
                 {
                     var unmarshaller = UrlReferenceUnmarshaller.Instance;

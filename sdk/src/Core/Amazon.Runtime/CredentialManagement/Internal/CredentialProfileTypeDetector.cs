@@ -79,9 +79,10 @@ namespace Amazon.Runtime.CredentialManagement.Internal
         private const string SsoRegion = nameof(CredentialProfileOptions.SsoRegion);
         private const string SsoRoleName = nameof(CredentialProfileOptions.SsoRoleName);
         private const string SsoStartUrl = nameof(CredentialProfileOptions.SsoStartUrl);
+        private const string SsoSession = nameof(CredentialProfileOptions.SsoSession);
 
         private static HashSet<string> SsoProperties = new HashSet<string>(
-            new string[] {SsoAccountId, SsoRegion, SsoRoleName, SsoStartUrl},
+            new string[] {SsoAccountId, SsoRegion, SsoRoleName, SsoStartUrl, SsoSession},
             StringComparer.OrdinalIgnoreCase);
 #endif
 
@@ -230,6 +231,7 @@ namespace Amazon.Runtime.CredentialManagement.Internal
                         SsoRegion,
                         SsoRoleName,
                         SsoStartUrl,
+                        SsoSession
                     }
                 },
 #endif

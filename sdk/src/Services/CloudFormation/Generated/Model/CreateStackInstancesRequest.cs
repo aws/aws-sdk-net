@@ -30,9 +30,9 @@ namespace Amazon.CloudFormation.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateStackInstances operation.
-    /// Creates stack instances for the specified accounts, within the specified Regions.
-    /// A stack instance refers to a stack in a specific account and Region. You must specify
-    /// at least one value for either <code>Accounts</code> or <code>DeploymentTargets</code>,
+    /// Creates stack instances for the specified accounts, within the specified Amazon Web
+    /// Services Regions. A stack instance refers to a stack in a specific account and Region.
+    /// You must specify at least one value for either <code>Accounts</code> or <code>DeploymentTargets</code>,
     /// and you must specify at least one value for <code>Regions</code>.
     /// </summary>
     public partial class CreateStackInstancesRequest : AmazonCloudFormationRequest
@@ -113,7 +113,7 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property DeploymentTargets. 
         /// <para>
         /// [Service-managed permissions] The Organizations accounts for which to create stack
-        /// instances in the specified Regions.
+        /// instances in the specified Amazon Web Services Regions.
         /// </para>
         ///  
         /// <para>
@@ -194,8 +194,8 @@ namespace Amazon.CloudFormation.Model
         ///  
         /// <para>
         /// Any overridden parameter values will be applied to all stack instances in the specified
-        /// accounts and Regions. When specifying parameters and their values, be aware of how
-        /// CloudFormation sets parameter values during stack instance operations:
+        /// accounts and Amazon Web Services Regions. When specifying parameters and their values,
+        /// be aware of how CloudFormation sets parameter values during stack instance operations:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -205,23 +205,23 @@ namespace Amazon.CloudFormation.Model
         ///  </li> <li> 
         /// <para>
         /// To leave an overridden parameter set to its present value, include the parameter and
-        /// specify <code>UsePreviousValue</code> as <code>true</code>. (You cannot specify both
+        /// specify <code>UsePreviousValue</code> as <code>true</code>. (You can't specify both
         /// a value and set <code>UsePreviousValue</code> to <code>true</code>.)
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// To set an overridden parameter back to the value specified in the stack set, specify
-        /// a parameter list but do not include the parameter in the list.
+        /// a parameter list but don't include the parameter in the list.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// To leave all parameters set to their present values, do not specify this property
-        /// at all.
+        /// To leave all parameters set to their present values, don't specify this property at
+        /// all.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// During stack set updates, any parameter values overridden for a stack instance are
-        /// not updated, but retain their overridden value.
+        /// During stack set updates, any parameter values overridden for a stack instance aren't
+        /// updated, but retain their overridden value.
         /// </para>
         ///  
         /// <para>
@@ -245,8 +245,8 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Regions. 
         /// <para>
-        /// The names of one or more Regions where you want to create stack instances using the
-        /// specified Amazon Web Services accounts.
+        /// The names of one or more Amazon Web Services Regions where you want to create stack
+        /// instances using the specified Amazon Web Services accounts.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

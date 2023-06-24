@@ -34,7 +34,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ColorSpacePassthroughSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class ColorSpacePassthroughSettingsMarshaller : IRequestMarshaller<ColorSpacePassthroughSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -49,7 +49,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ColorSpacePassthroughSettingsMarshaller Instance = new ColorSpacePassthroughSettingsMarshaller();
 
     }

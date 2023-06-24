@@ -37,7 +37,7 @@ namespace Amazon.Transfer.Model
     /// 
     ///  <note> 
     /// <para>
-    /// Stopping the server will not reduce or impact your file transfer protocol endpoint
+    /// Stopping the server does not reduce or impact your file transfer protocol endpoint
     /// billing; you must delete the server to stop being billed.
     /// </para>
     ///  </note> 

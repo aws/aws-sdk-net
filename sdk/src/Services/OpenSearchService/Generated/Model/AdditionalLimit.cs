@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// List of limits that are specific to a given InstanceType and for each of its <code>
-    /// <a>InstanceRole</a> </code> .
+    /// List of limits that are specific to a given instance type.
     /// </summary>
     public partial class AdditionalLimit
     {
@@ -38,16 +37,19 @@ namespace Amazon.OpenSearchService.Model
         private List<string> _limitValues = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property LimitName. 
+        /// Gets and sets the property LimitName. <ul> <li> 
         /// <para>
-        ///  Additional limit is specific to a given InstanceType and for each of its <code> <a>InstanceRole</a>
-        /// </code> etc. <br/> Attributes and their details: <br/> <ul> <li>MaximumNumberOfDataNodesSupported</li>
-        /// This attribute is present on the master node only to specify how much data nodes up
-        /// to which given <code> <a>ESPartitionInstanceType</a> </code> can support as master
-        /// node. <li>MaximumNumberOfDataNodesWithoutMasterNode</li> This attribute is present
-        /// on data node only to specify how much data nodes of given <code> <a>ESPartitionInstanceType</a>
-        /// </code> up to which you don't need any master nodes to govern them. </ul> 
+        ///  <code>MaximumNumberOfDataNodesSupported</code> - This attribute only applies to master
+        /// nodes and specifies the maximum number of data nodes of a given instance type a master
+        /// node can support.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>MaximumNumberOfDataNodesWithoutMasterNode</code> - This attribute only applies
+        /// to data nodes and specifies the maximum number of data nodes of a given instance type
+        /// can exist without a master node governing them.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string LimitName
         {
@@ -64,7 +66,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property LimitValues. 
         /// <para>
-        ///  Value for a given <code> <a>AdditionalLimit$LimitName</a> </code> . 
+        ///  The values of the additional instance type limits.
         /// </para>
         /// </summary>
         public List<string> LimitValues

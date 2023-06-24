@@ -17,22 +17,22 @@
  * Do not modify this file. This file is generated from the ecr-2015-09-21.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
-
+using Amazon.ECR.Internal;
 
 namespace Amazon.ECR
 {
     /// <summary>
     /// Configuration for accessing Amazon ECR service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonECRConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.2.2");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.147");
 
         private string _userAgent = UserAgentString;
 
@@ -40,8 +40,10 @@ namespace Amazon.ECR
         /// Default constructor
         /// </summary>
         public AmazonECRConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonECRDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "ecr";
+            this.EndpointProvider = new AmazonECREndpointProvider();
         }
 
         /// <summary>
@@ -76,5 +78,6 @@ namespace Amazon.ECR
                 return _userAgent;
             }
         }
+
     }
 }

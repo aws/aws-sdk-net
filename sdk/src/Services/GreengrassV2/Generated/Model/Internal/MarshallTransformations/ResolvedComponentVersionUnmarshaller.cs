@@ -82,10 +82,22 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.ComponentVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("message", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Message = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("recipe", targetDepth))
                 {
                     var unmarshaller = MemoryStreamUnmarshaller.Instance;
                     unmarshalledObject.Recipe = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("vendorGuidance", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.VendorGuidance = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

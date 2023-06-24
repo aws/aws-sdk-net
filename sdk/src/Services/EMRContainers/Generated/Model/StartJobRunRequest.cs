@@ -39,8 +39,11 @@ namespace Amazon.EMRContainers.Model
         private ConfigurationOverrides _configurationOverrides;
         private string _executionRoleArn;
         private JobDriver _jobDriver;
+        private string _jobTemplateId;
+        private Dictionary<string, string> _jobTemplateParameters = new Dictionary<string, string>();
         private string _name;
         private string _releaseLabel;
+        private RetryPolicyConfiguration _retryPolicyConfiguration;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private string _virtualClusterId;
 
@@ -87,7 +90,7 @@ namespace Amazon.EMRContainers.Model
         /// The execution role ARN for the job run.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=20, Max=2048)]
+        [AWSProperty(Min=20, Max=2048)]
         public string ExecutionRoleArn
         {
             get { return this._executionRoleArn; }
@@ -106,7 +109,6 @@ namespace Amazon.EMRContainers.Model
         /// The job driver for the job run.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public JobDriver JobDriver
         {
             get { return this._jobDriver; }
@@ -117,6 +119,44 @@ namespace Amazon.EMRContainers.Model
         internal bool IsSetJobDriver()
         {
             return this._jobDriver != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property JobTemplateId. 
+        /// <para>
+        /// The job template ID to be used to start the job run.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public string JobTemplateId
+        {
+            get { return this._jobTemplateId; }
+            set { this._jobTemplateId = value; }
+        }
+
+        // Check to see if JobTemplateId property is set
+        internal bool IsSetJobTemplateId()
+        {
+            return this._jobTemplateId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property JobTemplateParameters. 
+        /// <para>
+        /// The values of job template parameters to start a job run.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=20)]
+        public Dictionary<string, string> JobTemplateParameters
+        {
+            get { return this._jobTemplateParameters; }
+            set { this._jobTemplateParameters = value; }
+        }
+
+        // Check to see if JobTemplateParameters property is set
+        internal bool IsSetJobTemplateParameters()
+        {
+            return this._jobTemplateParameters != null && this._jobTemplateParameters.Count > 0; 
         }
 
         /// <summary>
@@ -144,7 +184,7 @@ namespace Amazon.EMRContainers.Model
         /// The Amazon EMR release version to use for the job run.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=64)]
+        [AWSProperty(Min=1, Max=64)]
         public string ReleaseLabel
         {
             get { return this._releaseLabel; }
@@ -155,6 +195,24 @@ namespace Amazon.EMRContainers.Model
         internal bool IsSetReleaseLabel()
         {
             return this._releaseLabel != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RetryPolicyConfiguration. 
+        /// <para>
+        /// The retry policy configuration for the job run.
+        /// </para>
+        /// </summary>
+        public RetryPolicyConfiguration RetryPolicyConfiguration
+        {
+            get { return this._retryPolicyConfiguration; }
+            set { this._retryPolicyConfiguration = value; }
+        }
+
+        // Check to see if RetryPolicyConfiguration property is set
+        internal bool IsSetRetryPolicyConfiguration()
+        {
+            return this._retryPolicyConfiguration != null;
         }
 
         /// <summary>

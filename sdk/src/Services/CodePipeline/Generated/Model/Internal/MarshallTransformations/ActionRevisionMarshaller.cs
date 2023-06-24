@@ -34,7 +34,7 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ActionRevision Marshaller
-    /// </summary>       
+    /// </summary>
     public class ActionRevisionMarshaller : IRequestMarshaller<ActionRevision, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ActionRevisionMarshaller Instance = new ActionRevisionMarshaller();
 
     }

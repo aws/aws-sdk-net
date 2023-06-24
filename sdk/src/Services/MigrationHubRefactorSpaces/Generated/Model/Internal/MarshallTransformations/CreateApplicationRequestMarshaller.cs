@@ -56,7 +56,7 @@ namespace Amazon.MigrationHubRefactorSpaces.Model.Internal.MarshallTransformatio
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.MigrationHubRefactorSpaces");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-10-26";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-10-26";
             request.HttpMethod = "POST";
 
             if (!publicRequest.IsSetEnvironmentIdentifier())
@@ -88,7 +88,7 @@ namespace Amazon.MigrationHubRefactorSpaces.Model.Internal.MarshallTransformatio
                 else if(!(publicRequest.IsSetClientToken()))
                 {
                     context.Writer.WritePropertyName("ClientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());                                                
+                    context.Writer.Write(Guid.NewGuid().ToString());
                 }
                 if(publicRequest.IsSetName())
                 {
@@ -122,7 +122,6 @@ namespace Amazon.MigrationHubRefactorSpaces.Model.Internal.MarshallTransformatio
                     context.Writer.Write(publicRequest.VpcId);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

@@ -34,7 +34,7 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CustomSMSLambdaVersionConfigType Marshaller
-    /// </summary>       
+    /// </summary>
     public class CustomSMSLambdaVersionConfigTypeMarshaller : IRequestMarshaller<CustomSMSLambdaVersionConfigType, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CustomSMSLambdaVersionConfigTypeMarshaller Instance = new CustomSMSLambdaVersionConfigTypeMarshaller();
 
     }

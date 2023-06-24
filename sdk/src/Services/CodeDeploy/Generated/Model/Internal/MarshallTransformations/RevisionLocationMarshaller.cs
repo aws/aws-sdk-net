@@ -34,7 +34,7 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RevisionLocation Marshaller
-    /// </summary>       
+    /// </summary>
     public class RevisionLocationMarshaller : IRequestMarshaller<RevisionLocation, JsonMarshallerContext> 
     {
         /// <summary>
@@ -99,7 +99,7 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RevisionLocationMarshaller Instance = new RevisionLocationMarshaller();
 
     }

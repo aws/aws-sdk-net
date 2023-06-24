@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// The status of the OpenSearch version options for the specified OpenSearch domain.
+    /// The status of the the OpenSearch or Elasticsearch version options for the specified
+    /// Amazon OpenSearch Service domain.
     /// </summary>
     public partial class VersionStatus
     {
@@ -39,7 +40,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property Options. 
         /// <para>
-        /// The OpenSearch version for the specified OpenSearch domain.
+        /// The OpenSearch or Elasticsearch version for the specified domain.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=14, Max=18)]
@@ -58,7 +59,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the OpenSearch version options for the specified OpenSearch domain.
+        /// The status of the version options for the specified domain.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

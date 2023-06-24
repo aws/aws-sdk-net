@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// Container for the response returned by the <code> <a>GetUpgradeHistory</a> </code>
-    /// operation.
+    /// Container for the response returned by the <code>GetUpgradeHistory</code> operation.
     /// </summary>
     public partial class GetUpgradeHistoryResponse : AmazonWebServiceResponse
     {
@@ -40,8 +39,9 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Pagination token that needs to be supplied to the next call to get the next page of
-        /// results.
+        /// When <code>nextToken</code> is returned, there are more results available. The value
+        /// of <code>nextToken</code> is a unique pagination token for each page. Make the call
+        /// again using the returned token to retrieve the next page.
         /// </para>
         /// </summary>
         public string NextToken
@@ -59,9 +59,8 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property UpgradeHistories. 
         /// <para>
-        ///  A list of <code> <a>UpgradeHistory</a> </code> objects corresponding to each upgrade
-        /// or upgrade eligibility check performed on a domain returned as part of the <code>
-        /// <a>GetUpgradeHistoryResponse</a> </code> object. 
+        /// A list of objects corresponding to each upgrade or upgrade eligibility check performed
+        /// on a domain.
         /// </para>
         /// </summary>
         public List<UpgradeHistory> UpgradeHistories

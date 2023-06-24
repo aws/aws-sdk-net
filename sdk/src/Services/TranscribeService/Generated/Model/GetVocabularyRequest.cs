@@ -30,7 +30,19 @@ namespace Amazon.TranscribeService.Model
 {
     /// <summary>
     /// Container for the parameters to the GetVocabulary operation.
-    /// Gets information about a vocabulary.
+    /// Provides information about the specified custom vocabulary.
+    /// 
+    ///  
+    /// <para>
+    /// To view the status of the specified custom vocabulary, check the <code>VocabularyState</code>
+    /// field. If the status is <code>READY</code>, your custom vocabulary is available to
+    /// use. If the status is <code>FAILED</code>, <code>FailureReason</code> provides details
+    /// on why your custom vocabulary failed.
+    /// </para>
+    ///  
+    /// <para>
+    /// To get a list of your custom vocabularies, use the operation.
+    /// </para>
     /// </summary>
     public partial class GetVocabularyRequest : AmazonTranscribeServiceRequest
     {
@@ -39,7 +51,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property VocabularyName. 
         /// <para>
-        /// The name of the vocabulary to return information about. The name is case sensitive.
+        /// The name of the custom vocabulary you want information about. Custom vocabulary names
+        /// are case sensitive.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=200)]

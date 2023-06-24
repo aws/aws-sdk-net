@@ -94,6 +94,12 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                     unmarshalledObject.AnalyticsConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("AuthSessionValidity", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.AuthSessionValidity = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CallbackURLs", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
@@ -128,6 +134,12 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DefaultRedirectURI = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("EnablePropagateAdditionalUserContextData", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.EnablePropagateAdditionalUserContextData = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("EnableTokenRevocation", targetDepth))

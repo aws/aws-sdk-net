@@ -36,6 +36,7 @@ namespace Amazon.MediaPackageVod.Model
         private List<DashManifest> _dashManifests = new List<DashManifest>();
         private DashEncryption _encryption;
         private bool? _includeEncoderConfigurationInSegments;
+        private bool? _includeIframeOnlyStream;
         private List<string> _periodTriggers = new List<string>();
         private int? _segmentDurationSeconds;
         private SegmentTemplateFormat _segmentTemplateFormat;
@@ -88,6 +89,22 @@ namespace Amazon.MediaPackageVod.Model
         internal bool IsSetIncludeEncoderConfigurationInSegments()
         {
             return this._includeEncoderConfigurationInSegments.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IncludeIframeOnlyStream. When enabled, an I-Frame only
+        /// stream will be included in the output.
+        /// </summary>
+        public bool IncludeIframeOnlyStream
+        {
+            get { return this._includeIframeOnlyStream.GetValueOrDefault(); }
+            set { this._includeIframeOnlyStream = value; }
+        }
+
+        // Check to see if IncludeIframeOnlyStream property is set
+        internal bool IsSetIncludeIframeOnlyStream()
+        {
+            return this._includeIframeOnlyStream.HasValue; 
         }
 
         /// <summary>

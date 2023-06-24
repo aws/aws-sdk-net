@@ -34,7 +34,7 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// NfsMountOptions Marshaller
-    /// </summary>       
+    /// </summary>
     public class NfsMountOptionsMarshaller : IRequestMarshaller<NfsMountOptions, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static NfsMountOptionsMarshaller Instance = new NfsMountOptionsMarshaller();
 
     }

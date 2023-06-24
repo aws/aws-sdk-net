@@ -55,7 +55,7 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
         public IRequest Marshall(ListTagsForResourceRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Drs");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-02-26";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-02-26";
             request.HttpMethod = "GET";
 
             if (!publicRequest.IsSetResourceArn())

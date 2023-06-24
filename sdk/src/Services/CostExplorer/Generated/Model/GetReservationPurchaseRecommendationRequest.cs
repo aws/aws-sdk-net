@@ -30,9 +30,9 @@ namespace Amazon.CostExplorer.Model
 {
     /// <summary>
     /// Container for the parameters to the GetReservationPurchaseRecommendation operation.
-    /// Gets recommendations for which reservations to purchase. These recommendations could
-    /// help you reduce your costs. Reservations provide a discounted hourly rate (up to 75%)
-    /// compared to On-Demand pricing.
+    /// Gets recommendations for reservation purchases. These recommendations might help you
+    /// to reduce your costs. Reservations provide a discounted hourly rate (up to 75%) compared
+    /// to On-Demand pricing.
     /// 
     ///  
     /// <para>
@@ -40,7 +40,8 @@ namespace Amazon.CostExplorer.Model
     /// during a specific time period and collecting your usage into categories that are eligible
     /// for a reservation. After Amazon Web Services has these categories, it simulates every
     /// combination of reservations in each category of usage to identify the best number
-    /// of each type of RI to purchase to maximize your estimated savings. 
+    /// of each type of Reserved Instance (RI) to purchase to maximize your estimated savings.
+    /// 
     /// </para>
     ///  
     /// <para>
@@ -48,10 +49,10 @@ namespace Amazon.CostExplorer.Model
     /// tenancy, and c4 family usage in the US West (Oregon) Region and recommends that you
     /// buy size-flexible regional reservations to apply to the c4 family usage. Amazon Web
     /// Services recommends the smallest size instance in an instance family. This makes it
-    /// easier to purchase a size-flexible RI. Amazon Web Services also shows the equal number
-    /// of normalized units so that you can purchase any instance size that you want. For
-    /// this example, your RI recommendation would be for <code>c4.large</code> because that
-    /// is the smallest size instance in the c4 instance family.
+    /// easier to purchase a size-flexible Reserved Instance (RI). Amazon Web Services also
+    /// shows the equal number of normalized units. This way, you can purchase any instance
+    /// size that you want. For this example, your RI recommendation is for <code>c4.large</code>
+    /// because that is the smallest size instance in the c4 instance family.
     /// </para>
     /// </summary>
     public partial class GetReservationPurchaseRecommendationRequest : AmazonCostExplorerRequest
@@ -70,7 +71,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The account ID that is associated with the recommendation. 
+        /// The account ID that's associated with the recommendation. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]

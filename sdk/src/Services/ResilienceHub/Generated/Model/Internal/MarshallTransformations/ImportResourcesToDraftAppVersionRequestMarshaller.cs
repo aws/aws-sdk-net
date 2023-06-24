@@ -56,7 +56,7 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ResilienceHub");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-04-30";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-04-30";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/import-resources-to-draft-app-version";
@@ -71,6 +71,28 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.AppArn);
                 }
 
+                if(publicRequest.IsSetEksSources())
+                {
+                    context.Writer.WritePropertyName("eksSources");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestEksSourcesListValue in publicRequest.EksSources)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = EksSourceMarshaller.Instance;
+                        marshaller.Marshall(publicRequestEksSourcesListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetImportStrategy())
+                {
+                    context.Writer.WritePropertyName("importStrategy");
+                    context.Writer.Write(publicRequest.ImportStrategy);
+                }
+
                 if(publicRequest.IsSetSourceArns())
                 {
                     context.Writer.WritePropertyName("sourceArns");
@@ -82,7 +104,22 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
-        
+                if(publicRequest.IsSetTerraformSources())
+                {
+                    context.Writer.WritePropertyName("terraformSources");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestTerraformSourcesListValue in publicRequest.TerraformSources)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = TerraformSourceMarshaller.Instance;
+                        marshaller.Marshall(publicRequestTerraformSourcesListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

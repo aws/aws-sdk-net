@@ -30,7 +30,7 @@ namespace Amazon.AuditManager.Model
 {
     /// <summary>
     /// Container for the parameters to the AssociateAssessmentReportEvidenceFolder operation.
-    /// Associates an evidence folder to an assessment report in a Audit Manager assessment.
+    /// Associates an evidence folder to an assessment report in an Audit Manager assessment.
     /// </summary>
     public partial class AssociateAssessmentReportEvidenceFolderRequest : AmazonAuditManagerRequest
     {

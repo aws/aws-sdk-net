@@ -34,7 +34,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// OutputContext Marshaller
-    /// </summary>       
+    /// </summary>
     public class OutputContextMarshaller : IRequestMarshaller<OutputContext, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static OutputContextMarshaller Instance = new OutputContextMarshaller();
 
     }

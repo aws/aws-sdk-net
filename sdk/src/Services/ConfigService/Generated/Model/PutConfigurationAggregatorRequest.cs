@@ -36,7 +36,7 @@ namespace Amazon.ConfigService.Model
     ///  
     /// <para>
     ///  <code>accountIds</code> that are passed will be replaced with existing accounts.
-    /// If you want to add additional accounts into the aggregator, call <code>DescribeAggregator</code>
+    /// If you want to add additional accounts into the aggregator, call <code>DescribeConfigurationAggregators</code>
     /// to get the previous accounts and then append new ones.
     /// </para>
     ///  <note> 
@@ -55,7 +55,15 @@ namespace Amazon.ConfigService.Model
     ///  
     /// <para>
     /// To register a delegated administrator, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/set-up-aggregator-cli.html#register-a-delegated-administrator-cli">Register
-    /// a Delegated Administrator</a> in the Config developer guide. 
+    /// a Delegated Administrator</a> in the <i>Config developer guide</i>. 
+    /// </para>
+    ///  </note> <note> 
+    /// <para>
+    ///  <code>PutConfigurationAggregator</code> is an idempotent API. Subsequent requests
+    /// won’t create a duplicate resource if one was already created. If a following request
+    /// has different <code>tags</code> values, Config will ignore these differences and treat
+    /// it as an idempotent request of the previous. In this case, <code>tags</code> will
+    /// not be updated, even if they are different.
     /// </para>
     ///  </note>
     /// </summary>

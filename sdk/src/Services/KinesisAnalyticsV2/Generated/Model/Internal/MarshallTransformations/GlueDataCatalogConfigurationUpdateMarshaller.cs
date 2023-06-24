@@ -34,7 +34,7 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// GlueDataCatalogConfigurationUpdate Marshaller
-    /// </summary>       
+    /// </summary>
     public class GlueDataCatalogConfigurationUpdateMarshaller : IRequestMarshaller<GlueDataCatalogConfigurationUpdate, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static GlueDataCatalogConfigurationUpdateMarshaller Instance = new GlueDataCatalogConfigurationUpdateMarshaller();
 
     }

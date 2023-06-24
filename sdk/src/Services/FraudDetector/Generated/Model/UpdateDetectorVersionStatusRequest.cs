@@ -83,6 +83,10 @@ namespace Amazon.FraudDetector.Model
         /// <para>
         /// The new status.
         /// </para>
+        ///  
+        /// <para>
+        /// The only supported values are <code>ACTIVE</code> and <code>INACTIVE</code> 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public DetectorVersionStatus Status

@@ -55,7 +55,7 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
         public IRequest Marshall(ListPolicyGenerationsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.AccessAnalyzer");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-11-01";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-11-01";
             request.HttpMethod = "GET";
 
             

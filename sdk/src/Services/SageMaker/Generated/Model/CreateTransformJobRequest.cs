@@ -51,7 +51,8 @@ namespace Amazon.SageMaker.Model
     /// <para>
     ///  <code>ModelName</code> - Identifies the model to use. <code>ModelName</code> must
     /// be the name of an existing Amazon SageMaker model in the same Amazon Web Services
-    /// Region and Amazon Web Services account. For information on creating a model, see <a>CreateModel</a>.
+    /// Region and Amazon Web Services account. For information on creating a model, see <a
+    /// href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateModel.html">CreateModel</a>.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -77,6 +78,7 @@ namespace Amazon.SageMaker.Model
     public partial class CreateTransformJobRequest : AmazonSageMakerRequest
     {
         private BatchStrategy _batchStrategy;
+        private BatchDataCaptureConfig _dataCaptureConfig;
         private DataProcessing _dataProcessing;
         private Dictionary<string, string> _environment = new Dictionary<string, string>();
         private ExperimentConfig _experimentConfig;
@@ -125,6 +127,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetBatchStrategy()
         {
             return this._batchStrategy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DataCaptureConfig. 
+        /// <para>
+        /// Configuration to control how SageMaker captures inference data.
+        /// </para>
+        /// </summary>
+        public BatchDataCaptureConfig DataCaptureConfig
+        {
+            get { return this._dataCaptureConfig; }
+            set { this._dataCaptureConfig = value; }
+        }
+
+        // Check to see if DataCaptureConfig property is set
+        internal bool IsSetDataCaptureConfig()
+        {
+            return this._dataCaptureConfig != null;
         }
 
         /// <summary>
@@ -221,6 +241,12 @@ namespace Amazon.SageMaker.Model
         /// MB, divide the size of your dataset by the number of records. To ensure that the records
         /// fit within the maximum payload size, we recommend using a slightly larger value. The
         /// default value is <code>6</code> MB. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The value of <code>MaxPayloadInMB</code> cannot be greater than 100 MB. If you specify
+        /// the <code>MaxConcurrentTransforms</code> parameter, the value of <code>(MaxConcurrentTransforms
+        /// * MaxPayloadInMB)</code> also cannot exceed 100 MB.
         /// </para>
         ///  
         /// <para>

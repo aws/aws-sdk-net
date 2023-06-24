@@ -76,6 +76,12 @@ namespace Amazon.CodeGuruReviewer.Model.Internal.MarshallTransformations
                     unmarshalledObject.MeteredLinesOfCodeCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SuppressedLinesOfCodeCount", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.SuppressedLinesOfCodeCount = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

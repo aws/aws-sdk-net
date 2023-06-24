@@ -64,6 +64,12 @@ namespace Amazon.Textract.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("Blocks", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<Block, BlockUnmarshaller>(BlockUnmarshaller.Instance);
+                    unmarshalledObject.Blocks = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ExpenseIndex", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

@@ -30,7 +30,9 @@ namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeReservedInstanceOfferings operation.
-    /// Lists available reserved OpenSearch instance offerings.
+    /// Describes the available Amazon OpenSearch Service Reserved Instance offerings for
+    /// a given Region. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/ri.html">Reserved
+    /// Instances in Amazon OpenSearch Service</a>.
     /// </summary>
     public partial class DescribeReservedInstanceOfferingsRequest : AmazonOpenSearchServiceRequest
     {
@@ -41,8 +43,8 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// Set this value to limit the number of results returned. If not specified, defaults
-        /// to 100.
+        /// An optional parameter that specifies the maximum number of results to return. You
+        /// can use <code>nextToken</code> to get the next page of results.
         /// </para>
         /// </summary>
         [AWSProperty(Max=100)]
@@ -61,7 +63,10 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Provides an identifier to allow retrieval of paginated results. 
+        /// If your initial <code>DescribeReservedInstanceOfferings</code> operation returns a
+        /// <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent
+        /// <code>DescribeReservedInstanceOfferings</code> operations, which returns results in
+        /// the next page.
         /// </para>
         /// </summary>
         public string NextToken
@@ -79,8 +84,8 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property ReservedInstanceOfferingId. 
         /// <para>
-        /// The offering identifier filter value. Use this parameter to show only the available
-        /// offering that matches the specified reservation identifier. 
+        /// The Reserved Instance identifier filter value. Use this parameter to show only the
+        /// available instance types that match the specified reservation identifier.
         /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=36)]

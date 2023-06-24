@@ -42,6 +42,7 @@ namespace Amazon.IoT.Model
     {
         private string _authorizerFunctionArn;
         private string _authorizerName;
+        private bool? _enableCachingForHttp;
         private AuthorizerStatus _status;
         private string _tokenKeyName;
         private Dictionary<string, string> _tokenSigningPublicKeys = new Dictionary<string, string>();
@@ -82,6 +83,26 @@ namespace Amazon.IoT.Model
         internal bool IsSetAuthorizerName()
         {
             return this._authorizerName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnableCachingForHttp. 
+        /// <para>
+        /// When <code>true</code>, the result from the authorizer’s Lambda function is cached
+        /// for the time specified in <code>refreshAfterInSeconds</code>. The cached result is
+        /// used while the device reuses the same HTTP connection.
+        /// </para>
+        /// </summary>
+        public bool EnableCachingForHttp
+        {
+            get { return this._enableCachingForHttp.GetValueOrDefault(); }
+            set { this._enableCachingForHttp = value; }
+        }
+
+        // Check to see if EnableCachingForHttp property is set
+        internal bool IsSetEnableCachingForHttp()
+        {
+            return this._enableCachingForHttp.HasValue; 
         }
 
         /// <summary>

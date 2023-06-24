@@ -55,7 +55,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         public IRequest Marshall(DetachThingPrincipalRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.IoT");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-05-28";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-05-28";
             request.HttpMethod = "DELETE";
 
             if (!publicRequest.IsSetThingName())
@@ -63,8 +63,10 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             request.AddPathResource("{thingName}", StringUtils.FromString(publicRequest.ThingName));
             request.ResourcePath = "/things/{thingName}/principals";
         
-            if(publicRequest.IsSetPrincipal())
+            if (publicRequest.IsSetPrincipal()) 
+            {
                 request.Headers["x-amzn-principal"] = publicRequest.Principal;
+            }
 
             return request;
         }

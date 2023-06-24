@@ -64,6 +64,7 @@ namespace Amazon.Redshift.Model
         private string _hsmConfigurationIdentifier;
         private List<string> _iamRoles = new List<string>();
         private string _kmsKeyId;
+        private string _loadSampleData;
         private string _maintenanceTrackName;
         private int? _manualSnapshotRetentionPeriod;
         private string _masterUsername;
@@ -128,23 +129,9 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property AquaConfigurationStatus. 
         /// <para>
-        /// The value represents how the cluster is configured to use AQUA (Advanced Query Accelerator)
-        /// when it is created. Possible values include the following.
+        /// This parameter is retired. It does not set the AQUA configuration status. Amazon Redshift
+        /// automatically determines whether to use AQUA (Advanced Query Accelerator).
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// enabled - Use AQUA if it is available for the current Amazon Web Services Region and
-        /// Amazon Redshift node type.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// disabled - Don't use AQUA. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// auto - Amazon Redshift determines whether to use AQUA.
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         public AquaConfigurationStatus AquaConfigurationStatus
         {
@@ -527,8 +514,9 @@ namespace Amazon.Redshift.Model
         ///  
         /// <para>
         /// Constraints: The cluster must be provisioned in EC2-VPC and publicly-accessible through
-        /// an Internet gateway. For more information about provisioning clusters in EC2-VPC,
-        /// go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported
+        /// an Internet gateway. Don't specify the Elastic IP address for a publicly accessible
+        /// cluster with availability zone relocation turned on. For more information about provisioning
+        /// clusters in EC2-VPC, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported
         /// Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management Guide.
         /// </para>
         /// </summary>
@@ -641,11 +629,13 @@ namespace Amazon.Redshift.Model
         /// <para>
         /// A list of Identity and Access Management (IAM) roles that can be used by the cluster
         /// to access other Amazon Web Services services. You must supply the IAM roles in their
-        /// Amazon Resource Name (ARN) format. You can supply up to 10 IAM roles in a single request.
+        /// Amazon Resource Name (ARN) format. 
         /// </para>
         ///  
         /// <para>
-        /// A cluster can have up to 10 IAM roles associated with it at any time.
+        /// The maximum number of IAM roles that you can associate is subject to a quota. For
+        /// more information, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Quotas
+        /// and limits</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
         /// </para>
         /// </summary>
         public List<string> IamRoles
@@ -678,6 +668,25 @@ namespace Amazon.Redshift.Model
         internal bool IsSetKmsKeyId()
         {
             return this._kmsKeyId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LoadSampleData. 
+        /// <para>
+        /// A flag that specifies whether to load sample data once the cluster is created.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=2147483647)]
+        public string LoadSampleData
+        {
+            get { return this._loadSampleData; }
+            set { this._loadSampleData = value; }
+        }
+
+        // Check to see if LoadSampleData property is set
+        internal bool IsSetLoadSampleData()
+        {
+            return this._loadSampleData != null;
         }
 
         /// <summary>
@@ -737,11 +746,20 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Must be 1 - 128 alphanumeric characters. The user name can't be <code>PUBLIC</code>.
+        /// Must be 1 - 128 alphanumeric characters or hyphens. The user name can't be <code>PUBLIC</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// First character must be a letter.
+        /// Must contain only lowercase letters, numbers, underscore, plus sign, period (dot),
+        /// at symbol (@), or hyphen.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The first character must be a letter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Must not contain a colon (:) or a slash (/).
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -791,8 +809,8 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Can be any printable ASCII character (ASCII code 33 to 126) except ' (single quote),
-        /// " (double quote), \, /, @, or space.
+        /// Can be any printable ASCII character (ASCII code 33-126) except <code>'</code> (single
+        /// quote), <code>"</code> (double quote), <code>\</code>, <code>/</code>, or <code>@</code>.
         /// </para>
         ///  </li> </ul>
         /// </summary>

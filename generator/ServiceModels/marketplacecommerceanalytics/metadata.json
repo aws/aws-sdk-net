@@ -1,5 +1,6 @@
 {
-    "base-name": "AWSMarketplaceCommerceAnalytics", 
-    "active": true, 
-    "synopsis": "The AWS Marketplace Commerce Analytics service allows marketplace partners to programmatically request business intelligence data from AWS Marketplace. This service provides the same data that was previously only available through the AWS Marketplace Management Portal, but offers the data in a fully-machine-readable format and available in fine-grained data sets rather than large reports."
+  "base-name": "AWSMarketplaceCommerceAnalytics",
+  "active": true,
+  "synopsis": "The AWS Marketplace Commerce Analytics service allows marketplace partners to programmatically request business intelligence data from AWS Marketplace. This service provides the same data that was previously only available through the AWS Marketplace Management Portal, but offers the data in a fully-machine-readable format and available in fine-grained data sets rather than large reports.",
+  "legacy-service-id": "Marketplace Commerce Analytics"
 }

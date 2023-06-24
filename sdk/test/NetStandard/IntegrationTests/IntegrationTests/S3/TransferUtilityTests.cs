@@ -296,6 +296,28 @@ namespace Amazon.DNXCore.IntegrationTests.S3
             progressValidator.AssertOnCompletion();
         }
 
+        [Fact]
+        [Trait(CategoryAttribute, "S3")]
+        public async Task DownloadProgressZeroLengthFileTest()
+        {
+            var fileName = UtilityMethods.GenerateName(Path.Combine("DownloadTest", "File"));
+            var progressValidator = new TransferProgressValidator<WriteObjectProgressArgs>
+            {
+                Validate = (p) =>
+                {
+                    Assert.Equal(p.BucketName, testBucketName);
+                    Assert.Equal(p.Key, fileName);
+                    Assert.NotNull(p.FilePath);
+                    Assert.True(p.FilePath.Contains(fileName));
+                    Assert.Equal(p.TotalBytes, 0);
+                    Assert.Equal(p.TransferredBytes, 0);
+                    Assert.Equal(p.PercentDone, 100);
+                }
+            };
+            await DownloadAsync(fileName, 0, progressValidator).ConfigureAwait(false);
+            progressValidator.AssertOnCompletion();
+        }
+
         async Task DownloadAsync(string fileName, long size, TransferProgressValidator<WriteObjectProgressArgs> progressValidator)
         {
             var key = fileName;

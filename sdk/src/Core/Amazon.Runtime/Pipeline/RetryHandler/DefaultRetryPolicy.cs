@@ -29,7 +29,7 @@ namespace Amazon.Runtime.Internal
     public partial class DefaultRetryPolicy : RetryPolicy
     {
         //The status code returned from a service request when an invalid endpoint is used.
-        private const int INVALID_ENDPOINT_EXCEPTION_STATUSCODE = 421;        
+        private const int INVALID_ENDPOINT_EXCEPTION_STATUSCODE = 421;
         //Holds on to the singleton instance.
         private static readonly CapacityManager _capacityManagerInstance = new CapacityManager(throttleRetryCount: 100, throttleRetryCost: 5, throttleCost: 1);
 
@@ -46,7 +46,7 @@ namespace Amazon.Runtime.Internal
         /// before retrying a request. The default is 30000 milliseconds.
         /// </summary>
         public int MaxBackoffInMilliseconds { get; set; } = 30000;
-                                
+
         /// <summary>
         /// Constructor for DefaultRetryPolicy.
         /// </summary>
@@ -69,8 +69,7 @@ namespace Amazon.Runtime.Internal
             this.MaxRetries = config.MaxErrorRetry;
             if (config.ThrottleRetries)
             {
-                string serviceURL = config.DetermineServiceURL();
-                RetryCapacity = _capacityManagerInstance.GetRetryCapacity(serviceURL);
+                RetryCapacity = _capacityManagerInstance.GetRetryCapacity(GetRetryCapacityKey(config));
             } 
         }
 
@@ -136,7 +135,7 @@ namespace Amazon.Runtime.Internal
                 return _capacityManagerInstance.TryAcquireCapacity(RetryCapacity, executionContext.RequestContext.LastCapacityType);
             }
             
-            return true;            
+            return true;
         }
 
         /// <summary>
@@ -191,7 +190,7 @@ namespace Amazon.Runtime.Internal
             if (IsTransientError(executionContext, exception) || IsServiceTimeoutError(exception))
             {
                 return true;
-            }                        
+            }
 
             //Check for Invalid Endpoint Exception indicating that the Endpoint Discovery
             //endpoint used was invalid for the request. One retry attempt is allowed for this
@@ -238,7 +237,7 @@ namespace Amazon.Runtime.Internal
         public static void WaitBeforeRetry(int retries, int maxBackoffInMilliseconds)
         {
             AWSSDKUtils.Sleep(CalculateRetryDelay(retries, maxBackoffInMilliseconds));
-        }        
+        }
 
         private static int CalculateRetryDelay(int retries, int maxBackoffInMilliseconds)
         {
@@ -255,14 +254,14 @@ namespace Amazon.Runtime.Internal
         [Obsolete("This method is no longer used within DefaultRetryPolicy")]
         protected static bool ContainErrorMessage(Exception exception)
         {
-            return ContainErrorMessage(exception, _netStandardRetryErrorMessages);            
+            return ContainErrorMessage(exception, _netStandardRetryErrorMessages);
         }
 
         [Obsolete("This method has been moved to AWSSDK.Runtime.Internal.Util.ExceptionUtils")]
         protected static bool IsInnerException<T>(Exception exception)
             where T : Exception
         {
-            return ExceptionUtils.IsInnerException<T>(exception);            
+            return ExceptionUtils.IsInnerException<T>(exception);
         }
 
         [Obsolete("This method has been moved to AWSSDK.Runtime.Internal.Util.ExceptionUtils")]

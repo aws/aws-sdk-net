@@ -16,6 +16,12 @@
     <max>32</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.XRay.Model.DeleteResourcePolicyRequest.PolicyName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\w+=,.@-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.XRay.Model.GetGroupRequest.GroupARN</property>
     <min>1</min>
     <max>400</max>
@@ -122,6 +128,16 @@
     <max>32</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.XRay.Model.ListResourcePoliciesRequest.NextToken</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.XRay.Model.ListResourcePoliciesResponse.NextToken</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.XRay.Model.ListTagsForResourceRequest.ResourceARN</property>
     <min>1</min>
     <max>1011</max>
@@ -130,6 +146,12 @@
     <property>Amazon.XRay.Model.PutEncryptionConfigRequest.KeyId</property>
     <min>1</min>
     <max>3000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.XRay.Model.PutResourcePolicyRequest.PolicyName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\w+=,.@-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.XRay.Model.PutTelemetryRecordsRequest.EC2InstanceId</property>
@@ -195,6 +217,12 @@
     <property>Amazon.XRay.Model.ResourceNotFoundException.ResourceName</property>
     <min>1</min>
     <max>1011</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.XRay.Model.ResourcePolicy.PolicyName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\w+=,.@-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.XRay.Model.SamplingRule.FixedRate</property>

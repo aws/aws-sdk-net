@@ -43,7 +43,7 @@ namespace Amazon.EMRContainers
     /// With this deployment option, you can focus on running analytics workloads while Amazon
     /// EMR on EKS builds, configures, and manages containers for open-source applications.
     /// For more information about Amazon EMR on EKS concepts and tasks, see <a href="https://docs.aws.amazon.com/emr/latest/EMR-on-EKS-DevelopmentGuide/emr-eks.html">What
-    /// is Amazon EMR on EKS</a>.
+    /// is shared id="EMR-EKS"/&gt;</a>.
     /// 
     ///  
     /// <para>
@@ -65,7 +65,7 @@ namespace Amazon.EMRContainers
     /// <para>
     /// It is the prefix used in Amazon EMR on EKS service endpoints. For example, <code>emr-containers.us-east-2.amazonaws.com</code>.
     /// For more information, see <a href="https://docs.aws.amazon.com/emr/latest/EMR-on-EKS-DevelopmentGuide/service-quotas.html#service-endpoints">Amazon
-    /// EMR on EKS Service Endpoints</a>.
+    /// EMR on EKSService Endpoints</a>.
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -262,6 +262,15 @@ namespace Amazon.EMRContainers
         } 
 
         /// <summary>
+        /// Customizes the runtime pipeline.
+        /// </summary>
+        /// <param name="pipeline">Runtime pipeline for the current client.</param>
+        protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
+        {
+            pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonEMRContainersEndpointResolver());
+        }
+        /// <summary>
         /// Capture metadata for the service.
         /// </summary>
         protected override IServiceMetadata ServiceMetadata
@@ -328,6 +337,52 @@ namespace Amazon.EMRContainers
 
         #endregion
         
+        #region  CreateJobTemplate
+
+        internal virtual CreateJobTemplateResponse CreateJobTemplate(CreateJobTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateJobTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateJobTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<CreateJobTemplateResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a job template. Job template stores values of StartJobRun API request in a
+        /// template and can be used to start a job run. Job template allows two use cases: avoid
+        /// repeating recurring StartJobRun API request values, enforcing certain values in StartJobRun
+        /// API request.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateJobTemplate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateJobTemplate service method, as returned by EMRContainers.</returns>
+        /// <exception cref="Amazon.EMRContainers.Model.InternalServerException">
+        /// This is an internal server exception.
+        /// </exception>
+        /// <exception cref="Amazon.EMRContainers.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.EMRContainers.Model.ValidationException">
+        /// There are invalid parameters in the client request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/CreateJobTemplate">REST API Reference for CreateJobTemplate Operation</seealso>
+        public virtual Task<CreateJobTemplateResponse> CreateJobTemplateAsync(CreateJobTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateJobTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateJobTemplateResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateJobTemplateResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateManagedEndpoint
 
         internal virtual CreateManagedEndpointResponse CreateManagedEndpoint(CreateManagedEndpointRequest request)
@@ -342,8 +397,9 @@ namespace Amazon.EMRContainers
 
 
         /// <summary>
-        /// Creates a managed endpoint. A managed endpoint is a gateway that connects EMR Studio
-        /// to Amazon EMR on EKS so that EMR Studio can communicate with your virtual cluster.
+        /// Creates a managed endpoint. A managed endpoint is a gateway that connects Amazon EMR
+        /// Studio to Amazon EMR on EKS so that Amazon EMR Studio can communicate with your virtual
+        /// cluster.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateManagedEndpoint service method.</param>
         /// <param name="cancellationToken">
@@ -419,6 +475,49 @@ namespace Amazon.EMRContainers
 
         #endregion
         
+        #region  DeleteJobTemplate
+
+        internal virtual DeleteJobTemplateResponse DeleteJobTemplate(DeleteJobTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteJobTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteJobTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteJobTemplateResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a job template. Job template stores values of StartJobRun API request in a
+        /// template and can be used to start a job run. Job template allows two use cases: avoid
+        /// repeating recurring StartJobRun API request values, enforcing certain values in StartJobRun
+        /// API request.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteJobTemplate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteJobTemplate service method, as returned by EMRContainers.</returns>
+        /// <exception cref="Amazon.EMRContainers.Model.InternalServerException">
+        /// This is an internal server exception.
+        /// </exception>
+        /// <exception cref="Amazon.EMRContainers.Model.ValidationException">
+        /// There are invalid parameters in the client request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/DeleteJobTemplate">REST API Reference for DeleteJobTemplate Operation</seealso>
+        public virtual Task<DeleteJobTemplateResponse> DeleteJobTemplateAsync(DeleteJobTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteJobTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteJobTemplateResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteJobTemplateResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteManagedEndpoint
 
         internal virtual DeleteManagedEndpointResponse DeleteManagedEndpoint(DeleteManagedEndpointRequest request)
@@ -433,8 +532,9 @@ namespace Amazon.EMRContainers
 
 
         /// <summary>
-        /// Deletes a managed endpoint. A managed endpoint is a gateway that connects EMR Studio
-        /// to Amazon EMR on EKS so that EMR Studio can communicate with your virtual cluster.
+        /// Deletes a managed endpoint. A managed endpoint is a gateway that connects Amazon EMR
+        /// Studio to Amazon EMR on EKS so that Amazon EMR Studio can communicate with your virtual
+        /// cluster.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteManagedEndpoint service method.</param>
         /// <param name="cancellationToken">
@@ -548,6 +648,52 @@ namespace Amazon.EMRContainers
 
         #endregion
         
+        #region  DescribeJobTemplate
+
+        internal virtual DescribeJobTemplateResponse DescribeJobTemplate(DescribeJobTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeJobTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeJobTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeJobTemplateResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Displays detailed information about a specified job template. Job template stores
+        /// values of StartJobRun API request in a template and can be used to start a job run.
+        /// Job template allows two use cases: avoid repeating recurring StartJobRun API request
+        /// values, enforcing certain values in StartJobRun API request.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeJobTemplate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeJobTemplate service method, as returned by EMRContainers.</returns>
+        /// <exception cref="Amazon.EMRContainers.Model.InternalServerException">
+        /// This is an internal server exception.
+        /// </exception>
+        /// <exception cref="Amazon.EMRContainers.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.EMRContainers.Model.ValidationException">
+        /// There are invalid parameters in the client request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/DescribeJobTemplate">REST API Reference for DescribeJobTemplate Operation</seealso>
+        public virtual Task<DescribeJobTemplateResponse> DescribeJobTemplateAsync(DescribeJobTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeJobTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeJobTemplateResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeJobTemplateResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeManagedEndpoint
 
         internal virtual DescribeManagedEndpointResponse DescribeManagedEndpoint(DescribeManagedEndpointRequest request)
@@ -563,8 +709,8 @@ namespace Amazon.EMRContainers
 
         /// <summary>
         /// Displays detailed information about a managed endpoint. A managed endpoint is a gateway
-        /// that connects EMR Studio to Amazon EMR on EKS so that EMR Studio can communicate with
-        /// your virtual cluster.
+        /// that connects Amazon EMR Studio to Amazon EMR on EKS so that Amazon EMR Studio can
+        /// communicate with your virtual cluster.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeManagedEndpoint service method.</param>
         /// <param name="cancellationToken">
@@ -640,6 +786,52 @@ namespace Amazon.EMRContainers
 
         #endregion
         
+        #region  GetManagedEndpointSessionCredentials
+
+        internal virtual GetManagedEndpointSessionCredentialsResponse GetManagedEndpointSessionCredentials(GetManagedEndpointSessionCredentialsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetManagedEndpointSessionCredentialsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetManagedEndpointSessionCredentialsResponseUnmarshaller.Instance;
+
+            return Invoke<GetManagedEndpointSessionCredentialsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Generate a session token to connect to a managed endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetManagedEndpointSessionCredentials service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetManagedEndpointSessionCredentials service method, as returned by EMRContainers.</returns>
+        /// <exception cref="Amazon.EMRContainers.Model.InternalServerException">
+        /// This is an internal server exception.
+        /// </exception>
+        /// <exception cref="Amazon.EMRContainers.Model.RequestThrottledException">
+        /// The request throttled.
+        /// </exception>
+        /// <exception cref="Amazon.EMRContainers.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.EMRContainers.Model.ValidationException">
+        /// There are invalid parameters in the client request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/GetManagedEndpointSessionCredentials">REST API Reference for GetManagedEndpointSessionCredentials Operation</seealso>
+        public virtual Task<GetManagedEndpointSessionCredentialsResponse> GetManagedEndpointSessionCredentialsAsync(GetManagedEndpointSessionCredentialsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetManagedEndpointSessionCredentialsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetManagedEndpointSessionCredentialsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetManagedEndpointSessionCredentialsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListJobRuns
 
         internal virtual ListJobRunsResponse ListJobRuns(ListJobRunsRequest request)
@@ -681,6 +873,49 @@ namespace Amazon.EMRContainers
 
         #endregion
         
+        #region  ListJobTemplates
+
+        internal virtual ListJobTemplatesResponse ListJobTemplates(ListJobTemplatesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListJobTemplatesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListJobTemplatesResponseUnmarshaller.Instance;
+
+            return Invoke<ListJobTemplatesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists job templates based on a set of parameters. Job template stores values of StartJobRun
+        /// API request in a template and can be used to start a job run. Job template allows
+        /// two use cases: avoid repeating recurring StartJobRun API request values, enforcing
+        /// certain values in StartJobRun API request.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListJobTemplates service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListJobTemplates service method, as returned by EMRContainers.</returns>
+        /// <exception cref="Amazon.EMRContainers.Model.InternalServerException">
+        /// This is an internal server exception.
+        /// </exception>
+        /// <exception cref="Amazon.EMRContainers.Model.ValidationException">
+        /// There are invalid parameters in the client request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/ListJobTemplates">REST API Reference for ListJobTemplates Operation</seealso>
+        public virtual Task<ListJobTemplatesResponse> ListJobTemplatesAsync(ListJobTemplatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListJobTemplatesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListJobTemplatesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListJobTemplatesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListManagedEndpoints
 
         internal virtual ListManagedEndpointsResponse ListManagedEndpoints(ListManagedEndpointsRequest request)
@@ -696,8 +931,8 @@ namespace Amazon.EMRContainers
 
         /// <summary>
         /// Lists managed endpoints based on a set of parameters. A managed endpoint is a gateway
-        /// that connects EMR Studio to Amazon EMR on EKS so that EMR Studio can communicate with
-        /// your virtual cluster.
+        /// that connects Amazon EMR Studio to Amazon EMR on EKS so that Amazon EMR Studio can
+        /// communicate with your virtual cluster.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListManagedEndpoints service method.</param>
         /// <param name="cancellationToken">
@@ -868,15 +1103,15 @@ namespace Amazon.EMRContainers
 
 
         /// <summary>
-        /// Assigns tags to resources. A tag is a label that you assign to an AWS resource. Each
-        /// tag consists of a key and an optional value, both of which you define. Tags enable
-        /// you to categorize your AWS resources by attributes such as purpose, owner, or environment.
-        /// When you have many resources of the same type, you can quickly identify a specific
-        /// resource based on the tags you've assigned to it. For example, you can define a set
-        /// of tags for your Amazon EMR on EKS clusters to help you track each cluster's owner
-        /// and stack level. We recommend that you devise a consistent set of tag keys for each
-        /// resource type. You can then search and filter the resources based on the tags that
-        /// you add.
+        /// Assigns tags to resources. A tag is a label that you assign to an Amazon Web Services
+        /// resource. Each tag consists of a key and an optional value, both of which you define.
+        /// Tags enable you to categorize your Amazon Web Services resources by attributes such
+        /// as purpose, owner, or environment. When you have many resources of the same type,
+        /// you can quickly identify a specific resource based on the tags you've assigned to
+        /// it. For example, you can define a set of tags for your Amazon EMR on EKS clusters
+        /// to help you track each cluster's owner and stack level. We recommend that you devise
+        /// a consistent set of tag keys for each resource type. You can then search and filter
+        /// the resources based on the tags that you add.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// <param name="cancellationToken">

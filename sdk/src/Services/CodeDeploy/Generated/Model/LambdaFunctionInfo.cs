@@ -60,8 +60,8 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property FunctionAlias. 
         /// <para>
-        ///  The alias of a Lambda function. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html">AWS
-        /// Lambda Function Aliases</a> in the <i>AWS Lambda Developer Guide</i>.
+        ///  The alias of a Lambda function. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html">Lambda
+        /// Function Aliases</a> in the <i>Lambda Developer Guide</i>.
         /// </para>
         /// </summary>
         public string FunctionAlias

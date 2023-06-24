@@ -30,8 +30,8 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteIntegrationAssociation operation.
-    /// Deletes an AWS resource association from an Amazon Connect instance. The association
-    /// must not have any use cases associated with it.
+    /// Deletes an Amazon Web Services resource association from an Amazon Connect instance.
+    /// The association must not have any use cases associated with it.
     /// </summary>
     public partial class DeleteIntegrationAssociationRequest : AmazonConnectRequest
     {
@@ -41,8 +41,8 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The identifier of the Amazon Connect instance. You can find the instanceId in the
-        /// ARN of the instance.
+        /// The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+        /// the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]

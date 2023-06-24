@@ -79,6 +79,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.CreditSpecification = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("disableApiStop", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.DisableApiStop = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("disableApiTermination", targetDepth))
                     {
                         var unmarshaller = BoolUnmarshaller.Instance;
@@ -170,6 +176,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         var unmarshaller = LaunchTemplateLicenseConfigurationUnmarshaller.Instance;
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.LicenseSpecifications.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("maintenanceOptions", targetDepth))
+                    {
+                        var unmarshaller = LaunchTemplateInstanceMaintenanceOptionsUnmarshaller.Instance;
+                        unmarshalledObject.MaintenanceOptions = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("metadataOptions", targetDepth))

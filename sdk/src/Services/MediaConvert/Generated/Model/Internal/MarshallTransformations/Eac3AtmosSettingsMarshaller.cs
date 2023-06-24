@@ -34,7 +34,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Eac3AtmosSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class Eac3AtmosSettingsMarshaller : IRequestMarshaller<Eac3AtmosSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -151,7 +151,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static Eac3AtmosSettingsMarshaller Instance = new Eac3AtmosSettingsMarshaller();
 
     }

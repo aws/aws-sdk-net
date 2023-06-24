@@ -25,6 +25,134 @@ namespace Amazon.CloudTrail
 {
 
     /// <summary>
+    /// Constants used for properties of type DeliveryStatus.
+    /// </summary>
+    public class DeliveryStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACCESS_DENIED for DeliveryStatus
+        /// </summary>
+        public static readonly DeliveryStatus ACCESS_DENIED = new DeliveryStatus("ACCESS_DENIED");
+        /// <summary>
+        /// Constant ACCESS_DENIED_SIGNING_FILE for DeliveryStatus
+        /// </summary>
+        public static readonly DeliveryStatus ACCESS_DENIED_SIGNING_FILE = new DeliveryStatus("ACCESS_DENIED_SIGNING_FILE");
+        /// <summary>
+        /// Constant CANCELLED for DeliveryStatus
+        /// </summary>
+        public static readonly DeliveryStatus CANCELLED = new DeliveryStatus("CANCELLED");
+        /// <summary>
+        /// Constant FAILED for DeliveryStatus
+        /// </summary>
+        public static readonly DeliveryStatus FAILED = new DeliveryStatus("FAILED");
+        /// <summary>
+        /// Constant FAILED_SIGNING_FILE for DeliveryStatus
+        /// </summary>
+        public static readonly DeliveryStatus FAILED_SIGNING_FILE = new DeliveryStatus("FAILED_SIGNING_FILE");
+        /// <summary>
+        /// Constant PENDING for DeliveryStatus
+        /// </summary>
+        public static readonly DeliveryStatus PENDING = new DeliveryStatus("PENDING");
+        /// <summary>
+        /// Constant RESOURCE_NOT_FOUND for DeliveryStatus
+        /// </summary>
+        public static readonly DeliveryStatus RESOURCE_NOT_FOUND = new DeliveryStatus("RESOURCE_NOT_FOUND");
+        /// <summary>
+        /// Constant SUCCESS for DeliveryStatus
+        /// </summary>
+        public static readonly DeliveryStatus SUCCESS = new DeliveryStatus("SUCCESS");
+        /// <summary>
+        /// Constant UNKNOWN for DeliveryStatus
+        /// </summary>
+        public static readonly DeliveryStatus UNKNOWN = new DeliveryStatus("UNKNOWN");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DeliveryStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DeliveryStatus FindValue(string value)
+        {
+            return FindValue<DeliveryStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DeliveryStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DestinationType.
+    /// </summary>
+    public class DestinationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AWS_SERVICE for DestinationType
+        /// </summary>
+        public static readonly DestinationType AWS_SERVICE = new DestinationType("AWS_SERVICE");
+        /// <summary>
+        /// Constant EVENT_DATA_STORE for DestinationType
+        /// </summary>
+        public static readonly DestinationType EVENT_DATA_STORE = new DestinationType("EVENT_DATA_STORE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DestinationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DestinationType FindValue(string value)
+        {
+            return FindValue<DestinationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DestinationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type EventCategory.
     /// </summary>
     public class EventCategory : ConstantClass
@@ -64,6 +192,188 @@ namespace Amazon.CloudTrail
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator EventCategory(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type EventDataStoreStatus.
+    /// </summary>
+    public class EventDataStoreStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CREATED for EventDataStoreStatus
+        /// </summary>
+        public static readonly EventDataStoreStatus CREATED = new EventDataStoreStatus("CREATED");
+        /// <summary>
+        /// Constant ENABLED for EventDataStoreStatus
+        /// </summary>
+        public static readonly EventDataStoreStatus ENABLED = new EventDataStoreStatus("ENABLED");
+        /// <summary>
+        /// Constant PENDING_DELETION for EventDataStoreStatus
+        /// </summary>
+        public static readonly EventDataStoreStatus PENDING_DELETION = new EventDataStoreStatus("PENDING_DELETION");
+        /// <summary>
+        /// Constant STARTING_INGESTION for EventDataStoreStatus
+        /// </summary>
+        public static readonly EventDataStoreStatus STARTING_INGESTION = new EventDataStoreStatus("STARTING_INGESTION");
+        /// <summary>
+        /// Constant STOPPED_INGESTION for EventDataStoreStatus
+        /// </summary>
+        public static readonly EventDataStoreStatus STOPPED_INGESTION = new EventDataStoreStatus("STOPPED_INGESTION");
+        /// <summary>
+        /// Constant STOPPING_INGESTION for EventDataStoreStatus
+        /// </summary>
+        public static readonly EventDataStoreStatus STOPPING_INGESTION = new EventDataStoreStatus("STOPPING_INGESTION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EventDataStoreStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EventDataStoreStatus FindValue(string value)
+        {
+            return FindValue<EventDataStoreStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EventDataStoreStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ImportFailureStatus.
+    /// </summary>
+    public class ImportFailureStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED for ImportFailureStatus
+        /// </summary>
+        public static readonly ImportFailureStatus FAILED = new ImportFailureStatus("FAILED");
+        /// <summary>
+        /// Constant RETRY for ImportFailureStatus
+        /// </summary>
+        public static readonly ImportFailureStatus RETRY = new ImportFailureStatus("RETRY");
+        /// <summary>
+        /// Constant SUCCEEDED for ImportFailureStatus
+        /// </summary>
+        public static readonly ImportFailureStatus SUCCEEDED = new ImportFailureStatus("SUCCEEDED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ImportFailureStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ImportFailureStatus FindValue(string value)
+        {
+            return FindValue<ImportFailureStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ImportFailureStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ImportStatus.
+    /// </summary>
+    public class ImportStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPLETED for ImportStatus
+        /// </summary>
+        public static readonly ImportStatus COMPLETED = new ImportStatus("COMPLETED");
+        /// <summary>
+        /// Constant FAILED for ImportStatus
+        /// </summary>
+        public static readonly ImportStatus FAILED = new ImportStatus("FAILED");
+        /// <summary>
+        /// Constant IN_PROGRESS for ImportStatus
+        /// </summary>
+        public static readonly ImportStatus IN_PROGRESS = new ImportStatus("IN_PROGRESS");
+        /// <summary>
+        /// Constant INITIALIZING for ImportStatus
+        /// </summary>
+        public static readonly ImportStatus INITIALIZING = new ImportStatus("INITIALIZING");
+        /// <summary>
+        /// Constant STOPPED for ImportStatus
+        /// </summary>
+        public static readonly ImportStatus STOPPED = new ImportStatus("STOPPED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ImportStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ImportStatus FindValue(string value)
+        {
+            return FindValue<ImportStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ImportStatus(string value)
         {
             return FindValue(value);
         }
@@ -188,6 +498,72 @@ namespace Amazon.CloudTrail
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator LookupAttributeKey(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type QueryStatus.
+    /// </summary>
+    public class QueryStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CANCELLED for QueryStatus
+        /// </summary>
+        public static readonly QueryStatus CANCELLED = new QueryStatus("CANCELLED");
+        /// <summary>
+        /// Constant FAILED for QueryStatus
+        /// </summary>
+        public static readonly QueryStatus FAILED = new QueryStatus("FAILED");
+        /// <summary>
+        /// Constant FINISHED for QueryStatus
+        /// </summary>
+        public static readonly QueryStatus FINISHED = new QueryStatus("FINISHED");
+        /// <summary>
+        /// Constant QUEUED for QueryStatus
+        /// </summary>
+        public static readonly QueryStatus QUEUED = new QueryStatus("QUEUED");
+        /// <summary>
+        /// Constant RUNNING for QueryStatus
+        /// </summary>
+        public static readonly QueryStatus RUNNING = new QueryStatus("RUNNING");
+        /// <summary>
+        /// Constant TIMED_OUT for QueryStatus
+        /// </summary>
+        public static readonly QueryStatus TIMED_OUT = new QueryStatus("TIMED_OUT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public QueryStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static QueryStatus FindValue(string value)
+        {
+            return FindValue<QueryStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator QueryStatus(string value)
         {
             return FindValue(value);
         }

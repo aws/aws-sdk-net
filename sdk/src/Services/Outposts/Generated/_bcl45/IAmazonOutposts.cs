@@ -51,7 +51,7 @@ namespace Amazon.Outposts
 
 
         /// <summary>
-        /// Cancels an order for an Outpost.
+        /// Cancels the specified order for an Outpost.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelOrder service method.</param>
         /// 
@@ -77,7 +77,7 @@ namespace Amazon.Outposts
 
 
         /// <summary>
-        /// Cancels an order for an Outpost.
+        /// Cancels the specified order for an Outpost.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelOrder service method.</param>
         /// <param name="cancellationToken">
@@ -177,7 +177,7 @@ namespace Amazon.Outposts
         /// 
         ///  
         /// <para>
-        /// You can specify <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code>.
+        /// You can specify either an Availability one or an AZ ID.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateOutpost service method.</param>
@@ -211,7 +211,7 @@ namespace Amazon.Outposts
         /// 
         ///  
         /// <para>
-        /// You can specify <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code>.
+        /// You can specify either an Availability one or an AZ ID.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateOutpost service method.</param>
@@ -305,7 +305,7 @@ namespace Amazon.Outposts
 
 
         /// <summary>
-        /// Deletes the Outpost.
+        /// Deletes the specified Outpost.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteOutpost service method.</param>
         /// 
@@ -331,7 +331,7 @@ namespace Amazon.Outposts
 
 
         /// <summary>
-        /// Deletes the Outpost.
+        /// Deletes the specified Outpost.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteOutpost service method.</param>
         /// <param name="cancellationToken">
@@ -363,7 +363,7 @@ namespace Amazon.Outposts
 
 
         /// <summary>
-        /// Deletes the site.
+        /// Deletes the specified site.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteSite service method.</param>
         /// 
@@ -389,7 +389,7 @@ namespace Amazon.Outposts
 
 
         /// <summary>
-        /// Deletes the site.
+        /// Deletes the specified site.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteSite service method.</param>
         /// <param name="cancellationToken">
@@ -421,7 +421,7 @@ namespace Amazon.Outposts
 
 
         /// <summary>
-        /// Gets information about a catalog item.
+        /// Gets information about the specified catalog item.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetCatalogItem service method.</param>
         /// 
@@ -441,7 +441,7 @@ namespace Amazon.Outposts
 
 
         /// <summary>
-        /// Gets information about a catalog item.
+        /// Gets information about the specified catalog item.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetCatalogItem service method.</param>
         /// <param name="cancellationToken">
@@ -463,11 +463,93 @@ namespace Amazon.Outposts
 
         #endregion
         
+        #region  GetConnection
+
+
+        /// <summary>
+        /// <note> 
+        /// <para>
+        ///  Amazon Web Services uses this action to install Outpost servers.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        ///  Gets information about the specified connection. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  Use CloudTrail to monitor this action or Amazon Web Services managed policy for Amazon
+        /// Web Services Outposts to secure it. For more information, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/security-iam-awsmanpol.html">
+        /// Amazon Web Services managed policies for Amazon Web Services Outposts</a> and <a href="https://docs.aws.amazon.com/outposts/latest/userguide/logging-using-cloudtrail.html">
+        /// Logging Amazon Web Services Outposts API calls with Amazon Web Services CloudTrail</a>
+        /// in the <i>Amazon Web Services Outposts User Guide</i>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetConnection service method.</param>
+        /// 
+        /// <returns>The response from the GetConnection service method, as returned by Outposts.</returns>
+        /// <exception cref="Amazon.Outposts.Model.AccessDeniedException">
+        /// You do not have permission to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.InternalServerException">
+        /// An internal error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.NotFoundException">
+        /// The specified request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.ValidationException">
+        /// A parameter is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/GetConnection">REST API Reference for GetConnection Operation</seealso>
+        GetConnectionResponse GetConnection(GetConnectionRequest request);
+
+
+
+        /// <summary>
+        /// <note> 
+        /// <para>
+        ///  Amazon Web Services uses this action to install Outpost servers.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        ///  Gets information about the specified connection. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  Use CloudTrail to monitor this action or Amazon Web Services managed policy for Amazon
+        /// Web Services Outposts to secure it. For more information, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/security-iam-awsmanpol.html">
+        /// Amazon Web Services managed policies for Amazon Web Services Outposts</a> and <a href="https://docs.aws.amazon.com/outposts/latest/userguide/logging-using-cloudtrail.html">
+        /// Logging Amazon Web Services Outposts API calls with Amazon Web Services CloudTrail</a>
+        /// in the <i>Amazon Web Services Outposts User Guide</i>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetConnection service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetConnection service method, as returned by Outposts.</returns>
+        /// <exception cref="Amazon.Outposts.Model.AccessDeniedException">
+        /// You do not have permission to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.InternalServerException">
+        /// An internal error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.NotFoundException">
+        /// The specified request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.ValidationException">
+        /// A parameter is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/GetConnection">REST API Reference for GetConnection Operation</seealso>
+        Task<GetConnectionResponse> GetConnectionAsync(GetConnectionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetOrder
 
 
         /// <summary>
-        /// Gets an order.
+        /// Gets information about the specified order.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetOrder service method.</param>
         /// 
@@ -487,7 +569,7 @@ namespace Amazon.Outposts
 
 
         /// <summary>
-        /// Gets an order.
+        /// Gets information about the specified order.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetOrder service method.</param>
         /// <param name="cancellationToken">
@@ -565,7 +647,7 @@ namespace Amazon.Outposts
 
 
         /// <summary>
-        /// Lists the instance types for the specified Outpost.
+        /// Gets the instance types for the specified Outpost.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetOutpostInstanceTypes service method.</param>
         /// 
@@ -588,7 +670,7 @@ namespace Amazon.Outposts
 
 
         /// <summary>
-        /// Lists the instance types for the specified Outpost.
+        /// Gets the instance types for the specified Outpost.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetOutpostInstanceTypes service method.</param>
         /// <param name="cancellationToken">
@@ -669,7 +751,7 @@ namespace Amazon.Outposts
 
 
         /// <summary>
-        /// Gets the site address.
+        /// Gets the site address of the specified site.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetSiteAddress service method.</param>
         /// 
@@ -692,7 +774,7 @@ namespace Amazon.Outposts
 
 
         /// <summary>
-        /// Gets the site address.
+        /// Gets the site address of the specified site.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetSiteAddress service method.</param>
         /// <param name="cancellationToken">
@@ -717,18 +799,86 @@ namespace Amazon.Outposts
 
         #endregion
         
+        #region  ListAssets
+
+
+        /// <summary>
+        /// Lists the hardware assets for the specified Outpost.
+        /// 
+        ///  
+        /// <para>
+        /// Use filters to return specific results. If you specify multiple filters, the results
+        /// include only the resources that match all of the specified filters. For a filter where
+        /// you can specify multiple values, the results include items that match any of the values
+        /// that you specify for the filter.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAssets service method.</param>
+        /// 
+        /// <returns>The response from the ListAssets service method, as returned by Outposts.</returns>
+        /// <exception cref="Amazon.Outposts.Model.AccessDeniedException">
+        /// You do not have permission to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.InternalServerException">
+        /// An internal error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.NotFoundException">
+        /// The specified request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.ValidationException">
+        /// A parameter is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/ListAssets">REST API Reference for ListAssets Operation</seealso>
+        ListAssetsResponse ListAssets(ListAssetsRequest request);
+
+
+
+        /// <summary>
+        /// Lists the hardware assets for the specified Outpost.
+        /// 
+        ///  
+        /// <para>
+        /// Use filters to return specific results. If you specify multiple filters, the results
+        /// include only the resources that match all of the specified filters. For a filter where
+        /// you can specify multiple values, the results include items that match any of the values
+        /// that you specify for the filter.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAssets service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAssets service method, as returned by Outposts.</returns>
+        /// <exception cref="Amazon.Outposts.Model.AccessDeniedException">
+        /// You do not have permission to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.InternalServerException">
+        /// An internal error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.NotFoundException">
+        /// The specified request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.ValidationException">
+        /// A parameter is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/ListAssets">REST API Reference for ListAssets Operation</seealso>
+        Task<ListAssetsResponse> ListAssetsAsync(ListAssetsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListCatalogItems
 
 
         /// <summary>
-        /// Use to create a list of every item in the catalog. Add filters to your request to
-        /// return a more specific list of results. Use filters to match an item class, storage
-        /// option, or EC2 family. 
+        /// Lists the items in the catalog.
         /// 
         ///  
         /// <para>
-        /// If you specify multiple filters, the filters are joined with an <code>AND</code>,
-        /// and the request returns only results that match all of the specified filters.
+        /// Use filters to return specific results. If you specify multiple filters, the results
+        /// include only the resources that match all of the specified filters. For a filter where
+        /// you can specify multiple values, the results include items that match any of the values
+        /// that you specify for the filter.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListCatalogItems service method.</param>
@@ -749,14 +899,14 @@ namespace Amazon.Outposts
 
 
         /// <summary>
-        /// Use to create a list of every item in the catalog. Add filters to your request to
-        /// return a more specific list of results. Use filters to match an item class, storage
-        /// option, or EC2 family. 
+        /// Lists the items in the catalog.
         /// 
         ///  
         /// <para>
-        /// If you specify multiple filters, the filters are joined with an <code>AND</code>,
-        /// and the request returns only results that match all of the specified filters.
+        /// Use filters to return specific results. If you specify multiple filters, the results
+        /// include only the resources that match all of the specified filters. For a filter where
+        /// you can specify multiple values, the results include items that match any of the values
+        /// that you specify for the filter.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListCatalogItems service method.</param>
@@ -783,8 +933,7 @@ namespace Amazon.Outposts
 
 
         /// <summary>
-        /// Create a list of the Outpost orders for your Amazon Web Services account. You can
-        /// filter your request by Outpost to return a more specific list of results.
+        /// Lists the Outpost orders for your Amazon Web Services account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListOrders service method.</param>
         /// 
@@ -807,8 +956,7 @@ namespace Amazon.Outposts
 
 
         /// <summary>
-        /// Create a list of the Outpost orders for your Amazon Web Services account. You can
-        /// filter your request by Outpost to return a more specific list of results.
+        /// Lists the Outpost orders for your Amazon Web Services account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListOrders service method.</param>
         /// <param name="cancellationToken">
@@ -837,15 +985,14 @@ namespace Amazon.Outposts
 
 
         /// <summary>
-        /// Create a list of the Outposts for your Amazon Web Services account. Add filters to
-        /// your request to return a more specific list of results. Use filters to match an Outpost
-        /// lifecycle status, Availability Zone (<code>us-east-1a</code>), and AZ ID (<code>use1-az1</code>).
-        /// 
+        /// Lists the Outposts for your Amazon Web Services account.
         /// 
         ///  
         /// <para>
-        /// If you specify multiple filters, the filters are joined with an <code>AND</code>,
-        /// and the request returns only results that match all of the specified filters.
+        /// Use filters to return specific results. If you specify multiple filters, the results
+        /// include only the resources that match all of the specified filters. For a filter where
+        /// you can specify multiple values, the results include items that match any of the values
+        /// that you specify for the filter.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListOutposts service method.</param>
@@ -866,15 +1013,14 @@ namespace Amazon.Outposts
 
 
         /// <summary>
-        /// Create a list of the Outposts for your Amazon Web Services account. Add filters to
-        /// your request to return a more specific list of results. Use filters to match an Outpost
-        /// lifecycle status, Availability Zone (<code>us-east-1a</code>), and AZ ID (<code>use1-az1</code>).
-        /// 
+        /// Lists the Outposts for your Amazon Web Services account.
         /// 
         ///  
         /// <para>
-        /// If you specify multiple filters, the filters are joined with an <code>AND</code>,
-        /// and the request returns only results that match all of the specified filters.
+        /// Use filters to return specific results. If you specify multiple filters, the results
+        /// include only the resources that match all of the specified filters. For a filter where
+        /// you can specify multiple values, the results include items that match any of the values
+        /// that you specify for the filter.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListOutposts service method.</param>
@@ -901,7 +1047,16 @@ namespace Amazon.Outposts
 
 
         /// <summary>
-        /// Lists the sites for your Amazon Web Services account.
+        /// Lists the Outpost sites for your Amazon Web Services account. Use filters to return
+        /// specific results.
+        /// 
+        ///  
+        /// <para>
+        /// Use filters to return specific results. If you specify multiple filters, the results
+        /// include only the resources that match all of the specified filters. For a filter where
+        /// you can specify multiple values, the results include items that match any of the values
+        /// that you specify for the filter.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListSites service method.</param>
         /// 
@@ -921,7 +1076,16 @@ namespace Amazon.Outposts
 
 
         /// <summary>
-        /// Lists the sites for your Amazon Web Services account.
+        /// Lists the Outpost sites for your Amazon Web Services account. Use filters to return
+        /// specific results.
+        /// 
+        ///  
+        /// <para>
+        /// Use filters to return specific results. If you specify multiple filters, the results
+        /// include only the resources that match all of the specified filters. For a filter where
+        /// you can specify multiple values, the results include items that match any of the values
+        /// that you specify for the filter.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListSites service method.</param>
         /// <param name="cancellationToken">
@@ -986,6 +1150,88 @@ namespace Amazon.Outposts
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  StartConnection
+
+
+        /// <summary>
+        /// <note> 
+        /// <para>
+        ///  Amazon Web Services uses this action to install Outpost servers.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        ///  Starts the connection required for Outpost server installation. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  Use CloudTrail to monitor this action or Amazon Web Services managed policy for Amazon
+        /// Web Services Outposts to secure it. For more information, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/security-iam-awsmanpol.html">
+        /// Amazon Web Services managed policies for Amazon Web Services Outposts</a> and <a href="https://docs.aws.amazon.com/outposts/latest/userguide/logging-using-cloudtrail.html">
+        /// Logging Amazon Web Services Outposts API calls with Amazon Web Services CloudTrail</a>
+        /// in the <i>Amazon Web Services Outposts User Guide</i>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartConnection service method.</param>
+        /// 
+        /// <returns>The response from the StartConnection service method, as returned by Outposts.</returns>
+        /// <exception cref="Amazon.Outposts.Model.AccessDeniedException">
+        /// You do not have permission to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.InternalServerException">
+        /// An internal error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.NotFoundException">
+        /// The specified request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.ValidationException">
+        /// A parameter is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/StartConnection">REST API Reference for StartConnection Operation</seealso>
+        StartConnectionResponse StartConnection(StartConnectionRequest request);
+
+
+
+        /// <summary>
+        /// <note> 
+        /// <para>
+        ///  Amazon Web Services uses this action to install Outpost servers.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        ///  Starts the connection required for Outpost server installation. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  Use CloudTrail to monitor this action or Amazon Web Services managed policy for Amazon
+        /// Web Services Outposts to secure it. For more information, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/security-iam-awsmanpol.html">
+        /// Amazon Web Services managed policies for Amazon Web Services Outposts</a> and <a href="https://docs.aws.amazon.com/outposts/latest/userguide/logging-using-cloudtrail.html">
+        /// Logging Amazon Web Services Outposts API calls with Amazon Web Services CloudTrail</a>
+        /// in the <i>Amazon Web Services Outposts User Guide</i>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartConnection service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartConnection service method, as returned by Outposts.</returns>
+        /// <exception cref="Amazon.Outposts.Model.AccessDeniedException">
+        /// You do not have permission to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.InternalServerException">
+        /// An internal error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.NotFoundException">
+        /// The specified request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.ValidationException">
+        /// A parameter is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/StartConnection">REST API Reference for StartConnection Operation</seealso>
+        Task<StartConnectionResponse> StartConnectionAsync(StartConnectionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1081,11 +1327,69 @@ namespace Amazon.Outposts
 
         #endregion
         
+        #region  UpdateOutpost
+
+
+        /// <summary>
+        /// Updates an Outpost.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateOutpost service method.</param>
+        /// 
+        /// <returns>The response from the UpdateOutpost service method, as returned by Outposts.</returns>
+        /// <exception cref="Amazon.Outposts.Model.AccessDeniedException">
+        /// You do not have permission to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.ConflictException">
+        /// Updating or deleting this resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.InternalServerException">
+        /// An internal error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.NotFoundException">
+        /// The specified request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.ValidationException">
+        /// A parameter is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/UpdateOutpost">REST API Reference for UpdateOutpost Operation</seealso>
+        UpdateOutpostResponse UpdateOutpost(UpdateOutpostRequest request);
+
+
+
+        /// <summary>
+        /// Updates an Outpost.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateOutpost service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateOutpost service method, as returned by Outposts.</returns>
+        /// <exception cref="Amazon.Outposts.Model.AccessDeniedException">
+        /// You do not have permission to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.ConflictException">
+        /// Updating or deleting this resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.InternalServerException">
+        /// An internal error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.NotFoundException">
+        /// The specified request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.ValidationException">
+        /// A parameter is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/UpdateOutpost">REST API Reference for UpdateOutpost Operation</seealso>
+        Task<UpdateOutpostResponse> UpdateOutpostAsync(UpdateOutpostRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  UpdateSite
 
 
         /// <summary>
-        /// Updates the site.
+        /// Updates the specified site.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateSite service method.</param>
         /// 
@@ -1111,7 +1415,7 @@ namespace Amazon.Outposts
 
 
         /// <summary>
-        /// Updates the site.
+        /// Updates the specified site.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateSite service method.</param>
         /// <param name="cancellationToken">
@@ -1143,17 +1447,17 @@ namespace Amazon.Outposts
 
 
         /// <summary>
-        /// Updates the site address. 
+        /// Updates the address of the specified site.
         /// 
         ///  
         /// <para>
-        ///  To update a site address with an order <code>IN_PROGRESS</code>, you must wait for
-        /// the order to complete or cancel the order. 
+        /// You can't update a site address if there is an order in progress. You must wait for
+        /// the order to complete or cancel the order.
         /// </para>
         ///  
         /// <para>
         /// You can update the operating address before you place an order at the site, or after
-        /// all Outposts that belong to the site have been deactivated. 
+        /// all Outposts that belong to the site have been deactivated.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateSiteAddress service method.</param>
@@ -1180,17 +1484,17 @@ namespace Amazon.Outposts
 
 
         /// <summary>
-        /// Updates the site address. 
+        /// Updates the address of the specified site.
         /// 
         ///  
         /// <para>
-        ///  To update a site address with an order <code>IN_PROGRESS</code>, you must wait for
-        /// the order to complete or cancel the order. 
+        /// You can't update a site address if there is an order in progress. You must wait for
+        /// the order to complete or cancel the order.
         /// </para>
         ///  
         /// <para>
         /// You can update the operating address before you place an order at the site, or after
-        /// all Outposts that belong to the site have been deactivated. 
+        /// all Outposts that belong to the site have been deactivated.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateSiteAddress service method.</param>

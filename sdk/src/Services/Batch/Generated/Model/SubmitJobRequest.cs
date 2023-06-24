@@ -35,7 +35,7 @@ namespace Amazon.Batch.Model
     /// are specified in the <code>resourceRequirements</code> objects in the job definition
     /// are the exception. They can't be overridden this way using the <code>memory</code>
     /// and <code>vcpus</code> parameters. Rather, you must specify updates to job definition
-    /// parameters in a <code>ResourceRequirements</code> object that's included in the <code>containerOverrides</code>
+    /// parameters in a <code>resourceRequirements</code> object that's included in the <code>containerOverrides</code>
     /// parameter.
     /// 
     ///  <note> 
@@ -56,6 +56,7 @@ namespace Amazon.Batch.Model
         private ArrayProperties _arrayProperties;
         private ContainerOverrides _containerOverrides;
         private List<JobDependency> _dependsOn = new List<JobDependency>();
+        private EksPropertiesOverride _eksPropertiesOverride;
         private string _jobDefinition;
         private string _jobName;
         private string _jobQueue;
@@ -92,12 +93,12 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property ContainerOverrides. 
         /// <para>
-        /// A list of container overrides in the JSON format that specify the name of a container
-        /// in the specified job definition and the overrides it should receive. You can override
-        /// the default command for a container, which is specified in the job definition or the
-        /// Docker image, with a <code>command</code> override. You can also override existing
-        /// environment variables on a container or add new environment variables to it with an
-        /// <code>environment</code> override.
+        /// An object with various properties that override the defaults for the job definition
+        /// that specify the name of a container in the specified job definition and the overrides
+        /// it should receive. You can override the default command for a container, which is
+        /// specified in the job definition or the Docker image, with a <code>command</code> override.
+        /// You can also override existing environment variables on a container or add new environment
+        /// variables to it with an <code>environment</code> override.
         /// </para>
         /// </summary>
         public ContainerOverrides ContainerOverrides
@@ -136,11 +137,36 @@ namespace Amazon.Batch.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EksPropertiesOverride. 
+        /// <para>
+        /// An object that can only be specified for jobs that are run on Amazon EKS resources
+        /// with various properties that override defaults for the job definition.
+        /// </para>
+        /// </summary>
+        public EksPropertiesOverride EksPropertiesOverride
+        {
+            get { return this._eksPropertiesOverride; }
+            set { this._eksPropertiesOverride = value; }
+        }
+
+        // Check to see if EksPropertiesOverride property is set
+        internal bool IsSetEksPropertiesOverride()
+        {
+            return this._eksPropertiesOverride != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property JobDefinition. 
         /// <para>
-        /// The job definition used by this job. This value can be one of <code>name</code>, <code>name:revision</code>,
-        /// or the Amazon Resource Name (ARN) for the job definition. If <code>name</code> is
-        /// specified without a revision then the latest active revision is used.
+        /// The job definition used by this job. This value can be one of <code>definition-name</code>,
+        /// <code>definition-name:revision</code>, or the Amazon Resource Name (ARN) for the job
+        /// definition, with or without the revision (<code>arn:aws:batch:<i>region</i>:<i>account</i>:job-definition/<i>definition-name</i>:<i>revision</i>
+        /// </code>, or <code>arn:aws:batch:<i>region</i>:<i>account</i>:job-definition/<i>definition-name</i>
+        /// </code>).
+        /// </para>
+        ///  
+        /// <para>
+        /// If the revision is not specified, then the latest active revision is used.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -289,10 +315,9 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property SchedulingPriorityOverride. 
         /// <para>
-        /// The scheduling priority for the job. This will only affect jobs in job queues with
-        /// a fair share policy. Jobs with a higher scheduling priority will be scheduled before
-        /// jobs with a lower scheduling priority. This will override any scheduling priority
-        /// in the job definition.
+        /// The scheduling priority for the job. This only affects jobs in job queues with a fair
+        /// share policy. Jobs with a higher scheduling priority are scheduled before jobs with
+        /// a lower scheduling priority. This overrides any scheduling priority in the job definition.
         /// </para>
         ///  
         /// <para>
@@ -314,7 +339,9 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property ShareIdentifier. 
         /// <para>
-        /// The share identifier for the job.
+        /// The share identifier for the job. If the job queue doesn't have a scheduling policy,
+        /// then this parameter must not be specified. If the job queue has a scheduling policy,
+        /// then this parameter must be specified.
         /// </para>
         /// </summary>
         public string ShareIdentifier

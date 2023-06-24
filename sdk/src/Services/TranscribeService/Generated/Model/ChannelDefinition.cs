@@ -29,8 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.TranscribeService.Model
 {
     /// <summary>
-    /// For a call analytics job, an object that indicates the audio channel that belongs
-    /// to the agent and the audio channel that belongs to the customer.
+    /// Makes it possible to specify which speaker is on which channel. For example, if your
+    /// agent is the first participant to speak, you would set <code>ChannelId</code> to <code>0</code>
+    /// (to indicate the first channel) and <code>ParticipantRole</code> to <code>AGENT</code>
+    /// (to indicate that it's the agent speaking).
     /// </summary>
     public partial class ChannelDefinition
     {
@@ -40,7 +42,7 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property ChannelId. 
         /// <para>
-        /// A value that indicates the audio channel.
+        /// Specify the audio channel you want to define.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]
@@ -59,7 +61,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property ParticipantRole. 
         /// <para>
-        /// Indicates whether the person speaking on the audio channel is the agent or customer.
+        /// Specify the speaker you want to define. Omitting this parameter is equivalent to specifying
+        /// both participants.
         /// </para>
         /// </summary>
         public ParticipantRole ParticipantRole

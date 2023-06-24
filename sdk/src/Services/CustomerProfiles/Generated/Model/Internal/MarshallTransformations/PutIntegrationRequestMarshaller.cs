@@ -56,7 +56,7 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CustomerProfiles");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-08-15";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-08-15";
             request.HttpMethod = "PUT";
 
             if (!publicRequest.IsSetDomainName())
@@ -85,6 +85,20 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ObjectTypeName);
                 }
 
+                if(publicRequest.IsSetObjectTypeNames())
+                {
+                    context.Writer.WritePropertyName("ObjectTypeNames");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestObjectTypeNamesKvp in publicRequest.ObjectTypeNames)
+                    {
+                        context.Writer.WritePropertyName(publicRequestObjectTypeNamesKvp.Key);
+                        var publicRequestObjectTypeNamesValue = publicRequestObjectTypeNamesKvp.Value;
+
+                            context.Writer.Write(publicRequestObjectTypeNamesValue);
+                    }
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("Tags");
@@ -105,7 +119,6 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Uri);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

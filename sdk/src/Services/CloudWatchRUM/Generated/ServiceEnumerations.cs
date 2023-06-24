@@ -25,6 +25,106 @@ namespace Amazon.CloudWatchRUM
 {
 
     /// <summary>
+    /// Constants used for properties of type CustomEventsStatus.
+    /// </summary>
+    public class CustomEventsStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for CustomEventsStatus
+        /// </summary>
+        public static readonly CustomEventsStatus DISABLED = new CustomEventsStatus("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for CustomEventsStatus
+        /// </summary>
+        public static readonly CustomEventsStatus ENABLED = new CustomEventsStatus("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CustomEventsStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CustomEventsStatus FindValue(string value)
+        {
+            return FindValue<CustomEventsStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CustomEventsStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MetricDestination.
+    /// </summary>
+    public class MetricDestination : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CloudWatch for MetricDestination
+        /// </summary>
+        public static readonly MetricDestination CloudWatch = new MetricDestination("CloudWatch");
+        /// <summary>
+        /// Constant Evidently for MetricDestination
+        /// </summary>
+        public static readonly MetricDestination Evidently = new MetricDestination("Evidently");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MetricDestination(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MetricDestination FindValue(string value)
+        {
+            return FindValue<MetricDestination>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MetricDestination(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type StateEnum.
     /// </summary>
     public class StateEnum : ConstantClass

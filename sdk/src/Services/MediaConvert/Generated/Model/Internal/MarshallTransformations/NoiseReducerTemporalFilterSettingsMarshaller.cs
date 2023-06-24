@@ -34,7 +34,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// NoiseReducerTemporalFilterSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class NoiseReducerTemporalFilterSettingsMarshaller : IRequestMarshaller<NoiseReducerTemporalFilterSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -57,6 +57,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.PostTemporalSharpening);
             }
 
+            if(requestObject.IsSetPostTemporalSharpeningStrength())
+            {
+                context.Writer.WritePropertyName("postTemporalSharpeningStrength");
+                context.Writer.Write(requestObject.PostTemporalSharpeningStrength);
+            }
+
             if(requestObject.IsSetSpeed())
             {
                 context.Writer.WritePropertyName("speed");
@@ -73,7 +79,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static NoiseReducerTemporalFilterSettingsMarshaller Instance = new NoiseReducerTemporalFilterSettingsMarshaller();
 
     }

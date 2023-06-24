@@ -30,10 +30,10 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the StopDBInstance operation.
-    /// Stops an Amazon RDS DB instance. When you stop a DB instance, Amazon RDS retains
-    /// the DB instance's metadata, including its endpoint, DB parameter group, and option
-    /// group membership. Amazon RDS also retains the transaction logs so you can do a point-in-time
-    /// restore if necessary. 
+    /// Stops an Amazon RDS DB instance. When you stop a DB instance, Amazon RDS retains the
+    /// DB instance's metadata, including its endpoint, DB parameter group, and option group
+    /// membership. Amazon RDS also retains the transaction logs so you can do a point-in-time
+    /// restore if necessary.
     /// 
     ///  
     /// <para>
@@ -43,8 +43,8 @@ namespace Amazon.RDS.Model
     /// </para>
     ///  <note> 
     /// <para>
-    ///  This command doesn't apply to RDS Custom, Aurora MySQL, and Aurora PostgreSQL. For
-    /// Aurora clusters, use <code>StopDBCluster</code> instead. 
+    /// This command doesn't apply to RDS Custom, Aurora MySQL, and Aurora PostgreSQL. For
+    /// Aurora clusters, use <code>StopDBCluster</code> instead.
     /// </para>
     ///  </note>
     /// </summary>
@@ -56,7 +56,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBInstanceIdentifier. 
         /// <para>
-        ///  The user-supplied instance identifier. 
+        /// The user-supplied instance identifier.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -75,8 +75,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBSnapshotIdentifier. 
         /// <para>
-        ///  The user-supplied instance identifier of the DB Snapshot created immediately before
-        /// the DB instance is stopped. 
+        /// The user-supplied instance identifier of the DB Snapshot created immediately before
+        /// the DB instance is stopped.
         /// </para>
         /// </summary>
         public string DBSnapshotIdentifier

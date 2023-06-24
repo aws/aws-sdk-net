@@ -34,7 +34,7 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DashEncryption Marshaller
-    /// </summary>       
+    /// </summary>
     public class DashEncryptionMarshaller : IRequestMarshaller<DashEncryption, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DashEncryptionMarshaller Instance = new DashEncryptionMarshaller();
 
     }

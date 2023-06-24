@@ -37,6 +37,7 @@ namespace Amazon.MediaPackageVod.Model
         private string _manifestName;
         private int? _minBufferTimeSeconds;
         private Profile _profile;
+        private ScteMarkersSource _scteMarkersSource;
         private StreamSelection _streamSelection;
 
         /// <summary>
@@ -103,6 +104,24 @@ namespace Amazon.MediaPackageVod.Model
         internal bool IsSetProfile()
         {
             return this._profile != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ScteMarkersSource. The source of scte markers used. When
+        /// set to SEGMENTS, the scte markers are sourced from the segments of the ingested content.
+        /// When set to MANIFEST, the scte markers are sourced from the manifest of the ingested
+        /// content.
+        /// </summary>
+        public ScteMarkersSource ScteMarkersSource
+        {
+            get { return this._scteMarkersSource; }
+            set { this._scteMarkersSource = value; }
+        }
+
+        // Check to see if ScteMarkersSource property is set
+        internal bool IsSetScteMarkersSource()
+        {
+            return this._scteMarkersSource != null;
         }
 
         /// <summary>

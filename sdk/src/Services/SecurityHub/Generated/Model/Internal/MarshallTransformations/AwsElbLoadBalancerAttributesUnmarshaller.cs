@@ -70,6 +70,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     unmarshalledObject.AccessLog = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("AdditionalAttributes", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<AwsElbLoadBalancerAdditionalAttribute, AwsElbLoadBalancerAdditionalAttributeUnmarshaller>(AwsElbLoadBalancerAdditionalAttributeUnmarshaller.Instance);
+                    unmarshalledObject.AdditionalAttributes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ConnectionDraining", targetDepth))
                 {
                     var unmarshaller = AwsElbLoadBalancerConnectionDrainingUnmarshaller.Instance;

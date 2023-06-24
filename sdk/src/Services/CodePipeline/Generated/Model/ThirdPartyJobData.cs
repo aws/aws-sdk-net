@@ -81,12 +81,13 @@ namespace Amazon.CodePipeline.Model
         /// <summary>
         /// Gets and sets the property ArtifactCredentials. 
         /// <para>
-        /// Represents an AWS session credentials object. These credentials are temporary credentials
-        /// that are issued by AWS Secure Token Service (STS). They can be used to access input
-        /// and output artifacts in the S3 bucket used to store artifact for the pipeline in AWS
-        /// CodePipeline. 
+        /// Represents an Amazon Web Services session credentials object. These credentials are
+        /// temporary credentials that are issued by Amazon Web Services Secure Token Service
+        /// (STS). They can be used to access input and output artifacts in the S3 bucket used
+        /// to store artifact for the pipeline in CodePipeline. 
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public AWSSessionCredentials ArtifactCredentials
         {
             get { return this._artifactCredentials; }
@@ -102,7 +103,7 @@ namespace Amazon.CodePipeline.Model
         /// <summary>
         /// Gets and sets the property ContinuationToken. 
         /// <para>
-        /// A system-generated token, such as a AWS CodeDeploy deployment ID, that a job requires
+        /// A system-generated token, such as a CodeDeploy deployment ID, that a job requires
         /// to continue the job asynchronously.
         /// </para>
         /// </summary>
@@ -123,8 +124,8 @@ namespace Amazon.CodePipeline.Model
         /// Gets and sets the property EncryptionKey. 
         /// <para>
         /// The encryption key used to encrypt and decrypt data in the artifact store for the
-        /// pipeline, such as an AWS Key Management Service (AWS KMS) key. This is optional and
-        /// might not be present.
+        /// pipeline, such as an Amazon Web Services Key Management Service (Amazon Web Services
+        /// KMS) key. This is optional and might not be present.
         /// </para>
         /// </summary>
         public EncryptionKey EncryptionKey

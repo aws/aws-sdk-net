@@ -34,7 +34,7 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// UserIdentity Marshaller
-    /// </summary>       
+    /// </summary>
     public class UserIdentityMarshaller : IRequestMarshaller<UserIdentity, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static UserIdentityMarshaller Instance = new UserIdentityMarshaller();
 
     }

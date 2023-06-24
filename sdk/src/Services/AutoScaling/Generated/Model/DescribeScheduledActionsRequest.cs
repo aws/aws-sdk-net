@@ -71,7 +71,7 @@ namespace Amazon.AutoScaling.Model
         /// Gets and sets the property EndTimeUtc. 
         /// <para>
         /// The latest scheduled start time to return. If scheduled action names are provided,
-        /// this parameter is ignored.
+        /// this property is ignored.
         /// </para>
         /// </summary>
         public DateTime EndTimeUtc
@@ -127,7 +127,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property ScheduledActionNames. 
         /// <para>
-        /// The names of one or more scheduled actions. If you omit this parameter, all scheduled
+        /// The names of one or more scheduled actions. If you omit this property, all scheduled
         /// actions are described. If you specify an unknown scheduled action, it is ignored with
         /// no error.
         /// </para>
@@ -152,7 +152,7 @@ namespace Amazon.AutoScaling.Model
         /// Gets and sets the property StartTimeUtc. 
         /// <para>
         /// The earliest scheduled start time to return. If scheduled action names are provided,
-        /// this parameter is ignored.
+        /// this property is ignored.
         /// </para>
         /// </summary>
         public DateTime StartTimeUtc
@@ -184,7 +184,7 @@ namespace Amazon.AutoScaling.Model
         ///  
         /// <para>
         /// The latest scheduled start time to return. If scheduled action names are provided,
-        /// this parameter is ignored.
+        /// this property is ignored.
         /// </para>
         /// </summary>
         [Obsolete("Setting this property results in non-UTC DateTimes not being marshalled correctly. " +
@@ -214,7 +214,7 @@ namespace Amazon.AutoScaling.Model
         ///  
         /// <para>
         /// The earliest scheduled start time to return. If scheduled action names are provided,
-        /// this parameter is ignored.
+        /// this property is ignored.
         /// </para>
         /// </summary>
         [Obsolete("Setting this property results in non-UTC DateTimes not being marshalled correctly. " +

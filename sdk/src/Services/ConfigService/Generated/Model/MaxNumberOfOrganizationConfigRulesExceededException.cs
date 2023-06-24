@@ -29,7 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// You have reached the limit of the number of organization config rules you can create.
+    /// You have reached the limit of the number of organization Config rules you can create.
+    /// For more information, see see <a href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html">
+    /// <b>Service Limits</b> </a> in the <i>Config Developer Guide</i>.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

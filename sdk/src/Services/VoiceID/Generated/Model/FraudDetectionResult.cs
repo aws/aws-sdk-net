@@ -45,7 +45,7 @@ namespace Amazon.VoiceID.Model
         /// <summary>
         /// Gets and sets the property AudioAggregationEndedAt. 
         /// <para>
-        /// A timestamp indicating when audio aggregation ended for this fraud detection result.
+        /// A timestamp of when audio aggregation ended for this fraud detection result.
         /// </para>
         /// </summary>
         public DateTime AudioAggregationEndedAt
@@ -63,7 +63,7 @@ namespace Amazon.VoiceID.Model
         /// <summary>
         /// Gets and sets the property AudioAggregationStartedAt. 
         /// <para>
-        /// A timestamp indicating when audio aggregation started for this fraud detection result.
+        /// A timestamp of when audio aggregation started for this fraud detection result.
         /// </para>
         /// </summary>
         public DateTime AudioAggregationStartedAt
@@ -143,8 +143,8 @@ namespace Amazon.VoiceID.Model
         /// Gets and sets the property Reasons. 
         /// <para>
         /// The reason speaker was flagged by the fraud detection system. This is only be populated
-        /// if fraud detection Decision is <code>HIGH_RISK</code>, and only has one possible value:
-        /// <code>KNOWN_FRAUDSTER</code>.
+        /// if fraud detection Decision is <code>HIGH_RISK</code>, and the following possible
+        /// values: <code>KNOWN_FRAUDSTER</code> and <code>VOICE_SPOOFING</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=3)]
@@ -163,7 +163,8 @@ namespace Amazon.VoiceID.Model
         /// <summary>
         /// Gets and sets the property RiskDetails. 
         /// <para>
-        /// Details about each risk analyzed for this speaker.
+        /// Details about each risk analyzed for this speaker. Currently, this contains KnownFraudsterRisk
+        /// and VoiceSpoofingRisk details.
         /// </para>
         /// </summary>
         public FraudRiskDetails RiskDetails

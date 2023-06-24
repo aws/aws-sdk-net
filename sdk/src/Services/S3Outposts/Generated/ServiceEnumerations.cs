@@ -85,6 +85,14 @@ namespace Amazon.S3Outposts
         /// </summary>
         public static readonly EndpointStatus Available = new EndpointStatus("Available");
         /// <summary>
+        /// Constant Create_Failed for EndpointStatus
+        /// </summary>
+        public static readonly EndpointStatus Create_Failed = new EndpointStatus("Create_Failed");
+        /// <summary>
+        /// Constant Delete_Failed for EndpointStatus
+        /// </summary>
+        public static readonly EndpointStatus Delete_Failed = new EndpointStatus("Delete_Failed");
+        /// <summary>
         /// Constant Deleting for EndpointStatus
         /// </summary>
         public static readonly EndpointStatus Deleting = new EndpointStatus("Deleting");

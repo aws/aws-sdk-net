@@ -37,6 +37,7 @@ namespace Amazon.ElasticMapReduce.Model
         private List<string> _ec2InstanceIdsToTerminate = new List<string>();
         private int? _instanceCount;
         private string _instanceGroupId;
+        private ReconfigurationType _reconfigurationType;
         private ShrinkPolicy _shrinkPolicy;
 
         /// <summary>
@@ -76,7 +77,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property EC2InstanceIdsToTerminate. 
         /// <para>
-        /// The EC2 InstanceIds to terminate. After you terminate the instances, the instance
+        /// The Amazon EC2 InstanceIds to terminate. After you terminate the instances, the instance
         /// group will not return to its original requested size.
         /// </para>
         /// </summary>
@@ -127,6 +128,24 @@ namespace Amazon.ElasticMapReduce.Model
         internal bool IsSetInstanceGroupId()
         {
             return this._instanceGroupId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReconfigurationType. 
+        /// <para>
+        /// Type of reconfiguration requested. Valid values are MERGE and OVERWRITE.
+        /// </para>
+        /// </summary>
+        public ReconfigurationType ReconfigurationType
+        {
+            get { return this._reconfigurationType; }
+            set { this._reconfigurationType = value; }
+        }
+
+        // Check to see if ReconfigurationType property is set
+        internal bool IsSetReconfigurationType()
+        {
+            return this._reconfigurationType != null;
         }
 
         /// <summary>

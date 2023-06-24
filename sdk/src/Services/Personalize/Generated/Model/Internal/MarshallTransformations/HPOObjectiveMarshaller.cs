@@ -34,7 +34,7 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// HPOObjective Marshaller
-    /// </summary>       
+    /// </summary>
     public class HPOObjectiveMarshaller : IRequestMarshaller<HPOObjective, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static HPOObjectiveMarshaller Instance = new HPOObjectiveMarshaller();
 
     }

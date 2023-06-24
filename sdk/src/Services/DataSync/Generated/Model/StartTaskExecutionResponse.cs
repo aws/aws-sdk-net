@@ -38,7 +38,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property TaskExecutionArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the specific task execution that was started.
+        /// The ARN of the running task execution.
         /// </para>
         /// </summary>
         [AWSProperty(Max=128)]

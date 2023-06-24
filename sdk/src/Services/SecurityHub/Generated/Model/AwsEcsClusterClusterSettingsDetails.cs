@@ -39,7 +39,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the setting.
+        /// The name of the setting. The valid value is <code>containerInsights</code>.
         /// </para>
         /// </summary>
         public string Name
@@ -57,7 +57,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// The value of the setting.
+        /// The value of the setting. Valid values are <code>disabled</code> or <code>enabled</code>.
         /// </para>
         /// </summary>
         public string Value

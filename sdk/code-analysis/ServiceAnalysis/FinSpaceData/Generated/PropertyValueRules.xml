@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.FinSpaceData.Model.AssociateUserToPermissionGroupRequest.ClientToken</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FinSpaceData.Model.AssociateUserToPermissionGroupRequest.PermissionGroupId</property>
+    <min>1</min>
+    <max>26</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FinSpaceData.Model.AssociateUserToPermissionGroupRequest.UserId</property>
+    <min>1</min>
+    <max>26</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.FinSpaceData.Model.CreateChangesetRequest.ClientToken</property>
     <min>1</min>
     <max>128</max>
@@ -35,9 +53,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FinSpaceData.Model.CreateDatasetRequest.DatasetDescription</property>
-    <min>1</min>
-    <max>256</max>
-    <pattern>[\s\S]*\S[\s\S]*</pattern>
+    <max>1000</max>
+    <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FinSpaceData.Model.CreateDatasetRequest.DatasetTitle</property>
@@ -72,6 +89,66 @@
     <max>26</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.FinSpaceData.Model.CreatePermissionGroupRequest.ClientToken</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FinSpaceData.Model.CreatePermissionGroupRequest.Description</property>
+    <min>1</min>
+    <max>4000</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FinSpaceData.Model.CreatePermissionGroupRequest.Name</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FinSpaceData.Model.CreatePermissionGroupResponse.PermissionGroupId</property>
+    <min>1</min>
+    <max>26</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FinSpaceData.Model.CreateUserRequest.ApiAccessPrincipalArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:aws[a-z\-]*:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FinSpaceData.Model.CreateUserRequest.ClientToken</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FinSpaceData.Model.CreateUserRequest.EmailAddress</property>
+    <min>4</min>
+    <max>320</max>
+    <pattern>[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FinSpaceData.Model.CreateUserRequest.FirstName</property>
+    <min>1</min>
+    <max>50</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FinSpaceData.Model.CreateUserRequest.LastName</property>
+    <min>1</min>
+    <max>50</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FinSpaceData.Model.CreateUserResponse.UserId</property>
+    <min>1</min>
+    <max>26</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.FinSpaceData.Model.DeleteDatasetRequest.ClientToken</property>
     <min>1</min>
     <max>128</max>
@@ -86,6 +163,78 @@
     <property>Amazon.FinSpaceData.Model.DeleteDatasetResponse.DatasetId</property>
     <min>1</min>
     <max>26</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FinSpaceData.Model.DeletePermissionGroupRequest.ClientToken</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FinSpaceData.Model.DeletePermissionGroupRequest.PermissionGroupId</property>
+    <min>1</min>
+    <max>26</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FinSpaceData.Model.DeletePermissionGroupResponse.PermissionGroupId</property>
+    <min>1</min>
+    <max>26</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FinSpaceData.Model.DisableUserRequest.ClientToken</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FinSpaceData.Model.DisableUserRequest.UserId</property>
+    <min>1</min>
+    <max>26</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FinSpaceData.Model.DisableUserResponse.UserId</property>
+    <min>1</min>
+    <max>26</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FinSpaceData.Model.DisassociateUserFromPermissionGroupRequest.ClientToken</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FinSpaceData.Model.DisassociateUserFromPermissionGroupRequest.PermissionGroupId</property>
+    <min>1</min>
+    <max>26</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FinSpaceData.Model.DisassociateUserFromPermissionGroupRequest.UserId</property>
+    <min>1</min>
+    <max>26</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FinSpaceData.Model.EnableUserRequest.ClientToken</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FinSpaceData.Model.EnableUserRequest.UserId</property>
+    <min>1</min>
+    <max>26</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FinSpaceData.Model.EnableUserResponse.UserId</property>
+    <min>1</min>
+    <max>26</max>
+    <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FinSpaceData.Model.GetChangesetRequest.ChangesetId</property>
@@ -131,9 +280,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FinSpaceData.Model.GetDatasetResponse.DatasetDescription</property>
-    <min>1</min>
-    <max>256</max>
-    <pattern>[\s\S]*\S[\s\S]*</pattern>
+    <max>1000</max>
+    <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FinSpaceData.Model.GetDatasetResponse.DatasetId</property>
@@ -167,6 +315,22 @@
     <max>26</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.FinSpaceData.Model.GetExternalDataViewAccessDetailsRequest.DatasetId</property>
+    <min>1</min>
+    <max>26</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FinSpaceData.Model.GetExternalDataViewAccessDetailsRequest.DataViewId</property>
+    <min>1</min>
+    <max>26</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FinSpaceData.Model.GetPermissionGroupRequest.PermissionGroupId</property>
+    <min>1</min>
+    <max>26</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.FinSpaceData.Model.GetProgrammaticAccessCredentialsRequest.DurationInMinutes</property>
     <min>60</min>
     <max>720</max>
@@ -180,6 +344,42 @@
     <property>Amazon.FinSpaceData.Model.GetProgrammaticAccessCredentialsResponse.DurationInMinutes</property>
     <min>60</min>
     <max>720</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FinSpaceData.Model.GetUserRequest.UserId</property>
+    <min>1</min>
+    <max>26</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FinSpaceData.Model.GetUserResponse.ApiAccessPrincipalArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:aws[a-z\-]*:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FinSpaceData.Model.GetUserResponse.EmailAddress</property>
+    <min>4</min>
+    <max>320</max>
+    <pattern>[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FinSpaceData.Model.GetUserResponse.FirstName</property>
+    <min>1</min>
+    <max>50</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FinSpaceData.Model.GetUserResponse.LastName</property>
+    <min>1</min>
+    <max>50</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FinSpaceData.Model.GetUserResponse.UserId</property>
+    <min>1</min>
+    <max>26</max>
+    <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FinSpaceData.Model.GetWorkingLocationResponse.S3Bucket</property>
@@ -225,6 +425,62 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.FinSpaceData.Model.ListPermissionGroupsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FinSpaceData.Model.ListPermissionGroupsByUserRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FinSpaceData.Model.ListPermissionGroupsByUserRequest.UserId</property>
+    <min>1</min>
+    <max>26</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FinSpaceData.Model.ListUsersRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FinSpaceData.Model.ListUsersByPermissionGroupRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FinSpaceData.Model.ListUsersByPermissionGroupRequest.PermissionGroupId</property>
+    <min>1</min>
+    <max>26</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FinSpaceData.Model.ResetUserPasswordRequest.ClientToken</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FinSpaceData.Model.ResetUserPasswordRequest.UserId</property>
+    <min>1</min>
+    <max>26</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FinSpaceData.Model.ResetUserPasswordResponse.TemporaryPassword</property>
+    <min>8</min>
+    <max>20</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FinSpaceData.Model.ResetUserPasswordResponse.UserId</property>
+    <min>1</min>
+    <max>26</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.FinSpaceData.Model.UpdateChangesetRequest.ChangesetId</property>
     <min>1</min>
     <max>26</max>
@@ -264,9 +520,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FinSpaceData.Model.UpdateDatasetRequest.DatasetDescription</property>
-    <min>1</min>
-    <max>256</max>
-    <pattern>[\s\S]*\S[\s\S]*</pattern>
+    <max>1000</max>
+    <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FinSpaceData.Model.UpdateDatasetRequest.DatasetId</property>
@@ -283,6 +538,90 @@
     <property>Amazon.FinSpaceData.Model.UpdateDatasetResponse.DatasetId</property>
     <min>1</min>
     <max>26</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FinSpaceData.Model.UpdatePermissionGroupRequest.ClientToken</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FinSpaceData.Model.UpdatePermissionGroupRequest.Description</property>
+    <min>1</min>
+    <max>4000</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FinSpaceData.Model.UpdatePermissionGroupRequest.Name</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FinSpaceData.Model.UpdatePermissionGroupRequest.PermissionGroupId</property>
+    <min>1</min>
+    <max>26</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FinSpaceData.Model.UpdatePermissionGroupResponse.PermissionGroupId</property>
+    <min>1</min>
+    <max>26</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FinSpaceData.Model.UpdateUserRequest.ApiAccessPrincipalArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:aws[a-z\-]*:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FinSpaceData.Model.UpdateUserRequest.ClientToken</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FinSpaceData.Model.UpdateUserRequest.FirstName</property>
+    <min>1</min>
+    <max>50</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FinSpaceData.Model.UpdateUserRequest.LastName</property>
+    <min>1</min>
+    <max>50</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FinSpaceData.Model.UpdateUserRequest.UserId</property>
+    <min>1</min>
+    <max>26</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FinSpaceData.Model.UpdateUserResponse.UserId</property>
+    <min>1</min>
+    <max>26</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FinSpaceData.Model.AwsCredentials.AccessKeyId</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[\s\S]*\S[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FinSpaceData.Model.AwsCredentials.SecretAccessKey</property>
+    <min>1</min>
+    <max>1000</max>
+    <pattern>[\s\S]*\S[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FinSpaceData.Model.AwsCredentials.SessionToken</property>
+    <min>1</min>
+    <max>1000</max>
+    <pattern>[\s\S]*\S[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FinSpaceData.Model.ChangesetErrorInfo.ErrorMessage</property>
@@ -311,7 +650,7 @@
   <property-value-rule>
     <property>Amazon.FinSpaceData.Model.ColumnDefinition.ColumnDescription</property>
     <max>512</max>
-    <pattern>[\s\S]*\S[\s\S]*</pattern>
+    <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FinSpaceData.Model.ColumnDefinition.ColumnName</property>
@@ -339,9 +678,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FinSpaceData.Model.Dataset.DatasetDescription</property>
-    <min>1</min>
-    <max>256</max>
-    <pattern>[\s\S]*\S[\s\S]*</pattern>
+    <max>1000</max>
+    <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FinSpaceData.Model.Dataset.DatasetId</property>
@@ -387,14 +725,117 @@
     <max>26</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.FinSpaceData.Model.PermissionGroup.Description</property>
+    <min>1</min>
+    <max>4000</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FinSpaceData.Model.PermissionGroup.Name</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FinSpaceData.Model.PermissionGroup.PermissionGroupId</property>
+    <min>1</min>
+    <max>26</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FinSpaceData.Model.PermissionGroupByUser.Name</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FinSpaceData.Model.PermissionGroupByUser.PermissionGroupId</property>
+    <min>1</min>
+    <max>26</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.FinSpaceData.Model.PermissionGroupParams.PermissionGroupId</property>
     <min>1</min>
     <max>26</max>
+    <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FinSpaceData.Model.ResourcePermission.Permission</property>
     <min>1</min>
     <max>250</max>
     <pattern>[\s\S]*\S[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FinSpaceData.Model.S3Location.Bucket</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^.*\S.*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FinSpaceData.Model.S3Location.Key</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^.*\S.*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FinSpaceData.Model.User.ApiAccessPrincipalArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:aws[a-z\-]*:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FinSpaceData.Model.User.EmailAddress</property>
+    <min>4</min>
+    <max>320</max>
+    <pattern>[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FinSpaceData.Model.User.FirstName</property>
+    <min>1</min>
+    <max>50</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FinSpaceData.Model.User.LastName</property>
+    <min>1</min>
+    <max>50</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FinSpaceData.Model.User.UserId</property>
+    <min>1</min>
+    <max>26</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FinSpaceData.Model.UserByPermissionGroup.ApiAccessPrincipalArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:aws[a-z\-]*:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FinSpaceData.Model.UserByPermissionGroup.EmailAddress</property>
+    <min>4</min>
+    <max>320</max>
+    <pattern>[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FinSpaceData.Model.UserByPermissionGroup.FirstName</property>
+    <min>1</min>
+    <max>50</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FinSpaceData.Model.UserByPermissionGroup.LastName</property>
+    <min>1</min>
+    <max>50</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FinSpaceData.Model.UserByPermissionGroup.UserId</property>
+    <min>1</min>
+    <max>26</max>
+    <pattern>.*\S.*</pattern>
   </property-value-rule>
 </property-value-rules>

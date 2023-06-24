@@ -34,7 +34,7 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ConfigurationOverrides Marshaller
-    /// </summary>       
+    /// </summary>
     public class ConfigurationOverridesMarshaller : IRequestMarshaller<ConfigurationOverrides, JsonMarshallerContext> 
     {
         /// <summary>
@@ -76,7 +76,7 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ConfigurationOverridesMarshaller Instance = new ConfigurationOverridesMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RuntimePlatform Marshaller
-    /// </summary>       
+    /// </summary>
     public class RuntimePlatformMarshaller : IRequestMarshaller<RuntimePlatform, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RuntimePlatformMarshaller Instance = new RuntimePlatformMarshaller();
 
     }

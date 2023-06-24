@@ -34,7 +34,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RateIncreaseCriteria Marshaller
-    /// </summary>       
+    /// </summary>
     public class RateIncreaseCriteriaMarshaller : IRequestMarshaller<RateIncreaseCriteria, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RateIncreaseCriteriaMarshaller Instance = new RateIncreaseCriteriaMarshaller();
 
     }

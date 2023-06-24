@@ -34,7 +34,7 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// EncryptionAtRestOptions Marshaller
-    /// </summary>       
+    /// </summary>
     public class EncryptionAtRestOptionsMarshaller : IRequestMarshaller<EncryptionAtRestOptions, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static EncryptionAtRestOptionsMarshaller Instance = new EncryptionAtRestOptionsMarshaller();
 
     }

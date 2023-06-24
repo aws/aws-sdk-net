@@ -232,6 +232,22 @@ namespace Amazon.Lightsail.Model
         /// <para>
         ///  <code>Unit</code>: The published unit is <code>Count</code>.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b> <code>MetadataNoToken</code> </b> - Reports the number of times that the instance
+        /// metadata service was successfully accessed without a token. This metric determines
+        /// if there are any processes accessing instance metadata by using Instance Metadata
+        /// Service Version 1, which doesn't use a token. If all requests use token-backed sessions,
+        /// such as Instance Metadata Service Version 2, then the value is 0.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>Statistics</code>: The most useful statistic is <code>Sum</code>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>Unit</code>: The published unit is <code>Count</code>.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -105,6 +105,14 @@ namespace Amazon.ConnectParticipant
         /// </summary>
         public static readonly ChatItemType MESSAGE = new ChatItemType("MESSAGE");
         /// <summary>
+        /// Constant MESSAGE_DELIVERED for ChatItemType
+        /// </summary>
+        public static readonly ChatItemType MESSAGE_DELIVERED = new ChatItemType("MESSAGE_DELIVERED");
+        /// <summary>
+        /// Constant MESSAGE_READ for ChatItemType
+        /// </summary>
+        public static readonly ChatItemType MESSAGE_READ = new ChatItemType("MESSAGE_READ");
+        /// <summary>
         /// Constant PARTICIPANT_JOINED for ChatItemType
         /// </summary>
         public static readonly ChatItemType PARTICIPANT_JOINED = new ChatItemType("PARTICIPANT_JOINED");

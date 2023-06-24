@@ -34,21 +34,23 @@ namespace Amazon.Route53RecoveryControlConfig.Model
     /// that can be changed together in a single transaction. You can use a control panel
     /// to centrally view the operational status of applications across your organization,
     /// and trigger multi-app failovers in a single transaction, for example, to fail over
-    /// an Availability Zone or AWS Region.
+    /// an Availability Zone or Amazon Web Services Region.
     /// </summary>
     public partial class CreateControlPanelRequest : AmazonRoute53RecoveryControlConfigRequest
     {
         private string _clientToken;
         private string _clusterArn;
         private string _controlPanelName;
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// Unique client idempotency token.
+        /// A unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent
+        /// API request with an action, specify a client token in the request.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=64)]
+        [AWSProperty(Min=1, Max=64)]
         public string ClientToken
         {
             get { return this._clientToken; }
@@ -67,7 +69,7 @@ namespace Amazon.Route53RecoveryControlConfig.Model
         /// The Amazon Resource Name (ARN) of the cluster for the control panel.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string ClusterArn
         {
             get { return this._clusterArn; }
@@ -97,6 +99,24 @@ namespace Amazon.Route53RecoveryControlConfig.Model
         internal bool IsSetControlPanelName()
         {
             return this._controlPanelName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags associated with the control panel.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

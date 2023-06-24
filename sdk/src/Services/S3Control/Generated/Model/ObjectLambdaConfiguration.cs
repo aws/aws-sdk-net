@@ -41,8 +41,8 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property AllowedFeatures. 
         /// <para>
-        /// A container for allowed features. Valid inputs are <code>GetObject-Range</code> and
-        /// <code>GetObject-PartNumber</code>.
+        /// A container for allowed features. Valid inputs are <code>GetObject-Range</code>, <code>GetObject-PartNumber</code>,
+        /// <code>HeadObject-Range</code>, and <code>HeadObject-PartNumber</code>.
         /// </para>
         /// </summary>
         public List<string> AllowedFeatures

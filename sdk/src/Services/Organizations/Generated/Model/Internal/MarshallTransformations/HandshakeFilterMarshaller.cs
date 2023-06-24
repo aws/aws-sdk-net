@@ -34,7 +34,7 @@ namespace Amazon.Organizations.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// HandshakeFilter Marshaller
-    /// </summary>       
+    /// </summary>
     public class HandshakeFilterMarshaller : IRequestMarshaller<HandshakeFilter, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Organizations.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static HandshakeFilterMarshaller Instance = new HandshakeFilterMarshaller();
 
     }

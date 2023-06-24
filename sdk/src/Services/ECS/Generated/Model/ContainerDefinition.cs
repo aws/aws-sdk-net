@@ -175,13 +175,13 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property DependsOn. 
         /// <para>
         /// The dependencies defined for container startup and shutdown. A container can contain
-        /// multiple dependencies. When a dependency is defined for container startup, for container
-        /// shutdown it is reversed.
+        /// multiple dependencies on other containers in a task definition. When a dependency
+        /// is defined for container startup, for container shutdown it is reversed.
         /// </para>
         ///  
         /// <para>
         /// For tasks using the EC2 launch type, the container instances require at least version
-        /// 1.26.0 of the container agent to enable container dependencies. However, we recommend
+        /// 1.26.0 of the container agent to turn on container dependencies. However, we recommend
         /// using the latest container agent version. For information about checking your agent
         /// version and updating to the latest version, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
         /// the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service Developer
@@ -222,7 +222,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property DisableNetworking. 
         /// <para>
-        /// When this parameter is true, networking is disabled within the container. This parameter
+        /// When this parameter is true, networking is off within the container. This parameter
         /// maps to <code>NetworkDisabled</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
         /// a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker
         /// Remote API</a>.
@@ -327,15 +327,23 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property DockerSecurityOptions. 
         /// <para>
-        /// A list of strings to provide custom labels for SELinux and AppArmor multi-level security
-        /// systems. This field isn't valid for containers in tasks using the Fargate launch type.
+        /// A list of strings to provide custom configuration for multiple security systems. For
+        /// more information about valid values, see <a href="https://docs.docker.com/engine/reference/run/#security-configuration">Docker
+        /// Run Security Configuration</a>. This field isn't valid for containers in tasks using
+        /// the Fargate launch type.
         /// </para>
         ///  
         /// <para>
-        /// With Windows containers, this parameter can be used to reference a credential spec
-        /// file when configuring a container for Active Directory authentication. For more information,
+        /// For Linux tasks on EC2, this parameter can be used to reference custom labels for
+        /// SELinux and AppArmor multi-level security systems.
+        /// </para>
+        ///  
+        /// <para>
+        /// For any tasks on EC2, this parameter can be used to reference a credential spec file
+        /// that configures a container for Active Directory authentication. For more information,
         /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows-gmsa.html">Using
-        /// gMSAs for Windows Containers</a> in the <i>Amazon Elastic Container Service Developer
+        /// gMSAs for Windows Containers</a> and <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/linux-gmsa.html">Using
+        /// gMSAs for Linux Containers</a> in the <i>Amazon Elastic Container Service Developer
         /// Guide</i>.
         /// </para>
         ///  
@@ -821,13 +829,13 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// The Docker 20.10.0 or later daemon reserves a minimum of 6 MiB of memory for a container,
-        /// so you should not specify fewer than 6 MiB of memory for your containers.
+        /// The Docker 20.10.0 or later daemon reserves a minimum of 6 MiB of memory for a container.
+        /// So, don't specify less than 6 MiB of memory for your containers. 
         /// </para>
         ///  
         /// <para>
         /// The Docker 19.03.13-ce or earlier daemon reserves a minimum of 4 MiB of memory for
-        /// a container, so you should not specify fewer than 4 MiB of memory for your containers.
+        /// a container. So, don't specify less than 4 MiB of memory for your containers.
         /// </para>
         /// </summary>
         public int Memory
@@ -875,8 +883,13 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// The Docker daemon reserves a minimum of 4 MiB of memory for a container. Therefore,
-        /// we recommend that you specify fewer than 4 MiB of memory for your containers. 
+        /// The Docker 20.10.0 or later daemon reserves a minimum of 6 MiB of memory for a container.
+        /// So, don't specify less than 6 MiB of memory for your containers. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The Docker 19.03.13-ce or earlier daemon reserves a minimum of 4 MiB of memory for
+        /// a container. So, don't specify less than 4 MiB of memory for your containers.
         /// </para>
         /// </summary>
         public int MemoryReservation
@@ -1162,7 +1175,7 @@ namespace Amazon.ECS.Model
         ///  </li> </ul> 
         /// <para>
         /// For tasks using the EC2 launch type, your container instances require at least version
-        /// <code>1.26.0</code> of the container agent to enable a container start timeout value.
+        /// <code>1.26.0</code> of the container agent to use a container start timeout value.
         /// However, we recommend using the latest container agent version. For information about
         /// checking your agent version and updating to the latest version, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
         /// the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service Developer
@@ -1218,9 +1231,9 @@ namespace Amazon.ECS.Model
         /// parameter or the <code>ECS_CONTAINER_STOP_TIMEOUT</code> agent configuration variable
         /// are set, then the default values of 30 seconds for Linux containers and 30 seconds
         /// on Windows containers are used. Your container instances require at least version
-        /// 1.26.0 of the container agent to enable a container stop timeout value. However, we
-        /// recommend using the latest container agent version. For information about checking
-        /// your agent version and updating to the latest version, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
+        /// 1.26.0 of the container agent to use a container stop timeout value. However, we recommend
+        /// using the latest container agent version. For information about checking your agent
+        /// version and updating to the latest version, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
         /// the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service Developer
         /// Guide</i>. If you're using an Amazon ECS-optimized Linux AMI, your instance needs
         /// at least version 1.26.0-1 of the <code>ecs-init</code> package. If your container
@@ -1277,9 +1290,9 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Ulimits. 
         /// <para>
-        /// A list of <code>ulimits</code> to set in the container. If a ulimit value is specified
-        /// in a task definition, it overrides the default values set by Docker. This parameter
-        /// maps to <code>Ulimits</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
+        /// A list of <code>ulimits</code> to set in the container. If a <code>ulimit</code> value
+        /// is specified in a task definition, it overrides the default values set by Docker.
+        /// This parameter maps to <code>Ulimits</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
         /// a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker
         /// Remote API</a> and the <code>--ulimit</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
         /// run</a>. Valid naming values are displayed in the <a>Ulimit</a> data type.
@@ -1290,7 +1303,7 @@ namespace Amazon.ECS.Model
         /// operating system with the exception of the <code>nofile</code> resource limit parameter
         /// which Fargate overrides. The <code>nofile</code> resource limit sets a restriction
         /// on the number of open files that a container can use. The default <code>nofile</code>
-        /// soft limit is <code>1024</code> and hard limit is <code>4096</code>.
+        /// soft limit is <code>1024</code> and the default hard limit is <code>4096</code>.
         /// </para>
         ///  
         /// <para>

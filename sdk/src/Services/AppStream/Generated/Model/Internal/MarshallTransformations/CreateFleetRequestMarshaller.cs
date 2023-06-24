@@ -58,7 +58,7 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
             string target = "PhotonAdminProxyService.CreateFleet";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-12-01";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-12-01";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -173,6 +173,17 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Platform);
                 }
 
+                if(publicRequest.IsSetSessionScriptS3Location())
+                {
+                    context.Writer.WritePropertyName("SessionScriptS3Location");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = S3LocationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.SessionScriptS3Location, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetStreamView())
                 {
                     context.Writer.WritePropertyName("StreamView");
@@ -215,7 +226,6 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

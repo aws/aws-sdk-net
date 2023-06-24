@@ -30,25 +30,35 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the AttachLoadBalancerTargetGroups operation.
+    /// <note> 
+    /// <para>
+    /// This API operation is superseded by <a>AttachTrafficSources</a>, which can attach
+    /// multiple traffic sources types. We recommend using <code>AttachTrafficSources</code>
+    /// to simplify how you manage traffic sources. However, we continue to support <code>AttachLoadBalancerTargetGroups</code>.
+    /// You can use both the original <code>AttachLoadBalancerTargetGroups</code> API operation
+    /// and <code>AttachTrafficSources</code> on the same Auto Scaling group.
+    /// </para>
+    ///  </note> 
+    /// <para>
     /// Attaches one or more target groups to the specified Auto Scaling group.
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// This operation is used with the following load balancer types: 
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  Application Load Balancer - Operates at the application layer (layer 7) and supports
+    /// Application Load Balancer - Operates at the application layer (layer 7) and supports
     /// HTTP and HTTPS. 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  Network Load Balancer - Operates at the transport layer (layer 4) and supports TCP,
+    /// Network Load Balancer - Operates at the transport layer (layer 4) and supports TCP,
     /// TLS, and UDP. 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  Gateway Load Balancer - Operates at the network layer (layer 3).
+    /// Gateway Load Balancer - Operates at the network layer (layer 3).
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -63,9 +73,9 @@ namespace Amazon.AutoScaling.Model
     /// </para>
     ///  
     /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Elastic
-    /// Load Balancing and Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User
-    /// Guide</i>. 
+    /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Use
+    /// Elastic Load Balancing to distribute traffic across the instances in your Auto Scaling
+    /// group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. 
     /// </para>
     /// </summary>
     public partial class AttachLoadBalancerTargetGroupsRequest : AmazonAutoScalingRequest
@@ -95,7 +105,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property TargetGroupARNs. 
         /// <para>
-        /// The Amazon Resource Names (ARN) of the target groups. You can specify up to 10 target
+        /// The Amazon Resource Names (ARNs) of the target groups. You can specify up to 10 target
         /// groups. To get the ARN of a target group, use the Elastic Load Balancing <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html">DescribeTargetGroups</a>
         /// API operation.
         /// </para>

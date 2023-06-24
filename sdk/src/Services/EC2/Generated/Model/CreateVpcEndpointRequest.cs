@@ -33,37 +33,14 @@ namespace Amazon.EC2.Model
     /// Creates a VPC endpoint for a specified service. An endpoint enables you to create
     /// a private connection between your VPC and the service. The service may be provided
     /// by Amazon Web Services, an Amazon Web Services Marketplace Partner, or another Amazon
-    /// Web Services account. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-endpoints.html">VPC
-    /// Endpoints</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
-    /// 
-    ///  
-    /// <para>
-    /// A <code>gateway</code> endpoint serves as a target for a route in your route table
-    /// for traffic destined for the Amazon Web Service. You can specify an endpoint policy
-    /// to attach to the endpoint, which will control access to the service from your VPC.
-    /// You can also specify the VPC route tables that use the endpoint.
-    /// </para>
-    ///  
-    /// <para>
-    /// An <code>interface</code> endpoint is a network interface in your subnet that serves
-    /// as an endpoint for communicating with the specified service. You can specify the subnets
-    /// in which to create an endpoint, and the security groups to associate with the endpoint
-    /// network interface.
-    /// </para>
-    ///  
-    /// <para>
-    /// A <code>GatewayLoadBalancer</code> endpoint is a network interface in your subnet
-    /// that serves an endpoint for communicating with a Gateway Load Balancer that you've
-    /// configured as a VPC endpoint service.
-    /// </para>
-    ///  
-    /// <para>
-    /// Use <a>DescribeVpcEndpointServices</a> to get a list of supported services.
-    /// </para>
+    /// Web Services account. For more information, see the <a href="https://docs.aws.amazon.com/vpc/latest/privatelink/">Amazon
+    /// Web Services PrivateLink Guide</a>.
     /// </summary>
     public partial class CreateVpcEndpointRequest : AmazonEC2Request
     {
         private string _clientToken;
+        private DnsOptionsSpecification _dnsOptions;
+        private IpAddressType _ipAddressType;
         private string _policyDocument;
         private bool? _privateDnsEnabled;
         private List<string> _routeTableIds = new List<string>();
@@ -92,6 +69,42 @@ namespace Amazon.EC2.Model
         internal bool IsSetClientToken()
         {
             return this._clientToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DnsOptions. 
+        /// <para>
+        /// The DNS options for the endpoint.
+        /// </para>
+        /// </summary>
+        public DnsOptionsSpecification DnsOptions
+        {
+            get { return this._dnsOptions; }
+            set { this._dnsOptions = value; }
+        }
+
+        // Check to see if DnsOptions property is set
+        internal bool IsSetDnsOptions()
+        {
+            return this._dnsOptions != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IpAddressType. 
+        /// <para>
+        /// The IP address type for the endpoint.
+        /// </para>
+        /// </summary>
+        public IpAddressType IpAddressType
+        {
+            get { return this._ipAddressType; }
+            set { this._ipAddressType = value; }
+        }
+
+        // Check to see if IpAddressType property is set
+        internal bool IsSetIpAddressType()
+        {
+            return this._ipAddressType != null;
         }
 
         /// <summary>
@@ -151,7 +164,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property RouteTableIds. 
         /// <para>
-        /// (Gateway endpoint) One or more route table IDs.
+        /// (Gateway endpoint) The route table IDs.
         /// </para>
         /// </summary>
         public List<string> RouteTableIds
@@ -169,8 +182,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SecurityGroupIds. 
         /// <para>
-        /// (Interface endpoint) The ID of one or more security groups to associate with the endpoint
-        /// network interface.
+        /// (Interface endpoint) The IDs of the security groups to associate with the endpoint
+        /// network interface. If this parameter is not specified, we use the default security
+        /// group for the VPC.
         /// </para>
         /// </summary>
         public List<string> SecurityGroupIds
@@ -188,8 +202,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ServiceName. 
         /// <para>
-        /// The service name. To get a list of available services, use the <a>DescribeVpcEndpointServices</a>
-        /// request, or get the name from the service provider.
+        /// The service name.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -208,9 +221,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SubnetIds. 
         /// <para>
-        /// (Interface and Gateway Load Balancer endpoints) The ID of one or more subnets in which
-        /// to create an endpoint network interface. For a Gateway Load Balancer endpoint, you
-        /// can specify one subnet only.
+        /// (Interface and Gateway Load Balancer endpoints) The IDs of the subnets in which to
+        /// create an endpoint network interface. For a Gateway Load Balancer endpoint, you can
+        /// specify only one subnet.
         /// </para>
         /// </summary>
         public List<string> SubnetIds
@@ -268,7 +281,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property VpcId. 
         /// <para>
-        /// The ID of the VPC in which the endpoint will be used.
+        /// The ID of the VPC for the endpoint.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

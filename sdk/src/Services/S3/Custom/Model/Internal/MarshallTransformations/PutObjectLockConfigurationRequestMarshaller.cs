@@ -58,9 +58,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         {
             var request = new DefaultRequest(publicRequest, "AmazonS3");
             request.HttpMethod = "PUT";
-            string uriResourcePath = "/{Bucket}";
+            string uriResourcePath = "/";
             request.AddSubResource("object-lock");
-        
+
+            if (publicRequest.IsSetChecksumAlgorithm())
+                request.Headers.Add(S3Constants.AmzHeaderSdkChecksumAlgorithm, S3Transforms.ToStringValue(publicRequest.ChecksumAlgorithm));
             if (publicRequest.IsSetContentMD5())
                 request.Headers.Add(HeaderKeys.ContentMD5Header, S3Transforms.ToStringValue(publicRequest.ContentMD5));
             if (publicRequest.IsSetRequestPayer())
@@ -71,7 +73,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 request.Headers.Add(S3Constants.AmzHeaderExpectedBucketOwner, S3Transforms.ToStringValue(publicRequest.ExpectedBucketOwner));
             if (!publicRequest.IsSetBucketName())
                 throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "publicRequest.BucketName");
-            uriResourcePath = uriResourcePath.Replace("{Bucket}", StringUtils.FromString(publicRequest.BucketName));
             
 			request.ResourcePath = uriResourcePath;
 
@@ -80,30 +81,30 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             {   
                 if (publicRequest.IsSetObjectLockConfiguration())
                 {
-                    xmlWriter.WriteStartElement("ObjectLockConfiguration", "http://s3.amazonaws.com/doc/2006-03-01/");
+                    xmlWriter.WriteStartElement("ObjectLockConfiguration", S3Constants.S3RequestXmlNamespace);
                     if(publicRequest.ObjectLockConfiguration.IsSetObjectLockEnabled())
-                        xmlWriter.WriteElementString("ObjectLockEnabled", "http://s3.amazonaws.com/doc/2006-03-01/", StringUtils.FromString(publicRequest.ObjectLockConfiguration.ObjectLockEnabled));
+                        xmlWriter.WriteElementString("ObjectLockEnabled", StringUtils.FromString(publicRequest.ObjectLockConfiguration.ObjectLockEnabled));
 
 
                     if (publicRequest.ObjectLockConfiguration.Rule != null) 
                     {
                         
-                        xmlWriter.WriteStartElement("Rule", "http://s3.amazonaws.com/doc/2006-03-01/");            
+                        xmlWriter.WriteStartElement("Rule");            
                         
                         
                         if (publicRequest.ObjectLockConfiguration.Rule.DefaultRetention != null) 
                         {
                             
-                            xmlWriter.WriteStartElement("DefaultRetention", "http://s3.amazonaws.com/doc/2006-03-01/");            
+                            xmlWriter.WriteStartElement("DefaultRetention");            
                             
                             if(publicRequest.ObjectLockConfiguration.Rule.DefaultRetention.IsSetDays())
-                                xmlWriter.WriteElementString("Days", "http://s3.amazonaws.com/doc/2006-03-01/", StringUtils.FromInt(publicRequest.ObjectLockConfiguration.Rule.DefaultRetention.Days));                 
+                                xmlWriter.WriteElementString("Days", StringUtils.FromInt(publicRequest.ObjectLockConfiguration.Rule.DefaultRetention.Days));                 
             
                             if(publicRequest.ObjectLockConfiguration.Rule.DefaultRetention.IsSetMode())
-                                xmlWriter.WriteElementString("Mode", "http://s3.amazonaws.com/doc/2006-03-01/", StringUtils.FromString(publicRequest.ObjectLockConfiguration.Rule.DefaultRetention.Mode));                 
+                                xmlWriter.WriteElementString("Mode", StringUtils.FromString(publicRequest.ObjectLockConfiguration.Rule.DefaultRetention.Mode));                 
             
                             if(publicRequest.ObjectLockConfiguration.Rule.DefaultRetention.IsSetYears())
-                                xmlWriter.WriteElementString("Years", "http://s3.amazonaws.com/doc/2006-03-01/", StringUtils.FromInt(publicRequest.ObjectLockConfiguration.Rule.DefaultRetention.Years));                 
+                                xmlWriter.WriteElementString("Years", StringUtils.FromInt(publicRequest.ObjectLockConfiguration.Rule.DefaultRetention.Years));                 
             
                             xmlWriter.WriteEndElement();
                         }
@@ -119,9 +120,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 request.Content = System.Text.Encoding.UTF8.GetBytes(content);
                 request.Headers[HeaderKeys.ContentTypeHeader] = "application/xml";
 
-                var checksum = AWSSDKUtils.GenerateChecksumForContent(content, true);
-                request.Headers[HeaderKeys.ContentMD5Header] = checksum;
-            } 
+                ChecksumUtils.SetRequestChecksum(request, publicRequest.ChecksumAlgorithm);
+            }
             catch (EncoderFallbackException e) 
             {
                 throw new AmazonServiceException("Unable to marshall request to XML", e);

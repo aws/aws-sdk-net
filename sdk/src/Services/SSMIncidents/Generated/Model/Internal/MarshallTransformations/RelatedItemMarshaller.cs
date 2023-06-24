@@ -34,7 +34,7 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RelatedItem Marshaller
-    /// </summary>       
+    /// </summary>
     public class RelatedItemMarshaller : IRequestMarshaller<RelatedItem, JsonMarshallerContext> 
     {
         /// <summary>
@@ -45,6 +45,12 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(RelatedItem requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetGeneratedId())
+            {
+                context.Writer.WritePropertyName("generatedId");
+                context.Writer.Write(requestObject.GeneratedId);
+            }
+
             if(requestObject.IsSetIdentifier())
             {
                 context.Writer.WritePropertyName("identifier");
@@ -66,7 +72,7 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RelatedItemMarshaller Instance = new RelatedItemMarshaller();
 
     }

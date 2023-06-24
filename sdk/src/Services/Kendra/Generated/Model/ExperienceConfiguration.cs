@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kendra.Model
 {
     /// <summary>
-    /// Specifies the configuration information for your Amazon Kendra experience. This includes
+    /// Provides the configuration information for your Amazon Kendra experience. This includes
     /// the data source IDs and/or FAQ IDs, and user or group information to grant access
     /// to your Amazon Kendra experience.
     /// </summary>
@@ -42,8 +42,8 @@ namespace Amazon.Kendra.Model
         /// Gets and sets the property ContentSourceConfiguration. 
         /// <para>
         /// The identifiers of your data sources and FAQs. Or, you can specify that you want to
-        /// use documents indexed via the <code>BatchPutDocument</code> operation. This is the
-        /// content you want to use for your Amazon Kendra experience.
+        /// use documents indexed via the <code>BatchPutDocument</code> API. This is the content
+        /// you want to use for your Amazon Kendra experience.
         /// </para>
         /// </summary>
         public ContentSourceConfiguration ContentSourceConfiguration
@@ -61,8 +61,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property UserIdentityConfiguration. 
         /// <para>
-        /// The Amazon Web Services SSO field name that contains the identifiers of your users,
-        /// such as their emails.
+        /// The IAM Identity Center field name that contains the identifiers of your users, such
+        /// as their emails.
         /// </para>
         /// </summary>
         public UserIdentityConfiguration UserIdentityConfiguration

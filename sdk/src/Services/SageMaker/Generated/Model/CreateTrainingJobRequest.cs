@@ -30,15 +30,15 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateTrainingJob operation.
-    /// Starts a model training job. After training completes, Amazon SageMaker saves the
-    /// resulting model artifacts to an Amazon S3 location that you specify. 
+    /// Starts a model training job. After training completes, SageMaker saves the resulting
+    /// model artifacts to an Amazon S3 location that you specify. 
     /// 
     ///  
     /// <para>
-    /// If you choose to host your model using Amazon SageMaker hosting services, you can
-    /// use the resulting model artifacts as part of the model. You can also use the artifacts
-    /// in a machine learning service other than Amazon SageMaker, provided that you know
-    /// how to use them for inference. 
+    /// If you choose to host your model using SageMaker hosting services, you can use the
+    /// resulting model artifacts as part of the model. You can also use the artifacts in
+    /// a machine learning service other than SageMaker, provided that you know how to use
+    /// them for inference. 
     /// </para>
     ///  
     /// <para>
@@ -53,18 +53,25 @@ namespace Amazon.SageMaker.Model
     ///  <code>HyperParameters</code> - Specify these algorithm-specific parameters to enable
     /// the estimation of model parameters during training. Hyperparameters can be tuned to
     /// optimize this learning process. For a list of hyperparameters for each training algorithm
-    /// provided by Amazon SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
+    /// provided by SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
     /// 
     /// </para>
-    ///  </li> <li> 
+    ///  <important> 
     /// <para>
-    ///  <code>InputDataConfig</code> - Describes the training dataset and the Amazon S3,
-    /// EFS, or FSx location where it is stored.
+    /// Do not include any security-sensitive information including account access IDs, secrets
+    /// or tokens in any hyperparameter field. If the use of security-sensitive credentials
+    /// are detected, SageMaker will reject your training job request and return an exception
+    /// error.
+    /// </para>
+    ///  </important> </li> <li> 
+    /// <para>
+    ///  <code>InputDataConfig</code> - Describes the input required by the training job and
+    /// the Amazon S3, EFS, or FSx location where it is stored.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>OutputDataConfig</code> - Identifies the Amazon S3 bucket where you want Amazon
-    /// SageMaker to save the results of model training. 
+    ///  <code>OutputDataConfig</code> - Identifies the Amazon S3 bucket where you want SageMaker
+    /// to save the results of model training. 
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -81,10 +88,9 @@ namespace Amazon.SageMaker.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>RoleArn</code> - The Amazon Resource Name (ARN) that Amazon SageMaker assumes
-    /// to perform tasks on your behalf during model training. You must grant this role the
-    /// necessary permissions so that Amazon SageMaker can successfully complete model training.
-    /// 
+    ///  <code>RoleArn</code> - The Amazon Resource Name (ARN) that SageMaker assumes to perform
+    /// tasks on your behalf during model training. You must grant this role the necessary
+    /// permissions so that SageMaker can successfully complete model training. 
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -103,7 +109,7 @@ namespace Amazon.SageMaker.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    ///  For more information about Amazon SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/how-it-works.html">How
+    ///  For more information about SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/how-it-works.html">How
     /// It Works</a>. 
     /// </para>
     /// </summary>
@@ -137,7 +143,7 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// The registry path of the Docker image that contains the training algorithm and algorithm-specific
         /// metadata, including the input mode. For more information about algorithms provided
-        /// by Amazon SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
+        /// by SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
         /// For information about providing your own algorithms, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using
         /// Your Own Algorithms with Amazon SageMaker</a>. 
         /// </para>
@@ -192,7 +198,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property DebugRuleConfigurations. 
         /// <para>
-        /// Configuration information for Debugger rules for debugging output tensors.
+        /// Configuration information for Amazon SageMaker Debugger rules for debugging output
+        /// tensors.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=20)]
@@ -265,8 +272,8 @@ namespace Amazon.SageMaker.Model
         /// Isolates the training container. No inbound or outbound network calls can be made,
         /// except for calls between peers within a training cluster for distributed training.
         /// If you enable network isolation for training jobs that are configured to use a VPC,
-        /// Amazon SageMaker downloads and uploads customer data and model artifacts through the
-        /// specified VPC, but the training container does not have network access.
+        /// SageMaker downloads and uploads customer data and model artifacts through the specified
+        /// VPC, but the training container does not have network access.
         /// </para>
         /// </summary>
         public bool EnableNetworkIsolation
@@ -320,7 +327,7 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// Algorithm-specific parameters that influence the quality of the model. You set hyperparameters
         /// before you start the learning process. For a list of hyperparameters for each training
-        /// algorithm provided by Amazon SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
+        /// algorithm provided by SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
         /// 
         /// </para>
         ///  
@@ -329,6 +336,14 @@ namespace Amazon.SageMaker.Model
         /// pair. Each key and value is limited to 256 characters, as specified by the <code>Length
         /// Constraint</code>. 
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// Do not include any security-sensitive information including account access IDs, secrets
+        /// or tokens in any hyperparameter field. If the use of security-sensitive credentials
+        /// are detected, SageMaker will reject your training job request and return an exception
+        /// error.
+        /// </para>
+        ///  </important>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
         public Dictionary<string, string> HyperParameters
@@ -359,10 +374,14 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  
         /// <para>
-        /// Depending on the input mode that the algorithm supports, Amazon SageMaker either copies
-        /// input data files from an S3 bucket to a local directory in the Docker container, or
-        /// makes it available as input streams. For example, if you specify an EFS location,
-        /// input data files will be made available as input streams. They do not need to be downloaded.
+        /// Depending on the input mode that the algorithm supports, SageMaker either copies input
+        /// data files from an S3 bucket to a local directory in the Docker container, or makes
+        /// it available as input streams. For example, if you specify an EFS location, input
+        /// data files are available as input streams. They do not need to be downloaded.
+        /// </para>
+        ///  
+        /// <para>
+        /// Your input must be in the same Amazon Web Services region as your training job.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=20)]
@@ -381,8 +400,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property OutputDataConfig. 
         /// <para>
-        /// Specifies the path to the S3 location where you want to store model artifacts. Amazon
-        /// SageMaker creates subfolders for the artifacts. 
+        /// Specifies the path to the S3 location where you want to store model artifacts. SageMaker
+        /// creates subfolders for the artifacts. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -416,7 +435,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ProfilerRuleConfigurations. 
         /// <para>
-        /// Configuration information for Debugger rules for profiling system and framework metrics.
+        /// Configuration information for Amazon SageMaker Debugger rules for profiling system
+        /// and framework metrics.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=20)]
@@ -441,10 +461,10 @@ namespace Amazon.SageMaker.Model
         ///  
         /// <para>
         /// ML storage volumes store model artifacts and incremental states. Training algorithms
-        /// might also use ML storage volumes for scratch space. If you want Amazon SageMaker
-        /// to use the ML storage volume to store the training data, choose <code>File</code>
-        /// as the <code>TrainingInputMode</code> in the algorithm specification. For distributed
-        /// training algorithms, specify an instance count greater than 1.
+        /// might also use ML storage volumes for scratch space. If you want SageMaker to use
+        /// the ML storage volume to store the training data, choose <code>File</code> as the
+        /// <code>TrainingInputMode</code> in the algorithm specification. For distributed training
+        /// algorithms, specify an instance count greater than 1.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -481,22 +501,22 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to
-        /// perform tasks on your behalf. 
+        /// The Amazon Resource Name (ARN) of an IAM role that SageMaker can assume to perform
+        /// tasks on your behalf. 
         /// </para>
         ///  
         /// <para>
-        /// During model training, Amazon SageMaker needs your permission to read input data from
-        /// an S3 bucket, download a Docker image that contains training code, write model artifacts
+        /// During model training, SageMaker needs your permission to read input data from an
+        /// S3 bucket, download a Docker image that contains training code, write model artifacts
         /// to an S3 bucket, write logs to Amazon CloudWatch Logs, and publish metrics to Amazon
         /// CloudWatch. You grant permissions for all of these tasks to an IAM role. For more
-        /// information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
-        /// SageMaker Roles</a>. 
+        /// information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker
+        /// Roles</a>. 
         /// </para>
         ///  <note> 
         /// <para>
-        /// To be able to pass this role to Amazon SageMaker, the caller of this API must have
-        /// the <code>iam:PassRole</code> permission.
+        /// To be able to pass this role to SageMaker, the caller of this API must have the <code>iam:PassRole</code>
+        /// permission.
         /// </para>
         ///  </note>
         /// </summary>
@@ -518,12 +538,12 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// Specifies a limit to how long a model training job can run. It also specifies how
         /// long a managed Spot training job has to complete. When the job reaches the time limit,
-        /// Amazon SageMaker ends the training job. Use this API to cap model training costs.
+        /// SageMaker ends the training job. Use this API to cap model training costs.
         /// </para>
         ///  
         /// <para>
-        /// To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal,
-        /// which delays job termination for 120 seconds. Algorithms can use this 120-second window
+        /// To stop a job, SageMaker sends the algorithm the <code>SIGTERM</code> signal, which
+        /// delays job termination for 120 seconds. Algorithms can use this 120-second window
         /// to save the model artifacts, so the results of training are not lost. 
         /// </para>
         /// </summary>
@@ -600,9 +620,10 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property VpcConfig. 
         /// <para>
-        /// A <a>VpcConfig</a> object that specifies the VPC that you want your training job to
-        /// connect to. Control access to and from your training container by configuring the
-        /// VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect
+        /// A <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a>
+        /// object that specifies the VPC that you want your training job to connect to. Control
+        /// access to and from your training container by configuring the VPC. For more information,
+        /// see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect
         /// Training Jobs by Using an Amazon Virtual Private Cloud</a>.
         /// </para>
         /// </summary>

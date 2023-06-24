@@ -89,6 +89,10 @@ namespace Amazon.Panorama
         /// </summary>
         public static readonly ApplicationInstanceStatus DEPLOYMENT_ERROR = new ApplicationInstanceStatus("DEPLOYMENT_ERROR");
         /// <summary>
+        /// Constant DEPLOYMENT_FAILED for ApplicationInstanceStatus
+        /// </summary>
+        public static readonly ApplicationInstanceStatus DEPLOYMENT_FAILED = new ApplicationInstanceStatus("DEPLOYMENT_FAILED");
+        /// <summary>
         /// Constant DEPLOYMENT_IN_PROGRESS for ApplicationInstanceStatus
         /// </summary>
         public static readonly ApplicationInstanceStatus DEPLOYMENT_IN_PROGRESS = new ApplicationInstanceStatus("DEPLOYMENT_IN_PROGRESS");
@@ -211,6 +215,192 @@ namespace Amazon.Panorama
 
 
     /// <summary>
+    /// Constants used for properties of type DesiredState.
+    /// </summary>
+    public class DesiredState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant REMOVED for DesiredState
+        /// </summary>
+        public static readonly DesiredState REMOVED = new DesiredState("REMOVED");
+        /// <summary>
+        /// Constant RUNNING for DesiredState
+        /// </summary>
+        public static readonly DesiredState RUNNING = new DesiredState("RUNNING");
+        /// <summary>
+        /// Constant STOPPED for DesiredState
+        /// </summary>
+        public static readonly DesiredState STOPPED = new DesiredState("STOPPED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DesiredState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DesiredState FindValue(string value)
+        {
+            return FindValue<DesiredState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DesiredState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DeviceAggregatedStatus.
+    /// </summary>
+    public class DeviceAggregatedStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AWAITING_PROVISIONING for DeviceAggregatedStatus
+        /// </summary>
+        public static readonly DeviceAggregatedStatus AWAITING_PROVISIONING = new DeviceAggregatedStatus("AWAITING_PROVISIONING");
+        /// <summary>
+        /// Constant DELETING for DeviceAggregatedStatus
+        /// </summary>
+        public static readonly DeviceAggregatedStatus DELETING = new DeviceAggregatedStatus("DELETING");
+        /// <summary>
+        /// Constant ERROR for DeviceAggregatedStatus
+        /// </summary>
+        public static readonly DeviceAggregatedStatus ERROR = new DeviceAggregatedStatus("ERROR");
+        /// <summary>
+        /// Constant FAILED for DeviceAggregatedStatus
+        /// </summary>
+        public static readonly DeviceAggregatedStatus FAILED = new DeviceAggregatedStatus("FAILED");
+        /// <summary>
+        /// Constant LEASE_EXPIRED for DeviceAggregatedStatus
+        /// </summary>
+        public static readonly DeviceAggregatedStatus LEASE_EXPIRED = new DeviceAggregatedStatus("LEASE_EXPIRED");
+        /// <summary>
+        /// Constant OFFLINE for DeviceAggregatedStatus
+        /// </summary>
+        public static readonly DeviceAggregatedStatus OFFLINE = new DeviceAggregatedStatus("OFFLINE");
+        /// <summary>
+        /// Constant ONLINE for DeviceAggregatedStatus
+        /// </summary>
+        public static readonly DeviceAggregatedStatus ONLINE = new DeviceAggregatedStatus("ONLINE");
+        /// <summary>
+        /// Constant PENDING for DeviceAggregatedStatus
+        /// </summary>
+        public static readonly DeviceAggregatedStatus PENDING = new DeviceAggregatedStatus("PENDING");
+        /// <summary>
+        /// Constant REBOOTING for DeviceAggregatedStatus
+        /// </summary>
+        public static readonly DeviceAggregatedStatus REBOOTING = new DeviceAggregatedStatus("REBOOTING");
+        /// <summary>
+        /// Constant UPDATE_NEEDED for DeviceAggregatedStatus
+        /// </summary>
+        public static readonly DeviceAggregatedStatus UPDATE_NEEDED = new DeviceAggregatedStatus("UPDATE_NEEDED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DeviceAggregatedStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DeviceAggregatedStatus FindValue(string value)
+        {
+            return FindValue<DeviceAggregatedStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DeviceAggregatedStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DeviceBrand.
+    /// </summary>
+    public class DeviceBrand : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AWS_PANORAMA for DeviceBrand
+        /// </summary>
+        public static readonly DeviceBrand AWS_PANORAMA = new DeviceBrand("AWS_PANORAMA");
+        /// <summary>
+        /// Constant LENOVO for DeviceBrand
+        /// </summary>
+        public static readonly DeviceBrand LENOVO = new DeviceBrand("LENOVO");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DeviceBrand(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DeviceBrand FindValue(string value)
+        {
+            return FindValue<DeviceBrand>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DeviceBrand(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DeviceConnectionStatus.
     /// </summary>
     public class DeviceConnectionStatus : ConstantClass
@@ -266,6 +456,92 @@ namespace Amazon.Panorama
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator DeviceConnectionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DeviceReportedStatus.
+    /// </summary>
+    public class DeviceReportedStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant INSTALL_ERROR for DeviceReportedStatus
+        /// </summary>
+        public static readonly DeviceReportedStatus INSTALL_ERROR = new DeviceReportedStatus("INSTALL_ERROR");
+        /// <summary>
+        /// Constant INSTALL_IN_PROGRESS for DeviceReportedStatus
+        /// </summary>
+        public static readonly DeviceReportedStatus INSTALL_IN_PROGRESS = new DeviceReportedStatus("INSTALL_IN_PROGRESS");
+        /// <summary>
+        /// Constant LAUNCH_ERROR for DeviceReportedStatus
+        /// </summary>
+        public static readonly DeviceReportedStatus LAUNCH_ERROR = new DeviceReportedStatus("LAUNCH_ERROR");
+        /// <summary>
+        /// Constant LAUNCHED for DeviceReportedStatus
+        /// </summary>
+        public static readonly DeviceReportedStatus LAUNCHED = new DeviceReportedStatus("LAUNCHED");
+        /// <summary>
+        /// Constant REMOVAL_FAILED for DeviceReportedStatus
+        /// </summary>
+        public static readonly DeviceReportedStatus REMOVAL_FAILED = new DeviceReportedStatus("REMOVAL_FAILED");
+        /// <summary>
+        /// Constant REMOVAL_IN_PROGRESS for DeviceReportedStatus
+        /// </summary>
+        public static readonly DeviceReportedStatus REMOVAL_IN_PROGRESS = new DeviceReportedStatus("REMOVAL_IN_PROGRESS");
+        /// <summary>
+        /// Constant RUNNING for DeviceReportedStatus
+        /// </summary>
+        public static readonly DeviceReportedStatus RUNNING = new DeviceReportedStatus("RUNNING");
+        /// <summary>
+        /// Constant STARTING for DeviceReportedStatus
+        /// </summary>
+        public static readonly DeviceReportedStatus STARTING = new DeviceReportedStatus("STARTING");
+        /// <summary>
+        /// Constant STOP_ERROR for DeviceReportedStatus
+        /// </summary>
+        public static readonly DeviceReportedStatus STOP_ERROR = new DeviceReportedStatus("STOP_ERROR");
+        /// <summary>
+        /// Constant STOPPED for DeviceReportedStatus
+        /// </summary>
+        public static readonly DeviceReportedStatus STOPPED = new DeviceReportedStatus("STOPPED");
+        /// <summary>
+        /// Constant STOPPING for DeviceReportedStatus
+        /// </summary>
+        public static readonly DeviceReportedStatus STOPPING = new DeviceReportedStatus("STOPPING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DeviceReportedStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DeviceReportedStatus FindValue(string value)
+        {
+            return FindValue<DeviceReportedStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DeviceReportedStatus(string value)
         {
             return FindValue(value);
         }
@@ -444,6 +720,10 @@ namespace Amazon.Panorama
         /// Constant OTA for JobType
         /// </summary>
         public static readonly JobType OTA = new JobType("OTA");
+        /// <summary>
+        /// Constant REBOOT for JobType
+        /// </summary>
+        public static readonly JobType REBOOT = new JobType("REBOOT");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -481,6 +761,64 @@ namespace Amazon.Panorama
 
 
     /// <summary>
+    /// Constants used for properties of type ListDevicesSortBy.
+    /// </summary>
+    public class ListDevicesSortBy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CREATED_TIME for ListDevicesSortBy
+        /// </summary>
+        public static readonly ListDevicesSortBy CREATED_TIME = new ListDevicesSortBy("CREATED_TIME");
+        /// <summary>
+        /// Constant DEVICE_AGGREGATED_STATUS for ListDevicesSortBy
+        /// </summary>
+        public static readonly ListDevicesSortBy DEVICE_AGGREGATED_STATUS = new ListDevicesSortBy("DEVICE_AGGREGATED_STATUS");
+        /// <summary>
+        /// Constant DEVICE_ID for ListDevicesSortBy
+        /// </summary>
+        public static readonly ListDevicesSortBy DEVICE_ID = new ListDevicesSortBy("DEVICE_ID");
+        /// <summary>
+        /// Constant NAME for ListDevicesSortBy
+        /// </summary>
+        public static readonly ListDevicesSortBy NAME = new ListDevicesSortBy("NAME");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ListDevicesSortBy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ListDevicesSortBy FindValue(string value)
+        {
+            return FindValue<ListDevicesSortBy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ListDevicesSortBy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type NetworkConnectionStatus.
     /// </summary>
     public class NetworkConnectionStatus : ConstantClass
@@ -490,6 +828,10 @@ namespace Amazon.Panorama
         /// Constant CONNECTED for NetworkConnectionStatus
         /// </summary>
         public static readonly NetworkConnectionStatus CONNECTED = new NetworkConnectionStatus("CONNECTED");
+        /// <summary>
+        /// Constant CONNECTING for NetworkConnectionStatus
+        /// </summary>
+        public static readonly NetworkConnectionStatus CONNECTING = new NetworkConnectionStatus("CONNECTING");
         /// <summary>
         /// Constant NOT_CONNECTED for NetworkConnectionStatus
         /// </summary>
@@ -657,6 +999,10 @@ namespace Amazon.Panorama
         /// </summary>
         public static readonly NodeInstanceStatus NOT_AVAILABLE = new NodeInstanceStatus("NOT_AVAILABLE");
         /// <summary>
+        /// Constant PAUSED for NodeInstanceStatus
+        /// </summary>
+        public static readonly NodeInstanceStatus PAUSED = new NodeInstanceStatus("PAUSED");
+        /// <summary>
         /// Constant RUNNING for NodeInstanceStatus
         /// </summary>
         public static readonly NodeInstanceStatus RUNNING = new NodeInstanceStatus("RUNNING");
@@ -690,6 +1036,56 @@ namespace Amazon.Panorama
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator NodeInstanceStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type NodeSignalValue.
+    /// </summary>
+    public class NodeSignalValue : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PAUSE for NodeSignalValue
+        /// </summary>
+        public static readonly NodeSignalValue PAUSE = new NodeSignalValue("PAUSE");
+        /// <summary>
+        /// Constant RESUME for NodeSignalValue
+        /// </summary>
+        public static readonly NodeSignalValue RESUME = new NodeSignalValue("RESUME");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public NodeSignalValue(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static NodeSignalValue FindValue(string value)
+        {
+            return FindValue<NodeSignalValue>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator NodeSignalValue(string value)
         {
             return FindValue(value);
         }
@@ -756,6 +1152,10 @@ namespace Amazon.Panorama
     public class PackageImportJobType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant MARKETPLACE_NODE_PACKAGE_VERSION for PackageImportJobType
+        /// </summary>
+        public static readonly PackageImportJobType MARKETPLACE_NODE_PACKAGE_VERSION = new PackageImportJobType("MARKETPLACE_NODE_PACKAGE_VERSION");
         /// <summary>
         /// Constant NODE_PACKAGE_VERSION for PackageImportJobType
         /// </summary>
@@ -917,6 +1317,56 @@ namespace Amazon.Panorama
 
 
     /// <summary>
+    /// Constants used for properties of type SortOrder.
+    /// </summary>
+    public class SortOrder : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ASCENDING for SortOrder
+        /// </summary>
+        public static readonly SortOrder ASCENDING = new SortOrder("ASCENDING");
+        /// <summary>
+        /// Constant DESCENDING for SortOrder
+        /// </summary>
+        public static readonly SortOrder DESCENDING = new SortOrder("DESCENDING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SortOrder(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SortOrder FindValue(string value)
+        {
+            return FindValue<SortOrder>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SortOrder(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type StatusFilter.
     /// </summary>
     public class StatusFilter : ConstantClass
@@ -926,6 +1376,10 @@ namespace Amazon.Panorama
         /// Constant DEPLOYMENT_ERROR for StatusFilter
         /// </summary>
         public static readonly StatusFilter DEPLOYMENT_ERROR = new StatusFilter("DEPLOYMENT_ERROR");
+        /// <summary>
+        /// Constant DEPLOYMENT_FAILED for StatusFilter
+        /// </summary>
+        public static readonly StatusFilter DEPLOYMENT_FAILED = new StatusFilter("DEPLOYMENT_FAILED");
         /// <summary>
         /// Constant DEPLOYMENT_SUCCEEDED for StatusFilter
         /// </summary>

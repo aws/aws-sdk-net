@@ -17,22 +17,22 @@
  * Do not modify this file. This file is generated from the inspector-2016-02-16.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
-
+using Amazon.Inspector.Internal;
 
 namespace Amazon.Inspector
 {
     /// <summary>
     /// Configuration for accessing Amazon Inspector service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonInspectorConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.105");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.147");
 
         private string _userAgent = UserAgentString;
 
@@ -40,8 +40,10 @@ namespace Amazon.Inspector
         /// Default constructor
         /// </summary>
         public AmazonInspectorConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonInspectorDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "inspector";
+            this.EndpointProvider = new AmazonInspectorEndpointProvider();
         }
 
         /// <summary>
@@ -76,5 +78,6 @@ namespace Amazon.Inspector
                 return _userAgent;
             }
         }
+
     }
 }

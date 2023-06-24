@@ -83,7 +83,7 @@ namespace Amazon.GreengrassV2.Model
         /// your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=50)]
+        [AWSProperty(Min=1, Max=200)]
         public Dictionary<string, string> Tags
         {
             get { return this._tags; }

@@ -31,7 +31,7 @@ namespace Amazon.Rekognition.Model
     /// <summary>
     /// Container for the parameters to the RecognizeCelebrities operation.
     /// Returns an array of celebrities recognized in the input image. For more information,
-    /// see Recognizing Celebrities in the Amazon Rekognition Developer Guide. 
+    /// see Recognizing celebrities in the Amazon Rekognition Developer Guide. 
     /// 
     ///  
     /// <para>
@@ -65,7 +65,7 @@ namespace Amazon.Rekognition.Model
     /// </para>
     ///  
     /// <para>
-    /// For an example, see Recognizing Celebrities in an Image in the Amazon Rekognition
+    /// For an example, see Recognizing celebrities in an image in the Amazon Rekognition
     /// Developer Guide.
     /// </para>
     ///  

@@ -35,16 +35,16 @@ namespace Amazon.NetworkFirewall.Model
     public partial class StatefulEngineOptions
     {
         private RuleOrder _ruleOrder;
+        private StreamExceptionPolicy _streamExceptionPolicy;
 
         /// <summary>
         /// Gets and sets the property RuleOrder. 
         /// <para>
-        /// Indicates how to manage the order of stateful rule evaluation for the policy. By default,
-        /// Network Firewall leaves the rule evaluation order up to the Suricata rule processing
-        /// engine. If you set this to <code>STRICT_ORDER</code>, your rules are evaluated in
-        /// the exact order that you provide them in the policy. With strict ordering, the rule
-        /// groups are evaluated by order of priority, starting from the lowest number, and the
-        /// rules in each rule group are processed in the order that they're defined. 
+        /// Indicates how to manage the order of stateful rule evaluation for the policy. <code>DEFAULT_ACTION_ORDER</code>
+        /// is the default behavior. Stateful rules are provided to the rule engine as Suricata
+        /// compatible strings, and Suricata evaluates them based on certain settings. For more
+        /// information, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-rule-evaluation-order.html">Evaluation
+        /// order for stateful rules</a> in the <i>Network Firewall Developer Guide</i>. 
         /// </para>
         /// </summary>
         public RuleOrder RuleOrder
@@ -57,6 +57,50 @@ namespace Amazon.NetworkFirewall.Model
         internal bool IsSetRuleOrder()
         {
             return this._ruleOrder != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StreamExceptionPolicy. 
+        /// <para>
+        /// Configures how Network Firewall processes traffic when a network connection breaks
+        /// midstream. Network connections can break due to disruptions in external networks or
+        /// within the firewall itself.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>DROP</code> - Network Firewall fails closed and drops all subsequent traffic
+        /// going to the firewall. This is the default behavior.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>CONTINUE</code> - Network Firewall continues to apply rules to the subsequent
+        /// traffic without context from traffic before the break. This impacts the behavior of
+        /// rules that depend on this context. For example, if you have a stateful rule to <code>drop
+        /// http</code> traffic, Network Firewall won't match the traffic for this rule because
+        /// the service won't have the context from session initialization defining the application
+        /// layer protocol as HTTP. However, this behavior is rule dependent—a TCP-layer rule
+        /// using a <code>flow:stateless</code> rule would still match, as would the <code>aws:drop_strict</code>
+        /// default action.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>REJECT</code> - Network Firewall fails closed and drops all subsequent traffic
+        /// going to the firewall. Network Firewall also sends a TCP reject packet back to your
+        /// client so that the client can immediately establish a new session. Network Firewall
+        /// will have context about the new session and will apply rules to the subsequent traffic.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public StreamExceptionPolicy StreamExceptionPolicy
+        {
+            get { return this._streamExceptionPolicy; }
+            set { this._streamExceptionPolicy = value; }
+        }
+
+        // Check to see if StreamExceptionPolicy property is set
+        internal bool IsSetStreamExceptionPolicy()
+        {
+            return this._streamExceptionPolicy != null;
         }
 
     }

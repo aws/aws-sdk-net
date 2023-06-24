@@ -42,7 +42,7 @@ namespace Amazon.CloudFront.Model
         /// Gets and sets the property FieldLevelEncryptionConfig. 
         /// <para>
         /// A complex data type that includes the profile configurations specified for field-level
-        /// encryption. 
+        /// encryption.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -82,7 +82,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property LastModifiedTime. 
         /// <para>
-        /// The last time the field-level encryption configuration was changed. 
+        /// The last time the field-level encryption configuration was changed.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -55,7 +55,7 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
         public IRequest Marshall(UntagResourceRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CustomerProfiles");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-08-15";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-08-15";
             request.HttpMethod = "DELETE";
 
             if (!publicRequest.IsSetResourceArn())

@@ -37,11 +37,15 @@ namespace Amazon.NetworkFirewall.Model
         private int? _capacity;
         private int? _consumedCapacity;
         private string _description;
+        private EncryptionConfiguration _encryptionConfiguration;
+        private DateTime? _lastModifiedTime;
         private int? _numberOfAssociations;
         private string _ruleGroupArn;
         private string _ruleGroupId;
         private string _ruleGroupName;
         private ResourceStatus _ruleGroupStatus;
+        private string _snsTopic;
+        private SourceMetadata _sourceMetadata;
         private List<Tag> _tags = new List<Tag>();
         private RuleGroupType _type;
 
@@ -107,6 +111,43 @@ namespace Amazon.NetworkFirewall.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EncryptionConfiguration. 
+        /// <para>
+        /// A complex type that contains the Amazon Web Services KMS encryption configuration
+        /// settings for your rule group.
+        /// </para>
+        /// </summary>
+        public EncryptionConfiguration EncryptionConfiguration
+        {
+            get { return this._encryptionConfiguration; }
+            set { this._encryptionConfiguration = value; }
+        }
+
+        // Check to see if EncryptionConfiguration property is set
+        internal bool IsSetEncryptionConfiguration()
+        {
+            return this._encryptionConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastModifiedTime. 
+        /// <para>
+        /// The last time that the rule group was changed.
+        /// </para>
+        /// </summary>
+        public DateTime LastModifiedTime
+        {
+            get { return this._lastModifiedTime.GetValueOrDefault(); }
+            set { this._lastModifiedTime = value; }
+        }
+
+        // Check to see if LastModifiedTime property is set
+        internal bool IsSetLastModifiedTime()
+        {
+            return this._lastModifiedTime.HasValue; 
         }
 
         /// <summary>
@@ -207,6 +248,49 @@ namespace Amazon.NetworkFirewall.Model
         internal bool IsSetRuleGroupStatus()
         {
             return this._ruleGroupStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SnsTopic. 
+        /// <para>
+        /// The Amazon resource name (ARN) of the Amazon Simple Notification Service SNS topic
+        /// that's used to record changes to the managed rule group. You can subscribe to the
+        /// SNS topic to receive notifications when the managed rule group is modified, such as
+        /// for new versions and for version expiration. For more information, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon
+        /// Simple Notification Service Developer Guide.</a>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string SnsTopic
+        {
+            get { return this._snsTopic; }
+            set { this._snsTopic = value; }
+        }
+
+        // Check to see if SnsTopic property is set
+        internal bool IsSetSnsTopic()
+        {
+            return this._snsTopic != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceMetadata. 
+        /// <para>
+        /// A complex type that contains metadata about the rule group that your own rule group
+        /// is copied from. You can use the metadata to track the version updates made to the
+        /// originating rule group.
+        /// </para>
+        /// </summary>
+        public SourceMetadata SourceMetadata
+        {
+            get { return this._sourceMetadata; }
+            set { this._sourceMetadata = value; }
+        }
+
+        // Check to see if SourceMetadata property is set
+        internal bool IsSetSourceMetadata()
+        {
+            return this._sourceMetadata != null;
         }
 
         /// <summary>

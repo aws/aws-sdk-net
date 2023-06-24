@@ -34,7 +34,7 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// OrStatement Marshaller
-    /// </summary>       
+    /// </summary>
     public class OrStatementMarshaller : IRequestMarshaller<OrStatement, JsonMarshallerContext> 
     {
         /// <summary>
@@ -65,7 +65,7 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static OrStatementMarshaller Instance = new OrStatementMarshaller();
 
     }

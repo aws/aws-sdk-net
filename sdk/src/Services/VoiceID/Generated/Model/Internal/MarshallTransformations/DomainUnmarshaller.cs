@@ -106,10 +106,22 @@ namespace Amazon.VoiceID.Model.Internal.MarshallTransformations
                     unmarshalledObject.ServerSideEncryptionConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ServerSideEncryptionUpdateDetails", targetDepth))
+                {
+                    var unmarshaller = ServerSideEncryptionUpdateDetailsUnmarshaller.Instance;
+                    unmarshalledObject.ServerSideEncryptionUpdateDetails = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("UpdatedAt", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
                     unmarshalledObject.UpdatedAt = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("WatchlistDetails", targetDepth))
+                {
+                    var unmarshaller = WatchlistDetailsUnmarshaller.Instance;
+                    unmarshalledObject.WatchlistDetails = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

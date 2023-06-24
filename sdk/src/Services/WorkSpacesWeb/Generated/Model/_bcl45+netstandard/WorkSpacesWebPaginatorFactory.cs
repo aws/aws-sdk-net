@@ -52,6 +52,14 @@ namespace Amazon.WorkSpacesWeb.Model
         }
 
         /// <summary>
+        /// Paginator for ListIpAccessSettings operation
+        ///</summary>
+        public IListIpAccessSettingsPaginator ListIpAccessSettings(ListIpAccessSettingsRequest request) 
+        {
+            return new ListIpAccessSettingsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListNetworkSettings operation
         ///</summary>
         public IListNetworkSettingsPaginator ListNetworkSettings(ListNetworkSettingsRequest request) 
@@ -81,6 +89,14 @@ namespace Amazon.WorkSpacesWeb.Model
         public IListTrustStoresPaginator ListTrustStores(ListTrustStoresRequest request) 
         {
             return new ListTrustStoresPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListUserAccessLoggingSettings operation
+        ///</summary>
+        public IListUserAccessLoggingSettingsPaginator ListUserAccessLoggingSettings(ListUserAccessLoggingSettingsRequest request) 
+        {
+            return new ListUserAccessLoggingSettingsPaginator(this.client, request);
         }
 
         /// <summary>

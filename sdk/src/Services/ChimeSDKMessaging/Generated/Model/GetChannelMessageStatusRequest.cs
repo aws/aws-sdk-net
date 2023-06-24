@@ -53,7 +53,7 @@ namespace Amazon.ChimeSDKMessaging.Model
     /// </para>
     ///  </dd> <dt>DENIED</dt> <dd> 
     /// <para>
-    /// Messasge denied by the processor
+    /// Message denied by the processor
     /// </para>
     ///  </dd> </dl> <note> <ul> <li> 
     /// <para>
@@ -66,8 +66,9 @@ namespace Amazon.ChimeSDKMessaging.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
-    /// of the user that makes the API call as the value in the header
+    /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the
+    /// <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call
+    /// as the value in the header.
     /// </para>
     ///  </li> </ul> </note>
     /// </summary>
@@ -76,6 +77,7 @@ namespace Amazon.ChimeSDKMessaging.Model
         private string _channelArn;
         private string _chimeBearer;
         private string _messageId;
+        private string _subChannelId;
 
         /// <summary>
         /// Gets and sets the property ChannelArn. 
@@ -132,6 +134,30 @@ namespace Amazon.ChimeSDKMessaging.Model
         internal bool IsSetMessageId()
         {
             return this._messageId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SubChannelId. 
+        /// <para>
+        /// The ID of the SubChannel in the request.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Only required when getting message status in a SubChannel that the user belongs to.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        [AWSProperty(Min=1, Max=128)]
+        public string SubChannelId
+        {
+            get { return this._subChannelId; }
+            set { this._subChannelId = value; }
+        }
+
+        // Check to see if SubChannelId property is set
+        internal bool IsSetSubChannelId()
+        {
+            return this._subChannelId != null;
         }
 
     }

@@ -31,7 +31,7 @@ namespace Amazon.Personalize.Model
     /// <summary>
     /// Container for the parameters to the DeleteSchema operation.
     /// Deletes a schema. Before deleting a schema, you must delete all datasets referencing
-    /// the schema. For more information on schemas, see <a>CreateSchema</a>.
+    /// the schema. For more information on schemas, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSchema.html">CreateSchema</a>.
     /// </summary>
     public partial class DeleteSchemaRequest : AmazonPersonalizeRequest
     {

@@ -102,7 +102,7 @@ namespace Amazon.WorkMail.Model
         /// <summary>
         /// Gets and sets the property OrganizationId. 
         /// <para>
-        /// Identifies the Amazon WorkMail organization for which you create the override.
+        /// Identifies the WorkMail organization for which you create the override.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=34, Max=34)]

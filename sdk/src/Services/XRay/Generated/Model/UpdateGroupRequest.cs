@@ -107,7 +107,7 @@ namespace Amazon.XRay.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The NotifcationsEnabled boolean can be set to true to enable insights notifications
+        /// The NotificationsEnabled boolean can be set to true to enable insights notifications
         /// for the group. Notifications can only be enabled on a group with InsightsEnabled set
         /// to true.
         /// </para>

@@ -250,6 +250,15 @@ namespace Amazon.ElastiCache
         } 
 
         /// <summary>
+        /// Customizes the runtime pipeline.
+        /// </summary>
+        /// <param name="pipeline">Runtime pipeline for the current client.</param>
+        protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
+        {
+            pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonElastiCacheEndpointResolver());
+        }
+        /// <summary>
         /// Capture metadata for the service.
         /// </summary>
         protected override IServiceMetadata ServiceMetadata
@@ -3280,8 +3289,8 @@ namespace Amazon.ElastiCache
 
 
         /// <summary>
-        /// Used to failover the primary region to a selected secondary region. The selected secondary
-        /// region will become primary, and all other clusters will become secondary.
+        /// Used to failover the primary region to a secondary region. The secondary region will
+        /// become primary, and all other clusters will become secondary.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the FailoverGlobalReplicationGroup service method.</param>
         /// <param name="cancellationToken">
@@ -4211,7 +4220,7 @@ namespace Amazon.ElastiCache
         ///  
         /// <para>
         /// If you make changes to parameters that require a Redis (cluster mode enabled) cluster
-        /// reboot for the changes to be applied, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.Rebooting.html">Rebooting
+        /// reboot for the changes to be applied, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/nodes.rebooting.html">Rebooting
         /// a Cluster</a> for an alternate process.
         /// </para>
         /// </summary>

@@ -41,6 +41,12 @@ namespace Amazon.Route53RecoveryControlConfig.Model
         /// </summary>
         public IPaginatedEnumerable<ListSafetyRulesResponse> Responses => new PaginatedResponse<ListSafetyRulesResponse>(this);
 
+        /// <summary>
+        /// Enumerable containing all of the SafetyRules
+        /// </summary>
+        public IPaginatedEnumerable<Rule> SafetyRules => 
+            new PaginatedResultKeyResponse<ListSafetyRulesResponse, Rule>(this, (i) => i.SafetyRules);
+
         internal ListSafetyRulesPaginator(IAmazonRoute53RecoveryControlConfig client, ListSafetyRulesRequest request)
         {
             this._client = client;

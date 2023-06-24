@@ -34,7 +34,7 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ResourceMapping Marshaller
-    /// </summary>       
+    /// </summary>
     public class ResourceMappingMarshaller : IRequestMarshaller<ResourceMapping, JsonMarshallerContext> 
     {
         /// <summary>
@@ -49,6 +49,12 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("appRegistryAppName");
                 context.Writer.Write(requestObject.AppRegistryAppName);
+            }
+
+            if(requestObject.IsSetEksSourceName())
+            {
+                context.Writer.WritePropertyName("eksSourceName");
+                context.Writer.Write(requestObject.EksSourceName);
             }
 
             if(requestObject.IsSetLogicalStackName())
@@ -86,11 +92,17 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ResourceName);
             }
 
+            if(requestObject.IsSetTerraformSourceName())
+            {
+                context.Writer.WritePropertyName("terraformSourceName");
+                context.Writer.Write(requestObject.TerraformSourceName);
+            }
+
         }
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ResourceMappingMarshaller Instance = new ResourceMappingMarshaller();
 
     }

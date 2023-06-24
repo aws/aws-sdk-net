@@ -76,6 +76,12 @@ namespace Amazon.CloudWatchEvidently.Model.Internal.MarshallTransformations
                     unmarshalledObject.ActiveLaunchCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("appConfigResource", targetDepth))
+                {
+                    var unmarshaller = ProjectAppConfigResourceUnmarshaller.Instance;
+                    unmarshalledObject.AppConfigResource = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("arn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

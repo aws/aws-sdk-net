@@ -34,7 +34,7 @@ namespace Amazon.FinSpaceData.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SchemaDefinition Marshaller
-    /// </summary>       
+    /// </summary>
     public class SchemaDefinitionMarshaller : IRequestMarshaller<SchemaDefinition, JsonMarshallerContext> 
     {
         /// <summary>
@@ -76,7 +76,7 @@ namespace Amazon.FinSpaceData.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SchemaDefinitionMarshaller Instance = new SchemaDefinitionMarshaller();
 
     }

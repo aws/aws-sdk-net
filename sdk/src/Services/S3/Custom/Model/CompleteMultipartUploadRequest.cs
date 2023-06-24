@@ -162,10 +162,17 @@ namespace Amazon.S3.Model
     public partial class CompleteMultipartUploadRequest : AmazonWebServiceRequest
     {
         private string bucketName;
+        private string _checksumCRC32;
+        private string _checksumCRC32C;
+        private string _checksumSHA1;
+        private string _checksumSHA256;
         private string key;
         private List<PartETag> partETags = new List<PartETag>();
         private string uploadId;
         private RequestPayer requestPayer;
+        private string _sseCustomerAlgorithm;
+        private string _sseCustomerKey;
+        private string _sseCustomerKeyMD5;
         private string expectedBucketOwner;
 
         /// <summary>
@@ -184,12 +191,12 @@ namespace Amazon.S3.Model
         /// </para>
         ///  
         /// <para>
-        /// When using this action with Amazon S3 on Outposts, you must direct requests to the
-        /// S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
-        /// When using this action using S3 on Outposts through the Amazon Web Services SDKs,
-        /// you provide the Outposts bucket ARN in place of the bucket name. For more information
-        /// about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
-        /// S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.
+        /// When you use this action with Amazon S3 on Outposts, you must direct requests to the
+        /// S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
+        /// When you use this action with S3 on Outposts through the Amazon Web Services SDKs,
+        /// you provide the Outposts access point ARN in place of the bucket name. For more information
+        /// about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
+        /// is S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         /// </summary>
         public string BucketName
@@ -202,6 +209,90 @@ namespace Amazon.S3.Model
         internal bool IsSetBucketName()
         {
             return this.bucketName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ChecksumCRC32. 
+        /// <para>
+        /// This header can be used as a data integrity check to verify that the data received
+        /// is the same data that was originally sent. This specifies the base64-encoded, 32-bit
+        /// CRC32 checksum of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">
+        /// Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        /// </summary>
+        public string ChecksumCRC32
+        {
+            get { return this._checksumCRC32; }
+            set { this._checksumCRC32 = value; }
+        }
+
+        // Check to see if ChecksumCRC32 property is set
+        internal bool IsSetChecksumCRC32()
+        {
+            return this._checksumCRC32 != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ChecksumCRC32C. 
+        /// <para>
+        /// This header can be used as a data integrity check to verify that the data received
+        /// is the same data that was originally sent. This specifies the base64-encoded, 32-bit
+        /// CRC32C checksum of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">
+        /// Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        /// </summary>
+        public string ChecksumCRC32C
+        {
+            get { return this._checksumCRC32C; }
+            set { this._checksumCRC32C = value; }
+        }
+
+        // Check to see if ChecksumCRC32C property is set
+        internal bool IsSetChecksumCRC32C()
+        {
+            return this._checksumCRC32C != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ChecksumSHA1. 
+        /// <para>
+        /// This header can be used as a data integrity check to verify that the data received
+        /// is the same data that was originally sent. This specifies the base64-encoded, 160-bit
+        /// SHA-1 digest of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">
+        /// Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        /// </summary>
+        public string ChecksumSHA1
+        {
+            get { return this._checksumSHA1; }
+            set { this._checksumSHA1 = value; }
+        }
+
+        // Check to see if ChecksumSHA1 property is set
+        internal bool IsSetChecksumSHA1()
+        {
+            return this._checksumSHA1 != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ChecksumSHA256. 
+        /// <para>
+        /// This header can be used as a data integrity check to verify that the data received
+        /// is the same data that was originally sent. This specifies the base64-encoded, 256-bit
+        /// SHA-256 digest of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">
+        /// Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        /// </summary>
+        public string ChecksumSHA256
+        {
+            get { return this._checksumSHA256; }
+            set { this._checksumSHA256 = value; }
+        }
+
+        // Check to see if ChecksumSHA256 property is set
+        internal bool IsSetChecksumSHA256()
+        {
+            return this._checksumSHA256 != null;
         }
 
         /// <summary>
@@ -293,7 +384,7 @@ namespace Amazon.S3.Model
         {
             foreach (UploadPartResponse response in responses)
             {
-                this.PartETags.Add(new  PartETag(response.PartNumber, response.ETag));
+                this.PartETags.Add(new PartETag(response));
             }
         }
 
@@ -305,7 +396,7 @@ namespace Amazon.S3.Model
         {
             foreach (UploadPartResponse response in responses)
             {
-                this.PartETags.Add(new PartETag(response.PartNumber, response.ETag));
+                this.PartETags.Add(new PartETag(response));
             }
         }
 
@@ -350,6 +441,66 @@ namespace Amazon.S3.Model
         internal bool IsSetRequestPayer()
         {
             return requestPayer != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SSECustomerAlgorithm. 
+        /// <para>
+        /// The SSE algorithm used to encrypt the object. This is only needed when the object
+        /// was created using a checksum algorithm. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting
+        /// data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        /// </summary>
+        public string SSECustomerAlgorithm
+        {
+            get { return this._sseCustomerAlgorithm; }
+            set { this._sseCustomerAlgorithm = value; }
+        }
+
+        // Check to see if SSECustomerAlgorithm property is set
+        internal bool IsSetSSECustomerAlgorithm()
+        {
+            return this._sseCustomerAlgorithm != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SSECustomerKey. 
+        /// <para>
+        /// The SSE customer key. This is only needed when the object was cureated using a checksum
+        /// algorithm. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting
+        /// data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        /// </summary>
+        public string SSECustomerKey
+        {
+            get { return this._sseCustomerKey; }
+            set { this._sseCustomerKey = value; }
+        }
+
+        // Check to see if SSECustomerKey property is set
+        internal bool IsSetSSECustomerKey()
+        {
+            return this._sseCustomerKey != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SSECustomerKeyMD5. 
+        /// <para>
+        /// The MD5 SSE customer key. This is only needed when the object was cureated using a
+        /// checksum algorithm. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting
+        /// data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        /// </summary>
+        public string SSECustomerKeyMD5
+        {
+            get { return this._sseCustomerKeyMD5; }
+            set { this._sseCustomerKeyMD5 = value; }
+        }
+
+        // Check to see if SSECustomerKeyMD5 property is set
+        internal bool IsSetSSECustomerKeyMD5()
+        {
+            return this._sseCustomerKeyMD5 != null;
         }
 
         /// <summary>

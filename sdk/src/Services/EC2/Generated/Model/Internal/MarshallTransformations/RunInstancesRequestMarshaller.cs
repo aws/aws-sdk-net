@@ -149,6 +149,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetCpuOptions())
                 {
+                    if(publicRequest.CpuOptions.IsSetAmdSevSnp())
+                    {
+                        request.Parameters.Add("CpuOptions" + "." + "AmdSevSnp", StringUtils.FromString(publicRequest.CpuOptions.AmdSevSnp));
+                    }
                     if(publicRequest.CpuOptions.IsSetCoreCount())
                     {
                         request.Parameters.Add("CpuOptions" + "." + "CoreCount", StringUtils.FromInt(publicRequest.CpuOptions.CoreCount));
@@ -164,6 +168,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         request.Parameters.Add("CreditSpecification" + "." + "CpuCredits", StringUtils.FromString(publicRequest.CreditSpecification.CpuCredits));
                     }
+                }
+                if(publicRequest.IsSetDisableApiStop())
+                {
+                    request.Parameters.Add("DisableApiStop", StringUtils.FromBool(publicRequest.DisableApiStop));
                 }
                 if(publicRequest.IsSetDisableApiTermination())
                 {
@@ -319,6 +327,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+                if(publicRequest.IsSetMaintenanceOptions())
+                {
+                    if(publicRequest.MaintenanceOptions.IsSetAutoRecovery())
+                    {
+                        request.Parameters.Add("MaintenanceOptions" + "." + "AutoRecovery", StringUtils.FromString(publicRequest.MaintenanceOptions.AutoRecovery));
+                    }
+                }
                 if(publicRequest.IsSetMaxCount())
                 {
                     request.Parameters.Add("MaxCount", StringUtils.FromInt(publicRequest.MaxCount));
@@ -340,6 +355,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if(publicRequest.MetadataOptions.IsSetHttpTokens())
                     {
                         request.Parameters.Add("MetadataOptions" + "." + "HttpTokens", StringUtils.FromString(publicRequest.MetadataOptions.HttpTokens));
+                    }
+                    if(publicRequest.MetadataOptions.IsSetInstanceMetadataTags())
+                    {
+                        request.Parameters.Add("MetadataOptions" + "." + "InstanceMetadataTags", StringUtils.FromString(publicRequest.MetadataOptions.InstanceMetadataTags));
                     }
                 }
                 if(publicRequest.IsSetMinCount())
@@ -484,6 +503,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if(publicRequest.Placement.IsSetAvailabilityZone())
                     {
                         request.Parameters.Add("Placement" + "." + "AvailabilityZone", StringUtils.FromString(publicRequest.Placement.AvailabilityZone));
+                    }
+                    if(publicRequest.Placement.IsSetGroupId())
+                    {
+                        request.Parameters.Add("Placement" + "." + "GroupId", StringUtils.FromString(publicRequest.Placement.GroupId));
                     }
                     if(publicRequest.Placement.IsSetGroupName())
                     {

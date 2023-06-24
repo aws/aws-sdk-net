@@ -34,7 +34,7 @@ namespace Amazon.ManagedBlockchain.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ApprovalThresholdPolicy Marshaller
-    /// </summary>       
+    /// </summary>
     public class ApprovalThresholdPolicyMarshaller : IRequestMarshaller<ApprovalThresholdPolicy, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.ManagedBlockchain.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ApprovalThresholdPolicyMarshaller Instance = new ApprovalThresholdPolicyMarshaller();
 
     }

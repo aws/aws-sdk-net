@@ -30,7 +30,8 @@ namespace Amazon.CloudFormation.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteStackInstances operation.
-    /// Deletes stack instances for the specified accounts, in the specified Regions.
+    /// Deletes stack instances for the specified accounts, in the specified Amazon Web Services
+    /// Regions.
     /// </summary>
     public partial class DeleteStackInstancesRequest : AmazonCloudFormationRequest
     {
@@ -185,7 +186,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Regions. 
         /// <para>
-        /// The Regions where you want to delete stack set instances.
+        /// The Amazon Web Services Regions where you want to delete stack set instances.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

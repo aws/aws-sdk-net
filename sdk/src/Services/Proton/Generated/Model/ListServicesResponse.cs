@@ -39,8 +39,8 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// A token to indicate the location of the next service in the array of services, after
-        /// the current requested list of services.
+        /// A token that indicates the location of the next service in the array of services,
+        /// after the current requested list of services.
         /// </para>
         /// </summary>
         public string NextToken

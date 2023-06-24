@@ -34,7 +34,7 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// StartTimeRange Marshaller
-    /// </summary>       
+    /// </summary>
     public class StartTimeRangeMarshaller : IRequestMarshaller<StartTimeRange, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static StartTimeRangeMarshaller Instance = new StartTimeRangeMarshaller();
 
     }

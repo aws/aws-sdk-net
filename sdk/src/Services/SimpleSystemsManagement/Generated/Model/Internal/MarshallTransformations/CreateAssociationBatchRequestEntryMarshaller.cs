@@ -34,7 +34,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CreateAssociationBatchRequestEntry Marshaller
-    /// </summary>       
+    /// </summary>
     public class CreateAssociationBatchRequestEntryMarshaller : IRequestMarshaller<CreateAssociationBatchRequestEntry, JsonMarshallerContext> 
     {
         /// <summary>
@@ -45,6 +45,17 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CreateAssociationBatchRequestEntry requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAlarmConfiguration())
+            {
+                context.Writer.WritePropertyName("AlarmConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AlarmConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.AlarmConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetApplyOnlyAtCronInterval())
             {
                 context.Writer.WritePropertyName("ApplyOnlyAtCronInterval");
@@ -146,6 +157,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ScheduleExpression);
             }
 
+            if(requestObject.IsSetScheduleOffset())
+            {
+                context.Writer.WritePropertyName("ScheduleOffset");
+                context.Writer.Write(requestObject.ScheduleOffset);
+            }
+
             if(requestObject.IsSetSyncCompliance())
             {
                 context.Writer.WritePropertyName("SyncCompliance");
@@ -163,6 +180,30 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     var marshaller = TargetLocationMarshaller.Instance;
                     marshaller.Marshall(requestObjectTargetLocationsListValue, context);
 
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetTargetMaps())
+            {
+                context.Writer.WritePropertyName("TargetMaps");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectTargetMapsListValue in requestObject.TargetMaps)
+                {
+                    context.Writer.WriteObjectStart();
+                    foreach (var requestObjectTargetMapsListValueKvp in requestObjectTargetMapsListValue)
+                    {
+                        context.Writer.WritePropertyName(requestObjectTargetMapsListValueKvp.Key);
+                        var requestObjectTargetMapsListValueValue = requestObjectTargetMapsListValueKvp.Value;
+
+                        context.Writer.WriteArrayStart();
+                        foreach(var requestObjectTargetMapsListValueValueListValue in requestObjectTargetMapsListValueValue)
+                        {
+                                context.Writer.Write(requestObjectTargetMapsListValueValueListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
                     context.Writer.WriteObjectEnd();
                 }
                 context.Writer.WriteArrayEnd();
@@ -188,7 +229,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CreateAssociationBatchRequestEntryMarshaller Instance = new CreateAssociationBatchRequestEntryMarshaller();
 
     }

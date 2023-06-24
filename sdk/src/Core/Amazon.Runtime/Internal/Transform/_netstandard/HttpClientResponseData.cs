@@ -33,7 +33,7 @@ namespace Amazon.Runtime.Internal.Transform
 
         internal HttpClientResponseData(HttpResponseMessage response)
             : this(response, null, false)
-        {            
+        {
         }
 
         internal HttpClientResponseData(HttpResponseMessage response, HttpClient httpClient, bool disposeClient)
@@ -55,7 +55,7 @@ namespace Amazon.Runtime.Internal.Transform
 
         public bool IsSuccessStatusCode { get; private set; }
 
-        public string ContentType { get; private set; }        
+        public string ContentType { get; private set; }
 
         public long ContentLength { get; private set; }
 

@@ -383,7 +383,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property StabilityStatus. 
         /// <para>
         /// The stability status. This indicates whether the task set has reached a steady state.
-        /// If the following conditions are met, the task set sre in <code>STEADY_STATE</code>:
+        /// If the following conditions are met, the task set are in <code>STEADY_STATE</code>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -443,7 +443,8 @@ namespace Amazon.ECS.Model
         /// <para>
         /// The tag specified when a task set is started. If an CodeDeploy deployment created
         /// the task set, the <code>startedBy</code> parameter is <code>CODE_DEPLOY</code>. If
-        /// an external deployment created the task set, the startedBy field isn't used.
+        /// an external deployment created the task set, the <code>startedBy</code> field isn't
+        /// used.
         /// </para>
         /// </summary>
         public string StartedBy

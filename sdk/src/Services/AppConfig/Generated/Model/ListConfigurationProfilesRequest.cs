@@ -101,7 +101,7 @@ namespace Amazon.AppConfig.Model
         /// Gets and sets the property Type. 
         /// <para>
         /// A filter based on the type of configurations that the configuration profile contains.
-        /// A configuration can be a feature flag or a free-form configuration.
+        /// A configuration can be a feature flag or a freeform configuration.
         /// </para>
         /// </summary>
         public string Type

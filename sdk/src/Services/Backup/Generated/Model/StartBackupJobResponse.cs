@@ -35,6 +35,7 @@ namespace Amazon.Backup.Model
     {
         private string _backupJobId;
         private DateTime? _creationDate;
+        private bool? _isParent;
         private string _recoveryPointArn;
 
         /// <summary>
@@ -77,7 +78,30 @@ namespace Amazon.Backup.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IsParent. 
+        /// <para>
+        /// This is a returned boolean value indicating this is a parent (composite) backup job.
+        /// </para>
+        /// </summary>
+        public bool IsParent
+        {
+            get { return this._isParent.GetValueOrDefault(); }
+            set { this._isParent = value; }
+        }
+
+        // Check to see if IsParent property is set
+        internal bool IsSetIsParent()
+        {
+            return this._isParent.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property RecoveryPointArn. 
+        /// <para>
+        ///  <i>Note: This field is only returned for Amazon EFS and Advanced DynamoDB resources.</i>
+        /// 
+        /// </para>
+        ///  
         /// <para>
         /// An ARN that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.
         /// </para>

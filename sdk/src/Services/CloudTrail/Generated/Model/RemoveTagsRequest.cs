@@ -30,7 +30,7 @@ namespace Amazon.CloudTrail.Model
 {
     /// <summary>
     /// Container for the parameters to the RemoveTags operation.
-    /// Removes the specified tags from a trail.
+    /// Removes the specified tags from a trail, event data store, or channel.
     /// </summary>
     public partial class RemoveTagsRequest : AmazonCloudTrailRequest
     {
@@ -40,12 +40,23 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property ResourceId. 
         /// <para>
-        /// Specifies the ARN of the trail from which tags should be removed. The format of a
-        /// trail ARN is:
+        /// Specifies the ARN of the trail, event data store, or channel from which tags should
+        /// be removed.
         /// </para>
         ///  
         /// <para>
-        ///  <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> 
+        ///  Example trail ARN format: <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// Example event data store ARN format: <code>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// Example channel ARN format: <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</code>
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -67,6 +78,7 @@ namespace Amazon.CloudTrail.Model
         /// Specifies a list of tags to be removed.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=200)]
         public List<Tag> TagsList
         {
             get { return this._tagsList; }

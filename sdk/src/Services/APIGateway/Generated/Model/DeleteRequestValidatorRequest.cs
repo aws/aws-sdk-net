@@ -30,7 +30,7 @@ namespace Amazon.APIGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteRequestValidator operation.
-    /// Deletes a <a>RequestValidator</a> of a given <a>RestApi</a>.
+    /// Deletes a RequestValidator of a given RestApi.
     /// </summary>
     public partial class DeleteRequestValidatorRequest : AmazonAPIGatewayRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property RequestValidatorId. 
         /// <para>
-        /// [Required] The identifier of the <a>RequestValidator</a> to be deleted.
+        /// The identifier of the RequestValidator to be deleted.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -59,7 +59,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property RestApiId. 
         /// <para>
-        /// [Required] The string identifier of the associated <a>RestApi</a>.
+        /// The string identifier of the associated RestApi.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -38,12 +38,14 @@ namespace Amazon.Panorama
     /// AWS Panorama 
     /// <para>
     ///  <b>Overview</b> 
-    /// </para>
+    /// 
     ///  
     /// <para>
     /// This is the <i>AWS Panorama API Reference</i>. For an introduction to the service,
     /// see <a href="https://docs.aws.amazon.com/panorama/latest/dev/panorama-welcome.html">What
     /// is AWS Panorama?</a> in the <i>AWS Panorama Developer Guide</i>.
+    /// </para>
+    /// 
     /// </para>
     /// </summary>
     public partial class AmazonPanoramaClient : AmazonServiceClient, IAmazonPanorama
@@ -239,6 +241,15 @@ namespace Amazon.Panorama
         }
 
         /// <summary>
+        /// Customize the pipeline
+        /// </summary>
+        /// <param name="pipeline"></param>
+        protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
+        {
+            pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonPanoramaEndpointResolver());
+        }
+        /// <summary>
         /// Capture metadata for the service.
         /// </summary>
         protected override IServiceMetadata ServiceMetadata
@@ -333,7 +344,7 @@ namespace Amazon.Panorama
         #region  CreateJobForDevices
 
         /// <summary>
-        /// Creates a job to run on one or more devices.
+        /// Creates a job to run on a device. A job can update a device's software or reboot it.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateJobForDevices service method.</param>
         /// 
@@ -670,6 +681,13 @@ namespace Amazon.Panorama
 
         /// <summary>
         /// Deletes a package.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// To delete a package, you need permission to call <code>s3:DeleteObject</code> in addition
+        /// to permissions for the AWS Panorama API.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeletePackage service method.</param>
         /// 
@@ -2062,9 +2080,10 @@ namespace Amazon.Panorama
 
         /// <summary>
         /// Creates a device and returns a configuration archive. The configuration archive is
-        /// a ZIP file that contains a provisioning certificate that is valid for 5 minutes. Transfer
-        /// the configuration archive to the device with the included USB storage device within
-        /// 5 minutes.
+        /// a ZIP file that contains a provisioning certificate that is valid for 5 minutes. Name
+        /// the configuration archive <code>certificates-omni_<i>device-name</i>.zip</code> and
+        /// transfer it to the device within 5 minutes. Use the included USB storage device and
+        /// connect it to the USB 3.0 port next to the HDMI output.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ProvisionDevice service method.</param>
         /// 
@@ -2261,6 +2280,72 @@ namespace Amazon.Panorama
         public virtual RemoveApplicationInstanceResponse EndRemoveApplicationInstance(IAsyncResult asyncResult)
         {
             return EndInvoke<RemoveApplicationInstanceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  SignalApplicationInstanceNodeInstances
+
+        /// <summary>
+        /// Signal camera nodes to stop or resume.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SignalApplicationInstanceNodeInstances service method.</param>
+        /// 
+        /// <returns>The response from the SignalApplicationInstanceNodeInstances service method, as returned by Panorama.</returns>
+        /// <exception cref="Amazon.Panorama.Model.AccessDeniedException">
+        /// The requestor does not have permission to access the target action or resource.
+        /// </exception>
+        /// <exception cref="Amazon.Panorama.Model.InternalServerException">
+        /// An internal error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Panorama.Model.ServiceQuotaExceededException">
+        /// The request would cause a limit to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Panorama.Model.ValidationException">
+        /// The request contains an invalid parameter value.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/SignalApplicationInstanceNodeInstances">REST API Reference for SignalApplicationInstanceNodeInstances Operation</seealso>
+        public virtual SignalApplicationInstanceNodeInstancesResponse SignalApplicationInstanceNodeInstances(SignalApplicationInstanceNodeInstancesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SignalApplicationInstanceNodeInstancesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SignalApplicationInstanceNodeInstancesResponseUnmarshaller.Instance;
+
+            return Invoke<SignalApplicationInstanceNodeInstancesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SignalApplicationInstanceNodeInstances operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SignalApplicationInstanceNodeInstances operation on AmazonPanoramaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSignalApplicationInstanceNodeInstances
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/SignalApplicationInstanceNodeInstances">REST API Reference for SignalApplicationInstanceNodeInstances Operation</seealso>
+        public virtual IAsyncResult BeginSignalApplicationInstanceNodeInstances(SignalApplicationInstanceNodeInstancesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SignalApplicationInstanceNodeInstancesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SignalApplicationInstanceNodeInstancesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  SignalApplicationInstanceNodeInstances operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSignalApplicationInstanceNodeInstances.</param>
+        /// 
+        /// <returns>Returns a  SignalApplicationInstanceNodeInstancesResult from Panorama.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/SignalApplicationInstanceNodeInstances">REST API Reference for SignalApplicationInstanceNodeInstances Operation</seealso>
+        public virtual SignalApplicationInstanceNodeInstancesResponse EndSignalApplicationInstanceNodeInstances(IAsyncResult asyncResult)
+        {
+            return EndInvoke<SignalApplicationInstanceNodeInstancesResponse>(asyncResult);
         }
 
         #endregion

@@ -34,7 +34,7 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AttributeDefinition Marshaller
-    /// </summary>       
+    /// </summary>
     public class AttributeDefinitionMarshaller : IRequestMarshaller<AttributeDefinition, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AttributeDefinitionMarshaller Instance = new AttributeDefinitionMarshaller();
 
     }

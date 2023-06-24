@@ -30,7 +30,7 @@ namespace Amazon.APIGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the GetRequestValidators operation.
-    /// Gets the <a>RequestValidators</a> collection of a given <a>RestApi</a>.
+    /// Gets the RequestValidators collection of a given RestApi.
     /// </summary>
     public partial class GetRequestValidatorsRequest : AmazonAPIGatewayRequest
     {
@@ -78,7 +78,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property RestApiId. 
         /// <para>
-        /// [Required] The string identifier of the associated <a>RestApi</a>.
+        /// The string identifier of the associated RestApi.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

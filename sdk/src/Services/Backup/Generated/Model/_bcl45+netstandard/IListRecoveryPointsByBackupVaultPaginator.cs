@@ -29,5 +29,10 @@ namespace Amazon.Backup.Model
         /// Enumerable containing all full responses for the operation
         /// </summary>
         IPaginatedEnumerable<ListRecoveryPointsByBackupVaultResponse> Responses { get; }
+
+        /// <summary>
+        /// Enumerable containing all of the RecoveryPoints
+        /// </summary>
+        IPaginatedEnumerable<RecoveryPointByBackupVault> RecoveryPoints { get; }
     }
 }

@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AwsEcrRepositoryImageScanningConfigurationDetails Marshaller
-    /// </summary>       
+    /// </summary>
     public class AwsEcrRepositoryImageScanningConfigurationDetailsMarshaller : IRequestMarshaller<AwsEcrRepositoryImageScanningConfigurationDetails, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AwsEcrRepositoryImageScanningConfigurationDetailsMarshaller Instance = new AwsEcrRepositoryImageScanningConfigurationDetailsMarshaller();
 
     }

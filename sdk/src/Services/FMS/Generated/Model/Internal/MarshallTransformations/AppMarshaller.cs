@@ -34,7 +34,7 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// App Marshaller
-    /// </summary>       
+    /// </summary>
     public class AppMarshaller : IRequestMarshaller<App, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AppMarshaller Instance = new AppMarshaller();
 
     }

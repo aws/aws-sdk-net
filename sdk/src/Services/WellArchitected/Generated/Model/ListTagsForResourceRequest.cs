@@ -31,6 +31,12 @@ namespace Amazon.WellArchitected.Model
     /// <summary>
     /// Container for the parameters to the ListTagsForResource operation.
     /// List the tags for a resource.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// The WorkloadArn parameter can be a workload ARN, a custom lens ARN, or a profile ARN.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class ListTagsForResourceRequest : AmazonWellArchitectedRequest
     {

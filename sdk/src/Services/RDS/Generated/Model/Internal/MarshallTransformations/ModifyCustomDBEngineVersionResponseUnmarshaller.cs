@@ -87,6 +87,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         response.CreateTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("CustomDBEngineVersionManifest", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.CustomDBEngineVersionManifest = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("DatabaseInstallationFilesS3BucketName", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -103,6 +109,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         response.DBEngineDescription = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("DBEngineMediaType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.DBEngineMediaType = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("DBEngineVersionArn", targetDepth))
@@ -148,6 +160,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         response.ExportableLogTypes.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("Image", targetDepth))
+                    {
+                        var unmarshaller = CustomDBEngineVersionAMIUnmarshaller.Instance;
+                        response.Image = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("KMSKeyId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -164,6 +182,13 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         response.Status = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("SupportedCACertificateIdentifiers/member", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        response.SupportedCACertificateIdentifiers.Add(item);
                         continue;
                     }
                     if (context.TestExpression("SupportedCharacterSets/CharacterSet", targetDepth))
@@ -199,6 +224,18 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         var unmarshaller = TimezoneUnmarshaller.Instance;
                         var item = unmarshaller.Unmarshall(context);
                         response.SupportedTimezones.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("SupportsBabelfish", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        response.SupportsBabelfish = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("SupportsCertificateRotationWithoutRestart", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        response.SupportsCertificateRotationWithoutRestart = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("SupportsGlobalDatabases", targetDepth))

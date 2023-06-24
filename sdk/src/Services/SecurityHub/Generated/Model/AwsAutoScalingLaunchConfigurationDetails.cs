@@ -46,6 +46,7 @@ namespace Amazon.SecurityHub.Model
         private string _kernelId;
         private string _keyName;
         private string _launchConfigurationName;
+        private AwsAutoScalingLaunchConfigurationMetadataOptions _metadataOptions;
         private string _placementTenancy;
         private string _ramdiskId;
         private List<string> _securityGroups = new List<string>();
@@ -134,8 +135,8 @@ namespace Amazon.SecurityHub.Model
         ///  
         /// <para>
         /// Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
-        /// 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces.
-        /// For example, <code>2020-03-22T13:22:13.933Z</code>.
+        /// 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces,
+        /// and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.
         /// </para>
         /// </summary>
         public string CreatedTime
@@ -293,6 +294,24 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetLaunchConfigurationName()
         {
             return this._launchConfigurationName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MetadataOptions. 
+        /// <para>
+        /// The metadata options for the instances.
+        /// </para>
+        /// </summary>
+        public AwsAutoScalingLaunchConfigurationMetadataOptions MetadataOptions
+        {
+            get { return this._metadataOptions; }
+            set { this._metadataOptions = value; }
+        }
+
+        // Check to see if MetadataOptions property is set
+        internal bool IsSetMetadataOptions()
+        {
+            return this._metadataOptions != null;
         }
 
         /// <summary>

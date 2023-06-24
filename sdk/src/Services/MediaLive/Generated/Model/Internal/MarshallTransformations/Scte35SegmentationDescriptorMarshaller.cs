@@ -34,7 +34,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Scte35SegmentationDescriptor Marshaller
-    /// </summary>       
+    /// </summary>
     public class Scte35SegmentationDescriptorMarshaller : IRequestMarshaller<Scte35SegmentationDescriptor, JsonMarshallerContext> 
     {
         /// <summary>
@@ -120,7 +120,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static Scte35SegmentationDescriptorMarshaller Instance = new Scte35SegmentationDescriptorMarshaller();
 
     }

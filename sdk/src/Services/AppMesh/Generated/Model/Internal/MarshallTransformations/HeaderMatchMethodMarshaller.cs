@@ -34,7 +34,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// HeaderMatchMethod Marshaller
-    /// </summary>       
+    /// </summary>
     public class HeaderMatchMethodMarshaller : IRequestMarshaller<HeaderMatchMethod, JsonMarshallerContext> 
     {
         /// <summary>
@@ -84,7 +84,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static HeaderMatchMethodMarshaller Instance = new HeaderMatchMethodMarshaller();
 
     }

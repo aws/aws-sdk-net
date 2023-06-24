@@ -300,11 +300,27 @@ namespace Amazon.ConfigService.Model
         }
 
         /// <summary>
+        /// Paginator for ListConformancePackComplianceScores operation
+        ///</summary>
+        public IListConformancePackComplianceScoresPaginator ListConformancePackComplianceScores(ListConformancePackComplianceScoresRequest request) 
+        {
+            return new ListConformancePackComplianceScoresPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListDiscoveredResources operation
         ///</summary>
         public IListDiscoveredResourcesPaginator ListDiscoveredResources(ListDiscoveredResourcesRequest request) 
         {
             return new ListDiscoveredResourcesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListResourceEvaluations operation
+        ///</summary>
+        public IListResourceEvaluationsPaginator ListResourceEvaluations(ListResourceEvaluationsRequest request) 
+        {
+            return new ListResourceEvaluationsPaginator(this.client, request);
         }
 
         /// <summary>

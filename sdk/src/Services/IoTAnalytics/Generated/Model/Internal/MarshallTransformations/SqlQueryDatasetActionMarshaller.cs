@@ -34,7 +34,7 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SqlQueryDatasetAction Marshaller
-    /// </summary>       
+    /// </summary>
     public class SqlQueryDatasetActionMarshaller : IRequestMarshaller<SqlQueryDatasetAction, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SqlQueryDatasetActionMarshaller Instance = new SqlQueryDatasetActionMarshaller();
 
     }

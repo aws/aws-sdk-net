@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Athena.Model
 {
     /// <summary>
-    /// A query, where <code>QueryString</code> is the list of SQL query statements that comprise
-    /// the query.
+    /// A query, where <code>QueryString</code> contains the SQL statements that make up the
+    /// query.
     /// </summary>
     public partial class NamedQuery
     {
@@ -104,6 +104,7 @@ namespace Amazon.Athena.Model
         /// The unique identifier of the query.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string NamedQueryId
         {
             get { return this._namedQueryId; }
@@ -119,7 +120,7 @@ namespace Amazon.Athena.Model
         /// <summary>
         /// Gets and sets the property QueryString. 
         /// <para>
-        /// The SQL query statements that comprise the query.
+        /// The SQL statements that make up the query.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=262144)]

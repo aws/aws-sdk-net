@@ -34,7 +34,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RowLevelPermissionTagConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class RowLevelPermissionTagConfigurationMarshaller : IRequestMarshaller<RowLevelPermissionTagConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -49,6 +49,22 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("Status");
                 context.Writer.Write(requestObject.Status);
+            }
+
+            if(requestObject.IsSetTagRuleConfigurations())
+            {
+                context.Writer.WritePropertyName("TagRuleConfigurations");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectTagRuleConfigurationsListValue in requestObject.TagRuleConfigurations)
+                {
+                    context.Writer.WriteArrayStart();
+                    foreach(var requestObjectTagRuleConfigurationsListValueListValue in requestObjectTagRuleConfigurationsListValue)
+                    {
+                            context.Writer.Write(requestObjectTagRuleConfigurationsListValueListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+                context.Writer.WriteArrayEnd();
             }
 
             if(requestObject.IsSetTagRules())
@@ -71,7 +87,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RowLevelPermissionTagConfigurationMarshaller Instance = new RowLevelPermissionTagConfigurationMarshaller();
 
     }

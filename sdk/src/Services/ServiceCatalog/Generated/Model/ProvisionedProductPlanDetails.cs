@@ -314,7 +314,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property UpdatedTime. 
         /// <para>
-        /// The time when the plan was last updated.
+        /// The UTC time stamp when the plan was last updated.
         /// </para>
         /// </summary>
         public DateTime UpdatedTime

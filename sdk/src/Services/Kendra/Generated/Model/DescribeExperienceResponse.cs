@@ -69,7 +69,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// Shows the date-time your Amazon Kendra experience was created.
+        /// The Unix timestamp when your Amazon Kendra experience was created.
         /// </para>
         /// </summary>
         public DateTime CreatedAt
@@ -203,8 +203,8 @@ namespace Amazon.Kendra.Model
         /// Gets and sets the property RoleArn. 
         /// <para>
         /// Shows the Amazon Resource Name (ARN) of a role with permission to access <code>Query</code>
-        /// operations, <code>QuerySuggestions</code> operations, <code>SubmitFeedback</code>
-        /// operations, and Amazon Web Services SSO that stores your user and group information.
+        /// API, <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and IAM Identity
+        /// Center that stores your user and group information.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1284)]
@@ -244,7 +244,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property UpdatedAt. 
         /// <para>
-        /// Shows the date-time your Amazon Kendra experience was last updated.
+        /// The Unix timestamp when your Amazon Kendra experience was last updated.
         /// </para>
         /// </summary>
         public DateTime UpdatedAt

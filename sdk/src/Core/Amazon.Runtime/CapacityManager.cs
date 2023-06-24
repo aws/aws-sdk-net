@@ -59,14 +59,13 @@ namespace Amazon.Runtime.Internal
 
             if (disposing)
             {
-                _rwlock.Dispose();
                 _disposed = true;
             }
         }
 
         public CapacityManager(int throttleRetryCount, int throttleRetryCost, int throttleCost) 
             : this(throttleRetryCount, throttleRetryCost, throttleCost, throttleRetryCost)
-        {            
+        {    
         }
 
         public CapacityManager(int throttleRetryCount, int throttleRetryCost, int throttleCost, int timeoutRetryCost)
@@ -121,7 +120,7 @@ namespace Amazon.Runtime.Internal
         [Obsolete("This method is no longer used in favor of allowing the caller to specify the type of capacity to release.")]
         public void TryReleaseCapacity(bool isRetryRequest, RetryCapacity retryCapacity) 
         {
-            ReleaseCapacity(isRetryRequest ? CapacityType.Retry : CapacityType.Increment, retryCapacity);            
+            ReleaseCapacity(isRetryRequest ? CapacityType.Retry : CapacityType.Increment, retryCapacity);
         }
 
         /// <summary>
@@ -167,7 +166,7 @@ namespace Amazon.Runtime.Internal
         private static Dictionary<string, RetryCapacity> _serviceUrlToCapacityMap = new Dictionary<string, RetryCapacity>();
 
         //Read write slim lock for performing said operations on CapacityManager._serviceUrlToCapacityMap.
-        private ReaderWriterLockSlim _rwlock = new ReaderWriterLockSlim();
+        private static ReaderWriterLockSlim _rwlock = new ReaderWriterLockSlim();
 
         // This parameter sets the cost of making a retry call on a request.The default value is set at 5.
         private readonly int retryCost;
@@ -184,7 +183,7 @@ namespace Amazon.Runtime.Internal
         // were to deplete the entire capacity.The default value is set at 1.
         private readonly int noRetryIncrement;
 
-        private bool TryGetRetryCapacity(string key, out RetryCapacity value)
+        private static bool TryGetRetryCapacity(string key, out RetryCapacity value)
         {
             _rwlock.EnterReadLock();
             try

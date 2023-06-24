@@ -34,7 +34,7 @@ namespace Amazon.Lex.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ActiveContextTimeToLive Marshaller
-    /// </summary>       
+    /// </summary>
     public class ActiveContextTimeToLiveMarshaller : IRequestMarshaller<ActiveContextTimeToLive, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Lex.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ActiveContextTimeToLiveMarshaller Instance = new ActiveContextTimeToLiveMarshaller();
 
     }

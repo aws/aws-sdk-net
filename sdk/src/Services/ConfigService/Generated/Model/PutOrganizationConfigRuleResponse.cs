@@ -38,7 +38,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property OrganizationConfigRuleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of an organization config rule.
+        /// The Amazon Resource Name (ARN) of an organization Config rule.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]

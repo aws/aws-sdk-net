@@ -34,9 +34,13 @@ namespace Amazon.IoTWireless.Model
     public partial class SidewalkDevice
     {
         private string _amazonId;
+        private string _certificateId;
         private List<CertificateList> _deviceCertificates = new List<CertificateList>();
+        private string _deviceProfileId;
+        private List<CertificateList> _privateKeys = new List<CertificateList>();
         private string _sidewalkId;
         private string _sidewalkManufacturingSn;
+        private WirelessDeviceSidewalkStatus _status;
 
         /// <summary>
         /// Gets and sets the property AmazonId.
@@ -55,6 +59,25 @@ namespace Amazon.IoTWireless.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CertificateId. 
+        /// <para>
+        /// The ID of the Sidewalk device profile.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=256)]
+        public string CertificateId
+        {
+            get { return this._certificateId; }
+            set { this._certificateId = value; }
+        }
+
+        // Check to see if CertificateId property is set
+        internal bool IsSetCertificateId()
+        {
+            return this._certificateId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property DeviceCertificates. 
         /// <para>
         /// The sidewalk device certificates for Ed25519 and P256r1.
@@ -70,6 +93,43 @@ namespace Amazon.IoTWireless.Model
         internal bool IsSetDeviceCertificates()
         {
             return this._deviceCertificates != null && this._deviceCertificates.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeviceProfileId. 
+        /// <para>
+        /// The ID of the Sidewalk device profile.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=256)]
+        public string DeviceProfileId
+        {
+            get { return this._deviceProfileId; }
+            set { this._deviceProfileId = value; }
+        }
+
+        // Check to see if DeviceProfileId property is set
+        internal bool IsSetDeviceProfileId()
+        {
+            return this._deviceProfileId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PrivateKeys. 
+        /// <para>
+        /// The Sidewalk device private keys that will be used for onboarding the device.
+        /// </para>
+        /// </summary>
+        public List<CertificateList> PrivateKeys
+        {
+            get { return this._privateKeys; }
+            set { this._privateKeys = value; }
+        }
+
+        // Check to see if PrivateKeys property is set
+        internal bool IsSetPrivateKeys()
+        {
+            return this._privateKeys != null && this._privateKeys.Count > 0; 
         }
 
         /// <summary>
@@ -108,6 +168,24 @@ namespace Amazon.IoTWireless.Model
         internal bool IsSetSidewalkManufacturingSn()
         {
             return this._sidewalkManufacturingSn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The Sidewalk device status, such as provisioned or registered.
+        /// </para>
+        /// </summary>
+        public WirelessDeviceSidewalkStatus Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null;
         }
 
     }

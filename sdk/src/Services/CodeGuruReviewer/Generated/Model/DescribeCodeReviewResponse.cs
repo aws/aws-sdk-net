@@ -38,7 +38,7 @@ namespace Amazon.CodeGuruReviewer.Model
         /// <summary>
         /// Gets and sets the property CodeReview. 
         /// <para>
-        ///  Information about the code review. 
+        /// Information about the code review.
         /// </para>
         /// </summary>
         public CodeReview CodeReview

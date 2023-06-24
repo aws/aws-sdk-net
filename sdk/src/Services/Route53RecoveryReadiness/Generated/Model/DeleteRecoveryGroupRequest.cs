@@ -30,14 +30,17 @@ namespace Amazon.Route53RecoveryReadiness.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteRecoveryGroup operation.
-    /// Deletes an existing Recovery Group.
+    /// Deletes a recovery group.
     /// </summary>
     public partial class DeleteRecoveryGroupRequest : AmazonRoute53RecoveryReadinessRequest
     {
         private string _recoveryGroupName;
 
         /// <summary>
-        /// Gets and sets the property RecoveryGroupName. The RecoveryGroup to delete
+        /// Gets and sets the property RecoveryGroupName. 
+        /// <para>
+        /// The name of a recovery group.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string RecoveryGroupName

@@ -58,7 +58,7 @@ namespace Amazon.SSMContacts.Model.Internal.MarshallTransformations
             string target = "SSMContacts.CreateContactChannel";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-05-03";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-05-03";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -99,7 +99,7 @@ namespace Amazon.SSMContacts.Model.Internal.MarshallTransformations
                 else if(!(publicRequest.IsSetIdempotencyToken()))
                 {
                     context.Writer.WritePropertyName("IdempotencyToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());                                                
+                    context.Writer.Write(Guid.NewGuid().ToString());
                 }
                 if(publicRequest.IsSetName())
                 {
@@ -113,7 +113,6 @@ namespace Amazon.SSMContacts.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Type);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

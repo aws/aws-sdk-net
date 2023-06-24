@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FSx.Model
 {
     /// <summary>
-    /// No Amazon FSx for NetApp ONTAP SVMs were found based upon the supplied parameters.
+    /// No FSx for ONTAP SVMs were found based upon the supplied parameters.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

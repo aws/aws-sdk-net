@@ -72,7 +72,7 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The policy must be composed using IAM Policy version 2012-10-17 or version 2015-01-01.
+        /// The policy must be composed using IAM Policy version 2012-10-17.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -86,8 +86,8 @@ namespace Amazon.WAFV2.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>Action</code> must specify <code>wafv2:CreateWebACL</code>, <code>wafv2:UpdateWebACL</code>,
-        /// and <code>wafv2:PutFirewallManagerRuleGroups</code>. WAF rejects any extra actions
-        /// or wildcard actions in the policy.
+        /// and <code>wafv2:PutFirewallManagerRuleGroups</code> and may optionally specify <code>wafv2:GetRuleGroup</code>.
+        /// WAF rejects any extra actions or wildcard actions in the policy.
         /// </para>
         ///  </li> <li> 
         /// <para>

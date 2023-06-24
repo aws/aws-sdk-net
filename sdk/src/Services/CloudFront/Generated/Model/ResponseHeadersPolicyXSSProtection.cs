@@ -30,7 +30,7 @@ namespace Amazon.CloudFront.Model
 {
     /// <summary>
     /// Determines whether CloudFront includes the <code>X-XSS-Protection</code> HTTP response
-    /// header and the header’s value.
+    /// header and the header's value.
     /// 
     ///  
     /// <para>

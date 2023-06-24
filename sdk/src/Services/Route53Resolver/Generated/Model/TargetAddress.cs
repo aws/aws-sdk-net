@@ -35,16 +35,16 @@ namespace Amazon.Route53Resolver.Model
     public partial class TargetAddress
     {
         private string _ip;
+        private string _ipv6;
         private int? _port;
 
         /// <summary>
         /// Gets and sets the property Ip. 
         /// <para>
-        /// One IP address that you want to forward DNS queries to. You can specify only IPv4
-        /// addresses.
+        /// One IPv4 address that you want to forward DNS queries to.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=7, Max=36)]
+        [AWSProperty(Min=7, Max=36)]
         public string Ip
         {
             get { return this._ip; }
@@ -55,6 +55,25 @@ namespace Amazon.Route53Resolver.Model
         internal bool IsSetIp()
         {
             return this._ip != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Ipv6. 
+        /// <para>
+        ///  One IPv6 address that you want to forward DNS queries to. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=7, Max=39)]
+        public string Ipv6
+        {
+            get { return this._ipv6; }
+            set { this._ipv6 = value; }
+        }
+
+        // Check to see if Ipv6 property is set
+        internal bool IsSetIpv6()
+        {
+            return this._ipv6 != null;
         }
 
         /// <summary>

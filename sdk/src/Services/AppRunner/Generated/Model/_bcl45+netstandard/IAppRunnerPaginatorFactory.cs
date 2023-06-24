@@ -41,6 +41,11 @@ namespace Amazon.AppRunner.Model
         IListConnectionsPaginator ListConnections(ListConnectionsRequest request);
 
         /// <summary>
+        /// Paginator for ListObservabilityConfigurations operation
+        ///</summary>
+        IListObservabilityConfigurationsPaginator ListObservabilityConfigurations(ListObservabilityConfigurationsRequest request);
+
+        /// <summary>
         /// Paginator for ListOperations operation
         ///</summary>
         IListOperationsPaginator ListOperations(ListOperationsRequest request);
@@ -49,5 +54,15 @@ namespace Amazon.AppRunner.Model
         /// Paginator for ListServices operation
         ///</summary>
         IListServicesPaginator ListServices(ListServicesRequest request);
+
+        /// <summary>
+        /// Paginator for ListVpcConnectors operation
+        ///</summary>
+        IListVpcConnectorsPaginator ListVpcConnectors(ListVpcConnectorsRequest request);
+
+        /// <summary>
+        /// Paginator for ListVpcIngressConnections operation
+        ///</summary>
+        IListVpcIngressConnectionsPaginator ListVpcIngressConnections(ListVpcIngressConnectionsRequest request);
     }
 }

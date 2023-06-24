@@ -58,7 +58,7 @@ namespace Amazon.CloudHSMV2.Model.Internal.MarshallTransformations
             string target = "BaldrApiService.ModifyCluster";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-04-28";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-04-28";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -84,7 +84,6 @@ namespace Amazon.CloudHSMV2.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ClusterId);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

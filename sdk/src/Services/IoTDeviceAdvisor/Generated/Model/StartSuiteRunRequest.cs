@@ -89,6 +89,7 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// Suite run configuration.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public SuiteRunConfiguration SuiteRunConfiguration
         {
             get { return this._suiteRunConfiguration; }

@@ -76,6 +76,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     unmarshalledObject.DeviceDefenderIndexingMode = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("filter", targetDepth))
+                {
+                    var unmarshaller = IndexingFilterUnmarshaller.Instance;
+                    unmarshalledObject.Filter = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("managedFields", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<Field, FieldUnmarshaller>(FieldUnmarshaller.Instance);

@@ -55,9 +55,12 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
         public IRequest Marshall(ListDeviceProfilesRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.IoTWireless");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-11-22";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-11-22";
             request.HttpMethod = "GET";
 
+            
+            if (publicRequest.IsSetDeviceProfileType())
+                request.Parameters.Add("deviceProfileType", StringUtils.FromString(publicRequest.DeviceProfileType));
             
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));

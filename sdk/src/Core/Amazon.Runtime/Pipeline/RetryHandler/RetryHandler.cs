@@ -72,10 +72,10 @@ namespace Amazon.Runtime.Internal
             do
             {
                 try
-                {                    
+                {
                     SetRetryHeaders(requestContext);
-                    base.InvokeSync(executionContext);                    
-                    this.RetryPolicy.NotifySuccess(executionContext);                    
+                    base.InvokeSync(executionContext);
+                    this.RetryPolicy.NotifySuccess(executionContext);
                     return;
                 }
                 catch (Exception exception)
@@ -123,10 +123,10 @@ namespace Amazon.Runtime.Internal
 
             do
             {
-                System.Runtime.ExceptionServices.ExceptionDispatchInfo capturedException = null;                
+                System.Runtime.ExceptionServices.ExceptionDispatchInfo capturedException = null;    
 
                 try
-                {                
+                {        
                     SetRetryHeaders(requestContext);
                     T result = await base.InvokeAsync<T>(executionContext).ConfigureAwait(false);
                     this.RetryPolicy.NotifySuccess(executionContext);
@@ -276,12 +276,12 @@ namespace Amazon.Runtime.Internal
         }        
 
         private void SetRetryHeaders(IRequestContext requestContext)
-        {            
+        {    
             var request = requestContext.Request;
 
             //The invocation id will be the same for all retry requests for the initial operation invocation.
             if (!request.Headers.ContainsKey(HeaderKeys.AmzSdkInvocationId))
-            {                
+            {        
                 request.Headers.Add(HeaderKeys.AmzSdkInvocationId, requestContext.InvocationId.ToString());
             }
 

@@ -1,0 +1,1202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+    <doc>
+        <members>
+            <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.AcceptAdministratorInvitation(Amazon.SecurityHub.Model.AcceptAdministratorInvitationRequest)" />
+            <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.AcceptAdministratorInvitation(Amazon.SecurityHub.Model.AcceptAdministratorInvitationRequest)" />
+            <member name="T:Amazon.SecurityHub.Model.AcceptAdministratorInvitationRequest" />
+            <member name="T:Amazon.SecurityHub.Model.AcceptAdministratorInvitationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example demonstrates how an account can accept an invitation from the Security Hub administrator account to be a member account. This operation is applicable only to member accounts that are not added through AWS Organizations.
+                </para>
+                <code
+                    title="To accept an invitation be a member account"
+                    source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs"
+                    region="to-accept-an-invitation-be-a-member-account-1674849870467" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.BatchDeleteAutomationRules(Amazon.SecurityHub.Model.BatchDeleteAutomationRulesRequest)" />
+            <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.BatchDeleteAutomationRules(Amazon.SecurityHub.Model.BatchDeleteAutomationRulesRequest)" />
+            <member name="T:Amazon.SecurityHub.Model.BatchDeleteAutomationRulesRequest" />
+            <member name="T:Amazon.SecurityHub.Model.BatchDeleteAutomationRulesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example deletes the specified automation rules.
+                </para>
+                <code
+                    title="To delete one or more automation rules"
+                    source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs"
+                    region="to-delete-one-or-more-automation-rules-1684769550318" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.BatchDisableStandards(Amazon.SecurityHub.Model.BatchDisableStandardsRequest)" />
+            <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.BatchDisableStandards(Amazon.SecurityHub.Model.BatchDisableStandardsRequest)" />
+            <member name="T:Amazon.SecurityHub.Model.BatchDisableStandardsRequest" />
+            <member name="T:Amazon.SecurityHub.Model.BatchDisableStandardsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example disables a security standard in Security Hub.
+                </para>
+                <code
+                    title="To disable one or more security standards"
+                    source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs"
+                    region="to-disable-one-or-more-security-standards-1674851507200" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.BatchEnableStandards(Amazon.SecurityHub.Model.BatchEnableStandardsRequest)" />
+            <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.BatchEnableStandards(Amazon.SecurityHub.Model.BatchEnableStandardsRequest)" />
+            <member name="T:Amazon.SecurityHub.Model.BatchEnableStandardsRequest" />
+            <member name="T:Amazon.SecurityHub.Model.BatchEnableStandardsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example enables the security standard specified by the StandardArn. You can use this operation to enable one or more Security Hub standards.
+                </para>
+                <code
+                    title="To enable security standards"
+                    source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs"
+                    region="to-enable-security-standards-1683233792239" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.BatchGetAutomationRules(Amazon.SecurityHub.Model.BatchGetAutomationRulesRequest)" />
+            <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.BatchGetAutomationRules(Amazon.SecurityHub.Model.BatchGetAutomationRulesRequest)" />
+            <member name="T:Amazon.SecurityHub.Model.BatchGetAutomationRulesRequest" />
+            <member name="T:Amazon.SecurityHub.Model.BatchGetAutomationRulesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example updates the specified automation rules.
+                </para>
+                <code
+                    title="To update one ore more automation rules"
+                    source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs"
+                    region="to-update-one-ore-more-automation-rules-1684771025347" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.BatchGetSecurityControls(Amazon.SecurityHub.Model.BatchGetSecurityControlsRequest)" />
+            <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.BatchGetSecurityControls(Amazon.SecurityHub.Model.BatchGetSecurityControlsRequest)" />
+            <member name="T:Amazon.SecurityHub.Model.BatchGetSecurityControlsRequest" />
+            <member name="T:Amazon.SecurityHub.Model.BatchGetSecurityControlsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example gets details for the specified controls in the current AWS account and AWS Region.
+                </para>
+                <code
+                    title="To get security control details "
+                    source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs"
+                    region="to-get-security-control-details--1683234478355" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.BatchGetStandardsControlAssociations(Amazon.SecurityHub.Model.BatchGetStandardsControlAssociationsRequest)" />
+            <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.BatchGetStandardsControlAssociations(Amazon.SecurityHub.Model.BatchGetStandardsControlAssociationsRequest)" />
+            <member name="T:Amazon.SecurityHub.Model.BatchGetStandardsControlAssociationsRequest" />
+            <member name="T:Amazon.SecurityHub.Model.BatchGetStandardsControlAssociationsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example retrieves the enablement status of the specified controls in the specified standards.
+                </para>
+                <code
+                    title="To get enablement status of a batch of controls"
+                    source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs"
+                    region="to-get-enablement-status-of-a-batch-of-controls-1683301618357" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.BatchImportFindings(Amazon.SecurityHub.Model.BatchImportFindingsRequest)" />
+            <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.BatchImportFindings(Amazon.SecurityHub.Model.BatchImportFindingsRequest)" />
+            <member name="T:Amazon.SecurityHub.Model.BatchImportFindingsRequest" />
+            <member name="T:Amazon.SecurityHub.Model.BatchImportFindingsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example imports findings from a third party provider to Security Hub.
+                </para>
+                <code
+                    title="To import security findings from a third party provider to Security Hub"
+                    source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs"
+                    region="to-import-security-findings-from-a-third-party-provider-to-security-hub-1675090935260" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.BatchUpdateAutomationRules(Amazon.SecurityHub.Model.BatchUpdateAutomationRulesRequest)" />
+            <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.BatchUpdateAutomationRules(Amazon.SecurityHub.Model.BatchUpdateAutomationRulesRequest)" />
+            <member name="T:Amazon.SecurityHub.Model.BatchUpdateAutomationRulesRequest" />
+            <member name="T:Amazon.SecurityHub.Model.BatchUpdateAutomationRulesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example updates the specified automation rules.
+                </para>
+                <code
+                    title="To update one ore more automation rules"
+                    source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs"
+                    region="to-update-one-ore-more-automation-rules-1684771025347" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.BatchUpdateFindings(Amazon.SecurityHub.Model.BatchUpdateFindingsRequest)" />
+            <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.BatchUpdateFindings(Amazon.SecurityHub.Model.BatchUpdateFindingsRequest)" />
+            <member name="T:Amazon.SecurityHub.Model.BatchUpdateFindingsRequest" />
+            <member name="T:Amazon.SecurityHub.Model.BatchUpdateFindingsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example updates Security Hub findings. The finding identifier parameter specifies which findings to update. Only specific finding fields can be updated with this operation.
+                </para>
+                <code
+                    title="To update Security Hub findings"
+                    source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs"
+                    region="to-update-security-hub-findings-1675183938248" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.BatchUpdateStandardsControlAssociations(Amazon.SecurityHub.Model.BatchUpdateStandardsControlAssociationsRequest)" />
+            <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.BatchUpdateStandardsControlAssociations(Amazon.SecurityHub.Model.BatchUpdateStandardsControlAssociationsRequest)" />
+            <member name="T:Amazon.SecurityHub.Model.BatchUpdateStandardsControlAssociationsRequest" />
+            <member name="T:Amazon.SecurityHub.Model.BatchUpdateStandardsControlAssociationsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example disables CloudWatch.12 in CIS AWS Foundations Benchmark v1.2.0. The example returns an error for CloudTrail.1 because an invalid standard ARN is provided.
+                </para>
+                <code
+                    title="To update enablement status of a batch of controls"
+                    source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs"
+                    region="to-update-enablement-status-of-a-batch-of-controls-1683300378416" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.CreateActionTarget(Amazon.SecurityHub.Model.CreateActionTargetRequest)" />
+            <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.CreateActionTarget(Amazon.SecurityHub.Model.CreateActionTargetRequest)" />
+            <member name="T:Amazon.SecurityHub.Model.CreateActionTargetRequest" />
+            <member name="T:Amazon.SecurityHub.Model.CreateActionTargetResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example creates a custom action target in Security Hub. Custom actions on findings and insights automatically trigger actions in Amazon CloudWatch Events.
+                </para>
+                <code
+                    title="To create a custom action target"
+                    source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs"
+                    region="to-create-a-custom-action-target-1675184966299" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.CreateAutomationRule(Amazon.SecurityHub.Model.CreateAutomationRuleRequest)" />
+            <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.CreateAutomationRule(Amazon.SecurityHub.Model.CreateAutomationRuleRequest)" />
+            <member name="T:Amazon.SecurityHub.Model.CreateAutomationRuleRequest" />
+            <member name="T:Amazon.SecurityHub.Model.CreateAutomationRuleResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example creates an automation rule.
+                </para>
+                <code
+                    title="To create an automation rule"
+                    source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs"
+                    region="to-create-an-automation-rule-1684768393507" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.CreateFindingAggregator(Amazon.SecurityHub.Model.CreateFindingAggregatorRequest)" />
+            <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.CreateFindingAggregator(Amazon.SecurityHub.Model.CreateFindingAggregatorRequest)" />
+            <member name="T:Amazon.SecurityHub.Model.CreateFindingAggregatorRequest" />
+            <member name="T:Amazon.SecurityHub.Model.CreateFindingAggregatorResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example creates a finding aggregator. This is required to enable cross-Region aggregation.
+                </para>
+                <code
+                    title="To enable cross-Region aggregation"
+                    source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs"
+                    region="to-enable-cross-region-aggregation-1674766716226" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.CreateInsight(Amazon.SecurityHub.Model.CreateInsightRequest)" />
+            <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.CreateInsight(Amazon.SecurityHub.Model.CreateInsightRequest)" />
+            <member name="T:Amazon.SecurityHub.Model.CreateInsightRequest" />
+            <member name="T:Amazon.SecurityHub.Model.CreateInsightResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example creates a custom insight in Security Hub. An insight is a collection of findings that relate to a security issue.
+                </para>
+                <code
+                    title="To create a custom insight"
+                    source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs"
+                    region="to-create-a-custom-insight-1675354046628" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.CreateMembers(Amazon.SecurityHub.Model.CreateMembersRequest)" />
+            <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.CreateMembers(Amazon.SecurityHub.Model.CreateMembersRequest)" />
+            <member name="T:Amazon.SecurityHub.Model.CreateMembersRequest" />
+            <member name="T:Amazon.SecurityHub.Model.CreateMembersResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example creates a member association between the specified accounts and the administrator account (the account that makes the request). This operation is used to add accounts that aren't part of an organization.
+                </para>
+                <code
+                    title="To add a member account"
+                    source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs"
+                    region="to-add-a-member-account-1675354709996" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.DeclineInvitations(Amazon.SecurityHub.Model.DeclineInvitationsRequest)" />
+            <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.DeclineInvitations(Amazon.SecurityHub.Model.DeclineInvitationsRequest)" />
+            <member name="T:Amazon.SecurityHub.Model.DeclineInvitationsRequest" />
+            <member name="T:Amazon.SecurityHub.Model.DeclineInvitationsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example declines an invitation from the Security Hub administrator account to become a member account. The invited account makes the request.
+                </para>
+                <code
+                    title="To decline invitation to become a member account"
+                    source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs"
+                    region="to-decline-invitation-to-become-a-member-account-1675448487605" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.DeleteActionTarget(Amazon.SecurityHub.Model.DeleteActionTargetRequest)" />
+            <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.DeleteActionTarget(Amazon.SecurityHub.Model.DeleteActionTargetRequest)" />
+            <member name="T:Amazon.SecurityHub.Model.DeleteActionTargetRequest" />
+            <member name="T:Amazon.SecurityHub.Model.DeleteActionTargetResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example deletes a custom action target that triggers target actions in Amazon CloudWatch Events. Deleting a custom action target doesn't affect findings or insights that were already sent to CloudWatch Events based on the custom action.
+                </para>
+                <code
+                    title="To delete a custom action target"
+                    source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs"
+                    region="to-delete-a-custom-action-target-1675449272793" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.DeleteFindingAggregator(Amazon.SecurityHub.Model.DeleteFindingAggregatorRequest)" />
+            <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.DeleteFindingAggregator(Amazon.SecurityHub.Model.DeleteFindingAggregatorRequest)" />
+            <member name="T:Amazon.SecurityHub.Model.DeleteFindingAggregatorRequest" />
+            <member name="T:Amazon.SecurityHub.Model.DeleteFindingAggregatorResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example deletes a finding aggregator in Security Hub. Deleting the finding aggregator stops cross-Region aggregation. This operation produces no output.
+                </para>
+                <code
+                    title="To delete a finding aggregator"
+                    source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs"
+                    region="to-delete-a-finding-aggregator-1675701750629" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.DeleteInsight(Amazon.SecurityHub.Model.DeleteInsightRequest)" />
+            <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.DeleteInsight(Amazon.SecurityHub.Model.DeleteInsightRequest)" />
+            <member name="T:Amazon.SecurityHub.Model.DeleteInsightRequest" />
+            <member name="T:Amazon.SecurityHub.Model.DeleteInsightResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example deletes a custom insight in Security Hub.
+                </para>
+                <code
+                    title="To delete a custom insight"
+                    source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs"
+                    region="to-delete-a-custom-insight-1675702697204" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.DeleteInvitations(Amazon.SecurityHub.Model.DeleteInvitationsRequest)" />
+            <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.DeleteInvitations(Amazon.SecurityHub.Model.DeleteInvitationsRequest)" />
+            <member name="T:Amazon.SecurityHub.Model.DeleteInvitationsRequest" />
+            <member name="T:Amazon.SecurityHub.Model.DeleteInvitationsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example deletes an invitation sent by the Security Hub administrator account to a prospective member account. This operation is used only for invitations sent to accounts that aren't part of an organization. Organization accounts don't receive invitations.
+                </para>
+                <code
+                    title="To delete a custom insight"
+                    source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs"
+                    region="to-delete-a-custom-insight-1675702697204" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.DeleteMembers(Amazon.SecurityHub.Model.DeleteMembersRequest)" />
+            <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.DeleteMembers(Amazon.SecurityHub.Model.DeleteMembersRequest)" />
+            <member name="T:Amazon.SecurityHub.Model.DeleteMembersRequest" />
+            <member name="T:Amazon.SecurityHub.Model.DeleteMembersResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example deletes the specified member account from Security Hub. This operation can be used to delete member accounts that are part of an organization or that were invited manually.
+                </para>
+                <code
+                    title="To delete a member account"
+                    source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs"
+                    region="to-delete-a-member-account-1675883040513" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.DescribeActionTargets(Amazon.SecurityHub.Model.DescribeActionTargetsRequest)" />
+            <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.DescribeActionTargets(Amazon.SecurityHub.Model.DescribeActionTargetsRequest)" />
+            <member name="T:Amazon.SecurityHub.Model.DescribeActionTargetsRequest" />
+            <member name="T:Amazon.SecurityHub.Model.DescribeActionTargetsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example returns a list of custom action targets. You use custom actions on findings and insights in Security Hub to trigger target actions in Amazon CloudWatch Events.
+                </para>
+                <code
+                    title="To return custom action targets"
+                    source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs"
+                    region="to-return-custom-action-targets-1675883682038" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.DescribeHub(Amazon.SecurityHub.Model.DescribeHubRequest)" />
+            <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.DescribeHub(Amazon.SecurityHub.Model.DescribeHubRequest)" />
+            <member name="T:Amazon.SecurityHub.Model.DescribeHubRequest" />
+            <member name="T:Amazon.SecurityHub.Model.DescribeHubResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example returns details about the Hub resource in the calling account. The Hub resource represents the implementation of  the AWS Security Hub service in the calling account.
+                </para>
+                <code
+                    title="To return details about Hub resource"
+                    source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs"
+                    region="to-return-details-about-hub-resource-1675884542597" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.DescribeOrganizationConfiguration(Amazon.SecurityHub.Model.DescribeOrganizationConfigurationRequest)" />
+            <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.DescribeOrganizationConfiguration(Amazon.SecurityHub.Model.DescribeOrganizationConfigurationRequest)" />
+            <member name="T:Amazon.SecurityHub.Model.DescribeOrganizationConfigurationRequest" />
+            <member name="T:Amazon.SecurityHub.Model.DescribeOrganizationConfigurationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example returns details about the way in which AWS Organizations is configured for a Security Hub account that belongs to an organization. Only a Security Hub administrator account can call this operation.
+                </para>
+                <code
+                    title="To get information about Organizations configuration"
+                    source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs"
+                    region="to-get-information-about-organizations-configuration-1676059786304" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.DescribeProducts(Amazon.SecurityHub.Model.DescribeProductsRequest)" />
+            <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.DescribeProducts(Amazon.SecurityHub.Model.DescribeProductsRequest)" />
+            <member name="T:Amazon.SecurityHub.Model.DescribeProductsRequest" />
+            <member name="T:Amazon.SecurityHub.Model.DescribeProductsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example returns details about AWS services and third-party products that Security Hub integrates with.
+                </para>
+                <code
+                    title="To get information about Security Hub integrations"
+                    source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs"
+                    region="to-get-information-about-security-hub-integrations-1676061228533" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.DescribeStandards(Amazon.SecurityHub.Model.DescribeStandardsRequest)" />
+            <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.DescribeStandards(Amazon.SecurityHub.Model.DescribeStandardsRequest)" />
+            <member name="T:Amazon.SecurityHub.Model.DescribeStandardsRequest" />
+            <member name="T:Amazon.SecurityHub.Model.DescribeStandardsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example returns a list of available security standards in Security Hub.
+                </para>
+                <code
+                    title="To get available Security Hub standards"
+                    source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs"
+                    region="to-get-available-security-hub-standards-1676307464661" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.DescribeStandardsControls(Amazon.SecurityHub.Model.DescribeStandardsControlsRequest)" />
+            <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.DescribeStandardsControls(Amazon.SecurityHub.Model.DescribeStandardsControlsRequest)" />
+            <member name="T:Amazon.SecurityHub.Model.DescribeStandardsControlsRequest" />
+            <member name="T:Amazon.SecurityHub.Model.DescribeStandardsControlsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example returns a list of security controls and control details that apply to a specified security standard. The list includes controls that are enabled and disabled in the standard.
+                </para>
+                <code
+                    title="To get a list of controls for a security standard"
+                    source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs"
+                    region="to-get-a-list-of-controls-for-a-security-standard-1676308027759" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.DisableImportFindingsForProduct(Amazon.SecurityHub.Model.DisableImportFindingsForProductRequest)" />
+            <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.DisableImportFindingsForProduct(Amazon.SecurityHub.Model.DisableImportFindingsForProductRequest)" />
+            <member name="T:Amazon.SecurityHub.Model.DisableImportFindingsForProductRequest" />
+            <member name="T:Amazon.SecurityHub.Model.DisableImportFindingsForProductResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example ends an integration between Security Hub and the specified product that sends findings to Security Hub. After the integration ends, the product no longer sends findings to Security  Hub.
+                </para>
+                <code
+                    title="To end a Security Hub integration"
+                    source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs"
+                    region="to-end-a-security-hub-integration-1676480035650" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.DisableOrganizationAdminAccount(Amazon.SecurityHub.Model.DisableOrganizationAdminAccountRequest)" />
+            <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.DisableOrganizationAdminAccount(Amazon.SecurityHub.Model.DisableOrganizationAdminAccountRequest)" />
+            <member name="T:Amazon.SecurityHub.Model.DisableOrganizationAdminAccountRequest" />
+            <member name="T:Amazon.SecurityHub.Model.DisableOrganizationAdminAccountResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example removes the Security Hub administrator account in the Region from which the operation was executed. This operation doesn't remove the delegated administrator account in AWS Organizations.
+                </para>
+                <code
+                    title="To remove a Security Hub administrator account"
+                    source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs"
+                    region="to-remove-a-security-hub-administrator-account-1676480521876" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.DisableSecurityHub(Amazon.SecurityHub.Model.DisableSecurityHubRequest)" />
+            <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.DisableSecurityHub(Amazon.SecurityHub.Model.DisableSecurityHubRequest)" />
+            <member name="T:Amazon.SecurityHub.Model.DisableSecurityHubRequest" />
+            <member name="T:Amazon.SecurityHub.Model.DisableSecurityHubResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example deactivates Security Hub for the current account and Region.
+                </para>
+                <code
+                    title="To deactivate Security Hub"
+                    source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs"
+                    region="to-deactivate-security-hub-1676583894245" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.DisassociateFromAdministratorAccount(Amazon.SecurityHub.Model.DisassociateFromAdministratorAccountRequest)" />
+            <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.DisassociateFromAdministratorAccount(Amazon.SecurityHub.Model.DisassociateFromAdministratorAccountRequest)" />
+            <member name="T:Amazon.SecurityHub.Model.DisassociateFromAdministratorAccountRequest" />
+            <member name="T:Amazon.SecurityHub.Model.DisassociateFromAdministratorAccountResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example dissociates the requesting account from its associated administrator account.
+                </para>
+                <code
+                    title="To disassociate requesting account from administrator account"
+                    source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs"
+                    region="to-disassociate-requesting-account-from-administrator-account-1676584168509" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.DisassociateMembers(Amazon.SecurityHub.Model.DisassociateMembersRequest)" />
+            <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.DisassociateMembers(Amazon.SecurityHub.Model.DisassociateMembersRequest)" />
+            <member name="T:Amazon.SecurityHub.Model.DisassociateMembersRequest" />
+            <member name="T:Amazon.SecurityHub.Model.DisassociateMembersResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example dissociates the specified member accounts from the associated administrator account.
+                </para>
+                <code
+                    title="To disassociate member accounts from administrator account"
+                    source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs"
+                    region="to-disassociate-member-accounts-from-administrator-account-1676918349164" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.EnableImportFindingsForProduct(Amazon.SecurityHub.Model.EnableImportFindingsForProductRequest)" />
+            <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.EnableImportFindingsForProduct(Amazon.SecurityHub.Model.EnableImportFindingsForProductRequest)" />
+            <member name="T:Amazon.SecurityHub.Model.EnableImportFindingsForProductRequest" />
+            <member name="T:Amazon.SecurityHub.Model.EnableImportFindingsForProductResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example activates an integration between Security Hub and a third party partner product that sends findings to Security Hub.
+                </para>
+                <code
+                    title="To activate an integration"
+                    source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs"
+                    region="to-activate-an-integration-1676918918114" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.EnableOrganizationAdminAccount(Amazon.SecurityHub.Model.EnableOrganizationAdminAccountRequest)" />
+            <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.EnableOrganizationAdminAccount(Amazon.SecurityHub.Model.EnableOrganizationAdminAccountRequest)" />
+            <member name="T:Amazon.SecurityHub.Model.EnableOrganizationAdminAccountRequest" />
+            <member name="T:Amazon.SecurityHub.Model.EnableOrganizationAdminAccountResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example designates the specified account as the Security Hub administrator account. The requesting account must be the organization management account.
+                </para>
+                <code
+                    title="To designate a Security Hub administrator"
+                    source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs"
+                    region="to-designate-a-security-hub-administrator-1676998319851" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.EnableSecurityHub(Amazon.SecurityHub.Model.EnableSecurityHubRequest)" />
+            <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.EnableSecurityHub(Amazon.SecurityHub.Model.EnableSecurityHubRequest)" />
+            <member name="T:Amazon.SecurityHub.Model.EnableSecurityHubRequest" />
+            <member name="T:Amazon.SecurityHub.Model.EnableSecurityHubResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example activates the Security Hub service in the requesting AWS account. The service is activated in the current AWS Region or the Region that you specify in the request. Some standards are automatically turned on in your account unless you opt out. To determine which standards are automatically turned on, see the Security Hub documentation.
+                </para>
+                <code
+                    title="To activate Security Hub"
+                    source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs"
+                    region="to-activate-security-hub-1676998538599" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.GetAdministratorAccount(Amazon.SecurityHub.Model.GetAdministratorAccountRequest)" />
+            <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.GetAdministratorAccount(Amazon.SecurityHub.Model.GetAdministratorAccountRequest)" />
+            <member name="T:Amazon.SecurityHub.Model.GetAdministratorAccountRequest" />
+            <member name="T:Amazon.SecurityHub.Model.GetAdministratorAccountResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example provides details about the Security Hub administrator account for the requesting member account.
+                </para>
+                <code
+                    title="To get details about the Security Hub administrator account"
+                    source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs"
+                    region="to-get-details-about-the-security-hub-administrator-account-1676998997182" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.GetEnabledStandards(Amazon.SecurityHub.Model.GetEnabledStandardsRequest)" />
+            <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.GetEnabledStandards(Amazon.SecurityHub.Model.GetEnabledStandardsRequest)" />
+            <member name="T:Amazon.SecurityHub.Model.GetEnabledStandardsRequest" />
+            <member name="T:Amazon.SecurityHub.Model.GetEnabledStandardsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example returns a list of Security Hub standards that are currently enabled in your account.  
+                </para>
+                <code
+                    title="To return a list of enabled standards"
+                    source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs"
+                    region="to-return-a-list-of-enabled-standards-1677090731129" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.GetFindingAggregator(Amazon.SecurityHub.Model.GetFindingAggregatorRequest)" />
+            <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.GetFindingAggregator(Amazon.SecurityHub.Model.GetFindingAggregatorRequest)" />
+            <member name="T:Amazon.SecurityHub.Model.GetFindingAggregatorRequest" />
+            <member name="T:Amazon.SecurityHub.Model.GetFindingAggregatorResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example returns cross-Region aggregation details for the requesting account. 
+                </para>
+                <code
+                    title="To get cross-Region aggregation details"
+                    source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs"
+                    region="to-get-cross-region-aggregation-details-1677091474868" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.GetFindingHistory(Amazon.SecurityHub.Model.GetFindingHistoryRequest)" />
+            <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.GetFindingHistory(Amazon.SecurityHub.Model.GetFindingHistoryRequest)" />
+            <member name="T:Amazon.SecurityHub.Model.GetFindingHistoryRequest" />
+            <member name="T:Amazon.SecurityHub.Model.GetFindingHistoryResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example retrieves the history of the specified finding during the specified time frame. If the time frame permits, Security Hub returns finding history for the last 90 days.
+                </para>
+                <code
+                    title="To get finding history"
+                    source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs"
+                    region="to-get-finding-history-1680270012186" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.GetFindings(Amazon.SecurityHub.Model.GetFindingsRequest)" />
+            <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.GetFindings(Amazon.SecurityHub.Model.GetFindingsRequest)" />
+            <member name="T:Amazon.SecurityHub.Model.GetFindingsRequest" />
+            <member name="T:Amazon.SecurityHub.Model.GetFindingsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example returns a filtered and sorted list of Security Hub findings.
+                </para>
+                <code
+                    title="To get a list of findings"
+                    source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs"
+                    region="to-get-a-list-of-findings-1677181069931" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.GetInsightResults(Amazon.SecurityHub.Model.GetInsightResultsRequest)" />
+            <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.GetInsightResults(Amazon.SecurityHub.Model.GetInsightResultsRequest)" />
+            <member name="T:Amazon.SecurityHub.Model.GetInsightResultsRequest" />
+            <member name="T:Amazon.SecurityHub.Model.GetInsightResultsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example returns the results of the Security Hub insight specified by the insight ARN.
+                </para>
+                <code
+                    title="To get the results of a Security Hub insight"
+                    source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs"
+                    region="to-get-the-results-of-a-security-hub-insight-1677182822019" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.GetInsights(Amazon.SecurityHub.Model.GetInsightsRequest)" />
+            <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.GetInsights(Amazon.SecurityHub.Model.GetInsightsRequest)" />
+            <member name="T:Amazon.SecurityHub.Model.GetInsightsRequest" />
+            <member name="T:Amazon.SecurityHub.Model.GetInsightsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example returns details of the Security Hub insight with the specified ARN.
+                </para>
+                <code
+                    title="To get details of a Security Hub insight"
+                    source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs"
+                    region="to-get-details-of-a-security-hub-insight-1677774127203" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.GetInvitationsCount(Amazon.SecurityHub.Model.GetInvitationsCountRequest)" />
+            <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.GetInvitationsCount(Amazon.SecurityHub.Model.GetInvitationsCountRequest)" />
+            <member name="T:Amazon.SecurityHub.Model.GetInvitationsCountRequest" />
+            <member name="T:Amazon.SecurityHub.Model.GetInvitationsCountResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example returns a count of invitations that the Security Hub administrator sent to the current member account, not including the currently accepted invitation.
+
+
+                </para>
+                <code
+                    title="To get a count of membership invitations"
+                    source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs"
+                    region="to-get-a-count-of-membership-invitations-1677774568793" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.GetMembers(Amazon.SecurityHub.Model.GetMembersRequest)" />
+            <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.GetMembers(Amazon.SecurityHub.Model.GetMembersRequest)" />
+            <member name="T:Amazon.SecurityHub.Model.GetMembersRequest" />
+            <member name="T:Amazon.SecurityHub.Model.GetMembersResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example returns details for the Security Hub member accounts with the specified AWS account IDs. An administrator account may be the delegated Security Hub administrator account for an organization or an administrator account that enabled Security Hub manually. The Security Hub administrator must call this operation.
+                </para>
+                <code
+                    title="To get member account details"
+                    source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs"
+                    region="to-get-member-account-details-1677774956489" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.InviteMembers(Amazon.SecurityHub.Model.InviteMembersRequest)" />
+            <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.InviteMembers(Amazon.SecurityHub.Model.InviteMembersRequest)" />
+            <member name="T:Amazon.SecurityHub.Model.InviteMembersRequest" />
+            <member name="T:Amazon.SecurityHub.Model.InviteMembersResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example invites the specified AWS accounts to become member accounts associated with the calling Security Hub administrator account. You only use this operation to invite accounts that don't belong to an AWS Organizations organization.
+                </para>
+                <code
+                    title="To invite accounts to become members"
+                    source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs"
+                    region="to-invite-accounts-to-become-members-1677775500860" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.ListAutomationRules(Amazon.SecurityHub.Model.ListAutomationRulesRequest)" />
+            <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.ListAutomationRules(Amazon.SecurityHub.Model.ListAutomationRulesRequest)" />
+            <member name="T:Amazon.SecurityHub.Model.ListAutomationRulesRequest" />
+            <member name="T:Amazon.SecurityHub.Model.ListAutomationRulesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example lists automation rules and rule metadata in the calling account.
+                </para>
+                <code
+                    title="To list automation rules"
+                    source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs"
+                    region="to-list-automation-rules-1684770582059" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.ListEnabledProductsForImport(Amazon.SecurityHub.Model.ListEnabledProductsForImportRequest)" />
+            <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.ListEnabledProductsForImport(Amazon.SecurityHub.Model.ListEnabledProductsForImportRequest)" />
+            <member name="T:Amazon.SecurityHub.Model.ListEnabledProductsForImportRequest" />
+            <member name="T:Amazon.SecurityHub.Model.ListEnabledProductsForImportResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example returns a list of subscription Amazon Resource Names (ARNs) for the product integrations that you have currently enabled in Security Hub.
+                </para>
+                <code
+                    title="To list ARNs for enabled integrations"
+                    source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs"
+                    region="to-list-arns-for-enabled-integrations-1678294870020" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.ListFindingAggregators(Amazon.SecurityHub.Model.ListFindingAggregatorsRequest)" />
+            <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.ListFindingAggregators(Amazon.SecurityHub.Model.ListFindingAggregatorsRequest)" />
+            <member name="T:Amazon.SecurityHub.Model.ListFindingAggregatorsRequest" />
+            <member name="T:Amazon.SecurityHub.Model.ListFindingAggregatorsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example disables the specified control in the specified security standard.
+                </para>
+                <code
+                    title="To update the enablement status of a standard control"
+                    source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs"
+                    region="to-update-the-enablement-status-of-a-standard-control-1678912506444" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.ListInvitations(Amazon.SecurityHub.Model.ListInvitationsRequest)" />
+            <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.ListInvitations(Amazon.SecurityHub.Model.ListInvitationsRequest)" />
+            <member name="T:Amazon.SecurityHub.Model.ListInvitationsRequest" />
+            <member name="T:Amazon.SecurityHub.Model.ListInvitationsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example returns a list of Security Hub member invitations sent to the calling AWS account. Only accounts that are invited manually use this operation. It's not for use by accounts that are managed through AWS Organizations.
+                </para>
+                <code
+                    title="To list membership invitations to calling account"
+                    source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs"
+                    region="to-list-membership-invitations-to-calling-account-1678295758285" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.ListMembers(Amazon.SecurityHub.Model.ListMembersRequest)" />
+            <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.ListMembers(Amazon.SecurityHub.Model.ListMembersRequest)" />
+            <member name="T:Amazon.SecurityHub.Model.ListMembersRequest" />
+            <member name="T:Amazon.SecurityHub.Model.ListMembersResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example returns details about member accounts for the calling Security Hub administrator account. The response includes member accounts that are managed through AWS Organizations and those that were invited manually.
+                </para>
+                <code
+                    title="To list member account details"
+                    source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs"
+                    region="to-list-member-account-details-1678385639113" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.ListOrganizationAdminAccounts(Amazon.SecurityHub.Model.ListOrganizationAdminAccountsRequest)" />
+            <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.ListOrganizationAdminAccounts(Amazon.SecurityHub.Model.ListOrganizationAdminAccountsRequest)" />
+            <member name="T:Amazon.SecurityHub.Model.ListOrganizationAdminAccountsRequest" />
+            <member name="T:Amazon.SecurityHub.Model.ListOrganizationAdminAccountsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example lists the Security  Hub administrator accounts for an organization. Only the organization management account can call this operation.
+                </para>
+                <code
+                    title="To list administrator acccounts for an organization"
+                    source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs"
+                    region="to-list-administrator-acccounts-for-an-organization-1678386548110" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.ListSecurityControlDefinitions(Amazon.SecurityHub.Model.ListSecurityControlDefinitionsRequest)" />
+            <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.ListSecurityControlDefinitions(Amazon.SecurityHub.Model.ListSecurityControlDefinitionsRequest)" />
+            <member name="T:Amazon.SecurityHub.Model.ListSecurityControlDefinitionsRequest" />
+            <member name="T:Amazon.SecurityHub.Model.ListSecurityControlDefinitionsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example lists security controls that apply to a specified Security Hub standard. 
+                </para>
+                <code
+                    title="To list security controls that apply to a standard"
+                    source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs"
+                    region="to-list-security-controls-that-apply-to-a-standard-1678386912894" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.ListStandardsControlAssociations(Amazon.SecurityHub.Model.ListStandardsControlAssociationsRequest)" />
+            <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.ListStandardsControlAssociations(Amazon.SecurityHub.Model.ListStandardsControlAssociationsRequest)" />
+            <member name="T:Amazon.SecurityHub.Model.ListStandardsControlAssociationsRequest" />
+            <member name="T:Amazon.SecurityHub.Model.ListStandardsControlAssociationsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example specifies whether a control is currently enabled or disabled in each enabled standard in the calling account. The response also provides other details about the control.
+                </para>
+                <code
+                    title="To say whether standard"
+                    source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs"
+                    region="to-say-whether-standard-1678389297986" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.ListTagsForResource(Amazon.SecurityHub.Model.ListTagsForResourceRequest)" />
+            <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.ListTagsForResource(Amazon.SecurityHub.Model.ListTagsForResourceRequest)" />
+            <member name="T:Amazon.SecurityHub.Model.ListTagsForResourceRequest" />
+            <member name="T:Amazon.SecurityHub.Model.ListTagsForResourceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example returns a list of tags associated with the specified resource.
+                </para>
+                <code
+                    title="To get a list of tags for a resource"
+                    source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs"
+                    region="to-get-a-list-of-tags-for-a-resource-1678477883796" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.TagResource(Amazon.SecurityHub.Model.TagResourceRequest)" />
+            <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.TagResource(Amazon.SecurityHub.Model.TagResourceRequest)" />
+            <member name="T:Amazon.SecurityHub.Model.TagResourceRequest" />
+            <member name="T:Amazon.SecurityHub.Model.TagResourceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example adds the 'Department' and 'Area' tags to the specified resource.
+                </para>
+                <code
+                    title="To tag a resource"
+                    source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs"
+                    region="to-tag-a-resource-1678478687320" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.UntagResource(Amazon.SecurityHub.Model.UntagResourceRequest)" />
+            <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.UntagResource(Amazon.SecurityHub.Model.UntagResourceRequest)" />
+            <member name="T:Amazon.SecurityHub.Model.UntagResourceRequest" />
+            <member name="T:Amazon.SecurityHub.Model.UntagResourceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example removes the 'Department' tag from the specified resource.
+                </para>
+                <code
+                    title="To remove tags from a resource"
+                    source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs"
+                    region="to-remove-tags-from-a-resource-1678478903748" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.UpdateActionTarget(Amazon.SecurityHub.Model.UpdateActionTargetRequest)" />
+            <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.UpdateActionTarget(Amazon.SecurityHub.Model.UpdateActionTargetRequest)" />
+            <member name="T:Amazon.SecurityHub.Model.UpdateActionTargetRequest" />
+            <member name="T:Amazon.SecurityHub.Model.UpdateActionTargetResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example updates the name and description of a custom action target in Security Hub. You can create custom actions to automatically respond to Security Hub findings using Amazon EventBridge. 
+                </para>
+                <code
+                    title="To update the name and description of a custom action target"
+                    source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs"
+                    region="to-update-the-name-and-description-of-a-custom-action-target-1678814873015" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.UpdateFindingAggregator(Amazon.SecurityHub.Model.UpdateFindingAggregatorRequest)" />
+            <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.UpdateFindingAggregator(Amazon.SecurityHub.Model.UpdateFindingAggregatorRequest)" />
+            <member name="T:Amazon.SecurityHub.Model.UpdateFindingAggregatorRequest" />
+            <member name="T:Amazon.SecurityHub.Model.UpdateFindingAggregatorResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example updates the cross-Region aggregation configuration. You use this operation to change the list of linked Regions and the treatment of new Regions. However, you cannot use this operation to change the aggregation Region.
+                </para>
+                <code
+                    title="To update cross-Region aggregation settings"
+                    source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs"
+                    region="to-update-cross-region-aggregation-settings-1678815536396" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.UpdateInsight(Amazon.SecurityHub.Model.UpdateInsightRequest)" />
+            <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.UpdateInsight(Amazon.SecurityHub.Model.UpdateInsightRequest)" />
+            <member name="T:Amazon.SecurityHub.Model.UpdateInsightRequest" />
+            <member name="T:Amazon.SecurityHub.Model.UpdateInsightResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example updates the specified Security Hub insight.
+                </para>
+                <code
+                    title="To update an insight"
+                    source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs"
+                    region="to-update-an-insight-1678816280498" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.UpdateOrganizationConfiguration(Amazon.SecurityHub.Model.UpdateOrganizationConfigurationRequest)" />
+            <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.UpdateOrganizationConfiguration(Amazon.SecurityHub.Model.UpdateOrganizationConfigurationRequest)" />
+            <member name="T:Amazon.SecurityHub.Model.UpdateOrganizationConfigurationRequest" />
+            <member name="T:Amazon.SecurityHub.Model.UpdateOrganizationConfigurationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example updates the configuration for an organization so that Security Hub is automatically activated for new member accounts. Only the Security Hub administrator account can call this operation.
+                </para>
+                <code
+                    title="To update organization configuration"
+                    source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs"
+                    region="to-update-organization-configuration-1678911630846" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.UpdateSecurityHubConfiguration(Amazon.SecurityHub.Model.UpdateSecurityHubConfigurationRequest)" />
+            <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.UpdateSecurityHubConfiguration(Amazon.SecurityHub.Model.UpdateSecurityHubConfigurationRequest)" />
+            <member name="T:Amazon.SecurityHub.Model.UpdateSecurityHubConfigurationRequest" />
+            <member name="T:Amazon.SecurityHub.Model.UpdateSecurityHubConfigurationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example updates Security Hub settings to turn on consolidated control findings, and to automatically enable new controls in enabled standards.
+                </para>
+                <code
+                    title="To update Security Hub settings"
+                    source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs"
+                    region="to-update-security-hub-settings-1678912194496" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.UpdateStandardsControl(Amazon.SecurityHub.Model.UpdateStandardsControlRequest)" />
+            <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.UpdateStandardsControl(Amazon.SecurityHub.Model.UpdateStandardsControlRequest)" />
+            <member name="T:Amazon.SecurityHub.Model.UpdateStandardsControlRequest" />
+            <member name="T:Amazon.SecurityHub.Model.UpdateStandardsControlResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example disables the specified control in the specified security standard.
+                </para>
+                <code
+                    title="To update the enablement status of a standard control"
+                    source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs"
+                    region="to-update-the-enablement-status-of-a-standard-control-1678912506444" />
+            </example>
+        </value>
+    </doc>
+</docs>

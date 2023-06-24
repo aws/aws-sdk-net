@@ -35,8 +35,13 @@ namespace Amazon.StepFunctions.Model
     /// states), stop an execution with an error (<code>Fail</code> states), and so on. State
     /// machines are specified using a JSON-based, structured language. For more information,
     /// see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon
-    /// States Language</a> in the AWS Step Functions User Guide.
+    /// States Language</a> in the Step Functions User Guide.
     /// 
+    ///  
+    /// <para>
+    /// If you set the <code>publish</code> parameter of this API action to <code>true</code>,
+    /// it publishes version <code>1</code> as the first revision of the state machine.
+    /// </para>
     ///  <note> 
     /// <para>
     /// This operation is eventually consistent. The results are best effort and may not reflect
@@ -47,8 +52,9 @@ namespace Amazon.StepFunctions.Model
     ///  <code>CreateStateMachine</code> is an idempotent API. Subsequent requests won’t create
     /// a duplicate resource if it was already created. <code>CreateStateMachine</code>'s
     /// idempotency check is based on the state machine <code>name</code>, <code>definition</code>,
-    /// <code>type</code>, <code>LoggingConfiguration</code> and <code>TracingConfiguration</code>.
-    /// If a following request has a different <code>roleArn</code> or <code>tags</code>,
+    /// <code>type</code>, <code>LoggingConfiguration</code>, and <code>TracingConfiguration</code>.
+    /// The check is also based on the <code>publish</code> and <code>versionDescription</code>
+    /// parameters. If a following request has a different <code>roleArn</code> or <code>tags</code>,
     /// Step Functions will ignore these differences and treat it as an idempotent request
     /// of the previous. In this case, <code>roleArn</code> and <code>tags</code> will not
     /// be updated, even if they are different.
@@ -60,10 +66,12 @@ namespace Amazon.StepFunctions.Model
         private string _definition;
         private LoggingConfiguration _loggingConfiguration;
         private string _name;
+        private bool? _publish;
         private string _roleArn;
         private List<Tag> _tags = new List<Tag>();
         private TracingConfiguration _tracingConfiguration;
         private StateMachineType _type;
+        private string _versionDescription;
 
         /// <summary>
         /// Gets and sets the property Definition. 
@@ -72,7 +80,7 @@ namespace Amazon.StepFunctions.Model
         /// States Language</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1048576)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=1048576)]
         public string Definition
         {
             get { return this._definition; }
@@ -94,7 +102,7 @@ namespace Amazon.StepFunctions.Model
         /// <para>
         /// By default, the <code>level</code> is set to <code>OFF</code>. For more information
         /// see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/cloudwatch-log-level.html">Log
-        /// Levels</a> in the AWS Step Functions User Guide.
+        /// Levels</a> in the Step Functions User Guide.
         /// </para>
         ///  </note>
         /// </summary>
@@ -159,6 +167,25 @@ namespace Amazon.StepFunctions.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Publish. 
+        /// <para>
+        /// Set to <code>true</code> to publish the first version of the state machine during
+        /// creation. The default is <code>false</code>.
+        /// </para>
+        /// </summary>
+        public bool Publish
+        {
+            get { return this._publish.GetValueOrDefault(); }
+            set { this._publish = value; }
+        }
+
+        // Check to see if Publish property is set
+        internal bool IsSetPublish()
+        {
+            return this._publish.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the IAM role to use for this state machine.
@@ -185,8 +212,8 @@ namespace Amazon.StepFunctions.Model
         ///  
         /// <para>
         /// An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
-        /// Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>,
-        /// and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling
+        /// Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management
+        /// User Guide</i>, and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling
         /// Access Using IAM Tags</a>.
         /// </para>
         ///  
@@ -210,7 +237,7 @@ namespace Amazon.StepFunctions.Model
         /// <summary>
         /// Gets and sets the property TracingConfiguration. 
         /// <para>
-        /// Selects whether AWS X-Ray tracing is enabled.
+        /// Selects whether X-Ray tracing is enabled.
         /// </para>
         /// </summary>
         public TracingConfiguration TracingConfiguration
@@ -243,6 +270,28 @@ namespace Amazon.StepFunctions.Model
         internal bool IsSetType()
         {
             return this._type != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VersionDescription. 
+        /// <para>
+        /// Sets description about the state machine version. You can only set the description
+        /// if the <code>publish</code> parameter is set to <code>true</code>. Otherwise, if you
+        /// set <code>versionDescription</code>, but <code>publish</code> to <code>false</code>,
+        /// this API action throws <code>ValidationException</code>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Max=256)]
+        public string VersionDescription
+        {
+            get { return this._versionDescription; }
+            set { this._versionDescription = value; }
+        }
+
+        // Check to see if VersionDescription property is set
+        internal bool IsSetVersionDescription()
+        {
+            return this._versionDescription != null;
         }
 
     }

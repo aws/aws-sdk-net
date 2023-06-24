@@ -34,7 +34,7 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// TagListEntry Marshaller
-    /// </summary>       
+    /// </summary>
     public class TagListEntryMarshaller : IRequestMarshaller<TagListEntry, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static TagListEntryMarshaller Instance = new TagListEntryMarshaller();
 
     }

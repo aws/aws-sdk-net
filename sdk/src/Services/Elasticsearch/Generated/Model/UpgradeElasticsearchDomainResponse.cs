@@ -34,9 +34,25 @@ namespace Amazon.Elasticsearch.Model
     /// </summary>
     public partial class UpgradeElasticsearchDomainResponse : AmazonWebServiceResponse
     {
+        private ChangeProgressDetails _changeProgressDetails;
         private string _domainName;
         private bool? _performCheckOnly;
         private string _targetVersion;
+
+        /// <summary>
+        /// Gets and sets the property ChangeProgressDetails.
+        /// </summary>
+        public ChangeProgressDetails ChangeProgressDetails
+        {
+            get { return this._changeProgressDetails; }
+            set { this._changeProgressDetails = value; }
+        }
+
+        // Check to see if ChangeProgressDetails property is set
+        internal bool IsSetChangeProgressDetails()
+        {
+            return this._changeProgressDetails != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DomainName.

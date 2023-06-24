@@ -30,7 +30,7 @@ namespace Amazon.DataSync.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTagsForResource operation.
-    /// Returns all the tags associated with a specified resource.
+    /// Returns all the tags associated with an Amazon Web Services resource.
     /// </summary>
     public partial class ListTagsForResourceRequest : AmazonDataSyncRequest
     {
@@ -41,7 +41,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of locations to return.
+        /// Specifies how many results that you want in the response.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
@@ -60,7 +60,8 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// An opaque string that indicates the position at which to begin the next list of locations.
+        /// Specifies an opaque string that indicates the position to begin the next list of results
+        /// in the response.
         /// </para>
         /// </summary>
         [AWSProperty(Max=65535)]
@@ -79,7 +80,8 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the resource whose tags to list.
+        /// Specifies the Amazon Resource Name (ARN) of the resource that you want tag information
+        /// on.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=128)]

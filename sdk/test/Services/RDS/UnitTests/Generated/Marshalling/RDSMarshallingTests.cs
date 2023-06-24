@@ -347,6 +347,29 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("RDS")]
+        public void AddTagsToResource_BlueGreenDeploymentNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("AddTagsToResource");
+
+            var request = InstantiateClassGenerator.Execute<AddTagsToResourceRequest>();
+            var marshaller = new AddTagsToResourceRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("BlueGreenDeploymentNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = AddTagsToResourceResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
         public void AddTagsToResource_DBClusterNotFoundExceptionMarshallTest()
         {
             var operation = service_model.FindOperation("AddTagsToResource");
@@ -1396,12 +1419,12 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("RDS")]
-        public void CreateCustomAvailabilityZoneMarshallTest()
+        public void CreateBlueGreenDeploymentMarshallTest()
         {
-            var operation = service_model.FindOperation("CreateCustomAvailabilityZone");
+            var operation = service_model.FindOperation("CreateBlueGreenDeployment");
 
-            var request = InstantiateClassGenerator.Execute<CreateCustomAvailabilityZoneRequest>();
-            var marshaller = new CreateCustomAvailabilityZoneRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<CreateBlueGreenDeploymentRequest>();
+            var marshaller = new CreateBlueGreenDeploymentRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
             validator.Validate();
@@ -1409,8 +1432,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
 
             var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
-            var response = CreateCustomAvailabilityZoneResponseUnmarshaller.Instance.Unmarshall(context)
-                as CreateCustomAvailabilityZoneResponse;   
+            var response = CreateBlueGreenDeploymentResponseUnmarshaller.Instance.Unmarshall(context)
+                as CreateBlueGreenDeploymentResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
@@ -1418,21 +1441,21 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("RDS")]
-        public void CreateCustomAvailabilityZone_CustomAvailabilityZoneAlreadyExistsExceptionMarshallTest()
+        public void CreateBlueGreenDeployment_BlueGreenDeploymentAlreadyExistsExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("CreateCustomAvailabilityZone");
+            var operation = service_model.FindOperation("CreateBlueGreenDeployment");
 
-            var request = InstantiateClassGenerator.Execute<CreateCustomAvailabilityZoneRequest>();
-            var marshaller = new CreateCustomAvailabilityZoneRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<CreateBlueGreenDeploymentRequest>();
+            var marshaller = new CreateBlueGreenDeploymentRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
             var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
             validator.Validate();
 
-            var exception = operation.Exceptions.First(e => e.Name.Equals("CustomAvailabilityZoneAlreadyExistsException"));
+            var exception = operation.Exceptions.First(e => e.Name.Equals("BlueGreenDeploymentAlreadyExistsException"));
             var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
-            var response = CreateCustomAvailabilityZoneResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+            var response = CreateBlueGreenDeploymentResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -1441,21 +1464,21 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("RDS")]
-        public void CreateCustomAvailabilityZone_CustomAvailabilityZoneQuotaExceededExceptionMarshallTest()
+        public void CreateBlueGreenDeployment_DBClusterNotFoundExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("CreateCustomAvailabilityZone");
+            var operation = service_model.FindOperation("CreateBlueGreenDeployment");
 
-            var request = InstantiateClassGenerator.Execute<CreateCustomAvailabilityZoneRequest>();
-            var marshaller = new CreateCustomAvailabilityZoneRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<CreateBlueGreenDeploymentRequest>();
+            var marshaller = new CreateBlueGreenDeploymentRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
             var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
             validator.Validate();
 
-            var exception = operation.Exceptions.First(e => e.Name.Equals("CustomAvailabilityZoneQuotaExceededException"));
+            var exception = operation.Exceptions.First(e => e.Name.Equals("DBClusterNotFoundException"));
             var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
-            var response = CreateCustomAvailabilityZoneResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+            var response = CreateBlueGreenDeploymentResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -1464,21 +1487,205 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("RDS")]
-        public void CreateCustomAvailabilityZone_KMSKeyNotAccessibleExceptionMarshallTest()
+        public void CreateBlueGreenDeployment_DBClusterParameterGroupNotFoundExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("CreateCustomAvailabilityZone");
+            var operation = service_model.FindOperation("CreateBlueGreenDeployment");
 
-            var request = InstantiateClassGenerator.Execute<CreateCustomAvailabilityZoneRequest>();
-            var marshaller = new CreateCustomAvailabilityZoneRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<CreateBlueGreenDeploymentRequest>();
+            var marshaller = new CreateBlueGreenDeploymentRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
             var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
             validator.Validate();
 
-            var exception = operation.Exceptions.First(e => e.Name.Equals("KMSKeyNotAccessibleException"));
+            var exception = operation.Exceptions.First(e => e.Name.Equals("DBClusterParameterGroupNotFoundException"));
             var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
-            var response = CreateCustomAvailabilityZoneResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+            var response = CreateBlueGreenDeploymentResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
+        public void CreateBlueGreenDeployment_DBClusterQuotaExceededExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateBlueGreenDeployment");
+
+            var request = InstantiateClassGenerator.Execute<CreateBlueGreenDeploymentRequest>();
+            var marshaller = new CreateBlueGreenDeploymentRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("DBClusterQuotaExceededException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = CreateBlueGreenDeploymentResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
+        public void CreateBlueGreenDeployment_DBInstanceNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateBlueGreenDeployment");
+
+            var request = InstantiateClassGenerator.Execute<CreateBlueGreenDeploymentRequest>();
+            var marshaller = new CreateBlueGreenDeploymentRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("DBInstanceNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = CreateBlueGreenDeploymentResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
+        public void CreateBlueGreenDeployment_DBParameterGroupNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateBlueGreenDeployment");
+
+            var request = InstantiateClassGenerator.Execute<CreateBlueGreenDeploymentRequest>();
+            var marshaller = new CreateBlueGreenDeploymentRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("DBParameterGroupNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = CreateBlueGreenDeploymentResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
+        public void CreateBlueGreenDeployment_InstanceQuotaExceededExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateBlueGreenDeployment");
+
+            var request = InstantiateClassGenerator.Execute<CreateBlueGreenDeploymentRequest>();
+            var marshaller = new CreateBlueGreenDeploymentRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InstanceQuotaExceededException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = CreateBlueGreenDeploymentResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
+        public void CreateBlueGreenDeployment_InvalidDBClusterStateExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateBlueGreenDeployment");
+
+            var request = InstantiateClassGenerator.Execute<CreateBlueGreenDeploymentRequest>();
+            var marshaller = new CreateBlueGreenDeploymentRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidDBClusterStateException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = CreateBlueGreenDeploymentResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
+        public void CreateBlueGreenDeployment_InvalidDBInstanceStateExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateBlueGreenDeployment");
+
+            var request = InstantiateClassGenerator.Execute<CreateBlueGreenDeploymentRequest>();
+            var marshaller = new CreateBlueGreenDeploymentRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidDBInstanceStateException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = CreateBlueGreenDeploymentResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
+        public void CreateBlueGreenDeployment_SourceClusterNotSupportedExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateBlueGreenDeployment");
+
+            var request = InstantiateClassGenerator.Execute<CreateBlueGreenDeploymentRequest>();
+            var marshaller = new CreateBlueGreenDeploymentRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("SourceClusterNotSupportedException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = CreateBlueGreenDeploymentResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
+        public void CreateBlueGreenDeployment_SourceDatabaseNotSupportedExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateBlueGreenDeployment");
+
+            var request = InstantiateClassGenerator.Execute<CreateBlueGreenDeploymentRequest>();
+            var marshaller = new CreateBlueGreenDeploymentRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("SourceDatabaseNotSupportedException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = CreateBlueGreenDeploymentResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -1503,6 +1710,29 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var response = CreateCustomDBEngineVersionResponseUnmarshaller.Instance.Unmarshall(context)
                 as CreateCustomDBEngineVersionResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
+        public void CreateCustomDBEngineVersion_CreateCustomDBEngineVersionExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateCustomDBEngineVersion");
+
+            var request = InstantiateClassGenerator.Execute<CreateCustomDBEngineVersionRequest>();
+            var marshaller = new CreateCustomDBEngineVersionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("CreateCustomDBEngineVersionException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = CreateCustomDBEngineVersionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -1544,6 +1774,29 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             validator.Validate();
 
             var exception = operation.Exceptions.First(e => e.Name.Equals("CustomDBEngineVersionQuotaExceededException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = CreateCustomDBEngineVersionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
+        public void CreateCustomDBEngineVersion_Ec2ImagePropertiesNotSupportedExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateCustomDBEngineVersion");
+
+            var request = InstantiateClassGenerator.Execute<CreateCustomDBEngineVersionRequest>();
+            var marshaller = new CreateCustomDBEngineVersionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("Ec2ImagePropertiesNotSupportedException"));
             var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
             var response = CreateCustomDBEngineVersionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
@@ -2447,6 +2700,29 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("RDS")]
+        public void CreateDBInstance_CertificateNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateDBInstance");
+
+            var request = InstantiateClassGenerator.Execute<CreateDBInstanceRequest>();
+            var marshaller = new CreateDBInstanceRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("CertificateNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = CreateDBInstanceResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
         public void CreateDBInstance_DBClusterNotFoundExceptionMarshallTest()
         {
             var operation = service_model.FindOperation("CreateDBInstance");
@@ -2746,6 +3022,29 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("RDS")]
+        public void CreateDBInstance_NetworkTypeNotSupportedExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateDBInstance");
+
+            var request = InstantiateClassGenerator.Execute<CreateDBInstanceRequest>();
+            var marshaller = new CreateDBInstanceRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("NetworkTypeNotSupportedException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = CreateDBInstanceResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
         public void CreateDBInstance_OptionGroupNotFoundExceptionMarshallTest()
         {
             var operation = service_model.FindOperation("CreateDBInstance");
@@ -2854,6 +3153,29 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var response = CreateDBInstanceReadReplicaResponseUnmarshaller.Instance.Unmarshall(context)
                 as CreateDBInstanceReadReplicaResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
+        public void CreateDBInstanceReadReplica_DBClusterNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateDBInstanceReadReplica");
+
+            var request = InstantiateClassGenerator.Execute<CreateDBInstanceReadReplicaRequest>();
+            var marshaller = new CreateDBInstanceReadReplicaRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("DBClusterNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = CreateDBInstanceReadReplicaResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -3090,6 +3412,29 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("RDS")]
+        public void CreateDBInstanceReadReplica_InvalidDBClusterStateExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateDBInstanceReadReplica");
+
+            var request = InstantiateClassGenerator.Execute<CreateDBInstanceReadReplicaRequest>();
+            var marshaller = new CreateDBInstanceReadReplicaRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidDBClusterStateException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = CreateDBInstanceReadReplicaResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
         public void CreateDBInstanceReadReplica_InvalidDBInstanceStateExceptionMarshallTest()
         {
             var operation = service_model.FindOperation("CreateDBInstanceReadReplica");
@@ -3194,6 +3539,29 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             validator.Validate();
 
             var exception = operation.Exceptions.First(e => e.Name.Equals("KMSKeyNotAccessibleException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = CreateDBInstanceReadReplicaResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
+        public void CreateDBInstanceReadReplica_NetworkTypeNotSupportedExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateDBInstanceReadReplica");
+
+            var request = InstantiateClassGenerator.Execute<CreateDBInstanceReadReplicaRequest>();
+            var marshaller = new CreateDBInstanceReadReplicaRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("NetworkTypeNotSupportedException"));
             var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
             var response = CreateDBInstanceReadReplicaResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
@@ -4300,12 +4668,12 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("RDS")]
-        public void DeleteCustomAvailabilityZoneMarshallTest()
+        public void DeleteBlueGreenDeploymentMarshallTest()
         {
-            var operation = service_model.FindOperation("DeleteCustomAvailabilityZone");
+            var operation = service_model.FindOperation("DeleteBlueGreenDeployment");
 
-            var request = InstantiateClassGenerator.Execute<DeleteCustomAvailabilityZoneRequest>();
-            var marshaller = new DeleteCustomAvailabilityZoneRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<DeleteBlueGreenDeploymentRequest>();
+            var marshaller = new DeleteBlueGreenDeploymentRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
             validator.Validate();
@@ -4313,8 +4681,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
 
             var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
-            var response = DeleteCustomAvailabilityZoneResponseUnmarshaller.Instance.Unmarshall(context)
-                as DeleteCustomAvailabilityZoneResponse;   
+            var response = DeleteBlueGreenDeploymentResponseUnmarshaller.Instance.Unmarshall(context)
+                as DeleteBlueGreenDeploymentResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
@@ -4322,21 +4690,21 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("RDS")]
-        public void DeleteCustomAvailabilityZone_CustomAvailabilityZoneNotFoundExceptionMarshallTest()
+        public void DeleteBlueGreenDeployment_BlueGreenDeploymentNotFoundExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("DeleteCustomAvailabilityZone");
+            var operation = service_model.FindOperation("DeleteBlueGreenDeployment");
 
-            var request = InstantiateClassGenerator.Execute<DeleteCustomAvailabilityZoneRequest>();
-            var marshaller = new DeleteCustomAvailabilityZoneRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<DeleteBlueGreenDeploymentRequest>();
+            var marshaller = new DeleteBlueGreenDeploymentRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
             var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
             validator.Validate();
 
-            var exception = operation.Exceptions.First(e => e.Name.Equals("CustomAvailabilityZoneNotFoundException"));
+            var exception = operation.Exceptions.First(e => e.Name.Equals("BlueGreenDeploymentNotFoundException"));
             var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
-            var response = DeleteCustomAvailabilityZoneResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+            var response = DeleteBlueGreenDeploymentResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -4345,21 +4713,21 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("RDS")]
-        public void DeleteCustomAvailabilityZone_KMSKeyNotAccessibleExceptionMarshallTest()
+        public void DeleteBlueGreenDeployment_InvalidBlueGreenDeploymentStateExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("DeleteCustomAvailabilityZone");
+            var operation = service_model.FindOperation("DeleteBlueGreenDeployment");
 
-            var request = InstantiateClassGenerator.Execute<DeleteCustomAvailabilityZoneRequest>();
-            var marshaller = new DeleteCustomAvailabilityZoneRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<DeleteBlueGreenDeploymentRequest>();
+            var marshaller = new DeleteBlueGreenDeploymentRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
             var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
             validator.Validate();
 
-            var exception = operation.Exceptions.First(e => e.Name.Equals("KMSKeyNotAccessibleException"));
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidBlueGreenDeploymentStateException"));
             var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
-            var response = DeleteCustomAvailabilityZoneResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+            var response = DeleteBlueGreenDeploymentResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -5575,51 +5943,6 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("RDS")]
-        public void DeleteInstallationMediaMarshallTest()
-        {
-            var operation = service_model.FindOperation("DeleteInstallationMedia");
-
-            var request = InstantiateClassGenerator.Execute<DeleteInstallationMediaRequest>();
-            var marshaller = new DeleteInstallationMediaRequestMarshaller();
-            var internalRequest = marshaller.Marshall(request);
-            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
-            validator.Validate();
-
-
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
-            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
-            var response = DeleteInstallationMediaResponseUnmarshaller.Instance.Unmarshall(context)
-                as DeleteInstallationMediaResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Query")]
-        [TestCategory("RDS")]
-        public void DeleteInstallationMedia_InstallationMediaNotFoundExceptionMarshallTest()
-        {
-            var operation = service_model.FindOperation("DeleteInstallationMedia");
-
-            var request = InstantiateClassGenerator.Execute<DeleteInstallationMediaRequest>();
-            var marshaller = new DeleteInstallationMediaRequestMarshaller();
-            var internalRequest = marshaller.Marshall(request);
-
-            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
-            validator.Validate();
-
-            var exception = operation.Exceptions.First(e => e.Name.Equals("InstallationMediaNotFoundException"));
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
-            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
-            var response = DeleteInstallationMediaResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
-
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Query")]
-        [TestCategory("RDS")]
         public void DeleteOptionGroupMarshallTest()
         {
             var operation = service_model.FindOperation("DeleteOptionGroup");
@@ -5819,6 +6142,51 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("RDS")]
+        public void DescribeBlueGreenDeploymentsMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeBlueGreenDeployments");
+
+            var request = InstantiateClassGenerator.Execute<DescribeBlueGreenDeploymentsRequest>();
+            var marshaller = new DescribeBlueGreenDeploymentsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = DescribeBlueGreenDeploymentsResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeBlueGreenDeploymentsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
+        public void DescribeBlueGreenDeployments_BlueGreenDeploymentNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeBlueGreenDeployments");
+
+            var request = InstantiateClassGenerator.Execute<DescribeBlueGreenDeploymentsRequest>();
+            var marshaller = new DescribeBlueGreenDeploymentsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("BlueGreenDeploymentNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = DescribeBlueGreenDeploymentsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
         public void DescribeCertificatesMarshallTest()
         {
             var operation = service_model.FindOperation("DescribeCertificates");
@@ -5856,51 +6224,6 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
             var response = DescribeCertificatesResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
-
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Query")]
-        [TestCategory("RDS")]
-        public void DescribeCustomAvailabilityZonesMarshallTest()
-        {
-            var operation = service_model.FindOperation("DescribeCustomAvailabilityZones");
-
-            var request = InstantiateClassGenerator.Execute<DescribeCustomAvailabilityZonesRequest>();
-            var marshaller = new DescribeCustomAvailabilityZonesRequestMarshaller();
-            var internalRequest = marshaller.Marshall(request);
-            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
-            validator.Validate();
-
-
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
-            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
-            var response = DescribeCustomAvailabilityZonesResponseUnmarshaller.Instance.Unmarshall(context)
-                as DescribeCustomAvailabilityZonesResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Query")]
-        [TestCategory("RDS")]
-        public void DescribeCustomAvailabilityZones_CustomAvailabilityZoneNotFoundExceptionMarshallTest()
-        {
-            var operation = service_model.FindOperation("DescribeCustomAvailabilityZones");
-
-            var request = InstantiateClassGenerator.Execute<DescribeCustomAvailabilityZonesRequest>();
-            var marshaller = new DescribeCustomAvailabilityZonesRequestMarshaller();
-            var internalRequest = marshaller.Marshall(request);
-
-            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
-            validator.Validate();
-
-            var exception = operation.Exceptions.First(e => e.Name.Equals("CustomAvailabilityZoneNotFoundException"));
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
-            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
-            var response = DescribeCustomAvailabilityZonesResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -7215,51 +7538,6 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("RDS")]
-        public void DescribeInstallationMediaMarshallTest()
-        {
-            var operation = service_model.FindOperation("DescribeInstallationMedia");
-
-            var request = InstantiateClassGenerator.Execute<DescribeInstallationMediaRequest>();
-            var marshaller = new DescribeInstallationMediaRequestMarshaller();
-            var internalRequest = marshaller.Marshall(request);
-            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
-            validator.Validate();
-
-
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
-            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
-            var response = DescribeInstallationMediaResponseUnmarshaller.Instance.Unmarshall(context)
-                as DescribeInstallationMediaResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Query")]
-        [TestCategory("RDS")]
-        public void DescribeInstallationMedia_InstallationMediaNotFoundExceptionMarshallTest()
-        {
-            var operation = service_model.FindOperation("DescribeInstallationMedia");
-
-            var request = InstantiateClassGenerator.Execute<DescribeInstallationMediaRequest>();
-            var marshaller = new DescribeInstallationMediaRequestMarshaller();
-            var internalRequest = marshaller.Marshall(request);
-
-            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
-            validator.Validate();
-
-            var exception = operation.Exceptions.First(e => e.Name.Equals("InstallationMediaNotFoundException"));
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
-            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
-            var response = DescribeInstallationMediaResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
-
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Query")]
-        [TestCategory("RDS")]
         public void DescribeOptionGroupOptionsMarshallTest()
         {
             var operation = service_model.FindOperation("DescribeOptionGroupOptions");
@@ -7847,74 +8125,6 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("RDS")]
-        public void ImportInstallationMediaMarshallTest()
-        {
-            var operation = service_model.FindOperation("ImportInstallationMedia");
-
-            var request = InstantiateClassGenerator.Execute<ImportInstallationMediaRequest>();
-            var marshaller = new ImportInstallationMediaRequestMarshaller();
-            var internalRequest = marshaller.Marshall(request);
-            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
-            validator.Validate();
-
-
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
-            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
-            var response = ImportInstallationMediaResponseUnmarshaller.Instance.Unmarshall(context)
-                as ImportInstallationMediaResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Query")]
-        [TestCategory("RDS")]
-        public void ImportInstallationMedia_CustomAvailabilityZoneNotFoundExceptionMarshallTest()
-        {
-            var operation = service_model.FindOperation("ImportInstallationMedia");
-
-            var request = InstantiateClassGenerator.Execute<ImportInstallationMediaRequest>();
-            var marshaller = new ImportInstallationMediaRequestMarshaller();
-            var internalRequest = marshaller.Marshall(request);
-
-            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
-            validator.Validate();
-
-            var exception = operation.Exceptions.First(e => e.Name.Equals("CustomAvailabilityZoneNotFoundException"));
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
-            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
-            var response = ImportInstallationMediaResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
-
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Query")]
-        [TestCategory("RDS")]
-        public void ImportInstallationMedia_InstallationMediaAlreadyExistsExceptionMarshallTest()
-        {
-            var operation = service_model.FindOperation("ImportInstallationMedia");
-
-            var request = InstantiateClassGenerator.Execute<ImportInstallationMediaRequest>();
-            var marshaller = new ImportInstallationMediaRequestMarshaller();
-            var internalRequest = marshaller.Marshall(request);
-
-            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
-            validator.Validate();
-
-            var exception = operation.Exceptions.First(e => e.Name.Equals("InstallationMediaAlreadyExistsException"));
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
-            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
-            var response = ImportInstallationMediaResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
-
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Query")]
-        [TestCategory("RDS")]
         public void ListTagsForResourceMarshallTest()
         {
             var operation = service_model.FindOperation("ListTagsForResource");
@@ -7931,6 +8141,29 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var response = ListTagsForResourceResponseUnmarshaller.Instance.Unmarshall(context)
                 as ListTagsForResourceResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
+        public void ListTagsForResource_BlueGreenDeploymentNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListTagsForResource");
+
+            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>();
+            var marshaller = new ListTagsForResourceRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("BlueGreenDeploymentNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = ListTagsForResourceResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -8044,6 +8277,97 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
             var response = ListTagsForResourceResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
+        public void ModifyActivityStreamMarshallTest()
+        {
+            var operation = service_model.FindOperation("ModifyActivityStream");
+
+            var request = InstantiateClassGenerator.Execute<ModifyActivityStreamRequest>();
+            var marshaller = new ModifyActivityStreamRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = ModifyActivityStreamResponseUnmarshaller.Instance.Unmarshall(context)
+                as ModifyActivityStreamResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
+        public void ModifyActivityStream_DBInstanceNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ModifyActivityStream");
+
+            var request = InstantiateClassGenerator.Execute<ModifyActivityStreamRequest>();
+            var marshaller = new ModifyActivityStreamRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("DBInstanceNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = ModifyActivityStreamResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
+        public void ModifyActivityStream_InvalidDBInstanceStateExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ModifyActivityStream");
+
+            var request = InstantiateClassGenerator.Execute<ModifyActivityStreamRequest>();
+            var marshaller = new ModifyActivityStreamRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidDBInstanceStateException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = ModifyActivityStreamResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
+        public void ModifyActivityStream_ResourceNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ModifyActivityStream");
+
+            var request = InstantiateClassGenerator.Execute<ModifyActivityStreamRequest>();
+            var marshaller = new ModifyActivityStreamRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ResourceNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = ModifyActivityStreamResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -8347,6 +8671,29 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("RDS")]
+        public void ModifyDBCluster_DBInstanceAlreadyExistsExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ModifyDBCluster");
+
+            var request = InstantiateClassGenerator.Execute<ModifyDBClusterRequest>();
+            var marshaller = new ModifyDBClusterRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("DBInstanceAlreadyExistsException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = ModifyDBClusterResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
         public void ModifyDBCluster_DBSubnetGroupNotFoundExceptionMarshallTest()
         {
             var operation = service_model.FindOperation("ModifyDBCluster");
@@ -8543,6 +8890,29 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             validator.Validate();
 
             var exception = operation.Exceptions.First(e => e.Name.Equals("StorageQuotaExceededException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = ModifyDBClusterResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
+        public void ModifyDBCluster_StorageTypeNotAvailableExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ModifyDBCluster");
+
+            var request = InstantiateClassGenerator.Execute<ModifyDBClusterRequest>();
+            var marshaller = new ModifyDBClusterRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("StorageTypeNotAvailableException"));
             var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
             var response = ModifyDBClusterResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
@@ -9206,6 +9576,29 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             validator.Validate();
 
             var exception = operation.Exceptions.First(e => e.Name.Equals("KMSKeyNotAccessibleException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = ModifyDBInstanceResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
+        public void ModifyDBInstance_NetworkTypeNotSupportedExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ModifyDBInstance");
+
+            var request = InstantiateClassGenerator.Execute<ModifyDBInstanceRequest>();
+            var marshaller = new ModifyDBInstanceRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("NetworkTypeNotSupportedException"));
             var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
             var response = ModifyDBInstanceResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
@@ -11251,6 +11644,29 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("RDS")]
+        public void RemoveTagsFromResource_BlueGreenDeploymentNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("RemoveTagsFromResource");
+
+            var request = InstantiateClassGenerator.Execute<RemoveTagsFromResourceRequest>();
+            var marshaller = new RemoveTagsFromResourceRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("BlueGreenDeploymentNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = RemoveTagsFromResourceResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
         public void RemoveTagsFromResource_DBClusterNotFoundExceptionMarshallTest()
         {
             var operation = service_model.FindOperation("RemoveTagsFromResource");
@@ -11846,6 +12262,29 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("RDS")]
+        public void RestoreDBClusterFromS3_StorageTypeNotSupportedExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("RestoreDBClusterFromS3");
+
+            var request = InstantiateClassGenerator.Execute<RestoreDBClusterFromS3Request>();
+            var marshaller = new RestoreDBClusterFromS3RequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("StorageTypeNotSupportedException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = RestoreDBClusterFromS3ResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
         public void RestoreDBClusterFromSnapshotMarshallTest()
         {
             var operation = service_model.FindOperation("RestoreDBClusterFromSnapshot");
@@ -12087,6 +12526,29 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             validator.Validate();
 
             var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidDBClusterSnapshotStateException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = RestoreDBClusterFromSnapshotResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
+        public void RestoreDBClusterFromSnapshot_InvalidDBInstanceStateExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("RestoreDBClusterFromSnapshot");
+
+            var request = InstantiateClassGenerator.Execute<RestoreDBClusterFromSnapshotRequest>();
+            var marshaller = new RestoreDBClusterFromSnapshotRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidDBInstanceStateException"));
             var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
             var response = RestoreDBClusterFromSnapshotResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
@@ -12763,6 +13225,29 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("RDS")]
+        public void RestoreDBInstanceFromDBSnapshot_DBClusterSnapshotNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("RestoreDBInstanceFromDBSnapshot");
+
+            var request = InstantiateClassGenerator.Execute<RestoreDBInstanceFromDBSnapshotRequest>();
+            var marshaller = new RestoreDBInstanceFromDBSnapshotRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("DBClusterSnapshotNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = RestoreDBInstanceFromDBSnapshotResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
         public void RestoreDBInstanceFromDBSnapshot_DBInstanceAlreadyExistsExceptionMarshallTest()
         {
             var operation = service_model.FindOperation("RestoreDBInstanceFromDBSnapshot");
@@ -13074,6 +13559,29 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             validator.Validate();
 
             var exception = operation.Exceptions.First(e => e.Name.Equals("KMSKeyNotAccessibleException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = RestoreDBInstanceFromDBSnapshotResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
+        public void RestoreDBInstanceFromDBSnapshot_NetworkTypeNotSupportedExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("RestoreDBInstanceFromDBSnapshot");
+
+            var request = InstantiateClassGenerator.Execute<RestoreDBInstanceFromDBSnapshotRequest>();
+            var marshaller = new RestoreDBInstanceFromDBSnapshotRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("NetworkTypeNotSupportedException"));
             var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
             var response = RestoreDBInstanceFromDBSnapshotResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
@@ -13487,6 +13995,29 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             validator.Validate();
 
             var exception = operation.Exceptions.First(e => e.Name.Equals("KMSKeyNotAccessibleException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = RestoreDBInstanceFromS3ResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
+        public void RestoreDBInstanceFromS3_NetworkTypeNotSupportedExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("RestoreDBInstanceFromS3");
+
+            var request = InstantiateClassGenerator.Execute<RestoreDBInstanceFromS3Request>();
+            var marshaller = new RestoreDBInstanceFromS3RequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("NetworkTypeNotSupportedException"));
             var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
             var response = RestoreDBInstanceFromS3ResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
@@ -13992,6 +14523,29 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             validator.Validate();
 
             var exception = operation.Exceptions.First(e => e.Name.Equals("KMSKeyNotAccessibleException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = RestoreDBInstanceToPointInTimeResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
+        public void RestoreDBInstanceToPointInTime_NetworkTypeNotSupportedExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("RestoreDBInstanceToPointInTime");
+
+            var request = InstantiateClassGenerator.Execute<RestoreDBInstanceToPointInTimeRequest>();
+            var marshaller = new RestoreDBInstanceToPointInTimeRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("NetworkTypeNotSupportedException"));
             var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
             var response = RestoreDBInstanceToPointInTimeResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
@@ -14894,6 +15448,29 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("RDS")]
+        public void StartExportTask_DBClusterNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("StartExportTask");
+
+            var request = InstantiateClassGenerator.Execute<StartExportTaskRequest>();
+            var marshaller = new StartExportTaskRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("DBClusterNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = StartExportTaskResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
         public void StartExportTask_DBClusterSnapshotNotFoundExceptionMarshallTest()
         {
             var operation = service_model.FindOperation("StartExportTask");
@@ -15526,6 +16103,142 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
             var response = StopDBInstanceAutomatedBackupsReplicationResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
+        public void SwitchoverBlueGreenDeploymentMarshallTest()
+        {
+            var operation = service_model.FindOperation("SwitchoverBlueGreenDeployment");
+
+            var request = InstantiateClassGenerator.Execute<SwitchoverBlueGreenDeploymentRequest>();
+            var marshaller = new SwitchoverBlueGreenDeploymentRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = SwitchoverBlueGreenDeploymentResponseUnmarshaller.Instance.Unmarshall(context)
+                as SwitchoverBlueGreenDeploymentResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
+        public void SwitchoverBlueGreenDeployment_BlueGreenDeploymentNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("SwitchoverBlueGreenDeployment");
+
+            var request = InstantiateClassGenerator.Execute<SwitchoverBlueGreenDeploymentRequest>();
+            var marshaller = new SwitchoverBlueGreenDeploymentRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("BlueGreenDeploymentNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = SwitchoverBlueGreenDeploymentResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
+        public void SwitchoverBlueGreenDeployment_InvalidBlueGreenDeploymentStateExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("SwitchoverBlueGreenDeployment");
+
+            var request = InstantiateClassGenerator.Execute<SwitchoverBlueGreenDeploymentRequest>();
+            var marshaller = new SwitchoverBlueGreenDeploymentRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidBlueGreenDeploymentStateException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = SwitchoverBlueGreenDeploymentResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
+        public void SwitchoverReadReplicaMarshallTest()
+        {
+            var operation = service_model.FindOperation("SwitchoverReadReplica");
+
+            var request = InstantiateClassGenerator.Execute<SwitchoverReadReplicaRequest>();
+            var marshaller = new SwitchoverReadReplicaRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = SwitchoverReadReplicaResponseUnmarshaller.Instance.Unmarshall(context)
+                as SwitchoverReadReplicaResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
+        public void SwitchoverReadReplica_DBInstanceNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("SwitchoverReadReplica");
+
+            var request = InstantiateClassGenerator.Execute<SwitchoverReadReplicaRequest>();
+            var marshaller = new SwitchoverReadReplicaRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("DBInstanceNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = SwitchoverReadReplicaResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
+        public void SwitchoverReadReplica_InvalidDBInstanceStateExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("SwitchoverReadReplica");
+
+            var request = InstantiateClassGenerator.Execute<SwitchoverReadReplicaRequest>();
+            var marshaller = new SwitchoverReadReplicaRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidDBInstanceStateException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = SwitchoverReadReplicaResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }

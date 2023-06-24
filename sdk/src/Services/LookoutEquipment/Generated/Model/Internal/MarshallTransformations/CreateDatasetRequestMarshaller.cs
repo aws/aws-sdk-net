@@ -58,7 +58,7 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
             string target = "AWSLookoutEquipmentFrontendService.CreateDataset";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.0";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-12-15";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-12-15";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -76,7 +76,7 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
                 else if(!(publicRequest.IsSetClientToken()))
                 {
                     context.Writer.WritePropertyName("ClientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());                                                
+                    context.Writer.Write(Guid.NewGuid().ToString());
                 }
                 if(publicRequest.IsSetDatasetName())
                 {
@@ -117,7 +117,6 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

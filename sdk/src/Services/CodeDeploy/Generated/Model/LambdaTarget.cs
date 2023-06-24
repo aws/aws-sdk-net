@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeDeploy.Model
 {
     /// <summary>
-    /// Information about the target AWS Lambda function during an AWS Lambda deployment.
+    /// Information about the target Lambda function during an Lambda deployment.
     /// </summary>
     public partial class LambdaTarget
     {
@@ -117,7 +117,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        ///  The status an AWS Lambda deployment's target Lambda function. 
+        ///  The status an Lambda deployment's target Lambda function. 
         /// </para>
         /// </summary>
         public TargetStatus Status

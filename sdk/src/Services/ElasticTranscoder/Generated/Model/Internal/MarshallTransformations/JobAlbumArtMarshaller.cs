@@ -34,7 +34,7 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// JobAlbumArt Marshaller
-    /// </summary>       
+    /// </summary>
     public class JobAlbumArtMarshaller : IRequestMarshaller<JobAlbumArt, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static JobAlbumArtMarshaller Instance = new JobAlbumArtMarshaller();
 
     }

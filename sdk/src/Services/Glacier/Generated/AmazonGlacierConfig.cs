@@ -17,22 +17,22 @@
  * Do not modify this file. This file is generated from the glacier-2012-06-01.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
-
+using Amazon.Glacier.Internal;
 
 namespace Amazon.Glacier
 {
     /// <summary>
     /// Configuration for accessing Amazon Glacier service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonGlacierConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.105");
+            InternalSDKUtils.BuildUserAgentString("3.7.101.85");
 
         private string _userAgent = UserAgentString;
 
@@ -40,8 +40,10 @@ namespace Amazon.Glacier
         /// Default constructor
         /// </summary>
         public AmazonGlacierConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonGlacierDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "glacier";
+            this.EndpointProvider = new AmazonGlacierEndpointProvider();
         }
 
         /// <summary>
@@ -76,5 +78,6 @@ namespace Amazon.Glacier
                 return _userAgent;
             }
         }
+
     }
 }

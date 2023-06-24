@@ -30,11 +30,12 @@ namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
     /// Container for the parameters to the GenerateDataKeyPair operation.
-    /// Generates a unique asymmetric data key pair. The <code>GenerateDataKeyPair</code>
-    /// operation returns a plaintext public key, a plaintext private key, and a copy of the
-    /// private key that is encrypted under the symmetric KMS key you specify. You can use
-    /// the data key pair to perform asymmetric cryptography and implement digital signatures
-    /// outside of KMS.
+    /// Returns a unique asymmetric data key pair for use outside of KMS. This operation returns
+    /// a plaintext public key, a plaintext private key, and a copy of the private key that
+    /// is encrypted under the symmetric encryption KMS key you specify. You can use the data
+    /// key pair to perform asymmetric cryptography and implement digital signatures outside
+    /// of KMS. The bytes in the keys are random; they not related to the caller or to the
+    /// KMS key that is used to encrypt the private key. 
     /// 
     ///  
     /// <para>
@@ -45,17 +46,18 @@ namespace Amazon.KeyManagementService.Model
     /// </para>
     ///  
     /// <para>
-    /// To generate a data key pair, you must specify a symmetric KMS key to encrypt the private
-    /// key in a data key pair. You cannot use an asymmetric KMS key or a KMS key in a custom
-    /// key store. To get the type and origin of your KMS key, use the <a>DescribeKey</a>
+    /// To generate a data key pair, you must specify a symmetric encryption KMS key to encrypt
+    /// the private key in a data key pair. You cannot use an asymmetric KMS key or a KMS
+    /// key in a custom key store. To get the type and origin of your KMS key, use the <a>DescribeKey</a>
     /// operation. 
     /// </para>
     ///  
     /// <para>
     /// Use the <code>KeyPairSpec</code> parameter to choose an RSA or Elliptic Curve (ECC)
-    /// data key pair. KMS recommends that your use ECC key pairs for signing, and use RSA
-    /// key pairs for either encryption or signing, but not both. However, KMS cannot enforce
-    /// any restrictions on the use of data key pairs outside of KMS.
+    /// data key pair. In China Regions, you can also choose an SM2 data key pair. KMS recommends
+    /// that you use ECC key pairs for signing, and use RSA and SM2 key pairs for either encryption
+    /// or signing, but not both. However, KMS cannot enforce any restrictions on the use
+    /// of data key pairs outside of KMS.
     /// </para>
     ///  
     /// <para>
@@ -70,15 +72,32 @@ namespace Amazon.KeyManagementService.Model
     ///  
     /// <para>
     ///  <code>GenerateDataKeyPair</code> returns a unique data key pair for each request.
-    /// The bytes in the keys are not related to the caller or the KMS key that is used to
-    /// encrypt the private key. The public key is a DER-encoded X.509 SubjectPublicKeyInfo,
+    /// The bytes in the keys are random; they are not related to the caller or the KMS key
+    /// that is used to encrypt the private key. The public key is a DER-encoded X.509 SubjectPublicKeyInfo,
     /// as specified in <a href="https://tools.ietf.org/html/rfc5280">RFC 5280</a>. The private
     /// key is a DER-encoded PKCS8 PrivateKeyInfo, as specified in <a href="https://tools.ietf.org/html/rfc5958">RFC
     /// 5958</a>.
     /// </para>
     ///  
     /// <para>
-    /// You can use the optional encryption context to add additional security to the encryption
+    ///  <code>GenerateDataKeyPair</code> also supports <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave.html">Amazon
+    /// Web Services Nitro Enclaves</a>, which provide an isolated compute environment in
+    /// Amazon EC2. To call <code>GenerateDataKeyPair</code> for an Amazon Web Services Nitro
+    /// enclave, use the <a href="https://docs.aws.amazon.com/enclaves/latest/user/developing-applications.html#sdk">Amazon
+    /// Web Services Nitro Enclaves SDK</a> or any Amazon Web Services SDK. Use the <code>Recipient</code>
+    /// parameter to provide the attestation document for the enclave. <code>GenerateDataKeyPair</code>
+    /// returns the public data key and a copy of the private data key encrypted under the
+    /// specified KMS key, as usual. But instead of a plaintext copy of the private data key
+    /// (<code>PrivateKeyPlaintext</code>), the response includes a copy of the private data
+    /// key encrypted under the public key from the attestation document (<code>CiphertextForRecipient</code>).
+    /// For information about the interaction between KMS and Amazon Web Services Nitro Enclaves,
+    /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How
+    /// Amazon Web Services Nitro Enclaves uses KMS</a> in the <i>Key Management Service Developer
+    /// Guide</i>..
+    /// </para>
+    ///  
+    /// <para>
+    /// You can use an optional encryption context to add additional security to the encryption
     /// operation. If you specify an <code>EncryptionContext</code>, you must specify the
     /// same encryption context (a case-sensitive exact match) when decrypting the encrypted
     /// data key. Otherwise, the request to decrypt fails with an <code>InvalidCiphertextException</code>.
@@ -89,7 +108,7 @@ namespace Amazon.KeyManagementService.Model
     /// <para>
     /// The KMS key that you use for this operation must be in a compatible key state. For
     /// details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-    /// state: Effect on your KMS key</a> in the <i>Key Management Service Developer Guide</i>.
+    /// states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -134,6 +153,7 @@ namespace Amazon.KeyManagementService.Model
         private List<string> _grantTokens = new List<string>();
         private string _keyId;
         private DataKeyPairSpec _keyPairSpec;
+        private RecipientInfo _recipient;
 
         /// <summary>
         /// Gets and sets the property EncryptionContext. 
@@ -141,18 +161,24 @@ namespace Amazon.KeyManagementService.Model
         /// Specifies the encryption context that will be used when encrypting the private key
         /// in the data key pair.
         /// </para>
-        ///  
+        ///  <important> 
         /// <para>
-        /// An <i>encryption context</i> is a collection of non-secret key-value pairs that represents
+        /// Do not include confidential or sensitive information in this field. This field may
+        /// be displayed in plaintext in CloudTrail logs and other output.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// An <i>encryption context</i> is a collection of non-secret key-value pairs that represent
         /// additional authenticated data. When you use an encryption context to encrypt data,
         /// you must specify the same (an exact case-sensitive match) encryption context to decrypt
-        /// the data. An encryption context is optional when encrypting with a symmetric KMS key,
-        /// but it is highly recommended.
+        /// the data. An encryption context is supported only on operations with symmetric encryption
+        /// KMS keys. On operations with symmetric encryption KMS keys, an encryption context
+        /// is optional, but it is strongly recommended.
         /// </para>
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
-        /// Context</a> in the <i>Key Management Service Developer Guide</i>.
+        /// context</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         /// </summary>
         public Dictionary<string, string> EncryptionContext
@@ -197,9 +223,9 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property KeyId. 
         /// <para>
-        /// Specifies the symmetric KMS key that encrypts the private key in the data key pair.
-        /// You cannot specify an asymmetric KMS key or a KMS key in a custom key store. To get
-        /// the type and origin of your KMS key, use the <a>DescribeKey</a> operation.
+        /// Specifies the symmetric encryption KMS key that encrypts the private key in the data
+        /// key pair. You cannot specify an asymmetric KMS key or a KMS key in a custom key store.
+        /// To get the type and origin of your KMS key, use the <a>DescribeKey</a> operation.
         /// </para>
         ///  
         /// <para>
@@ -254,10 +280,10 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         ///  
         /// <para>
-        /// The KMS rule that restricts the use of asymmetric RSA KMS keys to encrypt and decrypt
-        /// or to sign and verify (but not both), and the rule that permits you to use ECC KMS
-        /// keys only to sign and verify, are not effective on data key pairs, which are used
-        /// outside of KMS.
+        /// The KMS rule that restricts the use of asymmetric RSA and SM2 KMS keys to encrypt
+        /// and decrypt or to sign and verify (but not both), and the rule that permits you to
+        /// use ECC KMS keys only to sign and verify, are not effective on data key pairs, which
+        /// are used outside of KMS. The SM2 key spec is only available in China Regions.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -271,6 +297,50 @@ namespace Amazon.KeyManagementService.Model
         internal bool IsSetKeyPairSpec()
         {
             return this._keyPairSpec != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Recipient. 
+        /// <para>
+        /// A signed <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave-how.html#term-attestdoc">attestation
+        /// document</a> from an Amazon Web Services Nitro enclave and the encryption algorithm
+        /// to use with the enclave's public key. The only valid encryption algorithm is <code>RSAES_OAEP_SHA_256</code>.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// This parameter only supports attestation documents for Amazon Web Services Nitro Enclaves.
+        /// To include this parameter, use the <a href="https://docs.aws.amazon.com/enclaves/latest/user/developing-applications.html#sdk">Amazon
+        /// Web Services Nitro Enclaves SDK</a> or any Amazon Web Services SDK.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you use this parameter, instead of returning a plaintext copy of the private
+        /// data key, KMS encrypts the plaintext private data key under the public key in the
+        /// attestation document, and returns the resulting ciphertext in the <code>CiphertextForRecipient</code>
+        /// field in the response. This ciphertext can be decrypted only with the private key
+        /// in the enclave. The <code>CiphertextBlob</code> field in the response contains a copy
+        /// of the private data key encrypted under the KMS key specified by the <code>KeyId</code>
+        /// parameter. The <code>PrivateKeyPlaintext</code> field in the response is null or empty.
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about the interaction between KMS and Amazon Web Services Nitro Enclaves,
+        /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How
+        /// Amazon Web Services Nitro Enclaves uses KMS</a> in the <i>Key Management Service Developer
+        /// Guide</i>.
+        /// </para>
+        /// </summary>
+        public RecipientInfo Recipient
+        {
+            get { return this._recipient; }
+            set { this._recipient = value; }
+        }
+
+        // Check to see if Recipient property is set
+        internal bool IsSetRecipient()
+        {
+            return this._recipient != null;
         }
 
     }

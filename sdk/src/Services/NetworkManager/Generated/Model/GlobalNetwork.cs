@@ -30,7 +30,8 @@ namespace Amazon.NetworkManager.Model
 {
     /// <summary>
     /// Describes a global network. This is a single private network acting as a high-level
-    /// container for your network objects, including an Amazon Web Services-manged Core Network.
+    /// container for your network objects, including an Amazon Web Services-managed Core
+    /// Network.
     /// </summary>
     public partial class GlobalNetwork
     {

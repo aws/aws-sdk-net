@@ -41,7 +41,10 @@ namespace Amazon.SageMaker.Model
         private string _jobName;
         private RecommendationJobType _jobType;
         private DateTime? _lastModifiedTime;
+        private string _modelName;
+        private string _modelPackageVersionArn;
         private string _roleArn;
+        private string _samplePayloadUrl;
         private RecommendationJobStatus _status;
 
         /// <summary>
@@ -196,6 +199,44 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ModelName. 
+        /// <para>
+        /// The name of the created model.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=63)]
+        public string ModelName
+        {
+            get { return this._modelName; }
+            set { this._modelName = value; }
+        }
+
+        // Check to see if ModelName property is set
+        internal bool IsSetModelName()
+        {
+            return this._modelName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ModelPackageVersionArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of a versioned model package.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string ModelPackageVersionArn
+        {
+            get { return this._modelPackageVersionArn; }
+            set { this._modelPackageVersionArn = value; }
+        }
+
+        // Check to see if ModelPackageVersionArn property is set
+        internal bool IsSetModelPackageVersionArn()
+        {
+            return this._modelPackageVersionArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker to perform
@@ -213,6 +254,26 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetRoleArn()
         {
             return this._roleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SamplePayloadUrl. 
+        /// <para>
+        /// The Amazon Simple Storage Service (Amazon S3) path where the sample payload is stored.
+        /// This path must point to a single gzip compressed tar archive (.tar.gz suffix).
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=1024)]
+        public string SamplePayloadUrl
+        {
+            get { return this._samplePayloadUrl; }
+            set { this._samplePayloadUrl = value; }
+        }
+
+        // Check to see if SamplePayloadUrl property is set
+        internal bool IsSetSamplePayloadUrl()
+        {
+            return this._samplePayloadUrl != null;
         }
 
         /// <summary>

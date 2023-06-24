@@ -367,7 +367,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Canceled: The command was terminated before it was completed. This is a terminal state.
+        /// Cancelled: The command was terminated before it was completed. This is a terminal
+        /// state.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -380,6 +381,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// Terminated: The parent command exceeded its MaxErrors limit and subsequent command
         /// invocations were canceled by the system. This is a terminal state.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Delayed: The system attempted to send the command to the managed node but wasn't successful.
+        /// The system retries again.
         /// </para>
         ///  </li> </ul>
         /// </summary>

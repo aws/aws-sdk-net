@@ -30,8 +30,8 @@ namespace Amazon.Macie2.Model
 {
     /// <summary>
     /// Container for the parameters to the TagResource operation.
-    /// Adds or updates one or more tags (keys and values) that are associated with a classification
-    /// job, custom data identifier, findings filter, or member account.
+    /// Adds or updates one or more tags (keys and values) that are associated with an Amazon
+    /// Macie resource.
     /// </summary>
     public partial class TagResourceRequest : AmazonMacie2Request
     {
@@ -41,8 +41,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the classification job, custom data identifier,
-        /// findings filter, or member account.
+        /// The Amazon Resource Name (ARN) of the resource.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

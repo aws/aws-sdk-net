@@ -211,8 +211,29 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property ServiceState. 
         /// <para>
-        /// The current state of the service.
+        /// The current state of the service. Valid values are as follows:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>Available</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Deleted</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Deleting</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Failed</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Pending</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string ServiceState
         {

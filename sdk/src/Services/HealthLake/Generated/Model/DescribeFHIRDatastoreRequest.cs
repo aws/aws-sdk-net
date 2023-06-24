@@ -41,10 +41,10 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property DatastoreId. 
         /// <para>
-        /// The AWS-generated Data Store id. This is part of the ‘CreateFHIRDatastore’ output.
+        /// The AWS-generated Data Store ID.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=32)]
+        [AWSProperty(Required=true, Min=1, Max=32)]
         public string DatastoreId
         {
             get { return this._datastoreId; }

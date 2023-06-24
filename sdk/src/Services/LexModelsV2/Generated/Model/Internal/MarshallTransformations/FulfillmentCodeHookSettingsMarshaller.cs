@@ -34,7 +34,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// FulfillmentCodeHookSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class FulfillmentCodeHookSettingsMarshaller : IRequestMarshaller<FulfillmentCodeHookSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -45,6 +45,12 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(FulfillmentCodeHookSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetActive())
+            {
+                context.Writer.WritePropertyName("active");
+                context.Writer.Write(requestObject.Active);
+            }
+
             if(requestObject.IsSetEnabled())
             {
                 context.Writer.WritePropertyName("enabled");
@@ -77,7 +83,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static FulfillmentCodeHookSettingsMarshaller Instance = new FulfillmentCodeHookSettingsMarshaller();
 
     }

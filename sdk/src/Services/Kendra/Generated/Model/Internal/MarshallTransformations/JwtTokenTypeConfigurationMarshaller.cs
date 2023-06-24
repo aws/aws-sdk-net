@@ -34,7 +34,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// JwtTokenTypeConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class JwtTokenTypeConfigurationMarshaller : IRequestMarshaller<JwtTokenTypeConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -91,7 +91,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static JwtTokenTypeConfigurationMarshaller Instance = new JwtTokenTypeConfigurationMarshaller();
 
     }

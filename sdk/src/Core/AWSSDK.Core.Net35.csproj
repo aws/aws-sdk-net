@@ -71,7 +71,7 @@
   </ItemGroup>
 
   <ItemGroup Condition="$(RunAnalyzersDuringBuild)">
-    <Analyzer Include= "..\..\..\buildtools\CustomRoslynAnalyzers.dll" />
+    <Analyzer Include="..\..\..\buildtools\CustomRoslynAnalyzers.dll" />
   </ItemGroup>
 
   <ItemGroup>

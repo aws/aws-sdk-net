@@ -34,7 +34,7 @@ namespace Amazon.MigrationHubRefactorSpaces.Model.Internal.MarshallTransformatio
 {
     /// <summary>
     /// UriPathRouteInput Marshaller
-    /// </summary>       
+    /// </summary>
     public class UriPathRouteInputMarshaller : IRequestMarshaller<UriPathRouteInput, JsonMarshallerContext> 
     {
         /// <summary>
@@ -49,6 +49,12 @@ namespace Amazon.MigrationHubRefactorSpaces.Model.Internal.MarshallTransformatio
             {
                 context.Writer.WritePropertyName("ActivationState");
                 context.Writer.Write(requestObject.ActivationState);
+            }
+
+            if(requestObject.IsSetAppendSourcePath())
+            {
+                context.Writer.WritePropertyName("AppendSourcePath");
+                context.Writer.Write(requestObject.AppendSourcePath);
             }
 
             if(requestObject.IsSetIncludeChildPaths())
@@ -78,7 +84,7 @@ namespace Amazon.MigrationHubRefactorSpaces.Model.Internal.MarshallTransformatio
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static UriPathRouteInputMarshaller Instance = new UriPathRouteInputMarshaller();
 
     }

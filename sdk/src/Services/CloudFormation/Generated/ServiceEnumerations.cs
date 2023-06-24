@@ -25,6 +25,64 @@ namespace Amazon.CloudFormation
 {
 
     /// <summary>
+    /// Constants used for properties of type AccountFilterType.
+    /// </summary>
+    public class AccountFilterType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DIFFERENCE for AccountFilterType
+        /// </summary>
+        public static readonly AccountFilterType DIFFERENCE = new AccountFilterType("DIFFERENCE");
+        /// <summary>
+        /// Constant INTERSECTION for AccountFilterType
+        /// </summary>
+        public static readonly AccountFilterType INTERSECTION = new AccountFilterType("INTERSECTION");
+        /// <summary>
+        /// Constant NONE for AccountFilterType
+        /// </summary>
+        public static readonly AccountFilterType NONE = new AccountFilterType("NONE");
+        /// <summary>
+        /// Constant UNION for AccountFilterType
+        /// </summary>
+        public static readonly AccountFilterType UNION = new AccountFilterType("UNION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AccountFilterType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AccountFilterType FindValue(string value)
+        {
+            return FindValue<AccountFilterType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AccountFilterType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AccountGateStatus.
     /// </summary>
     public class AccountGateStatus : ConstantClass
@@ -296,6 +354,60 @@ namespace Amazon.CloudFormation
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ChangeAction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ChangeSetHooksStatus.
+    /// </summary>
+    public class ChangeSetHooksStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PLANNED for ChangeSetHooksStatus
+        /// </summary>
+        public static readonly ChangeSetHooksStatus PLANNED = new ChangeSetHooksStatus("PLANNED");
+        /// <summary>
+        /// Constant PLANNING for ChangeSetHooksStatus
+        /// </summary>
+        public static readonly ChangeSetHooksStatus PLANNING = new ChangeSetHooksStatus("PLANNING");
+        /// <summary>
+        /// Constant UNAVAILABLE for ChangeSetHooksStatus
+        /// </summary>
+        public static readonly ChangeSetHooksStatus UNAVAILABLE = new ChangeSetHooksStatus("UNAVAILABLE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ChangeSetHooksStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ChangeSetHooksStatus FindValue(string value)
+        {
+            return FindValue<ChangeSetHooksStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ChangeSetHooksStatus(string value)
         {
             return FindValue(value);
         }
@@ -777,6 +889,10 @@ namespace Amazon.CloudFormation
         /// </summary>
         public static readonly HandlerErrorCode GeneralServiceException = new HandlerErrorCode("GeneralServiceException");
         /// <summary>
+        /// Constant HandlerInternalFailure for HandlerErrorCode
+        /// </summary>
+        public static readonly HandlerErrorCode HandlerInternalFailure = new HandlerErrorCode("HandlerInternalFailure");
+        /// <summary>
         /// Constant InternalFailure for HandlerErrorCode
         /// </summary>
         public static readonly HandlerErrorCode InternalFailure = new HandlerErrorCode("InternalFailure");
@@ -796,6 +912,10 @@ namespace Amazon.CloudFormation
         /// Constant NetworkFailure for HandlerErrorCode
         /// </summary>
         public static readonly HandlerErrorCode NetworkFailure = new HandlerErrorCode("NetworkFailure");
+        /// <summary>
+        /// Constant NonCompliant for HandlerErrorCode
+        /// </summary>
+        public static readonly HandlerErrorCode NonCompliant = new HandlerErrorCode("NonCompliant");
         /// <summary>
         /// Constant NotFound for HandlerErrorCode
         /// </summary>
@@ -824,6 +944,14 @@ namespace Amazon.CloudFormation
         /// Constant Throttling for HandlerErrorCode
         /// </summary>
         public static readonly HandlerErrorCode Throttling = new HandlerErrorCode("Throttling");
+        /// <summary>
+        /// Constant Unknown for HandlerErrorCode
+        /// </summary>
+        public static readonly HandlerErrorCode Unknown = new HandlerErrorCode("Unknown");
+        /// <summary>
+        /// Constant UnsupportedTarget for HandlerErrorCode
+        /// </summary>
+        public static readonly HandlerErrorCode UnsupportedTarget = new HandlerErrorCode("UnsupportedTarget");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -854,6 +982,206 @@ namespace Amazon.CloudFormation
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator HandlerErrorCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type HookFailureMode.
+    /// </summary>
+    public class HookFailureMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAIL for HookFailureMode
+        /// </summary>
+        public static readonly HookFailureMode FAIL = new HookFailureMode("FAIL");
+        /// <summary>
+        /// Constant WARN for HookFailureMode
+        /// </summary>
+        public static readonly HookFailureMode WARN = new HookFailureMode("WARN");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public HookFailureMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HookFailureMode FindValue(string value)
+        {
+            return FindValue<HookFailureMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HookFailureMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type HookInvocationPoint.
+    /// </summary>
+    public class HookInvocationPoint : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PRE_PROVISION for HookInvocationPoint
+        /// </summary>
+        public static readonly HookInvocationPoint PRE_PROVISION = new HookInvocationPoint("PRE_PROVISION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public HookInvocationPoint(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HookInvocationPoint FindValue(string value)
+        {
+            return FindValue<HookInvocationPoint>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HookInvocationPoint(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type HookStatus.
+    /// </summary>
+    public class HookStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant HOOK_COMPLETE_FAILED for HookStatus
+        /// </summary>
+        public static readonly HookStatus HOOK_COMPLETE_FAILED = new HookStatus("HOOK_COMPLETE_FAILED");
+        /// <summary>
+        /// Constant HOOK_COMPLETE_SUCCEEDED for HookStatus
+        /// </summary>
+        public static readonly HookStatus HOOK_COMPLETE_SUCCEEDED = new HookStatus("HOOK_COMPLETE_SUCCEEDED");
+        /// <summary>
+        /// Constant HOOK_FAILED for HookStatus
+        /// </summary>
+        public static readonly HookStatus HOOK_FAILED = new HookStatus("HOOK_FAILED");
+        /// <summary>
+        /// Constant HOOK_IN_PROGRESS for HookStatus
+        /// </summary>
+        public static readonly HookStatus HOOK_IN_PROGRESS = new HookStatus("HOOK_IN_PROGRESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public HookStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HookStatus FindValue(string value)
+        {
+            return FindValue<HookStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HookStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type HookTargetType.
+    /// </summary>
+    public class HookTargetType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant RESOURCE for HookTargetType
+        /// </summary>
+        public static readonly HookTargetType RESOURCE = new HookTargetType("RESOURCE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public HookTargetType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HookTargetType FindValue(string value)
+        {
+            return FindValue<HookTargetType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HookTargetType(string value)
         {
             return FindValue(value);
         }
@@ -969,6 +1297,106 @@ namespace Amazon.CloudFormation
 
 
     /// <summary>
+    /// Constants used for properties of type OnStackFailure.
+    /// </summary>
+    public class OnStackFailure : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DELETE for OnStackFailure
+        /// </summary>
+        public static readonly OnStackFailure DELETE = new OnStackFailure("DELETE");
+        /// <summary>
+        /// Constant DO_NOTHING for OnStackFailure
+        /// </summary>
+        public static readonly OnStackFailure DO_NOTHING = new OnStackFailure("DO_NOTHING");
+        /// <summary>
+        /// Constant ROLLBACK for OnStackFailure
+        /// </summary>
+        public static readonly OnStackFailure ROLLBACK = new OnStackFailure("ROLLBACK");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OnStackFailure(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OnStackFailure FindValue(string value)
+        {
+            return FindValue<OnStackFailure>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OnStackFailure(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type OperationResultFilterName.
+    /// </summary>
+    public class OperationResultFilterName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant OPERATION_RESULT_STATUS for OperationResultFilterName
+        /// </summary>
+        public static readonly OperationResultFilterName OPERATION_RESULT_STATUS = new OperationResultFilterName("OPERATION_RESULT_STATUS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OperationResultFilterName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OperationResultFilterName FindValue(string value)
+        {
+            return FindValue<OperationResultFilterName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OperationResultFilterName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type OperationStatus.
     /// </summary>
     public class OperationStatus : ConstantClass
@@ -1020,6 +1448,60 @@ namespace Amazon.CloudFormation
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator OperationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type OrganizationStatus.
+    /// </summary>
+    public class OrganizationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for OrganizationStatus
+        /// </summary>
+        public static readonly OrganizationStatus DISABLED = new OrganizationStatus("DISABLED");
+        /// <summary>
+        /// Constant DISABLED_PERMANENTLY for OrganizationStatus
+        /// </summary>
+        public static readonly OrganizationStatus DISABLED_PERMANENTLY = new OrganizationStatus("DISABLED_PERMANENTLY");
+        /// <summary>
+        /// Constant ENABLED for OrganizationStatus
+        /// </summary>
+        public static readonly OrganizationStatus ENABLED = new OrganizationStatus("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OrganizationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OrganizationStatus FindValue(string value)
+        {
+            return FindValue<OrganizationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OrganizationStatus(string value)
         {
             return FindValue(value);
         }
@@ -1290,6 +1772,10 @@ namespace Amazon.CloudFormation
     public class RegistryType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant HOOK for RegistryType
+        /// </summary>
+        public static readonly RegistryType HOOK = new RegistryType("HOOK");
         /// <summary>
         /// Constant MODULE for RegistryType
         /// </summary>
@@ -1827,6 +2313,10 @@ namespace Amazon.CloudFormation
         /// </summary>
         public static readonly StackInstanceDetailedStatus RUNNING = new StackInstanceDetailedStatus("RUNNING");
         /// <summary>
+        /// Constant SKIPPED_SUSPENDED_ACCOUNT for StackInstanceDetailedStatus
+        /// </summary>
+        public static readonly StackInstanceDetailedStatus SKIPPED_SUSPENDED_ACCOUNT = new StackInstanceDetailedStatus("SKIPPED_SUSPENDED_ACCOUNT");
+        /// <summary>
         /// Constant SUCCEEDED for StackInstanceDetailedStatus
         /// </summary>
         public static readonly StackInstanceDetailedStatus SUCCEEDED = new StackInstanceDetailedStatus("SUCCEEDED");
@@ -1876,6 +2366,10 @@ namespace Amazon.CloudFormation
         /// Constant DETAILED_STATUS for StackInstanceFilterName
         /// </summary>
         public static readonly StackInstanceFilterName DETAILED_STATUS = new StackInstanceFilterName("DETAILED_STATUS");
+        /// <summary>
+        /// Constant LAST_OPERATION_ID for StackInstanceFilterName
+        /// </summary>
+        public static readonly StackInstanceFilterName LAST_OPERATION_ID = new StackInstanceFilterName("LAST_OPERATION_ID");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -2566,6 +3060,10 @@ namespace Amazon.CloudFormation
     public class ThirdPartyType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant HOOK for ThirdPartyType
+        /// </summary>
+        public static readonly ThirdPartyType HOOK = new ThirdPartyType("HOOK");
         /// <summary>
         /// Constant MODULE for ThirdPartyType
         /// </summary>

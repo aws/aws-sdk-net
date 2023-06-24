@@ -76,6 +76,12 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
                     unmarshalledObject.Iops = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Throughput", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.Throughput = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("VolumeSize", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

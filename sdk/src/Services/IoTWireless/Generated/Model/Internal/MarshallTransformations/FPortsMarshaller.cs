@@ -34,7 +34,7 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// FPorts Marshaller
-    /// </summary>       
+    /// </summary>
     public class FPortsMarshaller : IRequestMarshaller<FPorts, JsonMarshallerContext> 
     {
         /// <summary>
@@ -45,6 +45,22 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(FPorts requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetApplications())
+            {
+                context.Writer.WritePropertyName("Applications");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectApplicationsListValue in requestObject.Applications)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ApplicationConfigMarshaller.Instance;
+                    marshaller.Marshall(requestObjectApplicationsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetClockSync())
             {
                 context.Writer.WritePropertyName("ClockSync");
@@ -63,11 +79,22 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Multicast);
             }
 
+            if(requestObject.IsSetPositioning())
+            {
+                context.Writer.WritePropertyName("Positioning");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = PositioningMarshaller.Instance;
+                marshaller.Marshall(requestObject.Positioning, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static FPortsMarshaller Instance = new FPortsMarshaller();
 
     }

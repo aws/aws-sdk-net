@@ -73,6 +73,12 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         unmarshalledObject.CannedAccessControlList = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("ChecksumAlgorithm", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ChecksumAlgorithm = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("MetadataDirective", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

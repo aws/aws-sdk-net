@@ -34,7 +34,7 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// UplinkEchoConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class UplinkEchoConfigMarshaller : IRequestMarshaller<UplinkEchoConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static UplinkEchoConfigMarshaller Instance = new UplinkEchoConfigMarshaller();
 
     }

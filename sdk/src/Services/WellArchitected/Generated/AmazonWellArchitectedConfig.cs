@@ -17,22 +17,22 @@
  * Do not modify this file. This file is generated from the wellarchitected-2020-03-31.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
-
+using Amazon.WellArchitected.Internal;
 
 namespace Amazon.WellArchitected
 {
     /// <summary>
     /// Configuration for accessing Amazon WellArchitected service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonWellArchitectedConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.2.2");
+            InternalSDKUtils.BuildUserAgentString("3.7.104.2");
 
         private string _userAgent = UserAgentString;
 
@@ -40,8 +40,10 @@ namespace Amazon.WellArchitected
         /// Default constructor
         /// </summary>
         public AmazonWellArchitectedConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonWellArchitectedDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "wellarchitected";
+            this.EndpointProvider = new AmazonWellArchitectedEndpointProvider();
         }
 
         /// <summary>
@@ -76,5 +78,6 @@ namespace Amazon.WellArchitected
                 return _userAgent;
             }
         }
+
     }
 }

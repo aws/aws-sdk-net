@@ -34,7 +34,7 @@ namespace Amazon.DataPipeline.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// PipelineObject Marshaller
-    /// </summary>       
+    /// </summary>
     public class PipelineObjectMarshaller : IRequestMarshaller<PipelineObject, JsonMarshallerContext> 
     {
         /// <summary>
@@ -77,7 +77,7 @@ namespace Amazon.DataPipeline.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static PipelineObjectMarshaller Instance = new PipelineObjectMarshaller();
 
     }

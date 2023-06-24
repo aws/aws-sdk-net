@@ -66,7 +66,7 @@ namespace Amazon.Mgn.Model
         /// Lifecycle elapsed time and duration.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=19, Max=32)]
+        [AWSProperty(Min=1, Max=64)]
         public string ElapsedReplicationDuration
         {
             get { return this._elapsedReplicationDuration; }

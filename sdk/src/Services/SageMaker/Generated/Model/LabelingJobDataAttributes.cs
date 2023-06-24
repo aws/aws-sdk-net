@@ -40,8 +40,8 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property ContentClassifiers. 
         /// <para>
         /// Declares that your content is free of personally identifiable information or adult
-        /// content. Amazon SageMaker may restrict the Amazon Mechanical Turk workers that can
-        /// view your task based on this information.
+        /// content. SageMaker may restrict the Amazon Mechanical Turk workers that can view your
+        /// task based on this information.
         /// </para>
         /// </summary>
         [AWSProperty(Max=256)]

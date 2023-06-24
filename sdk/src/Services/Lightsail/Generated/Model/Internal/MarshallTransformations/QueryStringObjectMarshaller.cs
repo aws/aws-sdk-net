@@ -34,7 +34,7 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// QueryStringObject Marshaller
-    /// </summary>       
+    /// </summary>
     public class QueryStringObjectMarshaller : IRequestMarshaller<QueryStringObject, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static QueryStringObjectMarshaller Instance = new QueryStringObjectMarshaller();
 
     }

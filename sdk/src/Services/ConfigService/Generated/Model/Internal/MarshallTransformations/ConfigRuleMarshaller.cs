@@ -34,7 +34,7 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ConfigRule Marshaller
-    /// </summary>       
+    /// </summary>
     public class ConfigRuleMarshaller : IRequestMarshaller<ConfigRule, JsonMarshallerContext> 
     {
         /// <summary>
@@ -81,6 +81,22 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Description);
             }
 
+            if(requestObject.IsSetEvaluationModes())
+            {
+                context.Writer.WritePropertyName("EvaluationModes");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectEvaluationModesListValue in requestObject.EvaluationModes)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = EvaluationModeConfigurationMarshaller.Instance;
+                    marshaller.Marshall(requestObjectEvaluationModesListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetInputParameters())
             {
                 context.Writer.WritePropertyName("InputParameters");
@@ -119,7 +135,7 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ConfigRuleMarshaller Instance = new ConfigRuleMarshaller();
 
     }

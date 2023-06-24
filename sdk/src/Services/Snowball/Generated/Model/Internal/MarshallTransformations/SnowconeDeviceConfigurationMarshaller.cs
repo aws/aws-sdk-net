@@ -34,7 +34,7 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SnowconeDeviceConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class SnowconeDeviceConfigurationMarshaller : IRequestMarshaller<SnowconeDeviceConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SnowconeDeviceConfigurationMarshaller Instance = new SnowconeDeviceConfigurationMarshaller();
 
     }

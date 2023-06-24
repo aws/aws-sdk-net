@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AutoMLJobConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class AutoMLJobConfigMarshaller : IRequestMarshaller<AutoMLJobConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -45,6 +45,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AutoMLJobConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetCandidateGenerationConfig())
+            {
+                context.Writer.WritePropertyName("CandidateGenerationConfig");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AutoMLCandidateGenerationConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.CandidateGenerationConfig, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetCompletionCriteria())
             {
                 context.Writer.WritePropertyName("CompletionCriteria");
@@ -54,6 +65,23 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 marshaller.Marshall(requestObject.CompletionCriteria, context);
 
                 context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetDataSplitConfig())
+            {
+                context.Writer.WritePropertyName("DataSplitConfig");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AutoMLDataSplitConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.DataSplitConfig, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetMode())
+            {
+                context.Writer.WritePropertyName("Mode");
+                context.Writer.Write(requestObject.Mode);
             }
 
             if(requestObject.IsSetSecurityConfig())
@@ -71,7 +99,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AutoMLJobConfigMarshaller Instance = new AutoMLJobConfigMarshaller();
 
     }

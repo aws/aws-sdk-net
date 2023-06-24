@@ -34,7 +34,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Filters Marshaller
-    /// </summary>       
+    /// </summary>
     public class FiltersMarshaller : IRequestMarshaller<Filters, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,11 +67,22 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetRoutingProfiles())
+            {
+                context.Writer.WritePropertyName("RoutingProfiles");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectRoutingProfilesListValue in requestObject.RoutingProfiles)
+                {
+                        context.Writer.Write(requestObjectRoutingProfilesListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
         }
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static FiltersMarshaller Instance = new FiltersMarshaller();
 
     }

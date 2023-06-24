@@ -33,8 +33,34 @@ namespace Amazon.SSMIncidents.Model
     /// </summary>
     public partial class RelatedItem
     {
+        private string _generatedId;
         private ItemIdentifier _identifier;
         private string _title;
+
+        /// <summary>
+        /// Gets and sets the property GeneratedId. 
+        /// <para>
+        /// A unique ID for a <code>RelatedItem</code>.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// Don't specify this parameter when you add a <code>RelatedItem</code> by using the
+        /// <a>UpdateRelatedItems</a> API action.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        [AWSProperty(Min=0, Max=200)]
+        public string GeneratedId
+        {
+            get { return this._generatedId; }
+            set { this._generatedId = value; }
+        }
+
+        // Check to see if GeneratedId property is set
+        internal bool IsSetGeneratedId()
+        {
+            return this._generatedId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Identifier. 

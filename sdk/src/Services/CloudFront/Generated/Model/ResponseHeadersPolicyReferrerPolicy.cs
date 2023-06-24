@@ -30,7 +30,7 @@ namespace Amazon.CloudFront.Model
 {
     /// <summary>
     /// Determines whether CloudFront includes the <code>Referrer-Policy</code> HTTP response
-    /// header and the header’s value.
+    /// header and the header's value.
     /// 
     ///  
     /// <para>

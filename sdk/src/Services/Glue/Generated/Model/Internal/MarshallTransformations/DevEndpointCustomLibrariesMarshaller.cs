@@ -34,7 +34,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DevEndpointCustomLibraries Marshaller
-    /// </summary>       
+    /// </summary>
     public class DevEndpointCustomLibrariesMarshaller : IRequestMarshaller<DevEndpointCustomLibraries, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DevEndpointCustomLibrariesMarshaller Instance = new DevEndpointCustomLibrariesMarshaller();
 
     }

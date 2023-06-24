@@ -40,6 +40,7 @@ namespace Amazon.SimpleNotificationService.Model
     public partial class CreateTopicRequest : AmazonSimpleNotificationServiceRequest
     {
         private Dictionary<string, string> _attributes = new Dictionary<string, string>();
+        private string _dataProtectionPolicy;
         private string _name;
         private List<Tag> _tags = new List<Tag>();
 
@@ -84,6 +85,21 @@ namespace Amazon.SimpleNotificationService.Model
         /// <para>
         ///  <code>Policy</code> – The policy that defines who can access your topic. By default,
         /// only the topic owner can publish or subscribe to the topic.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>SignatureVersion</code> – The signature version corresponds to the hashing
+        /// algorithm used while creating the signature of the notifications, subscription confirmations,
+        /// or unsubscribe confirmation messages sent by Amazon SNS. By default, <code>SignatureVersion</code>
+        /// is set to <code>1</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>TracingConfig</code> – Tracing mode of an Amazon SNS topic. By default <code>TracingConfig</code>
+        /// is set to <code>PassThrough</code>, and the topic passes through the tracing header
+        /// it receives from an Amazon SNS publisher to its subscriptions. If set to <code>Active</code>,
+        /// Amazon SNS will vend X-Ray segment data to topic owner account if the sampled flag
+        /// in the tracing header is true. This is only supported on standard topics.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -141,6 +157,36 @@ namespace Amazon.SimpleNotificationService.Model
         internal bool IsSetAttributes()
         {
             return this._attributes != null && this._attributes.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DataProtectionPolicy. 
+        /// <para>
+        /// The body of the policy document you want to use for this topic.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can only add one policy per topic.
+        /// </para>
+        ///  
+        /// <para>
+        /// The policy must be in JSON string format.
+        /// </para>
+        ///  
+        /// <para>
+        /// Length Constraints: Maximum length of 30,720.
+        /// </para>
+        /// </summary>
+        public string DataProtectionPolicy
+        {
+            get { return this._dataProtectionPolicy; }
+            set { this._dataProtectionPolicy = value; }
+        }
+
+        // Check to see if DataProtectionPolicy property is set
+        internal bool IsSetDataProtectionPolicy()
+        {
+            return this._dataProtectionPolicy != null;
         }
 
         /// <summary>

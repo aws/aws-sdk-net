@@ -58,7 +58,7 @@ namespace Amazon.PI.Model.Internal.MarshallTransformations
             string target = "PerformanceInsightsv20180227.DescribeDimensionKeys";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-02-27";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-02-27";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -67,6 +67,17 @@ namespace Amazon.PI.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAdditionalMetrics())
+                {
+                    context.Writer.WritePropertyName("AdditionalMetrics");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestAdditionalMetricsListValue in publicRequest.AdditionalMetrics)
+                    {
+                            context.Writer.Write(publicRequestAdditionalMetricsListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetEndTime())
                 {
                     context.Writer.WritePropertyName("EndTime");
@@ -151,7 +162,6 @@ namespace Amazon.PI.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.StartTime);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

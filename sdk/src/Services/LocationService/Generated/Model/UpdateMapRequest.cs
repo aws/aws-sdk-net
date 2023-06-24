@@ -34,9 +34,29 @@ namespace Amazon.LocationService.Model
     /// </summary>
     public partial class UpdateMapRequest : AmazonLocationServiceRequest
     {
+        private MapConfigurationUpdate _configurationUpdate;
         private string _description;
         private string _mapName;
         private PricingPlan _pricingPlan;
+
+        /// <summary>
+        /// Gets and sets the property ConfigurationUpdate. 
+        /// <para>
+        /// Updates the parts of the map configuration that can be updated, including the political
+        /// view.
+        /// </para>
+        /// </summary>
+        public MapConfigurationUpdate ConfigurationUpdate
+        {
+            get { return this._configurationUpdate; }
+            set { this._configurationUpdate = value; }
+        }
+
+        // Check to see if ConfigurationUpdate property is set
+        internal bool IsSetConfigurationUpdate()
+        {
+            return this._configurationUpdate != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -79,14 +99,10 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property PricingPlan. 
         /// <para>
-        /// Updates the pricing plan for the map resource.
-        /// </para>
-        ///  
-        /// <para>
-        /// For more information about each pricing plan option restrictions, see <a href="https://aws.amazon.com/location/pricing/">Amazon
-        /// Location Service pricing</a>.
+        /// No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.
         /// </para>
         /// </summary>
+        [Obsolete("Deprecated. If included, the only allowed value is RequestBasedUsage.")]
         public PricingPlan PricingPlan
         {
             get { return this._pricingPlan; }

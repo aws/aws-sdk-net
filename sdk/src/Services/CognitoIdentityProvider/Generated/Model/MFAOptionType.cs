@@ -29,8 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// <i>This data type is no longer supported.</i> You can use it only for SMS MFA configurations.
-    /// You can't use it for TOTP software token MFA configurations.
+    /// <i>This data type is no longer supported.</i> Applies only to SMS multi-factor authentication
+    /// (MFA) configurations. Does not apply to time-based one-time password (TOTP) software
+    /// token MFA configurations.
     /// </summary>
     public partial class MFAOptionType
     {

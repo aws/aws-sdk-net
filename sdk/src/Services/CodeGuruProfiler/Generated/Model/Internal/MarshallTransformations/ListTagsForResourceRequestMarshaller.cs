@@ -55,7 +55,7 @@ namespace Amazon.CodeGuruProfiler.Model.Internal.MarshallTransformations
         public IRequest Marshall(ListTagsForResourceRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CodeGuruProfiler");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-07-18";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-07-18";
             request.HttpMethod = "GET";
 
             if (!publicRequest.IsSetResourceArn())

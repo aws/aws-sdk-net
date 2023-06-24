@@ -30,7 +30,8 @@ namespace Amazon.RAM.Model
 {
     /// <summary>
     /// Container for the parameters to the GetResourceShareAssociations operation.
-    /// Retrieves the resource and principal associations for resource shares that you own.
+    /// Retrieves the lists of resources and principals that associated for resource shares
+    /// that you own.
     /// </summary>
     public partial class GetResourceShareAssociationsRequest : AmazonRAMRequest
     {
@@ -45,7 +46,7 @@ namespace Amazon.RAM.Model
         /// <summary>
         /// Gets and sets the property AssociationStatus. 
         /// <para>
-        /// Specifies that you want to retrieve only associations with this status.
+        /// Specifies that you want to retrieve only associations that have this status.
         /// </para>
         /// </summary>
         public ResourceShareAssociationStatus AssociationStatus
@@ -68,13 +69,11 @@ namespace Amazon.RAM.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>PRINCIPAL</code> – list the principals that are associated with the specified
-        /// resource share.
+        ///  <code>PRINCIPAL</code> – list the principals whose associations you want to see.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>RESOURCE</code> – list the resources that are associated with the specified
-        /// resource share.
+        ///  <code>RESOURCE</code> – list the resources whose associations you want to see.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -144,7 +143,7 @@ namespace Amazon.RAM.Model
         /// Specifies the ID of the principal whose resource shares you want to retrieve. This
         /// can be an Amazon Web Services account ID, an organization ID, an organizational unit
         /// ID, or the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resoure Name (ARN)</a> of an individual IAM user or role.
+        /// Resource Name (ARN)</a> of an individual IAM user or role.
         /// </para>
         ///  
         /// <para>
@@ -167,7 +166,7 @@ namespace Amazon.RAM.Model
         /// Gets and sets the property ResourceArn. 
         /// <para>
         /// Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resoure Name (ARN)</a> of the resource whose resource shares you want to retrieve.
+        /// Resource Name (ARN)</a> of a resource whose resource shares you want to retrieve.
         /// </para>
         ///  
         /// <para>

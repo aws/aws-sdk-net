@@ -34,7 +34,7 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AutoBranchCreationConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class AutoBranchCreationConfigMarshaller : IRequestMarshaller<AutoBranchCreationConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -117,7 +117,7 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AutoBranchCreationConfigMarshaller Instance = new AutoBranchCreationConfigMarshaller();
 
     }

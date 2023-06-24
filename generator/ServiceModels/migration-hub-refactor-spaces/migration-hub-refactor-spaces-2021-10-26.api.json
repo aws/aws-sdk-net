@@ -422,6 +422,23 @@
         {"shape":"ValidationException"}
       ],
       "idempotent":true
+    },
+    "UpdateRoute":{
+      "name":"UpdateRoute",
+      "http":{
+        "method":"PATCH",
+        "requestUri":"/environments/{EnvironmentIdentifier}/applications/{ApplicationIdentifier}/routes/{RouteIdentifier}",
+        "responseCode":200
+      },
+      "input":{"shape":"UpdateRouteRequest"},
+      "output":{"shape":"UpdateRouteResponse"},
+      "errors":[
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"InternalServerException"},
+        {"shape":"ValidationException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"AccessDeniedException"}
+      ]
     }
   },
   "shapes":{
@@ -674,6 +691,7 @@
           "shape":"ClientToken",
           "idempotencyToken":true
         },
+        "DefaultRoute":{"shape":"DefaultRouteInput"},
         "EnvironmentIdentifier":{
           "shape":"EnvironmentId",
           "location":"uri",
@@ -753,6 +771,12 @@
         "Tags":{"shape":"TagMap"},
         "UrlEndpoint":{"shape":"UrlEndpointInput"},
         "VpcId":{"shape":"VpcId"}
+      }
+    },
+    "DefaultRouteInput":{
+      "type":"structure",
+      "members":{
+        "ActivationState":{"shape":"RouteActivationState"}
       }
     },
     "DeleteApplicationRequest":{
@@ -1134,6 +1158,7 @@
     "GetRouteResponse":{
       "type":"structure",
       "members":{
+        "AppendSourcePath":{"shape":"Boolean"},
         "ApplicationId":{"shape":"ApplicationId"},
         "Arn":{"shape":"ResourceArn"},
         "CreatedByAccountId":{"shape":"AccountId"},
@@ -1242,7 +1267,7 @@
       "type":"string",
       "max":2048,
       "min":1,
-      "pattern":"^arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\\d{1}:\\d{12}:function:[a-zA-Z0-9-_]+(: (\\$LATEST|[a-zA-Z0-9-_]+))?$"
+      "pattern":"^arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\\d{1}:\\d{12}:function:[a-zA-Z0-9-_]+(:(\\$LATEST|[a-zA-Z0-9-_]+))?$"
     },
     "LambdaEndpointConfig":{
       "type":"structure",
@@ -1438,7 +1463,10 @@
     },
     "NetworkFabricType":{
       "type":"string",
-      "enum":["TRANSIT_GATEWAY"]
+      "enum":[
+        "TRANSIT_GATEWAY",
+        "NONE"
+      ]
     },
     "NextToken":{
       "type":"string",
@@ -1539,7 +1567,10 @@
     "RetryAfterSeconds":{"type":"integer"},
     "RouteActivationState":{
       "type":"string",
-      "enum":["ACTIVE"]
+      "enum":[
+        "ACTIVE",
+        "INACTIVE"
+      ]
     },
     "RouteId":{
       "type":"string",
@@ -1565,6 +1596,7 @@
     "RouteSummary":{
       "type":"structure",
       "members":{
+        "AppendSourcePath":{"shape":"Boolean"},
         "ApplicationId":{"shape":"ApplicationId"},
         "Arn":{"shape":"ResourceArn"},
         "CreatedByAccountId":{"shape":"AccountId"},
@@ -1767,6 +1799,44 @@
       "members":{
       }
     },
+    "UpdateRouteRequest":{
+      "type":"structure",
+      "required":[
+        "ActivationState",
+        "ApplicationIdentifier",
+        "EnvironmentIdentifier",
+        "RouteIdentifier"
+      ],
+      "members":{
+        "ActivationState":{"shape":"RouteActivationState"},
+        "ApplicationIdentifier":{
+          "shape":"ApplicationId",
+          "location":"uri",
+          "locationName":"ApplicationIdentifier"
+        },
+        "EnvironmentIdentifier":{
+          "shape":"EnvironmentId",
+          "location":"uri",
+          "locationName":"EnvironmentIdentifier"
+        },
+        "RouteIdentifier":{
+          "shape":"RouteId",
+          "location":"uri",
+          "locationName":"RouteIdentifier"
+        }
+      }
+    },
+    "UpdateRouteResponse":{
+      "type":"structure",
+      "members":{
+        "ApplicationId":{"shape":"ApplicationId"},
+        "Arn":{"shape":"ResourceArn"},
+        "LastUpdatedTime":{"shape":"Timestamp"},
+        "RouteId":{"shape":"RouteId"},
+        "ServiceId":{"shape":"ServiceId"},
+        "State":{"shape":"RouteState"}
+      }
+    },
     "Uri":{
       "type":"string",
       "max":2048,
@@ -1777,7 +1847,7 @@
       "type":"string",
       "max":2048,
       "min":1,
-      "pattern":"^(/[a-zA-Z0-9._-]+)+$"
+      "pattern":"^(/([a-zA-Z0-9._:-]+|\\{[a-zA-Z0-9._:-]+\\}))+$"
     },
     "UriPathRouteInput":{
       "type":"structure",
@@ -1787,6 +1857,7 @@
       ],
       "members":{
         "ActivationState":{"shape":"RouteActivationState"},
+        "AppendSourcePath":{"shape":"Boolean"},
         "IncludeChildPaths":{"shape":"Boolean"},
         "Methods":{"shape":"HttpMethods"},
         "SourcePath":{"shape":"UriPath"}

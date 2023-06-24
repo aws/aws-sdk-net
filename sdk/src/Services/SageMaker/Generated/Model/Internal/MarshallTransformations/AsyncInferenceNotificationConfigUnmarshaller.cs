@@ -70,6 +70,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.ErrorTopic = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("IncludeInferenceResponseIn", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.IncludeInferenceResponseIn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SuccessTopic", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -51,7 +51,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property S3BucketName. 
         /// <para>
-        /// The name of an S3 bucket where execution logs are stored .
+        /// The name of an S3 bucket where execution logs are stored.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=3, Max=63)]

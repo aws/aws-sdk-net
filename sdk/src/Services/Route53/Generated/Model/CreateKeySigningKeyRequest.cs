@@ -82,14 +82,14 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property KeyManagementServiceArn. 
         /// <para>
-        /// The Amazon resource name (ARN) for a customer managed customer master key (CMK) in
-        /// Key Management Service (KMS). The <code>KeyManagementServiceArn</code> must be unique
-        /// for each key-signing key (KSK) in a single hosted zone. To see an example of <code>KeyManagementServiceArn</code>
+        /// The Amazon resource name (ARN) for a customer managed key in Key Management Service
+        /// (KMS). The <code>KeyManagementServiceArn</code> must be unique for each key-signing
+        /// key (KSK) in a single hosted zone. To see an example of <code>KeyManagementServiceArn</code>
         /// that grants the correct permissions for DNSSEC, scroll down to <b>Example</b>. 
         /// </para>
         ///  
         /// <para>
-        /// You must configure the customer managed CMK as follows:
+        /// You must configure the customer managed customer managed key as follows:
         /// </para>
         ///  <dl> <dt>Status</dt> <dd> 
         /// <para>
@@ -130,7 +130,7 @@ namespace Amazon.Route53.Model
         /// </para>
         ///  </li> </ul> </dd> </dl> 
         /// <para>
-        /// For more information about working with a customer managed CMK in KMS, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">Key
+        /// For more information about working with a customer managed key in KMS, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">Key
         /// Management Service concepts</a>.
         /// </para>
         /// </summary>

@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lambda.Model
 {
     /// <summary>
-    /// Lambda was unable to decrypt the environment variables because KMS access was denied.
-    /// Check the Lambda function's KMS permissions.
+    /// Lambda couldn't decrypt the environment variables because KMS access was denied. Check
+    /// the Lambda function's KMS permissions.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -34,7 +34,7 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ImagePermissions Marshaller
-    /// </summary>       
+    /// </summary>
     public class ImagePermissionsMarshaller : IRequestMarshaller<ImagePermissions, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ImagePermissionsMarshaller Instance = new ImagePermissionsMarshaller();
 
     }

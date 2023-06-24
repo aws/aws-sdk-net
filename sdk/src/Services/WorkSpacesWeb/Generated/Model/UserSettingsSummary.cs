@@ -34,7 +34,9 @@ namespace Amazon.WorkSpacesWeb.Model
     public partial class UserSettingsSummary
     {
         private EnabledType _copyAllowed;
+        private int? _disconnectTimeoutInMinutes;
         private EnabledType _downloadAllowed;
+        private int? _idleDisconnectTimeoutInMinutes;
         private EnabledType _pasteAllowed;
         private EnabledType _printAllowed;
         private EnabledType _uploadAllowed;
@@ -59,6 +61,25 @@ namespace Amazon.WorkSpacesWeb.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DisconnectTimeoutInMinutes. 
+        /// <para>
+        /// The amount of time that a streaming session remains active after users disconnect.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=600)]
+        public int DisconnectTimeoutInMinutes
+        {
+            get { return this._disconnectTimeoutInMinutes.GetValueOrDefault(); }
+            set { this._disconnectTimeoutInMinutes = value; }
+        }
+
+        // Check to see if DisconnectTimeoutInMinutes property is set
+        internal bool IsSetDisconnectTimeoutInMinutes()
+        {
+            return this._disconnectTimeoutInMinutes.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property DownloadAllowed. 
         /// <para>
         /// Specifies whether the user can download files from the streaming session to the local
@@ -75,6 +96,26 @@ namespace Amazon.WorkSpacesWeb.Model
         internal bool IsSetDownloadAllowed()
         {
             return this._downloadAllowed != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IdleDisconnectTimeoutInMinutes. 
+        /// <para>
+        /// The amount of time that users can be idle (inactive) before they are disconnected
+        /// from their streaming session and the disconnect timeout interval begins.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=60)]
+        public int IdleDisconnectTimeoutInMinutes
+        {
+            get { return this._idleDisconnectTimeoutInMinutes.GetValueOrDefault(); }
+            set { this._idleDisconnectTimeoutInMinutes = value; }
+        }
+
+        // Check to see if IdleDisconnectTimeoutInMinutes property is set
+        internal bool IsSetIdleDisconnectTimeoutInMinutes()
+        {
+            return this._idleDisconnectTimeoutInMinutes.HasValue; 
         }
 
         /// <summary>

@@ -45,7 +45,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (string.IsNullOrEmpty(getLifecycleConfiguration.BucketName))
                 throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "GetLifecycleConfigurationRequest.BucketName");
 
-			request.ResourcePath = string.Concat("/", S3Transforms.ToStringValue(getLifecycleConfiguration.BucketName));
+            request.ResourcePath = "/";
             request.AddSubResource("lifecycle");
             request.UseQueryString = true;
             

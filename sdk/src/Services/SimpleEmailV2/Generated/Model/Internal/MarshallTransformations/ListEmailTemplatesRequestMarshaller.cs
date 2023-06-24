@@ -55,7 +55,7 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
         public IRequest Marshall(ListEmailTemplatesRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.SimpleEmailV2");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-09-27";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-09-27";
             request.HttpMethod = "GET";
 
             

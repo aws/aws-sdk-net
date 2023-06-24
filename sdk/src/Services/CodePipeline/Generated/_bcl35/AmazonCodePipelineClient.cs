@@ -35,21 +35,20 @@ namespace Amazon.CodePipeline
     /// <summary>
     /// Implementation for accessing CodePipeline
     ///
-    /// AWS CodePipeline 
+    /// CodePipeline 
     /// <para>
     ///  <b>Overview</b> 
     /// </para>
     ///  
     /// <para>
-    /// This is the AWS CodePipeline API Reference. This guide provides descriptions of the
-    /// actions and data types for AWS CodePipeline. Some functionality for your pipeline
-    /// can only be configured through the API. For more information, see the <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/welcome.html">AWS
-    /// CodePipeline User Guide</a>.
+    /// This is the CodePipeline API Reference. This guide provides descriptions of the actions
+    /// and data types for CodePipeline. Some functionality for your pipeline can only be
+    /// configured through the API. For more information, see the <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/welcome.html">CodePipeline
+    /// User Guide</a>.
     /// </para>
     ///  
     /// <para>
-    /// You can use the AWS CodePipeline API to work with pipelines, stages, actions, and
-    /// transitions.
+    /// You can use the CodePipeline API to work with pipelines, stages, actions, and transitions.
     /// </para>
     ///  
     /// <para>
@@ -125,8 +124,8 @@ namespace Amazon.CodePipeline
     /// which displays the status of a pipeline, including the status of stages in the pipeline,
     /// or <a>GetPipeline</a>, which returns the entire structure of the pipeline, including
     /// the stages of that pipeline. For more information about the structure of stages and
-    /// actions, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-structure.html">AWS
-    /// CodePipeline Pipeline Structure Reference</a>.
+    /// actions, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-structure.html">CodePipeline
+    /// Pipeline Structure Reference</a>.
     /// </para>
     ///  
     /// <para>
@@ -182,13 +181,13 @@ namespace Amazon.CodePipeline
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    ///  <b>Using the API to integrate with AWS CodePipeline</b> 
+    ///  <b>Using the API to integrate with CodePipeline</b> 
     /// </para>
     ///  
     /// <para>
     /// For third-party integrators or developers who want to create their own integrations
-    /// with AWS CodePipeline, the expected sequence varies from the standard API user. To
-    /// integrate with AWS CodePipeline, developers need to work with the following items:
+    /// with CodePipeline, the expected sequence varies from the standard API user. To integrate
+    /// with CodePipeline, developers need to work with the following items:
     /// </para>
     ///  
     /// <para>
@@ -223,8 +222,8 @@ namespace Amazon.CodePipeline
     ///  </li> </ul> 
     /// <para>
     ///  <b>Third party jobs</b>, which are instances of an action created by a partner action
-    /// and integrated into AWS CodePipeline. Partner actions are created by members of the
-    /// AWS Partner Network.
+    /// and integrated into CodePipeline. Partner actions are created by members of the Amazon
+    /// Web Services Partner Network.
     /// </para>
     ///  
     /// <para>
@@ -448,6 +447,15 @@ namespace Amazon.CodePipeline
         }
 
         /// <summary>
+        /// Customize the pipeline
+        /// </summary>
+        /// <param name="pipeline"></param>
+        protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
+        {
+            pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonCodePipelineEndpointResolver());
+        }
+        /// <summary>
         /// Capture metadata for the service.
         /// </summary>
         protected override IServiceMetadata ServiceMetadata
@@ -480,7 +488,7 @@ namespace Amazon.CodePipeline
         /// the job worker. Used for custom actions only.
         /// </summary>
         /// <param name="jobId">The unique system-generated ID of the job for which you want to confirm receipt.</param>
-        /// <param name="nonce">A system-generated random number that AWS CodePipeline uses to ensure that the job is being worked on by only one job worker. Get this number from the response of the <a>PollForJobs</a> request that returned this job.</param>
+        /// <param name="nonce">A system-generated random number that CodePipeline uses to ensure that the job is being worked on by only one job worker. Get this number from the response of the <a>PollForJobs</a> request that returned this job.</param>
         /// 
         /// <returns>The response from the AcknowledgeJob service method, as returned by CodePipeline.</returns>
         /// <exception cref="Amazon.CodePipeline.Model.InvalidNonceException">
@@ -571,7 +579,7 @@ namespace Amazon.CodePipeline
         /// </summary>
         /// <param name="clientToken">The clientToken portion of the clientId and clientToken pair used to verify that the calling entity is allowed access to the job and its details.</param>
         /// <param name="jobId">The unique system-generated ID of the job.</param>
-        /// <param name="nonce">A system-generated random number that AWS CodePipeline uses to ensure that the job is being worked on by only one job worker. Get this number from the response to a <a>GetThirdPartyJobDetails</a> request.</param>
+        /// <param name="nonce">A system-generated random number that CodePipeline uses to ensure that the job is being worked on by only one job worker. Get this number from the response to a <a>GetThirdPartyJobDetails</a> request.</param>
         /// 
         /// <returns>The response from the AcknowledgeThirdPartyJob service method, as returned by CodePipeline.</returns>
         /// <exception cref="Amazon.CodePipeline.Model.InvalidClientTokenException">
@@ -665,7 +673,7 @@ namespace Amazon.CodePipeline
 
         /// <summary>
         /// Creates a new custom action that can be used in all pipelines associated with the
-        /// AWS account. Only used for custom actions.
+        /// Amazon Web Services account. Only used for custom actions.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCustomActionType service method.</param>
         /// 
@@ -677,8 +685,8 @@ namespace Amazon.CodePipeline
         /// The specified resource tags are invalid.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.LimitExceededException">
-        /// The number of pipelines associated with the AWS account has exceeded the limit allowed
-        /// for the account.
+        /// The number of pipelines associated with the Amazon Web Services account has exceeded
+        /// the limit allowed for the account.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.TooManyTagsException">
         /// The tags limit for a resource has been exceeded.
@@ -767,8 +775,8 @@ namespace Amazon.CodePipeline
         /// The specified resource tags are invalid.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.LimitExceededException">
-        /// The number of pipelines associated with the AWS account has exceeded the limit allowed
-        /// for the account.
+        /// The number of pipelines associated with the Amazon Web Services account has exceeded
+        /// the limit allowed for the account.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.PipelineNameInUseException">
         /// The specified pipeline name is already in use.
@@ -821,8 +829,8 @@ namespace Amazon.CodePipeline
         /// The specified resource tags are invalid.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.LimitExceededException">
-        /// The number of pipelines associated with the AWS account has exceeded the limit allowed
-        /// for the account.
+        /// The number of pipelines associated with the Amazon Web Services account has exceeded
+        /// the limit allowed for the account.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.PipelineNameInUseException">
         /// The specified pipeline name is already in use.
@@ -1033,7 +1041,7 @@ namespace Amazon.CodePipeline
         #region  DeleteWebhook
 
         /// <summary>
-        /// Deletes a previously created webhook by name. Deleting the webhook stops AWS CodePipeline
+        /// Deletes a previously created webhook by name. Deleting the webhook stops CodePipeline
         /// from starting a pipeline every time an external event occurs. The API returns successfully
         /// when trying to delete a webhook that is already deleted. If a deleted webhook is re-created
         /// by calling PutWebhook with the same name, it will have a different URL.
@@ -1350,10 +1358,10 @@ namespace Amazon.CodePipeline
         /// 
         ///  <important> 
         /// <para>
-        /// When this API is called, AWS CodePipeline returns temporary credentials for the S3
-        /// bucket used to store artifacts for the pipeline, if the action requires access to
-        /// that S3 bucket for input or output artifacts. This API also returns any secret values
-        /// defined for the action.
+        /// When this API is called, CodePipeline returns temporary credentials for the S3 bucket
+        /// used to store artifacts for the pipeline, if the action requires access to that S3
+        /// bucket for input or output artifacts. This API also returns any secret values defined
+        /// for the action.
         /// </para>
         ///  </important>
         /// </summary>
@@ -1380,10 +1388,10 @@ namespace Amazon.CodePipeline
         /// 
         ///  <important> 
         /// <para>
-        /// When this API is called, AWS CodePipeline returns temporary credentials for the S3
-        /// bucket used to store artifacts for the pipeline, if the action requires access to
-        /// that S3 bucket for input or output artifacts. This API also returns any secret values
-        /// defined for the action.
+        /// When this API is called, CodePipeline returns temporary credentials for the S3 bucket
+        /// used to store artifacts for the pipeline, if the action requires access to that S3
+        /// bucket for input or output artifacts. This API also returns any secret values defined
+        /// for the action.
         /// </para>
         ///  </important>
         /// </summary>
@@ -1449,7 +1457,7 @@ namespace Amazon.CodePipeline
         /// return the entire structure of a pipeline in JSON format, which can then be modified
         /// and used to update the pipeline structure with <a>UpdatePipeline</a>.
         /// </summary>
-        /// <param name="name">The name of the pipeline for which you want to get information. Pipeline names must be unique under an AWS user account.</param>
+        /// <param name="name">The name of the pipeline for which you want to get information. Pipeline names must be unique in an Amazon Web Services account.</param>
         /// <param name="version">The version number of the pipeline. If you do not specify a version, defaults to the current version.</param>
         /// 
         /// <returns>The response from the GetPipeline service method, as returned by CodePipeline.</returns>
@@ -1477,7 +1485,7 @@ namespace Amazon.CodePipeline
         /// return the entire structure of a pipeline in JSON format, which can then be modified
         /// and used to update the pipeline structure with <a>UpdatePipeline</a>.
         /// </summary>
-        /// <param name="name">The name of the pipeline for which you want to get information. Pipeline names must be unique under an AWS user account.</param>
+        /// <param name="name">The name of the pipeline for which you want to get information. Pipeline names must be unique in an Amazon Web Services account.</param>
         /// 
         /// <returns>The response from the GetPipeline service method, as returned by CodePipeline.</returns>
         /// <exception cref="Amazon.CodePipeline.Model.PipelineNotFoundException">
@@ -1728,10 +1736,10 @@ namespace Amazon.CodePipeline
         /// 
         ///  <important> 
         /// <para>
-        /// When this API is called, AWS CodePipeline returns temporary credentials for the S3
-        /// bucket used to store artifacts for the pipeline, if the action requires access to
-        /// that S3 bucket for input or output artifacts. This API also returns any secret values
-        /// defined for the action.
+        /// When this API is called, CodePipeline returns temporary credentials for the S3 bucket
+        /// used to store artifacts for the pipeline, if the action requires access to that S3
+        /// bucket for input or output artifacts. This API also returns any secret values defined
+        /// for the action.
         /// </para>
         ///  </important>
         /// </summary>
@@ -1766,10 +1774,10 @@ namespace Amazon.CodePipeline
         /// 
         ///  <important> 
         /// <para>
-        /// When this API is called, AWS CodePipeline returns temporary credentials for the S3
-        /// bucket used to store artifacts for the pipeline, if the action requires access to
-        /// that S3 bucket for input or output artifacts. This API also returns any secret values
-        /// defined for the action.
+        /// When this API is called, CodePipeline returns temporary credentials for the S3 bucket
+        /// used to store artifacts for the pipeline, if the action requires access to that S3
+        /// bucket for input or output artifacts. This API also returns any secret values defined
+        /// for the action.
         /// </para>
         ///  </important>
         /// </summary>
@@ -1905,7 +1913,7 @@ namespace Amazon.CodePipeline
         #region  ListActionTypes
 
         /// <summary>
-        /// Gets a summary of all AWS CodePipeline action types associated with your account.
+        /// Gets a summary of all CodePipeline action types associated with your account.
         /// </summary>
         /// 
         /// <returns>The response from the ListActionTypes service method, as returned by CodePipeline.</returns>
@@ -1925,7 +1933,7 @@ namespace Amazon.CodePipeline
 
 
         /// <summary>
-        /// Gets a summary of all AWS CodePipeline action types associated with your account.
+        /// Gets a summary of all CodePipeline action types associated with your account.
         /// </summary>
         /// <param name="actionOwnerFilter">Filters the list of action types to those created by a specified entity.</param>
         /// 
@@ -1947,7 +1955,7 @@ namespace Amazon.CodePipeline
 
 
         /// <summary>
-        /// Gets a summary of all AWS CodePipeline action types associated with your account.
+        /// Gets a summary of all CodePipeline action types associated with your account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListActionTypes service method.</param>
         /// 
@@ -2220,9 +2228,9 @@ namespace Amazon.CodePipeline
         #region  ListWebhooks
 
         /// <summary>
-        /// Gets a listing of all the webhooks in this AWS Region for this account. The output
-        /// lists all webhooks and includes the webhook URL and ARN and the configuration for
-        /// each webhook.
+        /// Gets a listing of all the webhooks in this Amazon Web Services Region for this account.
+        /// The output lists all webhooks and includes the webhook URL and ARN and the configuration
+        /// for each webhook.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListWebhooks service method.</param>
         /// 
@@ -2283,17 +2291,17 @@ namespace Amazon.CodePipeline
         #region  PollForJobs
 
         /// <summary>
-        /// Returns information about any jobs for AWS CodePipeline to act on. <code>PollForJobs</code>
+        /// Returns information about any jobs for CodePipeline to act on. <code>PollForJobs</code>
         /// is valid only for action types with "Custom" in the owner field. If the action type
-        /// contains "AWS" or "ThirdParty" in the owner field, the <code>PollForJobs</code> action
-        /// returns an error.
+        /// contains <code>AWS</code> or <code>ThirdParty</code> in the owner field, the <code>PollForJobs</code>
+        /// action returns an error.
         /// 
         ///  <important> 
         /// <para>
-        /// When this API is called, AWS CodePipeline returns temporary credentials for the S3
-        /// bucket used to store artifacts for the pipeline, if the action requires access to
-        /// that S3 bucket for input or output artifacts. This API also returns any secret values
-        /// defined for the action.
+        /// When this API is called, CodePipeline returns temporary credentials for the S3 bucket
+        /// used to store artifacts for the pipeline, if the action requires access to that S3
+        /// bucket for input or output artifacts. This API also returns any secret values defined
+        /// for the action.
         /// </para>
         ///  </important>
         /// </summary>
@@ -2360,9 +2368,9 @@ namespace Amazon.CodePipeline
         /// 
         ///  <important> 
         /// <para>
-        /// When this API is called, AWS CodePipeline returns temporary credentials for the S3
-        /// bucket used to store artifacts for the pipeline, if the action requires access to
-        /// that S3 bucket for input or output artifacts.
+        /// When this API is called, CodePipeline returns temporary credentials for the S3 bucket
+        /// used to store artifacts for the pipeline, if the action requires access to that S3
+        /// bucket for input or output artifacts.
         /// </para>
         ///  </important>
         /// </summary>
@@ -2424,7 +2432,7 @@ namespace Amazon.CodePipeline
         #region  PutActionRevision
 
         /// <summary>
-        /// Provides information to AWS CodePipeline about new revisions to a source.
+        /// Provides information to CodePipeline about new revisions to a source.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutActionRevision service method.</param>
         /// 
@@ -2490,7 +2498,7 @@ namespace Amazon.CodePipeline
         #region  PutApprovalResult
 
         /// <summary>
-        /// Provides the response to a manual approval request to AWS CodePipeline. Valid responses
+        /// Provides the response to a manual approval request to CodePipeline. Valid responses
         /// include Approved and Rejected.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutApprovalResult service method.</param>
@@ -2911,8 +2919,8 @@ namespace Amazon.CodePipeline
         /// The specified event filter rule is in an invalid format.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.LimitExceededException">
-        /// The number of pipelines associated with the AWS account has exceeded the limit allowed
-        /// for the account.
+        /// The number of pipelines associated with the Amazon Web Services account has exceeded
+        /// the limit allowed for the account.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.PipelineNotFoundException">
         /// The pipeline was specified in an invalid format or cannot be found.
@@ -3046,8 +3054,8 @@ namespace Amazon.CodePipeline
         /// Try again later.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.NotLatestPipelineExecutionException">
-        /// The stage has failed in a later run of the pipeline and the pipelineExecutionId associated
-        /// with the request is out of date.
+        /// The stage has failed in a later run of the pipeline and the <code>pipelineExecutionId</code>
+        /// associated with the request is out of date.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.PipelineNotFoundException">
         /// The pipeline was specified in an invalid format or cannot be found.
@@ -3354,7 +3362,7 @@ namespace Amazon.CodePipeline
         #region  UntagResource
 
         /// <summary>
-        /// Removes tags from an AWS resource.
+        /// Removes tags from an Amazon Web Services resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// 
@@ -3510,8 +3518,8 @@ namespace Amazon.CodePipeline
         /// The structure was specified in an invalid format.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.LimitExceededException">
-        /// The number of pipelines associated with the AWS account has exceeded the limit allowed
-        /// for the account.
+        /// The number of pipelines associated with the Amazon Web Services account has exceeded
+        /// the limit allowed for the account.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
@@ -3547,8 +3555,8 @@ namespace Amazon.CodePipeline
         /// The structure was specified in an invalid format.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.LimitExceededException">
-        /// The number of pipelines associated with the AWS account has exceeded the limit allowed
-        /// for the account.
+        /// The number of pipelines associated with the Amazon Web Services account has exceeded
+        /// the limit allowed for the account.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.

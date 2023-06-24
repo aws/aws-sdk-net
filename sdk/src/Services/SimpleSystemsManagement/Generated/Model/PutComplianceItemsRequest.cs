@@ -68,7 +68,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Severity: A patch severity. For example, <code>critical</code>.
+    /// Severity: A patch severity. For example, <code>Critical</code>.
     /// </para>
     ///  </li> <li> 
     /// <para>

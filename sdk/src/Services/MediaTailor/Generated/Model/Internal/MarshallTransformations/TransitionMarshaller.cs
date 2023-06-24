@@ -34,7 +34,7 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Transition Marshaller
-    /// </summary>       
+    /// </summary>
     public class TransitionMarshaller : IRequestMarshaller<Transition, JsonMarshallerContext> 
     {
         /// <summary>
@@ -45,6 +45,12 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Transition requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetDurationMillis())
+            {
+                context.Writer.WritePropertyName("DurationMillis");
+                context.Writer.Write(requestObject.DurationMillis);
+            }
+
             if(requestObject.IsSetRelativePosition())
             {
                 context.Writer.WritePropertyName("RelativePosition");
@@ -73,7 +79,7 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static TransitionMarshaller Instance = new TransitionMarshaller();
 
     }

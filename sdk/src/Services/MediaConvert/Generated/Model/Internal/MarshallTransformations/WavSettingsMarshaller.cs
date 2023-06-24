@@ -34,7 +34,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// WavSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class WavSettingsMarshaller : IRequestMarshaller<WavSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static WavSettingsMarshaller Instance = new WavSettingsMarshaller();
 
     }

@@ -39,9 +39,11 @@ namespace Amazon.MediaTailor.Model
         private DateTime? _creationTime;
         private SlateSource _fillerSlate;
         private DateTime? _lastModifiedTime;
+        private LogConfigurationForChannel _logConfiguration;
         private List<ResponseOutputItem> _outputs = new List<ResponseOutputItem>();
         private string _playbackMode;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private string _tier;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -152,6 +154,25 @@ namespace Amazon.MediaTailor.Model
         }
 
         /// <summary>
+        /// Gets and sets the property LogConfiguration. 
+        /// <para>
+        /// The log configuration for the channel.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public LogConfigurationForChannel LogConfiguration
+        {
+            get { return this._logConfiguration; }
+            set { this._logConfiguration = value; }
+        }
+
+        // Check to see if LogConfiguration property is set
+        internal bool IsSetLogConfiguration()
+        {
+            return this._logConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Outputs. 
         /// <para>
         /// The channel's output properties.
@@ -190,7 +211,10 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags assigned to the channel.
+        /// The tags assigned to the channel. Tags are key-value pairs that you can associate
+        /// with Amazon resources to help with organization, access control, and cost tracking.
+        /// For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+        /// AWS Elemental MediaTailor Resources</a>.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Tags
@@ -203,6 +227,24 @@ namespace Amazon.MediaTailor.Model
         internal bool IsSetTags()
         {
             return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tier. 
+        /// <para>
+        /// The channel's tier.
+        /// </para>
+        /// </summary>
+        public string Tier
+        {
+            get { return this._tier; }
+            set { this._tier = value; }
+        }
+
+        // Check to see if Tier property is set
+        internal bool IsSetTier()
+        {
+            return this._tier != null;
         }
 
     }

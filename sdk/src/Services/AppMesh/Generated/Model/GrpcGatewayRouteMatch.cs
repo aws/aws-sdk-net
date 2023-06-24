@@ -35,6 +35,7 @@ namespace Amazon.AppMesh.Model
     {
         private GatewayRouteHostnameMatch _hostname;
         private List<GrpcGatewayRouteMetadata> _metadata = new List<GrpcGatewayRouteMetadata>();
+        private int? _port;
         private string _serviceName;
 
         /// <summary>
@@ -72,6 +73,25 @@ namespace Amazon.AppMesh.Model
         internal bool IsSetMetadata()
         {
             return this._metadata != null && this._metadata.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Port. 
+        /// <para>
+        /// The port number to match from the request.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=65535)]
+        public int Port
+        {
+            get { return this._port.GetValueOrDefault(); }
+            set { this._port = value; }
+        }
+
+        // Check to see if Port property is set
+        internal bool IsSetPort()
+        {
+            return this._port.HasValue; 
         }
 
         /// <summary>

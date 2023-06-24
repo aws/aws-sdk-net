@@ -59,7 +59,7 @@ namespace Amazon.ACMPCA.Model
         /// <summary>
         /// Gets and sets the property ExtendedKeyUsageType. 
         /// <para>
-        /// Specifies a standard <code>ExtendedKeyUsage</code> as defined as in <a href="https://tools.ietf.org/html/rfc5280#section-4.2.1.12">RFC
+        /// Specifies a standard <code>ExtendedKeyUsage</code> as defined as in <a href="https://datatracker.ietf.org/doc/html/rfc5280#section-4.2.1.12">RFC
         /// 5280</a>.
         /// </para>
         /// </summary>

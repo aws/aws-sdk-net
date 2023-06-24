@@ -88,6 +88,12 @@ namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
                     unmarshalledObject.Profile = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("scteMarkersSource", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ScteMarkersSource = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("streamSelection", targetDepth))
                 {
                     var unmarshaller = StreamSelectionUnmarshaller.Instance;

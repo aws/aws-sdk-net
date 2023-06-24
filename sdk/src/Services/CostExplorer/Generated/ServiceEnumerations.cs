@@ -237,6 +237,106 @@ namespace Amazon.CostExplorer
 
 
     /// <summary>
+    /// Constants used for properties of type CostAllocationTagStatus.
+    /// </summary>
+    public class CostAllocationTagStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Active for CostAllocationTagStatus
+        /// </summary>
+        public static readonly CostAllocationTagStatus Active = new CostAllocationTagStatus("Active");
+        /// <summary>
+        /// Constant Inactive for CostAllocationTagStatus
+        /// </summary>
+        public static readonly CostAllocationTagStatus Inactive = new CostAllocationTagStatus("Inactive");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CostAllocationTagStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CostAllocationTagStatus FindValue(string value)
+        {
+            return FindValue<CostAllocationTagStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CostAllocationTagStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CostAllocationTagType.
+    /// </summary>
+    public class CostAllocationTagType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AWSGenerated for CostAllocationTagType
+        /// </summary>
+        public static readonly CostAllocationTagType AWSGenerated = new CostAllocationTagType("AWSGenerated");
+        /// <summary>
+        /// Constant UserDefined for CostAllocationTagType
+        /// </summary>
+        public static readonly CostAllocationTagType UserDefined = new CostAllocationTagType("UserDefined");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CostAllocationTagType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CostAllocationTagType FindValue(string value)
+        {
+            return FindValue<CostAllocationTagType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CostAllocationTagType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type CostCategoryInheritedValueDimensionName.
     /// </summary>
     public class CostCategoryInheritedValueDimensionName : ConstantClass
@@ -593,6 +693,14 @@ namespace Amazon.CostExplorer
         /// </summary>
         public static readonly Dimension AGREEMENT_END_DATE_TIME_BEFORE = new Dimension("AGREEMENT_END_DATE_TIME_BEFORE");
         /// <summary>
+        /// Constant ANOMALY_TOTAL_IMPACT_ABSOLUTE for Dimension
+        /// </summary>
+        public static readonly Dimension ANOMALY_TOTAL_IMPACT_ABSOLUTE = new Dimension("ANOMALY_TOTAL_IMPACT_ABSOLUTE");
+        /// <summary>
+        /// Constant ANOMALY_TOTAL_IMPACT_PERCENTAGE for Dimension
+        /// </summary>
+        public static readonly Dimension ANOMALY_TOTAL_IMPACT_PERCENTAGE = new Dimension("ANOMALY_TOTAL_IMPACT_PERCENTAGE");
+        /// <summary>
         /// Constant AZ for Dimension
         /// </summary>
         public static readonly Dimension AZ = new Dimension("AZ");
@@ -620,6 +728,10 @@ namespace Amazon.CostExplorer
         /// Constant INSTANCE_TYPE_FAMILY for Dimension
         /// </summary>
         public static readonly Dimension INSTANCE_TYPE_FAMILY = new Dimension("INSTANCE_TYPE_FAMILY");
+        /// <summary>
+        /// Constant INVOICING_ENTITY for Dimension
+        /// </summary>
+        public static readonly Dimension INVOICING_ENTITY = new Dimension("INVOICING_ENTITY");
         /// <summary>
         /// Constant LEGAL_ENTITY_NAME for Dimension
         /// </summary>
@@ -851,6 +963,60 @@ namespace Amazon.CostExplorer
 
 
     /// <summary>
+    /// Constants used for properties of type GenerationStatus.
+    /// </summary>
+    public class GenerationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED for GenerationStatus
+        /// </summary>
+        public static readonly GenerationStatus FAILED = new GenerationStatus("FAILED");
+        /// <summary>
+        /// Constant PROCESSING for GenerationStatus
+        /// </summary>
+        public static readonly GenerationStatus PROCESSING = new GenerationStatus("PROCESSING");
+        /// <summary>
+        /// Constant SUCCEEDED for GenerationStatus
+        /// </summary>
+        public static readonly GenerationStatus SUCCEEDED = new GenerationStatus("SUCCEEDED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GenerationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GenerationStatus FindValue(string value)
+        {
+            return FindValue<GenerationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GenerationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Granularity.
     /// </summary>
     public class Granularity : ConstantClass
@@ -1042,6 +1208,10 @@ namespace Amazon.CostExplorer
         /// Constant EQUALS for MatchOption
         /// </summary>
         public static readonly MatchOption EQUALS = new MatchOption("EQUALS");
+        /// <summary>
+        /// Constant GREATER_THAN_OR_EQUAL for MatchOption
+        /// </summary>
+        public static readonly MatchOption GREATER_THAN_OR_EQUAL = new MatchOption("GREATER_THAN_OR_EQUAL");
         /// <summary>
         /// Constant STARTS_WITH for MatchOption
         /// </summary>

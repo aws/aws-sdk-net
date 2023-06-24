@@ -31,16 +31,17 @@ namespace Amazon.Transfer
     /// <summary>
     /// Interface for accessing Transfer
     ///
-    /// Amazon Web Services Transfer Family is a fully managed service that enables the transfer
-    /// of files over the File Transfer Protocol (FTP), File Transfer Protocol over SSL (FTPS),
-    /// or Secure Shell (SSH) File Transfer Protocol (SFTP) directly into and out of Amazon
-    /// Simple Storage Service (Amazon S3). Amazon Web Services helps you seamlessly migrate
-    /// your file transfer workflows to Amazon Web Services Transfer Family by integrating
+    /// Transfer Family is a fully managed service that enables the transfer of files over
+    /// the File Transfer Protocol (FTP), File Transfer Protocol over SSL (FTPS), or Secure
+    /// Shell (SSH) File Transfer Protocol (SFTP) directly into and out of Amazon Simple Storage
+    /// Service (Amazon S3) or Amazon EFS. Additionally, you can use Applicability Statement
+    /// 2 (AS2) to transfer files into and out of Amazon S3. Amazon Web Services helps you
+    /// seamlessly migrate your file transfer workflows to Transfer Family by integrating
     /// with existing authentication systems, and providing DNS routing with Amazon Route
     /// 53 so nothing changes for your customers and partners, or their applications. With
-    /// your data in Amazon S3, you can use it with Amazon Web Services services for processing,
-    /// analytics, machine learning, and archiving. Getting started with Amazon Web Services
-    /// Transfer Family is easy since there is no infrastructure to buy and set up.
+    /// your data in Amazon S3, you can use it with Amazon Web Services for processing, analytics,
+    /// machine learning, and archiving. Getting started with Transfer Family is easy since
+    /// there is no infrastructure to buy and set up.
     /// </summary>
     public partial interface IAmazonTransfer : IAmazonService, IDisposable
     {
@@ -56,11 +57,11 @@ namespace Amazon.Transfer
 
         /// <summary>
         /// Used by administrators to choose which groups in the directory should have access
-        /// to upload and download files over the enabled protocols using Amazon Web Services
-        /// Transfer Family. For example, a Microsoft Active Directory might contain 50,000 users,
-        /// but only a small fraction might need the ability to transfer files to the server.
-        /// An administrator can use <code>CreateAccess</code> to limit the access to the correct
-        /// set of users who need this ability.
+        /// to upload and download files over the enabled protocols using Transfer Family. For
+        /// example, a Microsoft Active Directory might contain 50,000 users, but only a small
+        /// fraction might need the ability to transfer files to the server. An administrator
+        /// can use <code>CreateAccess</code> to limit the access to the correct set of users
+        /// who need this ability.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAccess service method.</param>
         /// 
@@ -90,11 +91,11 @@ namespace Amazon.Transfer
 
         /// <summary>
         /// Used by administrators to choose which groups in the directory should have access
-        /// to upload and download files over the enabled protocols using Amazon Web Services
-        /// Transfer Family. For example, a Microsoft Active Directory might contain 50,000 users,
-        /// but only a small fraction might need the ability to transfer files to the server.
-        /// An administrator can use <code>CreateAccess</code> to limit the access to the correct
-        /// set of users who need this ability.
+        /// to upload and download files over the enabled protocols using Transfer Family. For
+        /// example, a Microsoft Active Directory might contain 50,000 users, but only a small
+        /// fraction might need the ability to transfer files to the server. An administrator
+        /// can use <code>CreateAccess</code> to limit the access to the correct set of users
+        /// who need this ability.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAccess service method.</param>
         /// <param name="cancellationToken">
@@ -122,6 +123,236 @@ namespace Amazon.Transfer
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/CreateAccess">REST API Reference for CreateAccess Operation</seealso>
         Task<CreateAccessResponse> CreateAccessAsync(CreateAccessRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateAgreement
+
+
+        /// <summary>
+        /// Creates an agreement. An agreement is a bilateral trading partner agreement, or partnership,
+        /// between an Transfer Family server and an AS2 process. The agreement defines the file
+        /// and message transfer relationship between the server and the AS2 process. To define
+        /// an agreement, Transfer Family combines a server, local profile, partner profile, certificate,
+        /// and other attributes.
+        /// 
+        ///  
+        /// <para>
+        /// The partner is identified with the <code>PartnerProfileId</code>, and the AS2 process
+        /// is identified with the <code>LocalProfileId</code>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAgreement service method.</param>
+        /// 
+        /// <returns>The response from the CreateAgreement service method, as returned by Transfer.</returns>
+        /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceExistsException">
+        /// The requested resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/CreateAgreement">REST API Reference for CreateAgreement Operation</seealso>
+        CreateAgreementResponse CreateAgreement(CreateAgreementRequest request);
+
+
+
+        /// <summary>
+        /// Creates an agreement. An agreement is a bilateral trading partner agreement, or partnership,
+        /// between an Transfer Family server and an AS2 process. The agreement defines the file
+        /// and message transfer relationship between the server and the AS2 process. To define
+        /// an agreement, Transfer Family combines a server, local profile, partner profile, certificate,
+        /// and other attributes.
+        /// 
+        ///  
+        /// <para>
+        /// The partner is identified with the <code>PartnerProfileId</code>, and the AS2 process
+        /// is identified with the <code>LocalProfileId</code>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAgreement service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateAgreement service method, as returned by Transfer.</returns>
+        /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceExistsException">
+        /// The requested resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/CreateAgreement">REST API Reference for CreateAgreement Operation</seealso>
+        Task<CreateAgreementResponse> CreateAgreementAsync(CreateAgreementRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateConnector
+
+
+        /// <summary>
+        /// Creates the connector, which captures the parameters for an outbound connection for
+        /// the AS2 protocol. The connector is required for sending files to an externally hosted
+        /// AS2 server. For more details about connectors, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/create-b2b-server.html#configure-as2-connector">Create
+        /// AS2 connectors</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateConnector service method.</param>
+        /// 
+        /// <returns>The response from the CreateConnector service method, as returned by Transfer.</returns>
+        /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceExistsException">
+        /// The requested resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/CreateConnector">REST API Reference for CreateConnector Operation</seealso>
+        CreateConnectorResponse CreateConnector(CreateConnectorRequest request);
+
+
+
+        /// <summary>
+        /// Creates the connector, which captures the parameters for an outbound connection for
+        /// the AS2 protocol. The connector is required for sending files to an externally hosted
+        /// AS2 server. For more details about connectors, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/create-b2b-server.html#configure-as2-connector">Create
+        /// AS2 connectors</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateConnector service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateConnector service method, as returned by Transfer.</returns>
+        /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceExistsException">
+        /// The requested resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/CreateConnector">REST API Reference for CreateConnector Operation</seealso>
+        Task<CreateConnectorResponse> CreateConnectorAsync(CreateConnectorRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateProfile
+
+
+        /// <summary>
+        /// Creates the local or partner profile to use for AS2 transfers.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateProfile service method.</param>
+        /// 
+        /// <returns>The response from the CreateProfile service method, as returned by Transfer.</returns>
+        /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/CreateProfile">REST API Reference for CreateProfile Operation</seealso>
+        CreateProfileResponse CreateProfile(CreateProfileRequest request);
+
+
+
+        /// <summary>
+        /// Creates the local or partner profile to use for AS2 transfers.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateProfile service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateProfile service method, as returned by Transfer.</returns>
+        /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/CreateProfile">REST API Reference for CreateProfile Operation</seealso>
+        Task<CreateProfileResponse> CreateProfileAsync(CreateProfileRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -160,11 +391,6 @@ namespace Amazon.Transfer
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
         /// The request was denied due to request throttling.
-        /// 
-        ///  
-        /// <para>
-        ///  HTTP Status Code: 400
-        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/CreateServer">REST API Reference for CreateServer Operation</seealso>
         CreateServerResponse CreateServer(CreateServerRequest request);
@@ -206,11 +432,6 @@ namespace Amazon.Transfer
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
         /// The request was denied due to request throttling.
-        /// 
-        ///  
-        /// <para>
-        ///  HTTP Status Code: 400
-        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/CreateServer">REST API Reference for CreateServer Operation</seealso>
         Task<CreateServerResponse> CreateServerAsync(CreateServerRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -225,9 +446,9 @@ namespace Amazon.Transfer
         /// server. You can only create and associate users with servers that have the <code>IdentityProviderType</code>
         /// set to <code>SERVICE_MANAGED</code>. Using parameters for <code>CreateUser</code>,
         /// you can specify the user name, set the home directory, store the user's public key,
-        /// and assign the user's Amazon Web Services Identity and Access Management (IAM) role.
-        /// You can also optionally add a session policy, and assign metadata with tags that can
-        /// be used to group and search for users.
+        /// and assign the user's Identity and Access Management (IAM) role. You can also optionally
+        /// add a session policy, and assign metadata with tags that can be used to group and
+        /// search for users.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateUser service method.</param>
         /// 
@@ -260,9 +481,9 @@ namespace Amazon.Transfer
         /// server. You can only create and associate users with servers that have the <code>IdentityProviderType</code>
         /// set to <code>SERVICE_MANAGED</code>. Using parameters for <code>CreateUser</code>,
         /// you can specify the user name, set the home directory, store the user's public key,
-        /// and assign the user's Amazon Web Services Identity and Access Management (IAM) role.
-        /// You can also optionally add a session policy, and assign metadata with tags that can
-        /// be used to group and search for users.
+        /// and assign the user's Identity and Access Management (IAM) role. You can also optionally
+        /// add a session policy, and assign metadata with tags that can be used to group and
+        /// search for users.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateUser service method.</param>
         /// <param name="cancellationToken">
@@ -324,11 +545,6 @@ namespace Amazon.Transfer
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
         /// The request was denied due to request throttling.
-        /// 
-        ///  
-        /// <para>
-        ///  HTTP Status Code: 400
-        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/CreateWorkflow">REST API Reference for CreateWorkflow Operation</seealso>
         CreateWorkflowResponse CreateWorkflow(CreateWorkflowRequest request);
@@ -366,11 +582,6 @@ namespace Amazon.Transfer
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
         /// The request was denied due to request throttling.
-        /// 
-        ///  
-        /// <para>
-        ///  HTTP Status Code: 400
-        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/CreateWorkflow">REST API Reference for CreateWorkflow Operation</seealso>
         Task<CreateWorkflowResponse> CreateWorkflowAsync(CreateWorkflowRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -434,6 +645,302 @@ namespace Amazon.Transfer
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteAccess">REST API Reference for DeleteAccess Operation</seealso>
         Task<DeleteAccessResponse> DeleteAccessAsync(DeleteAccessRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteAgreement
+
+
+        /// <summary>
+        /// Delete the agreement that's specified in the provided <code>AgreementId</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAgreement service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAgreement service method, as returned by Transfer.</returns>
+        /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteAgreement">REST API Reference for DeleteAgreement Operation</seealso>
+        DeleteAgreementResponse DeleteAgreement(DeleteAgreementRequest request);
+
+
+
+        /// <summary>
+        /// Delete the agreement that's specified in the provided <code>AgreementId</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAgreement service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteAgreement service method, as returned by Transfer.</returns>
+        /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteAgreement">REST API Reference for DeleteAgreement Operation</seealso>
+        Task<DeleteAgreementResponse> DeleteAgreementAsync(DeleteAgreementRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteCertificate
+
+
+        /// <summary>
+        /// Deletes the certificate that's specified in the <code>CertificateId</code> parameter.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCertificate service method.</param>
+        /// 
+        /// <returns>The response from the DeleteCertificate service method, as returned by Transfer.</returns>
+        /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteCertificate">REST API Reference for DeleteCertificate Operation</seealso>
+        DeleteCertificateResponse DeleteCertificate(DeleteCertificateRequest request);
+
+
+
+        /// <summary>
+        /// Deletes the certificate that's specified in the <code>CertificateId</code> parameter.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCertificate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteCertificate service method, as returned by Transfer.</returns>
+        /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteCertificate">REST API Reference for DeleteCertificate Operation</seealso>
+        Task<DeleteCertificateResponse> DeleteCertificateAsync(DeleteCertificateRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteConnector
+
+
+        /// <summary>
+        /// Deletes the agreement that's specified in the provided <code>ConnectorId</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConnector service method.</param>
+        /// 
+        /// <returns>The response from the DeleteConnector service method, as returned by Transfer.</returns>
+        /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteConnector">REST API Reference for DeleteConnector Operation</seealso>
+        DeleteConnectorResponse DeleteConnector(DeleteConnectorRequest request);
+
+
+
+        /// <summary>
+        /// Deletes the agreement that's specified in the provided <code>ConnectorId</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConnector service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteConnector service method, as returned by Transfer.</returns>
+        /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteConnector">REST API Reference for DeleteConnector Operation</seealso>
+        Task<DeleteConnectorResponse> DeleteConnectorAsync(DeleteConnectorRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteHostKey
+
+
+        /// <summary>
+        /// Deletes the host key that's specified in the <code>HostKeyId</code> parameter.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteHostKey service method.</param>
+        /// 
+        /// <returns>The response from the DeleteHostKey service method, as returned by Transfer.</returns>
+        /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteHostKey">REST API Reference for DeleteHostKey Operation</seealso>
+        DeleteHostKeyResponse DeleteHostKey(DeleteHostKeyRequest request);
+
+
+
+        /// <summary>
+        /// Deletes the host key that's specified in the <code>HostKeyId</code> parameter.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteHostKey service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteHostKey service method, as returned by Transfer.</returns>
+        /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteHostKey">REST API Reference for DeleteHostKey Operation</seealso>
+        Task<DeleteHostKeyResponse> DeleteHostKeyAsync(DeleteHostKeyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteProfile
+
+
+        /// <summary>
+        /// Deletes the profile that's specified in the <code>ProfileId</code> parameter.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteProfile service method.</param>
+        /// 
+        /// <returns>The response from the DeleteProfile service method, as returned by Transfer.</returns>
+        /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteProfile">REST API Reference for DeleteProfile Operation</seealso>
+        DeleteProfileResponse DeleteProfile(DeleteProfileRequest request);
+
+
+
+        /// <summary>
+        /// Deletes the profile that's specified in the <code>ProfileId</code> parameter.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteProfile service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteProfile service method, as returned by Transfer.</returns>
+        /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteProfile">REST API Reference for DeleteProfile Operation</seealso>
+        Task<DeleteProfileResponse> DeleteProfileAsync(DeleteProfileRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -537,11 +1044,6 @@ namespace Amazon.Transfer
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
         /// The request was denied due to request throttling.
-        /// 
-        ///  
-        /// <para>
-        ///  HTTP Status Code: 400
-        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteSshPublicKey">REST API Reference for DeleteSshPublicKey Operation</seealso>
         DeleteSshPublicKeyResponse DeleteSshPublicKey(DeleteSshPublicKeyRequest request);
@@ -574,11 +1076,6 @@ namespace Amazon.Transfer
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
         /// The request was denied due to request throttling.
-        /// 
-        ///  
-        /// <para>
-        ///  HTTP Status Code: 400
-        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteSshPublicKey">REST API Reference for DeleteSshPublicKey Operation</seealso>
         Task<DeleteSshPublicKeyResponse> DeleteSshPublicKeyAsync(DeleteSshPublicKeyRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -732,7 +1229,7 @@ namespace Amazon.Transfer
 
         /// <summary>
         /// Describes the access that is assigned to the specific file transfer protocol-enabled
-        /// server, as identified by its <code>ServerId</code> property and its <code>ExternalID</code>.
+        /// server, as identified by its <code>ServerId</code> property and its <code>ExternalId</code>.
         /// 
         ///  
         /// <para>
@@ -765,7 +1262,7 @@ namespace Amazon.Transfer
 
         /// <summary>
         /// Describes the access that is assigned to the specific file transfer protocol-enabled
-        /// server, as identified by its <code>ServerId</code> property and its <code>ExternalID</code>.
+        /// server, as identified by its <code>ServerId</code> property and its <code>ExternalId</code>.
         /// 
         ///  
         /// <para>
@@ -799,12 +1296,198 @@ namespace Amazon.Transfer
 
         #endregion
         
+        #region  DescribeAgreement
+
+
+        /// <summary>
+        /// Describes the agreement that's identified by the <code>AgreementId</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAgreement service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAgreement service method, as returned by Transfer.</returns>
+        /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeAgreement">REST API Reference for DescribeAgreement Operation</seealso>
+        DescribeAgreementResponse DescribeAgreement(DescribeAgreementRequest request);
+
+
+
+        /// <summary>
+        /// Describes the agreement that's identified by the <code>AgreementId</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAgreement service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeAgreement service method, as returned by Transfer.</returns>
+        /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeAgreement">REST API Reference for DescribeAgreement Operation</seealso>
+        Task<DescribeAgreementResponse> DescribeAgreementAsync(DescribeAgreementRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeCertificate
+
+
+        /// <summary>
+        /// Describes the certificate that's identified by the <code>CertificateId</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCertificate service method.</param>
+        /// 
+        /// <returns>The response from the DescribeCertificate service method, as returned by Transfer.</returns>
+        /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeCertificate">REST API Reference for DescribeCertificate Operation</seealso>
+        DescribeCertificateResponse DescribeCertificate(DescribeCertificateRequest request);
+
+
+
+        /// <summary>
+        /// Describes the certificate that's identified by the <code>CertificateId</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCertificate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeCertificate service method, as returned by Transfer.</returns>
+        /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeCertificate">REST API Reference for DescribeCertificate Operation</seealso>
+        Task<DescribeCertificateResponse> DescribeCertificateAsync(DescribeCertificateRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeConnector
+
+
+        /// <summary>
+        /// Describes the connector that's identified by the <code>ConnectorId.</code>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeConnector service method.</param>
+        /// 
+        /// <returns>The response from the DescribeConnector service method, as returned by Transfer.</returns>
+        /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeConnector">REST API Reference for DescribeConnector Operation</seealso>
+        DescribeConnectorResponse DescribeConnector(DescribeConnectorRequest request);
+
+
+
+        /// <summary>
+        /// Describes the connector that's identified by the <code>ConnectorId.</code>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeConnector service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeConnector service method, as returned by Transfer.</returns>
+        /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeConnector">REST API Reference for DescribeConnector Operation</seealso>
+        Task<DescribeConnectorResponse> DescribeConnectorAsync(DescribeConnectorRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DescribeExecution
 
 
         /// <summary>
         /// You can use <code>DescribeExecution</code> to check the details of the execution of
         /// the specified workflow.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This API call only returns details for in-progress workflows.
+        /// </para>
+        ///  
+        /// <para>
+        ///  If you provide an ID for an execution that is not in progress, or if the execution
+        /// doesn't match the specified workflow ID, you receive a <code>ResourceNotFound</code>
+        /// exception.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeExecution service method.</param>
         /// 
@@ -832,6 +1515,18 @@ namespace Amazon.Transfer
         /// <summary>
         /// You can use <code>DescribeExecution</code> to check the details of the execution of
         /// the specified workflow.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This API call only returns details for in-progress workflows.
+        /// </para>
+        ///  
+        /// <para>
+        ///  If you provide an ID for an execution that is not in progress, or if the execution
+        /// doesn't match the specified workflow ID, you receive a <code>ResourceNotFound</code>
+        /// exception.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeExecution service method.</param>
         /// <param name="cancellationToken">
@@ -856,6 +1551,124 @@ namespace Amazon.Transfer
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeExecution">REST API Reference for DescribeExecution Operation</seealso>
         Task<DescribeExecutionResponse> DescribeExecutionAsync(DescribeExecutionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeHostKey
+
+
+        /// <summary>
+        /// Returns the details of the host key that's specified by the <code>HostKeyId</code>
+        /// and <code>ServerId</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeHostKey service method.</param>
+        /// 
+        /// <returns>The response from the DescribeHostKey service method, as returned by Transfer.</returns>
+        /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeHostKey">REST API Reference for DescribeHostKey Operation</seealso>
+        DescribeHostKeyResponse DescribeHostKey(DescribeHostKeyRequest request);
+
+
+
+        /// <summary>
+        /// Returns the details of the host key that's specified by the <code>HostKeyId</code>
+        /// and <code>ServerId</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeHostKey service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeHostKey service method, as returned by Transfer.</returns>
+        /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeHostKey">REST API Reference for DescribeHostKey Operation</seealso>
+        Task<DescribeHostKeyResponse> DescribeHostKeyAsync(DescribeHostKeyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeProfile
+
+
+        /// <summary>
+        /// Returns the details of the profile that's specified by the <code>ProfileId</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeProfile service method.</param>
+        /// 
+        /// <returns>The response from the DescribeProfile service method, as returned by Transfer.</returns>
+        /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeProfile">REST API Reference for DescribeProfile Operation</seealso>
+        DescribeProfileResponse DescribeProfile(DescribeProfileRequest request);
+
+
+
+        /// <summary>
+        /// Returns the details of the profile that's specified by the <code>ProfileId</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeProfile service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeProfile service method, as returned by Transfer.</returns>
+        /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeProfile">REST API Reference for DescribeProfile Operation</seealso>
+        Task<DescribeProfileResponse> DescribeProfileAsync(DescribeProfileRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1125,11 +1938,141 @@ namespace Amazon.Transfer
 
         #endregion
         
+        #region  ImportCertificate
+
+
+        /// <summary>
+        /// Imports the signing and encryption certificates that you need to create local (AS2)
+        /// profiles and partner profiles.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ImportCertificate service method.</param>
+        /// 
+        /// <returns>The response from the ImportCertificate service method, as returned by Transfer.</returns>
+        /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ImportCertificate">REST API Reference for ImportCertificate Operation</seealso>
+        ImportCertificateResponse ImportCertificate(ImportCertificateRequest request);
+
+
+
+        /// <summary>
+        /// Imports the signing and encryption certificates that you need to create local (AS2)
+        /// profiles and partner profiles.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ImportCertificate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ImportCertificate service method, as returned by Transfer.</returns>
+        /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ImportCertificate">REST API Reference for ImportCertificate Operation</seealso>
+        Task<ImportCertificateResponse> ImportCertificateAsync(ImportCertificateRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ImportHostKey
+
+
+        /// <summary>
+        /// Adds a host key to the server that's specified by the <code>ServerId</code> parameter.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ImportHostKey service method.</param>
+        /// 
+        /// <returns>The response from the ImportHostKey service method, as returned by Transfer.</returns>
+        /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceExistsException">
+        /// The requested resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ImportHostKey">REST API Reference for ImportHostKey Operation</seealso>
+        ImportHostKeyResponse ImportHostKey(ImportHostKeyRequest request);
+
+
+
+        /// <summary>
+        /// Adds a host key to the server that's specified by the <code>ServerId</code> parameter.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ImportHostKey service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ImportHostKey service method, as returned by Transfer.</returns>
+        /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceExistsException">
+        /// The requested resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ImportHostKey">REST API Reference for ImportHostKey Operation</seealso>
+        Task<ImportHostKeyResponse> ImportHostKeyAsync(ImportHostKeyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ImportSshPublicKey
 
 
         /// <summary>
-        /// Adds a Secure Shell (SSH) public key to a user account identified by a <code>UserName</code>
+        /// Adds a Secure Shell (SSH) public key to a Transfer Family user identified by a <code>UserName</code>
         /// value assigned to the specific file transfer protocol-enabled server, identified by
         /// <code>ServerId</code>.
         /// 
@@ -1162,11 +2105,6 @@ namespace Amazon.Transfer
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
         /// The request was denied due to request throttling.
-        /// 
-        ///  
-        /// <para>
-        ///  HTTP Status Code: 400
-        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ImportSshPublicKey">REST API Reference for ImportSshPublicKey Operation</seealso>
         ImportSshPublicKeyResponse ImportSshPublicKey(ImportSshPublicKeyRequest request);
@@ -1174,7 +2112,7 @@ namespace Amazon.Transfer
 
 
         /// <summary>
-        /// Adds a Secure Shell (SSH) public key to a user account identified by a <code>UserName</code>
+        /// Adds a Secure Shell (SSH) public key to a Transfer Family user identified by a <code>UserName</code>
         /// value assigned to the specific file transfer protocol-enabled server, identified by
         /// <code>ServerId</code>.
         /// 
@@ -1210,11 +2148,6 @@ namespace Amazon.Transfer
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
         /// The request was denied due to request throttling.
-        /// 
-        ///  
-        /// <para>
-        ///  HTTP Status Code: 400
-        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ImportSshPublicKey">REST API Reference for ImportSshPublicKey Operation</seealso>
         Task<ImportSshPublicKeyResponse> ImportSshPublicKeyAsync(ImportSshPublicKeyRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1285,11 +2218,226 @@ namespace Amazon.Transfer
 
         #endregion
         
+        #region  ListAgreements
+
+
+        /// <summary>
+        /// Returns a list of the agreements for the server that's identified by the <code>ServerId</code>
+        /// that you supply. If you want to limit the results to a certain number, supply a value
+        /// for the <code>MaxResults</code> parameter. If you ran the command previously and received
+        /// a value for <code>NextToken</code>, you can supply that value to continue listing
+        /// agreements from where you left off.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAgreements service method.</param>
+        /// 
+        /// <returns>The response from the ListAgreements service method, as returned by Transfer.</returns>
+        /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidNextTokenException">
+        /// The <code>NextToken</code> parameter that was passed is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListAgreements">REST API Reference for ListAgreements Operation</seealso>
+        ListAgreementsResponse ListAgreements(ListAgreementsRequest request);
+
+
+
+        /// <summary>
+        /// Returns a list of the agreements for the server that's identified by the <code>ServerId</code>
+        /// that you supply. If you want to limit the results to a certain number, supply a value
+        /// for the <code>MaxResults</code> parameter. If you ran the command previously and received
+        /// a value for <code>NextToken</code>, you can supply that value to continue listing
+        /// agreements from where you left off.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAgreements service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAgreements service method, as returned by Transfer.</returns>
+        /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidNextTokenException">
+        /// The <code>NextToken</code> parameter that was passed is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListAgreements">REST API Reference for ListAgreements Operation</seealso>
+        Task<ListAgreementsResponse> ListAgreementsAsync(ListAgreementsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListCertificates
+
+
+        /// <summary>
+        /// Returns a list of the current certificates that have been imported into Transfer Family.
+        /// If you want to limit the results to a certain number, supply a value for the <code>MaxResults</code>
+        /// parameter. If you ran the command previously and received a value for the <code>NextToken</code>
+        /// parameter, you can supply that value to continue listing certificates from where you
+        /// left off.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCertificates service method.</param>
+        /// 
+        /// <returns>The response from the ListCertificates service method, as returned by Transfer.</returns>
+        /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidNextTokenException">
+        /// The <code>NextToken</code> parameter that was passed is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListCertificates">REST API Reference for ListCertificates Operation</seealso>
+        ListCertificatesResponse ListCertificates(ListCertificatesRequest request);
+
+
+
+        /// <summary>
+        /// Returns a list of the current certificates that have been imported into Transfer Family.
+        /// If you want to limit the results to a certain number, supply a value for the <code>MaxResults</code>
+        /// parameter. If you ran the command previously and received a value for the <code>NextToken</code>
+        /// parameter, you can supply that value to continue listing certificates from where you
+        /// left off.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCertificates service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListCertificates service method, as returned by Transfer.</returns>
+        /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidNextTokenException">
+        /// The <code>NextToken</code> parameter that was passed is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListCertificates">REST API Reference for ListCertificates Operation</seealso>
+        Task<ListCertificatesResponse> ListCertificatesAsync(ListCertificatesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListConnectors
+
+
+        /// <summary>
+        /// Lists the connectors for the specified Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListConnectors service method.</param>
+        /// 
+        /// <returns>The response from the ListConnectors service method, as returned by Transfer.</returns>
+        /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidNextTokenException">
+        /// The <code>NextToken</code> parameter that was passed is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListConnectors">REST API Reference for ListConnectors Operation</seealso>
+        ListConnectorsResponse ListConnectors(ListConnectorsRequest request);
+
+
+
+        /// <summary>
+        /// Lists the connectors for the specified Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListConnectors service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListConnectors service method, as returned by Transfer.</returns>
+        /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidNextTokenException">
+        /// The <code>NextToken</code> parameter that was passed is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListConnectors">REST API Reference for ListConnectors Operation</seealso>
+        Task<ListConnectorsResponse> ListConnectorsAsync(ListConnectorsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListExecutions
 
 
         /// <summary>
-        /// Lists all executions for the specified workflow.
+        /// Lists all in-progress executions for the specified workflow.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// If the specified workflow ID cannot be found, <code>ListExecutions</code> returns
+        /// a <code>ResourceNotFound</code> exception.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListExecutions service method.</param>
         /// 
@@ -1318,7 +2466,14 @@ namespace Amazon.Transfer
 
 
         /// <summary>
-        /// Lists all executions for the specified workflow.
+        /// Lists all in-progress executions for the specified workflow.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// If the specified workflow ID cannot be found, <code>ListExecutions</code> returns
+        /// a <code>ResourceNotFound</code> exception.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListExecutions service method.</param>
         /// <param name="cancellationToken">
@@ -1346,6 +2501,142 @@ namespace Amazon.Transfer
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListExecutions">REST API Reference for ListExecutions Operation</seealso>
         Task<ListExecutionsResponse> ListExecutionsAsync(ListExecutionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListHostKeys
+
+
+        /// <summary>
+        /// Returns a list of host keys for the server that's specified by the <code>ServerId</code>
+        /// parameter.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListHostKeys service method.</param>
+        /// 
+        /// <returns>The response from the ListHostKeys service method, as returned by Transfer.</returns>
+        /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidNextTokenException">
+        /// The <code>NextToken</code> parameter that was passed is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListHostKeys">REST API Reference for ListHostKeys Operation</seealso>
+        ListHostKeysResponse ListHostKeys(ListHostKeysRequest request);
+
+
+
+        /// <summary>
+        /// Returns a list of host keys for the server that's specified by the <code>ServerId</code>
+        /// parameter.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListHostKeys service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListHostKeys service method, as returned by Transfer.</returns>
+        /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidNextTokenException">
+        /// The <code>NextToken</code> parameter that was passed is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListHostKeys">REST API Reference for ListHostKeys Operation</seealso>
+        Task<ListHostKeysResponse> ListHostKeysAsync(ListHostKeysRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListProfiles
+
+
+        /// <summary>
+        /// Returns a list of the profiles for your system. If you want to limit the results to
+        /// a certain number, supply a value for the <code>MaxResults</code> parameter. If you
+        /// ran the command previously and received a value for <code>NextToken</code>, you can
+        /// supply that value to continue listing profiles from where you left off.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListProfiles service method.</param>
+        /// 
+        /// <returns>The response from the ListProfiles service method, as returned by Transfer.</returns>
+        /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidNextTokenException">
+        /// The <code>NextToken</code> parameter that was passed is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListProfiles">REST API Reference for ListProfiles Operation</seealso>
+        ListProfilesResponse ListProfiles(ListProfilesRequest request);
+
+
+
+        /// <summary>
+        /// Returns a list of the profiles for your system. If you want to limit the results to
+        /// a certain number, supply a value for the <code>MaxResults</code> parameter. If you
+        /// ran the command previously and received a value for <code>NextToken</code>, you can
+        /// supply that value to continue listing profiles from where you left off.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListProfiles service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListProfiles service method, as returned by Transfer.</returns>
+        /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidNextTokenException">
+        /// The <code>NextToken</code> parameter that was passed is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListProfiles">REST API Reference for ListProfiles Operation</seealso>
+        Task<ListProfilesResponse> ListProfilesAsync(ListProfilesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1593,7 +2884,8 @@ namespace Amazon.Transfer
 
 
         /// <summary>
-        /// Lists all of your workflows.
+        /// Lists all workflows associated with your Amazon Web Services account for your current
+        /// region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListWorkflows service method.</param>
         /// 
@@ -1618,7 +2910,8 @@ namespace Amazon.Transfer
 
 
         /// <summary>
-        /// Lists all of your workflows.
+        /// Lists all workflows associated with your Amazon Web Services account for your current
+        /// region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListWorkflows service method.</param>
         /// <param name="cancellationToken">
@@ -1681,11 +2974,6 @@ namespace Amazon.Transfer
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
         /// The request was denied due to request throttling.
-        /// 
-        ///  
-        /// <para>
-        ///  HTTP Status Code: 400
-        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/SendWorkflowStepState">REST API Reference for SendWorkflowStepState Operation</seealso>
         SendWorkflowStepStateResponse SendWorkflowStepState(SendWorkflowStepStateRequest request);
@@ -1728,14 +3016,75 @@ namespace Amazon.Transfer
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
         /// The request was denied due to request throttling.
-        /// 
-        ///  
-        /// <para>
-        ///  HTTP Status Code: 400
-        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/SendWorkflowStepState">REST API Reference for SendWorkflowStepState Operation</seealso>
         Task<SendWorkflowStepStateResponse> SendWorkflowStepStateAsync(SendWorkflowStepStateRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  StartFileTransfer
+
+
+        /// <summary>
+        /// Begins an outbound file transfer to a remote AS2 server. You specify the <code>ConnectorId</code>
+        /// and the file paths for where to send the files.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartFileTransfer service method.</param>
+        /// 
+        /// <returns>The response from the StartFileTransfer service method, as returned by Transfer.</returns>
+        /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/StartFileTransfer">REST API Reference for StartFileTransfer Operation</seealso>
+        StartFileTransferResponse StartFileTransfer(StartFileTransferRequest request);
+
+
+
+        /// <summary>
+        /// Begins an outbound file transfer to a remote AS2 server. You specify the <code>ConnectorId</code>
+        /// and the file paths for where to send the files.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartFileTransfer service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartFileTransfer service method, as returned by Transfer.</returns>
+        /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/StartFileTransfer">REST API Reference for StartFileTransfer Operation</seealso>
+        Task<StartFileTransferResponse> StartFileTransferAsync(StartFileTransferRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1778,11 +3127,6 @@ namespace Amazon.Transfer
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
         /// The request was denied due to request throttling.
-        /// 
-        ///  
-        /// <para>
-        ///  HTTP Status Code: 400
-        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/StartServer">REST API Reference for StartServer Operation</seealso>
         StartServerResponse StartServer(StartServerRequest request);
@@ -1828,11 +3172,6 @@ namespace Amazon.Transfer
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
         /// The request was denied due to request throttling.
-        /// 
-        ///  
-        /// <para>
-        ///  HTTP Status Code: 400
-        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/StartServer">REST API Reference for StartServer Operation</seealso>
         Task<StartServerResponse> StartServerAsync(StartServerRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1850,7 +3189,7 @@ namespace Amazon.Transfer
         /// 
         ///  <note> 
         /// <para>
-        /// Stopping the server will not reduce or impact your file transfer protocol endpoint
+        /// Stopping the server does not reduce or impact your file transfer protocol endpoint
         /// billing; you must delete the server to stop being billed.
         /// </para>
         ///  </note> 
@@ -1884,11 +3223,6 @@ namespace Amazon.Transfer
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
         /// The request was denied due to request throttling.
-        /// 
-        ///  
-        /// <para>
-        ///  HTTP Status Code: 400
-        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/StopServer">REST API Reference for StopServer Operation</seealso>
         StopServerResponse StopServer(StopServerRequest request);
@@ -1903,7 +3237,7 @@ namespace Amazon.Transfer
         /// 
         ///  <note> 
         /// <para>
-        /// Stopping the server will not reduce or impact your file transfer protocol endpoint
+        /// Stopping the server does not reduce or impact your file transfer protocol endpoint
         /// billing; you must delete the server to stop being billed.
         /// </para>
         ///  </note> 
@@ -1940,11 +3274,6 @@ namespace Amazon.Transfer
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
         /// The request was denied due to request throttling.
-        /// 
-        ///  
-        /// <para>
-        ///  HTTP Status Code: 400
-        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/StopServer">REST API Reference for StopServer Operation</seealso>
         Task<StopServerResponse> StopServerAsync(StopServerRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -2038,12 +3367,25 @@ namespace Amazon.Transfer
         /// <code>ServerProtocol</code>, <code>SourceIp</code>, and <code>UserPassword</code>
         /// are all optional. 
         /// </para>
-        ///  <note> 
+        ///  
+        /// <para>
+        /// Note the following:
+        /// </para>
+        ///  <ul> <li> 
         /// <para>
         ///  You cannot use <code>TestIdentityProvider</code> if the <code>IdentityProviderType</code>
-        /// of your server is <code>SERVICE_MANAGED</code>. 
+        /// of your server is <code>SERVICE_MANAGED</code>.
         /// </para>
-        ///  </note> <ul> <li> 
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>TestIdentityProvider</code> does not work with keys: it only accepts passwords.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>TestIdentityProvider</code> can test the password operation for a custom Identity
+        /// Provider that handles keys and passwords.
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         ///  If you provide any incorrect values for any parameters, the <code>Response</code>
         /// field is empty. 
@@ -2066,7 +3408,13 @@ namespace Amazon.Transfer
         ///  
         /// <para>
         ///  <code>An error occurred (ResourceNotFoundException) when calling the TestIdentityProvider
-        /// operation: Unknown server</code> 
+        /// operation: Unknown server</code>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// It is possible your sever is in a different region. You can specify a region by adding
+        /// the following: <code>--region region-code</code>, such as <code>--region us-east-2</code>
+        /// to specify a server in <b>US East (Ohio)</b>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -2107,12 +3455,25 @@ namespace Amazon.Transfer
         /// <code>ServerProtocol</code>, <code>SourceIp</code>, and <code>UserPassword</code>
         /// are all optional. 
         /// </para>
-        ///  <note> 
+        ///  
+        /// <para>
+        /// Note the following:
+        /// </para>
+        ///  <ul> <li> 
         /// <para>
         ///  You cannot use <code>TestIdentityProvider</code> if the <code>IdentityProviderType</code>
-        /// of your server is <code>SERVICE_MANAGED</code>. 
+        /// of your server is <code>SERVICE_MANAGED</code>.
         /// </para>
-        ///  </note> <ul> <li> 
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>TestIdentityProvider</code> does not work with keys: it only accepts passwords.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>TestIdentityProvider</code> can test the password operation for a custom Identity
+        /// Provider that handles keys and passwords.
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         ///  If you provide any incorrect values for any parameters, the <code>Response</code>
         /// field is empty. 
@@ -2135,7 +3496,13 @@ namespace Amazon.Transfer
         ///  
         /// <para>
         ///  <code>An error occurred (ResourceNotFoundException) when calling the TestIdentityProvider
-        /// operation: Unknown server</code> 
+        /// operation: Unknown server</code>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// It is possible your sever is in a different region. You can specify a region by adding
+        /// the following: <code>--region region-code</code>, such as <code>--region us-east-2</code>
+        /// to specify a server in <b>US East (Ohio)</b>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -2263,6 +3630,9 @@ namespace Amazon.Transfer
         /// The request has failed because the Amazon Web ServicesTransfer Family service is not
         /// available.
         /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateAccess">REST API Reference for UpdateAccess Operation</seealso>
         UpdateAccessResponse UpdateAccess(UpdateAccessRequest request);
 
@@ -2296,8 +3666,357 @@ namespace Amazon.Transfer
         /// The request has failed because the Amazon Web ServicesTransfer Family service is not
         /// available.
         /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateAccess">REST API Reference for UpdateAccess Operation</seealso>
         Task<UpdateAccessResponse> UpdateAccessAsync(UpdateAccessRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateAgreement
+
+
+        /// <summary>
+        /// Updates some of the parameters for an existing agreement. Provide the <code>AgreementId</code>
+        /// and the <code>ServerId</code> for the agreement that you want to update, along with
+        /// the new values for the parameters to update.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAgreement service method.</param>
+        /// 
+        /// <returns>The response from the UpdateAgreement service method, as returned by Transfer.</returns>
+        /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceExistsException">
+        /// The requested resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateAgreement">REST API Reference for UpdateAgreement Operation</seealso>
+        UpdateAgreementResponse UpdateAgreement(UpdateAgreementRequest request);
+
+
+
+        /// <summary>
+        /// Updates some of the parameters for an existing agreement. Provide the <code>AgreementId</code>
+        /// and the <code>ServerId</code> for the agreement that you want to update, along with
+        /// the new values for the parameters to update.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAgreement service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateAgreement service method, as returned by Transfer.</returns>
+        /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceExistsException">
+        /// The requested resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateAgreement">REST API Reference for UpdateAgreement Operation</seealso>
+        Task<UpdateAgreementResponse> UpdateAgreementAsync(UpdateAgreementRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateCertificate
+
+
+        /// <summary>
+        /// Updates the active and inactive dates for a certificate.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCertificate service method.</param>
+        /// 
+        /// <returns>The response from the UpdateCertificate service method, as returned by Transfer.</returns>
+        /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateCertificate">REST API Reference for UpdateCertificate Operation</seealso>
+        UpdateCertificateResponse UpdateCertificate(UpdateCertificateRequest request);
+
+
+
+        /// <summary>
+        /// Updates the active and inactive dates for a certificate.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCertificate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateCertificate service method, as returned by Transfer.</returns>
+        /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateCertificate">REST API Reference for UpdateCertificate Operation</seealso>
+        Task<UpdateCertificateResponse> UpdateCertificateAsync(UpdateCertificateRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateConnector
+
+
+        /// <summary>
+        /// Updates some of the parameters for an existing connector. Provide the <code>ConnectorId</code>
+        /// for the connector that you want to update, along with the new values for the parameters
+        /// to update.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateConnector service method.</param>
+        /// 
+        /// <returns>The response from the UpdateConnector service method, as returned by Transfer.</returns>
+        /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceExistsException">
+        /// The requested resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateConnector">REST API Reference for UpdateConnector Operation</seealso>
+        UpdateConnectorResponse UpdateConnector(UpdateConnectorRequest request);
+
+
+
+        /// <summary>
+        /// Updates some of the parameters for an existing connector. Provide the <code>ConnectorId</code>
+        /// for the connector that you want to update, along with the new values for the parameters
+        /// to update.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateConnector service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateConnector service method, as returned by Transfer.</returns>
+        /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceExistsException">
+        /// The requested resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateConnector">REST API Reference for UpdateConnector Operation</seealso>
+        Task<UpdateConnectorResponse> UpdateConnectorAsync(UpdateConnectorRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateHostKey
+
+
+        /// <summary>
+        /// Updates the description for the host key that's specified by the <code>ServerId</code>
+        /// and <code>HostKeyId</code> parameters.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateHostKey service method.</param>
+        /// 
+        /// <returns>The response from the UpdateHostKey service method, as returned by Transfer.</returns>
+        /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateHostKey">REST API Reference for UpdateHostKey Operation</seealso>
+        UpdateHostKeyResponse UpdateHostKey(UpdateHostKeyRequest request);
+
+
+
+        /// <summary>
+        /// Updates the description for the host key that's specified by the <code>ServerId</code>
+        /// and <code>HostKeyId</code> parameters.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateHostKey service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateHostKey service method, as returned by Transfer.</returns>
+        /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateHostKey">REST API Reference for UpdateHostKey Operation</seealso>
+        Task<UpdateHostKeyResponse> UpdateHostKeyAsync(UpdateHostKeyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateProfile
+
+
+        /// <summary>
+        /// Updates some of the parameters for an existing profile. Provide the <code>ProfileId</code>
+        /// for the profile that you want to update, along with the new values for the parameters
+        /// to update.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateProfile service method.</param>
+        /// 
+        /// <returns>The response from the UpdateProfile service method, as returned by Transfer.</returns>
+        /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateProfile">REST API Reference for UpdateProfile Operation</seealso>
+        UpdateProfileResponse UpdateProfile(UpdateProfileRequest request);
+
+
+
+        /// <summary>
+        /// Updates some of the parameters for an existing profile. Provide the <code>ProfileId</code>
+        /// for the profile that you want to update, along with the new values for the parameters
+        /// to update.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateProfile service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateProfile service method, as returned by Transfer.</returns>
+        /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateProfile">REST API Reference for UpdateProfile Operation</seealso>
+        Task<UpdateProfileResponse> UpdateProfileAsync(UpdateProfileRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -2345,11 +4064,6 @@ namespace Amazon.Transfer
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
         /// The request was denied due to request throttling.
-        /// 
-        ///  
-        /// <para>
-        ///  HTTP Status Code: 400
-        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateServer">REST API Reference for UpdateServer Operation</seealso>
         UpdateServerResponse UpdateServer(UpdateServerRequest request);
@@ -2400,11 +4114,6 @@ namespace Amazon.Transfer
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
         /// The request was denied due to request throttling.
-        /// 
-        ///  
-        /// <para>
-        ///  HTTP Status Code: 400
-        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateServer">REST API Reference for UpdateServer Operation</seealso>
         Task<UpdateServerResponse> UpdateServerAsync(UpdateServerRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -2445,11 +4154,6 @@ namespace Amazon.Transfer
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
         /// The request was denied due to request throttling.
-        /// 
-        ///  
-        /// <para>
-        ///  HTTP Status Code: 400
-        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateUser">REST API Reference for UpdateUser Operation</seealso>
         UpdateUserResponse UpdateUser(UpdateUserRequest request);
@@ -2490,11 +4194,6 @@ namespace Amazon.Transfer
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
         /// The request was denied due to request throttling.
-        /// 
-        ///  
-        /// <para>
-        ///  HTTP Status Code: 400
-        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateUser">REST API Reference for UpdateUser Operation</seealso>
         Task<UpdateUserResponse> UpdateUserAsync(UpdateUserRequest request, CancellationToken cancellationToken = default(CancellationToken));

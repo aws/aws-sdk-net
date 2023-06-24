@@ -34,7 +34,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Facet Marshaller
-    /// </summary>       
+    /// </summary>
     public class FacetMarshaller : IRequestMarshaller<Facet, JsonMarshallerContext> 
     {
         /// <summary>
@@ -51,11 +51,33 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.DocumentAttributeKey);
             }
 
+            if(requestObject.IsSetFacets())
+            {
+                context.Writer.WritePropertyName("Facets");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectFacetsListValue in requestObject.Facets)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = FacetMarshaller.Instance;
+                    marshaller.Marshall(requestObjectFacetsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetMaxResults())
+            {
+                context.Writer.WritePropertyName("MaxResults");
+                context.Writer.Write(requestObject.MaxResults);
+            }
+
         }
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static FacetMarshaller Instance = new FacetMarshaller();
 
     }

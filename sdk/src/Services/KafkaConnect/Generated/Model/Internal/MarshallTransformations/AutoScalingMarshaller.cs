@@ -34,7 +34,7 @@ namespace Amazon.KafkaConnect.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AutoScaling Marshaller
-    /// </summary>       
+    /// </summary>
     public class AutoScalingMarshaller : IRequestMarshaller<AutoScaling, JsonMarshallerContext> 
     {
         /// <summary>
@@ -89,7 +89,7 @@ namespace Amazon.KafkaConnect.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AutoScalingMarshaller Instance = new AutoScalingMarshaller();
 
     }

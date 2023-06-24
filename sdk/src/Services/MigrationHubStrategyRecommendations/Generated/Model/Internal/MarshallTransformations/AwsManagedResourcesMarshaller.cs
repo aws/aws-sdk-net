@@ -34,7 +34,7 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
 {
     /// <summary>
     /// AwsManagedResources Marshaller
-    /// </summary>       
+    /// </summary>
     public class AwsManagedResourcesMarshaller : IRequestMarshaller<AwsManagedResources, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AwsManagedResourcesMarshaller Instance = new AwsManagedResourcesMarshaller();
 
     }

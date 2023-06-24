@@ -100,7 +100,7 @@ namespace Amazon.Batch.Model
         /// <para>
         /// The tags that you apply to the scheduling policy to categorize and organize your resources.
         /// Each tag consists of a key and an optional value. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-        /// Amazon Web Services Resources</a> in <i>Amazon Web Services General Reference</i>.
+        /// Amazon Web Services resources</a> in <i>Amazon Web Services General Reference</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

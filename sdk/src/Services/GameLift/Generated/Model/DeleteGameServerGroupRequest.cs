@@ -30,8 +30,8 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteGameServerGroup operation.
-    /// <b>This operation is used with the GameLift FleetIQ solution and game server groups.</b>
-    /// 
+    /// <b>This operation is used with the Amazon GameLift FleetIQ solution and game server
+    /// groups.</b> 
     /// 
     ///  
     /// <para>
@@ -63,13 +63,13 @@ namespace Amazon.GameLift.Model
     /// If the delete request is successful, a series of operations are kicked off. The game
     /// server group status is changed to <code>DELETE_SCHEDULED</code>, which prevents new
     /// game servers from being registered and stops automatic scaling activity. Once all
-    /// game servers in the game server group are deregistered, GameLift FleetIQ can begin
-    /// deleting resources. If any of the delete operations fail, the game server group is
-    /// placed in <code>ERROR</code> status.
+    /// game servers in the game server group are deregistered, Amazon GameLift FleetIQ can
+    /// begin deleting resources. If any of the delete operations fail, the game server group
+    /// is placed in <code>ERROR</code> status.
     /// </para>
     ///  
     /// <para>
-    /// GameLift FleetIQ emits delete events to Amazon CloudWatch.
+    /// Amazon GameLift FleetIQ emits delete events to Amazon CloudWatch.
     /// </para>
     ///  
     /// <para>
@@ -77,19 +77,8 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  
     /// <para>
-    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-intro.html">GameLift
-    /// FleetIQ Guide</a> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <b>Related actions</b> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <a>CreateGameServerGroup</a> | <a>ListGameServerGroups</a> | <a>DescribeGameServerGroup</a>
-    /// | <a>UpdateGameServerGroup</a> | <a>DeleteGameServerGroup</a> | <a>ResumeGameServerGroup</a>
-    /// | <a>SuspendGameServerGroup</a> | <a>DescribeGameServerInstances</a> | <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/reference-awssdk-fleetiq.html">All
-    /// APIs by task</a> 
+    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-intro.html">Amazon
+    /// GameLift FleetIQ Guide</a> 
     /// </para>
     /// </summary>
     public partial class DeleteGameServerGroupRequest : AmazonGameLiftRequest
@@ -104,19 +93,20 @@ namespace Amazon.GameLift.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>SAFE_DELETE</code> – (default) Terminates the game server group and EC2 Auto
-        /// Scaling group only when it has no game servers that are in <code>UTILIZED</code> status.
+        ///  <code>SAFE_DELETE</code> – (default) Terminates the game server group and Amazon
+        /// EC2 Auto Scaling group only when it has no game servers that are in <code>UTILIZED</code>
+        /// status.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>FORCE_DELETE</code> – Terminates the game server group, including all active
-        /// game servers regardless of their utilization status, and the EC2 Auto Scaling group.
-        /// 
+        /// game servers regardless of their utilization status, and the Amazon EC2 Auto Scaling
+        /// group. 
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>RETAIN</code> – Does a safe delete of the game server group but retains the
-        /// EC2 Auto Scaling group as is.
+        /// Amazon EC2 Auto Scaling group as is.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -135,8 +125,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property GameServerGroupName. 
         /// <para>
-        /// A unique identifier for the game server group. Use either the <a>GameServerGroup</a>
-        /// name or ARN value.
+        /// A unique identifier for the game server group. Use either the name or ARN value.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]

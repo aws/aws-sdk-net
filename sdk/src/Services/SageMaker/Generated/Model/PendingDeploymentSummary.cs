@@ -36,6 +36,7 @@ namespace Amazon.SageMaker.Model
     {
         private string _endpointConfigName;
         private List<PendingProductionVariantSummary> _productionVariants = new List<PendingProductionVariantSummary>();
+        private List<PendingProductionVariantSummary> _shadowProductionVariants = new List<PendingProductionVariantSummary>();
         private DateTime? _startTime;
 
         /// <summary>
@@ -60,7 +61,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ProductionVariants. 
         /// <para>
-        /// List of <code>PendingProductionVariantSummary</code> objects.
+        /// An array of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_PendingProductionVariantSummary.html">PendingProductionVariantSummary</a>
+        /// objects, one for each model hosted behind this endpoint for the in-progress deployment.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -74,6 +76,28 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetProductionVariants()
         {
             return this._productionVariants != null && this._productionVariants.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ShadowProductionVariants. 
+        /// <para>
+        /// An array of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_PendingProductionVariantSummary.html">PendingProductionVariantSummary</a>
+        /// objects, one for each model hosted behind this endpoint in shadow mode with production
+        /// traffic replicated from the model specified on <code>ProductionVariants</code> for
+        /// the in-progress deployment.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public List<PendingProductionVariantSummary> ShadowProductionVariants
+        {
+            get { return this._shadowProductionVariants; }
+            set { this._shadowProductionVariants = value; }
+        }
+
+        // Check to see if ShadowProductionVariants property is set
+        internal bool IsSetShadowProductionVariants()
+        {
+            return this._shadowProductionVariants != null && this._shadowProductionVariants.Count > 0; 
         }
 
         /// <summary>

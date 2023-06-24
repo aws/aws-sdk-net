@@ -43,6 +43,12 @@ namespace Amazon.Transfer.Model
         /// <para>
         /// A message that indicates whether the test was successful or not.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// If an empty string is returned, the most likely cause is that the authentication failed
+        /// due to an incorrect username or password.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string Message
         {
@@ -59,7 +65,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property Response. 
         /// <para>
-        /// The response that is returned from your API Gateway.
+        /// The response that is returned from your API Gateway or your Lambda function.
         /// </para>
         /// </summary>
         public string Response
@@ -77,7 +83,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property StatusCode. 
         /// <para>
-        /// The HTTP status code that is the response from your API Gateway.
+        /// The HTTP status code that is the response from your API Gateway or your Lambda function.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

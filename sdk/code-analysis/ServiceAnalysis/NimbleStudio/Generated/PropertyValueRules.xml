@@ -61,6 +61,11 @@
     <max>3600</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.NimbleStudio.Model.CreateStudioRequest.AdminRoleArn</property>
+    <min>0</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.NimbleStudio.Model.CreateStudioRequest.ClientToken</property>
     <min>1</min>
     <max>64</max>
@@ -77,6 +82,11 @@
     <pattern>^[a-z0-9]*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.NimbleStudio.Model.CreateStudioRequest.UserRoleArn</property>
+    <min>0</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.NimbleStudio.Model.CreateStudioComponentRequest.ClientToken</property>
     <min>1</min>
     <max>64</max>
@@ -90,6 +100,16 @@
     <property>Amazon.NimbleStudio.Model.CreateStudioComponentRequest.Name</property>
     <min>0</min>
     <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NimbleStudio.Model.CreateStudioComponentRequest.RuntimeRoleArn</property>
+    <min>0</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NimbleStudio.Model.CreateStudioComponentRequest.SecureInitializationRoleArn</property>
+    <min>0</min>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NimbleStudio.Model.DeleteLaunchProfileRequest.ClientToken</property>
@@ -207,6 +227,11 @@
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.NimbleStudio.Model.UpdateStudioRequest.AdminRoleArn</property>
+    <min>0</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.NimbleStudio.Model.UpdateStudioRequest.ClientToken</property>
     <min>1</min>
     <max>64</max>
@@ -215,6 +240,11 @@
     <property>Amazon.NimbleStudio.Model.UpdateStudioRequest.DisplayName</property>
     <min>0</min>
     <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NimbleStudio.Model.UpdateStudioRequest.UserRoleArn</property>
+    <min>0</min>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NimbleStudio.Model.UpdateStudioComponentRequest.ClientToken</property>
@@ -230,6 +260,16 @@
     <property>Amazon.NimbleStudio.Model.UpdateStudioComponentRequest.Name</property>
     <min>0</min>
     <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NimbleStudio.Model.UpdateStudioComponentRequest.RuntimeRoleArn</property>
+    <min>0</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NimbleStudio.Model.UpdateStudioComponentRequest.SecureInitializationRoleArn</property>
+    <min>0</min>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NimbleStudio.Model.ActiveDirectoryComputerAttribute.Name</property>
@@ -325,9 +365,19 @@
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.NimbleStudio.Model.LaunchProfileInitializationScript.RuntimeRoleArn</property>
+    <min>0</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.NimbleStudio.Model.LaunchProfileInitializationScript.Script</property>
     <min>1</min>
     <max>5120</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NimbleStudio.Model.LaunchProfileInitializationScript.SecureInitializationRoleArn</property>
+    <min>0</min>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NimbleStudio.Model.LaunchProfileInitializationScript.StudioComponentId</property>
@@ -382,6 +432,11 @@
     <max>5760</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.NimbleStudio.Model.StreamConfigurationSessionBackup.MaxBackupsToRetain</property>
+    <min>0</min>
+    <max>10</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.NimbleStudio.Model.StreamingImage.Description</property>
     <min>0</min>
     <max>256</max>
@@ -411,10 +466,32 @@
     <pattern>^arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.NimbleStudio.Model.StreamingSession.MaxBackupsToRetain</property>
+    <min>0</min>
+    <max>10</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.NimbleStudio.Model.StreamingSession.StreamingImageId</property>
     <min>0</min>
     <max>22</max>
     <pattern>^[a-zA-Z0-9-_]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NimbleStudio.Model.StreamingSessionStorageRoot.Linux</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^(\$HOME|/)[/]?([A-Za-z0-9-_]+/)*([A-Za-z0-9_-]+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NimbleStudio.Model.StreamingSessionStorageRoot.Windows</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^((\%HOMEPATH\%)|[a-zA-Z]:)[\\/](?:[a-zA-Z0-9_-]+[\\/])*[a-zA-Z0-9_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NimbleStudio.Model.Studio.AdminRoleArn</property>
+    <min>0</min>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NimbleStudio.Model.Studio.DisplayName</property>
@@ -434,6 +511,11 @@
     <pattern>^[a-z0-9]*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.NimbleStudio.Model.Studio.UserRoleArn</property>
+    <min>0</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.NimbleStudio.Model.StudioComponent.Description</property>
     <min>0</min>
     <max>256</max>
@@ -442,6 +524,16 @@
     <property>Amazon.NimbleStudio.Model.StudioComponent.Name</property>
     <min>0</min>
     <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NimbleStudio.Model.StudioComponent.RuntimeRoleArn</property>
+    <min>0</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NimbleStudio.Model.StudioComponent.SecureInitializationRoleArn</property>
+    <min>0</min>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NimbleStudio.Model.StudioComponent.StudioComponentId</property>
@@ -480,5 +572,20 @@
     <property>Amazon.NimbleStudio.Model.StudioEncryptionConfiguration.KeyArn</property>
     <min>4</min>
     <pattern>^arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NimbleStudio.Model.VolumeConfiguration.Iops</property>
+    <min>3000</min>
+    <max>16000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NimbleStudio.Model.VolumeConfiguration.Size</property>
+    <min>100</min>
+    <max>16000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NimbleStudio.Model.VolumeConfiguration.Throughput</property>
+    <min>125</min>
+    <max>1000</max>
   </property-value-rule>
 </property-value-rules>

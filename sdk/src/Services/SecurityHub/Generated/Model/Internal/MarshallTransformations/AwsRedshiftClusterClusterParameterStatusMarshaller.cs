@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AwsRedshiftClusterClusterParameterStatus Marshaller
-    /// </summary>       
+    /// </summary>
     public class AwsRedshiftClusterClusterParameterStatusMarshaller : IRequestMarshaller<AwsRedshiftClusterClusterParameterStatus, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AwsRedshiftClusterClusterParameterStatusMarshaller Instance = new AwsRedshiftClusterClusterParameterStatusMarshaller();
 
     }

@@ -43,6 +43,7 @@ namespace Amazon.SageMaker.Model
         private bool? _disassociateAdditionalCodeRepositories;
         private bool? _disassociateDefaultCodeRepository;
         private bool? _disassociateLifecycleConfig;
+        private InstanceMetadataServiceConfiguration _instanceMetadataServiceConfiguration;
         private InstanceType _instanceType;
         private string _lifecycleConfigName;
         private string _notebookInstanceName;
@@ -80,7 +81,7 @@ namespace Amazon.SageMaker.Model
         /// Web Services CodeCommit</a> or in any other Git repository. These repositories are
         /// cloned at the same level as the default repository of your notebook instance. For
         /// more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
-        /// Git Repositories with Amazon SageMaker Notebook Instances</a>.
+        /// Git Repositories with SageMaker Notebook Instances</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=3)]
@@ -105,7 +106,7 @@ namespace Amazon.SageMaker.Model
         /// Web Services CodeCommit</a> or in any other Git repository. When you open a notebook
         /// instance, it opens in the directory that contains this repository. For more information,
         /// see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
-        /// Git Repositories with Amazon SageMaker Notebook Instances</a>.
+        /// Git Repositories with SageMaker Notebook Instances</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -204,6 +205,24 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property InstanceMetadataServiceConfiguration. 
+        /// <para>
+        /// Information on the IMDS configuration of the notebook instance
+        /// </para>
+        /// </summary>
+        public InstanceMetadataServiceConfiguration InstanceMetadataServiceConfiguration
+        {
+            get { return this._instanceMetadataServiceConfiguration; }
+            set { this._instanceMetadataServiceConfiguration = value; }
+        }
+
+        // Check to see if InstanceMetadataServiceConfiguration property is set
+        internal bool IsSetInstanceMetadataServiceConfiguration()
+        {
+            return this._instanceMetadataServiceConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property InstanceType. 
         /// <para>
         /// The Amazon ML compute instance type.
@@ -264,14 +283,14 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can assume to
-        /// access the notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
-        /// SageMaker Roles</a>. 
+        /// The Amazon Resource Name (ARN) of the IAM role that SageMaker can assume to access
+        /// the notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker
+        /// Roles</a>. 
         /// </para>
         ///  <note> 
         /// <para>
-        /// To be able to pass this role to Amazon SageMaker, the caller of this API must have
-        /// the <code>iam:PassRole</code> permission.
+        /// To be able to pass this role to SageMaker, the caller of this API must have the <code>iam:PassRole</code>
+        /// permission.
         /// </para>
         ///  </note>
         /// </summary>
@@ -317,11 +336,11 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property VolumeSizeInGB. 
         /// <para>
         /// The size, in GB, of the ML storage volume to attach to the notebook instance. The
-        /// default value is 5 GB. ML storage volumes are encrypted, so Amazon SageMaker can't
-        /// determine the amount of available free space on the volume. Because of this, you can
-        /// increase the volume size when you update a notebook instance, but you can't decrease
-        /// the volume size. If you want to decrease the size of the ML storage volume in use,
-        /// create a new notebook instance with the desired size.
+        /// default value is 5 GB. ML storage volumes are encrypted, so SageMaker can't determine
+        /// the amount of available free space on the volume. Because of this, you can increase
+        /// the volume size when you update a notebook instance, but you can't decrease the volume
+        /// size. If you want to decrease the size of the ML storage volume in use, create a new
+        /// notebook instance with the desired size.
         /// </para>
         /// </summary>
         [AWSProperty(Min=5, Max=16384)]

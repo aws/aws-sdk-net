@@ -66,6 +66,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.AllowsMultipleInstanceTypes = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("assetId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.AssetId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("autoPlacement", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -102,6 +108,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.HostId = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("hostMaintenance", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.HostMaintenance = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("hostProperties", targetDepth))
                     {
                         var unmarshaller = HostPropertiesUnmarshaller.Instance;
@@ -131,6 +143,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = BoolUnmarshaller.Instance;
                         unmarshalledObject.MemberOfServiceLinkedResourceGroup = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("outpostArn", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.OutpostArn = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("ownerId", targetDepth))

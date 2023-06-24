@@ -34,6 +34,7 @@ namespace Amazon.KeyManagementService.Model
     public partial class GenerateDataKeyResponse : AmazonWebServiceResponse
     {
         private MemoryStream _ciphertextBlob;
+        private MemoryStream _ciphertextForRecipient;
         private string _keyId;
         private MemoryStream _plaintext;
 
@@ -55,6 +56,35 @@ namespace Amazon.KeyManagementService.Model
         internal bool IsSetCiphertextBlob()
         {
             return this._ciphertextBlob != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CiphertextForRecipient. 
+        /// <para>
+        /// The plaintext data key encrypted with the public key from the Nitro enclave. This
+        /// ciphertext can be decrypted only by using a private key in the Nitro enclave. 
+        /// </para>
+        ///  
+        /// <para>
+        /// This field is included in the response only when the <code>Recipient</code> parameter
+        /// in the request includes a valid attestation document from an Amazon Web Services Nitro
+        /// enclave. For information about the interaction between KMS and Amazon Web Services
+        /// Nitro Enclaves, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How
+        /// Amazon Web Services Nitro Enclaves uses KMS</a> in the <i>Key Management Service Developer
+        /// Guide</i>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=6144)]
+        public MemoryStream CiphertextForRecipient
+        {
+            get { return this._ciphertextForRecipient; }
+            set { this._ciphertextForRecipient = value; }
+        }
+
+        // Check to see if CiphertextForRecipient property is set
+        internal bool IsSetCiphertextForRecipient()
+        {
+            return this._ciphertextForRecipient != null;
         }
 
         /// <summary>
@@ -84,8 +114,13 @@ namespace Amazon.KeyManagementService.Model
         /// the value is Base64-encoded. Otherwise, it is not Base64-encoded. Use this data key
         /// to encrypt your data outside of KMS. Then, remove it from memory as soon as possible.
         /// </para>
+        ///  
+        /// <para>
+        /// If the response includes the <code>CiphertextForRecipient</code> field, the <code>Plaintext</code>
+        /// field is null or empty.
+        /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=4096)]
+        [AWSProperty(Sensitive=true, Min=1, Max=4096)]
         public MemoryStream Plaintext
         {
             get { return this._plaintext; }

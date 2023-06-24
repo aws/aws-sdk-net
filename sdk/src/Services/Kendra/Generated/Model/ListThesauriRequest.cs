@@ -30,7 +30,7 @@ namespace Amazon.Kendra.Model
 {
     /// <summary>
     /// Container for the parameters to the ListThesauri operation.
-    /// Lists the Amazon Kendra thesauri associated with an index.
+    /// Lists the thesauri for an index.
     /// </summary>
     public partial class ListThesauriRequest : AmazonKendraRequest
     {
@@ -41,7 +41,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property IndexId. 
         /// <para>
-        /// The identifier of the index associated with the thesaurus to list.
+        /// The identifier of the index with one or more thesauri.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]

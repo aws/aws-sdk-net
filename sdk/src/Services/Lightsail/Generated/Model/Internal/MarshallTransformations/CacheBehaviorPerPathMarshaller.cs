@@ -34,7 +34,7 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CacheBehaviorPerPath Marshaller
-    /// </summary>       
+    /// </summary>
     public class CacheBehaviorPerPathMarshaller : IRequestMarshaller<CacheBehaviorPerPath, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CacheBehaviorPerPathMarshaller Instance = new CacheBehaviorPerPathMarshaller();
 
     }

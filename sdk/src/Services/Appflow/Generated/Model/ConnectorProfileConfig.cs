@@ -42,7 +42,6 @@ namespace Amazon.Appflow.Model
         ///  The connector-specific credentials required by each connector. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public ConnectorProfileCredentials ConnectorProfileCredentials
         {
             get { return this._connectorProfileCredentials; }

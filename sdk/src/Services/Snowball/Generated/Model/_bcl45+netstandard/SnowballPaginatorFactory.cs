@@ -44,11 +44,43 @@ namespace Amazon.Snowball.Model
         }
 
         /// <summary>
+        /// Paginator for ListClusterJobs operation
+        ///</summary>
+        public IListClusterJobsPaginator ListClusterJobs(ListClusterJobsRequest request) 
+        {
+            return new ListClusterJobsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListClusters operation
+        ///</summary>
+        public IListClustersPaginator ListClusters(ListClustersRequest request) 
+        {
+            return new ListClustersPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListCompatibleImages operation
+        ///</summary>
+        public IListCompatibleImagesPaginator ListCompatibleImages(ListCompatibleImagesRequest request) 
+        {
+            return new ListCompatibleImagesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListJobs operation
         ///</summary>
         public IListJobsPaginator ListJobs(ListJobsRequest request) 
         {
             return new ListJobsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListLongTermPricing operation
+        ///</summary>
+        public IListLongTermPricingPaginator ListLongTermPricing(ListLongTermPricingRequest request) 
+        {
+            return new ListLongTermPricingPaginator(this.client, request);
         }
     }
 }

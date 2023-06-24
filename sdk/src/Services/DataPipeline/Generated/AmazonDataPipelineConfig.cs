@@ -17,22 +17,22 @@
  * Do not modify this file. This file is generated from the datapipeline-2012-10-29.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
-
+using Amazon.DataPipeline.Internal;
 
 namespace Amazon.DataPipeline
 {
     /// <summary>
     /// Configuration for accessing Amazon DataPipeline service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonDataPipelineConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.1.101");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.147");
 
         private string _userAgent = UserAgentString;
 
@@ -40,8 +40,10 @@ namespace Amazon.DataPipeline
         /// Default constructor
         /// </summary>
         public AmazonDataPipelineConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonDataPipelineDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "datapipeline";
+            this.EndpointProvider = new AmazonDataPipelineEndpointProvider();
         }
 
         /// <summary>
@@ -76,5 +78,6 @@ namespace Amazon.DataPipeline
                 return _userAgent;
             }
         }
+
     }
 }

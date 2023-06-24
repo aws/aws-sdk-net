@@ -34,7 +34,7 @@ namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// PhoneNumber Marshaller
-    /// </summary>       
+    /// </summary>
     public class PhoneNumberMarshaller : IRequestMarshaller<PhoneNumber, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static PhoneNumberMarshaller Instance = new PhoneNumberMarshaller();
 
     }

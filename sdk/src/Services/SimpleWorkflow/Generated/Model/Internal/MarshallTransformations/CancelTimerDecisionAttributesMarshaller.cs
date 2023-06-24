@@ -34,7 +34,7 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CancelTimerDecisionAttributes Marshaller
-    /// </summary>       
+    /// </summary>
     public class CancelTimerDecisionAttributesMarshaller : IRequestMarshaller<CancelTimerDecisionAttributes, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CancelTimerDecisionAttributesMarshaller Instance = new CancelTimerDecisionAttributesMarshaller();
 
     }

@@ -77,6 +77,9 @@
     <Content Include="output-files\feedbackno.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="output-files\MobileNavBar.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="output-files\feedbackyes.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

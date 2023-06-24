@@ -34,7 +34,11 @@ namespace Amazon.Comprehend.Model
     public partial class ClassifyDocumentResponse : AmazonWebServiceResponse
     {
         private List<DocumentClass> _classes = new List<DocumentClass>();
+        private DocumentMetadata _documentMetadata;
+        private List<DocumentTypeListItem> _documentType = new List<DocumentTypeListItem>();
+        private List<ErrorsListItem> _errors = new List<ErrorsListItem>();
         private List<DocumentLabel> _labels = new List<DocumentLabel>();
+        private List<WarningsListItem> _warnings = new List<WarningsListItem>();
 
         /// <summary>
         /// Gets and sets the property Classes. 
@@ -58,6 +62,63 @@ namespace Amazon.Comprehend.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DocumentMetadata. 
+        /// <para>
+        /// Extraction information about the document. This field is present in the response only
+        /// if your request includes the <code>Byte</code> parameter. 
+        /// </para>
+        /// </summary>
+        public DocumentMetadata DocumentMetadata
+        {
+            get { return this._documentMetadata; }
+            set { this._documentMetadata = value; }
+        }
+
+        // Check to see if DocumentMetadata property is set
+        internal bool IsSetDocumentMetadata()
+        {
+            return this._documentMetadata != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DocumentType. 
+        /// <para>
+        /// The document type for each page in the input document. This field is present in the
+        /// response only if your request includes the <code>Byte</code> parameter. 
+        /// </para>
+        /// </summary>
+        public List<DocumentTypeListItem> DocumentType
+        {
+            get { return this._documentType; }
+            set { this._documentType = value; }
+        }
+
+        // Check to see if DocumentType property is set
+        internal bool IsSetDocumentType()
+        {
+            return this._documentType != null && this._documentType.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Errors. 
+        /// <para>
+        /// Page-level errors that the system detected while processing the input document. The
+        /// field is empty if the system encountered no errors.
+        /// </para>
+        /// </summary>
+        public List<ErrorsListItem> Errors
+        {
+            get { return this._errors; }
+            set { this._errors = value; }
+        }
+
+        // Check to see if Errors property is set
+        internal bool IsSetErrors()
+        {
+            return this._errors != null && this._errors.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Labels. 
         /// <para>
         /// The labels used the document being analyzed. These are used for multi-label trained
@@ -77,6 +138,31 @@ namespace Amazon.Comprehend.Model
         internal bool IsSetLabels()
         {
             return this._labels != null && this._labels.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Warnings. 
+        /// <para>
+        /// Warnings detected while processing the input document. The response includes a warning
+        /// if there is a mismatch between the input document type and the model type associated
+        /// with the endpoint that you specified. The response can also include warnings for individual
+        /// pages that have a mismatch. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The field is empty if the system generated no warnings.
+        /// </para>
+        /// </summary>
+        public List<WarningsListItem> Warnings
+        {
+            get { return this._warnings; }
+            set { this._warnings = value; }
+        }
+
+        // Check to see if Warnings property is set
+        internal bool IsSetWarnings()
+        {
+            return this._warnings != null && this._warnings.Count > 0; 
         }
 
     }

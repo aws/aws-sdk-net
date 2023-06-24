@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ApplicationDiscoveryService.Model
 {
     /// <summary>
-    /// Network details about the host where the agent/connector resides.
+    /// Network details about the host where the agent/collector resides.
     /// </summary>
     public partial class AgentNetworkInfo
     {
@@ -39,9 +39,10 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// <summary>
         /// Gets and sets the property IpAddress. 
         /// <para>
-        /// The IP address for the host where the agent/connector resides.
+        /// The IP address for the host where the agent/collector resides.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=10000)]
         public string IpAddress
         {
             get { return this._ipAddress; }
@@ -57,9 +58,10 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// <summary>
         /// Gets and sets the property MacAddress. 
         /// <para>
-        /// The MAC address for the host where the agent/connector resides.
+        /// The MAC address for the host where the agent/collector resides.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=10000)]
         public string MacAddress
         {
             get { return this._macAddress; }

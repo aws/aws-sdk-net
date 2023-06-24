@@ -30,15 +30,17 @@ namespace Amazon.Route53RecoveryReadiness.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTagsForResources operation.
-    /// Returns a list of the tags assigned to the specified resource.
+    /// Lists the tags for a resource.
     /// </summary>
     public partial class ListTagsForResourcesRequest : AmazonRoute53RecoveryReadinessRequest
     {
         private string _resourceArn;
 
         /// <summary>
-        /// Gets and sets the property ResourceArn. The Amazon Resource Name (ARN) for the resource.
-        /// You can get this from the response to any request to the resource.
+        /// Gets and sets the property ResourceArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) for a resource.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string ResourceArn

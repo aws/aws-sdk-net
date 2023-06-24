@@ -42,7 +42,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBClusterArn. 
         /// <para>
-        ///  The Amazon Resource Name (ARN) for each Aurora cluster. 
+        /// The Amazon Resource Name (ARN) for each Aurora cluster.
         /// </para>
         /// </summary>
         public string DBClusterArn
@@ -79,8 +79,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property IsWriter. 
         /// <para>
-        ///  Specifies whether the Aurora cluster is the primary cluster (that is, has read-write
-        /// capability) for the Aurora global database with which it is associated. 
+        /// Specifies whether the Aurora cluster is the primary cluster (that is, has read-write
+        /// capability) for the Aurora global database with which it is associated.
         /// </para>
         /// </summary>
         public bool IsWriter
@@ -98,8 +98,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Readers. 
         /// <para>
-        ///  The Amazon Resource Name (ARN) for each read-only secondary cluster associated with
-        /// the Aurora global database. 
+        /// The Amazon Resource Name (ARN) for each read-only secondary cluster associated with
+        /// the Aurora global database.
         /// </para>
         /// </summary>
         public List<string> Readers

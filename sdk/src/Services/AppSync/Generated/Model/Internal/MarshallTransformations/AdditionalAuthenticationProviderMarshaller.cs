@@ -34,7 +34,7 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AdditionalAuthenticationProvider Marshaller
-    /// </summary>       
+    /// </summary>
     public class AdditionalAuthenticationProviderMarshaller : IRequestMarshaller<AdditionalAuthenticationProvider, JsonMarshallerContext> 
     {
         /// <summary>
@@ -88,7 +88,7 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AdditionalAuthenticationProviderMarshaller Instance = new AdditionalAuthenticationProviderMarshaller();
 
     }

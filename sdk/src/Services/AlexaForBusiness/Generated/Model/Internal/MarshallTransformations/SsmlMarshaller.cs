@@ -34,7 +34,7 @@ namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Ssml Marshaller
-    /// </summary>       
+    /// </summary>
     public class SsmlMarshaller : IRequestMarshaller<Ssml, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SsmlMarshaller Instance = new SsmlMarshaller();
 
     }

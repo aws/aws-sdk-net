@@ -34,7 +34,7 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ReplicaSettingsUpdate Marshaller
-    /// </summary>       
+    /// </summary>
     public class ReplicaSettingsUpdateMarshaller : IRequestMarshaller<ReplicaSettingsUpdate, JsonMarshallerContext> 
     {
         /// <summary>
@@ -94,7 +94,7 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ReplicaSettingsUpdateMarshaller Instance = new ReplicaSettingsUpdateMarshaller();
 
     }

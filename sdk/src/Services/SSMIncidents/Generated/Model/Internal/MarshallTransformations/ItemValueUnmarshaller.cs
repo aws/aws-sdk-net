@@ -76,6 +76,12 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
                     unmarshalledObject.MetricDefinition = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("pagerDutyIncidentDetail", targetDepth))
+                {
+                    var unmarshaller = PagerDutyIncidentDetailUnmarshaller.Instance;
+                    unmarshalledObject.PagerDutyIncidentDetail = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("url", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

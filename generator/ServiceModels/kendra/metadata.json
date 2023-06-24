@@ -1,5 +1,6 @@
 {
   "active": true,
   "synopsis": "It is a preview launch of Amazon Kendra. Amazon Kendra is a managed, highly accurate and easy to use enterprise search service that is powered by machine learning.",
-  "generate-client-constructors": true
+  "generate-client-constructors": true,
+  "legacy-service-id": "kendra"
 }

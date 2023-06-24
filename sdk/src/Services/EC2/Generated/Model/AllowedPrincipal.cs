@@ -35,6 +35,9 @@ namespace Amazon.EC2.Model
     {
         private string _principal;
         private PrincipalType _principalType;
+        private string _serviceId;
+        private string _servicePermissionId;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property Principal. 
@@ -70,6 +73,60 @@ namespace Amazon.EC2.Model
         internal bool IsSetPrincipalType()
         {
             return this._principalType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServiceId. 
+        /// <para>
+        /// The ID of the service.
+        /// </para>
+        /// </summary>
+        public string ServiceId
+        {
+            get { return this._serviceId; }
+            set { this._serviceId = value; }
+        }
+
+        // Check to see if ServiceId property is set
+        internal bool IsSetServiceId()
+        {
+            return this._serviceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServicePermissionId. 
+        /// <para>
+        /// The ID of the service permission.
+        /// </para>
+        /// </summary>
+        public string ServicePermissionId
+        {
+            get { return this._servicePermissionId; }
+            set { this._servicePermissionId = value; }
+        }
+
+        // Check to see if ServicePermissionId property is set
+        internal bool IsSetServicePermissionId()
+        {
+            return this._servicePermissionId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags.
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

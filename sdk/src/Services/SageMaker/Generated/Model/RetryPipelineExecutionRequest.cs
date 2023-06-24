@@ -35,6 +35,7 @@ namespace Amazon.SageMaker.Model
     public partial class RetryPipelineExecutionRequest : AmazonSageMakerRequest
     {
         private string _clientRequestToken;
+        private ParallelismConfiguration _parallelismConfiguration;
         private string _pipelineExecutionArn;
 
         /// <summary>
@@ -55,6 +56,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetClientRequestToken()
         {
             return this._clientRequestToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ParallelismConfiguration. 
+        /// <para>
+        /// This configuration, if specified, overrides the parallelism configuration of the parent
+        /// pipeline.
+        /// </para>
+        /// </summary>
+        public ParallelismConfiguration ParallelismConfiguration
+        {
+            get { return this._parallelismConfiguration; }
+            set { this._parallelismConfiguration = value; }
+        }
+
+        // Check to see if ParallelismConfiguration property is set
+        internal bool IsSetParallelismConfiguration()
+        {
+            return this._parallelismConfiguration != null;
         }
 
         /// <summary>

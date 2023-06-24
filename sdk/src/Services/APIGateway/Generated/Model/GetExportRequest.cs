@@ -30,7 +30,7 @@ namespace Amazon.APIGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the GetExport operation.
-    /// Exports a deployed version of a <a>RestApi</a> in a specified format.
+    /// Exports a deployed version of a RestApi in a specified format.
     /// </summary>
     public partial class GetExportRequest : AmazonAPIGatewayRequest
     {
@@ -64,8 +64,8 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property ExportType. 
         /// <para>
-        /// [Required] The type of export. Acceptable values are 'oas30' for OpenAPI 3.0.x and
-        /// 'swagger' for Swagger/OpenAPI 2.0.
+        /// The type of export. Acceptable values are 'oas30' for OpenAPI 3.0.x and 'swagger'
+        /// for Swagger/OpenAPI 2.0.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -108,7 +108,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property RestApiId. 
         /// <para>
-        /// [Required] The string identifier of the associated <a>RestApi</a>.
+        /// The string identifier of the associated RestApi.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -127,7 +127,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property StageName. 
         /// <para>
-        /// [Required] The name of the <a>Stage</a> that will be exported.
+        /// The name of the Stage that will be exported.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

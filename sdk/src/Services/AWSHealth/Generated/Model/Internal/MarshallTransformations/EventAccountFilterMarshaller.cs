@@ -34,7 +34,7 @@ namespace Amazon.AWSHealth.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// EventAccountFilter Marshaller
-    /// </summary>       
+    /// </summary>
     public class EventAccountFilterMarshaller : IRequestMarshaller<EventAccountFilter, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.AWSHealth.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static EventAccountFilterMarshaller Instance = new EventAccountFilterMarshaller();
 
     }

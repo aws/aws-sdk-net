@@ -39,10 +39,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The <code>NextToken</code> value to include in a future <code>DescribeVolumes</code>
-        /// request. When the results of a <code>DescribeVolumes</code> request exceed <code>MaxResults</code>,
-        /// this value can be used to retrieve the next page of results. This value is <code>null</code>
-        /// when there are no more results to return.
+        /// The token to include in another request to get the next page of items. This value
+        /// is <code>null</code> when there are no more items to return.
         /// </para>
         /// </summary>
         public string NextToken

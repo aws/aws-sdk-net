@@ -34,7 +34,7 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RootDirectory Marshaller
-    /// </summary>       
+    /// </summary>
     public class RootDirectoryMarshaller : IRequestMarshaller<RootDirectory, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RootDirectoryMarshaller Instance = new RootDirectoryMarshaller();
 
     }

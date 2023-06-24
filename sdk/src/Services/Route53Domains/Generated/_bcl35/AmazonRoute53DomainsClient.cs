@@ -230,6 +230,15 @@ namespace Amazon.Route53Domains
         }
 
         /// <summary>
+        /// Customize the pipeline
+        /// </summary>
+        /// <param name="pipeline"></param>
+        protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
+        {
+            pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonRoute53DomainsEndpointResolver());
+        }
+        /// <summary>
         /// Capture metadata for the service.
         /// </summary>
         protected override IServiceMetadata ServiceMetadata
@@ -258,10 +267,16 @@ namespace Amazon.Route53Domains
         #region  AcceptDomainTransferFromAnotherAwsAccount
 
         /// <summary>
-        /// Accepts the transfer of a domain from another AWS account to the current AWS account.
-        /// You initiate a transfer between AWS accounts using <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomainToAnotherAwsAccount.html">TransferDomainToAnotherAwsAccount</a>.
+        /// Accepts the transfer of a domain from another Amazon Web Services account to the currentAmazon
+        /// Web Services account. You initiate a transfer between Amazon Web Services accounts
+        /// using <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomainToAnotherAwsAccount.html">TransferDomainToAnotherAwsAccount</a>.
         /// 
-        /// 
+        ///  
+        /// <para>
+        /// If you use the CLI command at <a href="https://docs.aws.amazon.com/cli/latest/reference/route53domains/accept-domain-transfer-from-another-aws-account.html">accept-domain-transfer-from-another-aws-account</a>,
+        /// use JSON format as input instead of text because otherwise CLI will throw an error
+        /// from domain transfer input that includes single quotes.
+        /// </para>
         ///  
         /// <para>
         /// Use either <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ListOperations.html">ListOperations</a>
@@ -285,6 +300,9 @@ namespace Amazon.Route53Domains
         /// </exception>
         /// <exception cref="Amazon.Route53Domains.Model.OperationLimitExceededException">
         /// The number of operations or jobs running exceeded the allowed threshold for the account.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Domains.Model.UnsupportedTLDException">
+        /// Amazon Route 53 does not support this top-level domain (TLD).
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/AcceptDomainTransferFromAnotherAwsAccount">REST API Reference for AcceptDomainTransferFromAnotherAwsAccount Operation</seealso>
         public virtual AcceptDomainTransferFromAnotherAwsAccountResponse AcceptDomainTransferFromAnotherAwsAccount(AcceptDomainTransferFromAnotherAwsAccountRequest request)
@@ -332,17 +350,104 @@ namespace Amazon.Route53Domains
 
         #endregion
         
+        #region  AssociateDelegationSignerToDomain
+
+        /// <summary>
+        /// Creates a delegation signer (DS) record in the registry zone for this domain name.
+        /// 
+        ///  
+        /// <para>
+        /// Note that creating DS record at the registry impacts DNSSEC validation of your DNS
+        /// records. This action may render your domain name unavailable on the internet if the
+        /// steps are completed in the wrong order, or with incorrect timing. For more information
+        /// about DNSSEC signing, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-configuring-dnssec.html">Configuring
+        /// DNSSEC signing</a> in the <i>Route 53 developer guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateDelegationSignerToDomain service method.</param>
+        /// 
+        /// <returns>The response from the AssociateDelegationSignerToDomain service method, as returned by Route53Domains.</returns>
+        /// <exception cref="Amazon.Route53Domains.Model.DnssecLimitExceededException">
+        /// This error is returned if you call <code>AssociateDelegationSignerToDomain</code>
+        /// when the specified domain has reached the maximum number of DS records. You can't
+        /// add any additional DS records unless you delete an existing one first.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Domains.Model.DuplicateRequestException">
+        /// The request is already in progress for the domain.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Domains.Model.InvalidInputException">
+        /// The requested item is not acceptable. For example, for APIs that accept a domain name,
+        /// the request might specify a domain name that doesn't belong to the account that submitted
+        /// the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password
+        /// might be invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Domains.Model.OperationLimitExceededException">
+        /// The number of operations or jobs running exceeded the allowed threshold for the account.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Domains.Model.TLDRulesViolationException">
+        /// The top-level domain does not support this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Domains.Model.UnsupportedTLDException">
+        /// Amazon Route 53 does not support this top-level domain (TLD).
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/AssociateDelegationSignerToDomain">REST API Reference for AssociateDelegationSignerToDomain Operation</seealso>
+        public virtual AssociateDelegationSignerToDomainResponse AssociateDelegationSignerToDomain(AssociateDelegationSignerToDomainRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateDelegationSignerToDomainRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateDelegationSignerToDomainResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateDelegationSignerToDomainResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateDelegationSignerToDomain operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateDelegationSignerToDomain operation on AmazonRoute53DomainsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateDelegationSignerToDomain
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/AssociateDelegationSignerToDomain">REST API Reference for AssociateDelegationSignerToDomain Operation</seealso>
+        public virtual IAsyncResult BeginAssociateDelegationSignerToDomain(AssociateDelegationSignerToDomainRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateDelegationSignerToDomainRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateDelegationSignerToDomainResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AssociateDelegationSignerToDomain operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssociateDelegationSignerToDomain.</param>
+        /// 
+        /// <returns>Returns a  AssociateDelegationSignerToDomainResult from Route53Domains.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/AssociateDelegationSignerToDomain">REST API Reference for AssociateDelegationSignerToDomain Operation</seealso>
+        public virtual AssociateDelegationSignerToDomainResponse EndAssociateDelegationSignerToDomain(IAsyncResult asyncResult)
+        {
+            return EndInvoke<AssociateDelegationSignerToDomainResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CancelDomainTransferToAnotherAwsAccount
 
         /// <summary>
-        /// Cancels the transfer of a domain from the current AWS account to another AWS account.
-        /// You initiate a transfer between AWS accounts using <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomainToAnotherAwsAccount.html">TransferDomainToAnotherAwsAccount</a>.
+        /// Cancels the transfer of a domain from the current Amazon Web Services account to another
+        /// Amazon Web Services account. You initiate a transfer betweenAmazon Web Services accounts
+        /// using <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomainToAnotherAwsAccount.html">TransferDomainToAnotherAwsAccount</a>.
         /// 
         /// 
         ///  <important> 
         /// <para>
-        /// You must cancel the transfer before the other AWS account accepts the transfer using
-        /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_AcceptDomainTransferFromAnotherAwsAccount.html">AcceptDomainTransferFromAnotherAwsAccount</a>.
+        /// You must cancel the transfer before the other Amazon Web Services account accepts
+        /// the transfer using <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_AcceptDomainTransferFromAnotherAwsAccount.html">AcceptDomainTransferFromAnotherAwsAccount</a>.
         /// </para>
         ///  </important> 
         /// <para>
@@ -364,6 +469,9 @@ namespace Amazon.Route53Domains
         /// </exception>
         /// <exception cref="Amazon.Route53Domains.Model.OperationLimitExceededException">
         /// The number of operations or jobs running exceeded the allowed threshold for the account.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Domains.Model.UnsupportedTLDException">
+        /// Amazon Route 53 does not support this top-level domain (TLD).
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/CancelDomainTransferToAnotherAwsAccount">REST API Reference for CancelDomainTransferToAnotherAwsAccount Operation</seealso>
         public virtual CancelDomainTransferToAnotherAwsAccountResponse CancelDomainTransferToAnotherAwsAccount(CancelDomainTransferToAnotherAwsAccountRequest request)
@@ -535,6 +643,100 @@ namespace Amazon.Route53Domains
         public virtual CheckDomainTransferabilityResponse EndCheckDomainTransferability(IAsyncResult asyncResult)
         {
             return EndInvoke<CheckDomainTransferabilityResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteDomain
+
+        /// <summary>
+        /// This operation deletes the specified domain. This action is permanent. For more information,
+        /// see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/domain-delete.html">Deleting
+        /// a domain name registration</a>.
+        /// 
+        ///  
+        /// <para>
+        /// To transfer the domain registration to another registrar, use the transfer process
+        /// that’s provided by the registrar to which you want to transfer the registration. Otherwise,
+        /// the following apply:
+        /// </para>
+        ///  <ol> <li> 
+        /// <para>
+        /// You can’t get a refund for the cost of a deleted domain registration.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The registry for the top-level domain might hold the domain name for a brief time
+        /// before releasing it for other users to register (varies by registry). 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When the registration has been deleted, we'll send you a confirmation to the registrant
+        /// contact. The email will come from <code>noreply@domainnameverification.net</code>
+        /// or <code>noreply@registrar.amazon.com</code>.
+        /// </para>
+        ///  </li> </ol>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDomain service method.</param>
+        /// 
+        /// <returns>The response from the DeleteDomain service method, as returned by Route53Domains.</returns>
+        /// <exception cref="Amazon.Route53Domains.Model.DuplicateRequestException">
+        /// The request is already in progress for the domain.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Domains.Model.InvalidInputException">
+        /// The requested item is not acceptable. For example, for APIs that accept a domain name,
+        /// the request might specify a domain name that doesn't belong to the account that submitted
+        /// the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password
+        /// might be invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Domains.Model.TLDRulesViolationException">
+        /// The top-level domain does not support this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Domains.Model.UnsupportedTLDException">
+        /// Amazon Route 53 does not support this top-level domain (TLD).
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/DeleteDomain">REST API Reference for DeleteDomain Operation</seealso>
+        public virtual DeleteDomainResponse DeleteDomain(DeleteDomainRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDomainRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDomainResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteDomainResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteDomain operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDomain operation on AmazonRoute53DomainsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteDomain
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/DeleteDomain">REST API Reference for DeleteDomain Operation</seealso>
+        public virtual IAsyncResult BeginDeleteDomain(DeleteDomainRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDomainRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDomainResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteDomain operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteDomain.</param>
+        /// 
+        /// <returns>Returns a  DeleteDomainResult from Route53Domains.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/DeleteDomain">REST API Reference for DeleteDomain Operation</seealso>
+        public virtual DeleteDomainResponse EndDeleteDomain(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteDomainResponse>(asyncResult);
         }
 
         #endregion
@@ -787,12 +989,84 @@ namespace Amazon.Route53Domains
 
         #endregion
         
+        #region  DisassociateDelegationSignerFromDomain
+
+        /// <summary>
+        /// Deletes a delegation signer (DS) record in the registry zone for this domain name.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateDelegationSignerFromDomain service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateDelegationSignerFromDomain service method, as returned by Route53Domains.</returns>
+        /// <exception cref="Amazon.Route53Domains.Model.DuplicateRequestException">
+        /// The request is already in progress for the domain.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Domains.Model.InvalidInputException">
+        /// The requested item is not acceptable. For example, for APIs that accept a domain name,
+        /// the request might specify a domain name that doesn't belong to the account that submitted
+        /// the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password
+        /// might be invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Domains.Model.OperationLimitExceededException">
+        /// The number of operations or jobs running exceeded the allowed threshold for the account.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Domains.Model.TLDRulesViolationException">
+        /// The top-level domain does not support this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Domains.Model.UnsupportedTLDException">
+        /// Amazon Route 53 does not support this top-level domain (TLD).
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/DisassociateDelegationSignerFromDomain">REST API Reference for DisassociateDelegationSignerFromDomain Operation</seealso>
+        public virtual DisassociateDelegationSignerFromDomainResponse DisassociateDelegationSignerFromDomain(DisassociateDelegationSignerFromDomainRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateDelegationSignerFromDomainRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateDelegationSignerFromDomainResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateDelegationSignerFromDomainResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateDelegationSignerFromDomain operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateDelegationSignerFromDomain operation on AmazonRoute53DomainsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateDelegationSignerFromDomain
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/DisassociateDelegationSignerFromDomain">REST API Reference for DisassociateDelegationSignerFromDomain Operation</seealso>
+        public virtual IAsyncResult BeginDisassociateDelegationSignerFromDomain(DisassociateDelegationSignerFromDomainRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateDelegationSignerFromDomainRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateDelegationSignerFromDomainResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisassociateDelegationSignerFromDomain operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisassociateDelegationSignerFromDomain.</param>
+        /// 
+        /// <returns>Returns a  DisassociateDelegationSignerFromDomainResult from Route53Domains.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/DisassociateDelegationSignerFromDomain">REST API Reference for DisassociateDelegationSignerFromDomain Operation</seealso>
+        public virtual DisassociateDelegationSignerFromDomainResponse EndDisassociateDelegationSignerFromDomain(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DisassociateDelegationSignerFromDomainResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  EnableDomainAutoRenew
 
         /// <summary>
         /// This operation configures Amazon Route 53 to automatically renew the specified domain
         /// before the domain registration expires. The cost of renewing your domain registration
-        /// is billed to your AWS account.
+        /// is billed to your Amazon Web Services account.
         /// 
         ///  
         /// <para>
@@ -1017,8 +1291,8 @@ namespace Amazon.Route53Domains
 
         /// <summary>
         /// This operation returns detailed information about a specified domain that is associated
-        /// with the current AWS account. Contact information for the domain is also returned
-        /// as part of the output.
+        /// with the current Amazon Web Services account. Contact information for the domain is
+        /// also returned as part of the output.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDomainDetail service method.</param>
         /// 
@@ -1205,7 +1479,7 @@ namespace Amazon.Route53Domains
 
         /// <summary>
         /// This operation returns all the domain names registered with Amazon Route 53 for the
-        /// current AWS account.
+        /// current Amazon Web Services account if no filtering conditions are used.
         /// </summary>
         /// 
         /// <returns>The response from the ListDomains service method, as returned by Route53Domains.</returns>
@@ -1223,7 +1497,7 @@ namespace Amazon.Route53Domains
 
         /// <summary>
         /// This operation returns all the domain names registered with Amazon Route 53 for the
-        /// current AWS account.
+        /// current Amazon Web Services account if no filtering conditions are used.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDomains service method.</param>
         /// 
@@ -1284,7 +1558,12 @@ namespace Amazon.Route53Domains
 
         /// <summary>
         /// Returns information about all of the operations that return an operation ID and that
-        /// have ever been performed on domains that were registered by the current account.
+        /// have ever been performed on domains that were registered by the current account. 
+        /// 
+        ///  
+        /// <para>
+        /// This command runs only in the us-east-1 Region.
+        /// </para>
         /// </summary>
         /// 
         /// <returns>The response from the ListOperations service method, as returned by Route53Domains.</returns>
@@ -1302,7 +1581,12 @@ namespace Amazon.Route53Domains
 
         /// <summary>
         /// Returns information about all of the operations that return an operation ID and that
-        /// have ever been performed on domains that were registered by the current account.
+        /// have ever been performed on domains that were registered by the current account. 
+        /// 
+        ///  
+        /// <para>
+        /// This command runs only in the us-east-1 Region.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListOperations service method.</param>
         /// 
@@ -1355,6 +1639,92 @@ namespace Amazon.Route53Domains
         public virtual ListOperationsResponse EndListOperations(IAsyncResult asyncResult)
         {
             return EndInvoke<ListOperationsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListPrices
+
+        /// <summary>
+        /// Lists the following prices for either all the TLDs supported by Route 53, or the specified
+        /// TLD:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Registration
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Transfer
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Owner change
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Domain renewal
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Domain restoration
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPrices service method.</param>
+        /// 
+        /// <returns>The response from the ListPrices service method, as returned by Route53Domains.</returns>
+        /// <exception cref="Amazon.Route53Domains.Model.InvalidInputException">
+        /// The requested item is not acceptable. For example, for APIs that accept a domain name,
+        /// the request might specify a domain name that doesn't belong to the account that submitted
+        /// the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password
+        /// might be invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Domains.Model.UnsupportedTLDException">
+        /// Amazon Route 53 does not support this top-level domain (TLD).
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ListPrices">REST API Reference for ListPrices Operation</seealso>
+        public virtual ListPricesResponse ListPrices(ListPricesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPricesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPricesResponseUnmarshaller.Instance;
+
+            return Invoke<ListPricesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListPrices operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListPrices operation on AmazonRoute53DomainsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListPrices
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ListPrices">REST API Reference for ListPrices Operation</seealso>
+        public virtual IAsyncResult BeginListPrices(ListPricesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPricesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPricesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListPrices operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListPrices.</param>
+        /// 
+        /// <returns>Returns a  ListPricesResult from Route53Domains.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ListPrices">REST API Reference for ListPrices Operation</seealso>
+        public virtual ListPricesResponse EndListPrices(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListPricesResponse>(asyncResult);
         }
 
         #endregion
@@ -1464,12 +1834,88 @@ namespace Amazon.Route53Domains
 
         #endregion
         
+        #region  PushDomain
+
+        /// <summary>
+        /// Moves a domain from Amazon Web Services to another registrar. 
+        /// 
+        ///  
+        /// <para>
+        /// Supported actions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Changes the IPS tags of a .uk domain, and pushes it to transit. Transit means that
+        /// the domain is ready to be transferred to another registrar.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PushDomain service method.</param>
+        /// 
+        /// <returns>The response from the PushDomain service method, as returned by Route53Domains.</returns>
+        /// <exception cref="Amazon.Route53Domains.Model.InvalidInputException">
+        /// The requested item is not acceptable. For example, for APIs that accept a domain name,
+        /// the request might specify a domain name that doesn't belong to the account that submitted
+        /// the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password
+        /// might be invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Domains.Model.OperationLimitExceededException">
+        /// The number of operations or jobs running exceeded the allowed threshold for the account.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Domains.Model.UnsupportedTLDException">
+        /// Amazon Route 53 does not support this top-level domain (TLD).
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/PushDomain">REST API Reference for PushDomain Operation</seealso>
+        public virtual PushDomainResponse PushDomain(PushDomainRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PushDomainRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PushDomainResponseUnmarshaller.Instance;
+
+            return Invoke<PushDomainResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PushDomain operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PushDomain operation on AmazonRoute53DomainsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPushDomain
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/PushDomain">REST API Reference for PushDomain Operation</seealso>
+        public virtual IAsyncResult BeginPushDomain(PushDomainRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PushDomainRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PushDomainResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PushDomain operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPushDomain.</param>
+        /// 
+        /// <returns>Returns a  PushDomainResult from Route53Domains.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/PushDomain">REST API Reference for PushDomain Operation</seealso>
+        public virtual PushDomainResponse EndPushDomain(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PushDomainResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  RegisterDomain
 
         /// <summary>
-        /// This operation registers a domain. Domains are registered either by Amazon Registrar
-        /// (for .com, .net, and .org domains) or by our registrar associate, Gandi (for all other
-        /// domains). For some top-level domains (TLDs), this operation requires extra parameters.
+        /// This operation registers a domain. For some top-level domains (TLDs), this operation
+        /// requires extra parameters.
         /// 
         ///  
         /// <para>
@@ -1483,19 +1929,23 @@ namespace Amazon.Route53Domains
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Enables autorenew, so your domain registration will renew automatically each year.
+        /// Enables auto renew, so your domain registration will renew automatically each year.
         /// We'll notify you in advance of the renewal date so you can choose whether to renew
         /// the registration.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Optionally enables privacy protection, so WHOIS queries return contact information
-        /// either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar
-        /// associate, Gandi (for all other TLDs). If you don't enable privacy protection, WHOIS
-        /// queries return the information that you entered for the registrant, admin, and tech
-        /// contacts.
+        /// Optionally enables privacy protection, so WHOIS queries return contact for the registrar
+        /// or the phrase "REDACTED FOR PRIVACY", or "On behalf of &lt;domain name&gt; owner."
+        /// If you don't enable privacy protection, WHOIS queries return the information that
+        /// you entered for the administrative, registrant, and technical contacts.
         /// </para>
-        ///  </li> <li> 
+        ///  <note> 
+        /// <para>
+        /// While some domains may allow different privacy settings per contact, we recommend
+        /// specifying the same privacy setting for all contacts.
+        /// </para>
+        ///  </note> </li> <li> 
         /// <para>
         /// If registration is successful, returns an operation ID that you can use to track the
         /// progress and completion of the action. If the request is not completed successfully,
@@ -1503,8 +1953,9 @@ namespace Amazon.Route53Domains
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Charges your AWS account an amount based on the top-level domain. For more information,
-        /// see <a href="http://aws.amazon.com/route53/pricing/">Amazon Route 53 Pricing</a>.
+        /// Charges your Amazon Web Services account an amount based on the top-level domain.
+        /// For more information, see <a href="http://aws.amazon.com/route53/pricing/">Amazon
+        /// Route 53 Pricing</a>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -1581,8 +2032,9 @@ namespace Amazon.Route53Domains
         #region  RejectDomainTransferFromAnotherAwsAccount
 
         /// <summary>
-        /// Rejects the transfer of a domain from another AWS account to the current AWS account.
-        /// You initiate a transfer between AWS accounts using <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomainToAnotherAwsAccount.html">TransferDomainToAnotherAwsAccount</a>.
+        /// Rejects the transfer of a domain from another Amazon Web Services account to the current
+        /// Amazon Web Services account. You initiate a transfer betweenAmazon Web Services accounts
+        /// using <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomainToAnotherAwsAccount.html">TransferDomainToAnotherAwsAccount</a>.
         /// 
         /// 
         ///  
@@ -1605,6 +2057,9 @@ namespace Amazon.Route53Domains
         /// </exception>
         /// <exception cref="Amazon.Route53Domains.Model.OperationLimitExceededException">
         /// The number of operations or jobs running exceeded the allowed threshold for the account.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Domains.Model.UnsupportedTLDException">
+        /// Amazon Route 53 does not support this top-level domain (TLD).
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/RejectDomainTransferFromAnotherAwsAccount">REST API Reference for RejectDomainTransferFromAnotherAwsAccount Operation</seealso>
         public virtual RejectDomainTransferFromAnotherAwsAccountResponse RejectDomainTransferFromAnotherAwsAccount(RejectDomainTransferFromAnotherAwsAccountRequest request)
@@ -1656,7 +2111,7 @@ namespace Amazon.Route53Domains
 
         /// <summary>
         /// This operation renews a domain for the specified number of years. The cost of renewing
-        /// your domain is billed to your AWS account.
+        /// your domain is billed to your Amazon Web Services account.
         /// 
         ///  
         /// <para>
@@ -1802,11 +2257,71 @@ namespace Amazon.Route53Domains
 
         #endregion
         
+        #region  ResendOperationAuthorization
+
+        /// <summary>
+        /// Resend the form of authorization email for this operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ResendOperationAuthorization service method.</param>
+        /// 
+        /// <returns>The response from the ResendOperationAuthorization service method, as returned by Route53Domains.</returns>
+        /// <exception cref="Amazon.Route53Domains.Model.InvalidInputException">
+        /// The requested item is not acceptable. For example, for APIs that accept a domain name,
+        /// the request might specify a domain name that doesn't belong to the account that submitted
+        /// the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password
+        /// might be invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ResendOperationAuthorization">REST API Reference for ResendOperationAuthorization Operation</seealso>
+        public virtual ResendOperationAuthorizationResponse ResendOperationAuthorization(ResendOperationAuthorizationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ResendOperationAuthorizationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ResendOperationAuthorizationResponseUnmarshaller.Instance;
+
+            return Invoke<ResendOperationAuthorizationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ResendOperationAuthorization operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ResendOperationAuthorization operation on AmazonRoute53DomainsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndResendOperationAuthorization
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ResendOperationAuthorization">REST API Reference for ResendOperationAuthorization Operation</seealso>
+        public virtual IAsyncResult BeginResendOperationAuthorization(ResendOperationAuthorizationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ResendOperationAuthorizationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ResendOperationAuthorizationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ResendOperationAuthorization operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginResendOperationAuthorization.</param>
+        /// 
+        /// <returns>Returns a  ResendOperationAuthorizationResult from Route53Domains.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ResendOperationAuthorization">REST API Reference for ResendOperationAuthorization Operation</seealso>
+        public virtual ResendOperationAuthorizationResponse EndResendOperationAuthorization(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ResendOperationAuthorizationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  RetrieveDomainAuthCode
 
         /// <summary>
-        /// This operation returns the AuthCode for the domain. To transfer a domain to another
-        /// registrar, you provide this value to the new registrar.
+        /// This operation returns the authorization code for the domain. To transfer a domain
+        /// to another registrar, you provide this value to the new registrar.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RetrieveDomainAuthCode service method.</param>
         /// 
@@ -1869,9 +2384,7 @@ namespace Amazon.Route53Domains
         #region  TransferDomain
 
         /// <summary>
-        /// Transfers a domain from another registrar to Amazon Route 53. When the transfer is
-        /// complete, the domain is registered either with Amazon Registrar (for .com, .net, and
-        /// .org domains) or with our registrar associate, Gandi (for all other TLDs).
+        /// Transfers a domain from another registrar to Amazon Route 53. 
         /// 
         ///  
         /// <para>
@@ -1886,8 +2399,8 @@ namespace Amazon.Route53Domains
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For information about how to transfer a domain from one AWS account to another, see
-        /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomainToAnotherAwsAccount.html">TransferDomainToAnotherAwsAccount</a>.
+        /// For information about how to transfer a domain from one Amazon Web Services account
+        /// to another, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomainToAnotherAwsAccount.html">TransferDomainToAnotherAwsAccount</a>.
         /// 
         /// </para>
         ///  </li> <li> 
@@ -1992,13 +2505,14 @@ namespace Amazon.Route53Domains
         #region  TransferDomainToAnotherAwsAccount
 
         /// <summary>
-        /// Transfers a domain from the current AWS account to another AWS account. Note the following:
+        /// Transfers a domain from the current Amazon Web Services account to another Amazon
+        /// Web Services account. Note the following:
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// The AWS account that you're transferring the domain to must accept the transfer. If
-        /// the other account doesn't accept the transfer within 3 days, we cancel the transfer.
-        /// See <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_AcceptDomainTransferFromAnotherAwsAccount.html">AcceptDomainTransferFromAnotherAwsAccount</a>.
+        /// The Amazon Web Services account that you're transferring the domain to must accept
+        /// the transfer. If the other account doesn't accept the transfer within 3 days, we cancel
+        /// the transfer. See <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_AcceptDomainTransferFromAnotherAwsAccount.html">AcceptDomainTransferFromAnotherAwsAccount</a>.
         /// 
         /// </para>
         ///  </li> <li> 
@@ -2013,12 +2527,13 @@ namespace Amazon.Route53Domains
         /// </para>
         ///  </li> </ul> <important> 
         /// <para>
-        /// When you transfer a domain from one AWS account to another, Route 53 doesn't transfer
-        /// the hosted zone that is associated with the domain. DNS resolution isn't affected
-        /// if the domain and the hosted zone are owned by separate accounts, so transferring
-        /// the hosted zone is optional. For information about transferring the hosted zone to
-        /// another AWS account, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/hosted-zones-migrating.html">Migrating
-        /// a Hosted Zone to a Different AWS Account</a> in the <i>Amazon Route 53 Developer Guide</i>.
+        /// When you transfer a domain from one Amazon Web Services account to another, Route
+        /// 53 doesn't transfer the hosted zone that is associated with the domain. DNS resolution
+        /// isn't affected if the domain and the hosted zone are owned by separate accounts, so
+        /// transferring the hosted zone is optional. For information about transferring the hosted
+        /// zone to another Amazon Web Services account, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/hosted-zones-migrating.html">Migrating
+        /// a Hosted Zone to a Different Amazon Web Services Account</a> in the <i>Amazon Route
+        /// 53 Developer Guide</i>.
         /// </para>
         ///  </important> 
         /// <para>
@@ -2043,6 +2558,9 @@ namespace Amazon.Route53Domains
         /// </exception>
         /// <exception cref="Amazon.Route53Domains.Model.OperationLimitExceededException">
         /// The number of operations or jobs running exceeded the allowed threshold for the account.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Domains.Model.UnsupportedTLDException">
+        /// Amazon Route 53 does not support this top-level domain (TLD).
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/TransferDomainToAnotherAwsAccount">REST API Reference for TransferDomainToAnotherAwsAccount Operation</seealso>
         public virtual TransferDomainToAnotherAwsAccountResponse TransferDomainToAnotherAwsAccount(TransferDomainToAnotherAwsAccountRequest request)
@@ -2099,7 +2617,7 @@ namespace Amazon.Route53Domains
         ///  
         /// <para>
         /// If the update is successful, this method returns an operation ID that you can use
-        /// to track the progress and completion of the action. If the request is not completed
+        /// to track the progress and completion of the operation. If the request is not completed
         /// successfully, the domain registrant will be notified by email.
         /// </para>
         /// </summary>
@@ -2174,15 +2692,20 @@ namespace Amazon.Route53Domains
 
         /// <summary>
         /// This operation updates the specified domain contact's privacy setting. When privacy
-        /// protection is enabled, contact information such as email address is replaced either
-        /// with contact information for Amazon Registrar (for .com, .net, and .org domains) or
-        /// with contact information for our registrar associate, Gandi.
+        /// protection is enabled, your contact information is replaced with contact information
+        /// for the registrar or with the phrase "REDACTED FOR PRIVACY", or "On behalf of &lt;domain
+        /// name&gt; owner."
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// While some domains may allow different privacy settings per contact, we recommend
+        /// specifying the same privacy setting for all contacts.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// This operation affects only the contact information for the specified contact type
-        /// (registrant, administrator, or tech). If the request succeeds, Amazon Route 53 returns
-        /// an operation ID that you can use with <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>
+        /// (administrative, registrant, or technical). If the request succeeds, Amazon Route
+        /// 53 returns an operation ID that you can use with <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>
         /// to track the progress and completion of the action. If the request doesn't complete
         /// successfully, the domain registrant will be notified by email.
         /// </para>
@@ -2456,8 +2979,8 @@ namespace Amazon.Route53Domains
         #region  ViewBilling
 
         /// <summary>
-        /// Returns all the domain-related billing records for the current AWS account for a specified
-        /// period
+        /// Returns all the domain-related billing records for the current Amazon Web Services
+        /// account for a specified period
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ViewBilling service method.</param>
         /// 

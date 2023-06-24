@@ -70,6 +70,12 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
                     unmarshalledObject.Alias = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("CertificateBasedAuthProperties", targetDepth))
+                {
+                    var unmarshaller = CertificateBasedAuthPropertiesUnmarshaller.Instance;
+                    unmarshalledObject.CertificateBasedAuthProperties = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CustomerUserName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -116,6 +122,12 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RegistrationCode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SamlProperties", targetDepth))
+                {
+                    var unmarshaller = SamlPropertiesUnmarshaller.Instance;
+                    unmarshalledObject.SamlProperties = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("SelfservicePermissions", targetDepth))

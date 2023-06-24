@@ -602,9 +602,19 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AppMesh.Model.GatewayRouteTarget.Port</property>
+    <min>1</min>
+    <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AppMesh.Model.GatewayRouteVirtualService.VirtualServiceName</property>
     <min>1</min>
     <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppMesh.Model.GrpcGatewayRouteMatch.Port</property>
+    <min>1</min>
+    <max>65535</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppMesh.Model.GrpcGatewayRouteMetadata.Name</property>
@@ -639,6 +649,11 @@
     <property>Amazon.AppMesh.Model.GrpcRouteMatch.MethodName</property>
     <min>1</min>
     <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppMesh.Model.GrpcRouteMatch.Port</property>
+    <min>1</min>
+    <max>65535</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppMesh.Model.GrpcRouteMetadata.Name</property>
@@ -716,6 +731,11 @@
     <max>50</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AppMesh.Model.HttpGatewayRouteMatch.Port</property>
+    <min>1</min>
+    <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AppMesh.Model.HttpGatewayRoutePathRewrite.Exact</property>
     <min>1</min>
     <max>255</max>
@@ -745,6 +765,21 @@
     <max>50</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AppMesh.Model.HttpRouteMatch.Port</property>
+    <min>1</min>
+    <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppMesh.Model.JsonFormatRef.Key</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppMesh.Model.JsonFormatRef.Value</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AppMesh.Model.ListenerTlsFileCertificate.CertificateChain</property>
     <min>1</min>
     <max>255</max>
@@ -753,6 +788,11 @@
     <property>Amazon.AppMesh.Model.ListenerTlsFileCertificate.PrivateKey</property>
     <min>1</min>
     <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppMesh.Model.LoggingFormat.Text</property>
+    <min>1</min>
+    <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppMesh.Model.MeshData.MeshName</property>
@@ -852,6 +892,11 @@
     <property>Amazon.AppMesh.Model.TagRef.Value</property>
     <min>0</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppMesh.Model.TcpRouteMatch.Port</property>
+    <min>1</min>
+    <max>65535</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppMesh.Model.TlsValidationContextFileTrust.CertificateChain</property>
@@ -1063,6 +1108,11 @@
     <property>Amazon.AppMesh.Model.VirtualServiceRef.ResourceOwner</property>
     <min>12</min>
     <max>12</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppMesh.Model.WeightedTarget.Port</property>
+    <min>1</min>
+    <max>65535</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppMesh.Model.WeightedTarget.VirtualNode</property>

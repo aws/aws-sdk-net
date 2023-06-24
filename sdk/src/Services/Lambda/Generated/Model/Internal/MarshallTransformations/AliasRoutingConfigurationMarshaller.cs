@@ -34,7 +34,7 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AliasRoutingConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class AliasRoutingConfigurationMarshaller : IRequestMarshaller<AliasRoutingConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -63,7 +63,7 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AliasRoutingConfigurationMarshaller Instance = new AliasRoutingConfigurationMarshaller();
 
     }

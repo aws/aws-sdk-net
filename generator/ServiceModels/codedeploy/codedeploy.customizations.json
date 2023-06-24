@@ -14,5 +14,10 @@
         "AdditionalDeploymentStatusInfo": {
             "deprecatedMessage": "This type is deprecated"
         }
-    }
+    },
+    "emitIsSetProperties": {
+        "UpdateDeploymentGroupInput": [
+          "autoScalingGroups"
+        ]
+  }
 }

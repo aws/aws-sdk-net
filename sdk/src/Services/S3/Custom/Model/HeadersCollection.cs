@@ -80,8 +80,10 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Specifies presentational information for the object.
-        ///  
+        /// <para>
+        /// Specifies presentational information for the object. For more information, see <a
+        /// href="https://www.rfc-editor.org/rfc/rfc6266#section-4">https://www.rfc-editor.org/rfc/rfc6266#section-4</a>.
+        /// </para>
         /// </summary>
         public string ContentDisposition
         {
@@ -90,9 +92,11 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Specifies what content encodings have been applied to the object and thus what decoding mechanisms must be applied to obtain the media-type
-        /// referenced by the Content-Type header field.
-        ///  
+        /// <para>
+        /// Specifies what content encodings have been applied to the object and thus what decoding
+        /// mechanisms must be applied to obtain the media-type referenced by the Content-Type
+        /// header field. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc9110.html#field.content-encoding">https://www.rfc-editor.org/rfc/rfc9110.html#field.content-encoding</a>.
+        /// </para>
         /// </summary>
         public string ContentEncoding
         {
@@ -101,7 +105,10 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// The size of the object, in bytes.
+        /// <para>
+        /// Size of the body in bytes. This parameter is useful when the size of the body cannot
+        /// be determined automatically. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc9110.html#name-content-length">https://www.rfc-editor.org/rfc/rfc9110.html#name-content-length</a>.
+        /// </para>
         /// </summary>
         public long ContentLength
         {
@@ -129,8 +136,10 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// A standard MIME type describing the format of the object data.
-        ///  
+        /// <para>
+        /// A standard MIME type describing the format of the contents. For more information,
+        /// see <a href="https://www.rfc-editor.org/rfc/rfc9110.html#name-content-type">https://www.rfc-editor.org/rfc/rfc9110.html#name-content-type</a>.
+        /// </para>
         /// </summary>
         public string ContentType
         {
@@ -144,8 +153,10 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// The date and time at which the object is no longer cacheable.
-        ///  
+        /// <para>
+        /// The date and time at which the object is no longer cacheable. For more information,
+        /// see <a href="https://www.rfc-editor.org/rfc/rfc7234#section-5.3">https://www.rfc-editor.org/rfc/rfc7234#section-5.3</a>.
+        /// </para>
         /// </summary>
         /// 
         public DateTime? ExpiresUtc

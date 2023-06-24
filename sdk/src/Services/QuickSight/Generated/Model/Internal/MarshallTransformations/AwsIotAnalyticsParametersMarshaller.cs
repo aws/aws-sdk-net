@@ -34,7 +34,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AwsIotAnalyticsParameters Marshaller
-    /// </summary>       
+    /// </summary>
     public class AwsIotAnalyticsParametersMarshaller : IRequestMarshaller<AwsIotAnalyticsParameters, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AwsIotAnalyticsParametersMarshaller Instance = new AwsIotAnalyticsParametersMarshaller();
 
     }

@@ -41,7 +41,7 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property ActiveDirectoryConfiguration. 
         /// <para>
-        /// The configuration for a Microsoft Active Directory (Microsoft AD) studio resource.
+        /// The configuration for a Directory Service for Microsoft Active Directory studio resource.
         /// </para>
         /// </summary>
         public ActiveDirectoryConfiguration ActiveDirectoryConfiguration

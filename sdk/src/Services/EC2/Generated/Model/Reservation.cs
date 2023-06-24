@@ -62,7 +62,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Groups. 
         /// <para>
-        /// [EC2-Classic only] The security groups.
+        /// Not supported.
         /// </para>
         /// </summary>
         public List<GroupIdentifier> Groups

@@ -38,12 +38,14 @@ namespace Amazon.EC2.Model
         private List<string> _baseEndpointDnsNames = new List<string>();
         private bool? _managesVpcEndpoints;
         private string _owner;
+        private PayerResponsibility _payerResponsibility;
         private string _privateDnsName;
         private List<PrivateDnsDetails> _privateDnsNames = new List<PrivateDnsDetails>();
         private DnsNameState _privateDnsNameVerificationState;
         private string _serviceId;
         private string _serviceName;
         private List<ServiceTypeDetail> _serviceType = new List<ServiceTypeDetail>();
+        private List<string> _supportedIpAddressTypes = new List<string>();
         private List<Tag> _tags = new List<Tag>();
         private bool? _vpcEndpointPolicySupported;
 
@@ -140,6 +142,24 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PayerResponsibility. 
+        /// <para>
+        /// The payer responsibility.
+        /// </para>
+        /// </summary>
+        public PayerResponsibility PayerResponsibility
+        {
+            get { return this._payerResponsibility; }
+            set { this._payerResponsibility = value; }
+        }
+
+        // Check to see if PayerResponsibility property is set
+        internal bool IsSetPayerResponsibility()
+        {
+            return this._payerResponsibility != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property PrivateDnsName. 
         /// <para>
         /// The private DNS name for the service.
@@ -160,7 +180,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property PrivateDnsNames. 
         /// <para>
-        /// The private DNS names assigned to the VPC endpoint service. 
+        /// The private DNS names assigned to the VPC endpoint service.
         /// </para>
         /// </summary>
         public List<PrivateDnsDetails> PrivateDnsNames
@@ -219,7 +239,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ServiceName. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the service.
+        /// The name of the service.
         /// </para>
         /// </summary>
         public string ServiceName
@@ -253,9 +273,28 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SupportedIpAddressTypes. 
+        /// <para>
+        /// The supported IP address types.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=2)]
+        public List<string> SupportedIpAddressTypes
+        {
+            get { return this._supportedIpAddressTypes; }
+            set { this._supportedIpAddressTypes = value; }
+        }
+
+        // Check to see if SupportedIpAddressTypes property is set
+        internal bool IsSetSupportedIpAddressTypes()
+        {
+            return this._supportedIpAddressTypes != null && this._supportedIpAddressTypes.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Any tags assigned to the service.
+        /// The tags assigned to the service.
         /// </para>
         /// </summary>
         public List<Tag> Tags

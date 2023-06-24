@@ -37,6 +37,7 @@ namespace Amazon.Elasticsearch.Model
     {
         private bool? _ebsEnabled;
         private int? _iops;
+        private int? _throughput;
         private int? _volumeSize;
         private VolumeType _volumeType;
 
@@ -61,7 +62,7 @@ namespace Amazon.Elasticsearch.Model
         /// <summary>
         /// Gets and sets the property Iops. 
         /// <para>
-        /// Specifies the IOPD for a Provisioned IOPS EBS volume (SSD).
+        /// Specifies the IOPS for Provisioned IOPS And GP3 EBS volume (SSD).
         /// </para>
         /// </summary>
         public int Iops
@@ -74,6 +75,24 @@ namespace Amazon.Elasticsearch.Model
         internal bool IsSetIops()
         {
             return this._iops.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Throughput. 
+        /// <para>
+        /// Specifies the Throughput for GP3 EBS volume (SSD).
+        /// </para>
+        /// </summary>
+        public int Throughput
+        {
+            get { return this._throughput.GetValueOrDefault(); }
+            set { this._throughput = value; }
+        }
+
+        // Check to see if Throughput property is set
+        internal bool IsSetThroughput()
+        {
+            return this._throughput.HasValue; 
         }
 
         /// <summary>

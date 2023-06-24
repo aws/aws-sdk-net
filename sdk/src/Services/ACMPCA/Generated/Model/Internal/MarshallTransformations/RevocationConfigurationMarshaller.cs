@@ -34,7 +34,7 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RevocationConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class RevocationConfigurationMarshaller : IRequestMarshaller<RevocationConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RevocationConfigurationMarshaller Instance = new RevocationConfigurationMarshaller();
 
     }

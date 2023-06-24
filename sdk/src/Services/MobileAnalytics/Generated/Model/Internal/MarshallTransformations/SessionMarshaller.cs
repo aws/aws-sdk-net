@@ -34,7 +34,7 @@ namespace Amazon.MobileAnalytics.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Session Marshaller
-    /// </summary>       
+    /// </summary>
     public class SessionMarshaller : IRequestMarshaller<Session, JsonMarshallerContext> 
     {
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.MobileAnalytics.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SessionMarshaller Instance = new SessionMarshaller();
 
     }

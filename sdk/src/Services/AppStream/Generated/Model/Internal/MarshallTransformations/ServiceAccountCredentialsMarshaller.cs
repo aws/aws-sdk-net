@@ -34,7 +34,7 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ServiceAccountCredentials Marshaller
-    /// </summary>       
+    /// </summary>
     public class ServiceAccountCredentialsMarshaller : IRequestMarshaller<ServiceAccountCredentials, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ServiceAccountCredentialsMarshaller Instance = new ServiceAccountCredentialsMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AnonymousUserEmbeddingExperienceConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class AnonymousUserEmbeddingExperienceConfigurationMarshaller : IRequestMarshaller<AnonymousUserEmbeddingExperienceConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -56,11 +56,33 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetDashboardVisual())
+            {
+                context.Writer.WritePropertyName("DashboardVisual");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AnonymousUserDashboardVisualEmbeddingConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.DashboardVisual, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetQSearchBar())
+            {
+                context.Writer.WritePropertyName("QSearchBar");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AnonymousUserQSearchBarEmbeddingConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.QSearchBar, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AnonymousUserEmbeddingExperienceConfigurationMarshaller Instance = new AnonymousUserEmbeddingExperienceConfigurationMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// FeatureActivations Marshaller
-    /// </summary>       
+    /// </summary>
     public class FeatureActivationsMarshaller : IRequestMarshaller<FeatureActivations, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static FeatureActivationsMarshaller Instance = new FeatureActivationsMarshaller();
 
     }

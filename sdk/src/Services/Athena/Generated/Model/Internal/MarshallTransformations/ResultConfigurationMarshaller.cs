@@ -34,7 +34,7 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ResultConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class ResultConfigurationMarshaller : IRequestMarshaller<ResultConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -45,6 +45,17 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ResultConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAclConfiguration())
+            {
+                context.Writer.WritePropertyName("AclConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AclConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.AclConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetEncryptionConfiguration())
             {
                 context.Writer.WritePropertyName("EncryptionConfiguration");
@@ -54,6 +65,12 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
                 marshaller.Marshall(requestObject.EncryptionConfiguration, context);
 
                 context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetExpectedBucketOwner())
+            {
+                context.Writer.WritePropertyName("ExpectedBucketOwner");
+                context.Writer.Write(requestObject.ExpectedBucketOwner);
             }
 
             if(requestObject.IsSetOutputLocation())
@@ -66,7 +83,7 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ResultConfigurationMarshaller Instance = new ResultConfigurationMarshaller();
 
     }

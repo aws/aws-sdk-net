@@ -31,6 +31,11 @@ namespace Amazon.LocationService.Model
     /// <summary>
     /// Contains the geofence geometry details.
     /// 
+    ///  
+    /// <para>
+    /// A geofence geometry is made up of either a polygon or a circle. Can be either a polygon
+    /// or a circle. Including both will return a validation error.
+    /// </para>
     ///  <note> 
     /// <para>
     /// Amazon Location doesn't currently support polygons with holes, multipolygons, polygons
@@ -40,22 +45,55 @@ namespace Amazon.LocationService.Model
     /// </summary>
     public partial class GeofenceGeometry
     {
+        private Circle _circle;
         private List<List<List<double>>> _polygon = new List<List<List<double>>>();
+
+        /// <summary>
+        /// Gets and sets the property Circle. 
+        /// <para>
+        /// A circle on the earth, as defined by a center point and a radius.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true)]
+        public Circle Circle
+        {
+            get { return this._circle; }
+            set { this._circle = value; }
+        }
+
+        // Check to see if Circle property is set
+        internal bool IsSetCircle()
+        {
+            return this._circle != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Polygon. 
         /// <para>
-        /// An array of 1 or more linear rings. A linear ring is an array of 4 or more vertices,
-        /// where the first and last vertex are the same to form a closed boundary. Each vertex
-        /// is a 2-dimensional point of the form: <code>[longitude, latitude]</code>. 
+        /// A polygon is a list of linear rings which are each made up of a list of vertices.
         /// </para>
         ///  
         /// <para>
-        /// The first linear ring is an outer ring, describing the polygon's boundary. Subsequent
-        /// linear rings may be inner or outer rings to describe holes and islands. Outer rings
-        /// must list their vertices in counter-clockwise order around the ring's center, where
-        /// the left side is the polygon's exterior. Inner rings must list their vertices in clockwise
-        /// order, where the left side is the polygon's interior.
+        /// Each vertex is a 2-dimensional point of the form: <code>[longitude, latitude]</code>.
+        /// This is represented as an array of doubles of length 2 (so <code>[double, double]</code>).
+        /// </para>
+        ///  
+        /// <para>
+        /// An array of 4 or more vertices, where the first and last vertex are the same (to form
+        /// a closed boundary), is called a linear ring. The linear ring vertices must be listed
+        /// in counter-clockwise order around the ring’s interior. The linear ring is represented
+        /// as an array of vertices, or an array of arrays of doubles (<code>[[double, double],
+        /// ...]</code>).
+        /// </para>
+        ///  
+        /// <para>
+        /// A geofence consists of a single linear ring. To allow for future expansion, the Polygon
+        /// parameter takes an array of linear rings, which is represented as an array of arrays
+        /// of arrays of doubles (<code>[[[double, double], ...], ...]</code>).
+        /// </para>
+        ///  
+        /// <para>
+        /// A linear ring for use in geofences can consist of between 4 and 1,000 vertices.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

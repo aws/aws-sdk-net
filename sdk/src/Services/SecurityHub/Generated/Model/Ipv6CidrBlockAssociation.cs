@@ -58,8 +58,33 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property CidrBlockState. 
         /// <para>
-        /// Information about the state of the CIDR block.
+        /// Information about the state of the CIDR block. Valid values are as follows:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>associating</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>associated</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>disassociating</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>disassociated</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>failed</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>failing</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string CidrBlockState
         {

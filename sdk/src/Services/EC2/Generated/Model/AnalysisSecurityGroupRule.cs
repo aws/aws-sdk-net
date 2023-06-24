@@ -61,7 +61,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Direction. 
         /// <para>
-        /// The direction. The following are possible values:
+        /// The direction. The following are the possible values:
         /// </para>
         ///  <ul> <li> 
         /// <para>

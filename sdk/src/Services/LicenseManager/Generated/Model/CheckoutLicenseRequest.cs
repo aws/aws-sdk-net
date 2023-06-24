@@ -31,6 +31,13 @@ namespace Amazon.LicenseManager.Model
     /// <summary>
     /// Container for the parameters to the CheckoutLicense operation.
     /// Checks out the specified license.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// If the account that created the license is the same that is performing the check out,
+    /// you must specify the account as the beneficiary.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class CheckoutLicenseRequest : AmazonLicenseManagerRequest
     {

@@ -35,6 +35,7 @@ namespace Amazon.ServiceCatalog.Model
     {
         private bool? _accepted;
         private string _principalId;
+        private bool? _sharePrincipals;
         private bool? _shareTagOptions;
         private DescribePortfolioShareType _type;
 
@@ -62,7 +63,7 @@ namespace Amazon.ServiceCatalog.Model
         /// Gets and sets the property PrincipalId. 
         /// <para>
         /// The identifier of the recipient entity that received the portfolio share. The recipient
-        /// entities can be one of the following: 
+        /// entity can be one of the following:
         /// </para>
         ///  
         /// <para>
@@ -92,6 +93,25 @@ namespace Amazon.ServiceCatalog.Model
         internal bool IsSetPrincipalId()
         {
             return this._principalId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SharePrincipals. 
+        /// <para>
+        /// Indicates if <code>Principal</code> sharing is enabled or disabled for the portfolio
+        /// share. 
+        /// </para>
+        /// </summary>
+        public bool SharePrincipals
+        {
+            get { return this._sharePrincipals.GetValueOrDefault(); }
+            set { this._sharePrincipals = value; }
+        }
+
+        // Check to see if SharePrincipals property is set
+        internal bool IsSetSharePrincipals()
+        {
+            return this._sharePrincipals.HasValue; 
         }
 
         /// <summary>

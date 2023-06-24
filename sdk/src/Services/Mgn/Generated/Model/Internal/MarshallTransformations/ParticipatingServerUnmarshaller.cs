@@ -64,10 +64,22 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("launchedEc2InstanceID", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.LaunchedEc2InstanceID = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("launchStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LaunchStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("postLaunchActionsStatus", targetDepth))
+                {
+                    var unmarshaller = PostLaunchActionsStatusUnmarshaller.Instance;
+                    unmarshalledObject.PostLaunchActionsStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("sourceServerID", targetDepth))

@@ -34,7 +34,7 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DeleteStepDetails Marshaller
-    /// </summary>       
+    /// </summary>
     public class DeleteStepDetailsMarshaller : IRequestMarshaller<DeleteStepDetails, JsonMarshallerContext> 
     {
         /// <summary>
@@ -51,11 +51,17 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Name);
             }
 
+            if(requestObject.IsSetSourceFileLocation())
+            {
+                context.Writer.WritePropertyName("SourceFileLocation");
+                context.Writer.Write(requestObject.SourceFileLocation);
+            }
+
         }
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DeleteStepDetailsMarshaller Instance = new DeleteStepDetailsMarshaller();
 
     }

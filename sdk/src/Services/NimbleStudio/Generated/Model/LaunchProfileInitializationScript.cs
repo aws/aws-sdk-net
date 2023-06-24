@@ -29,13 +29,35 @@ using Amazon.Runtime.Internal;
 namespace Amazon.NimbleStudio.Model
 {
     /// <summary>
-    /// 
+    /// The launch profile initialization script is used when start streaming session runs.
     /// </summary>
     public partial class LaunchProfileInitializationScript
     {
+        private string _runtimeRoleArn;
         private string _script;
+        private string _secureInitializationRoleArn;
         private string _studioComponentId;
         private string _studioComponentName;
+
+        /// <summary>
+        /// Gets and sets the property RuntimeRoleArn. 
+        /// <para>
+        /// An IAM role attached to a Studio Component that gives the studio component access
+        /// to Amazon Web Services resources at anytime while the instance is running. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=2048)]
+        public string RuntimeRoleArn
+        {
+            get { return this._runtimeRoleArn; }
+            set { this._runtimeRoleArn = value; }
+        }
+
+        // Check to see if RuntimeRoleArn property is set
+        internal bool IsSetRuntimeRoleArn()
+        {
+            return this._runtimeRoleArn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Script. 
@@ -43,7 +65,7 @@ namespace Amazon.NimbleStudio.Model
         /// The initialization script.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=5120)]
+        [AWSProperty(Sensitive=true, Min=1, Max=5120)]
         public string Script
         {
             get { return this._script; }
@@ -54,6 +76,27 @@ namespace Amazon.NimbleStudio.Model
         internal bool IsSetScript()
         {
             return this._script != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SecureInitializationRoleArn. 
+        /// <para>
+        /// An IAM role attached to Studio Component when the system initialization script runs
+        /// which give the studio component access to Amazon Web Services resources when the system
+        /// initialization script runs.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=2048)]
+        public string SecureInitializationRoleArn
+        {
+            get { return this._secureInitializationRoleArn; }
+            set { this._secureInitializationRoleArn = value; }
+        }
+
+        // Check to see if SecureInitializationRoleArn property is set
+        internal bool IsSetSecureInitializationRoleArn()
+        {
+            return this._secureInitializationRoleArn != null;
         }
 
         /// <summary>
@@ -81,7 +124,7 @@ namespace Amazon.NimbleStudio.Model
         /// The name for the studio component.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=64)]
+        [AWSProperty(Sensitive=true, Min=0, Max=64)]
         public string StudioComponentName
         {
             get { return this._studioComponentName; }

@@ -96,7 +96,7 @@ namespace Amazon.CloudFront.Model
         /// Gets and sets the property FrameOptions. 
         /// <para>
         /// Determines whether CloudFront includes the <code>X-Frame-Options</code> HTTP response
-        /// header and the header’s value.
+        /// header and the header's value.
         /// </para>
         ///  
         /// <para>
@@ -121,7 +121,7 @@ namespace Amazon.CloudFront.Model
         /// Gets and sets the property ReferrerPolicy. 
         /// <para>
         /// Determines whether CloudFront includes the <code>Referrer-Policy</code> HTTP response
-        /// header and the header’s value.
+        /// header and the header's value.
         /// </para>
         ///  
         /// <para>
@@ -146,7 +146,7 @@ namespace Amazon.CloudFront.Model
         /// Gets and sets the property StrictTransportSecurity. 
         /// <para>
         /// Determines whether CloudFront includes the <code>Strict-Transport-Security</code>
-        /// HTTP response header and the header’s value.
+        /// HTTP response header and the header's value.
         /// </para>
         ///  
         /// <para>
@@ -171,7 +171,7 @@ namespace Amazon.CloudFront.Model
         /// Gets and sets the property XSSProtection. 
         /// <para>
         /// Determines whether CloudFront includes the <code>X-XSS-Protection</code> HTTP response
-        /// header and the header’s value.
+        /// header and the header's value.
         /// </para>
         ///  
         /// <para>

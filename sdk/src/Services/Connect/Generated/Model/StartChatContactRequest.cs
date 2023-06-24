@@ -30,8 +30,8 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the StartChatContact operation.
-    /// Initiates a contact flow to start a new chat for the customer. Response of this API
-    /// provides a token required to obtain credentials from the <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a>
+    /// Initiates a flow to start a new chat for the customer. Response of this API provides
+    /// a token required to obtain credentials from the <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a>
     /// API in the Amazon Connect Participant Service.
     /// 
     ///  
@@ -43,7 +43,7 @@ namespace Amazon.Connect.Model
     /// </para>
     ///  
     /// <para>
-    /// A 429 error occurs in two situations:
+    /// A 429 error occurs in the following situations:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -57,6 +57,12 @@ namespace Amazon.Connect.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
+    /// If you use the <code>ChatDurationInMinutes</code> parameter and receive a 400 error,
+    /// your account may not support the ability to configure custom chat durations. For more
+    /// information, contact Amazon Web Services Support. 
+    /// </para>
+    ///  
+    /// <para>
     /// For more information about chat, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/chat.html">Chat</a>
     /// in the <i>Amazon Connect Administrator Guide</i>.
     /// </para>
@@ -64,18 +70,22 @@ namespace Amazon.Connect.Model
     public partial class StartChatContactRequest : AmazonConnectRequest
     {
         private Dictionary<string, string> _attributes = new Dictionary<string, string>();
+        private int? _chatDurationInMinutes;
         private string _clientToken;
         private string _contactFlowId;
         private ChatMessage _initialMessage;
         private string _instanceId;
         private ParticipantDetails _participantDetails;
+        private PersistentChat _persistentChat;
+        private string _relatedContactId;
+        private List<string> _supportedMessagingContentTypes = new List<string>();
 
         /// <summary>
         /// Gets and sets the property Attributes. 
         /// <para>
         /// A custom key-value pair using an attribute map. The attributes are standard Amazon
-        /// Connect attributes. They can be accessed in contact flows just like any other contact
-        /// attributes. 
+        /// Connect attributes. They can be accessed in flows just like any other contact attributes.
+        /// 
         /// </para>
         ///  
         /// <para>
@@ -96,10 +106,33 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ChatDurationInMinutes. 
+        /// <para>
+        /// The total duration of the newly started chat session. If not specified, the chat session
+        /// duration defaults to 25 hour. The minimum configurable time is 60 minutes. The maximum
+        /// configurable time is 10,080 minutes (7 days).
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=60, Max=10080)]
+        public int ChatDurationInMinutes
+        {
+            get { return this._chatDurationInMinutes.GetValueOrDefault(); }
+            set { this._chatDurationInMinutes = value; }
+        }
+
+        // Check to see if ChatDurationInMinutes property is set
+        internal bool IsSetChatDurationInMinutes()
+        {
+            return this._chatDurationInMinutes.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
         /// A unique, case-sensitive identifier that you provide to ensure the idempotency of
-        /// the request.
+        /// the request. If not provided, the Amazon Web Services SDK populates this field. For
+        /// more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
+        /// retries safe with idempotent APIs</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=500)]
@@ -118,11 +151,11 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property ContactFlowId. 
         /// <para>
-        /// The identifier of the contact flow for initiating the chat. To see the ContactFlowId
-        /// in the Amazon Connect console user interface, on the navigation menu go to <b>Routing</b>,
-        /// <b>Contact Flows</b>. Choose the contact flow. On the contact flow page, under the
-        /// name of the contact flow, choose <b>Show additional flow information</b>. The ContactFlowId
-        /// is the last part of the ARN, shown here in bold: 
+        /// The identifier of the flow for initiating the chat. To see the ContactFlowId in the
+        /// Amazon Connect console user interface, on the navigation menu go to <b>Routing</b>,
+        /// <b>Contact Flows</b>. Choose the flow. On the flow page, under the name of the flow,
+        /// choose <b>Show additional flow information</b>. The ContactFlowId is the last part
+        /// of the ARN, shown here in bold: 
         /// </para>
         ///  
         /// <para>
@@ -164,8 +197,8 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The identifier of the Amazon Connect instance. You can find the instanceId in the
-        /// ARN of the instance.
+        /// The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+        /// the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
@@ -198,6 +231,86 @@ namespace Amazon.Connect.Model
         internal bool IsSetParticipantDetails()
         {
             return this._participantDetails != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PersistentChat. 
+        /// <para>
+        /// Enable persistent chats. For more information about enabling persistent chat, and
+        /// for example use cases and how to configure for them, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-persistence.html">Enable
+        /// persistent chat</a>.
+        /// </para>
+        /// </summary>
+        public PersistentChat PersistentChat
+        {
+            get { return this._persistentChat; }
+            set { this._persistentChat = value; }
+        }
+
+        // Check to see if PersistentChat property is set
+        internal bool IsSetPersistentChat()
+        {
+            return this._persistentChat != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RelatedContactId. 
+        /// <para>
+        /// The unique identifier for an Amazon Connect contact. This identifier is related to
+        /// the chat starting.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// You cannot provide data for both RelatedContactId and PersistentChat. 
+        /// </para>
+        ///  </note>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string RelatedContactId
+        {
+            get { return this._relatedContactId; }
+            set { this._relatedContactId = value; }
+        }
+
+        // Check to see if RelatedContactId property is set
+        internal bool IsSetRelatedContactId()
+        {
+            return this._relatedContactId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SupportedMessagingContentTypes. 
+        /// <para>
+        /// The supported chat message content types. Supported types are <code>text/plain</code>,
+        /// <code>text/markdown</code>, <code>application/json</code>, <code>application/vnd.amazonaws.connect.message.interactive</code>,
+        /// and <code>application/vnd.amazonaws.connect.message.interactive.response</code>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Content types must always contain <code>text/plain</code>. You can then put any other
+        /// supported type in the list. For example, all the following lists are valid because
+        /// they contain <code>text/plain</code>: <code>[text/plain, text/markdown, application/json]</code>,
+        /// <code>[text/markdown, text/plain]</code>, <code>[text/plain, application/json, application/vnd.amazonaws.connect.message.interactive.response]</code>.
+        /// 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The type <code>application/vnd.amazonaws.connect.message.interactive</code> is required
+        /// to use the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/show-view-block.html">Show
+        /// view</a> flow block.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public List<string> SupportedMessagingContentTypes
+        {
+            get { return this._supportedMessagingContentTypes; }
+            set { this._supportedMessagingContentTypes = value; }
+        }
+
+        // Check to see if SupportedMessagingContentTypes property is set
+        internal bool IsSetSupportedMessagingContentTypes()
+        {
+            return this._supportedMessagingContentTypes != null && this._supportedMessagingContentTypes.Count > 0; 
         }
 
     }

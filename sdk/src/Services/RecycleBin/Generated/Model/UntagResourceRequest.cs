@@ -30,7 +30,7 @@ namespace Amazon.RecycleBin.Model
 {
     /// <summary>
     /// Container for the parameters to the UntagResource operation.
-    /// Unassigns a tag from a resource.
+    /// Unassigns a tag from a retention rule.
     /// </summary>
     public partial class UntagResourceRequest : AmazonRecycleBinRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.RecycleBin.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the resource from which to unassign the tags.
+        /// The Amazon Resource Name (ARN) of the retention rule.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=1011)]
@@ -59,7 +59,8 @@ namespace Amazon.RecycleBin.Model
         /// <summary>
         /// Gets and sets the property TagKeys. 
         /// <para>
-        /// Information about the tags to unassign from the resource.
+        /// The tag keys of the tags to unassign. All tags that have the specified tag key are
+        /// unassigned.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=200)]

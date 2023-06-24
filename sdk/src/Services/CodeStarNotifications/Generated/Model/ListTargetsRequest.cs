@@ -30,7 +30,7 @@ namespace Amazon.CodeStarNotifications.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTargets operation.
-    /// Returns a list of the notification rule targets for an AWS account.
+    /// Returns a list of the notification rule targets for an Amazon Web Services account.
     /// </summary>
     public partial class ListTargetsRequest : AmazonCodeStarNotificationsRequest
     {

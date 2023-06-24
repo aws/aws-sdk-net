@@ -226,6 +226,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     unmarshalledObject.Resources = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Sample", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.Sample = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SchemaVersion", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -248,6 +254,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new ListUnmarshaller<ThreatIntelIndicator, ThreatIntelIndicatorUnmarshaller>(ThreatIntelIndicatorUnmarshaller.Instance);
                     unmarshalledObject.ThreatIntelIndicators = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Threats", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<Threat, ThreatUnmarshaller>(ThreatUnmarshaller.Instance);
+                    unmarshalledObject.Threats = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Title", targetDepth))

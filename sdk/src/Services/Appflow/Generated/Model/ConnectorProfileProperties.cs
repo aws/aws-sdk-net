@@ -34,12 +34,14 @@ namespace Amazon.Appflow.Model
     public partial class ConnectorProfileProperties
     {
         private AmplitudeConnectorProfileProperties _amplitude;
+        private CustomConnectorProfileProperties _customConnector;
         private DatadogConnectorProfileProperties _datadog;
         private DynatraceConnectorProfileProperties _dynatrace;
         private GoogleAnalyticsConnectorProfileProperties _googleAnalytics;
         private HoneycodeConnectorProfileProperties _honeycode;
         private InforNexusConnectorProfileProperties _inforNexus;
         private MarketoConnectorProfileProperties _marketo;
+        private PardotConnectorProfileProperties _pardot;
         private RedshiftConnectorProfileProperties _redshift;
         private SalesforceConnectorProfileProperties _salesforce;
         private SAPODataConnectorProfileProperties _sapoData;
@@ -67,6 +69,24 @@ namespace Amazon.Appflow.Model
         internal bool IsSetAmplitude()
         {
             return this._amplitude != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomConnector. 
+        /// <para>
+        /// The properties required by the custom connector.
+        /// </para>
+        /// </summary>
+        public CustomConnectorProfileProperties CustomConnector
+        {
+            get { return this._customConnector; }
+            set { this._customConnector = value; }
+        }
+
+        // Check to see if CustomConnector property is set
+        internal bool IsSetCustomConnector()
+        {
+            return this._customConnector != null;
         }
 
         /// <summary>
@@ -175,6 +195,24 @@ namespace Amazon.Appflow.Model
         internal bool IsSetMarketo()
         {
             return this._marketo != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Pardot. 
+        /// <para>
+        /// The connector-specific properties required by Salesforce Pardot.
+        /// </para>
+        /// </summary>
+        public PardotConnectorProfileProperties Pardot
+        {
+            get { return this._pardot; }
+            set { this._pardot = value; }
+        }
+
+        // Check to see if Pardot property is set
+        internal bool IsSetPardot()
+        {
+            return this._pardot != null;
         }
 
         /// <summary>

@@ -56,7 +56,7 @@ namespace Amazon.AppIntegrationsService.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.AppIntegrationsService");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-07-29";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-07-29";
             request.HttpMethod = "PATCH";
 
             if (!publicRequest.IsSetIdentifier())
@@ -80,7 +80,6 @@ namespace Amazon.AppIntegrationsService.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Name);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

@@ -34,7 +34,7 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// VisualReferenceInput Marshaller
-    /// </summary>       
+    /// </summary>
     public class VisualReferenceInputMarshaller : IRequestMarshaller<VisualReferenceInput, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static VisualReferenceInputMarshaller Instance = new VisualReferenceInputMarshaller();
 
     }

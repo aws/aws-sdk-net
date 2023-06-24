@@ -34,7 +34,7 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// BatchPutGeofenceRequestEntry Marshaller
-    /// </summary>       
+    /// </summary>
     public class BatchPutGeofenceRequestEntryMarshaller : IRequestMarshaller<BatchPutGeofenceRequestEntry, JsonMarshallerContext> 
     {
         /// <summary>
@@ -49,6 +49,20 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("GeofenceId");
                 context.Writer.Write(requestObject.GeofenceId);
+            }
+
+            if(requestObject.IsSetGeofenceProperties())
+            {
+                context.Writer.WritePropertyName("GeofenceProperties");
+                context.Writer.WriteObjectStart();
+                foreach (var requestObjectGeofencePropertiesKvp in requestObject.GeofenceProperties)
+                {
+                    context.Writer.WritePropertyName(requestObjectGeofencePropertiesKvp.Key);
+                    var requestObjectGeofencePropertiesValue = requestObjectGeofencePropertiesKvp.Value;
+
+                        context.Writer.Write(requestObjectGeofencePropertiesValue);
+                }
+                context.Writer.WriteObjectEnd();
             }
 
             if(requestObject.IsSetGeometry())
@@ -66,7 +80,7 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static BatchPutGeofenceRequestEntryMarshaller Instance = new BatchPutGeofenceRequestEntryMarshaller();
 
     }

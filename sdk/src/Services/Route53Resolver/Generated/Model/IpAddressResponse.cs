@@ -38,6 +38,7 @@ namespace Amazon.Route53Resolver.Model
         private string _creationTime;
         private string _ip;
         private string _ipId;
+        private string _ipv6;
         private string _modificationTime;
         private IpAddressStatus _status;
         private string _statusMessage;
@@ -66,7 +67,7 @@ namespace Amazon.Route53Resolver.Model
         /// <summary>
         /// Gets and sets the property Ip. 
         /// <para>
-        /// One IP address that the Resolver endpoint uses for DNS queries.
+        /// One IPv4 address that the Resolver endpoint uses for DNS queries.
         /// </para>
         /// </summary>
         [AWSProperty(Min=7, Max=36)]
@@ -99,6 +100,25 @@ namespace Amazon.Route53Resolver.Model
         internal bool IsSetIpId()
         {
             return this._ipId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Ipv6. 
+        /// <para>
+        ///  One IPv6 address that the Resolver endpoint uses for DNS queries. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=7, Max=39)]
+        public string Ipv6
+        {
+            get { return this._ipv6; }
+            set { this._ipv6 = value; }
+        }
+
+        // Check to see if Ipv6 property is set
+        internal bool IsSetIpv6()
+        {
+            return this._ipv6 != null;
         }
 
         /// <summary>

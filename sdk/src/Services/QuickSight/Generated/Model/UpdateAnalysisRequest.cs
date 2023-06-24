@@ -36,6 +36,7 @@ namespace Amazon.QuickSight.Model
     {
         private string _analysisId;
         private string _awsAccountId;
+        private AnalysisDefinition _definition;
         private string _name;
         private Parameters _parameters;
         private AnalysisSourceEntity _sourceEntity;
@@ -47,7 +48,7 @@ namespace Amazon.QuickSight.Model
         /// The ID for the analysis that you're updating. This ID displays in the URL of the analysis.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=2048)]
+        [AWSProperty(Required=true, Min=1, Max=512)]
         public string AnalysisId
         {
             get { return this._analysisId; }
@@ -77,6 +78,28 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetAwsAccountId()
         {
             return this._awsAccountId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Definition. 
+        /// <para>
+        /// The definition of an analysis.
+        /// </para>
+        ///  
+        /// <para>
+        /// A definition is the data model of all features in a Dashboard, Template, or Analysis.
+        /// </para>
+        /// </summary>
+        public AnalysisDefinition Definition
+        {
+            get { return this._definition; }
+            set { this._definition = value; }
+        }
+
+        // Check to see if Definition property is set
+        internal bool IsSetDefinition()
+        {
+            return this._definition != null;
         }
 
         /// <summary>
@@ -125,7 +148,6 @@ namespace Amazon.QuickSight.Model
         /// contains details that describe a source template and one or more datasets.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public AnalysisSourceEntity SourceEntity
         {
             get { return this._sourceEntity; }

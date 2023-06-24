@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeDeploy.Model
 {
     /// <summary>
-    /// The named revision does not exist with the IAM user or AWS account.
+    /// The named revision does not exist with the IAM user or Amazon Web Services account.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

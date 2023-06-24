@@ -34,7 +34,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RowLevelPermissionTagRule Marshaller
-    /// </summary>       
+    /// </summary>
     public class RowLevelPermissionTagRuleMarshaller : IRequestMarshaller<RowLevelPermissionTagRule, JsonMarshallerContext> 
     {
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RowLevelPermissionTagRuleMarshaller Instance = new RowLevelPermissionTagRuleMarshaller();
 
     }

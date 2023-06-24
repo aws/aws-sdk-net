@@ -30,7 +30,10 @@ namespace Amazon.NetworkFirewall.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateFirewallPolicyChangeProtection operation.
-    /// 
+    /// Modifies the flag, <code>ChangeProtection</code>, which indicates whether it is possible
+    /// to change the firewall. If the flag is set to <code>TRUE</code>, the firewall is protected
+    /// from changes. This setting helps protect against accidentally changing a firewall
+    /// that's in use.
     /// </summary>
     public partial class UpdateFirewallPolicyChangeProtectionRequest : AmazonNetworkFirewallRequest
     {

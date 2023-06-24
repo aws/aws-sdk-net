@@ -106,7 +106,7 @@ namespace Amazon.KinesisFirehose.Model
         /// The user password.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=6, Max=512)]
+        [AWSProperty(Sensitive=true, Min=6, Max=512)]
         public string Password
         {
             get { return this._password; }
@@ -159,9 +159,9 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property RoleARN. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the AWS credentials. For more information, see <a
-        /// href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resource Names (ARNs) and AWS Service Namespaces</a>.
+        /// The Amazon Resource Name (ARN) of the Amazon Web Services credentials. For more information,
+        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=512)]
@@ -244,7 +244,7 @@ namespace Amazon.KinesisFirehose.Model
         /// The name of the user.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=512)]
+        [AWSProperty(Sensitive=true, Min=1, Max=512)]
         public string Username
         {
             get { return this._username; }

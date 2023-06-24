@@ -31,6 +31,10 @@ namespace Amazon.ElastiCache
     {
 
         /// <summary>
+        /// Constant Iam for AuthenticationType
+        /// </summary>
+        public static readonly AuthenticationType Iam = new AuthenticationType("iam");
+        /// <summary>
         /// Constant NoPassword for AuthenticationType
         /// </summary>
         public static readonly AuthenticationType NoPassword = new AuthenticationType("no-password");
@@ -337,6 +341,60 @@ namespace Amazon.ElastiCache
 
 
     /// <summary>
+    /// Constants used for properties of type ClusterMode.
+    /// </summary>
+    public class ClusterMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Compatible for ClusterMode
+        /// </summary>
+        public static readonly ClusterMode Compatible = new ClusterMode("compatible");
+        /// <summary>
+        /// Constant Disabled for ClusterMode
+        /// </summary>
+        public static readonly ClusterMode Disabled = new ClusterMode("disabled");
+        /// <summary>
+        /// Constant Enabled for ClusterMode
+        /// </summary>
+        public static readonly ClusterMode Enabled = new ClusterMode("enabled");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ClusterMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ClusterMode FindValue(string value)
+        {
+            return FindValue<ClusterMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ClusterMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DataTieringStatus.
     /// </summary>
     public class DataTieringStatus : ConstantClass
@@ -430,6 +488,110 @@ namespace Amazon.ElastiCache
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator DestinationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type InputAuthenticationType.
+    /// </summary>
+    public class InputAuthenticationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Iam for InputAuthenticationType
+        /// </summary>
+        public static readonly InputAuthenticationType Iam = new InputAuthenticationType("iam");
+        /// <summary>
+        /// Constant NoPasswordRequired for InputAuthenticationType
+        /// </summary>
+        public static readonly InputAuthenticationType NoPasswordRequired = new InputAuthenticationType("no-password-required");
+        /// <summary>
+        /// Constant Password for InputAuthenticationType
+        /// </summary>
+        public static readonly InputAuthenticationType Password = new InputAuthenticationType("password");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InputAuthenticationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InputAuthenticationType FindValue(string value)
+        {
+            return FindValue<InputAuthenticationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InputAuthenticationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type IpDiscovery.
+    /// </summary>
+    public class IpDiscovery : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Ipv4 for IpDiscovery
+        /// </summary>
+        public static readonly IpDiscovery Ipv4 = new IpDiscovery("ipv4");
+        /// <summary>
+        /// Constant Ipv6 for IpDiscovery
+        /// </summary>
+        public static readonly IpDiscovery Ipv6 = new IpDiscovery("ipv6");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public IpDiscovery(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IpDiscovery FindValue(string value)
+        {
+            return FindValue<IpDiscovery>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IpDiscovery(string value)
         {
             return FindValue(value);
         }
@@ -555,6 +717,10 @@ namespace Amazon.ElastiCache
     {
 
         /// <summary>
+        /// Constant EngineLog for LogType
+        /// </summary>
+        public static readonly LogType EngineLog = new LogType("engine-log");
+        /// <summary>
         /// Constant SlowLog for LogType
         /// </summary>
         public static readonly LogType SlowLog = new LogType("slow-log");
@@ -638,6 +804,60 @@ namespace Amazon.ElastiCache
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator MultiAZStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type NetworkType.
+    /// </summary>
+    public class NetworkType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Dual_stack for NetworkType
+        /// </summary>
+        public static readonly NetworkType Dual_stack = new NetworkType("dual_stack");
+        /// <summary>
+        /// Constant Ipv4 for NetworkType
+        /// </summary>
+        public static readonly NetworkType Ipv4 = new NetworkType("ipv4");
+        /// <summary>
+        /// Constant Ipv6 for NetworkType
+        /// </summary>
+        public static readonly NetworkType Ipv6 = new NetworkType("ipv6");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public NetworkType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static NetworkType FindValue(string value)
+        {
+            return FindValue<NetworkType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator NetworkType(string value)
         {
             return FindValue(value);
         }
@@ -1136,6 +1356,56 @@ namespace Amazon.ElastiCache
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TransitEncryptionMode.
+    /// </summary>
+    public class TransitEncryptionMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Preferred for TransitEncryptionMode
+        /// </summary>
+        public static readonly TransitEncryptionMode Preferred = new TransitEncryptionMode("preferred");
+        /// <summary>
+        /// Constant Required for TransitEncryptionMode
+        /// </summary>
+        public static readonly TransitEncryptionMode Required = new TransitEncryptionMode("required");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TransitEncryptionMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TransitEncryptionMode FindValue(string value)
+        {
+            return FindValue<TransitEncryptionMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TransitEncryptionMode(string value)
         {
             return FindValue(value);
         }

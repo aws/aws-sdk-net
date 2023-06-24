@@ -38,7 +38,7 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The Amazon Web Services SSO ID of the user.
+        /// The IAM Identity Center ID of the user.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]

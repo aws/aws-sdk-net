@@ -39,7 +39,7 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property Items. 
         /// <para>
-        /// An array of schedule entries for the channel.
+        /// A list of schedule entries for the channel.
         /// </para>
         /// </summary>
         public List<ScheduleEntry> Items
@@ -57,8 +57,8 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Pagination token from the GET list request. Use the token to fetch the next page of
-        /// results.
+        /// Pagination token returned by the list request when results exceed the maximum allowed.
+        /// Use the token to fetch the next page of results.
         /// </para>
         /// </summary>
         public string NextToken

@@ -34,7 +34,7 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ReplicationConfigurationReplicatedDisk Marshaller
-    /// </summary>       
+    /// </summary>
     public class ReplicationConfigurationReplicatedDiskMarshaller : IRequestMarshaller<ReplicationConfigurationReplicatedDisk, JsonMarshallerContext> 
     {
         /// <summary>
@@ -69,11 +69,17 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.StagingDiskType);
             }
 
+            if(requestObject.IsSetThroughput())
+            {
+                context.Writer.WritePropertyName("throughput");
+                context.Writer.Write(requestObject.Throughput);
+            }
+
         }
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ReplicationConfigurationReplicatedDiskMarshaller Instance = new ReplicationConfigurationReplicatedDiskMarshaller();
 
     }

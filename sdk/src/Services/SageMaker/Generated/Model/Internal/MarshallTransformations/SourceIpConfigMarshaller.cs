@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SourceIpConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class SourceIpConfigMarshaller : IRequestMarshaller<SourceIpConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SourceIpConfigMarshaller Instance = new SourceIpConfigMarshaller();
 
     }

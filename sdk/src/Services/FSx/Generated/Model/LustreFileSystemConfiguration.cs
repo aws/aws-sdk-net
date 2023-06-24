@@ -43,6 +43,7 @@ namespace Amazon.FSx.Model
         private LustreLogConfiguration _logConfiguration;
         private string _mountName;
         private int? _perUnitStorageThroughput;
+        private LustreRootSquashConfiguration _rootSquashConfiguration;
         private string _weeklyMaintenanceStartTime;
 
         /// <summary>
@@ -298,11 +299,31 @@ namespace Amazon.FSx.Model
         }
 
         /// <summary>
+        /// Gets and sets the property RootSquashConfiguration. 
+        /// <para>
+        /// The Lustre root squash configuration for an Amazon FSx for Lustre file system. When
+        /// enabled, root squash restricts root-level access from clients that try to access your
+        /// file system as a root user.
+        /// </para>
+        /// </summary>
+        public LustreRootSquashConfiguration RootSquashConfiguration
+        {
+            get { return this._rootSquashConfiguration; }
+            set { this._rootSquashConfiguration = value; }
+        }
+
+        // Check to see if RootSquashConfiguration property is set
+        internal bool IsSetRootSquashConfiguration()
+        {
+            return this._rootSquashConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property WeeklyMaintenanceStartTime. 
         /// <para>
         /// The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC
-        /// time zone. Here, d is the weekday number, from 1 through 7, beginning with Monday
-        /// and ending with Sunday.
+        /// time zone. Here, <code>d</code> is the weekday number, from 1 through 7, beginning
+        /// with Monday and ending with Sunday.
         /// </para>
         /// </summary>
         [AWSProperty(Min=7, Max=7)]

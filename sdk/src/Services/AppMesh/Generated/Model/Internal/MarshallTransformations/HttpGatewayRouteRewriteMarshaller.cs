@@ -34,7 +34,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// HttpGatewayRouteRewrite Marshaller
-    /// </summary>       
+    /// </summary>
     public class HttpGatewayRouteRewriteMarshaller : IRequestMarshaller<HttpGatewayRouteRewrite, JsonMarshallerContext> 
     {
         /// <summary>
@@ -82,7 +82,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static HttpGatewayRouteRewriteMarshaller Instance = new HttpGatewayRouteRewriteMarshaller();
 
     }

@@ -42,6 +42,7 @@ namespace Amazon.IoTTwinMaker.Model
         private bool? _hasChildEntities;
         private string _parentEntityId;
         private Status _status;
+        private string _syncSource;
         private DateTime? _updateDateTime;
         private string _workspaceId;
 
@@ -108,7 +109,7 @@ namespace Amazon.IoTTwinMaker.Model
         /// The description of the entity.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=512)]
+        [AWSProperty(Min=0, Max=2048)]
         public string Description
         {
             get { return this._description; }
@@ -214,6 +215,24 @@ namespace Amazon.IoTTwinMaker.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SyncSource. 
+        /// <para>
+        /// The syncSource of the sync job, if this entity was created by a sync job.
+        /// </para>
+        /// </summary>
+        public string SyncSource
+        {
+            get { return this._syncSource; }
+            set { this._syncSource = value; }
+        }
+
+        // Check to see if SyncSource property is set
+        internal bool IsSetSyncSource()
+        {
+            return this._syncSource != null;
         }
 
         /// <summary>

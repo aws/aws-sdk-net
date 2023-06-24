@@ -43,7 +43,7 @@ namespace Amazon.MQ.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// Required. The Amazon Resource Name (ARN) of the configuration.
+        /// The Amazon Resource Name (ARN) of the configuration.
         /// </para>
         /// </summary>
         public string Arn
@@ -79,7 +79,7 @@ namespace Amazon.MQ.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// Required. The unique ID that Amazon MQ generates for the configuration.
+        /// The unique ID that Amazon MQ generates for the configuration.
         /// </para>
         /// </summary>
         public string Id
@@ -115,9 +115,9 @@ namespace Amazon.MQ.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Required. The name of the configuration. This value can contain only alphanumeric
-        /// characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be
-        /// 1-150 characters long.
+        /// The name of the configuration. This value can contain only alphanumeric characters,
+        /// dashes, periods, underscores, and tildes (- . _ ~). This value must be 1-150 characters
+        /// long.
         /// </para>
         /// </summary>
         public string Name
@@ -135,8 +135,8 @@ namespace Amazon.MQ.Model
         /// <summary>
         /// Gets and sets the property Warnings. 
         /// <para>
-        /// The list of the first 20 warnings about the configuration XML elements or attributes
-        /// that were sanitized.
+        /// The list of the first 20 warnings about the configuration elements or attributes that
+        /// were sanitized.
         /// </para>
         /// </summary>
         public List<SanitizationWarning> Warnings

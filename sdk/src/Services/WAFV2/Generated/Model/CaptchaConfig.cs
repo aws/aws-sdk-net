@@ -39,8 +39,8 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property ImmunityTimeProperty. 
         /// <para>
-        /// Determines how long a <code>CAPTCHA</code> token remains valid after the client successfully
-        /// solves a <code>CAPTCHA</code> puzzle. 
+        /// Determines how long a <code>CAPTCHA</code> timestamp in the token remains valid after
+        /// the client successfully solves a <code>CAPTCHA</code> puzzle. 
         /// </para>
         /// </summary>
         public ImmunityTimeProperty ImmunityTimeProperty

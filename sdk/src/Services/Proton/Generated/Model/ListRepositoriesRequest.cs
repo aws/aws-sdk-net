@@ -30,7 +30,7 @@ namespace Amazon.Proton.Model
 {
     /// <summary>
     /// Container for the parameters to the ListRepositories operation.
-    /// List repositories with detail data.
+    /// List linked repositories with detail data.
     /// </summary>
     public partial class ListRepositoriesRequest : AmazonProtonRequest
     {
@@ -59,7 +59,7 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// A token to indicate the location of the next repository in the array of repositories,
+        /// A token that indicates the location of the next repository in the array of repositories,
         /// after the list of repositories previously requested.
         /// </para>
         /// </summary>

@@ -64,6 +64,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AutoMLJob", targetDepth))
+                {
+                    var unmarshaller = AutoMLJobStepMetadataUnmarshaller.Instance;
+                    unmarshalledObject.AutoMLJob = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Callback", targetDepth))
                 {
                     var unmarshaller = CallbackStepMetadataUnmarshaller.Instance;
@@ -80,6 +86,18 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = ConditionStepMetadataUnmarshaller.Instance;
                     unmarshalledObject.Condition = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("EMR", targetDepth))
+                {
+                    var unmarshaller = EMRStepMetadataUnmarshaller.Instance;
+                    unmarshalledObject.EMR = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Fail", targetDepth))
+                {
+                    var unmarshaller = FailStepMetadataUnmarshaller.Instance;
+                    unmarshalledObject.Fail = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Lambda", targetDepth))

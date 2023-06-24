@@ -34,7 +34,7 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AdditionalDataset Marshaller
-    /// </summary>       
+    /// </summary>
     public class AdditionalDatasetMarshaller : IRequestMarshaller<AdditionalDataset, JsonMarshallerContext> 
     {
         /// <summary>
@@ -74,7 +74,7 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AdditionalDatasetMarshaller Instance = new AdditionalDatasetMarshaller();
 
     }

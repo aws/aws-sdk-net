@@ -5,6 +5,10 @@
     <pattern>^arn:aws[-\w]{0,10}?:detective:[-\w]{2,20}?:\d{12}?:graph:[abcdef\d]{32}?$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Detective.Model.BatchGetGraphMemberDatasourcesRequest.GraphArn</property>
+    <pattern>^arn:aws[-\w]{0,10}?:detective:[-\w]{2,20}?:\d{12}?:graph:[abcdef\d]{32}?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Detective.Model.CreateGraphResponse.GraphArn</property>
     <pattern>^arn:aws[-\w]{0,10}?:detective:[-\w]{2,20}?:\d{12}?:graph:[abcdef\d]{32}?$</pattern>
   </property-value-rule>
@@ -26,12 +30,41 @@
     <pattern>^arn:aws[-\w]{0,10}?:detective:[-\w]{2,20}?:\d{12}?:graph:[abcdef\d]{32}?$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Detective.Model.DescribeOrganizationConfigurationRequest.GraphArn</property>
+    <pattern>^arn:aws[-\w]{0,10}?:detective:[-\w]{2,20}?:\d{12}?:graph:[abcdef\d]{32}?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Detective.Model.DisassociateMembershipRequest.GraphArn</property>
     <pattern>^arn:aws[-\w]{0,10}?:detective:[-\w]{2,20}?:\d{12}?:graph:[abcdef\d]{32}?$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Detective.Model.EnableOrganizationAdminAccountRequest.AccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Detective.Model.GetMembersRequest.GraphArn</property>
     <pattern>^arn:aws[-\w]{0,10}?:detective:[-\w]{2,20}?:\d{12}?:graph:[abcdef\d]{32}?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Detective.Model.ListDatasourcePackagesRequest.GraphArn</property>
+    <pattern>^arn:aws[-\w]{0,10}?:detective:[-\w]{2,20}?:\d{12}?:graph:[abcdef\d]{32}?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Detective.Model.ListDatasourcePackagesRequest.MaxResults</property>
+    <min>1</min>
+    <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Detective.Model.ListDatasourcePackagesRequest.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Detective.Model.ListDatasourcePackagesResponse.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Detective.Model.ListGraphsRequest.MaxResults</property>
@@ -83,6 +116,21 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Detective.Model.ListOrganizationAdminAccountsRequest.MaxResults</property>
+    <min>1</min>
+    <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Detective.Model.ListOrganizationAdminAccountsRequest.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Detective.Model.ListOrganizationAdminAccountsResponse.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Detective.Model.ListTagsForResourceRequest.ResourceArn</property>
     <pattern>^arn:aws[-\w]{0,10}?:detective:[-\w]{2,20}?:\d{12}?:graph:[abcdef\d]{32}?$</pattern>
   </property-value-rule>
@@ -109,6 +157,14 @@
     <pattern>^arn:aws[-\w]{0,10}?:detective:[-\w]{2,20}?:\d{12}?:graph:[abcdef\d]{32}?$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Detective.Model.UpdateDatasourcePackagesRequest.GraphArn</property>
+    <pattern>^arn:aws[-\w]{0,10}?:detective:[-\w]{2,20}?:\d{12}?:graph:[abcdef\d]{32}?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Detective.Model.UpdateOrganizationConfigurationRequest.GraphArn</property>
+    <pattern>^arn:aws[-\w]{0,10}?:detective:[-\w]{2,20}?:\d{12}?:graph:[abcdef\d]{32}?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Detective.Model.Account.AccountId</property>
     <min>12</min>
     <max>12</max>
@@ -118,7 +174,17 @@
     <property>Amazon.Detective.Model.Account.EmailAddress</property>
     <min>1</min>
     <max>64</max>
-    <pattern>^.+@.+$</pattern>
+    <pattern>^.+@(?:(?:(?!-)[A-Za-z0-9-]{1,62})?[A-Za-z0-9]{1}\.)+[A-Za-z]{2,6}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Detective.Model.Administrator.AccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Detective.Model.Administrator.GraphArn</property>
+    <pattern>^arn:aws[-\w]{0,10}?:detective:[-\w]{2,20}?:\d{12}?:graph:[abcdef\d]{32}?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Detective.Model.Graph.Arn</property>
@@ -140,7 +206,7 @@
     <property>Amazon.Detective.Model.MemberDetail.EmailAddress</property>
     <min>1</min>
     <max>64</max>
-    <pattern>^.+@.+$</pattern>
+    <pattern>^.+@(?:(?:(?!-)[A-Za-z0-9-]{1,62})?[A-Za-z0-9]{1}\.)+[A-Za-z]{2,6}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Detective.Model.MemberDetail.GraphArn</property>
@@ -153,9 +219,23 @@
     <pattern>^[0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Detective.Model.MembershipDatasources.AccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Detective.Model.MembershipDatasources.GraphArn</property>
+    <pattern>^arn:aws[-\w]{0,10}?:detective:[-\w]{2,20}?:\d{12}?:graph:[abcdef\d]{32}?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Detective.Model.UnprocessedAccount.AccountId</property>
     <min>12</min>
     <max>12</max>
     <pattern>^[0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Detective.Model.UnprocessedGraph.GraphArn</property>
+    <pattern>^arn:aws[-\w]{0,10}?:detective:[-\w]{2,20}?:\d{12}?:graph:[abcdef\d]{32}?$</pattern>
   </property-value-rule>
 </property-value-rules>

@@ -180,6 +180,14 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
+        /// Paginator for GetUnfilteredPartitionsMetadata operation
+        ///</summary>
+        public IGetUnfilteredPartitionsMetadataPaginator GetUnfilteredPartitionsMetadata(GetUnfilteredPartitionsMetadataRequest request) 
+        {
+            return new GetUnfilteredPartitionsMetadataPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for GetUserDefinedFunctions operation
         ///</summary>
         public IGetUserDefinedFunctionsPaginator GetUserDefinedFunctions(GetUserDefinedFunctionsRequest request) 
@@ -209,6 +217,46 @@ namespace Amazon.Glue.Model
         public IListCrawlersPaginator ListCrawlers(ListCrawlersRequest request) 
         {
             return new ListCrawlersPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListCustomEntityTypes operation
+        ///</summary>
+        public IListCustomEntityTypesPaginator ListCustomEntityTypes(ListCustomEntityTypesRequest request) 
+        {
+            return new ListCustomEntityTypesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListDataQualityResults operation
+        ///</summary>
+        public IListDataQualityResultsPaginator ListDataQualityResults(ListDataQualityResultsRequest request) 
+        {
+            return new ListDataQualityResultsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListDataQualityRuleRecommendationRuns operation
+        ///</summary>
+        public IListDataQualityRuleRecommendationRunsPaginator ListDataQualityRuleRecommendationRuns(ListDataQualityRuleRecommendationRunsRequest request) 
+        {
+            return new ListDataQualityRuleRecommendationRunsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListDataQualityRulesetEvaluationRuns operation
+        ///</summary>
+        public IListDataQualityRulesetEvaluationRunsPaginator ListDataQualityRulesetEvaluationRuns(ListDataQualityRulesetEvaluationRunsRequest request) 
+        {
+            return new ListDataQualityRulesetEvaluationRunsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListDataQualityRulesets operation
+        ///</summary>
+        public IListDataQualityRulesetsPaginator ListDataQualityRulesets(ListDataQualityRulesetsRequest request) 
+        {
+            return new ListDataQualityRulesetsPaginator(this.client, request);
         }
 
         /// <summary>
@@ -257,6 +305,14 @@ namespace Amazon.Glue.Model
         public IListSchemaVersionsPaginator ListSchemaVersions(ListSchemaVersionsRequest request) 
         {
             return new ListSchemaVersionsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListSessions operation
+        ///</summary>
+        public IListSessionsPaginator ListSessions(ListSessionsRequest request) 
+        {
+            return new ListSessionsPaginator(this.client, request);
         }
 
         /// <summary>

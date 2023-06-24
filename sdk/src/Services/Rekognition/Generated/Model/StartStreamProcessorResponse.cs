@@ -33,6 +33,25 @@ namespace Amazon.Rekognition.Model
     /// </summary>
     public partial class StartStreamProcessorResponse : AmazonWebServiceResponse
     {
+        private string _sessionId;
+
+        /// <summary>
+        /// Gets and sets the property SessionId. 
+        /// <para>
+        ///  A unique identifier for the stream processing session. 
+        /// </para>
+        /// </summary>
+        public string SessionId
+        {
+            get { return this._sessionId; }
+            set { this._sessionId = value; }
+        }
+
+        // Check to see if SessionId property is set
+        internal bool IsSetSessionId()
+        {
+            return this._sessionId != null;
+        }
 
     }
 }

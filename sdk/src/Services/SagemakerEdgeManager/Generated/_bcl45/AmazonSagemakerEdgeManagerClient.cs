@@ -213,6 +213,15 @@ namespace Amazon.SagemakerEdgeManager
         }    
 
         /// <summary>
+        /// Customize the pipeline
+        /// </summary>
+        /// <param name="pipeline"></param>
+        protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
+        {
+            pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonSagemakerEdgeManagerEndpointResolver());
+        }    
+        /// <summary>
         /// Capture metadata for the service.
         /// </summary>
         protected override IServiceMetadata ServiceMetadata
@@ -238,6 +247,55 @@ namespace Amazon.SagemakerEdgeManager
         #endregion
 
 
+        #region  GetDeployments
+
+
+        /// <summary>
+        /// Use to get the active deployments from a device.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDeployments service method.</param>
+        /// 
+        /// <returns>The response from the GetDeployments service method, as returned by SagemakerEdgeManager.</returns>
+        /// <exception cref="Amazon.SagemakerEdgeManager.Model.InternalServiceException">
+        /// An internal failure occurred. Try your request again. If the problem persists, contact
+        /// Amazon Web Services customer support.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-edge-2020-09-23/GetDeployments">REST API Reference for GetDeployments Operation</seealso>
+        public virtual GetDeploymentsResponse GetDeployments(GetDeploymentsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDeploymentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDeploymentsResponseUnmarshaller.Instance;
+
+            return Invoke<GetDeploymentsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Use to get the active deployments from a device.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDeployments service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetDeployments service method, as returned by SagemakerEdgeManager.</returns>
+        /// <exception cref="Amazon.SagemakerEdgeManager.Model.InternalServiceException">
+        /// An internal failure occurred. Try your request again. If the problem persists, contact
+        /// Amazon Web Services customer support.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-edge-2020-09-23/GetDeployments">REST API Reference for GetDeployments Operation</seealso>
+        public virtual Task<GetDeploymentsResponse> GetDeploymentsAsync(GetDeploymentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDeploymentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDeploymentsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetDeploymentsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetDeviceRegistration
 
 
@@ -249,7 +307,7 @@ namespace Amazon.SagemakerEdgeManager
         /// <returns>The response from the GetDeviceRegistration service method, as returned by SagemakerEdgeManager.</returns>
         /// <exception cref="Amazon.SagemakerEdgeManager.Model.InternalServiceException">
         /// An internal failure occurred. Try your request again. If the problem persists, contact
-        /// AWS customer support.
+        /// Amazon Web Services customer support.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-edge-2020-09-23/GetDeviceRegistration">REST API Reference for GetDeviceRegistration Operation</seealso>
         public virtual GetDeviceRegistrationResponse GetDeviceRegistration(GetDeviceRegistrationRequest request)
@@ -273,7 +331,7 @@ namespace Amazon.SagemakerEdgeManager
         /// <returns>The response from the GetDeviceRegistration service method, as returned by SagemakerEdgeManager.</returns>
         /// <exception cref="Amazon.SagemakerEdgeManager.Model.InternalServiceException">
         /// An internal failure occurred. Try your request again. If the problem persists, contact
-        /// AWS customer support.
+        /// Amazon Web Services customer support.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-edge-2020-09-23/GetDeviceRegistration">REST API Reference for GetDeviceRegistration Operation</seealso>
         public virtual Task<GetDeviceRegistrationResponse> GetDeviceRegistrationAsync(GetDeviceRegistrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -298,7 +356,7 @@ namespace Amazon.SagemakerEdgeManager
         /// <returns>The response from the SendHeartbeat service method, as returned by SagemakerEdgeManager.</returns>
         /// <exception cref="Amazon.SagemakerEdgeManager.Model.InternalServiceException">
         /// An internal failure occurred. Try your request again. If the problem persists, contact
-        /// AWS customer support.
+        /// Amazon Web Services customer support.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-edge-2020-09-23/SendHeartbeat">REST API Reference for SendHeartbeat Operation</seealso>
         public virtual SendHeartbeatResponse SendHeartbeat(SendHeartbeatRequest request)
@@ -322,7 +380,7 @@ namespace Amazon.SagemakerEdgeManager
         /// <returns>The response from the SendHeartbeat service method, as returned by SagemakerEdgeManager.</returns>
         /// <exception cref="Amazon.SagemakerEdgeManager.Model.InternalServiceException">
         /// An internal failure occurred. Try your request again. If the problem persists, contact
-        /// AWS customer support.
+        /// Amazon Web Services customer support.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-edge-2020-09-23/SendHeartbeat">REST API Reference for SendHeartbeat Operation</seealso>
         public virtual Task<SendHeartbeatResponse> SendHeartbeatAsync(SendHeartbeatRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))

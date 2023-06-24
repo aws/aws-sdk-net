@@ -34,7 +34,7 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CrossRegionCopyRetainRule Marshaller
-    /// </summary>       
+    /// </summary>
     public class CrossRegionCopyRetainRuleMarshaller : IRequestMarshaller<CrossRegionCopyRetainRule, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CrossRegionCopyRetainRuleMarshaller Instance = new CrossRegionCopyRetainRuleMarshaller();
 
     }

@@ -70,6 +70,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.Convert608To708 = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("convertPaintToPop", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ConvertPaintToPop = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("framerate", targetDepth))
                 {
                     var unmarshaller = CaptionSourceFramerateUnmarshaller.Instance;

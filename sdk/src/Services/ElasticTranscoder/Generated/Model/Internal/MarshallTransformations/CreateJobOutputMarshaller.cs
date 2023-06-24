@@ -34,7 +34,7 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CreateJobOutput Marshaller
-    /// </summary>       
+    /// </summary>
     public class CreateJobOutputMarshaller : IRequestMarshaller<CreateJobOutput, JsonMarshallerContext> 
     {
         /// <summary>
@@ -155,7 +155,7 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CreateJobOutputMarshaller Instance = new CreateJobOutputMarshaller();
 
     }

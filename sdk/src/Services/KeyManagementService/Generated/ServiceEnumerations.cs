@@ -31,6 +31,14 @@ namespace Amazon.KeyManagementService
     {
 
         /// <summary>
+        /// Constant RSA_AES_KEY_WRAP_SHA_1 for AlgorithmSpec
+        /// </summary>
+        public static readonly AlgorithmSpec RSA_AES_KEY_WRAP_SHA_1 = new AlgorithmSpec("RSA_AES_KEY_WRAP_SHA_1");
+        /// <summary>
+        /// Constant RSA_AES_KEY_WRAP_SHA_256 for AlgorithmSpec
+        /// </summary>
+        public static readonly AlgorithmSpec RSA_AES_KEY_WRAP_SHA_256 = new AlgorithmSpec("RSA_AES_KEY_WRAP_SHA_256");
+        /// <summary>
         /// Constant RSAES_OAEP_SHA_1 for AlgorithmSpec
         /// </summary>
         public static readonly AlgorithmSpec RSAES_OAEP_SHA_1 = new AlgorithmSpec("RSAES_OAEP_SHA_1");
@@ -93,6 +101,10 @@ namespace Amazon.KeyManagementService
         /// </summary>
         public static readonly ConnectionErrorCodeType INSUFFICIENT_CLOUDHSM_HSMS = new ConnectionErrorCodeType("INSUFFICIENT_CLOUDHSM_HSMS");
         /// <summary>
+        /// Constant INSUFFICIENT_FREE_ADDRESSES_IN_SUBNET for ConnectionErrorCodeType
+        /// </summary>
+        public static readonly ConnectionErrorCodeType INSUFFICIENT_FREE_ADDRESSES_IN_SUBNET = new ConnectionErrorCodeType("INSUFFICIENT_FREE_ADDRESSES_IN_SUBNET");
+        /// <summary>
         /// Constant INTERNAL_ERROR for ConnectionErrorCodeType
         /// </summary>
         public static readonly ConnectionErrorCodeType INTERNAL_ERROR = new ConnectionErrorCodeType("INTERNAL_ERROR");
@@ -120,6 +132,38 @@ namespace Amazon.KeyManagementService
         /// Constant USER_NOT_FOUND for ConnectionErrorCodeType
         /// </summary>
         public static readonly ConnectionErrorCodeType USER_NOT_FOUND = new ConnectionErrorCodeType("USER_NOT_FOUND");
+        /// <summary>
+        /// Constant XKS_PROXY_ACCESS_DENIED for ConnectionErrorCodeType
+        /// </summary>
+        public static readonly ConnectionErrorCodeType XKS_PROXY_ACCESS_DENIED = new ConnectionErrorCodeType("XKS_PROXY_ACCESS_DENIED");
+        /// <summary>
+        /// Constant XKS_PROXY_INVALID_CONFIGURATION for ConnectionErrorCodeType
+        /// </summary>
+        public static readonly ConnectionErrorCodeType XKS_PROXY_INVALID_CONFIGURATION = new ConnectionErrorCodeType("XKS_PROXY_INVALID_CONFIGURATION");
+        /// <summary>
+        /// Constant XKS_PROXY_INVALID_RESPONSE for ConnectionErrorCodeType
+        /// </summary>
+        public static readonly ConnectionErrorCodeType XKS_PROXY_INVALID_RESPONSE = new ConnectionErrorCodeType("XKS_PROXY_INVALID_RESPONSE");
+        /// <summary>
+        /// Constant XKS_PROXY_INVALID_TLS_CONFIGURATION for ConnectionErrorCodeType
+        /// </summary>
+        public static readonly ConnectionErrorCodeType XKS_PROXY_INVALID_TLS_CONFIGURATION = new ConnectionErrorCodeType("XKS_PROXY_INVALID_TLS_CONFIGURATION");
+        /// <summary>
+        /// Constant XKS_PROXY_NOT_REACHABLE for ConnectionErrorCodeType
+        /// </summary>
+        public static readonly ConnectionErrorCodeType XKS_PROXY_NOT_REACHABLE = new ConnectionErrorCodeType("XKS_PROXY_NOT_REACHABLE");
+        /// <summary>
+        /// Constant XKS_PROXY_TIMED_OUT for ConnectionErrorCodeType
+        /// </summary>
+        public static readonly ConnectionErrorCodeType XKS_PROXY_TIMED_OUT = new ConnectionErrorCodeType("XKS_PROXY_TIMED_OUT");
+        /// <summary>
+        /// Constant XKS_VPC_ENDPOINT_SERVICE_INVALID_CONFIGURATION for ConnectionErrorCodeType
+        /// </summary>
+        public static readonly ConnectionErrorCodeType XKS_VPC_ENDPOINT_SERVICE_INVALID_CONFIGURATION = new ConnectionErrorCodeType("XKS_VPC_ENDPOINT_SERVICE_INVALID_CONFIGURATION");
+        /// <summary>
+        /// Constant XKS_VPC_ENDPOINT_SERVICE_NOT_FOUND for ConnectionErrorCodeType
+        /// </summary>
+        public static readonly ConnectionErrorCodeType XKS_VPC_ENDPOINT_SERVICE_NOT_FOUND = new ConnectionErrorCodeType("XKS_VPC_ENDPOINT_SERVICE_NOT_FOUND");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -241,6 +285,22 @@ namespace Amazon.KeyManagementService
         /// </summary>
         public static readonly CustomerMasterKeySpec ECC_SECG_P256K1 = new CustomerMasterKeySpec("ECC_SECG_P256K1");
         /// <summary>
+        /// Constant HMAC_224 for CustomerMasterKeySpec
+        /// </summary>
+        public static readonly CustomerMasterKeySpec HMAC_224 = new CustomerMasterKeySpec("HMAC_224");
+        /// <summary>
+        /// Constant HMAC_256 for CustomerMasterKeySpec
+        /// </summary>
+        public static readonly CustomerMasterKeySpec HMAC_256 = new CustomerMasterKeySpec("HMAC_256");
+        /// <summary>
+        /// Constant HMAC_384 for CustomerMasterKeySpec
+        /// </summary>
+        public static readonly CustomerMasterKeySpec HMAC_384 = new CustomerMasterKeySpec("HMAC_384");
+        /// <summary>
+        /// Constant HMAC_512 for CustomerMasterKeySpec
+        /// </summary>
+        public static readonly CustomerMasterKeySpec HMAC_512 = new CustomerMasterKeySpec("HMAC_512");
+        /// <summary>
         /// Constant RSA_2048 for CustomerMasterKeySpec
         /// </summary>
         public static readonly CustomerMasterKeySpec RSA_2048 = new CustomerMasterKeySpec("RSA_2048");
@@ -252,6 +312,10 @@ namespace Amazon.KeyManagementService
         /// Constant RSA_4096 for CustomerMasterKeySpec
         /// </summary>
         public static readonly CustomerMasterKeySpec RSA_4096 = new CustomerMasterKeySpec("RSA_4096");
+        /// <summary>
+        /// Constant SM2 for CustomerMasterKeySpec
+        /// </summary>
+        public static readonly CustomerMasterKeySpec SM2 = new CustomerMasterKeySpec("SM2");
         /// <summary>
         /// Constant SYMMETRIC_DEFAULT for CustomerMasterKeySpec
         /// </summary>
@@ -293,6 +357,56 @@ namespace Amazon.KeyManagementService
 
 
     /// <summary>
+    /// Constants used for properties of type CustomKeyStoreType.
+    /// </summary>
+    public class CustomKeyStoreType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AWS_CLOUDHSM for CustomKeyStoreType
+        /// </summary>
+        public static readonly CustomKeyStoreType AWS_CLOUDHSM = new CustomKeyStoreType("AWS_CLOUDHSM");
+        /// <summary>
+        /// Constant EXTERNAL_KEY_STORE for CustomKeyStoreType
+        /// </summary>
+        public static readonly CustomKeyStoreType EXTERNAL_KEY_STORE = new CustomKeyStoreType("EXTERNAL_KEY_STORE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CustomKeyStoreType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CustomKeyStoreType FindValue(string value)
+        {
+            return FindValue<CustomKeyStoreType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CustomKeyStoreType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DataKeyPairSpec.
     /// </summary>
     public class DataKeyPairSpec : ConstantClass
@@ -326,6 +440,10 @@ namespace Amazon.KeyManagementService
         /// Constant RSA_4096 for DataKeyPairSpec
         /// </summary>
         public static readonly DataKeyPairSpec RSA_4096 = new DataKeyPairSpec("RSA_4096");
+        /// <summary>
+        /// Constant SM2 for DataKeyPairSpec
+        /// </summary>
+        public static readonly DataKeyPairSpec SM2 = new DataKeyPairSpec("SM2");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -426,6 +544,10 @@ namespace Amazon.KeyManagementService
         /// Constant RSAES_OAEP_SHA_256 for EncryptionAlgorithmSpec
         /// </summary>
         public static readonly EncryptionAlgorithmSpec RSAES_OAEP_SHA_256 = new EncryptionAlgorithmSpec("RSAES_OAEP_SHA_256");
+        /// <summary>
+        /// Constant SM2PKE for EncryptionAlgorithmSpec
+        /// </summary>
+        public static readonly EncryptionAlgorithmSpec SM2PKE = new EncryptionAlgorithmSpec("SM2PKE");
         /// <summary>
         /// Constant SYMMETRIC_DEFAULT for EncryptionAlgorithmSpec
         /// </summary>
@@ -555,6 +677,10 @@ namespace Amazon.KeyManagementService
         /// </summary>
         public static readonly GrantOperation GenerateDataKeyWithoutPlaintext = new GrantOperation("GenerateDataKeyWithoutPlaintext");
         /// <summary>
+        /// Constant GenerateMac for GrantOperation
+        /// </summary>
+        public static readonly GrantOperation GenerateMac = new GrantOperation("GenerateMac");
+        /// <summary>
         /// Constant GetPublicKey for GrantOperation
         /// </summary>
         public static readonly GrantOperation GetPublicKey = new GrantOperation("GetPublicKey");
@@ -578,6 +704,10 @@ namespace Amazon.KeyManagementService
         /// Constant Verify for GrantOperation
         /// </summary>
         public static readonly GrantOperation Verify = new GrantOperation("Verify");
+        /// <summary>
+        /// Constant VerifyMac for GrantOperation
+        /// </summary>
+        public static readonly GrantOperation VerifyMac = new GrantOperation("VerifyMac");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -608,6 +738,52 @@ namespace Amazon.KeyManagementService
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator GrantOperation(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type KeyEncryptionMechanism.
+    /// </summary>
+    public class KeyEncryptionMechanism : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant RSAES_OAEP_SHA_256 for KeyEncryptionMechanism
+        /// </summary>
+        public static readonly KeyEncryptionMechanism RSAES_OAEP_SHA_256 = new KeyEncryptionMechanism("RSAES_OAEP_SHA_256");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public KeyEncryptionMechanism(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static KeyEncryptionMechanism FindValue(string value)
+        {
+            return FindValue<KeyEncryptionMechanism>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator KeyEncryptionMechanism(string value)
         {
             return FindValue(value);
         }
@@ -687,6 +863,22 @@ namespace Amazon.KeyManagementService
         /// </summary>
         public static readonly KeySpec ECC_SECG_P256K1 = new KeySpec("ECC_SECG_P256K1");
         /// <summary>
+        /// Constant HMAC_224 for KeySpec
+        /// </summary>
+        public static readonly KeySpec HMAC_224 = new KeySpec("HMAC_224");
+        /// <summary>
+        /// Constant HMAC_256 for KeySpec
+        /// </summary>
+        public static readonly KeySpec HMAC_256 = new KeySpec("HMAC_256");
+        /// <summary>
+        /// Constant HMAC_384 for KeySpec
+        /// </summary>
+        public static readonly KeySpec HMAC_384 = new KeySpec("HMAC_384");
+        /// <summary>
+        /// Constant HMAC_512 for KeySpec
+        /// </summary>
+        public static readonly KeySpec HMAC_512 = new KeySpec("HMAC_512");
+        /// <summary>
         /// Constant RSA_2048 for KeySpec
         /// </summary>
         public static readonly KeySpec RSA_2048 = new KeySpec("RSA_2048");
@@ -698,6 +890,10 @@ namespace Amazon.KeyManagementService
         /// Constant RSA_4096 for KeySpec
         /// </summary>
         public static readonly KeySpec RSA_4096 = new KeySpec("RSA_4096");
+        /// <summary>
+        /// Constant SM2 for KeySpec
+        /// </summary>
+        public static readonly KeySpec SM2 = new KeySpec("SM2");
         /// <summary>
         /// Constant SYMMETRIC_DEFAULT for KeySpec
         /// </summary>
@@ -823,6 +1019,10 @@ namespace Amazon.KeyManagementService
         /// </summary>
         public static readonly KeyUsageType ENCRYPT_DECRYPT = new KeyUsageType("ENCRYPT_DECRYPT");
         /// <summary>
+        /// Constant GENERATE_VERIFY_MAC for KeyUsageType
+        /// </summary>
+        public static readonly KeyUsageType GENERATE_VERIFY_MAC = new KeyUsageType("GENERATE_VERIFY_MAC");
+        /// <summary>
         /// Constant SIGN_VERIFY for KeyUsageType
         /// </summary>
         public static readonly KeyUsageType SIGN_VERIFY = new KeyUsageType("SIGN_VERIFY");
@@ -856,6 +1056,64 @@ namespace Amazon.KeyManagementService
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator KeyUsageType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MacAlgorithmSpec.
+    /// </summary>
+    public class MacAlgorithmSpec : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant HMAC_SHA_224 for MacAlgorithmSpec
+        /// </summary>
+        public static readonly MacAlgorithmSpec HMAC_SHA_224 = new MacAlgorithmSpec("HMAC_SHA_224");
+        /// <summary>
+        /// Constant HMAC_SHA_256 for MacAlgorithmSpec
+        /// </summary>
+        public static readonly MacAlgorithmSpec HMAC_SHA_256 = new MacAlgorithmSpec("HMAC_SHA_256");
+        /// <summary>
+        /// Constant HMAC_SHA_384 for MacAlgorithmSpec
+        /// </summary>
+        public static readonly MacAlgorithmSpec HMAC_SHA_384 = new MacAlgorithmSpec("HMAC_SHA_384");
+        /// <summary>
+        /// Constant HMAC_SHA_512 for MacAlgorithmSpec
+        /// </summary>
+        public static readonly MacAlgorithmSpec HMAC_SHA_512 = new MacAlgorithmSpec("HMAC_SHA_512");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MacAlgorithmSpec(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MacAlgorithmSpec FindValue(string value)
+        {
+            return FindValue<MacAlgorithmSpec>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MacAlgorithmSpec(string value)
         {
             return FindValue(value);
         }
@@ -980,6 +1238,10 @@ namespace Amazon.KeyManagementService
         /// Constant EXTERNAL for OriginType
         /// </summary>
         public static readonly OriginType EXTERNAL = new OriginType("EXTERNAL");
+        /// <summary>
+        /// Constant EXTERNAL_KEY_STORE for OriginType
+        /// </summary>
+        public static readonly OriginType EXTERNAL_KEY_STORE = new OriginType("EXTERNAL_KEY_STORE");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1058,6 +1320,10 @@ namespace Amazon.KeyManagementService
         /// Constant RSASSA_PSS_SHA_512 for SigningAlgorithmSpec
         /// </summary>
         public static readonly SigningAlgorithmSpec RSASSA_PSS_SHA_512 = new SigningAlgorithmSpec("RSASSA_PSS_SHA_512");
+        /// <summary>
+        /// Constant SM2DSA for SigningAlgorithmSpec
+        /// </summary>
+        public static readonly SigningAlgorithmSpec SM2DSA = new SigningAlgorithmSpec("SM2DSA");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1104,6 +1370,14 @@ namespace Amazon.KeyManagementService
         /// Constant RSA_2048 for WrappingKeySpec
         /// </summary>
         public static readonly WrappingKeySpec RSA_2048 = new WrappingKeySpec("RSA_2048");
+        /// <summary>
+        /// Constant RSA_3072 for WrappingKeySpec
+        /// </summary>
+        public static readonly WrappingKeySpec RSA_3072 = new WrappingKeySpec("RSA_3072");
+        /// <summary>
+        /// Constant RSA_4096 for WrappingKeySpec
+        /// </summary>
+        public static readonly WrappingKeySpec RSA_4096 = new WrappingKeySpec("RSA_4096");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1134,6 +1408,56 @@ namespace Amazon.KeyManagementService
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator WrappingKeySpec(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type XksProxyConnectivityType.
+    /// </summary>
+    public class XksProxyConnectivityType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PUBLIC_ENDPOINT for XksProxyConnectivityType
+        /// </summary>
+        public static readonly XksProxyConnectivityType PUBLIC_ENDPOINT = new XksProxyConnectivityType("PUBLIC_ENDPOINT");
+        /// <summary>
+        /// Constant VPC_ENDPOINT_SERVICE for XksProxyConnectivityType
+        /// </summary>
+        public static readonly XksProxyConnectivityType VPC_ENDPOINT_SERVICE = new XksProxyConnectivityType("VPC_ENDPOINT_SERVICE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public XksProxyConnectivityType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static XksProxyConnectivityType FindValue(string value)
+        {
+            return FindValue<XksProxyConnectivityType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator XksProxyConnectivityType(string value)
         {
             return FindValue(value);
         }

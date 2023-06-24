@@ -34,7 +34,7 @@ namespace Amazon.ManagedGrafana.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RoleValues Marshaller
-    /// </summary>       
+    /// </summary>
     public class RoleValuesMarshaller : IRequestMarshaller<RoleValues, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.ManagedGrafana.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RoleValuesMarshaller Instance = new RoleValuesMarshaller();
 
     }

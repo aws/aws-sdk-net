@@ -51,6 +51,21 @@ namespace Amazon.IoTWireless.Model
         IListMulticastGroupsByFuotaTaskPaginator ListMulticastGroupsByFuotaTask(ListMulticastGroupsByFuotaTaskRequest request);
 
         /// <summary>
+        /// Paginator for ListNetworkAnalyzerConfigurations operation
+        ///</summary>
+        IListNetworkAnalyzerConfigurationsPaginator ListNetworkAnalyzerConfigurations(ListNetworkAnalyzerConfigurationsRequest request);
+
+        /// <summary>
+        /// Paginator for ListPositionConfigurations operation
+        ///</summary>
+        IListPositionConfigurationsPaginator ListPositionConfigurations(ListPositionConfigurationsRequest request);
+
+        /// <summary>
+        /// Paginator for ListQueuedMessages operation
+        ///</summary>
+        IListQueuedMessagesPaginator ListQueuedMessages(ListQueuedMessagesRequest request);
+
+        /// <summary>
         /// Paginator for ListServiceProfiles operation
         ///</summary>
         IListServiceProfilesPaginator ListServiceProfiles(ListServiceProfilesRequest request);

@@ -30,7 +30,12 @@ namespace Amazon.WAFV2.Model
 {
     /// <summary>
     /// The processing guidance for a <a>Rule</a>, used by WAF to determine whether a web
-    /// request matches the rule.
+    /// request matches the rule. 
+    /// 
+    ///  
+    /// <para>
+    /// For example specifications, see the examples section of <a>CreateWebACL</a>.
+    /// </para>
     /// </summary>
     public partial class Statement
     {
@@ -76,7 +81,7 @@ namespace Amazon.WAFV2.Model
         /// The byte match statement provides the bytes to search for, the location in requests
         /// that you want WAF to search, and other settings. The bytes to search for are typically
         /// a string that corresponds with ASCII characters. In the WAF console and the developer
-        /// guide, this is refered to as a string match statement.
+        /// guide, this is called a string match statement.
         /// </para>
         /// </summary>
         public ByteMatchStatement ByteMatchStatement
@@ -94,7 +99,47 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property GeoMatchStatement. 
         /// <para>
-        /// A rule statement used to identify web requests based on country of origin. 
+        /// A rule statement that labels web requests by country and region and that matches against
+        /// web requests based on country code. A geo match rule labels every request that it
+        /// inspects regardless of whether it finds a match.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// To manage requests only by country, you can use this statement by itself and specify
+        /// the countries that you want to match against in the <code>CountryCodes</code> array.
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Otherwise, configure your geo match rule with Count action so that it only labels
+        /// requests. Then, add one or more label match rules to run after the geo match rule
+        /// and configure them to match against the geographic labels and handle the requests
+        /// as needed. 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// WAF labels requests using the alpha-2 country and region codes from the International
+        /// Organization for Standardization (ISO) 3166 standard. WAF determines the codes using
+        /// either the IP address in the web request origin or, if you specify it, the address
+        /// in the geo match <code>ForwardedIPConfig</code>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you use the web request origin, the label formats are <code>awswaf:clientip:geo:region:&lt;ISO
+        /// country code&gt;-&lt;ISO region code&gt;</code> and <code>awswaf:clientip:geo:country:&lt;ISO
+        /// country code&gt;</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you use a forwarded IP address, the label formats are <code>awswaf:forwardedip:geo:region:&lt;ISO
+        /// country code&gt;-&lt;ISO region code&gt;</code> and <code>awswaf:forwardedip:geo:country:&lt;ISO
+        /// country code&gt;</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For additional details, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-rule-statement-type-geo-match.html">Geographic
+        /// match rule statement</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+        /// Developer Guide</a>. 
         /// </para>
         /// </summary>
         public GeoMatchStatement GeoMatchStatement
@@ -139,8 +184,8 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property LabelMatchStatement. 
         /// <para>
-        /// A rule statement that defines a string match search against labels that have been
-        /// added to the web request by rules that have already run in the web ACL. 
+        /// A rule statement to match against labels that have been added to the web request by
+        /// rules that have already run in the web ACL. 
         /// </para>
         ///  
         /// <para>
@@ -178,6 +223,15 @@ namespace Amazon.WAFV2.Model
         /// a <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced
         /// as a top-level statement within a rule.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// You are charged additional fees when you use the WAF Bot Control managed rule group
+        /// <code>AWSManagedRulesBotControlRuleSet</code>, the WAF Fraud Control account takeover
+        /// prevention (ATP) managed rule group <code>AWSManagedRulesATPRuleSet</code>, or the
+        /// WAF Fraud Control account creation fraud prevention (ACFP) managed rule group <code>AWSManagedRulesACFPRuleSet</code>.
+        /// For more information, see <a href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         public ManagedRuleGroupStatement ManagedRuleGroupStatement
         {
@@ -232,10 +286,129 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property RateBasedStatement. 
         /// <para>
-        /// A rate-based rule tracks the rate of requests for each originating IP address, and
-        /// triggers the rule action when the rate exceeds a limit that you specify on the number
-        /// of requests in any 5-minute time span. You can use this to put a temporary block on
-        /// requests from an IP address that is sending excessive requests. 
+        /// A rate-based rule counts incoming requests and rate limits requests when they are
+        /// coming at too fast a rate. The rule categorizes requests according to your aggregation
+        /// criteria, collects them into aggregation instances, and counts and rate limits the
+        /// requests for each instance. 
+        /// </para>
+        ///  
+        /// <para>
+        /// You can specify individual aggregation keys, like IP address or HTTP method. You can
+        /// also specify aggregation key combinations, like IP address and HTTP method, or HTTP
+        /// method, query argument, and cookie. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Each unique set of values for the aggregation keys that you specify is a separate
+        /// aggregation instance, with the value from each key contributing to the aggregation
+        /// instance definition. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For example, assume the rule evaluates web requests with the following IP address
+        /// and HTTP method values: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// IP address 10.1.1.1, HTTP method POST
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// IP address 10.1.1.1, HTTP method GET
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// IP address 127.0.0.0, HTTP method POST
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// IP address 10.1.1.1, HTTP method GET
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The rule would create different aggregation instances according to your aggregation
+        /// criteria, for example: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If the aggregation criteria is just the IP address, then each individual address is
+        /// an aggregation instance, and WAF counts requests separately for each. The aggregation
+        /// instances and request counts for our example would be the following: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// IP address 10.1.1.1: count 3
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// IP address 127.0.0.0: count 1
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// If the aggregation criteria is HTTP method, then each individual HTTP method is an
+        /// aggregation instance. The aggregation instances and request counts for our example
+        /// would be the following: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// HTTP method POST: count 2
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// HTTP method GET: count 2
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// If the aggregation criteria is IP address and HTTP method, then each IP address and
+        /// each HTTP method would contribute to the combined aggregation instance. The aggregation
+        /// instances and request counts for our example would be the following: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// IP address 10.1.1.1, HTTP method POST: count 1
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// IP address 10.1.1.1, HTTP method GET: count 2
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// IP address 127.0.0.0, HTTP method POST: count 1
+        /// </para>
+        ///  </li> </ul> </li> </ul> 
+        /// <para>
+        /// For any n-tuple of aggregation keys, each unique combination of values for the keys
+        /// defines a separate aggregation instance, which WAF counts and rate-limits individually.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// You can optionally nest another statement inside the rate-based statement, to narrow
+        /// the scope of the rule so that it only counts and rate limits requests that match the
+        /// nested statement. You can use this nested scope-down statement in conjunction with
+        /// your aggregation key specifications or you can just count and rate limit all requests
+        /// that match the scope-down statement, without additional aggregation. When you choose
+        /// to just manage all requests that match a scope-down statement, the aggregation instance
+        /// is singular for the rule. 
+        /// </para>
+        ///  
+        /// <para>
+        /// You cannot nest a <code>RateBasedStatement</code> inside another statement, for example
+        /// inside a <code>NotStatement</code> or <code>OrStatement</code>. You can define a <code>RateBasedStatement</code>
+        /// inside a web ACL and inside a rule group. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For additional information about the options, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-rate-based-rules.html">Rate
+        /// limiting web requests using rate-based rules</a> in the <i>WAF Developer Guide</i>.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you only aggregate on the individual IP address or forwarded IP address, you can
+        /// retrieve the list of IP addresses that WAF is currently rate limiting for a rule through
+        /// the API call <code>GetRateBasedStatementManagedKeys</code>. This option is not available
+        /// for other aggregation configurations.
         /// </para>
         ///  
         /// <para>
@@ -246,41 +419,6 @@ namespace Amazon.WAFV2.Model
         /// inside a rule group, and then use that rule group in multiple places, each use creates
         /// a separate instance of the rate-based rule that gets its own tracking and management
         /// by WAF. 
-        /// </para>
-        ///  
-        /// <para>
-        /// When the rule action triggers, WAF blocks additional requests from the IP address
-        /// until the request rate falls below the limit.
-        /// </para>
-        ///  
-        /// <para>
-        /// You can optionally nest another statement inside the rate-based statement, to narrow
-        /// the scope of the rule so that it only counts requests that match the nested statement.
-        /// For example, based on recent requests that you have seen from an attacker, you might
-        /// create a rate-based rule with a nested AND rule statement that contains the following
-        /// nested statements:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// An IP match statement with an IP set that specified the address 192.0.2.44.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// A string match statement that searches in the User-Agent header for the string BadBot.
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// In this rate-based rule, you also define a rate limit. For this example, the rate
-        /// limit is 1,000. Requests that meet both of the conditions in the statements are counted.
-        /// If the count exceeds 1,000 requests per five minutes, the rule action triggers. Requests
-        /// that do not meet both conditions are not counted towards the rate limit and are not
-        /// affected by this rule.
-        /// </para>
-        ///  
-        /// <para>
-        /// You cannot nest a <code>RateBasedStatement</code> inside another statement, for example
-        /// inside a <code>NotStatement</code> or <code>OrStatement</code>. You can define a <code>RateBasedStatement</code>
-        /// inside a web ACL and inside a rule group. 
         /// </para>
         /// </summary>
         public RateBasedStatement RateBasedStatement
@@ -379,10 +517,14 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  
         /// <para>
-        /// If you configure WAF to inspect the request body, WAF inspects only the first 8192
-        /// bytes (8 KB). If the request body for your web requests never exceeds 8192 bytes,
-        /// you can create a size constraint condition and block requests that have a request
-        /// body greater than 8192 bytes.
+        /// If you configure WAF to inspect the request body, WAF inspects only the number of
+        /// bytes of the body up to the limit for the web ACL. By default, for regional web ACLs,
+        /// this limit is 8 KB (8,192 kilobytes) and for CloudFront web ACLs, this limit is 16
+        /// KB (16,384 kilobytes). For CloudFront web ACLs, you can increase the limit in the
+        /// web ACL <code>AssociationConfig</code>, for additional fees. If you know that the
+        /// request body for your web requests should never exceed the inspection limit, you could
+        /// use a size constraint statement to block requests that have a larger request body
+        /// size.
         /// </para>
         ///  
         /// <para>
@@ -406,12 +548,9 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property SqliMatchStatement. 
         /// <para>
-        /// Attackers sometimes insert malicious SQL code into web requests in an effort to extract
-        /// data from your database. To allow or block web requests that appear to contain malicious
-        /// SQL code, create one or more SQL injection match conditions. An SQL injection match
-        /// condition identifies the part of web requests, such as the URI or the query string,
-        /// that you want WAF to inspect. Later in the process, when you create a web ACL, you
-        /// specify whether to allow or block requests that appear to contain malicious SQL code.
+        /// A rule statement that inspects for malicious SQL code. Attackers insert malicious
+        /// SQL code into web requests to do things like modify your database or extract data
+        /// from it. 
         /// </para>
         /// </summary>
         public SqliMatchStatement SqliMatchStatement
@@ -429,12 +568,9 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property XssMatchStatement. 
         /// <para>
-        /// A rule statement that defines a cross-site scripting (XSS) match search for WAF to
-        /// apply to web requests. XSS attacks are those where the attacker uses vulnerabilities
-        /// in a benign website as a vehicle to inject malicious client-site scripts into other
-        /// legitimate web browsers. The XSS match statement provides the location in requests
-        /// that you want WAF to search and text transformations to use on the search area before
-        /// WAF searches for character sequences that are likely to be malicious strings. 
+        /// A rule statement that inspects for cross-site scripting (XSS) attacks. In XSS attacks,
+        /// the attacker uses vulnerabilities in a benign website as a vehicle to inject malicious
+        /// client-site scripts into other legitimate web browsers. 
         /// </para>
         /// </summary>
         public XssMatchStatement XssMatchStatement

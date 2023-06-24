@@ -57,7 +57,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property Versions. 
         /// <para>
-        /// The list of fleet provisioning template versions.
+        /// The list of provisioning template versions.
         /// </para>
         /// </summary>
         public List<ProvisioningTemplateVersionSummary> Versions

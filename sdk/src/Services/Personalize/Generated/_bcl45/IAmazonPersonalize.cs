@@ -48,7 +48,8 @@ namespace Amazon.Personalize
 
         /// <summary>
         /// Creates a batch inference job. The operation can handle up to 50 million records and
-        /// the input file must be in JSON format. For more information, see <a>recommendations-batch</a>.
+        /// the input file must be in JSON format. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/creating-batch-inference-job.html">Creating
+        /// a batch inference job</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateBatchInferenceJob service method.</param>
         /// 
@@ -68,6 +69,9 @@ namespace Amazon.Personalize
         /// <exception cref="Amazon.Personalize.Model.ResourceNotFoundException">
         /// Could not find the specified resource.
         /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.TooManyTagsException">
+        /// You have exceeded the maximum number of tags you can apply to this resource.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateBatchInferenceJob">REST API Reference for CreateBatchInferenceJob Operation</seealso>
         CreateBatchInferenceJobResponse CreateBatchInferenceJob(CreateBatchInferenceJobRequest request);
 
@@ -75,7 +79,8 @@ namespace Amazon.Personalize
 
         /// <summary>
         /// Creates a batch inference job. The operation can handle up to 50 million records and
-        /// the input file must be in JSON format. For more information, see <a>recommendations-batch</a>.
+        /// the input file must be in JSON format. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/creating-batch-inference-job.html">Creating
+        /// a batch inference job</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateBatchInferenceJob service method.</param>
         /// <param name="cancellationToken">
@@ -97,6 +102,9 @@ namespace Amazon.Personalize
         /// </exception>
         /// <exception cref="Amazon.Personalize.Model.ResourceNotFoundException">
         /// Could not find the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.TooManyTagsException">
+        /// You have exceeded the maximum number of tags you can apply to this resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateBatchInferenceJob">REST API Reference for CreateBatchInferenceJob Operation</seealso>
         Task<CreateBatchInferenceJobResponse> CreateBatchInferenceJobAsync(CreateBatchInferenceJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -108,7 +116,8 @@ namespace Amazon.Personalize
 
         /// <summary>
         /// Creates a batch segment job. The operation can handle up to 50 million records and
-        /// the input file must be in JSON format. For more information, see <a>recommendations-batch</a>.
+        /// the input file must be in JSON format. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/recommendations-batch.html">Getting
+        /// batch recommendations and user segments</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateBatchSegmentJob service method.</param>
         /// 
@@ -128,6 +137,9 @@ namespace Amazon.Personalize
         /// <exception cref="Amazon.Personalize.Model.ResourceNotFoundException">
         /// Could not find the specified resource.
         /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.TooManyTagsException">
+        /// You have exceeded the maximum number of tags you can apply to this resource.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateBatchSegmentJob">REST API Reference for CreateBatchSegmentJob Operation</seealso>
         CreateBatchSegmentJobResponse CreateBatchSegmentJob(CreateBatchSegmentJobRequest request);
 
@@ -135,7 +147,8 @@ namespace Amazon.Personalize
 
         /// <summary>
         /// Creates a batch segment job. The operation can handle up to 50 million records and
-        /// the input file must be in JSON format. For more information, see <a>recommendations-batch</a>.
+        /// the input file must be in JSON format. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/recommendations-batch.html">Getting
+        /// batch recommendations and user segments</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateBatchSegmentJob service method.</param>
         /// <param name="cancellationToken">
@@ -157,6 +170,9 @@ namespace Amazon.Personalize
         /// </exception>
         /// <exception cref="Amazon.Personalize.Model.ResourceNotFoundException">
         /// Could not find the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.TooManyTagsException">
+        /// You have exceeded the maximum number of tags you can apply to this resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateBatchSegmentJob">REST API Reference for CreateBatchSegmentJob Operation</seealso>
         Task<CreateBatchSegmentJobResponse> CreateBatchSegmentJobAsync(CreateBatchSegmentJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -175,7 +191,13 @@ namespace Amazon.Personalize
         /// <para>
         ///  <b>Minimum Provisioned TPS and Auto-Scaling</b> 
         /// </para>
-        ///  
+        ///  <important> 
+        /// <para>
+        ///  A high <code>minProvisionedTPS</code> will increase your bill. We recommend starting
+        /// with 1 for <code>minProvisionedTPS</code> (the default). Track your usage using Amazon
+        /// CloudWatch metrics, and increase the <code>minProvisionedTPS</code> as necessary.
+        /// </para>
+        ///  </important> 
         /// <para>
         /// A transaction is a single <code>GetRecommendations</code> or <code>GetPersonalizedRanking</code>
         /// call. Transactions per second (TPS) is the throughput and unit of billing for Amazon
@@ -216,7 +238,7 @@ namespace Amazon.Personalize
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// To get the campaign status, call <a>DescribeCampaign</a>.
+        /// To get the campaign status, call <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeCampaign.html">DescribeCampaign</a>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -227,19 +249,23 @@ namespace Amazon.Personalize
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>ListCampaigns</a> 
+        ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_ListCampaigns.html">ListCampaigns</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DescribeCampaign</a> 
+        ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeCampaign.html">DescribeCampaign</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>UpdateCampaign</a> 
+        ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_UpdateCampaign.html">UpdateCampaign</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DeleteCampaign</a> 
+        ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DeleteCampaign.html">DeleteCampaign</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -260,6 +286,9 @@ namespace Amazon.Personalize
         /// </exception>
         /// <exception cref="Amazon.Personalize.Model.ResourceNotFoundException">
         /// Could not find the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.TooManyTagsException">
+        /// You have exceeded the maximum number of tags you can apply to this resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateCampaign">REST API Reference for CreateCampaign Operation</seealso>
         CreateCampaignResponse CreateCampaign(CreateCampaignRequest request);
@@ -275,7 +304,13 @@ namespace Amazon.Personalize
         /// <para>
         ///  <b>Minimum Provisioned TPS and Auto-Scaling</b> 
         /// </para>
-        ///  
+        ///  <important> 
+        /// <para>
+        ///  A high <code>minProvisionedTPS</code> will increase your bill. We recommend starting
+        /// with 1 for <code>minProvisionedTPS</code> (the default). Track your usage using Amazon
+        /// CloudWatch metrics, and increase the <code>minProvisionedTPS</code> as necessary.
+        /// </para>
+        ///  </important> 
         /// <para>
         /// A transaction is a single <code>GetRecommendations</code> or <code>GetPersonalizedRanking</code>
         /// call. Transactions per second (TPS) is the throughput and unit of billing for Amazon
@@ -316,7 +351,7 @@ namespace Amazon.Personalize
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// To get the campaign status, call <a>DescribeCampaign</a>.
+        /// To get the campaign status, call <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeCampaign.html">DescribeCampaign</a>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -327,19 +362,23 @@ namespace Amazon.Personalize
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>ListCampaigns</a> 
+        ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_ListCampaigns.html">ListCampaigns</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DescribeCampaign</a> 
+        ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeCampaign.html">DescribeCampaign</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>UpdateCampaign</a> 
+        ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_UpdateCampaign.html">UpdateCampaign</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DeleteCampaign</a> 
+        ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DeleteCampaign.html">DeleteCampaign</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -364,6 +403,9 @@ namespace Amazon.Personalize
         /// <exception cref="Amazon.Personalize.Model.ResourceNotFoundException">
         /// Could not find the specified resource.
         /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.TooManyTagsException">
+        /// You have exceeded the maximum number of tags you can apply to this resource.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateCampaign">REST API Reference for CreateCampaign Operation</seealso>
         Task<CreateCampaignResponse> CreateCampaignAsync(CreateCampaignRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -373,7 +415,7 @@ namespace Amazon.Personalize
 
 
         /// <summary>
-        /// Creates an empty dataset and adds it to the specified dataset group. Use <a>CreateDatasetImportJob</a>
+        /// Creates an empty dataset and adds it to the specified dataset group. Use <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDatasetImportJob.html">CreateDatasetImportJob</a>
         /// to import your training data to a dataset.
         /// 
         ///  
@@ -411,25 +453,29 @@ namespace Amazon.Personalize
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// To get the status of the dataset, call <a>DescribeDataset</a>.
+        /// To get the status of the dataset, call <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeDataset.html">DescribeDataset</a>.
         /// </para>
         ///  <p class="title"> <b>Related APIs</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>CreateDatasetGroup</a> 
+        ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDatasetGroup.html">CreateDatasetGroup</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>ListDatasets</a> 
+        ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_ListDatasets.html">ListDatasets</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DescribeDataset</a> 
+        ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeDataset.html">DescribeDataset</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DeleteDataset</a> 
+        ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DeleteDataset.html">DeleteDataset</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -451,13 +497,16 @@ namespace Amazon.Personalize
         /// <exception cref="Amazon.Personalize.Model.ResourceNotFoundException">
         /// Could not find the specified resource.
         /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.TooManyTagsException">
+        /// You have exceeded the maximum number of tags you can apply to this resource.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateDataset">REST API Reference for CreateDataset Operation</seealso>
         CreateDatasetResponse CreateDataset(CreateDatasetRequest request);
 
 
 
         /// <summary>
-        /// Creates an empty dataset and adds it to the specified dataset group. Use <a>CreateDatasetImportJob</a>
+        /// Creates an empty dataset and adds it to the specified dataset group. Use <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDatasetImportJob.html">CreateDatasetImportJob</a>
         /// to import your training data to a dataset.
         /// 
         ///  
@@ -495,25 +544,29 @@ namespace Amazon.Personalize
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// To get the status of the dataset, call <a>DescribeDataset</a>.
+        /// To get the status of the dataset, call <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeDataset.html">DescribeDataset</a>.
         /// </para>
         ///  <p class="title"> <b>Related APIs</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>CreateDatasetGroup</a> 
+        ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDatasetGroup.html">CreateDatasetGroup</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>ListDatasets</a> 
+        ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_ListDatasets.html">ListDatasets</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DescribeDataset</a> 
+        ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeDataset.html">DescribeDataset</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DeleteDataset</a> 
+        ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DeleteDataset.html">DeleteDataset</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -537,6 +590,9 @@ namespace Amazon.Personalize
         /// </exception>
         /// <exception cref="Amazon.Personalize.Model.ResourceNotFoundException">
         /// Could not find the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.TooManyTagsException">
+        /// You have exceeded the maximum number of tags you can apply to this resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateDataset">REST API Reference for CreateDataset Operation</seealso>
         Task<CreateDatasetResponse> CreateDatasetAsync(CreateDatasetRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -567,10 +623,11 @@ namespace Amazon.Personalize
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  To get the status of the export job, call <a>DescribeDatasetExportJob</a>, and specify
-        /// the Amazon Resource Name (ARN) of the dataset export job. The dataset export is complete
-        /// when the status shows as ACTIVE. If the status shows as CREATE FAILED, the response
-        /// includes a <code>failureReason</code> key, which describes why the job failed. 
+        ///  To get the status of the export job, call <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeDatasetExportJob.html">DescribeDatasetExportJob</a>,
+        /// and specify the Amazon Resource Name (ARN) of the dataset export job. The dataset
+        /// export is complete when the status shows as ACTIVE. If the status shows as CREATE
+        /// FAILED, the response includes a <code>failureReason</code> key, which describes why
+        /// the job failed. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDatasetExportJob service method.</param>
@@ -590,6 +647,9 @@ namespace Amazon.Personalize
         /// </exception>
         /// <exception cref="Amazon.Personalize.Model.ResourceNotFoundException">
         /// Could not find the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.TooManyTagsException">
+        /// You have exceeded the maximum number of tags you can apply to this resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateDatasetExportJob">REST API Reference for CreateDatasetExportJob Operation</seealso>
         CreateDatasetExportJobResponse CreateDatasetExportJob(CreateDatasetExportJobRequest request);
@@ -617,10 +677,11 @@ namespace Amazon.Personalize
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  To get the status of the export job, call <a>DescribeDatasetExportJob</a>, and specify
-        /// the Amazon Resource Name (ARN) of the dataset export job. The dataset export is complete
-        /// when the status shows as ACTIVE. If the status shows as CREATE FAILED, the response
-        /// includes a <code>failureReason</code> key, which describes why the job failed. 
+        ///  To get the status of the export job, call <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeDatasetExportJob.html">DescribeDatasetExportJob</a>,
+        /// and specify the Amazon Resource Name (ARN) of the dataset export job. The dataset
+        /// export is complete when the status shows as ACTIVE. If the status shows as CREATE
+        /// FAILED, the response includes a <code>failureReason</code> key, which describes why
+        /// the job failed. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDatasetExportJob service method.</param>
@@ -643,6 +704,9 @@ namespace Amazon.Personalize
         /// </exception>
         /// <exception cref="Amazon.Personalize.Model.ResourceNotFoundException">
         /// Could not find the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.TooManyTagsException">
+        /// You have exceeded the maximum number of tags you can apply to this resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateDatasetExportJob">REST API Reference for CreateDatasetExportJob Operation</seealso>
         Task<CreateDatasetExportJobResponse> CreateDatasetExportJobAsync(CreateDatasetExportJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -692,9 +756,9 @@ namespace Amazon.Personalize
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// To get the status of the dataset group, call <a>DescribeDatasetGroup</a>. If the status
-        /// shows as CREATE FAILED, the response includes a <code>failureReason</code> key, which
-        /// describes why the creation failed.
+        /// To get the status of the dataset group, call <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeDatasetGroup.html">DescribeDatasetGroup</a>.
+        /// If the status shows as CREATE FAILED, the response includes a <code>failureReason</code>
+        /// key, which describes why the creation failed.
         /// </para>
         ///  <note> 
         /// <para>
@@ -711,29 +775,35 @@ namespace Amazon.Personalize
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>CreateDataset</a> 
+        ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDataset.html">CreateDataset</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>CreateEventTracker</a> 
+        ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateEventTracker.html">CreateEventTracker</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>CreateSolution</a> 
+        ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolution.html">CreateSolution</a>
+        /// 
         /// </para>
         ///  </li> </ul> <p class="title"> <b>Related APIs</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>ListDatasetGroups</a> 
+        ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_ListDatasetGroups.html">ListDatasetGroups</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DescribeDatasetGroup</a> 
+        ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeDatasetGroup.html">DescribeDatasetGroup</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DeleteDatasetGroup</a> 
+        ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DeleteDatasetGroup.html">DeleteDatasetGroup</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -748,6 +818,9 @@ namespace Amazon.Personalize
         /// </exception>
         /// <exception cref="Amazon.Personalize.Model.ResourceAlreadyExistsException">
         /// The specified resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.TooManyTagsException">
+        /// You have exceeded the maximum number of tags you can apply to this resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateDatasetGroup">REST API Reference for CreateDatasetGroup Operation</seealso>
         CreateDatasetGroupResponse CreateDatasetGroup(CreateDatasetGroupRequest request);
@@ -794,9 +867,9 @@ namespace Amazon.Personalize
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// To get the status of the dataset group, call <a>DescribeDatasetGroup</a>. If the status
-        /// shows as CREATE FAILED, the response includes a <code>failureReason</code> key, which
-        /// describes why the creation failed.
+        /// To get the status of the dataset group, call <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeDatasetGroup.html">DescribeDatasetGroup</a>.
+        /// If the status shows as CREATE FAILED, the response includes a <code>failureReason</code>
+        /// key, which describes why the creation failed.
         /// </para>
         ///  <note> 
         /// <para>
@@ -813,29 +886,35 @@ namespace Amazon.Personalize
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>CreateDataset</a> 
+        ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDataset.html">CreateDataset</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>CreateEventTracker</a> 
+        ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateEventTracker.html">CreateEventTracker</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>CreateSolution</a> 
+        ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolution.html">CreateSolution</a>
+        /// 
         /// </para>
         ///  </li> </ul> <p class="title"> <b>Related APIs</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>ListDatasetGroups</a> 
+        ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_ListDatasetGroups.html">ListDatasetGroups</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DescribeDatasetGroup</a> 
+        ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeDatasetGroup.html">DescribeDatasetGroup</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DeleteDatasetGroup</a> 
+        ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DeleteDatasetGroup.html">DeleteDatasetGroup</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -853,6 +932,9 @@ namespace Amazon.Personalize
         /// </exception>
         /// <exception cref="Amazon.Personalize.Model.ResourceAlreadyExistsException">
         /// The specified resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.TooManyTagsException">
+        /// You have exceeded the maximum number of tags you can apply to this resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateDatasetGroup">REST API Reference for CreateDatasetGroup Operation</seealso>
         Task<CreateDatasetGroupResponse> CreateDatasetGroupAsync(CreateDatasetGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -872,8 +954,9 @@ namespace Amazon.Personalize
         /// 
         ///  <important> 
         /// <para>
-        /// The dataset import job replaces any existing data in the dataset that you imported
-        /// in bulk.
+        /// By default, a dataset import job replaces any existing data in the dataset that you
+        /// imported in bulk. To add new records without replacing existing data, specify INCREMENTAL
+        /// for the import mode in the CreateDatasetImportJob operation.
         /// </para>
         ///  </important> 
         /// <para>
@@ -889,10 +972,11 @@ namespace Amazon.Personalize
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// To get the status of the import job, call <a>DescribeDatasetImportJob</a>, providing
-        /// the Amazon Resource Name (ARN) of the dataset import job. The dataset import is complete
-        /// when the status shows as ACTIVE. If the status shows as CREATE FAILED, the response
-        /// includes a <code>failureReason</code> key, which describes why the job failed.
+        /// To get the status of the import job, call <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeDatasetImportJob.html">DescribeDatasetImportJob</a>,
+        /// providing the Amazon Resource Name (ARN) of the dataset import job. The dataset import
+        /// is complete when the status shows as ACTIVE. If the status shows as CREATE FAILED,
+        /// the response includes a <code>failureReason</code> key, which describes why the job
+        /// failed.
         /// </para>
         ///  <note> 
         /// <para>
@@ -903,11 +987,13 @@ namespace Amazon.Personalize
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>ListDatasetImportJobs</a> 
+        ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_ListDatasetImportJobs.html">ListDatasetImportJobs</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DescribeDatasetImportJob</a> 
+        ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeDatasetImportJob.html">DescribeDatasetImportJob</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -929,6 +1015,9 @@ namespace Amazon.Personalize
         /// <exception cref="Amazon.Personalize.Model.ResourceNotFoundException">
         /// Could not find the specified resource.
         /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.TooManyTagsException">
+        /// You have exceeded the maximum number of tags you can apply to this resource.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateDatasetImportJob">REST API Reference for CreateDatasetImportJob Operation</seealso>
         CreateDatasetImportJobResponse CreateDatasetImportJob(CreateDatasetImportJobRequest request);
 
@@ -944,8 +1033,9 @@ namespace Amazon.Personalize
         /// 
         ///  <important> 
         /// <para>
-        /// The dataset import job replaces any existing data in the dataset that you imported
-        /// in bulk.
+        /// By default, a dataset import job replaces any existing data in the dataset that you
+        /// imported in bulk. To add new records without replacing existing data, specify INCREMENTAL
+        /// for the import mode in the CreateDatasetImportJob operation.
         /// </para>
         ///  </important> 
         /// <para>
@@ -961,10 +1051,11 @@ namespace Amazon.Personalize
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// To get the status of the import job, call <a>DescribeDatasetImportJob</a>, providing
-        /// the Amazon Resource Name (ARN) of the dataset import job. The dataset import is complete
-        /// when the status shows as ACTIVE. If the status shows as CREATE FAILED, the response
-        /// includes a <code>failureReason</code> key, which describes why the job failed.
+        /// To get the status of the import job, call <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeDatasetImportJob.html">DescribeDatasetImportJob</a>,
+        /// providing the Amazon Resource Name (ARN) of the dataset import job. The dataset import
+        /// is complete when the status shows as ACTIVE. If the status shows as CREATE FAILED,
+        /// the response includes a <code>failureReason</code> key, which describes why the job
+        /// failed.
         /// </para>
         ///  <note> 
         /// <para>
@@ -975,11 +1066,13 @@ namespace Amazon.Personalize
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>ListDatasetImportJobs</a> 
+        ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_ListDatasetImportJobs.html">ListDatasetImportJobs</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DescribeDatasetImportJob</a> 
+        ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeDatasetImportJob.html">DescribeDatasetImportJob</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -1003,6 +1096,9 @@ namespace Amazon.Personalize
         /// </exception>
         /// <exception cref="Amazon.Personalize.Model.ResourceNotFoundException">
         /// Could not find the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.TooManyTagsException">
+        /// You have exceeded the maximum number of tags you can apply to this resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateDatasetImportJob">REST API Reference for CreateDatasetImportJob Operation</seealso>
         Task<CreateDatasetImportJobResponse> CreateDatasetImportJobAsync(CreateDatasetImportJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1044,7 +1140,7 @@ namespace Amazon.Personalize
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// To get the status of the event tracker, call <a>DescribeEventTracker</a>.
+        /// To get the status of the event tracker, call <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeEventTracker.html">DescribeEventTracker</a>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -1054,15 +1150,18 @@ namespace Amazon.Personalize
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>ListEventTrackers</a> 
+        ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_ListEventTrackers.html">ListEventTrackers</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DescribeEventTracker</a> 
+        ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeEventTracker.html">DescribeEventTracker</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DeleteEventTracker</a> 
+        ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DeleteEventTracker.html">DeleteEventTracker</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -1083,6 +1182,9 @@ namespace Amazon.Personalize
         /// </exception>
         /// <exception cref="Amazon.Personalize.Model.ResourceNotFoundException">
         /// Could not find the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.TooManyTagsException">
+        /// You have exceeded the maximum number of tags you can apply to this resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateEventTracker">REST API Reference for CreateEventTracker Operation</seealso>
         CreateEventTrackerResponse CreateEventTracker(CreateEventTrackerRequest request);
@@ -1121,7 +1223,7 @@ namespace Amazon.Personalize
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// To get the status of the event tracker, call <a>DescribeEventTracker</a>.
+        /// To get the status of the event tracker, call <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeEventTracker.html">DescribeEventTracker</a>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -1131,15 +1233,18 @@ namespace Amazon.Personalize
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>ListEventTrackers</a> 
+        ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_ListEventTrackers.html">ListEventTrackers</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DescribeEventTracker</a> 
+        ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeEventTracker.html">DescribeEventTracker</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DeleteEventTracker</a> 
+        ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DeleteEventTracker.html">DeleteEventTracker</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -1164,6 +1269,9 @@ namespace Amazon.Personalize
         /// <exception cref="Amazon.Personalize.Model.ResourceNotFoundException">
         /// Could not find the specified resource.
         /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.TooManyTagsException">
+        /// You have exceeded the maximum number of tags you can apply to this resource.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateEventTracker">REST API Reference for CreateEventTracker Operation</seealso>
         Task<CreateEventTrackerResponse> CreateEventTrackerAsync(CreateEventTrackerRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -1173,7 +1281,8 @@ namespace Amazon.Personalize
 
 
         /// <summary>
-        /// Creates a recommendation filter. For more information, see <a>filter</a>.
+        /// Creates a recommendation filter. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter.html">Filtering
+        /// recommendations and user segments</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateFilter service method.</param>
         /// 
@@ -1190,13 +1299,17 @@ namespace Amazon.Personalize
         /// <exception cref="Amazon.Personalize.Model.ResourceNotFoundException">
         /// Could not find the specified resource.
         /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.TooManyTagsException">
+        /// You have exceeded the maximum number of tags you can apply to this resource.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateFilter">REST API Reference for CreateFilter Operation</seealso>
         CreateFilterResponse CreateFilter(CreateFilterRequest request);
 
 
 
         /// <summary>
-        /// Creates a recommendation filter. For more information, see <a>filter</a>.
+        /// Creates a recommendation filter. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter.html">Filtering
+        /// recommendations and user segments</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateFilter service method.</param>
         /// <param name="cancellationToken">
@@ -1216,8 +1329,75 @@ namespace Amazon.Personalize
         /// <exception cref="Amazon.Personalize.Model.ResourceNotFoundException">
         /// Could not find the specified resource.
         /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.TooManyTagsException">
+        /// You have exceeded the maximum number of tags you can apply to this resource.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateFilter">REST API Reference for CreateFilter Operation</seealso>
         Task<CreateFilterResponse> CreateFilterAsync(CreateFilterRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateMetricAttribution
+
+
+        /// <summary>
+        /// Creates a metric attribution. A metric attribution creates reports on the data that
+        /// you import into Amazon Personalize. Depending on how you imported the data, you can
+        /// view reports in Amazon CloudWatch or Amazon S3. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/measuring-recommendation-impact.html">Measuring
+        /// impact of recommendations</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateMetricAttribution service method.</param>
+        /// 
+        /// <returns>The response from the CreateMetricAttribution service method, as returned by Personalize.</returns>
+        /// <exception cref="Amazon.Personalize.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.LimitExceededException">
+        /// The limit on the number of requests per second has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceAlreadyExistsException">
+        /// The specified resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceNotFoundException">
+        /// Could not find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateMetricAttribution">REST API Reference for CreateMetricAttribution Operation</seealso>
+        CreateMetricAttributionResponse CreateMetricAttribution(CreateMetricAttributionRequest request);
+
+
+
+        /// <summary>
+        /// Creates a metric attribution. A metric attribution creates reports on the data that
+        /// you import into Amazon Personalize. Depending on how you imported the data, you can
+        /// view reports in Amazon CloudWatch or Amazon S3. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/measuring-recommendation-impact.html">Measuring
+        /// impact of recommendations</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateMetricAttribution service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateMetricAttribution service method, as returned by Personalize.</returns>
+        /// <exception cref="Amazon.Personalize.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.LimitExceededException">
+        /// The limit on the number of requests per second has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceAlreadyExistsException">
+        /// The specified resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceNotFoundException">
+        /// Could not find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateMetricAttribution">REST API Reference for CreateMetricAttribution Operation</seealso>
+        Task<CreateMetricAttributionResponse> CreateMetricAttributionAsync(CreateMetricAttributionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1232,6 +1412,43 @@ namespace Amazon.Personalize
         /// 
         ///  
         /// <para>
+        ///  <b>Minimum recommendation requests per second</b> 
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// A high <code>minRecommendationRequestsPerSecond</code> will increase your bill. We
+        /// recommend starting with 1 for <code>minRecommendationRequestsPerSecond</code> (the
+        /// default). Track your usage using Amazon CloudWatch metrics, and increase the <code>minRecommendationRequestsPerSecond</code>
+        /// as necessary.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// When you create a recommender, you can configure the recommender's minimum recommendation
+        /// requests per second. The minimum recommendation requests per second (<code>minRecommendationRequestsPerSecond</code>)
+        /// specifies the baseline recommendation request throughput provisioned by Amazon Personalize.
+        /// The default minRecommendationRequestsPerSecond is <code>1</code>. A recommendation
+        /// request is a single <code>GetRecommendations</code> operation. Request throughput
+        /// is measured in requests per second and Amazon Personalize uses your requests per second
+        /// to derive your requests per hour and the price of your recommender usage. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  If your requests per second increases beyond <code>minRecommendationRequestsPerSecond</code>,
+        /// Amazon Personalize auto-scales the provisioned capacity up and down, but never below
+        /// <code>minRecommendationRequestsPerSecond</code>. There's a short time delay while
+        /// the capacity is increased that might cause loss of requests.
+        /// </para>
+        ///  
+        /// <para>
+        ///  Your bill is the greater of either the minimum requests per hour (based on minRecommendationRequestsPerSecond)
+        /// or the actual number of requests. The actual request throughput used is calculated
+        /// as the average requests/second within a one-hour window. We recommend starting with
+        /// the default <code>minRecommendationRequestsPerSecond</code>, track your usage using
+        /// Amazon CloudWatch metrics, and then increase the <code>minRecommendationRequestsPerSecond</code>
+        /// as necessary. 
+        /// </para>
+        ///  
+        /// <para>
         ///  <b>Status</b> 
         /// </para>
         ///  
@@ -1244,11 +1461,16 @@ namespace Amazon.Personalize
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// STOP PENDING &gt; STOP IN_PROGRESS &gt; INACTIVE &gt; START PENDING &gt; START IN_PROGRESS
+        /// &gt; ACTIVE
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// DELETE PENDING &gt; DELETE IN_PROGRESS
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// To get the recommender status, call <a>DescribeRecommender</a>.
+        /// To get the recommender status, call <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeRecommender.html">DescribeRecommender</a>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -1259,19 +1481,23 @@ namespace Amazon.Personalize
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>ListRecommenders</a> 
+        ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_ListRecommenders.html">ListRecommenders</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DescribeRecommender</a> 
+        ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeRecommender.html">DescribeRecommender</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>UpdateRecommender</a> 
+        ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_UpdateRecommender.html">UpdateRecommender</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DeleteRecommender</a> 
+        ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DeleteRecommender.html">DeleteRecommender</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -1287,8 +1513,14 @@ namespace Amazon.Personalize
         /// <exception cref="Amazon.Personalize.Model.ResourceAlreadyExistsException">
         /// The specified resource already exists.
         /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
         /// <exception cref="Amazon.Personalize.Model.ResourceNotFoundException">
         /// Could not find the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.TooManyTagsException">
+        /// You have exceeded the maximum number of tags you can apply to this resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateRecommender">REST API Reference for CreateRecommender Operation</seealso>
         CreateRecommenderResponse CreateRecommender(CreateRecommenderRequest request);
@@ -1303,6 +1535,43 @@ namespace Amazon.Personalize
         /// 
         ///  
         /// <para>
+        ///  <b>Minimum recommendation requests per second</b> 
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// A high <code>minRecommendationRequestsPerSecond</code> will increase your bill. We
+        /// recommend starting with 1 for <code>minRecommendationRequestsPerSecond</code> (the
+        /// default). Track your usage using Amazon CloudWatch metrics, and increase the <code>minRecommendationRequestsPerSecond</code>
+        /// as necessary.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// When you create a recommender, you can configure the recommender's minimum recommendation
+        /// requests per second. The minimum recommendation requests per second (<code>minRecommendationRequestsPerSecond</code>)
+        /// specifies the baseline recommendation request throughput provisioned by Amazon Personalize.
+        /// The default minRecommendationRequestsPerSecond is <code>1</code>. A recommendation
+        /// request is a single <code>GetRecommendations</code> operation. Request throughput
+        /// is measured in requests per second and Amazon Personalize uses your requests per second
+        /// to derive your requests per hour and the price of your recommender usage. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  If your requests per second increases beyond <code>minRecommendationRequestsPerSecond</code>,
+        /// Amazon Personalize auto-scales the provisioned capacity up and down, but never below
+        /// <code>minRecommendationRequestsPerSecond</code>. There's a short time delay while
+        /// the capacity is increased that might cause loss of requests.
+        /// </para>
+        ///  
+        /// <para>
+        ///  Your bill is the greater of either the minimum requests per hour (based on minRecommendationRequestsPerSecond)
+        /// or the actual number of requests. The actual request throughput used is calculated
+        /// as the average requests/second within a one-hour window. We recommend starting with
+        /// the default <code>minRecommendationRequestsPerSecond</code>, track your usage using
+        /// Amazon CloudWatch metrics, and then increase the <code>minRecommendationRequestsPerSecond</code>
+        /// as necessary. 
+        /// </para>
+        ///  
+        /// <para>
         ///  <b>Status</b> 
         /// </para>
         ///  
@@ -1315,11 +1584,16 @@ namespace Amazon.Personalize
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// STOP PENDING &gt; STOP IN_PROGRESS &gt; INACTIVE &gt; START PENDING &gt; START IN_PROGRESS
+        /// &gt; ACTIVE
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// DELETE PENDING &gt; DELETE IN_PROGRESS
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// To get the recommender status, call <a>DescribeRecommender</a>.
+        /// To get the recommender status, call <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeRecommender.html">DescribeRecommender</a>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -1330,19 +1604,23 @@ namespace Amazon.Personalize
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>ListRecommenders</a> 
+        ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_ListRecommenders.html">ListRecommenders</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DescribeRecommender</a> 
+        ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeRecommender.html">DescribeRecommender</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>UpdateRecommender</a> 
+        ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_UpdateRecommender.html">UpdateRecommender</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DeleteRecommender</a> 
+        ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DeleteRecommender.html">DeleteRecommender</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -1361,8 +1639,14 @@ namespace Amazon.Personalize
         /// <exception cref="Amazon.Personalize.Model.ResourceAlreadyExistsException">
         /// The specified resource already exists.
         /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
         /// <exception cref="Amazon.Personalize.Model.ResourceNotFoundException">
         /// Could not find the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.TooManyTagsException">
+        /// You have exceeded the maximum number of tags you can apply to this resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateRecommender">REST API Reference for CreateRecommender Operation</seealso>
         Task<CreateRecommenderResponse> CreateRecommenderAsync(CreateRecommenderRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1381,21 +1665,24 @@ namespace Amazon.Personalize
         /// Amazon Personalize recognizes three schema variants. Each schema is associated with
         /// a dataset type and has a set of required field and keywords. If you are creating a
         /// schema for a dataset in a Domain dataset group, you provide the domain of the Domain
-        /// dataset group. You specify a schema when you call <a>CreateDataset</a>.
+        /// dataset group. You specify a schema when you call <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDataset.html">CreateDataset</a>.
         /// </para>
         ///  <p class="title"> <b>Related APIs</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>ListSchemas</a> 
+        ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_ListSchemas.html">ListSchemas</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DescribeSchema</a> 
+        ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeSchema.html">DescribeSchema</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DeleteSchema</a> 
+        ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DeleteSchema.html">DeleteSchema</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -1425,21 +1712,24 @@ namespace Amazon.Personalize
         /// Amazon Personalize recognizes three schema variants. Each schema is associated with
         /// a dataset type and has a set of required field and keywords. If you are creating a
         /// schema for a dataset in a Domain dataset group, you provide the domain of the Domain
-        /// dataset group. You specify a schema when you call <a>CreateDataset</a>.
+        /// dataset group. You specify a schema when you call <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDataset.html">CreateDataset</a>.
         /// </para>
         ///  <p class="title"> <b>Related APIs</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>ListSchemas</a> 
+        ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_ListSchemas.html">ListSchemas</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DescribeSchema</a> 
+        ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeSchema.html">DescribeSchema</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DeleteSchema</a> 
+        ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DeleteSchema.html">DeleteSchema</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -1467,15 +1757,16 @@ namespace Amazon.Personalize
 
 
         /// <summary>
-        /// Creates the configuration for training a model. A trained model is known as a solution.
-        /// After the configuration is created, you train the model (create a solution) by calling
-        /// the <a>CreateSolutionVersion</a> operation. Every time you call <code>CreateSolutionVersion</code>,
-        /// a new version of the solution is created.
+        /// Creates the configuration for training a model. A trained model is known as a solution
+        /// version. After the configuration is created, you train the model (create a solution
+        /// version) by calling the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolutionVersion.html">CreateSolutionVersion</a>
+        /// operation. Every time you call <code>CreateSolutionVersion</code>, a new version of
+        /// the solution is created.
         /// 
         ///  
         /// <para>
-        /// After creating a solution version, you check its accuracy by calling <a>GetSolutionMetrics</a>.
-        /// When you are satisfied with the version, you deploy it using <a>CreateCampaign</a>.
+        /// After creating a solution version, you check its accuracy by calling <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_GetSolutionMetrics.html">GetSolutionMetrics</a>.
+        /// When you are satisfied with the version, you deploy it using <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateCampaign.html">CreateCampaign</a>.
         /// The campaign provides recommendations to a client through the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetRecommendations.html">GetRecommendations</a>
         /// API.
         /// </para>
@@ -1484,9 +1775,7 @@ namespace Amazon.Personalize
         /// To train a model, Amazon Personalize requires training data and a recipe. The training
         /// data comes from the dataset group that you provide in the request. A recipe specifies
         /// the training algorithm and a feature transformation. You can specify one of the predefined
-        /// recipes provided by Amazon Personalize. Alternatively, you can specify <code>performAutoML</code>
-        /// and Amazon Personalize will analyze your data and select the optimum USER_PERSONALIZATION
-        /// recipe for you.
+        /// recipes provided by Amazon Personalize. 
         /// </para>
         ///  <note> 
         /// <para>
@@ -1511,34 +1800,40 @@ namespace Amazon.Personalize
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// To get the status of the solution, call <a>DescribeSolution</a>. Wait until the status
-        /// shows as ACTIVE before calling <code>CreateSolutionVersion</code>.
+        /// To get the status of the solution, call <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeSolution.html">DescribeSolution</a>.
+        /// Wait until the status shows as ACTIVE before calling <code>CreateSolutionVersion</code>.
         /// </para>
         ///  <p class="title"> <b>Related APIs</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>ListSolutions</a> 
+        ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_ListSolutions.html">ListSolutions</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>CreateSolutionVersion</a> 
+        ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolutionVersion.html">CreateSolutionVersion</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DescribeSolution</a> 
+        ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeSolution.html">DescribeSolution</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DeleteSolution</a> 
+        ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DeleteSolution.html">DeleteSolution</a>
+        /// 
         /// </para>
         ///  </li> </ul> <ul> <li> 
         /// <para>
-        ///  <a>ListSolutionVersions</a> 
+        ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_ListSolutionVersions.html">ListSolutionVersions</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DescribeSolutionVersion</a> 
+        ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeSolutionVersion.html">DescribeSolutionVersion</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -1560,21 +1855,25 @@ namespace Amazon.Personalize
         /// <exception cref="Amazon.Personalize.Model.ResourceNotFoundException">
         /// Could not find the specified resource.
         /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.TooManyTagsException">
+        /// You have exceeded the maximum number of tags you can apply to this resource.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateSolution">REST API Reference for CreateSolution Operation</seealso>
         CreateSolutionResponse CreateSolution(CreateSolutionRequest request);
 
 
 
         /// <summary>
-        /// Creates the configuration for training a model. A trained model is known as a solution.
-        /// After the configuration is created, you train the model (create a solution) by calling
-        /// the <a>CreateSolutionVersion</a> operation. Every time you call <code>CreateSolutionVersion</code>,
-        /// a new version of the solution is created.
+        /// Creates the configuration for training a model. A trained model is known as a solution
+        /// version. After the configuration is created, you train the model (create a solution
+        /// version) by calling the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolutionVersion.html">CreateSolutionVersion</a>
+        /// operation. Every time you call <code>CreateSolutionVersion</code>, a new version of
+        /// the solution is created.
         /// 
         ///  
         /// <para>
-        /// After creating a solution version, you check its accuracy by calling <a>GetSolutionMetrics</a>.
-        /// When you are satisfied with the version, you deploy it using <a>CreateCampaign</a>.
+        /// After creating a solution version, you check its accuracy by calling <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_GetSolutionMetrics.html">GetSolutionMetrics</a>.
+        /// When you are satisfied with the version, you deploy it using <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateCampaign.html">CreateCampaign</a>.
         /// The campaign provides recommendations to a client through the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetRecommendations.html">GetRecommendations</a>
         /// API.
         /// </para>
@@ -1583,9 +1882,7 @@ namespace Amazon.Personalize
         /// To train a model, Amazon Personalize requires training data and a recipe. The training
         /// data comes from the dataset group that you provide in the request. A recipe specifies
         /// the training algorithm and a feature transformation. You can specify one of the predefined
-        /// recipes provided by Amazon Personalize. Alternatively, you can specify <code>performAutoML</code>
-        /// and Amazon Personalize will analyze your data and select the optimum USER_PERSONALIZATION
-        /// recipe for you.
+        /// recipes provided by Amazon Personalize. 
         /// </para>
         ///  <note> 
         /// <para>
@@ -1610,34 +1907,40 @@ namespace Amazon.Personalize
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// To get the status of the solution, call <a>DescribeSolution</a>. Wait until the status
-        /// shows as ACTIVE before calling <code>CreateSolutionVersion</code>.
+        /// To get the status of the solution, call <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeSolution.html">DescribeSolution</a>.
+        /// Wait until the status shows as ACTIVE before calling <code>CreateSolutionVersion</code>.
         /// </para>
         ///  <p class="title"> <b>Related APIs</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>ListSolutions</a> 
+        ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_ListSolutions.html">ListSolutions</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>CreateSolutionVersion</a> 
+        ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolutionVersion.html">CreateSolutionVersion</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DescribeSolution</a> 
+        ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeSolution.html">DescribeSolution</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DeleteSolution</a> 
+        ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DeleteSolution.html">DeleteSolution</a>
+        /// 
         /// </para>
         ///  </li> </ul> <ul> <li> 
         /// <para>
-        ///  <a>ListSolutionVersions</a> 
+        ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_ListSolutionVersions.html">ListSolutionVersions</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DescribeSolutionVersion</a> 
+        ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeSolutionVersion.html">DescribeSolutionVersion</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -1661,6 +1964,9 @@ namespace Amazon.Personalize
         /// </exception>
         /// <exception cref="Amazon.Personalize.Model.ResourceNotFoundException">
         /// Could not find the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.TooManyTagsException">
+        /// You have exceeded the maximum number of tags you can apply to this resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateSolution">REST API Reference for CreateSolution Operation</seealso>
         Task<CreateSolutionResponse> CreateSolutionAsync(CreateSolutionRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1672,9 +1978,9 @@ namespace Amazon.Personalize
 
         /// <summary>
         /// Trains or retrains an active solution in a Custom dataset group. A solution is created
-        /// using the <a>CreateSolution</a> operation and must be in the ACTIVE state before calling
-        /// <code>CreateSolutionVersion</code>. A new version of the solution is created every
-        /// time you call this operation.
+        /// using the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolution.html">CreateSolution</a>
+        /// operation and must be in the ACTIVE state before calling <code>CreateSolutionVersion</code>.
+        /// A new version of the solution is created every time you call this operation.
         /// 
         ///  
         /// <para>
@@ -1710,8 +2016,8 @@ namespace Amazon.Personalize
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// To get the status of the version, call <a>DescribeSolutionVersion</a>. Wait until
-        /// the status shows as ACTIVE before calling <code>CreateCampaign</code>.
+        /// To get the status of the version, call <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeSolutionVersion.html">DescribeSolutionVersion</a>.
+        /// Wait until the status shows as ACTIVE before calling <code>CreateCampaign</code>.
         /// </para>
         ///  
         /// <para>
@@ -1722,27 +2028,33 @@ namespace Amazon.Personalize
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>ListSolutionVersions</a> 
+        ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_ListSolutionVersions.html">ListSolutionVersions</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DescribeSolutionVersion</a> 
-        /// </para>
-        ///  </li> </ul> <ul> <li> 
-        /// <para>
-        ///  <a>ListSolutions</a> 
+        ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeSolutionVersion.html">DescribeSolutionVersion</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>CreateSolution</a> 
+        ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_ListSolutions.html">ListSolutions</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DescribeSolution</a> 
+        ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolution.html">CreateSolution</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DeleteSolution</a> 
+        ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeSolution.html">DescribeSolution</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DeleteSolution.html">DeleteSolution</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -1755,11 +2067,17 @@ namespace Amazon.Personalize
         /// <exception cref="Amazon.Personalize.Model.LimitExceededException">
         /// The limit on the number of requests per second has been exceeded.
         /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceAlreadyExistsException">
+        /// The specified resource already exists.
+        /// </exception>
         /// <exception cref="Amazon.Personalize.Model.ResourceInUseException">
         /// The specified resource is in use.
         /// </exception>
         /// <exception cref="Amazon.Personalize.Model.ResourceNotFoundException">
         /// Could not find the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.TooManyTagsException">
+        /// You have exceeded the maximum number of tags you can apply to this resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateSolutionVersion">REST API Reference for CreateSolutionVersion Operation</seealso>
         CreateSolutionVersionResponse CreateSolutionVersion(CreateSolutionVersionRequest request);
@@ -1768,9 +2086,9 @@ namespace Amazon.Personalize
 
         /// <summary>
         /// Trains or retrains an active solution in a Custom dataset group. A solution is created
-        /// using the <a>CreateSolution</a> operation and must be in the ACTIVE state before calling
-        /// <code>CreateSolutionVersion</code>. A new version of the solution is created every
-        /// time you call this operation.
+        /// using the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolution.html">CreateSolution</a>
+        /// operation and must be in the ACTIVE state before calling <code>CreateSolutionVersion</code>.
+        /// A new version of the solution is created every time you call this operation.
         /// 
         ///  
         /// <para>
@@ -1806,8 +2124,8 @@ namespace Amazon.Personalize
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// To get the status of the version, call <a>DescribeSolutionVersion</a>. Wait until
-        /// the status shows as ACTIVE before calling <code>CreateCampaign</code>.
+        /// To get the status of the version, call <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeSolutionVersion.html">DescribeSolutionVersion</a>.
+        /// Wait until the status shows as ACTIVE before calling <code>CreateCampaign</code>.
         /// </para>
         ///  
         /// <para>
@@ -1818,27 +2136,33 @@ namespace Amazon.Personalize
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>ListSolutionVersions</a> 
+        ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_ListSolutionVersions.html">ListSolutionVersions</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DescribeSolutionVersion</a> 
-        /// </para>
-        ///  </li> </ul> <ul> <li> 
-        /// <para>
-        ///  <a>ListSolutions</a> 
+        ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeSolutionVersion.html">DescribeSolutionVersion</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>CreateSolution</a> 
+        ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_ListSolutions.html">ListSolutions</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DescribeSolution</a> 
+        ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolution.html">CreateSolution</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DeleteSolution</a> 
+        ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeSolution.html">DescribeSolution</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DeleteSolution.html">DeleteSolution</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -1854,11 +2178,17 @@ namespace Amazon.Personalize
         /// <exception cref="Amazon.Personalize.Model.LimitExceededException">
         /// The limit on the number of requests per second has been exceeded.
         /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceAlreadyExistsException">
+        /// The specified resource already exists.
+        /// </exception>
         /// <exception cref="Amazon.Personalize.Model.ResourceInUseException">
         /// The specified resource is in use.
         /// </exception>
         /// <exception cref="Amazon.Personalize.Model.ResourceNotFoundException">
         /// Could not find the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.TooManyTagsException">
+        /// You have exceeded the maximum number of tags you can apply to this resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateSolutionVersion">REST API Reference for CreateSolutionVersion Operation</seealso>
         Task<CreateSolutionVersionResponse> CreateSolutionVersionAsync(CreateSolutionVersionRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1872,7 +2202,7 @@ namespace Amazon.Personalize
         /// Removes a campaign by deleting the solution deployment. The solution that the campaign
         /// is based on is not deleted and can be redeployed when needed. A deleted campaign can
         /// no longer be specified in a <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetRecommendations.html">GetRecommendations</a>
-        /// request. For more information on campaigns, see <a>CreateCampaign</a>.
+        /// request. For information on creating campaigns, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateCampaign.html">CreateCampaign</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteCampaign service method.</param>
         /// 
@@ -1895,7 +2225,7 @@ namespace Amazon.Personalize
         /// Removes a campaign by deleting the solution deployment. The solution that the campaign
         /// is based on is not deleted and can be redeployed when needed. A deleted campaign can
         /// no longer be specified in a <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetRecommendations.html">GetRecommendations</a>
-        /// request. For more information on campaigns, see <a>CreateCampaign</a>.
+        /// request. For information on creating campaigns, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateCampaign.html">CreateCampaign</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteCampaign service method.</param>
         /// <param name="cancellationToken">
@@ -1923,7 +2253,7 @@ namespace Amazon.Personalize
         /// <summary>
         /// Deletes a dataset. You can't delete a dataset if an associated <code>DatasetImportJob</code>
         /// or <code>SolutionVersion</code> is in the CREATE PENDING or IN PROGRESS state. For
-        /// more information on datasets, see <a>CreateDataset</a>.
+        /// more information on datasets, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDataset.html">CreateDataset</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDataset service method.</param>
         /// 
@@ -1945,7 +2275,7 @@ namespace Amazon.Personalize
         /// <summary>
         /// Deletes a dataset. You can't delete a dataset if an associated <code>DatasetImportJob</code>
         /// or <code>SolutionVersion</code> is in the CREATE PENDING or IN PROGRESS state. For
-        /// more information on datasets, see <a>CreateDataset</a>.
+        /// more information on datasets, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDataset.html">CreateDataset</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDataset service method.</param>
         /// <param name="cancellationToken">
@@ -2046,7 +2376,7 @@ namespace Amazon.Personalize
 
         /// <summary>
         /// Deletes the event tracker. Does not delete the event-interactions dataset from the
-        /// associated dataset group. For more information on event trackers, see <a>CreateEventTracker</a>.
+        /// associated dataset group. For more information on event trackers, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateEventTracker.html">CreateEventTracker</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteEventTracker service method.</param>
         /// 
@@ -2067,7 +2397,7 @@ namespace Amazon.Personalize
 
         /// <summary>
         /// Deletes the event tracker. Does not delete the event-interactions dataset from the
-        /// associated dataset group. For more information on event trackers, see <a>CreateEventTracker</a>.
+        /// associated dataset group. For more information on event trackers, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateEventTracker.html">CreateEventTracker</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteEventTracker service method.</param>
         /// <param name="cancellationToken">
@@ -2135,6 +2465,52 @@ namespace Amazon.Personalize
 
         #endregion
         
+        #region  DeleteMetricAttribution
+
+
+        /// <summary>
+        /// Deletes a metric attribution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMetricAttribution service method.</param>
+        /// 
+        /// <returns>The response from the DeleteMetricAttribution service method, as returned by Personalize.</returns>
+        /// <exception cref="Amazon.Personalize.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceNotFoundException">
+        /// Could not find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DeleteMetricAttribution">REST API Reference for DeleteMetricAttribution Operation</seealso>
+        DeleteMetricAttributionResponse DeleteMetricAttribution(DeleteMetricAttributionRequest request);
+
+
+
+        /// <summary>
+        /// Deletes a metric attribution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMetricAttribution service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteMetricAttribution service method, as returned by Personalize.</returns>
+        /// <exception cref="Amazon.Personalize.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceNotFoundException">
+        /// Could not find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DeleteMetricAttribution">REST API Reference for DeleteMetricAttribution Operation</seealso>
+        Task<DeleteMetricAttributionResponse> DeleteMetricAttributionAsync(DeleteMetricAttributionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeleteRecommender
 
 
@@ -2190,7 +2566,7 @@ namespace Amazon.Personalize
 
         /// <summary>
         /// Deletes a schema. Before deleting a schema, you must delete all datasets referencing
-        /// the schema. For more information on schemas, see <a>CreateSchema</a>.
+        /// the schema. For more information on schemas, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSchema.html">CreateSchema</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteSchema service method.</param>
         /// 
@@ -2211,7 +2587,7 @@ namespace Amazon.Personalize
 
         /// <summary>
         /// Deletes a schema. Before deleting a schema, you must delete all datasets referencing
-        /// the schema. For more information on schemas, see <a>CreateSchema</a>.
+        /// the schema. For more information on schemas, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSchema.html">CreateSchema</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteSchema service method.</param>
         /// <param name="cancellationToken">
@@ -2239,10 +2615,10 @@ namespace Amazon.Personalize
         /// <summary>
         /// Deletes all versions of a solution and the <code>Solution</code> object itself. Before
         /// deleting a solution, you must delete all campaigns based on the solution. To determine
-        /// what campaigns are using the solution, call <a>ListCampaigns</a> and supply the Amazon
-        /// Resource Name (ARN) of the solution. You can't delete a solution if an associated
-        /// <code>SolutionVersion</code> is in the CREATE PENDING or IN PROGRESS state. For more
-        /// information on solutions, see <a>CreateSolution</a>.
+        /// what campaigns are using the solution, call <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_ListCampaigns.html">ListCampaigns</a>
+        /// and supply the Amazon Resource Name (ARN) of the solution. You can't delete a solution
+        /// if an associated <code>SolutionVersion</code> is in the CREATE PENDING or IN PROGRESS
+        /// state. For more information on solutions, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolution.html">CreateSolution</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteSolution service method.</param>
         /// 
@@ -2264,10 +2640,10 @@ namespace Amazon.Personalize
         /// <summary>
         /// Deletes all versions of a solution and the <code>Solution</code> object itself. Before
         /// deleting a solution, you must delete all campaigns based on the solution. To determine
-        /// what campaigns are using the solution, call <a>ListCampaigns</a> and supply the Amazon
-        /// Resource Name (ARN) of the solution. You can't delete a solution if an associated
-        /// <code>SolutionVersion</code> is in the CREATE PENDING or IN PROGRESS state. For more
-        /// information on solutions, see <a>CreateSolution</a>.
+        /// what campaigns are using the solution, call <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_ListCampaigns.html">ListCampaigns</a>
+        /// and supply the Amazon Resource Name (ARN) of the solution. You can't delete a solution
+        /// if an associated <code>SolutionVersion</code> is in the CREATE PENDING or IN PROGRESS
+        /// state. For more information on solutions, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolution.html">CreateSolution</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteSolution service method.</param>
         /// <param name="cancellationToken">
@@ -2442,7 +2818,7 @@ namespace Amazon.Personalize
         /// </para>
         ///  
         /// <para>
-        /// For more information on campaigns, see <a>CreateCampaign</a>.
+        /// For more information on campaigns, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateCampaign.html">CreateCampaign</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeCampaign service method.</param>
@@ -2481,7 +2857,7 @@ namespace Amazon.Personalize
         /// </para>
         ///  
         /// <para>
-        /// For more information on campaigns, see <a>CreateCampaign</a>.
+        /// For more information on campaigns, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateCampaign.html">CreateCampaign</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeCampaign service method.</param>
@@ -2505,7 +2881,7 @@ namespace Amazon.Personalize
 
 
         /// <summary>
-        /// Describes the given dataset. For more information on datasets, see <a>CreateDataset</a>.
+        /// Describes the given dataset. For more information on datasets, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDataset.html">CreateDataset</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDataset service method.</param>
         /// 
@@ -2522,7 +2898,7 @@ namespace Amazon.Personalize
 
 
         /// <summary>
-        /// Describes the given dataset. For more information on datasets, see <a>CreateDataset</a>.
+        /// Describes the given dataset. For more information on datasets, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDataset.html">CreateDataset</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDataset service method.</param>
         /// <param name="cancellationToken">
@@ -2545,8 +2921,8 @@ namespace Amazon.Personalize
 
 
         /// <summary>
-        /// Describes the dataset export job created by <a>CreateDatasetExportJob</a>, including
-        /// the export job status.
+        /// Describes the dataset export job created by <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDatasetExportJob.html">CreateDatasetExportJob</a>,
+        /// including the export job status.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDatasetExportJob service method.</param>
         /// 
@@ -2563,8 +2939,8 @@ namespace Amazon.Personalize
 
 
         /// <summary>
-        /// Describes the dataset export job created by <a>CreateDatasetExportJob</a>, including
-        /// the export job status.
+        /// Describes the dataset export job created by <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDatasetExportJob.html">CreateDatasetExportJob</a>,
+        /// including the export job status.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDatasetExportJob service method.</param>
         /// <param name="cancellationToken">
@@ -2587,7 +2963,8 @@ namespace Amazon.Personalize
 
 
         /// <summary>
-        /// Describes the given dataset group. For more information on dataset groups, see <a>CreateDatasetGroup</a>.
+        /// Describes the given dataset group. For more information on dataset groups, see <a
+        /// href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDatasetGroup.html">CreateDatasetGroup</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDatasetGroup service method.</param>
         /// 
@@ -2604,7 +2981,8 @@ namespace Amazon.Personalize
 
 
         /// <summary>
-        /// Describes the given dataset group. For more information on dataset groups, see <a>CreateDatasetGroup</a>.
+        /// Describes the given dataset group. For more information on dataset groups, see <a
+        /// href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDatasetGroup.html">CreateDatasetGroup</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDatasetGroup service method.</param>
         /// <param name="cancellationToken">
@@ -2627,8 +3005,8 @@ namespace Amazon.Personalize
 
 
         /// <summary>
-        /// Describes the dataset import job created by <a>CreateDatasetImportJob</a>, including
-        /// the import job status.
+        /// Describes the dataset import job created by <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDatasetImportJob.html">CreateDatasetImportJob</a>,
+        /// including the import job status.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDatasetImportJob service method.</param>
         /// 
@@ -2645,8 +3023,8 @@ namespace Amazon.Personalize
 
 
         /// <summary>
-        /// Describes the dataset import job created by <a>CreateDatasetImportJob</a>, including
-        /// the import job status.
+        /// Describes the dataset import job created by <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDatasetImportJob.html">CreateDatasetImportJob</a>,
+        /// including the import job status.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDatasetImportJob service method.</param>
         /// <param name="cancellationToken">
@@ -2671,7 +3049,7 @@ namespace Amazon.Personalize
         /// <summary>
         /// Describes an event tracker. The response includes the <code>trackingId</code> and
         /// <code>status</code> of the event tracker. For more information on event trackers,
-        /// see <a>CreateEventTracker</a>.
+        /// see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateEventTracker.html">CreateEventTracker</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeEventTracker service method.</param>
         /// 
@@ -2690,7 +3068,7 @@ namespace Amazon.Personalize
         /// <summary>
         /// Describes an event tracker. The response includes the <code>trackingId</code> and
         /// <code>status</code> of the event tracker. For more information on event trackers,
-        /// see <a>CreateEventTracker</a>.
+        /// see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateEventTracker.html">CreateEventTracker</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeEventTracker service method.</param>
         /// <param name="cancellationToken">
@@ -2789,6 +3167,46 @@ namespace Amazon.Personalize
 
         #endregion
         
+        #region  DescribeMetricAttribution
+
+
+        /// <summary>
+        /// Describes a metric attribution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMetricAttribution service method.</param>
+        /// 
+        /// <returns>The response from the DescribeMetricAttribution service method, as returned by Personalize.</returns>
+        /// <exception cref="Amazon.Personalize.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceNotFoundException">
+        /// Could not find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DescribeMetricAttribution">REST API Reference for DescribeMetricAttribution Operation</seealso>
+        DescribeMetricAttributionResponse DescribeMetricAttribution(DescribeMetricAttributionRequest request);
+
+
+
+        /// <summary>
+        /// Describes a metric attribution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMetricAttribution service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeMetricAttribution service method, as returned by Personalize.</returns>
+        /// <exception cref="Amazon.Personalize.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceNotFoundException">
+        /// Could not find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DescribeMetricAttribution">REST API Reference for DescribeMetricAttribution Operation</seealso>
+        Task<DescribeMetricAttributionResponse> DescribeMetricAttributionAsync(DescribeMetricAttributionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DescribeRecipe
 
 
@@ -2814,10 +3232,10 @@ namespace Amazon.Personalize
         ///  </li> </ul> 
         /// <para>
         /// Amazon Personalize provides a set of predefined recipes. You specify a recipe when
-        /// you create a solution with the <a>CreateSolution</a> API. <code>CreateSolution</code>
-        /// trains a model by using the algorithm in the specified recipe and a training dataset.
-        /// The solution, when deployed as a campaign, can provide recommendations using the <a
-        /// href="https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetRecommendations.html">GetRecommendations</a>
+        /// you create a solution with the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolution.html">CreateSolution</a>
+        /// API. <code>CreateSolution</code> trains a model by using the algorithm in the specified
+        /// recipe and a training dataset. The solution, when deployed as a campaign, can provide
+        /// recommendations using the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetRecommendations.html">GetRecommendations</a>
         /// API.
         /// </para>
         /// </summary>
@@ -2857,10 +3275,10 @@ namespace Amazon.Personalize
         ///  </li> </ul> 
         /// <para>
         /// Amazon Personalize provides a set of predefined recipes. You specify a recipe when
-        /// you create a solution with the <a>CreateSolution</a> API. <code>CreateSolution</code>
-        /// trains a model by using the algorithm in the specified recipe and a training dataset.
-        /// The solution, when deployed as a campaign, can provide recommendations using the <a
-        /// href="https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetRecommendations.html">GetRecommendations</a>
+        /// you create a solution with the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolution.html">CreateSolution</a>
+        /// API. <code>CreateSolution</code> trains a model by using the algorithm in the specified
+        /// recipe and a training dataset. The solution, when deployed as a campaign, can provide
+        /// recommendations using the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetRecommendations.html">GetRecommendations</a>
         /// API.
         /// </para>
         /// </summary>
@@ -2897,12 +3315,22 @@ namespace Amazon.Personalize
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// STOP PENDING &gt; STOP IN_PROGRESS &gt; INACTIVE &gt; START PENDING &gt; START IN_PROGRESS
+        /// &gt; ACTIVE
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// DELETE PENDING &gt; DELETE IN_PROGRESS
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// When the <code>status</code> is <code>CREATE FAILED</code>, the response includes
         /// the <code>failureReason</code> key, which describes why.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <code>modelMetrics</code> key is null when the recommender is being created or
+        /// deleted.
         /// </para>
         ///  
         /// <para>
@@ -2936,12 +3364,22 @@ namespace Amazon.Personalize
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// STOP PENDING &gt; STOP IN_PROGRESS &gt; INACTIVE &gt; START PENDING &gt; START IN_PROGRESS
+        /// &gt; ACTIVE
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// DELETE PENDING &gt; DELETE IN_PROGRESS
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// When the <code>status</code> is <code>CREATE FAILED</code>, the response includes
         /// the <code>failureReason</code> key, which describes why.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <code>modelMetrics</code> key is null when the recommender is being created or
+        /// deleted.
         /// </para>
         ///  
         /// <para>
@@ -2969,7 +3407,7 @@ namespace Amazon.Personalize
 
 
         /// <summary>
-        /// Describes a schema. For more information on schemas, see <a>CreateSchema</a>.
+        /// Describes a schema. For more information on schemas, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSchema.html">CreateSchema</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeSchema service method.</param>
         /// 
@@ -2986,7 +3424,7 @@ namespace Amazon.Personalize
 
 
         /// <summary>
-        /// Describes a schema. For more information on schemas, see <a>CreateSchema</a>.
+        /// Describes a schema. For more information on schemas, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSchema.html">CreateSchema</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeSchema service method.</param>
         /// <param name="cancellationToken">
@@ -3009,7 +3447,7 @@ namespace Amazon.Personalize
 
 
         /// <summary>
-        /// Describes a solution. For more information on solutions, see <a>CreateSolution</a>.
+        /// Describes a solution. For more information on solutions, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolution.html">CreateSolution</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeSolution service method.</param>
         /// 
@@ -3026,7 +3464,7 @@ namespace Amazon.Personalize
 
 
         /// <summary>
-        /// Describes a solution. For more information on solutions, see <a>CreateSolution</a>.
+        /// Describes a solution. For more information on solutions, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolution.html">CreateSolution</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeSolution service method.</param>
         /// <param name="cancellationToken">
@@ -3050,7 +3488,7 @@ namespace Amazon.Personalize
 
         /// <summary>
         /// Describes a specific version of a solution. For more information on solutions, see
-        /// <a>CreateSolution</a>.
+        /// <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolution.html">CreateSolution</a>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeSolutionVersion service method.</param>
         /// 
@@ -3068,7 +3506,7 @@ namespace Amazon.Personalize
 
         /// <summary>
         /// Describes a specific version of a solution. For more information on solutions, see
-        /// <a>CreateSolution</a>.
+        /// <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolution.html">CreateSolution</a>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeSolutionVersion service method.</param>
         /// <param name="cancellationToken">
@@ -3224,7 +3662,7 @@ namespace Amazon.Personalize
         /// Returns a list of campaigns that use the given solution. When a solution is not specified,
         /// all the campaigns associated with the account are listed. The response provides the
         /// properties for each campaign, including the Amazon Resource Name (ARN). For more information
-        /// on campaigns, see <a>CreateCampaign</a>.
+        /// on campaigns, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateCampaign.html">CreateCampaign</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListCampaigns service method.</param>
         /// 
@@ -3244,7 +3682,7 @@ namespace Amazon.Personalize
         /// Returns a list of campaigns that use the given solution. When a solution is not specified,
         /// all the campaigns associated with the account are listed. The response provides the
         /// properties for each campaign, including the Amazon Resource Name (ARN). For more information
-        /// on campaigns, see <a>CreateCampaign</a>.
+        /// on campaigns, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateCampaign.html">CreateCampaign</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListCampaigns service method.</param>
         /// <param name="cancellationToken">
@@ -3270,8 +3708,8 @@ namespace Amazon.Personalize
         /// Returns a list of dataset export jobs that use the given dataset. When a dataset is
         /// not specified, all the dataset export jobs associated with the account are listed.
         /// The response provides the properties for each dataset export job, including the Amazon
-        /// Resource Name (ARN). For more information on dataset export jobs, see <a>CreateDatasetExportJob</a>.
-        /// For more information on datasets, see <a>CreateDataset</a>.
+        /// Resource Name (ARN). For more information on dataset export jobs, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDatasetExportJob.html">CreateDatasetExportJob</a>.
+        /// For more information on datasets, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDataset.html">CreateDataset</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDatasetExportJobs service method.</param>
         /// 
@@ -3291,8 +3729,8 @@ namespace Amazon.Personalize
         /// Returns a list of dataset export jobs that use the given dataset. When a dataset is
         /// not specified, all the dataset export jobs associated with the account are listed.
         /// The response provides the properties for each dataset export job, including the Amazon
-        /// Resource Name (ARN). For more information on dataset export jobs, see <a>CreateDatasetExportJob</a>.
-        /// For more information on datasets, see <a>CreateDataset</a>.
+        /// Resource Name (ARN). For more information on dataset export jobs, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDatasetExportJob.html">CreateDatasetExportJob</a>.
+        /// For more information on datasets, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDataset.html">CreateDataset</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDatasetExportJobs service method.</param>
         /// <param name="cancellationToken">
@@ -3317,7 +3755,7 @@ namespace Amazon.Personalize
         /// <summary>
         /// Returns a list of dataset groups. The response provides the properties for each dataset
         /// group, including the Amazon Resource Name (ARN). For more information on dataset groups,
-        /// see <a>CreateDatasetGroup</a>.
+        /// see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDatasetGroup.html">CreateDatasetGroup</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDatasetGroups service method.</param>
         /// 
@@ -3333,7 +3771,7 @@ namespace Amazon.Personalize
         /// <summary>
         /// Returns a list of dataset groups. The response provides the properties for each dataset
         /// group, including the Amazon Resource Name (ARN). For more information on dataset groups,
-        /// see <a>CreateDatasetGroup</a>.
+        /// see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDatasetGroup.html">CreateDatasetGroup</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDatasetGroups service method.</param>
         /// <param name="cancellationToken">
@@ -3356,8 +3794,8 @@ namespace Amazon.Personalize
         /// Returns a list of dataset import jobs that use the given dataset. When a dataset is
         /// not specified, all the dataset import jobs associated with the account are listed.
         /// The response provides the properties for each dataset import job, including the Amazon
-        /// Resource Name (ARN). For more information on dataset import jobs, see <a>CreateDatasetImportJob</a>.
-        /// For more information on datasets, see <a>CreateDataset</a>.
+        /// Resource Name (ARN). For more information on dataset import jobs, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDatasetImportJob.html">CreateDatasetImportJob</a>.
+        /// For more information on datasets, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDataset.html">CreateDataset</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDatasetImportJobs service method.</param>
         /// 
@@ -3377,8 +3815,8 @@ namespace Amazon.Personalize
         /// Returns a list of dataset import jobs that use the given dataset. When a dataset is
         /// not specified, all the dataset import jobs associated with the account are listed.
         /// The response provides the properties for each dataset import job, including the Amazon
-        /// Resource Name (ARN). For more information on dataset import jobs, see <a>CreateDatasetImportJob</a>.
-        /// For more information on datasets, see <a>CreateDataset</a>.
+        /// Resource Name (ARN). For more information on dataset import jobs, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDatasetImportJob.html">CreateDatasetImportJob</a>.
+        /// For more information on datasets, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDataset.html">CreateDataset</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDatasetImportJobs service method.</param>
         /// <param name="cancellationToken">
@@ -3403,7 +3841,7 @@ namespace Amazon.Personalize
         /// <summary>
         /// Returns the list of datasets contained in the given dataset group. The response provides
         /// the properties for each dataset, including the Amazon Resource Name (ARN). For more
-        /// information on datasets, see <a>CreateDataset</a>.
+        /// information on datasets, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDataset.html">CreateDataset</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDatasets service method.</param>
         /// 
@@ -3422,7 +3860,7 @@ namespace Amazon.Personalize
         /// <summary>
         /// Returns the list of datasets contained in the given dataset group. The response provides
         /// the properties for each dataset, including the Amazon Resource Name (ARN). For more
-        /// information on datasets, see <a>CreateDataset</a>.
+        /// information on datasets, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDataset.html">CreateDataset</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDatasets service method.</param>
         /// <param name="cancellationToken">
@@ -3447,7 +3885,7 @@ namespace Amazon.Personalize
         /// <summary>
         /// Returns the list of event trackers associated with the account. The response provides
         /// the properties for each event tracker, including the Amazon Resource Name (ARN) and
-        /// tracking ID. For more information on event trackers, see <a>CreateEventTracker</a>.
+        /// tracking ID. For more information on event trackers, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateEventTracker.html">CreateEventTracker</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListEventTrackers service method.</param>
         /// 
@@ -3466,7 +3904,7 @@ namespace Amazon.Personalize
         /// <summary>
         /// Returns the list of event trackers associated with the account. The response provides
         /// the properties for each event tracker, including the Amazon Resource Name (ARN) and
-        /// tracking ID. For more information on event trackers, see <a>CreateEventTracker</a>.
+        /// tracking ID. For more information on event trackers, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateEventTracker.html">CreateEventTracker</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListEventTrackers service method.</param>
         /// <param name="cancellationToken">
@@ -3522,6 +3960,86 @@ namespace Amazon.Personalize
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListFilters">REST API Reference for ListFilters Operation</seealso>
         Task<ListFiltersResponse> ListFiltersAsync(ListFiltersRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListMetricAttributionMetrics
+
+
+        /// <summary>
+        /// Lists the metrics for the metric attribution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMetricAttributionMetrics service method.</param>
+        /// 
+        /// <returns>The response from the ListMetricAttributionMetrics service method, as returned by Personalize.</returns>
+        /// <exception cref="Amazon.Personalize.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.InvalidNextTokenException">
+        /// The token is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListMetricAttributionMetrics">REST API Reference for ListMetricAttributionMetrics Operation</seealso>
+        ListMetricAttributionMetricsResponse ListMetricAttributionMetrics(ListMetricAttributionMetricsRequest request);
+
+
+
+        /// <summary>
+        /// Lists the metrics for the metric attribution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMetricAttributionMetrics service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListMetricAttributionMetrics service method, as returned by Personalize.</returns>
+        /// <exception cref="Amazon.Personalize.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.InvalidNextTokenException">
+        /// The token is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListMetricAttributionMetrics">REST API Reference for ListMetricAttributionMetrics Operation</seealso>
+        Task<ListMetricAttributionMetricsResponse> ListMetricAttributionMetricsAsync(ListMetricAttributionMetricsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListMetricAttributions
+
+
+        /// <summary>
+        /// Lists metric attributions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMetricAttributions service method.</param>
+        /// 
+        /// <returns>The response from the ListMetricAttributions service method, as returned by Personalize.</returns>
+        /// <exception cref="Amazon.Personalize.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.InvalidNextTokenException">
+        /// The token is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListMetricAttributions">REST API Reference for ListMetricAttributions Operation</seealso>
+        ListMetricAttributionsResponse ListMetricAttributions(ListMetricAttributionsRequest request);
+
+
+
+        /// <summary>
+        /// Lists metric attributions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMetricAttributions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListMetricAttributions service method, as returned by Personalize.</returns>
+        /// <exception cref="Amazon.Personalize.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.InvalidNextTokenException">
+        /// The token is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListMetricAttributions">REST API Reference for ListMetricAttributions Operation</seealso>
+        Task<ListMetricAttributionsResponse> ListMetricAttributionsAsync(ListMetricAttributionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -3619,7 +4137,7 @@ namespace Amazon.Personalize
         /// <summary>
         /// Returns the list of schemas associated with the account. The response provides the
         /// properties for each schema, including the Amazon Resource Name (ARN). For more information
-        /// on schemas, see <a>CreateSchema</a>.
+        /// on schemas, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSchema.html">CreateSchema</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListSchemas service method.</param>
         /// 
@@ -3635,7 +4153,7 @@ namespace Amazon.Personalize
         /// <summary>
         /// Returns the list of schemas associated with the account. The response provides the
         /// properties for each schema, including the Amazon Resource Name (ARN). For more information
-        /// on schemas, see <a>CreateSchema</a>.
+        /// on schemas, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSchema.html">CreateSchema</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListSchemas service method.</param>
         /// <param name="cancellationToken">
@@ -3658,7 +4176,7 @@ namespace Amazon.Personalize
         /// Returns a list of solutions that use the given dataset group. When a dataset group
         /// is not specified, all the solutions associated with the account are listed. The response
         /// provides the properties for each solution, including the Amazon Resource Name (ARN).
-        /// For more information on solutions, see <a>CreateSolution</a>.
+        /// For more information on solutions, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolution.html">CreateSolution</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListSolutions service method.</param>
         /// 
@@ -3678,7 +4196,7 @@ namespace Amazon.Personalize
         /// Returns a list of solutions that use the given dataset group. When a dataset group
         /// is not specified, all the solutions associated with the account are listed. The response
         /// provides the properties for each solution, including the Amazon Resource Name (ARN).
-        /// For more information on solutions, see <a>CreateSolution</a>.
+        /// For more information on solutions, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolution.html">CreateSolution</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListSolutions service method.</param>
         /// <param name="cancellationToken">
@@ -3704,7 +4222,7 @@ namespace Amazon.Personalize
         /// Returns a list of solution versions for the given solution. When a solution is not
         /// specified, all the solution versions associated with the account are listed. The response
         /// provides the properties for each solution version, including the Amazon Resource Name
-        /// (ARN). For more information on solutions, see <a>CreateSolution</a>.
+        /// (ARN).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListSolutionVersions service method.</param>
         /// 
@@ -3727,7 +4245,7 @@ namespace Amazon.Personalize
         /// Returns a list of solution versions for the given solution. When a solution is not
         /// specified, all the solution versions associated with the account are listed. The response
         /// provides the properties for each solution version, including the Amazon Resource Name
-        /// (ARN). For more information on solutions, see <a>CreateSolution</a>.
+        /// (ARN).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListSolutionVersions service method.</param>
         /// <param name="cancellationToken">
@@ -3746,6 +4264,150 @@ namespace Amazon.Personalize
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListSolutionVersions">REST API Reference for ListSolutionVersions Operation</seealso>
         Task<ListSolutionVersionsResponse> ListSolutionVersionsAsync(ListSolutionVersionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListTagsForResource
+
+
+        /// <summary>
+        /// Get a list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a>
+        /// attached to a resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by Personalize.</returns>
+        /// <exception cref="Amazon.Personalize.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceNotFoundException">
+        /// Could not find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request);
+
+
+
+        /// <summary>
+        /// Get a list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a>
+        /// attached to a resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by Personalize.</returns>
+        /// <exception cref="Amazon.Personalize.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceNotFoundException">
+        /// Could not find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  StartRecommender
+
+
+        /// <summary>
+        /// Starts a recommender that is INACTIVE. Starting a recommender does not create any
+        /// new models, but resumes billing and automatic retraining for the recommender.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartRecommender service method.</param>
+        /// 
+        /// <returns>The response from the StartRecommender service method, as returned by Personalize.</returns>
+        /// <exception cref="Amazon.Personalize.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceNotFoundException">
+        /// Could not find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/StartRecommender">REST API Reference for StartRecommender Operation</seealso>
+        StartRecommenderResponse StartRecommender(StartRecommenderRequest request);
+
+
+
+        /// <summary>
+        /// Starts a recommender that is INACTIVE. Starting a recommender does not create any
+        /// new models, but resumes billing and automatic retraining for the recommender.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartRecommender service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartRecommender service method, as returned by Personalize.</returns>
+        /// <exception cref="Amazon.Personalize.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceNotFoundException">
+        /// Could not find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/StartRecommender">REST API Reference for StartRecommender Operation</seealso>
+        Task<StartRecommenderResponse> StartRecommenderAsync(StartRecommenderRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  StopRecommender
+
+
+        /// <summary>
+        /// Stops a recommender that is ACTIVE. Stopping a recommender halts billing and automatic
+        /// retraining for the recommender.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopRecommender service method.</param>
+        /// 
+        /// <returns>The response from the StopRecommender service method, as returned by Personalize.</returns>
+        /// <exception cref="Amazon.Personalize.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceNotFoundException">
+        /// Could not find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/StopRecommender">REST API Reference for StopRecommender Operation</seealso>
+        StopRecommenderResponse StopRecommender(StopRecommenderRequest request);
+
+
+
+        /// <summary>
+        /// Stops a recommender that is ACTIVE. Stopping a recommender halts billing and automatic
+        /// retraining for the recommender.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopRecommender service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StopRecommender service method, as returned by Personalize.</returns>
+        /// <exception cref="Amazon.Personalize.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceNotFoundException">
+        /// Could not find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/StopRecommender">REST API Reference for StopRecommender Operation</seealso>
+        Task<StopRecommenderResponse> StopRecommenderAsync(StopRecommenderRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -3843,6 +4505,120 @@ namespace Amazon.Personalize
 
         #endregion
         
+        #region  TagResource
+
+
+        /// <summary>
+        /// Add a list of tags to a resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by Personalize.</returns>
+        /// <exception cref="Amazon.Personalize.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.LimitExceededException">
+        /// The limit on the number of requests per second has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceNotFoundException">
+        /// Could not find the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.TooManyTagsException">
+        /// You have exceeded the maximum number of tags you can apply to this resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/TagResource">REST API Reference for TagResource Operation</seealso>
+        TagResourceResponse TagResource(TagResourceRequest request);
+
+
+
+        /// <summary>
+        /// Add a list of tags to a resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by Personalize.</returns>
+        /// <exception cref="Amazon.Personalize.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.LimitExceededException">
+        /// The limit on the number of requests per second has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceNotFoundException">
+        /// Could not find the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.TooManyTagsException">
+        /// You have exceeded the maximum number of tags you can apply to this resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/TagResource">REST API Reference for TagResource Operation</seealso>
+        Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UntagResource
+
+
+        /// <summary>
+        /// Remove <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a>
+        /// that are attached to a resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by Personalize.</returns>
+        /// <exception cref="Amazon.Personalize.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceNotFoundException">
+        /// Could not find the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.TooManyTagKeysException">
+        /// The request contains more tag keys than can be associated with a resource (50 tag
+        /// keys per resource).
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        UntagResourceResponse UntagResource(UntagResourceRequest request);
+
+
+
+        /// <summary>
+        /// Remove <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a>
+        /// that are attached to a resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by Personalize.</returns>
+        /// <exception cref="Amazon.Personalize.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceNotFoundException">
+        /// Could not find the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.TooManyTagKeysException">
+        /// The request contains more tag keys than can be associated with a resource (50 tag
+        /// keys per resource).
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  UpdateCampaign
 
 
@@ -3853,16 +4629,19 @@ namespace Amazon.Personalize
         ///  
         /// <para>
         /// To update a campaign, the campaign status must be ACTIVE or CREATE FAILED. Check the
-        /// campaign status using the <a>DescribeCampaign</a> API.
+        /// campaign status using the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeCampaign.html">DescribeCampaign</a>
+        /// operation.
         /// </para>
         ///  <note> 
         /// <para>
-        /// You must wait until the <code>status</code> of the updated campaign is <code>ACTIVE</code>
-        /// before asking the campaign for recommendations.
+        /// You can still get recommendations from a campaign while an update is in progress.
+        /// The campaign will use the previous solution version and campaign configuration to
+        /// generate recommendations until the latest campaign update status is <code>Active</code>.
+        /// 
         /// </para>
         ///  </note> 
         /// <para>
-        /// For more information on campaigns, see <a>CreateCampaign</a>.
+        /// For more information on campaigns, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateCampaign.html">CreateCampaign</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateCampaign service method.</param>
@@ -3889,16 +4668,19 @@ namespace Amazon.Personalize
         ///  
         /// <para>
         /// To update a campaign, the campaign status must be ACTIVE or CREATE FAILED. Check the
-        /// campaign status using the <a>DescribeCampaign</a> API.
+        /// campaign status using the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeCampaign.html">DescribeCampaign</a>
+        /// operation.
         /// </para>
         ///  <note> 
         /// <para>
-        /// You must wait until the <code>status</code> of the updated campaign is <code>ACTIVE</code>
-        /// before asking the campaign for recommendations.
+        /// You can still get recommendations from a campaign while an update is in progress.
+        /// The campaign will use the previous solution version and campaign configuration to
+        /// generate recommendations until the latest campaign update status is <code>Active</code>.
+        /// 
         /// </para>
         ///  </note> 
         /// <para>
-        /// For more information on campaigns, see <a>CreateCampaign</a>.
+        /// For more information on campaigns, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateCampaign.html">CreateCampaign</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateCampaign service method.</param>
@@ -3921,11 +4703,69 @@ namespace Amazon.Personalize
 
         #endregion
         
+        #region  UpdateMetricAttribution
+
+
+        /// <summary>
+        /// Updates a metric attribution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateMetricAttribution service method.</param>
+        /// 
+        /// <returns>The response from the UpdateMetricAttribution service method, as returned by Personalize.</returns>
+        /// <exception cref="Amazon.Personalize.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceAlreadyExistsException">
+        /// The specified resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceNotFoundException">
+        /// Could not find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/UpdateMetricAttribution">REST API Reference for UpdateMetricAttribution Operation</seealso>
+        UpdateMetricAttributionResponse UpdateMetricAttribution(UpdateMetricAttributionRequest request);
+
+
+
+        /// <summary>
+        /// Updates a metric attribution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateMetricAttribution service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateMetricAttribution service method, as returned by Personalize.</returns>
+        /// <exception cref="Amazon.Personalize.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceAlreadyExistsException">
+        /// The specified resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceNotFoundException">
+        /// Could not find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/UpdateMetricAttribution">REST API Reference for UpdateMetricAttribution Operation</seealso>
+        Task<UpdateMetricAttributionResponse> UpdateMetricAttributionAsync(UpdateMetricAttributionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  UpdateRecommender
 
 
         /// <summary>
-        /// Updates the recommender to modify the recommender configuration.
+        /// Updates the recommender to modify the recommender configuration. If you update the
+        /// recommender to modify the columns used in training, Amazon Personalize automatically
+        /// starts a full retraining of the models backing your recommender. While the update
+        /// completes, you can still get recommendations from the recommender. The recommender
+        /// uses the previous configuration until the update completes. To track the status of
+        /// this update, use the <code>latestRecommenderUpdate</code> returned in the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeRecommender.html">DescribeRecommender</a>
+        /// operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateRecommender service method.</param>
         /// 
@@ -3945,7 +4785,13 @@ namespace Amazon.Personalize
 
 
         /// <summary>
-        /// Updates the recommender to modify the recommender configuration.
+        /// Updates the recommender to modify the recommender configuration. If you update the
+        /// recommender to modify the columns used in training, Amazon Personalize automatically
+        /// starts a full retraining of the models backing your recommender. While the update
+        /// completes, you can still get recommendations from the recommender. The recommender
+        /// uses the previous configuration until the update completes. To track the status of
+        /// this update, use the <code>latestRecommenderUpdate</code> returned in the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeRecommender.html">DescribeRecommender</a>
+        /// operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateRecommender service method.</param>
         /// <param name="cancellationToken">

@@ -37,6 +37,7 @@ namespace Amazon.CloudFront.Model
         private CacheBehaviors _cacheBehaviors;
         private string _callerReference;
         private string _comment;
+        private string _continuousDeploymentPolicyId;
         private CustomErrorResponses _customErrorResponses;
         private DefaultCacheBehavior _defaultCacheBehavior;
         private string _defaultRootObject;
@@ -48,6 +49,7 @@ namespace Amazon.CloudFront.Model
         private Origins _origins;
         private PriceClass _priceClass;
         private Restrictions _restrictions;
+        private bool? _staging;
         private ViewerCertificate _viewerCertificate;
         private string _webACLId;
 
@@ -89,7 +91,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property CacheBehaviors. 
         /// <para>
-        /// A complex type that contains zero or more <code>CacheBehavior</code> elements. 
+        /// A complex type that contains zero or more <code>CacheBehavior</code> elements.
         /// </para>
         /// </summary>
         public CacheBehaviors CacheBehaviors
@@ -138,11 +140,10 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Comment. 
         /// <para>
-        /// An optional comment to describe the distribution. The comment cannot be longer than
-        /// 128 characters.
+        /// A comment to describe the distribution. The comment cannot be longer than 128 characters.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public string Comment
         {
             get { return this._comment; }
@@ -153,6 +154,24 @@ namespace Amazon.CloudFront.Model
         internal bool IsSetComment()
         {
             return this._comment != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ContinuousDeploymentPolicyId. 
+        /// <para>
+        /// The identifier of a continuous deployment policy. For more information, see <code>CreateContinuousDeploymentPolicy</code>.
+        /// </para>
+        /// </summary>
+        public string ContinuousDeploymentPolicyId
+        {
+            get { return this._continuousDeploymentPolicyId; }
+            set { this._continuousDeploymentPolicyId = value; }
+        }
+
+        // Check to see if ContinuousDeploymentPolicyId property is set
+        internal bool IsSetContinuousDeploymentPolicyId()
+        {
+            return this._continuousDeploymentPolicyId != null;
         }
 
         /// <summary>
@@ -212,8 +231,8 @@ namespace Amazon.CloudFront.Model
         /// Gets and sets the property DefaultRootObject. 
         /// <para>
         /// The object that you want CloudFront to request from your origin (for example, <code>index.html</code>)
-        /// when a viewer requests the root URL for your distribution (<code>http://www.example.com</code>)
-        /// instead of an object in your distribution (<code>http://www.example.com/product-description.html</code>).
+        /// when a viewer requests the root URL for your distribution (<code>https://www.example.com</code>)
+        /// instead of an object in your distribution (<code>https://www.example.com/product-description.html</code>).
         /// Specifying a default root object avoids exposing the contents of your distribution.
         /// </para>
         ///  
@@ -276,20 +295,24 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property HttpVersion. 
         /// <para>
-        /// (Optional) Specify the maximum HTTP version that you want viewers to use to communicate
-        /// with CloudFront. The default value for new web distributions is http2. Viewers that
-        /// don't support HTTP/2 automatically use an earlier HTTP version.
+        /// (Optional) Specify the maximum HTTP version(s) that you want viewers to use to communicate
+        /// with CloudFront. The default value for new web distributions is <code>http2</code>.
+        /// Viewers that don't support HTTP/2 automatically use an earlier HTTP version.
         /// </para>
         ///  
         /// <para>
-        /// For viewers and CloudFront to use HTTP/2, viewers must support TLS 1.2 or later, and
-        /// must support Server Name Identification (SNI).
+        /// For viewers and CloudFront to use HTTP/2, viewers must support TLSv1.2 or later, and
+        /// must support Server Name Indication (SNI).
         /// </para>
         ///  
         /// <para>
-        /// In general, configuring CloudFront to communicate with viewers using HTTP/2 reduces
-        /// latency. You can improve performance by optimizing for HTTP/2. For more information,
-        /// do an Internet search for "http/2 optimization." 
+        /// For viewers and CloudFront to use HTTP/3, viewers must support TLSv1.3 and Server
+        /// Name Indication (SNI). CloudFront supports HTTP/3 connection migration to allow the
+        /// viewer to switch networks without losing connection. For more information about connection
+        /// migration, see <a href="https://www.rfc-editor.org/rfc/rfc9000.html#name-connection-migration">Connection
+        /// Migration</a> at RFC 9000. For more information about supported TLSv1.3 ciphers, see
+        /// <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/secure-connections-supported-viewer-protocols-ciphers.html">Supported
+        /// protocols and ciphers between viewers and CloudFront</a>.
         /// </para>
         /// </summary>
         public HttpVersion HttpVersion
@@ -311,7 +334,7 @@ namespace Amazon.CloudFront.Model
         /// distribution, specify <code>true</code>. If you specify <code>false</code>, CloudFront
         /// responds to IPv6 DNS requests with the DNS response code <code>NOERROR</code> and
         /// with no IP addresses. This allows viewers to submit a second request, for an IPv4
-        /// address for your distribution. 
+        /// address for your distribution.
         /// </para>
         ///  
         /// <para>
@@ -390,7 +413,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property OriginGroups. 
         /// <para>
-        ///  A complex type that contains information about origin groups for this distribution.
+        /// A complex type that contains information about origin groups for this distribution.
         /// </para>
         /// </summary>
         public OriginGroups OriginGroups
@@ -408,7 +431,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Origins. 
         /// <para>
-        /// A complex type that contains information about origins for this distribution. 
+        /// A complex type that contains information about origins for this distribution.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -479,9 +502,29 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Staging. 
+        /// <para>
+        /// A Boolean that indicates whether this is a staging distribution. When this value is
+        /// <code>true</code>, this is a staging distribution. When this value is <code>false</code>,
+        /// this is not a staging distribution.
+        /// </para>
+        /// </summary>
+        public bool Staging
+        {
+            get { return this._staging.GetValueOrDefault(); }
+            set { this._staging = value; }
+        }
+
+        // Check to see if Staging property is set
+        internal bool IsSetStaging()
+        {
+            return this._staging.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property ViewerCertificate. 
         /// <para>
-        /// A complex type that determines the distribution’s SSL/TLS configuration for communicating
+        /// A complex type that determines the distribution's SSL/TLS configuration for communicating
         /// with viewers.
         /// </para>
         /// </summary>
@@ -514,7 +557,7 @@ namespace Amazon.CloudFront.Model
         /// content or with an HTTP 403 status code (Forbidden). You can also configure CloudFront
         /// to return a custom error page when a request is blocked. For more information about
         /// WAF, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/what-is-aws-waf.html">WAF
-        /// Developer Guide</a>. 
+        /// Developer Guide</a>.
         /// </para>
         /// </summary>
         public string WebACLId

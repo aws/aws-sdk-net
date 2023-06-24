@@ -211,10 +211,7 @@ namespace Amazon.EKS
         ///  
         /// <para>
         /// Amazon EKS add-ons help to automate the provisioning and lifecycle management of common
-        /// operational software for Amazon EKS clusters. Amazon EKS add-ons require clusters
-        /// running version 1.18 or later because Amazon EKS add-ons rely on the Server-side Apply
-        /// Kubernetes feature, which is only available in Kubernetes 1.18 and later. For more
-        /// information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-add-ons.html">Amazon
+        /// operational software for Amazon EKS clusters. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-add-ons.html">Amazon
         /// EKS add-ons</a> in the <i>Amazon EKS User Guide</i>.
         /// </para>
         /// </summary>
@@ -490,10 +487,15 @@ namespace Amazon.EKS
         /// <para>
         /// An Amazon EKS managed node group is an Amazon EC2 Auto Scaling group and associated
         /// Amazon EC2 instances that are managed by Amazon Web Services for an Amazon EKS cluster.
-        /// Each node group uses a version of the Amazon EKS optimized Amazon Linux 2 AMI. For
-        /// more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/managed-node-groups.html">Managed
-        /// Node Groups</a> in the <i>Amazon EKS User Guide</i>. 
+        /// For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/managed-node-groups.html">Managed
+        /// node groups</a> in the <i>Amazon EKS User Guide</i>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Windows AMI types are only supported for commercial Regions that support Windows Amazon
+        /// EKS.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateNodegroup service method.</param>
         /// 
@@ -949,11 +951,64 @@ namespace Amazon.EKS
 
         #endregion
         
+        #region  DescribeAddonConfiguration
+
+
+        /// <summary>
+        /// Returns configuration options.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAddonConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAddonConfiguration service method, as returned by EKS.</returns>
+        /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
+        /// The specified resource could not be found. You can view your available clusters with
+        /// <a>ListClusters</a>. You can view your available managed node groups with <a>ListNodegroups</a>.
+        /// Amazon EKS clusters and node groups are Region-specific.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeAddonConfiguration">REST API Reference for DescribeAddonConfiguration Operation</seealso>
+        DescribeAddonConfigurationResponse DescribeAddonConfiguration(DescribeAddonConfigurationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeAddonConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAddonConfiguration operation on AmazonEKSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeAddonConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeAddonConfiguration">REST API Reference for DescribeAddonConfiguration Operation</seealso>
+        IAsyncResult BeginDescribeAddonConfiguration(DescribeAddonConfigurationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeAddonConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeAddonConfiguration.</param>
+        /// 
+        /// <returns>Returns a  DescribeAddonConfigurationResult from EKS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeAddonConfiguration">REST API Reference for DescribeAddonConfiguration Operation</seealso>
+        DescribeAddonConfigurationResponse EndDescribeAddonConfiguration(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribeAddonVersions
 
 
         /// <summary>
-        /// Describes the Kubernetes versions that the add-on can be used with.
+        /// Describes the versions for an add-on. Information such as the Kubernetes versions
+        /// that you can use the add-on with, the <code>owner</code>, <code>publisher</code>,
+        /// and the <code>type</code> of the add-on are returned.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAddonVersions service method.</param>
         /// 
@@ -1249,7 +1304,7 @@ namespace Amazon.EKS
 
         /// <summary>
         /// Returns descriptive information about an update against your Amazon EKS cluster or
-        /// associated managed node group.
+        /// associated managed node group or Amazon EKS add-on.
         /// 
         ///  
         /// <para>
@@ -1824,7 +1879,7 @@ namespace Amazon.EKS
         /// You have encountered a service limit on the specified resource.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ResourcePropagationDelayException">
-        /// Required resources (such as Service Linked Roles) were created and are still propagating.
+        /// Required resources (such as service-linked roles) were created and are still propagating.
         /// Retry later.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ServerException">
@@ -2294,8 +2349,10 @@ namespace Amazon.EKS
         /// AMI version of a node group's current Kubernetes version by not specifying a Kubernetes
         /// version in the request. You can update to the latest AMI version of your cluster's
         /// current Kubernetes version by specifying your cluster's Kubernetes version in the
-        /// request. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon
-        /// EKS optimized Amazon Linux 2 AMI versions</a> in the <i>Amazon EKS User Guide</i>.
+        /// request. For information about Linux versions, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon
+        /// EKS optimized Amazon Linux AMI versions</a> in the <i>Amazon EKS User Guide</i>. For
+        /// information about Windows versions, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-ami-versions-windows.html">Amazon
+        /// EKS optimized Windows AMI versions</a> in the <i>Amazon EKS User Guide</i>. 
         /// </para>
         ///  
         /// <para>

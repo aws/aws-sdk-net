@@ -69,8 +69,8 @@ namespace Amazon.CodeArtifact.Model
         /// <summary>
         /// Gets and sets the property DomainOwner. 
         /// <para>
-        ///  The 12-digit account number of the AWS account that owns the domain. It does not
-        /// include dashes or spaces. 
+        ///  The 12-digit account number of the Amazon Web Services account that owns the domain.
+        /// It does not include dashes or spaces. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=12)]
@@ -93,7 +93,7 @@ namespace Amazon.CodeArtifact.Model
         /// policy on the provided domain. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=5120)]
+        [AWSProperty(Required=true, Min=1, Max=7168)]
         public string PolicyDocument
         {
             get { return this._policyDocument; }

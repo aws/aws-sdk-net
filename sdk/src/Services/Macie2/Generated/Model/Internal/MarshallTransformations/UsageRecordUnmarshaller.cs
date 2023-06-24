@@ -70,6 +70,12 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
                     unmarshalledObject.AccountId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("automatedDiscoveryFreeTrialStartDate", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.AutomatedDiscoveryFreeTrialStartDate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("freeTrialStartDate", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

@@ -56,7 +56,7 @@ namespace Amazon.ChimeSDKIdentity.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ChimeSDKIdentity");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-04-20";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-04-20";
             request.HttpMethod = "POST";
 
             request.AddSubResource("operation", "tag-resource");
@@ -88,7 +88,6 @@ namespace Amazon.ChimeSDKIdentity.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

@@ -34,7 +34,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// InstanceFleetConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class InstanceFleetConfigMarshaller : IRequestMarshaller<InstanceFleetConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -84,6 +84,17 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Name);
             }
 
+            if(requestObject.IsSetResizeSpecifications())
+            {
+                context.Writer.WritePropertyName("ResizeSpecifications");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = InstanceFleetResizingSpecificationsMarshaller.Instance;
+                marshaller.Marshall(requestObject.ResizeSpecifications, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetTargetOnDemandCapacity())
             {
                 context.Writer.WritePropertyName("TargetOnDemandCapacity");
@@ -100,7 +111,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static InstanceFleetConfigMarshaller Instance = new InstanceFleetConfigMarshaller();
 
     }

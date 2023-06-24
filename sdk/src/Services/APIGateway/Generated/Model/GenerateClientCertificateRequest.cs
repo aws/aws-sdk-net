@@ -30,7 +30,7 @@ namespace Amazon.APIGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the GenerateClientCertificate operation.
-    /// Generates a <a>ClientCertificate</a> resource.
+    /// Generates a ClientCertificate resource.
     /// </summary>
     public partial class GenerateClientCertificateRequest : AmazonAPIGatewayRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description of the <a>ClientCertificate</a>.
+        /// The description of the ClientCertificate.
         /// </para>
         /// </summary>
         public string Description

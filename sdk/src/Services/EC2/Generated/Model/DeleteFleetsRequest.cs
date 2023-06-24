@@ -30,7 +30,7 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteFleets operation.
-    /// Deletes the specified EC2 Fleet.
+    /// Deletes the specified EC2 Fleets.
     /// 
     ///  
     /// <para>
@@ -38,7 +38,7 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  
     /// <para>
-    /// You must specify whether a deleted EC2 Fleet should also terminate its instances.
+    /// You must also specify whether a deleted EC2 Fleet should terminate its instances.
     /// If you choose to terminate the instances, the EC2 Fleet enters the <code>deleted_terminating</code>
     /// state. Otherwise, the EC2 Fleet enters the <code>deleted_running</code> state, and
     /// the instances continue to run until they are interrupted or you terminate them manually.
@@ -64,7 +64,7 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-ec2-fleet.html#delete-fleet">Deleting
+    /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-ec2-fleet.html#delete-fleet">Delete
     /// an EC2 Fleet</a> in the <i>Amazon EC2 User Guide</i>.
     /// </para>
     /// </summary>
@@ -95,12 +95,12 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property TerminateInstances. 
         /// <para>
-        /// Indicates whether to terminate the instances when the EC2 Fleet is deleted. The default
-        /// is to terminate the instances.
+        /// Indicates whether to terminate the associated instances when the EC2 Fleet is deleted.
+        /// The default is to terminate the instances.
         /// </para>
         ///  
         /// <para>
-        /// To let the instances continue to run after the EC2 Fleet is deleted, specify <code>NoTerminateInstances</code>.
+        /// To let the instances continue to run after the EC2 Fleet is deleted, specify <code>no-terminate-instances</code>.
         /// Supported only for fleets of type <code>maintain</code> and <code>request</code>.
         /// </para>
         ///  

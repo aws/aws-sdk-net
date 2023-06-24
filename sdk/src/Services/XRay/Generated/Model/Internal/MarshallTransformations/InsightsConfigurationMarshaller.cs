@@ -34,7 +34,7 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// InsightsConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class InsightsConfigurationMarshaller : IRequestMarshaller<InsightsConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static InsightsConfigurationMarshaller Instance = new InsightsConfigurationMarshaller();
 
     }

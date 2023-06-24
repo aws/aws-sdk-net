@@ -30,7 +30,18 @@ namespace Amazon.Kendra.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateFaq operation.
-    /// Creates an new set of frequently asked question (FAQ) questions and answers.
+    /// Creates a set of frequently ask questions (FAQs) using a specified FAQ file stored
+    /// in an Amazon S3 bucket.
+    /// 
+    ///  
+    /// <para>
+    /// Adding FAQs to an index is an asynchronous operation.
+    /// </para>
+    ///  
+    /// <para>
+    /// For an example of adding an FAQ to an index using Python and Java SDKs, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-creating-faq.html#using-faq-file">Using
+    /// your FAQ file</a>.
+    /// </para>
     /// </summary>
     public partial class CreateFaqRequest : AmazonKendraRequest
     {
@@ -48,8 +59,8 @@ namespace Amazon.Kendra.Model
         /// Gets and sets the property ClientToken. 
         /// <para>
         /// A token that you provide to identify the request to create a FAQ. Multiple calls to
-        /// the <code>CreateFaqRequest</code> operation with the same client token will create
-        /// only one FAQ. 
+        /// the <code>CreateFaqRequest</code> API with the same client token will create only
+        /// one FAQ. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -68,7 +79,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// A description of the FAQ.
+        /// A description for the FAQ.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1000)]
@@ -87,9 +98,13 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property FileFormat. 
         /// <para>
-        /// The format of the input file. You can choose between a basic CSV format, a CSV format
-        /// that includes customs attributes in a header, and a JSON format that includes custom
-        /// attributes.
+        /// The format of the FAQ input file. You can choose between a basic CSV format, a CSV
+        /// format that includes customs attributes in a header, and a JSON format that includes
+        /// custom attributes.
+        /// </para>
+        ///  
+        /// <para>
+        /// The default format is CSV.
         /// </para>
         ///  
         /// <para>
@@ -117,7 +132,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property IndexId. 
         /// <para>
-        /// The identifier of the index that contains the FAQ.
+        /// The identifier of the index for the FAQ.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]
@@ -158,7 +173,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name that should be associated with the FAQ.
+        /// A name for the FAQ.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
@@ -177,9 +192,9 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of a role with permission to access the S3 bucket that
-        /// contains the FAQs. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM
-        /// Roles for Amazon Kendra</a>.
+        /// The Amazon Resource Name (ARN) of an IAM role with permission to access the S3 bucket
+        /// that contains the FAQs. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM
+        /// access roles for Amazon Kendra</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=1284)]
@@ -198,7 +213,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property S3Path. 
         /// <para>
-        /// The S3 location of the FAQ input data.
+        /// The path to the FAQ file in S3.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

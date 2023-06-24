@@ -51,7 +51,7 @@ namespace Amazon.Personalize.Model
     /// </para>
     ///  
     /// <para>
-    /// For more information on campaigns, see <a>CreateCampaign</a>.
+    /// For more information on campaigns, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateCampaign.html">CreateCampaign</a>.
     /// </para>
     /// </summary>
     public partial class DescribeCampaignRequest : AmazonPersonalizeRequest

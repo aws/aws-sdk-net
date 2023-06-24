@@ -34,7 +34,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// MsSmoothOutputSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class MsSmoothOutputSettingsMarshaller : IRequestMarshaller<MsSmoothOutputSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static MsSmoothOutputSettingsMarshaller Instance = new MsSmoothOutputSettingsMarshaller();
 
     }

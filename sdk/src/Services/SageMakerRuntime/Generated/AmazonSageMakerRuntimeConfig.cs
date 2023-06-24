@@ -17,22 +17,22 @@
  * Do not modify this file. This file is generated from the runtime.sagemaker-2017-05-13.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
-
+using Amazon.SageMakerRuntime.Internal;
 
 namespace Amazon.SageMakerRuntime
 {
     /// <summary>
     /// Configuration for accessing Amazon SageMakerRuntime service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonSageMakerRuntimeConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.2.0");
+            InternalSDKUtils.BuildUserAgentString("3.7.102.42");
 
         private string _userAgent = UserAgentString;
 
@@ -40,8 +40,10 @@ namespace Amazon.SageMakerRuntime
         /// Default constructor
         /// </summary>
         public AmazonSageMakerRuntimeConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonSageMakerRuntimeDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "sagemaker";
+            this.EndpointProvider = new AmazonSageMakerRuntimeEndpointProvider();
         }
 
         /// <summary>
@@ -76,5 +78,6 @@ namespace Amazon.SageMakerRuntime
                 return _userAgent;
             }
         }
+
     }
 }

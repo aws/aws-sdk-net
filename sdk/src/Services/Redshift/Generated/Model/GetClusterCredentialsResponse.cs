@@ -44,6 +44,7 @@ namespace Amazon.Redshift.Model
         /// to log on to the database <code>DbName</code>. 
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string DbPassword
         {
             get { return this._dbPassword; }
@@ -61,7 +62,7 @@ namespace Amazon.Redshift.Model
         /// <para>
         /// A database user name that is authorized to log on to the database <code>DbName</code>
         /// using the password <code>DbPassword</code>. If the specified DbUser exists in the
-        /// database, the new user name has the same database privileges as the the user named
+        /// database, the new user name has the same database permissions as the the user named
         /// in DbUser. By default, the user is added to PUBLIC. If the <code>DbGroups</code> parameter
         /// is specifed, <code>DbUser</code> is added to the listed groups for any sessions created
         /// using these credentials.

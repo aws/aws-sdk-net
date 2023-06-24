@@ -33,10 +33,34 @@ namespace Amazon.FSx.Model
     /// </summary>
     public partial class UpdateFileSystemOntapConfiguration
     {
+        private List<string> _addRouteTableIds = new List<string>();
         private int? _automaticBackupRetentionDays;
         private string _dailyAutomaticBackupStartTime;
+        private DiskIopsConfiguration _diskIopsConfiguration;
         private string _fsxAdminPassword;
+        private List<string> _removeRouteTableIds = new List<string>();
+        private int? _throughputCapacity;
         private string _weeklyMaintenanceStartTime;
+
+        /// <summary>
+        /// Gets and sets the property AddRouteTableIds. 
+        /// <para>
+        /// (Multi-AZ only) A list of IDs of new virtual private cloud (VPC) route tables to associate
+        /// (add) with your Amazon FSx for NetApp ONTAP file system.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=50)]
+        public List<string> AddRouteTableIds
+        {
+            get { return this._addRouteTableIds; }
+            set { this._addRouteTableIds = value; }
+        }
+
+        // Check to see if AddRouteTableIds property is set
+        internal bool IsSetAddRouteTableIds()
+        {
+            return this._addRouteTableIds != null && this._addRouteTableIds.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property AutomaticBackupRetentionDays.
@@ -71,12 +95,39 @@ namespace Amazon.FSx.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FsxAdminPassword. 
+        /// Gets and sets the property DiskIopsConfiguration. 
         /// <para>
-        /// The ONTAP administrative password for the <code>fsxadmin</code> user.
+        /// The SSD IOPS (input output operations per second) configuration for an Amazon FSx
+        /// for NetApp ONTAP file system. The default is 3 IOPS per GB of storage capacity, but
+        /// you can provision additional IOPS per GB of storage. The configuration consists of
+        /// an IOPS mode (<code>AUTOMATIC</code> or <code>USER_PROVISIONED</code>), and in the
+        /// case of <code>USER_PROVISIONED</code> IOPS, the total number of SSD IOPS provisioned.
+        /// For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/increase-primary-storage.html">Updating
+        /// SSD storage capacity and IOPS</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=8, Max=50)]
+        public DiskIopsConfiguration DiskIopsConfiguration
+        {
+            get { return this._diskIopsConfiguration; }
+            set { this._diskIopsConfiguration = value; }
+        }
+
+        // Check to see if DiskIopsConfiguration property is set
+        internal bool IsSetDiskIopsConfiguration()
+        {
+            return this._diskIopsConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FsxAdminPassword. 
+        /// <para>
+        /// Update the password for the <code>fsxadmin</code> user by entering a new password.
+        /// You use the <code>fsxadmin</code> user to access the NetApp ONTAP CLI and REST API
+        /// to manage your file system resources. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-resources-ontap-apps.html">Managing
+        /// resources using NetApp Applicaton</a>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Min=8, Max=50)]
         public string FsxAdminPassword
         {
             get { return this._fsxAdminPassword; }
@@ -87,6 +138,49 @@ namespace Amazon.FSx.Model
         internal bool IsSetFsxAdminPassword()
         {
             return this._fsxAdminPassword != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RemoveRouteTableIds. 
+        /// <para>
+        /// (Multi-AZ only) A list of IDs of existing virtual private cloud (VPC) route tables
+        /// to disassociate (remove) from your Amazon FSx for NetApp ONTAP file system. You can
+        /// use the API operation to retrieve the list of VPC route table IDs for a file system.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=50)]
+        public List<string> RemoveRouteTableIds
+        {
+            get { return this._removeRouteTableIds; }
+            set { this._removeRouteTableIds = value; }
+        }
+
+        // Check to see if RemoveRouteTableIds property is set
+        internal bool IsSetRemoveRouteTableIds()
+        {
+            return this._removeRouteTableIds != null && this._removeRouteTableIds.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ThroughputCapacity. 
+        /// <para>
+        /// Enter a new value to change the amount of throughput capacity for the file system.
+        /// Throughput capacity is measured in megabytes per second (MBps). Valid values are 128,
+        /// 256, 512, 1024, 2048, and 4096 MBps. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-throughput-capacity.html">Managing
+        /// throughput capacity</a> in the FSx for ONTAP User Guide.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=8, Max=100000)]
+        public int ThroughputCapacity
+        {
+            get { return this._throughputCapacity.GetValueOrDefault(); }
+            set { this._throughputCapacity = value; }
+        }
+
+        // Check to see if ThroughputCapacity property is set
+        internal bool IsSetThroughputCapacity()
+        {
+            return this._throughputCapacity.HasValue; 
         }
 
         /// <summary>

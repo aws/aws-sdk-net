@@ -4,21 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Xml;
-using System.Text;
-using System.Threading.Tasks;
-using System.Text.RegularExpressions;
-
 namespace ServiceClientGenerator
 {
     public static class Utils
     {
-        // Regex used to evaluate if the service name contains any special characters except alphanumeric and underscore.
-        private readonly static Regex EvaluateSpecialCharacters = new Regex("[^a-zA-Z0-9 ]+");
-        // Regex used to evaluate if the service name begins with digits
-        private readonly static Regex EvaluateBeginningWithDigits = new Regex("^[0-9]+");
-        // Regex to evaluate if the final service name adheres to the Service id spec. The Regex has picked from the spec.
-        private readonly static Regex EvaluateServiceName = new Regex("^[a-zA-Z][a-zA-Z0-9]*( [a-zA-Z0-9]+)*$");
-
         public static string GetVersion(string fileVersionText)
         {
             var fileVersion = new Version(fileVersionText);
@@ -27,7 +16,7 @@ namespace ServiceClientGenerator
             return text;
         }
 
-        public static int IndexOfNthOccurence(this string self, char value, int startIndex, int n)
+        public static int IndexOfNthOccurrence(this string self, char value, int startIndex, int n)
         {
             int index = startIndex;
             for (int i = 0; i < n; i++)
@@ -162,26 +151,25 @@ namespace ServiceClientGenerator
                 : data.ToString();
         }
 
-        /// <summary>
-        /// Method to determine the service name as per Appendix A of the Service id spec
-        /// </summary>
-        /// <returns></returns>
-        public static string DetermineServiceId(string serviceAbbreviation, string serviceFullName)
+        public static List<string> GetServiceDirectories(GeneratorOptions options)
         {
-            var name = serviceAbbreviation;
-            if (string.IsNullOrEmpty(name))
+            var serviceDirectories = new List<string>();
+            if (string.IsNullOrEmpty(options.ServiceModels))
             {
-                name = serviceFullName;
+                serviceDirectories.AddRange(Directory.GetDirectories(options.ModelsFolder));
+                serviceDirectories.AddRange(Directory.GetDirectories(options.TestModelsFolder));
             }
-            name = name.Replace("Amazon", string.Empty).Replace("AWS", string.Empty).Trim();
-            name = EvaluateSpecialCharacters.Replace(name, string.Empty);
-            name = EvaluateBeginningWithDigits.Replace(name, string.Empty);
-            Match match = EvaluateServiceName.Match(name);
-            if (match.Success)
+            else
             {
-                return name;
+                var services = options.ServiceModels.Split(';');
+                // only get specified models folders
+                foreach (var service in services)
+                {
+                    serviceDirectories.AddRange(Directory.GetDirectories(options.ModelsFolder, service));
+                    serviceDirectories.AddRange(Directory.GetDirectories(options.TestModelsFolder, service));
+                }
             }
-            return null;
+            return serviceDirectories;
         }
     }
 }

@@ -54,6 +54,7 @@ namespace Amazon.CodeDeploy.Model
         private bool? _ignoreApplicationStopFailures;
         private bool? _instanceTerminationWaitTimeStarted;
         private LoadBalancerInfo _loadBalancerInfo;
+        private AlarmConfiguration _overrideAlarmConfiguration;
         private RevisionLocation _previousRevision;
         private RelatedDeployments _relatedDeployments;
         private RevisionLocation _revision;
@@ -212,7 +213,7 @@ namespace Amazon.CodeDeploy.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>CodeDeployAutoUpdate</code>: An auto-update process created the deployment
-        /// when it detected outdated EC2 instances.
+        /// when it detected outdated Amazon EC2 instances.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -397,7 +398,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property FileExistsBehavior. 
         /// <para>
-        /// Information about how AWS CodeDeploy handles files that already exist in a deployment
+        /// Information about how CodeDeploy handles files that already exist in a deployment
         /// target location but weren't part of the previous successful deployment.
         /// </para>
         ///  <ul> <li> 
@@ -449,7 +450,7 @@ namespace Amazon.CodeDeploy.Model
         /// </para>
         ///  
         /// <para>
-        ///  During a deployment, the AWS CodeDeploy agent runs the scripts specified for <code>ApplicationStop</code>,
+        ///  During a deployment, the CodeDeploy agent runs the scripts specified for <code>ApplicationStop</code>,
         /// <code>BeforeBlockTraffic</code>, and <code>AfterBlockTraffic</code> in the AppSpec
         /// file from the previous successful deployment. (All other scripts are run from the
         /// AppSpec file in the current deployment.) If one of these scripts contains an error
@@ -511,6 +512,21 @@ namespace Amazon.CodeDeploy.Model
         internal bool IsSetLoadBalancerInfo()
         {
             return this._loadBalancerInfo != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OverrideAlarmConfiguration.
+        /// </summary>
+        public AlarmConfiguration OverrideAlarmConfiguration
+        {
+            get { return this._overrideAlarmConfiguration; }
+            set { this._overrideAlarmConfiguration = value; }
+        }
+
+        // Check to see if OverrideAlarmConfiguration property is set
+        internal bool IsSetOverrideAlarmConfiguration()
+        {
+            return this._overrideAlarmConfiguration != null;
         }
 
         /// <summary>

@@ -34,7 +34,7 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ViewFrame Marshaller
-    /// </summary>       
+    /// </summary>
     public class ViewFrameMarshaller : IRequestMarshaller<ViewFrame, JsonMarshallerContext> 
     {
         /// <summary>
@@ -90,7 +90,7 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ViewFrameMarshaller Instance = new ViewFrameMarshaller();
 
     }

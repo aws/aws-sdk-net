@@ -29,12 +29,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// The result of an <code>UpdateDomain</code> request. Contains the status of the domain
+    /// The results of an <code>UpdateDomain</code> request. Contains the status of the domain
     /// being updated.
     /// </summary>
     public partial class UpdateDomainConfigResponse : AmazonWebServiceResponse
     {
         private DomainConfig _domainConfig;
+        private DryRunProgressStatus _dryRunProgressStatus;
         private DryRunResults _dryRunResults;
 
         /// <summary>
@@ -57,9 +58,27 @@ namespace Amazon.OpenSearchService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DryRunProgressStatus. 
+        /// <para>
+        /// The status of the dry run being performed on the domain, if any.
+        /// </para>
+        /// </summary>
+        public DryRunProgressStatus DryRunProgressStatus
+        {
+            get { return this._dryRunProgressStatus; }
+            set { this._dryRunProgressStatus = value; }
+        }
+
+        // Check to see if DryRunProgressStatus property is set
+        internal bool IsSetDryRunProgressStatus()
+        {
+            return this._dryRunProgressStatus != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property DryRunResults. 
         /// <para>
-        /// Contains result of DryRun. 
+        /// Results of the dry run performed in the update domain request.
         /// </para>
         /// </summary>
         public DryRunResults DryRunResults

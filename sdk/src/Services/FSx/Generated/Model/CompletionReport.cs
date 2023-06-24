@@ -96,8 +96,7 @@ namespace Amazon.FSx.Model
         /// <code>Path</code> you provide must be located within the file system’s ExportPath.
         /// An example <code>Path</code> value is "s3://myBucket/myExportPath/optionalPrefix".
         /// The report provides the following information for each file in the report: FilePath,
-        /// FileStatus, and ErrorCode. To learn more about a file system's <code>ExportPath</code>,
-        /// see . 
+        /// FileStatus, and ErrorCode.
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=4357)]

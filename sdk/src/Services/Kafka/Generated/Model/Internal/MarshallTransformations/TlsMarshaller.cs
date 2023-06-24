@@ -34,7 +34,7 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Tls Marshaller
-    /// </summary>       
+    /// </summary>
     public class TlsMarshaller : IRequestMarshaller<Tls, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static TlsMarshaller Instance = new TlsMarshaller();
 
     }

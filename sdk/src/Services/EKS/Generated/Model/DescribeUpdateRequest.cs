@@ -31,7 +31,7 @@ namespace Amazon.EKS.Model
     /// <summary>
     /// Container for the parameters to the DescribeUpdate operation.
     /// Returns descriptive information about an update against your Amazon EKS cluster or
-    /// associated managed node group.
+    /// associated managed node group or Amazon EKS add-on.
     /// 
     ///  
     /// <para>
@@ -51,7 +51,8 @@ namespace Amazon.EKS.Model
         /// Gets and sets the property AddonName. 
         /// <para>
         /// The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html">
-        /// <code>ListAddons</code> </a>.
+        /// <code>ListAddons</code> </a>. This parameter is required if the update is an add-on
+        /// update.
         /// </para>
         /// </summary>
         public string AddonName
@@ -88,7 +89,8 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property NodegroupName. 
         /// <para>
-        /// The name of the Amazon EKS node group associated with the update.
+        /// The name of the Amazon EKS node group associated with the update. This parameter is
+        /// required if the update is a node group update.
         /// </para>
         /// </summary>
         public string NodegroupName

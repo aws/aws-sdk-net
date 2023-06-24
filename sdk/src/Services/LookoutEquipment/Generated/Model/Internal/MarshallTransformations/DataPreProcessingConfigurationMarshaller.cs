@@ -34,7 +34,7 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DataPreProcessingConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class DataPreProcessingConfigurationMarshaller : IRequestMarshaller<DataPreProcessingConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DataPreProcessingConfigurationMarshaller Instance = new DataPreProcessingConfigurationMarshaller();
 
     }

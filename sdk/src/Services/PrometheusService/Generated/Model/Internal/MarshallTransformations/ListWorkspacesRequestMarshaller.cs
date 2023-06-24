@@ -55,7 +55,7 @@ namespace Amazon.PrometheusService.Model.Internal.MarshallTransformations
         public IRequest Marshall(ListWorkspacesRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.PrometheusService");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-08-01";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-08-01";
             request.HttpMethod = "GET";
 
             

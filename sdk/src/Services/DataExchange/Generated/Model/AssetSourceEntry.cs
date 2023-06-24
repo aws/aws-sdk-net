@@ -39,7 +39,7 @@ namespace Amazon.DataExchange.Model
         /// <summary>
         /// Gets and sets the property Bucket. 
         /// <para>
-        /// The S3 bucket that's part of the source of the asset.
+        /// The Amazon S3 bucket that's part of the source of the asset.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -34,7 +34,7 @@ namespace Amazon.Translate.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// TranslationSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class TranslationSettingsMarshaller : IRequestMarshaller<TranslationSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -45,6 +45,12 @@ namespace Amazon.Translate.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(TranslationSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetFormality())
+            {
+                context.Writer.WritePropertyName("Formality");
+                context.Writer.Write(requestObject.Formality);
+            }
+
             if(requestObject.IsSetProfanity())
             {
                 context.Writer.WritePropertyName("Profanity");
@@ -55,7 +61,7 @@ namespace Amazon.Translate.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static TranslationSettingsMarshaller Instance = new TranslationSettingsMarshaller();
 
     }

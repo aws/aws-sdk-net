@@ -34,7 +34,7 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// HPOConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class HPOConfigMarshaller : IRequestMarshaller<HPOConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -82,7 +82,7 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static HPOConfigMarshaller Instance = new HPOConfigMarshaller();
 
     }

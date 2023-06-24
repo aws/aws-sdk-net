@@ -34,7 +34,26 @@ namespace Amazon.MediaTailor.Model
     /// </summary>
     public partial class ScheduleConfiguration
     {
+        private ClipRange _clipRange;
         private Transition _transition;
+
+        /// <summary>
+        /// Gets and sets the property ClipRange. 
+        /// <para>
+        /// Program clip range configuration.
+        /// </para>
+        /// </summary>
+        public ClipRange ClipRange
+        {
+            get { return this._clipRange; }
+            set { this._clipRange = value; }
+        }
+
+        // Check to see if ClipRange property is set
+        internal bool IsSetClipRange()
+        {
+            return this._clipRange != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Transition. 

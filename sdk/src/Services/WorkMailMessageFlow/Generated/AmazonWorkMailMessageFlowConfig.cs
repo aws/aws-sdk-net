@@ -17,22 +17,22 @@
  * Do not modify this file. This file is generated from the workmailmessageflow-2019-05-01.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
-
+using Amazon.WorkMailMessageFlow.Internal;
 
 namespace Amazon.WorkMailMessageFlow
 {
     /// <summary>
     /// Configuration for accessing Amazon WorkMailMessageFlow service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonWorkMailMessageFlowConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.105");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.147");
 
         private string _userAgent = UserAgentString;
 
@@ -40,8 +40,10 @@ namespace Amazon.WorkMailMessageFlow
         /// Default constructor
         /// </summary>
         public AmazonWorkMailMessageFlowConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonWorkMailMessageFlowDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "workmailmessageflow";
+            this.EndpointProvider = new AmazonWorkMailMessageFlowEndpointProvider();
         }
 
         /// <summary>
@@ -76,5 +78,6 @@ namespace Amazon.WorkMailMessageFlow
                 return _userAgent;
             }
         }
+
     }
 }

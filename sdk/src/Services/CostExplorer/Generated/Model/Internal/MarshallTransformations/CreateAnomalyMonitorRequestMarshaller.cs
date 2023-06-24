@@ -58,7 +58,7 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
             string target = "AWSInsightsIndexService.CreateAnomalyMonitor";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-10-25";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-10-25";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -78,7 +78,22 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
-        
+                if(publicRequest.IsSetResourceTags())
+                {
+                    context.Writer.WritePropertyName("ResourceTags");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestResourceTagsListValue in publicRequest.ResourceTags)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ResourceTagMarshaller.Instance;
+                        marshaller.Marshall(publicRequestResourceTagsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

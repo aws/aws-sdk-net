@@ -30,14 +30,14 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// Container for the parameters to the StopTransformJob operation.
-    /// Stops a transform job.
+    /// Stops a batch transform job.
     /// 
     ///  
     /// <para>
     /// When Amazon SageMaker receives a <code>StopTransformJob</code> request, the status
     /// of the job changes to <code>Stopping</code>. After Amazon SageMaker stops the job,
-    /// the status is set to <code>Stopped</code>. When you stop a transform job before it
-    /// is completed, Amazon SageMaker doesn't store the job's output in Amazon S3.
+    /// the status is set to <code>Stopped</code>. When you stop a batch transform job before
+    /// it is completed, Amazon SageMaker doesn't store the job's output in Amazon S3.
     /// </para>
     /// </summary>
     public partial class StopTransformJobRequest : AmazonSageMakerRequest
@@ -47,7 +47,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property TransformJobName. 
         /// <para>
-        /// The name of the transform job to stop.
+        /// The name of the batch transform job to stop.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=63)]

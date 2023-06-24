@@ -34,7 +34,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// PostgreSqlParameters Marshaller
-    /// </summary>       
+    /// </summary>
     public class PostgreSqlParametersMarshaller : IRequestMarshaller<PostgreSqlParameters, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static PostgreSqlParametersMarshaller Instance = new PostgreSqlParametersMarshaller();
 
     }

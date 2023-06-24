@@ -34,7 +34,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AmazonOpenSearchParameters Marshaller
-    /// </summary>       
+    /// </summary>
     public class AmazonOpenSearchParametersMarshaller : IRequestMarshaller<AmazonOpenSearchParameters, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AmazonOpenSearchParametersMarshaller Instance = new AmazonOpenSearchParametersMarshaller();
 
     }

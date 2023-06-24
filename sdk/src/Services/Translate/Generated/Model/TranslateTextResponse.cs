@@ -42,7 +42,7 @@ namespace Amazon.Translate.Model
         /// <summary>
         /// Gets and sets the property AppliedSettings. 
         /// <para>
-        /// Settings that configure the translation output.
+        /// Optional settings that modify the translation output.
         /// </para>
         /// </summary>
         public TranslationSettings AppliedSettings
@@ -120,7 +120,7 @@ namespace Amazon.Translate.Model
         /// The translated text.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=10000)]
+        [AWSProperty(Required=true, Max=20000)]
         public string TranslatedText
         {
             get { return this._translatedText; }

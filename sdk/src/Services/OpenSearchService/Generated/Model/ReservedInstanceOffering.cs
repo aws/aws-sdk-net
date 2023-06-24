@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// Details of a reserved OpenSearch instance offering.
+    /// Details of an OpenSearch Reserved Instance offering.
     /// </summary>
     public partial class ReservedInstanceOffering
     {
@@ -45,7 +45,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property CurrencyCode. 
         /// <para>
-        /// The currency code for the reserved OpenSearch instance offering.
+        /// The currency code for the Reserved Instance offering.
         /// </para>
         /// </summary>
         public string CurrencyCode
@@ -81,8 +81,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property FixedPrice. 
         /// <para>
-        /// The upfront fixed charge you will pay to purchase the specific reserved OpenSearch
-        /// instance offering.
+        /// The upfront fixed charge you will pay to purchase the specific Reserved Instance offering.
         /// </para>
         /// </summary>
         public double FixedPrice
@@ -100,7 +99,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property InstanceType. 
         /// <para>
-        /// The OpenSearch instance type offered by the reserved instance offering.
+        /// The OpenSearch instance type offered by the Reserved Instance offering.
         /// </para>
         /// </summary>
         public OpenSearchPartitionInstanceType InstanceType
@@ -118,7 +117,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property PaymentOption. 
         /// <para>
-        /// Payment option for the reserved OpenSearch instance offering
+        /// Payment option for the Reserved Instance offering
         /// </para>
         /// </summary>
         public ReservedInstancePaymentOption PaymentOption
@@ -136,8 +135,8 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property RecurringCharges. 
         /// <para>
-        /// The charge to your account regardless of whether you are creating any domains using
-        /// the instance offering.
+        /// The recurring charge to your account, regardless of whether you creates any domains
+        /// using the offering.
         /// </para>
         /// </summary>
         public List<RecurringCharge> RecurringCharges
@@ -155,7 +154,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property ReservedInstanceOfferingId. 
         /// <para>
-        /// The OpenSearch reserved instance offering identifier.
+        /// The unique identifier of the Reserved Instance offering.
         /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=36)]
@@ -174,7 +173,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property UsagePrice. 
         /// <para>
-        /// The rate you are charged for each hour the domain that is using the offering is running.
+        /// The hourly rate at which you're charged for the domain using this Reserved Instance.
         /// </para>
         /// </summary>
         public double UsagePrice

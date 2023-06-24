@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AutoMLSecurityConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class AutoMLSecurityConfigMarshaller : IRequestMarshaller<AutoMLSecurityConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AutoMLSecurityConfigMarshaller Instance = new AutoMLSecurityConfigMarshaller();
 
     }

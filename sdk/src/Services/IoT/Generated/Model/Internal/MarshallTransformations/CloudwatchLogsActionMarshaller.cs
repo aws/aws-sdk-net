@@ -34,7 +34,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CloudwatchLogsAction Marshaller
-    /// </summary>       
+    /// </summary>
     public class CloudwatchLogsActionMarshaller : IRequestMarshaller<CloudwatchLogsAction, JsonMarshallerContext> 
     {
         /// <summary>
@@ -45,6 +45,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CloudwatchLogsAction requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetBatchMode())
+            {
+                context.Writer.WritePropertyName("batchMode");
+                context.Writer.Write(requestObject.BatchMode);
+            }
+
             if(requestObject.IsSetLogGroupName())
             {
                 context.Writer.WritePropertyName("logGroupName");
@@ -61,7 +67,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CloudwatchLogsActionMarshaller Instance = new CloudwatchLogsActionMarshaller();
 
     }

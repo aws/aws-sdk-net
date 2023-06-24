@@ -34,7 +34,7 @@ namespace Amazon.CodeGuruReviewer.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RequestMetadata Marshaller
-    /// </summary>       
+    /// </summary>
     public class RequestMetadataMarshaller : IRequestMarshaller<RequestMetadata, JsonMarshallerContext> 
     {
         /// <summary>
@@ -78,7 +78,7 @@ namespace Amazon.CodeGuruReviewer.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RequestMetadataMarshaller Instance = new RequestMetadataMarshaller();
 
     }

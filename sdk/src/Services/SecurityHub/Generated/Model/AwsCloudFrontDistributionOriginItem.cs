@@ -29,15 +29,38 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// A complex type that describes the S3 bucket, HTTP server (for example, a web server),
-    /// AWS Elemental MediaStore, or other server from which CloudFront gets your files.
+    /// A complex type that describes the Amazon S3 bucket, HTTP server (for example, a web
+    /// server), AWS Elemental MediaStore, or other server from which CloudFront gets your
+    /// files.
     /// </summary>
     public partial class AwsCloudFrontDistributionOriginItem
     {
+        private AwsCloudFrontDistributionOriginCustomOriginConfig _customOriginConfig;
         private string _domainName;
         private string _id;
         private string _originPath;
         private AwsCloudFrontDistributionOriginS3OriginConfig _s3OriginConfig;
+
+        /// <summary>
+        /// Gets and sets the property CustomOriginConfig. 
+        /// <para>
+        /// An origin that is not an Amazon S3 bucket, with one exception. If the Amazon S3 bucket
+        /// is configured with static website hosting, use this attribute. If the Amazon S3 bucket
+        /// is not configured with static website hosting, use the <code>S3OriginConfig</code>
+        /// type instead. 
+        /// </para>
+        /// </summary>
+        public AwsCloudFrontDistributionOriginCustomOriginConfig CustomOriginConfig
+        {
+            get { return this._customOriginConfig; }
+            set { this._customOriginConfig = value; }
+        }
+
+        // Check to see if CustomOriginConfig property is set
+        internal bool IsSetCustomOriginConfig()
+        {
+            return this._customOriginConfig != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DomainName. 

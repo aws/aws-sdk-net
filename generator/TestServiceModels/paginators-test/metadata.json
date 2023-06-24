@@ -1,0 +1,6 @@
+{
+  "active": true,
+  "test-service": true,
+  "synopsis": "paginators test service",
+  "legacy-service-id": "Paginators-Test"
+}

@@ -34,7 +34,7 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// MonitoringConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class MonitoringConfigurationMarshaller : IRequestMarshaller<MonitoringConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -52,6 +52,17 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
 
                 var marshaller = CloudWatchMonitoringConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.CloudWatchMonitoringConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetContainerLogRotationConfiguration())
+            {
+                context.Writer.WritePropertyName("containerLogRotationConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ContainerLogRotationConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.ContainerLogRotationConfiguration, context);
 
                 context.Writer.WriteObjectEnd();
             }
@@ -77,7 +88,7 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static MonitoringConfigurationMarshaller Instance = new MonitoringConfigurationMarshaller();
 
     }

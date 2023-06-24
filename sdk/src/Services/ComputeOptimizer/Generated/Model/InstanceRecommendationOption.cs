@@ -34,6 +34,7 @@ namespace Amazon.ComputeOptimizer.Model
     public partial class InstanceRecommendationOption
     {
         private string _instanceType;
+        private MigrationEffort _migrationEffort;
         private double? _performanceRisk;
         private List<string> _platformDifferences = new List<string>();
         private List<UtilizationMetric> _projectedUtilizationMetrics = new List<UtilizationMetric>();
@@ -56,6 +57,34 @@ namespace Amazon.ComputeOptimizer.Model
         internal bool IsSetInstanceType()
         {
             return this._instanceType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MigrationEffort. 
+        /// <para>
+        /// The level of effort required to migrate from the current instance type to the recommended
+        /// instance type.
+        /// </para>
+        ///  
+        /// <para>
+        /// For example, the migration effort is <code>Low</code> if Amazon EMR is the inferred
+        /// workload type and an Amazon Web Services Graviton instance type is recommended. The
+        /// migration effort is <code>Medium</code> if a workload type couldn't be inferred but
+        /// an Amazon Web Services Graviton instance type is recommended. The migration effort
+        /// is <code>VeryLow</code> if both the current and recommended instance types are of
+        /// the same CPU architecture.
+        /// </para>
+        /// </summary>
+        public MigrationEffort MigrationEffort
+        {
+            get { return this._migrationEffort; }
+            set { this._migrationEffort = value; }
+        }
+
+        // Check to see if MigrationEffort property is set
+        internal bool IsSetMigrationEffort()
+        {
+            return this._migrationEffort != null;
         }
 
         /// <summary>

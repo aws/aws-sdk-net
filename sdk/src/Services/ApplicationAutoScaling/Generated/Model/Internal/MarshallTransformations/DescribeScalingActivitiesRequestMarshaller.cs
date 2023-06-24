@@ -58,7 +58,7 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
             string target = "AnyScaleFrontendService.DescribeScalingActivities";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-02-06";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-02-06";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -67,6 +67,12 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetIncludeNotScaledActivities())
+                {
+                    context.Writer.WritePropertyName("IncludeNotScaledActivities");
+                    context.Writer.Write(publicRequest.IncludeNotScaledActivities);
+                }
+
                 if(publicRequest.IsSetMaxResults())
                 {
                     context.Writer.WritePropertyName("MaxResults");
@@ -97,7 +103,6 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ServiceNamespace);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

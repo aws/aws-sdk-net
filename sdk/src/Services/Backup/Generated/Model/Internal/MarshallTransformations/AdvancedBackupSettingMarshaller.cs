@@ -34,7 +34,7 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AdvancedBackupSetting Marshaller
-    /// </summary>       
+    /// </summary>
     public class AdvancedBackupSettingMarshaller : IRequestMarshaller<AdvancedBackupSetting, JsonMarshallerContext> 
     {
         /// <summary>
@@ -69,7 +69,7 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AdvancedBackupSettingMarshaller Instance = new AdvancedBackupSettingMarshaller();
 
     }

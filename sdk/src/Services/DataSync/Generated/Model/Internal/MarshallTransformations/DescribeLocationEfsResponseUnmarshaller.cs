@@ -51,6 +51,12 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AccessPointArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.AccessPointArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CreationTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
@@ -61,6 +67,18 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = Ec2ConfigUnmarshaller.Instance;
                     response.Ec2Config = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("FileSystemAccessRoleArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.FileSystemAccessRoleArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("InTransitEncryption", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.InTransitEncryption = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("LocationArn", targetDepth))

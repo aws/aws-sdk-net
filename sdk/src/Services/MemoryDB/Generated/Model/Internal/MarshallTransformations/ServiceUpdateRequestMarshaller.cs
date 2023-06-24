@@ -34,7 +34,7 @@ namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ServiceUpdateRequest Marshaller
-    /// </summary>       
+    /// </summary>
     public class ServiceUpdateRequestMarshaller : IRequestMarshaller<ServiceUpdateRequest, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ServiceUpdateRequestMarshaller Instance = new ServiceUpdateRequestMarshaller();
 
     }

@@ -29,8 +29,26 @@ using Amazon.Runtime.Internal;
 namespace Amazon.TranscribeService.Model
 {
     /// <summary>
-    /// Describes an asynchronous analytics job that was created with the <code>StartAnalyticsJob</code>
-    /// operation.
+    /// Provides detailed information about a Call Analytics job.
+    /// 
+    ///  
+    /// <para>
+    /// To view the job's status, refer to <code>CallAnalyticsJobStatus</code>. If the status
+    /// is <code>COMPLETED</code>, the job is finished. You can find your completed transcript
+    /// at the URI specified in <code>TranscriptFileUri</code>. If the status is <code>FAILED</code>,
+    /// <code>FailureReason</code> provides details on why your transcription job failed.
+    /// </para>
+    ///  
+    /// <para>
+    /// If you enabled personally identifiable information (PII) redaction, the redacted transcript
+    /// appears at the location specified in <code>RedactedTranscriptFileUri</code>.
+    /// </para>
+    ///  
+    /// <para>
+    /// If you chose to redact the audio in your media file, you can find your redacted media
+    /// file at the location specified in the <code>RedactedMediaFileUri</code> field of your
+    /// response.
+    /// </para>
     /// </summary>
     public partial class CallAnalyticsJob
     {
@@ -53,7 +71,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property CallAnalyticsJobName. 
         /// <para>
-        /// The name of the call analytics job.
+        /// The name of the Call Analytics job. Job names are case sensitive and must be unique
+        /// within an Amazon Web Services account.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
@@ -72,7 +91,14 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property CallAnalyticsJobStatus. 
         /// <para>
-        /// The status of the analytics job.
+        /// Provides the status of the specified Call Analytics job.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the status is <code>COMPLETED</code>, the job is finished and you can find the
+        /// results at the location specified in <code>TranscriptFileUri</code> (or <code>RedactedTranscriptFileUri</code>,
+        /// if you requested transcript redaction). If the status is <code>FAILED</code>, <code>FailureReason</code>
+        /// provides details on why your transcription job failed.
         /// </para>
         /// </summary>
         public CallAnalyticsJobStatus CallAnalyticsJobStatus
@@ -90,8 +116,7 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property ChannelDefinitions. 
         /// <para>
-        /// Shows numeric values to indicate the channel assigned to the agent's audio and the
-        /// channel assigned to the customer's audio. 
+        /// Indicates which speaker is on which channel.
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=2)]
@@ -110,7 +135,13 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property CompletionTime. 
         /// <para>
-        /// A timestamp that shows when the analytics job was completed.
+        /// The date and time the specified Call Analytics job finished processing.
+        /// </para>
+        ///  
+        /// <para>
+        /// Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+        /// <code>2022-05-04T12:33:13.922000-07:00</code> represents a transcription job that
+        /// started processing at 12:33 PM UTC-7 on May 4, 2022.
         /// </para>
         /// </summary>
         public DateTime CompletionTime
@@ -128,7 +159,13 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property CreationTime. 
         /// <para>
-        /// A timestamp that shows when the analytics job was created.
+        /// The date and time the specified Call Analytics job request was made.
+        /// </para>
+        ///  
+        /// <para>
+        /// Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+        /// <code>2022-05-04T12:32:58.761000-07:00</code> represents a transcription job that
+        /// started processing at 12:32 PM UTC-7 on May 4, 2022.
         /// </para>
         /// </summary>
         public DateTime CreationTime
@@ -146,8 +183,7 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property DataAccessRoleArn. 
         /// <para>
-        /// The Amazon Resource Number (ARN) that you use to access the analytics job. ARNs have
-        /// the format <code>arn:partition:service:region:account-id:resource-type/resource-id</code>.
+        /// The Amazon Resource Name (ARN) you included in your request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -166,52 +202,70 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property FailureReason. 
         /// <para>
-        /// If the <code>AnalyticsJobStatus</code> is <code>FAILED</code>, this field contains
-        /// information about why the job failed.
+        /// If <code>CallAnalyticsJobStatus</code> is <code>FAILED</code>, <code>FailureReason</code>
+        /// contains information about why the Call Analytics job request failed.
         /// </para>
         ///  
         /// <para>
-        /// The <code>FailureReason</code> field can contain one of the following values:
+        /// The <code>FailureReason</code> field contains one of the following values:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Unsupported media format</code>: The media format specified in the <code>MediaFormat</code>
-        /// field of the request isn't valid. See the description of the <code>MediaFormat</code>
-        /// field for a list of valid values.
+        ///  <code>Unsupported media format</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The media format specified in <code>MediaFormat</code> isn't valid. Refer to <b>MediaFormat</b>
+        /// for a list of supported formats.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>The media format provided does not match the detected media format</code>:
-        /// The media format of the audio file doesn't match the format specified in the <code>MediaFormat</code>
-        /// field in the request. Check the media format of your media file and make sure the
-        /// two values match.
+        ///  <code>The media format provided does not match the detected media format</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The media format specified in <code>MediaFormat</code> doesn't match the format of
+        /// the input file. Check the media format of your media file and correct the specified
+        /// value.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Invalid sample rate for audio file</code>: The sample rate specified in the
-        /// <code>MediaSampleRateHertz</code> of the request isn't valid. The sample rate must
-        /// be between 8,000 and 48,000 Hertz.
+        ///  <code>Invalid sample rate for audio file</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The sample rate specified in <code>MediaSampleRateHertz</code> isn't valid. The sample
+        /// rate must be between 8,000 and 48,000 hertz.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>The sample rate provided does not match the detected sample rate</code>: The
-        /// sample rate in the audio file doesn't match the sample rate specified in the <code>MediaSampleRateHertz</code>
-        /// field in the request. Check the sample rate of your media file and make sure that
-        /// the two values match.
+        ///  <code>The sample rate provided does not match the detected sample rate</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The sample rate specified in <code>MediaSampleRateHertz</code> doesn't match the sample
+        /// rate detected in your input media file. Check the sample rate of your media file and
+        /// correct the specified value.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Invalid file size: file size too large</code>: The size of your audio file
-        /// is larger than what Amazon Transcribe Medical can process. For more information, see
-        /// <i>Guidelines and Quotas</i> in the Amazon Transcribe Medical Guide.
+        ///  <code>Invalid file size: file size too large</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The size of your media file is larger than what Amazon Transcribe can process. For
+        /// more information, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines
+        /// and quotas</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Invalid number of channels: number of channels too large</code>: Your audio
-        /// contains more channels than Amazon Transcribe Medical is configured to process. To
-        /// request additional channels, see Amazon Transcribe Medical Endpoints and Quotas in
-        /// the <a href="https://docs.aws.amazon.com/general/latest/gr/Welcome.html">Amazon Web
-        /// Services General Reference</a>.
+        ///  <code>Invalid number of channels: number of channels too large</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Your audio contains more channels than Amazon Transcribe is able to process. For more
+        /// information, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines
+        /// and quotas</a>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -230,10 +284,12 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property IdentifiedLanguageScore. 
         /// <para>
-        /// A value between zero and one that Amazon Transcribe assigned to the language that
-        /// it identified in the source audio. This value appears only when you don't provide
-        /// a single language code. Larger values indicate that Amazon Transcribe has higher confidence
-        /// in the language that it identified
+        /// The confidence score associated with the language identified in your media file.
+        /// </para>
+        ///  
+        /// <para>
+        /// Confidence scores are values between 0 and 1; a larger value indicates a higher probability
+        /// that the identified language correctly matches the language spoken in your media.
         /// </para>
         /// </summary>
         public float IdentifiedLanguageScore
@@ -251,16 +307,16 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property LanguageCode. 
         /// <para>
-        /// If you know the language spoken between the customer and the agent, specify a language
-        /// code for this field.
+        /// The language code used to create your Call Analytics job. For a list of supported
+        /// languages and their associated language codes, refer to the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported
+        /// languages</a> table.
         /// </para>
         ///  
         /// <para>
-        /// If you don't know the language, you can leave this field blank, and Amazon Transcribe
-        /// will use machine learning to automatically identify the language. To improve the accuracy
-        /// of language identification, you can provide an array containing the possible language
-        /// codes for the language spoken in your audio. Refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html">Supported
-        /// languages and language-specific features</a> for additional information.
+        /// If you don't know the language spoken in your media file, you can omit this field
+        /// and let Amazon Transcribe automatically identify the language of your media. To improve
+        /// the accuracy of language identification, you can include several language codes and
+        /// Amazon Transcribe chooses the closest match for your transcription.
         /// </para>
         /// </summary>
         public LanguageCode LanguageCode
@@ -276,7 +332,11 @@ namespace Amazon.TranscribeService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Media.
+        /// Gets and sets the property Media. 
+        /// <para>
+        /// Provides the Amazon S3 location of the media file you used in your Call Analytics
+        /// request.
+        /// </para>
         /// </summary>
         public Media Media
         {
@@ -293,8 +353,7 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property MediaFormat. 
         /// <para>
-        /// The format of the input audio file. Note: for call analytics jobs, only the following
-        /// media formats are supported: MP3, MP4, WAV, FLAC, OGG, and WebM. 
+        /// The format of the input media file.
         /// </para>
         /// </summary>
         public MediaFormat MediaFormat
@@ -312,7 +371,7 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property MediaSampleRateHertz. 
         /// <para>
-        /// The sample rate, in Hertz, of the audio.
+        /// The sample rate, in hertz, of the audio track in your input media file.
         /// </para>
         /// </summary>
         [AWSProperty(Min=8000, Max=48000)]
@@ -331,7 +390,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property Settings. 
         /// <para>
-        /// Provides information about the settings used to run a transcription job.
+        /// Provides information on any additional settings that were included in your request.
+        /// Additional settings include content redaction and language identification settings.
         /// </para>
         /// </summary>
         public CallAnalyticsJobSettings Settings
@@ -349,7 +409,13 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
-        /// A timestamp that shows when the analytics job started processing.
+        /// The date and time the specified Call Analytics job began processing.
+        /// </para>
+        ///  
+        /// <para>
+        /// Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+        /// <code>2022-05-04T12:32:58.789000-07:00</code> represents a transcription job that
+        /// started processing at 12:32 PM UTC-7 on May 4, 2022.
         /// </para>
         /// </summary>
         public DateTime StartTime

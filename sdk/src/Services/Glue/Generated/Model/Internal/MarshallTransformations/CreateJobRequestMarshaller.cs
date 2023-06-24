@@ -58,7 +58,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             string target = "AWSGlue.CreateJob";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-03-31";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-03-31";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -71,6 +71,25 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("AllocatedCapacity");
                     context.Writer.Write(publicRequest.AllocatedCapacity);
+                }
+
+                if(publicRequest.IsSetCodeGenConfigurationNodes())
+                {
+                    context.Writer.WritePropertyName("CodeGenConfigurationNodes");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestCodeGenConfigurationNodesKvp in publicRequest.CodeGenConfigurationNodes)
+                    {
+                        context.Writer.WritePropertyName(publicRequestCodeGenConfigurationNodesKvp.Key);
+                        var publicRequestCodeGenConfigurationNodesValue = publicRequestCodeGenConfigurationNodesKvp.Value;
+
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = CodeGenConfigurationNodeMarshaller.Instance;
+                        marshaller.Marshall(publicRequestCodeGenConfigurationNodesValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteObjectEnd();
                 }
 
                 if(publicRequest.IsSetCommand())
@@ -113,6 +132,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("Description");
                     context.Writer.Write(publicRequest.Description);
+                }
+
+                if(publicRequest.IsSetExecutionClass())
+                {
+                    context.Writer.WritePropertyName("ExecutionClass");
+                    context.Writer.Write(publicRequest.ExecutionClass);
                 }
 
                 if(publicRequest.IsSetExecutionProperty())
@@ -199,6 +224,17 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.SecurityConfiguration);
                 }
 
+                if(publicRequest.IsSetSourceControlDetails())
+                {
+                    context.Writer.WritePropertyName("SourceControlDetails");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = SourceControlDetailsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.SourceControlDetails, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("Tags");
@@ -225,7 +261,6 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.WorkerType);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

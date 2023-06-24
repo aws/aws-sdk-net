@@ -58,7 +58,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property KeyType. 
         /// <para>
-        /// The type of key used for the key schema attribute.
+        /// The type of key used for the key schema attribute. Valid values are <code>HASH</code>
+        /// or <code>RANGE</code>.
         /// </para>
         /// </summary>
         public string KeyType

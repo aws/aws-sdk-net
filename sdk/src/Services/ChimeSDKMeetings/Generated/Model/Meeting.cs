@@ -36,17 +36,29 @@ namespace Amazon.ChimeSDKMeetings.Model
         private string _externalMeetingId;
         private MediaPlacement _mediaPlacement;
         private string _mediaRegion;
+        private string _meetingArn;
         private MeetingFeaturesConfiguration _meetingFeatures;
         private string _meetingHostId;
         private string _meetingId;
+        private string _primaryMeetingId;
+        private List<string> _tenantIds = new List<string>();
 
         /// <summary>
         /// Gets and sets the property ExternalMeetingId. 
         /// <para>
         /// The external meeting ID.
         /// </para>
+        ///  
+        /// <para>
+        /// Pattern: <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Values that begin with <code>aws:</code> are reserved. You can't configure a value
+        /// that uses this prefix. Case insensitive.
+        /// </para>
         /// </summary>
-        [AWSProperty(Min=2, Max=64)]
+        [AWSProperty(Sensitive=true, Min=2, Max=64)]
         public string ExternalMeetingId
         {
             get { return this._externalMeetingId; }
@@ -87,6 +99,10 @@ namespace Amazon.ChimeSDKMeetings.Model
         /// <code>eu-west-2</code>, <code>eu-west-3</code>, <code>sa-east-1</code>, <code>us-east-1</code>,
         /// <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>.
         /// </para>
+        ///  
+        /// <para>
+        /// Available values in AWS GovCloud (US) Regions: <code>us-gov-east-1</code>, <code>us-gov-west-1</code>.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=64)]
         public string MediaRegion
@@ -102,9 +118,28 @@ namespace Amazon.ChimeSDKMeetings.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MeetingArn. 
+        /// <para>
+        /// The ARN of the meeting.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1011)]
+        public string MeetingArn
+        {
+            get { return this._meetingArn; }
+            set { this._meetingArn = value; }
+        }
+
+        // Check to see if MeetingArn property is set
+        internal bool IsSetMeetingArn()
+        {
+            return this._meetingArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property MeetingFeatures. 
         /// <para>
-        /// The features available to a meeting, such as Amazon Voice Focus.
+        /// The features available to a meeting, such as echo reduction.
         /// </para>
         /// </summary>
         public MeetingFeaturesConfiguration MeetingFeatures
@@ -125,7 +160,7 @@ namespace Amazon.ChimeSDKMeetings.Model
         /// Reserved.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=2, Max=64)]
+        [AWSProperty(Sensitive=true, Min=2, Max=64)]
         public string MeetingHostId
         {
             get { return this._meetingHostId; }
@@ -154,6 +189,44 @@ namespace Amazon.ChimeSDKMeetings.Model
         internal bool IsSetMeetingId()
         {
             return this._meetingId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PrimaryMeetingId. 
+        /// <para>
+        /// When specified, replicates the media from the primary meeting to this meeting.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=2, Max=64)]
+        public string PrimaryMeetingId
+        {
+            get { return this._primaryMeetingId; }
+            set { this._primaryMeetingId = value; }
+        }
+
+        // Check to see if PrimaryMeetingId property is set
+        internal bool IsSetPrimaryMeetingId()
+        {
+            return this._primaryMeetingId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TenantIds. 
+        /// <para>
+        /// Array of strings.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=5)]
+        public List<string> TenantIds
+        {
+            get { return this._tenantIds; }
+            set { this._tenantIds = value; }
+        }
+
+        // Check to see if TenantIds property is set
+        internal bool IsSetTenantIds()
+        {
+            return this._tenantIds != null && this._tenantIds.Count > 0; 
         }
 
     }

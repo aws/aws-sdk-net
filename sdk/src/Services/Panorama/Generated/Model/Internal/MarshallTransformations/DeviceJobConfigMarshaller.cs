@@ -34,7 +34,7 @@ namespace Amazon.Panorama.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DeviceJobConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class DeviceJobConfigMarshaller : IRequestMarshaller<DeviceJobConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.Panorama.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DeviceJobConfigMarshaller Instance = new DeviceJobConfigMarshaller();
 
     }

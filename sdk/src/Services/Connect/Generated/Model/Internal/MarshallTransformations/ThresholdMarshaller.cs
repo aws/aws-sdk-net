@@ -34,7 +34,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Threshold Marshaller
-    /// </summary>       
+    /// </summary>
     public class ThresholdMarshaller : IRequestMarshaller<Threshold, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ThresholdMarshaller Instance = new ThresholdMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RandomSplitActivity Marshaller
-    /// </summary>       
+    /// </summary>
     public class RandomSplitActivityMarshaller : IRequestMarshaller<RandomSplitActivity, JsonMarshallerContext> 
     {
         /// <summary>
@@ -65,7 +65,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RandomSplitActivityMarshaller Instance = new RandomSplitActivityMarshaller();
 
     }

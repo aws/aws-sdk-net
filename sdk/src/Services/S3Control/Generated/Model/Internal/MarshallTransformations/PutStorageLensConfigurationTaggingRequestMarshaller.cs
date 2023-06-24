@@ -57,8 +57,10 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             var request = new DefaultRequest(publicRequest, "Amazon.S3Control");
             request.HttpMethod = "PUT";
         
-            if(publicRequest.IsSetAccountId())
+            if (publicRequest.IsSetAccountId()) 
+            {
                 request.Headers["x-amz-account-id"] = publicRequest.AccountId;
+            }
             if (!publicRequest.IsSetConfigId())
                 throw new AmazonS3ControlException("Request object does not have required field ConfigId set");
             request.AddPathResource("{storagelensid}", StringUtils.FromString(publicRequest.ConfigId));
@@ -104,16 +106,6 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 throw new AmazonServiceException("Unable to marshall request to XML", e);
             }
 
-
-            var hostPrefixLabels = new
-            {
-                AccountId = StringUtils.FromString(publicRequest.AccountId),
-            };
-
-            if (!HostPrefixUtils.IsValidLabelValue(hostPrefixLabels.AccountId))
-                throw new AmazonS3ControlException("AccountId can only contain alphanumeric characters and dashes and must be between 1 and 63 characters long.");        
-            
-            request.HostPrefix = $"{hostPrefixLabels.AccountId}.";
             return request;
         }
         private static PutStorageLensConfigurationTaggingRequestMarshaller _instance = new PutStorageLensConfigurationTaggingRequestMarshaller();        

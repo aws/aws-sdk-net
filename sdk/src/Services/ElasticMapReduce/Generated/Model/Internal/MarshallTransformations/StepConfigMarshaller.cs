@@ -34,7 +34,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// StepConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class StepConfigMarshaller : IRequestMarshaller<StepConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static StepConfigMarshaller Instance = new StepConfigMarshaller();
 
     }

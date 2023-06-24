@@ -30,8 +30,8 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDashboard operation.
-    /// Creates a dashboard from a template. To first create a template, see the <code> <a
-    /// href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a>
+    /// Creates a dashboard from either a template or directly with a <code>DashboardDefinition</code>.
+    /// To first create a template, see the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a>
     /// </code> API operation.
     /// 
     ///  
@@ -48,6 +48,7 @@ namespace Amazon.QuickSight.Model
         private string _awsAccountId;
         private string _dashboardId;
         private DashboardPublishOptions _dashboardPublishOptions;
+        private DashboardVersionDefinition _definition;
         private string _name;
         private Parameters _parameters;
         private List<ResourcePermission> _permissions = new List<ResourcePermission>();
@@ -81,7 +82,7 @@ namespace Amazon.QuickSight.Model
         /// The ID for the dashboard, also added to the IAM policy.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=2048)]
+        [AWSProperty(Required=true, Min=1, Max=512)]
         public string DashboardId
         {
             get { return this._dashboardId; }
@@ -132,6 +133,33 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetDashboardPublishOptions()
         {
             return this._dashboardPublishOptions != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Definition. 
+        /// <para>
+        /// The definition of a dashboard.
+        /// </para>
+        ///  
+        /// <para>
+        /// A definition is the data model of all features in a Dashboard, Template, or Analysis.
+        /// </para>
+        ///  
+        /// <para>
+        /// Either a <code>SourceEntity</code> or a <code>Definition</code> must be provided in
+        /// order for the request to be valid.
+        /// </para>
+        /// </summary>
+        public DashboardVersionDefinition Definition
+        {
+            get { return this._definition; }
+            set { this._definition = value; }
+        }
+
+        // Check to see if Definition property is set
+        internal bool IsSetDefinition()
+        {
+            return this._definition != null;
         }
 
         /// <summary>
@@ -217,8 +245,12 @@ namespace Amazon.QuickSight.Model
         /// list the replacement datasets for the placeholders listed in the original. The schema
         /// in each dataset must match its placeholder. 
         /// </para>
+        ///  
+        /// <para>
+        /// Either a <code>SourceEntity</code> or a <code>Definition</code> must be provided in
+        /// order for the request to be valid.
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public DashboardSourceEntity SourceEntity
         {
             get { return this._sourceEntity; }

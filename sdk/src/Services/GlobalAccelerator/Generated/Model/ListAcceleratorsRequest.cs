@@ -30,7 +30,7 @@ namespace Amazon.GlobalAccelerator.Model
 {
     /// <summary>
     /// Container for the parameters to the ListAccelerators operation.
-    /// List the accelerators for an AWS account.
+    /// List the accelerators for an Amazon Web Services account.
     /// </summary>
     public partial class ListAcceleratorsRequest : AmazonGlobalAcceleratorRequest
     {

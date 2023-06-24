@@ -57,7 +57,7 @@ namespace Amazon.DataExchange.Model
         /// <summary>
         /// Gets and sets the property ImportAssetsFromS3JobErrorDetails. 
         /// <para>
-        /// Information about the job error.
+        /// Details about the job error.
         /// </para>
         /// </summary>
         public List<AssetSourceEntry> ImportAssetsFromS3JobErrorDetails

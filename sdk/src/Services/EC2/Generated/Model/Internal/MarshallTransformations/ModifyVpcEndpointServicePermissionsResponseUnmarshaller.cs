@@ -55,6 +55,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 if (context.IsStartElement || context.IsAttribute)
                 {
 
+                    if (context.TestExpression("addedPrincipalSet/item", targetDepth))
+                    {
+                        var unmarshaller = AddedPrincipalUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        response.AddedPrincipals.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("return", targetDepth))
                     {
                         var unmarshaller = BoolUnmarshaller.Instance;

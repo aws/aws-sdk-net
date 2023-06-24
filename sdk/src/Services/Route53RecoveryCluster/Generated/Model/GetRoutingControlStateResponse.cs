@@ -34,12 +34,13 @@ namespace Amazon.Route53RecoveryCluster.Model
     public partial class GetRoutingControlStateResponse : AmazonWebServiceResponse
     {
         private string _routingControlArn;
+        private string _routingControlName;
         private RoutingControlState _routingControlState;
 
         /// <summary>
         /// Gets and sets the property RoutingControlArn. 
         /// <para>
-        /// The Amazon Resource Number (ARN) of the response.
+        /// The Amazon Resource Name (ARN) of the response.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
@@ -53,6 +54,25 @@ namespace Amazon.Route53RecoveryCluster.Model
         internal bool IsSetRoutingControlArn()
         {
             return this._routingControlArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RoutingControlName. 
+        /// <para>
+        /// The routing control name.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public string RoutingControlName
+        {
+            get { return this._routingControlName; }
+            set { this._routingControlName = value; }
+        }
+
+        // Check to see if RoutingControlName property is set
+        internal bool IsSetRoutingControlName()
+        {
+            return this._routingControlName != null;
         }
 
         /// <summary>

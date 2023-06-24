@@ -40,7 +40,7 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property Path. 
         /// <para>
-        /// The relative path to the URL for this VOD source. This is combined with SourceLocation::HttpConfiguration::BaseUrl
+        /// The relative path to the URL for this VOD source. This is combined with <code>SourceLocation::HttpConfiguration::BaseUrl</code>
         /// to form a valid URL.
         /// </para>
         /// </summary>
@@ -60,7 +60,7 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property SourceGroup. 
         /// <para>
-        /// The name of the source group. This has to match one of the Channel::Outputs::SourceGroup.
+        /// The name of the source group. This has to match one of the <code>Channel::Outputs::SourceGroup</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -79,8 +79,8 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The streaming protocol for this package configuration. Supported values are HLS and
-        /// DASH.
+        /// The streaming protocol for this package configuration. Supported values are <code>HLS</code>
+        /// and <code>DASH</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

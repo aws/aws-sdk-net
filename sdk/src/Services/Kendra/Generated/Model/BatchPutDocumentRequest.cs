@@ -34,16 +34,21 @@ namespace Amazon.Kendra.Model
     /// 
     ///  
     /// <para>
-    /// The <code>BatchPutDocument</code> operation enables you to ingest inline documents
-    /// or a set of documents stored in an Amazon S3 bucket. Use this operation to ingest
-    /// your text and unstructured text into an index, add custom attributes to the documents,
-    /// and to attach an access control list to the documents added to the index.
+    /// The <code>BatchPutDocument</code> API enables you to ingest inline documents or a
+    /// set of documents stored in an Amazon S3 bucket. Use this API to ingest your text and
+    /// unstructured text into an index, add custom attributes to the documents, and to attach
+    /// an access control list to the documents added to the index.
     /// </para>
     ///  
     /// <para>
     /// The documents are indexed asynchronously. You can see the progress of the batch using
     /// Amazon Web Services CloudWatch. Any error messages related to processing the batch
     /// are sent to your Amazon Web Services CloudWatch log.
+    /// </para>
+    ///  
+    /// <para>
+    /// For an example of ingesting inline documents using Python and Java SDKs, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-binary-doc.html">Adding
+    /// files directly to an index</a>.
     /// </para>
     /// </summary>
     public partial class BatchPutDocumentRequest : AmazonKendraRequest
@@ -57,7 +62,7 @@ namespace Amazon.Kendra.Model
         /// Gets and sets the property CustomDocumentEnrichmentConfiguration. 
         /// <para>
         /// Configuration information for altering your document metadata and content during the
-        /// document ingestion process when you use the <code>BatchPutDocument</code> operation.
+        /// document ingestion process when you use the <code>BatchPutDocument</code> API.
         /// </para>
         ///  
         /// <para>
@@ -85,22 +90,11 @@ namespace Amazon.Kendra.Model
         /// </para>
         ///  
         /// <para>
-        /// Documents can include custom attributes. For example, 'DataSourceId' and 'DataSourceSyncJobId'
-        /// are custom attributes that provide information on the synchronization of documents
-        /// running on a data source. Note, 'DataSourceSyncJobId' could be an optional custom
-        /// attribute as Amazon Kendra will use the ID of a running sync job.
-        /// </para>
-        ///  
-        /// <para>
         /// Documents have the following file size limits.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// 5 MB total size for inline documents
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// 50 MB total size for files from an S3 bucket
+        /// 50 MB total size for any file
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -108,7 +102,7 @@ namespace Amazon.Kendra.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For more information about file size and transaction per second quotas, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=10)]
@@ -128,7 +122,7 @@ namespace Amazon.Kendra.Model
         /// Gets and sets the property IndexId. 
         /// <para>
         /// The identifier of the index to add the documents to. You need to create the index
-        /// first using the <code>CreateIndex</code> operation.
+        /// first using the <code>CreateIndex</code> API.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]
@@ -147,9 +141,9 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of a role that is allowed to run the <code>BatchPutDocument</code>
-        /// operation. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM
-        /// Roles for Amazon Kendra</a>.
+        /// The Amazon Resource Name (ARN) of an IAM role with permission to access your S3 bucket.
+        /// For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM
+        /// access roles for Amazon Kendra</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1284)]

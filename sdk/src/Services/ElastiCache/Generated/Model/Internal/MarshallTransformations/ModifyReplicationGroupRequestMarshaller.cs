@@ -95,9 +95,17 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+                if(publicRequest.IsSetClusterMode())
+                {
+                    request.Parameters.Add("ClusterMode", StringUtils.FromString(publicRequest.ClusterMode));
+                }
                 if(publicRequest.IsSetEngineVersion())
                 {
                     request.Parameters.Add("EngineVersion", StringUtils.FromString(publicRequest.EngineVersion));
+                }
+                if(publicRequest.IsSetIpDiscovery())
+                {
+                    request.Parameters.Add("IpDiscovery", StringUtils.FromString(publicRequest.IpDiscovery));
                 }
                 if(publicRequest.IsSetLogDeliveryConfigurations())
                 {
@@ -196,6 +204,14 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetSnapshotWindow())
                 {
                     request.Parameters.Add("SnapshotWindow", StringUtils.FromString(publicRequest.SnapshotWindow));
+                }
+                if(publicRequest.IsSetTransitEncryptionEnabled())
+                {
+                    request.Parameters.Add("TransitEncryptionEnabled", StringUtils.FromBool(publicRequest.TransitEncryptionEnabled));
+                }
+                if(publicRequest.IsSetTransitEncryptionMode())
+                {
+                    request.Parameters.Add("TransitEncryptionMode", StringUtils.FromString(publicRequest.TransitEncryptionMode));
                 }
                 if(publicRequest.IsSetUserGroupIdsToAdd())
                 {

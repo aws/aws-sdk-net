@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// OidcConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class OidcConfigMarshaller : IRequestMarshaller<OidcConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -97,7 +97,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static OidcConfigMarshaller Instance = new OidcConfigMarshaller();
 
     }

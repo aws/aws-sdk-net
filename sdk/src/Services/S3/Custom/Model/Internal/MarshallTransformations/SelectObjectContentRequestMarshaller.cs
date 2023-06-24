@@ -50,8 +50,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         {
             // Required Parameters
             // Bucket
-            if (string.IsNullOrEmpty(selectObjectContentRequest.Bucket))
-                throw ConstructExceptionArgumentRequired(nameof(selectObjectContentRequest.Bucket));
+            if (string.IsNullOrEmpty(selectObjectContentRequest.BucketName))
+                throw ConstructExceptionArgumentRequired(nameof(selectObjectContentRequest.BucketName));
             // Key
             if (string.IsNullOrEmpty(selectObjectContentRequest.Key))
                 throw ConstructExceptionArgumentRequired(nameof(selectObjectContentRequest.Key));
@@ -72,7 +72,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             {
                 HttpMethod = "POST",
                 ResourcePath =
-                    string.Format(CultureInfo.InvariantCulture, "/{0}/{1}", S3Transforms.ToStringValue(selectObjectContentRequest.Bucket), S3Transforms.ToStringValue(selectObjectContentRequest.Key)),
+                    string.Format(CultureInfo.InvariantCulture, "/{0}", S3Transforms.ToStringValue(selectObjectContentRequest.Key)),
                 UseQueryString = true,
             };
 
@@ -121,7 +121,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 };
                 using (var xmlWriter = XmlWriter.Create(stringWriter, xmlWriterSettings))
                 {
-                    xmlWriter.WriteStartElement("SelectRequest");
+                    xmlWriter.WriteStartElement("SelectObjectContentRequest", S3Constants.S3RequestXmlNamespace);
                     xmlWriter.WriteElementString("Expression",
                         S3Transforms.ToXmlStringValue(selectObjectContentRequest.Expression));
                     xmlWriter.WriteElementString("ExpressionType",

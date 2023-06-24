@@ -39,7 +39,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property CloudFrontOriginAccessIdentityConfig. 
         /// <para>
-        /// The origin access identity's configuration information. 
+        /// The origin access identity's configuration information.
         /// </para>
         /// </summary>
         public CloudFrontOriginAccessIdentityConfig CloudFrontOriginAccessIdentityConfig

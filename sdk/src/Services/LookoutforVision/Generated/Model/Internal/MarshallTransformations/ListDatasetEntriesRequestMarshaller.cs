@@ -55,7 +55,7 @@ namespace Amazon.LookoutforVision.Model.Internal.MarshallTransformations
         public IRequest Marshall(ListDatasetEntriesRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.LookoutforVision");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-11-20";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-11-20";
             request.HttpMethod = "GET";
 
             if (!publicRequest.IsSetDatasetType())

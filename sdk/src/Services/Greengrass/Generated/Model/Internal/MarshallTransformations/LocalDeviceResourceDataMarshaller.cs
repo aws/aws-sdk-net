@@ -34,7 +34,7 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// LocalDeviceResourceData Marshaller
-    /// </summary>       
+    /// </summary>
     public class LocalDeviceResourceDataMarshaller : IRequestMarshaller<LocalDeviceResourceData, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static LocalDeviceResourceDataMarshaller Instance = new LocalDeviceResourceDataMarshaller();
 
     }

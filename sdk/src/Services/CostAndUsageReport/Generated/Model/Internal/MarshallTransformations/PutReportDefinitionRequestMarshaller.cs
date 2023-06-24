@@ -58,7 +58,7 @@ namespace Amazon.CostAndUsageReport.Model.Internal.MarshallTransformations
             string target = "AWSOrigamiServiceGatewayService.PutReportDefinition";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-01-06";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-01-06";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -78,7 +78,6 @@ namespace Amazon.CostAndUsageReport.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

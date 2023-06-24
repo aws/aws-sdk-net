@@ -34,7 +34,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DestinationConnectorProperties Marshaller
-    /// </summary>       
+    /// </summary>
     public class DestinationConnectorPropertiesMarshaller : IRequestMarshaller<DestinationConnectorProperties, JsonMarshallerContext> 
     {
         /// <summary>
@@ -45,6 +45,17 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DestinationConnectorProperties requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetCustomConnector())
+            {
+                context.Writer.WritePropertyName("CustomConnector");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = CustomConnectorDestinationPropertiesMarshaller.Instance;
+                marshaller.Marshall(requestObject.CustomConnector, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetCustomerProfiles())
             {
                 context.Writer.WritePropertyName("CustomerProfiles");
@@ -89,6 +100,17 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetMarketo())
+            {
+                context.Writer.WritePropertyName("Marketo");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = MarketoDestinationPropertiesMarshaller.Instance;
+                marshaller.Marshall(requestObject.Marketo, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetRedshift())
             {
                 context.Writer.WritePropertyName("Redshift");
@@ -118,6 +140,17 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 
                 var marshaller = SalesforceDestinationPropertiesMarshaller.Instance;
                 marshaller.Marshall(requestObject.Salesforce, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetSAPOData())
+            {
+                context.Writer.WritePropertyName("SAPOData");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = SAPODataDestinationPropertiesMarshaller.Instance;
+                marshaller.Marshall(requestObject.SAPOData, context);
 
                 context.Writer.WriteObjectEnd();
             }
@@ -159,7 +192,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DestinationConnectorPropertiesMarshaller Instance = new DestinationConnectorPropertiesMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AssetModelHierarchy Marshaller
-    /// </summary>       
+    /// </summary>
     public class AssetModelHierarchyMarshaller : IRequestMarshaller<AssetModelHierarchy, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AssetModelHierarchyMarshaller Instance = new AssetModelHierarchyMarshaller();
 
     }

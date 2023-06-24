@@ -58,7 +58,7 @@ namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
             string target = "AppRunner.CreateService";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.0";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-05-15";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-05-15";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -106,6 +106,28 @@ namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetNetworkConfiguration())
+                {
+                    context.Writer.WritePropertyName("NetworkConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = NetworkConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.NetworkConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetObservabilityConfiguration())
+                {
+                    context.Writer.WritePropertyName("ObservabilityConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ServiceObservabilityConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ObservabilityConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetServiceName())
                 {
                     context.Writer.WritePropertyName("ServiceName");
@@ -139,7 +161,6 @@ namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

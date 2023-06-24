@@ -1,5 +1,6 @@
 {
   "active": true,
   "synopsis": "This release introduces a new major version of the Amazon Macie API. You can use this version of the API to develop tools and applications that interact with the new Amazon Macie.",
-  "generate-client-constructors": true
+  "generate-client-constructors": true,
+  "legacy-service-id": "Macie2"
 }

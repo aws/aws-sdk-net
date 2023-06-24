@@ -34,7 +34,7 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// NotificationTargetItem Marshaller
-    /// </summary>       
+    /// </summary>
     public class NotificationTargetItemMarshaller : IRequestMarshaller<NotificationTargetItem, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static NotificationTargetItemMarshaller Instance = new NotificationTargetItemMarshaller();
 
     }

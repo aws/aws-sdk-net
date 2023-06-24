@@ -58,7 +58,7 @@ namespace Amazon.AWSSupport.Model.Internal.MarshallTransformations
             string target = "AWSSupport_20130415.DescribeCommunications";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2013-04-15";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2013-04-15";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -97,7 +97,6 @@ namespace Amazon.AWSSupport.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.NextToken);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

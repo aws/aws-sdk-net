@@ -34,7 +34,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// JdbcTarget Marshaller
-    /// </summary>       
+    /// </summary>
     public class JdbcTargetMarshaller : IRequestMarshaller<JdbcTarget, JsonMarshallerContext> 
     {
         /// <summary>
@@ -49,6 +49,17 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("ConnectionName");
                 context.Writer.Write(requestObject.ConnectionName);
+            }
+
+            if(requestObject.IsSetEnableAdditionalMetadata())
+            {
+                context.Writer.WritePropertyName("EnableAdditionalMetadata");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectEnableAdditionalMetadataListValue in requestObject.EnableAdditionalMetadata)
+                {
+                        context.Writer.Write(requestObjectEnableAdditionalMetadataListValue);
+                }
+                context.Writer.WriteArrayEnd();
             }
 
             if(requestObject.IsSetExclusions())
@@ -72,7 +83,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static JdbcTargetMarshaller Instance = new JdbcTargetMarshaller();
 
     }

@@ -52,6 +52,14 @@ namespace Amazon.LookoutEquipment.Model
         }
 
         /// <summary>
+        /// Paginator for ListInferenceEvents operation
+        ///</summary>
+        public IListInferenceEventsPaginator ListInferenceEvents(ListInferenceEventsRequest request) 
+        {
+            return new ListInferenceEventsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListInferenceExecutions operation
         ///</summary>
         public IListInferenceExecutionsPaginator ListInferenceExecutions(ListInferenceExecutionsRequest request) 
@@ -68,11 +76,35 @@ namespace Amazon.LookoutEquipment.Model
         }
 
         /// <summary>
+        /// Paginator for ListLabelGroups operation
+        ///</summary>
+        public IListLabelGroupsPaginator ListLabelGroups(ListLabelGroupsRequest request) 
+        {
+            return new ListLabelGroupsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListLabels operation
+        ///</summary>
+        public IListLabelsPaginator ListLabels(ListLabelsRequest request) 
+        {
+            return new ListLabelsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListModels operation
         ///</summary>
         public IListModelsPaginator ListModels(ListModelsRequest request) 
         {
             return new ListModelsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListSensorStatistics operation
+        ///</summary>
+        public IListSensorStatisticsPaginator ListSensorStatistics(ListSensorStatisticsRequest request) 
+        {
+            return new ListSensorStatisticsPaginator(this.client, request);
         }
     }
 }

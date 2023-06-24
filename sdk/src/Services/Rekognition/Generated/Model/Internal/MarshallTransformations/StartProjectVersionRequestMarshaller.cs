@@ -58,7 +58,7 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             string target = "RekognitionService.StartProjectVersion";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-06-27";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-06-27";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -67,6 +67,12 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetMaxInferenceUnits())
+                {
+                    context.Writer.WritePropertyName("MaxInferenceUnits");
+                    context.Writer.Write(publicRequest.MaxInferenceUnits);
+                }
+
                 if(publicRequest.IsSetMinInferenceUnits())
                 {
                     context.Writer.WritePropertyName("MinInferenceUnits");
@@ -79,7 +85,6 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ProjectVersionArn);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

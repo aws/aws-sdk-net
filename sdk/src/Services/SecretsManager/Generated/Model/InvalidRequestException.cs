@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecretsManager.Model
 {
     /// <summary>
-    /// You provided a parameter value that is not valid for the current state of the resource.
+    /// A parameter value is not valid for the current state of the resource.
     /// 
     ///  
     /// <para>
@@ -37,12 +37,18 @@ namespace Amazon.SecretsManager.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// You tried to perform the operation on a secret that's currently marked deleted.
+    /// The secret is scheduled for deletion.
     /// </para>
     ///  </li> <li> 
     /// <para>
     /// You tried to enable rotation on a secret that doesn't already have a Lambda function
     /// ARN configured and you didn't include such an ARN as a parameter in this call. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The secret is managed by another service, and you must use that service to update
+    /// it. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/service-linked-secrets.html">Secrets
+    /// managed by other Amazon Web Services services</a>.
     /// </para>
     ///  </li> </ul>
     /// </summary>

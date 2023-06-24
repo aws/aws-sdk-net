@@ -215,7 +215,7 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property SnowballType. 
         /// <para>
-        /// The type of Snow Family Devices associated with this long-term pricing job.
+        /// The type of Snow Family devices associated with this long-term pricing job.
         /// </para>
         /// </summary>
         public SnowballType SnowballType

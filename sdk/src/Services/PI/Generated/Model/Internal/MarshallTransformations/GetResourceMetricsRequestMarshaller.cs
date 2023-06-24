@@ -58,7 +58,7 @@ namespace Amazon.PI.Model.Internal.MarshallTransformations
             string target = "PerformanceInsightsv20180227.GetResourceMetrics";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-02-27";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-02-27";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -107,6 +107,12 @@ namespace Amazon.PI.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.NextToken);
                 }
 
+                if(publicRequest.IsSetPeriodAlignment())
+                {
+                    context.Writer.WritePropertyName("PeriodAlignment");
+                    context.Writer.Write(publicRequest.PeriodAlignment);
+                }
+
                 if(publicRequest.IsSetPeriodInSeconds())
                 {
                     context.Writer.WritePropertyName("PeriodInSeconds");
@@ -125,7 +131,6 @@ namespace Amazon.PI.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.StartTime);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

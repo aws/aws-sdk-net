@@ -29,12 +29,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WAFV2.Model
 {
     /// <summary>
-    /// All query arguments of a web request. 
+    /// Inspect all query arguments of the web request. 
     /// 
     ///  
     /// <para>
-    /// This is used only to indicate the web request component for WAF to inspect, in the
-    /// <a>FieldToMatch</a> specification. 
+    /// This is used in the <a>FieldToMatch</a> specification for some web request component
+    /// types. 
     /// </para>
     ///  
     /// <para>

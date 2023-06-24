@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ProductionVariant Marshaller
-    /// </summary>       
+    /// </summary>
     public class ProductionVariantMarshaller : IRequestMarshaller<ProductionVariant, JsonMarshallerContext> 
     {
         /// <summary>
@@ -51,6 +51,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.AcceleratorType);
             }
 
+            if(requestObject.IsSetContainerStartupHealthCheckTimeoutInSeconds())
+            {
+                context.Writer.WritePropertyName("ContainerStartupHealthCheckTimeoutInSeconds");
+                context.Writer.Write(requestObject.ContainerStartupHealthCheckTimeoutInSeconds);
+            }
+
             if(requestObject.IsSetCoreDumpConfig())
             {
                 context.Writer.WritePropertyName("CoreDumpConfig");
@@ -60,6 +66,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 marshaller.Marshall(requestObject.CoreDumpConfig, context);
 
                 context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetEnableSSMAccess())
+            {
+                context.Writer.WritePropertyName("EnableSSMAccess");
+                context.Writer.Write(requestObject.EnableSSMAccess);
             }
 
             if(requestObject.IsSetInitialInstanceCount())
@@ -78,6 +90,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("InstanceType");
                 context.Writer.Write(requestObject.InstanceType);
+            }
+
+            if(requestObject.IsSetModelDataDownloadTimeoutInSeconds())
+            {
+                context.Writer.WritePropertyName("ModelDataDownloadTimeoutInSeconds");
+                context.Writer.Write(requestObject.ModelDataDownloadTimeoutInSeconds);
             }
 
             if(requestObject.IsSetModelName())
@@ -103,11 +121,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.VariantName);
             }
 
+            if(requestObject.IsSetVolumeSizeInGB())
+            {
+                context.Writer.WritePropertyName("VolumeSizeInGB");
+                context.Writer.Write(requestObject.VolumeSizeInGB);
+            }
+
         }
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ProductionVariantMarshaller Instance = new ProductionVariantMarshaller();
 
     }

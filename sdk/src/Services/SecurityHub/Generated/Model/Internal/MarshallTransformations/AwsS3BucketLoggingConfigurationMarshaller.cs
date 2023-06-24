@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AwsS3BucketLoggingConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class AwsS3BucketLoggingConfigurationMarshaller : IRequestMarshaller<AwsS3BucketLoggingConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AwsS3BucketLoggingConfigurationMarshaller Instance = new AwsS3BucketLoggingConfigurationMarshaller();
 
     }

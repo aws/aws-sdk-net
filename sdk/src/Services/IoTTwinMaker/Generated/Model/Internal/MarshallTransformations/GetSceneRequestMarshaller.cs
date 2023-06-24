@@ -55,7 +55,7 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
         public IRequest Marshall(GetSceneRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.IoTTwinMaker");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-11-29";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-11-29";
             request.HttpMethod = "GET";
 
             if (!publicRequest.IsSetSceneId())

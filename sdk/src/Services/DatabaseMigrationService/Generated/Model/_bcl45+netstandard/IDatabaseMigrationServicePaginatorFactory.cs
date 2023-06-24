@@ -66,6 +66,31 @@ namespace Amazon.DatabaseMigrationService.Model
         IDescribeEventSubscriptionsPaginator DescribeEventSubscriptions(DescribeEventSubscriptionsRequest request);
 
         /// <summary>
+        /// Paginator for DescribeFleetAdvisorCollectors operation
+        ///</summary>
+        IDescribeFleetAdvisorCollectorsPaginator DescribeFleetAdvisorCollectors(DescribeFleetAdvisorCollectorsRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeFleetAdvisorDatabases operation
+        ///</summary>
+        IDescribeFleetAdvisorDatabasesPaginator DescribeFleetAdvisorDatabases(DescribeFleetAdvisorDatabasesRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeFleetAdvisorLsaAnalysis operation
+        ///</summary>
+        IDescribeFleetAdvisorLsaAnalysisPaginator DescribeFleetAdvisorLsaAnalysis(DescribeFleetAdvisorLsaAnalysisRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeFleetAdvisorSchemaObjectSummary operation
+        ///</summary>
+        IDescribeFleetAdvisorSchemaObjectSummaryPaginator DescribeFleetAdvisorSchemaObjectSummary(DescribeFleetAdvisorSchemaObjectSummaryRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeFleetAdvisorSchemas operation
+        ///</summary>
+        IDescribeFleetAdvisorSchemasPaginator DescribeFleetAdvisorSchemas(DescribeFleetAdvisorSchemasRequest request);
+
+        /// <summary>
         /// Paginator for DescribeOrderableReplicationInstances operation
         ///</summary>
         IDescribeOrderableReplicationInstancesPaginator DescribeOrderableReplicationInstances(DescribeOrderableReplicationInstancesRequest request);
@@ -74,6 +99,16 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Paginator for DescribePendingMaintenanceActions operation
         ///</summary>
         IDescribePendingMaintenanceActionsPaginator DescribePendingMaintenanceActions(DescribePendingMaintenanceActionsRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeRecommendationLimitations operation
+        ///</summary>
+        IDescribeRecommendationLimitationsPaginator DescribeRecommendationLimitations(DescribeRecommendationLimitationsRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeRecommendations operation
+        ///</summary>
+        IDescribeRecommendationsPaginator DescribeRecommendations(DescribeRecommendationsRequest request);
 
         /// <summary>
         /// Paginator for DescribeReplicationInstances operation

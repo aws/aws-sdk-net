@@ -34,7 +34,7 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// OrganizationAggregationSource Marshaller
-    /// </summary>       
+    /// </summary>
     public class OrganizationAggregationSourceMarshaller : IRequestMarshaller<OrganizationAggregationSource, JsonMarshallerContext> 
     {
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static OrganizationAggregationSourceMarshaller Instance = new OrganizationAggregationSourceMarshaller();
 
     }

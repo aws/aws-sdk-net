@@ -34,7 +34,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// TagColumnOperation Marshaller
-    /// </summary>       
+    /// </summary>
     public class TagColumnOperationMarshaller : IRequestMarshaller<TagColumnOperation, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static TagColumnOperationMarshaller Instance = new TagColumnOperationMarshaller();
 
     }

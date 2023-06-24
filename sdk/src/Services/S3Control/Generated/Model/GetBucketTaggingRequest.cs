@@ -63,11 +63,11 @@ namespace Amazon.S3Control.Model
     ///  </li> </ul> </li> </ul> 
     /// <para>
     /// All Amazon S3 on Outposts REST API requests for this action require an additional
-    /// parameter of <code>x-amz-outpost-id</code> to be passed with the request and an S3
-    /// on Outposts endpoint hostname prefix instead of <code>s3-control</code>. For an example
-    /// of the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint
-    /// hostname prefix and the <code>x-amz-outpost-id</code> derived using the access point
-    /// ARN, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetBucketTagging.html#API_control_GetBucketTagging_Examples">Examples</a>
+    /// parameter of <code>x-amz-outpost-id</code> to be passed with the request. In addition,
+    /// you must use an S3 on Outposts endpoint hostname prefix instead of <code>s3-control</code>.
+    /// For an example of the request syntax for Amazon S3 on Outposts that uses the S3 on
+    /// Outposts endpoint hostname prefix and the <code>x-amz-outpost-id</code> derived by
+    /// using the access point ARN, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetBucketTagging.html#API_control_GetBucketTagging_Examples">Examples</a>
     /// section.
     /// </para>
     ///  
@@ -124,7 +124,7 @@ namespace Amazon.S3Control.Model
         /// <para>
         /// For using this parameter with S3 on Outposts with the Amazon Web Services SDK and
         /// CLI, you must specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/bucket/&lt;my-bucket-name&gt;</code>.
-        /// For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code>
+        /// For example, to access the bucket <code>reports</code> through Outpost <code>my-outpost</code>
         /// owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the
         /// URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>.
         /// The value must be URL encoded. 

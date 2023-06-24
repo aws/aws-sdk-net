@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecretsManager.Model
 {
     /// <summary>
-    /// You provided a resource-based policy with syntax errors.
+    /// The resource policy has syntax errors.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -34,7 +34,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DateTimeParameter Marshaller
-    /// </summary>       
+    /// </summary>
     public class DateTimeParameterMarshaller : IRequestMarshaller<DateTimeParameter, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DateTimeParameterMarshaller Instance = new DateTimeParameterMarshaller();
 
     }

@@ -25,6 +25,60 @@ namespace Amazon.Imagebuilder
 {
 
     /// <summary>
+    /// Constants used for properties of type BuildType.
+    /// </summary>
+    public class BuildType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant IMPORT for BuildType
+        /// </summary>
+        public static readonly BuildType IMPORT = new BuildType("IMPORT");
+        /// <summary>
+        /// Constant SCHEDULED for BuildType
+        /// </summary>
+        public static readonly BuildType SCHEDULED = new BuildType("SCHEDULED");
+        /// <summary>
+        /// Constant USER_INITIATED for BuildType
+        /// </summary>
+        public static readonly BuildType USER_INITIATED = new BuildType("USER_INITIATED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BuildType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BuildType FindValue(string value)
+        {
+            return FindValue<BuildType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BuildType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ComponentFormat.
     /// </summary>
     public class ComponentFormat : ConstantClass
@@ -259,6 +313,60 @@ namespace Amazon.Imagebuilder
 
 
     /// <summary>
+    /// Constants used for properties of type DiskImageFormat.
+    /// </summary>
+    public class DiskImageFormat : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant RAW for DiskImageFormat
+        /// </summary>
+        public static readonly DiskImageFormat RAW = new DiskImageFormat("RAW");
+        /// <summary>
+        /// Constant VHD for DiskImageFormat
+        /// </summary>
+        public static readonly DiskImageFormat VHD = new DiskImageFormat("VHD");
+        /// <summary>
+        /// Constant VMDK for DiskImageFormat
+        /// </summary>
+        public static readonly DiskImageFormat VMDK = new DiskImageFormat("VMDK");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DiskImageFormat(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DiskImageFormat FindValue(string value)
+        {
+            return FindValue<DiskImageFormat>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DiskImageFormat(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type EbsVolumeType.
     /// </summary>
     public class EbsVolumeType : ConstantClass
@@ -322,6 +430,134 @@ namespace Amazon.Imagebuilder
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator EbsVolumeType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ImageScanStatus.
+    /// </summary>
+    public class ImageScanStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ABANDONED for ImageScanStatus
+        /// </summary>
+        public static readonly ImageScanStatus ABANDONED = new ImageScanStatus("ABANDONED");
+        /// <summary>
+        /// Constant COLLECTING for ImageScanStatus
+        /// </summary>
+        public static readonly ImageScanStatus COLLECTING = new ImageScanStatus("COLLECTING");
+        /// <summary>
+        /// Constant COMPLETED for ImageScanStatus
+        /// </summary>
+        public static readonly ImageScanStatus COMPLETED = new ImageScanStatus("COMPLETED");
+        /// <summary>
+        /// Constant FAILED for ImageScanStatus
+        /// </summary>
+        public static readonly ImageScanStatus FAILED = new ImageScanStatus("FAILED");
+        /// <summary>
+        /// Constant PENDING for ImageScanStatus
+        /// </summary>
+        public static readonly ImageScanStatus PENDING = new ImageScanStatus("PENDING");
+        /// <summary>
+        /// Constant SCANNING for ImageScanStatus
+        /// </summary>
+        public static readonly ImageScanStatus SCANNING = new ImageScanStatus("SCANNING");
+        /// <summary>
+        /// Constant TIMED_OUT for ImageScanStatus
+        /// </summary>
+        public static readonly ImageScanStatus TIMED_OUT = new ImageScanStatus("TIMED_OUT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ImageScanStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ImageScanStatus FindValue(string value)
+        {
+            return FindValue<ImageScanStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ImageScanStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ImageSource.
+    /// </summary>
+    public class ImageSource : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AMAZON_MANAGED for ImageSource
+        /// </summary>
+        public static readonly ImageSource AMAZON_MANAGED = new ImageSource("AMAZON_MANAGED");
+        /// <summary>
+        /// Constant AWS_MARKETPLACE for ImageSource
+        /// </summary>
+        public static readonly ImageSource AWS_MARKETPLACE = new ImageSource("AWS_MARKETPLACE");
+        /// <summary>
+        /// Constant CUSTOM for ImageSource
+        /// </summary>
+        public static readonly ImageSource CUSTOM = new ImageSource("CUSTOM");
+        /// <summary>
+        /// Constant IMPORTED for ImageSource
+        /// </summary>
+        public static readonly ImageSource IMPORTED = new ImageSource("IMPORTED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ImageSource(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ImageSource FindValue(string value)
+        {
+            return FindValue<ImageSource>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ImageSource(string value)
         {
             return FindValue(value);
         }
@@ -482,6 +718,10 @@ namespace Amazon.Imagebuilder
         /// Constant Shared for Ownership
         /// </summary>
         public static readonly Ownership Shared = new Ownership("Shared");
+        /// <summary>
+        /// Constant ThirdParty for Ownership
+        /// </summary>
+        public static readonly Ownership ThirdParty = new Ownership("ThirdParty");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -662,6 +902,250 @@ namespace Amazon.Imagebuilder
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Platform(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type WorkflowExecutionStatus.
+    /// </summary>
+    public class WorkflowExecutionStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPLETED for WorkflowExecutionStatus
+        /// </summary>
+        public static readonly WorkflowExecutionStatus COMPLETED = new WorkflowExecutionStatus("COMPLETED");
+        /// <summary>
+        /// Constant FAILED for WorkflowExecutionStatus
+        /// </summary>
+        public static readonly WorkflowExecutionStatus FAILED = new WorkflowExecutionStatus("FAILED");
+        /// <summary>
+        /// Constant PENDING for WorkflowExecutionStatus
+        /// </summary>
+        public static readonly WorkflowExecutionStatus PENDING = new WorkflowExecutionStatus("PENDING");
+        /// <summary>
+        /// Constant ROLLBACK_COMPLETED for WorkflowExecutionStatus
+        /// </summary>
+        public static readonly WorkflowExecutionStatus ROLLBACK_COMPLETED = new WorkflowExecutionStatus("ROLLBACK_COMPLETED");
+        /// <summary>
+        /// Constant ROLLBACK_IN_PROGRESS for WorkflowExecutionStatus
+        /// </summary>
+        public static readonly WorkflowExecutionStatus ROLLBACK_IN_PROGRESS = new WorkflowExecutionStatus("ROLLBACK_IN_PROGRESS");
+        /// <summary>
+        /// Constant RUNNING for WorkflowExecutionStatus
+        /// </summary>
+        public static readonly WorkflowExecutionStatus RUNNING = new WorkflowExecutionStatus("RUNNING");
+        /// <summary>
+        /// Constant SKIPPED for WorkflowExecutionStatus
+        /// </summary>
+        public static readonly WorkflowExecutionStatus SKIPPED = new WorkflowExecutionStatus("SKIPPED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public WorkflowExecutionStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static WorkflowExecutionStatus FindValue(string value)
+        {
+            return FindValue<WorkflowExecutionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator WorkflowExecutionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type WorkflowStepExecutionRollbackStatus.
+    /// </summary>
+    public class WorkflowStepExecutionRollbackStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPLETED for WorkflowStepExecutionRollbackStatus
+        /// </summary>
+        public static readonly WorkflowStepExecutionRollbackStatus COMPLETED = new WorkflowStepExecutionRollbackStatus("COMPLETED");
+        /// <summary>
+        /// Constant FAILED for WorkflowStepExecutionRollbackStatus
+        /// </summary>
+        public static readonly WorkflowStepExecutionRollbackStatus FAILED = new WorkflowStepExecutionRollbackStatus("FAILED");
+        /// <summary>
+        /// Constant RUNNING for WorkflowStepExecutionRollbackStatus
+        /// </summary>
+        public static readonly WorkflowStepExecutionRollbackStatus RUNNING = new WorkflowStepExecutionRollbackStatus("RUNNING");
+        /// <summary>
+        /// Constant SKIPPED for WorkflowStepExecutionRollbackStatus
+        /// </summary>
+        public static readonly WorkflowStepExecutionRollbackStatus SKIPPED = new WorkflowStepExecutionRollbackStatus("SKIPPED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public WorkflowStepExecutionRollbackStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static WorkflowStepExecutionRollbackStatus FindValue(string value)
+        {
+            return FindValue<WorkflowStepExecutionRollbackStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator WorkflowStepExecutionRollbackStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type WorkflowStepExecutionStatus.
+    /// </summary>
+    public class WorkflowStepExecutionStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPLETED for WorkflowStepExecutionStatus
+        /// </summary>
+        public static readonly WorkflowStepExecutionStatus COMPLETED = new WorkflowStepExecutionStatus("COMPLETED");
+        /// <summary>
+        /// Constant FAILED for WorkflowStepExecutionStatus
+        /// </summary>
+        public static readonly WorkflowStepExecutionStatus FAILED = new WorkflowStepExecutionStatus("FAILED");
+        /// <summary>
+        /// Constant PENDING for WorkflowStepExecutionStatus
+        /// </summary>
+        public static readonly WorkflowStepExecutionStatus PENDING = new WorkflowStepExecutionStatus("PENDING");
+        /// <summary>
+        /// Constant RUNNING for WorkflowStepExecutionStatus
+        /// </summary>
+        public static readonly WorkflowStepExecutionStatus RUNNING = new WorkflowStepExecutionStatus("RUNNING");
+        /// <summary>
+        /// Constant SKIPPED for WorkflowStepExecutionStatus
+        /// </summary>
+        public static readonly WorkflowStepExecutionStatus SKIPPED = new WorkflowStepExecutionStatus("SKIPPED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public WorkflowStepExecutionStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static WorkflowStepExecutionStatus FindValue(string value)
+        {
+            return FindValue<WorkflowStepExecutionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator WorkflowStepExecutionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type WorkflowType.
+    /// </summary>
+    public class WorkflowType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BUILD for WorkflowType
+        /// </summary>
+        public static readonly WorkflowType BUILD = new WorkflowType("BUILD");
+        /// <summary>
+        /// Constant DISTRIBUTION for WorkflowType
+        /// </summary>
+        public static readonly WorkflowType DISTRIBUTION = new WorkflowType("DISTRIBUTION");
+        /// <summary>
+        /// Constant TEST for WorkflowType
+        /// </summary>
+        public static readonly WorkflowType TEST = new WorkflowType("TEST");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public WorkflowType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static WorkflowType FindValue(string value)
+        {
+            return FindValue<WorkflowType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator WorkflowType(string value)
         {
             return FindValue(value);
         }

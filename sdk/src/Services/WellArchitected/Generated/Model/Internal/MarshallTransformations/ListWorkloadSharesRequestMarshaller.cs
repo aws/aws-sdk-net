@@ -55,7 +55,7 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
         public IRequest Marshall(ListWorkloadSharesRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.WellArchitected");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-03-31";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-03-31";
             request.HttpMethod = "GET";
 
             if (!publicRequest.IsSetWorkloadId())
@@ -70,6 +70,9 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetSharedWithPrefix())
                 request.Parameters.Add("SharedWithPrefix", StringUtils.FromString(publicRequest.SharedWithPrefix));
+            
+            if (publicRequest.IsSetStatus())
+                request.Parameters.Add("Status", StringUtils.FromString(publicRequest.Status));
             request.ResourcePath = "/workloads/{WorkloadId}/shares";
             request.UseQueryString = true;
 

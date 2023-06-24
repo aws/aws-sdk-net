@@ -118,7 +118,7 @@ namespace Amazon.QuickSight.Model
         /// An ID for the theme associated with the deletion.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=2048)]
+        [AWSProperty(Min=1, Max=512)]
         public string ThemeId
         {
             get { return this._themeId; }

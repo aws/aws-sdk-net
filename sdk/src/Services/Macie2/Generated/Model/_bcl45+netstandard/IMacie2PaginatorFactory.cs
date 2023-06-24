@@ -36,9 +36,19 @@ namespace Amazon.Macie2.Model
         IGetUsageStatisticsPaginator GetUsageStatistics(GetUsageStatisticsRequest request);
 
         /// <summary>
+        /// Paginator for ListAllowLists operation
+        ///</summary>
+        IListAllowListsPaginator ListAllowLists(ListAllowListsRequest request);
+
+        /// <summary>
         /// Paginator for ListClassificationJobs operation
         ///</summary>
         IListClassificationJobsPaginator ListClassificationJobs(ListClassificationJobsRequest request);
+
+        /// <summary>
+        /// Paginator for ListClassificationScopes operation
+        ///</summary>
+        IListClassificationScopesPaginator ListClassificationScopes(ListClassificationScopesRequest request);
 
         /// <summary>
         /// Paginator for ListCustomDataIdentifiers operation
@@ -61,6 +71,11 @@ namespace Amazon.Macie2.Model
         IListInvitationsPaginator ListInvitations(ListInvitationsRequest request);
 
         /// <summary>
+        /// Paginator for ListManagedDataIdentifiers operation
+        ///</summary>
+        IListManagedDataIdentifiersPaginator ListManagedDataIdentifiers(ListManagedDataIdentifiersRequest request);
+
+        /// <summary>
         /// Paginator for ListMembers operation
         ///</summary>
         IListMembersPaginator ListMembers(ListMembersRequest request);
@@ -69,6 +84,21 @@ namespace Amazon.Macie2.Model
         /// Paginator for ListOrganizationAdminAccounts operation
         ///</summary>
         IListOrganizationAdminAccountsPaginator ListOrganizationAdminAccounts(ListOrganizationAdminAccountsRequest request);
+
+        /// <summary>
+        /// Paginator for ListResourceProfileArtifacts operation
+        ///</summary>
+        IListResourceProfileArtifactsPaginator ListResourceProfileArtifacts(ListResourceProfileArtifactsRequest request);
+
+        /// <summary>
+        /// Paginator for ListResourceProfileDetections operation
+        ///</summary>
+        IListResourceProfileDetectionsPaginator ListResourceProfileDetections(ListResourceProfileDetectionsRequest request);
+
+        /// <summary>
+        /// Paginator for ListSensitivityInspectionTemplates operation
+        ///</summary>
+        IListSensitivityInspectionTemplatesPaginator ListSensitivityInspectionTemplates(ListSensitivityInspectionTemplatesRequest request);
 
         /// <summary>
         /// Paginator for SearchResources operation

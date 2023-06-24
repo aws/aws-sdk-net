@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeDeploy.Model
 {
     /// <summary>
-    /// Information about alarms associated with the deployment group.
+    /// Information about alarms associated with a deployment or deployment group.
     /// </summary>
     public partial class AlarmConfiguration
     {
@@ -40,8 +40,8 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property Alarms. 
         /// <para>
-        /// A list of alarms configured for the deployment group. A maximum of 10 alarms can be
-        /// added to a deployment group.
+        /// A list of alarms configured for the deployment or deployment group. A maximum of 10
+        /// alarms can be added.
         /// </para>
         /// </summary>
         public List<Alarm> Alarms

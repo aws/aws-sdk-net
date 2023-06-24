@@ -48,7 +48,7 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The Unix epoch timestamp in seconds for when the resource was created.
+        /// The ISO timestamp in seconds for when the resource was created.
         /// </para>
         /// </summary>
         public DateTime CreatedAt
@@ -84,7 +84,7 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property ExpiresAt. 
         /// <para>
-        /// The Unix epoch timestamp in seconds for when the resource expires.
+        /// The ISO timestamp in seconds for when the resource expires.
         /// </para>
         /// </summary>
         public DateTime ExpiresAt
@@ -102,7 +102,8 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property OwnedBy. 
         /// <para>
-        /// The user ID of the user that owns the streaming session.
+        /// The user ID of the user that owns the streaming session. The user that owns the session
+        /// will be logging into the session and interacting with the virtual workstation.
         /// </para>
         /// </summary>
         public string OwnedBy
@@ -177,6 +178,7 @@ namespace Amazon.NimbleStudio.Model
         /// The URL to connect to this stream using the DCV client.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string Url
         {
             get { return this._url; }

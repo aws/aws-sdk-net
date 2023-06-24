@@ -34,7 +34,12 @@ namespace Amazon.Kinesis.Model
     /// data records are accessible after they are added to the stream. The minimum value
     /// of a stream's retention period is 24 hours.
     /// 
-    ///  
+    ///  <note> 
+    /// <para>
+    /// When invoking this API, it is recommended you use the <code>StreamARN</code> input
+    /// parameter rather than the <code>StreamName</code> input parameter.
+    /// </para>
+    ///  </note> 
     /// <para>
     /// This operation may result in lost data. For example, if the stream's retention period
     /// is 48 hours and is decreased to 24 hours, any data already in the stream that is older
@@ -44,6 +49,7 @@ namespace Amazon.Kinesis.Model
     public partial class DecreaseStreamRetentionPeriodRequest : AmazonKinesisRequest
     {
         private int? _retentionPeriodHours;
+        private string _streamARN;
         private string _streamName;
 
         /// <summary>
@@ -67,12 +73,31 @@ namespace Amazon.Kinesis.Model
         }
 
         /// <summary>
+        /// Gets and sets the property StreamARN. 
+        /// <para>
+        /// The ARN of the stream.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string StreamARN
+        {
+            get { return this._streamARN; }
+            set { this._streamARN = value; }
+        }
+
+        // Check to see if StreamARN property is set
+        internal bool IsSetStreamARN()
+        {
+            return this._streamARN != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property StreamName. 
         /// <para>
         /// The name of the stream to modify.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [AWSProperty(Min=1, Max=128)]
         public string StreamName
         {
             get { return this._streamName; }

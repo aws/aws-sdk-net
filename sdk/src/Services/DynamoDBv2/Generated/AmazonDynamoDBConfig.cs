@@ -17,22 +17,22 @@
  * Do not modify this file. This file is generated from the dynamodb-2012-08-10.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
-
+using Amazon.DynamoDBv2.Internal;
 
 namespace Amazon.DynamoDBv2
 {
     /// <summary>
     /// Configuration for accessing Amazon DynamoDB service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonDynamoDBConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.2.0");
+            InternalSDKUtils.BuildUserAgentString("3.7.104.1");
 
         private string _userAgent = UserAgentString;
 
@@ -40,9 +40,11 @@ namespace Amazon.DynamoDBv2
         /// Default constructor
         /// </summary>
         public AmazonDynamoDBConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonDynamoDBDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "dynamodb";
             this.MaxErrorRetry = 10;
+            this.EndpointProvider = new AmazonDynamoDBEndpointProvider();
         }
 
         /// <summary>
@@ -77,5 +79,6 @@ namespace Amazon.DynamoDBv2
                 return _userAgent;
             }
         }
+
     }
 }

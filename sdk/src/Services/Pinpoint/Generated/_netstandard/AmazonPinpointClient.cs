@@ -215,6 +215,15 @@ namespace Amazon.Pinpoint
         } 
 
         /// <summary>
+        /// Customizes the runtime pipeline.
+        /// </summary>
+        /// <param name="pipeline">Runtime pipeline for the current client.</param>
+        protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
+        {
+            pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonPinpointEndpointResolver());
+        }
+        /// <summary>
         /// Capture metadata for the service.
         /// </summary>
         protected override IServiceMetadata ServiceMetadata
@@ -3922,6 +3931,173 @@ namespace Amazon.Pinpoint
             options.ResponseUnmarshaller = GetJourneyExecutionMetricsResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetJourneyExecutionMetricsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetJourneyRunExecutionActivityMetrics
+
+        internal virtual GetJourneyRunExecutionActivityMetricsResponse GetJourneyRunExecutionActivityMetrics(GetJourneyRunExecutionActivityMetricsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetJourneyRunExecutionActivityMetricsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetJourneyRunExecutionActivityMetricsResponseUnmarshaller.Instance;
+
+            return Invoke<GetJourneyRunExecutionActivityMetricsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves (queries) pre-aggregated data for a standard run execution metric that applies
+        /// to a journey activity.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetJourneyRunExecutionActivityMetrics service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetJourneyRunExecutionActivityMetrics service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetJourneyRunExecutionActivityMetrics">REST API Reference for GetJourneyRunExecutionActivityMetrics Operation</seealso>
+        public virtual Task<GetJourneyRunExecutionActivityMetricsResponse> GetJourneyRunExecutionActivityMetricsAsync(GetJourneyRunExecutionActivityMetricsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetJourneyRunExecutionActivityMetricsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetJourneyRunExecutionActivityMetricsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetJourneyRunExecutionActivityMetricsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetJourneyRunExecutionMetrics
+
+        internal virtual GetJourneyRunExecutionMetricsResponse GetJourneyRunExecutionMetrics(GetJourneyRunExecutionMetricsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetJourneyRunExecutionMetricsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetJourneyRunExecutionMetricsResponseUnmarshaller.Instance;
+
+            return Invoke<GetJourneyRunExecutionMetricsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves (queries) pre-aggregated data for a standard run execution metric that applies
+        /// to a journey.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetJourneyRunExecutionMetrics service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetJourneyRunExecutionMetrics service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetJourneyRunExecutionMetrics">REST API Reference for GetJourneyRunExecutionMetrics Operation</seealso>
+        public virtual Task<GetJourneyRunExecutionMetricsResponse> GetJourneyRunExecutionMetricsAsync(GetJourneyRunExecutionMetricsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetJourneyRunExecutionMetricsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetJourneyRunExecutionMetricsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetJourneyRunExecutionMetricsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetJourneyRuns
+
+        internal virtual GetJourneyRunsResponse GetJourneyRuns(GetJourneyRunsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetJourneyRunsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetJourneyRunsResponseUnmarshaller.Instance;
+
+            return Invoke<GetJourneyRunsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Provides information about the runs of a journey.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetJourneyRuns service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetJourneyRuns service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetJourneyRuns">REST API Reference for GetJourneyRuns Operation</seealso>
+        public virtual Task<GetJourneyRunsResponse> GetJourneyRunsAsync(GetJourneyRunsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetJourneyRunsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetJourneyRunsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetJourneyRunsResponse>(request, options, cancellationToken);
         }
 
         #endregion

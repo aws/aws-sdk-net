@@ -105,6 +105,12 @@ namespace Amazon.FraudDetector.Model
         /// <para>
         /// The ARN of the IAM role to use for this job request.
         /// </para>
+        ///  
+        /// <para>
+        /// The IAM Role must have read permissions to your input S3 bucket and write permissions
+        /// to your output S3 bucket. For more information about bucket permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/example-policies-s3.html">User
+        /// policy examples</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
         public string IamRoleArn

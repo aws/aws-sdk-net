@@ -33,13 +33,36 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class PipelineExecutionStep
     {
+        private int? _attemptCount;
         private CacheHitResult _cacheHitResult;
         private DateTime? _endTime;
         private string _failureReason;
         private PipelineExecutionStepMetadata _metadata;
+        private SelectiveExecutionResult _selectiveExecutionResult;
         private DateTime? _startTime;
+        private string _stepDescription;
+        private string _stepDisplayName;
         private string _stepName;
         private StepStatus _stepStatus;
+
+        /// <summary>
+        /// Gets and sets the property AttemptCount. 
+        /// <para>
+        /// The current attempt of the execution step. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-retry-policy.html">Retry
+        /// Policy for SageMaker Pipelines steps</a>.
+        /// </para>
+        /// </summary>
+        public int AttemptCount
+        {
+            get { return this._attemptCount.GetValueOrDefault(); }
+            set { this._attemptCount = value; }
+        }
+
+        // Check to see if AttemptCount property is set
+        internal bool IsSetAttemptCount()
+        {
+            return this._attemptCount.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property CacheHitResult. 
@@ -100,7 +123,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Metadata. 
         /// <para>
-        /// Metadata for the step execution.
+        /// Metadata to run the pipeline step.
         /// </para>
         /// </summary>
         public PipelineExecutionStepMetadata Metadata
@@ -113,6 +136,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetMetadata()
         {
             return this._metadata != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SelectiveExecutionResult. 
+        /// <para>
+        /// The ARN from an execution of the current pipeline from which results are reused for
+        /// this step.
+        /// </para>
+        /// </summary>
+        public SelectiveExecutionResult SelectiveExecutionResult
+        {
+            get { return this._selectiveExecutionResult; }
+            set { this._selectiveExecutionResult = value; }
+        }
+
+        // Check to see if SelectiveExecutionResult property is set
+        internal bool IsSetSelectiveExecutionResult()
+        {
+            return this._selectiveExecutionResult != null;
         }
 
         /// <summary>
@@ -134,12 +176,50 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property StepDescription. 
+        /// <para>
+        /// The description of the step.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=3072)]
+        public string StepDescription
+        {
+            get { return this._stepDescription; }
+            set { this._stepDescription = value; }
+        }
+
+        // Check to see if StepDescription property is set
+        internal bool IsSetStepDescription()
+        {
+            return this._stepDescription != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StepDisplayName. 
+        /// <para>
+        /// The display name of the step.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=256)]
+        public string StepDisplayName
+        {
+            get { return this._stepDisplayName; }
+            set { this._stepDisplayName = value; }
+        }
+
+        // Check to see if StepDisplayName property is set
+        internal bool IsSetStepDisplayName()
+        {
+            return this._stepDisplayName != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property StepName. 
         /// <para>
         /// The name of the step that is executed.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Max=64)]
         public string StepName
         {
             get { return this._stepName; }

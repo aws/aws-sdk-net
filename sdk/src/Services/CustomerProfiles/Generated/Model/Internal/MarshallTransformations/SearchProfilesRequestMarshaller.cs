@@ -56,7 +56,7 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CustomerProfiles");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-08-15";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-08-15";
             request.HttpMethod = "POST";
 
             if (!publicRequest.IsSetDomainName())
@@ -74,10 +74,32 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAdditionalSearchKeys())
+                {
+                    context.Writer.WritePropertyName("AdditionalSearchKeys");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestAdditionalSearchKeysListValue in publicRequest.AdditionalSearchKeys)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = AdditionalSearchKeyMarshaller.Instance;
+                        marshaller.Marshall(publicRequestAdditionalSearchKeysListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetKeyName())
                 {
                     context.Writer.WritePropertyName("KeyName");
                     context.Writer.Write(publicRequest.KeyName);
+                }
+
+                if(publicRequest.IsSetLogicalOperator())
+                {
+                    context.Writer.WritePropertyName("LogicalOperator");
+                    context.Writer.Write(publicRequest.LogicalOperator);
                 }
 
                 if(publicRequest.IsSetValues())
@@ -91,7 +113,6 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

@@ -46,6 +46,7 @@ namespace Amazon.Route53RecoveryControlConfig.Model
         /// The Amazon Resource Name (ARN) of the control panel that includes the routing control.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string ControlPanelArn
         {
             get { return this._controlPanelArn; }
@@ -83,6 +84,7 @@ namespace Amazon.Route53RecoveryControlConfig.Model
         /// The Amazon Resource Name (ARN) of the routing control.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string RoutingControlArn
         {
             get { return this._routingControlArn; }

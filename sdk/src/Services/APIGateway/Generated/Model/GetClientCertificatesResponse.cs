@@ -29,10 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.APIGateway.Model
 {
     /// <summary>
-    /// Represents a collection of <a>ClientCertificate</a> resources.
-    /// 
-    ///  <div class="seeAlso"> <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/getting-started-client-side-ssl-authentication.html">Use
-    /// Client-Side Certificate</a> </div>
+    /// Represents a collection of ClientCertificate resources.
     /// </summary>
     public partial class GetClientCertificatesResponse : AmazonWebServiceResponse
     {

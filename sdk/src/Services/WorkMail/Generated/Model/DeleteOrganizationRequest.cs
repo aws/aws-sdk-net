@@ -30,10 +30,10 @@ namespace Amazon.WorkMail.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteOrganization operation.
-    /// Deletes an Amazon WorkMail organization and all underlying AWS resources managed by
-    /// Amazon WorkMail as part of the organization. You can choose whether to delete the
-    /// associated directory. For more information, see <a href="https://docs.aws.amazon.com/workmail/latest/adminguide/remove_organization.html">Removing
-    /// an organization</a> in the <i>Amazon WorkMail Administrator Guide</i>.
+    /// Deletes an WorkMail organization and all underlying AWS resources managed by WorkMail
+    /// as part of the organization. You can choose whether to delete the associated directory.
+    /// For more information, see <a href="https://docs.aws.amazon.com/workmail/latest/adminguide/remove_organization.html">Removing
+    /// an organization</a> in the <i>WorkMail Administrator Guide</i>.
     /// </summary>
     public partial class DeleteOrganizationRequest : AmazonWorkMailRequest
     {

@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// OfflineStoreConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class OfflineStoreConfigMarshaller : IRequestMarshaller<OfflineStoreConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -73,11 +73,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetTableFormat())
+            {
+                context.Writer.WritePropertyName("TableFormat");
+                context.Writer.Write(requestObject.TableFormat);
+            }
+
         }
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static OfflineStoreConfigMarshaller Instance = new OfflineStoreConfigMarshaller();
 
     }

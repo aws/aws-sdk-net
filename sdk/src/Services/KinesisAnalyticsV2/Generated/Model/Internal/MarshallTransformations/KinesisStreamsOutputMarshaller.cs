@@ -34,7 +34,7 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// KinesisStreamsOutput Marshaller
-    /// </summary>       
+    /// </summary>
     public class KinesisStreamsOutputMarshaller : IRequestMarshaller<KinesisStreamsOutput, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static KinesisStreamsOutputMarshaller Instance = new KinesisStreamsOutputMarshaller();
 
     }

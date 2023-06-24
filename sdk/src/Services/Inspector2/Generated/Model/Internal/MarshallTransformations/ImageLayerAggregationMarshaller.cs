@@ -34,7 +34,7 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ImageLayerAggregation Marshaller
-    /// </summary>       
+    /// </summary>
     public class ImageLayerAggregationMarshaller : IRequestMarshaller<ImageLayerAggregation, JsonMarshallerContext> 
     {
         /// <summary>
@@ -109,7 +109,7 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ImageLayerAggregationMarshaller Instance = new ImageLayerAggregationMarshaller();
 
     }

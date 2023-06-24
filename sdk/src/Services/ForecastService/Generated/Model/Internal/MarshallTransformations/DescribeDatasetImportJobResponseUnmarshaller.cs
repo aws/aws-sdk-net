@@ -99,10 +99,22 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
                     response.FieldStatistics = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Format", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Format = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("GeolocationFormat", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.GeolocationFormat = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ImportMode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ImportMode = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("LastModificationTime", targetDepth))

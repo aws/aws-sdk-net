@@ -56,7 +56,7 @@ namespace Amazon.Lex.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Lex");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-11-28";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-11-28";
             request.HttpMethod = "POST";
 
             if (!publicRequest.IsSetBotAlias())
@@ -70,7 +70,7 @@ namespace Amazon.Lex.Model.Internal.MarshallTransformations
             request.AddPathResource("{userId}", StringUtils.FromString(publicRequest.UserId));
             request.ResourcePath = "/bot/{botName}/alias/{botAlias}/user/{userId}/content";
             request.ContentStream =  publicRequest.InputStream ?? new MemoryStream();
-            if(request.ContentStream.CanSeek)
+            if (request.ContentStream.CanSeek)
             {
                 request.Headers[Amazon.Util.HeaderKeys.ContentLengthHeader] =  
                     request.ContentStream.Length.ToString(CultureInfo.InvariantCulture);
@@ -79,22 +79,36 @@ namespace Amazon.Lex.Model.Internal.MarshallTransformations
             {
                 request.Headers[Amazon.Util.HeaderKeys.TransferEncodingHeader] = "chunked";
             }
-            request.Headers[Amazon.Util.HeaderKeys.ContentTypeHeader] = "binary/octet-stream";
+            request.Headers[Amazon.Util.HeaderKeys.ContentTypeHeader] = "binary/octet-stream"; 
+            if (request.ContentStream != null && request.ContentStream.Length == 0)
+            {
+                request.Headers.Remove(Amazon.Util.HeaderKeys.ContentTypeHeader);
+            }
         
-            if(publicRequest.IsSetAccept())
+            if (publicRequest.IsSetAccept()) 
+            {
                 request.Headers["Accept"] = publicRequest.Accept;
+            }
         
-            if(publicRequest.IsSetActiveContexts())
+            if (publicRequest.IsSetActiveContexts()) 
+            {
                 request.Headers["x-amz-lex-active-contexts"] = Convert.ToBase64String(Encoding.UTF8.GetBytes(publicRequest.ActiveContexts));
+            }
         
-            if(publicRequest.IsSetContentType())
+            if (publicRequest.IsSetContentType()) 
+            {
                 request.Headers["Content-Type"] = publicRequest.ContentType;
+            }
         
-            if(publicRequest.IsSetRequestAttributes())
+            if (publicRequest.IsSetRequestAttributes()) 
+            {
                 request.Headers["x-amz-lex-request-attributes"] = Convert.ToBase64String(Encoding.UTF8.GetBytes(publicRequest.RequestAttributes));
+            }
         
-            if(publicRequest.IsSetSessionAttributes())
+            if (publicRequest.IsSetSessionAttributes()) 
+            {
                 request.Headers["x-amz-lex-session-attributes"] = Convert.ToBase64String(Encoding.UTF8.GetBytes(publicRequest.SessionAttributes));
+            }
 
             return request;
         }

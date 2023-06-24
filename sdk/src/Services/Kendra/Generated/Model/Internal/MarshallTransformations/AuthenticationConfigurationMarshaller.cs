@@ -34,7 +34,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AuthenticationConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class AuthenticationConfigurationMarshaller : IRequestMarshaller<AuthenticationConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -65,7 +65,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AuthenticationConfigurationMarshaller Instance = new AuthenticationConfigurationMarshaller();
 
     }

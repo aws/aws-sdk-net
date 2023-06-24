@@ -34,7 +34,7 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// WorkspaceProperties Marshaller
-    /// </summary>       
+    /// </summary>
     public class WorkspacePropertiesMarshaller : IRequestMarshaller<WorkspaceProperties, JsonMarshallerContext> 
     {
         /// <summary>
@@ -49,6 +49,17 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("ComputeTypeName");
                 context.Writer.Write(requestObject.ComputeTypeName);
+            }
+
+            if(requestObject.IsSetProtocols())
+            {
+                context.Writer.WritePropertyName("Protocols");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectProtocolsListValue in requestObject.Protocols)
+                {
+                        context.Writer.Write(requestObjectProtocolsListValue);
+                }
+                context.Writer.WriteArrayEnd();
             }
 
             if(requestObject.IsSetRootVolumeSizeGib())
@@ -79,7 +90,7 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static WorkspacePropertiesMarshaller Instance = new WorkspacePropertiesMarshaller();
 
     }

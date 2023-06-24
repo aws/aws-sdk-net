@@ -130,6 +130,12 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                     unmarshalledObject.Location = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("metadataOptions", targetDepth))
+                {
+                    var unmarshaller = InstanceMetadataOptionsUnmarshaller.Instance;
+                    unmarshalledObject.MetadataOptions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

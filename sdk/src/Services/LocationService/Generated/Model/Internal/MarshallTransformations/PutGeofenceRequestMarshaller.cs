@@ -56,7 +56,7 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.LocationService");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-11-19";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-11-19";
             request.HttpMethod = "PUT";
 
             if (!publicRequest.IsSetCollectionName())
@@ -71,6 +71,20 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetGeofenceProperties())
+                {
+                    context.Writer.WritePropertyName("GeofenceProperties");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestGeofencePropertiesKvp in publicRequest.GeofenceProperties)
+                    {
+                        context.Writer.WritePropertyName(publicRequestGeofencePropertiesKvp.Key);
+                        var publicRequestGeofencePropertiesValue = publicRequestGeofencePropertiesKvp.Value;
+
+                            context.Writer.Write(publicRequestGeofencePropertiesValue);
+                    }
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetGeometry())
                 {
                     context.Writer.WritePropertyName("Geometry");
@@ -82,7 +96,6 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

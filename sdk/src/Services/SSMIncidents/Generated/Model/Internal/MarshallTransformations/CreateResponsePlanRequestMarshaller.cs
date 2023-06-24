@@ -56,7 +56,7 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.SSMIncidents");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-05-10";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-05-10";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/createResponsePlan";
@@ -101,7 +101,7 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
                 else if(!(publicRequest.IsSetClientToken()))
                 {
                     context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());                                                
+                    context.Writer.Write(Guid.NewGuid().ToString());
                 }
                 if(publicRequest.IsSetDisplayName())
                 {
@@ -131,6 +131,22 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetIntegrations())
+                {
+                    context.Writer.WritePropertyName("integrations");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestIntegrationsListValue in publicRequest.Integrations)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = IntegrationMarshaller.Instance;
+                        marshaller.Marshall(publicRequestIntegrationsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetName())
                 {
                     context.Writer.WritePropertyName("name");
@@ -151,7 +167,6 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

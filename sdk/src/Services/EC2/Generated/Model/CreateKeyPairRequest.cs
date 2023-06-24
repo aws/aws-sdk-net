@@ -30,10 +30,11 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateKeyPair operation.
-    /// Creates an ED25519 or 2048-bit RSA key pair with the specified name. Amazon EC2 stores
-    /// the public key and displays the private key for you to save to a file. The private
-    /// key is returned as an unencrypted PEM encoded PKCS#1 private key. If a key with the
-    /// specified name already exists, Amazon EC2 returns an error.
+    /// Creates an ED25519 or 2048-bit RSA key pair with the specified name and in the specified
+    /// PEM or PPK format. Amazon EC2 stores the public key and displays the private key for
+    /// you to save to a file. The private key is returned as an unencrypted PEM encoded PKCS#1
+    /// private key or an unencrypted PPK formatted private key for use with PuTTY. If a key
+    /// with the specified name already exists, Amazon EC2 returns an error.
     /// 
     ///  
     /// <para>
@@ -53,6 +54,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class CreateKeyPairRequest : AmazonEC2Request
     {
+        private KeyFormat _keyFormat;
         private string _keyName;
         private KeyType _keyType;
         private List<TagSpecification> _tagSpecifications = new List<TagSpecification>();
@@ -69,6 +71,28 @@ namespace Amazon.EC2.Model
         public CreateKeyPairRequest(string keyName)
         {
             _keyName = keyName;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KeyFormat. 
+        /// <para>
+        /// The format of the key pair.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: <code>pem</code> 
+        /// </para>
+        /// </summary>
+        public KeyFormat KeyFormat
+        {
+            get { return this._keyFormat; }
+            set { this._keyFormat = value; }
+        }
+
+        // Check to see if KeyFormat property is set
+        internal bool IsSetKeyFormat()
+        {
+            return this._keyFormat != null;
         }
 
         /// <summary>
@@ -97,8 +121,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property KeyType. 
         /// <para>
-        /// The type of key pair. Note that ED25519 keys are not supported for Windows instances,
-        /// EC2 Instance Connect, and EC2 Serial Console.
+        /// The type of key pair. Note that ED25519 keys are not supported for Windows instances.
         /// </para>
         ///  
         /// <para>

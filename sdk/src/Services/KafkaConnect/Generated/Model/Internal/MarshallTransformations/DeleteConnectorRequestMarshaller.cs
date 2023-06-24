@@ -55,7 +55,7 @@ namespace Amazon.KafkaConnect.Model.Internal.MarshallTransformations
         public IRequest Marshall(DeleteConnectorRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.KafkaConnect");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-09-14";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-09-14";
             request.HttpMethod = "DELETE";
 
             if (!publicRequest.IsSetConnectorArn())

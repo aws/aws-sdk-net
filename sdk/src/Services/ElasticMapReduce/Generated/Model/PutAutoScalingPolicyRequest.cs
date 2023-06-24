@@ -32,8 +32,8 @@ namespace Amazon.ElasticMapReduce.Model
     /// Container for the parameters to the PutAutoScalingPolicy operation.
     /// Creates or updates an automatic scaling policy for a core instance group or task instance
     /// group in an Amazon EMR cluster. The automatic scaling policy defines how an instance
-    /// group dynamically adds and terminates EC2 instances in response to the value of a
-    /// CloudWatch metric.
+    /// group dynamically adds and terminates Amazon EC2 instances in response to the value
+    /// of a CloudWatch metric.
     /// </summary>
     public partial class PutAutoScalingPolicyRequest : AmazonElasticMapReduceRequest
     {

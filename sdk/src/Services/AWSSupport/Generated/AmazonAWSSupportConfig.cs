@@ -17,22 +17,22 @@
  * Do not modify this file. This file is generated from the support-2013-04-15.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
-
+using Amazon.AWSSupport.Internal;
 
 namespace Amazon.AWSSupport
 {
     /// <summary>
     /// Configuration for accessing Amazon AWSSupport service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonAWSSupportConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.106");
+            InternalSDKUtils.BuildUserAgentString("3.7.102.19");
 
         private string _userAgent = UserAgentString;
 
@@ -40,8 +40,10 @@ namespace Amazon.AWSSupport
         /// Default constructor
         /// </summary>
         public AmazonAWSSupportConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonAWSSupportDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "support";
+            this.EndpointProvider = new AmazonAWSSupportEndpointProvider();
         }
 
         /// <summary>
@@ -76,5 +78,6 @@ namespace Amazon.AWSSupport
                 return _userAgent;
             }
         }
+
     }
 }

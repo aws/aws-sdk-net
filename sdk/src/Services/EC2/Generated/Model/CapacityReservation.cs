@@ -36,6 +36,7 @@ namespace Amazon.EC2.Model
         private string _availabilityZone;
         private string _availabilityZoneId;
         private int? _availableInstanceCount;
+        private List<CapacityAllocation> _capacityAllocations = new List<CapacityAllocation>();
         private string _capacityReservationArn;
         private string _capacityReservationFleetId;
         private string _capacityReservationId;
@@ -49,6 +50,7 @@ namespace Amazon.EC2.Model
         private string _instanceType;
         private string _outpostArn;
         private string _ownerId;
+        private string _placementGroupArn;
         private DateTime? _startDate;
         private CapacityReservationState _state;
         private List<Tag> _tags = new List<Tag>();
@@ -108,6 +110,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetAvailableInstanceCount()
         {
             return this._availableInstanceCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CapacityAllocations. 
+        /// <para>
+        /// Information about instance capacity usage.
+        /// </para>
+        /// </summary>
+        public List<CapacityAllocation> CapacityAllocations
+        {
+            get { return this._capacityAllocations; }
+            set { this._capacityAllocations = value; }
+        }
+
+        // Check to see if CapacityAllocations property is set
+        internal bool IsSetCapacityAllocations()
+        {
+            return this._capacityAllocations != null && this._capacityAllocations.Count > 0; 
         }
 
         /// <summary>
@@ -258,8 +278,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property EphemeralStorage. 
         /// <para>
-        /// Indicates whether the Capacity Reservation supports instances with temporary, block-level
-        /// storage.
+        ///  <i>Deprecated.</i> 
         /// </para>
         /// </summary>
         public bool EphemeralStorage
@@ -379,6 +398,26 @@ namespace Amazon.EC2.Model
         internal bool IsSetOwnerId()
         {
             return this._ownerId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PlacementGroupArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the cluster placement group in which the Capacity
+        /// Reservation was created. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/cr-cpg.html">
+        /// Capacity Reservations for cluster placement groups</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        public string PlacementGroupArn
+        {
+            get { return this._placementGroupArn; }
+            set { this._placementGroupArn = value; }
+        }
+
+        // Check to see if PlacementGroupArn property is set
+        internal bool IsSetPlacementGroupArn()
+        {
+            return this._placementGroupArn != null;
         }
 
         /// <summary>

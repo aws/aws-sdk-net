@@ -34,7 +34,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Reference Marshaller
-    /// </summary>       
+    /// </summary>
     public class ReferenceMarshaller : IRequestMarshaller<Reference, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ReferenceMarshaller Instance = new ReferenceMarshaller();
 
     }

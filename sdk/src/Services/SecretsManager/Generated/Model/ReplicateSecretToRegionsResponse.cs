@@ -39,9 +39,7 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property ARN. 
         /// <para>
-        /// Replicate a secret based on the <code>ReplicaRegionType</code>&gt; consisting of a
-        /// Region(required) and a KMSKeyId (optional) which can be the ARN, KeyID, or Alias.
-        /// 
+        /// The ARN of the primary secret.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -60,8 +58,7 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property ReplicationStatus. 
         /// <para>
-        /// Describes the secret replication status as <code>PENDING</code>, <code>SUCCESS</code>
-        /// or <code>FAIL</code>.
+        /// The status of replication.
         /// </para>
         /// </summary>
         public List<ReplicationStatusType> ReplicationStatus

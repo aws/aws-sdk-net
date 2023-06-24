@@ -212,8 +212,7 @@ namespace Amazon.IoTSecureTunneling.Model
         /// <summary>
         /// Gets and sets the property TunnelArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of a tunnel. The tunnel ARN format is <code>arn:aws:tunnel:&lt;region&gt;:&lt;account-id&gt;:tunnel/&lt;tunnel-id&gt;</code>
-        /// 
+        /// The Amazon Resource Name (ARN) of a tunnel.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1600)]

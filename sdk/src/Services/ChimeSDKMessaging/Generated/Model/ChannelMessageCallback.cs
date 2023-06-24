@@ -34,16 +34,23 @@ namespace Amazon.ChimeSDKMessaging.Model
     public partial class ChannelMessageCallback
     {
         private string _content;
+        private string _contentType;
+        private Dictionary<string, MessageAttributeValue> _messageAttributes = new Dictionary<string, MessageAttributeValue>();
         private string _messageId;
         private string _metadata;
+        private PushNotificationConfiguration _pushNotification;
+        private string _subChannelId;
 
         /// <summary>
         /// Gets and sets the property Content. 
         /// <para>
-        /// The message content.
+        /// The message content. For Amazon Lex V2 bot responses, this field holds a list of messages
+        /// originating from the bot. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing
+        /// responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging Developer
+        /// Guide</i>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
+        [AWSProperty(Sensitive=true, Min=1)]
         public string Content
         {
             get { return this._content; }
@@ -54,6 +61,50 @@ namespace Amazon.ChimeSDKMessaging.Model
         internal bool IsSetContent()
         {
             return this._content != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ContentType. 
+        /// <para>
+        /// The content type of the call-back message. For Amazon Lex V2 bot responses, the content
+        /// type is <code>application/amz-chime-lex-msgs</code> for success responses and <code>application/amz-chime-lex-error</code>
+        /// for failure responses. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing
+        /// responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging Developer
+        /// Guide</i>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Min=0, Max=45)]
+        public string ContentType
+        {
+            get { return this._contentType; }
+            set { this._contentType = value; }
+        }
+
+        // Check to see if ContentType property is set
+        internal bool IsSetContentType()
+        {
+            return this._contentType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MessageAttributes. 
+        /// <para>
+        /// The attributes for the channel message. For Amazon Lex V2 bot responses, the attributes
+        /// are mapped to specific fields from the bot. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing
+        /// responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging Developer
+        /// Guide</i>.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, MessageAttributeValue> MessageAttributes
+        {
+            get { return this._messageAttributes; }
+            set { this._messageAttributes = value; }
+        }
+
+        // Check to see if MessageAttributes property is set
+        internal bool IsSetMessageAttributes()
+        {
+            return this._messageAttributes != null && this._messageAttributes.Count > 0; 
         }
 
         /// <summary>
@@ -81,7 +132,7 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// The message metadata.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=1024)]
+        [AWSProperty(Sensitive=true, Min=0, Max=1024)]
         public string Metadata
         {
             get { return this._metadata; }
@@ -92,6 +143,43 @@ namespace Amazon.ChimeSDKMessaging.Model
         internal bool IsSetMetadata()
         {
             return this._metadata != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PushNotification. 
+        /// <para>
+        /// The push notification configuration of the message.
+        /// </para>
+        /// </summary>
+        public PushNotificationConfiguration PushNotification
+        {
+            get { return this._pushNotification; }
+            set { this._pushNotification = value; }
+        }
+
+        // Check to see if PushNotification property is set
+        internal bool IsSetPushNotification()
+        {
+            return this._pushNotification != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SubChannelId. 
+        /// <para>
+        /// The ID of the SubChannel.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=128)]
+        public string SubChannelId
+        {
+            get { return this._subChannelId; }
+            set { this._subChannelId = value; }
+        }
+
+        // Check to see if SubChannelId property is set
+        internal bool IsSetSubChannelId()
+        {
+            return this._subChannelId != null;
         }
 
     }

@@ -41,7 +41,7 @@ namespace Amazon.Drs.Model
         /// <summary>
         /// Gets and sets the property RecoveryInstanceID. 
         /// <para>
-        /// RThe ID of the Recovery Instance to be deleted.
+        /// The ID of the Recovery Instance to be deleted.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=10, Max=19)]

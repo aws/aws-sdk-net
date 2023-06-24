@@ -100,6 +100,22 @@ namespace Amazon.FraudDetector.Model
         }
 
         /// <summary>
+        /// Paginator for GetListElements operation
+        ///</summary>
+        public IGetListElementsPaginator GetListElements(GetListElementsRequest request) 
+        {
+            return new GetListElementsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for GetListsMetadata operation
+        ///</summary>
+        public IGetListsMetadataPaginator GetListsMetadata(GetListsMetadataRequest request) 
+        {
+            return new GetListsMetadataPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for GetModels operation
         ///</summary>
         public IGetModelsPaginator GetModels(GetModelsRequest request) 
@@ -129,6 +145,14 @@ namespace Amazon.FraudDetector.Model
         public IGetVariablesPaginator GetVariables(GetVariablesRequest request) 
         {
             return new GetVariablesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListEventPredictions operation
+        ///</summary>
+        public IListEventPredictionsPaginator ListEventPredictions(ListEventPredictionsRequest request) 
+        {
+            return new ListEventPredictionsPaginator(this.client, request);
         }
 
         /// <summary>

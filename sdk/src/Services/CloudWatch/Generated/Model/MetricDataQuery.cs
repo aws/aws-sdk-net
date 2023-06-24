@@ -36,8 +36,8 @@ namespace Amazon.CloudWatch.Model
     /// <para>
     /// When used in <code>GetMetricData</code>, it indicates the metric data to return, and
     /// whether this call is just retrieving a batch set of data for one metric, or is performing
-    /// a math expression on metric data. A single <code>GetMetricData</code> call can include
-    /// up to 500 <code>MetricDataQuery</code> structures.
+    /// a Metrics Insights query or a math expression. A single <code>GetMetricData</code>
+    /// call can include up to 500 <code>MetricDataQuery</code> structures.
     /// </para>
     ///  
     /// <para>
@@ -48,7 +48,7 @@ namespace Amazon.CloudWatch.Model
     /// structures in the array. The 20 structures can include as many as 10 structures that
     /// contain a <code>MetricStat</code> parameter to retrieve a metric, and as many as 10
     /// structures that contain the <code>Expression</code> parameter to perform a math expression.
-    /// Of those <code>Expression</code> structures, one must have <code>True</code> as the
+    /// Of those <code>Expression</code> structures, one must have <code>true</code> as the
     /// value for <code>ReturnData</code>. The result of this expression is the value the
     /// alarm watches.
     /// </para>
@@ -78,12 +78,17 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The ID of the account where the metrics are located, if this is a cross-account alarm.
+        /// The ID of the account where the metrics are located.
         /// </para>
         ///  
         /// <para>
-        /// Use this field only for <code>PutMetricAlarm</code> operations. It is not used in
-        /// <code>GetMetricData</code> operations.
+        /// If you are performing a <code>GetMetricData</code> operation in a monitoring account,
+        /// use this to specify which account to retrieve this metric from.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you are performing a <code>PutMetricAlarm</code> operation, use this to specify
+        /// which account contains the metric that the alarm is watching.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -102,10 +107,16 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property Expression. 
         /// <para>
-        /// The math expression to be performed on the returned data, if this object is performing
-        /// a math expression. This expression can use the <code>Id</code> of the other metrics
-        /// to refer to those metrics, and can also use the <code>Id</code> of other expressions
-        /// to use the result of those expressions. For more information about metric math expressions,
+        /// This field can contain either a Metrics Insights query, or a metric math expression
+        /// to be performed on the returned data. For more information about Metrics Insights
+        /// queries, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch-metrics-insights-querylanguage">Metrics
+        /// Insights query components and syntax</a> in the <i>Amazon CloudWatch User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// A math expression can use the <code>Id</code> of the other metrics or queries to refer
+        /// to those metrics, and can also use the <code>Id</code> of other expressions to use
+        /// the result of those expressions. For more information about metric math expressions,
         /// see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax">Metric
         /// Math Syntax and Functions</a> in the <i>Amazon CloudWatch User Guide</i>.
         /// </para>
@@ -115,7 +126,7 @@ namespace Amazon.CloudWatch.Model
         /// or <code>MetricStat</code> but not both.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Min=1, Max=2048)]
         public string Expression
         {
             get { return this._expression; }
@@ -233,11 +244,11 @@ namespace Amazon.CloudWatch.Model
         /// When used in <code>GetMetricData</code>, this option indicates whether to return the
         /// timestamps and raw data values of this metric. If you are performing this call just
         /// to do math expressions and do not also need the raw data returned, you can specify
-        /// <code>False</code>. If you omit this, the default of <code>True</code> is used.
+        /// <code>false</code>. If you omit this, the default of <code>true</code> is used.
         /// </para>
         ///  
         /// <para>
-        /// When used in <code>PutMetricAlarm</code>, specify <code>True</code> for the one expression
+        /// When used in <code>PutMetricAlarm</code>, specify <code>true</code> for the one expression
         /// result to use as the alarm. For all other metrics and expressions in the same <code>PutMetricAlarm</code>
         /// operation, specify <code>ReturnData</code> as False.
         /// </para>

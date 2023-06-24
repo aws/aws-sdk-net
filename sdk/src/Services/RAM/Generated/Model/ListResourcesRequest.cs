@@ -30,8 +30,8 @@ namespace Amazon.RAM.Model
 {
     /// <summary>
     /// Container for the parameters to the ListResources operation.
-    /// Lists the resources that you added to a resource shares or the resources that are
-    /// shared with you.
+    /// Lists the resources that you added to a resource share or the resources that are shared
+    /// with you.
     /// </summary>
     public partial class ListResourcesRequest : AmazonRAMRequest
     {
@@ -137,11 +137,12 @@ namespace Amazon.RAM.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b> <code>SELF</code> </b> – resources that you are sharing
+        ///  <b> <code>SELF</code> </b> – resources that your account shares with other accounts
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>OTHER-ACCOUNTS</code> </b> – resources that other accounts share with you
+        ///  <b> <code>OTHER-ACCOUNTS</code> </b> – resources that other accounts share with your
+        /// account
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -38,9 +38,12 @@ namespace Amazon.IoT.Model
         private DateTime? _completedAt;
         private DateTime? _createdAt;
         private string _description;
+        private List<string> _destinationPackageVersions = new List<string>();
         private Dictionary<string, string> _documentParameters = new Dictionary<string, string>();
         private bool? _forceCanceled;
+        private bool? _isConcurrent;
         private string _jobArn;
+        private JobExecutionsRetryConfig _jobExecutionsRetryConfig;
         private JobExecutionsRolloutConfig _jobExecutionsRolloutConfig;
         private string _jobId;
         private JobProcessDetails _jobProcessDetails;
@@ -49,6 +52,8 @@ namespace Amazon.IoT.Model
         private string _namespaceId;
         private PresignedUrlConfig _presignedUrlConfig;
         private string _reasonCode;
+        private List<ScheduledJobRollout> _scheduledJobRollouts = new List<ScheduledJobRollout>();
+        private SchedulingConfig _schedulingConfig;
         private JobStatus _status;
         private List<string> _targets = new List<string>();
         private TargetSelection _targetSelection;
@@ -147,12 +152,43 @@ namespace Amazon.IoT.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DestinationPackageVersions. 
+        /// <para>
+        /// The package version Amazon Resource Names (ARNs) that are installed on the device
+        /// when the job successfully completes. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Note:</b>The following Length Constraints relates to a single string. Up to five
+        /// strings are allowed.
+        /// </para>
+        /// </summary>
+        public List<string> DestinationPackageVersions
+        {
+            get { return this._destinationPackageVersions; }
+            set { this._destinationPackageVersions = value; }
+        }
+
+        // Check to see if DestinationPackageVersions property is set
+        internal bool IsSetDestinationPackageVersions()
+        {
+            return this._destinationPackageVersions != null && this._destinationPackageVersions.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property DocumentParameters. 
         /// <para>
         /// A key-value map that pairs the patterns that need to be replaced in a managed template
         /// job document schema. You can use the description of each key as a guidance to specify
         /// the inputs during runtime when creating a job.
         /// </para>
+        ///  <note> 
+        /// <para>
+        ///  <code>documentParameters</code> can only be used when creating jobs from Amazon Web
+        /// Services managed templates. This parameter can't be used with custom job templates
+        /// or to create jobs from them.
+        /// </para>
+        ///  </note>
         /// </summary>
         public Dictionary<string, string> DocumentParameters
         {
@@ -186,6 +222,25 @@ namespace Amazon.IoT.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IsConcurrent. 
+        /// <para>
+        /// Indicates whether a job is concurrent. Will be true when a job is rolling out new
+        /// job executions or canceling previously created executions, otherwise false.
+        /// </para>
+        /// </summary>
+        public bool IsConcurrent
+        {
+            get { return this._isConcurrent.GetValueOrDefault(); }
+            set { this._isConcurrent = value; }
+        }
+
+        // Check to see if IsConcurrent property is set
+        internal bool IsSetIsConcurrent()
+        {
+            return this._isConcurrent.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property JobArn. 
         /// <para>
         /// An ARN identifying the job with format "arn:aws:iot:region:account:job/jobId".
@@ -201,6 +256,24 @@ namespace Amazon.IoT.Model
         internal bool IsSetJobArn()
         {
             return this._jobArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property JobExecutionsRetryConfig. 
+        /// <para>
+        /// The configuration for the criteria to retry the job.
+        /// </para>
+        /// </summary>
+        public JobExecutionsRetryConfig JobExecutionsRetryConfig
+        {
+            get { return this._jobExecutionsRetryConfig; }
+            set { this._jobExecutionsRetryConfig = value; }
+        }
+
+        // Check to see if JobExecutionsRetryConfig property is set
+        internal bool IsSetJobExecutionsRetryConfig()
+        {
+            return this._jobExecutionsRetryConfig != null;
         }
 
         /// <summary>
@@ -316,7 +389,6 @@ namespace Amazon.IoT.Model
         /// </para>
         ///  </note>
         /// </summary>
-        [AWSProperty(Min=1, Max=64)]
         public string NamespaceId
         {
             get { return this._namespaceId; }
@@ -367,6 +439,43 @@ namespace Amazon.IoT.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ScheduledJobRollouts. 
+        /// <para>
+        /// Displays the next seven maintenance window occurrences and their start times.
+        /// </para>
+        /// </summary>
+        public List<ScheduledJobRollout> ScheduledJobRollouts
+        {
+            get { return this._scheduledJobRollouts; }
+            set { this._scheduledJobRollouts = value; }
+        }
+
+        // Check to see if ScheduledJobRollouts property is set
+        internal bool IsSetScheduledJobRollouts()
+        {
+            return this._scheduledJobRollouts != null && this._scheduledJobRollouts.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SchedulingConfig. 
+        /// <para>
+        /// The configuration that allows you to schedule a job for a future date and time in
+        /// addition to specifying the end behavior for each job execution.
+        /// </para>
+        /// </summary>
+        public SchedulingConfig SchedulingConfig
+        {
+            get { return this._schedulingConfig; }
+            set { this._schedulingConfig = value; }
+        }
+
+        // Check to see if SchedulingConfig property is set
+        internal bool IsSetSchedulingConfig()
+        {
+            return this._schedulingConfig != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
         /// The status of the job, one of <code>IN_PROGRESS</code>, <code>CANCELED</code>, <code>DELETION_IN_PROGRESS</code>
@@ -413,6 +522,13 @@ namespace Amazon.IoT.Model
         /// a job will run on a device when the thing representing the device is added to a target
         /// group, even after the job was completed by all things originally in the group. 
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// We recommend that you use continuous jobs instead of snapshot jobs for dynamic thing
+        /// group targets. By using continuous jobs, devices that join the group receive the job
+        /// execution even after the job has been created.
+        /// </para>
+        ///  </note>
         /// </summary>
         public TargetSelection TargetSelection
         {

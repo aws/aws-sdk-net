@@ -132,6 +132,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (copyObjectRequest.IsSetBucketKeyEnabled())
                 request.Headers.Add(S3Constants.AmzHeaderBucketKeyEnabled, S3Transforms.ToStringValue(copyObjectRequest.BucketKeyEnabled));
 
+            if (copyObjectRequest.IsSetChecksumAlgorithm())
+                request.Headers.Add(S3Constants.AmzHeaderChecksumAlgorithm ,S3Transforms.ToStringValue(copyObjectRequest.ChecksumAlgorithm));
 
             AmazonS3Util.SetMetadataHeaders(request, copyObjectRequest.Metadata);
 
@@ -140,9 +142,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (string.IsNullOrEmpty(destinationKey))
                 throw new System.ArgumentException("DestinationKey is a required property and must be set before making this call.", "CopyObjectRequest.DestinationKey");
 
-            
-			request.ResourcePath = string.Format(CultureInfo.InvariantCulture, "/{0}/{1}",
-                                                 S3Transforms.ToStringValue(copyObjectRequest.DestinationBucket),
+            request.ResourcePath = string.Format(CultureInfo.InvariantCulture, "/{0}",
                                                  S3Transforms.ToStringValue(destinationKey));
 
 

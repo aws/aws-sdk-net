@@ -36,6 +36,7 @@ namespace Amazon.WellArchitected.Model
         private string _sharedWith;
         private string _shareId;
         private ShareStatus _status;
+        private string _statusMessage;
 
         /// <summary>
         /// Gets and sets the property SharedWith.
@@ -81,6 +82,25 @@ namespace Amazon.WellArchitected.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StatusMessage. 
+        /// <para>
+        /// Optional message to compliment the Status field.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=512)]
+        public string StatusMessage
+        {
+            get { return this._statusMessage; }
+            set { this._statusMessage = value; }
+        }
+
+        // Check to see if StatusMessage property is set
+        internal bool IsSetStatusMessage()
+        {
+            return this._statusMessage != null;
         }
 
     }

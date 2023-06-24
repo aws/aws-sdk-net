@@ -43,6 +43,10 @@ namespace Amazon.VoiceID
         /// </summary>
         public static readonly AuthenticationDecision REJECT = new AuthenticationDecision("REJECT");
         /// <summary>
+        /// Constant SPEAKER_EXPIRED for AuthenticationDecision
+        /// </summary>
+        public static readonly AuthenticationDecision SPEAKER_EXPIRED = new AuthenticationDecision("SPEAKER_EXPIRED");
+        /// <summary>
         /// Constant SPEAKER_ID_NOT_PROVIDED for AuthenticationDecision
         /// </summary>
         public static readonly AuthenticationDecision SPEAKER_ID_NOT_PROVIDED = new AuthenticationDecision("SPEAKER_ID_NOT_PROVIDED");
@@ -105,9 +109,17 @@ namespace Amazon.VoiceID
         /// </summary>
         public static readonly ConflictType CANNOT_CHANGE_SPEAKER_AFTER_ENROLLMENT = new ConflictType("CANNOT_CHANGE_SPEAKER_AFTER_ENROLLMENT");
         /// <summary>
+        /// Constant CANNOT_DELETE_NON_EMPTY_WATCHLIST for ConflictType
+        /// </summary>
+        public static readonly ConflictType CANNOT_DELETE_NON_EMPTY_WATCHLIST = new ConflictType("CANNOT_DELETE_NON_EMPTY_WATCHLIST");
+        /// <summary>
         /// Constant CONCURRENT_CHANGES for ConflictType
         /// </summary>
         public static readonly ConflictType CONCURRENT_CHANGES = new ConflictType("CONCURRENT_CHANGES");
+        /// <summary>
+        /// Constant DOMAIN_LOCKED_FROM_ENCRYPTION_UPDATES for ConflictType
+        /// </summary>
+        public static readonly ConflictType DOMAIN_LOCKED_FROM_ENCRYPTION_UPDATES = new ConflictType("DOMAIN_LOCKED_FROM_ENCRYPTION_UPDATES");
         /// <summary>
         /// Constant DOMAIN_NOT_ACTIVE for ConflictType
         /// </summary>
@@ -116,6 +128,10 @@ namespace Amazon.VoiceID
         /// Constant ENROLLMENT_ALREADY_EXISTS for ConflictType
         /// </summary>
         public static readonly ConflictType ENROLLMENT_ALREADY_EXISTS = new ConflictType("ENROLLMENT_ALREADY_EXISTS");
+        /// <summary>
+        /// Constant FRAUDSTER_MUST_BELONG_TO_AT_LEAST_ONE_WATCHLIST for ConflictType
+        /// </summary>
+        public static readonly ConflictType FRAUDSTER_MUST_BELONG_TO_AT_LEAST_ONE_WATCHLIST = new ConflictType("FRAUDSTER_MUST_BELONG_TO_AT_LEAST_ONE_WATCHLIST");
         /// <summary>
         /// Constant SPEAKER_NOT_SET for ConflictType
         /// </summary>
@@ -428,6 +444,10 @@ namespace Amazon.VoiceID
         /// Constant KNOWN_FRAUDSTER for FraudDetectionReason
         /// </summary>
         public static readonly FraudDetectionReason KNOWN_FRAUDSTER = new FraudDetectionReason("KNOWN_FRAUDSTER");
+        /// <summary>
+        /// Constant VOICE_SPOOFING for FraudDetectionReason
+        /// </summary>
+        public static readonly FraudDetectionReason VOICE_SPOOFING = new FraudDetectionReason("VOICE_SPOOFING");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -556,6 +576,10 @@ namespace Amazon.VoiceID
         /// Constant SPEAKER for ResourceType
         /// </summary>
         public static readonly ResourceType SPEAKER = new ResourceType("SPEAKER");
+        /// <summary>
+        /// Constant WATCHLIST for ResourceType
+        /// </summary>
+        public static readonly ResourceType WATCHLIST = new ResourceType("WATCHLIST");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -586,6 +610,60 @@ namespace Amazon.VoiceID
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ResourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ServerSideEncryptionUpdateStatus.
+    /// </summary>
+    public class ServerSideEncryptionUpdateStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPLETED for ServerSideEncryptionUpdateStatus
+        /// </summary>
+        public static readonly ServerSideEncryptionUpdateStatus COMPLETED = new ServerSideEncryptionUpdateStatus("COMPLETED");
+        /// <summary>
+        /// Constant FAILED for ServerSideEncryptionUpdateStatus
+        /// </summary>
+        public static readonly ServerSideEncryptionUpdateStatus FAILED = new ServerSideEncryptionUpdateStatus("FAILED");
+        /// <summary>
+        /// Constant IN_PROGRESS for ServerSideEncryptionUpdateStatus
+        /// </summary>
+        public static readonly ServerSideEncryptionUpdateStatus IN_PROGRESS = new ServerSideEncryptionUpdateStatus("IN_PROGRESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ServerSideEncryptionUpdateStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ServerSideEncryptionUpdateStatus FindValue(string value)
+        {
+            return FindValue<ServerSideEncryptionUpdateStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ServerSideEncryptionUpdateStatus(string value)
         {
             return FindValue(value);
         }

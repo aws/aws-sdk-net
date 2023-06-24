@@ -41,8 +41,8 @@ namespace Amazon.CodeGuruReviewer.Model
         /// <summary>
         /// Gets and sets the property CodeReviewArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">
-        /// <code>CodeReview</code> </a> object. 
+        /// The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a>
+        /// object. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1600)]
@@ -61,8 +61,8 @@ namespace Amazon.CodeGuruReviewer.Model
         /// <summary>
         /// Gets and sets the property RecommendationId. 
         /// <para>
-        ///  The recommendation ID that can be used to track the provided recommendations and
-        /// then to collect the feedback. 
+        /// The recommendation ID that can be used to track the provided recommendations and then
+        /// to collect the feedback.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]
@@ -81,8 +81,8 @@ namespace Amazon.CodeGuruReviewer.Model
         /// <summary>
         /// Gets and sets the property UserId. 
         /// <para>
-        ///  Optional parameter to describe the feedback for a given user. If this is not supplied,
-        /// it defaults to the user making the request. 
+        /// Optional parameter to describe the feedback for a given user. If this is not supplied,
+        /// it defaults to the user making the request.
         /// </para>
         ///  
         /// <para>
@@ -90,7 +90,7 @@ namespace Amazon.CodeGuruReviewer.Model
         /// Services account ID or an Amazon Resource Name (ARN). For more information, see <a
         /// href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying">
         /// Specifying a Principal</a> in the <i>Amazon Web Services Identity and Access Management
-        /// User Guide</i>. 
+        /// User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]

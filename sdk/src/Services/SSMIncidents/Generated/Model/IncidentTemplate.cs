@@ -36,6 +36,7 @@ namespace Amazon.SSMIncidents.Model
     {
         private string _dedupeString;
         private int? _impact;
+        private Dictionary<string, string> _incidentTags = new Dictionary<string, string>();
         private List<NotificationTargetItem> _notificationTargets = new List<NotificationTargetItem>();
         private string _summary;
         private string _title;
@@ -80,6 +81,26 @@ namespace Amazon.SSMIncidents.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IncidentTags. 
+        /// <para>
+        /// Tags to assign to the template. When the <code>StartIncident</code> API action is
+        /// called, Incident Manager assigns the tags specified in the template to the incident.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=50)]
+        public Dictionary<string, string> IncidentTags
+        {
+            get { return this._incidentTags; }
+            set { this._incidentTags = value; }
+        }
+
+        // Check to see if IncidentTags property is set
+        internal bool IsSetIncidentTags()
+        {
+            return this._incidentTags != null && this._incidentTags.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property NotificationTargets. 
         /// <para>
         /// The Amazon SNS targets that are notified when updates are made to an incident.
@@ -105,7 +126,7 @@ namespace Amazon.SSMIncidents.Model
         /// currently happening, and context.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=4000)]
+        [AWSProperty(Min=0, Max=8000)]
         public string Summary
         {
             get { return this._summary; }

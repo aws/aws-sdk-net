@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AlgorithmSpecification Marshaller
-    /// </summary>       
+    /// </summary>
     public class AlgorithmSpecificationMarshaller : IRequestMarshaller<AlgorithmSpecification, JsonMarshallerContext> 
     {
         /// <summary>
@@ -49,6 +49,28 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("AlgorithmName");
                 context.Writer.Write(requestObject.AlgorithmName);
+            }
+
+            if(requestObject.IsSetContainerArguments())
+            {
+                context.Writer.WritePropertyName("ContainerArguments");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectContainerArgumentsListValue in requestObject.ContainerArguments)
+                {
+                        context.Writer.Write(requestObjectContainerArgumentsListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetContainerEntrypoint())
+            {
+                context.Writer.WritePropertyName("ContainerEntrypoint");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectContainerEntrypointListValue in requestObject.ContainerEntrypoint)
+                {
+                        context.Writer.Write(requestObjectContainerEntrypointListValue);
+                }
+                context.Writer.WriteArrayEnd();
             }
 
             if(requestObject.IsSetEnableSageMakerMetricsTimeSeries())
@@ -79,6 +101,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.TrainingImage);
             }
 
+            if(requestObject.IsSetTrainingImageConfig())
+            {
+                context.Writer.WritePropertyName("TrainingImageConfig");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = TrainingImageConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.TrainingImageConfig, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetTrainingInputMode())
             {
                 context.Writer.WritePropertyName("TrainingInputMode");
@@ -89,7 +122,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AlgorithmSpecificationMarshaller Instance = new AlgorithmSpecificationMarshaller();
 
     }

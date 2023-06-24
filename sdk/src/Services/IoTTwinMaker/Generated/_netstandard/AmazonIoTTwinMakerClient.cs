@@ -38,18 +38,11 @@ namespace Amazon.IoTTwinMaker
     /// <summary>
     /// Implementation for accessing IoTTwinMaker
     ///
-    /// <important> 
-    /// <para>
-    ///  TwinMaker is in public preview and is subject to change. 
-    /// </para>
-    ///  </important> 
-    /// <para>
-    /// IoT TwinMaker is a service that enables you to build operational digital twins of
-    /// physical systems. IoT TwinMaker overlays measurements and analysis from real-world
-    /// sensors, cameras, and enterprise applications so you can create data visualizations
-    /// to monitor your physical factory, building, or industrial plant. You can use this
-    /// real-world data to monitor operations and diagnose and repair errors.
-    /// </para>
+    /// IoT TwinMaker is a service with which you can build operational digital twins of physical
+    /// systems. IoT TwinMaker overlays measurements and analysis from real-world sensors,
+    /// cameras, and enterprise applications so you can create data visualizations to monitor
+    /// your physical factory, building, or industrial plant. You can use this real-world
+    /// data to monitor operations and diagnose and repair errors.
     /// </summary>
     public partial class AmazonIoTTwinMakerClient : AmazonServiceClient, IAmazonIoTTwinMaker
     {
@@ -244,6 +237,15 @@ namespace Amazon.IoTTwinMaker
         } 
 
         /// <summary>
+        /// Customizes the runtime pipeline.
+        /// </summary>
+        /// <param name="pipeline">Runtime pipeline for the current client.</param>
+        protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
+        {
+            pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonIoTTwinMakerEndpointResolver());
+        }
+        /// <summary>
         /// Capture metadata for the service.
         /// </summary>
         protected override IServiceMetadata ServiceMetadata
@@ -330,12 +332,6 @@ namespace Amazon.IoTTwinMaker
 
         /// <summary>
         /// Creates a component type.
-        /// 
-        ///  <important> 
-        /// <para>
-        ///  TwinMaker is in public preview and is subject to change. 
-        /// </para>
-        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateComponentType service method.</param>
         /// <param name="cancellationToken">
@@ -473,6 +469,58 @@ namespace Amazon.IoTTwinMaker
             options.ResponseUnmarshaller = CreateSceneResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateSceneResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateSyncJob
+
+        internal virtual CreateSyncJobResponse CreateSyncJob(CreateSyncJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateSyncJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateSyncJobResponseUnmarshaller.Instance;
+
+            return Invoke<CreateSyncJobResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// This action creates a SyncJob.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateSyncJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateSyncJob service method, as returned by IoTTwinMaker.</returns>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.ConflictException">
+        /// A conflict occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.InternalServerException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.ServiceQuotaExceededException">
+        /// The service quota was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.ValidationException">
+        /// Failed
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/CreateSyncJob">REST API Reference for CreateSyncJob Operation</seealso>
+        public virtual Task<CreateSyncJobResponse> CreateSyncJobAsync(CreateSyncJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateSyncJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateSyncJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateSyncJobResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -676,6 +724,58 @@ namespace Amazon.IoTTwinMaker
 
         #endregion
         
+        #region  DeleteSyncJob
+
+        internal virtual DeleteSyncJobResponse DeleteSyncJob(DeleteSyncJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteSyncJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteSyncJobResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteSyncJobResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Delete the SyncJob.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSyncJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteSyncJob service method, as returned by IoTTwinMaker.</returns>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.InternalServerException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.ResourceNotFoundException">
+        /// The resource wasn't found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.ServiceQuotaExceededException">
+        /// The service quota was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.ValidationException">
+        /// Failed
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/DeleteSyncJob">REST API Reference for DeleteSyncJob Operation</seealso>
+        public virtual Task<DeleteSyncJobResponse> DeleteSyncJobAsync(DeleteSyncJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteSyncJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteSyncJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteSyncJobResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteWorkspace
 
         internal virtual DeleteWorkspaceResponse DeleteWorkspace(DeleteWorkspaceRequest request)
@@ -725,6 +825,59 @@ namespace Amazon.IoTTwinMaker
 
         #endregion
         
+        #region  ExecuteQuery
+
+        internal virtual ExecuteQueryResponse ExecuteQuery(ExecuteQueryRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ExecuteQueryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ExecuteQueryResponseUnmarshaller.Instance;
+
+            return Invoke<ExecuteQueryResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Run queries to access information from your knowledge graph of entities within individual
+        /// workspaces.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ExecuteQuery service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ExecuteQuery service method, as returned by IoTTwinMaker.</returns>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.InternalServerException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.QueryTimeoutException">
+        /// The query timeout exception.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.ServiceQuotaExceededException">
+        /// The service quota was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.ValidationException">
+        /// Failed
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/ExecuteQuery">REST API Reference for ExecuteQuery Operation</seealso>
+        public virtual Task<ExecuteQueryResponse> ExecuteQueryAsync(ExecuteQueryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ExecuteQueryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ExecuteQueryResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ExecuteQueryResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetComponentType
 
         internal virtual GetComponentTypeResponse GetComponentType(GetComponentTypeRequest request)
@@ -758,6 +911,9 @@ namespace Amazon.IoTTwinMaker
         /// </exception>
         /// <exception cref="Amazon.IoTTwinMaker.Model.ThrottlingException">
         /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.ValidationException">
+        /// Failed
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/GetComponentType">REST API Reference for GetComponentType Operation</seealso>
         public virtual Task<GetComponentTypeResponse> GetComponentTypeAsync(GetComponentTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -816,6 +972,52 @@ namespace Amazon.IoTTwinMaker
             options.ResponseUnmarshaller = GetEntityResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetEntityResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetPricingPlan
+
+        internal virtual GetPricingPlanResponse GetPricingPlan(GetPricingPlanRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetPricingPlanRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPricingPlanResponseUnmarshaller.Instance;
+
+            return Invoke<GetPricingPlanResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Gets the pricing plan.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPricingPlan service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetPricingPlan service method, as returned by IoTTwinMaker.</returns>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.InternalServerException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.ValidationException">
+        /// Failed
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/GetPricingPlan">REST API Reference for GetPricingPlan Operation</seealso>
+        public virtual Task<GetPricingPlanResponse> GetPricingPlanAsync(GetPricingPlanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetPricingPlanRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPricingPlanResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetPricingPlanResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -989,6 +1191,58 @@ namespace Amazon.IoTTwinMaker
             options.ResponseUnmarshaller = GetSceneResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetSceneResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetSyncJob
+
+        internal virtual GetSyncJobResponse GetSyncJob(GetSyncJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSyncJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSyncJobResponseUnmarshaller.Instance;
+
+            return Invoke<GetSyncJobResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Gets the SyncJob.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSyncJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetSyncJob service method, as returned by IoTTwinMaker.</returns>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.InternalServerException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.ResourceNotFoundException">
+        /// The resource wasn't found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.ServiceQuotaExceededException">
+        /// The service quota was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.ValidationException">
+        /// Failed
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/GetSyncJob">REST API Reference for GetSyncJob Operation</seealso>
+        public virtual Task<GetSyncJobResponse> GetSyncJobAsync(GetSyncJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSyncJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSyncJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetSyncJobResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1176,6 +1430,104 @@ namespace Amazon.IoTTwinMaker
             options.ResponseUnmarshaller = ListScenesResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListScenesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListSyncJobs
+
+        internal virtual ListSyncJobsResponse ListSyncJobs(ListSyncJobsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSyncJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSyncJobsResponseUnmarshaller.Instance;
+
+            return Invoke<ListSyncJobsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// List all SyncJobs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSyncJobs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListSyncJobs service method, as returned by IoTTwinMaker.</returns>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.InternalServerException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.ServiceQuotaExceededException">
+        /// The service quota was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.ValidationException">
+        /// Failed
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/ListSyncJobs">REST API Reference for ListSyncJobs Operation</seealso>
+        public virtual Task<ListSyncJobsResponse> ListSyncJobsAsync(ListSyncJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSyncJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSyncJobsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListSyncJobsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListSyncResources
+
+        internal virtual ListSyncResourcesResponse ListSyncResources(ListSyncResourcesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSyncResourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSyncResourcesResponseUnmarshaller.Instance;
+
+            return Invoke<ListSyncResourcesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists the sync resources.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSyncResources service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListSyncResources service method, as returned by IoTTwinMaker.</returns>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.InternalServerException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.ServiceQuotaExceededException">
+        /// The service quota was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.ValidationException">
+        /// Failed
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/ListSyncResources">REST API Reference for ListSyncResources Operation</seealso>
+        public virtual Task<ListSyncResourcesResponse> ListSyncResourcesAsync(ListSyncResourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSyncResourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSyncResourcesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListSyncResourcesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1452,6 +1804,52 @@ namespace Amazon.IoTTwinMaker
             options.ResponseUnmarshaller = UpdateEntityResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateEntityResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdatePricingPlan
+
+        internal virtual UpdatePricingPlanResponse UpdatePricingPlan(UpdatePricingPlanRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdatePricingPlanRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdatePricingPlanResponseUnmarshaller.Instance;
+
+            return Invoke<UpdatePricingPlanResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Update the pricing plan.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePricingPlan service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdatePricingPlan service method, as returned by IoTTwinMaker.</returns>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.InternalServerException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.ValidationException">
+        /// Failed
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/UpdatePricingPlan">REST API Reference for UpdatePricingPlan Operation</seealso>
+        public virtual Task<UpdatePricingPlanResponse> UpdatePricingPlanAsync(UpdatePricingPlanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdatePricingPlanRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdatePricingPlanResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdatePricingPlanResponse>(request, options, cancellationToken);
         }
 
         #endregion

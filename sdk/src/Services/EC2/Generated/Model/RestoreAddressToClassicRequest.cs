@@ -30,10 +30,17 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the RestoreAddressToClassic operation.
+    /// <note> 
+    /// <para>
+    /// This action is deprecated.
+    /// </para>
+    ///  </note> 
+    /// <para>
     /// Restores an Elastic IP address that was previously moved to the EC2-VPC platform back
     /// to the EC2-Classic platform. You cannot move an Elastic IP address that was originally
     /// allocated for use in EC2-VPC. The Elastic IP address must not be associated with an
     /// instance or network interface.
+    /// </para>
     /// </summary>
     public partial class RestoreAddressToClassicRequest : AmazonEC2Request
     {

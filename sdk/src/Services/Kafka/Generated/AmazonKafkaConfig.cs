@@ -17,22 +17,22 @@
  * Do not modify this file. This file is generated from the kafka-2018-11-14.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
-
+using Amazon.Kafka.Internal;
 
 namespace Amazon.Kafka
 {
     /// <summary>
     /// Configuration for accessing Amazon Kafka service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonKafkaConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.5.1");
+            InternalSDKUtils.BuildUserAgentString("3.7.104.18");
 
         private string _userAgent = UserAgentString;
 
@@ -40,8 +40,10 @@ namespace Amazon.Kafka
         /// Default constructor
         /// </summary>
         public AmazonKafkaConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonKafkaDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "kafka";
+            this.EndpointProvider = new AmazonKafkaEndpointProvider();
         }
 
         /// <summary>
@@ -76,5 +78,6 @@ namespace Amazon.Kafka
                 return _userAgent;
             }
         }
+
     }
 }

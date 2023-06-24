@@ -58,6 +58,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             if(publicRequest != null)
             {
+                if(publicRequest.IsSetSkipTunnelReplacement())
+                {
+                    request.Parameters.Add("SkipTunnelReplacement", StringUtils.FromBool(publicRequest.SkipTunnelReplacement));
+                }
                 if(publicRequest.IsSetTunnelOptions())
                 {
                     if(publicRequest.TunnelOptions.IsSetDPDTimeoutAction())
@@ -67,6 +71,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if(publicRequest.TunnelOptions.IsSetDPDTimeoutSeconds())
                     {
                         request.Parameters.Add("TunnelOptions" + "." + "DPDTimeoutSeconds", StringUtils.FromInt(publicRequest.TunnelOptions.DPDTimeoutSeconds));
+                    }
+                    if(publicRequest.TunnelOptions.IsSetEnableTunnelLifecycleControl())
+                    {
+                        request.Parameters.Add("TunnelOptions" + "." + "EnableTunnelLifecycleControl", StringUtils.FromBool(publicRequest.TunnelOptions.EnableTunnelLifecycleControl));
                     }
                     if(publicRequest.TunnelOptions.IsSetIKEVersions())
                     {
@@ -78,6 +86,24 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                 request.Parameters.Add("TunnelOptions" + "." + "IKEVersion" + "." + publicRequestTunnelOptionslistValueIndex + "." + "Value", StringUtils.FromString(publicRequestTunnelOptionslistValue.Value));
                             }
                             publicRequestTunnelOptionslistValueIndex++;
+                        }
+                    }
+                    if(publicRequest.TunnelOptions.IsSetLogOptions())
+                    {
+                        if(publicRequest.TunnelOptions.LogOptions.IsSetCloudWatchLogOptions())
+                        {
+                            if(publicRequest.TunnelOptions.LogOptions.CloudWatchLogOptions.IsSetLogEnabled())
+                            {
+                                request.Parameters.Add("TunnelOptions" + "." + "LogOptions" + "." + "CloudWatchLogOptions" + "." + "LogEnabled", StringUtils.FromBool(publicRequest.TunnelOptions.LogOptions.CloudWatchLogOptions.LogEnabled));
+                            }
+                            if(publicRequest.TunnelOptions.LogOptions.CloudWatchLogOptions.IsSetLogGroupArn())
+                            {
+                                request.Parameters.Add("TunnelOptions" + "." + "LogOptions" + "." + "CloudWatchLogOptions" + "." + "LogGroupArn", StringUtils.FromString(publicRequest.TunnelOptions.LogOptions.CloudWatchLogOptions.LogGroupArn));
+                            }
+                            if(publicRequest.TunnelOptions.LogOptions.CloudWatchLogOptions.IsSetLogOutputFormat())
+                            {
+                                request.Parameters.Add("TunnelOptions" + "." + "LogOptions" + "." + "CloudWatchLogOptions" + "." + "LogOutputFormat", StringUtils.FromString(publicRequest.TunnelOptions.LogOptions.CloudWatchLogOptions.LogOutputFormat));
+                            }
                         }
                     }
                     if(publicRequest.TunnelOptions.IsSetPhase1DHGroupNumbers())

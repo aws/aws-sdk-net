@@ -35,6 +35,7 @@ namespace Amazon.IoTTwinMaker.Model
     {
         private string _arn;
         private string _componentTypeId;
+        private string _componentTypeName;
         private DateTime? _creationDateTime;
         private string _description;
         private List<string> _extendsFrom = new List<string>();
@@ -43,7 +44,9 @@ namespace Amazon.IoTTwinMaker.Model
         private bool? _isSchemaInitialized;
         private bool? _isSingleton;
         private Dictionary<string, PropertyDefinitionResponse> _propertyDefinitions = new Dictionary<string, PropertyDefinitionResponse>();
+        private Dictionary<string, PropertyGroupResponse> _propertyGroups = new Dictionary<string, PropertyGroupResponse>();
         private Status _status;
+        private string _syncSource;
         private DateTime? _updateDateTime;
         private string _workspaceId;
 
@@ -86,6 +89,25 @@ namespace Amazon.IoTTwinMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ComponentTypeName. 
+        /// <para>
+        /// The component type name.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=256)]
+        public string ComponentTypeName
+        {
+            get { return this._componentTypeName; }
+            set { this._componentTypeName = value; }
+        }
+
+        // Check to see if ComponentTypeName property is set
+        internal bool IsSetComponentTypeName()
+        {
+            return this._componentTypeName != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property CreationDateTime. 
         /// <para>
         /// The date and time when the component type was created.
@@ -110,7 +132,7 @@ namespace Amazon.IoTTwinMaker.Model
         /// The description of the component type.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=512)]
+        [AWSProperty(Min=0, Max=2048)]
         public string Description
         {
             get { return this._description; }
@@ -236,6 +258,28 @@ namespace Amazon.IoTTwinMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PropertyGroups. 
+        /// <para>
+        /// The maximum number of results to return at one time. The default is 25.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid Range: Minimum value of 1. Maximum value of 250.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, PropertyGroupResponse> PropertyGroups
+        {
+            get { return this._propertyGroups; }
+            set { this._propertyGroups = value; }
+        }
+
+        // Check to see if PropertyGroups property is set
+        internal bool IsSetPropertyGroups()
+        {
+            return this._propertyGroups != null && this._propertyGroups.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
         /// The current status of the component type.
@@ -251,6 +295,24 @@ namespace Amazon.IoTTwinMaker.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SyncSource. 
+        /// <para>
+        /// The syncSource of the SyncJob, if this entity was created by a SyncJob.
+        /// </para>
+        /// </summary>
+        public string SyncSource
+        {
+            get { return this._syncSource; }
+            set { this._syncSource = value; }
+        }
+
+        // Check to see if SyncSource property is set
+        internal bool IsSetSyncSource()
+        {
+            return this._syncSource != null;
         }
 
         /// <summary>

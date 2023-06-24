@@ -55,7 +55,7 @@ namespace Amazon.AppConfig.Model.Internal.MarshallTransformations
         public IRequest Marshall(ListHostedConfigurationVersionsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.AppConfig");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-10-09";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-10-09";
             request.HttpMethod = "GET";
 
             if (!publicRequest.IsSetApplicationId())
@@ -70,6 +70,9 @@ namespace Amazon.AppConfig.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("next_token", StringUtils.FromString(publicRequest.NextToken));
+            
+            if (publicRequest.IsSetVersionLabel())
+                request.Parameters.Add("version_label", StringUtils.FromString(publicRequest.VersionLabel));
             request.ResourcePath = "/applications/{ApplicationId}/configurationprofiles/{ConfigurationProfileId}/hostedconfigurationversions";
             request.UseQueryString = true;
 

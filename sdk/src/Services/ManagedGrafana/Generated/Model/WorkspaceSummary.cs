@@ -43,6 +43,7 @@ namespace Amazon.ManagedGrafana.Model
         private string _name;
         private List<string> _notificationDestinations = new List<string>();
         private WorkspaceStatus _status;
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
         /// Gets and sets the property Authentication. 
@@ -88,7 +89,7 @@ namespace Amazon.ManagedGrafana.Model
         /// The customer-entered description of the workspace.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=2048)]
+        [AWSProperty(Sensitive=true, Min=0, Max=2048)]
         public string Description
         {
             get { return this._description; }
@@ -183,6 +184,7 @@ namespace Amazon.ManagedGrafana.Model
         /// The name of the workspace.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string Name
         {
             get { return this._name; }
@@ -232,6 +234,25 @@ namespace Amazon.ManagedGrafana.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The list of tags associated with the workspace.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=50)]
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

@@ -34,11 +34,11 @@ namespace Amazon.Organizations.Model
     /// 
     ///  
     /// <para>
-    /// You can attach tags to the following resources in AWS Organizations.
+    /// You can attach tags to the following resources in Organizations.
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// AWS account
+    /// Amazon Web Services account
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -55,7 +55,7 @@ namespace Amazon.Organizations.Model
     ///  </li> </ul> 
     /// <para>
     /// This operation can be called only from the organization's management account or by
-    /// a member account that is a delegated administrator for an AWS service.
+    /// a member account that is a delegated administrator for an Amazon Web Services service.
     /// </para>
     /// </summary>
     public partial class ListTagsForResourceRequest : AmazonOrganizationsRequest
@@ -96,7 +96,7 @@ namespace Amazon.Organizations.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// AWS account – specify the account ID number.
+        /// Amazon Web Services account – specify the account ID number.
         /// </para>
         ///  </li> <li> 
         /// <para>

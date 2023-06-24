@@ -34,7 +34,7 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ScanningRepositoryFilter Marshaller
-    /// </summary>       
+    /// </summary>
     public class ScanningRepositoryFilterMarshaller : IRequestMarshaller<ScanningRepositoryFilter, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ScanningRepositoryFilterMarshaller Instance = new ScanningRepositoryFilterMarshaller();
 
     }

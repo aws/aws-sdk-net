@@ -34,7 +34,7 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// TruckDimensions Marshaller
-    /// </summary>       
+    /// </summary>
     public class TruckDimensionsMarshaller : IRequestMarshaller<TruckDimensions, JsonMarshallerContext> 
     {
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static TruckDimensionsMarshaller Instance = new TruckDimensionsMarshaller();
 
     }

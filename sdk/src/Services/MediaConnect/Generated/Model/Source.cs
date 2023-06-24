@@ -37,10 +37,13 @@ namespace Amazon.MediaConnect.Model
         private Encryption _decryption;
         private string _description;
         private string _entitlementArn;
+        private GatewayBridgeSource _gatewayBridgeSource;
         private string _ingestIp;
         private int? _ingestPort;
         private List<MediaStreamSourceConfiguration> _mediaStreamSourceConfigurations = new List<MediaStreamSourceConfiguration>();
         private string _name;
+        private int? _senderControlPort;
+        private string _senderIpAddress;
         private string _sourceArn;
         private Transport _transport;
         private string _vpcInterfaceName;
@@ -113,6 +116,22 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
+        /// Gets and sets the property GatewayBridgeSource. The source configuration for cloud
+        /// flows receiving a stream from a bridge.
+        /// </summary>
+        public GatewayBridgeSource GatewayBridgeSource
+        {
+            get { return this._gatewayBridgeSource; }
+            set { this._gatewayBridgeSource = value; }
+        }
+
+        // Check to see if GatewayBridgeSource property is set
+        internal bool IsSetGatewayBridgeSource()
+        {
+            return this._gatewayBridgeSource != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property IngestIp. The IP address that the flow will be listening
         /// on for incoming content.
         /// </summary>
@@ -174,6 +193,38 @@ namespace Amazon.MediaConnect.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SenderControlPort. The port that the flow uses to send
+        /// outbound requests to initiate connection with the sender.
+        /// </summary>
+        public int SenderControlPort
+        {
+            get { return this._senderControlPort.GetValueOrDefault(); }
+            set { this._senderControlPort = value; }
+        }
+
+        // Check to see if SenderControlPort property is set
+        internal bool IsSetSenderControlPort()
+        {
+            return this._senderControlPort.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SenderIpAddress. The IP address that the flow communicates
+        /// with to initiate connection with the sender.
+        /// </summary>
+        public string SenderIpAddress
+        {
+            get { return this._senderIpAddress; }
+            set { this._senderIpAddress = value; }
+        }
+
+        // Check to see if SenderIpAddress property is set
+        internal bool IsSetSenderIpAddress()
+        {
+            return this._senderIpAddress != null;
         }
 
         /// <summary>

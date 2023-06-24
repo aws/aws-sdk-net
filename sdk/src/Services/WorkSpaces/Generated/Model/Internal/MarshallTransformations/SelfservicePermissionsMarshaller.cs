@@ -34,7 +34,7 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SelfservicePermissions Marshaller
-    /// </summary>       
+    /// </summary>
     public class SelfservicePermissionsMarshaller : IRequestMarshaller<SelfservicePermissions, JsonMarshallerContext> 
     {
         /// <summary>
@@ -79,7 +79,7 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SelfservicePermissionsMarshaller Instance = new SelfservicePermissionsMarshaller();
 
     }

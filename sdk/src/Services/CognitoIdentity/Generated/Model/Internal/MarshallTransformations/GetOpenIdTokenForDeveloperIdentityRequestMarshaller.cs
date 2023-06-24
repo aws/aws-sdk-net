@@ -58,7 +58,7 @@ namespace Amazon.CognitoIdentity.Model.Internal.MarshallTransformations
             string target = "AWSCognitoIdentityService.GetOpenIdTokenForDeveloperIdentity";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2014-06-30";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2014-06-30";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -113,7 +113,6 @@ namespace Amazon.CognitoIdentity.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.TokenDuration);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

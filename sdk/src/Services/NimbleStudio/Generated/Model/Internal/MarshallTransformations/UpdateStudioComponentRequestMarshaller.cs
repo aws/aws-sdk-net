@@ -56,7 +56,7 @@ namespace Amazon.NimbleStudio.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.NimbleStudio");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-08-01";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-08-01";
             request.HttpMethod = "PATCH";
 
             if (!publicRequest.IsSetStudioComponentId())
@@ -121,6 +121,12 @@ namespace Amazon.NimbleStudio.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Name);
                 }
 
+                if(publicRequest.IsSetRuntimeRoleArn())
+                {
+                    context.Writer.WritePropertyName("runtimeRoleArn");
+                    context.Writer.Write(publicRequest.RuntimeRoleArn);
+                }
+
                 if(publicRequest.IsSetScriptParameters())
                 {
                     context.Writer.WritePropertyName("scriptParameters");
@@ -137,6 +143,12 @@ namespace Amazon.NimbleStudio.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetSecureInitializationRoleArn())
+                {
+                    context.Writer.WritePropertyName("secureInitializationRoleArn");
+                    context.Writer.Write(publicRequest.SecureInitializationRoleArn);
+                }
+
                 if(publicRequest.IsSetSubtype())
                 {
                     context.Writer.WritePropertyName("subtype");
@@ -149,15 +161,16 @@ namespace Amazon.NimbleStudio.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Type);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
 
         
-            if(publicRequest.IsSetClientToken())
+            if (publicRequest.IsSetClientToken()) 
+            {
                 request.Headers["X-Amz-Client-Token"] = publicRequest.ClientToken;
+            }
 
             return request;
         }

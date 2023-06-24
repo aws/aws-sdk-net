@@ -30,12 +30,12 @@ namespace Amazon.ConfigService.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteOrganizationConformancePack operation.
-    /// Deletes the specified organization conformance pack and all of the config rules and
+    /// Deletes the specified organization conformance pack and all of the Config rules and
     /// remediation actions from all member accounts in that organization. 
     /// 
     ///  
     /// <para>
-    ///  Only a master account or a delegated administrator account can delete an organization
+    ///  Only a management account or a delegated administrator account can delete an organization
     /// conformance pack. When calling this API with a delegated administrator, you must ensure
     /// Organizations <code>ListDelegatedAdministrator</code> permissions are added.
     /// </para>

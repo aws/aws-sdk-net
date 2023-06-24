@@ -51,6 +51,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("OpsItemArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.OpsItemArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("OpsItemId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -83,6 +89,10 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerError"))
                 {
                     return InternalServerErrorExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("OpsItemAccessDeniedException"))
+                {
+                    return OpsItemAccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("OpsItemAlreadyExistsException"))
                 {

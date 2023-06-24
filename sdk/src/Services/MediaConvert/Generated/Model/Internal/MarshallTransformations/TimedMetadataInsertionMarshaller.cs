@@ -34,7 +34,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// TimedMetadataInsertion Marshaller
-    /// </summary>       
+    /// </summary>
     public class TimedMetadataInsertionMarshaller : IRequestMarshaller<TimedMetadataInsertion, JsonMarshallerContext> 
     {
         /// <summary>
@@ -65,7 +65,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static TimedMetadataInsertionMarshaller Instance = new TimedMetadataInsertionMarshaller();
 
     }

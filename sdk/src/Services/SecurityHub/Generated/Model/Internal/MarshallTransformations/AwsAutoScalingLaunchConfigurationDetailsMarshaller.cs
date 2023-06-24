@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AwsAutoScalingLaunchConfigurationDetails Marshaller
-    /// </summary>       
+    /// </summary>
     public class AwsAutoScalingLaunchConfigurationDetailsMarshaller : IRequestMarshaller<AwsAutoScalingLaunchConfigurationDetails, JsonMarshallerContext> 
     {
         /// <summary>
@@ -143,6 +143,17 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.LaunchConfigurationName);
             }
 
+            if(requestObject.IsSetMetadataOptions())
+            {
+                context.Writer.WritePropertyName("MetadataOptions");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsAutoScalingLaunchConfigurationMetadataOptionsMarshaller.Instance;
+                marshaller.Marshall(requestObject.MetadataOptions, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetPlacementTenancy())
             {
                 context.Writer.WritePropertyName("PlacementTenancy");
@@ -182,7 +193,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AwsAutoScalingLaunchConfigurationDetailsMarshaller Instance = new AwsAutoScalingLaunchConfigurationDetailsMarshaller();
 
     }

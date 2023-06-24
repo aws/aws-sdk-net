@@ -34,7 +34,7 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// HttpEndpointRetryOptions Marshaller
-    /// </summary>       
+    /// </summary>
     public class HttpEndpointRetryOptionsMarshaller : IRequestMarshaller<HttpEndpointRetryOptions, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static HttpEndpointRetryOptionsMarshaller Instance = new HttpEndpointRetryOptionsMarshaller();
 
     }

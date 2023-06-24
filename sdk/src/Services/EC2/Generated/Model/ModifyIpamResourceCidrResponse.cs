@@ -36,7 +36,10 @@ namespace Amazon.EC2.Model
         private IpamResourceCidr _ipamResourceCidr;
 
         /// <summary>
-        /// Gets and sets the property IpamResourceCidr.
+        /// Gets and sets the property IpamResourceCidr. 
+        /// <para>
+        /// The CIDR of the resource.
+        /// </para>
         /// </summary>
         public IpamResourceCidr IpamResourceCidr
         {

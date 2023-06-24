@@ -34,7 +34,7 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// TotalImpactFilter Marshaller
-    /// </summary>       
+    /// </summary>
     public class TotalImpactFilterMarshaller : IRequestMarshaller<TotalImpactFilter, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static TotalImpactFilterMarshaller Instance = new TotalImpactFilterMarshaller();
 
     }

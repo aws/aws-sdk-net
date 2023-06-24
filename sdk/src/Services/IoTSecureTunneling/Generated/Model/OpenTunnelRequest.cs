@@ -31,7 +31,13 @@ namespace Amazon.IoTSecureTunneling.Model
     /// <summary>
     /// Container for the parameters to the OpenTunnel operation.
     /// Creates a new tunnel, and returns two client access tokens for clients to use to connect
-    /// to the AWS IoT Secure Tunneling proxy server.
+    /// to the IoT Secure Tunneling proxy server.
+    /// 
+    ///  
+    /// <para>
+    /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">OpenTunnel</a>
+    /// action.
+    /// </para>
     /// </summary>
     public partial class OpenTunnelRequest : AmazonIoTSecureTunnelingRequest
     {

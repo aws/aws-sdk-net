@@ -35,11 +35,39 @@ namespace Amazon.WAFV2.Model
     ///  <note> 
     /// <para>
     /// This operation completely replaces the mutable specifications that you already have
-    /// for the rule group with the ones that you provide to this call. To modify the rule
-    /// group, retrieve it by calling <a>GetRuleGroup</a>, update the settings as needed,
-    /// and then provide the complete rule group specification to this call.
+    /// for the rule group with the ones that you provide to this call. 
     /// </para>
-    ///  </note> 
+    ///  
+    /// <para>
+    /// To modify a rule group, do the following: 
+    /// </para>
+    ///  <ol> <li> 
+    /// <para>
+    /// Retrieve it by calling <a>GetRuleGroup</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Update its settings as needed
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Provide the complete rule group specification to this call
+    /// </para>
+    ///  </li> </ol> </note> 
+    /// <para>
+    /// When you make changes to web ACLs or web ACL components, like rules and rule groups,
+    /// WAF propagates the changes everywhere that the web ACL and its components are stored
+    /// and used. Your changes are applied within seconds, but there might be a brief period
+    /// of inconsistency when the changes have arrived in some places and not in others. So,
+    /// for example, if you change a rule action setting, the action might be the old action
+    /// in one area and the new action in another area. Or if you add an IP address to an
+    /// IP set used in a blocking rule, the new address might briefly be blocked in one area
+    /// while still allowed in another. This temporary inconsistency can occur when you first
+    /// associate a web ACL with an Amazon Web Services resource and when you change a web
+    /// ACL that is already associated with a resource. Generally, any inconsistencies of
+    /// this type last only a few seconds.
+    /// </para>
+    ///  
     /// <para>
     ///  A rule group defines a collection of rules to inspect and control web requests that
     /// you can use in a <a>WebACL</a>. When you create a rule group, you define an immutable
@@ -69,15 +97,13 @@ namespace Amazon.WAFV2.Model
         ///  
         /// <para>
         /// For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
-        /// web requests and responses in WAF</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
-        /// Developer Guide</a>. 
+        /// web requests and responses in WAF</a> in the <i>WAF Developer Guide</i>. 
         /// </para>
         ///  
         /// <para>
         /// For information about the limits on count and size for custom request and response
         /// settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF
-        /// quotas</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
-        /// Developer Guide</a>. 
+        /// quotas</a> in the <i>WAF Developer Guide</i>. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -203,7 +229,8 @@ namespace Amazon.WAFV2.Model
         /// <para>
         /// Specifies whether this is for an Amazon CloudFront distribution or for a regional
         /// application. A regional application can be an Application Load Balancer (ALB), an
-        /// Amazon API Gateway REST API, or an AppSync GraphQL API. 
+        /// Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool,
+        /// an App Runner service, or an Amazon Web Services Verified Access instance. 
         /// </para>
         ///  
         /// <para>

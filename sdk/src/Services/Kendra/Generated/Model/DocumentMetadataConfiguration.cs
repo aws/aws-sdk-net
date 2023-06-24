@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kendra.Model
 {
     /// <summary>
-    /// Specifies the properties of a custom index field.
+    /// Specifies the properties, such as relevance tuning and searchability, of an index
+    /// field.
     /// </summary>
     public partial class DocumentMetadataConfiguration
     {
@@ -60,7 +61,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Relevance. 
         /// <para>
-        /// Provides manual tuning parameters to determine how the field affects the search results.
+        /// Provides tuning parameters to determine how the field affects the search results.
         /// </para>
         /// </summary>
         public Relevance Relevance

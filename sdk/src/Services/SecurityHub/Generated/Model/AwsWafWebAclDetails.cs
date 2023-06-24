@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// Details about an WAF WebACL.
+    /// Provides information about an WAF web access control list (web ACL).
     /// </summary>
     public partial class AwsWafWebAclDetails
     {
@@ -41,7 +41,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property DefaultAction. 
         /// <para>
-        /// The action to perform if none of the rules contained in the WebACL match.
+        /// The action to perform if none of the rules contained in the web ACL match.
         /// </para>
         /// </summary>
         public string DefaultAction
@@ -59,8 +59,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// A friendly name or description of the WebACL. You can't change the name of a WebACL
-        /// after you create it.
+        /// A friendly name or description of the web ACL. You can't change the name of a web
+        /// ACL after you create it.
         /// </para>
         /// </summary>
         public string Name
@@ -78,8 +78,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Rules. 
         /// <para>
-        /// An array that contains the action for each rule in a WebACL, the priority of the rule,
-        /// and the ID of the rule.
+        /// An array that contains the action for each rule in a web ACL, the priority of the
+        /// rule, and the ID of the rule.
         /// </para>
         /// </summary>
         public List<AwsWafWebAclRule> Rules
@@ -97,7 +97,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property WebAclId. 
         /// <para>
-        /// A unique identifier for a WebACL.
+        /// A unique identifier for a web ACL.
         /// </para>
         /// </summary>
         public string WebAclId

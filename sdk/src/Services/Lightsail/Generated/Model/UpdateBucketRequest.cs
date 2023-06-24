@@ -35,7 +35,7 @@ namespace Amazon.Lightsail.Model
     ///  
     /// <para>
     /// Use this action to update the configuration of an existing bucket, such as versioning,
-    /// public accessibility, and the AWS accounts that can access the bucket.
+    /// public accessibility, and the Amazon Web Services accounts that can access the bucket.
     /// </para>
     /// </summary>
     public partial class UpdateBucketRequest : AmazonLightsailRequest
@@ -104,11 +104,12 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property ReadonlyAccessAccounts. 
         /// <para>
-        /// An array of strings to specify the AWS account IDs that can access the bucket.
+        /// An array of strings to specify the Amazon Web Services account IDs that can access
+        /// the bucket.
         /// </para>
         ///  
         /// <para>
-        /// You can give a maximum of 10 AWS accounts access to a bucket.
+        /// You can give a maximum of 10 Amazon Web Services accounts access to a bucket.
         /// </para>
         /// </summary>
         [AWSProperty(Max=10)]

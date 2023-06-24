@@ -30,23 +30,27 @@ namespace Amazon.MarketplaceCatalog.Model
 {
     /// <summary>
     /// Container for the parameters to the StartChangeSet operation.
-    /// This operation allows you to request changes for your entities. Within a single ChangeSet,
-    /// you cannot start the same change type against the same entity multiple times. Additionally,
-    /// when a ChangeSet is running, all the entities targeted by the different changes are
-    /// locked until the ChangeSet has completed (either succeeded, cancelled, or failed).
-    /// If you try to start a ChangeSet containing a change against an entity that is already
-    /// locked, you will receive a <code>ResourceInUseException</code>.
+    /// Allows you to request changes for your entities. Within a single <code>ChangeSet</code>,
+    /// you can't start the same change type against the same entity multiple times. Additionally,
+    /// when a <code>ChangeSet</code> is running, all the entities targeted by the different
+    /// changes are locked until the change set has completed (either succeeded, cancelled,
+    /// or failed). If you try to start a change set containing a change against an entity
+    /// that is already locked, you will receive a <code>ResourceInUseException</code> error.
     /// 
     ///  
     /// <para>
-    /// For example, you cannot start the ChangeSet described in the <a href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_StartChangeSet.html#API_StartChangeSet_Examples">example</a>
-    /// later in this topic, because it contains two changes to execute the same change type
-    /// (<code>AddRevisions</code>) against the same entity (<code>entity-id@1)</code>.
+    /// For example, you can't start the <code>ChangeSet</code> described in the <a href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_StartChangeSet.html#API_StartChangeSet_Examples">example</a>
+    /// later in this topic because it contains two changes to run the same change type (<code>AddRevisions</code>)
+    /// against the same entity (<code>entity-id@1</code>).
     /// </para>
     ///  
     /// <para>
     /// For more information about working with change sets, see <a href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/welcome.html#working-with-change-sets">
-    /// Working with change sets</a>.
+    /// Working with change sets</a>. For information on change types for single-AMI products,
+    /// see <a href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/ami-products.html#working-with-single-AMI-products">Working
+    /// with single-AMI products</a>. Als, for more information on change types available
+    /// for container-based products, see <a href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/container-products.html#working-with-container-products">Working
+    /// with container products</a>.
     /// </para>
     /// </summary>
     public partial class StartChangeSetRequest : AmazonMarketplaceCatalogRequest
@@ -54,6 +58,7 @@ namespace Amazon.MarketplaceCatalog.Model
         private string _catalog;
         private List<Change> _changeSet = new List<Change>();
         private string _changeSetName;
+        private List<Tag> _changeSetTags = new List<Tag>();
         private string _clientRequestToken;
 
         /// <summary>
@@ -115,12 +120,32 @@ namespace Amazon.MarketplaceCatalog.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ChangeSetTags. 
+        /// <para>
+        /// A list of objects specifying each key name and value for the <code>ChangeSetTags</code>
+        /// property.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=200)]
+        public List<Tag> ChangeSetTags
+        {
+            get { return this._changeSetTags; }
+            set { this._changeSetTags = value; }
+        }
+
+        // Check to see if ChangeSetTags property is set
+        internal bool IsSetChangeSetTags()
+        {
+            return this._changeSetTags != null && this._changeSetTags.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property ClientRequestToken. 
         /// <para>
         /// A unique token to identify the request to ensure idempotency.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=36)]
+        [AWSProperty(Min=1, Max=64)]
         public string ClientRequestToken
         {
             get { return this._clientRequestToken; }

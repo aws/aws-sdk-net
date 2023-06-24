@@ -34,7 +34,7 @@ namespace Amazon.RDS.Model
     /// in time before <code>LatestRestorableTime</code> for up to <code>BackupRetentionPeriod</code>
     /// days. The target DB cluster is created from the source DB cluster with the same configuration
     /// as the original DB cluster, except that the new DB cluster is created with the default
-    /// DB security group. 
+    /// DB security group.
     /// 
     ///  <note> 
     /// <para>
@@ -48,19 +48,13 @@ namespace Amazon.RDS.Model
     ///  </note> 
     /// <para>
     /// For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
-    /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> 
+    /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.
     /// </para>
     ///  
     /// <para>
     /// For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
-    /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS
-    /// User Guide.</i> 
+    /// Multi-AZ DB cluster deployments</a> in the <i>Amazon RDS User Guide.</i> 
     /// </para>
-    ///  <note> 
-    /// <para>
-    /// The Multi-AZ DB clusters feature is in preview and is subject to change.
-    /// </para>
-    ///  </note>
     /// </summary>
     public partial class RestoreDBClusterToPointInTimeRequest : AmazonRDSRequest
     {
@@ -78,12 +72,14 @@ namespace Amazon.RDS.Model
         private string _engineMode;
         private int? _iops;
         private string _kmsKeyId;
+        private string _networkType;
         private string _optionGroupName;
         private int? _port;
         private bool? _publiclyAccessible;
         private DateTime? _restoreToTimeUtc;
         private string _restoreType;
         private ScalingConfiguration _scalingConfiguration;
+        private ServerlessV2ScalingConfiguration _serverlessV2ScalingConfiguration;
         private string _sourceDBClusterIdentifier;
         private string _storageType;
         private List<Tag> _tags = new List<Tag>();
@@ -133,7 +129,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid for: Aurora DB clusters only
+        /// Valid for: Aurora DB clusters and Multi-AZ DB clusters
         /// </para>
         /// </summary>
         public bool CopyTagsToSnapshot
@@ -191,7 +187,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property DBClusterInstanceClass. 
         /// <para>
         /// The compute and memory capacity of the each DB instance in the Multi-AZ DB cluster,
-        /// for example db.m6g.xlarge. Not all DB instance classes are available in all Amazon
+        /// for example db.m6gd.xlarge. Not all DB instance classes are available in all Amazon
         /// Web Services Regions, or for all database engines.
         /// </para>
         ///  
@@ -272,7 +268,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Example: <code>mySubnetgroup</code> 
+        /// Example: <code>mydbsubnetgroup</code> 
         /// </para>
         ///  
         /// <para>
@@ -319,13 +315,13 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property Domain. 
         /// <para>
         /// Specify the Active Directory directory ID to restore the DB cluster in. The domain
-        /// must be created prior to this operation. 
+        /// must be created prior to this operation.
         /// </para>
         ///  
         /// <para>
-        ///  For Amazon Aurora DB clusters, Amazon RDS can use Kerberos Authentication to authenticate
+        /// For Amazon Aurora DB clusters, Amazon RDS can use Kerberos Authentication to authenticate
         /// users that connect to the DB cluster. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos
-        /// Authentication</a> in the <i>Amazon Aurora User Guide</i>. 
+        /// Authentication</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -375,12 +371,50 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
+        ///  <b>RDS for MySQL</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Possible values are <code>error</code>, <code>general</code>, and <code>slowquery</code>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>RDS for PostgreSQL</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Possible values are <code>postgresql</code> and <code>upgrade</code>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Aurora MySQL</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Possible values are <code>audit</code>, <code>error</code>, <code>general</code>,
+        /// and <code>slowquery</code>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Aurora PostgreSQL</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Possible value is <code>postgresql</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about exporting CloudWatch Logs for Amazon RDS, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
+        /// Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about exporting CloudWatch Logs for Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
         /// Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// Valid for: Aurora DB clusters only
+        /// Valid for: Aurora DB clusters and Multi-AZ DB clusters
         /// </para>
         /// </summary>
         public List<string> EnableCloudwatchLogsExports
@@ -404,7 +438,7 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html">
-        /// IAM Database Authentication</a> in the <i>Amazon Aurora User Guide.</i> 
+        /// IAM Database Authentication</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -428,9 +462,9 @@ namespace Amazon.RDS.Model
         /// <para>
         /// The engine mode of the new cluster. Specify <code>provisioned</code> or <code>serverless</code>,
         /// depending on the type of the cluster you are creating. You can create an Aurora Serverless
-        /// clone from a provisioned cluster, or a provisioned clone from an Aurora Serverless
-        /// cluster. To create a clone that is an Aurora Serverless cluster, the original cluster
-        /// must be an Aurora Serverless cluster or an encrypted provisioned cluster.
+        /// v1 clone from a provisioned cluster, or a provisioned clone from an Aurora Serverless
+        /// v1 cluster. To create a clone that is an Aurora Serverless v1 cluster, the original
+        /// cluster must be an Aurora Serverless v1 cluster or an encrypted provisioned cluster.
         /// </para>
         ///  
         /// <para>
@@ -457,14 +491,13 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// For information about valid <code>Iops</code> values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon
-        /// RDS Provisioned IOPS storage to improve performance</a> in the <i>Amazon RDS User
-        /// Guide</i>. 
+        /// For information about valid IOPS values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon
+        /// RDS Provisioned IOPS storage</a> in the <i>Amazon RDS User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// Constraints: Must be a multiple between .5 and 50 of the storage amount for the DB
-        /// instance. 
+        /// instance.
         /// </para>
         ///  
         /// <para>
@@ -538,6 +571,51 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property NetworkType. 
+        /// <para>
+        /// The network type of the DB cluster.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>IPV4</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>DUAL</code> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The network type is determined by the <code>DBSubnetGroup</code> specified for the
+        /// DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the
+        /// IPv4 and the IPv6 protocols (<code>DUAL</code>).
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+        /// Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid for: Aurora DB clusters only
+        /// </para>
+        /// </summary>
+        public string NetworkType
+        {
+            get { return this._networkType; }
+            set { this._networkType = value; }
+        }
+
+        // Check to see if NetworkType property is set
+        internal bool IsSetNetworkType()
+        {
+            return this._networkType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property OptionGroupName. 
         /// <para>
         /// The name of the option group for the new DB cluster.
@@ -566,7 +644,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Constraints: A value from <code>1150-65535</code>. 
+        /// Constraints: A value from <code>1150-65535</code>.
         /// </para>
         ///  
         /// <para>
@@ -728,11 +806,6 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Constraints: You can't specify <code>copy-on-write</code> if the engine version of
-        /// the source DB cluster is earlier than 1.11.
-        /// </para>
-        ///  
-        /// <para>
         /// If you don't specify a <code>RestoreType</code> value, then the new DB cluster is
         /// restored as a full copy of the source DB cluster.
         /// </para>
@@ -777,6 +850,21 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ServerlessV2ScalingConfiguration.
+        /// </summary>
+        public ServerlessV2ScalingConfiguration ServerlessV2ScalingConfiguration
+        {
+            get { return this._serverlessV2ScalingConfiguration; }
+            set { this._serverlessV2ScalingConfiguration = value; }
+        }
+
+        // Check to see if ServerlessV2ScalingConfiguration property is set
+        internal bool IsSetServerlessV2ScalingConfiguration()
+        {
+            return this._serverlessV2ScalingConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SourceDBClusterIdentifier. 
         /// <para>
         /// The identifier of the source DB cluster from which to restore.
@@ -810,26 +898,25 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property StorageType. 
         /// <para>
-        /// Specifies the storage type to be associated with the each DB instance in the Multi-AZ
-        /// DB cluster.
+        /// Specifies the storage type to be associated with the DB cluster.
         /// </para>
         ///  
         /// <para>
-        ///  Valid values: <code>standard | gp2 | io1</code> 
+        /// When specified for a Multi-AZ DB cluster, a value for the <code>Iops</code> parameter
+        /// is required.
         /// </para>
         ///  
         /// <para>
-        ///  If you specify <code>io1</code>, also include a value for the <code>Iops</code> parameter.
-        /// 
+        /// Valid values: <code>aurora</code>, <code>aurora-iopt1</code> (Aurora DB clusters);
+        /// <code>io1</code> (Multi-AZ DB clusters)
         /// </para>
         ///  
         /// <para>
-        ///  Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise
-        /// <code>gp2</code> 
+        /// Default: <code>aurora</code> (Aurora DB clusters); <code>io1</code> (Multi-AZ DB clusters)
         /// </para>
         ///  
         /// <para>
-        /// Valid for: Multi-AZ DB clusters only
+        /// Valid for: Aurora DB clusters and Multi-AZ DB clusters
         /// </para>
         /// </summary>
         public string StorageType
@@ -864,7 +951,7 @@ namespace Amazon.RDS.Model
         /// <para>
         /// A value that indicates whether to restore the DB cluster to the latest restorable
         /// backup time. By default, the DB cluster isn't restored to the latest restorable backup
-        /// time. 
+        /// time.
         /// </para>
         ///  
         /// <para>

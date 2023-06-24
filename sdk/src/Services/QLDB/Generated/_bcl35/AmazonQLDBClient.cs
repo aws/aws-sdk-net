@@ -35,7 +35,7 @@ namespace Amazon.QLDB
     /// <summary>
     /// Implementation for accessing QLDB
     ///
-    /// The control plane for Amazon QLDB
+    /// The resource management API for Amazon QLDB
     /// </summary>
     public partial class AmazonQLDBClient : AmazonServiceClient, IAmazonQLDB
     {
@@ -230,6 +230,15 @@ namespace Amazon.QLDB
         }
 
         /// <summary>
+        /// Customize the pipeline
+        /// </summary>
+        /// <param name="pipeline"></param>
+        protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
+        {
+            pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonQLDBEndpointResolver());
+        }
+        /// <summary>
         /// Capture metadata for the service.
         /// </summary>
         protected override IServiceMetadata ServiceMetadata
@@ -329,7 +338,7 @@ namespace Amazon.QLDB
         #region  CreateLedger
 
         /// <summary>
-        /// Creates a new ledger in your account in the current Region.
+        /// Creates a new ledger in your Amazon Web Services account in the current Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLedger service method.</param>
         /// 
@@ -401,7 +410,7 @@ namespace Amazon.QLDB
         /// <para>
         /// If deletion protection is enabled, you must first disable it before you can delete
         /// the ledger. You can disable it by calling the <code>UpdateLedger</code> operation
-        /// to set the flag to <code>false</code>.
+        /// to set this parameter to <code>false</code>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteLedger service method.</param>
@@ -677,8 +686,9 @@ namespace Amazon.QLDB
 
         /// <summary>
         /// Exports journal contents within a date and time range from a ledger into a specified
-        /// Amazon Simple Storage Service (Amazon S3) bucket. The data is written as files in
-        /// Amazon Ion format.
+        /// Amazon Simple Storage Service (Amazon S3) bucket. A journal export job can write the
+        /// data objects in either the text or binary representation of Amazon Ion format, or
+        /// in <i>JSON Lines</i> text format.
         /// 
         ///  
         /// <para>
@@ -965,9 +975,7 @@ namespace Amazon.QLDB
         #region  ListJournalKinesisStreamsForLedger
 
         /// <summary>
-        /// Returns an array of all Amazon QLDB journal stream descriptors for a given ledger.
-        /// The output of each stream descriptor includes the same details that are returned by
-        /// <code>DescribeJournalKinesisStream</code>.
+        /// Returns all Amazon QLDB journal streams for a given ledger.
         /// 
         ///  
         /// <para>
@@ -1043,8 +1051,8 @@ namespace Amazon.QLDB
         #region  ListJournalS3Exports
 
         /// <summary>
-        /// Returns an array of journal export job descriptions for all ledgers that are associated
-        /// with the current account and Region.
+        /// Returns all journal export jobs for all ledgers that are associated with the current
+        /// Amazon Web Services account and Region.
         /// 
         ///  
         /// <para>
@@ -1111,7 +1119,7 @@ namespace Amazon.QLDB
         #region  ListJournalS3ExportsForLedger
 
         /// <summary>
-        /// Returns an array of journal export job descriptions for a specified ledger.
+        /// Returns all journal export jobs for a specified ledger.
         /// 
         ///  
         /// <para>
@@ -1178,13 +1186,13 @@ namespace Amazon.QLDB
         #region  ListLedgers
 
         /// <summary>
-        /// Returns an array of ledger summaries that are associated with the current account
+        /// Returns all ledgers that are associated with the current Amazon Web Services account
         /// and Region.
         /// 
         ///  
         /// <para>
-        /// This action returns a maximum of 100 items and is paginated so that you can retrieve
-        /// all the items by calling <code>ListLedgers</code> multiple times.
+        /// This action returns a maximum of <code>MaxResults</code> items and is paginated so
+        /// that you can retrieve all the items by calling <code>ListLedgers</code> multiple times.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListLedgers service method.</param>

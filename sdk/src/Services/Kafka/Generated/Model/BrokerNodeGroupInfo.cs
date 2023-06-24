@@ -39,6 +39,7 @@ namespace Amazon.Kafka.Model
         private string _instanceType;
         private List<string> _securityGroups = new List<string>();
         private StorageInfo _storageInfo;
+        private List<string> _zoneIds = new List<string>();
 
         /// <summary>
         /// Gets and sets the property BrokerAZDistribution.             
@@ -70,8 +71,8 @@ namespace Amazon.Kafka.Model
         /// <para>
         /// The list of subnets to connect to in the client virtual private cloud (VPC). AWS creates
         /// elastic network interfaces inside these subnets. Client applications use elastic network
-        /// interfaces to produce and consume data. Client subnets can't be in Availability Zone
-        /// us-east-1e.
+        /// interfaces to produce and consume data. Client subnets can't occupy the Availability
+        /// Zone with ID use use1-az3.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -163,6 +164,24 @@ namespace Amazon.Kafka.Model
         internal bool IsSetStorageInfo()
         {
             return this._storageInfo != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ZoneIds.             
+        /// <para>
+        /// The list of zoneIds for the cluster in the virtual private cloud (VPC).
+        /// </para>
+        /// </summary>
+        public List<string> ZoneIds
+        {
+            get { return this._zoneIds; }
+            set { this._zoneIds = value; }
+        }
+
+        // Check to see if ZoneIds property is set
+        internal bool IsSetZoneIds()
+        {
+            return this._zoneIds != null && this._zoneIds.Count > 0; 
         }
 
     }

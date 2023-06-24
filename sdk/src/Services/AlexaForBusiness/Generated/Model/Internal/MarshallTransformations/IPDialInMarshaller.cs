@@ -34,7 +34,7 @@ namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// IPDialIn Marshaller
-    /// </summary>       
+    /// </summary>
     public class IPDialInMarshaller : IRequestMarshaller<IPDialIn, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static IPDialInMarshaller Instance = new IPDialInMarshaller();
 
     }

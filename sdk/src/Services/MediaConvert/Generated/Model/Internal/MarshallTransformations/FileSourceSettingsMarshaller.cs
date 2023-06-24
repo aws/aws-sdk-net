@@ -34,7 +34,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// FileSourceSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class FileSourceSettingsMarshaller : IRequestMarshaller<FileSourceSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -49,6 +49,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("convert608To708");
                 context.Writer.Write(requestObject.Convert608To708);
+            }
+
+            if(requestObject.IsSetConvertPaintToPop())
+            {
+                context.Writer.WritePropertyName("convertPaintToPop");
+                context.Writer.Write(requestObject.ConvertPaintToPop);
             }
 
             if(requestObject.IsSetFramerate())
@@ -84,7 +90,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static FileSourceSettingsMarshaller Instance = new FileSourceSettingsMarshaller();
 
     }

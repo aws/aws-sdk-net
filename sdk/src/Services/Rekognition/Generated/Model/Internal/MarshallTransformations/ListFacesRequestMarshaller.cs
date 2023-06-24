@@ -58,7 +58,7 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             string target = "RekognitionService.ListFaces";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-06-27";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-06-27";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -73,6 +73,17 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.CollectionId);
                 }
 
+                if(publicRequest.IsSetFaceIds())
+                {
+                    context.Writer.WritePropertyName("FaceIds");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestFaceIdsListValue in publicRequest.FaceIds)
+                    {
+                            context.Writer.Write(publicRequestFaceIdsListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetMaxResults())
                 {
                     context.Writer.WritePropertyName("MaxResults");
@@ -85,7 +96,12 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.NextToken);
                 }
 
-        
+                if(publicRequest.IsSetUserId())
+                {
+                    context.Writer.WritePropertyName("UserId");
+                    context.Writer.Write(publicRequest.UserId);
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

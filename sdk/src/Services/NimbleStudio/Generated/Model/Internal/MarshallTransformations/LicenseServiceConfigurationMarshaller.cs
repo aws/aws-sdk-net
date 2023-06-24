@@ -34,7 +34,7 @@ namespace Amazon.NimbleStudio.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// LicenseServiceConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class LicenseServiceConfigurationMarshaller : IRequestMarshaller<LicenseServiceConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.NimbleStudio.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static LicenseServiceConfigurationMarshaller Instance = new LicenseServiceConfigurationMarshaller();
 
     }

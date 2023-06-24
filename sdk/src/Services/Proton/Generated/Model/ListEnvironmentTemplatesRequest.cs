@@ -59,8 +59,8 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// A token to indicate the location of the next environment template in the array of
-        /// environment templates, after the list of environment templates that was previously
+        /// A token that indicates the location of the next environment template in the array
+        /// of environment templates, after the list of environment templates that was previously
         /// requested.
         /// </para>
         /// </summary>

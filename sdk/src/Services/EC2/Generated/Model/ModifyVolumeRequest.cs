@@ -62,8 +62,9 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  
     /// <para>
-    /// If you reach the maximum volume modification rate per volume limit, you must wait
-    /// at least six hours before applying further modifications to the affected EBS volume.
+    /// After modifying a volume, you must wait at least six hours and ensure that the volume
+    /// is in the <code>in-use</code> or <code>available</code> state before you can modify
+    /// the same volume. This is sometimes referred to as a cooldown period.
     /// </para>
     /// </summary>
     public partial class ModifyVolumeRequest : AmazonEC2Request

@@ -30,7 +30,21 @@ namespace Amazon.AuditManager.Model
 {
     /// <summary>
     /// Container for the parameters to the DeregisterAccount operation.
-    /// Deregisters an account in Audit Manager.
+    /// Deregisters an account in Audit Manager. 
+    /// 
+    ///  <note> 
+    /// <para>
+    /// Before you deregister, you can use the <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_UpdateSettings.html">UpdateSettings</a>
+    /// API operation to set your preferred data retention policy. By default, Audit Manager
+    /// retains your data. If you want to delete your data, you can use the <code>DeregistrationPolicy</code>
+    /// attribute to request the deletion of your data. 
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information about data retention, see <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/data-protection.html">Data
+    /// Protection</a> in the <i>Audit Manager User Guide</i>. 
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class DeregisterAccountRequest : AmazonAuditManagerRequest
     {

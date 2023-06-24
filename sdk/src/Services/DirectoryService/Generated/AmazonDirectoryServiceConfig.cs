@@ -17,22 +17,22 @@
  * Do not modify this file. This file is generated from the ds-2015-04-16.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
-
+using Amazon.DirectoryService.Internal;
 
 namespace Amazon.DirectoryService
 {
     /// <summary>
     /// Configuration for accessing Amazon DirectoryService service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonDirectoryServiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.1.53");
+            InternalSDKUtils.BuildUserAgentString("3.7.101.28");
 
         private string _userAgent = UserAgentString;
 
@@ -40,8 +40,10 @@ namespace Amazon.DirectoryService
         /// Default constructor
         /// </summary>
         public AmazonDirectoryServiceConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonDirectoryServiceDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "ds";
+            this.EndpointProvider = new AmazonDirectoryServiceEndpointProvider();
         }
 
         /// <summary>
@@ -76,5 +78,6 @@ namespace Amazon.DirectoryService
                 return _userAgent;
             }
         }
+
     }
 }

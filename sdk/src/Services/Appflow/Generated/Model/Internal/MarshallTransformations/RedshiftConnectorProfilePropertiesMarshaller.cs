@@ -34,7 +34,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RedshiftConnectorProfileProperties Marshaller
-    /// </summary>       
+    /// </summary>
     public class RedshiftConnectorProfilePropertiesMarshaller : IRequestMarshaller<RedshiftConnectorProfileProperties, JsonMarshallerContext> 
     {
         /// <summary>
@@ -57,10 +57,34 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.BucketPrefix);
             }
 
+            if(requestObject.IsSetClusterIdentifier())
+            {
+                context.Writer.WritePropertyName("clusterIdentifier");
+                context.Writer.Write(requestObject.ClusterIdentifier);
+            }
+
+            if(requestObject.IsSetDataApiRoleArn())
+            {
+                context.Writer.WritePropertyName("dataApiRoleArn");
+                context.Writer.Write(requestObject.DataApiRoleArn);
+            }
+
+            if(requestObject.IsSetDatabaseName())
+            {
+                context.Writer.WritePropertyName("databaseName");
+                context.Writer.Write(requestObject.DatabaseName);
+            }
+
             if(requestObject.IsSetDatabaseUrl())
             {
                 context.Writer.WritePropertyName("databaseUrl");
                 context.Writer.Write(requestObject.DatabaseUrl);
+            }
+
+            if(requestObject.IsSetIsRedshiftServerless())
+            {
+                context.Writer.WritePropertyName("isRedshiftServerless");
+                context.Writer.Write(requestObject.IsRedshiftServerless);
             }
 
             if(requestObject.IsSetRoleArn())
@@ -69,11 +93,17 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.RoleArn);
             }
 
+            if(requestObject.IsSetWorkgroupName())
+            {
+                context.Writer.WritePropertyName("workgroupName");
+                context.Writer.Write(requestObject.WorkgroupName);
+            }
+
         }
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RedshiftConnectorProfilePropertiesMarshaller Instance = new RedshiftConnectorProfilePropertiesMarshaller();
 
     }

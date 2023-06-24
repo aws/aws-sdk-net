@@ -40,7 +40,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property ContentType. 
         /// <para>
-        /// The content type for a field-level encryption content type-profile mapping. 
+        /// The content type for a field-level encryption content type-profile mapping.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -59,7 +59,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Format. 
         /// <para>
-        /// The format for a field-level encryption content type-profile mapping. 
+        /// The format for a field-level encryption content type-profile mapping.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -78,7 +78,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property ProfileId. 
         /// <para>
-        /// The profile ID for a field-level encryption content type-profile mapping. 
+        /// The profile ID for a field-level encryption content type-profile mapping.
         /// </para>
         /// </summary>
         public string ProfileId

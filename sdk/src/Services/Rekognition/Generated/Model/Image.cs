@@ -64,8 +64,8 @@ namespace Amazon.Rekognition.Model
     ///  
     /// <para>
     /// For Amazon Rekognition to process an S3 object, the user must have permission to access
-    /// the S3 object. For more information, see Resource Based Policies in the Amazon Rekognition
-    /// Developer Guide. 
+    /// the S3 object. For more information, see How Amazon Rekognition works with IAM in
+    /// the Amazon Rekognition Developer Guide. 
     /// </para>
     /// </summary>
     public partial class Image
@@ -76,7 +76,8 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property Bytes. 
         /// <para>
-        /// Blob of image bytes up to 5 MBs.
+        /// Blob of image bytes up to 5 MBs. Note that the maximum image size you can pass to
+        /// <code>DetectCustomLabels</code> is 4MB. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=5242880)]

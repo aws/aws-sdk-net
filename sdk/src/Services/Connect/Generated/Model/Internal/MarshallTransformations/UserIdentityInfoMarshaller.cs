@@ -34,7 +34,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// UserIdentityInfo Marshaller
-    /// </summary>       
+    /// </summary>
     public class UserIdentityInfoMarshaller : IRequestMarshaller<UserIdentityInfo, JsonMarshallerContext> 
     {
         /// <summary>
@@ -63,11 +63,23 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.LastName);
             }
 
+            if(requestObject.IsSetMobile())
+            {
+                context.Writer.WritePropertyName("Mobile");
+                context.Writer.Write(requestObject.Mobile);
+            }
+
+            if(requestObject.IsSetSecondaryEmail())
+            {
+                context.Writer.WritePropertyName("SecondaryEmail");
+                context.Writer.Write(requestObject.SecondaryEmail);
+            }
+
         }
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static UserIdentityInfoMarshaller Instance = new UserIdentityInfoMarshaller();
 
     }

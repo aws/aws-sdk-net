@@ -56,7 +56,7 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Lambda");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-03-31";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-03-31";
             request.HttpMethod = "POST";
 
             if (!publicRequest.IsSetFunctionName())
@@ -83,10 +83,22 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.EventSourceToken);
                 }
 
+                if(publicRequest.IsSetFunctionUrlAuthType())
+                {
+                    context.Writer.WritePropertyName("FunctionUrlAuthType");
+                    context.Writer.Write(publicRequest.FunctionUrlAuthType);
+                }
+
                 if(publicRequest.IsSetPrincipal())
                 {
                     context.Writer.WritePropertyName("Principal");
                     context.Writer.Write(publicRequest.Principal);
+                }
+
+                if(publicRequest.IsSetPrincipalOrgID())
+                {
+                    context.Writer.WritePropertyName("PrincipalOrgID");
+                    context.Writer.Write(publicRequest.PrincipalOrgID);
                 }
 
                 if(publicRequest.IsSetRevisionId())
@@ -113,7 +125,6 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.StatementId);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

@@ -35,6 +35,7 @@ namespace Amazon.LookoutEquipment.Model
     public partial class IngestionS3InputConfiguration
     {
         private string _bucket;
+        private string _keyPattern;
         private string _prefix;
 
         /// <summary>
@@ -54,6 +55,27 @@ namespace Amazon.LookoutEquipment.Model
         internal bool IsSetBucket()
         {
             return this._bucket != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KeyPattern. 
+        /// <para>
+        ///  Pattern for matching the Amazon S3 files which will be used for ingestion. If no
+        /// KeyPattern is provided, we will use the default hierarchy file structure, which is
+        /// same as KeyPattern {prefix}/{component_name}/* 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string KeyPattern
+        {
+            get { return this._keyPattern; }
+            set { this._keyPattern = value; }
+        }
+
+        // Check to see if KeyPattern property is set
+        internal bool IsSetKeyPattern()
+        {
+            return this._keyPattern != null;
         }
 
         /// <summary>

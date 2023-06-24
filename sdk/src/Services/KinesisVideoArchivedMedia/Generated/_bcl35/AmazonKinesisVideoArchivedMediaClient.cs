@@ -72,6 +72,15 @@ namespace Amazon.KinesisVideoArchivedMedia
         }
 
         /// <summary>
+        /// Customize the pipeline
+        /// </summary>
+        /// <param name="pipeline"></param>
+        protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
+        {
+            pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonKinesisVideoArchivedMediaEndpointResolver());
+        }
+        /// <summary>
         /// Capture metadata for the service.
         /// </summary>
         protected override IServiceMetadata ServiceMetadata
@@ -816,6 +825,86 @@ namespace Amazon.KinesisVideoArchivedMedia
         public virtual GetHLSStreamingSessionURLResponse EndGetHLSStreamingSessionURL(IAsyncResult asyncResult)
         {
             return EndInvoke<GetHLSStreamingSessionURLResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetImages
+
+        /// <summary>
+        /// Retrieves a list of Images corresponding to each timestamp for a given time range,
+        /// sampling interval, and image format configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetImages service method.</param>
+        /// 
+        /// <returns>The response from the GetImages service method, as returned by KinesisVideoArchivedMedia.</returns>
+        /// <exception cref="Amazon.KinesisVideoArchivedMedia.Model.ClientLimitExceededException">
+        /// Kinesis Video Streams has throttled the request because you have exceeded a limit.
+        /// Try making the call later. For information about limits, see <a href="http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/limits.html">Kinesis
+        /// Video Streams Limits</a>.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisVideoArchivedMedia.Model.InvalidArgumentException">
+        /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisVideoArchivedMedia.Model.NotAuthorizedException">
+        /// Status Code: 403, The caller is not authorized to perform an operation on the given
+        /// stream, or the token has expired.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisVideoArchivedMedia.Model.ResourceNotFoundException">
+        /// <code>GetMedia</code> throws this error when Kinesis Video Streams can't find the
+        /// stream that you specified.
+        /// 
+        ///  
+        /// <para>
+        ///  <code>GetHLSStreamingSessionURL</code> and <code>GetDASHStreamingSessionURL</code>
+        /// throw this error if a session with a <code>PlaybackMode</code> of <code>ON_DEMAND</code>
+        /// or <code>LIVE_REPLAY</code>is requested for a stream that has no fragments within
+        /// the requested time range, or if a session with a <code>PlaybackMode</code> of <code>LIVE</code>
+        /// is requested for a stream that has no fragments within the last 30 seconds.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-video-archived-media-2017-09-30/GetImages">REST API Reference for GetImages Operation</seealso>
+        public virtual GetImagesResponse GetImages(GetImagesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetImagesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetImagesResponseUnmarshaller.Instance;
+
+            return Invoke<GetImagesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetImages operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetImages operation on AmazonKinesisVideoArchivedMediaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetImages
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-video-archived-media-2017-09-30/GetImages">REST API Reference for GetImages Operation</seealso>
+        public virtual IAsyncResult BeginGetImages(GetImagesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetImagesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetImagesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetImages operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetImages.</param>
+        /// 
+        /// <returns>Returns a  GetImagesResult from KinesisVideoArchivedMedia.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-video-archived-media-2017-09-30/GetImages">REST API Reference for GetImages Operation</seealso>
+        public virtual GetImagesResponse EndGetImages(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetImagesResponse>(asyncResult);
         }
 
         #endregion

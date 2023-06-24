@@ -29,5 +29,10 @@ namespace Amazon.VoiceID.Model
         /// Enumerable containing all full responses for the operation
         /// </summary>
         IPaginatedEnumerable<ListSpeakersResponse> Responses { get; }
+
+        /// <summary>
+        /// Enumerable containing all of the SpeakerSummaries
+        /// </summary>
+        IPaginatedEnumerable<SpeakerSummary> SpeakerSummaries { get; }
     }
 }

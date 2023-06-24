@@ -41,6 +41,7 @@ namespace Amazon.MediaConvert.Model
         private string _baseUrl;
         private List<HlsCaptionLanguageMapping> _captionLanguageMappings = new List<HlsCaptionLanguageMapping>();
         private HlsCaptionLanguageSetting _captionLanguageSetting;
+        private HlsCaptionSegmentLengthControl _captionSegmentLengthControl;
         private HlsClientCache _clientCache;
         private HlsCodecSpecification _codecSpecification;
         private string _destination;
@@ -56,6 +57,7 @@ namespace Amazon.MediaConvert.Model
         private HlsOutputSelection _outputSelection;
         private HlsProgramDateTime _programDateTime;
         private int? _programDateTimePeriod;
+        private HlsProgressiveWriteHlsManifest _progressiveWriteHlsManifest;
         private HlsSegmentControl _segmentControl;
         private int? _segmentLength;
         private HlsSegmentLengthControl _segmentLengthControl;
@@ -174,6 +176,26 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetCaptionLanguageSetting()
         {
             return this._captionLanguageSetting != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CaptionSegmentLengthControl. Set Caption segment length
+        /// control (CaptionSegmentLengthControl) to Match video (MATCH_VIDEO) to create caption
+        /// segments that align with the video segments from the first video output in this output
+        /// group. For example, if the video segments are 2 seconds long, your WebVTT segments
+        /// will also be 2 seconds long. Keep the default setting, Large segments (LARGE_SEGMENTS)
+        /// to create caption segments that are 300 seconds long.
+        /// </summary>
+        public HlsCaptionSegmentLengthControl CaptionSegmentLengthControl
+        {
+            get { return this._captionSegmentLengthControl; }
+            set { this._captionSegmentLengthControl = value; }
+        }
+
+        // Check to see if CaptionSegmentLengthControl property is set
+        internal bool IsSetCaptionSegmentLengthControl()
+        {
+            return this._captionSegmentLengthControl != null;
         }
 
         /// <summary>
@@ -440,6 +462,30 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ProgressiveWriteHlsManifest. Specify whether MediaConvert
+        /// generates HLS manifests while your job is running or when your job is complete. To
+        /// generate HLS manifests while your job is running: Choose Enabled. Use if you want
+        /// to play back your content as soon as it's available. MediaConvert writes the parent
+        /// and child manifests after the first three media segments are written to your destination
+        /// S3 bucket. It then writes new updated manifests after each additional segment is written.
+        /// The parent manifest includes the latest BANDWIDTH and AVERAGE-BANDWIDTH attributes,
+        /// and child manifests include the latest available media segment. When your job completes,
+        /// the final child playlists include an EXT-X-ENDLIST tag. To generate HLS manifests
+        /// only when your job completes: Choose Disabled.
+        /// </summary>
+        public HlsProgressiveWriteHlsManifest ProgressiveWriteHlsManifest
+        {
+            get { return this._progressiveWriteHlsManifest; }
+            set { this._progressiveWriteHlsManifest = value; }
+        }
+
+        // Check to see if ProgressiveWriteHlsManifest property is set
+        internal bool IsSetProgressiveWriteHlsManifest()
+        {
+            return this._progressiveWriteHlsManifest != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SegmentControl. When set to SINGLE_FILE, emits program
         /// as a single media resource (.ts) file, uses #EXT-X-BYTERANGE tags to index segment
         /// for playback.
@@ -497,9 +543,9 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SegmentsPerSubdirectory. Number of segments to write to
-        /// a subdirectory before starting a new one. directoryStructure must be SINGLE_DIRECTORY
-        /// for this setting to have an effect.
+        /// Gets and sets the property SegmentsPerSubdirectory. Specify the number of segments
+        /// to write to a subdirectory before starting a new one. You  must also set Directory
+        /// structure to Subdirectory per stream for this setting to have an effect.
         /// </summary>
         [AWSProperty(Min=1, Max=2147483647)]
         public int SegmentsPerSubdirectory
@@ -554,8 +600,11 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TimedMetadataId3Frame. Indicates ID3 frame that has the
-        /// timecode.
+        /// Gets and sets the property TimedMetadataId3Frame. Specify the type of the ID3 frame
+        /// (timedMetadataId3Frame) to use for ID3 timestamps (timedMetadataId3Period) in your
+        /// output. To include ID3 timestamps: Specify PRIV (PRIV) or TDRL (TDRL) and set ID3
+        /// metadata (timedMetadata) to Passthrough (PASSTHROUGH). To exclude ID3 timestamps:
+        /// Set ID3 timestamp frame type to None (NONE).
         /// </summary>
         public HlsTimedMetadataId3Frame TimedMetadataId3Frame
         {
@@ -570,7 +619,12 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TimedMetadataId3Period. Timed Metadata interval in seconds.
+        /// Gets and sets the property TimedMetadataId3Period. Specify the interval in seconds
+        /// to write ID3 timestamps in your output. The first timestamp starts at the output timecode
+        /// and date, and increases incrementally with each ID3 timestamp. To use the default
+        /// interval of 10 seconds: Leave blank. To include this metadata in your output: Set
+        /// ID3 timestamp frame type (timedMetadataId3Frame) to PRIV (PRIV) or TDRL (TDRL), and
+        /// set ID3 metadata (timedMetadata) to Passthrough (PASSTHROUGH).
         /// </summary>
         [AWSProperty(Min=-2147483648, Max=2147483647)]
         public int TimedMetadataId3Period

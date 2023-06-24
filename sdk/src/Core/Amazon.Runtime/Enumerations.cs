@@ -137,4 +137,34 @@ namespace Amazon.Runtime
         /// </summary>
         SigV4a
     }
+
+    /// <summary>
+    /// Algorithms for validating request and response integrity for supported operations.
+    /// These are the algorithms support by the .NET SDK, a given service may 
+    /// only use a subset of these.
+    /// </summary>
+    public enum CoreChecksumAlgorithm
+    {
+        NONE,
+        CRC32C,
+        CRC32,
+        SHA256,
+        SHA1
+    }
+
+    /// <summary>
+    /// Behavior to be used for verifying the checksum of response content
+    /// that may be returned by supported service operations.
+    /// </summary>
+    public enum CoreChecksumResponseBehavior
+    {
+        /// <summary>
+        /// The SDK will not attempt to verify the response checksum
+        /// </summary>
+        DISABLED,
+        /// <summary>
+        /// The SDK will attempt to verify the response checksum
+        /// </summary>
+        ENABLED
+    }
 }

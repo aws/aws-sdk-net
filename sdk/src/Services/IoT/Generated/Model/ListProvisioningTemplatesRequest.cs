@@ -30,7 +30,7 @@ namespace Amazon.IoT.Model
 {
     /// <summary>
     /// Container for the parameters to the ListProvisioningTemplates operation.
-    /// Lists the fleet provisioning templates in your Amazon Web Services account.
+    /// Lists the provisioning templates in your Amazon Web Services account.
     /// 
     ///  
     /// <para>

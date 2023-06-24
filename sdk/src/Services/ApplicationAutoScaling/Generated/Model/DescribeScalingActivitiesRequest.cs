@@ -37,14 +37,43 @@ namespace Amazon.ApplicationAutoScaling.Model
     /// <para>
     /// You can filter the results using <code>ResourceId</code> and <code>ScalableDimension</code>.
     /// </para>
+    ///  
+    /// <para>
+    /// For information about viewing scaling activities using the Amazon Web Services CLI,
+    /// see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-scaling-activities.html">Scaling
+    /// activities for Application Auto Scaling</a>.
+    /// </para>
     /// </summary>
     public partial class DescribeScalingActivitiesRequest : AmazonApplicationAutoScalingRequest
     {
+        private bool? _includeNotScaledActivities;
         private int? _maxResults;
         private string _nextToken;
         private string _resourceId;
         private ScalableDimension _scalableDimension;
         private ServiceNamespace _serviceNamespace;
+
+        /// <summary>
+        /// Gets and sets the property IncludeNotScaledActivities. 
+        /// <para>
+        /// Specifies whether to include activities that aren't scaled (<i>not scaled activities</i>)
+        /// in the response. Not scaled activities are activities that aren't completed or started
+        /// for various reasons, such as preventing infinite scaling loops. For help interpreting
+        /// the not scaled reason details in the response, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-scaling-activities.html">Scaling
+        /// activities for Application Auto Scaling</a>.
+        /// </para>
+        /// </summary>
+        public bool IncludeNotScaledActivities
+        {
+            get { return this._includeNotScaledActivities.GetValueOrDefault(); }
+            set { this._includeNotScaledActivities = value; }
+        }
+
+        // Check to see if IncludeNotScaledActivities property is set
+        internal bool IsSetIncludeNotScaledActivities()
+        {
+            return this._includeNotScaledActivities.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
@@ -182,6 +211,11 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// Neptune cluster - The resource type is <code>cluster</code> and the unique identifier
         /// is the cluster name. Example: <code>cluster:mycluster</code>.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// SageMaker Serverless endpoint - The resource type is <code>variant</code> and the
+        /// unique identifier is the resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Min=1, Max=1600)]
@@ -252,7 +286,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances
-        /// for an SageMaker model endpoint variant.
+        /// for a SageMaker model endpoint variant.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -303,6 +337,11 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// <para>
         ///  <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an
         /// Amazon Neptune DB cluster.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency
+        /// for a SageMaker Serverless endpoint.
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -74,24 +74,24 @@ namespace Amazon.ServiceDiscovery.Model
         /// </para>
         ///  </dd> <dt>AWS_INSTANCE_CNAME</dt> <dd> 
         /// <para>
-        /// For a <code>CNAME</code> record, the domain name that Route 53 returns in response
+        /// For a <code>CNAME</code> record, the domain name that Route 53 returns in response
         /// to DNS queries (for example, <code>example.com</code>).
         /// </para>
         ///  </dd> <dt>AWS_INSTANCE_IPV4</dt> <dd> 
         /// <para>
-        /// For an <code>A</code> record, the IPv4 address that Route 53 returns in response to
+        /// For an <code>A</code> record, the IPv4 address that Route 53 returns in response to
         /// DNS queries (for example, <code>192.0.2.44</code>).
         /// </para>
         ///  </dd> <dt>AWS_INSTANCE_IPV6</dt> <dd> 
         /// <para>
-        /// For an <code>AAAA</code> record, the IPv6 address that Route 53 returns in response
+        /// For an <code>AAAA</code> record, the IPv6 address that Route 53 returns in response
         /// to DNS queries (for example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>).
         /// </para>
         ///  </dd> <dt>AWS_INSTANCE_PORT</dt> <dd> 
         /// <para>
-        /// For an <code>SRV</code> record, the value that Route 53 returns for the port. In addition,
+        /// For an <code>SRV</code> record, the value that Route 53 returns for the port. In addition,
         /// if the service includes <code>HealthCheckConfig</code>, the port on the endpoint that
-        /// Route 53 sends requests to.
+        /// Route 53 sends requests to.
         /// </para>
         ///  </dd> </dl>
         /// </summary>

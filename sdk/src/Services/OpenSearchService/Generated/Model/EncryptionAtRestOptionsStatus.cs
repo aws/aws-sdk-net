@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// Status of the encryption At Rest options for the specified domain.
+    /// Status of the encryption at rest options for the specified OpenSearch Service domain.
     /// </summary>
     public partial class EncryptionAtRestOptionsStatus
     {
@@ -39,7 +39,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property Options. 
         /// <para>
-        /// The Encryption At Rest options for the specified domain.
+        /// Encryption at rest options for the specified domain.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -58,7 +58,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the Encryption At Rest options for the specified domain.
+        /// The status of the encryption at rest options for the specified domain.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

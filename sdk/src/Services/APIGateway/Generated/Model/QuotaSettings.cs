@@ -40,7 +40,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Limit. 
         /// <para>
-        /// The maximum number of requests that can be made in a given time period.
+        /// The target maximum number of requests that can be made in a given time period.
         /// </para>
         /// </summary>
         public int Limit
@@ -58,9 +58,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Offset. 
         /// <para>
-        /// The day that a time period starts. For example, with a time period of <code>WEEK</code>,
-        /// an offset of <code>0</code> starts on Sunday, and an offset of <code>1</code> starts
-        /// on Monday.
+        /// The number of requests subtracted from the given limit in the initial time period.
         /// </para>
         /// </summary>
         public int Offset

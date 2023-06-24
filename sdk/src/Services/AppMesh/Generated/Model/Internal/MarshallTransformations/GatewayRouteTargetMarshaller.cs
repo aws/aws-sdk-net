@@ -34,7 +34,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// GatewayRouteTarget Marshaller
-    /// </summary>       
+    /// </summary>
     public class GatewayRouteTargetMarshaller : IRequestMarshaller<GatewayRouteTarget, JsonMarshallerContext> 
     {
         /// <summary>
@@ -45,6 +45,12 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(GatewayRouteTarget requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetPort())
+            {
+                context.Writer.WritePropertyName("port");
+                context.Writer.Write(requestObject.Port);
+            }
+
             if(requestObject.IsSetVirtualService())
             {
                 context.Writer.WritePropertyName("virtualService");
@@ -60,7 +66,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static GatewayRouteTargetMarshaller Instance = new GatewayRouteTargetMarshaller();
 
     }

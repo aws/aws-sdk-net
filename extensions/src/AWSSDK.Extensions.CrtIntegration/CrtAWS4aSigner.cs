@@ -20,8 +20,10 @@ using Amazon.Runtime.Internal.Util;
 using Amazon.Runtime.SharedInterfaces;
 using Amazon.Util;
 using Aws.Crt.Auth;
+using Aws.Crt.Http;
 using AWSSDK.Extensions.CrtIntegration;
 using System;
+using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -100,14 +102,33 @@ namespace Amazon.Extensions.CrtIntegration
                                               ImmutableCredentials credentials)
         {
             var signedAt = AWS4Signer.InitializeHeaders(request.Headers, request.Endpoint);
+            
             var serviceSigningName = !string.IsNullOrEmpty(request.OverrideSigningServiceName) ? request.OverrideSigningServiceName : AWS4Signer.DetermineService(clientConfig);
+            if (serviceSigningName == "s3")
+            {
+                // Older versions of the S3 package can be used with newer versions of Core, this guarantees no double encoding will be used.
+                // The new behavior uses endpoint resolution rules, which are not present prior to 3.7.100
+                request.UseDoubleEncoding = false;
+            }
+
             var regionSet = AWS4Signer.DetermineSigningRegion(clientConfig, clientConfig.RegionEndpointServiceName, request.AlternateEndpoint, request);
             request.DeterminedSigningRegion = regionSet;
+            AWS4Signer.SetXAmzTrailerHeader(request.Headers, request.TrailingHeaders);
 
-            var signingConfig = PrepareCRTSigningConfig(AwsSignatureType.HTTP_REQUEST_VIA_HEADERS, regionSet, serviceSigningName, signedAt, credentials);
+            var signingConfig = PrepareCRTSigningConfig(
+                AwsSignatureType.HTTP_REQUEST_VIA_HEADERS, 
+                regionSet, 
+                serviceSigningName, 
+                signedAt, 
+                credentials,
+                request.UseDoubleEncoding);
 
-            // Compute here rather than CRT to support the fixed value for header of a chunked request
-            signingConfig.SignedBodyValue = AWS4Signer.SetRequestBodyHash(request, SignPayload, AWS4Signer.V4aStreamingBodySha256, ChunkedUploadWrapperStream.V4A_SIGNATURE_LENGTH);
+            // If the request should use a fixed x-amz-content-sha256 header value, determine the appropriate one
+            var fixedBodyHash = request.TrailingHeaders?.Count > 0
+                ? AWS4Signer.V4aStreamingBodySha256WithTrailer
+                : AWS4Signer.V4aStreamingBodySha256;
+
+            signingConfig.SignedBodyValue = AWS4Signer.SetRequestBodyHash(request, SignPayload, fixedBodyHash, ChunkedUploadWrapperStream.V4A_SIGNATURE_LENGTH);
 
             var crtRequest = CrtHttpRequestConverter.ConvertToCrtRequest(request);
             var signingResult = AwsSigner.SignHttpRequest(crtRequest, signingConfig);
@@ -158,10 +179,24 @@ namespace Amazon.Extensions.CrtIntegration
                                             string serviceSigningName,
                                             string overrideSigningRegion)
         {
+            if (serviceSigningName == "s3")
+            {
+                // Older versions of the S3 package can be used with newer versions of Core, this guarantees no double encoding will be used.
+                // The new behavior uses endpoint resolution rules, which are not present prior to 3.7.100
+                request.UseDoubleEncoding = false;
+            }
+
             var signedAt = AWS4Signer.InitializeHeaders(request.Headers, request.Endpoint);
             var regionSet = overrideSigningRegion ?? AWS4Signer.DetermineSigningRegion(clientConfig, clientConfig.RegionEndpointServiceName, request.AlternateEndpoint, request);
 
-            var signingConfig = PrepareCRTSigningConfig(AwsSignatureType.HTTP_REQUEST_VIA_QUERY_PARAMS, regionSet, serviceSigningName, signedAt, credentials);
+            var signingConfig = PrepareCRTSigningConfig(
+                AwsSignatureType.HTTP_REQUEST_VIA_QUERY_PARAMS, 
+                regionSet, 
+                serviceSigningName, 
+                signedAt, 
+                credentials,
+                request.UseDoubleEncoding);
+
             if (AWS4PreSignedUrlSigner.ServicesUsingUnsignedPayload.Contains(serviceSigningName))
             {
                 signingConfig.SignedBodyValue = AWS4Signer.UnsignedPayload;
@@ -207,11 +242,7 @@ namespace Amazon.Extensions.CrtIntegration
         /// <returns>Signature of the current chunk</returns>
         public string SignChunk(Stream chunkBody, string previousSignature, AWS4aSigningResult headerSigningResult)
         {
-            var signingConfig = PrepareCRTSigningConfig(AwsSignatureType.HTTP_REQUEST_CHUNK,
-                                                            headerSigningResult.RegionSet,
-                                                            headerSigningResult.Service,
-                                                            headerSigningResult.DateTime,
-                                                            headerSigningResult.Credentials);
+            var signingConfig = PrepareCRTSigningConfig(AwsSignatureType.HTTP_REQUEST_CHUNK, headerSigningResult);
             signingConfig.SignedBodyHeader = AwsSignedBodyHeaderType.NONE;
 
             // The previous signature may be padded with '*' up to 144 characters, which is used 
@@ -223,6 +254,44 @@ namespace Amazon.Extensions.CrtIntegration
         }
 
         /// <summary>
+        /// Signs the final chunk containing trailing headers
+        /// </summary>
+        /// <param name="trailingHeaders">Trailing header keys and values</param>
+        /// <param name="previousSignature">Signature of the previously signed chunk</param>
+        /// <param name="headerSigningResult">Signing result for the "seed" signature consisting of headers</param>
+        /// <returns>Signature of the trailing header chunk</returns>
+        public string SignTrailingHeaderChunk(IDictionary<string, string> trailingHeaders, string previousSignature, AWS4aSigningResult headerSigningResult)
+        {
+            var signingConfig = PrepareCRTSigningConfig(AwsSignatureType.HTTP_REQUEST_TRAILING_HEADERS, headerSigningResult);
+            signingConfig.SignedBodyHeader = AwsSignedBodyHeaderType.NONE;
+
+            var headerArray = trailingHeaders.Select(kvp => new HttpHeader(kvp.Key, kvp.Value)).ToArray();
+
+            // The previous signature may be padded with '*' up to 144 characters, which is used 
+            // when actually sending a chunk but not when calculating the next chunk's signature.
+            previousSignature = previousSignature.TrimEnd('*');
+
+            var signingResult = AwsSigner.SignTrailingHeaders(headerArray, Encoding.UTF8.GetBytes(previousSignature), signingConfig);
+            return Encoding.UTF8.GetString(signingResult.Get().Signature);
+        }
+
+        /// <summary>
+        /// Helper function to set up an Aws.Crt.Auth.SigningConfig
+        /// </summary>
+        /// <param name="signatureType">Signature type</param>
+        /// <param name="headerSigningResult">Signing result for the request's headers</param>
+        /// <returns>Prepared CRT signing configuration</returns>
+        public AwsSigningConfig PrepareCRTSigningConfig(AwsSignatureType signatureType, AWS4aSigningResult headerSigningResult)
+        {
+            return PrepareCRTSigningConfig(signatureType,
+                headerSigningResult.RegionSet,
+                headerSigningResult.Service,
+                headerSigningResult.DateTime,
+                headerSigningResult.Credentials,
+                useDoubleEncoding: true);
+        }
+
+        /// <summary>
         /// Helper function to set up an Aws.Crt.Auth.SigningConfig
         /// </summary>
         /// <param name="signatureType">Signature type</param>
@@ -230,8 +299,9 @@ namespace Amazon.Extensions.CrtIntegration
         /// <param name="service">Service to sign the request for</param>
         /// <param name="signedAt">Timestamp to sign at</param>
         /// <param name="credentials">The AWS credentials for the account making the service call</param>
+        /// <param name="useDoubleEncoding">Use double uri encoding when required</param>
         /// <returns>Prepared CRT signing configuration</returns>
-        public AwsSigningConfig PrepareCRTSigningConfig(AwsSignatureType signatureType, string region, string service, DateTime signedAt, ImmutableCredentials credentials)
+        public AwsSigningConfig PrepareCRTSigningConfig(AwsSignatureType signatureType, string region, string service, DateTime signedAt, ImmutableCredentials credentials, bool useDoubleEncoding)
         {
             var signingConfig = new AwsSigningConfig
             {
@@ -244,16 +314,8 @@ namespace Amazon.Extensions.CrtIntegration
                 Credentials = new Credentials(credentials.AccessKey, credentials.SecretKey, credentials.Token)
             };
             
-            if (service == "s3")
-            {
-                signingConfig.UseDoubleUriEncode = false;
-                signingConfig.ShouldNormalizeUriPath = false;
-            }
-            else
-            {
-                signingConfig.UseDoubleUriEncode = true;
-                signingConfig.ShouldNormalizeUriPath = true;
-            }
+            signingConfig.UseDoubleUriEncode = useDoubleEncoding;
+            signingConfig.ShouldNormalizeUriPath = useDoubleEncoding;
 
             return signingConfig;
         }

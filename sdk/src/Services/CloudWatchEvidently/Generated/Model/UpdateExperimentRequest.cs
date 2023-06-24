@@ -46,7 +46,9 @@ namespace Amazon.CloudWatchEvidently.Model
         private OnlineAbConfig _onlineAbConfig;
         private string _project;
         private string _randomizationSalt;
+        private bool? _removeSegment;
         private long? _samplingRate;
+        private string _segment;
         private List<TreatmentConfig> _treatments = new List<TreatmentConfig>();
 
         /// <summary>
@@ -169,6 +171,25 @@ namespace Amazon.CloudWatchEvidently.Model
         }
 
         /// <summary>
+        /// Gets and sets the property RemoveSegment. 
+        /// <para>
+        /// Removes a segment from being used in an experiment. You can't use this parameter if
+        /// the experiment is currently running.
+        /// </para>
+        /// </summary>
+        public bool RemoveSegment
+        {
+            get { return this._removeSegment.GetValueOrDefault(); }
+            set { this._removeSegment = value; }
+        }
+
+        // Check to see if RemoveSegment property is set
+        internal bool IsSetRemoveSegment()
+        {
+            return this._removeSegment.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property SamplingRate. 
         /// <para>
         /// The portion of the available audience that you want to allocate to this experiment,
@@ -192,6 +213,27 @@ namespace Amazon.CloudWatchEvidently.Model
         internal bool IsSetSamplingRate()
         {
             return this._samplingRate.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Segment. 
+        /// <para>
+        /// Adds an audience <i>segment</i> to an experiment. When a segment is used in an experiment,
+        /// only user sessions that match the segment pattern are used in the experiment. You
+        /// can't use this parameter if the experiment is currently running.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=2048)]
+        public string Segment
+        {
+            get { return this._segment; }
+            set { this._segment = value; }
+        }
+
+        // Check to see if Segment property is set
+        internal bool IsSetSegment()
+        {
+            return this._segment != null;
         }
 
         /// <summary>

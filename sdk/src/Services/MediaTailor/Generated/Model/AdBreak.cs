@@ -37,11 +37,12 @@ namespace Amazon.MediaTailor.Model
         private long? _offsetMillis;
         private SlateSource _slate;
         private SpliceInsertMessage _spliceInsertMessage;
+        private TimeSignalMessage _timeSignalMessage;
 
         /// <summary>
         /// Gets and sets the property MessageType. 
         /// <para>
-        /// The SCTE-35 ad insertion type. Accepted value: SPLICE_INSERT.
+        /// The SCTE-35 ad insertion type. Accepted value: <code>SPLICE_INSERT</code>, <code>TIME_SIGNAL</code>.
         /// </para>
         /// </summary>
         public MessageType MessageType
@@ -97,8 +98,9 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property SpliceInsertMessage. 
         /// <para>
-        /// This defines the SCTE-35 splice_insert() message inserted around the ad. For information
-        /// about using splice_insert(), see the SCTE-35 specficiaiton, section 9.7.3.1.
+        /// This defines the SCTE-35 <code>splice_insert()</code> message inserted around the
+        /// ad. For information about using <code>splice_insert()</code>, see the SCTE-35 specficiaiton,
+        /// section 9.7.3.1.
         /// </para>
         /// </summary>
         public SpliceInsertMessage SpliceInsertMessage
@@ -111,6 +113,34 @@ namespace Amazon.MediaTailor.Model
         internal bool IsSetSpliceInsertMessage()
         {
             return this._spliceInsertMessage != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TimeSignalMessage. 
+        /// <para>
+        /// Defines the SCTE-35 <code>time_signal</code> message inserted around the ad.
+        /// </para>
+        ///  
+        /// <para>
+        /// Programs on a channel's schedule can be configured with one or more ad breaks. You
+        /// can attach a <code>splice_insert</code> SCTE-35 message to the ad break. This message
+        /// provides basic metadata about the ad break.
+        /// </para>
+        ///  
+        /// <para>
+        /// See section 9.7.4 of the 2022 SCTE-35 specification for more information.
+        /// </para>
+        /// </summary>
+        public TimeSignalMessage TimeSignalMessage
+        {
+            get { return this._timeSignalMessage; }
+            set { this._timeSignalMessage = value; }
+        }
+
+        // Check to see if TimeSignalMessage property is set
+        internal bool IsSetTimeSignalMessage()
+        {
+            return this._timeSignalMessage != null;
         }
 
     }

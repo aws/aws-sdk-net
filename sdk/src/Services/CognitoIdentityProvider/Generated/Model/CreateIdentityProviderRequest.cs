@@ -30,7 +30,7 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateIdentityProvider operation.
-    /// Creates an identity provider for a user pool.
+    /// Creates an IdP for a user pool.
     /// </summary>
     public partial class CreateIdentityProviderRequest : AmazonCognitoIdentityProviderRequest
     {
@@ -44,7 +44,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AttributeMapping. 
         /// <para>
-        /// A mapping of identity provider attributes to standard and custom user pool attributes.
+        /// A mapping of IdP attributes to standard and custom user pool attributes.
         /// </para>
         /// </summary>
         public Dictionary<string, string> AttributeMapping
@@ -62,7 +62,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property IdpIdentifiers. 
         /// <para>
-        /// A list of identity provider identifiers.
+        /// A list of IdP identifiers.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]
@@ -81,8 +81,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property ProviderDetails. 
         /// <para>
-        /// The identity provider details. The following list describes the provider detail keys
-        /// for each identity provider type.
+        /// The IdP details. The following list describes the provider detail keys for each IdP
+        /// type.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -146,7 +146,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        /// For OIDC providers:
+        /// For OpenID Connect (OIDC) providers:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -170,30 +170,40 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// authorize_url <i>if not available from discovery URL specified by oidc_issuer key</i>
-        /// 
+        /// The following keys are only present if Amazon Cognito didn't discover them at the
+        /// <code>oidc_issuer</code> URL.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// authorize_url 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// token_url <i>if not available from discovery URL specified by oidc_issuer key</i>
-        /// 
+        /// token_url 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// attributes_url <i>if not available from discovery URL specified by oidc_issuer key</i>
-        /// 
+        /// attributes_url 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// jwks_uri <i>if not available from discovery URL specified by oidc_issuer key</i> 
+        /// jwks_uri 
         /// </para>
         ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// Amazon Cognito sets the value of the following keys automatically. They are read-only.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// attributes_url_add_attributes 
+        /// </para>
+        ///  </li> </ul> </li> </ul> </li> <li> 
         /// <para>
         /// For SAML providers:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// MetadataFile OR MetadataURL
+        /// MetadataFile or MetadataURL
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -217,10 +227,10 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property ProviderName. 
         /// <para>
-        /// The identity provider name.
+        /// The IdP name.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=32)]
+        [AWSProperty(Required=true, Min=3, Max=32)]
         public string ProviderName
         {
             get { return this._providerName; }
@@ -236,7 +246,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property ProviderType. 
         /// <para>
-        /// The identity provider type.
+        /// The IdP type.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

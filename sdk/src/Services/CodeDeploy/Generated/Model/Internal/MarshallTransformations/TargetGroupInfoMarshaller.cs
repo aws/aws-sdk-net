@@ -34,7 +34,7 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// TargetGroupInfo Marshaller
-    /// </summary>       
+    /// </summary>
     public class TargetGroupInfoMarshaller : IRequestMarshaller<TargetGroupInfo, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static TargetGroupInfoMarshaller Instance = new TargetGroupInfoMarshaller();
 
     }

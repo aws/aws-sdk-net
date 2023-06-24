@@ -34,7 +34,7 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AWSLocation Marshaller
-    /// </summary>       
+    /// </summary>
     public class AWSLocationMarshaller : IRequestMarshaller<AWSLocation, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AWSLocationMarshaller Instance = new AWSLocationMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.Panorama.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// PackageImportJobOutputConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class PackageImportJobOutputConfigMarshaller : IRequestMarshaller<PackageImportJobOutputConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.Panorama.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static PackageImportJobOutputConfigMarshaller Instance = new PackageImportJobOutputConfigMarshaller();
 
     }

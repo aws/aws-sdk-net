@@ -35,11 +35,12 @@ namespace Amazon.CodeGuruReviewer.Model
     {
         private long? _findingsCount;
         private long? _meteredLinesOfCodeCount;
+        private long? _suppressedLinesOfCodeCount;
 
         /// <summary>
         /// Gets and sets the property FindingsCount. 
         /// <para>
-        ///  Total number of recommendations found in the code review. 
+        /// Total number of recommendations found in the code review.
         /// </para>
         /// </summary>
         public long FindingsCount
@@ -57,9 +58,9 @@ namespace Amazon.CodeGuruReviewer.Model
         /// <summary>
         /// Gets and sets the property MeteredLinesOfCodeCount. 
         /// <para>
-        ///  <code>MeteredLinesOfCode</code> is the number of lines of code in the repository
+        ///  <code>MeteredLinesOfCodeCount</code> is the number of lines of code in the repository
         /// where the code review happened. This does not include non-code lines such as comments
-        /// and blank lines. 
+        /// and blank lines.
         /// </para>
         /// </summary>
         public long MeteredLinesOfCodeCount
@@ -72,6 +73,28 @@ namespace Amazon.CodeGuruReviewer.Model
         internal bool IsSetMeteredLinesOfCodeCount()
         {
             return this._meteredLinesOfCodeCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SuppressedLinesOfCodeCount. 
+        /// <para>
+        ///  <code>SuppressedLinesOfCodeCount</code> is the number of lines of code in the repository
+        /// where the code review happened that CodeGuru Reviewer did not analyze. The lines suppressed
+        /// in the analysis is based on the <code>excludeFiles</code> variable in the <code>aws-codeguru-reviewer.yml</code>
+        /// file. This number does not include non-code lines such as comments and blank lines.
+        /// 
+        /// </para>
+        /// </summary>
+        public long SuppressedLinesOfCodeCount
+        {
+            get { return this._suppressedLinesOfCodeCount.GetValueOrDefault(); }
+            set { this._suppressedLinesOfCodeCount = value; }
+        }
+
+        // Check to see if SuppressedLinesOfCodeCount property is set
+        internal bool IsSetSuppressedLinesOfCodeCount()
+        {
+            return this._suppressedLinesOfCodeCount.HasValue; 
         }
 
     }

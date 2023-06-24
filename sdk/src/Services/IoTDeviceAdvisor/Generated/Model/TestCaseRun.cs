@@ -41,6 +41,7 @@ namespace Amazon.IoTDeviceAdvisor.Model
         private string _testCaseDefinitionId;
         private string _testCaseDefinitionName;
         private string _testCaseRunId;
+        private List<TestCaseScenario> _testScenarios = new List<TestCaseScenario>();
         private string _warnings;
 
         /// <summary>
@@ -222,6 +223,24 @@ namespace Amazon.IoTDeviceAdvisor.Model
         internal bool IsSetTestCaseRunId()
         {
             return this._testCaseRunId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TestScenarios. 
+        /// <para>
+        ///  Provides the test scenarios for the test case run. 
+        /// </para>
+        /// </summary>
+        public List<TestCaseScenario> TestScenarios
+        {
+            get { return this._testScenarios; }
+            set { this._testScenarios = value; }
+        }
+
+        // Check to see if TestScenarios property is set
+        internal bool IsSetTestScenarios()
+        {
+            return this._testScenarios != null && this._testScenarios.Count > 0; 
         }
 
         /// <summary>

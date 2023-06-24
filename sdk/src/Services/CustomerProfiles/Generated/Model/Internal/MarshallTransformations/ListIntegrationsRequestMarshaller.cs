@@ -55,12 +55,15 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
         public IRequest Marshall(ListIntegrationsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CustomerProfiles");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-08-15";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-08-15";
             request.HttpMethod = "GET";
 
             if (!publicRequest.IsSetDomainName())
                 throw new AmazonCustomerProfilesException("Request object does not have required field DomainName set");
             request.AddPathResource("{DomainName}", StringUtils.FromString(publicRequest.DomainName));
+            
+            if (publicRequest.IsSetIncludeHidden())
+                request.Parameters.Add("include-hidden", StringUtils.FromBool(publicRequest.IncludeHidden));
             
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("max-results", StringUtils.FromInt(publicRequest.MaxResults));

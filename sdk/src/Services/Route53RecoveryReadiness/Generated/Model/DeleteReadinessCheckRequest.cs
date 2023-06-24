@@ -30,14 +30,17 @@ namespace Amazon.Route53RecoveryReadiness.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteReadinessCheck operation.
-    /// Deletes an existing Readiness Check.
+    /// Deletes a readiness check.
     /// </summary>
     public partial class DeleteReadinessCheckRequest : AmazonRoute53RecoveryReadinessRequest
     {
         private string _readinessCheckName;
 
         /// <summary>
-        /// Gets and sets the property ReadinessCheckName. The ReadinessCheck to delete
+        /// Gets and sets the property ReadinessCheckName. 
+        /// <para>
+        /// Name of a readiness check.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string ReadinessCheckName

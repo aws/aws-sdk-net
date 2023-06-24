@@ -43,8 +43,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property CreateDate. 
         /// <para>
-        /// The date and time when the predictive inbox placement test was created, in Unix time
-        /// format.
+        /// The date and time when the predictive inbox placement test was created.
         /// </para>
         /// </summary>
         public DateTime CreateDate

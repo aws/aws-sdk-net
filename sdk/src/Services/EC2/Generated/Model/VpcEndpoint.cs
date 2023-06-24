@@ -35,7 +35,9 @@ namespace Amazon.EC2.Model
     {
         private DateTime? _creationTimestamp;
         private List<DnsEntry> _dnsEntries = new List<DnsEntry>();
+        private DnsOptions _dnsOptions;
         private List<SecurityGroupIdentifier> _groups = new List<SecurityGroupIdentifier>();
+        private IpAddressType _ipAddressType;
         private LastError _lastError;
         private List<string> _networkInterfaceIds = new List<string>();
         private string _ownerId;
@@ -54,7 +56,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property CreationTimestamp. 
         /// <para>
-        /// The date and time that the VPC endpoint was created.
+        /// The date and time that the endpoint was created.
         /// </para>
         /// </summary>
         public DateTime CreationTimestamp
@@ -88,6 +90,24 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DnsOptions. 
+        /// <para>
+        /// The DNS options for the endpoint.
+        /// </para>
+        /// </summary>
+        public DnsOptions DnsOptions
+        {
+            get { return this._dnsOptions; }
+            set { this._dnsOptions = value; }
+        }
+
+        // Check to see if DnsOptions property is set
+        internal bool IsSetDnsOptions()
+        {
+            return this._dnsOptions != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Groups. 
         /// <para>
         /// (Interface endpoint) Information about the security groups that are associated with
@@ -107,9 +127,27 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IpAddressType. 
+        /// <para>
+        /// The IP address type for the endpoint.
+        /// </para>
+        /// </summary>
+        public IpAddressType IpAddressType
+        {
+            get { return this._ipAddressType; }
+            set { this._ipAddressType = value; }
+        }
+
+        // Check to see if IpAddressType property is set
+        internal bool IsSetIpAddressType()
+        {
+            return this._ipAddressType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property LastError. 
         /// <para>
-        /// The last error that occurred for VPC endpoint.
+        /// The last error that occurred for endpoint.
         /// </para>
         /// </summary>
         public LastError LastError
@@ -127,7 +165,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property NetworkInterfaceIds. 
         /// <para>
-        /// (Interface endpoint) One or more network interfaces for the endpoint.
+        /// (Interface endpoint) The network interfaces for the endpoint.
         /// </para>
         /// </summary>
         public List<string> NetworkInterfaceIds
@@ -145,7 +183,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property OwnerId. 
         /// <para>
-        /// The ID of the Amazon Web Services account that owns the VPC endpoint.
+        /// The ID of the Amazon Web Services account that owns the endpoint.
         /// </para>
         /// </summary>
         public string OwnerId
@@ -200,7 +238,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property RequesterManaged. 
         /// <para>
-        /// Indicates whether the VPC endpoint is being managed by its service.
+        /// Indicates whether the endpoint is being managed by its service.
         /// </para>
         /// </summary>
         public bool RequesterManaged
@@ -218,7 +256,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property RouteTableIds. 
         /// <para>
-        /// (Gateway endpoint) One or more route tables associated with the endpoint.
+        /// (Gateway endpoint) The IDs of the route tables associated with the endpoint.
         /// </para>
         /// </summary>
         public List<string> RouteTableIds
@@ -254,7 +292,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// The state of the VPC endpoint.
+        /// The state of the endpoint.
         /// </para>
         /// </summary>
         public State State
@@ -272,7 +310,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SubnetIds. 
         /// <para>
-        /// (Interface endpoint) One or more subnets in which the endpoint is located.
+        /// (Interface endpoint) The subnets for the endpoint.
         /// </para>
         /// </summary>
         public List<string> SubnetIds
@@ -290,7 +328,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Any tags assigned to the VPC endpoint.
+        /// The tags assigned to the endpoint.
         /// </para>
         /// </summary>
         public List<Tag> Tags
@@ -308,7 +346,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property VpcEndpointId. 
         /// <para>
-        /// The ID of the VPC endpoint.
+        /// The ID of the endpoint.
         /// </para>
         /// </summary>
         public string VpcEndpointId

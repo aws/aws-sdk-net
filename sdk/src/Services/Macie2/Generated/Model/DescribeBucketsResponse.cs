@@ -39,7 +39,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Buckets. 
         /// <para>
-        /// An array of objects, one for each bucket that meets the filter criteria specified
+        /// An array of objects, one for each bucket that matches the filter criteria specified
         /// in the request.
         /// </para>
         /// </summary>

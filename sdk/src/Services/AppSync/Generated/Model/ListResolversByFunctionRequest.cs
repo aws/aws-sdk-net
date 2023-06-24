@@ -61,7 +61,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property FunctionId. 
         /// <para>
-        /// The Function ID.
+        /// The function ID.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -80,7 +80,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of results you want the request to return.
+        /// The maximum number of results that you want the request to return.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=25)]

@@ -93,6 +93,12 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
                     response.InferenceSchedulerName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("LatestInferenceResult", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.LatestInferenceResult = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ModelArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

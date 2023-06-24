@@ -31,6 +31,12 @@ namespace Amazon.CustomerProfiles.Model
     /// <summary>
     /// Container for the parameters to the PutProfileObjectType operation.
     /// Defines a ProfileObjectType.
+    /// 
+    ///  
+    /// <para>
+    /// To add or remove tags on an existing ObjectType, see <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_TagResource.html">
+    /// TagResource</a>/<a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_UntagResource.html">UntagResource</a>.
+    /// </para>
     /// </summary>
     public partial class PutProfileObjectTypeRequest : AmazonCustomerProfilesRequest
     {
@@ -242,7 +248,12 @@ namespace Amazon.CustomerProfiles.Model
         /// <summary>
         /// Gets and sets the property TemplateId. 
         /// <para>
-        /// A unique identifier for the object template.
+        /// A unique identifier for the object template. For some attributes in the request, the
+        /// service will use the default value from the object template when TemplateId is present.
+        /// If these attributes are present in the request, the service may return a <code>BadRequestException</code>.
+        /// These attributes include: AllowProfileCreation, SourceLastUpdatedTimestampFormat,
+        /// Fields, and Keys. For example, if AllowProfileCreation is set to true when TemplateId
+        /// is set, the service may return a <code>BadRequestException</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

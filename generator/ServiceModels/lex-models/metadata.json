@@ -1,4 +1,5 @@
 {
   "active": true,
-  "synopsis": "Amazon Lex is a service for building conversational interfaces into any application using voice and text."
+  "synopsis": "Amazon Lex is a service for building conversational interfaces into any application using voice and text.",
+  "legacy-service-id": "Lex Model Building Service"
 }

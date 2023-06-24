@@ -40,8 +40,7 @@ namespace Amazon.Personalize.Model
         /// Gets and sets the property KmsKeyArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the Key Management Service (KMS) key that Amazon
-        /// Personalize uses to encrypt or decrypt the input and output files of a batch inference
-        /// job.
+        /// Personalize uses to encrypt or decrypt the input and output files.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2048)]

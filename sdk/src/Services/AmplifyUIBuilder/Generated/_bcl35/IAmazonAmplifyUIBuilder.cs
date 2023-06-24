@@ -46,7 +46,7 @@ namespace Amazon.AmplifyUIBuilder
     /// for client app development. For more information, see the <a href="https://docs.amplify.aws/">Amplify
     /// Framework</a>. For more information about deploying an Amplify application to Amazon
     /// Web Services, see the <a href="https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html">Amplify
-    /// Console User Guide</a>.
+    /// User Guide</a>.
     /// </para>
     /// </summary>
     public partial interface IAmazonAmplifyUIBuilder : IAmazonService, IDisposable
@@ -112,6 +112,59 @@ namespace Amazon.AmplifyUIBuilder
         /// <returns>Returns a  CreateComponentResult from AmplifyUIBuilder.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/CreateComponent">REST API Reference for CreateComponent Operation</seealso>
         CreateComponentResponse EndCreateComponent(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreateForm
+
+
+        /// <summary>
+        /// Creates a new form for an Amplify.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateForm service method.</param>
+        /// 
+        /// <returns>The response from the CreateForm service method, as returned by AmplifyUIBuilder.</returns>
+        /// <exception cref="Amazon.AmplifyUIBuilder.Model.InternalServerException">
+        /// An internal error has occurred. Please retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyUIBuilder.Model.InvalidParameterException">
+        /// An invalid or out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyUIBuilder.Model.ResourceConflictException">
+        /// The resource specified in the request conflicts with an existing resource.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyUIBuilder.Model.ServiceQuotaExceededException">
+        /// You exceeded your service quota. Service quotas, also referred to as limits, are the
+        /// maximum number of service resources or operations for your Amazon Web Services account.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/CreateForm">REST API Reference for CreateForm Operation</seealso>
+        CreateFormResponse CreateForm(CreateFormRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateForm operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateForm operation on AmazonAmplifyUIBuilderClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateForm
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/CreateForm">REST API Reference for CreateForm Operation</seealso>
+        IAsyncResult BeginCreateForm(CreateFormRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateForm operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateForm.</param>
+        /// 
+        /// <returns>Returns a  CreateFormResult from AmplifyUIBuilder.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/CreateForm">REST API Reference for CreateForm Operation</seealso>
+        CreateFormResponse EndCreateForm(IAsyncResult asyncResult);
 
         #endregion
         
@@ -214,6 +267,55 @@ namespace Amazon.AmplifyUIBuilder
         /// <returns>Returns a  DeleteComponentResult from AmplifyUIBuilder.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/DeleteComponent">REST API Reference for DeleteComponent Operation</seealso>
         DeleteComponentResponse EndDeleteComponent(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteForm
+
+
+        /// <summary>
+        /// Deletes a form from an Amplify app.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteForm service method.</param>
+        /// 
+        /// <returns>The response from the DeleteForm service method, as returned by AmplifyUIBuilder.</returns>
+        /// <exception cref="Amazon.AmplifyUIBuilder.Model.InternalServerException">
+        /// An internal error has occurred. Please retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyUIBuilder.Model.InvalidParameterException">
+        /// An invalid or out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyUIBuilder.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/DeleteForm">REST API Reference for DeleteForm Operation</seealso>
+        DeleteFormResponse DeleteForm(DeleteFormRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteForm operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteForm operation on AmazonAmplifyUIBuilderClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteForm
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/DeleteForm">REST API Reference for DeleteForm Operation</seealso>
+        IAsyncResult BeginDeleteForm(DeleteFormRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteForm operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteForm.</param>
+        /// 
+        /// <returns>Returns a  DeleteFormResult from AmplifyUIBuilder.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/DeleteForm">REST API Reference for DeleteForm Operation</seealso>
+        DeleteFormResponse EndDeleteForm(IAsyncResult asyncResult);
 
         #endregion
         
@@ -356,6 +458,52 @@ namespace Amazon.AmplifyUIBuilder
 
         #endregion
         
+        #region  ExportForms
+
+
+        /// <summary>
+        /// Exports form configurations to code that is ready to integrate into an Amplify app.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ExportForms service method.</param>
+        /// 
+        /// <returns>The response from the ExportForms service method, as returned by AmplifyUIBuilder.</returns>
+        /// <exception cref="Amazon.AmplifyUIBuilder.Model.InternalServerException">
+        /// An internal error has occurred. Please retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyUIBuilder.Model.InvalidParameterException">
+        /// An invalid or out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/ExportForms">REST API Reference for ExportForms Operation</seealso>
+        ExportFormsResponse ExportForms(ExportFormsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ExportForms operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ExportForms operation on AmazonAmplifyUIBuilderClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndExportForms
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/ExportForms">REST API Reference for ExportForms Operation</seealso>
+        IAsyncResult BeginExportForms(ExportFormsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ExportForms operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginExportForms.</param>
+        /// 
+        /// <returns>Returns a  ExportFormsResult from AmplifyUIBuilder.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/ExportForms">REST API Reference for ExportForms Operation</seealso>
+        ExportFormsResponse EndExportForms(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ExportThemes
 
 
@@ -399,6 +547,58 @@ namespace Amazon.AmplifyUIBuilder
         /// <returns>Returns a  ExportThemesResult from AmplifyUIBuilder.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/ExportThemes">REST API Reference for ExportThemes Operation</seealso>
         ExportThemesResponse EndExportThemes(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetCodegenJob
+
+
+        /// <summary>
+        /// Returns an existing code generation job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCodegenJob service method.</param>
+        /// 
+        /// <returns>The response from the GetCodegenJob service method, as returned by AmplifyUIBuilder.</returns>
+        /// <exception cref="Amazon.AmplifyUIBuilder.Model.InternalServerException">
+        /// An internal error has occurred. Please retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyUIBuilder.Model.InvalidParameterException">
+        /// An invalid or out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyUIBuilder.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyUIBuilder.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/GetCodegenJob">REST API Reference for GetCodegenJob Operation</seealso>
+        GetCodegenJobResponse GetCodegenJob(GetCodegenJobRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetCodegenJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetCodegenJob operation on AmazonAmplifyUIBuilderClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetCodegenJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/GetCodegenJob">REST API Reference for GetCodegenJob Operation</seealso>
+        IAsyncResult BeginGetCodegenJob(GetCodegenJobRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetCodegenJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetCodegenJob.</param>
+        /// 
+        /// <returns>Returns a  GetCodegenJobResult from AmplifyUIBuilder.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/GetCodegenJob">REST API Reference for GetCodegenJob Operation</seealso>
+        GetCodegenJobResponse EndGetCodegenJob(IAsyncResult asyncResult);
 
         #endregion
         
@@ -451,6 +651,101 @@ namespace Amazon.AmplifyUIBuilder
 
         #endregion
         
+        #region  GetForm
+
+
+        /// <summary>
+        /// Returns an existing form for an Amplify app.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetForm service method.</param>
+        /// 
+        /// <returns>The response from the GetForm service method, as returned by AmplifyUIBuilder.</returns>
+        /// <exception cref="Amazon.AmplifyUIBuilder.Model.InternalServerException">
+        /// An internal error has occurred. Please retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyUIBuilder.Model.InvalidParameterException">
+        /// An invalid or out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyUIBuilder.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/GetForm">REST API Reference for GetForm Operation</seealso>
+        GetFormResponse GetForm(GetFormRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetForm operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetForm operation on AmazonAmplifyUIBuilderClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetForm
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/GetForm">REST API Reference for GetForm Operation</seealso>
+        IAsyncResult BeginGetForm(GetFormRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetForm operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetForm.</param>
+        /// 
+        /// <returns>Returns a  GetFormResult from AmplifyUIBuilder.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/GetForm">REST API Reference for GetForm Operation</seealso>
+        GetFormResponse EndGetForm(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetMetadata
+
+
+        /// <summary>
+        /// Returns existing metadata for an Amplify app.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMetadata service method.</param>
+        /// 
+        /// <returns>The response from the GetMetadata service method, as returned by AmplifyUIBuilder.</returns>
+        /// <exception cref="Amazon.AmplifyUIBuilder.Model.InvalidParameterException">
+        /// An invalid or out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyUIBuilder.Model.UnauthorizedException">
+        /// You don't have permission to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/GetMetadata">REST API Reference for GetMetadata Operation</seealso>
+        GetMetadataResponse GetMetadata(GetMetadataRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetMetadata operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetMetadata operation on AmazonAmplifyUIBuilderClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetMetadata
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/GetMetadata">REST API Reference for GetMetadata Operation</seealso>
+        IAsyncResult BeginGetMetadata(GetMetadataRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetMetadata operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetMetadata.</param>
+        /// 
+        /// <returns>Returns a  GetMetadataResult from AmplifyUIBuilder.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/GetMetadata">REST API Reference for GetMetadata Operation</seealso>
+        GetMetadataResponse EndGetMetadata(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetTheme
 
 
@@ -500,6 +795,55 @@ namespace Amazon.AmplifyUIBuilder
 
         #endregion
         
+        #region  ListCodegenJobs
+
+
+        /// <summary>
+        /// Retrieves a list of code generation jobs for a specified Amplify app and backend environment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCodegenJobs service method.</param>
+        /// 
+        /// <returns>The response from the ListCodegenJobs service method, as returned by AmplifyUIBuilder.</returns>
+        /// <exception cref="Amazon.AmplifyUIBuilder.Model.InternalServerException">
+        /// An internal error has occurred. Please retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyUIBuilder.Model.InvalidParameterException">
+        /// An invalid or out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyUIBuilder.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/ListCodegenJobs">REST API Reference for ListCodegenJobs Operation</seealso>
+        ListCodegenJobsResponse ListCodegenJobs(ListCodegenJobsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListCodegenJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListCodegenJobs operation on AmazonAmplifyUIBuilderClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListCodegenJobs
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/ListCodegenJobs">REST API Reference for ListCodegenJobs Operation</seealso>
+        IAsyncResult BeginListCodegenJobs(ListCodegenJobsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListCodegenJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListCodegenJobs.</param>
+        /// 
+        /// <returns>Returns a  ListCodegenJobsResult from AmplifyUIBuilder.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/ListCodegenJobs">REST API Reference for ListCodegenJobs Operation</seealso>
+        ListCodegenJobsResponse EndListCodegenJobs(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListComponents
 
 
@@ -543,6 +887,52 @@ namespace Amazon.AmplifyUIBuilder
         /// <returns>Returns a  ListComponentsResult from AmplifyUIBuilder.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/ListComponents">REST API Reference for ListComponents Operation</seealso>
         ListComponentsResponse EndListComponents(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListForms
+
+
+        /// <summary>
+        /// Retrieves a list of forms for a specified Amplify app and backend environment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListForms service method.</param>
+        /// 
+        /// <returns>The response from the ListForms service method, as returned by AmplifyUIBuilder.</returns>
+        /// <exception cref="Amazon.AmplifyUIBuilder.Model.InternalServerException">
+        /// An internal error has occurred. Please retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyUIBuilder.Model.InvalidParameterException">
+        /// An invalid or out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/ListForms">REST API Reference for ListForms Operation</seealso>
+        ListFormsResponse ListForms(ListFormsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListForms operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListForms operation on AmazonAmplifyUIBuilderClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListForms
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/ListForms">REST API Reference for ListForms Operation</seealso>
+        IAsyncResult BeginListForms(ListFormsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListForms operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListForms.</param>
+        /// 
+        /// <returns>Returns a  ListFormsResult from AmplifyUIBuilder.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/ListForms">REST API Reference for ListForms Operation</seealso>
+        ListFormsResponse EndListForms(IAsyncResult asyncResult);
 
         #endregion
         
@@ -592,6 +982,52 @@ namespace Amazon.AmplifyUIBuilder
 
         #endregion
         
+        #region  PutMetadataFlag
+
+
+        /// <summary>
+        /// Stores the metadata information about a feature on a form.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutMetadataFlag service method.</param>
+        /// 
+        /// <returns>The response from the PutMetadataFlag service method, as returned by AmplifyUIBuilder.</returns>
+        /// <exception cref="Amazon.AmplifyUIBuilder.Model.InvalidParameterException">
+        /// An invalid or out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyUIBuilder.Model.UnauthorizedException">
+        /// You don't have permission to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/PutMetadataFlag">REST API Reference for PutMetadataFlag Operation</seealso>
+        PutMetadataFlagResponse PutMetadataFlag(PutMetadataFlagRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutMetadataFlag operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutMetadataFlag operation on AmazonAmplifyUIBuilderClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutMetadataFlag
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/PutMetadataFlag">REST API Reference for PutMetadataFlag Operation</seealso>
+        IAsyncResult BeginPutMetadataFlag(PutMetadataFlagRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutMetadataFlag operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutMetadataFlag.</param>
+        /// 
+        /// <returns>Returns a  PutMetadataFlagResult from AmplifyUIBuilder.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/PutMetadataFlag">REST API Reference for PutMetadataFlag Operation</seealso>
+        PutMetadataFlagResponse EndPutMetadataFlag(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  RefreshToken
 
 
@@ -632,6 +1068,55 @@ namespace Amazon.AmplifyUIBuilder
         /// <returns>Returns a  RefreshTokenResult from AmplifyUIBuilder.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/RefreshToken">REST API Reference for RefreshToken Operation</seealso>
         RefreshTokenResponse EndRefreshToken(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  StartCodegenJob
+
+
+        /// <summary>
+        /// Starts a code generation job for for a specified Amplify app and backend environment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartCodegenJob service method.</param>
+        /// 
+        /// <returns>The response from the StartCodegenJob service method, as returned by AmplifyUIBuilder.</returns>
+        /// <exception cref="Amazon.AmplifyUIBuilder.Model.InternalServerException">
+        /// An internal error has occurred. Please retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyUIBuilder.Model.InvalidParameterException">
+        /// An invalid or out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyUIBuilder.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/StartCodegenJob">REST API Reference for StartCodegenJob Operation</seealso>
+        StartCodegenJobResponse StartCodegenJob(StartCodegenJobRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartCodegenJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartCodegenJob operation on AmazonAmplifyUIBuilderClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartCodegenJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/StartCodegenJob">REST API Reference for StartCodegenJob Operation</seealso>
+        IAsyncResult BeginStartCodegenJob(StartCodegenJobRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartCodegenJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartCodegenJob.</param>
+        /// 
+        /// <returns>Returns a  StartCodegenJobResult from AmplifyUIBuilder.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/StartCodegenJob">REST API Reference for StartCodegenJob Operation</seealso>
+        StartCodegenJobResponse EndStartCodegenJob(IAsyncResult asyncResult);
 
         #endregion
         
@@ -681,6 +1166,55 @@ namespace Amazon.AmplifyUIBuilder
         /// <returns>Returns a  UpdateComponentResult from AmplifyUIBuilder.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/UpdateComponent">REST API Reference for UpdateComponent Operation</seealso>
         UpdateComponentResponse EndUpdateComponent(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateForm
+
+
+        /// <summary>
+        /// Updates an existing form.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateForm service method.</param>
+        /// 
+        /// <returns>The response from the UpdateForm service method, as returned by AmplifyUIBuilder.</returns>
+        /// <exception cref="Amazon.AmplifyUIBuilder.Model.InternalServerException">
+        /// An internal error has occurred. Please retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyUIBuilder.Model.InvalidParameterException">
+        /// An invalid or out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyUIBuilder.Model.ResourceConflictException">
+        /// The resource specified in the request conflicts with an existing resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/UpdateForm">REST API Reference for UpdateForm Operation</seealso>
+        UpdateFormResponse UpdateForm(UpdateFormRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateForm operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateForm operation on AmazonAmplifyUIBuilderClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateForm
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/UpdateForm">REST API Reference for UpdateForm Operation</seealso>
+        IAsyncResult BeginUpdateForm(UpdateFormRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateForm operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateForm.</param>
+        /// 
+        /// <returns>Returns a  UpdateFormResult from AmplifyUIBuilder.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/UpdateForm">REST API Reference for UpdateForm Operation</seealso>
+        UpdateFormResponse EndUpdateForm(IAsyncResult asyncResult);
 
         #endregion
         

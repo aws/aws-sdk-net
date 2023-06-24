@@ -17,22 +17,22 @@
  * Do not modify this file. This file is generated from the managedblockchain-2018-09-24.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
-
+using Amazon.ManagedBlockchain.Internal;
 
 namespace Amazon.ManagedBlockchain
 {
     /// <summary>
     /// Configuration for accessing Amazon ManagedBlockchain service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonManagedBlockchainConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.1.76");
+            InternalSDKUtils.BuildUserAgentString("3.7.101.66");
 
         private string _userAgent = UserAgentString;
 
@@ -40,8 +40,10 @@ namespace Amazon.ManagedBlockchain
         /// Default constructor
         /// </summary>
         public AmazonManagedBlockchainConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonManagedBlockchainDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "managedblockchain";
+            this.EndpointProvider = new AmazonManagedBlockchainEndpointProvider();
         }
 
         /// <summary>
@@ -76,5 +78,6 @@ namespace Amazon.ManagedBlockchain
                 return _userAgent;
             }
         }
+
     }
 }

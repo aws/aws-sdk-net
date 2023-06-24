@@ -76,6 +76,7 @@ namespace Amazon.WorkLink
         /// You are not authorized to perform this action.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/AssociateDomain">REST API Reference for AssociateDomain Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         AssociateDomainResponse AssociateDomain(AssociateDomainRequest request);
 
 
@@ -108,6 +109,7 @@ namespace Amazon.WorkLink
         /// You are not authorized to perform this action.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/AssociateDomain">REST API Reference for AssociateDomain Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         Task<AssociateDomainResponse> AssociateDomainAsync(AssociateDomainRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -141,6 +143,7 @@ namespace Amazon.WorkLink
         /// You are not authorized to perform this action.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/AssociateWebsiteAuthorizationProvider">REST API Reference for AssociateWebsiteAuthorizationProvider Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         AssociateWebsiteAuthorizationProviderResponse AssociateWebsiteAuthorizationProvider(AssociateWebsiteAuthorizationProviderRequest request);
 
 
@@ -174,6 +177,7 @@ namespace Amazon.WorkLink
         /// You are not authorized to perform this action.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/AssociateWebsiteAuthorizationProvider">REST API Reference for AssociateWebsiteAuthorizationProvider Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         Task<AssociateWebsiteAuthorizationProviderResponse> AssociateWebsiteAuthorizationProviderAsync(AssociateWebsiteAuthorizationProviderRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -207,6 +211,7 @@ namespace Amazon.WorkLink
         /// You are not authorized to perform this action.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/AssociateWebsiteCertificateAuthority">REST API Reference for AssociateWebsiteCertificateAuthority Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         AssociateWebsiteCertificateAuthorityResponse AssociateWebsiteCertificateAuthority(AssociateWebsiteCertificateAuthorityRequest request);
 
 
@@ -240,6 +245,7 @@ namespace Amazon.WorkLink
         /// You are not authorized to perform this action.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/AssociateWebsiteCertificateAuthority">REST API Reference for AssociateWebsiteCertificateAuthority Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         Task<AssociateWebsiteCertificateAuthorityResponse> AssociateWebsiteCertificateAuthorityAsync(AssociateWebsiteCertificateAuthorityRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -274,6 +280,7 @@ namespace Amazon.WorkLink
         /// You are not authorized to perform this action.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/CreateFleet">REST API Reference for CreateFleet Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         CreateFleetResponse CreateFleet(CreateFleetRequest request);
 
 
@@ -308,6 +315,7 @@ namespace Amazon.WorkLink
         /// You are not authorized to perform this action.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/CreateFleet">REST API Reference for CreateFleet Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         Task<CreateFleetResponse> CreateFleetAsync(CreateFleetRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -337,6 +345,7 @@ namespace Amazon.WorkLink
         /// You are not authorized to perform this action.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/DeleteFleet">REST API Reference for DeleteFleet Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         DeleteFleetResponse DeleteFleet(DeleteFleetRequest request);
 
 
@@ -366,6 +375,7 @@ namespace Amazon.WorkLink
         /// You are not authorized to perform this action.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/DeleteFleet">REST API Reference for DeleteFleet Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         Task<DeleteFleetResponse> DeleteFleetAsync(DeleteFleetRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -395,6 +405,7 @@ namespace Amazon.WorkLink
         /// You are not authorized to perform this action.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/DescribeAuditStreamConfiguration">REST API Reference for DescribeAuditStreamConfiguration Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         DescribeAuditStreamConfigurationResponse DescribeAuditStreamConfiguration(DescribeAuditStreamConfigurationRequest request);
 
 
@@ -424,6 +435,7 @@ namespace Amazon.WorkLink
         /// You are not authorized to perform this action.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/DescribeAuditStreamConfiguration">REST API Reference for DescribeAuditStreamConfiguration Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         Task<DescribeAuditStreamConfigurationResponse> DescribeAuditStreamConfigurationAsync(DescribeAuditStreamConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -454,6 +466,7 @@ namespace Amazon.WorkLink
         /// You are not authorized to perform this action.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/DescribeCompanyNetworkConfiguration">REST API Reference for DescribeCompanyNetworkConfiguration Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         DescribeCompanyNetworkConfigurationResponse DescribeCompanyNetworkConfiguration(DescribeCompanyNetworkConfigurationRequest request);
 
 
@@ -484,6 +497,7 @@ namespace Amazon.WorkLink
         /// You are not authorized to perform this action.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/DescribeCompanyNetworkConfiguration">REST API Reference for DescribeCompanyNetworkConfiguration Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         Task<DescribeCompanyNetworkConfigurationResponse> DescribeCompanyNetworkConfigurationAsync(DescribeCompanyNetworkConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -513,6 +527,7 @@ namespace Amazon.WorkLink
         /// You are not authorized to perform this action.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/DescribeDevice">REST API Reference for DescribeDevice Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         DescribeDeviceResponse DescribeDevice(DescribeDeviceRequest request);
 
 
@@ -542,6 +557,7 @@ namespace Amazon.WorkLink
         /// You are not authorized to perform this action.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/DescribeDevice">REST API Reference for DescribeDevice Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         Task<DescribeDeviceResponse> DescribeDeviceAsync(DescribeDeviceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -571,6 +587,7 @@ namespace Amazon.WorkLink
         /// You are not authorized to perform this action.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/DescribeDevicePolicyConfiguration">REST API Reference for DescribeDevicePolicyConfiguration Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         DescribeDevicePolicyConfigurationResponse DescribeDevicePolicyConfiguration(DescribeDevicePolicyConfigurationRequest request);
 
 
@@ -600,6 +617,7 @@ namespace Amazon.WorkLink
         /// You are not authorized to perform this action.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/DescribeDevicePolicyConfiguration">REST API Reference for DescribeDevicePolicyConfiguration Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         Task<DescribeDevicePolicyConfigurationResponse> DescribeDevicePolicyConfigurationAsync(DescribeDevicePolicyConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -629,6 +647,7 @@ namespace Amazon.WorkLink
         /// You are not authorized to perform this action.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/DescribeDomain">REST API Reference for DescribeDomain Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         DescribeDomainResponse DescribeDomain(DescribeDomainRequest request);
 
 
@@ -658,6 +677,7 @@ namespace Amazon.WorkLink
         /// You are not authorized to perform this action.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/DescribeDomain">REST API Reference for DescribeDomain Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         Task<DescribeDomainResponse> DescribeDomainAsync(DescribeDomainRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -688,6 +708,7 @@ namespace Amazon.WorkLink
         /// You are not authorized to perform this action.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/DescribeFleetMetadata">REST API Reference for DescribeFleetMetadata Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         DescribeFleetMetadataResponse DescribeFleetMetadata(DescribeFleetMetadataRequest request);
 
 
@@ -718,6 +739,7 @@ namespace Amazon.WorkLink
         /// You are not authorized to perform this action.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/DescribeFleetMetadata">REST API Reference for DescribeFleetMetadata Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         Task<DescribeFleetMetadataResponse> DescribeFleetMetadataAsync(DescribeFleetMetadataRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -747,6 +769,7 @@ namespace Amazon.WorkLink
         /// You are not authorized to perform this action.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/DescribeIdentityProviderConfiguration">REST API Reference for DescribeIdentityProviderConfiguration Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         DescribeIdentityProviderConfigurationResponse DescribeIdentityProviderConfiguration(DescribeIdentityProviderConfigurationRequest request);
 
 
@@ -776,6 +799,7 @@ namespace Amazon.WorkLink
         /// You are not authorized to perform this action.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/DescribeIdentityProviderConfiguration">REST API Reference for DescribeIdentityProviderConfiguration Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         Task<DescribeIdentityProviderConfigurationResponse> DescribeIdentityProviderConfigurationAsync(DescribeIdentityProviderConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -805,6 +829,7 @@ namespace Amazon.WorkLink
         /// You are not authorized to perform this action.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/DescribeWebsiteCertificateAuthority">REST API Reference for DescribeWebsiteCertificateAuthority Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         DescribeWebsiteCertificateAuthorityResponse DescribeWebsiteCertificateAuthority(DescribeWebsiteCertificateAuthorityRequest request);
 
 
@@ -834,6 +859,7 @@ namespace Amazon.WorkLink
         /// You are not authorized to perform this action.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/DescribeWebsiteCertificateAuthority">REST API Reference for DescribeWebsiteCertificateAuthority Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         Task<DescribeWebsiteCertificateAuthorityResponse> DescribeWebsiteCertificateAuthorityAsync(DescribeWebsiteCertificateAuthorityRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -864,6 +890,7 @@ namespace Amazon.WorkLink
         /// You are not authorized to perform this action.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/DisassociateDomain">REST API Reference for DisassociateDomain Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         DisassociateDomainResponse DisassociateDomain(DisassociateDomainRequest request);
 
 
@@ -894,6 +921,7 @@ namespace Amazon.WorkLink
         /// You are not authorized to perform this action.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/DisassociateDomain">REST API Reference for DisassociateDomain Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         Task<DisassociateDomainResponse> DisassociateDomainAsync(DisassociateDomainRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -927,6 +955,7 @@ namespace Amazon.WorkLink
         /// You are not authorized to perform this action.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/DisassociateWebsiteAuthorizationProvider">REST API Reference for DisassociateWebsiteAuthorizationProvider Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         DisassociateWebsiteAuthorizationProviderResponse DisassociateWebsiteAuthorizationProvider(DisassociateWebsiteAuthorizationProviderRequest request);
 
 
@@ -960,6 +989,7 @@ namespace Amazon.WorkLink
         /// You are not authorized to perform this action.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/DisassociateWebsiteAuthorizationProvider">REST API Reference for DisassociateWebsiteAuthorizationProvider Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         Task<DisassociateWebsiteAuthorizationProviderResponse> DisassociateWebsiteAuthorizationProviderAsync(DisassociateWebsiteAuthorizationProviderRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -989,6 +1019,7 @@ namespace Amazon.WorkLink
         /// You are not authorized to perform this action.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/DisassociateWebsiteCertificateAuthority">REST API Reference for DisassociateWebsiteCertificateAuthority Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         DisassociateWebsiteCertificateAuthorityResponse DisassociateWebsiteCertificateAuthority(DisassociateWebsiteCertificateAuthorityRequest request);
 
 
@@ -1018,6 +1049,7 @@ namespace Amazon.WorkLink
         /// You are not authorized to perform this action.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/DisassociateWebsiteCertificateAuthority">REST API Reference for DisassociateWebsiteCertificateAuthority Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         Task<DisassociateWebsiteCertificateAuthorityResponse> DisassociateWebsiteCertificateAuthorityAsync(DisassociateWebsiteCertificateAuthorityRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1047,6 +1079,7 @@ namespace Amazon.WorkLink
         /// You are not authorized to perform this action.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/ListDevices">REST API Reference for ListDevices Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         ListDevicesResponse ListDevices(ListDevicesRequest request);
 
 
@@ -1076,6 +1109,7 @@ namespace Amazon.WorkLink
         /// You are not authorized to perform this action.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/ListDevices">REST API Reference for ListDevices Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         Task<ListDevicesResponse> ListDevicesAsync(ListDevicesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1105,6 +1139,7 @@ namespace Amazon.WorkLink
         /// You are not authorized to perform this action.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/ListDomains">REST API Reference for ListDomains Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         ListDomainsResponse ListDomains(ListDomainsRequest request);
 
 
@@ -1134,6 +1169,7 @@ namespace Amazon.WorkLink
         /// You are not authorized to perform this action.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/ListDomains">REST API Reference for ListDomains Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         Task<ListDomainsResponse> ListDomainsAsync(ListDomainsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1160,6 +1196,7 @@ namespace Amazon.WorkLink
         /// You are not authorized to perform this action.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/ListFleets">REST API Reference for ListFleets Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         ListFleetsResponse ListFleets(ListFleetsRequest request);
 
 
@@ -1186,6 +1223,7 @@ namespace Amazon.WorkLink
         /// You are not authorized to perform this action.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/ListFleets">REST API Reference for ListFleets Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         Task<ListFleetsResponse> ListFleetsAsync(ListFleetsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1203,6 +1241,7 @@ namespace Amazon.WorkLink
         /// The request is not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request);
 
 
@@ -1220,6 +1259,7 @@ namespace Amazon.WorkLink
         /// The request is not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1249,6 +1289,7 @@ namespace Amazon.WorkLink
         /// You are not authorized to perform this action.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/ListWebsiteAuthorizationProviders">REST API Reference for ListWebsiteAuthorizationProviders Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         ListWebsiteAuthorizationProvidersResponse ListWebsiteAuthorizationProviders(ListWebsiteAuthorizationProvidersRequest request);
 
 
@@ -1278,6 +1319,7 @@ namespace Amazon.WorkLink
         /// You are not authorized to perform this action.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/ListWebsiteAuthorizationProviders">REST API Reference for ListWebsiteAuthorizationProviders Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         Task<ListWebsiteAuthorizationProvidersResponse> ListWebsiteAuthorizationProvidersAsync(ListWebsiteAuthorizationProvidersRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1304,6 +1346,7 @@ namespace Amazon.WorkLink
         /// You are not authorized to perform this action.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/ListWebsiteCertificateAuthorities">REST API Reference for ListWebsiteCertificateAuthorities Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         ListWebsiteCertificateAuthoritiesResponse ListWebsiteCertificateAuthorities(ListWebsiteCertificateAuthoritiesRequest request);
 
 
@@ -1330,6 +1373,7 @@ namespace Amazon.WorkLink
         /// You are not authorized to perform this action.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/ListWebsiteCertificateAuthorities">REST API Reference for ListWebsiteCertificateAuthorities Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         Task<ListWebsiteCertificateAuthoritiesResponse> ListWebsiteCertificateAuthoritiesAsync(ListWebsiteCertificateAuthoritiesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1359,6 +1403,7 @@ namespace Amazon.WorkLink
         /// You are not authorized to perform this action.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/RestoreDomainAccess">REST API Reference for RestoreDomainAccess Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         RestoreDomainAccessResponse RestoreDomainAccess(RestoreDomainAccessRequest request);
 
 
@@ -1388,6 +1433,7 @@ namespace Amazon.WorkLink
         /// You are not authorized to perform this action.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/RestoreDomainAccess">REST API Reference for RestoreDomainAccess Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         Task<RestoreDomainAccessResponse> RestoreDomainAccessAsync(RestoreDomainAccessRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1417,6 +1463,7 @@ namespace Amazon.WorkLink
         /// You are not authorized to perform this action.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/RevokeDomainAccess">REST API Reference for RevokeDomainAccess Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         RevokeDomainAccessResponse RevokeDomainAccess(RevokeDomainAccessRequest request);
 
 
@@ -1446,6 +1493,7 @@ namespace Amazon.WorkLink
         /// You are not authorized to perform this action.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/RevokeDomainAccess">REST API Reference for RevokeDomainAccess Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         Task<RevokeDomainAccessResponse> RevokeDomainAccessAsync(RevokeDomainAccessRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1476,6 +1524,7 @@ namespace Amazon.WorkLink
         /// You are not authorized to perform this action.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/SignOutUser">REST API Reference for SignOutUser Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         SignOutUserResponse SignOutUser(SignOutUserRequest request);
 
 
@@ -1506,6 +1555,7 @@ namespace Amazon.WorkLink
         /// You are not authorized to perform this action.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/SignOutUser">REST API Reference for SignOutUser Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         Task<SignOutUserResponse> SignOutUserAsync(SignOutUserRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1525,6 +1575,7 @@ namespace Amazon.WorkLink
         /// The request is not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/TagResource">REST API Reference for TagResource Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         TagResourceResponse TagResource(TagResourceRequest request);
 
 
@@ -1544,6 +1595,7 @@ namespace Amazon.WorkLink
         /// The request is not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/TagResource">REST API Reference for TagResource Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1561,6 +1613,7 @@ namespace Amazon.WorkLink
         /// The request is not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         UntagResourceResponse UntagResource(UntagResourceRequest request);
 
 
@@ -1578,6 +1631,7 @@ namespace Amazon.WorkLink
         /// The request is not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1607,6 +1661,7 @@ namespace Amazon.WorkLink
         /// You are not authorized to perform this action.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/UpdateAuditStreamConfiguration">REST API Reference for UpdateAuditStreamConfiguration Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         UpdateAuditStreamConfigurationResponse UpdateAuditStreamConfiguration(UpdateAuditStreamConfigurationRequest request);
 
 
@@ -1636,6 +1691,7 @@ namespace Amazon.WorkLink
         /// You are not authorized to perform this action.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/UpdateAuditStreamConfiguration">REST API Reference for UpdateAuditStreamConfiguration Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         Task<UpdateAuditStreamConfigurationResponse> UpdateAuditStreamConfigurationAsync(UpdateAuditStreamConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1665,6 +1721,7 @@ namespace Amazon.WorkLink
         /// You are not authorized to perform this action.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/UpdateCompanyNetworkConfiguration">REST API Reference for UpdateCompanyNetworkConfiguration Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         UpdateCompanyNetworkConfigurationResponse UpdateCompanyNetworkConfiguration(UpdateCompanyNetworkConfigurationRequest request);
 
 
@@ -1694,6 +1751,7 @@ namespace Amazon.WorkLink
         /// You are not authorized to perform this action.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/UpdateCompanyNetworkConfiguration">REST API Reference for UpdateCompanyNetworkConfiguration Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         Task<UpdateCompanyNetworkConfigurationResponse> UpdateCompanyNetworkConfigurationAsync(UpdateCompanyNetworkConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1723,6 +1781,7 @@ namespace Amazon.WorkLink
         /// You are not authorized to perform this action.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/UpdateDevicePolicyConfiguration">REST API Reference for UpdateDevicePolicyConfiguration Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         UpdateDevicePolicyConfigurationResponse UpdateDevicePolicyConfiguration(UpdateDevicePolicyConfigurationRequest request);
 
 
@@ -1752,6 +1811,7 @@ namespace Amazon.WorkLink
         /// You are not authorized to perform this action.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/UpdateDevicePolicyConfiguration">REST API Reference for UpdateDevicePolicyConfiguration Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         Task<UpdateDevicePolicyConfigurationResponse> UpdateDevicePolicyConfigurationAsync(UpdateDevicePolicyConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1781,6 +1841,7 @@ namespace Amazon.WorkLink
         /// You are not authorized to perform this action.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/UpdateDomainMetadata">REST API Reference for UpdateDomainMetadata Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         UpdateDomainMetadataResponse UpdateDomainMetadata(UpdateDomainMetadataRequest request);
 
 
@@ -1810,6 +1871,7 @@ namespace Amazon.WorkLink
         /// You are not authorized to perform this action.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/UpdateDomainMetadata">REST API Reference for UpdateDomainMetadata Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         Task<UpdateDomainMetadataResponse> UpdateDomainMetadataAsync(UpdateDomainMetadataRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1839,6 +1901,7 @@ namespace Amazon.WorkLink
         /// You are not authorized to perform this action.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/UpdateFleetMetadata">REST API Reference for UpdateFleetMetadata Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         UpdateFleetMetadataResponse UpdateFleetMetadata(UpdateFleetMetadataRequest request);
 
 
@@ -1868,6 +1931,7 @@ namespace Amazon.WorkLink
         /// You are not authorized to perform this action.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/UpdateFleetMetadata">REST API Reference for UpdateFleetMetadata Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         Task<UpdateFleetMetadataResponse> UpdateFleetMetadataAsync(UpdateFleetMetadataRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1897,6 +1961,7 @@ namespace Amazon.WorkLink
         /// You are not authorized to perform this action.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/UpdateIdentityProviderConfiguration">REST API Reference for UpdateIdentityProviderConfiguration Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         UpdateIdentityProviderConfigurationResponse UpdateIdentityProviderConfiguration(UpdateIdentityProviderConfigurationRequest request);
 
 
@@ -1926,6 +1991,7 @@ namespace Amazon.WorkLink
         /// You are not authorized to perform this action.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/UpdateIdentityProviderConfiguration">REST API Reference for UpdateIdentityProviderConfiguration Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         Task<UpdateIdentityProviderConfigurationResponse> UpdateIdentityProviderConfigurationAsync(UpdateIdentityProviderConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion

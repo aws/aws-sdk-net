@@ -43,7 +43,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// </para>
         ///  
         /// <para>
-        /// The following attribute is supported by all load balancers:
+        /// The following attributes are supported by all load balancers:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -53,21 +53,70 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// default value is 300 seconds. If the target is a Lambda function, this attribute is
         /// not supported.
         /// </para>
-        ///  </li> </ul> 
+        ///  </li> <li> 
         /// <para>
-        /// The following attributes are supported by both Application Load Balancers and Network
-        /// Load Balancers:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>stickiness.enabled</code> - Indicates whether sticky sessions are enabled.
+        ///  <code>stickiness.enabled</code> - Indicates whether target stickiness is enabled.
         /// The value is <code>true</code> or <code>false</code>. The default is <code>false</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>stickiness.type</code> - The type of sticky sessions. The possible values are
-        /// <code>lb_cookie</code> and <code>app_cookie</code> for Application Load Balancers
-        /// or <code>source_ip</code> for Network Load Balancers.
+        ///  <code>stickiness.type</code> - Indicates the type of stickiness. The possible values
+        /// are:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>lb_cookie</code> and <code>app_cookie</code> for Application Load Balancers.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>source_ip</code> for Network Load Balancers.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>source_ip_dest_ip</code> and <code>source_ip_dest_ip_proto</code> for Gateway
+        /// Load Balancers.
+        /// </para>
+        ///  </li> </ul> </li> </ul> 
+        /// <para>
+        /// The following attributes are supported by Application Load Balancers and Network Load
+        /// Balancers:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>load_balancing.cross_zone.enabled</code> - Indicates whether cross zone load
+        /// balancing is enabled. The value is <code>true</code>, <code>false</code> or <code>use_load_balancer_configuration</code>.
+        /// The default is <code>use_load_balancer_configuration</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>target_group_health.dns_failover.minimum_healthy_targets.count</code> - The
+        /// minimum number of targets that must be healthy. If the number of healthy targets is
+        /// below this value, mark the zone as unhealthy in DNS, so that traffic is routed only
+        /// to healthy zones. The possible values are <code>off</code> or an integer from 1 to
+        /// the maximum number of targets. The default is <code>off</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>target_group_health.dns_failover.minimum_healthy_targets.percentage</code>
+        /// - The minimum percentage of targets that must be healthy. If the percentage of healthy
+        /// targets is below this value, mark the zone as unhealthy in DNS, so that traffic is
+        /// routed only to healthy zones. The possible values are <code>off</code> or an integer
+        /// from 1 to 100. The default is <code>off</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>target_group_health.unhealthy_state_routing.minimum_healthy_targets.count</code>
+        /// - The minimum number of targets that must be healthy. If the number of healthy targets
+        /// is below this value, send traffic to all targets, including unhealthy targets. The
+        /// possible values are 1 to the maximum number of targets. The default is 1.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>target_group_health.unhealthy_state_routing.minimum_healthy_targets.percentage</code>
+        /// - The minimum percentage of targets that must be healthy. If the percentage of healthy
+        /// targets is below this value, send traffic to all targets, including unhealthy targets.
+        /// The possible values are <code>off</code> or an integer from 1 to 100. The default
+        /// is <code>off</code>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -107,6 +156,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// during which requests from a client should be routed to the same target. After this
         /// time period expires, the load balancer-generated cookie is considered stale. The range
         /// is 1 second to 1 week (604800 seconds). The default value is 1 day (86400 seconds).
+        /// 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -144,7 +194,29 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <para>
         ///  <code>proxy_protocol_v2.enabled</code> - Indicates whether Proxy Protocol version
         /// 2 is enabled. The value is <code>true</code> or <code>false</code>. The default is
-        /// <code>false</code>.
+        /// <code>false</code>. 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The following attributes are supported only by Gateway Load Balancers:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>target_failover.on_deregistration</code> - Indicates how the Gateway Load Balancer
+        /// handles existing flows when a target is deregistered. The possible values are <code>rebalance</code>
+        /// and <code>no_rebalance</code>. The default is <code>no_rebalance</code>. The two attributes
+        /// (<code>target_failover.on_deregistration</code> and <code>target_failover.on_unhealthy</code>)
+        /// can't be set independently. The value you set for both attributes must be the same.
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>target_failover.on_unhealthy</code> - Indicates how the Gateway Load Balancer
+        /// handles existing flows when a target is unhealthy. The possible values are <code>rebalance</code>
+        /// and <code>no_rebalance</code>. The default is <code>no_rebalance</code>. The two attributes
+        /// (<code>target_failover.on_deregistration</code> and <code>target_failover.on_unhealthy</code>)
+        /// cannot be set independently. The value you set for both attributes must be the same.
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>

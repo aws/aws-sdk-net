@@ -266,22 +266,71 @@ namespace Amazon.Route53Domains.Model
         /// </para>
         ///  
         /// <para>
-        /// Specify the applicable value:
+        /// The value of <code>ES_IDENTIFICATION</code> depends on the following values:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b>For contacts inside Spain:</b> Enter your passport ID.
+        /// The value of <code>ES_LEGAL_FORM</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>For contacts outside of Spain:</b> Enter the VAT identification number for the
-        /// company.
+        /// The value of <code>ES_IDENTIFICATION_TYPE</code> 
         /// </para>
-        ///  <note> 
+        ///  </li> </ul> 
         /// <para>
-        /// For .es domains, the value of <code>ContactType</code> must be <code>PERSON</code>.
+        ///  <b>If <code>ES_LEGAL_FORM</code> is any value other than <code>INDIVIDUAL</code>:</b>
+        /// 
         /// </para>
-        ///  </note> </li> </ul> </li> <li> 
+        ///  <ul> <li> 
+        /// <para>
+        /// Specify 1 letter + 8 numbers (CIF [Certificado de Identificación Fiscal])
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Example: B12345678
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>If <code>ES_LEGAL_FORM</code> is <code>INDIVIDUAL</code>, the value that you specify
+        /// for <code>ES_IDENTIFICATION</code> depends on the value of <code>ES_IDENTIFICATION_TYPE</code>:</b>
+        /// 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If <code>ES_IDENTIFICATION_TYPE</code> is <code>DNI_AND_NIF</code> (for Spanish contacts):
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Specify 8 numbers + 1 letter (DNI [Documento Nacional de Identidad], NIF [Número de
+        /// Identificación Fiscal])
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Example: 12345678M
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// If <code>ES_IDENTIFICATION_TYPE</code> is <code>NIE</code> (for foreigners with legal
+        /// residence):
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Specify 1 letter + 7 numbers + 1 letter ( NIE [Número de Identidad de Extranjero])
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Example: Y1234567X
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// If <code>ES_IDENTIFICATION_TYPE</code> is <code>OTHER</code> (for contacts outside
+        /// of Spain):
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Specify a passport number, drivers license number, or national identity card number
+        /// </para>
+        ///  </li> </ul> </li> </ul> </li> <li> 
         /// <para>
         ///  <code>ES_IDENTIFICATION_TYPE</code> 
         /// </para>
@@ -461,7 +510,11 @@ namespace Amazon.Route53Domains.Model
         /// <para>
         ///  <code>WORKER_OWNED_LIMITED_COMPANY</code> 
         /// </para>
-        ///  </li> </ul> </li> </ul> </dd> <dt>.fi</dt> <dd> <ul> <li> 
+        ///  </li> </ul> </li> </ul> </dd> <dt>.eu</dt> <dd> <ul> <li> 
+        /// <para>
+        ///  <code> EU_COUNTRY_OF_CITIZENSHIP</code> 
+        /// </para>
+        ///  </li> </ul> </dd> <dt>.fi</dt> <dd> <ul> <li> 
         /// <para>
         ///  <code>BIRTH_DATE_IN_YYYY_MM_DD</code> 
         /// </para>
@@ -525,31 +578,7 @@ namespace Amazon.Route53Domains.Model
         /// <para>
         ///  <code>TOWNSHIP</code> 
         /// </para>
-        ///  </li> </ul> </li> </ul> </dd> <dt>.fr</dt> <dd> <ul> <li> 
-        /// <para>
-        ///  <code>BIRTH_CITY</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>BIRTH_COUNTRY</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>BIRTH_DATE_IN_YYYY_MM_DD</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>BIRTH_DEPARTMENT</code>: Specify the INSEE code that corresponds with the department
-        /// where the contact was born. If the contact was born somewhere other than France or
-        /// its overseas departments, specify <code>99</code>. For more information, including
-        /// a list of departments and the corresponding INSEE numbers, see the Wikipedia entry
-        /// <a href="https://en.wikipedia.org/wiki/Departments_of_France">Departments of France</a>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>BRAND_NUMBER</code> 
-        /// </para>
-        ///  </li> </ul> </dd> <dt>.it</dt> <dd> <ul> <li> 
+        ///  </li> </ul> </li> </ul> </dd> <dt>.it</dt> <dd> <ul> <li> 
         /// <para>
         ///  <code>IT_NATIONALITY</code> 
         /// </para>
@@ -609,7 +638,7 @@ namespace Amazon.Route53Domains.Model
         /// <para>
         ///  <code>SG_ID_NUMBER</code> 
         /// </para>
-        ///  </li> </ul> </dd> <dt>.co.uk, .me.uk, and .org.uk</dt> <dd> <ul> <li> 
+        ///  </li> </ul> </dd> <dt>.uk, .co.uk, .me.uk, and .org.uk</dt> <dd> <ul> <li> 
         /// <para>
         ///  <code>UK_CONTACT_TYPE</code> 
         /// </para>
@@ -709,7 +738,7 @@ namespace Amazon.Route53Domains.Model
         /// The value that corresponds with the name of an extra parameter.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=2048)]
+        [AWSProperty(Required=true, Sensitive=true, Max=2048)]
         public string Value
         {
             get { return this._value; }

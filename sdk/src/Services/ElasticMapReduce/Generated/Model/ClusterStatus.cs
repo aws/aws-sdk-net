@@ -33,9 +33,30 @@ namespace Amazon.ElasticMapReduce.Model
     /// </summary>
     public partial class ClusterStatus
     {
+        private List<ErrorDetail> _errorDetails = new List<ErrorDetail>();
         private ClusterState _state;
         private ClusterStateChangeReason _stateChangeReason;
         private ClusterTimeline _timeline;
+
+        /// <summary>
+        /// Gets and sets the property ErrorDetails. 
+        /// <para>
+        /// A list of tuples that provides information about the errors that caused a cluster
+        /// to terminate. This structure can contain up to 10 different <code>ErrorDetail</code>
+        /// tuples.
+        /// </para>
+        /// </summary>
+        public List<ErrorDetail> ErrorDetails
+        {
+            get { return this._errorDetails; }
+            set { this._errorDetails = value; }
+        }
+
+        // Check to see if ErrorDetails property is set
+        internal bool IsSetErrorDetails()
+        {
+            return this._errorDetails != null && this._errorDetails.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property State. 

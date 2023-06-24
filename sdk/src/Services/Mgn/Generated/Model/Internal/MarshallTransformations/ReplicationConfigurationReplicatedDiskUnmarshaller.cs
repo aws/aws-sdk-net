@@ -88,6 +88,12 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
                     unmarshalledObject.StagingDiskType = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("throughput", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.Throughput = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

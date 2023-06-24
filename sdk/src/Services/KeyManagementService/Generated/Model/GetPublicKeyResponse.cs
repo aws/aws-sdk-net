@@ -50,7 +50,7 @@ namespace Amazon.KeyManagementService.Model
         /// <para>
         /// The <code>KeySpec</code> and <code>CustomerMasterKeySpec</code> fields have the same
         /// value. We recommend that you use the <code>KeySpec</code> field in your code. However,
-        /// to avoid breaking changes, KMS will support both fields.
+        /// to avoid breaking changes, KMS supports both fields.
         /// </para>
         /// </summary>
         [Obsolete("This field has been deprecated. Instead, use the KeySpec field.")]

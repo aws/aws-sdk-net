@@ -57,7 +57,10 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PostTrainingConstraints.
+        /// Gets and sets the property PostTrainingConstraints. 
+        /// <para>
+        /// The post-training constraints.
+        /// </para>
         /// </summary>
         public MetricsSource PostTrainingConstraints
         {
@@ -72,7 +75,10 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PreTrainingConstraints.
+        /// Gets and sets the property PreTrainingConstraints. 
+        /// <para>
+        /// The pre-training constraints.
+        /// </para>
         /// </summary>
         public MetricsSource PreTrainingConstraints
         {

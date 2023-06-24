@@ -34,7 +34,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AudioLanguageSelection Marshaller
-    /// </summary>       
+    /// </summary>
     public class AudioLanguageSelectionMarshaller : IRequestMarshaller<AudioLanguageSelection, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AudioLanguageSelectionMarshaller Instance = new AudioLanguageSelectionMarshaller();
 
     }

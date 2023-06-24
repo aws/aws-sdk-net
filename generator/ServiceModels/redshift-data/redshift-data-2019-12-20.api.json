@@ -182,13 +182,18 @@
         "Sqls"
       ],
       "members":{
+        "ClientToken":{
+          "shape":"ClientToken",
+          "idempotencyToken":true
+        },
         "ClusterIdentifier":{"shape":"Location"},
         "Database":{"shape":"String"},
         "DbUser":{"shape":"String"},
         "SecretArn":{"shape":"SecretArn"},
         "Sqls":{"shape":"SqlList"},
         "StatementName":{"shape":"StatementNameString"},
-        "WithEvent":{"shape":"Boolean"}
+        "WithEvent":{"shape":"Boolean"},
+        "WorkgroupName":{"shape":"WorkgroupNameString"}
       }
     },
     "BatchExecuteStatementOutput":{
@@ -199,7 +204,8 @@
         "Database":{"shape":"String"},
         "DbUser":{"shape":"String"},
         "Id":{"shape":"StatementId"},
-        "SecretArn":{"shape":"SecretArn"}
+        "SecretArn":{"shape":"SecretArn"},
+        "WorkgroupName":{"shape":"WorkgroupNameString"}
       }
     },
     "Blob":{"type":"blob"},
@@ -231,6 +237,11 @@
       "members":{
         "Status":{"shape":"Boolean"}
       }
+    },
+    "ClientToken":{
+      "type":"string",
+      "max":64,
+      "min":1
     },
     "ColumnList":{
       "type":"list",
@@ -299,7 +310,8 @@
         "SecretArn":{"shape":"SecretArn"},
         "Status":{"shape":"StatusString"},
         "SubStatements":{"shape":"SubStatementList"},
-        "UpdatedAt":{"shape":"Timestamp"}
+        "UpdatedAt":{"shape":"Timestamp"},
+        "WorkgroupName":{"shape":"WorkgroupNameString"}
       }
     },
     "DescribeTableRequest":{
@@ -314,7 +326,8 @@
         "NextToken":{"shape":"String"},
         "Schema":{"shape":"String"},
         "SecretArn":{"shape":"SecretArn"},
-        "Table":{"shape":"String"}
+        "Table":{"shape":"String"},
+        "WorkgroupName":{"shape":"WorkgroupNameString"}
       }
     },
     "DescribeTableResponse":{
@@ -345,6 +358,10 @@
         "Sql"
       ],
       "members":{
+        "ClientToken":{
+          "shape":"ClientToken",
+          "idempotencyToken":true
+        },
         "ClusterIdentifier":{"shape":"Location"},
         "Database":{"shape":"String"},
         "DbUser":{"shape":"String"},
@@ -352,7 +369,8 @@
         "SecretArn":{"shape":"SecretArn"},
         "Sql":{"shape":"StatementString"},
         "StatementName":{"shape":"StatementNameString"},
-        "WithEvent":{"shape":"Boolean"}
+        "WithEvent":{"shape":"Boolean"},
+        "WorkgroupName":{"shape":"WorkgroupNameString"}
       }
     },
     "ExecuteStatementOutput":{
@@ -363,7 +381,8 @@
         "Database":{"shape":"String"},
         "DbUser":{"shape":"String"},
         "Id":{"shape":"StatementId"},
-        "SecretArn":{"shape":"SecretArn"}
+        "SecretArn":{"shape":"SecretArn"},
+        "WorkgroupName":{"shape":"WorkgroupNameString"}
       }
     },
     "Field":{
@@ -419,7 +438,8 @@
         "DbUser":{"shape":"String"},
         "MaxResults":{"shape":"PageSize"},
         "NextToken":{"shape":"String"},
-        "SecretArn":{"shape":"SecretArn"}
+        "SecretArn":{"shape":"SecretArn"},
+        "WorkgroupName":{"shape":"WorkgroupNameString"}
       }
     },
     "ListDatabasesResponse":{
@@ -440,7 +460,8 @@
         "MaxResults":{"shape":"PageSize"},
         "NextToken":{"shape":"String"},
         "SchemaPattern":{"shape":"String"},
-        "SecretArn":{"shape":"SecretArn"}
+        "SecretArn":{"shape":"SecretArn"},
+        "WorkgroupName":{"shape":"WorkgroupNameString"}
       }
     },
     "ListSchemasResponse":{
@@ -485,7 +506,8 @@
         "NextToken":{"shape":"String"},
         "SchemaPattern":{"shape":"String"},
         "SecretArn":{"shape":"SecretArn"},
-        "TablePattern":{"shape":"String"}
+        "TablePattern":{"shape":"String"},
+        "WorkgroupName":{"shape":"WorkgroupNameString"}
       }
     },
     "ListTablesResponse":{
@@ -651,6 +673,12 @@
         "Message":{"shape":"String"}
       },
       "exception":true
+    },
+    "WorkgroupNameString":{
+      "type":"string",
+      "max":128,
+      "min":3,
+      "pattern":"^(([a-z0-9-]+)|(arn:(aws(-[a-z]+)*):redshift-serverless:[a-z]{2}(-gov)?-[a-z]+-\\d{1}:\\d{12}:workgroup/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}))$"
     },
     "bool":{"type":"boolean"}
   }

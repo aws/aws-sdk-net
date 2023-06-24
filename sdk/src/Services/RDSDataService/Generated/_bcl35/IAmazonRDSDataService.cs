@@ -32,12 +32,16 @@ namespace Amazon.RDSDataService
     /// Amazon RDS Data Service 
     /// <para>
     /// Amazon RDS provides an HTTP endpoint to run SQL statements on an Amazon Aurora Serverless
-    /// DB cluster. To run these statements, you work with the Data Service API.
+    /// v1 DB cluster. To run these statements, you work with the Data Service API.
     /// 
-    ///  
+    ///  <note> 
+    /// <para>
+    /// The Data Service API isn't supported on Amazon Aurora Serverless v2 DB clusters.
+    /// </para>
+    ///  </note> 
     /// <para>
     /// For more information about the Data Service API, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using
-    /// the Data API for Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.
+    /// the Data API</a> in the <i>Amazon Aurora User Guide</i>.
     /// </para>
     /// 
     /// </para>
@@ -61,16 +65,33 @@ namespace Amazon.RDSDataService
         /// with different parameter sets. Bulk operations can provide a significant performance
         /// improvement over individual insert and update operations.
         /// </para>
-        ///  <important> 
+        ///  <note> 
         /// <para>
         /// If a call isn't part of a transaction because it doesn't include the <code>transactionID</code>
         /// parameter, changes that result from the call are committed automatically.
         /// </para>
-        ///  </important>
+        ///  
+        /// <para>
+        /// There isn't a fixed upper limit on the number of parameter sets. However, the maximum
+        /// size of the HTTP request submitted through the Data API is 4 MiB. If the request exceeds
+        /// this limit, the Data API returns an error and doesn't process the request. This 4-MiB
+        /// limit includes the size of the HTTP headers and the JSON notation in the request.
+        /// Thus, the number of parameter sets that you can include depends on a combination of
+        /// factors, such as the size of the SQL statement and the size of each parameter set.
+        /// </para>
+        ///  
+        /// <para>
+        /// The response size limit is 1 MiB. If the call returns more than 1 MiB of response
+        /// data, the call is terminated.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchExecuteStatement service method.</param>
         /// 
         /// <returns>The response from the BatchExecuteStatement service method, as returned by RDSDataService.</returns>
+        /// <exception cref="Amazon.RDSDataService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
         /// <exception cref="Amazon.RDSDataService.Model.BadRequestException">
         /// There is an error in the call or in a SQL statement.
         /// </exception>
@@ -123,18 +144,30 @@ namespace Amazon.RDSDataService
         /// <summary>
         /// Starts a SQL transaction.
         /// 
-        ///  <pre><code> &lt;important&gt; &lt;p&gt;A transaction can run for a maximum of 24
-        /// hours. A transaction is terminated and rolled back automatically after 24 hours.&lt;/p&gt;
-        /// &lt;p&gt;A transaction times out if no calls use its transaction ID in three minutes.
-        /// If a transaction times out before it's committed, it's rolled back automatically.&lt;/p&gt;
-        /// &lt;p&gt;DDL statements inside a transaction cause an implicit commit. We recommend
-        /// that you run each DDL statement in a separate &lt;code&gt;ExecuteStatement&lt;/code&gt;
-        /// call with &lt;code&gt;continueAfterTimeout&lt;/code&gt; enabled.&lt;/p&gt; &lt;/important&gt;
-        /// </code></pre>
+        ///  <note> 
+        /// <para>
+        /// A transaction can run for a maximum of 24 hours. A transaction is terminated and rolled
+        /// back automatically after 24 hours.
+        /// </para>
+        ///  
+        /// <para>
+        /// A transaction times out if no calls use its transaction ID in three minutes. If a
+        /// transaction times out before it's committed, it's rolled back automatically.
+        /// </para>
+        ///  
+        /// <para>
+        /// DDL statements inside a transaction cause an implicit commit. We recommend that you
+        /// run each DDL statement in a separate <code>ExecuteStatement</code> call with <code>continueAfterTimeout</code>
+        /// enabled.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BeginTransaction service method.</param>
         /// 
         /// <returns>The response from the BeginTransaction service method, as returned by RDSDataService.</returns>
+        /// <exception cref="Amazon.RDSDataService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
         /// <exception cref="Amazon.RDSDataService.Model.BadRequestException">
         /// There is an error in the call or in a SQL statement.
         /// </exception>
@@ -191,6 +224,9 @@ namespace Amazon.RDSDataService
         /// <param name="request">Container for the necessary parameters to execute the CommitTransaction service method.</param>
         /// 
         /// <returns>The response from the CommitTransaction service method, as returned by RDSDataService.</returns>
+        /// <exception cref="Amazon.RDSDataService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
         /// <exception cref="Amazon.RDSDataService.Model.BadRequestException">
         /// There is an error in the call or in a SQL statement.
         /// </exception>
@@ -247,16 +283,19 @@ namespace Amazon.RDSDataService
         /// <summary>
         /// Runs one or more SQL statements.
         /// 
-        ///  <important> 
+        ///  <note> 
         /// <para>
         /// This operation is deprecated. Use the <code>BatchExecuteStatement</code> or <code>ExecuteStatement</code>
         /// operation.
         /// </para>
-        ///  </important>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ExecuteSql service method.</param>
         /// 
         /// <returns>The response from the ExecuteSql service method, as returned by RDSDataService.</returns>
+        /// <exception cref="Amazon.RDSDataService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
         /// <exception cref="Amazon.RDSDataService.Model.BadRequestException">
         /// There is an error in the call or in a SQL statement.
         /// </exception>
@@ -309,20 +348,23 @@ namespace Amazon.RDSDataService
         /// <summary>
         /// Runs a SQL statement against a database.
         /// 
-        ///  <important> 
+        ///  <note> 
         /// <para>
         /// If a call isn't part of a transaction because it doesn't include the <code>transactionID</code>
         /// parameter, changes that result from the call are committed automatically.
         /// </para>
-        ///  </important> 
+        ///  
         /// <para>
-        /// The response size limit is 1 MB. If the call returns more than 1 MB of response data,
-        /// the call is terminated.
+        /// If the binary response data from the database is more than 1 MB, the call is terminated.
         /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ExecuteStatement service method.</param>
         /// 
         /// <returns>The response from the ExecuteStatement service method, as returned by RDSDataService.</returns>
+        /// <exception cref="Amazon.RDSDataService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
         /// <exception cref="Amazon.RDSDataService.Model.BadRequestException">
         /// There is an error in the call or in a SQL statement.
         /// </exception>
@@ -378,6 +420,9 @@ namespace Amazon.RDSDataService
         /// <param name="request">Container for the necessary parameters to execute the RollbackTransaction service method.</param>
         /// 
         /// <returns>The response from the RollbackTransaction service method, as returned by RDSDataService.</returns>
+        /// <exception cref="Amazon.RDSDataService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
         /// <exception cref="Amazon.RDSDataService.Model.BadRequestException">
         /// There is an error in the call or in a SQL statement.
         /// </exception>

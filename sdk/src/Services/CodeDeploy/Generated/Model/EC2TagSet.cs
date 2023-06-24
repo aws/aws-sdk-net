@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeDeploy.Model
 {
     /// <summary>
-    /// Information about groups of EC2 instance tags.
+    /// Information about groups of Amazon EC2 instance tags.
     /// </summary>
     public partial class EC2TagSet
     {
@@ -38,9 +38,9 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property Ec2TagSetList. 
         /// <para>
-        /// A list that contains other lists of EC2 instance tag groups. For an instance to be
-        /// included in the deployment group, it must be identified by all of the tag groups in
-        /// the list.
+        /// A list that contains other lists of Amazon EC2 instance tag groups. For an instance
+        /// to be included in the deployment group, it must be identified by all of the tag groups
+        /// in the list.
         /// </para>
         /// </summary>
         public List<List<EC2TagFilter>> Ec2TagSetList

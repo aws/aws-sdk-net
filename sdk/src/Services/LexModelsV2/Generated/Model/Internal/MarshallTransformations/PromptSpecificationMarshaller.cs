@@ -34,7 +34,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// PromptSpecification Marshaller
-    /// </summary>       
+    /// </summary>
     public class PromptSpecificationMarshaller : IRequestMarshaller<PromptSpecification, JsonMarshallerContext> 
     {
         /// <summary>
@@ -73,11 +73,36 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetMessageSelectionStrategy())
+            {
+                context.Writer.WritePropertyName("messageSelectionStrategy");
+                context.Writer.Write(requestObject.MessageSelectionStrategy);
+            }
+
+            if(requestObject.IsSetPromptAttemptsSpecification())
+            {
+                context.Writer.WritePropertyName("promptAttemptsSpecification");
+                context.Writer.WriteObjectStart();
+                foreach (var requestObjectPromptAttemptsSpecificationKvp in requestObject.PromptAttemptsSpecification)
+                {
+                    context.Writer.WritePropertyName(requestObjectPromptAttemptsSpecificationKvp.Key);
+                    var requestObjectPromptAttemptsSpecificationValue = requestObjectPromptAttemptsSpecificationKvp.Value;
+
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = PromptAttemptSpecificationMarshaller.Instance;
+                    marshaller.Marshall(requestObjectPromptAttemptsSpecificationValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static PromptSpecificationMarshaller Instance = new PromptSpecificationMarshaller();
 
     }

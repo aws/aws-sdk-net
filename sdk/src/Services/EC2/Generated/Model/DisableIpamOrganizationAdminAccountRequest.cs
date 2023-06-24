@@ -30,7 +30,7 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DisableIpamOrganizationAdminAccount operation.
-    /// Disable the IPAM account. For more information, see <a href="/vpc/latest/ipam/enable-integ-ipam.html">Enable
+    /// Disable the IPAM account. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/enable-integ-ipam.html">Enable
     /// integration with Organizations</a> in the <i>Amazon VPC IPAM User Guide</i>.
     /// </summary>
     public partial class DisableIpamOrganizationAdminAccountRequest : AmazonEC2Request

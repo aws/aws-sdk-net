@@ -34,7 +34,7 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AutoScalingTargetTrackingScalingPolicyConfigurationUpdate Marshaller
-    /// </summary>       
+    /// </summary>
     public class AutoScalingTargetTrackingScalingPolicyConfigurationUpdateMarshaller : IRequestMarshaller<AutoScalingTargetTrackingScalingPolicyConfigurationUpdate, JsonMarshallerContext> 
     {
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AutoScalingTargetTrackingScalingPolicyConfigurationUpdateMarshaller Instance = new AutoScalingTargetTrackingScalingPolicyConfigurationUpdateMarshaller();
 
     }

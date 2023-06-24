@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// PortProbeAction Marshaller
-    /// </summary>       
+    /// </summary>
     public class PortProbeActionMarshaller : IRequestMarshaller<PortProbeAction, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static PortProbeActionMarshaller Instance = new PortProbeActionMarshaller();
 
     }

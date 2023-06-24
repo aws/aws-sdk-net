@@ -35,6 +35,8 @@ namespace Amazon.CloudWatchLogs.Model
     {
         private string _arn;
         private DateTime? _creationTime;
+        private DataProtectionStatus _dataProtectionStatus;
+        private List<string> _inheritedProperties = new List<string>();
         private string _kmsKeyId;
         private string _logGroupName;
         private int? _metricFilterCount;
@@ -80,9 +82,46 @@ namespace Amazon.CloudWatchLogs.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DataProtectionStatus. 
+        /// <para>
+        /// Displays whether this log group has a protection policy, or whether it had one in
+        /// the past. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDataProtectionPolicy.html">PutDataProtectionPolicy</a>.
+        /// </para>
+        /// </summary>
+        public DataProtectionStatus DataProtectionStatus
+        {
+            get { return this._dataProtectionStatus; }
+            set { this._dataProtectionStatus = value; }
+        }
+
+        // Check to see if DataProtectionStatus property is set
+        internal bool IsSetDataProtectionStatus()
+        {
+            return this._dataProtectionStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InheritedProperties. 
+        /// <para>
+        /// Displays all the properties that this log group has inherited from account-level settings.
+        /// </para>
+        /// </summary>
+        public List<string> InheritedProperties
+        {
+            get { return this._inheritedProperties; }
+            set { this._inheritedProperties = value; }
+        }
+
+        // Check to see if InheritedProperties property is set
+        internal bool IsSetInheritedProperties()
+        {
+            return this._inheritedProperties != null && this._inheritedProperties.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.
+        /// The Amazon Resource Name (ARN) of the KMS key to use when encrypting log data.
         /// </para>
         /// </summary>
         [AWSProperty(Max=256)]

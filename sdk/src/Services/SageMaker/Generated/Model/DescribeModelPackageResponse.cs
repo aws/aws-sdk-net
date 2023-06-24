@@ -246,7 +246,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property LastModifiedTime. 
         /// <para>
-        /// The last time the model package was modified.
+        /// The last time that the model package was modified.
         /// </para>
         /// </summary>
         public DateTime LastModifiedTime

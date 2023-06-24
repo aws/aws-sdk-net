@@ -61,8 +61,7 @@ namespace Amazon.MarketplaceCatalog.Model
         /// <summary>
         /// Gets and sets the property EntityArn. 
         /// <para>
-        /// The ARN associated to the unique identifier for the change set referenced in this
-        /// request.
+        /// The ARN associated to the unique identifier for the entity referenced in this request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

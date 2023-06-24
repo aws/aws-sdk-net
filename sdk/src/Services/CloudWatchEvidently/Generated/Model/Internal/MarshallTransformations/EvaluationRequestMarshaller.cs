@@ -34,7 +34,7 @@ namespace Amazon.CloudWatchEvidently.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// EvaluationRequest Marshaller
-    /// </summary>       
+    /// </summary>
     public class EvaluationRequestMarshaller : IRequestMarshaller<EvaluationRequest, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.CloudWatchEvidently.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static EvaluationRequestMarshaller Instance = new EvaluationRequestMarshaller();
 
     }

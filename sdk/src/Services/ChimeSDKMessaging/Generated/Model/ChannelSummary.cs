@@ -62,7 +62,8 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// <summary>
         /// Gets and sets the property LastMessageTimestamp. 
         /// <para>
-        /// The time at which the last message in a channel was sent.
+        /// The time at which the last persistent message visible to the caller in a channel was
+        /// sent.
         /// </para>
         /// </summary>
         public DateTime LastMessageTimestamp
@@ -83,7 +84,7 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// The metadata of the channel.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=1024)]
+        [AWSProperty(Sensitive=true, Min=0, Max=1024)]
         public string Metadata
         {
             get { return this._metadata; }
@@ -120,7 +121,7 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// The name of the channel.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=256)]
+        [AWSProperty(Sensitive=true, Min=1, Max=256)]
         public string Name
         {
             get { return this._name; }

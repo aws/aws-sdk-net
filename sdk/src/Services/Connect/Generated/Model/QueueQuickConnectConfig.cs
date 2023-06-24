@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// Contains information about a queue for a quick connect. The contact flow must be of
-    /// type Transfer to Queue.
+    /// Contains information about a queue for a quick connect. The flow must be of type Transfer
+    /// to Queue.
     /// </summary>
     public partial class QueueQuickConnectConfig
     {
@@ -40,7 +40,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property ContactFlowId. 
         /// <para>
-        /// The identifier of the contact flow.
+        /// The identifier of the flow.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=500)]

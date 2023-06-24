@@ -37,6 +37,14 @@ namespace Amazon.EC2.Model
     /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot
     /// Instance requests</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
     /// </para>
+    ///  <important> 
+    /// <para>
+    /// We strongly discourage using the RequestSpotInstances API because it is a legacy API
+    /// with no planned investment. For options for requesting Spot Instances, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-best-practices.html#which-spot-request-method-to-use">Which
+    /// is the best Spot request method to use?</a> in the <i>Amazon EC2 User Guide for Linux
+    /// Instances</i>.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class RequestSpotInstancesRequest : AmazonEC2Request
     {
@@ -61,7 +69,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Instantiates RequestSpotInstancesRequest with the parameterized properties
         /// </summary>
-        /// <param name="spotPrice">The maximum price per hour that you are willing to pay for a Spot Instance. The default is the On-Demand price.</param>
+        /// <param name="spotPrice">The maximum price per unit hour that you are willing to pay for a Spot Instance. We do not recommend using this parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the current Spot price. <important> If you specify a maximum price, your instances will be interrupted more frequently than if you do not specify this parameter. </important></param>
         public RequestSpotInstancesRequest(string spotPrice)
         {
             _spotPrice = spotPrice;
@@ -230,9 +238,16 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SpotPrice. 
         /// <para>
-        /// The maximum price per hour that you are willing to pay for a Spot Instance. The default
-        /// is the On-Demand price.
+        /// The maximum price per unit hour that you are willing to pay for a Spot Instance. We
+        /// do not recommend using this parameter because it can lead to increased interruptions.
+        /// If you do not specify this parameter, you will pay the current Spot price.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// If you specify a maximum price, your instances will be interrupted more frequently
+        /// than if you do not specify this parameter.
+        /// </para>
+        ///  </important>
         /// </summary>
         public string SpotPrice
         {

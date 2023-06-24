@@ -98,7 +98,7 @@ namespace Amazon.Chime.Model
         /// The client token for the request. An <code>Idempotency</code> token.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=2, Max=64)]
+        [AWSProperty(Sensitive=true, Min=2, Max=64)]
         public string ClientRequestToken
         {
             get { return this._clientRequestToken; }
@@ -117,7 +117,7 @@ namespace Amazon.Chime.Model
         /// The metadata of the creation request. Limited to 1KB and UTF-8.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=1024)]
+        [AWSProperty(Sensitive=true, Min=0, Max=1024)]
         public string Metadata
         {
             get { return this._metadata; }
@@ -156,7 +156,7 @@ namespace Amazon.Chime.Model
         /// The name of the channel.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=256)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=256)]
         public string Name
         {
             get { return this._name; }

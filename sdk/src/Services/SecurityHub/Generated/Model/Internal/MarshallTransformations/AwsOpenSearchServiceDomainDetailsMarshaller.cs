@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AwsOpenSearchServiceDomainDetails Marshaller
-    /// </summary>       
+    /// </summary>
     public class AwsOpenSearchServiceDomainDetailsMarshaller : IRequestMarshaller<AwsOpenSearchServiceDomainDetails, JsonMarshallerContext> 
     {
         /// <summary>
@@ -49,6 +49,17 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("AccessPolicies");
                 context.Writer.Write(requestObject.AccessPolicies);
+            }
+
+            if(requestObject.IsSetAdvancedSecurityOptions())
+            {
+                context.Writer.WritePropertyName("AdvancedSecurityOptions");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.AdvancedSecurityOptions, context);
+
+                context.Writer.WriteObjectEnd();
             }
 
             if(requestObject.IsSetArn())
@@ -176,7 +187,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AwsOpenSearchServiceDomainDetailsMarshaller Instance = new AwsOpenSearchServiceDomainDetailsMarshaller();
 
     }

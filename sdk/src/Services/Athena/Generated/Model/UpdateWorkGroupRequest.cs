@@ -31,6 +31,7 @@ namespace Amazon.Athena.Model
     /// <summary>
     /// Container for the parameters to the UpdateWorkGroup operation.
     /// Updates the workgroup with the specified name. The workgroup's name cannot be changed.
+    /// Only <code>ConfigurationUpdates</code> can be specified.
     /// </summary>
     public partial class UpdateWorkGroupRequest : AmazonAthenaRequest
     {
@@ -42,7 +43,7 @@ namespace Amazon.Athena.Model
         /// <summary>
         /// Gets and sets the property ConfigurationUpdates. 
         /// <para>
-        /// The workgroup configuration that will be updated for the given workgroup.
+        /// Contains configuration updates for an Athena SQL workgroup.
         /// </para>
         /// </summary>
         public WorkGroupConfigurationUpdates ConfigurationUpdates

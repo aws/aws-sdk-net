@@ -30,16 +30,45 @@ namespace Amazon.WAFV2.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateWebACL operation.
-    /// Updates the specified <a>WebACL</a>.
+    /// Updates the specified <a>WebACL</a>. While updating a web ACL, WAF provides continuous
+    /// coverage to the resources that you have associated with the web ACL. 
     /// 
     ///  <note> 
     /// <para>
     /// This operation completely replaces the mutable specifications that you already have
-    /// for the web ACL with the ones that you provide to this call. To modify the web ACL,
-    /// retrieve it by calling <a>GetWebACL</a>, update the settings as needed, and then provide
-    /// the complete web ACL specification to this call.
+    /// for the web ACL with the ones that you provide to this call. 
     /// </para>
-    ///  </note> 
+    ///  
+    /// <para>
+    /// To modify a web ACL, do the following: 
+    /// </para>
+    ///  <ol> <li> 
+    /// <para>
+    /// Retrieve it by calling <a>GetWebACL</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Update its settings as needed
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Provide the complete web ACL specification to this call
+    /// </para>
+    ///  </li> </ol> </note> 
+    /// <para>
+    /// When you make changes to web ACLs or web ACL components, like rules and rule groups,
+    /// WAF propagates the changes everywhere that the web ACL and its components are stored
+    /// and used. Your changes are applied within seconds, but there might be a brief period
+    /// of inconsistency when the changes have arrived in some places and not in others. So,
+    /// for example, if you change a rule action setting, the action might be the old action
+    /// in one area and the new action in another area. Or if you add an IP address to an
+    /// IP set used in a blocking rule, the new address might briefly be blocked in one area
+    /// while still allowed in another. This temporary inconsistency can occur when you first
+    /// associate a web ACL with an Amazon Web Services resource and when you change a web
+    /// ACL that is already associated with a resource. Generally, any inconsistencies of
+    /// this type last only a few seconds.
+    /// </para>
+    ///  
     /// <para>
     ///  A web ACL defines a collection of rules to use to inspect and control web requests.
     /// Each rule has an action defined (allow, block, or count) for requests that match the
@@ -48,12 +77,16 @@ namespace Amazon.WAFV2.Model
     /// can be a combination of the types <a>Rule</a>, <a>RuleGroup</a>, and managed rule
     /// group. You can associate a web ACL with one or more Amazon Web Services resources
     /// to protect. The resources can be an Amazon CloudFront distribution, an Amazon API
-    /// Gateway REST API, an Application Load Balancer, or an AppSync GraphQL API. 
+    /// Gateway REST API, an Application Load Balancer, an AppSync GraphQL API, an Amazon
+    /// Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access
+    /// instance. 
     /// </para>
     /// </summary>
     public partial class UpdateWebACLRequest : AmazonWAFV2Request
     {
+        private AssociationConfig _associationConfig;
         private CaptchaConfig _captchaConfig;
+        private ChallengeConfig _challengeConfig;
         private Dictionary<string, CustomResponseBody> _customResponseBodies = new Dictionary<string, CustomResponseBody>();
         private DefaultAction _defaultAction;
         private string _description;
@@ -62,7 +95,40 @@ namespace Amazon.WAFV2.Model
         private string _name;
         private List<Rule> _rules = new List<Rule>();
         private Scope _scope;
+        private List<string> _tokenDomains = new List<string>();
         private VisibilityConfig _visibilityConfig;
+
+        /// <summary>
+        /// Gets and sets the property AssociationConfig. 
+        /// <para>
+        /// Specifies custom configurations for the associations between the web ACL and protected
+        /// resources. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Use this to customize the maximum size of the request body that your protected CloudFront
+        /// distributions forward to WAF for inspection. The default is 16 KB (16,384 kilobytes).
+        /// 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// You are charged additional fees when your protected resources forward body sizes that
+        /// are larger than the default. For more information, see <a href="http://aws.amazon.com/waf/pricing/">WAF
+        /// Pricing</a>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public AssociationConfig AssociationConfig
+        {
+            get { return this._associationConfig; }
+            set { this._associationConfig = value; }
+        }
+
+        // Check to see if AssociationConfig property is set
+        internal bool IsSetAssociationConfig()
+        {
+            return this._associationConfig != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CaptchaConfig. 
@@ -85,6 +151,26 @@ namespace Amazon.WAFV2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ChallengeConfig. 
+        /// <para>
+        /// Specifies how WAF should handle challenge evaluations for rules that don't have their
+        /// own <code>ChallengeConfig</code> settings. If you don't specify this, WAF uses its
+        /// default settings for <code>ChallengeConfig</code>. 
+        /// </para>
+        /// </summary>
+        public ChallengeConfig ChallengeConfig
+        {
+            get { return this._challengeConfig; }
+            set { this._challengeConfig = value; }
+        }
+
+        // Check to see if ChallengeConfig property is set
+        internal bool IsSetChallengeConfig()
+        {
+            return this._challengeConfig != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property CustomResponseBodies. 
         /// <para>
         /// A map of custom response keys and content bodies. When you create a rule with a block
@@ -95,15 +181,13 @@ namespace Amazon.WAFV2.Model
         ///  
         /// <para>
         /// For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
-        /// web requests and responses in WAF</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
-        /// Developer Guide</a>. 
+        /// web requests and responses in WAF</a> in the <i>WAF Developer Guide</i>. 
         /// </para>
         ///  
         /// <para>
         /// For information about the limits on count and size for custom request and response
         /// settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF
-        /// quotas</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
-        /// Developer Guide</a>. 
+        /// quotas</a> in the <i>WAF Developer Guide</i>. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -249,7 +333,8 @@ namespace Amazon.WAFV2.Model
         /// <para>
         /// Specifies whether this is for an Amazon CloudFront distribution or for a regional
         /// application. A regional application can be an Application Load Balancer (ALB), an
-        /// Amazon API Gateway REST API, or an AppSync GraphQL API. 
+        /// Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool,
+        /// an App Runner service, or an Amazon Web Services Verified Access instance. 
         /// </para>
         ///  
         /// <para>
@@ -278,6 +363,39 @@ namespace Amazon.WAFV2.Model
         internal bool IsSetScope()
         {
             return this._scope != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TokenDomains. 
+        /// <para>
+        /// Specifies the domains that WAF should accept in a web request token. This enables
+        /// the use of tokens across multiple protected websites. When WAF provides a token, it
+        /// uses the domain of the Amazon Web Services resource that the web ACL is protecting.
+        /// If you don't specify a list of token domains, WAF accepts tokens only for the domain
+        /// of the protected resource. With a token domain list, WAF accepts the resource's host
+        /// domain plus all domains in the token domain list, including their prefixed subdomains.
+        /// </para>
+        ///  
+        /// <para>
+        /// Example JSON: <code>"TokenDomains": { "mywebsite.com", "myotherwebsite.com" }</code>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// Public suffixes aren't allowed. For example, you can't use <code>usa.gov</code> or
+        /// <code>co.uk</code> as token domains.
+        /// </para>
+        /// </summary>
+        public List<string> TokenDomains
+        {
+            get { return this._tokenDomains; }
+            set { this._tokenDomains = value; }
+        }
+
+        // Check to see if TokenDomains property is set
+        internal bool IsSetTokenDomains()
+        {
+            return this._tokenDomains != null && this._tokenDomains.Count > 0; 
         }
 
         /// <summary>

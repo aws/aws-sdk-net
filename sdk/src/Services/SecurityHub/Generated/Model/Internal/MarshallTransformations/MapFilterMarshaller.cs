@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// MapFilter Marshaller
-    /// </summary>       
+    /// </summary>
     public class MapFilterMarshaller : IRequestMarshaller<MapFilter, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static MapFilterMarshaller Instance = new MapFilterMarshaller();
 
     }

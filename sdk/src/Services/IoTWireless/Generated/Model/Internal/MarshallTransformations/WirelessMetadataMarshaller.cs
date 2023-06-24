@@ -34,7 +34,7 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// WirelessMetadata Marshaller
-    /// </summary>       
+    /// </summary>
     public class WirelessMetadataMarshaller : IRequestMarshaller<WirelessMetadata, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static WirelessMetadataMarshaller Instance = new WirelessMetadataMarshaller();
 
     }

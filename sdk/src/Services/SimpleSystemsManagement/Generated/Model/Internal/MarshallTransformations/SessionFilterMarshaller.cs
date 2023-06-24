@@ -34,7 +34,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SessionFilter Marshaller
-    /// </summary>       
+    /// </summary>
     public class SessionFilterMarshaller : IRequestMarshaller<SessionFilter, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SessionFilterMarshaller Instance = new SessionFilterMarshaller();
 
     }

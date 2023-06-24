@@ -157,7 +157,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property SecretOptions. 
         /// <para>
         /// The secrets to pass to the log configuration. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying
-        /// Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+        /// sensitive data</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         /// </summary>
         public List<Secret> SecretOptions

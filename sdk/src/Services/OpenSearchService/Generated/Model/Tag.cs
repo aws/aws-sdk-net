@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// A key value pair for a resource tag.
+    /// A tag (key-value pair) for an Amazon OpenSearch Service resource.
     /// </summary>
     public partial class Tag
     {
@@ -39,8 +39,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// The <code>TagKey</code>, the name of the tag. Tag keys must be unique for the domain
-        /// to which they are attached. 
+        /// The tag key. Tag keys must be unique for the domain to which they are attached.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -59,10 +58,9 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// The <code>TagValue</code>, the value assigned to the corresponding tag key. Tag values
-        /// can be null and don't have to be unique in a tag set. For example, you can have a
-        /// key value pair in a tag set of <code>project : Trinity</code> and <code>cost-center
-        /// : Trinity</code> 
+        /// The value assigned to the corresponding tag key. Tag values can be null and don't
+        /// have to be unique in a tag set. For example, you can have a key value pair in a tag
+        /// set of <code>project : Trinity</code> and <code>cost-center : Trinity</code> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=256)]

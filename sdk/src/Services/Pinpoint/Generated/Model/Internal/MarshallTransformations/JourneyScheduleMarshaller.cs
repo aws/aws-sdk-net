@@ -34,7 +34,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// JourneySchedule Marshaller
-    /// </summary>       
+    /// </summary>
     public class JourneyScheduleMarshaller : IRequestMarshaller<JourneySchedule, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static JourneyScheduleMarshaller Instance = new JourneyScheduleMarshaller();
 
     }

@@ -32,7 +32,7 @@ namespace Amazon.Personalize.Model
     /// Container for the parameters to the ListDatasetGroups operation.
     /// Returns a list of dataset groups. The response provides the properties for each dataset
     /// group, including the Amazon Resource Name (ARN). For more information on dataset groups,
-    /// see <a>CreateDatasetGroup</a>.
+    /// see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDatasetGroup.html">CreateDatasetGroup</a>.
     /// </summary>
     public partial class ListDatasetGroupsRequest : AmazonPersonalizeRequest
     {

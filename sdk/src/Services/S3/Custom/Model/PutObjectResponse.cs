@@ -18,6 +18,7 @@ using System.Xml.Serialization;
 using System.Text;
 
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.S3.Model
 {
@@ -36,6 +37,10 @@ namespace Amazon.S3.Model
         private string serverSideEncryptionKeyManagementServiceEncryptionContext;
         private RequestCharged requestCharged;
         private bool? bucketKeyEnabled;
+        private string _checksumCRC32;
+        private string _checksumCRC32C;
+        private string _checksumSHA1;
+        private string _checksumSHA256;
 
         /// <summary>
         /// Gets and sets the Expiration property.
@@ -57,10 +62,8 @@ namespace Amazon.S3.Model
         /// <summary>
         /// The Server-side encryption algorithm used when storing this object in S3.
         /// <para>
-        /// If you specified server-side encryption either with an Amazon Web Services KMS
-        /// key or Amazon S3-managed encryption key in your PUT request, the response
-        /// includes this header. It confirms the encryption algorithm that Amazon S3 used to
-        /// encrypt the object.
+        /// The server-side encryption algorithm used when storing this object in Amazon S3 (for
+        /// example, AES256, <code>aws:kms</code>).
         /// </para>
         /// </summary>
         public ServerSideEncryptionMethod ServerSideEncryptionMethod
@@ -105,11 +108,13 @@ namespace Amazon.S3.Model
         /// <summary>
         /// The id of the AWS Key Management Service key that Amazon S3 uses to encrypt and decrypt the object.
         /// <para>
-        /// If <code>x-amz-server-side-encryption</code> is present and has the value of <code>aws:kms</code>,
+        /// If <code>x-amz-server-side-encryption</code> is has a valid value of <code>aws:kms</code>,
         /// this header specifies the ID of the Amazon Web Services Key Management Service (Amazon
-        /// Web Services KMS) symmetric customer managed key that was used for the object. 
+        /// Web Services KMS) symmetric encryption customer managed key that was used for the
+        /// object. 
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string ServerSideEncryptionKeyManagementServiceKeyId
         {
             get { return this.serverSideEncryptionKeyManagementServiceKeyId; }
@@ -150,9 +155,12 @@ namespace Amazon.S3.Model
         /// <para>
         /// If present, specifies the Amazon Web Services KMS Encryption Context to use for object
         /// encryption. The value of this header is a base64-encoded UTF-8 string holding JSON
-        /// with the encryption context key-value pairs.
+        /// with the encryption context key-value pairs. This value is stored as object metadata
+        /// and automatically gets passed on to Amazon Web Services KMS for future <code>GetObject</code>
+        /// or <code>CopyObject</code> operations on this object.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string ServerSideEncryptionKeyManagementServiceEncryptionContext
         {
             get { return this.serverSideEncryptionKeyManagementServiceEncryptionContext; }
@@ -194,6 +202,78 @@ namespace Amazon.S3.Model
         {
             return bucketKeyEnabled.HasValue;
         }
+
+
+        /// <summary>
+        /// Gets and sets the property ChecksumCRC32. 
+        /// <para>
+        /// The base64-encoded, 32-bit CRC32 checksum of the object.
+        /// </para>
+        /// </summary>
+        public string ChecksumCRC32
+        {
+            get { return this._checksumCRC32; }
+            set { this._checksumCRC32 = value; }
+        }
+
+        // Check to see if ChecksumCRC32 property is set
+        internal bool IsSetChecksumCRC32()
+        {
+            return this._checksumCRC32 != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ChecksumCRC32C. 
+        /// <para>
+        /// The base64-encoded, 32-bit CRC32C checksum of the object.
+        /// </para>
+        /// </summary>
+        public string ChecksumCRC32C
+        {
+            get { return this._checksumCRC32C; }
+            set { this._checksumCRC32C = value; }
+        }
+
+        // Check to see if ChecksumCRC32C property is set
+        internal bool IsSetChecksumCRC32C()
+        {
+            return this._checksumCRC32C != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ChecksumSHA1. 
+        /// <para>
+        /// The base64-encoded, 160-bit SHA-1 digest of the object.
+        /// </para>
+        /// </summary>
+        public string ChecksumSHA1
+        {
+            get { return this._checksumSHA1; }
+            set { this._checksumSHA1 = value; }
+        }
+
+        // Check to see if ChecksumSHA1 property is set
+        internal bool IsSetChecksumSHA1()
+        {
+            return this._checksumSHA1 != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ChecksumSHA256. 
+        /// <para>
+        /// The base64-encoded, 256-bit SHA-256 digest of the object.
+        /// </para>
+        /// </summary>
+        public string ChecksumSHA256
+        {
+            get { return this._checksumSHA256; }
+            set { this._checksumSHA256 = value; }
+        }
+
+        // Check to see if ChecksumSHA256 property is set
+        internal bool IsSetChecksumSHA256()
+        {
+            return this._checksumSHA256 != null;
+        }
     }
 }
-    

@@ -43,9 +43,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property DownloadUri. 
         /// <para>
-        /// The location in Amazon S3 where the vocabulary is stored. Use this URI to get the
-        /// contents of the vocabulary. You can download your vocabulary from the URI for a limited
-        /// time.
+        /// The S3 location where the specified custom medical vocabulary is stored; use this
+        /// URI to view or download the custom vocabulary.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2000)]
@@ -64,8 +63,10 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property FailureReason. 
         /// <para>
-        /// If the <code>VocabularyState</code> is <code>FAILED</code>, this field contains information
-        /// about why the job failed.
+        /// If <code>VocabularyState</code> is <code>FAILED</code>, <code>FailureReason</code>
+        /// contains information about why the custom medical vocabulary request failed. See also:
+        /// <a href="https://docs.aws.amazon.com/transcribe/latest/APIReference/CommonErrors.html">Common
+        /// Errors</a>.
         /// </para>
         /// </summary>
         public string FailureReason
@@ -83,7 +84,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property LanguageCode. 
         /// <para>
-        /// The valid language code for your vocabulary entries.
+        /// The language code you selected for your custom medical vocabulary. US English (<code>en-US</code>)
+        /// is the only language supported with Amazon Transcribe Medical.
         /// </para>
         /// </summary>
         public LanguageCode LanguageCode
@@ -101,8 +103,13 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property LastModifiedTime. 
         /// <para>
-        /// The date and time that the vocabulary was last modified with a text file different
-        /// from the one that was previously used.
+        /// The date and time the specified custom medical vocabulary was last modified.
+        /// </para>
+        ///  
+        /// <para>
+        /// Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+        /// <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May 4,
+        /// 2022.
         /// </para>
         /// </summary>
         public DateTime LastModifiedTime
@@ -120,7 +127,7 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property VocabularyName. 
         /// <para>
-        /// The name of the vocabulary returned by Amazon Transcribe Medical.
+        /// The name of the custom medical vocabulary you requested information about.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
@@ -139,8 +146,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property VocabularyState. 
         /// <para>
-        /// The processing state of the vocabulary. If the <code>VocabularyState</code> is <code>READY</code>
-        /// then you can use it in the <code>StartMedicalTranscriptionJob</code> operation.
+        /// The processing state of your custom medical vocabulary. If the state is <code>READY</code>,
+        /// you can use the custom vocabulary in a <code>StartMedicalTranscriptionJob</code> request.
         /// </para>
         /// </summary>
         public VocabularyState VocabularyState

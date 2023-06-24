@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudControlApi.Model
 {
     /// <summary>
-    /// A resource with the specified identifier cannot be found.
+    /// A resource with the specified identifier can't be found.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -34,7 +34,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// MarginStyle Marshaller
-    /// </summary>       
+    /// </summary>
     public class MarginStyleMarshaller : IRequestMarshaller<MarginStyle, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static MarginStyleMarshaller Instance = new MarginStyleMarshaller();
 
     }

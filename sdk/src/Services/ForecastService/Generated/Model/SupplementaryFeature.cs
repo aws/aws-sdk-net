@@ -29,9 +29,16 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ForecastService.Model
 {
     /// <summary>
+    /// <note> 
+    /// <para>
+    /// This object belongs to the <a>CreatePredictor</a> operation. If you created your predictor
+    /// with <a>CreateAutoPredictor</a>, see <a>AdditionalDataset</a>.
+    /// </para>
+    ///  </note> 
+    /// <para>
     /// Describes a supplementary feature of a dataset group. This object is part of the <a>InputDataConfig</a>
     /// object. Forecast supports the Weather Index and Holidays built-in featurizations.
-    /// 
+    /// </para>
     ///  
     /// <para>
     ///  <b>Weather Index</b> 

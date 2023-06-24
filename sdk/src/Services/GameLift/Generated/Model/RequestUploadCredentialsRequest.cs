@@ -32,7 +32,7 @@ namespace Amazon.GameLift.Model
     /// Container for the parameters to the RequestUploadCredentials operation.
     /// Retrieves a fresh set of credentials for use when uploading a new set of game build
     /// files to Amazon GameLift's Amazon S3. This is done as part of the build creation process;
-    /// see <a>CreateBuild</a>.
+    /// see <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateBuild.html">GameSession</a>.
     /// 
     ///  
     /// <para>
@@ -51,12 +51,7 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  
     /// <para>
-    ///  <b>Related actions</b> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <a>CreateBuild</a> | <a>ListBuilds</a> | <a>DescribeBuild</a> | <a>UpdateBuild</a>
-    /// | <a>DeleteBuild</a> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
+    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
     /// APIs by task</a> 
     /// </para>
     /// </summary>

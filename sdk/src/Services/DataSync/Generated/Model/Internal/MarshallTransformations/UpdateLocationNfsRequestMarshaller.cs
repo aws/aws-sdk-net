@@ -58,7 +58,7 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
             string target = "FmrsService.UpdateLocationNfs";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-11-09";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-11-09";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -101,7 +101,6 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Subdirectory);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

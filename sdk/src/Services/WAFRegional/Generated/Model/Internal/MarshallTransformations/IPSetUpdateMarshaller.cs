@@ -34,7 +34,7 @@ namespace Amazon.WAFRegional.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// IPSetUpdate Marshaller
-    /// </summary>       
+    /// </summary>
     public class IPSetUpdateMarshaller : IRequestMarshaller<IPSetUpdate, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.WAFRegional.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static IPSetUpdateMarshaller Instance = new IPSetUpdateMarshaller();
 
     }

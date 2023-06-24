@@ -36,7 +36,7 @@ namespace Amazon.LexModelsV2.Model
     /// <para>
     /// The password is not required. If you don't supply a password, Amazon Lex generates
     /// a zip file that is not protected by a password. This is the archive that is available
-    /// at the pre-signed S3 URL provided by the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeExport.html">DescribeExport</a>
+    /// at the pre-signed S3 URL provided by the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeExport.html">DescribeExport</a>
     /// operation.
     /// </para>
     /// </summary>
@@ -70,7 +70,7 @@ namespace Amazon.LexModelsV2.Model
         /// The new password to use to encrypt the export zip archive.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Sensitive=true, Min=1, Max=1024)]
         public string FilePassword
         {
             get { return this._filePassword; }

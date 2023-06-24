@@ -34,7 +34,7 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// InputOrigin Marshaller
-    /// </summary>       
+    /// </summary>
     public class InputOriginMarshaller : IRequestMarshaller<InputOrigin, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static InputOriginMarshaller Instance = new InputOriginMarshaller();
 
     }

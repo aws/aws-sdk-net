@@ -30,7 +30,10 @@ namespace Amazon.CodeArtifact.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdatePackageVersionsStatus operation.
-    /// Updates the status of one or more versions of a package.
+    /// Updates the status of one or more versions of a package. Using <code>UpdatePackageVersionsStatus</code>,
+    /// you can update the status of package versions to <code>Archived</code>, <code>Published</code>,
+    /// or <code>Unlisted</code>. To set the status of a package version to <code>Disposed</code>,
+    /// use <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DisposePackageVersions.html">DisposePackageVersions</a>.
     /// </summary>
     public partial class UpdatePackageVersionsStatusRequest : AmazonCodeArtifactRequest
     {
@@ -68,8 +71,8 @@ namespace Amazon.CodeArtifact.Model
         /// <summary>
         /// Gets and sets the property DomainOwner. 
         /// <para>
-        ///  The 12-digit account number of the AWS account that owns the domain. It does not
-        /// include dashes or spaces. 
+        ///  The 12-digit account number of the Amazon Web Services account that owns the domain.
+        /// It does not include dashes or spaces. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=12)]
@@ -109,22 +112,8 @@ namespace Amazon.CodeArtifact.Model
         /// <summary>
         /// Gets and sets the property Format. 
         /// <para>
-        ///  A format that specifies the type of the package with the statuses to update. The
-        /// valid values are: 
+        ///  A format that specifies the type of the package with the statuses to update. 
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>npm</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>pypi</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>maven</code> 
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public PackageFormat Format
@@ -142,21 +131,25 @@ namespace Amazon.CodeArtifact.Model
         /// <summary>
         /// Gets and sets the property Namespace. 
         /// <para>
-        ///  The namespace of the package. The package component that specifies its namespace
-        /// depends on its type. For example: 
+        /// The namespace of the package version to be updated. The package version component
+        /// that specifies its namespace depends on its type. For example:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  The namespace of a Maven package is its <code>groupId</code>. 
+        ///  The namespace of a Maven package version is its <code>groupId</code>. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  The namespace of an npm package is its <code>scope</code>. 
+        ///  The namespace of an npm package version is its <code>scope</code>. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  A Python package does not contain a corresponding component, so Python packages do
-        /// not have a namespace. 
+        ///  Python and NuGet package versions do not contain a corresponding component, package
+        /// versions of those formats do not have a namespace. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  The namespace of a generic package is its <code>namespace</code>. 
         /// </para>
         ///  </li> </ul>
         /// </summary>

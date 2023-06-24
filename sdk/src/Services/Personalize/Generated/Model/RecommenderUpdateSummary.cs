@@ -30,7 +30,8 @@ namespace Amazon.Personalize.Model
 {
     /// <summary>
     /// Provides a summary of the properties of a recommender update. For a complete listing,
-    /// call the <a>DescribeRecommender</a> API.
+    /// call the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeRecommender.html">DescribeRecommender</a>
+    /// API.
     /// </summary>
     public partial class RecommenderUpdateSummary
     {
@@ -124,6 +125,11 @@ namespace Amazon.Personalize.Model
         ///  <ul> <li> 
         /// <para>
         /// CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// STOP PENDING &gt; STOP IN_PROGRESS &gt; INACTIVE &gt; START PENDING &gt; START IN_PROGRESS
+        /// &gt; ACTIVE
         /// </para>
         ///  </li> <li> 
         /// <para>

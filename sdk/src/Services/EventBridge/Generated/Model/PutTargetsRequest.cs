@@ -37,7 +37,11 @@ namespace Amazon.EventBridge.Model
     /// <para>
     /// Targets are the resources that are invoked when a rule is triggered.
     /// </para>
-    ///  
+    ///  <note> 
+    /// <para>
+    /// Each rule can have up to five (5) targets associated with it at one time.
+    /// </para>
+    ///  </note> 
     /// <para>
     /// You can configure the following as targets for Events:
     /// </para>
@@ -48,11 +52,8 @@ namespace Amazon.EventBridge.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Amazon API Gateway REST API endpoints
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// API Gateway
+    ///  <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-api-gateway-target.html">API
+    /// Gateway</a> 
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -60,7 +61,7 @@ namespace Amazon.EventBridge.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// CloudWatch Logs group
+    /// CloudWatch group
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -72,44 +73,58 @@ namespace Amazon.EventBridge.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Amazon EC2 <code>CreateSnapshot</code> API call
+    /// EC2 <code>CreateSnapshot</code> API call
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Amazon EC2 <code>RebootInstances</code> API call
+    /// EC2 Image Builder
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Amazon EC2 <code>StopInstances</code> API call
+    /// EC2 <code>RebootInstances</code> API call
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Amazon EC2 <code>TerminateInstances</code> API call
+    /// EC2 <code>StopInstances</code> API call
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Amazon ECS tasks
+    /// EC2 <code>TerminateInstances</code> API call
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Event bus in a different Amazon Web Services account or Region.
-    /// </para>
-    ///  
-    /// <para>
-    /// You can use an event bus in the US East (N. Virginia) us-east-1, US West (Oregon)
-    /// us-west-2, or Europe (Ireland) eu-west-1 Regions as a target for a rule.
+    /// ECS task
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Firehose delivery stream (Kinesis Data Firehose)
+    ///  <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-cross-account.html">Event
+    /// bus in a different account or Region</a> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Inspector assessment template (Amazon Inspector)
+    ///  <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-bus-to-bus.html">Event
+    /// bus in the same account and Region</a> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Kinesis stream (Kinesis Data Stream)
+    /// Firehose delivery stream
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Glue workflow
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/incident-manager/latest/userguide/incident-creation.html#incident-tracking-auto-eventbridge">Incident
+    /// Manager response plan</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Inspector assessment template
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Kinesis stream
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -117,31 +132,39 @@ namespace Amazon.EventBridge.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Redshift clusters (Data API statement execution)
+    /// Redshift cluster
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Amazon SNS topic
+    /// Redshift Serverless workgroup
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Amazon SQS queues (includes FIFO queues
+    /// SageMaker Pipeline
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// SSM Automation
+    /// SNS topic
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// SSM OpsItem
+    /// SQS queue
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// SSM Run Command
+    /// Step Functions state machine
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Step Functions state machines
+    /// Systems Manager Automation
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Systems Manager OpsItem
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Systems Manager Run Command
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -163,9 +186,9 @@ namespace Amazon.EventBridge.Model
     /// To be able to make API calls against the resources that you own, Amazon EventBridge
     /// needs the appropriate permissions. For Lambda and Amazon SNS resources, EventBridge
     /// relies on resource-based policies. For EC2 instances, Kinesis Data Streams, Step Functions
-    /// state machines and API Gateway REST APIs, EventBridge relies on IAM roles that you
-    /// specify in the <code>RoleARN</code> argument in <code>PutTargets</code>. For more
-    /// information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/auth-and-access-control-eventbridge.html">Authentication
+    /// state machines and API Gateway APIs, EventBridge relies on IAM roles that you specify
+    /// in the <code>RoleARN</code> argument in <code>PutTargets</code>. For more information,
+    /// see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/auth-and-access-control-eventbridge.html">Authentication
     /// and Access Control</a> in the <i>Amazon EventBridge User Guide</i>.
     /// </para>
     ///  

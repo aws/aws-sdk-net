@@ -30,8 +30,8 @@ namespace Amazon.AppStream.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateFleet operation.
-    /// Creates a fleet. A fleet consists of streaming instances that run a specified image
-    /// when using Always-On or On-Demand.
+    /// Creates a fleet. A fleet consists of streaming instances that your users access for
+    /// their applications and desktops.
     /// </summary>
     public partial class CreateFleetRequest : AmazonAppStreamRequest
     {
@@ -51,6 +51,7 @@ namespace Amazon.AppStream.Model
         private int? _maxUserDurationInSeconds;
         private string _name;
         private PlatformType _platform;
+        private S3Location _sessionScriptS3Location;
         private StreamView _streamView;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private List<string> _usbDeviceFilterStrings = new List<string>();
@@ -333,6 +334,14 @@ namespace Amazon.AppStream.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// stream.standard.xlarge
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.standard.2xlarge
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// stream.compute.large
         /// </para>
         ///  </li> <li> 
@@ -463,6 +472,18 @@ namespace Amazon.AppStream.Model
         /// <para>
         /// stream.standard.medium
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.standard.large
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.standard.xlarge
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.standard.2xlarge
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
@@ -558,6 +579,25 @@ namespace Amazon.AppStream.Model
         internal bool IsSetPlatform()
         {
             return this._platform != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SessionScriptS3Location. 
+        /// <para>
+        /// The S3 location of the session scripts configuration zip file. This only applies to
+        /// Elastic fleets.
+        /// </para>
+        /// </summary>
+        public S3Location SessionScriptS3Location
+        {
+            get { return this._sessionScriptS3Location; }
+            set { this._sessionScriptS3Location = value; }
+        }
+
+        // Check to see if SessionScriptS3Location property is set
+        internal bool IsSetSessionScriptS3Location()
+        {
+            return this._sessionScriptS3Location != null;
         }
 
         /// <summary>

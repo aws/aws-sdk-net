@@ -34,7 +34,7 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// BackupSelection Marshaller
-    /// </summary>       
+    /// </summary>
     public class BackupSelectionMarshaller : IRequestMarshaller<BackupSelection, JsonMarshallerContext> 
     {
         /// <summary>
@@ -110,7 +110,7 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static BackupSelectionMarshaller Instance = new BackupSelectionMarshaller();
 
     }

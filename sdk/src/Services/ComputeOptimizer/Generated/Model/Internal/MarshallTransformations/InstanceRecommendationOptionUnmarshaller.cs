@@ -70,6 +70,12 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
                     unmarshalledObject.InstanceType = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("migrationEffort", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.MigrationEffort = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("performanceRisk", targetDepth))
                 {
                     var unmarshaller = DoubleUnmarshaller.Instance;

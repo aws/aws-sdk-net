@@ -30,7 +30,7 @@ namespace Amazon.Outposts.Model
 {
     /// <summary>
     /// Container for the parameters to the GetSiteAddress operation.
-    /// Gets the site address.
+    /// Gets the site address of the specified site.
     /// </summary>
     public partial class GetSiteAddressRequest : AmazonOutpostsRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.Outposts.Model
         /// <summary>
         /// Gets and sets the property AddressType. 
         /// <para>
-        ///  The type of the address you request. 
+        /// The type of the address you request. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -57,7 +57,10 @@ namespace Amazon.Outposts.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SiteId.
+        /// Gets and sets the property SiteId. 
+        /// <para>
+        ///  The ID or the Amazon Resource Name (ARN) of the site. 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
         public string SiteId

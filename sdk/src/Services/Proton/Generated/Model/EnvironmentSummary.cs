@@ -29,11 +29,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Proton.Model
 {
     /// <summary>
-    /// A summary of the environment detail data.
+    /// Summary data of an Proton environment resource. An Proton environment is a set of
+    /// resources shared across Proton services.
     /// </summary>
     public partial class EnvironmentSummary
     {
         private string _arn;
+        private string _componentRoleArn;
         private DateTime? _createdAt;
         private DeploymentStatus _deploymentStatus;
         private string _deploymentStatusMessage;
@@ -66,6 +68,37 @@ namespace Amazon.Proton.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ComponentRoleArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning
+        /// directly defined components in this environment. It determines the scope of infrastructure
+        /// that a component can provision.
+        /// </para>
+        ///  
+        /// <para>
+        /// The environment must have a <code>componentRoleArn</code> to allow directly defined
+        /// components to be associated with the environment.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+        /// components</a> in the <i>Proton User Guide</i>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=200)]
+        public string ComponentRoleArn
+        {
+            get { return this._componentRoleArn; }
+            set { this._componentRoleArn = value; }
+        }
+
+        // Check to see if ComponentRoleArn property is set
+        internal bool IsSetComponentRoleArn()
+        {
+            return this._componentRoleArn != null;
         }
 
         /// <summary>
@@ -112,6 +145,7 @@ namespace Amazon.Proton.Model
         /// An environment deployment status message.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string DeploymentStatusMessage
         {
             get { return this._deploymentStatusMessage; }
@@ -130,7 +164,7 @@ namespace Amazon.Proton.Model
         /// The description of the environment.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=500)]
+        [AWSProperty(Sensitive=true, Min=0, Max=500)]
         public string Description
         {
             get { return this._description; }

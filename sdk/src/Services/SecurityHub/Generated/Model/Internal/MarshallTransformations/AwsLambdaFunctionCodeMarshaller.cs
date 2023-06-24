@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AwsLambdaFunctionCode Marshaller
-    /// </summary>       
+    /// </summary>
     public class AwsLambdaFunctionCodeMarshaller : IRequestMarshaller<AwsLambdaFunctionCode, JsonMarshallerContext> 
     {
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AwsLambdaFunctionCodeMarshaller Instance = new AwsLambdaFunctionCodeMarshaller();
 
     }

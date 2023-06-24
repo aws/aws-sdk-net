@@ -31,7 +31,8 @@ namespace Amazon.Kinesis.Model
     /// <summary>
     /// Container for the parameters to the MergeShards operation.
     /// Merges two adjacent shards in a Kinesis data stream and combines them into a single
-    /// shard to reduce the stream's capacity to ingest and transport data. Two shards are
+    /// shard to reduce the stream's capacity to ingest and transport data. This API is only
+    /// supported for the data streams with the provisioned capacity mode. Two shards are
     /// considered adjacent if the union of the hash key ranges for the two shards form a
     /// contiguous set with no gaps. For example, if you have two shards, one with a hash
     /// key range of 276...381 and the other with a hash key range of 382...454, then you
@@ -39,7 +40,12 @@ namespace Amazon.Kinesis.Model
     /// of 276...454. After the merge, the single child shard receives data for all hash key
     /// values covered by the two parent shards.
     /// 
-    ///  
+    ///  <note> 
+    /// <para>
+    /// When invoking this API, it is recommended you use the <code>StreamARN</code> input
+    /// parameter rather than the <code>StreamName</code> input parameter.
+    /// </para>
+    ///  </note> 
     /// <para>
     ///  <code>MergeShards</code> is called when there is a need to reduce the overall capacity
     /// of a stream because of excess capacity that is not being used. You must specify the
@@ -88,6 +94,7 @@ namespace Amazon.Kinesis.Model
     {
         private string _adjacentShardToMerge;
         private string _shardToMerge;
+        private string _streamARN;
         private string _streamName;
 
         /// <summary>
@@ -129,12 +136,31 @@ namespace Amazon.Kinesis.Model
         }
 
         /// <summary>
+        /// Gets and sets the property StreamARN. 
+        /// <para>
+        /// The ARN of the stream.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string StreamARN
+        {
+            get { return this._streamARN; }
+            set { this._streamARN = value; }
+        }
+
+        // Check to see if StreamARN property is set
+        internal bool IsSetStreamARN()
+        {
+            return this._streamARN != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property StreamName. 
         /// <para>
         /// The name of the stream for the merge.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [AWSProperty(Min=1, Max=128)]
         public string StreamName
         {
             get { return this._streamName; }

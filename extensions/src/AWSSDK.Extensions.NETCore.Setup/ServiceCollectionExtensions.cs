@@ -45,6 +45,25 @@ namespace Microsoft.Extensions.DependencyInjection
         }
 
         /// <summary>
+        /// Adds the AWSOptions object to the dependency injection framework providing information
+        /// that will be used to construct Amazon service clients.
+        /// </summary>
+        /// <param name="collection"></param>
+        /// <param name="implementationFactory">The factory that creates the default AWS options.
+        /// The AWS options will be used to construct AWS service clients
+        /// </param>
+        /// <param name="lifetime">The lifetime of the AWSOptions. The default is Singleton.</param>
+        /// <returns>Returns back the IServiceCollection to continue the fluent system of IServiceCollection.</returns>
+        public static IServiceCollection AddDefaultAWSOptions(
+            this IServiceCollection collection, 
+            Func<IServiceProvider, AWSOptions> implementationFactory, 
+            ServiceLifetime lifetime = ServiceLifetime.Singleton)
+        {
+            collection.Add(new ServiceDescriptor(typeof(AWSOptions), implementationFactory, lifetime));
+            return collection;
+        }
+
+        /// <summary>
         /// Adds the Amazon service client to the dependency injection framework. The Amazon service client is not
         /// created until it is requested. If the ServiceLifetime property is set to Singleton, the default, then the same
         /// instance will be reused for the lifetime of the process and the object should not be disposed.

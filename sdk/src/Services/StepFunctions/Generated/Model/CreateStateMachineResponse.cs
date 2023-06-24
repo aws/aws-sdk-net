@@ -35,6 +35,7 @@ namespace Amazon.StepFunctions.Model
     {
         private DateTime? _creationDate;
         private string _stateMachineArn;
+        private string _stateMachineVersionArn;
 
         /// <summary>
         /// Gets and sets the property CreationDate. 
@@ -72,6 +73,27 @@ namespace Amazon.StepFunctions.Model
         internal bool IsSetStateMachineArn()
         {
             return this._stateMachineArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StateMachineVersionArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) that identifies the created state machine version.
+        /// If you do not set the <code>publish</code> parameter to <code>true</code>, this field
+        /// returns null value.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string StateMachineVersionArn
+        {
+            get { return this._stateMachineVersionArn; }
+            set { this._stateMachineVersionArn = value; }
+        }
+
+        // Check to see if StateMachineVersionArn property is set
+        internal bool IsSetStateMachineVersionArn()
+        {
+            return this._stateMachineVersionArn != null;
         }
 
     }

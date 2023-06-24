@@ -76,6 +76,14 @@ namespace Amazon.DevOpsGuru.Model
         }
 
         /// <summary>
+        /// Paginator for ListAnomalousLogGroups operation
+        ///</summary>
+        public IListAnomalousLogGroupsPaginator ListAnomalousLogGroups(ListAnomalousLogGroupsRequest request) 
+        {
+            return new ListAnomalousLogGroupsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListEvents operation
         ///</summary>
         public IListEventsPaginator ListEvents(ListEventsRequest request) 
@@ -89,6 +97,14 @@ namespace Amazon.DevOpsGuru.Model
         public IListInsightsPaginator ListInsights(ListInsightsRequest request) 
         {
             return new ListInsightsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListMonitoredResources operation
+        ///</summary>
+        public IListMonitoredResourcesPaginator ListMonitoredResources(ListMonitoredResourcesRequest request) 
+        {
+            return new ListMonitoredResourcesPaginator(this.client, request);
         }
 
         /// <summary>

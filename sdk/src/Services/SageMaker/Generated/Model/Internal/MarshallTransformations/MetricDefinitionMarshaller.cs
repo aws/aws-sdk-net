@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// MetricDefinition Marshaller
-    /// </summary>       
+    /// </summary>
     public class MetricDefinitionMarshaller : IRequestMarshaller<MetricDefinition, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static MetricDefinitionMarshaller Instance = new MetricDefinitionMarshaller();
 
     }

@@ -40,6 +40,8 @@ namespace Amazon.ElastiCache.Model
         private string _engineVersion;
         private List<PendingLogDeliveryConfiguration> _logDeliveryConfigurations = new List<PendingLogDeliveryConfiguration>();
         private int? _numCacheNodes;
+        private bool? _transitEncryptionEnabled;
+        private TransitEncryptionMode _transitEncryptionMode;
 
         /// <summary>
         /// Empty constructor used to set  properties independently even when a simple constructor is available
@@ -158,6 +160,43 @@ namespace Amazon.ElastiCache.Model
         internal bool IsSetNumCacheNodes()
         {
             return this._numCacheNodes.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TransitEncryptionEnabled. 
+        /// <para>
+        /// A flag that enables in-transit encryption when set to true.
+        /// </para>
+        /// </summary>
+        public bool TransitEncryptionEnabled
+        {
+            get { return this._transitEncryptionEnabled.GetValueOrDefault(); }
+            set { this._transitEncryptionEnabled = value; }
+        }
+
+        // Check to see if TransitEncryptionEnabled property is set
+        internal bool IsSetTransitEncryptionEnabled()
+        {
+            return this._transitEncryptionEnabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TransitEncryptionMode. 
+        /// <para>
+        /// A setting that allows you to migrate your clients to use in-transit encryption, with
+        /// no downtime.
+        /// </para>
+        /// </summary>
+        public TransitEncryptionMode TransitEncryptionMode
+        {
+            get { return this._transitEncryptionMode; }
+            set { this._transitEncryptionMode = value; }
+        }
+
+        // Check to see if TransitEncryptionMode property is set
+        internal bool IsSetTransitEncryptionMode()
+        {
+            return this._transitEncryptionMode != null;
         }
 
     }

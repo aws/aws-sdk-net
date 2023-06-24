@@ -114,7 +114,7 @@ namespace Amazon.DirectoryService.Model
         /// The password for your self-managed user account.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=128)]
         public string Password
         {
             get { return this._password; }

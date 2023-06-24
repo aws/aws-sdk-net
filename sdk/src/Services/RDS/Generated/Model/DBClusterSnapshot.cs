@@ -29,12 +29,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// Contains the details for an Amazon RDS DB cluster snapshot 
+    /// Contains the details for an Amazon RDS DB cluster snapshot
     /// 
     ///  
     /// <para>
     /// This data type is used as a response element in the <code>DescribeDBClusterSnapshots</code>
-    /// action. 
+    /// action.
     /// </para>
     /// </summary>
     public partial class DBClusterSnapshot
@@ -45,6 +45,7 @@ namespace Amazon.RDS.Model
         private string _dbClusterIdentifier;
         private string _dbClusterSnapshotArn;
         private string _dbClusterSnapshotIdentifier;
+        private string _dbSystemId;
         private string _engine;
         private string _engineMode;
         private string _engineVersion;
@@ -59,6 +60,7 @@ namespace Amazon.RDS.Model
         private string _sourceDBClusterSnapshotArn;
         private string _status;
         private bool? _storageEncrypted;
+        private string _storageType;
         private List<Tag> _tagList = new List<Tag>();
         private string _vpcId;
 
@@ -171,6 +173,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetDBClusterSnapshotIdentifier()
         {
             return this._dbClusterSnapshotIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DBSystemId. 
+        /// <para>
+        /// Reserved for future use.
+        /// </para>
+        /// </summary>
+        public string DBSystemId
+        {
+            get { return this._dbSystemId; }
+            set { this._dbSystemId = value; }
+        }
+
+        // Check to see if DBSystemId property is set
+        internal bool IsSetDBSystemId()
+        {
+            return this._dbSystemId != null;
         }
 
         /// <summary>
@@ -400,8 +420,21 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// Specifies the status of this DB cluster snapshot.
+        /// Specifies the status of this DB cluster snapshot. Valid statuses are the following:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>available</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>copying</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>creating</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string Status
         {
@@ -431,6 +464,28 @@ namespace Amazon.RDS.Model
         internal bool IsSetStorageEncrypted()
         {
             return this._storageEncrypted.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property StorageType. 
+        /// <para>
+        /// The storage type associated with the DB cluster snapshot.
+        /// </para>
+        ///  
+        /// <para>
+        /// This setting is only for Aurora DB clusters.
+        /// </para>
+        /// </summary>
+        public string StorageType
+        {
+            get { return this._storageType; }
+            set { this._storageType = value; }
+        }
+
+        // Check to see if StorageType property is set
+        internal bool IsSetStorageType()
+        {
+            return this._storageType != null;
         }
 
         /// <summary>

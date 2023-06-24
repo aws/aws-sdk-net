@@ -38,7 +38,9 @@ namespace Amazon.ECS.Model
     {
         private string _bindip;
         private int? _containerPort;
+        private string _containerPortRange;
         private int? _hostPort;
+        private string _hostPortRange;
         private TransportProtocol _protocol;
 
         /// <summary>
@@ -78,6 +80,106 @@ namespace Amazon.ECS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ContainerPortRange. 
+        /// <para>
+        /// The port number range on the container that's bound to the dynamically mapped host
+        /// port range.
+        /// </para>
+        ///  
+        /// <para>
+        /// The following rules apply when you specify a <code>containerPortRange</code>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You must use either the <code>bridge</code> network mode or the <code>awsvpc</code>
+        /// network mode.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// This parameter is available for both the EC2 and Fargate launch types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// This parameter is available for both the Linux and Windows operating systems.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The container instance must have at least version 1.67.0 of the container agent and
+        /// at least version 1.67.0-1 of the <code>ecs-init</code> package 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You can specify a maximum of 100 port ranges per container.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You do not specify a <code>hostPortRange</code>. The value of the <code>hostPortRange</code>
+        /// is set as follows:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// For containers in a task with the <code>awsvpc</code> network mode, the <code>hostPort</code>
+        /// is set to the same value as the <code>containerPort</code>. This is a static mapping
+        /// strategy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For containers in a task with the <code>bridge</code> network mode, the Amazon ECS
+        /// agent finds open host ports from the default ephemeral range and passes it to docker
+        /// to bind them to the container ports.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// The <code>containerPortRange</code> valid values are between 1 and 65535.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A port can only be included in one port mapping per container.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You cannot specify overlapping port ranges.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The first port in the range must be less than last port in the range.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Docker recommends that you turn off the docker-proxy in the Docker daemon config file
+        /// when you have a large number of ports.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://github.com/moby/moby/issues/11185"> Issue
+        /// #11185</a> on the Github website.
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about how to turn off the docker-proxy in the Docker daemon config
+        /// file, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/bootstrap_container_instance.html#bootstrap_docker_daemon">Docker
+        /// daemon</a> in the <i>Amazon ECS Developer Guide</i>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// You can call <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeTasks.html">
+        /// <code>DescribeTasks</code> </a> to view the <code>hostPortRange</code> which are the
+        /// host ports that are bound to the container ports.
+        /// </para>
+        /// </summary>
+        public string ContainerPortRange
+        {
+            get { return this._containerPortRange; }
+            set { this._containerPortRange = value; }
+        }
+
+        // Check to see if ContainerPortRange property is set
+        internal bool IsSetContainerPortRange()
+        {
+            return this._containerPortRange != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property HostPort. 
         /// <para>
         /// The port number on the host that's used with the network binding.
@@ -93,6 +195,25 @@ namespace Amazon.ECS.Model
         internal bool IsSetHostPort()
         {
             return this._hostPort.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property HostPortRange. 
+        /// <para>
+        /// The port number range on the host that's used with the network binding. This is assigned
+        /// is assigned by Docker and delivered by the Amazon ECS agent.
+        /// </para>
+        /// </summary>
+        public string HostPortRange
+        {
+            get { return this._hostPortRange; }
+            set { this._hostPortRange = value; }
+        }
+
+        // Check to see if HostPortRange property is set
+        internal bool IsSetHostPortRange()
+        {
+            return this._hostPortRange != null;
         }
 
         /// <summary>

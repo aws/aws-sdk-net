@@ -47,9 +47,18 @@ namespace Amazon.PI.Model
         /// <summary>
         /// Gets and sets the property Group. 
         /// <para>
-        /// The name of the dimension group. The only valid value is <code>db.sql</code>. Performance
-        /// Insights searches the specified group for the dimension group ID.
+        /// The name of the dimension group. Performance Insights searches the specified group
+        /// for the dimension group ID. The following group name values are valid:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>db.query</code> (Amazon DocumentDB only)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>db.sql</code> (Amazon RDS and Aurora only)
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=256)]
         public string Group
@@ -68,8 +77,18 @@ namespace Amazon.PI.Model
         /// Gets and sets the property GroupIdentifier. 
         /// <para>
         /// The ID of the dimension group from which to retrieve dimension details. For dimension
-        /// group <code>db.sql</code>, the group ID is <code>db.sql.id</code>.
+        /// group <code>db.sql</code>, the group ID is <code>db.sql.id</code>. The following group
+        /// ID values are valid:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>db.sql.id</code> for dimension group <code>db.sql</code> (Aurora and RDS only)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>db.query.id</code> for dimension group <code>db.query</code> (DocumentDB only)
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=256)]
         public string GroupIdentifier
@@ -88,8 +107,8 @@ namespace Amazon.PI.Model
         /// Gets and sets the property Identifier. 
         /// <para>
         /// The ID for a data source from which to gather dimension data. This ID must be immutable
-        /// and unique within an AWS Region. When a DB instance is the data source, specify its
-        /// <code>DbiResourceId</code> value. For example, specify <code>db-ABCDEFGHIJKLMNOPQRSTU1VW2X</code>.
+        /// and unique within an Amazon Web Services Region. When a DB instance is the data source,
+        /// specify its <code>DbiResourceId</code> value. For example, specify <code>db-ABCDEFGHIJKLMNOPQRSTU1VW2X</code>.
         /// 
         /// </para>
         /// </summary>
@@ -110,11 +129,21 @@ namespace Amazon.PI.Model
         /// Gets and sets the property RequestedDimensions. 
         /// <para>
         /// A list of dimensions to retrieve the detail data for within the given dimension group.
-        /// For the dimension group <code>db.sql</code>, specify either the full dimension name
-        /// <code>db.sql.statement</code> or the short dimension name <code>statement</code>.
         /// If you don't specify this parameter, Performance Insights returns all dimension data
-        /// within the specified dimension group.
+        /// within the specified dimension group. Specify dimension names for the following dimension
+        /// groups:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>db.sql</code> - Specify either the full dimension name <code>db.sql.statement</code>
+        /// or the short dimension name <code>statement</code> (Aurora and RDS only).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>db.query</code> - Specify either the full dimension name <code>db.query.statement</code>
+        /// or the short dimension name <code>statement</code> (DocumentDB only).
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
         public List<string> RequestedDimensions
@@ -132,8 +161,8 @@ namespace Amazon.PI.Model
         /// <summary>
         /// Gets and sets the property ServiceType. 
         /// <para>
-        /// The AWS service for which Performance Insights returns data. The only valid value
-        /// is <code>RDS</code>.
+        /// The Amazon Web Services service for which Performance Insights returns data. The only
+        /// valid value is <code>RDS</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

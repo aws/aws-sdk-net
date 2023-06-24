@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ExperimentConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class ExperimentConfigMarshaller : IRequestMarshaller<ExperimentConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -49,6 +49,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("ExperimentName");
                 context.Writer.Write(requestObject.ExperimentName);
+            }
+
+            if(requestObject.IsSetRunName())
+            {
+                context.Writer.WritePropertyName("RunName");
+                context.Writer.Write(requestObject.RunName);
             }
 
             if(requestObject.IsSetTrialComponentDisplayName())
@@ -67,7 +73,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ExperimentConfigMarshaller Instance = new ExperimentConfigMarshaller();
 
     }

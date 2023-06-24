@@ -34,7 +34,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AvailSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class AvailSettingsMarshaller : IRequestMarshaller<AvailSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -45,6 +45,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AvailSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetEsam())
+            {
+                context.Writer.WritePropertyName("esam");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = EsamMarshaller.Instance;
+                marshaller.Marshall(requestObject.Esam, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetScte35SpliceInsert())
             {
                 context.Writer.WritePropertyName("scte35SpliceInsert");
@@ -71,7 +82,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AvailSettingsMarshaller Instance = new AvailSettingsMarshaller();
 
     }

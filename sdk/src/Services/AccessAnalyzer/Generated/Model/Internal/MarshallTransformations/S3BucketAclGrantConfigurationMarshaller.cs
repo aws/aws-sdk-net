@@ -34,7 +34,7 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// S3BucketAclGrantConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class S3BucketAclGrantConfigurationMarshaller : IRequestMarshaller<S3BucketAclGrantConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static S3BucketAclGrantConfigurationMarshaller Instance = new S3BucketAclGrantConfigurationMarshaller();
 
     }

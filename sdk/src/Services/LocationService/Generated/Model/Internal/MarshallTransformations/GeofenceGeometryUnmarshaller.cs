@@ -64,6 +64,12 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("Circle", targetDepth))
+                {
+                    var unmarshaller = CircleUnmarshaller.Instance;
+                    unmarshalledObject.Circle = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Polygon", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<List<List<double>>, ListUnmarshaller<List<double>, ListUnmarshaller<double, DoubleUnmarshaller>>>(new ListUnmarshaller<List<double>, ListUnmarshaller<double, DoubleUnmarshaller>>(new ListUnmarshaller<double, DoubleUnmarshaller>(DoubleUnmarshaller.Instance)));

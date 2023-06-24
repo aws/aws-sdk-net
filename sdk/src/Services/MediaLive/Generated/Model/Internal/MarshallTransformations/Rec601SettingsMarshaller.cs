@@ -34,7 +34,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Rec601Settings Marshaller
-    /// </summary>       
+    /// </summary>
     public class Rec601SettingsMarshaller : IRequestMarshaller<Rec601Settings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -49,7 +49,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static Rec601SettingsMarshaller Instance = new Rec601SettingsMarshaller();
 
     }

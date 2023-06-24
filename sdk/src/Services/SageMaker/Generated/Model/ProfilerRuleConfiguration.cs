@@ -44,7 +44,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property InstanceType. 
         /// <para>
-        /// The instance type to deploy a Debugger custom rule for profiling a training job.
+        /// The instance type to deploy a custom rule for profiling a training job.
         /// </para>
         /// </summary>
         public ProcessingInstanceType InstanceType
@@ -102,7 +102,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property RuleEvaluatorImage. 
         /// <para>
-        /// The Amazon Elastic Container (ECR) Image for the managed rule evaluation.
+        /// The Amazon Elastic Container Registry Image for the managed rule evaluation.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=255)]

@@ -17,22 +17,22 @@
  * Do not modify this file. This file is generated from the sms-voice-2018-09-05.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
-
+using Amazon.PinpointSMSVoice.Internal;
 
 namespace Amazon.PinpointSMSVoice
 {
     /// <summary>
     /// Configuration for accessing Amazon PinpointSMSVoice service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonPinpointSMSVoiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.105");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.147");
 
         private string _userAgent = UserAgentString;
 
@@ -40,8 +40,10 @@ namespace Amazon.PinpointSMSVoice
         /// Default constructor
         /// </summary>
         public AmazonPinpointSMSVoiceConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonPinpointSMSVoiceDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "sms-voice";
+            this.EndpointProvider = new AmazonPinpointSMSVoiceEndpointProvider();
         }
 
         /// <summary>
@@ -76,5 +78,6 @@ namespace Amazon.PinpointSMSVoice
                 return _userAgent;
             }
         }
+
     }
 }

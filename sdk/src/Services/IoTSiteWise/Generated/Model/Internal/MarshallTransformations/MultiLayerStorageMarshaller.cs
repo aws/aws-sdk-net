@@ -34,7 +34,7 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// MultiLayerStorage Marshaller
-    /// </summary>       
+    /// </summary>
     public class MultiLayerStorageMarshaller : IRequestMarshaller<MultiLayerStorage, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static MultiLayerStorageMarshaller Instance = new MultiLayerStorageMarshaller();
 
     }

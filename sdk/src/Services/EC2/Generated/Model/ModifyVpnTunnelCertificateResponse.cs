@@ -36,7 +36,10 @@ namespace Amazon.EC2.Model
         private VpnConnection _vpnConnection;
 
         /// <summary>
-        /// Gets and sets the property VpnConnection.
+        /// Gets and sets the property VpnConnection. 
+        /// <para>
+        /// Information about the VPN connection.
+        /// </para>
         /// </summary>
         public VpnConnection VpnConnection
         {

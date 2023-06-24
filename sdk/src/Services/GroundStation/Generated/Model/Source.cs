@@ -41,8 +41,8 @@ namespace Amazon.GroundStation.Model
         /// <summary>
         /// Gets and sets the property ConfigDetails. 
         /// <para>
-        /// Additional details for a <code>Config</code>, if type is dataflow endpoint or antenna
-        /// demod decode.
+        /// Additional details for a <code>Config</code>, if type is <code>dataflow-endpoint</code>
+        /// or <code>antenna-downlink-demod-decode</code> 
         /// </para>
         /// </summary>
         public ConfigDetails ConfigDetails

@@ -38,6 +38,7 @@ namespace Amazon.Backup.Model
         private string _byBackupPlanId;
         private DateTime? _byCreatedAfter;
         private DateTime? _byCreatedBefore;
+        private string _byParentRecoveryPointArn;
         private string _byResourceArn;
         private string _byResourceType;
         private int? _maxResults;
@@ -121,6 +122,25 @@ namespace Amazon.Backup.Model
         internal bool IsSetByCreatedBefore()
         {
             return this._byCreatedBefore.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ByParentRecoveryPointArn. 
+        /// <para>
+        /// This returns only recovery points that match the specified parent (composite) recovery
+        /// point Amazon Resource Name (ARN).
+        /// </para>
+        /// </summary>
+        public string ByParentRecoveryPointArn
+        {
+            get { return this._byParentRecoveryPointArn; }
+            set { this._byParentRecoveryPointArn = value; }
+        }
+
+        // Check to see if ByParentRecoveryPointArn property is set
+        internal bool IsSetByParentRecoveryPointArn()
+        {
+            return this._byParentRecoveryPointArn != null;
         }
 
         /// <summary>

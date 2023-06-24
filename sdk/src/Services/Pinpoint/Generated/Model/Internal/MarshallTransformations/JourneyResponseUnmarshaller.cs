@@ -76,6 +76,12 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                     unmarshalledObject.ApplicationId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ClosedDays", targetDepth))
+                {
+                    var unmarshaller = ClosedDaysUnmarshaller.Instance;
+                    unmarshalledObject.ClosedDays = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CreationDate", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -118,6 +124,12 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("OpenHours", targetDepth))
+                {
+                    var unmarshaller = OpenHoursUnmarshaller.Instance;
+                    unmarshalledObject.OpenHours = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("QuietTime", targetDepth))
                 {
                     var unmarshaller = QuietTimeUnmarshaller.Instance;
@@ -140,6 +152,12 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = JourneyScheduleUnmarshaller.Instance;
                     unmarshalledObject.Schedule = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SendingSchedule", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.SendingSchedule = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("StartActivity", targetDepth))

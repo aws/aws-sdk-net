@@ -36,7 +36,7 @@ namespace Amazon.ServiceCatalog.Model
     /// <para>
     /// For more information on maximum concurrent accounts and failure tolerance, see <a
     /// href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack
-    /// set operation options</a> in the <i>AWS CloudFormation User Guide</i>.
+    /// set operation options</a> in the <i>CloudFormation User Guide</i>.
     /// </para>
     /// </summary>
     public partial class ProvisioningArtifactPreferences
@@ -47,9 +47,9 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property StackSetAccounts. 
         /// <para>
-        /// One or more AWS accounts where stack instances are deployed from the stack set. These
-        /// accounts can be scoped in <code>ProvisioningPreferences$StackSetAccounts</code> and
-        /// <code>UpdateProvisioningPreferences$StackSetAccounts</code>.
+        /// One or more Amazon Web Services accounts where stack instances are deployed from the
+        /// stack set. These accounts can be scoped in <code>ProvisioningPreferences$StackSetAccounts</code>
+        /// and <code>UpdateProvisioningPreferences$StackSetAccounts</code>.
         /// </para>
         ///  
         /// <para>
@@ -71,9 +71,9 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property StackSetRegions. 
         /// <para>
-        /// One or more AWS Regions where stack instances are deployed from the stack set. These
-        /// regions can be scoped in <code>ProvisioningPreferences$StackSetRegions</code> and
-        /// <code>UpdateProvisioningPreferences$StackSetRegions</code>.
+        /// One or more Amazon Web Services Regions where stack instances are deployed from the
+        /// stack set. These Regions can be scoped in <code>ProvisioningPreferences$StackSetRegions</code>
+        /// and <code>UpdateProvisioningPreferences$StackSetRegions</code>.
         /// </para>
         ///  
         /// <para>

@@ -45,6 +45,7 @@ namespace Amazon.DocDB.Model
         private string _kmsKeyId;
         private int? _port;
         private DateTime? _restoreToTime;
+        private string _restoreType;
         private string _sourceDBClusterIdentifier;
         private List<Tag> _tags = new List<Tag>();
         private bool? _useLatestRestorableTime;
@@ -160,9 +161,9 @@ namespace Amazon.DocDB.Model
         ///  
         /// <para>
         /// The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key.
-        /// If you are restoring a cluster with the same account that owns the KMS encryption
-        /// key used to encrypt the new cluster, then you can use the KMS key alias instead of
-        /// the ARN for the KMS encryption key.
+        /// If you are restoring a cluster with the same Amazon Web Services account that owns
+        /// the KMS encryption key used to encrypt the new cluster, then you can use the KMS key
+        /// alias instead of the ARN for the KMS encryption key.
         /// </para>
         ///  
         /// <para>
@@ -272,6 +273,44 @@ namespace Amazon.DocDB.Model
         internal bool IsSetRestoreToTime()
         {
             return this._restoreToTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RestoreType. 
+        /// <para>
+        /// The type of restore to be performed. You can specify one of the following values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>full-copy</code> - The new DB cluster is restored as a full copy of the source
+        /// DB cluster.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>copy-on-write</code> - The new DB cluster is restored as a clone of the source
+        /// DB cluster.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Constraints: You can't specify <code>copy-on-write</code> if the engine version of
+        /// the source DB cluster is earlier than 1.11.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you don't specify a <code>RestoreType</code> value, then the new DB cluster is
+        /// restored as a full copy of the source DB cluster.
+        /// </para>
+        /// </summary>
+        public string RestoreType
+        {
+            get { return this._restoreType; }
+            set { this._restoreType = value; }
+        }
+
+        // Check to see if RestoreType property is set
+        internal bool IsSetRestoreType()
+        {
+            return this._restoreType != null;
         }
 
         /// <summary>

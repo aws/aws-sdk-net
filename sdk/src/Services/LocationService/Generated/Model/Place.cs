@@ -30,10 +30,17 @@ namespace Amazon.LocationService.Model
 {
     /// <summary>
     /// Contains details about addresses or points of interest that match the search criteria.
+    /// 
+    ///  
+    /// <para>
+    /// Not all details are included with all responses. Some details may only be returned
+    /// by specific data partners.
+    /// </para>
     /// </summary>
     public partial class Place
     {
         private string _addressNumber;
+        private List<string> _categories = new List<string>();
         private string _country;
         private PlaceGeometry _geometry;
         private bool? _interpolated;
@@ -44,7 +51,10 @@ namespace Amazon.LocationService.Model
         private string _region;
         private string _street;
         private string _subRegion;
+        private List<string> _supplementalCategories = new List<string>();
         private TimeZone _timeZone;
+        private string _unitNumber;
+        private string _unitType;
 
         /// <summary>
         /// Gets and sets the property AddressNumber. 
@@ -62,6 +72,31 @@ namespace Amazon.LocationService.Model
         internal bool IsSetAddressNumber()
         {
             return this._addressNumber != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Categories. 
+        /// <para>
+        /// The Amazon Location categories that describe this Place.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about using categories, including a list of Amazon Location categories,
+        /// see <a href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories
+        /// and filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<string> Categories
+        {
+            get { return this._categories; }
+            set { this._categories = value; }
+        }
+
+        // Check to see if Categories property is set
+        internal bool IsSetCategories()
+        {
+            return this._categories != null && this._categories.Count > 0; 
         }
 
         /// <summary>
@@ -246,7 +281,7 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property SubRegion. 
         /// <para>
-        /// A country, or an area that's part of a larger region. For example, <code>Metro Vancouver</code>.
+        /// A county, or an area that's part of a larger region. For example, <code>Metro Vancouver</code>.
         /// </para>
         /// </summary>
         public string SubRegion
@@ -262,10 +297,30 @@ namespace Amazon.LocationService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SupplementalCategories. 
+        /// <para>
+        /// Categories from the data provider that describe the Place that are not mapped to any
+        /// Amazon Location categories.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<string> SupplementalCategories
+        {
+            get { return this._supplementalCategories; }
+            set { this._supplementalCategories = value; }
+        }
+
+        // Check to see if SupplementalCategories property is set
+        internal bool IsSetSupplementalCategories()
+        {
+            return this._supplementalCategories != null && this._supplementalCategories.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property TimeZone. 
         /// <para>
         /// The time zone in which the <code>Place</code> is located. Returned only when using
-        /// Here as the selected partner.
+        /// HERE or Grab as the selected partner.
         /// </para>
         /// </summary>
         public TimeZone TimeZone
@@ -278,6 +333,54 @@ namespace Amazon.LocationService.Model
         internal bool IsSetTimeZone()
         {
             return this._timeZone != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UnitNumber. 
+        /// <para>
+        /// For addresses with multiple units, the unit identifier. Can include numbers and letters,
+        /// for example <code>3B</code> or <code>Unit 123</code>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Returned only for a place index that uses Esri or Grab as a data provider. Is not
+        /// returned for <code>SearchPlaceIndexForPosition</code>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public string UnitNumber
+        {
+            get { return this._unitNumber; }
+            set { this._unitNumber = value; }
+        }
+
+        // Check to see if UnitNumber property is set
+        internal bool IsSetUnitNumber()
+        {
+            return this._unitNumber != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UnitType. 
+        /// <para>
+        /// For addresses with a <code>UnitNumber</code>, the type of unit. For example, <code>Apartment</code>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Returned only for a place index that uses Esri as a data provider.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public string UnitType
+        {
+            get { return this._unitType; }
+            set { this._unitType = value; }
+        }
+
+        // Check to see if UnitType property is set
+        internal bool IsSetUnitType()
+        {
+            return this._unitType != null;
         }
 
     }

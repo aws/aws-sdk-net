@@ -34,7 +34,7 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// EngineVersion Marshaller
-    /// </summary>       
+    /// </summary>
     public class EngineVersionMarshaller : IRequestMarshaller<EngineVersion, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static EngineVersionMarshaller Instance = new EngineVersionMarshaller();
 
     }

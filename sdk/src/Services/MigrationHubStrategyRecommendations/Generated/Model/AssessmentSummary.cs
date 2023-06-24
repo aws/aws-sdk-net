@@ -38,8 +38,10 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
         private string _antipatternReportStatusMessage;
         private DateTime? _lastAnalyzedTimestamp;
         private List<AntipatternSeveritySummary> _listAntipatternSeveritySummary = new List<AntipatternSeveritySummary>();
+        private List<ApplicationComponentStatusSummary> _listApplicationComponentStatusSummary = new List<ApplicationComponentStatusSummary>();
         private List<StrategySummary> _listApplicationComponentStrategySummary = new List<StrategySummary>();
         private List<ApplicationComponentSummary> _listApplicationComponentSummary = new List<ApplicationComponentSummary>();
+        private List<ServerStatusSummary> _listServerStatusSummary = new List<ServerStatusSummary>();
         private List<StrategySummary> _listServerStrategySummary = new List<StrategySummary>();
         private List<ServerSummary> _listServerSummary = new List<ServerSummary>();
 
@@ -135,6 +137,24 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ListApplicationComponentStatusSummary. 
+        /// <para>
+        /// List of status summaries of the analyzed application components.
+        /// </para>
+        /// </summary>
+        public List<ApplicationComponentStatusSummary> ListApplicationComponentStatusSummary
+        {
+            get { return this._listApplicationComponentStatusSummary; }
+            set { this._listApplicationComponentStatusSummary = value; }
+        }
+
+        // Check to see if ListApplicationComponentStatusSummary property is set
+        internal bool IsSetListApplicationComponentStatusSummary()
+        {
+            return this._listApplicationComponentStatusSummary != null && this._listApplicationComponentStatusSummary.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property ListApplicationComponentStrategySummary. 
         /// <para>
         ///  List of ApplicationComponentStrategySummary. 
@@ -168,6 +188,24 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
         internal bool IsSetListApplicationComponentSummary()
         {
             return this._listApplicationComponentSummary != null && this._listApplicationComponentSummary.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ListServerStatusSummary. 
+        /// <para>
+        /// List of status summaries of the analyzed servers.
+        /// </para>
+        /// </summary>
+        public List<ServerStatusSummary> ListServerStatusSummary
+        {
+            get { return this._listServerStatusSummary; }
+            set { this._listServerStatusSummary = value; }
+        }
+
+        // Check to see if ListServerStatusSummary property is set
+        internal bool IsSetListServerStatusSummary()
+        {
+            return this._listServerStatusSummary != null && this._listServerStatusSummary.Count > 0; 
         }
 
         /// <summary>

@@ -38,7 +38,9 @@ namespace Amazon.CloudWatch.Model
     ///  
     /// <para>
     /// The alarms specified in a composite alarm's rule expression can include metric alarms
-    /// and other composite alarms.
+    /// and other composite alarms. The rule expression of a composite alarm can include as
+    /// many as 100 underlying alarms. Any single alarm can be included in the rule expressions
+    /// of as many as 150 composite alarms.
     /// </para>
     ///  
     /// <para>
@@ -65,7 +67,7 @@ namespace Amazon.CloudWatch.Model
     /// To get out of such a situation, you must break the cycle by changing the rule of one
     /// of the composite alarms in the cycle to remove a dependency that creates the cycle.
     /// The simplest change to make to break a cycle is to change the <code>AlarmRule</code>
-    /// of one of the alarms to <code>False</code>. 
+    /// of one of the alarms to <code>false</code>. 
     /// </para>
     ///  
     /// <para>
@@ -100,6 +102,9 @@ namespace Amazon.CloudWatch.Model
     public partial class PutCompositeAlarmRequest : AmazonCloudWatchRequest
     {
         private bool? _actionsEnabled;
+        private string _actionsSuppressor;
+        private int? _actionsSuppressorExtensionPeriod;
+        private int? _actionsSuppressorWaitPeriod;
         private List<string> _alarmActions = new List<string>();
         private string _alarmDescription;
         private string _alarmName;
@@ -125,6 +130,79 @@ namespace Amazon.CloudWatch.Model
         internal bool IsSetActionsEnabled()
         {
             return this._actionsEnabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ActionsSuppressor. 
+        /// <para>
+        ///  Actions will be suppressed if the suppressor alarm is in the <code>ALARM</code> state.
+        /// <code>ActionsSuppressor</code> can be an AlarmName or an Amazon Resource Name (ARN)
+        /// from an existing alarm. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1600)]
+        public string ActionsSuppressor
+        {
+            get { return this._actionsSuppressor; }
+            set { this._actionsSuppressor = value; }
+        }
+
+        // Check to see if ActionsSuppressor property is set
+        internal bool IsSetActionsSuppressor()
+        {
+            return this._actionsSuppressor != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ActionsSuppressorExtensionPeriod. 
+        /// <para>
+        ///  The maximum time in seconds that the composite alarm waits after suppressor alarm
+        /// goes out of the <code>ALARM</code> state. After this time, the composite alarm performs
+        /// its actions. 
+        /// </para>
+        ///  <important> 
+        /// <para>
+        ///  <code>ExtensionPeriod</code> is required only when <code>ActionsSuppressor</code>
+        /// is specified. 
+        /// </para>
+        ///  </important>
+        /// </summary>
+        public int ActionsSuppressorExtensionPeriod
+        {
+            get { return this._actionsSuppressorExtensionPeriod.GetValueOrDefault(); }
+            set { this._actionsSuppressorExtensionPeriod = value; }
+        }
+
+        // Check to see if ActionsSuppressorExtensionPeriod property is set
+        internal bool IsSetActionsSuppressorExtensionPeriod()
+        {
+            return this._actionsSuppressorExtensionPeriod.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ActionsSuppressorWaitPeriod. 
+        /// <para>
+        ///  The maximum time in seconds that the composite alarm waits for the suppressor alarm
+        /// to go into the <code>ALARM</code> state. After this time, the composite alarm performs
+        /// its actions. 
+        /// </para>
+        ///  <important> 
+        /// <para>
+        ///  <code>WaitPeriod</code> is required only when <code>ActionsSuppressor</code> is specified.
+        /// 
+        /// </para>
+        ///  </important>
+        /// </summary>
+        public int ActionsSuppressorWaitPeriod
+        {
+            get { return this._actionsSuppressorWaitPeriod.GetValueOrDefault(); }
+            set { this._actionsSuppressorWaitPeriod = value; }
+        }
+
+        // Check to see if ActionsSuppressorWaitPeriod property is set
+        internal bool IsSetActionsSuppressorWaitPeriod()
+        {
+            return this._actionsSuppressorWaitPeriod.HasValue; 
         }
 
         /// <summary>

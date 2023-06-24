@@ -33,6 +33,7 @@ namespace Amazon.Kendra.Model
     /// </summary>
     public partial class Document
     {
+        private string _accessControlConfigurationId;
         private List<Principal> _accessControlList = new List<Principal>();
         private List<DocumentAttribute> _attributes = new List<DocumentAttribute>();
         private MemoryStream _blob;
@@ -43,9 +44,30 @@ namespace Amazon.Kendra.Model
         private string _title;
 
         /// <summary>
+        /// Gets and sets the property AccessControlConfigurationId. 
+        /// <para>
+        /// The identifier of the access control configuration that you want to apply to the document.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=36)]
+        public string AccessControlConfigurationId
+        {
+            get { return this._accessControlConfigurationId; }
+            set { this._accessControlConfigurationId = value; }
+        }
+
+        // Check to see if AccessControlConfigurationId property is set
+        internal bool IsSetAccessControlConfigurationId()
+        {
+            return this._accessControlConfigurationId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property AccessControlList. 
         /// <para>
-        /// Information on user and group access rights, which is used for user context filtering.
+        /// Information on principals (users and/or groups) and which documents they should have
+        /// access to. This is useful for user context filtering, where search results are filtered
+        /// based on the user or their group access to documents.
         /// </para>
         /// </summary>
         public List<Principal> AccessControlList
@@ -66,6 +88,13 @@ namespace Amazon.Kendra.Model
         /// Custom attributes to apply to the document. Use the custom attributes to provide additional
         /// information for searching, to provide facets for refining searches, and to provide
         /// additional information in the query response.
+        /// </para>
+        ///  
+        /// <para>
+        /// For example, 'DataSourceId' and 'DataSourceSyncJobId' are custom attributes that provide
+        /// information on the synchronization of documents running on a data source. Note, 'DataSourceSyncJobId'
+        /// could be an optional custom attribute as Amazon Kendra will use the ID of a running
+        /// sync job.
         /// </para>
         /// </summary>
         public List<DocumentAttribute> Attributes
@@ -89,8 +118,8 @@ namespace Amazon.Kendra.Model
         /// <para>
         /// Documents passed to the <code>Blob</code> parameter must be base64 encoded. Your code
         /// might not need to encode the document file bytes if you're using an Amazon Web Services
-        /// SDK to call Amazon Kendra operations. If you are calling the Amazon Kendra endpoint
-        /// directly using REST, you must base64 encode the contents before sending.
+        /// SDK to call Amazon Kendra APIs. If you are calling the Amazon Kendra endpoint directly
+        /// using REST, you must base64 encode the contents before sending.
         /// </para>
         /// </summary>
         public MemoryStream Blob
@@ -109,6 +138,12 @@ namespace Amazon.Kendra.Model
         /// Gets and sets the property ContentType. 
         /// <para>
         /// The file type of the document in the <code>Blob</code> field.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you want to index snippets or subsets of HTML documents instead of the entirety
+        /// of the HTML documents, you must add the <code>HTML</code> start and closing tags (<code>&lt;HTML&gt;content&lt;/HTML&gt;</code>)
+        /// around the content.
         /// </para>
         /// </summary>
         public ContentType ContentType
@@ -146,7 +181,14 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// A unique identifier of the document in the index.
+        /// A identifier of the document in the index.
+        /// </para>
+        ///  
+        /// <para>
+        /// Note, each document ID must be unique per index. You cannot create a data source to
+        /// index your documents with their unique IDs and then use the <code>BatchPutDocument</code>
+        /// API to index the same documents, or vice versa. You can delete a data source and then
+        /// use the <code>BatchPutDocument</code> API to index the same documents, or vice versa.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]

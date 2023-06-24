@@ -34,7 +34,7 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// VpcInterfaceRequest Marshaller
-    /// </summary>       
+    /// </summary>
     public class VpcInterfaceRequestMarshaller : IRequestMarshaller<VpcInterfaceRequest, JsonMarshallerContext> 
     {
         /// <summary>
@@ -84,7 +84,7 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static VpcInterfaceRequestMarshaller Instance = new VpcInterfaceRequestMarshaller();
 
     }

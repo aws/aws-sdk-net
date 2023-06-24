@@ -38,6 +38,7 @@ namespace Amazon.Lightsail.Model
         private DateTime? _createdAt;
         private string _dnsName;
         private string _healthCheckPath;
+        private bool? _httpsRedirectionEnabled;
         private List<InstanceHealthSummary> _instanceHealthSummary = new List<InstanceHealthSummary>();
         private int? _instancePort;
         private IpAddressType _ipAddressType;
@@ -50,6 +51,7 @@ namespace Amazon.Lightsail.Model
         private string _supportCode;
         private List<Tag> _tags = new List<Tag>();
         private List<LoadBalancerTlsCertificateSummary> _tlsCertificateSummaries = new List<LoadBalancerTlsCertificateSummary>();
+        private string _tlsPolicyName;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -141,6 +143,24 @@ namespace Amazon.Lightsail.Model
         internal bool IsSetHealthCheckPath()
         {
             return this._healthCheckPath != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HttpsRedirectionEnabled. 
+        /// <para>
+        /// A Boolean value that indicates whether HTTPS redirection is enabled for the load balancer.
+        /// </para>
+        /// </summary>
+        public bool HttpsRedirectionEnabled
+        {
+            get { return this._httpsRedirectionEnabled.GetValueOrDefault(); }
+            set { this._httpsRedirectionEnabled = value; }
+        }
+
+        // Check to see if HttpsRedirectionEnabled property is set
+        internal bool IsSetHttpsRedirectionEnabled()
+        {
+            return this._httpsRedirectionEnabled.HasValue; 
         }
 
         /// <summary>
@@ -375,6 +395,24 @@ namespace Amazon.Lightsail.Model
         internal bool IsSetTlsCertificateSummaries()
         {
             return this._tlsCertificateSummaries != null && this._tlsCertificateSummaries.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TlsPolicyName. 
+        /// <para>
+        /// The name of the TLS security policy for the load balancer.
+        /// </para>
+        /// </summary>
+        public string TlsPolicyName
+        {
+            get { return this._tlsPolicyName; }
+            set { this._tlsPolicyName = value; }
+        }
+
+        // Check to see if TlsPolicyName property is set
+        internal bool IsSetTlsPolicyName()
+        {
+            return this._tlsPolicyName != null;
         }
 
     }

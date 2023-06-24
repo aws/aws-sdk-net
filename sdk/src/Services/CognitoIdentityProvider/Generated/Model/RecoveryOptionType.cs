@@ -39,7 +39,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Specifies the recovery method for a user.
+        /// The recovery method for a user.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

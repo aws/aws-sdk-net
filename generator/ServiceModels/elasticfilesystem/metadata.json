@@ -1,5 +1,6 @@
 {
-    "base-name": "ElasticFileSystem", 
-    "active": true, 
-    "synopsis": "Amazon Elastic File System (Amazon EFS) is a file storage service for Amazon Elastic Compute Cloud (Amazon EC2) instances."
+  "base-name": "ElasticFileSystem",
+  "active": true,
+  "synopsis": "Amazon Elastic File System (Amazon EFS) is a file storage service for Amazon Elastic Compute Cloud (Amazon EC2) instances.",
+  "legacy-service-id": "EFS"
 }

@@ -30,7 +30,9 @@ namespace Amazon.TranscribeService.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteLanguageModel operation.
-    /// Deletes a custom language model using its name.
+    /// Deletes a custom language model. To use this operation, specify the name of the language
+    /// model you want to delete using <code>ModelName</code>. custom language model names
+    /// are case sensitive.
     /// </summary>
     public partial class DeleteLanguageModelRequest : AmazonTranscribeServiceRequest
     {
@@ -39,7 +41,7 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property ModelName. 
         /// <para>
-        /// The name of the model you're choosing to delete.
+        /// The name of the custom language model you want to delete. Model names are case sensitive.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=200)]

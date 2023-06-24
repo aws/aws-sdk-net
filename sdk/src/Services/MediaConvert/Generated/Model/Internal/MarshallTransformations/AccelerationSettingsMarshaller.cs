@@ -34,7 +34,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AccelerationSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class AccelerationSettingsMarshaller : IRequestMarshaller<AccelerationSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AccelerationSettingsMarshaller Instance = new AccelerationSettingsMarshaller();
 
     }

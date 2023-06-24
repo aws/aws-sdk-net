@@ -34,7 +34,7 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RedshiftDataParameters Marshaller
-    /// </summary>       
+    /// </summary>
     public class RedshiftDataParametersMarshaller : IRequestMarshaller<RedshiftDataParameters, JsonMarshallerContext> 
     {
         /// <summary>
@@ -69,6 +69,17 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Sql);
             }
 
+            if(requestObject.IsSetSqls())
+            {
+                context.Writer.WritePropertyName("Sqls");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectSqlsListValue in requestObject.Sqls)
+                {
+                        context.Writer.Write(requestObjectSqlsListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetStatementName())
             {
                 context.Writer.WritePropertyName("StatementName");
@@ -85,7 +96,7 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RedshiftDataParametersMarshaller Instance = new RedshiftDataParametersMarshaller();
 
     }

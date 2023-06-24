@@ -39,7 +39,8 @@ namespace Amazon.IoTSecureTunneling.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// A token to used to retrieve the next set of results.
+        /// The token to use to get the next set of results, or null if there are no additional
+        /// results.
         /// </para>
         /// </summary>
         public string NextToken
@@ -57,7 +58,7 @@ namespace Amazon.IoTSecureTunneling.Model
         /// <summary>
         /// Gets and sets the property TunnelSummaries. 
         /// <para>
-        /// A short description of the tunnels in an AWS account.
+        /// A short description of the tunnels in an Amazon Web Services account.
         /// </para>
         /// </summary>
         public List<TunnelSummary> TunnelSummaries

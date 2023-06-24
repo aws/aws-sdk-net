@@ -34,7 +34,7 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RelationalDatabaseParameter Marshaller
-    /// </summary>       
+    /// </summary>
     public class RelationalDatabaseParameterMarshaller : IRequestMarshaller<RelationalDatabaseParameter, JsonMarshallerContext> 
     {
         /// <summary>
@@ -97,7 +97,7 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RelationalDatabaseParameterMarshaller Instance = new RelationalDatabaseParameterMarshaller();
 
     }

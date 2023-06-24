@@ -64,6 +64,12 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("CertificateBasedAuthProperties", targetDepth))
+                {
+                    var unmarshaller = CertificateBasedAuthPropertiesUnmarshaller.Instance;
+                    unmarshalledObject.CertificateBasedAuthProperties = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CreatedTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

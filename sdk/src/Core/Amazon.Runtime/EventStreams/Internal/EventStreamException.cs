@@ -35,7 +35,7 @@ namespace Amazon.Runtime.EventStreams.Internal
         /// Constructs an EventStreamException.
         /// </summary>
         protected EventStreamException()
-        {     
+        { 
         }
 
         /// <summary>

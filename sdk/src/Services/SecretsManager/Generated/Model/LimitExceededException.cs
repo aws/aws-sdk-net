@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecretsManager.Model
 {
     /// <summary>
-    /// The request failed because it would exceed one of the Secrets Manager internal limits.
+    /// The request failed because it would exceed one of the Secrets Manager quotas.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

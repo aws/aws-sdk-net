@@ -37,8 +37,10 @@ namespace Amazon.Route53RecoveryReadiness.Model
         private List<ReadinessCheckOutput> _readinessChecks = new List<ReadinessCheckOutput>();
 
         /// <summary>
-        /// Gets and sets the property NextToken. A token that can be used to resume pagination
-        /// from the end of the collection.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The token that identifies which batch of results you want to see.
+        /// </para>
         /// </summary>
         public string NextToken
         {
@@ -53,8 +55,10 @@ namespace Amazon.Route53RecoveryReadiness.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ReadinessChecks. A list of ReadinessCheck associated with
-        /// the account
+        /// Gets and sets the property ReadinessChecks. 
+        /// <para>
+        /// A list of readiness checks associated with the account.
+        /// </para>
         /// </summary>
         public List<ReadinessCheckOutput> ReadinessChecks
         {

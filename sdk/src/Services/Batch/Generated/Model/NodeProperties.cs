@@ -29,7 +29,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Batch.Model
 {
     /// <summary>
-    /// An object representing the node properties of a multi-node parallel job.
+    /// An object that represents the node properties of a multi-node parallel job.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// Node properties can't be specified for Amazon EKS based job definitions.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class NodeProperties
     {
@@ -60,7 +66,8 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property NodeRangeProperties. 
         /// <para>
-        /// A list of node ranges and their properties associated with a multi-node parallel job.
+        /// A list of node ranges and their properties that are associated with a multi-node parallel
+        /// job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -79,7 +86,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property NumNodes. 
         /// <para>
-        /// The number of nodes associated with a multi-node parallel job.
+        /// The number of nodes that are associated with a multi-node parallel job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

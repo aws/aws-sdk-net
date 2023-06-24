@@ -17,22 +17,22 @@
  * Do not modify this file. This file is generated from the amplifybackend-2020-08-11.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
-
+using Amazon.AmplifyBackend.Internal;
 
 namespace Amazon.AmplifyBackend
 {
     /// <summary>
     /// Configuration for accessing Amazon AmplifyBackend service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonAmplifyBackendConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.4.5");
+            InternalSDKUtils.BuildUserAgentString("3.7.101.98");
 
         private string _userAgent = UserAgentString;
 
@@ -40,8 +40,10 @@ namespace Amazon.AmplifyBackend
         /// Default constructor
         /// </summary>
         public AmazonAmplifyBackendConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonAmplifyBackendDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "amplifybackend";
+            this.EndpointProvider = new AmazonAmplifyBackendEndpointProvider();
         }
 
         /// <summary>
@@ -76,5 +78,6 @@ namespace Amazon.AmplifyBackend
                 return _userAgent;
             }
         }
+
     }
 }

@@ -41,8 +41,8 @@ namespace Amazon.AutoScaling.Model
     /// <para>
     /// If you exceed your maximum limit of Auto Scaling groups, the call fails. To query
     /// this limit, call the <a>DescribeAccountLimits</a> API. For information about updating
-    /// this limit, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html">Amazon
-    /// EC2 Auto Scaling service quotas</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+    /// this limit, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-quotas.html">Quotas
+    /// for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -54,7 +54,7 @@ namespace Amazon.AutoScaling.Model
     /// </para>
     ///  
     /// <para>
-    /// Every Auto Scaling group has three size parameters (<code>DesiredCapacity</code>,
+    /// Every Auto Scaling group has three size properties (<code>DesiredCapacity</code>,
     /// <code>MaxSize</code>, and <code>MinSize</code>). Usually, you set these sizes based
     /// on a specific number of instances. However, if you configure a mixed instances policy
     /// that defines weights for the instance types, you must specify these sizes with the
@@ -68,6 +68,7 @@ namespace Amazon.AutoScaling.Model
         private bool? _capacityRebalance;
         private string _context;
         private int? _defaultCooldown;
+        private int? _defaultInstanceWarmup;
         private int? _desiredCapacity;
         private string _desiredCapacityType;
         private int? _healthCheckGracePeriod;
@@ -87,6 +88,7 @@ namespace Amazon.AutoScaling.Model
         private List<Tag> _tags = new List<Tag>();
         private List<string> _targetGroupARNs = new List<string>();
         private List<string> _terminationPolicies = new List<string>();
+        private List<TrafficSourceIdentifier> _trafficSources = new List<TrafficSourceIdentifier>();
         private string _vpcZoneIdentifier;
 
         /// <summary>
@@ -94,6 +96,16 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         /// The name of the Auto Scaling group. This name must be unique per Region per account.
         /// </para>
+        ///  
+        /// <para>
+        /// The name can contain any ASCII character 33 to 126 including most punctuation characters,
+        /// digits, and upper and lowercased letters.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// You cannot use a colon (:) in the name.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
         public string AutoScalingGroupName
@@ -112,12 +124,9 @@ namespace Amazon.AutoScaling.Model
         /// Gets and sets the property AvailabilityZones. 
         /// <para>
         /// A list of Availability Zones where instances in the Auto Scaling group can be created.
-        /// This parameter is optional if you specify one or more subnets for <code>VPCZoneIdentifier</code>.
-        /// </para>
-        ///  
-        /// <para>
-        /// Conditional: If your account supports EC2-Classic and VPC, this parameter is required
-        /// to launch instances into EC2-Classic.
+        /// Used for launching into the default VPC subnet in each Availability Zone when not
+        /// using the <code>VPCZoneIdentifier</code> property, or for attaching a network interface
+        /// when an existing network interface ID is specified in a launch template.
         /// </para>
         /// </summary>
         public List<string> AvailabilityZones
@@ -139,8 +148,9 @@ namespace Amazon.AutoScaling.Model
         /// is disabled. When you turn on Capacity Rebalancing, Amazon EC2 Auto Scaling attempts
         /// to launch a Spot Instance whenever Amazon EC2 notifies that a Spot Instance is at
         /// an elevated risk of interruption. After launching a new instance, it then terminates
-        /// an old instance. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-capacity-rebalancing.html">Amazon
-        /// EC2 Auto Scaling Capacity Rebalancing</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+        /// an old instance. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-capacity-rebalancing.html">Use
+        /// Capacity Rebalancing to handle Amazon EC2 Spot Interruptions</a> in the in the <i>Amazon
+        /// EC2 Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
         public bool CapacityRebalance
@@ -176,11 +186,17 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property DefaultCooldown. 
         /// <para>
-        /// The amount of time, in seconds, after a scaling activity completes before another
-        /// scaling activity can start. The default value is <code>300</code>. This setting applies
-        /// when using simple scaling policies, but not when using other scaling policies or scheduled
-        /// scaling. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling
+        ///  <i>Only needed if you use simple scaling policies.</i> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The amount of time, in seconds, between one scaling activity ending and another one
+        /// starting due to simple scaling policies. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling
         /// cooldowns for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: <code>300</code> seconds
         /// </para>
         /// </summary>
         public int DefaultCooldown
@@ -193,6 +209,49 @@ namespace Amazon.AutoScaling.Model
         internal bool IsSetDefaultCooldown()
         {
             return this._defaultCooldown.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DefaultInstanceWarmup. 
+        /// <para>
+        /// The amount of time, in seconds, until a new instance is considered to have finished
+        /// initializing and resource consumption to become stable after it enters the <code>InService</code>
+        /// state. 
+        /// </para>
+        ///  
+        /// <para>
+        /// During an instance refresh, Amazon EC2 Auto Scaling waits for the warm-up period after
+        /// it replaces an instance before it moves on to replacing the next instance. Amazon
+        /// EC2 Auto Scaling also waits for the warm-up period before aggregating the metrics
+        /// for new instances with existing instances in the Amazon CloudWatch metrics that are
+        /// used for scaling, resulting in more reliable usage data. For more information, see
+        /// <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-default-instance-warmup.html">Set
+        /// the default instance warmup for an Auto Scaling group</a> in the <i>Amazon EC2 Auto
+        /// Scaling User Guide</i>.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// To manage various warm-up settings at the group level, we recommend that you set the
+        /// default instance warmup, <i>even if it is set to 0 seconds</i>. To remove a value
+        /// that you previously set, include the property but specify <code>-1</code> for the
+        /// value. However, we strongly recommend keeping the default instance warmup enabled
+        /// by specifying a value of <code>0</code> or other nominal value.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// Default: None 
+        /// </para>
+        /// </summary>
+        public int DefaultInstanceWarmup
+        {
+            get { return this._defaultInstanceWarmup.GetValueOrDefault(); }
+            set { this._defaultInstanceWarmup = value; }
+        }
+
+        // Check to see if DefaultInstanceWarmup property is set
+        internal bool IsSetDefaultInstanceWarmup()
+        {
+            return this._defaultInstanceWarmup.HasValue; 
         }
 
         /// <summary>
@@ -255,13 +314,15 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         /// The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before checking
         /// the health status of an EC2 instance that has come into service and marking it unhealthy
-        /// due to a failed health check. The default value is <code>0</code>. For more information,
-        /// see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period">Health
-        /// check grace period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+        /// due to a failed health check. This is useful if your instances do not immediately
+        /// pass their health checks after they enter the <code>InService</code> state. For more
+        /// information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/health-check-grace-period.html">Set
+        /// the health check grace period for an Auto Scaling group</a> in the <i>Amazon EC2 Auto
+        /// Scaling User Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// Conditional: Required if you are adding an <code>ELB</code> health check.
+        /// Default: <code>0</code> seconds
         /// </para>
         /// </summary>
         public int HealthCheckGracePeriod
@@ -279,11 +340,18 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property HealthCheckType. 
         /// <para>
-        /// The service to use for the health checks. The valid values are <code>EC2</code> (default)
-        /// and <code>ELB</code>. If you configure an Auto Scaling group to use load balancer
-        /// (ELB) health checks, it considers the instance unhealthy if it fails either the EC2
-        /// status checks or the load balancer health checks. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html">Health
+        /// A comma-separated value string of one or more health check types.
+        /// </para>
+        ///  
+        /// <para>
+        /// The valid values are <code>EC2</code>, <code>ELB</code>, and <code>VPC_LATTICE</code>.
+        /// <code>EC2</code> is the default health check and cannot be disabled. For more information,
+        /// see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html">Health
         /// checks for Auto Scaling instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Only specify <code>EC2</code> if you must clear a value that was previously set.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=32)]
@@ -351,7 +419,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property LaunchTemplate. 
         /// <para>
-        /// Parameters used to specify the launch template and version to use to launch instances.
+        /// Information used to specify the launch template and version to use to launch instances.
         /// 
         /// </para>
         ///  
@@ -384,8 +452,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property LifecycleHookSpecificationList. 
         /// <para>
-        /// One or more lifecycle hooks for the group, which specify actions to perform when Amazon
-        /// EC2 Auto Scaling launches or terminates instances.
+        /// One or more lifecycle hooks to add to the Auto Scaling group before instances are
+        /// launched.
         /// </para>
         /// </summary>
         public List<LifecycleHookSpecification> LifecycleHookSpecificationList
@@ -492,11 +560,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property MixedInstancesPolicy. 
         /// <para>
-        /// An embedded object that specifies a mixed instances policy.
-        /// </para>
-        ///  
-        /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups.html">Auto
+        /// The mixed instances policy. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups.html">Auto
         /// Scaling groups with multiple instance types and purchase options</a> in the <i>Amazon
         /// EC2 Auto Scaling User Guide</i>.
         /// </para>
@@ -537,12 +601,17 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property PlacementGroup. 
         /// <para>
-        /// The name of an existing placement group into which to launch your instances, if any.
-        /// A placement group is a logical grouping of instances within a single Availability
-        /// Zone. You cannot specify multiple Availability Zones and a placement group. For more
-        /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-        /// Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+        /// The name of the placement group into which to launch your instances. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
+        /// groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// A <i>cluster</i> placement group is a logical grouping of instances within a single
+        /// Availability Zone. You cannot specify multiple Availability Zones and a cluster placement
+        /// group. 
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
         public string PlacementGroup
@@ -561,8 +630,8 @@ namespace Amazon.AutoScaling.Model
         /// Gets and sets the property ServiceLinkedRoleARN. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the service-linked role that the Auto Scaling group
-        /// uses to call other Amazon Web Services on your behalf. By default, Amazon EC2 Auto
-        /// Scaling uses a service-linked role named <code>AWSServiceRoleForAutoScaling</code>,
+        /// uses to call other Amazon Web Services service on your behalf. By default, Amazon
+        /// EC2 Auto Scaling uses a service-linked role named <code>AWSServiceRoleForAutoScaling</code>,
         /// which it creates if it does not exist. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-service-linked-role.html">Service-linked
         /// roles</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
@@ -589,7 +658,7 @@ namespace Amazon.AutoScaling.Model
         /// If the launch template specifies an instance tag with a key that is also specified
         /// for the Auto Scaling group, Amazon EC2 Auto Scaling overrides the value of that instance
         /// tag with the value specified by the Auto Scaling group. For more information, see
-        /// <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-tagging.html">Tagging
+        /// <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-tagging.html">Tag
         /// Auto Scaling groups and instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
@@ -608,11 +677,12 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property TargetGroupARNs. 
         /// <para>
-        /// The Amazon Resource Names (ARN) of the target groups to associate with the Auto Scaling
-        /// group. Instances are registered as targets in a target group, and traffic is routed
-        /// to the target group. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Elastic
-        /// Load Balancing and Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User
-        /// Guide</i>.
+        /// The Amazon Resource Names (ARN) of the Elastic Load Balancing target groups to associate
+        /// with the Auto Scaling group. Instances are registered as targets with the target groups.
+        /// The target groups receive incoming traffic and route requests to one or more registered
+        /// targets. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Use
+        /// Elastic Load Balancing to distribute traffic across the instances in your Auto Scaling
+        /// group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
         public List<string> TargetGroupARNs
@@ -632,9 +702,16 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         /// A policy or a list of policies that are used to select the instance to terminate.
         /// These policies are executed in the order that you list them. For more information,
-        /// see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html">Controlling
-        /// which Auto Scaling instances terminate during scale in</a> in the <i>Amazon EC2 Auto
-        /// Scaling User Guide</i>.
+        /// see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-termination-policies.html">Work
+        /// with Amazon EC2 Auto Scaling termination policies</a> in the <i>Amazon EC2 Auto Scaling
+        /// User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values: <code>Default</code> | <code>AllocationStrategy</code> | <code>ClosestToNextInstanceHour</code>
+        /// | <code>NewestInstance</code> | <code>OldestInstance</code> | <code>OldestLaunchConfiguration</code>
+        /// | <code>OldestLaunchTemplate</code> | <code>arn:aws:lambda:region:account-id:function:my-function:my-alias</code>
+        /// 
         /// </para>
         /// </summary>
         public List<string> TerminationPolicies
@@ -650,17 +727,32 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
+        /// Gets and sets the property TrafficSources. 
+        /// <para>
+        /// The list of traffic sources to attach to this Auto Scaling group. You can use any
+        /// of the following as traffic sources for an Auto Scaling group: Classic Load Balancer,
+        /// Application Load Balancer, Gateway Load Balancer, Network Load Balancer, and VPC Lattice.
+        /// </para>
+        /// </summary>
+        public List<TrafficSourceIdentifier> TrafficSources
+        {
+            get { return this._trafficSources; }
+            set { this._trafficSources = value; }
+        }
+
+        // Check to see if TrafficSources property is set
+        internal bool IsSetTrafficSources()
+        {
+            return this._trafficSources != null && this._trafficSources.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property VPCZoneIdentifier. 
         /// <para>
         /// A comma-separated list of subnet IDs for a virtual private cloud (VPC) where instances
         /// in the Auto Scaling group can be created. If you specify <code>VPCZoneIdentifier</code>
-        /// with <code>AvailabilityZones</code>, the subnets that you specify for this parameter
-        /// must reside in those Availability Zones.
-        /// </para>
-        ///  
-        /// <para>
-        /// Conditional: If your account supports EC2-Classic and VPC, this parameter is required
-        /// to launch instances into a VPC.
+        /// with <code>AvailabilityZones</code>, the subnets that you specify must reside in those
+        /// Availability Zones.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2047)]

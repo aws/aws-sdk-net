@@ -34,7 +34,7 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// PortSet Marshaller
-    /// </summary>       
+    /// </summary>
     public class PortSetMarshaller : IRequestMarshaller<PortSet, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static PortSetMarshaller Instance = new PortSetMarshaller();
 
     }

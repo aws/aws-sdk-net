@@ -34,7 +34,7 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ContainerProvider Marshaller
-    /// </summary>       
+    /// </summary>
     public class ContainerProviderMarshaller : IRequestMarshaller<ContainerProvider, JsonMarshallerContext> 
     {
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ContainerProviderMarshaller Instance = new ContainerProviderMarshaller();
 
     }

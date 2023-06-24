@@ -17,22 +17,22 @@
  * Do not modify this file. This file is generated from the cur-2017-01-06.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
-
+using Amazon.CostAndUsageReport.Internal;
 
 namespace Amazon.CostAndUsageReport
 {
     /// <summary>
     /// Configuration for accessing Amazon CostAndUsageReport service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonCostAndUsageReportConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.105");
+            InternalSDKUtils.BuildUserAgentString("3.7.101.13");
 
         private string _userAgent = UserAgentString;
 
@@ -40,8 +40,10 @@ namespace Amazon.CostAndUsageReport
         /// Default constructor
         /// </summary>
         public AmazonCostAndUsageReportConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonCostAndUsageReportDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "cur";
+            this.EndpointProvider = new AmazonCostAndUsageReportEndpointProvider();
         }
 
         /// <summary>
@@ -76,5 +78,6 @@ namespace Amazon.CostAndUsageReport
                 return _userAgent;
             }
         }
+
     }
 }

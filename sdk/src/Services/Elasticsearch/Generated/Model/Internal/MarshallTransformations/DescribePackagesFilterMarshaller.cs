@@ -34,7 +34,7 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DescribePackagesFilter Marshaller
-    /// </summary>       
+    /// </summary>
     public class DescribePackagesFilterMarshaller : IRequestMarshaller<DescribePackagesFilter, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DescribePackagesFilterMarshaller Instance = new DescribePackagesFilterMarshaller();
 
     }

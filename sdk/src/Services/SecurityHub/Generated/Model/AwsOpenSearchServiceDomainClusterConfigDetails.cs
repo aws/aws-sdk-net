@@ -127,7 +127,13 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property InstanceType. 
         /// <para>
-        /// The instance type for your data nodes. 
+        /// The instance type for your data nodes.
+        /// </para>
+        ///  
+        /// <para>
+        /// For a list of valid values, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/supported-instance-types.html">Supported
+        /// instance types in Amazon OpenSearch Service</a> in the <i>Amazon OpenSearch Service
+        /// Developer Guide</i>.
         /// </para>
         /// </summary>
         public string InstanceType

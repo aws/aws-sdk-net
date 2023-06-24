@@ -158,16 +158,17 @@ namespace Amazon.Lambda
         /// 
         /// <returns>The response from the AddLayerVersionPermission service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.PolicyLengthExceededException">
-        /// The permissions policy for the resource is too large. <a href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">Learn
-        /// more</a>
+        /// The permissions policy for the resource is too large. For more information, see <a
+        /// href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.PreconditionFailedException">
         /// The RevisionId provided does not match the latest RevisionId for the Lambda function
-        /// or alias. Call the <code>GetFunction</code> or the <code>GetAlias</code> API to retrieve
-        /// the latest RevisionId for your resource.
+        /// or alias. Call the <code>GetFunction</code> or the <code>GetAlias</code> API operation
+        /// to retrieve the latest RevisionId for your resource.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
         /// The resource already exists, or another operation is in progress.
@@ -179,7 +180,8 @@ namespace Amazon.Lambda
         /// The Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/AddLayerVersionPermission">REST API Reference for AddLayerVersionPermission Operation</seealso>
         AddLayerVersionPermissionResponse AddLayerVersionPermission(AddLayerVersionPermissionRequest request);
@@ -205,16 +207,17 @@ namespace Amazon.Lambda
         /// 
         /// <returns>The response from the AddLayerVersionPermission service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.PolicyLengthExceededException">
-        /// The permissions policy for the resource is too large. <a href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">Learn
-        /// more</a>
+        /// The permissions policy for the resource is too large. For more information, see <a
+        /// href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.PreconditionFailedException">
         /// The RevisionId provided does not match the latest RevisionId for the Lambda function
-        /// or alias. Call the <code>GetFunction</code> or the <code>GetAlias</code> API to retrieve
-        /// the latest RevisionId for your resource.
+        /// or alias. Call the <code>GetFunction</code> or the <code>GetAlias</code> API operation
+        /// to retrieve the latest RevisionId for your resource.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
         /// The resource already exists, or another operation is in progress.
@@ -226,7 +229,8 @@ namespace Amazon.Lambda
         /// The Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/AddLayerVersionPermission">REST API Reference for AddLayerVersionPermission Operation</seealso>
         Task<AddLayerVersionPermissionResponse> AddLayerVersionPermissionAsync(AddLayerVersionPermissionRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -237,43 +241,46 @@ namespace Amazon.Lambda
 
 
         /// <summary>
-        /// Grants an Amazon Web Services service or another account permission to use a function.
-        /// You can apply the policy at the function level, or specify a qualifier to restrict
-        /// access to a single version or alias. If you use a qualifier, the invoker must use
-        /// the full Amazon Resource Name (ARN) of that version or alias to invoke the function.
-        /// Note: Lambda does not support adding policies to version $LATEST.
+        /// Grants an Amazon Web Service, Amazon Web Services account, or Amazon Web Services
+        /// organization permission to use a function. You can apply the policy at the function
+        /// level, or specify a qualifier to restrict access to a single version or alias. If
+        /// you use a qualifier, the invoker must use the full Amazon Resource Name (ARN) of that
+        /// version or alias to invoke the function. Note: Lambda does not support adding policies
+        /// to version $LATEST.
         /// 
         ///  
         /// <para>
         /// To grant permission to another account, specify the account ID as the <code>Principal</code>.
-        /// For Amazon Web Services services, the principal is a domain-style identifier defined
-        /// by the service, like <code>s3.amazonaws.com</code> or <code>sns.amazonaws.com</code>.
-        /// For Amazon Web Services services, you can also specify the ARN of the associated resource
-        /// as the <code>SourceArn</code>. If you grant permission to a service principal without
-        /// specifying the source, other accounts could potentially configure resources in their
-        /// account to invoke your Lambda function.
+        /// To grant permission to an organization defined in Organizations, specify the organization
+        /// ID as the <code>PrincipalOrgID</code>. For Amazon Web Services, the principal is a
+        /// domain-style identifier that the service defines, such as <code>s3.amazonaws.com</code>
+        /// or <code>sns.amazonaws.com</code>. For Amazon Web Services, you can also specify the
+        /// ARN of the associated resource as the <code>SourceArn</code>. If you grant permission
+        /// to a service principal without specifying the source, other accounts could potentially
+        /// configure resources in their account to invoke your Lambda function.
         /// </para>
         ///  
         /// <para>
-        /// This action adds a statement to a resource-based permissions policy for the function.
-        /// For more information about function policies, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/access-control-resource-based.html">Lambda
-        /// Function Policies</a>. 
+        /// This operation adds a statement to a resource-based permissions policy for the function.
+        /// For more information about function policies, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/access-control-resource-based.html">Using
+        /// resource-based policies for Lambda</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AddPermission service method.</param>
         /// 
         /// <returns>The response from the AddPermission service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.PolicyLengthExceededException">
-        /// The permissions policy for the resource is too large. <a href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">Learn
-        /// more</a>
+        /// The permissions policy for the resource is too large. For more information, see <a
+        /// href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.PreconditionFailedException">
         /// The RevisionId provided does not match the latest RevisionId for the Lambda function
-        /// or alias. Call the <code>GetFunction</code> or the <code>GetAlias</code> API to retrieve
-        /// the latest RevisionId for your resource.
+        /// or alias. Call the <code>GetFunction</code> or the <code>GetAlias</code> API operation
+        /// to retrieve the latest RevisionId for your resource.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
         /// The resource already exists, or another operation is in progress.
@@ -285,7 +292,8 @@ namespace Amazon.Lambda
         /// The Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/AddPermission">REST API Reference for AddPermission Operation</seealso>
         AddPermissionResponse AddPermission(AddPermissionRequest request);
@@ -293,27 +301,29 @@ namespace Amazon.Lambda
 
 
         /// <summary>
-        /// Grants an Amazon Web Services service or another account permission to use a function.
-        /// You can apply the policy at the function level, or specify a qualifier to restrict
-        /// access to a single version or alias. If you use a qualifier, the invoker must use
-        /// the full Amazon Resource Name (ARN) of that version or alias to invoke the function.
-        /// Note: Lambda does not support adding policies to version $LATEST.
+        /// Grants an Amazon Web Service, Amazon Web Services account, or Amazon Web Services
+        /// organization permission to use a function. You can apply the policy at the function
+        /// level, or specify a qualifier to restrict access to a single version or alias. If
+        /// you use a qualifier, the invoker must use the full Amazon Resource Name (ARN) of that
+        /// version or alias to invoke the function. Note: Lambda does not support adding policies
+        /// to version $LATEST.
         /// 
         ///  
         /// <para>
         /// To grant permission to another account, specify the account ID as the <code>Principal</code>.
-        /// For Amazon Web Services services, the principal is a domain-style identifier defined
-        /// by the service, like <code>s3.amazonaws.com</code> or <code>sns.amazonaws.com</code>.
-        /// For Amazon Web Services services, you can also specify the ARN of the associated resource
-        /// as the <code>SourceArn</code>. If you grant permission to a service principal without
-        /// specifying the source, other accounts could potentially configure resources in their
-        /// account to invoke your Lambda function.
+        /// To grant permission to an organization defined in Organizations, specify the organization
+        /// ID as the <code>PrincipalOrgID</code>. For Amazon Web Services, the principal is a
+        /// domain-style identifier that the service defines, such as <code>s3.amazonaws.com</code>
+        /// or <code>sns.amazonaws.com</code>. For Amazon Web Services, you can also specify the
+        /// ARN of the associated resource as the <code>SourceArn</code>. If you grant permission
+        /// to a service principal without specifying the source, other accounts could potentially
+        /// configure resources in their account to invoke your Lambda function.
         /// </para>
         ///  
         /// <para>
-        /// This action adds a statement to a resource-based permissions policy for the function.
-        /// For more information about function policies, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/access-control-resource-based.html">Lambda
-        /// Function Policies</a>. 
+        /// This operation adds a statement to a resource-based permissions policy for the function.
+        /// For more information about function policies, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/access-control-resource-based.html">Using
+        /// resource-based policies for Lambda</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AddPermission service method.</param>
@@ -323,16 +333,17 @@ namespace Amazon.Lambda
         /// 
         /// <returns>The response from the AddPermission service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.PolicyLengthExceededException">
-        /// The permissions policy for the resource is too large. <a href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">Learn
-        /// more</a>
+        /// The permissions policy for the resource is too large. For more information, see <a
+        /// href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.PreconditionFailedException">
         /// The RevisionId provided does not match the latest RevisionId for the Lambda function
-        /// or alias. Call the <code>GetFunction</code> or the <code>GetAlias</code> API to retrieve
-        /// the latest RevisionId for your resource.
+        /// or alias. Call the <code>GetFunction</code> or the <code>GetAlias</code> API operation
+        /// to retrieve the latest RevisionId for your resource.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
         /// The resource already exists, or another operation is in progress.
@@ -344,7 +355,8 @@ namespace Amazon.Lambda
         /// The Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/AddPermission">REST API Reference for AddPermission Operation</seealso>
         Task<AddPermissionResponse> AddPermissionAsync(AddPermissionRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -355,7 +367,7 @@ namespace Amazon.Lambda
 
 
         /// <summary>
-        /// Creates an <a href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">alias</a>
+        /// Creates an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html">alias</a>
         /// for a Lambda function version. Use aliases to provide clients with a function identifier
         /// that you can update to invoke a different version.
         /// 
@@ -370,7 +382,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>The response from the CreateAlias service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
         /// The resource already exists, or another operation is in progress.
@@ -382,7 +394,8 @@ namespace Amazon.Lambda
         /// The Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateAlias">REST API Reference for CreateAlias Operation</seealso>
         CreateAliasResponse CreateAlias(CreateAliasRequest request);
@@ -390,7 +403,7 @@ namespace Amazon.Lambda
 
 
         /// <summary>
-        /// Creates an <a href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">alias</a>
+        /// Creates an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html">alias</a>
         /// for a Lambda function version. Use aliases to provide clients with a function identifier
         /// that you can update to invoke a different version.
         /// 
@@ -408,7 +421,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>The response from the CreateAlias service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
         /// The resource already exists, or another operation is in progress.
@@ -420,7 +433,8 @@ namespace Amazon.Lambda
         /// The Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateAlias">REST API Reference for CreateAlias Operation</seealso>
         Task<CreateAliasResponse> CreateAliasAsync(CreateAliasRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -431,7 +445,7 @@ namespace Amazon.Lambda
 
 
         /// <summary>
-        /// Creates a code signing configuration. A <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-trustedcode.html">code
+        /// Creates a code signing configuration. A <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-codesigning.html">code
         /// signing configuration</a> defines a list of allowed signing profiles and defines the
         /// code-signing validation policy (action to be taken if deployment validation checks
         /// fail).
@@ -440,7 +454,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>The response from the CreateCodeSigningConfig service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ServiceException">
         /// The Lambda service encountered an internal error.
@@ -451,7 +465,7 @@ namespace Amazon.Lambda
 
 
         /// <summary>
-        /// Creates a code signing configuration. A <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-trustedcode.html">code
+        /// Creates a code signing configuration. A <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-codesigning.html">code
         /// signing configuration</a> defines a list of allowed signing profiles and defines the
         /// code-signing validation policy (action to be taken if deployment validation checks
         /// fail).
@@ -463,7 +477,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>The response from the CreateCodeSigningConfig service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ServiceException">
         /// The Lambda service encountered an internal error.
@@ -478,7 +492,7 @@ namespace Amazon.Lambda
 
         /// <summary>
         /// Creates a mapping between an event source and an Lambda function. Lambda reads items
-        /// from the event source and triggers the function.
+        /// from the event source and invokes the function.
         /// 
         ///  
         /// <para>
@@ -515,36 +529,41 @@ namespace Amazon.Lambda
         ///  <a href="https://docs.aws.amazon.com/lambda/latest/dg/kafka-smaa.html"> Apache Kafka</a>
         /// 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-documentdb.html"> Amazon
+        /// DocumentDB</a> 
+        /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The following error handling options are only available for stream sources (DynamoDB
+        /// The following error handling options are available only for stream sources (DynamoDB
         /// and Kinesis):
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>BisectBatchOnFunctionError</code> - If the function returns an error, split
+        ///  <code>BisectBatchOnFunctionError</code> – If the function returns an error, split
         /// the batch in two and retry.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DestinationConfig</code> - Send discarded records to an Amazon SQS queue or
+        ///  <code>DestinationConfig</code> – Send discarded records to an Amazon SQS queue or
         /// Amazon SNS topic.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>MaximumRecordAgeInSeconds</code> - Discard records older than the specified
+        ///  <code>MaximumRecordAgeInSeconds</code> – Discard records older than the specified
         /// age. The default value is infinite (-1). When set to infinite (-1), failed records
         /// are retried until the record expires
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>MaximumRetryAttempts</code> - Discard records after the specified number of
+        ///  <code>MaximumRetryAttempts</code> – Discard records after the specified number of
         /// retries. The default value is infinite (-1). When set to infinite (-1), failed records
         /// are retried until the record expires.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ParallelizationFactor</code> - Process multiple batches from each shard concurrently.
+        ///  <code>ParallelizationFactor</code> – Process multiple batches from each shard concurrently.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -581,13 +600,18 @@ namespace Amazon.Lambda
         ///  <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-kafka.html#services-kafka-parms">
         /// Apache Kafka</a> 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-documentdb.html#docdb-configuration">
+        /// Amazon DocumentDB</a> 
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateEventSourceMapping service method.</param>
         /// 
         /// <returns>The response from the CreateEventSourceMapping service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
         /// The resource already exists, or another operation is in progress.
@@ -599,7 +623,8 @@ namespace Amazon.Lambda
         /// The Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateEventSourceMapping">REST API Reference for CreateEventSourceMapping Operation</seealso>
         CreateEventSourceMappingResponse CreateEventSourceMapping(CreateEventSourceMappingRequest request);
@@ -608,7 +633,7 @@ namespace Amazon.Lambda
 
         /// <summary>
         /// Creates a mapping between an event source and an Lambda function. Lambda reads items
-        /// from the event source and triggers the function.
+        /// from the event source and invokes the function.
         /// 
         ///  
         /// <para>
@@ -645,36 +670,41 @@ namespace Amazon.Lambda
         ///  <a href="https://docs.aws.amazon.com/lambda/latest/dg/kafka-smaa.html"> Apache Kafka</a>
         /// 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-documentdb.html"> Amazon
+        /// DocumentDB</a> 
+        /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The following error handling options are only available for stream sources (DynamoDB
+        /// The following error handling options are available only for stream sources (DynamoDB
         /// and Kinesis):
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>BisectBatchOnFunctionError</code> - If the function returns an error, split
+        ///  <code>BisectBatchOnFunctionError</code> – If the function returns an error, split
         /// the batch in two and retry.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DestinationConfig</code> - Send discarded records to an Amazon SQS queue or
+        ///  <code>DestinationConfig</code> – Send discarded records to an Amazon SQS queue or
         /// Amazon SNS topic.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>MaximumRecordAgeInSeconds</code> - Discard records older than the specified
+        ///  <code>MaximumRecordAgeInSeconds</code> – Discard records older than the specified
         /// age. The default value is infinite (-1). When set to infinite (-1), failed records
         /// are retried until the record expires
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>MaximumRetryAttempts</code> - Discard records after the specified number of
+        ///  <code>MaximumRetryAttempts</code> – Discard records after the specified number of
         /// retries. The default value is infinite (-1). When set to infinite (-1), failed records
         /// are retried until the record expires.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ParallelizationFactor</code> - Process multiple batches from each shard concurrently.
+        ///  <code>ParallelizationFactor</code> – Process multiple batches from each shard concurrently.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -710,6 +740,11 @@ namespace Amazon.Lambda
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-kafka.html#services-kafka-parms">
         /// Apache Kafka</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-documentdb.html#docdb-configuration">
+        /// Amazon DocumentDB</a> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -720,7 +755,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>The response from the CreateEventSourceMapping service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
         /// The resource already exists, or another operation is in progress.
@@ -732,7 +767,8 @@ namespace Amazon.Lambda
         /// The Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateEventSourceMapping">REST API Reference for CreateEventSourceMapping Operation</seealso>
         Task<CreateEventSourceMappingResponse> CreateEventSourceMappingAsync(CreateEventSourceMappingRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -747,24 +783,25 @@ namespace Amazon.Lambda
         /// package</a> and an <a href="https://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role">execution
         /// role</a>. The deployment package is a .zip file archive or container image that contains
         /// your function code. The execution role grants the function permission to use Amazon
-        /// Web Services services, such as Amazon CloudWatch Logs for log streaming and X-Ray
-        /// for request tracing.
+        /// Web Services, such as Amazon CloudWatch Logs for log streaming and X-Ray for request
+        /// tracing.
         /// 
         ///  
         /// <para>
-        /// You set the package type to <code>Image</code> if the deployment package is a <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-images.html">container
-        /// image</a>. For a container image, the code property must include the URI of a container
-        /// image in the Amazon ECR registry. You do not need to specify the handler and runtime
-        /// properties. 
+        /// If the deployment package is a <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-images.html">container
+        /// image</a>, then you set the package type to <code>Image</code>. For a container image,
+        /// the code property must include the URI of a container image in the Amazon ECR registry.
+        /// You do not need to specify the handler and runtime properties.
         /// </para>
         ///  
         /// <para>
-        /// You set the package type to <code>Zip</code> if the deployment package is a <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-package.html#gettingstarted-package-zip">.zip
-        /// file archive</a>. For a .zip file archive, the code property specifies the location
-        /// of the .zip file. You must also specify the handler and runtime properties. The code
-        /// in the deployment package must be compatible with the target instruction set architecture
-        /// of the function (<code>x86-64</code> or <code>arm64</code>). If you do not specify
-        /// the architecture, the default value is <code>x86-64</code>.
+        /// If the deployment package is a <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-package.html#gettingstarted-package-zip">.zip
+        /// file archive</a>, then you set the package type to <code>Zip</code>. For a .zip file
+        /// archive, the code property specifies the location of the .zip file. You must also
+        /// specify the handler and runtime properties. The code in the deployment package must
+        /// be compatible with the target instruction set architecture of the function (<code>x86-64</code>
+        /// or <code>arm64</code>). If you do not specify the architecture, then the default value
+        /// is <code>x86-64</code>.
         /// </para>
         ///  
         /// <para>
@@ -773,8 +810,8 @@ namespace Amazon.Lambda
         /// minute or so. During this time, you can't invoke or modify the function. The <code>State</code>,
         /// <code>StateReason</code>, and <code>StateReasonCode</code> fields in the response
         /// from <a>GetFunctionConfiguration</a> indicate when the function is ready to invoke.
-        /// For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/functions-states.html">Function
-        /// States</a>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/functions-states.html">Lambda
+        /// function states</a>.
         /// </para>
         ///  
         /// <para>
@@ -799,22 +836,23 @@ namespace Amazon.Lambda
         /// code signing for this function, specify the ARN of a code-signing configuration. When
         /// a user attempts to deploy a code package with <a>UpdateFunctionCode</a>, Lambda checks
         /// that the code package has a valid signature from a trusted publisher. The code-signing
-        /// configuration includes set set of signing profiles, which define the trusted publishers
+        /// configuration includes set of signing profiles, which define the trusted publishers
         /// for this function.
         /// </para>
         ///  
         /// <para>
-        /// If another account or an Amazon Web Services service invokes your function, use <a>AddPermission</a>
-        /// to grant permission by creating a resource-based IAM policy. You can grant permissions
-        /// at the function level, on a version, or on an alias.
+        /// If another Amazon Web Services account or an Amazon Web Service invokes your function,
+        /// use <a>AddPermission</a> to grant permission by creating a resource-based Identity
+        /// and Access Management (IAM) policy. You can grant permissions at the function level,
+        /// on a version, or on an alias.
         /// </para>
         ///  
         /// <para>
         /// To invoke your function directly, use <a>Invoke</a>. To invoke your function in response
-        /// to events in other Amazon Web Services services, create an event source mapping (<a>CreateEventSourceMapping</a>),
+        /// to events in other Amazon Web Services, create an event source mapping (<a>CreateEventSourceMapping</a>),
         /// or configure a function trigger in the other service. For more information, see <a
         /// href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-invocation.html">Invoking
-        /// Functions</a>.
+        /// Lambda functions</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateFunction service method.</param>
@@ -824,19 +862,20 @@ namespace Amazon.Lambda
         /// The specified code signing configuration does not exist.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.CodeStorageExceededException">
-        /// You have exceeded your maximum total code size per account. <a href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">Learn
-        /// more</a>
+        /// Your Amazon Web Services account has exceeded its maximum total code size. For more
+        /// information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.CodeVerificationFailedException">
         /// The code signature failed one or more of the validation checks for signature mismatch
         /// or expiry, and the code signing policy is set to ENFORCE. Lambda blocks the deployment.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.InvalidCodeSignatureException">
-        /// The code signature failed the integrity check. Lambda always blocks deployment if
-        /// the integrity check fails, even if code signing policy is set to WARN.
+        /// The code signature failed the integrity check. If the integrity check fails, then
+        /// Lambda blocks deployment, even if the code signing policy is set to WARN.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
         /// The resource already exists, or another operation is in progress.
@@ -848,7 +887,8 @@ namespace Amazon.Lambda
         /// The Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateFunction">REST API Reference for CreateFunction Operation</seealso>
         CreateFunctionResponse CreateFunction(CreateFunctionRequest request);
@@ -860,24 +900,25 @@ namespace Amazon.Lambda
         /// package</a> and an <a href="https://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role">execution
         /// role</a>. The deployment package is a .zip file archive or container image that contains
         /// your function code. The execution role grants the function permission to use Amazon
-        /// Web Services services, such as Amazon CloudWatch Logs for log streaming and X-Ray
-        /// for request tracing.
+        /// Web Services, such as Amazon CloudWatch Logs for log streaming and X-Ray for request
+        /// tracing.
         /// 
         ///  
         /// <para>
-        /// You set the package type to <code>Image</code> if the deployment package is a <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-images.html">container
-        /// image</a>. For a container image, the code property must include the URI of a container
-        /// image in the Amazon ECR registry. You do not need to specify the handler and runtime
-        /// properties. 
+        /// If the deployment package is a <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-images.html">container
+        /// image</a>, then you set the package type to <code>Image</code>. For a container image,
+        /// the code property must include the URI of a container image in the Amazon ECR registry.
+        /// You do not need to specify the handler and runtime properties.
         /// </para>
         ///  
         /// <para>
-        /// You set the package type to <code>Zip</code> if the deployment package is a <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-package.html#gettingstarted-package-zip">.zip
-        /// file archive</a>. For a .zip file archive, the code property specifies the location
-        /// of the .zip file. You must also specify the handler and runtime properties. The code
-        /// in the deployment package must be compatible with the target instruction set architecture
-        /// of the function (<code>x86-64</code> or <code>arm64</code>). If you do not specify
-        /// the architecture, the default value is <code>x86-64</code>.
+        /// If the deployment package is a <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-package.html#gettingstarted-package-zip">.zip
+        /// file archive</a>, then you set the package type to <code>Zip</code>. For a .zip file
+        /// archive, the code property specifies the location of the .zip file. You must also
+        /// specify the handler and runtime properties. The code in the deployment package must
+        /// be compatible with the target instruction set architecture of the function (<code>x86-64</code>
+        /// or <code>arm64</code>). If you do not specify the architecture, then the default value
+        /// is <code>x86-64</code>.
         /// </para>
         ///  
         /// <para>
@@ -886,8 +927,8 @@ namespace Amazon.Lambda
         /// minute or so. During this time, you can't invoke or modify the function. The <code>State</code>,
         /// <code>StateReason</code>, and <code>StateReasonCode</code> fields in the response
         /// from <a>GetFunctionConfiguration</a> indicate when the function is ready to invoke.
-        /// For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/functions-states.html">Function
-        /// States</a>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/functions-states.html">Lambda
+        /// function states</a>.
         /// </para>
         ///  
         /// <para>
@@ -912,22 +953,23 @@ namespace Amazon.Lambda
         /// code signing for this function, specify the ARN of a code-signing configuration. When
         /// a user attempts to deploy a code package with <a>UpdateFunctionCode</a>, Lambda checks
         /// that the code package has a valid signature from a trusted publisher. The code-signing
-        /// configuration includes set set of signing profiles, which define the trusted publishers
+        /// configuration includes set of signing profiles, which define the trusted publishers
         /// for this function.
         /// </para>
         ///  
         /// <para>
-        /// If another account or an Amazon Web Services service invokes your function, use <a>AddPermission</a>
-        /// to grant permission by creating a resource-based IAM policy. You can grant permissions
-        /// at the function level, on a version, or on an alias.
+        /// If another Amazon Web Services account or an Amazon Web Service invokes your function,
+        /// use <a>AddPermission</a> to grant permission by creating a resource-based Identity
+        /// and Access Management (IAM) policy. You can grant permissions at the function level,
+        /// on a version, or on an alias.
         /// </para>
         ///  
         /// <para>
         /// To invoke your function directly, use <a>Invoke</a>. To invoke your function in response
-        /// to events in other Amazon Web Services services, create an event source mapping (<a>CreateEventSourceMapping</a>),
+        /// to events in other Amazon Web Services, create an event source mapping (<a>CreateEventSourceMapping</a>),
         /// or configure a function trigger in the other service. For more information, see <a
         /// href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-invocation.html">Invoking
-        /// Functions</a>.
+        /// Lambda functions</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateFunction service method.</param>
@@ -940,19 +982,20 @@ namespace Amazon.Lambda
         /// The specified code signing configuration does not exist.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.CodeStorageExceededException">
-        /// You have exceeded your maximum total code size per account. <a href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">Learn
-        /// more</a>
+        /// Your Amazon Web Services account has exceeded its maximum total code size. For more
+        /// information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.CodeVerificationFailedException">
         /// The code signature failed one or more of the validation checks for signature mismatch
         /// or expiry, and the code signing policy is set to ENFORCE. Lambda blocks the deployment.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.InvalidCodeSignatureException">
-        /// The code signature failed the integrity check. Lambda always blocks deployment if
-        /// the integrity check fails, even if code signing policy is set to WARN.
+        /// The code signature failed the integrity check. If the integrity check fails, then
+        /// Lambda blocks deployment, even if the code signing policy is set to WARN.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
         /// The resource already exists, or another operation is in progress.
@@ -964,10 +1007,73 @@ namespace Amazon.Lambda
         /// The Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateFunction">REST API Reference for CreateFunction Operation</seealso>
         Task<CreateFunctionResponse> CreateFunctionAsync(CreateFunctionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateFunctionUrlConfig
+
+
+        /// <summary>
+        /// Creates a Lambda function URL with the specified configuration parameters. A function
+        /// URL is a dedicated HTTP(S) endpoint that you can use to invoke your function.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateFunctionUrlConfig service method.</param>
+        /// 
+        /// <returns>The response from the CreateFunctionUrlConfig service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
+        /// The resource already exists, or another operation is in progress.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
+        /// The resource specified in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateFunctionUrlConfig">REST API Reference for CreateFunctionUrlConfig Operation</seealso>
+        CreateFunctionUrlConfigResponse CreateFunctionUrlConfig(CreateFunctionUrlConfigRequest request);
+
+
+
+        /// <summary>
+        /// Creates a Lambda function URL with the specified configuration parameters. A function
+        /// URL is a dedicated HTTP(S) endpoint that you can use to invoke your function.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateFunctionUrlConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateFunctionUrlConfig service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
+        /// The resource already exists, or another operation is in progress.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
+        /// The resource specified in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateFunctionUrlConfig">REST API Reference for CreateFunctionUrlConfig Operation</seealso>
+        Task<CreateFunctionUrlConfigResponse> CreateFunctionUrlConfigAsync(CreateFunctionUrlConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -975,13 +1081,13 @@ namespace Amazon.Lambda
 
 
         /// <summary>
-        /// Deletes a Lambda function <a href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">alias</a>.
+        /// Deletes a Lambda function <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html">alias</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAlias service method.</param>
         /// 
         /// <returns>The response from the DeleteAlias service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
         /// The resource already exists, or another operation is in progress.
@@ -990,7 +1096,8 @@ namespace Amazon.Lambda
         /// The Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteAlias">REST API Reference for DeleteAlias Operation</seealso>
         DeleteAliasResponse DeleteAlias(DeleteAliasRequest request);
@@ -998,7 +1105,7 @@ namespace Amazon.Lambda
 
 
         /// <summary>
-        /// Deletes a Lambda function <a href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">alias</a>.
+        /// Deletes a Lambda function <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html">alias</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAlias service method.</param>
         /// <param name="cancellationToken">
@@ -1007,7 +1114,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>The response from the DeleteAlias service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
         /// The resource already exists, or another operation is in progress.
@@ -1016,7 +1123,8 @@ namespace Amazon.Lambda
         /// The Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteAlias">REST API Reference for DeleteAlias Operation</seealso>
         Task<DeleteAliasResponse> DeleteAliasAsync(DeleteAliasRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1034,7 +1142,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>The response from the DeleteCodeSigningConfig service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
         /// The resource already exists, or another operation is in progress.
@@ -1061,7 +1169,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>The response from the DeleteCodeSigningConfig service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
         /// The resource already exists, or another operation is in progress.
@@ -1094,12 +1202,12 @@ namespace Amazon.Lambda
         /// 
         /// <returns>The response from the DeleteEventSourceMapping service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceInUseException">
-        /// The operation conflicts with the resource's availability. For example, you attempted
-        /// to update an EventSource Mapping in CREATING, or tried to delete a EventSource mapping
-        /// currently in the UPDATING state.
+        /// The operation conflicts with the resource's availability. For example, you tried to
+        /// update an event source mapping in the CREATING state, or you tried to delete an event
+        /// source mapping currently UPDATING.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource specified in the request does not exist.
@@ -1108,7 +1216,8 @@ namespace Amazon.Lambda
         /// The Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteEventSourceMapping">REST API Reference for DeleteEventSourceMapping Operation</seealso>
         DeleteEventSourceMappingResponse DeleteEventSourceMapping(DeleteEventSourceMappingRequest request);
@@ -1132,12 +1241,12 @@ namespace Amazon.Lambda
         /// 
         /// <returns>The response from the DeleteEventSourceMapping service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceInUseException">
-        /// The operation conflicts with the resource's availability. For example, you attempted
-        /// to update an EventSource Mapping in CREATING, or tried to delete a EventSource mapping
-        /// currently in the UPDATING state.
+        /// The operation conflicts with the resource's availability. For example, you tried to
+        /// update an event source mapping in the CREATING state, or you tried to delete an event
+        /// source mapping currently UPDATING.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource specified in the request does not exist.
@@ -1146,7 +1255,8 @@ namespace Amazon.Lambda
         /// The Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteEventSourceMapping">REST API Reference for DeleteEventSourceMapping Operation</seealso>
         Task<DeleteEventSourceMappingResponse> DeleteEventSourceMappingAsync(DeleteEventSourceMappingRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1163,15 +1273,15 @@ namespace Amazon.Lambda
         ///  
         /// <para>
         /// To delete Lambda event source mappings that invoke a function, use <a>DeleteEventSourceMapping</a>.
-        /// For Amazon Web Services services and resources that invoke your function directly,
-        /// delete the trigger in the service where you originally configured it.
+        /// For Amazon Web Services and resources that invoke your function directly, delete the
+        /// trigger in the service where you originally configured it.
         /// </para>
         /// </summary>
-        /// <param name="functionName">The name of the Lambda function or version. <p class="title"> <b>Name formats</b>  <ul> <li>  <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:1</code> (with version). </li> <li>  <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>. </li> <li>  <b>Partial ARN</b> - <code>123456789012:function:my-function</code>. </li> </ul> You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</param>
+        /// <param name="functionName">The name of the Lambda function or version. <p class="title"> <b>Name formats</b>  <ul> <li>  <b>Function name</b> – <code>my-function</code> (name-only), <code>my-function:1</code> (with version). </li> <li>  <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>. </li> <li>  <b>Partial ARN</b> – <code>123456789012:function:my-function</code>. </li> </ul> You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</param>
         /// 
         /// <returns>The response from the DeleteFunction service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
         /// The resource already exists, or another operation is in progress.
@@ -1183,7 +1293,8 @@ namespace Amazon.Lambda
         /// The Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunction">REST API Reference for DeleteFunction Operation</seealso>
         DeleteFunctionResponse DeleteFunction(string functionName);
@@ -1195,15 +1306,15 @@ namespace Amazon.Lambda
         ///  
         /// <para>
         /// To delete Lambda event source mappings that invoke a function, use <a>DeleteEventSourceMapping</a>.
-        /// For Amazon Web Services services and resources that invoke your function directly,
-        /// delete the trigger in the service where you originally configured it.
+        /// For Amazon Web Services and resources that invoke your function directly, delete the
+        /// trigger in the service where you originally configured it.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteFunction service method.</param>
         /// 
         /// <returns>The response from the DeleteFunction service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
         /// The resource already exists, or another operation is in progress.
@@ -1215,7 +1326,8 @@ namespace Amazon.Lambda
         /// The Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunction">REST API Reference for DeleteFunction Operation</seealso>
         DeleteFunctionResponse DeleteFunction(DeleteFunctionRequest request);
@@ -1228,18 +1340,18 @@ namespace Amazon.Lambda
         ///  
         /// <para>
         /// To delete Lambda event source mappings that invoke a function, use <a>DeleteEventSourceMapping</a>.
-        /// For Amazon Web Services services and resources that invoke your function directly,
-        /// delete the trigger in the service where you originally configured it.
+        /// For Amazon Web Services and resources that invoke your function directly, delete the
+        /// trigger in the service where you originally configured it.
         /// </para>
         /// </summary>
-        /// <param name="functionName">The name of the Lambda function or version. <p class="title"> <b>Name formats</b>  <ul> <li>  <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:1</code> (with version). </li> <li>  <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>. </li> <li>  <b>Partial ARN</b> - <code>123456789012:function:my-function</code>. </li> </ul> You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</param>
+        /// <param name="functionName">The name of the Lambda function or version. <p class="title"> <b>Name formats</b>  <ul> <li>  <b>Function name</b> – <code>my-function</code> (name-only), <code>my-function:1</code> (with version). </li> <li>  <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>. </li> <li>  <b>Partial ARN</b> – <code>123456789012:function:my-function</code>. </li> </ul> You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
         /// <returns>The response from the DeleteFunction service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
         /// The resource already exists, or another operation is in progress.
@@ -1251,7 +1363,8 @@ namespace Amazon.Lambda
         /// The Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunction">REST API Reference for DeleteFunction Operation</seealso>
         Task<DeleteFunctionResponse> DeleteFunctionAsync(string functionName, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -1264,8 +1377,8 @@ namespace Amazon.Lambda
         ///  
         /// <para>
         /// To delete Lambda event source mappings that invoke a function, use <a>DeleteEventSourceMapping</a>.
-        /// For Amazon Web Services services and resources that invoke your function directly,
-        /// delete the trigger in the service where you originally configured it.
+        /// For Amazon Web Services and resources that invoke your function directly, delete the
+        /// trigger in the service where you originally configured it.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteFunction service method.</param>
@@ -1275,7 +1388,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>The response from the DeleteFunction service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
         /// The resource already exists, or another operation is in progress.
@@ -1287,7 +1400,8 @@ namespace Amazon.Lambda
         /// The Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunction">REST API Reference for DeleteFunction Operation</seealso>
         Task<DeleteFunctionResponse> DeleteFunctionAsync(DeleteFunctionRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1307,7 +1421,7 @@ namespace Amazon.Lambda
         /// The specified code signing configuration does not exist.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
         /// The resource already exists, or another operation is in progress.
@@ -1319,7 +1433,8 @@ namespace Amazon.Lambda
         /// The Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunctionCodeSigningConfig">REST API Reference for DeleteFunctionCodeSigningConfig Operation</seealso>
         DeleteFunctionCodeSigningConfigResponse DeleteFunctionCodeSigningConfig(DeleteFunctionCodeSigningConfigRequest request);
@@ -1339,7 +1454,7 @@ namespace Amazon.Lambda
         /// The specified code signing configuration does not exist.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
         /// The resource already exists, or another operation is in progress.
@@ -1351,7 +1466,8 @@ namespace Amazon.Lambda
         /// The Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunctionCodeSigningConfig">REST API Reference for DeleteFunctionCodeSigningConfig Operation</seealso>
         Task<DeleteFunctionCodeSigningConfigResponse> DeleteFunctionCodeSigningConfigAsync(DeleteFunctionCodeSigningConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1368,7 +1484,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>The response from the DeleteFunctionConcurrency service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
         /// The resource already exists, or another operation is in progress.
@@ -1380,7 +1496,8 @@ namespace Amazon.Lambda
         /// The Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunctionConcurrency">REST API Reference for DeleteFunctionConcurrency Operation</seealso>
         DeleteFunctionConcurrencyResponse DeleteFunctionConcurrency(DeleteFunctionConcurrencyRequest request);
@@ -1397,7 +1514,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>The response from the DeleteFunctionConcurrency service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
         /// The resource already exists, or another operation is in progress.
@@ -1409,7 +1526,8 @@ namespace Amazon.Lambda
         /// The Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunctionConcurrency">REST API Reference for DeleteFunctionConcurrency Operation</seealso>
         Task<DeleteFunctionConcurrencyResponse> DeleteFunctionConcurrencyAsync(DeleteFunctionConcurrencyRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1432,7 +1550,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>The response from the DeleteFunctionEventInvokeConfig service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
         /// The resource already exists, or another operation is in progress.
@@ -1444,7 +1562,8 @@ namespace Amazon.Lambda
         /// The Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunctionEventInvokeConfig">REST API Reference for DeleteFunctionEventInvokeConfig Operation</seealso>
         DeleteFunctionEventInvokeConfigResponse DeleteFunctionEventInvokeConfig(DeleteFunctionEventInvokeConfigRequest request);
@@ -1467,7 +1586,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>The response from the DeleteFunctionEventInvokeConfig service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
         /// The resource already exists, or another operation is in progress.
@@ -1479,10 +1598,67 @@ namespace Amazon.Lambda
         /// The Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunctionEventInvokeConfig">REST API Reference for DeleteFunctionEventInvokeConfig Operation</seealso>
         Task<DeleteFunctionEventInvokeConfigResponse> DeleteFunctionEventInvokeConfigAsync(DeleteFunctionEventInvokeConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteFunctionUrlConfig
+
+
+        /// <summary>
+        /// Deletes a Lambda function URL. When you delete a function URL, you can't recover it.
+        /// Creating a new function URL results in a different URL address.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFunctionUrlConfig service method.</param>
+        /// 
+        /// <returns>The response from the DeleteFunctionUrlConfig service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
+        /// The resource already exists, or another operation is in progress.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
+        /// The resource specified in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunctionUrlConfig">REST API Reference for DeleteFunctionUrlConfig Operation</seealso>
+        DeleteFunctionUrlConfigResponse DeleteFunctionUrlConfig(DeleteFunctionUrlConfigRequest request);
+
+
+
+        /// <summary>
+        /// Deletes a Lambda function URL. When you delete a function URL, you can't recover it.
+        /// Creating a new function URL results in a different URL address.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFunctionUrlConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteFunctionUrlConfig service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
+        /// The resource already exists, or another operation is in progress.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
+        /// The resource specified in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunctionUrlConfig">REST API Reference for DeleteFunctionUrlConfig Operation</seealso>
+        Task<DeleteFunctionUrlConfigResponse> DeleteFunctionUrlConfigAsync(DeleteFunctionUrlConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1502,7 +1678,8 @@ namespace Amazon.Lambda
         /// The Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteLayerVersion">REST API Reference for DeleteLayerVersion Operation</seealso>
         DeleteLayerVersionResponse DeleteLayerVersion(DeleteLayerVersionRequest request);
@@ -1525,7 +1702,8 @@ namespace Amazon.Lambda
         /// The Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteLayerVersion">REST API Reference for DeleteLayerVersion Operation</seealso>
         Task<DeleteLayerVersionResponse> DeleteLayerVersionAsync(DeleteLayerVersionRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1542,7 +1720,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>The response from the DeleteProvisionedConcurrencyConfig service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
         /// The resource already exists, or another operation is in progress.
@@ -1554,7 +1732,8 @@ namespace Amazon.Lambda
         /// The Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteProvisionedConcurrencyConfig">REST API Reference for DeleteProvisionedConcurrencyConfig Operation</seealso>
         DeleteProvisionedConcurrencyConfigResponse DeleteProvisionedConcurrencyConfig(DeleteProvisionedConcurrencyConfigRequest request);
@@ -1571,7 +1750,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>The response from the DeleteProvisionedConcurrencyConfig service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
         /// The resource already exists, or another operation is in progress.
@@ -1583,7 +1762,8 @@ namespace Amazon.Lambda
         /// The Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteProvisionedConcurrencyConfig">REST API Reference for DeleteProvisionedConcurrencyConfig Operation</seealso>
         Task<DeleteProvisionedConcurrencyConfigResponse> DeleteProvisionedConcurrencyConfigAsync(DeleteProvisionedConcurrencyConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1604,7 +1784,8 @@ namespace Amazon.Lambda
         /// The Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetAccountSettings">REST API Reference for GetAccountSettings Operation</seealso>
         GetAccountSettingsResponse GetAccountSettings(GetAccountSettingsRequest request);
@@ -1625,7 +1806,8 @@ namespace Amazon.Lambda
         /// The Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetAccountSettings">REST API Reference for GetAccountSettings Operation</seealso>
         Task<GetAccountSettingsResponse> GetAccountSettingsAsync(GetAccountSettingsRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1636,13 +1818,13 @@ namespace Amazon.Lambda
 
 
         /// <summary>
-        /// Returns details about a Lambda function <a href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">alias</a>.
+        /// Returns details about a Lambda function <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html">alias</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAlias service method.</param>
         /// 
         /// <returns>The response from the GetAlias service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource specified in the request does not exist.
@@ -1651,7 +1833,8 @@ namespace Amazon.Lambda
         /// The Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetAlias">REST API Reference for GetAlias Operation</seealso>
         GetAliasResponse GetAlias(GetAliasRequest request);
@@ -1659,7 +1842,7 @@ namespace Amazon.Lambda
 
 
         /// <summary>
-        /// Returns details about a Lambda function <a href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">alias</a>.
+        /// Returns details about a Lambda function <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html">alias</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAlias service method.</param>
         /// <param name="cancellationToken">
@@ -1668,7 +1851,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>The response from the GetAlias service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource specified in the request does not exist.
@@ -1677,7 +1860,8 @@ namespace Amazon.Lambda
         /// The Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetAlias">REST API Reference for GetAlias Operation</seealso>
         Task<GetAliasResponse> GetAliasAsync(GetAliasRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1694,7 +1878,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>The response from the GetCodeSigningConfig service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource specified in the request does not exist.
@@ -1717,7 +1901,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>The response from the GetCodeSigningConfig service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource specified in the request does not exist.
@@ -1741,7 +1925,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>The response from the GetEventSourceMapping service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource specified in the request does not exist.
@@ -1750,7 +1934,8 @@ namespace Amazon.Lambda
         /// The Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetEventSourceMapping">REST API Reference for GetEventSourceMapping Operation</seealso>
         GetEventSourceMappingResponse GetEventSourceMapping(GetEventSourceMappingRequest request);
@@ -1768,7 +1953,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>The response from the GetEventSourceMapping service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource specified in the request does not exist.
@@ -1777,7 +1962,8 @@ namespace Amazon.Lambda
         /// The Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetEventSourceMapping">REST API Reference for GetEventSourceMapping Operation</seealso>
         Task<GetEventSourceMappingResponse> GetEventSourceMappingAsync(GetEventSourceMappingRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1792,11 +1978,11 @@ namespace Amazon.Lambda
         /// the deployment package that's valid for 10 minutes. If you specify a function version,
         /// only details that are specific to that version are returned.
         /// </summary>
-        /// <param name="functionName">The name of the Lambda function, version, or alias. <p class="title"> <b>Name formats</b>  <ul> <li>  <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias). </li> <li>  <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>. </li> <li>  <b>Partial ARN</b> - <code>123456789012:function:my-function</code>. </li> </ul> You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</param>
+        /// <param name="functionName">The name of the Lambda function, version, or alias. <p class="title"> <b>Name formats</b>  <ul> <li>  <b>Function name</b> – <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias). </li> <li>  <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>. </li> <li>  <b>Partial ARN</b> – <code>123456789012:function:my-function</code>. </li> </ul> You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</param>
         /// 
         /// <returns>The response from the GetFunction service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource specified in the request does not exist.
@@ -1805,7 +1991,8 @@ namespace Amazon.Lambda
         /// The Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunction">REST API Reference for GetFunction Operation</seealso>
         GetFunctionResponse GetFunction(string functionName);
@@ -1819,7 +2006,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>The response from the GetFunction service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource specified in the request does not exist.
@@ -1828,7 +2015,8 @@ namespace Amazon.Lambda
         /// The Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunction">REST API Reference for GetFunction Operation</seealso>
         GetFunctionResponse GetFunction(GetFunctionRequest request);
@@ -1839,14 +2027,14 @@ namespace Amazon.Lambda
         /// the deployment package that's valid for 10 minutes. If you specify a function version,
         /// only details that are specific to that version are returned.
         /// </summary>
-        /// <param name="functionName">The name of the Lambda function, version, or alias. <p class="title"> <b>Name formats</b>  <ul> <li>  <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias). </li> <li>  <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>. </li> <li>  <b>Partial ARN</b> - <code>123456789012:function:my-function</code>. </li> </ul> You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</param>
+        /// <param name="functionName">The name of the Lambda function, version, or alias. <p class="title"> <b>Name formats</b>  <ul> <li>  <b>Function name</b> – <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias). </li> <li>  <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>. </li> <li>  <b>Partial ARN</b> – <code>123456789012:function:my-function</code>. </li> </ul> You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
         /// <returns>The response from the GetFunction service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource specified in the request does not exist.
@@ -1855,7 +2043,8 @@ namespace Amazon.Lambda
         /// The Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunction">REST API Reference for GetFunction Operation</seealso>
         Task<GetFunctionResponse> GetFunctionAsync(string functionName, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -1873,7 +2062,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>The response from the GetFunction service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource specified in the request does not exist.
@@ -1882,7 +2071,8 @@ namespace Amazon.Lambda
         /// The Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunction">REST API Reference for GetFunction Operation</seealso>
         Task<GetFunctionResponse> GetFunctionAsync(GetFunctionRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1899,7 +2089,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>The response from the GetFunctionCodeSigningConfig service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource specified in the request does not exist.
@@ -1908,7 +2098,8 @@ namespace Amazon.Lambda
         /// The Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionCodeSigningConfig">REST API Reference for GetFunctionCodeSigningConfig Operation</seealso>
         GetFunctionCodeSigningConfigResponse GetFunctionCodeSigningConfig(GetFunctionCodeSigningConfigRequest request);
@@ -1925,7 +2116,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>The response from the GetFunctionCodeSigningConfig service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource specified in the request does not exist.
@@ -1934,7 +2125,8 @@ namespace Amazon.Lambda
         /// The Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionCodeSigningConfig">REST API Reference for GetFunctionCodeSigningConfig Operation</seealso>
         Task<GetFunctionCodeSigningConfigResponse> GetFunctionCodeSigningConfigAsync(GetFunctionCodeSigningConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1952,7 +2144,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>The response from the GetFunctionConcurrency service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource specified in the request does not exist.
@@ -1961,7 +2153,8 @@ namespace Amazon.Lambda
         /// The Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionConcurrency">REST API Reference for GetFunctionConcurrency Operation</seealso>
         GetFunctionConcurrencyResponse GetFunctionConcurrency(GetFunctionConcurrencyRequest request);
@@ -1979,7 +2172,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>The response from the GetFunctionConcurrency service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource specified in the request does not exist.
@@ -1988,7 +2181,8 @@ namespace Amazon.Lambda
         /// The Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionConcurrency">REST API Reference for GetFunctionConcurrency Operation</seealso>
         Task<GetFunctionConcurrencyResponse> GetFunctionConcurrencyAsync(GetFunctionConcurrencyRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -2008,11 +2202,11 @@ namespace Amazon.Lambda
         /// To get all of a function's details, including function-level settings, use <a>GetFunction</a>.
         /// </para>
         /// </summary>
-        /// <param name="functionName">The name of the Lambda function, version, or alias. <p class="title"> <b>Name formats</b>  <ul> <li>  <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias). </li> <li>  <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>. </li> <li>  <b>Partial ARN</b> - <code>123456789012:function:my-function</code>. </li> </ul> You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</param>
+        /// <param name="functionName">The name of the Lambda function, version, or alias. <p class="title"> <b>Name formats</b>  <ul> <li>  <b>Function name</b> – <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias). </li> <li>  <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>. </li> <li>  <b>Partial ARN</b> – <code>123456789012:function:my-function</code>. </li> </ul> You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</param>
         /// 
         /// <returns>The response from the GetFunctionConfiguration service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource specified in the request does not exist.
@@ -2021,7 +2215,8 @@ namespace Amazon.Lambda
         /// The Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionConfiguration">REST API Reference for GetFunctionConfiguration Operation</seealso>
         GetFunctionConfigurationResponse GetFunctionConfiguration(string functionName);
@@ -2040,7 +2235,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>The response from the GetFunctionConfiguration service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource specified in the request does not exist.
@@ -2049,7 +2244,8 @@ namespace Amazon.Lambda
         /// The Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionConfiguration">REST API Reference for GetFunctionConfiguration Operation</seealso>
         GetFunctionConfigurationResponse GetFunctionConfiguration(GetFunctionConfigurationRequest request);
@@ -2065,14 +2261,14 @@ namespace Amazon.Lambda
         /// To get all of a function's details, including function-level settings, use <a>GetFunction</a>.
         /// </para>
         /// </summary>
-        /// <param name="functionName">The name of the Lambda function, version, or alias. <p class="title"> <b>Name formats</b>  <ul> <li>  <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias). </li> <li>  <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>. </li> <li>  <b>Partial ARN</b> - <code>123456789012:function:my-function</code>. </li> </ul> You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</param>
+        /// <param name="functionName">The name of the Lambda function, version, or alias. <p class="title"> <b>Name formats</b>  <ul> <li>  <b>Function name</b> – <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias). </li> <li>  <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>. </li> <li>  <b>Partial ARN</b> – <code>123456789012:function:my-function</code>. </li> </ul> You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
         /// <returns>The response from the GetFunctionConfiguration service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource specified in the request does not exist.
@@ -2081,7 +2277,8 @@ namespace Amazon.Lambda
         /// The Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionConfiguration">REST API Reference for GetFunctionConfiguration Operation</seealso>
         Task<GetFunctionConfigurationResponse> GetFunctionConfigurationAsync(string functionName, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -2104,7 +2301,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>The response from the GetFunctionConfiguration service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource specified in the request does not exist.
@@ -2113,7 +2310,8 @@ namespace Amazon.Lambda
         /// The Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionConfiguration">REST API Reference for GetFunctionConfiguration Operation</seealso>
         Task<GetFunctionConfigurationResponse> GetFunctionConfigurationAsync(GetFunctionConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -2136,7 +2334,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>The response from the GetFunctionEventInvokeConfig service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource specified in the request does not exist.
@@ -2145,7 +2343,8 @@ namespace Amazon.Lambda
         /// The Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionEventInvokeConfig">REST API Reference for GetFunctionEventInvokeConfig Operation</seealso>
         GetFunctionEventInvokeConfigResponse GetFunctionEventInvokeConfig(GetFunctionEventInvokeConfigRequest request);
@@ -2168,7 +2367,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>The response from the GetFunctionEventInvokeConfig service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource specified in the request does not exist.
@@ -2177,10 +2376,65 @@ namespace Amazon.Lambda
         /// The Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionEventInvokeConfig">REST API Reference for GetFunctionEventInvokeConfig Operation</seealso>
         Task<GetFunctionEventInvokeConfigResponse> GetFunctionEventInvokeConfigAsync(GetFunctionEventInvokeConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetFunctionUrlConfig
+
+
+        /// <summary>
+        /// Returns details about a Lambda function URL.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetFunctionUrlConfig service method.</param>
+        /// 
+        /// <returns>The response from the GetFunctionUrlConfig service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
+        /// The resource specified in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionUrlConfig">REST API Reference for GetFunctionUrlConfig Operation</seealso>
+        GetFunctionUrlConfigResponse GetFunctionUrlConfig(GetFunctionUrlConfigRequest request);
+
+
+
+        /// <summary>
+        /// Returns details about a Lambda function URL.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetFunctionUrlConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetFunctionUrlConfig service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
+        /// The resource specified in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionUrlConfig">REST API Reference for GetFunctionUrlConfig Operation</seealso>
+        Task<GetFunctionUrlConfigResponse> GetFunctionUrlConfigAsync(GetFunctionUrlConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -2195,7 +2449,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>The response from the GetLayerVersion service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource specified in the request does not exist.
@@ -2204,7 +2458,8 @@ namespace Amazon.Lambda
         /// The Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetLayerVersion">REST API Reference for GetLayerVersion Operation</seealso>
         GetLayerVersionResponse GetLayerVersion(GetLayerVersionRequest request);
@@ -2222,7 +2477,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>The response from the GetLayerVersion service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource specified in the request does not exist.
@@ -2231,7 +2486,8 @@ namespace Amazon.Lambda
         /// The Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetLayerVersion">REST API Reference for GetLayerVersion Operation</seealso>
         Task<GetLayerVersionResponse> GetLayerVersionAsync(GetLayerVersionRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -2249,7 +2505,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>The response from the GetLayerVersionByArn service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource specified in the request does not exist.
@@ -2258,7 +2514,8 @@ namespace Amazon.Lambda
         /// The Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetLayerVersionByArn">REST API Reference for GetLayerVersionByArn Operation</seealso>
         GetLayerVersionByArnResponse GetLayerVersionByArn(GetLayerVersionByArnRequest request);
@@ -2276,7 +2533,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>The response from the GetLayerVersionByArn service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource specified in the request does not exist.
@@ -2285,7 +2542,8 @@ namespace Amazon.Lambda
         /// The Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetLayerVersionByArn">REST API Reference for GetLayerVersionByArn Operation</seealso>
         Task<GetLayerVersionByArnResponse> GetLayerVersionByArnAsync(GetLayerVersionByArnRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -2303,7 +2561,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>The response from the GetLayerVersionPolicy service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource specified in the request does not exist.
@@ -2312,7 +2570,8 @@ namespace Amazon.Lambda
         /// The Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetLayerVersionPolicy">REST API Reference for GetLayerVersionPolicy Operation</seealso>
         GetLayerVersionPolicyResponse GetLayerVersionPolicy(GetLayerVersionPolicyRequest request);
@@ -2330,7 +2589,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>The response from the GetLayerVersionPolicy service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource specified in the request does not exist.
@@ -2339,7 +2598,8 @@ namespace Amazon.Lambda
         /// The Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetLayerVersionPolicy">REST API Reference for GetLayerVersionPolicy Operation</seealso>
         Task<GetLayerVersionPolicyResponse> GetLayerVersionPolicyAsync(GetLayerVersionPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -2357,7 +2617,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>The response from the GetPolicy service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource specified in the request does not exist.
@@ -2366,7 +2626,8 @@ namespace Amazon.Lambda
         /// The Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetPolicy">REST API Reference for GetPolicy Operation</seealso>
         GetPolicyResponse GetPolicy(GetPolicyRequest request);
@@ -2384,7 +2645,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>The response from the GetPolicy service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource specified in the request does not exist.
@@ -2393,7 +2654,8 @@ namespace Amazon.Lambda
         /// The Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetPolicy">REST API Reference for GetPolicy Operation</seealso>
         Task<GetPolicyResponse> GetPolicyAsync(GetPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -2410,7 +2672,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>The response from the GetProvisionedConcurrencyConfig service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ProvisionedConcurrencyConfigNotFoundException">
         /// The specified configuration does not exist.
@@ -2422,7 +2684,8 @@ namespace Amazon.Lambda
         /// The Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetProvisionedConcurrencyConfig">REST API Reference for GetProvisionedConcurrencyConfig Operation</seealso>
         GetProvisionedConcurrencyConfigResponse GetProvisionedConcurrencyConfig(GetProvisionedConcurrencyConfigRequest request);
@@ -2439,7 +2702,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>The response from the GetProvisionedConcurrencyConfig service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ProvisionedConcurrencyConfigNotFoundException">
         /// The specified configuration does not exist.
@@ -2451,10 +2714,75 @@ namespace Amazon.Lambda
         /// The Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetProvisionedConcurrencyConfig">REST API Reference for GetProvisionedConcurrencyConfig Operation</seealso>
         Task<GetProvisionedConcurrencyConfigResponse> GetProvisionedConcurrencyConfigAsync(GetProvisionedConcurrencyConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetRuntimeManagementConfig
+
+
+        /// <summary>
+        /// Retrieves the runtime management configuration for a function's version. If the runtime
+        /// update mode is <b>Manual</b>, this includes the ARN of the runtime version and the
+        /// runtime update mode. If the runtime update mode is <b>Auto</b> or <b>Function update</b>,
+        /// this includes the runtime update mode and <code>null</code> is returned for the ARN.
+        /// For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-update.html">Runtime
+        /// updates</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRuntimeManagementConfig service method.</param>
+        /// 
+        /// <returns>The response from the GetRuntimeManagementConfig service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
+        /// The resource specified in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetRuntimeManagementConfig">REST API Reference for GetRuntimeManagementConfig Operation</seealso>
+        GetRuntimeManagementConfigResponse GetRuntimeManagementConfig(GetRuntimeManagementConfigRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves the runtime management configuration for a function's version. If the runtime
+        /// update mode is <b>Manual</b>, this includes the ARN of the runtime version and the
+        /// runtime update mode. If the runtime update mode is <b>Auto</b> or <b>Function update</b>,
+        /// this includes the runtime update mode and <code>null</code> is returned for the ARN.
+        /// For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-update.html">Runtime
+        /// updates</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRuntimeManagementConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetRuntimeManagementConfig service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
+        /// The resource specified in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetRuntimeManagementConfig">REST API Reference for GetRuntimeManagementConfig Operation</seealso>
+        Task<GetRuntimeManagementConfigResponse> GetRuntimeManagementConfigAsync(GetRuntimeManagementConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -2479,8 +2807,8 @@ namespace Amazon.Lambda
         /// When an error occurs, your function may be invoked multiple times. Retry behavior
         /// varies by error type, client, event source, and invocation type. For example, if you
         /// invoke a function asynchronously and it returns an error, Lambda executes the function
-        /// up to two more times. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/retries-on-errors.html">Retry
-        /// Behavior</a>.
+        /// up to two more times. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-retries.html">Error
+        /// handling and automatic retries in Lambda</a>.
         /// </para>
         ///  
         /// <para>
@@ -2489,22 +2817,22 @@ namespace Amazon.Lambda
         /// If your function does not have enough capacity to keep up with the queue, events may
         /// be lost. Occasionally, your function may receive the same event multiple times, even
         /// if no error occurs. To retain events that were not processed, configure your function
-        /// with a <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#dlq">dead-letter
+        /// with a <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#invocation-dlq">dead-letter
         /// queue</a>.
         /// </para>
         ///  
         /// <para>
         /// The status code in the API response doesn't reflect function errors. Error codes are
         /// reserved for errors that prevent your function from executing, such as permissions
-        /// errors, <a href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">limit errors</a>,
-        /// or issues with your function's code and configuration. For example, Lambda returns
-        /// <code>TooManyRequestsException</code> if executing the function would cause you to
-        /// exceed a concurrency limit at either the account level (<code>ConcurrentInvocationLimitExceeded</code>)
+        /// errors, <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html">quota</a>
+        /// errors, or issues with your function's code and configuration. For example, Lambda
+        /// returns <code>TooManyRequestsException</code> if running the function would cause
+        /// you to exceed a concurrency limit at either the account level (<code>ConcurrentInvocationLimitExceeded</code>)
         /// or function level (<code>ReservedFunctionConcurrentInvocationLimitExceeded</code>).
         /// </para>
         ///  
         /// <para>
-        /// For functions with a long timeout, your client might be disconnected during synchronous
+        /// For functions with a long timeout, your client might disconnect during synchronous
         /// invocation while it waits for a response. Configure your HTTP client, SDK, firewall,
         /// proxy, or operating system to allow for long connections with timeout or keep-alive
         /// settings.
@@ -2512,7 +2840,9 @@ namespace Amazon.Lambda
         ///  
         /// <para>
         /// This operation requires permission for the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awslambda.html">lambda:InvokeFunction</a>
-        /// action.
+        /// action. For details on how to set up permissions for cross-account invocations, see
+        /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/access-control-resource-based.html#permissions-resource-xaccountinvoke">Granting
+        /// function access to other accounts</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the Invoke service method.</param>
@@ -2522,34 +2852,35 @@ namespace Amazon.Lambda
         /// Need additional permissions to configure VPC settings.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.EC2ThrottledException">
-        /// Lambda was throttled by Amazon EC2 during Lambda function initialization using the
-        /// execution role provided for the Lambda function.
+        /// Amazon EC2 throttled Lambda during Lambda function initialization using the execution
+        /// role provided for the function.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.EC2UnexpectedException">
-        /// Lambda received an unexpected EC2 client exception while setting up for the Lambda
-        /// function.
+        /// Lambda received an unexpected Amazon EC2 client exception while setting up for the
+        /// Lambda function.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.EFSIOException">
         /// An error occurred when reading from or writing to a connected file system.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.EFSMountConnectivityException">
-        /// The function couldn't make a network connection to the configured file system.
+        /// The Lambda function couldn't make a network connection to the configured file system.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.EFSMountFailureException">
-        /// The function couldn't mount the configured file system due to a permission or configuration
-        /// issue.
+        /// The Lambda function couldn't mount the configured file system due to a permission
+        /// or configuration issue.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.EFSMountTimeoutException">
-        /// The function was able to make a network connection to the configured file system,
-        /// but the mount operation timed out.
+        /// The Lambda function made a network connection to the configured file system, but the
+        /// mount operation timed out.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ENILimitReachedException">
-        /// Lambda was not able to create an elastic network interface in the VPC, specified as
-        /// part of Lambda function configuration, because the limit for network interfaces has
-        /// been reached.
+        /// Lambda couldn't create an elastic network interface in the VPC, specified as part
+        /// of Lambda function configuration, because the limit for network interfaces has been
+        /// reached. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.InvalidRequestContentException">
         /// The request body could not be parsed as JSON.
@@ -2558,33 +2889,38 @@ namespace Amazon.Lambda
         /// The runtime or runtime version specified is not supported.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.InvalidSecurityGroupIDException">
-        /// The Security Group ID provided in the Lambda function VPC configuration is invalid.
+        /// The security group ID provided in the Lambda function VPC configuration is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.InvalidSubnetIDException">
-        /// The Subnet ID provided in the Lambda function VPC configuration is invalid.
+        /// The subnet ID provided in the Lambda function VPC configuration is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.InvalidZipFileException">
         /// Lambda could not unzip the deployment package.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.KMSAccessDeniedException">
-        /// Lambda was unable to decrypt the environment variables because KMS access was denied.
-        /// Check the Lambda function's KMS permissions.
+        /// Lambda couldn't decrypt the environment variables because KMS access was denied. Check
+        /// the Lambda function's KMS permissions.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.KMSDisabledException">
-        /// Lambda was unable to decrypt the environment variables because the KMS key used is
-        /// disabled. Check the Lambda function's KMS key settings.
+        /// Lambda couldn't decrypt the environment variables because the KMS key used is disabled.
+        /// Check the Lambda function's KMS key settings.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.KMSInvalidStateException">
-        /// Lambda was unable to decrypt the environment variables because the KMS key used is
-        /// in an invalid state for Decrypt. Check the function's KMS key settings.
+        /// Lambda couldn't decrypt the environment variables because the state of the KMS key
+        /// used is not valid for Decrypt. Check the function's KMS key settings.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.KMSNotFoundException">
-        /// Lambda was unable to decrypt the environment variables because the KMS key was not
-        /// found. Check the function's KMS key settings.
+        /// Lambda couldn't decrypt the environment variables because the KMS key was not found.
+        /// Check the function's KMS key settings.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.RecursiveInvocationException">
+        /// Lambda has detected your function being invoked in a recursive loop with other Amazon
+        /// Web Services resources and stopped your function's invocation.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.RequestTooLargeException">
-        /// The request payload exceeded the <code>Invoke</code> request body JSON input limit.
-        /// For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">Limits</a>.
+        /// The request payload exceeded the <code>Invoke</code> request body JSON input quota.
+        /// For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
         /// The resource already exists, or another operation is in progress.
@@ -2599,12 +2935,24 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.ServiceException">
         /// The Lambda service encountered an internal error.
         /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.SnapStartException">
+        /// The <code>afterRestore()</code> <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart-runtime-hooks.html">runtime
+        /// hook</a> encountered an error. For more information, check the Amazon CloudWatch logs.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.SnapStartNotReadyException">
+        /// Lambda is initializing your function. You can invoke the function when the <a href="https://docs.aws.amazon.com/lambda/latest/dg/functions-states.html">function
+        /// state</a> becomes <code>Active</code>.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.SnapStartTimeoutException">
+        /// Lambda couldn't restore the snapshot within the timeout limit.
+        /// </exception>
         /// <exception cref="Amazon.Lambda.Model.SubnetIPAddressLimitReachedException">
-        /// Lambda was not able to set up VPC access for the Lambda function because one or more
-        /// configured subnets has no available IP addresses.
+        /// Lambda couldn't set up VPC access for the Lambda function because one or more configured
+        /// subnets has no available IP addresses.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.UnsupportedMediaTypeException">
         /// The content type of the <code>Invoke</code> request body is not JSON.
@@ -2632,8 +2980,8 @@ namespace Amazon.Lambda
         /// When an error occurs, your function may be invoked multiple times. Retry behavior
         /// varies by error type, client, event source, and invocation type. For example, if you
         /// invoke a function asynchronously and it returns an error, Lambda executes the function
-        /// up to two more times. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/retries-on-errors.html">Retry
-        /// Behavior</a>.
+        /// up to two more times. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-retries.html">Error
+        /// handling and automatic retries in Lambda</a>.
         /// </para>
         ///  
         /// <para>
@@ -2642,22 +2990,22 @@ namespace Amazon.Lambda
         /// If your function does not have enough capacity to keep up with the queue, events may
         /// be lost. Occasionally, your function may receive the same event multiple times, even
         /// if no error occurs. To retain events that were not processed, configure your function
-        /// with a <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#dlq">dead-letter
+        /// with a <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#invocation-dlq">dead-letter
         /// queue</a>.
         /// </para>
         ///  
         /// <para>
         /// The status code in the API response doesn't reflect function errors. Error codes are
         /// reserved for errors that prevent your function from executing, such as permissions
-        /// errors, <a href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">limit errors</a>,
-        /// or issues with your function's code and configuration. For example, Lambda returns
-        /// <code>TooManyRequestsException</code> if executing the function would cause you to
-        /// exceed a concurrency limit at either the account level (<code>ConcurrentInvocationLimitExceeded</code>)
+        /// errors, <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html">quota</a>
+        /// errors, or issues with your function's code and configuration. For example, Lambda
+        /// returns <code>TooManyRequestsException</code> if running the function would cause
+        /// you to exceed a concurrency limit at either the account level (<code>ConcurrentInvocationLimitExceeded</code>)
         /// or function level (<code>ReservedFunctionConcurrentInvocationLimitExceeded</code>).
         /// </para>
         ///  
         /// <para>
-        /// For functions with a long timeout, your client might be disconnected during synchronous
+        /// For functions with a long timeout, your client might disconnect during synchronous
         /// invocation while it waits for a response. Configure your HTTP client, SDK, firewall,
         /// proxy, or operating system to allow for long connections with timeout or keep-alive
         /// settings.
@@ -2665,7 +3013,9 @@ namespace Amazon.Lambda
         ///  
         /// <para>
         /// This operation requires permission for the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awslambda.html">lambda:InvokeFunction</a>
-        /// action.
+        /// action. For details on how to set up permissions for cross-account invocations, see
+        /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/access-control-resource-based.html#permissions-resource-xaccountinvoke">Granting
+        /// function access to other accounts</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the Invoke service method.</param>
@@ -2678,34 +3028,35 @@ namespace Amazon.Lambda
         /// Need additional permissions to configure VPC settings.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.EC2ThrottledException">
-        /// Lambda was throttled by Amazon EC2 during Lambda function initialization using the
-        /// execution role provided for the Lambda function.
+        /// Amazon EC2 throttled Lambda during Lambda function initialization using the execution
+        /// role provided for the function.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.EC2UnexpectedException">
-        /// Lambda received an unexpected EC2 client exception while setting up for the Lambda
-        /// function.
+        /// Lambda received an unexpected Amazon EC2 client exception while setting up for the
+        /// Lambda function.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.EFSIOException">
         /// An error occurred when reading from or writing to a connected file system.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.EFSMountConnectivityException">
-        /// The function couldn't make a network connection to the configured file system.
+        /// The Lambda function couldn't make a network connection to the configured file system.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.EFSMountFailureException">
-        /// The function couldn't mount the configured file system due to a permission or configuration
-        /// issue.
+        /// The Lambda function couldn't mount the configured file system due to a permission
+        /// or configuration issue.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.EFSMountTimeoutException">
-        /// The function was able to make a network connection to the configured file system,
-        /// but the mount operation timed out.
+        /// The Lambda function made a network connection to the configured file system, but the
+        /// mount operation timed out.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ENILimitReachedException">
-        /// Lambda was not able to create an elastic network interface in the VPC, specified as
-        /// part of Lambda function configuration, because the limit for network interfaces has
-        /// been reached.
+        /// Lambda couldn't create an elastic network interface in the VPC, specified as part
+        /// of Lambda function configuration, because the limit for network interfaces has been
+        /// reached. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.InvalidRequestContentException">
         /// The request body could not be parsed as JSON.
@@ -2714,33 +3065,38 @@ namespace Amazon.Lambda
         /// The runtime or runtime version specified is not supported.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.InvalidSecurityGroupIDException">
-        /// The Security Group ID provided in the Lambda function VPC configuration is invalid.
+        /// The security group ID provided in the Lambda function VPC configuration is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.InvalidSubnetIDException">
-        /// The Subnet ID provided in the Lambda function VPC configuration is invalid.
+        /// The subnet ID provided in the Lambda function VPC configuration is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.InvalidZipFileException">
         /// Lambda could not unzip the deployment package.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.KMSAccessDeniedException">
-        /// Lambda was unable to decrypt the environment variables because KMS access was denied.
-        /// Check the Lambda function's KMS permissions.
+        /// Lambda couldn't decrypt the environment variables because KMS access was denied. Check
+        /// the Lambda function's KMS permissions.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.KMSDisabledException">
-        /// Lambda was unable to decrypt the environment variables because the KMS key used is
-        /// disabled. Check the Lambda function's KMS key settings.
+        /// Lambda couldn't decrypt the environment variables because the KMS key used is disabled.
+        /// Check the Lambda function's KMS key settings.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.KMSInvalidStateException">
-        /// Lambda was unable to decrypt the environment variables because the KMS key used is
-        /// in an invalid state for Decrypt. Check the function's KMS key settings.
+        /// Lambda couldn't decrypt the environment variables because the state of the KMS key
+        /// used is not valid for Decrypt. Check the function's KMS key settings.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.KMSNotFoundException">
-        /// Lambda was unable to decrypt the environment variables because the KMS key was not
-        /// found. Check the function's KMS key settings.
+        /// Lambda couldn't decrypt the environment variables because the KMS key was not found.
+        /// Check the function's KMS key settings.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.RecursiveInvocationException">
+        /// Lambda has detected your function being invoked in a recursive loop with other Amazon
+        /// Web Services resources and stopped your function's invocation.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.RequestTooLargeException">
-        /// The request payload exceeded the <code>Invoke</code> request body JSON input limit.
-        /// For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">Limits</a>.
+        /// The request payload exceeded the <code>Invoke</code> request body JSON input quota.
+        /// For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
         /// The resource already exists, or another operation is in progress.
@@ -2755,12 +3111,24 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.ServiceException">
         /// The Lambda service encountered an internal error.
         /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.SnapStartException">
+        /// The <code>afterRestore()</code> <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart-runtime-hooks.html">runtime
+        /// hook</a> encountered an error. For more information, check the Amazon CloudWatch logs.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.SnapStartNotReadyException">
+        /// Lambda is initializing your function. You can invoke the function when the <a href="https://docs.aws.amazon.com/lambda/latest/dg/functions-states.html">function
+        /// state</a> becomes <code>Active</code>.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.SnapStartTimeoutException">
+        /// Lambda couldn't restore the snapshot within the timeout limit.
+        /// </exception>
         /// <exception cref="Amazon.Lambda.Model.SubnetIPAddressLimitReachedException">
-        /// Lambda was not able to set up VPC access for the Lambda function because one or more
-        /// configured subnets has no available IP addresses.
+        /// Lambda couldn't set up VPC access for the Lambda function because one or more configured
+        /// subnets has no available IP addresses.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.UnsupportedMediaTypeException">
         /// The content type of the <code>Invoke</code> request body is not JSON.
@@ -2844,18 +3212,284 @@ namespace Amazon.Lambda
 
         #endregion
         
+        #region  InvokeWithResponseStream
+
+
+        /// <summary>
+        /// Configure your Lambda functions to stream response payloads back to clients. For more
+        /// information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-response-streaming.html">Configuring
+        /// a Lambda function to stream responses</a>.
+        /// 
+        ///  
+        /// <para>
+        /// This operation requires permission for the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awslambda.html">lambda:InvokeFunction</a>
+        /// action. For details on how to set up permissions for cross-account invocations, see
+        /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/access-control-resource-based.html#permissions-resource-xaccountinvoke">Granting
+        /// function access to other accounts</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the InvokeWithResponseStream service method.</param>
+        /// 
+        /// <returns>The response from the InvokeWithResponseStream service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.EC2AccessDeniedException">
+        /// Need additional permissions to configure VPC settings.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.EC2ThrottledException">
+        /// Amazon EC2 throttled Lambda during Lambda function initialization using the execution
+        /// role provided for the function.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.EC2UnexpectedException">
+        /// Lambda received an unexpected Amazon EC2 client exception while setting up for the
+        /// Lambda function.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.EFSIOException">
+        /// An error occurred when reading from or writing to a connected file system.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.EFSMountConnectivityException">
+        /// The Lambda function couldn't make a network connection to the configured file system.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.EFSMountFailureException">
+        /// The Lambda function couldn't mount the configured file system due to a permission
+        /// or configuration issue.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.EFSMountTimeoutException">
+        /// The Lambda function made a network connection to the configured file system, but the
+        /// mount operation timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ENILimitReachedException">
+        /// Lambda couldn't create an elastic network interface in the VPC, specified as part
+        /// of Lambda function configuration, because the limit for network interfaces has been
+        /// reached. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html">Lambda
+        /// quotas</a>.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.InvalidRequestContentException">
+        /// The request body could not be parsed as JSON.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.InvalidRuntimeException">
+        /// The runtime or runtime version specified is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.InvalidSecurityGroupIDException">
+        /// The security group ID provided in the Lambda function VPC configuration is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.InvalidSubnetIDException">
+        /// The subnet ID provided in the Lambda function VPC configuration is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.InvalidZipFileException">
+        /// Lambda could not unzip the deployment package.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.KMSAccessDeniedException">
+        /// Lambda couldn't decrypt the environment variables because KMS access was denied. Check
+        /// the Lambda function's KMS permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.KMSDisabledException">
+        /// Lambda couldn't decrypt the environment variables because the KMS key used is disabled.
+        /// Check the Lambda function's KMS key settings.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.KMSInvalidStateException">
+        /// Lambda couldn't decrypt the environment variables because the state of the KMS key
+        /// used is not valid for Decrypt. Check the function's KMS key settings.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.KMSNotFoundException">
+        /// Lambda couldn't decrypt the environment variables because the KMS key was not found.
+        /// Check the function's KMS key settings.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.RecursiveInvocationException">
+        /// Lambda has detected your function being invoked in a recursive loop with other Amazon
+        /// Web Services resources and stopped your function's invocation.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.RequestTooLargeException">
+        /// The request payload exceeded the <code>Invoke</code> request body JSON input quota.
+        /// For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html">Lambda
+        /// quotas</a>.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
+        /// The resource already exists, or another operation is in progress.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
+        /// The resource specified in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceNotReadyException">
+        /// The function is inactive and its VPC connection is no longer available. Wait for the
+        /// VPC connection to reestablish and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.SnapStartException">
+        /// The <code>afterRestore()</code> <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart-runtime-hooks.html">runtime
+        /// hook</a> encountered an error. For more information, check the Amazon CloudWatch logs.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.SnapStartNotReadyException">
+        /// Lambda is initializing your function. You can invoke the function when the <a href="https://docs.aws.amazon.com/lambda/latest/dg/functions-states.html">function
+        /// state</a> becomes <code>Active</code>.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.SnapStartTimeoutException">
+        /// Lambda couldn't restore the snapshot within the timeout limit.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.SubnetIPAddressLimitReachedException">
+        /// Lambda couldn't set up VPC access for the Lambda function because one or more configured
+        /// subnets has no available IP addresses.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.UnsupportedMediaTypeException">
+        /// The content type of the <code>Invoke</code> request body is not JSON.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/InvokeWithResponseStream">REST API Reference for InvokeWithResponseStream Operation</seealso>
+        InvokeWithResponseStreamResponse InvokeWithResponseStream(InvokeWithResponseStreamRequest request);
+
+
+
+        /// <summary>
+        /// Configure your Lambda functions to stream response payloads back to clients. For more
+        /// information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-response-streaming.html">Configuring
+        /// a Lambda function to stream responses</a>.
+        /// 
+        ///  
+        /// <para>
+        /// This operation requires permission for the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awslambda.html">lambda:InvokeFunction</a>
+        /// action. For details on how to set up permissions for cross-account invocations, see
+        /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/access-control-resource-based.html#permissions-resource-xaccountinvoke">Granting
+        /// function access to other accounts</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the InvokeWithResponseStream service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the InvokeWithResponseStream service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.EC2AccessDeniedException">
+        /// Need additional permissions to configure VPC settings.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.EC2ThrottledException">
+        /// Amazon EC2 throttled Lambda during Lambda function initialization using the execution
+        /// role provided for the function.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.EC2UnexpectedException">
+        /// Lambda received an unexpected Amazon EC2 client exception while setting up for the
+        /// Lambda function.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.EFSIOException">
+        /// An error occurred when reading from or writing to a connected file system.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.EFSMountConnectivityException">
+        /// The Lambda function couldn't make a network connection to the configured file system.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.EFSMountFailureException">
+        /// The Lambda function couldn't mount the configured file system due to a permission
+        /// or configuration issue.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.EFSMountTimeoutException">
+        /// The Lambda function made a network connection to the configured file system, but the
+        /// mount operation timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ENILimitReachedException">
+        /// Lambda couldn't create an elastic network interface in the VPC, specified as part
+        /// of Lambda function configuration, because the limit for network interfaces has been
+        /// reached. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html">Lambda
+        /// quotas</a>.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.InvalidRequestContentException">
+        /// The request body could not be parsed as JSON.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.InvalidRuntimeException">
+        /// The runtime or runtime version specified is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.InvalidSecurityGroupIDException">
+        /// The security group ID provided in the Lambda function VPC configuration is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.InvalidSubnetIDException">
+        /// The subnet ID provided in the Lambda function VPC configuration is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.InvalidZipFileException">
+        /// Lambda could not unzip the deployment package.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.KMSAccessDeniedException">
+        /// Lambda couldn't decrypt the environment variables because KMS access was denied. Check
+        /// the Lambda function's KMS permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.KMSDisabledException">
+        /// Lambda couldn't decrypt the environment variables because the KMS key used is disabled.
+        /// Check the Lambda function's KMS key settings.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.KMSInvalidStateException">
+        /// Lambda couldn't decrypt the environment variables because the state of the KMS key
+        /// used is not valid for Decrypt. Check the function's KMS key settings.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.KMSNotFoundException">
+        /// Lambda couldn't decrypt the environment variables because the KMS key was not found.
+        /// Check the function's KMS key settings.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.RecursiveInvocationException">
+        /// Lambda has detected your function being invoked in a recursive loop with other Amazon
+        /// Web Services resources and stopped your function's invocation.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.RequestTooLargeException">
+        /// The request payload exceeded the <code>Invoke</code> request body JSON input quota.
+        /// For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html">Lambda
+        /// quotas</a>.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
+        /// The resource already exists, or another operation is in progress.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
+        /// The resource specified in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceNotReadyException">
+        /// The function is inactive and its VPC connection is no longer available. Wait for the
+        /// VPC connection to reestablish and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.SnapStartException">
+        /// The <code>afterRestore()</code> <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart-runtime-hooks.html">runtime
+        /// hook</a> encountered an error. For more information, check the Amazon CloudWatch logs.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.SnapStartNotReadyException">
+        /// Lambda is initializing your function. You can invoke the function when the <a href="https://docs.aws.amazon.com/lambda/latest/dg/functions-states.html">function
+        /// state</a> becomes <code>Active</code>.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.SnapStartTimeoutException">
+        /// Lambda couldn't restore the snapshot within the timeout limit.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.SubnetIPAddressLimitReachedException">
+        /// Lambda couldn't set up VPC access for the Lambda function because one or more configured
+        /// subnets has no available IP addresses.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.UnsupportedMediaTypeException">
+        /// The content type of the <code>Invoke</code> request body is not JSON.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/InvokeWithResponseStream">REST API Reference for InvokeWithResponseStream Operation</seealso>
+        Task<InvokeWithResponseStreamResponse> InvokeWithResponseStreamAsync(InvokeWithResponseStreamRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListAliases
 
 
         /// <summary>
-        /// Returns a list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">aliases</a>
+        /// Returns a list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html">aliases</a>
         /// for a Lambda function.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAliases service method.</param>
         /// 
         /// <returns>The response from the ListAliases service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource specified in the request does not exist.
@@ -2864,7 +3498,8 @@ namespace Amazon.Lambda
         /// The Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListAliases">REST API Reference for ListAliases Operation</seealso>
         ListAliasesResponse ListAliases(ListAliasesRequest request);
@@ -2872,7 +3507,7 @@ namespace Amazon.Lambda
 
 
         /// <summary>
-        /// Returns a list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">aliases</a>
+        /// Returns a list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html">aliases</a>
         /// for a Lambda function.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAliases service method.</param>
@@ -2882,7 +3517,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>The response from the ListAliases service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource specified in the request does not exist.
@@ -2891,7 +3526,8 @@ namespace Amazon.Lambda
         /// The Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListAliases">REST API Reference for ListAliases Operation</seealso>
         Task<ListAliasesResponse> ListAliasesAsync(ListAliasesRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -2911,7 +3547,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>The response from the ListCodeSigningConfigs service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ServiceException">
         /// The Lambda service encountered an internal error.
@@ -2934,7 +3570,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>The response from the ListCodeSigningConfigs service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ServiceException">
         /// The Lambda service encountered an internal error.
@@ -2948,14 +3584,14 @@ namespace Amazon.Lambda
 
 
         /// <summary>
-        /// Lists event source mappings. Specify an <code>EventSourceArn</code> to only show event
+        /// Lists event source mappings. Specify an <code>EventSourceArn</code> to show only event
         /// source mappings for a single event source.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListEventSourceMappings service method.</param>
         /// 
         /// <returns>The response from the ListEventSourceMappings service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource specified in the request does not exist.
@@ -2964,7 +3600,8 @@ namespace Amazon.Lambda
         /// The Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListEventSourceMappings">REST API Reference for ListEventSourceMappings Operation</seealso>
         ListEventSourceMappingsResponse ListEventSourceMappings(ListEventSourceMappingsRequest request);
@@ -2972,7 +3609,7 @@ namespace Amazon.Lambda
 
 
         /// <summary>
-        /// Lists event source mappings. Specify an <code>EventSourceArn</code> to only show event
+        /// Lists event source mappings. Specify an <code>EventSourceArn</code> to show only event
         /// source mappings for a single event source.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListEventSourceMappings service method.</param>
@@ -2982,7 +3619,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>The response from the ListEventSourceMappings service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource specified in the request does not exist.
@@ -2991,7 +3628,8 @@ namespace Amazon.Lambda
         /// The Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListEventSourceMappings">REST API Reference for ListEventSourceMappings Operation</seealso>
         Task<ListEventSourceMappingsResponse> ListEventSourceMappingsAsync(ListEventSourceMappingsRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -3013,7 +3651,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>The response from the ListFunctionEventInvokeConfigs service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource specified in the request does not exist.
@@ -3022,7 +3660,8 @@ namespace Amazon.Lambda
         /// The Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListFunctionEventInvokeConfigs">REST API Reference for ListFunctionEventInvokeConfigs Operation</seealso>
         ListFunctionEventInvokeConfigsResponse ListFunctionEventInvokeConfigs(ListFunctionEventInvokeConfigsRequest request);
@@ -3044,7 +3683,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>The response from the ListFunctionEventInvokeConfigs service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource specified in the request does not exist.
@@ -3053,7 +3692,8 @@ namespace Amazon.Lambda
         /// The Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListFunctionEventInvokeConfigs">REST API Reference for ListFunctionEventInvokeConfigs Operation</seealso>
         Task<ListFunctionEventInvokeConfigsResponse> ListFunctionEventInvokeConfigsAsync(ListFunctionEventInvokeConfigsRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -3070,27 +3710,28 @@ namespace Amazon.Lambda
         ///  
         /// <para>
         /// Set <code>FunctionVersion</code> to <code>ALL</code> to include all published versions
-        /// of each function in addition to the unpublished version. 
+        /// of each function in addition to the unpublished version.
         /// </para>
         ///  <note> 
         /// <para>
-        /// The <code>ListFunctions</code> action returns a subset of the <a>FunctionConfiguration</a>
+        /// The <code>ListFunctions</code> operation returns a subset of the <a>FunctionConfiguration</a>
         /// fields. To get the additional fields (State, StateReasonCode, StateReason, LastUpdateStatus,
-        /// LastUpdateStatusReason, LastUpdateStatusReasonCode) for a function or version, use
-        /// <a>GetFunction</a>.
+        /// LastUpdateStatusReason, LastUpdateStatusReasonCode, RuntimeVersionConfig) for a function
+        /// or version, use <a>GetFunction</a>.
         /// </para>
         ///  </note>
         /// </summary>
         /// 
         /// <returns>The response from the ListFunctions service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ServiceException">
         /// The Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListFunctions">REST API Reference for ListFunctions Operation</seealso>
         ListFunctionsResponse ListFunctions();
@@ -3102,14 +3743,14 @@ namespace Amazon.Lambda
         ///  
         /// <para>
         /// Set <code>FunctionVersion</code> to <code>ALL</code> to include all published versions
-        /// of each function in addition to the unpublished version. 
+        /// of each function in addition to the unpublished version.
         /// </para>
         ///  <note> 
         /// <para>
-        /// The <code>ListFunctions</code> action returns a subset of the <a>FunctionConfiguration</a>
+        /// The <code>ListFunctions</code> operation returns a subset of the <a>FunctionConfiguration</a>
         /// fields. To get the additional fields (State, StateReasonCode, StateReason, LastUpdateStatus,
-        /// LastUpdateStatusReason, LastUpdateStatusReasonCode) for a function or version, use
-        /// <a>GetFunction</a>.
+        /// LastUpdateStatusReason, LastUpdateStatusReasonCode, RuntimeVersionConfig) for a function
+        /// or version, use <a>GetFunction</a>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -3117,13 +3758,14 @@ namespace Amazon.Lambda
         /// 
         /// <returns>The response from the ListFunctions service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ServiceException">
         /// The Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListFunctions">REST API Reference for ListFunctions Operation</seealso>
         ListFunctionsResponse ListFunctions(ListFunctionsRequest request);
@@ -3136,14 +3778,14 @@ namespace Amazon.Lambda
         ///  
         /// <para>
         /// Set <code>FunctionVersion</code> to <code>ALL</code> to include all published versions
-        /// of each function in addition to the unpublished version. 
+        /// of each function in addition to the unpublished version.
         /// </para>
         ///  <note> 
         /// <para>
-        /// The <code>ListFunctions</code> action returns a subset of the <a>FunctionConfiguration</a>
+        /// The <code>ListFunctions</code> operation returns a subset of the <a>FunctionConfiguration</a>
         /// fields. To get the additional fields (State, StateReasonCode, StateReason, LastUpdateStatus,
-        /// LastUpdateStatusReason, LastUpdateStatusReasonCode) for a function or version, use
-        /// <a>GetFunction</a>.
+        /// LastUpdateStatusReason, LastUpdateStatusReasonCode, RuntimeVersionConfig) for a function
+        /// or version, use <a>GetFunction</a>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -3153,13 +3795,14 @@ namespace Amazon.Lambda
         /// 
         /// <returns>The response from the ListFunctions service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ServiceException">
         /// The Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListFunctions">REST API Reference for ListFunctions Operation</seealso>
         Task<ListFunctionsResponse> ListFunctionsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -3172,14 +3815,14 @@ namespace Amazon.Lambda
         ///  
         /// <para>
         /// Set <code>FunctionVersion</code> to <code>ALL</code> to include all published versions
-        /// of each function in addition to the unpublished version. 
+        /// of each function in addition to the unpublished version.
         /// </para>
         ///  <note> 
         /// <para>
-        /// The <code>ListFunctions</code> action returns a subset of the <a>FunctionConfiguration</a>
+        /// The <code>ListFunctions</code> operation returns a subset of the <a>FunctionConfiguration</a>
         /// fields. To get the additional fields (State, StateReasonCode, StateReason, LastUpdateStatus,
-        /// LastUpdateStatusReason, LastUpdateStatusReasonCode) for a function or version, use
-        /// <a>GetFunction</a>.
+        /// LastUpdateStatusReason, LastUpdateStatusReasonCode, RuntimeVersionConfig) for a function
+        /// or version, use <a>GetFunction</a>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -3190,13 +3833,14 @@ namespace Amazon.Lambda
         /// 
         /// <returns>The response from the ListFunctions service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ServiceException">
         /// The Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListFunctions">REST API Reference for ListFunctions Operation</seealso>
         Task<ListFunctionsResponse> ListFunctionsAsync(ListFunctionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -3215,7 +3859,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>The response from the ListFunctionsByCodeSigningConfig service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource specified in the request does not exist.
@@ -3240,7 +3884,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>The response from the ListFunctionsByCodeSigningConfig service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource specified in the request does not exist.
@@ -3250,6 +3894,60 @@ namespace Amazon.Lambda
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListFunctionsByCodeSigningConfig">REST API Reference for ListFunctionsByCodeSigningConfig Operation</seealso>
         Task<ListFunctionsByCodeSigningConfigResponse> ListFunctionsByCodeSigningConfigAsync(ListFunctionsByCodeSigningConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListFunctionUrlConfigs
+
+
+        /// <summary>
+        /// Returns a list of Lambda function URLs for the specified function.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListFunctionUrlConfigs service method.</param>
+        /// 
+        /// <returns>The response from the ListFunctionUrlConfigs service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
+        /// The resource specified in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListFunctionUrlConfigs">REST API Reference for ListFunctionUrlConfigs Operation</seealso>
+        ListFunctionUrlConfigsResponse ListFunctionUrlConfigs(ListFunctionUrlConfigsRequest request);
+
+
+
+        /// <summary>
+        /// Returns a list of Lambda function URLs for the specified function.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListFunctionUrlConfigs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListFunctionUrlConfigs service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
+        /// The resource specified in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListFunctionUrlConfigs">REST API Reference for ListFunctionUrlConfigs Operation</seealso>
+        Task<ListFunctionUrlConfigsResponse> ListFunctionUrlConfigsAsync(ListFunctionUrlConfigsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -3268,13 +3966,14 @@ namespace Amazon.Lambda
         /// 
         /// <returns>The response from the ListLayers service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ServiceException">
         /// The Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListLayers">REST API Reference for ListLayers Operation</seealso>
         ListLayersResponse ListLayers(ListLayersRequest request);
@@ -3296,13 +3995,14 @@ namespace Amazon.Lambda
         /// 
         /// <returns>The response from the ListLayers service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ServiceException">
         /// The Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListLayers">REST API Reference for ListLayers Operation</seealso>
         Task<ListLayersResponse> ListLayersAsync(ListLayersRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -3323,7 +4023,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>The response from the ListLayerVersions service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource specified in the request does not exist.
@@ -3332,7 +4032,8 @@ namespace Amazon.Lambda
         /// The Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListLayerVersions">REST API Reference for ListLayerVersions Operation</seealso>
         ListLayerVersionsResponse ListLayerVersions(ListLayerVersionsRequest request);
@@ -3353,7 +4054,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>The response from the ListLayerVersions service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource specified in the request does not exist.
@@ -3362,7 +4063,8 @@ namespace Amazon.Lambda
         /// The Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListLayerVersions">REST API Reference for ListLayerVersions Operation</seealso>
         Task<ListLayerVersionsResponse> ListLayerVersionsAsync(ListLayerVersionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -3379,7 +4081,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>The response from the ListProvisionedConcurrencyConfigs service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource specified in the request does not exist.
@@ -3388,7 +4090,8 @@ namespace Amazon.Lambda
         /// The Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListProvisionedConcurrencyConfigs">REST API Reference for ListProvisionedConcurrencyConfigs Operation</seealso>
         ListProvisionedConcurrencyConfigsResponse ListProvisionedConcurrencyConfigs(ListProvisionedConcurrencyConfigsRequest request);
@@ -3405,7 +4108,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>The response from the ListProvisionedConcurrencyConfigs service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource specified in the request does not exist.
@@ -3414,7 +4117,8 @@ namespace Amazon.Lambda
         /// The Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListProvisionedConcurrencyConfigs">REST API Reference for ListProvisionedConcurrencyConfigs Operation</seealso>
         Task<ListProvisionedConcurrencyConfigsResponse> ListProvisionedConcurrencyConfigsAsync(ListProvisionedConcurrencyConfigsRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -3432,7 +4136,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>The response from the ListTags service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource specified in the request does not exist.
@@ -3441,7 +4145,8 @@ namespace Amazon.Lambda
         /// The Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListTags">REST API Reference for ListTags Operation</seealso>
         ListTagsResponse ListTags(ListTagsRequest request);
@@ -3459,7 +4164,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>The response from the ListTags service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource specified in the request does not exist.
@@ -3468,7 +4173,8 @@ namespace Amazon.Lambda
         /// The Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListTags">REST API Reference for ListTags Operation</seealso>
         Task<ListTagsResponse> ListTagsAsync(ListTagsRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -3487,7 +4193,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>The response from the ListVersionsByFunction service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource specified in the request does not exist.
@@ -3496,7 +4202,8 @@ namespace Amazon.Lambda
         /// The Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListVersionsByFunction">REST API Reference for ListVersionsByFunction Operation</seealso>
         ListVersionsByFunctionResponse ListVersionsByFunction(ListVersionsByFunctionRequest request);
@@ -3515,7 +4222,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>The response from the ListVersionsByFunction service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource specified in the request does not exist.
@@ -3524,7 +4231,8 @@ namespace Amazon.Lambda
         /// The Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListVersionsByFunction">REST API Reference for ListVersionsByFunction Operation</seealso>
         Task<ListVersionsByFunctionResponse> ListVersionsByFunctionAsync(ListVersionsByFunctionRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -3548,11 +4256,12 @@ namespace Amazon.Lambda
         /// 
         /// <returns>The response from the PublishLayerVersion service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.CodeStorageExceededException">
-        /// You have exceeded your maximum total code size per account. <a href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">Learn
-        /// more</a>
+        /// Your Amazon Web Services account has exceeded its maximum total code size. For more
+        /// information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource specified in the request does not exist.
@@ -3561,7 +4270,8 @@ namespace Amazon.Lambda
         /// The Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PublishLayerVersion">REST API Reference for PublishLayerVersion Operation</seealso>
         PublishLayerVersionResponse PublishLayerVersion(PublishLayerVersionRequest request);
@@ -3585,11 +4295,12 @@ namespace Amazon.Lambda
         /// 
         /// <returns>The response from the PublishLayerVersion service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.CodeStorageExceededException">
-        /// You have exceeded your maximum total code size per account. <a href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">Learn
-        /// more</a>
+        /// Your Amazon Web Services account has exceeded its maximum total code size. For more
+        /// information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource specified in the request does not exist.
@@ -3598,7 +4309,8 @@ namespace Amazon.Lambda
         /// The Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PublishLayerVersion">REST API Reference for PublishLayerVersion Operation</seealso>
         Task<PublishLayerVersionResponse> PublishLayerVersionAsync(PublishLayerVersionRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -3628,16 +4340,17 @@ namespace Amazon.Lambda
         /// 
         /// <returns>The response from the PublishVersion service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.CodeStorageExceededException">
-        /// You have exceeded your maximum total code size per account. <a href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">Learn
-        /// more</a>
+        /// Your Amazon Web Services account has exceeded its maximum total code size. For more
+        /// information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.PreconditionFailedException">
         /// The RevisionId provided does not match the latest RevisionId for the Lambda function
-        /// or alias. Call the <code>GetFunction</code> or the <code>GetAlias</code> API to retrieve
-        /// the latest RevisionId for your resource.
+        /// or alias. Call the <code>GetFunction</code> or the <code>GetAlias</code> API operation
+        /// to retrieve the latest RevisionId for your resource.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
         /// The resource already exists, or another operation is in progress.
@@ -3649,7 +4362,8 @@ namespace Amazon.Lambda
         /// The Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PublishVersion">REST API Reference for PublishVersion Operation</seealso>
         PublishVersionResponse PublishVersion(PublishVersionRequest request);
@@ -3679,16 +4393,17 @@ namespace Amazon.Lambda
         /// 
         /// <returns>The response from the PublishVersion service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.CodeStorageExceededException">
-        /// You have exceeded your maximum total code size per account. <a href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">Learn
-        /// more</a>
+        /// Your Amazon Web Services account has exceeded its maximum total code size. For more
+        /// information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.PreconditionFailedException">
         /// The RevisionId provided does not match the latest RevisionId for the Lambda function
-        /// or alias. Call the <code>GetFunction</code> or the <code>GetAlias</code> API to retrieve
-        /// the latest RevisionId for your resource.
+        /// or alias. Call the <code>GetFunction</code> or the <code>GetAlias</code> API operation
+        /// to retrieve the latest RevisionId for your resource.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
         /// The resource already exists, or another operation is in progress.
@@ -3700,7 +4415,8 @@ namespace Amazon.Lambda
         /// The Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PublishVersion">REST API Reference for PublishVersion Operation</seealso>
         Task<PublishVersionResponse> PublishVersionAsync(PublishVersionRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -3722,7 +4438,7 @@ namespace Amazon.Lambda
         /// The specified code signing configuration does not exist.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
         /// The resource already exists, or another operation is in progress.
@@ -3734,7 +4450,8 @@ namespace Amazon.Lambda
         /// The Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PutFunctionCodeSigningConfig">REST API Reference for PutFunctionCodeSigningConfig Operation</seealso>
         PutFunctionCodeSigningConfigResponse PutFunctionCodeSigningConfig(PutFunctionCodeSigningConfigRequest request);
@@ -3756,7 +4473,7 @@ namespace Amazon.Lambda
         /// The specified code signing configuration does not exist.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
         /// The resource already exists, or another operation is in progress.
@@ -3768,7 +4485,8 @@ namespace Amazon.Lambda
         /// The Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PutFunctionCodeSigningConfig">REST API Reference for PutFunctionCodeSigningConfig Operation</seealso>
         Task<PutFunctionCodeSigningConfigResponse> PutFunctionCodeSigningConfigAsync(PutFunctionCodeSigningConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -3795,15 +4513,15 @@ namespace Amazon.Lambda
         /// Use <a>GetAccountSettings</a> to see your Regional concurrency limit. You can reserve
         /// concurrency for as many functions as you like, as long as you leave at least 100 simultaneous
         /// executions unreserved for functions that aren't configured with a per-function limit.
-        /// For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">Managing
-        /// Concurrency</a>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-scaling.html">Lambda
+        /// function scaling</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutFunctionConcurrency service method.</param>
         /// 
         /// <returns>The response from the PutFunctionConcurrency service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
         /// The resource already exists, or another operation is in progress.
@@ -3815,7 +4533,8 @@ namespace Amazon.Lambda
         /// The Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PutFunctionConcurrency">REST API Reference for PutFunctionConcurrency Operation</seealso>
         PutFunctionConcurrencyResponse PutFunctionConcurrency(PutFunctionConcurrencyRequest request);
@@ -3839,8 +4558,8 @@ namespace Amazon.Lambda
         /// Use <a>GetAccountSettings</a> to see your Regional concurrency limit. You can reserve
         /// concurrency for as many functions as you like, as long as you leave at least 100 simultaneous
         /// executions unreserved for functions that aren't configured with a per-function limit.
-        /// For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">Managing
-        /// Concurrency</a>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-scaling.html">Lambda
+        /// function scaling</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutFunctionConcurrency service method.</param>
@@ -3850,7 +4569,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>The response from the PutFunctionConcurrency service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
         /// The resource already exists, or another operation is in progress.
@@ -3862,7 +4581,8 @@ namespace Amazon.Lambda
         /// The Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PutFunctionConcurrency">REST API Reference for PutFunctionConcurrency Operation</seealso>
         Task<PutFunctionConcurrencyResponse> PutFunctionConcurrencyAsync(PutFunctionConcurrencyRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -3899,7 +4619,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>The response from the PutFunctionEventInvokeConfig service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
         /// The resource already exists, or another operation is in progress.
@@ -3911,7 +4631,8 @@ namespace Amazon.Lambda
         /// The Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PutFunctionEventInvokeConfig">REST API Reference for PutFunctionEventInvokeConfig Operation</seealso>
         PutFunctionEventInvokeConfigResponse PutFunctionEventInvokeConfig(PutFunctionEventInvokeConfigRequest request);
@@ -3948,7 +4669,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>The response from the PutFunctionEventInvokeConfig service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
         /// The resource already exists, or another operation is in progress.
@@ -3960,7 +4681,8 @@ namespace Amazon.Lambda
         /// The Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PutFunctionEventInvokeConfig">REST API Reference for PutFunctionEventInvokeConfig Operation</seealso>
         Task<PutFunctionEventInvokeConfigResponse> PutFunctionEventInvokeConfigAsync(PutFunctionEventInvokeConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -3977,7 +4699,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>The response from the PutProvisionedConcurrencyConfig service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
         /// The resource already exists, or another operation is in progress.
@@ -3989,7 +4711,8 @@ namespace Amazon.Lambda
         /// The Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PutProvisionedConcurrencyConfig">REST API Reference for PutProvisionedConcurrencyConfig Operation</seealso>
         PutProvisionedConcurrencyConfigResponse PutProvisionedConcurrencyConfig(PutProvisionedConcurrencyConfigRequest request);
@@ -4006,7 +4729,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>The response from the PutProvisionedConcurrencyConfig service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
         /// The resource already exists, or another operation is in progress.
@@ -4018,10 +4741,75 @@ namespace Amazon.Lambda
         /// The Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PutProvisionedConcurrencyConfig">REST API Reference for PutProvisionedConcurrencyConfig Operation</seealso>
         Task<PutProvisionedConcurrencyConfigResponse> PutProvisionedConcurrencyConfigAsync(PutProvisionedConcurrencyConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  PutRuntimeManagementConfig
+
+
+        /// <summary>
+        /// Sets the runtime management configuration for a function's version. For more information,
+        /// see <a href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-update.html">Runtime
+        /// updates</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutRuntimeManagementConfig service method.</param>
+        /// 
+        /// <returns>The response from the PutRuntimeManagementConfig service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
+        /// The resource already exists, or another operation is in progress.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
+        /// The resource specified in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PutRuntimeManagementConfig">REST API Reference for PutRuntimeManagementConfig Operation</seealso>
+        PutRuntimeManagementConfigResponse PutRuntimeManagementConfig(PutRuntimeManagementConfigRequest request);
+
+
+
+        /// <summary>
+        /// Sets the runtime management configuration for a function's version. For more information,
+        /// see <a href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-update.html">Runtime
+        /// updates</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutRuntimeManagementConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutRuntimeManagementConfig service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
+        /// The resource already exists, or another operation is in progress.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
+        /// The resource specified in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PutRuntimeManagementConfig">REST API Reference for PutRuntimeManagementConfig Operation</seealso>
+        Task<PutRuntimeManagementConfigResponse> PutRuntimeManagementConfigAsync(PutRuntimeManagementConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -4036,12 +4824,12 @@ namespace Amazon.Lambda
         /// 
         /// <returns>The response from the RemoveLayerVersionPermission service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.PreconditionFailedException">
         /// The RevisionId provided does not match the latest RevisionId for the Lambda function
-        /// or alias. Call the <code>GetFunction</code> or the <code>GetAlias</code> API to retrieve
-        /// the latest RevisionId for your resource.
+        /// or alias. Call the <code>GetFunction</code> or the <code>GetAlias</code> API operation
+        /// to retrieve the latest RevisionId for your resource.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource specified in the request does not exist.
@@ -4050,7 +4838,8 @@ namespace Amazon.Lambda
         /// The Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/RemoveLayerVersionPermission">REST API Reference for RemoveLayerVersionPermission Operation</seealso>
         RemoveLayerVersionPermissionResponse RemoveLayerVersionPermission(RemoveLayerVersionPermissionRequest request);
@@ -4068,12 +4857,12 @@ namespace Amazon.Lambda
         /// 
         /// <returns>The response from the RemoveLayerVersionPermission service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.PreconditionFailedException">
         /// The RevisionId provided does not match the latest RevisionId for the Lambda function
-        /// or alias. Call the <code>GetFunction</code> or the <code>GetAlias</code> API to retrieve
-        /// the latest RevisionId for your resource.
+        /// or alias. Call the <code>GetFunction</code> or the <code>GetAlias</code> API operation
+        /// to retrieve the latest RevisionId for your resource.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource specified in the request does not exist.
@@ -4082,7 +4871,8 @@ namespace Amazon.Lambda
         /// The Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/RemoveLayerVersionPermission">REST API Reference for RemoveLayerVersionPermission Operation</seealso>
         Task<RemoveLayerVersionPermissionResponse> RemoveLayerVersionPermissionAsync(RemoveLayerVersionPermissionRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -4093,19 +4883,19 @@ namespace Amazon.Lambda
 
 
         /// <summary>
-        /// Revokes function-use permission from an Amazon Web Services service or another account.
-        /// You can get the ID of the statement from the output of <a>GetPolicy</a>.
+        /// Revokes function-use permission from an Amazon Web Service or another Amazon Web Services
+        /// account. You can get the ID of the statement from the output of <a>GetPolicy</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RemovePermission service method.</param>
         /// 
         /// <returns>The response from the RemovePermission service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.PreconditionFailedException">
         /// The RevisionId provided does not match the latest RevisionId for the Lambda function
-        /// or alias. Call the <code>GetFunction</code> or the <code>GetAlias</code> API to retrieve
-        /// the latest RevisionId for your resource.
+        /// or alias. Call the <code>GetFunction</code> or the <code>GetAlias</code> API operation
+        /// to retrieve the latest RevisionId for your resource.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource specified in the request does not exist.
@@ -4114,7 +4904,8 @@ namespace Amazon.Lambda
         /// The Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/RemovePermission">REST API Reference for RemovePermission Operation</seealso>
         RemovePermissionResponse RemovePermission(RemovePermissionRequest request);
@@ -4122,8 +4913,8 @@ namespace Amazon.Lambda
 
 
         /// <summary>
-        /// Revokes function-use permission from an Amazon Web Services service or another account.
-        /// You can get the ID of the statement from the output of <a>GetPolicy</a>.
+        /// Revokes function-use permission from an Amazon Web Service or another Amazon Web Services
+        /// account. You can get the ID of the statement from the output of <a>GetPolicy</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RemovePermission service method.</param>
         /// <param name="cancellationToken">
@@ -4132,12 +4923,12 @@ namespace Amazon.Lambda
         /// 
         /// <returns>The response from the RemovePermission service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.PreconditionFailedException">
         /// The RevisionId provided does not match the latest RevisionId for the Lambda function
-        /// or alias. Call the <code>GetFunction</code> or the <code>GetAlias</code> API to retrieve
-        /// the latest RevisionId for your resource.
+        /// or alias. Call the <code>GetFunction</code> or the <code>GetAlias</code> API operation
+        /// to retrieve the latest RevisionId for your resource.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource specified in the request does not exist.
@@ -4146,7 +4937,8 @@ namespace Amazon.Lambda
         /// The Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/RemovePermission">REST API Reference for RemovePermission Operation</seealso>
         Task<RemovePermissionResponse> RemovePermissionAsync(RemovePermissionRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -4164,7 +4956,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>The response from the TagResource service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
         /// The resource already exists, or another operation is in progress.
@@ -4176,7 +4968,8 @@ namespace Amazon.Lambda
         /// The Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/TagResource">REST API Reference for TagResource Operation</seealso>
         TagResourceResponse TagResource(TagResourceRequest request);
@@ -4194,7 +4987,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>The response from the TagResource service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
         /// The resource already exists, or another operation is in progress.
@@ -4206,7 +4999,8 @@ namespace Amazon.Lambda
         /// The Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/TagResource">REST API Reference for TagResource Operation</seealso>
         Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -4224,7 +5018,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>The response from the UntagResource service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
         /// The resource already exists, or another operation is in progress.
@@ -4236,7 +5030,8 @@ namespace Amazon.Lambda
         /// The Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UntagResource">REST API Reference for UntagResource Operation</seealso>
         UntagResourceResponse UntagResource(UntagResourceRequest request);
@@ -4254,7 +5049,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>The response from the UntagResource service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
         /// The resource already exists, or another operation is in progress.
@@ -4266,7 +5061,8 @@ namespace Amazon.Lambda
         /// The Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UntagResource">REST API Reference for UntagResource Operation</seealso>
         Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -4277,18 +5073,18 @@ namespace Amazon.Lambda
 
 
         /// <summary>
-        /// Updates the configuration of a Lambda function <a href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">alias</a>.
+        /// Updates the configuration of a Lambda function <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html">alias</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAlias service method.</param>
         /// 
         /// <returns>The response from the UpdateAlias service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.PreconditionFailedException">
         /// The RevisionId provided does not match the latest RevisionId for the Lambda function
-        /// or alias. Call the <code>GetFunction</code> or the <code>GetAlias</code> API to retrieve
-        /// the latest RevisionId for your resource.
+        /// or alias. Call the <code>GetFunction</code> or the <code>GetAlias</code> API operation
+        /// to retrieve the latest RevisionId for your resource.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
         /// The resource already exists, or another operation is in progress.
@@ -4300,7 +5096,8 @@ namespace Amazon.Lambda
         /// The Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateAlias">REST API Reference for UpdateAlias Operation</seealso>
         UpdateAliasResponse UpdateAlias(UpdateAliasRequest request);
@@ -4308,7 +5105,7 @@ namespace Amazon.Lambda
 
 
         /// <summary>
-        /// Updates the configuration of a Lambda function <a href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">alias</a>.
+        /// Updates the configuration of a Lambda function <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html">alias</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAlias service method.</param>
         /// <param name="cancellationToken">
@@ -4317,12 +5114,12 @@ namespace Amazon.Lambda
         /// 
         /// <returns>The response from the UpdateAlias service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.PreconditionFailedException">
         /// The RevisionId provided does not match the latest RevisionId for the Lambda function
-        /// or alias. Call the <code>GetFunction</code> or the <code>GetAlias</code> API to retrieve
-        /// the latest RevisionId for your resource.
+        /// or alias. Call the <code>GetFunction</code> or the <code>GetAlias</code> API operation
+        /// to retrieve the latest RevisionId for your resource.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
         /// The resource already exists, or another operation is in progress.
@@ -4334,7 +5131,8 @@ namespace Amazon.Lambda
         /// The Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateAlias">REST API Reference for UpdateAlias Operation</seealso>
         Task<UpdateAliasResponse> UpdateAliasAsync(UpdateAliasRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -4352,7 +5150,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>The response from the UpdateCodeSigningConfig service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource specified in the request does not exist.
@@ -4376,7 +5174,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>The response from the UpdateCodeSigningConfig service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource specified in the request does not exist.
@@ -4431,36 +5229,41 @@ namespace Amazon.Lambda
         ///  <a href="https://docs.aws.amazon.com/lambda/latest/dg/kafka-smaa.html"> Apache Kafka</a>
         /// 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-documentdb.html"> Amazon
+        /// DocumentDB</a> 
+        /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The following error handling options are only available for stream sources (DynamoDB
+        /// The following error handling options are available only for stream sources (DynamoDB
         /// and Kinesis):
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>BisectBatchOnFunctionError</code> - If the function returns an error, split
+        ///  <code>BisectBatchOnFunctionError</code> – If the function returns an error, split
         /// the batch in two and retry.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DestinationConfig</code> - Send discarded records to an Amazon SQS queue or
+        ///  <code>DestinationConfig</code> – Send discarded records to an Amazon SQS queue or
         /// Amazon SNS topic.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>MaximumRecordAgeInSeconds</code> - Discard records older than the specified
+        ///  <code>MaximumRecordAgeInSeconds</code> – Discard records older than the specified
         /// age. The default value is infinite (-1). When set to infinite (-1), failed records
         /// are retried until the record expires
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>MaximumRetryAttempts</code> - Discard records after the specified number of
+        ///  <code>MaximumRetryAttempts</code> – Discard records after the specified number of
         /// retries. The default value is infinite (-1). When set to infinite (-1), failed records
         /// are retried until the record expires.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ParallelizationFactor</code> - Process multiple batches from each shard concurrently.
+        ///  <code>ParallelizationFactor</code> – Process multiple batches from each shard concurrently.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -4497,21 +5300,26 @@ namespace Amazon.Lambda
         ///  <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-kafka.html#services-kafka-parms">
         /// Apache Kafka</a> 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-documentdb.html#docdb-configuration">
+        /// Amazon DocumentDB</a> 
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateEventSourceMapping service method.</param>
         /// 
         /// <returns>The response from the UpdateEventSourceMapping service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
         /// The resource already exists, or another operation is in progress.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceInUseException">
-        /// The operation conflicts with the resource's availability. For example, you attempted
-        /// to update an EventSource Mapping in CREATING, or tried to delete a EventSource mapping
-        /// currently in the UPDATING state.
+        /// The operation conflicts with the resource's availability. For example, you tried to
+        /// update an event source mapping in the CREATING state, or you tried to delete an event
+        /// source mapping currently UPDATING.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource specified in the request does not exist.
@@ -4520,7 +5328,8 @@ namespace Amazon.Lambda
         /// The Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateEventSourceMapping">REST API Reference for UpdateEventSourceMapping Operation</seealso>
         UpdateEventSourceMappingResponse UpdateEventSourceMapping(UpdateEventSourceMappingRequest request);
@@ -4566,36 +5375,41 @@ namespace Amazon.Lambda
         ///  <a href="https://docs.aws.amazon.com/lambda/latest/dg/kafka-smaa.html"> Apache Kafka</a>
         /// 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-documentdb.html"> Amazon
+        /// DocumentDB</a> 
+        /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The following error handling options are only available for stream sources (DynamoDB
+        /// The following error handling options are available only for stream sources (DynamoDB
         /// and Kinesis):
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>BisectBatchOnFunctionError</code> - If the function returns an error, split
+        ///  <code>BisectBatchOnFunctionError</code> – If the function returns an error, split
         /// the batch in two and retry.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DestinationConfig</code> - Send discarded records to an Amazon SQS queue or
+        ///  <code>DestinationConfig</code> – Send discarded records to an Amazon SQS queue or
         /// Amazon SNS topic.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>MaximumRecordAgeInSeconds</code> - Discard records older than the specified
+        ///  <code>MaximumRecordAgeInSeconds</code> – Discard records older than the specified
         /// age. The default value is infinite (-1). When set to infinite (-1), failed records
         /// are retried until the record expires
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>MaximumRetryAttempts</code> - Discard records after the specified number of
+        ///  <code>MaximumRetryAttempts</code> – Discard records after the specified number of
         /// retries. The default value is infinite (-1). When set to infinite (-1), failed records
         /// are retried until the record expires.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ParallelizationFactor</code> - Process multiple batches from each shard concurrently.
+        ///  <code>ParallelizationFactor</code> – Process multiple batches from each shard concurrently.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -4632,6 +5446,11 @@ namespace Amazon.Lambda
         ///  <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-kafka.html#services-kafka-parms">
         /// Apache Kafka</a> 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-documentdb.html#docdb-configuration">
+        /// Amazon DocumentDB</a> 
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateEventSourceMapping service method.</param>
@@ -4641,15 +5460,15 @@ namespace Amazon.Lambda
         /// 
         /// <returns>The response from the UpdateEventSourceMapping service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
         /// The resource already exists, or another operation is in progress.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceInUseException">
-        /// The operation conflicts with the resource's availability. For example, you attempted
-        /// to update an EventSource Mapping in CREATING, or tried to delete a EventSource mapping
-        /// currently in the UPDATING state.
+        /// The operation conflicts with the resource's availability. For example, you tried to
+        /// update an event source mapping in the CREATING state, or you tried to delete an event
+        /// source mapping currently UPDATING.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource specified in the request does not exist.
@@ -4658,7 +5477,8 @@ namespace Amazon.Lambda
         /// The Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateEventSourceMapping">REST API Reference for UpdateEventSourceMapping Operation</seealso>
         Task<UpdateEventSourceMappingResponse> UpdateEventSourceMappingAsync(UpdateEventSourceMappingRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -4670,9 +5490,27 @@ namespace Amazon.Lambda
 
         /// <summary>
         /// Updates a Lambda function's code. If code signing is enabled for the function, the
-        /// code package must be signed by a trusted publisher. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-trustedcode.html">Configuring
-        /// code signing</a>.
+        /// code package must be signed by a trusted publisher. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-codesigning.html">Configuring
+        /// code signing for Lambda</a>.
         /// 
+        ///  
+        /// <para>
+        /// If the function's package type is <code>Image</code>, then you must specify the code
+        /// package in <code>ImageUri</code> as the URI of a <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-images.html">container
+        /// image</a> in the Amazon ECR registry.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the function's package type is <code>Zip</code>, then you must specify the deployment
+        /// package as a <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-package.html#gettingstarted-package-zip">.zip
+        /// file archive</a>. Enter the Amazon S3 bucket and key of the code .zip file location.
+        /// You can also provide the function code inline using the <code>ZipFile</code> field.
+        /// </para>
+        ///  
+        /// <para>
+        /// The code in the deployment package must be compatible with the target instruction
+        /// set architecture of the function (<code>x86-64</code> or <code>arm64</code>).
+        /// </para>
         ///  
         /// <para>
         /// The function's code is locked when you publish a version. You can't modify the code
@@ -4693,24 +5531,25 @@ namespace Amazon.Lambda
         /// The specified code signing configuration does not exist.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.CodeStorageExceededException">
-        /// You have exceeded your maximum total code size per account. <a href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">Learn
-        /// more</a>
+        /// Your Amazon Web Services account has exceeded its maximum total code size. For more
+        /// information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.CodeVerificationFailedException">
         /// The code signature failed one or more of the validation checks for signature mismatch
         /// or expiry, and the code signing policy is set to ENFORCE. Lambda blocks the deployment.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.InvalidCodeSignatureException">
-        /// The code signature failed the integrity check. Lambda always blocks deployment if
-        /// the integrity check fails, even if code signing policy is set to WARN.
+        /// The code signature failed the integrity check. If the integrity check fails, then
+        /// Lambda blocks deployment, even if the code signing policy is set to WARN.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.PreconditionFailedException">
         /// The RevisionId provided does not match the latest RevisionId for the Lambda function
-        /// or alias. Call the <code>GetFunction</code> or the <code>GetAlias</code> API to retrieve
-        /// the latest RevisionId for your resource.
+        /// or alias. Call the <code>GetFunction</code> or the <code>GetAlias</code> API operation
+        /// to retrieve the latest RevisionId for your resource.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
         /// The resource already exists, or another operation is in progress.
@@ -4722,7 +5561,8 @@ namespace Amazon.Lambda
         /// The Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateFunctionCode">REST API Reference for UpdateFunctionCode Operation</seealso>
         UpdateFunctionCodeResponse UpdateFunctionCode(UpdateFunctionCodeRequest request);
@@ -4731,9 +5571,27 @@ namespace Amazon.Lambda
 
         /// <summary>
         /// Updates a Lambda function's code. If code signing is enabled for the function, the
-        /// code package must be signed by a trusted publisher. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-trustedcode.html">Configuring
-        /// code signing</a>.
+        /// code package must be signed by a trusted publisher. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-codesigning.html">Configuring
+        /// code signing for Lambda</a>.
         /// 
+        ///  
+        /// <para>
+        /// If the function's package type is <code>Image</code>, then you must specify the code
+        /// package in <code>ImageUri</code> as the URI of a <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-images.html">container
+        /// image</a> in the Amazon ECR registry.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the function's package type is <code>Zip</code>, then you must specify the deployment
+        /// package as a <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-package.html#gettingstarted-package-zip">.zip
+        /// file archive</a>. Enter the Amazon S3 bucket and key of the code .zip file location.
+        /// You can also provide the function code inline using the <code>ZipFile</code> field.
+        /// </para>
+        ///  
+        /// <para>
+        /// The code in the deployment package must be compatible with the target instruction
+        /// set architecture of the function (<code>x86-64</code> or <code>arm64</code>).
+        /// </para>
         ///  
         /// <para>
         /// The function's code is locked when you publish a version. You can't modify the code
@@ -4757,24 +5615,25 @@ namespace Amazon.Lambda
         /// The specified code signing configuration does not exist.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.CodeStorageExceededException">
-        /// You have exceeded your maximum total code size per account. <a href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">Learn
-        /// more</a>
+        /// Your Amazon Web Services account has exceeded its maximum total code size. For more
+        /// information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.CodeVerificationFailedException">
         /// The code signature failed one or more of the validation checks for signature mismatch
         /// or expiry, and the code signing policy is set to ENFORCE. Lambda blocks the deployment.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.InvalidCodeSignatureException">
-        /// The code signature failed the integrity check. Lambda always blocks deployment if
-        /// the integrity check fails, even if code signing policy is set to WARN.
+        /// The code signature failed the integrity check. If the integrity check fails, then
+        /// Lambda blocks deployment, even if the code signing policy is set to WARN.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.PreconditionFailedException">
         /// The RevisionId provided does not match the latest RevisionId for the Lambda function
-        /// or alias. Call the <code>GetFunction</code> or the <code>GetAlias</code> API to retrieve
-        /// the latest RevisionId for your resource.
+        /// or alias. Call the <code>GetFunction</code> or the <code>GetAlias</code> API operation
+        /// to retrieve the latest RevisionId for your resource.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
         /// The resource already exists, or another operation is in progress.
@@ -4786,7 +5645,8 @@ namespace Amazon.Lambda
         /// The Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateFunctionCode">REST API Reference for UpdateFunctionCode Operation</seealso>
         Task<UpdateFunctionCodeResponse> UpdateFunctionCodeAsync(UpdateFunctionCodeRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -4807,8 +5667,8 @@ namespace Amazon.Lambda
         /// it. The <code>LastUpdateStatus</code>, <code>LastUpdateStatusReason</code>, and <code>LastUpdateStatusReasonCode</code>
         /// fields in the response from <a>GetFunctionConfiguration</a> indicate when the update
         /// is complete and the function is processing events with the new configuration. For
-        /// more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/functions-states.html">Function
-        /// States</a>.
+        /// more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/functions-states.html">Lambda
+        /// function states</a>.
         /// </para>
         ///  
         /// <para>
@@ -4819,7 +5679,7 @@ namespace Amazon.Lambda
         ///  
         /// <para>
         /// To configure function concurrency, use <a>PutFunctionConcurrency</a>. To grant invoke
-        /// permissions to an account or Amazon Web Services service, use <a>AddPermission</a>.
+        /// permissions to an Amazon Web Services account or Amazon Web Service, use <a>AddPermission</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateFunctionConfiguration service method.</param>
@@ -4833,16 +5693,16 @@ namespace Amazon.Lambda
         /// or expiry, and the code signing policy is set to ENFORCE. Lambda blocks the deployment.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.InvalidCodeSignatureException">
-        /// The code signature failed the integrity check. Lambda always blocks deployment if
-        /// the integrity check fails, even if code signing policy is set to WARN.
+        /// The code signature failed the integrity check. If the integrity check fails, then
+        /// Lambda blocks deployment, even if the code signing policy is set to WARN.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.PreconditionFailedException">
         /// The RevisionId provided does not match the latest RevisionId for the Lambda function
-        /// or alias. Call the <code>GetFunction</code> or the <code>GetAlias</code> API to retrieve
-        /// the latest RevisionId for your resource.
+        /// or alias. Call the <code>GetFunction</code> or the <code>GetAlias</code> API operation
+        /// to retrieve the latest RevisionId for your resource.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
         /// The resource already exists, or another operation is in progress.
@@ -4854,7 +5714,8 @@ namespace Amazon.Lambda
         /// The Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateFunctionConfiguration">REST API Reference for UpdateFunctionConfiguration Operation</seealso>
         UpdateFunctionConfigurationResponse UpdateFunctionConfiguration(UpdateFunctionConfigurationRequest request);
@@ -4872,8 +5733,8 @@ namespace Amazon.Lambda
         /// it. The <code>LastUpdateStatus</code>, <code>LastUpdateStatusReason</code>, and <code>LastUpdateStatusReasonCode</code>
         /// fields in the response from <a>GetFunctionConfiguration</a> indicate when the update
         /// is complete and the function is processing events with the new configuration. For
-        /// more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/functions-states.html">Function
-        /// States</a>.
+        /// more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/functions-states.html">Lambda
+        /// function states</a>.
         /// </para>
         ///  
         /// <para>
@@ -4884,7 +5745,7 @@ namespace Amazon.Lambda
         ///  
         /// <para>
         /// To configure function concurrency, use <a>PutFunctionConcurrency</a>. To grant invoke
-        /// permissions to an account or Amazon Web Services service, use <a>AddPermission</a>.
+        /// permissions to an Amazon Web Services account or Amazon Web Service, use <a>AddPermission</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateFunctionConfiguration service method.</param>
@@ -4901,16 +5762,16 @@ namespace Amazon.Lambda
         /// or expiry, and the code signing policy is set to ENFORCE. Lambda blocks the deployment.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.InvalidCodeSignatureException">
-        /// The code signature failed the integrity check. Lambda always blocks deployment if
-        /// the integrity check fails, even if code signing policy is set to WARN.
+        /// The code signature failed the integrity check. If the integrity check fails, then
+        /// Lambda blocks deployment, even if the code signing policy is set to WARN.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.PreconditionFailedException">
         /// The RevisionId provided does not match the latest RevisionId for the Lambda function
-        /// or alias. Call the <code>GetFunction</code> or the <code>GetAlias</code> API to retrieve
-        /// the latest RevisionId for your resource.
+        /// or alias. Call the <code>GetFunction</code> or the <code>GetAlias</code> API operation
+        /// to retrieve the latest RevisionId for your resource.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
         /// The resource already exists, or another operation is in progress.
@@ -4922,7 +5783,8 @@ namespace Amazon.Lambda
         /// The Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateFunctionConfiguration">REST API Reference for UpdateFunctionConfiguration Operation</seealso>
         Task<UpdateFunctionConfigurationResponse> UpdateFunctionConfigurationAsync(UpdateFunctionConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -4945,7 +5807,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>The response from the UpdateFunctionEventInvokeConfig service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
         /// The resource already exists, or another operation is in progress.
@@ -4957,7 +5819,8 @@ namespace Amazon.Lambda
         /// The Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateFunctionEventInvokeConfig">REST API Reference for UpdateFunctionEventInvokeConfig Operation</seealso>
         UpdateFunctionEventInvokeConfigResponse UpdateFunctionEventInvokeConfig(UpdateFunctionEventInvokeConfigRequest request);
@@ -4980,7 +5843,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>The response from the UpdateFunctionEventInvokeConfig service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
+        /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
         /// The resource already exists, or another operation is in progress.
@@ -4992,10 +5855,71 @@ namespace Amazon.Lambda
         /// The Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateFunctionEventInvokeConfig">REST API Reference for UpdateFunctionEventInvokeConfig Operation</seealso>
         Task<UpdateFunctionEventInvokeConfigResponse> UpdateFunctionEventInvokeConfigAsync(UpdateFunctionEventInvokeConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateFunctionUrlConfig
+
+
+        /// <summary>
+        /// Updates the configuration for a Lambda function URL.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateFunctionUrlConfig service method.</param>
+        /// 
+        /// <returns>The response from the UpdateFunctionUrlConfig service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
+        /// The resource already exists, or another operation is in progress.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
+        /// The resource specified in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateFunctionUrlConfig">REST API Reference for UpdateFunctionUrlConfig Operation</seealso>
+        UpdateFunctionUrlConfigResponse UpdateFunctionUrlConfig(UpdateFunctionUrlConfigRequest request);
+
+
+
+        /// <summary>
+        /// Updates the configuration for a Lambda function URL.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateFunctionUrlConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateFunctionUrlConfig service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
+        /// The resource already exists, or another operation is in progress.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
+        /// The resource specified in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateFunctionUrlConfig">REST API Reference for UpdateFunctionUrlConfig Operation</seealso>
+        Task<UpdateFunctionUrlConfigResponse> UpdateFunctionUrlConfigAsync(UpdateFunctionUrlConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

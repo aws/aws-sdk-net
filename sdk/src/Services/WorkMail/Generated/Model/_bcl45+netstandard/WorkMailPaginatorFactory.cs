@@ -44,6 +44,14 @@ namespace Amazon.WorkMail.Model
         }
 
         /// <summary>
+        /// Paginator for ListAvailabilityConfigurations operation
+        ///</summary>
+        public IListAvailabilityConfigurationsPaginator ListAvailabilityConfigurations(ListAvailabilityConfigurationsRequest request) 
+        {
+            return new ListAvailabilityConfigurationsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListGroupMembers operation
         ///</summary>
         public IListGroupMembersPaginator ListGroupMembers(ListGroupMembersRequest request) 
@@ -57,6 +65,14 @@ namespace Amazon.WorkMail.Model
         public IListGroupsPaginator ListGroups(ListGroupsRequest request) 
         {
             return new ListGroupsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListImpersonationRoles operation
+        ///</summary>
+        public IListImpersonationRolesPaginator ListImpersonationRoles(ListImpersonationRolesRequest request) 
+        {
+            return new ListImpersonationRolesPaginator(this.client, request);
         }
 
         /// <summary>

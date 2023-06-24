@@ -34,7 +34,7 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DiskMap Marshaller
-    /// </summary>       
+    /// </summary>
     public class DiskMapMarshaller : IRequestMarshaller<DiskMap, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DiskMapMarshaller Instance = new DiskMapMarshaller();
 
     }

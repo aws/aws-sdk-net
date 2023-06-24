@@ -36,8 +36,8 @@ namespace Amazon.ForecastService.Model
     ///  
     /// <para>
     /// You must specify a <a>DataDestination</a> object that includes an Amazon S3 bucket
-    /// and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume
-    /// to access the Amazon S3 bucket. For more information, see <a>aws-forecast-iam-roles</a>.
+    /// and an Identity and Access Management (IAM) role that Amazon Forecast can assume to
+    /// access the Amazon S3 bucket. For more information, see <a>aws-forecast-iam-roles</a>.
     /// </para>
     ///  <note> 
     /// <para>
@@ -52,6 +52,7 @@ namespace Amazon.ForecastService.Model
         private DataDestination _destination;
         private string _explainabilityArn;
         private string _explainabilityExportName;
+        private string _format;
         private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
@@ -106,6 +107,25 @@ namespace Amazon.ForecastService.Model
         internal bool IsSetExplainabilityExportName()
         {
             return this._explainabilityExportName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Format. 
+        /// <para>
+        /// The format of the exported data, CSV or PARQUET.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=7)]
+        public string Format
+        {
+            get { return this._format; }
+            set { this._format = value; }
+        }
+
+        // Check to see if Format property is set
+        internal bool IsSetFormat()
+        {
+            return this._format != null;
         }
 
         /// <summary>

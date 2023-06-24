@@ -34,8 +34,43 @@ namespace Amazon.WorkSpacesWeb.Model
     /// </summary>
     public partial class UpdatePortalRequest : AmazonWorkSpacesWebRequest
     {
+        private AuthenticationType _authenticationType;
         private string _displayName;
         private string _portalArn;
+
+        /// <summary>
+        /// Gets and sets the property AuthenticationType. 
+        /// <para>
+        /// The type of authentication integration points used when signing into the web portal.
+        /// Defaults to <code>Standard</code>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>Standard</code> web portals are authenticated directly through your identity
+        /// provider. You need to call <code>CreateIdentityProvider</code> to integrate your identity
+        /// provider with your web portal. User and group access to your web portal is controlled
+        /// through your identity provider.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>IAM_Identity_Center</code> web portals are authenticated through AWS IAM Identity
+        /// Center (successor to AWS Single Sign-On). They provide additional features, such as
+        /// IdP-initiated authentication. Identity sources (including external identity provider
+        /// integration), plus user and group access to your web portal, can be configured in
+        /// the IAM Identity Center.
+        /// </para>
+        /// </summary>
+        public AuthenticationType AuthenticationType
+        {
+            get { return this._authenticationType; }
+            set { this._authenticationType = value; }
+        }
+
+        // Check to see if AuthenticationType property is set
+        internal bool IsSetAuthenticationType()
+        {
+            return this._authenticationType != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DisplayName. 
@@ -43,7 +78,7 @@ namespace Amazon.WorkSpacesWeb.Model
         /// The name of the web portal. This is not visible to users who log into the web portal.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=64)]
+        [AWSProperty(Sensitive=true, Min=1, Max=64)]
         public string DisplayName
         {
             get { return this._displayName; }

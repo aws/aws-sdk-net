@@ -34,7 +34,7 @@ namespace Amazon.QLDB.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ValueHolder Marshaller
-    /// </summary>       
+    /// </summary>
     public class ValueHolderMarshaller : IRequestMarshaller<ValueHolder, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.QLDB.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ValueHolderMarshaller Instance = new ValueHolderMarshaller();
 
     }

@@ -39,8 +39,8 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property CustomDataIdentifiers. 
         /// <para>
-        /// An array of objects, one for each custom data identifier that meets the criteria specified
-        /// in the request.
+        /// An array of objects, one for each custom data identifier that matches the criteria
+        /// specified in the request.
         /// </para>
         /// </summary>
         public List<BatchGetCustomDataIdentifierSummary> CustomDataIdentifiers

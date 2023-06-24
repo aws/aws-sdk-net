@@ -35,6 +35,7 @@ namespace Amazon.IoTTwinMaker.Model
     {
         private string _arn;
         private string _componentTypeId;
+        private string _componentTypeName;
         private DateTime? _creationDateTime;
         private string _description;
         private Status _status;
@@ -79,6 +80,25 @@ namespace Amazon.IoTTwinMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ComponentTypeName. 
+        /// <para>
+        /// The component type name.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=256)]
+        public string ComponentTypeName
+        {
+            get { return this._componentTypeName; }
+            set { this._componentTypeName = value; }
+        }
+
+        // Check to see if ComponentTypeName property is set
+        internal bool IsSetComponentTypeName()
+        {
+            return this._componentTypeName != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property CreationDateTime. 
         /// <para>
         /// The date and time when the component type was created.
@@ -103,7 +123,7 @@ namespace Amazon.IoTTwinMaker.Model
         /// The description of the component type.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=512)]
+        [AWSProperty(Min=0, Max=2048)]
         public string Description
         {
             get { return this._description; }

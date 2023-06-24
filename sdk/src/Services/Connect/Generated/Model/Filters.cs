@@ -35,6 +35,7 @@ namespace Amazon.Connect.Model
     {
         private List<string> _channels = new List<string>();
         private List<string> _queues = new List<string>();
+        private List<string> _routingProfiles = new List<string>();
 
         /// <summary>
         /// Gets and sets the property Channels. 
@@ -58,7 +59,10 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Queues. 
         /// <para>
-        /// The queues to use to filter the metrics. You can specify up to 100 queues per request.
+        /// The queues to use to filter the metrics. You should specify at least one queue, and
+        /// can specify up to 100 queues per request. The <code>GetCurrentMetricsData</code> API
+        /// in particular requires a queue when you include a <code>Filter</code> in your request.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -72,6 +76,25 @@ namespace Amazon.Connect.Model
         internal bool IsSetQueues()
         {
             return this._queues != null && this._queues.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RoutingProfiles. 
+        /// <para>
+        /// A list of up to 100 routing profile IDs or ARNs.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=100)]
+        public List<string> RoutingProfiles
+        {
+            get { return this._routingProfiles; }
+            set { this._routingProfiles = value; }
+        }
+
+        // Check to see if RoutingProfiles property is set
+        internal bool IsSetRoutingProfiles()
+        {
+            return this._routingProfiles != null && this._routingProfiles.Count > 0; 
         }
 
     }

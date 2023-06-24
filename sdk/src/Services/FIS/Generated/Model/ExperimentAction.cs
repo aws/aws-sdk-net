@@ -35,8 +35,10 @@ namespace Amazon.FIS.Model
     {
         private string _actionId;
         private string _description;
+        private DateTime? _endTime;
         private Dictionary<string, string> _parameters = new Dictionary<string, string>();
         private List<string> _startAfter = new List<string>();
+        private DateTime? _startTime;
         private ExperimentActionState _state;
         private Dictionary<string, string> _targets = new Dictionary<string, string>();
 
@@ -79,6 +81,24 @@ namespace Amazon.FIS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EndTime. 
+        /// <para>
+        /// The time that the action ended.
+        /// </para>
+        /// </summary>
+        public DateTime EndTime
+        {
+            get { return this._endTime.GetValueOrDefault(); }
+            set { this._endTime = value; }
+        }
+
+        // Check to see if EndTime property is set
+        internal bool IsSetEndTime()
+        {
+            return this._endTime.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Parameters. 
         /// <para>
         /// The parameters for the action.
@@ -112,6 +132,24 @@ namespace Amazon.FIS.Model
         internal bool IsSetStartAfter()
         {
             return this._startAfter != null && this._startAfter.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property StartTime. 
+        /// <para>
+        /// The time that the action started.
+        /// </para>
+        /// </summary>
+        public DateTime StartTime
+        {
+            get { return this._startTime.GetValueOrDefault(); }
+            set { this._startTime = value; }
+        }
+
+        // Check to see if StartTime property is set
+        internal bool IsSetStartTime()
+        {
+            return this._startTime.HasValue; 
         }
 
         /// <summary>

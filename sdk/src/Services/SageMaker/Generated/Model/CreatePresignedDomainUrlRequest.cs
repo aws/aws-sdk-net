@@ -38,7 +38,7 @@ namespace Amazon.SageMaker.Model
     /// 
     ///  
     /// <para>
-    /// The IAM role or user used to call this API defines the permissions to access the app.
+    /// The IAM role or user passed to this API defines the permissions to access the app.
     /// Once the presigned URL is created, no additional permission is required to access
     /// this URL. IAM authorization policies for this API are also enforced for every HTTP
     /// request and WebSocket frame that attempts to connect to the app.
@@ -64,6 +64,7 @@ namespace Amazon.SageMaker.Model
         private string _domainId;
         private int? _expiresInSeconds;
         private int? _sessionExpirationDurationInSeconds;
+        private string _spaceName;
         private string _userProfileName;
 
         /// <summary>
@@ -121,6 +122,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetSessionExpirationDurationInSeconds()
         {
             return this._sessionExpirationDurationInSeconds.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SpaceName. 
+        /// <para>
+        /// The name of the space.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=63)]
+        public string SpaceName
+        {
+            get { return this._spaceName; }
+            set { this._spaceName = value; }
+        }
+
+        // Check to see if SpaceName property is set
+        internal bool IsSetSpaceName()
+        {
+            return this._spaceName != null;
         }
 
         /// <summary>

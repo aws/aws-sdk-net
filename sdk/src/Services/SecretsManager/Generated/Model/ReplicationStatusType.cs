@@ -62,7 +62,8 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property LastAccessedDate. 
         /// <para>
-        /// The date that you last accessed the secret in the Region. 
+        /// The date that the secret was last accessed in the Region. This field is omitted if
+        /// the secret has never been retrieved in the Region.
         /// </para>
         /// </summary>
         public DateTime LastAccessedDate

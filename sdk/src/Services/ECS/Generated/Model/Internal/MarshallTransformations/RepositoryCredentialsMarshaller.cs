@@ -34,7 +34,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RepositoryCredentials Marshaller
-    /// </summary>       
+    /// </summary>
     public class RepositoryCredentialsMarshaller : IRequestMarshaller<RepositoryCredentials, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RepositoryCredentialsMarshaller Instance = new RepositoryCredentialsMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ConfigurationRecorder Marshaller
-    /// </summary>       
+    /// </summary>
     public class ConfigurationRecorderMarshaller : IRequestMarshaller<ConfigurationRecorder, JsonMarshallerContext> 
     {
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ConfigurationRecorderMarshaller Instance = new ConfigurationRecorderMarshaller();
 
     }

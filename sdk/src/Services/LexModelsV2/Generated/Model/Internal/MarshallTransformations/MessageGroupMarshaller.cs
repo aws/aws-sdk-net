@@ -34,7 +34,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// MessageGroup Marshaller
-    /// </summary>       
+    /// </summary>
     public class MessageGroupMarshaller : IRequestMarshaller<MessageGroup, JsonMarshallerContext> 
     {
         /// <summary>
@@ -76,7 +76,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static MessageGroupMarshaller Instance = new MessageGroupMarshaller();
 
     }

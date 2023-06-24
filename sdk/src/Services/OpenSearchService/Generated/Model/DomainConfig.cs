@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// The configuration of a domain.
+    /// Container for the configuration of an OpenSearch Service domain.
     /// </summary>
     public partial class DomainConfig
     {
@@ -37,6 +37,7 @@ namespace Amazon.OpenSearchService.Model
         private AdvancedOptionsStatus _advancedOptions;
         private AdvancedSecurityOptionsStatus _advancedSecurityOptions;
         private AutoTuneOptionsStatus _autoTuneOptions;
+        private ChangeProgressDetails _changeProgressDetails;
         private ClusterConfigStatus _clusterConfig;
         private CognitoOptionsStatus _cognitoOptions;
         private DomainEndpointOptionsStatus _domainEndpointOptions;
@@ -45,13 +46,15 @@ namespace Amazon.OpenSearchService.Model
         private VersionStatus _engineVersion;
         private LogPublishingOptionsStatus _logPublishingOptions;
         private NodeToNodeEncryptionOptionsStatus _nodeToNodeEncryptionOptions;
+        private OffPeakWindowOptionsStatus _offPeakWindowOptions;
         private SnapshotOptionsStatus _snapshotOptions;
+        private SoftwareUpdateOptionsStatus _softwareUpdateOptions;
         private VPCDerivedInfoStatus _vpcOptions;
 
         /// <summary>
         /// Gets and sets the property AccessPolicies. 
         /// <para>
-        /// IAM access policy as a JSON-formatted string.
+        /// Specifies the access policies for the domain.
         /// </para>
         /// </summary>
         public AccessPoliciesStatus AccessPolicies
@@ -69,8 +72,9 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property AdvancedOptions. 
         /// <para>
-        /// The <code>AdvancedOptions</code> for the domain. See <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options"
-        /// target="_blank">Advanced options </a> for more information. 
+        /// Key-value pairs to specify advanced configuration options. For more information, see
+        /// <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options">Advanced
+        /// options</a>.
         /// </para>
         /// </summary>
         public AdvancedOptionsStatus AdvancedOptions
@@ -88,7 +92,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property AdvancedSecurityOptions. 
         /// <para>
-        /// Specifies <code>AdvancedSecurityOptions</code> for the domain. 
+        /// Container for fine-grained access control settings for the domain.
         /// </para>
         /// </summary>
         public AdvancedSecurityOptionsStatus AdvancedSecurityOptions
@@ -106,7 +110,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property AutoTuneOptions. 
         /// <para>
-        /// Specifies <code>AutoTuneOptions</code> for the domain. 
+        /// Container for Auto-Tune settings for the domain.
         /// </para>
         /// </summary>
         public AutoTuneOptionsStatus AutoTuneOptions
@@ -122,9 +126,27 @@ namespace Amazon.OpenSearchService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ChangeProgressDetails. 
+        /// <para>
+        /// Container for information about the progress of an existing configuration change.
+        /// </para>
+        /// </summary>
+        public ChangeProgressDetails ChangeProgressDetails
+        {
+            get { return this._changeProgressDetails; }
+            set { this._changeProgressDetails = value; }
+        }
+
+        // Check to see if ChangeProgressDetails property is set
+        internal bool IsSetChangeProgressDetails()
+        {
+            return this._changeProgressDetails != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ClusterConfig. 
         /// <para>
-        /// The <code>ClusterConfig</code> for the domain. 
+        /// Container for the cluster configuration of a the domain.
         /// </para>
         /// </summary>
         public ClusterConfigStatus ClusterConfig
@@ -142,10 +164,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property CognitoOptions. 
         /// <para>
-        /// The <code>CognitoOptions</code> for the specified domain. For more information, see
-        /// <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/cognito-auth.html"
-        /// target="_blank">Configuring Amazon Cognito authentication for OpenSearch Dashboards</a>.
-        /// 
+        /// Container for Amazon Cognito options for the domain.
         /// </para>
         /// </summary>
         public CognitoOptionsStatus CognitoOptions
@@ -163,7 +182,8 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property DomainEndpointOptions. 
         /// <para>
-        /// The <code>DomainEndpointOptions</code> for the domain. 
+        /// Additional options for the domain endpoint, such as whether to require HTTPS for all
+        /// traffic.
         /// </para>
         /// </summary>
         public DomainEndpointOptionsStatus DomainEndpointOptions
@@ -181,7 +201,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property EBSOptions. 
         /// <para>
-        /// The <code>EBSOptions</code> for the domain. 
+        /// Container for EBS options configured for the domain.
         /// </para>
         /// </summary>
         public EBSOptionsStatus EBSOptions
@@ -199,7 +219,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property EncryptionAtRestOptions. 
         /// <para>
-        /// The <code>EncryptionAtRestOptions</code> for the domain. 
+        /// Key-value pairs to enable encryption at rest.
         /// </para>
         /// </summary>
         public EncryptionAtRestOptionsStatus EncryptionAtRestOptions
@@ -217,8 +237,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property EngineVersion. 
         /// <para>
-        /// String of format Elasticsearch_X.Y or OpenSearch_X.Y to specify the engine version
-        /// for the OpenSearch or Elasticsearch domain.
+        /// The OpenSearch or Elasticsearch version that the domain is running.
         /// </para>
         /// </summary>
         public VersionStatus EngineVersion
@@ -236,7 +255,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property LogPublishingOptions. 
         /// <para>
-        /// Log publishing options for the given domain.
+        /// Key-value pairs to configure log publishing.
         /// </para>
         /// </summary>
         public LogPublishingOptionsStatus LogPublishingOptions
@@ -254,7 +273,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property NodeToNodeEncryptionOptions. 
         /// <para>
-        /// The <code>NodeToNodeEncryptionOptions</code> for the domain. 
+        /// Whether node-to-node encryption is enabled or disabled.
         /// </para>
         /// </summary>
         public NodeToNodeEncryptionOptionsStatus NodeToNodeEncryptionOptions
@@ -270,9 +289,28 @@ namespace Amazon.OpenSearchService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property OffPeakWindowOptions. 
+        /// <para>
+        /// Container for off-peak window options for the domain.
+        /// </para>
+        /// </summary>
+        public OffPeakWindowOptionsStatus OffPeakWindowOptions
+        {
+            get { return this._offPeakWindowOptions; }
+            set { this._offPeakWindowOptions = value; }
+        }
+
+        // Check to see if OffPeakWindowOptions property is set
+        internal bool IsSetOffPeakWindowOptions()
+        {
+            return this._offPeakWindowOptions != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SnapshotOptions. 
         /// <para>
-        /// The <code>SnapshotOptions</code> for the domain. 
+        /// DEPRECATED. Container for parameters required to configure automated snapshots of
+        /// domain indexes.
         /// </para>
         /// </summary>
         public SnapshotOptionsStatus SnapshotOptions
@@ -288,12 +326,27 @@ namespace Amazon.OpenSearchService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SoftwareUpdateOptions. 
+        /// <para>
+        /// Software update options for the domain.
+        /// </para>
+        /// </summary>
+        public SoftwareUpdateOptionsStatus SoftwareUpdateOptions
+        {
+            get { return this._softwareUpdateOptions; }
+            set { this._softwareUpdateOptions = value; }
+        }
+
+        // Check to see if SoftwareUpdateOptions property is set
+        internal bool IsSetSoftwareUpdateOptions()
+        {
+            return this._softwareUpdateOptions != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property VPCOptions. 
         /// <para>
-        /// The <code>VPCOptions</code> for the specified domain. For more information, see <a
-        /// href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html"
-        /// target="_blank"> Launching your Amazon OpenSearch Service domains using a VPC</a>.
-        /// 
+        /// The current VPC options for the domain and the status of any updates to their configuration.
         /// </para>
         /// </summary>
         public VPCDerivedInfoStatus VPCOptions

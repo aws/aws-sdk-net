@@ -56,7 +56,7 @@ namespace Amazon.MigrationHubRefactorSpaces.Model.Internal.MarshallTransformatio
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.MigrationHubRefactorSpaces");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-10-26";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-10-26";
             request.HttpMethod = "POST";
 
             if (!publicRequest.IsSetApplicationIdentifier())
@@ -80,8 +80,19 @@ namespace Amazon.MigrationHubRefactorSpaces.Model.Internal.MarshallTransformatio
                 else if(!(publicRequest.IsSetClientToken()))
                 {
                     context.Writer.WritePropertyName("ClientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());                                                
+                    context.Writer.Write(Guid.NewGuid().ToString());
                 }
+                if(publicRequest.IsSetDefaultRoute())
+                {
+                    context.Writer.WritePropertyName("DefaultRoute");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = DefaultRouteInputMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.DefaultRoute, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetRouteType())
                 {
                     context.Writer.WritePropertyName("RouteType");
@@ -119,7 +130,6 @@ namespace Amazon.MigrationHubRefactorSpaces.Model.Internal.MarshallTransformatio
                     context.Writer.WriteObjectEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

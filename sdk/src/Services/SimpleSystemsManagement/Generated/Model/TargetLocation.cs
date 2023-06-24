@@ -37,6 +37,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         private List<string> _accounts = new List<string>();
         private string _executionRoleName;
         private List<string> _regions = new List<string>();
+        private AlarmConfiguration _targetLocationAlarmConfiguration;
         private string _targetLocationMaxConcurrency;
         private string _targetLocationMaxErrors;
 
@@ -96,6 +97,21 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetRegions()
         {
             return this._regions != null && this._regions.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TargetLocationAlarmConfiguration.
+        /// </summary>
+        public AlarmConfiguration TargetLocationAlarmConfiguration
+        {
+            get { return this._targetLocationAlarmConfiguration; }
+            set { this._targetLocationAlarmConfiguration = value; }
+        }
+
+        // Check to see if TargetLocationAlarmConfiguration property is set
+        internal bool IsSetTargetLocationAlarmConfiguration()
+        {
+            return this._targetLocationAlarmConfiguration != null;
         }
 
         /// <summary>

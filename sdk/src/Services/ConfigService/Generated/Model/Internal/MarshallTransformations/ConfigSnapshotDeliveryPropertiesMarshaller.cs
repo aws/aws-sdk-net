@@ -34,7 +34,7 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ConfigSnapshotDeliveryProperties Marshaller
-    /// </summary>       
+    /// </summary>
     public class ConfigSnapshotDeliveryPropertiesMarshaller : IRequestMarshaller<ConfigSnapshotDeliveryProperties, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ConfigSnapshotDeliveryPropertiesMarshaller Instance = new ConfigSnapshotDeliveryPropertiesMarshaller();
 
     }

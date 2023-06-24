@@ -33,8 +33,8 @@ namespace Amazon.SageMaker.Model
     /// Creates a <code>Domain</code> used by Amazon SageMaker Studio. A domain consists of
     /// an associated Amazon Elastic File System (EFS) volume, a list of authorized users,
     /// and a variety of security, application, policy, and Amazon Virtual Private Cloud (VPC)
-    /// configurations. An Amazon Web Services account is limited to one domain per region.
-    /// Users within a domain can share notebook files and other artifacts with each other.
+    /// configurations. Users within a domain can share notebook files and other artifacts
+    /// with each other.
     /// 
     ///  
     /// <para>
@@ -98,6 +98,7 @@ namespace Amazon.SageMaker.Model
         private AppNetworkAccessType _appNetworkAccessType;
         private AppSecurityGroupManagement _appSecurityGroupManagement;
         private AuthMode _authMode;
+        private DefaultSpaceSettings _defaultSpaceSettings;
         private UserSettings _defaultUserSettings;
         private string _domainName;
         private DomainSettings _domainSettings;
@@ -141,7 +142,8 @@ namespace Amazon.SageMaker.Model
         /// The entity that creates and manages the required security groups for inter-app communication
         /// in <code>VPCOnly</code> mode. Required when <code>CreateDomain.AppNetworkAccessType</code>
         /// is <code>VPCOnly</code> and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code>
-        /// is provided.
+        /// is provided. If setting up the domain for use with RStudio, this value must be set
+        /// to <code>Service</code>.
         /// </para>
         /// </summary>
         public AppSecurityGroupManagement AppSecurityGroupManagement
@@ -173,6 +175,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetAuthMode()
         {
             return this._authMode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DefaultSpaceSettings. 
+        /// <para>
+        /// The default settings used to create a space.
+        /// </para>
+        /// </summary>
+        public DefaultSpaceSettings DefaultSpaceSettings
+        {
+            get { return this._defaultSpaceSettings; }
+            set { this._defaultSpaceSettings = value; }
+        }
+
+        // Check to see if DefaultSpaceSettings property is set
+        internal bool IsSetDefaultSpaceSettings()
+        {
+            return this._defaultSpaceSettings != null;
         }
 
         /// <summary>
@@ -241,7 +261,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property HomeEfsFileSystemKmsKeyId. 
         /// <para>
-        /// This member is deprecated and replaced with <code>KmsKeyId</code>.
+        /// Use <code>KmsKeyId</code>.
         /// </para>
         /// </summary>
         [Obsolete("This property is deprecated, use KmsKeyId instead.")]

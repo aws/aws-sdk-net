@@ -36,6 +36,7 @@ namespace Amazon.IoT.Model
         private long? _executionNumber;
         private DateTime? _lastUpdatedAt;
         private DateTime? _queuedAt;
+        private int? _retryAttempt;
         private DateTime? _startedAt;
         private JobExecutionStatus _status;
 
@@ -93,6 +94,25 @@ namespace Amazon.IoT.Model
         internal bool IsSetQueuedAt()
         {
             return this._queuedAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RetryAttempt. 
+        /// <para>
+        /// The number that indicates how many retry attempts have been completed for this job
+        /// on this device.
+        /// </para>
+        /// </summary>
+        public int RetryAttempt
+        {
+            get { return this._retryAttempt.GetValueOrDefault(); }
+            set { this._retryAttempt = value; }
+        }
+
+        // Check to see if RetryAttempt property is set
+        internal bool IsSetRetryAttempt()
+        {
+            return this._retryAttempt.HasValue; 
         }
 
         /// <summary>

@@ -34,7 +34,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// NexGuardFileMarkerSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class NexGuardFileMarkerSettingsMarshaller : IRequestMarshaller<NexGuardFileMarkerSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static NexGuardFileMarkerSettingsMarshaller Instance = new NexGuardFileMarkerSettingsMarshaller();
 
     }

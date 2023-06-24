@@ -34,7 +34,7 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ExpectedAttributeValue Marshaller
-    /// </summary>       
+    /// </summary>
     public class ExpectedAttributeValueMarshaller : IRequestMarshaller<ExpectedAttributeValue, JsonMarshallerContext> 
     {
         /// <summary>
@@ -88,7 +88,7 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ExpectedAttributeValueMarshaller Instance = new ExpectedAttributeValueMarshaller();
 
     }

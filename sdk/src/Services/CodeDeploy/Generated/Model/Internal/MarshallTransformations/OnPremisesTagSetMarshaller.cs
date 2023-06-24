@@ -34,7 +34,7 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// OnPremisesTagSet Marshaller
-    /// </summary>       
+    /// </summary>
     public class OnPremisesTagSetMarshaller : IRequestMarshaller<OnPremisesTagSet, JsonMarshallerContext> 
     {
         /// <summary>
@@ -70,7 +70,7 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static OnPremisesTagSetMarshaller Instance = new OnPremisesTagSetMarshaller();
 
     }

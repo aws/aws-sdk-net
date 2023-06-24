@@ -59,7 +59,7 @@ namespace Amazon.CodeGuruReviewer.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        ///  The name of the repository in the S3 bucket. 
+        /// The name of the repository in the S3 bucket.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]

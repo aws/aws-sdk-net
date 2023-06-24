@@ -34,7 +34,7 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DatasetTrigger Marshaller
-    /// </summary>       
+    /// </summary>
     public class DatasetTriggerMarshaller : IRequestMarshaller<DatasetTrigger, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DatasetTriggerMarshaller Instance = new DatasetTriggerMarshaller();
 
     }

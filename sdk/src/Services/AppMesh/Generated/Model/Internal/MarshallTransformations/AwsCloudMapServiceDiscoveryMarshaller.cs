@@ -34,7 +34,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AwsCloudMapServiceDiscovery Marshaller
-    /// </summary>       
+    /// </summary>
     public class AwsCloudMapServiceDiscoveryMarshaller : IRequestMarshaller<AwsCloudMapServiceDiscovery, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,6 +61,12 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetIpPreference())
+            {
+                context.Writer.WritePropertyName("ipPreference");
+                context.Writer.Write(requestObject.IpPreference);
+            }
+
             if(requestObject.IsSetNamespaceName())
             {
                 context.Writer.WritePropertyName("namespaceName");
@@ -77,7 +83,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AwsCloudMapServiceDiscoveryMarshaller Instance = new AwsCloudMapServiceDiscoveryMarshaller();
 
     }

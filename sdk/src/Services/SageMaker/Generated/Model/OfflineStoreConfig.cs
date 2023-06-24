@@ -47,6 +47,7 @@ namespace Amazon.SageMaker.Model
         private DataCatalogConfig _dataCatalogConfig;
         private bool? _disableGlueTableCreation;
         private S3StorageConfig _s3StorageConfig;
+        private TableFormat _tableFormat;
 
         /// <summary>
         /// Gets and sets the property DataCatalogConfig. 
@@ -71,7 +72,13 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property DisableGlueTableCreation. 
         /// <para>
         /// Set to <code>True</code> to disable the automatic creation of an Amazon Web Services
-        /// Glue table when configuring an <code>OfflineStore</code>.
+        /// Glue table when configuring an <code>OfflineStore</code>. If set to <code>False</code>,
+        /// Feature Store will name the <code>OfflineStore</code> Glue table following <a href="https://docs.aws.amazon.com/athena/latest/ug/tables-databases-columns-names.html">Athena's
+        /// naming recommendations</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The default value is <code>False</code>.
         /// </para>
         /// </summary>
         public bool DisableGlueTableCreation
@@ -103,6 +110,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetS3StorageConfig()
         {
             return this._s3StorageConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TableFormat. 
+        /// <para>
+        /// Format for the offline store table. Supported formats are Glue (Default) and <a href="https://iceberg.apache.org/">Apache
+        /// Iceberg</a>.
+        /// </para>
+        /// </summary>
+        public TableFormat TableFormat
+        {
+            get { return this._tableFormat; }
+            set { this._tableFormat = value; }
+        }
+
+        // Check to see if TableFormat property is set
+        internal bool IsSetTableFormat()
+        {
+            return this._tableFormat != null;
         }
 
     }

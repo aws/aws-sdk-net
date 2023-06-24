@@ -34,7 +34,7 @@ namespace Amazon.CertificateManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ExpiryEventsConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class ExpiryEventsConfigurationMarshaller : IRequestMarshaller<ExpiryEventsConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.CertificateManager.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ExpiryEventsConfigurationMarshaller Instance = new ExpiryEventsConfigurationMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AWSDomainInformation Marshaller
-    /// </summary>       
+    /// </summary>
     public class AWSDomainInformationMarshaller : IRequestMarshaller<AWSDomainInformation, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AWSDomainInformationMarshaller Instance = new AWSDomainInformationMarshaller();
 
     }

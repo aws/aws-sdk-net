@@ -58,11 +58,13 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         {
             var request = new DefaultRequest(publicRequest, "AmazonS3");
             request.HttpMethod = "PUT";
-            string uriResourcePath = "/{Bucket}/{Key+}";
+            string uriResourcePath = "/{Key+}";
             request.AddSubResource("retention");
         
             if (publicRequest.IsSetBypassGovernanceRetention())
-                request.Headers.Add("x-amz-bypass-governance-retention", S3Transforms.ToStringValue(publicRequest.BypassGovernanceRetention));        
+                request.Headers.Add("x-amz-bypass-governance-retention", S3Transforms.ToStringValue(publicRequest.BypassGovernanceRetention));
+            if (publicRequest.IsSetChecksumAlgorithm())
+                request.Headers.Add(S3Constants.AmzHeaderSdkChecksumAlgorithm, S3Transforms.ToStringValue(publicRequest.ChecksumAlgorithm));
             if (publicRequest.IsSetContentMD5())
                 request.Headers.Add(HeaderKeys.ContentMD5Header, S3Transforms.ToStringValue(publicRequest.ContentMD5));
             if (publicRequest.IsSetRequestPayer())
@@ -71,7 +73,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 request.Headers.Add(S3Constants.AmzHeaderExpectedBucketOwner, S3Transforms.ToStringValue(publicRequest.ExpectedBucketOwner));
             if (!publicRequest.IsSetBucketName())
                 throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "publicRequest.BucketName");
-            uriResourcePath = uriResourcePath.Replace("{Bucket}", StringUtils.FromString(publicRequest.BucketName));
             if (!publicRequest.IsSetKey())
                 throw new System.ArgumentException("Key is a required property and must be set before making this call.", "publicRequest.Key");
             uriResourcePath = uriResourcePath.Replace("{Key+}", StringUtils.FromString(publicRequest.Key));
@@ -85,12 +86,12 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             {   
                 if (publicRequest.IsSetRetention())
                 {
-                    xmlWriter.WriteStartElement("Retention", "http://s3.amazonaws.com/doc/2006-03-01/");
+                    xmlWriter.WriteStartElement("Retention", S3Constants.S3RequestXmlNamespace);
                     if(publicRequest.Retention.IsSetMode())
-                        xmlWriter.WriteElementString("Mode", "http://s3.amazonaws.com/doc/2006-03-01/", StringUtils.FromString(publicRequest.Retention.Mode));                    
+                        xmlWriter.WriteElementString("Mode", StringUtils.FromString(publicRequest.Retention.Mode));                    
     
                     if(publicRequest.Retention.IsSetRetainUntilDate())
-                        xmlWriter.WriteElementString("RetainUntilDate", "http://s3.amazonaws.com/doc/2006-03-01/", StringUtils.FromDateTimeToISO8601(publicRequest.Retention.RetainUntilDate));                    
+                        xmlWriter.WriteElementString("RetainUntilDate", StringUtils.FromDateTimeToISO8601(publicRequest.Retention.RetainUntilDate));                    
     
     
                     xmlWriter.WriteEndElement();
@@ -102,9 +103,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 request.Content = System.Text.Encoding.UTF8.GetBytes(content);
                 request.Headers[HeaderKeys.ContentTypeHeader] = "application/xml";
 
-                var checksum = AWSSDKUtils.GenerateChecksumForContent(content, true);
-                request.Headers[HeaderKeys.ContentMD5Header] = checksum;
-            } 
+                ChecksumUtils.SetRequestChecksum(request, publicRequest.ChecksumAlgorithm);
+            }
             catch (EncoderFallbackException e) 
             {
                 throw new AmazonServiceException("Unable to marshall request to XML", e);

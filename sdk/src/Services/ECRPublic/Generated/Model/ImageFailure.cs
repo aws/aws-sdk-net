@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECRPublic.Model
 {
     /// <summary>
-    /// An object representing an Amazon ECR image failure.
+    /// An object that represents an Amazon ECR image failure.
     /// </summary>
     public partial class ImageFailure
     {
@@ -40,7 +40,7 @@ namespace Amazon.ECRPublic.Model
         /// <summary>
         /// Gets and sets the property FailureCode. 
         /// <para>
-        /// The code associated with the failure.
+        /// The code that's associated with the failure.
         /// </para>
         /// </summary>
         public ImageFailureCode FailureCode
@@ -76,7 +76,7 @@ namespace Amazon.ECRPublic.Model
         /// <summary>
         /// Gets and sets the property ImageId. 
         /// <para>
-        /// The image ID associated with the failure.
+        /// The image ID that's associated with the failure.
         /// </para>
         /// </summary>
         public ImageIdentifier ImageId

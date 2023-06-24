@@ -29,13 +29,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// A single resource returned as part of the <a>Search</a> API response.
+    /// A single resource returned as part of the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a>
+    /// API response.
     /// </summary>
     public partial class SearchRecord
     {
         private Endpoint _endpoint;
         private Experiment _experiment;
         private FeatureGroup _featureGroup;
+        private FeatureMetadata _featureMetadata;
+        private HyperParameterTuningJobSearchEntity _hyperParameterTuningJob;
+        private ModelDashboardModel _model;
+        private ModelCard _modelCard;
         private ModelPackage _modelPackage;
         private ModelPackageGroup _modelPackageGroup;
         private Pipeline _pipeline;
@@ -91,6 +96,75 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetFeatureGroup()
         {
             return this._featureGroup != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FeatureMetadata. 
+        /// <para>
+        /// The feature metadata used to search through the features.
+        /// </para>
+        /// </summary>
+        public FeatureMetadata FeatureMetadata
+        {
+            get { return this._featureMetadata; }
+            set { this._featureMetadata = value; }
+        }
+
+        // Check to see if FeatureMetadata property is set
+        internal bool IsSetFeatureMetadata()
+        {
+            return this._featureMetadata != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HyperParameterTuningJob. 
+        /// <para>
+        /// The properties of a hyperparameter tuning job.
+        /// </para>
+        /// </summary>
+        public HyperParameterTuningJobSearchEntity HyperParameterTuningJob
+        {
+            get { return this._hyperParameterTuningJob; }
+            set { this._hyperParameterTuningJob = value; }
+        }
+
+        // Check to see if HyperParameterTuningJob property is set
+        internal bool IsSetHyperParameterTuningJob()
+        {
+            return this._hyperParameterTuningJob != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Model.
+        /// </summary>
+        public ModelDashboardModel Model
+        {
+            get { return this._model; }
+            set { this._model = value; }
+        }
+
+        // Check to see if Model property is set
+        internal bool IsSetModel()
+        {
+            return this._model != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ModelCard. 
+        /// <para>
+        /// An Amazon SageMaker Model Card that documents details about a machine learning model.
+        /// </para>
+        /// </summary>
+        public ModelCard ModelCard
+        {
+            get { return this._modelCard; }
+            set { this._modelCard = value; }
+        }
+
+        // Check to see if ModelCard property is set
+        internal bool IsSetModelCard()
+        {
+            return this._modelCard != null;
         }
 
         /// <summary>

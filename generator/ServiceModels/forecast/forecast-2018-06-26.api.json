@@ -139,6 +139,22 @@
         {"shape":"LimitExceededException"}
       ]
     },
+    "CreateMonitor":{
+      "name":"CreateMonitor",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"CreateMonitorRequest"},
+      "output":{"shape":"CreateMonitorResponse"},
+      "errors":[
+        {"shape":"InvalidInputException"},
+        {"shape":"ResourceAlreadyExistsException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ResourceInUseException"},
+        {"shape":"LimitExceededException"}
+      ]
+    },
     "CreatePredictor":{
       "name":"CreatePredictor",
       "http":{
@@ -163,6 +179,54 @@
       },
       "input":{"shape":"CreatePredictorBacktestExportJobRequest"},
       "output":{"shape":"CreatePredictorBacktestExportJobResponse"},
+      "errors":[
+        {"shape":"InvalidInputException"},
+        {"shape":"ResourceAlreadyExistsException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ResourceInUseException"},
+        {"shape":"LimitExceededException"}
+      ]
+    },
+    "CreateWhatIfAnalysis":{
+      "name":"CreateWhatIfAnalysis",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"CreateWhatIfAnalysisRequest"},
+      "output":{"shape":"CreateWhatIfAnalysisResponse"},
+      "errors":[
+        {"shape":"InvalidInputException"},
+        {"shape":"ResourceAlreadyExistsException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ResourceInUseException"},
+        {"shape":"LimitExceededException"}
+      ]
+    },
+    "CreateWhatIfForecast":{
+      "name":"CreateWhatIfForecast",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"CreateWhatIfForecastRequest"},
+      "output":{"shape":"CreateWhatIfForecastResponse"},
+      "errors":[
+        {"shape":"InvalidInputException"},
+        {"shape":"ResourceAlreadyExistsException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ResourceInUseException"},
+        {"shape":"LimitExceededException"}
+      ]
+    },
+    "CreateWhatIfForecastExport":{
+      "name":"CreateWhatIfForecastExport",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"CreateWhatIfForecastExportRequest"},
+      "output":{"shape":"CreateWhatIfForecastExportResponse"},
       "errors":[
         {"shape":"InvalidInputException"},
         {"shape":"ResourceAlreadyExistsException"},
@@ -269,6 +333,20 @@
       ],
       "idempotent":true
     },
+    "DeleteMonitor":{
+      "name":"DeleteMonitor",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DeleteMonitorRequest"},
+      "errors":[
+        {"shape":"InvalidInputException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ResourceInUseException"}
+      ],
+      "idempotent":true
+    },
     "DeletePredictor":{
       "name":"DeletePredictor",
       "http":{
@@ -304,6 +382,48 @@
         "requestUri":"/"
       },
       "input":{"shape":"DeleteResourceTreeRequest"},
+      "errors":[
+        {"shape":"InvalidInputException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ResourceInUseException"}
+      ],
+      "idempotent":true
+    },
+    "DeleteWhatIfAnalysis":{
+      "name":"DeleteWhatIfAnalysis",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DeleteWhatIfAnalysisRequest"},
+      "errors":[
+        {"shape":"InvalidInputException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ResourceInUseException"}
+      ],
+      "idempotent":true
+    },
+    "DeleteWhatIfForecast":{
+      "name":"DeleteWhatIfForecast",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DeleteWhatIfForecastRequest"},
+      "errors":[
+        {"shape":"InvalidInputException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ResourceInUseException"}
+      ],
+      "idempotent":true
+    },
+    "DeleteWhatIfForecastExport":{
+      "name":"DeleteWhatIfForecastExport",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DeleteWhatIfForecastExportRequest"},
       "errors":[
         {"shape":"InvalidInputException"},
         {"shape":"ResourceNotFoundException"},
@@ -423,6 +543,20 @@
       ],
       "idempotent":true
     },
+    "DescribeMonitor":{
+      "name":"DescribeMonitor",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DescribeMonitorRequest"},
+      "output":{"shape":"DescribeMonitorResponse"},
+      "errors":[
+        {"shape":"InvalidInputException"},
+        {"shape":"ResourceNotFoundException"}
+      ],
+      "idempotent":true
+    },
     "DescribePredictor":{
       "name":"DescribePredictor",
       "http":{
@@ -445,6 +579,48 @@
       },
       "input":{"shape":"DescribePredictorBacktestExportJobRequest"},
       "output":{"shape":"DescribePredictorBacktestExportJobResponse"},
+      "errors":[
+        {"shape":"InvalidInputException"},
+        {"shape":"ResourceNotFoundException"}
+      ],
+      "idempotent":true
+    },
+    "DescribeWhatIfAnalysis":{
+      "name":"DescribeWhatIfAnalysis",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DescribeWhatIfAnalysisRequest"},
+      "output":{"shape":"DescribeWhatIfAnalysisResponse"},
+      "errors":[
+        {"shape":"InvalidInputException"},
+        {"shape":"ResourceNotFoundException"}
+      ],
+      "idempotent":true
+    },
+    "DescribeWhatIfForecast":{
+      "name":"DescribeWhatIfForecast",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DescribeWhatIfForecastRequest"},
+      "output":{"shape":"DescribeWhatIfForecastResponse"},
+      "errors":[
+        {"shape":"InvalidInputException"},
+        {"shape":"ResourceNotFoundException"}
+      ],
+      "idempotent":true
+    },
+    "DescribeWhatIfForecastExport":{
+      "name":"DescribeWhatIfForecastExport",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DescribeWhatIfForecastExportRequest"},
+      "output":{"shape":"DescribeWhatIfForecastExportResponse"},
       "errors":[
         {"shape":"InvalidInputException"},
         {"shape":"ResourceNotFoundException"}
@@ -562,6 +738,35 @@
       ],
       "idempotent":true
     },
+    "ListMonitorEvaluations":{
+      "name":"ListMonitorEvaluations",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"ListMonitorEvaluationsRequest"},
+      "output":{"shape":"ListMonitorEvaluationsResponse"},
+      "errors":[
+        {"shape":"InvalidNextTokenException"},
+        {"shape":"InvalidInputException"},
+        {"shape":"ResourceNotFoundException"}
+      ],
+      "idempotent":true
+    },
+    "ListMonitors":{
+      "name":"ListMonitors",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"ListMonitorsRequest"},
+      "output":{"shape":"ListMonitorsResponse"},
+      "errors":[
+        {"shape":"InvalidNextTokenException"},
+        {"shape":"InvalidInputException"}
+      ],
+      "idempotent":true
+    },
     "ListPredictorBacktestExportJobs":{
       "name":"ListPredictorBacktestExportJobs",
       "http":{
@@ -602,6 +807,63 @@
         {"shape":"ResourceNotFoundException"},
         {"shape":"InvalidInputException"}
       ]
+    },
+    "ListWhatIfAnalyses":{
+      "name":"ListWhatIfAnalyses",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"ListWhatIfAnalysesRequest"},
+      "output":{"shape":"ListWhatIfAnalysesResponse"},
+      "errors":[
+        {"shape":"InvalidNextTokenException"},
+        {"shape":"InvalidInputException"}
+      ],
+      "idempotent":true
+    },
+    "ListWhatIfForecastExports":{
+      "name":"ListWhatIfForecastExports",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"ListWhatIfForecastExportsRequest"},
+      "output":{"shape":"ListWhatIfForecastExportsResponse"},
+      "errors":[
+        {"shape":"InvalidNextTokenException"},
+        {"shape":"InvalidInputException"}
+      ],
+      "idempotent":true
+    },
+    "ListWhatIfForecasts":{
+      "name":"ListWhatIfForecasts",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"ListWhatIfForecastsRequest"},
+      "output":{"shape":"ListWhatIfForecastsResponse"},
+      "errors":[
+        {"shape":"InvalidNextTokenException"},
+        {"shape":"InvalidInputException"}
+      ],
+      "idempotent":true
+    },
+    "ResumeResource":{
+      "name":"ResumeResource",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"ResumeResourceRequest"},
+      "errors":[
+        {"shape":"InvalidInputException"},
+        {"shape":"LimitExceededException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ResourceInUseException"}
+      ],
+      "idempotent":true
     },
     "StopResource":{
       "name":"StopResource",
@@ -661,6 +923,19 @@
     }
   },
   "shapes":{
+    "Action":{
+      "type":"structure",
+      "required":[
+        "AttributeName",
+        "Operation",
+        "Value"
+      ],
+      "members":{
+        "AttributeName":{"shape":"Name"},
+        "Operation":{"shape":"Operation"},
+        "Value":{"shape":"Double"}
+      }
+    },
     "AdditionalDataset":{
       "type":"structure",
       "required":["Name"],
@@ -678,7 +953,7 @@
     "Arn":{
       "type":"string",
       "max":256,
-      "pattern":"^[a-zA-Z0-9\\-\\_\\.\\/\\:]+$"
+      "pattern":"arn:([a-z\\d-]+):forecast:.*:.*:.+"
     },
     "ArnList":{
       "type":"list",
@@ -711,12 +986,34 @@
         "geolocation"
       ]
     },
+    "AttributeValue":{
+      "type":"string",
+      "max":256,
+      "pattern":".+"
+    },
     "AutoMLOverrideStrategy":{
       "type":"string",
       "enum":[
         "LatencyOptimized",
         "AccuracyOptimized"
       ]
+    },
+    "Baseline":{
+      "type":"structure",
+      "members":{
+        "PredictorBaseline":{"shape":"PredictorBaseline"}
+      }
+    },
+    "BaselineMetric":{
+      "type":"structure",
+      "members":{
+        "Name":{"shape":"Name"},
+        "Value":{"shape":"Double"}
+      }
+    },
+    "BaselineMetrics":{
+      "type":"list",
+      "member":{"shape":"BaselineMetric"}
     },
     "Boolean":{"type":"boolean"},
     "CategoricalParameterRange":{
@@ -735,6 +1032,15 @@
       "member":{"shape":"CategoricalParameterRange"},
       "max":20,
       "min":1
+    },
+    "Condition":{
+      "type":"string",
+      "enum":[
+        "EQUALS",
+        "NOT_EQUALS",
+        "LESS_THAN",
+        "GREATER_THAN"
+      ]
     },
     "Configuration":{
       "type":"map",
@@ -775,7 +1081,9 @@
         "ReferencePredictorArn":{"shape":"Arn"},
         "OptimizationMetric":{"shape":"OptimizationMetric"},
         "ExplainPredictor":{"shape":"Boolean"},
-        "Tags":{"shape":"Tags"}
+        "Tags":{"shape":"Tags"},
+        "MonitorConfig":{"shape":"MonitorConfig"},
+        "TimeAlignmentBoundary":{"shape":"TimeAlignmentBoundary"}
       }
     },
     "CreateAutoPredictorResponse":{
@@ -818,7 +1126,9 @@
         "TimeZone":{"shape":"TimeZone"},
         "UseGeolocationForTimeZone":{"shape":"UseGeolocationForTimeZone"},
         "GeolocationFormat":{"shape":"GeolocationFormat"},
-        "Tags":{"shape":"Tags"}
+        "Tags":{"shape":"Tags"},
+        "Format":{"shape":"Format"},
+        "ImportMode":{"shape":"ImportMode"}
       }
     },
     "CreateDatasetImportJobResponse":{
@@ -862,7 +1172,8 @@
         "ExplainabilityExportName":{"shape":"Name"},
         "ExplainabilityArn":{"shape":"Arn"},
         "Destination":{"shape":"DataDestination"},
-        "Tags":{"shape":"Tags"}
+        "Tags":{"shape":"Tags"},
+        "Format":{"shape":"Format"}
       }
     },
     "CreateExplainabilityExportResponse":{
@@ -907,7 +1218,8 @@
         "ForecastExportJobName":{"shape":"Name"},
         "ForecastArn":{"shape":"Arn"},
         "Destination":{"shape":"DataDestination"},
-        "Tags":{"shape":"Tags"}
+        "Tags":{"shape":"Tags"},
+        "Format":{"shape":"Format"}
       }
     },
     "CreateForecastExportJobResponse":{
@@ -926,13 +1238,32 @@
         "ForecastName":{"shape":"Name"},
         "PredictorArn":{"shape":"Arn"},
         "ForecastTypes":{"shape":"ForecastTypes"},
-        "Tags":{"shape":"Tags"}
+        "Tags":{"shape":"Tags"},
+        "TimeSeriesSelector":{"shape":"TimeSeriesSelector"}
       }
     },
     "CreateForecastResponse":{
       "type":"structure",
       "members":{
         "ForecastArn":{"shape":"Arn"}
+      }
+    },
+    "CreateMonitorRequest":{
+      "type":"structure",
+      "required":[
+        "MonitorName",
+        "ResourceArn"
+      ],
+      "members":{
+        "MonitorName":{"shape":"Name"},
+        "ResourceArn":{"shape":"Arn"},
+        "Tags":{"shape":"Tags"}
+      }
+    },
+    "CreateMonitorResponse":{
+      "type":"structure",
+      "members":{
+        "MonitorArn":{"shape":"Arn"}
       }
     },
     "CreatePredictorBacktestExportJobRequest":{
@@ -946,7 +1277,8 @@
         "PredictorBacktestExportJobName":{"shape":"Name"},
         "PredictorArn":{"shape":"Arn"},
         "Destination":{"shape":"DataDestination"},
-        "Tags":{"shape":"Tags"}
+        "Tags":{"shape":"Tags"},
+        "Format":{"shape":"Format"}
       }
     },
     "CreatePredictorBacktestExportJobResponse":{
@@ -985,6 +1317,66 @@
       "type":"structure",
       "members":{
         "PredictorArn":{"shape":"Arn"}
+      }
+    },
+    "CreateWhatIfAnalysisRequest":{
+      "type":"structure",
+      "required":[
+        "WhatIfAnalysisName",
+        "ForecastArn"
+      ],
+      "members":{
+        "WhatIfAnalysisName":{"shape":"Name"},
+        "ForecastArn":{"shape":"Arn"},
+        "TimeSeriesSelector":{"shape":"TimeSeriesSelector"},
+        "Tags":{"shape":"Tags"}
+      }
+    },
+    "CreateWhatIfAnalysisResponse":{
+      "type":"structure",
+      "members":{
+        "WhatIfAnalysisArn":{"shape":"Arn"}
+      }
+    },
+    "CreateWhatIfForecastExportRequest":{
+      "type":"structure",
+      "required":[
+        "WhatIfForecastExportName",
+        "WhatIfForecastArns",
+        "Destination"
+      ],
+      "members":{
+        "WhatIfForecastExportName":{"shape":"Name"},
+        "WhatIfForecastArns":{"shape":"WhatIfForecastArnListForExport"},
+        "Destination":{"shape":"DataDestination"},
+        "Tags":{"shape":"Tags"},
+        "Format":{"shape":"Format"}
+      }
+    },
+    "CreateWhatIfForecastExportResponse":{
+      "type":"structure",
+      "members":{
+        "WhatIfForecastExportArn":{"shape":"LongArn"}
+      }
+    },
+    "CreateWhatIfForecastRequest":{
+      "type":"structure",
+      "required":[
+        "WhatIfForecastName",
+        "WhatIfAnalysisArn"
+      ],
+      "members":{
+        "WhatIfForecastName":{"shape":"Name"},
+        "WhatIfAnalysisArn":{"shape":"Arn"},
+        "TimeSeriesTransformations":{"shape":"TimeSeriesTransformations"},
+        "TimeSeriesReplacementsDataSource":{"shape":"TimeSeriesReplacementsDataSource"},
+        "Tags":{"shape":"Tags"}
+      }
+    },
+    "CreateWhatIfForecastResponse":{
+      "type":"structure",
+      "members":{
+        "WhatIfForecastArn":{"shape":"LongArn"}
       }
     },
     "DataConfig":{
@@ -1032,7 +1424,8 @@
         "Status":{"shape":"Status"},
         "Message":{"shape":"ErrorMessage"},
         "CreationTime":{"shape":"Timestamp"},
-        "LastModificationTime":{"shape":"Timestamp"}
+        "LastModificationTime":{"shape":"Timestamp"},
+        "ImportMode":{"shape":"ImportMode"}
       }
     },
     "DatasetImportJobs":{
@@ -1061,6 +1454,23 @@
     "Datasets":{
       "type":"list",
       "member":{"shape":"DatasetSummary"}
+    },
+    "DayOfMonth":{
+      "type":"integer",
+      "max":28,
+      "min":1
+    },
+    "DayOfWeek":{
+      "type":"string",
+      "enum":[
+        "MONDAY",
+        "TUESDAY",
+        "WEDNESDAY",
+        "THURSDAY",
+        "FRIDAY",
+        "SATURDAY",
+        "SUNDAY"
+      ]
     },
     "DeleteDatasetGroupRequest":{
       "type":"structure",
@@ -1111,6 +1521,13 @@
         "ForecastArn":{"shape":"Arn"}
       }
     },
+    "DeleteMonitorRequest":{
+      "type":"structure",
+      "required":["MonitorArn"],
+      "members":{
+        "MonitorArn":{"shape":"Arn"}
+      }
+    },
     "DeletePredictorBacktestExportJobRequest":{
       "type":"structure",
       "required":["PredictorBacktestExportJobArn"],
@@ -1132,6 +1549,27 @@
         "ResourceArn":{"shape":"Arn"}
       }
     },
+    "DeleteWhatIfAnalysisRequest":{
+      "type":"structure",
+      "required":["WhatIfAnalysisArn"],
+      "members":{
+        "WhatIfAnalysisArn":{"shape":"Arn"}
+      }
+    },
+    "DeleteWhatIfForecastExportRequest":{
+      "type":"structure",
+      "required":["WhatIfForecastExportArn"],
+      "members":{
+        "WhatIfForecastExportArn":{"shape":"LongArn"}
+      }
+    },
+    "DeleteWhatIfForecastRequest":{
+      "type":"structure",
+      "required":["WhatIfForecastArn"],
+      "members":{
+        "WhatIfForecastArn":{"shape":"LongArn"}
+      }
+    },
     "DescribeAutoPredictorRequest":{
       "type":"structure",
       "required":["PredictorArn"],
@@ -1147,6 +1585,7 @@
         "ForecastHorizon":{"shape":"Integer"},
         "ForecastTypes":{"shape":"ForecastTypes"},
         "ForecastFrequency":{"shape":"Frequency"},
+        "ForecastDimensions":{"shape":"ForecastDimensions"},
         "DatasetImportJobArns":{"shape":"ArnList"},
         "DataConfig":{"shape":"DataConfig"},
         "EncryptionConfig":{"shape":"EncryptionConfig"},
@@ -1157,7 +1596,9 @@
         "CreationTime":{"shape":"Timestamp"},
         "LastModificationTime":{"shape":"Timestamp"},
         "OptimizationMetric":{"shape":"OptimizationMetric"},
-        "ExplainabilityInfo":{"shape":"ExplainabilityInfo"}
+        "ExplainabilityInfo":{"shape":"ExplainabilityInfo"},
+        "MonitorInfo":{"shape":"MonitorInfo"},
+        "TimeAlignmentBoundary":{"shape":"TimeAlignmentBoundary"}
       }
     },
     "DescribeDatasetGroupRequest":{
@@ -1203,7 +1644,9 @@
         "Status":{"shape":"Status"},
         "Message":{"shape":"Message"},
         "CreationTime":{"shape":"Timestamp"},
-        "LastModificationTime":{"shape":"Timestamp"}
+        "LastModificationTime":{"shape":"Timestamp"},
+        "Format":{"shape":"Format"},
+        "ImportMode":{"shape":"ImportMode"}
       }
     },
     "DescribeDatasetRequest":{
@@ -1245,7 +1688,8 @@
         "Message":{"shape":"Message"},
         "Status":{"shape":"Status"},
         "CreationTime":{"shape":"Timestamp"},
-        "LastModificationTime":{"shape":"Timestamp"}
+        "LastModificationTime":{"shape":"Timestamp"},
+        "Format":{"shape":"Format"}
       }
     },
     "DescribeExplainabilityRequest":{
@@ -1291,7 +1735,8 @@
         "Message":{"shape":"Message"},
         "Status":{"shape":"Status"},
         "CreationTime":{"shape":"Timestamp"},
-        "LastModificationTime":{"shape":"Timestamp"}
+        "LastModificationTime":{"shape":"Timestamp"},
+        "Format":{"shape":"Format"}
       }
     },
     "DescribeForecastRequest":{
@@ -1313,7 +1758,31 @@
         "Status":{"shape":"String"},
         "Message":{"shape":"ErrorMessage"},
         "CreationTime":{"shape":"Timestamp"},
-        "LastModificationTime":{"shape":"Timestamp"}
+        "LastModificationTime":{"shape":"Timestamp"},
+        "TimeSeriesSelector":{"shape":"TimeSeriesSelector"}
+      }
+    },
+    "DescribeMonitorRequest":{
+      "type":"structure",
+      "required":["MonitorArn"],
+      "members":{
+        "MonitorArn":{"shape":"Arn"}
+      }
+    },
+    "DescribeMonitorResponse":{
+      "type":"structure",
+      "members":{
+        "MonitorName":{"shape":"Name"},
+        "MonitorArn":{"shape":"Arn"},
+        "ResourceArn":{"shape":"Arn"},
+        "Status":{"shape":"Status"},
+        "LastEvaluationTime":{"shape":"Timestamp"},
+        "LastEvaluationState":{"shape":"EvaluationState"},
+        "Baseline":{"shape":"Baseline"},
+        "Message":{"shape":"Message"},
+        "CreationTime":{"shape":"Timestamp"},
+        "LastModificationTime":{"shape":"Timestamp"},
+        "EstimatedEvaluationTimeRemainingInMinutes":{"shape":"Long"}
       }
     },
     "DescribePredictorBacktestExportJobRequest":{
@@ -1333,7 +1802,8 @@
         "Message":{"shape":"Message"},
         "Status":{"shape":"Status"},
         "CreationTime":{"shape":"Timestamp"},
-        "LastModificationTime":{"shape":"Timestamp"}
+        "LastModificationTime":{"shape":"Timestamp"},
+        "Format":{"shape":"Format"}
       }
     },
     "DescribePredictorRequest":{
@@ -1371,6 +1841,76 @@
         "LastModificationTime":{"shape":"Timestamp"},
         "OptimizationMetric":{"shape":"OptimizationMetric"}
       }
+    },
+    "DescribeWhatIfAnalysisRequest":{
+      "type":"structure",
+      "required":["WhatIfAnalysisArn"],
+      "members":{
+        "WhatIfAnalysisArn":{"shape":"Arn"}
+      }
+    },
+    "DescribeWhatIfAnalysisResponse":{
+      "type":"structure",
+      "members":{
+        "WhatIfAnalysisName":{"shape":"Name"},
+        "WhatIfAnalysisArn":{"shape":"Arn"},
+        "ForecastArn":{"shape":"Arn"},
+        "EstimatedTimeRemainingInMinutes":{"shape":"Long"},
+        "Status":{"shape":"String"},
+        "Message":{"shape":"ErrorMessage"},
+        "CreationTime":{"shape":"Timestamp"},
+        "LastModificationTime":{"shape":"Timestamp"},
+        "TimeSeriesSelector":{"shape":"TimeSeriesSelector"}
+      }
+    },
+    "DescribeWhatIfForecastExportRequest":{
+      "type":"structure",
+      "required":["WhatIfForecastExportArn"],
+      "members":{
+        "WhatIfForecastExportArn":{"shape":"LongArn"}
+      }
+    },
+    "DescribeWhatIfForecastExportResponse":{
+      "type":"structure",
+      "members":{
+        "WhatIfForecastExportArn":{"shape":"LongArn"},
+        "WhatIfForecastExportName":{"shape":"Name"},
+        "WhatIfForecastArns":{"shape":"LongArnList"},
+        "Destination":{"shape":"DataDestination"},
+        "Message":{"shape":"Message"},
+        "Status":{"shape":"Status"},
+        "CreationTime":{"shape":"Timestamp"},
+        "EstimatedTimeRemainingInMinutes":{"shape":"Long"},
+        "LastModificationTime":{"shape":"Timestamp"},
+        "Format":{"shape":"Format"}
+      }
+    },
+    "DescribeWhatIfForecastRequest":{
+      "type":"structure",
+      "required":["WhatIfForecastArn"],
+      "members":{
+        "WhatIfForecastArn":{"shape":"LongArn"}
+      }
+    },
+    "DescribeWhatIfForecastResponse":{
+      "type":"structure",
+      "members":{
+        "WhatIfForecastName":{"shape":"Name"},
+        "WhatIfForecastArn":{"shape":"LongArn"},
+        "WhatIfAnalysisArn":{"shape":"Arn"},
+        "EstimatedTimeRemainingInMinutes":{"shape":"Long"},
+        "Status":{"shape":"String"},
+        "Message":{"shape":"ErrorMessage"},
+        "CreationTime":{"shape":"Timestamp"},
+        "LastModificationTime":{"shape":"Timestamp"},
+        "TimeSeriesTransformations":{"shape":"TimeSeriesTransformations"},
+        "TimeSeriesReplacementsDataSource":{"shape":"TimeSeriesReplacementsDataSource"},
+        "ForecastTypes":{"shape":"ForecastTypes"}
+      }
+    },
+    "Detail":{
+      "type":"string",
+      "max":256
     },
     "Domain":{
       "type":"string",
@@ -1424,6 +1964,10 @@
         "AlgorithmArn":{"shape":"Arn"},
         "TestWindows":{"shape":"TestWindows"}
       }
+    },
+    "EvaluationState":{
+      "type":"string",
+      "max":256
     },
     "EvaluationType":{
       "type":"string",
@@ -1612,6 +2156,11 @@
       "type":"list",
       "member":{"shape":"ForecastSummary"}
     },
+    "Format":{
+      "type":"string",
+      "max":7,
+      "pattern":"^CSV|PARQUET$"
+    },
     "Frequency":{
       "type":"string",
       "max":5,
@@ -1639,11 +2188,23 @@
         "OptimizationMetric":{"shape":"OptimizationMetric"}
       }
     },
+    "Hour":{
+      "type":"integer",
+      "max":23,
+      "min":0
+    },
     "HyperParameterTuningJobConfig":{
       "type":"structure",
       "members":{
         "ParameterRanges":{"shape":"ParameterRanges"}
       }
+    },
+    "ImportMode":{
+      "type":"string",
+      "enum":[
+        "FULL",
+        "INCREMENTAL"
+      ]
     },
     "InputDataConfig":{
       "type":"structure",
@@ -1803,6 +2364,38 @@
         "NextToken":{"shape":"NextToken"}
       }
     },
+    "ListMonitorEvaluationsRequest":{
+      "type":"structure",
+      "required":["MonitorArn"],
+      "members":{
+        "NextToken":{"shape":"NextToken"},
+        "MaxResults":{"shape":"MaxResults"},
+        "MonitorArn":{"shape":"Arn"},
+        "Filters":{"shape":"Filters"}
+      }
+    },
+    "ListMonitorEvaluationsResponse":{
+      "type":"structure",
+      "members":{
+        "NextToken":{"shape":"NextToken"},
+        "PredictorMonitorEvaluations":{"shape":"PredictorMonitorEvaluations"}
+      }
+    },
+    "ListMonitorsRequest":{
+      "type":"structure",
+      "members":{
+        "NextToken":{"shape":"NextToken"},
+        "MaxResults":{"shape":"MaxResults"},
+        "Filters":{"shape":"Filters"}
+      }
+    },
+    "ListMonitorsResponse":{
+      "type":"structure",
+      "members":{
+        "Monitors":{"shape":"Monitors"},
+        "NextToken":{"shape":"NextToken"}
+      }
+    },
     "ListPredictorBacktestExportJobsRequest":{
       "type":"structure",
       "members":{
@@ -1846,18 +2439,87 @@
         "Tags":{"shape":"Tags"}
       }
     },
+    "ListWhatIfAnalysesRequest":{
+      "type":"structure",
+      "members":{
+        "NextToken":{"shape":"NextToken"},
+        "MaxResults":{"shape":"MaxResults"},
+        "Filters":{"shape":"Filters"}
+      }
+    },
+    "ListWhatIfAnalysesResponse":{
+      "type":"structure",
+      "members":{
+        "WhatIfAnalyses":{"shape":"WhatIfAnalyses"},
+        "NextToken":{"shape":"NextToken"}
+      }
+    },
+    "ListWhatIfForecastExportsRequest":{
+      "type":"structure",
+      "members":{
+        "NextToken":{"shape":"NextToken"},
+        "MaxResults":{"shape":"MaxResults"},
+        "Filters":{"shape":"Filters"}
+      }
+    },
+    "ListWhatIfForecastExportsResponse":{
+      "type":"structure",
+      "members":{
+        "WhatIfForecastExports":{"shape":"WhatIfForecastExports"},
+        "NextToken":{"shape":"NextToken"}
+      }
+    },
+    "ListWhatIfForecastsRequest":{
+      "type":"structure",
+      "members":{
+        "NextToken":{"shape":"NextToken"},
+        "MaxResults":{"shape":"MaxResults"},
+        "Filters":{"shape":"Filters"}
+      }
+    },
+    "ListWhatIfForecastsResponse":{
+      "type":"structure",
+      "members":{
+        "WhatIfForecasts":{"shape":"WhatIfForecasts"},
+        "NextToken":{"shape":"NextToken"}
+      }
+    },
     "LocalDateTime":{
       "type":"string",
       "max":19,
       "pattern":"^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}$"
     },
     "Long":{"type":"long"},
+    "LongArn":{
+      "type":"string",
+      "max":300,
+      "pattern":"arn:([a-z\\d-]+):forecast:.*:.*:.+"
+    },
+    "LongArnList":{
+      "type":"list",
+      "member":{"shape":"LongArn"}
+    },
     "MaxResults":{
       "type":"integer",
       "max":100,
       "min":1
     },
     "Message":{"type":"string"},
+    "MetricName":{
+      "type":"string",
+      "max":256
+    },
+    "MetricResult":{
+      "type":"structure",
+      "members":{
+        "MetricName":{"shape":"MetricName"},
+        "MetricValue":{"shape":"Double"}
+      }
+    },
+    "MetricResults":{
+      "type":"list",
+      "member":{"shape":"MetricResult"}
+    },
     "Metrics":{
       "type":"structure",
       "members":{
@@ -1871,6 +2533,60 @@
         "AverageWeightedQuantileLoss":{"shape":"Double"}
       }
     },
+    "MonitorConfig":{
+      "type":"structure",
+      "required":["MonitorName"],
+      "members":{
+        "MonitorName":{"shape":"Name"}
+      }
+    },
+    "MonitorDataSource":{
+      "type":"structure",
+      "members":{
+        "DatasetImportJobArn":{"shape":"Arn"},
+        "ForecastArn":{"shape":"Arn"},
+        "PredictorArn":{"shape":"Arn"}
+      }
+    },
+    "MonitorInfo":{
+      "type":"structure",
+      "members":{
+        "MonitorArn":{"shape":"Arn"},
+        "Status":{"shape":"Status"}
+      }
+    },
+    "MonitorSummary":{
+      "type":"structure",
+      "members":{
+        "MonitorArn":{"shape":"Arn"},
+        "MonitorName":{"shape":"Name"},
+        "ResourceArn":{"shape":"Arn"},
+        "Status":{"shape":"Status"},
+        "CreationTime":{"shape":"Timestamp"},
+        "LastModificationTime":{"shape":"Timestamp"}
+      }
+    },
+    "Monitors":{
+      "type":"list",
+      "member":{"shape":"MonitorSummary"}
+    },
+    "Month":{
+      "type":"string",
+      "enum":[
+        "JANUARY",
+        "FEBRUARY",
+        "MARCH",
+        "APRIL",
+        "MAY",
+        "JUNE",
+        "JULY",
+        "AUGUST",
+        "SEPTEMBER",
+        "OCTOBER",
+        "NOVEMBER",
+        "DECEMBER"
+      ]
+    },
     "Name":{
       "type":"string",
       "max":63,
@@ -1882,6 +2598,15 @@
       "max":3000,
       "min":1,
       "pattern":".+"
+    },
+    "Operation":{
+      "type":"string",
+      "enum":[
+        "ADD",
+        "SUBTRACT",
+        "MULTIPLY",
+        "DIVIDE"
+      ]
     },
     "OptimizationMetric":{
       "type":"string",
@@ -1927,9 +2652,22 @@
       "type":"list",
       "member":{"shape":"PredictorBacktestExportJobSummary"}
     },
+    "PredictorBaseline":{
+      "type":"structure",
+      "members":{
+        "BaselineMetrics":{"shape":"BaselineMetrics"}
+      }
+    },
     "PredictorEvaluationResults":{
       "type":"list",
       "member":{"shape":"EvaluationResult"}
+    },
+    "PredictorEvent":{
+      "type":"structure",
+      "members":{
+        "Detail":{"shape":"Detail"},
+        "Datetime":{"shape":"Timestamp"}
+      }
     },
     "PredictorExecution":{
       "type":"structure",
@@ -1949,6 +2687,26 @@
       "member":{"shape":"PredictorExecution"},
       "max":5,
       "min":1
+    },
+    "PredictorMonitorEvaluation":{
+      "type":"structure",
+      "members":{
+        "ResourceArn":{"shape":"Arn"},
+        "MonitorArn":{"shape":"Arn"},
+        "EvaluationTime":{"shape":"Timestamp"},
+        "EvaluationState":{"shape":"EvaluationState"},
+        "WindowStartDatetime":{"shape":"Timestamp"},
+        "WindowEndDatetime":{"shape":"Timestamp"},
+        "PredictorEvent":{"shape":"PredictorEvent"},
+        "MonitorDataSource":{"shape":"MonitorDataSource"},
+        "MetricResults":{"shape":"MetricResults"},
+        "NumItemsEvaluated":{"shape":"Long"},
+        "Message":{"shape":"Message"}
+      }
+    },
+    "PredictorMonitorEvaluations":{
+      "type":"list",
+      "member":{"shape":"PredictorMonitorEvaluation"}
     },
     "PredictorSummary":{
       "type":"structure",
@@ -1995,6 +2753,13 @@
         "Message":{"shape":"ErrorMessage"}
       },
       "exception":true
+    },
+    "ResumeResourceRequest":{
+      "type":"structure",
+      "required":["ResourceArn"],
+      "members":{
+        "ResourceArn":{"shape":"Arn"}
+      }
     },
     "S3Config":{
       "type":"structure",
@@ -2169,6 +2934,15 @@
       "type":"list",
       "member":{"shape":"WindowSummary"}
     },
+    "TimeAlignmentBoundary":{
+      "type":"structure",
+      "members":{
+        "Month":{"shape":"Month"},
+        "DayOfMonth":{"shape":"DayOfMonth"},
+        "DayOfWeek":{"shape":"DayOfWeek"},
+        "Hour":{"shape":"Hour"}
+      }
+    },
     "TimePointGranularity":{
       "type":"string",
       "enum":[
@@ -2176,12 +2950,71 @@
         "SPECIFIC"
       ]
     },
+    "TimeSeriesCondition":{
+      "type":"structure",
+      "required":[
+        "AttributeName",
+        "AttributeValue",
+        "Condition"
+      ],
+      "members":{
+        "AttributeName":{"shape":"Name"},
+        "AttributeValue":{"shape":"AttributeValue"},
+        "Condition":{"shape":"Condition"}
+      }
+    },
+    "TimeSeriesConditions":{
+      "type":"list",
+      "member":{"shape":"TimeSeriesCondition"},
+      "max":10,
+      "min":0
+    },
     "TimeSeriesGranularity":{
       "type":"string",
       "enum":[
         "ALL",
         "SPECIFIC"
       ]
+    },
+    "TimeSeriesIdentifiers":{
+      "type":"structure",
+      "members":{
+        "DataSource":{"shape":"DataSource"},
+        "Schema":{"shape":"Schema"},
+        "Format":{"shape":"Format"}
+      }
+    },
+    "TimeSeriesReplacementsDataSource":{
+      "type":"structure",
+      "required":[
+        "S3Config",
+        "Schema"
+      ],
+      "members":{
+        "S3Config":{"shape":"S3Config"},
+        "Schema":{"shape":"Schema"},
+        "Format":{"shape":"Format"},
+        "TimestampFormat":{"shape":"TimestampFormat"}
+      }
+    },
+    "TimeSeriesSelector":{
+      "type":"structure",
+      "members":{
+        "TimeSeriesIdentifiers":{"shape":"TimeSeriesIdentifiers"}
+      }
+    },
+    "TimeSeriesTransformation":{
+      "type":"structure",
+      "members":{
+        "Action":{"shape":"Action"},
+        "TimeSeriesConditions":{"shape":"TimeSeriesConditions"}
+      }
+    },
+    "TimeSeriesTransformations":{
+      "type":"list",
+      "member":{"shape":"TimeSeriesTransformation"},
+      "max":30,
+      "min":0
     },
     "TimeZone":{
       "type":"string",
@@ -2262,6 +3095,61 @@
     "WeightedQuantileLosses":{
       "type":"list",
       "member":{"shape":"WeightedQuantileLoss"}
+    },
+    "WhatIfAnalyses":{
+      "type":"list",
+      "member":{"shape":"WhatIfAnalysisSummary"}
+    },
+    "WhatIfAnalysisSummary":{
+      "type":"structure",
+      "members":{
+        "WhatIfAnalysisArn":{"shape":"Arn"},
+        "WhatIfAnalysisName":{"shape":"Name"},
+        "ForecastArn":{"shape":"Arn"},
+        "Status":{"shape":"Status"},
+        "Message":{"shape":"ErrorMessage"},
+        "CreationTime":{"shape":"Timestamp"},
+        "LastModificationTime":{"shape":"Timestamp"}
+      }
+    },
+    "WhatIfForecastArnListForExport":{
+      "type":"list",
+      "member":{"shape":"LongArn"},
+      "max":50,
+      "min":1
+    },
+    "WhatIfForecastExportSummary":{
+      "type":"structure",
+      "members":{
+        "WhatIfForecastExportArn":{"shape":"LongArn"},
+        "WhatIfForecastArns":{"shape":"WhatIfForecastArnListForExport"},
+        "WhatIfForecastExportName":{"shape":"Name"},
+        "Destination":{"shape":"DataDestination"},
+        "Status":{"shape":"Status"},
+        "Message":{"shape":"ErrorMessage"},
+        "CreationTime":{"shape":"Timestamp"},
+        "LastModificationTime":{"shape":"Timestamp"}
+      }
+    },
+    "WhatIfForecastExports":{
+      "type":"list",
+      "member":{"shape":"WhatIfForecastExportSummary"}
+    },
+    "WhatIfForecastSummary":{
+      "type":"structure",
+      "members":{
+        "WhatIfForecastArn":{"shape":"LongArn"},
+        "WhatIfForecastName":{"shape":"Name"},
+        "WhatIfAnalysisArn":{"shape":"Arn"},
+        "Status":{"shape":"Status"},
+        "Message":{"shape":"ErrorMessage"},
+        "CreationTime":{"shape":"Timestamp"},
+        "LastModificationTime":{"shape":"Timestamp"}
+      }
+    },
+    "WhatIfForecasts":{
+      "type":"list",
+      "member":{"shape":"WhatIfForecastSummary"}
     },
     "WindowSummary":{
       "type":"structure",

@@ -34,7 +34,7 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// IoTJobExecutionsRolloutConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class IoTJobExecutionsRolloutConfigMarshaller : IRequestMarshaller<IoTJobExecutionsRolloutConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static IoTJobExecutionsRolloutConfigMarshaller Instance = new IoTJobExecutionsRolloutConfigMarshaller();
 
     }

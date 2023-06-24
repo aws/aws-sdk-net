@@ -34,7 +34,7 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AutoEnable Marshaller
-    /// </summary>       
+    /// </summary>
     public class AutoEnableMarshaller : IRequestMarshaller<AutoEnable, JsonMarshallerContext> 
     {
         /// <summary>
@@ -57,11 +57,23 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Ecr);
             }
 
+            if(requestObject.IsSetLambda())
+            {
+                context.Writer.WritePropertyName("lambda");
+                context.Writer.Write(requestObject.Lambda);
+            }
+
+            if(requestObject.IsSetLambdaCode())
+            {
+                context.Writer.WritePropertyName("lambdaCode");
+                context.Writer.Write(requestObject.LambdaCode);
+            }
+
         }
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AutoEnableMarshaller Instance = new AutoEnableMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AttributePayload Marshaller
-    /// </summary>       
+    /// </summary>
     public class AttributePayloadMarshaller : IRequestMarshaller<AttributePayload, JsonMarshallerContext> 
     {
         /// <summary>
@@ -69,7 +69,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AttributePayloadMarshaller Instance = new AttributePayloadMarshaller();
 
     }

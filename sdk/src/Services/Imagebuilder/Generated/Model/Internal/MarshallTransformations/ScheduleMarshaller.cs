@@ -34,7 +34,7 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Schedule Marshaller
-    /// </summary>       
+    /// </summary>
     public class ScheduleMarshaller : IRequestMarshaller<Schedule, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ScheduleMarshaller Instance = new ScheduleMarshaller();
 
     }

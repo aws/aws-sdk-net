@@ -62,8 +62,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property MetricDefinitions. 
         /// <para>
-        /// An array of <a>MetricDefinition</a> objects that specify the metrics that the algorithm
-        /// emits.
+        /// An array of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_MetricDefinition.html">MetricDefinition</a>
+        /// objects that specify the metrics that the algorithm emits.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=40)]
@@ -84,9 +84,9 @@ namespace Amazon.SageMaker.Model
         /// <para>
         ///  The registry path of the Docker image that contains the training algorithm. For information
         /// about Docker registry paths for built-in algorithms, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Algorithms
-        /// Provided by Amazon SageMaker: Common Parameters</a>. Amazon SageMaker supports both
-        /// <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code>
-        /// image path formats. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using
+        /// Provided by Amazon SageMaker: Common Parameters</a>. SageMaker supports both <code>registry/repository[:tag]</code>
+        /// and <code>registry/repository[@digest]</code> image path formats. For more information,
+        /// see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using
         /// Your Own Algorithms with Amazon SageMaker</a>.
         /// </para>
         /// </summary>

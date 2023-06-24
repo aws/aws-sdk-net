@@ -34,7 +34,7 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AclGrantee Marshaller
-    /// </summary>       
+    /// </summary>
     public class AclGranteeMarshaller : IRequestMarshaller<AclGrantee, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AclGranteeMarshaller Instance = new AclGranteeMarshaller();
 
     }

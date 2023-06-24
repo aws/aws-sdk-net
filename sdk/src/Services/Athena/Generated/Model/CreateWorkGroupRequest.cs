@@ -30,7 +30,8 @@ namespace Amazon.Athena.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateWorkGroup operation.
-    /// Creates a workgroup with the specified name.
+    /// Creates a workgroup with the specified name. A workgroup can be an Apache Spark enabled
+    /// workgroup or an Athena SQL workgroup.
     /// </summary>
     public partial class CreateWorkGroupRequest : AmazonAthenaRequest
     {
@@ -42,11 +43,12 @@ namespace Amazon.Athena.Model
         /// <summary>
         /// Gets and sets the property Configuration. 
         /// <para>
-        /// The configuration for the workgroup, which includes the location in Amazon S3 where
-        /// query results are stored, the encryption configuration, if any, used for encrypting
-        /// query results, whether the Amazon CloudWatch Metrics are enabled for the workgroup,
-        /// the limit for the amount of bytes scanned (cutoff) per query, if it is specified,
-        /// and whether workgroup's settings (specified with <code>EnforceWorkGroupConfiguration</code>)
+        /// Contains configuration information for creating an Athena SQL workgroup or Spark enabled
+        /// Athena workgroup. Athena SQL workgroup configuration includes the location in Amazon
+        /// S3 where query and calculation results are stored, the encryption configuration, if
+        /// any, used for encrypting query results, whether the Amazon CloudWatch Metrics are
+        /// enabled for the workgroup, the limit for the amount of bytes scanned (cutoff) per
+        /// query, if it is specified, and whether workgroup's settings (specified with <code>EnforceWorkGroupConfiguration</code>)
         /// in the <code>WorkGroupConfiguration</code> override client-side settings. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.
         /// </para>
         /// </summary>

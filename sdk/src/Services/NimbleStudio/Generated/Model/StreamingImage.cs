@@ -42,9 +42,8 @@ namespace Amazon.NimbleStudio.Model
     /// </para>
     ///  
     /// <para>
-    /// You can create your own streaming images using an Amazon Elastic Compute Cloud (Amazon
-    /// EC2) machine image that you create for this purpose. You can also include software
-    /// that your users require.
+    /// You can create your own streaming images using an Amazon EC2 machine image that you
+    /// create for this purpose. You can also include software that your users require.
     /// </para>
     /// </summary>
     public partial class StreamingImage
@@ -66,7 +65,8 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The ARN of the resource.
+        /// The Amazon Resource Name (ARN) that is assigned to a studio resource and uniquely
+        /// identifies it. ARNs are unique across all Regions.
         /// </para>
         /// </summary>
         public string Arn
@@ -87,7 +87,7 @@ namespace Amazon.NimbleStudio.Model
         /// A human-readable description of the streaming image.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=256)]
+        [AWSProperty(Sensitive=true, Min=0, Max=256)]
         public string Description
         {
             get { return this._description; }
@@ -161,7 +161,7 @@ namespace Amazon.NimbleStudio.Model
         /// A friendly name for a streaming image resource.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=64)]
+        [AWSProperty(Sensitive=true, Min=0, Max=64)]
         public string Name
         {
             get { return this._name; }
@@ -177,8 +177,9 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property Owner. 
         /// <para>
-        /// The owner of the streaming image, either the studioId that contains the streaming
-        /// image, or 'amazon' for images that are provided by Amazon Nimble Studio.
+        /// The owner of the streaming image, either the <code>studioId</code> that contains the
+        /// streaming image, or <code>amazon</code> for images that are provided by Amazon Nimble
+        /// Studio.
         /// </para>
         /// </summary>
         public string Owner
@@ -196,7 +197,7 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property Platform. 
         /// <para>
-        /// The platform of the streaming image, either WINDOWS or LINUX.
+        /// The platform of the streaming image, either Windows or Linux.
         /// </para>
         /// </summary>
         public string Platform
@@ -287,7 +288,7 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// A collection of labels, in the form of key:value pairs, that apply to this resource.
+        /// A collection of labels, in the form of key-value pairs, that apply to this resource.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Tags

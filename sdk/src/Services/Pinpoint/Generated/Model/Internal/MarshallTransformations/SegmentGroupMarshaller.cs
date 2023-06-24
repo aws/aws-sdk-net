@@ -34,7 +34,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SegmentGroup Marshaller
-    /// </summary>       
+    /// </summary>
     public class SegmentGroupMarshaller : IRequestMarshaller<SegmentGroup, JsonMarshallerContext> 
     {
         /// <summary>
@@ -93,7 +93,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SegmentGroupMarshaller Instance = new SegmentGroupMarshaller();
 
     }

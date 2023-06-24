@@ -31,7 +31,14 @@ namespace Amazon.RoboMaker.Model
     /// <summary>
     /// Container for the parameters to the CreateFleet operation.
     /// Creates a fleet, a logical group of robots running the same robot application.
+    /// 
+    ///  <important> 
+    /// <para>
+    /// This API is no longer supported and will throw an error if used.
+    /// </para>
+    ///  </important>
     /// </summary>
+    [Obsolete("AWS RoboMaker is unable to process this request as the support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.")]
     public partial class CreateFleetRequest : AmazonRoboMakerRequest
     {
         private string _name;

@@ -41,6 +41,11 @@ namespace Amazon.ManagedGrafana.Model
         /// <para>
         /// The ID of the user or group.
         /// </para>
+        ///  
+        /// <para>
+        /// Pattern: <code>^([0-9a-fA-F]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}$</code>
+        /// 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=47)]
         public string Id

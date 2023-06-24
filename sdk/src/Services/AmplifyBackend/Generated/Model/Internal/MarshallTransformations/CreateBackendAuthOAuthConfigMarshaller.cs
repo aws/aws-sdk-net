@@ -34,7 +34,7 @@ namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CreateBackendAuthOAuthConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class CreateBackendAuthOAuthConfigMarshaller : IRequestMarshaller<CreateBackendAuthOAuthConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -105,7 +105,7 @@ namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CreateBackendAuthOAuthConfigMarshaller Instance = new CreateBackendAuthOAuthConfigMarshaller();
 
     }

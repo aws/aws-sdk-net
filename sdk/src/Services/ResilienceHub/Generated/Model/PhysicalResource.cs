@@ -30,16 +30,56 @@ namespace Amazon.ResilienceHub.Model
 {
     /// <summary>
     /// Defines a physical resource. A physical resource is a resource that exists in your
-    /// account. It can be identified using an Amazon Resource Name (ARN) or a Resilience
+    /// account. It can be identified using an Amazon Resource Name (ARN) or an Resilience
     /// Hub-native identifier.
     /// </summary>
     public partial class PhysicalResource
     {
+        private Dictionary<string, List<string>> _additionalInfo = new Dictionary<string, List<string>>();
         private List<AppComponent> _appComponents = new List<AppComponent>();
+        private bool? _excluded;
         private LogicalResourceId _logicalResourceId;
+        private string _parentResourceName;
         private PhysicalResourceId _physicalResourceId;
         private string _resourceName;
         private string _resourceType;
+        private ResourceSourceType _sourceType;
+
+        /// <summary>
+        /// Gets and sets the property AdditionalInfo. 
+        /// <para>
+        /// Additional configuration parameters for an Resilience Hub application. If you want
+        /// to implement <code>additionalInfo</code> through the Resilience Hub console rather
+        /// than using an API call, see <a href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/app-config-param.html">Configure
+        /// the application configuration parameters</a>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Currently, this parameter accepts a key-value mapping (in a string format) of only
+        /// one failover region and one associated account.
+        /// </para>
+        ///  
+        /// <para>
+        /// Key: <code>"failover-regions"</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Value: <code>"[{"region":"&lt;REGION&gt;", "accounts":[{"id":"&lt;ACCOUNT_ID&gt;"}]}]"</code>
+        /// 
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public Dictionary<string, List<string>> AdditionalInfo
+        {
+            get { return this._additionalInfo; }
+            set { this._additionalInfo = value; }
+        }
+
+        // Check to see if AdditionalInfo property is set
+        internal bool IsSetAdditionalInfo()
+        {
+            return this._additionalInfo != null && this._additionalInfo.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property AppComponents. 
@@ -60,6 +100,24 @@ namespace Amazon.ResilienceHub.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Excluded. 
+        /// <para>
+        /// Indicates if a resource is included or excluded from the assessment.
+        /// </para>
+        /// </summary>
+        public bool Excluded
+        {
+            get { return this._excluded.GetValueOrDefault(); }
+            set { this._excluded = value; }
+        }
+
+        // Check to see if Excluded property is set
+        internal bool IsSetExcluded()
+        {
+            return this._excluded.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property LogicalResourceId. 
         /// <para>
         /// The logical identifier of the resource.
@@ -76,6 +134,24 @@ namespace Amazon.ResilienceHub.Model
         internal bool IsSetLogicalResourceId()
         {
             return this._logicalResourceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ParentResourceName. 
+        /// <para>
+        /// The name of the parent resource.
+        /// </para>
+        /// </summary>
+        public string ParentResourceName
+        {
+            get { return this._parentResourceName; }
+            set { this._parentResourceName = value; }
+        }
+
+        // Check to see if ParentResourceName property is set
+        internal bool IsSetParentResourceName()
+        {
+            return this._parentResourceName != null;
         }
 
         /// <summary>
@@ -132,6 +208,24 @@ namespace Amazon.ResilienceHub.Model
         internal bool IsSetResourceType()
         {
             return this._resourceType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceType. 
+        /// <para>
+        /// The type of input source.
+        /// </para>
+        /// </summary>
+        public ResourceSourceType SourceType
+        {
+            get { return this._sourceType; }
+            set { this._sourceType = value; }
+        }
+
+        // Check to see if SourceType property is set
+        internal bool IsSetSourceType()
+        {
+            return this._sourceType != null;
         }
 
     }

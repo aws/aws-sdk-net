@@ -94,6 +94,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     unmarshalledObject.InboundCallsEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("InstanceAccessUrl", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.InstanceAccessUrl = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("InstanceAlias", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

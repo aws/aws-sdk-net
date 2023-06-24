@@ -64,12 +64,15 @@ namespace Amazon.RDS.Model
         private int? _iops;
         private string _kmsKeyId;
         private string _licenseModel;
+        private bool? _manageMasterUserPassword;
         private string _masterUsername;
         private string _masterUserPassword;
+        private string _masterUserSecretKmsKeyId;
         private int? _maxAllocatedStorage;
         private int? _monitoringInterval;
         private string _monitoringRoleArn;
         private bool? _multiAZ;
+        private string _networkType;
         private string _optionGroupName;
         private string _performanceInsightsKMSKeyId;
         private int? _performanceInsightsRetentionPeriod;
@@ -84,6 +87,7 @@ namespace Amazon.RDS.Model
         private string _sourceEngine;
         private string _sourceEngineVersion;
         private bool? _storageEncrypted;
+        private int? _storageThroughput;
         private string _storageType;
         private List<Tag> _tags = new List<Tag>();
         private bool? _useDefaultProcessorFeatures;
@@ -92,13 +96,13 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property AllocatedStorage. 
         /// <para>
-        /// The amount of storage (in gigabytes) to allocate initially for the DB instance. Follow
-        /// the allocation rules specified in <code>CreateDBInstance</code>. 
+        /// The amount of storage (in gibibytes) to allocate initially for the DB instance. Follow
+        /// the allocation rules specified in <code>CreateDBInstance</code>.
         /// </para>
         ///  <note> 
         /// <para>
-        /// Be sure to allocate enough memory for your new DB instance so that the restore operation
-        /// can succeed. You can also allocate additional memory for future growth. 
+        /// Be sure to allocate enough storage for your new DB instance so that the restore operation
+        /// can succeed. You can also allocate additional storage for future growth.
         /// </para>
         ///  </note>
         /// </summary>
@@ -119,7 +123,7 @@ namespace Amazon.RDS.Model
         /// <para>
         /// A value that indicates whether minor engine upgrades are applied automatically to
         /// the DB instance during the maintenance window. By default, minor engine upgrades are
-        /// not applied automatically. 
+        /// not applied automatically.
         /// </para>
         /// </summary>
         public bool AutoMinorVersionUpgrade
@@ -144,17 +148,17 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// Default: A random, system-chosen Availability Zone in the endpoint's Amazon Web Services
-        /// Region. 
+        /// Region.
         /// </para>
         ///  
         /// <para>
-        ///  Example: <code>us-east-1d</code> 
+        /// Example: <code>us-east-1d</code> 
         /// </para>
         ///  
         /// <para>
         /// Constraint: The <code>AvailabilityZone</code> parameter can't be specified if the
         /// DB instance is a Multi-AZ deployment. The specified Availability Zone must be in the
-        /// same Amazon Web Services Region as the current endpoint. 
+        /// same Amazon Web Services Region as the current endpoint.
         /// </para>
         /// </summary>
         public string AvailabilityZone
@@ -174,7 +178,6 @@ namespace Amazon.RDS.Model
         /// <para>
         /// The number of days for which automated backups are retained. Setting this parameter
         /// to a positive number enables backups. For more information, see <code>CreateDBInstance</code>.
-        /// 
         /// </para>
         /// </summary>
         public int BackupRetentionPeriod
@@ -193,7 +196,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property CopyTagsToSnapshot. 
         /// <para>
         /// A value that indicates whether to copy all tags from the DB instance to snapshots
-        /// of the DB instance. By default, tags are not copied. 
+        /// of the DB instance. By default, tags are not copied.
         /// </para>
         /// </summary>
         public bool CopyTagsToSnapshot
@@ -219,7 +222,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Importing from Amazon S3 isn't supported on the db.t2.micro DB instance class. 
+        /// Importing from Amazon S3 isn't supported on the db.t2.micro DB instance class.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -238,7 +241,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBInstanceIdentifier. 
         /// <para>
-        /// The DB instance identifier. This parameter is stored as a lowercase string. 
+        /// The DB instance identifier. This parameter is stored as a lowercase string.
         /// </para>
         ///  
         /// <para>
@@ -278,7 +281,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property DBName. 
         /// <para>
         /// The name of the database to create when the DB instance is created. Follow the naming
-        /// rules specified in <code>CreateDBInstance</code>. 
+        /// rules specified in <code>CreateDBInstance</code>.
         /// </para>
         /// </summary>
         public string DBName
@@ -343,6 +346,14 @@ namespace Amazon.RDS.Model
         /// <para>
         /// A DB subnet group to associate with this DB instance.
         /// </para>
+        ///  
+        /// <para>
+        /// Constraints: If supplied, must match the name of an existing DBSubnetGroup.
+        /// </para>
+        ///  
+        /// <para>
+        /// Example: <code>mydbsubnetgroup</code> 
+        /// </para>
         /// </summary>
         public string DBSubnetGroupName
         {
@@ -362,7 +373,7 @@ namespace Amazon.RDS.Model
         /// A value that indicates whether the DB instance has deletion protection enabled. The
         /// database can't be deleted when deletion protection is enabled. By default, deletion
         /// protection isn't enabled. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
-        /// Deleting a DB Instance</a>. 
+        /// Deleting a DB Instance</a>.
         /// </para>
         /// </summary>
         public bool DeletionProtection
@@ -427,13 +438,11 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property EnablePerformanceInsights. 
         /// <para>
         /// A value that indicates whether to enable Performance Insights for the DB instance.
-        /// 
         /// </para>
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using
-        /// Amazon Performance Insights</a> in the <i>Amazon Relational Database Service User
-        /// Guide</i>. 
+        /// Amazon Performance Insights</a> in the <i>Amazon RDS User Guide</i>.
         /// </para>
         /// </summary>
         public bool EnablePerformanceInsights
@@ -451,7 +460,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Engine. 
         /// <para>
-        /// The name of the database engine to be used for this instance. 
+        /// The name of the database engine to be used for this instance.
         /// </para>
         ///  
         /// <para>
@@ -476,7 +485,7 @@ namespace Amazon.RDS.Model
         /// <para>
         /// The version number of the database engine to use. Choose the latest minor version
         /// of your database engine. For information about engine versions, see <code>CreateDBInstance</code>,
-        /// or call <code>DescribeDBEngineVersions</code>. 
+        /// or call <code>DescribeDBEngineVersions</code>.
         /// </para>
         /// </summary>
         public string EngineVersion
@@ -495,9 +504,8 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property Iops. 
         /// <para>
         /// The amount of Provisioned IOPS (input/output operations per second) to allocate initially
-        /// for the DB instance. For information about valid Iops values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon
-        /// RDS Provisioned IOPS Storage to Improve Performance</a> in the <i>Amazon RDS User
-        /// Guide.</i> 
+        /// for the DB instance. For information about valid IOPS values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon
+        /// RDS Provisioned IOPS storage</a> in the <i>Amazon RDS User Guide.</i> 
         /// </para>
         /// </summary>
         public int Iops
@@ -515,7 +523,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The Amazon Web Services KMS key identifier for an encrypted DB instance. 
+        /// The Amazon Web Services KMS key identifier for an encrypted DB instance.
         /// </para>
         ///  
         /// <para>
@@ -529,7 +537,7 @@ namespace Amazon.RDS.Model
         /// a value for the <code>KmsKeyId</code> parameter, then Amazon RDS will use your default
         /// KMS key. There is a default KMS key for your Amazon Web Services account. Your Amazon
         /// Web Services account has a different default KMS key for each Amazon Web Services
-        /// Region. 
+        /// Region.
         /// </para>
         /// </summary>
         public string KmsKeyId
@@ -547,7 +555,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property LicenseModel. 
         /// <para>
-        /// The license model for this DB instance. Use <code>general-public-license</code>. 
+        /// The license model for this DB instance. Use <code>general-public-license</code>.
         /// </para>
         /// </summary>
         public string LicenseModel
@@ -563,13 +571,48 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MasterUsername. 
+        /// Gets and sets the property ManageMasterUserPassword. 
         /// <para>
-        /// The name for the master user. 
+        /// A value that indicates whether to manage the master user password with Amazon Web
+        /// Services Secrets Manager.
         /// </para>
         ///  
         /// <para>
-        /// Constraints: 
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password
+        /// management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User
+        /// Guide.</i> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Can't manage the master user password with Amazon Web Services Secrets Manager if
+        /// <code>MasterUserPassword</code> is specified.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public bool ManageMasterUserPassword
+        {
+            get { return this._manageMasterUserPassword.GetValueOrDefault(); }
+            set { this._manageMasterUserPassword = value; }
+        }
+
+        // Check to see if ManageMasterUserPassword property is set
+        internal bool IsSetManageMasterUserPassword()
+        {
+            return this._manageMasterUserPassword.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MasterUsername. 
+        /// <para>
+        /// The name for the master user.
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -601,11 +644,52 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property MasterUserPassword. 
         /// <para>
         /// The password for the master user. The password can include any printable ASCII character
-        /// except "/", """, or "@". 
+        /// except "/", """, or "@".
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints: Can't be specified if <code>ManageMasterUserPassword</code> is turned
+        /// on.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>MariaDB</b> 
         /// </para>
         ///  
         /// <para>
         /// Constraints: Must contain from 8 to 41 characters.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Microsoft SQL Server</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints: Must contain from 8 to 128 characters.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>MySQL</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints: Must contain from 8 to 41 characters.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Oracle</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints: Must contain from 8 to 30 characters.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>PostgreSQL</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints: Must contain from 8 to 128 characters.
         /// </para>
         /// </summary>
         public string MasterUserPassword
@@ -618,6 +702,48 @@ namespace Amazon.RDS.Model
         internal bool IsSetMasterUserPassword()
         {
             return this._masterUserPassword != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MasterUserSecretKmsKeyId. 
+        /// <para>
+        /// The Amazon Web Services KMS key identifier to encrypt a secret that is automatically
+        /// generated and managed in Amazon Web Services Secrets Manager.
+        /// </para>
+        ///  
+        /// <para>
+        /// This setting is valid only if the master user password is managed by RDS in Amazon
+        /// Web Services Secrets Manager for the DB instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias
+        /// name for the KMS key. To use a KMS key in a different Amazon Web Services account,
+        /// specify the key ARN or alias ARN.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you don't specify <code>MasterUserSecretKmsKeyId</code>, then the <code>aws/secretsmanager</code>
+        /// KMS key is used to encrypt the secret. If the secret is in a different Amazon Web
+        /// Services account, then you can't use the <code>aws/secretsmanager</code> KMS key to
+        /// encrypt the secret, and you must use a customer managed KMS key.
+        /// </para>
+        ///  
+        /// <para>
+        /// There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services
+        /// account has a different default KMS key for each Amazon Web Services Region.
+        /// </para>
+        /// </summary>
+        public string MasterUserSecretKmsKeyId
+        {
+            get { return this._masterUserSecretKmsKeyId; }
+            set { this._masterUserSecretKmsKeyId = value; }
+        }
+
+        // Check to see if MasterUserSecretKmsKeyId property is set
+        internal bool IsSetMasterUserSecretKmsKeyId()
+        {
+            return this._masterUserSecretKmsKeyId != null;
         }
 
         /// <summary>
@@ -651,16 +777,15 @@ namespace Amazon.RDS.Model
         /// <para>
         /// The interval, in seconds, between points when Enhanced Monitoring metrics are collected
         /// for the DB instance. To disable collecting Enhanced Monitoring metrics, specify 0.
-        /// 
         /// </para>
         ///  
         /// <para>
         /// If <code>MonitoringRoleArn</code> is specified, then you must also set <code>MonitoringInterval</code>
-        /// to a value other than 0. 
+        /// to a value other than 0.
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: 0, 1, 5, 10, 15, 30, 60 
+        /// Valid Values: 0, 1, 5, 10, 15, 30, 60
         /// </para>
         ///  
         /// <para>
@@ -690,7 +815,7 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// If <code>MonitoringInterval</code> is set to a value other than 0, then you must supply
-        /// a <code>MonitoringRoleArn</code> value. 
+        /// a <code>MonitoringRoleArn</code> value.
         /// </para>
         /// </summary>
         public string MonitoringRoleArn
@@ -710,7 +835,7 @@ namespace Amazon.RDS.Model
         /// <para>
         /// A value that indicates whether the DB instance is a Multi-AZ deployment. If the DB
         /// instance is a Multi-AZ deployment, you can't set the <code>AvailabilityZone</code>
-        /// parameter. 
+        /// parameter.
         /// </para>
         /// </summary>
         public bool MultiAZ
@@ -726,10 +851,51 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property NetworkType. 
+        /// <para>
+        /// The network type of the DB instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>IPV4</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>DUAL</code> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The network type is determined by the <code>DBSubnetGroup</code> specified for the
+        /// DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the
+        /// IPv4 and the IPv6 protocols (<code>DUAL</code>).
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+        /// Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i> 
+        /// </para>
+        /// </summary>
+        public string NetworkType
+        {
+            get { return this._networkType; }
+            set { this._networkType = value; }
+        }
+
+        // Check to see if NetworkType property is set
+        internal bool IsSetNetworkType()
+        {
+            return this._networkType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property OptionGroupName. 
         /// <para>
         /// The name of the option group to associate with this DB instance. If this argument
-        /// is omitted, the default option group for the specified engine is used. 
+        /// is omitted, the default option group for the specified engine is used.
         /// </para>
         /// </summary>
         public string OptionGroupName
@@ -778,8 +944,45 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property PerformanceInsightsRetentionPeriod. 
         /// <para>
-        /// The amount of time, in days, to retain Performance Insights data. Valid values are
-        /// 7 or 731 (2 years). 
+        /// The number of days to retain Performance Insights data. The default is 7 days. The
+        /// following values are valid:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// 7
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <i>month</i> * 31, where <i>month</i> is a number of months from 1-23
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// 731
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For example, the following values are valid:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// 93 (3 months * 31)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// 341 (11 months * 31)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// 589 (19 months * 31)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// 731
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// If you specify a retention period such as 94, which isn't a valid value, RDS issues
+        /// an error.
         /// </para>
         /// </summary>
         public int PerformanceInsightsRetentionPeriod
@@ -797,11 +1000,11 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Port. 
         /// <para>
-        /// The port number on which the database accepts connections. 
+        /// The port number on which the database accepts connections.
         /// </para>
         ///  
         /// <para>
-        /// Type: Integer 
+        /// Type: Integer
         /// </para>
         ///  
         /// <para>
@@ -968,7 +1171,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property S3BucketName. 
         /// <para>
-        /// The name of your Amazon S3 bucket that contains your database backup file. 
+        /// The name of your Amazon S3 bucket that contains your database backup file.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -988,7 +1191,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property S3IngestionRoleArn. 
         /// <para>
         /// An Amazon Web Services Identity and Access Management (IAM) role to allow Amazon RDS
-        /// to access your Amazon S3 bucket. 
+        /// to access your Amazon S3 bucket.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -1007,7 +1210,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property S3Prefix. 
         /// <para>
-        /// The prefix of your Amazon S3 bucket. 
+        /// The prefix of your Amazon S3 bucket.
         /// </para>
         /// </summary>
         public string S3Prefix
@@ -1025,7 +1228,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property SourceEngine. 
         /// <para>
-        /// The name of the engine of your source database. 
+        /// The name of the engine of your source database.
         /// </para>
         ///  
         /// <para>
@@ -1052,7 +1255,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// MySQL versions 5.6 and 5.7 are supported. 
+        /// MySQL versions 5.6 and 5.7 are supported.
         /// </para>
         ///  
         /// <para>
@@ -1075,7 +1278,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property StorageEncrypted. 
         /// <para>
-        /// A value that indicates whether the new DB instance is encrypted or not. 
+        /// A value that indicates whether the new DB instance is encrypted or not.
         /// </para>
         /// </summary>
         public bool StorageEncrypted
@@ -1091,18 +1294,40 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property StorageThroughput. 
+        /// <para>
+        /// Specifies the storage throughput value for the DB instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// This setting doesn't apply to RDS Custom or Amazon Aurora.
+        /// </para>
+        /// </summary>
+        public int StorageThroughput
+        {
+            get { return this._storageThroughput.GetValueOrDefault(); }
+            set { this._storageThroughput = value; }
+        }
+
+        // Check to see if StorageThroughput property is set
+        internal bool IsSetStorageThroughput()
+        {
+            return this._storageThroughput.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property StorageType. 
         /// <para>
-        /// Specifies the storage type to be associated with the DB instance. 
+        /// Specifies the storage type to be associated with the DB instance.
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>standard</code> | <code>gp2</code> | <code>io1</code> 
+        /// Valid values: <code>gp2 | gp3 | io1 | standard</code> 
         /// </para>
         ///  
         /// <para>
-        /// If you specify <code>io1</code>, you must also include a value for the <code>Iops</code>
-        /// parameter. 
+        /// If you specify <code>io1</code> or <code>gp3</code>, you must also include a value
+        /// for the <code>Iops</code> parameter.
         /// </para>
         ///  
         /// <para>
@@ -1163,7 +1388,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property VpcSecurityGroupIds. 
         /// <para>
-        /// A list of VPC security groups to associate with this DB instance. 
+        /// A list of VPC security groups to associate with this DB instance.
         /// </para>
         /// </summary>
         public List<string> VpcSecurityGroupIds

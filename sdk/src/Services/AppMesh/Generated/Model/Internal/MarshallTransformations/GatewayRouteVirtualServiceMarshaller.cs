@@ -34,7 +34,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// GatewayRouteVirtualService Marshaller
-    /// </summary>       
+    /// </summary>
     public class GatewayRouteVirtualServiceMarshaller : IRequestMarshaller<GatewayRouteVirtualService, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static GatewayRouteVirtualServiceMarshaller Instance = new GatewayRouteVirtualServiceMarshaller();
 
     }

@@ -62,7 +62,7 @@ namespace Amazon.IoTSiteWise.Model
         /// is provided by <code>offsetInNanos</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=31556889864403199)]
+        [AWSProperty(Required=true, Min=1, Max=9223372036854774)]
         public long TimeInSeconds
         {
             get { return this._timeInSeconds.GetValueOrDefault(); }

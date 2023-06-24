@@ -34,7 +34,7 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ThemeValue Marshaller
-    /// </summary>       
+    /// </summary>
     public class ThemeValueMarshaller : IRequestMarshaller<ThemeValue, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ThemeValueMarshaller Instance = new ThemeValueMarshaller();
 
     }

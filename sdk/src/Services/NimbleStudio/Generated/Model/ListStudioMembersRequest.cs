@@ -31,6 +31,12 @@ namespace Amazon.NimbleStudio.Model
     /// <summary>
     /// Container for the parameters to the ListStudioMembers operation.
     /// Get all users in a given studio membership.
+    /// 
+    ///  <note> 
+    /// <para>
+    ///  <code>ListStudioMembers</code> only returns admin members.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class ListStudioMembersRequest : AmazonNimbleStudioRequest
     {
@@ -60,7 +66,7 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token to request the next page of results. 
+        /// The token for the next set of results, or null if there are no more results.
         /// </para>
         /// </summary>
         public string NextToken

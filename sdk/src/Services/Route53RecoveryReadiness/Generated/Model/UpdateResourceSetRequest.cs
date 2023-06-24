@@ -30,7 +30,7 @@ namespace Amazon.Route53RecoveryReadiness.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateResourceSet operation.
-    /// Updates an existing Resource Set.
+    /// Updates a resource set.
     /// </summary>
     public partial class UpdateResourceSetRequest : AmazonRoute53RecoveryReadinessRequest
     {
@@ -39,7 +39,10 @@ namespace Amazon.Route53RecoveryReadiness.Model
         private string _resourceSetType;
 
         /// <summary>
-        /// Gets and sets the property Resources. A list of Resource objects
+        /// Gets and sets the property Resources. 
+        /// <para>
+        /// A list of resource objects.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public List<Resource> Resources
@@ -55,7 +58,10 @@ namespace Amazon.Route53RecoveryReadiness.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ResourceSetName. The ResourceSet to update
+        /// Gets and sets the property ResourceSetName. 
+        /// <para>
+        /// Name of a resource set.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string ResourceSetName
@@ -71,8 +77,20 @@ namespace Amazon.Route53RecoveryReadiness.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ResourceSetType. AWS Resource Type of the resources in
-        /// the ResourceSet
+        /// Gets and sets the property ResourceSetType. 
+        /// <para>
+        /// The resource type of the resources in the resource set. Enter one of the following
+        /// values for resource type:
+        /// </para>
+        ///  
+        /// <para>
+        /// AWS::ApiGateway::Stage, AWS::ApiGatewayV2::Stage, AWS::AutoScaling::AutoScalingGroup,
+        /// AWS::CloudWatch::Alarm, AWS::EC2::CustomerGateway, AWS::DynamoDB::Table, AWS::EC2::Volume,
+        /// AWS::ElasticLoadBalancing::LoadBalancer, AWS::ElasticLoadBalancingV2::LoadBalancer,
+        /// AWS::Lambda::Function, AWS::MSK::Cluster, AWS::RDS::DBCluster, AWS::Route53::HealthCheck,
+        /// AWS::SQS::Queue, AWS::SNS::Topic, AWS::SNS::Subscription, AWS::EC2::VPC, AWS::EC2::VPNConnection,
+        /// AWS::EC2::VPNGateway, AWS::Route53RecoveryReadiness::DNSTargetResource
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string ResourceSetType

@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// TuningJobCompletionCriteria Marshaller
-    /// </summary>       
+    /// </summary>
     public class TuningJobCompletionCriteriaMarshaller : IRequestMarshaller<TuningJobCompletionCriteria, JsonMarshallerContext> 
     {
         /// <summary>
@@ -45,6 +45,28 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(TuningJobCompletionCriteria requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetBestObjectiveNotImproving())
+            {
+                context.Writer.WritePropertyName("BestObjectiveNotImproving");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = BestObjectiveNotImprovingMarshaller.Instance;
+                marshaller.Marshall(requestObject.BestObjectiveNotImproving, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetConvergenceDetected())
+            {
+                context.Writer.WritePropertyName("ConvergenceDetected");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ConvergenceDetectedMarshaller.Instance;
+                marshaller.Marshall(requestObject.ConvergenceDetected, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetTargetObjectiveMetricValue())
             {
                 context.Writer.WritePropertyName("TargetObjectiveMetricValue");
@@ -55,7 +77,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static TuningJobCompletionCriteriaMarshaller Instance = new TuningJobCompletionCriteriaMarshaller();
 
     }

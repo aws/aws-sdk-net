@@ -34,7 +34,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// KernelCapabilities Marshaller
-    /// </summary>       
+    /// </summary>
     public class KernelCapabilitiesMarshaller : IRequestMarshaller<KernelCapabilities, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static KernelCapabilitiesMarshaller Instance = new KernelCapabilitiesMarshaller();
 
     }

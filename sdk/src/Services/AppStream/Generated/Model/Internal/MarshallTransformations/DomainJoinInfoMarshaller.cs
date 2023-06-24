@@ -34,7 +34,7 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DomainJoinInfo Marshaller
-    /// </summary>       
+    /// </summary>
     public class DomainJoinInfoMarshaller : IRequestMarshaller<DomainJoinInfo, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DomainJoinInfoMarshaller Instance = new DomainJoinInfoMarshaller();
 
     }

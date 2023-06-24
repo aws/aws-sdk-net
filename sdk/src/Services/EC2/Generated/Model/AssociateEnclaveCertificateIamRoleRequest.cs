@@ -38,9 +38,9 @@ namespace Amazon.EC2.Model
     ///  
     /// <para>
     /// When the IAM role is associated with the ACM certificate, the certificate, certificate
-    /// chain, and encrypted private key are placed in an Amazon S3 bucket that only the associated
-    /// IAM role can access. The private key of the certificate is encrypted with an Amazon
-    /// Web Services managed key that has an attached attestation-based key policy.
+    /// chain, and encrypted private key are placed in an Amazon S3 location that only the
+    /// associated IAM role can access. The private key of the certificate is encrypted with
+    /// an Amazon Web Services managed key that has an attached attestation-based key policy.
     /// </para>
     ///  
     /// <para>
@@ -64,7 +64,7 @@ namespace Amazon.EC2.Model
         /// The ARN of the ACM certificate with which to associate the IAM role.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1283)]
+        [AWSProperty(Required=true)]
         public string CertificateArn
         {
             get { return this._certificateArn; }
@@ -84,7 +84,7 @@ namespace Amazon.EC2.Model
         /// to 16 IAM roles with an ACM certificate.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1283)]
+        [AWSProperty(Required=true)]
         public string RoleArn
         {
             get { return this._roleArn; }

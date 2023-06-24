@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecretsManager.Model
 {
     /// <summary>
-    /// You provided an invalid <code>NextToken</code> value.
+    /// The <code>NextToken</code> value is invalid.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

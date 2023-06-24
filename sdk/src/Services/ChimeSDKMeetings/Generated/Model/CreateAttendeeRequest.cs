@@ -36,8 +36,63 @@ namespace Amazon.ChimeSDKMeetings.Model
     /// </summary>
     public partial class CreateAttendeeRequest : AmazonChimeSDKMeetingsRequest
     {
+        private AttendeeCapabilities _capabilities;
         private string _externalUserId;
         private string _meetingId;
+
+        /// <summary>
+        /// Gets and sets the property Capabilities. 
+        /// <para>
+        /// The capabilities (<code>audio</code>, <code>video</code>, or <code>content</code>)
+        /// that you want to grant an attendee. If you don't specify capabilities, all users have
+        /// send and receive capabilities on all media channels by default.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// You use the capabilities with a set of values that control what the capabilities can
+        /// do, such as <code>SendReceive</code> data. For more information about those values,
+        /// see .
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// When using capabilities, be aware of these corner cases:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You can't set <code>content</code> capabilities to <code>SendReceive</code> or <code>Receive</code>
+        /// unless you also set <code>video</code> capabilities to <code>SendReceive</code> or
+        /// <code>Receive</code>. If you don't set the <code>video</code> capability to receive,
+        /// the response will contain an HTTP 400 Bad Request status code. However, you can set
+        /// your <code>video</code> capability to receive and you set your <code>content</code>
+        /// capability to not receive.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When you change an <code>audio</code> capability from <code>None</code> or <code>Receive</code>
+        /// to <code>Send</code> or <code>SendReceive</code> , and if the attendee left their
+        /// microphone unmuted, audio will flow from the attendee to the other meeting participants.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When you change a <code>video</code> or <code>content</code> capability from <code>None</code>
+        /// or <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if
+        /// the attendee turned on their video or content streams, remote attendees can receive
+        /// those streams, but only after media renegotiation between the client and the Amazon
+        /// Chime back-end server.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public AttendeeCapabilities Capabilities
+        {
+            get { return this._capabilities; }
+            set { this._capabilities = value; }
+        }
+
+        // Check to see if Capabilities property is set
+        internal bool IsSetCapabilities()
+        {
+            return this._capabilities != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ExternalUserId. 
@@ -45,8 +100,17 @@ namespace Amazon.ChimeSDKMeetings.Model
         /// The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to
         /// an identity managed by a builder application.
         /// </para>
+        ///  
+        /// <para>
+        /// Pattern: <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Values that begin with <code>aws:</code> are reserved. You can't configure a value
+        /// that uses this prefix.
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=2, Max=64)]
+        [AWSProperty(Required=true, Sensitive=true, Min=2, Max=64)]
         public string ExternalUserId
         {
             get { return this._externalUserId; }

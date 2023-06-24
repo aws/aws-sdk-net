@@ -34,9 +34,11 @@ namespace Amazon.WellArchitected.Model
     public partial class Workload
     {
         private List<string> _accountIds = new List<string>();
+        private List<string> _applications = new List<string>();
         private string _architecturalDesign;
         private List<string> _awsRegions = new List<string>();
         private string _description;
+        private WorkloadDiscoveryConfig _discoveryConfig;
         private WorkloadEnvironment _environment;
         private WorkloadImprovementStatus _improvementStatus;
         private string _industry;
@@ -47,6 +49,8 @@ namespace Amazon.WellArchitected.Model
         private string _notes;
         private string _owner;
         private List<string> _pillarPriorities = new List<string>();
+        private Dictionary<string, int> _prioritizedRiskCounts = new Dictionary<string, int>();
+        private List<WorkloadProfile> _profiles = new List<WorkloadProfile>();
         private string _reviewOwner;
         private DateTime? _reviewRestrictionDate;
         private Dictionary<string, int> _riskCounts = new Dictionary<string, int>();
@@ -71,6 +75,25 @@ namespace Amazon.WellArchitected.Model
         internal bool IsSetAccountIds()
         {
             return this._accountIds != null && this._accountIds.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Applications. 
+        /// <para>
+        /// List of AppRegistry application ARNs associated to the workload.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=1)]
+        public List<string> Applications
+        {
+            get { return this._applications; }
+            set { this._applications = value; }
+        }
+
+        // Check to see if Applications property is set
+        internal bool IsSetApplications()
+        {
+            return this._applications != null && this._applications.Count > 0; 
         }
 
         /// <summary>
@@ -119,6 +142,24 @@ namespace Amazon.WellArchitected.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DiscoveryConfig. 
+        /// <para>
+        /// Discovery configuration associated to the workload.
+        /// </para>
+        /// </summary>
+        public WorkloadDiscoveryConfig DiscoveryConfig
+        {
+            get { return this._discoveryConfig; }
+            set { this._discoveryConfig = value; }
+        }
+
+        // Check to see if DiscoveryConfig property is set
+        internal bool IsSetDiscoveryConfig()
+        {
+            return this._discoveryConfig != null;
         }
 
         /// <summary>
@@ -257,6 +298,7 @@ namespace Amazon.WellArchitected.Model
         /// <summary>
         /// Gets and sets the property Owner.
         /// </summary>
+        [AWSProperty(Min=12, Max=12)]
         public string Owner
         {
             get { return this._owner; }
@@ -282,6 +324,40 @@ namespace Amazon.WellArchitected.Model
         internal bool IsSetPillarPriorities()
         {
             return this._pillarPriorities != null && this._pillarPriorities.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PrioritizedRiskCounts.
+        /// </summary>
+        public Dictionary<string, int> PrioritizedRiskCounts
+        {
+            get { return this._prioritizedRiskCounts; }
+            set { this._prioritizedRiskCounts = value; }
+        }
+
+        // Check to see if PrioritizedRiskCounts property is set
+        internal bool IsSetPrioritizedRiskCounts()
+        {
+            return this._prioritizedRiskCounts != null && this._prioritizedRiskCounts.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Profiles. 
+        /// <para>
+        /// Profile associated with a workload.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=1)]
+        public List<WorkloadProfile> Profiles
+        {
+            get { return this._profiles; }
+            set { this._profiles = value; }
+        }
+
+        // Check to see if Profiles property is set
+        internal bool IsSetProfiles()
+        {
+            return this._profiles != null && this._profiles.Count > 0; 
         }
 
         /// <summary>
@@ -400,6 +476,7 @@ namespace Amazon.WellArchitected.Model
         /// <summary>
         /// Gets and sets the property WorkloadId.
         /// </summary>
+        [AWSProperty(Min=32, Max=32)]
         public string WorkloadId
         {
             get { return this._workloadId; }

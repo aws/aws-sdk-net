@@ -34,7 +34,29 @@ namespace Amazon.DevOpsGuru.Model
     /// </summary>
     public partial class NotificationChannelConfig
     {
+        private NotificationFilterConfig _filters;
         private SnsChannelConfig _sns;
+
+        /// <summary>
+        /// Gets and sets the property Filters. 
+        /// <para>
+        ///  The filter configurations for the Amazon SNS notification topic you use with DevOps
+        /// Guru. If you do not provide filter configurations, the default configurations are
+        /// to receive notifications for all message types of <code>High</code> or <code>Medium</code>
+        /// severity. 
+        /// </para>
+        /// </summary>
+        public NotificationFilterConfig Filters
+        {
+            get { return this._filters; }
+            set { this._filters = value; }
+        }
+
+        // Check to see if Filters property is set
+        internal bool IsSetFilters()
+        {
+            return this._filters != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Sns. 
@@ -45,10 +67,10 @@ namespace Amazon.DevOpsGuru.Model
         ///  
         /// <para>
         /// If you use an Amazon SNS topic in another account, you must attach a policy to it
-        /// that grants DevOps Guru permission to it notifications. DevOps Guru adds the required
-        /// policy on your behalf to send notifications using Amazon SNS in your account. For
-        /// more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/sns-required-permissions.html">Permissions
-        /// for cross account Amazon SNS topics</a>.
+        /// that grants DevOps Guru permission to send it notifications. DevOps Guru adds the
+        /// required policy on your behalf to send notifications using Amazon SNS in your account.
+        /// DevOps Guru only supports standard SNS topics. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/sns-required-permissions.html">Permissions
+        /// for Amazon SNS topics</a>.
         /// </para>
         ///  
         /// <para>

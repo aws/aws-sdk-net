@@ -30,10 +30,14 @@ namespace Amazon.Proton.Model
 {
     /// <summary>
     /// Container for the parameters to the TagResource operation.
-    /// Tag a resource. For more information, see <i>Proton resources and tagging</i> in the
-    /// <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
-    /// Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
-    /// User Guide</a>.
+    /// Tag a resource. A tag is a key-value pair of metadata that you associate with an Proton
+    /// resource.
+    /// 
+    ///  
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
+    /// resources and tagging</a> in the <i>Proton User Guide</i>.
+    /// </para>
     /// </summary>
     public partial class TagResourceRequest : AmazonProtonRequest
     {
@@ -43,7 +47,7 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the resource that the resource tag is applied to.
+        /// The Amazon Resource Name (ARN) of the Proton resource to apply customer tags to.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=200)]
@@ -62,7 +66,7 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// An array of resource tags to apply to a resource.
+        /// A list of customer tags to apply to the Proton resource.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=50)]

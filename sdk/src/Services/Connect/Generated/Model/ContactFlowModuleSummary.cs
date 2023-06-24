@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// Contains summary information about a contact flow.
+    /// Contains summary information about a flow.
     /// </summary>
     public partial class ContactFlowModuleSummary
     {
@@ -41,7 +41,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the contact flow module.
+        /// The Amazon Resource Name (ARN) of the flow module.
         /// </para>
         /// </summary>
         public string Arn
@@ -59,7 +59,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The identifier of the contact flow module.
+        /// The identifier of the flow module.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -78,7 +78,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the contact flow module.
+        /// The name of the flow module.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=127)]
@@ -97,7 +97,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// The type of contact flow module.
+        /// The type of flow module.
         /// </para>
         /// </summary>
         public ContactFlowModuleState State

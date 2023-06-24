@@ -55,13 +55,13 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
         public IRequest Marshall(DeleteChannelPolicyRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.MediaTailor");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-04-23";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-04-23";
             request.HttpMethod = "DELETE";
 
             if (!publicRequest.IsSetChannelName())
                 throw new AmazonMediaTailorException("Request object does not have required field ChannelName set");
-            request.AddPathResource("{channelName}", StringUtils.FromString(publicRequest.ChannelName));
-            request.ResourcePath = "/channel/{channelName}/policy";
+            request.AddPathResource("{ChannelName}", StringUtils.FromString(publicRequest.ChannelName));
+            request.ResourcePath = "/channel/{ChannelName}/policy";
 
             return request;
         }

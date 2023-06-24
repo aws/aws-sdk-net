@@ -34,7 +34,7 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// GroupVersion Marshaller
-    /// </summary>       
+    /// </summary>
     public class GroupVersionMarshaller : IRequestMarshaller<GroupVersion, JsonMarshallerContext> 
     {
         /// <summary>
@@ -91,7 +91,7 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static GroupVersionMarshaller Instance = new GroupVersionMarshaller();
 
     }

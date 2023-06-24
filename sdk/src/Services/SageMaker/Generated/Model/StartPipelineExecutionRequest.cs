@@ -35,10 +35,12 @@ namespace Amazon.SageMaker.Model
     public partial class StartPipelineExecutionRequest : AmazonSageMakerRequest
     {
         private string _clientRequestToken;
+        private ParallelismConfiguration _parallelismConfiguration;
         private string _pipelineExecutionDescription;
         private string _pipelineExecutionDisplayName;
         private string _pipelineName;
         private List<Parameter> _pipelineParameters = new List<Parameter>();
+        private SelectiveExecutionConfig _selectiveExecutionConfig;
 
         /// <summary>
         /// Gets and sets the property ClientRequestToken. 
@@ -58,6 +60,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetClientRequestToken()
         {
             return this._clientRequestToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ParallelismConfiguration. 
+        /// <para>
+        /// This configuration, if specified, overrides the parallelism configuration of the parent
+        /// pipeline for this specific run.
+        /// </para>
+        /// </summary>
+        public ParallelismConfiguration ParallelismConfiguration
+        {
+            get { return this._parallelismConfiguration; }
+            set { this._parallelismConfiguration = value; }
+        }
+
+        // Check to see if ParallelismConfiguration property is set
+        internal bool IsSetParallelismConfiguration()
+        {
+            return this._parallelismConfiguration != null;
         }
 
         /// <summary>
@@ -101,10 +122,10 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property PipelineName. 
         /// <para>
-        /// The name of the pipeline.
+        /// The name or Amazon Resource Name (ARN) of the pipeline.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=256)]
+        [AWSProperty(Required=true, Min=1, Max=2048)]
         public string PipelineName
         {
             get { return this._pipelineName; }
@@ -134,6 +155,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetPipelineParameters()
         {
             return this._pipelineParameters != null && this._pipelineParameters.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SelectiveExecutionConfig. 
+        /// <para>
+        /// The selective execution configuration applied to the pipeline run.
+        /// </para>
+        /// </summary>
+        public SelectiveExecutionConfig SelectiveExecutionConfig
+        {
+            get { return this._selectiveExecutionConfig; }
+            set { this._selectiveExecutionConfig = value; }
+        }
+
+        // Check to see if SelectiveExecutionConfig property is set
+        internal bool IsSetSelectiveExecutionConfig()
+        {
+            return this._selectiveExecutionConfig != null;
         }
 
     }

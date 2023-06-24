@@ -45,6 +45,8 @@ namespace Amazon.GroundStation.Model
         private List<List<string>> _dataflowEdges = new List<List<string>>();
         private int? _minimumViableContactDurationSeconds;
         private string _name;
+        private KmsKey _streamsKmsKey;
+        private string _streamsKmsRole;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private string _trackingConfigArn;
 
@@ -55,7 +57,7 @@ namespace Amazon.GroundStation.Model
         /// indicating the pass has finished.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=21600)]
+        [AWSProperty(Min=0, Max=21600)]
         public int ContactPostPassDurationSeconds
         {
             get { return this._contactPostPassDurationSeconds.GetValueOrDefault(); }
@@ -75,7 +77,7 @@ namespace Amazon.GroundStation.Model
         /// an upcoming pass.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=21600)]
+        [AWSProperty(Min=0, Max=21600)]
         public int ContactPrePassDurationSeconds
         {
             get { return this._contactPrePassDurationSeconds.GetValueOrDefault(); }
@@ -95,7 +97,7 @@ namespace Amazon.GroundStation.Model
         /// and a <i>to</i> <code>Config</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=0, Max=500)]
         public List<List<string>> DataflowEdges
         {
             get { return this._dataflowEdges; }
@@ -145,6 +147,42 @@ namespace Amazon.GroundStation.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StreamsKmsKey. 
+        /// <para>
+        /// KMS key to use for encrypting streams.
+        /// </para>
+        /// </summary>
+        public KmsKey StreamsKmsKey
+        {
+            get { return this._streamsKmsKey; }
+            set { this._streamsKmsKey = value; }
+        }
+
+        // Check to see if StreamsKmsKey property is set
+        internal bool IsSetStreamsKmsKey()
+        {
+            return this._streamsKmsKey != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StreamsKmsRole. 
+        /// <para>
+        /// Role to use for encrypting streams with KMS key.
+        /// </para>
+        /// </summary>
+        public string StreamsKmsRole
+        {
+            get { return this._streamsKmsRole; }
+            set { this._streamsKmsRole = value; }
+        }
+
+        // Check to see if StreamsKmsRole property is set
+        internal bool IsSetStreamsKmsRole()
+        {
+            return this._streamsKmsRole != null;
         }
 
         /// <summary>

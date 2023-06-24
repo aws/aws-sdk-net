@@ -34,7 +34,7 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SplunkDestinationUpdate Marshaller
-    /// </summary>       
+    /// </summary>
     public class SplunkDestinationUpdateMarshaller : IRequestMarshaller<SplunkDestinationUpdate, JsonMarshallerContext> 
     {
         /// <summary>
@@ -123,7 +123,7 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SplunkDestinationUpdateMarshaller Instance = new SplunkDestinationUpdateMarshaller();
 
     }

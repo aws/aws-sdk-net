@@ -60,12 +60,11 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property TextList. 
         /// <para>
-        /// A list containing the text of the input documents. The list can contain a maximum
-        /// of 25 documents. Each document must contain fewer that 5,000 bytes of UTF-8 encoded
-        /// characters.
+        /// A list containing the UTF-8 encoded text of the input documents. The list can contain
+        /// a maximum of 25 documents. The maximum size of each document is 5 KB.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1)]
         public List<string> TextList
         {
             get { return this._textList; }

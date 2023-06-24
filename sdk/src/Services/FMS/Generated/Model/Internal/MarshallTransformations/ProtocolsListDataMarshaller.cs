@@ -34,7 +34,7 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ProtocolsListData Marshaller
-    /// </summary>       
+    /// </summary>
     public class ProtocolsListDataMarshaller : IRequestMarshaller<ProtocolsListData, JsonMarshallerContext> 
     {
         /// <summary>
@@ -109,7 +109,7 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ProtocolsListDataMarshaller Instance = new ProtocolsListDataMarshaller();
 
     }

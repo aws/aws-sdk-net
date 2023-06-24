@@ -158,11 +158,23 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                         unmarshalledObject.EngineVersion = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("IpDiscovery", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.IpDiscovery = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("LogDeliveryConfigurations/LogDeliveryConfiguration", targetDepth))
                     {
                         var unmarshaller = LogDeliveryConfigurationUnmarshaller.Instance;
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.LogDeliveryConfigurations.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("NetworkType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.NetworkType = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("NotificationConfiguration", targetDepth))
@@ -236,6 +248,12 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = BoolUnmarshaller.Instance;
                         unmarshalledObject.TransitEncryptionEnabled = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("TransitEncryptionMode", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.TransitEncryptionMode = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }

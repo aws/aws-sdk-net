@@ -60,7 +60,6 @@ namespace Amazon.CloudFront.Model
         /// Gets and sets the property Quantity. 
         /// <para>
         /// Number of field pattern items in a field-level encryption content type-profile mapping.
-        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

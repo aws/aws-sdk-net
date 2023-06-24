@@ -37,10 +37,12 @@ namespace Amazon.NetworkFirewall.Model
         private int? _consumedStatefulRuleCapacity;
         private int? _consumedStatelessRuleCapacity;
         private string _description;
+        private EncryptionConfiguration _encryptionConfiguration;
         private string _firewallPolicyArn;
         private string _firewallPolicyId;
         private string _firewallPolicyName;
         private ResourceStatus _firewallPolicyStatus;
+        private DateTime? _lastModifiedTime;
         private int? _numberOfAssociations;
         private List<Tag> _tags = new List<Tag>();
 
@@ -97,6 +99,25 @@ namespace Amazon.NetworkFirewall.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EncryptionConfiguration. 
+        /// <para>
+        /// A complex type that contains the Amazon Web Services KMS encryption configuration
+        /// settings for your firewall policy.
+        /// </para>
+        /// </summary>
+        public EncryptionConfiguration EncryptionConfiguration
+        {
+            get { return this._encryptionConfiguration; }
+            set { this._encryptionConfiguration = value; }
+        }
+
+        // Check to see if EncryptionConfiguration property is set
+        internal bool IsSetEncryptionConfiguration()
+        {
+            return this._encryptionConfiguration != null;
         }
 
         /// <summary>
@@ -181,6 +202,24 @@ namespace Amazon.NetworkFirewall.Model
         internal bool IsSetFirewallPolicyStatus()
         {
             return this._firewallPolicyStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastModifiedTime. 
+        /// <para>
+        /// The last time that the firewall policy was changed.
+        /// </para>
+        /// </summary>
+        public DateTime LastModifiedTime
+        {
+            get { return this._lastModifiedTime.GetValueOrDefault(); }
+            set { this._lastModifiedTime = value; }
+        }
+
+        // Check to see if LastModifiedTime property is set
+        internal bool IsSetLastModifiedTime()
+        {
+            return this._lastModifiedTime.HasValue; 
         }
 
         /// <summary>

@@ -30,10 +30,9 @@ namespace Amazon.APIGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the GetGatewayResponses operation.
-    /// Gets the <a>GatewayResponses</a> collection on the given <a>RestApi</a>. If an API
-    /// developer has not added any definitions for gateway responses, the result will be
-    /// the API Gateway-generated default <a>GatewayResponses</a> collection for the supported
-    /// response types.
+    /// Gets the GatewayResponses collection on the given RestApi. If an API developer has
+    /// not added any definitions for gateway responses, the result will be the API Gateway-generated
+    /// default GatewayResponses collection for the supported response types.
     /// </summary>
     public partial class GetGatewayResponsesRequest : AmazonAPIGatewayRequest
     {
@@ -45,8 +44,8 @@ namespace Amazon.APIGateway.Model
         /// Gets and sets the property Limit. 
         /// <para>
         /// The maximum number of returned results per page. The default value is 25 and the maximum
-        /// value is 500. The <a>GatewayResponses</a> collection does not support pagination and
-        /// the limit does not apply here.
+        /// value is 500. The GatewayResponses collection does not support pagination and the
+        /// limit does not apply here.
         /// </para>
         /// </summary>
         public int Limit
@@ -64,8 +63,8 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Position. 
         /// <para>
-        /// The current pagination position in the paged result set. The <a>GatewayResponse</a>
-        /// collection does not support pagination and the position does not apply here.
+        /// The current pagination position in the paged result set. The GatewayResponse collection
+        /// does not support pagination and the position does not apply here.
         /// </para>
         /// </summary>
         public string Position
@@ -83,7 +82,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property RestApiId. 
         /// <para>
-        /// [Required] The string identifier of the associated <a>RestApi</a>.
+        /// The string identifier of the associated RestApi.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

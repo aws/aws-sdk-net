@@ -43,20 +43,14 @@ namespace Amazon.Kendra.Model
     /// </para>
     ///  
     /// <para>
-    /// You map users to their groups when you want to filter search results for different
-    /// users based on their group’s access to documents. For more information on filtering
-    /// search results for different users, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/user-context-filter.html">Filtering
+    /// This is useful for user context filtering, where search results are filtered based
+    /// on the user or their group access to documents. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/user-context-filter.html">Filtering
     /// on user context</a>.
     /// </para>
     ///  
     /// <para>
     /// If more than five <code>PUT</code> actions for a group are currently processing, a
     /// validation exception is thrown.
-    /// </para>
-    ///  
-    /// <para>
-    ///  <code>PutPrincipalMapping</code> is currently not supported in the Amazon Web Services
-    /// GovCloud (US-West) region.
     /// </para>
     /// </summary>
     public partial class PutPrincipalMappingRequest : AmazonKendraRequest
@@ -175,7 +169,7 @@ namespace Amazon.Kendra.Model
         /// </para>
         ///  
         /// <para>
-        /// The ordering ID can be the UNIX time of the last update you made to a group members
+        /// The ordering ID can be the Unix time of the last update you made to a group members
         /// list. You would then provide this list when calling <code>PutPrincipalMapping</code>.
         /// This ensures your <code>PUT</code> action for that updated group with the latest members
         /// list doesn't get overwritten by earlier <code>PUT</code> actions for the same group
@@ -183,7 +177,7 @@ namespace Amazon.Kendra.Model
         /// </para>
         ///  
         /// <para>
-        /// The default ordering ID is the current UNIX time in milliseconds that the action was
+        /// The default ordering ID is the current Unix time in milliseconds that the action was
         /// received by Amazon Kendra.
         /// </para>
         /// </summary>

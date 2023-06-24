@@ -56,7 +56,7 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ApiGatewayV2");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-11-29";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-11-29";
             request.HttpMethod = "PATCH";
 
             if (!publicRequest.IsSetApiId())
@@ -141,7 +141,6 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Name);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

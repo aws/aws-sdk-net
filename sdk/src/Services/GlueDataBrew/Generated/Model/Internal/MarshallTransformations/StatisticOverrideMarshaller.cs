@@ -34,7 +34,7 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// StatisticOverride Marshaller
-    /// </summary>       
+    /// </summary>
     public class StatisticOverrideMarshaller : IRequestMarshaller<StatisticOverride, JsonMarshallerContext> 
     {
         /// <summary>
@@ -69,7 +69,7 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static StatisticOverrideMarshaller Instance = new StatisticOverrideMarshaller();
 
     }

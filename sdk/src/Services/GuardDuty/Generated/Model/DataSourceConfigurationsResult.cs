@@ -36,6 +36,8 @@ namespace Amazon.GuardDuty.Model
         private CloudTrailConfigurationResult _cloudTrail;
         private DNSLogsConfigurationResult _dnsLogs;
         private FlowLogsConfigurationResult _flowLogs;
+        private KubernetesConfigurationResult _kubernetes;
+        private MalwareProtectionConfigurationResult _malwareProtection;
         private S3LogsConfigurationResult _s3Logs;
 
         /// <summary>
@@ -93,6 +95,42 @@ namespace Amazon.GuardDuty.Model
         internal bool IsSetFlowLogs()
         {
             return this._flowLogs != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Kubernetes. 
+        /// <para>
+        /// An object that contains information on the status of all Kubernetes data sources.
+        /// </para>
+        /// </summary>
+        public KubernetesConfigurationResult Kubernetes
+        {
+            get { return this._kubernetes; }
+            set { this._kubernetes = value; }
+        }
+
+        // Check to see if Kubernetes property is set
+        internal bool IsSetKubernetes()
+        {
+            return this._kubernetes != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MalwareProtection. 
+        /// <para>
+        /// Describes the configuration of Malware Protection data sources.
+        /// </para>
+        /// </summary>
+        public MalwareProtectionConfigurationResult MalwareProtection
+        {
+            get { return this._malwareProtection; }
+            set { this._malwareProtection = value; }
+        }
+
+        // Check to see if MalwareProtection property is set
+        internal bool IsSetMalwareProtection()
+        {
+            return this._malwareProtection != null;
         }
 
         /// <summary>

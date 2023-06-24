@@ -52,8 +52,12 @@ namespace Amazon.CloudTrail.Model
         /// Gets and sets the property CloudWatchLogsLogGroupArn. 
         /// <para>
         /// Specifies a log group name using an Amazon Resource Name (ARN), a unique identifier
-        /// that represents the log group to which CloudTrail logs will be delivered. Not required
-        /// unless you specify <code>CloudWatchLogsRoleArn</code>.
+        /// that represents the log group to which CloudTrail logs will be delivered. You must
+        /// use a log group that exists in your account.
+        /// </para>
+        ///  
+        /// <para>
+        /// Not required unless you specify <code>CloudWatchLogsRoleArn</code>.
         /// </para>
         /// </summary>
         public string CloudWatchLogsLogGroupArn
@@ -72,7 +76,7 @@ namespace Amazon.CloudTrail.Model
         /// Gets and sets the property CloudWatchLogsRoleArn. 
         /// <para>
         /// Specifies the role for the CloudWatch Logs endpoint to assume to write to a user's
-        /// log group.
+        /// log group. You must use a role that exists in your account.
         /// </para>
         /// </summary>
         public string CloudWatchLogsRoleArn
@@ -138,9 +142,9 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property IsMultiRegionTrail. 
         /// <para>
-        /// Specifies whether the trail is created in the current region or in all regions. The
-        /// default is false, which creates a trail only in the region where you are signed in.
-        /// As a best practice, consider creating trails that log events in all regions.
+        /// Specifies whether the trail is created in the current Region or in all Regions. The
+        /// default is false, which creates a trail only in the Region where you are signed in.
+        /// As a best practice, consider creating trails that log events in all Regions.
         /// </para>
         /// </summary>
         public bool IsMultiRegionTrail
@@ -161,7 +165,7 @@ namespace Amazon.CloudTrail.Model
         /// Specifies whether the trail is created for all accounts in an organization in Organizations,
         /// or only for the current Amazon Web Services account. The default is false, and cannot
         /// be true unless the call is made on behalf of an Amazon Web Services account that is
-        /// the management account for an organization in Organizations.
+        /// the management account or delegated administrator account for an organization in Organizations.
         /// </para>
         /// </summary>
         public bool IsOrganizationTrail
@@ -180,8 +184,8 @@ namespace Amazon.CloudTrail.Model
         /// Gets and sets the property KmsKeyId. 
         /// <para>
         /// Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail. The value
-        /// can be an alias name prefixed by "alias/", a fully specified ARN to an alias, a fully
-        /// specified ARN to a key, or a globally unique identifier.
+        /// can be an alias name prefixed by <code>alias/</code>, a fully specified ARN to an
+        /// alias, a fully specified ARN to a key, or a globally unique identifier.
         /// </para>
         ///  
         /// <para>
@@ -195,19 +199,20 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// alias/MyAliasName
+        ///  <code>alias/MyAliasName</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// arn:aws:kms:us-east-2:123456789012:alias/MyAliasName
+        ///  <code>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012
+        ///  <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// 12345678-1234-1234-1234-123456789012
+        ///  <code>12345678-1234-1234-1234-123456789012</code> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -328,6 +333,7 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property TagsList.
         /// </summary>
+        [AWSProperty(Max=200)]
         public List<Tag> TagsList
         {
             get { return this._tagsList; }

@@ -17,22 +17,22 @@
  * Do not modify this file. This file is generated from the ebs-2019-11-02.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
-
+using Amazon.EBS.Internal;
 
 namespace Amazon.EBS
 {
     /// <summary>
     /// Configuration for accessing Amazon EBS service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonEBSConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.106");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.147");
 
         private string _userAgent = UserAgentString;
 
@@ -40,8 +40,10 @@ namespace Amazon.EBS
         /// Default constructor
         /// </summary>
         public AmazonEBSConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonEBSDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "ebs";
+            this.EndpointProvider = new AmazonEBSEndpointProvider();
         }
 
         /// <summary>
@@ -76,5 +78,6 @@ namespace Amazon.EBS
                 return _userAgent;
             }
         }
+
     }
 }

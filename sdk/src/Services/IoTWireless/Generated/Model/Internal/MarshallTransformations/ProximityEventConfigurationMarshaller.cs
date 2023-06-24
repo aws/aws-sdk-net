@@ -34,7 +34,7 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ProximityEventConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class ProximityEventConfigurationMarshaller : IRequestMarshaller<ProximityEventConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -56,11 +56,17 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetWirelessDeviceIdEventTopic())
+            {
+                context.Writer.WritePropertyName("WirelessDeviceIdEventTopic");
+                context.Writer.Write(requestObject.WirelessDeviceIdEventTopic);
+            }
+
         }
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ProximityEventConfigurationMarshaller Instance = new ProximityEventConfigurationMarshaller();
 
     }

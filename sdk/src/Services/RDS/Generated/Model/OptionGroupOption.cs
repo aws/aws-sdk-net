@@ -33,6 +33,7 @@ namespace Amazon.RDS.Model
     /// </summary>
     public partial class OptionGroupOption
     {
+        private bool? _copyableCrossAccount;
         private int? _defaultPort;
         private string _description;
         private string _engineName;
@@ -49,6 +50,24 @@ namespace Amazon.RDS.Model
         private bool? _requiresAutoMinorEngineVersionUpgrade;
         private bool? _supportsOptionVersionDowngrade;
         private bool? _vpcOnly;
+
+        /// <summary>
+        /// Gets and sets the property CopyableCrossAccount. 
+        /// <para>
+        /// Specifies whether the option can be copied across Amazon Web Services accounts.
+        /// </para>
+        /// </summary>
+        public bool CopyableCrossAccount
+        {
+            get { return this._copyableCrossAccount.GetValueOrDefault(); }
+            set { this._copyableCrossAccount = value; }
+        }
+
+        // Check to see if CopyableCrossAccount property is set
+        internal bool IsSetCopyableCrossAccount()
+        {
+            return this._copyableCrossAccount.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property DefaultPort. 
@@ -293,7 +312,7 @@ namespace Amazon.RDS.Model
         /// <para>
         /// If true, you must enable the Auto Minor Version Upgrade setting for your DB instance
         /// before you can use this option. You can enable Auto Minor Version Upgrade when you
-        /// first create your DB instance, or by modifying your DB instance later. 
+        /// first create your DB instance, or by modifying your DB instance later.
         /// </para>
         /// </summary>
         public bool RequiresAutoMinorEngineVersionUpgrade
@@ -312,7 +331,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property SupportsOptionVersionDowngrade. 
         /// <para>
         /// If true, you can change the option to an earlier version of the option. This only
-        /// applies to options that have different versions available. 
+        /// applies to options that have different versions available.
         /// </para>
         /// </summary>
         public bool SupportsOptionVersionDowngrade
@@ -330,7 +349,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property VpcOnly. 
         /// <para>
-        /// If true, you can only use this option with a DB instance that is in a VPC. 
+        /// If true, you can only use this option with a DB instance that is in a VPC.
         /// </para>
         /// </summary>
         public bool VpcOnly

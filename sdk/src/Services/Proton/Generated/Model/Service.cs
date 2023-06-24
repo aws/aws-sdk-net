@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Proton.Model
 {
     /// <summary>
-    /// The service detail data.
+    /// Detailed data of an Proton service resource.
     /// </summary>
     public partial class Service
     {
@@ -107,10 +107,10 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// A description of a service.
+        /// A description of the service.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=500)]
+        [AWSProperty(Sensitive=true, Min=0, Max=500)]
         public string Description
         {
             get { return this._description; }
@@ -183,9 +183,8 @@ namespace Amazon.Proton.Model
         /// Gets and sets the property RepositoryConnectionArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the repository connection. For more information,
-        /// see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html#setting-up-vcontrol">Set
-        /// up a repository connection</a> in the <i>Proton Administrator Guide</i> and <a href="https://docs.aws.amazon.com/proton/latest/userguide/proton-setup.html#setup-repo-connection">Setting
-        /// up with Proton</a> in the <i>Proton User Guide</i>.
+        /// see <a href="https://docs.aws.amazon.com/proton/latest/userguide/setting-up-for-service.html#setting-up-vcontrol">Setting
+        /// up an AWS CodeStar connection</a> in the <i>Proton User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
@@ -226,7 +225,7 @@ namespace Amazon.Proton.Model
         /// The formatted specification that defines the service.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=51200)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=51200)]
         public string Spec
         {
             get { return this._spec; }
@@ -264,6 +263,7 @@ namespace Amazon.Proton.Model
         /// A service status message.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string StatusMessage
         {
             get { return this._statusMessage; }

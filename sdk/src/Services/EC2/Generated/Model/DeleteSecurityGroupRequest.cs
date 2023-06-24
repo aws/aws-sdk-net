@@ -38,6 +38,13 @@ namespace Amazon.EC2.Model
     /// is referenced by another security group, the operation fails with <code>InvalidGroup.InUse</code>
     /// in EC2-Classic or <code>DependencyViolation</code> in EC2-VPC.
     /// </para>
+    ///  <note> 
+    /// <para>
+    /// We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC.
+    /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+    /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class DeleteSecurityGroupRequest : AmazonEC2Request
     {
@@ -52,7 +59,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Instantiates DeleteSecurityGroupRequest with the parameterized properties
         /// </summary>
-        /// <param name="groupName">[EC2-Classic, default VPC] The name of the security group. You can specify either the security group name or the security group ID.</param>
+        /// <param name="groupName">[EC2-Classic, default VPC] The name of the security group. You can specify either the security group name or the security group ID. For security groups in a nondefault VPC, you must specify the security group ID.</param>
         public DeleteSecurityGroupRequest(string groupName)
         {
             _groupName = groupName;
@@ -80,7 +87,8 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property GroupName. 
         /// <para>
         /// [EC2-Classic, default VPC] The name of the security group. You can specify either
-        /// the security group name or the security group ID.
+        /// the security group name or the security group ID. For security groups in a nondefault
+        /// VPC, you must specify the security group ID.
         /// </para>
         /// </summary>
         public string GroupName

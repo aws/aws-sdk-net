@@ -34,7 +34,7 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RetryStrategy Marshaller
-    /// </summary>       
+    /// </summary>
     public class RetryStrategyMarshaller : IRequestMarshaller<RetryStrategy, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RetryStrategyMarshaller Instance = new RetryStrategyMarshaller();
 
     }

@@ -58,7 +58,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             string target = "SageMaker.UpdatePipeline";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-07-24";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-07-24";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -67,10 +67,32 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetParallelismConfiguration())
+                {
+                    context.Writer.WritePropertyName("ParallelismConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ParallelismConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ParallelismConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetPipelineDefinition())
                 {
                     context.Writer.WritePropertyName("PipelineDefinition");
                     context.Writer.Write(publicRequest.PipelineDefinition);
+                }
+
+                if(publicRequest.IsSetPipelineDefinitionS3Location())
+                {
+                    context.Writer.WritePropertyName("PipelineDefinitionS3Location");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = PipelineDefinitionS3LocationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.PipelineDefinitionS3Location, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
                 if(publicRequest.IsSetPipelineDescription())
@@ -97,7 +119,6 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.RoleArn);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

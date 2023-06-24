@@ -215,10 +215,6 @@ namespace Amazon.GuardDuty.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// service.action.networkConnectionAction.remoteIpDetails.city.cityName
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         /// service.action.networkConnectionAction.remoteIpDetails.country.countryName
         /// </para>
         ///  </li> <li> 

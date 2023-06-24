@@ -34,7 +34,7 @@ namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CodeConfigurationValues Marshaller
-    /// </summary>       
+    /// </summary>
     public class CodeConfigurationValuesMarshaller : IRequestMarshaller<CodeConfigurationValues, JsonMarshallerContext> 
     {
         /// <summary>
@@ -63,6 +63,20 @@ namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Runtime);
             }
 
+            if(requestObject.IsSetRuntimeEnvironmentSecrets())
+            {
+                context.Writer.WritePropertyName("RuntimeEnvironmentSecrets");
+                context.Writer.WriteObjectStart();
+                foreach (var requestObjectRuntimeEnvironmentSecretsKvp in requestObject.RuntimeEnvironmentSecrets)
+                {
+                    context.Writer.WritePropertyName(requestObjectRuntimeEnvironmentSecretsKvp.Key);
+                    var requestObjectRuntimeEnvironmentSecretsValue = requestObjectRuntimeEnvironmentSecretsKvp.Value;
+
+                        context.Writer.Write(requestObjectRuntimeEnvironmentSecretsValue);
+                }
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetRuntimeEnvironmentVariables())
             {
                 context.Writer.WritePropertyName("RuntimeEnvironmentVariables");
@@ -87,7 +101,7 @@ namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CodeConfigurationValuesMarshaller Instance = new CodeConfigurationValuesMarshaller();
 
     }

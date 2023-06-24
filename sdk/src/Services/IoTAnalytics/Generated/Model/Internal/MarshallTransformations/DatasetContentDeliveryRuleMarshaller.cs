@@ -34,7 +34,7 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DatasetContentDeliveryRule Marshaller
-    /// </summary>       
+    /// </summary>
     public class DatasetContentDeliveryRuleMarshaller : IRequestMarshaller<DatasetContentDeliveryRule, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DatasetContentDeliveryRuleMarshaller Instance = new DatasetContentDeliveryRuleMarshaller();
 
     }

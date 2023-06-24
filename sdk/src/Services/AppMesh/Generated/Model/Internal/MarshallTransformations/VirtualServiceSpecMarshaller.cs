@@ -34,7 +34,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// VirtualServiceSpec Marshaller
-    /// </summary>       
+    /// </summary>
     public class VirtualServiceSpecMarshaller : IRequestMarshaller<VirtualServiceSpec, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static VirtualServiceSpecMarshaller Instance = new VirtualServiceSpecMarshaller();
 
     }

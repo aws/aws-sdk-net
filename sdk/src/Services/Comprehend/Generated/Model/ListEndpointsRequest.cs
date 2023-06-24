@@ -30,7 +30,9 @@ namespace Amazon.Comprehend.Model
 {
     /// <summary>
     /// Container for the parameters to the ListEndpoints operation.
-    /// Gets a list of all existing endpoints that you've created.
+    /// Gets a list of all existing endpoints that you've created. For information about endpoints,
+    /// see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html">Managing
+    /// endpoints</a>.
     /// </summary>
     public partial class ListEndpointsRequest : AmazonComprehendRequest
     {

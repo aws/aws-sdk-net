@@ -34,7 +34,7 @@ namespace Amazon.CertificateManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DomainValidationOption Marshaller
-    /// </summary>       
+    /// </summary>
     public class DomainValidationOptionMarshaller : IRequestMarshaller<DomainValidationOption, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.CertificateManager.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DomainValidationOptionMarshaller Instance = new DomainValidationOptionMarshaller();
 
     }

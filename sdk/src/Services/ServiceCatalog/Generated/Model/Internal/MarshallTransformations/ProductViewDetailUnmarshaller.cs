@@ -82,6 +82,12 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
                     unmarshalledObject.ProductViewSummary = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SourceConnection", targetDepth))
+                {
+                    var unmarshaller = SourceConnectionDetailUnmarshaller.Instance;
+                    unmarshalledObject.SourceConnection = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

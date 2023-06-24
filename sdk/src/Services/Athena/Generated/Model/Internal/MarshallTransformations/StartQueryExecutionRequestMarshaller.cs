@@ -58,7 +58,7 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
             string target = "AmazonAthena.StartQueryExecution";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-05-18";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-05-18";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -76,8 +76,19 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
                 else if(!(publicRequest.IsSetClientRequestToken()))
                 {
                     context.Writer.WritePropertyName("ClientRequestToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());                                                
+                    context.Writer.Write(Guid.NewGuid().ToString());
                 }
+                if(publicRequest.IsSetExecutionParameters())
+                {
+                    context.Writer.WritePropertyName("ExecutionParameters");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestExecutionParametersListValue in publicRequest.ExecutionParameters)
+                    {
+                            context.Writer.Write(publicRequestExecutionParametersListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetQueryExecutionContext())
                 {
                     context.Writer.WritePropertyName("QueryExecutionContext");
@@ -106,13 +117,23 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetResultReuseConfiguration())
+                {
+                    context.Writer.WritePropertyName("ResultReuseConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ResultReuseConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ResultReuseConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetWorkGroup())
                 {
                     context.Writer.WritePropertyName("WorkGroup");
                     context.Writer.Write(publicRequest.WorkGroup);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

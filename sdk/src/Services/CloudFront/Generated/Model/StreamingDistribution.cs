@@ -67,7 +67,6 @@ namespace Amazon.CloudFront.Model
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
         /// Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.
-        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -107,7 +106,6 @@ namespace Amazon.CloudFront.Model
         /// Gets and sets the property DomainName. 
         /// <para>
         /// The domain name that corresponds to the streaming distribution, for example, <code>s5c39gqb8ow64r.cloudfront.net</code>.
-        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -145,7 +143,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property LastModifiedTime. 
         /// <para>
-        /// The date and time that the distribution was last modified. 
+        /// The date and time that the distribution was last modified.
         /// </para>
         /// </summary>
         public DateTime LastModifiedTime

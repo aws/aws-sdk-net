@@ -66,6 +66,12 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                         unmarshalledObject.AutomaticFailoverStatus = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("ClusterMode", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ClusterMode = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("LogDeliveryConfigurations/member", targetDepth))
                     {
                         var unmarshaller = PendingLogDeliveryConfigurationUnmarshaller.Instance;
@@ -83,6 +89,18 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = ReshardingStatusUnmarshaller.Instance;
                         unmarshalledObject.Resharding = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("TransitEncryptionEnabled", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.TransitEncryptionEnabled = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("TransitEncryptionMode", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.TransitEncryptionMode = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("UserGroups", targetDepth))

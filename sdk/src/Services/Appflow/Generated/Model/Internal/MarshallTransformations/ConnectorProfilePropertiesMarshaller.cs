@@ -34,7 +34,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ConnectorProfileProperties Marshaller
-    /// </summary>       
+    /// </summary>
     public class ConnectorProfilePropertiesMarshaller : IRequestMarshaller<ConnectorProfileProperties, JsonMarshallerContext> 
     {
         /// <summary>
@@ -52,6 +52,17 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 
                 var marshaller = AmplitudeConnectorProfilePropertiesMarshaller.Instance;
                 marshaller.Marshall(requestObject.Amplitude, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetCustomConnector())
+            {
+                context.Writer.WritePropertyName("CustomConnector");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = CustomConnectorProfilePropertiesMarshaller.Instance;
+                marshaller.Marshall(requestObject.CustomConnector, context);
 
                 context.Writer.WriteObjectEnd();
             }
@@ -118,6 +129,17 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 
                 var marshaller = MarketoConnectorProfilePropertiesMarshaller.Instance;
                 marshaller.Marshall(requestObject.Marketo, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetPardot())
+            {
+                context.Writer.WritePropertyName("Pardot");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = PardotConnectorProfilePropertiesMarshaller.Instance;
+                marshaller.Marshall(requestObject.Pardot, context);
 
                 context.Writer.WriteObjectEnd();
             }
@@ -236,7 +258,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ConnectorProfilePropertiesMarshaller Instance = new ConnectorProfilePropertiesMarshaller();
 
     }

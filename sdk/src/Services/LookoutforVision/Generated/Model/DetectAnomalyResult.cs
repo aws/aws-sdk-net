@@ -29,18 +29,84 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LookoutforVision.Model
 {
     /// <summary>
-    /// The prediction results from a call to <a>DetectAnomalies</a>.
+    /// The prediction results from a call to <a>DetectAnomalies</a>. <code>DetectAnomalyResult</code>
+    /// includes classification information for the prediction (<code>IsAnomalous</code> and
+    /// <code>Confidence</code>). If the model you use is an image segementation model, <code>DetectAnomalyResult</code>
+    /// also includes segmentation information (<code>Anomalies</code> and <code>AnomalyMask</code>).
+    /// Classification information is calculated separately from segmentation information
+    /// and you shouldn't assume a relationship between them.
     /// </summary>
     public partial class DetectAnomalyResult
     {
+        private List<Anomaly> _anomalies = new List<Anomaly>();
+        private MemoryStream _anomalyMask;
         private float? _confidence;
         private bool? _isAnomalous;
         private ImageSource _source;
 
         /// <summary>
+        /// Gets and sets the property Anomalies. 
+        /// <para>
+        /// If the model is an image segmentation model, <code>Anomalies</code> contains a list
+        /// of anomaly types found in the image. There is one entry for each type of anomaly found
+        /// (even if multiple instances of an anomaly type exist on the image). The first element
+        /// in the list is always an anomaly type representing the image background ('background')
+        /// and shouldn't be considered an anomaly. Amazon Lookout for Vision automatically add
+        /// the background anomaly type to the response, and you don't need to declare a background
+        /// anomaly type in your dataset.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the list has one entry ('background'), no anomalies were found on the image.
+        /// </para>
+        ///   
+        /// <para>
+        /// An image classification model doesn't return an <code>Anomalies</code> list. 
+        /// </para>
+        /// </summary>
+        public List<Anomaly> Anomalies
+        {
+            get { return this._anomalies; }
+            set { this._anomalies = value; }
+        }
+
+        // Check to see if Anomalies property is set
+        internal bool IsSetAnomalies()
+        {
+            return this._anomalies != null && this._anomalies.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AnomalyMask. 
+        /// <para>
+        /// If the model is an image segmentation model, <code>AnomalyMask</code> contains pixel
+        /// masks that covers all anomaly types found on the image. Each anomaly type has a different
+        /// mask color. To map a color to an anomaly type, see the <code>color</code> field of
+        /// the <a>PixelAnomaly</a> object.
+        /// </para>
+        ///  
+        /// <para>
+        /// An image classification model doesn't return an <code>Anomalies</code> list. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=5242880)]
+        public MemoryStream AnomalyMask
+        {
+            get { return this._anomalyMask; }
+            set { this._anomalyMask = value; }
+        }
+
+        // Check to see if AnomalyMask property is set
+        internal bool IsSetAnomalyMask()
+        {
+            return this._anomalyMask != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Confidence. 
         /// <para>
-        /// The confidence that Amazon Lookout for Vision has in the accuracy of the prediction.
+        /// The confidence that Lookout for Vision has in the accuracy of the classification in
+        /// <code>IsAnomalous</code>.
         /// </para>
         /// </summary>
         public float Confidence
@@ -58,7 +124,8 @@ namespace Amazon.LookoutforVision.Model
         /// <summary>
         /// Gets and sets the property IsAnomalous. 
         /// <para>
-        /// True if the image contains an anomaly, otherwise false.
+        /// True if Amazon Lookout for Vision classifies the image as containing an anomaly, otherwise
+        /// false.
         /// </para>
         /// </summary>
         public bool IsAnomalous

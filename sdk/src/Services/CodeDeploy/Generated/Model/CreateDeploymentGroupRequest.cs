@@ -74,7 +74,8 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property ApplicationName. 
         /// <para>
-        /// The name of an AWS CodeDeploy application associated with the IAM user or AWS account.
+        /// The name of an CodeDeploy application associated with the IAM user or Amazon Web Services
+        /// account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
@@ -149,7 +150,7 @@ namespace Amazon.CodeDeploy.Model
         /// Gets and sets the property DeploymentConfigName. 
         /// <para>
         /// If specified, the deployment configuration name can be either one of the predefined
-        /// configurations provided with AWS CodeDeploy or a custom deployment configuration that
+        /// configurations provided with CodeDeploy or a custom deployment configuration that
         /// you create by calling the create deployment configuration operation.
         /// </para>
         ///  
@@ -159,9 +160,9 @@ namespace Amazon.CodeDeploy.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information about the predefined deployment configurations in AWS CodeDeploy,
+        /// For more information about the predefined deployment configurations in CodeDeploy,
         /// see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html">Working
-        /// with Deployment Configurations in CodeDeploy</a> in the <i>AWS CodeDeploy User Guide</i>.
+        /// with Deployment Configurations in CodeDeploy</a> in the <i>CodeDeploy User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -218,7 +219,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property Ec2TagFilters. 
         /// <para>
-        /// The Amazon EC2 tags on which to filter. The deployment group includes EC2 instances
+        /// The Amazon EC2 tags on which to filter. The deployment group includes Amazon EC2 instances
         /// with any of the specified tags. Cannot be used in the same call as ec2TagSet.
         /// </para>
         /// </summary>
@@ -237,9 +238,9 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property Ec2TagSet. 
         /// <para>
-        /// Information about groups of tags applied to EC2 instances. The deployment group includes
-        /// only EC2 instances identified by all the tag groups. Cannot be used in the same call
-        /// as <code>ec2TagFilters</code>.
+        /// Information about groups of tags applied to Amazon EC2 instances. The deployment group
+        /// includes only Amazon EC2 instances identified by all the tag groups. Cannot be used
+        /// in the same call as <code>ec2TagFilters</code>.
         /// </para>
         /// </summary>
         public EC2TagSet Ec2TagSet
@@ -335,19 +336,20 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property OutdatedInstancesStrategy. 
         /// <para>
-        /// Indicates what happens when new EC2 instances are launched mid-deployment and do not
-        /// receive the deployed application revision.
+        /// Indicates what happens when new Amazon EC2 instances are launched mid-deployment and
+        /// do not receive the deployed application revision.
         /// </para>
         ///  
         /// <para>
         /// If this option is set to <code>UPDATE</code> or is unspecified, CodeDeploy initiates
         /// one or more 'auto-update outdated instances' deployments to apply the deployed application
-        /// revision to the new EC2 instances.
+        /// revision to the new Amazon EC2 instances.
         /// </para>
         ///  
         /// <para>
         /// If this option is set to <code>IGNORE</code>, CodeDeploy does not initiate a deployment
-        /// to update the new EC2 instances. This may result in instances having different revisions.
+        /// to update the new Amazon EC2 instances. This may result in instances having different
+        /// revisions.
         /// </para>
         /// </summary>
         public OutdatedInstancesStrategy OutdatedInstancesStrategy
@@ -365,8 +367,8 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property ServiceRoleArn. 
         /// <para>
-        /// A service role Amazon Resource Name (ARN) that allows AWS CodeDeploy to act on the
-        /// user's behalf when interacting with AWS services.
+        /// A service role Amazon Resource Name (ARN) that allows CodeDeploy to act on the user's
+        /// behalf when interacting with Amazon Web Services services.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -407,7 +409,7 @@ namespace Amazon.CodeDeploy.Model
         /// <para>
         /// Information about triggers to create when the deployment group is created. For examples,
         /// see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-sns.html">Create
-        /// a Trigger for an AWS CodeDeploy Event</a> in the <i>AWS CodeDeploy User Guide</i>.
+        /// a Trigger for an CodeDeploy Event</a> in the <i>CodeDeploy User Guide</i>.
         /// </para>
         /// </summary>
         public List<TriggerConfig> TriggerConfigurations

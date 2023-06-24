@@ -109,6 +109,10 @@ namespace Amazon.CostAndUsageReport
         /// </summary>
         public static readonly AWSRegion ApSouth1 = new AWSRegion("ap-south-1");
         /// <summary>
+        /// Constant ApSouth2 for AWSRegion
+        /// </summary>
+        public static readonly AWSRegion ApSouth2 = new AWSRegion("ap-south-2");
+        /// <summary>
         /// Constant ApSoutheast1 for AWSRegion
         /// </summary>
         public static readonly AWSRegion ApSoutheast1 = new AWSRegion("ap-southeast-1");
@@ -116,6 +120,10 @@ namespace Amazon.CostAndUsageReport
         /// Constant ApSoutheast2 for AWSRegion
         /// </summary>
         public static readonly AWSRegion ApSoutheast2 = new AWSRegion("ap-southeast-2");
+        /// <summary>
+        /// Constant ApSoutheast3 for AWSRegion
+        /// </summary>
+        public static readonly AWSRegion ApSoutheast3 = new AWSRegion("ap-southeast-3");
         /// <summary>
         /// Constant CaCentral1 for AWSRegion
         /// </summary>
@@ -133,6 +141,10 @@ namespace Amazon.CostAndUsageReport
         /// </summary>
         public static readonly AWSRegion EuCentral1 = new AWSRegion("eu-central-1");
         /// <summary>
+        /// Constant EuCentral2 for AWSRegion
+        /// </summary>
+        public static readonly AWSRegion EuCentral2 = new AWSRegion("eu-central-2");
+        /// <summary>
         /// Constant EuNorth1 for AWSRegion
         /// </summary>
         public static readonly AWSRegion EuNorth1 = new AWSRegion("eu-north-1");
@@ -140,6 +152,10 @@ namespace Amazon.CostAndUsageReport
         /// Constant EuSouth1 for AWSRegion
         /// </summary>
         public static readonly AWSRegion EuSouth1 = new AWSRegion("eu-south-1");
+        /// <summary>
+        /// Constant EuSouth2 for AWSRegion
+        /// </summary>
+        public static readonly AWSRegion EuSouth2 = new AWSRegion("eu-south-2");
         /// <summary>
         /// Constant EuWest1 for AWSRegion
         /// </summary>
@@ -152,6 +168,10 @@ namespace Amazon.CostAndUsageReport
         /// Constant EuWest3 for AWSRegion
         /// </summary>
         public static readonly AWSRegion EuWest3 = new AWSRegion("eu-west-3");
+        /// <summary>
+        /// Constant MeCentral1 for AWSRegion
+        /// </summary>
+        public static readonly AWSRegion MeCentral1 = new AWSRegion("me-central-1");
         /// <summary>
         /// Constant MeSouth1 for AWSRegion
         /// </summary>
@@ -376,6 +396,10 @@ namespace Amazon.CostAndUsageReport
         /// Constant RESOURCES for SchemaElement
         /// </summary>
         public static readonly SchemaElement RESOURCES = new SchemaElement("RESOURCES");
+        /// <summary>
+        /// Constant SPLIT_COST_ALLOCATION_DATA for SchemaElement
+        /// </summary>
+        public static readonly SchemaElement SPLIT_COST_ALLOCATION_DATA = new SchemaElement("SPLIT_COST_ALLOCATION_DATA");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

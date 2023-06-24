@@ -34,7 +34,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// InstanceGroupConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class InstanceGroupConfigMarshaller : IRequestMarshaller<InstanceGroupConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -129,7 +129,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static InstanceGroupConfigMarshaller Instance = new InstanceGroupConfigMarshaller();
 
     }

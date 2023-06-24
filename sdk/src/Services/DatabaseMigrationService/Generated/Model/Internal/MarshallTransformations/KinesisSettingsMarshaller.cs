@@ -34,7 +34,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// KinesisSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class KinesisSettingsMarshaller : IRequestMarshaller<KinesisSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -109,7 +109,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static KinesisSettingsMarshaller Instance = new KinesisSettingsMarshaller();
 
     }

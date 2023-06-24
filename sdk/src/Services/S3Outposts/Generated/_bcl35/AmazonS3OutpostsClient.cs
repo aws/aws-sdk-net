@@ -230,6 +230,15 @@ namespace Amazon.S3Outposts
         }
 
         /// <summary>
+        /// Customize the pipeline
+        /// </summary>
+        /// <param name="pipeline"></param>
+        protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
+        {
+            pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonS3OutpostsEndpointResolver());
+        }
+        /// <summary>
         /// Capture metadata for the service.
         /// </summary>
         protected override IServiceMetadata ServiceMetadata
@@ -258,19 +267,11 @@ namespace Amazon.S3Outposts
         #region  CreateEndpoint
 
         /// <summary>
-        /// Amazon S3 on Outposts Access Points simplify managing data access at scale for shared
-        /// datasets in S3 on Outposts. S3 on Outposts uses endpoints to connect to Outposts buckets
-        /// so that you can perform actions within your virtual private cloud (VPC). For more
-        /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/AccessingS3Outposts.html">
-        /// Accessing S3 on Outposts using VPC only access points</a>.
+        /// Creates an endpoint and associates it with the specified Outpost.
         /// 
-        ///  
-        /// <para>
-        /// This action creates an endpoint and associates it with the specified Outposts.
-        /// </para>
         ///  <note> 
         /// <para>
-        /// It can take up to 5 minutes for this action to complete.
+        /// It can take up to 5 minutes for this action to finish.
         /// </para>
         ///  </note>  
         /// <para>
@@ -300,8 +301,15 @@ namespace Amazon.S3Outposts
         /// <exception cref="Amazon.S3Outposts.Model.InternalServerException">
         /// There was an exception with the internal server.
         /// </exception>
+        /// <exception cref="Amazon.S3Outposts.Model.OutpostOfflineException">
+        /// The service link connection to your Outposts home Region is down. Check your connection
+        /// and try again.
+        /// </exception>
         /// <exception cref="Amazon.S3Outposts.Model.ResourceNotFoundException">
         /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.S3Outposts.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.S3Outposts.Model.ValidationException">
         /// There was an exception validating this data.
@@ -355,19 +363,11 @@ namespace Amazon.S3Outposts
         #region  DeleteEndpoint
 
         /// <summary>
-        /// Amazon S3 on Outposts Access Points simplify managing data access at scale for shared
-        /// datasets in S3 on Outposts. S3 on Outposts uses endpoints to connect to Outposts buckets
-        /// so that you can perform actions within your virtual private cloud (VPC). For more
-        /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/AccessingS3Outposts.html">
-        /// Accessing S3 on Outposts using VPC only access points</a>.
+        /// Deletes an endpoint.
         /// 
-        ///  
-        /// <para>
-        /// This action deletes an endpoint.
-        /// </para>
         ///  <note> 
         /// <para>
-        /// It can take up to 5 minutes for this action to complete.
+        /// It can take up to 5 minutes for this action to finish.
         /// </para>
         ///  </note>  
         /// <para>
@@ -394,8 +394,15 @@ namespace Amazon.S3Outposts
         /// <exception cref="Amazon.S3Outposts.Model.InternalServerException">
         /// There was an exception with the internal server.
         /// </exception>
+        /// <exception cref="Amazon.S3Outposts.Model.OutpostOfflineException">
+        /// The service link connection to your Outposts home Region is down. Check your connection
+        /// and try again.
+        /// </exception>
         /// <exception cref="Amazon.S3Outposts.Model.ResourceNotFoundException">
         /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.S3Outposts.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.S3Outposts.Model.ValidationException">
         /// There was an exception validating this data.
@@ -449,17 +456,9 @@ namespace Amazon.S3Outposts
         #region  ListEndpoints
 
         /// <summary>
-        /// Amazon S3 on Outposts Access Points simplify managing data access at scale for shared
-        /// datasets in S3 on Outposts. S3 on Outposts uses endpoints to connect to Outposts buckets
-        /// so that you can perform actions within your virtual private cloud (VPC). For more
-        /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/AccessingS3Outposts.html">
-        /// Accessing S3 on Outposts using VPC only access points</a>.
+        /// Lists endpoints associated with the specified Outpost. 
         /// 
         ///  
-        /// <para>
-        /// This action lists endpoints associated with the Outposts. 
-        /// </para>
-        ///   
         /// <para>
         /// Related actions include:
         /// </para>
@@ -486,6 +485,9 @@ namespace Amazon.S3Outposts
         /// </exception>
         /// <exception cref="Amazon.S3Outposts.Model.ResourceNotFoundException">
         /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.S3Outposts.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.S3Outposts.Model.ValidationException">
         /// There was an exception validating this data.
@@ -532,6 +534,160 @@ namespace Amazon.S3Outposts
         public virtual ListEndpointsResponse EndListEndpoints(IAsyncResult asyncResult)
         {
             return EndInvoke<ListEndpointsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListOutpostsWithS3
+
+        /// <summary>
+        /// Lists the Outposts with S3 on Outposts capacity for your Amazon Web Services account.
+        /// Includes S3 on Outposts that you have access to as the Outposts owner, or as a shared
+        /// user from Resource Access Manager (RAM).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListOutpostsWithS3 service method.</param>
+        /// 
+        /// <returns>The response from the ListOutpostsWithS3 service method, as returned by S3Outposts.</returns>
+        /// <exception cref="Amazon.S3Outposts.Model.AccessDeniedException">
+        /// Access was denied for this action.
+        /// </exception>
+        /// <exception cref="Amazon.S3Outposts.Model.InternalServerException">
+        /// There was an exception with the internal server.
+        /// </exception>
+        /// <exception cref="Amazon.S3Outposts.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.S3Outposts.Model.ValidationException">
+        /// There was an exception validating this data.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3outposts-2017-07-25/ListOutpostsWithS3">REST API Reference for ListOutpostsWithS3 Operation</seealso>
+        public virtual ListOutpostsWithS3Response ListOutpostsWithS3(ListOutpostsWithS3Request request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListOutpostsWithS3RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListOutpostsWithS3ResponseUnmarshaller.Instance;
+
+            return Invoke<ListOutpostsWithS3Response>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListOutpostsWithS3 operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListOutpostsWithS3 operation on AmazonS3OutpostsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListOutpostsWithS3
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3outposts-2017-07-25/ListOutpostsWithS3">REST API Reference for ListOutpostsWithS3 Operation</seealso>
+        public virtual IAsyncResult BeginListOutpostsWithS3(ListOutpostsWithS3Request request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListOutpostsWithS3RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListOutpostsWithS3ResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListOutpostsWithS3 operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListOutpostsWithS3.</param>
+        /// 
+        /// <returns>Returns a  ListOutpostsWithS3Result from S3Outposts.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3outposts-2017-07-25/ListOutpostsWithS3">REST API Reference for ListOutpostsWithS3 Operation</seealso>
+        public virtual ListOutpostsWithS3Response EndListOutpostsWithS3(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListOutpostsWithS3Response>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListSharedEndpoints
+
+        /// <summary>
+        /// Lists all endpoints associated with an Outpost that has been shared by Amazon Web
+        /// Services Resource Access Manager (RAM).
+        /// 
+        ///  
+        /// <para>
+        /// Related actions include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3outposts_CreateEndpoint.html">CreateEndpoint</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3outposts_DeleteEndpoint.html">DeleteEndpoint</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSharedEndpoints service method.</param>
+        /// 
+        /// <returns>The response from the ListSharedEndpoints service method, as returned by S3Outposts.</returns>
+        /// <exception cref="Amazon.S3Outposts.Model.AccessDeniedException">
+        /// Access was denied for this action.
+        /// </exception>
+        /// <exception cref="Amazon.S3Outposts.Model.InternalServerException">
+        /// There was an exception with the internal server.
+        /// </exception>
+        /// <exception cref="Amazon.S3Outposts.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.S3Outposts.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.S3Outposts.Model.ValidationException">
+        /// There was an exception validating this data.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3outposts-2017-07-25/ListSharedEndpoints">REST API Reference for ListSharedEndpoints Operation</seealso>
+        public virtual ListSharedEndpointsResponse ListSharedEndpoints(ListSharedEndpointsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSharedEndpointsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSharedEndpointsResponseUnmarshaller.Instance;
+
+            return Invoke<ListSharedEndpointsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListSharedEndpoints operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListSharedEndpoints operation on AmazonS3OutpostsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListSharedEndpoints
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3outposts-2017-07-25/ListSharedEndpoints">REST API Reference for ListSharedEndpoints Operation</seealso>
+        public virtual IAsyncResult BeginListSharedEndpoints(ListSharedEndpointsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSharedEndpointsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSharedEndpointsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListSharedEndpoints operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListSharedEndpoints.</param>
+        /// 
+        /// <returns>Returns a  ListSharedEndpointsResult from S3Outposts.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3outposts-2017-07-25/ListSharedEndpoints">REST API Reference for ListSharedEndpoints Operation</seealso>
+        public virtual ListSharedEndpointsResponse EndListSharedEndpoints(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListSharedEndpointsResponse>(asyncResult);
         }
 
         #endregion

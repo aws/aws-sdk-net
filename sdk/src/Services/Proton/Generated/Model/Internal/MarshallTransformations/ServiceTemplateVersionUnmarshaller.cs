@@ -130,6 +130,12 @@ namespace Amazon.Proton.Model.Internal.MarshallTransformations
                     unmarshalledObject.StatusMessage = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("supportedComponentSources", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.SupportedComponentSources = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("templateName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

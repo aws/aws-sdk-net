@@ -112,9 +112,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        ///  An optional pagination token provided by a previous request. If this parameter is
+        /// An optional pagination token provided by a previous request. If this parameter is
         /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>. 
+        /// by <code>MaxRecords</code>.
         /// </para>
         /// </summary>
         public string Marker
@@ -132,9 +132,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property MaxRecords. 
         /// <para>
-        ///  The maximum number of records to include in the response. If more than the <code>MaxRecords</code>
+        /// The maximum number of records to include in the response. If more than the <code>MaxRecords</code>
         /// value is available, a pagination token called a marker is included in the response
-        /// so you can retrieve the remaining results. 
+        /// so you can retrieve the remaining results.
         /// </para>
         ///  
         /// <para>

@@ -17,22 +17,22 @@
  * Do not modify this file. This file is generated from the evidently-2021-02-01.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
-
+using Amazon.CloudWatchEvidently.Internal;
 
 namespace Amazon.CloudWatchEvidently
 {
     /// <summary>
     /// Configuration for accessing Amazon CloudWatchEvidently service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonCloudWatchEvidentlyConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.2");
+            InternalSDKUtils.BuildUserAgentString("3.7.102.60");
 
         private string _userAgent = UserAgentString;
 
@@ -40,8 +40,10 @@ namespace Amazon.CloudWatchEvidently
         /// Default constructor
         /// </summary>
         public AmazonCloudWatchEvidentlyConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonCloudWatchEvidentlyDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "evidently";
+            this.EndpointProvider = new AmazonCloudWatchEvidentlyEndpointProvider();
         }
 
         /// <summary>
@@ -76,5 +78,6 @@ namespace Amazon.CloudWatchEvidently
                 return _userAgent;
             }
         }
+
     }
 }

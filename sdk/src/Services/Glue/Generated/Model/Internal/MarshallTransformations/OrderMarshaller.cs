@@ -34,7 +34,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Order Marshaller
-    /// </summary>       
+    /// </summary>
     public class OrderMarshaller : IRequestMarshaller<Order, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static OrderMarshaller Instance = new OrderMarshaller();
 
     }

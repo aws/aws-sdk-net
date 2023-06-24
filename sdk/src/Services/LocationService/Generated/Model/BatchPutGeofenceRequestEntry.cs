@@ -34,6 +34,7 @@ namespace Amazon.LocationService.Model
     public partial class BatchPutGeofenceRequestEntry
     {
         private string _geofenceId;
+        private Dictionary<string, string> _geofenceProperties = new Dictionary<string, string>();
         private GeofenceGeometry _geometry;
 
         /// <summary>
@@ -56,14 +57,35 @@ namespace Amazon.LocationService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property GeofenceProperties. 
+        /// <para>
+        /// Specifies additional user-defined properties to store with the Geofence. An array
+        /// of key-value pairs.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Min=0, Max=3)]
+        public Dictionary<string, string> GeofenceProperties
+        {
+            get { return this._geofenceProperties; }
+            set { this._geofenceProperties = value; }
+        }
+
+        // Check to see if GeofenceProperties property is set
+        internal bool IsSetGeofenceProperties()
+        {
+            return this._geofenceProperties != null && this._geofenceProperties.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Geometry. 
         /// <para>
-        /// Contains the polygon details to specify the position of the geofence.
+        /// Contains the details of the position of the geofence. Can be either a polygon or a
+        /// circle. Including both will return a validation error.
         /// </para>
         ///  <note> 
         /// <para>
-        /// Each <a href="https://docs.aws.amazon.com/location-geofences/latest/APIReference/API_GeofenceGeometry.html">geofence
-        /// polygon</a> can have a maximum of 1,000 vertices.
+        /// Each <a href="https://docs.aws.amazon.com/location-geofences/latest/APIReference/API_GeofenceGeometry.html">
+        /// geofence polygon</a> can have a maximum of 1,000 vertices.
         /// </para>
         ///  </note>
         /// </summary>

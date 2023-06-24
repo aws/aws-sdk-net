@@ -165,6 +165,24 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                         unmarshalledObject.ClusterVersion = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("CustomDomainCertificateArn", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.CustomDomainCertificateArn = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("CustomDomainCertificateExpiryDate", targetDepth))
+                    {
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        unmarshalledObject.CustomDomainCertificateExpiryDate = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("CustomDomainName", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.CustomDomainName = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("DataTransferProgress", targetDepth))
                     {
                         var unmarshaller = DataTransferProgressUnmarshaller.Instance;

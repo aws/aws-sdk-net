@@ -55,7 +55,7 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
         public IRequest Marshall(UntagResourceRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Finspace");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-03-12";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-03-12";
             request.HttpMethod = "DELETE";
 
             if (!publicRequest.IsSetResourceArn())

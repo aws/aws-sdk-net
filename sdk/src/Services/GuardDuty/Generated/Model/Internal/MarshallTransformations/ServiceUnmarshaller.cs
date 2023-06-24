@@ -70,6 +70,12 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                     unmarshalledObject.Action = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("additionalInfo", targetDepth))
+                {
+                    var unmarshaller = ServiceAdditionalInfoUnmarshaller.Instance;
+                    unmarshalledObject.AdditionalInfo = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("archived", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
@@ -86,6 +92,12 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DetectorId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ebsVolumeScanDetails", targetDepth))
+                {
+                    var unmarshaller = EbsVolumeScanDetailsUnmarshaller.Instance;
+                    unmarshalledObject.EbsVolumeScanDetails = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("eventFirstSeen", targetDepth))
@@ -106,10 +118,22 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                     unmarshalledObject.Evidence = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("featureName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.FeatureName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("resourceRole", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ResourceRole = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("runtimeDetails", targetDepth))
+                {
+                    var unmarshaller = RuntimeDetailsUnmarshaller.Instance;
+                    unmarshalledObject.RuntimeDetails = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("serviceName", targetDepth))

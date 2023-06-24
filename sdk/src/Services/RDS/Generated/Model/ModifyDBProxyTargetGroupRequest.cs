@@ -61,7 +61,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBProxyName. 
         /// <para>
-        /// The name of the new proxy to which to assign the target group.
+        /// The name of the proxy.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -100,7 +100,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property TargetGroupName. 
         /// <para>
-        /// The name of the new target group to assign to the proxy.
+        /// The name of the target group to modify.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

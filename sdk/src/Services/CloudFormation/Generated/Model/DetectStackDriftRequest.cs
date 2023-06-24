@@ -31,7 +31,7 @@ namespace Amazon.CloudFormation.Model
     /// <summary>
     /// Container for the parameters to the DetectStackDrift operation.
     /// Detects whether a stack's actual configuration differs, or has <i>drifted</i>, from
-    /// it's expected configuration, as defined in the stack template and any values specified
+    /// its expected configuration, as defined in the stack template and any values specified
     /// as template parameters. For each resource in the stack that supports drift detection,
     /// CloudFormation compares the actual configuration of the resource with its expected
     /// template configuration. Only resource properties explicitly defined in the stack template
@@ -60,7 +60,7 @@ namespace Amazon.CloudFormation.Model
     /// </para>
     ///  
     /// <para>
-    /// When detecting drift on a stack, CloudFormation does not detect drift on any nested
+    /// When detecting drift on a stack, CloudFormation doesn't detect drift on any nested
     /// stacks belonging to that stack. Perform <code>DetectStackDrift</code> directly on
     /// the nested stack itself.
     /// </para>

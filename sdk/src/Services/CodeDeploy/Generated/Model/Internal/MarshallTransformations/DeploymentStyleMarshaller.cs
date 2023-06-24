@@ -34,7 +34,7 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DeploymentStyle Marshaller
-    /// </summary>       
+    /// </summary>
     public class DeploymentStyleMarshaller : IRequestMarshaller<DeploymentStyle, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DeploymentStyleMarshaller Instance = new DeploymentStyleMarshaller();
 
     }

@@ -33,8 +33,29 @@ namespace Amazon.FSx.Model
     /// </summary>
     public partial class RestoreVolumeFromSnapshotResponse : AmazonWebServiceResponse
     {
+        private List<AdministrativeAction> _administrativeActions = new List<AdministrativeAction>();
         private VolumeLifecycle _lifecycle;
         private string _volumeId;
+
+        /// <summary>
+        /// Gets and sets the property AdministrativeActions. 
+        /// <para>
+        /// A list of administrative actions for the file system that are in process or waiting
+        /// to be processed. Administrative actions describe changes to the Amazon FSx system.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=50)]
+        public List<AdministrativeAction> AdministrativeActions
+        {
+            get { return this._administrativeActions; }
+            set { this._administrativeActions = value; }
+        }
+
+        // Check to see if AdministrativeActions property is set
+        internal bool IsSetAdministrativeActions()
+        {
+            return this._administrativeActions != null && this._administrativeActions.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property Lifecycle. 

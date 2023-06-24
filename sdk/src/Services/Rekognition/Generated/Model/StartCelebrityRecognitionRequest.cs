@@ -47,7 +47,7 @@ namespace Amazon.Rekognition.Model
     /// </para>
     ///  
     /// <para>
-    /// For more information, see Recognizing Celebrities in the Amazon Rekognition Developer
+    /// For more information, see Recognizing celebrities in the Amazon Rekognition Developer
     /// Guide.
     /// </para>
     /// </summary>
@@ -88,7 +88,7 @@ namespace Amazon.Rekognition.Model
         /// to group related jobs and identify them in the completion notification.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=256)]
+        [AWSProperty(Min=1, Max=1024)]
         public string JobTag
         {
             get { return this._jobTag; }

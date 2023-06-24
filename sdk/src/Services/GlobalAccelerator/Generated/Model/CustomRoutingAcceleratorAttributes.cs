@@ -46,7 +46,7 @@ namespace Amazon.GlobalAccelerator.Model
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html">Flow
-        /// Logs</a> in the <i>AWS Global Accelerator Developer Guide</i>.
+        /// logs</a> in the <i>Global Accelerator Developer Guide</i>.
         /// </para>
         /// </summary>
         public bool FlowLogsEnabled
@@ -65,8 +65,8 @@ namespace Amazon.GlobalAccelerator.Model
         /// Gets and sets the property FlowLogsS3Bucket. 
         /// <para>
         /// The name of the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code>
-        /// is <code>true</code>. The bucket must exist and have a bucket policy that grants AWS
-        /// Global Accelerator permission to write to the bucket.
+        /// is <code>true</code>. The bucket must exist and have a bucket policy that grants Global
+        /// Accelerator permission to write to the bucket.
         /// </para>
         /// </summary>
         [AWSProperty(Max=255)]

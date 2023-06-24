@@ -34,7 +34,7 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// JobParameters Marshaller
-    /// </summary>       
+    /// </summary>
     public class JobParametersMarshaller : IRequestMarshaller<JobParameters, JsonMarshallerContext> 
     {
         /// <summary>
@@ -124,7 +124,7 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static JobParametersMarshaller Instance = new JobParametersMarshaller();
 
     }

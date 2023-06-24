@@ -56,7 +56,7 @@ namespace Amazon.ConnectParticipant.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ConnectParticipant");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-09-07";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-09-07";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/participant/connection";
@@ -82,15 +82,16 @@ namespace Amazon.ConnectParticipant.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
 
         
-            if(publicRequest.IsSetParticipantToken())
+            if (publicRequest.IsSetParticipantToken()) 
+            {
                 request.Headers["X-Amz-Bearer"] = publicRequest.ParticipantToken;
+            }
 
             return request;
         }

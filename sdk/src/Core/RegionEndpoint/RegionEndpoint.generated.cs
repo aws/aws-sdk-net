@@ -63,6 +63,11 @@ namespace Amazon
         public static readonly RegionEndpoint APSouth1 = GetEndpoint("ap-south-1", "Asia Pacific (Mumbai)");
 
         /// <summary>
+        /// The Asia Pacific (Hyderabad) endpoint.
+        /// </summary>
+        public static readonly RegionEndpoint APSouth2 = GetEndpoint("ap-south-2", "Asia Pacific (Hyderabad)");
+
+        /// <summary>
         /// The Asia Pacific (Singapore) endpoint.
         /// </summary>
         public static readonly RegionEndpoint APSoutheast1 = GetEndpoint("ap-southeast-1", "Asia Pacific (Singapore)");
@@ -71,6 +76,16 @@ namespace Amazon
         /// The Asia Pacific (Sydney) endpoint.
         /// </summary>
         public static readonly RegionEndpoint APSoutheast2 = GetEndpoint("ap-southeast-2", "Asia Pacific (Sydney)");
+
+        /// <summary>
+        /// The Asia Pacific (Jakarta) endpoint.
+        /// </summary>
+        public static readonly RegionEndpoint APSoutheast3 = GetEndpoint("ap-southeast-3", "Asia Pacific (Jakarta)");
+
+        /// <summary>
+        /// The Asia Pacific (Melbourne) endpoint.
+        /// </summary>
+        public static readonly RegionEndpoint APSoutheast4 = GetEndpoint("ap-southeast-4", "Asia Pacific (Melbourne)");
 
         /// <summary>
         /// The Canada (Central) endpoint.
@@ -83,6 +98,11 @@ namespace Amazon
         public static readonly RegionEndpoint EUCentral1 = GetEndpoint("eu-central-1", "Europe (Frankfurt)");
 
         /// <summary>
+        /// The Europe (Zurich) endpoint.
+        /// </summary>
+        public static readonly RegionEndpoint EUCentral2 = GetEndpoint("eu-central-2", "Europe (Zurich)");
+
+        /// <summary>
         /// The Europe (Stockholm) endpoint.
         /// </summary>
         public static readonly RegionEndpoint EUNorth1 = GetEndpoint("eu-north-1", "Europe (Stockholm)");
@@ -91,6 +111,11 @@ namespace Amazon
         /// The Europe (Milan) endpoint.
         /// </summary>
         public static readonly RegionEndpoint EUSouth1 = GetEndpoint("eu-south-1", "Europe (Milan)");
+
+        /// <summary>
+        /// The Europe (Spain) endpoint.
+        /// </summary>
+        public static readonly RegionEndpoint EUSouth2 = GetEndpoint("eu-south-2", "Europe (Spain)");
 
         /// <summary>
         /// The Europe (Ireland) endpoint.
@@ -106,6 +131,11 @@ namespace Amazon
         /// The Europe (Paris) endpoint.
         /// </summary>
         public static readonly RegionEndpoint EUWest3 = GetEndpoint("eu-west-3", "Europe (Paris)");
+
+        /// <summary>
+        /// The Middle East (UAE) endpoint.
+        /// </summary>
+        public static readonly RegionEndpoint MECentral1 = GetEndpoint("me-central-1", "Middle East (UAE)");
 
         /// <summary>
         /// The Middle East (Bahrain) endpoint.

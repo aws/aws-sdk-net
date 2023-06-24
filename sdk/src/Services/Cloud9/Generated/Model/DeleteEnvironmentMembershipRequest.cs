@@ -30,7 +30,7 @@ namespace Amazon.Cloud9.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteEnvironmentMembership operation.
-    /// Deletes an environment member from an Cloud9 development environment.
+    /// Deletes an environment member from a development environment.
     /// </summary>
     public partial class DeleteEnvironmentMembershipRequest : AmazonCloud9Request
     {

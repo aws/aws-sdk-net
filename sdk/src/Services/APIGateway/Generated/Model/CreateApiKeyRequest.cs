@@ -30,10 +30,7 @@ namespace Amazon.APIGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateApiKey operation.
-    /// Create an <a>ApiKey</a> resource. 
-    /// 
-    ///  <div class="seeAlso"><a href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/create-api-key.html">AWS
-    /// CLI</a></div>
+    /// Create an ApiKey resource.
     /// </summary>
     public partial class CreateApiKeyRequest : AmazonAPIGatewayRequest
     {
@@ -67,7 +64,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description of the <a>ApiKey</a>.
+        /// The description of the ApiKey.
         /// </para>
         /// </summary>
         public string Description
@@ -85,7 +82,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Enabled. 
         /// <para>
-        /// Specifies whether the <a>ApiKey</a> can be used by callers.
+        /// Specifies whether the ApiKey can be used by callers.
         /// </para>
         /// </summary>
         public bool Enabled
@@ -123,7 +120,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the <a>ApiKey</a>.
+        /// The name of the ApiKey.
         /// </para>
         /// </summary>
         public string Name

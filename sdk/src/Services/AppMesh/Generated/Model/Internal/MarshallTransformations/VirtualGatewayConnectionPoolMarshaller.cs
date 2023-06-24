@@ -34,7 +34,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// VirtualGatewayConnectionPool Marshaller
-    /// </summary>       
+    /// </summary>
     public class VirtualGatewayConnectionPoolMarshaller : IRequestMarshaller<VirtualGatewayConnectionPool, JsonMarshallerContext> 
     {
         /// <summary>
@@ -82,7 +82,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static VirtualGatewayConnectionPoolMarshaller Instance = new VirtualGatewayConnectionPoolMarshaller();
 
     }

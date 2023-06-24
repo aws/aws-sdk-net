@@ -33,7 +33,27 @@ namespace Amazon.AppMesh.Model
     /// </summary>
     public partial class FileAccessLog
     {
+        private LoggingFormat _format;
         private string _path;
+
+        /// <summary>
+        /// Gets and sets the property Format. 
+        /// <para>
+        /// The specified format for the logs. The format is either <code>json_format</code> or
+        /// <code>text_format</code>.
+        /// </para>
+        /// </summary>
+        public LoggingFormat Format
+        {
+            get { return this._format; }
+            set { this._format = value; }
+        }
+
+        // Check to see if Format property is set
+        internal bool IsSetFormat()
+        {
+            return this._format != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Path. 
@@ -44,12 +64,9 @@ namespace Amazon.AppMesh.Model
         /// as Amazon CloudWatch Logs. You can also specify a path in the Envoy container's file
         /// system to write the files to disk.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// The Envoy process must have write permissions to the path that you specify here. Otherwise,
-        /// Envoy fails to bootstrap properly.
-        /// </para>
-        ///  </note>
+        ///  <pre><code> &lt;note&gt; &lt;p&gt;The Envoy process must have write permissions to
+        /// the path that you specify here. Otherwise, Envoy fails to bootstrap properly.&lt;/p&gt;
+        /// &lt;/note&gt; </code></pre>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
         public string Path

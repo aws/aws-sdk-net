@@ -34,7 +34,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RepublishAction Marshaller
-    /// </summary>       
+    /// </summary>
     public class RepublishActionMarshaller : IRequestMarshaller<RepublishAction, JsonMarshallerContext> 
     {
         /// <summary>
@@ -45,6 +45,17 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(RepublishAction requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetHeaders())
+            {
+                context.Writer.WritePropertyName("headers");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = MqttHeadersMarshaller.Instance;
+                marshaller.Marshall(requestObject.Headers, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetQos())
             {
                 context.Writer.WritePropertyName("qos");
@@ -67,7 +78,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RepublishActionMarshaller Instance = new RepublishActionMarshaller();
 
     }

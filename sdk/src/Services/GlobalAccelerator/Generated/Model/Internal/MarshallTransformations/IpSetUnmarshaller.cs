@@ -70,6 +70,12 @@ namespace Amazon.GlobalAccelerator.Model.Internal.MarshallTransformations
                     unmarshalledObject.IpAddresses = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("IpAddressFamily", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.IpAddressFamily = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("IpFamily", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -29,7 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MWAA.Model
 {
     /// <summary>
-    /// Internal only API.
+    /// <b>Internal only</b>. Represents the dimensions of a metric. To learn more about
+    /// the metrics published to Amazon CloudWatch, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/cw-metrics.html">Amazon
+    /// MWAA performance metrics in Amazon CloudWatch</a>.
     /// </summary>
     public partial class Dimension
     {
@@ -39,7 +41,7 @@ namespace Amazon.MWAA.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Internal only API.
+        ///  <b>Internal only</b>. The name of the dimension.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -58,7 +60,7 @@ namespace Amazon.MWAA.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// Internal only API.
+        ///  <b>Internal only</b>. The value of the dimension.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

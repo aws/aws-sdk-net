@@ -31,8 +31,8 @@ namespace Amazon.ComprehendMedical
     /// <summary>
     /// Interface for accessing ComprehendMedical
     ///
-    /// Amazon Comprehend Medical extracts structured information from unstructured clinical
-    /// text. Use these actions to gain insight in your documents.
+    /// Comprehend Medical; extracts structured information from unstructured clinical text.
+    /// Use these actions to gain insight in your documents.
     /// </summary>
     public partial interface IAmazonComprehendMedical : IAmazonService, IDisposable
     {
@@ -287,6 +287,68 @@ namespace Amazon.ComprehendMedical
 
         #endregion
         
+        #region  DescribeSNOMEDCTInferenceJob
+
+
+        /// <summary>
+        /// Gets the properties associated with an InferSNOMEDCT job. Use this operation to get
+        /// the status of an inference job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSNOMEDCTInferenceJob service method.</param>
+        /// 
+        /// <returns>The response from the DescribeSNOMEDCTInferenceJob service method, as returned by ComprehendMedical.</returns>
+        /// <exception cref="Amazon.ComprehendMedical.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.ComprehendMedical.Model.InvalidRequestException">
+        /// The request that you made is invalid. Check your request to determine why it's invalid
+        /// and then retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.ComprehendMedical.Model.ResourceNotFoundException">
+        /// The resource identified by the specified Amazon Resource Name (ARN) was not found.
+        /// Check the ARN and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.ComprehendMedical.Model.TooManyRequestsException">
+        /// You have made too many requests within a short period of time. Wait for a short time
+        /// and then try your request again. Contact customer support for more information about
+        /// a service limit increase.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/DescribeSNOMEDCTInferenceJob">REST API Reference for DescribeSNOMEDCTInferenceJob Operation</seealso>
+        DescribeSNOMEDCTInferenceJobResponse DescribeSNOMEDCTInferenceJob(DescribeSNOMEDCTInferenceJobRequest request);
+
+
+
+        /// <summary>
+        /// Gets the properties associated with an InferSNOMEDCT job. Use this operation to get
+        /// the status of an inference job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSNOMEDCTInferenceJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeSNOMEDCTInferenceJob service method, as returned by ComprehendMedical.</returns>
+        /// <exception cref="Amazon.ComprehendMedical.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.ComprehendMedical.Model.InvalidRequestException">
+        /// The request that you made is invalid. Check your request to determine why it's invalid
+        /// and then retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.ComprehendMedical.Model.ResourceNotFoundException">
+        /// The resource identified by the specified Amazon Resource Name (ARN) was not found.
+        /// Check the ARN and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.ComprehendMedical.Model.TooManyRequestsException">
+        /// You have made too many requests within a short period of time. Wait for a short time
+        /// and then try your request again. Contact customer support for more information about
+        /// a service limit increase.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/DescribeSNOMEDCTInferenceJob">REST API Reference for DescribeSNOMEDCTInferenceJob Operation</seealso>
+        Task<DescribeSNOMEDCTInferenceJobResponse> DescribeSNOMEDCTInferenceJobAsync(DescribeSNOMEDCTInferenceJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DetectEntities
 
 
@@ -316,8 +378,8 @@ namespace Amazon.ComprehendMedical
         /// and then retry the request.
         /// </exception>
         /// <exception cref="Amazon.ComprehendMedical.Model.ServiceUnavailableException">
-        /// The Amazon Comprehend Medical service is temporarily unavailable. Please wait and
-        /// then retry your request.
+        /// The Comprehend Medical; service is temporarily unavailable. Please wait and then
+        /// retry your request.
         /// </exception>
         /// <exception cref="Amazon.ComprehendMedical.Model.TextSizeLimitExceededException">
         /// The size of the text you submitted exceeds the size limit. Reduce the size of the
@@ -363,8 +425,8 @@ namespace Amazon.ComprehendMedical
         /// and then retry the request.
         /// </exception>
         /// <exception cref="Amazon.ComprehendMedical.Model.ServiceUnavailableException">
-        /// The Amazon Comprehend Medical service is temporarily unavailable. Please wait and
-        /// then retry your request.
+        /// The Comprehend Medical; service is temporarily unavailable. Please wait and then
+        /// retry your request.
         /// </exception>
         /// <exception cref="Amazon.ComprehendMedical.Model.TextSizeLimitExceededException">
         /// The size of the text you submitted exceeds the size limit. Reduce the size of the
@@ -418,8 +480,8 @@ namespace Amazon.ComprehendMedical
         /// and then retry the request.
         /// </exception>
         /// <exception cref="Amazon.ComprehendMedical.Model.ServiceUnavailableException">
-        /// The Amazon Comprehend Medical service is temporarily unavailable. Please wait and
-        /// then retry your request.
+        /// The Comprehend Medical; service is temporarily unavailable. Please wait and then
+        /// retry your request.
         /// </exception>
         /// <exception cref="Amazon.ComprehendMedical.Model.TextSizeLimitExceededException">
         /// The size of the text you submitted exceeds the size limit. Reduce the size of the
@@ -472,8 +534,8 @@ namespace Amazon.ComprehendMedical
         /// and then retry the request.
         /// </exception>
         /// <exception cref="Amazon.ComprehendMedical.Model.ServiceUnavailableException">
-        /// The Amazon Comprehend Medical service is temporarily unavailable. Please wait and
-        /// then retry your request.
+        /// The Comprehend Medical; service is temporarily unavailable. Please wait and then
+        /// retry your request.
         /// </exception>
         /// <exception cref="Amazon.ComprehendMedical.Model.TextSizeLimitExceededException">
         /// The size of the text you submitted exceeds the size limit. Reduce the size of the
@@ -512,8 +574,8 @@ namespace Amazon.ComprehendMedical
         /// and then retry the request.
         /// </exception>
         /// <exception cref="Amazon.ComprehendMedical.Model.ServiceUnavailableException">
-        /// The Amazon Comprehend Medical service is temporarily unavailable. Please wait and
-        /// then retry your request.
+        /// The Comprehend Medical; service is temporarily unavailable. Please wait and then
+        /// retry your request.
         /// </exception>
         /// <exception cref="Amazon.ComprehendMedical.Model.TextSizeLimitExceededException">
         /// The size of the text you submitted exceeds the size limit. Reduce the size of the
@@ -552,8 +614,8 @@ namespace Amazon.ComprehendMedical
         /// and then retry the request.
         /// </exception>
         /// <exception cref="Amazon.ComprehendMedical.Model.ServiceUnavailableException">
-        /// The Amazon Comprehend Medical service is temporarily unavailable. Please wait and
-        /// then retry your request.
+        /// The Comprehend Medical; service is temporarily unavailable. Please wait and then
+        /// retry your request.
         /// </exception>
         /// <exception cref="Amazon.ComprehendMedical.Model.TextSizeLimitExceededException">
         /// The size of the text you submitted exceeds the size limit. Reduce the size of the
@@ -593,8 +655,8 @@ namespace Amazon.ComprehendMedical
         /// and then retry the request.
         /// </exception>
         /// <exception cref="Amazon.ComprehendMedical.Model.ServiceUnavailableException">
-        /// The Amazon Comprehend Medical service is temporarily unavailable. Please wait and
-        /// then retry your request.
+        /// The Comprehend Medical; service is temporarily unavailable. Please wait and then
+        /// retry your request.
         /// </exception>
         /// <exception cref="Amazon.ComprehendMedical.Model.TextSizeLimitExceededException">
         /// The size of the text you submitted exceeds the size limit. Reduce the size of the
@@ -634,8 +696,8 @@ namespace Amazon.ComprehendMedical
         /// and then retry the request.
         /// </exception>
         /// <exception cref="Amazon.ComprehendMedical.Model.ServiceUnavailableException">
-        /// The Amazon Comprehend Medical service is temporarily unavailable. Please wait and
-        /// then retry your request.
+        /// The Comprehend Medical; service is temporarily unavailable. Please wait and then
+        /// retry your request.
         /// </exception>
         /// <exception cref="Amazon.ComprehendMedical.Model.TextSizeLimitExceededException">
         /// The size of the text you submitted exceeds the size limit. Reduce the size of the
@@ -675,8 +737,8 @@ namespace Amazon.ComprehendMedical
         /// and then retry the request.
         /// </exception>
         /// <exception cref="Amazon.ComprehendMedical.Model.ServiceUnavailableException">
-        /// The Amazon Comprehend Medical service is temporarily unavailable. Please wait and
-        /// then retry your request.
+        /// The Comprehend Medical; service is temporarily unavailable. Please wait and then
+        /// retry your request.
         /// </exception>
         /// <exception cref="Amazon.ComprehendMedical.Model.TextSizeLimitExceededException">
         /// The size of the text you submitted exceeds the size limit. Reduce the size of the
@@ -716,8 +778,8 @@ namespace Amazon.ComprehendMedical
         /// and then retry the request.
         /// </exception>
         /// <exception cref="Amazon.ComprehendMedical.Model.ServiceUnavailableException">
-        /// The Amazon Comprehend Medical service is temporarily unavailable. Please wait and
-        /// then retry your request.
+        /// The Comprehend Medical; service is temporarily unavailable. Please wait and then
+        /// retry your request.
         /// </exception>
         /// <exception cref="Amazon.ComprehendMedical.Model.TextSizeLimitExceededException">
         /// The size of the text you submitted exceeds the size limit. Reduce the size of the
@@ -730,6 +792,84 @@ namespace Amazon.ComprehendMedical
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/InferRxNorm">REST API Reference for InferRxNorm Operation</seealso>
         Task<InferRxNormResponse> InferRxNormAsync(InferRxNormRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  InferSNOMEDCT
+
+
+        /// <summary>
+        /// InferSNOMEDCT detects possible medical concepts as entities and links them to codes
+        /// from the Systematized Nomenclature of Medicine, Clinical Terms (SNOMED-CT) ontology
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the InferSNOMEDCT service method.</param>
+        /// 
+        /// <returns>The response from the InferSNOMEDCT service method, as returned by ComprehendMedical.</returns>
+        /// <exception cref="Amazon.ComprehendMedical.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.ComprehendMedical.Model.InvalidEncodingException">
+        /// The input text was not in valid UTF-8 character encoding. Check your text then retry
+        /// your request.
+        /// </exception>
+        /// <exception cref="Amazon.ComprehendMedical.Model.InvalidRequestException">
+        /// The request that you made is invalid. Check your request to determine why it's invalid
+        /// and then retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.ComprehendMedical.Model.ServiceUnavailableException">
+        /// The Comprehend Medical; service is temporarily unavailable. Please wait and then
+        /// retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.ComprehendMedical.Model.TextSizeLimitExceededException">
+        /// The size of the text you submitted exceeds the size limit. Reduce the size of the
+        /// text or use a smaller document and then retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.ComprehendMedical.Model.TooManyRequestsException">
+        /// You have made too many requests within a short period of time. Wait for a short time
+        /// and then try your request again. Contact customer support for more information about
+        /// a service limit increase.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/InferSNOMEDCT">REST API Reference for InferSNOMEDCT Operation</seealso>
+        InferSNOMEDCTResponse InferSNOMEDCT(InferSNOMEDCTRequest request);
+
+
+
+        /// <summary>
+        /// InferSNOMEDCT detects possible medical concepts as entities and links them to codes
+        /// from the Systematized Nomenclature of Medicine, Clinical Terms (SNOMED-CT) ontology
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the InferSNOMEDCT service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the InferSNOMEDCT service method, as returned by ComprehendMedical.</returns>
+        /// <exception cref="Amazon.ComprehendMedical.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.ComprehendMedical.Model.InvalidEncodingException">
+        /// The input text was not in valid UTF-8 character encoding. Check your text then retry
+        /// your request.
+        /// </exception>
+        /// <exception cref="Amazon.ComprehendMedical.Model.InvalidRequestException">
+        /// The request that you made is invalid. Check your request to determine why it's invalid
+        /// and then retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.ComprehendMedical.Model.ServiceUnavailableException">
+        /// The Comprehend Medical; service is temporarily unavailable. Please wait and then
+        /// retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.ComprehendMedical.Model.TextSizeLimitExceededException">
+        /// The size of the text you submitted exceeds the size limit. Reduce the size of the
+        /// text or use a smaller document and then retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.ComprehendMedical.Model.TooManyRequestsException">
+        /// You have made too many requests within a short period of time. Wait for a short time
+        /// and then try your request again. Contact customer support for more information about
+        /// a service limit increase.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/InferSNOMEDCT">REST API Reference for InferSNOMEDCT Operation</seealso>
+        Task<InferSNOMEDCTResponse> InferSNOMEDCTAsync(InferSNOMEDCTRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -970,6 +1110,66 @@ namespace Amazon.ComprehendMedical
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/ListRxNormInferenceJobs">REST API Reference for ListRxNormInferenceJobs Operation</seealso>
         Task<ListRxNormInferenceJobsResponse> ListRxNormInferenceJobsAsync(ListRxNormInferenceJobsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListSNOMEDCTInferenceJobs
+
+
+        /// <summary>
+        /// Gets a list of InferSNOMEDCT jobs a user has submitted.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSNOMEDCTInferenceJobs service method.</param>
+        /// 
+        /// <returns>The response from the ListSNOMEDCTInferenceJobs service method, as returned by ComprehendMedical.</returns>
+        /// <exception cref="Amazon.ComprehendMedical.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.ComprehendMedical.Model.InvalidRequestException">
+        /// The request that you made is invalid. Check your request to determine why it's invalid
+        /// and then retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.ComprehendMedical.Model.TooManyRequestsException">
+        /// You have made too many requests within a short period of time. Wait for a short time
+        /// and then try your request again. Contact customer support for more information about
+        /// a service limit increase.
+        /// </exception>
+        /// <exception cref="Amazon.ComprehendMedical.Model.ValidationException">
+        /// The filter that you specified for the operation is invalid. Check the filter values
+        /// that you entered and try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/ListSNOMEDCTInferenceJobs">REST API Reference for ListSNOMEDCTInferenceJobs Operation</seealso>
+        ListSNOMEDCTInferenceJobsResponse ListSNOMEDCTInferenceJobs(ListSNOMEDCTInferenceJobsRequest request);
+
+
+
+        /// <summary>
+        /// Gets a list of InferSNOMEDCT jobs a user has submitted.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSNOMEDCTInferenceJobs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListSNOMEDCTInferenceJobs service method, as returned by ComprehendMedical.</returns>
+        /// <exception cref="Amazon.ComprehendMedical.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.ComprehendMedical.Model.InvalidRequestException">
+        /// The request that you made is invalid. Check your request to determine why it's invalid
+        /// and then retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.ComprehendMedical.Model.TooManyRequestsException">
+        /// You have made too many requests within a short period of time. Wait for a short time
+        /// and then try your request again. Contact customer support for more information about
+        /// a service limit increase.
+        /// </exception>
+        /// <exception cref="Amazon.ComprehendMedical.Model.ValidationException">
+        /// The filter that you specified for the operation is invalid. Check the filter values
+        /// that you entered and try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/ListSNOMEDCTInferenceJobs">REST API Reference for ListSNOMEDCTInferenceJobs Operation</seealso>
+        Task<ListSNOMEDCTInferenceJobsResponse> ListSNOMEDCTInferenceJobsAsync(ListSNOMEDCTInferenceJobsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1227,6 +1427,70 @@ namespace Amazon.ComprehendMedical
 
         #endregion
         
+        #region  StartSNOMEDCTInferenceJob
+
+
+        /// <summary>
+        /// Starts an asynchronous job to detect medical concepts and link them to the SNOMED-CT
+        /// ontology. Use the DescribeSNOMEDCTInferenceJob operation to track the status of a
+        /// job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartSNOMEDCTInferenceJob service method.</param>
+        /// 
+        /// <returns>The response from the StartSNOMEDCTInferenceJob service method, as returned by ComprehendMedical.</returns>
+        /// <exception cref="Amazon.ComprehendMedical.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.ComprehendMedical.Model.InvalidRequestException">
+        /// The request that you made is invalid. Check your request to determine why it's invalid
+        /// and then retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.ComprehendMedical.Model.ResourceNotFoundException">
+        /// The resource identified by the specified Amazon Resource Name (ARN) was not found.
+        /// Check the ARN and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.ComprehendMedical.Model.TooManyRequestsException">
+        /// You have made too many requests within a short period of time. Wait for a short time
+        /// and then try your request again. Contact customer support for more information about
+        /// a service limit increase.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/StartSNOMEDCTInferenceJob">REST API Reference for StartSNOMEDCTInferenceJob Operation</seealso>
+        StartSNOMEDCTInferenceJobResponse StartSNOMEDCTInferenceJob(StartSNOMEDCTInferenceJobRequest request);
+
+
+
+        /// <summary>
+        /// Starts an asynchronous job to detect medical concepts and link them to the SNOMED-CT
+        /// ontology. Use the DescribeSNOMEDCTInferenceJob operation to track the status of a
+        /// job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartSNOMEDCTInferenceJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartSNOMEDCTInferenceJob service method, as returned by ComprehendMedical.</returns>
+        /// <exception cref="Amazon.ComprehendMedical.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.ComprehendMedical.Model.InvalidRequestException">
+        /// The request that you made is invalid. Check your request to determine why it's invalid
+        /// and then retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.ComprehendMedical.Model.ResourceNotFoundException">
+        /// The resource identified by the specified Amazon Resource Name (ARN) was not found.
+        /// Check the ARN and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.ComprehendMedical.Model.TooManyRequestsException">
+        /// You have made too many requests within a short period of time. Wait for a short time
+        /// and then try your request again. Contact customer support for more information about
+        /// a service limit increase.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/StartSNOMEDCTInferenceJob">REST API Reference for StartSNOMEDCTInferenceJob Operation</seealso>
+        Task<StartSNOMEDCTInferenceJobResponse> StartSNOMEDCTInferenceJobAsync(StartSNOMEDCTInferenceJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  StopEntitiesDetectionV2Job
 
 
@@ -1424,6 +1688,66 @@ namespace Amazon.ComprehendMedical
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/StopRxNormInferenceJob">REST API Reference for StopRxNormInferenceJob Operation</seealso>
         Task<StopRxNormInferenceJobResponse> StopRxNormInferenceJobAsync(StopRxNormInferenceJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  StopSNOMEDCTInferenceJob
+
+
+        /// <summary>
+        /// Stops an InferSNOMEDCT inference job in progress.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopSNOMEDCTInferenceJob service method.</param>
+        /// 
+        /// <returns>The response from the StopSNOMEDCTInferenceJob service method, as returned by ComprehendMedical.</returns>
+        /// <exception cref="Amazon.ComprehendMedical.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.ComprehendMedical.Model.InvalidRequestException">
+        /// The request that you made is invalid. Check your request to determine why it's invalid
+        /// and then retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.ComprehendMedical.Model.ResourceNotFoundException">
+        /// The resource identified by the specified Amazon Resource Name (ARN) was not found.
+        /// Check the ARN and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.ComprehendMedical.Model.TooManyRequestsException">
+        /// You have made too many requests within a short period of time. Wait for a short time
+        /// and then try your request again. Contact customer support for more information about
+        /// a service limit increase.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/StopSNOMEDCTInferenceJob">REST API Reference for StopSNOMEDCTInferenceJob Operation</seealso>
+        StopSNOMEDCTInferenceJobResponse StopSNOMEDCTInferenceJob(StopSNOMEDCTInferenceJobRequest request);
+
+
+
+        /// <summary>
+        /// Stops an InferSNOMEDCT inference job in progress.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopSNOMEDCTInferenceJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StopSNOMEDCTInferenceJob service method, as returned by ComprehendMedical.</returns>
+        /// <exception cref="Amazon.ComprehendMedical.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.ComprehendMedical.Model.InvalidRequestException">
+        /// The request that you made is invalid. Check your request to determine why it's invalid
+        /// and then retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.ComprehendMedical.Model.ResourceNotFoundException">
+        /// The resource identified by the specified Amazon Resource Name (ARN) was not found.
+        /// Check the ARN and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.ComprehendMedical.Model.TooManyRequestsException">
+        /// You have made too many requests within a short period of time. Wait for a short time
+        /// and then try your request again. Contact customer support for more information about
+        /// a service limit increase.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/StopSNOMEDCTInferenceJob">REST API Reference for StopSNOMEDCTInferenceJob Operation</seealso>
+        Task<StopSNOMEDCTInferenceJobResponse> StopSNOMEDCTInferenceJobAsync(StopSNOMEDCTInferenceJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

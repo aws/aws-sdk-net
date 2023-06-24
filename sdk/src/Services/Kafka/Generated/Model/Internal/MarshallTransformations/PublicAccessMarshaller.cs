@@ -34,7 +34,7 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// PublicAccess Marshaller
-    /// </summary>       
+    /// </summary>
     public class PublicAccessMarshaller : IRequestMarshaller<PublicAccess, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static PublicAccessMarshaller Instance = new PublicAccessMarshaller();
 
     }

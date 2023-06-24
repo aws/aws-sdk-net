@@ -39,7 +39,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property CostCategoryArn. 
         /// <para>
-        ///  The unique identifier for your Cost Category. 
+        /// The unique identifier for your Cost Category. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -58,8 +58,8 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property EffectiveEnd. 
         /// <para>
-        ///  The effective end date of the Cost Category as a result of deleting it. No costs
-        /// after this date will be categorized by the deleted Cost Category. 
+        /// The effective end date of the Cost Category as a result of deleting it. No costs after
+        /// this date is categorized by the deleted Cost Category. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=25)]

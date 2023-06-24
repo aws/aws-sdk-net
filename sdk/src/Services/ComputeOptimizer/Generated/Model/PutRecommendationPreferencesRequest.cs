@@ -42,6 +42,8 @@ namespace Amazon.ComputeOptimizer.Model
     public partial class PutRecommendationPreferencesRequest : AmazonComputeOptimizerRequest
     {
         private EnhancedInfrastructureMetrics _enhancedInfrastructureMetrics;
+        private ExternalMetricsPreference _externalMetricsPreference;
+        private InferredWorkloadTypesPreference _inferredWorkloadTypes;
         private ResourceType _resourceType;
         private Scope _scope;
 
@@ -53,9 +55,13 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  
         /// <para>
-        /// A status of <code>Active</code> confirms that the preference is applied in the latest
-        /// recommendation refresh, and a status of <code>Inactive</code> confirms that it's not
-        /// yet applied.
+        /// Specify the <code>Active</code> status to activate the preference, or specify <code>Inactive</code>
+        /// to deactivate the preference.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Enhanced
+        /// infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.
         /// </para>
         /// </summary>
         public EnhancedInfrastructureMetrics EnhancedInfrastructureMetrics
@@ -71,6 +77,71 @@ namespace Amazon.ComputeOptimizer.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ExternalMetricsPreference. 
+        /// <para>
+        /// The provider of the external metrics recommendation preference to create or update.
+        /// </para>
+        ///  
+        /// <para>
+        /// Specify a valid provider in the <code>source</code> field to activate the preference.
+        /// To delete this preference, see the <a>DeleteRecommendationPreferences</a> action.
+        /// </para>
+        ///  
+        /// <para>
+        /// This preference can only be set for the <code>Ec2Instance</code> resource type.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/external-metrics-ingestion.html">External
+        /// metrics ingestion</a> in the <i>Compute Optimizer User Guide</i>.
+        /// </para>
+        /// </summary>
+        public ExternalMetricsPreference ExternalMetricsPreference
+        {
+            get { return this._externalMetricsPreference; }
+            set { this._externalMetricsPreference = value; }
+        }
+
+        // Check to see if ExternalMetricsPreference property is set
+        internal bool IsSetExternalMetricsPreference()
+        {
+            return this._externalMetricsPreference != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InferredWorkloadTypes. 
+        /// <para>
+        /// The status of the inferred workload types recommendation preference to create or update.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The inferred workload type feature is active by default. To deactivate it, create
+        /// a recommendation preference.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Specify the <code>Inactive</code> status to deactivate the feature, or specify <code>Active</code>
+        /// to activate it.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/inferred-workload-types.html">Inferred
+        /// workload types</a> in the <i>Compute Optimizer User Guide</i>.
+        /// </para>
+        /// </summary>
+        public InferredWorkloadTypesPreference InferredWorkloadTypes
+        {
+            get { return this._inferredWorkloadTypes; }
+            set { this._inferredWorkloadTypes = value; }
+        }
+
+        // Check to see if InferredWorkloadTypes property is set
+        internal bool IsSetInferredWorkloadTypes()
+        {
+            return this._inferredWorkloadTypes != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
         /// The target resource type of the recommendation preference to create.
@@ -81,6 +152,11 @@ namespace Amazon.ComputeOptimizer.Model
         /// that are part of Auto Scaling groups. The <code>AutoScalingGroup</code> option encompasses
         /// only instances that are part of an Auto Scaling group.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The valid values for this parameter are <code>Ec2Instance</code> and <code>AutoScalingGroup</code>.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Required=true)]
         public ResourceType ResourceType
@@ -113,8 +189,10 @@ namespace Amazon.ComputeOptimizer.Model
         /// and account levels. You can create recommendation preferences for Auto Scaling groups
         /// only at the resource level by specifying a scope name of <code>ResourceArn</code>
         /// and a scope value of the Auto Scaling group Amazon Resource Name (ARN). This will
-        /// configure the preference for all instances that are part of the specified the Auto
-        /// Scaling group.
+        /// configure the preference for all instances that are part of the specified Auto Scaling
+        /// group. You also cannot create recommendation preferences at the resource level for
+        /// instances that are part of an Auto Scaling group. You can create recommendation preferences
+        /// at the resource level only for standalone instances.
         /// </para>
         ///  </note>
         /// </summary>

@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kendra.Model
 {
     /// <summary>
-    /// 
+    /// You don't have sufficient access to perform this action. Please ensure you have the
+    /// required permission policies and user accounts and try again.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

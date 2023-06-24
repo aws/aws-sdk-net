@@ -34,12 +34,13 @@ namespace Amazon.ChimeSDKMessaging.Model
     public partial class AppInstanceUserMembershipSummary
     {
         private DateTime? _readMarkerTimestamp;
+        private string _subChannelId;
         private ChannelMembershipType _type;
 
         /// <summary>
         /// Gets and sets the property ReadMarkerTimestamp. 
         /// <para>
-        /// The time at which a message was last read.
+        /// The time at which an <code>AppInstanceUser</code> last marked a channel as read.
         /// </para>
         /// </summary>
         public DateTime ReadMarkerTimestamp
@@ -52,6 +53,25 @@ namespace Amazon.ChimeSDKMessaging.Model
         internal bool IsSetReadMarkerTimestamp()
         {
             return this._readMarkerTimestamp.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SubChannelId. 
+        /// <para>
+        /// The ID of the SubChannel that the <code>AppInstanceUser</code> is a member of.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=128)]
+        public string SubChannelId
+        {
+            get { return this._subChannelId; }
+            set { this._subChannelId = value; }
+        }
+
+        // Check to see if SubChannelId property is set
+        internal bool IsSetSubChannelId()
+        {
+            return this._subChannelId != null;
         }
 
         /// <summary>

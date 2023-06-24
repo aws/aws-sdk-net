@@ -48,8 +48,43 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new <#=operation.Name#>RequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("<#=operation.Name#>", request, internalRequest, service_model);			
+            TestTools.RequestValidator.Validate("<#=operation.Name#>", request, internalRequest, service_model);
 
+<#
+if (operation.RequestHeaderMembers.Count(m => m.Shape.IsMap) > 0)
+{
+    foreach (var member in operation.RequestHeaderMembers)
+    {
+        if (member.Shape.IsMap)
+        {
+#>
+            // Validate request headers in <#=member.PropertyName#> (prefix '<#=member.MarshallLocationName#>')
+            foreach (var kvp<#=member.PropertyName#> in request.<#=member.PropertyName#>)
+            {
+<#
+            // Dictionary<string, string>
+            if (member.ModelShape.ValueShape.IsString)
+            {
+#>
+                Assert.AreEqual(kvp<#=member.PropertyName#>.Value, internalRequest.Headers[$"<#=member.MarshallLocationName#>{kvp<#=member.PropertyName#>.Key}"]);
+<#
+            }
+            // Dictionary<string, List<string>>
+            else if (member.ModelShape.ValueShape?.ListShape?.IsString == true)
+            {
+#>
+                var flattenedHeader = string.Join(",", kvp<#=member.PropertyName#>.Value);
+
+                Assert.AreEqual(flattenedHeader, internalRequest.Headers[$"<#=member.MarshallLocationName#>{kvp<#=member.PropertyName#>.Key}"]);
+<#
+            }
+#>
+            }
+<#
+        }
+    }
+}
+#>
 <#
             if(operation.ResponseStructure != null)
             {
@@ -59,7 +94,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
 				Headers = {
 <#
 
-if( operation.ResponseHeaderMembers.Count() > 0 )
+        if (operation.ResponseHeaderMembers.Count() > 0 )
 		{
 			foreach (var member in operation.ResponseHeaderMembers)
 			{
@@ -77,6 +112,13 @@ if( operation.ResponseHeaderMembers.Count() > 0 )
 					{"<#=member.MarshallLocationName#>","<#=member.MarshallLocationName#>_Value"},
 <#	
 					}
+				}
+                else if (member.Shape.IsMap)
+				{
+                    //Defer processing of the map until after the other types because
+                    //we cannot write the code to write out the dynamic map statically 
+                    //inline.
+                    continue;
 				}
 				else if (member.Shape.IsInt)
 				{
@@ -106,18 +148,55 @@ if( operation.ResponseHeaderMembers.Count() > 0 )
 					{"x-amz-crc32","0"}
 				}
 			};
+<#   
+        if (operation.ResponseHeaderMembers.Count(m => m.Shape.IsMap) > 0)
+        {
+#>
+
+            // populate a dummy response object so we can copy the headers
+            var dummyResponse = InstantiateClassGenerator.Execute<<#=operation.Name#>Response>();
+
 <#
-				if(this.Config.ServiceModel.Type == ServiceType.Rest_Xml)
-				{
+            foreach (var member in operation.ResponseHeaderMembers)
+            {
+                if (member.Shape.IsMap)
+                {
+#>
+            // Populate map of response headers for <#=member.PropertyName#> with prefix "<#=member.MarshallLocationName#>".
+            foreach (var kvp<#=member.PropertyName#> in dummyResponse.<#=member.PropertyName#>)
+            {
+<#
+            // Dictionary<string, string>
+            if (member.ModelShape.ValueShape.IsString)
+            {
+#>
+                webResponse.Headers.Add($"<#=member.MarshallLocationName#>{kvp<#=member.PropertyName#>.Key}", kvp<#=member.PropertyName#>.Value);
+<#
+            }
+            // Dictionary<string, List<string>>
+            else if (member.ModelShape.ValueShape?.ListShape?.IsString == true)
+            {
+#>
+                webResponse.Headers.Add($"<#=member.MarshallLocationName#>{kvp<#=member.PropertyName#>.Key}", string.Join(",", kvp<#=member.PropertyName#>.Value.ToArray()));
+<#
+            }
+#>
+            }
+<#
+                }
+            }
+        }
+
+                if(this.Config.ServiceModel.Type == ServiceType.Rest_Xml)
+                {
 #>
 			
             var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
             webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
-			ResponseUnmarshaller unmarshaller = <#=operation.Name#>ResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-				as <#=operation.Name#>Response;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+            ResponseUnmarshaller unmarshaller = <#=operation.Name#>ResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as <#=operation.Name#>Response;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
 <#
 				}
 				else
@@ -128,12 +207,45 @@ if( operation.ResponseHeaderMembers.Count() > 0 )
 			webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
 			ResponseUnmarshaller unmarshaller = <#=operation.Name#>ResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-				as <#=operation.Name#>Response;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);   			
-<#				
-				}
+            var response = unmarshaller.Unmarshall(context) as <#=operation.Name#>Response;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+<# 
+       if (operation.ResponseHeaderMembers.Count(m => m.Shape.IsMap) > 0)
+       {
+            foreach (var member in operation.ResponseHeaderMembers)
+            {
+                if (member.Shape.IsMap)
+                {
+#>
+            // Validate response headers for <#=member.PropertyName#> with prefix "<#=member.MarshallLocationName#>".
+            foreach (var kvp<#=member.PropertyName#> in dummyResponse.<#=member.PropertyName#>)
+            {
+<#
+            // Dictionary<string, string>
+            if (member.ModelShape.ValueShape.IsString)
+            {
+#>
+                Assert.AreEqual(response.ResponseHeaders[kvp<#=member.PropertyName#>.Key], kvp<#=member.PropertyName#>.Value);
+<#
             }
+            // Dictionary<string, List<string>>
+            else if (member.ModelShape.ValueShape?.ListShape?.IsString == true)
+            {
+#>
+                Assert.AreEqual(response.ResponseHeaders[kvp<#=member.PropertyName#>.Key].Count(),  kvp<#=member.PropertyName#>.Value.Count());
+
+                for (var i = 0; i < response.ResponseHeaders[kvp<#=member.PropertyName#>.Key].Count(); i++)
+                    Assert.AreEqual(response.ResponseHeaders[kvp<#=member.PropertyName#>.Key][i], kvp<#=member.PropertyName#>.Value[i]);
+<#
+            }
+#>
+            }
+<#				
+                }
+            }
+        }
+    }
+}
 #>
         }
 <#
@@ -180,6 +292,13 @@ if( operation.ResponseHeaderMembers.Count() > 0 )
                         }
 
                     }
+                    else if (member.Shape.IsMap)
+				    {
+                        //Defer processing of the map until after the other types because
+                        //we cannot write the code to write out the dynamic map statically 
+                        //inline.
+                        continue;
+				    }
                     else if (member.Shape.IsInt)
                     {
 #>
@@ -218,7 +337,45 @@ if( operation.ResponseHeaderMembers.Count() > 0 )
                 }
             };
 
+<#   
+        if (operation.ResponseHeaderMembers.Count(m => m.Shape.IsMap) > 0)
+		{
+#>
+            // populate a dummy response object so we can copy the headers
+            var dummyResponse = InstantiateClassGenerator.Execute<<#=operation.Name#>Response>();
 <#
+
+			foreach (var member in operation.ResponseHeaderMembers)
+			{
+                if (member.Shape.IsMap)
+                {
+#>
+            // Populate map of response headers for <#=member.PropertyName#> with prefix "<#=member.MarshallLocationName#>".
+            foreach (var kvp<#=member.PropertyName#> in dummyResponse.<#=member.PropertyName#>)
+            {
+<#
+            // Dictionary<string, string>
+            if (member.ModelShape.ValueShape.IsString)
+            {
+#>
+                webResponse.Headers.Add($"<#=member.MarshallLocationName#>{kvp<#=member.PropertyName#>.Key}", kvp<#=member.PropertyName#>.Value);
+<#
+            }
+            // Dictionary<string, List<string>>
+            else if (member.ModelShape.ValueShape?.ListShape?.IsString == true)
+            {
+#>
+                webResponse.Headers.Add($"<#=member.MarshallLocationName#>{kvp<#=member.PropertyName#>.Key}", string.Join(",", kvp<#=member.PropertyName#>.Value.ToArray()));
+<#
+            }
+#>
+            }
+
+<#
+                }
+            }
+        }
+
                 if(this.Config.ServiceModel.Type == ServiceType.Rest_Xml)
                 {
 #>

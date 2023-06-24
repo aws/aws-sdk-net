@@ -34,7 +34,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// TranscriptFilter Marshaller
-    /// </summary>       
+    /// </summary>
     public class TranscriptFilterMarshaller : IRequestMarshaller<TranscriptFilter, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static TranscriptFilterMarshaller Instance = new TranscriptFilterMarshaller();
 
     }

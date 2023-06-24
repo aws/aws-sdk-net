@@ -60,10 +60,14 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property SettingId. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the service setting to reset. For example, <code>arn:aws:ssm:us-east-1:111122223333:servicesetting/ssm/parameter-store/high-throughput-enabled</code>.
+        /// The Amazon Resource Name (ARN) of the service setting to update. For example, <code>arn:aws:ssm:us-east-1:111122223333:servicesetting/ssm/parameter-store/high-throughput-enabled</code>.
         /// The setting ID can be one of the following.
         /// </para>
         ///  <ul> <li> 
+        /// <para>
+        ///  <code>/ssm/managed-instance/default-ec2-instance-management-role</code> 
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         ///  <code>/ssm/automation/customer-script-log-destination</code> 
         /// </para>
@@ -77,17 +81,27 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>/ssm/managed-instance/activation-tier</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>/ssm/opsinsights/opscenter</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>/ssm/parameter-store/default-parameter-tier</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>/ssm/parameter-store/high-throughput-enabled</code> 
         /// </para>
-        ///  </li> <li> 
+        ///  </li> </ul> <note> 
         /// <para>
-        ///  <code>/ssm/managed-instance/activation-tier</code> 
+        /// Permissions to update the <code>/ssm/managed-instance/default-ec2-instance-management-role</code>
+        /// setting should only be provided to administrators. Implement least privilege access
+        /// when allowing individuals to configure or modify the Default Host Management Configuration.
         /// </para>
-        ///  </li> </ul>
+        ///  </note>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1000)]
         public string SettingId
@@ -110,18 +124,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>/ssm/parameter-store/default-parameter-tier</code>: <code>Standard</code>,
-        /// <code>Advanced</code>, <code>Intelligent-Tiering</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>/ssm/parameter-store/high-throughput-enabled</code>: <code>true</code> or <code>false</code>
-        /// 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>/ssm/managed-instance/activation-tier</code>: <code>true</code> or <code>false</code>
-        /// 
+        ///  <code>/ssm/managed-instance/default-ec2-instance-management-role: The name of an
+        /// IAM role</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -130,7 +134,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>/ssm/automation/customer-script-log-group-name</code>: the name of an Amazon
+        ///  <code>/ssm/automation/customer-script-log-group-name</code>: The name of an Amazon
         /// CloudWatch Logs log group
         /// </para>
         ///  </li> <li> 
@@ -141,6 +145,21 @@ namespace Amazon.SimpleSystemsManagement.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>/ssm/managed-instance/activation-tier</code>: <code>standard</code> or <code>advanced</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>/ssm/opsinsights/opscenter</code>: <code>Enabled</code> or <code>Disabled</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>/ssm/parameter-store/default-parameter-tier</code>: <code>Standard</code>,
+        /// <code>Advanced</code>, <code>Intelligent-Tiering</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>/ssm/parameter-store/high-throughput-enabled</code>: <code>true</code> or <code>false</code>
         /// 
         /// </para>
         ///  </li> </ul>

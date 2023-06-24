@@ -65,7 +65,8 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>USER</code> - On-demand backup created by you.
+        ///  <code>USER</code> - On-demand backup created by you. (The default setting if no other
+        /// backup types are specified.)
         /// </para>
         ///  </li> <li> 
         /// <para>

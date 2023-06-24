@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.NetworkFirewall.Model
 {
     /// <summary>
-    /// AWS doesn't currently have enough available capacity to fulfill your request. Try
-    /// your request later.
+    /// Amazon Web Services doesn't currently have enough available capacity to fulfill your
+    /// request. Try your request later.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

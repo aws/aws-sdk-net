@@ -56,7 +56,7 @@ namespace Amazon.LexRuntimeV2.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.LexRuntimeV2");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-08-07";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-08-07";
             request.HttpMethod = "POST";
 
             if (!publicRequest.IsSetBotAliasId())
@@ -73,7 +73,7 @@ namespace Amazon.LexRuntimeV2.Model.Internal.MarshallTransformations
             request.AddPathResource("{sessionId}", StringUtils.FromString(publicRequest.SessionId));
             request.ResourcePath = "/bots/{botId}/botAliases/{botAliasId}/botLocales/{localeId}/sessions/{sessionId}/utterance";
             request.ContentStream =  publicRequest.InputStream ?? new MemoryStream();
-            if(request.ContentStream.CanSeek)
+            if (request.ContentStream.CanSeek)
             {
                 request.Headers[Amazon.Util.HeaderKeys.ContentLengthHeader] =  
                     request.ContentStream.Length.ToString(CultureInfo.InvariantCulture);
@@ -82,19 +82,31 @@ namespace Amazon.LexRuntimeV2.Model.Internal.MarshallTransformations
             {
                 request.Headers[Amazon.Util.HeaderKeys.TransferEncodingHeader] = "chunked";
             }
-            request.Headers[Amazon.Util.HeaderKeys.ContentTypeHeader] = "binary/octet-stream";
+            request.Headers[Amazon.Util.HeaderKeys.ContentTypeHeader] = "binary/octet-stream"; 
+            if (request.ContentStream != null && request.ContentStream.Length == 0)
+            {
+                request.Headers.Remove(Amazon.Util.HeaderKeys.ContentTypeHeader);
+            }
         
-            if(publicRequest.IsSetRequestAttributes())
+            if (publicRequest.IsSetRequestAttributes()) 
+            {
                 request.Headers["x-amz-lex-request-attributes"] = publicRequest.RequestAttributes;
+            }
         
-            if(publicRequest.IsSetRequestContentType())
+            if (publicRequest.IsSetRequestContentType()) 
+            {
                 request.Headers["Content-Type"] = publicRequest.RequestContentType;
+            }
         
-            if(publicRequest.IsSetResponseContentType())
+            if (publicRequest.IsSetResponseContentType()) 
+            {
                 request.Headers["Response-Content-Type"] = publicRequest.ResponseContentType;
+            }
         
-            if(publicRequest.IsSetSessionStateValue())
+            if (publicRequest.IsSetSessionStateValue()) 
+            {
                 request.Headers["x-amz-lex-session-state"] = publicRequest.SessionStateValue;
+            }
 
             return request;
         }

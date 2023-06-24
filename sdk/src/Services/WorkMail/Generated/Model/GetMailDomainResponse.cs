@@ -114,8 +114,8 @@ namespace Amazon.WorkMail.Model
         /// <summary>
         /// Gets and sets the property Records. 
         /// <para>
-        /// A list of the DNS records that Amazon WorkMail recommends adding in your DNS provider
-        /// for the best user experience. The records configure your domain with DMARC, SPF, DKIM,
+        /// A list of the DNS records that WorkMail recommends adding in your DNS provider for
+        /// the best user experience. The records configure your domain with DMARC, SPF, DKIM,
         /// and direct incoming email traffic to SES. See admin guide for more details.
         /// </para>
         /// </summary>

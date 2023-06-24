@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GameLift.Model
 {
     /// <summary>
-    /// A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.
+    /// THe requested resources was not found. The resource was either not created yet or
+    /// deleted.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

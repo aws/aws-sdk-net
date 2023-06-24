@@ -44,7 +44,7 @@ namespace Amazon.KeyManagementService
     /// </para>
     ///  <note> 
     /// <para>
-    /// KMS is replacing the term <i>customer master key (CMK)</i> with <i>KMS key</i> and
+    /// KMS has replaced the term <i>customer master key (CMK)</i> with <i>KMS key</i> and
     /// <i>KMS key</i>. The concept has not changed. To prevent breaking changes, KMS is keeping
     /// some variations of this term.
     /// </para>
@@ -65,10 +65,19 @@ namespace Amazon.KeyManagementService
     /// </para>
     ///  
     /// <para>
-    /// Clients must support TLS (Transport Layer Security) 1.0. We recommend TLS 1.2. Clients
-    /// must also support cipher suites with Perfect Forward Secrecy (PFS) such as Ephemeral
-    /// Diffie-Hellman (DHE) or Elliptic Curve Ephemeral Diffie-Hellman (ECDHE). Most modern
-    /// systems such as Java 7 and later support these modes.
+    /// If you need to use FIPS 140-2 validated cryptographic modules when communicating with
+    /// Amazon Web Services, use the FIPS endpoint in your preferred Amazon Web Services Region.
+    /// For more information about the available FIPS endpoints, see <a href="https://docs.aws.amazon.com/general/latest/gr/kms.html#kms_region">Service
+    /// endpoints</a> in the Key Management Service topic of the <i>Amazon Web Services General
+    /// Reference</i>.
+    /// </para>
+    ///  
+    /// <para>
+    /// All KMS API calls must be signed and be transmitted using Transport Layer Security
+    /// (TLS). KMS recommends you always use the latest supported TLS version. Clients must
+    /// also support cipher suites with Perfect Forward Secrecy (PFS) such as Ephemeral Diffie-Hellman
+    /// (DHE) or Elliptic Curve Ephemeral Diffie-Hellman (ECDHE). Most modern systems such
+    /// as Java 7 and later support these modes.
     /// </para>
     ///  
     /// <para>
@@ -76,16 +85,15 @@ namespace Amazon.KeyManagementService
     /// </para>
     ///  
     /// <para>
-    /// Requests must be signed by using an access key ID and a secret access key. We strongly
-    /// recommend that you <i>do not</i> use your Amazon Web Services account (root) access
-    /// key ID and secret key for everyday work with KMS. Instead, use the access key ID and
-    /// secret access key for an IAM user. You can also use the Amazon Web Services Security
-    /// Token Service to generate temporary security credentials that you can use to sign
-    /// requests.
+    /// Requests must be signed using an access key ID and a secret access key. We strongly
+    /// recommend that you do not use your Amazon Web Services account root access key ID
+    /// and secret access key for everyday work. You can use the access key ID and secret
+    /// access key for an IAM user or you can use the Security Token Service (STS) to generate
+    /// temporary security credentials and use those to sign requests. 
     /// </para>
     ///  
     /// <para>
-    /// All KMS operations require <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
+    /// All KMS requests must be signed with <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
     /// Version 4</a>.
     /// </para>
     ///  
@@ -349,6 +357,15 @@ namespace Amazon.KeyManagementService
         }
 
         /// <summary>
+        /// Customize the pipeline
+        /// </summary>
+        /// <param name="pipeline"></param>
+        protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
+        {
+            pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonKeyManagementServiceEndpointResolver());
+        }
+        /// <summary>
         /// Capture metadata for the service.
         /// </summary>
         protected override IServiceMetadata ServiceMetadata
@@ -391,7 +408,7 @@ namespace Amazon.KeyManagementService
         /// <para>
         /// The KMS key that you use for this operation must be in a compatible key state. For
         /// details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-        /// state: Effect on your KMS key</a> in the <i>Key Management Service Developer Guide</i>.
+        /// states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -412,7 +429,7 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>The response from the CancelKeyDeletion service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request. The request can be retried.
+        /// The system timed out while trying to fulfill the request. You can retry the request.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
         /// The request was rejected because a specified ARN, or an ARN in a key policy, is not
@@ -428,10 +445,25 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-        /// state: Effect on your KMS key</a> in the <i> <i>Key Management Service Developer Guide</i>
-        /// </i>.
+        /// This exceptions means one of the following:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The key state of the KMS key is not compatible with the operation. 
+        /// </para>
+        ///  
+        /// <para>
+        /// To find the key state, use the <a>DescribeKey</a> operation. For more information
+        /// about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
+        /// states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For cryptographic operations on KMS keys in custom key stores, this exception represents
+        /// a general failure with many possible causes. To identify the cause, see the error
+        /// message that accompanies the exception.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
@@ -460,7 +492,7 @@ namespace Amazon.KeyManagementService
         /// <para>
         /// The KMS key that you use for this operation must be in a compatible key state. For
         /// details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-        /// state: Effect on your KMS key</a> in the <i>Key Management Service Developer Guide</i>.
+        /// states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -481,7 +513,7 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>The response from the CancelKeyDeletion service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request. The request can be retried.
+        /// The system timed out while trying to fulfill the request. You can retry the request.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
         /// The request was rejected because a specified ARN, or an ARN in a key policy, is not
@@ -497,10 +529,25 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-        /// state: Effect on your KMS key</a> in the <i> <i>Key Management Service Developer Guide</i>
-        /// </i>.
+        /// This exceptions means one of the following:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The key state of the KMS key is not compatible with the operation. 
+        /// </para>
+        ///  
+        /// <para>
+        /// To find the key state, use the <a>DescribeKey</a> operation. For more information
+        /// about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
+        /// states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For cryptographic operations on KMS keys in custom key stores, this exception represents
+        /// a general failure with many possible causes. To identify the cause, see the error
+        /// message that accompanies the exception.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
@@ -555,7 +602,10 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Connects or reconnects a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
-        /// key store</a> to its associated CloudHSM cluster.
+        /// key store</a> to its backing key store. For an CloudHSM key store, <code>ConnectCustomKeyStore</code>
+        /// connects the key store to its associated CloudHSM cluster. For an external key store,
+        /// <code>ConnectCustomKeyStore</code> connects the key store to the external key store
+        /// proxy that communicates with your external key manager.
         /// 
         ///  
         /// <para>
@@ -565,27 +615,18 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        /// To connect a custom key store, its associated CloudHSM cluster must have at least
-        /// one active HSM. To get the number of active HSMs in a cluster, use the <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeClusters.html">DescribeClusters</a>
-        /// operation. To add HSMs to the cluster, use the <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_CreateHsm.html">CreateHsm</a>
-        /// operation. Also, the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-store-concepts.html#concept-kmsuser">
-        /// <code>kmsuser</code> crypto user</a> (CU) must not be logged into the cluster. This
-        /// prevents KMS from using this account to log in.
+        /// The connection process for a custom key store can take an extended amount of time
+        /// to complete. This operation starts the connection process, but it does not wait for
+        /// it to complete. When it succeeds, this operation quickly returns an HTTP 200 response
+        /// and a JSON object with no properties. However, this response does not indicate that
+        /// the custom key store is connected. To get the connection state of the custom key store,
+        /// use the <a>DescribeCustomKeyStores</a> operation.
         /// </para>
         ///  
         /// <para>
-        /// The connection process can take an extended amount of time to complete; up to 20 minutes.
-        /// This operation starts the connection process, but it does not wait for it to complete.
-        /// When it succeeds, this operation quickly returns an HTTP 200 response and a JSON object
-        /// with no properties. However, this response does not indicate that the custom key store
-        /// is connected. To get the connection state of the custom key store, use the <a>DescribeCustomKeyStores</a>
-        /// operation.
-        /// </para>
-        ///  
-        /// <para>
-        /// During the connection process, KMS finds the CloudHSM cluster that is associated with
-        /// the custom key store, creates the connection infrastructure, connects to the cluster,
-        /// logs into the CloudHSM client as the <code>kmsuser</code> CU, and rotates its password.
+        ///  This operation is part of the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
+        /// key stores</a> feature in KMS, which combines the convenience and extensive integration
+        /// of KMS with the isolation and control of a key store that you own and manage.
         /// </para>
         ///  
         /// <para>
@@ -601,8 +642,59 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        /// If you are having trouble connecting or disconnecting a custom key store, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html">Troubleshooting
-        /// a Custom Key Store</a> in the <i>Key Management Service Developer Guide</i>.
+        ///  <b>CloudHSM key store</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// During the connection process for an CloudHSM key store, KMS finds the CloudHSM cluster
+        /// that is associated with the custom key store, creates the connection infrastructure,
+        /// connects to the cluster, logs into the CloudHSM client as the <code>kmsuser</code>
+        /// CU, and rotates its password.
+        /// </para>
+        ///  
+        /// <para>
+        /// To connect an CloudHSM key store, its associated CloudHSM cluster must have at least
+        /// one active HSM. To get the number of active HSMs in a cluster, use the <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeClusters.html">DescribeClusters</a>
+        /// operation. To add HSMs to the cluster, use the <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_CreateHsm.html">CreateHsm</a>
+        /// operation. Also, the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-store-concepts.html#concept-kmsuser">
+        /// <code>kmsuser</code> crypto user</a> (CU) must not be logged into the cluster. This
+        /// prevents KMS from using this account to log in.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you are having trouble connecting or disconnecting a CloudHSM key store, see <a
+        /// href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html">Troubleshooting
+        /// an CloudHSM key store</a> in the <i>Key Management Service Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>External key store</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// When you connect an external key store that uses public endpoint connectivity, KMS
+        /// tests its ability to communicate with your external key manager by sending a request
+        /// via the external key store proxy.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you connect to an external key store that uses VPC endpoint service connectivity,
+        /// KMS establishes the networking elements that it needs to communicate with your external
+        /// key manager via the external key store proxy. This includes creating an interface
+        /// endpoint to the VPC endpoint service and a private hosted zone for traffic between
+        /// KMS and the VPC endpoint service.
+        /// </para>
+        ///  
+        /// <para>
+        /// To connect an external key store, KMS must be able to connect to the external key
+        /// store proxy, the external key store proxy must be able to communicate with your external
+        /// key manager, and the external key manager must be available for cryptographic operations.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you are having trouble connecting or disconnecting an external key store, see <a
+        /// href="https://docs.aws.amazon.com/kms/latest/developerguide/xks-troubleshooting.html">Troubleshooting
+        /// an external key store</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -645,12 +737,12 @@ namespace Amazon.KeyManagementService
         /// <returns>The response from the ConnectCustomKeyStore service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.CloudHsmClusterInvalidConfigurationException">
         /// The request was rejected because the associated CloudHSM cluster did not meet the
-        /// configuration requirements for a custom key store.
+        /// configuration requirements for an CloudHSM key store.
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// The cluster must be configured with private subnets in at least two different Availability
-        /// Zones in the Region.
+        /// The CloudHSM cluster must be configured with private subnets in at least two different
+        /// Availability Zones in the Region.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -658,15 +750,15 @@ namespace Amazon.KeyManagementService
         /// group for the cluster</a> (cloudhsm-cluster-<i>&lt;cluster-id&gt;</i>-sg) must include
         /// inbound rules and outbound rules that allow TCP traffic on ports 2223-2225. The <b>Source</b>
         /// in the inbound rules and the <b>Destination</b> in the outbound rules must match the
-        /// security group ID. These rules are set by default when you create the cluster. Do
-        /// not delete or change them. To get information about a particular security group, use
-        /// the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSecurityGroups.html">DescribeSecurityGroups</a>
+        /// security group ID. These rules are set by default when you create the CloudHSM cluster.
+        /// Do not delete or change them. To get information about a particular security group,
+        /// use the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSecurityGroups.html">DescribeSecurityGroups</a>
         /// operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The cluster must contain at least as many HSMs as the operation requires. To add HSMs,
-        /// use the CloudHSM <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_CreateHsm.html">CreateHsm</a>
+        /// The CloudHSM cluster must contain at least as many HSMs as the operation requires.
+        /// To add HSMs, use the CloudHSM <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_CreateHsm.html">CreateHsm</a>
         /// operation.
         /// </para>
         ///  
@@ -679,7 +771,7 @@ namespace Amazon.KeyManagementService
         ///  </li> </ul> 
         /// <para>
         /// For information about the requirements for an CloudHSM cluster that is associated
-        /// with a custom key store, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keystore.html#before-keystore">Assemble
+        /// with an CloudHSM key store, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keystore.html#before-keystore">Assemble
         /// the Prerequisites</a> in the <i>Key Management Service Developer Guide</i>. For information
         /// about creating a private subnet for an CloudHSM cluster, see <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/create-subnets.html">Create
         /// a Private Subnet</a> in the <i>CloudHSM User Guide</i>. For information about cluster
@@ -688,9 +780,9 @@ namespace Amazon.KeyManagementService
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.CloudHsmClusterNotActiveException">
-        /// The request was rejected because the CloudHSM cluster that is associated with the
-        /// custom key store is not active. Initialize and activate the cluster and try the command
-        /// again. For detailed instructions, see <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/getting-started.html">Getting
+        /// The request was rejected because the CloudHSM cluster associated with the CloudHSM
+        /// key store is not active. Initialize and activate the cluster and try the command again.
+        /// For detailed instructions, see <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/getting-started.html">Getting
         /// Started</a> in the <i>CloudHSM User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.CustomKeyStoreInvalidStateException">
@@ -704,9 +796,23 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// You requested the <a>CreateKey</a> or <a>GenerateRandom</a> operation in a custom
-        /// key store that is not connected. These operations are valid only when the custom key
-        /// store <code>ConnectionState</code> is <code>CONNECTED</code>.
+        /// You requested the <a>ConnectCustomKeyStore</a> operation on a custom key store with
+        /// a <code>ConnectionState</code> of <code>DISCONNECTING</code> or <code>FAILED</code>.
+        /// This operation is valid for all other <code>ConnectionState</code> values. To reconnect
+        /// a custom key store in a <code>FAILED</code> state, disconnect it (<a>DisconnectCustomKeyStore</a>),
+        /// then connect it (<code>ConnectCustomKeyStore</code>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You requested the <a>CreateKey</a> operation in a custom key store that is not connected.
+        /// This operations is valid only when the custom key store <code>ConnectionState</code>
+        /// is <code>CONNECTED</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You requested the <a>DisconnectCustomKeyStore</a> operation on a custom key store
+        /// with a <code>ConnectionState</code> of <code>DISCONNECTING</code> or <code>DISCONNECTED</code>.
+        /// This operation is valid for all other <code>ConnectionState</code> values.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -716,9 +822,9 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You requested the <a>ConnectCustomKeyStore</a> operation on a custom key store with
-        /// a <code>ConnectionState</code> of <code>DISCONNECTING</code> or <code>FAILED</code>.
-        /// This operation is valid for all other <code>ConnectionState</code> values.
+        /// You requested the <a>GenerateRandom</a> operation in an CloudHSM key store that is
+        /// not connected. This operation is valid only when the CloudHSM key store <code>ConnectionState</code>
+        /// is <code>CONNECTED</code>. 
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -784,8 +890,8 @@ namespace Amazon.KeyManagementService
         ///  <note> 
         /// <para>
         /// Adding, deleting, or updating an alias can allow or deny permission to the KMS key.
-        /// For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">Using
-        /// ABAC in KMS</a> in the <i>Key Management Service Developer Guide</i>.
+        /// For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC
+        /// for KMS</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         ///  </note> 
         /// <para>
@@ -819,7 +925,7 @@ namespace Amazon.KeyManagementService
         /// <para>
         /// The KMS key that you use for this operation must be in a compatible key state. For
         /// details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-        /// state: Effect on your KMS key</a> in the <i>Key Management Service Developer Guide</i>.
+        /// states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -863,7 +969,7 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="aliasName">Specifies the alias name. This value must begin with <code>alias/</code> followed by a name, such as <code>alias/ExampleAlias</code>.  The <code>AliasName</code> value must be string of 1-256 characters. It can contain only alphanumeric characters, forward slashes (/), underscores (_), and dashes (-). The alias name cannot begin with <code>alias/aws/</code>. The <code>alias/aws/</code> prefix is reserved for <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon Web Services managed keys</a>.</param>
+        /// <param name="aliasName">Specifies the alias name. This value must begin with <code>alias/</code> followed by a name, such as <code>alias/ExampleAlias</code>.  <important> Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output. </important> The <code>AliasName</code> value must be string of 1-256 characters. It can contain only alphanumeric characters, forward slashes (/), underscores (_), and dashes (-). The alias name cannot begin with <code>alias/aws/</code>. The <code>alias/aws/</code> prefix is reserved for <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon Web Services managed keys</a>.</param>
         /// <param name="targetKeyId">Associates the alias with the specified <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer managed key</a>. The KMS key must be in the same Amazon Web Services Region.  A valid key ID is required. If you supply a null or empty string value, this operation returns an error. For help finding the key ID and ARN, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/viewing-keys.html#find-cmk-id-arn">Finding the Key ID and ARN</a> in the <i> <i>Key Management Service Developer Guide</i> </i>. Specify the key ID or key ARN of the KMS key. For example: <ul> <li> Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> </ul> To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</param>
         /// 
         /// <returns>The response from the CreateAlias service method, as returned by KeyManagementService.</returns>
@@ -871,7 +977,7 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because it attempted to create a resource that already exists.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request. The request can be retried.
+        /// The system timed out while trying to fulfill the request. You can retry the request.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidAliasNameException">
         /// The request was rejected because the specified alias name is not valid.
@@ -886,10 +992,25 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-        /// state: Effect on your KMS key</a> in the <i> <i>Key Management Service Developer Guide</i>
-        /// </i>.
+        /// This exceptions means one of the following:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The key state of the KMS key is not compatible with the operation. 
+        /// </para>
+        ///  
+        /// <para>
+        /// To find the key state, use the <a>DescribeKey</a> operation. For more information
+        /// about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
+        /// states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For cryptographic operations on KMS keys in custom key stores, this exception represents
+        /// a general failure with many possible causes. To identify the cause, see the error
+        /// message that accompanies the exception.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.LimitExceededException">
         /// The request was rejected because a quota was exceeded. For more information, see <a
@@ -915,8 +1036,8 @@ namespace Amazon.KeyManagementService
         ///  <note> 
         /// <para>
         /// Adding, deleting, or updating an alias can allow or deny permission to the KMS key.
-        /// For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">Using
-        /// ABAC in KMS</a> in the <i>Key Management Service Developer Guide</i>.
+        /// For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC
+        /// for KMS</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         ///  </note> 
         /// <para>
@@ -950,7 +1071,7 @@ namespace Amazon.KeyManagementService
         /// <para>
         /// The KMS key that you use for this operation must be in a compatible key state. For
         /// details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-        /// state: Effect on your KMS key</a> in the <i>Key Management Service Developer Guide</i>.
+        /// states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -1001,7 +1122,7 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because it attempted to create a resource that already exists.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request. The request can be retried.
+        /// The system timed out while trying to fulfill the request. You can retry the request.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidAliasNameException">
         /// The request was rejected because the specified alias name is not valid.
@@ -1016,10 +1137,25 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-        /// state: Effect on your KMS key</a> in the <i> <i>Key Management Service Developer Guide</i>
-        /// </i>.
+        /// This exceptions means one of the following:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The key state of the KMS key is not compatible with the operation. 
+        /// </para>
+        ///  
+        /// <para>
+        /// To find the key state, use the <a>DescribeKey</a> operation. For more information
+        /// about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
+        /// states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For cryptographic operations on KMS keys in custom key stores, this exception represents
+        /// a general failure with many possible causes. To identify the cause, see the error
+        /// message that accompanies the exception.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.LimitExceededException">
         /// The request was rejected because a quota was exceeded. For more information, see <a
@@ -1079,34 +1215,83 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Creates a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
-        /// key store</a> that is associated with an <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/clusters.html">CloudHSM
-        /// cluster</a> that you own and manage.
+        /// key store</a> backed by a key store that you own and manage. When you use a KMS key
+        /// in a custom key store for a cryptographic operation, the cryptographic operation is
+        /// actually performed in your key store using your keys. KMS supports <a href="https://docs.aws.amazon.com/kms/latest/developerguide/keystore-cloudhsm.html">CloudHSM
+        /// key stores</a> backed by an <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/clusters.html">CloudHSM
+        /// cluster</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/keystore-external.html">external
+        /// key stores</a> backed by an external key store proxy and external key manager outside
+        /// of Amazon Web Services.
         /// 
         ///  
         /// <para>
-        /// This operation is part of the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">Custom
-        /// Key Store feature</a> feature in KMS, which combines the convenience and extensive
-        /// integration of KMS with the isolation and control of a single-tenant key store.
+        ///  This operation is part of the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
+        /// key stores</a> feature in KMS, which combines the convenience and extensive integration
+        /// of KMS with the isolation and control of a key store that you own and manage.
         /// </para>
         ///  
         /// <para>
-        /// Before you create the custom key store, you must assemble the required elements, including
-        /// an CloudHSM cluster that fulfills the requirements for a custom key store. For details
-        /// about the required elements, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keystore.html#before-keystore">Assemble
-        /// the Prerequisites</a> in the <i>Key Management Service Developer Guide</i>.
+        /// Before you create the custom key store, the required elements must be in place and
+        /// operational. We recommend that you use the test tools that KMS provides to verify
+        /// the configuration your external key store proxy. For details about the required elements
+        /// and verification tests, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keystore.html#before-keystore">Assemble
+        /// the prerequisites (for CloudHSM key stores)</a> or <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-xks-keystore.html#xks-requirements">Assemble
+        /// the prerequisites (for external key stores)</a> in the <i>Key Management Service Developer
+        /// Guide</i>.
         /// </para>
         ///  
+        /// <para>
+        /// To create a custom key store, use the following parameters.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// To create an CloudHSM key store, specify the <code>CustomKeyStoreName</code>, <code>CloudHsmClusterId</code>,
+        /// <code>KeyStorePassword</code>, and <code>TrustAnchorCertificate</code>. The <code>CustomKeyStoreType</code>
+        /// parameter is optional for CloudHSM key stores. If you include it, set it to the default
+        /// value, <code>AWS_CLOUDHSM</code>. For help with failures, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html">Troubleshooting
+        /// an CloudHSM key store</a> in the <i>Key Management Service Developer Guide</i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To create an external key store, specify the <code>CustomKeyStoreName</code> and a
+        /// <code>CustomKeyStoreType</code> of <code>EXTERNAL_KEY_STORE</code>. Also, specify
+        /// values for <code>XksProxyConnectivity</code>, <code>XksProxyAuthenticationCredential</code>,
+        /// <code>XksProxyUriEndpoint</code>, and <code>XksProxyUriPath</code>. If your <code>XksProxyConnectivity</code>
+        /// value is <code>VPC_ENDPOINT_SERVICE</code>, specify the <code>XksProxyVpcEndpointServiceName</code>
+        /// parameter. For help with failures, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/xks-troubleshooting.html">Troubleshooting
+        /// an external key store</a> in the <i>Key Management Service Developer Guide</i>.
+        /// </para>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// For external key stores:
+        /// </para>
+        ///  
+        /// <para>
+        /// Some external key managers provide a simpler method for creating an external key store.
+        /// For details, see your external key manager documentation.
+        /// </para>
+        ///  
+        /// <para>
+        /// When creating an external key store in the KMS console, you can upload a JSON-based
+        /// proxy configuration file with the desired values. You cannot use a proxy configuration
+        /// with the <code>CreateCustomKeyStore</code> operation. However, you can use the values
+        /// in the file to help you determine the correct values for the <code>CreateCustomKeyStore</code>
+        /// parameters.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// When the operation completes successfully, it returns the ID of the new custom key
         /// store. Before you can use your new custom key store, you need to use the <a>ConnectCustomKeyStore</a>
-        /// operation to connect the new key store to its CloudHSM cluster. Even if you are not
-        /// going to use your custom key store immediately, you might want to connect it to verify
-        /// that all settings are correct and then disconnect it until you are ready to use it.
+        /// operation to connect a new CloudHSM key store to its CloudHSM cluster, or to connect
+        /// a new external key store to the external key store proxy for your external key manager.
+        /// Even if you are not going to use your custom key store immediately, you might want
+        /// to connect it to verify that all settings are correct and then disconnect it until
+        /// you are ready to use it.
         /// </para>
         ///  
         /// <para>
         /// For help with failures, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html">Troubleshooting
-        /// a Custom Key Store</a> in the <i>Key Management Service Developer Guide</i>.
+        /// a custom key store</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -1149,25 +1334,25 @@ namespace Amazon.KeyManagementService
         /// <returns>The response from the CreateCustomKeyStore service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.CloudHsmClusterInUseException">
         /// The request was rejected because the specified CloudHSM cluster is already associated
-        /// with a custom key store or it shares a backup history with a cluster that is associated
-        /// with a custom key store. Each custom key store must be associated with a different
-        /// CloudHSM cluster.
+        /// with an CloudHSM key store in the account, or it shares a backup history with an CloudHSM
+        /// key store in the account. Each CloudHSM key store in the account must be associated
+        /// with a different CloudHSM cluster.
         /// 
         ///  
         /// <para>
-        /// Clusters that share a backup history have the same cluster certificate. To view the
-        /// cluster certificate of a cluster, use the <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeClusters.html">DescribeClusters</a>
+        /// CloudHSM clusters that share a backup history have the same cluster certificate. To
+        /// view the cluster certificate of an CloudHSM cluster, use the <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeClusters.html">DescribeClusters</a>
         /// operation.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.CloudHsmClusterInvalidConfigurationException">
         /// The request was rejected because the associated CloudHSM cluster did not meet the
-        /// configuration requirements for a custom key store.
+        /// configuration requirements for an CloudHSM key store.
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// The cluster must be configured with private subnets in at least two different Availability
-        /// Zones in the Region.
+        /// The CloudHSM cluster must be configured with private subnets in at least two different
+        /// Availability Zones in the Region.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1175,15 +1360,15 @@ namespace Amazon.KeyManagementService
         /// group for the cluster</a> (cloudhsm-cluster-<i>&lt;cluster-id&gt;</i>-sg) must include
         /// inbound rules and outbound rules that allow TCP traffic on ports 2223-2225. The <b>Source</b>
         /// in the inbound rules and the <b>Destination</b> in the outbound rules must match the
-        /// security group ID. These rules are set by default when you create the cluster. Do
-        /// not delete or change them. To get information about a particular security group, use
-        /// the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSecurityGroups.html">DescribeSecurityGroups</a>
+        /// security group ID. These rules are set by default when you create the CloudHSM cluster.
+        /// Do not delete or change them. To get information about a particular security group,
+        /// use the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSecurityGroups.html">DescribeSecurityGroups</a>
         /// operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The cluster must contain at least as many HSMs as the operation requires. To add HSMs,
-        /// use the CloudHSM <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_CreateHsm.html">CreateHsm</a>
+        /// The CloudHSM cluster must contain at least as many HSMs as the operation requires.
+        /// To add HSMs, use the CloudHSM <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_CreateHsm.html">CreateHsm</a>
         /// operation.
         /// </para>
         ///  
@@ -1196,7 +1381,7 @@ namespace Amazon.KeyManagementService
         ///  </li> </ul> 
         /// <para>
         /// For information about the requirements for an CloudHSM cluster that is associated
-        /// with a custom key store, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keystore.html#before-keystore">Assemble
+        /// with an CloudHSM key store, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keystore.html#before-keystore">Assemble
         /// the Prerequisites</a> in the <i>Key Management Service Developer Guide</i>. For information
         /// about creating a private subnet for an CloudHSM cluster, see <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/create-subnets.html">Create
         /// a Private Subnet</a> in the <i>CloudHSM User Guide</i>. For information about cluster
@@ -1205,9 +1390,9 @@ namespace Amazon.KeyManagementService
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.CloudHsmClusterNotActiveException">
-        /// The request was rejected because the CloudHSM cluster that is associated with the
-        /// custom key store is not active. Initialize and activate the cluster and try the command
-        /// again. For detailed instructions, see <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/getting-started.html">Getting
+        /// The request was rejected because the CloudHSM cluster associated with the CloudHSM
+        /// key store is not active. Initialize and activate the cluster and try the command again.
+        /// For detailed instructions, see <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/getting-started.html">Getting
         /// Started</a> in the <i>CloudHSM User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.CloudHsmClusterNotFoundException">
@@ -1220,19 +1405,83 @@ namespace Amazon.KeyManagementService
         /// that is unique in the account.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.IncorrectTrustAnchorException">
-        /// The request was rejected because the trust anchor certificate in the request is not
-        /// the trust anchor certificate for the specified CloudHSM cluster.
+        /// The request was rejected because the trust anchor certificate in the request to create
+        /// an CloudHSM key store is not the trust anchor certificate for the specified CloudHSM
+        /// cluster.
         /// 
         ///  
         /// <para>
         /// When you <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/initialize-cluster.html#sign-csr">initialize
-        /// the cluster</a>, you create the trust anchor certificate and save it in the <code>customerCA.crt</code>
-        /// file.
+        /// the CloudHSM cluster</a>, you create the trust anchor certificate and save it in the
+        /// <code>customerCA.crt</code> file.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
         /// The request was rejected because an internal exception occurred. The request can be
         /// retried.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.LimitExceededException">
+        /// The request was rejected because a quota was exceeded. For more information, see <a
+        /// href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Quotas</a>
+        /// in the <i>Key Management Service Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.XksProxyIncorrectAuthenticationCredentialException">
+        /// The request was rejected because the proxy credentials failed to authenticate to the
+        /// specified external key store proxy. The specified external key store proxy rejected
+        /// a status request from KMS due to invalid credentials. This can indicate an error in
+        /// the credentials or in the identification of the external key store proxy.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.XksProxyInvalidConfigurationException">
+        /// The request was rejected because the Amazon VPC endpoint service configuration does
+        /// not fulfill the requirements for an external key store proxy. For details, see the
+        /// exception message.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.XksProxyInvalidResponseException">
+        /// KMS cannot interpret the response it received from the external key store proxy. The
+        /// problem might be a poorly constructed response, but it could also be a transient network
+        /// issue. If you see this error repeatedly, report it to the proxy vendor.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.XksProxyUriEndpointInUseException">
+        /// The request was rejected because the concatenation of the <code>XksProxyUriEndpoint</code>
+        /// is already associated with an external key store in the Amazon Web Services account
+        /// and Region. Each external key store in an account and Region must use a unique external
+        /// key store proxy address.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.XksProxyUriInUseException">
+        /// The request was rejected because the concatenation of the <code>XksProxyUriEndpoint</code>
+        /// and <code>XksProxyUriPath</code> is already associated with an external key store
+        /// in the Amazon Web Services account and Region. Each external key store in an account
+        /// and Region must use a unique external key store proxy API address.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.XksProxyUriUnreachableException">
+        /// KMS was unable to reach the specified <code>XksProxyUriPath</code>. The path must
+        /// be reachable before you create the external key store or update its settings.
+        /// 
+        ///  
+        /// <para>
+        /// This exception is also thrown when the external key store proxy response to a <code>GetHealthStatus</code>
+        /// request indicates that all external key manager instances are unavailable.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.XksProxyVpcEndpointServiceInUseException">
+        /// The request was rejected because the specified Amazon VPC endpoint service is already
+        /// associated with an external key store in the Amazon Web Services account and Region.
+        /// Each external key store in an Amazon Web Services account and Region must use a different
+        /// Amazon VPC endpoint service.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.XksProxyVpcEndpointServiceInvalidConfigurationException">
+        /// The request was rejected because the Amazon VPC endpoint service configuration does
+        /// not fulfill the requirements for an external key store proxy. For details, see the
+        /// exception message and <a href="kms/latest/developerguide/vpc-connectivity.html#xks-vpc-requirements">review
+        /// the requirements</a> for Amazon VPC endpoint service connectivity for an external
+        /// key store.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.XksProxyVpcEndpointServiceNotFoundException">
+        /// The request was rejected because KMS could not find the specified VPC endpoint service.
+        /// Use <a>DescribeCustomKeyStores</a> to verify the VPC endpoint service name for the
+        /// external key store. Also, confirm that the <code>Allow principals</code> list for
+        /// the VPC endpoint service includes the KMS service principal for the Region, such as
+        /// <code>cks.kms.us-east-1.amazonaws.com</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/CreateCustomKeyStore">REST API Reference for CreateCustomKeyStore Operation</seealso>
         public virtual CreateCustomKeyStoreResponse CreateCustomKeyStore(CreateCustomKeyStoreRequest request)
@@ -1296,8 +1545,8 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        /// For detailed information about grants, including grant terminology, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html">Using
-        /// grants</a> in the <i> <i>Key Management Service Developer Guide</i> </i>. For examples
+        /// For detailed information about grants, including grant terminology, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html">Grants
+        /// in KMS</a> in the <i> <i>Key Management Service Developer Guide</i> </i>. For examples
         /// of working with grants in several programming languages, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-grants.html">Programming
         /// grants</a>. 
         /// </para>
@@ -1330,7 +1579,7 @@ namespace Amazon.KeyManagementService
         /// <para>
         /// The KMS key that you use for this operation must be in a compatible key state. For
         /// details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-        /// state: Effect on your KMS key</a> in the <i>Key Management Service Developer Guide</i>.
+        /// states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -1369,7 +1618,7 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>The response from the CreateGrant service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request. The request can be retried.
+        /// The system timed out while trying to fulfill the request. You can retry the request.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.DisabledException">
         /// The request was rejected because the specified KMS key is not enabled.
@@ -1391,10 +1640,25 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-        /// state: Effect on your KMS key</a> in the <i> <i>Key Management Service Developer Guide</i>
-        /// </i>.
+        /// This exceptions means one of the following:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The key state of the KMS key is not compatible with the operation. 
+        /// </para>
+        ///  
+        /// <para>
+        /// To find the key state, use the <a>DescribeKey</a> operation. For more information
+        /// about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
+        /// states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For cryptographic operations on KMS keys in custom key stores, this exception represents
+        /// a general failure with many possible causes. To identify the cause, see the error
+        /// message that accompanies the exception.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.LimitExceededException">
         /// The request was rejected because a quota was exceeded. For more information, see <a
@@ -1454,46 +1718,61 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Creates a unique customer managed <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#kms-keys">KMS
-        /// key</a> in your Amazon Web Services account and Region.
+        /// key</a> in your Amazon Web Services account and Region. You can use a KMS key in cryptographic
+        /// operations, such as encryption and signing. Some Amazon Web Services services let
+        /// you use KMS keys that you create and manage to protect your service resources.
         /// 
+        ///  
+        /// <para>
+        /// A KMS key is a logical representation of a cryptographic key. In addition to the key
+        /// material used in cryptographic operations, a KMS key includes metadata, such as the
+        /// key ID, key policy, creation date, description, and key state. For details, see <a
+        /// href="https://docs.aws.amazon.com/kms/latest/developerguide/getting-started.html">Managing
+        /// keys</a> in the <i>Key Management Service Developer Guide</i> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Use the parameters of <code>CreateKey</code> to specify the type of KMS key, the source
+        /// of its key material, its key policy, description, tags, and other properties.
+        /// </para>
         ///  <note> 
         /// <para>
-        /// KMS is replacing the term <i>customer master key (CMK)</i> with <i>KMS key</i> and
+        /// KMS has replaced the term <i>customer master key (CMK)</i> with <i>KMS key</i> and
         /// <i>KMS key</i>. The concept has not changed. To prevent breaking changes, KMS is keeping
         /// some variations of this term.
         /// </para>
         ///  </note> 
         /// <para>
-        /// You can use the <code>CreateKey</code> operation to create symmetric or asymmetric
-        /// KMS keys.
+        /// To create different types of KMS keys, use the following guidance:
         /// </para>
-        ///  <ul> <li> 
+        ///  <dl> <dt>Symmetric encryption KMS key</dt> <dd> 
         /// <para>
-        ///  <b>Symmetric KMS keys</b> contain a 256-bit symmetric key that never leaves KMS unencrypted.
-        /// To use the KMS key, you must call KMS. You can use a symmetric KMS key to encrypt
-        /// and decrypt small amounts of data, but they are typically used to generate <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys">data
-        /// keys</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-key-pairs">data
-        /// keys pairs</a>. For details, see <a>GenerateDataKey</a> and <a>GenerateDataKeyPair</a>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <b>Asymmetric KMS keys</b> can contain an RSA key pair or an Elliptic Curve (ECC)
-        /// key pair. The private key in an asymmetric KMS key never leaves KMS unencrypted. However,
-        /// you can use the <a>GetPublicKey</a> operation to download the public key so it can
-        /// be used outside of KMS. KMS keys with RSA key pairs can be used to encrypt or decrypt
-        /// data or sign and verify messages (but not both). KMS keys with ECC key pairs can be
-        /// used only to sign and verify messages.
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// For information about symmetric and asymmetric KMS keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
-        /// Symmetric and Asymmetric KMS keys</a> in the <i>Key Management Service Developer Guide</i>.
+        /// By default, <code>CreateKey</code> creates a symmetric encryption KMS key with key
+        /// material that KMS generates. This is the basic and most widely used type of KMS key,
+        /// and provides the best performance.
         /// </para>
         ///  
         /// <para>
-        /// To create different types of KMS keys, use the following guidance:
+        /// To create a symmetric encryption KMS key, you don't need to specify any parameters.
+        /// The default value for <code>KeySpec</code>, <code>SYMMETRIC_DEFAULT</code>, the default
+        /// value for <code>KeyUsage</code>, <code>ENCRYPT_DECRYPT</code>, and the default value
+        /// for <code>Origin</code>, <code>AWS_KMS</code>, create a symmetric encryption KMS key
+        /// with KMS key material.
         /// </para>
-        ///  <dl> <dt>Asymmetric KMS keys</dt> <dd> 
+        ///  
+        /// <para>
+        /// If you need a key for basic encryption and decryption or you are creating a KMS key
+        /// to protect your resources in an Amazon Web Services service, create a symmetric encryption
+        /// KMS key. The key material in a symmetric encryption key never leaves KMS unencrypted.
+        /// You can use a symmetric encryption KMS key to encrypt and decrypt data up to 4,096
+        /// bytes, but they are typically used to generate data keys and data keys pairs. For
+        /// details, see <a>GenerateDataKey</a> and <a>GenerateDataKeyPair</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  
+        /// </para>
+        ///  </dd> <dt>Asymmetric KMS keys</dt> <dd> 
         /// <para>
         /// To create an asymmetric KMS key, use the <code>KeySpec</code> parameter to specify
         /// the type of key material in the KMS key. Then, use the <code>KeyUsage</code> parameter
@@ -1502,14 +1781,32 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
+        /// Asymmetric KMS keys contain an RSA key pair, Elliptic Curve (ECC) key pair, or an
+        /// SM2 key pair (China Regions only). The private key in an asymmetric KMS key never
+        /// leaves KMS unencrypted. However, you can use the <a>GetPublicKey</a> operation to
+        /// download the public key so it can be used outside of KMS. KMS keys with RSA or SM2
+        /// key pairs can be used to encrypt or decrypt data or sign and verify messages (but
+        /// not both). KMS keys with ECC key pairs can be used only to sign and verify messages.
+        /// For information about asymmetric KMS keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Asymmetric
+        /// KMS keys</a> in the <i>Key Management Service Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
         ///  
         /// </para>
-        ///  </dd> <dt>Symmetric KMS keys</dt> <dd> 
+        ///  </dd> <dt>HMAC KMS key</dt> <dd> 
         /// <para>
-        /// When creating a symmetric KMS key, you don't need to specify the <code>KeySpec</code>
-        /// or <code>KeyUsage</code> parameters. The default value for <code>KeySpec</code>, <code>SYMMETRIC_DEFAULT</code>,
-        /// and the default value for <code>KeyUsage</code>, <code>ENCRYPT_DECRYPT</code>, are
-        /// the only valid values for symmetric KMS keys. 
+        /// To create an HMAC KMS key, set the <code>KeySpec</code> parameter to a key spec value
+        /// for HMAC KMS keys. Then set the <code>KeyUsage</code> parameter to <code>GENERATE_VERIFY_MAC</code>.
+        /// You must set the key usage even though <code>GENERATE_VERIFY_MAC</code> is the only
+        /// valid key usage value for HMAC KMS keys. You can't change these properties after the
+        /// KMS key is created.
+        /// </para>
+        ///  
+        /// <para>
+        /// HMAC KMS keys are symmetric keys that never leave KMS unencrypted. You can use HMAC
+        /// keys to generate (<a>GenerateMac</a>) and verify (<a>VerifyMac</a>) HMAC codes for
+        /// messages up to 4096 bytes.
         /// </para>
         ///  
         /// <para>
@@ -1526,18 +1823,20 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
+        /// You can create multi-Region KMS keys for all supported KMS key types: symmetric encryption
+        /// KMS keys, HMAC KMS keys, asymmetric encryption KMS keys, and asymmetric signing KMS
+        /// keys. You can also create multi-Region keys with imported key material. However, you
+        /// can't create multi-Region keys in a custom key store.
+        /// </para>
+        ///  
+        /// <para>
         /// This operation supports <i>multi-Region keys</i>, an KMS feature that lets you create
         /// multiple interoperable KMS keys in different Amazon Web Services Regions. Because
         /// these KMS keys have the same key ID, key material, and other metadata, you can use
         /// them interchangeably to encrypt data in one Amazon Web Services Region and decrypt
         /// it in a different Amazon Web Services Region without re-encrypting the data or making
-        /// a cross-Region call. For more information about multi-Region keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using
-        /// multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.
-        /// </para>
-        ///  
-        /// <para>
-        /// You can create symmetric and asymmetric multi-Region keys and multi-Region keys with
-        /// imported key material. You cannot create multi-Region keys in a custom key store.
+        /// a cross-Region call. For more information about multi-Region keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Multi-Region
+        /// keys in KMS</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -1545,23 +1844,31 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  </dd> <dd> 
         /// <para>
-        /// To import your own key material, begin by creating a symmetric KMS key with no key
-        /// material. To do this, use the <code>Origin</code> parameter of <code>CreateKey</code>
+        /// To import your own key material into a KMS key, begin by creating a KMS key with no
+        /// key material. To do this, use the <code>Origin</code> parameter of <code>CreateKey</code>
         /// with a value of <code>EXTERNAL</code>. Next, use <a>GetParametersForImport</a> operation
-        /// to get a public key and import token, and use the public key to encrypt your key material.
-        /// Then, use <a>ImportKeyMaterial</a> with your import token to import the key material.
-        /// For step-by-step instructions, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing
-        /// Key Material</a> in the <i> <i>Key Management Service Developer Guide</i> </i>. You
-        /// cannot import the key material into an asymmetric KMS key.
+        /// to get a public key and import token. Use the wrapping public key to encrypt your
+        /// key material. Then, use <a>ImportKeyMaterial</a> with your import token to import
+        /// the key material. For step-by-step instructions, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing
+        /// Key Material</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can import key material into KMS keys of all supported KMS key types: symmetric
+        /// encryption KMS keys, HMAC KMS keys, asymmetric encryption KMS keys, and asymmetric
+        /// signing KMS keys. You can also create multi-Region keys with imported key material.
+        /// However, you can't import key material into a KMS key in a custom key store.
         /// </para>
         ///  
         /// <para>
         /// To create a multi-Region primary key with imported key material, use the <code>Origin</code>
         /// parameter of <code>CreateKey</code> with a value of <code>EXTERNAL</code> and the
         /// <code>MultiRegion</code> parameter with a value of <code>True</code>. To create replicas
-        /// of the multi-Region primary key, use the <a>ReplicateKey</a> operation. For more information
-        /// about multi-Region keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using
-        /// multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.
+        /// of the multi-Region primary key, use the <a>ReplicateKey</a> operation. For instructions,
+        /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-import.html
+        /// ">Importing key material into multi-Region keys</a>. For more information about multi-Region
+        /// keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Multi-Region
+        /// keys in KMS</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -1569,20 +1876,60 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  </dd> <dt>Custom key store</dt> <dd> 
         /// <para>
-        /// To create a symmetric KMS key in a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
-        /// key store</a>, use the <code>CustomKeyStoreId</code> parameter to specify the custom
-        /// key store. You must also use the <code>Origin</code> parameter with a value of <code>AWS_CLOUDHSM</code>.
-        /// The CloudHSM cluster that is associated with the custom key store must have at least
-        /// two active HSMs in different Availability Zones in the Amazon Web Services Region.
-        /// 
+        /// A <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
+        /// key store</a> lets you protect your Amazon Web Services resources using keys in a
+        /// backing key store that you own and manage. When you request a cryptographic operation
+        /// with a KMS key in a custom key store, the operation is performed in the backing key
+        /// store using its cryptographic keys.
         /// </para>
         ///  
         /// <para>
-        /// You cannot create an asymmetric KMS key in a custom key store. For information about
-        /// custom key stores in KMS see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">Using
-        /// Custom Key Stores</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.
+        /// KMS supports <a href="https://docs.aws.amazon.com/kms/latest/developerguide/keystore-cloudhsm.html">CloudHSM
+        /// key stores</a> backed by an CloudHSM cluster and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/keystore-external.html">external
+        /// key stores</a> backed by an external key manager outside of Amazon Web Services. When
+        /// you create a KMS key in an CloudHSM key store, KMS generates an encryption key in
+        /// the CloudHSM cluster and associates it with the KMS key. When you create a KMS key
+        /// in an external key store, you specify an existing encryption key in the external key
+        /// manager.
         /// </para>
-        ///  </dd> </dl> 
+        ///  <note> 
+        /// <para>
+        /// Some external key managers provide a simpler method for creating a KMS key in an external
+        /// key store. For details, see your external key manager documentation.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Before you create a KMS key in a custom key store, the <code>ConnectionState</code>
+        /// of the key store must be <code>CONNECTED</code>. To connect the custom key store,
+        /// use the <a>ConnectCustomKeyStore</a> operation. To find the <code>ConnectionState</code>,
+        /// use the <a>DescribeCustomKeyStores</a> operation.
+        /// </para>
+        ///  
+        /// <para>
+        /// To create a KMS key in a custom key store, use the <code>CustomKeyStoreId</code>.
+        /// Use the default <code>KeySpec</code> value, <code>SYMMETRIC_DEFAULT</code>, and the
+        /// default <code>KeyUsage</code> value, <code>ENCRYPT_DECRYPT</code> to create a symmetric
+        /// encryption key. No other key type is supported in a custom key store.
+        /// </para>
+        ///  
+        /// <para>
+        /// To create a KMS key in an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/keystore-cloudhsm.html">CloudHSM
+        /// key store</a>, use the <code>Origin</code> parameter with a value of <code>AWS_CLOUDHSM</code>.
+        /// The CloudHSM cluster that is associated with the custom key store must have at least
+        /// two active HSMs in different Availability Zones in the Amazon Web Services Region.
+        /// </para>
+        ///  
+        /// <para>
+        /// To create a KMS key in an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/keystore-external.html">external
+        /// key store</a>, use the <code>Origin</code> parameter with a value of <code>EXTERNAL_KEY_STORE</code>
+        /// and an <code>XksKeyId</code> parameter that identifies an existing external key.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Some external key managers provide a simpler method for creating a KMS key in an external
+        /// key store. For details, see your external key manager documentation.
+        /// </para>
+        ///  </note> </dd> </dl> 
         /// <para>
         ///  <b>Cross-account use</b>: No. You cannot use this operation to create a KMS key in
         /// a different Amazon Web Services account.
@@ -1617,12 +1964,12 @@ namespace Amazon.KeyManagementService
         /// <returns>The response from the CreateKey service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.CloudHsmClusterInvalidConfigurationException">
         /// The request was rejected because the associated CloudHSM cluster did not meet the
-        /// configuration requirements for a custom key store.
+        /// configuration requirements for an CloudHSM key store.
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// The cluster must be configured with private subnets in at least two different Availability
-        /// Zones in the Region.
+        /// The CloudHSM cluster must be configured with private subnets in at least two different
+        /// Availability Zones in the Region.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1630,15 +1977,15 @@ namespace Amazon.KeyManagementService
         /// group for the cluster</a> (cloudhsm-cluster-<i>&lt;cluster-id&gt;</i>-sg) must include
         /// inbound rules and outbound rules that allow TCP traffic on ports 2223-2225. The <b>Source</b>
         /// in the inbound rules and the <b>Destination</b> in the outbound rules must match the
-        /// security group ID. These rules are set by default when you create the cluster. Do
-        /// not delete or change them. To get information about a particular security group, use
-        /// the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSecurityGroups.html">DescribeSecurityGroups</a>
+        /// security group ID. These rules are set by default when you create the CloudHSM cluster.
+        /// Do not delete or change them. To get information about a particular security group,
+        /// use the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSecurityGroups.html">DescribeSecurityGroups</a>
         /// operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The cluster must contain at least as many HSMs as the operation requires. To add HSMs,
-        /// use the CloudHSM <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_CreateHsm.html">CreateHsm</a>
+        /// The CloudHSM cluster must contain at least as many HSMs as the operation requires.
+        /// To add HSMs, use the CloudHSM <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_CreateHsm.html">CreateHsm</a>
         /// operation.
         /// </para>
         ///  
@@ -1651,7 +1998,7 @@ namespace Amazon.KeyManagementService
         ///  </li> </ul> 
         /// <para>
         /// For information about the requirements for an CloudHSM cluster that is associated
-        /// with a custom key store, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keystore.html#before-keystore">Assemble
+        /// with an CloudHSM key store, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keystore.html#before-keystore">Assemble
         /// the Prerequisites</a> in the <i>Key Management Service Developer Guide</i>. For information
         /// about creating a private subnet for an CloudHSM cluster, see <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/create-subnets.html">Create
         /// a Private Subnet</a> in the <i>CloudHSM User Guide</i>. For information about cluster
@@ -1670,9 +2017,23 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// You requested the <a>CreateKey</a> or <a>GenerateRandom</a> operation in a custom
-        /// key store that is not connected. These operations are valid only when the custom key
-        /// store <code>ConnectionState</code> is <code>CONNECTED</code>.
+        /// You requested the <a>ConnectCustomKeyStore</a> operation on a custom key store with
+        /// a <code>ConnectionState</code> of <code>DISCONNECTING</code> or <code>FAILED</code>.
+        /// This operation is valid for all other <code>ConnectionState</code> values. To reconnect
+        /// a custom key store in a <code>FAILED</code> state, disconnect it (<a>DisconnectCustomKeyStore</a>),
+        /// then connect it (<code>ConnectCustomKeyStore</code>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You requested the <a>CreateKey</a> operation in a custom key store that is not connected.
+        /// This operations is valid only when the custom key store <code>ConnectionState</code>
+        /// is <code>CONNECTED</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You requested the <a>DisconnectCustomKeyStore</a> operation on a custom key store
+        /// with a <code>ConnectionState</code> of <code>DISCONNECTING</code> or <code>DISCONNECTED</code>.
+        /// This operation is valid for all other <code>ConnectionState</code> values.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1682,9 +2043,9 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You requested the <a>ConnectCustomKeyStore</a> operation on a custom key store with
-        /// a <code>ConnectionState</code> of <code>DISCONNECTING</code> or <code>FAILED</code>.
-        /// This operation is valid for all other <code>ConnectionState</code> values.
+        /// You requested the <a>GenerateRandom</a> operation in an CloudHSM key store that is
+        /// not connected. This operation is valid only when the CloudHSM key store <code>ConnectionState</code>
+        /// is <code>CONNECTED</code>. 
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -1693,7 +2054,7 @@ namespace Amazon.KeyManagementService
         /// key store name or ID.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request. The request can be retried.
+        /// The system timed out while trying to fulfill the request. You can retry the request.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
         /// The request was rejected because a specified ARN, or an ARN in a key policy, is not
@@ -1718,6 +2079,35 @@ namespace Amazon.KeyManagementService
         /// <exception cref="Amazon.KeyManagementService.Model.UnsupportedOperationException">
         /// The request was rejected because a specified parameter is not supported or a specified
         /// resource is not valid for this operation.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.XksKeyAlreadyInUseException">
+        /// The request was rejected because the (<code>XksKeyId</code>) is already associated
+        /// with a KMS key in this external key store. Each KMS key in an external key store must
+        /// be associated with a different external key.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.XksKeyInvalidConfigurationException">
+        /// The request was rejected because the external key specified by the <code>XksKeyId</code>
+        /// parameter did not meet the configuration requirements for an external key store.
+        /// 
+        ///  
+        /// <para>
+        /// The external key must be an AES-256 symmetric key that is enabled and performs encryption
+        /// and decryption.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.XksKeyNotFoundException">
+        /// The request was rejected because the external key store proxy could not find the external
+        /// key. This exception is thrown when the value of the <code>XksKeyId</code> parameter
+        /// doesn't identify a key in the external key manager associated with the external key
+        /// proxy.
+        /// 
+        ///  
+        /// <para>
+        /// Verify that the <code>XksKeyId</code> represents an existing key in the external key
+        /// manager. Use the key identifier that the external key store proxy uses to identify
+        /// the key. For details, see the documentation provided with your external key store
+        /// proxy or key manager.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/CreateKey">REST API Reference for CreateKey Operation</seealso>
         public virtual CreateKeyResponse CreateKey(CreateKeyRequest request)
@@ -1793,23 +2183,23 @@ namespace Amazon.KeyManagementService
         ///  </li> </ul> 
         /// <para>
         /// You can use this operation to decrypt ciphertext that was encrypted under a symmetric
-        /// or asymmetric KMS key. When the KMS key is asymmetric, you must specify the KMS key
-        /// and the encryption algorithm that was used to encrypt the ciphertext. For information
-        /// about symmetric and asymmetric KMS keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
-        /// Symmetric and Asymmetric KMS keys</a> in the <i>Key Management Service Developer Guide</i>.
+        /// encryption KMS key or an asymmetric encryption KMS key. When the KMS key is asymmetric,
+        /// you must specify the KMS key and the encryption algorithm that was used to encrypt
+        /// the ciphertext. For information about asymmetric KMS keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Asymmetric
+        /// KMS keys</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// The Decrypt operation also decrypts ciphertext that was encrypted outside of KMS by
-        /// the public key in an KMS asymmetric KMS key. However, it cannot decrypt ciphertext
-        /// produced by other libraries, such as the <a href="https://docs.aws.amazon.com/encryption-sdk/latest/developer-guide/">Amazon
+        /// The <code>Decrypt</code> operation also decrypts ciphertext that was encrypted outside
+        /// of KMS by the public key in an KMS asymmetric KMS key. However, it cannot decrypt
+        /// symmetric ciphertext produced by other libraries, such as the <a href="https://docs.aws.amazon.com/encryption-sdk/latest/developer-guide/">Amazon
         /// Web Services Encryption SDK</a> or <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingClientSideEncryption.html">Amazon
         /// S3 client-side encryption</a>. These libraries return a ciphertext format that is
         /// incompatible with KMS.
         /// </para>
         ///  
         /// <para>
-        /// If the ciphertext was encrypted under a symmetric KMS key, the <code>KeyId</code>
+        /// If the ciphertext was encrypted under a symmetric encryption KMS key, the <code>KeyId</code>
         /// parameter is optional. KMS can get this information from metadata that it adds to
         /// the symmetric ciphertext blob. This feature adds durability to your implementation
         /// by ensuring that authorized users can decrypt ciphertext decades after it was encrypted,
@@ -1822,34 +2212,38 @@ namespace Amazon.KeyManagementService
         ///  
         /// <para>
         /// Whenever possible, use key policies to give users permission to call the <code>Decrypt</code>
-        /// operation on a particular KMS key, instead of using IAM policies. Otherwise, you might
-        /// create an IAM user policy that gives the user <code>Decrypt</code> permission on all
-        /// KMS keys. This user could decrypt ciphertext that was encrypted by KMS keys in other
-        /// accounts if the key policy for the cross-account KMS key permits it. If you must use
-        /// an IAM policy for <code>Decrypt</code> permissions, limit the user to particular KMS
-        /// keys or particular trusted accounts. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/iam-policies.html#iam-policies-best-practices">Best
+        /// operation on a particular KMS key, instead of using &amp;IAM; policies. Otherwise,
+        /// you might create an &amp;IAM; policy that gives the user <code>Decrypt</code> permission
+        /// on all KMS keys. This user could decrypt ciphertext that was encrypted by KMS keys
+        /// in other accounts if the key policy for the cross-account KMS key permits it. If you
+        /// must use an IAM policy for <code>Decrypt</code> permissions, limit the user to particular
+        /// KMS keys or particular trusted accounts. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/iam-policies.html#iam-policies-best-practices">Best
         /// practices for IAM policies</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// Applications in Amazon Web Services Nitro Enclaves can call this operation by using
-        /// the <a href="https://github.com/aws/aws-nitro-enclaves-sdk-c">Amazon Web Services
-        /// Nitro Enclaves Development Kit</a>. For information about the supporting parameters,
-        /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How
-        /// Amazon Web Services Nitro Enclaves use KMS</a> in the <i>Key Management Service Developer
-        /// Guide</i>.
+        ///  <code>Decrypt</code> also supports <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave.html">Amazon
+        /// Web Services Nitro Enclaves</a>, which provide an isolated compute environment in
+        /// Amazon EC2. To call <code>Decrypt</code> for a Nitro enclave, use the <a href="https://docs.aws.amazon.com/enclaves/latest/user/developing-applications.html#sdk">Amazon
+        /// Web Services Nitro Enclaves SDK</a> or any Amazon Web Services SDK. Use the <code>Recipient</code>
+        /// parameter to provide the attestation document for the enclave. Instead of the plaintext
+        /// data, the response includes the plaintext data encrypted with the public key from
+        /// the attestation document (<code>CiphertextForRecipient</code>).For information about
+        /// the interaction between KMS and Amazon Web Services Nitro Enclaves, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How
+        /// Amazon Web Services Nitro Enclaves uses KMS</a> in the <i>Key Management Service Developer
+        /// Guide</i>..
         /// </para>
         ///  
         /// <para>
         /// The KMS key that you use for this operation must be in a compatible key state. For
         /// details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-        /// state: Effect on your KMS key</a> in the <i>Key Management Service Developer Guide</i>.
+        /// states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
-        ///  <b>Cross-account use</b>: Yes. To perform this operation with a KMS key in a different
-        /// Amazon Web Services account, specify the key ARN or alias ARN in the value of the
-        /// <code>KeyId</code> parameter. 
+        ///  <b>Cross-account use</b>: Yes. If you use the <code>KeyId</code> parameter to identify
+        /// a KMS key in a different Amazon Web Services account, specify the key ARN or the alias
+        /// ARN of the KMS key.
         /// </para>
         ///  
         /// <para>
@@ -1882,7 +2276,7 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>The response from the Decrypt service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request. The request can be retried.
+        /// The system timed out while trying to fulfill the request. You can retry the request.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.DisabledException">
         /// The request was rejected because the specified KMS key is not enabled.
@@ -1922,9 +2316,10 @@ namespace Amazon.KeyManagementService
         ///  </li> </ul> 
         /// <para>
         /// For encrypting, decrypting, re-encrypting, and generating data keys, the <code>KeyUsage</code>
-        /// must be <code>ENCRYPT_DECRYPT</code>. For signing and verifying, the <code>KeyUsage</code>
-        /// must be <code>SIGN_VERIFY</code>. To find the <code>KeyUsage</code> of a KMS key,
-        /// use the <a>DescribeKey</a> operation.
+        /// must be <code>ENCRYPT_DECRYPT</code>. For signing and verifying messages, the <code>KeyUsage</code>
+        /// must be <code>SIGN_VERIFY</code>. For generating and verifying message authentication
+        /// codes (MACs), the <code>KeyUsage</code> must be <code>GENERATE_VERIFY_MAC</code>.
+        /// To find the <code>KeyUsage</code> of a KMS key, use the <a>DescribeKey</a> operation.
         /// </para>
         ///  
         /// <para>
@@ -1946,10 +2341,25 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-        /// state: Effect on your KMS key</a> in the <i> <i>Key Management Service Developer Guide</i>
-        /// </i>.
+        /// This exceptions means one of the following:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The key state of the KMS key is not compatible with the operation. 
+        /// </para>
+        ///  
+        /// <para>
+        /// To find the key state, use the <a>DescribeKey</a> operation. For more information
+        /// about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
+        /// states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For cryptographic operations on KMS keys in custom key stores, this exception represents
+        /// a general failure with many possible causes. To identify the cause, see the error
+        /// message that accompanies the exception.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
@@ -2008,8 +2418,8 @@ namespace Amazon.KeyManagementService
         ///  <note> 
         /// <para>
         /// Adding, deleting, or updating an alias can allow or deny permission to the KMS key.
-        /// For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">Using
-        /// ABAC in KMS</a> in the <i>Key Management Service Developer Guide</i>.
+        /// For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC
+        /// for KMS</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         ///  </note> 
         /// <para>
@@ -2070,7 +2480,7 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>The response from the DeleteAlias service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request. The request can be retried.
+        /// The system timed out while trying to fulfill the request. You can retry the request.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
         /// The request was rejected because an internal exception occurred. The request can be
@@ -2082,10 +2492,25 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-        /// state: Effect on your KMS key</a> in the <i> <i>Key Management Service Developer Guide</i>
-        /// </i>.
+        /// This exceptions means one of the following:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The key state of the KMS key is not compatible with the operation. 
+        /// </para>
+        ///  
+        /// <para>
+        /// To find the key state, use the <a>DescribeKey</a> operation. For more information
+        /// about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
+        /// states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For cryptographic operations on KMS keys in custom key stores, this exception represents
+        /// a general failure with many possible causes. To identify the cause, see the error
+        /// message that accompanies the exception.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
@@ -2105,8 +2530,8 @@ namespace Amazon.KeyManagementService
         ///  <note> 
         /// <para>
         /// Adding, deleting, or updating an alias can allow or deny permission to the KMS key.
-        /// For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">Using
-        /// ABAC in KMS</a> in the <i>Key Management Service Developer Guide</i>.
+        /// For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC
+        /// for KMS</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         ///  </note> 
         /// <para>
@@ -2167,7 +2592,7 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>The response from the DeleteAlias service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request. The request can be retried.
+        /// The system timed out while trying to fulfill the request. You can retry the request.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
         /// The request was rejected because an internal exception occurred. The request can be
@@ -2179,10 +2604,25 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-        /// state: Effect on your KMS key</a> in the <i> <i>Key Management Service Developer Guide</i>
-        /// </i>.
+        /// This exceptions means one of the following:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The key state of the KMS key is not compatible with the operation. 
+        /// </para>
+        ///  
+        /// <para>
+        /// To find the key state, use the <a>DescribeKey</a> operation. For more information
+        /// about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
+        /// states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For cryptographic operations on KMS keys in custom key stores, this exception represents
+        /// a general failure with many possible causes. To identify the cause, see the error
+        /// message that accompanies the exception.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
@@ -2237,41 +2677,48 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Deletes a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
-        /// key store</a>. This operation does not delete the CloudHSM cluster that is associated
-        /// with the custom key store, or affect any users or keys in the cluster.
+        /// key store</a>. This operation does not affect any backing elements of the custom key
+        /// store. It does not delete the CloudHSM cluster that is associated with an CloudHSM
+        /// key store, or affect any users or keys in the cluster. For an external key store,
+        /// it does not affect the external key store proxy, external key manager, or any external
+        /// keys.
         /// 
         ///  
         /// <para>
-        /// The custom key store that you delete cannot contain any KMS <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#kms_keys">KMS
+        ///  This operation is part of the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
+        /// key stores</a> feature in KMS, which combines the convenience and extensive integration
+        /// of KMS with the isolation and control of a key store that you own and manage.
+        /// </para>
+        ///  
+        /// <para>
+        /// The custom key store that you delete cannot contain any <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#kms_keys">KMS
         /// keys</a>. Before deleting the key store, verify that you will never need to use any
         /// of the KMS keys in the key store for any <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
         /// operations</a>. Then, use <a>ScheduleKeyDeletion</a> to delete the KMS keys from the
-        /// key store. When the scheduled waiting period expires, the <code>ScheduleKeyDeletion</code>
-        /// operation deletes the KMS keys. Then it makes a best effort to delete the key material
-        /// from the associated cluster. However, you might need to manually <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-orphaned-key">delete
-        /// the orphaned key material</a> from the cluster and its backups.
+        /// key store. After the required waiting period expires and all KMS keys are deleted
+        /// from the custom key store, use <a>DisconnectCustomKeyStore</a> to disconnect the key
+        /// store from KMS. Then, you can delete the custom key store.
         /// </para>
         ///  
         /// <para>
-        /// After all KMS keys are deleted from KMS, use <a>DisconnectCustomKeyStore</a> to disconnect
-        /// the key store from KMS. Then, you can delete the custom key store.
+        /// For keys in an CloudHSM key store, the <code>ScheduleKeyDeletion</code> operation
+        /// makes a best effort to delete the key material from the associated cluster. However,
+        /// you might need to manually <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-orphaned-key">delete
+        /// the orphaned key material</a> from the cluster and its backups. KMS never creates,
+        /// manages, or deletes cryptographic keys in the external key manager associated with
+        /// an external key store. You must manage them using your external key manager tools.
         /// </para>
         ///  
         /// <para>
-        /// Instead of deleting the custom key store, consider using <a>DisconnectCustomKeyStore</a>
-        /// to disconnect it from KMS. While the key store is disconnected, you cannot create
-        /// or use the KMS keys in the key store. But, you do not need to delete KMS keys and
-        /// you can reconnect a disconnected custom key store at any time.
+        /// Instead of deleting the custom key store, consider using the <a>DisconnectCustomKeyStore</a>
+        /// operation to disconnect the custom key store from its backing key store. While the
+        /// key store is disconnected, you cannot create or use the KMS keys in the key store.
+        /// But, you do not need to delete KMS keys and you can reconnect a disconnected custom
+        /// key store at any time.
         /// </para>
         ///  
         /// <para>
         /// If the operation succeeds, it returns a JSON object with no properties.
-        /// </para>
-        ///  
-        /// <para>
-        /// This operation is part of the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">Custom
-        /// Key Store feature</a> feature in KMS, which combines the convenience and extensive
-        /// integration of KMS with the isolation and control of a single-tenant key store.
         /// </para>
         ///  
         /// <para>
@@ -2328,9 +2775,23 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// You requested the <a>CreateKey</a> or <a>GenerateRandom</a> operation in a custom
-        /// key store that is not connected. These operations are valid only when the custom key
-        /// store <code>ConnectionState</code> is <code>CONNECTED</code>.
+        /// You requested the <a>ConnectCustomKeyStore</a> operation on a custom key store with
+        /// a <code>ConnectionState</code> of <code>DISCONNECTING</code> or <code>FAILED</code>.
+        /// This operation is valid for all other <code>ConnectionState</code> values. To reconnect
+        /// a custom key store in a <code>FAILED</code> state, disconnect it (<a>DisconnectCustomKeyStore</a>),
+        /// then connect it (<code>ConnectCustomKeyStore</code>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You requested the <a>CreateKey</a> operation in a custom key store that is not connected.
+        /// This operations is valid only when the custom key store <code>ConnectionState</code>
+        /// is <code>CONNECTED</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You requested the <a>DisconnectCustomKeyStore</a> operation on a custom key store
+        /// with a <code>ConnectionState</code> of <code>DISCONNECTING</code> or <code>DISCONNECTED</code>.
+        /// This operation is valid for all other <code>ConnectionState</code> values.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2340,9 +2801,9 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You requested the <a>ConnectCustomKeyStore</a> operation on a custom key store with
-        /// a <code>ConnectionState</code> of <code>DISCONNECTING</code> or <code>FAILED</code>.
-        /// This operation is valid for all other <code>ConnectionState</code> values.
+        /// You requested the <a>GenerateRandom</a> operation in an CloudHSM key store that is
+        /// not connected. This operation is valid only when the CloudHSM key store <code>ConnectionState</code>
+        /// is <code>CONNECTED</code>. 
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -2403,10 +2864,11 @@ namespace Amazon.KeyManagementService
         #region  DeleteImportedKeyMaterial
 
         /// <summary>
-        /// Deletes key material that you previously imported. This operation makes the specified
-        /// KMS key unusable. For more information about importing key material into KMS, see
+        /// Deletes key material that was previously imported. This operation makes the specified
+        /// KMS key temporarily unusable. To restore the usability of the KMS key, reimport the
+        /// same key material. For more information about importing key material into KMS, see
         /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing
-        /// Key Material</a> in the <i>Key Management Service Developer Guide</i>. 
+        /// Key Material</a> in the <i>Key Management Service Developer Guide</i>.
         /// 
         ///  
         /// <para>
@@ -2416,14 +2878,9 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        /// After you delete key material, you can use <a>ImportKeyMaterial</a> to reimport the
-        /// same key material into the KMS key.
-        /// </para>
-        ///  
-        /// <para>
         /// The KMS key that you use for this operation must be in a compatible key state. For
         /// details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-        /// state: Effect on your KMS key</a> in the <i>Key Management Service Developer Guide</i>.
+        /// states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -2453,7 +2910,7 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>The response from the DeleteImportedKeyMaterial service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request. The request can be retried.
+        /// The system timed out while trying to fulfill the request. You can retry the request.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
         /// The request was rejected because a specified ARN, or an ARN in a key policy, is not
@@ -2469,10 +2926,25 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-        /// state: Effect on your KMS key</a> in the <i> <i>Key Management Service Developer Guide</i>
-        /// </i>.
+        /// This exceptions means one of the following:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The key state of the KMS key is not compatible with the operation. 
+        /// </para>
+        ///  
+        /// <para>
+        /// To find the key state, use the <a>DescribeKey</a> operation. For more information
+        /// about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
+        /// states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For cryptographic operations on KMS keys in custom key stores, this exception represents
+        /// a general failure with many possible causes. To identify the cause, see the error
+        /// message that accompanies the exception.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
@@ -2535,9 +3007,9 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// This operation is part of the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">Custom
-        /// Key Store feature</a> feature in KMS, which combines the convenience and extensive
-        /// integration of KMS with the isolation and control of a single-tenant key store.
+        ///  This operation is part of the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
+        /// key stores</a> feature in KMS, which combines the convenience and extensive integration
+        /// of KMS with the isolation and control of a key store that you own and manage.
         /// </para>
         ///  
         /// <para>
@@ -2548,24 +3020,31 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        /// To determine whether the custom key store is connected to its CloudHSM cluster, use
-        /// the <code>ConnectionState</code> element in the response. If an attempt to connect
-        /// the custom key store failed, the <code>ConnectionState</code> value is <code>FAILED</code>
-        /// and the <code>ConnectionErrorCode</code> element in the response indicates the cause
-        /// of the failure. For help interpreting the <code>ConnectionErrorCode</code>, see <a>CustomKeyStoresListEntry</a>.
+        /// To determine whether the custom key store is connected to its CloudHSM cluster or
+        /// external key store proxy, use the <code>ConnectionState</code> element in the response.
+        /// If an attempt to connect the custom key store failed, the <code>ConnectionState</code>
+        /// value is <code>FAILED</code> and the <code>ConnectionErrorCode</code> element in the
+        /// response indicates the cause of the failure. For help interpreting the <code>ConnectionErrorCode</code>,
+        /// see <a>CustomKeyStoresListEntry</a>.
         /// </para>
         ///  
         /// <para>
         /// Custom key stores have a <code>DISCONNECTED</code> connection state if the key store
-        /// has never been connected or you use the <a>DisconnectCustomKeyStore</a> operation
-        /// to disconnect it. If your custom key store state is <code>CONNECTED</code> but you
-        /// are having trouble using it, make sure that its associated CloudHSM cluster is active
-        /// and contains the minimum number of HSMs required for the operation, if any.
+        /// has never been connected or you used the <a>DisconnectCustomKeyStore</a> operation
+        /// to disconnect it. Otherwise, the connection state is CONNECTED. If your custom key
+        /// store connection state is <code>CONNECTED</code> but you are having trouble using
+        /// it, verify that the backing store is active and available. For an CloudHSM key store,
+        /// verify that the associated CloudHSM cluster is active and contains the minimum number
+        /// of HSMs required for the operation, if any. For an external key store, verify that
+        /// the external key store proxy and its associated external key manager are reachable
+        /// and enabled.
         /// </para>
         ///  
         /// <para>
-        ///  For help repairing your custom key store, see the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html">Troubleshooting
-        /// Custom Key Stores</a> topic in the <i>Key Management Service Developer Guide</i>.
+        ///  For help repairing your CloudHSM key store, see the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html">Troubleshooting
+        /// CloudHSM key stores</a>. For help repairing your external key store, see the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/xks-troubleshooting.html">Troubleshooting
+        /// external key stores</a>. Both topics are in the <i>Key Management Service Developer
+        /// Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -2677,12 +3156,17 @@ namespace Amazon.KeyManagementService
         /// This detailed information includes the key ARN, creation date (and deletion date,
         /// if applicable), the key state, and the origin and expiration date (if any) of the
         /// key material. It includes fields, like <code>KeySpec</code>, that help you distinguish
-        /// symmetric from asymmetric KMS keys. It also provides information that is particularly
-        /// important to asymmetric keys, such as the key usage (encryption or signing) and the
-        /// encryption algorithms or signing algorithms that the KMS key supports. For KMS keys
-        /// in custom key stores, it includes information about the custom key store, such as
-        /// the key store ID and the CloudHSM cluster ID. For multi-Region keys, it displays the
-        /// primary key and all related replica keys. 
+        /// different types of KMS keys. It also displays the key usage (encryption, signing,
+        /// or generating and verifying MACs) and the algorithms that the KMS key supports. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For <a href="kms/latest/developerguide/multi-region-keys-overview.html">multi-Region
+        /// keys</a>, <code>DescribeKey</code> displays the primary key and all related replica
+        /// keys. For KMS keys in <a href="kms/latest/developerguide/keystore-cloudhsm.html">CloudHSM
+        /// key stores</a>, it includes information about the key store, such as the key store
+        /// ID and the CloudHSM cluster ID. For KMS keys in <a href="kms/latest/developerguide/keystore-external.html">external
+        /// key stores</a>, it includes the custom key store ID and the ID of the external key.
         /// </para>
         ///  
         /// <para>
@@ -2697,7 +3181,7 @@ namespace Amazon.KeyManagementService
         /// Whether automatic key rotation is enabled on the KMS key. To get this information,
         /// use <a>GetKeyRotationStatus</a>. Also, some key states prevent a KMS key from being
         /// automatically rotated. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html#rotate-keys-how-it-works">How
-        /// Automatic Key Rotation Works</a> in <i>Key Management Service Developer Guide</i>.
+        /// Automatic Key Rotation Works</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2710,12 +3194,11 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If you call the <code>DescribeKey</code> operation on a <i>predefined Amazon Web Services
-        /// alias</i>, that is, an Amazon Web Services alias with no key ID, KMS creates an <a
-        /// href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
-        /// Web Services managed key</a>. Then, it associates the alias with the new KMS key,
-        /// and returns the <code>KeyId</code> and <code>Arn</code> of the new KMS key in the
-        /// response.
+        /// In general, <code>DescribeKey</code> is a non-mutating operation. It returns data
+        /// about KMS keys, but doesn't change them. However, Amazon Web Services services use
+        /// <code>DescribeKey</code> to create <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
+        /// Web Services managed keys</a> from a <i>predefined Amazon Web Services alias</i> with
+        /// no key ID.
         /// </para>
         ///  
         /// <para>
@@ -2766,7 +3249,7 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>The response from the DescribeKey service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request. The request can be retried.
+        /// The system timed out while trying to fulfill the request. You can retry the request.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
         /// The request was rejected because a specified ARN, or an ARN in a key policy, is not
@@ -2799,12 +3282,17 @@ namespace Amazon.KeyManagementService
         /// This detailed information includes the key ARN, creation date (and deletion date,
         /// if applicable), the key state, and the origin and expiration date (if any) of the
         /// key material. It includes fields, like <code>KeySpec</code>, that help you distinguish
-        /// symmetric from asymmetric KMS keys. It also provides information that is particularly
-        /// important to asymmetric keys, such as the key usage (encryption or signing) and the
-        /// encryption algorithms or signing algorithms that the KMS key supports. For KMS keys
-        /// in custom key stores, it includes information about the custom key store, such as
-        /// the key store ID and the CloudHSM cluster ID. For multi-Region keys, it displays the
-        /// primary key and all related replica keys. 
+        /// different types of KMS keys. It also displays the key usage (encryption, signing,
+        /// or generating and verifying MACs) and the algorithms that the KMS key supports. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For <a href="kms/latest/developerguide/multi-region-keys-overview.html">multi-Region
+        /// keys</a>, <code>DescribeKey</code> displays the primary key and all related replica
+        /// keys. For KMS keys in <a href="kms/latest/developerguide/keystore-cloudhsm.html">CloudHSM
+        /// key stores</a>, it includes information about the key store, such as the key store
+        /// ID and the CloudHSM cluster ID. For KMS keys in <a href="kms/latest/developerguide/keystore-external.html">external
+        /// key stores</a>, it includes the custom key store ID and the ID of the external key.
         /// </para>
         ///  
         /// <para>
@@ -2819,7 +3307,7 @@ namespace Amazon.KeyManagementService
         /// Whether automatic key rotation is enabled on the KMS key. To get this information,
         /// use <a>GetKeyRotationStatus</a>. Also, some key states prevent a KMS key from being
         /// automatically rotated. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html#rotate-keys-how-it-works">How
-        /// Automatic Key Rotation Works</a> in <i>Key Management Service Developer Guide</i>.
+        /// Automatic Key Rotation Works</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2832,12 +3320,11 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If you call the <code>DescribeKey</code> operation on a <i>predefined Amazon Web Services
-        /// alias</i>, that is, an Amazon Web Services alias with no key ID, KMS creates an <a
-        /// href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
-        /// Web Services managed key</a>. Then, it associates the alias with the new KMS key,
-        /// and returns the <code>KeyId</code> and <code>Arn</code> of the new KMS key in the
-        /// response.
+        /// In general, <code>DescribeKey</code> is a non-mutating operation. It returns data
+        /// about KMS keys, but doesn't change them. However, Amazon Web Services services use
+        /// <code>DescribeKey</code> to create <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
+        /// Web Services managed keys</a> from a <i>predefined Amazon Web Services alias</i> with
+        /// no key ID.
         /// </para>
         ///  
         /// <para>
@@ -2888,7 +3375,7 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>The response from the DescribeKey service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request. The request can be retried.
+        /// The system timed out while trying to fulfill the request. You can retry the request.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
         /// The request was rejected because a specified ARN, or an ARN in a key policy, is not
@@ -2957,14 +3444,13 @@ namespace Amazon.KeyManagementService
         ///  
         /// <para>
         /// For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-        /// state: Effect on your KMS key</a> in the <i> <i>Key Management Service Developer Guide</i>
-        /// </i>.
+        /// states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.
         /// </para>
         ///  
         /// <para>
         /// The KMS key that you use for this operation must be in a compatible key state. For
         /// details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-        /// state: Effect on your KMS key</a> in the <i>Key Management Service Developer Guide</i>.
+        /// states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -2985,7 +3471,7 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>The response from the DisableKey service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request. The request can be retried.
+        /// The system timed out while trying to fulfill the request. You can retry the request.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
         /// The request was rejected because a specified ARN, or an ARN in a key policy, is not
@@ -3001,10 +3487,25 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-        /// state: Effect on your KMS key</a> in the <i> <i>Key Management Service Developer Guide</i>
-        /// </i>.
+        /// This exceptions means one of the following:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The key state of the KMS key is not compatible with the operation. 
+        /// </para>
+        ///  
+        /// <para>
+        /// To find the key state, use the <a>DescribeKey</a> operation. For more information
+        /// about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
+        /// states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For cryptographic operations on KMS keys in custom key stores, this exception represents
+        /// a general failure with many possible causes. To identify the cause, see the error
+        /// message that accompanies the exception.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
@@ -3026,14 +3527,13 @@ namespace Amazon.KeyManagementService
         ///  
         /// <para>
         /// For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-        /// state: Effect on your KMS key</a> in the <i> <i>Key Management Service Developer Guide</i>
-        /// </i>.
+        /// states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.
         /// </para>
         ///  
         /// <para>
         /// The KMS key that you use for this operation must be in a compatible key state. For
         /// details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-        /// state: Effect on your KMS key</a> in the <i>Key Management Service Developer Guide</i>.
+        /// states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -3054,7 +3554,7 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>The response from the DisableKey service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request. The request can be retried.
+        /// The system timed out while trying to fulfill the request. You can retry the request.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
         /// The request was rejected because a specified ARN, or an ARN in a key policy, is not
@@ -3070,10 +3570,25 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-        /// state: Effect on your KMS key</a> in the <i> <i>Key Management Service Developer Guide</i>
-        /// </i>.
+        /// This exceptions means one of the following:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The key state of the KMS key is not compatible with the operation. 
+        /// </para>
+        ///  
+        /// <para>
+        /// To find the key state, use the <a>DescribeKey</a> operation. For more information
+        /// about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
+        /// states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For cryptographic operations on KMS keys in custom key stores, this exception represents
+        /// a general failure with many possible causes. To identify the cause, see the error
+        /// message that accompanies the exception.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
@@ -3128,21 +3643,37 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Disables <a href="https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html">automatic
-        /// rotation of the key material</a> for the specified symmetric KMS key.
+        /// rotation of the key material</a> of the specified symmetric encryption KMS key.
         /// 
         ///  
         /// <para>
-        ///  You cannot enable automatic rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symm-asymm-concepts.html#asymmetric-cmks">asymmetric
+        /// Automatic key rotation is supported only on symmetric encryption KMS keys. You cannot
+        /// enable automatic rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">asymmetric
+        /// KMS keys</a>, <a href="https://docs.aws.amazon.com/kms/latest/developerguide/hmac.html">HMAC
         /// KMS keys</a>, KMS keys with <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">imported
         /// key material</a>, or KMS keys in a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
-        /// key store</a>. To enable or disable automatic rotation of a set of related <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html#mrk-replica-key">multi-Region
-        /// keys</a>, set the property on the primary key. 
+        /// key store</a>. To enable or disable automatic rotation of a set of related <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-manage.html#multi-region-rotate">multi-Region
+        /// keys</a>, set the property on the primary key.
         /// </para>
         ///  
         /// <para>
+        /// You can enable (<a>EnableKeyRotation</a>) and disable automatic rotation of the key
+        /// material in <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
+        /// managed KMS keys</a>. Key material rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
+        /// Web Services managed KMS keys</a> is not configurable. KMS always rotates the key
+        /// material for every year. Rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-owned-cmk">Amazon
+        /// Web Services owned KMS keys</a> varies.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// In May 2022, KMS changed the rotation schedule for Amazon Web Services managed keys
+        /// from every three years to every year. For details, see <a>EnableKeyRotation</a>.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// The KMS key that you use for this operation must be in a compatible key state. For
         /// details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-        /// state: Effect on your KMS key</a> in the <i>Key Management Service Developer Guide</i>.
+        /// states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -3168,11 +3699,11 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="keyId">Identifies a symmetric KMS key. You cannot enable or disable automatic rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html#asymmetric-cmks">asymmetric KMS keys</a>, KMS keys with <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">imported key material</a>, or KMS keys in a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a>. Specify the key ID or key ARN of the KMS key. For example: <ul> <li> Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> </ul> To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</param>
+        /// <param name="keyId">Identifies a symmetric encryption KMS key. You cannot enable or disable automatic rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html#asymmetric-cmks">asymmetric KMS keys</a>, <a href="https://docs.aws.amazon.com/kms/latest/developerguide/hmac.html">HMAC KMS keys</a>, KMS keys with <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">imported key material</a>, or KMS keys in a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a>. Specify the key ID or key ARN of the KMS key. For example: <ul> <li> Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> </ul> To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</param>
         /// 
         /// <returns>The response from the DisableKeyRotation service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request. The request can be retried.
+        /// The system timed out while trying to fulfill the request. You can retry the request.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.DisabledException">
         /// The request was rejected because the specified KMS key is not enabled.
@@ -3191,10 +3722,25 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-        /// state: Effect on your KMS key</a> in the <i> <i>Key Management Service Developer Guide</i>
-        /// </i>.
+        /// This exceptions means one of the following:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The key state of the KMS key is not compatible with the operation. 
+        /// </para>
+        ///  
+        /// <para>
+        /// To find the key state, use the <a>DescribeKey</a> operation. For more information
+        /// about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
+        /// states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For cryptographic operations on KMS keys in custom key stores, this exception represents
+        /// a general failure with many possible causes. To identify the cause, see the error
+        /// message that accompanies the exception.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
@@ -3214,21 +3760,37 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Disables <a href="https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html">automatic
-        /// rotation of the key material</a> for the specified symmetric KMS key.
+        /// rotation of the key material</a> of the specified symmetric encryption KMS key.
         /// 
         ///  
         /// <para>
-        ///  You cannot enable automatic rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symm-asymm-concepts.html#asymmetric-cmks">asymmetric
+        /// Automatic key rotation is supported only on symmetric encryption KMS keys. You cannot
+        /// enable automatic rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">asymmetric
+        /// KMS keys</a>, <a href="https://docs.aws.amazon.com/kms/latest/developerguide/hmac.html">HMAC
         /// KMS keys</a>, KMS keys with <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">imported
         /// key material</a>, or KMS keys in a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
-        /// key store</a>. To enable or disable automatic rotation of a set of related <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html#mrk-replica-key">multi-Region
-        /// keys</a>, set the property on the primary key. 
+        /// key store</a>. To enable or disable automatic rotation of a set of related <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-manage.html#multi-region-rotate">multi-Region
+        /// keys</a>, set the property on the primary key.
         /// </para>
         ///  
         /// <para>
+        /// You can enable (<a>EnableKeyRotation</a>) and disable automatic rotation of the key
+        /// material in <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
+        /// managed KMS keys</a>. Key material rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
+        /// Web Services managed KMS keys</a> is not configurable. KMS always rotates the key
+        /// material for every year. Rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-owned-cmk">Amazon
+        /// Web Services owned KMS keys</a> varies.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// In May 2022, KMS changed the rotation schedule for Amazon Web Services managed keys
+        /// from every three years to every year. For details, see <a>EnableKeyRotation</a>.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// The KMS key that you use for this operation must be in a compatible key state. For
         /// details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-        /// state: Effect on your KMS key</a> in the <i>Key Management Service Developer Guide</i>.
+        /// states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -3258,7 +3820,7 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>The response from the DisableKeyRotation service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request. The request can be retried.
+        /// The system timed out while trying to fulfill the request. You can retry the request.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.DisabledException">
         /// The request was rejected because the specified KMS key is not enabled.
@@ -3277,10 +3839,25 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-        /// state: Effect on your KMS key</a> in the <i> <i>Key Management Service Developer Guide</i>
-        /// </i>.
+        /// This exceptions means one of the following:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The key state of the KMS key is not compatible with the operation. 
+        /// </para>
+        ///  
+        /// <para>
+        /// To find the key state, use the <a>DescribeKey</a> operation. For more information
+        /// about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
+        /// states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For cryptographic operations on KMS keys in custom key stores, this exception represents
+        /// a general failure with many possible causes. To identify the cause, see the error
+        /// message that accompanies the exception.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
@@ -3339,10 +3916,22 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Disconnects the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
-        /// key store</a> from its associated CloudHSM cluster. While a custom key store is disconnected,
-        /// you can manage the custom key store and its KMS keys, but you cannot create or use
-        /// KMS keys in the custom key store. You can reconnect the custom key store at any time.
+        /// key store</a> from its backing key store. This operation disconnects an CloudHSM key
+        /// store from its associated CloudHSM cluster or disconnects an external key store from
+        /// the external key store proxy that communicates with your external key manager.
         /// 
+        ///  
+        /// <para>
+        ///  This operation is part of the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
+        /// key stores</a> feature in KMS, which combines the convenience and extensive integration
+        /// of KMS with the isolation and control of a key store that you own and manage.
+        /// </para>
+        ///  
+        /// <para>
+        /// While a custom key store is disconnected, you can manage the custom key store and
+        /// its KMS keys, but you cannot create or use its KMS keys. You can reconnect the custom
+        /// key store at any time.
+        /// </para>
         ///  <note> 
         /// <para>
         /// While a custom key store is disconnected, all attempts to create KMS keys in the custom
@@ -3350,20 +3939,16 @@ namespace Amazon.KeyManagementService
         /// operations</a> will fail. This action can prevent users from storing and accessing
         /// sensitive data.
         /// </para>
-        ///  </note>  
+        ///  </note> 
         /// <para>
-        /// To find the connection state of a custom key store, use the <a>DescribeCustomKeyStores</a>
-        /// operation. To reconnect a custom key store, use the <a>ConnectCustomKeyStore</a> operation.
+        /// When you disconnect a custom key store, its <code>ConnectionState</code> changes to
+        /// <code>Disconnected</code>. To find the connection state of a custom key store, use
+        /// the <a>DescribeCustomKeyStores</a> operation. To reconnect a custom key store, use
+        /// the <a>ConnectCustomKeyStore</a> operation.
         /// </para>
         ///  
         /// <para>
         /// If the operation succeeds, it returns a JSON object with no properties.
-        /// </para>
-        ///  
-        /// <para>
-        /// This operation is part of the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">Custom
-        /// Key Store feature</a> feature in KMS, which combines the convenience and extensive
-        /// integration of KMS with the isolation and control of a single-tenant key store.
         /// </para>
         ///  
         /// <para>
@@ -3415,9 +4000,23 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// You requested the <a>CreateKey</a> or <a>GenerateRandom</a> operation in a custom
-        /// key store that is not connected. These operations are valid only when the custom key
-        /// store <code>ConnectionState</code> is <code>CONNECTED</code>.
+        /// You requested the <a>ConnectCustomKeyStore</a> operation on a custom key store with
+        /// a <code>ConnectionState</code> of <code>DISCONNECTING</code> or <code>FAILED</code>.
+        /// This operation is valid for all other <code>ConnectionState</code> values. To reconnect
+        /// a custom key store in a <code>FAILED</code> state, disconnect it (<a>DisconnectCustomKeyStore</a>),
+        /// then connect it (<code>ConnectCustomKeyStore</code>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You requested the <a>CreateKey</a> operation in a custom key store that is not connected.
+        /// This operations is valid only when the custom key store <code>ConnectionState</code>
+        /// is <code>CONNECTED</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You requested the <a>DisconnectCustomKeyStore</a> operation on a custom key store
+        /// with a <code>ConnectionState</code> of <code>DISCONNECTING</code> or <code>DISCONNECTED</code>.
+        /// This operation is valid for all other <code>ConnectionState</code> values.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3427,9 +4026,9 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You requested the <a>ConnectCustomKeyStore</a> operation on a custom key store with
-        /// a <code>ConnectionState</code> of <code>DISCONNECTING</code> or <code>FAILED</code>.
-        /// This operation is valid for all other <code>ConnectionState</code> values.
+        /// You requested the <a>GenerateRandom</a> operation in an CloudHSM key store that is
+        /// not connected. This operation is valid only when the CloudHSM key store <code>ConnectionState</code>
+        /// is <code>CONNECTED</code>. 
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -3498,7 +4097,7 @@ namespace Amazon.KeyManagementService
         /// <para>
         /// The KMS key that you use for this operation must be in a compatible key state. For
         /// details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-        /// state: Effect on your KMS key</a> in the <i>Key Management Service Developer Guide</i>.
+        /// states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -3519,7 +4118,7 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>The response from the EnableKey service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request. The request can be retried.
+        /// The system timed out while trying to fulfill the request. You can retry the request.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
         /// The request was rejected because a specified ARN, or an ARN in a key policy, is not
@@ -3535,10 +4134,25 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-        /// state: Effect on your KMS key</a> in the <i> <i>Key Management Service Developer Guide</i>
-        /// </i>.
+        /// This exceptions means one of the following:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The key state of the KMS key is not compatible with the operation. 
+        /// </para>
+        ///  
+        /// <para>
+        /// To find the key state, use the <a>DescribeKey</a> operation. For more information
+        /// about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
+        /// states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For cryptographic operations on KMS keys in custom key stores, this exception represents
+        /// a general failure with many possible causes. To identify the cause, see the error
+        /// message that accompanies the exception.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.LimitExceededException">
         /// The request was rejected because a quota was exceeded. For more information, see <a
@@ -3566,7 +4180,7 @@ namespace Amazon.KeyManagementService
         /// <para>
         /// The KMS key that you use for this operation must be in a compatible key state. For
         /// details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-        /// state: Effect on your KMS key</a> in the <i>Key Management Service Developer Guide</i>.
+        /// states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -3587,7 +4201,7 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>The response from the EnableKey service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request. The request can be retried.
+        /// The system timed out while trying to fulfill the request. You can retry the request.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
         /// The request was rejected because a specified ARN, or an ARN in a key policy, is not
@@ -3603,10 +4217,25 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-        /// state: Effect on your KMS key</a> in the <i> <i>Key Management Service Developer Guide</i>
-        /// </i>.
+        /// This exceptions means one of the following:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The key state of the KMS key is not compatible with the operation. 
+        /// </para>
+        ///  
+        /// <para>
+        /// To find the key state, use the <a>DescribeKey</a> operation. For more information
+        /// about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
+        /// states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For cryptographic operations on KMS keys in custom key stores, this exception represents
+        /// a general failure with many possible causes. To identify the cause, see the error
+        /// message that accompanies the exception.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.LimitExceededException">
         /// The request was rejected because a quota was exceeded. For more information, see <a
@@ -3666,21 +4295,55 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Enables <a href="https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html">automatic
-        /// rotation of the key material</a> for the specified symmetric KMS key.
+        /// rotation of the key material</a> of the specified symmetric encryption KMS key. 
         /// 
         ///  
         /// <para>
-        /// You cannot enable automatic rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symm-asymm-concepts.html#asymmetric-cmks">asymmetric
-        /// KMS keys</a>, KMS keys with <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">imported
-        /// key material</a>, or KMS keys in a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
-        /// key store</a>. To enable or disable automatic rotation of a set of related <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html#mrk-replica-key">multi-Region
-        /// keys</a>, set the property on the primary key.
+        /// When you enable automatic rotation of a<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
+        /// managed KMS key</a>, KMS rotates the key material of the KMS key one year (approximately
+        /// 365 days) from the enable date and every year thereafter. You can monitor rotation
+        /// of the key material for your KMS keys in CloudTrail and Amazon CloudWatch. To disable
+        /// rotation of the key material in a customer managed KMS key, use the <a>DisableKeyRotation</a>
+        /// operation.
         /// </para>
         ///  
         /// <para>
+        /// Automatic key rotation is supported only on <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#symmetric-cmks">symmetric
+        /// encryption KMS keys</a>. You cannot enable automatic rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">asymmetric
+        /// KMS keys</a>, <a href="https://docs.aws.amazon.com/kms/latest/developerguide/hmac.html">HMAC
+        /// KMS keys</a>, KMS keys with <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">imported
+        /// key material</a>, or KMS keys in a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
+        /// key store</a>. To enable or disable automatic rotation of a set of related <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-manage.html#multi-region-rotate">multi-Region
+        /// keys</a>, set the property on the primary key. 
+        /// </para>
+        ///  
+        /// <para>
+        /// You cannot enable or disable automatic rotation <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
+        /// Web Services managed KMS keys</a>. KMS always rotates the key material of Amazon Web
+        /// Services managed keys every year. Rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-owned-cmk">Amazon
+        /// Web Services owned KMS keys</a> varies.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// In May 2022, KMS changed the rotation schedule for Amazon Web Services managed keys
+        /// from every three years (approximately 1,095 days) to every year (approximately 365
+        /// days).
+        /// </para>
+        ///  
+        /// <para>
+        /// New Amazon Web Services managed keys are automatically rotated one year after they
+        /// are created, and approximately every year thereafter. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Existing Amazon Web Services managed keys are automatically rotated one year after
+        /// their most recent rotation, and every year thereafter.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// The KMS key that you use for this operation must be in a compatible key state. For
         /// details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-        /// state: Effect on your KMS key</a> in the <i>Key Management Service Developer Guide</i>.
+        /// states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -3706,11 +4369,11 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="keyId">Identifies a symmetric KMS key. You cannot enable automatic rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symm-asymm-concepts.html#asymmetric-cmks">asymmetric KMS keys</a>, KMS keys with <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">imported key material</a>, or KMS keys in a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a>. To enable or disable automatic rotation of a set of related <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html#mrk-replica-key">multi-Region keys</a>, set the property on the primary key. Specify the key ID or key ARN of the KMS key. For example: <ul> <li> Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> </ul> To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</param>
+        /// <param name="keyId">Identifies a symmetric encryption KMS key. You cannot enable automatic rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">asymmetric KMS keys</a>, <a href="https://docs.aws.amazon.com/kms/latest/developerguide/hmac.html">HMAC KMS keys</a>, KMS keys with <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">imported key material</a>, or KMS keys in a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a>. To enable or disable automatic rotation of a set of related <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-manage.html#multi-region-rotate">multi-Region keys</a>, set the property on the primary key. Specify the key ID or key ARN of the KMS key. For example: <ul> <li> Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> </ul> To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</param>
         /// 
         /// <returns>The response from the EnableKeyRotation service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request. The request can be retried.
+        /// The system timed out while trying to fulfill the request. You can retry the request.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.DisabledException">
         /// The request was rejected because the specified KMS key is not enabled.
@@ -3729,10 +4392,25 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-        /// state: Effect on your KMS key</a> in the <i> <i>Key Management Service Developer Guide</i>
-        /// </i>.
+        /// This exceptions means one of the following:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The key state of the KMS key is not compatible with the operation. 
+        /// </para>
+        ///  
+        /// <para>
+        /// To find the key state, use the <a>DescribeKey</a> operation. For more information
+        /// about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
+        /// states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For cryptographic operations on KMS keys in custom key stores, this exception represents
+        /// a general failure with many possible causes. To identify the cause, see the error
+        /// message that accompanies the exception.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
@@ -3752,21 +4430,55 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Enables <a href="https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html">automatic
-        /// rotation of the key material</a> for the specified symmetric KMS key.
+        /// rotation of the key material</a> of the specified symmetric encryption KMS key. 
         /// 
         ///  
         /// <para>
-        /// You cannot enable automatic rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symm-asymm-concepts.html#asymmetric-cmks">asymmetric
-        /// KMS keys</a>, KMS keys with <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">imported
-        /// key material</a>, or KMS keys in a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
-        /// key store</a>. To enable or disable automatic rotation of a set of related <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html#mrk-replica-key">multi-Region
-        /// keys</a>, set the property on the primary key.
+        /// When you enable automatic rotation of a<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
+        /// managed KMS key</a>, KMS rotates the key material of the KMS key one year (approximately
+        /// 365 days) from the enable date and every year thereafter. You can monitor rotation
+        /// of the key material for your KMS keys in CloudTrail and Amazon CloudWatch. To disable
+        /// rotation of the key material in a customer managed KMS key, use the <a>DisableKeyRotation</a>
+        /// operation.
         /// </para>
         ///  
         /// <para>
+        /// Automatic key rotation is supported only on <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#symmetric-cmks">symmetric
+        /// encryption KMS keys</a>. You cannot enable automatic rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">asymmetric
+        /// KMS keys</a>, <a href="https://docs.aws.amazon.com/kms/latest/developerguide/hmac.html">HMAC
+        /// KMS keys</a>, KMS keys with <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">imported
+        /// key material</a>, or KMS keys in a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
+        /// key store</a>. To enable or disable automatic rotation of a set of related <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-manage.html#multi-region-rotate">multi-Region
+        /// keys</a>, set the property on the primary key. 
+        /// </para>
+        ///  
+        /// <para>
+        /// You cannot enable or disable automatic rotation <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
+        /// Web Services managed KMS keys</a>. KMS always rotates the key material of Amazon Web
+        /// Services managed keys every year. Rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-owned-cmk">Amazon
+        /// Web Services owned KMS keys</a> varies.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// In May 2022, KMS changed the rotation schedule for Amazon Web Services managed keys
+        /// from every three years (approximately 1,095 days) to every year (approximately 365
+        /// days).
+        /// </para>
+        ///  
+        /// <para>
+        /// New Amazon Web Services managed keys are automatically rotated one year after they
+        /// are created, and approximately every year thereafter. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Existing Amazon Web Services managed keys are automatically rotated one year after
+        /// their most recent rotation, and every year thereafter.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// The KMS key that you use for this operation must be in a compatible key state. For
         /// details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-        /// state: Effect on your KMS key</a> in the <i>Key Management Service Developer Guide</i>.
+        /// states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -3796,7 +4508,7 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>The response from the EnableKeyRotation service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request. The request can be retried.
+        /// The system timed out while trying to fulfill the request. You can retry the request.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.DisabledException">
         /// The request was rejected because the specified KMS key is not enabled.
@@ -3815,10 +4527,25 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-        /// state: Effect on your KMS key</a> in the <i> <i>Key Management Service Developer Guide</i>
-        /// </i>.
+        /// This exceptions means one of the following:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The key state of the KMS key is not compatible with the operation. 
+        /// </para>
+        ///  
+        /// <para>
+        /// To find the key state, use the <a>DescribeKey</a> operation. For more information
+        /// about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
+        /// states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For cryptographic operations on KMS keys in custom key stores, this exception represents
+        /// a general failure with many possible causes. To identify the cause, see the error
+        /// message that accompanies the exception.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
@@ -3876,41 +4603,21 @@ namespace Amazon.KeyManagementService
         #region  Encrypt
 
         /// <summary>
-        /// Encrypts plaintext into ciphertext by using a KMS key. The <code>Encrypt</code> operation
-        /// has two primary use cases:
+        /// Encrypts plaintext of up to 4,096 bytes using a KMS key. You can use a symmetric or
+        /// asymmetric KMS key with a <code>KeyUsage</code> of <code>ENCRYPT_DECRYPT</code>.
         /// 
-        ///  <ul> <li> 
+        ///  
         /// <para>
-        /// You can encrypt small amounts of arbitrary data, such as a personal identifier or
-        /// database password, or other sensitive information. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// You can use the <code>Encrypt</code> operation to move encrypted data from one Amazon
-        /// Web Services Region to another. For example, in Region A, generate a data key and
-        /// use the plaintext key to encrypt your data. Then, in Region A, use the <code>Encrypt</code>
-        /// operation to encrypt the plaintext data key under a KMS key in Region B. Now, you
-        /// can move the encrypted data and the encrypted data key to Region B. When necessary,
-        /// you can decrypt the encrypted data key and the encrypted data entirely within in Region
-        /// B.
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// You don't need to use the <code>Encrypt</code> operation to encrypt a data key. The
-        /// <a>GenerateDataKey</a> and <a>GenerateDataKeyPair</a> operations return a plaintext
-        /// data key and an encrypted copy of that data key.
+        /// You can use this operation to encrypt small amounts of arbitrary data, such as a personal
+        /// identifier or database password, or other sensitive information. You don't need to
+        /// use the <code>Encrypt</code> operation to encrypt a data key. The <a>GenerateDataKey</a>
+        /// and <a>GenerateDataKeyPair</a> operations return a plaintext data key and an encrypted
+        /// copy of that data key.
         /// </para>
         ///  
         /// <para>
-        /// When you encrypt data, you must specify a symmetric or asymmetric KMS key to use in
-        /// the encryption operation. The KMS key must have a <code>KeyUsage</code> value of <code>ENCRYPT_DECRYPT.</code>
-        /// To find the <code>KeyUsage</code> of a KMS key, use the <a>DescribeKey</a> operation.
-        /// 
-        /// </para>
-        ///  
-        /// <para>
-        /// If you use a symmetric KMS key, you can use an encryption context to add additional
-        /// security to your encryption operation. If you specify an <code>EncryptionContext</code>
+        /// If you use a symmetric encryption KMS key, you can use an encryption context to add
+        /// additional security to your encryption operation. If you specify an <code>EncryptionContext</code>
         /// when encrypting data, you must specify the same encryption context (a case-sensitive
         /// exact match) when decrypting the data. Otherwise, the request to decrypt fails with
         /// an <code>InvalidCiphertextException</code>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
@@ -3919,7 +4626,7 @@ namespace Amazon.KeyManagementService
         ///  
         /// <para>
         /// If you specify an asymmetric KMS key, you must also specify the encryption algorithm.
-        /// The algorithm must be compatible with the KMS key type.
+        /// The algorithm must be compatible with the KMS key spec.
         /// </para>
         ///  <important> 
         /// <para>
@@ -3932,9 +4639,9 @@ namespace Amazon.KeyManagementService
         ///  
         /// <para>
         /// You are not required to supply the key ID and encryption algorithm when you decrypt
-        /// with symmetric KMS keys because KMS stores this information in the ciphertext blob.
-        /// KMS cannot store metadata in ciphertext generated with asymmetric keys. The standard
-        /// format for asymmetric key ciphertext does not include configurable fields.
+        /// with symmetric encryption KMS keys because KMS stores this information in the ciphertext
+        /// blob. KMS cannot store metadata in ciphertext generated with asymmetric keys. The
+        /// standard format for asymmetric key ciphertext does not include configurable fields.
         /// </para>
         ///  </important> 
         /// <para>
@@ -3943,7 +4650,7 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Symmetric KMS keys
+        /// Symmetric encryption KMS keys
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -3985,11 +4692,15 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <code>RSAES_OAEP_SHA_256</code>: 446 bytes
         /// </para>
-        ///  </li> </ul> </li> </ul> 
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        ///  <code>SM2PKE</code>: 1024 bytes (China Regions only)
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// The KMS key that you use for this operation must be in a compatible key state. For
         /// details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-        /// state: Effect on your KMS key</a> in the <i>Key Management Service Developer Guide</i>.
+        /// states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -4024,7 +4735,7 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>The response from the Encrypt service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request. The request can be retried.
+        /// The system timed out while trying to fulfill the request. You can retry the request.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.DisabledException">
         /// The request was rejected because the specified KMS key is not enabled.
@@ -4047,9 +4758,10 @@ namespace Amazon.KeyManagementService
         ///  </li> </ul> 
         /// <para>
         /// For encrypting, decrypting, re-encrypting, and generating data keys, the <code>KeyUsage</code>
-        /// must be <code>ENCRYPT_DECRYPT</code>. For signing and verifying, the <code>KeyUsage</code>
-        /// must be <code>SIGN_VERIFY</code>. To find the <code>KeyUsage</code> of a KMS key,
-        /// use the <a>DescribeKey</a> operation.
+        /// must be <code>ENCRYPT_DECRYPT</code>. For signing and verifying messages, the <code>KeyUsage</code>
+        /// must be <code>SIGN_VERIFY</code>. For generating and verifying message authentication
+        /// codes (MACs), the <code>KeyUsage</code> must be <code>GENERATE_VERIFY_MAC</code>.
+        /// To find the <code>KeyUsage</code> of a KMS key, use the <a>DescribeKey</a> operation.
         /// </para>
         ///  
         /// <para>
@@ -4071,10 +4783,25 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-        /// state: Effect on your KMS key</a> in the <i> <i>Key Management Service Developer Guide</i>
-        /// </i>.
+        /// This exceptions means one of the following:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The key state of the KMS key is not compatible with the operation. 
+        /// </para>
+        ///  
+        /// <para>
+        /// To find the key state, use the <a>DescribeKey</a> operation. For more information
+        /// about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
+        /// states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For cryptographic operations on KMS keys in custom key stores, this exception represents
+        /// a general failure with many possible causes. To identify the cause, see the error
+        /// message that accompanies the exception.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
@@ -4128,24 +4855,30 @@ namespace Amazon.KeyManagementService
         #region  GenerateDataKey
 
         /// <summary>
-        /// Generates a unique symmetric data key for client-side encryption. This operation returns
-        /// a plaintext copy of the data key and a copy that is encrypted under a KMS key that
-        /// you specify. You can use the plaintext key to encrypt your data outside of KMS and
-        /// store the encrypted data key with the encrypted data.
+        /// Returns a unique symmetric data key for use outside of KMS. This operation returns
+        /// a plaintext copy of the data key and a copy that is encrypted under a symmetric encryption
+        /// KMS key that you specify. The bytes in the plaintext key are random; they are not
+        /// related to the caller or the KMS key. You can use the plaintext key to encrypt your
+        /// data outside of KMS and store the encrypted data key with the encrypted data.
         /// 
         ///  
         /// <para>
-        ///  <code>GenerateDataKey</code> returns a unique data key for each request. The bytes
-        /// in the plaintext key are not related to the caller or the KMS key.
+        /// To generate a data key, specify the symmetric encryption KMS key that will be used
+        /// to encrypt the data key. You cannot use an asymmetric KMS key to encrypt data keys.
+        /// To get the type of your KMS key, use the <a>DescribeKey</a> operation.
         /// </para>
         ///  
         /// <para>
-        /// To generate a data key, specify the symmetric KMS key that will be used to encrypt
-        /// the data key. You cannot use an asymmetric KMS key to generate data keys. To get the
-        /// type of your KMS key, use the <a>DescribeKey</a> operation. You must also specify
-        /// the length of the data key. Use either the <code>KeySpec</code> or <code>NumberOfBytes</code>
-        /// parameters (but not both). For 128-bit and 256-bit data keys, use the <code>KeySpec</code>
-        /// parameter. 
+        /// You must also specify the length of the data key. Use either the <code>KeySpec</code>
+        /// or <code>NumberOfBytes</code> parameters (but not both). For 128-bit and 256-bit data
+        /// keys, use the <code>KeySpec</code> parameter.
+        /// </para>
+        ///  
+        /// <para>
+        /// To generate a 128-bit SM4 data key (China Regions only), specify a <code>KeySpec</code>
+        /// value of <code>AES_128</code> or a <code>NumberOfBytes</code> value of <code>16</code>.
+        /// The symmetric encryption key used in China Regions to encrypt your data key is an
+        /// SM4 encryption key.
         /// </para>
         ///  
         /// <para>
@@ -4155,7 +4888,7 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        /// You can use the optional encryption context to add additional security to the encryption
+        /// You can use an optional encryption context to add additional security to the encryption
         /// operation. If you specify an <code>EncryptionContext</code>, you must specify the
         /// same encryption context (a case-sensitive exact match) when decrypting the encrypted
         /// data key. Otherwise, the request to decrypt fails with an <code>InvalidCiphertextException</code>.
@@ -4164,18 +4897,25 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        /// Applications in Amazon Web Services Nitro Enclaves can call this operation by using
-        /// the <a href="https://github.com/aws/aws-nitro-enclaves-sdk-c">Amazon Web Services
-        /// Nitro Enclaves Development Kit</a>. For information about the supporting parameters,
+        ///  <code>GenerateDataKey</code> also supports <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave.html">Amazon
+        /// Web Services Nitro Enclaves</a>, which provide an isolated compute environment in
+        /// Amazon EC2. To call <code>GenerateDataKey</code> for an Amazon Web Services Nitro
+        /// enclave, use the <a href="https://docs.aws.amazon.com/enclaves/latest/user/developing-applications.html#sdk">Amazon
+        /// Web Services Nitro Enclaves SDK</a> or any Amazon Web Services SDK. Use the <code>Recipient</code>
+        /// parameter to provide the attestation document for the enclave. <code>GenerateDataKey</code>
+        /// returns a copy of the data key encrypted under the specified KMS key, as usual. But
+        /// instead of a plaintext copy of the data key, the response includes a copy of the data
+        /// key encrypted under the public key from the attestation document (<code>CiphertextForRecipient</code>).
+        /// For information about the interaction between KMS and Amazon Web Services Nitro Enclaves,
         /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How
-        /// Amazon Web Services Nitro Enclaves use KMS</a> in the <i>Key Management Service Developer
-        /// Guide</i>.
+        /// Amazon Web Services Nitro Enclaves uses KMS</a> in the <i>Key Management Service Developer
+        /// Guide</i>..
         /// </para>
         ///  
         /// <para>
         /// The KMS key that you use for this operation must be in a compatible key state. For
         /// details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-        /// state: Effect on your KMS key</a> in the <i>Key Management Service Developer Guide</i>.
+        /// states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -4263,7 +5003,7 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>The response from the GenerateDataKey service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request. The request can be retried.
+        /// The system timed out while trying to fulfill the request. You can retry the request.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.DisabledException">
         /// The request was rejected because the specified KMS key is not enabled.
@@ -4286,9 +5026,10 @@ namespace Amazon.KeyManagementService
         ///  </li> </ul> 
         /// <para>
         /// For encrypting, decrypting, re-encrypting, and generating data keys, the <code>KeyUsage</code>
-        /// must be <code>ENCRYPT_DECRYPT</code>. For signing and verifying, the <code>KeyUsage</code>
-        /// must be <code>SIGN_VERIFY</code>. To find the <code>KeyUsage</code> of a KMS key,
-        /// use the <a>DescribeKey</a> operation.
+        /// must be <code>ENCRYPT_DECRYPT</code>. For signing and verifying messages, the <code>KeyUsage</code>
+        /// must be <code>SIGN_VERIFY</code>. For generating and verifying message authentication
+        /// codes (MACs), the <code>KeyUsage</code> must be <code>GENERATE_VERIFY_MAC</code>.
+        /// To find the <code>KeyUsage</code> of a KMS key, use the <a>DescribeKey</a> operation.
         /// </para>
         ///  
         /// <para>
@@ -4310,10 +5051,25 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-        /// state: Effect on your KMS key</a> in the <i> <i>Key Management Service Developer Guide</i>
-        /// </i>.
+        /// This exceptions means one of the following:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The key state of the KMS key is not compatible with the operation. 
+        /// </para>
+        ///  
+        /// <para>
+        /// To find the key state, use the <a>DescribeKey</a> operation. For more information
+        /// about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
+        /// states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For cryptographic operations on KMS keys in custom key stores, this exception represents
+        /// a general failure with many possible causes. To identify the cause, see the error
+        /// message that accompanies the exception.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
@@ -4367,11 +5123,12 @@ namespace Amazon.KeyManagementService
         #region  GenerateDataKeyPair
 
         /// <summary>
-        /// Generates a unique asymmetric data key pair. The <code>GenerateDataKeyPair</code>
-        /// operation returns a plaintext public key, a plaintext private key, and a copy of the
-        /// private key that is encrypted under the symmetric KMS key you specify. You can use
-        /// the data key pair to perform asymmetric cryptography and implement digital signatures
-        /// outside of KMS.
+        /// Returns a unique asymmetric data key pair for use outside of KMS. This operation returns
+        /// a plaintext public key, a plaintext private key, and a copy of the private key that
+        /// is encrypted under the symmetric encryption KMS key you specify. You can use the data
+        /// key pair to perform asymmetric cryptography and implement digital signatures outside
+        /// of KMS. The bytes in the keys are random; they not related to the caller or to the
+        /// KMS key that is used to encrypt the private key. 
         /// 
         ///  
         /// <para>
@@ -4382,17 +5139,18 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        /// To generate a data key pair, you must specify a symmetric KMS key to encrypt the private
-        /// key in a data key pair. You cannot use an asymmetric KMS key or a KMS key in a custom
-        /// key store. To get the type and origin of your KMS key, use the <a>DescribeKey</a>
+        /// To generate a data key pair, you must specify a symmetric encryption KMS key to encrypt
+        /// the private key in a data key pair. You cannot use an asymmetric KMS key or a KMS
+        /// key in a custom key store. To get the type and origin of your KMS key, use the <a>DescribeKey</a>
         /// operation. 
         /// </para>
         ///  
         /// <para>
         /// Use the <code>KeyPairSpec</code> parameter to choose an RSA or Elliptic Curve (ECC)
-        /// data key pair. KMS recommends that your use ECC key pairs for signing, and use RSA
-        /// key pairs for either encryption or signing, but not both. However, KMS cannot enforce
-        /// any restrictions on the use of data key pairs outside of KMS.
+        /// data key pair. In China Regions, you can also choose an SM2 data key pair. KMS recommends
+        /// that you use ECC key pairs for signing, and use RSA and SM2 key pairs for either encryption
+        /// or signing, but not both. However, KMS cannot enforce any restrictions on the use
+        /// of data key pairs outside of KMS.
         /// </para>
         ///  
         /// <para>
@@ -4407,15 +5165,32 @@ namespace Amazon.KeyManagementService
         ///  
         /// <para>
         ///  <code>GenerateDataKeyPair</code> returns a unique data key pair for each request.
-        /// The bytes in the keys are not related to the caller or the KMS key that is used to
-        /// encrypt the private key. The public key is a DER-encoded X.509 SubjectPublicKeyInfo,
+        /// The bytes in the keys are random; they are not related to the caller or the KMS key
+        /// that is used to encrypt the private key. The public key is a DER-encoded X.509 SubjectPublicKeyInfo,
         /// as specified in <a href="https://tools.ietf.org/html/rfc5280">RFC 5280</a>. The private
         /// key is a DER-encoded PKCS8 PrivateKeyInfo, as specified in <a href="https://tools.ietf.org/html/rfc5958">RFC
         /// 5958</a>.
         /// </para>
         ///  
         /// <para>
-        /// You can use the optional encryption context to add additional security to the encryption
+        ///  <code>GenerateDataKeyPair</code> also supports <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave.html">Amazon
+        /// Web Services Nitro Enclaves</a>, which provide an isolated compute environment in
+        /// Amazon EC2. To call <code>GenerateDataKeyPair</code> for an Amazon Web Services Nitro
+        /// enclave, use the <a href="https://docs.aws.amazon.com/enclaves/latest/user/developing-applications.html#sdk">Amazon
+        /// Web Services Nitro Enclaves SDK</a> or any Amazon Web Services SDK. Use the <code>Recipient</code>
+        /// parameter to provide the attestation document for the enclave. <code>GenerateDataKeyPair</code>
+        /// returns the public data key and a copy of the private data key encrypted under the
+        /// specified KMS key, as usual. But instead of a plaintext copy of the private data key
+        /// (<code>PrivateKeyPlaintext</code>), the response includes a copy of the private data
+        /// key encrypted under the public key from the attestation document (<code>CiphertextForRecipient</code>).
+        /// For information about the interaction between KMS and Amazon Web Services Nitro Enclaves,
+        /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How
+        /// Amazon Web Services Nitro Enclaves uses KMS</a> in the <i>Key Management Service Developer
+        /// Guide</i>..
+        /// </para>
+        ///  
+        /// <para>
+        /// You can use an optional encryption context to add additional security to the encryption
         /// operation. If you specify an <code>EncryptionContext</code>, you must specify the
         /// same encryption context (a case-sensitive exact match) when decrypting the encrypted
         /// data key. Otherwise, the request to decrypt fails with an <code>InvalidCiphertextException</code>.
@@ -4426,7 +5201,7 @@ namespace Amazon.KeyManagementService
         /// <para>
         /// The KMS key that you use for this operation must be in a compatible key state. For
         /// details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-        /// state: Effect on your KMS key</a> in the <i>Key Management Service Developer Guide</i>.
+        /// states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -4469,7 +5244,7 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>The response from the GenerateDataKeyPair service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request. The request can be retried.
+        /// The system timed out while trying to fulfill the request. You can retry the request.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.DisabledException">
         /// The request was rejected because the specified KMS key is not enabled.
@@ -4492,9 +5267,10 @@ namespace Amazon.KeyManagementService
         ///  </li> </ul> 
         /// <para>
         /// For encrypting, decrypting, re-encrypting, and generating data keys, the <code>KeyUsage</code>
-        /// must be <code>ENCRYPT_DECRYPT</code>. For signing and verifying, the <code>KeyUsage</code>
-        /// must be <code>SIGN_VERIFY</code>. To find the <code>KeyUsage</code> of a KMS key,
-        /// use the <a>DescribeKey</a> operation.
+        /// must be <code>ENCRYPT_DECRYPT</code>. For signing and verifying messages, the <code>KeyUsage</code>
+        /// must be <code>SIGN_VERIFY</code>. For generating and verifying message authentication
+        /// codes (MACs), the <code>KeyUsage</code> must be <code>GENERATE_VERIFY_MAC</code>.
+        /// To find the <code>KeyUsage</code> of a KMS key, use the <a>DescribeKey</a> operation.
         /// </para>
         ///  
         /// <para>
@@ -4516,10 +5292,25 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-        /// state: Effect on your KMS key</a> in the <i> <i>Key Management Service Developer Guide</i>
-        /// </i>.
+        /// This exceptions means one of the following:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The key state of the KMS key is not compatible with the operation. 
+        /// </para>
+        ///  
+        /// <para>
+        /// To find the key state, use the <a>DescribeKey</a> operation. For more information
+        /// about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
+        /// states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For cryptographic operations on KMS keys in custom key stores, this exception represents
+        /// a general failure with many possible causes. To identify the cause, see the error
+        /// message that accompanies the exception.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
@@ -4577,10 +5368,12 @@ namespace Amazon.KeyManagementService
         #region  GenerateDataKeyPairWithoutPlaintext
 
         /// <summary>
-        /// Generates a unique asymmetric data key pair. The <code>GenerateDataKeyPairWithoutPlaintext</code>
-        /// operation returns a plaintext public key and a copy of the private key that is encrypted
-        /// under the symmetric KMS key you specify. Unlike <a>GenerateDataKeyPair</a>, this operation
-        /// does not return a plaintext private key. 
+        /// Returns a unique asymmetric data key pair for use outside of KMS. This operation returns
+        /// a plaintext public key and a copy of the private key that is encrypted under the symmetric
+        /// encryption KMS key you specify. Unlike <a>GenerateDataKeyPair</a>, this operation
+        /// does not return a plaintext private key. The bytes in the keys are random; they are
+        /// not related to the caller or to the KMS key that is used to encrypt the private key.
+        /// 
         /// 
         ///  
         /// <para>
@@ -4591,17 +5384,18 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        /// To generate a data key pair, you must specify a symmetric KMS key to encrypt the private
-        /// key in a data key pair. You cannot use an asymmetric KMS key or a KMS key in a custom
-        /// key store. To get the type and origin of your KMS key, use the <a>DescribeKey</a>
+        /// To generate a data key pair, you must specify a symmetric encryption KMS key to encrypt
+        /// the private key in a data key pair. You cannot use an asymmetric KMS key or a KMS
+        /// key in a custom key store. To get the type and origin of your KMS key, use the <a>DescribeKey</a>
         /// operation. 
         /// </para>
         ///  
         /// <para>
         /// Use the <code>KeyPairSpec</code> parameter to choose an RSA or Elliptic Curve (ECC)
-        /// data key pair. KMS recommends that your use ECC key pairs for signing, and use RSA
-        /// key pairs for either encryption or signing, but not both. However, KMS cannot enforce
-        /// any restrictions on the use of data key pairs outside of KMS.
+        /// data key pair. In China Regions, you can also choose an SM2 data key pair. KMS recommends
+        /// that you use ECC key pairs for signing, and use RSA and SM2 key pairs for either encryption
+        /// or signing, but not both. However, KMS cannot enforce any restrictions on the use
+        /// of data key pairs outside of KMS.
         /// </para>
         ///  
         /// <para>
@@ -4612,7 +5406,7 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        /// You can use the optional encryption context to add additional security to the encryption
+        /// You can use an optional encryption context to add additional security to the encryption
         /// operation. If you specify an <code>EncryptionContext</code>, you must specify the
         /// same encryption context (a case-sensitive exact match) when decrypting the encrypted
         /// data key. Otherwise, the request to decrypt fails with an <code>InvalidCiphertextException</code>.
@@ -4623,7 +5417,7 @@ namespace Amazon.KeyManagementService
         /// <para>
         /// The KMS key that you use for this operation must be in a compatible key state. For
         /// details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-        /// state: Effect on your KMS key</a> in the <i>Key Management Service Developer Guide</i>.
+        /// states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -4666,7 +5460,7 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>The response from the GenerateDataKeyPairWithoutPlaintext service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request. The request can be retried.
+        /// The system timed out while trying to fulfill the request. You can retry the request.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.DisabledException">
         /// The request was rejected because the specified KMS key is not enabled.
@@ -4689,9 +5483,10 @@ namespace Amazon.KeyManagementService
         ///  </li> </ul> 
         /// <para>
         /// For encrypting, decrypting, re-encrypting, and generating data keys, the <code>KeyUsage</code>
-        /// must be <code>ENCRYPT_DECRYPT</code>. For signing and verifying, the <code>KeyUsage</code>
-        /// must be <code>SIGN_VERIFY</code>. To find the <code>KeyUsage</code> of a KMS key,
-        /// use the <a>DescribeKey</a> operation.
+        /// must be <code>ENCRYPT_DECRYPT</code>. For signing and verifying messages, the <code>KeyUsage</code>
+        /// must be <code>SIGN_VERIFY</code>. For generating and verifying message authentication
+        /// codes (MACs), the <code>KeyUsage</code> must be <code>GENERATE_VERIFY_MAC</code>.
+        /// To find the <code>KeyUsage</code> of a KMS key, use the <a>DescribeKey</a> operation.
         /// </para>
         ///  
         /// <para>
@@ -4713,10 +5508,25 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-        /// state: Effect on your KMS key</a> in the <i> <i>Key Management Service Developer Guide</i>
-        /// </i>.
+        /// This exceptions means one of the following:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The key state of the KMS key is not compatible with the operation. 
+        /// </para>
+        ///  
+        /// <para>
+        /// To find the key state, use the <a>DescribeKey</a> operation. For more information
+        /// about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
+        /// states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For cryptographic operations on KMS keys in custom key stores, this exception represents
+        /// a general failure with many possible causes. To identify the cause, see the error
+        /// message that accompanies the exception.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
@@ -4774,17 +5584,21 @@ namespace Amazon.KeyManagementService
         #region  GenerateDataKeyWithoutPlaintext
 
         /// <summary>
-        /// Generates a unique symmetric data key. This operation returns a data key that is encrypted
-        /// under a KMS key that you specify. To request an asymmetric data key pair, use the
-        /// <a>GenerateDataKeyPair</a> or <a>GenerateDataKeyPairWithoutPlaintext</a> operations.
+        /// Returns a unique symmetric data key for use outside of KMS. This operation returns
+        /// a data key that is encrypted under a symmetric encryption KMS key that you specify.
+        /// The bytes in the key are random; they are not related to the caller or to the KMS
+        /// key.
         /// 
         ///  
         /// <para>
         ///  <code>GenerateDataKeyWithoutPlaintext</code> is identical to the <a>GenerateDataKey</a>
-        /// operation except that returns only the encrypted copy of the data key. This operation
-        /// is useful for systems that need to encrypt data at some point, but not immediately.
-        /// When you need to encrypt the data, you call the <a>Decrypt</a> operation on the encrypted
-        /// copy of the key. 
+        /// operation except that it does not return a plaintext copy of the data key. 
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation is useful for systems that need to encrypt data at some point, but
+        /// not immediately. When you need to encrypt the data, you call the <a>Decrypt</a> operation
+        /// on the encrypted copy of the key.
         /// </para>
         ///  
         /// <para>
@@ -4798,15 +5612,28 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        ///  <code>GenerateDataKeyWithoutPlaintext</code> returns a unique data key for each request.
-        /// The bytes in the keys are not related to the caller or KMS key that is used to encrypt
-        /// the private key.
+        /// To request an asymmetric data key pair, use the <a>GenerateDataKeyPair</a> or <a>GenerateDataKeyPairWithoutPlaintext</a>
+        /// operations.
         /// </para>
         ///  
         /// <para>
-        /// To generate a data key, you must specify the symmetric KMS key that is used to encrypt
-        /// the data key. You cannot use an asymmetric KMS key to generate a data key. To get
-        /// the type of your KMS key, use the <a>DescribeKey</a> operation.
+        /// To generate a data key, you must specify the symmetric encryption KMS key that is
+        /// used to encrypt the data key. You cannot use an asymmetric KMS key or a key in a custom
+        /// key store to generate a data key. To get the type of your KMS key, use the <a>DescribeKey</a>
+        /// operation.
+        /// </para>
+        ///  
+        /// <para>
+        /// You must also specify the length of the data key. Use either the <code>KeySpec</code>
+        /// or <code>NumberOfBytes</code> parameters (but not both). For 128-bit and 256-bit data
+        /// keys, use the <code>KeySpec</code> parameter.
+        /// </para>
+        ///  
+        /// <para>
+        /// To generate an SM4 data key (China Regions only), specify a <code>KeySpec</code> value
+        /// of <code>AES_128</code> or <code>NumberOfBytes</code> value of <code>16</code>. The
+        /// symmetric encryption key used in China Regions to encrypt your data key is an SM4
+        /// encryption key.
         /// </para>
         ///  
         /// <para>
@@ -4815,7 +5642,7 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        /// You can use the optional encryption context to add additional security to the encryption
+        /// You can use an optional encryption context to add additional security to the encryption
         /// operation. If you specify an <code>EncryptionContext</code>, you must specify the
         /// same encryption context (a case-sensitive exact match) when decrypting the encrypted
         /// data key. Otherwise, the request to decrypt fails with an <code>InvalidCiphertextException</code>.
@@ -4826,7 +5653,7 @@ namespace Amazon.KeyManagementService
         /// <para>
         /// The KMS key that you use for this operation must be in a compatible key state. For
         /// details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-        /// state: Effect on your KMS key</a> in the <i>Key Management Service Developer Guide</i>.
+        /// states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -4869,7 +5696,7 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>The response from the GenerateDataKeyWithoutPlaintext service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request. The request can be retried.
+        /// The system timed out while trying to fulfill the request. You can retry the request.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.DisabledException">
         /// The request was rejected because the specified KMS key is not enabled.
@@ -4892,9 +5719,10 @@ namespace Amazon.KeyManagementService
         ///  </li> </ul> 
         /// <para>
         /// For encrypting, decrypting, re-encrypting, and generating data keys, the <code>KeyUsage</code>
-        /// must be <code>ENCRYPT_DECRYPT</code>. For signing and verifying, the <code>KeyUsage</code>
-        /// must be <code>SIGN_VERIFY</code>. To find the <code>KeyUsage</code> of a KMS key,
-        /// use the <a>DescribeKey</a> operation.
+        /// must be <code>ENCRYPT_DECRYPT</code>. For signing and verifying messages, the <code>KeyUsage</code>
+        /// must be <code>SIGN_VERIFY</code>. For generating and verifying message authentication
+        /// codes (MACs), the <code>KeyUsage</code> must be <code>GENERATE_VERIFY_MAC</code>.
+        /// To find the <code>KeyUsage</code> of a KMS key, use the <a>DescribeKey</a> operation.
         /// </para>
         ///  
         /// <para>
@@ -4916,10 +5744,25 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-        /// state: Effect on your KMS key</a> in the <i> <i>Key Management Service Developer Guide</i>
-        /// </i>.
+        /// This exceptions means one of the following:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The key state of the KMS key is not compatible with the operation. 
+        /// </para>
+        ///  
+        /// <para>
+        /// To find the key state, use the <a>DescribeKey</a> operation. For more information
+        /// about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
+        /// states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For cryptographic operations on KMS keys in custom key stores, this exception represents
+        /// a general failure with many possible causes. To identify the cause, see the error
+        /// message that accompanies the exception.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
@@ -4970,6 +5813,172 @@ namespace Amazon.KeyManagementService
 
         #endregion
         
+        #region  GenerateMac
+
+        /// <summary>
+        /// Generates a hash-based message authentication code (HMAC) for a message using an HMAC
+        /// KMS key and a MAC algorithm that the key supports. HMAC KMS keys and the HMAC algorithms
+        /// that KMS uses conform to industry standards defined in <a href="https://datatracker.ietf.org/doc/html/rfc2104">RFC
+        /// 2104</a>.
+        /// 
+        ///  
+        /// <para>
+        /// You can use value that GenerateMac returns in the <a>VerifyMac</a> operation to demonstrate
+        /// that the original message has not changed. Also, because a secret key is used to create
+        /// the hash, you can verify that the party that generated the hash has the required secret
+        /// key. You can also use the raw result to implement HMAC-based algorithms such as key
+        /// derivation functions. This operation is part of KMS support for HMAC KMS keys. For
+        /// details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/hmac.html">HMAC
+        /// keys in KMS</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Best practices recommend that you limit the time during which any signing mechanism,
+        /// including an HMAC, is effective. This deters an attack where the actor uses a signed
+        /// message to establish validity repeatedly or long after the message is superseded.
+        /// HMAC tags do not include a timestamp, but you can include a timestamp in the token
+        /// or message to help you detect when its time to refresh the HMAC. 
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// The KMS key that you use for this operation must be in a compatible key state. For
+        /// details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
+        /// states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Cross-account use</b>: Yes. To perform this operation with a KMS key in a different
+        /// Amazon Web Services account, specify the key ARN or alias ARN in the value of the
+        /// <code>KeyId</code> parameter. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Required permissions</b>: <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:GenerateMac</a>
+        /// (key policy)
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Related operations</b>: <a>VerifyMac</a> 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GenerateMac service method.</param>
+        /// 
+        /// <returns>The response from the GenerateMac service method, as returned by KeyManagementService.</returns>
+        /// <exception cref="Amazon.KeyManagementService.Model.DisabledException">
+        /// The request was rejected because the specified KMS key is not enabled.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.InvalidGrantTokenException">
+        /// The request was rejected because the specified grant token is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.InvalidKeyUsageException">
+        /// The request was rejected for one of the following reasons: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// The <code>KeyUsage</code> value of the KMS key is incompatible with the API operation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The encryption algorithm or signing algorithm specified for the operation is incompatible
+        /// with the type of key material in the KMS key <code>(KeySpec</code>).
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For encrypting, decrypting, re-encrypting, and generating data keys, the <code>KeyUsage</code>
+        /// must be <code>ENCRYPT_DECRYPT</code>. For signing and verifying messages, the <code>KeyUsage</code>
+        /// must be <code>SIGN_VERIFY</code>. For generating and verifying message authentication
+        /// codes (MACs), the <code>KeyUsage</code> must be <code>GENERATE_VERIFY_MAC</code>.
+        /// To find the <code>KeyUsage</code> of a KMS key, use the <a>DescribeKey</a> operation.
+        /// </para>
+        ///  
+        /// <para>
+        /// To find the encryption or signing algorithms supported for a particular KMS key, use
+        /// the <a>DescribeKey</a> operation.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KeyUnavailableException">
+        /// The request was rejected because the specified KMS key was not available. You can
+        /// retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
+        /// The request was rejected because an internal exception occurred. The request can be
+        /// retried.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KMSInvalidStateException">
+        /// The request was rejected because the state of the specified resource is not valid
+        /// for this request.
+        /// 
+        ///  
+        /// <para>
+        /// This exceptions means one of the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The key state of the KMS key is not compatible with the operation. 
+        /// </para>
+        ///  
+        /// <para>
+        /// To find the key state, use the <a>DescribeKey</a> operation. For more information
+        /// about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
+        /// states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For cryptographic operations on KMS keys in custom key stores, this exception represents
+        /// a general failure with many possible causes. To identify the cause, see the error
+        /// message that accompanies the exception.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
+        /// The request was rejected because the specified entity or resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GenerateMac">REST API Reference for GenerateMac Operation</seealso>
+        public virtual GenerateMacResponse GenerateMac(GenerateMacRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GenerateMacRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GenerateMacResponseUnmarshaller.Instance;
+
+            return Invoke<GenerateMacResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GenerateMac operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GenerateMac operation on AmazonKeyManagementServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGenerateMac
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GenerateMac">REST API Reference for GenerateMac Operation</seealso>
+        public virtual IAsyncResult BeginGenerateMac(GenerateMacRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GenerateMacRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GenerateMacResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GenerateMac operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGenerateMac.</param>
+        /// 
+        /// <returns>Returns a  GenerateMacResult from KeyManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GenerateMac">REST API Reference for GenerateMac Operation</seealso>
+        public virtual GenerateMacResponse EndGenerateMac(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GenerateMacResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GenerateRandom
 
         /// <summary>
@@ -4977,17 +5986,26 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// By default, the random byte string is generated in KMS. To generate the byte string
-        /// in the CloudHSM cluster that is associated with a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
-        /// key store</a>, specify the custom key store ID.
+        /// You must use the <code>NumberOfBytes</code> parameter to specify the length of the
+        /// random byte string. There is no default value for string length.
         /// </para>
         ///  
         /// <para>
-        /// Applications in Amazon Web Services Nitro Enclaves can call this operation by using
-        /// the <a href="https://github.com/aws/aws-nitro-enclaves-sdk-c">Amazon Web Services
-        /// Nitro Enclaves Development Kit</a>. For information about the supporting parameters,
-        /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How
-        /// Amazon Web Services Nitro Enclaves use KMS</a> in the <i>Key Management Service Developer
+        /// By default, the random byte string is generated in KMS. To generate the byte string
+        /// in the CloudHSM cluster associated with an CloudHSM key store, use the <code>CustomKeyStoreId</code>
+        /// parameter.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>GenerateRandom</code> also supports <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave.html">Amazon
+        /// Web Services Nitro Enclaves</a>, which provide an isolated compute environment in
+        /// Amazon EC2. To call <code>GenerateRandom</code> for a Nitro enclave, use the <a href="https://docs.aws.amazon.com/enclaves/latest/user/developing-applications.html#sdk">Amazon
+        /// Web Services Nitro Enclaves SDK</a> or any Amazon Web Services SDK. Use the <code>Recipient</code>
+        /// parameter to provide the attestation document for the enclave. Instead of plaintext
+        /// bytes, the response includes the plaintext bytes encrypted under the public key from
+        /// the attestation document (<code>CiphertextForRecipient</code>).For information about
+        /// the interaction between KMS and Amazon Web Services Nitro Enclaves, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How
+        /// Amazon Web Services Nitro Enclaves uses KMS</a> in the <i>Key Management Service Developer
         /// Guide</i>.
         /// </para>
         ///  
@@ -4997,11 +6015,16 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
+        ///  <b>Cross-account use</b>: Not applicable. <code>GenerateRandom</code> does not use
+        /// any account-specific resources, such as KMS keys.
+        /// </para>
+        ///  
+        /// <para>
         ///  <b>Required permissions</b>: <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:GenerateRandom</a>
         /// (IAM policy)
         /// </para>
         /// </summary>
-        /// <param name="numberOfBytes">The length of the byte string.</param>
+        /// <param name="numberOfBytes">The length of the random byte string. This parameter is required.</param>
         /// 
         /// <returns>The response from the GenerateRandom service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.CustomKeyStoreInvalidStateException">
@@ -5015,9 +6038,23 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// You requested the <a>CreateKey</a> or <a>GenerateRandom</a> operation in a custom
-        /// key store that is not connected. These operations are valid only when the custom key
-        /// store <code>ConnectionState</code> is <code>CONNECTED</code>.
+        /// You requested the <a>ConnectCustomKeyStore</a> operation on a custom key store with
+        /// a <code>ConnectionState</code> of <code>DISCONNECTING</code> or <code>FAILED</code>.
+        /// This operation is valid for all other <code>ConnectionState</code> values. To reconnect
+        /// a custom key store in a <code>FAILED</code> state, disconnect it (<a>DisconnectCustomKeyStore</a>),
+        /// then connect it (<code>ConnectCustomKeyStore</code>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You requested the <a>CreateKey</a> operation in a custom key store that is not connected.
+        /// This operations is valid only when the custom key store <code>ConnectionState</code>
+        /// is <code>CONNECTED</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You requested the <a>DisconnectCustomKeyStore</a> operation on a custom key store
+        /// with a <code>ConnectionState</code> of <code>DISCONNECTING</code> or <code>DISCONNECTED</code>.
+        /// This operation is valid for all other <code>ConnectionState</code> values.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5027,9 +6064,9 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You requested the <a>ConnectCustomKeyStore</a> operation on a custom key store with
-        /// a <code>ConnectionState</code> of <code>DISCONNECTING</code> or <code>FAILED</code>.
-        /// This operation is valid for all other <code>ConnectionState</code> values.
+        /// You requested the <a>GenerateRandom</a> operation in an CloudHSM key store that is
+        /// not connected. This operation is valid only when the CloudHSM key store <code>ConnectionState</code>
+        /// is <code>CONNECTED</code>. 
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -5038,11 +6075,15 @@ namespace Amazon.KeyManagementService
         /// key store name or ID.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request. The request can be retried.
+        /// The system timed out while trying to fulfill the request. You can retry the request.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
         /// The request was rejected because an internal exception occurred. The request can be
         /// retried.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.UnsupportedOperationException">
+        /// The request was rejected because a specified parameter is not supported or a specified
+        /// resource is not valid for this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GenerateRandom">REST API Reference for GenerateRandom Operation</seealso>
         public virtual GenerateRandomResponse GenerateRandom(int numberOfBytes)
@@ -5058,23 +6099,37 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// By default, the random byte string is generated in KMS. To generate the byte string
-        /// in the CloudHSM cluster that is associated with a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
-        /// key store</a>, specify the custom key store ID.
+        /// You must use the <code>NumberOfBytes</code> parameter to specify the length of the
+        /// random byte string. There is no default value for string length.
         /// </para>
         ///  
         /// <para>
-        /// Applications in Amazon Web Services Nitro Enclaves can call this operation by using
-        /// the <a href="https://github.com/aws/aws-nitro-enclaves-sdk-c">Amazon Web Services
-        /// Nitro Enclaves Development Kit</a>. For information about the supporting parameters,
-        /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How
-        /// Amazon Web Services Nitro Enclaves use KMS</a> in the <i>Key Management Service Developer
+        /// By default, the random byte string is generated in KMS. To generate the byte string
+        /// in the CloudHSM cluster associated with an CloudHSM key store, use the <code>CustomKeyStoreId</code>
+        /// parameter.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>GenerateRandom</code> also supports <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave.html">Amazon
+        /// Web Services Nitro Enclaves</a>, which provide an isolated compute environment in
+        /// Amazon EC2. To call <code>GenerateRandom</code> for a Nitro enclave, use the <a href="https://docs.aws.amazon.com/enclaves/latest/user/developing-applications.html#sdk">Amazon
+        /// Web Services Nitro Enclaves SDK</a> or any Amazon Web Services SDK. Use the <code>Recipient</code>
+        /// parameter to provide the attestation document for the enclave. Instead of plaintext
+        /// bytes, the response includes the plaintext bytes encrypted under the public key from
+        /// the attestation document (<code>CiphertextForRecipient</code>).For information about
+        /// the interaction between KMS and Amazon Web Services Nitro Enclaves, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How
+        /// Amazon Web Services Nitro Enclaves uses KMS</a> in the <i>Key Management Service Developer
         /// Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// For more information about entropy and random number generation, see <a href="https://docs.aws.amazon.com/kms/latest/cryptographic-details/">Key
         /// Management Service Cryptographic Details</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Cross-account use</b>: Not applicable. <code>GenerateRandom</code> does not use
+        /// any account-specific resources, such as KMS keys.
         /// </para>
         ///  
         /// <para>
@@ -5096,9 +6151,23 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// You requested the <a>CreateKey</a> or <a>GenerateRandom</a> operation in a custom
-        /// key store that is not connected. These operations are valid only when the custom key
-        /// store <code>ConnectionState</code> is <code>CONNECTED</code>.
+        /// You requested the <a>ConnectCustomKeyStore</a> operation on a custom key store with
+        /// a <code>ConnectionState</code> of <code>DISCONNECTING</code> or <code>FAILED</code>.
+        /// This operation is valid for all other <code>ConnectionState</code> values. To reconnect
+        /// a custom key store in a <code>FAILED</code> state, disconnect it (<a>DisconnectCustomKeyStore</a>),
+        /// then connect it (<code>ConnectCustomKeyStore</code>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You requested the <a>CreateKey</a> operation in a custom key store that is not connected.
+        /// This operations is valid only when the custom key store <code>ConnectionState</code>
+        /// is <code>CONNECTED</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You requested the <a>DisconnectCustomKeyStore</a> operation on a custom key store
+        /// with a <code>ConnectionState</code> of <code>DISCONNECTING</code> or <code>DISCONNECTED</code>.
+        /// This operation is valid for all other <code>ConnectionState</code> values.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5108,9 +6177,9 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You requested the <a>ConnectCustomKeyStore</a> operation on a custom key store with
-        /// a <code>ConnectionState</code> of <code>DISCONNECTING</code> or <code>FAILED</code>.
-        /// This operation is valid for all other <code>ConnectionState</code> values.
+        /// You requested the <a>GenerateRandom</a> operation in an CloudHSM key store that is
+        /// not connected. This operation is valid only when the CloudHSM key store <code>ConnectionState</code>
+        /// is <code>CONNECTED</code>. 
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -5119,11 +6188,15 @@ namespace Amazon.KeyManagementService
         /// key store name or ID.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request. The request can be retried.
+        /// The system timed out while trying to fulfill the request. You can retry the request.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
         /// The request was rejected because an internal exception occurred. The request can be
         /// retried.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.UnsupportedOperationException">
+        /// The request was rejected because a specified parameter is not supported or a specified
+        /// resource is not valid for this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GenerateRandom">REST API Reference for GenerateRandom Operation</seealso>
         public virtual GenerateRandomResponse GenerateRandom(GenerateRandomRequest request)
@@ -5196,7 +6269,7 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>The response from the GetKeyPolicy service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request. The request can be retried.
+        /// The system timed out while trying to fulfill the request. You can retry the request.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
         /// The request was rejected because a specified ARN, or an ARN in a key policy, is not
@@ -5212,10 +6285,25 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-        /// state: Effect on your KMS key</a> in the <i> <i>Key Management Service Developer Guide</i>
-        /// </i>.
+        /// This exceptions means one of the following:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The key state of the KMS key is not compatible with the operation. 
+        /// </para>
+        ///  
+        /// <para>
+        /// To find the key state, use the <a>DescribeKey</a> operation. For more information
+        /// about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
+        /// states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For cryptographic operations on KMS keys in custom key stores, this exception represents
+        /// a general failure with many possible causes. To identify the cause, see the error
+        /// message that accompanies the exception.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
@@ -5252,7 +6340,7 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>The response from the GetKeyPolicy service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request. The request can be retried.
+        /// The system timed out while trying to fulfill the request. You can retry the request.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
         /// The request was rejected because a specified ARN, or an ARN in a key policy, is not
@@ -5268,10 +6356,25 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-        /// state: Effect on your KMS key</a> in the <i> <i>Key Management Service Developer Guide</i>
-        /// </i>.
+        /// This exceptions means one of the following:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The key state of the KMS key is not compatible with the operation. 
+        /// </para>
+        ///  
+        /// <para>
+        /// To find the key state, use the <a>DescribeKey</a> operation. For more information
+        /// about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
+        /// states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For cryptographic operations on KMS keys in custom key stores, this exception represents
+        /// a general failure with many possible causes. To identify the cause, see the error
+        /// message that accompanies the exception.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
@@ -5330,29 +6433,54 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// You cannot enable automatic rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symm-asymm-concepts.html#asymmetric-cmks">asymmetric
-        /// KMS keys</a>, KMS keys with <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">imported
-        /// key material</a>, or KMS keys in a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
-        /// key store</a>. To enable or disable automatic rotation of a set of related <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html#mrk-replica-key">multi-Region
-        /// keys</a>, set the property on the primary key. The key rotation status for these KMS
-        /// keys is always <code>false</code>.
+        /// When you enable automatic rotation for <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
+        /// managed KMS keys</a>, KMS rotates the key material of the KMS key one year (approximately
+        /// 365 days) from the enable date and every year thereafter. You can monitor rotation
+        /// of the key material for your KMS keys in CloudTrail and Amazon CloudWatch.
         /// </para>
         ///  
         /// <para>
+        /// Automatic key rotation is supported only on <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#symmetric-cmks">symmetric
+        /// encryption KMS keys</a>. You cannot enable automatic rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">asymmetric
+        /// KMS keys</a>, <a href="https://docs.aws.amazon.com/kms/latest/developerguide/hmac.html">HMAC
+        /// KMS keys</a>, KMS keys with <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">imported
+        /// key material</a>, or KMS keys in a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
+        /// key store</a>. To enable or disable automatic rotation of a set of related <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-manage.html#multi-region-rotate">multi-Region
+        /// keys</a>, set the property on the primary key..
+        /// </para>
+        ///  
+        /// <para>
+        /// You can enable (<a>EnableKeyRotation</a>) and disable automatic rotation (<a>DisableKeyRotation</a>)
+        /// of the key material in customer managed KMS keys. Key material rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
+        /// Web Services managed KMS keys</a> is not configurable. KMS always rotates the key
+        /// material in Amazon Web Services managed KMS keys every year. The key rotation status
+        /// for Amazon Web Services managed KMS keys is always <code>true</code>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// In May 2022, KMS changed the rotation schedule for Amazon Web Services managed keys
+        /// from every three years to every year. For details, see <a>EnableKeyRotation</a>.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// The KMS key that you use for this operation must be in a compatible key state. For
         /// details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-        /// state: Effect on your KMS key</a> in the <i>Key Management Service Developer Guide</i>.
+        /// states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         ///  <ul> <li> 
         /// <para>
         /// Disabled: The key rotation status does not change when you disable a KMS key. However,
-        /// while the KMS key is disabled, KMS does not rotate the key material.
+        /// while the KMS key is disabled, KMS does not rotate the key material. When you re-enable
+        /// the KMS key, rotation resumes. If the key material in the re-enabled KMS key hasn't
+        /// been rotated in one year, KMS rotates it immediately, and every year thereafter. If
+        /// it's been less than a year since the key material in the re-enabled KMS key was rotated,
+        /// the KMS key resumes its prior rotation schedule.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// Pending deletion: While a KMS key is pending deletion, its key rotation status is
         /// <code>false</code> and KMS does not rotate the key material. If you cancel the deletion,
-        /// the original key rotation status is restored.
+        /// the original key rotation status returns to <code>true</code>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -5383,7 +6511,7 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>The response from the GetKeyRotationStatus service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request. The request can be retried.
+        /// The system timed out while trying to fulfill the request. You can retry the request.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
         /// The request was rejected because a specified ARN, or an ARN in a key policy, is not
@@ -5399,10 +6527,25 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-        /// state: Effect on your KMS key</a> in the <i> <i>Key Management Service Developer Guide</i>
-        /// </i>.
+        /// This exceptions means one of the following:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The key state of the KMS key is not compatible with the operation. 
+        /// </para>
+        ///  
+        /// <para>
+        /// To find the key state, use the <a>DescribeKey</a> operation. For more information
+        /// about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
+        /// states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For cryptographic operations on KMS keys in custom key stores, this exception represents
+        /// a general failure with many possible causes. To identify the cause, see the error
+        /// message that accompanies the exception.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
@@ -5426,29 +6569,54 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// You cannot enable automatic rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symm-asymm-concepts.html#asymmetric-cmks">asymmetric
-        /// KMS keys</a>, KMS keys with <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">imported
-        /// key material</a>, or KMS keys in a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
-        /// key store</a>. To enable or disable automatic rotation of a set of related <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html#mrk-replica-key">multi-Region
-        /// keys</a>, set the property on the primary key. The key rotation status for these KMS
-        /// keys is always <code>false</code>.
+        /// When you enable automatic rotation for <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
+        /// managed KMS keys</a>, KMS rotates the key material of the KMS key one year (approximately
+        /// 365 days) from the enable date and every year thereafter. You can monitor rotation
+        /// of the key material for your KMS keys in CloudTrail and Amazon CloudWatch.
         /// </para>
         ///  
         /// <para>
+        /// Automatic key rotation is supported only on <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#symmetric-cmks">symmetric
+        /// encryption KMS keys</a>. You cannot enable automatic rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">asymmetric
+        /// KMS keys</a>, <a href="https://docs.aws.amazon.com/kms/latest/developerguide/hmac.html">HMAC
+        /// KMS keys</a>, KMS keys with <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">imported
+        /// key material</a>, or KMS keys in a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
+        /// key store</a>. To enable or disable automatic rotation of a set of related <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-manage.html#multi-region-rotate">multi-Region
+        /// keys</a>, set the property on the primary key..
+        /// </para>
+        ///  
+        /// <para>
+        /// You can enable (<a>EnableKeyRotation</a>) and disable automatic rotation (<a>DisableKeyRotation</a>)
+        /// of the key material in customer managed KMS keys. Key material rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
+        /// Web Services managed KMS keys</a> is not configurable. KMS always rotates the key
+        /// material in Amazon Web Services managed KMS keys every year. The key rotation status
+        /// for Amazon Web Services managed KMS keys is always <code>true</code>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// In May 2022, KMS changed the rotation schedule for Amazon Web Services managed keys
+        /// from every three years to every year. For details, see <a>EnableKeyRotation</a>.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// The KMS key that you use for this operation must be in a compatible key state. For
         /// details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-        /// state: Effect on your KMS key</a> in the <i>Key Management Service Developer Guide</i>.
+        /// states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         ///  <ul> <li> 
         /// <para>
         /// Disabled: The key rotation status does not change when you disable a KMS key. However,
-        /// while the KMS key is disabled, KMS does not rotate the key material.
+        /// while the KMS key is disabled, KMS does not rotate the key material. When you re-enable
+        /// the KMS key, rotation resumes. If the key material in the re-enabled KMS key hasn't
+        /// been rotated in one year, KMS rotates it immediately, and every year thereafter. If
+        /// it's been less than a year since the key material in the re-enabled KMS key was rotated,
+        /// the KMS key resumes its prior rotation schedule.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// Pending deletion: While a KMS key is pending deletion, its key rotation status is
         /// <code>false</code> and KMS does not rotate the key material. If you cancel the deletion,
-        /// the original key rotation status is restored.
+        /// the original key rotation status returns to <code>true</code>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -5479,7 +6647,7 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>The response from the GetKeyRotationStatus service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request. The request can be retried.
+        /// The system timed out while trying to fulfill the request. You can retry the request.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
         /// The request was rejected because a specified ARN, or an ARN in a key policy, is not
@@ -5495,10 +6663,25 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-        /// state: Effect on your KMS key</a> in the <i> <i>Key Management Service Developer Guide</i>
-        /// </i>.
+        /// This exceptions means one of the following:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The key state of the KMS key is not compatible with the operation. 
+        /// </para>
+        ///  
+        /// <para>
+        /// To find the key state, use the <a>DescribeKey</a> operation. For more information
+        /// about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
+        /// states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For cryptographic operations on KMS keys in custom key stores, this exception represents
+        /// a general failure with many possible causes. To identify the cause, see the error
+        /// message that accompanies the exception.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
@@ -5556,37 +6739,86 @@ namespace Amazon.KeyManagementService
         #region  GetParametersForImport
 
         /// <summary>
-        /// Returns the items you need to import key material into a symmetric, customer managed
-        /// KMS key. For more information about importing key material into KMS, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing
-        /// Key Material</a> in the <i>Key Management Service Developer Guide</i>.
+        /// Returns the public key and an import token you need to import or reimport key material
+        /// for a KMS key. 
         /// 
         ///  
         /// <para>
-        /// This operation returns a public key and an import token. Use the public key to encrypt
-        /// the symmetric key material. Store the import token to send with a subsequent <a>ImportKeyMaterial</a>
+        /// By default, KMS keys are created with key material that KMS generates. This operation
+        /// supports <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing
+        /// key material</a>, an advanced feature that lets you generate and import the cryptographic
+        /// key material for a KMS key. For more information about importing key material into
+        /// KMS, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing
+        /// key material</a> in the <i>Key Management Service Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Before calling <code>GetParametersForImport</code>, use the <a>CreateKey</a> operation
+        /// with an <code>Origin</code> value of <code>EXTERNAL</code> to create a KMS key with
+        /// no key material. You can import key material for a symmetric encryption KMS key, HMAC
+        /// KMS key, asymmetric encryption KMS key, or asymmetric signing KMS key. You can also
+        /// import key material into a <a href="kms/latest/developerguide/multi-region-keys-overview.html">multi-Region
+        /// key</a> of any supported type. However, you can't import key material into a KMS key
+        /// in a <a href="kms/latest/developerguide/custom-key-store-overview.html">custom key
+        /// store</a>. You can also use <code>GetParametersForImport</code> to get a public key
+        /// and import token to <a href="kms/latest/developerguide/importing-keys.html#reimport-key-material">reimport
+        /// the original key material</a> into a KMS key whose key material expired or was deleted.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>GetParametersForImport</code> returns the items that you need to import your
+        /// key material.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The public key (or "wrapping key") of an RSA key pair that KMS generates.
+        /// </para>
+        ///  
+        /// <para>
+        /// You will use this public key to encrypt ("wrap") your key material while it's in transit
+        /// to KMS. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A import token that ensures that KMS can decrypt your key material and associate it
+        /// with the correct KMS key.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The public key and its import token are permanently linked and must be used together.
+        /// Each public key and import token set is valid for 24 hours. The expiration date and
+        /// time appear in the <code>ParametersValidTo</code> field in the <code>GetParametersForImport</code>
+        /// response. You cannot use an expired public key or import token in an <a>ImportKeyMaterial</a>
+        /// request. If your key and token expire, send another <code>GetParametersForImport</code>
         /// request.
         /// </para>
         ///  
         /// <para>
-        /// You must specify the key ID of the symmetric KMS key into which you will import key
-        /// material. This KMS key's <code>Origin</code> must be <code>EXTERNAL</code>. You must
-        /// also specify the wrapping algorithm and type of wrapping key (public key) that you
-        /// will use to encrypt the key material. You cannot perform this operation on an asymmetric
-        /// KMS key or on any KMS key in a different Amazon Web Services account.
+        ///  <code>GetParametersForImport</code> requires the following information:
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// To import key material, you must use the public key and import token from the same
-        /// response. These items are valid for 24 hours. The expiration date and time appear
-        /// in the <code>GetParametersForImport</code> response. You cannot use an expired token
-        /// in an <a>ImportKeyMaterial</a> request. If your key and token expire, send another
-        /// <code>GetParametersForImport</code> request.
+        /// The key ID of the KMS key for which you are importing the key material.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The key spec of the public key ("wrapping key") that you will use to encrypt your
+        /// key material during import.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The wrapping algorithm that you will use with the public key to encrypt your key material.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// You can use the same or a different public key spec and wrapping algorithm each time
+        /// you import or reimport the same key material. 
         /// </para>
         ///  
         /// <para>
         /// The KMS key that you use for this operation must be in a compatible key state. For
         /// details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-        /// state: Effect on your KMS key</a> in the <i>Key Management Service Developer Guide</i>.
+        /// states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -5616,7 +6848,7 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>The response from the GetParametersForImport service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request. The request can be retried.
+        /// The system timed out while trying to fulfill the request. You can retry the request.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
         /// The request was rejected because a specified ARN, or an ARN in a key policy, is not
@@ -5632,10 +6864,25 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-        /// state: Effect on your KMS key</a> in the <i> <i>Key Management Service Developer Guide</i>
-        /// </i>.
+        /// This exceptions means one of the following:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The key state of the KMS key is not compatible with the operation. 
+        /// </para>
+        ///  
+        /// <para>
+        /// To find the key state, use the <a>DescribeKey</a> operation. For more information
+        /// about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
+        /// states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For cryptographic operations on KMS keys in custom key stores, this exception represents
+        /// a general failure with many possible causes. To identify the cause, see the error
+        /// message that accompanies the exception.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
@@ -5697,8 +6944,8 @@ namespace Amazon.KeyManagementService
         /// KMS key, which never leaves KMS unencrypted, callers with <code>kms:GetPublicKey</code>
         /// permission can download the public key of an asymmetric KMS key. You can share the
         /// public key to allow others to encrypt messages and verify signatures outside of KMS.
-        /// For information about symmetric and asymmetric KMS keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
-        /// Symmetric and Asymmetric KMS keys</a> in the <i>Key Management Service Developer Guide</i>.
+        /// For information about asymmetric KMS keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Asymmetric
+        /// KMS keys</a> in the <i>Key Management Service Developer Guide</i>.
         /// 
         ///  
         /// <para>
@@ -5707,8 +6954,7 @@ namespace Amazon.KeyManagementService
         /// the identifier of an asymmetric KMS key. When you use the public key within KMS, you
         /// benefit from the authentication, authorization, and logging that are part of every
         /// KMS operation. You also reduce of risk of encrypting data that cannot be decrypted.
-        /// These features are not effective outside of KMS. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/download-public-key.html#download-public-key-considerations">Special
-        /// Considerations for Downloading Public Keys</a>.
+        /// These features are not effective outside of KMS.
         /// </para>
         ///  
         /// <para>
@@ -5742,9 +6988,16 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
+        /// To verify a signature outside of KMS with an SM2 public key (China Regions only),
+        /// you must specify the distinguishing ID. By default, KMS uses <code>1234567812345678</code>
+        /// as the distinguishing ID. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/asymmetric-key-specs.html#key-spec-sm-offline-verification">Offline
+        /// verification with SM2 key pairs</a>.
+        /// </para>
+        ///  
+        /// <para>
         /// The KMS key that you use for this operation must be in a compatible key state. For
         /// details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-        /// state: Effect on your KMS key</a> in the <i>Key Management Service Developer Guide</i>.
+        /// states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -5766,7 +7019,7 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>The response from the GetPublicKey service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request. The request can be retried.
+        /// The system timed out while trying to fulfill the request. You can retry the request.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.DisabledException">
         /// The request was rejected because the specified KMS key is not enabled.
@@ -5793,9 +7046,10 @@ namespace Amazon.KeyManagementService
         ///  </li> </ul> 
         /// <para>
         /// For encrypting, decrypting, re-encrypting, and generating data keys, the <code>KeyUsage</code>
-        /// must be <code>ENCRYPT_DECRYPT</code>. For signing and verifying, the <code>KeyUsage</code>
-        /// must be <code>SIGN_VERIFY</code>. To find the <code>KeyUsage</code> of a KMS key,
-        /// use the <a>DescribeKey</a> operation.
+        /// must be <code>ENCRYPT_DECRYPT</code>. For signing and verifying messages, the <code>KeyUsage</code>
+        /// must be <code>SIGN_VERIFY</code>. For generating and verifying message authentication
+        /// codes (MACs), the <code>KeyUsage</code> must be <code>GENERATE_VERIFY_MAC</code>.
+        /// To find the <code>KeyUsage</code> of a KMS key, use the <a>DescribeKey</a> operation.
         /// </para>
         ///  
         /// <para>
@@ -5817,10 +7071,25 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-        /// state: Effect on your KMS key</a> in the <i> <i>Key Management Service Developer Guide</i>
-        /// </i>.
+        /// This exceptions means one of the following:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The key state of the KMS key is not compatible with the operation. 
+        /// </para>
+        ///  
+        /// <para>
+        /// To find the key state, use the <a>DescribeKey</a> operation. For more information
+        /// about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
+        /// states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For cryptographic operations on KMS keys in custom key stores, this exception represents
+        /// a general failure with many possible causes. To identify the cause, see the error
+        /// message that accompanies the exception.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
@@ -5878,44 +7147,96 @@ namespace Amazon.KeyManagementService
         #region  ImportKeyMaterial
 
         /// <summary>
-        /// Imports key material into an existing symmetric KMS KMS key that was created without
-        /// key material. After you successfully import key material into a KMS key, you can <a
-        /// href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html#reimport-key-material">reimport
+        /// Imports or reimports key material into an existing KMS key that was created without
+        /// key material. <code>ImportKeyMaterial</code> also sets the expiration model and expiration
+        /// date of the imported key material.
+        /// 
+        ///  
+        /// <para>
+        /// By default, KMS keys are created with key material that KMS generates. This operation
+        /// supports <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing
+        /// key material</a>, an advanced feature that lets you generate and import the cryptographic
+        /// key material for a KMS key. For more information about importing key material into
+        /// KMS, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing
+        /// key material</a> in the <i>Key Management Service Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// After you successfully import key material into a KMS key, you can <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html#reimport-key-material">reimport
         /// the same key material</a> into that KMS key, but you cannot import different key material.
+        /// You might reimport key material to replace key material that expired or key material
+        /// that you deleted. You might also reimport key material to change the expiration model
+        /// or expiration date of the key material. Before reimporting key material, if necessary,
+        /// call <a>DeleteImportedKeyMaterial</a> to delete the current imported key material.
         /// 
-        /// 
-        ///  
-        /// <para>
-        /// You cannot perform this operation on an asymmetric KMS key or on any KMS key in a
-        /// different Amazon Web Services account. For more information about creating KMS keys
-        /// with no key material and then importing key material, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing
-        /// Key Material</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// Before using this operation, call <a>GetParametersForImport</a>. Its response includes
-        /// a public key and an import token. Use the public key to encrypt the key material.
-        /// Then, submit the import token from the same <code>GetParametersForImport</code> response.
+        /// Each time you import key material into KMS, you can determine whether (<code>ExpirationModel</code>)
+        /// and when (<code>ValidTo</code>) the key material expires. To change the expiration
+        /// of your key material, you must import it again, either by calling <code>ImportKeyMaterial</code>
+        /// or using the <a href="kms/latest/developerguide/importing-keys-import-key-material.html#importing-keys-import-key-material-console">import
+        /// features</a> of the KMS console.
         /// </para>
         ///  
         /// <para>
-        /// When calling this operation, you must specify the following values:
+        /// Before calling <code>ImportKeyMaterial</code>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The key ID or key ARN of a KMS key with no key material. Its <code>Origin</code> must
-        /// be <code>EXTERNAL</code>.
+        /// Create or identify a KMS key with no key material. The KMS key must have an <code>Origin</code>
+        /// value of <code>EXTERNAL</code>, which indicates that the KMS key is designed for imported
+        /// key material. 
         /// </para>
         ///  
         /// <para>
-        /// To create a KMS key with no key material, call <a>CreateKey</a> and set the value
-        /// of its <code>Origin</code> parameter to <code>EXTERNAL</code>. To get the <code>Origin</code>
-        /// of a KMS key, call <a>DescribeKey</a>.)
+        /// To create an new KMS key for imported key material, call the <a>CreateKey</a> operation
+        /// with an <code>Origin</code> value of <code>EXTERNAL</code>. You can create a symmetric
+        /// encryption KMS key, HMAC KMS key, asymmetric encryption KMS key, or asymmetric signing
+        /// KMS key. You can also import key material into a <a href="kms/latest/developerguide/multi-region-keys-overview.html">multi-Region
+        /// key</a> of any supported type. However, you can't import key material into a KMS key
+        /// in a <a href="kms/latest/developerguide/custom-key-store-overview.html">custom key
+        /// store</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The encrypted key material. To get the public key to encrypt the key material, call
-        /// <a>GetParametersForImport</a>.
+        /// Use the <a>DescribeKey</a> operation to verify that the <code>KeyState</code> of the
+        /// KMS key is <code>PendingImport</code>, which indicates that the KMS key has no key
+        /// material. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you are reimporting the same key material into an existing KMS key, you might need
+        /// to call the <a>DeleteImportedKeyMaterial</a> to delete its existing key material.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Call the <a>GetParametersForImport</a> operation to get a public key and import token
+        /// set for importing key material. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use the public key in the <a>GetParametersForImport</a> response to encrypt your key
+        /// material.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  Then, in an <code>ImportKeyMaterial</code> request, you submit your encrypted key
+        /// material and import token. When calling this operation, you must specify the following
+        /// values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The key ID or key ARN of the KMS key to associate with the imported key material.
+        /// Its <code>Origin</code> must be <code>EXTERNAL</code> and its <code>KeyState</code>
+        /// must be <code>PendingImport</code>. You cannot perform this operation on a KMS key
+        /// in a <a href="kms/latest/developerguide/custom-key-store-overview.html">custom key
+        /// store</a>, or on a KMS key in a different Amazon Web Services account. To get the
+        /// <code>Origin</code> and <code>KeyState</code> of a KMS key, call <a>DescribeKey</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The encrypted key material. 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5924,16 +7245,22 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Whether the key material expires and if so, when. If you set an expiration date, KMS
-        /// deletes the key material from the KMS key on the specified date, and the KMS key becomes
-        /// unusable. To use the KMS key again, you must reimport the same key material. The only
-        /// way to change an expiration date is by reimporting the same key material and specifying
-        /// a new expiration date. 
+        /// Whether the key material expires (<code>ExpirationModel</code>) and, if so, when (<code>ValidTo</code>).
+        /// For help with this choice, see <a href="https://docs.aws.amazon.com/en_us/kms/latest/developerguide/importing-keys.html#importing-keys-expiration">Setting
+        /// an expiration time</a> in the <i>Key Management Service Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you set an expiration date, KMS deletes the key material from the KMS key on the
+        /// specified date, making the KMS key unusable. To use the KMS key in cryptographic operations
+        /// again, you must reimport the same key material. However, you can delete and reimport
+        /// the key material at any time, including before the key material expires. Each time
+        /// you reimport, you can eliminate or reset the expiration time.
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// When this operation is successful, the key state of the KMS key changes from <code>PendingImport</code>
-        /// to <code>Enabled</code>, and you can use the KMS key.
+        /// to <code>Enabled</code>, and you can use the KMS key in cryptographic operations.
         /// </para>
         ///  
         /// <para>
@@ -5947,7 +7274,7 @@ namespace Amazon.KeyManagementService
         /// <para>
         /// The KMS key that you use for this operation must be in a compatible key state. For
         /// details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-        /// state: Effect on your KMS key</a> in the <i>Key Management Service Developer Guide</i>.
+        /// states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -5977,7 +7304,7 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>The response from the ImportKeyMaterial service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request. The request can be retried.
+        /// The system timed out while trying to fulfill the request. You can retry the request.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.ExpiredImportTokenException">
         /// The request was rejected because the specified import token is expired. Use <a>GetParametersForImport</a>
@@ -6017,10 +7344,25 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-        /// state: Effect on your KMS key</a> in the <i> <i>Key Management Service Developer Guide</i>
-        /// </i>.
+        /// This exceptions means one of the following:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The key state of the KMS key is not compatible with the operation. 
+        /// </para>
+        ///  
+        /// <para>
+        /// To find the key state, use the <a>DescribeKey</a> operation. For more information
+        /// about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
+        /// states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For cryptographic operations on KMS keys in custom key stores, this exception represents
+        /// a general failure with many possible causes. To identify the cause, see the error
+        /// message that accompanies the exception.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
@@ -6140,7 +7482,7 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>The response from the ListAliases service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request. The request can be retried.
+        /// The system timed out while trying to fulfill the request. You can retry the request.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
         /// The request was rejected because a specified ARN, or an ARN in a key policy, is not
@@ -6215,8 +7557,8 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        /// For detailed information about grants, including grant terminology, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html">Using
-        /// grants</a> in the <i> <i>Key Management Service Developer Guide</i> </i>. For examples
+        /// For detailed information about grants, including grant terminology, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html">Grants
+        /// in KMS</a> in the <i> <i>Key Management Service Developer Guide</i> </i>. For examples
         /// of working with grants in several programming languages, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-grants.html">Programming
         /// grants</a>. 
         /// </para>
@@ -6265,7 +7607,7 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>The response from the ListGrants service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request. The request can be retried.
+        /// The system timed out while trying to fulfill the request. You can retry the request.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
         /// The request was rejected because a specified ARN, or an ARN in a key policy, is not
@@ -6288,10 +7630,25 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-        /// state: Effect on your KMS key</a> in the <i> <i>Key Management Service Developer Guide</i>
-        /// </i>.
+        /// This exceptions means one of the following:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The key state of the KMS key is not compatible with the operation. 
+        /// </para>
+        ///  
+        /// <para>
+        /// To find the key state, use the <a>DescribeKey</a> operation. For more information
+        /// about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
+        /// states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For cryptographic operations on KMS keys in custom key stores, this exception represents
+        /// a general failure with many possible causes. To identify the cause, see the error
+        /// message that accompanies the exception.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
@@ -6377,7 +7734,7 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>The response from the ListKeyPolicies service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request. The request can be retried.
+        /// The system timed out while trying to fulfill the request. You can retry the request.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
         /// The request was rejected because a specified ARN, or an ARN in a key policy, is not
@@ -6393,10 +7750,25 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-        /// state: Effect on your KMS key</a> in the <i> <i>Key Management Service Developer Guide</i>
-        /// </i>.
+        /// This exceptions means one of the following:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The key state of the KMS key is not compatible with the operation. 
+        /// </para>
+        ///  
+        /// <para>
+        /// To find the key state, use the <a>DescribeKey</a> operation. For more information
+        /// about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
+        /// states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For cryptographic operations on KMS keys in custom key stores, this exception represents
+        /// a general failure with many possible causes. To identify the cause, see the error
+        /// message that accompanies the exception.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
@@ -6488,7 +7860,7 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>The response from the ListKeys service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request. The request can be retried.
+        /// The system timed out while trying to fulfill the request. You can retry the request.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidMarkerException">
         /// The request was rejected because the marker that specifies where pagination should
@@ -6667,8 +8039,8 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        /// For detailed information about grants, including grant terminology, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html">Using
-        /// grants</a> in the <i> <i>Key Management Service Developer Guide</i> </i>. For examples
+        /// For detailed information about grants, including grant terminology, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html">Grants
+        /// in KMS</a> in the <i> <i>Key Management Service Developer Guide</i> </i>. For examples
         /// of working with grants in several programming languages, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-grants.html">Programming
         /// grants</a>. 
         /// </para>
@@ -6706,11 +8078,11 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="retiringPrincipal">The retiring principal for which to list grants. Enter a principal in your Amazon Web Services account. To specify the retiring principal, use the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an Amazon Web Services principal. Valid Amazon Web Services principals include Amazon Web Services accounts (root), IAM users, federated users, and assumed role users. For examples of the ARN syntax for specifying a principal, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">Amazon Web Services Identity and Access Management (IAM)</a> in the Example ARNs section of the <i>Amazon Web Services General Reference</i>.</param>
+        /// <param name="retiringPrincipal">The retiring principal for which to list grants. Enter a principal in your Amazon Web Services account. To specify the retiring principal, use the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an Amazon Web Services principal. Valid principals include Amazon Web Services accounts, IAM users, IAM roles, federated users, and assumed role users. For help with the ARN syntax for a principal, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM ARNs</a> in the <i> <i>Identity and Access Management User Guide</i> </i>.</param>
         /// 
         /// <returns>The response from the ListRetirableGrants service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request. The request can be retried.
+        /// The system timed out while trying to fulfill the request. You can retry the request.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
         /// The request was rejected because a specified ARN, or an ARN in a key policy, is not
@@ -6749,8 +8121,8 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        /// For detailed information about grants, including grant terminology, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html">Using
-        /// grants</a> in the <i> <i>Key Management Service Developer Guide</i> </i>. For examples
+        /// For detailed information about grants, including grant terminology, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html">Grants
+        /// in KMS</a> in the <i> <i>Key Management Service Developer Guide</i> </i>. For examples
         /// of working with grants in several programming languages, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-grants.html">Programming
         /// grants</a>. 
         /// </para>
@@ -6791,7 +8163,7 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>The response from the ListRetirableGrants service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request. The request can be retried.
+        /// The system timed out while trying to fulfill the request. You can retry the request.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
         /// The request was rejected because a specified ARN, or an ARN in a key policy, is not
@@ -6829,8 +8201,8 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        /// For detailed information about grants, including grant terminology, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html">Using
-        /// grants</a> in the <i> <i>Key Management Service Developer Guide</i> </i>. For examples
+        /// For detailed information about grants, including grant terminology, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html">Grants
+        /// in KMS</a> in the <i> <i>Key Management Service Developer Guide</i> </i>. For examples
         /// of working with grants in several programming languages, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-grants.html">Programming
         /// grants</a>. 
         /// </para>
@@ -6872,7 +8244,7 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>The response from the ListRetirableGrants service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request. The request can be retried.
+        /// The system timed out while trying to fulfill the request. You can retry the request.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
         /// The request was rejected because a specified ARN, or an ARN in a key policy, is not
@@ -6966,12 +8338,12 @@ namespace Amazon.KeyManagementService
         /// </para>
         /// </summary>
         /// <param name="keyId">Sets the key policy on the specified KMS key. Specify the key ID or key ARN of the KMS key. For example: <ul> <li> Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> </ul> To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</param>
-        /// <param name="policy">The key policy to attach to the KMS key. The key policy must meet the following criteria: <ul> <li> If you don't set <code>BypassPolicyLockoutSafetyCheck</code> to true, the key policy must allow the principal that is making the <code>PutKeyPolicy</code> request to make a subsequent <code>PutKeyPolicy</code> request on the KMS key. This reduces the risk that the KMS key becomes unmanageable. For more information, refer to the scenario in the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default Key Policy</a> section of the <i>Key Management Service Developer Guide</i>. </li> <li> Each statement in the key policy must contain one or more principals. The principals in the key policy must exist and be visible to KMS. When you create a new Amazon Web Services principal (for example, an IAM user or role), you might need to enforce a delay before including the new principal in a key policy because the new principal might not be immediately visible to KMS. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes that I make are not always immediately visible</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>. </li> </ul> The key policy cannot exceed 32 kilobytes (32768 bytes). For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/resource-limits.html">Resource Quotas</a> in the <i>Key Management Service Developer Guide</i>.</param>
+        /// <param name="policy">The key policy to attach to the KMS key. The key policy must meet the following criteria: <ul> <li> The key policy must allow the calling principal to make a subsequent <code>PutKeyPolicy</code> request on the KMS key. This reduces the risk that the KMS key becomes unmanageable. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-default.html#prevent-unmanageable-key">Default key policy</a> in the <i>Key Management Service Developer Guide</i>. (To omit this condition, set <code>BypassPolicyLockoutSafetyCheck</code> to true.) </li> <li> Each statement in the key policy must contain one or more principals. The principals in the key policy must exist and be visible to KMS. When you create a new Amazon Web Services principal, you might need to enforce a delay before including the new principal in a key policy because the new principal might not be immediately visible to KMS. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes that I make are not always immediately visible</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>. </li> </ul> A key policy document can include only the following characters: <ul> <li> Printable ASCII characters from the space character (<code>\u0020</code>) through the end of the ASCII character range. </li> <li> Printable characters in the Basic Latin and Latin-1 Supplement character set (through <code>\u00FF</code>). </li> <li> The tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>) special characters </li> </ul> For information about key policies, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Key policies in KMS</a> in the <i>Key Management Service Developer Guide</i>.For help writing and formatting a JSON policy document, see the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM JSON Policy Reference</a> in the <i> <i>Identity and Access Management User Guide</i> </i>.</param>
         /// <param name="policyName">The name of the key policy. The only valid value is <code>default</code>.</param>
         /// 
         /// <returns>The response from the PutKeyPolicy service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request. The request can be retried.
+        /// The system timed out while trying to fulfill the request. You can retry the request.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
         /// The request was rejected because a specified ARN, or an ARN in a key policy, is not
@@ -6987,10 +8359,25 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-        /// state: Effect on your KMS key</a> in the <i> <i>Key Management Service Developer Guide</i>
-        /// </i>.
+        /// This exceptions means one of the following:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The key state of the KMS key is not compatible with the operation. 
+        /// </para>
+        ///  
+        /// <para>
+        /// To find the key state, use the <a>DescribeKey</a> operation. For more information
+        /// about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
+        /// states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For cryptographic operations on KMS keys in custom key stores, this exception represents
+        /// a general failure with many possible causes. To identify the cause, see the error
+        /// message that accompanies the exception.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.LimitExceededException">
         /// The request was rejected because a quota was exceeded. For more information, see <a
@@ -7051,7 +8438,7 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>The response from the PutKeyPolicy service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request. The request can be retried.
+        /// The system timed out while trying to fulfill the request. You can retry the request.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
         /// The request was rejected because a specified ARN, or an ARN in a key policy, is not
@@ -7067,10 +8454,25 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-        /// state: Effect on your KMS key</a> in the <i> <i>Key Management Service Developer Guide</i>
-        /// </i>.
+        /// This exceptions means one of the following:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The key state of the KMS key is not compatible with the operation. 
+        /// </para>
+        ///  
+        /// <para>
+        /// To find the key state, use the <a>DescribeKey</a> operation. For more information
+        /// about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
+        /// states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For cryptographic operations on KMS keys in custom key stores, this exception represents
+        /// a general failure with many possible causes. To identify the cause, see the error
+        /// message that accompanies the exception.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.LimitExceededException">
         /// The request was rejected because a quota was exceeded. For more information, see <a
@@ -7146,7 +8548,7 @@ namespace Amazon.KeyManagementService
         ///  
         /// <para>
         /// The <code>ReEncrypt</code> operation can decrypt ciphertext that was encrypted by
-        /// using an KMS KMS key in an KMS operation, such as <a>Encrypt</a> or <a>GenerateDataKey</a>.
+        /// using a KMS key in an KMS operation, such as <a>Encrypt</a> or <a>GenerateDataKey</a>.
         /// It can also decrypt ciphertext that was encrypted by using the public key of an <a
         /// href="https://docs.aws.amazon.com/kms/latest/developerguide/symm-asymm-concepts.html#asymmetric-cmks">asymmetric
         /// KMS key</a> outside of KMS. However, it cannot decrypt ciphertext produced by other
@@ -7169,7 +8571,7 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If your ciphertext was encrypted under a symmetric KMS key, the <code>SourceKeyId</code>
+        /// If your ciphertext was encrypted under a symmetric encryption KMS key, the <code>SourceKeyId</code>
         /// parameter is optional. KMS can get this information from metadata that it adds to
         /// the symmetric ciphertext blob. This feature adds durability to your implementation
         /// by ensuring that authorized users can decrypt ciphertext decades after it was encrypted,
@@ -7181,11 +8583,10 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// To reencrypt the data, you must use the <code>DestinationKeyId</code> parameter specify
-        /// the KMS key that re-encrypts the data after it is decrypted. You can select a symmetric
-        /// or asymmetric KMS key. If the destination KMS key is an asymmetric KMS key, you must
-        /// also provide the encryption algorithm. The algorithm that you choose must be compatible
-        /// with the KMS key.
+        /// To reencrypt the data, you must use the <code>DestinationKeyId</code> parameter to
+        /// specify the KMS key that re-encrypts the data after it is decrypted. If the destination
+        /// KMS key is an asymmetric KMS key, you must also provide the encryption algorithm.
+        /// The algorithm that you choose must be compatible with the KMS key.
         /// </para>
         ///  <important> 
         /// <para>
@@ -7198,15 +8599,15 @@ namespace Amazon.KeyManagementService
         ///  
         /// <para>
         /// You are not required to supply the key ID and encryption algorithm when you decrypt
-        /// with symmetric KMS keys because KMS stores this information in the ciphertext blob.
-        /// KMS cannot store metadata in ciphertext generated with asymmetric keys. The standard
-        /// format for asymmetric key ciphertext does not include configurable fields.
+        /// with symmetric encryption KMS keys because KMS stores this information in the ciphertext
+        /// blob. KMS cannot store metadata in ciphertext generated with asymmetric keys. The
+        /// standard format for asymmetric key ciphertext does not include configurable fields.
         /// </para>
         ///  </important> </li> </ul> 
         /// <para>
         /// The KMS key that you use for this operation must be in a compatible key state. For
         /// details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-        /// state: Effect on your KMS key</a> in the <i>Key Management Service Developer Guide</i>.
+        /// states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -7264,7 +8665,7 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>The response from the ReEncrypt service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request. The request can be retried.
+        /// The system timed out while trying to fulfill the request. You can retry the request.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.DisabledException">
         /// The request was rejected because the specified KMS key is not enabled.
@@ -7304,9 +8705,10 @@ namespace Amazon.KeyManagementService
         ///  </li> </ul> 
         /// <para>
         /// For encrypting, decrypting, re-encrypting, and generating data keys, the <code>KeyUsage</code>
-        /// must be <code>ENCRYPT_DECRYPT</code>. For signing and verifying, the <code>KeyUsage</code>
-        /// must be <code>SIGN_VERIFY</code>. To find the <code>KeyUsage</code> of a KMS key,
-        /// use the <a>DescribeKey</a> operation.
+        /// must be <code>ENCRYPT_DECRYPT</code>. For signing and verifying messages, the <code>KeyUsage</code>
+        /// must be <code>SIGN_VERIFY</code>. For generating and verifying message authentication
+        /// codes (MACs), the <code>KeyUsage</code> must be <code>GENERATE_VERIFY_MAC</code>.
+        /// To find the <code>KeyUsage</code> of a KMS key, use the <a>DescribeKey</a> operation.
         /// </para>
         ///  
         /// <para>
@@ -7328,10 +8730,25 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-        /// state: Effect on your KMS key</a> in the <i> <i>Key Management Service Developer Guide</i>
-        /// </i>.
+        /// This exceptions means one of the following:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The key state of the KMS key is not compatible with the operation. 
+        /// </para>
+        ///  
+        /// <para>
+        /// To find the key state, use the <a>DescribeKey</a> operation. For more information
+        /// about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
+        /// states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For cryptographic operations on KMS keys in custom key stores, this exception represents
+        /// a general failure with many possible causes. To identify the cause, see the error
+        /// message that accompanies the exception.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
@@ -7398,8 +8815,8 @@ namespace Amazon.KeyManagementService
         /// these KMS keys have the same key ID, key material, and other metadata, you can use
         /// them interchangeably to encrypt data in one Amazon Web Services Region and decrypt
         /// it in a different Amazon Web Services Region without re-encrypting the data or making
-        /// a cross-Region call. For more information about multi-Region keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using
-        /// multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.
+        /// a cross-Region call. For more information about multi-Region keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Multi-Region
+        /// keys in KMS</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -7415,9 +8832,9 @@ namespace Amazon.KeyManagementService
         /// its <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">key
         /// policy</a>, <a href="https://docs.aws.amazon.com/kms/latest/developerguide/tagging-keys.html">tags</a>,
         /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-alias.html">aliases</a>,
-        /// and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">key
-        /// state</a>. KMS pricing and quotas for KMS keys apply to each primary key and replica
-        /// key.
+        /// and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
+        /// states of KMS keys</a>. KMS pricing and quotas for KMS keys apply to each primary
+        /// key and replica key.
         /// </para>
         ///  
         /// <para>
@@ -7428,8 +8845,18 @@ namespace Amazon.KeyManagementService
         /// it in cryptographic operations. If you are creating and using the replica key programmatically,
         /// retry on <code>KMSInvalidStateException</code> or call <code>DescribeKey</code> to
         /// check its <code>KeyState</code> value before using it. For details about the <code>Creating</code>
-        /// key state, see <a href="kms/latest/developerguide/key-state.html">Key state: Effect
-        /// on your KMS key</a> in the <i>Key Management Service Developer Guide</i>.
+        /// key state, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
+        /// states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You cannot create more than one replica of a primary key in any Region. If the Region
+        /// already includes a replica of the key you're trying to replicate, <code>ReplicateKey</code>
+        /// returns an <code>AlreadyExistsException</code> error. If the key state of the existing
+        /// replica is <code>PendingDeletion</code>, you can cancel the scheduled key deletion
+        /// (<a>CancelKeyDeletion</a>) or wait for the key to be deleted. The new replica key
+        /// you create will have the same <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html#mrk-sync-properties">shared
+        /// properties</a> as the original replica key.
         /// </para>
         ///  
         /// <para>
@@ -7515,10 +8942,25 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-        /// state: Effect on your KMS key</a> in the <i> <i>Key Management Service Developer Guide</i>
-        /// </i>.
+        /// This exceptions means one of the following:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The key state of the KMS key is not compatible with the operation. 
+        /// </para>
+        ///  
+        /// <para>
+        /// To find the key state, use the <a>DescribeKey</a> operation. For more information
+        /// about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
+        /// states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For cryptographic operations on KMS keys in custom key stores, this exception represents
+        /// a general failure with many possible causes. To identify the cause, see the error
+        /// message that accompanies the exception.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.LimitExceededException">
         /// The request was rejected because a quota was exceeded. For more information, see <a
@@ -7597,15 +9039,15 @@ namespace Amazon.KeyManagementService
         /// <para>
         /// This operation can be called by the <i>retiring principal</i> for a grant, by the
         /// <i>grantee principal</i> if the grant allows the <code>RetireGrant</code> operation,
-        /// and by the Amazon Web Services account (root user) in which the grant is created.
-        /// It can also be called by principals to whom permission for retiring a grant is delegated.
-        /// For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#grant-delete">Retiring
+        /// and by the Amazon Web Services account in which the grant is created. It can also
+        /// be called by principals to whom permission for retiring a grant is delegated. For
+        /// details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#grant-delete">Retiring
         /// and revoking grants</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// For detailed information about grants, including grant terminology, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html">Using
-        /// grants</a> in the <i> <i>Key Management Service Developer Guide</i> </i>. For examples
+        /// For detailed information about grants, including grant terminology, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html">Grants
+        /// in KMS</a> in the <i> <i>Key Management Service Developer Guide</i> </i>. For examples
         /// of working with grants in several programming languages, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-grants.html">Programming
         /// grants</a>. 
         /// </para>
@@ -7646,7 +9088,7 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>The response from the RetireGrant service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request. The request can be retried.
+        /// The system timed out while trying to fulfill the request. You can retry the request.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
         /// The request was rejected because a specified ARN, or an ARN in a key policy, is not
@@ -7668,10 +9110,25 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-        /// state: Effect on your KMS key</a> in the <i> <i>Key Management Service Developer Guide</i>
-        /// </i>.
+        /// This exceptions means one of the following:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The key state of the KMS key is not compatible with the operation. 
+        /// </para>
+        ///  
+        /// <para>
+        /// To find the key state, use the <a>DescribeKey</a> operation. For more information
+        /// about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
+        /// states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For cryptographic operations on KMS keys in custom key stores, this exception represents
+        /// a general failure with many possible causes. To identify the cause, see the error
+        /// message that accompanies the exception.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
@@ -7695,15 +9152,15 @@ namespace Amazon.KeyManagementService
         /// <para>
         /// This operation can be called by the <i>retiring principal</i> for a grant, by the
         /// <i>grantee principal</i> if the grant allows the <code>RetireGrant</code> operation,
-        /// and by the Amazon Web Services account (root user) in which the grant is created.
-        /// It can also be called by principals to whom permission for retiring a grant is delegated.
-        /// For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#grant-delete">Retiring
+        /// and by the Amazon Web Services account in which the grant is created. It can also
+        /// be called by principals to whom permission for retiring a grant is delegated. For
+        /// details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#grant-delete">Retiring
         /// and revoking grants</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// For detailed information about grants, including grant terminology, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html">Using
-        /// grants</a> in the <i> <i>Key Management Service Developer Guide</i> </i>. For examples
+        /// For detailed information about grants, including grant terminology, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html">Grants
+        /// in KMS</a> in the <i> <i>Key Management Service Developer Guide</i> </i>. For examples
         /// of working with grants in several programming languages, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-grants.html">Programming
         /// grants</a>. 
         /// </para>
@@ -7744,7 +9201,7 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>The response from the RetireGrant service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request. The request can be retried.
+        /// The system timed out while trying to fulfill the request. You can retry the request.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
         /// The request was rejected because a specified ARN, or an ARN in a key policy, is not
@@ -7766,10 +9223,25 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-        /// state: Effect on your KMS key</a> in the <i> <i>Key Management Service Developer Guide</i>
-        /// </i>.
+        /// This exceptions means one of the following:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The key state of the KMS key is not compatible with the operation. 
+        /// </para>
+        ///  
+        /// <para>
+        /// To find the key state, use the <a>DescribeKey</a> operation. For more information
+        /// about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
+        /// states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For cryptographic operations on KMS keys in custom key stores, this exception represents
+        /// a general failure with many possible causes. To identify the cause, see the error
+        /// message that accompanies the exception.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
@@ -7836,8 +9308,8 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        /// For detailed information about grants, including grant terminology, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html">Using
-        /// grants</a> in the <i> <i>Key Management Service Developer Guide</i> </i>. For examples
+        /// For detailed information about grants, including grant terminology, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html">Grants
+        /// in KMS</a> in the <i> <i>Key Management Service Developer Guide</i> </i>. For examples
         /// of working with grants in several programming languages, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-grants.html">Programming
         /// grants</a>. 
         /// </para>
@@ -7879,7 +9351,7 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>The response from the RevokeGrant service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request. The request can be retried.
+        /// The system timed out while trying to fulfill the request. You can retry the request.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
         /// The request was rejected because a specified ARN, or an ARN in a key policy, is not
@@ -7898,10 +9370,25 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-        /// state: Effect on your KMS key</a> in the <i> <i>Key Management Service Developer Guide</i>
-        /// </i>.
+        /// This exceptions means one of the following:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The key state of the KMS key is not compatible with the operation. 
+        /// </para>
+        ///  
+        /// <para>
+        /// To find the key state, use the <a>DescribeKey</a> operation. For more information
+        /// about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
+        /// states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For cryptographic operations on KMS keys in custom key stores, this exception represents
+        /// a general failure with many possible causes. To identify the cause, see the error
+        /// message that accompanies the exception.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
@@ -7930,8 +9417,8 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        /// For detailed information about grants, including grant terminology, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html">Using
-        /// grants</a> in the <i> <i>Key Management Service Developer Guide</i> </i>. For examples
+        /// For detailed information about grants, including grant terminology, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html">Grants
+        /// in KMS</a> in the <i> <i>Key Management Service Developer Guide</i> </i>. For examples
         /// of working with grants in several programming languages, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-grants.html">Programming
         /// grants</a>. 
         /// </para>
@@ -7972,7 +9459,7 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>The response from the RevokeGrant service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request. The request can be retried.
+        /// The system timed out while trying to fulfill the request. You can retry the request.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
         /// The request was rejected because a specified ARN, or an ARN in a key policy, is not
@@ -7991,10 +9478,25 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-        /// state: Effect on your KMS key</a> in the <i> <i>Key Management Service Developer Guide</i>
-        /// </i>.
+        /// This exceptions means one of the following:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The key state of the KMS key is not compatible with the operation. 
+        /// </para>
+        ///  
+        /// <para>
+        /// To find the key state, use the <a>DescribeKey</a> operation. For more information
+        /// about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
+        /// states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For cryptographic operations on KMS keys in custom key stores, this exception represents
+        /// a general failure with many possible causes. To identify the cause, see the error
+        /// message that accompanies the exception.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
@@ -8061,18 +9563,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         /// Deleting a KMS key is a destructive and potentially dangerous operation. When a KMS
         /// key is deleted, all data that was encrypted under the KMS key is unrecoverable. (The
-        /// only exception is a multi-Region replica key.) To prevent the use of a KMS key without
-        /// deleting it, use <a>DisableKey</a>. 
+        /// only exception is a <a href="kms/latest/developerguide/multi-region-keys-delete.html">multi-Region
+        /// replica key</a>, or an asymmetric or HMAC KMS key with imported key material[BUGBUG-link
+        /// to importing-keys-managing.html#import-delete-key.) To prevent the use of a KMS key
+        /// without deleting it, use <a>DisableKey</a>. 
         /// </para>
         ///  </important> 
-        /// <para>
-        /// If you schedule deletion of a KMS key from a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
-        /// key store</a>, when the waiting period expires, <code>ScheduleKeyDeletion</code> deletes
-        /// the KMS key from KMS. Then KMS makes a best effort to delete the key material from
-        /// the associated CloudHSM cluster. However, you might need to manually <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-orphaned-key">delete
-        /// the orphaned key material</a> from the cluster and its backups.
-        /// </para>
-        ///  
         /// <para>
         /// You can schedule the deletion of a multi-Region primary key and its replica keys at
         /// any time. However, KMS will not delete a multi-Region primary key with existing replica
@@ -8082,7 +9578,20 @@ namespace Amazon.KeyManagementService
         /// is deleted (not just scheduled), the key state of the primary key changes to <code>PendingDeletion</code>
         /// and its waiting period (<code>PendingWindowInDays</code>) begins. For details, see
         /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-delete.html">Deleting
-        /// multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>. 
+        /// multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// When KMS <a href="https://docs.aws.amazon.com/kms/latest/developerguide/delete-cmk-keystore.html">deletes
+        /// a KMS key from an CloudHSM key store</a>, it makes a best effort to delete the associated
+        /// key material from the associated CloudHSM cluster. However, you might need to manually
+        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-orphaned-key">delete
+        /// the orphaned key material</a> from the cluster and its backups. <a href="https://docs.aws.amazon.com/kms/latest/developerguide/delete-xks-key.html">Deleting
+        /// a KMS key from an external key store</a> has no effect on the associated external
+        /// key. However, for both types of custom key stores, deleting a KMS key is destructive
+        /// and irreversible. You cannot decrypt ciphertext encrypted under the KMS key by using
+        /// only its associated external key or CloudHSM key. Also, you cannot recreate a KMS
+        /// key in an external key store by creating a new KMS key with the same key material.
         /// </para>
         ///  
         /// <para>
@@ -8093,7 +9602,7 @@ namespace Amazon.KeyManagementService
         /// <para>
         /// The KMS key that you use for this operation must be in a compatible key state. For
         /// details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-        /// state: Effect on your KMS key</a> in the <i>Key Management Service Developer Guide</i>.
+        /// states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -8122,7 +9631,7 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>The response from the ScheduleKeyDeletion service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request. The request can be retried.
+        /// The system timed out while trying to fulfill the request. You can retry the request.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
         /// The request was rejected because a specified ARN, or an ARN in a key policy, is not
@@ -8138,10 +9647,25 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-        /// state: Effect on your KMS key</a> in the <i> <i>Key Management Service Developer Guide</i>
-        /// </i>.
+        /// This exceptions means one of the following:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The key state of the KMS key is not compatible with the operation. 
+        /// </para>
+        ///  
+        /// <para>
+        /// To find the key state, use the <a>DescribeKey</a> operation. For more information
+        /// about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
+        /// states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For cryptographic operations on KMS keys in custom key stores, this exception represents
+        /// a general failure with many possible causes. To identify the cause, see the error
+        /// message that accompanies the exception.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
@@ -8169,18 +9693,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         /// Deleting a KMS key is a destructive and potentially dangerous operation. When a KMS
         /// key is deleted, all data that was encrypted under the KMS key is unrecoverable. (The
-        /// only exception is a multi-Region replica key.) To prevent the use of a KMS key without
-        /// deleting it, use <a>DisableKey</a>. 
+        /// only exception is a <a href="kms/latest/developerguide/multi-region-keys-delete.html">multi-Region
+        /// replica key</a>, or an asymmetric or HMAC KMS key with imported key material[BUGBUG-link
+        /// to importing-keys-managing.html#import-delete-key.) To prevent the use of a KMS key
+        /// without deleting it, use <a>DisableKey</a>. 
         /// </para>
         ///  </important> 
-        /// <para>
-        /// If you schedule deletion of a KMS key from a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
-        /// key store</a>, when the waiting period expires, <code>ScheduleKeyDeletion</code> deletes
-        /// the KMS key from KMS. Then KMS makes a best effort to delete the key material from
-        /// the associated CloudHSM cluster. However, you might need to manually <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-orphaned-key">delete
-        /// the orphaned key material</a> from the cluster and its backups.
-        /// </para>
-        ///  
         /// <para>
         /// You can schedule the deletion of a multi-Region primary key and its replica keys at
         /// any time. However, KMS will not delete a multi-Region primary key with existing replica
@@ -8190,7 +9708,20 @@ namespace Amazon.KeyManagementService
         /// is deleted (not just scheduled), the key state of the primary key changes to <code>PendingDeletion</code>
         /// and its waiting period (<code>PendingWindowInDays</code>) begins. For details, see
         /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-delete.html">Deleting
-        /// multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>. 
+        /// multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// When KMS <a href="https://docs.aws.amazon.com/kms/latest/developerguide/delete-cmk-keystore.html">deletes
+        /// a KMS key from an CloudHSM key store</a>, it makes a best effort to delete the associated
+        /// key material from the associated CloudHSM cluster. However, you might need to manually
+        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-orphaned-key">delete
+        /// the orphaned key material</a> from the cluster and its backups. <a href="https://docs.aws.amazon.com/kms/latest/developerguide/delete-xks-key.html">Deleting
+        /// a KMS key from an external key store</a> has no effect on the associated external
+        /// key. However, for both types of custom key stores, deleting a KMS key is destructive
+        /// and irreversible. You cannot decrypt ciphertext encrypted under the KMS key by using
+        /// only its associated external key or CloudHSM key. Also, you cannot recreate a KMS
+        /// key in an external key store by creating a new KMS key with the same key material.
         /// </para>
         ///  
         /// <para>
@@ -8201,7 +9732,7 @@ namespace Amazon.KeyManagementService
         /// <para>
         /// The KMS key that you use for this operation must be in a compatible key state. For
         /// details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-        /// state: Effect on your KMS key</a> in the <i>Key Management Service Developer Guide</i>.
+        /// states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -8227,11 +9758,11 @@ namespace Amazon.KeyManagementService
         ///  </li> </ul>
         /// </summary>
         /// <param name="keyId">The unique identifier of the KMS key to delete. Specify the key ID or key ARN of the KMS key. For example: <ul> <li> Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> </ul> To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</param>
-        /// <param name="pendingWindowInDays">The waiting period, specified in number of days. After the waiting period ends, KMS deletes the KMS key. If the KMS key is a multi-Region primary key with replicas, the waiting period begins when the last of its replica keys is deleted. Otherwise, the waiting period begins immediately. This value is optional. If you include a value, it must be between 7 and 30, inclusive. If you do not include a value, it defaults to 30.</param>
+        /// <param name="pendingWindowInDays">The waiting period, specified in number of days. After the waiting period ends, KMS deletes the KMS key. If the KMS key is a multi-Region primary key with replica keys, the waiting period begins when the last of its replica keys is deleted. Otherwise, the waiting period begins immediately. This value is optional. If you include a value, it must be between 7 and 30, inclusive. If you do not include a value, it defaults to 30. You can use the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-pending-deletion-window"> <code>kms:ScheduleKeyDeletionPendingWindowInDays</code> </a> condition key to further constrain the values that principals can specify in the <code>PendingWindowInDays</code> parameter.</param>
         /// 
         /// <returns>The response from the ScheduleKeyDeletion service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request. The request can be retried.
+        /// The system timed out while trying to fulfill the request. You can retry the request.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
         /// The request was rejected because a specified ARN, or an ARN in a key policy, is not
@@ -8247,10 +9778,25 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-        /// state: Effect on your KMS key</a> in the <i> <i>Key Management Service Developer Guide</i>
-        /// </i>.
+        /// This exceptions means one of the following:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The key state of the KMS key is not compatible with the operation. 
+        /// </para>
+        ///  
+        /// <para>
+        /// To find the key state, use the <a>DescribeKey</a> operation. For more information
+        /// about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
+        /// states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For cryptographic operations on KMS keys in custom key stores, this exception represents
+        /// a general failure with many possible causes. To identify the cause, see the error
+        /// message that accompanies the exception.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
@@ -8279,18 +9825,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         /// Deleting a KMS key is a destructive and potentially dangerous operation. When a KMS
         /// key is deleted, all data that was encrypted under the KMS key is unrecoverable. (The
-        /// only exception is a multi-Region replica key.) To prevent the use of a KMS key without
-        /// deleting it, use <a>DisableKey</a>. 
+        /// only exception is a <a href="kms/latest/developerguide/multi-region-keys-delete.html">multi-Region
+        /// replica key</a>, or an asymmetric or HMAC KMS key with imported key material[BUGBUG-link
+        /// to importing-keys-managing.html#import-delete-key.) To prevent the use of a KMS key
+        /// without deleting it, use <a>DisableKey</a>. 
         /// </para>
         ///  </important> 
-        /// <para>
-        /// If you schedule deletion of a KMS key from a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
-        /// key store</a>, when the waiting period expires, <code>ScheduleKeyDeletion</code> deletes
-        /// the KMS key from KMS. Then KMS makes a best effort to delete the key material from
-        /// the associated CloudHSM cluster. However, you might need to manually <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-orphaned-key">delete
-        /// the orphaned key material</a> from the cluster and its backups.
-        /// </para>
-        ///  
         /// <para>
         /// You can schedule the deletion of a multi-Region primary key and its replica keys at
         /// any time. However, KMS will not delete a multi-Region primary key with existing replica
@@ -8300,7 +9840,20 @@ namespace Amazon.KeyManagementService
         /// is deleted (not just scheduled), the key state of the primary key changes to <code>PendingDeletion</code>
         /// and its waiting period (<code>PendingWindowInDays</code>) begins. For details, see
         /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-delete.html">Deleting
-        /// multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>. 
+        /// multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// When KMS <a href="https://docs.aws.amazon.com/kms/latest/developerguide/delete-cmk-keystore.html">deletes
+        /// a KMS key from an CloudHSM key store</a>, it makes a best effort to delete the associated
+        /// key material from the associated CloudHSM cluster. However, you might need to manually
+        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-orphaned-key">delete
+        /// the orphaned key material</a> from the cluster and its backups. <a href="https://docs.aws.amazon.com/kms/latest/developerguide/delete-xks-key.html">Deleting
+        /// a KMS key from an external key store</a> has no effect on the associated external
+        /// key. However, for both types of custom key stores, deleting a KMS key is destructive
+        /// and irreversible. You cannot decrypt ciphertext encrypted under the KMS key by using
+        /// only its associated external key or CloudHSM key. Also, you cannot recreate a KMS
+        /// key in an external key store by creating a new KMS key with the same key material.
         /// </para>
         ///  
         /// <para>
@@ -8311,7 +9864,7 @@ namespace Amazon.KeyManagementService
         /// <para>
         /// The KMS key that you use for this operation must be in a compatible key state. For
         /// details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-        /// state: Effect on your KMS key</a> in the <i>Key Management Service Developer Guide</i>.
+        /// states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -8340,7 +9893,7 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>The response from the ScheduleKeyDeletion service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request. The request can be retried.
+        /// The system timed out while trying to fulfill the request. You can retry the request.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
         /// The request was rejected because a specified ARN, or an ARN in a key policy, is not
@@ -8356,10 +9909,25 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-        /// state: Effect on your KMS key</a> in the <i> <i>Key Management Service Developer Guide</i>
-        /// </i>.
+        /// This exceptions means one of the following:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The key state of the KMS key is not compatible with the operation. 
+        /// </para>
+        ///  
+        /// <para>
+        /// To find the key state, use the <a>DescribeKey</a> operation. For more information
+        /// about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
+        /// states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For cryptographic operations on KMS keys in custom key stores, this exception represents
+        /// a general failure with many possible causes. To identify the cause, see the error
+        /// message that accompanies the exception.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
@@ -8414,11 +9982,11 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Creates a <a href="https://en.wikipedia.org/wiki/Digital_signature">digital signature</a>
-        /// for a message or message digest by using the private key in an asymmetric KMS key.
-        /// To verify the signature, use the <a>Verify</a> operation, or use the public key in
-        /// the same asymmetric KMS key outside of KMS. For information about symmetric and asymmetric
-        /// KMS keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
-        /// Symmetric and Asymmetric KMS keys</a> in the <i>Key Management Service Developer Guide</i>.
+        /// for a message or message digest by using the private key in an asymmetric signing
+        /// KMS key. To verify the signature, use the <a>Verify</a> operation, or use the public
+        /// key in the same asymmetric KMS key outside of KMS. For information about asymmetric
+        /// KMS keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Asymmetric
+        /// KMS keys</a> in the <i>Key Management Service Developer Guide</i>.
         /// 
         ///  
         /// <para>
@@ -8456,7 +10024,15 @@ namespace Amazon.KeyManagementService
         /// When signing a message, be sure to record the KMS key and the signing algorithm. This
         /// information is required to verify the signature.
         /// </para>
-        ///  </important> 
+        ///  </important> <note> 
+        /// <para>
+        /// Best practices recommend that you limit the time during which any signature is effective.
+        /// This deters an attack where the actor uses a signed message to establish validity
+        /// repeatedly or long after the message is superseded. Signatures do not include a timestamp,
+        /// but you can include a timestamp in the signed message to help you detect when its
+        /// time to refresh the signature. 
+        /// </para>
+        ///  </note> 
         /// <para>
         /// To verify the signature that this operation generates, use the <a>Verify</a> operation.
         /// Or use the <a>GetPublicKey</a> operation to download the public key and then use the
@@ -8466,7 +10042,7 @@ namespace Amazon.KeyManagementService
         /// <para>
         /// The KMS key that you use for this operation must be in a compatible key state. For
         /// details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-        /// state: Effect on your KMS key</a> in the <i>Key Management Service Developer Guide</i>.
+        /// states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -8488,7 +10064,7 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>The response from the Sign service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request. The request can be retried.
+        /// The system timed out while trying to fulfill the request. You can retry the request.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.DisabledException">
         /// The request was rejected because the specified KMS key is not enabled.
@@ -8511,9 +10087,10 @@ namespace Amazon.KeyManagementService
         ///  </li> </ul> 
         /// <para>
         /// For encrypting, decrypting, re-encrypting, and generating data keys, the <code>KeyUsage</code>
-        /// must be <code>ENCRYPT_DECRYPT</code>. For signing and verifying, the <code>KeyUsage</code>
-        /// must be <code>SIGN_VERIFY</code>. To find the <code>KeyUsage</code> of a KMS key,
-        /// use the <a>DescribeKey</a> operation.
+        /// must be <code>ENCRYPT_DECRYPT</code>. For signing and verifying messages, the <code>KeyUsage</code>
+        /// must be <code>SIGN_VERIFY</code>. For generating and verifying message authentication
+        /// codes (MACs), the <code>KeyUsage</code> must be <code>GENERATE_VERIFY_MAC</code>.
+        /// To find the <code>KeyUsage</code> of a KMS key, use the <a>DescribeKey</a> operation.
         /// </para>
         ///  
         /// <para>
@@ -8535,10 +10112,25 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-        /// state: Effect on your KMS key</a> in the <i> <i>Key Management Service Developer Guide</i>
-        /// </i>.
+        /// This exceptions means one of the following:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The key state of the KMS key is not compatible with the operation. 
+        /// </para>
+        ///  
+        /// <para>
+        /// To find the key state, use the <a>DescribeKey</a> operation. For more information
+        /// about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
+        /// states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For cryptographic operations on KMS keys in custom key stores, this exception represents
+        /// a general failure with many possible causes. To identify the cause, see the error
+        /// message that accompanies the exception.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
@@ -8598,8 +10190,8 @@ namespace Amazon.KeyManagementService
         ///  <note> 
         /// <para>
         /// Tagging or untagging a KMS key can allow or deny permission to the KMS key. For details,
-        /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">Using
-        /// ABAC in KMS</a> in the <i>Key Management Service Developer Guide</i>.
+        /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC
+        /// for KMS</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         ///  </note> 
         /// <para>
@@ -8631,7 +10223,7 @@ namespace Amazon.KeyManagementService
         /// <para>
         /// The KMS key that you use for this operation must be in a compatible key state. For
         /// details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-        /// state: Effect on your KMS key</a> in the <i>Key Management Service Developer Guide</i>.
+        /// states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -8682,10 +10274,25 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-        /// state: Effect on your KMS key</a> in the <i> <i>Key Management Service Developer Guide</i>
-        /// </i>.
+        /// This exceptions means one of the following:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The key state of the KMS key is not compatible with the operation. 
+        /// </para>
+        ///  
+        /// <para>
+        /// To find the key state, use the <a>DescribeKey</a> operation. For more information
+        /// about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
+        /// states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For cryptographic operations on KMS keys in custom key stores, this exception represents
+        /// a general failure with many possible causes. To identify the cause, see the error
+        /// message that accompanies the exception.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.LimitExceededException">
         /// The request was rejected because a quota was exceeded. For more information, see <a
@@ -8753,8 +10360,8 @@ namespace Amazon.KeyManagementService
         ///  <note> 
         /// <para>
         /// Tagging or untagging a KMS key can allow or deny permission to the KMS key. For details,
-        /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">Using
-        /// ABAC in KMS</a> in the <i>Key Management Service Developer Guide</i>.
+        /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC
+        /// for KMS</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         ///  </note> 
         /// <para>
@@ -8774,7 +10381,7 @@ namespace Amazon.KeyManagementService
         /// <para>
         /// The KMS key that you use for this operation must be in a compatible key state. For
         /// details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-        /// state: Effect on your KMS key</a> in the <i>Key Management Service Developer Guide</i>.
+        /// states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -8825,10 +10432,25 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-        /// state: Effect on your KMS key</a> in the <i> <i>Key Management Service Developer Guide</i>
-        /// </i>.
+        /// This exceptions means one of the following:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The key state of the KMS key is not compatible with the operation. 
+        /// </para>
+        ///  
+        /// <para>
+        /// To find the key state, use the <a>DescribeKey</a> operation. For more information
+        /// about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
+        /// states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For cryptographic operations on KMS keys in custom key stores, this exception represents
+        /// a general failure with many possible causes. To identify the cause, see the error
+        /// message that accompanies the exception.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
@@ -8892,16 +10514,16 @@ namespace Amazon.KeyManagementService
         ///  <note> 
         /// <para>
         /// Adding, deleting, or updating an alias can allow or deny permission to the KMS key.
-        /// For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">Using
-        /// ABAC in KMS</a> in the <i>Key Management Service Developer Guide</i>.
+        /// For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC
+        /// for KMS</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         ///  </note> 
         /// <para>
-        /// The current and new KMS key must be the same type (both symmetric or both asymmetric),
-        /// and they must have the same key usage (<code>ENCRYPT_DECRYPT</code> or <code>SIGN_VERIFY</code>).
-        /// This restriction prevents errors in code that uses aliases. If you must assign an
-        /// alias to a different type of KMS key, use <a>DeleteAlias</a> to delete the old alias
-        /// and <a>CreateAlias</a> to create a new alias.
+        /// The current and new KMS key must be the same type (both symmetric or both asymmetric
+        /// or both HMAC), and they must have the same key usage. This restriction prevents errors
+        /// in code that uses aliases. If you must assign an alias to a different type of KMS
+        /// key, use <a>DeleteAlias</a> to delete the old alias and <a>CreateAlias</a> to create
+        /// a new alias.
         /// </para>
         ///  
         /// <para>
@@ -8920,7 +10542,7 @@ namespace Amazon.KeyManagementService
         /// <para>
         /// The KMS key that you use for this operation must be in a compatible key state. For
         /// details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-        /// state: Effect on your KMS key</a> in the <i>Key Management Service Developer Guide</i>.
+        /// states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -8969,12 +10591,12 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="aliasName">Identifies the alias that is changing its KMS key. This value must begin with <code>alias/</code> followed by the alias name, such as <code>alias/ExampleAlias</code>. You cannot use UpdateAlias to change the alias name.</param>
-        /// <param name="targetKeyId">Identifies the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer managed key</a> to associate with the alias. You don't have permission to associate an alias with an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon Web Services managed key</a>. The KMS key must be in the same Amazon Web Services account and Region as the alias. Also, the new target KMS key must be the same type as the current target KMS key (both symmetric or both asymmetric) and they must have the same key usage.  Specify the key ID or key ARN of the KMS key. For example: <ul> <li> Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> </ul> To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>. To verify that the alias is mapped to the correct KMS key, use <a>ListAliases</a>.</param>
+        /// <param name="aliasName">Identifies the alias that is changing its KMS key. This value must begin with <code>alias/</code> followed by the alias name, such as <code>alias/ExampleAlias</code>. You cannot use <code>UpdateAlias</code> to change the alias name. <important> Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output. </important></param>
+        /// <param name="targetKeyId">Identifies the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer managed key</a> to associate with the alias. You don't have permission to associate an alias with an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon Web Services managed key</a>. The KMS key must be in the same Amazon Web Services account and Region as the alias. Also, the new target KMS key must be the same type as the current target KMS key (both symmetric or both asymmetric or both HMAC) and they must have the same key usage.  Specify the key ID or key ARN of the KMS key. For example: <ul> <li> Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> </ul> To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>. To verify that the alias is mapped to the correct KMS key, use <a>ListAliases</a>.</param>
         /// 
         /// <returns>The response from the UpdateAlias service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request. The request can be retried.
+        /// The system timed out while trying to fulfill the request. You can retry the request.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
         /// The request was rejected because an internal exception occurred. The request can be
@@ -8986,10 +10608,25 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-        /// state: Effect on your KMS key</a> in the <i> <i>Key Management Service Developer Guide</i>
-        /// </i>.
+        /// This exceptions means one of the following:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The key state of the KMS key is not compatible with the operation. 
+        /// </para>
+        ///  
+        /// <para>
+        /// To find the key state, use the <a>DescribeKey</a> operation. For more information
+        /// about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
+        /// states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For cryptographic operations on KMS keys in custom key stores, this exception represents
+        /// a general failure with many possible causes. To identify the cause, see the error
+        /// message that accompanies the exception.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.LimitExceededException">
         /// The request was rejected because a quota was exceeded. For more information, see <a
@@ -9017,16 +10654,16 @@ namespace Amazon.KeyManagementService
         ///  <note> 
         /// <para>
         /// Adding, deleting, or updating an alias can allow or deny permission to the KMS key.
-        /// For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">Using
-        /// ABAC in KMS</a> in the <i>Key Management Service Developer Guide</i>.
+        /// For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC
+        /// for KMS</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         ///  </note> 
         /// <para>
-        /// The current and new KMS key must be the same type (both symmetric or both asymmetric),
-        /// and they must have the same key usage (<code>ENCRYPT_DECRYPT</code> or <code>SIGN_VERIFY</code>).
-        /// This restriction prevents errors in code that uses aliases. If you must assign an
-        /// alias to a different type of KMS key, use <a>DeleteAlias</a> to delete the old alias
-        /// and <a>CreateAlias</a> to create a new alias.
+        /// The current and new KMS key must be the same type (both symmetric or both asymmetric
+        /// or both HMAC), and they must have the same key usage. This restriction prevents errors
+        /// in code that uses aliases. If you must assign an alias to a different type of KMS
+        /// key, use <a>DeleteAlias</a> to delete the old alias and <a>CreateAlias</a> to create
+        /// a new alias.
         /// </para>
         ///  
         /// <para>
@@ -9045,7 +10682,7 @@ namespace Amazon.KeyManagementService
         /// <para>
         /// The KMS key that you use for this operation must be in a compatible key state. For
         /// details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-        /// state: Effect on your KMS key</a> in the <i>Key Management Service Developer Guide</i>.
+        /// states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -9098,7 +10735,7 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>The response from the UpdateAlias service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request. The request can be retried.
+        /// The system timed out while trying to fulfill the request. You can retry the request.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
         /// The request was rejected because an internal exception occurred. The request can be
@@ -9110,10 +10747,25 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-        /// state: Effect on your KMS key</a> in the <i> <i>Key Management Service Developer Guide</i>
-        /// </i>.
+        /// This exceptions means one of the following:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The key state of the KMS key is not compatible with the operation. 
+        /// </para>
+        ///  
+        /// <para>
+        /// To find the key state, use the <a>DescribeKey</a> operation. For more information
+        /// about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
+        /// states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For cryptographic operations on KMS keys in custom key stores, this exception represents
+        /// a general failure with many possible causes. To identify the cause, see the error
+        /// message that accompanies the exception.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.LimitExceededException">
         /// The request was rejected because a quota was exceeded. For more information, see <a
@@ -9172,66 +10824,100 @@ namespace Amazon.KeyManagementService
         #region  UpdateCustomKeyStore
 
         /// <summary>
-        /// Changes the properties of a custom key store. Use the <code>CustomKeyStoreId</code>
-        /// parameter to identify the custom key store you want to edit. Use the remaining parameters
-        /// to change the properties of the custom key store.
+        /// Changes the properties of a custom key store. You can use this operation to change
+        /// the properties of an CloudHSM key store or an external key store.
         /// 
         ///  
         /// <para>
-        /// You can only update a custom key store that is disconnected. To disconnect the custom
-        /// key store, use <a>DisconnectCustomKeyStore</a>. To reconnect the custom key store
-        /// after the update completes, use <a>ConnectCustomKeyStore</a>. To find the connection
-        /// state of a custom key store, use the <a>DescribeCustomKeyStores</a> operation.
+        /// Use the required <code>CustomKeyStoreId</code> parameter to identify the custom key
+        /// store. Use the remaining optional parameters to change its properties. This operation
+        /// does not return any property values. To verify the updated property values, use the
+        /// <a>DescribeCustomKeyStores</a> operation.
         /// </para>
         ///  
         /// <para>
-        /// The <code>CustomKeyStoreId</code> parameter is required in all commands. Use the other
-        /// parameters of <code>UpdateCustomKeyStore</code> to edit your key store settings.
+        ///  This operation is part of the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
+        /// key stores</a> feature in KMS, which combines the convenience and extensive integration
+        /// of KMS with the isolation and control of a key store that you own and manage.
         /// </para>
-        ///  <ul> <li> 
+        ///  <important> 
         /// <para>
-        /// Use the <code>NewCustomKeyStoreName</code> parameter to change the friendly name of
-        /// the custom key store to the value that you specify.
+        /// When updating the properties of an external key store, verify that the updated settings
+        /// connect your key store, via the external key store proxy, to the same external key
+        /// manager as the previous settings, or to a backup or snapshot of the external key manager
+        /// with the same cryptographic keys. If the updated connection settings fail, you can
+        /// fix them and retry, although an extended delay might disrupt Amazon Web Services services.
+        /// However, if KMS permanently loses its access to cryptographic keys, ciphertext encrypted
+        /// under those keys is unrecoverable.
+        /// </para>
+        ///  </important> <note> 
+        /// <para>
+        /// For external key stores:
+        /// </para>
+        ///  
+        /// <para>
+        /// Some external key managers provide a simpler method for updating an external key store.
+        /// For details, see your external key manager documentation.
+        /// </para>
+        ///  
+        /// <para>
+        /// When updating an external key store in the KMS console, you can upload a JSON-based
+        /// proxy configuration file with the desired values. You cannot upload the proxy configuration
+        /// file to the <code>UpdateCustomKeyStore</code> operation. However, you can use the
+        /// file to help you determine the correct values for the <code>UpdateCustomKeyStore</code>
+        /// parameters.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// For an CloudHSM key store, you can use this operation to change the custom key store
+        /// friendly name (<code>NewCustomKeyStoreName</code>), to tell KMS about a change to
+        /// the <code>kmsuser</code> crypto user password (<code>KeyStorePassword</code>), or
+        /// to associate the custom key store with a different, but related, CloudHSM cluster
+        /// (<code>CloudHsmClusterId</code>). To update any property of an CloudHSM key store,
+        /// the <code>ConnectionState</code> of the CloudHSM key store must be <code>DISCONNECTED</code>.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// For an external key store, you can use this operation to change the custom key store
+        /// friendly name (<code>NewCustomKeyStoreName</code>), or to tell KMS about a change
+        /// to the external key store proxy authentication credentials (<code>XksProxyAuthenticationCredential</code>),
+        /// connection method (<code>XksProxyConnectivity</code>), external proxy endpoint (<code>XksProxyUriEndpoint</code>)
+        /// and path (<code>XksProxyUriPath</code>). For external key stores with an <code>XksProxyConnectivity</code>
+        /// of <code>VPC_ENDPOINT_SERVICE</code>, you can also update the Amazon VPC endpoint
+        /// service name (<code>XksProxyVpcEndpointServiceName</code>). To update most properties
+        /// of an external key store, the <code>ConnectionState</code> of the external key store
+        /// must be <code>DISCONNECTED</code>. However, you can update the <code>CustomKeyStoreName</code>,
+        /// <code>XksProxyAuthenticationCredential</code>, and <code>XksProxyUriPath</code> of
+        /// an external key store when it is in the CONNECTED or DISCONNECTED state. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If your update requires a <code>DISCONNECTED</code> state, before using <code>UpdateCustomKeyStore</code>,
+        /// use the <a>DisconnectCustomKeyStore</a> operation to disconnect the custom key store.
+        /// After the <code>UpdateCustomKeyStore</code> operation completes, use the <a>ConnectCustomKeyStore</a>
+        /// to reconnect the custom key store. To find the <code>ConnectionState</code> of the
+        /// custom key store, use the <a>DescribeCustomKeyStores</a> operation. 
         /// </para>
         ///  
         /// <para>
         ///  
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Use the <code>KeyStorePassword</code> parameter tell KMS the current password of the
-        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-store-concepts.html#concept-kmsuser">
-        /// <code>kmsuser</code> crypto user (CU)</a> in the associated CloudHSM cluster. You
-        /// can use this parameter to <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-password">fix
-        /// connection failures</a> that occur when KMS cannot log into the associated cluster
-        /// because the <code>kmsuser</code> password has changed. This value does not change
-        /// the password in the CloudHSM cluster.
-        /// </para>
         ///  
         /// <para>
+        /// Before updating the custom key store, verify that the new values allow KMS to connect
+        /// the custom key store to its backing key store. For example, before you change the
+        /// <code>XksProxyUriPath</code> value, verify that the external key store proxy is reachable
+        /// at the new path.
+        /// </para>
         ///  
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Use the <code>CloudHsmClusterId</code> parameter to associate the custom key store
-        /// with a different, but related, CloudHSM cluster. You can use this parameter to repair
-        /// a custom key store if its CloudHSM cluster becomes corrupted or is deleted, or when
-        /// you need to create or restore a cluster from a backup. 
-        /// </para>
-        ///  </li> </ul> 
         /// <para>
         /// If the operation succeeds, it returns a JSON object with no properties.
         /// </para>
         ///  
         /// <para>
-        /// This operation is part of the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">Custom
-        /// Key Store feature</a> feature in KMS, which combines the convenience and extensive
-        /// integration of KMS with the isolation and control of a single-tenant key store.
-        /// </para>
-        ///  
-        /// <para>
         ///  <b>Cross-account use</b>: No. You cannot perform this operation on a custom key store
-        /// in a different Amazon Web Services account. 
+        /// in a different Amazon Web Services account.
         /// </para>
         ///  
         /// <para>
@@ -9269,12 +10955,12 @@ namespace Amazon.KeyManagementService
         /// <returns>The response from the UpdateCustomKeyStore service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.CloudHsmClusterInvalidConfigurationException">
         /// The request was rejected because the associated CloudHSM cluster did not meet the
-        /// configuration requirements for a custom key store.
+        /// configuration requirements for an CloudHSM key store.
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// The cluster must be configured with private subnets in at least two different Availability
-        /// Zones in the Region.
+        /// The CloudHSM cluster must be configured with private subnets in at least two different
+        /// Availability Zones in the Region.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -9282,15 +10968,15 @@ namespace Amazon.KeyManagementService
         /// group for the cluster</a> (cloudhsm-cluster-<i>&lt;cluster-id&gt;</i>-sg) must include
         /// inbound rules and outbound rules that allow TCP traffic on ports 2223-2225. The <b>Source</b>
         /// in the inbound rules and the <b>Destination</b> in the outbound rules must match the
-        /// security group ID. These rules are set by default when you create the cluster. Do
-        /// not delete or change them. To get information about a particular security group, use
-        /// the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSecurityGroups.html">DescribeSecurityGroups</a>
+        /// security group ID. These rules are set by default when you create the CloudHSM cluster.
+        /// Do not delete or change them. To get information about a particular security group,
+        /// use the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSecurityGroups.html">DescribeSecurityGroups</a>
         /// operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The cluster must contain at least as many HSMs as the operation requires. To add HSMs,
-        /// use the CloudHSM <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_CreateHsm.html">CreateHsm</a>
+        /// The CloudHSM cluster must contain at least as many HSMs as the operation requires.
+        /// To add HSMs, use the CloudHSM <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_CreateHsm.html">CreateHsm</a>
         /// operation.
         /// </para>
         ///  
@@ -9303,7 +10989,7 @@ namespace Amazon.KeyManagementService
         ///  </li> </ul> 
         /// <para>
         /// For information about the requirements for an CloudHSM cluster that is associated
-        /// with a custom key store, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keystore.html#before-keystore">Assemble
+        /// with an CloudHSM key store, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keystore.html#before-keystore">Assemble
         /// the Prerequisites</a> in the <i>Key Management Service Developer Guide</i>. For information
         /// about creating a private subnet for an CloudHSM cluster, see <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/create-subnets.html">Create
         /// a Private Subnet</a> in the <i>CloudHSM User Guide</i>. For information about cluster
@@ -9312,9 +10998,9 @@ namespace Amazon.KeyManagementService
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.CloudHsmClusterNotActiveException">
-        /// The request was rejected because the CloudHSM cluster that is associated with the
-        /// custom key store is not active. Initialize and activate the cluster and try the command
-        /// again. For detailed instructions, see <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/getting-started.html">Getting
+        /// The request was rejected because the CloudHSM cluster associated with the CloudHSM
+        /// key store is not active. Initialize and activate the cluster and try the command again.
+        /// For detailed instructions, see <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/getting-started.html">Getting
         /// Started</a> in the <i>CloudHSM User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.CloudHsmClusterNotFoundException">
@@ -9324,18 +11010,18 @@ namespace Amazon.KeyManagementService
         /// <exception cref="Amazon.KeyManagementService.Model.CloudHsmClusterNotRelatedException">
         /// The request was rejected because the specified CloudHSM cluster has a different cluster
         /// certificate than the original cluster. You cannot use the operation to specify an
-        /// unrelated cluster.
+        /// unrelated cluster for an CloudHSM key store.
         /// 
         ///  
         /// <para>
-        /// Specify a cluster that shares a backup history with the original cluster. This includes
-        /// clusters that were created from a backup of the current cluster, and clusters that
-        /// were created from the same backup that produced the current cluster.
+        /// Specify an CloudHSM cluster that shares a backup history with the original cluster.
+        /// This includes clusters that were created from a backup of the current cluster, and
+        /// clusters that were created from the same backup that produced the current cluster.
         /// </para>
         ///  
         /// <para>
-        /// Clusters that share a backup history have the same cluster certificate. To view the
-        /// cluster certificate of a cluster, use the <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeClusters.html">DescribeClusters</a>
+        /// CloudHSM clusters that share a backup history have the same cluster certificate. To
+        /// view the cluster certificate of an CloudHSM cluster, use the <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeClusters.html">DescribeClusters</a>
         /// operation.
         /// </para>
         /// </exception>
@@ -9350,9 +11036,23 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// You requested the <a>CreateKey</a> or <a>GenerateRandom</a> operation in a custom
-        /// key store that is not connected. These operations are valid only when the custom key
-        /// store <code>ConnectionState</code> is <code>CONNECTED</code>.
+        /// You requested the <a>ConnectCustomKeyStore</a> operation on a custom key store with
+        /// a <code>ConnectionState</code> of <code>DISCONNECTING</code> or <code>FAILED</code>.
+        /// This operation is valid for all other <code>ConnectionState</code> values. To reconnect
+        /// a custom key store in a <code>FAILED</code> state, disconnect it (<a>DisconnectCustomKeyStore</a>),
+        /// then connect it (<code>ConnectCustomKeyStore</code>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You requested the <a>CreateKey</a> operation in a custom key store that is not connected.
+        /// This operations is valid only when the custom key store <code>ConnectionState</code>
+        /// is <code>CONNECTED</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You requested the <a>DisconnectCustomKeyStore</a> operation on a custom key store
+        /// with a <code>ConnectionState</code> of <code>DISCONNECTING</code> or <code>DISCONNECTED</code>.
+        /// This operation is valid for all other <code>ConnectionState</code> values.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -9362,9 +11062,9 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You requested the <a>ConnectCustomKeyStore</a> operation on a custom key store with
-        /// a <code>ConnectionState</code> of <code>DISCONNECTING</code> or <code>FAILED</code>.
-        /// This operation is valid for all other <code>ConnectionState</code> values.
+        /// You requested the <a>GenerateRandom</a> operation in an CloudHSM key store that is
+        /// not connected. This operation is valid only when the CloudHSM key store <code>ConnectionState</code>
+        /// is <code>CONNECTED</code>. 
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -9380,6 +11080,64 @@ namespace Amazon.KeyManagementService
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
         /// The request was rejected because an internal exception occurred. The request can be
         /// retried.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.XksProxyIncorrectAuthenticationCredentialException">
+        /// The request was rejected because the proxy credentials failed to authenticate to the
+        /// specified external key store proxy. The specified external key store proxy rejected
+        /// a status request from KMS due to invalid credentials. This can indicate an error in
+        /// the credentials or in the identification of the external key store proxy.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.XksProxyInvalidConfigurationException">
+        /// The request was rejected because the Amazon VPC endpoint service configuration does
+        /// not fulfill the requirements for an external key store proxy. For details, see the
+        /// exception message.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.XksProxyInvalidResponseException">
+        /// KMS cannot interpret the response it received from the external key store proxy. The
+        /// problem might be a poorly constructed response, but it could also be a transient network
+        /// issue. If you see this error repeatedly, report it to the proxy vendor.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.XksProxyUriEndpointInUseException">
+        /// The request was rejected because the concatenation of the <code>XksProxyUriEndpoint</code>
+        /// is already associated with an external key store in the Amazon Web Services account
+        /// and Region. Each external key store in an account and Region must use a unique external
+        /// key store proxy address.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.XksProxyUriInUseException">
+        /// The request was rejected because the concatenation of the <code>XksProxyUriEndpoint</code>
+        /// and <code>XksProxyUriPath</code> is already associated with an external key store
+        /// in the Amazon Web Services account and Region. Each external key store in an account
+        /// and Region must use a unique external key store proxy API address.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.XksProxyUriUnreachableException">
+        /// KMS was unable to reach the specified <code>XksProxyUriPath</code>. The path must
+        /// be reachable before you create the external key store or update its settings.
+        /// 
+        ///  
+        /// <para>
+        /// This exception is also thrown when the external key store proxy response to a <code>GetHealthStatus</code>
+        /// request indicates that all external key manager instances are unavailable.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.XksProxyVpcEndpointServiceInUseException">
+        /// The request was rejected because the specified Amazon VPC endpoint service is already
+        /// associated with an external key store in the Amazon Web Services account and Region.
+        /// Each external key store in an Amazon Web Services account and Region must use a different
+        /// Amazon VPC endpoint service.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.XksProxyVpcEndpointServiceInvalidConfigurationException">
+        /// The request was rejected because the Amazon VPC endpoint service configuration does
+        /// not fulfill the requirements for an external key store proxy. For details, see the
+        /// exception message and <a href="kms/latest/developerguide/vpc-connectivity.html#xks-vpc-requirements">review
+        /// the requirements</a> for Amazon VPC endpoint service connectivity for an external
+        /// key store.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.XksProxyVpcEndpointServiceNotFoundException">
+        /// The request was rejected because KMS could not find the specified VPC endpoint service.
+        /// Use <a>DescribeCustomKeyStores</a> to verify the VPC endpoint service name for the
+        /// external key store. Also, confirm that the <code>Allow principals</code> list for
+        /// the VPC endpoint service includes the KMS service principal for the Region, such as
+        /// <code>cks.kms.us-east-1.amazonaws.com</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/UpdateCustomKeyStore">REST API Reference for UpdateCustomKeyStore Operation</seealso>
         public virtual UpdateCustomKeyStoreResponse UpdateCustomKeyStore(UpdateCustomKeyStoreRequest request)
@@ -9437,7 +11195,7 @@ namespace Amazon.KeyManagementService
         /// <para>
         /// The KMS key that you use for this operation must be in a compatible key state. For
         /// details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-        /// state: Effect on your KMS key</a> in the <i>Key Management Service Developer Guide</i>.
+        /// states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -9464,11 +11222,11 @@ namespace Amazon.KeyManagementService
         ///  </li> </ul>
         /// </summary>
         /// <param name="keyId">Updates the description of the specified KMS key. Specify the key ID or key ARN of the KMS key. For example: <ul> <li> Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> </ul> To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</param>
-        /// <param name="description">New description for the KMS key.</param>
+        /// <param name="description">New description for the KMS key. <important> Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output. </important></param>
         /// 
         /// <returns>The response from the UpdateKeyDescription service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request. The request can be retried.
+        /// The system timed out while trying to fulfill the request. You can retry the request.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
         /// The request was rejected because a specified ARN, or an ARN in a key policy, is not
@@ -9484,10 +11242,25 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-        /// state: Effect on your KMS key</a> in the <i> <i>Key Management Service Developer Guide</i>
-        /// </i>.
+        /// This exceptions means one of the following:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The key state of the KMS key is not compatible with the operation. 
+        /// </para>
+        ///  
+        /// <para>
+        /// To find the key state, use the <a>DescribeKey</a> operation. For more information
+        /// about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
+        /// states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For cryptographic operations on KMS keys in custom key stores, this exception represents
+        /// a general failure with many possible causes. To identify the cause, see the error
+        /// message that accompanies the exception.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
@@ -9510,7 +11283,7 @@ namespace Amazon.KeyManagementService
         /// <para>
         /// The KMS key that you use for this operation must be in a compatible key state. For
         /// details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-        /// state: Effect on your KMS key</a> in the <i>Key Management Service Developer Guide</i>.
+        /// states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -9540,7 +11313,7 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>The response from the UpdateKeyDescription service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request. The request can be retried.
+        /// The system timed out while trying to fulfill the request. You can retry the request.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
         /// The request was rejected because a specified ARN, or an ARN in a key policy, is not
@@ -9556,10 +11329,25 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-        /// state: Effect on your KMS key</a> in the <i> <i>Key Management Service Developer Guide</i>
-        /// </i>.
+        /// This exceptions means one of the following:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The key state of the KMS key is not compatible with the operation. 
+        /// </para>
+        ///  
+        /// <para>
+        /// To find the key state, use the <a>DescribeKey</a> operation. For more information
+        /// about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
+        /// states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For cryptographic operations on KMS keys in custom key stores, this exception represents
+        /// a general failure with many possible causes. To identify the cause, see the error
+        /// message that accompanies the exception.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
@@ -9632,8 +11420,8 @@ namespace Amazon.KeyManagementService
         /// these KMS keys have the same key ID, key material, and other metadata, you can use
         /// them interchangeably to encrypt data in one Amazon Web Services Region and decrypt
         /// it in a different Amazon Web Services Region without re-encrypting the data or making
-        /// a cross-Region call. For more information about multi-Region keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using
-        /// multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.
+        /// a cross-Region call. For more information about multi-Region keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Multi-Region
+        /// keys in KMS</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -9669,8 +11457,8 @@ namespace Amazon.KeyManagementService
         /// restored when the update is complete. While the key state is <code>Updating</code>,
         /// you can use the keys in cryptographic operations, but you cannot replicate the new
         /// primary key or perform certain management operations, such as enabling or disabling
-        /// these keys. For details about the <code>Updating</code> key state, see <a href="kms/latest/developerguide/key-state.html">Key
-        /// state: Effect on your KMS key</a> in the <i>Key Management Service Developer Guide</i>.
+        /// these keys. For details about the <code>Updating</code> key state, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
+        /// states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -9730,10 +11518,25 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-        /// state: Effect on your KMS key</a> in the <i> <i>Key Management Service Developer Guide</i>
-        /// </i>.
+        /// This exceptions means one of the following:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The key state of the KMS key is not compatible with the operation. 
+        /// </para>
+        ///  
+        /// <para>
+        /// To find the key state, use the <a>DescribeKey</a> operation. For more information
+        /// about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
+        /// states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For cryptographic operations on KMS keys in custom key stores, this exception represents
+        /// a general failure with many possible causes. To identify the cause, see the error
+        /// message that accompanies the exception.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
@@ -9805,14 +11608,16 @@ namespace Amazon.KeyManagementService
         /// <para>
         /// A digital signature is generated by using the private key in an asymmetric KMS key.
         /// The signature is verified by using the public key in the same asymmetric KMS key.
-        /// For information about symmetric and asymmetric KMS keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
-        /// Symmetric and Asymmetric KMS keys</a> in the <i>Key Management Service Developer Guide</i>.
+        /// For information about asymmetric KMS keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Asymmetric
+        /// KMS keys</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// To verify a digital signature, you can use the <code>Verify</code> operation. Specify
-        /// the same asymmetric KMS key, message, and signing algorithm that were used to produce
-        /// the signature.
+        /// To use the <code>Verify</code> operation, specify the same asymmetric KMS key, message,
+        /// and signing algorithm that were used to produce the signature. The message type does
+        /// not need to be the same as the one used for signing, but it must indicate whether
+        /// the value of the <code>Message</code> parameter should be hashed as part of the verification
+        /// process.
         /// </para>
         ///  
         /// <para>
@@ -9826,9 +11631,16 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
+        /// To verify a signature outside of KMS with an SM2 public key (China Regions only),
+        /// you must specify the distinguishing ID. By default, KMS uses <code>1234567812345678</code>
+        /// as the distinguishing ID. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/asymmetric-key-specs.html#key-spec-sm-offline-verification">Offline
+        /// verification with SM2 key pairs</a>.
+        /// </para>
+        ///  
+        /// <para>
         /// The KMS key that you use for this operation must be in a compatible key state. For
         /// details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-        /// state: Effect on your KMS key</a> in the <i>Key Management Service Developer Guide</i>.
+        /// states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -9850,7 +11662,7 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>The response from the Verify service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request. The request can be retried.
+        /// The system timed out while trying to fulfill the request. You can retry the request.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.DisabledException">
         /// The request was rejected because the specified KMS key is not enabled.
@@ -9873,9 +11685,10 @@ namespace Amazon.KeyManagementService
         ///  </li> </ul> 
         /// <para>
         /// For encrypting, decrypting, re-encrypting, and generating data keys, the <code>KeyUsage</code>
-        /// must be <code>ENCRYPT_DECRYPT</code>. For signing and verifying, the <code>KeyUsage</code>
-        /// must be <code>SIGN_VERIFY</code>. To find the <code>KeyUsage</code> of a KMS key,
-        /// use the <a>DescribeKey</a> operation.
+        /// must be <code>ENCRYPT_DECRYPT</code>. For signing and verifying messages, the <code>KeyUsage</code>
+        /// must be <code>SIGN_VERIFY</code>. For generating and verifying message authentication
+        /// codes (MACs), the <code>KeyUsage</code> must be <code>GENERATE_VERIFY_MAC</code>.
+        /// To find the <code>KeyUsage</code> of a KMS key, use the <a>DescribeKey</a> operation.
         /// </para>
         ///  
         /// <para>
@@ -9902,10 +11715,25 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-        /// state: Effect on your KMS key</a> in the <i> <i>Key Management Service Developer Guide</i>
-        /// </i>.
+        /// This exceptions means one of the following:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The key state of the KMS key is not compatible with the operation. 
+        /// </para>
+        ///  
+        /// <para>
+        /// To find the key state, use the <a>DescribeKey</a> operation. For more information
+        /// about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
+        /// states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For cryptographic operations on KMS keys in custom key stores, this exception represents
+        /// a general failure with many possible causes. To identify the cause, see the error
+        /// message that accompanies the exception.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
@@ -9952,6 +11780,172 @@ namespace Amazon.KeyManagementService
         public virtual VerifyResponse EndVerify(IAsyncResult asyncResult)
         {
             return EndInvoke<VerifyResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  VerifyMac
+
+        /// <summary>
+        /// Verifies the hash-based message authentication code (HMAC) for a specified message,
+        /// HMAC KMS key, and MAC algorithm. To verify the HMAC, <code>VerifyMac</code> computes
+        /// an HMAC using the message, HMAC KMS key, and MAC algorithm that you specify, and compares
+        /// the computed HMAC to the HMAC that you specify. If the HMACs are identical, the verification
+        /// succeeds; otherwise, it fails. Verification indicates that the message hasn't changed
+        /// since the HMAC was calculated, and the specified key was used to generate and verify
+        /// the HMAC.
+        /// 
+        ///  
+        /// <para>
+        /// HMAC KMS keys and the HMAC algorithms that KMS uses conform to industry standards
+        /// defined in <a href="https://datatracker.ietf.org/doc/html/rfc2104">RFC 2104</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation is part of KMS support for HMAC KMS keys. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/hmac.html">HMAC
+        /// keys in KMS</a> in the <i>Key Management Service Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The KMS key that you use for this operation must be in a compatible key state. For
+        /// details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
+        /// states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Cross-account use</b>: Yes. To perform this operation with a KMS key in a different
+        /// Amazon Web Services account, specify the key ARN or alias ARN in the value of the
+        /// <code>KeyId</code> parameter. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Required permissions</b>: <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:VerifyMac</a>
+        /// (key policy)
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Related operations</b>: <a>GenerateMac</a> 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the VerifyMac service method.</param>
+        /// 
+        /// <returns>The response from the VerifyMac service method, as returned by KeyManagementService.</returns>
+        /// <exception cref="Amazon.KeyManagementService.Model.DisabledException">
+        /// The request was rejected because the specified KMS key is not enabled.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.InvalidGrantTokenException">
+        /// The request was rejected because the specified grant token is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.InvalidKeyUsageException">
+        /// The request was rejected for one of the following reasons: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// The <code>KeyUsage</code> value of the KMS key is incompatible with the API operation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The encryption algorithm or signing algorithm specified for the operation is incompatible
+        /// with the type of key material in the KMS key <code>(KeySpec</code>).
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For encrypting, decrypting, re-encrypting, and generating data keys, the <code>KeyUsage</code>
+        /// must be <code>ENCRYPT_DECRYPT</code>. For signing and verifying messages, the <code>KeyUsage</code>
+        /// must be <code>SIGN_VERIFY</code>. For generating and verifying message authentication
+        /// codes (MACs), the <code>KeyUsage</code> must be <code>GENERATE_VERIFY_MAC</code>.
+        /// To find the <code>KeyUsage</code> of a KMS key, use the <a>DescribeKey</a> operation.
+        /// </para>
+        ///  
+        /// <para>
+        /// To find the encryption or signing algorithms supported for a particular KMS key, use
+        /// the <a>DescribeKey</a> operation.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KeyUnavailableException">
+        /// The request was rejected because the specified KMS key was not available. You can
+        /// retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
+        /// The request was rejected because an internal exception occurred. The request can be
+        /// retried.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KMSInvalidMacException">
+        /// The request was rejected because the HMAC verification failed. HMAC verification fails
+        /// when the HMAC computed by using the specified message, HMAC KMS key, and MAC algorithm
+        /// does not match the HMAC specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KMSInvalidStateException">
+        /// The request was rejected because the state of the specified resource is not valid
+        /// for this request.
+        /// 
+        ///  
+        /// <para>
+        /// This exceptions means one of the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The key state of the KMS key is not compatible with the operation. 
+        /// </para>
+        ///  
+        /// <para>
+        /// To find the key state, use the <a>DescribeKey</a> operation. For more information
+        /// about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
+        /// states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For cryptographic operations on KMS keys in custom key stores, this exception represents
+        /// a general failure with many possible causes. To identify the cause, see the error
+        /// message that accompanies the exception.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
+        /// The request was rejected because the specified entity or resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/VerifyMac">REST API Reference for VerifyMac Operation</seealso>
+        public virtual VerifyMacResponse VerifyMac(VerifyMacRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = VerifyMacRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = VerifyMacResponseUnmarshaller.Instance;
+
+            return Invoke<VerifyMacResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the VerifyMac operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the VerifyMac operation on AmazonKeyManagementServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndVerifyMac
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/VerifyMac">REST API Reference for VerifyMac Operation</seealso>
+        public virtual IAsyncResult BeginVerifyMac(VerifyMacRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = VerifyMacRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = VerifyMacResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  VerifyMac operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginVerifyMac.</param>
+        /// 
+        /// <returns>Returns a  VerifyMacResult from KeyManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/VerifyMac">REST API Reference for VerifyMac Operation</seealso>
+        public virtual VerifyMacResponse EndVerifyMac(IAsyncResult asyncResult)
+        {
+            return EndInvoke<VerifyMacResponse>(asyncResult);
         }
 
         #endregion

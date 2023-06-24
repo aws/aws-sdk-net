@@ -39,8 +39,9 @@ namespace Amazon.Personalize.Model
     /// 
     ///  <important> 
     /// <para>
-    /// The dataset import job replaces any existing data in the dataset that you imported
-    /// in bulk.
+    /// By default, a dataset import job replaces any existing data in the dataset that you
+    /// imported in bulk. To add new records without replacing existing data, specify INCREMENTAL
+    /// for the import mode in the CreateDatasetImportJob operation.
     /// </para>
     ///  </important> 
     /// <para>
@@ -56,10 +57,11 @@ namespace Amazon.Personalize.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// To get the status of the import job, call <a>DescribeDatasetImportJob</a>, providing
-    /// the Amazon Resource Name (ARN) of the dataset import job. The dataset import is complete
-    /// when the status shows as ACTIVE. If the status shows as CREATE FAILED, the response
-    /// includes a <code>failureReason</code> key, which describes why the job failed.
+    /// To get the status of the import job, call <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeDatasetImportJob.html">DescribeDatasetImportJob</a>,
+    /// providing the Amazon Resource Name (ARN) of the dataset import job. The dataset import
+    /// is complete when the status shows as ACTIVE. If the status shows as CREATE FAILED,
+    /// the response includes a <code>failureReason</code> key, which describes why the job
+    /// failed.
     /// </para>
     ///  <note> 
     /// <para>
@@ -70,11 +72,13 @@ namespace Amazon.Personalize.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a>ListDatasetImportJobs</a> 
+    ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_ListDatasetImportJobs.html">ListDatasetImportJobs</a>
+    /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>DescribeDatasetImportJob</a> 
+    ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeDatasetImportJob.html">DescribeDatasetImportJob</a>
+    /// 
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -82,8 +86,11 @@ namespace Amazon.Personalize.Model
     {
         private string _datasetArn;
         private DataSource _dataSource;
+        private ImportMode _importMode;
         private string _jobName;
+        private bool? _publishAttributionMetricsToS3;
         private string _roleArn;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property DatasetArn. 
@@ -124,6 +131,38 @@ namespace Amazon.Personalize.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ImportMode. 
+        /// <para>
+        /// Specify how to add the new records to an existing dataset. The default import mode
+        /// is <code>FULL</code>. If you haven't imported bulk records into the dataset previously,
+        /// you can only specify <code>FULL</code>.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Specify <code>FULL</code> to overwrite all existing bulk data in your dataset. Data
+        /// you imported individually is not replaced.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Specify <code>INCREMENTAL</code> to append the new records to the existing data in
+        /// your dataset. Amazon Personalize replaces any record with the same ID with the new
+        /// one.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public ImportMode ImportMode
+        {
+            get { return this._importMode; }
+            set { this._importMode = value; }
+        }
+
+        // Check to see if ImportMode property is set
+        internal bool IsSetImportMode()
+        {
+            return this._importMode != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property JobName. 
         /// <para>
         /// The name for the dataset import job.
@@ -143,6 +182,25 @@ namespace Amazon.Personalize.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PublishAttributionMetricsToS3. 
+        /// <para>
+        /// If you created a metric attribution, specify whether to publish metrics for this import
+        /// job to Amazon S3
+        /// </para>
+        /// </summary>
+        public bool PublishAttributionMetricsToS3
+        {
+            get { return this._publishAttributionMetricsToS3.GetValueOrDefault(); }
+            set { this._publishAttributionMetricsToS3 = value; }
+        }
+
+        // Check to see if PublishAttributionMetricsToS3 property is set
+        internal bool IsSetPublishAttributionMetricsToS3()
+        {
+            return this._publishAttributionMetricsToS3.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
         /// The ARN of the IAM role that has permissions to read from the Amazon S3 data source.
@@ -159,6 +217,26 @@ namespace Amazon.Personalize.Model
         internal bool IsSetRoleArn()
         {
             return this._roleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a>
+        /// to apply to the dataset import job.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=200)]
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CaptionSourceSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class CaptionSourceSettingsMarshaller : IRequestMarshaller<CaptionSourceSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -132,7 +132,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CaptionSourceSettingsMarshaller Instance = new CaptionSourceSettingsMarshaller();
 
     }

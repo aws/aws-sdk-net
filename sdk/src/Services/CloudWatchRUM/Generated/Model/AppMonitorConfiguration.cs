@@ -114,8 +114,8 @@ namespace Amazon.CloudWatchRUM.Model
         /// <summary>
         /// Gets and sets the property FavoritePages. 
         /// <para>
-        /// A list of pages in the CloudWatch RUM console that are to be displayed with a "favorite"
-        /// icon.
+        /// A list of pages in your application that are to be displayed with a "favorite" icon
+        /// in the CloudWatch RUM console.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]
@@ -176,8 +176,11 @@ namespace Amazon.CloudWatchRUM.Model
         /// If this app monitor is to collect data from only certain pages in your application,
         /// this structure lists those pages. 
         /// </para>
-        ///  <pre><code> &lt;p&gt;You can't include both &lt;code&gt;ExcludedPages&lt;/code&gt;
-        /// and &lt;code&gt;IncludedPages&lt;/code&gt; in the same operation.&lt;/p&gt; </code></pre>
+        ///  
+        /// <para>
+        /// You can't include both <code>ExcludedPages</code> and <code>IncludedPages</code> in
+        /// the same operation.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]
         public List<string> IncludedPages
@@ -195,16 +198,19 @@ namespace Amazon.CloudWatchRUM.Model
         /// <summary>
         /// Gets and sets the property SessionSampleRate. 
         /// <para>
-        /// Specifies the percentage of user sessions to use for RUM data collection. Choosing
-        /// a higher percentage gives you more data but also incurs more costs.
+        /// Specifies the portion of user sessions to use for RUM data collection. Choosing a
+        /// higher portion gives you more data but also incurs more costs.
         /// </para>
         ///  
         /// <para>
-        /// The number you specify is the percentage of user sessions that will be used.
+        /// The range for this value is 0 to 1 inclusive. Setting this to 1 means that 100% of
+        /// user sessions are sampled, and setting it to 0.1 means that 10% of user sessions are
+        /// sampled.
         /// </para>
         ///  
         /// <para>
-        /// If you omit this parameter, the default of 10 is used.
+        /// If you omit this parameter, the default of 0.1 is used, and 10% of sessions will be
+        /// sampled.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]

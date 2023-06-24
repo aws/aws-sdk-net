@@ -52,6 +52,14 @@ namespace Amazon.Drs.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeLaunchConfigurationTemplates operation
+        ///</summary>
+        public IDescribeLaunchConfigurationTemplatesPaginator DescribeLaunchConfigurationTemplates(DescribeLaunchConfigurationTemplatesRequest request) 
+        {
+            return new DescribeLaunchConfigurationTemplatesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribeRecoveryInstances operation
         ///</summary>
         public IDescribeRecoveryInstancesPaginator DescribeRecoveryInstances(DescribeRecoveryInstancesRequest request) 
@@ -76,11 +84,35 @@ namespace Amazon.Drs.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeSourceNetworks operation
+        ///</summary>
+        public IDescribeSourceNetworksPaginator DescribeSourceNetworks(DescribeSourceNetworksRequest request) 
+        {
+            return new DescribeSourceNetworksPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribeSourceServers operation
         ///</summary>
         public IDescribeSourceServersPaginator DescribeSourceServers(DescribeSourceServersRequest request) 
         {
             return new DescribeSourceServersPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListExtensibleSourceServers operation
+        ///</summary>
+        public IListExtensibleSourceServersPaginator ListExtensibleSourceServers(ListExtensibleSourceServersRequest request) 
+        {
+            return new ListExtensibleSourceServersPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListStagingAccounts operation
+        ///</summary>
+        public IListStagingAccountsPaginator ListStagingAccounts(ListStagingAccountsRequest request) 
+        {
+            return new ListStagingAccountsPaginator(this.client, request);
         }
     }
 }

@@ -34,7 +34,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// HostEntry Marshaller
-    /// </summary>       
+    /// </summary>
     public class HostEntryMarshaller : IRequestMarshaller<HostEntry, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static HostEntryMarshaller Instance = new HostEntryMarshaller();
 
     }

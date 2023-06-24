@@ -30,40 +30,24 @@ namespace Amazon.SecretsManager.Model
 {
     /// <summary>
     /// Container for the parameters to the GetResourcePolicy operation.
-    /// Retrieves the JSON text of the resource-based policy document attached to the specified
-    /// secret. The JSON request string input and response output displays formatted code
-    /// with white space and line breaks for better readability. Submit your input as a single
-    /// line JSON string.
+    /// Retrieves the JSON text of the resource-based policy document attached to the secret.
+    /// For more information about permissions policies attached to a secret, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_resource-policies.html">Permissions
+    /// policies attached to a secret</a>.
     /// 
     ///  
     /// <para>
-    ///  <b>Minimum permissions</b> 
+    /// Secrets Manager generates a CloudTrail log entry when you call this action. Do not
+    /// include sensitive information in request parameters because it might be logged. For
+    /// more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/retrieve-ct-entries.html">Logging
+    /// Secrets Manager events with CloudTrail</a>.
     /// </para>
     ///  
     /// <para>
-    /// To run this command, you must have the following permissions:
+    ///  <b>Required permissions: </b> <code>secretsmanager:GetResourcePolicy</code>. For
+    /// more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions">
+    /// IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+    /// and access control in Secrets Manager</a>. 
     /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    /// secretsmanager:GetResourcePolicy
-    /// </para>
-    ///  </li> </ul> 
-    /// <para>
-    ///  <b>Related operations</b> 
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    /// To attach a resource policy to a secret, use <a>PutResourcePolicy</a>.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// To delete the resource-based policy attached to a secret, use <a>DeleteResourcePolicy</a>.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// To list all of the currently available secrets, use <a>ListSecrets</a>.
-    /// </para>
-    ///  </li> </ul>
     /// </summary>
     public partial class GetResourcePolicyRequest : AmazonSecretsManagerRequest
     {
@@ -72,13 +56,13 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property SecretId. 
         /// <para>
-        /// Specifies the secret that you want to retrieve the attached resource-based policy
-        /// for. You can specify either the Amazon Resource Name (ARN) or the friendly name of
-        /// the secret.
+        /// The ARN or name of the secret to retrieve the attached resource-based policy for.
         /// </para>
         ///  
         /// <para>
         /// For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.
+        /// See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding
+        /// a secret from a partial ARN</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]

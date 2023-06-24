@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// This exception is thrown when the Amazon Cognito service encounters an invalid password.
+    /// This exception is thrown when Amazon Cognito encounters an invalid password.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

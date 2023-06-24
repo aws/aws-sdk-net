@@ -62,6 +62,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         private DateTime? _lastModifiedTime;
         private List<OpsItemNotification> _notifications = new List<OpsItemNotification>();
         private Dictionary<string, OpsItemDataValue> _operationalData = new Dictionary<string, OpsItemDataValue>();
+        private string _opsItemArn;
         private string _opsItemId;
         private string _opsItemType;
         private DateTime? _plannedEndTime;
@@ -286,6 +287,25 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
+        /// Gets and sets the property OpsItemArn. 
+        /// <para>
+        /// The OpsItem Amazon Resource Name (ARN).
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string OpsItemArn
+        {
+            get { return this._opsItemArn; }
+            set { this._opsItemArn = value; }
+        }
+
+        // Check to see if OpsItemArn property is set
+        internal bool IsSetOpsItemArn()
+        {
+            return this._opsItemArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property OpsItemId. 
         /// <para>
         /// The ID of the OpsItem.
@@ -306,9 +326,35 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property OpsItemType. 
         /// <para>
-        /// The type of OpsItem. Currently, the only valid values are <code>/aws/changerequest</code>
-        /// and <code>/aws/issue</code>.
+        /// The type of OpsItem. Systems Manager supports the following types of OpsItems:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>/aws/issue</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// This type of OpsItem is used for default OpsItems created by OpsCenter. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>/aws/changerequest</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// This type of OpsItem is used by Change Manager for reviewing and approving or rejecting
+        /// change requests. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>/aws/insights</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate
+        /// OpsItems. 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string OpsItemType
         {

@@ -37,6 +37,7 @@ namespace Amazon.EC2.Model
         private TransitGatewayAttachmentResourceType _resourceType;
         private TransitGatewayPropagationState _state;
         private string _transitGatewayAttachmentId;
+        private string _transitGatewayRouteTableAnnouncementId;
         private string _transitGatewayRouteTableId;
 
         /// <summary>
@@ -109,6 +110,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetTransitGatewayAttachmentId()
         {
             return this._transitGatewayAttachmentId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TransitGatewayRouteTableAnnouncementId. 
+        /// <para>
+        /// The ID of the transit gateway route table announcement.
+        /// </para>
+        /// </summary>
+        public string TransitGatewayRouteTableAnnouncementId
+        {
+            get { return this._transitGatewayRouteTableAnnouncementId; }
+            set { this._transitGatewayRouteTableAnnouncementId = value; }
+        }
+
+        // Check to see if TransitGatewayRouteTableAnnouncementId property is set
+        internal bool IsSetTransitGatewayRouteTableAnnouncementId()
+        {
+            return this._transitGatewayRouteTableAnnouncementId != null;
         }
 
         /// <summary>

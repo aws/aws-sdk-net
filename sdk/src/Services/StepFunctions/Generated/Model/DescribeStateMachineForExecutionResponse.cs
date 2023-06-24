@@ -34,8 +34,11 @@ namespace Amazon.StepFunctions.Model
     public partial class DescribeStateMachineForExecutionResponse : AmazonWebServiceResponse
     {
         private string _definition;
+        private string _label;
         private LoggingConfiguration _loggingConfiguration;
+        private string _mapRunArn;
         private string _name;
+        private string _revisionId;
         private string _roleArn;
         private string _stateMachineArn;
         private TracingConfiguration _tracingConfiguration;
@@ -48,7 +51,7 @@ namespace Amazon.StepFunctions.Model
         /// States Language</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1048576)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=1048576)]
         public string Definition
         {
             get { return this._definition; }
@@ -59,6 +62,26 @@ namespace Amazon.StepFunctions.Model
         internal bool IsSetDefinition()
         {
             return this._definition != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Label. 
+        /// <para>
+        /// A user-defined or an auto-generated string that identifies a <code>Map</code> state.
+        /// This ﬁeld is returned only if the <code>executionArn</code> is a child workflow execution
+        /// that was started by a Distributed Map state.
+        /// </para>
+        /// </summary>
+        public string Label
+        {
+            get { return this._label; }
+            set { this._label = value; }
+        }
+
+        // Check to see if Label property is set
+        internal bool IsSetLabel()
+        {
+            return this._label != null;
         }
 
         /// <summary>
@@ -74,6 +97,27 @@ namespace Amazon.StepFunctions.Model
         internal bool IsSetLoggingConfiguration()
         {
             return this._loggingConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MapRunArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the Map Run that started the child workflow execution.
+        /// This field is returned only if the <code>executionArn</code> is a child workflow execution
+        /// that was started by a Distributed Map state.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2000)]
+        public string MapRunArn
+        {
+            get { return this._mapRunArn; }
+            set { this._mapRunArn = value; }
+        }
+
+        // Check to see if MapRunArn property is set
+        internal bool IsSetMapRunArn()
+        {
+            return this._mapRunArn != null;
         }
 
         /// <summary>
@@ -93,6 +137,31 @@ namespace Amazon.StepFunctions.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RevisionId. 
+        /// <para>
+        /// The revision identifier for the state machine. The first revision ID when you create
+        /// the state machine is null.
+        /// </para>
+        ///  
+        /// <para>
+        /// Use the state machine <code>revisionId</code> parameter to compare the revision of
+        /// a state machine with the configuration of the state machine used for executions without
+        /// performing a diff of the properties, such as <code>definition</code> and <code>roleArn</code>.
+        /// </para>
+        /// </summary>
+        public string RevisionId
+        {
+            get { return this._revisionId; }
+            set { this._revisionId = value; }
+        }
+
+        // Check to see if RevisionId property is set
+        internal bool IsSetRevisionId()
+        {
+            return this._revisionId != null;
         }
 
         /// <summary>
@@ -137,7 +206,7 @@ namespace Amazon.StepFunctions.Model
         /// <summary>
         /// Gets and sets the property TracingConfiguration. 
         /// <para>
-        /// Selects whether AWS X-Ray tracing is enabled.
+        /// Selects whether X-Ray tracing is enabled.
         /// </para>
         /// </summary>
         public TracingConfiguration TracingConfiguration

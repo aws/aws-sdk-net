@@ -58,7 +58,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             string target = "ElasticMapReduce.ListNotebookExecutions";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2009-03-31";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2009-03-31";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -71,6 +71,12 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("EditorId");
                     context.Writer.Write(publicRequest.EditorId);
+                }
+
+                if(publicRequest.IsSetExecutionEngineId())
+                {
+                    context.Writer.WritePropertyName("ExecutionEngineId");
+                    context.Writer.Write(publicRequest.ExecutionEngineId);
                 }
 
                 if(publicRequest.IsSetFrom())
@@ -97,7 +103,6 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.To);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

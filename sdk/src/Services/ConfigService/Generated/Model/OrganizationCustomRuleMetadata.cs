@@ -29,11 +29,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// An object that specifies organization custom rule metadata such as resource type,
-    /// resource ID of Amazon Web Services resource, Lambda function ARN, and organization
-    /// trigger types that trigger Config to evaluate your Amazon Web Services resources against
-    /// a rule. It also provides the frequency with which you want Config to run evaluations
-    /// for the rule if the trigger type is periodic.
+    /// organization custom rule metadata such as resource type, resource ID of Amazon Web
+    /// Services resource, Lambda function ARN, and organization trigger types that trigger
+    /// Config to evaluate your Amazon Web Services resources against a rule. It also provides
+    /// the frequency with which you want Config to run evaluations for the rule if the trigger
+    /// type is periodic.
     /// </summary>
     public partial class OrganizationCustomRuleMetadata
     {
@@ -50,7 +50,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description that you provide for organization config rule.
+        /// The description that you provide for your organization Config rule.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=256)]
@@ -69,7 +69,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property InputParameters. 
         /// <para>
-        /// A string, in JSON format, that is passed to organization config rule Lambda function.
+        /// A string, in JSON format, that is passed to your organization Config rule Lambda function.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

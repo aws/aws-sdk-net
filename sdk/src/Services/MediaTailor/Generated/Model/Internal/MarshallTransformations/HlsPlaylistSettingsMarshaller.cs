@@ -34,7 +34,7 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// HlsPlaylistSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class HlsPlaylistSettingsMarshaller : IRequestMarshaller<HlsPlaylistSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static HlsPlaylistSettingsMarshaller Instance = new HlsPlaylistSettingsMarshaller();
 
     }

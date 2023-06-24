@@ -34,7 +34,7 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// LoRaWANGateway Marshaller
-    /// </summary>       
+    /// </summary>
     public class LoRaWANGatewayMarshaller : IRequestMarshaller<LoRaWANGateway, JsonMarshallerContext> 
     {
         /// <summary>
@@ -45,6 +45,17 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(LoRaWANGateway requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetBeaconing())
+            {
+                context.Writer.WritePropertyName("Beaconing");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = BeaconingMarshaller.Instance;
+                marshaller.Marshall(requestObject.Beaconing, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetGatewayEui())
             {
                 context.Writer.WritePropertyName("GatewayEui");
@@ -65,6 +76,12 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
                 context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetMaxEirp())
+            {
+                context.Writer.WritePropertyName("MaxEirp");
+                context.Writer.Write(requestObject.MaxEirp);
             }
 
             if(requestObject.IsSetNetIdFilters())
@@ -99,7 +116,7 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static LoRaWANGatewayMarshaller Instance = new LoRaWANGatewayMarshaller();
 
     }

@@ -55,13 +55,13 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
         public IRequest Marshall(DeleteSourceLocationRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.MediaTailor");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-04-23";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-04-23";
             request.HttpMethod = "DELETE";
 
             if (!publicRequest.IsSetSourceLocationName())
                 throw new AmazonMediaTailorException("Request object does not have required field SourceLocationName set");
-            request.AddPathResource("{sourceLocationName}", StringUtils.FromString(publicRequest.SourceLocationName));
-            request.ResourcePath = "/sourceLocation/{sourceLocationName}";
+            request.AddPathResource("{SourceLocationName}", StringUtils.FromString(publicRequest.SourceLocationName));
+            request.ResourcePath = "/sourceLocation/{SourceLocationName}";
 
             return request;
         }

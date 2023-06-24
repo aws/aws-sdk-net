@@ -34,7 +34,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DvbSdtSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class DvbSdtSettingsMarshaller : IRequestMarshaller<DvbSdtSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DvbSdtSettingsMarshaller Instance = new DvbSdtSettingsMarshaller();
 
     }

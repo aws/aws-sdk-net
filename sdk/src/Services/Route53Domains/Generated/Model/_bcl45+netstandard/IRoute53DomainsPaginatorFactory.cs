@@ -34,5 +34,15 @@ namespace Amazon.Route53Domains.Model
         /// Paginator for ListOperations operation
         ///</summary>
         IListOperationsPaginator ListOperations(ListOperationsRequest request);
+
+        /// <summary>
+        /// Paginator for ListPrices operation
+        ///</summary>
+        IListPricesPaginator ListPrices(ListPricesRequest request);
+
+        /// <summary>
+        /// Paginator for ViewBilling operation
+        ///</summary>
+        IViewBillingPaginator ViewBilling(ViewBillingRequest request);
     }
 }

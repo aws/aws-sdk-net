@@ -30,7 +30,7 @@ namespace Amazon.CodePipeline.Model
 {
     /// <summary>
     /// Container for the parameters to the ListActionTypes operation.
-    /// Gets a summary of all AWS CodePipeline action types associated with your account.
+    /// Gets a summary of all CodePipeline action types associated with your account.
     /// </summary>
     public partial class ListActionTypesRequest : AmazonCodePipelineRequest
     {

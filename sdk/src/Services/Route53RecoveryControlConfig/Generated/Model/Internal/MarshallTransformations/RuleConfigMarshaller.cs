@@ -34,7 +34,7 @@ namespace Amazon.Route53RecoveryControlConfig.Model.Internal.MarshallTransformat
 {
     /// <summary>
     /// RuleConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class RuleConfigMarshaller : IRequestMarshaller<RuleConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.Route53RecoveryControlConfig.Model.Internal.MarshallTransformat
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RuleConfigMarshaller Instance = new RuleConfigMarshaller();
 
     }

@@ -17,22 +17,22 @@
  * Do not modify this file. This file is generated from the iotsitewise-2019-12-02.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
-
+using Amazon.IoTSiteWise.Internal;
 
 namespace Amazon.IoTSiteWise
 {
     /// <summary>
     /// Configuration for accessing Amazon IoTSiteWise service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonIoTSiteWiseConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.9.2");
+            InternalSDKUtils.BuildUserAgentString("3.7.103.21");
 
         private string _userAgent = UserAgentString;
 
@@ -40,8 +40,10 @@ namespace Amazon.IoTSiteWise
         /// Default constructor
         /// </summary>
         public AmazonIoTSiteWiseConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonIoTSiteWiseDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "iotsitewise";
+            this.EndpointProvider = new AmazonIoTSiteWiseEndpointProvider();
         }
 
         /// <summary>
@@ -76,5 +78,6 @@ namespace Amazon.IoTSiteWise
                 return _userAgent;
             }
         }
+
     }
 }

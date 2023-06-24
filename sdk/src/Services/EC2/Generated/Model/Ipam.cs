@@ -32,11 +32,13 @@ namespace Amazon.EC2.Model
     /// IPAM is a VPC feature that you can use to automate your IP address management workflows
     /// including assigning, tracking, troubleshooting, and auditing IP addresses across Amazon
     /// Web Services Regions and accounts throughout your Amazon Web Services Organization.
-    /// For more information, see <a href="/vpc/latest/ipam/what-is-it-ipam.html">What is
-    /// IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>.
+    /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/what-is-it-ipam.html">What
+    /// is IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>.
     /// </summary>
     public partial class Ipam
     {
+        private string _defaultResourceDiscoveryAssociationId;
+        private string _defaultResourceDiscoveryId;
         private string _description;
         private string _ipamArn;
         private string _ipamId;
@@ -45,9 +47,46 @@ namespace Amazon.EC2.Model
         private string _ownerId;
         private string _privateDefaultScopeId;
         private string _publicDefaultScopeId;
+        private int? _resourceDiscoveryAssociationCount;
         private int? _scopeCount;
         private IpamState _state;
         private List<Tag> _tags = new List<Tag>();
+
+        /// <summary>
+        /// Gets and sets the property DefaultResourceDiscoveryAssociationId. 
+        /// <para>
+        /// The IPAM's default resource discovery association ID.
+        /// </para>
+        /// </summary>
+        public string DefaultResourceDiscoveryAssociationId
+        {
+            get { return this._defaultResourceDiscoveryAssociationId; }
+            set { this._defaultResourceDiscoveryAssociationId = value; }
+        }
+
+        // Check to see if DefaultResourceDiscoveryAssociationId property is set
+        internal bool IsSetDefaultResourceDiscoveryAssociationId()
+        {
+            return this._defaultResourceDiscoveryAssociationId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DefaultResourceDiscoveryId. 
+        /// <para>
+        /// The IPAM's default resource discovery ID.
+        /// </para>
+        /// </summary>
+        public string DefaultResourceDiscoveryId
+        {
+            get { return this._defaultResourceDiscoveryId; }
+            set { this._defaultResourceDiscoveryId = value; }
+        }
+
+        // Check to see if DefaultResourceDiscoveryId property is set
+        internal bool IsSetDefaultResourceDiscoveryId()
+        {
+            return this._defaultResourceDiscoveryId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -70,7 +109,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property IpamArn. 
         /// <para>
-        /// The ARN of the IPAM.
+        /// The Amazon Resource Name (ARN) of the IPAM.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1283)]
@@ -131,7 +170,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information about operating Regions, see <a href="/vpc/latest/ipam/create-ipam.html">Create
+        /// For more information about operating Regions, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/create-ipam.html">Create
         /// an IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.
         /// </para>
         /// </summary>
@@ -202,11 +241,29 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ResourceDiscoveryAssociationCount. 
+        /// <para>
+        /// The IPAM's resource discovery association count.
+        /// </para>
+        /// </summary>
+        public int ResourceDiscoveryAssociationCount
+        {
+            get { return this._resourceDiscoveryAssociationCount.GetValueOrDefault(); }
+            set { this._resourceDiscoveryAssociationCount = value; }
+        }
+
+        // Check to see if ResourceDiscoveryAssociationCount property is set
+        internal bool IsSetResourceDiscoveryAssociationCount()
+        {
+            return this._resourceDiscoveryAssociationCount.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property ScopeCount. 
         /// <para>
         /// The number of scopes in the IPAM. The scope quota is 5. For more information on quotas,
-        /// see <a href="/vpc/latest/ipam/quotas-ipam.html">Quotas in IPAM</a> in the <i>Amazon
-        /// VPC IPAM User Guide</i>. 
+        /// see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/quotas-ipam.html">Quotas
+        /// in IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>. 
         /// </para>
         /// </summary>
         public int ScopeCount

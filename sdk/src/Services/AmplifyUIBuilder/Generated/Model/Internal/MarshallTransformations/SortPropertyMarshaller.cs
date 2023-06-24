@@ -34,7 +34,7 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SortProperty Marshaller
-    /// </summary>       
+    /// </summary>
     public class SortPropertyMarshaller : IRequestMarshaller<SortProperty, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SortPropertyMarshaller Instance = new SortPropertyMarshaller();
 
     }

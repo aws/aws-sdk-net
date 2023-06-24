@@ -60,7 +60,8 @@ namespace Amazon.SSMIncidents.Model
         /// <summary>
         /// Gets and sets the property InvokedBy. 
         /// <para>
-        /// The principal the assumed the role specified of the <code>createdBy</code>.
+        /// The service principal that assumed the role specified in <code>createdBy</code>. If
+        /// no service principal assumed the role this will be left blank.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1000)]

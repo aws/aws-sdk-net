@@ -30,8 +30,8 @@ namespace Amazon.Macie2.Model
 {
     /// <summary>
     /// Container for the parameters to the GetBucketStatistics operation.
-    /// Retrieves (queries) aggregated statistical data about S3 buckets that Amazon Macie
-    /// monitors and analyzes.
+    /// Retrieves (queries) aggregated statistical data about all the S3 buckets that Amazon
+    /// Macie monitors and analyzes for an account.
     /// </summary>
     public partial class GetBucketStatisticsRequest : AmazonMacie2Request
     {

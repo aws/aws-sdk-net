@@ -34,7 +34,7 @@ namespace Amazon.GlobalAccelerator.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CustomRoutingEndpointConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class CustomRoutingEndpointConfigurationMarshaller : IRequestMarshaller<CustomRoutingEndpointConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.GlobalAccelerator.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CustomRoutingEndpointConfigurationMarshaller Instance = new CustomRoutingEndpointConfigurationMarshaller();
 
     }

@@ -42,6 +42,7 @@ namespace Amazon.Glue.Model
         private DateTime? _creationTime;
         private string _databaseName;
         private string _description;
+        private LakeFormationConfiguration _lakeFormationConfiguration;
         private LastCrawlInfo _lastCrawl;
         private DateTime? _lastUpdated;
         private LineageConfiguration _lineageConfiguration;
@@ -78,8 +79,8 @@ namespace Amazon.Glue.Model
         /// Gets and sets the property Configuration. 
         /// <para>
         /// Crawler configuration information. This versioned JSON string allows users to specify
-        /// aspects of a crawler's behavior. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/define-crawler.html#crawler-data-stores-exclude">Include
-        /// and Exclude Patterns</a>.
+        /// aspects of a crawler's behavior. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Setting
+        /// crawler configuration options</a>.
         /// </para>
         /// </summary>
         public string Configuration
@@ -184,6 +185,25 @@ namespace Amazon.Glue.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LakeFormationConfiguration. 
+        /// <para>
+        /// Specifies whether the crawler should use Lake Formation credentials for the crawler
+        /// instead of the IAM role credentials.
+        /// </para>
+        /// </summary>
+        public LakeFormationConfiguration LakeFormationConfiguration
+        {
+            get { return this._lakeFormationConfiguration; }
+            set { this._lakeFormationConfiguration = value; }
+        }
+
+        // Check to see if LakeFormationConfiguration property is set
+        internal bool IsSetLakeFormationConfiguration()
+        {
+            return this._lakeFormationConfiguration != null;
         }
 
         /// <summary>

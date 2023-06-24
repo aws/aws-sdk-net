@@ -30,34 +30,19 @@ namespace Amazon.DataSync.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateTask operation.
-    /// Creates a task.
+    /// Configures a task, which defines where and how DataSync transfers your data.
     /// 
     ///  
     /// <para>
-    /// A task includes a source location and a destination location, and a configuration
-    /// that specifies how data is transferred. A task always transfers data from the source
-    /// location to the destination location. The configuration specifies options such as
-    /// task scheduling, bandwidth limits, etc. A task is the complete definition of a data
-    /// transfer.
-    /// </para>
-    ///  
-    /// <para>
-    /// When you create a task that transfers data between Amazon Web Services services in
-    /// different Amazon Web Services Regions, one of the two locations that you specify must
-    /// reside in the Region where DataSync is being used. The other location must be specified
-    /// in a different Region.
-    /// </para>
-    ///  
-    /// <para>
-    /// You can transfer data between commercial Amazon Web Services Regions except for China,
-    /// or between Amazon Web Services GovCloud (US) Regions.
+    /// A task includes a source location, a destination location, and the preferences for
+    /// how and when you want to transfer your data (such as bandwidth limits, scheduling,
+    /// among other options).
     /// </para>
     ///  <important> 
     /// <para>
-    /// When you use DataSync to copy files or objects between Amazon Web Services Regions,
-    /// you pay for data transfer between Regions. This is billed as data transfer OUT from
-    /// your source Region to your destination Region. For more information, see <a href="http://aws.amazon.com/ec2/pricing/on-demand/#Data_Transfer">Data
-    /// Transfer pricing</a>. 
+    /// If you're planning to transfer data to or from an Amazon S3 location, review <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#create-s3-location-s3-requests">how
+    /// DataSync can affect your S3 request charges</a> and the <a href="http://aws.amazon.com/datasync/pricing/">DataSync
+    /// pricing page</a> before you begin.
     /// </para>
     ///  </important>
     /// </summary>
@@ -116,14 +101,9 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property Excludes. 
         /// <para>
-        /// A list of filter rules that determines which files to exclude from a task. The list
-        /// should contain a single filter string that consists of the patterns to exclude. The
-        /// patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.
-        /// 
-        /// </para>
-        ///  
-        /// <para>
-        ///  
+        /// Specifies a list of filter rules that exclude specific data during your transfer.
+        /// For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering
+        /// data transferred by DataSync</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]
@@ -142,9 +122,9 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property Includes. 
         /// <para>
-        /// A list of filter rules that determines which files to include when running a task.
-        /// The pattern contains a single filter string that consists of the patterns to include.
-        /// The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.
+        /// Specifies a list of filter rules that include specific data during your transfer.
+        /// For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering
+        /// data transferred by DataSync</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]
@@ -183,17 +163,13 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property Options. 
         /// <para>
-        /// The set of configuration options that control the behavior of a single execution of
-        /// the task that occurs when you call <code>StartTaskExecution</code>. You can configure
-        /// these options to preserve metadata such as user ID (UID) and group ID (GID), file
-        /// permissions, data integrity verification, and so on.
+        /// Specifies the configuration options for a task. Some options include preserving file
+        /// or object metadata and verifying data integrity.
         /// </para>
         ///  
         /// <para>
-        /// For each individual task execution, you can override these options by specifying the
-        /// <code>OverrideOptions</code> before starting the task execution. For more information,
-        /// see the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>
-        /// operation. 
+        /// You can also override these options before starting an individual run of a task (also
+        /// known as a <i>task execution</i>). For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.
         /// </para>
         /// </summary>
         public Options Options
@@ -251,8 +227,13 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The key-value pair that represents the tag that you want to add to the resource. The
-        /// value can be an empty string. 
+        /// Specifies the tags that you want to apply to the Amazon Resource Name (ARN) representing
+        /// the task.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <i>Tags</i> are key-value pairs that help you manage, filter, and search for your
+        /// DataSync resources.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]

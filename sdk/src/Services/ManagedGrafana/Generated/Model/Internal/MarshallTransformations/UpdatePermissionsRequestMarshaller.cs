@@ -56,7 +56,7 @@ namespace Amazon.ManagedGrafana.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ManagedGrafana");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-08-18";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-08-18";
             request.HttpMethod = "PATCH";
 
             if (!publicRequest.IsSetWorkspaceId())
@@ -84,7 +84,6 @@ namespace Amazon.ManagedGrafana.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

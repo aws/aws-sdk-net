@@ -29,13 +29,15 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// The result of a <code> <a>CreateOutboundConnection</a> </code> request. Contains the
-    /// details about the newly created cross-cluster connection.
+    /// The result of a <code>CreateOutboundConnection</code> request. Contains details about
+    /// the newly created cross-cluster connection.
     /// </summary>
     public partial class CreateOutboundConnectionResponse : AmazonWebServiceResponse
     {
         private string _connectionAlias;
         private string _connectionId;
+        private ConnectionMode _connectionMode;
+        private ConnectionProperties _connectionProperties;
         private OutboundConnectionStatus _connectionStatus;
         private DomainInformationContainer _localDomainInfo;
         private DomainInformationContainer _remoteDomainInfo;
@@ -43,7 +45,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property ConnectionAlias. 
         /// <para>
-        /// The connection alias provided during the create connection request.
+        /// Name of the connection.
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=100)]
@@ -62,8 +64,8 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property ConnectionId. 
         /// <para>
-        /// The unique ID for the created outbound connection, which is used for subsequent operations
-        /// on the connection.
+        /// The unique identifier for the created outbound connection, which is used for subsequent
+        /// operations on the connection.
         /// </para>
         /// </summary>
         [AWSProperty(Min=10, Max=256)]
@@ -80,10 +82,45 @@ namespace Amazon.OpenSearchService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ConnectionMode. 
+        /// <para>
+        /// The connection mode.
+        /// </para>
+        /// </summary>
+        public ConnectionMode ConnectionMode
+        {
+            get { return this._connectionMode; }
+            set { this._connectionMode = value; }
+        }
+
+        // Check to see if ConnectionMode property is set
+        internal bool IsSetConnectionMode()
+        {
+            return this._connectionMode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ConnectionProperties. 
+        /// <para>
+        /// The <code>ConnectionProperties</code> for the newly created connection.
+        /// </para>
+        /// </summary>
+        public ConnectionProperties ConnectionProperties
+        {
+            get { return this._connectionProperties; }
+            set { this._connectionProperties = value; }
+        }
+
+        // Check to see if ConnectionProperties property is set
+        internal bool IsSetConnectionProperties()
+        {
+            return this._connectionProperties != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ConnectionStatus. 
         /// <para>
-        /// The <code> <a>OutboundConnectionStatus</a> </code> for the newly created connection.
-        /// 
+        /// The status of the connection.
         /// </para>
         /// </summary>
         public OutboundConnectionStatus ConnectionStatus
@@ -101,7 +138,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property LocalDomainInfo. 
         /// <para>
-        /// The <code> <a>AWSDomainInformation</a> </code> for the local OpenSearch domain. 
+        /// Information about the source (local) domain.
         /// </para>
         /// </summary>
         public DomainInformationContainer LocalDomainInfo
@@ -119,7 +156,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property RemoteDomainInfo. 
         /// <para>
-        /// The <code> <a>AWSDomainInformation</a> </code> for the remote OpenSearch domain. 
+        /// Information about the destination (remote) domain.
         /// </para>
         /// </summary>
         public DomainInformationContainer RemoteDomainInfo

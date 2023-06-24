@@ -34,7 +34,7 @@ namespace Amazon.CloudWatchEvents.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// BatchRetryStrategy Marshaller
-    /// </summary>       
+    /// </summary>
     public class BatchRetryStrategyMarshaller : IRequestMarshaller<BatchRetryStrategy, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.CloudWatchEvents.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static BatchRetryStrategyMarshaller Instance = new BatchRetryStrategyMarshaller();
 
     }

@@ -38,7 +38,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ModelArn. 
         /// <para>
-        /// The ARN of the model created in Amazon SageMaker.
+        /// The ARN of the model created in SageMaker.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]

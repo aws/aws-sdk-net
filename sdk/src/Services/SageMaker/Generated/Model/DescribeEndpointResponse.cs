@@ -40,11 +40,13 @@ namespace Amazon.SageMaker.Model
         private string _endpointConfigName;
         private string _endpointName;
         private EndpointStatus _endpointStatus;
+        private ExplainerConfig _explainerConfig;
         private string _failureReason;
         private DeploymentConfig _lastDeploymentConfig;
         private DateTime? _lastModifiedTime;
         private PendingDeploymentSummary _pendingDeploymentSummary;
         private List<ProductionVariantSummary> _productionVariants = new List<ProductionVariantSummary>();
+        private List<ProductionVariantSummary> _shadowProductionVariants = new List<ProductionVariantSummary>();
 
         /// <summary>
         /// Gets and sets the property AsyncInferenceConfig. 
@@ -167,11 +169,13 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Creating</code>: <a>CreateEndpoint</a> is executing.
+        ///  <code>Creating</code>: <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpoint.html">CreateEndpoint</a>
+        /// is executing.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Updating</code>: <a>UpdateEndpoint</a> or <a>UpdateEndpointWeightsAndCapacities</a>
+        ///  <code>Updating</code>: <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateEndpoint.html">UpdateEndpoint</a>
+        /// or <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateEndpointWeightsAndCapacities.html">UpdateEndpointWeightsAndCapacities</a>
         /// is executing.
         /// </para>
         ///  </li> <li> 
@@ -187,8 +191,9 @@ namespace Amazon.SageMaker.Model
         /// weight and is in the process of rolling back to its previous configuration. Once the
         /// rollback completes, endpoint returns to an <code>InService</code> status. This transitional
         /// status only applies to an endpoint that has autoscaling enabled and is undergoing
-        /// variant weight or capacity changes as part of an <a>UpdateEndpointWeightsAndCapacities</a>
-        /// call or when the <a>UpdateEndpointWeightsAndCapacities</a> operation is called explicitly.
+        /// variant weight or capacity changes as part of an <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateEndpointWeightsAndCapacities.html">UpdateEndpointWeightsAndCapacities</a>
+        /// call or when the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateEndpointWeightsAndCapacities.html">UpdateEndpointWeightsAndCapacities</a>
+        /// operation is called explicitly.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -196,13 +201,15 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Deleting</code>: <a>DeleteEndpoint</a> is executing.
+        ///  <code>Deleting</code>: <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteEndpoint.html">DeleteEndpoint</a>
+        /// is executing.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Failed</code>: Endpoint could not be created, updated, or re-scaled. Use <a>DescribeEndpointOutput$FailureReason</a>
-        /// for information about the failure. <a>DeleteEndpoint</a> is the only operation that
-        /// can be performed on a failed endpoint.
+        ///  <code>Failed</code>: Endpoint could not be created, updated, or re-scaled. Use the
+        /// <code>FailureReason</code> value returned by <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeEndpoint.html">DescribeEndpoint</a>
+        /// for information about the failure. <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteEndpoint.html">DeleteEndpoint</a>
+        /// is the only operation that can be performed on a failed endpoint.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -217,6 +224,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetEndpointStatus()
         {
             return this._endpointStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExplainerConfig. 
+        /// <para>
+        /// The configuration parameters for an explainer.
+        /// </para>
+        /// </summary>
+        public ExplainerConfig ExplainerConfig
+        {
+            get { return this._explainerConfig; }
+            set { this._explainerConfig = value; }
+        }
+
+        // Check to see if ExplainerConfig property is set
+        internal bool IsSetExplainerConfig()
+        {
+            return this._explainerConfig != null;
         }
 
         /// <summary>
@@ -297,8 +322,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ProductionVariants. 
         /// <para>
-        ///  An array of <a>ProductionVariantSummary</a> objects, one for each model hosted behind
-        /// this endpoint. 
+        /// An array of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ProductionVariantSummary.html">ProductionVariantSummary</a>
+        /// objects, one for each model hosted behind this endpoint.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -312,6 +337,27 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetProductionVariants()
         {
             return this._productionVariants != null && this._productionVariants.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ShadowProductionVariants. 
+        /// <para>
+        /// An array of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ProductionVariantSummary.html">ProductionVariantSummary</a>
+        /// objects, one for each model that you want to host at this endpoint in shadow mode
+        /// with production traffic replicated from the model specified on <code>ProductionVariants</code>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public List<ProductionVariantSummary> ShadowProductionVariants
+        {
+            get { return this._shadowProductionVariants; }
+            set { this._shadowProductionVariants = value; }
+        }
+
+        // Check to see if ShadowProductionVariants property is set
+        internal bool IsSetShadowProductionVariants()
+        {
+            return this._shadowProductionVariants != null && this._shadowProductionVariants.Count > 0; 
         }
 
     }

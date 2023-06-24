@@ -58,7 +58,7 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
             string target = "GameLift.CreateFleet";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-10-01";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-10-01";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -67,6 +67,17 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAnywhereConfiguration())
+                {
+                    context.Writer.WritePropertyName("AnywhereConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = AnywhereConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.AnywhereConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetBuildId())
                 {
                     context.Writer.WritePropertyName("BuildId");
@@ -82,6 +93,12 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                     marshaller.Marshall(publicRequest.CertificateConfiguration, context);
 
                     context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetComputeType())
+                {
+                    context.Writer.WritePropertyName("ComputeType");
+                    context.Writer.Write(publicRequest.ComputeType);
                 }
 
                 if(publicRequest.IsSetDescription())
@@ -242,7 +259,6 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

@@ -34,7 +34,7 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SolutionConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class SolutionConfigMarshaller : IRequestMarshaller<SolutionConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -112,11 +112,22 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetTrainingDataConfig())
+            {
+                context.Writer.WritePropertyName("trainingDataConfig");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = TrainingDataConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.TrainingDataConfig, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SolutionConfigMarshaller Instance = new SolutionConfigMarshaller();
 
     }

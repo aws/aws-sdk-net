@@ -112,7 +112,7 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If you omit this parameter, all processes are specified.
+        /// If you omit this property, all processes are specified.
         /// </para>
         /// </summary>
         public List<string> ScalingProcesses

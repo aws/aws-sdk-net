@@ -34,7 +34,7 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// QopConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class QopConfigurationMarshaller : IRequestMarshaller<QopConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static QopConfigurationMarshaller Instance = new QopConfigurationMarshaller();
 
     }

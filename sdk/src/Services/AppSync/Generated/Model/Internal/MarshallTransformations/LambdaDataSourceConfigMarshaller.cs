@@ -34,7 +34,7 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// LambdaDataSourceConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class LambdaDataSourceConfigMarshaller : IRequestMarshaller<LambdaDataSourceConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static LambdaDataSourceConfigMarshaller Instance = new LambdaDataSourceConfigMarshaller();
 
     }

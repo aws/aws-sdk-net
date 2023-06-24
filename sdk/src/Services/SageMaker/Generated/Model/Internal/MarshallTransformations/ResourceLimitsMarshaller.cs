@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ResourceLimits Marshaller
-    /// </summary>       
+    /// </summary>
     public class ResourceLimitsMarshaller : IRequestMarshaller<ResourceLimits, JsonMarshallerContext> 
     {
         /// <summary>
@@ -57,11 +57,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.MaxParallelTrainingJobs);
             }
 
+            if(requestObject.IsSetMaxRuntimeInSeconds())
+            {
+                context.Writer.WritePropertyName("MaxRuntimeInSeconds");
+                context.Writer.Write(requestObject.MaxRuntimeInSeconds);
+            }
+
         }
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ResourceLimitsMarshaller Instance = new ResourceLimitsMarshaller();
 
     }

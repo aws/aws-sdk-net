@@ -87,6 +87,12 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
                     response.ExplainabilityInfo = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ForecastDimensions", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    response.ForecastDimensions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ForecastFrequency", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -117,6 +123,12 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
                     response.Message = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("MonitorInfo", targetDepth))
+                {
+                    var unmarshaller = MonitorInfoUnmarshaller.Instance;
+                    response.MonitorInfo = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("OptimizationMetric", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -145,6 +157,12 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Status = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("TimeAlignmentBoundary", targetDepth))
+                {
+                    var unmarshaller = TimeAlignmentBoundaryUnmarshaller.Instance;
+                    response.TimeAlignmentBoundary = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

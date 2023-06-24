@@ -38,11 +38,13 @@ namespace Amazon.CloudWatch.Model
         private List<MetricStreamFilter> _excludeFilters = new List<MetricStreamFilter>();
         private string _firehoseArn;
         private List<MetricStreamFilter> _includeFilters = new List<MetricStreamFilter>();
+        private bool? _includeLinkedAccountsMetrics;
         private DateTime? _lastUpdateDate;
         private string _name;
         private MetricStreamOutputFormat _outputFormat;
         private string _roleArn;
         private string _state;
+        private List<MetricStreamStatisticsConfiguration> _statisticsConfigurations = new List<MetricStreamStatisticsConfiguration>();
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -104,7 +106,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property FirehoseArn. 
         /// <para>
-        /// The ARN of the Amazon Kinesis Firehose delivery stream that is used by this metric
+        /// The ARN of the Amazon Kinesis Data Firehose delivery stream that is used by this metric
         /// stream.
         /// </para>
         /// </summary>
@@ -138,6 +140,26 @@ namespace Amazon.CloudWatch.Model
         internal bool IsSetIncludeFilters()
         {
             return this._includeFilters != null && this._includeFilters.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IncludeLinkedAccountsMetrics. 
+        /// <para>
+        /// If this is <code>true</code> and this metric stream is in a monitoring account, then
+        /// the stream includes metrics from source accounts that the monitoring account is linked
+        /// to.
+        /// </para>
+        /// </summary>
+        public bool IncludeLinkedAccountsMetrics
+        {
+            get { return this._includeLinkedAccountsMetrics.GetValueOrDefault(); }
+            set { this._includeLinkedAccountsMetrics = value; }
+        }
+
+        // Check to see if IncludeLinkedAccountsMetrics property is set
+        internal bool IsSetIncludeLinkedAccountsMetrics()
+        {
+            return this._includeLinkedAccountsMetrics.HasValue; 
         }
 
         /// <summary>
@@ -178,7 +200,12 @@ namespace Amazon.CloudWatch.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OutputFormat.
+        /// Gets and sets the property OutputFormat. 
+        /// <para>
+        /// The output format for the stream. Valid values are <code>json</code> and <code>opentelemetry0.7</code>.
+        /// For more information about metric stream output formats, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-metric-streams-formats.html">Metric
+        /// streams output formats</a>.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
         public MetricStreamOutputFormat OutputFormat
@@ -228,6 +255,27 @@ namespace Amazon.CloudWatch.Model
         internal bool IsSetState()
         {
             return this._state != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StatisticsConfigurations. 
+        /// <para>
+        /// Each entry in this array displays information about one or more metrics that include
+        /// additional statistics in the metric stream. For more information about the additional
+        /// statistics, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html">
+        /// CloudWatch statistics definitions</a>. 
+        /// </para>
+        /// </summary>
+        public List<MetricStreamStatisticsConfiguration> StatisticsConfigurations
+        {
+            get { return this._statisticsConfigurations; }
+            set { this._statisticsConfigurations = value; }
+        }
+
+        // Check to see if StatisticsConfigurations property is set
+        internal bool IsSetStatisticsConfigurations()
+        {
+            return this._statisticsConfigurations != null && this._statisticsConfigurations.Count > 0; 
         }
 
     }

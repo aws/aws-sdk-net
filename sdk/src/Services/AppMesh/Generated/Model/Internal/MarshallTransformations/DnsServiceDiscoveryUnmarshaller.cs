@@ -70,6 +70,12 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
                     unmarshalledObject.Hostname = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ipPreference", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.IpPreference = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("responseType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

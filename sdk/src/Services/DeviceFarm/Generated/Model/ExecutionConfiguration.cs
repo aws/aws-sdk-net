@@ -102,7 +102,7 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information about how Device Farm re-signs your apps, see <a href="https://aws.amazon.com/device-farm/faq/">Do
+        /// For more information about how Device Farm re-signs your apps, see <a href="http://aws.amazon.com/device-farm/faqs/">Do
         /// you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.
         /// </para>
         /// </summary>

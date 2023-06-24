@@ -1,5 +1,6 @@
 {
   "active": true,
   "synopsis": "AWS Resource Access Manager (AWS RAM) enables you to share your resources with any AWS account or through AWS Organizations.",
-  "generate-client-constructors": true
+  "generate-client-constructors": true,
+  "legacy-service-id": "RAM"
 }

@@ -38,6 +38,7 @@ namespace Amazon.Redshift.Model
     {
         private bool? _associateEntireAccount;
         private string _consumerArn;
+        private string _consumerRegion;
         private string _dataShareArn;
 
         /// <summary>
@@ -75,6 +76,26 @@ namespace Amazon.Redshift.Model
         internal bool IsSetConsumerArn()
         {
             return this._consumerArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ConsumerRegion. 
+        /// <para>
+        /// From a datashare consumer account, associates a datashare with all existing and future
+        /// namespaces in the specified Amazon Web Services Region.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=2147483647)]
+        public string ConsumerRegion
+        {
+            get { return this._consumerRegion; }
+            set { this._consumerRegion = value; }
+        }
+
+        // Check to see if ConsumerRegion property is set
+        internal bool IsSetConsumerRegion()
+        {
+            return this._consumerRegion != null;
         }
 
         /// <summary>

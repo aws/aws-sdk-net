@@ -298,6 +298,7 @@ namespace Amazon.Mgn.Model
         /// Replication Configuration Staging Area tags.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public Dictionary<string, string> StagingAreaTags
         {
             get { return this._stagingAreaTags; }

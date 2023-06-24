@@ -34,7 +34,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// S3BucketTranscriptSource Marshaller
-    /// </summary>       
+    /// </summary>
     public class S3BucketTranscriptSourceMarshaller : IRequestMarshaller<S3BucketTranscriptSource, JsonMarshallerContext> 
     {
         /// <summary>
@@ -89,7 +89,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static S3BucketTranscriptSourceMarshaller Instance = new S3BucketTranscriptSourceMarshaller();
 
     }

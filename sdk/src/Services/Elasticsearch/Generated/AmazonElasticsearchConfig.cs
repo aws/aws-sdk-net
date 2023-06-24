@@ -17,22 +17,22 @@
  * Do not modify this file. This file is generated from the es-2015-01-01.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
-
+using Amazon.Elasticsearch.Internal;
 
 namespace Amazon.Elasticsearch
 {
     /// <summary>
     /// Configuration for accessing Amazon Elasticsearch service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonElasticsearchConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.3.2");
+            InternalSDKUtils.BuildUserAgentString("3.7.102.19");
 
         private string _userAgent = UserAgentString;
 
@@ -40,8 +40,10 @@ namespace Amazon.Elasticsearch
         /// Default constructor
         /// </summary>
         public AmazonElasticsearchConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonElasticsearchDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "es";
+            this.EndpointProvider = new AmazonElasticsearchEndpointProvider();
         }
 
         /// <summary>
@@ -76,5 +78,6 @@ namespace Amazon.Elasticsearch
                 return _userAgent;
             }
         }
+
     }
 }

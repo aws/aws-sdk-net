@@ -30,24 +30,24 @@ namespace Amazon.SecretsManager.Model
 {
     /// <summary>
     /// Container for the parameters to the GetRandomPassword operation.
-    /// Generates a random password of the specified complexity. This operation is intended
-    /// for use in the Lambda rotation function. Per best practice, we recommend that you
-    /// specify the maximum length and include every character type that the system you are
-    /// generating a password for can support.
+    /// Generates a random password. We recommend that you specify the maximum length and
+    /// include every character type that the system you are generating a password for can
+    /// support.
     /// 
     ///  
     /// <para>
-    ///  <b>Minimum permissions</b> 
+    /// Secrets Manager generates a CloudTrail log entry when you call this action. Do not
+    /// include sensitive information in request parameters because it might be logged. For
+    /// more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/retrieve-ct-entries.html">Logging
+    /// Secrets Manager events with CloudTrail</a>.
     /// </para>
     ///  
     /// <para>
-    /// To run this command, you must have the following permissions:
+    ///  <b>Required permissions: </b> <code>secretsmanager:GetRandomPassword</code>. For
+    /// more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions">
+    /// IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+    /// and access control in Secrets Manager</a>. 
     /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    /// secretsmanager:GetRandomPassword
-    /// </para>
-    ///  </li> </ul>
     /// </summary>
     public partial class GetRandomPasswordRequest : AmazonSecretsManagerRequest
     {
@@ -63,8 +63,7 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property ExcludeCharacters. 
         /// <para>
-        /// A string that includes characters that should not be included in the generated password.
-        /// The default is that all characters from the included sets can be used.
+        /// A string of the characters that you don't want in the password.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=4096)]
@@ -83,8 +82,8 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property ExcludeLowercase. 
         /// <para>
-        /// Specifies that the generated password should not include lowercase letters. The default
-        /// if you do not include this switch parameter is that lowercase letters can be included.
+        /// Specifies whether to exclude lowercase letters from the password. If you don't include
+        /// this switch, the password can contain lowercase letters.
         /// </para>
         /// </summary>
         public bool ExcludeLowercase
@@ -102,8 +101,8 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property ExcludeNumbers. 
         /// <para>
-        /// Specifies that the generated password should not include digits. The default if you
-        /// do not include this switch parameter is that digits can be included.
+        /// Specifies whether to exclude numbers from the password. If you don't include this
+        /// switch, the password can contain numbers.
         /// </para>
         /// </summary>
         public bool ExcludeNumbers
@@ -121,20 +120,9 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property ExcludePunctuation. 
         /// <para>
-        /// Specifies that the generated password should not include punctuation characters. The
-        /// default if you do not include this switch parameter is that punctuation characters
-        /// can be included.
-        /// </para>
-        ///  
-        /// <para>
-        /// The following are the punctuation characters that <i>can</i> be included in the generated
-        /// password if you don't explicitly exclude them with <code>ExcludeCharacters</code>
-        /// or <code>ExcludePunctuation</code>:
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>! " # $ % &amp; ' ( ) * + , - . / : ; &lt; = &gt; ? @ [ \ ] ^ _ ` { | } ~</code>
-        /// 
+        /// Specifies whether to exclude the following punctuation characters from the password:
+        /// <code>! " # $ % &amp; ' ( ) * + , - . / : ; &lt; = &gt; ? @ [ \ ] ^ _ ` { | } ~</code>.
+        /// If you don't include this switch, the password can contain punctuation.
         /// </para>
         /// </summary>
         public bool ExcludePunctuation
@@ -152,8 +140,8 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property ExcludeUppercase. 
         /// <para>
-        /// Specifies that the generated password should not include uppercase letters. The default
-        /// if you do not include this switch parameter is that uppercase letters can be included.
+        /// Specifies whether to exclude uppercase letters from the password. If you don't include
+        /// this switch, the password can contain uppercase letters.
         /// </para>
         /// </summary>
         public bool ExcludeUppercase
@@ -171,8 +159,8 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property IncludeSpace. 
         /// <para>
-        /// Specifies that the generated password can include the space character. The default
-        /// if you do not include this switch parameter is that the space character is not included.
+        /// Specifies whether to include the space character. If you include this switch, the
+        /// password can contain space characters.
         /// </para>
         /// </summary>
         public bool IncludeSpace
@@ -190,8 +178,8 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property PasswordLength. 
         /// <para>
-        /// The desired length of the generated password. The default value if you do not include
-        /// this parameter is 32 characters.
+        /// The length of the password. If you don't include this parameter, the default length
+        /// is 32 characters.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=4096)]
@@ -210,9 +198,9 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property RequireEachIncludedType. 
         /// <para>
-        /// A boolean value that specifies whether the generated password must include at least
-        /// one of every allowed character type. The default value is <code>True</code> and the
-        /// operation requires at least one of every character type.
+        /// Specifies whether to include at least one upper and lowercase letter, one number,
+        /// and one punctuation. If you don't include this switch, the password contains at least
+        /// one of every character type.
         /// </para>
         /// </summary>
         public bool RequireEachIncludedType

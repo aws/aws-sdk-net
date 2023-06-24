@@ -34,7 +34,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// OpenZFSUserOrGroupQuota Marshaller
-    /// </summary>       
+    /// </summary>
     public class OpenZFSUserOrGroupQuotaMarshaller : IRequestMarshaller<OpenZFSUserOrGroupQuota, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static OpenZFSUserOrGroupQuotaMarshaller Instance = new OpenZFSUserOrGroupQuotaMarshaller();
 
     }

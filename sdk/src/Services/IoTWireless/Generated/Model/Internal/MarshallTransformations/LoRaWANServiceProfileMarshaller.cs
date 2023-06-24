@@ -34,7 +34,7 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// LoRaWANServiceProfile Marshaller
-    /// </summary>       
+    /// </summary>
     public class LoRaWANServiceProfileMarshaller : IRequestMarshaller<LoRaWANServiceProfile, JsonMarshallerContext> 
     {
         /// <summary>
@@ -51,11 +51,35 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.AddGwMetadata);
             }
 
+            if(requestObject.IsSetDrMax())
+            {
+                context.Writer.WritePropertyName("DrMax");
+                context.Writer.Write(requestObject.DrMax);
+            }
+
+            if(requestObject.IsSetDrMin())
+            {
+                context.Writer.WritePropertyName("DrMin");
+                context.Writer.Write(requestObject.DrMin);
+            }
+
+            if(requestObject.IsSetPrAllowed())
+            {
+                context.Writer.WritePropertyName("PrAllowed");
+                context.Writer.Write(requestObject.PrAllowed);
+            }
+
+            if(requestObject.IsSetRaAllowed())
+            {
+                context.Writer.WritePropertyName("RaAllowed");
+                context.Writer.Write(requestObject.RaAllowed);
+            }
+
         }
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static LoRaWANServiceProfileMarshaller Instance = new LoRaWANServiceProfileMarshaller();
 
     }

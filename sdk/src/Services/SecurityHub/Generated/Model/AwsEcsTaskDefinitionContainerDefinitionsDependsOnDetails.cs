@@ -40,8 +40,26 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property Condition. 
         /// <para>
         /// The dependency condition of the dependent container. Indicates the required status
-        /// of the dependent container before the current container can start.
+        /// of the dependent container before the current container can start. Valid values are
+        /// as follows:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>COMPLETE</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>HEALTHY</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>SUCCESS</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>START</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string Condition
         {

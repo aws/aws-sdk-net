@@ -17,22 +17,22 @@
  * Do not modify this file. This file is generated from the glue-2017-03-31.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
-
+using Amazon.Glue.Internal;
 
 namespace Amazon.Glue
 {
     /// <summary>
     /// Configuration for accessing Amazon Glue service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonGlueConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.10.1");
+            InternalSDKUtils.BuildUserAgentString("3.7.117.1");
 
         private string _userAgent = UserAgentString;
 
@@ -40,8 +40,10 @@ namespace Amazon.Glue
         /// Default constructor
         /// </summary>
         public AmazonGlueConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonGlueDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "glue";
+            this.EndpointProvider = new AmazonGlueEndpointProvider();
         }
 
         /// <summary>
@@ -76,5 +78,6 @@ namespace Amazon.Glue
                 return _userAgent;
             }
         }
+
     }
 }

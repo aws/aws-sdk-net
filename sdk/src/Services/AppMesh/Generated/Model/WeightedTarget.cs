@@ -37,8 +37,28 @@ namespace Amazon.AppMesh.Model
     /// </summary>
     public partial class WeightedTarget
     {
+        private int? _port;
         private string _virtualNode;
         private int? _weight;
+
+        /// <summary>
+        /// Gets and sets the property Port. 
+        /// <para>
+        /// The targeted port of the weighted object.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=65535)]
+        public int Port
+        {
+            get { return this._port.GetValueOrDefault(); }
+            set { this._port = value; }
+        }
+
+        // Check to see if Port property is set
+        internal bool IsSetPort()
+        {
+            return this._port.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property VirtualNode. 

@@ -39,7 +39,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property Access. 
         /// <para>
-        /// The external ID of the server that the access is attached to.
+        /// The external identifier of the server that the access is attached to.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

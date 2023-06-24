@@ -34,7 +34,7 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
 {
     /// <summary>
     /// ExportFilter Marshaller
-    /// </summary>       
+    /// </summary>
     public class ExportFilterMarshaller : IRequestMarshaller<ExportFilter, JsonMarshallerContext> 
     {
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ExportFilterMarshaller Instance = new ExportFilterMarshaller();
 
     }

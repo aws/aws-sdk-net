@@ -31,12 +31,21 @@ namespace Amazon.GuardDuty.Model
     /// <summary>
     /// Container for the parameters to the UpdateDetector operation.
     /// Updates the Amazon GuardDuty detector specified by the detectorId.
+    /// 
+    ///  
+    /// <para>
+    /// There might be regional differences because some data sources might not be available
+    /// in all the Amazon Web Services Regions where GuardDuty is presently supported. For
+    /// more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions
+    /// and endpoints</a>.
+    /// </para>
     /// </summary>
     public partial class UpdateDetectorRequest : AmazonGuardDutyRequest
     {
         private DataSourceConfigurations _dataSources;
         private string _detectorId;
         private bool? _enable;
+        private List<DetectorFeatureConfiguration> _features = new List<DetectorFeatureConfiguration>();
         private FindingPublishingFrequency _findingPublishingFrequency;
 
         /// <summary>
@@ -44,7 +53,15 @@ namespace Amazon.GuardDuty.Model
         /// <para>
         /// Describes which data sources will be updated.
         /// </para>
+        ///  
+        /// <para>
+        /// There might be regional differences because some data sources might not be available
+        /// in all the Amazon Web Services Regions where GuardDuty is presently supported. For
+        /// more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions
+        /// and endpoints</a>.
+        /// </para>
         /// </summary>
+        [Obsolete("This parameter is deprecated, use Features instead")]
         public DataSourceConfigurations DataSources
         {
             get { return this._dataSources; }
@@ -92,6 +109,24 @@ namespace Amazon.GuardDuty.Model
         internal bool IsSetEnable()
         {
             return this._enable.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Features. 
+        /// <para>
+        /// Provides the features that will be updated for the detector.
+        /// </para>
+        /// </summary>
+        public List<DetectorFeatureConfiguration> Features
+        {
+            get { return this._features; }
+            set { this._features = value; }
+        }
+
+        // Check to see if Features property is set
+        internal bool IsSetFeatures()
+        {
+            return this._features != null && this._features.Count > 0; 
         }
 
         /// <summary>

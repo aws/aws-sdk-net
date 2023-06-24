@@ -76,6 +76,12 @@ namespace Amazon.LexRuntimeV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.SlotToElicit = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("subSlotToElicit", targetDepth))
+                {
+                    var unmarshaller = ElicitSubSlotUnmarshaller.Instance;
+                    unmarshalledObject.SubSlotToElicit = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("type", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

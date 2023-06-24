@@ -47,12 +47,13 @@ namespace Amazon.Kendra.Model
         private DataSourceStatus _status;
         private DataSourceType _type;
         private DateTime? _updatedAt;
+        private DataSourceVpcConfiguration _vpcConfiguration;
 
         /// <summary>
         /// Gets and sets the property Configuration. 
         /// <para>
-        /// Information that describes where the data source is located and how the data source
-        /// is configured. The specific information in the description depends on the data source
+        /// Configuration details for the data source connector. This shows how the data source
+        /// is configured. The configuration options for a data source depend on the data source
         /// provider.
         /// </para>
         /// </summary>
@@ -71,7 +72,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The Unix timestamp of when the data source was created.
+        /// The Unix timestamp when the data source connector was created.
         /// </para>
         /// </summary>
         public DateTime CreatedAt
@@ -114,7 +115,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description of the data source.
+        /// The description for the data source connector.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1000)]
@@ -153,7 +154,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The identifier of the data source.
+        /// The identifier of the data source connector.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -172,7 +173,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property IndexId. 
         /// <para>
-        /// The identifier of the index that contains the data source.
+        /// The identifier of the index used with the data source connector.
         /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=36)]
@@ -213,7 +214,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name that you gave the data source when it was created.
+        /// The name for the data source connector.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
@@ -232,8 +233,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the role that enables the data source to access
-        /// its resources.
+        /// The Amazon Resource Name (ARN) of the role with permission to access the data source
+        /// and required resources.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1284)]
@@ -252,7 +253,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Schedule. 
         /// <para>
-        /// The schedule that Amazon Kendra will update the data source.
+        /// The schedule for Amazon Kendra to update the index.
         /// </para>
         /// </summary>
         public string Schedule
@@ -270,8 +271,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The current status of the data source. When the status is <code>ACTIVE</code> the
-        /// data source is ready to use. When the status is <code>FAILED</code>, the <code>ErrorMessage</code>
+        /// The current status of the data source connector. When the status is <code>ACTIVE</code>
+        /// the data source is ready to use. When the status is <code>FAILED</code>, the <code>ErrorMessage</code>
         /// field contains the reason that the data source failed.
         /// </para>
         /// </summary>
@@ -290,7 +291,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of the data source.
+        /// The type of the data source. For example, <code>SHAREPOINT</code>.
         /// </para>
         /// </summary>
         public DataSourceType Type
@@ -308,7 +309,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property UpdatedAt. 
         /// <para>
-        /// The Unix timestamp of when the data source was last updated.
+        /// The Unix timestamp when the data source connector was last updated.
         /// </para>
         /// </summary>
         public DateTime UpdatedAt
@@ -321,6 +322,26 @@ namespace Amazon.Kendra.Model
         internal bool IsSetUpdatedAt()
         {
             return this._updatedAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcConfiguration. 
+        /// <para>
+        /// Configuration information for an Amazon Virtual Private Cloud to connect to your data
+        /// source. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring
+        /// a VPC</a>.
+        /// </para>
+        /// </summary>
+        public DataSourceVpcConfiguration VpcConfiguration
+        {
+            get { return this._vpcConfiguration; }
+            set { this._vpcConfiguration = value; }
+        }
+
+        // Check to see if VpcConfiguration property is set
+        internal bool IsSetVpcConfiguration()
+        {
+            return this._vpcConfiguration != null;
         }
 
     }

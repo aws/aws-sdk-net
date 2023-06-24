@@ -30,8 +30,8 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateAccountCustomization operation.
-    /// Updates Amazon QuickSight customizations the current Amazon Web Services Region. Currently,
-    /// the only customization you can use is a theme.
+    /// Updates Amazon QuickSight customizations for the current Amazon Web Services Region.
+    /// Currently, the only customization that you can use is a theme.
     /// 
     ///  
     /// <para>

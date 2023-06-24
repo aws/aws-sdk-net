@@ -30,6 +30,14 @@ namespace Amazon.RDSDataService.Model
 {
     /// <summary>
     /// The result set returned by a SQL statement.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// This data structure is only used with the deprecated <code>ExecuteSql</code> operation.
+    /// Use the <code>BatchExecuteStatement</code> or <code>ExecuteStatement</code> operation
+    /// instead.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class ResultFrame
     {

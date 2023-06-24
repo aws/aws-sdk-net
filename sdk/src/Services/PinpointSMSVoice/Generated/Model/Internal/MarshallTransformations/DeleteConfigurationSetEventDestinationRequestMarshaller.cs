@@ -55,7 +55,7 @@ namespace Amazon.PinpointSMSVoice.Model.Internal.MarshallTransformations
         public IRequest Marshall(DeleteConfigurationSetEventDestinationRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.PinpointSMSVoice");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-09-05";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-09-05";
             request.HttpMethod = "DELETE";
 
             if (!publicRequest.IsSetConfigurationSetName())

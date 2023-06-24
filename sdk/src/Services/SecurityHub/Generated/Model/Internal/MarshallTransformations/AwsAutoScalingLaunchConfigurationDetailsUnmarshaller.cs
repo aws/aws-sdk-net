@@ -142,6 +142,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     unmarshalledObject.LaunchConfigurationName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("MetadataOptions", targetDepth))
+                {
+                    var unmarshaller = AwsAutoScalingLaunchConfigurationMetadataOptionsUnmarshaller.Instance;
+                    unmarshalledObject.MetadataOptions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("PlacementTenancy", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

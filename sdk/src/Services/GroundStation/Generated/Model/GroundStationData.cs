@@ -43,6 +43,7 @@ namespace Amazon.GroundStation.Model
         /// UUID of a ground station.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=4, Max=500)]
         public string GroundStationId
         {
             get { return this._groundStationId; }
@@ -61,6 +62,7 @@ namespace Amazon.GroundStation.Model
         /// Name of a ground station.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=4, Max=500)]
         public string GroundStationName
         {
             get { return this._groundStationName; }
@@ -79,6 +81,7 @@ namespace Amazon.GroundStation.Model
         /// Ground station Region.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string Region
         {
             get { return this._region; }

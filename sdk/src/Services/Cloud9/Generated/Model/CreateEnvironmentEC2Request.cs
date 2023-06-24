@@ -54,7 +54,7 @@ namespace Amazon.Cloud9.Model
         /// has last been used.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=20160)]
+        [AWSProperty(Min=0, Max=20160)]
         public int AutomaticStopTimeMinutes
         {
             get { return this._automaticStopTimeMinutes.GetValueOrDefault(); }
@@ -123,7 +123,7 @@ namespace Amazon.Cloud9.Model
         /// The description of the environment to create.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=200)]
+        [AWSProperty(Sensitive=true, Max=200)]
         public string Description
         {
             get { return this._description; }
@@ -165,9 +165,14 @@ namespace Amazon.Cloud9.Model
         /// </para>
         ///  
         /// <para>
-        /// The default AMI is used if the parameter isn't explicitly assigned a value in the
-        /// request. Because Amazon Linux AMI has ended standard support as of December 31, 2020,
-        /// we recommend you choose Amazon Linux 2, which includes long term support through 2023.
+        /// The default Amazon Linux AMI is currently used if the parameter isn't explicitly assigned
+        /// a value in the request. 
+        /// </para>
+        ///  
+        /// <para>
+        /// In the future the parameter for Amazon Linux will no longer be available when you
+        /// specify an AMI for your instance. Amazon Linux 2 will then become the default AMI,
+        /// which is used to launch your instance if no parameter is explicitly defined.
         /// </para>
         ///  
         /// <para>
@@ -308,7 +313,7 @@ namespace Amazon.Cloud9.Model
         /// environment.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=200)]
+        [AWSProperty(Sensitive=true, Min=0, Max=200)]
         public List<Tag> Tags
         {
             get { return this._tags; }

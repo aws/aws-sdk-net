@@ -6,6 +6,18 @@
       "limit_key": "MaxResults",
       "result_key": "AnalysisSummaryList"
     },
+    "ListAssetBundleExportJobs": {
+      "input_token": "NextToken",
+      "output_token": "NextToken",
+      "limit_key": "MaxResults",
+      "result_key": "AssetBundleExportJobSummaryList"
+    },
+    "ListAssetBundleImportJobs": {
+      "input_token": "NextToken",
+      "output_token": "NextToken",
+      "limit_key": "MaxResults",
+      "result_key": "AssetBundleImportJobSummaryList"
+    },
     "ListDashboardVersions": {
       "input_token": "NextToken",
       "output_token": "NextToken",
@@ -72,6 +84,16 @@
       "limit_key": "MaxResults",
       "result_key": "ThemeSummaryList"
     },
+    "ListTopics": {
+      "input_token": "NextToken",
+      "output_token": "NextToken",
+      "limit_key": "MaxResults"
+    },
+    "ListVPCConnections": {
+      "input_token": "NextToken",
+      "output_token": "NextToken",
+      "limit_key": "MaxResults"
+    },
     "SearchAnalyses": {
       "input_token": "NextToken",
       "output_token": "NextToken",
@@ -83,6 +105,18 @@
       "output_token": "NextToken",
       "limit_key": "MaxResults",
       "result_key": "DashboardSummaryList"
+    },
+    "SearchDataSets": {
+      "input_token": "NextToken",
+      "output_token": "NextToken",
+      "limit_key": "MaxResults",
+      "result_key": "DataSetSummaries"
+    },
+    "SearchDataSources": {
+      "input_token": "NextToken",
+      "output_token": "NextToken",
+      "limit_key": "MaxResults",
+      "result_key": "DataSourceSummaries"
     }
   }
 }

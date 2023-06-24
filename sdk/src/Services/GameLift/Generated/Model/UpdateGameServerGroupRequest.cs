@@ -30,21 +30,21 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateGameServerGroup operation.
-    /// <b>This operation is used with the GameLift FleetIQ solution and game server groups.</b>
-    /// 
+    /// <b>This operation is used with the Amazon GameLift FleetIQ solution and game server
+    /// groups.</b> 
     /// 
     ///  
     /// <para>
-    /// Updates GameLift FleetIQ-specific properties for a game server group. Many Auto Scaling
-    /// group properties are updated on the Auto Scaling group directly, including the launch
-    /// template, Auto Scaling policies, and maximum/minimum/desired instance counts.
+    /// Updates Amazon GameLift FleetIQ-specific properties for a game server group. Many
+    /// Auto Scaling group properties are updated on the Auto Scaling group directly, including
+    /// the launch template, Auto Scaling policies, and maximum/minimum/desired instance counts.
     /// </para>
     ///  
     /// <para>
     /// To update the game server group, specify the game server group ID and provide the
     /// updated values. Before applying the updates, the new values are validated to ensure
-    /// that GameLift FleetIQ can continue to perform instance balancing activity. If successful,
-    /// a <a>GameServerGroup</a> object is returned.
+    /// that Amazon GameLift FleetIQ can continue to perform instance balancing activity.
+    /// If successful, a <code>GameServerGroup</code> object is returned.
     /// </para>
     ///  
     /// <para>
@@ -52,19 +52,8 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  
     /// <para>
-    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-intro.html">GameLift
-    /// FleetIQ Guide</a> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <b>Related actions</b> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <a>CreateGameServerGroup</a> | <a>ListGameServerGroups</a> | <a>DescribeGameServerGroup</a>
-    /// | <a>UpdateGameServerGroup</a> | <a>DeleteGameServerGroup</a> | <a>ResumeGameServerGroup</a>
-    /// | <a>SuspendGameServerGroup</a> | <a>DescribeGameServerInstances</a> | <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/reference-awssdk-fleetiq.html">All
-    /// APIs by task</a> 
+    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-intro.html">Amazon
+    /// GameLift FleetIQ Guide</a> 
     /// </para>
     /// </summary>
     public partial class UpdateGameServerGroupRequest : AmazonGameLiftRequest
@@ -78,8 +67,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property BalancingStrategy. 
         /// <para>
-        /// Indicates how GameLift FleetIQ balances the use of Spot Instances and On-Demand Instances
-        /// in the game server group. Method options include the following:
+        /// Indicates how Amazon GameLift FleetIQ balances the use of Spot Instances and On-Demand
+        /// Instances in the game server group. Method options include the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -120,8 +109,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property GameServerGroupName. 
         /// <para>
-        /// A unique identifier for the game server group. Use either the <a>GameServerGroup</a>
-        /// name or ARN value.
+        /// A unique identifier for the game server group. Use either the name or ARN value.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
@@ -145,8 +133,8 @@ namespace Amazon.GameLift.Model
         /// be terminated during a scale-down event, causing players to be dropped from the game.
         /// Protected instances cannot be terminated while there are active game servers running
         /// except in the event of a forced game server group deletion (see ). An exception to
-        /// this is with Spot Instances, which can be terminated by AWS regardless of protection
-        /// status. This property is set to <code>NO_PROTECTION</code> by default.
+        /// this is with Spot Instances, which can be terminated by Amazon Web Services regardless
+        /// of protection status. This property is set to <code>NO_PROTECTION</code> by default.
         /// </para>
         /// </summary>
         public GameServerProtectionPolicy GameServerProtectionPolicy
@@ -164,11 +152,11 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property InstanceDefinitions. 
         /// <para>
-        /// An updated list of EC2 instance types to use in the Auto Scaling group. The instance
-        /// definitions must specify at least two different instance types that are supported
-        /// by GameLift FleetIQ. This updated list replaces the entire current list of instance
-        /// definitions for the game server group. For more information on instance types, see
-        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2
+        /// An updated list of Amazon EC2 instance types to use in the Auto Scaling group. The
+        /// instance definitions must specify at least two different instance types that are supported
+        /// by Amazon GameLift FleetIQ. This updated list replaces the entire current list of
+        /// instance definitions for the game server group. For more information on instance types,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2
         /// Instance Types</a> in the <i>Amazon EC2 User Guide</i>. You can optionally specify
         /// capacity weighting for each instance type. If no weight value is specified for an
         /// instance type, it is set to the default value "1". For more information about capacity
@@ -194,7 +182,8 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property RoleArn. 
         /// <para>
         /// The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-        /// for an IAM role that allows Amazon GameLift to access your EC2 Auto Scaling groups.
+        /// for an IAM role that allows Amazon GameLift to access your Amazon EC2 Auto Scaling
+        /// groups.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]

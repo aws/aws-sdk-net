@@ -57,8 +57,8 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// This field is null if no principals (IAM users, IAM roles, or root users) in the reported
-        /// Organizations entity attempted to access the service within the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting
+        /// This field is null if no principals (IAM users, IAM roles, or root user) in the reported
+        /// Organizations entity attempted to access the service within the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">tracking
         /// period</a>.
         /// </para>
         /// </summary>
@@ -85,7 +85,7 @@ namespace Amazon.IdentityManagement.Model
         ///  
         /// <para>
         /// This field is null if no principals in the reported Organizations entity attempted
-        /// to access the service within the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting
+        /// to access the service within the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">tracking
         /// period</a>.
         /// </para>
         /// </summary>
@@ -109,7 +109,7 @@ namespace Amazon.IdentityManagement.Model
         ///  
         /// <para>
         /// This field is null if no principals in the reported Organizations entity attempted
-        /// to access the service within the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting
+        /// to access the service within the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">tracking
         /// period</a>.
         /// </para>
         /// </summary>
@@ -175,8 +175,8 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property TotalAuthenticatedEntities. 
         /// <para>
-        /// The number of accounts with authenticated principals (root users, IAM users, and IAM
-        /// roles) that attempted to access the service in the reporting period.
+        /// The number of accounts with authenticated principals (root user, IAM users, and IAM
+        /// roles) that attempted to access the service in the tracking period.
         /// </para>
         /// </summary>
         public int TotalAuthenticatedEntities

@@ -36,6 +36,8 @@ namespace Amazon.Inspector2.Model
     {
         private bool? _ec2;
         private bool? _ecr;
+        private bool? _lambda;
+        private bool? _lambdaCode;
 
         /// <summary>
         /// Gets and sets the property Ec2. 
@@ -75,6 +77,43 @@ namespace Amazon.Inspector2.Model
         internal bool IsSetEcr()
         {
             return this._ecr.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Lambda. 
+        /// <para>
+        /// Represents whether AWS Lambda standard scans are automatically enabled for new members
+        /// of your Amazon Inspector organization. 
+        /// </para>
+        /// </summary>
+        public bool Lambda
+        {
+            get { return this._lambda.GetValueOrDefault(); }
+            set { this._lambda = value; }
+        }
+
+        // Check to see if Lambda property is set
+        internal bool IsSetLambda()
+        {
+            return this._lambda.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LambdaCode. 
+        /// <para>
+        /// Represents whether AWS Lambda code scans are automatically enabled for new members
+        /// of your Amazon Inspector organization. <pre><code> &lt;/p&gt; </code></pre>
+        /// </summary>
+        public bool LambdaCode
+        {
+            get { return this._lambdaCode.GetValueOrDefault(); }
+            set { this._lambdaCode = value; }
+        }
+
+        // Check to see if LambdaCode property is set
+        internal bool IsSetLambdaCode()
+        {
+            return this._lambdaCode.HasValue; 
         }
 
     }

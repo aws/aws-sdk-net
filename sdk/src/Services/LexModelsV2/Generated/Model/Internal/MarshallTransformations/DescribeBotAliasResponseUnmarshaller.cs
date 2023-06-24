@@ -117,6 +117,12 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
                     response.LastUpdatedDateTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("parentBotNetworks", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ParentBotNetwork, ParentBotNetworkUnmarshaller>(ParentBotNetworkUnmarshaller.Instance);
+                    response.ParentBotNetworks = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("sentimentAnalysisSettings", targetDepth))
                 {
                     var unmarshaller = SentimentAnalysisSettingsUnmarshaller.Instance;

@@ -41,6 +41,7 @@ namespace Amazon.EC2.Model
     public partial class DescribeKeyPairsRequest : AmazonEC2Request
     {
         private List<Filter> _filters = new List<Filter>();
+        private bool? _includePublicKey;
         private List<string> _keyNames = new List<string>();
         private List<string> _keyPairIds = new List<string>();
 
@@ -86,6 +87,28 @@ namespace Amazon.EC2.Model
         internal bool IsSetFilters()
         {
             return this._filters != null && this._filters.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IncludePublicKey. 
+        /// <para>
+        /// If <code>true</code>, the public key material is included in the response.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: <code>false</code> 
+        /// </para>
+        /// </summary>
+        public bool IncludePublicKey
+        {
+            get { return this._includePublicKey.GetValueOrDefault(); }
+            set { this._includePublicKey = value; }
+        }
+
+        // Check to see if IncludePublicKey property is set
+        internal bool IsSetIncludePublicKey()
+        {
+            return this._includePublicKey.HasValue; 
         }
 
         /// <summary>

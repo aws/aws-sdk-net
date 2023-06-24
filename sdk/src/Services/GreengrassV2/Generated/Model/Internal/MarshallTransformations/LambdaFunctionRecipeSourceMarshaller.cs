@@ -34,7 +34,7 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// LambdaFunctionRecipeSource Marshaller
-    /// </summary>       
+    /// </summary>
     public class LambdaFunctionRecipeSourceMarshaller : IRequestMarshaller<LambdaFunctionRecipeSource, JsonMarshallerContext> 
     {
         /// <summary>
@@ -113,7 +113,7 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static LambdaFunctionRecipeSourceMarshaller Instance = new LambdaFunctionRecipeSourceMarshaller();
 
     }

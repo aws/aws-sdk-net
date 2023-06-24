@@ -42,28 +42,29 @@ namespace Amazon.DataExchange
     /// in the cloud. You can use the AWS Data Exchange APIs to create, update, manage, and
     /// access file-based data set in the AWS Cloud.
     /// 
-    /// 
+    ///  
     /// <para>
     /// As a subscriber, you can view and access the data sets that you have an entitlement
-    /// to through a subscription. You can use the APIS to download or copy your entitled
-    /// data sets to Amazon S3 for use across a variety of AWS analytics and machine learning
-    /// services.
+    /// to through a subscription. You can use the APIs to download or copy your entitled
+    /// data sets to Amazon Simple Storage Service (Amazon S3) for use across a variety of
+    /// AWS analytics and machine learning services.
     /// </para>
-    /// 
+    ///  
     /// <para>
     /// As a provider, you can create and manage your data sets that you would like to publish
     /// to a product. Being able to package and provide your data sets into products requires
-    /// a few steps to determine eligibility. For more information, visit the AWS Data Exchange
-    /// User Guide.
+    /// a few steps to determine eligibility. For more information, visit the <i>AWS Data
+    /// Exchange User Guide</i>.
     /// </para>
-    /// 
+    ///  
     /// <para>
     /// A data set is a collection of data that can be changed or updated over time. Data
     /// sets can be updated using revisions, which represent a new version or incremental
-    /// change to a data set.  A revision contains one or more assets. An asset in AWS Data
-    /// Exchange is a piece of data that can be stored as an Amazon S3 object. The asset can
-    /// be a structured data file, an image file, or some other data file. Jobs are asynchronous
-    /// import or export operations used to create or copy assets.
+    /// change to a data set. A revision contains one or more assets. An asset in AWS Data
+    /// Exchange is a piece of data that can be stored as an Amazon S3 object, Redshift datashare,
+    /// API Gateway API, AWS Lake Formation data permission, or Amazon S3 data access. The
+    /// asset can be a structured data file, an image file, or some other data file. Jobs
+    /// are asynchronous import or export operations used to create or copy assets.
     /// </para>
     /// </summary>
     public partial class AmazonDataExchangeClient : AmazonServiceClient, IAmazonDataExchange
@@ -254,6 +255,15 @@ namespace Amazon.DataExchange
             return new AWS4Signer();
         }    
 
+        /// <summary>
+        /// Customize the pipeline
+        /// </summary>
+        /// <param name="pipeline"></param>
+        protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
+        {
+            pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonDataExchangeEndpointResolver());
+        }    
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>
@@ -509,6 +519,10 @@ namespace Amazon.DataExchange
         /// <exception cref="Amazon.DataExchange.Model.AccessDeniedException">
         /// Access to the resource is denied.
         /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ConflictException">
+        /// The request couldn't be completed because it conflicted with the current state of
+        /// the resource.
+        /// </exception>
         /// <exception cref="Amazon.DataExchange.Model.InternalServerException">
         /// An exception occurred with the service.
         /// </exception>
@@ -543,6 +557,10 @@ namespace Amazon.DataExchange
         /// <returns>The response from the CreateJob service method, as returned by DataExchange.</returns>
         /// <exception cref="Amazon.DataExchange.Model.AccessDeniedException">
         /// Access to the resource is denied.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ConflictException">
+        /// The request couldn't be completed because it conflicted with the current state of
+        /// the resource.
         /// </exception>
         /// <exception cref="Amazon.DataExchange.Model.InternalServerException">
         /// An exception occurred with the service.
@@ -1632,6 +1650,158 @@ namespace Amazon.DataExchange
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  RevokeRevision
+
+
+        /// <summary>
+        /// This operation revokes subscribers' access to a revision.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RevokeRevision service method.</param>
+        /// 
+        /// <returns>The response from the RevokeRevision service method, as returned by DataExchange.</returns>
+        /// <exception cref="Amazon.DataExchange.Model.AccessDeniedException">
+        /// Access to the resource is denied.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ConflictException">
+        /// The request couldn't be completed because it conflicted with the current state of
+        /// the resource.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.InternalServerException">
+        /// An exception occurred with the service.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ResourceNotFoundException">
+        /// The resource couldn't be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ValidationException">
+        /// The request was invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/RevokeRevision">REST API Reference for RevokeRevision Operation</seealso>
+        public virtual RevokeRevisionResponse RevokeRevision(RevokeRevisionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RevokeRevisionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RevokeRevisionResponseUnmarshaller.Instance;
+
+            return Invoke<RevokeRevisionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// This operation revokes subscribers' access to a revision.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RevokeRevision service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RevokeRevision service method, as returned by DataExchange.</returns>
+        /// <exception cref="Amazon.DataExchange.Model.AccessDeniedException">
+        /// Access to the resource is denied.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ConflictException">
+        /// The request couldn't be completed because it conflicted with the current state of
+        /// the resource.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.InternalServerException">
+        /// An exception occurred with the service.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ResourceNotFoundException">
+        /// The resource couldn't be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ValidationException">
+        /// The request was invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/RevokeRevision">REST API Reference for RevokeRevision Operation</seealso>
+        public virtual Task<RevokeRevisionResponse> RevokeRevisionAsync(RevokeRevisionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RevokeRevisionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RevokeRevisionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<RevokeRevisionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  SendApiAsset
+
+
+        /// <summary>
+        /// This operation invokes an API Gateway API asset. The request is proxied to the provider’s
+        /// API Gateway API.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SendApiAsset service method.</param>
+        /// 
+        /// <returns>The response from the SendApiAsset service method, as returned by DataExchange.</returns>
+        /// <exception cref="Amazon.DataExchange.Model.AccessDeniedException">
+        /// Access to the resource is denied.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.InternalServerException">
+        /// An exception occurred with the service.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ResourceNotFoundException">
+        /// The resource couldn't be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ValidationException">
+        /// The request was invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/SendApiAsset">REST API Reference for SendApiAsset Operation</seealso>
+        public virtual SendApiAssetResponse SendApiAsset(SendApiAssetRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SendApiAssetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SendApiAssetResponseUnmarshaller.Instance;
+
+            return Invoke<SendApiAssetResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// This operation invokes an API Gateway API asset. The request is proxied to the provider’s
+        /// API Gateway API.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SendApiAsset service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SendApiAsset service method, as returned by DataExchange.</returns>
+        /// <exception cref="Amazon.DataExchange.Model.AccessDeniedException">
+        /// Access to the resource is denied.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.InternalServerException">
+        /// An exception occurred with the service.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ResourceNotFoundException">
+        /// The resource couldn't be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ValidationException">
+        /// The request was invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/SendApiAsset">REST API Reference for SendApiAsset Operation</seealso>
+        public virtual Task<SendApiAssetResponse> SendApiAssetAsync(SendApiAssetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SendApiAssetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SendApiAssetResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<SendApiAssetResponse>(request, options, cancellationToken);
         }
 
         #endregion

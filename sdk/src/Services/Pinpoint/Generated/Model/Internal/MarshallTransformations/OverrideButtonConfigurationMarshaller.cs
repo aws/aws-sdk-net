@@ -34,7 +34,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// OverrideButtonConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class OverrideButtonConfigurationMarshaller : IRequestMarshaller<OverrideButtonConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static OverrideButtonConfigurationMarshaller Instance = new OverrideButtonConfigurationMarshaller();
 
     }

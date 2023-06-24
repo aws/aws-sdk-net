@@ -37,6 +37,7 @@ namespace Amazon.CodeArtifact.Model
     {
         private string _administratorAccount;
         private string _arn;
+        private DateTime? _createdTime;
         private string _description;
         private string _domainName;
         private string _domainOwner;
@@ -45,7 +46,7 @@ namespace Amazon.CodeArtifact.Model
         /// <summary>
         /// Gets and sets the property AdministratorAccount. 
         /// <para>
-        ///  The AWS account ID that manages the repository. 
+        ///  The Amazon Web Services account ID that manages the repository. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=12)]
@@ -78,6 +79,24 @@ namespace Amazon.CodeArtifact.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CreatedTime. 
+        /// <para>
+        /// A timestamp that represents the date and time the repository was created.
+        /// </para>
+        /// </summary>
+        public DateTime CreatedTime
+        {
+            get { return this._createdTime.GetValueOrDefault(); }
+            set { this._createdTime = value; }
+        }
+
+        // Check to see if CreatedTime property is set
+        internal bool IsSetCreatedTime()
+        {
+            return this._createdTime.HasValue; 
         }
 
         /// <summary>
@@ -121,8 +140,8 @@ namespace Amazon.CodeArtifact.Model
         /// <summary>
         /// Gets and sets the property DomainOwner. 
         /// <para>
-        ///  The 12-digit account number of the AWS account that owns the domain. It does not
-        /// include dashes or spaces. 
+        ///  The 12-digit account number of the Amazon Web Services account that owns the domain.
+        /// It does not include dashes or spaces. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=12)]

@@ -30,6 +30,14 @@ namespace Amazon.Backup.Model
 {
     /// <summary>
     /// Used to specify a set of resources to a backup plan.
+    /// 
+    ///  
+    /// <para>
+    /// Specifying your desired <code>Conditions</code>, <code>ListOfTags</code>, <code>NotResources</code>,
+    /// and/or <code>Resources</code> is recommended. If none of these are specified, Backup
+    /// will attempt to select all supported and opted-in storage resources, which could have
+    /// unintended cost implications.
+    /// </para>
     /// </summary>
     public partial class BackupSelection
     {
@@ -44,8 +52,8 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property Conditions. 
         /// <para>
         /// A list of conditions that you define to assign resources to your backup plans using
-        /// tags. For example, <code>"StringEquals": {"Department": "accounting"</code>. Condition
-        /// operators are case sensitive.
+        /// tags. For example, <code>"StringEquals": { "ConditionKey": "aws:ResourceTag/CreatedByCryo",
+        /// "ConditionValue": "true" },</code>. Condition operators are case sensitive.
         /// </para>
         ///  
         /// <para>
@@ -100,8 +108,8 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property ListOfTags. 
         /// <para>
         /// A list of conditions that you define to assign resources to your backup plans using
-        /// tags. For example, <code>"StringEquals": {"Department": "accounting"</code>. Condition
-        /// operators are case sensitive.
+        /// tags. For example, <code>"StringEquals": { "ConditionKey": "aws:ResourceTag/CreatedByCryo",
+        /// "ConditionValue": "true" },</code>. Condition operators are case sensitive.
         /// </para>
         ///  
         /// <para>

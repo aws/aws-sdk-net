@@ -38,6 +38,10 @@ namespace Amazon.FraudDetector.Model
     /// </para>
     ///  <ol> <li> 
     /// <para>
+    /// Change the <code>TRAINING_IN_PROGRESS</code> status to <code>TRAINING_CANCELLED</code>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     /// Change the <code>TRAINING_COMPLETE</code> status to <code>ACTIVE</code>.
     /// </para>
     ///  </li> <li> 

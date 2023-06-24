@@ -42,10 +42,11 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AccessToken. 
         /// <para>
-        /// The access token.
+        /// A valid access token that Amazon Cognito issued to the user whose password you want
+        /// to change.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public string AccessToken
         {
             get { return this._accessToken; }
@@ -64,7 +65,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The old password.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=6, Max=256)]
+        [AWSProperty(Required=true, Sensitive=true, Max=256)]
         public string PreviousPassword
         {
             get { return this._previousPassword; }
@@ -83,7 +84,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The new password.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=6, Max=256)]
+        [AWSProperty(Required=true, Sensitive=true, Max=256)]
         public string ProposedPassword
         {
             get { return this._proposedPassword; }

@@ -34,7 +34,7 @@ namespace Amazon.ServerMigrationService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SSMValidationParameters Marshaller
-    /// </summary>       
+    /// </summary>
     public class SSMValidationParametersMarshaller : IRequestMarshaller<SSMValidationParameters, JsonMarshallerContext> 
     {
         /// <summary>
@@ -90,7 +90,7 @@ namespace Amazon.ServerMigrationService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SSMValidationParametersMarshaller Instance = new SSMValidationParametersMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// MultiConditionalBranch Marshaller
-    /// </summary>       
+    /// </summary>
     public class MultiConditionalBranchMarshaller : IRequestMarshaller<MultiConditionalBranch, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static MultiConditionalBranchMarshaller Instance = new MultiConditionalBranchMarshaller();
 
     }

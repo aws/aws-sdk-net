@@ -56,7 +56,7 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.OpenSearchService");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-01-01";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-01-01";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/2021-01-01/opensearch/domain";
@@ -204,6 +204,17 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetOffPeakWindowOptions())
+                {
+                    context.Writer.WritePropertyName("OffPeakWindowOptions");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = OffPeakWindowOptionsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.OffPeakWindowOptions, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetSnapshotOptions())
                 {
                     context.Writer.WritePropertyName("SnapshotOptions");
@@ -211,6 +222,17 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
 
                     var marshaller = SnapshotOptionsMarshaller.Instance;
                     marshaller.Marshall(publicRequest.SnapshotOptions, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetSoftwareUpdateOptions())
+                {
+                    context.Writer.WritePropertyName("SoftwareUpdateOptions");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = SoftwareUpdateOptionsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.SoftwareUpdateOptions, context);
 
                     context.Writer.WriteObjectEnd();
                 }
@@ -242,7 +264,6 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

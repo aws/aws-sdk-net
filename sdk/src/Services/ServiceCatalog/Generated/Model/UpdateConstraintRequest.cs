@@ -46,10 +46,6 @@ namespace Amazon.ServiceCatalog.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>en</code> - English (default)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         ///  <code>jp</code> - Japanese
         /// </para>
         ///  </li> <li> 
@@ -200,8 +196,8 @@ namespace Amazon.ServiceCatalog.Model
         /// </para>
         ///  
         /// <para>
-        /// Products with a <code>STACKSET</code> constraint will launch an AWS CloudFormation
-        /// stack set.
+        /// Products with a <code>STACKSET</code> constraint will launch an CloudFormation stack
+        /// set.
         /// </para>
         ///  </dd> <dt>TEMPLATE</dt> <dd> 
         /// <para>

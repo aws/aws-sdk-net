@@ -58,7 +58,7 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
             string target = "CodeCommit_20150413.PutFile";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-04-13";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-04-13";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -121,7 +121,6 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.RepositoryName);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

@@ -64,6 +64,18 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("Override", targetDepth))
+                {
+                    var unmarshaller = NetworkFirewallStatefulRuleGroupOverrideUnmarshaller.Instance;
+                    unmarshalledObject.Override = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Priority", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.Priority = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ResourceId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

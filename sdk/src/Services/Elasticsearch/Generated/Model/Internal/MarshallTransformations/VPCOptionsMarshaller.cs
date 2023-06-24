@@ -34,7 +34,7 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// VPCOptions Marshaller
-    /// </summary>       
+    /// </summary>
     public class VPCOptionsMarshaller : IRequestMarshaller<VPCOptions, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static VPCOptionsMarshaller Instance = new VPCOptionsMarshaller();
 
     }

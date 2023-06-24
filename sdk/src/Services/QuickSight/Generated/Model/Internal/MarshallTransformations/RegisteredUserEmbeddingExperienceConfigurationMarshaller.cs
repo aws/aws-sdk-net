@@ -34,7 +34,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RegisteredUserEmbeddingExperienceConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class RegisteredUserEmbeddingExperienceConfigurationMarshaller : IRequestMarshaller<RegisteredUserEmbeddingExperienceConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -52,6 +52,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 
                 var marshaller = RegisteredUserDashboardEmbeddingConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.Dashboard, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetDashboardVisual())
+            {
+                context.Writer.WritePropertyName("DashboardVisual");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = RegisteredUserDashboardVisualEmbeddingConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.DashboardVisual, context);
 
                 context.Writer.WriteObjectEnd();
             }
@@ -82,7 +93,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RegisteredUserEmbeddingExperienceConfigurationMarshaller Instance = new RegisteredUserEmbeddingExperienceConfigurationMarshaller();
 
     }

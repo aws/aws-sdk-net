@@ -56,7 +56,7 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.IoTTwinMaker");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-11-29";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-11-29";
             request.HttpMethod = "POST";
 
             if (!publicRequest.IsSetWorkspaceId())
@@ -97,6 +97,20 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.SceneId);
                 }
 
+                if(publicRequest.IsSetSceneMetadata())
+                {
+                    context.Writer.WritePropertyName("sceneMetadata");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestSceneMetadataKvp in publicRequest.SceneMetadata)
+                    {
+                        context.Writer.WritePropertyName(publicRequestSceneMetadataKvp.Key);
+                        var publicRequestSceneMetadataValue = publicRequestSceneMetadataKvp.Value;
+
+                            context.Writer.Write(publicRequestSceneMetadataValue);
+                    }
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("tags");
@@ -111,7 +125,6 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

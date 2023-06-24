@@ -34,7 +34,7 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ChoiceUpdate Marshaller
-    /// </summary>       
+    /// </summary>
     public class ChoiceUpdateMarshaller : IRequestMarshaller<ChoiceUpdate, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ChoiceUpdateMarshaller Instance = new ChoiceUpdateMarshaller();
 
     }

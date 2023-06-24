@@ -55,7 +55,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         public IRequest Marshall(DetachPrincipalPolicyRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.IoT");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-05-28";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-05-28";
             request.HttpMethod = "DELETE";
 
             if (!publicRequest.IsSetPolicyName())
@@ -63,8 +63,10 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             request.AddPathResource("{policyName}", StringUtils.FromString(publicRequest.PolicyName));
             request.ResourcePath = "/principal-policies/{policyName}";
         
-            if(publicRequest.IsSetPrincipal())
+            if (publicRequest.IsSetPrincipal()) 
+            {
                 request.Headers["x-amzn-iot-principal"] = publicRequest.Principal;
+            }
 
             return request;
         }

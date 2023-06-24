@@ -270,6 +270,15 @@ namespace Amazon.ElasticLoadBalancingV2
         }
 
         /// <summary>
+        /// Customize the pipeline
+        /// </summary>
+        /// <param name="pipeline"></param>
+        protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
+        {
+            pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonElasticLoadBalancingV2EndpointResolver());
+        }
+        /// <summary>
         /// Capture metadata for the service.
         /// </summary>
         protected override IServiceMetadata ServiceMetadata
@@ -2627,8 +2636,7 @@ namespace Amazon.ElasticLoadBalancingV2
         #region  SetIpAddressType
 
         /// <summary>
-        /// Sets the type of IP addresses used by the subnets of the specified Application Load
-        /// Balancer or Network Load Balancer.
+        /// Sets the type of IP addresses used by the subnets of the specified load balancer.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SetIpAddressType service method.</param>
         /// 

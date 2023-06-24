@@ -34,7 +34,7 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
 {
     /// <summary>
     /// OrderByElement Marshaller
-    /// </summary>       
+    /// </summary>
     public class OrderByElementMarshaller : IRequestMarshaller<OrderByElement, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static OrderByElementMarshaller Instance = new OrderByElementMarshaller();
 
     }

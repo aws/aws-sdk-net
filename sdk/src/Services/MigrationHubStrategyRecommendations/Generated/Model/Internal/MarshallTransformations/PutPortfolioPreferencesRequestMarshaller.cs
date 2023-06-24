@@ -56,7 +56,7 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.MigrationHubStrategyRecommendations");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-02-19";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-02-19";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/put-portfolio-preferences";
@@ -65,6 +65,12 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetApplicationMode())
+                {
+                    context.Writer.WritePropertyName("applicationMode");
+                    context.Writer.Write(publicRequest.ApplicationMode);
+                }
+
                 if(publicRequest.IsSetApplicationPreferences())
                 {
                     context.Writer.WritePropertyName("applicationPreferences");
@@ -98,7 +104,6 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
                     context.Writer.WriteObjectEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

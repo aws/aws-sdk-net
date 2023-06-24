@@ -30,15 +30,11 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Represents an EC2 instance of virtual computing resources that hosts one or more game
-    /// servers. In GameLift, a fleet can contain zero or more instances.
+    /// servers. In Amazon GameLift, a fleet can contain zero or more instances.
     /// 
     ///  
     /// <para>
     ///  <b>Related actions</b> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <a>DescribeInstances</a> 
     /// </para>
     /// </summary>
     public partial class Instance
@@ -111,8 +107,8 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property FleetArn. 
         /// <para>
         /// The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-        /// that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are
-        /// unique across all Regions. Format is <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
+        /// that is assigned to a Amazon GameLift fleet resource and uniquely identifies it. ARNs
+        /// are unique across all Regions. Format is <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
         /// </para>
         /// </summary>
         public string FleetArn
@@ -185,8 +181,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Location. 
         /// <para>
-        /// The fleet location of the instance, expressed as an AWS Region code, such as <code>us-west-2</code>.
-        /// 
+        /// The fleet location of the instance, expressed as an Amazon Web Services Region code,
+        /// such as <code>us-west-2</code>. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -233,8 +229,9 @@ namespace Amazon.GameLift.Model
         ///  </li> <li> 
         /// <para>
         ///  <b>ACTIVE</b> -- The instance has been successfully created and at least one server
-        /// process has successfully launched and reported back to GameLift that it is ready to
-        /// host a game session. The instance is now considered ready to host game sessions. 
+        /// process has successfully launched and reported back to Amazon GameLift that it is
+        /// ready to host a game session. The instance is now considered ready to host game sessions.
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -259,7 +256,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// EC2 instance type that defines the computing resources of this instance. 
+        /// Amazon EC2 instance type that defines the computing resources of this instance. 
         /// </para>
         /// </summary>
         public EC2InstanceType Type

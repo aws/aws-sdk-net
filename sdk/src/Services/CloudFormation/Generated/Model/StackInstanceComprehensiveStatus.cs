@@ -39,7 +39,7 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property DetailedStatus. <ul> <li> 
         /// <para>
         ///  <code>CANCELLED</code>: The operation in the specified account and Region has been
-        /// cancelled. This is either because a user has stopped the stack set operation, or because
+        /// canceled. This is either because a user has stopped the stack set operation, or because
         /// the failure tolerance of the stack set operation has been exceeded.
         /// </para>
         ///  </li> <li> 
@@ -65,6 +65,11 @@ namespace Amazon.CloudFormation.Model
         /// <para>
         ///  <code>RUNNING</code>: The operation in the specified account and Region is currently
         /// in progress.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>SKIPPED_SUSPENDED_ACCOUNT</code>: The operation in the specified account and
+        /// Region has been skipped because the account was suspended at the time of the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>

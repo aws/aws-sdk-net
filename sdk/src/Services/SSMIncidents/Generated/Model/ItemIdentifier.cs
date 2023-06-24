@@ -39,33 +39,8 @@ namespace Amazon.SSMIncidents.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of related item. Incident Manager supports the following types:
+        /// The type of related item. 
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>ANALYSIS</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>INCIDENT</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>METRIC</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>PARENT</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>ATTACHMENT</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>OTHER</code> 
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public ItemType Type

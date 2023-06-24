@@ -34,7 +34,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// EbsBlockDeviceConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class EbsBlockDeviceConfigMarshaller : IRequestMarshaller<EbsBlockDeviceConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static EbsBlockDeviceConfigMarshaller Instance = new EbsBlockDeviceConfigMarshaller();
 
     }

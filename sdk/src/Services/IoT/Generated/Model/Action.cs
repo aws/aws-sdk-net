@@ -47,6 +47,7 @@ namespace Amazon.IoT.Model
         private KafkaAction _kafka;
         private KinesisAction _kinesis;
         private LambdaAction _lambda;
+        private LocationAction _location;
         private OpenSearchAction _openSearch;
         private RepublishAction _republish;
         private S3Action _s3;
@@ -315,6 +316,25 @@ namespace Amazon.IoT.Model
         internal bool IsSetLambda()
         {
             return this._lambda != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Location. 
+        /// <para>
+        /// The Amazon Location Service rule action sends device location updates from an MQTT
+        /// message to an Amazon Location tracker resource.
+        /// </para>
+        /// </summary>
+        public LocationAction Location
+        {
+            get { return this._location; }
+            set { this._location = value; }
+        }
+
+        // Check to see if Location property is set
+        internal bool IsSetLocation()
+        {
+            return this._location != null;
         }
 
         /// <summary>

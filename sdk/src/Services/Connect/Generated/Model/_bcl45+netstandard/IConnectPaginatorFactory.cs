@@ -31,9 +31,19 @@ namespace Amazon.Connect.Model
         IGetCurrentMetricDataPaginator GetCurrentMetricData(GetCurrentMetricDataRequest request);
 
         /// <summary>
+        /// Paginator for GetCurrentUserData operation
+        ///</summary>
+        IGetCurrentUserDataPaginator GetCurrentUserData(GetCurrentUserDataRequest request);
+
+        /// <summary>
         /// Paginator for GetMetricData operation
         ///</summary>
         IGetMetricDataPaginator GetMetricData(GetMetricDataRequest request);
+
+        /// <summary>
+        /// Paginator for GetMetricDataV2 operation
+        ///</summary>
+        IGetMetricDataV2Paginator GetMetricDataV2(GetMetricDataV2Request request);
 
         /// <summary>
         /// Paginator for ListAgentStatuses operation
@@ -51,6 +61,11 @@ namespace Amazon.Connect.Model
         IListBotsPaginator ListBots(ListBotsRequest request);
 
         /// <summary>
+        /// Paginator for ListContactEvaluations operation
+        ///</summary>
+        IListContactEvaluationsPaginator ListContactEvaluations(ListContactEvaluationsRequest request);
+
+        /// <summary>
         /// Paginator for ListContactFlowModules operation
         ///</summary>
         IListContactFlowModulesPaginator ListContactFlowModules(ListContactFlowModulesRequest request);
@@ -64,6 +79,21 @@ namespace Amazon.Connect.Model
         /// Paginator for ListContactReferences operation
         ///</summary>
         IListContactReferencesPaginator ListContactReferences(ListContactReferencesRequest request);
+
+        /// <summary>
+        /// Paginator for ListDefaultVocabularies operation
+        ///</summary>
+        IListDefaultVocabulariesPaginator ListDefaultVocabularies(ListDefaultVocabulariesRequest request);
+
+        /// <summary>
+        /// Paginator for ListEvaluationForms operation
+        ///</summary>
+        IListEvaluationFormsPaginator ListEvaluationForms(ListEvaluationFormsRequest request);
+
+        /// <summary>
+        /// Paginator for ListEvaluationFormVersions operation
+        ///</summary>
+        IListEvaluationFormVersionsPaginator ListEvaluationFormVersions(ListEvaluationFormVersionsRequest request);
 
         /// <summary>
         /// Paginator for ListHoursOfOperations operation
@@ -106,6 +136,11 @@ namespace Amazon.Connect.Model
         IListPhoneNumbersPaginator ListPhoneNumbers(ListPhoneNumbersRequest request);
 
         /// <summary>
+        /// Paginator for ListPhoneNumbersV2 operation
+        ///</summary>
+        IListPhoneNumbersV2Paginator ListPhoneNumbersV2(ListPhoneNumbersV2Request request);
+
+        /// <summary>
         /// Paginator for ListPrompts operation
         ///</summary>
         IListPromptsPaginator ListPrompts(ListPromptsRequest request);
@@ -136,6 +171,11 @@ namespace Amazon.Connect.Model
         IListRoutingProfilesPaginator ListRoutingProfiles(ListRoutingProfilesRequest request);
 
         /// <summary>
+        /// Paginator for ListRules operation
+        ///</summary>
+        IListRulesPaginator ListRules(ListRulesRequest request);
+
+        /// <summary>
         /// Paginator for ListSecurityKeys operation
         ///</summary>
         IListSecurityKeysPaginator ListSecurityKeys(ListSecurityKeysRequest request);
@@ -151,6 +191,16 @@ namespace Amazon.Connect.Model
         IListSecurityProfilesPaginator ListSecurityProfiles(ListSecurityProfilesRequest request);
 
         /// <summary>
+        /// Paginator for ListTaskTemplates operation
+        ///</summary>
+        IListTaskTemplatesPaginator ListTaskTemplates(ListTaskTemplatesRequest request);
+
+        /// <summary>
+        /// Paginator for ListTrafficDistributionGroups operation
+        ///</summary>
+        IListTrafficDistributionGroupsPaginator ListTrafficDistributionGroups(ListTrafficDistributionGroupsRequest request);
+
+        /// <summary>
         /// Paginator for ListUseCases operation
         ///</summary>
         IListUseCasesPaginator ListUseCases(ListUseCasesRequest request);
@@ -164,5 +214,50 @@ namespace Amazon.Connect.Model
         /// Paginator for ListUsers operation
         ///</summary>
         IListUsersPaginator ListUsers(ListUsersRequest request);
+
+        /// <summary>
+        /// Paginator for SearchAvailablePhoneNumbers operation
+        ///</summary>
+        ISearchAvailablePhoneNumbersPaginator SearchAvailablePhoneNumbers(SearchAvailablePhoneNumbersRequest request);
+
+        /// <summary>
+        /// Paginator for SearchHoursOfOperations operation
+        ///</summary>
+        ISearchHoursOfOperationsPaginator SearchHoursOfOperations(SearchHoursOfOperationsRequest request);
+
+        /// <summary>
+        /// Paginator for SearchPrompts operation
+        ///</summary>
+        ISearchPromptsPaginator SearchPrompts(SearchPromptsRequest request);
+
+        /// <summary>
+        /// Paginator for SearchQueues operation
+        ///</summary>
+        ISearchQueuesPaginator SearchQueues(SearchQueuesRequest request);
+
+        /// <summary>
+        /// Paginator for SearchQuickConnects operation
+        ///</summary>
+        ISearchQuickConnectsPaginator SearchQuickConnects(SearchQuickConnectsRequest request);
+
+        /// <summary>
+        /// Paginator for SearchRoutingProfiles operation
+        ///</summary>
+        ISearchRoutingProfilesPaginator SearchRoutingProfiles(SearchRoutingProfilesRequest request);
+
+        /// <summary>
+        /// Paginator for SearchSecurityProfiles operation
+        ///</summary>
+        ISearchSecurityProfilesPaginator SearchSecurityProfiles(SearchSecurityProfilesRequest request);
+
+        /// <summary>
+        /// Paginator for SearchUsers operation
+        ///</summary>
+        ISearchUsersPaginator SearchUsers(SearchUsersRequest request);
+
+        /// <summary>
+        /// Paginator for SearchVocabularies operation
+        ///</summary>
+        ISearchVocabulariesPaginator SearchVocabularies(SearchVocabulariesRequest request);
     }
 }

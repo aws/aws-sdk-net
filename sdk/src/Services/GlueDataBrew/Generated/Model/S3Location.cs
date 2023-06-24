@@ -29,12 +29,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GlueDataBrew.Model
 {
     /// <summary>
-    /// Represents an Amazon S3 location (bucket name and object key) where DataBrew can read
-    /// input data, or write output from a job.
+    /// Represents an Amazon S3 location (bucket name, bucket owner, and object key) where
+    /// DataBrew can read input data, or write output from a job.
     /// </summary>
     public partial class S3Location
     {
         private string _bucket;
+        private string _bucketOwner;
         private string _key;
 
         /// <summary>
@@ -54,6 +55,25 @@ namespace Amazon.GlueDataBrew.Model
         internal bool IsSetBucket()
         {
             return this._bucket != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BucketOwner. 
+        /// <para>
+        /// The Amazon Web Services account ID of the bucket owner.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=12, Max=12)]
+        public string BucketOwner
+        {
+            get { return this._bucketOwner; }
+            set { this._bucketOwner = value; }
+        }
+
+        // Check to see if BucketOwner property is set
+        internal bool IsSetBucketOwner()
+        {
+            return this._bucketOwner != null;
         }
 
         /// <summary>

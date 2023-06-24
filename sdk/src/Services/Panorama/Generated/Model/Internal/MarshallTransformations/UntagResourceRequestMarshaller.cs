@@ -55,7 +55,7 @@ namespace Amazon.Panorama.Model.Internal.MarshallTransformations
         public IRequest Marshall(UntagResourceRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Panorama");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-07-24";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-07-24";
             request.HttpMethod = "DELETE";
 
             if (!publicRequest.IsSetResourceArn())

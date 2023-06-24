@@ -62,6 +62,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// value.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1000)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -103,6 +104,11 @@ namespace Amazon.ComputeOptimizer.Model
         /// that are part of Auto Scaling groups. The <code>AutoScalingGroup</code> option encompasses
         /// only instances that are part of an Auto Scaling group.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The valid values for this parameter are <code>Ec2Instance</code> and <code>AutoScalingGroup</code>.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Required=true)]
         public ResourceType ResourceType

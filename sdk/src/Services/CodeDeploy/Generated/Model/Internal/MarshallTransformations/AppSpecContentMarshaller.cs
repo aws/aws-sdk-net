@@ -34,7 +34,7 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AppSpecContent Marshaller
-    /// </summary>       
+    /// </summary>
     public class AppSpecContentMarshaller : IRequestMarshaller<AppSpecContent, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AppSpecContentMarshaller Instance = new AppSpecContentMarshaller();
 
     }

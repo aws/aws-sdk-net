@@ -122,10 +122,10 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property SubscriptionExpiryDate. 
         /// <para>
-        /// The date, in Unix time format, when your current subscription to the Deliverability
-        /// dashboard is scheduled to expire, if your subscription is scheduled to expire at the
-        /// end of the current calendar month. This value is null if you have an active subscription
-        /// that isn’t due to expire at the end of the month.
+        /// The date when your current subscription to the Deliverability dashboard is scheduled
+        /// to expire, if your subscription is scheduled to expire at the end of the current calendar
+        /// month. This value is null if you have an active subscription that isn’t due to expire
+        /// at the end of the month.
         /// </para>
         /// </summary>
         public DateTime SubscriptionExpiryDate

@@ -82,6 +82,12 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.ImportedResourceName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("importedResourceType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ImportedResourceType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("importId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

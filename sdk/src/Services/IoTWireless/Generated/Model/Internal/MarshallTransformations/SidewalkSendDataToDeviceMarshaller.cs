@@ -34,7 +34,7 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SidewalkSendDataToDevice Marshaller
-    /// </summary>       
+    /// </summary>
     public class SidewalkSendDataToDeviceMarshaller : IRequestMarshaller<SidewalkSendDataToDevice, JsonMarshallerContext> 
     {
         /// <summary>
@@ -45,6 +45,12 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SidewalkSendDataToDevice requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAckModeRetryDurationSecs())
+            {
+                context.Writer.WritePropertyName("AckModeRetryDurationSecs");
+                context.Writer.Write(requestObject.AckModeRetryDurationSecs);
+            }
+
             if(requestObject.IsSetMessageType())
             {
                 context.Writer.WritePropertyName("MessageType");
@@ -61,7 +67,7 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SidewalkSendDataToDeviceMarshaller Instance = new SidewalkSendDataToDeviceMarshaller();
 
     }

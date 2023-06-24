@@ -89,6 +89,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class UpdateMaintenanceWindowTaskRequest : AmazonSimpleSystemsManagementRequest
     {
+        private AlarmConfiguration _alarmConfiguration;
         private MaintenanceWindowTaskCutoffBehavior _cutoffBehavior;
         private string _description;
         private LoggingInfo _loggingInfo;
@@ -104,6 +105,24 @@ namespace Amazon.SimpleSystemsManagement.Model
         private Dictionary<string, MaintenanceWindowTaskParameterValueExpression> _taskParameters = new Dictionary<string, MaintenanceWindowTaskParameterValueExpression>();
         private string _windowId;
         private string _windowTaskId;
+
+        /// <summary>
+        /// Gets and sets the property AlarmConfiguration. 
+        /// <para>
+        /// The CloudWatch alarm you want to apply to your maintenance window task.
+        /// </para>
+        /// </summary>
+        public AlarmConfiguration AlarmConfiguration
+        {
+            get { return this._alarmConfiguration; }
+            set { this._alarmConfiguration = value; }
+        }
+
+        // Check to see if AlarmConfiguration property is set
+        internal bool IsSetAlarmConfiguration()
+        {
+            return this._alarmConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CutoffBehavior. 
@@ -156,7 +175,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The new task description to specify.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=128)]
+        [AWSProperty(Sensitive=true, Min=1, Max=128)]
         public string Description
         {
             get { return this._description; }
@@ -200,14 +219,19 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property MaxConcurrency. 
         /// <para>
         /// The new <code>MaxConcurrency</code> value you want to specify. <code>MaxConcurrency</code>
-        /// is the number of targets that are allowed to run this task in parallel.
+        /// is the number of targets that are allowed to run this task, in parallel.
         /// </para>
         ///  <note> 
         /// <para>
+        /// Although this element is listed as "Required: No", a value can be omitted only when
+        /// you are registering or updating a <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">targetless
+        /// task</a> You must provide a value in all other cases.
+        /// </para>
+        ///  
+        /// <para>
         /// For maintenance window tasks without a target specified, you can't supply a value
-        /// for this option. Instead, the system inserts a placeholder value of <code>1</code>,
-        /// which may be reported in the response to this command. This value doesn't affect the
-        /// running of your task and can be ignored.
+        /// for this option. Instead, the system inserts a placeholder value of <code>1</code>.
+        /// This value doesn't affect the running of your task.
         /// </para>
         ///  </note>
         /// </summary>
@@ -232,10 +256,15 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  <note> 
         /// <para>
+        /// Although this element is listed as "Required: No", a value can be omitted only when
+        /// you are registering or updating a <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">targetless
+        /// task</a> You must provide a value in all other cases.
+        /// </para>
+        ///  
+        /// <para>
         /// For maintenance window tasks without a target specified, you can't supply a value
-        /// for this option. Instead, the system inserts a placeholder value of <code>1</code>,
-        /// which may be reported in the response to this command. This value doesn't affect the
-        /// running of your task and can be ignored.
+        /// for this option. Instead, the system inserts a placeholder value of <code>1</code>.
+        /// This value doesn't affect the running of your task.
         /// </para>
         ///  </note>
         /// </summary>
@@ -455,6 +484,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Value: an array of strings, each string is between 1 and 255 characters
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public Dictionary<string, MaintenanceWindowTaskParameterValueExpression> TaskParameters
         {
             get { return this._taskParameters; }

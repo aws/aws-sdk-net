@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.S3Control.Model
 {
     /// <summary>
-    /// 
+    /// A container for a key-value name pair.
     /// </summary>
     public partial class S3Tag
     {
@@ -37,7 +37,10 @@ namespace Amazon.S3Control.Model
         private string _value;
 
         /// <summary>
-        /// Gets and sets the property Key.
+        /// Gets and sets the property Key. 
+        /// <para>
+        /// Key of the tag
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1024)]
         public string Key
@@ -53,7 +56,10 @@ namespace Amazon.S3Control.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Value.
+        /// Gets and sets the property Value. 
+        /// <para>
+        /// Value of the tag
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=1024)]
         public string Value

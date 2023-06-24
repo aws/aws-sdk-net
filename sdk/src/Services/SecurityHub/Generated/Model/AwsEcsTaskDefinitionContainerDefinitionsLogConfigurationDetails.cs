@@ -42,6 +42,63 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The log driver to use for the container.
         /// </para>
+        ///  
+        /// <para>
+        /// Valid values on Fargate are as follows:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>awsfirelens</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>awslogs</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>splunk</code> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Valid values on Amazon EC2 are as follows:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>awsfirelens</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>awslogs</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>fluentd</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>gelf</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>journald</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>json-file</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>logentries</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>splunk</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>syslog</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string LogDriver
         {

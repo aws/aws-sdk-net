@@ -1,5 +1,6 @@
 {
-    "base-name": "ApplicationDiscoveryService", 
-    "active": true, 
-    "synopsis": "AWS Application Discovery Service helps Systems Integrators quickly and reliably plan application migration projects by automatically identifying applications running in your data center, their associated dependencies, and their performance profile."
+  "base-name": "ApplicationDiscoveryService",
+  "active": true,
+  "synopsis": "AWS Application Discovery Service helps Systems Integrators quickly and reliably plan application migration projects by automatically identifying applications running in your data center, their associated dependencies, and their performance profile.",
+  "legacy-service-id": "Application Discovery Service"
 }

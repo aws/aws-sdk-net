@@ -34,6 +34,7 @@ namespace Amazon.Transfer.Model
     public partial class CustomStepDetails
     {
         private string _name;
+        private string _sourceFileLocation;
         private string _target;
         private int? _timeoutSeconds;
 
@@ -57,9 +58,40 @@ namespace Amazon.Transfer.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SourceFileLocation. 
+        /// <para>
+        /// Specifies which file to use as input to the workflow step: either the output from
+        /// the previous step, or the originally uploaded file for the workflow.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// To use the previous file as the input, enter <code>${previous.file}</code>. In this
+        /// case, this workflow step uses the output file from the previous workflow step as input.
+        /// This is the default value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To use the originally uploaded file location as input for this step, enter <code>${original.file}</code>.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        [AWSProperty(Max=256)]
+        public string SourceFileLocation
+        {
+            get { return this._sourceFileLocation; }
+            set { this._sourceFileLocation = value; }
+        }
+
+        // Check to see if SourceFileLocation property is set
+        internal bool IsSetSourceFileLocation()
+        {
+            return this._sourceFileLocation != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Target. 
         /// <para>
-        /// The ARN for the lambda function that is being called.
+        /// The ARN for the Lambda function that is being called.
         /// </para>
         /// </summary>
         [AWSProperty(Max=170)]

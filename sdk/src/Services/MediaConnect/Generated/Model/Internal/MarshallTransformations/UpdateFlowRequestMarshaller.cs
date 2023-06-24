@@ -56,7 +56,7 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.MediaConnect");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-11-14";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-11-14";
             request.HttpMethod = "PUT";
 
             if (!publicRequest.IsSetFlowArn())
@@ -68,6 +68,17 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetMaintenance())
+                {
+                    context.Writer.WritePropertyName("maintenance");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = UpdateMaintenanceMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Maintenance, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetSourceFailoverConfig())
                 {
                     context.Writer.WritePropertyName("sourceFailoverConfig");
@@ -79,7 +90,6 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

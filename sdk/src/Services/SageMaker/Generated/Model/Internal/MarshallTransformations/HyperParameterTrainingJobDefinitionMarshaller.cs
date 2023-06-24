@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// HyperParameterTrainingJobDefinition Marshaller
-    /// </summary>       
+    /// </summary>
     public class HyperParameterTrainingJobDefinitionMarshaller : IRequestMarshaller<HyperParameterTrainingJobDefinition, JsonMarshallerContext> 
     {
         /// <summary>
@@ -91,6 +91,20 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.EnableNetworkIsolation);
             }
 
+            if(requestObject.IsSetEnvironment())
+            {
+                context.Writer.WritePropertyName("Environment");
+                context.Writer.WriteObjectStart();
+                foreach (var requestObjectEnvironmentKvp in requestObject.Environment)
+                {
+                    context.Writer.WritePropertyName(requestObjectEnvironmentKvp.Key);
+                    var requestObjectEnvironmentValue = requestObjectEnvironmentKvp.Value;
+
+                        context.Writer.Write(requestObjectEnvironmentValue);
+                }
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetHyperParameterRanges())
             {
                 context.Writer.WritePropertyName("HyperParameterRanges");
@@ -98,6 +112,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
                 var marshaller = ParameterRangesMarshaller.Instance;
                 marshaller.Marshall(requestObject.HyperParameterRanges, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetHyperParameterTuningResourceConfig())
+            {
+                context.Writer.WritePropertyName("HyperParameterTuningResourceConfig");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = HyperParameterTuningResourceConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.HyperParameterTuningResourceConfig, context);
 
                 context.Writer.WriteObjectEnd();
             }
@@ -208,7 +233,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static HyperParameterTrainingJobDefinitionMarshaller Instance = new HyperParameterTrainingJobDefinitionMarshaller();
 
     }

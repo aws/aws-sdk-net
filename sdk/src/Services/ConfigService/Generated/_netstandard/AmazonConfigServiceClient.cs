@@ -256,6 +256,15 @@ namespace Amazon.ConfigService
         } 
 
         /// <summary>
+        /// Customizes the runtime pipeline.
+        /// </summary>
+        /// <param name="pipeline">Runtime pipeline for the current client.</param>
+        protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
+        {
+            pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonConfigServiceEndpointResolver());
+        }
+        /// <summary>
         /// Capture metadata for the service.
         /// </summary>
         protected override IServiceMetadata ServiceMetadata
@@ -437,8 +446,8 @@ namespace Amazon.ConfigService
         /// 
         /// <returns>The response from the DeleteAggregationAuthorization service method, as returned by ConfigService.</returns>
         /// <exception cref="Amazon.ConfigService.Model.InvalidParameterValueException">
-        /// One or more of the specified parameters are invalid. Verify that your parameters are
-        /// valid and try again.
+        /// One or more of the specified parameters are not valid. Verify that your parameters
+        /// are valid and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteAggregationAuthorization">REST API Reference for DeleteAggregationAuthorization Operation</seealso>
         public virtual Task<DeleteAggregationAuthorizationResponse> DeleteAggregationAuthorizationAsync(DeleteAggregationAuthorizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -486,8 +495,9 @@ namespace Amazon.ConfigService
         /// 
         /// <returns>The response from the DeleteConfigRule service method, as returned by ConfigService.</returns>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigRuleException">
-        /// One or more Config rules in the request are invalid. Verify that the rule names are
-        /// correct and try again.
+        /// The Config rule in the request is not valid. Verify that the rule is an Config Process
+        /// Check rule, that the rule name is correct, and that valid Amazon Resouce Names (ARNs)
+        /// are used before trying again.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.ResourceInUseException">
         /// You see this exception in the following cases: 
@@ -509,12 +519,12 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For PutConfigOrganizationRule, organization config rule deletion is in progress. Try
+        /// For PutConfigOrganizationRule, organization Config rule deletion is in progress. Try
         /// your request again later.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For DeleteOrganizationConfigRule, organization config rule creation is in progress.
+        /// For DeleteOrganizationConfigRule, organization Config rule creation is in progress.
         /// Try your request again later.
         /// </para>
         ///  </li> <li> 
@@ -681,12 +691,12 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For PutConfigOrganizationRule, organization config rule deletion is in progress. Try
+        /// For PutConfigOrganizationRule, organization Config rule deletion is in progress. Try
         /// your request again later.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For DeleteOrganizationConfigRule, organization config rule creation is in progress.
+        /// For DeleteOrganizationConfigRule, organization Config rule creation is in progress.
         /// Try your request again later.
         /// </para>
         ///  </li> <li> 
@@ -817,8 +827,9 @@ namespace Amazon.ConfigService
         /// 
         /// <returns>The response from the DeleteEvaluationResults service method, as returned by ConfigService.</returns>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigRuleException">
-        /// One or more Config rules in the request are invalid. Verify that the rule names are
-        /// correct and try again.
+        /// The Config rule in the request is not valid. Verify that the rule is an Config Process
+        /// Check rule, that the rule name is correct, and that valid Amazon Resouce Names (ARNs)
+        /// are used before trying again.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.ResourceInUseException">
         /// You see this exception in the following cases: 
@@ -840,12 +851,12 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For PutConfigOrganizationRule, organization config rule deletion is in progress. Try
+        /// For PutConfigOrganizationRule, organization Config rule deletion is in progress. Try
         /// your request again later.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For DeleteOrganizationConfigRule, organization config rule creation is in progress.
+        /// For DeleteOrganizationConfigRule, organization Config rule creation is in progress.
         /// Try your request again later.
         /// </para>
         ///  </li> <li> 
@@ -886,13 +897,13 @@ namespace Amazon.ConfigService
 
 
         /// <summary>
-        /// Deletes the specified organization config rule and all of its evaluation results from
+        /// Deletes the specified organization Config rule and all of its evaluation results from
         /// all member accounts in that organization. 
         /// 
         ///  
         /// <para>
-        /// Only a master account and a delegated administrator account can delete an organization
-        /// config rule. When calling this API with a delegated administrator, you must ensure
+        /// Only a management account and a delegated administrator account can delete an organization
+        /// Config rule. When calling this API with a delegated administrator, you must ensure
         /// Organizations <code>ListDelegatedAdministrator</code> permissions are added.
         /// </para>
         ///  
@@ -908,7 +919,9 @@ namespace Amazon.ConfigService
         /// 
         /// <returns>The response from the DeleteOrganizationConfigRule service method, as returned by ConfigService.</returns>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchOrganizationConfigRuleException">
-        /// You specified one or more organization config rules that do not exist.
+        /// The Config rule in the request is not valid. Verify that the rule is an organization
+        /// Config Process Check rule, that the rule name is correct, and that valid Amazon Resouce
+        /// Names (ARNs) are used before trying again.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.OrganizationAccessDeniedException">
         /// For <code>PutConfigurationAggregator</code> API, you can see this exception for the
@@ -941,7 +954,7 @@ namespace Amazon.ConfigService
         /// <para>
         /// For all <code>OrganizationConfigRule</code> and <code>OrganizationConformancePack</code>
         /// APIs, Config throws an exception if APIs are called from member accounts. All APIs
-        /// must be called from organization master account.
+        /// must be called from organization management account.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.ResourceInUseException">
@@ -964,12 +977,12 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For PutConfigOrganizationRule, organization config rule deletion is in progress. Try
+        /// For PutConfigOrganizationRule, organization Config rule deletion is in progress. Try
         /// your request again later.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For DeleteOrganizationConfigRule, organization config rule creation is in progress.
+        /// For DeleteOrganizationConfigRule, organization Config rule creation is in progress.
         /// Try your request again later.
         /// </para>
         ///  </li> <li> 
@@ -1010,12 +1023,12 @@ namespace Amazon.ConfigService
 
 
         /// <summary>
-        /// Deletes the specified organization conformance pack and all of the config rules and
+        /// Deletes the specified organization conformance pack and all of the Config rules and
         /// remediation actions from all member accounts in that organization. 
         /// 
         ///  
         /// <para>
-        ///  Only a master account or a delegated administrator account can delete an organization
+        ///  Only a management account or a delegated administrator account can delete an organization
         /// conformance pack. When calling this API with a delegated administrator, you must ensure
         /// Organizations <code>ListDelegatedAdministrator</code> permissions are added.
         /// </para>
@@ -1071,7 +1084,7 @@ namespace Amazon.ConfigService
         /// <para>
         /// For all <code>OrganizationConfigRule</code> and <code>OrganizationConformancePack</code>
         /// APIs, Config throws an exception if APIs are called from member accounts. All APIs
-        /// must be called from organization master account.
+        /// must be called from organization management account.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.ResourceInUseException">
@@ -1094,12 +1107,12 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For PutConfigOrganizationRule, organization config rule deletion is in progress. Try
+        /// For PutConfigOrganizationRule, organization Config rule deletion is in progress. Try
         /// your request again later.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For DeleteOrganizationConfigRule, organization config rule creation is in progress.
+        /// For DeleteOrganizationConfigRule, organization Config rule creation is in progress.
         /// Try your request again later.
         /// </para>
         ///  </li> <li> 
@@ -1150,8 +1163,8 @@ namespace Amazon.ConfigService
         /// 
         /// <returns>The response from the DeletePendingAggregationRequest service method, as returned by ConfigService.</returns>
         /// <exception cref="Amazon.ConfigService.Model.InvalidParameterValueException">
-        /// One or more of the specified parameters are invalid. Verify that your parameters are
-        /// valid and try again.
+        /// One or more of the specified parameters are not valid. Verify that your parameters
+        /// are valid and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeletePendingAggregationRequest">REST API Reference for DeletePendingAggregationRequest Operation</seealso>
         public virtual Task<DeletePendingAggregationRequestResponse> DeletePendingAggregationRequestAsync(DeletePendingAggregationRequestRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1202,28 +1215,29 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For PutOrganizationConfigRule, organization config rule cannot be created because
-        /// you do not have permissions to call IAM <code>GetRole</code> action or create a service
-        /// linked role.
+        /// For PutOrganizationConfigRule, organization Config rule cannot be created because
+        /// you do not have permissions to call IAM <code>GetRole</code> action or create a service-linked
+        /// role.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// For PutConformancePack and PutOrganizationConformancePack, a conformance pack cannot
-        /// be created because you do not have permissions: 
+        /// be created because you do not have the following permissions: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// To call IAM <code>GetRole</code> action or create a service linked role.
+        /// You do not have permission to call IAM <code>GetRole</code> action or create a service-linked
+        /// role.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// To read Amazon S3 bucket.
+        /// You do not have permission to read Amazon S3 bucket or call SSM:GetDocument.
         /// </para>
         ///  </li> </ul> </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.InvalidParameterValueException">
-        /// One or more of the specified parameters are invalid. Verify that your parameters are
-        /// valid and try again.
+        /// One or more of the specified parameters are not valid. Verify that your parameters
+        /// are valid and try again.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchRemediationConfigurationException">
         /// You specified an Config rule without a remediation configuration.
@@ -1366,8 +1380,8 @@ namespace Amazon.ConfigService
         /// 
         /// <returns>The response from the DeleteRetentionConfiguration service method, as returned by ConfigService.</returns>
         /// <exception cref="Amazon.ConfigService.Model.InvalidParameterValueException">
-        /// One or more of the specified parameters are invalid. Verify that your parameters are
-        /// valid and try again.
+        /// One or more of the specified parameters are not valid. Verify that your parameters
+        /// are valid and try again.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchRetentionConfigurationException">
         /// You have specified a retention configuration that does not exist.
@@ -1576,7 +1590,7 @@ namespace Amazon.ConfigService
         /// The specified limit is outside the allowable range.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.InvalidNextTokenException">
-        /// The specified next token is invalid. Specify the <code>nextToken</code> string that
+        /// The specified next token is not valid. Specify the <code>nextToken</code> string that
         /// was returned in the previous response to get the next page of results.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigurationAggregatorException">
@@ -1645,7 +1659,7 @@ namespace Amazon.ConfigService
         /// The specified limit is outside the allowable range.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.InvalidNextTokenException">
-        /// The specified next token is invalid. Specify the <code>nextToken</code> string that
+        /// The specified next token is not valid. Specify the <code>nextToken</code> string that
         /// was returned in the previous response to get the next page of results.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigurationAggregatorException">
@@ -1704,12 +1718,12 @@ namespace Amazon.ConfigService
         /// The specified limit is outside the allowable range.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.InvalidNextTokenException">
-        /// The specified next token is invalid. Specify the <code>nextToken</code> string that
+        /// The specified next token is not valid. Specify the <code>nextToken</code> string that
         /// was returned in the previous response to get the next page of results.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.InvalidParameterValueException">
-        /// One or more of the specified parameters are invalid. Verify that your parameters are
-        /// valid and try again.
+        /// One or more of the specified parameters are not valid. Verify that your parameters
+        /// are valid and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeAggregationAuthorizations">REST API Reference for DescribeAggregationAuthorizations Operation</seealso>
         public virtual Task<DescribeAggregationAuthorizationsResponse> DescribeAggregationAuthorizationsAsync(DescribeAggregationAuthorizationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1778,16 +1792,17 @@ namespace Amazon.ConfigService
         /// 
         /// <returns>The response from the DescribeComplianceByConfigRule service method, as returned by ConfigService.</returns>
         /// <exception cref="Amazon.ConfigService.Model.InvalidNextTokenException">
-        /// The specified next token is invalid. Specify the <code>nextToken</code> string that
+        /// The specified next token is not valid. Specify the <code>nextToken</code> string that
         /// was returned in the previous response to get the next page of results.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.InvalidParameterValueException">
-        /// One or more of the specified parameters are invalid. Verify that your parameters are
-        /// valid and try again.
+        /// One or more of the specified parameters are not valid. Verify that your parameters
+        /// are valid and try again.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigRuleException">
-        /// One or more Config rules in the request are invalid. Verify that the rule names are
-        /// correct and try again.
+        /// The Config rule in the request is not valid. Verify that the rule is an Config Process
+        /// Check rule, that the rule name is correct, and that valid Amazon Resouce Names (ARNs)
+        /// are used before trying again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeComplianceByConfigRule">REST API Reference for DescribeComplianceByConfigRule Operation</seealso>
         public virtual Task<DescribeComplianceByConfigRuleResponse> DescribeComplianceByConfigRuleAsync(DescribeComplianceByConfigRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1857,12 +1872,12 @@ namespace Amazon.ConfigService
         /// 
         /// <returns>The response from the DescribeComplianceByResource service method, as returned by ConfigService.</returns>
         /// <exception cref="Amazon.ConfigService.Model.InvalidNextTokenException">
-        /// The specified next token is invalid. Specify the <code>nextToken</code> string that
+        /// The specified next token is not valid. Specify the <code>nextToken</code> string that
         /// was returned in the previous response to get the next page of results.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.InvalidParameterValueException">
-        /// One or more of the specified parameters are invalid. Verify that your parameters are
-        /// valid and try again.
+        /// One or more of the specified parameters are not valid. Verify that your parameters
+        /// are valid and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeComplianceByResource">REST API Reference for DescribeComplianceByResource Operation</seealso>
         public virtual Task<DescribeComplianceByResourceResponse> DescribeComplianceByResourceAsync(DescribeComplianceByResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1901,16 +1916,17 @@ namespace Amazon.ConfigService
         /// 
         /// <returns>The response from the DescribeConfigRuleEvaluationStatus service method, as returned by ConfigService.</returns>
         /// <exception cref="Amazon.ConfigService.Model.InvalidNextTokenException">
-        /// The specified next token is invalid. Specify the <code>nextToken</code> string that
+        /// The specified next token is not valid. Specify the <code>nextToken</code> string that
         /// was returned in the previous response to get the next page of results.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.InvalidParameterValueException">
-        /// One or more of the specified parameters are invalid. Verify that your parameters are
-        /// valid and try again.
+        /// One or more of the specified parameters are not valid. Verify that your parameters
+        /// are valid and try again.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigRuleException">
-        /// One or more Config rules in the request are invalid. Verify that the rule names are
-        /// correct and try again.
+        /// The Config rule in the request is not valid. Verify that the rule is an Config Process
+        /// Check rule, that the rule name is correct, and that valid Amazon Resouce Names (ARNs)
+        /// are used before trying again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigRuleEvaluationStatus">REST API Reference for DescribeConfigRuleEvaluationStatus Operation</seealso>
         public virtual Task<DescribeConfigRuleEvaluationStatusResponse> DescribeConfigRuleEvaluationStatusAsync(DescribeConfigRuleEvaluationStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1947,12 +1963,17 @@ namespace Amazon.ConfigService
         /// 
         /// <returns>The response from the DescribeConfigRules service method, as returned by ConfigService.</returns>
         /// <exception cref="Amazon.ConfigService.Model.InvalidNextTokenException">
-        /// The specified next token is invalid. Specify the <code>nextToken</code> string that
+        /// The specified next token is not valid. Specify the <code>nextToken</code> string that
         /// was returned in the previous response to get the next page of results.
         /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidParameterValueException">
+        /// One or more of the specified parameters are not valid. Verify that your parameters
+        /// are valid and try again.
+        /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigRuleException">
-        /// One or more Config rules in the request are invalid. Verify that the rule names are
-        /// correct and try again.
+        /// The Config rule in the request is not valid. Verify that the rule is an Config Process
+        /// Check rule, that the rule name is correct, and that valid Amazon Resouce Names (ARNs)
+        /// are used before trying again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigRules">REST API Reference for DescribeConfigRules Operation</seealso>
         public virtual Task<DescribeConfigRulesResponse> DescribeConfigRulesAsync(DescribeConfigRulesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1994,12 +2015,12 @@ namespace Amazon.ConfigService
         /// The specified limit is outside the allowable range.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.InvalidNextTokenException">
-        /// The specified next token is invalid. Specify the <code>nextToken</code> string that
+        /// The specified next token is not valid. Specify the <code>nextToken</code> string that
         /// was returned in the previous response to get the next page of results.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.InvalidParameterValueException">
-        /// One or more of the specified parameters are invalid. Verify that your parameters are
-        /// valid and try again.
+        /// One or more of the specified parameters are not valid. Verify that your parameters
+        /// are valid and try again.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigurationAggregatorException">
         /// You have specified a configuration aggregator that does not exist.
@@ -2045,12 +2066,12 @@ namespace Amazon.ConfigService
         /// The specified limit is outside the allowable range.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.InvalidNextTokenException">
-        /// The specified next token is invalid. Specify the <code>nextToken</code> string that
+        /// The specified next token is not valid. Specify the <code>nextToken</code> string that
         /// was returned in the previous response to get the next page of results.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.InvalidParameterValueException">
-        /// One or more of the specified parameters are invalid. Verify that your parameters are
-        /// valid and try again.
+        /// One or more of the specified parameters are not valid. Verify that your parameters
+        /// are valid and try again.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigurationAggregatorException">
         /// You have specified a configuration aggregator that does not exist.
@@ -2090,7 +2111,8 @@ namespace Amazon.ConfigService
         /// 
         ///  <note> 
         /// <para>
-        /// Currently, you can specify only one configuration recorder per region in your account.
+        /// You can specify only one configuration recorder for each Amazon Web Services Region
+        /// for each account.
         /// </para>
         ///  </note>
         /// </summary>
@@ -2117,7 +2139,8 @@ namespace Amazon.ConfigService
         /// 
         ///  <note> 
         /// <para>
-        /// Currently, you can specify only one configuration recorder per region in your account.
+        /// You can specify only one configuration recorder for each Amazon Web Services Region
+        /// for each account.
         /// </para>
         ///  </note>
         /// </summary>
@@ -2159,13 +2182,16 @@ namespace Amazon.ConfigService
 
 
         /// <summary>
-        /// Returns the current status of the specified configuration recorder. If a configuration
-        /// recorder is not specified, this action returns the status of all configuration recorders
-        /// associated with the account.
+        /// Returns the current status of the specified configuration recorder as well as the
+        /// status of the last recording event for the recorder. If a configuration recorder is
+        /// not specified, this action returns the status of all configuration recorders associated
+        /// with the account.
         /// 
         ///  <note> 
         /// <para>
-        /// Currently, you can specify only one configuration recorder per region in your account.
+        /// &gt;You can specify only one configuration recorder for each Amazon Web Services Region
+        /// for each account. For a detailed status of recording events over time, add your Config
+        /// events to Amazon CloudWatch metrics and use CloudWatch metrics.
         /// </para>
         ///  </note>
         /// </summary>
@@ -2186,13 +2212,16 @@ namespace Amazon.ConfigService
 
 
         /// <summary>
-        /// Returns the current status of the specified configuration recorder. If a configuration
-        /// recorder is not specified, this action returns the status of all configuration recorders
-        /// associated with the account.
+        /// Returns the current status of the specified configuration recorder as well as the
+        /// status of the last recording event for the recorder. If a configuration recorder is
+        /// not specified, this action returns the status of all configuration recorders associated
+        /// with the account.
         /// 
         ///  <note> 
         /// <para>
-        /// Currently, you can specify only one configuration recorder per region in your account.
+        /// &gt;You can specify only one configuration recorder for each Amazon Web Services Region
+        /// for each account. For a detailed status of recording events over time, add your Config
+        /// events to Amazon CloudWatch metrics and use CloudWatch metrics.
         /// </para>
         ///  </note>
         /// </summary>
@@ -2249,12 +2278,12 @@ namespace Amazon.ConfigService
         /// The specified limit is outside the allowable range.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.InvalidNextTokenException">
-        /// The specified next token is invalid. Specify the <code>nextToken</code> string that
+        /// The specified next token is not valid. Specify the <code>nextToken</code> string that
         /// was returned in the previous response to get the next page of results.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.InvalidParameterValueException">
-        /// One or more of the specified parameters are invalid. Verify that your parameters are
-        /// valid and try again.
+        /// One or more of the specified parameters are not valid. Verify that your parameters
+        /// are valid and try again.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigRuleInConformancePackException">
         /// Config rule that you passed in the filter does not exist.
@@ -2300,12 +2329,12 @@ namespace Amazon.ConfigService
         /// The specified limit is outside the allowable range.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.InvalidNextTokenException">
-        /// The specified next token is invalid. Specify the <code>nextToken</code> string that
+        /// The specified next token is not valid. Specify the <code>nextToken</code> string that
         /// was returned in the previous response to get the next page of results.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.InvalidParameterValueException">
-        /// One or more of the specified parameters are invalid. Verify that your parameters are
-        /// valid and try again.
+        /// One or more of the specified parameters are not valid. Verify that your parameters
+        /// are valid and try again.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchConformancePackException">
         /// You specified one or more conformance packs that do not exist.
@@ -2354,12 +2383,12 @@ namespace Amazon.ConfigService
         /// The specified limit is outside the allowable range.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.InvalidNextTokenException">
-        /// The specified next token is invalid. Specify the <code>nextToken</code> string that
+        /// The specified next token is not valid. Specify the <code>nextToken</code> string that
         /// was returned in the previous response to get the next page of results.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.InvalidParameterValueException">
-        /// One or more of the specified parameters are invalid. Verify that your parameters are
-        /// valid and try again.
+        /// One or more of the specified parameters are not valid. Verify that your parameters
+        /// are valid and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConformancePackStatus">REST API Reference for DescribeConformancePackStatus Operation</seealso>
         public virtual Task<DescribeConformancePackStatusResponse> DescribeConformancePackStatusAsync(DescribeConformancePackStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2537,13 +2566,32 @@ namespace Amazon.ConfigService
 
 
         /// <summary>
-        /// Returns a list of organization config rules. 
+        /// Returns a list of organization Config rules. 
         /// 
         ///  <note> 
         /// <para>
-        /// When you specify the limit and the next token, you receive a paginated response. Limit
-        /// and next token are not applicable if you specify organization config rule names. It
-        /// is only applicable, when you request all the organization config rules.
+        /// When you specify the limit and the next token, you receive a paginated response.
+        /// </para>
+        ///  
+        /// <para>
+        /// Limit and next token are not applicable if you specify organization Config rule names.
+        /// It is only applicable, when you request all the organization Config rules.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <i>For accounts within an organzation</i> 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you deploy an organizational rule or conformance pack in an organization administrator
+        /// account, and then establish a delegated administrator and deploy an organizational
+        /// rule or conformance pack in the delegated administrator account, you won't be able
+        /// to see the organizational rule or conformance pack in the organization administrator
+        /// account from the delegated administrator account or see the organizational rule or
+        /// conformance pack in the delegated administrator account from organization administrator
+        /// account. The <code>DescribeOrganizationConfigRules</code> and <code>DescribeOrganizationConformancePacks</code>
+        /// APIs can only see and interact with the organization-related resource that were deployed
+        /// from within the account calling those APIs.
         /// </para>
         ///  </note>
         /// </summary>
@@ -2557,11 +2605,13 @@ namespace Amazon.ConfigService
         /// The specified limit is outside the allowable range.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.InvalidNextTokenException">
-        /// The specified next token is invalid. Specify the <code>nextToken</code> string that
+        /// The specified next token is not valid. Specify the <code>nextToken</code> string that
         /// was returned in the previous response to get the next page of results.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchOrganizationConfigRuleException">
-        /// You specified one or more organization config rules that do not exist.
+        /// The Config rule in the request is not valid. Verify that the rule is an organization
+        /// Config Process Check rule, that the rule name is correct, and that valid Amazon Resouce
+        /// Names (ARNs) are used before trying again.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.OrganizationAccessDeniedException">
         /// For <code>PutConfigurationAggregator</code> API, you can see this exception for the
@@ -2594,7 +2644,7 @@ namespace Amazon.ConfigService
         /// <para>
         /// For all <code>OrganizationConfigRule</code> and <code>OrganizationConformancePack</code>
         /// APIs, Config throws an exception if APIs are called from member accounts. All APIs
-        /// must be called from organization master account.
+        /// must be called from organization management account.
         /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeOrganizationConfigRules">REST API Reference for DescribeOrganizationConfigRules Operation</seealso>
@@ -2623,18 +2673,18 @@ namespace Amazon.ConfigService
 
 
         /// <summary>
-        /// Provides organization config rule deployment status for an organization.
+        /// Provides organization Config rule deployment status for an organization.
         /// 
         ///  <note> 
         /// <para>
-        /// The status is not considered successful until organization config rule is successfully
+        /// The status is not considered successful until organization Config rule is successfully
         /// deployed in all the member accounts with an exception of excluded accounts.
         /// </para>
         ///  
         /// <para>
         /// When you specify the limit and the next token, you receive a paginated response. Limit
-        /// and next token are not applicable if you specify organization config rule names. It
-        /// is only applicable, when you request all the organization config rules.
+        /// and next token are not applicable if you specify organization Config rule names. It
+        /// is only applicable, when you request all the organization Config rules.
         /// </para>
         ///  </note>
         /// </summary>
@@ -2648,11 +2698,13 @@ namespace Amazon.ConfigService
         /// The specified limit is outside the allowable range.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.InvalidNextTokenException">
-        /// The specified next token is invalid. Specify the <code>nextToken</code> string that
+        /// The specified next token is not valid. Specify the <code>nextToken</code> string that
         /// was returned in the previous response to get the next page of results.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchOrganizationConfigRuleException">
-        /// You specified one or more organization config rules that do not exist.
+        /// The Config rule in the request is not valid. Verify that the rule is an organization
+        /// Config Process Check rule, that the rule name is correct, and that valid Amazon Resouce
+        /// Names (ARNs) are used before trying again.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.OrganizationAccessDeniedException">
         /// For <code>PutConfigurationAggregator</code> API, you can see this exception for the
@@ -2685,7 +2737,7 @@ namespace Amazon.ConfigService
         /// <para>
         /// For all <code>OrganizationConfigRule</code> and <code>OrganizationConformancePack</code>
         /// APIs, Config throws an exception if APIs are called from member accounts. All APIs
-        /// must be called from organization master account.
+        /// must be called from organization management account.
         /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeOrganizationConfigRuleStatuses">REST API Reference for DescribeOrganizationConfigRuleStatuses Operation</seealso>
@@ -2726,6 +2778,22 @@ namespace Amazon.ConfigService
         /// names. They are only applicable, when you request all the organization conformance
         /// packs. 
         /// </para>
+        ///  
+        /// <para>
+        ///  <i>For accounts within an organzation</i> 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you deploy an organizational rule or conformance pack in an organization administrator
+        /// account, and then establish a delegated administrator and deploy an organizational
+        /// rule or conformance pack in the delegated administrator account, you won't be able
+        /// to see the organizational rule or conformance pack in the organization administrator
+        /// account from the delegated administrator account or see the organizational rule or
+        /// conformance pack in the delegated administrator account from organization administrator
+        /// account. The <code>DescribeOrganizationConfigRules</code> and <code>DescribeOrganizationConformancePacks</code>
+        /// APIs can only see and interact with the organization-related resource that were deployed
+        /// from within the account calling those APIs.
+        /// </para>
         ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeOrganizationConformancePacks service method.</param>
@@ -2738,7 +2806,7 @@ namespace Amazon.ConfigService
         /// The specified limit is outside the allowable range.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.InvalidNextTokenException">
-        /// The specified next token is invalid. Specify the <code>nextToken</code> string that
+        /// The specified next token is not valid. Specify the <code>nextToken</code> string that
         /// was returned in the previous response to get the next page of results.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchOrganizationConformancePackException">
@@ -2781,7 +2849,7 @@ namespace Amazon.ConfigService
         /// <para>
         /// For all <code>OrganizationConfigRule</code> and <code>OrganizationConformancePack</code>
         /// APIs, Config throws an exception if APIs are called from member accounts. All APIs
-        /// must be called from organization master account.
+        /// must be called from organization management account.
         /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeOrganizationConformancePacks">REST API Reference for DescribeOrganizationConformancePacks Operation</seealso>
@@ -2835,7 +2903,7 @@ namespace Amazon.ConfigService
         /// The specified limit is outside the allowable range.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.InvalidNextTokenException">
-        /// The specified next token is invalid. Specify the <code>nextToken</code> string that
+        /// The specified next token is not valid. Specify the <code>nextToken</code> string that
         /// was returned in the previous response to get the next page of results.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchOrganizationConformancePackException">
@@ -2878,7 +2946,7 @@ namespace Amazon.ConfigService
         /// <para>
         /// For all <code>OrganizationConfigRule</code> and <code>OrganizationConformancePack</code>
         /// APIs, Config throws an exception if APIs are called from member accounts. All APIs
-        /// must be called from organization master account.
+        /// must be called from organization management account.
         /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeOrganizationConformancePackStatuses">REST API Reference for DescribeOrganizationConformancePackStatuses Operation</seealso>
@@ -2919,12 +2987,12 @@ namespace Amazon.ConfigService
         /// The specified limit is outside the allowable range.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.InvalidNextTokenException">
-        /// The specified next token is invalid. Specify the <code>nextToken</code> string that
+        /// The specified next token is not valid. Specify the <code>nextToken</code> string that
         /// was returned in the previous response to get the next page of results.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.InvalidParameterValueException">
-        /// One or more of the specified parameters are invalid. Verify that your parameters are
-        /// valid and try again.
+        /// One or more of the specified parameters are not valid. Verify that your parameters
+        /// are valid and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribePendingAggregationRequests">REST API Reference for DescribePendingAggregationRequests Operation</seealso>
         public virtual Task<DescribePendingAggregationRequestsResponse> DescribePendingAggregationRequestsAsync(DescribePendingAggregationRequestsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3015,12 +3083,12 @@ namespace Amazon.ConfigService
         /// 
         /// <returns>The response from the DescribeRemediationExceptions service method, as returned by ConfigService.</returns>
         /// <exception cref="Amazon.ConfigService.Model.InvalidNextTokenException">
-        /// The specified next token is invalid. Specify the <code>nextToken</code> string that
+        /// The specified next token is not valid. Specify the <code>nextToken</code> string that
         /// was returned in the previous response to get the next page of results.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.InvalidParameterValueException">
-        /// One or more of the specified parameters are invalid. Verify that your parameters are
-        /// valid and try again.
+        /// One or more of the specified parameters are not valid. Verify that your parameters
+        /// are valid and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeRemediationExceptions">REST API Reference for DescribeRemediationExceptions Operation</seealso>
         public virtual Task<DescribeRemediationExceptionsResponse> DescribeRemediationExceptionsAsync(DescribeRemediationExceptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3060,12 +3128,12 @@ namespace Amazon.ConfigService
         /// 
         /// <returns>The response from the DescribeRemediationExecutionStatus service method, as returned by ConfigService.</returns>
         /// <exception cref="Amazon.ConfigService.Model.InvalidNextTokenException">
-        /// The specified next token is invalid. Specify the <code>nextToken</code> string that
+        /// The specified next token is not valid. Specify the <code>nextToken</code> string that
         /// was returned in the previous response to get the next page of results.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.InvalidParameterValueException">
-        /// One or more of the specified parameters are invalid. Verify that your parameters are
-        /// valid and try again.
+        /// One or more of the specified parameters are not valid. Verify that your parameters
+        /// are valid and try again.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchRemediationConfigurationException">
         /// You specified an Config rule without a remediation configuration.
@@ -3113,12 +3181,12 @@ namespace Amazon.ConfigService
         /// 
         /// <returns>The response from the DescribeRetentionConfigurations service method, as returned by ConfigService.</returns>
         /// <exception cref="Amazon.ConfigService.Model.InvalidNextTokenException">
-        /// The specified next token is invalid. Specify the <code>nextToken</code> string that
+        /// The specified next token is not valid. Specify the <code>nextToken</code> string that
         /// was returned in the previous response to get the next page of results.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.InvalidParameterValueException">
-        /// One or more of the specified parameters are invalid. Verify that your parameters are
-        /// valid and try again.
+        /// One or more of the specified parameters are not valid. Verify that your parameters
+        /// are valid and try again.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchRetentionConfigurationException">
         /// You have specified a retention configuration that does not exist.
@@ -3171,7 +3239,7 @@ namespace Amazon.ConfigService
         /// The specified limit is outside the allowable range.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.InvalidNextTokenException">
-        /// The specified next token is invalid. Specify the <code>nextToken</code> string that
+        /// The specified next token is not valid. Specify the <code>nextToken</code> string that
         /// was returned in the previous response to get the next page of results.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigurationAggregatorException">
@@ -3238,7 +3306,7 @@ namespace Amazon.ConfigService
         /// The specified limit is outside the allowable range.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.InvalidNextTokenException">
-        /// The specified next token is invalid. Specify the <code>nextToken</code> string that
+        /// The specified next token is not valid. Specify the <code>nextToken</code> string that
         /// was returned in the previous response to get the next page of results.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigurationAggregatorException">
@@ -3306,7 +3374,7 @@ namespace Amazon.ConfigService
         /// The specified limit is outside the allowable range.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.InvalidNextTokenException">
-        /// The specified next token is invalid. Specify the <code>nextToken</code> string that
+        /// The specified next token is not valid. Specify the <code>nextToken</code> string that
         /// was returned in the previous response to get the next page of results.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigurationAggregatorException">
@@ -3374,7 +3442,7 @@ namespace Amazon.ConfigService
         /// The specified limit is outside the allowable range.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.InvalidNextTokenException">
-        /// The specified next token is invalid. Specify the <code>nextToken</code> string that
+        /// The specified next token is not valid. Specify the <code>nextToken</code> string that
         /// was returned in the previous response to get the next page of results.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigurationAggregatorException">
@@ -3491,16 +3559,17 @@ namespace Amazon.ConfigService
         /// 
         /// <returns>The response from the GetComplianceDetailsByConfigRule service method, as returned by ConfigService.</returns>
         /// <exception cref="Amazon.ConfigService.Model.InvalidNextTokenException">
-        /// The specified next token is invalid. Specify the <code>nextToken</code> string that
+        /// The specified next token is not valid. Specify the <code>nextToken</code> string that
         /// was returned in the previous response to get the next page of results.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.InvalidParameterValueException">
-        /// One or more of the specified parameters are invalid. Verify that your parameters are
-        /// valid and try again.
+        /// One or more of the specified parameters are not valid. Verify that your parameters
+        /// are valid and try again.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigRuleException">
-        /// One or more Config rules in the request are invalid. Verify that the rule names are
-        /// correct and try again.
+        /// The Config rule in the request is not valid. Verify that the rule is an Config Process
+        /// Check rule, that the rule name is correct, and that valid Amazon Resouce Names (ARNs)
+        /// are used before trying again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetComplianceDetailsByConfigRule">REST API Reference for GetComplianceDetailsByConfigRule Operation</seealso>
         public virtual Task<GetComplianceDetailsByConfigRuleResponse> GetComplianceDetailsByConfigRuleAsync(GetComplianceDetailsByConfigRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3530,7 +3599,7 @@ namespace Amazon.ConfigService
         /// <summary>
         /// Returns the evaluation results for the specified Amazon Web Services resource. The
         /// results indicate which Config rules were used to evaluate the resource, when each
-        /// rule was last used, and whether the resource complies with each rule.
+        /// rule was last invoked, and whether the resource complies with each rule.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetComplianceDetailsByResource service method.</param>
         /// <param name="cancellationToken">
@@ -3539,8 +3608,8 @@ namespace Amazon.ConfigService
         /// 
         /// <returns>The response from the GetComplianceDetailsByResource service method, as returned by ConfigService.</returns>
         /// <exception cref="Amazon.ConfigService.Model.InvalidParameterValueException">
-        /// One or more of the specified parameters are invalid. Verify that your parameters are
-        /// valid and try again.
+        /// One or more of the specified parameters are not valid. Verify that your parameters
+        /// are valid and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetComplianceDetailsByResource">REST API Reference for GetComplianceDetailsByResource Operation</seealso>
         public virtual Task<GetComplianceDetailsByResourceResponse> GetComplianceDetailsByResourceAsync(GetComplianceDetailsByResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3614,8 +3683,8 @@ namespace Amazon.ConfigService
         /// 
         /// <returns>The response from the GetComplianceSummaryByResourceType service method, as returned by ConfigService.</returns>
         /// <exception cref="Amazon.ConfigService.Model.InvalidParameterValueException">
-        /// One or more of the specified parameters are invalid. Verify that your parameters are
-        /// valid and try again.
+        /// One or more of the specified parameters are not valid. Verify that your parameters
+        /// are valid and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetComplianceSummaryByResourceType">REST API Reference for GetComplianceSummaryByResourceType Operation</seealso>
         public virtual Task<GetComplianceSummaryByResourceTypeResponse> GetComplianceSummaryByResourceTypeAsync(GetComplianceSummaryByResourceTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3656,12 +3725,12 @@ namespace Amazon.ConfigService
         /// The specified limit is outside the allowable range.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.InvalidNextTokenException">
-        /// The specified next token is invalid. Specify the <code>nextToken</code> string that
+        /// The specified next token is not valid. Specify the <code>nextToken</code> string that
         /// was returned in the previous response to get the next page of results.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.InvalidParameterValueException">
-        /// One or more of the specified parameters are invalid. Verify that your parameters are
-        /// valid and try again.
+        /// One or more of the specified parameters are not valid. Verify that your parameters
+        /// are valid and try again.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigRuleInConformancePackException">
         /// Config rule that you passed in the filter does not exist.
@@ -3708,7 +3777,7 @@ namespace Amazon.ConfigService
         /// The specified limit is outside the allowable range.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.InvalidNextTokenException">
-        /// The specified next token is invalid. Specify the <code>nextToken</code> string that
+        /// The specified next token is not valid. Specify the <code>nextToken</code> string that
         /// was returned in the previous response to get the next page of results.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchConformancePackException">
@@ -3722,6 +3791,45 @@ namespace Amazon.ConfigService
             options.ResponseUnmarshaller = GetConformancePackComplianceSummaryResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetConformancePackComplianceSummaryResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetCustomRulePolicy
+
+        internal virtual GetCustomRulePolicyResponse GetCustomRulePolicy(GetCustomRulePolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCustomRulePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCustomRulePolicyResponseUnmarshaller.Instance;
+
+            return Invoke<GetCustomRulePolicyResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns the policy definition containing the logic for your Config Custom Policy rule.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCustomRulePolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetCustomRulePolicy service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigRuleException">
+        /// The Config rule in the request is not valid. Verify that the rule is an Config Process
+        /// Check rule, that the rule name is correct, and that valid Amazon Resouce Names (ARNs)
+        /// are used before trying again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetCustomRulePolicy">REST API Reference for GetCustomRulePolicy Operation</seealso>
+        public virtual Task<GetCustomRulePolicyResponse> GetCustomRulePolicyAsync(GetCustomRulePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCustomRulePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCustomRulePolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetCustomRulePolicyResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3809,7 +3917,7 @@ namespace Amazon.ConfigService
         /// The specified limit is outside the allowable range.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.InvalidNextTokenException">
-        /// The specified next token is invalid. Specify the <code>nextToken</code> string that
+        /// The specified next token is not valid. Specify the <code>nextToken</code> string that
         /// was returned in the previous response to get the next page of results.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.ValidationException">
@@ -3854,7 +3962,7 @@ namespace Amazon.ConfigService
 
         /// <summary>
         /// Returns detailed status for each member account within an organization for a given
-        /// organization config rule.
+        /// organization Config rule.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetOrganizationConfigRuleDetailedStatus service method.</param>
         /// <param name="cancellationToken">
@@ -3866,11 +3974,13 @@ namespace Amazon.ConfigService
         /// The specified limit is outside the allowable range.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.InvalidNextTokenException">
-        /// The specified next token is invalid. Specify the <code>nextToken</code> string that
+        /// The specified next token is not valid. Specify the <code>nextToken</code> string that
         /// was returned in the previous response to get the next page of results.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchOrganizationConfigRuleException">
-        /// You specified one or more organization config rules that do not exist.
+        /// The Config rule in the request is not valid. Verify that the rule is an organization
+        /// Config Process Check rule, that the rule name is correct, and that valid Amazon Resouce
+        /// Names (ARNs) are used before trying again.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.OrganizationAccessDeniedException">
         /// For <code>PutConfigurationAggregator</code> API, you can see this exception for the
@@ -3903,7 +4013,7 @@ namespace Amazon.ConfigService
         /// <para>
         /// For all <code>OrganizationConfigRule</code> and <code>OrganizationConformancePack</code>
         /// APIs, Config throws an exception if APIs are called from member accounts. All APIs
-        /// must be called from organization master account.
+        /// must be called from organization management account.
         /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetOrganizationConfigRuleDetailedStatus">REST API Reference for GetOrganizationConfigRuleDetailedStatus Operation</seealso>
@@ -3945,7 +4055,7 @@ namespace Amazon.ConfigService
         /// The specified limit is outside the allowable range.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.InvalidNextTokenException">
-        /// The specified next token is invalid. Specify the <code>nextToken</code> string that
+        /// The specified next token is not valid. Specify the <code>nextToken</code> string that
         /// was returned in the previous response to get the next page of results.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchOrganizationConformancePackException">
@@ -3988,7 +4098,7 @@ namespace Amazon.ConfigService
         /// <para>
         /// For all <code>OrganizationConfigRule</code> and <code>OrganizationConformancePack</code>
         /// APIs, Config throws an exception if APIs are called from member accounts. All APIs
-        /// must be called from organization master account.
+        /// must be called from organization management account.
         /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetOrganizationConformancePackDetailedStatus">REST API Reference for GetOrganizationConformancePackDetailedStatus Operation</seealso>
@@ -3999,6 +4109,80 @@ namespace Amazon.ConfigService
             options.ResponseUnmarshaller = GetOrganizationConformancePackDetailedStatusResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetOrganizationConformancePackDetailedStatusResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetOrganizationCustomRulePolicy
+
+        internal virtual GetOrganizationCustomRulePolicyResponse GetOrganizationCustomRulePolicy(GetOrganizationCustomRulePolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetOrganizationCustomRulePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetOrganizationCustomRulePolicyResponseUnmarshaller.Instance;
+
+            return Invoke<GetOrganizationCustomRulePolicyResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns the policy definition containing the logic for your organization Config Custom
+        /// Policy rule.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetOrganizationCustomRulePolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetOrganizationCustomRulePolicy service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.NoSuchOrganizationConfigRuleException">
+        /// The Config rule in the request is not valid. Verify that the rule is an organization
+        /// Config Process Check rule, that the rule name is correct, and that valid Amazon Resouce
+        /// Names (ARNs) are used before trying again.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.OrganizationAccessDeniedException">
+        /// For <code>PutConfigurationAggregator</code> API, you can see this exception for the
+        /// following reasons:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// No permission to call <code>EnableAWSServiceAccess</code> API
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The configuration aggregator cannot be updated because your Amazon Web Services Organization
+        /// management account or the delegated administrator role changed. Delete this aggregator
+        /// and create a new one with the current Amazon Web Services Organization.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The configuration aggregator is associated with a previous Amazon Web Services Organization
+        /// and Config cannot aggregate data with current Amazon Web Services Organization. Delete
+        /// this aggregator and create a new one with the current Amazon Web Services Organization.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You are not a registered delegated administrator for Config with permissions to call
+        /// <code>ListDelegatedAdministrators</code> API. Ensure that the management account registers
+        /// delagated administrator for Config service principle name before the delegated administrator
+        /// creates an aggregator.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For all <code>OrganizationConfigRule</code> and <code>OrganizationConformancePack</code>
+        /// APIs, Config throws an exception if APIs are called from member accounts. All APIs
+        /// must be called from organization management account.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetOrganizationCustomRulePolicy">REST API Reference for GetOrganizationCustomRulePolicy Operation</seealso>
+        public virtual Task<GetOrganizationCustomRulePolicyResponse> GetOrganizationCustomRulePolicyAsync(GetOrganizationCustomRulePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetOrganizationCustomRulePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetOrganizationCustomRulePolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetOrganizationCustomRulePolicyResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4048,7 +4232,7 @@ namespace Amazon.ConfigService
         /// The specified limit is outside the allowable range.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.InvalidNextTokenException">
-        /// The specified next token is invalid. Specify the <code>nextToken</code> string that
+        /// The specified next token is not valid. Specify the <code>nextToken</code> string that
         /// was returned in the previous response to get the next page of results.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.InvalidTimeRangeException">
@@ -4085,6 +4269,56 @@ namespace Amazon.ConfigService
             options.ResponseUnmarshaller = GetResourceConfigHistoryResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetResourceConfigHistoryResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetResourceEvaluationSummary
+
+        internal virtual GetResourceEvaluationSummaryResponse GetResourceEvaluationSummary(GetResourceEvaluationSummaryRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetResourceEvaluationSummaryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResourceEvaluationSummaryResponseUnmarshaller.Instance;
+
+            return Invoke<GetResourceEvaluationSummaryResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns a summary of resource evaluation for the specified resource evaluation ID
+        /// from the proactive rules that were run. The results indicate which evaluation context
+        /// was used to evaluate the rules, which resource details were evaluated, the evaluation
+        /// mode that was run, and whether the resource details comply with the configuration
+        /// of the proactive rules. 
+        /// 
+        ///  <note> 
+        /// <para>
+        /// To see additional information about the evaluation result, such as which rule flagged
+        /// a resource as NON_COMPLIANT, use the <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_GetComplianceDetailsByResource.html">GetComplianceDetailsByResource</a>
+        /// API. For more information, see the <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_GetResourceEvaluationSummary.html#API_GetResourceEvaluationSummary_Examples">Examples</a>
+        /// section.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetResourceEvaluationSummary service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetResourceEvaluationSummary service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.ResourceNotFoundException">
+        /// You have specified a resource that does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetResourceEvaluationSummary">REST API Reference for GetResourceEvaluationSummary Operation</seealso>
+        public virtual Task<GetResourceEvaluationSummaryResponse> GetResourceEvaluationSummaryAsync(GetResourceEvaluationSummaryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetResourceEvaluationSummaryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResourceEvaluationSummaryResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetResourceEvaluationSummaryResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4178,7 +4412,7 @@ namespace Amazon.ConfigService
         /// The specified limit is outside the allowable range.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.InvalidNextTokenException">
-        /// The specified next token is invalid. Specify the <code>nextToken</code> string that
+        /// The specified next token is not valid. Specify the <code>nextToken</code> string that
         /// was returned in the previous response to get the next page of results.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigurationAggregatorException">
@@ -4207,6 +4441,62 @@ namespace Amazon.ConfigService
             options.ResponseUnmarshaller = ListAggregateDiscoveredResourcesResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListAggregateDiscoveredResourcesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListConformancePackComplianceScores
+
+        internal virtual ListConformancePackComplianceScoresResponse ListConformancePackComplianceScores(ListConformancePackComplianceScoresRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListConformancePackComplianceScoresRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListConformancePackComplianceScoresResponseUnmarshaller.Instance;
+
+            return Invoke<ListConformancePackComplianceScoresResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns a list of conformance pack compliance scores. A compliance score is the percentage
+        /// of the number of compliant rule-resource combinations in a conformance pack compared
+        /// to the number of total possible rule-resource combinations in the conformance pack.
+        /// This metric provides you with a high-level view of the compliance state of your conformance
+        /// packs. You can use it to identify, investigate, and understand the level of compliance
+        /// in your conformance packs.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Conformance packs with no evaluation results will have a compliance score of <code>INSUFFICIENT_DATA</code>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListConformancePackComplianceScores service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListConformancePackComplianceScores service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidLimitException">
+        /// The specified limit is outside the allowable range.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidNextTokenException">
+        /// The specified next token is not valid. Specify the <code>nextToken</code> string that
+        /// was returned in the previous response to get the next page of results.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidParameterValueException">
+        /// One or more of the specified parameters are not valid. Verify that your parameters
+        /// are valid and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ListConformancePackComplianceScores">REST API Reference for ListConformancePackComplianceScores Operation</seealso>
+        public virtual Task<ListConformancePackComplianceScoresResponse> ListConformancePackComplianceScoresAsync(ListConformancePackComplianceScoresRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListConformancePackComplianceScoresRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListConformancePackComplianceScoresResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListConformancePackComplianceScoresResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4254,7 +4544,7 @@ namespace Amazon.ConfigService
         /// The specified limit is outside the allowable range.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.InvalidNextTokenException">
-        /// The specified next token is invalid. Specify the <code>nextToken</code> string that
+        /// The specified next token is not valid. Specify the <code>nextToken</code> string that
         /// was returned in the previous response to get the next page of results.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoAvailableConfigurationRecorderException">
@@ -4288,6 +4578,52 @@ namespace Amazon.ConfigService
 
         #endregion
         
+        #region  ListResourceEvaluations
+
+        internal virtual ListResourceEvaluationsResponse ListResourceEvaluations(ListResourceEvaluationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListResourceEvaluationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResourceEvaluationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListResourceEvaluationsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns a list of proactive resource evaluations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListResourceEvaluations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListResourceEvaluations service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidNextTokenException">
+        /// The specified next token is not valid. Specify the <code>nextToken</code> string that
+        /// was returned in the previous response to get the next page of results.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidParameterValueException">
+        /// One or more of the specified parameters are not valid. Verify that your parameters
+        /// are valid and try again.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidTimeRangeException">
+        /// The specified time range is not valid. The earlier time is not chronologically before
+        /// the later time.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ListResourceEvaluations">REST API Reference for ListResourceEvaluations Operation</seealso>
+        public virtual Task<ListResourceEvaluationsResponse> ListResourceEvaluationsAsync(ListResourceEvaluationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListResourceEvaluationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResourceEvaluationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListResourceEvaluationsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListStoredQueries
 
         internal virtual ListStoredQueriesResponse ListStoredQueries(ListStoredQueriesRequest request)
@@ -4312,7 +4648,7 @@ namespace Amazon.ConfigService
         /// 
         /// <returns>The response from the ListStoredQueries service method, as returned by ConfigService.</returns>
         /// <exception cref="Amazon.ConfigService.Model.InvalidNextTokenException">
-        /// The specified next token is invalid. Specify the <code>nextToken</code> string that
+        /// The specified next token is not valid. Specify the <code>nextToken</code> string that
         /// was returned in the previous response to get the next page of results.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.ValidationException">
@@ -4368,7 +4704,7 @@ namespace Amazon.ConfigService
         /// The specified limit is outside the allowable range.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.InvalidNextTokenException">
-        /// The specified next token is invalid. Specify the <code>nextToken</code> string that
+        /// The specified next token is not valid. Specify the <code>nextToken</code> string that
         /// was returned in the previous response to get the next page of results.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.ResourceNotFoundException">
@@ -4416,7 +4752,17 @@ namespace Amazon.ConfigService
 
         /// <summary>
         /// Authorizes the aggregator account and region to collect data from the source account
-        /// and region.
+        /// and region. 
+        /// 
+        ///  <note> 
+        /// <para>
+        ///  <code>PutAggregationAuthorization</code> is an idempotent API. Subsequent requests
+        /// won’t create a duplicate resource if one was already created. If a following request
+        /// has different <code>tags</code> values, Config will ignore these differences and treat
+        /// it as an idempotent request of the previous. In this case, <code>tags</code> will
+        /// not be updated, even if they are different.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutAggregationAuthorization service method.</param>
         /// <param name="cancellationToken">
@@ -4425,8 +4771,8 @@ namespace Amazon.ConfigService
         /// 
         /// <returns>The response from the PutAggregationAuthorization service method, as returned by ConfigService.</returns>
         /// <exception cref="Amazon.ConfigService.Model.InvalidParameterValueException">
-        /// One or more of the specified parameters are invalid. Verify that your parameters are
-        /// valid and try again.
+        /// One or more of the specified parameters are not valid. Verify that your parameters
+        /// are valid and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutAggregationAuthorization">REST API Reference for PutAggregationAuthorization Operation</seealso>
         public virtual Task<PutAggregationAuthorizationResponse> PutAggregationAuthorizationAsync(PutAggregationAuthorizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -4454,35 +4800,47 @@ namespace Amazon.ConfigService
 
 
         /// <summary>
-        /// Adds or updates an Config rule for evaluating whether your Amazon Web Services resources
-        /// comply with your desired configurations.
+        /// Adds or updates an Config rule to evaluate if your Amazon Web Services resources comply
+        /// with your desired configurations. For information on how many Config rules you can
+        /// have per account, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html">
+        /// <b>Service Limits</b> </a> in the <i>Config Developer Guide</i>.
         /// 
         ///  
         /// <para>
-        /// You can use this action for custom Config rules and Config managed rules. A custom
-        /// Config rule is a rule that you develop and maintain. An Config managed rule is a customizable,
-        /// predefined rule that Config provides.
+        /// There are two types of rules: <i>Config Managed Rules</i> and <i>Config Custom Rules</i>.
+        /// You can use <code>PutConfigRule</code> to create both Config Managed Rules and Config
+        /// Custom Rules.
         /// </para>
         ///  
         /// <para>
-        /// If you are adding a new custom Config rule, you must first create the Lambda function
-        /// that the rule invokes to evaluate your resources. When you use the <code>PutConfigRule</code>
-        /// action to add the rule to Config, you must specify the Amazon Resource Name (ARN)
-        /// that Lambda assigns to the function. Specify the ARN for the <code>SourceIdentifier</code>
+        /// Config Managed Rules are predefined, customizable rules created by Config. For a list
+        /// of managed rules, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/managed-rules-by-aws-config.html">List
+        /// of Config Managed Rules</a>. If you are adding an Config managed rule, you must specify
+        /// the rule's identifier for the <code>SourceIdentifier</code> key.
+        /// </para>
+        ///  
+        /// <para>
+        /// Config Custom Rules are rules that you create from scratch. There are two ways to
+        /// create Config custom rules: with Lambda functions (<a href="https://docs.aws.amazon.com/config/latest/developerguide/gettingstarted-concepts.html#gettingstarted-concepts-function">
+        /// Lambda Developer Guide</a>) and with Guard (<a href="https://github.com/aws-cloudformation/cloudformation-guard">Guard
+        /// GitHub Repository</a>), a policy-as-code language. Config custom rules created with
+        /// Lambda are called <i>Config Custom Lambda Rules</i> and Config custom rules created
+        /// with Guard are called <i>Config Custom Policy Rules</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you are adding a new Config Custom Lambda rule, you first need to create an Lambda
+        /// function that the rule invokes to evaluate your resources. When you use <code>PutConfigRule</code>
+        /// to add a Custom Lambda rule to Config, you must specify the Amazon Resource Name (ARN)
+        /// that Lambda assigns to the function. You specify the ARN in the <code>SourceIdentifier</code>
         /// key. This key is part of the <code>Source</code> object, which is part of the <code>ConfigRule</code>
         /// object. 
         /// </para>
         ///  
         /// <para>
-        /// If you are adding an Config managed rule, specify the rule's identifier for the <code>SourceIdentifier</code>
-        /// key. To reference Config managed rule identifiers, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">About
-        /// Config managed rules</a>.
-        /// </para>
-        ///  
-        /// <para>
-        /// For any new rule that you add, specify the <code>ConfigRuleName</code> in the <code>ConfigRule</code>
-        /// object. Do not specify the <code>ConfigRuleArn</code> or the <code>ConfigRuleId</code>.
-        /// These values are generated by Config for new rules.
+        /// For any new Config rule that you add, specify the <code>ConfigRuleName</code> in the
+        /// <code>ConfigRule</code> object. Do not specify the <code>ConfigRuleArn</code> or the
+        /// <code>ConfigRuleId</code>. These values are generated by Config for new rules.
         /// </para>
         ///  
         /// <para>
@@ -4492,19 +4850,18 @@ namespace Amazon.ConfigService
         /// </para>
         ///  
         /// <para>
-        /// The maximum number of rules that Config supports is 150.
-        /// </para>
-        ///  
-        /// <para>
-        /// For information about requesting a rule limit increase, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">Config
-        /// Limits</a> in the <i>Amazon Web Services General Reference Guide</i>.
-        /// </para>
-        ///  
-        /// <para>
         /// For more information about developing and using Config rules, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config.html">Evaluating
-        /// Amazon Web Services resource Configurations with Config</a> in the <i>Config Developer
-        /// Guide</i>.
+        /// Resources with Config Rules</a> in the <i>Config Developer Guide</i>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        ///  <code>PutConfigRule</code> is an idempotent API. Subsequent requests won’t create
+        /// a duplicate resource if one was already created. If a following request has different
+        /// <code>tags</code> values, Config will ignore these differences and treat it as an
+        /// idempotent request of the previous. In this case, <code>tags</code> will not be updated,
+        /// even if they are different.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutConfigRule service method.</param>
         /// <param name="cancellationToken">
@@ -4527,28 +4884,29 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For PutOrganizationConfigRule, organization config rule cannot be created because
-        /// you do not have permissions to call IAM <code>GetRole</code> action or create a service
-        /// linked role.
+        /// For PutOrganizationConfigRule, organization Config rule cannot be created because
+        /// you do not have permissions to call IAM <code>GetRole</code> action or create a service-linked
+        /// role.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// For PutConformancePack and PutOrganizationConformancePack, a conformance pack cannot
-        /// be created because you do not have permissions: 
+        /// be created because you do not have the following permissions: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// To call IAM <code>GetRole</code> action or create a service linked role.
+        /// You do not have permission to call IAM <code>GetRole</code> action or create a service-linked
+        /// role.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// To read Amazon S3 bucket.
+        /// You do not have permission to read Amazon S3 bucket or call SSM:GetDocument.
         /// </para>
         ///  </li> </ul> </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.InvalidParameterValueException">
-        /// One or more of the specified parameters are invalid. Verify that your parameters are
-        /// valid and try again.
+        /// One or more of the specified parameters are not valid. Verify that your parameters
+        /// are valid and try again.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.MaxNumberOfConfigRulesExceededException">
         /// Failed to add the Config rule because the account already contains the maximum number
@@ -4578,12 +4936,12 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For PutConfigOrganizationRule, organization config rule deletion is in progress. Try
+        /// For PutConfigOrganizationRule, organization Config rule deletion is in progress. Try
         /// your request again later.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For DeleteOrganizationConfigRule, organization config rule creation is in progress.
+        /// For DeleteOrganizationConfigRule, organization Config rule creation is in progress.
         /// Try your request again later.
         /// </para>
         ///  </li> <li> 
@@ -4630,7 +4988,7 @@ namespace Amazon.ConfigService
         ///  
         /// <para>
         ///  <code>accountIds</code> that are passed will be replaced with existing accounts.
-        /// If you want to add additional accounts into the aggregator, call <code>DescribeAggregator</code>
+        /// If you want to add additional accounts into the aggregator, call <code>DescribeConfigurationAggregators</code>
         /// to get the previous accounts and then append new ones.
         /// </para>
         ///  <note> 
@@ -4649,7 +5007,15 @@ namespace Amazon.ConfigService
         ///  
         /// <para>
         /// To register a delegated administrator, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/set-up-aggregator-cli.html#register-a-delegated-administrator-cli">Register
-        /// a Delegated Administrator</a> in the Config developer guide. 
+        /// a Delegated Administrator</a> in the <i>Config developer guide</i>. 
+        /// </para>
+        ///  </note> <note> 
+        /// <para>
+        ///  <code>PutConfigurationAggregator</code> is an idempotent API. Subsequent requests
+        /// won’t create a duplicate resource if one was already created. If a following request
+        /// has different <code>tags</code> values, Config will ignore these differences and treat
+        /// it as an idempotent request of the previous. In this case, <code>tags</code> will
+        /// not be updated, even if they are different.
         /// </para>
         ///  </note>
         /// </summary>
@@ -4660,11 +5026,12 @@ namespace Amazon.ConfigService
         /// 
         /// <returns>The response from the PutConfigurationAggregator service method, as returned by ConfigService.</returns>
         /// <exception cref="Amazon.ConfigService.Model.InvalidParameterValueException">
-        /// One or more of the specified parameters are invalid. Verify that your parameters are
-        /// valid and try again.
+        /// One or more of the specified parameters are not valid. Verify that your parameters
+        /// are valid and try again.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.InvalidRoleException">
-        /// You have provided a null or empty role ARN.
+        /// You have provided a null or empty Amazon Resource Name (ARN) for the IAM role assumed
+        /// by Config and used by the configuration recorder.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.LimitExceededException">
         /// For <code>StartConfigRulesEvaluation</code> API, this exception is thrown if an evaluation
@@ -4711,7 +5078,7 @@ namespace Amazon.ConfigService
         /// <para>
         /// For all <code>OrganizationConfigRule</code> and <code>OrganizationConformancePack</code>
         /// APIs, Config throws an exception if APIs are called from member accounts. All APIs
-        /// must be called from organization master account.
+        /// must be called from organization management account.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.OrganizationAllFeaturesNotEnabledException">
@@ -4744,21 +5111,23 @@ namespace Amazon.ConfigService
 
 
         /// <summary>
-        /// Creates a new configuration recorder to record the selected resource configurations.
+        /// Creates a new configuration recorder to record configuration changes for specified
+        /// resource types.
         /// 
         ///  
         /// <para>
-        /// You can use this action to change the role <code>roleARN</code> or the <code>recordingGroup</code>
-        /// of an existing recorder. To change the role, call the action on the existing configuration
-        /// recorder and specify a role.
+        /// You can also use this action to change the <code>roleARN</code> or the <code>recordingGroup</code>
+        /// of an existing recorder. For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/stop-start-recorder.html">
+        /// <b>Managing the Configuration Recorder</b> </a> in the <i>Config Developer Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
-        /// Currently, you can specify only one configuration recorder per region in your account.
+        /// You can specify only one configuration recorder for each Amazon Web Services Region
+        /// for each account.
         /// </para>
         ///  
         /// <para>
-        /// If <code>ConfigurationRecorder</code> does not have the <b>recordingGroup</b> parameter
+        /// If the configuration recorder does not have the <code>recordingGroup</code> field
         /// specified, the default is to record all supported resource types.
         /// </para>
         ///  </note>
@@ -4770,17 +5139,48 @@ namespace Amazon.ConfigService
         /// 
         /// <returns>The response from the PutConfigurationRecorder service method, as returned by ConfigService.</returns>
         /// <exception cref="Amazon.ConfigService.Model.InvalidConfigurationRecorderNameException">
-        /// You have provided a configuration recorder name that is not valid.
+        /// You have provided a name for the configuration recorder that is not valid.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.InvalidRecordingGroupException">
-        /// Config throws an exception if the recording group does not contain a valid list of
-        /// resource types. Invalid values might also be incorrectly formatted.
+        /// Indicates one of the following errors:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You have provided a combination of parameter values that is not valid. For example:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Setting the <code>allSupported</code> field of <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingGroup.html">RecordingGroup</a>
+        /// to <code>true</code>, but providing a non-empty list for the <code>resourceTypes</code>field
+        /// of <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingGroup.html">RecordingGroup</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Setting the <code>allSupported</code> field of <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingGroup.html">RecordingGroup</a>
+        /// to <code>true</code>, but also setting the <code>useOnly</code> field of <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingStrategy.html">RecordingStrategy</a>
+        /// to <code>EXCLUSION_BY_RESOURCE_TYPES</code>.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// Every parameter is either null, false, or empty.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You have reached the limit of the number of resource types you can provide for the
+        /// recording group.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You have provided resource types or a recording strategy that are not valid.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.InvalidRoleException">
-        /// You have provided a null or empty role ARN.
+        /// You have provided a null or empty Amazon Resource Name (ARN) for the IAM role assumed
+        /// by Config and used by the configuration recorder.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.MaxNumberOfConfigurationRecordersExceededException">
-        /// You have reached the limit of the number of recorders you can create.
+        /// You have reached the limit of the number of configuration recorders you can create.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutConfigurationRecorder">REST API Reference for PutConfigurationRecorder Operation</seealso>
         public virtual Task<PutConfigurationRecorderResponse> PutConfigurationRecorderAsync(PutConfigurationRecorderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -4809,20 +5209,20 @@ namespace Amazon.ConfigService
 
         /// <summary>
         /// Creates or updates a conformance pack. A conformance pack is a collection of Config
-        /// rules that can be easily deployed in an account and a region and across Amazon Web
-        /// Services Organization.
+        /// rules that can be easily deployed in an account and a region and across an organization.
+        /// For information on how many conformance packs you can have per account, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html">
+        /// <b>Service Limits</b> </a> in the <i>Config Developer Guide</i>.
         /// 
         ///  
         /// <para>
-        /// This API creates a service linked role <code>AWSServiceRoleForConfigConforms</code>
-        /// in your account. The service linked role is created only when the role does not exist
+        /// This API creates a service-linked role <code>AWSServiceRoleForConfigConforms</code>
+        /// in your account. The service-linked role is created only when the role does not exist
         /// in your account. 
         /// </para>
         ///  <note> 
         /// <para>
-        /// You must specify either the <code>TemplateS3Uri</code> or the <code>TemplateBody</code>
-        /// parameter, but not both. If you provide both Config uses the <code>TemplateS3Uri</code>
-        /// parameter and ignores the <code>TemplateBody</code> parameter.
+        /// You must specify only one of the follow parameters: <code>TemplateS3Uri</code>, <code>TemplateBody</code>
+        /// or <code>TemplateSSMDocumentDetails</code>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -4850,32 +5250,34 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For PutOrganizationConfigRule, organization config rule cannot be created because
-        /// you do not have permissions to call IAM <code>GetRole</code> action or create a service
-        /// linked role.
+        /// For PutOrganizationConfigRule, organization Config rule cannot be created because
+        /// you do not have permissions to call IAM <code>GetRole</code> action or create a service-linked
+        /// role.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// For PutConformancePack and PutOrganizationConformancePack, a conformance pack cannot
-        /// be created because you do not have permissions: 
+        /// be created because you do not have the following permissions: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// To call IAM <code>GetRole</code> action or create a service linked role.
+        /// You do not have permission to call IAM <code>GetRole</code> action or create a service-linked
+        /// role.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// To read Amazon S3 bucket.
+        /// You do not have permission to read Amazon S3 bucket or call SSM:GetDocument.
         /// </para>
         ///  </li> </ul> </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.InvalidParameterValueException">
-        /// One or more of the specified parameters are invalid. Verify that your parameters are
-        /// valid and try again.
+        /// One or more of the specified parameters are not valid. Verify that your parameters
+        /// are valid and try again.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.MaxNumberOfConformancePacksExceededException">
-        /// You have reached the limit (6) of the number of conformance packs in an account (6
-        /// conformance pack with 25 Config rules per pack).
+        /// You have reached the limit of the number of conformance packs you can create in an
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html">
+        /// <b>Service Limits</b> </a> in the <i>Config Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.ResourceInUseException">
         /// You see this exception in the following cases: 
@@ -4897,12 +5299,12 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For PutConfigOrganizationRule, organization config rule deletion is in progress. Try
+        /// For PutConfigOrganizationRule, organization Config rule deletion is in progress. Try
         /// your request again later.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For DeleteOrganizationConfigRule, organization config rule creation is in progress.
+        /// For DeleteOrganizationConfigRule, organization Config rule creation is in progress.
         /// Try your request again later.
         /// </para>
         ///  </li> <li> 
@@ -5031,15 +5433,16 @@ namespace Amazon.ConfigService
         /// 
         /// <returns>The response from the PutEvaluations service method, as returned by ConfigService.</returns>
         /// <exception cref="Amazon.ConfigService.Model.InvalidParameterValueException">
-        /// One or more of the specified parameters are invalid. Verify that your parameters are
-        /// valid and try again.
+        /// One or more of the specified parameters are not valid. Verify that your parameters
+        /// are valid and try again.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.InvalidResultTokenException">
-        /// The specified <code>ResultToken</code> is invalid.
+        /// The specified <code>ResultToken</code> is not valid.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigRuleException">
-        /// One or more Config rules in the request are invalid. Verify that the rule names are
-        /// correct and try again.
+        /// The Config rule in the request is not valid. Verify that the rule is an Config Process
+        /// Check rule, that the rule name is correct, and that valid Amazon Resouce Names (ARNs)
+        /// are used before trying again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutEvaluations">REST API Reference for PutEvaluations Operation</seealso>
         public virtual Task<PutEvaluationsResponse> PutEvaluationsAsync(PutEvaluationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -5077,12 +5480,13 @@ namespace Amazon.ConfigService
         /// 
         /// <returns>The response from the PutExternalEvaluation service method, as returned by ConfigService.</returns>
         /// <exception cref="Amazon.ConfigService.Model.InvalidParameterValueException">
-        /// One or more of the specified parameters are invalid. Verify that your parameters are
-        /// valid and try again.
+        /// One or more of the specified parameters are not valid. Verify that your parameters
+        /// are valid and try again.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigRuleException">
-        /// One or more Config rules in the request are invalid. Verify that the rule names are
-        /// correct and try again.
+        /// The Config rule in the request is not valid. Verify that the rule is an Config Process
+        /// Check rule, that the rule name is correct, and that valid Amazon Resouce Names (ARNs)
+        /// are used before trying again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutExternalEvaluation">REST API Reference for PutExternalEvaluation Operation</seealso>
         public virtual Task<PutExternalEvaluationResponse> PutExternalEvaluationAsync(PutExternalEvaluationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -5110,22 +5514,25 @@ namespace Amazon.ConfigService
 
 
         /// <summary>
-        /// Adds or updates organization config rule for your entire organization evaluating whether
-        /// your Amazon Web Services resources comply with your desired configurations.
+        /// Adds or updates an Config rule for your entire organization to evaluate if your Amazon
+        /// Web Services resources comply with your desired configurations. For information on
+        /// how many organization Config rules you can have per account, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html">
+        /// <b>Service Limits</b> </a> in the <i>Config Developer Guide</i>.
         /// 
         ///  
         /// <para>
-        ///  Only a master account and a delegated administrator can create or update an organization
-        /// config rule. When calling this API with a delegated administrator, you must ensure
-        /// Organizations <code>ListDelegatedAdministrator</code> permissions are added. 
+        ///  Only a management account and a delegated administrator can create or update an organization
+        /// Config rule. When calling this API with a delegated administrator, you must ensure
+        /// Organizations <code>ListDelegatedAdministrator</code> permissions are added. An organization
+        /// can have up to 3 delegated administrators.
         /// </para>
         ///  
         /// <para>
         /// This API enables organization service access through the <code>EnableAWSServiceAccess</code>
-        /// action and creates a service linked role <code>AWSServiceRoleForConfigMultiAccountSetup</code>
-        /// in the master or delegated administrator account of your organization. The service
-        /// linked role is created only when the role does not exist in the caller account. Config
-        /// verifies the existence of role with <code>GetRole</code> action.
+        /// action and creates a service-linked role <code>AWSServiceRoleForConfigMultiAccountSetup</code>
+        /// in the management or delegated administrator account of your organization. The service-linked
+        /// role is created only when the role does not exist in the caller account. Config verifies
+        /// the existence of role with <code>GetRole</code> action.
         /// </para>
         ///  
         /// <para>
@@ -5135,19 +5542,34 @@ namespace Amazon.ConfigService
         /// </para>
         ///  
         /// <para>
-        /// You can use this action to create both custom Config rules and Config managed rules.
-        /// If you are adding a new custom Config rule, you must first create Lambda function
-        /// in the master account or a delegated administrator that the rule invokes to evaluate
-        /// your resources. You also need to create an IAM role in the managed-account that can
-        /// be assumed by the Lambda function. When you use the <code>PutOrganizationConfigRule</code>
-        /// action to add the rule to Config, you must specify the Amazon Resource Name (ARN)
-        /// that Lambda assigns to the function. If you are adding an Config managed rule, specify
+        /// There are two types of rules: <i>Config Managed Rules</i> and <i>Config Custom Rules</i>.
+        /// You can use <code>PutOrganizationConfigRule</code> to create both Config Managed Rules
+        /// and Config Custom Rules.
+        /// </para>
+        ///  
+        /// <para>
+        /// Config Managed Rules are predefined, customizable rules created by Config. For a list
+        /// of managed rules, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/managed-rules-by-aws-config.html">List
+        /// of Config Managed Rules</a>. If you are adding an Config managed rule, you must specify
         /// the rule's identifier for the <code>RuleIdentifier</code> key.
         /// </para>
         ///  
         /// <para>
-        /// The maximum number of organization config rules that Config supports is 150 and 3
-        /// delegated administrator per organization. 
+        /// Config Custom Rules are rules that you create from scratch. There are two ways to
+        /// create Config custom rules: with Lambda functions (<a href="https://docs.aws.amazon.com/config/latest/developerguide/gettingstarted-concepts.html#gettingstarted-concepts-function">
+        /// Lambda Developer Guide</a>) and with Guard (<a href="https://github.com/aws-cloudformation/cloudformation-guard">Guard
+        /// GitHub Repository</a>), a policy-as-code language. Config custom rules created with
+        /// Lambda are called <i>Config Custom Lambda Rules</i> and Config custom rules created
+        /// with Guard are called <i>Config Custom Policy Rules</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you are adding a new Config Custom Lambda rule, you first need to create an Lambda
+        /// function in the management account or a delegated administrator that the rule invokes
+        /// to evaluate your resources. You also need to create an IAM role in the managed account
+        /// that can be assumed by the Lambda function. When you use <code>PutOrganizationConfigRule</code>
+        /// to add a Custom Lambda rule to Config, you must specify the Amazon Resource Name (ARN)
+        /// that Lambda assigns to the function.
         /// </para>
         ///  <note> 
         /// <para>
@@ -5156,7 +5578,9 @@ namespace Amazon.ConfigService
         /// </para>
         ///  
         /// <para>
-        /// Specify either <code>OrganizationCustomRuleMetadata</code> or <code>OrganizationManagedRuleMetadata</code>.
+        /// Make sure to specify one of either <code>OrganizationCustomPolicyRuleMetadata</code>
+        /// for Custom Policy rules, <code>OrganizationCustomRuleMetadata</code> for Custom Lambda
+        /// rules, or <code>OrganizationManagedRuleMetadata</code> for managed rules.
         /// </para>
         ///  </note>
         /// </summary>
@@ -5181,31 +5605,34 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For PutOrganizationConfigRule, organization config rule cannot be created because
-        /// you do not have permissions to call IAM <code>GetRole</code> action or create a service
-        /// linked role.
+        /// For PutOrganizationConfigRule, organization Config rule cannot be created because
+        /// you do not have permissions to call IAM <code>GetRole</code> action or create a service-linked
+        /// role.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// For PutConformancePack and PutOrganizationConformancePack, a conformance pack cannot
-        /// be created because you do not have permissions: 
+        /// be created because you do not have the following permissions: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// To call IAM <code>GetRole</code> action or create a service linked role.
+        /// You do not have permission to call IAM <code>GetRole</code> action or create a service-linked
+        /// role.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// To read Amazon S3 bucket.
+        /// You do not have permission to read Amazon S3 bucket or call SSM:GetDocument.
         /// </para>
         ///  </li> </ul> </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.InvalidParameterValueException">
-        /// One or more of the specified parameters are invalid. Verify that your parameters are
-        /// valid and try again.
+        /// One or more of the specified parameters are not valid. Verify that your parameters
+        /// are valid and try again.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.MaxNumberOfOrganizationConfigRulesExceededException">
-        /// You have reached the limit of the number of organization config rules you can create.
+        /// You have reached the limit of the number of organization Config rules you can create.
+        /// For more information, see see <a href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html">
+        /// <b>Service Limits</b> </a> in the <i>Config Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoAvailableOrganizationException">
         /// Organization is no longer available.
@@ -5241,7 +5668,7 @@ namespace Amazon.ConfigService
         /// <para>
         /// For all <code>OrganizationConfigRule</code> and <code>OrganizationConformancePack</code>
         /// APIs, Config throws an exception if APIs are called from member accounts. All APIs
-        /// must be called from organization master account.
+        /// must be called from organization management account.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.OrganizationAllFeaturesNotEnabledException">
@@ -5268,12 +5695,12 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For PutConfigOrganizationRule, organization config rule deletion is in progress. Try
+        /// For PutConfigOrganizationRule, organization Config rule deletion is in progress. Try
         /// your request again later.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For DeleteOrganizationConfigRule, organization config rule creation is in progress.
+        /// For DeleteOrganizationConfigRule, organization Config rule creation is in progress.
         /// Try your request again later.
         /// </para>
         ///  </li> <li> 
@@ -5330,19 +5757,22 @@ namespace Amazon.ConfigService
 
         /// <summary>
         /// Deploys conformance packs across member accounts in an Amazon Web Services Organization.
+        /// For information on how many organization conformance packs and how many Config rules
+        /// you can have per account, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html">
+        /// <b>Service Limits</b> </a> in the <i>Config Developer Guide</i>.
         /// 
         ///  
         /// <para>
-        /// Only a master account and a delegated administrator can call this API. When calling
+        /// Only a management account and a delegated administrator can call this API. When calling
         /// this API with a delegated administrator, you must ensure Organizations <code>ListDelegatedAdministrator</code>
-        /// permissions are added.
+        /// permissions are added. An organization can have up to 3 delegated administrators.
         /// </para>
         ///  
         /// <para>
         /// This API enables organization service access for <code>config-multiaccountsetup.amazonaws.com</code>
-        /// through the <code>EnableAWSServiceAccess</code> action and creates a service linked
-        /// role <code>AWSServiceRoleForConfigMultiAccountSetup</code> in the master or delegated
-        /// administrator account of your organization. The service linked role is created only
+        /// through the <code>EnableAWSServiceAccess</code> action and creates a service-linked
+        /// role <code>AWSServiceRoleForConfigMultiAccountSetup</code> in the management or delegated
+        /// administrator account of your organization. The service-linked role is created only
         /// when the role does not exist in the caller account. To use this API with delegated
         /// administrator, register a delegated administrator by calling Amazon Web Services Organization
         /// <code>register-delegate-admin</code> for <code>config-multiaccountsetup.amazonaws.com</code>.
@@ -5363,11 +5793,6 @@ namespace Amazon.ConfigService
         /// Config sets the state of a conformance pack to CREATE_IN_PROGRESS and UPDATE_IN_PROGRESS
         /// until the conformance pack is created or updated. You cannot update a conformance
         /// pack while it is in this state.
-        /// </para>
-        ///  
-        /// <para>
-        /// You can create 50 conformance packs with 25 Config rules in each pack and 3 delegated
-        /// administrator per organization. 
         /// </para>
         ///  </note>
         /// </summary>
@@ -5392,28 +5817,30 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For PutOrganizationConfigRule, organization config rule cannot be created because
-        /// you do not have permissions to call IAM <code>GetRole</code> action or create a service
-        /// linked role.
+        /// For PutOrganizationConfigRule, organization Config rule cannot be created because
+        /// you do not have permissions to call IAM <code>GetRole</code> action or create a service-linked
+        /// role.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// For PutConformancePack and PutOrganizationConformancePack, a conformance pack cannot
-        /// be created because you do not have permissions: 
+        /// be created because you do not have the following permissions: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// To call IAM <code>GetRole</code> action or create a service linked role.
+        /// You do not have permission to call IAM <code>GetRole</code> action or create a service-linked
+        /// role.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// To read Amazon S3 bucket.
+        /// You do not have permission to read Amazon S3 bucket or call SSM:GetDocument.
         /// </para>
         ///  </li> </ul> </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.MaxNumberOfOrganizationConformancePacksExceededException">
-        /// You have reached the limit (6) of the number of organization conformance packs in
-        /// an account (6 conformance pack with 25 Config rules per pack per account).
+        /// You have reached the limit of the number of organization conformance packs you can
+        /// create in an account. For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html">
+        /// <b>Service Limits</b> </a> in the <i>Config Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoAvailableOrganizationException">
         /// Organization is no longer available.
@@ -5449,7 +5876,7 @@ namespace Amazon.ConfigService
         /// <para>
         /// For all <code>OrganizationConfigRule</code> and <code>OrganizationConformancePack</code>
         /// APIs, Config throws an exception if APIs are called from member accounts. All APIs
-        /// must be called from organization master account.
+        /// must be called from organization management account.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.OrganizationAllFeaturesNotEnabledException">
@@ -5479,12 +5906,12 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For PutConfigOrganizationRule, organization config rule deletion is in progress. Try
+        /// For PutConfigOrganizationRule, organization Config rule deletion is in progress. Try
         /// your request again later.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For DeleteOrganizationConfigRule, organization config rule creation is in progress.
+        /// For DeleteOrganizationConfigRule, organization Config rule creation is in progress.
         /// Try your request again later.
         /// </para>
         ///  </li> <li> 
@@ -5557,6 +5984,18 @@ namespace Amazon.ConfigService
         /// Rules such as Organization Config rules, the rules deployed by conformance packs,
         /// and rules deployed by Amazon Web Services Security Hub.
         /// </para>
+        ///  </note> <note> 
+        /// <para>
+        /// For manual remediation configuration, you need to provide a value for <code>automationAssumeRole</code>
+        /// or use a value in the <code>assumeRole</code>field to remediate your resources. The
+        /// SSM automation document can use either as long as it maps to a valid parameter.
+        /// </para>
+        ///  
+        /// <para>
+        /// However, for automatic remediation configuration, the only valid <code>assumeRole</code>
+        /// field value is <code>AutomationAssumeRole</code> and you need to provide a value for
+        /// <code>AutomationAssumeRole</code> to remediate your resources.
+        /// </para>
         ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutRemediationConfigurations service method.</param>
@@ -5580,28 +6019,29 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For PutOrganizationConfigRule, organization config rule cannot be created because
-        /// you do not have permissions to call IAM <code>GetRole</code> action or create a service
-        /// linked role.
+        /// For PutOrganizationConfigRule, organization Config rule cannot be created because
+        /// you do not have permissions to call IAM <code>GetRole</code> action or create a service-linked
+        /// role.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// For PutConformancePack and PutOrganizationConformancePack, a conformance pack cannot
-        /// be created because you do not have permissions: 
+        /// be created because you do not have the following permissions: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// To call IAM <code>GetRole</code> action or create a service linked role.
+        /// You do not have permission to call IAM <code>GetRole</code> action or create a service-linked
+        /// role.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// To read Amazon S3 bucket.
+        /// You do not have permission to read Amazon S3 bucket or call SSM:GetDocument.
         /// </para>
         ///  </li> </ul> </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.InvalidParameterValueException">
-        /// One or more of the specified parameters are invalid. Verify that your parameters are
-        /// valid and try again.
+        /// One or more of the specified parameters are not valid. Verify that your parameters
+        /// are valid and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutRemediationConfigurations">REST API Reference for PutRemediationConfigurations Operation</seealso>
         public virtual Task<PutRemediationConfigurationsResponse> PutRemediationConfigurationsAsync(PutRemediationConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -5629,15 +6069,33 @@ namespace Amazon.ConfigService
 
 
         /// <summary>
-        /// A remediation exception is when a specific resource is no longer considered for auto-remediation.
-        /// This API adds a new exception or updates an existing exception for a specific resource
-        /// with a specific Config rule. 
+        /// A remediation exception is when a specified resource is no longer considered for auto-remediation.
+        /// This API adds a new exception or updates an existing exception for a specified resource
+        /// with a specified Config rule. 
         /// 
         ///  <note> 
         /// <para>
-        /// Config generates a remediation exception when a problem occurs executing a remediation
-        /// action to a specific resource. Remediation exceptions blocks auto-remediation until
+        /// Config generates a remediation exception when a problem occurs running a remediation
+        /// action for a specified resource. Remediation exceptions blocks auto-remediation until
         /// the exception is cleared.
+        /// </para>
+        ///  </note> <note> 
+        /// <para>
+        /// When placing an exception on an Amazon Web Services resource, it is recommended that
+        /// remediation is set as manual remediation until the given Config rule for the specified
+        /// resource evaluates the resource as <code>NON_COMPLIANT</code>. Once the resource has
+        /// been evaluated as <code>NON_COMPLIANT</code>, you can add remediation exceptions and
+        /// change the remediation type back from Manual to Auto if you want to use auto-remediation.
+        /// Otherwise, using auto-remediation before a <code>NON_COMPLIANT</code> evaluation result
+        /// can delete resources before the exception is applied.
+        /// </para>
+        ///  </note> <note> 
+        /// <para>
+        /// Placing an exception can only be performed on resources that are <code>NON_COMPLIANT</code>.
+        /// If you use this API for <code>COMPLIANT</code> resources or resources that are <code>NOT_APPLICABLE</code>,
+        /// a remediation exception will not be generated. For more information on the conditions
+        /// that initiate the possible Config evaluation results, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/config-concepts.html#aws-config-rules">Concepts
+        /// | Config Rules</a> in the <i>Config Developer Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -5662,28 +6120,29 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For PutOrganizationConfigRule, organization config rule cannot be created because
-        /// you do not have permissions to call IAM <code>GetRole</code> action or create a service
-        /// linked role.
+        /// For PutOrganizationConfigRule, organization Config rule cannot be created because
+        /// you do not have permissions to call IAM <code>GetRole</code> action or create a service-linked
+        /// role.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// For PutConformancePack and PutOrganizationConformancePack, a conformance pack cannot
-        /// be created because you do not have permissions: 
+        /// be created because you do not have the following permissions: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// To call IAM <code>GetRole</code> action or create a service linked role.
+        /// You do not have permission to call IAM <code>GetRole</code> action or create a service-linked
+        /// role.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// To read Amazon S3 bucket.
+        /// You do not have permission to read Amazon S3 bucket or call SSM:GetDocument.
         /// </para>
         ///  </li> </ul> </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.InvalidParameterValueException">
-        /// One or more of the specified parameters are invalid. Verify that your parameters are
-        /// valid and try again.
+        /// One or more of the specified parameters are not valid. Verify that your parameters
+        /// are valid and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutRemediationExceptions">REST API Reference for PutRemediationExceptions Operation</seealso>
         public virtual Task<PutRemediationExceptionsResponse> PutRemediationExceptionsAsync(PutRemediationExceptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -5755,28 +6214,30 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For PutOrganizationConfigRule, organization config rule cannot be created because
-        /// you do not have permissions to call IAM <code>GetRole</code> action or create a service
-        /// linked role.
+        /// For PutOrganizationConfigRule, organization Config rule cannot be created because
+        /// you do not have permissions to call IAM <code>GetRole</code> action or create a service-linked
+        /// role.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// For PutConformancePack and PutOrganizationConformancePack, a conformance pack cannot
-        /// be created because you do not have permissions: 
+        /// be created because you do not have the following permissions: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// To call IAM <code>GetRole</code> action or create a service linked role.
+        /// You do not have permission to call IAM <code>GetRole</code> action or create a service-linked
+        /// role.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// To read Amazon S3 bucket.
+        /// You do not have permission to read Amazon S3 bucket or call SSM:GetDocument.
         /// </para>
         ///  </li> </ul> </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.MaxActiveResourcesExceededException">
-        /// You have reached the limit (100,000) of active custom resource types in your account.
-        /// Delete unused resources using <code>DeleteResourceConfig</code>.
+        /// You have reached the limit of active custom resource types in your account. There
+        /// is a limit of 100,000. Delete unused resources using <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteResourceConfig.html">DeleteResourceConfig</a>
+        /// <code/>.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoRunningConfigurationRecorderException">
         /// There is no configuration recorder running.
@@ -5841,8 +6302,8 @@ namespace Amazon.ConfigService
         /// 
         /// <returns>The response from the PutRetentionConfiguration service method, as returned by ConfigService.</returns>
         /// <exception cref="Amazon.ConfigService.Model.InvalidParameterValueException">
-        /// One or more of the specified parameters are invalid. Verify that your parameters are
-        /// valid and try again.
+        /// One or more of the specified parameters are not valid. Verify that your parameters
+        /// are valid and try again.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.MaxNumberOfRetentionConfigurationsExceededException">
         /// Failed to add the retention configuration because a retention configuration with that
@@ -5878,6 +6339,16 @@ namespace Amazon.ConfigService
         /// be unique for a single Amazon Web Services account and a single Amazon Web Services
         /// Region. You can create upto 300 queries in a single Amazon Web Services account and
         /// a single Amazon Web Services Region.
+        /// 
+        ///  <note> 
+        /// <para>
+        ///  <code>PutStoredQuery</code> is an idempotent API. Subsequent requests won’t create
+        /// a duplicate resource if one was already created. If a following request has different
+        /// <code>tags</code> values, Config will ignore these differences and treat it as an
+        /// idempotent request of the previous. In this case, <code>tags</code> will not be updated,
+        /// even if they are different.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutStoredQuery service method.</param>
         /// <param name="cancellationToken">
@@ -5890,8 +6361,9 @@ namespace Amazon.ConfigService
         /// and try again.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.TooManyTagsException">
-        /// You have reached the limit of the number of tags you can use. You have more than 50
-        /// tags.
+        /// You have reached the limit of the number of tags you can use. For more information,
+        /// see <a href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html">
+        /// <b>Service Limits</b> </a> in the <i>Config Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.ValidationException">
         /// The requested action is not valid.
@@ -5942,7 +6414,7 @@ namespace Amazon.ConfigService
         ///  
         /// <para>
         /// For more information about query components, see the <a href="https://docs.aws.amazon.com/config/latest/developerguide/query-components.html">
-        /// <b>Query Components</b> </a> section in the Config Developer Guide.
+        /// <b>Query Components</b> </a> section in the <i>Config Developer Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -5974,7 +6446,7 @@ namespace Amazon.ConfigService
         /// The specified limit is outside the allowable range.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.InvalidNextTokenException">
-        /// The specified next token is invalid. Specify the <code>nextToken</code> string that
+        /// The specified next token is not valid. Specify the <code>nextToken</code> string that
         /// was returned in the previous response to get the next page of results.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigurationAggregatorException">
@@ -6012,7 +6484,7 @@ namespace Amazon.ConfigService
         ///  
         /// <para>
         /// For more information about query components, see the <a href="https://docs.aws.amazon.com/config/latest/developerguide/query-components.html">
-        /// <b>Query Components</b> </a> section in the Config Developer Guide.
+        /// <b>Query Components</b> </a> section in the <i>Config Developer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SelectResourceConfig service method.</param>
@@ -6028,7 +6500,7 @@ namespace Amazon.ConfigService
         /// The specified limit is outside the allowable range.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.InvalidNextTokenException">
-        /// The specified next token is invalid. Specify the <code>nextToken</code> string that
+        /// The specified next token is not valid. Specify the <code>nextToken</code> string that
         /// was returned in the previous response to get the next page of results.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/SelectResourceConfig">REST API Reference for SelectResourceConfig Operation</seealso>
@@ -6115,8 +6587,8 @@ namespace Amazon.ConfigService
         /// 
         /// <returns>The response from the StartConfigRulesEvaluation service method, as returned by ConfigService.</returns>
         /// <exception cref="Amazon.ConfigService.Model.InvalidParameterValueException">
-        /// One or more of the specified parameters are invalid. Verify that your parameters are
-        /// valid and try again.
+        /// One or more of the specified parameters are not valid. Verify that your parameters
+        /// are valid and try again.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.LimitExceededException">
         /// For <code>StartConfigRulesEvaluation</code> API, this exception is thrown if an evaluation
@@ -6130,8 +6602,9 @@ namespace Amazon.ConfigService
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigRuleException">
-        /// One or more Config rules in the request are invalid. Verify that the rule names are
-        /// correct and try again.
+        /// The Config rule in the request is not valid. Verify that the rule is an Config Process
+        /// Check rule, that the rule name is correct, and that valid Amazon Resouce Names (ARNs)
+        /// are used before trying again.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.ResourceInUseException">
         /// You see this exception in the following cases: 
@@ -6153,12 +6626,12 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For PutConfigOrganizationRule, organization config rule deletion is in progress. Try
+        /// For PutConfigOrganizationRule, organization Config rule deletion is in progress. Try
         /// your request again later.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For DeleteOrganizationConfigRule, organization config rule creation is in progress.
+        /// For DeleteOrganizationConfigRule, organization Config rule creation is in progress.
         /// Try your request again later.
         /// </para>
         ///  </li> <li> 
@@ -6308,28 +6781,29 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For PutOrganizationConfigRule, organization config rule cannot be created because
-        /// you do not have permissions to call IAM <code>GetRole</code> action or create a service
-        /// linked role.
+        /// For PutOrganizationConfigRule, organization Config rule cannot be created because
+        /// you do not have permissions to call IAM <code>GetRole</code> action or create a service-linked
+        /// role.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// For PutConformancePack and PutOrganizationConformancePack, a conformance pack cannot
-        /// be created because you do not have permissions: 
+        /// be created because you do not have the following permissions: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// To call IAM <code>GetRole</code> action or create a service linked role.
+        /// You do not have permission to call IAM <code>GetRole</code> action or create a service-linked
+        /// role.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// To read Amazon S3 bucket.
+        /// You do not have permission to read Amazon S3 bucket or call SSM:GetDocument.
         /// </para>
         ///  </li> </ul> </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.InvalidParameterValueException">
-        /// One or more of the specified parameters are invalid. Verify that your parameters are
-        /// valid and try again.
+        /// One or more of the specified parameters are not valid. Verify that your parameters
+        /// are valid and try again.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchRemediationConfigurationException">
         /// You specified an Config rule without a remediation configuration.
@@ -6342,6 +6816,73 @@ namespace Amazon.ConfigService
             options.ResponseUnmarshaller = StartRemediationExecutionResponseUnmarshaller.Instance;
 
             return InvokeAsync<StartRemediationExecutionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartResourceEvaluation
+
+        internal virtual StartResourceEvaluationResponse StartResourceEvaluation(StartResourceEvaluationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartResourceEvaluationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartResourceEvaluationResponseUnmarshaller.Instance;
+
+            return Invoke<StartResourceEvaluationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Runs an on-demand evaluation for the specified resource to determine whether the resource
+        /// details will comply with configured Config rules. You can also use it for evaluation
+        /// purposes. Config recommends using an evaluation context. It runs an execution against
+        /// the resource details with all of the Config rules in your account that match with
+        /// the specified proactive mode and resource type.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Ensure you have the <code>cloudformation:DescribeType</code> role setup to validate
+        /// the resource type schema.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can find the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">Resource
+        /// type schema</a> in "<i>Amazon Web Services public extensions</i>" within the CloudFormation
+        /// registry or with the following CLI commmand: <code>aws cloudformation describe-type
+        /// --type-name "AWS::S3::Bucket" --type RESOURCE</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry.html#registry-view">Managing
+        /// extensions through the CloudFormation registry</a> and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+        /// Web Services resource and property types reference</a> in the CloudFormation User
+        /// Guide.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartResourceEvaluation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartResourceEvaluation service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.IdempotentParameterMismatchException">
+        /// Using the same client token with one or more different parameters. Specify a new client
+        /// token with the parameter changes and try again.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidParameterValueException">
+        /// One or more of the specified parameters are not valid. Verify that your parameters
+        /// are valid and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/StartResourceEvaluation">REST API Reference for StartResourceEvaluation Operation</seealso>
+        public virtual Task<StartResourceEvaluationResponse> StartResourceEvaluationAsync(StartResourceEvaluationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartResourceEvaluationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartResourceEvaluationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartResourceEvaluationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -6422,8 +6963,8 @@ namespace Amazon.ConfigService
         /// <summary>
         /// Associates the specified tags to a resource with the specified resourceArn. If existing
         /// tags on a resource are not specified in the request parameters, they are not changed.
-        /// When a resource is deleted, the tags associated with that resource are deleted as
-        /// well.
+        /// If existing tags are specified, however, then their values will be updated. When a
+        /// resource is deleted, the tags associated with that resource are deleted as well.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// <param name="cancellationToken">
@@ -6435,8 +6976,9 @@ namespace Amazon.ConfigService
         /// You have specified a resource that does not exist.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.TooManyTagsException">
-        /// You have reached the limit of the number of tags you can use. You have more than 50
-        /// tags.
+        /// You have reached the limit of the number of tags you can use. For more information,
+        /// see <a href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html">
+        /// <b>Service Limits</b> </a> in the <i>Config Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.ValidationException">
         /// The requested action is not valid.

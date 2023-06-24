@@ -56,7 +56,7 @@ namespace Amazon.EBS.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.EBS");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-11-02";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-11-02";
             request.HttpMethod = "POST";
 
             if (!publicRequest.IsSetSnapshotId())
@@ -64,17 +64,25 @@ namespace Amazon.EBS.Model.Internal.MarshallTransformations
             request.AddPathResource("{snapshotId}", StringUtils.FromString(publicRequest.SnapshotId));
             request.ResourcePath = "/snapshots/completion/{snapshotId}";
         
-            if(publicRequest.IsSetChangedBlocksCount())
+            if (publicRequest.IsSetChangedBlocksCount()) 
+            {
                 request.Headers["x-amz-ChangedBlocksCount"] = StringUtils.FromInt(publicRequest.ChangedBlocksCount);
+            }
         
-            if(publicRequest.IsSetChecksum())
+            if (publicRequest.IsSetChecksum()) 
+            {
                 request.Headers["x-amz-Checksum"] = publicRequest.Checksum;
+            }
         
-            if(publicRequest.IsSetChecksumAggregationMethod())
+            if (publicRequest.IsSetChecksumAggregationMethod()) 
+            {
                 request.Headers["x-amz-Checksum-Aggregation-Method"] = publicRequest.ChecksumAggregationMethod;
+            }
         
-            if(publicRequest.IsSetChecksumAlgorithm())
+            if (publicRequest.IsSetChecksumAlgorithm()) 
+            {
                 request.Headers["x-amz-Checksum-Algorithm"] = publicRequest.ChecksumAlgorithm;
+            }
 
             return request;
         }

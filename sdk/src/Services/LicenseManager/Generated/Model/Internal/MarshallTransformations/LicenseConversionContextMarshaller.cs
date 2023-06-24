@@ -34,7 +34,7 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// LicenseConversionContext Marshaller
-    /// </summary>       
+    /// </summary>
     public class LicenseConversionContextMarshaller : IRequestMarshaller<LicenseConversionContext, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static LicenseConversionContextMarshaller Instance = new LicenseConversionContextMarshaller();
 
     }

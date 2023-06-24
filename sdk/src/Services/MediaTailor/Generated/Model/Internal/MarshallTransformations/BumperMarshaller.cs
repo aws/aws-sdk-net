@@ -34,7 +34,7 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Bumper Marshaller
-    /// </summary>       
+    /// </summary>
     public class BumperMarshaller : IRequestMarshaller<Bumper, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static BumperMarshaller Instance = new BumperMarshaller();
 
     }

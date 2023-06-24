@@ -49,7 +49,7 @@ namespace Amazon.ManagedBlockchain
     /// Because of fundamental differences between the frameworks, some API actions or data
     /// types may only apply in the context of one framework and not the other. For example,
     /// actions related to Hyperledger Fabric network members such as <code>CreateMember</code>
-    /// and <code>DeleteMember</code> do not apply to Ethereum.
+    /// and <code>DeleteMember</code> don't apply to Ethereum.
     /// </para>
     ///  
     /// <para>
@@ -247,6 +247,15 @@ namespace Amazon.ManagedBlockchain
         }    
 
         /// <summary>
+        /// Customize the pipeline
+        /// </summary>
+        /// <param name="pipeline"></param>
+        protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
+        {
+            pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonManagedBlockchainEndpointResolver());
+        }    
+        /// <summary>
         /// Capture metadata for the service.
         /// </summary>
         protected override IServiceMetadata ServiceMetadata
@@ -272,6 +281,99 @@ namespace Amazon.ManagedBlockchain
         #endregion
 
 
+        #region  CreateAccessor
+
+
+        /// <summary>
+        /// Creates a new accessor for use with Managed Blockchain Ethereum nodes. An accessor
+        /// contains information required for token based access to your Ethereum nodes.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAccessor service method.</param>
+        /// 
+        /// <returns>The response from the CreateAccessor service method, as returned by ManagedBlockchain.</returns>
+        /// <exception cref="Amazon.ManagedBlockchain.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedBlockchain.Model.InternalServiceErrorException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedBlockchain.Model.InvalidRequestException">
+        /// The action or operation requested is invalid. Verify that the action is typed correctly.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedBlockchain.Model.ResourceAlreadyExistsException">
+        /// A resource request is issued for a resource that already exists.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedBlockchain.Model.ResourceLimitExceededException">
+        /// The maximum number of resources of that type already exist. Ensure the resources requested
+        /// are within the boundaries of the service edition and your account limits.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedBlockchain.Model.ThrottlingException">
+        /// The request or operation couldn't be performed because a service is throttling requests.
+        /// The most common source of throttling errors is creating resources that exceed your
+        /// service limit for this resource type. Request a limit increase or delete unused resources
+        /// if possible.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedBlockchain.Model.TooManyTagsException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/CreateAccessor">REST API Reference for CreateAccessor Operation</seealso>
+        public virtual CreateAccessorResponse CreateAccessor(CreateAccessorRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAccessorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAccessorResponseUnmarshaller.Instance;
+
+            return Invoke<CreateAccessorResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a new accessor for use with Managed Blockchain Ethereum nodes. An accessor
+        /// contains information required for token based access to your Ethereum nodes.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAccessor service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateAccessor service method, as returned by ManagedBlockchain.</returns>
+        /// <exception cref="Amazon.ManagedBlockchain.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedBlockchain.Model.InternalServiceErrorException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedBlockchain.Model.InvalidRequestException">
+        /// The action or operation requested is invalid. Verify that the action is typed correctly.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedBlockchain.Model.ResourceAlreadyExistsException">
+        /// A resource request is issued for a resource that already exists.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedBlockchain.Model.ResourceLimitExceededException">
+        /// The maximum number of resources of that type already exist. Ensure the resources requested
+        /// are within the boundaries of the service edition and your account limits.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedBlockchain.Model.ThrottlingException">
+        /// The request or operation couldn't be performed because a service is throttling requests.
+        /// The most common source of throttling errors is creating resources that exceed your
+        /// service limit for this resource type. Request a limit increase or delete unused resources
+        /// if possible.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedBlockchain.Model.TooManyTagsException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/CreateAccessor">REST API Reference for CreateAccessor Operation</seealso>
+        public virtual Task<CreateAccessorResponse> CreateAccessorAsync(CreateAccessorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAccessorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAccessorResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateAccessorResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateMember
 
 
@@ -287,7 +389,7 @@ namespace Amazon.ManagedBlockchain
         /// 
         /// <returns>The response from the CreateMember service method, as returned by ManagedBlockchain.</returns>
         /// <exception cref="Amazon.ManagedBlockchain.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.InternalServiceErrorException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -303,16 +405,16 @@ namespace Amazon.ManagedBlockchain
         /// are within the boundaries of the service edition and your account limits.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ResourceNotFoundException">
-        /// A requested resource does not exist. It may have been deleted or referenced inaccurately.
+        /// A requested resource doesn't exist. It may have been deleted or referenced incorrectly.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ResourceNotReadyException">
-        /// The requested resource exists but is not in a status that can complete the operation.
+        /// The requested resource exists but isn't in a status that can complete the operation.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ThrottlingException">
-        /// The request or operation could not be performed because a service is throttling requests.
-        /// The most common source of throttling errors is launching EC2 instances such that your
-        /// service limit for EC2 instances is exceeded. Request a limit increase or delete unused
-        /// resources if possible.
+        /// The request or operation couldn't be performed because a service is throttling requests.
+        /// The most common source of throttling errors is creating resources that exceed your
+        /// service limit for this resource type. Request a limit increase or delete unused resources
+        /// if possible.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.TooManyTagsException">
         /// 
@@ -343,7 +445,7 @@ namespace Amazon.ManagedBlockchain
         /// 
         /// <returns>The response from the CreateMember service method, as returned by ManagedBlockchain.</returns>
         /// <exception cref="Amazon.ManagedBlockchain.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.InternalServiceErrorException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -359,16 +461,16 @@ namespace Amazon.ManagedBlockchain
         /// are within the boundaries of the service edition and your account limits.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ResourceNotFoundException">
-        /// A requested resource does not exist. It may have been deleted or referenced inaccurately.
+        /// A requested resource doesn't exist. It may have been deleted or referenced incorrectly.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ResourceNotReadyException">
-        /// The requested resource exists but is not in a status that can complete the operation.
+        /// The requested resource exists but isn't in a status that can complete the operation.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ThrottlingException">
-        /// The request or operation could not be performed because a service is throttling requests.
-        /// The most common source of throttling errors is launching EC2 instances such that your
-        /// service limit for EC2 instances is exceeded. Request a limit increase or delete unused
-        /// resources if possible.
+        /// The request or operation couldn't be performed because a service is throttling requests.
+        /// The most common source of throttling errors is creating resources that exceed your
+        /// service limit for this resource type. Request a limit increase or delete unused resources
+        /// if possible.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.TooManyTagsException">
         /// 
@@ -400,7 +502,7 @@ namespace Amazon.ManagedBlockchain
         /// 
         /// <returns>The response from the CreateNetwork service method, as returned by ManagedBlockchain.</returns>
         /// <exception cref="Amazon.ManagedBlockchain.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.InternalServiceErrorException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -416,10 +518,10 @@ namespace Amazon.ManagedBlockchain
         /// are within the boundaries of the service edition and your account limits.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ThrottlingException">
-        /// The request or operation could not be performed because a service is throttling requests.
-        /// The most common source of throttling errors is launching EC2 instances such that your
-        /// service limit for EC2 instances is exceeded. Request a limit increase or delete unused
-        /// resources if possible.
+        /// The request or operation couldn't be performed because a service is throttling requests.
+        /// The most common source of throttling errors is creating resources that exceed your
+        /// service limit for this resource type. Request a limit increase or delete unused resources
+        /// if possible.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.TooManyTagsException">
         /// 
@@ -450,7 +552,7 @@ namespace Amazon.ManagedBlockchain
         /// 
         /// <returns>The response from the CreateNetwork service method, as returned by ManagedBlockchain.</returns>
         /// <exception cref="Amazon.ManagedBlockchain.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.InternalServiceErrorException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -466,10 +568,10 @@ namespace Amazon.ManagedBlockchain
         /// are within the boundaries of the service edition and your account limits.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ThrottlingException">
-        /// The request or operation could not be performed because a service is throttling requests.
-        /// The most common source of throttling errors is launching EC2 instances such that your
-        /// service limit for EC2 instances is exceeded. Request a limit increase or delete unused
-        /// resources if possible.
+        /// The request or operation couldn't be performed because a service is throttling requests.
+        /// The most common source of throttling errors is creating resources that exceed your
+        /// service limit for this resource type. Request a limit increase or delete unused resources
+        /// if possible.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.TooManyTagsException">
         /// 
@@ -501,7 +603,7 @@ namespace Amazon.ManagedBlockchain
         /// 
         /// <returns>The response from the CreateNode service method, as returned by ManagedBlockchain.</returns>
         /// <exception cref="Amazon.ManagedBlockchain.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.InternalServiceErrorException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -517,16 +619,16 @@ namespace Amazon.ManagedBlockchain
         /// are within the boundaries of the service edition and your account limits.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ResourceNotFoundException">
-        /// A requested resource does not exist. It may have been deleted or referenced inaccurately.
+        /// A requested resource doesn't exist. It may have been deleted or referenced incorrectly.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ResourceNotReadyException">
-        /// The requested resource exists but is not in a status that can complete the operation.
+        /// The requested resource exists but isn't in a status that can complete the operation.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ThrottlingException">
-        /// The request or operation could not be performed because a service is throttling requests.
-        /// The most common source of throttling errors is launching EC2 instances such that your
-        /// service limit for EC2 instances is exceeded. Request a limit increase or delete unused
-        /// resources if possible.
+        /// The request or operation couldn't be performed because a service is throttling requests.
+        /// The most common source of throttling errors is creating resources that exceed your
+        /// service limit for this resource type. Request a limit increase or delete unused resources
+        /// if possible.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.TooManyTagsException">
         /// 
@@ -557,7 +659,7 @@ namespace Amazon.ManagedBlockchain
         /// 
         /// <returns>The response from the CreateNode service method, as returned by ManagedBlockchain.</returns>
         /// <exception cref="Amazon.ManagedBlockchain.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.InternalServiceErrorException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -573,16 +675,16 @@ namespace Amazon.ManagedBlockchain
         /// are within the boundaries of the service edition and your account limits.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ResourceNotFoundException">
-        /// A requested resource does not exist. It may have been deleted or referenced inaccurately.
+        /// A requested resource doesn't exist. It may have been deleted or referenced incorrectly.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ResourceNotReadyException">
-        /// The requested resource exists but is not in a status that can complete the operation.
+        /// The requested resource exists but isn't in a status that can complete the operation.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ThrottlingException">
-        /// The request or operation could not be performed because a service is throttling requests.
-        /// The most common source of throttling errors is launching EC2 instances such that your
-        /// service limit for EC2 instances is exceeded. Request a limit increase or delete unused
-        /// resources if possible.
+        /// The request or operation couldn't be performed because a service is throttling requests.
+        /// The most common source of throttling errors is creating resources that exceed your
+        /// service limit for this resource type. Request a limit increase or delete unused resources
+        /// if possible.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.TooManyTagsException">
         /// 
@@ -616,7 +718,7 @@ namespace Amazon.ManagedBlockchain
         /// 
         /// <returns>The response from the CreateProposal service method, as returned by ManagedBlockchain.</returns>
         /// <exception cref="Amazon.ManagedBlockchain.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.InternalServiceErrorException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -625,16 +727,16 @@ namespace Amazon.ManagedBlockchain
         /// The action or operation requested is invalid. Verify that the action is typed correctly.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ResourceNotFoundException">
-        /// A requested resource does not exist. It may have been deleted or referenced inaccurately.
+        /// A requested resource doesn't exist. It may have been deleted or referenced incorrectly.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ResourceNotReadyException">
-        /// The requested resource exists but is not in a status that can complete the operation.
+        /// The requested resource exists but isn't in a status that can complete the operation.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ThrottlingException">
-        /// The request or operation could not be performed because a service is throttling requests.
-        /// The most common source of throttling errors is launching EC2 instances such that your
-        /// service limit for EC2 instances is exceeded. Request a limit increase or delete unused
-        /// resources if possible.
+        /// The request or operation couldn't be performed because a service is throttling requests.
+        /// The most common source of throttling errors is creating resources that exceed your
+        /// service limit for this resource type. Request a limit increase or delete unused resources
+        /// if possible.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.TooManyTagsException">
         /// 
@@ -667,7 +769,7 @@ namespace Amazon.ManagedBlockchain
         /// 
         /// <returns>The response from the CreateProposal service method, as returned by ManagedBlockchain.</returns>
         /// <exception cref="Amazon.ManagedBlockchain.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.InternalServiceErrorException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -676,16 +778,16 @@ namespace Amazon.ManagedBlockchain
         /// The action or operation requested is invalid. Verify that the action is typed correctly.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ResourceNotFoundException">
-        /// A requested resource does not exist. It may have been deleted or referenced inaccurately.
+        /// A requested resource doesn't exist. It may have been deleted or referenced incorrectly.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ResourceNotReadyException">
-        /// The requested resource exists but is not in a status that can complete the operation.
+        /// The requested resource exists but isn't in a status that can complete the operation.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ThrottlingException">
-        /// The request or operation could not be performed because a service is throttling requests.
-        /// The most common source of throttling errors is launching EC2 instances such that your
-        /// service limit for EC2 instances is exceeded. Request a limit increase or delete unused
-        /// resources if possible.
+        /// The request or operation couldn't be performed because a service is throttling requests.
+        /// The most common source of throttling errors is creating resources that exceed your
+        /// service limit for this resource type. Request a limit increase or delete unused resources
+        /// if possible.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.TooManyTagsException">
         /// 
@@ -702,17 +804,108 @@ namespace Amazon.ManagedBlockchain
 
         #endregion
         
+        #region  DeleteAccessor
+
+
+        /// <summary>
+        /// Deletes an accessor that your Amazon Web Services account owns. An accessor object
+        /// is a container that has the information required for token based access to your Ethereum
+        /// nodes including, the <code>BILLING_TOKEN</code>. After an accessor is deleted, the
+        /// status of the accessor changes from <code>AVAILABLE</code> to <code>PENDING_DELETION</code>.
+        /// An accessor in the <code>PENDING_DELETION</code> state can’t be used for new WebSocket
+        /// requests or HTTP requests. However, WebSocket connections that were initiated while
+        /// the accessor was in the <code>AVAILABLE</code> state remain open until they expire
+        /// (up to 2 hours).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAccessor service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAccessor service method, as returned by ManagedBlockchain.</returns>
+        /// <exception cref="Amazon.ManagedBlockchain.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedBlockchain.Model.InternalServiceErrorException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedBlockchain.Model.InvalidRequestException">
+        /// The action or operation requested is invalid. Verify that the action is typed correctly.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedBlockchain.Model.ResourceNotFoundException">
+        /// A requested resource doesn't exist. It may have been deleted or referenced incorrectly.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedBlockchain.Model.ThrottlingException">
+        /// The request or operation couldn't be performed because a service is throttling requests.
+        /// The most common source of throttling errors is creating resources that exceed your
+        /// service limit for this resource type. Request a limit increase or delete unused resources
+        /// if possible.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/DeleteAccessor">REST API Reference for DeleteAccessor Operation</seealso>
+        public virtual DeleteAccessorResponse DeleteAccessor(DeleteAccessorRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAccessorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAccessorResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteAccessorResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes an accessor that your Amazon Web Services account owns. An accessor object
+        /// is a container that has the information required for token based access to your Ethereum
+        /// nodes including, the <code>BILLING_TOKEN</code>. After an accessor is deleted, the
+        /// status of the accessor changes from <code>AVAILABLE</code> to <code>PENDING_DELETION</code>.
+        /// An accessor in the <code>PENDING_DELETION</code> state can’t be used for new WebSocket
+        /// requests or HTTP requests. However, WebSocket connections that were initiated while
+        /// the accessor was in the <code>AVAILABLE</code> state remain open until they expire
+        /// (up to 2 hours).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAccessor service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteAccessor service method, as returned by ManagedBlockchain.</returns>
+        /// <exception cref="Amazon.ManagedBlockchain.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedBlockchain.Model.InternalServiceErrorException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedBlockchain.Model.InvalidRequestException">
+        /// The action or operation requested is invalid. Verify that the action is typed correctly.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedBlockchain.Model.ResourceNotFoundException">
+        /// A requested resource doesn't exist. It may have been deleted or referenced incorrectly.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedBlockchain.Model.ThrottlingException">
+        /// The request or operation couldn't be performed because a service is throttling requests.
+        /// The most common source of throttling errors is creating resources that exceed your
+        /// service limit for this resource type. Request a limit increase or delete unused resources
+        /// if possible.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/DeleteAccessor">REST API Reference for DeleteAccessor Operation</seealso>
+        public virtual Task<DeleteAccessorResponse> DeleteAccessorAsync(DeleteAccessorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAccessorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAccessorResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteAccessorResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteMember
 
 
         /// <summary>
         /// Deletes a member. Deleting a member removes the member and all associated resources
         /// from the network. <code>DeleteMember</code> can only be called for a specified <code>MemberId</code>
-        /// if the principal performing the action is associated with the AWS account that owns
-        /// the member. In all other cases, the <code>DeleteMember</code> action is carried out
-        /// as the result of an approved proposal to remove a member. If <code>MemberId</code>
-        /// is the last member in a network specified by the last AWS account, the network is
-        /// deleted also.
+        /// if the principal performing the action is associated with the Amazon Web Services
+        /// account that owns the member. In all other cases, the <code>DeleteMember</code> action
+        /// is carried out as the result of an approved proposal to remove a member. If <code>MemberId</code>
+        /// is the last member in a network specified by the last Amazon Web Services account,
+        /// the network is deleted also.
         /// 
         ///  
         /// <para>
@@ -723,7 +916,7 @@ namespace Amazon.ManagedBlockchain
         /// 
         /// <returns>The response from the DeleteMember service method, as returned by ManagedBlockchain.</returns>
         /// <exception cref="Amazon.ManagedBlockchain.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.InternalServiceErrorException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -732,16 +925,16 @@ namespace Amazon.ManagedBlockchain
         /// The action or operation requested is invalid. Verify that the action is typed correctly.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ResourceNotFoundException">
-        /// A requested resource does not exist. It may have been deleted or referenced inaccurately.
+        /// A requested resource doesn't exist. It may have been deleted or referenced incorrectly.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ResourceNotReadyException">
-        /// The requested resource exists but is not in a status that can complete the operation.
+        /// The requested resource exists but isn't in a status that can complete the operation.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ThrottlingException">
-        /// The request or operation could not be performed because a service is throttling requests.
-        /// The most common source of throttling errors is launching EC2 instances such that your
-        /// service limit for EC2 instances is exceeded. Request a limit increase or delete unused
-        /// resources if possible.
+        /// The request or operation couldn't be performed because a service is throttling requests.
+        /// The most common source of throttling errors is creating resources that exceed your
+        /// service limit for this resource type. Request a limit increase or delete unused resources
+        /// if possible.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/DeleteMember">REST API Reference for DeleteMember Operation</seealso>
         public virtual DeleteMemberResponse DeleteMember(DeleteMemberRequest request)
@@ -757,11 +950,11 @@ namespace Amazon.ManagedBlockchain
         /// <summary>
         /// Deletes a member. Deleting a member removes the member and all associated resources
         /// from the network. <code>DeleteMember</code> can only be called for a specified <code>MemberId</code>
-        /// if the principal performing the action is associated with the AWS account that owns
-        /// the member. In all other cases, the <code>DeleteMember</code> action is carried out
-        /// as the result of an approved proposal to remove a member. If <code>MemberId</code>
-        /// is the last member in a network specified by the last AWS account, the network is
-        /// deleted also.
+        /// if the principal performing the action is associated with the Amazon Web Services
+        /// account that owns the member. In all other cases, the <code>DeleteMember</code> action
+        /// is carried out as the result of an approved proposal to remove a member. If <code>MemberId</code>
+        /// is the last member in a network specified by the last Amazon Web Services account,
+        /// the network is deleted also.
         /// 
         ///  
         /// <para>
@@ -775,7 +968,7 @@ namespace Amazon.ManagedBlockchain
         /// 
         /// <returns>The response from the DeleteMember service method, as returned by ManagedBlockchain.</returns>
         /// <exception cref="Amazon.ManagedBlockchain.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.InternalServiceErrorException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -784,16 +977,16 @@ namespace Amazon.ManagedBlockchain
         /// The action or operation requested is invalid. Verify that the action is typed correctly.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ResourceNotFoundException">
-        /// A requested resource does not exist. It may have been deleted or referenced inaccurately.
+        /// A requested resource doesn't exist. It may have been deleted or referenced incorrectly.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ResourceNotReadyException">
-        /// The requested resource exists but is not in a status that can complete the operation.
+        /// The requested resource exists but isn't in a status that can complete the operation.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ThrottlingException">
-        /// The request or operation could not be performed because a service is throttling requests.
-        /// The most common source of throttling errors is launching EC2 instances such that your
-        /// service limit for EC2 instances is exceeded. Request a limit increase or delete unused
-        /// resources if possible.
+        /// The request or operation couldn't be performed because a service is throttling requests.
+        /// The most common source of throttling errors is creating resources that exceed your
+        /// service limit for this resource type. Request a limit increase or delete unused resources
+        /// if possible.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/DeleteMember">REST API Reference for DeleteMember Operation</seealso>
         public virtual Task<DeleteMemberResponse> DeleteMemberAsync(DeleteMemberRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -811,8 +1004,8 @@ namespace Amazon.ManagedBlockchain
 
 
         /// <summary>
-        /// Deletes a node that your AWS account owns. All data on the node is lost and cannot
-        /// be recovered.
+        /// Deletes a node that your Amazon Web Services account owns. All data on the node is
+        /// lost and cannot be recovered.
         /// 
         ///  
         /// <para>
@@ -823,7 +1016,7 @@ namespace Amazon.ManagedBlockchain
         /// 
         /// <returns>The response from the DeleteNode service method, as returned by ManagedBlockchain.</returns>
         /// <exception cref="Amazon.ManagedBlockchain.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.InternalServiceErrorException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -832,16 +1025,16 @@ namespace Amazon.ManagedBlockchain
         /// The action or operation requested is invalid. Verify that the action is typed correctly.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ResourceNotFoundException">
-        /// A requested resource does not exist. It may have been deleted or referenced inaccurately.
+        /// A requested resource doesn't exist. It may have been deleted or referenced incorrectly.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ResourceNotReadyException">
-        /// The requested resource exists but is not in a status that can complete the operation.
+        /// The requested resource exists but isn't in a status that can complete the operation.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ThrottlingException">
-        /// The request or operation could not be performed because a service is throttling requests.
-        /// The most common source of throttling errors is launching EC2 instances such that your
-        /// service limit for EC2 instances is exceeded. Request a limit increase or delete unused
-        /// resources if possible.
+        /// The request or operation couldn't be performed because a service is throttling requests.
+        /// The most common source of throttling errors is creating resources that exceed your
+        /// service limit for this resource type. Request a limit increase or delete unused resources
+        /// if possible.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/DeleteNode">REST API Reference for DeleteNode Operation</seealso>
         public virtual DeleteNodeResponse DeleteNode(DeleteNodeRequest request)
@@ -855,8 +1048,8 @@ namespace Amazon.ManagedBlockchain
 
 
         /// <summary>
-        /// Deletes a node that your AWS account owns. All data on the node is lost and cannot
-        /// be recovered.
+        /// Deletes a node that your Amazon Web Services account owns. All data on the node is
+        /// lost and cannot be recovered.
         /// 
         ///  
         /// <para>
@@ -870,7 +1063,7 @@ namespace Amazon.ManagedBlockchain
         /// 
         /// <returns>The response from the DeleteNode service method, as returned by ManagedBlockchain.</returns>
         /// <exception cref="Amazon.ManagedBlockchain.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.InternalServiceErrorException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -879,16 +1072,16 @@ namespace Amazon.ManagedBlockchain
         /// The action or operation requested is invalid. Verify that the action is typed correctly.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ResourceNotFoundException">
-        /// A requested resource does not exist. It may have been deleted or referenced inaccurately.
+        /// A requested resource doesn't exist. It may have been deleted or referenced incorrectly.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ResourceNotReadyException">
-        /// The requested resource exists but is not in a status that can complete the operation.
+        /// The requested resource exists but isn't in a status that can complete the operation.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ThrottlingException">
-        /// The request or operation could not be performed because a service is throttling requests.
-        /// The most common source of throttling errors is launching EC2 instances such that your
-        /// service limit for EC2 instances is exceeded. Request a limit increase or delete unused
-        /// resources if possible.
+        /// The request or operation couldn't be performed because a service is throttling requests.
+        /// The most common source of throttling errors is creating resources that exceed your
+        /// service limit for this resource type. Request a limit increase or delete unused resources
+        /// if possible.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/DeleteNode">REST API Reference for DeleteNode Operation</seealso>
         public virtual Task<DeleteNodeResponse> DeleteNodeAsync(DeleteNodeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -898,6 +1091,85 @@ namespace Amazon.ManagedBlockchain
             options.ResponseUnmarshaller = DeleteNodeResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeleteNodeResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetAccessor
+
+
+        /// <summary>
+        /// Returns detailed information about an accessor. An accessor object is a container
+        /// that has the information required for token based access to your Ethereum nodes.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAccessor service method.</param>
+        /// 
+        /// <returns>The response from the GetAccessor service method, as returned by ManagedBlockchain.</returns>
+        /// <exception cref="Amazon.ManagedBlockchain.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedBlockchain.Model.InternalServiceErrorException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedBlockchain.Model.InvalidRequestException">
+        /// The action or operation requested is invalid. Verify that the action is typed correctly.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedBlockchain.Model.ResourceNotFoundException">
+        /// A requested resource doesn't exist. It may have been deleted or referenced incorrectly.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedBlockchain.Model.ThrottlingException">
+        /// The request or operation couldn't be performed because a service is throttling requests.
+        /// The most common source of throttling errors is creating resources that exceed your
+        /// service limit for this resource type. Request a limit increase or delete unused resources
+        /// if possible.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/GetAccessor">REST API Reference for GetAccessor Operation</seealso>
+        public virtual GetAccessorResponse GetAccessor(GetAccessorRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAccessorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAccessorResponseUnmarshaller.Instance;
+
+            return Invoke<GetAccessorResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns detailed information about an accessor. An accessor object is a container
+        /// that has the information required for token based access to your Ethereum nodes.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAccessor service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetAccessor service method, as returned by ManagedBlockchain.</returns>
+        /// <exception cref="Amazon.ManagedBlockchain.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedBlockchain.Model.InternalServiceErrorException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedBlockchain.Model.InvalidRequestException">
+        /// The action or operation requested is invalid. Verify that the action is typed correctly.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedBlockchain.Model.ResourceNotFoundException">
+        /// A requested resource doesn't exist. It may have been deleted or referenced incorrectly.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedBlockchain.Model.ThrottlingException">
+        /// The request or operation couldn't be performed because a service is throttling requests.
+        /// The most common source of throttling errors is creating resources that exceed your
+        /// service limit for this resource type. Request a limit increase or delete unused resources
+        /// if possible.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/GetAccessor">REST API Reference for GetAccessor Operation</seealso>
+        public virtual Task<GetAccessorResponse> GetAccessorAsync(GetAccessorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAccessorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAccessorResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetAccessorResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -917,7 +1189,7 @@ namespace Amazon.ManagedBlockchain
         /// 
         /// <returns>The response from the GetMember service method, as returned by ManagedBlockchain.</returns>
         /// <exception cref="Amazon.ManagedBlockchain.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.InternalServiceErrorException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -926,13 +1198,13 @@ namespace Amazon.ManagedBlockchain
         /// The action or operation requested is invalid. Verify that the action is typed correctly.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ResourceNotFoundException">
-        /// A requested resource does not exist. It may have been deleted or referenced inaccurately.
+        /// A requested resource doesn't exist. It may have been deleted or referenced incorrectly.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ThrottlingException">
-        /// The request or operation could not be performed because a service is throttling requests.
-        /// The most common source of throttling errors is launching EC2 instances such that your
-        /// service limit for EC2 instances is exceeded. Request a limit increase or delete unused
-        /// resources if possible.
+        /// The request or operation couldn't be performed because a service is throttling requests.
+        /// The most common source of throttling errors is creating resources that exceed your
+        /// service limit for this resource type. Request a limit increase or delete unused resources
+        /// if possible.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/GetMember">REST API Reference for GetMember Operation</seealso>
         public virtual GetMemberResponse GetMember(GetMemberRequest request)
@@ -960,7 +1232,7 @@ namespace Amazon.ManagedBlockchain
         /// 
         /// <returns>The response from the GetMember service method, as returned by ManagedBlockchain.</returns>
         /// <exception cref="Amazon.ManagedBlockchain.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.InternalServiceErrorException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -969,13 +1241,13 @@ namespace Amazon.ManagedBlockchain
         /// The action or operation requested is invalid. Verify that the action is typed correctly.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ResourceNotFoundException">
-        /// A requested resource does not exist. It may have been deleted or referenced inaccurately.
+        /// A requested resource doesn't exist. It may have been deleted or referenced incorrectly.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ThrottlingException">
-        /// The request or operation could not be performed because a service is throttling requests.
-        /// The most common source of throttling errors is launching EC2 instances such that your
-        /// service limit for EC2 instances is exceeded. Request a limit increase or delete unused
-        /// resources if possible.
+        /// The request or operation couldn't be performed because a service is throttling requests.
+        /// The most common source of throttling errors is creating resources that exceed your
+        /// service limit for this resource type. Request a limit increase or delete unused resources
+        /// if possible.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/GetMember">REST API Reference for GetMember Operation</seealso>
         public virtual Task<GetMemberResponse> GetMemberAsync(GetMemberRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1004,7 +1276,7 @@ namespace Amazon.ManagedBlockchain
         /// 
         /// <returns>The response from the GetNetwork service method, as returned by ManagedBlockchain.</returns>
         /// <exception cref="Amazon.ManagedBlockchain.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.InternalServiceErrorException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -1013,13 +1285,13 @@ namespace Amazon.ManagedBlockchain
         /// The action or operation requested is invalid. Verify that the action is typed correctly.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ResourceNotFoundException">
-        /// A requested resource does not exist. It may have been deleted or referenced inaccurately.
+        /// A requested resource doesn't exist. It may have been deleted or referenced incorrectly.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ThrottlingException">
-        /// The request or operation could not be performed because a service is throttling requests.
-        /// The most common source of throttling errors is launching EC2 instances such that your
-        /// service limit for EC2 instances is exceeded. Request a limit increase or delete unused
-        /// resources if possible.
+        /// The request or operation couldn't be performed because a service is throttling requests.
+        /// The most common source of throttling errors is creating resources that exceed your
+        /// service limit for this resource type. Request a limit increase or delete unused resources
+        /// if possible.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/GetNetwork">REST API Reference for GetNetwork Operation</seealso>
         public virtual GetNetworkResponse GetNetwork(GetNetworkRequest request)
@@ -1047,7 +1319,7 @@ namespace Amazon.ManagedBlockchain
         /// 
         /// <returns>The response from the GetNetwork service method, as returned by ManagedBlockchain.</returns>
         /// <exception cref="Amazon.ManagedBlockchain.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.InternalServiceErrorException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -1056,13 +1328,13 @@ namespace Amazon.ManagedBlockchain
         /// The action or operation requested is invalid. Verify that the action is typed correctly.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ResourceNotFoundException">
-        /// A requested resource does not exist. It may have been deleted or referenced inaccurately.
+        /// A requested resource doesn't exist. It may have been deleted or referenced incorrectly.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ThrottlingException">
-        /// The request or operation could not be performed because a service is throttling requests.
-        /// The most common source of throttling errors is launching EC2 instances such that your
-        /// service limit for EC2 instances is exceeded. Request a limit increase or delete unused
-        /// resources if possible.
+        /// The request or operation couldn't be performed because a service is throttling requests.
+        /// The most common source of throttling errors is creating resources that exceed your
+        /// service limit for this resource type. Request a limit increase or delete unused resources
+        /// if possible.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/GetNetwork">REST API Reference for GetNetwork Operation</seealso>
         public virtual Task<GetNetworkResponse> GetNetworkAsync(GetNetworkRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1091,7 +1363,7 @@ namespace Amazon.ManagedBlockchain
         /// 
         /// <returns>The response from the GetNode service method, as returned by ManagedBlockchain.</returns>
         /// <exception cref="Amazon.ManagedBlockchain.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.InternalServiceErrorException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -1100,13 +1372,13 @@ namespace Amazon.ManagedBlockchain
         /// The action or operation requested is invalid. Verify that the action is typed correctly.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ResourceNotFoundException">
-        /// A requested resource does not exist. It may have been deleted or referenced inaccurately.
+        /// A requested resource doesn't exist. It may have been deleted or referenced incorrectly.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ThrottlingException">
-        /// The request or operation could not be performed because a service is throttling requests.
-        /// The most common source of throttling errors is launching EC2 instances such that your
-        /// service limit for EC2 instances is exceeded. Request a limit increase or delete unused
-        /// resources if possible.
+        /// The request or operation couldn't be performed because a service is throttling requests.
+        /// The most common source of throttling errors is creating resources that exceed your
+        /// service limit for this resource type. Request a limit increase or delete unused resources
+        /// if possible.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/GetNode">REST API Reference for GetNode Operation</seealso>
         public virtual GetNodeResponse GetNode(GetNodeRequest request)
@@ -1134,7 +1406,7 @@ namespace Amazon.ManagedBlockchain
         /// 
         /// <returns>The response from the GetNode service method, as returned by ManagedBlockchain.</returns>
         /// <exception cref="Amazon.ManagedBlockchain.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.InternalServiceErrorException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -1143,13 +1415,13 @@ namespace Amazon.ManagedBlockchain
         /// The action or operation requested is invalid. Verify that the action is typed correctly.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ResourceNotFoundException">
-        /// A requested resource does not exist. It may have been deleted or referenced inaccurately.
+        /// A requested resource doesn't exist. It may have been deleted or referenced incorrectly.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ThrottlingException">
-        /// The request or operation could not be performed because a service is throttling requests.
-        /// The most common source of throttling errors is launching EC2 instances such that your
-        /// service limit for EC2 instances is exceeded. Request a limit increase or delete unused
-        /// resources if possible.
+        /// The request or operation couldn't be performed because a service is throttling requests.
+        /// The most common source of throttling errors is creating resources that exceed your
+        /// service limit for this resource type. Request a limit increase or delete unused resources
+        /// if possible.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/GetNode">REST API Reference for GetNode Operation</seealso>
         public virtual Task<GetNodeResponse> GetNodeAsync(GetNodeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1178,7 +1450,7 @@ namespace Amazon.ManagedBlockchain
         /// 
         /// <returns>The response from the GetProposal service method, as returned by ManagedBlockchain.</returns>
         /// <exception cref="Amazon.ManagedBlockchain.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.InternalServiceErrorException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -1187,13 +1459,13 @@ namespace Amazon.ManagedBlockchain
         /// The action or operation requested is invalid. Verify that the action is typed correctly.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ResourceNotFoundException">
-        /// A requested resource does not exist. It may have been deleted or referenced inaccurately.
+        /// A requested resource doesn't exist. It may have been deleted or referenced incorrectly.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ThrottlingException">
-        /// The request or operation could not be performed because a service is throttling requests.
-        /// The most common source of throttling errors is launching EC2 instances such that your
-        /// service limit for EC2 instances is exceeded. Request a limit increase or delete unused
-        /// resources if possible.
+        /// The request or operation couldn't be performed because a service is throttling requests.
+        /// The most common source of throttling errors is creating resources that exceed your
+        /// service limit for this resource type. Request a limit increase or delete unused resources
+        /// if possible.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/GetProposal">REST API Reference for GetProposal Operation</seealso>
         public virtual GetProposalResponse GetProposal(GetProposalRequest request)
@@ -1221,7 +1493,7 @@ namespace Amazon.ManagedBlockchain
         /// 
         /// <returns>The response from the GetProposal service method, as returned by ManagedBlockchain.</returns>
         /// <exception cref="Amazon.ManagedBlockchain.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.InternalServiceErrorException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -1230,13 +1502,13 @@ namespace Amazon.ManagedBlockchain
         /// The action or operation requested is invalid. Verify that the action is typed correctly.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ResourceNotFoundException">
-        /// A requested resource does not exist. It may have been deleted or referenced inaccurately.
+        /// A requested resource doesn't exist. It may have been deleted or referenced incorrectly.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ThrottlingException">
-        /// The request or operation could not be performed because a service is throttling requests.
-        /// The most common source of throttling errors is launching EC2 instances such that your
-        /// service limit for EC2 instances is exceeded. Request a limit increase or delete unused
-        /// resources if possible.
+        /// The request or operation couldn't be performed because a service is throttling requests.
+        /// The most common source of throttling errors is creating resources that exceed your
+        /// service limit for this resource type. Request a limit increase or delete unused resources
+        /// if possible.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/GetProposal">REST API Reference for GetProposal Operation</seealso>
         public virtual Task<GetProposalResponse> GetProposalAsync(GetProposalRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1250,11 +1522,84 @@ namespace Amazon.ManagedBlockchain
 
         #endregion
         
+        #region  ListAccessors
+
+
+        /// <summary>
+        /// Returns a list of the accessors and their properties. Accessor objects are containers
+        /// that have the information required for token based access to your Ethereum nodes.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAccessors service method.</param>
+        /// 
+        /// <returns>The response from the ListAccessors service method, as returned by ManagedBlockchain.</returns>
+        /// <exception cref="Amazon.ManagedBlockchain.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedBlockchain.Model.InternalServiceErrorException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedBlockchain.Model.InvalidRequestException">
+        /// The action or operation requested is invalid. Verify that the action is typed correctly.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedBlockchain.Model.ThrottlingException">
+        /// The request or operation couldn't be performed because a service is throttling requests.
+        /// The most common source of throttling errors is creating resources that exceed your
+        /// service limit for this resource type. Request a limit increase or delete unused resources
+        /// if possible.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/ListAccessors">REST API Reference for ListAccessors Operation</seealso>
+        public virtual ListAccessorsResponse ListAccessors(ListAccessorsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAccessorsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAccessorsResponseUnmarshaller.Instance;
+
+            return Invoke<ListAccessorsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns a list of the accessors and their properties. Accessor objects are containers
+        /// that have the information required for token based access to your Ethereum nodes.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAccessors service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAccessors service method, as returned by ManagedBlockchain.</returns>
+        /// <exception cref="Amazon.ManagedBlockchain.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedBlockchain.Model.InternalServiceErrorException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedBlockchain.Model.InvalidRequestException">
+        /// The action or operation requested is invalid. Verify that the action is typed correctly.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedBlockchain.Model.ThrottlingException">
+        /// The request or operation couldn't be performed because a service is throttling requests.
+        /// The most common source of throttling errors is creating resources that exceed your
+        /// service limit for this resource type. Request a limit increase or delete unused resources
+        /// if possible.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/ListAccessors">REST API Reference for ListAccessors Operation</seealso>
+        public virtual Task<ListAccessorsResponse> ListAccessorsAsync(ListAccessorsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAccessorsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAccessorsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListAccessorsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListInvitations
 
 
         /// <summary>
-        /// Returns a list of all invitations for the current AWS account.
+        /// Returns a list of all invitations for the current Amazon Web Services account.
         /// 
         ///  
         /// <para>
@@ -1265,7 +1610,7 @@ namespace Amazon.ManagedBlockchain
         /// 
         /// <returns>The response from the ListInvitations service method, as returned by ManagedBlockchain.</returns>
         /// <exception cref="Amazon.ManagedBlockchain.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.InternalServiceErrorException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -1278,13 +1623,13 @@ namespace Amazon.ManagedBlockchain
         /// are within the boundaries of the service edition and your account limits.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ResourceNotFoundException">
-        /// A requested resource does not exist. It may have been deleted or referenced inaccurately.
+        /// A requested resource doesn't exist. It may have been deleted or referenced incorrectly.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ThrottlingException">
-        /// The request or operation could not be performed because a service is throttling requests.
-        /// The most common source of throttling errors is launching EC2 instances such that your
-        /// service limit for EC2 instances is exceeded. Request a limit increase or delete unused
-        /// resources if possible.
+        /// The request or operation couldn't be performed because a service is throttling requests.
+        /// The most common source of throttling errors is creating resources that exceed your
+        /// service limit for this resource type. Request a limit increase or delete unused resources
+        /// if possible.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/ListInvitations">REST API Reference for ListInvitations Operation</seealso>
         public virtual ListInvitationsResponse ListInvitations(ListInvitationsRequest request)
@@ -1298,7 +1643,7 @@ namespace Amazon.ManagedBlockchain
 
 
         /// <summary>
-        /// Returns a list of all invitations for the current AWS account.
+        /// Returns a list of all invitations for the current Amazon Web Services account.
         /// 
         ///  
         /// <para>
@@ -1312,7 +1657,7 @@ namespace Amazon.ManagedBlockchain
         /// 
         /// <returns>The response from the ListInvitations service method, as returned by ManagedBlockchain.</returns>
         /// <exception cref="Amazon.ManagedBlockchain.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.InternalServiceErrorException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -1325,13 +1670,13 @@ namespace Amazon.ManagedBlockchain
         /// are within the boundaries of the service edition and your account limits.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ResourceNotFoundException">
-        /// A requested resource does not exist. It may have been deleted or referenced inaccurately.
+        /// A requested resource doesn't exist. It may have been deleted or referenced incorrectly.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ThrottlingException">
-        /// The request or operation could not be performed because a service is throttling requests.
-        /// The most common source of throttling errors is launching EC2 instances such that your
-        /// service limit for EC2 instances is exceeded. Request a limit increase or delete unused
-        /// resources if possible.
+        /// The request or operation couldn't be performed because a service is throttling requests.
+        /// The most common source of throttling errors is creating resources that exceed your
+        /// service limit for this resource type. Request a limit increase or delete unused resources
+        /// if possible.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/ListInvitations">REST API Reference for ListInvitations Operation</seealso>
         public virtual Task<ListInvitationsResponse> ListInvitationsAsync(ListInvitationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1360,7 +1705,7 @@ namespace Amazon.ManagedBlockchain
         /// 
         /// <returns>The response from the ListMembers service method, as returned by ManagedBlockchain.</returns>
         /// <exception cref="Amazon.ManagedBlockchain.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.InternalServiceErrorException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -1369,10 +1714,10 @@ namespace Amazon.ManagedBlockchain
         /// The action or operation requested is invalid. Verify that the action is typed correctly.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ThrottlingException">
-        /// The request or operation could not be performed because a service is throttling requests.
-        /// The most common source of throttling errors is launching EC2 instances such that your
-        /// service limit for EC2 instances is exceeded. Request a limit increase or delete unused
-        /// resources if possible.
+        /// The request or operation couldn't be performed because a service is throttling requests.
+        /// The most common source of throttling errors is creating resources that exceed your
+        /// service limit for this resource type. Request a limit increase or delete unused resources
+        /// if possible.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/ListMembers">REST API Reference for ListMembers Operation</seealso>
         public virtual ListMembersResponse ListMembers(ListMembersRequest request)
@@ -1400,7 +1745,7 @@ namespace Amazon.ManagedBlockchain
         /// 
         /// <returns>The response from the ListMembers service method, as returned by ManagedBlockchain.</returns>
         /// <exception cref="Amazon.ManagedBlockchain.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.InternalServiceErrorException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -1409,10 +1754,10 @@ namespace Amazon.ManagedBlockchain
         /// The action or operation requested is invalid. Verify that the action is typed correctly.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ThrottlingException">
-        /// The request or operation could not be performed because a service is throttling requests.
-        /// The most common source of throttling errors is launching EC2 instances such that your
-        /// service limit for EC2 instances is exceeded. Request a limit increase or delete unused
-        /// resources if possible.
+        /// The request or operation couldn't be performed because a service is throttling requests.
+        /// The most common source of throttling errors is creating resources that exceed your
+        /// service limit for this resource type. Request a limit increase or delete unused resources
+        /// if possible.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/ListMembers">REST API Reference for ListMembers Operation</seealso>
         public virtual Task<ListMembersResponse> ListMembersAsync(ListMembersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1430,7 +1775,8 @@ namespace Amazon.ManagedBlockchain
 
 
         /// <summary>
-        /// Returns information about the networks in which the current AWS account participates.
+        /// Returns information about the networks in which the current Amazon Web Services account
+        /// participates.
         /// 
         ///  
         /// <para>
@@ -1441,7 +1787,7 @@ namespace Amazon.ManagedBlockchain
         /// 
         /// <returns>The response from the ListNetworks service method, as returned by ManagedBlockchain.</returns>
         /// <exception cref="Amazon.ManagedBlockchain.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.InternalServiceErrorException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -1450,10 +1796,10 @@ namespace Amazon.ManagedBlockchain
         /// The action or operation requested is invalid. Verify that the action is typed correctly.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ThrottlingException">
-        /// The request or operation could not be performed because a service is throttling requests.
-        /// The most common source of throttling errors is launching EC2 instances such that your
-        /// service limit for EC2 instances is exceeded. Request a limit increase or delete unused
-        /// resources if possible.
+        /// The request or operation couldn't be performed because a service is throttling requests.
+        /// The most common source of throttling errors is creating resources that exceed your
+        /// service limit for this resource type. Request a limit increase or delete unused resources
+        /// if possible.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/ListNetworks">REST API Reference for ListNetworks Operation</seealso>
         public virtual ListNetworksResponse ListNetworks(ListNetworksRequest request)
@@ -1467,7 +1813,8 @@ namespace Amazon.ManagedBlockchain
 
 
         /// <summary>
-        /// Returns information about the networks in which the current AWS account participates.
+        /// Returns information about the networks in which the current Amazon Web Services account
+        /// participates.
         /// 
         ///  
         /// <para>
@@ -1481,7 +1828,7 @@ namespace Amazon.ManagedBlockchain
         /// 
         /// <returns>The response from the ListNetworks service method, as returned by ManagedBlockchain.</returns>
         /// <exception cref="Amazon.ManagedBlockchain.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.InternalServiceErrorException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -1490,10 +1837,10 @@ namespace Amazon.ManagedBlockchain
         /// The action or operation requested is invalid. Verify that the action is typed correctly.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ThrottlingException">
-        /// The request or operation could not be performed because a service is throttling requests.
-        /// The most common source of throttling errors is launching EC2 instances such that your
-        /// service limit for EC2 instances is exceeded. Request a limit increase or delete unused
-        /// resources if possible.
+        /// The request or operation couldn't be performed because a service is throttling requests.
+        /// The most common source of throttling errors is creating resources that exceed your
+        /// service limit for this resource type. Request a limit increase or delete unused resources
+        /// if possible.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/ListNetworks">REST API Reference for ListNetworks Operation</seealso>
         public virtual Task<ListNetworksResponse> ListNetworksAsync(ListNetworksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1522,7 +1869,7 @@ namespace Amazon.ManagedBlockchain
         /// 
         /// <returns>The response from the ListNodes service method, as returned by ManagedBlockchain.</returns>
         /// <exception cref="Amazon.ManagedBlockchain.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.InternalServiceErrorException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -1531,10 +1878,10 @@ namespace Amazon.ManagedBlockchain
         /// The action or operation requested is invalid. Verify that the action is typed correctly.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ThrottlingException">
-        /// The request or operation could not be performed because a service is throttling requests.
-        /// The most common source of throttling errors is launching EC2 instances such that your
-        /// service limit for EC2 instances is exceeded. Request a limit increase or delete unused
-        /// resources if possible.
+        /// The request or operation couldn't be performed because a service is throttling requests.
+        /// The most common source of throttling errors is creating resources that exceed your
+        /// service limit for this resource type. Request a limit increase or delete unused resources
+        /// if possible.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/ListNodes">REST API Reference for ListNodes Operation</seealso>
         public virtual ListNodesResponse ListNodes(ListNodesRequest request)
@@ -1562,7 +1909,7 @@ namespace Amazon.ManagedBlockchain
         /// 
         /// <returns>The response from the ListNodes service method, as returned by ManagedBlockchain.</returns>
         /// <exception cref="Amazon.ManagedBlockchain.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.InternalServiceErrorException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -1571,10 +1918,10 @@ namespace Amazon.ManagedBlockchain
         /// The action or operation requested is invalid. Verify that the action is typed correctly.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ThrottlingException">
-        /// The request or operation could not be performed because a service is throttling requests.
-        /// The most common source of throttling errors is launching EC2 instances such that your
-        /// service limit for EC2 instances is exceeded. Request a limit increase or delete unused
-        /// resources if possible.
+        /// The request or operation couldn't be performed because a service is throttling requests.
+        /// The most common source of throttling errors is creating resources that exceed your
+        /// service limit for this resource type. Request a limit increase or delete unused resources
+        /// if possible.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/ListNodes">REST API Reference for ListNodes Operation</seealso>
         public virtual Task<ListNodesResponse> ListNodesAsync(ListNodesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1603,7 +1950,7 @@ namespace Amazon.ManagedBlockchain
         /// 
         /// <returns>The response from the ListProposals service method, as returned by ManagedBlockchain.</returns>
         /// <exception cref="Amazon.ManagedBlockchain.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.InternalServiceErrorException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -1612,13 +1959,13 @@ namespace Amazon.ManagedBlockchain
         /// The action or operation requested is invalid. Verify that the action is typed correctly.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ResourceNotFoundException">
-        /// A requested resource does not exist. It may have been deleted or referenced inaccurately.
+        /// A requested resource doesn't exist. It may have been deleted or referenced incorrectly.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ThrottlingException">
-        /// The request or operation could not be performed because a service is throttling requests.
-        /// The most common source of throttling errors is launching EC2 instances such that your
-        /// service limit for EC2 instances is exceeded. Request a limit increase or delete unused
-        /// resources if possible.
+        /// The request or operation couldn't be performed because a service is throttling requests.
+        /// The most common source of throttling errors is creating resources that exceed your
+        /// service limit for this resource type. Request a limit increase or delete unused resources
+        /// if possible.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/ListProposals">REST API Reference for ListProposals Operation</seealso>
         public virtual ListProposalsResponse ListProposals(ListProposalsRequest request)
@@ -1646,7 +1993,7 @@ namespace Amazon.ManagedBlockchain
         /// 
         /// <returns>The response from the ListProposals service method, as returned by ManagedBlockchain.</returns>
         /// <exception cref="Amazon.ManagedBlockchain.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.InternalServiceErrorException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -1655,13 +2002,13 @@ namespace Amazon.ManagedBlockchain
         /// The action or operation requested is invalid. Verify that the action is typed correctly.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ResourceNotFoundException">
-        /// A requested resource does not exist. It may have been deleted or referenced inaccurately.
+        /// A requested resource doesn't exist. It may have been deleted or referenced incorrectly.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ThrottlingException">
-        /// The request or operation could not be performed because a service is throttling requests.
-        /// The most common source of throttling errors is launching EC2 instances such that your
-        /// service limit for EC2 instances is exceeded. Request a limit increase or delete unused
-        /// resources if possible.
+        /// The request or operation couldn't be performed because a service is throttling requests.
+        /// The most common source of throttling errors is creating resources that exceed your
+        /// service limit for this resource type. Request a limit increase or delete unused resources
+        /// if possible.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/ListProposals">REST API Reference for ListProposals Operation</seealso>
         public virtual Task<ListProposalsResponse> ListProposalsAsync(ListProposalsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1691,7 +2038,7 @@ namespace Amazon.ManagedBlockchain
         /// 
         /// <returns>The response from the ListProposalVotes service method, as returned by ManagedBlockchain.</returns>
         /// <exception cref="Amazon.ManagedBlockchain.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.InternalServiceErrorException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -1700,10 +2047,10 @@ namespace Amazon.ManagedBlockchain
         /// The action or operation requested is invalid. Verify that the action is typed correctly.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ThrottlingException">
-        /// The request or operation could not be performed because a service is throttling requests.
-        /// The most common source of throttling errors is launching EC2 instances such that your
-        /// service limit for EC2 instances is exceeded. Request a limit increase or delete unused
-        /// resources if possible.
+        /// The request or operation couldn't be performed because a service is throttling requests.
+        /// The most common source of throttling errors is creating resources that exceed your
+        /// service limit for this resource type. Request a limit increase or delete unused resources
+        /// if possible.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/ListProposalVotes">REST API Reference for ListProposalVotes Operation</seealso>
         public virtual ListProposalVotesResponse ListProposalVotes(ListProposalVotesRequest request)
@@ -1732,7 +2079,7 @@ namespace Amazon.ManagedBlockchain
         /// 
         /// <returns>The response from the ListProposalVotes service method, as returned by ManagedBlockchain.</returns>
         /// <exception cref="Amazon.ManagedBlockchain.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.InternalServiceErrorException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -1741,10 +2088,10 @@ namespace Amazon.ManagedBlockchain
         /// The action or operation requested is invalid. Verify that the action is typed correctly.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ThrottlingException">
-        /// The request or operation could not be performed because a service is throttling requests.
-        /// The most common source of throttling errors is launching EC2 instances such that your
-        /// service limit for EC2 instances is exceeded. Request a limit increase or delete unused
-        /// resources if possible.
+        /// The request or operation couldn't be performed because a service is throttling requests.
+        /// The most common source of throttling errors is creating resources that exceed your
+        /// service limit for this resource type. Request a limit increase or delete unused resources
+        /// if possible.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/ListProposalVotes">REST API Reference for ListProposalVotes Operation</seealso>
         public virtual Task<ListProposalVotesResponse> ListProposalVotesAsync(ListProposalVotesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1783,10 +2130,10 @@ namespace Amazon.ManagedBlockchain
         /// The action or operation requested is invalid. Verify that the action is typed correctly.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ResourceNotFoundException">
-        /// A requested resource does not exist. It may have been deleted or referenced inaccurately.
+        /// A requested resource doesn't exist. It may have been deleted or referenced incorrectly.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ResourceNotReadyException">
-        /// The requested resource exists but is not in a status that can complete the operation.
+        /// The requested resource exists but isn't in a status that can complete the operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
@@ -1824,10 +2171,10 @@ namespace Amazon.ManagedBlockchain
         /// The action or operation requested is invalid. Verify that the action is typed correctly.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ResourceNotFoundException">
-        /// A requested resource does not exist. It may have been deleted or referenced inaccurately.
+        /// A requested resource doesn't exist. It may have been deleted or referenced incorrectly.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ResourceNotReadyException">
-        /// The requested resource exists but is not in a status that can complete the operation.
+        /// The requested resource exists but isn't in a status that can complete the operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1846,7 +2193,8 @@ namespace Amazon.ManagedBlockchain
 
         /// <summary>
         /// Rejects an invitation to join a network. This action can be called by a principal
-        /// in an AWS account that has received an invitation to create a member and join a network.
+        /// in an Amazon Web Services account that has received an invitation to create a member
+        /// and join a network.
         /// 
         ///  
         /// <para>
@@ -1857,7 +2205,7 @@ namespace Amazon.ManagedBlockchain
         /// 
         /// <returns>The response from the RejectInvitation service method, as returned by ManagedBlockchain.</returns>
         /// <exception cref="Amazon.ManagedBlockchain.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.IllegalActionException">
         /// 
@@ -1869,13 +2217,13 @@ namespace Amazon.ManagedBlockchain
         /// The action or operation requested is invalid. Verify that the action is typed correctly.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ResourceNotFoundException">
-        /// A requested resource does not exist. It may have been deleted or referenced inaccurately.
+        /// A requested resource doesn't exist. It may have been deleted or referenced incorrectly.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ThrottlingException">
-        /// The request or operation could not be performed because a service is throttling requests.
-        /// The most common source of throttling errors is launching EC2 instances such that your
-        /// service limit for EC2 instances is exceeded. Request a limit increase or delete unused
-        /// resources if possible.
+        /// The request or operation couldn't be performed because a service is throttling requests.
+        /// The most common source of throttling errors is creating resources that exceed your
+        /// service limit for this resource type. Request a limit increase or delete unused resources
+        /// if possible.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/RejectInvitation">REST API Reference for RejectInvitation Operation</seealso>
         public virtual RejectInvitationResponse RejectInvitation(RejectInvitationRequest request)
@@ -1890,7 +2238,8 @@ namespace Amazon.ManagedBlockchain
 
         /// <summary>
         /// Rejects an invitation to join a network. This action can be called by a principal
-        /// in an AWS account that has received an invitation to create a member and join a network.
+        /// in an Amazon Web Services account that has received an invitation to create a member
+        /// and join a network.
         /// 
         ///  
         /// <para>
@@ -1904,7 +2253,7 @@ namespace Amazon.ManagedBlockchain
         /// 
         /// <returns>The response from the RejectInvitation service method, as returned by ManagedBlockchain.</returns>
         /// <exception cref="Amazon.ManagedBlockchain.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.IllegalActionException">
         /// 
@@ -1916,13 +2265,13 @@ namespace Amazon.ManagedBlockchain
         /// The action or operation requested is invalid. Verify that the action is typed correctly.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ResourceNotFoundException">
-        /// A requested resource does not exist. It may have been deleted or referenced inaccurately.
+        /// A requested resource doesn't exist. It may have been deleted or referenced incorrectly.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ThrottlingException">
-        /// The request or operation could not be performed because a service is throttling requests.
-        /// The most common source of throttling errors is launching EC2 instances such that your
-        /// service limit for EC2 instances is exceeded. Request a limit increase or delete unused
-        /// resources if possible.
+        /// The request or operation couldn't be performed because a service is throttling requests.
+        /// The most common source of throttling errors is creating resources that exceed your
+        /// service limit for this resource type. Request a limit increase or delete unused resources
+        /// if possible.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/RejectInvitation">REST API Reference for RejectInvitation Operation</seealso>
         public virtual Task<RejectInvitationResponse> RejectInvitationAsync(RejectInvitationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1971,10 +2320,10 @@ namespace Amazon.ManagedBlockchain
         /// The action or operation requested is invalid. Verify that the action is typed correctly.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ResourceNotFoundException">
-        /// A requested resource does not exist. It may have been deleted or referenced inaccurately.
+        /// A requested resource doesn't exist. It may have been deleted or referenced incorrectly.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ResourceNotReadyException">
-        /// The requested resource exists but is not in a status that can complete the operation.
+        /// The requested resource exists but isn't in a status that can complete the operation.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.TooManyTagsException">
         /// 
@@ -2025,10 +2374,10 @@ namespace Amazon.ManagedBlockchain
         /// The action or operation requested is invalid. Verify that the action is typed correctly.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ResourceNotFoundException">
-        /// A requested resource does not exist. It may have been deleted or referenced inaccurately.
+        /// A requested resource doesn't exist. It may have been deleted or referenced incorrectly.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ResourceNotReadyException">
-        /// The requested resource exists but is not in a status that can complete the operation.
+        /// The requested resource exists but isn't in a status that can complete the operation.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.TooManyTagsException">
         /// 
@@ -2069,10 +2418,10 @@ namespace Amazon.ManagedBlockchain
         /// The action or operation requested is invalid. Verify that the action is typed correctly.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ResourceNotFoundException">
-        /// A requested resource does not exist. It may have been deleted or referenced inaccurately.
+        /// A requested resource doesn't exist. It may have been deleted or referenced incorrectly.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ResourceNotReadyException">
-        /// The requested resource exists but is not in a status that can complete the operation.
+        /// The requested resource exists but isn't in a status that can complete the operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
@@ -2109,10 +2458,10 @@ namespace Amazon.ManagedBlockchain
         /// The action or operation requested is invalid. Verify that the action is typed correctly.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ResourceNotFoundException">
-        /// A requested resource does not exist. It may have been deleted or referenced inaccurately.
+        /// A requested resource doesn't exist. It may have been deleted or referenced incorrectly.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ResourceNotReadyException">
-        /// The requested resource exists but is not in a status that can complete the operation.
+        /// The requested resource exists but isn't in a status that can complete the operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2141,7 +2490,7 @@ namespace Amazon.ManagedBlockchain
         /// 
         /// <returns>The response from the UpdateMember service method, as returned by ManagedBlockchain.</returns>
         /// <exception cref="Amazon.ManagedBlockchain.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.InternalServiceErrorException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -2150,13 +2499,13 @@ namespace Amazon.ManagedBlockchain
         /// The action or operation requested is invalid. Verify that the action is typed correctly.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ResourceNotFoundException">
-        /// A requested resource does not exist. It may have been deleted or referenced inaccurately.
+        /// A requested resource doesn't exist. It may have been deleted or referenced incorrectly.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ThrottlingException">
-        /// The request or operation could not be performed because a service is throttling requests.
-        /// The most common source of throttling errors is launching EC2 instances such that your
-        /// service limit for EC2 instances is exceeded. Request a limit increase or delete unused
-        /// resources if possible.
+        /// The request or operation couldn't be performed because a service is throttling requests.
+        /// The most common source of throttling errors is creating resources that exceed your
+        /// service limit for this resource type. Request a limit increase or delete unused resources
+        /// if possible.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/UpdateMember">REST API Reference for UpdateMember Operation</seealso>
         public virtual UpdateMemberResponse UpdateMember(UpdateMemberRequest request)
@@ -2184,7 +2533,7 @@ namespace Amazon.ManagedBlockchain
         /// 
         /// <returns>The response from the UpdateMember service method, as returned by ManagedBlockchain.</returns>
         /// <exception cref="Amazon.ManagedBlockchain.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.InternalServiceErrorException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -2193,13 +2542,13 @@ namespace Amazon.ManagedBlockchain
         /// The action or operation requested is invalid. Verify that the action is typed correctly.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ResourceNotFoundException">
-        /// A requested resource does not exist. It may have been deleted or referenced inaccurately.
+        /// A requested resource doesn't exist. It may have been deleted or referenced incorrectly.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ThrottlingException">
-        /// The request or operation could not be performed because a service is throttling requests.
-        /// The most common source of throttling errors is launching EC2 instances such that your
-        /// service limit for EC2 instances is exceeded. Request a limit increase or delete unused
-        /// resources if possible.
+        /// The request or operation couldn't be performed because a service is throttling requests.
+        /// The most common source of throttling errors is creating resources that exceed your
+        /// service limit for this resource type. Request a limit increase or delete unused resources
+        /// if possible.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/UpdateMember">REST API Reference for UpdateMember Operation</seealso>
         public virtual Task<UpdateMemberResponse> UpdateMemberAsync(UpdateMemberRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2228,7 +2577,7 @@ namespace Amazon.ManagedBlockchain
         /// 
         /// <returns>The response from the UpdateNode service method, as returned by ManagedBlockchain.</returns>
         /// <exception cref="Amazon.ManagedBlockchain.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.InternalServiceErrorException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -2237,13 +2586,13 @@ namespace Amazon.ManagedBlockchain
         /// The action or operation requested is invalid. Verify that the action is typed correctly.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ResourceNotFoundException">
-        /// A requested resource does not exist. It may have been deleted or referenced inaccurately.
+        /// A requested resource doesn't exist. It may have been deleted or referenced incorrectly.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ThrottlingException">
-        /// The request or operation could not be performed because a service is throttling requests.
-        /// The most common source of throttling errors is launching EC2 instances such that your
-        /// service limit for EC2 instances is exceeded. Request a limit increase or delete unused
-        /// resources if possible.
+        /// The request or operation couldn't be performed because a service is throttling requests.
+        /// The most common source of throttling errors is creating resources that exceed your
+        /// service limit for this resource type. Request a limit increase or delete unused resources
+        /// if possible.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/UpdateNode">REST API Reference for UpdateNode Operation</seealso>
         public virtual UpdateNodeResponse UpdateNode(UpdateNodeRequest request)
@@ -2271,7 +2620,7 @@ namespace Amazon.ManagedBlockchain
         /// 
         /// <returns>The response from the UpdateNode service method, as returned by ManagedBlockchain.</returns>
         /// <exception cref="Amazon.ManagedBlockchain.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.InternalServiceErrorException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -2280,13 +2629,13 @@ namespace Amazon.ManagedBlockchain
         /// The action or operation requested is invalid. Verify that the action is typed correctly.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ResourceNotFoundException">
-        /// A requested resource does not exist. It may have been deleted or referenced inaccurately.
+        /// A requested resource doesn't exist. It may have been deleted or referenced incorrectly.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ThrottlingException">
-        /// The request or operation could not be performed because a service is throttling requests.
-        /// The most common source of throttling errors is launching EC2 instances such that your
-        /// service limit for EC2 instances is exceeded. Request a limit increase or delete unused
-        /// resources if possible.
+        /// The request or operation couldn't be performed because a service is throttling requests.
+        /// The most common source of throttling errors is creating resources that exceed your
+        /// service limit for this resource type. Request a limit increase or delete unused resources
+        /// if possible.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/UpdateNode">REST API Reference for UpdateNode Operation</seealso>
         public virtual Task<UpdateNodeResponse> UpdateNodeAsync(UpdateNodeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2305,8 +2654,8 @@ namespace Amazon.ManagedBlockchain
 
         /// <summary>
         /// Casts a vote for a specified <code>ProposalId</code> on behalf of a member. The member
-        /// to vote as, specified by <code>VoterMemberId</code>, must be in the same AWS account
-        /// as the principal that calls the action.
+        /// to vote as, specified by <code>VoterMemberId</code>, must be in the same Amazon Web
+        /// Services account as the principal that calls the action.
         /// 
         ///  
         /// <para>
@@ -2317,7 +2666,7 @@ namespace Amazon.ManagedBlockchain
         /// 
         /// <returns>The response from the VoteOnProposal service method, as returned by ManagedBlockchain.</returns>
         /// <exception cref="Amazon.ManagedBlockchain.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.IllegalActionException">
         /// 
@@ -2329,13 +2678,13 @@ namespace Amazon.ManagedBlockchain
         /// The action or operation requested is invalid. Verify that the action is typed correctly.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ResourceNotFoundException">
-        /// A requested resource does not exist. It may have been deleted or referenced inaccurately.
+        /// A requested resource doesn't exist. It may have been deleted or referenced incorrectly.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ThrottlingException">
-        /// The request or operation could not be performed because a service is throttling requests.
-        /// The most common source of throttling errors is launching EC2 instances such that your
-        /// service limit for EC2 instances is exceeded. Request a limit increase or delete unused
-        /// resources if possible.
+        /// The request or operation couldn't be performed because a service is throttling requests.
+        /// The most common source of throttling errors is creating resources that exceed your
+        /// service limit for this resource type. Request a limit increase or delete unused resources
+        /// if possible.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/VoteOnProposal">REST API Reference for VoteOnProposal Operation</seealso>
         public virtual VoteOnProposalResponse VoteOnProposal(VoteOnProposalRequest request)
@@ -2350,8 +2699,8 @@ namespace Amazon.ManagedBlockchain
 
         /// <summary>
         /// Casts a vote for a specified <code>ProposalId</code> on behalf of a member. The member
-        /// to vote as, specified by <code>VoterMemberId</code>, must be in the same AWS account
-        /// as the principal that calls the action.
+        /// to vote as, specified by <code>VoterMemberId</code>, must be in the same Amazon Web
+        /// Services account as the principal that calls the action.
         /// 
         ///  
         /// <para>
@@ -2365,7 +2714,7 @@ namespace Amazon.ManagedBlockchain
         /// 
         /// <returns>The response from the VoteOnProposal service method, as returned by ManagedBlockchain.</returns>
         /// <exception cref="Amazon.ManagedBlockchain.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.IllegalActionException">
         /// 
@@ -2377,13 +2726,13 @@ namespace Amazon.ManagedBlockchain
         /// The action or operation requested is invalid. Verify that the action is typed correctly.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ResourceNotFoundException">
-        /// A requested resource does not exist. It may have been deleted or referenced inaccurately.
+        /// A requested resource doesn't exist. It may have been deleted or referenced incorrectly.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ThrottlingException">
-        /// The request or operation could not be performed because a service is throttling requests.
-        /// The most common source of throttling errors is launching EC2 instances such that your
-        /// service limit for EC2 instances is exceeded. Request a limit increase or delete unused
-        /// resources if possible.
+        /// The request or operation couldn't be performed because a service is throttling requests.
+        /// The most common source of throttling errors is creating resources that exceed your
+        /// service limit for this resource type. Request a limit increase or delete unused resources
+        /// if possible.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/VoteOnProposal">REST API Reference for VoteOnProposal Operation</seealso>
         public virtual Task<VoteOnProposalResponse> VoteOnProposalAsync(VoteOnProposalRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))

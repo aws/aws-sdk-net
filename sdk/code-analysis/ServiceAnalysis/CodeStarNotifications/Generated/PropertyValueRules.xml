@@ -154,6 +154,14 @@
     <pattern>^([a-zA-Z0-9-])+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CodeStarNotifications.Model.ListNotificationRulesFilter.Value</property>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeStarNotifications.Model.ListTargetsFilter.Value</property>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CodeStarNotifications.Model.NotificationRuleSummary.Arn</property>
     <pattern>^arn:aws[^:\s]*:codestar-notifications:[^:\s]+:\d{12}:notificationrule\/(.*\S)?$</pattern>
   </property-value-rule>

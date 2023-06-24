@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// Provides the current Auto-Tune status for the domain.
+    /// The current status of Auto-Tune for the domain. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html">Auto-Tune
+    /// for Amazon OpenSearch Service</a>.
     /// </summary>
     public partial class AutoTuneStatus
     {
@@ -43,7 +44,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property CreationDate. 
         /// <para>
-        /// The timestamp of the Auto-Tune options creation date.
+        /// Date and time when Auto-Tune was enabled for the domain.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -62,7 +63,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property ErrorMessage. 
         /// <para>
-        /// The error message while enabling or disabling Auto-Tune.
+        /// Any errors that occurred while enabling or disabling Auto-Tune.
         /// </para>
         /// </summary>
         public string ErrorMessage
@@ -98,7 +99,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// The <code>AutoTuneState</code> for the domain. 
+        /// The current state of Auto-Tune on the domain.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -117,7 +118,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property UpdateDate. 
         /// <para>
-        /// The timestamp of when the Auto-Tune options were last updated.
+        /// Date and time when the Auto-Tune options were last updated for the domain.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

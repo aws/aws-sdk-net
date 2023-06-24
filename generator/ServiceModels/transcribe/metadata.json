@@ -1,5 +1,6 @@
 {
   "active": true,
   "synopsis": "Amazon Transcribe Public Preview Release",
-  "generate-client-constructors": true
+  "generate-client-constructors": true,
+  "legacy-service-id": "Transcribe"
 }

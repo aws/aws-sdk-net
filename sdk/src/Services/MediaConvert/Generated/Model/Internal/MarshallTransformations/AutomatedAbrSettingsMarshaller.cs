@@ -34,7 +34,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AutomatedAbrSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class AutomatedAbrSettingsMarshaller : IRequestMarshaller<AutomatedAbrSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -63,11 +63,27 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.MinAbrBitrate);
             }
 
+            if(requestObject.IsSetRules())
+            {
+                context.Writer.WritePropertyName("rules");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectRulesListValue in requestObject.Rules)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = AutomatedAbrRuleMarshaller.Instance;
+                    marshaller.Marshall(requestObjectRulesListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
         }
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AutomatedAbrSettingsMarshaller Instance = new AutomatedAbrSettingsMarshaller();
 
     }

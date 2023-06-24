@@ -31,16 +31,17 @@ namespace Amazon.Organizations.Model
     /// <summary>
     /// Container for the parameters to the RegisterDelegatedAdministrator operation.
     /// Enables the specified member account to administer the Organizations features of the
-    /// specified AWS service. It grants read-only access to AWS Organizations service data.
-    /// The account still requires IAM permissions to access and administer the AWS service.
+    /// specified Amazon Web Services service. It grants read-only access to Organizations
+    /// service data. The account still requires IAM permissions to access and administer
+    /// the Amazon Web Services service.
     /// 
     ///  
     /// <para>
-    /// You can run this action only for AWS services that support this feature. For a current
-    /// list of services that support it, see the column <i>Supports Delegated Administrator</i>
-    /// in the table at <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services_list.html">AWS
-    /// Services that you can use with AWS Organizations</a> in the <i>AWS Organizations User
-    /// Guide.</i> 
+    /// You can run this action only for Amazon Web Services services that support this feature.
+    /// For a current list of services that support it, see the column <i>Supports Delegated
+    /// Administrator</i> in the table at <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services_list.html">Amazon
+    /// Web Services Services that you can use with Organizations</a> in the <i>Organizations
+    /// User Guide.</i> 
     /// </para>
     ///  
     /// <para>
@@ -75,8 +76,8 @@ namespace Amazon.Organizations.Model
         /// <summary>
         /// Gets and sets the property ServicePrincipal. 
         /// <para>
-        /// The service principal of the AWS service for which you want to make the member account
-        /// a delegated administrator.
+        /// The service principal of the Amazon Web Services service for which you want to make
+        /// the member account a delegated administrator.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]

@@ -34,7 +34,7 @@ namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// NotificationAction Marshaller
-    /// </summary>       
+    /// </summary>
     public class NotificationActionMarshaller : IRequestMarshaller<NotificationAction, JsonMarshallerContext> 
     {
         /// <summary>
@@ -92,7 +92,7 @@ namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static NotificationActionMarshaller Instance = new NotificationActionMarshaller();
 
     }

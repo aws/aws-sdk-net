@@ -79,8 +79,19 @@ namespace Amazon.LocationService.Model
         ///  <code>DistanceBased</code> - If the device has moved less than 30 m (98.4 ft), location
         /// updates are ignored. Location updates within this distance are neither evaluated against
         /// linked geofence collections, nor stored. This helps control costs by reducing the
-        /// number of geofence evaluations and device positions to retrieve. Distance-based filtering
-        /// can also reduce the jitter effect when displaying device trajectory on a map. 
+        /// number of geofence evaluations and historical device positions to paginate through.
+        /// Distance-based filtering can also reduce the effects of GPS noise when displaying
+        /// device trajectories on a map. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AccuracyBased</code> - If the device has moved less than the measured accuracy,
+        /// location updates are ignored. For example, if two consecutive updates from a device
+        /// have a horizontal accuracy of 5 m and 10 m, the second update is ignored if the device
+        /// has moved less than 15 m. Ignored location updates are neither evaluated against linked
+        /// geofence collections, nor stored. This helps educe the effects of GPS noise when displaying
+        /// device trajectories on a map, and can help control costs by reducing the number of
+        /// geofence evaluations. 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -99,14 +110,10 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property PricingPlan. 
         /// <para>
-        /// Updates the pricing plan for the tracker resource.
-        /// </para>
-        ///  
-        /// <para>
-        /// For more information about each pricing plan option restrictions, see <a href="https://aws.amazon.com/location/pricing/">Amazon
-        /// Location Service pricing</a>.
+        /// No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.
         /// </para>
         /// </summary>
+        [Obsolete("Deprecated. If included, the only allowed value is RequestBasedUsage.")]
         public PricingPlan PricingPlan
         {
             get { return this._pricingPlan; }
@@ -122,31 +129,10 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property PricingPlanDataSource. 
         /// <para>
-        /// Updates the data provider for the tracker resource. 
+        /// This parameter is no longer used.
         /// </para>
-        ///  
-        /// <para>
-        /// A required value for the following pricing plans: <code>MobileAssetTracking</code>|
-        /// <code>MobileAssetManagement</code> 
-        /// </para>
-        ///  
-        /// <para>
-        /// For more information about <a href="https://aws.amazon.com/location/data-providers/">data
-        /// providers</a> and <a href="https://aws.amazon.com/location/pricing/">pricing plans</a>,
-        /// see the Amazon Location Service product page
-        /// </para>
-        ///  <note> 
-        /// <para>
-        /// This can only be updated when updating the <code>PricingPlan</code> in the same request.
-        /// </para>
-        ///  
-        /// <para>
-        /// Amazon Location Service uses <code>PricingPlanDataSource</code> to calculate billing
-        /// for your tracker resource. Your data won't be shared with the data provider, and will
-        /// remain in your AWS account and Region unless you move it.
-        /// </para>
-        ///  </note>
         /// </summary>
+        [Obsolete("Deprecated. No longer allowed.")]
         public string PricingPlanDataSource
         {
             get { return this._pricingPlanDataSource; }

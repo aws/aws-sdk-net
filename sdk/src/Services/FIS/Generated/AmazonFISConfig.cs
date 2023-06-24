@@ -17,22 +17,22 @@
  * Do not modify this file. This file is generated from the fis-2020-12-01.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
-
+using Amazon.FIS.Internal;
 
 namespace Amazon.FIS
 {
     /// <summary>
     /// Configuration for accessing Amazon FIS service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonFISConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.105");
+            InternalSDKUtils.BuildUserAgentString("3.7.101.85");
 
         private string _userAgent = UserAgentString;
 
@@ -40,8 +40,10 @@ namespace Amazon.FIS
         /// Default constructor
         /// </summary>
         public AmazonFISConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonFISDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "fis";
+            this.EndpointProvider = new AmazonFISEndpointProvider();
         }
 
         /// <summary>
@@ -76,5 +78,6 @@ namespace Amazon.FIS
                 return _userAgent;
             }
         }
+
     }
 }

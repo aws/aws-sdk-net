@@ -42,8 +42,8 @@ namespace Amazon.AWSSupport.Model
         /// <summary>
         /// Gets and sets the property IsSuppressed. 
         /// <para>
-        /// Specifies whether the AWS resource was ignored by Trusted Advisor because it was marked
-        /// as suppressed by the user.
+        /// Specifies whether the Amazon Web Services resource was ignored by Trusted Advisor
+        /// because it was marked as suppressed by the user.
         /// </para>
         /// </summary>
         public bool IsSuppressed
@@ -84,7 +84,7 @@ namespace Amazon.AWSSupport.Model
         /// <summary>
         /// Gets and sets the property Region. 
         /// <para>
-        /// The AWS Region in which the identified resource is located.
+        /// The Amazon Web Services Region in which the identified resource is located.
         /// </para>
         /// </summary>
         public string Region

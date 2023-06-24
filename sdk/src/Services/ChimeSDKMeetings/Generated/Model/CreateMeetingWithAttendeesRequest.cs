@@ -45,6 +45,9 @@ namespace Amazon.ChimeSDKMeetings.Model
         private MeetingFeaturesConfiguration _meetingFeatures;
         private string _meetingHostId;
         private NotificationsConfiguration _notificationsConfiguration;
+        private string _primaryMeetingId;
+        private List<Tag> _tags = new List<Tag>();
+        private List<string> _tenantIds = new List<string>();
 
         /// <summary>
         /// Gets and sets the property Attendees. 
@@ -72,7 +75,7 @@ namespace Amazon.ChimeSDKMeetings.Model
         /// meetings.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=2, Max=64)]
+        [AWSProperty(Sensitive=true, Min=2, Max=64)]
         public string ClientRequestToken
         {
             get { return this._clientRequestToken; }
@@ -90,8 +93,17 @@ namespace Amazon.ChimeSDKMeetings.Model
         /// <para>
         /// The external meeting ID.
         /// </para>
+        ///  
+        /// <para>
+        /// Pattern: <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Values that begin with <code>aws:</code> are reserved. You can't configure a value
+        /// that uses this prefix. Case insensitive.
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=2, Max=64)]
+        [AWSProperty(Required=true, Sensitive=true, Min=2, Max=64)]
         public string ExternalMeetingId
         {
             get { return this._externalMeetingId; }
@@ -108,6 +120,19 @@ namespace Amazon.ChimeSDKMeetings.Model
         /// Gets and sets the property MediaRegion. 
         /// <para>
         /// The Region in which to create the meeting.
+        /// </para>
+        ///  
+        /// <para>
+        ///  Available values: <code>af-south-1</code>, <code>ap-northeast-1</code>, <code>ap-northeast-2</code>,
+        /// <code>ap-south-1</code>, <code>ap-southeast-1</code>, <code>ap-southeast-2</code>,
+        /// <code>ca-central-1</code>, <code>eu-central-1</code>, <code>eu-north-1</code>, <code>eu-south-1</code>,
+        /// <code>eu-west-1</code>, <code>eu-west-2</code>, <code>eu-west-3</code>, <code>sa-east-1</code>,
+        /// <code>us-east-1</code>, <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// Available values in AWS GovCloud (US) Regions: <code>us-gov-east-1</code>, <code>us-gov-west-1</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=2, Max=64)]
@@ -147,7 +172,7 @@ namespace Amazon.ChimeSDKMeetings.Model
         /// Reserved.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=2, Max=64)]
+        [AWSProperty(Sensitive=true, Min=2, Max=64)]
         public string MeetingHostId
         {
             get { return this._meetingHostId; }
@@ -177,6 +202,64 @@ namespace Amazon.ChimeSDKMeetings.Model
         internal bool IsSetNotificationsConfiguration()
         {
             return this._notificationsConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PrimaryMeetingId. 
+        /// <para>
+        /// When specified, replicates the media from the primary meeting to the new meeting.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=2, Max=64)]
+        public string PrimaryMeetingId
+        {
+            get { return this._primaryMeetingId; }
+            set { this._primaryMeetingId = value; }
+        }
+
+        // Check to see if PrimaryMeetingId property is set
+        internal bool IsSetPrimaryMeetingId()
+        {
+            return this._primaryMeetingId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags in the request.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=50)]
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TenantIds. 
+        /// <para>
+        /// A consistent and opaque identifier, created and maintained by the builder to represent
+        /// a segment of their users.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=5)]
+        public List<string> TenantIds
+        {
+            get { return this._tenantIds; }
+            set { this._tenantIds = value; }
+        }
+
+        // Check to see if TenantIds property is set
+        internal bool IsSetTenantIds()
+        {
+            return this._tenantIds != null && this._tenantIds.Count > 0; 
         }
 
     }

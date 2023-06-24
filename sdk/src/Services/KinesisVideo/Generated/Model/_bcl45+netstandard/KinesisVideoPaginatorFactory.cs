@@ -36,6 +36,14 @@ namespace Amazon.KinesisVideo.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeMappedResourceConfiguration operation
+        ///</summary>
+        public IDescribeMappedResourceConfigurationPaginator DescribeMappedResourceConfiguration(DescribeMappedResourceConfigurationRequest request) 
+        {
+            return new DescribeMappedResourceConfigurationPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListSignalingChannels operation
         ///</summary>
         public IListSignalingChannelsPaginator ListSignalingChannels(ListSignalingChannelsRequest request) 

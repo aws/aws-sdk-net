@@ -34,7 +34,7 @@ namespace Amazon.PersonalizeEvents.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Item Marshaller
-    /// </summary>       
+    /// </summary>
     public class ItemMarshaller : IRequestMarshaller<Item, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.PersonalizeEvents.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ItemMarshaller Instance = new ItemMarshaller();
 
     }

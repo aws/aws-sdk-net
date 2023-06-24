@@ -32,7 +32,7 @@ namespace Amazon.Kendra.Model
     /// Container for the parameters to the DeleteIndex operation.
     /// Deletes an existing Amazon Kendra index. An exception is not thrown if the index is
     /// already being deleted. While the index is being deleted, the <code>Status</code> field
-    /// returned by a call to the <code>DescribeIndex</code> operation is set to <code>DELETING</code>.
+    /// returned by a call to the <code>DescribeIndex</code> API is set to <code>DELETING</code>.
     /// </summary>
     public partial class DeleteIndexRequest : AmazonKendraRequest
     {
@@ -41,7 +41,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The identifier of the index to delete.
+        /// The identifier of the index you want to delete.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]

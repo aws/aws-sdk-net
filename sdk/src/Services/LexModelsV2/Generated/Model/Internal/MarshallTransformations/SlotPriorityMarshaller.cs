@@ -34,7 +34,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SlotPriority Marshaller
-    /// </summary>       
+    /// </summary>
     public class SlotPriorityMarshaller : IRequestMarshaller<SlotPriority, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SlotPriorityMarshaller Instance = new SlotPriorityMarshaller();
 
     }

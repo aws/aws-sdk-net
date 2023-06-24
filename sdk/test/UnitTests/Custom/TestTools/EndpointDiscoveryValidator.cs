@@ -38,7 +38,7 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
             }
 
             foreach (var identifier in Data.Identifiers)
-            {                
+            {        
                 Validate(Operation.RequestEndpointDiscoveryIdMembers, identifier.Key, identifier.Value, infoLookup, Request);
             }
         }
@@ -56,9 +56,9 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
             }
 
             Assert.IsNotNull(useMember);
-            Assert.IsTrue(infoLookup.ContainsKey(name));            
+            Assert.IsTrue(infoLookup.ContainsKey(name));
             var propertyValue = infoLookup[name].GetMethod.Invoke(owningObject, new object[] { });
-            Assert.AreEqual(propertyValue, value);            
+            Assert.AreEqual(propertyValue, value);
         }        
     }
 }

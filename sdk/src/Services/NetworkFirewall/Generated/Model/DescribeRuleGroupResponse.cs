@@ -46,9 +46,9 @@ namespace Amazon.NetworkFirewall.Model
         /// </para>
         ///  
         /// <para>
-        /// AWS Network Firewall uses a rule group to inspect and control network traffic. You
-        /// define stateless rule groups to inspect individual packets and you define stateful
-        /// rule groups to inspect packets in the context of their traffic flow. 
+        /// Network Firewall uses a rule group to inspect and control network traffic. You define
+        /// stateless rule groups to inspect individual packets and you define stateful rule groups
+        /// to inspect packets in the context of their traffic flow. 
         /// </para>
         ///  
         /// <para>

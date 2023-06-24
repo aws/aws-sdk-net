@@ -34,7 +34,7 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// QueryPlanningContext Marshaller
-    /// </summary>       
+    /// </summary>
     public class QueryPlanningContextMarshaller : IRequestMarshaller<QueryPlanningContext, JsonMarshallerContext> 
     {
         /// <summary>
@@ -87,7 +87,7 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static QueryPlanningContextMarshaller Instance = new QueryPlanningContextMarshaller();
 
     }

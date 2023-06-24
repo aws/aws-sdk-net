@@ -34,13 +34,34 @@ namespace Amazon.AppSync.Model
     /// </summary>
     public partial class ListGraphqlApisRequest : AmazonAppSyncRequest
     {
+        private GraphQLApiType _apiType;
         private int? _maxResults;
         private string _nextToken;
+        private Ownership _owner;
+
+        /// <summary>
+        /// Gets and sets the property ApiType. 
+        /// <para>
+        /// The value that indicates whether the GraphQL API is a standard API (<code>GRAPHQL</code>)
+        /// or merged API (<code>MERGED</code>).
+        /// </para>
+        /// </summary>
+        public GraphQLApiType ApiType
+        {
+            get { return this._apiType; }
+            set { this._apiType = value; }
+        }
+
+        // Check to see if ApiType property is set
+        internal bool IsSetApiType()
+        {
+            return this._apiType != null;
+        }
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of results you want the request to return.
+        /// The maximum number of results that you want the request to return.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=25)]
@@ -59,8 +80,8 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list. 
+        /// An identifier that was returned from the previous call to this operation, which you
+        /// can use to return the next set of items in the list.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=65536)]
@@ -74,6 +95,24 @@ namespace Amazon.AppSync.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Owner. 
+        /// <para>
+        /// The account owner of the GraphQL API.
+        /// </para>
+        /// </summary>
+        public Ownership Owner
+        {
+            get { return this._owner; }
+            set { this._owner = value; }
+        }
+
+        // Check to see if Owner property is set
+        internal bool IsSetOwner()
+        {
+            return this._owner != null;
         }
 
     }

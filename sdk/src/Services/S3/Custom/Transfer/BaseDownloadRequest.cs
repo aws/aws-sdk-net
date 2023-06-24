@@ -23,6 +23,8 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
+using Amazon.Runtime.Internal;
+
 namespace Amazon.S3.Transfer
 {
     /// <summary>
@@ -37,6 +39,7 @@ namespace Amazon.S3.Transfer
         private DateTime? unmodifiedSinceDate;
         private DateTime? modifiedSinceDateUtc;
         private DateTime? unmodifiedSinceDateUtc;
+        private ChecksumMode checksumMode;
 
         private ServerSideEncryptionCustomerMethod serverSideCustomerEncryption;
         private string serverSideEncryptionCustomerProvidedKey;
@@ -240,6 +243,7 @@ namespace Amazon.S3.Transfer
         /// Important: Amazon S3 does not store the encryption key you provide.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string ServerSideEncryptionCustomerProvidedKey
         {
             get { return this.serverSideEncryptionCustomerProvidedKey; }
@@ -254,6 +258,18 @@ namespace Amazon.S3.Transfer
         {
             get { return this.serverSideEncryptionCustomerProvidedKeyMD5; }
             set { this.serverSideEncryptionCustomerProvidedKeyMD5 = value; }
+        }
+
+        /// <summary>
+        /// Gets and sets the property ChecksumMode. 
+        /// <para>
+        /// This must be enabled to retrieve the checksum.
+        /// </para>
+        /// </summary>
+        public ChecksumMode ChecksumMode
+        {
+            get { return this.checksumMode; }
+            set { this.checksumMode = value; }
         }
     }
 }

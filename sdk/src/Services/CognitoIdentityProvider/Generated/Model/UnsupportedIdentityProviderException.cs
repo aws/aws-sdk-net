@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// This exception is thrown when the specified identifier is not supported.
+    /// This exception is thrown when the specified identifier isn't supported.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

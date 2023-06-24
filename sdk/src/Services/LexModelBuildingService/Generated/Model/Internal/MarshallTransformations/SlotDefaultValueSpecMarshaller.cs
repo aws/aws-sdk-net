@@ -34,7 +34,7 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SlotDefaultValueSpec Marshaller
-    /// </summary>       
+    /// </summary>
     public class SlotDefaultValueSpecMarshaller : IRequestMarshaller<SlotDefaultValueSpec, JsonMarshallerContext> 
     {
         /// <summary>
@@ -65,7 +65,7 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SlotDefaultValueSpecMarshaller Instance = new SlotDefaultValueSpecMarshaller();
 
     }

@@ -88,6 +88,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     unmarshalledObject.BucketNotificationConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("BucketVersioningConfiguration", targetDepth))
+                {
+                    var unmarshaller = AwsS3BucketBucketVersioningConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.BucketVersioningConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("BucketWebsiteConfiguration", targetDepth))
                 {
                     var unmarshaller = AwsS3BucketWebsiteConfigurationUnmarshaller.Instance;
@@ -98,6 +104,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ObjectLockConfiguration", targetDepth))
+                {
+                    var unmarshaller = AwsS3BucketObjectLockConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.ObjectLockConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("OwnerAccountId", targetDepth))

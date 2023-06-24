@@ -34,7 +34,7 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// StreamProcessorOutput Marshaller
-    /// </summary>       
+    /// </summary>
     public class StreamProcessorOutputMarshaller : IRequestMarshaller<StreamProcessorOutput, JsonMarshallerContext> 
     {
         /// <summary>
@@ -56,11 +56,22 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetS3Destination())
+            {
+                context.Writer.WritePropertyName("S3Destination");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = S3DestinationMarshaller.Instance;
+                marshaller.Marshall(requestObject.S3Destination, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static StreamProcessorOutputMarshaller Instance = new StreamProcessorOutputMarshaller();
 
     }

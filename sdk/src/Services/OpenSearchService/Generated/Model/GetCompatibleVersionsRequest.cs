@@ -30,16 +30,19 @@ namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
     /// Container for the parameters to the GetCompatibleVersions operation.
-    /// Returns a list of upgrade-compatible versions of OpenSearch/Elasticsearch. You can
-    /// optionally pass a <code> <a>DomainName</a> </code> to get all upgrade-compatible versions
-    /// of OpenSearch/Elasticsearch for that specific domain.
+    /// Returns a map of OpenSearch or Elasticsearch versions and the versions you can upgrade
+    /// them to.
     /// </summary>
     public partial class GetCompatibleVersionsRequest : AmazonOpenSearchServiceRequest
     {
         private string _domainName;
 
         /// <summary>
-        /// Gets and sets the property DomainName.
+        /// Gets and sets the property DomainName. 
+        /// <para>
+        /// The name of an existing domain. Provide this parameter to limit the results to a single
+        /// domain.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=28)]
         public string DomainName

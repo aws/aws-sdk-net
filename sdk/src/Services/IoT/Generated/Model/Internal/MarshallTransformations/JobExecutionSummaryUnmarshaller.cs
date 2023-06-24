@@ -82,6 +82,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     unmarshalledObject.QueuedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("retryAttempt", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.RetryAttempt = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("startedAt", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

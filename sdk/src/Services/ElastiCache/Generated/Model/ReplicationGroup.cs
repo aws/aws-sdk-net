@@ -38,17 +38,21 @@ namespace Amazon.ElastiCache.Model
         private bool? _authTokenEnabled;
         private DateTime? _authTokenLastModifiedDate;
         private AutomaticFailoverStatus _automaticFailover;
+        private bool? _autoMinorVersionUpgrade;
         private string _cacheNodeType;
         private bool? _clusterEnabled;
+        private ClusterMode _clusterMode;
         private Endpoint _configurationEndpoint;
         private DataTieringStatus _dataTiering;
         private string _description;
         private GlobalReplicationGroupInfo _globalReplicationGroupInfo;
+        private IpDiscovery _ipDiscovery;
         private string _kmsKeyId;
         private List<LogDeliveryConfiguration> _logDeliveryConfigurations = new List<LogDeliveryConfiguration>();
         private List<string> _memberClusters = new List<string>();
         private List<string> _memberClustersOutpostArns = new List<string>();
         private MultiAZStatus _multiAZ;
+        private NetworkType _networkType;
         private List<NodeGroup> _nodeGroups = new List<NodeGroup>();
         private ReplicationGroupPendingModifiedValues _pendingModifiedValues;
         private DateTime? _replicationGroupCreateTime;
@@ -58,6 +62,7 @@ namespace Amazon.ElastiCache.Model
         private string _snapshotWindow;
         private string _status;
         private bool? _transitEncryptionEnabled;
+        private TransitEncryptionMode _transitEncryptionMode;
         private List<string> _userGroupIds = new List<string>();
 
         /// <summary>
@@ -171,6 +176,26 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
+        /// Gets and sets the property AutoMinorVersionUpgrade. 
+        /// <para>
+        /// If you are running Redis engine version 6.0 or later, set this parameter to yes if
+        /// you want to opt-in to the next auto minor version upgrade campaign. This parameter
+        /// is disabled for previous versions. 
+        /// </para>
+        /// </summary>
+        public bool AutoMinorVersionUpgrade
+        {
+            get { return this._autoMinorVersionUpgrade.GetValueOrDefault(); }
+            set { this._autoMinorVersionUpgrade = value; }
+        }
+
+        // Check to see if AutoMinorVersionUpgrade property is set
+        internal bool IsSetAutoMinorVersionUpgrade()
+        {
+            return this._autoMinorVersionUpgrade.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property CacheNodeType. 
         /// <para>
         /// The name of the compute and memory capacity node type for each node in the replication
@@ -210,6 +235,28 @@ namespace Amazon.ElastiCache.Model
         internal bool IsSetClusterEnabled()
         {
             return this._clusterEnabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ClusterMode. 
+        /// <para>
+        /// Enabled or Disabled. To modify cluster mode from Disabled to Enabled, you must first
+        /// set the cluster mode to Compatible. Compatible mode allows your Redis clients to connect
+        /// using both cluster mode enabled and cluster mode disabled. After you migrate all Redis
+        /// clients to use cluster mode enabled, you can then complete cluster mode configuration
+        /// and set the cluster mode to Enabled.
+        /// </para>
+        /// </summary>
+        public ClusterMode ClusterMode
+        {
+            get { return this._clusterMode; }
+            set { this._clusterMode = value; }
+        }
+
+        // Check to see if ClusterMode property is set
+        internal bool IsSetClusterMode()
+        {
+            return this._clusterMode != null;
         }
 
         /// <summary>
@@ -287,6 +334,27 @@ namespace Amazon.ElastiCache.Model
         internal bool IsSetGlobalReplicationGroupInfo()
         {
             return this._globalReplicationGroupInfo != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IpDiscovery. 
+        /// <para>
+        /// The network type you choose when modifying a cluster, either <code>ipv4</code> | <code>ipv6</code>.
+        /// IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached
+        /// engine version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro
+        /// system</a>.
+        /// </para>
+        /// </summary>
+        public IpDiscovery IpDiscovery
+        {
+            get { return this._ipDiscovery; }
+            set { this._ipDiscovery = value; }
+        }
+
+        // Check to see if IpDiscovery property is set
+        internal bool IsSetIpDiscovery()
+        {
+            return this._ipDiscovery != null;
         }
 
         /// <summary>
@@ -379,6 +447,27 @@ namespace Amazon.ElastiCache.Model
         internal bool IsSetMultiAZ()
         {
             return this._multiAZ != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkType. 
+        /// <para>
+        /// Must be either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6
+        /// is supported for workloads using Redis engine version 6.2 onward or Memcached engine
+        /// version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro
+        /// system</a>.
+        /// </para>
+        /// </summary>
+        public NetworkType NetworkType
+        {
+            get { return this._networkType; }
+            set { this._networkType = value; }
+        }
+
+        // Check to see if NetworkType property is set
+        internal bool IsSetNetworkType()
+        {
+            return this._networkType != null;
         }
 
         /// <summary>
@@ -559,12 +648,6 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  
         /// <para>
-        /// You cannot modify the value of <code>TransitEncryptionEnabled</code> after the cluster
-        /// is created. To enable in-transit encryption on a cluster you must set <code>TransitEncryptionEnabled</code>
-        /// to <code>true</code> when you create a cluster.
-        /// </para>
-        ///  
-        /// <para>
         ///  <b>Required:</b> Only available when creating a replication group in an Amazon VPC
         /// using redis version <code>3.2.6</code>, <code>4.x</code> or later.
         /// </para>
@@ -583,6 +666,25 @@ namespace Amazon.ElastiCache.Model
         internal bool IsSetTransitEncryptionEnabled()
         {
             return this._transitEncryptionEnabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TransitEncryptionMode. 
+        /// <para>
+        /// A setting that allows you to migrate your clients to use in-transit encryption, with
+        /// no downtime.
+        /// </para>
+        /// </summary>
+        public TransitEncryptionMode TransitEncryptionMode
+        {
+            get { return this._transitEncryptionMode; }
+            set { this._transitEncryptionMode = value; }
+        }
+
+        // Check to see if TransitEncryptionMode property is set
+        internal bool IsSetTransitEncryptionMode()
+        {
+            return this._transitEncryptionMode != null;
         }
 
         /// <summary>

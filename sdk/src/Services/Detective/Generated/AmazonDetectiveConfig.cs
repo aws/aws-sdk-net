@@ -17,22 +17,22 @@
  * Do not modify this file. This file is generated from the detective-2018-10-26.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
-
+using Amazon.Detective.Internal;
 
 namespace Amazon.Detective
 {
     /// <summary>
     /// Configuration for accessing Amazon Detective service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonDetectiveConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.2.92");
+            InternalSDKUtils.BuildUserAgentString("3.7.102.17");
 
         private string _userAgent = UserAgentString;
 
@@ -40,8 +40,10 @@ namespace Amazon.Detective
         /// Default constructor
         /// </summary>
         public AmazonDetectiveConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonDetectiveDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "detective";
+            this.EndpointProvider = new AmazonDetectiveEndpointProvider();
         }
 
         /// <summary>
@@ -76,5 +78,6 @@ namespace Amazon.Detective
                 return _userAgent;
             }
         }
+
     }
 }

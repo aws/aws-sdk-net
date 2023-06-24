@@ -34,7 +34,7 @@ namespace Amazon.KinesisAnalytics.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DestinationSchema Marshaller
-    /// </summary>       
+    /// </summary>
     public class DestinationSchemaMarshaller : IRequestMarshaller<DestinationSchema, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.KinesisAnalytics.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DestinationSchemaMarshaller Instance = new DestinationSchemaMarshaller();
 
     }

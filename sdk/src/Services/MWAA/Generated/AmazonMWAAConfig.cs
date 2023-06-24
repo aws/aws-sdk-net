@@ -17,22 +17,22 @@
  * Do not modify this file. This file is generated from the mwaa-2020-07-01.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
-
+using Amazon.MWAA.Internal;
 
 namespace Amazon.MWAA
 {
     /// <summary>
     /// Configuration for accessing Amazon MWAA service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonMWAAConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.1.78");
+            InternalSDKUtils.BuildUserAgentString("3.7.102.6");
 
         private string _userAgent = UserAgentString;
 
@@ -40,8 +40,10 @@ namespace Amazon.MWAA
         /// Default constructor
         /// </summary>
         public AmazonMWAAConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonMWAADefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "airflow";
+            this.EndpointProvider = new AmazonMWAAEndpointProvider();
         }
 
         /// <summary>
@@ -76,5 +78,6 @@ namespace Amazon.MWAA
                 return _userAgent;
             }
         }
+
     }
 }

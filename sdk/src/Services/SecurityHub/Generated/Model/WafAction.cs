@@ -58,7 +58,7 @@ namespace Amazon.SecurityHub.Model
         ///  <code>COUNT</code> - WAF increments a counter of the requests that match all of the
         /// conditions in the rule. WAF then continues to inspect the web request based on the
         /// remaining rules in the web ACL. You can't specify <code>COUNT</code> for the default
-        /// action for a WebACL.
+        /// action for a web ACL.
         /// </para>
         ///  </li> </ul>
         /// </summary>

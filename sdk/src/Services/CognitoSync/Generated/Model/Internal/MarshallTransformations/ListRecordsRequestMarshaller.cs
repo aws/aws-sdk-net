@@ -55,7 +55,7 @@ namespace Amazon.CognitoSync.Model.Internal.MarshallTransformations
         public IRequest Marshall(ListRecordsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CognitoSync");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2014-06-30";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2014-06-30";
             request.HttpMethod = "GET";
 
             if (!publicRequest.IsSetDatasetName())

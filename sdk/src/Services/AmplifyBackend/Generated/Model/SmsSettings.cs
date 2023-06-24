@@ -38,7 +38,7 @@ namespace Amazon.AmplifyBackend.Model
         /// <summary>
         /// Gets and sets the property SmsMessage. 
         /// <para>
-        /// The body of the SMS message.
+        /// The contents of the SMS message.
         /// </para>
         /// </summary>
         public string SmsMessage

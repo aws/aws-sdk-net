@@ -37,7 +37,7 @@ namespace AWSSDK.UnitTests
         public SharedCredentialsFile CredentialsFile { get; private set; }
 
         public SharedCredentialsFileTestFixture(string credentialsFileContents, string configFileContents = null,
-            bool createEmptyFile = false)
+            bool createEmptyFile = false, bool isSharedCredentialsVarProvided = false, bool isSharedConfigVarProvided = false)
         {
             PrepareTempFilePaths();
 
@@ -56,6 +56,21 @@ namespace AWSSDK.UnitTests
             if (configFileContents != null)
             {
                 File.WriteAllText(ConfigFilePath, configFileContents);
+            }
+            // In order to test the shared creds environment variable we must guarantee the static constructor gets called again
+            // This is because the logic for checking the shared creds env variable is in the static constructor.
+            if (isSharedCredentialsVarProvided || isSharedConfigVarProvided)
+            {
+                if (isSharedCredentialsVarProvided)
+                {
+                    Environment.SetEnvironmentVariable("AWS_SHARED_CREDENTIALS_FILE", CredentialsFilePath);
+                }
+                if (isSharedConfigVarProvided)
+                {
+                    Environment.SetEnvironmentVariable("AWS_CONFIG_FILE", ConfigFilePath);
+                }
+                Type sharedCredentialsFile = typeof(SharedCredentialsFile);
+                sharedCredentialsFile.TypeInitializer.Invoke(null,null);
             }
 
             CredentialsFile = new SharedCredentialsFile(CredentialsFilePath);
@@ -83,11 +98,25 @@ namespace AWSSDK.UnitTests
             return ReadAndAssertProfile(profileName, expectedProfileOptions, null, null);
         }
 
-        public CredentialProfile ReadAndAssertProfile(string profileName, CredentialProfileOptions expectedProfileOptions,
-            Dictionary<string, string> expectedProperties, RegionEndpoint expectedRegion, Guid? expectedUniqueKey)
+        public CredentialProfile ReadAndAssertProfile(
+            string profileName, 
+            CredentialProfileOptions expectedProfileOptions,
+            Dictionary<string, string> expectedProperties, 
+            RegionEndpoint expectedRegion, 
+            Guid? expectedUniqueKey)
         {
-            var expectedProfile = CredentialProfileTestHelper.GetCredentialProfile(expectedUniqueKey, profileName, expectedProfileOptions,
-                expectedProperties, expectedRegion, null, null, null);
+            var expectedProfile =
+                CredentialProfileTestHelper.GetCredentialProfile(
+                    uniqueKey: expectedUniqueKey,
+                    profileName: profileName,
+                    options: expectedProfileOptions,
+                    properties: expectedProperties,
+                    defaultConfigurationModeName: null,
+                    region: expectedRegion,
+                    endpointDiscoveryEnabled: null,
+                    retryMode: null,
+                    maxAttempts: null);
+
             var actualProfile = TestTryGetProfile(profileName, true, expectedProfile.CanCreateAWSCredentials);
             Assert.AreEqual(expectedProfile, actualProfile);
             return actualProfile;
@@ -127,42 +156,137 @@ namespace AWSSDK.UnitTests
             AssertWriteProfile(profileName, profileOptions, null, null, null, endpointDiscoveryEnabled, null, null, expectedFileContents);
         }
 
-        public void AssertWriteProfile(string profileName, CredentialProfileOptions profileOptions,
-            Dictionary<string, string> properties, RegionEndpoint region, string expectedFileContents)
+        public void AssertWriteProfile(
+            string profileName,
+            CredentialProfileOptions profileOptions,
+            Dictionary<string, string> properties,
+            RegionEndpoint region,
+            string expectedFileContents)
         { 
-            CredentialsFile.RegisterProfile(CredentialProfileTestHelper.GetCredentialProfile(null, profileName, profileOptions, properties, region, null, null, null));
+            CredentialsFile.RegisterProfile(
+                CredentialProfileTestHelper.GetCredentialProfile(
+                    uniqueKey: null,
+                    profileName: profileName,
+                    options: profileOptions,
+                    properties: properties,
+                    defaultConfigurationModeName: null,
+                    region: region,
+                    endpointDiscoveryEnabled: null,
+                    retryMode: null,
+                    maxAttempts: null));
+
             AssertWriteProfile(profileName, profileOptions, properties, null, null, expectedFileContents);
         }
 
-        public void AssertWriteProfile(string profileName, CredentialProfileOptions profileOptions,
-            Dictionary<string, string> properties, RegionEndpoint region, Guid? uniqueKey, string expectedFileContents)
+        public void AssertWriteProfile(
+            string profileName,
+            CredentialProfileOptions profileOptions,
+            Dictionary<string, string> properties,
+            RegionEndpoint region,
+            Guid? uniqueKey,
+            string expectedFileContents)
         {
-            CredentialsFile.RegisterProfile(CredentialProfileTestHelper.GetCredentialProfile(uniqueKey, profileName, profileOptions, properties, region, null, null, null));
+            CredentialsFile.RegisterProfile(
+                CredentialProfileTestHelper.GetCredentialProfile(
+                    uniqueKey: uniqueKey,
+                    profileName: profileName,
+                    options: profileOptions,
+                    properties: properties,
+                    defaultConfigurationModeName: null,
+                    region: region,
+                    endpointDiscoveryEnabled: null,
+                    retryMode: null,
+                    maxAttempts: null));
+
             AssertCredentialsFileContents(expectedFileContents);
         }
 
-        public void AssertWriteProfile(string profileName, CredentialProfileOptions profileOptions,
-            Dictionary<string, string> properties, RegionEndpoint region, Guid? uniqueKey, bool? endpointDiscoveryEnabled, RequestRetryMode? retryMode, int? maxAttempts, string expectedFileContents)
+        public void AssertWriteProfile(
+            string profileName,
+            CredentialProfileOptions profileOptions,
+            Dictionary<string, string> properties,
+            RegionEndpoint region,
+            Guid? uniqueKey,
+            bool? endpointDiscoveryEnabled,
+            RequestRetryMode? retryMode,
+            int? maxAttempts,
+            string expectedFileContents)
         {
-            CredentialsFile.RegisterProfile(CredentialProfileTestHelper.GetCredentialProfile(uniqueKey, profileName, profileOptions, properties, region, endpointDiscoveryEnabled, retryMode, maxAttempts));
+            CredentialsFile.RegisterProfile(
+                CredentialProfileTestHelper.GetCredentialProfile(
+                    uniqueKey: uniqueKey,
+                    profileName: profileName,
+                    options: profileOptions,
+                    properties: properties,
+                    defaultConfigurationModeName: null,
+                    region: region,
+                    endpointDiscoveryEnabled: endpointDiscoveryEnabled,
+                    retryMode: retryMode,
+                    maxAttempts: maxAttempts));
+
             AssertCredentialsFileContents(expectedFileContents);
         }
 
         public void AssertWriteProfileRetryMode(string profileName, CredentialProfileOptions profileOptions, RequestRetryMode retryMode, string expectedFileContents)
         {
-            CredentialsFile.RegisterProfile(CredentialProfileTestHelper.GetCredentialProfile(null, profileName, profileOptions, null, null, null, retryMode, null));
+            CredentialsFile.RegisterProfile(
+                CredentialProfileTestHelper.GetCredentialProfile(
+                    uniqueKey: null,
+                    profileName: profileName,
+                    options: profileOptions,
+                    properties: null,
+                    defaultConfigurationModeName: null,
+                    region: null,
+                    endpointDiscoveryEnabled: null,
+                    retryMode: retryMode,
+                    maxAttempts: null));
+
             AssertCredentialsFileContents(expectedFileContents);
         }
 
         public void AssertWriteProfileMaxAttempts(string profileName, CredentialProfileOptions profileOptions, int maxAttempts, string expectedFileContents)
         {
-            CredentialsFile.RegisterProfile(CredentialProfileTestHelper.GetCredentialProfile(null, profileName, profileOptions, null, null, null, null, maxAttempts));
+            CredentialsFile.RegisterProfile(
+                CredentialProfileTestHelper.GetCredentialProfile(
+                    uniqueKey: null,
+                    profileName: profileName,
+                    options: profileOptions,
+                    properties: null,
+                    defaultConfigurationModeName: null,
+                    region: null,
+                    endpointDiscoveryEnabled: null,
+                    retryMode: null,
+                    maxAttempts: maxAttempts));
+
             AssertCredentialsFileContents(expectedFileContents);
+        }
+
+        public void AssertSsoSplitProfileWithCredentials(string profileName, CredentialProfileOptions profileOptions, string expectedCredentialsContents, string expectedConfigContents)
+        {
+            CredentialsFile.RegisterProfile(
+                CredentialProfileTestHelper.GetCredentialProfile(
+                    uniqueKey: null,
+                    profileName: profileName,
+                    options: profileOptions,
+                    properties: null,
+                    defaultConfigurationModeName: null,
+                    region: null,
+                    endpointDiscoveryEnabled: null,
+                    retryMode: null,
+                    maxAttempts: null));
+
+            AssertCredentialsFileContents(expectedCredentialsContents);
+            AssertConfigsFileContents(expectedConfigContents);
         }
 
         public void AssertCredentialsFileContents(string expectedContents)
         {
-            Assert.AreEqual(expectedContents, File.ReadAllText(CredentialsFilePath));
+            Assert.AreEqual(expectedContents.Trim(), File.ReadAllText(CredentialsFilePath).Trim());
+        }
+
+        public void AssertConfigsFileContents(string expectedContents)
+        {
+            Assert.AreEqual(expectedContents.Trim(), File.ReadAllText(ConfigFilePath).Trim());
         }
 
         public void Dispose()

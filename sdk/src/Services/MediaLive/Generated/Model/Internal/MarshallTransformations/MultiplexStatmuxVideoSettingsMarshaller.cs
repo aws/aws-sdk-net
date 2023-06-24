@@ -34,7 +34,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// MultiplexStatmuxVideoSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class MultiplexStatmuxVideoSettingsMarshaller : IRequestMarshaller<MultiplexStatmuxVideoSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static MultiplexStatmuxVideoSettingsMarshaller Instance = new MultiplexStatmuxVideoSettingsMarshaller();
 
     }

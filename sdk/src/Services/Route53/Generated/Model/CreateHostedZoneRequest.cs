@@ -45,7 +45,7 @@ namespace Amazon.Route53.Model
     ///  </important> 
     /// <para>
     /// For more information about charges for hosted zones, see <a href="http://aws.amazon.com/route53/pricing/">Amazon
-    /// Route 53 Pricing</a>.
+    /// Route 53 Pricing</a>.
     /// </para>
     ///  
     /// <para>
@@ -59,7 +59,7 @@ namespace Amazon.Route53.Model
     /// <para>
     /// For public hosted zones, Route 53 automatically creates a default SOA record and four
     /// NS records for the zone. For more information about SOA and NS records, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/SOA-NSrecords.html">NS
-    /// and SOA Records that Route 53 Creates for a Hosted Zone</a> in the <i>Amazon Route
+    /// and SOA Records that Route 53 Creates for a Hosted Zone</a> in the <i>Amazon Route
     /// 53 Developer Guide</i>.
     /// </para>
     ///  
@@ -70,17 +70,17 @@ namespace Amazon.Route53.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// If your domain is registered with a registrar other than Route 53, you must update
+    /// If your domain is registered with a registrar other than Route 53, you must update
     /// the name servers with your registrar to make Route 53 the DNS service for the domain.
     /// For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/MigratingDNS.html">Migrating
-    /// DNS Service for an Existing Domain to Amazon Route 53</a> in the <i>Amazon Route 53
+    /// DNS Service for an Existing Domain to Amazon Route 53</a> in the <i>Amazon Route 53
     /// Developer Guide</i>. 
     /// </para>
     ///  </li> </ul> 
     /// <para>
     /// When you submit a <code>CreateHostedZone</code> request, the initial status of the
     /// hosted zone is <code>PENDING</code>. For public hosted zones, this means that the
-    /// NS and SOA records are not yet available on all Route 53 DNS servers. When the NS
+    /// NS and SOA records are not yet available on all Route 53 DNS servers. When the NS
     /// and SOA records are available, the status of the zone changes to <code>INSYNC</code>.
     /// </para>
     ///  
@@ -88,6 +88,34 @@ namespace Amazon.Route53.Model
     /// The <code>CreateHostedZone</code> request requires the caller to have an <code>ec2:DescribeVpcs</code>
     /// permission.
     /// </para>
+    ///  <note> 
+    /// <para>
+    /// When creating private hosted zones, the Amazon VPC must belong to the same partition
+    /// where the hosted zone is created. A partition is a group of Amazon Web Services Regions.
+    /// Each Amazon Web Services account is scoped to one partition.
+    /// </para>
+    ///  
+    /// <para>
+    /// The following are the supported partitions:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <code>aws</code> - Amazon Web Services Regions
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>aws-cn</code> - China Regions
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>aws-us-gov</code> - Amazon Web Services GovCloud (US) Region
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Access
+    /// Management</a> in the <i>Amazon Web Services General Reference</i>.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class CreateHostedZoneRequest : AmazonRoute53Request
     {
@@ -105,7 +133,7 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Instantiates CreateHostedZoneRequest with the parameterized properties
         /// </summary>
-        /// <param name="name">The name of the domain. Specify a fully qualified domain name, for example, <i>www.example.com</i>. The trailing dot is optional; Amazon Route 53 assumes that the domain name is fully qualified. This means that Route 53 treats <i>www.example.com</i> (without a trailing dot) and <i>www.example.com.</i> (with a trailing dot) as identical. If you're creating a public hosted zone, this is the name you have registered with your DNS registrar. If your domain name is registered with a registrar other than Route 53, change the name servers for your domain to the set of <code>NameServers</code> that <code>CreateHostedZone</code> returns in <code>DelegationSet</code>.</param>
+        /// <param name="name">The name of the domain. Specify a fully qualified domain name, for example, <i>www.example.com</i>. The trailing dot is optional; Amazon Route 53 assumes that the domain name is fully qualified. This means that Route 53 treats <i>www.example.com</i> (without a trailing dot) and <i>www.example.com.</i> (with a trailing dot) as identical. If you're creating a public hosted zone, this is the name you have registered with your DNS registrar. If your domain name is registered with a registrar other than Route 53, change the name servers for your domain to the set of <code>NameServers</code> that <code>CreateHostedZone</code> returns in <code>DelegationSet</code>.</param>
         /// <param name="callerReference">A unique string that identifies the request and that allows failed <code>CreateHostedZone</code> requests to be retried without the risk of executing the operation twice. You must use a unique <code>CallerReference</code> string every time you submit a <code>CreateHostedZone</code> request. <code>CallerReference</code> can be any unique string, for example, a date/time stamp.</param>
         public CreateHostedZoneRequest(string name, string callerReference)
         {
@@ -117,15 +145,15 @@ namespace Amazon.Route53.Model
         /// Gets and sets the property Name. 
         /// <para>
         /// The name of the domain. Specify a fully qualified domain name, for example, <i>www.example.com</i>.
-        /// The trailing dot is optional; Amazon Route 53 assumes that the domain name is fully
-        /// qualified. This means that Route 53 treats <i>www.example.com</i> (without a trailing
+        /// The trailing dot is optional; Amazon Route 53 assumes that the domain name is fully
+        /// qualified. This means that Route 53 treats <i>www.example.com</i> (without a trailing
         /// dot) and <i>www.example.com.</i> (with a trailing dot) as identical.
         /// </para>
         ///  
         /// <para>
         /// If you're creating a public hosted zone, this is the name you have registered with
         /// your DNS registrar. If your domain name is registered with a registrar other than
-        /// Route 53, change the name servers for your domain to the set of <code>NameServers</code>
+        /// Route 53, change the name servers for your domain to the set of <code>NameServers</code>
         /// that <code>CreateHostedZone</code> returns in <code>DelegationSet</code>.
         /// </para>
         /// </summary>
@@ -150,8 +178,13 @@ namespace Amazon.Route53.Model
         /// </para>
         ///  
         /// <para>
-        /// You can specify only one Amazon VPC when you create a private hosted zone. To associate
-        /// additional Amazon VPCs with the hosted zone, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AssociateVPCWithHostedZone.html">AssociateVPCWithHostedZone</a>
+        /// You can specify only one Amazon VPC when you create a private hosted zone. If you
+        /// are associating a VPC with a hosted zone with this request, the paramaters <code>VPCId</code>
+        /// and <code>VPCRegion</code> are also required.
+        /// </para>
+        ///  
+        /// <para>
+        /// To associate additional Amazon VPCs with the hosted zone, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AssociateVPCWithHostedZone.html">AssociateVPCWithHostedZone</a>
         /// after you create a hosted zone.
         /// </para>
         /// </summary>
@@ -225,7 +258,7 @@ namespace Amazon.Route53.Model
         /// Gets and sets the property DelegationSetId. 
         /// <para>
         /// If you want to associate a reusable delegation set with this hosted zone, the ID that
-        /// Amazon Route 53 assigned to the reusable delegation set when you created it. For more
+        /// Amazon Route 53 assigned to the reusable delegation set when you created it. For more
         /// information about reusable delegation sets, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateReusableDelegationSet.html">CreateReusableDelegationSet</a>.
         /// </para>
         /// </summary>

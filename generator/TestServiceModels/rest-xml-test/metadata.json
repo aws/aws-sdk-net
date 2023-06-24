@@ -1,0 +1,6 @@
+{
+  "active": true,
+  "test-service": true,
+  "synopsis": "rest-json test service",
+  "legacy-service-id": "Rest-XML-Test"
+}

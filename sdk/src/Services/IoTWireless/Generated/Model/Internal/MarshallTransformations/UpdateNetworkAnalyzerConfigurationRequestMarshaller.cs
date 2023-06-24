@@ -56,7 +56,7 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.IoTWireless");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-11-22";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-11-22";
             request.HttpMethod = "PATCH";
 
             if (!publicRequest.IsSetConfigurationName())
@@ -68,6 +68,34 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetDescription())
+                {
+                    context.Writer.WritePropertyName("Description");
+                    context.Writer.Write(publicRequest.Description);
+                }
+
+                if(publicRequest.IsSetMulticastGroupsToAdd())
+                {
+                    context.Writer.WritePropertyName("MulticastGroupsToAdd");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestMulticastGroupsToAddListValue in publicRequest.MulticastGroupsToAdd)
+                    {
+                            context.Writer.Write(publicRequestMulticastGroupsToAddListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetMulticastGroupsToRemove())
+                {
+                    context.Writer.WritePropertyName("MulticastGroupsToRemove");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestMulticastGroupsToRemoveListValue in publicRequest.MulticastGroupsToRemove)
+                    {
+                            context.Writer.Write(publicRequestMulticastGroupsToRemoveListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetTraceContent())
                 {
                     context.Writer.WritePropertyName("TraceContent");
@@ -123,7 +151,6 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

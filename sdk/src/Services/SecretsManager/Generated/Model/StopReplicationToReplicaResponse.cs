@@ -38,7 +38,8 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property ARN. 
         /// <para>
-        /// Response <code>StopReplicationToReplica</code> of a secret, based on the <code>ARN,</code>.
+        /// The ARN of the promoted secret. The ARN is the same as the original primary secret
+        /// except the Region is changed.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]

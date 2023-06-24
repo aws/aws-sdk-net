@@ -39,7 +39,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        ///  A string that contains <code>Tag</code> key.
+        /// A string that contains <code>Tag</code> key.
         /// </para>
         ///  
         /// <para>
@@ -64,7 +64,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        ///  A string that contains an optional <code>Tag</code> value.
+        /// A string that contains an optional <code>Tag</code> value.
         /// </para>
         ///  
         /// <para>

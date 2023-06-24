@@ -30,19 +30,20 @@ namespace Amazon.ChimeSDKMessaging.Model
 {
     /// <summary>
     /// Container for the parameters to the BatchCreateChannelMembership operation.
-    /// Adds a specified number of users to a channel.
+    /// Adds a specified number of users and bots to a channel.
     /// </summary>
     public partial class BatchCreateChannelMembershipRequest : AmazonChimeSDKMessagingRequest
     {
         private string _channelArn;
         private string _chimeBearer;
         private List<string> _memberArns = new List<string>();
+        private string _subChannelId;
         private ChannelMembershipType _type;
 
         /// <summary>
         /// Gets and sets the property ChannelArn. 
         /// <para>
-        /// The ARN of the channel to which you're adding users.
+        /// The ARN of the channel to which you're adding users or bots.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=5, Max=1600)]
@@ -61,7 +62,8 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// <summary>
         /// Gets and sets the property ChimeBearer. 
         /// <para>
-        /// The <code>AppInstanceUserArn</code> of the user that makes the API call.
+        /// The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes
+        /// the API call.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=5, Max=1600)]
@@ -80,7 +82,8 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// <summary>
         /// Gets and sets the property MemberArns. 
         /// <para>
-        /// The <code>AppInstanceUserArn</code>s of the members you want to add to the channel.
+        /// The ARNs of the members you want to add to the channel. Only <code>AppInstanceUsers</code>
+        /// and <code>AppInstanceBots</code> can be added as a channel member.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
@@ -94,6 +97,31 @@ namespace Amazon.ChimeSDKMessaging.Model
         internal bool IsSetMemberArns()
         {
             return this._memberArns != null && this._memberArns.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SubChannelId. 
+        /// <para>
+        /// The ID of the SubChannel in the request. 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Only required when creating membership in a SubChannel for a moderator in an elastic
+        /// channel.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        [AWSProperty(Min=1, Max=128)]
+        public string SubChannelId
+        {
+            get { return this._subChannelId; }
+            set { this._subChannelId = value; }
+        }
+
+        // Check to see if SubChannelId property is set
+        internal bool IsSetSubChannelId()
+        {
+            return this._subChannelId != null;
         }
 
         /// <summary>

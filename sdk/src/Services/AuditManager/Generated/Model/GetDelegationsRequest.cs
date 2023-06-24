@@ -30,7 +30,7 @@ namespace Amazon.AuditManager.Model
 {
     /// <summary>
     /// Container for the parameters to the GetDelegations operation.
-    /// Returns a list of delegations from an audit owner to a delegate.
+    /// Gets a list of delegations from an audit owner to a delegate.
     /// </summary>
     public partial class GetDelegationsRequest : AmazonAuditManagerRequest
     {

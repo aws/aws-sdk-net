@@ -35,17 +35,75 @@ namespace Amazon.LakeFormation.Model
     /// </summary>
     public partial class DataLakeSettings
     {
+        private bool? _allowExternalDataFiltering;
+        private List<string> _authorizedSessionTagValueList = new List<string>();
         private List<PrincipalPermissions> _createDatabaseDefaultPermissions = new List<PrincipalPermissions>();
         private List<PrincipalPermissions> _createTableDefaultPermissions = new List<PrincipalPermissions>();
         private List<DataLakePrincipal> _dataLakeAdmins = new List<DataLakePrincipal>();
+        private List<DataLakePrincipal> _externalDataFilteringAllowList = new List<DataLakePrincipal>();
+        private Dictionary<string, string> _parameters = new Dictionary<string, string>();
         private List<string> _trustedResourceOwners = new List<string>();
+
+        /// <summary>
+        /// Gets and sets the property AllowExternalDataFiltering. 
+        /// <para>
+        /// Whether to allow Amazon EMR clusters to access data managed by Lake Formation. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If true, you allow Amazon EMR clusters to access data in Amazon S3 locations that
+        /// are registered with Lake Formation.
+        /// </para>
+        ///  
+        /// <para>
+        /// If false or null, no Amazon EMR clusters will be able to access data in Amazon S3
+        /// locations that are registered with Lake Formation.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs-aws.amazon.com/lake-formation/latest/dg/getting-started-setup.html#emr-switch">(Optional)
+        /// Allow Data Filtering on Amazon EMR</a>.
+        /// </para>
+        /// </summary>
+        public bool AllowExternalDataFiltering
+        {
+            get { return this._allowExternalDataFiltering.GetValueOrDefault(); }
+            set { this._allowExternalDataFiltering = value; }
+        }
+
+        // Check to see if AllowExternalDataFiltering property is set
+        internal bool IsSetAllowExternalDataFiltering()
+        {
+            return this._allowExternalDataFiltering.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AuthorizedSessionTagValueList. 
+        /// <para>
+        /// Lake Formation relies on a privileged process secured by Amazon EMR or the third party
+        /// integrator to tag the user's role while assuming it. Lake Formation will publish the
+        /// acceptable key-value pair, for example key = "LakeFormationTrustedCaller" and value
+        /// = "TRUE" and the third party integrator must properly tag the temporary security credentials
+        /// that will be used to call Lake Formation's administrative APIs.
+        /// </para>
+        /// </summary>
+        public List<string> AuthorizedSessionTagValueList
+        {
+            get { return this._authorizedSessionTagValueList; }
+            set { this._authorizedSessionTagValueList = value; }
+        }
+
+        // Check to see if AuthorizedSessionTagValueList property is set
+        internal bool IsSetAuthorizedSessionTagValueList()
+        {
+            return this._authorizedSessionTagValueList != null && this._authorizedSessionTagValueList.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property CreateDatabaseDefaultPermissions. 
         /// <para>
         /// Specifies whether access control on newly created database is managed by Lake Formation
-        /// permissions or exclusively by IAM permissions. You can override this default setting
-        /// when you create a database.
+        /// permissions or exclusively by IAM permissions.
         /// </para>
         ///  
         /// <para>
@@ -119,7 +177,7 @@ namespace Amazon.LakeFormation.Model
         /// A list of Lake Formation principals. Supported principals are IAM users or IAM roles.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=10)]
+        [AWSProperty(Min=0, Max=30)]
         public List<DataLakePrincipal> DataLakeAdmins
         {
             get { return this._dataLakeAdmins; }
@@ -130,6 +188,46 @@ namespace Amazon.LakeFormation.Model
         internal bool IsSetDataLakeAdmins()
         {
             return this._dataLakeAdmins != null && this._dataLakeAdmins.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExternalDataFilteringAllowList. 
+        /// <para>
+        /// A list of the account IDs of Amazon Web Services accounts with Amazon EMR clusters
+        /// that are to perform data filtering.&gt;
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=30)]
+        public List<DataLakePrincipal> ExternalDataFilteringAllowList
+        {
+            get { return this._externalDataFilteringAllowList; }
+            set { this._externalDataFilteringAllowList = value; }
+        }
+
+        // Check to see if ExternalDataFilteringAllowList property is set
+        internal bool IsSetExternalDataFilteringAllowList()
+        {
+            return this._externalDataFilteringAllowList != null && this._externalDataFilteringAllowList.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Parameters. 
+        /// <para>
+        /// A key-value map that provides an additional configuration on your data lake. CrossAccountVersion
+        /// is the key you can configure in the Parameters field. Accepted values for the CrossAccountVersion
+        /// key are 1, 2, and 3.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> Parameters
+        {
+            get { return this._parameters; }
+            set { this._parameters = value; }
+        }
+
+        // Check to see if Parameters property is set
+        internal bool IsSetParameters()
+        {
+            return this._parameters != null && this._parameters.Count > 0; 
         }
 
         /// <summary>

@@ -30,9 +30,8 @@ namespace Amazon.Route53Domains.Model
 {
     /// <summary>
     /// Container for the parameters to the RegisterDomain operation.
-    /// This operation registers a domain. Domains are registered either by Amazon Registrar
-    /// (for .com, .net, and .org domains) or by our registrar associate, Gandi (for all other
-    /// domains). For some top-level domains (TLDs), this operation requires extra parameters.
+    /// This operation registers a domain. For some top-level domains (TLDs), this operation
+    /// requires extra parameters.
     /// 
     ///  
     /// <para>
@@ -46,19 +45,23 @@ namespace Amazon.Route53Domains.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Enables autorenew, so your domain registration will renew automatically each year.
+    /// Enables auto renew, so your domain registration will renew automatically each year.
     /// We'll notify you in advance of the renewal date so you can choose whether to renew
     /// the registration.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Optionally enables privacy protection, so WHOIS queries return contact information
-    /// either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar
-    /// associate, Gandi (for all other TLDs). If you don't enable privacy protection, WHOIS
-    /// queries return the information that you entered for the registrant, admin, and tech
-    /// contacts.
+    /// Optionally enables privacy protection, so WHOIS queries return contact for the registrar
+    /// or the phrase "REDACTED FOR PRIVACY", or "On behalf of &lt;domain name&gt; owner."
+    /// If you don't enable privacy protection, WHOIS queries return the information that
+    /// you entered for the administrative, registrant, and technical contacts.
     /// </para>
-    ///  </li> <li> 
+    ///  <note> 
+    /// <para>
+    /// While some domains may allow different privacy settings per contact, we recommend
+    /// specifying the same privacy setting for all contacts.
+    /// </para>
+    ///  </note> </li> <li> 
     /// <para>
     /// If registration is successful, returns an operation ID that you can use to track the
     /// progress and completion of the action. If the request is not completed successfully,
@@ -66,8 +69,9 @@ namespace Amazon.Route53Domains.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Charges your AWS account an amount based on the top-level domain. For more information,
-    /// see <a href="http://aws.amazon.com/route53/pricing/">Amazon Route 53 Pricing</a>.
+    /// Charges your Amazon Web Services account an amount based on the top-level domain.
+    /// For more information, see <a href="http://aws.amazon.com/route53/pricing/">Amazon
+    /// Route 53 Pricing</a>.
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -91,7 +95,7 @@ namespace Amazon.Route53Domains.Model
         /// for each element, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html">ContactDetail</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public ContactDetail AdminContact
         {
             get { return this._adminContact; }
@@ -108,7 +112,7 @@ namespace Amazon.Route53Domains.Model
         /// Gets and sets the property AutoRenew. 
         /// <para>
         /// Indicates whether the domain will be automatically renewed (<code>true</code>) or
-        /// not (<code>false</code>). Autorenewal only takes effect after the account is charged.
+        /// not (<code>false</code>). Auto renewal only takes effect after the account is charged.
         /// </para>
         ///  
         /// <para>
@@ -232,7 +236,12 @@ namespace Amazon.Route53Domains.Model
         /// Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return
         /// the information that you entered for the admin contact.
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        /// You must specify the same privacy setting for the administrative, registrant, and
+        /// technical contacts.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// Default: <code>true</code> 
         /// </para>
@@ -258,7 +267,12 @@ namespace Amazon.Route53Domains.Model
         /// Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return
         /// the information that you entered for the registrant contact (the domain owner).
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        /// You must specify the same privacy setting for the administrative, registrant, and
+        /// technical contacts.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// Default: <code>true</code> 
         /// </para>
@@ -284,7 +298,12 @@ namespace Amazon.Route53Domains.Model
         /// Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return
         /// the information that you entered for the technical contact.
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        /// You must specify the same privacy setting for the administrative, registrant, and
+        /// technical contacts.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// Default: <code>true</code> 
         /// </para>
@@ -308,7 +327,7 @@ namespace Amazon.Route53Domains.Model
         /// for each element, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html">ContactDetail</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public ContactDetail RegistrantContact
         {
             get { return this._registrantContact; }
@@ -328,7 +347,7 @@ namespace Amazon.Route53Domains.Model
         /// for each element, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html">ContactDetail</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public ContactDetail TechContact
         {
             get { return this._techContact; }

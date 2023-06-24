@@ -159,6 +159,12 @@ namespace Amazon.RedshiftDataAPIService.Model.Internal.MarshallTransformations
                     response.UpdatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("WorkgroupName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.WorkgroupName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

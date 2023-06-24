@@ -34,7 +34,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ConnectionPasswordEncryption Marshaller
-    /// </summary>       
+    /// </summary>
     public class ConnectionPasswordEncryptionMarshaller : IRequestMarshaller<ConnectionPasswordEncryption, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ConnectionPasswordEncryptionMarshaller Instance = new ConnectionPasswordEncryptionMarshaller();
 
     }

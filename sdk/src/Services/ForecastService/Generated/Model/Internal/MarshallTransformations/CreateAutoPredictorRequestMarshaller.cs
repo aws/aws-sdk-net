@@ -58,7 +58,7 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
             string target = "AmazonForecast.CreateAutoPredictor";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-06-26";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-06-26";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -129,6 +129,17 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetMonitorConfig())
+                {
+                    context.Writer.WritePropertyName("MonitorConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = MonitorConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.MonitorConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetOptimizationMetric())
                 {
                     context.Writer.WritePropertyName("OptimizationMetric");
@@ -163,7 +174,17 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
-        
+                if(publicRequest.IsSetTimeAlignmentBoundary())
+                {
+                    context.Writer.WritePropertyName("TimeAlignmentBoundary");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = TimeAlignmentBoundaryMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.TimeAlignmentBoundary, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

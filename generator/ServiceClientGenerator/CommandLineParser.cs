@@ -206,6 +206,15 @@ namespace ServiceClientGenerator
             },
             new ArgDeclaration
             {
+                OptionName = "skipremoveorphanscleanup",
+                ShortName = "sro",
+                Parse = (arguments, argValue) => arguments.ParsedOptions.SkipRemoveOrphanCleanup = true,
+                HelpText = "Allows disabling orphaned shape and service cleanup. Useful to set if you \n" +
+                           "a) specify ServiceModels and b) don't want to remove previously generated services." +
+                           "This is often the case in a development environment."
+            },
+            new ArgDeclaration
+            {
                 OptionName = "clean",
                 ShortName = "c",
                 Parse = (arguments, argValue) => arguments.ParsedOptions.Clean = true,

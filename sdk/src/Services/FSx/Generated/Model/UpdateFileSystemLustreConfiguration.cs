@@ -39,6 +39,7 @@ namespace Amazon.FSx.Model
         private string _dailyAutomaticBackupStartTime;
         private DataCompressionType _dataCompressionType;
         private LustreLogCreateConfiguration _logConfiguration;
+        private LustreRootSquashConfiguration _rootSquashConfiguration;
         private string _weeklyMaintenanceStartTime;
 
         /// <summary>
@@ -77,9 +78,7 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The <code>AutoImportPolicy</code> parameter is not supported for Lustre file systems
-        /// with the <code>Persistent_2</code> deployment type. Instead, use to update a data
-        /// repository association on your <code>Persistent_2</code> file system.
+        /// This parameter is not supported for file systems with a data repository association.
         /// </para>
         /// </summary>
         public AutoImportPolicyType AutoImportPolicy
@@ -95,7 +94,12 @@ namespace Amazon.FSx.Model
         }
 
         /// <summary>
-        /// Gets and sets the property AutomaticBackupRetentionDays.
+        /// Gets and sets the property AutomaticBackupRetentionDays. 
+        /// <para>
+        /// The number of days to retain automatic backups. Setting this property to <code>0</code>
+        /// disables automatic backups. You can retain automatic backups for a maximum of 90 days.
+        /// The default is <code>0</code>.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=90)]
         public int AutomaticBackupRetentionDays
@@ -181,6 +185,26 @@ namespace Amazon.FSx.Model
         internal bool IsSetLogConfiguration()
         {
             return this._logConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RootSquashConfiguration. 
+        /// <para>
+        /// The Lustre root squash configuration used when updating an Amazon FSx for Lustre file
+        /// system. When enabled, root squash restricts root-level access from clients that try
+        /// to access your file system as a root user.
+        /// </para>
+        /// </summary>
+        public LustreRootSquashConfiguration RootSquashConfiguration
+        {
+            get { return this._rootSquashConfiguration; }
+            set { this._rootSquashConfiguration = value; }
+        }
+
+        // Check to see if RootSquashConfiguration property is set
+        internal bool IsSetRootSquashConfiguration()
+        {
+            return this._rootSquashConfiguration != null;
         }
 
         /// <summary>

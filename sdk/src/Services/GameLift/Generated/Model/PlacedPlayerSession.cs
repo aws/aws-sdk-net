@@ -29,22 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GameLift.Model
 {
     /// <summary>
-    /// Information about a player session that was created as part of a <a>StartGameSessionPlacement</a>
-    /// request. This object contains only the player ID and player session ID. To retrieve
-    /// full details on a player session, call <a>DescribePlayerSessions</a> with the player
-    /// session ID.
-    /// 
-    ///  
-    /// <para>
-    ///  <b>Related actions</b> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <a>CreatePlayerSession</a> | <a>CreatePlayerSessions</a> | <a>DescribePlayerSessions</a>
-    /// | <a>StartGameSessionPlacement</a> | <a>DescribeGameSessionPlacement</a> | <a>StopGameSessionPlacement</a>
-    /// | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
-    /// APIs by task</a> 
-    /// </para>
+    /// Information about a player session. This object contains only the player ID and player
+    /// session ID. To retrieve full details on a player session, call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribePlayerSessions.html">DescribePlayerSessions</a>
+    /// with the player session ID.
     /// </summary>
     public partial class PlacedPlayerSession
     {

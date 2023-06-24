@@ -34,7 +34,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// UdpOutputSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class UdpOutputSettingsMarshaller : IRequestMarshaller<UdpOutputSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -88,7 +88,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static UdpOutputSettingsMarshaller Instance = new UdpOutputSettingsMarshaller();
 
     }

@@ -39,7 +39,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ComponentBuildVersionArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the component build version that was deleted.
+        /// The ARN of the component build version that this request deleted.
         /// </para>
         /// </summary>
         public string ComponentBuildVersionArn

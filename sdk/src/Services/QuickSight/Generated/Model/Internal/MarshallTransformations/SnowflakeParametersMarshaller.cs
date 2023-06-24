@@ -34,7 +34,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SnowflakeParameters Marshaller
-    /// </summary>       
+    /// </summary>
     public class SnowflakeParametersMarshaller : IRequestMarshaller<SnowflakeParameters, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SnowflakeParametersMarshaller Instance = new SnowflakeParametersMarshaller();
 
     }

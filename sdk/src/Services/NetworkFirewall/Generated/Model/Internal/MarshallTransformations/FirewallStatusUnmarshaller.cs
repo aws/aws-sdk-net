@@ -64,6 +64,12 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("CapacityUsageSummary", targetDepth))
+                {
+                    var unmarshaller = CapacityUsageSummaryUnmarshaller.Instance;
+                    unmarshalledObject.CapacityUsageSummary = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ConfigurationSyncStateSummary", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

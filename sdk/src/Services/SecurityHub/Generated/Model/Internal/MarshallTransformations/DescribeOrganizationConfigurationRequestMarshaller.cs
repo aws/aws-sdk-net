@@ -55,7 +55,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public IRequest Marshall(DescribeOrganizationConfigurationRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.SecurityHub");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-10-26";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-10-26";
             request.HttpMethod = "GET";
 
             request.ResourcePath = "/organization/configuration";

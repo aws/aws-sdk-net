@@ -58,7 +58,7 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             string target = "RekognitionService.StartStreamProcessor";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-06-27";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-06-27";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -73,7 +73,28 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Name);
                 }
 
-        
+                if(publicRequest.IsSetStartSelector())
+                {
+                    context.Writer.WritePropertyName("StartSelector");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = StreamProcessingStartSelectorMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.StartSelector, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetStopSelector())
+                {
+                    context.Writer.WritePropertyName("StopSelector");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = StreamProcessingStopSelectorMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.StopSelector, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

@@ -34,7 +34,7 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RouteAnalysisEndpointOptionsSpecification Marshaller
-    /// </summary>       
+    /// </summary>
     public class RouteAnalysisEndpointOptionsSpecificationMarshaller : IRequestMarshaller<RouteAnalysisEndpointOptionsSpecification, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RouteAnalysisEndpointOptionsSpecificationMarshaller Instance = new RouteAnalysisEndpointOptionsSpecificationMarshaller();
 
     }

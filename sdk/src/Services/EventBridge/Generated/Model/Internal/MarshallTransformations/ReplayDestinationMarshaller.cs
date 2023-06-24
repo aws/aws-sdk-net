@@ -34,7 +34,7 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ReplayDestination Marshaller
-    /// </summary>       
+    /// </summary>
     public class ReplayDestinationMarshaller : IRequestMarshaller<ReplayDestination, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ReplayDestinationMarshaller Instance = new ReplayDestinationMarshaller();
 
     }

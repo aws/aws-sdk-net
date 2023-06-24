@@ -39,13 +39,13 @@ namespace Amazon.CloudFormation.Model
     /// To deregister an entire extension, you must individually deregister all active versions
     /// of that extension. If an extension has only a single active version, deregistering
     /// that version results in the extension itself being deregistered and marked as deprecated
-    /// in the registry. 
+    /// in the registry.
     /// </para>
     ///  
     /// <para>
-    /// You cannot deregister the default version of an extension if there are other active
+    /// You can't deregister the default version of an extension if there are other active
     /// version of that extension. If you do deregister the default version of an extension,
-    /// the textensionype itself is deregistered as well and marked as deprecated. 
+    /// the extension type itself is deregistered as well and marked as deprecated.
     /// </para>
     ///  
     /// <para>

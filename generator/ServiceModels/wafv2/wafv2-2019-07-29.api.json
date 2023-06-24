@@ -45,7 +45,23 @@
         {"shape":"WAFInvalidResourceException"},
         {"shape":"WAFUnavailableEntityException"},
         {"shape":"WAFSubscriptionNotFoundException"},
-        {"shape":"WAFExpiredManagedRuleGroupVersionException"}
+        {"shape":"WAFExpiredManagedRuleGroupVersionException"},
+        {"shape":"WAFInvalidOperationException"}
+      ]
+    },
+    "CreateAPIKey":{
+      "name":"CreateAPIKey",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"CreateAPIKeyRequest"},
+      "output":{"shape":"CreateAPIKeyResponse"},
+      "errors":[
+        {"shape":"WAFInternalErrorException"},
+        {"shape":"WAFInvalidParameterException"},
+        {"shape":"WAFInvalidOperationException"},
+        {"shape":"WAFLimitsExceededException"}
       ]
     },
     "CreateIPSet":{
@@ -128,7 +144,9 @@
         {"shape":"WAFTagOperationException"},
         {"shape":"WAFTagOperationInternalErrorException"},
         {"shape":"WAFSubscriptionNotFoundException"},
-        {"shape":"WAFInvalidOperationException"}
+        {"shape":"WAFInvalidOperationException"},
+        {"shape":"WAFConfigurationWarningException"},
+        {"shape":"WAFExpiredManagedRuleGroupVersionException"}
       ]
     },
     "DeleteFirewallManagerRuleGroups":{
@@ -253,6 +271,33 @@
         {"shape":"WAFInvalidOperationException"}
       ]
     },
+    "DescribeAllManagedProducts":{
+      "name":"DescribeAllManagedProducts",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DescribeAllManagedProductsRequest"},
+      "output":{"shape":"DescribeAllManagedProductsResponse"},
+      "errors":[
+        {"shape":"WAFInvalidOperationException"},
+        {"shape":"WAFInternalErrorException"}
+      ]
+    },
+    "DescribeManagedProductsByVendor":{
+      "name":"DescribeManagedProductsByVendor",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DescribeManagedProductsByVendorRequest"},
+      "output":{"shape":"DescribeManagedProductsByVendorResponse"},
+      "errors":[
+        {"shape":"WAFInvalidOperationException"},
+        {"shape":"WAFInternalErrorException"},
+        {"shape":"WAFInvalidParameterException"}
+      ]
+    },
     "DescribeManagedRuleGroup":{
       "name":"DescribeManagedRuleGroup",
       "http":{
@@ -283,6 +328,36 @@
         {"shape":"WAFInvalidParameterException"},
         {"shape":"WAFNonexistentItemException"},
         {"shape":"WAFInvalidOperationException"}
+      ]
+    },
+    "GenerateMobileSdkReleaseUrl":{
+      "name":"GenerateMobileSdkReleaseUrl",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"GenerateMobileSdkReleaseUrlRequest"},
+      "output":{"shape":"GenerateMobileSdkReleaseUrlResponse"},
+      "errors":[
+        {"shape":"WAFInternalErrorException"},
+        {"shape":"WAFNonexistentItemException"},
+        {"shape":"WAFInvalidParameterException"},
+        {"shape":"WAFInvalidOperationException"}
+      ]
+    },
+    "GetDecryptedAPIKey":{
+      "name":"GetDecryptedAPIKey",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"GetDecryptedAPIKeyRequest"},
+      "output":{"shape":"GetDecryptedAPIKeyResponse"},
+      "errors":[
+        {"shape":"WAFInternalErrorException"},
+        {"shape":"WAFInvalidParameterException"},
+        {"shape":"WAFInvalidOperationException"},
+        {"shape":"WAFInvalidResourceException"}
       ]
     },
     "GetIPSet":{
@@ -330,6 +405,21 @@
         {"shape":"WAFInvalidOperationException"}
       ]
     },
+    "GetMobileSdkRelease":{
+      "name":"GetMobileSdkRelease",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"GetMobileSdkReleaseRequest"},
+      "output":{"shape":"GetMobileSdkReleaseResponse"},
+      "errors":[
+        {"shape":"WAFInternalErrorException"},
+        {"shape":"WAFNonexistentItemException"},
+        {"shape":"WAFInvalidParameterException"},
+        {"shape":"WAFInvalidOperationException"}
+      ]
+    },
     "GetPermissionPolicy":{
       "name":"GetPermissionPolicy",
       "http":{
@@ -356,7 +446,8 @@
         {"shape":"WAFInternalErrorException"},
         {"shape":"WAFInvalidParameterException"},
         {"shape":"WAFNonexistentItemException"},
-        {"shape":"WAFInvalidOperationException"}
+        {"shape":"WAFInvalidOperationException"},
+        {"shape":"WAFUnsupportedAggregateKeyTypeException"}
       ]
     },
     "GetRegexPatternSet":{
@@ -434,6 +525,21 @@
         {"shape":"WAFInvalidOperationException"}
       ]
     },
+    "ListAPIKeys":{
+      "name":"ListAPIKeys",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"ListAPIKeysRequest"},
+      "output":{"shape":"ListAPIKeysResponse"},
+      "errors":[
+        {"shape":"WAFInternalErrorException"},
+        {"shape":"WAFInvalidParameterException"},
+        {"shape":"WAFInvalidOperationException"},
+        {"shape":"WAFInvalidResourceException"}
+      ]
+    },
     "ListAvailableManagedRuleGroupVersions":{
       "name":"ListAvailableManagedRuleGroupVersions",
       "http":{
@@ -445,6 +551,7 @@
       "errors":[
         {"shape":"WAFInternalErrorException"},
         {"shape":"WAFInvalidParameterException"},
+        {"shape":"WAFNonexistentItemException"},
         {"shape":"WAFInvalidOperationException"}
       ]
     },
@@ -498,6 +605,20 @@
       },
       "input":{"shape":"ListManagedRuleSetsRequest"},
       "output":{"shape":"ListManagedRuleSetsResponse"},
+      "errors":[
+        {"shape":"WAFInternalErrorException"},
+        {"shape":"WAFInvalidParameterException"},
+        {"shape":"WAFInvalidOperationException"}
+      ]
+    },
+    "ListMobileSdkReleases":{
+      "name":"ListMobileSdkReleases",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"ListMobileSdkReleasesRequest"},
+      "output":{"shape":"ListMobileSdkReleasesResponse"},
       "errors":[
         {"shape":"WAFInternalErrorException"},
         {"shape":"WAFInvalidParameterException"},
@@ -732,7 +853,8 @@
         {"shape":"WAFLimitsExceededException"},
         {"shape":"WAFUnavailableEntityException"},
         {"shape":"WAFSubscriptionNotFoundException"},
-        {"shape":"WAFInvalidOperationException"}
+        {"shape":"WAFInvalidOperationException"},
+        {"shape":"WAFConfigurationWarningException"}
       ]
     },
     "UpdateWebACL":{
@@ -754,11 +876,72 @@
         {"shape":"WAFUnavailableEntityException"},
         {"shape":"WAFSubscriptionNotFoundException"},
         {"shape":"WAFInvalidOperationException"},
-        {"shape":"WAFExpiredManagedRuleGroupVersionException"}
+        {"shape":"WAFExpiredManagedRuleGroupVersionException"},
+        {"shape":"WAFConfigurationWarningException"}
       ]
     }
   },
   "shapes":{
+    "APIKey":{
+      "type":"string",
+      "max":2048,
+      "min":1,
+      "pattern":".*\\S.*"
+    },
+    "APIKeySummaries":{
+      "type":"list",
+      "member":{"shape":"APIKeySummary"}
+    },
+    "APIKeySummary":{
+      "type":"structure",
+      "members":{
+        "TokenDomains":{"shape":"TokenDomains"},
+        "APIKey":{"shape":"APIKey"},
+        "CreationTimestamp":{"shape":"Timestamp"},
+        "Version":{"shape":"APIKeyVersion"}
+      }
+    },
+    "APIKeyTokenDomains":{
+      "type":"list",
+      "member":{"shape":"TokenDomain"},
+      "min":1
+    },
+    "APIKeyVersion":{
+      "type":"integer",
+      "min":0
+    },
+    "AWSManagedRulesACFPRuleSet":{
+      "type":"structure",
+      "required":[
+        "CreationPath",
+        "RegistrationPagePath",
+        "RequestInspection"
+      ],
+      "members":{
+        "CreationPath":{"shape":"CreationPathString"},
+        "RegistrationPagePath":{"shape":"RegistrationPagePathString"},
+        "RequestInspection":{"shape":"RequestInspectionACFP"},
+        "ResponseInspection":{"shape":"ResponseInspection"},
+        "EnableRegexInPath":{"shape":"Boolean"}
+      }
+    },
+    "AWSManagedRulesATPRuleSet":{
+      "type":"structure",
+      "required":["LoginPath"],
+      "members":{
+        "LoginPath":{"shape":"String"},
+        "RequestInspection":{"shape":"RequestInspection"},
+        "ResponseInspection":{"shape":"ResponseInspection"},
+        "EnableRegexInPath":{"shape":"Boolean"}
+      }
+    },
+    "AWSManagedRulesBotControlRuleSet":{
+      "type":"structure",
+      "required":["InspectionLevel"],
+      "members":{
+        "InspectionLevel":{"shape":"InspectionLevel"}
+      }
+    },
     "Action":{"type":"string"},
     "ActionCondition":{
       "type":"structure",
@@ -774,8 +957,20 @@
         "BLOCK",
         "COUNT",
         "CAPTCHA",
+        "CHALLENGE",
         "EXCLUDED_AS_COUNT"
       ]
+    },
+    "AddressField":{
+      "type":"structure",
+      "required":["Identifier"],
+      "members":{
+        "Identifier":{"shape":"FieldIdentifier"}
+      }
+    },
+    "AddressFields":{
+      "type":"list",
+      "member":{"shape":"AddressField"}
     },
     "All":{
       "type":"structure",
@@ -816,6 +1011,16 @@
       "members":{
       }
     },
+    "AssociatedResourceType":{
+      "type":"string",
+      "enum":["CLOUDFRONT"]
+    },
+    "AssociationConfig":{
+      "type":"structure",
+      "members":{
+        "RequestBody":{"shape":"RequestBody"}
+      }
+    },
     "BlockAction":{
       "type":"structure",
       "members":{
@@ -825,6 +1030,7 @@
     "Body":{
       "type":"structure",
       "members":{
+        "OversizeHandling":{"shape":"OversizeHandling"}
       }
     },
     "BodyParsingFallbackBehavior":{
@@ -875,6 +1081,26 @@
         "FailureReason":{"shape":"FailureReason"}
       }
     },
+    "ChallengeAction":{
+      "type":"structure",
+      "members":{
+        "CustomRequestHandling":{"shape":"CustomRequestHandling"}
+      }
+    },
+    "ChallengeConfig":{
+      "type":"structure",
+      "members":{
+        "ImmunityTimeProperty":{"shape":"ImmunityTimeProperty"}
+      }
+    },
+    "ChallengeResponse":{
+      "type":"structure",
+      "members":{
+        "ResponseCode":{"shape":"ResponseCode"},
+        "SolveTimestamp":{"shape":"SolveTimestamp"},
+        "FailureReason":{"shape":"FailureReason"}
+      }
+    },
     "CheckCapacityRequest":{
       "type":"structure",
       "required":[
@@ -918,6 +1144,33 @@
     "ConsumedCapacity":{
       "type":"long",
       "min":0
+    },
+    "CookieMatchPattern":{
+      "type":"structure",
+      "members":{
+        "All":{"shape":"All"},
+        "IncludedCookies":{"shape":"CookieNames"},
+        "ExcludedCookies":{"shape":"CookieNames"}
+      }
+    },
+    "CookieNames":{
+      "type":"list",
+      "member":{"shape":"SingleCookieName"},
+      "max":199,
+      "min":1
+    },
+    "Cookies":{
+      "type":"structure",
+      "required":[
+        "MatchPattern",
+        "MatchScope",
+        "OversizeHandling"
+      ],
+      "members":{
+        "MatchPattern":{"shape":"CookieMatchPattern"},
+        "MatchScope":{"shape":"MapMatchScope"},
+        "OversizeHandling":{"shape":"OversizeHandling"}
+      }
     },
     "CountAction":{
       "type":"structure",
@@ -1177,13 +1430,31 @@
         "EH",
         "YE",
         "ZM",
-        "ZW"
+        "ZW",
+        "XK"
       ]
     },
     "CountryCodes":{
       "type":"list",
       "member":{"shape":"CountryCode"},
       "min":1
+    },
+    "CreateAPIKeyRequest":{
+      "type":"structure",
+      "required":[
+        "Scope",
+        "TokenDomains"
+      ],
+      "members":{
+        "Scope":{"shape":"Scope"},
+        "TokenDomains":{"shape":"APIKeyTokenDomains"}
+      }
+    },
+    "CreateAPIKeyResponse":{
+      "type":"structure",
+      "members":{
+        "APIKey":{"shape":"APIKey"}
+      }
     },
     "CreateIPSetRequest":{
       "type":"structure",
@@ -1271,7 +1542,10 @@
         "VisibilityConfig":{"shape":"VisibilityConfig"},
         "Tags":{"shape":"TagList"},
         "CustomResponseBodies":{"shape":"CustomResponseBodies"},
-        "CaptchaConfig":{"shape":"CaptchaConfig"}
+        "CaptchaConfig":{"shape":"CaptchaConfig"},
+        "ChallengeConfig":{"shape":"ChallengeConfig"},
+        "TokenDomains":{"shape":"TokenDomains"},
+        "AssociationConfig":{"shape":"AssociationConfig"}
       }
     },
     "CreateWebACLResponse":{
@@ -1279,6 +1553,12 @@
       "members":{
         "Summary":{"shape":"WebACLSummary"}
       }
+    },
+    "CreationPathString":{
+      "type":"string",
+      "max":256,
+      "min":1,
+      "pattern":".*\\S.*"
     },
     "CustomHTTPHeader":{
       "type":"structure",
@@ -1469,6 +1749,36 @@
       "members":{
       }
     },
+    "DescribeAllManagedProductsRequest":{
+      "type":"structure",
+      "required":["Scope"],
+      "members":{
+        "Scope":{"shape":"Scope"}
+      }
+    },
+    "DescribeAllManagedProductsResponse":{
+      "type":"structure",
+      "members":{
+        "ManagedProducts":{"shape":"ManagedProductDescriptors"}
+      }
+    },
+    "DescribeManagedProductsByVendorRequest":{
+      "type":"structure",
+      "required":[
+        "VendorName",
+        "Scope"
+      ],
+      "members":{
+        "VendorName":{"shape":"VendorName"},
+        "Scope":{"shape":"Scope"}
+      }
+    },
+    "DescribeManagedProductsByVendorResponse":{
+      "type":"structure",
+      "members":{
+        "ManagedProducts":{"shape":"ManagedProductDescriptors"}
+      }
+    },
     "DescribeManagedRuleGroupRequest":{
       "type":"structure",
       "required":[
@@ -1507,6 +1817,14 @@
       "members":{
       }
     },
+    "DownloadUrl":{"type":"string"},
+    "EmailField":{
+      "type":"structure",
+      "required":["Identifier"],
+      "members":{
+        "Identifier":{"shape":"FieldIdentifier"}
+      }
+    },
     "EntityDescription":{
       "type":"string",
       "max":256,
@@ -1536,14 +1854,28 @@
     },
     "ExcludedRules":{
       "type":"list",
-      "member":{"shape":"ExcludedRule"}
+      "member":{"shape":"ExcludedRule"},
+      "max":100
+    },
+    "FailureCode":{
+      "type":"integer",
+      "max":999,
+      "min":0
     },
     "FailureReason":{
       "type":"string",
       "enum":[
         "TOKEN_MISSING",
-        "TOKEN_EXPIRED"
+        "TOKEN_EXPIRED",
+        "TOKEN_INVALID",
+        "TOKEN_DOMAIN_MISMATCH"
       ]
+    },
+    "FailureValue":{
+      "type":"string",
+      "max":100,
+      "min":1,
+      "pattern":".*\\S.*"
     },
     "FallbackBehavior":{
       "type":"string",
@@ -1551,6 +1883,12 @@
         "MATCH",
         "NO_MATCH"
       ]
+    },
+    "FieldIdentifier":{
+      "type":"string",
+      "max":512,
+      "min":1,
+      "pattern":".*\\S.*"
     },
     "FieldToMatch":{
       "type":"structure",
@@ -1562,7 +1900,10 @@
         "QueryString":{"shape":"QueryString"},
         "Body":{"shape":"Body"},
         "Method":{"shape":"Method"},
-        "JsonBody":{"shape":"JsonBody"}
+        "JsonBody":{"shape":"JsonBody"},
+        "Headers":{"shape":"Headers"},
+        "Cookies":{"shape":"Cookies"},
+        "HeaderOrder":{"shape":"HeaderOrder"}
       }
     },
     "FieldToMatchData":{
@@ -1656,11 +1997,46 @@
         "ANY"
       ]
     },
+    "GenerateMobileSdkReleaseUrlRequest":{
+      "type":"structure",
+      "required":[
+        "Platform",
+        "ReleaseVersion"
+      ],
+      "members":{
+        "Platform":{"shape":"Platform"},
+        "ReleaseVersion":{"shape":"VersionKeyString"}
+      }
+    },
+    "GenerateMobileSdkReleaseUrlResponse":{
+      "type":"structure",
+      "members":{
+        "Url":{"shape":"DownloadUrl"}
+      }
+    },
     "GeoMatchStatement":{
       "type":"structure",
       "members":{
         "CountryCodes":{"shape":"CountryCodes"},
         "ForwardedIPConfig":{"shape":"ForwardedIPConfig"}
+      }
+    },
+    "GetDecryptedAPIKeyRequest":{
+      "type":"structure",
+      "required":[
+        "Scope",
+        "APIKey"
+      ],
+      "members":{
+        "Scope":{"shape":"Scope"},
+        "APIKey":{"shape":"APIKey"}
+      }
+    },
+    "GetDecryptedAPIKeyResponse":{
+      "type":"structure",
+      "members":{
+        "TokenDomains":{"shape":"TokenDomains"},
+        "CreationTimestamp":{"shape":"Timestamp"}
       }
     },
     "GetIPSetRequest":{
@@ -1714,6 +2090,23 @@
       "members":{
         "ManagedRuleSet":{"shape":"ManagedRuleSet"},
         "LockToken":{"shape":"LockToken"}
+      }
+    },
+    "GetMobileSdkReleaseRequest":{
+      "type":"structure",
+      "required":[
+        "Platform",
+        "ReleaseVersion"
+      ],
+      "members":{
+        "Platform":{"shape":"Platform"},
+        "ReleaseVersion":{"shape":"VersionKeyString"}
+      }
+    },
+    "GetMobileSdkReleaseResponse":{
+      "type":"structure",
+      "members":{
+        "MobileSdkRelease":{"shape":"MobileSdkRelease"}
       }
     },
     "GetPermissionPolicyRequest":{
@@ -1843,7 +2236,8 @@
       "type":"structure",
       "members":{
         "WebACL":{"shape":"WebACL"},
-        "LockToken":{"shape":"LockToken"}
+        "LockToken":{"shape":"LockToken"},
+        "ApplicationIntegrationURL":{"shape":"OutputUrl"}
       }
     },
     "HTTPHeader":{
@@ -1870,8 +2264,42 @@
       }
     },
     "HTTPVersion":{"type":"string"},
+    "HeaderMatchPattern":{
+      "type":"structure",
+      "members":{
+        "All":{"shape":"All"},
+        "IncludedHeaders":{"shape":"HeaderNames"},
+        "ExcludedHeaders":{"shape":"HeaderNames"}
+      }
+    },
     "HeaderName":{"type":"string"},
+    "HeaderNames":{
+      "type":"list",
+      "member":{"shape":"FieldToMatchData"},
+      "max":199,
+      "min":1
+    },
+    "HeaderOrder":{
+      "type":"structure",
+      "required":["OversizeHandling"],
+      "members":{
+        "OversizeHandling":{"shape":"OversizeHandling"}
+      }
+    },
     "HeaderValue":{"type":"string"},
+    "Headers":{
+      "type":"structure",
+      "required":[
+        "MatchPattern",
+        "MatchScope",
+        "OversizeHandling"
+      ],
+      "members":{
+        "MatchPattern":{"shape":"HeaderMatchPattern"},
+        "MatchScope":{"shape":"MapMatchScope"},
+        "OversizeHandling":{"shape":"OversizeHandling"}
+      }
+    },
     "IPAddress":{
       "type":"string",
       "max":50,
@@ -1950,6 +2378,13 @@
         "ImmunityTime":{"shape":"TimeWindowSecond"}
       }
     },
+    "InspectionLevel":{
+      "type":"string",
+      "enum":[
+        "COMMON",
+        "TARGETED"
+      ]
+    },
     "JsonBody":{
       "type":"structure",
       "required":[
@@ -1959,7 +2394,8 @@
       "members":{
         "MatchPattern":{"shape":"JsonMatchPattern"},
         "MatchScope":{"shape":"JsonMatchScope"},
-        "InvalidFallbackBehavior":{"shape":"BodyParsingFallbackBehavior"}
+        "InvalidFallbackBehavior":{"shape":"BodyParsingFallbackBehavior"},
+        "OversizeHandling":{"shape":"OversizeHandling"}
       }
     },
     "JsonMatchPattern":{
@@ -2032,6 +2468,12 @@
         "LabelName":{"shape":"LabelName"}
       }
     },
+    "LabelNamespace":{
+      "type":"string",
+      "max":1024,
+      "min":1,
+      "pattern":"^[0-9A-Za-z_\\-:]+:$"
+    },
     "LabelSummaries":{
       "type":"list",
       "member":{"shape":"LabelSummary"}
@@ -2045,6 +2487,23 @@
     "Labels":{
       "type":"list",
       "member":{"shape":"Label"}
+    },
+    "ListAPIKeysRequest":{
+      "type":"structure",
+      "required":["Scope"],
+      "members":{
+        "Scope":{"shape":"Scope"},
+        "NextMarker":{"shape":"NextMarker"},
+        "Limit":{"shape":"PaginationLimit"}
+      }
+    },
+    "ListAPIKeysResponse":{
+      "type":"structure",
+      "members":{
+        "NextMarker":{"shape":"NextMarker"},
+        "APIKeySummaries":{"shape":"APIKeySummaries"},
+        "ApplicationIntegrationURL":{"shape":"OutputUrl"}
+      }
     },
     "ListAvailableManagedRuleGroupVersionsRequest":{
       "type":"structure",
@@ -2065,7 +2524,8 @@
       "type":"structure",
       "members":{
         "NextMarker":{"shape":"NextMarker"},
-        "Versions":{"shape":"ManagedRuleGroupVersions"}
+        "Versions":{"shape":"ManagedRuleGroupVersions"},
+        "CurrentDefaultVersion":{"shape":"VersionKeyString"}
       }
     },
     "ListAvailableManagedRuleGroupsRequest":{
@@ -2136,6 +2596,22 @@
       "type":"long",
       "max":500,
       "min":1
+    },
+    "ListMobileSdkReleasesRequest":{
+      "type":"structure",
+      "required":["Platform"],
+      "members":{
+        "Platform":{"shape":"Platform"},
+        "NextMarker":{"shape":"NextMarker"},
+        "Limit":{"shape":"PaginationLimit"}
+      }
+    },
+    "ListMobileSdkReleasesResponse":{
+      "type":"structure",
+      "members":{
+        "ReleaseSummaries":{"shape":"ReleaseSummaries"},
+        "NextMarker":{"shape":"NextMarker"}
+      }
     },
     "ListRegexPatternSetsRequest":{
       "type":"structure",
@@ -2256,6 +2732,62 @@
         "DefaultBehavior":{"shape":"FilterBehavior"}
       }
     },
+    "LoginPathString":{
+      "type":"string",
+      "max":256,
+      "min":1,
+      "pattern":".*\\S.*"
+    },
+    "ManagedProductDescriptor":{
+      "type":"structure",
+      "members":{
+        "VendorName":{"shape":"VendorName"},
+        "ManagedRuleSetName":{"shape":"EntityName"},
+        "ProductId":{"shape":"ProductId"},
+        "ProductLink":{"shape":"ProductLink"},
+        "ProductTitle":{"shape":"ProductTitle"},
+        "ProductDescription":{"shape":"ProductDescription"},
+        "SnsTopicArn":{"shape":"ResourceArn"},
+        "IsVersioningSupported":{"shape":"Boolean"},
+        "IsAdvancedManagedRuleSet":{"shape":"Boolean"}
+      }
+    },
+    "ManagedProductDescriptors":{
+      "type":"list",
+      "member":{"shape":"ManagedProductDescriptor"}
+    },
+    "ManagedRuleGroupConfig":{
+      "type":"structure",
+      "members":{
+        "LoginPath":{
+          "shape":"LoginPathString",
+          "deprecated":true,
+          "deprecatedMessage":"Deprecated. Use AWSManagedRulesATPRuleSet LoginPath"
+        },
+        "PayloadType":{
+          "shape":"PayloadType",
+          "deprecated":true,
+          "deprecatedMessage":"Deprecated. Use AWSManagedRulesATPRuleSet RequestInspection PayloadType"
+        },
+        "UsernameField":{
+          "shape":"UsernameField",
+          "deprecated":true,
+          "deprecatedMessage":"Deprecated. Use AWSManagedRulesATPRuleSet RequestInspection UsernameField"
+        },
+        "PasswordField":{
+          "shape":"PasswordField",
+          "deprecated":true,
+          "deprecatedMessage":"Deprecated. Use AWSManagedRulesATPRuleSet RequestInspection PasswordField"
+        },
+        "AWSManagedRulesBotControlRuleSet":{"shape":"AWSManagedRulesBotControlRuleSet"},
+        "AWSManagedRulesATPRuleSet":{"shape":"AWSManagedRulesATPRuleSet"},
+        "AWSManagedRulesACFPRuleSet":{"shape":"AWSManagedRulesACFPRuleSet"}
+      }
+    },
+    "ManagedRuleGroupConfigs":{
+      "type":"list",
+      "member":{"shape":"ManagedRuleGroupConfig"}
+    },
     "ManagedRuleGroupStatement":{
       "type":"structure",
       "required":[
@@ -2267,7 +2799,9 @@
         "Name":{"shape":"EntityName"},
         "Version":{"shape":"VersionKeyString"},
         "ExcludedRules":{"shape":"ExcludedRules"},
-        "ScopeDownStatement":{"shape":"Statement"}
+        "ScopeDownStatement":{"shape":"Statement"},
+        "ManagedRuleGroupConfigs":{"shape":"ManagedRuleGroupConfigs"},
+        "RuleActionOverrides":{"shape":"RuleActionOverrides"}
       }
     },
     "ManagedRuleGroupSummaries":{
@@ -2279,6 +2813,7 @@
       "members":{
         "VendorName":{"shape":"VendorName"},
         "Name":{"shape":"EntityName"},
+        "VersioningSupported":{"shape":"Boolean"},
         "Description":{"shape":"EntityDescription"}
       }
     },
@@ -2336,6 +2871,14 @@
         "ExpiryTimestamp":{"shape":"Timestamp"}
       }
     },
+    "MapMatchScope":{
+      "type":"string",
+      "enum":[
+        "ALL",
+        "KEY",
+        "VALUE"
+      ]
+    },
     "Method":{
       "type":"structure",
       "members":{
@@ -2346,6 +2889,15 @@
       "max":255,
       "min":1,
       "pattern":"^[\\w#:\\.\\-/]+$"
+    },
+    "MobileSdkRelease":{
+      "type":"structure",
+      "members":{
+        "ReleaseVersion":{"shape":"VersionKeyString"},
+        "Timestamp":{"shape":"Timestamp"},
+        "ReleaseNotes":{"shape":"ReleaseNotes"},
+        "Tags":{"shape":"TagList"}
+      }
     },
     "NextMarker":{
       "type":"string",
@@ -2372,12 +2924,21 @@
         "Statements":{"shape":"Statements"}
       }
     },
+    "OutputUrl":{"type":"string"},
     "OverrideAction":{
       "type":"structure",
       "members":{
         "Count":{"shape":"CountAction"},
         "None":{"shape":"NoneAction"}
       }
+    },
+    "OversizeHandling":{
+      "type":"string",
+      "enum":[
+        "CONTINUE",
+        "MATCH",
+        "NO_MATCH"
+      ]
     },
     "PaginationLimit":{
       "type":"integer",
@@ -2443,12 +3004,57 @@
         "EXPIRE_TIMESTAMP",
         "CHANGE_PROPAGATION_STATUS",
         "ASSOCIABLE_RESOURCE",
-        "LOG_DESTINATION"
+        "LOG_DESTINATION",
+        "MANAGED_RULE_GROUP_CONFIG",
+        "PAYLOAD_TYPE",
+        "HEADER_MATCH_PATTERN",
+        "COOKIE_MATCH_PATTERN",
+        "MAP_MATCH_SCOPE",
+        "OVERSIZE_HANDLING",
+        "CHALLENGE_CONFIG",
+        "TOKEN_DOMAIN",
+        "ATP_RULE_SET_RESPONSE_INSPECTION",
+        "ASSOCIATED_RESOURCE_TYPE",
+        "SCOPE_DOWN",
+        "CUSTOM_KEYS",
+        "ACP_RULE_SET_RESPONSE_INSPECTION"
       ]
     },
     "ParameterExceptionParameter":{
       "type":"string",
       "min":1
+    },
+    "PasswordField":{
+      "type":"structure",
+      "required":["Identifier"],
+      "members":{
+        "Identifier":{"shape":"FieldIdentifier"}
+      }
+    },
+    "PayloadType":{
+      "type":"string",
+      "enum":[
+        "JSON",
+        "FORM_ENCODED"
+      ]
+    },
+    "PhoneNumberField":{
+      "type":"structure",
+      "required":["Identifier"],
+      "members":{
+        "Identifier":{"shape":"FieldIdentifier"}
+      }
+    },
+    "PhoneNumberFields":{
+      "type":"list",
+      "member":{"shape":"PhoneNumberField"}
+    },
+    "Platform":{
+      "type":"string",
+      "enum":[
+        "IOS",
+        "ANDROID"
+      ]
     },
     "PolicyString":{
       "type":"string",
@@ -2466,6 +3072,28 @@
         "CONTAINS",
         "CONTAINS_WORD"
       ]
+    },
+    "ProductDescription":{
+      "type":"string",
+      "min":1,
+      "pattern":".*\\S.*"
+    },
+    "ProductId":{
+      "type":"string",
+      "max":128,
+      "min":1,
+      "pattern":".*\\S.*"
+    },
+    "ProductLink":{
+      "type":"string",
+      "max":2048,
+      "min":1,
+      "pattern":".*\\S.*"
+    },
+    "ProductTitle":{
+      "type":"string",
+      "min":1,
+      "pattern":".*\\S.*"
     },
     "PublishedVersions":{
       "type":"map",
@@ -2539,15 +3167,37 @@
         "Limit":{"shape":"RateLimit"},
         "AggregateKeyType":{"shape":"RateBasedStatementAggregateKeyType"},
         "ScopeDownStatement":{"shape":"Statement"},
-        "ForwardedIPConfig":{"shape":"ForwardedIPConfig"}
+        "ForwardedIPConfig":{"shape":"ForwardedIPConfig"},
+        "CustomKeys":{"shape":"RateBasedStatementCustomKeys"}
       }
     },
     "RateBasedStatementAggregateKeyType":{
       "type":"string",
       "enum":[
         "IP",
-        "FORWARDED_IP"
+        "FORWARDED_IP",
+        "CUSTOM_KEYS",
+        "CONSTANT"
       ]
+    },
+    "RateBasedStatementCustomKey":{
+      "type":"structure",
+      "members":{
+        "Header":{"shape":"RateLimitHeader"},
+        "Cookie":{"shape":"RateLimitCookie"},
+        "QueryArgument":{"shape":"RateLimitQueryArgument"},
+        "QueryString":{"shape":"RateLimitQueryString"},
+        "HTTPMethod":{"shape":"RateLimitHTTPMethod"},
+        "ForwardedIP":{"shape":"RateLimitForwardedIP"},
+        "IP":{"shape":"RateLimitIP"},
+        "LabelNamespace":{"shape":"RateLimitLabelNamespace"}
+      }
+    },
+    "RateBasedStatementCustomKeys":{
+      "type":"list",
+      "member":{"shape":"RateBasedStatementCustomKey"},
+      "max":5,
+      "min":1
     },
     "RateBasedStatementManagedKeysIPSet":{
       "type":"structure",
@@ -2560,6 +3210,68 @@
       "type":"long",
       "max":2000000000,
       "min":100
+    },
+    "RateLimitCookie":{
+      "type":"structure",
+      "required":[
+        "Name",
+        "TextTransformations"
+      ],
+      "members":{
+        "Name":{"shape":"FieldToMatchData"},
+        "TextTransformations":{"shape":"TextTransformations"}
+      }
+    },
+    "RateLimitForwardedIP":{
+      "type":"structure",
+      "members":{
+      }
+    },
+    "RateLimitHTTPMethod":{
+      "type":"structure",
+      "members":{
+      }
+    },
+    "RateLimitHeader":{
+      "type":"structure",
+      "required":[
+        "Name",
+        "TextTransformations"
+      ],
+      "members":{
+        "Name":{"shape":"FieldToMatchData"},
+        "TextTransformations":{"shape":"TextTransformations"}
+      }
+    },
+    "RateLimitIP":{
+      "type":"structure",
+      "members":{
+      }
+    },
+    "RateLimitLabelNamespace":{
+      "type":"structure",
+      "required":["Namespace"],
+      "members":{
+        "Namespace":{"shape":"LabelNamespace"}
+      }
+    },
+    "RateLimitQueryArgument":{
+      "type":"structure",
+      "required":[
+        "Name",
+        "TextTransformations"
+      ],
+      "members":{
+        "Name":{"shape":"FieldToMatchData"},
+        "TextTransformations":{"shape":"TextTransformations"}
+      }
+    },
+    "RateLimitQueryString":{
+      "type":"structure",
+      "required":["TextTransformations"],
+      "members":{
+        "TextTransformations":{"shape":"TextTransformations"}
+      }
     },
     "RedactedFields":{
       "type":"list",
@@ -2628,9 +3340,64 @@
       "min":1,
       "pattern":".*"
     },
+    "RegistrationPagePathString":{
+      "type":"string",
+      "max":256,
+      "min":1,
+      "pattern":".*\\S.*"
+    },
     "RegularExpressionList":{
       "type":"list",
       "member":{"shape":"Regex"}
+    },
+    "ReleaseNotes":{"type":"string"},
+    "ReleaseSummaries":{
+      "type":"list",
+      "member":{"shape":"ReleaseSummary"}
+    },
+    "ReleaseSummary":{
+      "type":"structure",
+      "members":{
+        "ReleaseVersion":{"shape":"VersionKeyString"},
+        "Timestamp":{"shape":"Timestamp"}
+      }
+    },
+    "RequestBody":{
+      "type":"map",
+      "key":{"shape":"AssociatedResourceType"},
+      "value":{"shape":"RequestBodyAssociatedResourceTypeConfig"}
+    },
+    "RequestBodyAssociatedResourceTypeConfig":{
+      "type":"structure",
+      "required":["DefaultSizeInspectionLimit"],
+      "members":{
+        "DefaultSizeInspectionLimit":{"shape":"SizeInspectionLimit"}
+      }
+    },
+    "RequestInspection":{
+      "type":"structure",
+      "required":[
+        "PayloadType",
+        "UsernameField",
+        "PasswordField"
+      ],
+      "members":{
+        "PayloadType":{"shape":"PayloadType"},
+        "UsernameField":{"shape":"UsernameField"},
+        "PasswordField":{"shape":"PasswordField"}
+      }
+    },
+    "RequestInspectionACFP":{
+      "type":"structure",
+      "required":["PayloadType"],
+      "members":{
+        "PayloadType":{"shape":"PayloadType"},
+        "UsernameField":{"shape":"UsernameField"},
+        "PasswordField":{"shape":"PasswordField"},
+        "EmailField":{"shape":"EmailField"},
+        "PhoneNumberFields":{"shape":"PhoneNumberFields"},
+        "AddressFields":{"shape":"AddressFields"}
+      }
     },
     "ResourceArn":{
       "type":"string",
@@ -2647,7 +3414,10 @@
       "enum":[
         "APPLICATION_LOAD_BALANCER",
         "API_GATEWAY",
-        "APPSYNC"
+        "APPSYNC",
+        "COGNITO_USER_POOL",
+        "APP_RUNNER_SERVICE",
+        "VERIFIED_ACCESS_INSTANCE"
       ]
     },
     "ResponseCode":{"type":"integer"},
@@ -2664,6 +3434,117 @@
         "TEXT_HTML",
         "APPLICATION_JSON"
       ]
+    },
+    "ResponseInspection":{
+      "type":"structure",
+      "members":{
+        "StatusCode":{"shape":"ResponseInspectionStatusCode"},
+        "Header":{"shape":"ResponseInspectionHeader"},
+        "BodyContains":{"shape":"ResponseInspectionBodyContains"},
+        "Json":{"shape":"ResponseInspectionJson"}
+      }
+    },
+    "ResponseInspectionBodyContains":{
+      "type":"structure",
+      "required":[
+        "SuccessStrings",
+        "FailureStrings"
+      ],
+      "members":{
+        "SuccessStrings":{"shape":"ResponseInspectionBodyContainsSuccessStrings"},
+        "FailureStrings":{"shape":"ResponseInspectionBodyContainsFailureStrings"}
+      }
+    },
+    "ResponseInspectionBodyContainsFailureStrings":{
+      "type":"list",
+      "member":{"shape":"FailureValue"},
+      "max":5,
+      "min":1
+    },
+    "ResponseInspectionBodyContainsSuccessStrings":{
+      "type":"list",
+      "member":{"shape":"SuccessValue"},
+      "max":5,
+      "min":1
+    },
+    "ResponseInspectionHeader":{
+      "type":"structure",
+      "required":[
+        "Name",
+        "SuccessValues",
+        "FailureValues"
+      ],
+      "members":{
+        "Name":{"shape":"ResponseInspectionHeaderName"},
+        "SuccessValues":{"shape":"ResponseInspectionHeaderSuccessValues"},
+        "FailureValues":{"shape":"ResponseInspectionHeaderFailureValues"}
+      }
+    },
+    "ResponseInspectionHeaderFailureValues":{
+      "type":"list",
+      "member":{"shape":"FailureValue"},
+      "max":3,
+      "min":1
+    },
+    "ResponseInspectionHeaderName":{
+      "type":"string",
+      "max":200,
+      "min":1,
+      "pattern":".*\\S.*"
+    },
+    "ResponseInspectionHeaderSuccessValues":{
+      "type":"list",
+      "member":{"shape":"SuccessValue"},
+      "max":3,
+      "min":1
+    },
+    "ResponseInspectionJson":{
+      "type":"structure",
+      "required":[
+        "Identifier",
+        "SuccessValues",
+        "FailureValues"
+      ],
+      "members":{
+        "Identifier":{"shape":"FieldIdentifier"},
+        "SuccessValues":{"shape":"ResponseInspectionJsonSuccessValues"},
+        "FailureValues":{"shape":"ResponseInspectionJsonFailureValues"}
+      }
+    },
+    "ResponseInspectionJsonFailureValues":{
+      "type":"list",
+      "member":{"shape":"FailureValue"},
+      "max":5,
+      "min":1
+    },
+    "ResponseInspectionJsonSuccessValues":{
+      "type":"list",
+      "member":{"shape":"SuccessValue"},
+      "max":5,
+      "min":1
+    },
+    "ResponseInspectionStatusCode":{
+      "type":"structure",
+      "required":[
+        "SuccessCodes",
+        "FailureCodes"
+      ],
+      "members":{
+        "SuccessCodes":{"shape":"ResponseInspectionStatusCodeSuccessCodes"},
+        "FailureCodes":{"shape":"ResponseInspectionStatusCodeFailureCodes"}
+      }
+    },
+    "ResponseInspectionStatusCodeFailureCodes":{
+      "type":"list",
+      "member":{"shape":"FailureCode"},
+      "max":10,
+      "min":1
+    },
+    "ResponseInspectionStatusCodeSuccessCodes":{
+      "type":"list",
+      "member":{"shape":"SuccessCode"},
+      "max":10,
+      "min":1
     },
     "ResponseStatusCode":{
       "type":"integer",
@@ -2686,7 +3567,8 @@
         "OverrideAction":{"shape":"OverrideAction"},
         "RuleLabels":{"shape":"Labels"},
         "VisibilityConfig":{"shape":"VisibilityConfig"},
-        "CaptchaConfig":{"shape":"CaptchaConfig"}
+        "CaptchaConfig":{"shape":"CaptchaConfig"},
+        "ChallengeConfig":{"shape":"ChallengeConfig"}
       }
     },
     "RuleAction":{
@@ -2695,8 +3577,26 @@
         "Block":{"shape":"BlockAction"},
         "Allow":{"shape":"AllowAction"},
         "Count":{"shape":"CountAction"},
-        "Captcha":{"shape":"CaptchaAction"}
+        "Captcha":{"shape":"CaptchaAction"},
+        "Challenge":{"shape":"ChallengeAction"}
       }
+    },
+    "RuleActionOverride":{
+      "type":"structure",
+      "required":[
+        "Name",
+        "ActionToUse"
+      ],
+      "members":{
+        "Name":{"shape":"EntityName"},
+        "ActionToUse":{"shape":"RuleAction"}
+      }
+    },
+    "RuleActionOverrides":{
+      "type":"list",
+      "member":{"shape":"RuleActionOverride"},
+      "max":100,
+      "min":1
     },
     "RuleGroup":{
       "type":"structure",
@@ -2726,7 +3626,8 @@
       "required":["ARN"],
       "members":{
         "ARN":{"shape":"ResourceArn"},
-        "ExcludedRules":{"shape":"ExcludedRules"}
+        "ExcludedRules":{"shape":"ExcludedRules"},
+        "RuleActionOverrides":{"shape":"RuleActionOverrides"}
       }
     },
     "RuleGroupSummaries":{
@@ -2781,7 +3682,9 @@
         "RequestHeadersInserted":{"shape":"HTTPHeaders"},
         "ResponseCodeSent":{"shape":"ResponseStatusCode"},
         "Labels":{"shape":"Labels"},
-        "CaptchaResponse":{"shape":"CaptchaResponse"}
+        "CaptchaResponse":{"shape":"CaptchaResponse"},
+        "ChallengeResponse":{"shape":"ChallengeResponse"},
+        "OverriddenAction":{"shape":"Action"}
       }
     },
     "SampledHTTPRequests":{
@@ -2796,6 +3699,19 @@
       ]
     },
     "SearchString":{"type":"blob"},
+    "SensitivityLevel":{
+      "type":"string",
+      "enum":[
+        "LOW",
+        "HIGH"
+      ]
+    },
+    "SingleCookieName":{
+      "type":"string",
+      "max":60,
+      "min":1,
+      "pattern":".*\\S.*"
+    },
     "SingleHeader":{
       "type":"structure",
       "required":["Name"],
@@ -2830,6 +3746,15 @@
         "TextTransformations":{"shape":"TextTransformations"}
       }
     },
+    "SizeInspectionLimit":{
+      "type":"string",
+      "enum":[
+        "KB_16",
+        "KB_32",
+        "KB_48",
+        "KB_64"
+      ]
+    },
     "SolveTimestamp":{"type":"long"},
     "SqliMatchStatement":{
       "type":"structure",
@@ -2839,7 +3764,8 @@
       ],
       "members":{
         "FieldToMatch":{"shape":"FieldToMatch"},
-        "TextTransformations":{"shape":"TextTransformations"}
+        "TextTransformations":{"shape":"TextTransformations"},
+        "SensitivityLevel":{"shape":"SensitivityLevel"}
       }
     },
     "Statement":{
@@ -2865,6 +3791,18 @@
     "Statements":{
       "type":"list",
       "member":{"shape":"Statement"}
+    },
+    "String":{"type":"string"},
+    "SuccessCode":{
+      "type":"integer",
+      "max":999,
+      "min":0
+    },
+    "SuccessValue":{
+      "type":"string",
+      "max":100,
+      "min":1,
+      "pattern":".*\\S.*"
     },
     "Tag":{
       "type":"structure",
@@ -2989,6 +3927,16 @@
       "min":60
     },
     "Timestamp":{"type":"timestamp"},
+    "TokenDomain":{
+      "type":"string",
+      "max":253,
+      "min":1,
+      "pattern":"^[\\w\\.\\-/]+$"
+    },
+    "TokenDomains":{
+      "type":"list",
+      "member":{"shape":"TokenDomain"}
+    },
     "URIString":{"type":"string"},
     "UntagResourceRequest":{
       "type":"structure",
@@ -3127,7 +4075,10 @@
         "VisibilityConfig":{"shape":"VisibilityConfig"},
         "LockToken":{"shape":"LockToken"},
         "CustomResponseBodies":{"shape":"CustomResponseBodies"},
-        "CaptchaConfig":{"shape":"CaptchaConfig"}
+        "CaptchaConfig":{"shape":"CaptchaConfig"},
+        "ChallengeConfig":{"shape":"ChallengeConfig"},
+        "TokenDomains":{"shape":"TokenDomains"},
+        "AssociationConfig":{"shape":"AssociationConfig"}
       }
     },
     "UpdateWebACLResponse":{
@@ -3139,6 +4090,13 @@
     "UriPath":{
       "type":"structure",
       "members":{
+      }
+    },
+    "UsernameField":{
+      "type":"structure",
+      "required":["Identifier"],
+      "members":{
+        "Identifier":{"shape":"FieldIdentifier"}
       }
     },
     "VendorName":{
@@ -3179,6 +4137,13 @@
       }
     },
     "WAFAssociatedItemException":{
+      "type":"structure",
+      "members":{
+        "Message":{"shape":"ErrorMessage"}
+      },
+      "exception":true
+    },
+    "WAFConfigurationWarningException":{
       "type":"structure",
       "members":{
         "Message":{"shape":"ErrorMessage"}
@@ -3302,6 +4267,13 @@
       },
       "exception":true
     },
+    "WAFUnsupportedAggregateKeyTypeException":{
+      "type":"structure",
+      "members":{
+        "Message":{"shape":"ErrorMessage"}
+      },
+      "exception":true
+    },
     "WebACL":{
       "type":"structure",
       "required":[
@@ -3325,7 +4297,10 @@
         "ManagedByFirewallManager":{"shape":"Boolean"},
         "LabelNamespace":{"shape":"LabelName"},
         "CustomResponseBodies":{"shape":"CustomResponseBodies"},
-        "CaptchaConfig":{"shape":"CaptchaConfig"}
+        "CaptchaConfig":{"shape":"CaptchaConfig"},
+        "ChallengeConfig":{"shape":"ChallengeConfig"},
+        "TokenDomains":{"shape":"TokenDomains"},
+        "AssociationConfig":{"shape":"AssociationConfig"}
       }
     },
     "WebACLSummaries":{

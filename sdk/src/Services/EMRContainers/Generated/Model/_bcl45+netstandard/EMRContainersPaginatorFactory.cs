@@ -44,6 +44,14 @@ namespace Amazon.EMRContainers.Model
         }
 
         /// <summary>
+        /// Paginator for ListJobTemplates operation
+        ///</summary>
+        public IListJobTemplatesPaginator ListJobTemplates(ListJobTemplatesRequest request) 
+        {
+            return new ListJobTemplatesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListManagedEndpoints operation
         ///</summary>
         public IListManagedEndpointsPaginator ListManagedEndpoints(ListManagedEndpointsRequest request) 

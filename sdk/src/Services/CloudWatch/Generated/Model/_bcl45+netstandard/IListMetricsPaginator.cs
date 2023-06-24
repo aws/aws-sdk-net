@@ -34,5 +34,10 @@ namespace Amazon.CloudWatch.Model
         /// Enumerable containing all of the Metrics
         /// </summary>
         IPaginatedEnumerable<Metric> Metrics { get; }
+
+        /// <summary>
+        /// Enumerable containing all of the OwningAccounts
+        /// </summary>
+        IPaginatedEnumerable<string> OwningAccounts { get; }
     }
 }

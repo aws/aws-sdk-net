@@ -46,7 +46,7 @@ namespace Amazon.Route53RecoveryControlConfig.Model
         ///  
         /// <para>
         /// To get or update the routing control state, see the Amazon Route 53 Application Recovery
-        /// Controller Cluster (Data Plane) Actions.
+        /// Controller Routing Control Actions.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

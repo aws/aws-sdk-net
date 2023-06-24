@@ -34,7 +34,7 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AdMarkerPassthrough Marshaller
-    /// </summary>       
+    /// </summary>
     public class AdMarkerPassthroughMarshaller : IRequestMarshaller<AdMarkerPassthrough, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AdMarkerPassthroughMarshaller Instance = new AdMarkerPassthroughMarshaller();
 
     }

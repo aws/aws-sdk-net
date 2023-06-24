@@ -34,7 +34,7 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// NotificationChannelConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class NotificationChannelConfigMarshaller : IRequestMarshaller<NotificationChannelConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -45,6 +45,17 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(NotificationChannelConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetFilters())
+            {
+                context.Writer.WritePropertyName("Filters");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = NotificationFilterConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.Filters, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetSns())
             {
                 context.Writer.WritePropertyName("Sns");
@@ -60,7 +71,7 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static NotificationChannelConfigMarshaller Instance = new NotificationChannelConfigMarshaller();
 
     }

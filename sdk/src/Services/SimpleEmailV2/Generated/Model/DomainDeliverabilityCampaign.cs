@@ -111,9 +111,8 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property FirstSeenDateTime. 
         /// <para>
-        /// The first time, in Unix time format, when the email message was delivered to any recipient's
-        /// inbox. This value can help you determine how long it took for a campaign to deliver
-        /// an email message.
+        /// The first time when the email message was delivered to any recipient's inbox. This
+        /// value can help you determine how long it took for a campaign to deliver an email message.
         /// </para>
         /// </summary>
         public DateTime FirstSeenDateTime
@@ -186,9 +185,8 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property LastSeenDateTime. 
         /// <para>
-        /// The last time, in Unix time format, when the email message was delivered to any recipient's
-        /// inbox. This value can help you determine how long it took for a campaign to deliver
-        /// an email message.
+        /// The last time when the email message was delivered to any recipient's inbox. This
+        /// value can help you determine how long it took for a campaign to deliver an email message.
         /// </para>
         /// </summary>
         public DateTime LastSeenDateTime

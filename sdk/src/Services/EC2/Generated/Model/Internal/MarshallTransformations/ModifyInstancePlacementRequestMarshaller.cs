@@ -62,6 +62,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Affinity", StringUtils.FromString(publicRequest.Affinity));
                 }
+                if(publicRequest.IsSetGroupId())
+                {
+                    request.Parameters.Add("GroupId", StringUtils.FromString(publicRequest.GroupId));
+                }
                 if(publicRequest.IsSetGroupName())
                 {
                     request.Parameters.Add("GroupName", StringUtils.FromString(publicRequest.GroupName));

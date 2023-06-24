@@ -30,10 +30,9 @@ namespace Amazon.TranscribeService.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateMedicalVocabulary operation.
-    /// Updates a vocabulary with new values that you provide in a different text file from
-    /// the one you used to create the vocabulary. The <code>UpdateMedicalVocabulary</code>
-    /// operation overwrites all of the existing information with the values that you provide
-    /// in the request.
+    /// Updates an existing custom medical vocabulary with new values. This operation overwrites
+    /// all existing information with your new values; you cannot append new terms onto an
+    /// existing custom vocabulary.
     /// </summary>
     public partial class UpdateMedicalVocabularyRequest : AmazonTranscribeServiceRequest
     {
@@ -44,8 +43,9 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property LanguageCode. 
         /// <para>
-        /// The language code of the language used for the entries in the updated vocabulary.
-        /// US English (en-US) is the only valid language code in Amazon Transcribe Medical.
+        /// The language code that represents the language of the entries in the custom vocabulary
+        /// you want to update. US English (<code>en-US</code>) is the only language supported
+        /// with Amazon Transcribe Medical.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -64,36 +64,17 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property VocabularyFileUri. 
         /// <para>
-        /// The location in Amazon S3 of the text file that contains your custom vocabulary. The
-        /// URI must be in the same Amazon Web Services Region as the resource that you are calling.
-        /// The following is the format for a URI:
+        /// The Amazon S3 location of the text file that contains your custom medical vocabulary.
+        /// The URI must be located in the same Amazon Web Services Region as the resource you're
+        /// calling.
         /// </para>
         ///  
         /// <para>
-        ///  <code> https://s3.&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt;
-        /// </code> 
-        /// </para>
-        ///  
-        /// <para>
-        /// For example:
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>https://s3.us-east-1.amazonaws.com/AWSDOC-EXAMPLE-BUCKET/vocab.txt</code> 
-        /// </para>
-        ///  
-        /// <para>
-        /// For more information about Amazon S3 object names, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
-        /// Keys</a> in the <i>Amazon S3 Developer Guide</i>.
-        /// </para>
-        ///  
-        /// <para>
-        /// For more information about custom vocabularies in Amazon Transcribe Medical, see <a
-        /// href="https://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html#how-vocabulary">Medical
-        /// Custom Vocabularies</a>.
+        /// Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-vocab-file.txt</code>
+        /// 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=2000)]
+        [AWSProperty(Required=true, Min=1, Max=2000)]
         public string VocabularyFileUri
         {
             get { return this._vocabularyFileUri; }
@@ -109,9 +90,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property VocabularyName. 
         /// <para>
-        /// The name of the vocabulary to update. The name is case sensitive. If you try to update
-        /// a vocabulary with the same name as a vocabulary you've already made, you get a <code>ConflictException</code>
-        /// error.
+        /// The name of the custom medical vocabulary you want to update. Custom medical vocabulary
+        /// names are case sensitive.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=200)]

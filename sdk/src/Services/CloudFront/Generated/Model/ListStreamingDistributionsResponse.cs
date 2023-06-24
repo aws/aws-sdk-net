@@ -38,7 +38,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property StreamingDistributionList. 
         /// <para>
-        /// The <code>StreamingDistributionList</code> type. 
+        /// The <code>StreamingDistributionList</code> type.
         /// </para>
         /// </summary>
         public StreamingDistributionList StreamingDistributionList

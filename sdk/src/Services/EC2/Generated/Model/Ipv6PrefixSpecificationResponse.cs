@@ -38,7 +38,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Ipv6Prefix. 
         /// <para>
-        /// One or more IPv6 delegated prefixes assigned to the network interface.
+        /// The IPv6 delegated prefixes assigned to the network interface.
         /// </para>
         /// </summary>
         public string Ipv6Prefix

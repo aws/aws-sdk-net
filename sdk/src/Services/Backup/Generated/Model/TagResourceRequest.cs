@@ -66,7 +66,7 @@ namespace Amazon.Backup.Model
         /// tags: <code>[{"Key":"string","Value":"string"}]</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public Dictionary<string, string> Tags
         {
             get { return this._tags; }

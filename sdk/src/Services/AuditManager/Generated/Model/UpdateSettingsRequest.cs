@@ -30,19 +30,22 @@ namespace Amazon.AuditManager.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateSettings operation.
-    /// Updates Audit Manager settings for the current user account.
+    /// Updates Audit Manager settings for the current account.
     /// </summary>
     public partial class UpdateSettingsRequest : AmazonAuditManagerRequest
     {
         private AssessmentReportsDestination _defaultAssessmentReportsDestination;
+        private DefaultExportDestination _defaultExportDestination;
         private List<Role> _defaultProcessOwners = new List<Role>();
+        private DeregistrationPolicy _deregistrationPolicy;
+        private bool? _evidenceFinderEnabled;
         private string _kmsKey;
         private string _snsTopic;
 
         /// <summary>
         /// Gets and sets the property DefaultAssessmentReportsDestination. 
         /// <para>
-        ///  The default storage destination for assessment reports. 
+        ///  The default S3 destination bucket for storing assessment reports. 
         /// </para>
         /// </summary>
         public AssessmentReportsDestination DefaultAssessmentReportsDestination
@@ -55,6 +58,24 @@ namespace Amazon.AuditManager.Model
         internal bool IsSetDefaultAssessmentReportsDestination()
         {
             return this._defaultAssessmentReportsDestination != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DefaultExportDestination. 
+        /// <para>
+        ///  The default S3 destination bucket for storing evidence finder exports. 
+        /// </para>
+        /// </summary>
+        public DefaultExportDestination DefaultExportDestination
+        {
+            get { return this._defaultExportDestination; }
+            set { this._defaultExportDestination = value; }
+        }
+
+        // Check to see if DefaultExportDestination property is set
+        internal bool IsSetDefaultExportDestination()
+        {
+            return this._defaultExportDestination != null;
         }
 
         /// <summary>
@@ -73,6 +94,53 @@ namespace Amazon.AuditManager.Model
         internal bool IsSetDefaultProcessOwners()
         {
             return this._defaultProcessOwners != null && this._defaultProcessOwners.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeregistrationPolicy. 
+        /// <para>
+        /// The deregistration policy for your Audit Manager data. You can use this attribute
+        /// to determine how your data is handled when you deregister Audit Manager.
+        /// </para>
+        /// </summary>
+        public DeregistrationPolicy DeregistrationPolicy
+        {
+            get { return this._deregistrationPolicy; }
+            set { this._deregistrationPolicy = value; }
+        }
+
+        // Check to see if DeregistrationPolicy property is set
+        internal bool IsSetDeregistrationPolicy()
+        {
+            return this._deregistrationPolicy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EvidenceFinderEnabled. 
+        /// <para>
+        /// Specifies whether the evidence finder feature is enabled. Change this attribute to
+        /// enable or disable evidence finder.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// When you use this attribute to disable evidence finder, Audit Manager deletes the
+        /// event data store that’s used to query your evidence data. As a result, you can’t re-enable
+        /// evidence finder and use the feature again. Your only alternative is to <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeregisterAccount.html">deregister</a>
+        /// and then <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_RegisterAccount.html">re-register</a>
+        /// Audit Manager. 
+        /// </para>
+        ///  </important>
+        /// </summary>
+        public bool EvidenceFinderEnabled
+        {
+            get { return this._evidenceFinderEnabled.GetValueOrDefault(); }
+            set { this._evidenceFinderEnabled = value; }
+        }
+
+        // Check to see if EvidenceFinderEnabled property is set
+        internal bool IsSetEvidenceFinderEnabled()
+        {
+            return this._evidenceFinderEnabled.HasValue; 
         }
 
         /// <summary>
@@ -101,7 +169,7 @@ namespace Amazon.AuditManager.Model
         /// notifications to. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=20, Max=2048)]
+        [AWSProperty(Min=4, Max=2048)]
         public string SnsTopic
         {
             get { return this._snsTopic; }

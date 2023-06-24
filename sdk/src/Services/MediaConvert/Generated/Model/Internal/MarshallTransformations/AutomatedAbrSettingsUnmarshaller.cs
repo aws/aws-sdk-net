@@ -82,6 +82,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.MinAbrBitrate = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("rules", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<AutomatedAbrRule, AutomatedAbrRuleUnmarshaller>(AutomatedAbrRuleUnmarshaller.Instance);
+                    unmarshalledObject.Rules = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

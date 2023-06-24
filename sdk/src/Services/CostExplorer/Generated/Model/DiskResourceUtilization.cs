@@ -42,7 +42,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property DiskReadBytesPerSecond. 
         /// <para>
-        ///  The maximum read throughput operations per second. 
+        /// The maximum read throughput operations per second. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -61,7 +61,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property DiskReadOpsPerSecond. 
         /// <para>
-        ///  The maximum number of read operations per second. 
+        /// The maximum number of read operations per second. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -80,7 +80,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property DiskWriteBytesPerSecond. 
         /// <para>
-        ///  The maximum write throughput operations per second. 
+        /// The maximum write throughput operations per second. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -99,7 +99,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property DiskWriteOpsPerSecond. 
         /// <para>
-        ///  The maximum number of write operations per second. 
+        /// The maximum number of write operations per second. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]

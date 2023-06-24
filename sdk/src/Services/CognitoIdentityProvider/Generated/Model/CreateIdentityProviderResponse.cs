@@ -38,7 +38,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property IdentityProvider. 
         /// <para>
-        /// The newly created identity provider object.
+        /// The newly created IdP object.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

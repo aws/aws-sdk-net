@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// Container for the parameters for response received from the <code> <a>ListVersions</a>
-    /// </code> operation.
+    /// Container for the parameters for response received from the <code>ListVersions</code>
+    /// operation.
     /// </summary>
     public partial class ListVersionsResponse : AmazonWebServiceResponse
     {
@@ -38,7 +38,12 @@ namespace Amazon.OpenSearchService.Model
         private List<string> _versions = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property NextToken.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// When <code>nextToken</code> is returned, there are more results available. The value
+        /// of <code>nextToken</code> is a unique pagination token for each page. Make the call
+        /// again using the returned token to retrieve the next page.
+        /// </para>
         /// </summary>
         public string NextToken
         {
@@ -53,7 +58,11 @@ namespace Amazon.OpenSearchService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Versions.
+        /// Gets and sets the property Versions. 
+        /// <para>
+        /// A list of all versions of OpenSearch and Elasticsearch that Amazon OpenSearch Service
+        /// supports.
+        /// </para>
         /// </summary>
         public List<string> Versions
         {

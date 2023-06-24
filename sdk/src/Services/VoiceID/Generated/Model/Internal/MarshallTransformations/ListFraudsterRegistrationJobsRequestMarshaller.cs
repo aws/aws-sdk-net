@@ -58,7 +58,7 @@ namespace Amazon.VoiceID.Model.Internal.MarshallTransformations
             string target = "VoiceID.ListFraudsterRegistrationJobs";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.0";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-09-27";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-09-27";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -91,7 +91,6 @@ namespace Amazon.VoiceID.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.NextToken);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

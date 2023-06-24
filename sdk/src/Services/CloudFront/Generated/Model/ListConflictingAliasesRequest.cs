@@ -35,7 +35,7 @@ namespace Amazon.CloudFront.Model
     /// Amazon Web Services accounts for each conflicting alias. In the returned list, the
     /// distribution and account IDs are partially hidden, which allows you to identify the
     /// distributions and accounts that you own, but helps to protect the information of ones
-    /// that you don’t own.
+    /// that you don't own.
     /// 
     ///  
     /// <para>
@@ -116,8 +116,8 @@ namespace Amazon.CloudFront.Model
         /// <para>
         /// Use this field when paginating results to indicate where to begin in the list of conflicting
         /// aliases. The response includes conflicting aliases in the list that occur after the
-        /// marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code>
-        /// from the current page’s response.
+        /// marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code>
+        /// from the current page's response.
         /// </para>
         /// </summary>
         public string Marker

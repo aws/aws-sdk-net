@@ -88,6 +88,12 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
                     unmarshalledObject.Sql = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Sqls", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.Sqls = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("StatementName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

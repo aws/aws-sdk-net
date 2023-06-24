@@ -77,9 +77,9 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// When authorizing security group rules, specifying -1 or a protocol number other than
-        /// <code>tcp</code>, <code>udp</code>, <code>icmp</code>, or <code>icmpv6</code> allows
-        /// traffic on all ports, regardless of any port range you specify.
+        /// When authorizing security group rules, specifying <code>-1</code> or a protocol number
+        /// other than <code>tcp</code>, <code>udp</code>, <code>icmp</code>, or <code>icmpv6</code>
+        /// allows traffic on all ports, regardless of any port range you specify.
         /// </para>
         ///  
         /// <para>
@@ -167,8 +167,8 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// A value of -1 indicates all ICMP/ICMPv6 codes. If you specify all ICMP/ICMPv6 types,
-        /// you must specify all codes.
+        /// A value of <code>-1</code> indicates all ICMP/ICMPv6 codes. If you specify all ICMP/ICMPv6
+        /// types, you must specify all codes.
         /// </para>
         /// </summary>
         public int ToPort

@@ -57,6 +57,12 @@ namespace Amazon.ConnectWisdomService.Model.Internal.MarshallTransformations
                     response.Recommendations = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("triggers", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<RecommendationTrigger, RecommendationTriggerUnmarshaller>(RecommendationTriggerUnmarshaller.Instance);
+                    response.Triggers = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

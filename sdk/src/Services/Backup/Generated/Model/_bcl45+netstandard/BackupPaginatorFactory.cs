@@ -100,6 +100,14 @@ namespace Amazon.Backup.Model
         }
 
         /// <summary>
+        /// Paginator for ListLegalHolds operation
+        ///</summary>
+        public IListLegalHoldsPaginator ListLegalHolds(ListLegalHoldsRequest request) 
+        {
+            return new ListLegalHoldsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListProtectedResources operation
         ///</summary>
         public IListProtectedResourcesPaginator ListProtectedResources(ListProtectedResourcesRequest request) 
@@ -113,6 +121,14 @@ namespace Amazon.Backup.Model
         public IListRecoveryPointsByBackupVaultPaginator ListRecoveryPointsByBackupVault(ListRecoveryPointsByBackupVaultRequest request) 
         {
             return new ListRecoveryPointsByBackupVaultPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListRecoveryPointsByLegalHold operation
+        ///</summary>
+        public IListRecoveryPointsByLegalHoldPaginator ListRecoveryPointsByLegalHold(ListRecoveryPointsByLegalHoldRequest request) 
+        {
+            return new ListRecoveryPointsByLegalHoldPaginator(this.client, request);
         }
 
         /// <summary>

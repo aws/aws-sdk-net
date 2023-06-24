@@ -35,16 +35,16 @@ namespace Amazon.NetworkFirewall
     /// <summary>
     /// Implementation for accessing NetworkFirewall
     ///
-    /// This is the API Reference for AWS Network Firewall. This guide is for developers who
-    /// need detailed information about the Network Firewall API actions, data types, and
-    /// errors. 
+    /// This is the API Reference for Network Firewall. This guide is for developers who need
+    /// detailed information about the Network Firewall API actions, data types, and errors.
+    /// 
     /// 
     ///  <ul> <li> 
     /// <para>
     /// The REST API requires you to handle connection details, such as calculating signatures,
     /// handling request retries, and error handling. For general information about using
-    /// the AWS REST APIs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-apis.html">AWS
-    /// APIs</a>. 
+    /// the Amazon Web Services REST APIs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-apis.html">Amazon
+    /// Web Services APIs</a>. 
     /// </para>
     ///  
     /// <para>
@@ -53,9 +53,9 @@ namespace Amazon.NetworkFirewall
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Alternatively, you can use one of the AWS SDKs to access an API that's tailored to
-    /// the programming language or platform that you're using. For more information, see
-    /// <a href="http://aws.amazon.com/tools/#SDKs">AWS SDKs</a>.
+    /// Alternatively, you can use one of the Amazon Web Services SDKs to access an API that's
+    /// tailored to the programming language or platform that you're using. For more information,
+    /// see <a href="http://aws.amazon.com/tools/#SDKs">Amazon Web Services SDKs</a>.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -69,9 +69,9 @@ namespace Amazon.NetworkFirewall
     /// and prevention service for Amazon Virtual Private Cloud (Amazon VPC). With Network
     /// Firewall, you can filter traffic at the perimeter of your VPC. This includes filtering
     /// traffic going to and coming from an internet gateway, NAT gateway, or over VPN or
-    /// AWS Direct Connect. Network Firewall uses rules that are compatible with Suricata,
-    /// a free, open source intrusion detection system (IDS) engine. AWS Network Firewall
-    /// supports Suricata version 5.0.2. For information about Suricata, see the <a href="https://suricata-ids.org/">Suricata
+    /// Direct Connect. Network Firewall uses rules that are compatible with Suricata, a free,
+    /// open source network analysis and threat detection engine. Network Firewall supports
+    /// Suricata version 6.0.9. For information about Suricata, see the <a href="https://suricata.io/">Suricata
     /// website</a>.
     /// </para>
     ///  
@@ -81,8 +81,8 @@ namespace Amazon.NetworkFirewall
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Allow domains or IP addresses for known AWS service endpoints, such as Amazon S3,
-    /// and block all other forms of traffic.
+    /// Allow domains or IP addresses for known Amazon Web Services service endpoints, such
+    /// as Amazon S3, and block all other forms of traffic.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -334,6 +334,15 @@ namespace Amazon.NetworkFirewall
         }
 
         /// <summary>
+        /// Customize the pipeline
+        /// </summary>
+        /// <param name="pipeline"></param>
+        protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
+        {
+            pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonNetworkFirewallEndpointResolver());
+        }
+        /// <summary>
         /// Capture metadata for the service.
         /// </summary>
         protected override IServiceMetadata ServiceMetadata
@@ -464,7 +473,7 @@ namespace Amazon.NetworkFirewall
         /// 
         ///  
         /// <para>
-        /// This request creates an AWS Network Firewall firewall endpoint in each of the subnets.
+        /// This request creates an Network Firewall firewall endpoint in each of the subnets.
         /// To enable the firewall's protections, you must also modify the VPC's route tables
         /// for each subnet's Availability Zone, to redirect the traffic that's coming into and
         /// going out of the zone through the firewall endpoint. 
@@ -474,8 +483,8 @@ namespace Amazon.NetworkFirewall
         /// 
         /// <returns>The response from the AssociateSubnets service method, as returned by NetworkFirewall.</returns>
         /// <exception cref="Amazon.NetworkFirewall.Model.InsufficientCapacityException">
-        /// AWS doesn't currently have enough available capacity to fulfill your request. Try
-        /// your request later.
+        /// Amazon Web Services doesn't currently have enough available capacity to fulfill your
+        /// request. Try your request later.
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
         /// Your request is valid, but Network Firewall couldn’t perform the operation because
@@ -561,15 +570,15 @@ namespace Amazon.NetworkFirewall
         #region  CreateFirewall
 
         /// <summary>
-        /// Creates an AWS Network Firewall <a>Firewall</a> and accompanying <a>FirewallStatus</a>
+        /// Creates an Network Firewall <a>Firewall</a> and accompanying <a>FirewallStatus</a>
         /// for a VPC. 
         /// 
         ///  
         /// <para>
-        /// The firewall defines the configuration settings for an AWS Network Firewall firewall.
+        /// The firewall defines the configuration settings for an Network Firewall firewall.
         /// The settings that you can define at creation include the firewall policy, the subnets
         /// in your VPC to use for the firewall endpoints, and any tags that are attached to the
-        /// firewall AWS resource. 
+        /// firewall Amazon Web Services resource. 
         /// </para>
         ///  
         /// <para>
@@ -584,8 +593,8 @@ namespace Amazon.NetworkFirewall
         /// </para>
         ///  
         /// <para>
-        /// To manage a firewall's tags, use the standard AWS resource tagging operations, <a>ListTagsForResource</a>,
-        /// <a>TagResource</a>, and <a>UntagResource</a>.
+        /// To manage a firewall's tags, use the standard Amazon Web Services resource tagging
+        /// operations, <a>ListTagsForResource</a>, <a>TagResource</a>, and <a>UntagResource</a>.
         /// </para>
         ///  
         /// <para>
@@ -596,8 +605,8 @@ namespace Amazon.NetworkFirewall
         /// 
         /// <returns>The response from the CreateFirewall service method, as returned by NetworkFirewall.</returns>
         /// <exception cref="Amazon.NetworkFirewall.Model.InsufficientCapacityException">
-        /// AWS doesn't currently have enough available capacity to fulfill your request. Try
-        /// your request later.
+        /// Amazon Web Services doesn't currently have enough available capacity to fulfill your
+        /// request. Try your request later.
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
         /// Your request is valid, but Network Firewall couldn’t perform the operation because
@@ -684,7 +693,7 @@ namespace Amazon.NetworkFirewall
         /// 
         ///  
         /// <para>
-        /// An AWS Network Firewall firewall policy defines the behavior of a firewall, in a collection
+        /// An Network Firewall firewall policy defines the behavior of a firewall, in a collection
         /// of stateless and stateful rule groups and other settings. You can use one firewall
         /// policy for multiple firewalls. 
         /// </para>
@@ -693,8 +702,8 @@ namespace Amazon.NetworkFirewall
         /// 
         /// <returns>The response from the CreateFirewallPolicy service method, as returned by NetworkFirewall.</returns>
         /// <exception cref="Amazon.NetworkFirewall.Model.InsufficientCapacityException">
-        /// AWS doesn't currently have enough available capacity to fulfill your request. Try
-        /// your request later.
+        /// Amazon Web Services doesn't currently have enough available capacity to fulfill your
+        /// request. Try your request later.
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
         /// Your request is valid, but Network Firewall couldn’t perform the operation because
@@ -786,8 +795,8 @@ namespace Amazon.NetworkFirewall
         /// 
         /// <returns>The response from the CreateRuleGroup service method, as returned by NetworkFirewall.</returns>
         /// <exception cref="Amazon.NetworkFirewall.Model.InsufficientCapacityException">
-        /// AWS doesn't currently have enough available capacity to fulfill your request. Try
-        /// your request later.
+        /// Amazon Web Services doesn't currently have enough available capacity to fulfill your
+        /// request. Try your request later.
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
         /// Your request is valid, but Network Firewall couldn’t perform the operation because
@@ -859,6 +868,113 @@ namespace Amazon.NetworkFirewall
         public virtual CreateRuleGroupResponse EndCreateRuleGroup(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateRuleGroupResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateTLSInspectionConfiguration
+
+        /// <summary>
+        /// Creates an Network Firewall TLS inspection configuration. A TLS inspection configuration
+        /// contains the Certificate Manager certificate references that Network Firewall uses
+        /// to decrypt and re-encrypt inbound traffic.
+        /// 
+        ///  
+        /// <para>
+        /// After you create a TLS inspection configuration, you associate it with a firewall
+        /// policy.
+        /// </para>
+        ///  
+        /// <para>
+        /// To update the settings for a TLS inspection configuration, use <a>UpdateTLSInspectionConfiguration</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To manage a TLS inspection configuration's tags, use the standard Amazon Web Services
+        /// resource tagging operations, <a>ListTagsForResource</a>, <a>TagResource</a>, and <a>UntagResource</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To retrieve information about TLS inspection configurations, use <a>ListTLSInspectionConfigurations</a>
+        /// and <a>DescribeTLSInspectionConfiguration</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  For more information about TLS inspection configurations, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/tls-inspection.html">Decrypting
+        /// SSL/TLS traffic with TLS inspection configurations</a> in the <i>Network Firewall
+        /// Developer Guide</i>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTLSInspectionConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the CreateTLSInspectionConfiguration service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn’t perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
+        /// The operation failed because of a problem with your request. Examples include: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an unsupported parameter name or value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a property with a value that isn't among the available types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource that
+        /// isn't valid in the context of the request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/CreateTLSInspectionConfiguration">REST API Reference for CreateTLSInspectionConfiguration Operation</seealso>
+        public virtual CreateTLSInspectionConfigurationResponse CreateTLSInspectionConfiguration(CreateTLSInspectionConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateTLSInspectionConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTLSInspectionConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<CreateTLSInspectionConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateTLSInspectionConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateTLSInspectionConfiguration operation on AmazonNetworkFirewallClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateTLSInspectionConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/CreateTLSInspectionConfiguration">REST API Reference for CreateTLSInspectionConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginCreateTLSInspectionConfiguration(CreateTLSInspectionConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateTLSInspectionConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTLSInspectionConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateTLSInspectionConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateTLSInspectionConfiguration.</param>
+        /// 
+        /// <returns>Returns a  CreateTLSInspectionConfigurationResult from NetworkFirewall.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/CreateTLSInspectionConfiguration">REST API Reference for CreateTLSInspectionConfiguration Operation</seealso>
+        public virtual CreateTLSInspectionConfigurationResponse EndCreateTLSInspectionConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateTLSInspectionConfigurationResponse>(asyncResult);
         }
 
         #endregion
@@ -1228,6 +1344,92 @@ namespace Amazon.NetworkFirewall
         public virtual DeleteRuleGroupResponse EndDeleteRuleGroup(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteRuleGroupResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteTLSInspectionConfiguration
+
+        /// <summary>
+        /// Deletes the specified <a>TLSInspectionConfiguration</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTLSInspectionConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DeleteTLSInspectionConfiguration service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn’t perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidOperationException">
+        /// The operation failed because it's not valid. For example, you might have tried to
+        /// delete a rule group or firewall policy that's in use.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
+        /// The operation failed because of a problem with your request. Examples include: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an unsupported parameter name or value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a property with a value that isn't among the available types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource that
+        /// isn't valid in the context of the request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
+        /// Unable to locate a resource using the parameters that you provided.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DeleteTLSInspectionConfiguration">REST API Reference for DeleteTLSInspectionConfiguration Operation</seealso>
+        public virtual DeleteTLSInspectionConfigurationResponse DeleteTLSInspectionConfiguration(DeleteTLSInspectionConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteTLSInspectionConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTLSInspectionConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteTLSInspectionConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteTLSInspectionConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTLSInspectionConfiguration operation on AmazonNetworkFirewallClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteTLSInspectionConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DeleteTLSInspectionConfiguration">REST API Reference for DeleteTLSInspectionConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginDeleteTLSInspectionConfiguration(DeleteTLSInspectionConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteTLSInspectionConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTLSInspectionConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteTLSInspectionConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteTLSInspectionConfiguration.</param>
+        /// 
+        /// <returns>Returns a  DeleteTLSInspectionConfigurationResult from NetworkFirewall.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DeleteTLSInspectionConfiguration">REST API Reference for DeleteTLSInspectionConfiguration Operation</seealso>
+        public virtual DeleteTLSInspectionConfigurationResponse EndDeleteTLSInspectionConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteTLSInspectionConfigurationResponse>(asyncResult);
         }
 
         #endregion
@@ -1642,6 +1844,172 @@ namespace Amazon.NetworkFirewall
 
         #endregion
         
+        #region  DescribeRuleGroupMetadata
+
+        /// <summary>
+        /// High-level information about a rule group, returned by operations like create and
+        /// describe. You can use the information provided in the metadata to retrieve and manage
+        /// a rule group. You can retrieve all objects for a rule group by calling <a>DescribeRuleGroup</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeRuleGroupMetadata service method.</param>
+        /// 
+        /// <returns>The response from the DescribeRuleGroupMetadata service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn’t perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
+        /// The operation failed because of a problem with your request. Examples include: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an unsupported parameter name or value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a property with a value that isn't among the available types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource that
+        /// isn't valid in the context of the request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
+        /// Unable to locate a resource using the parameters that you provided.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DescribeRuleGroupMetadata">REST API Reference for DescribeRuleGroupMetadata Operation</seealso>
+        public virtual DescribeRuleGroupMetadataResponse DescribeRuleGroupMetadata(DescribeRuleGroupMetadataRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeRuleGroupMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeRuleGroupMetadataResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeRuleGroupMetadataResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeRuleGroupMetadata operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeRuleGroupMetadata operation on AmazonNetworkFirewallClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeRuleGroupMetadata
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DescribeRuleGroupMetadata">REST API Reference for DescribeRuleGroupMetadata Operation</seealso>
+        public virtual IAsyncResult BeginDescribeRuleGroupMetadata(DescribeRuleGroupMetadataRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeRuleGroupMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeRuleGroupMetadataResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeRuleGroupMetadata operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeRuleGroupMetadata.</param>
+        /// 
+        /// <returns>Returns a  DescribeRuleGroupMetadataResult from NetworkFirewall.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DescribeRuleGroupMetadata">REST API Reference for DescribeRuleGroupMetadata Operation</seealso>
+        public virtual DescribeRuleGroupMetadataResponse EndDescribeRuleGroupMetadata(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeRuleGroupMetadataResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeTLSInspectionConfiguration
+
+        /// <summary>
+        /// Returns the data objects for the specified TLS inspection configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTLSInspectionConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DescribeTLSInspectionConfiguration service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn’t perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
+        /// The operation failed because of a problem with your request. Examples include: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an unsupported parameter name or value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a property with a value that isn't among the available types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource that
+        /// isn't valid in the context of the request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
+        /// Unable to locate a resource using the parameters that you provided.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DescribeTLSInspectionConfiguration">REST API Reference for DescribeTLSInspectionConfiguration Operation</seealso>
+        public virtual DescribeTLSInspectionConfigurationResponse DescribeTLSInspectionConfiguration(DescribeTLSInspectionConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeTLSInspectionConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTLSInspectionConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeTLSInspectionConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeTLSInspectionConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTLSInspectionConfiguration operation on AmazonNetworkFirewallClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeTLSInspectionConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DescribeTLSInspectionConfiguration">REST API Reference for DescribeTLSInspectionConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginDescribeTLSInspectionConfiguration(DescribeTLSInspectionConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeTLSInspectionConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTLSInspectionConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeTLSInspectionConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeTLSInspectionConfiguration.</param>
+        /// 
+        /// <returns>Returns a  DescribeTLSInspectionConfigurationResult from NetworkFirewall.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DescribeTLSInspectionConfiguration">REST API Reference for DescribeTLSInspectionConfiguration Operation</seealso>
+        public virtual DescribeTLSInspectionConfigurationResponse EndDescribeTLSInspectionConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeTLSInspectionConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DisassociateSubnets
 
         /// <summary>
@@ -1987,18 +2355,22 @@ namespace Amazon.NetworkFirewall
         /// Retrieves the tags associated with the specified resource. Tags are key:value pairs
         /// that you can use to categorize and manage your resources, for purposes like billing.
         /// For example, you might set the tag key to "customer" and the value to the customer
-        /// name or ID. You can specify one or more tags to add to each AWS resource, up to 50
-        /// tags for a resource.
+        /// name or ID. You can specify one or more tags to add to each Amazon Web Services resource,
+        /// up to 50 tags for a resource.
         /// 
         ///  
         /// <para>
-        /// You can tag the AWS resources that you manage through AWS Network Firewall: firewalls,
-        /// firewall policies, and rule groups. 
+        /// You can tag the Amazon Web Services resources that you manage through Network Firewall:
+        /// firewalls, firewall policies, and rule groups. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// 
         /// <returns>The response from the ListTagsForResource service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn’t perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
         /// The operation failed because of a problem with your request. Examples include: 
         /// 
@@ -2019,6 +2391,9 @@ namespace Amazon.NetworkFirewall
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
         /// Unable to locate a resource using the parameters that you provided.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
@@ -2066,12 +2441,93 @@ namespace Amazon.NetworkFirewall
 
         #endregion
         
+        #region  ListTLSInspectionConfigurations
+
+        /// <summary>
+        /// Retrieves the metadata for the TLS inspection configurations that you have defined.
+        /// Depending on your setting for max results and the number of TLS inspection configurations,
+        /// a single call might not return the full list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTLSInspectionConfigurations service method.</param>
+        /// 
+        /// <returns>The response from the ListTLSInspectionConfigurations service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn’t perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
+        /// The operation failed because of a problem with your request. Examples include: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an unsupported parameter name or value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a property with a value that isn't among the available types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource that
+        /// isn't valid in the context of the request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/ListTLSInspectionConfigurations">REST API Reference for ListTLSInspectionConfigurations Operation</seealso>
+        public virtual ListTLSInspectionConfigurationsResponse ListTLSInspectionConfigurations(ListTLSInspectionConfigurationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTLSInspectionConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTLSInspectionConfigurationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListTLSInspectionConfigurationsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTLSInspectionConfigurations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTLSInspectionConfigurations operation on AmazonNetworkFirewallClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTLSInspectionConfigurations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/ListTLSInspectionConfigurations">REST API Reference for ListTLSInspectionConfigurations Operation</seealso>
+        public virtual IAsyncResult BeginListTLSInspectionConfigurations(ListTLSInspectionConfigurationsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTLSInspectionConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTLSInspectionConfigurationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListTLSInspectionConfigurations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTLSInspectionConfigurations.</param>
+        /// 
+        /// <returns>Returns a  ListTLSInspectionConfigurationsResult from NetworkFirewall.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/ListTLSInspectionConfigurations">REST API Reference for ListTLSInspectionConfigurations Operation</seealso>
+        public virtual ListTLSInspectionConfigurationsResponse EndListTLSInspectionConfigurations(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListTLSInspectionConfigurationsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  PutResourcePolicy
 
         /// <summary>
-        /// Creates or updates an AWS Identity and Access Management policy for your rule group
-        /// or firewall policy. Use this to share rule groups and firewall policies between accounts.
-        /// This operation works in conjunction with the AWS Resource Access Manager (RAM) service
+        /// Creates or updates an IAM policy for your rule group or firewall policy. Use this
+        /// to share rule groups and firewall policies between accounts. This operation works
+        /// in conjunction with the Amazon Web Services Resource Access Manager (RAM) service
         /// to manage resource sharing for Network Firewall. 
         /// 
         ///  
@@ -2098,8 +2554,8 @@ namespace Amazon.NetworkFirewall
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For additional information about resource sharing using RAM, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/what-is.html">AWS
-        /// Resource Access Manager User Guide</a>.
+        /// For additional information about resource sharing using RAM, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/what-is.html">Resource
+        /// Access Manager User Guide</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutResourcePolicy service method.</param>
@@ -2188,18 +2644,22 @@ namespace Amazon.NetworkFirewall
         /// Adds the specified tags to the specified resource. Tags are key:value pairs that you
         /// can use to categorize and manage your resources, for purposes like billing. For example,
         /// you might set the tag key to "customer" and the value to the customer name or ID.
-        /// You can specify one or more tags to add to each AWS resource, up to 50 tags for a
-        /// resource.
+        /// You can specify one or more tags to add to each Amazon Web Services resource, up to
+        /// 50 tags for a resource.
         /// 
         ///  
         /// <para>
-        /// You can tag the AWS resources that you manage through AWS Network Firewall: firewalls,
-        /// firewall policies, and rule groups. 
+        /// You can tag the Amazon Web Services resources that you manage through Network Firewall:
+        /// firewalls, firewall policies, and rule groups. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// 
         /// <returns>The response from the TagResource service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn’t perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
         /// The operation failed because of a problem with your request. Examples include: 
         /// 
@@ -2220,6 +2680,9 @@ namespace Amazon.NetworkFirewall
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
         /// Unable to locate a resource using the parameters that you provided.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
@@ -2273,18 +2736,22 @@ namespace Amazon.NetworkFirewall
         /// Removes the tags with the specified keys from the specified resource. Tags are key:value
         /// pairs that you can use to categorize and manage your resources, for purposes like
         /// billing. For example, you might set the tag key to "customer" and the value to the
-        /// customer name or ID. You can specify one or more tags to add to each AWS resource,
-        /// up to 50 tags for a resource.
+        /// customer name or ID. You can specify one or more tags to add to each Amazon Web Services
+        /// resource, up to 50 tags for a resource.
         /// 
         ///  
         /// <para>
-        /// You can manage tags for the AWS resources that you manage through AWS Network Firewall:
-        /// firewalls, firewall policies, and rule groups. 
+        /// You can manage tags for the Amazon Web Services resources that you manage through
+        /// Network Firewall: firewalls, firewall policies, and rule groups. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// 
         /// <returns>The response from the UntagResource service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn’t perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
         /// The operation failed because of a problem with your request. Examples include: 
         /// 
@@ -2305,6 +2772,9 @@ namespace Amazon.NetworkFirewall
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
         /// Unable to locate a resource using the parameters that you provided.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
@@ -2529,6 +2999,94 @@ namespace Amazon.NetworkFirewall
 
         #endregion
         
+        #region  UpdateFirewallEncryptionConfiguration
+
+        /// <summary>
+        /// A complex type that contains settings for encryption of your firewall resources.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateFirewallEncryptionConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the UpdateFirewallEncryptionConfiguration service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn’t perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
+        /// The operation failed because of a problem with your request. Examples include: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an unsupported parameter name or value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a property with a value that isn't among the available types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource that
+        /// isn't valid in the context of the request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidTokenException">
+        /// The token you provided is stale or isn't valid for the operation.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
+        /// Unable to locate a resource using the parameters that you provided.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceOwnerCheckException">
+        /// Unable to change the resource because your account doesn't own it.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UpdateFirewallEncryptionConfiguration">REST API Reference for UpdateFirewallEncryptionConfiguration Operation</seealso>
+        public virtual UpdateFirewallEncryptionConfigurationResponse UpdateFirewallEncryptionConfiguration(UpdateFirewallEncryptionConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateFirewallEncryptionConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateFirewallEncryptionConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateFirewallEncryptionConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateFirewallEncryptionConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateFirewallEncryptionConfiguration operation on AmazonNetworkFirewallClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateFirewallEncryptionConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UpdateFirewallEncryptionConfiguration">REST API Reference for UpdateFirewallEncryptionConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginUpdateFirewallEncryptionConfiguration(UpdateFirewallEncryptionConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateFirewallEncryptionConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateFirewallEncryptionConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateFirewallEncryptionConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateFirewallEncryptionConfiguration.</param>
+        /// 
+        /// <returns>Returns a  UpdateFirewallEncryptionConfigurationResult from NetworkFirewall.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UpdateFirewallEncryptionConfiguration">REST API Reference for UpdateFirewallEncryptionConfiguration Operation</seealso>
+        public virtual UpdateFirewallEncryptionConfigurationResponse EndUpdateFirewallEncryptionConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateFirewallEncryptionConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  UpdateFirewallPolicy
 
         /// <summary>
@@ -2617,7 +3175,10 @@ namespace Amazon.NetworkFirewall
         #region  UpdateFirewallPolicyChangeProtection
 
         /// <summary>
-        /// 
+        /// Modifies the flag, <code>ChangeProtection</code>, which indicates whether it is possible
+        /// to change the firewall. If the flag is set to <code>TRUE</code>, the firewall is protected
+        /// from changes. This setting helps protect against accidentally changing a firewall
+        /// that's in use.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateFirewallPolicyChangeProtection service method.</param>
         /// 
@@ -3002,6 +3563,101 @@ namespace Amazon.NetworkFirewall
         public virtual UpdateSubnetChangeProtectionResponse EndUpdateSubnetChangeProtection(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateSubnetChangeProtectionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateTLSInspectionConfiguration
+
+        /// <summary>
+        /// Updates the TLS inspection configuration settings for the specified TLS inspection
+        /// configuration. You use a TLS inspection configuration by reference in one or more
+        /// firewall policies. When you modify a TLS inspection configuration, you modify all
+        /// firewall policies that use the TLS inspection configuration. 
+        /// 
+        ///  
+        /// <para>
+        /// To update a TLS inspection configuration, first call <a>DescribeTLSInspectionConfiguration</a>
+        /// to retrieve the current <a>TLSInspectionConfiguration</a> object, update the object
+        /// as needed, and then provide the updated object to this call. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTLSInspectionConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the UpdateTLSInspectionConfiguration service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn’t perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
+        /// The operation failed because of a problem with your request. Examples include: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an unsupported parameter name or value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a property with a value that isn't among the available types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource that
+        /// isn't valid in the context of the request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidTokenException">
+        /// The token you provided is stale or isn't valid for the operation.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
+        /// Unable to locate a resource using the parameters that you provided.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UpdateTLSInspectionConfiguration">REST API Reference for UpdateTLSInspectionConfiguration Operation</seealso>
+        public virtual UpdateTLSInspectionConfigurationResponse UpdateTLSInspectionConfiguration(UpdateTLSInspectionConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateTLSInspectionConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateTLSInspectionConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateTLSInspectionConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateTLSInspectionConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTLSInspectionConfiguration operation on AmazonNetworkFirewallClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateTLSInspectionConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UpdateTLSInspectionConfiguration">REST API Reference for UpdateTLSInspectionConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginUpdateTLSInspectionConfiguration(UpdateTLSInspectionConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateTLSInspectionConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateTLSInspectionConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateTLSInspectionConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateTLSInspectionConfiguration.</param>
+        /// 
+        /// <returns>Returns a  UpdateTLSInspectionConfigurationResult from NetworkFirewall.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UpdateTLSInspectionConfiguration">REST API Reference for UpdateTLSInspectionConfiguration Operation</seealso>
+        public virtual UpdateTLSInspectionConfigurationResponse EndUpdateTLSInspectionConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateTLSInspectionConfigurationResponse>(asyncResult);
         }
 
         #endregion

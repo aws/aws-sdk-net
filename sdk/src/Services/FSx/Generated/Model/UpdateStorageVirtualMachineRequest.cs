@@ -30,7 +30,7 @@ namespace Amazon.FSx.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateStorageVirtualMachine operation.
-    /// Updates an Amazon FSx for ONTAP storage virtual machine (SVM).
+    /// Updates an FSx for ONTAP storage virtual machine (SVM).
     /// </summary>
     public partial class UpdateStorageVirtualMachineRequest : AmazonFSxRequest
     {
@@ -42,8 +42,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property ActiveDirectoryConfiguration. 
         /// <para>
-        /// Updates the Microsoft Active Directory (AD) configuration for an SVM that is joined
-        /// to an AD.
+        /// Specifies updates to an SVM's Microsoft Active Directory (AD) configuration.
         /// </para>
         /// </summary>
         public UpdateSvmActiveDirectoryConfiguration ActiveDirectoryConfiguration
@@ -96,10 +95,10 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property SvmAdminPassword. 
         /// <para>
-        /// Enter a new SvmAdminPassword if you are updating it.
+        /// Specifies a new SvmAdminPassword.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=8, Max=50)]
+        [AWSProperty(Sensitive=true, Min=8, Max=50)]
         public string SvmAdminPassword
         {
             get { return this._svmAdminPassword; }

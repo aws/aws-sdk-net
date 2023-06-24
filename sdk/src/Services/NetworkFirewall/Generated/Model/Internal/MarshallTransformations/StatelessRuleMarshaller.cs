@@ -34,7 +34,7 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// StatelessRule Marshaller
-    /// </summary>       
+    /// </summary>
     public class StatelessRuleMarshaller : IRequestMarshaller<StatelessRule, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static StatelessRuleMarshaller Instance = new StatelessRuleMarshaller();
 
     }

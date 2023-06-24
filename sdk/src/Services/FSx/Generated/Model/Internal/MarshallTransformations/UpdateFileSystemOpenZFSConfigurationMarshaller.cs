@@ -34,7 +34,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// UpdateFileSystemOpenZFSConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class UpdateFileSystemOpenZFSConfigurationMarshaller : IRequestMarshaller<UpdateFileSystemOpenZFSConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -96,7 +96,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static UpdateFileSystemOpenZFSConfigurationMarshaller Instance = new UpdateFileSystemOpenZFSConfigurationMarshaller();
 
     }

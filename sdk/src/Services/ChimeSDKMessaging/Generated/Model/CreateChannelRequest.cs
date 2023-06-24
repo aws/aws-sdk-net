@@ -38,18 +38,24 @@ namespace Amazon.ChimeSDKMessaging.Model
     /// </para>
     ///  <note> 
     /// <para>
-    /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
-    /// of the user that makes the API call as the value in the header.
+    /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the
+    /// <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call
+    /// as the value in the header.
     /// </para>
     ///  </note>
     /// </summary>
     public partial class CreateChannelRequest : AmazonChimeSDKMessagingRequest
     {
         private string _appInstanceArn;
+        private string _channelId;
         private string _chimeBearer;
         private string _clientRequestToken;
+        private ElasticChannelConfiguration _elasticChannelConfiguration;
+        private ExpirationSettings _expirationSettings;
+        private List<string> _memberArns = new List<string>();
         private string _metadata;
         private ChannelMode _mode;
+        private List<string> _moderatorArns = new List<string>();
         private string _name;
         private ChannelPrivacy _privacy;
         private List<Tag> _tags = new List<Tag>();
@@ -74,9 +80,29 @@ namespace Amazon.ChimeSDKMessaging.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ChannelId. 
+        /// <para>
+        /// The ID of the channel in the request.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Min=1, Max=64)]
+        public string ChannelId
+        {
+            get { return this._channelId; }
+            set { this._channelId = value; }
+        }
+
+        // Check to see if ChannelId property is set
+        internal bool IsSetChannelId()
+        {
+            return this._channelId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ChimeBearer. 
         /// <para>
-        /// The <code>AppInstanceUserArn</code> of the user that makes the API call.
+        /// The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes
+        /// the API call.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=5, Max=1600)]
@@ -98,7 +124,7 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// The client token for the request. An <code>Idempotency</code> token.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=2, Max=64)]
+        [AWSProperty(Sensitive=true, Min=2, Max=64)]
         public string ClientRequestToken
         {
             get { return this._clientRequestToken; }
@@ -112,12 +138,68 @@ namespace Amazon.ChimeSDKMessaging.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ElasticChannelConfiguration. 
+        /// <para>
+        /// The attributes required to configure and create an elastic channel. An elastic channel
+        /// can support a maximum of 1-million users, excluding moderators.
+        /// </para>
+        /// </summary>
+        public ElasticChannelConfiguration ElasticChannelConfiguration
+        {
+            get { return this._elasticChannelConfiguration; }
+            set { this._elasticChannelConfiguration = value; }
+        }
+
+        // Check to see if ElasticChannelConfiguration property is set
+        internal bool IsSetElasticChannelConfiguration()
+        {
+            return this._elasticChannelConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExpirationSettings. 
+        /// <para>
+        /// Settings that control the interval after which the channel is automatically deleted.
+        /// </para>
+        /// </summary>
+        public ExpirationSettings ExpirationSettings
+        {
+            get { return this._expirationSettings; }
+            set { this._expirationSettings = value; }
+        }
+
+        // Check to see if ExpirationSettings property is set
+        internal bool IsSetExpirationSettings()
+        {
+            return this._expirationSettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MemberArns. 
+        /// <para>
+        /// The ARNs of the channel members in the request.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<string> MemberArns
+        {
+            get { return this._memberArns; }
+            set { this._memberArns = value; }
+        }
+
+        // Check to see if MemberArns property is set
+        internal bool IsSetMemberArns()
+        {
+            return this._memberArns != null && this._memberArns.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Metadata. 
         /// <para>
         /// The metadata of the creation request. Limited to 1KB and UTF-8.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=1024)]
+        [AWSProperty(Sensitive=true, Min=0, Max=1024)]
         public string Metadata
         {
             get { return this._metadata; }
@@ -151,12 +233,31 @@ namespace Amazon.ChimeSDKMessaging.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ModeratorArns. 
+        /// <para>
+        /// The ARNs of the channel moderators in the request.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<string> ModeratorArns
+        {
+            get { return this._moderatorArns; }
+            set { this._moderatorArns = value; }
+        }
+
+        // Check to see if ModeratorArns property is set
+        internal bool IsSetModeratorArns()
+        {
+            return this._moderatorArns != null && this._moderatorArns.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
         /// The name of the channel.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=256)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=256)]
         public string Name
         {
             get { return this._name; }

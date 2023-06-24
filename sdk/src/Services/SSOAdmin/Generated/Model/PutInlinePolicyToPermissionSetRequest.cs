@@ -30,7 +30,7 @@ namespace Amazon.SSOAdmin.Model
 {
     /// <summary>
     /// Container for the parameters to the PutInlinePolicyToPermissionSet operation.
-    /// Attaches an IAM inline policy to a permission set.
+    /// Attaches an inline policy to a permission set.
     /// 
     ///  <note> 
     /// <para>
@@ -49,7 +49,7 @@ namespace Amazon.SSOAdmin.Model
         /// <summary>
         /// Gets and sets the property InlinePolicy. 
         /// <para>
-        /// The IAM inline policy to attach to a <a>PermissionSet</a>.
+        /// The inline policy to attach to a <a>PermissionSet</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=10240)]
@@ -68,10 +68,9 @@ namespace Amazon.SSOAdmin.Model
         /// <summary>
         /// Gets and sets the property InstanceArn. 
         /// <para>
-        /// The ARN of the SSO instance under which the operation will be executed. For more information
-        /// about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-        /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services
-        /// General Reference</i>.
+        /// The ARN of the IAM Identity Center instance under which the operation will be executed.
+        /// For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=10, Max=1224)]

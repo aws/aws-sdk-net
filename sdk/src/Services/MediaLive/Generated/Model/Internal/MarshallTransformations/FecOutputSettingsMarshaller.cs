@@ -34,7 +34,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// FecOutputSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class FecOutputSettingsMarshaller : IRequestMarshaller<FecOutputSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static FecOutputSettingsMarshaller Instance = new FecOutputSettingsMarshaller();
 
     }

@@ -41,6 +41,11 @@ namespace Amazon.FSx.Model
         IDescribeDataRepositoryTasksPaginator DescribeDataRepositoryTasks(DescribeDataRepositoryTasksRequest request);
 
         /// <summary>
+        /// Paginator for DescribeFileCaches operation
+        ///</summary>
+        IDescribeFileCachesPaginator DescribeFileCaches(DescribeFileCachesRequest request);
+
+        /// <summary>
         /// Paginator for DescribeFileSystemAliases operation
         ///</summary>
         IDescribeFileSystemAliasesPaginator DescribeFileSystemAliases(DescribeFileSystemAliasesRequest request);

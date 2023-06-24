@@ -31,6 +31,12 @@ namespace Amazon.CertificateManager.Model
     /// <summary>
     /// Container for the parameters to the DescribeCertificate operation.
     /// Returns detailed metadata about the specified ACM certificate.
+    /// 
+    ///  
+    /// <para>
+    /// If you have just created a certificate using the <code>RequestCertificate</code> action,
+    /// there is a delay of several seconds before you can retrieve information about it.
+    /// </para>
     /// </summary>
     public partial class DescribeCertificateRequest : AmazonCertificateManagerRequest
     {

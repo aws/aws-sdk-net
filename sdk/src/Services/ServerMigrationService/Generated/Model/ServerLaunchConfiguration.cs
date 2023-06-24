@@ -154,7 +154,7 @@ namespace Amazon.ServerMigrationService.Model
         /// <summary>
         /// Gets and sets the property LogicalId. 
         /// <para>
-        /// The logical ID of the server in the AWS CloudFormation template.
+        /// The logical ID of the server in the CloudFormation template.
         /// </para>
         /// </summary>
         public string LogicalId

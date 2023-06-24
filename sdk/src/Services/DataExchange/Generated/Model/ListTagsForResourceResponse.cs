@@ -36,8 +36,10 @@ namespace Amazon.DataExchange.Model
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
-        /// Gets and sets the property Tags. A label that consists of a customer-defined key and
-        /// an optional value.
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A label that consists of a customer-defined key and an optional value.
+        /// </para>
         /// </summary>
         public Dictionary<string, string> Tags
         {

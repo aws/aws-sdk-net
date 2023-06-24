@@ -30,9 +30,9 @@ namespace Amazon.PI.Model
 {
     /// <summary>
     /// A single query to be processed. You must provide the metric to query. If no other
-    /// parameters are specified, Performance Insights returns all of the data points for
-    /// that metric. You can optionally request that the data points be aggregated by dimension
-    /// group ( <code>GroupBy</code>), and return only those data points that match your criteria
+    /// parameters are specified, Performance Insights returns all data points for the specified
+    /// metric. Optionally, you can request that the data points be aggregated by dimension
+    /// group (<code>GroupBy</code>), and return only those data points that match your criteria
     /// (<code>Filter</code>).
     /// </summary>
     public partial class MetricQuery
@@ -102,13 +102,18 @@ namespace Amazon.PI.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>db.load.avg</code> - a scaled representation of the number of active sessions
+        ///  <code>db.load.avg</code> - A scaled representation of the number of active sessions
         /// for the database engine.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>db.sampledload.avg</code> - the raw number of active sessions for the database
+        ///  <code>db.sampledload.avg</code> - The raw number of active sessions for the database
         /// engine.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The counter metrics listed in <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_PerfInsights_Counters.html#USER_PerfInsights_Counters.OS">Performance
+        /// Insights operating system counters</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -118,7 +123,7 @@ namespace Amazon.PI.Model
         /// Insights samples the active sessions, with <code>db.load.avg</code> showing the scaled
         /// values, <code>db.sampledload.avg</code> showing the raw values, and <code>db.sampledload.avg</code>
         /// less than <code>db.load.avg</code>. For most use cases, you can query <code>db.load.avg</code>
-        /// only. 
+        /// only.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=256)]

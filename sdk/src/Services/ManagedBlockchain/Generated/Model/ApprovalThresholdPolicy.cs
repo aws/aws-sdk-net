@@ -51,8 +51,8 @@ namespace Amazon.ManagedBlockchain.Model
         /// The duration from the time that a proposal is created until it expires. If members
         /// cast neither the required number of <code>YES</code> votes to approve the proposal
         /// nor the number of <code>NO</code> votes required to reject it before the duration
-        /// expires, the proposal is <code>EXPIRED</code> and <code>ProposalActions</code> are
-        /// not carried out.
+        /// expires, the proposal is <code>EXPIRED</code> and <code>ProposalActions</code> aren't
+        /// carried out.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=168)]

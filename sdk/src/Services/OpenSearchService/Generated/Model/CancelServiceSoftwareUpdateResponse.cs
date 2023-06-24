@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// The result of a <code>CancelServiceSoftwareUpdate</code> operation. Contains the status
-    /// of the update.
+    /// Container for the response to a <code>CancelServiceSoftwareUpdate</code> operation.
+    /// Contains the status of the update.
     /// </summary>
     public partial class CancelServiceSoftwareUpdateResponse : AmazonWebServiceResponse
     {
@@ -39,7 +39,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property ServiceSoftwareOptions. 
         /// <para>
-        /// The current status of the OpenSearch service software update.
+        /// Container for the state of your domain relative to the latest service software.
         /// </para>
         /// </summary>
         public ServiceSoftwareOptions ServiceSoftwareOptions

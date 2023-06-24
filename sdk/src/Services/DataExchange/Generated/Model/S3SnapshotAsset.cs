@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataExchange.Model
 {
     /// <summary>
-    /// The S3 object that is the asset.
+    /// The Amazon S3 object that is the asset.
     /// </summary>
     public partial class S3SnapshotAsset
     {
@@ -38,7 +38,7 @@ namespace Amazon.DataExchange.Model
         /// <summary>
         /// Gets and sets the property Size. 
         /// <para>
-        /// The size of the S3 object that is the object.
+        /// The size of the Amazon S3 object that is the object.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

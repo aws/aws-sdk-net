@@ -43,7 +43,7 @@ namespace Amazon.SageMakerFeatureStoreRuntime.Model
         /// <summary>
         /// Gets and sets the property FeatureGroupName. 
         /// <para>
-        /// The name of the feature group in which you want to put the records.
+        /// The name of the feature group from which you want to retrieve a record.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]

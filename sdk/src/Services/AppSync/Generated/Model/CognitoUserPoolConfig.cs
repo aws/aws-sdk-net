@@ -41,7 +41,7 @@ namespace Amazon.AppSync.Model
         /// Gets and sets the property AppIdClientRegex. 
         /// <para>
         /// A regular expression for validating the incoming Amazon Cognito user pool app client
-        /// ID.
+        /// ID. If this value isn't set, no filtering is applied.
         /// </para>
         /// </summary>
         public string AppIdClientRegex

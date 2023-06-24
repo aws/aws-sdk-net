@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Transfer.Model
 {
     /// <summary>
-    /// Contains the ID, text description, and Amazon Resource Name (ARN) for the workflow.
+    /// Contains the identifier, text description, and Amazon Resource Name (ARN) for the
+    /// workflow.
     /// </summary>
     public partial class ListedWorkflow
     {

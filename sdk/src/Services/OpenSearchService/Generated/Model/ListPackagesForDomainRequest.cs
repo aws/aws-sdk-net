@@ -30,7 +30,9 @@ namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
     /// Container for the parameters to the ListPackagesForDomain operation.
-    /// Lists all packages associated with the Amazon OpenSearch Service domain.
+    /// Lists all packages associated with an Amazon OpenSearch Service domain. For more information,
+    /// see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/custom-packages.html">Custom
+    /// packages for Amazon OpenSearch Service</a>.
     /// </summary>
     public partial class ListPackagesForDomainRequest : AmazonOpenSearchServiceRequest
     {
@@ -60,7 +62,8 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// Limits results to a maximum number of packages.
+        /// An optional parameter that specifies the maximum number of results to return. You
+        /// can use <code>nextToken</code> to get the next page of results.
         /// </para>
         /// </summary>
         [AWSProperty(Max=100)]
@@ -79,8 +82,9 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Used for pagination. Only necessary if a previous API call includes a non-null NextToken
-        /// value. If provided, returns results for the next page. 
+        /// If your initial <code>ListPackagesForDomain</code> operation returns a <code>nextToken</code>,
+        /// you can include the returned <code>nextToken</code> in subsequent <code>ListPackagesForDomain</code>
+        /// operations, which returns results in the next page.
         /// </para>
         /// </summary>
         public string NextToken

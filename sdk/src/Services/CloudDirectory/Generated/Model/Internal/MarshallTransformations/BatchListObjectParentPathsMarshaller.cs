@@ -34,7 +34,7 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// BatchListObjectParentPaths Marshaller
-    /// </summary>       
+    /// </summary>
     public class BatchListObjectParentPathsMarshaller : IRequestMarshaller<BatchListObjectParentPaths, JsonMarshallerContext> 
     {
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static BatchListObjectParentPathsMarshaller Instance = new BatchListObjectParentPathsMarshaller();
 
     }

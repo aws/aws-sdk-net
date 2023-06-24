@@ -34,7 +34,7 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CriterionAdditionalProperties Marshaller
-    /// </summary>       
+    /// </summary>
     public class CriterionAdditionalPropertiesMarshaller : IRequestMarshaller<CriterionAdditionalProperties, JsonMarshallerContext> 
     {
         /// <summary>
@@ -106,7 +106,7 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CriterionAdditionalPropertiesMarshaller Instance = new CriterionAdditionalPropertiesMarshaller();
 
     }

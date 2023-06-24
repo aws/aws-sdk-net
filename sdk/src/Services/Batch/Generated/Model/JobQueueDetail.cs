@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Batch.Model
 {
     /// <summary>
-    /// An object representing the details of an Batch job queue.
+    /// An object that represents the details for an Batch job queue.
     /// </summary>
     public partial class JobQueueDetail
     {
@@ -86,7 +86,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property JobQueueName. 
         /// <para>
-        /// The name of the job queue.
+        /// The job queue name.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -107,11 +107,11 @@ namespace Amazon.Batch.Model
         /// <para>
         /// The priority of the job queue. Job queues with a higher priority (or a higher integer
         /// value for the <code>priority</code> parameter) are evaluated first when associated
-        /// with the same compute environment. Priority is determined in descending order, for
+        /// with the same compute environment. Priority is determined in descending order. For
         /// example, a job queue with a priority value of <code>10</code> is given scheduling
         /// preference over a job queue with a priority value of <code>1</code>. All of the compute
         /// environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate
-        /// (<code>FARGATE</code> or <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments
+        /// (<code>FARGATE</code> or <code>FARGATE_SPOT</code>). EC2 and Fargate compute environments
         /// can't be mixed.
         /// </para>
         /// </summary>
@@ -132,7 +132,7 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property SchedulingPolicyArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the scheduling policy. The format is <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i>
-        /// </code>. For example, <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.
+        /// </code>. For example, <code>aws:aws:batch:us-west-2:123456789012:scheduling-policy/MySchedulingPolicy</code>.
         /// </para>
         /// </summary>
         public string SchedulingPolicyArn
@@ -151,8 +151,8 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property State. 
         /// <para>
         /// Describes the ability of the queue to accept new jobs. If the job queue state is <code>ENABLED</code>,
-        /// it's able to accept jobs. If the job queue state is <code>DISABLED</code>, new jobs
-        /// can't be added to the queue, but jobs already in the queue can finish.
+        /// it can accept jobs. If the job queue state is <code>DISABLED</code>, new jobs can't
+        /// be added to the queue, but jobs already in the queue can finish.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -189,7 +189,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property StatusReason. 
         /// <para>
-        /// A short, human-readable string to provide additional details about the current status
+        /// A short, human-readable string to provide additional details for the current status
         /// of the job queue.
         /// </para>
         /// </summary>
@@ -208,7 +208,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags applied to the job queue. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging
+        /// The tags that are applied to the job queue. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging
         /// your Batch resources</a> in <i>Batch User Guide</i>.
         /// </para>
         /// </summary>

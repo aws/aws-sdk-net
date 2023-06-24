@@ -45,8 +45,10 @@ namespace Amazon.VoiceID.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// The idempotency token for starting a new speaker enrollment Job. If not provided,
-        /// Amazon Web Services SDK populates this field.
+        /// A unique, case-sensitive identifier that you provide to ensure the idempotency of
+        /// the request. If not provided, the Amazon Web Services SDK populates this field. For
+        /// more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
+        /// retries safe with idempotent APIs</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -68,8 +70,8 @@ namespace Amazon.VoiceID.Model
         /// The IAM role Amazon Resource Name (ARN) that grants Voice ID permissions to access
         /// customer's buckets to read the input manifest file and write the job output file.
         /// Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/voiceid-batch-enrollment.html">Batch
-        /// enrollment using audio data from prior calls</a> documentation for the permissions
-        /// needed in this role.
+        /// enrollment using audio data from prior calls</a> for the permissions needed in this
+        /// role.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]
@@ -109,7 +111,7 @@ namespace Amazon.VoiceID.Model
         /// Gets and sets the property EnrollmentConfig. 
         /// <para>
         /// The enrollment config that contains details such as the action to take when a speaker
-        /// is already enrolled in the Voice ID system or when a speaker is identified as a fraudster.
+        /// is already enrolled in Voice ID or when a speaker is identified as a fraudster.
         /// </para>
         /// </summary>
         public EnrollmentConfig EnrollmentConfig
@@ -150,7 +152,7 @@ namespace Amazon.VoiceID.Model
         /// A name for your speaker enrollment job.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=256)]
+        [AWSProperty(Sensitive=true, Min=1, Max=256)]
         public string JobName
         {
             get { return this._jobName; }
@@ -167,7 +169,7 @@ namespace Amazon.VoiceID.Model
         /// Gets and sets the property OutputDataConfig. 
         /// <para>
         /// The output data config containing the S3 location where Voice ID writes the job output
-        /// file; you must also include a KMS Key ID to encrypt the file.
+        /// file; you must also include a KMS key ID to encrypt the file.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

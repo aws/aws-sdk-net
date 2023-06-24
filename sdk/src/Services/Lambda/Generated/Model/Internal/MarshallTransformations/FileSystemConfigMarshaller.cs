@@ -34,7 +34,7 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// FileSystemConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class FileSystemConfigMarshaller : IRequestMarshaller<FileSystemConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static FileSystemConfigMarshaller Instance = new FileSystemConfigMarshaller();
 
     }

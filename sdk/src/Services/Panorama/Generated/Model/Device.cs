@@ -33,12 +33,37 @@ namespace Amazon.Panorama.Model
     /// </summary>
     public partial class Device
     {
+        private DeviceBrand _brand;
         private DateTime? _createdTime;
+        private string _currentSoftware;
+        private string _description;
+        private DeviceAggregatedStatus _deviceAggregatedStatus;
         private string _deviceId;
         private DateTime? _lastUpdatedTime;
+        private LatestDeviceJob _latestDeviceJob;
         private DateTime? _leaseExpirationTime;
         private string _name;
         private DeviceStatus _provisioningStatus;
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private DeviceType _type;
+
+        /// <summary>
+        /// Gets and sets the property Brand. 
+        /// <para>
+        /// The device's maker.
+        /// </para>
+        /// </summary>
+        public DeviceBrand Brand
+        {
+            get { return this._brand; }
+            set { this._brand = value; }
+        }
+
+        // Check to see if Brand property is set
+        internal bool IsSetBrand()
+        {
+            return this._brand != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CreatedTime. 
@@ -56,6 +81,63 @@ namespace Amazon.Panorama.Model
         internal bool IsSetCreatedTime()
         {
             return this._createdTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CurrentSoftware. 
+        /// <para>
+        /// A device's current software.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string CurrentSoftware
+        {
+            get { return this._currentSoftware; }
+            set { this._currentSoftware = value; }
+        }
+
+        // Check to see if CurrentSoftware property is set
+        internal bool IsSetCurrentSoftware()
+        {
+            return this._currentSoftware != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// A description for the device.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=255)]
+        public string Description
+        {
+            get { return this._description; }
+            set { this._description = value; }
+        }
+
+        // Check to see if Description property is set
+        internal bool IsSetDescription()
+        {
+            return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeviceAggregatedStatus. 
+        /// <para>
+        /// A device's aggregated status. Including the device's connection status, provisioning
+        /// status, and lease status.
+        /// </para>
+        /// </summary>
+        public DeviceAggregatedStatus DeviceAggregatedStatus
+        {
+            get { return this._deviceAggregatedStatus; }
+            set { this._deviceAggregatedStatus = value; }
+        }
+
+        // Check to see if DeviceAggregatedStatus property is set
+        internal bool IsSetDeviceAggregatedStatus()
+        {
+            return this._deviceAggregatedStatus != null;
         }
 
         /// <summary>
@@ -93,6 +175,24 @@ namespace Amazon.Panorama.Model
         internal bool IsSetLastUpdatedTime()
         {
             return this._lastUpdatedTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LatestDeviceJob. 
+        /// <para>
+        /// A device's latest job. Includes the target image version, and the update job status.
+        /// </para>
+        /// </summary>
+        public LatestDeviceJob LatestDeviceJob
+        {
+            get { return this._latestDeviceJob; }
+            set { this._latestDeviceJob = value; }
+        }
+
+        // Check to see if LatestDeviceJob property is set
+        internal bool IsSetLatestDeviceJob()
+        {
+            return this._latestDeviceJob != null;
         }
 
         /// <summary>
@@ -148,6 +248,43 @@ namespace Amazon.Panorama.Model
         internal bool IsSetProvisioningStatus()
         {
             return this._provisioningStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The device's tags.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=50)]
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// The device's type.
+        /// </para>
+        /// </summary>
+        public DeviceType Type
+        {
+            get { return this._type; }
+            set { this._type = value; }
+        }
+
+        // Check to see if Type property is set
+        internal bool IsSetType()
+        {
+            return this._type != null;
         }
 
     }

@@ -131,6 +131,7 @@ namespace Amazon.EventBridge.Model
         /// and Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=4096)]
         public string EventPattern
         {
             get { return this._eventPattern; }

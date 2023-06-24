@@ -31,9 +31,9 @@ namespace Amazon.GameLift.Model
     /// <summary>
     /// Container for the parameters to the StartMatchmaking operation.
     /// Uses FlexMatch to create a game match for a group of players based on custom matchmaking
-    /// rules. With games that use GameLift managed hosting, this operation also triggers
-    /// GameLift to find hosting resources and start a new game session for the new match.
-    /// Each matchmaking request includes information on one or more players and specifies
+    /// rules. With games that use Amazon GameLift managed hosting, this operation also triggers
+    /// Amazon GameLift to find hosting resources and start a new game session for the new
+    /// match. Each matchmaking request includes information on one or more players and specifies
     /// the FlexMatch matchmaker to use. When a request is for multiple players, FlexMatch
     /// attempts to build a match that includes all players in the request, placing them in
     /// the same team and finding additional players as needed to fill the match. 
@@ -49,8 +49,8 @@ namespace Amazon.GameLift.Model
     /// <para>
     /// Track matchmaking events to respond as needed and acquire game session connection
     /// information for successfully completed matches. Ticket status updates are tracked
-    /// using event notification through Amazon Simple Notification Service (SNS), which is
-    /// defined in the matchmaking configuration.
+    /// using event notification through Amazon Simple Notification Service, which is defined
+    /// in the matchmaking configuration.
     /// </para>
     ///  
     /// <para>
@@ -69,17 +69,7 @@ namespace Amazon.GameLift.Model
     ///  
     /// <para>
     ///  <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/gamelift-match.html">
-    /// How GameLift FlexMatch works</a> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <b>Related actions</b> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <a>StartMatchmaking</a> | <a>DescribeMatchmaking</a> | <a>StopMatchmaking</a> | <a>AcceptMatch</a>
-    /// | <a>StartMatchBackfill</a> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
-    /// APIs by task</a> 
+    /// How Amazon GameLift FlexMatch works</a> 
     /// </para>
     /// </summary>
     public partial class StartMatchmakingRequest : AmazonGameLiftRequest
@@ -116,6 +106,10 @@ namespace Amazon.GameLift.Model
         /// and may contain player attributes and latency data to be used in the matchmaking process.
         /// After a successful match, <code>Player</code> objects contain the name of the team
         /// the player is assigned to.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can include up to 10 <code>Players</code> in a <code>StartMatchmaking</code> request.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RAM.Model
 {
     /// <summary>
-    /// A parameter is not valid.
+    /// The operation failed because a parameter you specified isn't valid.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

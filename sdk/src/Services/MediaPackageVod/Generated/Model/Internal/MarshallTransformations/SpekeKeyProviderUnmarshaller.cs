@@ -64,6 +64,12 @@ namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("encryptionContractConfiguration", targetDepth))
+                {
+                    var unmarshaller = EncryptionContractConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.EncryptionContractConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("roleArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

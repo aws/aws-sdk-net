@@ -33,10 +33,70 @@ namespace Amazon.Route53Domains.Model
     /// </summary>
     public partial class OperationSummary
     {
+        private string _domainName;
+        private DateTime? _lastUpdatedDate;
+        private string _message;
         private string _operationId;
         private OperationStatus _status;
+        private StatusFlag _statusFlag;
         private DateTime? _submittedDate;
         private OperationType _type;
+
+        /// <summary>
+        /// Gets and sets the property DomainName. 
+        /// <para>
+        ///  Name of the domain. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=255)]
+        public string DomainName
+        {
+            get { return this._domainName; }
+            set { this._domainName = value; }
+        }
+
+        // Check to see if DomainName property is set
+        internal bool IsSetDomainName()
+        {
+            return this._domainName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastUpdatedDate. 
+        /// <para>
+        ///  The date when the last change was made in Unix time format and Coordinated Universal
+        /// Time (UTC). 
+        /// </para>
+        /// </summary>
+        public DateTime LastUpdatedDate
+        {
+            get { return this._lastUpdatedDate.GetValueOrDefault(); }
+            set { this._lastUpdatedDate = value; }
+        }
+
+        // Check to see if LastUpdatedDate property is set
+        internal bool IsSetLastUpdatedDate()
+        {
+            return this._lastUpdatedDate.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Message. 
+        /// <para>
+        ///  Message about the operation. 
+        /// </para>
+        /// </summary>
+        public string Message
+        {
+            get { return this._message; }
+            set { this._message = value; }
+        }
+
+        // Check to see if Message property is set
+        internal bool IsSetMessage()
+        {
+            return this._message != null;
+        }
 
         /// <summary>
         /// Gets and sets the property OperationId. 
@@ -44,7 +104,7 @@ namespace Amazon.Route53Domains.Model
         /// Identifier returned to track the requested action.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=255)]
+        [AWSProperty(Max=255)]
         public string OperationId
         {
             get { return this._operationId; }
@@ -63,7 +123,6 @@ namespace Amazon.Route53Domains.Model
         /// The current status of the requested operation in the system.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public OperationStatus Status
         {
             get { return this._status; }
@@ -77,12 +136,60 @@ namespace Amazon.Route53Domains.Model
         }
 
         /// <summary>
+        /// Gets and sets the property StatusFlag. 
+        /// <para>
+        ///  Automatically checks whether there are no outstanding operations on domains that
+        /// need customer attention. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  Valid values are:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>PENDING_ACCEPTANCE</code>: The operation is waiting for acceptance from the
+        /// account that is receiving the domain.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>PENDING_CUSTOMER_ACTION</code>: The operation is waiting for customer action,
+        /// for example, returning an email.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>PENDING_AUTHORIZATION</code>: The operation is waiting for the form of authorization.
+        /// For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ResendOperationAuthorization.html">ResendOperationAuthorization</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>PENDING_PAYMENT_VERIFICATION</code>: The operation is waiting for the payment
+        /// method to validate.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>PENDING_SUPPORT_CASE</code>: The operation includes a support case and is waiting
+        /// for its resolution.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public StatusFlag StatusFlag
+        {
+            get { return this._statusFlag; }
+            set { this._statusFlag = value; }
+        }
+
+        // Check to see if StatusFlag property is set
+        internal bool IsSetStatusFlag()
+        {
+            return this._statusFlag != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SubmittedDate. 
         /// <para>
         /// The date when the request was submitted.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public DateTime SubmittedDate
         {
             get { return this._submittedDate.GetValueOrDefault(); }
@@ -101,7 +208,6 @@ namespace Amazon.Route53Domains.Model
         /// Type of the action requested.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public OperationType Type
         {
             get { return this._type; }

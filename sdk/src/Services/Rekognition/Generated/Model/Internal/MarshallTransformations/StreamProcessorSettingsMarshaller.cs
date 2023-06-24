@@ -34,7 +34,7 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// StreamProcessorSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class StreamProcessorSettingsMarshaller : IRequestMarshaller<StreamProcessorSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -45,6 +45,17 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(StreamProcessorSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetConnectedHome())
+            {
+                context.Writer.WritePropertyName("ConnectedHome");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ConnectedHomeSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.ConnectedHome, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetFaceSearch())
             {
                 context.Writer.WritePropertyName("FaceSearch");
@@ -60,7 +71,7 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static StreamProcessorSettingsMarshaller Instance = new StreamProcessorSettingsMarshaller();
 
     }

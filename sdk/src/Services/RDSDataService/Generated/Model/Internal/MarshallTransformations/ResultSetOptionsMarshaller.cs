@@ -34,7 +34,7 @@ namespace Amazon.RDSDataService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ResultSetOptions Marshaller
-    /// </summary>       
+    /// </summary>
     public class ResultSetOptionsMarshaller : IRequestMarshaller<ResultSetOptions, JsonMarshallerContext> 
     {
         /// <summary>
@@ -51,11 +51,17 @@ namespace Amazon.RDSDataService.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.DecimalReturnType);
             }
 
+            if(requestObject.IsSetLongReturnType())
+            {
+                context.Writer.WritePropertyName("longReturnType");
+                context.Writer.Write(requestObject.LongReturnType);
+            }
+
         }
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ResultSetOptionsMarshaller Instance = new ResultSetOptionsMarshaller();
 
     }

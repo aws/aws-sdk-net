@@ -30,45 +30,23 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteVpcEndpoints operation.
-    /// Deletes one or more specified VPC endpoints. You can delete any of the following types
-    /// of VPC endpoints. 
+    /// Deletes the specified VPC endpoints.
     /// 
-    ///  <ul> <li> 
-    /// <para>
-    /// Gateway endpoint,
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// Gateway Load Balancer endpoint,
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// Interface endpoint
-    /// </para>
-    ///  </li> </ul> 
-    /// <para>
-    /// The following rules apply when you delete a VPC endpoint:
-    /// </para>
-    ///  <ul> <li> 
+    ///  
     /// <para>
     /// When you delete a gateway endpoint, we delete the endpoint routes in the route tables
-    /// that are associated with the endpoint.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// When you delete a Gateway Load Balancer endpoint, we delete the endpoint network interfaces.
-    /// 
+    /// for the endpoint.
     /// </para>
     ///  
     /// <para>
+    /// When you delete a Gateway Load Balancer endpoint, we delete its endpoint network interfaces.
     /// You can only delete Gateway Load Balancer endpoints when the routes that are associated
     /// with the endpoint are deleted.
     /// </para>
-    ///  </li> <li> 
+    ///  
     /// <para>
-    /// When you delete an interface endpoint, we delete the endpoint network interfaces.
+    /// When you delete an interface endpoint, we delete its endpoint network interfaces.
     /// </para>
-    ///  </li> </ul>
     /// </summary>
     public partial class DeleteVpcEndpointsRequest : AmazonEC2Request
     {
@@ -77,7 +55,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property VpcEndpointIds. 
         /// <para>
-        /// One or more VPC endpoint IDs.
+        /// The IDs of the VPC endpoints.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

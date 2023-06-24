@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// 
+    /// The currently active data capture configuration used by your Endpoint.
     /// </summary>
     public partial class DataCaptureConfigSummary
     {
@@ -40,7 +40,10 @@ namespace Amazon.SageMaker.Model
         private string _kmsKeyId;
 
         /// <summary>
-        /// Gets and sets the property CaptureStatus.
+        /// Gets and sets the property CaptureStatus. 
+        /// <para>
+        /// Whether data capture is currently functional.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public CaptureStatus CaptureStatus
@@ -56,7 +59,10 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CurrentSamplingPercentage.
+        /// Gets and sets the property CurrentSamplingPercentage. 
+        /// <para>
+        /// The percentage of requests being captured by your Endpoint.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=100)]
         public int CurrentSamplingPercentage
@@ -72,7 +78,10 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DestinationS3Uri.
+        /// Gets and sets the property DestinationS3Uri. 
+        /// <para>
+        /// The Amazon S3 location being used to capture the data.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=512)]
         public string DestinationS3Uri
@@ -88,7 +97,10 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EnableCapture.
+        /// Gets and sets the property EnableCapture. 
+        /// <para>
+        /// Whether data capture is enabled or disabled.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public bool EnableCapture
@@ -104,7 +116,10 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
-        /// Gets and sets the property KmsKeyId.
+        /// Gets and sets the property KmsKeyId. 
+        /// <para>
+        /// The KMS key being used to encrypt the data in Amazon S3.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=2048)]
         public string KmsKeyId

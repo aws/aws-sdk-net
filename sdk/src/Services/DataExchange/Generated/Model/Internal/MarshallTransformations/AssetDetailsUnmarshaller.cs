@@ -64,10 +64,28 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("ApiGatewayApiAsset", targetDepth))
+                {
+                    var unmarshaller = ApiGatewayApiAssetUnmarshaller.Instance;
+                    unmarshalledObject.ApiGatewayApiAsset = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("LakeFormationDataPermissionAsset", targetDepth))
+                {
+                    var unmarshaller = LakeFormationDataPermissionAssetUnmarshaller.Instance;
+                    unmarshalledObject.LakeFormationDataPermissionAsset = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("RedshiftDataShareAsset", targetDepth))
                 {
                     var unmarshaller = RedshiftDataShareAssetUnmarshaller.Instance;
                     unmarshalledObject.RedshiftDataShareAsset = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("S3DataAccessAsset", targetDepth))
+                {
+                    var unmarshaller = S3DataAccessAssetUnmarshaller.Instance;
+                    unmarshalledObject.S3DataAccessAsset = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("S3SnapshotAsset", targetDepth))

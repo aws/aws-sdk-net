@@ -17,22 +17,22 @@
  * Do not modify this file. This file is generated from the mobile-2017-07-01.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
-
+using Amazon.Mobile.Internal;
 
 namespace Amazon.Mobile
 {
     /// <summary>
     /// Configuration for accessing Amazon Mobile service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonMobileConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.105");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.147");
 
         private string _userAgent = UserAgentString;
 
@@ -40,8 +40,10 @@ namespace Amazon.Mobile
         /// Default constructor
         /// </summary>
         public AmazonMobileConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonMobileDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "AWSMobileHubService";
+            this.EndpointProvider = new AmazonMobileEndpointProvider();
         }
 
         /// <summary>
@@ -76,5 +78,6 @@ namespace Amazon.Mobile
                 return _userAgent;
             }
         }
+
     }
 }

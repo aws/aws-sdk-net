@@ -34,9 +34,9 @@ namespace Amazon.SageMaker.Model
     /// is the main way to reference a "person" for the purposes of sharing, reporting, and
     /// other user-oriented features. This entity is created when a user onboards to Amazon
     /// SageMaker Studio. If an administrator invites a person by email or imports them from
-    /// SSO, a user profile is automatically created. A user profile is the primary holder
-    /// of settings for an individual user and has a reference to the user's private Amazon
-    /// Elastic File System (EFS) home directory.
+    /// IAM Identity Center, a user profile is automatically created. A user profile is the
+    /// primary holder of settings for an individual user and has a reference to the user's
+    /// private Amazon Elastic File System (EFS) home directory.
     /// </summary>
     public partial class CreateUserProfileRequest : AmazonSageMakerRequest
     {
@@ -70,8 +70,9 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property SingleSignOnUserIdentifier. 
         /// <para>
         /// A specifier for the type of value specified in SingleSignOnUserValue. Currently, the
-        /// only supported value is "UserName". If the Domain's AuthMode is SSO, this field is
-        /// required. If the Domain's AuthMode is not SSO, this field cannot be specified. 
+        /// only supported value is "UserName". If the Domain's AuthMode is IAM Identity Center,
+        /// this field is required. If the Domain's AuthMode is not IAM Identity Center, this
+        /// field cannot be specified. 
         /// </para>
         /// </summary>
         public string SingleSignOnUserIdentifier
@@ -90,9 +91,9 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property SingleSignOnUserValue. 
         /// <para>
         /// The username of the associated Amazon Web Services Single Sign-On User for this UserProfile.
-        /// If the Domain's AuthMode is SSO, this field is required, and must match a valid username
-        /// of a user in your directory. If the Domain's AuthMode is not SSO, this field cannot
-        /// be specified. 
+        /// If the Domain's AuthMode is IAM Identity Center, this field is required, and must
+        /// match a valid username of a user in your directory. If the Domain's AuthMode is not
+        /// IAM Identity Center, this field cannot be specified. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=256)]

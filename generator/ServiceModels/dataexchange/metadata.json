@@ -1,5 +1,6 @@
 {
   "active": true,
   "synopsis": "Introducing AWS Data Exchange, a service that makes it easy for AWS customers to securely create, manage, access, and exchange data sets in the cloud.",
-  "generate-client-constructors": true
+  "generate-client-constructors": true,
+  "legacy-service-id": "DataExchange"
 }

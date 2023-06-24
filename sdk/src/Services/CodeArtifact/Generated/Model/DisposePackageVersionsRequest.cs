@@ -80,8 +80,8 @@ namespace Amazon.CodeArtifact.Model
         /// <summary>
         /// Gets and sets the property DomainOwner. 
         /// <para>
-        ///  The 12-digit account number of the AWS account that owns the domain. It does not
-        /// include dashes or spaces. 
+        ///  The 12-digit account number of the Amazon Web Services account that owns the domain.
+        /// It does not include dashes or spaces. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=12)]
@@ -100,29 +100,8 @@ namespace Amazon.CodeArtifact.Model
         /// <summary>
         /// Gets and sets the property ExpectedStatus. 
         /// <para>
-        ///  The expected status of the package version to dispose. Valid values are: 
+        ///  The expected status of the package version to dispose. 
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>Published</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>Unfinished</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>Unlisted</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>Archived</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>Disposed</code> 
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         public PackageVersionStatus ExpectedStatus
         {
@@ -139,22 +118,8 @@ namespace Amazon.CodeArtifact.Model
         /// <summary>
         /// Gets and sets the property Format. 
         /// <para>
-        ///  A format that specifies the type of package versions you want to dispose. The valid
-        /// values are: 
+        ///  A format that specifies the type of package versions you want to dispose. 
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>npm</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>pypi</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>maven</code> 
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public PackageFormat Format
@@ -172,21 +137,25 @@ namespace Amazon.CodeArtifact.Model
         /// <summary>
         /// Gets and sets the property Namespace. 
         /// <para>
-        ///  The namespace of the package. The package component that specifies its namespace
-        /// depends on its type. For example: 
+        /// The namespace of the package versions to be disposed. The package version component
+        /// that specifies its namespace depends on its type. For example:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  The namespace of a Maven package is its <code>groupId</code>. 
+        ///  The namespace of a Maven package version is its <code>groupId</code>. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  The namespace of an npm package is its <code>scope</code>. 
+        ///  The namespace of an npm package version is its <code>scope</code>. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  A Python package does not contain a corresponding component, so Python packages do
-        /// not have a namespace. 
+        ///  Python and NuGet package versions do not contain a corresponding component, package
+        /// versions of those formats do not have a namespace. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  The namespace of a generic package is its <code>namespace</code>. 
         /// </para>
         ///  </li> </ul>
         /// </summary>

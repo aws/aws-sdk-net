@@ -55,18 +55,24 @@ namespace Amazon.SageMakerFeatureStoreRuntime.Model.Internal.MarshallTransformat
         public IRequest Marshall(DeleteRecordRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.SageMakerFeatureStoreRuntime");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-07-01";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-07-01";
             request.HttpMethod = "DELETE";
 
             if (!publicRequest.IsSetFeatureGroupName())
                 throw new AmazonSageMakerFeatureStoreRuntimeException("Request object does not have required field FeatureGroupName set");
             request.AddPathResource("{FeatureGroupName}", StringUtils.FromString(publicRequest.FeatureGroupName));
             
+            if (publicRequest.IsSetDeletionMode())
+                request.Parameters.Add("DeletionMode", StringUtils.FromString(publicRequest.DeletionMode));
+            
             if (publicRequest.IsSetEventTime())
                 request.Parameters.Add("EventTime", StringUtils.FromString(publicRequest.EventTime));
             
             if (publicRequest.IsSetRecordIdentifierValueAsString())
                 request.Parameters.Add("RecordIdentifierValueAsString", StringUtils.FromString(publicRequest.RecordIdentifierValueAsString));
+            
+            if (publicRequest.IsSetTargetStores())
+                request.ParameterCollection.Add("TargetStores", publicRequest.TargetStores);
             request.ResourcePath = "/FeatureGroup/{FeatureGroupName}";
             request.UseQueryString = true;
 

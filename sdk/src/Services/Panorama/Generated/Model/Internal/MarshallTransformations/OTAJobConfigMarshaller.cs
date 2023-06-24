@@ -34,7 +34,7 @@ namespace Amazon.Panorama.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// OTAJobConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class OTAJobConfigMarshaller : IRequestMarshaller<OTAJobConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -45,6 +45,12 @@ namespace Amazon.Panorama.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(OTAJobConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAllowMajorVersionUpdate())
+            {
+                context.Writer.WritePropertyName("AllowMajorVersionUpdate");
+                context.Writer.Write(requestObject.AllowMajorVersionUpdate);
+            }
+
             if(requestObject.IsSetImageVersion())
             {
                 context.Writer.WritePropertyName("ImageVersion");
@@ -55,7 +61,7 @@ namespace Amazon.Panorama.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static OTAJobConfigMarshaller Instance = new OTAJobConfigMarshaller();
 
     }

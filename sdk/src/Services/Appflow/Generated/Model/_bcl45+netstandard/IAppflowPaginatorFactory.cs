@@ -41,6 +41,11 @@ namespace Amazon.Appflow.Model
         IDescribeFlowExecutionRecordsPaginator DescribeFlowExecutionRecords(DescribeFlowExecutionRecordsRequest request);
 
         /// <summary>
+        /// Paginator for ListConnectors operation
+        ///</summary>
+        IListConnectorsPaginator ListConnectors(ListConnectorsRequest request);
+
+        /// <summary>
         /// Paginator for ListFlows operation
         ///</summary>
         IListFlowsPaginator ListFlows(ListFlowsRequest request);

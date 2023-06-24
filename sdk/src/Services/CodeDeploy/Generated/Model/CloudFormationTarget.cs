@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeDeploy.Model
 {
     /// <summary>
-    /// Information about the target to be updated by an AWS CloudFormation blue/green deployment.
+    /// Information about the target to be updated by an CloudFormation blue/green deployment.
     /// This target type is used for all deployments initiated by a CloudFormation stack update.
     /// </summary>
     public partial class CloudFormationTarget
@@ -45,7 +45,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property DeploymentId. 
         /// <para>
-        /// The unique ID of an AWS CloudFormation blue/green deployment.
+        /// The unique ID of an CloudFormation blue/green deployment.
         /// </para>
         /// </summary>
         public string DeploymentId
@@ -63,8 +63,8 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property LastUpdatedAt. 
         /// <para>
-        ///  The date and time when the target application was updated by an AWS CloudFormation
-        /// blue/green deployment. 
+        ///  The date and time when the target application was updated by an CloudFormation blue/green
+        /// deployment. 
         /// </para>
         /// </summary>
         public DateTime LastUpdatedAt
@@ -82,8 +82,8 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property LifecycleEvents. 
         /// <para>
-        ///  The lifecycle events of the AWS CloudFormation blue/green deployment to this target
-        /// application. 
+        ///  The lifecycle events of the CloudFormation blue/green deployment to this target application.
+        /// 
         /// </para>
         /// </summary>
         public List<LifecycleEvent> LifecycleEvents
@@ -101,7 +101,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The resource type for the AWS CloudFormation blue/green deployment.
+        /// The resource type for the CloudFormation blue/green deployment.
         /// </para>
         /// </summary>
         public string ResourceType
@@ -119,7 +119,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        ///  The status of an AWS CloudFormation blue/green deployment's target application. 
+        ///  The status of an CloudFormation blue/green deployment's target application. 
         /// </para>
         /// </summary>
         public TargetStatus Status
@@ -156,7 +156,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property TargetVersionWeight. 
         /// <para>
-        /// The percentage of production traffic that the target version of an AWS CloudFormation
+        /// The percentage of production traffic that the target version of an CloudFormation
         /// blue/green deployment receives.
         /// </para>
         /// </summary>

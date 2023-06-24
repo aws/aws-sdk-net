@@ -34,7 +34,7 @@ namespace Amazon.FinSpaceData.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SchemaUnion Marshaller
-    /// </summary>       
+    /// </summary>
     public class SchemaUnionMarshaller : IRequestMarshaller<SchemaUnion, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.FinSpaceData.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SchemaUnionMarshaller Instance = new SchemaUnionMarshaller();
 
     }

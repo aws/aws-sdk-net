@@ -38,7 +38,7 @@ namespace Amazon.WellArchitected.Model
         /// <summary>
         /// Gets and sets the property ShareInvitation. 
         /// <para>
-        /// The updated workload share invitation.
+        /// The updated workload or custom lens share invitation.
         /// </para>
         /// </summary>
         public ShareInvitation ShareInvitation

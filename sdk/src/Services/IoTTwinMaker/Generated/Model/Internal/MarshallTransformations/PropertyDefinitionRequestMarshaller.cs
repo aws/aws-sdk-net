@@ -34,7 +34,7 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// PropertyDefinitionRequest Marshaller
-    /// </summary>       
+    /// </summary>
     public class PropertyDefinitionRequestMarshaller : IRequestMarshaller<PropertyDefinitionRequest, JsonMarshallerContext> 
     {
         /// <summary>
@@ -81,6 +81,12 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetDisplayName())
+            {
+                context.Writer.WritePropertyName("displayName");
+                context.Writer.Write(requestObject.DisplayName);
+            }
+
             if(requestObject.IsSetIsExternalId())
             {
                 context.Writer.WritePropertyName("isExternalId");
@@ -109,7 +115,7 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static PropertyDefinitionRequestMarshaller Instance = new PropertyDefinitionRequestMarshaller();
 
     }

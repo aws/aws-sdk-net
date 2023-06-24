@@ -66,7 +66,7 @@ namespace Amazon.AuditManager.Model
         ///  The control sets that are associated with the framework. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1)]
         public List<UpdateAssessmentFrameworkControlSet> ControlSets
         {
             get { return this._controlSets; }

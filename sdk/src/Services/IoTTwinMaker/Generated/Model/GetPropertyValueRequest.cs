@@ -43,7 +43,11 @@ namespace Amazon.IoTTwinMaker.Model
         private string _componentName;
         private string _componentTypeId;
         private string _entityId;
+        private int? _maxResults;
+        private string _nextToken;
+        private string _propertyGroupName;
         private List<string> _selectedProperties = new List<string>();
+        private TabularConditions _tabularConditions;
         private string _workspaceId;
 
         /// <summary>
@@ -104,6 +108,67 @@ namespace Amazon.IoTTwinMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// The maximum number of results to return at one time. The default is 25.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid Range: Minimum value of 1. Maximum value of 250.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=200)]
+        public int MaxResults
+        {
+            get { return this._maxResults.GetValueOrDefault(); }
+            set { this._maxResults = value; }
+        }
+
+        // Check to see if MaxResults property is set
+        internal bool IsSetMaxResults()
+        {
+            return this._maxResults.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The string that specifies the next page of results.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=17880)]
+        public string NextToken
+        {
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
+        }
+
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
+        {
+            return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PropertyGroupName. 
+        /// <para>
+        /// The property group name.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string PropertyGroupName
+        {
+            get { return this._propertyGroupName; }
+            set { this._propertyGroupName = value; }
+        }
+
+        // Check to see if PropertyGroupName property is set
+        internal bool IsSetPropertyGroupName()
+        {
+            return this._propertyGroupName != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SelectedProperties. 
         /// <para>
         /// The properties whose values the operation returns.
@@ -120,6 +185,24 @@ namespace Amazon.IoTTwinMaker.Model
         internal bool IsSetSelectedProperties()
         {
             return this._selectedProperties != null && this._selectedProperties.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TabularConditions. 
+        /// <para>
+        /// The tabular conditions.
+        /// </para>
+        /// </summary>
+        public TabularConditions TabularConditions
+        {
+            get { return this._tabularConditions; }
+            set { this._tabularConditions = value; }
+        }
+
+        // Check to see if TabularConditions property is set
+        internal bool IsSetTabularConditions()
+        {
+            return this._tabularConditions != null;
         }
 
         /// <summary>

@@ -34,7 +34,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// PresetSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class PresetSettingsMarshaller : IRequestMarshaller<PresetSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -103,7 +103,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static PresetSettingsMarshaller Instance = new PresetSettingsMarshaller();
 
     }

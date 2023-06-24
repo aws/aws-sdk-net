@@ -70,9 +70,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("DeviceName", StringUtils.FromString(publicRequest.DeviceName));
                 }
+                if(publicRequest.IsSetIpAddress())
+                {
+                    request.Parameters.Add("IpAddress", StringUtils.FromString(publicRequest.IpAddress));
+                }
                 if(publicRequest.IsSetPublicIp())
                 {
-                    request.Parameters.Add("IpAddress", StringUtils.FromString(publicRequest.PublicIp));
+                    request.Parameters.Add("PublicIp", StringUtils.FromString(publicRequest.PublicIp));
                 }
                 if(publicRequest.IsSetTagSpecifications())
                 {

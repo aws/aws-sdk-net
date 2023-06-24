@@ -34,7 +34,7 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SparkSubmitJobDriver Marshaller
-    /// </summary>       
+    /// </summary>
     public class SparkSubmitJobDriverMarshaller : IRequestMarshaller<SparkSubmitJobDriver, JsonMarshallerContext> 
     {
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SparkSubmitJobDriverMarshaller Instance = new SparkSubmitJobDriverMarshaller();
 
     }

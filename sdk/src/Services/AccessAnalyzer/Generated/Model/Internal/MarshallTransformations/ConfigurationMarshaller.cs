@@ -34,7 +34,7 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Configuration Marshaller
-    /// </summary>       
+    /// </summary>
     public class ConfigurationMarshaller : IRequestMarshaller<Configuration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -45,6 +45,39 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Configuration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetEbsSnapshot())
+            {
+                context.Writer.WritePropertyName("ebsSnapshot");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = EbsSnapshotConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.EbsSnapshot, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetEcrRepository())
+            {
+                context.Writer.WritePropertyName("ecrRepository");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = EcrRepositoryConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.EcrRepository, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetEfsFileSystem())
+            {
+                context.Writer.WritePropertyName("efsFileSystem");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = EfsFileSystemConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.EfsFileSystem, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetIamRole())
             {
                 context.Writer.WritePropertyName("iamRole");
@@ -63,6 +96,28 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
 
                 var marshaller = KmsKeyConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.KmsKey, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetRdsDbClusterSnapshot())
+            {
+                context.Writer.WritePropertyName("rdsDbClusterSnapshot");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = RdsDbClusterSnapshotConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.RdsDbClusterSnapshot, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetRdsDbSnapshot())
+            {
+                context.Writer.WritePropertyName("rdsDbSnapshot");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = RdsDbSnapshotConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.RdsDbSnapshot, context);
 
                 context.Writer.WriteObjectEnd();
             }
@@ -89,6 +144,17 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetSnsTopic())
+            {
+                context.Writer.WritePropertyName("snsTopic");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = SnsTopicConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.SnsTopic, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetSqsQueue())
             {
                 context.Writer.WritePropertyName("sqsQueue");
@@ -104,7 +170,7 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ConfigurationMarshaller Instance = new ConfigurationMarshaller();
 
     }

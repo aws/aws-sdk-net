@@ -34,7 +34,7 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// EndpointNetworkConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class EndpointNetworkConfigurationMarshaller : IRequestMarshaller<EndpointNetworkConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static EndpointNetworkConfigurationMarshaller Instance = new EndpointNetworkConfigurationMarshaller();
 
     }

@@ -46,6 +46,8 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
         {
             DescribeJobResponse response = new DescribeJobResponse();
             context.AllowEmptyElementLookup.Add("S3DeleteObjectTagging");
+            context.AllowEmptyElementLookup.Add("S3ReplicateObject");
+            context.AllowEmptyElementLookup.Add("SSE-S3");
             UnmarshallResult(context,response);
             
             return response;

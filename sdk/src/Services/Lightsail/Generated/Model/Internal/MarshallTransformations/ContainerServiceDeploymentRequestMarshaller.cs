@@ -34,7 +34,7 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ContainerServiceDeploymentRequest Marshaller
-    /// </summary>       
+    /// </summary>
     public class ContainerServiceDeploymentRequestMarshaller : IRequestMarshaller<ContainerServiceDeploymentRequest, JsonMarshallerContext> 
     {
         /// <summary>
@@ -79,7 +79,7 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ContainerServiceDeploymentRequestMarshaller Instance = new ContainerServiceDeploymentRequestMarshaller();
 
     }

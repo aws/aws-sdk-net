@@ -35,6 +35,8 @@ namespace Amazon.Glue.Model
     {
         private bool? _allowSingleColumn;
         private CsvHeaderOption _containsHeader;
+        private bool? _customDatatypeConfigured;
+        private List<string> _customDatatypes = new List<string>();
         private string _delimiter;
         private bool? _disableValueTrimming;
         private List<string> _header = new List<string>();
@@ -75,6 +77,42 @@ namespace Amazon.Glue.Model
         internal bool IsSetContainsHeader()
         {
             return this._containsHeader != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomDatatypeConfigured. 
+        /// <para>
+        /// Enables the configuration of custom datatypes.
+        /// </para>
+        /// </summary>
+        public bool CustomDatatypeConfigured
+        {
+            get { return this._customDatatypeConfigured.GetValueOrDefault(); }
+            set { this._customDatatypeConfigured = value; }
+        }
+
+        // Check to see if CustomDatatypeConfigured property is set
+        internal bool IsSetCustomDatatypeConfigured()
+        {
+            return this._customDatatypeConfigured.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomDatatypes. 
+        /// <para>
+        /// Creates a list of supported custom datatypes.
+        /// </para>
+        /// </summary>
+        public List<string> CustomDatatypes
+        {
+            get { return this._customDatatypes; }
+            set { this._customDatatypes = value; }
+        }
+
+        // Check to see if CustomDatatypes property is set
+        internal bool IsSetCustomDatatypes()
+        {
+            return this._customDatatypes != null && this._customDatatypes.Count > 0; 
         }
 
         /// <summary>

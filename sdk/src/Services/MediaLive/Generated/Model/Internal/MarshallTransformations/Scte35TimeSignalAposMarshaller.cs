@@ -34,7 +34,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Scte35TimeSignalApos Marshaller
-    /// </summary>       
+    /// </summary>
     public class Scte35TimeSignalAposMarshaller : IRequestMarshaller<Scte35TimeSignalApos, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static Scte35TimeSignalAposMarshaller Instance = new Scte35TimeSignalAposMarshaller();
 
     }

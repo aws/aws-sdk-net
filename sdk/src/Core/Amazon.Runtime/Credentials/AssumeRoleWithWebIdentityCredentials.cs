@@ -214,8 +214,7 @@ namespace Amazon.Runtime
         /// <returns>The STS client.</returns>
         protected virtual ICoreAmazonSTS_WebIdentity CreateClient()
         {
-            var configuredRegion = AWSConfigs.AWSRegion;
-            var region = string.IsNullOrEmpty(configuredRegion) ? _defaultSTSClientRegion : RegionEndpoint.GetBySystemName(configuredRegion);
+            var region = FallbackRegionFactory.GetRegionEndpoint() ?? _defaultSTSClientRegion;
 
             try
             {

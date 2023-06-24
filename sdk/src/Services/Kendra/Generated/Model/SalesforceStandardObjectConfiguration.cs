@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kendra.Model
 {
     /// <summary>
-    /// Specifies configuration information for indexing a single standard object.
+    /// Provides the configuration information for indexing a single standard object.
     /// </summary>
     public partial class SalesforceStandardObjectConfiguration
     {
@@ -79,8 +79,11 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property FieldMappings. 
         /// <para>
-        /// One or more objects that map fields in the standard object to Amazon Kendra index
-        /// fields. The index field must exist before you can map a Salesforce field to it.
+        /// Maps attributes or field names of the standard object to Amazon Kendra index field
+        /// names. To create custom fields, use the <code>UpdateIndex</code> API before you map
+        /// to Salesforce fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
+        /// data source fields</a>. The Salesforce data source field names must exist in your
+        /// Salesforce custom metadata.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

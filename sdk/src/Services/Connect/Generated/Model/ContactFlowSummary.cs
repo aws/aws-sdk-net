@@ -29,11 +29,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// Contains summary information about a contact flow.
+    /// Contains summary information about a flow.
     /// 
     ///  
     /// <para>
-    /// You can also create and update contact flows using the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon
+    /// You can also create and update flows using the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language.html">Amazon
     /// Connect Flow language</a>.
     /// </para>
     /// </summary>
@@ -48,7 +48,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the contact flow.
+        /// The Amazon Resource Name (ARN) of the flow.
         /// </para>
         /// </summary>
         public string Arn
@@ -66,7 +66,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property ContactFlowState. 
         /// <para>
-        /// The type of contact flow.
+        /// The type of flow.
         /// </para>
         /// </summary>
         public ContactFlowState ContactFlowState
@@ -84,7 +84,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property ContactFlowType. 
         /// <para>
-        /// The type of contact flow.
+        /// The type of flow.
         /// </para>
         /// </summary>
         public ContactFlowType ContactFlowType
@@ -102,7 +102,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The identifier of the contact flow.
+        /// The identifier of the flow.
         /// </para>
         /// </summary>
         [AWSProperty(Max=500)]
@@ -121,7 +121,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the contact flow.
+        /// The name of the flow.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

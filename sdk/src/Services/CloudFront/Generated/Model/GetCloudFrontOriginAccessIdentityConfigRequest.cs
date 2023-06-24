@@ -44,7 +44,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Instantiates GetCloudFrontOriginAccessIdentityConfigRequest with the parameterized properties
         /// </summary>
-        /// <param name="id">The identity's ID. </param>
+        /// <param name="id">The identity's ID.</param>
         public GetCloudFrontOriginAccessIdentityConfigRequest(string id)
         {
             _id = id;
@@ -53,7 +53,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The identity's ID. 
+        /// The identity's ID.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

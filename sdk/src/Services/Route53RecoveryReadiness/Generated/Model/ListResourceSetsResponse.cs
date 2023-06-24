@@ -37,8 +37,10 @@ namespace Amazon.Route53RecoveryReadiness.Model
         private List<ResourceSetOutput> _resourceSets = new List<ResourceSetOutput>();
 
         /// <summary>
-        /// Gets and sets the property NextToken. A token that can be used to resume pagination
-        /// from the end of the collection.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The token that identifies which batch of results you want to see.
+        /// </para>
         /// </summary>
         public string NextToken
         {
@@ -53,8 +55,10 @@ namespace Amazon.Route53RecoveryReadiness.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ResourceSets. A list of ResourceSets associated with the
-        /// account
+        /// Gets and sets the property ResourceSets. 
+        /// <para>
+        /// A list of resource sets associated with the account.
+        /// </para>
         /// </summary>
         public List<ResourceSetOutput> ResourceSets
         {

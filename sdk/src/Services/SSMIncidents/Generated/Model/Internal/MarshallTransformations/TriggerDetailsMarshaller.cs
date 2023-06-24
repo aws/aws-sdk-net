@@ -34,7 +34,7 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// TriggerDetails Marshaller
-    /// </summary>       
+    /// </summary>
     public class TriggerDetailsMarshaller : IRequestMarshaller<TriggerDetails, JsonMarshallerContext> 
     {
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static TriggerDetailsMarshaller Instance = new TriggerDetailsMarshaller();
 
     }

@@ -38,15 +38,7 @@ namespace Amazon.AlexaForBusiness
     /// <summary>
     /// Implementation for accessing AlexaForBusiness
     ///
-    /// Alexa for Business helps you use Alexa in your organization. Alexa for Business provides
-    /// you with the tools to manage Alexa devices, enroll your users, and assign skills,
-    /// at scale. You can build your own context-aware voice skills using the Alexa Skills
-    /// Kit and the Alexa for Business API operations. You can also make these available as
-    /// private skills for your organization. Alexa for Business makes it efficient to voice-enable
-    /// your products and services, thus providing context-aware voice experiences for your
-    /// customers. Device makers building with the Alexa Voice Service (AVS) can create fully
-    /// integrated solutions, register their products with Alexa for Business, and manage
-    /// them as shared devices in their organization.
+    /// Alexa for Business has been retired and is no longer supported.
     /// </summary>
     public partial class AmazonAlexaForBusinessClient : AmazonServiceClient, IAmazonAlexaForBusiness
     {
@@ -237,6 +229,15 @@ namespace Amazon.AlexaForBusiness
         }    
 
         /// <summary>
+        /// Customize the pipeline
+        /// </summary>
+        /// <param name="pipeline"></param>
+        protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
+        {
+            pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonAlexaForBusinessEndpointResolver());
+        }    
+        /// <summary>
         /// Capture metadata for the service.
         /// </summary>
         protected override IServiceMetadata ServiceMetadata
@@ -282,6 +283,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ApproveSkill">REST API Reference for ApproveSkill Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual ApproveSkillResponse ApproveSkill(ApproveSkillRequest request)
         {
             var options = new InvokeOptions();
@@ -312,6 +314,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ApproveSkill">REST API Reference for ApproveSkill Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual Task<ApproveSkillResponse> ApproveSkillAsync(ApproveSkillRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -336,6 +339,7 @@ namespace Amazon.AlexaForBusiness
         /// You are performing an action that would put you beyond your account's limits.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateContactWithAddressBook">REST API Reference for AssociateContactWithAddressBook Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual AssociateContactWithAddressBookResponse AssociateContactWithAddressBook(AssociateContactWithAddressBookRequest request)
         {
             var options = new InvokeOptions();
@@ -359,6 +363,7 @@ namespace Amazon.AlexaForBusiness
         /// You are performing an action that would put you beyond your account's limits.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateContactWithAddressBook">REST API Reference for AssociateContactWithAddressBook Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual Task<AssociateContactWithAddressBookResponse> AssociateContactWithAddressBookAsync(AssociateContactWithAddressBookRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -390,6 +395,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateDeviceWithNetworkProfile">REST API Reference for AssociateDeviceWithNetworkProfile Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual AssociateDeviceWithNetworkProfileResponse AssociateDeviceWithNetworkProfile(AssociateDeviceWithNetworkProfileRequest request)
         {
             var options = new InvokeOptions();
@@ -420,6 +426,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateDeviceWithNetworkProfile">REST API Reference for AssociateDeviceWithNetworkProfile Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual Task<AssociateDeviceWithNetworkProfileResponse> AssociateDeviceWithNetworkProfileAsync(AssociateDeviceWithNetworkProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -453,6 +460,7 @@ namespace Amazon.AlexaForBusiness
         /// You are performing an action that would put you beyond your account's limits.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateDeviceWithRoom">REST API Reference for AssociateDeviceWithRoom Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual AssociateDeviceWithRoomResponse AssociateDeviceWithRoom(AssociateDeviceWithRoomRequest request)
         {
             var options = new InvokeOptions();
@@ -485,6 +493,7 @@ namespace Amazon.AlexaForBusiness
         /// You are performing an action that would put you beyond your account's limits.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateDeviceWithRoom">REST API Reference for AssociateDeviceWithRoom Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual Task<AssociateDeviceWithRoomResponse> AssociateDeviceWithRoomAsync(AssociateDeviceWithRoomRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -510,6 +519,7 @@ namespace Amazon.AlexaForBusiness
         /// There is a concurrent modification of resources.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateSkillGroupWithRoom">REST API Reference for AssociateSkillGroupWithRoom Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual AssociateSkillGroupWithRoomResponse AssociateSkillGroupWithRoom(AssociateSkillGroupWithRoomRequest request)
         {
             var options = new InvokeOptions();
@@ -534,6 +544,7 @@ namespace Amazon.AlexaForBusiness
         /// There is a concurrent modification of resources.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateSkillGroupWithRoom">REST API Reference for AssociateSkillGroupWithRoom Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual Task<AssociateSkillGroupWithRoomResponse> AssociateSkillGroupWithRoomAsync(AssociateSkillGroupWithRoomRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -564,6 +575,7 @@ namespace Amazon.AlexaForBusiness
         /// The skill must be linked to a third-party account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateSkillWithSkillGroup">REST API Reference for AssociateSkillWithSkillGroup Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual AssociateSkillWithSkillGroupResponse AssociateSkillWithSkillGroup(AssociateSkillWithSkillGroupRequest request)
         {
             var options = new InvokeOptions();
@@ -593,6 +605,7 @@ namespace Amazon.AlexaForBusiness
         /// The skill must be linked to a third-party account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateSkillWithSkillGroup">REST API Reference for AssociateSkillWithSkillGroup Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual Task<AssociateSkillWithSkillGroupResponse> AssociateSkillWithSkillGroupAsync(AssociateSkillWithSkillGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -620,6 +633,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateSkillWithUsers">REST API Reference for AssociateSkillWithUsers Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual AssociateSkillWithUsersResponse AssociateSkillWithUsers(AssociateSkillWithUsersRequest request)
         {
             var options = new InvokeOptions();
@@ -646,6 +660,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateSkillWithUsers">REST API Reference for AssociateSkillWithUsers Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual Task<AssociateSkillWithUsersResponse> AssociateSkillWithUsersAsync(AssociateSkillWithUsersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -673,6 +688,7 @@ namespace Amazon.AlexaForBusiness
         /// You are performing an action that would put you beyond your account's limits.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateAddressBook">REST API Reference for CreateAddressBook Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual CreateAddressBookResponse CreateAddressBook(CreateAddressBookRequest request)
         {
             var options = new InvokeOptions();
@@ -699,6 +715,7 @@ namespace Amazon.AlexaForBusiness
         /// You are performing an action that would put you beyond your account's limits.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateAddressBook">REST API Reference for CreateAddressBook Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual Task<CreateAddressBookResponse> CreateAddressBookAsync(CreateAddressBookRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -724,6 +741,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource being created already exists.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateBusinessReportSchedule">REST API Reference for CreateBusinessReportSchedule Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual CreateBusinessReportScheduleResponse CreateBusinessReportSchedule(CreateBusinessReportScheduleRequest request)
         {
             var options = new InvokeOptions();
@@ -748,6 +766,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource being created already exists.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateBusinessReportSchedule">REST API Reference for CreateBusinessReportSchedule Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual Task<CreateBusinessReportScheduleResponse> CreateBusinessReportScheduleAsync(CreateBusinessReportScheduleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -772,6 +791,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource being created already exists.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateConferenceProvider">REST API Reference for CreateConferenceProvider Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual CreateConferenceProviderResponse CreateConferenceProvider(CreateConferenceProviderRequest request)
         {
             var options = new InvokeOptions();
@@ -795,6 +815,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource being created already exists.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateConferenceProvider">REST API Reference for CreateConferenceProvider Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual Task<CreateConferenceProviderResponse> CreateConferenceProviderAsync(CreateConferenceProviderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -822,6 +843,7 @@ namespace Amazon.AlexaForBusiness
         /// You are performing an action that would put you beyond your account's limits.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateContact">REST API Reference for CreateContact Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual CreateContactResponse CreateContact(CreateContactRequest request)
         {
             var options = new InvokeOptions();
@@ -848,6 +870,7 @@ namespace Amazon.AlexaForBusiness
         /// You are performing an action that would put you beyond your account's limits.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateContact">REST API Reference for CreateContact Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual Task<CreateContactResponse> CreateContactAsync(CreateContactRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -875,6 +898,7 @@ namespace Amazon.AlexaForBusiness
         /// You are performing an action that would put you beyond your account's limits.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateGatewayGroup">REST API Reference for CreateGatewayGroup Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual CreateGatewayGroupResponse CreateGatewayGroup(CreateGatewayGroupRequest request)
         {
             var options = new InvokeOptions();
@@ -901,6 +925,7 @@ namespace Amazon.AlexaForBusiness
         /// You are performing an action that would put you beyond your account's limits.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateGatewayGroup">REST API Reference for CreateGatewayGroup Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual Task<CreateGatewayGroupResponse> CreateGatewayGroupAsync(CreateGatewayGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -937,6 +962,7 @@ namespace Amazon.AlexaForBusiness
         /// You are performing an action that would put you beyond your account's limits.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateNetworkProfile">REST API Reference for CreateNetworkProfile Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual CreateNetworkProfileResponse CreateNetworkProfile(CreateNetworkProfileRequest request)
         {
             var options = new InvokeOptions();
@@ -972,6 +998,7 @@ namespace Amazon.AlexaForBusiness
         /// You are performing an action that would put you beyond your account's limits.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateNetworkProfile">REST API Reference for CreateNetworkProfile Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual Task<CreateNetworkProfileResponse> CreateNetworkProfileAsync(CreateNetworkProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -1002,6 +1029,7 @@ namespace Amazon.AlexaForBusiness
         /// You are performing an action that would put you beyond your account's limits.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateProfile">REST API Reference for CreateProfile Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual CreateProfileResponse CreateProfile(CreateProfileRequest request)
         {
             var options = new InvokeOptions();
@@ -1031,6 +1059,7 @@ namespace Amazon.AlexaForBusiness
         /// You are performing an action that would put you beyond your account's limits.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateProfile">REST API Reference for CreateProfile Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual Task<CreateProfileResponse> CreateProfileAsync(CreateProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -1058,6 +1087,7 @@ namespace Amazon.AlexaForBusiness
         /// You are performing an action that would put you beyond your account's limits.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateRoom">REST API Reference for CreateRoom Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual CreateRoomResponse CreateRoom(CreateRoomRequest request)
         {
             var options = new InvokeOptions();
@@ -1084,6 +1114,7 @@ namespace Amazon.AlexaForBusiness
         /// You are performing an action that would put you beyond your account's limits.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateRoom">REST API Reference for CreateRoom Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual Task<CreateRoomResponse> CreateRoomAsync(CreateRoomRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -1114,6 +1145,7 @@ namespace Amazon.AlexaForBusiness
         /// You are performing an action that would put you beyond your account's limits.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateSkillGroup">REST API Reference for CreateSkillGroup Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual CreateSkillGroupResponse CreateSkillGroup(CreateSkillGroupRequest request)
         {
             var options = new InvokeOptions();
@@ -1143,6 +1175,7 @@ namespace Amazon.AlexaForBusiness
         /// You are performing an action that would put you beyond your account's limits.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateSkillGroup">REST API Reference for CreateSkillGroup Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual Task<CreateSkillGroupResponse> CreateSkillGroupAsync(CreateSkillGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -1173,6 +1206,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource in the request is already in use.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateUser">REST API Reference for CreateUser Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual CreateUserResponse CreateUser(CreateUserRequest request)
         {
             var options = new InvokeOptions();
@@ -1202,6 +1236,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource in the request is already in use.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateUser">REST API Reference for CreateUser Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual Task<CreateUserResponse> CreateUserAsync(CreateUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -1229,6 +1264,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteAddressBook">REST API Reference for DeleteAddressBook Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual DeleteAddressBookResponse DeleteAddressBook(DeleteAddressBookRequest request)
         {
             var options = new InvokeOptions();
@@ -1255,6 +1291,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteAddressBook">REST API Reference for DeleteAddressBook Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual Task<DeleteAddressBookResponse> DeleteAddressBookAsync(DeleteAddressBookRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -1282,6 +1319,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteBusinessReportSchedule">REST API Reference for DeleteBusinessReportSchedule Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual DeleteBusinessReportScheduleResponse DeleteBusinessReportSchedule(DeleteBusinessReportScheduleRequest request)
         {
             var options = new InvokeOptions();
@@ -1308,6 +1346,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteBusinessReportSchedule">REST API Reference for DeleteBusinessReportSchedule Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual Task<DeleteBusinessReportScheduleResponse> DeleteBusinessReportScheduleAsync(DeleteBusinessReportScheduleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -1332,6 +1371,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteConferenceProvider">REST API Reference for DeleteConferenceProvider Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual DeleteConferenceProviderResponse DeleteConferenceProvider(DeleteConferenceProviderRequest request)
         {
             var options = new InvokeOptions();
@@ -1355,6 +1395,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteConferenceProvider">REST API Reference for DeleteConferenceProvider Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual Task<DeleteConferenceProviderResponse> DeleteConferenceProviderAsync(DeleteConferenceProviderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -1382,6 +1423,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteContact">REST API Reference for DeleteContact Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual DeleteContactResponse DeleteContact(DeleteContactRequest request)
         {
             var options = new InvokeOptions();
@@ -1408,6 +1450,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteContact">REST API Reference for DeleteContact Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual Task<DeleteContactResponse> DeleteContactAsync(DeleteContactRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -1438,6 +1481,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteDevice">REST API Reference for DeleteDevice Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual DeleteDeviceResponse DeleteDevice(DeleteDeviceRequest request)
         {
             var options = new InvokeOptions();
@@ -1467,6 +1511,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteDevice">REST API Reference for DeleteDevice Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual Task<DeleteDeviceResponse> DeleteDeviceAsync(DeleteDeviceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -1501,6 +1546,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteDeviceUsageData">REST API Reference for DeleteDeviceUsageData Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual DeleteDeviceUsageDataResponse DeleteDeviceUsageData(DeleteDeviceUsageDataRequest request)
         {
             var options = new InvokeOptions();
@@ -1534,6 +1580,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteDeviceUsageData">REST API Reference for DeleteDeviceUsageData Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual Task<DeleteDeviceUsageDataResponse> DeleteDeviceUsageDataAsync(DeleteDeviceUsageDataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -1558,6 +1605,7 @@ namespace Amazon.AlexaForBusiness
         /// Another resource is associated with the resource in the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteGatewayGroup">REST API Reference for DeleteGatewayGroup Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual DeleteGatewayGroupResponse DeleteGatewayGroup(DeleteGatewayGroupRequest request)
         {
             var options = new InvokeOptions();
@@ -1581,6 +1629,7 @@ namespace Amazon.AlexaForBusiness
         /// Another resource is associated with the resource in the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteGatewayGroup">REST API Reference for DeleteGatewayGroup Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual Task<DeleteGatewayGroupResponse> DeleteGatewayGroupAsync(DeleteGatewayGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -1611,6 +1660,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource in the request is already in use.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteNetworkProfile">REST API Reference for DeleteNetworkProfile Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual DeleteNetworkProfileResponse DeleteNetworkProfile(DeleteNetworkProfileRequest request)
         {
             var options = new InvokeOptions();
@@ -1640,6 +1690,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource in the request is already in use.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteNetworkProfile">REST API Reference for DeleteNetworkProfile Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual Task<DeleteNetworkProfileResponse> DeleteNetworkProfileAsync(DeleteNetworkProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -1667,6 +1718,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteProfile">REST API Reference for DeleteProfile Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual DeleteProfileResponse DeleteProfile(DeleteProfileRequest request)
         {
             var options = new InvokeOptions();
@@ -1693,6 +1745,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteProfile">REST API Reference for DeleteProfile Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual Task<DeleteProfileResponse> DeleteProfileAsync(DeleteProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -1720,6 +1773,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteRoom">REST API Reference for DeleteRoom Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual DeleteRoomResponse DeleteRoom(DeleteRoomRequest request)
         {
             var options = new InvokeOptions();
@@ -1746,6 +1800,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteRoom">REST API Reference for DeleteRoom Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual Task<DeleteRoomResponse> DeleteRoomAsync(DeleteRoomRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -1770,6 +1825,7 @@ namespace Amazon.AlexaForBusiness
         /// There is a concurrent modification of resources.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteRoomSkillParameter">REST API Reference for DeleteRoomSkillParameter Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual DeleteRoomSkillParameterResponse DeleteRoomSkillParameter(DeleteRoomSkillParameterRequest request)
         {
             var options = new InvokeOptions();
@@ -1793,6 +1849,7 @@ namespace Amazon.AlexaForBusiness
         /// There is a concurrent modification of resources.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteRoomSkillParameter">REST API Reference for DeleteRoomSkillParameter Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual Task<DeleteRoomSkillParameterResponse> DeleteRoomSkillParameterAsync(DeleteRoomSkillParameterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -1820,6 +1877,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteSkillAuthorization">REST API Reference for DeleteSkillAuthorization Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual DeleteSkillAuthorizationResponse DeleteSkillAuthorization(DeleteSkillAuthorizationRequest request)
         {
             var options = new InvokeOptions();
@@ -1846,6 +1904,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteSkillAuthorization">REST API Reference for DeleteSkillAuthorization Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual Task<DeleteSkillAuthorizationResponse> DeleteSkillAuthorizationAsync(DeleteSkillAuthorizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -1873,6 +1932,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteSkillGroup">REST API Reference for DeleteSkillGroup Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual DeleteSkillGroupResponse DeleteSkillGroup(DeleteSkillGroupRequest request)
         {
             var options = new InvokeOptions();
@@ -1899,6 +1959,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteSkillGroup">REST API Reference for DeleteSkillGroup Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual Task<DeleteSkillGroupResponse> DeleteSkillGroupAsync(DeleteSkillGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -1926,6 +1987,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteUser">REST API Reference for DeleteUser Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual DeleteUserResponse DeleteUser(DeleteUserRequest request)
         {
             var options = new InvokeOptions();
@@ -1952,6 +2014,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteUser">REST API Reference for DeleteUser Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual Task<DeleteUserResponse> DeleteUserAsync(DeleteUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -1973,6 +2036,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>The response from the DisassociateContactFromAddressBook service method, as returned by AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DisassociateContactFromAddressBook">REST API Reference for DisassociateContactFromAddressBook Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual DisassociateContactFromAddressBookResponse DisassociateContactFromAddressBook(DisassociateContactFromAddressBookRequest request)
         {
             var options = new InvokeOptions();
@@ -1993,6 +2057,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>The response from the DisassociateContactFromAddressBook service method, as returned by AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DisassociateContactFromAddressBook">REST API Reference for DisassociateContactFromAddressBook Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual Task<DisassociateContactFromAddressBookResponse> DisassociateContactFromAddressBookAsync(DisassociateContactFromAddressBookRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -2023,6 +2088,7 @@ namespace Amazon.AlexaForBusiness
         /// managed by this account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DisassociateDeviceFromRoom">REST API Reference for DisassociateDeviceFromRoom Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual DisassociateDeviceFromRoomResponse DisassociateDeviceFromRoom(DisassociateDeviceFromRoomRequest request)
         {
             var options = new InvokeOptions();
@@ -2052,6 +2118,7 @@ namespace Amazon.AlexaForBusiness
         /// managed by this account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DisassociateDeviceFromRoom">REST API Reference for DisassociateDeviceFromRoom Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual Task<DisassociateDeviceFromRoomResponse> DisassociateDeviceFromRoomAsync(DisassociateDeviceFromRoomRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -2079,6 +2146,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DisassociateSkillFromSkillGroup">REST API Reference for DisassociateSkillFromSkillGroup Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual DisassociateSkillFromSkillGroupResponse DisassociateSkillFromSkillGroup(DisassociateSkillFromSkillGroupRequest request)
         {
             var options = new InvokeOptions();
@@ -2105,6 +2173,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DisassociateSkillFromSkillGroup">REST API Reference for DisassociateSkillFromSkillGroup Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual Task<DisassociateSkillFromSkillGroupResponse> DisassociateSkillFromSkillGroupAsync(DisassociateSkillFromSkillGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -2133,6 +2202,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DisassociateSkillFromUsers">REST API Reference for DisassociateSkillFromUsers Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual DisassociateSkillFromUsersResponse DisassociateSkillFromUsers(DisassociateSkillFromUsersRequest request)
         {
             var options = new InvokeOptions();
@@ -2160,6 +2230,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DisassociateSkillFromUsers">REST API Reference for DisassociateSkillFromUsers Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual Task<DisassociateSkillFromUsersResponse> DisassociateSkillFromUsersAsync(DisassociateSkillFromUsersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -2185,6 +2256,7 @@ namespace Amazon.AlexaForBusiness
         /// There is a concurrent modification of resources.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DisassociateSkillGroupFromRoom">REST API Reference for DisassociateSkillGroupFromRoom Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual DisassociateSkillGroupFromRoomResponse DisassociateSkillGroupFromRoom(DisassociateSkillGroupFromRoomRequest request)
         {
             var options = new InvokeOptions();
@@ -2209,6 +2281,7 @@ namespace Amazon.AlexaForBusiness
         /// There is a concurrent modification of resources.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DisassociateSkillGroupFromRoom">REST API Reference for DisassociateSkillGroupFromRoom Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual Task<DisassociateSkillGroupFromRoomResponse> DisassociateSkillGroupFromRoomAsync(DisassociateSkillGroupFromRoomRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -2233,6 +2306,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ForgetSmartHomeAppliances">REST API Reference for ForgetSmartHomeAppliances Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual ForgetSmartHomeAppliancesResponse ForgetSmartHomeAppliances(ForgetSmartHomeAppliancesRequest request)
         {
             var options = new InvokeOptions();
@@ -2256,6 +2330,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ForgetSmartHomeAppliances">REST API Reference for ForgetSmartHomeAppliances Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual Task<ForgetSmartHomeAppliancesResponse> ForgetSmartHomeAppliancesAsync(ForgetSmartHomeAppliancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -2280,6 +2355,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetAddressBook">REST API Reference for GetAddressBook Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual GetAddressBookResponse GetAddressBook(GetAddressBookRequest request)
         {
             var options = new InvokeOptions();
@@ -2303,6 +2379,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetAddressBook">REST API Reference for GetAddressBook Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual Task<GetAddressBookResponse> GetAddressBookAsync(GetAddressBookRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -2327,6 +2404,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetConferencePreference">REST API Reference for GetConferencePreference Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual GetConferencePreferenceResponse GetConferencePreference(GetConferencePreferenceRequest request)
         {
             var options = new InvokeOptions();
@@ -2350,6 +2428,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetConferencePreference">REST API Reference for GetConferencePreference Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual Task<GetConferencePreferenceResponse> GetConferencePreferenceAsync(GetConferencePreferenceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -2374,6 +2453,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetConferenceProvider">REST API Reference for GetConferenceProvider Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual GetConferenceProviderResponse GetConferenceProvider(GetConferenceProviderRequest request)
         {
             var options = new InvokeOptions();
@@ -2397,6 +2477,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetConferenceProvider">REST API Reference for GetConferenceProvider Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual Task<GetConferenceProviderResponse> GetConferenceProviderAsync(GetConferenceProviderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -2421,6 +2502,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetContact">REST API Reference for GetContact Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual GetContactResponse GetContact(GetContactRequest request)
         {
             var options = new InvokeOptions();
@@ -2444,6 +2526,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetContact">REST API Reference for GetContact Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual Task<GetContactResponse> GetContactAsync(GetContactRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -2468,6 +2551,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetDevice">REST API Reference for GetDevice Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual GetDeviceResponse GetDevice(GetDeviceRequest request)
         {
             var options = new InvokeOptions();
@@ -2491,6 +2575,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetDevice">REST API Reference for GetDevice Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual Task<GetDeviceResponse> GetDeviceAsync(GetDeviceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -2515,6 +2600,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetGateway">REST API Reference for GetGateway Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual GetGatewayResponse GetGateway(GetGatewayRequest request)
         {
             var options = new InvokeOptions();
@@ -2538,6 +2624,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetGateway">REST API Reference for GetGateway Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual Task<GetGatewayResponse> GetGatewayAsync(GetGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -2562,6 +2649,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetGatewayGroup">REST API Reference for GetGatewayGroup Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual GetGatewayGroupResponse GetGatewayGroup(GetGatewayGroupRequest request)
         {
             var options = new InvokeOptions();
@@ -2585,6 +2673,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetGatewayGroup">REST API Reference for GetGatewayGroup Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual Task<GetGatewayGroupResponse> GetGatewayGroupAsync(GetGatewayGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -2609,6 +2698,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetInvitationConfiguration">REST API Reference for GetInvitationConfiguration Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual GetInvitationConfigurationResponse GetInvitationConfiguration(GetInvitationConfigurationRequest request)
         {
             var options = new InvokeOptions();
@@ -2632,6 +2722,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetInvitationConfiguration">REST API Reference for GetInvitationConfiguration Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual Task<GetInvitationConfigurationResponse> GetInvitationConfigurationAsync(GetInvitationConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -2659,6 +2750,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetNetworkProfile">REST API Reference for GetNetworkProfile Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual GetNetworkProfileResponse GetNetworkProfile(GetNetworkProfileRequest request)
         {
             var options = new InvokeOptions();
@@ -2685,6 +2777,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetNetworkProfile">REST API Reference for GetNetworkProfile Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual Task<GetNetworkProfileResponse> GetNetworkProfileAsync(GetNetworkProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -2709,6 +2802,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetProfile">REST API Reference for GetProfile Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual GetProfileResponse GetProfile(GetProfileRequest request)
         {
             var options = new InvokeOptions();
@@ -2732,6 +2826,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetProfile">REST API Reference for GetProfile Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual Task<GetProfileResponse> GetProfileAsync(GetProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -2756,6 +2851,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetRoom">REST API Reference for GetRoom Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual GetRoomResponse GetRoom(GetRoomRequest request)
         {
             var options = new InvokeOptions();
@@ -2779,6 +2875,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetRoom">REST API Reference for GetRoom Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual Task<GetRoomResponse> GetRoomAsync(GetRoomRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -2803,6 +2900,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetRoomSkillParameter">REST API Reference for GetRoomSkillParameter Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual GetRoomSkillParameterResponse GetRoomSkillParameter(GetRoomSkillParameterRequest request)
         {
             var options = new InvokeOptions();
@@ -2826,6 +2924,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetRoomSkillParameter">REST API Reference for GetRoomSkillParameter Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual Task<GetRoomSkillParameterResponse> GetRoomSkillParameterAsync(GetRoomSkillParameterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -2850,6 +2949,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetSkillGroup">REST API Reference for GetSkillGroup Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual GetSkillGroupResponse GetSkillGroup(GetSkillGroupRequest request)
         {
             var options = new InvokeOptions();
@@ -2873,6 +2973,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetSkillGroup">REST API Reference for GetSkillGroup Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual Task<GetSkillGroupResponse> GetSkillGroupAsync(GetSkillGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -2896,6 +2997,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>The response from the ListBusinessReportSchedules service method, as returned by AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListBusinessReportSchedules">REST API Reference for ListBusinessReportSchedules Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual ListBusinessReportSchedulesResponse ListBusinessReportSchedules(ListBusinessReportSchedulesRequest request)
         {
             var options = new InvokeOptions();
@@ -2918,6 +3020,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>The response from the ListBusinessReportSchedules service method, as returned by AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListBusinessReportSchedules">REST API Reference for ListBusinessReportSchedules Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual Task<ListBusinessReportSchedulesResponse> ListBusinessReportSchedulesAsync(ListBusinessReportSchedulesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -2939,6 +3042,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>The response from the ListConferenceProviders service method, as returned by AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListConferenceProviders">REST API Reference for ListConferenceProviders Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual ListConferenceProvidersResponse ListConferenceProviders(ListConferenceProvidersRequest request)
         {
             var options = new InvokeOptions();
@@ -2959,6 +3063,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>The response from the ListConferenceProviders service method, as returned by AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListConferenceProviders">REST API Reference for ListConferenceProviders Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual Task<ListConferenceProvidersResponse> ListConferenceProvidersAsync(ListConferenceProvidersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -2983,6 +3088,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListDeviceEvents">REST API Reference for ListDeviceEvents Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual ListDeviceEventsResponse ListDeviceEvents(ListDeviceEventsRequest request)
         {
             var options = new InvokeOptions();
@@ -3006,6 +3112,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListDeviceEvents">REST API Reference for ListDeviceEvents Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual Task<ListDeviceEventsResponse> ListDeviceEventsAsync(ListDeviceEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -3028,6 +3135,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>The response from the ListGatewayGroups service method, as returned by AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListGatewayGroups">REST API Reference for ListGatewayGroups Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual ListGatewayGroupsResponse ListGatewayGroups(ListGatewayGroupsRequest request)
         {
             var options = new InvokeOptions();
@@ -3049,6 +3157,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>The response from the ListGatewayGroups service method, as returned by AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListGatewayGroups">REST API Reference for ListGatewayGroups Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual Task<ListGatewayGroupsResponse> ListGatewayGroupsAsync(ListGatewayGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -3072,6 +3181,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>The response from the ListGateways service method, as returned by AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListGateways">REST API Reference for ListGateways Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual ListGatewaysResponse ListGateways(ListGatewaysRequest request)
         {
             var options = new InvokeOptions();
@@ -3094,6 +3204,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>The response from the ListGateways service method, as returned by AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListGateways">REST API Reference for ListGateways Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual Task<ListGatewaysResponse> ListGatewaysAsync(ListGatewaysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -3115,6 +3226,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>The response from the ListSkills service method, as returned by AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListSkills">REST API Reference for ListSkills Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual ListSkillsResponse ListSkills(ListSkillsRequest request)
         {
             var options = new InvokeOptions();
@@ -3135,6 +3247,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>The response from the ListSkills service method, as returned by AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListSkills">REST API Reference for ListSkills Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual Task<ListSkillsResponse> ListSkillsAsync(ListSkillsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -3156,6 +3269,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>The response from the ListSkillsStoreCategories service method, as returned by AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListSkillsStoreCategories">REST API Reference for ListSkillsStoreCategories Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual ListSkillsStoreCategoriesResponse ListSkillsStoreCategories(ListSkillsStoreCategoriesRequest request)
         {
             var options = new InvokeOptions();
@@ -3176,6 +3290,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>The response from the ListSkillsStoreCategories service method, as returned by AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListSkillsStoreCategories">REST API Reference for ListSkillsStoreCategories Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual Task<ListSkillsStoreCategoriesResponse> ListSkillsStoreCategoriesAsync(ListSkillsStoreCategoriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -3197,6 +3312,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>The response from the ListSkillsStoreSkillsByCategory service method, as returned by AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListSkillsStoreSkillsByCategory">REST API Reference for ListSkillsStoreSkillsByCategory Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual ListSkillsStoreSkillsByCategoryResponse ListSkillsStoreSkillsByCategory(ListSkillsStoreSkillsByCategoryRequest request)
         {
             var options = new InvokeOptions();
@@ -3217,6 +3333,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>The response from the ListSkillsStoreSkillsByCategory service method, as returned by AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListSkillsStoreSkillsByCategory">REST API Reference for ListSkillsStoreSkillsByCategory Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual Task<ListSkillsStoreSkillsByCategoryResponse> ListSkillsStoreSkillsByCategoryAsync(ListSkillsStoreSkillsByCategoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -3241,6 +3358,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListSmartHomeAppliances">REST API Reference for ListSmartHomeAppliances Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual ListSmartHomeAppliancesResponse ListSmartHomeAppliances(ListSmartHomeAppliancesRequest request)
         {
             var options = new InvokeOptions();
@@ -3264,6 +3382,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListSmartHomeAppliances">REST API Reference for ListSmartHomeAppliances Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual Task<ListSmartHomeAppliancesResponse> ListSmartHomeAppliancesAsync(ListSmartHomeAppliancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -3288,6 +3407,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListTags">REST API Reference for ListTags Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual ListTagsResponse ListTags(ListTagsRequest request)
         {
             var options = new InvokeOptions();
@@ -3311,6 +3431,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListTags">REST API Reference for ListTags Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual Task<ListTagsResponse> ListTagsAsync(ListTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -3335,6 +3456,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/PutConferencePreference">REST API Reference for PutConferencePreference Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual PutConferencePreferenceResponse PutConferencePreference(PutConferencePreferenceRequest request)
         {
             var options = new InvokeOptions();
@@ -3358,6 +3480,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/PutConferencePreference">REST API Reference for PutConferencePreference Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual Task<PutConferencePreferenceResponse> PutConferencePreferenceAsync(PutConferencePreferenceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -3386,6 +3509,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/PutInvitationConfiguration">REST API Reference for PutInvitationConfiguration Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual PutInvitationConfigurationResponse PutInvitationConfiguration(PutInvitationConfigurationRequest request)
         {
             var options = new InvokeOptions();
@@ -3413,6 +3537,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/PutInvitationConfiguration">REST API Reference for PutInvitationConfiguration Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual Task<PutInvitationConfigurationResponse> PutInvitationConfigurationAsync(PutInvitationConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -3438,6 +3563,7 @@ namespace Amazon.AlexaForBusiness
         /// There is a concurrent modification of resources.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/PutRoomSkillParameter">REST API Reference for PutRoomSkillParameter Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual PutRoomSkillParameterResponse PutRoomSkillParameter(PutRoomSkillParameterRequest request)
         {
             var options = new InvokeOptions();
@@ -3462,6 +3588,7 @@ namespace Amazon.AlexaForBusiness
         /// There is a concurrent modification of resources.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/PutRoomSkillParameter">REST API Reference for PutRoomSkillParameter Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual Task<PutRoomSkillParameterResponse> PutRoomSkillParameterAsync(PutRoomSkillParameterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -3491,6 +3618,7 @@ namespace Amazon.AlexaForBusiness
         /// The caller has no permissions to operate on the resource involved in the API call.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/PutSkillAuthorization">REST API Reference for PutSkillAuthorization Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual PutSkillAuthorizationResponse PutSkillAuthorization(PutSkillAuthorizationRequest request)
         {
             var options = new InvokeOptions();
@@ -3519,6 +3647,7 @@ namespace Amazon.AlexaForBusiness
         /// The caller has no permissions to operate on the resource involved in the API call.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/PutSkillAuthorization">REST API Reference for PutSkillAuthorization Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual Task<PutSkillAuthorizationResponse> PutSkillAuthorizationAsync(PutSkillAuthorizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -3553,6 +3682,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/RegisterAVSDevice">REST API Reference for RegisterAVSDevice Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual RegisterAVSDeviceResponse RegisterAVSDevice(RegisterAVSDeviceRequest request)
         {
             var options = new InvokeOptions();
@@ -3586,6 +3716,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/RegisterAVSDevice">REST API Reference for RegisterAVSDevice Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual Task<RegisterAVSDeviceResponse> RegisterAVSDeviceAsync(RegisterAVSDeviceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -3615,6 +3746,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/RejectSkill">REST API Reference for RejectSkill Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual RejectSkillResponse RejectSkill(RejectSkillRequest request)
         {
             var options = new InvokeOptions();
@@ -3643,6 +3775,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/RejectSkill">REST API Reference for RejectSkill Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual Task<RejectSkillResponse> RejectSkillAsync(RejectSkillRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -3678,6 +3811,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ResolveRoom">REST API Reference for ResolveRoom Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual ResolveRoomResponse ResolveRoom(ResolveRoomRequest request)
         {
             var options = new InvokeOptions();
@@ -3712,6 +3846,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ResolveRoom">REST API Reference for ResolveRoom Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual Task<ResolveRoomResponse> ResolveRoomAsync(ResolveRoomRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -3739,6 +3874,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/RevokeInvitation">REST API Reference for RevokeInvitation Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual RevokeInvitationResponse RevokeInvitation(RevokeInvitationRequest request)
         {
             var options = new InvokeOptions();
@@ -3765,6 +3901,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/RevokeInvitation">REST API Reference for RevokeInvitation Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual Task<RevokeInvitationResponse> RevokeInvitationAsync(RevokeInvitationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -3786,6 +3923,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>The response from the SearchAddressBooks service method, as returned by AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchAddressBooks">REST API Reference for SearchAddressBooks Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual SearchAddressBooksResponse SearchAddressBooks(SearchAddressBooksRequest request)
         {
             var options = new InvokeOptions();
@@ -3806,6 +3944,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>The response from the SearchAddressBooks service method, as returned by AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchAddressBooks">REST API Reference for SearchAddressBooks Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual Task<SearchAddressBooksResponse> SearchAddressBooksAsync(SearchAddressBooksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -3827,6 +3966,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>The response from the SearchContacts service method, as returned by AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchContacts">REST API Reference for SearchContacts Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual SearchContactsResponse SearchContacts(SearchContactsRequest request)
         {
             var options = new InvokeOptions();
@@ -3847,6 +3987,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>The response from the SearchContacts service method, as returned by AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchContacts">REST API Reference for SearchContacts Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual Task<SearchContactsResponse> SearchContactsAsync(SearchContactsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -3868,6 +4009,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>The response from the SearchDevices service method, as returned by AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchDevices">REST API Reference for SearchDevices Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual SearchDevicesResponse SearchDevices(SearchDevicesRequest request)
         {
             var options = new InvokeOptions();
@@ -3888,6 +4030,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>The response from the SearchDevices service method, as returned by AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchDevices">REST API Reference for SearchDevices Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual Task<SearchDevicesResponse> SearchDevicesAsync(SearchDevicesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -3909,6 +4052,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>The response from the SearchNetworkProfiles service method, as returned by AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchNetworkProfiles">REST API Reference for SearchNetworkProfiles Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual SearchNetworkProfilesResponse SearchNetworkProfiles(SearchNetworkProfilesRequest request)
         {
             var options = new InvokeOptions();
@@ -3929,6 +4073,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>The response from the SearchNetworkProfiles service method, as returned by AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchNetworkProfiles">REST API Reference for SearchNetworkProfiles Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual Task<SearchNetworkProfilesResponse> SearchNetworkProfilesAsync(SearchNetworkProfilesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -3950,6 +4095,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>The response from the SearchProfiles service method, as returned by AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchProfiles">REST API Reference for SearchProfiles Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual SearchProfilesResponse SearchProfiles(SearchProfilesRequest request)
         {
             var options = new InvokeOptions();
@@ -3970,6 +4116,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>The response from the SearchProfiles service method, as returned by AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchProfiles">REST API Reference for SearchProfiles Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual Task<SearchProfilesResponse> SearchProfilesAsync(SearchProfilesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -3991,6 +4138,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>The response from the SearchRooms service method, as returned by AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchRooms">REST API Reference for SearchRooms Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual SearchRoomsResponse SearchRooms(SearchRoomsRequest request)
         {
             var options = new InvokeOptions();
@@ -4011,6 +4159,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>The response from the SearchRooms service method, as returned by AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchRooms">REST API Reference for SearchRooms Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual Task<SearchRoomsResponse> SearchRoomsAsync(SearchRoomsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -4032,6 +4181,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>The response from the SearchSkillGroups service method, as returned by AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchSkillGroups">REST API Reference for SearchSkillGroups Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual SearchSkillGroupsResponse SearchSkillGroups(SearchSkillGroupsRequest request)
         {
             var options = new InvokeOptions();
@@ -4052,6 +4202,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>The response from the SearchSkillGroups service method, as returned by AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchSkillGroups">REST API Reference for SearchSkillGroups Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual Task<SearchSkillGroupsResponse> SearchSkillGroupsAsync(SearchSkillGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -4073,6 +4224,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>The response from the SearchUsers service method, as returned by AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchUsers">REST API Reference for SearchUsers Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual SearchUsersResponse SearchUsers(SearchUsersRequest request)
         {
             var options = new InvokeOptions();
@@ -4093,6 +4245,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>The response from the SearchUsers service method, as returned by AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchUsers">REST API Reference for SearchUsers Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual Task<SearchUsersResponse> SearchUsersAsync(SearchUsersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -4179,6 +4332,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SendInvitation">REST API Reference for SendInvitation Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual SendInvitationResponse SendInvitation(SendInvitationRequest request)
         {
             var options = new InvokeOptions();
@@ -4209,6 +4363,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SendInvitation">REST API Reference for SendInvitation Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual Task<SendInvitationResponse> SendInvitationAsync(SendInvitationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -4259,6 +4414,7 @@ namespace Amazon.AlexaForBusiness
         /// managed by this account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/StartDeviceSync">REST API Reference for StartDeviceSync Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual StartDeviceSyncResponse StartDeviceSync(StartDeviceSyncRequest request)
         {
             var options = new InvokeOptions();
@@ -4308,6 +4464,7 @@ namespace Amazon.AlexaForBusiness
         /// managed by this account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/StartDeviceSync">REST API Reference for StartDeviceSync Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual Task<StartDeviceSyncResponse> StartDeviceSyncAsync(StartDeviceSyncRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -4332,6 +4489,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/StartSmartHomeApplianceDiscovery">REST API Reference for StartSmartHomeApplianceDiscovery Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual StartSmartHomeApplianceDiscoveryResponse StartSmartHomeApplianceDiscovery(StartSmartHomeApplianceDiscoveryRequest request)
         {
             var options = new InvokeOptions();
@@ -4355,6 +4513,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/StartSmartHomeApplianceDiscovery">REST API Reference for StartSmartHomeApplianceDiscovery Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual Task<StartSmartHomeApplianceDiscoveryResponse> StartSmartHomeApplianceDiscoveryAsync(StartSmartHomeApplianceDiscoveryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -4379,6 +4538,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/TagResource">REST API Reference for TagResource Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
             var options = new InvokeOptions();
@@ -4402,6 +4562,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/TagResource">REST API Reference for TagResource Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -4426,6 +4587,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
             var options = new InvokeOptions();
@@ -4449,6 +4611,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -4479,6 +4642,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateAddressBook">REST API Reference for UpdateAddressBook Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual UpdateAddressBookResponse UpdateAddressBook(UpdateAddressBookRequest request)
         {
             var options = new InvokeOptions();
@@ -4508,6 +4672,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateAddressBook">REST API Reference for UpdateAddressBook Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual Task<UpdateAddressBookResponse> UpdateAddressBookAsync(UpdateAddressBookRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -4536,6 +4701,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateBusinessReportSchedule">REST API Reference for UpdateBusinessReportSchedule Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual UpdateBusinessReportScheduleResponse UpdateBusinessReportSchedule(UpdateBusinessReportScheduleRequest request)
         {
             var options = new InvokeOptions();
@@ -4563,6 +4729,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateBusinessReportSchedule">REST API Reference for UpdateBusinessReportSchedule Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual Task<UpdateBusinessReportScheduleResponse> UpdateBusinessReportScheduleAsync(UpdateBusinessReportScheduleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -4587,6 +4754,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateConferenceProvider">REST API Reference for UpdateConferenceProvider Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual UpdateConferenceProviderResponse UpdateConferenceProvider(UpdateConferenceProviderRequest request)
         {
             var options = new InvokeOptions();
@@ -4610,6 +4778,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateConferenceProvider">REST API Reference for UpdateConferenceProvider Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual Task<UpdateConferenceProviderResponse> UpdateConferenceProviderAsync(UpdateConferenceProviderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -4637,6 +4806,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateContact">REST API Reference for UpdateContact Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual UpdateContactResponse UpdateContact(UpdateContactRequest request)
         {
             var options = new InvokeOptions();
@@ -4663,6 +4833,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateContact">REST API Reference for UpdateContact Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual Task<UpdateContactResponse> UpdateContactAsync(UpdateContactRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -4694,6 +4865,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateDevice">REST API Reference for UpdateDevice Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual UpdateDeviceResponse UpdateDevice(UpdateDeviceRequest request)
         {
             var options = new InvokeOptions();
@@ -4724,6 +4896,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateDevice">REST API Reference for UpdateDevice Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual Task<UpdateDeviceResponse> UpdateDeviceAsync(UpdateDeviceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -4752,6 +4925,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateGateway">REST API Reference for UpdateGateway Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual UpdateGatewayResponse UpdateGateway(UpdateGatewayRequest request)
         {
             var options = new InvokeOptions();
@@ -4779,6 +4953,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateGateway">REST API Reference for UpdateGateway Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual Task<UpdateGatewayResponse> UpdateGatewayAsync(UpdateGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -4807,6 +4982,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateGatewayGroup">REST API Reference for UpdateGatewayGroup Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual UpdateGatewayGroupResponse UpdateGatewayGroup(UpdateGatewayGroupRequest request)
         {
             var options = new InvokeOptions();
@@ -4834,6 +5010,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateGatewayGroup">REST API Reference for UpdateGatewayGroup Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual Task<UpdateGatewayGroupResponse> UpdateGatewayGroupAsync(UpdateGatewayGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -4870,6 +5047,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateNetworkProfile">REST API Reference for UpdateNetworkProfile Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual UpdateNetworkProfileResponse UpdateNetworkProfile(UpdateNetworkProfileRequest request)
         {
             var options = new InvokeOptions();
@@ -4905,6 +5083,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateNetworkProfile">REST API Reference for UpdateNetworkProfile Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual Task<UpdateNetworkProfileResponse> UpdateNetworkProfileAsync(UpdateNetworkProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -4935,6 +5114,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateProfile">REST API Reference for UpdateProfile Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual UpdateProfileResponse UpdateProfile(UpdateProfileRequest request)
         {
             var options = new InvokeOptions();
@@ -4964,6 +5144,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateProfile">REST API Reference for UpdateProfile Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual Task<UpdateProfileResponse> UpdateProfileAsync(UpdateProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -4991,6 +5172,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateRoom">REST API Reference for UpdateRoom Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual UpdateRoomResponse UpdateRoom(UpdateRoomRequest request)
         {
             var options = new InvokeOptions();
@@ -5017,6 +5199,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateRoom">REST API Reference for UpdateRoom Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual Task<UpdateRoomResponse> UpdateRoomAsync(UpdateRoomRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -5047,6 +5230,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateSkillGroup">REST API Reference for UpdateSkillGroup Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual UpdateSkillGroupResponse UpdateSkillGroup(UpdateSkillGroupRequest request)
         {
             var options = new InvokeOptions();
@@ -5076,6 +5260,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateSkillGroup">REST API Reference for UpdateSkillGroup Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         public virtual Task<UpdateSkillGroupResponse> UpdateSkillGroupAsync(UpdateSkillGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();

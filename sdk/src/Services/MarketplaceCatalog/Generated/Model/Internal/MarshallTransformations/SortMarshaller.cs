@@ -34,7 +34,7 @@ namespace Amazon.MarketplaceCatalog.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Sort Marshaller
-    /// </summary>       
+    /// </summary>
     public class SortMarshaller : IRequestMarshaller<Sort, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.MarketplaceCatalog.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SortMarshaller Instance = new SortMarshaller();
 
     }

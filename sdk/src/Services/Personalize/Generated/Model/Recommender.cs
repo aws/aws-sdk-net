@@ -41,6 +41,7 @@ namespace Amazon.Personalize.Model
         private string _failureReason;
         private DateTime? _lastUpdatedDateTime;
         private RecommenderUpdateSummary _latestRecommenderUpdate;
+        private Dictionary<string, double> _modelMetrics = new Dictionary<string, double>();
         private string _name;
         private string _recipeArn;
         private string _recommenderArn;
@@ -139,6 +140,27 @@ namespace Amazon.Personalize.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ModelMetrics. 
+        /// <para>
+        /// Provides evaluation metrics that help you determine the performance of a recommender.
+        /// For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/evaluating-recommenders.html">
+        /// Evaluating a recommender</a>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=100)]
+        public Dictionary<string, double> ModelMetrics
+        {
+            get { return this._modelMetrics; }
+            set { this._modelMetrics = value; }
+        }
+
+        // Check to see if ModelMetrics property is set
+        internal bool IsSetModelMetrics()
+        {
+            return this._modelMetrics != null && this._modelMetrics.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
         /// The name of the recommender.
@@ -226,6 +248,11 @@ namespace Amazon.Personalize.Model
         ///  <ul> <li> 
         /// <para>
         /// CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// STOP PENDING &gt; STOP IN_PROGRESS &gt; INACTIVE &gt; START PENDING &gt; START IN_PROGRESS
+        /// &gt; ACTIVE
         /// </para>
         ///  </li> <li> 
         /// <para>

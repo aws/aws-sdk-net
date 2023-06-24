@@ -61,6 +61,7 @@ namespace Amazon.Runtime.Internal.Util
 
         public void AppendBlock(byte[] buffer, int offset, int count)
         {
+            // We're not transforming the data, so don't use the outputBuffer arguments
             _algorithm.TransformBlock(buffer, offset, count, null, 0);
         }
 

@@ -34,7 +34,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// LambdaCodeHook Marshaller
-    /// </summary>       
+    /// </summary>
     public class LambdaCodeHookMarshaller : IRequestMarshaller<LambdaCodeHook, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static LambdaCodeHookMarshaller Instance = new LambdaCodeHookMarshaller();
 
     }

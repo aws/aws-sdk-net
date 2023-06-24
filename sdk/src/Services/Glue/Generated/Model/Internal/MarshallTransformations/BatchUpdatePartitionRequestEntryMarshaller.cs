@@ -34,7 +34,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// BatchUpdatePartitionRequestEntry Marshaller
-    /// </summary>       
+    /// </summary>
     public class BatchUpdatePartitionRequestEntryMarshaller : IRequestMarshaller<BatchUpdatePartitionRequestEntry, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static BatchUpdatePartitionRequestEntryMarshaller Instance = new BatchUpdatePartitionRequestEntryMarshaller();
 
     }

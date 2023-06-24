@@ -41,13 +41,19 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             request.HttpMethod = "PUT";
 
+            if (putBucketEncryptionRequest.IsSetChecksumAlgorithm())
+                request.Headers.Add(S3Constants.AmzHeaderSdkChecksumAlgorithm, S3Transforms.ToStringValue(putBucketEncryptionRequest.ChecksumAlgorithm));
+
             if (putBucketEncryptionRequest.IsSetExpectedBucketOwner())
                 request.Headers.Add(S3Constants.AmzHeaderExpectedBucketOwner, S3Transforms.ToStringValue(putBucketEncryptionRequest.ExpectedBucketOwner));
+
+            if (putBucketEncryptionRequest.IsSetContentMD5())
+                request.Headers.Add(HeaderKeys.ContentMD5Header, S3Transforms.ToStringValue(putBucketEncryptionRequest.ContentMD5));
 
             if (string.IsNullOrEmpty(putBucketEncryptionRequest.BucketName))
                 throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "PutBucketEncryptionRequest.BucketName");
 
-			request.ResourcePath = string.Concat("/", S3Transforms.ToStringValue(putBucketEncryptionRequest.BucketName));
+            request.ResourcePath = "/";
 
             request.AddSubResource("encryption");
 
@@ -57,32 +63,32 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 if (putBucketEncryptionRequest.IsSetServerSideEncryptionConfiguration())
                 {
                     var sseConfiguration = putBucketEncryptionRequest.ServerSideEncryptionConfiguration;
-                    xmlWriter.WriteStartElement("ServerSideEncryptionConfiguration", "");
+                    xmlWriter.WriteStartElement("ServerSideEncryptionConfiguration", S3Constants.S3RequestXmlNamespace);
                     if (sseConfiguration != null)
                     {
                         foreach(var serverSideEncryptionRule in sseConfiguration.ServerSideEncryptionRules)
                         {
-                            xmlWriter.WriteStartElement("Rule", "");
+                            xmlWriter.WriteStartElement("Rule");
                             if (serverSideEncryptionRule != null)
                             {
                                 if (serverSideEncryptionRule.IsSetServerSideEncryptionByDefault())
                                 {
-                                    xmlWriter.WriteStartElement("ApplyServerSideEncryptionByDefault", "");
+                                    xmlWriter.WriteStartElement("ApplyServerSideEncryptionByDefault");
                                     var sseDefault = serverSideEncryptionRule.ServerSideEncryptionByDefault;
                                     if(sseDefault.IsSetServerSideEncryptionAlgorithm())
                                     {
-                                        xmlWriter.WriteElementString("SSEAlgorithm", "", S3Transforms.ToXmlStringValue(sseDefault.ServerSideEncryptionAlgorithm));
+                                        xmlWriter.WriteElementString("SSEAlgorithm", S3Transforms.ToXmlStringValue(sseDefault.ServerSideEncryptionAlgorithm));
                                     }
                                     if (sseDefault.IsSetServerSideEncryptionKeyManagementServiceKeyId())
                                     {
-                                        xmlWriter.WriteElementString("KMSMasterKeyID", "", S3Transforms.ToXmlStringValue(sseDefault.ServerSideEncryptionKeyManagementServiceKeyId));
+                                        xmlWriter.WriteElementString("KMSMasterKeyID", S3Transforms.ToXmlStringValue(sseDefault.ServerSideEncryptionKeyManagementServiceKeyId));
                                     }
                                     xmlWriter.WriteEndElement();
                                 }
 
                                 if (serverSideEncryptionRule.IsSetBucketKeyEnabled())
                                 {
-                                    xmlWriter.WriteElementString("BucketKeyEnabled", "", S3Transforms.ToXmlStringValue(serverSideEncryptionRule.BucketKeyEnabled));
+                                    xmlWriter.WriteElementString("BucketKeyEnabled", S3Transforms.ToXmlStringValue(serverSideEncryptionRule.BucketKeyEnabled));
                                 }
                             }
                             xmlWriter.WriteEndElement();
@@ -98,12 +104,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 request.Content = Encoding.UTF8.GetBytes(content);
                 request.Headers[HeaderKeys.ContentTypeHeader] = "application/xml";
 
-                var checksum = AWSSDKUtils.GenerateChecksumForContent(content, true);
-                if (putBucketEncryptionRequest.IsSetContentMD5())
-                    checksum = putBucketEncryptionRequest.ContentMD5;
-                
-                request.Headers[HeaderKeys.ContentMD5Header] = checksum;
-
+                ChecksumUtils.SetRequestChecksum(request, putBucketEncryptionRequest.ChecksumAlgorithm);
             }
             catch (EncoderFallbackException e)
             {

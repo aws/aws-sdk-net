@@ -60,8 +60,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property FilterNamePrefix. 
         /// <para>
-        /// The prefix to match. CloudWatch Logs uses the value you set here only if you also
-        /// include the <code>logGroupName</code> parameter in your request.
+        /// The prefix to match. CloudWatch Logs uses the value that you set here only if you
+        /// also include the <code>logGroupName</code> parameter in your request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=512)]

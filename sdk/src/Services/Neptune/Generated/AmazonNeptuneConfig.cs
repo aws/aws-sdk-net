@@ -17,22 +17,22 @@
  * Do not modify this file. This file is generated from the neptune-2014-10-31.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
-
+using Amazon.Neptune.Internal;
 
 namespace Amazon.Neptune
 {
     /// <summary>
     /// Configuration for accessing Amazon Neptune service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonNeptuneConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.2.16");
+            InternalSDKUtils.BuildUserAgentString("3.7.102.52");
 
         private string _userAgent = UserAgentString;
 
@@ -40,8 +40,10 @@ namespace Amazon.Neptune
         /// Default constructor
         /// </summary>
         public AmazonNeptuneConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonNeptuneDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "rds";
+            this.EndpointProvider = new AmazonNeptuneEndpointProvider();
         }
 
         /// <summary>
@@ -76,5 +78,6 @@ namespace Amazon.Neptune
                 return _userAgent;
             }
         }
+
     }
 }

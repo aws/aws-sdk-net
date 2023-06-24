@@ -174,6 +174,13 @@ namespace Amazon.ConfigService.Model
         /// <para>
         /// Tags associated with the resource.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This field is not to be confused with the Amazon Web Services-wide tag feature for
+        /// Amazon Web Services resources. Tags for <code>PutResourceConfig</code> are tags that
+        /// you supply for the configuration items of your custom resources.
+        /// </para>
+        ///  </note>
         /// </summary>
         public Dictionary<string, string> Tags
         {

@@ -36,11 +36,14 @@ namespace Amazon.IoT.Model
         private AbortConfig _abortConfig;
         private DateTime? _createdAt;
         private string _description;
+        private List<string> _destinationPackageVersions = new List<string>();
         private string _document;
         private string _documentSource;
+        private JobExecutionsRetryConfig _jobExecutionsRetryConfig;
         private JobExecutionsRolloutConfig _jobExecutionsRolloutConfig;
         private string _jobTemplateArn;
         private string _jobTemplateId;
+        private List<MaintenanceWindow> _maintenanceWindows = new List<MaintenanceWindow>();
         private PresignedUrlConfig _presignedUrlConfig;
         private TimeoutConfig _timeoutConfig;
 
@@ -97,6 +100,30 @@ namespace Amazon.IoT.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DestinationPackageVersions. 
+        /// <para>
+        /// The package version Amazon Resource Names (ARNs) that are installed on the device
+        /// when the job successfully completes. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Note:</b>The following Length Constraints relates to a single string. Up to five
+        /// strings are allowed.
+        /// </para>
+        /// </summary>
+        public List<string> DestinationPackageVersions
+        {
+            get { return this._destinationPackageVersions; }
+            set { this._destinationPackageVersions = value; }
+        }
+
+        // Check to see if DestinationPackageVersions property is set
+        internal bool IsSetDestinationPackageVersions()
+        {
+            return this._destinationPackageVersions != null && this._destinationPackageVersions.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Document. 
         /// <para>
         /// The job document.
@@ -132,6 +159,25 @@ namespace Amazon.IoT.Model
         internal bool IsSetDocumentSource()
         {
             return this._documentSource != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property JobExecutionsRetryConfig. 
+        /// <para>
+        /// The configuration that determines how many retries are allowed for each failure type
+        /// for a job.
+        /// </para>
+        /// </summary>
+        public JobExecutionsRetryConfig JobExecutionsRetryConfig
+        {
+            get { return this._jobExecutionsRetryConfig; }
+            set { this._jobExecutionsRetryConfig = value; }
+        }
+
+        // Check to see if JobExecutionsRetryConfig property is set
+        internal bool IsSetJobExecutionsRetryConfig()
+        {
+            return this._jobExecutionsRetryConfig != null;
         }
 
         /// <summary>
@@ -185,6 +231,25 @@ namespace Amazon.IoT.Model
         internal bool IsSetJobTemplateId()
         {
             return this._jobTemplateId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaintenanceWindows. 
+        /// <para>
+        /// Allows you to configure an optional maintenance window for the rollout of a job document
+        /// to all devices in the target group for a job.
+        /// </para>
+        /// </summary>
+        public List<MaintenanceWindow> MaintenanceWindows
+        {
+            get { return this._maintenanceWindows; }
+            set { this._maintenanceWindows = value; }
+        }
+
+        // Check to see if MaintenanceWindows property is set
+        internal bool IsSetMaintenanceWindows()
+        {
+            return this._maintenanceWindows != null && this._maintenanceWindows.Count > 0; 
         }
 
         /// <summary>

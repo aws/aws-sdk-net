@@ -56,7 +56,7 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Lambda");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-03-31";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-03-31";
             request.HttpMethod = "PUT";
 
             if (!publicRequest.IsSetUUID())
@@ -87,6 +87,17 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
 
                     var marshaller = DestinationConfigMarshaller.Instance;
                     marshaller.Marshall(publicRequest.DestinationConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetDocumentDBEventSourceConfig())
+                {
+                    context.Writer.WritePropertyName("DocumentDBEventSourceConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = DocumentDBEventSourceConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.DocumentDBEventSourceConfig, context);
 
                     context.Writer.WriteObjectEnd();
                 }
@@ -149,6 +160,17 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ParallelizationFactor);
                 }
 
+                if(publicRequest.IsSetScalingConfig())
+                {
+                    context.Writer.WritePropertyName("ScalingConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ScalingConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ScalingConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetSourceAccessConfigurations())
                 {
                     context.Writer.WritePropertyName("SourceAccessConfigurations");
@@ -171,7 +193,6 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.TumblingWindowInSeconds);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

@@ -30,7 +30,7 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateLaunchTemplateVersion operation.
-    /// Creates a new version for a launch template. You can specify an existing version of
+    /// Creates a new version of a launch template. You can specify an existing version of
     /// launch template from which to base the new version.
     /// 
     ///  
@@ -40,8 +40,15 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  
     /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#manage-launch-template-versions">Managing
-    /// launch template versions</a>in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// Launch templates are immutable; after you create a launch template, you can't modify
+    /// it. Instead, you can create a new version of the launch template that includes any
+    /// changes you require.
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#manage-launch-template-versions">Modify
+    /// a launch template (manage launch template versions)</a> in the <i>Amazon Elastic Compute
+    /// Cloud User Guide</i>.
     /// </para>
     /// </summary>
     public partial class CreateLaunchTemplateVersionRequest : AmazonEC2Request
@@ -50,6 +57,7 @@ namespace Amazon.EC2.Model
         private RequestLaunchTemplateData _launchTemplateData;
         private string _launchTemplateId;
         private string _launchTemplateName;
+        private bool? _resolveAlias;
         private string _sourceVersion;
         private string _versionDescription;
 
@@ -58,7 +66,7 @@ namespace Amazon.EC2.Model
         /// <para>
         /// Unique, case-sensitive identifier you provide to ensure the idempotency of the request.
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-        /// Idempotency</a>.
+        /// idempotency</a>.
         /// </para>
         ///  
         /// <para>
@@ -99,8 +107,12 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property LaunchTemplateId. 
         /// <para>
-        /// The ID of the launch template. You must specify either the launch template ID or launch
-        /// template name in the request.
+        /// The ID of the launch template.
+        /// </para>
+        ///  
+        /// <para>
+        /// You must specify either the <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>,
+        /// but not both.
         /// </para>
         /// </summary>
         public string LaunchTemplateId
@@ -118,8 +130,12 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property LaunchTemplateName. 
         /// <para>
-        /// The name of the launch template. You must specify either the launch template ID or
-        /// launch template name in the request.
+        /// The name of the launch template.
+        /// </para>
+        ///  
+        /// <para>
+        /// You must specify the <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>,
+        /// but not both.
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=128)]
@@ -133,6 +149,32 @@ namespace Amazon.EC2.Model
         internal bool IsSetLaunchTemplateName()
         {
             return this._launchTemplateName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResolveAlias. 
+        /// <para>
+        /// If <code>true</code>, and if a Systems Manager parameter is specified for <code>ImageId</code>,
+        /// the AMI ID is displayed in the response for <code>imageID</code>. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#use-an-ssm-parameter-instead-of-an-ami-id">Use
+        /// a Systems Manager parameter instead of an AMI ID</a> in the <i>Amazon Elastic Compute
+        /// Cloud User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: <code>false</code> 
+        /// </para>
+        /// </summary>
+        public bool ResolveAlias
+        {
+            get { return this._resolveAlias.GetValueOrDefault(); }
+            set { this._resolveAlias = value; }
+        }
+
+        // Check to see if ResolveAlias property is set
+        internal bool IsSetResolveAlias()
+        {
+            return this._resolveAlias.HasValue; 
         }
 
         /// <summary>

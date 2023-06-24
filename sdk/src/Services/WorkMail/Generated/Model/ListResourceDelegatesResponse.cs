@@ -59,7 +59,7 @@ namespace Amazon.WorkMail.Model
         /// <para>
         /// The token used to paginate through the delegates associated with a resource. While
         /// results are still available, it has an associated value. When the last page is reached,
-        /// the token is empty. 
+        /// the token is empty.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

@@ -69,7 +69,7 @@ namespace Amazon.Rekognition.Model
     /// </para>
     ///  
     /// <para>
-    /// For more information, see Detecting Video Segments in Stored Video in the Amazon Rekognition
+    /// For more information, see Detecting video segments in stored video in the Amazon Rekognition
     /// Developer Guide.
     /// </para>
     /// </summary>

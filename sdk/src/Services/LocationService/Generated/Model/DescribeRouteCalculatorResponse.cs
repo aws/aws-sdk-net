@@ -46,7 +46,7 @@ namespace Amazon.LocationService.Model
         /// Gets and sets the property CalculatorArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) for the Route calculator resource. Use the ARN when
-        /// you specify a resource across AWS.
+        /// you specify a resource across Amazon Web Services.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -124,6 +124,10 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>Grab</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>Here</code> 
         /// </para>
         ///  </li> </ul> 
@@ -167,15 +171,10 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property PricingPlan. 
         /// <para>
-        /// The pricing plan selected for the specified route calculator resource.
-        /// </para>
-        ///  
-        /// <para>
-        /// For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon
-        /// Location Service pricing</a>.
+        /// Always returns <code>RequestBasedUsage</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [Obsolete("Deprecated. Always returns RequestBasedUsage.")]
         public PricingPlan PricingPlan
         {
             get { return this._pricingPlan; }

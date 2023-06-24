@@ -235,6 +235,15 @@ namespace Amazon.IoTSiteWise
         }
 
         /// <summary>
+        /// Customize the pipeline
+        /// </summary>
+        /// <param name="pipeline"></param>
+        protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
+        {
+            pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonIoTSiteWiseEndpointResolver());
+        }
+        /// <summary>
         /// Capture metadata for the service.
         /// </summary>
         protected override IServiceMetadata ServiceMetadata
@@ -291,6 +300,9 @@ namespace Amazon.IoTSiteWise
         /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
         /// in the <i>IoT SiteWise User Guide</i>.
         /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ResourceAlreadyExistsException">
+        /// The resource already exists.
         /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.ResourceNotFoundException">
         /// The requested resource can't be found.
@@ -592,6 +604,237 @@ namespace Amazon.IoTSiteWise
 
         #endregion
         
+        #region  BatchGetAssetPropertyAggregates
+
+        /// <summary>
+        /// Gets aggregated values (for example, average, minimum, and maximum) for one or more
+        /// asset properties. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/query-industrial-data.html#aggregates">Querying
+        /// aggregates</a> in the <i>IoT SiteWise User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetAssetPropertyAggregates service method.</param>
+        /// 
+        /// <returns>The response from the BatchGetAssetPropertyAggregates service method, as returned by IoTSiteWise.</returns>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InternalFailureException">
+        /// IoT SiteWise can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InvalidRequestException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters. Check your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ServiceUnavailableException">
+        /// The requested service is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ThrottlingException">
+        /// Your request exceeded a rate limit. For example, you might have exceeded the number
+        /// of IoT SiteWise assets that can be created per second, the allowed number of messages
+        /// per second, and so on.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
+        /// in the <i>IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/BatchGetAssetPropertyAggregates">REST API Reference for BatchGetAssetPropertyAggregates Operation</seealso>
+        public virtual BatchGetAssetPropertyAggregatesResponse BatchGetAssetPropertyAggregates(BatchGetAssetPropertyAggregatesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetAssetPropertyAggregatesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetAssetPropertyAggregatesResponseUnmarshaller.Instance;
+
+            return Invoke<BatchGetAssetPropertyAggregatesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchGetAssetPropertyAggregates operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetAssetPropertyAggregates operation on AmazonIoTSiteWiseClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchGetAssetPropertyAggregates
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/BatchGetAssetPropertyAggregates">REST API Reference for BatchGetAssetPropertyAggregates Operation</seealso>
+        public virtual IAsyncResult BeginBatchGetAssetPropertyAggregates(BatchGetAssetPropertyAggregatesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetAssetPropertyAggregatesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetAssetPropertyAggregatesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchGetAssetPropertyAggregates operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchGetAssetPropertyAggregates.</param>
+        /// 
+        /// <returns>Returns a  BatchGetAssetPropertyAggregatesResult from IoTSiteWise.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/BatchGetAssetPropertyAggregates">REST API Reference for BatchGetAssetPropertyAggregates Operation</seealso>
+        public virtual BatchGetAssetPropertyAggregatesResponse EndBatchGetAssetPropertyAggregates(IAsyncResult asyncResult)
+        {
+            return EndInvoke<BatchGetAssetPropertyAggregatesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  BatchGetAssetPropertyValue
+
+        /// <summary>
+        /// Gets the current value for one or more asset properties. For more information, see
+        /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/query-industrial-data.html#current-values">Querying
+        /// current values</a> in the <i>IoT SiteWise User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetAssetPropertyValue service method.</param>
+        /// 
+        /// <returns>The response from the BatchGetAssetPropertyValue service method, as returned by IoTSiteWise.</returns>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InternalFailureException">
+        /// IoT SiteWise can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InvalidRequestException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters. Check your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ServiceUnavailableException">
+        /// The requested service is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ThrottlingException">
+        /// Your request exceeded a rate limit. For example, you might have exceeded the number
+        /// of IoT SiteWise assets that can be created per second, the allowed number of messages
+        /// per second, and so on.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
+        /// in the <i>IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/BatchGetAssetPropertyValue">REST API Reference for BatchGetAssetPropertyValue Operation</seealso>
+        public virtual BatchGetAssetPropertyValueResponse BatchGetAssetPropertyValue(BatchGetAssetPropertyValueRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetAssetPropertyValueRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetAssetPropertyValueResponseUnmarshaller.Instance;
+
+            return Invoke<BatchGetAssetPropertyValueResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchGetAssetPropertyValue operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetAssetPropertyValue operation on AmazonIoTSiteWiseClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchGetAssetPropertyValue
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/BatchGetAssetPropertyValue">REST API Reference for BatchGetAssetPropertyValue Operation</seealso>
+        public virtual IAsyncResult BeginBatchGetAssetPropertyValue(BatchGetAssetPropertyValueRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetAssetPropertyValueRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetAssetPropertyValueResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchGetAssetPropertyValue operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchGetAssetPropertyValue.</param>
+        /// 
+        /// <returns>Returns a  BatchGetAssetPropertyValueResult from IoTSiteWise.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/BatchGetAssetPropertyValue">REST API Reference for BatchGetAssetPropertyValue Operation</seealso>
+        public virtual BatchGetAssetPropertyValueResponse EndBatchGetAssetPropertyValue(IAsyncResult asyncResult)
+        {
+            return EndInvoke<BatchGetAssetPropertyValueResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  BatchGetAssetPropertyValueHistory
+
+        /// <summary>
+        /// Gets the historical values for one or more asset properties. For more information,
+        /// see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/query-industrial-data.html#historical-values">Querying
+        /// historical values</a> in the <i>IoT SiteWise User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetAssetPropertyValueHistory service method.</param>
+        /// 
+        /// <returns>The response from the BatchGetAssetPropertyValueHistory service method, as returned by IoTSiteWise.</returns>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InternalFailureException">
+        /// IoT SiteWise can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InvalidRequestException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters. Check your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ServiceUnavailableException">
+        /// The requested service is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ThrottlingException">
+        /// Your request exceeded a rate limit. For example, you might have exceeded the number
+        /// of IoT SiteWise assets that can be created per second, the allowed number of messages
+        /// per second, and so on.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
+        /// in the <i>IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/BatchGetAssetPropertyValueHistory">REST API Reference for BatchGetAssetPropertyValueHistory Operation</seealso>
+        public virtual BatchGetAssetPropertyValueHistoryResponse BatchGetAssetPropertyValueHistory(BatchGetAssetPropertyValueHistoryRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetAssetPropertyValueHistoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetAssetPropertyValueHistoryResponseUnmarshaller.Instance;
+
+            return Invoke<BatchGetAssetPropertyValueHistoryResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchGetAssetPropertyValueHistory operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetAssetPropertyValueHistory operation on AmazonIoTSiteWiseClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchGetAssetPropertyValueHistory
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/BatchGetAssetPropertyValueHistory">REST API Reference for BatchGetAssetPropertyValueHistory Operation</seealso>
+        public virtual IAsyncResult BeginBatchGetAssetPropertyValueHistory(BatchGetAssetPropertyValueHistoryRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetAssetPropertyValueHistoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetAssetPropertyValueHistoryResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchGetAssetPropertyValueHistory operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchGetAssetPropertyValueHistory.</param>
+        /// 
+        /// <returns>Returns a  BatchGetAssetPropertyValueHistoryResult from IoTSiteWise.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/BatchGetAssetPropertyValueHistory">REST API Reference for BatchGetAssetPropertyValueHistory Operation</seealso>
+        public virtual BatchGetAssetPropertyValueHistoryResponse EndBatchGetAssetPropertyValueHistory(IAsyncResult asyncResult)
+        {
+            return EndInvoke<BatchGetAssetPropertyValueHistoryResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  BatchPutAssetPropertyValue
 
         /// <summary>
@@ -723,9 +966,9 @@ namespace Amazon.IoTSiteWise
         #region  CreateAccessPolicy
 
         /// <summary>
-        /// Creates an access policy that grants the specified identity (Amazon Web Services SSO
-        /// user, Amazon Web Services SSO group, or IAM user) access to the specified IoT SiteWise
-        /// Monitor portal or project resource.
+        /// Creates an access policy that grants the specified identity (IAM Identity Center user,
+        /// IAM Identity Center group, or IAM user) access to the specified IoT SiteWise Monitor
+        /// portal or project resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAccessPolicy service method.</param>
         /// 
@@ -1000,6 +1243,108 @@ namespace Amazon.IoTSiteWise
 
         #endregion
         
+        #region  CreateBulkImportJob
+
+        /// <summary>
+        /// Defines a job to ingest data to IoT SiteWise from Amazon S3. For more information,
+        /// see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/CreateBulkImportJob.html">Create
+        /// a bulk import job (CLI)</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// You must enable IoT SiteWise to export data to Amazon S3 before you create a bulk
+        /// import job. For more information about how to configure storage settings, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_PutStorageConfiguration.html">PutStorageConfiguration</a>.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateBulkImportJob service method.</param>
+        /// 
+        /// <returns>The response from the CreateBulkImportJob service method, as returned by IoTSiteWise.</returns>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ConflictingOperationException">
+        /// Your request has conflicting operations. This can occur if you're trying to perform
+        /// more than one operation on the same resource at the same time.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InternalFailureException">
+        /// IoT SiteWise can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InvalidRequestException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters. Check your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.LimitExceededException">
+        /// You've reached the limit for a resource. For example, this can occur if you're trying
+        /// to associate more than the allowed number of child assets or attempting to create
+        /// more than the allowed number of properties for an asset model.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
+        /// in the <i>IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ResourceAlreadyExistsException">
+        /// The resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ThrottlingException">
+        /// Your request exceeded a rate limit. For example, you might have exceeded the number
+        /// of IoT SiteWise assets that can be created per second, the allowed number of messages
+        /// per second, and so on.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
+        /// in the <i>IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreateBulkImportJob">REST API Reference for CreateBulkImportJob Operation</seealso>
+        public virtual CreateBulkImportJobResponse CreateBulkImportJob(CreateBulkImportJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateBulkImportJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateBulkImportJobResponseUnmarshaller.Instance;
+
+            return Invoke<CreateBulkImportJobResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateBulkImportJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateBulkImportJob operation on AmazonIoTSiteWiseClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateBulkImportJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreateBulkImportJob">REST API Reference for CreateBulkImportJob Operation</seealso>
+        public virtual IAsyncResult BeginCreateBulkImportJob(CreateBulkImportJobRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateBulkImportJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateBulkImportJobResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateBulkImportJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateBulkImportJob.</param>
+        /// 
+        /// <returns>Returns a  CreateBulkImportJobResult from IoTSiteWise.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreateBulkImportJob">REST API Reference for CreateBulkImportJob Operation</seealso>
+        public virtual CreateBulkImportJobResponse EndCreateBulkImportJob(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateBulkImportJobResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateDashboard
 
         /// <summary>
@@ -1178,7 +1523,7 @@ namespace Amazon.IoTSiteWise
 
         /// <summary>
         /// Creates a portal, which can contain projects and dashboards. IoT SiteWise Monitor
-        /// uses Amazon Web Services SSO or IAM to authenticate portal users and manage user permissions.
+        /// uses IAM Identity Center or IAM to authenticate portal users and manage user permissions.
         /// 
         ///  <note> 
         /// <para>
@@ -2327,6 +2672,83 @@ namespace Amazon.IoTSiteWise
         public virtual DescribeAssetPropertyResponse EndDescribeAssetProperty(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeAssetPropertyResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeBulkImportJob
+
+        /// <summary>
+        /// Retrieves information about a bulk import job request. For more information, see <a
+        /// href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/DescribeBulkImportJob.html">Describe
+        /// a bulk import job (CLI)</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeBulkImportJob service method.</param>
+        /// 
+        /// <returns>The response from the DescribeBulkImportJob service method, as returned by IoTSiteWise.</returns>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InternalFailureException">
+        /// IoT SiteWise can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InvalidRequestException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters. Check your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ThrottlingException">
+        /// Your request exceeded a rate limit. For example, you might have exceeded the number
+        /// of IoT SiteWise assets that can be created per second, the allowed number of messages
+        /// per second, and so on.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
+        /// in the <i>IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeBulkImportJob">REST API Reference for DescribeBulkImportJob Operation</seealso>
+        public virtual DescribeBulkImportJobResponse DescribeBulkImportJob(DescribeBulkImportJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeBulkImportJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeBulkImportJobResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeBulkImportJobResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeBulkImportJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeBulkImportJob operation on AmazonIoTSiteWiseClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeBulkImportJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeBulkImportJob">REST API Reference for DescribeBulkImportJob Operation</seealso>
+        public virtual IAsyncResult BeginDescribeBulkImportJob(DescribeBulkImportJobRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeBulkImportJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeBulkImportJobResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeBulkImportJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeBulkImportJob.</param>
+        /// 
+        /// <returns>Returns a  DescribeBulkImportJobResult from IoTSiteWise.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeBulkImportJob">REST API Reference for DescribeBulkImportJob Operation</seealso>
+        public virtual DescribeBulkImportJobResponse EndDescribeBulkImportJob(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeBulkImportJobResponse>(asyncResult);
         }
 
         #endregion
@@ -3593,9 +4015,9 @@ namespace Amazon.IoTSiteWise
         #region  ListAccessPolicies
 
         /// <summary>
-        /// Retrieves a paginated list of access policies for an identity (an Amazon Web Services
-        /// SSO user, an Amazon Web Services SSO group, or an IAM user) or an IoT SiteWise Monitor
-        /// resource (a portal or project).
+        /// Retrieves a paginated list of access policies for an identity (an IAM Identity Center
+        /// user, an IAM Identity Center group, or an IAM user) or an IoT SiteWise Monitor resource
+        /// (a portal or project).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAccessPolicies service method.</param>
         /// 
@@ -3660,6 +4082,83 @@ namespace Amazon.IoTSiteWise
         public virtual ListAccessPoliciesResponse EndListAccessPolicies(IAsyncResult asyncResult)
         {
             return EndInvoke<ListAccessPoliciesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListAssetModelProperties
+
+        /// <summary>
+        /// Retrieves a paginated list of properties associated with an asset model. If you update
+        /// properties associated with the model before you finish listing all the properties,
+        /// you need to start all over again.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAssetModelProperties service method.</param>
+        /// 
+        /// <returns>The response from the ListAssetModelProperties service method, as returned by IoTSiteWise.</returns>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InternalFailureException">
+        /// IoT SiteWise can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InvalidRequestException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters. Check your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ThrottlingException">
+        /// Your request exceeded a rate limit. For example, you might have exceeded the number
+        /// of IoT SiteWise assets that can be created per second, the allowed number of messages
+        /// per second, and so on.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
+        /// in the <i>IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListAssetModelProperties">REST API Reference for ListAssetModelProperties Operation</seealso>
+        public virtual ListAssetModelPropertiesResponse ListAssetModelProperties(ListAssetModelPropertiesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAssetModelPropertiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAssetModelPropertiesResponseUnmarshaller.Instance;
+
+            return Invoke<ListAssetModelPropertiesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAssetModelProperties operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAssetModelProperties operation on AmazonIoTSiteWiseClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAssetModelProperties
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListAssetModelProperties">REST API Reference for ListAssetModelProperties Operation</seealso>
+        public virtual IAsyncResult BeginListAssetModelProperties(ListAssetModelPropertiesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAssetModelPropertiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAssetModelPropertiesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListAssetModelProperties operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAssetModelProperties.</param>
+        /// 
+        /// <returns>Returns a  ListAssetModelPropertiesResult from IoTSiteWise.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListAssetModelProperties">REST API Reference for ListAssetModelProperties Operation</seealso>
+        public virtual ListAssetModelPropertiesResponse EndListAssetModelProperties(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListAssetModelPropertiesResponse>(asyncResult);
         }
 
         #endregion
@@ -3732,6 +4231,83 @@ namespace Amazon.IoTSiteWise
         public virtual ListAssetModelsResponse EndListAssetModels(IAsyncResult asyncResult)
         {
             return EndInvoke<ListAssetModelsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListAssetProperties
+
+        /// <summary>
+        /// Retrieves a paginated list of properties associated with an asset. If you update properties
+        /// associated with the model before you finish listing all the properties, you need to
+        /// start all over again.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAssetProperties service method.</param>
+        /// 
+        /// <returns>The response from the ListAssetProperties service method, as returned by IoTSiteWise.</returns>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InternalFailureException">
+        /// IoT SiteWise can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InvalidRequestException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters. Check your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ThrottlingException">
+        /// Your request exceeded a rate limit. For example, you might have exceeded the number
+        /// of IoT SiteWise assets that can be created per second, the allowed number of messages
+        /// per second, and so on.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
+        /// in the <i>IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListAssetProperties">REST API Reference for ListAssetProperties Operation</seealso>
+        public virtual ListAssetPropertiesResponse ListAssetProperties(ListAssetPropertiesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAssetPropertiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAssetPropertiesResponseUnmarshaller.Instance;
+
+            return Invoke<ListAssetPropertiesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAssetProperties operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAssetProperties operation on AmazonIoTSiteWiseClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAssetProperties
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListAssetProperties">REST API Reference for ListAssetProperties Operation</seealso>
+        public virtual IAsyncResult BeginListAssetProperties(ListAssetPropertiesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAssetPropertiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAssetPropertiesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListAssetProperties operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAssetProperties.</param>
+        /// 
+        /// <returns>Returns a  ListAssetPropertiesResult from IoTSiteWise.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListAssetProperties">REST API Reference for ListAssetProperties Operation</seealso>
+        public virtual ListAssetPropertiesResponse EndListAssetProperties(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListAssetPropertiesResponse>(asyncResult);
         }
 
         #endregion
@@ -3993,6 +4569,83 @@ namespace Amazon.IoTSiteWise
         public virtual ListAssociatedAssetsResponse EndListAssociatedAssets(IAsyncResult asyncResult)
         {
             return EndInvoke<ListAssociatedAssetsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListBulkImportJobs
+
+        /// <summary>
+        /// Retrieves a paginated list of bulk import job requests. For more information, see
+        /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/ListBulkImportJobs.html">List
+        /// bulk import jobs (CLI)</a> in the <i>IoT SiteWise User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListBulkImportJobs service method.</param>
+        /// 
+        /// <returns>The response from the ListBulkImportJobs service method, as returned by IoTSiteWise.</returns>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InternalFailureException">
+        /// IoT SiteWise can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InvalidRequestException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters. Check your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ThrottlingException">
+        /// Your request exceeded a rate limit. For example, you might have exceeded the number
+        /// of IoT SiteWise assets that can be created per second, the allowed number of messages
+        /// per second, and so on.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
+        /// in the <i>IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListBulkImportJobs">REST API Reference for ListBulkImportJobs Operation</seealso>
+        public virtual ListBulkImportJobsResponse ListBulkImportJobs(ListBulkImportJobsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListBulkImportJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListBulkImportJobsResponseUnmarshaller.Instance;
+
+            return Invoke<ListBulkImportJobsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListBulkImportJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListBulkImportJobs operation on AmazonIoTSiteWiseClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListBulkImportJobs
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListBulkImportJobs">REST API Reference for ListBulkImportJobs Operation</seealso>
+        public virtual IAsyncResult BeginListBulkImportJobs(ListBulkImportJobsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListBulkImportJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListBulkImportJobsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListBulkImportJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListBulkImportJobs.</param>
+        /// 
+        /// <returns>Returns a  ListBulkImportJobsResult from IoTSiteWise.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListBulkImportJobs">REST API Reference for ListBulkImportJobs Operation</seealso>
+        public virtual ListBulkImportJobsResponse EndListBulkImportJobs(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListBulkImportJobsResponse>(asyncResult);
         }
 
         #endregion

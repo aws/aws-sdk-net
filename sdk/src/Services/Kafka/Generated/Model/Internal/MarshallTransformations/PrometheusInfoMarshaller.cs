@@ -34,7 +34,7 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// PrometheusInfo Marshaller
-    /// </summary>       
+    /// </summary>
     public class PrometheusInfoMarshaller : IRequestMarshaller<PrometheusInfo, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static PrometheusInfoMarshaller Instance = new PrometheusInfoMarshaller();
 
     }

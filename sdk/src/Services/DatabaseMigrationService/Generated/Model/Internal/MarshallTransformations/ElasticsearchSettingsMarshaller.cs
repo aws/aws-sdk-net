@@ -34,7 +34,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ElasticsearchSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class ElasticsearchSettingsMarshaller : IRequestMarshaller<ElasticsearchSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -69,11 +69,17 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ServiceAccessRoleArn);
             }
 
+            if(requestObject.IsSetUseNewMappingType())
+            {
+                context.Writer.WritePropertyName("UseNewMappingType");
+                context.Writer.Write(requestObject.UseNewMappingType);
+            }
+
         }
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ElasticsearchSettingsMarshaller Instance = new ElasticsearchSettingsMarshaller();
 
     }

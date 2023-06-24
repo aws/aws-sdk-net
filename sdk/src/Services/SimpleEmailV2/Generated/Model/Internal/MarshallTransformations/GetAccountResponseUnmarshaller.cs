@@ -93,6 +93,12 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
                     response.SuppressionAttributes = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("VdmAttributes", targetDepth))
+                {
+                    var unmarshaller = VdmAttributesUnmarshaller.Instance;
+                    response.VdmAttributes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

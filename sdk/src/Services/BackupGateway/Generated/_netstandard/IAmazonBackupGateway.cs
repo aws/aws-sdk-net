@@ -85,6 +85,10 @@ namespace Amazon.BackupGateway
         /// <exception cref="Amazon.BackupGateway.Model.InternalServerException">
         /// The operation did not succeed because an internal error occurred. Try again later.
         /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ThrottlingException">
+        /// TPS has been limited to protect against intentional or unintentional high request
+        /// volumes.
+        /// </exception>
         /// <exception cref="Amazon.BackupGateway.Model.ValidationException">
         /// The operation did not succeed because a validation error occurred.
         /// </exception>
@@ -109,6 +113,10 @@ namespace Amazon.BackupGateway
         /// <returns>The response from the CreateGateway service method, as returned by BackupGateway.</returns>
         /// <exception cref="Amazon.BackupGateway.Model.InternalServerException">
         /// The operation did not succeed because an internal error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ThrottlingException">
+        /// TPS has been limited to protect against intentional or unintentional high request
+        /// volumes.
         /// </exception>
         /// <exception cref="Amazon.BackupGateway.Model.ValidationException">
         /// The operation did not succeed because a validation error occurred.
@@ -137,6 +145,10 @@ namespace Amazon.BackupGateway
         /// <exception cref="Amazon.BackupGateway.Model.ResourceNotFoundException">
         /// A resource that is required for the action wasn't found.
         /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ThrottlingException">
+        /// TPS has been limited to protect against intentional or unintentional high request
+        /// volumes.
+        /// </exception>
         /// <exception cref="Amazon.BackupGateway.Model.ValidationException">
         /// The operation did not succeed because a validation error occurred.
         /// </exception>
@@ -161,11 +173,18 @@ namespace Amazon.BackupGateway
         /// <exception cref="Amazon.BackupGateway.Model.AccessDeniedException">
         /// The operation cannot proceed because you have insufficient permissions.
         /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ConflictException">
+        /// The operation cannot proceed because it is not supported.
+        /// </exception>
         /// <exception cref="Amazon.BackupGateway.Model.InternalServerException">
         /// The operation did not succeed because an internal error occurred. Try again later.
         /// </exception>
         /// <exception cref="Amazon.BackupGateway.Model.ResourceNotFoundException">
         /// A resource that is required for the action wasn't found.
+        /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ThrottlingException">
+        /// TPS has been limited to protect against intentional or unintentional high request
+        /// volumes.
         /// </exception>
         /// <exception cref="Amazon.BackupGateway.Model.ValidationException">
         /// The operation did not succeed because a validation error occurred.
@@ -198,11 +217,176 @@ namespace Amazon.BackupGateway
         /// <exception cref="Amazon.BackupGateway.Model.ResourceNotFoundException">
         /// A resource that is required for the action wasn't found.
         /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ThrottlingException">
+        /// TPS has been limited to protect against intentional or unintentional high request
+        /// volumes.
+        /// </exception>
         /// <exception cref="Amazon.BackupGateway.Model.ValidationException">
         /// The operation did not succeed because a validation error occurred.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/DisassociateGatewayFromServer">REST API Reference for DisassociateGatewayFromServer Operation</seealso>
         Task<DisassociateGatewayFromServerResponse> DisassociateGatewayFromServerAsync(DisassociateGatewayFromServerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetBandwidthRateLimitSchedule
+
+
+
+        /// <summary>
+        /// Retrieves the bandwidth rate limit schedule for a specified gateway. By default, gateways
+        /// do not have bandwidth rate limit schedules, which means no bandwidth rate limiting
+        /// is in effect. Use this to get a gateway's bandwidth rate limit schedule.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetBandwidthRateLimitSchedule service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetBandwidthRateLimitSchedule service method, as returned by BackupGateway.</returns>
+        /// <exception cref="Amazon.BackupGateway.Model.InternalServerException">
+        /// The operation did not succeed because an internal error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ResourceNotFoundException">
+        /// A resource that is required for the action wasn't found.
+        /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ThrottlingException">
+        /// TPS has been limited to protect against intentional or unintentional high request
+        /// volumes.
+        /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ValidationException">
+        /// The operation did not succeed because a validation error occurred.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/GetBandwidthRateLimitSchedule">REST API Reference for GetBandwidthRateLimitSchedule Operation</seealso>
+        Task<GetBandwidthRateLimitScheduleResponse> GetBandwidthRateLimitScheduleAsync(GetBandwidthRateLimitScheduleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetGateway
+
+
+
+        /// <summary>
+        /// By providing the ARN (Amazon Resource Name), this API returns the gateway.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetGateway service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetGateway service method, as returned by BackupGateway.</returns>
+        /// <exception cref="Amazon.BackupGateway.Model.InternalServerException">
+        /// The operation did not succeed because an internal error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ResourceNotFoundException">
+        /// A resource that is required for the action wasn't found.
+        /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ThrottlingException">
+        /// TPS has been limited to protect against intentional or unintentional high request
+        /// volumes.
+        /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ValidationException">
+        /// The operation did not succeed because a validation error occurred.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/GetGateway">REST API Reference for GetGateway Operation</seealso>
+        Task<GetGatewayResponse> GetGatewayAsync(GetGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetHypervisor
+
+
+
+        /// <summary>
+        /// This action requests information about the specified hypervisor to which the gateway
+        /// will connect. A hypervisor is hardware, software, or firmware that creates and manages
+        /// virtual machines, and allocates resources to them.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetHypervisor service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetHypervisor service method, as returned by BackupGateway.</returns>
+        /// <exception cref="Amazon.BackupGateway.Model.InternalServerException">
+        /// The operation did not succeed because an internal error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ResourceNotFoundException">
+        /// A resource that is required for the action wasn't found.
+        /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ThrottlingException">
+        /// TPS has been limited to protect against intentional or unintentional high request
+        /// volumes.
+        /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ValidationException">
+        /// The operation did not succeed because a validation error occurred.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/GetHypervisor">REST API Reference for GetHypervisor Operation</seealso>
+        Task<GetHypervisorResponse> GetHypervisorAsync(GetHypervisorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetHypervisorPropertyMappings
+
+
+
+        /// <summary>
+        /// This action retrieves the property mappings for the specified hypervisor. A hypervisor
+        /// property mapping displays the relationship of entity properties available from the
+        /// on-premises hypervisor to the properties available in Amazon Web Services.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetHypervisorPropertyMappings service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetHypervisorPropertyMappings service method, as returned by BackupGateway.</returns>
+        /// <exception cref="Amazon.BackupGateway.Model.InternalServerException">
+        /// The operation did not succeed because an internal error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ResourceNotFoundException">
+        /// A resource that is required for the action wasn't found.
+        /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ThrottlingException">
+        /// TPS has been limited to protect against intentional or unintentional high request
+        /// volumes.
+        /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ValidationException">
+        /// The operation did not succeed because a validation error occurred.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/GetHypervisorPropertyMappings">REST API Reference for GetHypervisorPropertyMappings Operation</seealso>
+        Task<GetHypervisorPropertyMappingsResponse> GetHypervisorPropertyMappingsAsync(GetHypervisorPropertyMappingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetVirtualMachine
+
+
+
+        /// <summary>
+        /// By providing the ARN (Amazon Resource Name), this API returns the virtual machine.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetVirtualMachine service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetVirtualMachine service method, as returned by BackupGateway.</returns>
+        /// <exception cref="Amazon.BackupGateway.Model.InternalServerException">
+        /// The operation did not succeed because an internal error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ResourceNotFoundException">
+        /// A resource that is required for the action wasn't found.
+        /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ThrottlingException">
+        /// TPS has been limited to protect against intentional or unintentional high request
+        /// volumes.
+        /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ValidationException">
+        /// The operation did not succeed because a validation error occurred.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/GetVirtualMachine">REST API Reference for GetVirtualMachine Operation</seealso>
+        Task<GetVirtualMachineResponse> GetVirtualMachineAsync(GetVirtualMachineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -222,8 +406,15 @@ namespace Amazon.BackupGateway
         /// <exception cref="Amazon.BackupGateway.Model.AccessDeniedException">
         /// The operation cannot proceed because you have insufficient permissions.
         /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ConflictException">
+        /// The operation cannot proceed because it is not supported.
+        /// </exception>
         /// <exception cref="Amazon.BackupGateway.Model.InternalServerException">
         /// The operation did not succeed because an internal error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ThrottlingException">
+        /// TPS has been limited to protect against intentional or unintentional high request
+        /// volumes.
         /// </exception>
         /// <exception cref="Amazon.BackupGateway.Model.ValidationException">
         /// The operation did not succeed because a validation error occurred.
@@ -250,6 +441,10 @@ namespace Amazon.BackupGateway
         /// <exception cref="Amazon.BackupGateway.Model.InternalServerException">
         /// The operation did not succeed because an internal error occurred. Try again later.
         /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ThrottlingException">
+        /// TPS has been limited to protect against intentional or unintentional high request
+        /// volumes.
+        /// </exception>
         /// <exception cref="Amazon.BackupGateway.Model.ValidationException">
         /// The operation did not succeed because a validation error occurred.
         /// </exception>
@@ -273,6 +468,10 @@ namespace Amazon.BackupGateway
         /// <returns>The response from the ListHypervisors service method, as returned by BackupGateway.</returns>
         /// <exception cref="Amazon.BackupGateway.Model.InternalServerException">
         /// The operation did not succeed because an internal error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ThrottlingException">
+        /// TPS has been limited to protect against intentional or unintentional high request
+        /// volumes.
         /// </exception>
         /// <exception cref="Amazon.BackupGateway.Model.ValidationException">
         /// The operation did not succeed because a validation error occurred.
@@ -301,6 +500,10 @@ namespace Amazon.BackupGateway
         /// <exception cref="Amazon.BackupGateway.Model.ResourceNotFoundException">
         /// A resource that is required for the action wasn't found.
         /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ThrottlingException">
+        /// TPS has been limited to protect against intentional or unintentional high request
+        /// volumes.
+        /// </exception>
         /// <exception cref="Amazon.BackupGateway.Model.ValidationException">
         /// The operation did not succeed because a validation error occurred.
         /// </exception>
@@ -325,11 +528,87 @@ namespace Amazon.BackupGateway
         /// <exception cref="Amazon.BackupGateway.Model.InternalServerException">
         /// The operation did not succeed because an internal error occurred. Try again later.
         /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ThrottlingException">
+        /// TPS has been limited to protect against intentional or unintentional high request
+        /// volumes.
+        /// </exception>
         /// <exception cref="Amazon.BackupGateway.Model.ValidationException">
         /// The operation did not succeed because a validation error occurred.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/ListVirtualMachines">REST API Reference for ListVirtualMachines Operation</seealso>
         Task<ListVirtualMachinesResponse> ListVirtualMachinesAsync(ListVirtualMachinesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  PutBandwidthRateLimitSchedule
+
+
+
+        /// <summary>
+        /// This action sets the bandwidth rate limit schedule for a specified gateway. By default,
+        /// gateways do not have a bandwidth rate limit schedule, which means no bandwidth rate
+        /// limiting is in effect. Use this to initiate a gateway's bandwidth rate limit schedule.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutBandwidthRateLimitSchedule service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutBandwidthRateLimitSchedule service method, as returned by BackupGateway.</returns>
+        /// <exception cref="Amazon.BackupGateway.Model.InternalServerException">
+        /// The operation did not succeed because an internal error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ResourceNotFoundException">
+        /// A resource that is required for the action wasn't found.
+        /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ThrottlingException">
+        /// TPS has been limited to protect against intentional or unintentional high request
+        /// volumes.
+        /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ValidationException">
+        /// The operation did not succeed because a validation error occurred.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/PutBandwidthRateLimitSchedule">REST API Reference for PutBandwidthRateLimitSchedule Operation</seealso>
+        Task<PutBandwidthRateLimitScheduleResponse> PutBandwidthRateLimitScheduleAsync(PutBandwidthRateLimitScheduleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  PutHypervisorPropertyMappings
+
+
+
+        /// <summary>
+        /// This action sets the property mappings for the specified hypervisor. A hypervisor
+        /// property mapping displays the relationship of entity properties available from the
+        /// on-premises hypervisor to the properties available in Amazon Web Services.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutHypervisorPropertyMappings service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutHypervisorPropertyMappings service method, as returned by BackupGateway.</returns>
+        /// <exception cref="Amazon.BackupGateway.Model.AccessDeniedException">
+        /// The operation cannot proceed because you have insufficient permissions.
+        /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ConflictException">
+        /// The operation cannot proceed because it is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.InternalServerException">
+        /// The operation did not succeed because an internal error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ResourceNotFoundException">
+        /// A resource that is required for the action wasn't found.
+        /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ThrottlingException">
+        /// TPS has been limited to protect against intentional or unintentional high request
+        /// volumes.
+        /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ValidationException">
+        /// The operation did not succeed because a validation error occurred.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/PutHypervisorPropertyMappings">REST API Reference for PutHypervisorPropertyMappings Operation</seealso>
+        Task<PutHypervisorPropertyMappingsResponse> PutHypervisorPropertyMappingsAsync(PutHypervisorPropertyMappingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -355,11 +634,49 @@ namespace Amazon.BackupGateway
         /// <exception cref="Amazon.BackupGateway.Model.ResourceNotFoundException">
         /// A resource that is required for the action wasn't found.
         /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ThrottlingException">
+        /// TPS has been limited to protect against intentional or unintentional high request
+        /// volumes.
+        /// </exception>
         /// <exception cref="Amazon.BackupGateway.Model.ValidationException">
         /// The operation did not succeed because a validation error occurred.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/PutMaintenanceStartTime">REST API Reference for PutMaintenanceStartTime Operation</seealso>
         Task<PutMaintenanceStartTimeResponse> PutMaintenanceStartTimeAsync(PutMaintenanceStartTimeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  StartVirtualMachinesMetadataSync
+
+
+
+        /// <summary>
+        /// This action sends a request to sync metadata across the specified virtual machines.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartVirtualMachinesMetadataSync service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartVirtualMachinesMetadataSync service method, as returned by BackupGateway.</returns>
+        /// <exception cref="Amazon.BackupGateway.Model.AccessDeniedException">
+        /// The operation cannot proceed because you have insufficient permissions.
+        /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.InternalServerException">
+        /// The operation did not succeed because an internal error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ResourceNotFoundException">
+        /// A resource that is required for the action wasn't found.
+        /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ThrottlingException">
+        /// TPS has been limited to protect against intentional or unintentional high request
+        /// volumes.
+        /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ValidationException">
+        /// The operation did not succeed because a validation error occurred.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/StartVirtualMachinesMetadataSync">REST API Reference for StartVirtualMachinesMetadataSync Operation</seealso>
+        Task<StartVirtualMachinesMetadataSyncResponse> StartVirtualMachinesMetadataSyncAsync(StartVirtualMachinesMetadataSyncRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -381,6 +698,10 @@ namespace Amazon.BackupGateway
         /// </exception>
         /// <exception cref="Amazon.BackupGateway.Model.ResourceNotFoundException">
         /// A resource that is required for the action wasn't found.
+        /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ThrottlingException">
+        /// TPS has been limited to protect against intentional or unintentional high request
+        /// volumes.
         /// </exception>
         /// <exception cref="Amazon.BackupGateway.Model.ValidationException">
         /// The operation did not succeed because a validation error occurred.
@@ -413,6 +734,10 @@ namespace Amazon.BackupGateway
         /// <exception cref="Amazon.BackupGateway.Model.ResourceNotFoundException">
         /// A resource that is required for the action wasn't found.
         /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ThrottlingException">
+        /// TPS has been limited to protect against intentional or unintentional high request
+        /// volumes.
+        /// </exception>
         /// <exception cref="Amazon.BackupGateway.Model.ValidationException">
         /// The operation did not succeed because a validation error occurred.
         /// </exception>
@@ -439,6 +764,10 @@ namespace Amazon.BackupGateway
         /// </exception>
         /// <exception cref="Amazon.BackupGateway.Model.ResourceNotFoundException">
         /// A resource that is required for the action wasn't found.
+        /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ThrottlingException">
+        /// TPS has been limited to protect against intentional or unintentional high request
+        /// volumes.
         /// </exception>
         /// <exception cref="Amazon.BackupGateway.Model.ValidationException">
         /// The operation did not succeed because a validation error occurred.
@@ -471,11 +800,54 @@ namespace Amazon.BackupGateway
         /// <exception cref="Amazon.BackupGateway.Model.ResourceNotFoundException">
         /// A resource that is required for the action wasn't found.
         /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ThrottlingException">
+        /// TPS has been limited to protect against intentional or unintentional high request
+        /// volumes.
+        /// </exception>
         /// <exception cref="Amazon.BackupGateway.Model.ValidationException">
         /// The operation did not succeed because a validation error occurred.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/UpdateGatewayInformation">REST API Reference for UpdateGatewayInformation Operation</seealso>
         Task<UpdateGatewayInformationResponse> UpdateGatewayInformationAsync(UpdateGatewayInformationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateGatewaySoftwareNow
+
+
+
+        /// <summary>
+        /// Updates the gateway virtual machine (VM) software. The request immediately triggers
+        /// the software update.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// When you make this request, you get a <code>200 OK</code> success response immediately.
+        /// However, it might take some time for the update to complete.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateGatewaySoftwareNow service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateGatewaySoftwareNow service method, as returned by BackupGateway.</returns>
+        /// <exception cref="Amazon.BackupGateway.Model.InternalServerException">
+        /// The operation did not succeed because an internal error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ResourceNotFoundException">
+        /// A resource that is required for the action wasn't found.
+        /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ThrottlingException">
+        /// TPS has been limited to protect against intentional or unintentional high request
+        /// volumes.
+        /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ValidationException">
+        /// The operation did not succeed because a validation error occurred.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/UpdateGatewaySoftwareNow">REST API Reference for UpdateGatewaySoftwareNow Operation</seealso>
+        Task<UpdateGatewaySoftwareNowResponse> UpdateGatewaySoftwareNowAsync(UpdateGatewaySoftwareNowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -497,11 +869,18 @@ namespace Amazon.BackupGateway
         /// <exception cref="Amazon.BackupGateway.Model.AccessDeniedException">
         /// The operation cannot proceed because you have insufficient permissions.
         /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ConflictException">
+        /// The operation cannot proceed because it is not supported.
+        /// </exception>
         /// <exception cref="Amazon.BackupGateway.Model.InternalServerException">
         /// The operation did not succeed because an internal error occurred. Try again later.
         /// </exception>
         /// <exception cref="Amazon.BackupGateway.Model.ResourceNotFoundException">
         /// A resource that is required for the action wasn't found.
+        /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ThrottlingException">
+        /// TPS has been limited to protect against intentional or unintentional high request
+        /// volumes.
         /// </exception>
         /// <exception cref="Amazon.BackupGateway.Model.ValidationException">
         /// The operation did not succeed because a validation error occurred.

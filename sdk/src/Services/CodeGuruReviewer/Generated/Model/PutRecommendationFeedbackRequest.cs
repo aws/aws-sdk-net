@@ -42,8 +42,8 @@ namespace Amazon.CodeGuruReviewer.Model
         /// <summary>
         /// Gets and sets the property CodeReviewArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">
-        /// <code>CodeReview</code> </a> object. 
+        /// The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a>
+        /// object. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1600)]
@@ -62,8 +62,8 @@ namespace Amazon.CodeGuruReviewer.Model
         /// <summary>
         /// Gets and sets the property Reactions. 
         /// <para>
-        ///  List for storing reactions. Reactions are utf-8 text code for emojis. If you send
-        /// an empty list it clears all your feedback. 
+        /// List for storing reactions. Reactions are utf-8 text code for emojis. If you send
+        /// an empty list it clears all your feedback.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=1)]
@@ -82,8 +82,8 @@ namespace Amazon.CodeGuruReviewer.Model
         /// <summary>
         /// Gets and sets the property RecommendationId. 
         /// <para>
-        ///  The recommendation ID that can be used to track the provided recommendations and
-        /// then to collect the feedback. 
+        /// The recommendation ID that can be used to track the provided recommendations and then
+        /// to collect the feedback.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]

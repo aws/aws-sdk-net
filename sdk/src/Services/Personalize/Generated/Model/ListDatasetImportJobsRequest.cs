@@ -33,8 +33,8 @@ namespace Amazon.Personalize.Model
     /// Returns a list of dataset import jobs that use the given dataset. When a dataset is
     /// not specified, all the dataset import jobs associated with the account are listed.
     /// The response provides the properties for each dataset import job, including the Amazon
-    /// Resource Name (ARN). For more information on dataset import jobs, see <a>CreateDatasetImportJob</a>.
-    /// For more information on datasets, see <a>CreateDataset</a>.
+    /// Resource Name (ARN). For more information on dataset import jobs, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDatasetImportJob.html">CreateDatasetImportJob</a>.
+    /// For more information on datasets, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDataset.html">CreateDataset</a>.
     /// </summary>
     public partial class ListDatasetImportJobsRequest : AmazonPersonalizeRequest
     {

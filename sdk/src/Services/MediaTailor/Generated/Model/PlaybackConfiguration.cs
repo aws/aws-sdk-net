@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaTailor.Model
 {
     /// <summary>
-    /// Creates a playback configuration. For information about MediaTailor configurations,
-    /// see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/configurations.html">Working
+    /// A playback configuration. For information about MediaTailor configurations, see <a
+    /// href="https://docs.aws.amazon.com/mediatailor/latest/ug/configurations.html">Working
     /// with configurations in AWS Elemental MediaTailor</a>.
     /// </summary>
     public partial class PlaybackConfiguration
@@ -367,7 +367,10 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags to assign to the playback configuration.
+        /// The tags to assign to the playback configuration. Tags are key-value pairs that you
+        /// can associate with Amazon resources to help with organization, access control, and
+        /// cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+        /// AWS Elemental MediaTailor Resources</a>.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Tags

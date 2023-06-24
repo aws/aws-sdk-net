@@ -1,5 +1,6 @@
 {
   "active": true,
   "synopsis": "(New Service) AWS Network Firewall is a managed network layer firewall service that makes it easy to secure your virtual private cloud (VPC) networks and block malicious traffic.",
-  "generate-client-constructors": true
+  "generate-client-constructors": true,
+  "legacy-service-id": "Network Firewall"
 }

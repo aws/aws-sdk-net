@@ -46,10 +46,6 @@ namespace Amazon.ServiceCatalog.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>en</code> - English (default)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         ///  <code>jp</code> - Japanese
         /// </para>
         ///  </li> <li> 
@@ -125,18 +121,18 @@ namespace Amazon.ServiceCatalog.Model
         /// </para>
         ///  
         /// <para>
-        /// The <code>OWNER</code> key accepts user ARNs and role ARNs. The owner is the user
-        /// that has permission to see, update, terminate, and execute service actions in the
-        /// provisioned product.
+        /// The <code>OWNER</code> key accepts user ARNs, IAM role ARNs, and STS assumed-role
+        /// ARNs. The owner is the user that has permission to see, update, terminate, and execute
+        /// service actions in the provisioned product.
         /// </para>
         ///  
         /// <para>
-        /// The administrator can change the owner of a provisioned product to another IAM user
-        /// within the same account. Both end user owners and administrators can see ownership
-        /// history of the provisioned product using the <code>ListRecordHistory</code> API. The
-        /// new owner can describe all past records for the provisioned product using the <code>DescribeRecord</code>
-        /// API. The previous owner can no longer use <code>DescribeRecord</code>, but can still
-        /// see the product's history from when he was an owner using <code>ListRecordHistory</code>.
+        /// The administrator can change the owner of a provisioned product to another IAM or
+        /// STS entity within the same account. Both end user owners and administrators can see
+        /// ownership history of the provisioned product using the <code>ListRecordHistory</code>
+        /// API. The new owner can describe all past records for the provisioned product using
+        /// the <code>DescribeRecord</code> API. The previous owner can no longer use <code>DescribeRecord</code>,
+        /// but can still see the product's history from when he was an owner using <code>ListRecordHistory</code>.
         /// </para>
         ///  
         /// <para>

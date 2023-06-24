@@ -34,6 +34,7 @@ namespace Amazon.EC2.Model
     public partial class ProcessorInfo
     {
         private List<string> _supportedArchitectures = new List<string>();
+        private List<string> _supportedFeatures = new List<string>();
         private double? _sustainedClockSpeedInGhz;
 
         /// <summary>
@@ -52,6 +53,26 @@ namespace Amazon.EC2.Model
         internal bool IsSetSupportedArchitectures()
         {
             return this._supportedArchitectures != null && this._supportedArchitectures.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SupportedFeatures. 
+        /// <para>
+        /// Indicates whether the instance type supports AMD SEV-SNP. If the request returns <code>amd-sev-snp</code>,
+        /// AMD SEV-SNP is supported. Otherwise, it is not supported. For more information, see
+        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sev-snp.html"> AMD SEV-SNP</a>.
+        /// </para>
+        /// </summary>
+        public List<string> SupportedFeatures
+        {
+            get { return this._supportedFeatures; }
+            set { this._supportedFeatures = value; }
+        }
+
+        // Check to see if SupportedFeatures property is set
+        internal bool IsSetSupportedFeatures()
+        {
+            return this._supportedFeatures != null && this._supportedFeatures.Count > 0; 
         }
 
         /// <summary>

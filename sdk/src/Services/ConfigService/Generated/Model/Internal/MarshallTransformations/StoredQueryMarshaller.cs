@@ -34,7 +34,7 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// StoredQuery Marshaller
-    /// </summary>       
+    /// </summary>
     public class StoredQueryMarshaller : IRequestMarshaller<StoredQuery, JsonMarshallerContext> 
     {
         /// <summary>
@@ -79,7 +79,7 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static StoredQueryMarshaller Instance = new StoredQueryMarshaller();
 
     }

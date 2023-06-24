@@ -64,6 +64,12 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("CustomPolicyDetails", targetDepth))
+                {
+                    var unmarshaller = CustomPolicyDetailsUnmarshaller.Instance;
+                    unmarshalledObject.CustomPolicyDetails = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Owner", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -34,7 +34,7 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// WorkflowExecution Marshaller
-    /// </summary>       
+    /// </summary>
     public class WorkflowExecutionMarshaller : IRequestMarshaller<WorkflowExecution, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static WorkflowExecutionMarshaller Instance = new WorkflowExecutionMarshaller();
 
     }

@@ -29,7 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MWAA.Model
 {
     /// <summary>
-    /// Internal only API.
+    /// <b>Internal only</b>. Represents a set of statistics that describe a specific metric.
+    /// To learn more about the metrics published to Amazon CloudWatch, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/cw-metrics.html">Amazon
+    /// MWAA performance metrics in Amazon CloudWatch</a>.
     /// </summary>
     public partial class StatisticSet
     {
@@ -41,7 +43,7 @@ namespace Amazon.MWAA.Model
         /// <summary>
         /// Gets and sets the property Maximum. 
         /// <para>
-        /// Internal only API.
+        ///  <b>Internal only</b>. The maximum value of the sample set.
         /// </para>
         /// </summary>
         public double Maximum
@@ -59,7 +61,7 @@ namespace Amazon.MWAA.Model
         /// <summary>
         /// Gets and sets the property Minimum. 
         /// <para>
-        /// Internal only API.
+        ///  <b>Internal only</b>. The minimum value of the sample set.
         /// </para>
         /// </summary>
         public double Minimum
@@ -77,7 +79,7 @@ namespace Amazon.MWAA.Model
         /// <summary>
         /// Gets and sets the property SampleCount. 
         /// <para>
-        /// Internal only API.
+        ///  <b>Internal only</b>. The number of samples used for the statistic set.
         /// </para>
         /// </summary>
         public int SampleCount
@@ -95,7 +97,7 @@ namespace Amazon.MWAA.Model
         /// <summary>
         /// Gets and sets the property Sum. 
         /// <para>
-        /// Internal only API.
+        ///  <b>Internal only</b>. The sum of values for the sample set.
         /// </para>
         /// </summary>
         public double Sum

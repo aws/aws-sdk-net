@@ -40,7 +40,7 @@ namespace Amazon.EMRContainers
     /// With this deployment option, you can focus on running analytics workloads while Amazon
     /// EMR on EKS builds, configures, and manages containers for open-source applications.
     /// For more information about Amazon EMR on EKS concepts and tasks, see <a href="https://docs.aws.amazon.com/emr/latest/EMR-on-EKS-DevelopmentGuide/emr-eks.html">What
-    /// is Amazon EMR on EKS</a>.
+    /// is shared id="EMR-EKS"/&gt;</a>.
     /// 
     ///  
     /// <para>
@@ -62,7 +62,7 @@ namespace Amazon.EMRContainers
     /// <para>
     /// It is the prefix used in Amazon EMR on EKS service endpoints. For example, <code>emr-containers.us-east-2.amazonaws.com</code>.
     /// For more information, see <a href="https://docs.aws.amazon.com/emr/latest/EMR-on-EKS-DevelopmentGuide/service-quotas.html#service-endpoints">Amazon
-    /// EMR on EKS Service Endpoints</a>.
+    /// EMR on EKSService Endpoints</a>.
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -259,6 +259,15 @@ namespace Amazon.EMRContainers
         }
 
         /// <summary>
+        /// Customize the pipeline
+        /// </summary>
+        /// <param name="pipeline"></param>
+        protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
+        {
+            pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonEMRContainersEndpointResolver());
+        }
+        /// <summary>
         /// Capture metadata for the service.
         /// </summary>
         protected override IServiceMetadata ServiceMetadata
@@ -345,11 +354,78 @@ namespace Amazon.EMRContainers
 
         #endregion
         
+        #region  CreateJobTemplate
+
+        /// <summary>
+        /// Creates a job template. Job template stores values of StartJobRun API request in a
+        /// template and can be used to start a job run. Job template allows two use cases: avoid
+        /// repeating recurring StartJobRun API request values, enforcing certain values in StartJobRun
+        /// API request.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateJobTemplate service method.</param>
+        /// 
+        /// <returns>The response from the CreateJobTemplate service method, as returned by EMRContainers.</returns>
+        /// <exception cref="Amazon.EMRContainers.Model.InternalServerException">
+        /// This is an internal server exception.
+        /// </exception>
+        /// <exception cref="Amazon.EMRContainers.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.EMRContainers.Model.ValidationException">
+        /// There are invalid parameters in the client request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/CreateJobTemplate">REST API Reference for CreateJobTemplate Operation</seealso>
+        public virtual CreateJobTemplateResponse CreateJobTemplate(CreateJobTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateJobTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateJobTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<CreateJobTemplateResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateJobTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateJobTemplate operation on AmazonEMRContainersClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateJobTemplate
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/CreateJobTemplate">REST API Reference for CreateJobTemplate Operation</seealso>
+        public virtual IAsyncResult BeginCreateJobTemplate(CreateJobTemplateRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateJobTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateJobTemplateResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateJobTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateJobTemplate.</param>
+        /// 
+        /// <returns>Returns a  CreateJobTemplateResult from EMRContainers.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/CreateJobTemplate">REST API Reference for CreateJobTemplate Operation</seealso>
+        public virtual CreateJobTemplateResponse EndCreateJobTemplate(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateJobTemplateResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateManagedEndpoint
 
         /// <summary>
-        /// Creates a managed endpoint. A managed endpoint is a gateway that connects EMR Studio
-        /// to Amazon EMR on EKS so that EMR Studio can communicate with your virtual cluster.
+        /// Creates a managed endpoint. A managed endpoint is a gateway that connects Amazon EMR
+        /// Studio to Amazon EMR on EKS so that Amazon EMR Studio can communicate with your virtual
+        /// cluster.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateManagedEndpoint service method.</param>
         /// 
@@ -476,11 +552,75 @@ namespace Amazon.EMRContainers
 
         #endregion
         
+        #region  DeleteJobTemplate
+
+        /// <summary>
+        /// Deletes a job template. Job template stores values of StartJobRun API request in a
+        /// template and can be used to start a job run. Job template allows two use cases: avoid
+        /// repeating recurring StartJobRun API request values, enforcing certain values in StartJobRun
+        /// API request.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteJobTemplate service method.</param>
+        /// 
+        /// <returns>The response from the DeleteJobTemplate service method, as returned by EMRContainers.</returns>
+        /// <exception cref="Amazon.EMRContainers.Model.InternalServerException">
+        /// This is an internal server exception.
+        /// </exception>
+        /// <exception cref="Amazon.EMRContainers.Model.ValidationException">
+        /// There are invalid parameters in the client request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/DeleteJobTemplate">REST API Reference for DeleteJobTemplate Operation</seealso>
+        public virtual DeleteJobTemplateResponse DeleteJobTemplate(DeleteJobTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteJobTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteJobTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteJobTemplateResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteJobTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteJobTemplate operation on AmazonEMRContainersClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteJobTemplate
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/DeleteJobTemplate">REST API Reference for DeleteJobTemplate Operation</seealso>
+        public virtual IAsyncResult BeginDeleteJobTemplate(DeleteJobTemplateRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteJobTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteJobTemplateResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteJobTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteJobTemplate.</param>
+        /// 
+        /// <returns>Returns a  DeleteJobTemplateResult from EMRContainers.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/DeleteJobTemplate">REST API Reference for DeleteJobTemplate Operation</seealso>
+        public virtual DeleteJobTemplateResponse EndDeleteJobTemplate(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteJobTemplateResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteManagedEndpoint
 
         /// <summary>
-        /// Deletes a managed endpoint. A managed endpoint is a gateway that connects EMR Studio
-        /// to Amazon EMR on EKS so that EMR Studio can communicate with your virtual cluster.
+        /// Deletes a managed endpoint. A managed endpoint is a gateway that connects Amazon EMR
+        /// Studio to Amazon EMR on EKS so that Amazon EMR Studio can communicate with your virtual
+        /// cluster.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteManagedEndpoint service method.</param>
         /// 
@@ -665,12 +805,78 @@ namespace Amazon.EMRContainers
 
         #endregion
         
+        #region  DescribeJobTemplate
+
+        /// <summary>
+        /// Displays detailed information about a specified job template. Job template stores
+        /// values of StartJobRun API request in a template and can be used to start a job run.
+        /// Job template allows two use cases: avoid repeating recurring StartJobRun API request
+        /// values, enforcing certain values in StartJobRun API request.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeJobTemplate service method.</param>
+        /// 
+        /// <returns>The response from the DescribeJobTemplate service method, as returned by EMRContainers.</returns>
+        /// <exception cref="Amazon.EMRContainers.Model.InternalServerException">
+        /// This is an internal server exception.
+        /// </exception>
+        /// <exception cref="Amazon.EMRContainers.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.EMRContainers.Model.ValidationException">
+        /// There are invalid parameters in the client request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/DescribeJobTemplate">REST API Reference for DescribeJobTemplate Operation</seealso>
+        public virtual DescribeJobTemplateResponse DescribeJobTemplate(DescribeJobTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeJobTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeJobTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeJobTemplateResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeJobTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeJobTemplate operation on AmazonEMRContainersClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeJobTemplate
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/DescribeJobTemplate">REST API Reference for DescribeJobTemplate Operation</seealso>
+        public virtual IAsyncResult BeginDescribeJobTemplate(DescribeJobTemplateRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeJobTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeJobTemplateResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeJobTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeJobTemplate.</param>
+        /// 
+        /// <returns>Returns a  DescribeJobTemplateResult from EMRContainers.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/DescribeJobTemplate">REST API Reference for DescribeJobTemplate Operation</seealso>
+        public virtual DescribeJobTemplateResponse EndDescribeJobTemplate(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeJobTemplateResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeManagedEndpoint
 
         /// <summary>
         /// Displays detailed information about a managed endpoint. A managed endpoint is a gateway
-        /// that connects EMR Studio to Amazon EMR on EKS so that EMR Studio can communicate with
-        /// your virtual cluster.
+        /// that connects Amazon EMR Studio to Amazon EMR on EKS so that Amazon EMR Studio can
+        /// communicate with your virtual cluster.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeManagedEndpoint service method.</param>
         /// 
@@ -797,6 +1003,72 @@ namespace Amazon.EMRContainers
 
         #endregion
         
+        #region  GetManagedEndpointSessionCredentials
+
+        /// <summary>
+        /// Generate a session token to connect to a managed endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetManagedEndpointSessionCredentials service method.</param>
+        /// 
+        /// <returns>The response from the GetManagedEndpointSessionCredentials service method, as returned by EMRContainers.</returns>
+        /// <exception cref="Amazon.EMRContainers.Model.InternalServerException">
+        /// This is an internal server exception.
+        /// </exception>
+        /// <exception cref="Amazon.EMRContainers.Model.RequestThrottledException">
+        /// The request throttled.
+        /// </exception>
+        /// <exception cref="Amazon.EMRContainers.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.EMRContainers.Model.ValidationException">
+        /// There are invalid parameters in the client request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/GetManagedEndpointSessionCredentials">REST API Reference for GetManagedEndpointSessionCredentials Operation</seealso>
+        public virtual GetManagedEndpointSessionCredentialsResponse GetManagedEndpointSessionCredentials(GetManagedEndpointSessionCredentialsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetManagedEndpointSessionCredentialsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetManagedEndpointSessionCredentialsResponseUnmarshaller.Instance;
+
+            return Invoke<GetManagedEndpointSessionCredentialsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetManagedEndpointSessionCredentials operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetManagedEndpointSessionCredentials operation on AmazonEMRContainersClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetManagedEndpointSessionCredentials
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/GetManagedEndpointSessionCredentials">REST API Reference for GetManagedEndpointSessionCredentials Operation</seealso>
+        public virtual IAsyncResult BeginGetManagedEndpointSessionCredentials(GetManagedEndpointSessionCredentialsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetManagedEndpointSessionCredentialsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetManagedEndpointSessionCredentialsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetManagedEndpointSessionCredentials operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetManagedEndpointSessionCredentials.</param>
+        /// 
+        /// <returns>Returns a  GetManagedEndpointSessionCredentialsResult from EMRContainers.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/GetManagedEndpointSessionCredentials">REST API Reference for GetManagedEndpointSessionCredentials Operation</seealso>
+        public virtual GetManagedEndpointSessionCredentialsResponse EndGetManagedEndpointSessionCredentials(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetManagedEndpointSessionCredentialsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListJobRuns
 
         /// <summary>
@@ -858,12 +1130,75 @@ namespace Amazon.EMRContainers
 
         #endregion
         
+        #region  ListJobTemplates
+
+        /// <summary>
+        /// Lists job templates based on a set of parameters. Job template stores values of StartJobRun
+        /// API request in a template and can be used to start a job run. Job template allows
+        /// two use cases: avoid repeating recurring StartJobRun API request values, enforcing
+        /// certain values in StartJobRun API request.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListJobTemplates service method.</param>
+        /// 
+        /// <returns>The response from the ListJobTemplates service method, as returned by EMRContainers.</returns>
+        /// <exception cref="Amazon.EMRContainers.Model.InternalServerException">
+        /// This is an internal server exception.
+        /// </exception>
+        /// <exception cref="Amazon.EMRContainers.Model.ValidationException">
+        /// There are invalid parameters in the client request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/ListJobTemplates">REST API Reference for ListJobTemplates Operation</seealso>
+        public virtual ListJobTemplatesResponse ListJobTemplates(ListJobTemplatesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListJobTemplatesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListJobTemplatesResponseUnmarshaller.Instance;
+
+            return Invoke<ListJobTemplatesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListJobTemplates operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListJobTemplates operation on AmazonEMRContainersClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListJobTemplates
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/ListJobTemplates">REST API Reference for ListJobTemplates Operation</seealso>
+        public virtual IAsyncResult BeginListJobTemplates(ListJobTemplatesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListJobTemplatesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListJobTemplatesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListJobTemplates operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListJobTemplates.</param>
+        /// 
+        /// <returns>Returns a  ListJobTemplatesResult from EMRContainers.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/ListJobTemplates">REST API Reference for ListJobTemplates Operation</seealso>
+        public virtual ListJobTemplatesResponse EndListJobTemplates(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListJobTemplatesResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListManagedEndpoints
 
         /// <summary>
         /// Lists managed endpoints based on a set of parameters. A managed endpoint is a gateway
-        /// that connects EMR Studio to Amazon EMR on EKS so that EMR Studio can communicate with
-        /// your virtual cluster.
+        /// that connects Amazon EMR Studio to Amazon EMR on EKS so that Amazon EMR Studio can
+        /// communicate with your virtual cluster.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListManagedEndpoints service method.</param>
         /// 
@@ -1114,15 +1449,15 @@ namespace Amazon.EMRContainers
         #region  TagResource
 
         /// <summary>
-        /// Assigns tags to resources. A tag is a label that you assign to an AWS resource. Each
-        /// tag consists of a key and an optional value, both of which you define. Tags enable
-        /// you to categorize your AWS resources by attributes such as purpose, owner, or environment.
-        /// When you have many resources of the same type, you can quickly identify a specific
-        /// resource based on the tags you've assigned to it. For example, you can define a set
-        /// of tags for your Amazon EMR on EKS clusters to help you track each cluster's owner
-        /// and stack level. We recommend that you devise a consistent set of tag keys for each
-        /// resource type. You can then search and filter the resources based on the tags that
-        /// you add.
+        /// Assigns tags to resources. A tag is a label that you assign to an Amazon Web Services
+        /// resource. Each tag consists of a key and an optional value, both of which you define.
+        /// Tags enable you to categorize your Amazon Web Services resources by attributes such
+        /// as purpose, owner, or environment. When you have many resources of the same type,
+        /// you can quickly identify a specific resource based on the tags you've assigned to
+        /// it. For example, you can define a set of tags for your Amazon EMR on EKS clusters
+        /// to help you track each cluster's owner and stack level. We recommend that you devise
+        /// a consistent set of tag keys for each resource type. You can then search and filter
+        /// the resources based on the tags that you add.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// 

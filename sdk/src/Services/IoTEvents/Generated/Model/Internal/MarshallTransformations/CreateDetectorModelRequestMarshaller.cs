@@ -56,7 +56,7 @@ namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.IoTEvents");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-07-27";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-07-27";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/detector-models";
@@ -122,7 +122,6 @@ namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

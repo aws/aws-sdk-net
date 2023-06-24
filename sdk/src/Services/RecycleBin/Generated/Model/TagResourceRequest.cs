@@ -30,7 +30,7 @@ namespace Amazon.RecycleBin.Model
 {
     /// <summary>
     /// Container for the parameters to the TagResource operation.
-    /// Assigns tags to the specified resource.
+    /// Assigns tags to the specified retention rule.
     /// </summary>
     public partial class TagResourceRequest : AmazonRecycleBinRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.RecycleBin.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the resource to which to assign the tags.
+        /// The Amazon Resource Name (ARN) of the retention rule.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=1011)]
@@ -59,7 +59,7 @@ namespace Amazon.RecycleBin.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Information about the tags to assign to the resource.
+        /// Information about the tags to assign to the retention rule.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=200)]

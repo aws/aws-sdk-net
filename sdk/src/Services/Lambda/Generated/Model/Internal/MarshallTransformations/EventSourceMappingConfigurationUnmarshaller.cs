@@ -64,6 +64,12 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AmazonManagedKafkaEventSourceConfig", targetDepth))
+                {
+                    var unmarshaller = AmazonManagedKafkaEventSourceConfigUnmarshaller.Instance;
+                    unmarshalledObject.AmazonManagedKafkaEventSourceConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("BatchSize", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
@@ -80,6 +86,12 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = DestinationConfigUnmarshaller.Instance;
                     unmarshalledObject.DestinationConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("DocumentDBEventSourceConfig", targetDepth))
+                {
+                    var unmarshaller = DocumentDBEventSourceConfigUnmarshaller.Instance;
+                    unmarshalledObject.DocumentDBEventSourceConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("EventSourceArn", targetDepth))
@@ -148,10 +160,22 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                     unmarshalledObject.Queues = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ScalingConfig", targetDepth))
+                {
+                    var unmarshaller = ScalingConfigUnmarshaller.Instance;
+                    unmarshalledObject.ScalingConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SelfManagedEventSource", targetDepth))
                 {
                     var unmarshaller = SelfManagedEventSourceUnmarshaller.Instance;
                     unmarshalledObject.SelfManagedEventSource = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SelfManagedKafkaEventSourceConfig", targetDepth))
+                {
+                    var unmarshaller = SelfManagedKafkaEventSourceConfigUnmarshaller.Instance;
+                    unmarshalledObject.SelfManagedKafkaEventSourceConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("SourceAccessConfigurations", targetDepth))

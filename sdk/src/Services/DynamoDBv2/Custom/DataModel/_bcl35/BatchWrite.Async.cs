@@ -31,8 +31,10 @@ namespace Amazon.DynamoDBv2.DataModel
         #region Public methods
 
         /// <summary>
-        /// Initiates the asynchronous execution of the Execute operation.
-        /// <seealso cref="Amazon.DynamoDBv2.DataModel.BatchWrite.Execute"/>
+        /// Executes a server call to batch-write/delete the items requested.
+        ///
+        /// If more than 25 put/delete operations are specified, calls of up to 25
+        /// put/delete items will be made until all items are processed.
         /// </summary>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
@@ -67,8 +69,10 @@ namespace Amazon.DynamoDBv2.DataModel
         #region Public methods
 
         /// <summary>
-        /// Initiates the asynchronous execution of the Execute operation.
-        /// <seealso cref="Amazon.DynamoDBv2.DataModel.MultiTableBatchWrite.Execute"/>
+        /// Executes a multi-table batch request against all configured batches.
+        ///
+        /// If more than 25 put/delete operations are specified, calls of up to 25
+        /// put/delete items will be made until all items are processed.
         /// </summary>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback

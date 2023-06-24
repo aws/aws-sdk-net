@@ -64,7 +64,7 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property AvailBlanking. Settings for ad avail blanking.  Video can
+        /// Gets and sets the property AvailBlanking. Settings for ad avail blanking. Video can
         /// be blanked or overlaid with an image, and audio muted during SCTE-35 triggered ad
         /// avails.
         /// </summary>
@@ -190,10 +190,10 @@ namespace Amazon.MediaConvert.Model
 
         /// <summary>
         /// Gets and sets the property NielsenNonLinearWatermark. Ignore these settings unless
-        /// you are using Nielsen non-linear watermarking. Specify the values that  MediaConvert
+        /// you are using Nielsen non-linear watermarking. Specify the values that MediaConvert
         /// uses to generate and place Nielsen watermarks in your output audio. In addition to
-        ///  specifying these values, you also need to set up your cloud TIC server. These settings
-        /// apply to  every output in your job. The MediaConvert implementation is currently with
+        /// specifying these values, you also need to set up your cloud TIC server. These settings
+        /// apply to every output in your job. The MediaConvert implementation is currently with
         /// the following Nielsen versions: Nielsen Watermark SDK Version 5.2.1 Nielsen NLM Watermark
         /// Engine Version 1.2.7 Nielsen Watermark Authenticator [SID_TIC] Version [5.0.0]
         /// </summary>
@@ -248,10 +248,10 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TimedMetadataInsertion. Enable Timed metadata insertion
-        /// (TimedMetadataInsertion) to include ID3 tags in any HLS outputs. To include timed
-        /// metadata, you must enable it here, enable it in each output container, and specify
-        /// tags and timecodes in ID3 insertion (Id3Insertion) objects.
+        /// Gets and sets the property TimedMetadataInsertion. Insert user-defined custom ID3
+        /// metadata (id3) at timecodes (timecode) that you specify. In each output that you want
+        /// to include this metadata, you must set ID3 metadata (timedMetadata) to Passthrough
+        /// (PASSTHROUGH).
         /// </summary>
         public TimedMetadataInsertion TimedMetadataInsertion
         {

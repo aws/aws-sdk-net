@@ -34,7 +34,7 @@ namespace Amazon.Lightsail.Model
     /// 
     ///  <note> 
     /// <para>
-    /// To get a summary of a certificate, ommit <code>includeCertificateDetails</code> from
+    /// To get a summary of a certificate, omit <code>includeCertificateDetails</code> from
     /// your request. The response will include only the certificate Amazon Resource Name
     /// (ARN), certificate name, domain name, and tags.
     /// </para>
@@ -45,6 +45,7 @@ namespace Amazon.Lightsail.Model
         private string _certificateName;
         private List<string> _certificateStatuses = new List<string>();
         private bool? _includeCertificateDetails;
+        private string _pageToken;
 
         /// <summary>
         /// Gets and sets the property CertificateName. 
@@ -53,8 +54,8 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  
         /// <para>
-        /// When omitted, the response includes all of your certificates in the AWS Region where
-        /// the request is made.
+        /// When omitted, the response includes all of your certificates in the Amazon Web Services
+        /// Region where the request is made.
         /// </para>
         /// </summary>
         public string CertificateName
@@ -81,8 +82,8 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  
         /// <para>
-        /// When omitted, the response includes all of your certificates in the AWS Region where
-        /// the request is made, regardless of their current status.
+        /// When omitted, the response includes all of your certificates in the Amazon Web Services
+        /// Region where the request is made, regardless of their current status.
         /// </para>
         /// </summary>
         public List<string> CertificateStatuses
@@ -118,6 +119,30 @@ namespace Amazon.Lightsail.Model
         internal bool IsSetIncludeCertificateDetails()
         {
             return this._includeCertificateDetails.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PageToken. 
+        /// <para>
+        /// The token to advance to the next page of results from your request.
+        /// </para>
+        ///  
+        /// <para>
+        /// To get a page token, perform an initial <code>GetCertificates</code> request. If your
+        /// results are paginated, the response will return a next page token that you can specify
+        /// as the page token in a subsequent request.
+        /// </para>
+        /// </summary>
+        public string PageToken
+        {
+            get { return this._pageToken; }
+            set { this._pageToken = value; }
+        }
+
+        // Check to see if PageToken property is set
+        internal bool IsSetPageToken()
+        {
+            return this._pageToken != null;
         }
 
     }

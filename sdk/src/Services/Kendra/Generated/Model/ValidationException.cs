@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kendra.Model
 {
     /// <summary>
-    /// 
+    /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+    /// provide the correct input and try again.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

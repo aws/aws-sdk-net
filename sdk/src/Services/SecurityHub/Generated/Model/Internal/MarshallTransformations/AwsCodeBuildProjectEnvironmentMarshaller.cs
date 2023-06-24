@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AwsCodeBuildProjectEnvironment Marshaller
-    /// </summary>       
+    /// </summary>
     public class AwsCodeBuildProjectEnvironmentMarshaller : IRequestMarshaller<AwsCodeBuildProjectEnvironment, JsonMarshallerContext> 
     {
         /// <summary>
@@ -100,7 +100,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AwsCodeBuildProjectEnvironmentMarshaller Instance = new AwsCodeBuildProjectEnvironmentMarshaller();
 
     }

@@ -38,6 +38,7 @@ namespace Amazon.FIS.Model
         private DateTime? _endTime;
         private string _experimentTemplateId;
         private string _id;
+        private ExperimentLogConfiguration _logConfiguration;
         private string _roleArn;
         private DateTime? _startTime;
         private ExperimentState _state;
@@ -66,7 +67,7 @@ namespace Amazon.FIS.Model
         /// <summary>
         /// Gets and sets the property CreationTime. 
         /// <para>
-        /// The time the experiment was created.
+        /// The time that the experiment was created.
         /// </para>
         /// </summary>
         public DateTime CreationTime
@@ -138,9 +139,27 @@ namespace Amazon.FIS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property LogConfiguration. 
+        /// <para>
+        /// The configuration for experiment logging.
+        /// </para>
+        /// </summary>
+        public ExperimentLogConfiguration LogConfiguration
+        {
+            get { return this._logConfiguration; }
+            set { this._logConfiguration = value; }
+        }
+
+        // Check to see if LogConfiguration property is set
+        internal bool IsSetLogConfiguration()
+        {
+            return this._logConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of an IAM role that grants the AWS FIS service permission
+        /// The Amazon Resource Name (ARN) of an IAM role that grants the FIS service permission
         /// to perform service actions on your behalf.
         /// </para>
         /// </summary>
@@ -160,7 +179,7 @@ namespace Amazon.FIS.Model
         /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
-        /// The time that the experiment was started.
+        /// The time that the experiment started.
         /// </para>
         /// </summary>
         public DateTime StartTime

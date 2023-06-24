@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// FindingProviderSeverity Marshaller
-    /// </summary>       
+    /// </summary>
     public class FindingProviderSeverityMarshaller : IRequestMarshaller<FindingProviderSeverity, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static FindingProviderSeverityMarshaller Instance = new FindingProviderSeverityMarshaller();
 
     }

@@ -17,22 +17,22 @@
  * Do not modify this file. This file is generated from the emr-containers-2020-10-01.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
-
+using Amazon.EMRContainers.Internal;
 
 namespace Amazon.EMRContainers
 {
     /// <summary>
     /// Configuration for accessing Amazon EMRContainers service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonEMRContainersConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.2.19");
+            InternalSDKUtils.BuildUserAgentString("3.7.104.5");
 
         private string _userAgent = UserAgentString;
 
@@ -40,8 +40,10 @@ namespace Amazon.EMRContainers
         /// Default constructor
         /// </summary>
         public AmazonEMRContainersConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonEMRContainersDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "emr-containers";
+            this.EndpointProvider = new AmazonEMRContainersEndpointProvider();
         }
 
         /// <summary>
@@ -76,5 +78,6 @@ namespace Amazon.EMRContainers
                 return _userAgent;
             }
         }
+
     }
 }

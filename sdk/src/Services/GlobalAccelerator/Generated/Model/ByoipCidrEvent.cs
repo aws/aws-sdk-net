@@ -30,8 +30,8 @@ namespace Amazon.GlobalAccelerator.Model
 {
     /// <summary>
     /// A complex type that contains a <code>Message</code> and a <code>Timestamp</code> value
-    /// for changes that you make in the status an IP address range that you bring to AWS
-    /// Global Accelerator through bring your own IP address (BYOIP).
+    /// for changes that you make in the status of an IP address range that you bring to Global
+    /// Accelerator through bring your own IP address (BYOIP).
     /// </summary>
     public partial class ByoipCidrEvent
     {
@@ -42,7 +42,7 @@ namespace Amazon.GlobalAccelerator.Model
         /// Gets and sets the property Message. 
         /// <para>
         /// A string that contains an <code>Event</code> message describing changes that you make
-        /// in the status of an IP address range that you bring to AWS Global Accelerator through
+        /// in the status of an IP address range that you bring to Global Accelerator through
         /// bring your own IP address (BYOIP).
         /// </para>
         /// </summary>
@@ -62,8 +62,8 @@ namespace Amazon.GlobalAccelerator.Model
         /// <summary>
         /// Gets and sets the property Timestamp. 
         /// <para>
-        /// A timestamp when you make a status change for an IP address range that you bring to
-        /// AWS Global Accelerator through bring your own IP address (BYOIP).
+        /// A timestamp for when you make a status change for an IP address range that you bring
+        /// to Global Accelerator through bring your own IP address (BYOIP).
         /// </para>
         /// </summary>
         public DateTime Timestamp

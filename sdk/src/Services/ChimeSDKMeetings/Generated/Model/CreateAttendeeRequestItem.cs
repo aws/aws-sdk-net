@@ -34,7 +34,26 @@ namespace Amazon.ChimeSDKMeetings.Model
     /// </summary>
     public partial class CreateAttendeeRequestItem
     {
+        private AttendeeCapabilities _capabilities;
         private string _externalUserId;
+
+        /// <summary>
+        /// Gets and sets the property Capabilities. 
+        /// <para>
+        /// A list of one or more capabilities.
+        /// </para>
+        /// </summary>
+        public AttendeeCapabilities Capabilities
+        {
+            get { return this._capabilities; }
+            set { this._capabilities = value; }
+        }
+
+        // Check to see if Capabilities property is set
+        internal bool IsSetCapabilities()
+        {
+            return this._capabilities != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ExternalUserId. 
@@ -42,8 +61,17 @@ namespace Amazon.ChimeSDKMeetings.Model
         /// The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to
         /// an identity managed by a builder application.
         /// </para>
+        ///  
+        /// <para>
+        /// Pattern: <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Values that begin with <code>aws:</code> are reserved. You can't configure a value
+        /// that uses this prefix. Case insensitive.
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=2, Max=64)]
+        [AWSProperty(Required=true, Sensitive=true, Min=2, Max=64)]
         public string ExternalUserId
         {
             get { return this._externalUserId; }

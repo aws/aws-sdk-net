@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53RecoveryReadiness.Model
 {
     /// <summary>
-    /// Result with status for an individual rule..
+    /// The result of a successful Rule request, with status for an individual rule.
     /// </summary>
     public partial class RuleResult
     {
@@ -39,8 +39,10 @@ namespace Amazon.Route53RecoveryReadiness.Model
         private string _ruleId;
 
         /// <summary>
-        /// Gets and sets the property LastCheckedTimestamp. The time the resource was last checked
-        /// for readiness, in ISO-8601 format, UTC.
+        /// Gets and sets the property LastCheckedTimestamp. 
+        /// <para>
+        /// The time the resource was last checked for readiness, in ISO-8601 format, UTC.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public DateTime LastCheckedTimestamp
@@ -56,7 +58,10 @@ namespace Amazon.Route53RecoveryReadiness.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Messages. Details about the resource's readiness
+        /// Gets and sets the property Messages. 
+        /// <para>
+        /// Details about the resource's readiness.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public List<Message> Messages
@@ -72,7 +77,10 @@ namespace Amazon.Route53RecoveryReadiness.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Readiness. The readiness at rule level.
+        /// Gets and sets the property Readiness. 
+        /// <para>
+        /// The readiness at rule level.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public Readiness Readiness
@@ -88,7 +96,10 @@ namespace Amazon.Route53RecoveryReadiness.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RuleId. The identifier of the rule.
+        /// Gets and sets the property RuleId. 
+        /// <para>
+        /// The identifier of the rule.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string RuleId

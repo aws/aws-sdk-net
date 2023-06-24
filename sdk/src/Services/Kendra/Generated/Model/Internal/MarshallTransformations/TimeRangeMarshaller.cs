@@ -34,7 +34,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// TimeRange Marshaller
-    /// </summary>       
+    /// </summary>
     public class TimeRangeMarshaller : IRequestMarshaller<TimeRange, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static TimeRangeMarshaller Instance = new TimeRangeMarshaller();
 
     }

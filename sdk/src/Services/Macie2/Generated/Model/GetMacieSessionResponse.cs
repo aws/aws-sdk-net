@@ -63,7 +63,7 @@ namespace Amazon.Macie2.Model
         /// <para>
         /// The frequency with which Amazon Macie publishes updates to policy findings for the
         /// account. This includes publishing updates to Security Hub and Amazon EventBridge (formerly
-        /// called Amazon CloudWatch Events).
+        /// Amazon CloudWatch Events).
         /// </para>
         /// </summary>
         public FindingPublishingFrequency FindingPublishingFrequency

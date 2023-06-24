@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AppSpecification Marshaller
-    /// </summary>       
+    /// </summary>
     public class AppSpecificationMarshaller : IRequestMarshaller<AppSpecification, JsonMarshallerContext> 
     {
         /// <summary>
@@ -77,7 +77,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AppSpecificationMarshaller Instance = new AppSpecificationMarshaller();
 
     }

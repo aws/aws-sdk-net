@@ -29,7 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// Information about a cross-Region snapshot copy.
+    /// You can configure Amazon Redshift to copy snapshots for a cluster to another Amazon
+    /// Web Services Region. This parameter provides information about a cross-Region snapshot
+    /// copy.
     /// </summary>
     public partial class AwsRedshiftClusterClusterSnapshotCopyStatus
     {
@@ -60,16 +62,16 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property ManualSnapshotRetentionPeriod. 
         /// <para>
-        /// The number of days that manual snapshots are retained in the destination region after
-        /// they are copied from a source region.
+        /// The number of days that manual snapshots are retained in the destination Region after
+        /// they are copied from a source Region.
         /// </para>
         ///  
         /// <para>
-        /// If the value is -1, then the manual snapshot is retained indefinitely.
+        /// If the value is <code>-1</code>, then the manual snapshot is retained indefinitely.
         /// </para>
         ///  
         /// <para>
-        /// Valid values: Either -1 or an integer between 1 and 3,653
+        /// Valid values: Either <code>-1</code> or an integer between 1 and 3,653
         /// </para>
         /// </summary>
         public int ManualSnapshotRetentionPeriod

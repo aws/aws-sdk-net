@@ -34,7 +34,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// TargetLocation Marshaller
-    /// </summary>       
+    /// </summary>
     public class TargetLocationMarshaller : IRequestMarshaller<TargetLocation, JsonMarshallerContext> 
     {
         /// <summary>
@@ -73,6 +73,17 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetTargetLocationAlarmConfiguration())
+            {
+                context.Writer.WritePropertyName("TargetLocationAlarmConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AlarmConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.TargetLocationAlarmConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetTargetLocationMaxConcurrency())
             {
                 context.Writer.WritePropertyName("TargetLocationMaxConcurrency");
@@ -89,7 +100,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static TargetLocationMarshaller Instance = new TargetLocationMarshaller();
 
     }

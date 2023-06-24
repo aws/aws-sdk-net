@@ -19,6 +19,16 @@
     <pattern>[a-z][a-z0-9\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.AuthorizeVpcEndpointAccessRequest.Account</property>
+    <pattern>^[0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.AuthorizeVpcEndpointAccessRequest.DomainName</property>
+    <min>3</min>
+    <max>28</max>
+    <pattern>[a-z][a-z0-9\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.OpenSearchService.Model.CancelServiceSoftwareUpdateRequest.DomainName</property>
     <min>3</min>
     <max>28</max>
@@ -69,6 +79,17 @@
     <pattern>[a-z][a-z0-9\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.CreateVpcEndpointRequest.ClientToken</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.CreateVpcEndpointRequest.DomainArn</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>arn:aws[a-z\-]*:[a-z]+:[a-z0-9\-]+:[0-9]+:domain\/[a-z0-9\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.OpenSearchService.Model.DeleteDomainRequest.DomainName</property>
     <min>3</min>
     <max>28</max>
@@ -87,6 +108,12 @@
     <pattern>[a-z][a-z0-9\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.DeleteVpcEndpointRequest.VpcEndpointId</property>
+    <min>5</min>
+    <max>256</max>
+    <pattern>^aos-[a-zA-Z0-9]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.OpenSearchService.Model.DescribeDomainRequest.DomainName</property>
     <min>3</min>
     <max>28</max>
@@ -103,10 +130,76 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.DescribeDomainChangeProgressRequest.ChangeId</property>
+    <min>36</min>
+    <max>36</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.DescribeDomainChangeProgressRequest.DomainName</property>
+    <min>3</min>
+    <max>28</max>
+    <pattern>[a-z][a-z0-9\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.OpenSearchService.Model.DescribeDomainConfigRequest.DomainName</property>
     <min>3</min>
     <max>28</max>
     <pattern>[a-z][a-z0-9\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.DescribeDomainHealthRequest.DomainName</property>
+    <min>3</min>
+    <max>28</max>
+    <pattern>[a-z][a-z0-9\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.DescribeDomainHealthResponse.ActiveAvailabilityZoneCount</property>
+    <pattern>^((\d+)|(NotAvailable))$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.DescribeDomainHealthResponse.AvailabilityZoneCount</property>
+    <pattern>^((\d+)|(NotAvailable))$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.DescribeDomainHealthResponse.DataNodeCount</property>
+    <pattern>^((\d+)|(NotAvailable))$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.DescribeDomainHealthResponse.MasterEligibleNodeCount</property>
+    <pattern>^((\d+)|(NotAvailable))$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.DescribeDomainHealthResponse.StandByAvailabilityZoneCount</property>
+    <pattern>^((\d+)|(NotAvailable))$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.DescribeDomainHealthResponse.TotalShards</property>
+    <pattern>^((\d+)|(NotAvailable))$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.DescribeDomainHealthResponse.TotalUnAssignedShards</property>
+    <pattern>^((\d+)|(NotAvailable))$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.DescribeDomainHealthResponse.WarmNodeCount</property>
+    <pattern>^((\d+)|(NotAvailable))$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.DescribeDomainNodesRequest.DomainName</property>
+    <min>3</min>
+    <max>28</max>
+    <pattern>[a-z][a-z0-9\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.DescribeDryRunProgressRequest.DomainName</property>
+    <min>3</min>
+    <max>28</max>
+    <pattern>[a-z][a-z0-9\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.DescribeDryRunProgressRequest.DryRunId</property>
+    <min>36</min>
+    <max>36</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchService.Model.DescribeInboundConnectionsRequest.MaxResults</property>
@@ -199,6 +292,12 @@
     <pattern>^Elasticsearch_[0-9]{1}\.[0-9]{1,2}$|^OpenSearch_[0-9]{1,2}\.[0-9]{1,2}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.ListInstanceTypeDetailsRequest.InstanceType</property>
+    <min>10</min>
+    <max>40</max>
+    <pattern>^.*\..*\.search$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.OpenSearchService.Model.ListInstanceTypeDetailsRequest.MaxResults</property>
     <max>100</max>
   </property-value-rule>
@@ -213,6 +312,16 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.ListScheduledActionsRequest.DomainName</property>
+    <min>3</min>
+    <max>28</max>
+    <pattern>[a-z][a-z0-9\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.ListScheduledActionsRequest.MaxResults</property>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.OpenSearchService.Model.ListTagsRequest.ARN</property>
     <min>20</min>
     <max>2048</max>
@@ -221,6 +330,18 @@
   <property-value-rule>
     <property>Amazon.OpenSearchService.Model.ListVersionsRequest.MaxResults</property>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.ListVpcEndpointAccessRequest.DomainName</property>
+    <min>3</min>
+    <max>28</max>
+    <pattern>[a-z][a-z0-9\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.ListVpcEndpointsForDomainRequest.DomainName</property>
+    <min>3</min>
+    <max>28</max>
+    <pattern>[a-z][a-z0-9\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchService.Model.PurchaseReservedInstanceOfferingRequest.InstanceCount</property>
@@ -261,6 +382,16 @@
     <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.RevokeVpcEndpointAccessRequest.Account</property>
+    <pattern>^[0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.RevokeVpcEndpointAccessRequest.DomainName</property>
+    <min>3</min>
+    <max>28</max>
+    <pattern>[a-z][a-z0-9\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.OpenSearchService.Model.StartServiceSoftwareUpdateRequest.DomainName</property>
     <min>3</min>
     <max>28</max>
@@ -285,6 +416,18 @@
   <property-value-rule>
     <property>Amazon.OpenSearchService.Model.UpdatePackageRequest.PackageDescription</property>
     <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.UpdateScheduledActionRequest.DomainName</property>
+    <min>3</min>
+    <max>28</max>
+    <pattern>[a-z][a-z0-9\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.UpdateVpcEndpointRequest.VpcEndpointId</property>
+    <min>5</min>
+    <max>256</max>
+    <pattern>^aos-[a-zA-Z0-9]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchService.Model.UpgradeDomainRequest.DomainName</property>
@@ -321,6 +464,27 @@
     <min>0</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.AvailabilityZoneInfo.AvailabilityZoneName</property>
+    <min>1</min>
+    <max>15</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.AvailabilityZoneInfo.AvailableDataNodeCount</property>
+    <pattern>^((\d+)|(NotAvailable))$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.AvailabilityZoneInfo.ConfiguredDataNodeCount</property>
+    <pattern>^((\d+)|(NotAvailable))$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.AvailabilityZoneInfo.TotalShards</property>
+    <pattern>^((\d+)|(NotAvailable))$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.AvailabilityZoneInfo.TotalUnAssignedShards</property>
+    <pattern>^((\d+)|(NotAvailable))$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.OpenSearchService.Model.AWSDomainInformation.DomainName</property>
     <min>3</min>
     <max>28</max>
@@ -337,6 +501,31 @@
     <min>5</min>
     <max>30</max>
     <pattern>[a-z][a-z0-9\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.ChangeProgressDetails.ChangeId</property>
+    <min>36</min>
+    <max>36</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.ChangeProgressDetails.Message</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.ChangeProgressStage.Name</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.ChangeProgressStage.Status</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.ChangeProgressStatusDetails.ChangeId</property>
+    <min>36</min>
+    <max>36</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchService.Model.CognitoOptions.IdentityPoolId</property>
@@ -363,6 +552,10 @@
     <pattern>^Elasticsearch_[0-9]{1}\.[0-9]{1,2}$|^OpenSearch_[0-9]{1,2}\.[0-9]{1,2}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.ConnectionProperties.Endpoint</property>
+    <pattern>^[A-Za-z0-9\-\.]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.OpenSearchService.Model.DomainEndpointOptions.CustomEndpoint</property>
     <min>1</min>
     <max>255</max>
@@ -379,6 +572,16 @@
     <min>3</min>
     <max>28</max>
     <pattern>[a-z][a-z0-9\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.DomainNodesStatus.AvailabilityZone</property>
+    <min>1</min>
+    <max>15</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.DomainNodesStatus.NodeId</property>
+    <min>10</min>
+    <max>40</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchService.Model.DomainPackageDetails.DomainName</property>
@@ -420,6 +623,11 @@
     <min>14</min>
     <max>18</max>
     <pattern>^Elasticsearch_[0-9]{1}\.[0-9]{1,2}$|^OpenSearch_[0-9]{1,2}\.[0-9]{1,2}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.DryRunProgressStatus.DryRunId</property>
+    <min>36</min>
+    <max>36</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchService.Model.DryRunResults.DeploymentType</property>
@@ -570,5 +778,53 @@
     <min>14</min>
     <max>18</max>
     <pattern>^Elasticsearch_[0-9]{1}\.[0-9]{1,2}$|^OpenSearch_[0-9]{1,2}\.[0-9]{1,2}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.VpcEndpoint.DomainArn</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>arn:aws[a-z\-]*:[a-z]+:[a-z0-9\-]+:[0-9]+:domain\/[a-z0-9\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.VpcEndpoint.Endpoint</property>
+    <pattern>^[A-Za-z0-9\-\.]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.VpcEndpoint.VpcEndpointId</property>
+    <min>5</min>
+    <max>256</max>
+    <pattern>^aos-[a-zA-Z0-9]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.VpcEndpoint.VpcEndpointOwner</property>
+    <pattern>^[0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.VpcEndpointError.VpcEndpointId</property>
+    <min>5</min>
+    <max>256</max>
+    <pattern>^aos-[a-zA-Z0-9]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.VpcEndpointSummary.DomainArn</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>arn:aws[a-z\-]*:[a-z]+:[a-z0-9\-]+:[0-9]+:domain\/[a-z0-9\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.VpcEndpointSummary.VpcEndpointId</property>
+    <min>5</min>
+    <max>256</max>
+    <pattern>^aos-[a-zA-Z0-9]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.WindowStartTime.Hours</property>
+    <min>0</min>
+    <max>23</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.WindowStartTime.Minutes</property>
+    <min>0</min>
+    <max>59</max>
   </property-value-rule>
 </property-value-rules>

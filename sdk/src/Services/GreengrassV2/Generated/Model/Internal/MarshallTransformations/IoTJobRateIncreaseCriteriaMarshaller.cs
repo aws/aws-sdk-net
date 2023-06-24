@@ -34,7 +34,7 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// IoTJobRateIncreaseCriteria Marshaller
-    /// </summary>       
+    /// </summary>
     public class IoTJobRateIncreaseCriteriaMarshaller : IRequestMarshaller<IoTJobRateIncreaseCriteria, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static IoTJobRateIncreaseCriteriaMarshaller Instance = new IoTJobRateIncreaseCriteriaMarshaller();
 
     }

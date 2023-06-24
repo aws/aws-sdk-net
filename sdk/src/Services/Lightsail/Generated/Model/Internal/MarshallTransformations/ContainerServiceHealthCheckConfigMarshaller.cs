@@ -34,7 +34,7 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ContainerServiceHealthCheckConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class ContainerServiceHealthCheckConfigMarshaller : IRequestMarshaller<ContainerServiceHealthCheckConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -85,7 +85,7 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ContainerServiceHealthCheckConfigMarshaller Instance = new ContainerServiceHealthCheckConfigMarshaller();
 
     }

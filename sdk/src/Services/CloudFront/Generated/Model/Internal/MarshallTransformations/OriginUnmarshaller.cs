@@ -91,6 +91,12 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         unmarshalledObject.Id = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("OriginAccessControlId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.OriginAccessControlId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("OriginPath", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

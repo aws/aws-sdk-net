@@ -34,7 +34,7 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// EFSAuthorizationConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class EFSAuthorizationConfigMarshaller : IRequestMarshaller<EFSAuthorizationConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static EFSAuthorizationConfigMarshaller Instance = new EFSAuthorizationConfigMarshaller();
 
     }

@@ -44,8 +44,8 @@ namespace Amazon.ManagedBlockchain.Model
         /// <summary>
         /// Gets and sets the property Invitations. 
         /// <para>
-        ///  The actions to perform for an <code>APPROVED</code> proposal to invite an AWS account
-        /// to create a member and join the network. 
+        ///  The actions to perform for an <code>APPROVED</code> proposal to invite an Amazon
+        /// Web Services account to create a member and join the network. 
         /// </para>
         /// </summary>
         public List<InviteAction> Invitations

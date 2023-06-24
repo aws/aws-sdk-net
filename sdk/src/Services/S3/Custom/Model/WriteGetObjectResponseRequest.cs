@@ -92,6 +92,10 @@ namespace Amazon.S3.Model
         private string errorMessage;
         private string acceptRanges;
         private string cacheControl;
+        private string _checksumCRC32;
+        private string _checksumCRC32C;
+        private string _checksumSHA1;
+        private string _checksumSHA256;
         private string contentDisposition;
         private string contentEncoding;
         private string contentLanguage;
@@ -151,7 +155,9 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// <para>The integer status code for an HTTP response of a corresponding <code>GetObject</code> request.</para> <para class=\"title\"> <b>Status Codes</b> </para> <ul> <li> <para> <i>200 - OK</i> </para> </li> <li> <para> <i>206 - Partial Content</i> </para> </li> <li> <para> <i>304 - Not Modified</i> </para> </li> <li> <para> <i>400 - Bad Request</i> </para> </li> <li> <para> <i>401 - Unauthorized</i> </para> </li> <li> <para> <i>403 - Forbidden</i> </para> </li> <li> <para> <i>404 - Not Found</i> </para> </li> <li> <para> <i>405 - Method Not Allowed</i> </para> </li> <li> <para> <i>409 - Conflict</i> </para> </li> <li> <para> <i>411 - Length Required</i> </para> </li> <li> <para> <i>412 - Precondition Failed</i> </para> </li> <li> <para> <i>416 - Range Not Satisfiable</i> </para> </li> <li> <para> <i>500 - Internal Server Error</i> </para> </li> <li> <para> <i>503 - Service Unavailable</i> </para> </li> </ul>
+        /// <para>The integer status code for an HTTP response of a corresponding <code>GetObject</code> request.
+        /// The following is a list of status codes. 
+        /// </para> <ul> <li> <para> <i>200 - OK</i> </para> </li> <li> <para> <i>206 - Partial Content</i> </para> </li> <li> <para> <i>304 - Not Modified</i> </para> </li> <li> <para> <i>400 - Bad Request</i> </para> </li> <li> <para> <i>401 - Unauthorized</i> </para> </li> <li> <para> <i>403 - Forbidden</i> </para> </li> <li> <para> <i>404 - Not Found</i> </para> </li> <li> <para> <i>405 - Method Not Allowed</i> </para> </li> <li> <para> <i>409 - Conflict</i> </para> </li> <li> <para> <i>411 - Length Required</i> </para> </li> <li> <para> <i>412 - Precondition Failed</i> </para> </li> <li> <para> <i>416 - Range Not Satisfiable</i> </para> </li> <li> <para> <i>500 - Internal Server Error</i> </para> </li> <li> <para> <i>503 - Service Unavailable</i> </para> </li> </ul>
         /// </summary>
         public int? StatusCode
         {
@@ -218,6 +224,90 @@ namespace Amazon.S3.Model
         internal bool IsSetCacheControl()
         {
             return !(string.IsNullOrEmpty(this.cacheControl));
+        }
+
+        /// <summary>
+        /// Gets and sets the property ChecksumCRC32. 
+        /// <para>
+        /// This header can be used as a data integrity check to verify that the data received
+        /// is the same data that was originally sent. This specifies the base64-encoded, 32-bit
+        /// CRC32 checksum of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">
+        /// Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        /// </summary>
+        public string ChecksumCRC32
+        {
+            get { return this._checksumCRC32; }
+            set { this._checksumCRC32 = value; }
+        }
+
+        // Check to see if ChecksumCRC32 property is set
+        internal bool IsSetChecksumCRC32()
+        {
+            return this._checksumCRC32 != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ChecksumCRC32C. 
+        /// <para>
+        /// This header can be used as a data integrity check to verify that the data received
+        /// is the same data that was originally sent. This specifies the base64-encoded, 32-bit
+        /// CRC32C checksum of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">
+        /// Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        /// </summary>
+        public string ChecksumCRC32C
+        {
+            get { return this._checksumCRC32C; }
+            set { this._checksumCRC32C = value; }
+        }
+
+        // Check to see if ChecksumCRC32C property is set
+        internal bool IsSetChecksumCRC32C()
+        {
+            return this._checksumCRC32C != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ChecksumSHA1. 
+        /// <para>
+        /// This header can be used as a data integrity check to verify that the data received
+        /// is the same data that was originally sent. This specifies the base64-encoded, 160-bit
+        /// SHA-1 digest of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">
+        /// Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        /// </summary>
+        public string ChecksumSHA1
+        {
+            get { return this._checksumSHA1; }
+            set { this._checksumSHA1 = value; }
+        }
+
+        // Check to see if ChecksumSHA1 property is set
+        internal bool IsSetChecksumSHA1()
+        {
+            return this._checksumSHA1 != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ChecksumSHA256. 
+        /// <para>
+        /// This header can be used as a data integrity check to verify that the data received
+        /// is the same data that was originally sent. This specifies the base64-encoded, 256-bit
+        /// SHA-256 digest of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">
+        /// Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        /// </summary>
+        public string ChecksumSHA256
+        {
+            get { return this._checksumSHA256; }
+            set { this._checksumSHA256 = value; }
+        }
+
+        // Check to see if ChecksumSHA256 property is set
+        internal bool IsSetChecksumSHA256()
+        {
+            return this._checksumSHA256 != null;
         }
 
         /// <summary>
@@ -500,7 +590,10 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// <para>The server-side encryption algorithm used when storing requested object in Amazon S3 (for example, AES256, aws:kms).</para>
+        /// <para>
+        ///  The server-side encryption algorithm used when storing requested object in Amazon
+        /// S3 (for example, AES256, <code>aws:kms</code>).
+        /// </para>
         /// </summary>
         public ServerSideEncryptionMethod ServerSideEncryptionMethod
         {
@@ -531,7 +624,8 @@ namespace Amazon.S3.Model
         /// Gets and sets the property SSEKMSKeyId. 
         /// <para>
         ///  If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon
-        /// Web Services KMS) symmetric customer managed key that was used for stored in Amazon S3 object. 
+        /// Web Services KMS) symmetric encryption customer managed key that was used for stored
+        /// in Amazon S3 object. 
         /// </para>
         /// </summary>
         public string SSEKMSKeyId

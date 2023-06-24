@@ -57,7 +57,10 @@ namespace Amazon.ChimeSDKMessaging.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Member.
+        /// Gets and sets the property Member. 
+        /// <para>
+        /// The details of a user.
+        /// </para>
         /// </summary>
         public Identity Member
         {

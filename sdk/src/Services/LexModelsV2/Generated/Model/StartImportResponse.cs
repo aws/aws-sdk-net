@@ -79,8 +79,8 @@ namespace Amazon.LexModelsV2.Model
         /// <summary>
         /// Gets and sets the property ImportStatus. 
         /// <para>
-        /// The current status of the import. When the status is <code>Complete</code> the bot
-        /// or bot alias is ready to use.
+        /// The current status of the import. When the status is <code>Complete</code> the bot,
+        /// bot alias, or custom vocabulary is ready to use.
         /// </para>
         /// </summary>
         public ImportStatus ImportStatus
@@ -118,7 +118,7 @@ namespace Amazon.LexModelsV2.Model
         /// <summary>
         /// Gets and sets the property ResourceSpecification. 
         /// <para>
-        /// The parameters used when importing the bot or bot locale.
+        /// The parameters used when importing the resource.
         /// </para>
         /// </summary>
         public ImportResourceSpecification ResourceSpecification

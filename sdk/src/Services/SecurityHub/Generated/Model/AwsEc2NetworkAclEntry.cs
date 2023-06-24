@@ -139,7 +139,7 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property Protocol. 
         /// <para>
         /// The protocol that the rule applies to. To deny or allow access to all protocols, use
-        /// the value -1.
+        /// the value <code>-1</code>.
         /// </para>
         /// </summary>
         public string Protocol

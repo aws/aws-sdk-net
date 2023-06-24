@@ -30,9 +30,9 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// Container for the parameters to the VerifySoftwareToken operation.
-    /// Use this API to register a user's entered TOTP code and mark the user's software token
-    /// MFA status as "verified" if successful. The request takes an access token or a session
-    /// string, but not both.
+    /// Use this API to register a user's entered time-based one-time password (TOTP) code
+    /// and mark the user's software token MFA status as "verified" if successful. The request
+    /// takes an access token or a session string, but not both.
     /// </summary>
     public partial class VerifySoftwareTokenRequest : AmazonCognitoIdentityProviderRequest
     {
@@ -44,9 +44,11 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AccessToken. 
         /// <para>
-        /// The access token.
+        /// A valid access token that Amazon Cognito issued to the user whose software token you
+        /// want to verify.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string AccessToken
         {
             get { return this._accessToken; }
@@ -80,7 +82,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Session. 
         /// <para>
-        /// The session which should be passed both ways in challenge-response calls to the service.
+        /// The session that should be passed both ways in challenge-response calls to the service.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -99,7 +101,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property UserCode. 
         /// <para>
-        /// The one time password computed using the secret code returned by <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AssociateSoftwareToken.html">AssociateSoftwareToken"</a>.
+        /// The one- time password computed using the secret code returned by <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AssociateSoftwareToken.html">AssociateSoftwareToken</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=6, Max=6)]

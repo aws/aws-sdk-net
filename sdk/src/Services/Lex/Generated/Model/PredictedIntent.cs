@@ -81,6 +81,7 @@ namespace Amazon.Lex.Model
         /// The slot and slot values associated with the predicted intent.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public Dictionary<string, string> Slots
         {
             get { return this._slots; }

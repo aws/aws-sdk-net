@@ -76,6 +76,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.PostTemporalSharpening = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("postTemporalSharpeningStrength", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PostTemporalSharpeningStrength = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("speed", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

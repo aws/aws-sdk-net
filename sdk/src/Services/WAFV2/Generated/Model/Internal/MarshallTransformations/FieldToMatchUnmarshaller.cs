@@ -76,6 +76,24 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.Body = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Cookies", targetDepth))
+                {
+                    var unmarshaller = CookiesUnmarshaller.Instance;
+                    unmarshalledObject.Cookies = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("HeaderOrder", targetDepth))
+                {
+                    var unmarshaller = HeaderOrderUnmarshaller.Instance;
+                    unmarshalledObject.HeaderOrder = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Headers", targetDepth))
+                {
+                    var unmarshaller = HeadersUnmarshaller.Instance;
+                    unmarshalledObject.Headers = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("JsonBody", targetDepth))
                 {
                     var unmarshaller = JsonBodyUnmarshaller.Instance;

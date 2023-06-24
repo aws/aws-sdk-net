@@ -46,6 +46,8 @@ namespace Amazon.MediaConnect.Model
         private int? _port;
         private Protocol _protocol;
         private string _remoteId;
+        private int? _senderControlPort;
+        private string _senderIpAddress;
         private int? _smoothingLatency;
         private string _streamId;
         private VpcInterfaceAttachment _vpcInterfaceAttachment;
@@ -102,7 +104,8 @@ namespace Amazon.MediaConnect.Model
 
         /// <summary>
         /// Gets and sets the property Encryption. The type of key used for the encryption. If
-        /// no keyType is provided, the service will use the default setting (static-key).
+        /// no keyType is provided, the service will use the default setting (static-key). Allowable
+        /// encryption types: static-key.
         /// </summary>
         public UpdateEncryption Encryption
         {
@@ -134,8 +137,8 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MaxLatency. The maximum latency in milliseconds for Zixi-based
-        /// streams.
+        /// Gets and sets the property MaxLatency. The maximum latency in milliseconds. This parameter
+        /// applies only to RIST-based, Zixi-based, and Fujitsu-based streams.
         /// </summary>
         public int MaxLatency
         {
@@ -247,6 +250,38 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SenderControlPort. The port that the flow uses to send
+        /// outbound requests to initiate connection with the sender.
+        /// </summary>
+        public int SenderControlPort
+        {
+            get { return this._senderControlPort.GetValueOrDefault(); }
+            set { this._senderControlPort = value; }
+        }
+
+        // Check to see if SenderControlPort property is set
+        internal bool IsSetSenderControlPort()
+        {
+            return this._senderControlPort.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SenderIpAddress. The IP address that the flow communicates
+        /// with to initiate connection with the sender.
+        /// </summary>
+        public string SenderIpAddress
+        {
+            get { return this._senderIpAddress; }
+            set { this._senderIpAddress = value; }
+        }
+
+        // Check to see if SenderIpAddress property is set
+        internal bool IsSetSenderIpAddress()
+        {
+            return this._senderIpAddress != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SmoothingLatency. The smoothing latency in milliseconds
         /// for RIST, RTP, and RTP-FEC streams.
         /// </summary>
@@ -264,7 +299,7 @@ namespace Amazon.MediaConnect.Model
 
         /// <summary>
         /// Gets and sets the property StreamId. The stream ID that you want to use for this transport.
-        /// This parameter applies only to Zixi-based streams.
+        /// This parameter applies only to Zixi and SRT caller-based streams.
         /// </summary>
         public string StreamId
         {

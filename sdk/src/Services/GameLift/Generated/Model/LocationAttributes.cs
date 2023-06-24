@@ -29,16 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GameLift.Model
 {
     /// <summary>
-    /// Represents a location in a multi-location fleet.
-    /// 
-    ///  
-    /// <para>
-    ///  <b>Related actions</b> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <a>DescribeFleetLocationAttributes</a> 
-    /// </para>
+    /// Details about a location in a multi-location fleet.
     /// </summary>
     public partial class LocationAttributes
     {
@@ -87,8 +78,8 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property UpdateStatus. 
         /// <para>
         /// The status of fleet activity updates to the location. The status <code>PENDING_UPDATE</code>
-        /// indicates that <a>StopFleetActions</a> or <a>StartFleetActions</a> has been requested
-        /// but the update has not yet been completed for the location.
+        /// indicates that <code>StopFleetActions</code> or <code>StartFleetActions</code> has
+        /// been requested but the update has not yet been completed for the location.
         /// </para>
         /// </summary>
         public LocationUpdateStatus UpdateStatus

@@ -26,19 +26,19 @@
     <property>Amazon.ElasticInference.Model.ListTagsForResourceRequest.ResourceArn</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>^arn:aws\S*:elastic-inference:\S+:\d{12}:elastic-inference-accelerator/eia-[0-9a-f]+$</pattern>
+    <pattern>^arn:aws[^\s:]*:elastic-inference:[^\s:]+:\d{12}:elastic-inference-accelerator/eia-[0-9a-f]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticInference.Model.TagResourceRequest.ResourceArn</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>^arn:aws\S*:elastic-inference:\S+:\d{12}:elastic-inference-accelerator/eia-[0-9a-f]+$</pattern>
+    <pattern>^arn:aws[^\s:]*:elastic-inference:[^\s:]+:\d{12}:elastic-inference-accelerator/eia-[0-9a-f]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticInference.Model.UntagResourceRequest.ResourceArn</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>^arn:aws\S*:elastic-inference:\S+:\d{12}:elastic-inference-accelerator/eia-[0-9a-f]+$</pattern>
+    <pattern>^arn:aws[^\s:]*:elastic-inference:[^\s:]+:\d{12}:elastic-inference-accelerator/eia-[0-9a-f]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticInference.Model.AcceleratorType.AcceleratorTypeName</property>

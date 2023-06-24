@@ -34,7 +34,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DatabaseInput Marshaller
-    /// </summary>       
+    /// </summary>
     public class DatabaseInputMarshaller : IRequestMarshaller<DatabaseInput, JsonMarshallerContext> 
     {
         /// <summary>
@@ -65,6 +65,17 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("Description");
                 context.Writer.Write(requestObject.Description);
+            }
+
+            if(requestObject.IsSetFederatedDatabase())
+            {
+                context.Writer.WritePropertyName("FederatedDatabase");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = FederatedDatabaseMarshaller.Instance;
+                marshaller.Marshall(requestObject.FederatedDatabase, context);
+
+                context.Writer.WriteObjectEnd();
             }
 
             if(requestObject.IsSetLocationUri())
@@ -108,7 +119,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DatabaseInputMarshaller Instance = new DatabaseInputMarshaller();
 
     }

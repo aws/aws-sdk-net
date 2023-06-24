@@ -31,29 +31,22 @@ namespace Amazon.SecretsManager.Model
     /// <summary>
     /// Container for the parameters to the RestoreSecret operation.
     /// Cancels the scheduled deletion of a secret by removing the <code>DeletedDate</code>
-    /// time stamp. This makes the secret accessible to query once again.
+    /// time stamp. You can access a secret again after it has been restored.
     /// 
     ///  
     /// <para>
-    ///  <b>Minimum permissions</b> 
+    /// Secrets Manager generates a CloudTrail log entry when you call this action. Do not
+    /// include sensitive information in request parameters because it might be logged. For
+    /// more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/retrieve-ct-entries.html">Logging
+    /// Secrets Manager events with CloudTrail</a>.
     /// </para>
     ///  
     /// <para>
-    /// To run this command, you must have the following permissions:
+    ///  <b>Required permissions: </b> <code>secretsmanager:RestoreSecret</code>. For more
+    /// information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions">
+    /// IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+    /// and access control in Secrets Manager</a>. 
     /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    /// secretsmanager:RestoreSecret
-    /// </para>
-    ///  </li> </ul> 
-    /// <para>
-    ///  <b>Related operations</b> 
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    /// To delete a secret, use <a>DeleteSecret</a>.
-    /// </para>
-    ///  </li> </ul>
     /// </summary>
     public partial class RestoreSecretRequest : AmazonSecretsManagerRequest
     {
@@ -62,13 +55,13 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property SecretId. 
         /// <para>
-        /// Specifies the secret that you want to restore from a previously scheduled deletion.
-        /// You can specify either the Amazon Resource Name (ARN) or the friendly name of the
-        /// secret.
+        /// The ARN or name of the secret to restore.
         /// </para>
         ///  
         /// <para>
         /// For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.
+        /// See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding
+        /// a secret from a partial ARN</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]

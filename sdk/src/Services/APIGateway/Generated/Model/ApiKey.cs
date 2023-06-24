@@ -29,12 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.APIGateway.Model
 {
     /// <summary>
-    /// A resource that can be distributed to callers for executing <a>Method</a> resources
-    /// that require an API key. API keys can be mapped to any <a>Stage</a> on any <a>RestApi</a>,
-    /// which indicates that the callers with the API key can make requests to that stage.
-    /// 
-    ///  <div class="seeAlso"> <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-api-keys.html">Use
-    /// API Keys</a> </div>
+    /// A resource that can be distributed to callers for executing Method resources that
+    /// require an API key. API keys can be mapped to any Stage on any RestApi, which indicates
+    /// that the callers with the API key can make requests to that stage.
     /// </summary>
     public partial class ApiKey
     {
@@ -178,7 +175,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property StageKeys. 
         /// <para>
-        /// A list of <a>Stage</a> resources that are associated with the <a>ApiKey</a> resource.
+        /// A list of Stage resources that are associated with the ApiKey resource.
         /// </para>
         /// </summary>
         public List<string> StageKeys

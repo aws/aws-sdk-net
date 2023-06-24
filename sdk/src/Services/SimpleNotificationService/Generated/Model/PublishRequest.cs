@@ -42,7 +42,7 @@ namespace Amazon.SimpleNotificationService.Model
     ///  
     /// <para>
     /// When a <code>messageId</code> is returned, the message is saved and Amazon SNS immediately
-    /// deliverers it to subscribers.
+    /// delivers it to subscribers.
     /// </para>
     ///  
     /// <para>

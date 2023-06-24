@@ -34,7 +34,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Av1QvbrSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class Av1QvbrSettingsMarshaller : IRequestMarshaller<Av1QvbrSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static Av1QvbrSettingsMarshaller Instance = new Av1QvbrSettingsMarshaller();
 
     }

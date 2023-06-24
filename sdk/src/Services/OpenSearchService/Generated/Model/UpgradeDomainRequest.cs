@@ -30,8 +30,8 @@ namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
     /// Container for the parameters to the UpgradeDomain operation.
-    /// Allows you to either upgrade your domain or perform an upgrade eligibility check to
-    /// a compatible version of OpenSearch or Elasticsearch.
+    /// Allows you to either upgrade your Amazon OpenSearch Service domain or perform an upgrade
+    /// eligibility check to a compatible version of OpenSearch or Elasticsearch.
     /// </summary>
     public partial class UpgradeDomainRequest : AmazonOpenSearchServiceRequest
     {
@@ -41,7 +41,13 @@ namespace Amazon.OpenSearchService.Model
         private string _targetVersion;
 
         /// <summary>
-        /// Gets and sets the property AdvancedOptions.
+        /// Gets and sets the property AdvancedOptions. 
+        /// <para>
+        /// Only supports the <code>override_main_response_version</code> parameter and not other
+        /// advanced options. You can only include this option when upgrading to an OpenSearch
+        /// version. Specifies whether the domain reports its version as 7.10 so that it continues
+        /// to work with Elasticsearch OSS clients and plugins.
+        /// </para>
         /// </summary>
         public Dictionary<string, string> AdvancedOptions
         {
@@ -56,7 +62,10 @@ namespace Amazon.OpenSearchService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DomainName.
+        /// Gets and sets the property DomainName. 
+        /// <para>
+        /// Name of the OpenSearch Service domain that you want to upgrade.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=3, Max=28)]
         public string DomainName
@@ -74,8 +83,8 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property PerformCheckOnly. 
         /// <para>
-        ///  When true, indicates that an upgrade eligibility check needs to be performed. Does
-        /// not actually perform the upgrade. 
+        /// When true, indicates that an upgrade eligibility check needs to be performed. Does
+        /// not actually perform the upgrade.
         /// </para>
         /// </summary>
         public bool PerformCheckOnly
@@ -93,7 +102,8 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property TargetVersion. 
         /// <para>
-        /// The version of OpenSearch you intend to upgrade the domain to.
+        /// OpenSearch or Elasticsearch version to which you want to upgrade, in the format Opensearch_X.Y
+        /// or Elasticsearch_X.Y.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=14, Max=18)]

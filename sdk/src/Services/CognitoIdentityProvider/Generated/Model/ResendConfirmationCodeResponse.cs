@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// The response from the server when the Amazon Cognito Your User Pools service makes
-    /// the request to resend a confirmation code.
+    /// The response from the server when Amazon Cognito makes the request to resend a confirmation
+    /// code.
     /// </summary>
     public partial class ResendConfirmationCodeResponse : AmazonWebServiceResponse
     {

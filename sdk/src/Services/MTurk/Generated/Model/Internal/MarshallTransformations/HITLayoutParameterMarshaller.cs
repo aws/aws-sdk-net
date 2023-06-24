@@ -34,7 +34,7 @@ namespace Amazon.MTurk.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// HITLayoutParameter Marshaller
-    /// </summary>       
+    /// </summary>
     public class HITLayoutParameterMarshaller : IRequestMarshaller<HITLayoutParameter, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.MTurk.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static HITLayoutParameterMarshaller Instance = new HITLayoutParameterMarshaller();
 
     }

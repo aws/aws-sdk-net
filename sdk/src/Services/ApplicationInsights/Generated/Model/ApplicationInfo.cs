@@ -43,7 +43,10 @@ namespace Amazon.ApplicationInsights.Model
         private string _resourceGroupName;
 
         /// <summary>
-        /// Gets and sets the property AutoConfigEnabled.
+        /// Gets and sets the property AutoConfigEnabled. 
+        /// <para>
+        ///  Indicates whether auto-configuration is turned on for this application. 
+        /// </para>
         /// </summary>
         public bool AutoConfigEnabled
         {
@@ -78,7 +81,10 @@ namespace Amazon.ApplicationInsights.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DiscoveryType.
+        /// Gets and sets the property DiscoveryType. 
+        /// <para>
+        ///  The method used by Application Insights to onboard your resources. 
+        /// </para>
         /// </summary>
         public DiscoveryType DiscoveryType
         {

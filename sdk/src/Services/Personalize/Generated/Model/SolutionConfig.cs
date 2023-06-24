@@ -39,6 +39,7 @@ namespace Amazon.Personalize.Model
         private Dictionary<string, string> _featureTransformationParameters = new Dictionary<string, string>();
         private HPOConfig _hpoConfig;
         private OptimizationObjective _optimizationObjective;
+        private TrainingDataConfig _trainingDataConfig;
 
         /// <summary>
         /// Gets and sets the property AlgorithmHyperParameters. 
@@ -62,8 +63,8 @@ namespace Amazon.Personalize.Model
         /// <summary>
         /// Gets and sets the property AutoMLConfig. 
         /// <para>
-        /// The <a>AutoMLConfig</a> object containing a list of recipes to search when AutoML
-        /// is performed.
+        /// The <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_AutoMLConfig.html">AutoMLConfig</a>
+        /// object containing a list of recipes to search when AutoML is performed.
         /// </para>
         /// </summary>
         public AutoMLConfig AutoMLConfig
@@ -153,6 +154,25 @@ namespace Amazon.Personalize.Model
         internal bool IsSetOptimizationObjective()
         {
             return this._optimizationObjective != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TrainingDataConfig. 
+        /// <para>
+        ///  Specifies the training data configuration to use when creating a custom solution
+        /// version (trained model). 
+        /// </para>
+        /// </summary>
+        public TrainingDataConfig TrainingDataConfig
+        {
+            get { return this._trainingDataConfig; }
+            set { this._trainingDataConfig = value; }
+        }
+
+        // Check to see if TrainingDataConfig property is set
+        internal bool IsSetTrainingDataConfig()
+        {
+            return this._trainingDataConfig != null;
         }
 
     }

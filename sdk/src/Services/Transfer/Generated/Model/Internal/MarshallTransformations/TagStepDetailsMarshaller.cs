@@ -34,7 +34,7 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// TagStepDetails Marshaller
-    /// </summary>       
+    /// </summary>
     public class TagStepDetailsMarshaller : IRequestMarshaller<TagStepDetails, JsonMarshallerContext> 
     {
         /// <summary>
@@ -49,6 +49,12 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("Name");
                 context.Writer.Write(requestObject.Name);
+            }
+
+            if(requestObject.IsSetSourceFileLocation())
+            {
+                context.Writer.WritePropertyName("SourceFileLocation");
+                context.Writer.Write(requestObject.SourceFileLocation);
             }
 
             if(requestObject.IsSetTags())
@@ -71,7 +77,7 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static TagStepDetailsMarshaller Instance = new TagStepDetailsMarshaller();
 
     }

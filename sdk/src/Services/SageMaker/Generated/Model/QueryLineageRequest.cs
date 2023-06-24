@@ -47,8 +47,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Direction. 
         /// <para>
-        /// Associations between lineage entities are directed. This parameter determines the
-        /// direction from the StartArn(s) the query will look.
+        /// Associations between lineage entities have a direction. This parameter determines
+        /// the direction from the StartArn(s) that the query traverses.
         /// </para>
         /// </summary>
         public Direction Direction
@@ -106,7 +106,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property IncludeEdges. 
         /// <para>
-        ///  Setting this value to <code>True</code> will retrieve not only the entities of interest
+        ///  Setting this value to <code>True</code> retrieves not only the entities of interest
         /// but also the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking-entities.html">Associations</a>
         /// and lineage entities on the path. Set to <code>False</code> to only return lineage
         /// entities that match your query.
@@ -127,8 +127,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property MaxDepth. 
         /// <para>
-        /// The maximum depth in lineage relationships from the <code>StartArns</code> that will
-        /// be traversed. Depth is a measure of the number of <code>Associations</code> from the
+        /// The maximum depth in lineage relationships from the <code>StartArns</code> that are
+        /// traversed. Depth is a measure of the number of <code>Associations</code> from the
         /// <code>StartArn</code> entity to the matched results.
         /// </para>
         /// </summary>
@@ -192,7 +192,7 @@ namespace Amazon.SageMaker.Model
         /// your lineage query.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1)]
+        [AWSProperty(Min=0, Max=1)]
         public List<string> StartArns
         {
             get { return this._startArns; }

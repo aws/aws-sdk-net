@@ -34,7 +34,7 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// PropertyFilter Marshaller
-    /// </summary>       
+    /// </summary>
     public class PropertyFilterMarshaller : IRequestMarshaller<PropertyFilter, JsonMarshallerContext> 
     {
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static PropertyFilterMarshaller Instance = new PropertyFilterMarshaller();
 
     }

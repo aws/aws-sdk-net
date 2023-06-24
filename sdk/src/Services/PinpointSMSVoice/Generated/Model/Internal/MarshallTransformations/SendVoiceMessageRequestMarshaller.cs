@@ -56,7 +56,7 @@ namespace Amazon.PinpointSMSVoice.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.PinpointSMSVoice");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-09-05";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-09-05";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/v1/sms-voice/voice/message";
@@ -100,7 +100,6 @@ namespace Amazon.PinpointSMSVoice.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.OriginationPhoneNumber);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

@@ -30,8 +30,8 @@ namespace Amazon.Lambda.Model
 {
     /// <summary>
     /// The results of an operation to update or read environment variables. If the operation
-    /// is successful, the response contains the environment variables. If it failed, the
-    /// response contains details about the error.
+    /// succeeds, the response contains the environment variables. If it fails, the response
+    /// contains details about the error.
     /// </summary>
     public partial class EnvironmentResponse
     {
@@ -59,9 +59,10 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Variables. 
         /// <para>
-        /// Environment variable key-value pairs.
+        /// Environment variable key-value pairs. Omitted from CloudTrail logs.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public Dictionary<string, string> Variables
         {
             get { return this._variables; }

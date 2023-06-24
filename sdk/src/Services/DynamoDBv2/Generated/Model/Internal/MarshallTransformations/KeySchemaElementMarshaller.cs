@@ -34,7 +34,7 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// KeySchemaElement Marshaller
-    /// </summary>       
+    /// </summary>
     public class KeySchemaElementMarshaller : IRequestMarshaller<KeySchemaElement, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static KeySchemaElementMarshaller Instance = new KeySchemaElementMarshaller();
 
     }

@@ -37,12 +37,12 @@ namespace Amazon.GlobalAccelerator.Model
     ///  
     /// <para>
     /// It can take a few minutes before traffic to the specified addresses stops routing
-    /// to AWS because of propagation delays.
+    /// to Amazon Web Services because of propagation delays.
     /// </para>
     ///  
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring
-    /// Your Own IP Addresses (BYOIP)</a> in the <i>AWS Global Accelerator Developer Guide</i>.
+    /// your own IP addresses (BYOIP)</a> in the <i>Global Accelerator Developer Guide</i>.
     /// </para>
     /// </summary>
     public partial class WithdrawByoipCidrRequest : AmazonGlobalAcceleratorRequest

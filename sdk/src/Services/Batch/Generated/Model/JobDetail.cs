@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Batch.Model
 {
     /// <summary>
-    /// An object representing an Batch job.
+    /// An object that represents an Batch job.
     /// </summary>
     public partial class JobDetail
     {
@@ -38,6 +38,10 @@ namespace Amazon.Batch.Model
         private ContainerDetail _container;
         private long? _createdAt;
         private List<JobDependency> _dependsOn = new List<JobDependency>();
+        private List<EksAttemptDetail> _eksAttempts = new List<EksAttemptDetail>();
+        private EksPropertiesDetail _eksProperties;
+        private bool? _isCancelled;
+        private bool? _isTerminated;
         private string _jobArn;
         private string _jobDefinition;
         private string _jobId;
@@ -61,7 +65,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property ArrayProperties. 
         /// <para>
-        /// The array properties of the job, if it is an array job.
+        /// The array properties of the job, if it's an array job.
         /// </para>
         /// </summary>
         public ArrayPropertiesDetail ArrayProperties
@@ -79,7 +83,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property Attempts. 
         /// <para>
-        /// A list of job attempts associated with this job.
+        /// A list of job attempts that are associated with this job.
         /// </para>
         /// </summary>
         public List<AttemptDetail> Attempts
@@ -97,7 +101,8 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property Container. 
         /// <para>
-        /// An object representing the details of the container that's associated with the job.
+        /// An object that represents the details for the container that's associated with the
+        /// job.
         /// </para>
         /// </summary>
         public ContainerDetail Container
@@ -116,9 +121,10 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property CreatedAt. 
         /// <para>
         /// The Unix timestamp (in milliseconds) for when the job was created. For non-array jobs
-        /// and parent array jobs, this is when the job entered the <code>SUBMITTED</code> state
-        /// (at the time <a>SubmitJob</a> was called). For array child jobs, this is when the
-        /// child job was spawned by its parent and entered the <code>PENDING</code> state.
+        /// and parent array jobs, this is when the job entered the <code>SUBMITTED</code> state.
+        /// This is specifically at the time <a>SubmitJob</a> was called. For array child jobs,
+        /// this is when the child job was spawned by its parent and entered the <code>PENDING</code>
+        /// state.
         /// </para>
         /// </summary>
         public long CreatedAt
@@ -152,6 +158,80 @@ namespace Amazon.Batch.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EksAttempts. 
+        /// <para>
+        /// A list of job attempts that are associated with this job.
+        /// </para>
+        /// </summary>
+        public List<EksAttemptDetail> EksAttempts
+        {
+            get { return this._eksAttempts; }
+            set { this._eksAttempts = value; }
+        }
+
+        // Check to see if EksAttempts property is set
+        internal bool IsSetEksAttempts()
+        {
+            return this._eksAttempts != null && this._eksAttempts.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EksProperties. 
+        /// <para>
+        /// An object with various properties that are specific to Amazon EKS based jobs. Only
+        /// one of <code>container</code>, <code>eksProperties</code>, or <code>nodeDetails</code>
+        /// is specified.
+        /// </para>
+        /// </summary>
+        public EksPropertiesDetail EksProperties
+        {
+            get { return this._eksProperties; }
+            set { this._eksProperties = value; }
+        }
+
+        // Check to see if EksProperties property is set
+        internal bool IsSetEksProperties()
+        {
+            return this._eksProperties != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IsCancelled. 
+        /// <para>
+        /// Indicates whether the job is canceled.
+        /// </para>
+        /// </summary>
+        public bool IsCancelled
+        {
+            get { return this._isCancelled.GetValueOrDefault(); }
+            set { this._isCancelled = value; }
+        }
+
+        // Check to see if IsCancelled property is set
+        internal bool IsSetIsCancelled()
+        {
+            return this._isCancelled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IsTerminated. 
+        /// <para>
+        /// Indicates whether the job is terminated.
+        /// </para>
+        /// </summary>
+        public bool IsTerminated
+        {
+            get { return this._isTerminated.GetValueOrDefault(); }
+            set { this._isTerminated = value; }
+        }
+
+        // Check to see if IsTerminated property is set
+        internal bool IsSetIsTerminated()
+        {
+            return this._isTerminated.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property JobArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the job.
@@ -172,7 +252,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property JobDefinition. 
         /// <para>
-        /// The job definition that's used by this job.
+        /// The Amazon Resource Name (ARN) of the job definition that this job uses.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -191,7 +271,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property JobId. 
         /// <para>
-        /// The ID for the job.
+        /// The job ID.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -210,7 +290,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property JobName. 
         /// <para>
-        /// The name of the job.
+        /// The job name.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -248,8 +328,8 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property NodeDetails. 
         /// <para>
-        /// An object representing the details of a node that's associated with a multi-node parallel
-        /// job.
+        /// An object that represents the details of a node that's associated with a multi-node
+        /// parallel job.
         /// </para>
         /// </summary>
         public NodeDetails NodeDetails
@@ -267,7 +347,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property NodeProperties. 
         /// <para>
-        /// An object representing the node properties of a multi-node parallel job.
+        /// An object that represents the node properties of a multi-node parallel job.
         /// </para>
         ///  <note> 
         /// <para>
@@ -290,8 +370,8 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property Parameters. 
         /// <para>
-        /// Additional parameters passed to the job that replace parameter substitution placeholders
-        /// or override any corresponding parameter defaults from the job definition.
+        /// Additional parameters that are passed to the job that replace parameter substitution
+        /// placeholders or override any corresponding parameter defaults from the job definition.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Parameters
@@ -330,8 +410,8 @@ namespace Amazon.Batch.Model
         /// <para>
         /// Specifies whether to propagate the tags from the job or job definition to the corresponding
         /// Amazon ECS task. If no value is specified, the tags aren't propagated. Tags can only
-        /// be propagated to the tasks during task creation. For tags with the same name, job
-        /// tags are given priority over job definitions tags. If the total number of combined
+        /// be propagated to the tasks when the tasks are created. For tags with the same name,
+        /// job tags are given priority over job definitions tags. If the total number of combined
         /// tags from the job and job definition is over 50, the job is moved to the <code>FAILED</code>
         /// state.
         /// </para>
@@ -407,9 +487,10 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property StartedAt. 
         /// <para>
-        /// The Unix timestamp (in milliseconds) for when the job was started (when the job transitioned
-        /// from the <code>STARTING</code> state to the <code>RUNNING</code> state). This parameter
-        /// isn't provided for child jobs of array jobs or multi-node parallel jobs.
+        /// The Unix timestamp (in milliseconds) for when the job was started. More specifically,
+        /// it's when the job transitioned from the <code>STARTING</code> state to the <code>RUNNING</code>
+        /// state. This parameter isn't provided for child jobs of array jobs or multi-node parallel
+        /// jobs.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -433,7 +514,7 @@ namespace Amazon.Batch.Model
         ///  <note> 
         /// <para>
         /// If your jobs don't progress to <code>STARTING</code>, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#job_stuck_in_runnable">Jobs
-        /// Stuck in RUNNABLE Status</a> in the troubleshooting section of the <i>Batch User Guide</i>.
+        /// stuck in RUNNABLE status</a> in the troubleshooting section of the <i>Batch User Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -453,8 +534,8 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property StatusReason. 
         /// <para>
-        /// A short, human-readable string to provide additional details about the current status
-        /// of the job.
+        /// A short, human-readable string to provide more details for the current status of the
+        /// job.
         /// </para>
         /// </summary>
         public string StatusReason
@@ -472,9 +553,9 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property StoppedAt. 
         /// <para>
-        /// The Unix timestamp (in milliseconds) for when the job was stopped (when the job transitioned
-        /// from the <code>RUNNING</code> state to a terminal state, such as <code>SUCCEEDED</code>
-        /// or <code>FAILED</code>).
+        /// The Unix timestamp (in milliseconds) for when the job was stopped. More specifically,
+        /// it's when the job transitioned from the <code>RUNNING</code> state to a terminal state,
+        /// such as <code>SUCCEEDED</code> or <code>FAILED</code>.
         /// </para>
         /// </summary>
         public long StoppedAt
@@ -492,7 +573,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags applied to the job.
+        /// The tags that are applied to the job.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

@@ -1,5 +1,6 @@
 {
   "active": true,
   "synopsis": "With code signing for IoT, you can sign code that you create for any IoT device that is supported by Amazon Web Services (AWS). Code signing is available through Amazon FreeRTOS and AWS IoT Device Management, and integrated with AWS Certificate Manager (ACM).",
-  "generate-client-constructors": true
+  "generate-client-constructors": true,
+  "legacy-service-id": "signer"
 }

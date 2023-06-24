@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AwsElasticBeanstalkEnvironmentOptionSetting Marshaller
-    /// </summary>       
+    /// </summary>
     public class AwsElasticBeanstalkEnvironmentOptionSettingMarshaller : IRequestMarshaller<AwsElasticBeanstalkEnvironmentOptionSetting, JsonMarshallerContext> 
     {
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AwsElasticBeanstalkEnvironmentOptionSettingMarshaller Instance = new AwsElasticBeanstalkEnvironmentOptionSettingMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.Honeycode.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ImportOptions Marshaller
-    /// </summary>       
+    /// </summary>
     public class ImportOptionsMarshaller : IRequestMarshaller<ImportOptions, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.Honeycode.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ImportOptionsMarshaller Instance = new ImportOptionsMarshaller();
 
     }

@@ -58,7 +58,7 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
             string target = "OpsWorks_20130218.SetPermission";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2013-02-18";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2013-02-18";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -97,7 +97,6 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.StackId);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

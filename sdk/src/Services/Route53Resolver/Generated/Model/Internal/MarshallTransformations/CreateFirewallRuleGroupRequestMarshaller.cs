@@ -58,7 +58,7 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
             string target = "Route53Resolver.CreateFirewallRuleGroup";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-04-01";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-04-01";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -76,7 +76,7 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
                 else if(!(publicRequest.IsSetCreatorRequestId()))
                 {
                     context.Writer.WritePropertyName("CreatorRequestId");
-                    context.Writer.Write(Guid.NewGuid().ToString());                                                
+                    context.Writer.Write(Guid.NewGuid().ToString());
                 }
                 if(publicRequest.IsSetName())
                 {
@@ -100,7 +100,6 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

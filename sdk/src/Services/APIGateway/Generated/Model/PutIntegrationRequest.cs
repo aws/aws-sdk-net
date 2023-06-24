@@ -56,7 +56,7 @@ namespace Amazon.APIGateway.Model
         /// Gets and sets the property CacheKeyParameters. 
         /// <para>
         /// A list of request parameters whose values API Gateway caches. To be valid values for
-        /// <code>cacheKeyParameters</code>, these parameters must also be specified for <a>Method</a>
+        /// <code>cacheKeyParameters</code>, these parameters must also be specified for Method
         /// <code>requestParameters</code>.
         /// </para>
         /// </summary>
@@ -95,9 +95,8 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property ConnectionId. 
         /// <para>
-        /// The (<a href="https://docs.aws.amazon.com/apigateway/api-reference/resource/vpc-link/#id"><code>id</code></a>)
-        /// of the <a>VpcLink</a> used for the integration when <code>connectionType=VPC_LINK</code>
-        /// and undefined, otherwise.
+        /// The ID of the VpcLink used for the integration. Specify this value only if you specify
+        /// <code>VPC_LINK</code> as the connection type.
         /// </para>
         /// </summary>
         public string ConnectionId
@@ -140,17 +139,7 @@ namespace Amazon.APIGateway.Model
         /// are <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with the following
         /// behaviors:
         /// </para>
-        ///  <ul> <li>
-        /// <para>
-        /// <code>CONVERT_TO_BINARY</code>: Converts a request payload from a Base64-encoded string
-        /// to the corresponding binary blob.
-        /// </para>
-        /// </li> <li>
-        /// <para>
-        /// <code>CONVERT_TO_TEXT</code>: Converts a request payload from a binary blob to a Base64-encoded
-        /// string.
-        /// </para>
-        /// </li> </ul> 
+        ///  
         /// <para>
         /// If this property is not defined, the request payload will be passed through from the
         /// method request to integration request without modification, provided that the <code>passthroughBehavior</code>
@@ -190,7 +179,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property HttpMethod. 
         /// <para>
-        /// [Required] Specifies a put integration request's HTTP method.
+        /// Specifies the HTTP method for the integration.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -209,8 +198,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property IntegrationHttpMethod. 
         /// <para>
-        /// Specifies a put integration HTTP method. When the integration type is HTTP or AWS,
-        /// this field is required.
+        /// The HTTP method for the integration.
         /// </para>
         /// </summary>
         public string IntegrationHttpMethod
@@ -233,23 +221,6 @@ namespace Amazon.APIGateway.Model
         /// property on the Integration resource. There are three valid values: <code>WHEN_NO_MATCH</code>,
         /// <code>WHEN_NO_TEMPLATES</code>, and <code>NEVER</code>. 
         /// </para>
-        ///  <ul> <li>
-        /// <para>
-        /// <code>WHEN_NO_MATCH</code> passes the request body for unmapped content types through
-        /// to the integration back end without transformation.
-        /// </para>
-        /// </li> <li>
-        /// <para>
-        /// <code>NEVER</code> rejects unmapped content types with an HTTP 415 'Unsupported Media
-        /// Type' response.
-        /// </para>
-        /// </li> <li>
-        /// <para>
-        /// <code>WHEN_NO_TEMPLATES</code> allows pass-through when the integration has NO content
-        /// types mapped to templates. However if there is at least one content type defined,
-        /// unmapped content types will be rejected with the same 415 response.
-        /// </para>
-        /// </li> </ul>
         /// </summary>
         public string PassthroughBehavior
         {
@@ -310,7 +281,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property ResourceId. 
         /// <para>
-        /// [Required] Specifies a put integration request's resource ID.
+        /// Specifies a put integration request's resource ID.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -329,7 +300,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property RestApiId. 
         /// <para>
-        /// [Required] The string identifier of the associated <a>RestApi</a>.
+        /// The string identifier of the associated RestApi.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -382,7 +353,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// [Required] Specifies a put integration input's type.
+        /// Specifies a put integration input's type.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -401,35 +372,25 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Uri. 
         /// <para>
-        /// Specifies Uniform Resource Identifier (URI) of the integration endpoint.
-        /// </para>
-        ///  <ul> <li>
-        /// <para>
-        ///  For <code>HTTP</code> or <code>HTTP_PROXY</code> integrations, the URI must be a
-        /// fully formed, encoded HTTP(S) URL according to the <a href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier"
-        /// target="_blank">RFC-3986 specification</a>, for either standard integration, where
+        /// Specifies Uniform Resource Identifier (URI) of the integration endpoint. For HTTP
+        /// or <code>HTTP_PROXY</code> integrations, the URI must be a fully formed, encoded HTTP(S)
+        /// URL according to the RFC-3986 specification, for either standard integration, where
         /// <code>connectionType</code> is not <code>VPC_LINK</code>, or private integration,
         /// where <code>connectionType</code> is <code>VPC_LINK</code>. For a private HTTP integration,
-        /// the URI is not used for routing. 
-        /// </para>
-        ///  </li> <li>
-        /// <para>
-        ///  For <code>AWS</code> or <code>AWS_PROXY</code> integrations, the URI is of the form
-        /// <code>arn:aws:apigateway:{region}:{subdomain.service|service}:path|action/{service_api}</code>.
-        /// Here, <code>{Region}</code> is the API Gateway region (e.g., <code>us-east-1</code>);
-        /// <code>{service}</code> is the name of the integrated AWS service (e.g., <code>s3</code>);
-        /// and <code>{subdomain}</code> is a designated subdomain supported by certain AWS service
-        /// for fast host-name lookup. <code>action</code> can be used for an AWS service action-based
-        /// API, using an <code>Action={name}&amp;{p1}={v1}&amp;p2={v2}...</code> query string.
-        /// The ensuing <code>{service_api}</code> refers to a supported action <code>{name}</code>
-        /// plus any required input parameters. Alternatively, <code>path</code> can be used for
-        /// an AWS service path-based API. The ensuing <code>service_api</code> refers to the
-        /// path to an AWS service resource, including the region of the integrated AWS service,
-        /// if applicable. For example, for integration with the S3 API of <code><a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectGET.html">GetObject</a></code>,
+        /// the URI is not used for routing. For <code>AWS</code> or <code>AWS_PROXY</code> integrations,
+        /// the URI is of the form <code>arn:aws:apigateway:{region}:{subdomain.service|service}:path|action/{service_api</code>}.
+        /// Here, {Region} is the API Gateway region (e.g., us-east-1); {service} is the name
+        /// of the integrated Amazon Web Services service (e.g., s3); and {subdomain} is a designated
+        /// subdomain supported by certain Amazon Web Services service for fast host-name lookup.
+        /// action can be used for an Amazon Web Services service action-based API, using an Action={name}&amp;{p1}={v1}&amp;p2={v2}...
+        /// query string. The ensuing {service_api} refers to a supported action {name} plus any
+        /// required input parameters. Alternatively, path can be used for an Amazon Web Services
+        /// service path-based API. The ensuing service_api refers to the path to an Amazon Web
+        /// Services service resource, including the region of the integrated Amazon Web Services
+        /// service, if applicable. For example, for integration with the S3 API of <code>GetObject</code>,
         /// the <code>uri</code> can be either <code>arn:aws:apigateway:us-west-2:s3:action/GetObject&amp;Bucket={bucket}&amp;Key={key}</code>
-        /// or <code>arn:aws:apigateway:us-west-2:s3:path/{bucket}/{key}</code>
+        /// or <code>arn:aws:apigateway:us-west-2:s3:path/{bucket}/{key}</code>.
         /// </para>
-        ///  </li></ul>
         /// </summary>
         public string Uri
         {

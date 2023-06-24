@@ -56,7 +56,7 @@ namespace Amazon.Panorama.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Panorama");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-07-24";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-07-24";
             request.HttpMethod = "PUT";
 
             if (!publicRequest.IsSetPackageId())
@@ -86,7 +86,6 @@ namespace Amazon.Panorama.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.OwnerAccount);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

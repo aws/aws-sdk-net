@@ -30,9 +30,9 @@ namespace Amazon.FSx.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteSnapshot operation.
-    /// Deletes the Amazon FSx snapshot. After deletion, the snapshot no longer exists, and
-    /// its data is gone. Deleting a snapshot doesn't affect snapshots stored in a file system
-    /// backup. 
+    /// Deletes an Amazon FSx for OpenZFS snapshot. After deletion, the snapshot no longer
+    /// exists, and its data is gone. Deleting a snapshot doesn't affect snapshots stored
+    /// in a file system backup. 
     /// 
     ///  
     /// <para>

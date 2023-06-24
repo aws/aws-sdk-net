@@ -34,7 +34,7 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AttributeValueList Marshaller
-    /// </summary>       
+    /// </summary>
     public class AttributeValueListMarshaller : IRequestMarshaller<AttributeValueList, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AttributeValueListMarshaller Instance = new AttributeValueListMarshaller();
 
     }

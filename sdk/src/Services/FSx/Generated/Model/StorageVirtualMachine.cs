@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FSx.Model
 {
     /// <summary>
-    /// Describes the Amazon FSx for NetApp ONTAP storage virtual machine (SVM) configuraton.
+    /// Describes the Amazon FSx for NetApp ONTAP storage virtual machine (SVM) configuration.
     /// </summary>
     public partial class StorageVirtualMachine
     {

@@ -31,7 +31,7 @@ namespace Amazon.ECS.Model
     /// <summary>
     /// An object representing a constraint on task placement. For more information, see <a
     /// href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html">Task
-    /// Placement Constraints</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+    /// placement constraints</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
     /// 
     ///  <note> 
     /// <para>

@@ -58,7 +58,7 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
             string target = "CodeCommit_20150413.PostCommentReply";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-04-13";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-04-13";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -76,7 +76,7 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
                 else if(!(publicRequest.IsSetClientRequestToken()))
                 {
                     context.Writer.WritePropertyName("clientRequestToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());                                                
+                    context.Writer.Write(Guid.NewGuid().ToString());
                 }
                 if(publicRequest.IsSetContent())
                 {
@@ -90,7 +90,6 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.InReplyTo);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

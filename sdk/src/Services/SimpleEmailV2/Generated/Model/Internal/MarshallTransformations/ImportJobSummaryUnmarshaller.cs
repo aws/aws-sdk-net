@@ -70,6 +70,12 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.CreatedTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("FailedRecordsCount", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.FailedRecordsCount = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ImportDestination", targetDepth))
                 {
                     var unmarshaller = ImportDestinationUnmarshaller.Instance;
@@ -86,6 +92,12 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.JobStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ProcessedRecordsCount", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.ProcessedRecordsCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

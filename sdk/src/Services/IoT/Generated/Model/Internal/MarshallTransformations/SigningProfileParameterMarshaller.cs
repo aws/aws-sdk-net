@@ -34,7 +34,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SigningProfileParameter Marshaller
-    /// </summary>       
+    /// </summary>
     public class SigningProfileParameterMarshaller : IRequestMarshaller<SigningProfileParameter, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SigningProfileParameterMarshaller Instance = new SigningProfileParameterMarshaller();
 
     }

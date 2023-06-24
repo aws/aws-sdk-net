@@ -50,7 +50,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (string.IsNullOrEmpty(putBucketInventoryConfigurationRequest.BucketName))
                 throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "PutBucketInventoryConfigurationRequest.BucketName");
 
-			request.ResourcePath = string.Concat("/", S3Transforms.ToStringValue(putBucketInventoryConfigurationRequest.BucketName));
+            request.ResourcePath = "/";
 
             request.AddSubResource("inventory");
 
@@ -65,49 +65,49 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 if (putBucketInventoryConfigurationRequest.IsSetInventoryConfiguration())
                 {
                     var inventoryConfiguration = putBucketInventoryConfigurationRequest.InventoryConfiguration;
-                    xmlWriter.WriteStartElement("InventoryConfiguration", "http://s3.amazonaws.com/doc/2006-03-01/");
+                    xmlWriter.WriteStartElement("InventoryConfiguration", S3Constants.S3RequestXmlNamespace);
                     if (inventoryConfiguration != null)
                     {
                         if (inventoryConfiguration.IsSetDestination())
                         {
                             InventoryDestination inventoryDestination = inventoryConfiguration.Destination;
-                            xmlWriter.WriteStartElement("Destination", "http://s3.amazonaws.com/doc/2006-03-01/");
+                            xmlWriter.WriteStartElement("Destination");
                             if (inventoryDestination.isSetS3BucketDestination())
                             {
                                 InventoryS3BucketDestination inventoryS3BucketDestination = inventoryDestination.S3BucketDestination;
-                                xmlWriter.WriteStartElement("S3BucketDestination", "http://s3.amazonaws.com/doc/2006-03-01/");
+                                xmlWriter.WriteStartElement("S3BucketDestination");
                                 if (inventoryS3BucketDestination.IsSetAccountId())
                                 {
-                                    xmlWriter.WriteElementString("AccountId", "http://s3.amazonaws.com/doc/2006-03-01/", S3Transforms.ToXmlStringValue(inventoryS3BucketDestination.AccountId));
+                                    xmlWriter.WriteElementString("AccountId", S3Transforms.ToXmlStringValue(inventoryS3BucketDestination.AccountId));
                                 }
                                 if (inventoryS3BucketDestination.IsSetBucketName())
                                 {
-                                    xmlWriter.WriteElementString("Bucket", "http://s3.amazonaws.com/doc/2006-03-01/", S3Transforms.ToXmlStringValue(inventoryS3BucketDestination.BucketName));
+                                    xmlWriter.WriteElementString("Bucket", S3Transforms.ToXmlStringValue(inventoryS3BucketDestination.BucketName));
                                 }
                                 if (inventoryS3BucketDestination.IsSetInventoryFormat())
                                 {
-                                    xmlWriter.WriteElementString("Format", "http://s3.amazonaws.com/doc/2006-03-01/", S3Transforms.ToXmlStringValue(inventoryS3BucketDestination.InventoryFormat));
+                                    xmlWriter.WriteElementString("Format", S3Transforms.ToXmlStringValue(inventoryS3BucketDestination.InventoryFormat));
                                 }
                                 if (inventoryS3BucketDestination.IsSetPrefix())
                                 {
-                                    xmlWriter.WriteElementString("Prefix", "http://s3.amazonaws.com/doc/2006-03-01/", S3Transforms.ToXmlStringValue(inventoryS3BucketDestination.Prefix));
+                                    xmlWriter.WriteElementString("Prefix", S3Transforms.ToXmlStringValue(inventoryS3BucketDestination.Prefix));
                                 }
                                 if (inventoryS3BucketDestination.IsSetInventoryEncryption())
                                 {
-                                    xmlWriter.WriteStartElement("Encryption", "http://s3.amazonaws.com/doc/2006-03-01/");
+                                    xmlWriter.WriteStartElement("Encryption");
                                     var inventoryEncryption = inventoryS3BucketDestination.InventoryEncryption;
                                     if (inventoryEncryption.IsSetSSEKMS())
                                     {
-                                        xmlWriter.WriteStartElement("SSE-KMS", "http://s3.amazonaws.com/doc/2006-03-01/");
+                                        xmlWriter.WriteStartElement("SSE-KMS");
                                         if (inventoryEncryption.SSEKMS.IsSetKeyId())
                                         {
-                                            xmlWriter.WriteElementString("KeyId", "http://s3.amazonaws.com/doc/2006-03-01/", S3Transforms.ToXmlStringValue(inventoryEncryption.SSEKMS.KeyId));
+                                            xmlWriter.WriteElementString("KeyId", S3Transforms.ToXmlStringValue(inventoryEncryption.SSEKMS.KeyId));
                                         }
                                         xmlWriter.WriteEndElement();
                                     }
                                     if (inventoryEncryption.IsSetSSES3())
                                     {
-                                        xmlWriter.WriteStartElement("SSE-S3", "http://s3.amazonaws.com/doc/2006-03-01/");
+                                        xmlWriter.WriteStartElement("SSE-S3");
                                         xmlWriter.WriteEndElement();
                                     }
                                     xmlWriter.WriteEndElement();
@@ -117,11 +117,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                             xmlWriter.WriteEndElement();
                         }
 
-                        xmlWriter.WriteElementString("IsEnabled", "http://s3.amazonaws.com/doc/2006-03-01/", S3Transforms.ToXmlStringValue(inventoryConfiguration.IsEnabled));
+                        xmlWriter.WriteElementString("IsEnabled", S3Transforms.ToXmlStringValue(inventoryConfiguration.IsEnabled));
 
                         if (inventoryConfiguration.IsSetInventoryFilter())
                         {
-                            xmlWriter.WriteStartElement("Filter", "http://s3.amazonaws.com/doc/2006-03-01/");
+                            xmlWriter.WriteStartElement("Filter");
                             var predicate = inventoryConfiguration.InventoryFilter.InventoryFilterPredicate;
                             predicate.Accept(new InventoryPredicateVisitor(xmlWriter));
                             xmlWriter.WriteEndElement();
@@ -129,31 +129,31 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
                         if(inventoryConfiguration.IsSetInventoryId())
                         {
-                            xmlWriter.WriteElementString("Id", "http://s3.amazonaws.com/doc/2006-03-01/", S3Transforms.ToXmlStringValue(inventoryConfiguration.InventoryId));
+                            xmlWriter.WriteElementString("Id", S3Transforms.ToXmlStringValue(inventoryConfiguration.InventoryId));
                         }
                         
                         if(inventoryConfiguration.IsSetIncludedObjectVersions())
                         {
-                            xmlWriter.WriteElementString("IncludedObjectVersions", "http://s3.amazonaws.com/doc/2006-03-01/", S3Transforms.ToXmlStringValue(inventoryConfiguration.IncludedObjectVersions));
+                            xmlWriter.WriteElementString("IncludedObjectVersions", S3Transforms.ToXmlStringValue(inventoryConfiguration.IncludedObjectVersions));
                         }
 
                         if (inventoryConfiguration.IsSetInventoryOptionalFields())
                         {
-                            xmlWriter.WriteStartElement("OptionalFields", "http://s3.amazonaws.com/doc/2006-03-01/");
+                            xmlWriter.WriteStartElement("OptionalFields");
                             foreach (var inventoryOptionalField in inventoryConfiguration.InventoryOptionalFields)
                             {
-                                xmlWriter.WriteElementString("Field", "http://s3.amazonaws.com/doc/2006-03-01/", S3Transforms.ToXmlStringValue(inventoryOptionalField));
+                                xmlWriter.WriteElementString("Field", S3Transforms.ToXmlStringValue(inventoryOptionalField));
                             }
                             xmlWriter.WriteEndElement();
                         }
 
                         if(inventoryConfiguration.IsSetSchedule())
                         {
-                            xmlWriter.WriteStartElement("Schedule", "http://s3.amazonaws.com/doc/2006-03-01/");
+                            xmlWriter.WriteStartElement("Schedule");
                             var inventorySchedule = inventoryConfiguration.Schedule;
                             if (inventorySchedule.IsFrequency())
                             {
-                                xmlWriter.WriteElementString("Frequency", "http://s3.amazonaws.com/doc/2006-03-01/", S3Transforms.ToXmlStringValue(inventorySchedule.Frequency));
+                                xmlWriter.WriteElementString("Frequency", S3Transforms.ToXmlStringValue(inventorySchedule.Frequency));
                             }
                             xmlWriter.WriteEndElement();
                         }

@@ -34,7 +34,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CampaignEventFilter Marshaller
-    /// </summary>       
+    /// </summary>
     public class CampaignEventFilterMarshaller : IRequestMarshaller<CampaignEventFilter, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CampaignEventFilterMarshaller Instance = new CampaignEventFilterMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DataSetUsageConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class DataSetUsageConfigurationMarshaller : IRequestMarshaller<DataSetUsageConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DataSetUsageConfigurationMarshaller Instance = new DataSetUsageConfigurationMarshaller();
 
     }

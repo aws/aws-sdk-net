@@ -37,12 +37,19 @@ namespace Amazon.CustomerProfiles.Model
     /// <para>
     /// An integration can belong to only one domain.
     /// </para>
+    ///  
+    /// <para>
+    /// To add or remove tags on an existing Integration, see <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_TagResource.html">
+    /// TagResource </a>/<a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_UntagResource.html">
+    /// UntagResource</a>.
+    /// </para>
     /// </summary>
     public partial class PutIntegrationRequest : AmazonCustomerProfilesRequest
     {
         private string _domainName;
         private FlowDefinition _flowDefinition;
         private string _objectTypeName;
+        private Dictionary<string, string> _objectTypeNames = new Dictionary<string, string>();
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private string _uri;
 
@@ -89,7 +96,7 @@ namespace Amazon.CustomerProfiles.Model
         /// The name of the profile object type.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=255)]
+        [AWSProperty(Min=1, Max=255)]
         public string ObjectTypeName
         {
             get { return this._objectTypeName; }
@@ -100,6 +107,28 @@ namespace Amazon.CustomerProfiles.Model
         internal bool IsSetObjectTypeName()
         {
             return this._objectTypeName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ObjectTypeNames. 
+        /// <para>
+        /// A map in which each key is an event type from an external application such as Segment
+        /// or Shopify, and each value is an <code>ObjectTypeName</code> (template) used to ingest
+        /// the event. It supports the following event types: <code>SegmentIdentify</code>, <code>ShopifyCreateCustomers</code>,
+        /// <code>ShopifyUpdateCustomers</code>, <code>ShopifyCreateDraftOrders</code>, <code>ShopifyUpdateDraftOrders</code>,
+        /// <code>ShopifyCreateOrders</code>, and <code>ShopifyUpdatedOrders</code>.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> ObjectTypeNames
+        {
+            get { return this._objectTypeNames; }
+            set { this._objectTypeNames = value; }
+        }
+
+        // Check to see if ObjectTypeNames property is set
+        internal bool IsSetObjectTypeNames()
+        {
+            return this._objectTypeNames != null && this._objectTypeNames.Count > 0; 
         }
 
         /// <summary>

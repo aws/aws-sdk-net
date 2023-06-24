@@ -34,7 +34,7 @@ namespace Amazon.CloudWatchRUM.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AppMonitorDetails Marshaller
-    /// </summary>       
+    /// </summary>
     public class AppMonitorDetailsMarshaller : IRequestMarshaller<AppMonitorDetails, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.CloudWatchRUM.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AppMonitorDetailsMarshaller Instance = new AppMonitorDetailsMarshaller();
 
     }

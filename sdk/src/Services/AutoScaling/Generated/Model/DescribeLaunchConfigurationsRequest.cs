@@ -41,7 +41,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property LaunchConfigurationNames. 
         /// <para>
-        /// The launch configuration names. If you omit this parameter, all launch configurations
+        /// The launch configuration names. If you omit this property, all launch configurations
         /// are described.
         /// </para>
         ///  

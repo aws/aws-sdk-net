@@ -41,10 +41,10 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Embed. 
         /// <para>
-        /// A query parameter to retrieve the specified resources embedded in the returned <a>Resource</a>
+        /// A query parameter to retrieve the specified resources embedded in the returned Resource
         /// representation in the response. This <code>embed</code> parameter value is a list
         /// of comma-separated strings. Currently, the request supports only retrieval of the
-        /// embedded <a>Method</a> resources this way. The query parameter value must be a single-valued
+        /// embedded Method resources this way. The query parameter value must be a single-valued
         /// list and contain the <code>"methods"</code> string. For example, <code>GET /restapis/{restapi_id}/resources/{resource_id}?embed=methods</code>.
         /// </para>
         /// </summary>
@@ -63,7 +63,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property ResourceId. 
         /// <para>
-        /// [Required] The identifier for the <a>Resource</a> resource.
+        /// The identifier for the Resource resource.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -82,7 +82,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property RestApiId. 
         /// <para>
-        /// [Required] The string identifier of the associated <a>RestApi</a>.
+        /// The string identifier of the associated RestApi.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -38,7 +38,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// A unique identifier for the data source.
+        /// The identifier of the data source connector.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]

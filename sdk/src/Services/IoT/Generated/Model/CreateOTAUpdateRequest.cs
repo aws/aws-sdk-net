@@ -172,7 +172,7 @@ namespace Amazon.IoT.Model
         /// The files to be streamed by the OTA update.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=50)]
+        [AWSProperty(Required=true, Min=1)]
         public List<OTAUpdateFile> Files
         {
             get { return this._files; }

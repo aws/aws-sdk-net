@@ -33,14 +33,15 @@ namespace ServiceClientGenerator
             try
             {
                 if (options.CompileCustomizations) // Compile all servicename.customizations*.json files into one json file in bin
-                    CustomizationCompiler.CompileServiceCustomizations(options.ModelsFolder);
+                    CustomizationCompiler.CompileServiceCustomizations(options);
 
-                var generationManifest = GenerationManifest.Load(options.Manifest, options.Versions, options.ModelsFolder);
+                var generationManifest = GenerationManifest.Load(options);
 
                 if (string.IsNullOrEmpty(options.SelfServiceModel))
                 {
                     ConcurrentDictionary<string, string> generatedFiles = new ConcurrentDictionary<string, string>();
                     GeneratorDriver.GenerateCoreProjects(generationManifest, options);
+                    GeneratorDriver.GeneratePartitions(options);
                     Parallel.ForEach(generationManifest.ServiceConfigurations, new ParallelOptions { MaxDegreeOfParallelism = 16 }, (serviceConfig, state) =>
                     {
                         if (modelsToProcess.Any() && !modelsToProcess.Contains(serviceConfig.ModelName))
@@ -62,12 +63,16 @@ namespace ServiceClientGenerator
                     });
 
                     var files = new HashSet<string>(generatedFiles.Values);
-                    GeneratorDriver.RemoveOrphanedShapesAndServices(files, options.SdkRootFolder);
+
+                    if (!options.SkipRemoveOrphanCleanup)
+                        GeneratorDriver.RemoveOrphanedShapesAndServices(files, options.SdkRootFolder);
+
                     GeneratorDriver.UpdateUnitTestProjects(generationManifest, options);
                     GeneratorDriver.UpdateSolutionFiles(generationManifest, options);
                     GeneratorDriver.UpdateAssemblyVersionInfo(generationManifest, options);
                     GeneratorDriver.UpdateNuGetPackagesInReadme(generationManifest, options);
                     GeneratorDriver.UpdateCodeAnalysisSolution(generationManifest, options);
+                    GeneratorDriver.GenerateDefaultConfigurationModeEnum(generationManifest, options);
                     GeneratorDriver.GenerateEndpoints(options);
                     GeneratorDriver.GenerateS3Enumerations(options);
                 }
@@ -95,7 +100,7 @@ namespace ServiceClientGenerator
                     driver.Execute();
 
                     // Skip orphan clean for DynamoDB because of the complex nature of DynamDB and DynamoDB Streams
-                    if(!serviceConfig.ClassName.StartsWith("DynamoDB"))
+                    if (!serviceConfig.ClassName.StartsWith("DynamoDB") && !options.SkipRemoveOrphanCleanup)
                     {
                         GeneratorDriver.RemoveOrphanedShapes(driver.FilesWrittenToGeneratorFolder, driver.GeneratedFilesRoot);
                     }

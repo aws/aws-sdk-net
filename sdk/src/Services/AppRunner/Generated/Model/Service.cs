@@ -51,6 +51,8 @@ namespace Amazon.AppRunner.Model
         private EncryptionConfiguration _encryptionConfiguration;
         private HealthCheckConfiguration _healthCheckConfiguration;
         private InstanceConfiguration _instanceConfiguration;
+        private NetworkConfiguration _networkConfiguration;
+        private ServiceObservabilityConfiguration _observabilityConfiguration;
         private string _serviceArn;
         private string _serviceId;
         private string _serviceName;
@@ -121,7 +123,7 @@ namespace Amazon.AppRunner.Model
         /// <para>
         /// The encryption key that App Runner uses to encrypt the service logs and the copy of
         /// the source repository that App Runner maintains for the service. It can be either
-        /// a customer-provided encryption key or an Amazon Web Services managed CMK.
+        /// a customer-provided encryption key or an Amazon Web Services managed key.
         /// </para>
         /// </summary>
         public EncryptionConfiguration EncryptionConfiguration
@@ -172,6 +174,44 @@ namespace Amazon.AppRunner.Model
         internal bool IsSetInstanceConfiguration()
         {
             return this._instanceConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkConfiguration. 
+        /// <para>
+        /// Configuration settings related to network traffic of the web application that this
+        /// service runs.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public NetworkConfiguration NetworkConfiguration
+        {
+            get { return this._networkConfiguration; }
+            set { this._networkConfiguration = value; }
+        }
+
+        // Check to see if NetworkConfiguration property is set
+        internal bool IsSetNetworkConfiguration()
+        {
+            return this._networkConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ObservabilityConfiguration. 
+        /// <para>
+        /// The observability configuration of this service.
+        /// </para>
+        /// </summary>
+        public ServiceObservabilityConfiguration ObservabilityConfiguration
+        {
+            get { return this._observabilityConfiguration; }
+            set { this._observabilityConfiguration = value; }
+        }
+
+        // Check to see if ObservabilityConfiguration property is set
+        internal bool IsSetObservabilityConfiguration()
+        {
+            return this._observabilityConfiguration != null;
         }
 
         /// <summary>
@@ -239,7 +279,7 @@ namespace Amazon.AppRunner.Model
         /// access your service web application.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=51200)]
+        [AWSProperty(Min=0, Max=51200)]
         public string ServiceUrl
         {
             get { return this._serviceUrl; }

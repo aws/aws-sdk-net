@@ -30,7 +30,7 @@ namespace Amazon.Kendra.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeQuerySuggestionsBlockList operation.
-    /// Describes a block list used for query suggestions for an index.
+    /// Gets information about a block list used for query suggestions for an index.
     /// 
     ///  
     /// <para>
@@ -50,7 +50,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The unique identifier of the block list.
+        /// The identifier of the block list you want to get information on.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]

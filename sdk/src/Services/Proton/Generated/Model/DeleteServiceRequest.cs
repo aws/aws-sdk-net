@@ -30,7 +30,19 @@ namespace Amazon.Proton.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteService operation.
-    /// Delete a service.
+    /// Delete a service, with its instances and pipeline.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// You can't delete a service if it has any service instances that have components attached
+    /// to them.
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+    /// components</a> in the <i>Proton User Guide</i>.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class DeleteServiceRequest : AmazonProtonRequest
     {

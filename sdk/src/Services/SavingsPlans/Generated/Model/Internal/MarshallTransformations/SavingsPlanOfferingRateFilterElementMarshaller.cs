@@ -34,7 +34,7 @@ namespace Amazon.SavingsPlans.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SavingsPlanOfferingRateFilterElement Marshaller
-    /// </summary>       
+    /// </summary>
     public class SavingsPlanOfferingRateFilterElementMarshaller : IRequestMarshaller<SavingsPlanOfferingRateFilterElement, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.SavingsPlans.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SavingsPlanOfferingRateFilterElementMarshaller Instance = new SavingsPlanOfferingRateFilterElementMarshaller();
 
     }

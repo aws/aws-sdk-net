@@ -113,6 +113,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                             
                         continue;
                     }
+                    if (context.TestExpression("ChecksumAlgorithm", targetDepth))
+                    {
+                        response.ChecksumAlgorithm = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("Owner", targetDepth))
                     {
                         response.Owner = OwnerUnmarshaller.Instance.Unmarshall(context);

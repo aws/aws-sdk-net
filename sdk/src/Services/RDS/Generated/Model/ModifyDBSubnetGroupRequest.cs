@@ -61,7 +61,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property DBSubnetGroupName. 
         /// <para>
         /// The name for the DB subnet group. This value is stored as a lowercase string. You
-        /// can't modify the default subnet group. 
+        /// can't modify the default subnet group.
         /// </para>
         ///  
         /// <para>
@@ -69,7 +69,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Example: <code>mySubnetgroup</code> 
+        /// Example: <code>mydbsubnetgroup</code> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

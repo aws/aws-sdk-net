@@ -41,6 +41,7 @@ namespace Amazon.EC2.Model
         private CapacityReservationSpecificationResponse _capacityReservationSpecification;
         private string _clientToken;
         private CpuOptions _cpuOptions;
+        private InstanceBootModeValues _currentInstanceBootMode;
         private bool? _ebsOptimized;
         private List<ElasticGpuAssociation> _elasticGpuAssociations = new List<ElasticGpuAssociation>();
         private List<ElasticInferenceAcceleratorAssociation> _elasticInferenceAcceleratorAssociations = new List<ElasticInferenceAcceleratorAssociation>();
@@ -58,6 +59,7 @@ namespace Amazon.EC2.Model
         private string _keyName;
         private DateTime? _launchTime;
         private List<LicenseConfiguration> _licenses = new List<LicenseConfiguration>();
+        private InstanceMaintenanceOptions _maintenanceOptions;
         private InstanceMetadataOptionsResponse _metadataOptions;
         private Monitoring _monitoring;
         private List<InstanceNetworkInterface> _networkInterfaces = new List<InstanceNetworkInterface>();
@@ -83,6 +85,7 @@ namespace Amazon.EC2.Model
         private string _stateTransitionReason;
         private string _subnetId;
         private List<Tag> _tags = new List<Tag>();
+        private string _tpmSupport;
         private string _usageOperation;
         private DateTime? _usageOperationUpdateTime;
         private VirtualizationType _virtualizationType;
@@ -145,7 +148,18 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property BootMode. 
         /// <para>
-        /// The boot mode of the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot
+        /// The boot mode that was specified by the AMI. If the value is <code>uefi-preferred</code>,
+        /// the AMI supports both UEFI and Legacy BIOS. The <code>currentInstanceBootMode</code>
+        /// parameter is the boot mode that is used to boot the instance at launch or start.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The operating system contained in the AMI must be configured to support the specified
+        /// boot mode.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot
         /// modes</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
@@ -234,6 +248,26 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CurrentInstanceBootMode. 
+        /// <para>
+        /// The boot mode that is used to boot the instance at launch or start. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot
+        /// modes</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        public InstanceBootModeValues CurrentInstanceBootMode
+        {
+            get { return this._currentInstanceBootMode; }
+            set { this._currentInstanceBootMode = value; }
+        }
+
+        // Check to see if CurrentInstanceBootMode property is set
+        internal bool IsSetCurrentInstanceBootMode()
+        {
+            return this._currentInstanceBootMode != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property EbsOptimized. 
         /// <para>
         /// Indicates whether the instance is optimized for Amazon EBS I/O. This optimization
@@ -275,7 +309,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ElasticInferenceAcceleratorAssociations. 
         /// <para>
-        ///  The elastic inference accelerator associated with the instance.
+        /// The elastic inference accelerator associated with the instance.
         /// </para>
         /// </summary>
         public List<ElasticInferenceAcceleratorAssociation> ElasticInferenceAcceleratorAssociations
@@ -544,6 +578,24 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MaintenanceOptions. 
+        /// <para>
+        /// Provides information on the recovery and maintenance options of your instance.
+        /// </para>
+        /// </summary>
+        public InstanceMaintenanceOptions MaintenanceOptions
+        {
+            get { return this._maintenanceOptions; }
+            set { this._maintenanceOptions = value; }
+        }
+
+        // Check to see if MaintenanceOptions property is set
+        internal bool IsSetMaintenanceOptions()
+        {
+            return this._maintenanceOptions != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property MetadataOptions. 
         /// <para>
         /// The metadata options for the instance.
@@ -582,7 +634,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property NetworkInterfaces. 
         /// <para>
-        /// [EC2-VPC] The network interfaces for the instance.
+        /// The network interfaces for the instance.
         /// </para>
         /// </summary>
         public List<InstanceNetworkInterface> NetworkInterfaces
@@ -673,16 +725,16 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property PrivateDnsName. 
         /// <para>
-        /// (IPv4 only) The private DNS hostname name assigned to the instance. This DNS hostname
+        /// [IPv4 only] The private DNS hostname name assigned to the instance. This DNS hostname
         /// can only be used inside the Amazon EC2 network. This name is not available until the
         /// instance enters the <code>running</code> state. 
         /// </para>
         ///  
         /// <para>
-        /// [EC2-VPC] The Amazon-provided DNS server resolves Amazon-provided private DNS hostnames
-        /// if you've enabled DNS resolution and DNS hostnames in your VPC. If you are not using
-        /// the Amazon-provided DNS server in your VPC, your custom domain name servers must resolve
-        /// the hostname as appropriate.
+        /// The Amazon-provided DNS server resolves Amazon-provided private DNS hostnames if you've
+        /// enabled DNS resolution and DNS hostnames in your VPC. If you are not using the Amazon-provided
+        /// DNS server in your VPC, your custom domain name servers must resolve the hostname
+        /// as appropriate.
         /// </para>
         /// </summary>
         public string PrivateDnsName
@@ -754,9 +806,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property PublicDnsName. 
         /// <para>
-        /// (IPv4 only) The public DNS name assigned to the instance. This name is not available
-        /// until the instance enters the <code>running</code> state. For EC2-VPC, this name is
-        /// only available if you've enabled DNS hostnames for your VPC.
+        /// [IPv4 only] The public DNS name assigned to the instance. This name is not available
+        /// until the instance enters the <code>running</code> state. This name is only available
+        /// if you've enabled DNS hostnames for your VPC.
         /// </para>
         /// </summary>
         public string PublicDnsName
@@ -979,7 +1031,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SubnetId. 
         /// <para>
-        /// [EC2-VPC] The ID of the subnet in which the instance is running.
+        /// The ID of the subnet in which the instance is running.
         /// </para>
         /// </summary>
         public string SubnetId
@@ -1010,6 +1062,26 @@ namespace Amazon.EC2.Model
         internal bool IsSetTags()
         {
             return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TpmSupport. 
+        /// <para>
+        /// If the instance is configured for NitroTPM support, the value is <code>v2.0</code>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a>
+        /// in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        public string TpmSupport
+        {
+            get { return this._tpmSupport; }
+            set { this._tpmSupport = value; }
+        }
+
+        // Check to see if TpmSupport property is set
+        internal bool IsSetTpmSupport()
+        {
+            return this._tpmSupport != null;
         }
 
         /// <summary>
@@ -1070,7 +1142,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property VpcId. 
         /// <para>
-        /// [EC2-VPC] The ID of the VPC in which the instance is running.
+        /// The ID of the VPC in which the instance is running.
         /// </para>
         /// </summary>
         public string VpcId

@@ -210,8 +210,8 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property EstimatedOnDemandCostWithCurrentCommitment. 
         /// <para>
-        ///  The estimated On-Demand costs you would expect with no additional commitment, based
-        /// on your usage of the selected time period and the Savings Plans you own. 
+        ///  The estimated On-Demand costs you expect with no additional commitment, based on
+        /// your usage of the selected time period and the Savings Plans you own. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]

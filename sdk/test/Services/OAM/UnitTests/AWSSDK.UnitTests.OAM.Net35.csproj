@@ -1,0 +1,55 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+   <RunAnalyzersDuringBuild Condition="'$(RunAnalyzersDuringBuild)'==''">true</RunAnalyzersDuringBuild>
+    <TargetFramework>net45</TargetFramework>
+    <DefineConstants>$(DefineConstants);TRACE;BCL;BCL35;AWS_APM_API;DEBUG</DefineConstants>
+    <DebugType>portable</DebugType>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <AssemblyName>AWSSDK.UnitTests.OAM.Net35</AssemblyName>
+    <PackageId>AWSSDK.UnitTests.OAM.Net35</PackageId>
+
+    <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyCopyrightAttribute>false</GenerateAssemblyCopyrightAttribute>
+    <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
+    <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
+    <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
+
+    <NoWarn>CS1591</NoWarn>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <OutputPath>bin\$(Configuration)\net35</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="**/_bcl45/**"/>
+    <Compile Remove="**/obj/**"/>
+    <None Remove="**/obj/**" />
+    <Compile Remove="**/_bcl45+netstandard/**"/>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\src\Core\AWSSDK.Core.Net35.csproj"/>
+    <ProjectReference Include="..\..\..\Common\AWSSDK.CommonTest.csproj"/>
+    <ProjectReference Include="..\..\..\UnitTests\Custom\AWSSDK.UnitTestUtilities.Net35.csproj"/>
+    <ProjectReference Include="..\..\..\..\..\extensions\src\AWSSDK.Extensions.CrtIntegration\AWSSDK.Extensions.CrtIntegration.Net35.csproj"/>
+    <ProjectReference Include="..\..\..\..\src\Services\OAM\AWSSDK.OAM.Net35.csproj"/>
+  </ItemGroup>
+
+  <ItemGroup Condition="$(RunAnalyzersDuringBuild)">
+  </ItemGroup>
+  <ItemGroup>
+        <PackageReference Include="Moq" Version="4.8.3"/>
+        <PackageReference Include="MSTest.TestAdapter" Version="1.4.0"/>
+        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.9.0"/>
+        <PackageReference Include="MSTest.TestFramework" Version="1.4.0"/>
+        <PackageReference Include="AutoFixture" Version="3.51.0"/>
+        <PackageReference Include="AutoFixture.AutoMoq" Version="3.51.0"/>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="System.Configuration"/>
+  </ItemGroup>
+
+
+</Project>

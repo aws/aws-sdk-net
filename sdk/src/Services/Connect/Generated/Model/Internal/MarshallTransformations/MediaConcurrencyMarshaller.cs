@@ -34,7 +34,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// MediaConcurrency Marshaller
-    /// </summary>       
+    /// </summary>
     public class MediaConcurrencyMarshaller : IRequestMarshaller<MediaConcurrency, JsonMarshallerContext> 
     {
         /// <summary>
@@ -57,11 +57,22 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Concurrency);
             }
 
+            if(requestObject.IsSetCrossChannelBehavior())
+            {
+                context.Writer.WritePropertyName("CrossChannelBehavior");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = CrossChannelBehaviorMarshaller.Instance;
+                marshaller.Marshall(requestObject.CrossChannelBehavior, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static MediaConcurrencyMarshaller Instance = new MediaConcurrencyMarshaller();
 
     }

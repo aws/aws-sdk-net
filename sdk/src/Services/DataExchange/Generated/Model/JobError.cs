@@ -42,7 +42,10 @@ namespace Amazon.DataExchange.Model
         private JobErrorResourceTypes _resourceType;
 
         /// <summary>
-        /// Gets and sets the property Code. The code for the job error.
+        /// Gets and sets the property Code. 
+        /// <para>
+        /// The code for the job error.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public Code Code
@@ -94,7 +97,10 @@ namespace Amazon.DataExchange.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LimitValue. The value of the exceeded limit.
+        /// Gets and sets the property LimitValue. 
+        /// <para>
+        /// The value of the exceeded limit.
+        /// </para>
         /// </summary>
         public double LimitValue
         {
@@ -109,7 +115,10 @@ namespace Amazon.DataExchange.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Message. The message related to the job error.
+        /// Gets and sets the property Message. 
+        /// <para>
+        /// The message related to the job error.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string Message
@@ -125,8 +134,10 @@ namespace Amazon.DataExchange.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ResourceId. The unique identifier for the resource related
-        /// to the error.
+        /// Gets and sets the property ResourceId. 
+        /// <para>
+        /// The unique identifier for the resource related to the error.
+        /// </para>
         /// </summary>
         public string ResourceId
         {
@@ -141,7 +152,10 @@ namespace Amazon.DataExchange.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ResourceType. The type of resource related to the error.
+        /// Gets and sets the property ResourceType. 
+        /// <para>
+        /// The type of resource related to the error.
+        /// </para>
         /// </summary>
         public JobErrorResourceTypes ResourceType
         {

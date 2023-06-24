@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadDetails Marshaller
-    /// </summary>       
+    /// </summary>
     public class AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadDetailsMarshaller : IRequestMarshaller<AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadDetails, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadDetailsMarshaller Instance = new AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadDetailsMarshaller();
 
     }

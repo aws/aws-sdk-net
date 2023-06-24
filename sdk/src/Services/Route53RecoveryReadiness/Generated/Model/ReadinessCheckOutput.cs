@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53RecoveryReadiness.Model
 {
     /// <summary>
-    /// A resource used for checking the readiness of a Resource Set
+    /// A readiness check.
     /// </summary>
     public partial class ReadinessCheckOutput
     {
@@ -39,7 +39,10 @@ namespace Amazon.Route53RecoveryReadiness.Model
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
-        /// Gets and sets the property ReadinessCheckArn. Arn associated with ReadinessCheck
+        /// Gets and sets the property ReadinessCheckArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) associated with a readiness check.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=256)]
         public string ReadinessCheckArn
@@ -55,7 +58,10 @@ namespace Amazon.Route53RecoveryReadiness.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ReadinessCheckName. Name for a ReadinessCheck
+        /// Gets and sets the property ReadinessCheckName. 
+        /// <para>
+        /// Name of a readiness check.
+        /// </para>
         /// </summary>
         [AWSProperty(Max=64)]
         public string ReadinessCheckName
@@ -71,7 +77,10 @@ namespace Amazon.Route53RecoveryReadiness.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ResourceSet. Name of the ResourceSet to be checked
+        /// Gets and sets the property ResourceSet. 
+        /// <para>
+        /// Name of the resource set to be checked.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=64)]
         public string ResourceSet

@@ -137,7 +137,7 @@ namespace Amazon.ForecastService.Model
         /// <summary>
         /// Gets and sets the property LastModificationTime. 
         /// <para>
-        /// When the dataset group was created or last updated from a call to the <a>UpdateDatasetGroup</a>
+        /// When the dataset group was created or last updated from a call to the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_UpdateDatasetGroup.html">UpdateDatasetGroup</a>
         /// operation. While the dataset group is being updated, <code>LastModificationTime</code>
         /// is the current time of the <code>DescribeDatasetGroup</code> call.
         /// </para>
@@ -180,7 +180,8 @@ namespace Amazon.ForecastService.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The <code>UPDATE</code> states apply when you call the <a>UpdateDatasetGroup</a> operation.
+        /// The <code>UPDATE</code> states apply when you call the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_UpdateDatasetGroup.html">UpdateDatasetGroup</a>
+        /// operation.
         /// </para>
         ///  <note> 
         /// <para>

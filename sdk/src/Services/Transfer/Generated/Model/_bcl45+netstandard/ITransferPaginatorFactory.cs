@@ -31,9 +31,29 @@ namespace Amazon.Transfer.Model
         IListAccessesPaginator ListAccesses(ListAccessesRequest request);
 
         /// <summary>
+        /// Paginator for ListAgreements operation
+        ///</summary>
+        IListAgreementsPaginator ListAgreements(ListAgreementsRequest request);
+
+        /// <summary>
+        /// Paginator for ListCertificates operation
+        ///</summary>
+        IListCertificatesPaginator ListCertificates(ListCertificatesRequest request);
+
+        /// <summary>
+        /// Paginator for ListConnectors operation
+        ///</summary>
+        IListConnectorsPaginator ListConnectors(ListConnectorsRequest request);
+
+        /// <summary>
         /// Paginator for ListExecutions operation
         ///</summary>
         IListExecutionsPaginator ListExecutions(ListExecutionsRequest request);
+
+        /// <summary>
+        /// Paginator for ListProfiles operation
+        ///</summary>
+        IListProfilesPaginator ListProfiles(ListProfilesRequest request);
 
         /// <summary>
         /// Paginator for ListSecurityPolicies operation

@@ -104,6 +104,7 @@ namespace Amazon.NetworkManager.Model
         /// The policy document for creating a core network.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=10000000)]
         public string PolicyDocument
         {
             get { return this._policyDocument; }

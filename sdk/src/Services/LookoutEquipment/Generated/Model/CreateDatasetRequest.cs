@@ -90,7 +90,6 @@ namespace Amazon.LookoutEquipment.Model
         /// column names, and data types. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public DatasetSchema DatasetSchema
         {
             get { return this._datasetSchema; }

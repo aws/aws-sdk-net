@@ -42,7 +42,7 @@ namespace Amazon.ChimeSDKIdentity.Model
         /// The device token for the GCM, APNS, and APNS_SANDBOX endpoint types.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1600)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=1600)]
         public string DeviceToken
         {
             get { return this._deviceToken; }
@@ -61,7 +61,7 @@ namespace Amazon.ChimeSDKIdentity.Model
         /// The VOIP device token for the APNS and APNS_SANDBOX endpoint types.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1600)]
+        [AWSProperty(Sensitive=true, Min=1, Max=1600)]
         public string VoipDeviceToken
         {
             get { return this._voipDeviceToken; }

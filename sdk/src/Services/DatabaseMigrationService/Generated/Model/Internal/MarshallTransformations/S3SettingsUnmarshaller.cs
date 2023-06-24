@@ -70,6 +70,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     unmarshalledObject.AddColumnName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("AddTrailingPaddingCharacter", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.AddTrailingPaddingCharacter = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("BucketFolder", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -208,10 +214,22 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     unmarshalledObject.EncryptionMode = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ExpectedBucketOwner", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ExpectedBucketOwner = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ExternalTableDefinition", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ExternalTableDefinition = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("GlueCatalogGeneration", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.GlueCatalogGeneration = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("IgnoreHeaderRows", targetDepth))

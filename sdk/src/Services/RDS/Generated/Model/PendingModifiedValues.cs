@@ -41,6 +41,7 @@ namespace Amazon.RDS.Model
         private string _dbInstanceClass;
         private string _dbInstanceIdentifier;
         private string _dbSubnetGroupName;
+        private string _engine;
         private string _engineVersion;
         private bool? _iamDatabaseAuthenticationEnabled;
         private int? _iops;
@@ -51,6 +52,7 @@ namespace Amazon.RDS.Model
         private int? _port;
         private List<ProcessorFeature> _processorFeatures = new List<ProcessorFeature>();
         private DateTime? _resumeFullAutomationModeTime;
+        private int? _storageThroughput;
         private string _storageType;
 
         /// <summary>
@@ -120,6 +122,14 @@ namespace Amazon.RDS.Model
         /// <para>
         /// The identifier of the CA certificate for the DB instance.
         /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using
+        /// SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i>
+        /// and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html">
+        /// Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora
+        /// User Guide</i>.
+        /// </para>
         /// </summary>
         public string CACertificateIdentifier
         {
@@ -185,6 +195,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetDBSubnetGroupName()
         {
             return this._dbSubnetGroupName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Engine. 
+        /// <para>
+        /// The database engine of the DB instance.
+        /// </para>
+        /// </summary>
+        public string Engine
+        {
+            get { return this._engine; }
+            set { this._engine = value; }
+        }
+
+        // Check to see if Engine property is set
+        internal bool IsSetEngine()
+        {
+            return this._engine != null;
         }
 
         /// <summary>
@@ -358,7 +386,6 @@ namespace Amazon.RDS.Model
         /// <para>
         /// The number of minutes to pause the automation. When the time period ends, RDS Custom
         /// resumes full automation. The minimum value is 60 (default). The maximum value is 1,440.
-        /// 
         /// </para>
         /// </summary>
         public DateTime ResumeFullAutomationModeTime
@@ -371,6 +398,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetResumeFullAutomationModeTime()
         {
             return this._resumeFullAutomationModeTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property StorageThroughput. 
+        /// <para>
+        /// The storage throughput of the DB instance.
+        /// </para>
+        /// </summary>
+        public int StorageThroughput
+        {
+            get { return this._storageThroughput.GetValueOrDefault(); }
+            set { this._storageThroughput = value; }
+        }
+
+        // Check to see if StorageThroughput property is set
+        internal bool IsSetStorageThroughput()
+        {
+            return this._storageThroughput.HasValue; 
         }
 
         /// <summary>

@@ -66,11 +66,23 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.DpdTimeoutSeconds = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("enableTunnelLifecycleControl", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.EnableTunnelLifecycleControl = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("ikeVersionSet/item", targetDepth))
                     {
                         var unmarshaller = IKEVersionsListValueUnmarshaller.Instance;
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.IkeVersions.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("logOptions", targetDepth))
+                    {
+                        var unmarshaller = VpnTunnelLogOptionsUnmarshaller.Instance;
+                        unmarshalledObject.LogOptions = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("outsideIpAddress", targetDepth))

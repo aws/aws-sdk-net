@@ -139,13 +139,13 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// Indicates deployment status for conformance pack in a member account. When master
+        /// Indicates deployment status for conformance pack in a member account. When management
         /// account calls <code>PutOrganizationConformancePack</code> action for the first time,
-        /// conformance pack status is created in the member account. When master account calls
-        /// <code>PutOrganizationConformancePack</code> action for the second time, conformance
+        /// conformance pack status is created in the member account. When management account
+        /// calls <code>PutOrganizationConformancePack</code> action for the second time, conformance
         /// pack status is updated in the member account. Conformance pack status is deleted when
-        /// the master account deletes <code>OrganizationConformancePack</code> and disables service
-        /// access for <code>config-multiaccountsetup.amazonaws.com</code>. 
+        /// the management account deletes <code>OrganizationConformancePack</code> and disables
+        /// service access for <code>config-multiaccountsetup.amazonaws.com</code>. 
         /// </para>
         ///  
         /// <para>

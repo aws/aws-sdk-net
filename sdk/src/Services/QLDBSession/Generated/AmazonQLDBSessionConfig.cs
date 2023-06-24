@@ -17,22 +17,22 @@
  * Do not modify this file. This file is generated from the qldb-session-2019-07-11.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
-
+using Amazon.QLDBSession.Internal;
 
 namespace Amazon.QLDBSession
 {
     /// <summary>
     /// Configuration for accessing Amazon QLDBSession service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonQLDBSessionConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.105");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.147");
 
         private string _userAgent = UserAgentString;
 
@@ -40,8 +40,10 @@ namespace Amazon.QLDBSession
         /// Default constructor
         /// </summary>
         public AmazonQLDBSessionConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonQLDBSessionDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "qldb";
+            this.EndpointProvider = new AmazonQLDBSessionEndpointProvider();
         }
 
         /// <summary>
@@ -76,5 +78,6 @@ namespace Amazon.QLDBSession
                 return _userAgent;
             }
         }
+
     }
 }

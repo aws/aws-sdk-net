@@ -29,7 +29,15 @@ using Amazon.Runtime.Internal;
 namespace Amazon.TranscribeService.Model
 {
     /// <summary>
-    /// Provides information about when a transcription job should be executed.
+    /// Makes it possible to control how your transcription job is processed. Currently, the
+    /// only <code>JobExecutionSettings</code> modification you can choose is enabling job
+    /// queueing using the <code>AllowDeferredExecution</code> sub-parameter.
+    /// 
+    ///  
+    /// <para>
+    /// If you include <code>JobExecutionSettings</code> in your request, you must also include
+    /// the sub-parameters: <code>AllowDeferredExecution</code> and <code>DataAccessRoleArn</code>.
+    /// </para>
     /// </summary>
     public partial class JobExecutionSettings
     {
@@ -39,20 +47,17 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property AllowDeferredExecution. 
         /// <para>
-        /// Indicates whether a job should be queued by Amazon Transcribe when the concurrent
-        /// execution limit is exceeded. When the <code>AllowDeferredExecution</code> field is
-        /// true, jobs are queued and executed when the number of executing jobs falls below the
-        /// concurrent execution limit. If the field is false, Amazon Transcribe returns a <code>LimitExceededException</code>
-        /// exception.
+        /// Makes it possible to enable job queuing when your concurrent request limit is exceeded.
+        /// When <code>AllowDeferredExecution</code> is set to <code>true</code>, transcription
+        /// job requests are placed in a queue until the number of jobs falls below the concurrent
+        /// request limit. If <code>AllowDeferredExecution</code> is set to <code>false</code>
+        /// and the number of transcription job requests exceed the concurrent request limit,
+        /// you get a <code>LimitExceededException</code> error.
         /// </para>
         ///  
         /// <para>
-        /// Note that job queuing is enabled by default for call analytics jobs.
-        /// </para>
-        ///  
-        /// <para>
-        /// If you specify the <code>AllowDeferredExecution</code> field, you must specify the
-        /// <code>DataAccessRoleArn</code> field.
+        /// If you include <code>AllowDeferredExecution</code> in your request, you must also
+        /// include <code>DataAccessRoleArn</code>.
         /// </para>
         /// </summary>
         public bool AllowDeferredExecution
@@ -70,16 +75,22 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property DataAccessRoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN), in the form <code>arn:partition:service:region:account-id:resource-type/resource-id</code>,
-        /// of a role that has access to the S3 bucket that contains the input files. Amazon Transcribe
-        /// assumes this role to read queued media files. If you have specified an output S3 bucket
-        /// for the transcription results, this role should have access to the output bucket as
-        /// well.
+        /// The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon
+        /// S3 bucket that contains your input files. If the role that you specify doesn’t have
+        /// the appropriate permissions to access the specified Amazon S3 location, your request
+        /// fails.
         /// </para>
         ///  
         /// <para>
-        /// If you specify the <code>AllowDeferredExecution</code> field, you must specify the
-        /// <code>DataAccessRoleArn</code> field.
+        /// IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>.
+        /// For example: <code>arn:aws:iam::111122223333:role/Admin</code>. For more information,
+        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM
+        /// ARNs</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Note that if you include <code>DataAccessRoleArn</code> in your request, you must
+        /// also include <code>AllowDeferredExecution</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]

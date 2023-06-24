@@ -33,8 +33,11 @@ namespace Amazon.Kendra.Model
     /// 
     ///  
     /// <para>
-    /// This is used for filtering search results for different users based on their access
-    /// to documents.
+    /// User context filtering is a kind of personalized search with the benefit of controlling
+    /// access to documents. For example, not all teams that search the company portal for
+    /// information should access top-secret company documents, nor are these documents relevant
+    /// to all users. Only specific users or groups of teams given access to top-secret documents
+    /// should see these documents in their search results.
     /// </para>
     ///  
     /// <para>

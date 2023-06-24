@@ -34,7 +34,7 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SecurityDetails Marshaller
-    /// </summary>       
+    /// </summary>
     public class SecurityDetailsMarshaller : IRequestMarshaller<SecurityDetails, JsonMarshallerContext> 
     {
         /// <summary>
@@ -77,7 +77,7 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SecurityDetailsMarshaller Instance = new SecurityDetailsMarshaller();
 
     }

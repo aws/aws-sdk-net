@@ -17,22 +17,22 @@
  * Do not modify this file. This file is generated from the dax-2017-04-19.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
-
+using Amazon.DAX.Internal;
 
 namespace Amazon.DAX
 {
     /// <summary>
     /// Configuration for accessing Amazon DAX service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonDAXConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.1.71");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.147");
 
         private string _userAgent = UserAgentString;
 
@@ -40,8 +40,10 @@ namespace Amazon.DAX
         /// Default constructor
         /// </summary>
         public AmazonDAXConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonDAXDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "dax";
+            this.EndpointProvider = new AmazonDAXEndpointProvider();
         }
 
         /// <summary>
@@ -76,5 +78,6 @@ namespace Amazon.DAX
                 return _userAgent;
             }
         }
+
     }
 }

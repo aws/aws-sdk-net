@@ -40,7 +40,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// The idempotency token used to make this request idempotent.
+        /// The idempotency token that was used for this request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=36)]
@@ -59,7 +59,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ImageBuildVersionArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the image whose creation has been cancelled.
+        /// The ARN of the image whose creation this request canceled.
         /// </para>
         /// </summary>
         public string ImageBuildVersionArn

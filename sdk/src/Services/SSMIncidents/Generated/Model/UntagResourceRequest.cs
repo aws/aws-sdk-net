@@ -59,7 +59,7 @@ namespace Amazon.SSMIncidents.Model
         /// <summary>
         /// Gets and sets the property TagKeys. 
         /// <para>
-        /// The name of the tag you're removing from the response plan.
+        /// The name of the tag to remove from the response plan.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=50)]

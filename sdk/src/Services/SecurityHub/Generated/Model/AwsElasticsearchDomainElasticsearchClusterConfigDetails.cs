@@ -83,9 +83,15 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property DedicatedMasterType. 
         /// <para>
-        /// The hardware configuration of the computer that hosts the dedicated master node. For
-        /// example, <code>m3.medium.elasticsearch</code>. If this attribute is specified, then
-        /// <code>DedicatedMasterEnabled</code> must be <code>true</code>.
+        /// The hardware configuration of the computer that hosts the dedicated master node. A
+        /// sample value is <code>m3.medium.elasticsearch</code>. If this attribute is specified,
+        /// then <code>DedicatedMasterEnabled</code> must be <code>true</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For a list of valid values, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/supported-instance-types.html">Supported
+        /// instance types in Amazon OpenSearch Service</a> in the <i>Amazon OpenSearch Service
+        /// Developer Guide</i>.
         /// </para>
         /// </summary>
         public string DedicatedMasterType
@@ -122,6 +128,12 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property InstanceType. 
         /// <para>
         /// The instance type for your data nodes. For example, <code>m3.medium.elasticsearch</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For a list of valid values, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/supported-instance-types.html">Supported
+        /// instance types in Amazon OpenSearch Service</a> in the <i>Amazon OpenSearch Service
+        /// Developer Guide</i>.
         /// </para>
         /// </summary>
         public string InstanceType

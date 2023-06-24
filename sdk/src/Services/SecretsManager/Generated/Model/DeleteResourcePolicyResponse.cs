@@ -58,7 +58,7 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The friendly name of the secret that the resource-based policy was deleted for.
+        /// The name of the secret that the resource-based policy was deleted for.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=512)]

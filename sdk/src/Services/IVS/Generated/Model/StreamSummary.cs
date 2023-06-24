@@ -80,7 +80,8 @@ namespace Amazon.IVS.Model
         /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
-        /// Time of the stream’s start. This is an ISO 8601 timestamp returned as a string.
+        /// Time of the stream’s start. This is an ISO 8601 timestamp; <i>note that this is returned
+        /// as a string</i>. 
         /// </para>
         /// </summary>
         public DateTime StartTime
@@ -98,7 +99,9 @@ namespace Amazon.IVS.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// The stream’s state.
+        /// The stream’s state. Do not rely on the <code>OFFLINE</code> state, as the API may
+        /// not return it; instead, a "NotBroadcasting" error will indicate that the stream is
+        /// not live.
         /// </para>
         /// </summary>
         public StreamState State

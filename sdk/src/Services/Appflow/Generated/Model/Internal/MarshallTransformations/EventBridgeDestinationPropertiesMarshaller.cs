@@ -34,7 +34,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// EventBridgeDestinationProperties Marshaller
-    /// </summary>       
+    /// </summary>
     public class EventBridgeDestinationPropertiesMarshaller : IRequestMarshaller<EventBridgeDestinationProperties, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static EventBridgeDestinationPropertiesMarshaller Instance = new EventBridgeDestinationPropertiesMarshaller();
 
     }

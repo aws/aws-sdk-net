@@ -30,8 +30,8 @@ namespace Amazon.Personalize.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeDatasetImportJob operation.
-    /// Describes the dataset import job created by <a>CreateDatasetImportJob</a>, including
-    /// the import job status.
+    /// Describes the dataset import job created by <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDatasetImportJob.html">CreateDatasetImportJob</a>,
+    /// including the import job status.
     /// </summary>
     public partial class DescribeDatasetImportJobRequest : AmazonPersonalizeRequest
     {

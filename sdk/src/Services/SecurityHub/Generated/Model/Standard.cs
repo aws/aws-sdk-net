@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// Provides information about a specific standard.
+    /// Provides information about a specific security standard.
     /// </summary>
     public partial class Standard
     {
@@ -37,6 +37,7 @@ namespace Amazon.SecurityHub.Model
         private bool? _enabledByDefault;
         private string _name;
         private string _standardsArn;
+        private StandardsManagedBy _standardsManagedBy;
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -116,6 +117,24 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetStandardsArn()
         {
             return this._standardsArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StandardsManagedBy. 
+        /// <para>
+        /// Provides details about the management of a standard. 
+        /// </para>
+        /// </summary>
+        public StandardsManagedBy StandardsManagedBy
+        {
+            get { return this._standardsManagedBy; }
+            set { this._standardsManagedBy = value; }
+        }
+
+        // Check to see if StandardsManagedBy property is set
+        internal bool IsSetStandardsManagedBy()
+        {
+            return this._standardsManagedBy != null;
         }
 
     }

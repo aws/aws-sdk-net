@@ -44,12 +44,16 @@ namespace Amazon.EC2.Model
         private List<string> _cidrs = new List<string>();
         private AnalysisLoadBalancerListener _classicLoadBalancerListener;
         private AnalysisComponent _component;
+        private string _componentAccount;
+        private string _componentRegion;
         private AnalysisComponent _customerGateway;
         private AnalysisComponent _destination;
         private AnalysisComponent _destinationVpc;
         private string _direction;
         private AnalysisComponent _elasticLoadBalancerListener;
         private string _explanationCode;
+        private FirewallStatefulRule _firewallStatefulRule;
+        private FirewallStatelessRule _firewallStatelessRule;
         private AnalysisComponent _ingressRouteTable;
         private AnalysisComponent _internetGateway;
         private string _loadBalancerArn;
@@ -75,6 +79,10 @@ namespace Amazon.EC2.Model
         private string _state;
         private AnalysisComponent _subnet;
         private AnalysisComponent _subnetRouteTable;
+        private AnalysisComponent _transitGateway;
+        private AnalysisComponent _transitGatewayAttachment;
+        private AnalysisComponent _transitGatewayRouteTable;
+        private TransitGatewayRouteTableRoute _transitGatewayRouteTableRoute;
         private AnalysisComponent _vpc;
         private AnalysisComponent _vpcEndpoint;
         private AnalysisComponent _vpcPeeringConnection;
@@ -245,6 +253,42 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ComponentAccount. 
+        /// <para>
+        /// The Amazon Web Services account for the component.
+        /// </para>
+        /// </summary>
+        public string ComponentAccount
+        {
+            get { return this._componentAccount; }
+            set { this._componentAccount = value; }
+        }
+
+        // Check to see if ComponentAccount property is set
+        internal bool IsSetComponentAccount()
+        {
+            return this._componentAccount != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ComponentRegion. 
+        /// <para>
+        /// The Region for the component.
+        /// </para>
+        /// </summary>
+        public string ComponentRegion
+        {
+            get { return this._componentRegion; }
+            set { this._componentRegion = value; }
+        }
+
+        // Check to see if ComponentRegion property is set
+        internal bool IsSetComponentRegion()
+        {
+            return this._componentRegion != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property CustomerGateway. 
         /// <para>
         /// The customer gateway.
@@ -301,7 +345,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Direction. 
         /// <para>
-        /// The direction. The following are possible values:
+        /// The direction. The following are the possible values:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -359,6 +403,42 @@ namespace Amazon.EC2.Model
         internal bool IsSetExplanationCode()
         {
             return this._explanationCode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FirewallStatefulRule. 
+        /// <para>
+        /// The Network Firewall stateful rule.
+        /// </para>
+        /// </summary>
+        public FirewallStatefulRule FirewallStatefulRule
+        {
+            get { return this._firewallStatefulRule; }
+            set { this._firewallStatefulRule = value; }
+        }
+
+        // Check to see if FirewallStatefulRule property is set
+        internal bool IsSetFirewallStatefulRule()
+        {
+            return this._firewallStatefulRule != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FirewallStatelessRule. 
+        /// <para>
+        /// The Network Firewall stateless rule.
+        /// </para>
+        /// </summary>
+        public FirewallStatelessRule FirewallStatelessRule
+        {
+            get { return this._firewallStatelessRule; }
+            set { this._firewallStatelessRule = value; }
+        }
+
+        // Check to see if FirewallStatelessRule property is set
+        internal bool IsSetFirewallStatelessRule()
+        {
+            return this._firewallStatelessRule != null;
         }
 
         /// <summary>
@@ -422,7 +502,7 @@ namespace Amazon.EC2.Model
         /// The listener port of the load balancer.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=65535)]
+        [AWSProperty(Min=0, Max=65535)]
         public int LoadBalancerListenerPort
         {
             get { return this._loadBalancerListenerPort.GetValueOrDefault(); }
@@ -495,7 +575,7 @@ namespace Amazon.EC2.Model
         /// The target port.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=65535)]
+        [AWSProperty(Min=0, Max=65535)]
         public int LoadBalancerTargetPort
         {
             get { return this._loadBalancerTargetPort.GetValueOrDefault(); }
@@ -586,7 +666,7 @@ namespace Amazon.EC2.Model
         /// The port.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=65535)]
+        [AWSProperty(Min=0, Max=65535)]
         public int Port
         {
             get { return this._port.GetValueOrDefault(); }
@@ -813,6 +893,78 @@ namespace Amazon.EC2.Model
         internal bool IsSetSubnetRouteTable()
         {
             return this._subnetRouteTable != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TransitGateway. 
+        /// <para>
+        /// The transit gateway.
+        /// </para>
+        /// </summary>
+        public AnalysisComponent TransitGateway
+        {
+            get { return this._transitGateway; }
+            set { this._transitGateway = value; }
+        }
+
+        // Check to see if TransitGateway property is set
+        internal bool IsSetTransitGateway()
+        {
+            return this._transitGateway != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TransitGatewayAttachment. 
+        /// <para>
+        /// The transit gateway attachment.
+        /// </para>
+        /// </summary>
+        public AnalysisComponent TransitGatewayAttachment
+        {
+            get { return this._transitGatewayAttachment; }
+            set { this._transitGatewayAttachment = value; }
+        }
+
+        // Check to see if TransitGatewayAttachment property is set
+        internal bool IsSetTransitGatewayAttachment()
+        {
+            return this._transitGatewayAttachment != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TransitGatewayRouteTable. 
+        /// <para>
+        /// The transit gateway route table.
+        /// </para>
+        /// </summary>
+        public AnalysisComponent TransitGatewayRouteTable
+        {
+            get { return this._transitGatewayRouteTable; }
+            set { this._transitGatewayRouteTable = value; }
+        }
+
+        // Check to see if TransitGatewayRouteTable property is set
+        internal bool IsSetTransitGatewayRouteTable()
+        {
+            return this._transitGatewayRouteTable != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TransitGatewayRouteTableRoute. 
+        /// <para>
+        /// The transit gateway route table route.
+        /// </para>
+        /// </summary>
+        public TransitGatewayRouteTableRoute TransitGatewayRouteTableRoute
+        {
+            get { return this._transitGatewayRouteTableRoute; }
+            set { this._transitGatewayRouteTableRoute = value; }
+        }
+
+        // Check to see if TransitGatewayRouteTableRoute property is set
+        internal bool IsSetTransitGatewayRouteTableRoute()
+        {
+            return this._transitGatewayRouteTableRoute != null;
         }
 
         /// <summary>

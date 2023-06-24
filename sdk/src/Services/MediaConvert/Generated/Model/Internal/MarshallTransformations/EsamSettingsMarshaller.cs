@@ -34,7 +34,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// EsamSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class EsamSettingsMarshaller : IRequestMarshaller<EsamSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -77,7 +77,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static EsamSettingsMarshaller Instance = new EsamSettingsMarshaller();
 
     }

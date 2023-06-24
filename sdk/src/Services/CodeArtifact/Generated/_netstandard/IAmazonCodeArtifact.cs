@@ -31,16 +31,17 @@ namespace Amazon.CodeArtifact
     /// <summary>
     /// Interface for accessing CodeArtifact
     ///
-    /// AWS CodeArtifact is a fully managed artifact repository compatible with language-native
-    /// package managers and build tools such as npm, Apache Maven, and pip. You can use CodeArtifact
-    /// to share packages with development teams and pull packages. Packages can be pulled
-    /// from both public and CodeArtifact repositories. You can also create an upstream relationship
-    /// between a CodeArtifact repository and another repository, which effectively merges
-    /// their contents from the point of view of a package manager client. 
+    /// CodeArtifact is a fully managed artifact repository compatible with language-native
+    /// package managers and build tools such as npm, Apache Maven, pip, and dotnet. You can
+    /// use CodeArtifact to share packages with development teams and pull packages. Packages
+    /// can be pulled from both public and CodeArtifact repositories. You can also create
+    /// an upstream relationship between a CodeArtifact repository and another repository,
+    /// which effectively merges their contents from the point of view of a package manager
+    /// client. 
     /// 
     ///  
     /// <para>
-    ///  <b>AWS CodeArtifact Components</b> 
+    ///  <b>CodeArtifact Components</b> 
     /// </para>
     ///  
     /// <para>
@@ -53,7 +54,8 @@ namespace Amazon.CodeArtifact
     /// versions</a>, each of which maps to a set of assets, or files. Repositories are polyglot,
     /// so a single repository can contain packages of any supported type. Each repository
     /// exposes endpoints for fetching and publishing packages using tools like the <b> <code>npm</code>
-    /// </b> CLI, the Maven CLI (<b> <code>mvn</code> </b>), and <b> <code>pip</code> </b>.
+    /// </b> CLI, the Maven CLI (<b> <code>mvn</code> </b>), Python CLIs (<b> <code>pip</code>
+    /// </b> and <code>twine</code>), and NuGet CLIs (<code>nuget</code> and <code>dotnet</code>).
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -62,7 +64,7 @@ namespace Amazon.CodeArtifact
     /// through repositories. A given package asset, such as a Maven JAR file, is stored once
     /// per domain, no matter how many repositories it's present in. All of the assets and
     /// metadata in a domain are encrypted with the same customer master key (CMK) stored
-    /// in AWS Key Management Service (AWS KMS).
+    /// in Key Management Service (KMS).
     /// </para>
     ///  
     /// <para>
@@ -85,7 +87,8 @@ namespace Amazon.CodeArtifact
     ///  <b>Package</b>: A <i>package</i> is a bundle of software and the metadata required
     /// to resolve dependencies and install the software. CodeArtifact supports <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-npm.html">npm</a>,
     /// <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-python.html">PyPI</a>,
-    /// and <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-maven">Maven</a>
+    /// <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-maven">Maven</a>,
+    /// and <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-nuget">NuGet</a>
     /// package formats.
     /// </para>
     ///  
@@ -164,6 +167,10 @@ namespace Amazon.CodeArtifact
     /// </para>
     ///  </li> <li> 
     /// <para>
+    ///  <code>DeletePackage</code>: Deletes a package and all associated package versions.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     ///  <code>DeletePackageVersions</code>: Deletes versions of a package. After a package
     /// has been deleted, it can be republished, but its assets and metadata cannot be restored
     /// because they have been permanently removed from storage.
@@ -181,6 +188,11 @@ namespace Amazon.CodeArtifact
     /// <para>
     ///  <code>DescribeDomain</code>: Returns a <code>DomainDescription</code> object that
     /// contains information about the requested domain.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>DescribePackage</code>: Returns a <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDescription.html">PackageDescription</a>
+    /// object that contains details about a package. 
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -232,15 +244,19 @@ namespace Amazon.CodeArtifact
     /// </para>
     ///  <ul> <li> 
     /// <para>
+    ///  <code>maven</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     ///  <code>npm</code> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>pypi</code> 
+    ///  <code>nuget</code> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>maven</code> 
+    ///  <code>pypi</code> 
     /// </para>
     ///  </li> </ul> </li> <li> 
     /// <para>
@@ -272,8 +288,8 @@ namespace Amazon.CodeArtifact
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>ListRepositories</code>: Returns a list of repositories owned by the AWS account
-    /// that called this method.
+    ///  <code>ListRepositories</code>: Returns a list of repositories owned by the Amazon
+    /// Web Services account that called this method.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -281,7 +297,18 @@ namespace Amazon.CodeArtifact
     /// </para>
     ///  </li> <li> 
     /// <para>
+    ///  <code>PublishPackageVersion</code>: Creates a new package version containing one
+    /// or more assets.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     ///  <code>PutDomainPermissionsPolicy</code>: Attaches a resource policy to a domain.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>PutPackageOriginConfiguration</code>: Sets the package origin configuration
+    /// for a package, which determine how new versions of the package can be added to a specific
+    /// repository.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -335,7 +362,7 @@ namespace Amazon.CodeArtifact
         /// The operation did not succeed because prerequisites are not met.
         /// </exception>
         /// <exception cref="Amazon.CodeArtifact.Model.InternalServerException">
-        /// The operation did not succeed because of an error that occurred inside AWS CodeArtifact.
+        /// The operation did not succeed because of an error that occurred inside CodeArtifact.
         /// </exception>
         /// <exception cref="Amazon.CodeArtifact.Model.ResourceNotFoundException">
         /// The operation did not succeed because the resource requested is not found in the
@@ -385,7 +412,7 @@ namespace Amazon.CodeArtifact
         /// The operation did not succeed because prerequisites are not met.
         /// </exception>
         /// <exception cref="Amazon.CodeArtifact.Model.InternalServerException">
-        /// The operation did not succeed because of an error that occurred inside AWS CodeArtifact.
+        /// The operation did not succeed because of an error that occurred inside CodeArtifact.
         /// </exception>
         /// <exception cref="Amazon.CodeArtifact.Model.ResourceNotFoundException">
         /// The operation did not succeed because the resource requested is not found in the
@@ -414,8 +441,8 @@ namespace Amazon.CodeArtifact
         /// <summary>
         /// Creates a domain. CodeArtifact <i>domains</i> make it easier to manage multiple repositories
         /// across an organization. You can use a domain to apply permissions across many repositories
-        /// owned by different AWS accounts. An asset is stored only once in a domain, even if
-        /// it's in multiple repositories. 
+        /// owned by different Amazon Web Services accounts. An asset is stored only once in a
+        /// domain, even if it's in multiple repositories. 
         /// 
         ///  
         /// <para>
@@ -438,7 +465,7 @@ namespace Amazon.CodeArtifact
         /// The operation did not succeed because prerequisites are not met.
         /// </exception>
         /// <exception cref="Amazon.CodeArtifact.Model.InternalServerException">
-        /// The operation did not succeed because of an error that occurred inside AWS CodeArtifact.
+        /// The operation did not succeed because of an error that occurred inside CodeArtifact.
         /// </exception>
         /// <exception cref="Amazon.CodeArtifact.Model.ResourceNotFoundException">
         /// The operation did not succeed because the resource requested is not found in the
@@ -480,7 +507,7 @@ namespace Amazon.CodeArtifact
         /// The operation did not succeed because prerequisites are not met.
         /// </exception>
         /// <exception cref="Amazon.CodeArtifact.Model.InternalServerException">
-        /// The operation did not succeed because of an error that occurred inside AWS CodeArtifact.
+        /// The operation did not succeed because of an error that occurred inside CodeArtifact.
         /// </exception>
         /// <exception cref="Amazon.CodeArtifact.Model.ResourceNotFoundException">
         /// The operation did not succeed because the resource requested is not found in the
@@ -523,7 +550,7 @@ namespace Amazon.CodeArtifact
         /// The operation did not succeed because prerequisites are not met.
         /// </exception>
         /// <exception cref="Amazon.CodeArtifact.Model.InternalServerException">
-        /// The operation did not succeed because of an error that occurred inside AWS CodeArtifact.
+        /// The operation did not succeed because of an error that occurred inside CodeArtifact.
         /// </exception>
         /// <exception cref="Amazon.CodeArtifact.Model.ThrottlingException">
         /// The operation did not succeed because too many requests are sent to the service.
@@ -557,7 +584,7 @@ namespace Amazon.CodeArtifact
         /// The operation did not succeed because prerequisites are not met.
         /// </exception>
         /// <exception cref="Amazon.CodeArtifact.Model.InternalServerException">
-        /// The operation did not succeed because of an error that occurred inside AWS CodeArtifact.
+        /// The operation did not succeed because of an error that occurred inside CodeArtifact.
         /// </exception>
         /// <exception cref="Amazon.CodeArtifact.Model.ResourceNotFoundException">
         /// The operation did not succeed because the resource requested is not found in the
@@ -575,6 +602,46 @@ namespace Amazon.CodeArtifact
 
         #endregion
                 
+        #region  DeletePackage
+
+
+
+        /// <summary>
+        /// Deletes a package and all associated package versions. A deleted package cannot be
+        /// restored. To delete one or more package versions, use the <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DeletePackageVersions.html">DeletePackageVersions</a>
+        /// API.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePackage service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeletePackage service method, as returned by CodeArtifact.</returns>
+        /// <exception cref="Amazon.CodeArtifact.Model.AccessDeniedException">
+        /// The operation did not succeed because of an unauthorized access attempt.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ConflictException">
+        /// The operation did not succeed because prerequisites are not met.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.InternalServerException">
+        /// The operation did not succeed because of an error that occurred inside CodeArtifact.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ResourceNotFoundException">
+        /// The operation did not succeed because the resource requested is not found in the
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ThrottlingException">
+        /// The operation did not succeed because too many requests are sent to the service.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ValidationException">
+        /// The operation did not succeed because a parameter in the request was sent with an
+        /// invalid value.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/DeletePackage">REST API Reference for DeletePackage Operation</seealso>
+        Task<DeletePackageResponse> DeletePackageAsync(DeletePackageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DeletePackageVersions
 
 
@@ -584,7 +651,7 @@ namespace Amazon.CodeArtifact
         /// in your repository. If you want to remove a package version from your repository and
         /// be able to restore it later, set its status to <code>Archived</code>. Archived packages
         /// cannot be downloaded from a repository and don't show up with list package APIs (for
-        /// example, <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html">ListackageVersions</a>),
+        /// example, <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html">ListPackageVersions</a>),
         /// but you can restore them using <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_UpdatePackageVersionsStatus.html">UpdatePackageVersionsStatus</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeletePackageVersions service method.</param>
@@ -600,7 +667,7 @@ namespace Amazon.CodeArtifact
         /// The operation did not succeed because prerequisites are not met.
         /// </exception>
         /// <exception cref="Amazon.CodeArtifact.Model.InternalServerException">
-        /// The operation did not succeed because of an error that occurred inside AWS CodeArtifact.
+        /// The operation did not succeed because of an error that occurred inside CodeArtifact.
         /// </exception>
         /// <exception cref="Amazon.CodeArtifact.Model.ResourceNotFoundException">
         /// The operation did not succeed because the resource requested is not found in the
@@ -638,7 +705,7 @@ namespace Amazon.CodeArtifact
         /// The operation did not succeed because prerequisites are not met.
         /// </exception>
         /// <exception cref="Amazon.CodeArtifact.Model.InternalServerException">
-        /// The operation did not succeed because of an error that occurred inside AWS CodeArtifact.
+        /// The operation did not succeed because of an error that occurred inside CodeArtifact.
         /// </exception>
         /// <exception cref="Amazon.CodeArtifact.Model.ResourceNotFoundException">
         /// The operation did not succeed because the resource requested is not found in the
@@ -668,8 +735,8 @@ namespace Amazon.CodeArtifact
         ///  <important> 
         /// <para>
         ///  Use <code>DeleteRepositoryPermissionsPolicy</code> with caution. After a policy is
-        /// deleted, AWS users, roles, and accounts lose permissions to perform the repository
-        /// actions granted by the deleted policy. 
+        /// deleted, Amazon Web Services users, roles, and accounts lose permissions to perform
+        /// the repository actions granted by the deleted policy. 
         /// </para>
         ///  </important>
         /// </summary>
@@ -686,7 +753,7 @@ namespace Amazon.CodeArtifact
         /// The operation did not succeed because prerequisites are not met.
         /// </exception>
         /// <exception cref="Amazon.CodeArtifact.Model.InternalServerException">
-        /// The operation did not succeed because of an error that occurred inside AWS CodeArtifact.
+        /// The operation did not succeed because of an error that occurred inside CodeArtifact.
         /// </exception>
         /// <exception cref="Amazon.CodeArtifact.Model.ResourceNotFoundException">
         /// The operation did not succeed because the resource requested is not found in the
@@ -722,7 +789,7 @@ namespace Amazon.CodeArtifact
         /// The operation did not succeed because of an unauthorized access attempt.
         /// </exception>
         /// <exception cref="Amazon.CodeArtifact.Model.InternalServerException">
-        /// The operation did not succeed because of an error that occurred inside AWS CodeArtifact.
+        /// The operation did not succeed because of an error that occurred inside CodeArtifact.
         /// </exception>
         /// <exception cref="Amazon.CodeArtifact.Model.ResourceNotFoundException">
         /// The operation did not succeed because the resource requested is not found in the
@@ -737,6 +804,42 @@ namespace Amazon.CodeArtifact
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/DescribeDomain">REST API Reference for DescribeDomain Operation</seealso>
         Task<DescribeDomainResponse> DescribeDomainAsync(DescribeDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribePackage
+
+
+
+        /// <summary>
+        /// Returns a <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDescription.html">PackageDescription</a>
+        /// object that contains information about the requested package.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribePackage service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribePackage service method, as returned by CodeArtifact.</returns>
+        /// <exception cref="Amazon.CodeArtifact.Model.AccessDeniedException">
+        /// The operation did not succeed because of an unauthorized access attempt.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.InternalServerException">
+        /// The operation did not succeed because of an error that occurred inside CodeArtifact.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ResourceNotFoundException">
+        /// The operation did not succeed because the resource requested is not found in the
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ThrottlingException">
+        /// The operation did not succeed because too many requests are sent to the service.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ValidationException">
+        /// The operation did not succeed because a parameter in the request was sent with an
+        /// invalid value.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/DescribePackage">REST API Reference for DescribePackage Operation</seealso>
+        Task<DescribePackageResponse> DescribePackageAsync(DescribePackageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -761,7 +864,7 @@ namespace Amazon.CodeArtifact
         /// The operation did not succeed because prerequisites are not met.
         /// </exception>
         /// <exception cref="Amazon.CodeArtifact.Model.InternalServerException">
-        /// The operation did not succeed because of an error that occurred inside AWS CodeArtifact.
+        /// The operation did not succeed because of an error that occurred inside CodeArtifact.
         /// </exception>
         /// <exception cref="Amazon.CodeArtifact.Model.ResourceNotFoundException">
         /// The operation did not succeed because the resource requested is not found in the
@@ -797,7 +900,7 @@ namespace Amazon.CodeArtifact
         /// The operation did not succeed because of an unauthorized access attempt.
         /// </exception>
         /// <exception cref="Amazon.CodeArtifact.Model.InternalServerException">
-        /// The operation did not succeed because of an error that occurred inside AWS CodeArtifact.
+        /// The operation did not succeed because of an error that occurred inside CodeArtifact.
         /// </exception>
         /// <exception cref="Amazon.CodeArtifact.Model.ResourceNotFoundException">
         /// The operation did not succeed because the resource requested is not found in the
@@ -835,7 +938,7 @@ namespace Amazon.CodeArtifact
         /// The operation did not succeed because prerequisites are not met.
         /// </exception>
         /// <exception cref="Amazon.CodeArtifact.Model.InternalServerException">
-        /// The operation did not succeed because of an error that occurred inside AWS CodeArtifact.
+        /// The operation did not succeed because of an error that occurred inside CodeArtifact.
         /// </exception>
         /// <exception cref="Amazon.CodeArtifact.Model.ResourceNotFoundException">
         /// The operation did not succeed because the resource requested is not found in the
@@ -891,7 +994,7 @@ namespace Amazon.CodeArtifact
         /// The operation did not succeed because prerequisites are not met.
         /// </exception>
         /// <exception cref="Amazon.CodeArtifact.Model.InternalServerException">
-        /// The operation did not succeed because of an error that occurred inside AWS CodeArtifact.
+        /// The operation did not succeed because of an error that occurred inside CodeArtifact.
         /// </exception>
         /// <exception cref="Amazon.CodeArtifact.Model.ResourceNotFoundException">
         /// The operation did not succeed because the resource requested is not found in the
@@ -916,8 +1019,8 @@ namespace Amazon.CodeArtifact
         /// <summary>
         /// Generates a temporary authorization token for accessing repositories in the domain.
         /// This API requires the <code>codeartifact:GetAuthorizationToken</code> and <code>sts:GetServiceBearerToken</code>
-        /// permissions. For more information about authorization tokens, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/tokens-authentication.html">AWS
-        /// CodeArtifact authentication and tokens</a>. 
+        /// permissions. For more information about authorization tokens, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/tokens-authentication.html">CodeArtifact
+        /// authentication and tokens</a>. 
         /// 
         ///  <note> 
         /// <para>
@@ -954,7 +1057,7 @@ namespace Amazon.CodeArtifact
         /// The operation did not succeed because of an unauthorized access attempt.
         /// </exception>
         /// <exception cref="Amazon.CodeArtifact.Model.InternalServerException">
-        /// The operation did not succeed because of an error that occurred inside AWS CodeArtifact.
+        /// The operation did not succeed because of an error that occurred inside CodeArtifact.
         /// </exception>
         /// <exception cref="Amazon.CodeArtifact.Model.ResourceNotFoundException">
         /// The operation did not succeed because the resource requested is not found in the
@@ -983,8 +1086,7 @@ namespace Amazon.CodeArtifact
         /// <para>
         ///  The policy is a resource-based policy, not an identity-based policy. For more information,
         /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_identity-vs-resource.html">Identity-based
-        /// policies and resource-based policies </a> in the <i>AWS Identity and Access Management
-        /// User Guide</i>. 
+        /// policies and resource-based policies </a> in the <i>IAM User Guide</i>. 
         /// </para>
         ///  </note>
         /// </summary>
@@ -998,7 +1100,7 @@ namespace Amazon.CodeArtifact
         /// The operation did not succeed because of an unauthorized access attempt.
         /// </exception>
         /// <exception cref="Amazon.CodeArtifact.Model.InternalServerException">
-        /// The operation did not succeed because of an error that occurred inside AWS CodeArtifact.
+        /// The operation did not succeed because of an error that occurred inside CodeArtifact.
         /// </exception>
         /// <exception cref="Amazon.CodeArtifact.Model.ResourceNotFoundException">
         /// The operation did not succeed because the resource requested is not found in the
@@ -1038,7 +1140,7 @@ namespace Amazon.CodeArtifact
         /// The operation did not succeed because prerequisites are not met.
         /// </exception>
         /// <exception cref="Amazon.CodeArtifact.Model.InternalServerException">
-        /// The operation did not succeed because of an error that occurred inside AWS CodeArtifact.
+        /// The operation did not succeed because of an error that occurred inside CodeArtifact.
         /// </exception>
         /// <exception cref="Amazon.CodeArtifact.Model.ResourceNotFoundException">
         /// The operation did not succeed because the resource requested is not found in the
@@ -1061,10 +1163,7 @@ namespace Amazon.CodeArtifact
 
 
         /// <summary>
-        /// Gets the readme file or descriptive text for a package version. For packages that
-        /// do not contain a readme file, CodeArtifact extracts a description from a metadata
-        /// file. For example, from the <code>&lt;description&gt;</code> element in the <code>pom.xml</code>
-        /// file of a Maven package. 
+        /// Gets the readme file or descriptive text for a package version. 
         /// 
         ///  
         /// <para>
@@ -1082,7 +1181,7 @@ namespace Amazon.CodeArtifact
         /// The operation did not succeed because of an unauthorized access attempt.
         /// </exception>
         /// <exception cref="Amazon.CodeArtifact.Model.InternalServerException">
-        /// The operation did not succeed because of an error that occurred inside AWS CodeArtifact.
+        /// The operation did not succeed because of an error that occurred inside CodeArtifact.
         /// </exception>
         /// <exception cref="Amazon.CodeArtifact.Model.ResourceNotFoundException">
         /// The operation did not succeed because the resource requested is not found in the
@@ -1110,15 +1209,19 @@ namespace Amazon.CodeArtifact
         /// 
         ///  <ul> <li> 
         /// <para>
+        ///  <code>maven</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>npm</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>pypi</code> 
+        ///  <code>nuget</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>maven</code> 
+        ///  <code>pypi</code> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -1132,7 +1235,7 @@ namespace Amazon.CodeArtifact
         /// The operation did not succeed because of an unauthorized access attempt.
         /// </exception>
         /// <exception cref="Amazon.CodeArtifact.Model.InternalServerException">
-        /// The operation did not succeed because of an error that occurred inside AWS CodeArtifact.
+        /// The operation did not succeed because of an error that occurred inside CodeArtifact.
         /// </exception>
         /// <exception cref="Amazon.CodeArtifact.Model.ResourceNotFoundException">
         /// The operation did not succeed because the resource requested is not found in the
@@ -1167,7 +1270,7 @@ namespace Amazon.CodeArtifact
         /// The operation did not succeed because of an unauthorized access attempt.
         /// </exception>
         /// <exception cref="Amazon.CodeArtifact.Model.InternalServerException">
-        /// The operation did not succeed because of an error that occurred inside AWS CodeArtifact.
+        /// The operation did not succeed because of an error that occurred inside CodeArtifact.
         /// </exception>
         /// <exception cref="Amazon.CodeArtifact.Model.ResourceNotFoundException">
         /// The operation did not succeed because the resource requested is not found in the
@@ -1191,8 +1294,8 @@ namespace Amazon.CodeArtifact
 
         /// <summary>
         /// Returns a list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionDescription.html">DomainSummary</a>
-        /// objects for all domains owned by the AWS account that makes this call. Each returned
-        /// <code>DomainSummary</code> object contains information about a domain.
+        /// objects for all domains owned by the Amazon Web Services account that makes this call.
+        /// Each returned <code>DomainSummary</code> object contains information about a domain.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDomains service method.</param>
         /// <param name="cancellationToken">
@@ -1204,7 +1307,7 @@ namespace Amazon.CodeArtifact
         /// The operation did not succeed because of an unauthorized access attempt.
         /// </exception>
         /// <exception cref="Amazon.CodeArtifact.Model.InternalServerException">
-        /// The operation did not succeed because of an error that occurred inside AWS CodeArtifact.
+        /// The operation did not succeed because of an error that occurred inside CodeArtifact.
         /// </exception>
         /// <exception cref="Amazon.CodeArtifact.Model.ThrottlingException">
         /// The operation did not succeed because too many requests are sent to the service.
@@ -1236,7 +1339,7 @@ namespace Amazon.CodeArtifact
         /// The operation did not succeed because of an unauthorized access attempt.
         /// </exception>
         /// <exception cref="Amazon.CodeArtifact.Model.InternalServerException">
-        /// The operation did not succeed because of an error that occurred inside AWS CodeArtifact.
+        /// The operation did not succeed because of an error that occurred inside CodeArtifact.
         /// </exception>
         /// <exception cref="Amazon.CodeArtifact.Model.ResourceNotFoundException">
         /// The operation did not succeed because the resource requested is not found in the
@@ -1272,7 +1375,7 @@ namespace Amazon.CodeArtifact
         /// The operation did not succeed because of an unauthorized access attempt.
         /// </exception>
         /// <exception cref="Amazon.CodeArtifact.Model.InternalServerException">
-        /// The operation did not succeed because of an error that occurred inside AWS CodeArtifact.
+        /// The operation did not succeed because of an error that occurred inside CodeArtifact.
         /// </exception>
         /// <exception cref="Amazon.CodeArtifact.Model.ResourceNotFoundException">
         /// The operation did not succeed because the resource requested is not found in the
@@ -1312,7 +1415,7 @@ namespace Amazon.CodeArtifact
         /// The operation did not succeed because of an unauthorized access attempt.
         /// </exception>
         /// <exception cref="Amazon.CodeArtifact.Model.InternalServerException">
-        /// The operation did not succeed because of an error that occurred inside AWS CodeArtifact.
+        /// The operation did not succeed because of an error that occurred inside CodeArtifact.
         /// </exception>
         /// <exception cref="Amazon.CodeArtifact.Model.ResourceNotFoundException">
         /// The operation did not succeed because the resource requested is not found in the
@@ -1336,7 +1439,9 @@ namespace Amazon.CodeArtifact
 
         /// <summary>
         /// Returns a list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionSummary.html">PackageVersionSummary</a>
-        /// objects for package versions in a repository that match the request parameters.
+        /// objects for package versions in a repository that match the request parameters. Package
+        /// versions of all statuses will be returned by default when calling <code>list-package-versions</code>
+        /// with no <code>--status</code> parameter.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPackageVersions service method.</param>
         /// <param name="cancellationToken">
@@ -1348,7 +1453,7 @@ namespace Amazon.CodeArtifact
         /// The operation did not succeed because of an unauthorized access attempt.
         /// </exception>
         /// <exception cref="Amazon.CodeArtifact.Model.InternalServerException">
-        /// The operation did not succeed because of an error that occurred inside AWS CodeArtifact.
+        /// The operation did not succeed because of an error that occurred inside CodeArtifact.
         /// </exception>
         /// <exception cref="Amazon.CodeArtifact.Model.ResourceNotFoundException">
         /// The operation did not succeed because the resource requested is not found in the
@@ -1373,7 +1478,7 @@ namespace Amazon.CodeArtifact
         /// <summary>
         /// Returns a list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_RepositorySummary.html">RepositorySummary</a>
         /// objects. Each <code>RepositorySummary</code> contains information about a repository
-        /// in the specified AWS account and that matches the input parameters.
+        /// in the specified Amazon Web Services account and that matches the input parameters.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListRepositories service method.</param>
         /// <param name="cancellationToken">
@@ -1385,7 +1490,7 @@ namespace Amazon.CodeArtifact
         /// The operation did not succeed because of an unauthorized access attempt.
         /// </exception>
         /// <exception cref="Amazon.CodeArtifact.Model.InternalServerException">
-        /// The operation did not succeed because of an error that occurred inside AWS CodeArtifact.
+        /// The operation did not succeed because of an error that occurred inside CodeArtifact.
         /// </exception>
         /// <exception cref="Amazon.CodeArtifact.Model.ThrottlingException">
         /// The operation did not succeed because too many requests are sent to the service.
@@ -1418,7 +1523,7 @@ namespace Amazon.CodeArtifact
         /// The operation did not succeed because of an unauthorized access attempt.
         /// </exception>
         /// <exception cref="Amazon.CodeArtifact.Model.InternalServerException">
-        /// The operation did not succeed because of an error that occurred inside AWS CodeArtifact.
+        /// The operation did not succeed because of an error that occurred inside CodeArtifact.
         /// </exception>
         /// <exception cref="Amazon.CodeArtifact.Model.ResourceNotFoundException">
         /// The operation did not succeed because the resource requested is not found in the
@@ -1441,8 +1546,8 @@ namespace Amazon.CodeArtifact
 
 
         /// <summary>
-        /// Gets information about AWS tags for a specified Amazon Resource Name (ARN) in AWS
-        /// CodeArtifact.
+        /// Gets information about Amazon Web Services tags for a specified Amazon Resource Name
+        /// (ARN) in CodeArtifact.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// <param name="cancellationToken">
@@ -1466,6 +1571,66 @@ namespace Amazon.CodeArtifact
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  PublishPackageVersion
+
+
+
+        /// <summary>
+        /// Creates a new package version containing one or more assets (or files).
+        /// 
+        ///  
+        /// <para>
+        /// The <code>unfinished</code> flag can be used to keep the package version in the <code>Unfinished</code>
+        /// state until all of its assets have been uploaded (see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/packages-overview.html#package-version-status.html#package-version-status">Package
+        /// version status</a> in the <i>CodeArtifact user guide</i>). To set the package version’s
+        /// status to <code>Published</code>, omit the <code>unfinished</code> flag when uploading
+        /// the final asset, or set the status using <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_UpdatePackageVersionsStatus.html">UpdatePackageVersionStatus</a>.
+        /// Once a package version’s status is set to <code>Published</code>, it cannot change
+        /// back to <code>Unfinished</code>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Only generic packages can be published using this API. For more information, see <a
+        /// href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-generic.html">Using
+        /// generic packages</a> in the <i>CodeArtifact User Guide</i>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PublishPackageVersion service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PublishPackageVersion service method, as returned by CodeArtifact.</returns>
+        /// <exception cref="Amazon.CodeArtifact.Model.AccessDeniedException">
+        /// The operation did not succeed because of an unauthorized access attempt.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ConflictException">
+        /// The operation did not succeed because prerequisites are not met.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.InternalServerException">
+        /// The operation did not succeed because of an error that occurred inside CodeArtifact.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ResourceNotFoundException">
+        /// The operation did not succeed because the resource requested is not found in the
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ServiceQuotaExceededException">
+        /// The operation did not succeed because it would have exceeded a service limit for
+        /// your account.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ThrottlingException">
+        /// The operation did not succeed because too many requests are sent to the service.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ValidationException">
+        /// The operation did not succeed because a parameter in the request was sent with an
+        /// invalid value.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/PublishPackageVersion">REST API Reference for PublishPackageVersion Operation</seealso>
+        Task<PublishPackageVersionResponse> PublishPackageVersionAsync(PublishPackageVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -1497,7 +1662,7 @@ namespace Amazon.CodeArtifact
         /// The operation did not succeed because prerequisites are not met.
         /// </exception>
         /// <exception cref="Amazon.CodeArtifact.Model.InternalServerException">
-        /// The operation did not succeed because of an error that occurred inside AWS CodeArtifact.
+        /// The operation did not succeed because of an error that occurred inside CodeArtifact.
         /// </exception>
         /// <exception cref="Amazon.CodeArtifact.Model.ResourceNotFoundException">
         /// The operation did not succeed because the resource requested is not found in the
@@ -1516,6 +1681,61 @@ namespace Amazon.CodeArtifact
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/PutDomainPermissionsPolicy">REST API Reference for PutDomainPermissionsPolicy Operation</seealso>
         Task<PutDomainPermissionsPolicyResponse> PutDomainPermissionsPolicyAsync(PutDomainPermissionsPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  PutPackageOriginConfiguration
+
+
+
+        /// <summary>
+        /// Sets the package origin configuration for a package.
+        /// 
+        ///  
+        /// <para>
+        /// The package origin configuration determines how new versions of a package can be added
+        /// to a repository. You can allow or block direct publishing of new package versions,
+        /// or ingestion and retaining of new package versions from an external connection or
+        /// upstream source. For more information about package origin controls and configuration,
+        /// see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/package-origin-controls.html">Editing
+        /// package origin controls</a> in the <i>CodeArtifact User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>PutPackageOriginConfiguration</code> can be called on a package that doesn't
+        /// yet exist in the repository. When called on a package that does not exist, a package
+        /// is created in the repository with no versions and the requested restrictions are set
+        /// on the package. This can be used to preemptively block ingesting or retaining any
+        /// versions from external connections or upstream repositories, or to block publishing
+        /// any versions of the package into the repository before connecting any package managers
+        /// or publishers to the repository.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutPackageOriginConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutPackageOriginConfiguration service method, as returned by CodeArtifact.</returns>
+        /// <exception cref="Amazon.CodeArtifact.Model.AccessDeniedException">
+        /// The operation did not succeed because of an unauthorized access attempt.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.InternalServerException">
+        /// The operation did not succeed because of an error that occurred inside CodeArtifact.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ResourceNotFoundException">
+        /// The operation did not succeed because the resource requested is not found in the
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ThrottlingException">
+        /// The operation did not succeed because too many requests are sent to the service.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ValidationException">
+        /// The operation did not succeed because a parameter in the request was sent with an
+        /// invalid value.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/PutPackageOriginConfiguration">REST API Reference for PutPackageOriginConfiguration Operation</seealso>
+        Task<PutPackageOriginConfigurationResponse> PutPackageOriginConfigurationAsync(PutPackageOriginConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -1548,7 +1768,7 @@ namespace Amazon.CodeArtifact
         /// The operation did not succeed because prerequisites are not met.
         /// </exception>
         /// <exception cref="Amazon.CodeArtifact.Model.InternalServerException">
-        /// The operation did not succeed because of an error that occurred inside AWS CodeArtifact.
+        /// The operation did not succeed because of an error that occurred inside CodeArtifact.
         /// </exception>
         /// <exception cref="Amazon.CodeArtifact.Model.ResourceNotFoundException">
         /// The operation did not succeed because the resource requested is not found in the
@@ -1575,7 +1795,7 @@ namespace Amazon.CodeArtifact
 
 
         /// <summary>
-        /// Adds or updates tags for a resource in AWS CodeArtifact.
+        /// Adds or updates tags for a resource in CodeArtifact.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// <param name="cancellationToken">
@@ -1611,7 +1831,7 @@ namespace Amazon.CodeArtifact
 
 
         /// <summary>
-        /// Removes tags from a resource in AWS CodeArtifact.
+        /// Removes tags from a resource in CodeArtifact.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// <param name="cancellationToken">
@@ -1643,7 +1863,10 @@ namespace Amazon.CodeArtifact
 
 
         /// <summary>
-        /// Updates the status of one or more versions of a package.
+        /// Updates the status of one or more versions of a package. Using <code>UpdatePackageVersionsStatus</code>,
+        /// you can update the status of package versions to <code>Archived</code>, <code>Published</code>,
+        /// or <code>Unlisted</code>. To set the status of a package version to <code>Disposed</code>,
+        /// use <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DisposePackageVersions.html">DisposePackageVersions</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdatePackageVersionsStatus service method.</param>
         /// <param name="cancellationToken">
@@ -1658,7 +1881,7 @@ namespace Amazon.CodeArtifact
         /// The operation did not succeed because prerequisites are not met.
         /// </exception>
         /// <exception cref="Amazon.CodeArtifact.Model.InternalServerException">
-        /// The operation did not succeed because of an error that occurred inside AWS CodeArtifact.
+        /// The operation did not succeed because of an error that occurred inside CodeArtifact.
         /// </exception>
         /// <exception cref="Amazon.CodeArtifact.Model.ResourceNotFoundException">
         /// The operation did not succeed because the resource requested is not found in the
@@ -1696,7 +1919,7 @@ namespace Amazon.CodeArtifact
         /// The operation did not succeed because prerequisites are not met.
         /// </exception>
         /// <exception cref="Amazon.CodeArtifact.Model.InternalServerException">
-        /// The operation did not succeed because of an error that occurred inside AWS CodeArtifact.
+        /// The operation did not succeed because of an error that occurred inside CodeArtifact.
         /// </exception>
         /// <exception cref="Amazon.CodeArtifact.Model.ResourceNotFoundException">
         /// The operation did not succeed because the resource requested is not found in the

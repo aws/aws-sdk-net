@@ -34,7 +34,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DataSourceToIndexFieldMapping Marshaller
-    /// </summary>       
+    /// </summary>
     public class DataSourceToIndexFieldMappingMarshaller : IRequestMarshaller<DataSourceToIndexFieldMapping, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DataSourceToIndexFieldMappingMarshaller Instance = new DataSourceToIndexFieldMappingMarshaller();
 
     }

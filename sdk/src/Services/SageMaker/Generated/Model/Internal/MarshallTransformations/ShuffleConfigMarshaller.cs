@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ShuffleConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class ShuffleConfigMarshaller : IRequestMarshaller<ShuffleConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ShuffleConfigMarshaller Instance = new ShuffleConfigMarshaller();
 
     }

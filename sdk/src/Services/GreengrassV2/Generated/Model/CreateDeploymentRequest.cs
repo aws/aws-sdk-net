@@ -44,8 +44,7 @@ namespace Amazon.GreengrassV2.Model
     /// <para>
     /// Every deployment has a revision number that indicates how many deployment revisions
     /// you define for a target. Use this operation to create a new revision of an existing
-    /// deployment. This operation returns the revision number of the new deployment when
-    /// you create it.
+    /// deployment.
     /// </para>
     ///  
     /// <para>
@@ -60,6 +59,7 @@ namespace Amazon.GreengrassV2.Model
         private string _deploymentName;
         private DeploymentPolicies _deploymentPolicies;
         private DeploymentIoTJobConfiguration _iotJobConfiguration;
+        private string _parentTargetArn;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private string _targetArn;
 
@@ -112,7 +112,7 @@ namespace Amazon.GreengrassV2.Model
         /// The name of the deployment.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
+        [AWSProperty(Min=1, Max=256)]
         public string DeploymentName
         {
             get { return this._deploymentName; }
@@ -164,6 +164,25 @@ namespace Amazon.GreengrassV2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ParentTargetArn. 
+        /// <para>
+        /// The parent deployment's target <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
+        /// within a subdeployment.
+        /// </para>
+        /// </summary>
+        public string ParentTargetArn
+        {
+            get { return this._parentTargetArn; }
+            set { this._parentTargetArn = value; }
+        }
+
+        // Check to see if ParentTargetArn property is set
+        internal bool IsSetParentTargetArn()
+        {
+            return this._parentTargetArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
         /// A list of key-value pairs that contain metadata for the resource. For more information,
@@ -171,7 +190,7 @@ namespace Amazon.GreengrassV2.Model
         /// your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=50)]
+        [AWSProperty(Min=1, Max=200)]
         public Dictionary<string, string> Tags
         {
             get { return this._tags; }
@@ -188,7 +207,8 @@ namespace Amazon.GreengrassV2.Model
         /// Gets and sets the property TargetArn. 
         /// <para>
         /// The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-        /// of the target IoT thing or thing group.
+        /// of the target IoT thing or thing group. When creating a subdeployment, the targetARN
+        /// can only be a thing group.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

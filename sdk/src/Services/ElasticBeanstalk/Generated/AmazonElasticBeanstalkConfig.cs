@@ -17,22 +17,22 @@
  * Do not modify this file. This file is generated from the elasticbeanstalk-2010-12-01.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
-
+using Amazon.ElasticBeanstalk.Internal;
 
 namespace Amazon.ElasticBeanstalk
 {
     /// <summary>
     /// Configuration for accessing Amazon ElasticBeanstalk service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonElasticBeanstalkConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.105");
+            InternalSDKUtils.BuildUserAgentString("3.7.101.85");
 
         private string _userAgent = UserAgentString;
 
@@ -40,8 +40,10 @@ namespace Amazon.ElasticBeanstalk
         /// Default constructor
         /// </summary>
         public AmazonElasticBeanstalkConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonElasticBeanstalkDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "elasticbeanstalk";
+            this.EndpointProvider = new AmazonElasticBeanstalkEndpointProvider();
         }
 
         /// <summary>
@@ -76,5 +78,6 @@ namespace Amazon.ElasticBeanstalk
                 return _userAgent;
             }
         }
+
     }
 }

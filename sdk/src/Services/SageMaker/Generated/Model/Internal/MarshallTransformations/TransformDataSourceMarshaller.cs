@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// TransformDataSource Marshaller
-    /// </summary>       
+    /// </summary>
     public class TransformDataSourceMarshaller : IRequestMarshaller<TransformDataSource, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static TransformDataSourceMarshaller Instance = new TransformDataSourceMarshaller();
 
     }

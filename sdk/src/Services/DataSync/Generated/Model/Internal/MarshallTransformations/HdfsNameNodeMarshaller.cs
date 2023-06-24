@@ -34,7 +34,7 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// HdfsNameNode Marshaller
-    /// </summary>       
+    /// </summary>
     public class HdfsNameNodeMarshaller : IRequestMarshaller<HdfsNameNode, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static HdfsNameNodeMarshaller Instance = new HdfsNameNodeMarshaller();
 
     }

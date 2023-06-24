@@ -30,7 +30,7 @@ namespace Amazon.ManagedBlockchain.Model
 {
     /// <summary>
     /// Container for the parameters to the ListInvitations operation.
-    /// Returns a list of all invitations for the current AWS account.
+    /// Returns a list of all invitations for the current Amazon Web Services account.
     /// 
     ///  
     /// <para>

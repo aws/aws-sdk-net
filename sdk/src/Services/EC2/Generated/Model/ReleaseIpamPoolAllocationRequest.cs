@@ -30,11 +30,20 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the ReleaseIpamPoolAllocation operation.
-    /// Release an allocation within an IPAM pool. You can only use this action to release
-    /// manual allocations. To remove an allocation for a resource without deleting the resource,
-    /// set its monitored state to false using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyIpamResourceCidr.html">ModifyIpamResourceCidr</a>.
-    /// For more information, see <a href="/vpc/latest/ipam/release-pool-alloc-ipam.html">Release
-    /// an allocation</a> in the <i>Amazon VPC IPAM User Guide</i>.
+    /// Release an allocation within an IPAM pool. The Region you use should be the IPAM pool
+    /// locale. The locale is the Amazon Web Services Region where this IPAM pool is available
+    /// for allocations. You can only use this action to release manual allocations. To remove
+    /// an allocation for a resource without deleting the resource, set its monitored state
+    /// to false using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyIpamResourceCidr.html">ModifyIpamResourceCidr</a>.
+    /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/release-pool-alloc-ipam.html">Release
+    /// an allocation</a> in the <i>Amazon VPC IPAM User Guide</i>. 
+    /// 
+    ///  <note> 
+    /// <para>
+    /// All EC2 API actions follow an <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/query-api-troubleshooting.html#eventual-consistency">eventual
+    /// consistency</a> model.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class ReleaseIpamPoolAllocationRequest : AmazonEC2Request
     {
@@ -67,6 +76,7 @@ namespace Amazon.EC2.Model
         /// The ID of the allocation.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string IpamPoolAllocationId
         {
             get { return this._ipamPoolAllocationId; }

@@ -34,7 +34,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// EventsBatch Marshaller
-    /// </summary>       
+    /// </summary>
     public class EventsBatchMarshaller : IRequestMarshaller<EventsBatch, JsonMarshallerContext> 
     {
         /// <summary>
@@ -79,7 +79,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static EventsBatchMarshaller Instance = new EventsBatchMarshaller();
 
     }

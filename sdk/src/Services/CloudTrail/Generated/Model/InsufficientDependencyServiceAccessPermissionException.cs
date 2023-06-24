@@ -29,10 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudTrail.Model
 {
     /// <summary>
-    /// This exception is thrown when the IAM user or role that is used to create the organization
-    /// trail is lacking one or more required permissions for creating an organization trail
-    /// in a required service. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
-    /// For Creating a Trail For Your Organization</a>.
+    /// This exception is thrown when the IAM identity that is used to create the organization
+    /// resource lacks one or more required permissions for creating an organization resource
+    /// in a required service.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -37,12 +37,17 @@ namespace Amazon.EC2.Model
         private InstanceMetadataProtocolState _httpProtocolIpv6;
         private int? _httpPutResponseHopLimit;
         private HttpTokensState _httpTokens;
+        private InstanceMetadataTagsState _instanceMetadataTags;
         private InstanceMetadataOptionsState _state;
 
         /// <summary>
         /// Gets and sets the property HttpEndpoint. 
         /// <para>
         /// Indicates whether the HTTP metadata endpoint on your instances is enabled or disabled.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the value is <code>disabled</code>, you cannot access your instance metadata.
         /// </para>
         /// </summary>
         public InstanceMetadataEndpointState HttpEndpoint
@@ -106,22 +111,27 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property HttpTokens. 
         /// <para>
-        /// The state of token usage for your instance metadata requests. If the parameter is
-        /// not specified in the request, the default state is <code>optional</code>.
+        /// IMDSv2 uses token-backed sessions. Indicates whether the use of HTTP tokens is <code>optional</code>
+        /// (in other words, indicates whether the use of IMDSv2 is <code>optional</code>) or
+        /// <code>required</code> (in other words, indicates whether the use of IMDSv2 is <code>required</code>).
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// If the state is <code>optional</code>, you can choose to retrieve instance metadata
-        /// with or without a signed token header on your request. If you retrieve the IAM role
-        /// credentials without a token, the version 1.0 role credentials are returned. If you
-        /// retrieve the IAM role credentials using a valid signed token, the version 2.0 role
-        /// credentials are returned.
+        ///  <code>optional</code> - When IMDSv2 is optional, you can choose to retrieve instance
+        /// metadata with or without a session token in your request. If you retrieve the IAM
+        /// role credentials without a token, the IMDSv1 role credentials are returned. If you
+        /// retrieve the IAM role credentials using a valid session token, the IMDSv2 role credentials
+        /// are returned.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// If the state is <code>required</code>, you must send a signed token header with any
-        /// instance metadata retrieval requests. In this state, retrieving the IAM role credential
-        /// always returns the version 2.0 credentials; the version 1.0 credentials are not available.
+        ///  <code>required</code> - When IMDSv2 is required, you must send a session token with
+        /// any instance metadata retrieval requests. In this state, retrieving the IAM role credentials
+        /// always returns IMDSv2 credentials; IMDSv1 credentials are not available.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Default: <code>optional</code> 
         /// </para>
         /// </summary>
         public HttpTokensState HttpTokens
@@ -134,6 +144,26 @@ namespace Amazon.EC2.Model
         internal bool IsSetHttpTokens()
         {
             return this._httpTokens != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstanceMetadataTags. 
+        /// <para>
+        /// Indicates whether access to instance tags from the instance metadata is enabled or
+        /// disabled. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#work-with-tags-in-IMDS">Work
+        /// with instance tags using the instance metadata</a>.
+        /// </para>
+        /// </summary>
+        public InstanceMetadataTagsState InstanceMetadataTags
+        {
+            get { return this._instanceMetadataTags; }
+            set { this._instanceMetadataTags = value; }
+        }
+
+        // Check to see if InstanceMetadataTags property is set
+        internal bool IsSetInstanceMetadataTags()
+        {
+            return this._instanceMetadataTags != null;
         }
 
         /// <summary>

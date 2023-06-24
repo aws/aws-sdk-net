@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kinesis.Model
 {
     /// <summary>
-    /// 
+    /// Specifies that you tried to invoke this API for a data stream with the on-demand capacity
+    /// mode. This API is only supported for data streams with the provisioned capacity mode.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

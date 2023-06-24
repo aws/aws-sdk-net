@@ -61,8 +61,14 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property ErrorMessage. 
         /// <para>
-        /// The unique identifier for the event type. The format is <code>AWS_SERVICE_DESCRIPTION</code>.
-        /// For example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>.
+        /// A message that describes the error. Follow the error message and retry your request.
+        /// </para>
+        ///  
+        /// <para>
+        /// For example, the <code>InvalidAccountInputError</code> error message appears if you
+        /// call the <code>DescribeAffectedEntitiesForOrganization</code> operation and specify
+        /// the <code>AccountSpecific</code> value for the <code>EventScopeCode</code> parameter,
+        /// but don't specify an Amazon Web Services account.
         /// </para>
         /// </summary>
         public string ErrorMessage

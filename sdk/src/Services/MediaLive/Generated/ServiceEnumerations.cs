@@ -727,6 +727,56 @@ namespace Amazon.MediaLive
 
 
     /// <summary>
+    /// Constants used for properties of type AccessibilityType.
+    /// </summary>
+    public class AccessibilityType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DOES_NOT_IMPLEMENT_ACCESSIBILITY_FEATURES for AccessibilityType
+        /// </summary>
+        public static readonly AccessibilityType DOES_NOT_IMPLEMENT_ACCESSIBILITY_FEATURES = new AccessibilityType("DOES_NOT_IMPLEMENT_ACCESSIBILITY_FEATURES");
+        /// <summary>
+        /// Constant IMPLEMENTS_ACCESSIBILITY_FEATURES for AccessibilityType
+        /// </summary>
+        public static readonly AccessibilityType IMPLEMENTS_ACCESSIBILITY_FEATURES = new AccessibilityType("IMPLEMENTS_ACCESSIBILITY_FEATURES");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AccessibilityType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AccessibilityType FindValue(string value)
+        {
+            return FindValue<AccessibilityType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AccessibilityType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AfdSignaling.
     /// </summary>
     public class AfdSignaling : ConstantClass
@@ -2090,6 +2140,10 @@ namespace Amazon.MediaLive
         /// Constant UP_TO_DATE for DeviceUpdateStatus
         /// </summary>
         public static readonly DeviceUpdateStatus UP_TO_DATE = new DeviceUpdateStatus("UP_TO_DATE");
+        /// <summary>
+        /// Constant UPDATING for DeviceUpdateStatus
+        /// </summary>
+        public static readonly DeviceUpdateStatus UPDATING = new DeviceUpdateStatus("UPDATING");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -2120,6 +2174,84 @@ namespace Amazon.MediaLive
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator DeviceUpdateStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DolbyEProgramSelection.
+    /// </summary>
+    public class DolbyEProgramSelection : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALL_CHANNELS for DolbyEProgramSelection
+        /// </summary>
+        public static readonly DolbyEProgramSelection ALL_CHANNELS = new DolbyEProgramSelection("ALL_CHANNELS");
+        /// <summary>
+        /// Constant PROGRAM_1 for DolbyEProgramSelection
+        /// </summary>
+        public static readonly DolbyEProgramSelection PROGRAM_1 = new DolbyEProgramSelection("PROGRAM_1");
+        /// <summary>
+        /// Constant PROGRAM_2 for DolbyEProgramSelection
+        /// </summary>
+        public static readonly DolbyEProgramSelection PROGRAM_2 = new DolbyEProgramSelection("PROGRAM_2");
+        /// <summary>
+        /// Constant PROGRAM_3 for DolbyEProgramSelection
+        /// </summary>
+        public static readonly DolbyEProgramSelection PROGRAM_3 = new DolbyEProgramSelection("PROGRAM_3");
+        /// <summary>
+        /// Constant PROGRAM_4 for DolbyEProgramSelection
+        /// </summary>
+        public static readonly DolbyEProgramSelection PROGRAM_4 = new DolbyEProgramSelection("PROGRAM_4");
+        /// <summary>
+        /// Constant PROGRAM_5 for DolbyEProgramSelection
+        /// </summary>
+        public static readonly DolbyEProgramSelection PROGRAM_5 = new DolbyEProgramSelection("PROGRAM_5");
+        /// <summary>
+        /// Constant PROGRAM_6 for DolbyEProgramSelection
+        /// </summary>
+        public static readonly DolbyEProgramSelection PROGRAM_6 = new DolbyEProgramSelection("PROGRAM_6");
+        /// <summary>
+        /// Constant PROGRAM_7 for DolbyEProgramSelection
+        /// </summary>
+        public static readonly DolbyEProgramSelection PROGRAM_7 = new DolbyEProgramSelection("PROGRAM_7");
+        /// <summary>
+        /// Constant PROGRAM_8 for DolbyEProgramSelection
+        /// </summary>
+        public static readonly DolbyEProgramSelection PROGRAM_8 = new DolbyEProgramSelection("PROGRAM_8");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DolbyEProgramSelection(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DolbyEProgramSelection FindValue(string value)
+        {
+            return FindValue<DolbyEProgramSelection>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DolbyEProgramSelection(string value)
         {
             return FindValue(value);
         }
@@ -2588,6 +2720,192 @@ namespace Amazon.MediaLive
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator DvbSubOcrLanguage(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Eac3AtmosCodingMode.
+    /// </summary>
+    public class Eac3AtmosCodingMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CODING_MODE_5_1_4 for Eac3AtmosCodingMode
+        /// </summary>
+        public static readonly Eac3AtmosCodingMode CODING_MODE_5_1_4 = new Eac3AtmosCodingMode("CODING_MODE_5_1_4");
+        /// <summary>
+        /// Constant CODING_MODE_7_1_4 for Eac3AtmosCodingMode
+        /// </summary>
+        public static readonly Eac3AtmosCodingMode CODING_MODE_7_1_4 = new Eac3AtmosCodingMode("CODING_MODE_7_1_4");
+        /// <summary>
+        /// Constant CODING_MODE_9_1_6 for Eac3AtmosCodingMode
+        /// </summary>
+        public static readonly Eac3AtmosCodingMode CODING_MODE_9_1_6 = new Eac3AtmosCodingMode("CODING_MODE_9_1_6");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Eac3AtmosCodingMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Eac3AtmosCodingMode FindValue(string value)
+        {
+            return FindValue<Eac3AtmosCodingMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Eac3AtmosCodingMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Eac3AtmosDrcLine.
+    /// </summary>
+    public class Eac3AtmosDrcLine : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FILM_LIGHT for Eac3AtmosDrcLine
+        /// </summary>
+        public static readonly Eac3AtmosDrcLine FILM_LIGHT = new Eac3AtmosDrcLine("FILM_LIGHT");
+        /// <summary>
+        /// Constant FILM_STANDARD for Eac3AtmosDrcLine
+        /// </summary>
+        public static readonly Eac3AtmosDrcLine FILM_STANDARD = new Eac3AtmosDrcLine("FILM_STANDARD");
+        /// <summary>
+        /// Constant MUSIC_LIGHT for Eac3AtmosDrcLine
+        /// </summary>
+        public static readonly Eac3AtmosDrcLine MUSIC_LIGHT = new Eac3AtmosDrcLine("MUSIC_LIGHT");
+        /// <summary>
+        /// Constant MUSIC_STANDARD for Eac3AtmosDrcLine
+        /// </summary>
+        public static readonly Eac3AtmosDrcLine MUSIC_STANDARD = new Eac3AtmosDrcLine("MUSIC_STANDARD");
+        /// <summary>
+        /// Constant NONE for Eac3AtmosDrcLine
+        /// </summary>
+        public static readonly Eac3AtmosDrcLine NONE = new Eac3AtmosDrcLine("NONE");
+        /// <summary>
+        /// Constant SPEECH for Eac3AtmosDrcLine
+        /// </summary>
+        public static readonly Eac3AtmosDrcLine SPEECH = new Eac3AtmosDrcLine("SPEECH");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Eac3AtmosDrcLine(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Eac3AtmosDrcLine FindValue(string value)
+        {
+            return FindValue<Eac3AtmosDrcLine>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Eac3AtmosDrcLine(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Eac3AtmosDrcRf.
+    /// </summary>
+    public class Eac3AtmosDrcRf : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FILM_LIGHT for Eac3AtmosDrcRf
+        /// </summary>
+        public static readonly Eac3AtmosDrcRf FILM_LIGHT = new Eac3AtmosDrcRf("FILM_LIGHT");
+        /// <summary>
+        /// Constant FILM_STANDARD for Eac3AtmosDrcRf
+        /// </summary>
+        public static readonly Eac3AtmosDrcRf FILM_STANDARD = new Eac3AtmosDrcRf("FILM_STANDARD");
+        /// <summary>
+        /// Constant MUSIC_LIGHT for Eac3AtmosDrcRf
+        /// </summary>
+        public static readonly Eac3AtmosDrcRf MUSIC_LIGHT = new Eac3AtmosDrcRf("MUSIC_LIGHT");
+        /// <summary>
+        /// Constant MUSIC_STANDARD for Eac3AtmosDrcRf
+        /// </summary>
+        public static readonly Eac3AtmosDrcRf MUSIC_STANDARD = new Eac3AtmosDrcRf("MUSIC_STANDARD");
+        /// <summary>
+        /// Constant NONE for Eac3AtmosDrcRf
+        /// </summary>
+        public static readonly Eac3AtmosDrcRf NONE = new Eac3AtmosDrcRf("NONE");
+        /// <summary>
+        /// Constant SPEECH for Eac3AtmosDrcRf
+        /// </summary>
+        public static readonly Eac3AtmosDrcRf SPEECH = new Eac3AtmosDrcRf("SPEECH");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Eac3AtmosDrcRf(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Eac3AtmosDrcRf FindValue(string value)
+        {
+            return FindValue<Eac3AtmosDrcRf>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Eac3AtmosDrcRf(string value)
         {
             return FindValue(value);
         }
@@ -7037,6 +7355,56 @@ namespace Amazon.MediaLive
 
 
     /// <summary>
+    /// Constants used for properties of type HlsProgramDateTimeClock.
+    /// </summary>
+    public class HlsProgramDateTimeClock : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant INITIALIZE_FROM_OUTPUT_TIMECODE for HlsProgramDateTimeClock
+        /// </summary>
+        public static readonly HlsProgramDateTimeClock INITIALIZE_FROM_OUTPUT_TIMECODE = new HlsProgramDateTimeClock("INITIALIZE_FROM_OUTPUT_TIMECODE");
+        /// <summary>
+        /// Constant SYSTEM_CLOCK for HlsProgramDateTimeClock
+        /// </summary>
+        public static readonly HlsProgramDateTimeClock SYSTEM_CLOCK = new HlsProgramDateTimeClock("SYSTEM_CLOCK");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public HlsProgramDateTimeClock(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HlsProgramDateTimeClock FindValue(string value)
+        {
+            return FindValue<HlsProgramDateTimeClock>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HlsProgramDateTimeClock(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type HlsRedundantManifest.
     /// </summary>
     public class HlsRedundantManifest : ConstantClass
@@ -8058,6 +8426,10 @@ namespace Amazon.MediaLive
         /// Constant HD for InputDeviceType
         /// </summary>
         public static readonly InputDeviceType HD = new InputDeviceType("HD");
+        /// <summary>
+        /// Constant UHD for InputDeviceType
+        /// </summary>
+        public static readonly InputDeviceType UHD = new InputDeviceType("UHD");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -10191,6 +10563,76 @@ namespace Amazon.MediaLive
 
 
     /// <summary>
+    /// Constants used for properties of type MaintenanceDay.
+    /// </summary>
+    public class MaintenanceDay : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FRIDAY for MaintenanceDay
+        /// </summary>
+        public static readonly MaintenanceDay FRIDAY = new MaintenanceDay("FRIDAY");
+        /// <summary>
+        /// Constant MONDAY for MaintenanceDay
+        /// </summary>
+        public static readonly MaintenanceDay MONDAY = new MaintenanceDay("MONDAY");
+        /// <summary>
+        /// Constant SATURDAY for MaintenanceDay
+        /// </summary>
+        public static readonly MaintenanceDay SATURDAY = new MaintenanceDay("SATURDAY");
+        /// <summary>
+        /// Constant SUNDAY for MaintenanceDay
+        /// </summary>
+        public static readonly MaintenanceDay SUNDAY = new MaintenanceDay("SUNDAY");
+        /// <summary>
+        /// Constant THURSDAY for MaintenanceDay
+        /// </summary>
+        public static readonly MaintenanceDay THURSDAY = new MaintenanceDay("THURSDAY");
+        /// <summary>
+        /// Constant TUESDAY for MaintenanceDay
+        /// </summary>
+        public static readonly MaintenanceDay TUESDAY = new MaintenanceDay("TUESDAY");
+        /// <summary>
+        /// Constant WEDNESDAY for MaintenanceDay
+        /// </summary>
+        public static readonly MaintenanceDay WEDNESDAY = new MaintenanceDay("WEDNESDAY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MaintenanceDay(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MaintenanceDay FindValue(string value)
+        {
+            return FindValue<MaintenanceDay>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MaintenanceDay(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type MotionGraphicsInsertion.
     /// </summary>
     public class MotionGraphicsInsertion : ConstantClass
@@ -11031,6 +11473,88 @@ namespace Amazon.MediaLive
 
 
     /// <summary>
+    /// Constants used for properties of type NielsenWatermarkTimezones.
+    /// </summary>
+    public class NielsenWatermarkTimezones : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AMERICA_PUERTO_RICO for NielsenWatermarkTimezones
+        /// </summary>
+        public static readonly NielsenWatermarkTimezones AMERICA_PUERTO_RICO = new NielsenWatermarkTimezones("AMERICA_PUERTO_RICO");
+        /// <summary>
+        /// Constant US_ALASKA for NielsenWatermarkTimezones
+        /// </summary>
+        public static readonly NielsenWatermarkTimezones US_ALASKA = new NielsenWatermarkTimezones("US_ALASKA");
+        /// <summary>
+        /// Constant US_ARIZONA for NielsenWatermarkTimezones
+        /// </summary>
+        public static readonly NielsenWatermarkTimezones US_ARIZONA = new NielsenWatermarkTimezones("US_ARIZONA");
+        /// <summary>
+        /// Constant US_CENTRAL for NielsenWatermarkTimezones
+        /// </summary>
+        public static readonly NielsenWatermarkTimezones US_CENTRAL = new NielsenWatermarkTimezones("US_CENTRAL");
+        /// <summary>
+        /// Constant US_EASTERN for NielsenWatermarkTimezones
+        /// </summary>
+        public static readonly NielsenWatermarkTimezones US_EASTERN = new NielsenWatermarkTimezones("US_EASTERN");
+        /// <summary>
+        /// Constant US_HAWAII for NielsenWatermarkTimezones
+        /// </summary>
+        public static readonly NielsenWatermarkTimezones US_HAWAII = new NielsenWatermarkTimezones("US_HAWAII");
+        /// <summary>
+        /// Constant US_MOUNTAIN for NielsenWatermarkTimezones
+        /// </summary>
+        public static readonly NielsenWatermarkTimezones US_MOUNTAIN = new NielsenWatermarkTimezones("US_MOUNTAIN");
+        /// <summary>
+        /// Constant US_PACIFIC for NielsenWatermarkTimezones
+        /// </summary>
+        public static readonly NielsenWatermarkTimezones US_PACIFIC = new NielsenWatermarkTimezones("US_PACIFIC");
+        /// <summary>
+        /// Constant US_SAMOA for NielsenWatermarkTimezones
+        /// </summary>
+        public static readonly NielsenWatermarkTimezones US_SAMOA = new NielsenWatermarkTimezones("US_SAMOA");
+        /// <summary>
+        /// Constant UTC for NielsenWatermarkTimezones
+        /// </summary>
+        public static readonly NielsenWatermarkTimezones UTC = new NielsenWatermarkTimezones("UTC");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public NielsenWatermarkTimezones(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static NielsenWatermarkTimezones FindValue(string value)
+        {
+            return FindValue<NielsenWatermarkTimezones>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator NielsenWatermarkTimezones(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type OfferingDurationUnits.
     /// </summary>
     public class OfferingDurationUnits : ConstantClass
@@ -11220,6 +11744,110 @@ namespace Amazon.MediaLive
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator PreferredChannelPipeline(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RebootInputDeviceForce.
+    /// </summary>
+    public class RebootInputDeviceForce : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NO for RebootInputDeviceForce
+        /// </summary>
+        public static readonly RebootInputDeviceForce NO = new RebootInputDeviceForce("NO");
+        /// <summary>
+        /// Constant YES for RebootInputDeviceForce
+        /// </summary>
+        public static readonly RebootInputDeviceForce YES = new RebootInputDeviceForce("YES");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RebootInputDeviceForce(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RebootInputDeviceForce FindValue(string value)
+        {
+            return FindValue<RebootInputDeviceForce>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RebootInputDeviceForce(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ReservationAutomaticRenewal.
+    /// </summary>
+    public class ReservationAutomaticRenewal : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for ReservationAutomaticRenewal
+        /// </summary>
+        public static readonly ReservationAutomaticRenewal DISABLED = new ReservationAutomaticRenewal("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for ReservationAutomaticRenewal
+        /// </summary>
+        public static readonly ReservationAutomaticRenewal ENABLED = new ReservationAutomaticRenewal("ENABLED");
+        /// <summary>
+        /// Constant UNAVAILABLE for ReservationAutomaticRenewal
+        /// </summary>
+        public static readonly ReservationAutomaticRenewal UNAVAILABLE = new ReservationAutomaticRenewal("UNAVAILABLE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ReservationAutomaticRenewal(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ReservationAutomaticRenewal FindValue(string value)
+        {
+            return FindValue<ReservationAutomaticRenewal>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ReservationAutomaticRenewal(string value)
         {
             return FindValue(value);
         }
@@ -12261,6 +12889,56 @@ namespace Amazon.MediaLive
 
 
     /// <summary>
+    /// Constants used for properties of type Scte35InputMode.
+    /// </summary>
+    public class Scte35InputMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FIXED for Scte35InputMode
+        /// </summary>
+        public static readonly Scte35InputMode FIXED = new Scte35InputMode("FIXED");
+        /// <summary>
+        /// Constant FOLLOW_ACTIVE for Scte35InputMode
+        /// </summary>
+        public static readonly Scte35InputMode FOLLOW_ACTIVE = new Scte35InputMode("FOLLOW_ACTIVE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Scte35InputMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Scte35InputMode FindValue(string value)
+        {
+            return FindValue<Scte35InputMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Scte35InputMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Scte35NoRegionalBlackoutFlag.
     /// </summary>
     public class Scte35NoRegionalBlackoutFlag : ConstantClass
@@ -13126,6 +13804,142 @@ namespace Amazon.MediaLive
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator TemporalFilterStrength(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TimecodeBurninFontSize.
+    /// </summary>
+    public class TimecodeBurninFontSize : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EXTRA_SMALL_10 for TimecodeBurninFontSize
+        /// </summary>
+        public static readonly TimecodeBurninFontSize EXTRA_SMALL_10 = new TimecodeBurninFontSize("EXTRA_SMALL_10");
+        /// <summary>
+        /// Constant LARGE_48 for TimecodeBurninFontSize
+        /// </summary>
+        public static readonly TimecodeBurninFontSize LARGE_48 = new TimecodeBurninFontSize("LARGE_48");
+        /// <summary>
+        /// Constant MEDIUM_32 for TimecodeBurninFontSize
+        /// </summary>
+        public static readonly TimecodeBurninFontSize MEDIUM_32 = new TimecodeBurninFontSize("MEDIUM_32");
+        /// <summary>
+        /// Constant SMALL_16 for TimecodeBurninFontSize
+        /// </summary>
+        public static readonly TimecodeBurninFontSize SMALL_16 = new TimecodeBurninFontSize("SMALL_16");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TimecodeBurninFontSize(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TimecodeBurninFontSize FindValue(string value)
+        {
+            return FindValue<TimecodeBurninFontSize>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TimecodeBurninFontSize(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TimecodeBurninPosition.
+    /// </summary>
+    public class TimecodeBurninPosition : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BOTTOM_CENTER for TimecodeBurninPosition
+        /// </summary>
+        public static readonly TimecodeBurninPosition BOTTOM_CENTER = new TimecodeBurninPosition("BOTTOM_CENTER");
+        /// <summary>
+        /// Constant BOTTOM_LEFT for TimecodeBurninPosition
+        /// </summary>
+        public static readonly TimecodeBurninPosition BOTTOM_LEFT = new TimecodeBurninPosition("BOTTOM_LEFT");
+        /// <summary>
+        /// Constant BOTTOM_RIGHT for TimecodeBurninPosition
+        /// </summary>
+        public static readonly TimecodeBurninPosition BOTTOM_RIGHT = new TimecodeBurninPosition("BOTTOM_RIGHT");
+        /// <summary>
+        /// Constant MIDDLE_CENTER for TimecodeBurninPosition
+        /// </summary>
+        public static readonly TimecodeBurninPosition MIDDLE_CENTER = new TimecodeBurninPosition("MIDDLE_CENTER");
+        /// <summary>
+        /// Constant MIDDLE_LEFT for TimecodeBurninPosition
+        /// </summary>
+        public static readonly TimecodeBurninPosition MIDDLE_LEFT = new TimecodeBurninPosition("MIDDLE_LEFT");
+        /// <summary>
+        /// Constant MIDDLE_RIGHT for TimecodeBurninPosition
+        /// </summary>
+        public static readonly TimecodeBurninPosition MIDDLE_RIGHT = new TimecodeBurninPosition("MIDDLE_RIGHT");
+        /// <summary>
+        /// Constant TOP_CENTER for TimecodeBurninPosition
+        /// </summary>
+        public static readonly TimecodeBurninPosition TOP_CENTER = new TimecodeBurninPosition("TOP_CENTER");
+        /// <summary>
+        /// Constant TOP_LEFT for TimecodeBurninPosition
+        /// </summary>
+        public static readonly TimecodeBurninPosition TOP_LEFT = new TimecodeBurninPosition("TOP_LEFT");
+        /// <summary>
+        /// Constant TOP_RIGHT for TimecodeBurninPosition
+        /// </summary>
+        public static readonly TimecodeBurninPosition TOP_RIGHT = new TimecodeBurninPosition("TOP_RIGHT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TimecodeBurninPosition(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TimecodeBurninPosition FindValue(string value)
+        {
+            return FindValue<TimecodeBurninPosition>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TimecodeBurninPosition(string value)
         {
             return FindValue(value);
         }

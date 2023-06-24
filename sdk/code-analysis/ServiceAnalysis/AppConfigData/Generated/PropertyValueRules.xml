@@ -11,17 +11,17 @@
   <property-value-rule>
     <property>Amazon.AppConfigData.Model.StartConfigurationSessionRequest.ApplicationIdentifier</property>
     <min>1</min>
-    <max>64</max>
+    <max>128</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfigData.Model.StartConfigurationSessionRequest.ConfigurationProfileIdentifier</property>
     <min>1</min>
-    <max>64</max>
+    <max>128</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfigData.Model.StartConfigurationSessionRequest.EnvironmentIdentifier</property>
     <min>1</min>
-    <max>64</max>
+    <max>128</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfigData.Model.StartConfigurationSessionRequest.RequiredMinimumPollIntervalInSeconds</property>

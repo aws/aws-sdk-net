@@ -30,15 +30,10 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeAccountAttributes operation.
-    /// Describes attributes of your AWS account. The following are the supported account
-    /// attributes:
+    /// Describes attributes of your Amazon Web Services account. The following are the supported
+    /// account attributes:
     /// 
     ///  <ul> <li> 
-    /// <para>
-    ///  <code>supported-platforms</code>: Indicates whether your account can launch instances
-    /// into EC2-Classic and EC2-VPC, or only into EC2-VPC.
-    /// </para>
-    ///  </li> <li> 
     /// <para>
     ///  <code>default-vpc</code>: The ID of the default VPC for your account, or <code>none</code>.
     /// </para>
@@ -51,18 +46,22 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>vpc-max-security-groups-per-interface</code>: The maximum number of security
-    /// groups that you can assign to a network interface.
+    ///  <code>max-elastic-ips</code>: The maximum number of Elastic IP addresses that you
+    /// can allocate.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>max-elastic-ips</code>: The maximum number of Elastic IP addresses that you
-    /// can allocate for use with EC2-Classic. 
+    ///  <code>supported-platforms</code>: This attribute is deprecated.
     /// </para>
     ///  </li> <li> 
     /// <para>
     ///  <code>vpc-max-elastic-ips</code>: The maximum number of Elastic IP addresses that
-    /// you can allocate for use with EC2-VPC.
+    /// you can allocate.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>vpc-max-security-groups-per-interface</code>: The maximum number of security
+    /// groups that you can assign to a network interface.
     /// </para>
     ///  </li> </ul>
     /// </summary>

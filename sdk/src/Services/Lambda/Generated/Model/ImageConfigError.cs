@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lambda.Model
 {
     /// <summary>
-    /// Error response to GetFunctionConfiguration.
+    /// Error response to <code>GetFunctionConfiguration</code>.
     /// </summary>
     public partial class ImageConfigError
     {
@@ -60,6 +60,7 @@ namespace Amazon.Lambda.Model
         /// Error message.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string Message
         {
             get { return this._message; }

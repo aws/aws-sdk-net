@@ -56,7 +56,7 @@ namespace Amazon.SageMakerFeatureStoreRuntime.Model.Internal.MarshallTransformat
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.SageMakerFeatureStoreRuntime");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-07-01";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-07-01";
             request.HttpMethod = "PUT";
 
             if (!publicRequest.IsSetFeatureGroupName())
@@ -84,7 +84,17 @@ namespace Amazon.SageMakerFeatureStoreRuntime.Model.Internal.MarshallTransformat
                     context.Writer.WriteArrayEnd();
                 }
 
-        
+                if(publicRequest.IsSetTargetStores())
+                {
+                    context.Writer.WritePropertyName("TargetStores");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestTargetStoresListValue in publicRequest.TargetStores)
+                    {
+                            context.Writer.Write(publicRequestTargetStoresListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

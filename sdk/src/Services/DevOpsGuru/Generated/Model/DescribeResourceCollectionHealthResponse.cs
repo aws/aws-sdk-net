@@ -107,7 +107,7 @@ namespace Amazon.DevOpsGuru.Model
         /// Web Services services support tagging, so you can assign the same tag to resources
         /// from different services to indicate that the resources are related. For example, you
         /// can assign the same tag to an Amazon DynamoDB table resource that you assign to an
-        /// Lambda function. For more information about using tags, see the <a href="https://d1.awsstatic.com/whitepapers/aws-tagging-best-practices.pdf">Tagging
+        /// Lambda function. For more information about using tags, see the <a href="https://docs.aws.amazon.com/whitepapers/latest/tagging-best-practices/tagging-best-practices.html">Tagging
         /// best practices</a> whitepaper. 
         /// </para>
         ///  
@@ -133,11 +133,12 @@ namespace Amazon.DevOpsGuru.Model
         /// <para>
         /// The string used for a <i>key</i> in a tag that you use to define your resource coverage
         /// must begin with the prefix <code>Devops-guru-</code>. The tag <i>key</i> might be
-        /// <code>Devops-guru-deployment-application</code> or <code>Devops-guru-rds-application</code>.
-        /// While <i>keys</i> are case-sensitive, the case of <i>key</i> characters don't matter
-        /// to DevOps Guru. For example, DevOps Guru works with a <i>key</i> named <code>devops-guru-rds</code>
-        /// and a <i>key</i> named <code>DevOps-Guru-RDS</code>. Possible <i>key</i>/<i>value</i>
-        /// pairs in your application might be <code>Devops-Guru-production-application/RDS</code>
+        /// <code>DevOps-Guru-deployment-application</code> or <code>devops-guru-rds-application</code>.
+        /// When you create a <i>key</i>, the case of characters in the <i>key</i> can be whatever
+        /// you choose. After you create a <i>key</i>, it is case-sensitive. For example, DevOps
+        /// Guru works with a <i>key</i> named <code>devops-guru-rds</code> and a <i>key</i> named
+        /// <code>DevOps-Guru-RDS</code>, and these act as two different <i>keys</i>. Possible
+        /// <i>key</i>/<i>value</i> pairs in your application might be <code>Devops-Guru-production-application/RDS</code>
         /// or <code>Devops-Guru-production-application/containers</code>.
         /// </para>
         ///  </important>

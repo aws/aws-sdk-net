@@ -36,9 +36,12 @@ namespace Amazon.ElastiCache.Model
     {
         private AuthTokenUpdateStatus _authTokenStatus;
         private PendingAutomaticFailoverStatus _automaticFailoverStatus;
+        private ClusterMode _clusterMode;
         private List<PendingLogDeliveryConfiguration> _logDeliveryConfigurations = new List<PendingLogDeliveryConfiguration>();
         private string _primaryClusterId;
         private ReshardingStatus _resharding;
+        private bool? _transitEncryptionEnabled;
+        private TransitEncryptionMode _transitEncryptionMode;
         private UserGroupsUpdateStatus _userGroups;
 
         /// <summary>
@@ -75,6 +78,28 @@ namespace Amazon.ElastiCache.Model
         internal bool IsSetAutomaticFailoverStatus()
         {
             return this._automaticFailoverStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ClusterMode. 
+        /// <para>
+        /// Enabled or Disabled. To modify cluster mode from Disabled to Enabled, you must first
+        /// set the cluster mode to Compatible. Compatible mode allows your Redis clients to connect
+        /// using both cluster mode enabled and cluster mode disabled. After you migrate all Redis
+        /// clients to use cluster mode enabled, you can then complete cluster mode configuration
+        /// and set the cluster mode to Enabled.
+        /// </para>
+        /// </summary>
+        public ClusterMode ClusterMode
+        {
+            get { return this._clusterMode; }
+            set { this._clusterMode = value; }
+        }
+
+        // Check to see if ClusterMode property is set
+        internal bool IsSetClusterMode()
+        {
+            return this._clusterMode != null;
         }
 
         /// <summary>
@@ -130,6 +155,43 @@ namespace Amazon.ElastiCache.Model
         internal bool IsSetResharding()
         {
             return this._resharding != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TransitEncryptionEnabled. 
+        /// <para>
+        /// A flag that enables in-transit encryption when set to true.
+        /// </para>
+        /// </summary>
+        public bool TransitEncryptionEnabled
+        {
+            get { return this._transitEncryptionEnabled.GetValueOrDefault(); }
+            set { this._transitEncryptionEnabled = value; }
+        }
+
+        // Check to see if TransitEncryptionEnabled property is set
+        internal bool IsSetTransitEncryptionEnabled()
+        {
+            return this._transitEncryptionEnabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TransitEncryptionMode. 
+        /// <para>
+        /// A setting that allows you to migrate your clients to use in-transit encryption, with
+        /// no downtime.
+        /// </para>
+        /// </summary>
+        public TransitEncryptionMode TransitEncryptionMode
+        {
+            get { return this._transitEncryptionMode; }
+            set { this._transitEncryptionMode = value; }
+        }
+
+        // Check to see if TransitEncryptionMode property is set
+        internal bool IsSetTransitEncryptionMode()
+        {
+            return this._transitEncryptionMode != null;
         }
 
         /// <summary>

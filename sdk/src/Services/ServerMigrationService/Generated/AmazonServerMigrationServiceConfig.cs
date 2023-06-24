@@ -17,22 +17,22 @@
  * Do not modify this file. This file is generated from the sms-2016-10-24.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
-
+using Amazon.ServerMigrationService.Internal;
 
 namespace Amazon.ServerMigrationService
 {
     /// <summary>
     /// Configuration for accessing Amazon ServerMigrationService service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonServerMigrationServiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.105");
+            InternalSDKUtils.BuildUserAgentString("3.7.101.44");
 
         private string _userAgent = UserAgentString;
 
@@ -40,8 +40,10 @@ namespace Amazon.ServerMigrationService
         /// Default constructor
         /// </summary>
         public AmazonServerMigrationServiceConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonServerMigrationServiceDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "sms";
+            this.EndpointProvider = new AmazonServerMigrationServiceEndpointProvider();
         }
 
         /// <summary>
@@ -76,5 +78,6 @@ namespace Amazon.ServerMigrationService
                 return _userAgent;
             }
         }
+
     }
 }

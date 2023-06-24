@@ -37,17 +37,27 @@ namespace Amazon.RDS.Model
     /// for this API are one of CIDR range, EC2SecurityGroupId for VPC, or (EC2SecurityGroupOwnerId
     /// and either EC2SecurityGroupName or EC2SecurityGroupId for non-VPC).
     /// 
-    ///  <note> 
+    ///  
     /// <para>
     /// You can't authorize ingress from an EC2 security group in one Amazon Web Services
     /// Region to an Amazon RDS DB instance in another. You can't authorize ingress from a
     /// VPC security group in one VPC to an Amazon RDS DB instance in another.
     /// </para>
-    ///  </note> 
+    ///  
     /// <para>
     /// For an overview of CIDR ranges, go to the <a href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Wikipedia
-    /// Tutorial</a>. 
+    /// Tutorial</a>.
     /// </para>
+    ///  <note> 
+    /// <para>
+    /// EC2-Classic was retired on August 15, 2022. If you haven't migrated from EC2-Classic
+    /// to a VPC, we recommend that you migrate as soon as possible. For more information,
+    /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+    /// from EC2-Classic to a VPC</a> in the <i>Amazon EC2 User Guide</i>, the blog <a href="http://aws.amazon.com/blogs/aws/ec2-classic-is-retiring-heres-how-to-prepare/">EC2-Classic
+    /// Networking is Retiring – Here’s How to Prepare</a>, and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.Non-VPC2VPC.html">Moving
+    /// a DB instance not in a VPC into a VPC</a> in the <i>Amazon RDS User Guide</i>.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class AuthorizeDBSecurityGroupIngressRequest : AmazonRDSRequest
     {
@@ -111,9 +121,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property EC2SecurityGroupId. 
         /// <para>
-        ///  Id of the EC2 security group to authorize. For VPC DB security groups, <code>EC2SecurityGroupId</code>
+        /// Id of the EC2 security group to authorize. For VPC DB security groups, <code>EC2SecurityGroupId</code>
         /// must be provided. Otherwise, <code>EC2SecurityGroupOwnerId</code> and either <code>EC2SecurityGroupName</code>
-        /// or <code>EC2SecurityGroupId</code> must be provided. 
+        /// or <code>EC2SecurityGroupId</code> must be provided.
         /// </para>
         /// </summary>
         public string EC2SecurityGroupId
@@ -131,9 +141,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property EC2SecurityGroupName. 
         /// <para>
-        ///  Name of the EC2 security group to authorize. For VPC DB security groups, <code>EC2SecurityGroupId</code>
+        /// Name of the EC2 security group to authorize. For VPC DB security groups, <code>EC2SecurityGroupId</code>
         /// must be provided. Otherwise, <code>EC2SecurityGroupOwnerId</code> and either <code>EC2SecurityGroupName</code>
-        /// or <code>EC2SecurityGroupId</code> must be provided. 
+        /// or <code>EC2SecurityGroupId</code> must be provided.
         /// </para>
         /// </summary>
         public string EC2SecurityGroupName
@@ -151,11 +161,11 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property EC2SecurityGroupOwnerId. 
         /// <para>
-        ///  Amazon Web Services account number of the owner of the EC2 security group specified
+        /// Amazon Web Services account number of the owner of the EC2 security group specified
         /// in the <code>EC2SecurityGroupName</code> parameter. The Amazon Web Services access
         /// key ID isn't an acceptable value. For VPC DB security groups, <code>EC2SecurityGroupId</code>
         /// must be provided. Otherwise, <code>EC2SecurityGroupOwnerId</code> and either <code>EC2SecurityGroupName</code>
-        /// or <code>EC2SecurityGroupId</code> must be provided. 
+        /// or <code>EC2SecurityGroupId</code> must be provided.
         /// </para>
         /// </summary>
         public string EC2SecurityGroupOwnerId

@@ -34,7 +34,7 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ComputeResource Marshaller
-    /// </summary>       
+    /// </summary>
     public class ComputeResourceMarshaller : IRequestMarshaller<ComputeResource, JsonMarshallerContext> 
     {
         /// <summary>
@@ -189,7 +189,7 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ComputeResourceMarshaller Instance = new ComputeResourceMarshaller();
 
     }

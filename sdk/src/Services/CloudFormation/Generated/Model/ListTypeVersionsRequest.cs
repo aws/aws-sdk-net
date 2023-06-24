@@ -85,7 +85,7 @@ namespace Amazon.CloudFormation.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>DEPRECATED</code>: The extension version has been deregistered and can no longer
-        /// be used in CloudFormation operations. 
+        /// be used in CloudFormation operations.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -156,7 +156,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// Extensions published by Amazon are not assigned a publisher ID.
+        /// Extensions published by Amazon aren't assigned a publisher ID.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=40)]

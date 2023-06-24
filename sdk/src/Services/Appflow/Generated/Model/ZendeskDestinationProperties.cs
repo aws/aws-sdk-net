@@ -56,7 +56,7 @@ namespace Amazon.Appflow.Model
         /// <summary>
         /// Gets and sets the property IdFieldNames.
         /// </summary>
-        [AWSProperty(Min=0, Max=1)]
+        [AWSProperty(Min=0)]
         public List<string> IdFieldNames
         {
             get { return this._idFieldNames; }

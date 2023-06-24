@@ -70,6 +70,12 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
                     unmarshalledObject.PublicAccess = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("vpcConnectivity", targetDepth))
+                {
+                    var unmarshaller = VpcConnectivityUnmarshaller.Instance;
+                    unmarshalledObject.VpcConnectivity = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

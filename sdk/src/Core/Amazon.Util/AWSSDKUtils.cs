@@ -116,6 +116,11 @@ namespace Amazon.Util
         /// </summary>
         private static string ValidPathCharacters = DetermineValidPathCharacters();
 
+        /// <summary>
+        /// The set of characters which are not to be encoded as part of the X-Amzn-Trace-Id header values
+        /// </summary>
+        public const string ValidTraceIdHeaderValueCharacters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-=;:+&[]{}\"',";
+
         // Checks which path characters should not be encoded
         // This set will be different for .NET 4 and .NET 4.5, as
         // per http://msdn.microsoft.com/en-us/library/hh367887%28v=vs.110%29.aspx
@@ -290,6 +295,7 @@ namespace Amazon.Util
         /// path will follow suit.
         /// </remarks>
         /// <returns>Canonicalized resource path for the endpoint</returns>
+        [Obsolete("Use CanonicalizeResourcePathV2 instead")]
         public static string CanonicalizeResourcePath(Uri endpoint, string resourcePath)
         {
             // This overload is kept for backward compatibility in existing code bases.
@@ -308,6 +314,7 @@ namespace Amazon.Util
         /// path will follow suit.
         /// </remarks>
         /// <returns>Canonicalized resource path for the endpoint</returns>
+        [Obsolete("Use CanonicalizeResourcePathV2 instead")]
         public static string CanonicalizeResourcePath(Uri endpoint, string resourcePath, bool detectPreEncode)
         {
             // This overload is kept for backward compatibility in existing code bases.
@@ -328,6 +335,7 @@ namespace Amazon.Util
         /// path will follow suit.
         /// </remarks>
         /// <returns>Canonicalized resource path for the endpoint</returns>
+        [Obsolete("Use CanonicalizeResourcePathV2 instead")]
         public static string CanonicalizeResourcePath(Uri endpoint, string resourcePath, bool detectPreEncode, IDictionary<string, string> pathResources, int marshallerVersion)
         {
             if (endpoint != null)
@@ -364,6 +372,59 @@ namespace Amazon.Util
                     
                     pathWasPreEncoded = true;
                 }
+            }
+
+            var canonicalizedResourcePath = AWSSDKUtils.JoinResourcePathSegments(encodedSegments, false);
+
+            // Get the logger each time (it's cached) because we shouldn't store it in a static variable.
+            Logger.GetLogger(typeof(AWSSDKUtils)).DebugFormat("{0} encoded {1}{2} for canonicalization: {3}",
+                pathWasPreEncoded ? "Double" : "Single",
+                resourcePath,
+                endpoint == null ? "" : " with endpoint " + endpoint.AbsoluteUri,
+                canonicalizedResourcePath);
+
+            return canonicalizedResourcePath;
+        }
+
+        /// <summary>
+        /// Returns the canonicalized resource path for the service endpoint.
+        /// </summary>
+        /// <param name="endpoint">Endpoint URL for the request.</param>
+        /// <param name="resourcePath">Resource path for the request.</param>
+        /// <param name="encode">If true will URL-encode path segments including "/". "S3" is currently the only service that does not expect pre URL-encoded segments.</param>
+        /// <param name="pathResources">Dictionary of key/value parameters containing the values for the ResourcePath key replacements.</param>
+        /// <remarks>If resourcePath begins or ends with slash, the resulting canonicalized path will follow suit.</remarks>
+        /// <returns>Canonicalized resource path for the endpoint.</returns>
+        public static string CanonicalizeResourcePathV2(Uri endpoint, string resourcePath, bool encode, IDictionary<string, string> pathResources)
+        {
+            if (endpoint != null)
+            {
+                var path = endpoint.AbsolutePath;
+                if (string.IsNullOrEmpty(path) || string.Equals(path, Slash, StringComparison.Ordinal))
+                    path = string.Empty;
+
+                if (!string.IsNullOrEmpty(resourcePath) && resourcePath.StartsWith(Slash, StringComparison.Ordinal))
+                    resourcePath = resourcePath.Substring(1);
+
+                if (!string.IsNullOrEmpty(resourcePath))
+                    path = path + Slash + resourcePath;
+
+                resourcePath = path;
+            }
+
+            if (string.IsNullOrEmpty(resourcePath))
+                return Slash;
+
+            IEnumerable<string> encodedSegments = AWSSDKUtils.SplitResourcePathIntoSegments(resourcePath, pathResources);
+
+            var pathWasPreEncoded = false;
+            if (encode)
+            {
+                if (endpoint == null)
+                    throw new ArgumentNullException(nameof(endpoint), "A non-null endpoint is necessary to decide whether or not to pre URL encode.");
+
+                encodedSegments = encodedSegments.Select(segment => UrlEncode(segment, true).Replace(Slash, EncodedSlash));
+                pathWasPreEncoded = true;
             }
 
             var canonicalizedResourcePath = AWSSDKUtils.JoinResourcePathSegments(encodedSegments, false);
@@ -1013,6 +1074,30 @@ namespace Amazon.Util
         }
 
         /// <summary>
+        /// Percent encodes the X-Amzn-Trace-Id header value skipping any characters within the
+        /// ValidTraceIdHeaderValueCharacters character set.
+        /// </summary>
+        /// <param name="value">The X-Amzn-Trace-Id header value to encode.</param>
+        /// <returns>An encoded X-Amzn-Trace-Id header value.</returns>
+        internal static string EncodeTraceIdHeaderValue(string value)
+        {
+            var encoded = new StringBuilder(value.Length * 2);
+            foreach (char symbol in System.Text.Encoding.UTF8.GetBytes(value))
+            {
+                if (ValidTraceIdHeaderValueCharacters.IndexOf(symbol) != -1)
+                {
+                    encoded.Append(symbol);
+                }
+                else
+                {
+                    encoded.Append("%").Append(string.Format(CultureInfo.InvariantCulture, "{0:X2}", (int)symbol));
+                }
+            }
+
+            return encoded.ToString();
+        }
+
+        /// <summary>
         /// URL encodes a string per the specified RFC with the exception of preserving the encoding of previously encoded slashes.
         /// If the path property is specified, the accepted path characters {/+:} are not encoded. 
         /// </summary>
@@ -1027,7 +1112,7 @@ namespace Amazon.Util
                 return data;
             }
 
-            var index = 0;                                    
+            var index = 0;
             var sb = new StringBuilder();
             var findIndex = data.IndexOf(EncodedSlash, index, StringComparison.OrdinalIgnoreCase);
             while (findIndex != -1)
@@ -1092,7 +1177,26 @@ namespace Amazon.Util
         public static string GenerateChecksumForContent(string content, bool fBase64Encode)
         {
             // Convert the input string to a byte array and compute the hash.
-            byte[] hashed = CryptoUtilFactory.CryptoInstance.ComputeMD5Hash(Encoding.UTF8.GetBytes(content));
+            return GenerateChecksumForBytes(Encoding.UTF8.GetBytes(content), fBase64Encode);
+        }
+
+        /// <summary>
+        /// Generates an MD5 Digest for the given byte array
+        /// </summary>
+        /// <param name="content">The content for which the MD5 Digest needs
+        /// to be computed.
+        /// </param>
+        /// <param name="fBase64Encode">Whether the returned checksum should be
+        /// base64 encoded.
+        /// </param>
+        /// <returns>A string representation of the hash with or w/o base64 encoding
+        /// </returns>
+        public static string GenerateChecksumForBytes(byte[] content, bool fBase64Encode)
+        {
+
+            var hashed = content != null ?
+                CryptoUtilFactory.CryptoInstance.ComputeMD5Hash(content) :
+                CryptoUtilFactory.CryptoInstance.ComputeMD5Hash(ArrayEx.Empty<byte>());
 
             if (fBase64Encode)
             {
@@ -1220,7 +1324,7 @@ namespace Amazon.Util
                 return AsyncHelpers.RunSync<string>(() =>
                 {
                     return client.GetStringAsync(uri);
-                });             
+                }); 
             }
 #else
             var request = CreateClient(uri, timeout, proxy, null);
@@ -1250,16 +1354,16 @@ namespace Amazon.Util
         {
 #if NETSTANDARD
             using (var client = CreateClient(uri, timeout, proxy, headers))
-            {                   
+            {           
                 var response = AsyncHelpers.RunSync<HttpResponseMessage>(() =>
                 {
                     var requestMessage = new HttpRequestMessage(new HttpMethod(requestType), uri);
                     if(!string.IsNullOrEmpty(content))
                     {
-                        requestMessage.Content = new StringContent(content);                     
+                        requestMessage.Content = new StringContent(content);         
                     }
                                 
-                    return client.SendAsync(requestMessage);                    
+                    return client.SendAsync(requestMessage);        
                 });
 
                 try
@@ -1278,8 +1382,8 @@ namespace Amazon.Util
                 try
                 {
                     return AsyncHelpers.RunSync<string>(() =>
-                    {                    
-                        return response.Content.ReadAsStringAsync();                    
+                    {
+                        return response.Content.ReadAsStringAsync();        
                     });
                 }
                 finally 
@@ -1333,7 +1437,7 @@ namespace Amazon.Util
                 }
             }
                                 
-            return client;            
+            return client;
         }
 #else
         private static HttpWebRequest CreateClient(Uri uri, TimeSpan timeout, IWebProxy proxy, IDictionary<string, string> headers)
@@ -1434,14 +1538,14 @@ namespace Amazon.Util
                 thread.Start();
                 var standardError = process.StandardError.ReadToEnd();
                 thread.Join();
-                process.WaitForExit();                
+                process.WaitForExit();    
 
                 return new ProcessExecutionResult
                 {
                     ExitCode = process.ExitCode,
                     StandardError = standardError,
                     StandardOutput = standardOutput
-                };                
+                };    
             }
         }
 #if AWS_ASYNC_API
@@ -1458,7 +1562,7 @@ namespace Amazon.Util
                 var tcs = new TaskCompletionSource<object>();
                 process.Exited += (s, ea) => tcs.SetResult(null);
                 logger.InfoFormat("Starting a process with the following ProcessInfo: UseShellExecute - {0} RedirectStandardError - {1}, RedirectStandardOutput - {2}, CreateNoWindow - {3}",  
-                    processStartInfo.UseShellExecute, processStartInfo.RedirectStandardError, processStartInfo.RedirectStandardOutput, processStartInfo.CreateNoWindow);                
+                    processStartInfo.UseShellExecute, processStartInfo.RedirectStandardError, processStartInfo.RedirectStandardOutput, processStartInfo.CreateNoWindow);    
                 process.Start();
                 logger.InfoFormat("Process started");
 

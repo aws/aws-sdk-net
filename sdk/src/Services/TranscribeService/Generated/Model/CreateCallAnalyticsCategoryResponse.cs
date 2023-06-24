@@ -38,7 +38,7 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property CategoryProperties. 
         /// <para>
-        /// The rules and associated metadata used to create a category.
+        /// Provides you with the properties of your new category, including its associated rules.
         /// </para>
         /// </summary>
         public CategoryProperties CategoryProperties

@@ -34,7 +34,7 @@ namespace Amazon.IoTDeviceAdvisor.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DeviceUnderTest Marshaller
-    /// </summary>       
+    /// </summary>
     public class DeviceUnderTestMarshaller : IRequestMarshaller<DeviceUnderTest, JsonMarshallerContext> 
     {
         /// <summary>
@@ -51,6 +51,12 @@ namespace Amazon.IoTDeviceAdvisor.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.CertificateArn);
             }
 
+            if(requestObject.IsSetDeviceRoleArn())
+            {
+                context.Writer.WritePropertyName("deviceRoleArn");
+                context.Writer.Write(requestObject.DeviceRoleArn);
+            }
+
             if(requestObject.IsSetThingArn())
             {
                 context.Writer.WritePropertyName("thingArn");
@@ -61,7 +67,7 @@ namespace Amazon.IoTDeviceAdvisor.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DeviceUnderTestMarshaller Instance = new DeviceUnderTestMarshaller();
 
     }

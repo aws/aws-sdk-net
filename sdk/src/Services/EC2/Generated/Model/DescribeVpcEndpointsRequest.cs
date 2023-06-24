@@ -30,7 +30,7 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeVpcEndpoints operation.
-    /// Describes one or more of your VPC endpoints.
+    /// Describes your VPC endpoints.
     /// </summary>
     public partial class DescribeVpcEndpointsRequest : AmazonEC2Request
     {
@@ -42,11 +42,28 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// One or more filters.
+        /// The filters.
         /// </para>
         ///  <ul> <li> 
         /// <para>
+        ///  <code>ip-address-type</code> - The IP address type (<code>ipv4</code> | <code>ipv6</code>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>service-name</code> - The name of the service.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the
+        /// resource. Use the tag key in the filter name and the tag value as the filter value.
+        /// For example, to find all resources that have a tag with the key <code>Owner</code>
+        /// and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name
+        /// and <code>TeamA</code> for the filter value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter
+        /// to find all resources assigned a tag with a specific key, regardless of the tag value.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -66,19 +83,6 @@ namespace Amazon.EC2.Model
         /// <para>
         ///  <code>vpc-endpoint-type</code> - The type of VPC endpoint (<code>Interface</code>
         /// | <code>Gateway</code> | <code>GatewayLoadBalancer</code>).
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the
-        /// resource. Use the tag key in the filter name and the tag value as the filter value.
-        /// For example, to find all resources that have a tag with the key <code>Owner</code>
-        /// and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name
-        /// and <code>TeamA</code> for the filter value.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter
-        /// to find all resources assigned a tag with a specific key, regardless of the tag value.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -139,7 +143,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property VpcEndpointIds. 
         /// <para>
-        /// One or more endpoint IDs.
+        /// The IDs of the VPC endpoints.
         /// </para>
         /// </summary>
         public List<string> VpcEndpointIds

@@ -129,6 +129,10 @@ namespace Amazon.EKS
         /// </summary>
         public static readonly AddonStatus DELETING = new AddonStatus("DELETING");
         /// <summary>
+        /// Constant UPDATE_FAILED for AddonStatus
+        /// </summary>
+        public static readonly AddonStatus UPDATE_FAILED = new AddonStatus("UPDATE_FAILED");
+        /// <summary>
         /// Constant UPDATING for AddonStatus
         /// </summary>
         public static readonly AddonStatus UPDATING = new AddonStatus("UPDATING");
@@ -191,13 +195,37 @@ namespace Amazon.EKS
         /// </summary>
         public static readonly AMITypes BOTTLEROCKET_ARM_64 = new AMITypes("BOTTLEROCKET_ARM_64");
         /// <summary>
+        /// Constant BOTTLEROCKET_ARM_64_NVIDIA for AMITypes
+        /// </summary>
+        public static readonly AMITypes BOTTLEROCKET_ARM_64_NVIDIA = new AMITypes("BOTTLEROCKET_ARM_64_NVIDIA");
+        /// <summary>
         /// Constant BOTTLEROCKET_x86_64 for AMITypes
         /// </summary>
         public static readonly AMITypes BOTTLEROCKET_x86_64 = new AMITypes("BOTTLEROCKET_x86_64");
         /// <summary>
+        /// Constant BOTTLEROCKET_x86_64_NVIDIA for AMITypes
+        /// </summary>
+        public static readonly AMITypes BOTTLEROCKET_x86_64_NVIDIA = new AMITypes("BOTTLEROCKET_x86_64_NVIDIA");
+        /// <summary>
         /// Constant CUSTOM for AMITypes
         /// </summary>
         public static readonly AMITypes CUSTOM = new AMITypes("CUSTOM");
+        /// <summary>
+        /// Constant WINDOWS_CORE_2019_x86_64 for AMITypes
+        /// </summary>
+        public static readonly AMITypes WINDOWS_CORE_2019_x86_64 = new AMITypes("WINDOWS_CORE_2019_x86_64");
+        /// <summary>
+        /// Constant WINDOWS_CORE_2022_x86_64 for AMITypes
+        /// </summary>
+        public static readonly AMITypes WINDOWS_CORE_2022_x86_64 = new AMITypes("WINDOWS_CORE_2022_x86_64");
+        /// <summary>
+        /// Constant WINDOWS_FULL_2019_x86_64 for AMITypes
+        /// </summary>
+        public static readonly AMITypes WINDOWS_FULL_2019_x86_64 = new AMITypes("WINDOWS_FULL_2019_x86_64");
+        /// <summary>
+        /// Constant WINDOWS_FULL_2022_x86_64 for AMITypes
+        /// </summary>
+        public static readonly AMITypes WINDOWS_FULL_2022_x86_64 = new AMITypes("WINDOWS_FULL_2022_x86_64");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -278,6 +306,72 @@ namespace Amazon.EKS
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator CapacityTypes(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ClusterIssueCode.
+    /// </summary>
+    public class ClusterIssueCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AccessDenied for ClusterIssueCode
+        /// </summary>
+        public static readonly ClusterIssueCode AccessDenied = new ClusterIssueCode("AccessDenied");
+        /// <summary>
+        /// Constant ClusterUnreachable for ClusterIssueCode
+        /// </summary>
+        public static readonly ClusterIssueCode ClusterUnreachable = new ClusterIssueCode("ClusterUnreachable");
+        /// <summary>
+        /// Constant ConfigurationConflict for ClusterIssueCode
+        /// </summary>
+        public static readonly ClusterIssueCode ConfigurationConflict = new ClusterIssueCode("ConfigurationConflict");
+        /// <summary>
+        /// Constant InternalFailure for ClusterIssueCode
+        /// </summary>
+        public static readonly ClusterIssueCode InternalFailure = new ClusterIssueCode("InternalFailure");
+        /// <summary>
+        /// Constant ResourceLimitExceeded for ClusterIssueCode
+        /// </summary>
+        public static readonly ClusterIssueCode ResourceLimitExceeded = new ClusterIssueCode("ResourceLimitExceeded");
+        /// <summary>
+        /// Constant ResourceNotFound for ClusterIssueCode
+        /// </summary>
+        public static readonly ClusterIssueCode ResourceNotFound = new ClusterIssueCode("ResourceNotFound");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ClusterIssueCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ClusterIssueCode FindValue(string value)
+        {
+            return FindValue<ClusterIssueCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ClusterIssueCode(string value)
         {
             return FindValue(value);
         }
@@ -655,6 +749,56 @@ namespace Amazon.EKS
 
 
     /// <summary>
+    /// Constants used for properties of type IpFamily.
+    /// </summary>
+    public class IpFamily : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Ipv4 for IpFamily
+        /// </summary>
+        public static readonly IpFamily Ipv4 = new IpFamily("ipv4");
+        /// <summary>
+        /// Constant Ipv6 for IpFamily
+        /// </summary>
+        public static readonly IpFamily Ipv6 = new IpFamily("ipv6");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public IpFamily(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IpFamily FindValue(string value)
+        {
+            return FindValue<IpFamily>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IpFamily(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type LogType.
     /// </summary>
     public class LogType : ConstantClass
@@ -762,6 +906,10 @@ namespace Amazon.EKS
         /// Constant Ec2SubnetInvalidConfiguration for NodegroupIssueCode
         /// </summary>
         public static readonly NodegroupIssueCode Ec2SubnetInvalidConfiguration = new NodegroupIssueCode("Ec2SubnetInvalidConfiguration");
+        /// <summary>
+        /// Constant Ec2SubnetMissingIpv6Assignment for NodegroupIssueCode
+        /// </summary>
+        public static readonly NodegroupIssueCode Ec2SubnetMissingIpv6Assignment = new NodegroupIssueCode("Ec2SubnetMissingIpv6Assignment");
         /// <summary>
         /// Constant Ec2SubnetNotFound for NodegroupIssueCode
         /// </summary>
@@ -914,6 +1062,10 @@ namespace Amazon.EKS
         /// Constant OVERWRITE for ResolveConflicts
         /// </summary>
         public static readonly ResolveConflicts OVERWRITE = new ResolveConflicts("OVERWRITE");
+        /// <summary>
+        /// Constant PRESERVE for ResolveConflicts
+        /// </summary>
+        public static readonly ResolveConflicts PRESERVE = new ResolveConflicts("PRESERVE");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

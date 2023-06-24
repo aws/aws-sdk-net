@@ -30,7 +30,41 @@ namespace Amazon.AuditManager.Model
 {
     /// <summary>
     /// Container for the parameters to the BatchImportEvidenceToAssessmentControl operation.
-    /// Uploads one or more pieces of evidence to a control in an Audit Manager assessment.
+    /// Adds one or more pieces of evidence to a control in an Audit Manager assessment. 
+    /// 
+    ///  
+    /// <para>
+    /// You can import manual evidence from any S3 bucket by specifying the S3 URI of the
+    /// object. You can also upload a file from your browser, or enter plain text in response
+    /// to a risk assessment question. 
+    /// </para>
+    ///  
+    /// <para>
+    /// The following restrictions apply to this action:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <code>manualEvidence</code> can be only one of the following: <code>evidenceFileName</code>,
+    /// <code>s3ResourcePath</code>, or <code>textResponse</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Maximum size of an individual evidence file: 100 MB
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Number of daily manual evidence uploads per control: 100
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Supported file formats: See <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/upload-evidence.html#supported-manual-evidence-files">Supported
+    /// file types for manual evidence</a> in the <i>Audit Manager User Guide</i> 
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// For more information about Audit Manager service restrictions, see <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/service-quotas.html">Quotas
+    /// and restrictions for Audit Manager</a>.
+    /// </para>
     /// </summary>
     public partial class BatchImportEvidenceToAssessmentControlRequest : AmazonAuditManagerRequest
     {

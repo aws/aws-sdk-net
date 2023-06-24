@@ -37,6 +37,7 @@ namespace Amazon.RAM.Model
     {
         private int? _maxResults;
         private string _nextToken;
+        private PermissionTypeFilter _permissionType;
         private string _resourceType;
 
         /// <summary>
@@ -87,10 +88,49 @@ namespace Amazon.RAM.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PermissionType. 
+        /// <para>
+        /// Specifies that you want to list only permissions of this type:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>AWS</code> – returns only Amazon Web Services managed permissions.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>LOCAL</code> – returns only customer managed permissions
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ALL</code> – returns both Amazon Web Services managed permissions and customer
+        /// managed permissions.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// If you don't specify this parameter, the default is <code>All</code>.
+        /// </para>
+        /// </summary>
+        public PermissionTypeFilter PermissionType
+        {
+            get { return this._permissionType; }
+            set { this._permissionType = value; }
+        }
+
+        // Check to see if PermissionType property is set
+        internal bool IsSetPermissionType()
+        {
+            return this._permissionType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// Specifies that you want to list permissions for only the specified resource type.
-        /// For example, to list only permissions that apply to EC2 subnets, specify <code>ec2:Subnet</code>.
+        /// Specifies that you want to list only those permissions that apply to the specified
+        /// resource type. This parameter is not case sensitive.
+        /// </para>
+        ///  
+        /// <para>
+        /// For example, to list only permissions that apply to Amazon EC2 subnets, specify <code>ec2:subnet</code>.
         /// You can use the <a>ListResourceTypes</a> operation to get the specific string required.
         /// </para>
         /// </summary>

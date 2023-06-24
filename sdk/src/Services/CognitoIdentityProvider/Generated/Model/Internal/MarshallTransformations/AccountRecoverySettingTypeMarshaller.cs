@@ -34,7 +34,7 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AccountRecoverySettingType Marshaller
-    /// </summary>       
+    /// </summary>
     public class AccountRecoverySettingTypeMarshaller : IRequestMarshaller<AccountRecoverySettingType, JsonMarshallerContext> 
     {
         /// <summary>
@@ -65,7 +65,7 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AccountRecoverySettingTypeMarshaller Instance = new AccountRecoverySettingTypeMarshaller();
 
     }

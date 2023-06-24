@@ -34,6 +34,7 @@ namespace Amazon.LexRuntimeV2.Model
     public partial class Slot
     {
         private Shape _shape;
+        private Dictionary<string, Slot> _subSlots = new Dictionary<string, Slot>();
         private Value _value;
         private List<Slot> _values = new List<Slot>();
 
@@ -55,6 +56,24 @@ namespace Amazon.LexRuntimeV2.Model
         internal bool IsSetShape()
         {
             return this._shape != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SubSlots. 
+        /// <para>
+        /// The constituent sub slots of a composite slot.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, Slot> SubSlots
+        {
+            get { return this._subSlots; }
+            set { this._subSlots = value; }
+        }
+
+        // Check to see if SubSlots property is set
+        internal bool IsSetSubSlots()
+        {
+            return this._subSlots != null && this._subSlots.Count > 0; 
         }
 
         /// <summary>

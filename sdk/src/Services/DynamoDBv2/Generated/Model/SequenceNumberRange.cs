@@ -40,7 +40,8 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property EndingSequenceNumber. 
         /// <para>
-        /// The last sequence number.
+        /// The last sequence number for the stream records contained within a shard. String contains
+        /// numeric characters only.
         /// </para>
         /// </summary>
         [AWSProperty(Min=21, Max=40)]
@@ -59,7 +60,8 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property StartingSequenceNumber. 
         /// <para>
-        /// The first sequence number.
+        /// The first sequence number for the stream records contained within a shard. String
+        /// contains numeric characters only.
         /// </para>
         /// </summary>
         [AWSProperty(Min=21, Max=40)]

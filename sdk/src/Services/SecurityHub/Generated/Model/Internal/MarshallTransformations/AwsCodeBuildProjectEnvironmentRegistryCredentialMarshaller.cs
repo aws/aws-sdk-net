@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AwsCodeBuildProjectEnvironmentRegistryCredential Marshaller
-    /// </summary>       
+    /// </summary>
     public class AwsCodeBuildProjectEnvironmentRegistryCredentialMarshaller : IRequestMarshaller<AwsCodeBuildProjectEnvironmentRegistryCredential, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AwsCodeBuildProjectEnvironmentRegistryCredentialMarshaller Instance = new AwsCodeBuildProjectEnvironmentRegistryCredentialMarshaller();
 
     }

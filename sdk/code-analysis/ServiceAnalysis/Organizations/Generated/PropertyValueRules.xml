@@ -21,6 +21,11 @@
     <pattern>^h-[0-9a-z]{8,32}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Organizations.Model.CloseAccountRequest.AccountId</property>
+    <max>12</max>
+    <pattern>^\d{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Organizations.Model.CreateAccountRequest.AccountName</property>
     <min>1</min>
     <max>50</max>
@@ -429,7 +434,7 @@
   <property-value-rule>
     <property>Amazon.Organizations.Model.ListTagsForResourceRequest.ResourceId</property>
     <max>130</max>
-    <pattern>^(r-[0-9a-z]{4,32})|(\d{12})|(ou-[0-9a-z]{4,32}-[a-z0-9]{8,32})|(^p-[0-9a-zA-Z_]{8,128})$</pattern>
+    <pattern>^(r-[0-9a-z]{4,32})|(\d{12})|(ou-[0-9a-z]{4,32}-[a-z0-9]{8,32})|(^p-[0-9a-zA-Z_]{8,128})|(^rp-[0-9a-zA-Z_]{4,128})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.ListTagsForResourceResponse.NextToken</property>
@@ -472,6 +477,12 @@
     <pattern>^(r-[0-9a-z]{4,32})|(ou-[0-9a-z]{4,32}-[a-z0-9]{8,32})$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Organizations.Model.PutResourcePolicyRequest.Content</property>
+    <min>1</min>
+    <max>40000</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Organizations.Model.RegisterDelegatedAdministratorRequest.AccountId</property>
     <max>12</max>
     <pattern>^\d{12}$</pattern>
@@ -490,12 +501,12 @@
   <property-value-rule>
     <property>Amazon.Organizations.Model.TagResourceRequest.ResourceId</property>
     <max>130</max>
-    <pattern>^(r-[0-9a-z]{4,32})|(\d{12})|(ou-[0-9a-z]{4,32}-[a-z0-9]{8,32})|(^p-[0-9a-zA-Z_]{8,128})$</pattern>
+    <pattern>^(r-[0-9a-z]{4,32})|(\d{12})|(ou-[0-9a-z]{4,32}-[a-z0-9]{8,32})|(^p-[0-9a-zA-Z_]{8,128})|(^rp-[0-9a-zA-Z_]{4,128})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.UntagResourceRequest.ResourceId</property>
     <max>130</max>
-    <pattern>^(r-[0-9a-z]{4,32})|(\d{12})|(ou-[0-9a-z]{4,32}-[a-z0-9]{8,32})|(^p-[0-9a-zA-Z_]{8,128})$</pattern>
+    <pattern>^(r-[0-9a-z]{4,32})|(\d{12})|(ou-[0-9a-z]{4,32}-[a-z0-9]{8,32})|(^p-[0-9a-zA-Z_]{8,128})|(^rp-[0-9a-zA-Z_]{4,128})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.UpdateOrganizationalUnitRequest.Name</property>
@@ -548,8 +559,8 @@
   <property-value-rule>
     <property>Amazon.Organizations.Model.Account.Name</property>
     <min>1</min>
-    <max>50</max>
-    <pattern>[\u0020-\u007E]+</pattern>
+    <max>128</max>
+    <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.Child.Id</property>
@@ -595,8 +606,8 @@
   <property-value-rule>
     <property>Amazon.Organizations.Model.DelegatedAdministrator.Name</property>
     <min>1</min>
-    <max>50</max>
-    <pattern>[\u0020-\u007E]+</pattern>
+    <max>128</max>
+    <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.DelegatedService.ServicePrincipal</property>
@@ -723,6 +734,21 @@
     <property>Amazon.Organizations.Model.PolicyTargetSummary.TargetId</property>
     <max>100</max>
     <pattern>^(r-[0-9a-z]{4,32})|(\d{12})|(ou-[0-9a-z]{4,32}-[a-z0-9]{8,32})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Organizations.Model.ResourcePolicy.Content</property>
+    <min>1</min>
+    <max>40000</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Organizations.Model.ResourcePolicySummary.Arn</property>
+    <pattern>^arn:[a-z0-9][a-z0-9-.]{0,62}:organizations::\d{12}:resourcepolicy\/o-[a-z0-9]{10,32}\/rp-[0-9a-zA-Z_]{4,128}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Organizations.Model.ResourcePolicySummary.Id</property>
+    <max>131</max>
+    <pattern>^rp-[0-9a-zA-Z_]{4,128}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.Root.Arn</property>

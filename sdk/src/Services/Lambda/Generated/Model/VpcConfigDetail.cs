@@ -40,7 +40,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property SecurityGroupIds. 
         /// <para>
-        /// A list of VPC security groups IDs.
+        /// A list of VPC security group IDs.
         /// </para>
         /// </summary>
         [AWSProperty(Max=5)]

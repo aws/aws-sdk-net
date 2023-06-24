@@ -58,7 +58,7 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
             string target = "AWSShield_20160616.ListProtections";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-06-02";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-06-02";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -67,6 +67,17 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetInclusionFilters())
+                {
+                    context.Writer.WritePropertyName("InclusionFilters");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = InclusionProtectionFiltersMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.InclusionFilters, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetMaxResults())
                 {
                     context.Writer.WritePropertyName("MaxResults");
@@ -79,7 +90,6 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.NextToken);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

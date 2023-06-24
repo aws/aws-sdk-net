@@ -43,6 +43,7 @@ namespace Amazon.Lightsail.Model
     {
         private ContainerServiceDeploymentRequest _deployment;
         private ContainerServicePowerName _power;
+        private PrivateRegistryAccessRequest _privateRegistryAccess;
         private Dictionary<string, List<string>> _publicDomainNames = new Dictionary<string, List<string>>();
         private int? _scale;
         private string _serviceName;
@@ -104,6 +105,32 @@ namespace Amazon.Lightsail.Model
         internal bool IsSetPower()
         {
             return this._power != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PrivateRegistryAccess. 
+        /// <para>
+        /// An object to describe the configuration for the container service to access private
+        /// container image repositories, such as Amazon Elastic Container Registry (Amazon ECR)
+        /// private repositories.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-container-service-ecr-private-repo-access">Configuring
+        /// access to an Amazon ECR private repository for an Amazon Lightsail container service</a>
+        /// in the <i>Amazon Lightsail Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        public PrivateRegistryAccessRequest PrivateRegistryAccess
+        {
+            get { return this._privateRegistryAccess; }
+            set { this._privateRegistryAccess = value; }
+        }
+
+        // Check to see if PrivateRegistryAccess property is set
+        internal bool IsSetPrivateRegistryAccess()
+        {
+            return this._privateRegistryAccess != null;
         }
 
         /// <summary>
@@ -184,8 +211,8 @@ namespace Amazon.Lightsail.Model
         /// The name that you specify for your container service will make up part of its default
         /// domain. The default domain of a container service is typically <code>https://&lt;ServiceName&gt;.&lt;RandomGUID&gt;.&lt;AWSRegion&gt;.cs.amazonlightsail.com</code>.
         /// If the name of your container service is <code>container-service-1</code>, and it's
-        /// located in the US East (Ohio) AWS region (<code>us-east-2</code>), then the domain
-        /// for your container service will be like the following example: <code>https://container-service-1.ur4EXAMPLE2uq.us-east-2.cs.amazonlightsail.com</code>
+        /// located in the US East (Ohio) Amazon Web Services Region (<code>us-east-2</code>),
+        /// then the domain for your container service will be like the following example: <code>https://container-service-1.ur4EXAMPLE2uq.us-east-2.cs.amazonlightsail.com</code>
         /// 
         /// </para>
         ///  
@@ -194,7 +221,7 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Must be unique within each AWS Region in your Lightsail account.
+        /// Must be unique within each Amazon Web Services Region in your Lightsail account.
         /// </para>
         ///  </li> <li> 
         /// <para>

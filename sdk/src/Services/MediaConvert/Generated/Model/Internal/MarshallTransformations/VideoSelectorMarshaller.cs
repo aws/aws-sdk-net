@@ -34,7 +34,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// VideoSelector Marshaller
-    /// </summary>       
+    /// </summary>
     public class VideoSelectorMarshaller : IRequestMarshaller<VideoSelector, JsonMarshallerContext> 
     {
         /// <summary>
@@ -63,6 +63,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ColorSpaceUsage);
             }
 
+            if(requestObject.IsSetEmbeddedTimecodeOverride())
+            {
+                context.Writer.WritePropertyName("embeddedTimecodeOverride");
+                context.Writer.Write(requestObject.EmbeddedTimecodeOverride);
+            }
+
             if(requestObject.IsSetHdr10Metadata())
             {
                 context.Writer.WritePropertyName("hdr10Metadata");
@@ -72,6 +78,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 marshaller.Marshall(requestObject.Hdr10Metadata, context);
 
                 context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetPadVideo())
+            {
+                context.Writer.WritePropertyName("padVideo");
+                context.Writer.Write(requestObject.PadVideo);
             }
 
             if(requestObject.IsSetPid())
@@ -102,7 +114,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static VideoSelectorMarshaller Instance = new VideoSelectorMarshaller();
 
     }

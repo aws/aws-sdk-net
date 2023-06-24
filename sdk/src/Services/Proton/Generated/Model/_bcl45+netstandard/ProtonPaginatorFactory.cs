@@ -36,6 +36,30 @@ namespace Amazon.Proton.Model
         }
 
         /// <summary>
+        /// Paginator for ListComponentOutputs operation
+        ///</summary>
+        public IListComponentOutputsPaginator ListComponentOutputs(ListComponentOutputsRequest request) 
+        {
+            return new ListComponentOutputsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListComponentProvisionedResources operation
+        ///</summary>
+        public IListComponentProvisionedResourcesPaginator ListComponentProvisionedResources(ListComponentProvisionedResourcesRequest request) 
+        {
+            return new ListComponentProvisionedResourcesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListComponents operation
+        ///</summary>
+        public IListComponentsPaginator ListComponents(ListComponentsRequest request) 
+        {
+            return new ListComponentsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListEnvironmentAccountConnections operation
         ///</summary>
         public IListEnvironmentAccountConnectionsPaginator ListEnvironmentAccountConnections(ListEnvironmentAccountConnectionsRequest request) 

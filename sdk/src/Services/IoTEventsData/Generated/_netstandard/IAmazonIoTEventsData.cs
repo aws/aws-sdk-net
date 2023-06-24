@@ -31,15 +31,14 @@ namespace Amazon.IoTEventsData
     /// <summary>
     /// Interface for accessing IoTEventsData
     ///
-    /// AWS IoT Events monitors your equipment or device fleets for failures or changes in
-    /// operation, and triggers actions when such events occur. You can use AWS IoT Events
-    /// Data API commands to send inputs to detectors, list detectors, and view or update
-    /// a detector's status.
+    /// IoT Events monitors your equipment or device fleets for failures or changes in operation,
+    /// and triggers actions when such events occur. You can use IoT Events Data API commands
+    /// to send inputs to detectors, list detectors, and view or update a detector's status.
     /// 
     ///  
     /// <para>
     ///  For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/what-is-iotevents.html">What
-    /// is AWS IoT Events?</a> in the <i>AWS IoT Events Developer Guide</i>.
+    /// is IoT Events?</a> in the <i>IoT Events Developer Guide</i>.
     /// </para>
     /// </summary>
     public partial interface IAmazonIoTEventsData : IAmazonService, IDisposable
@@ -73,6 +72,39 @@ namespace Amazon.IoTEventsData
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/BatchAcknowledgeAlarm">REST API Reference for BatchAcknowledgeAlarm Operation</seealso>
         Task<BatchAcknowledgeAlarmResponse> BatchAcknowledgeAlarmAsync(BatchAcknowledgeAlarmRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  BatchDeleteDetector
+
+
+
+        /// <summary>
+        /// Deletes one or more detectors that were created. When a detector is deleted, its state
+        /// will be cleared and the detector will be removed from the list of detectors. The deleted
+        /// detector will no longer appear if referenced in the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_ListDetectors.html">ListDetectors</a>
+        /// API call.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchDeleteDetector service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchDeleteDetector service method, as returned by IoTEventsData.</returns>
+        /// <exception cref="Amazon.IoTEventsData.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEventsData.Model.InvalidRequestException">
+        /// The request was invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEventsData.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEventsData.Model.ThrottlingException">
+        /// The request could not be completed due to throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/BatchDeleteDetector">REST API Reference for BatchDeleteDetector Operation</seealso>
+        Task<BatchDeleteDetectorResponse> BatchDeleteDetectorAsync(BatchDeleteDetectorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -143,7 +175,7 @@ namespace Amazon.IoTEventsData
 
 
         /// <summary>
-        /// Sends a set of messages to the AWS IoT Events system. Each message payload is transformed
+        /// Sends a set of messages to the IoT Events system. Each message payload is transformed
         /// into the input you specify (<code>"inputName"</code>) and ingested into any detectors
         /// that monitor that input. If multiple messages are sent, the order in which the messages
         /// are processed isn't guaranteed. To guarantee ordering, you must send messages one

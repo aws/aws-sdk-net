@@ -29,5 +29,15 @@ namespace Amazon.S3Outposts.Model
         /// Paginator for ListEndpoints operation
         ///</summary>
         IListEndpointsPaginator ListEndpoints(ListEndpointsRequest request);
+
+        /// <summary>
+        /// Paginator for ListOutpostsWithS3 operation
+        ///</summary>
+        IListOutpostsWithS3Paginator ListOutpostsWithS3(ListOutpostsWithS3Request request);
+
+        /// <summary>
+        /// Paginator for ListSharedEndpoints operation
+        ///</summary>
+        IListSharedEndpointsPaginator ListSharedEndpoints(ListSharedEndpointsRequest request);
     }
 }

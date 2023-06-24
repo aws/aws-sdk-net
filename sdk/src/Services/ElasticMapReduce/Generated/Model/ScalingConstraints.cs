@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
-    /// The upper and lower EC2 instance limits for an automatic scaling policy. Automatic
+    /// The upper and lower Amazon EC2 instance limits for an automatic scaling policy. Automatic
     /// scaling activities triggered by automatic scaling rules will not cause an instance
     /// group to grow above or below these limits.
     /// </summary>
@@ -41,8 +41,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property MaxCapacity. 
         /// <para>
-        /// The upper boundary of EC2 instances in an instance group beyond which scaling activities
-        /// are not allowed to grow. Scale-out activities will not add instances beyond this boundary.
+        /// The upper boundary of Amazon EC2 instances in an instance group beyond which scaling
+        /// activities are not allowed to grow. Scale-out activities will not add instances beyond
+        /// this boundary.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -61,9 +62,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property MinCapacity. 
         /// <para>
-        /// The lower boundary of EC2 instances in an instance group below which scaling activities
-        /// are not allowed to shrink. Scale-in activities will not terminate instances below
-        /// this boundary.
+        /// The lower boundary of Amazon EC2 instances in an instance group below which scaling
+        /// activities are not allowed to shrink. Scale-in activities will not terminate instances
+        /// below this boundary.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

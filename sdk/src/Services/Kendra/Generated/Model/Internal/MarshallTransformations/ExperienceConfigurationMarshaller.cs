@@ -34,7 +34,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ExperienceConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class ExperienceConfigurationMarshaller : IRequestMarshaller<ExperienceConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ExperienceConfigurationMarshaller Instance = new ExperienceConfigurationMarshaller();
 
     }

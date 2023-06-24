@@ -34,7 +34,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// InAppMessageHeaderConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class InAppMessageHeaderConfigMarshaller : IRequestMarshaller<InAppMessageHeaderConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static InAppMessageHeaderConfigMarshaller Instance = new InAppMessageHeaderConfigMarshaller();
 
     }

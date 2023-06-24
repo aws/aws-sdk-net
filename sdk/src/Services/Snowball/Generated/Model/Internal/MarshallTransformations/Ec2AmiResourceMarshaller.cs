@@ -34,7 +34,7 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Ec2AmiResource Marshaller
-    /// </summary>       
+    /// </summary>
     public class Ec2AmiResourceMarshaller : IRequestMarshaller<Ec2AmiResource, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static Ec2AmiResourceMarshaller Instance = new Ec2AmiResourceMarshaller();
 
     }

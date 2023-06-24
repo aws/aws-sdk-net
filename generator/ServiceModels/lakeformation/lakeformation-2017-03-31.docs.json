@@ -3,6 +3,7 @@
   "service": "<fullname>Lake Formation</fullname> <p>Defines the public endpoint for the Lake Formation service.</p>",
   "operations": {
     "AddLFTagsToResource": "<p>Attaches one or more LF-tags to an existing resource.</p>",
+    "AssumeDecoratedRoleWithSAML": "<p>Allows a caller to assume an IAM role decorated as the SAML user specified in the SAML assertion included in the request. This decoration allows Lake Formation to enforce access policies against the SAML users and groups. This API operation requires SAML federation setup in the caller’s account as it can only be called with valid SAML assertions. Lake Formation does not scope down the permission of the assumed role. All permissions attached to the role via the SAML federation setup will be included in the role session. </p> <p> This decorated role is expected to access data in Amazon S3 by getting temporary access from Lake Formation which is authorized via the virtual API <code>GetDataAccess</code>. Therefore, all SAML roles that can be assumed via <code>AssumeDecoratedRoleWithSAML</code> must at a minimum include <code>lakeformation:GetDataAccess</code> in their role policies. A typical IAM policy attached to such a role would look as follows: </p>",
     "BatchGrantPermissions": "<p>Batch operation to grant permissions to the principal.</p>",
     "BatchRevokePermissions": "<p>Batch operation to revoke permissions from the principal.</p>",
     "CancelTransaction": "<p>Attempts to cancel the specified transaction. Returns an exception if the transaction was previously committed.</p>",
@@ -10,12 +11,13 @@
     "CreateDataCellsFilter": "<p>Creates a data cell filter to allow one to grant access to certain columns on certain rows.</p>",
     "CreateLFTag": "<p>Creates an LF-tag with the specified name and values.</p>",
     "DeleteDataCellsFilter": "<p>Deletes a data cell filter.</p>",
-    "DeleteLFTag": "<p>Deletes the specified LF-tag key name. If the attribute key does not exist or the LF-tag does not exist, then the operation will not do anything. If the attribute key exists, then the operation checks if any resources are tagged with this attribute key, if yes, the API throws a 400 Exception with the message \"Delete not allowed\" as the LF-tag key is still attached with resources. You can consider untagging resources with this LF-tag key.</p>",
+    "DeleteLFTag": "<p>Deletes the specified LF-tag given a key name. If the input parameter tag key was not found, then the operation will throw an exception. When you delete an LF-tag, the <code>LFTagPolicy</code> attached to the LF-tag becomes invalid. If the deleted LF-tag was still assigned to any resource, the tag policy attach to the deleted LF-tag will no longer be applied to the resource.</p>",
     "DeleteObjectsOnCancel": "<p>For a specific governed table, provides a list of Amazon S3 objects that will be written during the current transaction and that can be automatically deleted if the transaction is canceled. Without this call, no Amazon S3 objects are automatically deleted when a transaction cancels. </p> <p> The Glue ETL library function <code>write_dynamic_frame.from_catalog()</code> includes an option to automatically call <code>DeleteObjectsOnCancel</code> before writes. For more information, see <a href=\"https://docs.aws.amazon.com/lake-formation/latest/dg/transactions-data-operations.html#rolling-back-writes\">Rolling Back Amazon S3 Writes</a>. </p>",
     "DeregisterResource": "<p>Deregisters the resource as managed by the Data Catalog.</p> <p>When you deregister a path, Lake Formation removes the path from the inline policy attached to your service-linked role.</p>",
     "DescribeResource": "<p>Retrieves the current data access role for the given resource registered in Lake Formation.</p>",
     "DescribeTransaction": "<p>Returns the details of a single transaction.</p>",
     "ExtendTransaction": "<p>Indicates to the service that the specified transaction is still active and should not be treated as idle and aborted.</p> <p>Write transactions that remain idle for a long period are automatically aborted unless explicitly extended.</p>",
+    "GetDataCellsFilter": "<p>Returns a data cells filter.</p>",
     "GetDataLakeSettings": "<p>Retrieves the list of the data lake administrators of a Lake Formation-managed data lake. </p>",
     "GetEffectivePermissionsForPath": "<p>Returns the Lake Formation permissions for a specified table or database resource located at a path in Amazon S3. <code>GetEffectivePermissionsForPath</code> will not return databases and tables if the catalog is encrypted.</p>",
     "GetLFTag": "<p>Returns an LF-tag definition.</p>",
@@ -23,9 +25,11 @@
     "GetQueryStatistics": "<p>Retrieves statistics on the planning and execution of a query.</p>",
     "GetResourceLFTags": "<p>Returns the LF-tags applied to a resource.</p>",
     "GetTableObjects": "<p>Returns the set of Amazon S3 objects that make up the specified governed table. A transaction ID or timestamp can be specified for time-travel queries.</p>",
+    "GetTemporaryGluePartitionCredentials": "<p>This API is identical to <code>GetTemporaryTableCredentials</code> except that this is used when the target Data Catalog resource is of type Partition. Lake Formation restricts the permission of the vended credentials with the same scope down policy which restricts access to a single Amazon S3 prefix.</p>",
+    "GetTemporaryGlueTableCredentials": "<p>Allows a caller in a secure environment to assume a role with permission to access Amazon S3. In order to vend such credentials, Lake Formation assumes the role associated with a registered location, for example an Amazon S3 bucket, with a scope down policy which restricts the access to a single prefix.</p>",
     "GetWorkUnitResults": "<p>Returns the work units resulting from the query. Work units can be executed in any order and in parallel. </p>",
     "GetWorkUnits": "<p>Retrieves the work units generated by the <code>StartQueryPlanning</code> operation.</p>",
-    "GrantPermissions": "<p>Grants permissions to the principal to access metadata in the Data Catalog and data organized in underlying data storage such as Amazon S3.</p> <p>For information about permissions, see <a href=\"https://docs-aws.amazon.com/lake-formation/latest/dg/security-data-access.html\">Security and Access Control to Metadata and Data</a>.</p>",
+    "GrantPermissions": "<p>Grants permissions to the principal to access metadata in the Data Catalog and data organized in underlying data storage such as Amazon S3.</p> <p>For information about permissions, see <a href=\"https://docs.aws.amazon.com/lake-formation/latest/dg/security-data-access.html\">Security and Access Control to Metadata and Data</a>.</p>",
     "ListDataCellsFilter": "<p>Lists all the data cell filters on a table.</p>",
     "ListLFTags": "<p>Lists LF-tags that the requester has permission to view. </p>",
     "ListPermissions": "<p>Returns a list of the principal permissions on the resource, filtered by the permissions of the caller. For example, if you are granted an ALTER permission, you are able to see only the principal permissions for ALTER.</p> <p>This operation returns only those permissions that have been explicitly granted.</p> <p>For information about permissions, see <a href=\"https://docs-aws.amazon.com/lake-formation/latest/dg/security-data-access.html\">Security and Access Control to Metadata and Data</a>.</p>",
@@ -40,6 +44,7 @@
     "SearchTablesByLFTags": "<p>This operation allows a search on <code>TABLE</code> resources by <code>LFTag</code>s. This will be used by admins who want to grant user permissions on certain LF-tags. Before making a grant, the admin can use <code>SearchTablesByLFTags</code> to find all resources where the given <code>LFTag</code>s are valid to verify whether the returned resources can be shared.</p>",
     "StartQueryPlanning": "<p>Submits a request to process a query statement.</p> <p>This operation generates work units that can be retrieved with the <code>GetWorkUnits</code> operation as soon as the query state is WORKUNITS_AVAILABLE or FINISHED.</p>",
     "StartTransaction": "<p>Starts a new transaction and returns its transaction ID. Transaction IDs are opaque objects that you can use to identify a transaction.</p>",
+    "UpdateDataCellsFilter": "<p>Updates a data cell filter.</p>",
     "UpdateLFTag": "<p>Updates the list of possible values for the specified LF-tag key. If the LF-tag does not exist, the operation throws an EntityNotFoundException. The values in the delete key values will be deleted from list of possible values. If any value in the delete key values is attached to a resource, then API errors out with a 400 Exception - \"Update not allowed\". Untag the attribute before deleting the LF-tag key's value. </p>",
     "UpdateResource": "<p>Updates the data access role used for vending access to the given (registered) resource in Lake Formation. </p>",
     "UpdateTableObjects": "<p>Updates the manifest of Amazon S3 objects that make up the specified governed table.</p>",
@@ -49,6 +54,14 @@
     "AccessDeniedException": {
       "base": "<p>Access to a resource was denied.</p>",
       "refs": {
+      }
+    },
+    "AccessKeyIdString": {
+      "base": null,
+      "refs": {
+        "AssumeDecoratedRoleWithSAMLResponse$AccessKeyId": "<p>The access key ID for the temporary credentials. (The access key consists of an access key ID and a secret key).</p>",
+        "GetTemporaryGluePartitionCredentialsResponse$AccessKeyId": "<p>The access key ID for the temporary credentials.</p>",
+        "GetTemporaryGlueTableCredentialsResponse$AccessKeyId": "<p>The access key ID for the temporary credentials.</p>"
       }
     },
     "AddLFTagsToResourceRequest": {
@@ -76,6 +89,35 @@
     "AlreadyExistsException": {
       "base": "<p>A resource to be created or added already exists.</p>",
       "refs": {
+      }
+    },
+    "AssumeDecoratedRoleWithSAMLRequest": {
+      "base": null,
+      "refs": {
+      }
+    },
+    "AssumeDecoratedRoleWithSAMLResponse": {
+      "base": null,
+      "refs": {
+      }
+    },
+    "AuditContext": {
+      "base": "<p>A structure used to include auditing information on the privileged API. </p>",
+      "refs": {
+        "GetTemporaryGluePartitionCredentialsRequest$AuditContext": "<p>A structure representing context to access a resource (column names, query ID, etc).</p>",
+        "GetTemporaryGlueTableCredentialsRequest$AuditContext": "<p>A structure representing context to access a resource (column names, query ID, etc).</p>"
+      }
+    },
+    "AuditContextString": {
+      "base": null,
+      "refs": {
+        "AuditContext$AdditionalAuditContext": "<p>The filter engine can populate the 'AdditionalAuditContext' information with the request ID for you to track. This information will be displayed in CloudTrail log in your account.</p>"
+      }
+    },
+    "AuthorizedSessionTagValueList": {
+      "base": null,
+      "refs": {
+        "DataLakeSettings$AuthorizedSessionTagValueList": "<p>Lake Formation relies on a privileged process secured by Amazon EMR or the third party integrator to tag the user's role while assuming it. Lake Formation will publish the acceptable key-value pair, for example key = \"LakeFormationTrustedCaller\" and value = \"TRUE\" and the third party integrator must properly tag the temporary security credentials that will be used to call Lake Formation's administrative APIs.</p>"
       }
     },
     "BatchGrantPermissionsRequest": {
@@ -155,6 +197,7 @@
         "DeleteDataCellsFilterRequest$TableCatalogId": "<p>The ID of the catalog to which the table belongs.</p>",
         "DeleteLFTagRequest$CatalogId": "<p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>",
         "DeleteObjectsOnCancelRequest$CatalogId": "<p>The Glue data catalog that contains the governed table. Defaults to the current account ID.</p>",
+        "GetDataCellsFilterRequest$TableCatalogId": "<p>The ID of the catalog to which the table belongs.</p>",
         "GetDataLakeSettingsRequest$CatalogId": "<p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>",
         "GetEffectivePermissionsForPathRequest$CatalogId": "<p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>",
         "GetLFTagRequest$CatalogId": "<p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>",
@@ -213,7 +256,7 @@
     "ColumnWildcard": {
       "base": "<p>A wildcard object, consisting of an optional list of excluded column names or indexes.</p>",
       "refs": {
-        "DataCellsFilter$ColumnWildcard": "<p>A wildcard with exclusions.</p>",
+        "DataCellsFilter$ColumnWildcard": "<p>A wildcard with exclusions.</p> <p>You must specify either a <code>ColumnNames</code> list or the <code>ColumnWildCard</code>. </p>",
         "TableWithColumnsResource$ColumnWildcard": "<p>A wildcard specified by a <code>ColumnWildcard</code> object. At least one of <code>ColumnNames</code> or <code>ColumnWildcard</code> is required.</p>"
       }
     },
@@ -258,11 +301,21 @@
       "refs": {
       }
     },
+    "CredentialTimeoutDurationSecondInteger": {
+      "base": null,
+      "refs": {
+        "AssumeDecoratedRoleWithSAMLRequest$DurationSeconds": "<p>The time period, between 900 and 43,200 seconds, for the timeout of the temporary credentials.</p>",
+        "GetTemporaryGluePartitionCredentialsRequest$DurationSeconds": "<p>The time period, between 900 and 21,600 seconds, for the timeout of the temporary credentials.</p>",
+        "GetTemporaryGlueTableCredentialsRequest$DurationSeconds": "<p>The time period, between 900 and 21,600 seconds, for the timeout of the temporary credentials.</p>"
+      }
+    },
     "DataCellsFilter": {
       "base": "<p>A structure that describes certain columns on certain rows.</p>",
       "refs": {
         "CreateDataCellsFilterRequest$TableData": "<p>A <code>DataCellsFilter</code> structure containing information about the data cells filter.</p>",
-        "DataCellsFilterList$member": null
+        "DataCellsFilterList$member": null,
+        "GetDataCellsFilterResponse$DataCellsFilter": "<p>A structure that describes certain columns on certain rows.</p>",
+        "UpdateDataCellsFilterRequest$TableData": "<p>A <code>DataCellsFilter</code> structure containing information about the data cells filter.</p>"
       }
     },
     "DataCellsFilterList": {
@@ -278,7 +331,7 @@
       }
     },
     "DataLakePrincipal": {
-      "base": "<p>The AWS Lake Formation principal. Supported principals are IAM users or IAM roles.</p>",
+      "base": "<p>The Lake Formation principal. Supported principals are IAM users or IAM roles.</p>",
       "refs": {
         "BatchPermissionsRequestEntry$Principal": "<p>The principal to be granted a permission.</p>",
         "DataLakePrincipalList$member": null,
@@ -292,7 +345,8 @@
     "DataLakePrincipalList": {
       "base": null,
       "refs": {
-        "DataLakeSettings$DataLakeAdmins": "<p>A list of Lake Formation principals. Supported principals are IAM users or IAM roles.</p>"
+        "DataLakeSettings$DataLakeAdmins": "<p>A list of Lake Formation principals. Supported principals are IAM users or IAM roles.</p>",
+        "DataLakeSettings$ExternalDataFilteringAllowList": "<p>A list of the account IDs of Amazon Web Services accounts with Amazon EMR clusters that are to perform data filtering.&gt;</p>"
       }
     },
     "DataLakePrincipalString": {
@@ -427,7 +481,7 @@
       }
     },
     "EntityNotFoundException": {
-      "base": "<p>A specified entity does not exist</p>",
+      "base": "<p>A specified entity does not exist.</p>",
       "refs": {
       }
     },
@@ -448,6 +502,14 @@
       "base": "<p>Statistics related to the processing of a query statement.</p>",
       "refs": {
         "GetQueryStatisticsResponse$ExecutionStatistics": "<p>An <code>ExecutionStatistics</code> structure containing execution statistics.</p>"
+      }
+    },
+    "ExpirationTimestamp": {
+      "base": null,
+      "refs": {
+        "AssumeDecoratedRoleWithSAMLResponse$Expiration": "<p>The date and time when the temporary credentials expire.</p>",
+        "GetTemporaryGluePartitionCredentialsResponse$Expiration": "<p>The date and time when the temporary credentials expire.</p>",
+        "GetTemporaryGlueTableCredentialsResponse$Expiration": "<p>The date and time when the temporary credentials expire.</p>"
       }
     },
     "ExpiredException": {
@@ -489,6 +551,16 @@
       "base": null,
       "refs": {
         "ListResourcesRequest$FilterConditionList": "<p>Any applicable row-level and/or column-level filtering conditions for the resources.</p>"
+      }
+    },
+    "GetDataCellsFilterRequest": {
+      "base": null,
+      "refs": {
+      }
+    },
+    "GetDataCellsFilterResponse": {
+      "base": null,
+      "refs": {
       }
     },
     "GetDataLakeSettingsRequest": {
@@ -573,6 +645,26 @@
       "refs": {
       }
     },
+    "GetTemporaryGluePartitionCredentialsRequest": {
+      "base": null,
+      "refs": {
+      }
+    },
+    "GetTemporaryGluePartitionCredentialsResponse": {
+      "base": null,
+      "refs": {
+      }
+    },
+    "GetTemporaryGlueTableCredentialsRequest": {
+      "base": null,
+      "refs": {
+      }
+    },
+    "GetTemporaryGlueTableCredentialsResponse": {
+      "base": null,
+      "refs": {
+      }
+    },
     "GetWorkUnitResultsRequest": {
       "base": null,
       "refs": {
@@ -629,9 +721,16 @@
     "IAMRoleArn": {
       "base": null,
       "refs": {
+        "AssumeDecoratedRoleWithSAMLRequest$RoleArn": "<p>The role that represents an IAM principal whose scope down policy allows it to call credential vending APIs such as <code>GetTemporaryTableCredentials</code>. The caller must also have iam:PassRole permission on this role. </p>",
         "RegisterResourceRequest$RoleArn": "<p>The identifier for the role that registers the resource.</p>",
         "ResourceInfo$RoleArn": "<p>The IAM role that registered a resource.</p>",
         "UpdateResourceRequest$RoleArn": "<p>The new role to use for the given resource registered in Lake Formation.</p>"
+      }
+    },
+    "IAMSAMLProviderArn": {
+      "base": null,
+      "refs": {
+        "AssumeDecoratedRoleWithSAMLRequest$PrincipalArn": "<p>The Amazon Resource Name (ARN) of the SAML provider in IAM that describes the IdP.</p>"
       }
     },
     "Identifier": {
@@ -654,6 +753,12 @@
     "InvalidInputException": {
       "base": "<p>The input provided was not valid.</p>",
       "refs": {
+      }
+    },
+    "KeyString": {
+      "base": null,
+      "refs": {
+        "ParametersMap$key": null
       }
     },
     "LFTag": {
@@ -804,6 +909,7 @@
         "InternalServiceException$Message": "<p>A message describing the problem.</p>",
         "InvalidInputException$Message": "<p>A message describing the problem.</p>",
         "OperationTimeoutException$Message": "<p>A message describing the problem.</p>",
+        "PermissionTypeMismatchException$Message": "<p>A message describing the problem.</p>",
         "ResourceNotReadyException$Message": "<p>A message describing the error.</p>",
         "ResourceNumberLimitExceededException$Message": "<p>A message describing the problem.</p>",
         "StatisticsNotReadyYetException$Message": "<p>A message describing the error.</p>",
@@ -820,6 +926,7 @@
     "NameString": {
       "base": null,
       "refs": {
+        "AuthorizedSessionTagValueList$member": null,
         "ColumnLFTag$Name": "<p>The name of a column resource.</p>",
         "ColumnNames$member": null,
         "DataCellsFilter$DatabaseName": "<p>A database in the Glue Data Catalog.</p>",
@@ -835,6 +942,9 @@
         "DeleteObjectsOnCancelRequest$DatabaseName": "<p>The database that contains the governed table.</p>",
         "DeleteObjectsOnCancelRequest$TableName": "<p>The name of the governed table.</p>",
         "ErrorDetail$ErrorCode": "<p>The code associated with this error.</p>",
+        "GetDataCellsFilterRequest$DatabaseName": "<p>A database in the Glue Data Catalog.</p>",
+        "GetDataCellsFilterRequest$TableName": "<p>A table in the database.</p>",
+        "GetDataCellsFilterRequest$Name": "<p>The name given by the user to the data filter cell.</p>",
         "GetTableObjectsRequest$DatabaseName": "<p>The database containing the governed table.</p>",
         "GetTableObjectsRequest$TableName": "<p>The governed table for which to retrieve objects.</p>",
         "LFTagKeyResource$TagKey": "<p>The key-name for the LF-tag.</p>",
@@ -853,7 +963,11 @@
     "NullableBoolean": {
       "base": null,
       "refs": {
-        "RegisterResourceRequest$UseServiceLinkedRole": "<p>Designates an Identity and Access Management (IAM) service-linked role by registering this role with the Data Catalog. A service-linked role is a unique type of IAM role that is linked directly to Lake Formation.</p> <p>For more information, see <a href=\"https://docs-aws.amazon.com/lake-formation/latest/dg/service-linked-roles.html\">Using Service-Linked Roles for Lake Formation</a>.</p>"
+        "DataLakeSettings$AllowExternalDataFiltering": "<p>Whether to allow Amazon EMR clusters to access data managed by Lake Formation. </p> <p>If true, you allow Amazon EMR clusters to access data in Amazon S3 locations that are registered with Lake Formation.</p> <p>If false or null, no Amazon EMR clusters will be able to access data in Amazon S3 locations that are registered with Lake Formation.</p> <p>For more information, see <a href=\"https://docs-aws.amazon.com/lake-formation/latest/dg/getting-started-setup.html#emr-switch\">(Optional) Allow Data Filtering on Amazon EMR</a>.</p>",
+        "RegisterResourceRequest$UseServiceLinkedRole": "<p>Designates an Identity and Access Management (IAM) service-linked role by registering this role with the Data Catalog. A service-linked role is a unique type of IAM role that is linked directly to Lake Formation.</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/lake-formation/latest/dg/service-linked-roles.html\">Using Service-Linked Roles for Lake Formation</a>.</p>",
+        "RegisterResourceRequest$WithFederation": "<p>Whether or not the resource is a federated resource.</p>",
+        "ResourceInfo$WithFederation": "<p>Whether or not the resource is a federated resource.</p>",
+        "UpdateResourceRequest$WithFederation": "<p>Whether or not the resource is a federated resource.</p>"
       }
     },
     "NumberOfBytes": {
@@ -908,15 +1022,31 @@
         "ListPermissionsRequest$MaxResults": "<p>The maximum number of results to return.</p>",
         "ListResourcesRequest$MaxResults": "<p>The maximum number of resource results.</p>",
         "ListTableStorageOptimizersRequest$MaxResults": "<p>The number of storage optimizers to return on each call.</p>",
-        "ListTransactionsRequest$MaxResults": "<p>The maximum number of transactions to return in a single call.</p>",
-        "SearchDatabasesByLFTagsRequest$MaxResults": "<p>The maximum number of results to return.</p>",
-        "SearchTablesByLFTagsRequest$MaxResults": "<p>The maximum number of results to return.</p>"
+        "ListTransactionsRequest$MaxResults": "<p>The maximum number of transactions to return in a single call.</p>"
+      }
+    },
+    "ParametersMap": {
+      "base": null,
+      "refs": {
+        "DataLakeSettings$Parameters": "<p>A key-value map that provides an additional configuration on your data lake. CrossAccountVersion is the key you can configure in the Parameters field. Accepted values for the CrossAccountVersion key are 1, 2, and 3.</p>"
+      }
+    },
+    "ParametersMapValue": {
+      "base": null,
+      "refs": {
+        "ParametersMap$value": null
       }
     },
     "PartitionObjects": {
       "base": "<p>A structure containing a list of partition values and table objects.</p>",
       "refs": {
         "PartitionedTableObjectsList$member": null
+      }
+    },
+    "PartitionValueList": {
+      "base": "<p>Contains a list of values defining partitions.</p>",
+      "refs": {
+        "GetTemporaryGluePartitionCredentialsRequest$Partition": "<p>A list of partition values identifying a single partition.</p>"
       }
     },
     "PartitionValueString": {
@@ -950,13 +1080,33 @@
       "refs": {
         "BatchPermissionsRequestEntry$Permissions": "<p>The permissions to be granted.</p>",
         "BatchPermissionsRequestEntry$PermissionsWithGrantOption": "<p>Indicates if the option to pass permissions is granted.</p>",
+        "GetTemporaryGluePartitionCredentialsRequest$Permissions": "<p>Filters the request based on the user having been granted a list of specified permissions on the requested resource(s).</p>",
+        "GetTemporaryGlueTableCredentialsRequest$Permissions": "<p>Filters the request based on the user having been granted a list of specified permissions on the requested resource(s).</p>",
         "GrantPermissionsRequest$Permissions": "<p>The permissions granted to the principal on the resource. Lake Formation defines privileges to grant and revoke access to metadata in the Data Catalog and data organized in underlying data storage such as Amazon S3. Lake Formation requires that each principal be authorized to perform a specific task on Lake Formation resources. </p>",
         "GrantPermissionsRequest$PermissionsWithGrantOption": "<p>Indicates a list of the granted permissions that the principal may pass to other users. These permissions may only be a subset of the permissions granted in the <code>Privileges</code>.</p>",
         "PrincipalPermissions$Permissions": "<p>The permissions that are granted to the principal.</p>",
         "PrincipalResourcePermissions$Permissions": "<p>The permissions to be granted or revoked on the resource.</p>",
         "PrincipalResourcePermissions$PermissionsWithGrantOption": "<p>Indicates whether to grant the ability to grant permissions (as a subset of permissions granted).</p>",
-        "RevokePermissionsRequest$Permissions": "<p>The permissions revoked to the principal on the resource. For information about permissions, see <a href=\"https://docs-aws.amazon.com/lake-formation/latest/dg/security-data-access.html\">Security and Access Control to Metadata and Data</a>.</p>",
+        "RevokePermissionsRequest$Permissions": "<p>The permissions revoked to the principal on the resource. For information about permissions, see <a href=\"https://docs.aws.amazon.com/lake-formation/latest/dg/security-data-access.html\">Security and Access Control to Metadata and Data</a>.</p>",
         "RevokePermissionsRequest$PermissionsWithGrantOption": "<p>Indicates a list of permissions for which to revoke the grant option allowing the principal to pass permissions to other principals.</p>"
+      }
+    },
+    "PermissionType": {
+      "base": null,
+      "refs": {
+        "PermissionTypeList$member": null
+      }
+    },
+    "PermissionTypeList": {
+      "base": null,
+      "refs": {
+        "GetTemporaryGluePartitionCredentialsRequest$SupportedPermissionTypes": "<p>A list of supported permission types for the partition. Valid values are <code>COLUMN_PERMISSION</code> and <code>CELL_FILTER_PERMISSION</code>.</p>",
+        "GetTemporaryGlueTableCredentialsRequest$SupportedPermissionTypes": "<p>A list of supported permission types for the table. Valid values are <code>COLUMN_PERMISSION</code> and <code>CELL_FILTER_PERMISSION</code>.</p>"
+      }
+    },
+    "PermissionTypeMismatchException": {
+      "base": "<p>The engine does not support filtering data based on the enforced permissions. For example, if you call the <code>GetTemporaryGlueTableCredentials</code> operation with <code>SupportedPermissionType</code> equal to <code>ColumnPermission</code>, but cell-level permissions exist on the table, this exception is thrown.</p>",
+      "refs": {
       }
     },
     "PlanningStatistics": {
@@ -981,7 +1131,7 @@
     "PrincipalPermissionsList": {
       "base": null,
       "refs": {
-        "DataLakeSettings$CreateDatabaseDefaultPermissions": "<p>Specifies whether access control on newly created database is managed by Lake Formation permissions or exclusively by IAM permissions. You can override this default setting when you create a database.</p> <p>A null value indicates access control by Lake Formation permissions. A value that assigns ALL to IAM_ALLOWED_PRINCIPALS indicates access control by IAM permissions. This is referred to as the setting \"Use only IAM access control,\" and is for backward compatibility with the Glue permission model implemented by IAM permissions.</p> <p>The only permitted values are an empty array or an array that contains a single JSON object that grants ALL to IAM_ALLOWED_PRINCIPALS.</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/lake-formation/latest/dg/change-settings.html\">Changing the Default Security Settings for Your Data Lake</a>.</p>",
+        "DataLakeSettings$CreateDatabaseDefaultPermissions": "<p>Specifies whether access control on newly created database is managed by Lake Formation permissions or exclusively by IAM permissions.</p> <p>A null value indicates access control by Lake Formation permissions. A value that assigns ALL to IAM_ALLOWED_PRINCIPALS indicates access control by IAM permissions. This is referred to as the setting \"Use only IAM access control,\" and is for backward compatibility with the Glue permission model implemented by IAM permissions.</p> <p>The only permitted values are an empty array or an array that contains a single JSON object that grants ALL to IAM_ALLOWED_PRINCIPALS.</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/lake-formation/latest/dg/change-settings.html\">Changing the Default Security Settings for Your Data Lake</a>.</p>",
         "DataLakeSettings$CreateTableDefaultPermissions": "<p>Specifies whether access control on newly created table is managed by Lake Formation permissions or exclusively by IAM permissions.</p> <p>A null value indicates access control by Lake Formation permissions. A value that assigns ALL to IAM_ALLOWED_PRINCIPALS indicates access control by IAM permissions. This is referred to as the setting \"Use only IAM access control,\" and is for backward compatibility with the Glue permission model implemented by IAM permissions.</p> <p>The only permitted values are an empty array or an array that contains a single JSON object that grants ALL to IAM_ALLOWED_PRINCIPALS.</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/lake-formation/latest/dg/change-settings.html\">Changing the Default Security Settings for Your Data Lake</a>.</p>"
       }
     },
@@ -1085,6 +1235,8 @@
         "DeregisterResourceRequest$ResourceArn": "<p>The Amazon Resource Name (ARN) of the resource that you want to deregister.</p>",
         "DescribeResourceRequest$ResourceArn": "<p>The resource ARN.</p>",
         "GetEffectivePermissionsForPathRequest$ResourceArn": "<p>The Amazon Resource Name (ARN) of the resource for which you want to get permissions.</p>",
+        "GetTemporaryGluePartitionCredentialsRequest$TableArn": "<p>The ARN of the partitions' table.</p>",
+        "GetTemporaryGlueTableCredentialsRequest$TableArn": "<p>The ARN identifying a table in the Data Catalog for the temporary credentials request.</p>",
         "RegisterResourceRequest$ResourceArn": "<p>The Amazon Resource Name (ARN) of the resource that you want to register.</p>",
         "ResourceInfo$ResourceArn": "<p>The Amazon Resource Name (ARN) of the resource.</p>",
         "UpdateResourceRequest$ResourceArn": "<p>The resource ARN.</p>"
@@ -1159,6 +1311,12 @@
         "DataCellsFilter$RowFilter": "<p>A PartiQL predicate.</p>"
       }
     },
+    "SAMLAssertionString": {
+      "base": null,
+      "refs": {
+        "AssumeDecoratedRoleWithSAMLRequest$SAMLAssertion": "<p>A SAML assertion consisting of an assertion statement for the user who needs temporary credentials. This must match the SAML assertion that was issued to IAM. This must be Base64 encoded.</p>"
+      }
+    },
     "SearchDatabasesByLFTagsRequest": {
       "base": null,
       "refs": {
@@ -1169,6 +1327,13 @@
       "refs": {
       }
     },
+    "SearchPageSize": {
+      "base": null,
+      "refs": {
+        "SearchDatabasesByLFTagsRequest$MaxResults": "<p>The maximum number of results to return.</p>",
+        "SearchTablesByLFTagsRequest$MaxResults": "<p>The maximum number of results to return.</p>"
+      }
+    },
     "SearchTablesByLFTagsRequest": {
       "base": null,
       "refs": {
@@ -1177,6 +1342,22 @@
     "SearchTablesByLFTagsResponse": {
       "base": null,
       "refs": {
+      }
+    },
+    "SecretAccessKeyString": {
+      "base": null,
+      "refs": {
+        "AssumeDecoratedRoleWithSAMLResponse$SecretAccessKey": "<p>The secret key for the temporary credentials. (The access key consists of an access key ID and a secret key).</p>",
+        "GetTemporaryGluePartitionCredentialsResponse$SecretAccessKey": "<p>The secret key for the temporary credentials.</p>",
+        "GetTemporaryGlueTableCredentialsResponse$SecretAccessKey": "<p>The secret key for the temporary credentials.</p>"
+      }
+    },
+    "SessionTokenString": {
+      "base": null,
+      "refs": {
+        "AssumeDecoratedRoleWithSAMLResponse$SessionToken": "<p>The session token for the temporary credentials.</p>",
+        "GetTemporaryGluePartitionCredentialsResponse$SessionToken": "<p>The session token for the temporary credentials.</p>",
+        "GetTemporaryGlueTableCredentialsResponse$SessionToken": "<p>The session token for the temporary credentials.</p>"
       }
     },
     "StartQueryPlanningRequest": {
@@ -1463,6 +1644,16 @@
         "VirtualObject$Uri": "<p>The path to the Amazon S3 object. Must start with s3://</p>"
       }
     },
+    "UpdateDataCellsFilterRequest": {
+      "base": null,
+      "refs": {
+      }
+    },
+    "UpdateDataCellsFilterResponse": {
+      "base": null,
+      "refs": {
+      }
+    },
     "UpdateLFTagRequest": {
       "base": null,
       "refs": {
@@ -1501,6 +1692,24 @@
     "UpdateTableStorageOptimizerResponse": {
       "base": null,
       "refs": {
+      }
+    },
+    "ValueString": {
+      "base": null,
+      "refs": {
+        "ValueStringList$member": null
+      }
+    },
+    "ValueStringList": {
+      "base": null,
+      "refs": {
+        "PartitionValueList$Values": "<p>The list of partition values.</p>"
+      }
+    },
+    "VersionString": {
+      "base": null,
+      "refs": {
+        "DataCellsFilter$VersionId": "<p>The ID of the data cells filter version.</p>"
       }
     },
     "VirtualObject": {

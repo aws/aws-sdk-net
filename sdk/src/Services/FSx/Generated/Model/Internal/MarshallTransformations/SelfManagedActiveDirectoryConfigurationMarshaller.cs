@@ -34,7 +34,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SelfManagedActiveDirectoryConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class SelfManagedActiveDirectoryConfigurationMarshaller : IRequestMarshaller<SelfManagedActiveDirectoryConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -90,7 +90,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SelfManagedActiveDirectoryConfigurationMarshaller Instance = new SelfManagedActiveDirectoryConfigurationMarshaller();
 
     }

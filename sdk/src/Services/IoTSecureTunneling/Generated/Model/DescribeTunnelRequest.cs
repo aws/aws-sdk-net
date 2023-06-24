@@ -31,6 +31,12 @@ namespace Amazon.IoTSecureTunneling.Model
     /// <summary>
     /// Container for the parameters to the DescribeTunnel operation.
     /// Gets information about a tunnel identified by the unique tunnel id.
+    /// 
+    ///  
+    /// <para>
+    /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeTunnel</a>
+    /// action.
+    /// </para>
     /// </summary>
     public partial class DescribeTunnelRequest : AmazonIoTSecureTunnelingRequest
     {

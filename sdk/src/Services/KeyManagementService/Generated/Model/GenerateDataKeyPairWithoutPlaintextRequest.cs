@@ -30,10 +30,12 @@ namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
     /// Container for the parameters to the GenerateDataKeyPairWithoutPlaintext operation.
-    /// Generates a unique asymmetric data key pair. The <code>GenerateDataKeyPairWithoutPlaintext</code>
-    /// operation returns a plaintext public key and a copy of the private key that is encrypted
-    /// under the symmetric KMS key you specify. Unlike <a>GenerateDataKeyPair</a>, this operation
-    /// does not return a plaintext private key. 
+    /// Returns a unique asymmetric data key pair for use outside of KMS. This operation returns
+    /// a plaintext public key and a copy of the private key that is encrypted under the symmetric
+    /// encryption KMS key you specify. Unlike <a>GenerateDataKeyPair</a>, this operation
+    /// does not return a plaintext private key. The bytes in the keys are random; they are
+    /// not related to the caller or to the KMS key that is used to encrypt the private key.
+    /// 
     /// 
     ///  
     /// <para>
@@ -44,17 +46,18 @@ namespace Amazon.KeyManagementService.Model
     /// </para>
     ///  
     /// <para>
-    /// To generate a data key pair, you must specify a symmetric KMS key to encrypt the private
-    /// key in a data key pair. You cannot use an asymmetric KMS key or a KMS key in a custom
-    /// key store. To get the type and origin of your KMS key, use the <a>DescribeKey</a>
+    /// To generate a data key pair, you must specify a symmetric encryption KMS key to encrypt
+    /// the private key in a data key pair. You cannot use an asymmetric KMS key or a KMS
+    /// key in a custom key store. To get the type and origin of your KMS key, use the <a>DescribeKey</a>
     /// operation. 
     /// </para>
     ///  
     /// <para>
     /// Use the <code>KeyPairSpec</code> parameter to choose an RSA or Elliptic Curve (ECC)
-    /// data key pair. KMS recommends that your use ECC key pairs for signing, and use RSA
-    /// key pairs for either encryption or signing, but not both. However, KMS cannot enforce
-    /// any restrictions on the use of data key pairs outside of KMS.
+    /// data key pair. In China Regions, you can also choose an SM2 data key pair. KMS recommends
+    /// that you use ECC key pairs for signing, and use RSA and SM2 key pairs for either encryption
+    /// or signing, but not both. However, KMS cannot enforce any restrictions on the use
+    /// of data key pairs outside of KMS.
     /// </para>
     ///  
     /// <para>
@@ -65,7 +68,7 @@ namespace Amazon.KeyManagementService.Model
     /// </para>
     ///  
     /// <para>
-    /// You can use the optional encryption context to add additional security to the encryption
+    /// You can use an optional encryption context to add additional security to the encryption
     /// operation. If you specify an <code>EncryptionContext</code>, you must specify the
     /// same encryption context (a case-sensitive exact match) when decrypting the encrypted
     /// data key. Otherwise, the request to decrypt fails with an <code>InvalidCiphertextException</code>.
@@ -76,7 +79,7 @@ namespace Amazon.KeyManagementService.Model
     /// <para>
     /// The KMS key that you use for this operation must be in a compatible key state. For
     /// details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-    /// state: Effect on your KMS key</a> in the <i>Key Management Service Developer Guide</i>.
+    /// states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -128,18 +131,24 @@ namespace Amazon.KeyManagementService.Model
         /// Specifies the encryption context that will be used when encrypting the private key
         /// in the data key pair.
         /// </para>
-        ///  
+        ///  <important> 
         /// <para>
-        /// An <i>encryption context</i> is a collection of non-secret key-value pairs that represents
+        /// Do not include confidential or sensitive information in this field. This field may
+        /// be displayed in plaintext in CloudTrail logs and other output.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// An <i>encryption context</i> is a collection of non-secret key-value pairs that represent
         /// additional authenticated data. When you use an encryption context to encrypt data,
         /// you must specify the same (an exact case-sensitive match) encryption context to decrypt
-        /// the data. An encryption context is optional when encrypting with a symmetric KMS key,
-        /// but it is highly recommended.
+        /// the data. An encryption context is supported only on operations with symmetric encryption
+        /// KMS keys. On operations with symmetric encryption KMS keys, an encryption context
+        /// is optional, but it is strongly recommended.
         /// </para>
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
-        /// Context</a> in the <i>Key Management Service Developer Guide</i>.
+        /// context</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         /// </summary>
         public Dictionary<string, string> EncryptionContext
@@ -184,10 +193,10 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property KeyId. 
         /// <para>
-        /// Specifies the KMS key that encrypts the private key in the data key pair. You must
-        /// specify a symmetric KMS key. You cannot use an asymmetric KMS key or a KMS key in
-        /// a custom key store. To get the type and origin of your KMS key, use the <a>DescribeKey</a>
-        /// operation. 
+        /// Specifies the symmetric encryption KMS key that encrypts the private key in the data
+        /// key pair. You cannot specify an asymmetric KMS key or a KMS key in a custom key store.
+        /// To get the type and origin of your KMS key, use the <a>DescribeKey</a> operation.
+        /// 
         /// </para>
         ///  
         /// <para>
@@ -242,10 +251,10 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         ///  
         /// <para>
-        /// The KMS rule that restricts the use of asymmetric RSA KMS keys to encrypt and decrypt
-        /// or to sign and verify (but not both), and the rule that permits you to use ECC KMS
-        /// keys only to sign and verify, are not effective on data key pairs, which are used
-        /// outside of KMS.
+        /// The KMS rule that restricts the use of asymmetric RSA and SM2 KMS keys to encrypt
+        /// and decrypt or to sign and verify (but not both), and the rule that permits you to
+        /// use ECC KMS keys only to sign and verify, are not effective on data key pairs, which
+        /// are used outside of KMS. The SM2 key spec is only available in China Regions.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

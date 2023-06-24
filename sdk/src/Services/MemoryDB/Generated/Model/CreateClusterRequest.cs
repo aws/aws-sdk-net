@@ -38,6 +38,7 @@ namespace Amazon.MemoryDB.Model
         private string _aclName;
         private bool? _autoMinorVersionUpgrade;
         private string _clusterName;
+        private bool? _dataTiering;
         private string _description;
         private string _engineVersion;
         private string _kmsKeyId;
@@ -116,6 +117,27 @@ namespace Amazon.MemoryDB.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DataTiering. 
+        /// <para>
+        /// Enables data tiering. Data tiering is only supported for clusters using the r6gd node
+        /// type. This parameter must be set when using r6gd nodes. For more information, see
+        /// <a href="https://docs.aws.amazon.com/memorydb/latest/devguide/data-tiering.html">Data
+        /// tiering</a>.
+        /// </para>
+        /// </summary>
+        public bool DataTiering
+        {
+            get { return this._dataTiering.GetValueOrDefault(); }
+            set { this._dataTiering = value; }
+        }
+
+        // Check to see if DataTiering property is set
+        internal bool IsSetDataTiering()
+        {
+            return this._dataTiering.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
         /// An optional description of the cluster.
@@ -173,8 +195,44 @@ namespace Amazon.MemoryDB.Model
         /// Gets and sets the property MaintenanceWindow. 
         /// <para>
         /// Specifies the weekly time range during which maintenance on the cluster is performed.
-        /// It is specified as a range in the format <code>ddd:hh24:mi-ddd:hh24:mi</code> (24H
-        /// Clock UTC). The minimum maintenance window is a 60 minute period.
+        /// It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC).
+        /// The minimum maintenance window is a 60 minute period.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values for <code>ddd</code> are:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>sun</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>mon</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>tue</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>wed</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>thu</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>fri</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>sat</code> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Example: <code>sun:23:00-mon:01:30</code> 
         /// </para>
         /// </summary>
         public string MaintenanceWindow

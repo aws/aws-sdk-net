@@ -34,25 +34,27 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// of the current user pool settings using <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeUserPool.html">DescribeUserPool</a>.
     /// If you don't provide a value for an attribute, it will be set to the default value.
     /// 
+    /// 
     ///  <note> 
     /// <para>
-    /// This action might generate an SMS text message. Starting June 1, 2021, U.S. telecom
-    /// carriers require that you register an origination phone number before you can send
-    /// SMS messages to U.S. phone numbers. If you use SMS text messages in Amazon Cognito,
-    /// you must register a phone number with <a href="https://console.aws.amazon.com/pinpoint/home/">Amazon
-    /// Pinpoint</a>. Cognito will use the the registered number automatically. Otherwise,
-    /// Cognito users that must receive SMS messages might be unable to sign up, activate
+    /// This action might generate an SMS text message. Starting June 1, 2021, US telecom
+    /// carriers require you to register an origination phone number before you can send SMS
+    /// messages to US phone numbers. If you use SMS text messages in Amazon Cognito, you
+    /// must register a phone number with <a href="https://console.aws.amazon.com/pinpoint/home/">Amazon
+    /// Pinpoint</a>. Amazon Cognito uses the registered number automatically. Otherwise,
+    /// Amazon Cognito users who must receive SMS messages might not be able to sign up, activate
     /// their accounts, or sign in.
     /// </para>
     ///  
     /// <para>
     /// If you have never used SMS text messages with Amazon Cognito or any other Amazon Web
-    /// Service, Amazon SNS might place your account in SMS sandbox. In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
-    /// mode</a> </i>, you’ll have limitations, such as sending messages to only verified
-    /// phone numbers. After testing in the sandbox environment, you can move out of the SMS
-    /// sandbox and into production. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-sms-userpool-settings.html">
-    /// SMS message settings for Cognito User Pools</a> in the <i>Amazon Cognito Developer
-    /// Guide</i>. 
+    /// Service, Amazon Simple Notification Service might place your account in the SMS sandbox.
+    /// In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
+    /// mode</a> </i>, you can send messages only to verified phone numbers. After you test
+    /// your app while in the sandbox environment, you can move out of the sandbox and into
+    /// production. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-sms-userpool-settings.html">
+    /// SMS message settings for Amazon Cognito user pools</a> in the <i>Amazon Cognito Developer
+    /// Guide</i>.
     /// </para>
     ///  </note>
     /// </summary>
@@ -61,6 +63,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         private AccountRecoverySettingType _accountRecoverySetting;
         private AdminCreateUserConfigType _adminCreateUserConfig;
         private List<string> _autoVerifiedAttributes = new List<string>();
+        private DeletionProtectionType _deletionProtection;
         private DeviceConfigurationType _deviceConfiguration;
         private EmailConfigurationType _emailConfiguration;
         private string _emailVerificationMessage;
@@ -71,6 +74,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         private string _smsAuthenticationMessage;
         private SmsConfigurationType _smsConfiguration;
         private string _smsVerificationMessage;
+        private UserAttributeUpdateSettingsType _userAttributeUpdateSettings;
         private UserPoolAddOnsType _userPoolAddOns;
         private string _userPoolId;
         private Dictionary<string, string> _userPoolTags = new Dictionary<string, string>();
@@ -79,12 +83,12 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AccountRecoverySetting. 
         /// <para>
-        /// Use this setting to define which verified available method a user can use to recover
-        /// their password when they call <code>ForgotPassword</code>. It allows you to define
-        /// a preferred method when a user has more than one method available. With this setting,
-        /// SMS does not qualify for a valid password recovery mechanism if the user also has
-        /// SMS MFA enabled. In the absence of this setting, Cognito uses the legacy behavior
-        /// to determine the recovery method where SMS is preferred over email.
+        /// The available verified method a user can use to recover their password when they call
+        /// <code>ForgotPassword</code>. You can use this setting to define a preferred method
+        /// when a user has more than one method available. With this setting, SMS doesn't qualify
+        /// for a valid password recovery mechanism if the user also has SMS multi-factor authentication
+        /// (MFA) activated. In the absence of this setting, Amazon Cognito uses the legacy behavior
+        /// to determine the recovery method where SMS is preferred through email.
         /// </para>
         /// </summary>
         public AccountRecoverySettingType AccountRecoverySetting
@@ -120,8 +124,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AutoVerifiedAttributes. 
         /// <para>
-        /// The attributes that are automatically verified when the Amazon Cognito service makes
-        /// a request to update user pools.
+        /// The attributes that are automatically verified when Amazon Cognito requests to update
+        /// user pools.
         /// </para>
         /// </summary>
         public List<string> AutoVerifiedAttributes
@@ -137,10 +141,44 @@ namespace Amazon.CognitoIdentityProvider.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DeletionProtection. 
+        /// <para>
+        /// When active, <code>DeletionProtection</code> prevents accidental deletion of your
+        /// user pool. Before you can delete a user pool that you have protected against deletion,
+        /// you must deactivate this feature.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you try to delete a protected user pool in a <code>DeleteUserPool</code> API
+        /// request, Amazon Cognito returns an <code>InvalidParameterException</code> error. To
+        /// delete a protected user pool, send a new <code>DeleteUserPool</code> request after
+        /// you deactivate deletion protection in an <code>UpdateUserPool</code> API request.
+        /// </para>
+        /// </summary>
+        public DeletionProtectionType DeletionProtection
+        {
+            get { return this._deletionProtection; }
+            set { this._deletionProtection = value; }
+        }
+
+        // Check to see if DeletionProtection property is set
+        internal bool IsSetDeletionProtection()
+        {
+            return this._deletionProtection != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property DeviceConfiguration. 
         /// <para>
-        /// Device configuration.
+        /// The device-remembering configuration for a user pool. A null value indicates that
+        /// you have deactivated device remembering in your user pool.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// When you provide a value for any <code>DeviceConfiguration</code> field, you activate
+        /// the Amazon Cognito device-remembering feature.
+        /// </para>
+        ///  </note>
         /// </summary>
         public DeviceConfigurationType DeviceConfiguration
         {
@@ -157,7 +195,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property EmailConfiguration. 
         /// <para>
-        /// Email configuration.
+        /// The email configuration of your user pool. The email configuration type sets your
+        /// preferred sending method, Amazon Web Services Region, and sender for email invitation
+        /// and verification messages from your user pool.
         /// </para>
         /// </summary>
         public EmailConfigurationType EmailConfiguration
@@ -175,7 +215,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property EmailVerificationMessage. 
         /// <para>
-        /// The contents of the email verification message.
+        /// This parameter is no longer used. See <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=6, Max=20000)]
@@ -194,7 +234,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property EmailVerificationSubject. 
         /// <para>
-        /// The subject of the email verification message.
+        /// This parameter is no longer used. See <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=140)]
@@ -231,17 +271,17 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property MfaConfiguration. 
         /// <para>
-        /// Can be one of the following values:
+        /// Possible values include:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>OFF</code> - MFA tokens are not required and cannot be specified during user
+        ///  <code>OFF</code> - MFA tokens aren't required and can't be specified during user
         /// registration.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>ON</code> - MFA tokens are required for all user registrations. You can only
-        /// specify ON when you are initially creating a user pool. You can use the <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserPoolMfaConfig.html">SetUserPoolMfaConfig</a>
+        /// specify ON when you're initially creating a user pool. You can use the <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserPoolMfaConfig.html">SetUserPoolMfaConfig</a>
         /// API operation to turn MFA "ON" for existing user pools. 
         /// </para>
         ///  </li> <li> 
@@ -265,7 +305,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Policies. 
         /// <para>
-        /// A container with the policies you wish to update in a user pool.
+        /// A container with the policies you want to update in a user pool.
         /// </para>
         /// </summary>
         public UserPoolPolicyType Policies
@@ -302,7 +342,11 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property SmsConfiguration. 
         /// <para>
-        /// SMS configuration.
+        /// The SMS configuration with the settings that your Amazon Cognito user pool must use
+        /// to send an SMS message from your Amazon Web Services account through Amazon Simple
+        /// Notification Service. To send SMS messages with Amazon SNS in the Amazon Web Services
+        /// Region that you want, the Amazon Cognito user pool uses an Identity and Access Management
+        /// (IAM) role in your Amazon Web Services account.
         /// </para>
         /// </summary>
         public SmsConfigurationType SmsConfiguration
@@ -320,7 +364,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property SmsVerificationMessage. 
         /// <para>
-        /// A container with information about the SMS verification message.
+        /// This parameter is no longer used. See <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=6, Max=140)]
@@ -337,9 +381,31 @@ namespace Amazon.CognitoIdentityProvider.Model
         }
 
         /// <summary>
+        /// Gets and sets the property UserAttributeUpdateSettings. 
+        /// <para>
+        /// The settings for updates to user attributes. These settings include the property <code>AttributesRequireVerificationBeforeUpdate</code>,
+        /// a user-pool setting that tells Amazon Cognito how to handle changes to the value of
+        /// your users' email address and phone number attributes. For more information, see <a
+        /// href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html#user-pool-settings-verifications-verify-attribute-updates">
+        /// Verifying updates to email addresses and phone numbers</a>.
+        /// </para>
+        /// </summary>
+        public UserAttributeUpdateSettingsType UserAttributeUpdateSettings
+        {
+            get { return this._userAttributeUpdateSettings; }
+            set { this._userAttributeUpdateSettings = value; }
+        }
+
+        // Check to see if UserAttributeUpdateSettings property is set
+        internal bool IsSetUserAttributeUpdateSettings()
+        {
+            return this._userAttributeUpdateSettings != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property UserPoolAddOns. 
         /// <para>
-        /// Used to enable advanced security risk detection. Set the key <code>AdvancedSecurityMode</code>
+        /// Enables advanced security risk detection. Set the key <code>AdvancedSecurityMode</code>
         /// to the value "AUDIT".
         /// </para>
         /// </summary>

@@ -39,9 +39,10 @@ namespace Amazon.CodeGuruReviewer.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        ///  If nextToken is returned, there are more results available. The value of nextToken
-        /// is a unique pagination token for each page. Make the call again using the returned
-        /// token to retrieve the next page. Keep all other arguments unchanged. 
+        /// If <code>nextToken</code> is returned, there are more results available. The value
+        /// of <code>nextToken</code> is a unique pagination token for each page. Make the call
+        /// again using the returned token to retrieve the next page. Keep all other arguments
+        /// unchanged.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
@@ -60,7 +61,7 @@ namespace Amazon.CodeGuruReviewer.Model
         /// <summary>
         /// Gets and sets the property RecommendationFeedbackSummaries. 
         /// <para>
-        ///  Recommendation feedback summaries corresponding to the code review ARN. 
+        /// Recommendation feedback summaries corresponding to the code review ARN.
         /// </para>
         /// </summary>
         public List<RecommendationFeedbackSummary> RecommendationFeedbackSummaries

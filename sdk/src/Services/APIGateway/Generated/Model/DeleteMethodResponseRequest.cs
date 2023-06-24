@@ -30,7 +30,7 @@ namespace Amazon.APIGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteMethodResponse operation.
-    /// Deletes an existing <a>MethodResponse</a> resource.
+    /// Deletes an existing MethodResponse resource.
     /// </summary>
     public partial class DeleteMethodResponseRequest : AmazonAPIGatewayRequest
     {
@@ -42,7 +42,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property HttpMethod. 
         /// <para>
-        /// [Required] The HTTP verb of the <a>Method</a> resource.
+        /// The HTTP verb of the Method resource.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -61,7 +61,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property ResourceId. 
         /// <para>
-        /// [Required] The <a>Resource</a> identifier for the <a>MethodResponse</a> resource.
+        /// The Resource identifier for the MethodResponse resource.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -80,7 +80,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property RestApiId. 
         /// <para>
-        /// [Required] The string identifier of the associated <a>RestApi</a>.
+        /// The string identifier of the associated RestApi.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -99,7 +99,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property StatusCode. 
         /// <para>
-        /// [Required] The status code identifier for the <a>MethodResponse</a> resource.
+        /// The status code identifier for the MethodResponse resource.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

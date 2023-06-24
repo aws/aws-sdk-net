@@ -93,6 +93,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     response.EndpointStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ExplainerConfig", targetDepth))
+                {
+                    var unmarshaller = ExplainerConfigUnmarshaller.Instance;
+                    response.ExplainerConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("FailureReason", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -121,6 +127,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new ListUnmarshaller<ProductionVariantSummary, ProductionVariantSummaryUnmarshaller>(ProductionVariantSummaryUnmarshaller.Instance);
                     response.ProductionVariants = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ShadowProductionVariants", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ProductionVariantSummary, ProductionVariantSummaryUnmarshaller>(ProductionVariantSummaryUnmarshaller.Instance);
+                    response.ShadowProductionVariants = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

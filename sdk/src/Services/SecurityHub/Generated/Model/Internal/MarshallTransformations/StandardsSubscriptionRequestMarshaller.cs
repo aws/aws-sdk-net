@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// StandardsSubscriptionRequest Marshaller
-    /// </summary>       
+    /// </summary>
     public class StandardsSubscriptionRequestMarshaller : IRequestMarshaller<StandardsSubscriptionRequest, JsonMarshallerContext> 
     {
         /// <summary>
@@ -69,7 +69,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static StandardsSubscriptionRequestMarshaller Instance = new StandardsSubscriptionRequestMarshaller();
 
     }

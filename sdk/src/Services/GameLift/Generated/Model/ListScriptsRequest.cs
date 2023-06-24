@@ -30,8 +30,8 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the ListScripts operation.
-    /// Retrieves script records for all Realtime scripts that are associated with the AWS
-    /// account in use. 
+    /// Retrieves script records for all Realtime scripts that are associated with the Amazon
+    /// Web Services account in use. 
     /// 
     ///  
     /// <para>
@@ -48,8 +48,7 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  
     /// <para>
-    ///  <a>CreateScript</a> | <a>ListScripts</a> | <a>DescribeScript</a> | <a>UpdateScript</a>
-    /// | <a>DeleteScript</a> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
+    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
     /// APIs by task</a> 
     /// </para>
     /// </summary>
@@ -83,7 +82,7 @@ namespace Amazon.GameLift.Model
         /// <para>
         /// A token that indicates the start of the next sequential page of results. Use the token
         /// that is returned with a previous call to this operation. To start at the beginning
-        /// of the result set, do not specify a value.
+        /// of the result set, don't specify a value.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

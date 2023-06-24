@@ -58,7 +58,7 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
             string target = "AWSCognitoIdentityProviderService.CreateUserPoolClient";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-04-18";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-04-18";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -112,6 +112,12 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetAuthSessionValidity())
+                {
+                    context.Writer.WritePropertyName("AuthSessionValidity");
+                    context.Writer.Write(publicRequest.AuthSessionValidity);
+                }
+
                 if(publicRequest.IsSetCallbackURLs())
                 {
                     context.Writer.WritePropertyName("CallbackURLs");
@@ -133,6 +139,12 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("DefaultRedirectURI");
                     context.Writer.Write(publicRequest.DefaultRedirectURI);
+                }
+
+                if(publicRequest.IsSetEnablePropagateAdditionalUserContextData())
+                {
+                    context.Writer.WritePropertyName("EnablePropagateAdditionalUserContextData");
+                    context.Writer.Write(publicRequest.EnablePropagateAdditionalUserContextData);
                 }
 
                 if(publicRequest.IsSetEnableTokenRevocation())
@@ -237,7 +249,6 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

@@ -40,7 +40,7 @@ namespace Amazon.CodeGuruReviewer.Model
         /// <summary>
         /// Gets and sets the property Reactions. 
         /// <para>
-        ///  List for storing reactions. Reactions are utf-8 text code for emojis. 
+        /// List for storing reactions. Reactions are utf-8 text code for emojis.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]
@@ -59,8 +59,8 @@ namespace Amazon.CodeGuruReviewer.Model
         /// <summary>
         /// Gets and sets the property RecommendationId. 
         /// <para>
-        ///  The recommendation ID that can be used to track the provided recommendations. Later
-        /// on it can be used to collect the feedback. 
+        /// The recommendation ID that can be used to track the provided recommendations. Later
+        /// on it can be used to collect the feedback.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -79,7 +79,7 @@ namespace Amazon.CodeGuruReviewer.Model
         /// <summary>
         /// Gets and sets the property UserId. 
         /// <para>
-        ///  The ID of the user that gave the feedback. 
+        /// The ID of the user that gave the feedback.
         /// </para>
         ///  
         /// <para>
@@ -87,7 +87,7 @@ namespace Amazon.CodeGuruReviewer.Model
         /// Services account ID or an Amazon Resource Name (ARN). For more information, see <a
         /// href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying">
         /// Specifying a Principal</a> in the <i>Amazon Web Services Identity and Access Management
-        /// User Guide</i>. 
+        /// User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]

@@ -34,7 +34,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// HoldoutActivity Marshaller
-    /// </summary>       
+    /// </summary>
     public class HoldoutActivityMarshaller : IRequestMarshaller<HoldoutActivity, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static HoldoutActivityMarshaller Instance = new HoldoutActivityMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.CodeGuruProfiler.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AgentOrchestrationConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class AgentOrchestrationConfigMarshaller : IRequestMarshaller<AgentOrchestrationConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.CodeGuruProfiler.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AgentOrchestrationConfigMarshaller Instance = new AgentOrchestrationConfigMarshaller();
 
     }

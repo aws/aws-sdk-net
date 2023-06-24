@@ -34,7 +34,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// UserDefinedFunctionInput Marshaller
-    /// </summary>       
+    /// </summary>
     public class UserDefinedFunctionInputMarshaller : IRequestMarshaller<UserDefinedFunctionInput, JsonMarshallerContext> 
     {
         /// <summary>
@@ -89,7 +89,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static UserDefinedFunctionInputMarshaller Instance = new UserDefinedFunctionInputMarshaller();
 
     }

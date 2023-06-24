@@ -103,7 +103,7 @@ namespace Amazon.IoTTwinMaker.Model
         /// The scene description.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=512)]
+        [AWSProperty(Min=0, Max=2048)]
         public string Description
         {
             get { return this._description; }

@@ -34,7 +34,7 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// EnvironmentPropertyUpdates Marshaller
-    /// </summary>       
+    /// </summary>
     public class EnvironmentPropertyUpdatesMarshaller : IRequestMarshaller<EnvironmentPropertyUpdates, JsonMarshallerContext> 
     {
         /// <summary>
@@ -65,7 +65,7 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static EnvironmentPropertyUpdatesMarshaller Instance = new EnvironmentPropertyUpdatesMarshaller();
 
     }

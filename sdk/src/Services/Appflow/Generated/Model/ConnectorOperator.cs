@@ -34,11 +34,13 @@ namespace Amazon.Appflow.Model
     public partial class ConnectorOperator
     {
         private AmplitudeConnectorOperator _amplitude;
+        private Operator _customConnector;
         private DatadogConnectorOperator _datadog;
         private DynatraceConnectorOperator _dynatrace;
         private GoogleAnalyticsConnectorOperator _googleAnalytics;
         private InforNexusConnectorOperator _inforNexus;
         private MarketoConnectorOperator _marketo;
+        private PardotConnectorOperator _pardot;
         private S3ConnectorOperator _s3;
         private SalesforceConnectorOperator _salesforce;
         private SAPODataConnectorOperator _sapoData;
@@ -65,6 +67,24 @@ namespace Amazon.Appflow.Model
         internal bool IsSetAmplitude()
         {
             return this._amplitude != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomConnector. 
+        /// <para>
+        /// Operators supported by the custom connector.
+        /// </para>
+        /// </summary>
+        public Operator CustomConnector
+        {
+            get { return this._customConnector; }
+            set { this._customConnector = value; }
+        }
+
+        // Check to see if CustomConnector property is set
+        internal bool IsSetCustomConnector()
+        {
+            return this._customConnector != null;
         }
 
         /// <summary>
@@ -155,6 +175,24 @@ namespace Amazon.Appflow.Model
         internal bool IsSetMarketo()
         {
             return this._marketo != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Pardot. 
+        /// <para>
+        /// The operation to be performed on the provided Salesforce Pardot source fields.
+        /// </para>
+        /// </summary>
+        public PardotConnectorOperator Pardot
+        {
+            get { return this._pardot; }
+            set { this._pardot = value; }
+        }
+
+        // Check to see if Pardot property is set
+        internal bool IsSetPardot()
+        {
+            return this._pardot != null;
         }
 
         /// <summary>

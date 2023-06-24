@@ -30,9 +30,9 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// Container for the parameters to the AddTags operation.
-    /// Adds or overwrites one or more tags for the specified Amazon SageMaker resource. You
-    /// can add tags to notebook instances, training jobs, hyperparameter tuning jobs, batch
-    /// transform jobs, models, labeling jobs, work teams, endpoint configurations, and endpoints.
+    /// Adds or overwrites one or more tags for the specified SageMaker resource. You can
+    /// add tags to notebook instances, training jobs, hyperparameter tuning jobs, batch transform
+    /// jobs, models, labeling jobs, work teams, endpoint configurations, and endpoints.
     /// 
     ///  
     /// <para>
@@ -48,7 +48,8 @@ namespace Amazon.SageMaker.Model
     /// called this API. To make sure that the tags associated with a hyperparameter tuning
     /// job are also added to all training jobs that the hyperparameter tuning job launches,
     /// add the tags when you first create the tuning job by specifying them in the <code>Tags</code>
-    /// parameter of <a>CreateHyperParameterTuningJob</a> 
+    /// parameter of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateHyperParameterTuningJob.html">CreateHyperParameterTuningJob</a>
+    /// 
     /// </para>
     ///  </note> <note> 
     /// <para>
@@ -58,7 +59,8 @@ namespace Amazon.SageMaker.Model
     /// this API. To make sure that the tags associated with a Domain or User Profile are
     /// also added to all Apps that the Domain or User Profile launches, add the tags when
     /// you first create the Domain or User Profile by specifying them in the <code>Tags</code>
-    /// parameter of <a>CreateDomain</a> or <a>CreateUserProfile</a>.
+    /// parameter of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateDomain.html">CreateDomain</a>
+    /// or <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateUserProfile.html">CreateUserProfile</a>.
     /// </para>
     ///  </note>
     /// </summary>

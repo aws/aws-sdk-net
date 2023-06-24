@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// An organization config rule that has information about config rules that Config creates
+    /// An organization Config rule that has information about Config rules that Config creates
     /// in member accounts.
     /// </summary>
     public partial class OrganizationConfigRule
@@ -38,13 +38,14 @@ namespace Amazon.ConfigService.Model
         private DateTime? _lastUpdateTime;
         private string _organizationConfigRuleArn;
         private string _organizationConfigRuleName;
+        private OrganizationCustomPolicyRuleMetadataNoPolicy _organizationCustomPolicyRuleMetadata;
         private OrganizationCustomRuleMetadata _organizationCustomRuleMetadata;
         private OrganizationManagedRuleMetadata _organizationManagedRuleMetadata;
 
         /// <summary>
         /// Gets and sets the property ExcludedAccounts. 
         /// <para>
-        /// A comma-separated list of accounts excluded from organization config rule.
+        /// A comma-separated list of accounts excluded from organization Config rule.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1000)]
@@ -81,7 +82,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property OrganizationConfigRuleArn. 
         /// <para>
-        /// Amazon Resource Name (ARN) of organization config rule.
+        /// Amazon Resource Name (ARN) of organization Config rule.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
@@ -100,7 +101,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property OrganizationConfigRuleName. 
         /// <para>
-        /// The name that you assign to organization config rule.
+        /// The name that you assign to organization Config rule.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]
@@ -114,6 +115,28 @@ namespace Amazon.ConfigService.Model
         internal bool IsSetOrganizationConfigRuleName()
         {
             return this._organizationConfigRuleName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OrganizationCustomPolicyRuleMetadata. 
+        /// <para>
+        /// An object that specifies metadata for your organization's Config Custom Policy rule.
+        /// The metadata includes the runtime system in use, which accounts have debug logging
+        /// enabled, and other custom rule metadata, such as resource type, resource ID of Amazon
+        /// Web Services resource, and organization trigger types that initiate Config to evaluate
+        /// Amazon Web Services resources against a rule.
+        /// </para>
+        /// </summary>
+        public OrganizationCustomPolicyRuleMetadataNoPolicy OrganizationCustomPolicyRuleMetadata
+        {
+            get { return this._organizationCustomPolicyRuleMetadata; }
+            set { this._organizationCustomPolicyRuleMetadata = value; }
+        }
+
+        // Check to see if OrganizationCustomPolicyRuleMetadata property is set
+        internal bool IsSetOrganizationCustomPolicyRuleMetadata()
+        {
+            return this._organizationCustomPolicyRuleMetadata != null;
         }
 
         /// <summary>

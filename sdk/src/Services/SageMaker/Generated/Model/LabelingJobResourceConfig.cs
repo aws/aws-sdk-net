@@ -35,6 +35,7 @@ namespace Amazon.SageMaker.Model
     public partial class LabelingJobResourceConfig
     {
         private string _volumeKmsKeyId;
+        private VpcConfig _vpcConfig;
 
         /// <summary>
         /// Gets and sets the property VolumeKmsKeyId. 
@@ -87,6 +88,21 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetVolumeKmsKeyId()
         {
             return this._volumeKmsKeyId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcConfig.
+        /// </summary>
+        public VpcConfig VpcConfig
+        {
+            get { return this._vpcConfig; }
+            set { this._vpcConfig = value; }
+        }
+
+        // Check to see if VpcConfig property is set
+        internal bool IsSetVpcConfig()
+        {
+            return this._vpcConfig != null;
         }
 
     }

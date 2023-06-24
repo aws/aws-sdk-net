@@ -31,8 +31,11 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// Container for the parameters to the StartActivityStream operation.
     /// Starts a database activity stream to monitor activity on the database. For more information,
-    /// see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/DBActivityStreams.html">Database
-    /// Activity Streams</a> in the <i>Amazon Aurora User Guide</i>.
+    /// see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/DBActivityStreams.html">
+    /// Monitoring Amazon Aurora with Database Activity Streams</a> in the <i>Amazon Aurora
+    /// User Guide</i> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/DBActivityStreams.html">
+    /// Monitoring Amazon RDS with Database Activity Streams</a> in the <i>Amazon RDS User
+    /// Guide</i>.
     /// </summary>
     public partial class StartActivityStreamRequest : AmazonRDSRequest
     {
@@ -65,8 +68,8 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property EngineNativeAuditFieldsIncluded. 
         /// <para>
         /// Specifies whether the database activity stream includes engine-native audit fields.
-        /// This option only applies to an Oracle DB instance. By default, no engine-native audit
-        /// fields are included.
+        /// This option applies to an Oracle or Microsoft SQL Server DB instance. By default,
+        /// no engine-native audit fields are included.
         /// </para>
         /// </summary>
         public bool EngineNativeAuditFieldsIncluded
@@ -107,7 +110,7 @@ namespace Amazon.RDS.Model
         /// <para>
         /// Specifies the mode of the database activity stream. Database events such as a change
         /// or access generate an activity stream event. The database session can handle these
-        /// events either synchronously or asynchronously. 
+        /// events either synchronously or asynchronously.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -40,8 +40,8 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// If the response to the previous <code>ListNotebookInstances</code> request was truncated,
-        /// Amazon SageMaker returns this token. To retrieve the next set of notebook instances,
-        /// use the token in the next request.
+        /// SageMaker returns this token. To retrieve the next set of notebook instances, use
+        /// the token in the next request.
         /// </para>
         /// </summary>
         [AWSProperty(Max=8192)]

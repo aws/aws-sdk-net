@@ -34,6 +34,7 @@ namespace Amazon.IoTWireless.Model
     public partial class LoRaWANSendDataToDevice
     {
         private int? _fPort;
+        private ParticipatingGateways _participatingGateways;
 
         /// <summary>
         /// Gets and sets the property FPort.
@@ -49,6 +50,25 @@ namespace Amazon.IoTWireless.Model
         internal bool IsSetFPort()
         {
             return this._fPort.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ParticipatingGateways. 
+        /// <para>
+        /// Choose the gateways that you want to use for the downlink data traffic when the wireless
+        /// device is running in class B or class C mode.
+        /// </para>
+        /// </summary>
+        public ParticipatingGateways ParticipatingGateways
+        {
+            get { return this._participatingGateways; }
+            set { this._participatingGateways = value; }
+        }
+
+        // Check to see if ParticipatingGateways property is set
+        internal bool IsSetParticipatingGateways()
+        {
+            return this._participatingGateways != null;
         }
 
     }

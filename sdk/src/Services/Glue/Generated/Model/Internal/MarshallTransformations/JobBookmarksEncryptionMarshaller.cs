@@ -34,7 +34,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// JobBookmarksEncryption Marshaller
-    /// </summary>       
+    /// </summary>
     public class JobBookmarksEncryptionMarshaller : IRequestMarshaller<JobBookmarksEncryption, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static JobBookmarksEncryptionMarshaller Instance = new JobBookmarksEncryptionMarshaller();
 
     }

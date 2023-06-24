@@ -37,13 +37,18 @@ namespace Amazon.ApplicationInsights.Model
         private bool? _autoConfigEnabled;
         private bool? _autoCreate;
         private bool? _cweMonitorEnabled;
+        private GroupingType _groupingType;
         private bool? _opsCenterEnabled;
         private string _opsItemSNSTopicArn;
         private string _resourceGroupName;
         private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
-        /// Gets and sets the property AutoConfigEnabled.
+        /// Gets and sets the property AutoConfigEnabled. 
+        /// <para>
+        ///  Indicates whether Application Insights automatically configures unmonitored resources
+        /// in the resource group. 
+        /// </para>
         /// </summary>
         public bool AutoConfigEnabled
         {
@@ -58,7 +63,11 @@ namespace Amazon.ApplicationInsights.Model
         }
 
         /// <summary>
-        /// Gets and sets the property AutoCreate.
+        /// Gets and sets the property AutoCreate. 
+        /// <para>
+        ///  Configures all of the resources in the resource group by applying the recommended
+        /// configurations. 
+        /// </para>
         /// </summary>
         public bool AutoCreate
         {
@@ -90,6 +99,26 @@ namespace Amazon.ApplicationInsights.Model
         internal bool IsSetCWEMonitorEnabled()
         {
             return this._cweMonitorEnabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property GroupingType. 
+        /// <para>
+        /// Application Insights can create applications based on a resource group or on an account.
+        /// To create an account-based application using all of the resources in the account,
+        /// set this parameter to <code>ACCOUNT_BASED</code>. 
+        /// </para>
+        /// </summary>
+        public GroupingType GroupingType
+        {
+            get { return this._groupingType; }
+            set { this._groupingType = value; }
+        }
+
+        // Check to see if GroupingType property is set
+        internal bool IsSetGroupingType()
+        {
+            return this._groupingType != null;
         }
 
         /// <summary>

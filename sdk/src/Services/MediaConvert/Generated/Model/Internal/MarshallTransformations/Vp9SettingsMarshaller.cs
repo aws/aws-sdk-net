@@ -34,7 +34,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Vp9Settings Marshaller
-    /// </summary>       
+    /// </summary>
     public class Vp9SettingsMarshaller : IRequestMarshaller<Vp9Settings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -127,7 +127,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static Vp9SettingsMarshaller Instance = new Vp9SettingsMarshaller();
 
     }

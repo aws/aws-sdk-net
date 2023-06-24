@@ -30,7 +30,7 @@ namespace Amazon.Personalize.Model
 {
     /// <summary>
     /// Describes a job that imports training data from a data source (Amazon S3 bucket) to
-    /// an Amazon Personalize dataset. For more information, see <a>CreateDatasetImportJob</a>.
+    /// an Amazon Personalize dataset. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDatasetImportJob.html">CreateDatasetImportJob</a>.
     /// 
     ///  
     /// <para>
@@ -49,8 +49,10 @@ namespace Amazon.Personalize.Model
         private string _datasetImportJobArn;
         private DataSource _dataSource;
         private string _failureReason;
+        private ImportMode _importMode;
         private string _jobName;
         private DateTime? _lastUpdatedDateTime;
+        private bool? _publishAttributionMetricsToS3;
         private string _roleArn;
         private string _status;
 
@@ -147,6 +149,24 @@ namespace Amazon.Personalize.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ImportMode. 
+        /// <para>
+        /// The import mode used by the dataset import job to import new records.
+        /// </para>
+        /// </summary>
+        public ImportMode ImportMode
+        {
+            get { return this._importMode; }
+            set { this._importMode = value; }
+        }
+
+        // Check to see if ImportMode property is set
+        internal bool IsSetImportMode()
+        {
+            return this._importMode != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property JobName. 
         /// <para>
         /// The name of the import job.
@@ -181,6 +201,24 @@ namespace Amazon.Personalize.Model
         internal bool IsSetLastUpdatedDateTime()
         {
             return this._lastUpdatedDateTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PublishAttributionMetricsToS3. 
+        /// <para>
+        /// Whether the job publishes metrics to Amazon S3 for a metric attribution.
+        /// </para>
+        /// </summary>
+        public bool PublishAttributionMetricsToS3
+        {
+            get { return this._publishAttributionMetricsToS3.GetValueOrDefault(); }
+            set { this._publishAttributionMetricsToS3 = value; }
+        }
+
+        // Check to see if PublishAttributionMetricsToS3 property is set
+        internal bool IsSetPublishAttributionMetricsToS3()
+        {
+            return this._publishAttributionMetricsToS3.HasValue; 
         }
 
         /// <summary>

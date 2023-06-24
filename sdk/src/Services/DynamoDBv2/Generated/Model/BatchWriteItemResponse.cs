@@ -117,7 +117,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <para>
         /// A map of tables and requests against those tables that were not processed. The <code>UnprocessedItems</code>
         /// value is in the same form as <code>RequestItems</code>, so you can provide this value
-        /// directly to a subsequent <code>BatchGetItem</code> operation. For more information,
+        /// directly to a subsequent <code>BatchWriteItem</code> operation. For more information,
         /// see <code>RequestItems</code> in the Request Parameters section.
         /// </para>
         ///  

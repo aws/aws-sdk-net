@@ -100,6 +100,12 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
                     unmarshalledObject.QuestionTitle = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("QuestionType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.QuestionType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Reason", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

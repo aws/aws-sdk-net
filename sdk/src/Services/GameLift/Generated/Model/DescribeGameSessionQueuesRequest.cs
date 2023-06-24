@@ -32,7 +32,6 @@ namespace Amazon.GameLift.Model
     /// Container for the parameters to the DescribeGameSessionQueues operation.
     /// Retrieves the properties for one or more game session queues. When requesting multiple
     /// queues, use the pagination parameters to retrieve results as a set of sequential pages.
-    /// If successful, a <a>GameSessionQueue</a> object is returned for each requested queue.
     /// When specifying a list of queues, objects are returned only for queues that currently
     /// exist in the Region.
     /// 
@@ -44,16 +43,6 @@ namespace Amazon.GameLift.Model
     /// <para>
     ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queues-console.html">
     /// View Your Queues</a> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <b>Related actions</b> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <a>CreateGameSessionQueue</a> | <a>DescribeGameSessionQueues</a> | <a>UpdateGameSessionQueue</a>
-    /// | <a>DeleteGameSessionQueue</a> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
-    /// APIs by task</a> 
     /// </para>
     /// </summary>
     public partial class DescribeGameSessionQueuesRequest : AmazonGameLiftRequest

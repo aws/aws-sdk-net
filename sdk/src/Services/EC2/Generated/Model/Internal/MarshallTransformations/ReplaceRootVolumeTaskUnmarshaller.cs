@@ -60,6 +60,18 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.CompleteTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("deleteReplacedRootVolume", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.DeleteReplacedRootVolume = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("imageId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ImageId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("instanceId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -70,6 +82,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.ReplaceRootVolumeTaskId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("snapshotId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.SnapshotId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("startTime", targetDepth))

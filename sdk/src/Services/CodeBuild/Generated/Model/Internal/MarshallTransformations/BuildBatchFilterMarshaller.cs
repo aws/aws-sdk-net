@@ -34,7 +34,7 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// BuildBatchFilter Marshaller
-    /// </summary>       
+    /// </summary>
     public class BuildBatchFilterMarshaller : IRequestMarshaller<BuildBatchFilter, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static BuildBatchFilterMarshaller Instance = new BuildBatchFilterMarshaller();
 
     }

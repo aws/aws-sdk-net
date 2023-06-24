@@ -34,7 +34,7 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// OutputLocation Marshaller
-    /// </summary>       
+    /// </summary>
     public class OutputLocationMarshaller : IRequestMarshaller<OutputLocation, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static OutputLocationMarshaller Instance = new OutputLocationMarshaller();
 
     }

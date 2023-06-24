@@ -30,7 +30,7 @@ namespace Amazon.WellArchitected.Model
 {
     /// <summary>
     /// Container for the parameters to the ListAnswers operation.
-    /// List of answers.
+    /// List of answers for a particular workload and lens.
     /// </summary>
     public partial class ListAnswersRequest : AmazonWellArchitectedRequest
     {
@@ -39,6 +39,7 @@ namespace Amazon.WellArchitected.Model
         private int? _milestoneNumber;
         private string _nextToken;
         private string _pillarId;
+        private QuestionPriority _questionPriority;
         private string _workloadId;
 
         /// <summary>
@@ -124,9 +125,27 @@ namespace Amazon.WellArchitected.Model
         }
 
         /// <summary>
+        /// Gets and sets the property QuestionPriority. 
+        /// <para>
+        /// The priority of the question.
+        /// </para>
+        /// </summary>
+        public QuestionPriority QuestionPriority
+        {
+            get { return this._questionPriority; }
+            set { this._questionPriority = value; }
+        }
+
+        // Check to see if QuestionPriority property is set
+        internal bool IsSetQuestionPriority()
+        {
+            return this._questionPriority != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property WorkloadId.
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=32, Max=32)]
         public string WorkloadId
         {
             get { return this._workloadId; }

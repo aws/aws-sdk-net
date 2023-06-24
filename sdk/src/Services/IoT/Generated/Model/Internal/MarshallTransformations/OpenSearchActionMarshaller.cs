@@ -34,7 +34,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// OpenSearchAction Marshaller
-    /// </summary>       
+    /// </summary>
     public class OpenSearchActionMarshaller : IRequestMarshaller<OpenSearchAction, JsonMarshallerContext> 
     {
         /// <summary>
@@ -79,7 +79,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static OpenSearchActionMarshaller Instance = new OpenSearchActionMarshaller();
 
     }

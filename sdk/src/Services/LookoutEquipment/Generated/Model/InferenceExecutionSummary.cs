@@ -107,7 +107,7 @@ namespace Amazon.LookoutEquipment.Model
         /// Gets and sets the property DataOutputConfiguration. 
         /// <para>
         ///  Specifies configuration information for the output results from for the inference
-        /// execution, including the output S3 location. 
+        /// execution, including the output Amazon S3 location. 
         /// </para>
         /// </summary>
         public InferenceOutputConfiguration DataOutputConfiguration

@@ -30,9 +30,9 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the GenerateEmbedUrlForAnonymousUser operation.
-    /// Generates an embed URL that you can use to embed an Amazon QuickSight dashboard in
-    /// your website, without having to register any reader users. Before you use this action,
-    /// make sure that you have configured the dashboards and permissions.
+    /// Generates an embed URL that you can use to embed an Amazon QuickSight dashboard or
+    /// visual in your website, without having to register any reader users. Before you use
+    /// this action, make sure that you have configured the dashboards and permissions.
     /// 
     ///  
     /// <para>
@@ -47,11 +47,8 @@ namespace Amazon.QuickSight.Model
     /// <para>
     /// The URL validity period should not be confused with the actual session lifetime that
     /// can be customized using the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GenerateEmbedUrlForAnonymousUser.html#QS-GenerateEmbedUrlForAnonymousUser-request-SessionLifetimeInMinutes">SessionLifetimeInMinutes</a>
-    /// </code> parameter.
-    /// </para>
-    ///  
-    /// <para>
-    /// The resulting user session is valid for 15 minutes (default) to 10 hours (maximum).
+    /// </code> parameter. The resulting user session is valid for 15 minutes (minimum) to
+    /// 10 hours (maximum). The default session duration is 10 hours.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -71,6 +68,7 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class GenerateEmbedUrlForAnonymousUserRequest : AmazonQuickSightRequest
     {
+        private List<string> _allowedDomains = new List<string>();
         private List<string> _authorizedResourceArns = new List<string>();
         private string _awsAccountId;
         private AnonymousUserEmbeddingExperienceConfiguration _experienceConfiguration;
@@ -79,12 +77,41 @@ namespace Amazon.QuickSight.Model
         private List<SessionTag> _sessionTags = new List<SessionTag>();
 
         /// <summary>
+        /// Gets and sets the property AllowedDomains. 
+        /// <para>
+        /// The domains that you want to add to the allow list for access to the generated URL
+        /// that is then embedded. This optional parameter overrides the static domains that are
+        /// configured in the Manage QuickSight menu in the Amazon QuickSight console. Instead,
+        /// it allows only the domains that you include in this parameter. You can list up to
+        /// three domains or subdomains in each API call.
+        /// </para>
+        ///  
+        /// <para>
+        /// To include all subdomains under a specific domain to the allow list, use <code>*</code>.
+        /// For example, <code>https://*.sapp.amazon.com</code> includes all subdomains under
+        /// <code>https://sapp.amazon.com</code>.
+        /// </para>
+        /// </summary>
+        public List<string> AllowedDomains
+        {
+            get { return this._allowedDomains; }
+            set { this._allowedDomains = value; }
+        }
+
+        // Check to see if AllowedDomains property is set
+        internal bool IsSetAllowedDomains()
+        {
+            return this._allowedDomains != null && this._allowedDomains.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property AuthorizedResourceArns. 
         /// <para>
-        /// The Amazon Resource Names for the Amazon QuickSight resources that the user is authorized
-        /// to access during the lifetime of the session. If you choose <code>Dashboard</code>
+        /// The Amazon Resource Names (ARNs) for the Amazon QuickSight resources that the user
+        /// is authorized to access during the lifetime of the session. If you choose <code>Dashboard</code>
         /// embedding experience, pass the list of dashboard ARNs in the account that you want
-        /// the user to be able to view.
+        /// the user to be able to view. Currently, you can pass up to 25 dashboard ARNs in each
+        /// API call.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -123,7 +150,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property ExperienceConfiguration. 
         /// <para>
-        /// The configuration of the experience you are embedding.
+        /// The configuration of the experience that you are embedding.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -190,7 +217,7 @@ namespace Amazon.QuickSight.Model
         /// <para>
         /// These are not the tags used for the Amazon Web Services resource tagging feature.
         /// For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-rls-tags.html">Using
-        /// Row-Level Security (RLS) with Tags</a>.
+        /// Row-Level Security (RLS) with Tags</a>in the <i>Amazon QuickSight User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

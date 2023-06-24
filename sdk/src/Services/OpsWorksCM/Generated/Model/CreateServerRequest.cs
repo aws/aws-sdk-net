@@ -244,7 +244,7 @@ namespace Amazon.OpsWorksCM.Model
         /// and <code>CustomCertificate</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=4096)]
+        [AWSProperty(Sensitive=true, Max=4096)]
         public string CustomPrivateKey
         {
             get { return this._customPrivateKey; }

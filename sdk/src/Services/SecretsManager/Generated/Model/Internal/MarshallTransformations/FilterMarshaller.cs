@@ -34,7 +34,7 @@ namespace Amazon.SecretsManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Filter Marshaller
-    /// </summary>       
+    /// </summary>
     public class FilterMarshaller : IRequestMarshaller<Filter, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.SecretsManager.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static FilterMarshaller Instance = new FilterMarshaller();
 
     }

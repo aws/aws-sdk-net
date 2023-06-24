@@ -38,8 +38,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property AssociationId. 
         /// <para>
-        /// [EC2-VPC] The ID that represents the association of the Elastic IP address with an
-        /// instance.
+        /// The ID that represents the association of the Elastic IP address with an instance.
         /// </para>
         /// </summary>
         public string AssociationId

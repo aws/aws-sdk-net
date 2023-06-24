@@ -34,7 +34,7 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// XssMatchStatement Marshaller
-    /// </summary>       
+    /// </summary>
     public class XssMatchStatementMarshaller : IRequestMarshaller<XssMatchStatement, JsonMarshallerContext> 
     {
         /// <summary>
@@ -76,7 +76,7 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static XssMatchStatementMarshaller Instance = new XssMatchStatementMarshaller();
 
     }

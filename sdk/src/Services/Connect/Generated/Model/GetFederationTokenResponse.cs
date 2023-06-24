@@ -34,6 +34,9 @@ namespace Amazon.Connect.Model
     public partial class GetFederationTokenResponse : AmazonWebServiceResponse
     {
         private Credentials _credentials;
+        private string _signInUrl;
+        private string _userArn;
+        private string _userId;
 
         /// <summary>
         /// Gets and sets the property Credentials. 
@@ -51,6 +54,61 @@ namespace Amazon.Connect.Model
         internal bool IsSetCredentials()
         {
             return this._credentials != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SignInUrl. 
+        /// <para>
+        /// The URL to sign into the user's instance. 
+        /// </para>
+        /// </summary>
+        public string SignInUrl
+        {
+            get { return this._signInUrl; }
+            set { this._signInUrl = value; }
+        }
+
+        // Check to see if SignInUrl property is set
+        internal bool IsSetSignInUrl()
+        {
+            return this._signInUrl != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UserArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the user.
+        /// </para>
+        /// </summary>
+        public string UserArn
+        {
+            get { return this._userArn; }
+            set { this._userArn = value; }
+        }
+
+        // Check to see if UserArn property is set
+        internal bool IsSetUserArn()
+        {
+            return this._userArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UserId. 
+        /// <para>
+        /// The identifier for the user.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string UserId
+        {
+            get { return this._userId; }
+            set { this._userId = value; }
+        }
+
+        // Check to see if UserId property is set
+        internal bool IsSetUserId()
+        {
+            return this._userId != null;
         }
 
     }

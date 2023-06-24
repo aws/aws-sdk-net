@@ -34,10 +34,29 @@ namespace Amazon.Athena.Model
     /// </summary>
     public partial class QueryExecutionStatus
     {
+        private AthenaError _athenaError;
         private DateTime? _completionDateTime;
         private QueryExecutionState _state;
         private string _stateChangeReason;
         private DateTime? _submissionDateTime;
+
+        /// <summary>
+        /// Gets and sets the property AthenaError. 
+        /// <para>
+        /// Provides information about an Athena query error.
+        /// </para>
+        /// </summary>
+        public AthenaError AthenaError
+        {
+            get { return this._athenaError; }
+            set { this._athenaError = value; }
+        }
+
+        // Check to see if AthenaError property is set
+        internal bool IsSetAthenaError()
+        {
+            return this._athenaError != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CompletionDateTime. 

@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeDeploy.Model
 {
     /// <summary>
-    /// An application with the specified name with the IAM user or AWS account already exists.
+    /// An application with the specified name with the IAM user or Amazon Web Services account
+    /// already exists.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -28,7 +28,24 @@
         {"shape":"ThrottlingException"},
         {"shape":"InternalServerException"}
       ],
-      "documentation":"<p>Associates a new key value with a specific profile, such as a Contact Trace Record (CTR) ContactId.</p> <p>A profile object can have a single unique key and any number of additional keys that can be used to identify the profile that it belongs to.</p>"
+      "documentation":"<p>Associates a new key value with a specific profile, such as a Contact Record ContactId.</p> <p>A profile object can have a single unique key and any number of additional keys that can be used to identify the profile that it belongs to.</p>"
+    },
+    "CreateCalculatedAttributeDefinition":{
+      "name":"CreateCalculatedAttributeDefinition",
+      "http":{
+        "method":"POST",
+        "requestUri":"/domains/{DomainName}/calculated-attributes/{CalculatedAttributeName}"
+      },
+      "input":{"shape":"CreateCalculatedAttributeDefinitionRequest"},
+      "output":{"shape":"CreateCalculatedAttributeDefinitionResponse"},
+      "errors":[
+        {"shape":"BadRequestException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ],
+      "documentation":"<p>Creates a new calculated attribute definition. After creation, new object data ingested into Customer Profiles will be included in the calculated attribute, which can be retrieved for a profile using the <a href=\"https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetCalculatedAttributeForProfile.html\">GetCalculatedAttributeForProfile</a> API. Defining a calculated attribute makes it available for all profiles within a domain. Each calculated attribute can only reference one <code>ObjectType</code> and at most, two fields from that <code>ObjectType</code>.</p>"
     },
     "CreateDomain":{
       "name":"CreateDomain",
@@ -47,6 +64,40 @@
       ],
       "documentation":"<p>Creates a domain, which is a container for all customer data, such as customer profile attributes, object types, profile keys, and encryption keys. You can create multiple domains, and each domain can have multiple third-party integrations.</p> <p>Each Amazon Connect instance can be associated with only one domain. Multiple Amazon Connect instances can be associated with one domain.</p> <p>Use this API or <a href=\"https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_UpdateDomain.html\">UpdateDomain</a> to enable <a href=\"https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html\">identity resolution</a>: set <code>Matching</code> to true. </p> <p>To prevent cross-service impersonation when you call this API, see <a href=\"https://docs.aws.amazon.com/connect/latest/adminguide/cross-service-confused-deputy-prevention.html\">Cross-service confused deputy prevention</a> for sample policies that you should apply. </p>"
     },
+    "CreateEventStream":{
+      "name":"CreateEventStream",
+      "http":{
+        "method":"POST",
+        "requestUri":"/domains/{DomainName}/event-streams/{EventStreamName}"
+      },
+      "input":{"shape":"CreateEventStreamRequest"},
+      "output":{"shape":"CreateEventStreamResponse"},
+      "errors":[
+        {"shape":"BadRequestException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ],
+      "documentation":"<p>Creates an event stream, which is a subscription to real-time events, such as when profiles are created and updated through Amazon Connect Customer Profiles.</p> <p>Each event stream can be associated with only one Kinesis Data Stream destination in the same region and Amazon Web Services account as the customer profiles domain</p>"
+    },
+    "CreateIntegrationWorkflow":{
+      "name":"CreateIntegrationWorkflow",
+      "http":{
+        "method":"POST",
+        "requestUri":"/domains/{DomainName}/workflows/integrations"
+      },
+      "input":{"shape":"CreateIntegrationWorkflowRequest"},
+      "output":{"shape":"CreateIntegrationWorkflowResponse"},
+      "errors":[
+        {"shape":"BadRequestException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ],
+      "documentation":"<p> Creates an integration workflow. An integration workflow is an async process which ingests historic data and sets up an integration for ongoing updates. The supported Amazon AppFlow sources are Salesforce, ServiceNow, and Marketo. </p>"
+    },
     "CreateProfile":{
       "name":"CreateProfile",
       "http":{
@@ -64,6 +115,23 @@
       ],
       "documentation":"<p>Creates a standard profile.</p> <p>A standard profile represents the following attributes for a customer profile in a domain.</p>"
     },
+    "DeleteCalculatedAttributeDefinition":{
+      "name":"DeleteCalculatedAttributeDefinition",
+      "http":{
+        "method":"DELETE",
+        "requestUri":"/domains/{DomainName}/calculated-attributes/{CalculatedAttributeName}"
+      },
+      "input":{"shape":"DeleteCalculatedAttributeDefinitionRequest"},
+      "output":{"shape":"DeleteCalculatedAttributeDefinitionResponse"},
+      "errors":[
+        {"shape":"BadRequestException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ],
+      "documentation":"<p>Deletes an existing calculated attribute definition. Note that deleting a default calculated attribute is possible, however once deleted, you will be unable to undo that action and will need to recreate it on your own using the CreateCalculatedAttributeDefinition API if you want it back.</p>"
+    },
     "DeleteDomain":{
       "name":"DeleteDomain",
       "http":{
@@ -80,6 +148,24 @@
         {"shape":"InternalServerException"}
       ],
       "documentation":"<p>Deletes a specific domain and all of its customer data, such as customer profile attributes and their related objects.</p>"
+    },
+    "DeleteEventStream":{
+      "name":"DeleteEventStream",
+      "http":{
+        "method":"DELETE",
+        "requestUri":"/domains/{DomainName}/event-streams/{EventStreamName}"
+      },
+      "input":{"shape":"DeleteEventStreamRequest"},
+      "output":{"shape":"DeleteEventStreamResponse"},
+      "errors":[
+        {"shape":"BadRequestException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ],
+      "documentation":"<p>Disables and deletes the specified event stream.</p>",
+      "idempotent":true
     },
     "DeleteIntegration":{
       "name":"DeleteIntegration",
@@ -166,6 +252,23 @@
       ],
       "documentation":"<p>Removes a ProfileObjectType from a specific domain as well as removes all the ProfileObjects of that type. It also disables integrations from this specific ProfileObjectType. In addition, it scrubs all of the fields of the standard profile that were populated from this ProfileObjectType.</p>"
     },
+    "DeleteWorkflow":{
+      "name":"DeleteWorkflow",
+      "http":{
+        "method":"DELETE",
+        "requestUri":"/domains/{DomainName}/workflows/{WorkflowId}"
+      },
+      "input":{"shape":"DeleteWorkflowRequest"},
+      "output":{"shape":"DeleteWorkflowResponse"},
+      "errors":[
+        {"shape":"BadRequestException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ],
+      "documentation":"<p>Deletes the specified workflow and all its corresponding resources. This is an async process.</p>"
+    },
     "GetAutoMergingPreview":{
       "name":"GetAutoMergingPreview",
       "http":{
@@ -183,6 +286,40 @@
       ],
       "documentation":"<p>Tests the auto-merging settings of your Identity Resolution Job without merging your data. It randomly selects a sample of matching groups from the existing matching results, and applies the automerging settings that you provided. You can then view the number of profiles in the sample, the number of matches, and the number of profiles identified to be merged. This enables you to evaluate the accuracy of the attributes in your matching list. </p> <p>You can't view which profiles are matched and would be merged.</p> <important> <p>We strongly recommend you use this API to do a dry run of the automerging process before running the Identity Resolution Job. Include <b>at least</b> two matching attributes. If your matching list includes too few attributes (such as only <code>FirstName</code> or only <code>LastName</code>), there may be a large number of matches. This increases the chances of erroneous merges.</p> </important>"
     },
+    "GetCalculatedAttributeDefinition":{
+      "name":"GetCalculatedAttributeDefinition",
+      "http":{
+        "method":"GET",
+        "requestUri":"/domains/{DomainName}/calculated-attributes/{CalculatedAttributeName}"
+      },
+      "input":{"shape":"GetCalculatedAttributeDefinitionRequest"},
+      "output":{"shape":"GetCalculatedAttributeDefinitionResponse"},
+      "errors":[
+        {"shape":"BadRequestException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ],
+      "documentation":"<p>Provides more information on a calculated attribute definition for Customer Profiles.</p>"
+    },
+    "GetCalculatedAttributeForProfile":{
+      "name":"GetCalculatedAttributeForProfile",
+      "http":{
+        "method":"GET",
+        "requestUri":"/domains/{DomainName}/profile/{ProfileId}/calculated-attributes/{CalculatedAttributeName}"
+      },
+      "input":{"shape":"GetCalculatedAttributeForProfileRequest"},
+      "output":{"shape":"GetCalculatedAttributeForProfileResponse"},
+      "errors":[
+        {"shape":"BadRequestException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ],
+      "documentation":"<p>Retrieve a calculated attribute for a customer profile.</p>"
+    },
     "GetDomain":{
       "name":"GetDomain",
       "http":{
@@ -199,6 +336,23 @@
         {"shape":"InternalServerException"}
       ],
       "documentation":"<p>Returns information about a specific domain.</p>"
+    },
+    "GetEventStream":{
+      "name":"GetEventStream",
+      "http":{
+        "method":"GET",
+        "requestUri":"/domains/{DomainName}/event-streams/{EventStreamName}"
+      },
+      "input":{"shape":"GetEventStreamRequest"},
+      "output":{"shape":"GetEventStreamResponse"},
+      "errors":[
+        {"shape":"BadRequestException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ],
+      "documentation":"<p>Returns information about the specified event stream in a specific domain.</p>"
     },
     "GetIdentityResolutionJob":{
       "name":"GetIdentityResolutionJob",
@@ -249,7 +403,7 @@
         {"shape":"ThrottlingException"},
         {"shape":"InternalServerException"}
       ],
-      "documentation":"<p>This API is in preview release for Amazon Connect and subject to change.</p> <p>Before calling this API, use <a href=\"https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_CreateDomain.html\">CreateDomain</a> or <a href=\"https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_UpdateDomain.html\">UpdateDomain</a> to enable identity resolution: set <code>Matching</code> to true.</p> <p>GetMatches returns potentially matching profiles, based on the results of the latest run of a machine learning process. </p> <important> <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every Saturday at 12AM UTC to detect duplicate profiles in your domains. </p> <p>After the Identity Resolution Job completes, use the <a href=\"https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html\">GetMatches</a> API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from S3.</p> </important> <p>Amazon Connect uses the following profile attributes to identify matches:</p> <ul> <li> <p>PhoneNumber</p> </li> <li> <p>HomePhoneNumber</p> </li> <li> <p>BusinessPhoneNumber</p> </li> <li> <p>MobilePhoneNumber</p> </li> <li> <p>EmailAddress</p> </li> <li> <p>PersonalEmailAddress</p> </li> <li> <p>BusinessEmailAddress</p> </li> <li> <p>FullName</p> </li> <li> <p>BusinessName</p> </li> </ul> <p>For example, two or more profiles—with spelling mistakes such as <b>John Doe</b> and <b>Jhn Doe</b>, or different casing email addresses such as <b>JOHN_DOE@ANYCOMPANY.COM</b> and <b>johndoe@anycompany.com</b>, or different phone number formats such as <b>555-010-0000</b> and <b>+1-555-010-0000</b>—can be detected as belonging to the same customer <b>John Doe</b> and merged into a unified profile.</p>"
+      "documentation":"<p>Before calling this API, use <a href=\"https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_CreateDomain.html\">CreateDomain</a> or <a href=\"https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_UpdateDomain.html\">UpdateDomain</a> to enable identity resolution: set <code>Matching</code> to true.</p> <p>GetMatches returns potentially matching profiles, based on the results of the latest run of a machine learning process. </p> <important> <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every Saturday at 12AM UTC to detect duplicate profiles in your domains. </p> <p>After the Identity Resolution Job completes, use the <a href=\"https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html\">GetMatches</a> API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from S3.</p> </important> <p>Amazon Connect uses the following profile attributes to identify matches:</p> <ul> <li> <p>PhoneNumber</p> </li> <li> <p>HomePhoneNumber</p> </li> <li> <p>BusinessPhoneNumber</p> </li> <li> <p>MobilePhoneNumber</p> </li> <li> <p>EmailAddress</p> </li> <li> <p>PersonalEmailAddress</p> </li> <li> <p>BusinessEmailAddress</p> </li> <li> <p>FullName</p> </li> </ul> <p>For example, two or more profiles—with spelling mistakes such as <b>John Doe</b> and <b>Jhn Doe</b>, or different casing email addresses such as <b>JOHN_DOE@ANYCOMPANY.COM</b> and <b>johndoe@anycompany.com</b>, or different phone number formats such as <b>555-010-0000</b> and <b>+1-555-010-0000</b>—can be detected as belonging to the same customer <b>John Doe</b> and merged into a unified profile.</p>"
     },
     "GetProfileObjectType":{
       "name":"GetProfileObjectType",
@@ -285,6 +439,40 @@
       ],
       "documentation":"<p>Returns the template information for a specific object type.</p> <p>A template is a predefined ProfileObjectType, such as “Salesforce-Account” or “Salesforce-Contact.” When a user sends a ProfileObject, using the PutProfileObject API, with an ObjectTypeName that matches one of the TemplateIds, it uses the mappings from the template.</p>"
     },
+    "GetWorkflow":{
+      "name":"GetWorkflow",
+      "http":{
+        "method":"GET",
+        "requestUri":"/domains/{DomainName}/workflows/{WorkflowId}"
+      },
+      "input":{"shape":"GetWorkflowRequest"},
+      "output":{"shape":"GetWorkflowResponse"},
+      "errors":[
+        {"shape":"BadRequestException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ],
+      "documentation":"<p>Get details of specified workflow.</p>"
+    },
+    "GetWorkflowSteps":{
+      "name":"GetWorkflowSteps",
+      "http":{
+        "method":"GET",
+        "requestUri":"/domains/{DomainName}/workflows/{WorkflowId}/steps"
+      },
+      "input":{"shape":"GetWorkflowStepsRequest"},
+      "output":{"shape":"GetWorkflowStepsResponse"},
+      "errors":[
+        {"shape":"BadRequestException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ],
+      "documentation":"<p>Get granular list of steps in workflow.</p>"
+    },
     "ListAccountIntegrations":{
       "name":"ListAccountIntegrations",
       "http":{
@@ -302,6 +490,40 @@
       ],
       "documentation":"<p>Lists all of the integrations associated to a specific URI in the AWS account.</p>"
     },
+    "ListCalculatedAttributeDefinitions":{
+      "name":"ListCalculatedAttributeDefinitions",
+      "http":{
+        "method":"GET",
+        "requestUri":"/domains/{DomainName}/calculated-attributes"
+      },
+      "input":{"shape":"ListCalculatedAttributeDefinitionsRequest"},
+      "output":{"shape":"ListCalculatedAttributeDefinitionsResponse"},
+      "errors":[
+        {"shape":"BadRequestException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ],
+      "documentation":"<p>Lists calculated attribute definitions for Customer Profiles</p>"
+    },
+    "ListCalculatedAttributesForProfile":{
+      "name":"ListCalculatedAttributesForProfile",
+      "http":{
+        "method":"GET",
+        "requestUri":"/domains/{DomainName}/profile/{ProfileId}/calculated-attributes"
+      },
+      "input":{"shape":"ListCalculatedAttributesForProfileRequest"},
+      "output":{"shape":"ListCalculatedAttributesForProfileResponse"},
+      "errors":[
+        {"shape":"BadRequestException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ],
+      "documentation":"<p>Retrieve a list of calculated attributes for a customer profile.</p>"
+    },
     "ListDomains":{
       "name":"ListDomains",
       "http":{
@@ -318,6 +540,23 @@
         {"shape":"InternalServerException"}
       ],
       "documentation":"<p>Returns a list of all the domains for an AWS account that have been created.</p>"
+    },
+    "ListEventStreams":{
+      "name":"ListEventStreams",
+      "http":{
+        "method":"GET",
+        "requestUri":"/domains/{DomainName}/event-streams"
+      },
+      "input":{"shape":"ListEventStreamsRequest"},
+      "output":{"shape":"ListEventStreamsResponse"},
+      "errors":[
+        {"shape":"BadRequestException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ],
+      "documentation":"<p>Returns a list of all the event streams in a specific domain.</p>"
     },
     "ListIdentityResolutionJobs":{
       "name":"ListIdentityResolutionJobs",
@@ -419,6 +658,23 @@
       ],
       "documentation":"<p>Displays the tags associated with an Amazon Connect Customer Profiles resource. In Connect Customer Profiles, domains, profile object types, and integrations can be tagged.</p>"
     },
+    "ListWorkflows":{
+      "name":"ListWorkflows",
+      "http":{
+        "method":"POST",
+        "requestUri":"/domains/{DomainName}/workflows"
+      },
+      "input":{"shape":"ListWorkflowsRequest"},
+      "output":{"shape":"ListWorkflowsResponse"},
+      "errors":[
+        {"shape":"BadRequestException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ],
+      "documentation":"<p>Query to list all workflows.</p>"
+    },
     "MergeProfiles":{
       "name":"MergeProfiles",
       "http":{
@@ -433,7 +689,7 @@
         {"shape":"ThrottlingException"},
         {"shape":"InternalServerException"}
       ],
-      "documentation":"<p>This API is in preview release for Amazon Connect and subject to change.</p> <p>Runs an AWS Lambda job that does the following:</p> <ol> <li> <p>All the profileKeys in the <code>ProfileToBeMerged</code> will be moved to the main profile.</p> </li> <li> <p>All the objects in the <code>ProfileToBeMerged</code> will be moved to the main profile.</p> </li> <li> <p>All the <code>ProfileToBeMerged</code> will be deleted at the end.</p> </li> <li> <p>All the profileKeys in the <code>ProfileIdsToBeMerged</code> will be moved to the main profile.</p> </li> <li> <p>Standard fields are merged as follows:</p> <ol> <li> <p>Fields are always \"union\"-ed if there are no conflicts in standard fields or attributeKeys.</p> </li> <li> <p>When there are conflicting fields:</p> <ol> <li> <p>If no <code>SourceProfileIds</code> entry is specified, the main Profile value is always taken. </p> </li> <li> <p>If a <code>SourceProfileIds</code> entry is specified, the specified profileId is always taken, even if it is a NULL value.</p> </li> </ol> </li> </ol> </li> </ol> <p>You can use MergeProfiles together with <a href=\"https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html\">GetMatches</a>, which returns potentially matching profiles, or use it with the results of another matching system. After profiles have been merged, they cannot be separated (unmerged).</p>"
+      "documentation":"<p>Runs an AWS Lambda job that does the following:</p> <ol> <li> <p>All the profileKeys in the <code>ProfileToBeMerged</code> will be moved to the main profile.</p> </li> <li> <p>All the objects in the <code>ProfileToBeMerged</code> will be moved to the main profile.</p> </li> <li> <p>All the <code>ProfileToBeMerged</code> will be deleted at the end.</p> </li> <li> <p>All the profileKeys in the <code>ProfileIdsToBeMerged</code> will be moved to the main profile.</p> </li> <li> <p>Standard fields are merged as follows:</p> <ol> <li> <p>Fields are always \"union\"-ed if there are no conflicts in standard fields or attributeKeys.</p> </li> <li> <p>When there are conflicting fields:</p> <ol> <li> <p>If no <code>SourceProfileIds</code> entry is specified, the main Profile value is always taken. </p> </li> <li> <p>If a <code>SourceProfileIds</code> entry is specified, the specified profileId is always taken, even if it is a NULL value.</p> </li> </ol> </li> </ol> </li> </ol> <p>You can use MergeProfiles together with <a href=\"https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html\">GetMatches</a>, which returns potentially matching profiles, or use it with the results of another matching system. After profiles have been merged, they cannot be separated (unmerged).</p>"
     },
     "PutIntegration":{
       "name":"PutIntegration",
@@ -450,7 +706,7 @@
         {"shape":"ThrottlingException"},
         {"shape":"InternalServerException"}
       ],
-      "documentation":"<p>Adds an integration between the service and a third-party service, which includes Amazon AppFlow and Amazon Connect.</p> <p>An integration can belong to only one domain.</p>"
+      "documentation":"<p>Adds an integration between the service and a third-party service, which includes Amazon AppFlow and Amazon Connect.</p> <p>An integration can belong to only one domain.</p> <p>To add or remove tags on an existing Integration, see <a href=\"https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_TagResource.html\"> TagResource </a>/<a href=\"https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_UntagResource.html\"> UntagResource</a>.</p>"
     },
     "PutProfileObject":{
       "name":"PutProfileObject",
@@ -467,7 +723,7 @@
         {"shape":"ThrottlingException"},
         {"shape":"InternalServerException"}
       ],
-      "documentation":"<p>Adds additional objects to customer profiles of a given ObjectType.</p> <p>When adding a specific profile object, like a Contact Trace Record (CTR), an inferred profile can get created if it is not mapped to an existing profile. The resulting profile will only have a phone number populated in the standard ProfileObject. Any additional CTRs with the same phone number will be mapped to the same inferred profile.</p> <p>When a ProfileObject is created and if a ProfileObjectType already exists for the ProfileObject, it will provide data to a standard profile depending on the ProfileObjectType definition.</p> <p>PutProfileObject needs an ObjectType, which can be created using PutProfileObjectType.</p>"
+      "documentation":"<p>Adds additional objects to customer profiles of a given ObjectType.</p> <p>When adding a specific profile object, like a Contact Record, an inferred profile can get created if it is not mapped to an existing profile. The resulting profile will only have a phone number populated in the standard ProfileObject. Any additional Contact Records with the same phone number will be mapped to the same inferred profile.</p> <p>When a ProfileObject is created and if a ProfileObjectType already exists for the ProfileObject, it will provide data to a standard profile depending on the ProfileObjectType definition.</p> <p>PutProfileObject needs an ObjectType, which can be created using PutProfileObjectType.</p>"
     },
     "PutProfileObjectType":{
       "name":"PutProfileObjectType",
@@ -484,7 +740,7 @@
         {"shape":"ThrottlingException"},
         {"shape":"InternalServerException"}
       ],
-      "documentation":"<p>Defines a ProfileObjectType.</p>"
+      "documentation":"<p>Defines a ProfileObjectType.</p> <p>To add or remove tags on an existing ObjectType, see <a href=\"https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_TagResource.html\"> TagResource</a>/<a href=\"https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_UntagResource.html\">UntagResource</a>.</p>"
     },
     "SearchProfiles":{
       "name":"SearchProfiles",
@@ -501,7 +757,7 @@
         {"shape":"ThrottlingException"},
         {"shape":"InternalServerException"}
       ],
-      "documentation":"<p>Searches for profiles within a specific domain name using name, phone number, email address, account number, or a custom defined index.</p>"
+      "documentation":"<p>Searches for profiles within a specific domain using one or more predefined search keys (e.g., _fullName, _phone, _email, _account, etc.) and/or custom-defined search keys. A search key is a data type pair that consists of a <code>KeyName</code> and <code>Values</code> list.</p> <p>This operation supports searching for profiles with a minimum of 1 key-value(s) pair and up to 5 key-value(s) pairs using either <code>AND</code> or <code>OR</code> logic.</p>"
     },
     "TagResource":{
       "name":"TagResource",
@@ -533,6 +789,23 @@
       ],
       "documentation":"<p>Removes one or more tags from the specified Amazon Connect Customer Profiles resource. In Connect Customer Profiles, domains, profile object types, and integrations can be tagged.</p>"
     },
+    "UpdateCalculatedAttributeDefinition":{
+      "name":"UpdateCalculatedAttributeDefinition",
+      "http":{
+        "method":"PUT",
+        "requestUri":"/domains/{DomainName}/calculated-attributes/{CalculatedAttributeName}"
+      },
+      "input":{"shape":"UpdateCalculatedAttributeDefinitionRequest"},
+      "output":{"shape":"UpdateCalculatedAttributeDefinitionResponse"},
+      "errors":[
+        {"shape":"BadRequestException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ],
+      "documentation":"<p>Updates an existing calculated attribute definition. When updating the Conditions, note that increasing the date range of a calculated attribute will not trigger inclusion of historical data greater than the current date range.</p>"
+    },
     "UpdateDomain":{
       "name":"UpdateDomain",
       "http":{
@@ -548,7 +821,7 @@
         {"shape":"ThrottlingException"},
         {"shape":"InternalServerException"}
       ],
-      "documentation":"<p>Updates the properties of a domain, including creating or selecting a dead letter queue or an encryption key.</p> <p>After a domain is created, the name can’t be changed.</p> <p>Use this API or <a href=\"https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_CreateDomain.html\">CreateDomain</a> to enable <a href=\"https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html\">identity resolution</a>: set <code>Matching</code> to true. </p> <p>To prevent cross-service impersonation when you call this API, see <a href=\"https://docs.aws.amazon.com/connect/latest/adminguide/cross-service-confused-deputy-prevention.html\">Cross-service confused deputy prevention</a> for sample policies that you should apply. </p>"
+      "documentation":"<p>Updates the properties of a domain, including creating or selecting a dead letter queue or an encryption key.</p> <p>After a domain is created, the name can’t be changed.</p> <p>Use this API or <a href=\"https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_CreateDomain.html\">CreateDomain</a> to enable <a href=\"https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html\">identity resolution</a>: set <code>Matching</code> to true. </p> <p>To prevent cross-service impersonation when you call this API, see <a href=\"https://docs.aws.amazon.com/connect/latest/adminguide/cross-service-confused-deputy-prevention.html\">Cross-service confused deputy prevention</a> for sample policies that you should apply. </p> <p>To add or remove tags on an existing Domain, see <a href=\"https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_TagResource.html\">TagResource</a>/<a href=\"https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_UntagResource.html\">UntagResource</a>.</p>"
     },
     "UpdateProfile":{
       "name":"UpdateProfile",
@@ -599,7 +872,7 @@
         },
         "KeyName":{
           "shape":"name",
-          "documentation":"<p>A searchable identifier of a customer profile.</p>"
+          "documentation":"<p>A searchable identifier of a customer profile. The predefined keys you can use include: _account, _profileId, _assetId, _caseId, _orderId, _fullName, _phone, _email, _ctrContactId, _marketoLeadId, _salesforceAccountId, _salesforceContactId, _salesforceAssetId, _zendeskUserId, _zendeskExternalId, _zendeskTicketId, _serviceNowSystemId, _serviceNowIncidentId, _segmentUserId, _shopifyCustomerId, _shopifyOrderId.</p>"
         },
         "Values":{
           "shape":"requestValueList",
@@ -625,6 +898,24 @@
           "documentation":"<p>A list of key values.</p>"
         }
       }
+    },
+    "AdditionalSearchKey":{
+      "type":"structure",
+      "required":[
+        "KeyName",
+        "Values"
+      ],
+      "members":{
+        "KeyName":{
+          "shape":"name",
+          "documentation":"<p>A searchable identifier of a customer profile.</p>"
+        },
+        "Values":{
+          "shape":"requestValueList",
+          "documentation":"<p>A list of key values.</p>"
+        }
+      },
+      "documentation":"<p>A data type pair that consists of a <code>KeyName</code> and <code>Values</code> list that is used in conjunction with the <a href=\"https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html#customerprofiles-SearchProfiles-request-KeyName\">KeyName</a> and <a href=\"https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html#customerprofiles-SearchProfiles-request-Values\">Values</a> parameters to search for profiles using the <a href=\"https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html\">SearchProfiles</a> API.</p>"
     },
     "Address":{
       "type":"structure",
@@ -672,6 +963,146 @@
       },
       "documentation":"<p>A generic address associated with the customer that is not mailing, shipping, or billing.</p>"
     },
+    "AppflowIntegration":{
+      "type":"structure",
+      "required":["FlowDefinition"],
+      "members":{
+        "FlowDefinition":{"shape":"FlowDefinition"},
+        "Batches":{
+          "shape":"Batches",
+          "documentation":"<p>Batches in workflow of type <code>APPFLOW_INTEGRATION</code>.</p>"
+        }
+      },
+      "documentation":"<p>Details for workflow of type <code>APPFLOW_INTEGRATION</code>.</p>"
+    },
+    "AppflowIntegrationWorkflowAttributes":{
+      "type":"structure",
+      "required":[
+        "SourceConnectorType",
+        "ConnectorProfileName"
+      ],
+      "members":{
+        "SourceConnectorType":{
+          "shape":"SourceConnectorType",
+          "documentation":"<p>Specifies the source connector type, such as Salesforce, ServiceNow, and Marketo. Indicates source of ingestion.</p>"
+        },
+        "ConnectorProfileName":{
+          "shape":"ConnectorProfileName",
+          "documentation":"<p>The name of the AppFlow connector profile used for ingestion.</p>"
+        },
+        "RoleArn":{
+          "shape":"string1To255",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the IAM role. Customer Profiles assumes this role to create resources on your behalf as part of workflow execution.</p>"
+        }
+      },
+      "documentation":"<p>Structure holding all <code>APPFLOW_INTEGRATION</code> specific workflow attributes.</p>"
+    },
+    "AppflowIntegrationWorkflowMetrics":{
+      "type":"structure",
+      "required":[
+        "RecordsProcessed",
+        "StepsCompleted",
+        "TotalSteps"
+      ],
+      "members":{
+        "RecordsProcessed":{
+          "shape":"long",
+          "documentation":"<p>Number of records processed in <code>APPFLOW_INTEGRATION</code> workflow.</p>"
+        },
+        "StepsCompleted":{
+          "shape":"long",
+          "documentation":"<p>Total steps completed in <code>APPFLOW_INTEGRATION</code> workflow.</p>"
+        },
+        "TotalSteps":{
+          "shape":"long",
+          "documentation":"<p>Total steps in <code>APPFLOW_INTEGRATION</code> workflow.</p>"
+        }
+      },
+      "documentation":"<p>Workflow specific execution metrics for <code>APPFLOW_INTEGRATION</code> workflow.</p>"
+    },
+    "AppflowIntegrationWorkflowStep":{
+      "type":"structure",
+      "required":[
+        "FlowName",
+        "Status",
+        "ExecutionMessage",
+        "RecordsProcessed",
+        "BatchRecordsStartTime",
+        "BatchRecordsEndTime",
+        "CreatedAt",
+        "LastUpdatedAt"
+      ],
+      "members":{
+        "FlowName":{
+          "shape":"FlowName",
+          "documentation":"<p>Name of the flow created during execution of workflow step. <code>APPFLOW_INTEGRATION</code> workflow type creates an appflow flow during workflow step execution on the customers behalf.</p>"
+        },
+        "Status":{
+          "shape":"Status",
+          "documentation":"<p>Workflow step status for <code>APPFLOW_INTEGRATION</code> workflow.</p>"
+        },
+        "ExecutionMessage":{
+          "shape":"string1To255",
+          "documentation":"<p>Message indicating execution of workflow step for <code>APPFLOW_INTEGRATION</code> workflow.</p>"
+        },
+        "RecordsProcessed":{
+          "shape":"long",
+          "documentation":"<p>Total number of records processed during execution of workflow step for <code>APPFLOW_INTEGRATION</code> workflow.</p>"
+        },
+        "BatchRecordsStartTime":{
+          "shape":"string1To255",
+          "documentation":"<p>Start datetime of records pulled in batch during execution of workflow step for <code>APPFLOW_INTEGRATION</code> workflow.</p>"
+        },
+        "BatchRecordsEndTime":{
+          "shape":"string1To255",
+          "documentation":"<p>End datetime of records pulled in batch during execution of workflow step for <code>APPFLOW_INTEGRATION</code> workflow.</p>"
+        },
+        "CreatedAt":{
+          "shape":"timestamp",
+          "documentation":"<p>Creation timestamp of workflow step for <code>APPFLOW_INTEGRATION</code> workflow.</p>"
+        },
+        "LastUpdatedAt":{
+          "shape":"timestamp",
+          "documentation":"<p>Last updated timestamp for workflow step for <code>APPFLOW_INTEGRATION</code> workflow.</p>"
+        }
+      },
+      "documentation":"<p>Workflow step details for <code>APPFLOW_INTEGRATION</code> workflow.</p>"
+    },
+    "AttributeDetails":{
+      "type":"structure",
+      "required":[
+        "Attributes",
+        "Expression"
+      ],
+      "members":{
+        "Attributes":{
+          "shape":"AttributeList",
+          "documentation":"<p>A list of attribute items specified in the mathematical expression.</p>"
+        },
+        "Expression":{
+          "shape":"string1To255",
+          "documentation":"<p>Mathematical expression that is performed on attribute items provided in the attribute list. Each element in the expression should follow the structure of \\\"{ObjectTypeName.AttributeName}\\\".</p>"
+        }
+      },
+      "documentation":"<p>Mathematical expression and a list of attribute items specified in that expression.</p>"
+    },
+    "AttributeItem":{
+      "type":"structure",
+      "required":["Name"],
+      "members":{
+        "Name":{
+          "shape":"attributeName",
+          "documentation":"<p>The name of an attribute defined in a profile object type.</p>"
+        }
+      },
+      "documentation":"<p>The details of a single attribute item specified in the mathematical expression.</p>"
+    },
+    "AttributeList":{
+      "type":"list",
+      "member":{"shape":"AttributeItem"},
+      "max":2,
+      "min":1
+    },
     "AttributeSourceIdMap":{
       "type":"map",
       "key":{"shape":"string1To255"},
@@ -697,6 +1128,10 @@
         "ConflictResolution":{
           "shape":"ConflictResolution",
           "documentation":"<p>How the auto-merging process should resolve conflicts between different profiles. For example, if Profile A and Profile B have the same <code>FirstName</code> and <code>LastName</code> (and that is the matching criteria), which <code>EmailAddress</code> should be used? </p>"
+        },
+        "MinAllowedConfidenceScoreForMerging":{
+          "shape":"Double0To1",
+          "documentation":"<p>A number between 0 and 1 that represents the minimum confidence score required for profiles within a matching group to be merged during the auto-merge process. A higher score means higher similarity required to merge profiles. </p>"
         }
       },
       "documentation":"<p>Configuration settings for how to perform the auto-merging of profiles.</p>"
@@ -710,6 +1145,28 @@
       "error":{"httpStatusCode":400},
       "exception":true
     },
+    "Batch":{
+      "type":"structure",
+      "required":[
+        "StartTime",
+        "EndTime"
+      ],
+      "members":{
+        "StartTime":{
+          "shape":"timestamp",
+          "documentation":"<p>Start time of batch to split ingestion.</p>"
+        },
+        "EndTime":{
+          "shape":"timestamp",
+          "documentation":"<p>End time of batch to split ingestion.</p>"
+        }
+      },
+      "documentation":"<p>Batch defines the boundaries for ingestion for each step in <code>APPFLOW_INTEGRATION</code> workflow. <code>APPFLOW_INTEGRATION</code> workflow splits ingestion based on these boundaries.</p>"
+    },
+    "Batches":{
+      "type":"list",
+      "member":{"shape":"Batch"}
+    },
     "BucketName":{
       "type":"string",
       "max":63,
@@ -720,6 +1177,32 @@
       "type":"string",
       "max":512,
       "pattern":".*"
+    },
+    "CalculatedAttributeDefinitionsList":{
+      "type":"list",
+      "member":{"shape":"ListCalculatedAttributeDefinitionItem"}
+    },
+    "CalculatedAttributesForProfileList":{
+      "type":"list",
+      "member":{"shape":"ListCalculatedAttributeForProfileItem"}
+    },
+    "Conditions":{
+      "type":"structure",
+      "members":{
+        "Range":{
+          "shape":"Range",
+          "documentation":"<p>The relative time period over which data is included in the aggregation.</p>"
+        },
+        "ObjectCount":{
+          "shape":"ObjectCount",
+          "documentation":"<p>The number of profile objects used for the calculated attribute.</p>"
+        },
+        "Threshold":{
+          "shape":"Threshold",
+          "documentation":"<p>The threshold for the calculated attribute.</p>"
+        }
+      },
+      "documentation":"<p>The conditions including range, object count, and threshold for the calculated attribute.</p>"
     },
     "ConflictResolution":{
       "type":"structure",
@@ -784,6 +1267,94 @@
         }
       },
       "documentation":"<p>The matching criteria to be used during the auto-merging process. </p>"
+    },
+    "CreateCalculatedAttributeDefinitionRequest":{
+      "type":"structure",
+      "required":[
+        "DomainName",
+        "CalculatedAttributeName",
+        "AttributeDetails",
+        "Statistic"
+      ],
+      "members":{
+        "DomainName":{
+          "shape":"name",
+          "documentation":"<p>The unique name of the domain.</p>",
+          "location":"uri",
+          "locationName":"DomainName"
+        },
+        "CalculatedAttributeName":{
+          "shape":"typeName",
+          "documentation":"<p>The unique name of the calculated attribute.</p>",
+          "location":"uri",
+          "locationName":"CalculatedAttributeName"
+        },
+        "DisplayName":{
+          "shape":"displayName",
+          "documentation":"<p>The display name of the calculated attribute.</p>"
+        },
+        "Description":{
+          "shape":"text",
+          "documentation":"<p>The description of the calculated attribute.</p>"
+        },
+        "AttributeDetails":{
+          "shape":"AttributeDetails",
+          "documentation":"<p>Mathematical expression and a list of attribute items specified in that expression.</p>"
+        },
+        "Conditions":{
+          "shape":"Conditions",
+          "documentation":"<p>The conditions including range, object count, and threshold for the calculated attribute.</p>"
+        },
+        "Statistic":{
+          "shape":"Statistic",
+          "documentation":"<p>The aggregation operation to perform for the calculated attribute.</p>"
+        },
+        "Tags":{
+          "shape":"TagMap",
+          "documentation":"<p>The tags used to organize, track, or control access for this resource.</p>"
+        }
+      }
+    },
+    "CreateCalculatedAttributeDefinitionResponse":{
+      "type":"structure",
+      "members":{
+        "CalculatedAttributeName":{
+          "shape":"typeName",
+          "documentation":"<p>The unique name of the calculated attribute.</p>"
+        },
+        "DisplayName":{
+          "shape":"displayName",
+          "documentation":"<p>The display name of the calculated attribute.</p>"
+        },
+        "Description":{
+          "shape":"text",
+          "documentation":"<p>The description of the calculated attribute.</p>"
+        },
+        "AttributeDetails":{
+          "shape":"AttributeDetails",
+          "documentation":"<p>Mathematical expression and a list of attribute items specified in that expression.</p>"
+        },
+        "Conditions":{
+          "shape":"Conditions",
+          "documentation":"<p>The conditions including range, object count, and threshold for the calculated attribute.</p>"
+        },
+        "Statistic":{
+          "shape":"Statistic",
+          "documentation":"<p>The aggregation operation to perform for the calculated attribute.</p>"
+        },
+        "CreatedAt":{
+          "shape":"timestamp",
+          "documentation":"<p>The timestamp of when the calculated attribute definition was created.</p>"
+        },
+        "LastUpdatedAt":{
+          "shape":"timestamp",
+          "documentation":"<p>The timestamp of when the calculated attribute definition was most recently edited.</p>"
+        },
+        "Tags":{
+          "shape":"TagMap",
+          "documentation":"<p>The tags used to organize, track, or control access for this resource.</p>"
+        }
+      }
     },
     "CreateDomainRequest":{
       "type":"structure",
@@ -860,6 +1431,105 @@
         "Tags":{
           "shape":"TagMap",
           "documentation":"<p>The tags used to organize, track, or control access for this resource.</p>"
+        }
+      }
+    },
+    "CreateEventStreamRequest":{
+      "type":"structure",
+      "required":[
+        "DomainName",
+        "Uri",
+        "EventStreamName"
+      ],
+      "members":{
+        "DomainName":{
+          "shape":"name",
+          "documentation":"<p>The unique name of the domain.</p>",
+          "location":"uri",
+          "locationName":"DomainName"
+        },
+        "Uri":{
+          "shape":"string1To255",
+          "documentation":"<p>The StreamARN of the destination to deliver profile events to. For example, arn:aws:kinesis:region:account-id:stream/stream-name</p>"
+        },
+        "EventStreamName":{
+          "shape":"name",
+          "documentation":"<p>The name of the event stream.</p>",
+          "location":"uri",
+          "locationName":"EventStreamName"
+        },
+        "Tags":{
+          "shape":"TagMap",
+          "documentation":"<p>The tags used to organize, track, or control access for this resource.</p>"
+        }
+      }
+    },
+    "CreateEventStreamResponse":{
+      "type":"structure",
+      "required":["EventStreamArn"],
+      "members":{
+        "EventStreamArn":{
+          "shape":"string1To255",
+          "documentation":"<p>A unique identifier for the event stream.</p>"
+        },
+        "Tags":{
+          "shape":"TagMap",
+          "documentation":"<p>The tags used to organize, track, or control access for this resource.</p>"
+        }
+      }
+    },
+    "CreateIntegrationWorkflowRequest":{
+      "type":"structure",
+      "required":[
+        "DomainName",
+        "WorkflowType",
+        "IntegrationConfig",
+        "ObjectTypeName",
+        "RoleArn"
+      ],
+      "members":{
+        "DomainName":{
+          "shape":"name",
+          "documentation":"<p>The unique name of the domain.</p>",
+          "location":"uri",
+          "locationName":"DomainName"
+        },
+        "WorkflowType":{
+          "shape":"WorkflowType",
+          "documentation":"<p>The type of workflow. The only supported value is APPFLOW_INTEGRATION.</p>"
+        },
+        "IntegrationConfig":{
+          "shape":"IntegrationConfig",
+          "documentation":"<p>Configuration data for integration workflow.</p>"
+        },
+        "ObjectTypeName":{
+          "shape":"typeName",
+          "documentation":"<p>The name of the profile object type.</p>"
+        },
+        "RoleArn":{
+          "shape":"RoleArn",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the IAM role. Customer Profiles assumes this role to create resources on your behalf as part of workflow execution.</p>"
+        },
+        "Tags":{
+          "shape":"TagMap",
+          "documentation":"<p>The tags used to organize, track, or control access for this resource.</p>"
+        }
+      }
+    },
+    "CreateIntegrationWorkflowResponse":{
+      "type":"structure",
+      "required":[
+        "WorkflowId",
+        "Message"
+      ],
+      "members":{
+        "WorkflowId":{
+          "shape":"uuid",
+          "documentation":"<p>Unique identifier for the workflow.</p>"
+        },
+        "Message":{
+          "shape":"string1To255",
+          "documentation":"<p>A message indicating create request was received.</p>"
         }
       }
     },
@@ -956,6 +1626,14 @@
         "Attributes":{
           "shape":"Attributes",
           "documentation":"<p>A key value pair of attributes of a customer profile.</p>"
+        },
+        "PartyTypeString":{
+          "shape":"string1To255",
+          "documentation":"<p>An alternative to <code>PartyType</code> which accepts any string as input.</p>"
+        },
+        "GenderString":{
+          "shape":"string1To255",
+          "documentation":"<p>An alternative to <code>Gender</code> which accepts any string as input.</p>"
         }
       }
     },
@@ -982,6 +1660,32 @@
       "max":256,
       "pattern":".*"
     },
+    "DeleteCalculatedAttributeDefinitionRequest":{
+      "type":"structure",
+      "required":[
+        "DomainName",
+        "CalculatedAttributeName"
+      ],
+      "members":{
+        "DomainName":{
+          "shape":"name",
+          "documentation":"<p>The unique name of the domain.</p>",
+          "location":"uri",
+          "locationName":"DomainName"
+        },
+        "CalculatedAttributeName":{
+          "shape":"typeName",
+          "documentation":"<p>The unique name of the calculated attribute.</p>",
+          "location":"uri",
+          "locationName":"CalculatedAttributeName"
+        }
+      }
+    },
+    "DeleteCalculatedAttributeDefinitionResponse":{
+      "type":"structure",
+      "members":{
+      }
+    },
     "DeleteDomainRequest":{
       "type":"structure",
       "required":["DomainName"],
@@ -1002,6 +1706,32 @@
           "shape":"message",
           "documentation":"<p>A message that indicates the delete request is done.</p>"
         }
+      }
+    },
+    "DeleteEventStreamRequest":{
+      "type":"structure",
+      "required":[
+        "DomainName",
+        "EventStreamName"
+      ],
+      "members":{
+        "DomainName":{
+          "shape":"name",
+          "documentation":"<p>The unique name of the domain.</p>",
+          "location":"uri",
+          "locationName":"DomainName"
+        },
+        "EventStreamName":{
+          "shape":"name",
+          "documentation":"<p>The name of the event stream</p>",
+          "location":"uri",
+          "locationName":"EventStreamName"
+        }
+      }
+    },
+    "DeleteEventStreamResponse":{
+      "type":"structure",
+      "members":{
       }
     },
     "DeleteIntegrationRequest":{
@@ -1168,10 +1898,58 @@
         }
       }
     },
+    "DeleteWorkflowRequest":{
+      "type":"structure",
+      "required":[
+        "DomainName",
+        "WorkflowId"
+      ],
+      "members":{
+        "DomainName":{
+          "shape":"name",
+          "documentation":"<p>The unique name of the domain.</p>",
+          "location":"uri",
+          "locationName":"DomainName"
+        },
+        "WorkflowId":{
+          "shape":"string1To255",
+          "documentation":"<p>Unique identifier for the workflow.</p>",
+          "location":"uri",
+          "locationName":"WorkflowId"
+        }
+      }
+    },
+    "DeleteWorkflowResponse":{
+      "type":"structure",
+      "members":{
+      }
+    },
     "DestinationField":{
       "type":"string",
       "max":256,
       "pattern":".*"
+    },
+    "DestinationSummary":{
+      "type":"structure",
+      "required":[
+        "Uri",
+        "Status"
+      ],
+      "members":{
+        "Uri":{
+          "shape":"string1To255",
+          "documentation":"<p>The StreamARN of the destination to deliver profile events to. For example, arn:aws:kinesis:region:account-id:stream/stream-name.</p>"
+        },
+        "Status":{
+          "shape":"EventStreamDestinationStatus",
+          "documentation":"<p>The status of enabling the Kinesis stream as a destination for export.</p>"
+        },
+        "UnhealthySince":{
+          "shape":"timestamp",
+          "documentation":"<p>The timestamp when the status last changed to <code>UNHEALHY</code>.</p>"
+        }
+      },
+      "documentation":"<p>Summary information about the Kinesis data stream</p>"
     },
     "DomainList":{
       "type":"list",
@@ -1200,6 +1978,95 @@
       "documentation":"<p>Usage-specific statistics about the domain.</p>"
     },
     "Double":{"type":"double"},
+    "Double0To1":{
+      "type":"double",
+      "max":1.0,
+      "min":0.0
+    },
+    "EventStreamDestinationDetails":{
+      "type":"structure",
+      "required":[
+        "Uri",
+        "Status"
+      ],
+      "members":{
+        "Uri":{
+          "shape":"string1To255",
+          "documentation":"<p>The StreamARN of the destination to deliver profile events to. For example, arn:aws:kinesis:region:account-id:stream/stream-name.</p>"
+        },
+        "Status":{
+          "shape":"EventStreamDestinationStatus",
+          "documentation":"<p>The status of enabling the Kinesis stream as a destination for export.</p>"
+        },
+        "UnhealthySince":{
+          "shape":"timestamp",
+          "documentation":"<p>The timestamp when the status last changed to <code>UNHEALHY</code>.</p>"
+        },
+        "Message":{
+          "shape":"string1To1000",
+          "documentation":"<p>The human-readable string that corresponds to the error or success while enabling the streaming destination.</p>"
+        }
+      },
+      "documentation":"<p>Details of the destination being used for the EventStream.</p>"
+    },
+    "EventStreamDestinationStatus":{
+      "type":"string",
+      "enum":[
+        "HEALTHY",
+        "UNHEALTHY"
+      ]
+    },
+    "EventStreamState":{
+      "type":"string",
+      "enum":[
+        "RUNNING",
+        "STOPPED"
+      ]
+    },
+    "EventStreamSummary":{
+      "type":"structure",
+      "required":[
+        "DomainName",
+        "EventStreamName",
+        "EventStreamArn",
+        "State"
+      ],
+      "members":{
+        "DomainName":{
+          "shape":"name",
+          "documentation":"<p>The unique name of the domain.</p>"
+        },
+        "EventStreamName":{
+          "shape":"name",
+          "documentation":"<p>The name of the event stream.</p>"
+        },
+        "EventStreamArn":{
+          "shape":"string1To255",
+          "documentation":"<p>A unique identifier for the event stream.</p>"
+        },
+        "State":{
+          "shape":"EventStreamState",
+          "documentation":"<p>The operational state of destination stream for export.</p>"
+        },
+        "StoppedSince":{
+          "shape":"timestamp",
+          "documentation":"<p>The timestamp when the <code>State</code> changed to <code>STOPPED</code>.</p>"
+        },
+        "DestinationSummary":{
+          "shape":"DestinationSummary",
+          "documentation":"<p>Summary information about the Kinesis data stream.</p>"
+        },
+        "Tags":{
+          "shape":"TagMap",
+          "documentation":"<p>The tags used to organize, track, or control access for this resource.</p>"
+        }
+      },
+      "documentation":"<p>An instance of EventStream in a list of EventStreams.</p>"
+    },
+    "EventStreamSummaryList":{
+      "type":"list",
+      "member":{"shape":"EventStreamSummary"}
+    },
     "ExportingConfig":{
       "type":"structure",
       "members":{
@@ -1376,8 +2243,23 @@
       "max":256,
       "pattern":"[a-zA-Z0-9][\\w!@#.-]+"
     },
+    "FoundByKeyValue":{
+      "type":"structure",
+      "members":{
+        "KeyName":{
+          "shape":"name",
+          "documentation":"<p>A searchable identifier of a customer profile.</p>"
+        },
+        "Values":{
+          "shape":"requestValueList",
+          "documentation":"<p>A list of key values.</p>"
+        }
+      },
+      "documentation":"<p>A data type pair that consists of a <code>KeyName</code> and <code>Values</code> list that were used to find a profile returned in response to a <a href=\"https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html\">SearchProfiles</a> request. </p>"
+    },
     "Gender":{
       "type":"string",
+      "deprecated":true,
       "enum":[
         "MALE",
         "FEMALE",
@@ -1405,6 +2287,10 @@
         "ConflictResolution":{
           "shape":"ConflictResolution",
           "documentation":"<p>How the auto-merging process should resolve conflicts between different profiles.</p>"
+        },
+        "MinAllowedConfidenceScoreForMerging":{
+          "shape":"Double0To1",
+          "documentation":"<p>Minimum confidence score required for profiles within a matching group to be merged during the auto-merge process.</p>"
         }
       }
     },
@@ -1427,6 +2313,117 @@
         "NumberOfProfilesWillBeMerged":{
           "shape":"long",
           "documentation":"<p>The number of profiles that would be merged if this wasn't a preview dry run.</p>"
+        }
+      }
+    },
+    "GetCalculatedAttributeDefinitionRequest":{
+      "type":"structure",
+      "required":[
+        "DomainName",
+        "CalculatedAttributeName"
+      ],
+      "members":{
+        "DomainName":{
+          "shape":"name",
+          "documentation":"<p>The unique name of the domain.</p>",
+          "location":"uri",
+          "locationName":"DomainName"
+        },
+        "CalculatedAttributeName":{
+          "shape":"typeName",
+          "documentation":"<p>The unique name of the calculated attribute.</p>",
+          "location":"uri",
+          "locationName":"CalculatedAttributeName"
+        }
+      }
+    },
+    "GetCalculatedAttributeDefinitionResponse":{
+      "type":"structure",
+      "members":{
+        "CalculatedAttributeName":{
+          "shape":"typeName",
+          "documentation":"<p>The unique name of the calculated attribute.</p>"
+        },
+        "DisplayName":{
+          "shape":"displayName",
+          "documentation":"<p>The display name of the calculated attribute.</p>"
+        },
+        "Description":{
+          "shape":"text",
+          "documentation":"<p>The description of the calculated attribute.</p>"
+        },
+        "CreatedAt":{
+          "shape":"timestamp",
+          "documentation":"<p>The timestamp of when the calculated attribute definition was created.</p>"
+        },
+        "LastUpdatedAt":{
+          "shape":"timestamp",
+          "documentation":"<p>The timestamp of when the calculated attribute definition was most recently edited.</p>"
+        },
+        "Statistic":{
+          "shape":"Statistic",
+          "documentation":"<p>The aggregation operation to perform for the calculated attribute.</p>"
+        },
+        "Conditions":{
+          "shape":"Conditions",
+          "documentation":"<p>The conditions including range, object count, and threshold for the calculated attribute.</p>"
+        },
+        "AttributeDetails":{
+          "shape":"AttributeDetails",
+          "documentation":"<p>Mathematical expression and a list of attribute items specified in that expression.</p>"
+        },
+        "Tags":{
+          "shape":"TagMap",
+          "documentation":"<p>The tags used to organize, track, or control access for this resource.</p>"
+        }
+      }
+    },
+    "GetCalculatedAttributeForProfileRequest":{
+      "type":"structure",
+      "required":[
+        "DomainName",
+        "ProfileId",
+        "CalculatedAttributeName"
+      ],
+      "members":{
+        "DomainName":{
+          "shape":"name",
+          "documentation":"<p>The unique name of the domain.</p>",
+          "location":"uri",
+          "locationName":"DomainName"
+        },
+        "ProfileId":{
+          "shape":"uuid",
+          "documentation":"<p>The unique identifier of a customer profile.</p>",
+          "location":"uri",
+          "locationName":"ProfileId"
+        },
+        "CalculatedAttributeName":{
+          "shape":"typeName",
+          "documentation":"<p>The unique name of the calculated attribute.</p>",
+          "location":"uri",
+          "locationName":"CalculatedAttributeName"
+        }
+      }
+    },
+    "GetCalculatedAttributeForProfileResponse":{
+      "type":"structure",
+      "members":{
+        "CalculatedAttributeName":{
+          "shape":"typeName",
+          "documentation":"<p>The unique name of the calculated attribute.</p>"
+        },
+        "DisplayName":{
+          "shape":"displayName",
+          "documentation":"<p>The display name of the calculated attribute.</p>"
+        },
+        "IsDataPartial":{
+          "shape":"string1To255",
+          "documentation":"<p>Indicates whether the calculated attribute’s value is based on partial data. If data is partial, it is set to true.</p>"
+        },
+        "Value":{
+          "shape":"string1To255",
+          "documentation":"<p>The value of the calculated attribute.</p>"
         }
       }
     },
@@ -1481,6 +2478,67 @@
         "LastUpdatedAt":{
           "shape":"timestamp",
           "documentation":"<p>The timestamp of when the domain was most recently edited.</p>"
+        },
+        "Tags":{
+          "shape":"TagMap",
+          "documentation":"<p>The tags used to organize, track, or control access for this resource.</p>"
+        }
+      }
+    },
+    "GetEventStreamRequest":{
+      "type":"structure",
+      "required":[
+        "DomainName",
+        "EventStreamName"
+      ],
+      "members":{
+        "DomainName":{
+          "shape":"name",
+          "documentation":"<p>The unique name of the domain.</p>",
+          "location":"uri",
+          "locationName":"DomainName"
+        },
+        "EventStreamName":{
+          "shape":"name",
+          "documentation":"<p>The name of the event stream provided during create operations.</p>",
+          "location":"uri",
+          "locationName":"EventStreamName"
+        }
+      }
+    },
+    "GetEventStreamResponse":{
+      "type":"structure",
+      "required":[
+        "DomainName",
+        "EventStreamArn",
+        "CreatedAt",
+        "State",
+        "DestinationDetails"
+      ],
+      "members":{
+        "DomainName":{
+          "shape":"name",
+          "documentation":"<p>The unique name of the domain.</p>"
+        },
+        "EventStreamArn":{
+          "shape":"string1To255",
+          "documentation":"<p>A unique identifier for the event stream.</p>"
+        },
+        "CreatedAt":{
+          "shape":"timestamp",
+          "documentation":"<p>The timestamp of when the export was created.</p>"
+        },
+        "State":{
+          "shape":"EventStreamState",
+          "documentation":"<p>The operational state of destination stream for export.</p>"
+        },
+        "StoppedSince":{
+          "shape":"timestamp",
+          "documentation":"<p>The timestamp when the <code>State</code> changed to <code>STOPPED</code>.</p>"
+        },
+        "DestinationDetails":{
+          "shape":"EventStreamDestinationDetails",
+          "documentation":"<p>Details regarding the Kinesis stream.</p>"
         },
         "Tags":{
           "shape":"TagMap",
@@ -1582,7 +2640,6 @@
       "required":[
         "DomainName",
         "Uri",
-        "ObjectTypeName",
         "CreatedAt",
         "LastUpdatedAt"
       ],
@@ -1610,6 +2667,18 @@
         "Tags":{
           "shape":"TagMap",
           "documentation":"<p>The tags used to organize, track, or control access for this resource.</p>"
+        },
+        "ObjectTypeNames":{
+          "shape":"ObjectTypeNames",
+          "documentation":"<p>A map in which each key is an event type from an external application such as Segment or Shopify, and each value is an <code>ObjectTypeName</code> (template) used to ingest the event. It supports the following event types: <code>SegmentIdentify</code>, <code>ShopifyCreateCustomers</code>, <code>ShopifyUpdateCustomers</code>, <code>ShopifyCreateDraftOrders</code>, <code>ShopifyUpdateDraftOrders</code>, <code>ShopifyCreateOrders</code>, and <code>ShopifyUpdatedOrders</code>.</p>"
+        },
+        "WorkflowId":{
+          "shape":"string1To255",
+          "documentation":"<p>Unique identifier for the workflow.</p>"
+        },
+        "IsUnstructured":{
+          "shape":"optionalBoolean",
+          "documentation":"<p>Boolean that shows if the Flow that's associated with the Integration is created in Amazon Appflow, or with ObjectTypeName equals _unstructured via API/CLI in flowDefinition.</p>"
         }
       }
     },
@@ -1781,6 +2850,118 @@
         }
       }
     },
+    "GetWorkflowRequest":{
+      "type":"structure",
+      "required":[
+        "DomainName",
+        "WorkflowId"
+      ],
+      "members":{
+        "DomainName":{
+          "shape":"name",
+          "documentation":"<p>The unique name of the domain.</p>",
+          "location":"uri",
+          "locationName":"DomainName"
+        },
+        "WorkflowId":{
+          "shape":"uuid",
+          "documentation":"<p>Unique identifier for the workflow.</p>",
+          "location":"uri",
+          "locationName":"WorkflowId"
+        }
+      }
+    },
+    "GetWorkflowResponse":{
+      "type":"structure",
+      "members":{
+        "WorkflowId":{
+          "shape":"uuid",
+          "documentation":"<p>Unique identifier for the workflow.</p>"
+        },
+        "WorkflowType":{
+          "shape":"WorkflowType",
+          "documentation":"<p>The type of workflow. The only supported value is APPFLOW_INTEGRATION.</p>"
+        },
+        "Status":{
+          "shape":"Status",
+          "documentation":"<p>Status of workflow execution.</p>"
+        },
+        "ErrorDescription":{
+          "shape":"string1To255",
+          "documentation":"<p>Workflow error messages during execution (if any).</p>"
+        },
+        "StartDate":{
+          "shape":"timestamp",
+          "documentation":"<p>The timestamp that represents when workflow execution started.</p>"
+        },
+        "LastUpdatedAt":{
+          "shape":"timestamp",
+          "documentation":"<p>The timestamp that represents when workflow execution last updated.</p>"
+        },
+        "Attributes":{
+          "shape":"WorkflowAttributes",
+          "documentation":"<p>Attributes provided for workflow execution.</p>"
+        },
+        "Metrics":{
+          "shape":"WorkflowMetrics",
+          "documentation":"<p>Workflow specific execution metrics.</p>"
+        }
+      }
+    },
+    "GetWorkflowStepsRequest":{
+      "type":"structure",
+      "required":[
+        "DomainName",
+        "WorkflowId"
+      ],
+      "members":{
+        "DomainName":{
+          "shape":"name",
+          "documentation":"<p>The unique name of the domain.</p>",
+          "location":"uri",
+          "locationName":"DomainName"
+        },
+        "WorkflowId":{
+          "shape":"uuid",
+          "documentation":"<p>Unique identifier for the workflow.</p>",
+          "location":"uri",
+          "locationName":"WorkflowId"
+        },
+        "NextToken":{
+          "shape":"token",
+          "documentation":"<p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>",
+          "location":"querystring",
+          "locationName":"next-token"
+        },
+        "MaxResults":{
+          "shape":"maxSize100",
+          "documentation":"<p>The maximum number of results to return per page.</p>",
+          "location":"querystring",
+          "locationName":"max-results"
+        }
+      }
+    },
+    "GetWorkflowStepsResponse":{
+      "type":"structure",
+      "members":{
+        "WorkflowId":{
+          "shape":"uuid",
+          "documentation":"<p>Unique identifier for the workflow.</p>"
+        },
+        "WorkflowType":{
+          "shape":"WorkflowType",
+          "documentation":"<p>The type of workflow. The only supported value is APPFLOW_INTEGRATION.</p>"
+        },
+        "Items":{
+          "shape":"WorkflowStepsList",
+          "documentation":"<p>List containing workflow step details.</p>"
+        },
+        "NextToken":{
+          "shape":"token",
+          "documentation":"<p>If there are additional results, this is the token for the next set of results.</p>"
+        }
+      }
+    },
     "IdentityResolutionJob":{
       "type":"structure",
       "members":{
@@ -1844,6 +3025,16 @@
         }
       },
       "documentation":"<p>Specifies the configuration used when importing incremental records from the source.</p>"
+    },
+    "IntegrationConfig":{
+      "type":"structure",
+      "members":{
+        "AppflowIntegration":{
+          "shape":"AppflowIntegration",
+          "documentation":"<p>Configuration data for <code>APPFLOW_INTEGRATION</code> workflow type.</p>"
+        }
+      },
+      "documentation":"<p>Configuration data for integration workflow.</p>"
     },
     "IntegrationList":{
       "type":"list",
@@ -1943,6 +3134,12 @@
           "documentation":"<p>The maximum number of objects returned per page.</p>",
           "location":"querystring",
           "locationName":"max-results"
+        },
+        "IncludeHidden":{
+          "shape":"optionalBoolean",
+          "documentation":"<p>Boolean to indicate if hidden integration should be returned. Defaults to <code>False</code>.</p>",
+          "location":"querystring",
+          "locationName":"include-hidden"
         }
       }
     },
@@ -1956,6 +3153,141 @@
         "NextToken":{
           "shape":"token",
           "documentation":"<p>The pagination token from the previous ListAccountIntegrations API call.</p>"
+        }
+      }
+    },
+    "ListCalculatedAttributeDefinitionItem":{
+      "type":"structure",
+      "members":{
+        "CalculatedAttributeName":{
+          "shape":"typeName",
+          "documentation":"<p>The unique name of the calculated attribute.</p>"
+        },
+        "DisplayName":{
+          "shape":"displayName",
+          "documentation":"<p>The display name of the calculated attribute.</p>"
+        },
+        "Description":{
+          "shape":"text",
+          "documentation":"<p>The threshold for the calculated attribute.</p>"
+        },
+        "CreatedAt":{
+          "shape":"timestamp",
+          "documentation":"<p>The threshold for the calculated attribute.</p>"
+        },
+        "LastUpdatedAt":{
+          "shape":"timestamp",
+          "documentation":"<p>The timestamp of when the calculated attribute definition was most recently edited.</p>"
+        },
+        "Tags":{
+          "shape":"TagMap",
+          "documentation":"<p>The tags used to organize, track, or control access for this resource.</p>"
+        }
+      },
+      "documentation":"<p>The details of a single calculated attribute definition.</p>"
+    },
+    "ListCalculatedAttributeDefinitionsRequest":{
+      "type":"structure",
+      "required":["DomainName"],
+      "members":{
+        "DomainName":{
+          "shape":"name",
+          "documentation":"<p>The unique name of the domain.</p>",
+          "location":"uri",
+          "locationName":"DomainName"
+        },
+        "NextToken":{
+          "shape":"token",
+          "documentation":"<p>The pagination token from the previous call to ListCalculatedAttributeDefinitions.</p>",
+          "location":"querystring",
+          "locationName":"next-token"
+        },
+        "MaxResults":{
+          "shape":"maxSize100",
+          "documentation":"<p>The maximum number of calculated attribute definitions returned per page.</p>",
+          "location":"querystring",
+          "locationName":"max-results"
+        }
+      }
+    },
+    "ListCalculatedAttributeDefinitionsResponse":{
+      "type":"structure",
+      "members":{
+        "Items":{
+          "shape":"CalculatedAttributeDefinitionsList",
+          "documentation":"<p>The list of calculated attribute definitions.</p>"
+        },
+        "NextToken":{
+          "shape":"token",
+          "documentation":"<p>The pagination token from the previous call to ListCalculatedAttributeDefinitions.</p>"
+        }
+      }
+    },
+    "ListCalculatedAttributeForProfileItem":{
+      "type":"structure",
+      "members":{
+        "CalculatedAttributeName":{
+          "shape":"typeName",
+          "documentation":"<p>The unique name of the calculated attribute.</p>"
+        },
+        "DisplayName":{
+          "shape":"displayName",
+          "documentation":"<p>The display name of the calculated attribute.</p>"
+        },
+        "IsDataPartial":{
+          "shape":"string1To255",
+          "documentation":"<p>Indicates whether the calculated attribute’s value is based on partial data. If data is partial, it is set to true.</p>"
+        },
+        "Value":{
+          "shape":"string1To255",
+          "documentation":"<p>The value of the calculated attribute.</p>"
+        }
+      },
+      "documentation":"<p>The details of a single calculated attribute for a profile.</p>"
+    },
+    "ListCalculatedAttributesForProfileRequest":{
+      "type":"structure",
+      "required":[
+        "DomainName",
+        "ProfileId"
+      ],
+      "members":{
+        "NextToken":{
+          "shape":"token",
+          "documentation":"<p>The pagination token from the previous call to ListCalculatedAttributesForProfile.</p>",
+          "location":"querystring",
+          "locationName":"next-token"
+        },
+        "MaxResults":{
+          "shape":"maxSize100",
+          "documentation":"<p>The maximum number of calculated attributes returned per page.</p>",
+          "location":"querystring",
+          "locationName":"max-results"
+        },
+        "DomainName":{
+          "shape":"name",
+          "documentation":"<p>The unique name of the domain.</p>",
+          "location":"uri",
+          "locationName":"DomainName"
+        },
+        "ProfileId":{
+          "shape":"uuid",
+          "documentation":"<p>The unique identifier of a customer profile.</p>",
+          "location":"uri",
+          "locationName":"ProfileId"
+        }
+      }
+    },
+    "ListCalculatedAttributesForProfileResponse":{
+      "type":"structure",
+      "members":{
+        "Items":{
+          "shape":"CalculatedAttributesForProfileList",
+          "documentation":"<p>The list of calculated attributes.</p>"
+        },
+        "NextToken":{
+          "shape":"token",
+          "documentation":"<p>The pagination token from the previous call to ListCalculatedAttributesForProfile.</p>"
         }
       }
     },
@@ -2016,6 +3348,43 @@
         }
       }
     },
+    "ListEventStreamsRequest":{
+      "type":"structure",
+      "required":["DomainName"],
+      "members":{
+        "DomainName":{
+          "shape":"name",
+          "documentation":"<p>The unique name of the domain.</p>",
+          "location":"uri",
+          "locationName":"DomainName"
+        },
+        "NextToken":{
+          "shape":"token",
+          "documentation":"<p>Identifies the next page of results to return.</p>",
+          "location":"querystring",
+          "locationName":"next-token"
+        },
+        "MaxResults":{
+          "shape":"maxSize100",
+          "documentation":"<p>The maximum number of objects returned per page.</p>",
+          "location":"querystring",
+          "locationName":"max-results"
+        }
+      }
+    },
+    "ListEventStreamsResponse":{
+      "type":"structure",
+      "members":{
+        "Items":{
+          "shape":"EventStreamSummaryList",
+          "documentation":"<p>Contains summary information about an EventStream.</p>"
+        },
+        "NextToken":{
+          "shape":"token",
+          "documentation":"<p>Identifies the next page of results to return.</p>"
+        }
+      }
+    },
     "ListIdentityResolutionJobsRequest":{
       "type":"structure",
       "required":["DomainName"],
@@ -2058,7 +3427,6 @@
       "required":[
         "DomainName",
         "Uri",
-        "ObjectTypeName",
         "CreatedAt",
         "LastUpdatedAt"
       ],
@@ -2086,6 +3454,18 @@
         "Tags":{
           "shape":"TagMap",
           "documentation":"<p>The tags used to organize, track, or control access for this resource.</p>"
+        },
+        "ObjectTypeNames":{
+          "shape":"ObjectTypeNames",
+          "documentation":"<p>A map in which each key is an event type from an external application such as Segment or Shopify, and each value is an <code>ObjectTypeName</code> (template) used to ingest the event. It supports the following event types: <code>SegmentIdentify</code>, <code>ShopifyCreateCustomers</code>, <code>ShopifyUpdateCustomers</code>, <code>ShopifyCreateDraftOrders</code>, <code>ShopifyUpdateDraftOrders</code>, <code>ShopifyCreateOrders</code>, and <code>ShopifyUpdatedOrders</code>.</p>"
+        },
+        "WorkflowId":{
+          "shape":"string1To255",
+          "documentation":"<p>Unique identifier for the workflow.</p>"
+        },
+        "IsUnstructured":{
+          "shape":"optionalBoolean",
+          "documentation":"<p>Boolean that shows if the Flow that's associated with the Integration is created in Amazon Appflow, or with ObjectTypeName equals _unstructured via API/CLI in flowDefinition.</p>"
         }
       },
       "documentation":"<p>An integration in list of integrations.</p>"
@@ -2111,6 +3491,12 @@
           "documentation":"<p>The maximum number of objects returned per page.</p>",
           "location":"querystring",
           "locationName":"max-results"
+        },
+        "IncludeHidden":{
+          "shape":"optionalBoolean",
+          "documentation":"<p>Boolean to indicate if hidden integration should be returned. Defaults to <code>False</code>.</p>",
+          "location":"querystring",
+          "locationName":"include-hidden"
         }
       }
     },
@@ -2296,7 +3682,7 @@
         },
         "ObjectFilter":{
           "shape":"ObjectFilter",
-          "documentation":"<p>Applies a filter to the response to include profile objects with the specified index values. This filter is only supported for ObjectTypeName _asset and _case.</p>"
+          "documentation":"<p>Applies a filter to the response to include profile objects with the specified index values.</p>"
         }
       }
     },
@@ -2331,6 +3717,97 @@
         "tags":{
           "shape":"TagMap",
           "documentation":"<p>The tags used to organize, track, or control access for this resource.</p>"
+        }
+      }
+    },
+    "ListWorkflowsItem":{
+      "type":"structure",
+      "required":[
+        "WorkflowType",
+        "WorkflowId",
+        "Status",
+        "StatusDescription",
+        "CreatedAt",
+        "LastUpdatedAt"
+      ],
+      "members":{
+        "WorkflowType":{
+          "shape":"WorkflowType",
+          "documentation":"<p>The type of workflow. The only supported value is APPFLOW_INTEGRATION.</p>"
+        },
+        "WorkflowId":{
+          "shape":"string1To255",
+          "documentation":"<p>Unique identifier for the workflow.</p>"
+        },
+        "Status":{
+          "shape":"Status",
+          "documentation":"<p>Status of workflow execution.</p>"
+        },
+        "StatusDescription":{
+          "shape":"string1To255",
+          "documentation":"<p>Description for workflow execution status.</p>"
+        },
+        "CreatedAt":{
+          "shape":"timestamp",
+          "documentation":"<p>Creation timestamp for workflow.</p>"
+        },
+        "LastUpdatedAt":{
+          "shape":"timestamp",
+          "documentation":"<p>Last updated timestamp for workflow.</p>"
+        }
+      },
+      "documentation":"<p>A workflow in list of workflows.</p>"
+    },
+    "ListWorkflowsRequest":{
+      "type":"structure",
+      "required":["DomainName"],
+      "members":{
+        "DomainName":{
+          "shape":"name",
+          "documentation":"<p>The unique name of the domain.</p>",
+          "location":"uri",
+          "locationName":"DomainName"
+        },
+        "WorkflowType":{
+          "shape":"WorkflowType",
+          "documentation":"<p>The type of workflow. The only supported value is APPFLOW_INTEGRATION.</p>"
+        },
+        "Status":{
+          "shape":"Status",
+          "documentation":"<p>Status of workflow execution.</p>"
+        },
+        "QueryStartDate":{
+          "shape":"timestamp",
+          "documentation":"<p>Retrieve workflows started after timestamp.</p>"
+        },
+        "QueryEndDate":{
+          "shape":"timestamp",
+          "documentation":"<p>Retrieve workflows ended after timestamp.</p>"
+        },
+        "NextToken":{
+          "shape":"token",
+          "documentation":"<p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>",
+          "location":"querystring",
+          "locationName":"next-token"
+        },
+        "MaxResults":{
+          "shape":"maxSize100",
+          "documentation":"<p>The maximum number of results to return per page.</p>",
+          "location":"querystring",
+          "locationName":"max-results"
+        }
+      }
+    },
+    "ListWorkflowsResponse":{
+      "type":"structure",
+      "members":{
+        "Items":{
+          "shape":"WorkflowList",
+          "documentation":"<p>List containing workflow details.</p>"
+        },
+        "NextToken":{
+          "shape":"token",
+          "documentation":"<p>If there are additional results, this is the token for the next set of results.</p>"
         }
       }
     },
@@ -2379,7 +3856,7 @@
         },
         "ConfidenceScore":{
           "shape":"Double",
-          "documentation":"<p>A number between 0 and 1 that represents the confidence level of assigning profiles to a matching group. A score of 1 likely indicates an exact match.</p>"
+          "documentation":"<p>A number between 0 and 1, where a higher score means higher similarity. Examining match confidence scores lets you distinguish between groups of similar records in which the system is highly confident (which you may decide to merge), groups of similar records about which the system is uncertain (which you may decide to have reviewed by a human), and groups of similar records that the system deems to be unlikely (which you may decide to reject). Given confidence scores vary as per the data input, it should not be used an absolute measure of matching quality.</p>"
         }
       },
       "documentation":"<p>The Match group object.</p>"
@@ -2487,6 +3964,11 @@
       "max":512,
       "pattern":"\\S+"
     },
+    "ObjectCount":{
+      "type":"integer",
+      "max":100,
+      "min":1
+    },
     "ObjectFilter":{
       "type":"structure",
       "required":[
@@ -2496,14 +3978,14 @@
       "members":{
         "KeyName":{
           "shape":"name",
-          "documentation":"<p>A searchable identifier of a standard profile object. The predefined keys you can use to search for _asset include: _assetId, _assetName, _serialNumber. The predefined keys you can use to search for _case include: _caseId.</p>"
+          "documentation":"<p>A searchable identifier of a profile object. The predefined keys you can use to search for <code>_asset</code> include: <code>_assetId</code>, <code>_assetName</code>, and <code>_serialNumber</code>. The predefined keys you can use to search for <code>_case</code> include: <code>_caseId</code>. The predefined keys you can use to search for <code>_order</code> include: <code>_orderId</code>.</p>"
         },
         "Values":{
           "shape":"requestValueList",
           "documentation":"<p>A list of key values.</p>"
         }
       },
-      "documentation":"<p>The filter applied to ListProfileObjects response to include profile objects with the specified index values. This filter is only supported for ObjectTypeName _asset and _case.</p>"
+      "documentation":"<p>The filter applied to <code>ListProfileObjects</code> response to include profile objects with the specified index values.</p>"
     },
     "ObjectTypeField":{
       "type":"structure",
@@ -2528,7 +4010,7 @@
       "members":{
         "StandardIdentifiers":{
           "shape":"StandardIdentifierList",
-          "documentation":"<p>The types of keys that a ProfileObject can have. Each ProfileObject can have only 1 UNIQUE key but multiple PROFILE keys. PROFILE, ASSET or CASE means that this key can be used to tie an object to a PROFILE, ASSET or CASE respectively. UNIQUE means that it can be used to uniquely identify an object. If a key a is marked as SECONDARY, it will be used to search for profiles after all other PROFILE keys have been searched. A LOOKUP_ONLY key is only used to match a profile but is not persisted to be used for searching of the profile. A NEW_ONLY key is only used if the profile does not already exist before the object is ingested, otherwise it is only used for matching objects to profiles.</p>"
+          "documentation":"<p>The types of keys that a ProfileObject can have. Each ProfileObject can have only 1 UNIQUE key but multiple PROFILE keys. PROFILE, ASSET, CASE, or ORDER means that this key can be used to tie an object to a PROFILE, ASSET, CASE, or ORDER respectively. UNIQUE means that it can be used to uniquely identify an object. If a key a is marked as SECONDARY, it will be used to search for profiles after all other PROFILE keys have been searched. A LOOKUP_ONLY key is only used to match a profile but is not persisted to be used for searching of the profile. A NEW_ONLY key is only used if the profile does not already exist before the object is ingested, otherwise it is only used for matching objects to profiles.</p>"
         },
         "FieldNames":{
           "shape":"FieldNameList",
@@ -2540,6 +4022,20 @@
     "ObjectTypeKeyList":{
       "type":"list",
       "member":{"shape":"ObjectTypeKey"}
+    },
+    "ObjectTypeNames":{
+      "type":"map",
+      "key":{"shape":"string1To255"},
+      "value":{"shape":"typeName"}
+    },
+    "Operator":{
+      "type":"string",
+      "enum":[
+        "EQUAL_TO",
+        "GREATER_THAN",
+        "LESS_THAN",
+        "NOT_EQUAL_TO"
+      ]
     },
     "OperatorPropertiesKeys":{
       "type":"string",
@@ -2562,6 +4058,7 @@
     },
     "PartyType":{
       "type":"string",
+      "deprecated":true,
       "enum":[
         "INDIVIDUAL",
         "BUSINESS",
@@ -2658,6 +4155,18 @@
         "Attributes":{
           "shape":"Attributes",
           "documentation":"<p>A key value pair of attributes of a customer profile.</p>"
+        },
+        "FoundByItems":{
+          "shape":"foundByList",
+          "documentation":"<p>A list of items used to find a profile returned in a <a href=\"https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html\">SearchProfiles</a> response. An item is a key-value(s) pair that matches an attribute in the profile.</p> <p>If the optional <code>AdditionalSearchKeys</code> parameter was included in the <a href=\"https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html\">SearchProfiles</a> request, the <code>FoundByItems</code> list should be interpreted based on the <code>LogicalOperator</code> used in the request:</p> <ul> <li> <p> <code>AND</code> - The profile included in the response matched all of the search keys specified in the request. The <code>FoundByItems</code> will include all of the key-value(s) pairs that were specified in the request (as this is a requirement of <code>AND</code> search logic).</p> </li> <li> <p> <code>OR</code> - The profile included in the response matched at least one of the search keys specified in the request. The <code>FoundByItems</code> will include each of the key-value(s) pairs that the profile was found by.</p> </li> </ul> <p>The <code>OR</code> relationship is the default behavior if the <code>LogicalOperator</code> parameter is not included in the <a href=\"https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html\">SearchProfiles</a> request.</p>"
+        },
+        "PartyTypeString":{
+          "shape":"string1To255",
+          "documentation":"<p>An alternative to PartyType which accepts any string as input.</p>"
+        },
+        "GenderString":{
+          "shape":"string1To255",
+          "documentation":"<p>An alternative to Gender which accepts any string as input.</p>"
         }
       },
       "documentation":"<p>The standard profile of a customer.</p>"
@@ -2695,10 +4204,7 @@
     },
     "PutIntegrationRequest":{
       "type":"structure",
-      "required":[
-        "DomainName",
-        "ObjectTypeName"
-      ],
+      "required":["DomainName"],
       "members":{
         "DomainName":{
           "shape":"name",
@@ -2721,6 +4227,10 @@
         "FlowDefinition":{
           "shape":"FlowDefinition",
           "documentation":"<p>The configuration that controls how Customer Profiles retrieves data from the source.</p>"
+        },
+        "ObjectTypeNames":{
+          "shape":"ObjectTypeNames",
+          "documentation":"<p>A map in which each key is an event type from an external application such as Segment or Shopify, and each value is an <code>ObjectTypeName</code> (template) used to ingest the event. It supports the following event types: <code>SegmentIdentify</code>, <code>ShopifyCreateCustomers</code>, <code>ShopifyUpdateCustomers</code>, <code>ShopifyCreateDraftOrders</code>, <code>ShopifyUpdateDraftOrders</code>, <code>ShopifyCreateOrders</code>, and <code>ShopifyUpdatedOrders</code>.</p>"
         }
       }
     },
@@ -2729,7 +4239,6 @@
       "required":[
         "DomainName",
         "Uri",
-        "ObjectTypeName",
         "CreatedAt",
         "LastUpdatedAt"
       ],
@@ -2757,6 +4266,18 @@
         "Tags":{
           "shape":"TagMap",
           "documentation":"<p>The tags used to organize, track, or control access for this resource.</p>"
+        },
+        "ObjectTypeNames":{
+          "shape":"ObjectTypeNames",
+          "documentation":"<p>A map in which each key is an event type from an external application such as Segment or Shopify, and each value is an <code>ObjectTypeName</code> (template) used to ingest the event. It supports the following event types: <code>SegmentIdentify</code>, <code>ShopifyCreateCustomers</code>, <code>ShopifyUpdateCustomers</code>, <code>ShopifyCreateDraftOrders</code>, <code>ShopifyUpdateDraftOrders</code>, <code>ShopifyCreateOrders</code>, and <code>ShopifyUpdatedOrders</code>.</p>"
+        },
+        "WorkflowId":{
+          "shape":"string1To255",
+          "documentation":"<p>Unique identifier for the workflow.</p>"
+        },
+        "IsUnstructured":{
+          "shape":"optionalBoolean",
+          "documentation":"<p>Boolean that shows if the Flow that's associated with the Integration is created in Amazon Appflow, or with ObjectTypeName equals _unstructured via API/CLI in flowDefinition.</p>"
         }
       }
     },
@@ -2819,7 +4340,7 @@
         },
         "TemplateId":{
           "shape":"name",
-          "documentation":"<p>A unique identifier for the object template.</p>"
+          "documentation":"<p>A unique identifier for the object template. For some attributes in the request, the service will use the default value from the object template when TemplateId is present. If these attributes are present in the request, the service may return a <code>BadRequestException</code>. These attributes include: AllowProfileCreation, SourceLastUpdatedTimestampFormat, Fields, and Keys. For example, if AllowProfileCreation is set to true when TemplateId is set, the service may return a <code>BadRequestException</code>.</p>"
         },
         "ExpirationDays":{
           "shape":"expirationDaysInteger",
@@ -2908,6 +4429,24 @@
         }
       }
     },
+    "Range":{
+      "type":"structure",
+      "required":[
+        "Value",
+        "Unit"
+      ],
+      "members":{
+        "Value":{
+          "shape":"Value",
+          "documentation":"<p>The amount of time of the specified unit.</p>"
+        },
+        "Unit":{
+          "shape":"Unit",
+          "documentation":"<p>The unit of time.</p>"
+        }
+      },
+      "documentation":"<p>The relative time period over which data is included in the aggregation.</p>"
+    },
     "ResourceNotFoundException":{
       "type":"structure",
       "members":{
@@ -2916,6 +4455,11 @@
       "documentation":"<p>The requested resource does not exist, or access was denied.</p>",
       "error":{"httpStatusCode":404},
       "exception":true
+    },
+    "RoleArn":{
+      "type":"string",
+      "max":512,
+      "pattern":"arn:aws:iam:.*:[0-9]+:.*"
     },
     "S3ConnectorOperator":{
       "type":"string",
@@ -3093,7 +4637,7 @@
         },
         "MaxResults":{
           "shape":"maxSize100",
-          "documentation":"<p>The maximum number of objects returned per page.</p>",
+          "documentation":"<p>The maximum number of objects returned per page.</p> <p>The default is 20 if this parameter is not included in the request.</p>",
           "location":"querystring",
           "locationName":"max-results"
         },
@@ -3105,11 +4649,19 @@
         },
         "KeyName":{
           "shape":"name",
-          "documentation":"<p>A searchable identifier of a customer profile. The predefined keys you can use to search include: _account, _profileId, _fullName, _phone, _email, _ctrContactId, _marketoLeadId, _salesforceAccountId, _salesforceContactId, _zendeskUserId, _zendeskExternalId, _serviceNowSystemId.</p>"
+          "documentation":"<p>A searchable identifier of a customer profile. The predefined keys you can use to search include: _account, _profileId, _assetId, _caseId, _orderId, _fullName, _phone, _email, _ctrContactId, _marketoLeadId, _salesforceAccountId, _salesforceContactId, _salesforceAssetId, _zendeskUserId, _zendeskExternalId, _zendeskTicketId, _serviceNowSystemId, _serviceNowIncidentId, _segmentUserId, _shopifyCustomerId, _shopifyOrderId.</p>"
         },
         "Values":{
           "shape":"requestValueList",
           "documentation":"<p>A list of key values.</p>"
+        },
+        "AdditionalSearchKeys":{
+          "shape":"additionalSearchKeysList",
+          "documentation":"<p>A list of <code>AdditionalSearchKey</code> objects that are each searchable identifiers of a profile. Each <code>AdditionalSearchKey</code> object contains a <code>KeyName</code> and a list of <code>Values</code> associated with that specific key (i.e., a key-value(s) pair). These additional search keys will be used in conjunction with the <code>LogicalOperator</code> and the required <code>KeyName</code> and <code>Values</code> parameters to search for profiles that satisfy the search criteria. </p>"
+        },
+        "LogicalOperator":{
+          "shape":"logicalOperator",
+          "documentation":"<p>Relationship between all specified search keys that will be used to search for profiles. This includes the required <code>KeyName</code> and <code>Values</code> parameters as well as any key-value(s) pairs specified in the <code>AdditionalSearchKeys</code> list.</p> <p>This parameter influences which profiles will be returned in the response in the following manner:</p> <ul> <li> <p> <code>AND</code> - The response only includes profiles that match all of the search keys.</p> </li> <li> <p> <code>OR</code> - The response includes profiles that match at least one of the search keys.</p> </li> </ul> <p>The <code>OR</code> relationship is the default behavior if this parameter is not included in the request.</p>"
         }
       }
     },
@@ -3118,7 +4670,7 @@
       "members":{
         "Items":{
           "shape":"ProfileList",
-          "documentation":"<p>The list of SearchProfiles instances.</p>"
+          "documentation":"<p>The list of Profiles matching the search criteria.</p>"
         },
         "NextToken":{
           "shape":"token",
@@ -3238,12 +4790,38 @@
         "UNIQUE",
         "SECONDARY",
         "LOOKUP_ONLY",
-        "NEW_ONLY"
+        "NEW_ONLY",
+        "ORDER"
       ]
     },
     "StandardIdentifierList":{
       "type":"list",
       "member":{"shape":"StandardIdentifier"}
+    },
+    "Statistic":{
+      "type":"string",
+      "enum":[
+        "FIRST_OCCURRENCE",
+        "LAST_OCCURRENCE",
+        "COUNT",
+        "SUM",
+        "MINIMUM",
+        "MAXIMUM",
+        "AVERAGE",
+        "MAX_OCCURRENCE"
+      ]
+    },
+    "Status":{
+      "type":"string",
+      "enum":[
+        "NOT_STARTED",
+        "IN_PROGRESS",
+        "COMPLETE",
+        "FAILED",
+        "SPLIT",
+        "RETRY",
+        "CANCELLED"
+      ]
     },
     "TagArn":{
       "type":"string",
@@ -3348,6 +4926,24 @@
       "type":"list",
       "member":{"shape":"Task"}
     },
+    "Threshold":{
+      "type":"structure",
+      "required":[
+        "Value",
+        "Operator"
+      ],
+      "members":{
+        "Value":{
+          "shape":"string1To255",
+          "documentation":"<p>The value of the threshold.</p>"
+        },
+        "Operator":{
+          "shape":"Operator",
+          "documentation":"<p>The operator of the threshold.</p>"
+        }
+      },
+      "documentation":"<p>The threshold for the calculated attribute.</p>"
+    },
     "ThrottlingException":{
       "type":"structure",
       "members":{
@@ -3394,6 +4990,10 @@
         "Event",
         "OnDemand"
       ]
+    },
+    "Unit":{
+      "type":"string",
+      "enum":["DAYS"]
     },
     "UntagResourceRequest":{
       "type":"structure",
@@ -3471,6 +5071,80 @@
       "type":"map",
       "key":{"shape":"string1To255"},
       "value":{"shape":"string0To255"}
+    },
+    "UpdateCalculatedAttributeDefinitionRequest":{
+      "type":"structure",
+      "required":[
+        "DomainName",
+        "CalculatedAttributeName"
+      ],
+      "members":{
+        "DomainName":{
+          "shape":"name",
+          "documentation":"<p>The unique name of the domain.</p>",
+          "location":"uri",
+          "locationName":"DomainName"
+        },
+        "CalculatedAttributeName":{
+          "shape":"typeName",
+          "documentation":"<p>The unique name of the calculated attribute.</p>",
+          "location":"uri",
+          "locationName":"CalculatedAttributeName"
+        },
+        "DisplayName":{
+          "shape":"displayName",
+          "documentation":"<p>The display name of the calculated attribute.</p>"
+        },
+        "Description":{
+          "shape":"text",
+          "documentation":"<p>The description of the calculated attribute.</p>"
+        },
+        "Conditions":{
+          "shape":"Conditions",
+          "documentation":"<p>The conditions including range, object count, and threshold for the calculated attribute.</p>"
+        }
+      }
+    },
+    "UpdateCalculatedAttributeDefinitionResponse":{
+      "type":"structure",
+      "members":{
+        "CalculatedAttributeName":{
+          "shape":"typeName",
+          "documentation":"<p>The unique name of the calculated attribute.</p>"
+        },
+        "DisplayName":{
+          "shape":"displayName",
+          "documentation":"<p>The display name of the calculated attribute.</p>"
+        },
+        "Description":{
+          "shape":"text",
+          "documentation":"<p>The description of the calculated attribute.</p>"
+        },
+        "CreatedAt":{
+          "shape":"timestamp",
+          "documentation":"<p>The timestamp of when the calculated attribute definition was created.</p>"
+        },
+        "LastUpdatedAt":{
+          "shape":"timestamp",
+          "documentation":"<p>The timestamp of when the calculated attribute definition was most recently edited.</p>"
+        },
+        "Statistic":{
+          "shape":"Statistic",
+          "documentation":"<p>The aggregation operation to perform for the calculated attribute.</p>"
+        },
+        "Conditions":{
+          "shape":"Conditions",
+          "documentation":"<p>The conditions including range, object count, and threshold for the calculated attribute.</p>"
+        },
+        "AttributeDetails":{
+          "shape":"AttributeDetails",
+          "documentation":"<p>The mathematical expression and a list of attribute items specified in that expression.</p>"
+        },
+        "Tags":{
+          "shape":"TagMap",
+          "documentation":"<p>The tags used to organize, track, or control access for this resource.</p>"
+        }
+      }
     },
     "UpdateDomainRequest":{
       "type":"structure",
@@ -3646,6 +5320,14 @@
         "Attributes":{
           "shape":"UpdateAttributes",
           "documentation":"<p>A key value pair of attributes of a customer profile.</p>"
+        },
+        "PartyTypeString":{
+          "shape":"string0To255",
+          "documentation":"<p>An alternative to <code>PartyType</code> which accepts any string as input.</p>"
+        },
+        "GenderString":{
+          "shape":"string0To255",
+          "documentation":"<p>An alternative to <code>Gender</code> which accepts any string as input.</p>"
         }
       }
     },
@@ -3658,6 +5340,53 @@
           "documentation":"<p>The unique identifier of a customer profile.</p>"
         }
       }
+    },
+    "Value":{
+      "type":"integer",
+      "max":366,
+      "min":1
+    },
+    "WorkflowAttributes":{
+      "type":"structure",
+      "members":{
+        "AppflowIntegration":{
+          "shape":"AppflowIntegrationWorkflowAttributes",
+          "documentation":"<p>Workflow attributes specific to <code>APPFLOW_INTEGRATION</code> workflow.</p>"
+        }
+      },
+      "documentation":"<p>Structure to hold workflow attributes.</p>"
+    },
+    "WorkflowList":{
+      "type":"list",
+      "member":{"shape":"ListWorkflowsItem"}
+    },
+    "WorkflowMetrics":{
+      "type":"structure",
+      "members":{
+        "AppflowIntegration":{
+          "shape":"AppflowIntegrationWorkflowMetrics",
+          "documentation":"<p>Workflow execution metrics for <code>APPFLOW_INTEGRATION</code> workflow.</p>"
+        }
+      },
+      "documentation":"<p>Generic object containing workflow execution metrics.</p>"
+    },
+    "WorkflowStepItem":{
+      "type":"structure",
+      "members":{
+        "AppflowIntegration":{
+          "shape":"AppflowIntegrationWorkflowStep",
+          "documentation":"<p>Workflow step information specific to <code>APPFLOW_INTEGRATION</code> workflow.</p>"
+        }
+      },
+      "documentation":"<p>List containing steps in workflow.</p>"
+    },
+    "WorkflowStepsList":{
+      "type":"list",
+      "member":{"shape":"WorkflowStepItem"}
+    },
+    "WorkflowType":{
+      "type":"string",
+      "enum":["APPFLOW_INTEGRATION"]
     },
     "ZendeskConnectorOperator":{
       "type":"string",
@@ -3689,7 +5418,25 @@
       },
       "documentation":"<p>The properties that are applied when using Zendesk as a flow source.</p>"
     },
+    "additionalSearchKeysList":{
+      "type":"list",
+      "member":{"shape":"AdditionalSearchKey"},
+      "max":4,
+      "min":1
+    },
+    "attributeName":{
+      "type":"string",
+      "max":64,
+      "min":1,
+      "pattern":"^[a-zA-Z0-9_.-]+$"
+    },
     "boolean":{"type":"boolean"},
+    "displayName":{
+      "type":"string",
+      "max":255,
+      "min":1,
+      "pattern":"^[a-zA-Z_][a-zA-Z_0-9-\\s]*$"
+    },
     "encryptionKey":{
       "type":"string",
       "max":255,
@@ -3699,6 +5446,19 @@
       "type":"integer",
       "max":1098,
       "min":1
+    },
+    "foundByList":{
+      "type":"list",
+      "member":{"shape":"FoundByKeyValue"},
+      "max":5,
+      "min":1
+    },
+    "logicalOperator":{
+      "type":"string",
+      "enum":[
+        "AND",
+        "OR"
+      ]
     },
     "long":{"type":"long"},
     "matchesNumber":{
@@ -3791,5 +5551,5 @@
       "pattern":"[a-f0-9]{32}"
     }
   },
-  "documentation":"<fullname>Amazon Connect Customer Profiles</fullname> <p>Welcome to the Amazon Connect Customer Profiles API Reference. This guide provides information about the Amazon Connect Customer Profiles API, including supported operations, data types, parameters, and schemas.</p> <p>Amazon Connect Customer Profiles is a unified customer profile for your contact center that has pre-built connectors powered by AppFlow that make it easy to combine customer information from third party applications, such as Salesforce (CRM), ServiceNow (ITSM), and your enterprise resource planning (ERP), with contact history from your Amazon Connect contact center.</p> <p>If you're new to Amazon Connect , you might find it helpful to also review the <a href=\"https://docs.aws.amazon.com/connect/latest/adminguide/what-is-amazon-connect.html\">Amazon Connect Administrator Guide</a>.</p>"
+  "documentation":"<fullname>Amazon Connect Customer Profiles</fullname> <p>Amazon Connect Customer Profiles is a unified customer profile for your contact center that has pre-built connectors powered by AppFlow that make it easy to combine customer information from third party applications, such as Salesforce (CRM), ServiceNow (ITSM), and your enterprise resource planning (ERP), with contact history from your Amazon Connect contact center. If you're new to Amazon Connect, you might find it helpful to review the <a href=\"https://docs.aws.amazon.com/connect/latest/adminguide/\">Amazon Connect Administrator Guide</a>.</p>"
 }

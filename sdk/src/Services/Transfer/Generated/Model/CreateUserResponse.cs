@@ -39,7 +39,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property ServerId. 
         /// <para>
-        /// The ID of the server that the user is attached to.
+        /// The identifier of the server that the user is attached to.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=19, Max=19)]
@@ -58,7 +58,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property UserName. 
         /// <para>
-        /// A unique string that identifies a user account associated with a server.
+        /// A unique string that identifies a Transfer Family user.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=3, Max=100)]

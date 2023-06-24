@@ -124,6 +124,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     unmarshalledObject.OperationalData = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("OpsItemArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.OpsItemArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("OpsItemId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

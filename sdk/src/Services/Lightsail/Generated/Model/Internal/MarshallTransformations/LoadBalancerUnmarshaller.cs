@@ -94,6 +94,12 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                     unmarshalledObject.HealthCheckPath = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("httpsRedirectionEnabled", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.HttpsRedirectionEnabled = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("instanceHealthSummary", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<InstanceHealthSummary, InstanceHealthSummaryUnmarshaller>(InstanceHealthSummaryUnmarshaller.Instance);
@@ -164,6 +170,12 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new ListUnmarshaller<LoadBalancerTlsCertificateSummary, LoadBalancerTlsCertificateSummaryUnmarshaller>(LoadBalancerTlsCertificateSummaryUnmarshaller.Instance);
                     unmarshalledObject.TlsCertificateSummaries = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("tlsPolicyName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TlsPolicyName = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

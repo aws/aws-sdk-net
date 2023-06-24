@@ -57,14 +57,14 @@ namespace Amazon.ResourceGroups.Model
         /// Gets and sets the property Configuration. 
         /// <para>
         /// The new configuration to associate with the specified group. A configuration associates
-        /// the resource group with an AWS service and specifies how the service can interact
-        /// with the resources in the group. A configuration is an array of <a>GroupConfigurationItem</a>
+        /// the resource group with an Amazon Web Services service and specifies how the service
+        /// can interact with the resources in the group. A configuration is an array of <a>GroupConfigurationItem</a>
         /// elements.
         /// </para>
         ///  
         /// <para>
         /// For information about the syntax of a service configuration, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service
-        /// configurations for resource groups</a>.
+        /// configurations for Resource Groups</a>.
         /// </para>
         ///  <note> 
         /// <para>

@@ -55,19 +55,19 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
         public IRequest Marshall(ListVodSourcesRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.MediaTailor");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-04-23";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-04-23";
             request.HttpMethod = "GET";
 
             if (!publicRequest.IsSetSourceLocationName())
                 throw new AmazonMediaTailorException("Request object does not have required field SourceLocationName set");
-            request.AddPathResource("{sourceLocationName}", StringUtils.FromString(publicRequest.SourceLocationName));
+            request.AddPathResource("{SourceLocationName}", StringUtils.FromString(publicRequest.SourceLocationName));
             
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
             
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
-            request.ResourcePath = "/sourceLocation/{sourceLocationName}/vodSources";
+            request.ResourcePath = "/sourceLocation/{SourceLocationName}/vodSources";
             request.UseQueryString = true;
 
             return request;

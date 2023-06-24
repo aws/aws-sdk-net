@@ -212,6 +212,15 @@ namespace Amazon.ForecastQueryService
         }
 
         /// <summary>
+        /// Customize the pipeline
+        /// </summary>
+        /// <param name="pipeline"></param>
+        protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
+        {
+            pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonForecastQueryServiceEndpointResolver());
+        }
+        /// <summary>
         /// Capture metadata for the service.
         /// </summary>
         protected override IServiceMetadata ServiceMetadata
@@ -326,6 +335,75 @@ namespace Amazon.ForecastQueryService
         public virtual QueryForecastResponse EndQueryForecast(IAsyncResult asyncResult)
         {
             return EndInvoke<QueryForecastResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  QueryWhatIfForecast
+
+        /// <summary>
+        /// Retrieves a what-if forecast.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the QueryWhatIfForecast service method.</param>
+        /// 
+        /// <returns>The response from the QueryWhatIfForecast service method, as returned by ForecastQueryService.</returns>
+        /// <exception cref="Amazon.ForecastQueryService.Model.InvalidInputException">
+        /// The value is invalid or is too long.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastQueryService.Model.InvalidNextTokenException">
+        /// The token is not valid. Tokens expire after 24 hours.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastQueryService.Model.LimitExceededException">
+        /// The limit on the number of requests per second has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastQueryService.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastQueryService.Model.ResourceNotFoundException">
+        /// We can't find that resource. Check the information that you've provided and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecastquery-2018-06-26/QueryWhatIfForecast">REST API Reference for QueryWhatIfForecast Operation</seealso>
+        public virtual QueryWhatIfForecastResponse QueryWhatIfForecast(QueryWhatIfForecastRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = QueryWhatIfForecastRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = QueryWhatIfForecastResponseUnmarshaller.Instance;
+
+            return Invoke<QueryWhatIfForecastResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the QueryWhatIfForecast operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the QueryWhatIfForecast operation on AmazonForecastQueryServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndQueryWhatIfForecast
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecastquery-2018-06-26/QueryWhatIfForecast">REST API Reference for QueryWhatIfForecast Operation</seealso>
+        public virtual IAsyncResult BeginQueryWhatIfForecast(QueryWhatIfForecastRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = QueryWhatIfForecastRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = QueryWhatIfForecastResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  QueryWhatIfForecast operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginQueryWhatIfForecast.</param>
+        /// 
+        /// <returns>Returns a  QueryWhatIfForecastResult from ForecastQueryService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecastquery-2018-06-26/QueryWhatIfForecast">REST API Reference for QueryWhatIfForecast Operation</seealso>
+        public virtual QueryWhatIfForecastResponse EndQueryWhatIfForecast(IAsyncResult asyncResult)
+        {
+            return EndInvoke<QueryWhatIfForecastResponse>(asyncResult);
         }
 
         #endregion

@@ -55,7 +55,7 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
         public IRequest Marshall(ListScramSecretsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Kafka");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-11-14";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-11-14";
             request.HttpMethod = "GET";
 
             if (!publicRequest.IsSetClusterArn())

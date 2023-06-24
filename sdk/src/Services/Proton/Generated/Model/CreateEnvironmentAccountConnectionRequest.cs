@@ -38,13 +38,15 @@ namespace Amazon.Proton.Model
     /// <para>
     /// An environment account connection is a secure bi-directional connection between a
     /// <i>management account</i> and an <i>environment account</i> that maintains authorization
-    /// and permissions. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment
-    /// account connections</a> in the <i>Proton Administrator guide</i>.
+    /// and permissions. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-env-account-connections.html">Environment
+    /// account connections</a> in the <i>Proton User guide</i>.
     /// </para>
     /// </summary>
     public partial class CreateEnvironmentAccountConnectionRequest : AmazonProtonRequest
     {
         private string _clientToken;
+        private string _codebuildRoleArn;
+        private string _componentRoleArn;
         private string _environmentName;
         private string _managementAccountId;
         private string _roleArn;
@@ -71,6 +73,58 @@ namespace Amazon.Proton.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CodebuildRoleArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of an IAM service role in the environment account.
+        /// Proton uses this role to provision infrastructure resources using CodeBuild-based
+        /// provisioning in the associated environment account.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string CodebuildRoleArn
+        {
+            get { return this._codebuildRoleArn; }
+            set { this._codebuildRoleArn = value; }
+        }
+
+        // Check to see if CodebuildRoleArn property is set
+        internal bool IsSetCodebuildRoleArn()
+        {
+            return this._codebuildRoleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ComponentRoleArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning
+        /// directly defined components in the associated environment account. It determines the
+        /// scope of infrastructure that a component can provision in the account.
+        /// </para>
+        ///  
+        /// <para>
+        /// You must specify <code>componentRoleArn</code> to allow directly defined components
+        /// to be associated with any environments running in this account.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+        /// components</a> in the <i>Proton User Guide</i>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string ComponentRoleArn
+        {
+            get { return this._componentRoleArn; }
+            set { this._componentRoleArn = value; }
+        }
+
+        // Check to see if ComponentRoleArn property is set
+        internal bool IsSetComponentRoleArn()
+        {
+            return this._componentRoleArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property EnvironmentName. 
         /// <para>
         /// The name of the Proton environment that's created in the associated management account.
@@ -93,7 +147,7 @@ namespace Amazon.Proton.Model
         /// Gets and sets the property ManagementAccountId. 
         /// <para>
         /// The ID of the management account that accepts or rejects the environment account connection.
-        /// You create an manage the Proton environment in this account. If the management account
+        /// You create and manage the Proton environment in this account. If the management account
         /// accepts the environment account connection, Proton can use the associated IAM role
         /// to provision environment infrastructure resources in the associated environment account.
         /// </para>
@@ -119,7 +173,7 @@ namespace Amazon.Proton.Model
         /// environment account.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=200)]
+        [AWSProperty(Min=1, Max=2048)]
         public string RoleArn
         {
             get { return this._roleArn; }
@@ -135,8 +189,13 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Tags for your environment account connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
-        /// resources and tagging</a> in the <i>Proton Administrator Guide</i>.
+        /// An optional list of metadata items that you can associate with the Proton environment
+        /// account connection. A tag is a key-value pair.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
+        /// resources and tagging</a> in the <i>Proton User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]

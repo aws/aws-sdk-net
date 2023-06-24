@@ -34,7 +34,7 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CookieObject Marshaller
-    /// </summary>       
+    /// </summary>
     public class CookieObjectMarshaller : IRequestMarshaller<CookieObject, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CookieObjectMarshaller Instance = new CookieObjectMarshaller();
 
     }

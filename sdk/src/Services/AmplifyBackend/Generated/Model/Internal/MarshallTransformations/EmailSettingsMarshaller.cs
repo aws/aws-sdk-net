@@ -34,7 +34,7 @@ namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// EmailSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class EmailSettingsMarshaller : IRequestMarshaller<EmailSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static EmailSettingsMarshaller Instance = new EmailSettingsMarshaller();
 
     }

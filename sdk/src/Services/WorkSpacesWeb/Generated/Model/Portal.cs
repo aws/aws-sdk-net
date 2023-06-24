@@ -33,10 +33,12 @@ namespace Amazon.WorkSpacesWeb.Model
     /// </summary>
     public partial class Portal
     {
+        private AuthenticationType _authenticationType;
         private string _browserSettingsArn;
         private BrowserType _browserType;
         private DateTime? _creationDate;
         private string _displayName;
+        private string _ipAccessSettingsArn;
         private string _networkSettingsArn;
         private string _portalArn;
         private string _portalEndpoint;
@@ -44,7 +46,42 @@ namespace Amazon.WorkSpacesWeb.Model
         private RendererType _rendererType;
         private string _statusReason;
         private string _trustStoreArn;
+        private string _userAccessLoggingSettingsArn;
         private string _userSettingsArn;
+
+        /// <summary>
+        /// Gets and sets the property AuthenticationType. 
+        /// <para>
+        /// The type of authentication integration points used when signing into the web portal.
+        /// Defaults to <code>Standard</code>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>Standard</code> web portals are authenticated directly through your identity
+        /// provider. You need to call <code>CreateIdentityProvider</code> to integrate your identity
+        /// provider with your web portal. User and group access to your web portal is controlled
+        /// through your identity provider.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>IAM_Identity_Center</code> web portals are authenticated through AWS IAM Identity
+        /// Center (successor to AWS Single Sign-On). They provide additional features, such as
+        /// IdP-initiated authentication. Identity sources (including external identity provider
+        /// integration), plus user and group access to your web portal, can be configured in
+        /// the IAM Identity Center.
+        /// </para>
+        /// </summary>
+        public AuthenticationType AuthenticationType
+        {
+            get { return this._authenticationType; }
+            set { this._authenticationType = value; }
+        }
+
+        // Check to see if AuthenticationType property is set
+        internal bool IsSetAuthenticationType()
+        {
+            return this._authenticationType != null;
+        }
 
         /// <summary>
         /// Gets and sets the property BrowserSettingsArn. 
@@ -107,7 +144,7 @@ namespace Amazon.WorkSpacesWeb.Model
         /// The name of the web portal.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=64)]
+        [AWSProperty(Sensitive=true, Min=1, Max=64)]
         public string DisplayName
         {
             get { return this._displayName; }
@@ -118,6 +155,25 @@ namespace Amazon.WorkSpacesWeb.Model
         internal bool IsSetDisplayName()
         {
             return this._displayName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IpAccessSettingsArn. 
+        /// <para>
+        /// The ARN of the IP access settings.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string IpAccessSettingsArn
+        {
+            get { return this._ipAccessSettingsArn; }
+            set { this._ipAccessSettingsArn = value; }
+        }
+
+        // Check to see if IpAccessSettingsArn property is set
+        internal bool IsSetIpAccessSettingsArn()
+        {
+            return this._ipAccessSettingsArn != null;
         }
 
         /// <summary>
@@ -252,9 +308,28 @@ namespace Amazon.WorkSpacesWeb.Model
         }
 
         /// <summary>
+        /// Gets and sets the property UserAccessLoggingSettingsArn. 
+        /// <para>
+        /// The ARN of the user access logging settings that is associated with the web portal.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string UserAccessLoggingSettingsArn
+        {
+            get { return this._userAccessLoggingSettingsArn; }
+            set { this._userAccessLoggingSettingsArn = value; }
+        }
+
+        // Check to see if UserAccessLoggingSettingsArn property is set
+        internal bool IsSetUserAccessLoggingSettingsArn()
+        {
+            return this._userAccessLoggingSettingsArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property UserSettingsArn. 
         /// <para>
-        /// The ARN of the trust store that is associated with the web portal.
+        /// The ARN of the user settings that is associated with the web portal.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]

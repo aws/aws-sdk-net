@@ -29,12 +29,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// Contains the details of an Amazon RDS DB subnet group. 
+    /// Contains the details of an Amazon RDS DB subnet group.
     /// 
     ///  
     /// <para>
     /// This data type is used as a response element in the <code>DescribeDBSubnetGroups</code>
-    /// action. 
+    /// action.
     /// </para>
     /// </summary>
     public partial class DBSubnetGroup
@@ -44,6 +44,7 @@ namespace Amazon.RDS.Model
         private string _dbSubnetGroupName;
         private string _subnetGroupStatus;
         private List<Subnet> _subnets = new List<Subnet>();
+        private List<string> _supportedNetworkTypes = new List<string>();
         private string _vpcId;
 
         /// <summary>
@@ -121,7 +122,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Subnets. 
         /// <para>
-        ///  Contains a list of <code>Subnet</code> elements. 
+        /// Contains a list of <code>Subnet</code> elements.
         /// </para>
         /// </summary>
         public List<Subnet> Subnets
@@ -134,6 +135,46 @@ namespace Amazon.RDS.Model
         internal bool IsSetSubnets()
         {
             return this._subnets != null && this._subnets.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SupportedNetworkTypes. 
+        /// <para>
+        /// The network type of the DB subnet group.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>IPV4</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>DUAL</code> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the
+        /// IPv6 protocols (<code>DUAL</code>).
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+        /// Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i> 
+        /// </para>
+        /// </summary>
+        public List<string> SupportedNetworkTypes
+        {
+            get { return this._supportedNetworkTypes; }
+            set { this._supportedNetworkTypes = value; }
+        }
+
+        // Check to see if SupportedNetworkTypes property is set
+        internal bool IsSetSupportedNetworkTypes()
+        {
+            return this._supportedNetworkTypes != null && this._supportedNetworkTypes.Count > 0; 
         }
 
         /// <summary>

@@ -56,7 +56,7 @@ namespace Amazon.ConnectWisdomService.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ConnectWisdomService");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-10-19";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-10-19";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/knowledgeBases";
@@ -74,7 +74,7 @@ namespace Amazon.ConnectWisdomService.Model.Internal.MarshallTransformations
                 else if(!(publicRequest.IsSetClientToken()))
                 {
                     context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());                                                
+                    context.Writer.Write(Guid.NewGuid().ToString());
                 }
                 if(publicRequest.IsSetDescription())
                 {
@@ -141,7 +141,6 @@ namespace Amazon.ConnectWisdomService.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

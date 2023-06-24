@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AwsWafRateBasedRuleDetails Marshaller
-    /// </summary>       
+    /// </summary>
     public class AwsWafRateBasedRuleDetailsMarshaller : IRequestMarshaller<AwsWafRateBasedRuleDetails, JsonMarshallerContext> 
     {
         /// <summary>
@@ -95,7 +95,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AwsWafRateBasedRuleDetailsMarshaller Instance = new AwsWafRateBasedRuleDetailsMarshaller();
 
     }

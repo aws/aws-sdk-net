@@ -166,6 +166,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.FragmentTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("klvMetadata", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.KlvMetadata = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("maxPcrInterval", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

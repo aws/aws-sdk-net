@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GameLift.Model
 {
     /// <summary>
-    /// Represents the returned data in response to a request operation.
+    /// This is the response object from the ListFleets operation.
     /// </summary>
     public partial class ListFleetsResponse : AmazonWebServiceResponse
     {
@@ -39,9 +39,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property FleetIds. 
         /// <para>
-        /// A set of fleet IDs that match the list request. You can retrieve additional information
-        /// about all returned fleets by passing this result set to a <a>DescribeFleetAttributes</a>,
-        /// <a>DescribeFleetCapacity</a>, or <a>DescribeFleetUtilization</a> call.
+        /// A set of fleet IDs that match the list request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

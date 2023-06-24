@@ -29,7 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaTailor.Model
 {
     /// <summary>
-    /// This response includes only the "type" : "object" property.
+    /// A source location is a container for sources. For more information about source locations,
+    /// see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-source-locations.html">Working
+    /// with source locations</a> in the <i>MediaTailor User Guide</i>.
     /// </summary>
     public partial class SourceLocation
     {
@@ -39,6 +41,7 @@ namespace Amazon.MediaTailor.Model
         private DefaultSegmentDeliveryConfiguration _defaultSegmentDeliveryConfiguration;
         private HttpConfiguration _httpConfiguration;
         private DateTime? _lastModifiedTime;
+        private List<SegmentDeliveryConfiguration> _segmentDeliveryConfigurations = new List<SegmentDeliveryConfiguration>();
         private string _sourceLocationName;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
@@ -153,6 +156,24 @@ namespace Amazon.MediaTailor.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SegmentDeliveryConfigurations. 
+        /// <para>
+        /// The segment delivery configurations for the source location.
+        /// </para>
+        /// </summary>
+        public List<SegmentDeliveryConfiguration> SegmentDeliveryConfigurations
+        {
+            get { return this._segmentDeliveryConfigurations; }
+            set { this._segmentDeliveryConfigurations = value; }
+        }
+
+        // Check to see if SegmentDeliveryConfigurations property is set
+        internal bool IsSetSegmentDeliveryConfigurations()
+        {
+            return this._segmentDeliveryConfigurations != null && this._segmentDeliveryConfigurations.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property SourceLocationName. 
         /// <para>
         /// The name of the source location.
@@ -174,7 +195,10 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags assigned to the source location.
+        /// The tags assigned to the source location. Tags are key-value pairs that you can associate
+        /// with Amazon resources to help with organization, access control, and cost tracking.
+        /// For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+        /// AWS Elemental MediaTailor Resources</a>.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Tags

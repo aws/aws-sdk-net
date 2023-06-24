@@ -288,8 +288,41 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The current operational status of the environment.
+        /// The current operational status of the environment. Valid values are as follows:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>Aborting</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Launching</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>LinkingFrom</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>LinkingTo</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Ready</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Terminated</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Terminating</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Updating</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string Status
         {

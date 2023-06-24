@@ -100,6 +100,14 @@ namespace Amazon.LexModelsV2.Model
         }
 
         /// <summary>
+        /// Paginator for ListCustomVocabularyItems operation
+        ///</summary>
+        public IListCustomVocabularyItemsPaginator ListCustomVocabularyItems(ListCustomVocabularyItemsRequest request) 
+        {
+            return new ListCustomVocabularyItemsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListExports operation
         ///</summary>
         public IListExportsPaginator ListExports(ListExportsRequest request) 
@@ -145,6 +153,38 @@ namespace Amazon.LexModelsV2.Model
         public IListSlotTypesPaginator ListSlotTypes(ListSlotTypesRequest request) 
         {
             return new ListSlotTypesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListTestExecutionResultItems operation
+        ///</summary>
+        public IListTestExecutionResultItemsPaginator ListTestExecutionResultItems(ListTestExecutionResultItemsRequest request) 
+        {
+            return new ListTestExecutionResultItemsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListTestExecutions operation
+        ///</summary>
+        public IListTestExecutionsPaginator ListTestExecutions(ListTestExecutionsRequest request) 
+        {
+            return new ListTestExecutionsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListTestSetRecords operation
+        ///</summary>
+        public IListTestSetRecordsPaginator ListTestSetRecords(ListTestSetRecordsRequest request) 
+        {
+            return new ListTestSetRecordsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListTestSets operation
+        ///</summary>
+        public IListTestSetsPaginator ListTestSets(ListTestSetsRequest request) 
+        {
+            return new ListTestSetsPaginator(this.client, request);
         }
     }
 }

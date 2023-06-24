@@ -34,7 +34,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Document Marshaller
-    /// </summary>       
+    /// </summary>
     public class DocumentMarshaller : IRequestMarshaller<Document, JsonMarshallerContext> 
     {
         /// <summary>
@@ -45,6 +45,12 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Document requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAccessControlConfigurationId())
+            {
+                context.Writer.WritePropertyName("AccessControlConfigurationId");
+                context.Writer.Write(requestObject.AccessControlConfigurationId);
+            }
+
             if(requestObject.IsSetAccessControlList())
             {
                 context.Writer.WritePropertyName("AccessControlList");
@@ -132,7 +138,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DocumentMarshaller Instance = new DocumentMarshaller();
 
     }

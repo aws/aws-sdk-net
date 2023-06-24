@@ -209,7 +209,7 @@ namespace AWSSDK.UnitTests
         {
             Tester.Reset();
             Tester.Action = (int callCount) =>
-            {                
+            {            
                 throw new WebException("Name resolution failure.",
                     WebExceptionStatus.NameResolutionFailure);
             };
@@ -304,7 +304,7 @@ namespace AWSSDK.UnitTests
         {
             Tester.Reset();
             Tester.Action = (int callCount) =>
-            {                
+            {            
                 throw new WebException("Name resolution failure.",
                     WebExceptionStatus.NameResolutionFailure);
             };

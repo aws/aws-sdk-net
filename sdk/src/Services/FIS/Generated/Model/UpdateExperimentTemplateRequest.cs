@@ -37,6 +37,7 @@ namespace Amazon.FIS.Model
         private Dictionary<string, UpdateExperimentTemplateActionInputItem> _actions = new Dictionary<string, UpdateExperimentTemplateActionInputItem>();
         private string _description;
         private string _id;
+        private UpdateExperimentTemplateLogConfigurationInput _logConfiguration;
         private string _roleArn;
         private List<UpdateExperimentTemplateStopConditionInput> _stopConditions = new List<UpdateExperimentTemplateStopConditionInput>();
         private Dictionary<string, UpdateExperimentTemplateTargetInput> _targets = new Dictionary<string, UpdateExperimentTemplateTargetInput>();
@@ -98,9 +99,27 @@ namespace Amazon.FIS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property LogConfiguration. 
+        /// <para>
+        /// The configuration for experiment logging.
+        /// </para>
+        /// </summary>
+        public UpdateExperimentTemplateLogConfigurationInput LogConfiguration
+        {
+            get { return this._logConfiguration; }
+            set { this._logConfiguration = value; }
+        }
+
+        // Check to see if LogConfiguration property is set
+        internal bool IsSetLogConfiguration()
+        {
+            return this._logConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of an IAM role that grants the AWS FIS service permission
+        /// The Amazon Resource Name (ARN) of an IAM role that grants the FIS service permission
         /// to perform service actions on your behalf.
         /// </para>
         /// </summary>

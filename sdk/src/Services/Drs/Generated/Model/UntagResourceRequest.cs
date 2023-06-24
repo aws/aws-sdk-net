@@ -63,7 +63,7 @@ namespace Amazon.Drs.Model
         /// Array of tags to be removed.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public List<string> TagKeys
         {
             get { return this._tagKeys; }

@@ -34,7 +34,7 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CustomRule Marshaller
-    /// </summary>       
+    /// </summary>
     public class CustomRuleMarshaller : IRequestMarshaller<CustomRule, JsonMarshallerContext> 
     {
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CustomRuleMarshaller Instance = new CustomRuleMarshaller();
 
     }

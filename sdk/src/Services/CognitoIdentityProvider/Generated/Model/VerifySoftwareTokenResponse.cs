@@ -39,7 +39,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Session. 
         /// <para>
-        /// The session which should be passed both ways in challenge-response calls to the service.
+        /// The session that should be passed both ways in challenge-response calls to the service.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]

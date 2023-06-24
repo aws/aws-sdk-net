@@ -30,7 +30,7 @@ namespace Amazon.Personalize.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeSolution operation.
-    /// Describes a solution. For more information on solutions, see <a>CreateSolution</a>.
+    /// Describes a solution. For more information on solutions, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolution.html">CreateSolution</a>.
     /// </summary>
     public partial class DescribeSolutionRequest : AmazonPersonalizeRequest
     {

@@ -147,6 +147,15 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>interface-type</code> - The type of network interface (<code>api_gateway_managed</code>
+        /// | <code>aws_codestar_connections_managed</code> | <code>branch</code> | <code>efa</code>
+        /// | <code>gateway_load_balancer</code> | <code>gateway_load_balancer_endpoint</code>
+        /// | <code>global_accelerator_managed</code> | <code>interface</code> | <code>iot_rules_managed</code>
+        /// | <code>lambda</code> | <code>load_balancer</code> | <code>nat_gateway</code> | <code>network_load_balancer</code>
+        /// | <code>quicksight</code> | <code>transit_gateway</code> | <code>trunk</code> | <code>vpc_endpoint</code>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>mac-address</code> - The MAC address of the network interface.
         /// </para>
         ///  </li> <li> 
@@ -230,9 +239,10 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of items to return for this request. The request returns a token
-        /// that you can specify in a subsequent call to get the next set of results. You cannot
-        /// specify this parameter and the network interface IDs parameter in the same request.
+        /// The maximum number of items to return for this request. To get the next page of items,
+        /// make another request with the token returned in the output. You cannot specify this
+        /// parameter and the network interface IDs parameter in the same request. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=5, Max=1000)]
@@ -251,7 +261,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property NetworkInterfaceIds. 
         /// <para>
-        /// One or more network interface IDs.
+        /// The network interface IDs.
         /// </para>
         ///  
         /// <para>
@@ -273,7 +283,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token to retrieve the next page of results.
+        /// The token returned from a previous paginated request. Pagination continues from the
+        /// end of the items returned by the previous request.
         /// </para>
         /// </summary>
         public string NextToken

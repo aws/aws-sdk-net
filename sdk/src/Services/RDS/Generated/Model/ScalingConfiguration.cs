@@ -29,12 +29,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// Contains the scaling configuration of an Aurora Serverless DB cluster.
+    /// Contains the scaling configuration of an Aurora Serverless v1 DB cluster.
     /// 
     ///  
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using
-    /// Amazon Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.
+    /// Amazon Aurora Serverless v1</a> in the <i>Amazon Aurora User Guide</i>.
     /// </para>
     /// </summary>
     public partial class ScalingConfiguration
@@ -57,7 +57,7 @@ namespace Amazon.RDS.Model
         /// <para>
         /// If a DB cluster is paused for more than seven days, the DB cluster might be backed
         /// up with a snapshot. In this case, the DB cluster is restored when there is a request
-        /// to connect to it. 
+        /// to connect to it.
         /// </para>
         ///  </note>
         /// </summary>
@@ -144,8 +144,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property SecondsBeforeTimeout. 
         /// <para>
-        /// The amount of time, in seconds, that Aurora Serverless tries to find a scaling point
-        /// to perform seamless scaling before enforcing the timeout action. The default is 300.
+        /// The amount of time, in seconds, that Aurora Serverless v1 tries to find a scaling
+        /// point to perform seamless scaling before enforcing the timeout action. The default
+        /// is 300.
         /// </para>
         ///  
         /// <para>
@@ -206,12 +207,12 @@ namespace Amazon.RDS.Model
         ///  <important> 
         /// <para>
         /// If you specify <code>ForceApplyCapacityChange</code>, connections that prevent Aurora
-        /// Serverless from finding a scaling point might be dropped.
+        /// Serverless v1 from finding a scaling point might be dropped.
         /// </para>
         ///  </important> 
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.how-it-works.html#aurora-serverless.how-it-works.auto-scaling">
-        /// Autoscaling for Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.
+        /// Autoscaling for Aurora Serverless v1</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         /// </summary>
         public string TimeoutAction

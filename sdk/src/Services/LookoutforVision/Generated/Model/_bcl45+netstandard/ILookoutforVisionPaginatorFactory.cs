@@ -31,6 +31,11 @@ namespace Amazon.LookoutforVision.Model
         IListDatasetEntriesPaginator ListDatasetEntries(ListDatasetEntriesRequest request);
 
         /// <summary>
+        /// Paginator for ListModelPackagingJobs operation
+        ///</summary>
+        IListModelPackagingJobsPaginator ListModelPackagingJobs(ListModelPackagingJobsRequest request);
+
+        /// <summary>
         /// Paginator for ListModels operation
         ///</summary>
         IListModelsPaginator ListModels(ListModelsRequest request);

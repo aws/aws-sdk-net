@@ -34,7 +34,7 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ContentRedaction Marshaller
-    /// </summary>       
+    /// </summary>
     public class ContentRedactionMarshaller : IRequestMarshaller<ContentRedaction, JsonMarshallerContext> 
     {
         /// <summary>
@@ -45,6 +45,17 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ContentRedaction requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetPiiEntityTypes())
+            {
+                context.Writer.WritePropertyName("PiiEntityTypes");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectPiiEntityTypesListValue in requestObject.PiiEntityTypes)
+                {
+                        context.Writer.Write(requestObjectPiiEntityTypesListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetRedactionOutput())
             {
                 context.Writer.WritePropertyName("RedactionOutput");
@@ -61,7 +72,7 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ContentRedactionMarshaller Instance = new ContentRedactionMarshaller();
 
     }

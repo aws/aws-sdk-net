@@ -34,5 +34,10 @@ namespace Amazon.ECR.Model
         /// Enumerable containing all of the Findings
         /// </summary>
         IPaginatedEnumerable<ImageScanFinding> Findings { get; }
+
+        /// <summary>
+        /// Enumerable containing all of the EnhancedFindings
+        /// </summary>
+        IPaginatedEnumerable<EnhancedImageScanFinding> EnhancedFindings { get; }
     }
 }

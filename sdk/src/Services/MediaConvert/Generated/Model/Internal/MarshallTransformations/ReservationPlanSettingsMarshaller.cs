@@ -34,7 +34,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ReservationPlanSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class ReservationPlanSettingsMarshaller : IRequestMarshaller<ReservationPlanSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ReservationPlanSettingsMarshaller Instance = new ReservationPlanSettingsMarshaller();
 
     }

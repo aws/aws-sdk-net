@@ -34,7 +34,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ServiceNowServiceCatalogConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class ServiceNowServiceCatalogConfigurationMarshaller : IRequestMarshaller<ServiceNowServiceCatalogConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -105,7 +105,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ServiceNowServiceCatalogConfigurationMarshaller Instance = new ServiceNowServiceCatalogConfigurationMarshaller();
 
     }

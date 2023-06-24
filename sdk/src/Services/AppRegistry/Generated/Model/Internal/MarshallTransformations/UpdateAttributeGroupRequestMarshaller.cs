@@ -56,7 +56,7 @@ namespace Amazon.AppRegistry.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.AppRegistry");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-06-24";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-06-24";
             request.HttpMethod = "PATCH";
 
             if (!publicRequest.IsSetAttributeGroup())
@@ -86,7 +86,6 @@ namespace Amazon.AppRegistry.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Name);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

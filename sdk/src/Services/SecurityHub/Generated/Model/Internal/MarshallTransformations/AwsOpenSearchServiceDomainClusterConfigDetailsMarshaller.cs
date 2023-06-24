@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AwsOpenSearchServiceDomainClusterConfigDetails Marshaller
-    /// </summary>       
+    /// </summary>
     public class AwsOpenSearchServiceDomainClusterConfigDetailsMarshaller : IRequestMarshaller<AwsOpenSearchServiceDomainClusterConfigDetails, JsonMarshallerContext> 
     {
         /// <summary>
@@ -114,7 +114,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AwsOpenSearchServiceDomainClusterConfigDetailsMarshaller Instance = new AwsOpenSearchServiceDomainClusterConfigDetailsMarshaller();
 
     }

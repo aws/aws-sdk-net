@@ -34,7 +34,7 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ApplicationSnapshotConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class ApplicationSnapshotConfigurationMarshaller : IRequestMarshaller<ApplicationSnapshotConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ApplicationSnapshotConfigurationMarshaller Instance = new ApplicationSnapshotConfigurationMarshaller();
 
     }

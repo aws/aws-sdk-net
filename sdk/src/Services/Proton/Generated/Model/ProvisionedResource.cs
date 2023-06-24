@@ -78,15 +78,15 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property ProvisioningEngine. 
         /// <para>
-        /// The resource provisioning engine.
+        /// The resource provisioning engine. At this time, <code>CLOUDFORMATION</code> can be
+        /// used for Amazon Web Services-managed provisioning, and <code>TERRAFORM</code> can
+        /// be used for self-managed provisioning.
         /// </para>
-        ///  <important> 
+        ///  
         /// <para>
-        /// Provisioning by pull request is currently in feature preview and is only usable with
-        /// Terraform based Proton Templates. To learn more about <a href="https://aws.amazon.com/service-terms">Amazon
-        /// Web Services Feature Preview terms</a>, see section 2 on Beta and Previews.
+        /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-works-prov-methods.html#ag-works-prov-methods-self">Self-managed
+        /// provisioning</a> in the <i>Proton User Guide</i>.
         /// </para>
-        ///  </important>
         /// </summary>
         public ProvisionedResourceEngine ProvisioningEngine
         {

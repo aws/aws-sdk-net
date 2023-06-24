@@ -39,6 +39,7 @@ namespace Amazon.WellArchitected.Model
         private string _name;
         private string _owner;
         private string _shareInvitationId;
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
         /// Gets and sets the property Description.
@@ -143,6 +144,25 @@ namespace Amazon.WellArchitected.Model
         internal bool IsSetShareInvitationId()
         {
             return this._shareInvitationId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags assigned to the lens.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=50)]
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

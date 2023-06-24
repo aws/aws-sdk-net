@@ -35,6 +35,8 @@ namespace Amazon.QuickSight.Model
     public partial class AnonymousUserEmbeddingExperienceConfiguration
     {
         private AnonymousUserDashboardEmbeddingConfiguration _dashboard;
+        private AnonymousUserDashboardVisualEmbeddingConfiguration _dashboardVisual;
+        private AnonymousUserQSearchBarEmbeddingConfiguration _qSearchBar;
 
         /// <summary>
         /// Gets and sets the property Dashboard. 
@@ -52,6 +54,42 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetDashboard()
         {
             return this._dashboard != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DashboardVisual. 
+        /// <para>
+        /// The type of embedding experience. In this case, Amazon QuickSight visuals.
+        /// </para>
+        /// </summary>
+        public AnonymousUserDashboardVisualEmbeddingConfiguration DashboardVisual
+        {
+            get { return this._dashboardVisual; }
+            set { this._dashboardVisual = value; }
+        }
+
+        // Check to see if DashboardVisual property is set
+        internal bool IsSetDashboardVisual()
+        {
+            return this._dashboardVisual != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property QSearchBar. 
+        /// <para>
+        /// The Q search bar that you want to use for anonymous user embedding.
+        /// </para>
+        /// </summary>
+        public AnonymousUserQSearchBarEmbeddingConfiguration QSearchBar
+        {
+            get { return this._qSearchBar; }
+            set { this._qSearchBar = value; }
+        }
+
+        // Check to see if QSearchBar property is set
+        internal bool IsSetQSearchBar()
+        {
+            return this._qSearchBar != null;
         }
 
     }

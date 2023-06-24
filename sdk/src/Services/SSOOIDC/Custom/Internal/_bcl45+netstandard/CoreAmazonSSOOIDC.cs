@@ -14,6 +14,8 @@
  */
 
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal.Util;
@@ -46,17 +48,23 @@ namespace Amazon.SSOOIDC.Internal
 
         public static GetSsoTokenResponse GetSsoToken(IAmazonSSOOIDC client, GetSsoTokenRequest request, IGetSsoTokenContext context)
         {
-            var registerClientRequest = new RegisterClientRequest()
+            var registerClientRequest = new RegisterClientRequest
             {
                 ClientName = request.ClientName,
                 ClientType = request.ClientType,
             };
+
+            if (request.Scopes != null)
+            {
+                registerClientRequest.Scopes = new List<string>(request.Scopes);
+            }
+
             InternalSDKUtils.ApplyValues(registerClientRequest, request.AdditionalProperties);
 
             var registerClientResponse = client.RegisterClient(registerClientRequest);
 
 
-            var startDeviceAuthorizationRequest = new StartDeviceAuthorizationRequest()
+            var startDeviceAuthorizationRequest = new StartDeviceAuthorizationRequest
             {
                 ClientSecret = registerClientResponse.ClientSecret,
                 ClientId = registerClientResponse.ClientId,
@@ -71,7 +79,7 @@ namespace Amazon.SSOOIDC.Internal
             // returned by StartDeviceAuthorization (ExpiresIn) to the current time.
             DateTime deviceCodeExpiration = DateTime.UtcNow.AddSeconds(startDeviceAuthorizationResponse.ExpiresIn);
 
-            request.SsoVerificationCallback(new SsoVerificationArguments()
+            request.SsoVerificationCallback(new SsoVerificationArguments
             {
                 UserCode = startDeviceAuthorizationResponse.UserCode,
                 VerificationUri = startDeviceAuthorizationResponse.VerificationUri,
@@ -79,7 +87,7 @@ namespace Amazon.SSOOIDC.Internal
             });
 
 
-            var createTokenRequest = new CreateTokenRequest()
+            var createTokenRequest = new CreateTokenRequest
             {
                 ClientId = registerClientResponse.ClientId,
                 ClientSecret = registerClientResponse.ClientSecret,
@@ -94,10 +102,15 @@ namespace Amazon.SSOOIDC.Internal
                 deviceCodeExpiration,
                 context);
 
-            return new GetSsoTokenResponse()
+            return new GetSsoTokenResponse
             {
                 AccessToken = ssoToken.AccessToken,
+                Region = client.Config.RegionEndpoint.SystemName,
+                ClientId = registerClientResponse.ClientId,
+                ClientSecret = registerClientResponse.ClientSecret,
+                RefreshToken = ssoToken.RefreshToken,
                 ExpiresAt = DateTime.UtcNow.AddSeconds(ssoToken.ExpiresIn),
+                StartUrl = request.StartUrl
             };
         }
 #endif
@@ -109,17 +122,23 @@ namespace Amazon.SSOOIDC.Internal
 
         public static async Task<GetSsoTokenResponse> GetSsoTokenAsync(IAmazonSSOOIDC client, GetSsoTokenRequest request, IGetSsoTokenContext context)
         {
-            var registerClientRequest = new RegisterClientRequest()
+            var registerClientRequest = new RegisterClientRequest
             {
                 ClientName = request.ClientName,
                 ClientType = request.ClientType,
             };
+
+            if (request.Scopes != null)
+            {
+                registerClientRequest.Scopes = new List<string>(request.Scopes);
+            }
+
             InternalSDKUtils.ApplyValues(registerClientRequest, request.AdditionalProperties);
 
             var registerClientResponse = await client.RegisterClientAsync(registerClientRequest).ConfigureAwait(false);
 
 
-            var startDeviceAuthorizationRequest = new StartDeviceAuthorizationRequest()
+            var startDeviceAuthorizationRequest = new StartDeviceAuthorizationRequest
             {
                 ClientSecret = registerClientResponse.ClientSecret,
                 ClientId = registerClientResponse.ClientId,
@@ -135,14 +154,15 @@ namespace Amazon.SSOOIDC.Internal
             // returned by StartDeviceAuthorization (ExpiresIn) to the current time.
             DateTime deviceCodeExpiration = DateTime.UtcNow.AddSeconds(startDeviceAuthorizationResponse.ExpiresIn);
 
-            request.SsoVerificationCallback(new SsoVerificationArguments()
+            request.SsoVerificationCallback(new SsoVerificationArguments
             {
                 UserCode = startDeviceAuthorizationResponse.UserCode,
                 VerificationUri = startDeviceAuthorizationResponse.VerificationUri,
                 VerificationUriComplete = startDeviceAuthorizationResponse.VerificationUriComplete,
             });
 
-            var createTokenRequest = new CreateTokenRequest()
+
+            var createTokenRequest = new CreateTokenRequest
             {
                 ClientId = registerClientResponse.ClientId,
                 ClientSecret = registerClientResponse.ClientSecret,
@@ -157,10 +177,67 @@ namespace Amazon.SSOOIDC.Internal
                 deviceCodeExpiration,
                 context).ConfigureAwait(false);
 
-            return new GetSsoTokenResponse()
+            return new GetSsoTokenResponse
             {
                 AccessToken = ssoToken.AccessToken,
+                Region = client.Config.RegionEndpoint.SystemName,
+                ClientId = registerClientResponse.ClientId,
+                ClientSecret = registerClientResponse.ClientSecret,
+                RefreshToken = ssoToken.RefreshToken,
                 ExpiresAt = DateTime.UtcNow.AddSeconds(ssoToken.ExpiresIn),
+                StartUrl = request.StartUrl
+            };
+        }
+
+#if BCL
+        public static GetSsoTokenResponse RefreshToken(
+            IAmazonSSOOIDC client,
+            GetSsoTokenResponse previousResponse)
+        {
+            var ssoToken = client.CreateToken(new CreateTokenRequest
+            {
+                ClientId = previousResponse.ClientId,
+                ClientSecret = previousResponse.ClientSecret,
+                RefreshToken = previousResponse.RefreshToken,
+                GrantType = "refresh_token"
+            });
+
+            return new GetSsoTokenResponse
+            {
+                AccessToken = ssoToken.AccessToken,
+                ExpiresAt = AWSSDKUtils.CorrectedUtcNow.AddSeconds(ssoToken.ExpiresIn),
+                RefreshToken = ssoToken.RefreshToken,
+                Region = previousResponse.Region,
+                RegistrationExpiresAt = previousResponse.RegistrationExpiresAt,
+                ClientId = previousResponse.ClientId,
+                ClientSecret = previousResponse.ClientSecret,
+                StartUrl = previousResponse.StartUrl
+            };
+        }
+#endif
+
+        public static async Task<GetSsoTokenResponse> RefreshTokenAsync(
+            IAmazonSSOOIDC client,
+            GetSsoTokenResponse previousResponse)
+        {
+            var ssoToken = await client.CreateTokenAsync(new CreateTokenRequest
+            {
+                ClientId = previousResponse.ClientId,
+                ClientSecret = previousResponse.ClientSecret,
+                RefreshToken = previousResponse.RefreshToken,
+                GrantType = "refresh_token"
+            }).ConfigureAwait(false);
+
+            return new GetSsoTokenResponse
+            {
+                AccessToken = ssoToken.AccessToken,
+                ExpiresAt = AWSSDKUtils.CorrectedUtcNow.AddSeconds(ssoToken.ExpiresIn),
+                RefreshToken = ssoToken.RefreshToken,
+                Region = previousResponse.Region,
+                RegistrationExpiresAt = previousResponse.RegistrationExpiresAt,
+                ClientId = previousResponse.ClientId,
+                ClientSecret = previousResponse.ClientSecret,                
+                StartUrl = previousResponse.StartUrl
             };
         }
 

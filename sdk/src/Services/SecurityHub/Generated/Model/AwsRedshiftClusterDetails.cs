@@ -60,6 +60,7 @@ namespace Amazon.SecurityHub.Model
         private AwsRedshiftClusterHsmStatus _hsmStatus;
         private List<AwsRedshiftClusterIamRole> _iamRoles = new List<AwsRedshiftClusterIamRole>();
         private string _kmsKeyId;
+        private AwsRedshiftClusterLoggingStatus _loggingStatus;
         private string _maintenanceTrackName;
         private int? _manualSnapshotRetentionPeriod;
         private string _masterUsername;
@@ -181,8 +182,8 @@ namespace Amazon.SecurityHub.Model
         ///  
         /// <para>
         /// Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
-        /// 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces.
-        /// For example, <code>2020-03-22T13:22:13.933Z</code>.
+        /// 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces,
+        /// and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.
         /// </para>
         /// </summary>
         public string ClusterCreateTime
@@ -534,8 +535,8 @@ namespace Amazon.SecurityHub.Model
         ///  
         /// <para>
         /// Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
-        /// 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces.
-        /// For example, <code>2020-03-22T13:22:13.933Z</code>.
+        /// 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces,
+        /// and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.
         /// </para>
         /// </summary>
         public string ExpectedNextSnapshotScheduleTime
@@ -629,6 +630,24 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
+        /// Gets and sets the property LoggingStatus. 
+        /// <para>
+        /// Information about the logging status of the cluster.
+        /// </para>
+        /// </summary>
+        public AwsRedshiftClusterLoggingStatus LoggingStatus
+        {
+            get { return this._loggingStatus; }
+            set { this._loggingStatus = value; }
+        }
+
+        // Check to see if LoggingStatus property is set
+        internal bool IsSetLoggingStatus()
+        {
+            return this._loggingStatus != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property MaintenanceTrackName. 
         /// <para>
         /// The name of the maintenance track for the cluster.
@@ -653,7 +672,7 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// If the value is -1, the snapshot is retained indefinitely.
+        /// If the value is <code>-1</code>, the snapshot is retained indefinitely.
         /// </para>
         ///  
         /// <para>
@@ -661,7 +680,7 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: Either -1 or an integer between 1 and 3,653
+        /// Valid values: Either <code>-1</code> or an integer between 1 and 3,653
         /// </para>
         /// </summary>
         public int ManualSnapshotRetentionPeriod
@@ -703,8 +722,8 @@ namespace Amazon.SecurityHub.Model
         ///  
         /// <para>
         /// Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
-        /// 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces.
-        /// For example, <code>2020-03-22T13:22:13.933Z</code>.
+        /// 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces,
+        /// and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.
         /// </para>
         /// </summary>
         public string NextMaintenanceWindowStartTime

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.StepFunctions.Model
 {
     /// <summary>
-    /// Contains details about a lambda function that successfully terminated during an execution.
+    /// Contains details about a Lambda function that successfully terminated during an execution.
     /// </summary>
     public partial class LambdaFunctionSucceededEventDetails
     {
@@ -39,11 +39,11 @@ namespace Amazon.StepFunctions.Model
         /// <summary>
         /// Gets and sets the property Output. 
         /// <para>
-        /// The JSON data output by the lambda function. Length constraints apply to the payload
+        /// The JSON data output by the Lambda function. Length constraints apply to the payload
         /// size, and are expressed as bytes in UTF-8 encoding.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=262144)]
+        [AWSProperty(Sensitive=true, Max=262144)]
         public string Output
         {
             get { return this._output; }

@@ -39,9 +39,11 @@ namespace Amazon.Athena.Model
     public partial class StartQueryExecutionRequest : AmazonAthenaRequest
     {
         private string _clientRequestToken;
+        private List<string> _executionParameters = new List<string>();
         private QueryExecutionContext _queryExecutionContext;
         private string _queryString;
         private ResultConfiguration _resultConfiguration;
+        private ResultReuseConfiguration _resultReuseConfiguration;
         private string _workGroup;
 
         /// <summary>
@@ -72,6 +74,26 @@ namespace Amazon.Athena.Model
         internal bool IsSetClientRequestToken()
         {
             return this._clientRequestToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExecutionParameters. 
+        /// <para>
+        /// A list of values for the parameters in a query. The values are applied sequentially
+        /// to the parameters in the query in the order in which the parameters occur.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public List<string> ExecutionParameters
+        {
+            get { return this._executionParameters; }
+            set { this._executionParameters = value; }
+        }
+
+        // Check to see if ExecutionParameters property is set
+        internal bool IsSetExecutionParameters()
+        {
+            return this._executionParameters != null && this._executionParameters.Count > 0; 
         }
 
         /// <summary>
@@ -130,6 +152,24 @@ namespace Amazon.Athena.Model
         internal bool IsSetResultConfiguration()
         {
             return this._resultConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResultReuseConfiguration. 
+        /// <para>
+        /// Specifies the query result reuse behavior for the query.
+        /// </para>
+        /// </summary>
+        public ResultReuseConfiguration ResultReuseConfiguration
+        {
+            get { return this._resultReuseConfiguration; }
+            set { this._resultReuseConfiguration = value; }
+        }
+
+        // Check to see if ResultReuseConfiguration property is set
+        internal bool IsSetResultReuseConfiguration()
+        {
+            return this._resultReuseConfiguration != null;
         }
 
         /// <summary>

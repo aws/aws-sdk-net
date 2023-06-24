@@ -34,18 +34,21 @@ namespace Amazon.ResilienceHub.Model
     public partial class AppSummary
     {
         private string _appArn;
+        private AppAssessmentScheduleType _assessmentSchedule;
         private AppComplianceStatusType _complianceStatus;
         private DateTime? _creationTime;
         private string _description;
         private string _name;
         private double? _resiliencyScore;
+        private AppStatusType _status;
 
         /// <summary>
         /// Gets and sets the property AppArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
+        /// The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this
+        /// ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
         /// For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
+        /// Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -59,6 +62,24 @@ namespace Amazon.ResilienceHub.Model
         internal bool IsSetAppArn()
         {
             return this._appArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AssessmentSchedule. 
+        /// <para>
+        ///  Assessment execution schedule with 'Daily' or 'Disabled' values. 
+        /// </para>
+        /// </summary>
+        public AppAssessmentScheduleType AssessmentSchedule
+        {
+            get { return this._assessmentSchedule; }
+            set { this._assessmentSchedule = value; }
+        }
+
+        // Check to see if AssessmentSchedule property is set
+        internal bool IsSetAssessmentSchedule()
+        {
+            return this._assessmentSchedule != null;
         }
 
         /// <summary>
@@ -152,6 +173,24 @@ namespace Amazon.ResilienceHub.Model
         internal bool IsSetResiliencyScore()
         {
             return this._resiliencyScore.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The status of the application.
+        /// </para>
+        /// </summary>
+        public AppStatusType Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null;
         }
 
     }

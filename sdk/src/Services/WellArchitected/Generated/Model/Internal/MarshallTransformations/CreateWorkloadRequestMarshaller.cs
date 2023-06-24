@@ -56,7 +56,7 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.WellArchitected");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-03-31";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-03-31";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/workloads";
@@ -72,6 +72,17 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
                     foreach(var publicRequestAccountIdsListValue in publicRequest.AccountIds)
                     {
                             context.Writer.Write(publicRequestAccountIdsListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetApplications())
+                {
+                    context.Writer.WritePropertyName("Applications");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestApplicationsListValue in publicRequest.Applications)
+                    {
+                            context.Writer.Write(publicRequestApplicationsListValue);
                     }
                     context.Writer.WriteArrayEnd();
                 }
@@ -102,12 +113,23 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
                 else if(!(publicRequest.IsSetClientRequestToken()))
                 {
                     context.Writer.WritePropertyName("ClientRequestToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());                                                
+                    context.Writer.Write(Guid.NewGuid().ToString());
                 }
                 if(publicRequest.IsSetDescription())
                 {
                     context.Writer.WritePropertyName("Description");
                     context.Writer.Write(publicRequest.Description);
+                }
+
+                if(publicRequest.IsSetDiscoveryConfig())
+                {
+                    context.Writer.WritePropertyName("DiscoveryConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = WorkloadDiscoveryConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.DiscoveryConfig, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
                 if(publicRequest.IsSetEnvironment())
@@ -167,6 +189,17 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetProfileArns())
+                {
+                    context.Writer.WritePropertyName("ProfileArns");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestProfileArnsListValue in publicRequest.ProfileArns)
+                    {
+                            context.Writer.Write(publicRequestProfileArnsListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetReviewOwner())
                 {
                     context.Writer.WritePropertyName("ReviewOwner");
@@ -193,7 +226,6 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.WorkloadName);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

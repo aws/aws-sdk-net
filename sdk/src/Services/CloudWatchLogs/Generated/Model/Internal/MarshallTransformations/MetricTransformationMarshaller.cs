@@ -34,7 +34,7 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// MetricTransformation Marshaller
-    /// </summary>       
+    /// </summary>
     public class MetricTransformationMarshaller : IRequestMarshaller<MetricTransformation, JsonMarshallerContext> 
     {
         /// <summary>
@@ -93,7 +93,7 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static MetricTransformationMarshaller Instance = new MetricTransformationMarshaller();
 
     }

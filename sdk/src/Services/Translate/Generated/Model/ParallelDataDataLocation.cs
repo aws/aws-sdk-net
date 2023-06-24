@@ -41,7 +41,7 @@ namespace Amazon.Translate.Model
         /// Gets and sets the property Location. 
         /// <para>
         /// The Amazon S3 location of the parallel data input file. The location is returned as
-        /// a presigned URL to that has a 30 minute expiration.
+        /// a presigned URL to that has a 30-minute expiration.
         /// </para>
         ///  <important> 
         /// <para>

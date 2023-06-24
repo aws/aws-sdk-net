@@ -43,15 +43,16 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// The filters. The following are the possible values:
+        /// One or more filters.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>coip-pool.pool-id</code> 
+        ///  <code>coip-pool.local-gateway-route-table-id</code> - The ID of the local gateway
+        /// route table.
         /// </para>
-        ///  </li> </ul> <ul> <li> 
+        ///  </li> <li> 
         /// <para>
-        ///  <code>coip-pool.local-gateway-route-table-id</code> 
+        ///  <code>coip-pool.pool-id</code> - The ID of the address pool.
         /// </para>
         ///  </li> </ul>
         /// </summary>

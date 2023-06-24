@@ -58,7 +58,7 @@ namespace Amazon.RedshiftDataAPIService.Model.Internal.MarshallTransformations
             string target = "RedshiftData.ExecuteStatement";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-12-20";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-12-20";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -67,6 +67,17 @@ namespace Amazon.RedshiftDataAPIService.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetClientToken())
+                {
+                    context.Writer.WritePropertyName("ClientToken");
+                    context.Writer.Write(publicRequest.ClientToken);
+                }
+
+                else if(!(publicRequest.IsSetClientToken()))
+                {
+                    context.Writer.WritePropertyName("ClientToken");
+                    context.Writer.Write(Guid.NewGuid().ToString());
+                }
                 if(publicRequest.IsSetClusterIdentifier())
                 {
                     context.Writer.WritePropertyName("ClusterIdentifier");
@@ -125,7 +136,12 @@ namespace Amazon.RedshiftDataAPIService.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.WithEvent);
                 }
 
-        
+                if(publicRequest.IsSetWorkgroupName())
+                {
+                    context.Writer.WritePropertyName("WorkgroupName");
+                    context.Writer.Write(publicRequest.WorkgroupName);
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

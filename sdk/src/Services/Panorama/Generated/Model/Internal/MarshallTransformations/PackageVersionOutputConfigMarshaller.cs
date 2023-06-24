@@ -34,7 +34,7 @@ namespace Amazon.Panorama.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// PackageVersionOutputConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class PackageVersionOutputConfigMarshaller : IRequestMarshaller<PackageVersionOutputConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.Panorama.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static PackageVersionOutputConfigMarshaller Instance = new PackageVersionOutputConfigMarshaller();
 
     }

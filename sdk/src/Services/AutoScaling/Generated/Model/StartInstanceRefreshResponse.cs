@@ -38,7 +38,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property InstanceRefreshId. 
         /// <para>
-        /// A unique ID for tracking the progress of the request.
+        /// A unique ID for tracking the progress of the instance refresh.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]

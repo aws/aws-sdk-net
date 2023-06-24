@@ -64,6 +64,7 @@ namespace Amazon.Textract.Model
         private string _kmsKeyId;
         private NotificationChannel _notificationChannel;
         private OutputConfig _outputConfig;
+        private QueriesConfig _queriesConfig;
 
         /// <summary>
         /// Gets and sets the property ClientRequestToken. 
@@ -210,6 +211,21 @@ namespace Amazon.Textract.Model
         internal bool IsSetOutputConfig()
         {
             return this._outputConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property QueriesConfig.
+        /// </summary>
+        public QueriesConfig QueriesConfig
+        {
+            get { return this._queriesConfig; }
+            set { this._queriesConfig = value; }
+        }
+
+        // Check to see if QueriesConfig property is set
+        internal bool IsSetQueriesConfig()
+        {
+            return this._queriesConfig != null;
         }
 
     }

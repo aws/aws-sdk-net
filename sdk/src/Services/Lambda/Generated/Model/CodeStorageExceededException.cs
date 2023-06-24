@@ -29,8 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lambda.Model
 {
     /// <summary>
-    /// You have exceeded your maximum total code size per account. <a href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">Learn
-    /// more</a>
+    /// Your Amazon Web Services account has exceeded its maximum total code size. For more
+    /// information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html">Lambda
+    /// quotas</a>.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

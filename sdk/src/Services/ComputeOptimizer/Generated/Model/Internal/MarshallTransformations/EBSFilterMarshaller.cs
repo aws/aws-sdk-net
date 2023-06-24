@@ -34,7 +34,7 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// EBSFilter Marshaller
-    /// </summary>       
+    /// </summary>
     public class EBSFilterMarshaller : IRequestMarshaller<EBSFilter, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static EBSFilterMarshaller Instance = new EBSFilterMarshaller();
 
     }

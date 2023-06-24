@@ -74,8 +74,25 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property ActivityStreamStatus. 
         /// <para>
-        /// The status of the database activity stream.
+        /// The status of the database activity stream. Valid values are as follows:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>started</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>starting</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>stopped</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>stopping</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string ActivityStreamStatus
         {
@@ -170,8 +187,8 @@ namespace Amazon.SecurityHub.Model
         ///  
         /// <para>
         /// Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
-        /// 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces.
-        /// For example, <code>2020-03-22T13:22:13.933Z</code>.
+        /// 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces,
+        /// and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.
         /// </para>
         /// </summary>
         public string ClusterCreateTime
@@ -445,8 +462,21 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Engine. 
         /// <para>
-        /// The name of the database engine to use for this DB cluster.
+        /// The name of the database engine to use for this DB cluster. Valid values are as follows:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>aurora</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>aurora-mysql</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>aurora-postgresql</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string Engine
         {
@@ -463,8 +493,29 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property EngineMode. 
         /// <para>
-        /// The database engine mode of the DB cluster.
+        /// The database engine mode of the DB cluster.Valid values are as follows:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>global</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>multimaster</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>parallelquery</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>provisioned</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>serverless</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string EngineMode
         {

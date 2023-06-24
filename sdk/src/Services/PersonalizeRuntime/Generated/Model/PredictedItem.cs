@@ -39,6 +39,7 @@ namespace Amazon.PersonalizeRuntime.Model
     public partial class PredictedItem
     {
         private string _itemId;
+        private string _promotionName;
         private double? _score;
 
         /// <summary>
@@ -58,6 +59,25 @@ namespace Amazon.PersonalizeRuntime.Model
         internal bool IsSetItemId()
         {
             return this._itemId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PromotionName. 
+        /// <para>
+        /// The name of the promotion that included the predicted item.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=63)]
+        public string PromotionName
+        {
+            get { return this._promotionName; }
+            set { this._promotionName = value; }
+        }
+
+        // Check to see if PromotionName property is set
+        internal bool IsSetPromotionName()
+        {
+            return this._promotionName != null;
         }
 
         /// <summary>

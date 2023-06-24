@@ -34,7 +34,7 @@ namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// UpdateBackendAuthUserPoolConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class UpdateBackendAuthUserPoolConfigMarshaller : IRequestMarshaller<UpdateBackendAuthUserPoolConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -89,11 +89,22 @@ namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetVerificationMessage())
+            {
+                context.Writer.WritePropertyName("verificationMessage");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = UpdateBackendAuthVerificationMessageConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.VerificationMessage, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static UpdateBackendAuthUserPoolConfigMarshaller Instance = new UpdateBackendAuthUserPoolConfigMarshaller();
 
     }

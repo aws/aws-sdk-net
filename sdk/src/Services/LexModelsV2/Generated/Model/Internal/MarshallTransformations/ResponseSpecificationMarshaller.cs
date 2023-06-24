@@ -34,7 +34,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ResponseSpecification Marshaller
-    /// </summary>       
+    /// </summary>
     public class ResponseSpecificationMarshaller : IRequestMarshaller<ResponseSpecification, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ResponseSpecificationMarshaller Instance = new ResponseSpecificationMarshaller();
 
     }

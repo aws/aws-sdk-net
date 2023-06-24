@@ -126,8 +126,8 @@ namespace Amazon.Route53Domains.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For .es domains, if you specify <code>PERSON</code>, you must specify <code>INDIVIDUAL</code>
-        /// for the value of <code>ES_LEGAL_FORM</code>.
+        /// For .es domains, the value of <code>ContactType</code> must be <code>PERSON</code>
+        /// for all three contacts.
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -1,4 +1,5 @@
 {
-    "active": true, 
-    "synopsis": "Amazon MTurk is a web service that provides an on-demand, scalable, human workforce to complete jobs that humans can do better than computers, for example, recognizing objects in photos."
+  "active": true,
+  "synopsis": "Amazon MTurk is a web service that provides an on-demand, scalable, human workforce to complete jobs that humans can do better than computers, for example, recognizing objects in photos.",
+  "legacy-service-id": "MTurk"
 }

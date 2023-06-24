@@ -55,7 +55,7 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
         public IRequest Marshall(ListChannelsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ChimeSDKMessaging");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-05-15";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-05-15";
             request.HttpMethod = "GET";
 
             
@@ -72,8 +72,10 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
                 request.Parameters.Add("privacy", StringUtils.FromString(publicRequest.Privacy));
             request.ResourcePath = "/channels";
         
-            if(publicRequest.IsSetChimeBearer())
+            if (publicRequest.IsSetChimeBearer()) 
+            {
                 request.Headers["x-amz-chime-bearer"] = publicRequest.ChimeBearer;
+            }
             request.UseQueryString = true;
 
             return request;

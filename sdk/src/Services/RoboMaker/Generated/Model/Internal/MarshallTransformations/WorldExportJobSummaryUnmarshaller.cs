@@ -76,6 +76,12 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("outputLocation", targetDepth))
+                {
+                    var unmarshaller = OutputLocationUnmarshaller.Instance;
+                    unmarshalledObject.OutputLocation = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

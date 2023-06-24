@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// Options to specify the subnets and security groups for the VPC endpoint. For more
-    /// information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html"
-    /// target="_blank"> Launching your Amazon OpenSearch Service domains using a VPC</a>.
+    /// Options to specify the subnets and security groups for an Amazon OpenSearch Service
+    /// VPC endpoint. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html">Launching
+    /// your Amazon OpenSearch Service domains using a VPC</a>.
     /// </summary>
     public partial class VPCOptions
     {
@@ -41,7 +41,9 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property SecurityGroupIds. 
         /// <para>
-        /// The security groups for the VPC endpoint.
+        /// The list of security group IDs associated with the VPC endpoints for the domain. If
+        /// you do not provide a security group ID, OpenSearch Service uses the default security
+        /// group for the VPC.
         /// </para>
         /// </summary>
         public List<string> SecurityGroupIds
@@ -59,7 +61,9 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property SubnetIds. 
         /// <para>
-        /// The subnets for the VPC endpoint.
+        /// A list of subnet IDs associated with the VPC endpoints for the domain. If your domain
+        /// uses multiple Availability Zones, you need to provide two subnet IDs, one per zone.
+        /// Otherwise, provide only one.
         /// </para>
         /// </summary>
         public List<string> SubnetIds

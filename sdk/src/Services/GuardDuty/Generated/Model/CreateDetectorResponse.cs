@@ -34,6 +34,7 @@ namespace Amazon.GuardDuty.Model
     public partial class CreateDetectorResponse : AmazonWebServiceResponse
     {
         private string _detectorId;
+        private UnprocessedDataSourcesResult _unprocessedDataSources;
 
         /// <summary>
         /// Gets and sets the property DetectorId. 
@@ -52,6 +53,25 @@ namespace Amazon.GuardDuty.Model
         internal bool IsSetDetectorId()
         {
             return this._detectorId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UnprocessedDataSources. 
+        /// <para>
+        /// Specifies the data sources that couldn't be enabled when GuardDuty was enabled for
+        /// the first time.
+        /// </para>
+        /// </summary>
+        public UnprocessedDataSourcesResult UnprocessedDataSources
+        {
+            get { return this._unprocessedDataSources; }
+            set { this._unprocessedDataSources = value; }
+        }
+
+        // Check to see if UnprocessedDataSources property is set
+        internal bool IsSetUnprocessedDataSources()
+        {
+            return this._unprocessedDataSources != null;
         }
 
     }

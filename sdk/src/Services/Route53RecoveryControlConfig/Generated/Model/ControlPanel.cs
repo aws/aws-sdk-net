@@ -47,6 +47,7 @@ namespace Amazon.Route53RecoveryControlConfig.Model
         /// The Amazon Resource Name (ARN) of the cluster that includes the control panel.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string ClusterArn
         {
             get { return this._clusterArn; }
@@ -65,6 +66,7 @@ namespace Amazon.Route53RecoveryControlConfig.Model
         /// The Amazon Resource Name (ARN) of the control panel.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string ControlPanelArn
         {
             get { return this._controlPanelArn; }

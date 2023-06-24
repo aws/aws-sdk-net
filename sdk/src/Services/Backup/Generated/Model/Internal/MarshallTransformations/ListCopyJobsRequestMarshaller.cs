@@ -55,12 +55,18 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
         public IRequest Marshall(ListCopyJobsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Backup");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-11-15";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-11-15";
             request.HttpMethod = "GET";
 
             
             if (publicRequest.IsSetByAccountId())
                 request.Parameters.Add("accountId", StringUtils.FromString(publicRequest.ByAccountId));
+            
+            if (publicRequest.IsSetByCompleteAfter())
+                request.Parameters.Add("completeAfter", StringUtils.FromDateTimeToISO8601(publicRequest.ByCompleteAfter));
+            
+            if (publicRequest.IsSetByCompleteBefore())
+                request.Parameters.Add("completeBefore", StringUtils.FromDateTimeToISO8601(publicRequest.ByCompleteBefore));
             
             if (publicRequest.IsSetByCreatedAfter())
                 request.Parameters.Add("createdAfter", StringUtils.FromDateTimeToISO8601(publicRequest.ByCreatedAfter));
@@ -70,6 +76,9 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetByDestinationVaultArn())
                 request.Parameters.Add("destinationVaultArn", StringUtils.FromString(publicRequest.ByDestinationVaultArn));
+            
+            if (publicRequest.IsSetByParentJobId())
+                request.Parameters.Add("parentJobId", StringUtils.FromString(publicRequest.ByParentJobId));
             
             if (publicRequest.IsSetByResourceArn())
                 request.Parameters.Add("resourceArn", StringUtils.FromString(publicRequest.ByResourceArn));

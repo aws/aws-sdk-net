@@ -87,6 +87,56 @@ namespace Amazon.ResilienceHub
 
 
     /// <summary>
+    /// Constants used for properties of type AppAssessmentScheduleType.
+    /// </summary>
+    public class AppAssessmentScheduleType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Daily for AppAssessmentScheduleType
+        /// </summary>
+        public static readonly AppAssessmentScheduleType Daily = new AppAssessmentScheduleType("Daily");
+        /// <summary>
+        /// Constant Disabled for AppAssessmentScheduleType
+        /// </summary>
+        public static readonly AppAssessmentScheduleType Disabled = new AppAssessmentScheduleType("Disabled");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AppAssessmentScheduleType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AppAssessmentScheduleType FindValue(string value)
+        {
+            return FindValue<AppAssessmentScheduleType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AppAssessmentScheduleType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AppComplianceStatusType.
     /// </summary>
     public class AppComplianceStatusType : ConstantClass
@@ -366,6 +416,10 @@ namespace Amazon.ResilienceHub
         /// Constant BestAZRecovery for ConfigRecommendationOptimizationType
         /// </summary>
         public static readonly ConfigRecommendationOptimizationType BestAZRecovery = new ConfigRecommendationOptimizationType("BestAZRecovery");
+        /// <summary>
+        /// Constant BestRegionRecovery for ConfigRecommendationOptimizationType
+        /// </summary>
+        public static readonly ConfigRecommendationOptimizationType BestRegionRecovery = new ConfigRecommendationOptimizationType("BestRegionRecovery");
         /// <summary>
         /// Constant LeastChange for ConfigRecommendationOptimizationType
         /// </summary>
@@ -1041,6 +1095,56 @@ namespace Amazon.ResilienceHub
 
 
     /// <summary>
+    /// Constants used for properties of type ResourceImportStrategyType.
+    /// </summary>
+    public class ResourceImportStrategyType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AddOnly for ResourceImportStrategyType
+        /// </summary>
+        public static readonly ResourceImportStrategyType AddOnly = new ResourceImportStrategyType("AddOnly");
+        /// <summary>
+        /// Constant ReplaceAll for ResourceImportStrategyType
+        /// </summary>
+        public static readonly ResourceImportStrategyType ReplaceAll = new ResourceImportStrategyType("ReplaceAll");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ResourceImportStrategyType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResourceImportStrategyType FindValue(string value)
+        {
+            return FindValue<ResourceImportStrategyType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResourceImportStrategyType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ResourceMappingType.
     /// </summary>
     public class ResourceMappingType : ConstantClass
@@ -1055,6 +1159,10 @@ namespace Amazon.ResilienceHub
         /// </summary>
         public static readonly ResourceMappingType CfnStack = new ResourceMappingType("CfnStack");
         /// <summary>
+        /// Constant EKS for ResourceMappingType
+        /// </summary>
+        public static readonly ResourceMappingType EKS = new ResourceMappingType("EKS");
+        /// <summary>
         /// Constant Resource for ResourceMappingType
         /// </summary>
         public static readonly ResourceMappingType Resource = new ResourceMappingType("Resource");
@@ -1062,6 +1170,10 @@ namespace Amazon.ResilienceHub
         /// Constant ResourceGroup for ResourceMappingType
         /// </summary>
         public static readonly ResourceMappingType ResourceGroup = new ResourceMappingType("ResourceGroup");
+        /// <summary>
+        /// Constant Terraform for ResourceMappingType
+        /// </summary>
+        public static readonly ResourceMappingType Terraform = new ResourceMappingType("Terraform");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1150,6 +1262,56 @@ namespace Amazon.ResilienceHub
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ResourceResolutionStatusType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ResourceSourceType.
+    /// </summary>
+    public class ResourceSourceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AppTemplate for ResourceSourceType
+        /// </summary>
+        public static readonly ResourceSourceType AppTemplate = new ResourceSourceType("AppTemplate");
+        /// <summary>
+        /// Constant Discovered for ResourceSourceType
+        /// </summary>
+        public static readonly ResourceSourceType Discovered = new ResourceSourceType("Discovered");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ResourceSourceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResourceSourceType FindValue(string value)
+        {
+            return FindValue<ResourceSourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResourceSourceType(string value)
         {
             return FindValue(value);
         }

@@ -36,20 +36,22 @@ namespace Amazon.ForecastService.Model
     /// 
     ///  
     /// <para>
-    /// You must specify a <a>DataSource</a> object that includes an AWS Identity and Access
-    /// Management (IAM) role that Amazon Forecast can assume to access the data, as Amazon
-    /// Forecast makes a copy of your data and processes it in an internal AWS system. For
-    /// more information, see <a>aws-forecast-iam-roles</a>.
+    /// You must specify a <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_DataSource.html">DataSource</a>
+    /// object that includes an Identity and Access Management (IAM) role that Amazon Forecast
+    /// can assume to access the data, as Amazon Forecast makes a copy of your data and processes
+    /// it in an internal Amazon Web Services system. For more information, see <a href="https://docs.aws.amazon.com/forecast/latest/dg/aws-forecast-iam-roles.html">Set
+    /// up permissions</a>.
     /// </para>
     ///  
     /// <para>
-    /// The training data must be in CSV format. The delimiter must be a comma (,).
+    /// The training data must be in CSV or Parquet format. The delimiter must be a comma
+    /// (,).
     /// </para>
     ///  
     /// <para>
-    /// You can specify the path to a specific CSV file, the S3 bucket, or to a folder in
-    /// the S3 bucket. For the latter two cases, Amazon Forecast imports all files up to the
-    /// limit of 10,000 files.
+    /// You can specify the path to a specific file, the S3 bucket, or to a folder in the
+    /// S3 bucket. For the latter two cases, Amazon Forecast imports all files up to the limit
+    /// of 10,000 files.
     /// </para>
     ///  
     /// <para>
@@ -61,7 +63,8 @@ namespace Amazon.ForecastService.Model
     ///  
     /// <para>
     /// To get a list of all your dataset import jobs, filtered by specified criteria, use
-    /// the <a>ListDatasetImportJobs</a> operation.
+    /// the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_ListDatasetImportJobs.html">ListDatasetImportJobs</a>
+    /// operation.
     /// </para>
     /// </summary>
     public partial class CreateDatasetImportJobRequest : AmazonForecastServiceRequest
@@ -69,7 +72,9 @@ namespace Amazon.ForecastService.Model
         private string _datasetArn;
         private string _datasetImportJobName;
         private DataSource _dataSource;
+        private string _format;
         private string _geolocationFormat;
+        private ImportMode _importMode;
         private List<Tag> _tags = new List<Tag>();
         private string _timestampFormat;
         private string _timeZone;
@@ -119,16 +124,17 @@ namespace Amazon.ForecastService.Model
         /// <summary>
         /// Gets and sets the property DataSource. 
         /// <para>
-        /// The location of the training data to import and an AWS Identity and Access Management
+        /// The location of the training data to import and an Identity and Access Management
         /// (IAM) role that Amazon Forecast can assume to access the data. The training data must
         /// be stored in an Amazon S3 bucket.
         /// </para>
         ///  
         /// <para>
-        /// If encryption is used, <code>DataSource</code> must include an AWS Key Management
-        /// Service (KMS) key and the IAM role must allow Amazon Forecast permission to access
-        /// the key. The KMS key and IAM role must match those specified in the <code>EncryptionConfig</code>
-        /// parameter of the <a>CreateDataset</a> operation.
+        /// If encryption is used, <code>DataSource</code> must include an Key Management Service
+        /// (KMS) key and the IAM role must allow Amazon Forecast permission to access the key.
+        /// The KMS key and IAM role must match those specified in the <code>EncryptionConfig</code>
+        /// parameter of the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDataset.html">CreateDataset</a>
+        /// operation.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -142,6 +148,25 @@ namespace Amazon.ForecastService.Model
         internal bool IsSetDataSource()
         {
             return this._dataSource != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Format. 
+        /// <para>
+        /// The format of the imported data, CSV or PARQUET. The default value is CSV.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=7)]
+        public string Format
+        {
+            get { return this._format; }
+            set { this._format = value; }
+        }
+
+        // Check to see if Format property is set
+        internal bool IsSetFormat()
+        {
+            return this._format != null;
         }
 
         /// <summary>
@@ -172,6 +197,27 @@ namespace Amazon.ForecastService.Model
         internal bool IsSetGeolocationFormat()
         {
             return this._geolocationFormat != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ImportMode. 
+        /// <para>
+        /// Specifies whether the dataset import job is a <code>FULL</code> or <code>INCREMENTAL</code>
+        /// import. A <code>FULL</code> dataset import replaces all of the existing data with
+        /// the newly imported data. An <code>INCREMENTAL</code> import appends the imported data
+        /// to the existing data.
+        /// </para>
+        /// </summary>
+        public ImportMode ImportMode
+        {
+            get { return this._importMode; }
+            set { this._importMode = value; }
+        }
+
+        // Check to see if ImportMode property is set
+        internal bool IsSetImportMode()
+        {
+            return this._importMode != null;
         }
 
         /// <summary>
@@ -216,11 +262,11 @@ namespace Amazon.ForecastService.Model
         ///  </li> <li> 
         /// <para>
         /// Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination
-        /// of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete
-        /// tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code>
-        /// as its prefix but the key does not, then Forecast considers it to be a user tag and
-        /// will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code>
-        /// do not count against your tags per resource limit.
+        /// of such as a prefix for keys as it is reserved for Amazon Web Services use. You cannot
+        /// edit or delete tag keys with this prefix. Values can have this prefix. If a tag value
+        /// has <code>aws</code> as its prefix but the key does not, then Forecast considers it
+        /// to be a user tag and will count against the limit of 50 tags. Tags with only the key
+        /// prefix of <code>aws</code> do not count against your tags per resource limit.
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -36,13 +36,14 @@ namespace Amazon.ACMPCA.Model
     /// 
     ///  <ul> <li> 
     /// <para>
-    ///  <code>CREATING</code> - ACM Private CA is creating your private certificate authority.
+    ///  <code>CREATING</code> - Amazon Web Services Private CA is creating your private certificate
+    /// authority.
     /// </para>
     ///  </li> <li> 
     /// <para>
     ///  <code>PENDING_CERTIFICATE</code> - The certificate is pending. You must use your
-    /// ACM Private CA-hosted or on-premises root or subordinate CA to sign your private CA
-    /// CSR and then import it into PCA. 
+    /// Amazon Web Services Private CA-hosted or on-premises root or subordinate CA to sign
+    /// your private CA CSR and then import it into Amazon Web Services Private CA. 
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -59,8 +60,8 @@ namespace Amazon.ACMPCA.Model
     ///  </li> <li> 
     /// <para>
     ///  <code>FAILED</code> - Your private CA has failed. Your CA can fail because of problems
-    /// such a network outage or back-end AWS failure or other errors. A failed CA can never
-    /// return to the pending state. You must create a new CA. 
+    /// such a network outage or back-end Amazon Web Services failure or other errors. A failed
+    /// CA can never return to the pending state. You must create a new CA. 
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -77,7 +78,7 @@ namespace Amazon.ACMPCA.Model
         /// <summary>
         /// Gets and sets the property CertificateAuthorityArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>.
+        /// The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>.
         /// This must be of the form: 
         /// </para>
         ///  

@@ -94,6 +94,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.NetworkLoadBalancerArns.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("payerResponsibility", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.PayerResponsibility = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("privateDnsName", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -129,6 +135,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         var unmarshaller = ServiceTypeDetailUnmarshaller.Instance;
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.ServiceType.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("supportedIpAddressTypeSet/item", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.SupportedIpAddressTypes.Add(item);
                         continue;
                     }
                     if (context.TestExpression("tagSet/item", targetDepth))

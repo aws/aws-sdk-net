@@ -29,7 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// The current options of an domain service software options.
+    /// The current status of the service software for an Amazon OpenSearch Service domain.
+    /// For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/service-software.html">Service
+    /// software updates in Amazon OpenSearch Service</a>.
     /// </summary>
     public partial class ServiceSoftwareOptions
     {
@@ -46,7 +48,7 @@ namespace Amazon.OpenSearchService.Model
         /// Gets and sets the property AutomatedUpdateDate. 
         /// <para>
         /// The timestamp, in Epoch time, until which you can manually request a service software
-        /// update. After this date, we automatically update your service software. 
+        /// update. After this date, we automatically update your service software.
         /// </para>
         /// </summary>
         public DateTime AutomatedUpdateDate
@@ -64,8 +66,8 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property Cancellable. 
         /// <para>
-        ///  <code>True</code> if you're able to cancel your service software version update.
-        /// <code>False</code> if you can't cancel your service software update. 
+        ///  True if you're able to cancel your service software version update. False if you
+        /// can't cancel your service software update.
         /// </para>
         /// </summary>
         public bool Cancellable
@@ -101,7 +103,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description of the <code>UpdateStatus</code>. 
+        /// A description of the service software update status.
         /// </para>
         /// </summary>
         public string Description
@@ -119,7 +121,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property NewVersion. 
         /// <para>
-        /// The new service software version if one is available.
+        /// The new service software version, if one is available.
         /// </para>
         /// </summary>
         public string NewVersion
@@ -137,9 +139,8 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property OptionalDeployment. 
         /// <para>
-        ///  <code>True</code> if a service software is never automatically updated. <code>False</code>
-        /// if a service software is automatically updated after <code>AutomatedUpdateDate</code>.
-        /// 
+        /// True if a service software is never automatically updated. False if a service software
+        /// is automatically updated after the automated update date.
         /// </para>
         /// </summary>
         public bool OptionalDeployment
@@ -157,8 +158,8 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property UpdateAvailable. 
         /// <para>
-        ///  <code>True</code> if you're able to update your service software version. <code>False</code>
-        /// if you can't update your service software version. 
+        /// True if you're able to update your service software version. False if you can't update
+        /// your service software version.
         /// </para>
         /// </summary>
         public bool UpdateAvailable
@@ -176,9 +177,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property UpdateStatus. 
         /// <para>
-        /// The status of your service software update. This field can take the following values:
-        /// <code> ELIGIBLE</code>, <code>PENDING_UPDATE</code>, <code>IN_PROGRESS</code>, <code>COMPLETED</code>,
-        /// and <code> NOT_ELIGIBLE</code>. 
+        /// The status of your service software update.
         /// </para>
         /// </summary>
         public DeploymentStatus UpdateStatus

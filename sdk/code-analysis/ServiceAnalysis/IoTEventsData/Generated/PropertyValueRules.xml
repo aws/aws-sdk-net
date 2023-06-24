@@ -123,6 +123,12 @@
     <pattern>^[a-zA-Z0-9_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoTEventsData.Model.BatchDeleteDetectorErrorEntry.MessageId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoTEventsData.Model.BatchPutMessageErrorEntry.MessageId</property>
     <min>1</min>
     <max>64</max>
@@ -130,6 +136,24 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTEventsData.Model.BatchUpdateDetectorErrorEntry.MessageId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTEventsData.Model.DeleteDetectorRequest.DetectorModelName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTEventsData.Model.DeleteDetectorRequest.KeyValue</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9\-_:]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTEventsData.Model.DeleteDetectorRequest.MessageId</property>
     <min>1</min>
     <max>64</max>
     <pattern>^[a-zA-Z0-9_-]+$</pattern>

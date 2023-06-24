@@ -40,7 +40,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property BaseTableTTL. 
         /// <para>
-        /// The number of minutes an Item is stored in the datasource.
+        /// The number of minutes that an Item is stored in the data source.
         /// </para>
         /// </summary>
         public long BaseTableTTL
@@ -76,7 +76,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property DeltaSyncTableTTL. 
         /// <para>
-        /// The number of minutes a Delta Sync log entry is stored in the Delta Sync table.
+        /// The number of minutes that a Delta Sync log entry is stored in the Delta Sync table.
         /// </para>
         /// </summary>
         public long DeltaSyncTableTTL

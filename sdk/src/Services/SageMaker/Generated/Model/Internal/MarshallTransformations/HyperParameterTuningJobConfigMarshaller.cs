@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// HyperParameterTuningJobConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class HyperParameterTuningJobConfigMarshaller : IRequestMarshaller<HyperParameterTuningJobConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,6 +67,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetRandomSeed())
+            {
+                context.Writer.WritePropertyName("RandomSeed");
+                context.Writer.Write(requestObject.RandomSeed);
+            }
+
             if(requestObject.IsSetResourceLimits())
             {
                 context.Writer.WritePropertyName("ResourceLimits");
@@ -82,6 +88,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("Strategy");
                 context.Writer.Write(requestObject.Strategy);
+            }
+
+            if(requestObject.IsSetStrategyConfig())
+            {
+                context.Writer.WritePropertyName("StrategyConfig");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = HyperParameterTuningJobStrategyConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.StrategyConfig, context);
+
+                context.Writer.WriteObjectEnd();
             }
 
             if(requestObject.IsSetTrainingJobEarlyStoppingType())
@@ -105,7 +122,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static HyperParameterTuningJobConfigMarshaller Instance = new HyperParameterTuningJobConfigMarshaller();
 
     }

@@ -30,14 +30,17 @@ namespace Amazon.Outposts.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteSite operation.
-    /// Deletes the site.
+    /// Deletes the specified site.
     /// </summary>
     public partial class DeleteSiteRequest : AmazonOutpostsRequest
     {
         private string _siteId;
 
         /// <summary>
-        /// Gets and sets the property SiteId.
+        /// Gets and sets the property SiteId. 
+        /// <para>
+        ///  The ID or the Amazon Resource Name (ARN) of the site. 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
         public string SiteId

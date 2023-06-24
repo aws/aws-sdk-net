@@ -34,7 +34,7 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SystemsManagerAgent Marshaller
-    /// </summary>       
+    /// </summary>
     public class SystemsManagerAgentMarshaller : IRequestMarshaller<SystemsManagerAgent, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SystemsManagerAgentMarshaller Instance = new SystemsManagerAgentMarshaller();
 
     }

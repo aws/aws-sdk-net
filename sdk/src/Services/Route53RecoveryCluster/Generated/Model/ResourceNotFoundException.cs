@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53RecoveryCluster.Model
 {
     /// <summary>
-    /// The request references a routing control that was not found.
+    /// The request references a routing control or control panel that was not found.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

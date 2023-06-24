@@ -38,16 +38,17 @@ namespace Amazon.GameLift.Model
     /// 
     ///  <ul> <li> 
     /// <para>
-    /// Minimum/maximum size: Set hard limits on fleet capacity. GameLift cannot set the fleet's
-    /// capacity to a value outside of this range, whether the capacity is changed manually
-    /// or through automatic scaling. 
+    /// Minimum/maximum size: Set hard limits on fleet capacity. Amazon GameLift cannot set
+    /// the fleet's capacity to a value outside of this range, whether the capacity is changed
+    /// manually or through automatic scaling. 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Desired capacity: Manually set the number of EC2 instances to be maintained in a fleet
-    /// location. Before changing a fleet's desired capacity, you may want to call <a>DescribeEC2InstanceLimits</a>
-    /// to get the maximum capacity of the fleet's EC2 instance type. Alternatively, consider
-    /// using automatic scaling to adjust capacity based on player demand.
+    /// Desired capacity: Manually set the number of Amazon EC2 instances to be maintained
+    /// in a fleet location. Before changing a fleet's desired capacity, you may want to call
+    /// <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeEC2InstanceLimits.html">DescribeEC2InstanceLimits</a>
+    /// to get the maximum capacity of the fleet's Amazon EC2 instance type. Alternatively,
+    /// consider using automatic scaling to adjust capacity based on player demand.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -68,10 +69,11 @@ namespace Amazon.GameLift.Model
     ///  </li> </ul> 
     /// <para>
     /// If successful, capacity settings are updated immediately. In response a change in
-    /// desired capacity, GameLift initiates steps to start new instances or terminate existing
-    /// instances in the requested fleet location. This continues until the location's active
-    /// instance count matches the new desired instance count. You can track a fleet's current
-    /// capacity by calling <a>DescribeFleetCapacity</a> or <a>DescribeFleetLocationCapacity</a>.
+    /// desired capacity, Amazon GameLift initiates steps to start new instances or terminate
+    /// existing instances in the requested fleet location. This continues until the location's
+    /// active instance count matches the new desired instance count. You can track a fleet's
+    /// current capacity by calling <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetCapacity.html">DescribeFleetCapacity</a>
+    /// or <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetLocationCapacity.html">DescribeFleetLocationCapacity</a>.
     /// If the requested desired instance count is higher than the instance type's limit,
     /// the <code>LimitExceeded</code> exception occurs.
     /// </para>
@@ -83,18 +85,6 @@ namespace Amazon.GameLift.Model
     /// <para>
     ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-manage-capacity.html">Scaling
     /// fleet capacity</a> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <b>Related actions</b> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <a>CreateFleetLocations</a> | <a>UpdateFleetAttributes</a> | <a>UpdateFleetCapacity</a>
-    /// | <a>UpdateFleetPortSettings</a> | <a>UpdateRuntimeConfiguration</a> | <a>StopFleetActions</a>
-    /// | <a>StartFleetActions</a> | <a>PutScalingPolicy</a> | <a>DeleteFleet</a> | <a>DeleteFleetLocations</a>
-    /// | <a>DeleteScalingPolicy</a> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
-    /// APIs by task</a> 
     /// </para>
     /// </summary>
     public partial class UpdateFleetCapacityRequest : AmazonGameLiftRequest
@@ -108,7 +98,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property DesiredInstances. 
         /// <para>
-        /// The number of EC2 instances you want to maintain in the specified fleet location.
+        /// The number of Amazon EC2 instances you want to maintain in the specified fleet location.
         /// This value must fall between the minimum and maximum size limits.
         /// </para>
         /// </summary>
@@ -149,7 +139,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property Location. 
         /// <para>
         /// The name of a remote location to update fleet capacity settings for, in the form of
-        /// an AWS Region code such as <code>us-west-2</code>.
+        /// an Amazon Web Services Region code such as <code>us-west-2</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

@@ -30,7 +30,7 @@ namespace Amazon.Mgn.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteVcenterClient operation.
-    /// Deletes a single vCenter client by ID.
+    /// Deletes a given vCenter client by ID.
     /// </summary>
     public partial class DeleteVcenterClientRequest : AmazonMgnRequest
     {

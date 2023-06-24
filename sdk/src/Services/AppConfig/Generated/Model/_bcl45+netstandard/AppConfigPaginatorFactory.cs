@@ -76,6 +76,22 @@ namespace Amazon.AppConfig.Model
         }
 
         /// <summary>
+        /// Paginator for ListExtensionAssociations operation
+        ///</summary>
+        public IListExtensionAssociationsPaginator ListExtensionAssociations(ListExtensionAssociationsRequest request) 
+        {
+            return new ListExtensionAssociationsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListExtensions operation
+        ///</summary>
+        public IListExtensionsPaginator ListExtensions(ListExtensionsRequest request) 
+        {
+            return new ListExtensionsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListHostedConfigurationVersions operation
         ///</summary>
         public IListHostedConfigurationVersionsPaginator ListHostedConfigurationVersions(ListHostedConfigurationVersionsRequest request) 

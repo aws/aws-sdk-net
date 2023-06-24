@@ -94,6 +94,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SecondaryArtifacts", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<AwsCodeBuildProjectArtifactsDetails, AwsCodeBuildProjectArtifactsDetailsUnmarshaller>(AwsCodeBuildProjectArtifactsDetailsUnmarshaller.Instance);
+                    unmarshalledObject.SecondaryArtifacts = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ServiceRole", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

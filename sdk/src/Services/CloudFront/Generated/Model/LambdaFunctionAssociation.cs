@@ -47,7 +47,7 @@ namespace Amazon.CloudFront.Model
         /// <para>
         ///  <code>viewer-request</code>: The function executes when CloudFront receives a request
         /// from a viewer and before it checks to see whether the requested object is in the edge
-        /// cache. 
+        /// cache.
         /// </para>
         ///  </li> <li> 
         /// <para>

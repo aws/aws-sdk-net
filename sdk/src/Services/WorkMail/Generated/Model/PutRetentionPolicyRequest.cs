@@ -46,7 +46,7 @@ namespace Amazon.WorkMail.Model
         /// The retention policy description.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Sensitive=true, Max=256)]
         public string Description
         {
             get { return this._description; }

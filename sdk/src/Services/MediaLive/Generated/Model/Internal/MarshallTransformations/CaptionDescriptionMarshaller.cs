@@ -34,7 +34,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CaptionDescription Marshaller
-    /// </summary>       
+    /// </summary>
     public class CaptionDescriptionMarshaller : IRequestMarshaller<CaptionDescription, JsonMarshallerContext> 
     {
         /// <summary>
@@ -45,6 +45,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CaptionDescription requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAccessibility())
+            {
+                context.Writer.WritePropertyName("accessibility");
+                context.Writer.Write(requestObject.Accessibility);
+            }
+
             if(requestObject.IsSetCaptionSelectorName())
             {
                 context.Writer.WritePropertyName("captionSelectorName");
@@ -84,7 +90,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CaptionDescriptionMarshaller Instance = new CaptionDescriptionMarshaller();
 
     }

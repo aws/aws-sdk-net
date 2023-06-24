@@ -37,14 +37,13 @@ namespace Amazon.KeyManagementService.Model
     ///  
     /// <para>
     /// For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-    /// state: Effect on your KMS key</a> in the <i> <i>Key Management Service Developer Guide</i>
-    /// </i>.
+    /// states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.
     /// </para>
     ///  
     /// <para>
     /// The KMS key that you use for this operation must be in a compatible key state. For
     /// details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-    /// state: Effect on your KMS key</a> in the <i>Key Management Service Developer Guide</i>.
+    /// states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.
     /// </para>
     ///  
     /// <para>

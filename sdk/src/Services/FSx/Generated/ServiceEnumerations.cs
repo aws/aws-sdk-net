@@ -113,6 +113,10 @@ namespace Amazon.FSx
         /// </summary>
         public static readonly AdministrativeActionType STORAGE_OPTIMIZATION = new AdministrativeActionType("STORAGE_OPTIMIZATION");
         /// <summary>
+        /// Constant VOLUME_RESTORE for AdministrativeActionType
+        /// </summary>
+        public static readonly AdministrativeActionType VOLUME_RESTORE = new AdministrativeActionType("VOLUME_RESTORE");
+        /// <summary>
         /// Constant VOLUME_UPDATE for AdministrativeActionType
         /// </summary>
         public static readonly AdministrativeActionType VOLUME_UPDATE = new AdministrativeActionType("VOLUME_UPDATE");
@@ -523,6 +527,10 @@ namespace Amazon.FSx
         /// </summary>
         public static readonly DataRepositoryTaskFilterName DataRepositoryAssociationId = new DataRepositoryTaskFilterName("data-repository-association-id");
         /// <summary>
+        /// Constant FileCacheId for DataRepositoryTaskFilterName
+        /// </summary>
+        public static readonly DataRepositoryTaskFilterName FileCacheId = new DataRepositoryTaskFilterName("file-cache-id");
+        /// <summary>
         /// Constant FileSystemId for DataRepositoryTaskFilterName
         /// </summary>
         public static readonly DataRepositoryTaskFilterName FileSystemId = new DataRepositoryTaskFilterName("file-system-id");
@@ -639,6 +647,10 @@ namespace Amazon.FSx
     {
 
         /// <summary>
+        /// Constant AUTO_RELEASE_DATA for DataRepositoryTaskType
+        /// </summary>
+        public static readonly DataRepositoryTaskType AUTO_RELEASE_DATA = new DataRepositoryTaskType("AUTO_RELEASE_DATA");
+        /// <summary>
         /// Constant EXPORT_TO_REPOSITORY for DataRepositoryTaskType
         /// </summary>
         public static readonly DataRepositoryTaskType EXPORT_TO_REPOSITORY = new DataRepositoryTaskType("EXPORT_TO_REPOSITORY");
@@ -646,6 +658,10 @@ namespace Amazon.FSx
         /// Constant IMPORT_METADATA_FROM_REPOSITORY for DataRepositoryTaskType
         /// </summary>
         public static readonly DataRepositoryTaskType IMPORT_METADATA_FROM_REPOSITORY = new DataRepositoryTaskType("IMPORT_METADATA_FROM_REPOSITORY");
+        /// <summary>
+        /// Constant RELEASE_DATA_FROM_FILESYSTEM for DataRepositoryTaskType
+        /// </summary>
+        public static readonly DataRepositoryTaskType RELEASE_DATA_FROM_FILESYSTEM = new DataRepositoryTaskType("RELEASE_DATA_FROM_FILESYSTEM");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -676,6 +692,52 @@ namespace Amazon.FSx
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator DataRepositoryTaskType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DeleteFileSystemOpenZFSOption.
+    /// </summary>
+    public class DeleteFileSystemOpenZFSOption : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DELETE_CHILD_VOLUMES_AND_SNAPSHOTS for DeleteFileSystemOpenZFSOption
+        /// </summary>
+        public static readonly DeleteFileSystemOpenZFSOption DELETE_CHILD_VOLUMES_AND_SNAPSHOTS = new DeleteFileSystemOpenZFSOption("DELETE_CHILD_VOLUMES_AND_SNAPSHOTS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DeleteFileSystemOpenZFSOption(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DeleteFileSystemOpenZFSOption FindValue(string value)
+        {
+            return FindValue<DeleteFileSystemOpenZFSOption>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DeleteFileSystemOpenZFSOption(string value)
         {
             return FindValue(value);
         }
@@ -883,6 +945,160 @@ namespace Amazon.FSx
 
 
     /// <summary>
+    /// Constants used for properties of type FileCacheLifecycle.
+    /// </summary>
+    public class FileCacheLifecycle : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AVAILABLE for FileCacheLifecycle
+        /// </summary>
+        public static readonly FileCacheLifecycle AVAILABLE = new FileCacheLifecycle("AVAILABLE");
+        /// <summary>
+        /// Constant CREATING for FileCacheLifecycle
+        /// </summary>
+        public static readonly FileCacheLifecycle CREATING = new FileCacheLifecycle("CREATING");
+        /// <summary>
+        /// Constant DELETING for FileCacheLifecycle
+        /// </summary>
+        public static readonly FileCacheLifecycle DELETING = new FileCacheLifecycle("DELETING");
+        /// <summary>
+        /// Constant FAILED for FileCacheLifecycle
+        /// </summary>
+        public static readonly FileCacheLifecycle FAILED = new FileCacheLifecycle("FAILED");
+        /// <summary>
+        /// Constant UPDATING for FileCacheLifecycle
+        /// </summary>
+        public static readonly FileCacheLifecycle UPDATING = new FileCacheLifecycle("UPDATING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FileCacheLifecycle(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FileCacheLifecycle FindValue(string value)
+        {
+            return FindValue<FileCacheLifecycle>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FileCacheLifecycle(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FileCacheLustreDeploymentType.
+    /// </summary>
+    public class FileCacheLustreDeploymentType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CACHE_1 for FileCacheLustreDeploymentType
+        /// </summary>
+        public static readonly FileCacheLustreDeploymentType CACHE_1 = new FileCacheLustreDeploymentType("CACHE_1");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FileCacheLustreDeploymentType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FileCacheLustreDeploymentType FindValue(string value)
+        {
+            return FindValue<FileCacheLustreDeploymentType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FileCacheLustreDeploymentType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FileCacheType.
+    /// </summary>
+    public class FileCacheType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant LUSTRE for FileCacheType
+        /// </summary>
+        public static readonly FileCacheType LUSTRE = new FileCacheType("LUSTRE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FileCacheType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FileCacheType FindValue(string value)
+        {
+            return FindValue<FileCacheType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FileCacheType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type FileSystemLifecycle.
     /// </summary>
     public class FileSystemLifecycle : ConstantClass
@@ -908,6 +1124,10 @@ namespace Amazon.FSx
         /// Constant MISCONFIGURED for FileSystemLifecycle
         /// </summary>
         public static readonly FileSystemLifecycle MISCONFIGURED = new FileSystemLifecycle("MISCONFIGURED");
+        /// <summary>
+        /// Constant MISCONFIGURED_UNAVAILABLE for FileSystemLifecycle
+        /// </summary>
+        public static readonly FileSystemLifecycle MISCONFIGURED_UNAVAILABLE = new FileSystemLifecycle("MISCONFIGURED_UNAVAILABLE");
         /// <summary>
         /// Constant UPDATING for FileSystemLifecycle
         /// </summary>
@@ -1071,6 +1291,14 @@ namespace Amazon.FSx
         /// </summary>
         public static readonly FilterName DataRepositoryType = new FilterName("data-repository-type");
         /// <summary>
+        /// Constant FileCacheId for FilterName
+        /// </summary>
+        public static readonly FilterName FileCacheId = new FilterName("file-cache-id");
+        /// <summary>
+        /// Constant FileCacheType for FilterName
+        /// </summary>
+        public static readonly FilterName FileCacheType = new FilterName("file-cache-type");
+        /// <summary>
         /// Constant FileSystemId for FilterName
         /// </summary>
         public static readonly FilterName FileSystemId = new FilterName("file-system-id");
@@ -1166,6 +1394,56 @@ namespace Amazon.FSx
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator FlexCacheEndpointType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type InputOntapVolumeType.
+    /// </summary>
+    public class InputOntapVolumeType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DP for InputOntapVolumeType
+        /// </summary>
+        public static readonly InputOntapVolumeType DP = new InputOntapVolumeType("DP");
+        /// <summary>
+        /// Constant RW for InputOntapVolumeType
+        /// </summary>
+        public static readonly InputOntapVolumeType RW = new InputOntapVolumeType("RW");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InputOntapVolumeType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InputOntapVolumeType FindValue(string value)
+        {
+            return FindValue<InputOntapVolumeType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InputOntapVolumeType(string value)
         {
             return FindValue(value);
         }
@@ -1289,6 +1567,52 @@ namespace Amazon.FSx
 
 
     /// <summary>
+    /// Constants used for properties of type NfsVersion.
+    /// </summary>
+    public class NfsVersion : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NFS3 for NfsVersion
+        /// </summary>
+        public static readonly NfsVersion NFS3 = new NfsVersion("NFS3");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public NfsVersion(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static NfsVersion FindValue(string value)
+        {
+            return FindValue<NfsVersion>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator NfsVersion(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type OntapDeploymentType.
     /// </summary>
     public class OntapDeploymentType : ConstantClass
@@ -1298,6 +1622,10 @@ namespace Amazon.FSx
         /// Constant MULTI_AZ_1 for OntapDeploymentType
         /// </summary>
         public static readonly OntapDeploymentType MULTI_AZ_1 = new OntapDeploymentType("MULTI_AZ_1");
+        /// <summary>
+        /// Constant SINGLE_AZ_1 for OntapDeploymentType
+        /// </summary>
+        public static readonly OntapDeploymentType SINGLE_AZ_1 = new OntapDeploymentType("SINGLE_AZ_1");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1445,6 +1773,10 @@ namespace Amazon.FSx
     {
 
         /// <summary>
+        /// Constant LZ4 for OpenZFSDataCompressionType
+        /// </summary>
+        public static readonly OpenZFSDataCompressionType LZ4 = new OpenZFSDataCompressionType("LZ4");
+        /// <summary>
         /// Constant NONE for OpenZFSDataCompressionType
         /// </summary>
         public static readonly OpenZFSDataCompressionType NONE = new OpenZFSDataCompressionType("NONE");
@@ -1498,6 +1830,10 @@ namespace Amazon.FSx
         /// Constant SINGLE_AZ_1 for OpenZFSDeploymentType
         /// </summary>
         public static readonly OpenZFSDeploymentType SINGLE_AZ_1 = new OpenZFSDeploymentType("SINGLE_AZ_1");
+        /// <summary>
+        /// Constant SINGLE_AZ_2 for OpenZFSDeploymentType
+        /// </summary>
+        public static readonly OpenZFSDeploymentType SINGLE_AZ_2 = new OpenZFSDeploymentType("SINGLE_AZ_2");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1836,6 +2172,10 @@ namespace Amazon.FSx
     public class ServiceLimit : ConstantClass
     {
 
+        /// <summary>
+        /// Constant FILE_CACHE_COUNT for ServiceLimit
+        /// </summary>
+        public static readonly ServiceLimit FILE_CACHE_COUNT = new ServiceLimit("FILE_CACHE_COUNT");
         /// <summary>
         /// Constant FILE_SYSTEM_COUNT for ServiceLimit
         /// </summary>

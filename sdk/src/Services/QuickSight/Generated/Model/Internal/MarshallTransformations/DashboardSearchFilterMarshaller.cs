@@ -34,7 +34,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DashboardSearchFilter Marshaller
-    /// </summary>       
+    /// </summary>
     public class DashboardSearchFilterMarshaller : IRequestMarshaller<DashboardSearchFilter, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DashboardSearchFilterMarshaller Instance = new DashboardSearchFilterMarshaller();
 
     }

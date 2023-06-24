@@ -34,7 +34,7 @@ namespace Amazon.IoTEventsData.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DetectorStateDefinition Marshaller
-    /// </summary>       
+    /// </summary>
     public class DetectorStateDefinitionMarshaller : IRequestMarshaller<DetectorStateDefinition, JsonMarshallerContext> 
     {
         /// <summary>
@@ -87,7 +87,7 @@ namespace Amazon.IoTEventsData.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DetectorStateDefinitionMarshaller Instance = new DetectorStateDefinitionMarshaller();
 
     }

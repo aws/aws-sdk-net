@@ -262,6 +262,29 @@
     <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Budgets.Model.DescribeBudgetNotificationsForAccountRequest.AccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>\d{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Budgets.Model.DescribeBudgetNotificationsForAccountRequest.MaxResults</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Budgets.Model.DescribeBudgetNotificationsForAccountRequest.NextToken</property>
+    <min>0</min>
+    <max>2147483647</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Budgets.Model.DescribeBudgetNotificationsForAccountResponse.NextToken</property>
+    <min>0</min>
+    <max>2147483647</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Budgets.Model.DescribeBudgetPerformanceHistoryRequest.AccountId</property>
     <min>12</min>
     <max>12</max>
@@ -500,10 +523,16 @@
   <property-value-rule>
     <property>Amazon.Budgets.Model.ActionThreshold.ActionThresholdValue</property>
     <min>0</min>
-    <max>40000000000</max>
+    <max>15000000000000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Budgets.Model.Budget.BudgetName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[^:\\]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Budgets.Model.BudgetNotificationsForAccount.BudgetName</property>
     <min>1</min>
     <max>100</max>
     <pattern>[^:\\]+</pattern>
@@ -515,6 +544,16 @@
     <pattern>[^:\\]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Budgets.Model.HistoricalOptions.BudgetAdjustmentPeriod</property>
+    <min>1</min>
+    <max>60</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Budgets.Model.HistoricalOptions.LookBackAvailablePeriods</property>
+    <min>1</min>
+    <max>60</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Budgets.Model.IamActionDefinition.PolicyArn</property>
     <min>25</min>
     <max>684</max>
@@ -523,7 +562,7 @@
   <property-value-rule>
     <property>Amazon.Budgets.Model.Notification.Threshold</property>
     <min>0</min>
-    <max>40000000000</max>
+    <max>15000000000000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Budgets.Model.ScpActionDefinition.PolicyId</property>

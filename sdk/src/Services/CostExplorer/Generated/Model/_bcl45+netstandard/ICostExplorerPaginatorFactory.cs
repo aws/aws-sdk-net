@@ -36,6 +36,11 @@ namespace Amazon.CostExplorer.Model
         IGetSavingsPlansUtilizationDetailsPaginator GetSavingsPlansUtilizationDetails(GetSavingsPlansUtilizationDetailsRequest request);
 
         /// <summary>
+        /// Paginator for ListCostAllocationTags operation
+        ///</summary>
+        IListCostAllocationTagsPaginator ListCostAllocationTags(ListCostAllocationTagsRequest request);
+
+        /// <summary>
         /// Paginator for ListCostCategoryDefinitions operation
         ///</summary>
         IListCostCategoryDefinitionsPaginator ListCostCategoryDefinitions(ListCostCategoryDefinitionsRequest request);

@@ -39,7 +39,7 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property Addons. 
         /// <para>
-        /// The list of available versions with Kubernetes version compatibility.
+        /// The list of available versions with Kubernetes version compatibility and other properties.
         /// </para>
         /// </summary>
         public List<AddonInfo> Addons

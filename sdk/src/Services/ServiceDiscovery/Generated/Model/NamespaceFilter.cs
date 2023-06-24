@@ -41,25 +41,22 @@ namespace Amazon.ServiceDiscovery.Model
         /// <summary>
         /// Gets and sets the property Condition. 
         /// <para>
-        /// The operator that you want to use to determine whether <code>ListNamespaces</code>
-        /// returns a namespace. Valid values for <code>condition</code> include:
+        /// Specify the operator that you want to use to determine whether a namespace matches
+        /// the specified value. Valid values for <code>Condition</code> are one of the following.
         /// </para>
-        ///  <dl> <dt>EQ</dt> <dd> 
+        ///  <ul> <li> 
         /// <para>
-        /// When you specify <code>EQ</code> for the condition, you can choose to list only public
-        /// namespaces or private namespaces, but not both. <code>EQ</code> is the default condition
-        /// and can be omitted.
+        ///  <code>EQ</code>: When you specify <code>EQ</code> for <code>Condition</code>, you
+        /// can specify only one value. <code>EQ</code> is supported for <code>TYPE</code>, <code>NAME</code>,
+        /// and <code>HTTP_NAME</code>. <code>EQ</code> is the default condition and can be omitted.
         /// </para>
-        ///  </dd> <dt>IN</dt> <dd> 
+        ///  </li> <li> 
         /// <para>
-        /// When you specify <code>IN</code> for the condition, you can choose to list public
-        /// namespaces, private namespaces, or both. 
+        ///  <code>BEGINS_WITH</code>: When you specify <code>BEGINS_WITH</code> for <code>Condition</code>,
+        /// you can specify only one value. <code>BEGINS_WITH</code> is supported for <code>TYPE</code>,
+        /// <code>NAME</code>, and <code>HTTP_NAME</code>.
         /// </para>
-        ///  </dd> <dt>BETWEEN</dt> <dd> 
-        /// <para>
-        ///  Not applicable
-        /// </para>
-        ///  </dd> </dl>
+        ///  </li> </ul>
         /// </summary>
         public FilterCondition Condition
         {
@@ -76,8 +73,21 @@ namespace Amazon.ServiceDiscovery.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Specify <code>TYPE</code>.
+        /// Specify the namespaces that you want to get using one of the following.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>TYPE</code>: Gets the namespaces of the specified type.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>NAME</code>: Gets the namespaces with the specified name.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>HTTP_NAME</code>: Gets the namespaces with the specified HTTP name.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public NamespaceFilterName Name
@@ -95,14 +105,22 @@ namespace Amazon.ServiceDiscovery.Model
         /// <summary>
         /// Gets and sets the property Values. 
         /// <para>
-        /// If you specify <code>EQ</code> for <code>Condition</code>, specify either <code>DNS_PUBLIC</code>
-        /// or <code>DNS_PRIVATE</code>.
+        /// Specify the values that are applicable to the value that you specify for <code>Name</code>.
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// If you specify <code>IN</code> for <code>Condition</code>, you can specify <code>DNS_PUBLIC</code>,
-        /// <code>DNS_PRIVATE</code>, or both.
+        ///  <code>TYPE</code>: Specify <code>HTTP</code>, <code>DNS_PUBLIC</code>, or <code>DNS_PRIVATE</code>.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>NAME</code>: Specify the name of the namespace, which is found in <code>Namespace.Name</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>HTTP_NAME</code>: Specify the HTTP name of the namespace, which is found in
+        /// <code>Namespace.Properties.HttpProperties.HttpName</code>.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public List<string> Values

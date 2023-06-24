@@ -34,7 +34,7 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// TitleAggregation Marshaller
-    /// </summary>       
+    /// </summary>
     public class TitleAggregationMarshaller : IRequestMarshaller<TitleAggregation, JsonMarshallerContext> 
     {
         /// <summary>
@@ -45,6 +45,12 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(TitleAggregation requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetFindingType())
+            {
+                context.Writer.WritePropertyName("findingType");
+                context.Writer.Write(requestObject.FindingType);
+            }
+
             if(requestObject.IsSetResourceType())
             {
                 context.Writer.WritePropertyName("resourceType");
@@ -99,7 +105,7 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static TitleAggregationMarshaller Instance = new TitleAggregationMarshaller();
 
     }

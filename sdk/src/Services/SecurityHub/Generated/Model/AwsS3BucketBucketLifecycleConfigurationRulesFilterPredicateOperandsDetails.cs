@@ -76,7 +76,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of filter value.
+        /// The type of filter value. Valid values are <code>LifecyclePrefixPredicate</code> or
+        /// <code>LifecycleTagPredicate</code>.
         /// </para>
         /// </summary>
         public string Type

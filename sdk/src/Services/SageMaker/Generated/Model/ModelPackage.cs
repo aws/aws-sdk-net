@@ -120,7 +120,11 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CreatedBy.
+        /// Gets and sets the property CreatedBy. 
+        /// <para>
+        /// Information about the user who created or modified an experiment, trial, trial component,
+        /// lineage group, or project.
+        /// </para>
         /// </summary>
         public UserContext CreatedBy
         {
@@ -210,7 +214,10 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
-        /// Gets and sets the property InferenceSpecification.
+        /// Gets and sets the property InferenceSpecification. 
+        /// <para>
+        /// Defines how to perform inference generation after a training job is run.
+        /// </para>
         /// </summary>
         public InferenceSpecification InferenceSpecification
         {
@@ -225,7 +232,11 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LastModifiedBy.
+        /// Gets and sets the property LastModifiedBy. 
+        /// <para>
+        /// Information about the user who created or modified an experiment, trial, trial component,
+        /// lineage group, or project.
+        /// </para>
         /// </summary>
         public UserContext LastModifiedBy
         {
@@ -258,7 +269,10 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MetadataProperties.
+        /// Gets and sets the property MetadataProperties. 
+        /// <para>
+        /// Metadata properties of the tracking entity, trial, or trial component.
+        /// </para>
         /// </summary>
         public MetadataProperties MetadataProperties
         {
@@ -437,7 +451,10 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ModelPackageStatusDetails.
+        /// Gets and sets the property ModelPackageStatusDetails. 
+        /// <para>
+        /// Specifies the validation and image scan statuses of the model package.
+        /// </para>
         /// </summary>
         public ModelPackageStatusDetails ModelPackageStatusDetails
         {
@@ -490,7 +507,10 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SourceAlgorithmSpecification.
+        /// Gets and sets the property SourceAlgorithmSpecification. 
+        /// <para>
+        /// A list of algorithms that were used to create a model package.
+        /// </para>
         /// </summary>
         public SourceAlgorithmSpecification SourceAlgorithmSpecification
         {
@@ -545,7 +565,10 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ValidationSpecification.
+        /// Gets and sets the property ValidationSpecification. 
+        /// <para>
+        /// Specifies batch transform jobs that SageMaker runs to validate your model package.
+        /// </para>
         /// </summary>
         public ModelPackageValidationSpecification ValidationSpecification
         {

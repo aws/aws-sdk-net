@@ -34,6 +34,7 @@ namespace Amazon.AmplifyUIBuilder.Model
     public partial class ExportThemesResponse : AmazonWebServiceResponse
     {
         private List<Theme> _entities = new List<Theme>();
+        private string _nextToken;
 
         /// <summary>
         /// Gets and sets the property Entities. 
@@ -52,6 +53,24 @@ namespace Amazon.AmplifyUIBuilder.Model
         internal bool IsSetEntities()
         {
             return this._entities != null && this._entities.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The pagination token that's included if more results are available.
+        /// </para>
+        /// </summary>
+        public string NextToken
+        {
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
+        }
+
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
+        {
+            return this._nextToken != null;
         }
 
     }

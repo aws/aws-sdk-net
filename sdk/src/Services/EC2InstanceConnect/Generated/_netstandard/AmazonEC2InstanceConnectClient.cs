@@ -217,6 +217,15 @@ namespace Amazon.EC2InstanceConnect
         } 
 
         /// <summary>
+        /// Customizes the runtime pipeline.
+        /// </summary>
+        /// <param name="pipeline">Runtime pipeline for the current client.</param>
+        protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
+        {
+            pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonEC2InstanceConnectEndpointResolver());
+        }
+        /// <summary>
         /// Capture metadata for the service.
         /// </summary>
         protected override IServiceMetadata ServiceMetadata
@@ -273,9 +282,17 @@ namespace Amazon.EC2InstanceConnect
         /// <exception cref="Amazon.EC2InstanceConnect.Model.EC2InstanceNotFoundException">
         /// The specified instance was not found.
         /// </exception>
+        /// <exception cref="Amazon.EC2InstanceConnect.Model.EC2InstanceStateInvalidException">
+        /// Unable to connect because the instance is not in a valid state. Connecting to a stopped
+        /// or terminated instance is not supported. If the instance is stopped, start your instance,
+        /// and try to connect again.
+        /// </exception>
         /// <exception cref="Amazon.EC2InstanceConnect.Model.EC2InstanceTypeInvalidException">
         /// The instance type is not supported for connecting via the serial console. Only Nitro
         /// instance types are currently supported.
+        /// </exception>
+        /// <exception cref="Amazon.EC2InstanceConnect.Model.EC2InstanceUnavailableException">
+        /// The instance is currently unavailable. Wait a few minutes and try again.
         /// </exception>
         /// <exception cref="Amazon.EC2InstanceConnect.Model.InvalidArgsException">
         /// One of the parameters is not valid.
@@ -341,6 +358,14 @@ namespace Amazon.EC2InstanceConnect
         /// </exception>
         /// <exception cref="Amazon.EC2InstanceConnect.Model.EC2InstanceNotFoundException">
         /// The specified instance was not found.
+        /// </exception>
+        /// <exception cref="Amazon.EC2InstanceConnect.Model.EC2InstanceStateInvalidException">
+        /// Unable to connect because the instance is not in a valid state. Connecting to a stopped
+        /// or terminated instance is not supported. If the instance is stopped, start your instance,
+        /// and try to connect again.
+        /// </exception>
+        /// <exception cref="Amazon.EC2InstanceConnect.Model.EC2InstanceUnavailableException">
+        /// The instance is currently unavailable. Wait a few minutes and try again.
         /// </exception>
         /// <exception cref="Amazon.EC2InstanceConnect.Model.InvalidArgsException">
         /// One of the parameters is not valid.

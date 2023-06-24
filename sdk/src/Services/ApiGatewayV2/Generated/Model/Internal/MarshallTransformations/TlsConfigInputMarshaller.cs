@@ -34,7 +34,7 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// TlsConfigInput Marshaller
-    /// </summary>       
+    /// </summary>
     public class TlsConfigInputMarshaller : IRequestMarshaller<TlsConfigInput, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static TlsConfigInputMarshaller Instance = new TlsConfigInputMarshaller();
 
     }

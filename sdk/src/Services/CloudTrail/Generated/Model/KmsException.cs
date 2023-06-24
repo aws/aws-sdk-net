@@ -30,7 +30,7 @@ namespace Amazon.CloudTrail.Model
 {
     /// <summary>
     /// This exception is thrown when there is an issue with the specified KMS key and the
-    /// trail can’t be updated.
+    /// trail or event data store can't be updated.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

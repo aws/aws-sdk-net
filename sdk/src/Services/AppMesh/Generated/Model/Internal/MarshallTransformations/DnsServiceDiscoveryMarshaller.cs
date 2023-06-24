@@ -34,7 +34,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DnsServiceDiscovery Marshaller
-    /// </summary>       
+    /// </summary>
     public class DnsServiceDiscoveryMarshaller : IRequestMarshaller<DnsServiceDiscovery, JsonMarshallerContext> 
     {
         /// <summary>
@@ -51,6 +51,12 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Hostname);
             }
 
+            if(requestObject.IsSetIpPreference())
+            {
+                context.Writer.WritePropertyName("ipPreference");
+                context.Writer.Write(requestObject.IpPreference);
+            }
+
             if(requestObject.IsSetResponseType())
             {
                 context.Writer.WritePropertyName("responseType");
@@ -61,7 +67,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DnsServiceDiscoveryMarshaller Instance = new DnsServiceDiscoveryMarshaller();
 
     }

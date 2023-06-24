@@ -30,7 +30,7 @@ namespace Amazon.APIGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteApiKey operation.
-    /// Deletes the <a>ApiKey</a> resource.
+    /// Deletes the ApiKey resource.
     /// </summary>
     public partial class DeleteApiKeyRequest : AmazonAPIGatewayRequest
     {
@@ -39,7 +39,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property ApiKey. 
         /// <para>
-        /// [Required] The identifier of the <a>ApiKey</a> resource to be deleted.
+        /// The identifier of the ApiKey resource to be deleted.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

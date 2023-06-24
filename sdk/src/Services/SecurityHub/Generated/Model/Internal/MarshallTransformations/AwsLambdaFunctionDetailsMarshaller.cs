@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AwsLambdaFunctionDetails Marshaller
-    /// </summary>       
+    /// </summary>
     public class AwsLambdaFunctionDetailsMarshaller : IRequestMarshaller<AwsLambdaFunctionDetails, JsonMarshallerContext> 
     {
         /// <summary>
@@ -45,6 +45,17 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AwsLambdaFunctionDetails requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetArchitectures())
+            {
+                context.Writer.WritePropertyName("Architectures");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectArchitecturesListValue in requestObject.Architectures)
+                {
+                        context.Writer.Write(requestObjectArchitecturesListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetCode())
             {
                 context.Writer.WritePropertyName("Code");
@@ -136,6 +147,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.MemorySize);
             }
 
+            if(requestObject.IsSetPackageType())
+            {
+                context.Writer.WritePropertyName("PackageType");
+                context.Writer.Write(requestObject.PackageType);
+            }
+
             if(requestObject.IsSetRevisionId())
             {
                 context.Writer.WritePropertyName("RevisionId");
@@ -192,7 +209,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AwsLambdaFunctionDetailsMarshaller Instance = new AwsLambdaFunctionDetailsMarshaller();
 
     }

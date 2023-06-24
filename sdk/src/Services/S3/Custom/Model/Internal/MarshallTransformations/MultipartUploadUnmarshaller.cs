@@ -37,6 +37,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("ChecksumAlgorithm", targetDepth))
+                    {
+                        uploadsItem.ChecksumAlgorithm = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("Initiated", targetDepth))
                     {
                         uploadsItem.Initiated = DateTimeUnmarshaller.GetInstance().Unmarshall(context);

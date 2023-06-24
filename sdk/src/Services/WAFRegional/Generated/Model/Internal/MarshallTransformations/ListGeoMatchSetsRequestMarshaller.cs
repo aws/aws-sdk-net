@@ -58,7 +58,7 @@ namespace Amazon.WAFRegional.Model.Internal.MarshallTransformations
             string target = "AWSWAF_Regional_20161128.ListGeoMatchSets";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-11-28";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-11-28";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -79,7 +79,6 @@ namespace Amazon.WAFRegional.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.NextMarker);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

@@ -30,7 +30,8 @@ namespace Amazon.MediaTailor.Model
 {
     /// <summary>
     /// Container for the parameters to the PutChannelPolicy operation.
-    /// Creates an IAM policy for the channel.
+    /// Creates an IAM policy for the channel. IAM policies are used to control access to
+    /// your channel.
     /// </summary>
     public partial class PutChannelPolicyRequest : AmazonMediaTailorRequest
     {
@@ -40,7 +41,7 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property ChannelName. 
         /// <para>
-        /// The identifier for the channel you are working on.
+        /// The channel name associated with this Channel Policy.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

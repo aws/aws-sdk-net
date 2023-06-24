@@ -34,7 +34,7 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// BlackFrame Marshaller
-    /// </summary>       
+    /// </summary>
     public class BlackFrameMarshaller : IRequestMarshaller<BlackFrame, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static BlackFrameMarshaller Instance = new BlackFrameMarshaller();
 
     }

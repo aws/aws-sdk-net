@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// UserSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class UserSettingsMarshaller : IRequestMarshaller<UserSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -45,6 +45,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(UserSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetCanvasAppSettings())
+            {
+                context.Writer.WritePropertyName("CanvasAppSettings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = CanvasAppSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.CanvasAppSettings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetExecutionRole())
             {
                 context.Writer.WritePropertyName("ExecutionRole");
@@ -132,7 +143,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static UserSettingsMarshaller Instance = new UserSettingsMarshaller();
 
     }

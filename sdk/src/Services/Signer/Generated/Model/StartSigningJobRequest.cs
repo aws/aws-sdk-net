@@ -36,7 +36,7 @@ namespace Amazon.Signer.Model
     /// 
     ///  <ul> <li> 
     /// <para>
-    ///  You must create an Amazon S3 source bucket. For more information, see <a href="http://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html">Create
+    ///  You must create an Amazon S3 source bucket. For more information, see <a href="http://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html">Creating
     /// a Bucket</a> in the <i>Amazon S3 Getting Started Guide</i>. 
     /// </para>
     ///  </li> <li> 
@@ -64,8 +64,7 @@ namespace Amazon.Signer.Model
     /// </para>
     ///  
     /// <para>
-    /// For a Java example that shows how to use this action, see <a href="http://docs.aws.amazon.com/acm/latest/userguide/">http://docs.aws.amazon.com/acm/latest/userguide/</a>
-    /// 
+    /// For a Java example that shows how to use this action, see <a href="https://docs.aws.amazon.com/signer/latest/developerguide/api-startsigningjob.html">StartSigningJob</a>.
     /// </para>
     /// </summary>
     public partial class StartSigningJobRequest : AmazonSignerRequest

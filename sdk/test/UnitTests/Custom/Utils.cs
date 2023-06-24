@@ -49,11 +49,27 @@ namespace AWSSDK_DotNet35.UnitTests
         private static string GetLatestModelPath(string serviceDirectory)
         {
             string latestModelPath = "";
-            foreach (string modelName in Directory.GetFiles(serviceDirectory, "*.normal.json", SearchOption.TopDirectoryOnly))
+            if (Directory.Exists(serviceDirectory))
             {
-                if (string.Compare(latestModelPath, modelName) < 0)
+                foreach (string modelName in Directory.GetFiles(serviceDirectory, "*.normal.json", SearchOption.TopDirectoryOnly))
                 {
-                    latestModelPath = modelName;
+                    if (string.Compare(latestModelPath, modelName) < 0)
+                    {
+                        latestModelPath = modelName;
+                    }
+                }
+            }
+
+            if (latestModelPath == "") // try test services location
+            {
+                serviceDirectory = serviceDirectory.Replace("ServiceModels", "TestServiceModels");
+
+                foreach (string modelName in Directory.GetFiles(serviceDirectory, "*.normal.json", SearchOption.TopDirectoryOnly))
+                {
+                    if (string.Compare(latestModelPath, modelName) < 0)
+                    {
+                        latestModelPath = modelName;
+                    }
                 }
             }
 
@@ -186,7 +202,7 @@ namespace AWSSDK_DotNet35.UnitTests
             return null;
         }
         public static IEnumerable<string> FindResourceName(Assembly assembly, Predicate<string> match)
-        {            
+        {    
             var allResources = assembly.GetManifestResourceNames();
             foreach (var resource in allResources)
             {

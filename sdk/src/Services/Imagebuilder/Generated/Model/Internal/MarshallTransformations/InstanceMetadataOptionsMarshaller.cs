@@ -34,7 +34,7 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// InstanceMetadataOptions Marshaller
-    /// </summary>       
+    /// </summary>
     public class InstanceMetadataOptionsMarshaller : IRequestMarshaller<InstanceMetadataOptions, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static InstanceMetadataOptionsMarshaller Instance = new InstanceMetadataOptionsMarshaller();
 
     }

@@ -72,6 +72,7 @@ namespace Amazon.Runtime
     public class EnvironmentVariableAWSRegion : AWSRegion
     {
         public const string ENVIRONMENT_VARIABLE_REGION = "AWS_REGION";
+        public const string ENVIRONMENT_VARIABLE_DEFAULT_REGION = "AWS_DEFAULT_REGION";
 
         /// <summary>
         /// Attempts to construct an instance of EnvironmentVariableAWSRegion. If no region is found in the
@@ -135,11 +136,7 @@ namespace Amazon.Runtime
         /// <param name="source">The ICredentialProfileSource to read the profile from.</param>
         public ProfileAWSRegion(ICredentialProfileSource source)
         {
-            var profileName = AWSConfigs.AWSProfileName;
-            if (string.IsNullOrEmpty(profileName)) // RootConfig chooses empty string for null values.
-                profileName = Environment.GetEnvironmentVariable(FallbackCredentialsFactory.AWS_PROFILE_ENVIRONMENT_VARIABLE);
-            if (profileName == null)
-                profileName = FallbackCredentialsFactory.DefaultProfileName;
+            var profileName = FallbackCredentialsFactory.GetProfileName();
             Setup(source, profileName);
         }
 
@@ -230,7 +227,7 @@ namespace Amazon.Runtime
 
                 List<Exception> errors = new List<Exception>();
 
-                IEnumerable<RegionGenerator> generators 
+                IEnumerable<RegionGenerator> generators
                     = includeInstanceMetadata ? AllGenerators : NonMetadataGenerators;
                 foreach (var generator in generators)
                 {

@@ -30,7 +30,7 @@ namespace Amazon.Inspector2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeOrganizationConfiguration operation.
-    /// Describe Amazon Inspector configuration settings for an Amazon Web Services organization
+    /// Describe Amazon Inspector configuration settings for an Amazon Web Services organization.
     /// </summary>
     public partial class DescribeOrganizationConfigurationRequest : AmazonInspector2Request
     {

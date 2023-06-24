@@ -34,7 +34,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Behavior Marshaller
-    /// </summary>       
+    /// </summary>
     public class BehaviorMarshaller : IRequestMarshaller<Behavior, JsonMarshallerContext> 
     {
         /// <summary>
@@ -89,7 +89,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static BehaviorMarshaller Instance = new BehaviorMarshaller();
 
     }

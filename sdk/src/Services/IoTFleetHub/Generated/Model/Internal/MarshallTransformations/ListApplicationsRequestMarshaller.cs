@@ -55,7 +55,7 @@ namespace Amazon.IoTFleetHub.Model.Internal.MarshallTransformations
         public IRequest Marshall(ListApplicationsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.IoTFleetHub");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-11-03";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-11-03";
             request.HttpMethod = "GET";
 
             

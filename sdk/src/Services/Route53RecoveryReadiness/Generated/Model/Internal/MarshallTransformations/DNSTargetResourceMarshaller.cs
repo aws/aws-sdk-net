@@ -34,7 +34,7 @@ namespace Amazon.Route53RecoveryReadiness.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DNSTargetResource Marshaller
-    /// </summary>       
+    /// </summary>
     public class DNSTargetResourceMarshaller : IRequestMarshaller<DNSTargetResource, JsonMarshallerContext> 
     {
         /// <summary>
@@ -84,7 +84,7 @@ namespace Amazon.Route53RecoveryReadiness.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DNSTargetResourceMarshaller Instance = new DNSTargetResourceMarshaller();
 
     }

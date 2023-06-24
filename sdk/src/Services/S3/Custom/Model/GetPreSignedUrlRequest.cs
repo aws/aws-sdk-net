@@ -23,6 +23,7 @@
 using System;
 using System.Xml.Serialization;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.S3.Util;
 
 namespace Amazon.S3.Model
@@ -281,6 +282,7 @@ namespace Amazon.S3.Model
         /// The id of the AWS Key Management Service key that Amazon S3 should use to encrypt and decrypt the object.
         /// If a key id is not specified, the default key will be used for encryption and decryption.
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string ServerSideEncryptionKeyManagementServiceKeyId
         {
             get { return this.serverSideEncryptionKeyManagementServiceKeyId; }

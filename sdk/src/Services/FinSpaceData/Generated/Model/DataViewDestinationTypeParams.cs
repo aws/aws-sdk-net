@@ -34,6 +34,8 @@ namespace Amazon.FinSpaceData.Model
     public partial class DataViewDestinationTypeParams
     {
         private string _destinationType;
+        private ExportFileFormat _s3DestinationExportFileFormat;
+        private Dictionary<string, string> _s3DestinationExportFileFormatOptions = new Dictionary<string, string>();
 
         /// <summary>
         /// Gets and sets the property DestinationType. 
@@ -42,7 +44,11 @@ namespace Amazon.FinSpaceData.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>GLUE_TABLE</code> - Glue table destination type.
+        ///  <code>GLUE_TABLE</code> – Glue table destination type.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>S3</code> – S3 destination type.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -57,6 +63,60 @@ namespace Amazon.FinSpaceData.Model
         internal bool IsSetDestinationType()
         {
             return this._destinationType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property S3DestinationExportFileFormat. 
+        /// <para>
+        /// Dataview export file format.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>PARQUET</code> – Parquet export file format.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>DELIMITED_TEXT</code> – Delimited text export file format.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public ExportFileFormat S3DestinationExportFileFormat
+        {
+            get { return this._s3DestinationExportFileFormat; }
+            set { this._s3DestinationExportFileFormat = value; }
+        }
+
+        // Check to see if S3DestinationExportFileFormat property is set
+        internal bool IsSetS3DestinationExportFileFormat()
+        {
+            return this._s3DestinationExportFileFormat != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property S3DestinationExportFileFormatOptions. 
+        /// <para>
+        /// Format Options for S3 Destination type.
+        /// </para>
+        ///  
+        /// <para>
+        /// Here is an example of how you could specify the <code>s3DestinationExportFileFormatOptions</code>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code> { "header": "true", "delimiter": ",", "compression": "gzip" }</code> 
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> S3DestinationExportFileFormatOptions
+        {
+            get { return this._s3DestinationExportFileFormatOptions; }
+            set { this._s3DestinationExportFileFormatOptions = value; }
+        }
+
+        // Check to see if S3DestinationExportFileFormatOptions property is set
+        internal bool IsSetS3DestinationExportFileFormatOptions()
+        {
+            return this._s3DestinationExportFileFormatOptions != null && this._s3DestinationExportFileFormatOptions.Count > 0; 
         }
 
     }

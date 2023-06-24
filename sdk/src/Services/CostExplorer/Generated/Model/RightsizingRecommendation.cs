@@ -80,8 +80,8 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property FindingReasonCodes. 
         /// <para>
-        ///  The list of possible reasons why the recommendation is generated such as under or
-        /// over utilization of specific metrics (for example, CPU, Memory, Network). 
+        /// The list of possible reasons why the recommendation is generated, such as under- or
+        /// over-utilization of specific metrics (for example, CPU, Memory, Network). 
         /// </para>
         /// </summary>
         public List<string> FindingReasonCodes

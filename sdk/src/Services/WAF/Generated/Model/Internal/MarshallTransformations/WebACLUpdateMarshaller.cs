@@ -34,7 +34,7 @@ namespace Amazon.WAF.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// WebACLUpdate Marshaller
-    /// </summary>       
+    /// </summary>
     public class WebACLUpdateMarshaller : IRequestMarshaller<WebACLUpdate, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.WAF.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static WebACLUpdateMarshaller Instance = new WebACLUpdateMarshaller();
 
     }

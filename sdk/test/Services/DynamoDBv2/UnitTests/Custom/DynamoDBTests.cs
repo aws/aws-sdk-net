@@ -1,9 +1,20 @@
-﻿using Amazon.DynamoDBv2.DataModel;
-using Amazon.DynamoDBv2.DocumentModel;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+
+using Amazon.Auth.AccessControlPolicy;
+using Amazon.Auth.AccessControlPolicy.ActionIdentifiers;
+using Amazon.DynamoDBv2;
+using Amazon.DynamoDBv2.DocumentModel;
+using Amazon.DynamoDBv2.DataModel;
+using Amazon.DynamoDBv2.Model;
 using ThirdParty.Json.LitJson;
+
+using Moq;
 
 namespace AWSSDK_DotNet35.UnitTests
 {
@@ -55,6 +66,29 @@ namespace AWSSDK_DotNet35.UnitTests
             Assert.AreEqual(convertedModel.Name, document.GetOrDefault("preExistentkey").AsString());
             Assert.AreEqual(convertedModel.Weight, document.GetOrDefault("stableKey").AsInt());
             Assert.AreEqual(convertedModel.Active, document.GetOrDefault("newlyAddedKey")?.AsString());
+        }
+
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public void TestConvertingListIfNullSet()
+        {
+            var initialAttributeMap = new Dictionary<string, AttributeValue>
+            {
+                {
+                    "testlist", new AttributeValue
+                    {
+                        L = new List<AttributeValue>
+                        {
+                            new AttributeValue("test")
+                        },
+                        NULL = false
+                    }
+                }
+            };
+
+            var dynamoDocument = Document.FromAttributeMap(initialAttributeMap);
+
+            Assert.AreEqual("test", dynamoDocument["testlist"].AsDynamoDBList().Entries[0].AsString());
         }
 
         [TestMethod]
@@ -116,6 +150,93 @@ namespace AWSSDK_DotNet35.UnitTests
                     } 
                 }
             };
+  
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public void TestConvertingMapIfNullSet()
+        {
+            var initialAttributeMap = new Dictionary<string, AttributeValue>
+            {
+                {
+                    "testmap", new AttributeValue
+                    {
+                        M = new Dictionary<string, AttributeValue>(){{"test", new AttributeValue("testvalue")}},
+                        NULL = false
+                    }
+                }
+            };
+
+            var dynamoDocument = Document.FromAttributeMap(initialAttributeMap);
+
+            Assert.AreEqual("testvalue", dynamoDocument["testmap"].AsDocument()["test"].AsString());
+        }
+
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public void TestConvertingEmptyListToJson()
+        {
+            var initialAttributeMap = new Dictionary<string, AttributeValue>
+            {
+                { "Lists", new AttributeValue
+                    {
+                        L = new List<AttributeValue>
+                        {
+                            new AttributeValue
+                            {
+                                M = new Dictionary<string, AttributeValue>(),
+                            }
+                        }
+                    }
+                }
+            };
+
+            var document = Document.FromAttributeMap(initialAttributeMap);
+            Assert.AreEqual(document["Lists"].AsListOfDocument().Count, 0);
+
+            var jsonString = document.ToJson();
+            Assert.IsNotNull(jsonString);
+        }
+
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        [DataRow(@"{
+            ""Lists"": {
+                ""L"": [
+                    {
+                        ""M"": {
+                            ""SubLists"": {
+                                ""L"": [
+                                    {
+                                        ""M"": {}
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            }
+        }")]
+        [DataRow(@"{
+            ""Lists"": {
+                ""L"": [
+                    {
+                        ""M"": {}
+                    }
+                ]
+            }
+        }")]
+        public void TestJsonContainsEmptyMapToDocumentAndBackToJson(string json)
+        {
+            var initialDocument = Document.FromJson(json);
+            Assert.IsNotNull(initialDocument);
+
+            var initialAttributeMap = initialDocument.ToAttributeMap();
+            var convertedDocument = Document.FromAttributeMap(initialAttributeMap);
+            Assert.IsNotNull(convertedDocument);
+
+            var jsonString = convertedDocument.ToJson();
+            Assert.IsNotNull(jsonString);
+        }
 
         private static List<Type> GetSubTypes(Type baseType)
         {
@@ -175,6 +296,49 @@ namespace AWSSDK_DotNet35.UnitTests
             }
         }
 
+        public class DateTestObject
+        {
+            public DateTime DateFromString { get; set; }
+        }
+        //This test is based off issue #2020 where user reported datetime with no decimals not being converted properly. 
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public void TestDateTimeDeserializationWithDdbContext()
+        {
+            //Arrange
+            var dateWithNoDecimals = "2022-05-05T11:56:11Z";
+            var expectedDateNoDecimal = DateTime.Parse(dateWithNoDecimals);
+
+            var dateWithDecimals = "2022-05-05T11:56:11.000Z";
+            var expectedDateDecimal = DateTime.Parse(dateWithDecimals);
+
+            var jsonDateWithNoDecimals = JsonMapper.ToJson(new
+            {
+                DateFromString = dateWithNoDecimals
+            });
+            var jsonDateWithDecimals = JsonMapper.ToJson(new
+            {
+                DateFromString = dateWithDecimals
+            });
+
+            using (var dynamoDBContext = new DynamoDBContext())
+            {
+                var noDecimalDoc = Document.FromJson(jsonDateWithNoDecimals);
+                var decimalDoc = Document.FromJson(jsonDateWithDecimals);
+
+                var noDecimalContext = dynamoDBContext.FromDocument<DateTestObject>(noDecimalDoc);
+                var decimalContext = dynamoDBContext.FromDocument<DateTestObject>(decimalDoc);
+
+                Assert.IsNotNull(noDecimalContext);
+                Assert.IsNotNull(decimalContext);
+                //Assert that the two different formatted json dates get converted to the same date
+                Assert.AreEqual(noDecimalContext.DateFromString, decimalContext.DateFromString);
+                //Assert that the conversion itself works
+                Assert.AreEqual(expectedDateNoDecimal, noDecimalContext.DateFromString);
+                Assert.AreEqual(expectedDateDecimal, decimalContext.DateFromString);
+            }
+        }
+
         [TestMethod]
         [TestCategory("DynamoDBv2")]
         public void TestEmptyPropertyFromObjectOnDocument()
@@ -201,6 +365,95 @@ namespace AWSSDK_DotNet35.UnitTests
             Assert.IsNull(doc["Name"].AsPrimitive().Value);
         }
 
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public void TestPropertyAttributeInheritance()
+        {
+            // Use a mock client to skip credential checks.
+            var mockClient = new Mock<IAmazonDynamoDB>();
+            var context = new DynamoDBContext(mockClient.Object);
+
+            var parent = new Parent();
+            parent.Property1 = "Value";
+
+            var child = new Child();
+            child.Property1 = "Value";
+
+            var parentDocument = context.ToDocument(parent);
+            var childDocument = context.ToDocument(child);
+
+            Assert.AreEqual(parentDocument["actualPropertyName"].AsString(), parent.Property1);
+            Assert.AreEqual(childDocument["actualPropertyName"].AsString(), child.Property1);
+        }
+
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public void TestVersionAttributeRename()
+        {
+            var mockClient = new Mock<IAmazonDynamoDB>();
+            var context = new DynamoDBContext(mockClient.Object);
+
+            var parent = new Parent
+            {
+                Property1 = "Value",
+                Version = 1
+            };
+
+            var document = context.ToDocument(parent);
+            var attributes = document.ToAttributeMap();
+
+            Assert.IsTrue(attributes.ContainsKey("V"));
+            Assert.AreEqual(document["V"].AsInt(), 1);
+        }
+
+        public class Parent
+        {
+            [DynamoDBProperty("actualPropertyName")]
+            public virtual string Property1 { get; set; }
+
+            [DynamoDBVersion(AttributeName = "V")]
+            public int? Version { get; set; }
+        }
+
+        public class Child : Parent
+        {
+            public override string Property1 { get; set; }
+        }
+
+#if ASYNC_AWAIT
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public async Task TestMockingAsyncSeach()
+        {
+            var mockDBContext = new Mock<IDynamoDBContext>();
+            mockDBContext
+                .Setup(x => x.ScanAsync<DataItem>(
+                   It.IsAny<IEnumerable<ScanCondition>>(),
+                   It.IsAny<DynamoDBOperationConfig>()))
+                .Returns(
+                   new MockAsyncSearch<DataItem>() // Return mock version of AsyncSearch
+                );
+
+            var search = mockDBContext.Object.ScanAsync<DataItem>(new List<ScanCondition>());
+            Assert.IsInstanceOfType(search, typeof(MockAsyncSearch<DataItem>));
+
+            var items = await search.GetNextSetAsync();
+            Assert.AreEqual(0, items.Count());
+        }
+
+        public class DataItem
+        {
+            public string Id { get; set; }
+        }
+
+        public class MockAsyncSearch<T> : AsyncSearch<T>
+        {
+            public override Task<List<T>> GetNextSetAsync(CancellationToken cancellationToken = default(CancellationToken))
+            {
+                return Task.FromResult(new List<T>());
+            }
+        }
+#endif
     }
 
     static class DocumentExtensions

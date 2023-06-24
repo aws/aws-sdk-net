@@ -124,6 +124,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     unmarshalledObject.CharLengthSemantics = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ConvertTimestampWithZoneToUTC", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.ConvertTimestampWithZoneToUTC = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DatabaseName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -266,6 +272,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
                     unmarshalledObject.StandbyDelayTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("TrimSpaceInChar", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.TrimSpaceInChar = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("UseAlternateFolderForOnline", targetDepth))

@@ -34,7 +34,7 @@ namespace Amazon.PinpointSMSVoice.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SSMLMessageType Marshaller
-    /// </summary>       
+    /// </summary>
     public class SSMLMessageTypeMarshaller : IRequestMarshaller<SSMLMessageType, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.PinpointSMSVoice.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SSMLMessageTypeMarshaller Instance = new SSMLMessageTypeMarshaller();
 
     }

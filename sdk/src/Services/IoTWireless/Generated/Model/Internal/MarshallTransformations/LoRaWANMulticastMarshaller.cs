@@ -34,7 +34,7 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// LoRaWANMulticast Marshaller
-    /// </summary>       
+    /// </summary>
     public class LoRaWANMulticastMarshaller : IRequestMarshaller<LoRaWANMulticast, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static LoRaWANMulticastMarshaller Instance = new LoRaWANMulticastMarshaller();
 
     }

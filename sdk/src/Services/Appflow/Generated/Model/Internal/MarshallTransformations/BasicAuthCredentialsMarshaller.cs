@@ -34,7 +34,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// BasicAuthCredentials Marshaller
-    /// </summary>       
+    /// </summary>
     public class BasicAuthCredentialsMarshaller : IRequestMarshaller<BasicAuthCredentials, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static BasicAuthCredentialsMarshaller Instance = new BasicAuthCredentialsMarshaller();
 
     }

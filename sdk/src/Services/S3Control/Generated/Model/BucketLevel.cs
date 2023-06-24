@@ -29,17 +29,27 @@ using Amazon.Runtime.Internal;
 namespace Amazon.S3Control.Model
 {
     /// <summary>
-    /// A container for the bucket-level configuration.
+    /// A container for the bucket-level configuration for Amazon S3 Storage Lens.
+    /// 
+    ///  
+    /// <para>
+    /// For more information about S3 Storage Lens, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens.html">Assessing
+    /// your storage activity and usage with S3 Storage Lens</a> in the <i>Amazon S3 User
+    /// Guide</i>.
+    /// </para>
     /// </summary>
     public partial class BucketLevel
     {
         private ActivityMetrics _activityMetrics;
+        private AdvancedCostOptimizationMetrics _advancedCostOptimizationMetrics;
+        private AdvancedDataProtectionMetrics _advancedDataProtectionMetrics;
+        private DetailedStatusCodesMetrics _detailedStatusCodesMetrics;
         private PrefixLevel _prefixLevel;
 
         /// <summary>
         /// Gets and sets the property ActivityMetrics. 
         /// <para>
-        /// A container for the bucket-level activity metrics for Amazon S3 Storage Lens
+        /// A container for the bucket-level activity metrics for S3 Storage Lens.
         /// </para>
         /// </summary>
         public ActivityMetrics ActivityMetrics
@@ -55,9 +65,63 @@ namespace Amazon.S3Control.Model
         }
 
         /// <summary>
+        /// Gets and sets the property AdvancedCostOptimizationMetrics. 
+        /// <para>
+        /// A container for bucket-level advanced cost-optimization metrics for S3 Storage Lens.
+        /// </para>
+        /// </summary>
+        public AdvancedCostOptimizationMetrics AdvancedCostOptimizationMetrics
+        {
+            get { return this._advancedCostOptimizationMetrics; }
+            set { this._advancedCostOptimizationMetrics = value; }
+        }
+
+        // Check to see if AdvancedCostOptimizationMetrics property is set
+        internal bool IsSetAdvancedCostOptimizationMetrics()
+        {
+            return this._advancedCostOptimizationMetrics != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AdvancedDataProtectionMetrics. 
+        /// <para>
+        /// A container for bucket-level advanced data-protection metrics for S3 Storage Lens.
+        /// </para>
+        /// </summary>
+        public AdvancedDataProtectionMetrics AdvancedDataProtectionMetrics
+        {
+            get { return this._advancedDataProtectionMetrics; }
+            set { this._advancedDataProtectionMetrics = value; }
+        }
+
+        // Check to see if AdvancedDataProtectionMetrics property is set
+        internal bool IsSetAdvancedDataProtectionMetrics()
+        {
+            return this._advancedDataProtectionMetrics != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DetailedStatusCodesMetrics. 
+        /// <para>
+        /// A container for bucket-level detailed status code metrics for S3 Storage Lens.
+        /// </para>
+        /// </summary>
+        public DetailedStatusCodesMetrics DetailedStatusCodesMetrics
+        {
+            get { return this._detailedStatusCodesMetrics; }
+            set { this._detailedStatusCodesMetrics = value; }
+        }
+
+        // Check to see if DetailedStatusCodesMetrics property is set
+        internal bool IsSetDetailedStatusCodesMetrics()
+        {
+            return this._detailedStatusCodesMetrics != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property PrefixLevel. 
         /// <para>
-        /// A container for the bucket-level prefix-level metrics for S3 Storage Lens
+        /// A container for the prefix-level metrics for S3 Storage Lens. 
         /// </para>
         /// </summary>
         public PrefixLevel PrefixLevel

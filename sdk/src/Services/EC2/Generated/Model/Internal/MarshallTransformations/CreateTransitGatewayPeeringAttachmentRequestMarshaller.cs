@@ -58,6 +58,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             if(publicRequest != null)
             {
+                if(publicRequest.IsSetOptions())
+                {
+                    if(publicRequest.Options.IsSetDynamicRouting())
+                    {
+                        request.Parameters.Add("Options" + "." + "DynamicRouting", StringUtils.FromString(publicRequest.Options.DynamicRouting));
+                    }
+                }
                 if(publicRequest.IsSetPeerAccountId())
                 {
                     request.Parameters.Add("PeerAccountId", StringUtils.FromString(publicRequest.PeerAccountId));

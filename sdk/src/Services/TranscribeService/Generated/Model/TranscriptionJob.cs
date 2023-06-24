@@ -29,8 +29,21 @@ using Amazon.Runtime.Internal;
 namespace Amazon.TranscribeService.Model
 {
     /// <summary>
-    /// Describes an asynchronous transcription job that was created with the <code>StartTranscriptionJob</code>
-    /// operation.
+    /// Provides detailed information about a transcription job.
+    /// 
+    ///  
+    /// <para>
+    /// To view the status of the specified transcription job, check the <code>TranscriptionJobStatus</code>
+    /// field. If the status is <code>COMPLETED</code>, the job is finished and you can find
+    /// the results at the location specified in <code>TranscriptFileUri</code>. If the status
+    /// is <code>FAILED</code>, <code>FailureReason</code> provides details on why your transcription
+    /// job failed.
+    /// </para>
+    ///  
+    /// <para>
+    /// If you enabled content redaction, the redacted transcript can be found at the location
+    /// specified in <code>RedactedTranscriptFileUri</code>.
+    /// </para>
     /// </summary>
     public partial class TranscriptionJob
     {
@@ -40,8 +53,10 @@ namespace Amazon.TranscribeService.Model
         private string _failureReason;
         private float? _identifiedLanguageScore;
         private bool? _identifyLanguage;
+        private bool? _identifyMultipleLanguages;
         private JobExecutionSettings _jobExecutionSettings;
         private LanguageCode _languageCode;
+        private List<LanguageCodeItem> _languageCodes = new List<LanguageCodeItem>();
         private Dictionary<string, LanguageIdSettings> _languageIdSettings = new Dictionary<string, LanguageIdSettings>();
         private List<string> _languageOptions = new List<string>();
         private Media _media;
@@ -59,7 +74,13 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property CompletionTime. 
         /// <para>
-        /// A timestamp that shows when the job completed.
+        /// The date and time the specified transcription job finished processing.
+        /// </para>
+        ///  
+        /// <para>
+        /// Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+        /// <code>2022-05-04T12:33:13.922000-07:00</code> represents a transcription job that
+        /// started processing at 12:33 PM UTC-7 on May 4, 2022.
         /// </para>
         /// </summary>
         public DateTime CompletionTime
@@ -77,7 +98,7 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property ContentRedaction. 
         /// <para>
-        /// An object that describes content redaction settings for the transcription job.
+        /// Indicates whether redaction was enabled in your transcript.
         /// </para>
         /// </summary>
         public ContentRedaction ContentRedaction
@@ -95,7 +116,13 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property CreationTime. 
         /// <para>
-        /// A timestamp that shows when the job was created.
+        /// The date and time the specified transcription job request was made.
+        /// </para>
+        ///  
+        /// <para>
+        /// Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+        /// <code>2022-05-04T12:32:58.761000-07:00</code> represents a transcription job that
+        /// started processing at 12:32 PM UTC-7 on May 4, 2022.
         /// </para>
         /// </summary>
         public DateTime CreationTime
@@ -113,51 +140,70 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property FailureReason. 
         /// <para>
-        /// If the <code>TranscriptionJobStatus</code> field is <code>FAILED</code>, this field
-        /// contains information about why the job failed.
+        /// If <code>TranscriptionJobStatus</code> is <code>FAILED</code>, <code>FailureReason</code>
+        /// contains information about why the transcription job request failed.
         /// </para>
         ///  
         /// <para>
-        /// The <code>FailureReason</code> field can contain one of the following values:
+        /// The <code>FailureReason</code> field contains one of the following values:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Unsupported media format</code> - The media format specified in the <code>MediaFormat</code>
-        /// field of the request isn't valid. See the description of the <code>MediaFormat</code>
-        /// field for a list of valid values.
+        ///  <code>Unsupported media format</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The media format specified in <code>MediaFormat</code> isn't valid. Refer to <b>MediaFormat</b>
+        /// for a list of supported formats.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>The media format provided does not match the detected media format</code> -
-        /// The media format of the audio file doesn't match the format specified in the <code>MediaFormat</code>
-        /// field in the request. Check the media format of your media file and make sure that
-        /// the two values match.
+        ///  <code>The media format provided does not match the detected media format</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The media format specified in <code>MediaFormat</code> doesn't match the format of
+        /// the input file. Check the media format of your media file and correct the specified
+        /// value.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Invalid sample rate for audio file</code> - The sample rate specified in the
-        /// <code>MediaSampleRateHertz</code> of the request isn't valid. The sample rate must
-        /// be between 8,000 and 48,000 Hertz.
+        ///  <code>Invalid sample rate for audio file</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The sample rate specified in <code>MediaSampleRateHertz</code> isn't valid. The sample
+        /// rate must be between 8,000 and 48,000 hertz.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>The sample rate provided does not match the detected sample rate</code> - The
-        /// sample rate in the audio file doesn't match the sample rate specified in the <code>MediaSampleRateHertz</code>
-        /// field in the request. Check the sample rate of your media file and make sure that
-        /// the two values match.
+        ///  <code>The sample rate provided does not match the detected sample rate</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The sample rate specified in <code>MediaSampleRateHertz</code> doesn't match the sample
+        /// rate detected in your input media file. Check the sample rate of your media file and
+        /// correct the specified value.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Invalid file size: file size too large</code> - The size of your audio file
-        /// is larger than Amazon Transcribe can process. For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Limits</a>
-        /// in the <i>Amazon Transcribe Developer Guide</i>.
+        ///  <code>Invalid file size: file size too large</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The size of your media file is larger than what Amazon Transcribe can process. For
+        /// more information, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines
+        /// and quotas</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Invalid number of channels: number of channels too large</code> - Your audio
-        /// contains more channels than Amazon Transcribe is configured to process. To request
-        /// additional channels, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits-amazon-transcribe">Amazon
-        /// Transcribe Limits</a> in the <i>Amazon Web Services General Reference</i>.
+        ///  <code>Invalid number of channels: number of channels too large</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Your audio contains more channels than Amazon Transcribe is able to process. For more
+        /// information, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines
+        /// and quotas</a>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -176,9 +222,12 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property IdentifiedLanguageScore. 
         /// <para>
-        /// A value between zero and one that Amazon Transcribe assigned to the language that
-        /// it identified in the source audio. Larger values indicate that Amazon Transcribe has
-        /// higher confidence in the language it identified.
+        /// The confidence score associated with the language identified in your media file.
+        /// </para>
+        ///  
+        /// <para>
+        /// Confidence scores are values between 0 and 1; a larger value indicates a higher probability
+        /// that the identified language correctly matches the language spoken in your media.
         /// </para>
         /// </summary>
         public float IdentifiedLanguageScore
@@ -196,8 +245,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property IdentifyLanguage. 
         /// <para>
-        /// A value that shows if automatic language identification was enabled for a transcription
-        /// job.
+        /// Indicates whether automatic language identification was enabled (<code>TRUE</code>)
+        /// for the specified transcription job.
         /// </para>
         /// </summary>
         public bool IdentifyLanguage
@@ -213,9 +262,29 @@ namespace Amazon.TranscribeService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IdentifyMultipleLanguages. 
+        /// <para>
+        /// Indicates whether automatic multi-language identification was enabled (<code>TRUE</code>)
+        /// for the specified transcription job.
+        /// </para>
+        /// </summary>
+        public bool IdentifyMultipleLanguages
+        {
+            get { return this._identifyMultipleLanguages.GetValueOrDefault(); }
+            set { this._identifyMultipleLanguages = value; }
+        }
+
+        // Check to see if IdentifyMultipleLanguages property is set
+        internal bool IsSetIdentifyMultipleLanguages()
+        {
+            return this._identifyMultipleLanguages.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property JobExecutionSettings. 
         /// <para>
-        /// Provides information about how a transcription job is executed.
+        /// Provides information about how your transcription job was processed. This parameter
+        /// shows if your request was queued and what data access role was used.
         /// </para>
         /// </summary>
         public JobExecutionSettings JobExecutionSettings
@@ -233,7 +302,9 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property LanguageCode. 
         /// <para>
-        /// The language code for the input speech.
+        /// The language code used to create your transcription job. This parameter is used with
+        /// single-language identification. For multi-language identification requests, refer
+        /// to the plural version of this parameter, <code>LanguageCodes</code>.
         /// </para>
         /// </summary>
         public LanguageCode LanguageCode
@@ -249,11 +320,30 @@ namespace Amazon.TranscribeService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property LanguageCodes. 
+        /// <para>
+        /// The language codes used to create your transcription job. This parameter is used with
+        /// multi-language identification. For single-language identification requests, refer
+        /// to the singular version of this parameter, <code>LanguageCode</code>.
+        /// </para>
+        /// </summary>
+        public List<LanguageCodeItem> LanguageCodes
+        {
+            get { return this._languageCodes; }
+            set { this._languageCodes = value; }
+        }
+
+        // Check to see if LanguageCodes property is set
+        internal bool IsSetLanguageCodes()
+        {
+            return this._languageCodes != null && this._languageCodes.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property LanguageIdSettings. 
         /// <para>
-        /// Language-specific settings that can be specified when language identification is enabled
-        /// for your transcription job. These settings include <code>VocabularyName</code>, <code>VocabularyFilterName</code>,
-        /// and <code>LanguageModelName</code>LanguageModelName.
+        /// Provides the name and language of all custom language models, custom vocabularies,
+        /// and custom vocabulary filters that you included in your request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=5)]
@@ -272,8 +362,7 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property LanguageOptions. 
         /// <para>
-        /// An object that shows the optional array of languages inputted for transcription jobs
-        /// with automatic language identification enabled.
+        /// Provides the language codes you specified in your request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -292,7 +381,7 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property Media. 
         /// <para>
-        /// An object that describes the input media for the transcription job.
+        /// Provides the Amazon S3 location of the media file you used in your request.
         /// </para>
         /// </summary>
         public Media Media
@@ -328,7 +417,7 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property MediaSampleRateHertz. 
         /// <para>
-        /// The sample rate, in Hertz, of the audio track in the input media file. 
+        /// The sample rate, in hertz, of the audio track in your input media file.
         /// </para>
         /// </summary>
         [AWSProperty(Min=8000, Max=48000)]
@@ -347,7 +436,7 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property ModelSettings. 
         /// <para>
-        /// An object containing the details of your custom language model.
+        /// Provides information on the custom language model you included in your request.
         /// </para>
         /// </summary>
         public ModelSettings ModelSettings
@@ -365,9 +454,9 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property Settings. 
         /// <para>
-        /// Optional settings for the transcription job. Use these settings to turn on speaker
-        /// recognition, to set the maximum number of speakers that should be identified and to
-        /// specify a custom vocabulary to use when processing the transcription job.
+        /// Provides information on any additional settings that were included in your request.
+        /// Additional settings include channel identification, alternative transcriptions, speaker
+        /// partitioning, custom vocabularies, and custom vocabulary filters.
         /// </para>
         /// </summary>
         public Settings Settings
@@ -385,7 +474,13 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
-        /// A timestamp that shows when the job started processing.
+        /// The date and time the specified transcription job began processing.
+        /// </para>
+        ///  
+        /// <para>
+        /// Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+        /// <code>2022-05-04T12:32:58.789000-07:00</code> represents a transcription job that
+        /// started processing at 12:32 PM UTC-7 on May 4, 2022.
         /// </para>
         /// </summary>
         public DateTime StartTime
@@ -403,7 +498,7 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property Subtitles. 
         /// <para>
-        /// Generate subtitles for your batch transcription job.
+        /// Indicates whether subtitles were generated with your transcription.
         /// </para>
         /// </summary>
         public SubtitlesOutput Subtitles
@@ -421,7 +516,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// A key:value pair assigned to a given transcription job.
+        /// The tags, each in the form of a key:value pair, assigned to the specified transcription
+        /// job.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
@@ -440,7 +536,7 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property Transcript. 
         /// <para>
-        /// An object that describes the output of the transcription job.
+        /// Provides you with the Amazon S3 URI you can use to access your transcript.
         /// </para>
         /// </summary>
         public Transcript Transcript
@@ -458,7 +554,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property TranscriptionJobName. 
         /// <para>
-        /// The name of the transcription job.
+        /// The name of the transcription job. Job names are case sensitive and must be unique
+        /// within an Amazon Web Services account.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
@@ -477,7 +574,14 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property TranscriptionJobStatus. 
         /// <para>
-        /// The status of the transcription job.
+        /// Provides the status of the specified transcription job.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the status is <code>COMPLETED</code>, the job is finished and you can find the
+        /// results at the location specified in <code>TranscriptFileUri</code> (or <code>RedactedTranscriptFileUri</code>,
+        /// if you requested transcript redaction). If the status is <code>FAILED</code>, <code>FailureReason</code>
+        /// provides details on why your transcription job failed.
         /// </para>
         /// </summary>
         public TranscriptionJobStatus TranscriptionJobStatus

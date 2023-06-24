@@ -129,7 +129,7 @@ namespace Amazon.AppConfigData.Model
         /// <summary>
         /// Gets and sets the property Details. 
         /// <para>
-        /// Details describing why the request was invalid
+        /// Details describing why the request was invalid.
         /// </para>
         /// </summary>
         public BadRequestDetails Details

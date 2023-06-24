@@ -1,5 +1,6 @@
 {
   "active": true,
   "synopsis": "(New Service) AWS RoboMaker is a service that makes it easy to develop, simulate, and deploy intelligent robotics applications at scale. ",
-  "generate-client-constructors": true
+  "generate-client-constructors": true,
+  "legacy-service-id": "RoboMaker"
 }

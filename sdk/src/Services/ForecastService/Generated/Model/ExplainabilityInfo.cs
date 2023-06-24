@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ForecastService.Model
 {
     /// <summary>
-    /// 
+    /// Provides information about the Explainability resource.
     /// </summary>
     public partial class ExplainabilityInfo
     {
@@ -37,7 +37,10 @@ namespace Amazon.ForecastService.Model
         private string _status;
 
         /// <summary>
-        /// Gets and sets the property ExplainabilityArn.
+        /// Gets and sets the property ExplainabilityArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the Explainability.
+        /// </para>
         /// </summary>
         [AWSProperty(Max=256)]
         public string ExplainabilityArn
@@ -53,7 +56,29 @@ namespace Amazon.ForecastService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Status.
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The status of the Explainability. States include: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>ACTIVE</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code>
+        /// 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Max=256)]
         public string Status

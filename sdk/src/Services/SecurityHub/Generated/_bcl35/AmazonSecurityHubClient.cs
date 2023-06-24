@@ -41,8 +41,8 @@ namespace Amazon.SecurityHub
     /// Hub collects security data from Amazon Web Services accounts, services, and integrated
     /// third-party products and helps you analyze security trends in your environment to
     /// identify the highest priority security issues. For more information about Security
-    /// Hub, see the <i>Security Hub<a href="https://docs.aws.amazon.com/securityhub/latest/userguide/what-is-securityhub.html">User
-    /// Guide</a> </i>.
+    /// Hub, see the <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/what-is-securityhub.html">Security
+    /// HubUser Guide</a>.
     /// 
     ///  
     /// <para>
@@ -50,8 +50,8 @@ namespace Amazon.SecurityHub
     /// the Amazon Web Services Region that is currently active or in the specific Amazon
     /// Web Services Region that you specify in your request. Any configuration or settings
     /// change that results from the operation is applied only to that Region. To make the
-    /// same change in other Regions, execute the same command for each Region to apply the
-    /// change to.
+    /// same change in other Regions, run the same command for each Region in which you want
+    /// to apply the change.
     /// </para>
     ///  
     /// <para>
@@ -67,7 +67,7 @@ namespace Amazon.SecurityHub
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>BatchEnableStandards</code> - <code>RateLimit</code> of 1 request per second,
+    ///  <code>BatchEnableStandards</code> - <code>RateLimit</code> of 1 request per second.
     /// <code>BurstLimit</code> of 1 request per second.
     /// </para>
     ///  </li> <li> 
@@ -77,12 +77,17 @@ namespace Amazon.SecurityHub
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>UpdateFindings</code> - <code>RateLimit</code> of 1 request per second. <code>BurstLimit</code>
-    /// of 5 requests per second.
+    ///  <code>BatchImportFindings</code> - <code>RateLimit</code> of 10 requests per second.
+    /// <code>BurstLimit</code> of 30 requests per second.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>UpdateStandardsControl</code> - <code>RateLimit</code> of 1 request per second,
+    ///  <code>BatchUpdateFindings</code> - <code>RateLimit</code> of 10 requests per second.
+    /// <code>BurstLimit</code> of 30 requests per second.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>UpdateStandardsControl</code> - <code>RateLimit</code> of 1 request per second.
     /// <code>BurstLimit</code> of 5 requests per second.
     /// </para>
     ///  </li> <li> 
@@ -285,6 +290,15 @@ namespace Amazon.SecurityHub
         }
 
         /// <summary>
+        /// Customize the pipeline
+        /// </summary>
+        /// <param name="pipeline"></param>
+        protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
+        {
+            pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonSecurityHubEndpointResolver());
+        }
+        /// <summary>
         /// Capture metadata for the service.
         /// </summary>
         protected override IServiceMetadata ServiceMetadata
@@ -333,9 +347,7 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// There is an issue with the account used to make the request. Either Security Hub is
-        /// not enabled for the account, or the account does not have permission to perform this
-        /// action.
+        /// The account doesn't have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -430,9 +442,7 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// There is an issue with the account used to make the request. Either Security Hub is
-        /// not enabled for the account, or the account does not have permission to perform this
-        /// action.
+        /// The account doesn't have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -495,6 +505,78 @@ namespace Amazon.SecurityHub
 
         #endregion
         
+        #region  BatchDeleteAutomationRules
+
+        /// <summary>
+        /// Deletes one or more automation rules.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchDeleteAutomationRules service method.</param>
+        /// 
+        /// <returns>The response from the BatchDeleteAutomationRules service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// The account doesn't have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// Amazon Web Services account or throttling limits. The error code describes the limit
+        /// exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchDeleteAutomationRules">REST API Reference for BatchDeleteAutomationRules Operation</seealso>
+        public virtual BatchDeleteAutomationRulesResponse BatchDeleteAutomationRules(BatchDeleteAutomationRulesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchDeleteAutomationRulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDeleteAutomationRulesResponseUnmarshaller.Instance;
+
+            return Invoke<BatchDeleteAutomationRulesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchDeleteAutomationRules operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchDeleteAutomationRules operation on AmazonSecurityHubClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchDeleteAutomationRules
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchDeleteAutomationRules">REST API Reference for BatchDeleteAutomationRules Operation</seealso>
+        public virtual IAsyncResult BeginBatchDeleteAutomationRules(BatchDeleteAutomationRulesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchDeleteAutomationRulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDeleteAutomationRulesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchDeleteAutomationRules operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchDeleteAutomationRules.</param>
+        /// 
+        /// <returns>Returns a  BatchDeleteAutomationRulesResult from SecurityHub.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchDeleteAutomationRules">REST API Reference for BatchDeleteAutomationRules Operation</seealso>
+        public virtual BatchDeleteAutomationRulesResponse EndBatchDeleteAutomationRules(IAsyncResult asyncResult)
+        {
+            return EndInvoke<BatchDeleteAutomationRulesResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  BatchDisableStandards
 
         /// <summary>
@@ -513,9 +595,7 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// There is an issue with the account used to make the request. Either Security Hub is
-        /// not enabled for the account, or the account does not have permission to perform this
-        /// action.
+        /// The account doesn't have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -591,9 +671,7 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// There is an issue with the account used to make the request. Either Security Hub is
-        /// not enabled for the account, or the account does not have permission to perform this
-        /// action.
+        /// The account doesn't have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -650,14 +728,249 @@ namespace Amazon.SecurityHub
 
         #endregion
         
+        #region  BatchGetAutomationRules
+
+        /// <summary>
+        /// Retrieves a list of details for automation rules based on rule Amazon Resource Names
+        /// (ARNs).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetAutomationRules service method.</param>
+        /// 
+        /// <returns>The response from the BatchGetAutomationRules service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// The account doesn't have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// Amazon Web Services account or throttling limits. The error code describes the limit
+        /// exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchGetAutomationRules">REST API Reference for BatchGetAutomationRules Operation</seealso>
+        public virtual BatchGetAutomationRulesResponse BatchGetAutomationRules(BatchGetAutomationRulesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetAutomationRulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetAutomationRulesResponseUnmarshaller.Instance;
+
+            return Invoke<BatchGetAutomationRulesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchGetAutomationRules operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetAutomationRules operation on AmazonSecurityHubClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchGetAutomationRules
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchGetAutomationRules">REST API Reference for BatchGetAutomationRules Operation</seealso>
+        public virtual IAsyncResult BeginBatchGetAutomationRules(BatchGetAutomationRulesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetAutomationRulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetAutomationRulesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchGetAutomationRules operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchGetAutomationRules.</param>
+        /// 
+        /// <returns>Returns a  BatchGetAutomationRulesResult from SecurityHub.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchGetAutomationRules">REST API Reference for BatchGetAutomationRules Operation</seealso>
+        public virtual BatchGetAutomationRulesResponse EndBatchGetAutomationRules(IAsyncResult asyncResult)
+        {
+            return EndInvoke<BatchGetAutomationRulesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  BatchGetSecurityControls
+
+        /// <summary>
+        /// Provides details about a batch of security controls for the current Amazon Web Services
+        /// account and Amazon Web Services Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetSecurityControls service method.</param>
+        /// 
+        /// <returns>The response from the BatchGetSecurityControls service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// The account doesn't have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// Amazon Web Services account or throttling limits. The error code describes the limit
+        /// exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchGetSecurityControls">REST API Reference for BatchGetSecurityControls Operation</seealso>
+        public virtual BatchGetSecurityControlsResponse BatchGetSecurityControls(BatchGetSecurityControlsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetSecurityControlsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetSecurityControlsResponseUnmarshaller.Instance;
+
+            return Invoke<BatchGetSecurityControlsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchGetSecurityControls operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetSecurityControls operation on AmazonSecurityHubClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchGetSecurityControls
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchGetSecurityControls">REST API Reference for BatchGetSecurityControls Operation</seealso>
+        public virtual IAsyncResult BeginBatchGetSecurityControls(BatchGetSecurityControlsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetSecurityControlsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetSecurityControlsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchGetSecurityControls operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchGetSecurityControls.</param>
+        /// 
+        /// <returns>Returns a  BatchGetSecurityControlsResult from SecurityHub.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchGetSecurityControls">REST API Reference for BatchGetSecurityControls Operation</seealso>
+        public virtual BatchGetSecurityControlsResponse EndBatchGetSecurityControls(IAsyncResult asyncResult)
+        {
+            return EndInvoke<BatchGetSecurityControlsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  BatchGetStandardsControlAssociations
+
+        /// <summary>
+        /// For a batch of security controls and standards, identifies whether each control is
+        /// currently enabled or disabled in a standard.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetStandardsControlAssociations service method.</param>
+        /// 
+        /// <returns>The response from the BatchGetStandardsControlAssociations service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// The account doesn't have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// Amazon Web Services account or throttling limits. The error code describes the limit
+        /// exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchGetStandardsControlAssociations">REST API Reference for BatchGetStandardsControlAssociations Operation</seealso>
+        public virtual BatchGetStandardsControlAssociationsResponse BatchGetStandardsControlAssociations(BatchGetStandardsControlAssociationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetStandardsControlAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetStandardsControlAssociationsResponseUnmarshaller.Instance;
+
+            return Invoke<BatchGetStandardsControlAssociationsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchGetStandardsControlAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetStandardsControlAssociations operation on AmazonSecurityHubClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchGetStandardsControlAssociations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchGetStandardsControlAssociations">REST API Reference for BatchGetStandardsControlAssociations Operation</seealso>
+        public virtual IAsyncResult BeginBatchGetStandardsControlAssociations(BatchGetStandardsControlAssociationsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetStandardsControlAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetStandardsControlAssociationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchGetStandardsControlAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchGetStandardsControlAssociations.</param>
+        /// 
+        /// <returns>Returns a  BatchGetStandardsControlAssociationsResult from SecurityHub.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchGetStandardsControlAssociations">REST API Reference for BatchGetStandardsControlAssociations Operation</seealso>
+        public virtual BatchGetStandardsControlAssociationsResponse EndBatchGetStandardsControlAssociations(IAsyncResult asyncResult)
+        {
+            return EndInvoke<BatchGetStandardsControlAssociationsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  BatchImportFindings
 
         /// <summary>
-        /// Imports security findings generated from an integrated product into Security Hub.
-        /// This action is requested by the integrated product to import its findings into Security
-        /// Hub.
+        /// Imports security findings generated by a finding provider into Security Hub. This
+        /// action is requested by the finding provider to import its findings into Security Hub.
         /// 
         ///  
+        /// <para>
+        ///  <code>BatchImportFindings</code> must be called by one of the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The Amazon Web Services account that is associated with a finding if you are using
+        /// the <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-custom-providers.html#securityhub-custom-providers-bfi-reqs">default
+        /// product ARN</a> or are a partner sending findings from within a customer's Amazon
+        /// Web Services account. In these cases, the identifier of the account that you are calling
+        /// <code>BatchImportFindings</code> from needs to be the same as the <code>AwsAccountId</code>
+        /// attribute for the finding.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// An Amazon Web Services account that Security Hub has allow-listed for an official
+        /// partner integration. In this case, you can call <code>BatchImportFindings</code> from
+        /// the allow-listed account and send findings from different customer accounts in the
+        /// same batch.
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// The maximum allowed size for a finding is 240 Kb. An error is returned for any finding
         /// larger than 240 Kb.
@@ -722,9 +1035,7 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// There is an issue with the account used to make the request. Either Security Hub is
-        /// not enabled for the account, or the account does not have permission to perform this
-        /// action.
+        /// The account doesn't have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -777,6 +1088,79 @@ namespace Amazon.SecurityHub
         public virtual BatchImportFindingsResponse EndBatchImportFindings(IAsyncResult asyncResult)
         {
             return EndInvoke<BatchImportFindingsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  BatchUpdateAutomationRules
+
+        /// <summary>
+        /// Updates one or more automation rules based on rule Amazon Resource Names (ARNs) and
+        /// input parameters.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchUpdateAutomationRules service method.</param>
+        /// 
+        /// <returns>The response from the BatchUpdateAutomationRules service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// The account doesn't have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// Amazon Web Services account or throttling limits. The error code describes the limit
+        /// exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchUpdateAutomationRules">REST API Reference for BatchUpdateAutomationRules Operation</seealso>
+        public virtual BatchUpdateAutomationRulesResponse BatchUpdateAutomationRules(BatchUpdateAutomationRulesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchUpdateAutomationRulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchUpdateAutomationRulesResponseUnmarshaller.Instance;
+
+            return Invoke<BatchUpdateAutomationRulesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchUpdateAutomationRules operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchUpdateAutomationRules operation on AmazonSecurityHubClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchUpdateAutomationRules
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchUpdateAutomationRules">REST API Reference for BatchUpdateAutomationRules Operation</seealso>
+        public virtual IAsyncResult BeginBatchUpdateAutomationRules(BatchUpdateAutomationRulesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchUpdateAutomationRulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchUpdateAutomationRulesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchUpdateAutomationRules operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchUpdateAutomationRules.</param>
+        /// 
+        /// <returns>Returns a  BatchUpdateAutomationRulesResult from SecurityHub.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchUpdateAutomationRules">REST API Reference for BatchUpdateAutomationRules Operation</seealso>
+        public virtual BatchUpdateAutomationRulesResponse EndBatchUpdateAutomationRules(IAsyncResult asyncResult)
+        {
+            return EndInvoke<BatchUpdateAutomationRulesResponse>(asyncResult);
         }
 
         #endregion
@@ -850,9 +1234,7 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// There is an issue with the account used to make the request. Either Security Hub is
-        /// not enabled for the account, or the account does not have permission to perform this
-        /// action.
+        /// The account doesn't have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -909,6 +1291,76 @@ namespace Amazon.SecurityHub
 
         #endregion
         
+        #region  BatchUpdateStandardsControlAssociations
+
+        /// <summary>
+        /// For a batch of security controls and standards, this operation updates the enablement
+        /// status of a control in a standard.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchUpdateStandardsControlAssociations service method.</param>
+        /// 
+        /// <returns>The response from the BatchUpdateStandardsControlAssociations service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// The account doesn't have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// Amazon Web Services account or throttling limits. The error code describes the limit
+        /// exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchUpdateStandardsControlAssociations">REST API Reference for BatchUpdateStandardsControlAssociations Operation</seealso>
+        public virtual BatchUpdateStandardsControlAssociationsResponse BatchUpdateStandardsControlAssociations(BatchUpdateStandardsControlAssociationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchUpdateStandardsControlAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchUpdateStandardsControlAssociationsResponseUnmarshaller.Instance;
+
+            return Invoke<BatchUpdateStandardsControlAssociationsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchUpdateStandardsControlAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchUpdateStandardsControlAssociations operation on AmazonSecurityHubClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchUpdateStandardsControlAssociations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchUpdateStandardsControlAssociations">REST API Reference for BatchUpdateStandardsControlAssociations Operation</seealso>
+        public virtual IAsyncResult BeginBatchUpdateStandardsControlAssociations(BatchUpdateStandardsControlAssociationsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchUpdateStandardsControlAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchUpdateStandardsControlAssociationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchUpdateStandardsControlAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchUpdateStandardsControlAssociations.</param>
+        /// 
+        /// <returns>Returns a  BatchUpdateStandardsControlAssociationsResult from SecurityHub.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchUpdateStandardsControlAssociations">REST API Reference for BatchUpdateStandardsControlAssociations Operation</seealso>
+        public virtual BatchUpdateStandardsControlAssociationsResponse EndBatchUpdateStandardsControlAssociations(IAsyncResult asyncResult)
+        {
+            return EndInvoke<BatchUpdateStandardsControlAssociationsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateActionTarget
 
         /// <summary>
@@ -927,9 +1379,7 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// There is an issue with the account used to make the request. Either Security Hub is
-        /// not enabled for the account, or the account does not have permission to perform this
-        /// action.
+        /// The account doesn't have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -989,6 +1439,78 @@ namespace Amazon.SecurityHub
 
         #endregion
         
+        #region  CreateAutomationRule
+
+        /// <summary>
+        /// Creates an automation rule based on input parameters.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAutomationRule service method.</param>
+        /// 
+        /// <returns>The response from the CreateAutomationRule service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// The account doesn't have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// Amazon Web Services account or throttling limits. The error code describes the limit
+        /// exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/CreateAutomationRule">REST API Reference for CreateAutomationRule Operation</seealso>
+        public virtual CreateAutomationRuleResponse CreateAutomationRule(CreateAutomationRuleRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAutomationRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAutomationRuleResponseUnmarshaller.Instance;
+
+            return Invoke<CreateAutomationRuleResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateAutomationRule operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateAutomationRule operation on AmazonSecurityHubClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateAutomationRule
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/CreateAutomationRule">REST API Reference for CreateAutomationRule Operation</seealso>
+        public virtual IAsyncResult BeginCreateAutomationRule(CreateAutomationRuleRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAutomationRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAutomationRuleResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateAutomationRule operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateAutomationRule.</param>
+        /// 
+        /// <returns>Returns a  CreateAutomationRuleResult from SecurityHub.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/CreateAutomationRule">REST API Reference for CreateAutomationRule Operation</seealso>
+        public virtual CreateAutomationRuleResponse EndCreateAutomationRule(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateAutomationRuleResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateFindingAggregator
 
         /// <summary>
@@ -996,7 +1518,7 @@ namespace Amazon.SecurityHub
         /// 
         ///  
         /// <para>
-        /// For more details about cross-Region replication, see <a href="securityhub/latest/userguide/finding-aggregation.html">Configuring
+        /// For more details about cross-Region replication, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/finding-aggregation.html">Configuring
         /// finding aggregation</a> in the <i>Security Hub User Guide</i>. 
         /// </para>
         /// </summary>
@@ -1010,9 +1532,7 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// There is an issue with the account used to make the request. Either Security Hub is
-        /// not enabled for the account, or the account does not have permission to perform this
-        /// action.
+        /// The account doesn't have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -1087,9 +1607,7 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// There is an issue with the account used to make the request. Either Security Hub is
-        /// not enabled for the account, or the account does not have permission to perform this
-        /// action.
+        /// The account doesn't have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -1224,9 +1742,7 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// There is an issue with the account used to make the request. Either Security Hub is
-        /// not enabled for the account, or the account does not have permission to perform this
-        /// action.
+        /// The account doesn't have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -1293,8 +1809,13 @@ namespace Amazon.SecurityHub
         /// 
         ///  
         /// <para>
-        /// This operation is only used by accounts that are not part of an organization. Organization
-        /// accounts do not receive invitations.
+        /// A prospective member account uses this operation to decline an invitation to become
+        /// a member.
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation is only called by member accounts that aren't part of an organization.
+        /// Organization accounts don't receive invitations.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeclineInvitations service method.</param>
@@ -1304,9 +1825,7 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// There is an issue with the account used to make the request. Either Security Hub is
-        /// not enabled for the account, or the account does not have permission to perform this
-        /// action.
+        /// The account doesn't have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -1379,9 +1898,7 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// There is an issue with the account used to make the request. Either Security Hub is
-        /// not enabled for the account, or the account does not have permission to perform this
-        /// action.
+        /// The account doesn't have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -1459,9 +1976,7 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// There is an issue with the account used to make the request. Either Security Hub is
-        /// not enabled for the account, or the account does not have permission to perform this
-        /// action.
+        /// The account doesn't have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -1533,9 +2048,7 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// There is an issue with the account used to make the request. Either Security Hub is
-        /// not enabled for the account, or the account does not have permission to perform this
-        /// action.
+        /// The account doesn't have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -1603,8 +2116,13 @@ namespace Amazon.SecurityHub
         /// 
         ///  
         /// <para>
-        /// This operation is only used by accounts that are not part of an organization. Organization
-        /// accounts do not receive invitations.
+        /// A Security Hub administrator account can use this operation to delete invitations
+        /// sent to one or more member accounts.
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation is only used to delete invitations that are sent to member accounts
+        /// that aren't part of an organization. Organization accounts don't receive invitations.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteInvitations service method.</param>
@@ -1614,9 +2132,7 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// There is an issue with the account used to make the request. Either Security Hub is
-        /// not enabled for the account, or the account does not have permission to perform this
-        /// action.
+        /// The account doesn't have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -1694,9 +2210,7 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// There is an issue with the account used to make the request. Either Security Hub is
-        /// not enabled for the account, or the account does not have permission to perform this
-        /// action.
+        /// The account doesn't have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -1768,9 +2282,7 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// There is an issue with the account used to make the request. Either Security Hub is
-        /// not enabled for the account, or the account does not have permission to perform this
-        /// action.
+        /// The account doesn't have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -1838,9 +2350,7 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// There is an issue with the account used to make the request. Either Security Hub is
-        /// not enabled for the account, or the account does not have permission to perform this
-        /// action.
+        /// The account doesn't have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -1913,9 +2423,7 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// There is an issue with the account used to make the request. Either Security Hub is
-        /// not enabled for the account, or the account does not have permission to perform this
-        /// action.
+        /// The account doesn't have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -1995,9 +2503,7 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// There is an issue with the account used to make the request. Either Security Hub is
-        /// not enabled for the account, or the account does not have permission to perform this
-        /// action.
+        /// The account doesn't have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -2072,9 +2578,7 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// There is an issue with the account used to make the request. Either Security Hub is
-        /// not enabled for the account, or the account does not have permission to perform this
-        /// action.
+        /// The account doesn't have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -2144,9 +2648,7 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// There is an issue with the account used to make the request. Either Security Hub is
-        /// not enabled for the account, or the account does not have permission to perform this
-        /// action.
+        /// The account doesn't have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -2214,9 +2716,7 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// There is an issue with the account used to make the request. Either Security Hub is
-        /// not enabled for the account, or the account does not have permission to perform this
-        /// action.
+        /// The account doesn't have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -2289,9 +2789,7 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// There is an issue with the account used to make the request. Either Security Hub is
-        /// not enabled for the account, or the account does not have permission to perform this
-        /// action.
+        /// The account doesn't have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -2380,9 +2878,7 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// There is an issue with the account used to make the request. Either Security Hub is
-        /// not enabled for the account, or the account does not have permission to perform this
-        /// action.
+        /// The account doesn't have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
@@ -2457,9 +2953,7 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// There is an issue with the account used to make the request. Either Security Hub is
-        /// not enabled for the account, or the account does not have permission to perform this
-        /// action.
+        /// The account doesn't have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -2551,9 +3045,7 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// There is an issue with the account used to make the request. Either Security Hub is
-        /// not enabled for the account, or the account does not have permission to perform this
-        /// action.
+        /// The account doesn't have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -2634,9 +3126,7 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// There is an issue with the account used to make the request. Either Security Hub is
-        /// not enabled for the account, or the account does not have permission to perform this
-        /// action.
+        /// The account doesn't have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -2715,9 +3205,7 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// There is an issue with the account used to make the request. Either Security Hub is
-        /// not enabled for the account, or the account does not have permission to perform this
-        /// action.
+        /// The account doesn't have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -2790,9 +3278,7 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// There is an issue with the account used to make the request. Either Security Hub is
-        /// not enabled for the account, or the account does not have permission to perform this
-        /// action.
+        /// The account doesn't have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -2863,11 +3349,11 @@ namespace Amazon.SecurityHub
         ///  
         /// <para>
         /// When you use the <code>EnableSecurityHub</code> operation to enable Security Hub,
-        /// you also automatically enable the following standards.
+        /// you also automatically enable the following standards:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// CIS Amazon Web Services Foundations
+        /// Center for Internet Security (CIS) Amazon Web Services Foundations Benchmark v1.2.0
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2875,12 +3361,11 @@ namespace Amazon.SecurityHub
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// You do not enable the Payment Card Industry Data Security Standard (PCI DSS) standard.
-        /// 
+        /// Other standards are not automatically enabled. 
         /// </para>
         ///  
         /// <para>
-        /// To not enable the automatically enabled standards, set <code>EnableDefaultStandards</code>
+        /// To opt out of automatically enabled standards, set <code>EnableDefaultStandards</code>
         /// to <code>false</code>.
         /// </para>
         ///  
@@ -2904,9 +3389,7 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// There is an issue with the account used to make the request. Either Security Hub is
-        /// not enabled for the account, or the account does not have permission to perform this
-        /// action.
+        /// The account doesn't have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
@@ -2981,9 +3464,7 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// There is an issue with the account used to make the request. Either Security Hub is
-        /// not enabled for the account, or the account does not have permission to perform this
-        /// action.
+        /// The account doesn't have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -3055,9 +3536,7 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// There is an issue with the account used to make the request. Either Security Hub is
-        /// not enabled for the account, or the account does not have permission to perform this
-        /// action.
+        /// The account doesn't have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -3129,9 +3608,7 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// There is an issue with the account used to make the request. Either Security Hub is
-        /// not enabled for the account, or the account does not have permission to perform this
-        /// action.
+        /// The account doesn't have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -3191,6 +3668,76 @@ namespace Amazon.SecurityHub
 
         #endregion
         
+        #region  GetFindingHistory
+
+        /// <summary>
+        /// Returns history for a Security Hub finding in the last 90 days. The history includes
+        /// changes made to any fields in the Amazon Web Services Security Finding Format (ASFF).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetFindingHistory service method.</param>
+        /// 
+        /// <returns>The response from the GetFindingHistory service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// The account doesn't have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// Amazon Web Services account or throttling limits. The error code describes the limit
+        /// exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetFindingHistory">REST API Reference for GetFindingHistory Operation</seealso>
+        public virtual GetFindingHistoryResponse GetFindingHistory(GetFindingHistoryRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetFindingHistoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetFindingHistoryResponseUnmarshaller.Instance;
+
+            return Invoke<GetFindingHistoryResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetFindingHistory operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetFindingHistory operation on AmazonSecurityHubClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetFindingHistory
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetFindingHistory">REST API Reference for GetFindingHistory Operation</seealso>
+        public virtual IAsyncResult BeginGetFindingHistory(GetFindingHistoryRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetFindingHistoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetFindingHistoryResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetFindingHistory operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetFindingHistory.</param>
+        /// 
+        /// <returns>Returns a  GetFindingHistoryResult from SecurityHub.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetFindingHistory">REST API Reference for GetFindingHistory Operation</seealso>
+        public virtual GetFindingHistoryResponse EndGetFindingHistory(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetFindingHistoryResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetFindings
 
         /// <summary>
@@ -3210,9 +3757,7 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// There is an issue with the account used to make the request. Either Security Hub is
-        /// not enabled for the account, or the account does not have permission to perform this
-        /// action.
+        /// The account doesn't have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -3281,9 +3826,7 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// There is an issue with the account used to make the request. Either Security Hub is
-        /// not enabled for the account, or the account does not have permission to perform this
-        /// action.
+        /// The account doesn't have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -3355,9 +3898,7 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// There is an issue with the account used to make the request. Either Security Hub is
-        /// not enabled for the account, or the account does not have permission to perform this
-        /// action.
+        /// The account doesn't have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -3430,9 +3971,7 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// There is an issue with the account used to make the request. Either Security Hub is
-        /// not enabled for the account, or the account does not have permission to perform this
-        /// action.
+        /// The account doesn't have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -3520,9 +4059,7 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// There is an issue with the account used to make the request. Either Security Hub is
-        /// not enabled for the account, or the account does not have permission to perform this
-        /// action.
+        /// The account doesn't have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -3609,9 +4146,7 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// There is an issue with the account used to make the request. Either Security Hub is
-        /// not enabled for the account, or the account does not have permission to perform this
-        /// action.
+        /// The account doesn't have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -3701,9 +4236,7 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// There is an issue with the account used to make the request. Either Security Hub is
-        /// not enabled for the account, or the account does not have permission to perform this
-        /// action.
+        /// The account doesn't have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -3763,6 +4296,78 @@ namespace Amazon.SecurityHub
 
         #endregion
         
+        #region  ListAutomationRules
+
+        /// <summary>
+        /// A list of automation rules and their metadata for the calling account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAutomationRules service method.</param>
+        /// 
+        /// <returns>The response from the ListAutomationRules service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// The account doesn't have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// Amazon Web Services account or throttling limits. The error code describes the limit
+        /// exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListAutomationRules">REST API Reference for ListAutomationRules Operation</seealso>
+        public virtual ListAutomationRulesResponse ListAutomationRules(ListAutomationRulesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAutomationRulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAutomationRulesResponseUnmarshaller.Instance;
+
+            return Invoke<ListAutomationRulesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAutomationRules operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAutomationRules operation on AmazonSecurityHubClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAutomationRules
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListAutomationRules">REST API Reference for ListAutomationRules Operation</seealso>
+        public virtual IAsyncResult BeginListAutomationRules(ListAutomationRulesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAutomationRulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAutomationRulesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListAutomationRules operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAutomationRules.</param>
+        /// 
+        /// <returns>Returns a  ListAutomationRulesResult from SecurityHub.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListAutomationRules">REST API Reference for ListAutomationRules Operation</seealso>
+        public virtual ListAutomationRulesResponse EndListAutomationRules(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListAutomationRulesResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListEnabledProductsForImport
 
         /// <summary>
@@ -3776,9 +4381,7 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// There is an issue with the account used to make the request. Either Security Hub is
-        /// not enabled for the account, or the account does not have permission to perform this
-        /// action.
+        /// The account doesn't have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
@@ -3847,9 +4450,7 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// There is an issue with the account used to make the request. Either Security Hub is
-        /// not enabled for the account, or the account does not have permission to perform this
-        /// action.
+        /// The account doesn't have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -3925,9 +4526,7 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// There is an issue with the account used to make the request. Either Security Hub is
-        /// not enabled for the account, or the account does not have permission to perform this
-        /// action.
+        /// The account doesn't have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -4003,9 +4602,7 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// There is an issue with the account used to make the request. Either Security Hub is
-        /// not enabled for the account, or the account does not have permission to perform this
-        /// action.
+        /// The account doesn't have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -4075,9 +4672,7 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// There is an issue with the account used to make the request. Either Security Hub is
-        /// not enabled for the account, or the account does not have permission to perform this
-        /// action.
+        /// The account doesn't have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -4130,6 +4725,145 @@ namespace Amazon.SecurityHub
         public virtual ListOrganizationAdminAccountsResponse EndListOrganizationAdminAccounts(IAsyncResult asyncResult)
         {
             return EndInvoke<ListOrganizationAdminAccountsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListSecurityControlDefinitions
+
+        /// <summary>
+        /// Lists all of the security controls that apply to a specified standard.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSecurityControlDefinitions service method.</param>
+        /// 
+        /// <returns>The response from the ListSecurityControlDefinitions service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// The account doesn't have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// Amazon Web Services account or throttling limits. The error code describes the limit
+        /// exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListSecurityControlDefinitions">REST API Reference for ListSecurityControlDefinitions Operation</seealso>
+        public virtual ListSecurityControlDefinitionsResponse ListSecurityControlDefinitions(ListSecurityControlDefinitionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSecurityControlDefinitionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSecurityControlDefinitionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListSecurityControlDefinitionsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListSecurityControlDefinitions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListSecurityControlDefinitions operation on AmazonSecurityHubClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListSecurityControlDefinitions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListSecurityControlDefinitions">REST API Reference for ListSecurityControlDefinitions Operation</seealso>
+        public virtual IAsyncResult BeginListSecurityControlDefinitions(ListSecurityControlDefinitionsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSecurityControlDefinitionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSecurityControlDefinitionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListSecurityControlDefinitions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListSecurityControlDefinitions.</param>
+        /// 
+        /// <returns>Returns a  ListSecurityControlDefinitionsResult from SecurityHub.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListSecurityControlDefinitions">REST API Reference for ListSecurityControlDefinitions Operation</seealso>
+        public virtual ListSecurityControlDefinitionsResponse EndListSecurityControlDefinitions(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListSecurityControlDefinitionsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListStandardsControlAssociations
+
+        /// <summary>
+        /// Specifies whether a control is currently enabled or disabled in each enabled standard
+        /// in the calling account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListStandardsControlAssociations service method.</param>
+        /// 
+        /// <returns>The response from the ListStandardsControlAssociations service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// The account doesn't have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// Amazon Web Services account or throttling limits. The error code describes the limit
+        /// exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListStandardsControlAssociations">REST API Reference for ListStandardsControlAssociations Operation</seealso>
+        public virtual ListStandardsControlAssociationsResponse ListStandardsControlAssociations(ListStandardsControlAssociationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListStandardsControlAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListStandardsControlAssociationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListStandardsControlAssociationsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListStandardsControlAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListStandardsControlAssociations operation on AmazonSecurityHubClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListStandardsControlAssociations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListStandardsControlAssociations">REST API Reference for ListStandardsControlAssociations Operation</seealso>
+        public virtual IAsyncResult BeginListStandardsControlAssociations(ListStandardsControlAssociationsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListStandardsControlAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListStandardsControlAssociationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListStandardsControlAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListStandardsControlAssociations.</param>
+        /// 
+        /// <returns>Returns a  ListStandardsControlAssociationsResult from SecurityHub.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListStandardsControlAssociations">REST API Reference for ListStandardsControlAssociations Operation</seealso>
+        public virtual ListStandardsControlAssociationsResponse EndListStandardsControlAssociations(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListStandardsControlAssociationsResponse>(asyncResult);
         }
 
         #endregion
@@ -4338,9 +5072,7 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// There is an issue with the account used to make the request. Either Security Hub is
-        /// not enabled for the account, or the account does not have permission to perform this
-        /// action.
+        /// The account doesn't have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -4418,9 +5150,7 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// There is an issue with the account used to make the request. Either Security Hub is
-        /// not enabled for the account, or the account does not have permission to perform this
-        /// action.
+        /// The account doesn't have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -4500,9 +5230,7 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// There is an issue with the account used to make the request. Either Security Hub is
-        /// not enabled for the account, or the account does not have permission to perform this
-        /// action.
+        /// The account doesn't have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -4574,9 +5302,7 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// There is an issue with the account used to make the request. Either Security Hub is
-        /// not enabled for the account, or the account does not have permission to perform this
-        /// action.
+        /// The account doesn't have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -4649,9 +5375,7 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// There is an issue with the account used to make the request. Either Security Hub is
-        /// not enabled for the account, or the account does not have permission to perform this
-        /// action.
+        /// The account doesn't have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -4720,9 +5444,7 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// There is an issue with the account used to make the request. Either Security Hub is
-        /// not enabled for the account, or the account does not have permission to perform this
-        /// action.
+        /// The account doesn't have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -4794,9 +5516,7 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// There is an issue with the account used to make the request. Either Security Hub is
-        /// not enabled for the account, or the account does not have permission to perform this
-        /// action.
+        /// The account doesn't have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for

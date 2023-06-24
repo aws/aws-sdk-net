@@ -30,8 +30,8 @@ namespace Amazon.ECRPublic.Model
 {
     /// <summary>
     /// An object representing the aliases for a public registry. A public registry is given
-    /// an alias upon creation but a custom alias can be set using the Amazon ECR console.
-    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/Registries.html">Registries</a>
+    /// an alias when it's created. However, a custom alias can be set using the Amazon ECR
+    /// console. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/Registries.html">Registries</a>
     /// in the <i>Amazon Elastic Container Registry User Guide</i>.
     /// </summary>
     public partial class RegistryAlias
@@ -44,7 +44,7 @@ namespace Amazon.ECRPublic.Model
         /// <summary>
         /// Gets and sets the property DefaultRegistryAlias. 
         /// <para>
-        /// Whether or not the registry alias is the default alias for the registry. When the
+        /// Indicates whether the registry alias is the default alias for the registry. When the
         /// first public repository is created, your public registry is assigned a default registry
         /// alias.
         /// </para>
@@ -84,14 +84,14 @@ namespace Amazon.ECRPublic.Model
         /// <summary>
         /// Gets and sets the property PrimaryRegistryAlias. 
         /// <para>
-        /// Whether or not the registry alias is the primary alias for the registry. If true,
+        /// Indicates whether the registry alias is the primary alias for the registry. If true,
         /// the alias is the primary registry alias and is displayed in both the repository URL
         /// and the image URI used in the <code>docker pull</code> commands on the Amazon ECR
         /// Public Gallery.
         /// </para>
         ///  <note> 
         /// <para>
-        /// A registry alias that is not the primary registry alias can be used in the repository
+        /// A registry alias that isn't the primary registry alias can be used in the repository
         /// URI in a <code>docker pull</code> command.
         /// </para>
         ///  </note>

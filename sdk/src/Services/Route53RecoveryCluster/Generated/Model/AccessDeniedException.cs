@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53RecoveryCluster.Model
 {
     /// <summary>
-    /// You don't have sufficient permissions to query the routing control state.
+    /// You don't have sufficient permissions to perform this action.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -44,7 +44,6 @@ namespace Amazon.Mgn.Model
         /// Request to filter Source Servers list.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public DescribeSourceServersRequestFilters Filters
         {
             get { return this._filters; }
@@ -63,7 +62,7 @@ namespace Amazon.Mgn.Model
         /// Request to filter Source Servers list by maximum results.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
+        [AWSProperty(Min=1, Max=1000)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

@@ -58,7 +58,7 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             string target = "RekognitionService.CreateStreamProcessor";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-06-27";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-06-27";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -67,6 +67,17 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetDataSharingPreference())
+                {
+                    context.Writer.WritePropertyName("DataSharingPreference");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = StreamProcessorDataSharingPreferenceMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.DataSharingPreference, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetInput())
                 {
                     context.Writer.WritePropertyName("Input");
@@ -78,10 +89,27 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetKmsKeyId())
+                {
+                    context.Writer.WritePropertyName("KmsKeyId");
+                    context.Writer.Write(publicRequest.KmsKeyId);
+                }
+
                 if(publicRequest.IsSetName())
                 {
                     context.Writer.WritePropertyName("Name");
                     context.Writer.Write(publicRequest.Name);
+                }
+
+                if(publicRequest.IsSetNotificationChannel())
+                {
+                    context.Writer.WritePropertyName("NotificationChannel");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = StreamProcessorNotificationChannelMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.NotificationChannel, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
                 if(publicRequest.IsSetOutput())
@@ -93,6 +121,22 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                     marshaller.Marshall(publicRequest.Output, context);
 
                     context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetRegionsOfInterest())
+                {
+                    context.Writer.WritePropertyName("RegionsOfInterest");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestRegionsOfInterestListValue in publicRequest.RegionsOfInterest)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = RegionOfInterestMarshaller.Instance;
+                        marshaller.Marshall(publicRequestRegionsOfInterestListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
                 }
 
                 if(publicRequest.IsSetRoleArn())
@@ -126,7 +170,6 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

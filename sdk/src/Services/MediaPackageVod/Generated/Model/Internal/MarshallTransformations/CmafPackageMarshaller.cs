@@ -34,7 +34,7 @@ namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CmafPackage Marshaller
-    /// </summary>       
+    /// </summary>
     public class CmafPackageMarshaller : IRequestMarshaller<CmafPackage, JsonMarshallerContext> 
     {
         /// <summary>
@@ -88,7 +88,7 @@ namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CmafPackageMarshaller Instance = new CmafPackageMarshaller();
 
     }

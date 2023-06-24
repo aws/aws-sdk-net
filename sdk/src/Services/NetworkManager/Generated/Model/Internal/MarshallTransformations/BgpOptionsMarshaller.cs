@@ -34,7 +34,7 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// BgpOptions Marshaller
-    /// </summary>       
+    /// </summary>
     public class BgpOptionsMarshaller : IRequestMarshaller<BgpOptions, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static BgpOptionsMarshaller Instance = new BgpOptionsMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AbsoluteTimeRange Marshaller
-    /// </summary>       
+    /// </summary>
     public class AbsoluteTimeRangeMarshaller : IRequestMarshaller<AbsoluteTimeRange, JsonMarshallerContext> 
     {
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AbsoluteTimeRangeMarshaller Instance = new AbsoluteTimeRangeMarshaller();
 
     }

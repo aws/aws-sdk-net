@@ -37,26 +37,49 @@ namespace Amazon.SageMaker.Model
     /// 
     ///  <note> 
     /// <para>
-    /// You can specify a maximum of 20 hyperparameters that a hyperparameter tuning job can
-    /// search over. Every possible value of a categorical parameter range counts against
-    /// this limit.
+    /// The maximum number of items specified for <code>Array Members</code> refers to the
+    /// maximum number of hyperparameters for each range and also the maximum for the hyperparameter
+    /// tuning job itself. That is, the sum of the number of hyperparameters for all the ranges
+    /// can't exceed the maximum number specified.
     /// </para>
     ///  </note>
     /// </summary>
     public partial class ParameterRanges
     {
+        private List<AutoParameter> _autoParameters = new List<AutoParameter>();
         private List<CategoricalParameterRange> _categoricalParameterRanges = new List<CategoricalParameterRange>();
         private List<ContinuousParameterRange> _continuousParameterRanges = new List<ContinuousParameterRange>();
         private List<IntegerParameterRange> _integerParameterRanges = new List<IntegerParameterRange>();
 
         /// <summary>
-        /// Gets and sets the property CategoricalParameterRanges. 
+        /// Gets and sets the property AutoParameters. 
         /// <para>
-        /// The array of <a>CategoricalParameterRange</a> objects that specify ranges of categorical
-        /// hyperparameters that a hyperparameter tuning job searches.
+        /// A list containing hyperparameter names and example values to be used by Autotune to
+        /// determine optimal ranges for your tuning job.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=20)]
+        [AWSProperty(Min=0, Max=100)]
+        public List<AutoParameter> AutoParameters
+        {
+            get { return this._autoParameters; }
+            set { this._autoParameters = value; }
+        }
+
+        // Check to see if AutoParameters property is set
+        internal bool IsSetAutoParameters()
+        {
+            return this._autoParameters != null && this._autoParameters.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CategoricalParameterRanges. 
+        /// <para>
+        /// The array of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CategoricalParameterRange.html">CategoricalParameterRange</a>
+        /// objects that specify ranges of categorical hyperparameters that a hyperparameter tuning
+        /// job searches.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=30)]
         public List<CategoricalParameterRange> CategoricalParameterRanges
         {
             get { return this._categoricalParameterRanges; }
@@ -72,11 +95,12 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ContinuousParameterRanges. 
         /// <para>
-        /// The array of <a>ContinuousParameterRange</a> objects that specify ranges of continuous
-        /// hyperparameters that a hyperparameter tuning job searches.
+        /// The array of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ContinuousParameterRange.html">ContinuousParameterRange</a>
+        /// objects that specify ranges of continuous hyperparameters that a hyperparameter tuning
+        /// job searches.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=20)]
+        [AWSProperty(Min=0, Max=30)]
         public List<ContinuousParameterRange> ContinuousParameterRanges
         {
             get { return this._continuousParameterRanges; }
@@ -92,11 +116,12 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property IntegerParameterRanges. 
         /// <para>
-        /// The array of <a>IntegerParameterRange</a> objects that specify ranges of integer hyperparameters
-        /// that a hyperparameter tuning job searches.
+        /// The array of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_IntegerParameterRange.html">IntegerParameterRange</a>
+        /// objects that specify ranges of integer hyperparameters that a hyperparameter tuning
+        /// job searches.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=20)]
+        [AWSProperty(Min=0, Max=30)]
         public List<IntegerParameterRange> IntegerParameterRanges
         {
             get { return this._integerParameterRanges; }

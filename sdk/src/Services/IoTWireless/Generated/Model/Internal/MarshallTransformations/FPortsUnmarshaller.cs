@@ -64,6 +64,12 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("Applications", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ApplicationConfig, ApplicationConfigUnmarshaller>(ApplicationConfigUnmarshaller.Instance);
+                    unmarshalledObject.Applications = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ClockSync", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
@@ -80,6 +86,12 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
                     unmarshalledObject.Multicast = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Positioning", targetDepth))
+                {
+                    var unmarshaller = PositioningUnmarshaller.Instance;
+                    unmarshalledObject.Positioning = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

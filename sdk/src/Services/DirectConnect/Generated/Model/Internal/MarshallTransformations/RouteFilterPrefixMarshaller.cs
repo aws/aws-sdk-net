@@ -34,7 +34,7 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RouteFilterPrefix Marshaller
-    /// </summary>       
+    /// </summary>
     public class RouteFilterPrefixMarshaller : IRequestMarshaller<RouteFilterPrefix, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RouteFilterPrefixMarshaller Instance = new RouteFilterPrefixMarshaller();
 
     }

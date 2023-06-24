@@ -76,6 +76,30 @@ namespace Amazon.IoTWireless.Model
         }
 
         /// <summary>
+        /// Paginator for ListNetworkAnalyzerConfigurations operation
+        ///</summary>
+        public IListNetworkAnalyzerConfigurationsPaginator ListNetworkAnalyzerConfigurations(ListNetworkAnalyzerConfigurationsRequest request) 
+        {
+            return new ListNetworkAnalyzerConfigurationsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListPositionConfigurations operation
+        ///</summary>
+        public IListPositionConfigurationsPaginator ListPositionConfigurations(ListPositionConfigurationsRequest request) 
+        {
+            return new ListPositionConfigurationsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListQueuedMessages operation
+        ///</summary>
+        public IListQueuedMessagesPaginator ListQueuedMessages(ListQueuedMessagesRequest request) 
+        {
+            return new ListQueuedMessagesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListServiceProfiles operation
         ///</summary>
         public IListServiceProfilesPaginator ListServiceProfiles(ListServiceProfilesRequest request) 

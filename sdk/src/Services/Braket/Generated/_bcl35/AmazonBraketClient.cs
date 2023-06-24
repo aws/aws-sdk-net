@@ -37,6 +37,17 @@ namespace Amazon.Braket
     ///
     /// The Amazon Braket API Reference provides information about the operations and structures
     /// supported in Amazon Braket.
+    /// 
+    ///  
+    /// <para>
+    /// Additional Resources:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/braket/latest/developerguide/what-is-braket.html">Amazon
+    /// Braket Developer Guide</a> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class AmazonBraketClient : AmazonServiceClient, IAmazonBraket
     {
@@ -230,6 +241,15 @@ namespace Amazon.Braket
             return new AWS4Signer();
         }
 
+        /// <summary>
+        /// Customize the pipeline
+        /// </summary>
+        /// <param name="pipeline"></param>
+        protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
+        {
+            pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonBraketEndpointResolver());
+        }
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>
@@ -554,6 +574,18 @@ namespace Amazon.Braket
 
         /// <summary>
         /// Retrieves the devices available in Amazon Braket.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// For backwards compatibility with older versions of BraketSchemas, OpenQASM information
+        /// is omitted from GetDevice API calls. To get this information the user-agent needs
+        /// to present a recent version of the BraketSchemas (1.8.0 or later). The Braket SDK
+        /// automatically reports this for you. If you do not see OpenQASM results in the GetDevice
+        /// response when using a Braket SDK, you may need to set AWS_EXECUTION_ENV environment
+        /// variable to configure user-agent. See the code examples provided below for how to
+        /// do this for the AWS CLI, Boto3, and the Go, Java, and JavaScript/TypeScript SDKs.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDevice service method.</param>
         /// 

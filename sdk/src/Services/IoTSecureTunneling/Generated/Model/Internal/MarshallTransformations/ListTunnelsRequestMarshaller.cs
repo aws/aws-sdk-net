@@ -58,7 +58,7 @@ namespace Amazon.IoTSecureTunneling.Model.Internal.MarshallTransformations
             string target = "IoTSecuredTunneling.ListTunnels";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-10-05";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-10-05";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -85,7 +85,6 @@ namespace Amazon.IoTSecureTunneling.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ThingName);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

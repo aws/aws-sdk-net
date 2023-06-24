@@ -34,7 +34,7 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// JobScopingBlock Marshaller
-    /// </summary>       
+    /// </summary>
     public class JobScopingBlockMarshaller : IRequestMarshaller<JobScopingBlock, JsonMarshallerContext> 
     {
         /// <summary>
@@ -65,7 +65,7 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static JobScopingBlockMarshaller Instance = new JobScopingBlockMarshaller();
 
     }

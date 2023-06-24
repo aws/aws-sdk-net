@@ -26,6 +26,21 @@ namespace Amazon.IoTSiteWise.Model
     {
 
         /// <summary>
+        /// Paginator for BatchGetAssetPropertyAggregates operation
+        ///</summary>
+        IBatchGetAssetPropertyAggregatesPaginator BatchGetAssetPropertyAggregates(BatchGetAssetPropertyAggregatesRequest request);
+
+        /// <summary>
+        /// Paginator for BatchGetAssetPropertyValue operation
+        ///</summary>
+        IBatchGetAssetPropertyValuePaginator BatchGetAssetPropertyValue(BatchGetAssetPropertyValueRequest request);
+
+        /// <summary>
+        /// Paginator for BatchGetAssetPropertyValueHistory operation
+        ///</summary>
+        IBatchGetAssetPropertyValueHistoryPaginator BatchGetAssetPropertyValueHistory(BatchGetAssetPropertyValueHistoryRequest request);
+
+        /// <summary>
         /// Paginator for GetAssetPropertyAggregates operation
         ///</summary>
         IGetAssetPropertyAggregatesPaginator GetAssetPropertyAggregates(GetAssetPropertyAggregatesRequest request);
@@ -46,9 +61,19 @@ namespace Amazon.IoTSiteWise.Model
         IListAccessPoliciesPaginator ListAccessPolicies(ListAccessPoliciesRequest request);
 
         /// <summary>
+        /// Paginator for ListAssetModelProperties operation
+        ///</summary>
+        IListAssetModelPropertiesPaginator ListAssetModelProperties(ListAssetModelPropertiesRequest request);
+
+        /// <summary>
         /// Paginator for ListAssetModels operation
         ///</summary>
         IListAssetModelsPaginator ListAssetModels(ListAssetModelsRequest request);
+
+        /// <summary>
+        /// Paginator for ListAssetProperties operation
+        ///</summary>
+        IListAssetPropertiesPaginator ListAssetProperties(ListAssetPropertiesRequest request);
 
         /// <summary>
         /// Paginator for ListAssetRelationships operation
@@ -64,6 +89,11 @@ namespace Amazon.IoTSiteWise.Model
         /// Paginator for ListAssociatedAssets operation
         ///</summary>
         IListAssociatedAssetsPaginator ListAssociatedAssets(ListAssociatedAssetsRequest request);
+
+        /// <summary>
+        /// Paginator for ListBulkImportJobs operation
+        ///</summary>
+        IListBulkImportJobsPaginator ListBulkImportJobs(ListBulkImportJobsRequest request);
 
         /// <summary>
         /// Paginator for ListDashboards operation

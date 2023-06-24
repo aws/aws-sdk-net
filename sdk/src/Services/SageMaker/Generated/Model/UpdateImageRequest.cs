@@ -30,8 +30,10 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateImage operation.
-    /// Updates the properties of a SageMaker image. To change the image's tags, use the <a>AddTags</a>
-    /// and <a>DeleteTags</a> APIs.
+    /// Updates the properties of a SageMaker image. To change the image's tags, use the <a
+    /// href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AddTags.html">AddTags</a>
+    /// and <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteTags.html">DeleteTags</a>
+    /// APIs.
     /// </summary>
     public partial class UpdateImageRequest : AmazonSageMakerRequest
     {
@@ -121,8 +123,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The new Amazon Resource Name (ARN) for the IAM role that enables Amazon SageMaker
-        /// to perform tasks on your behalf.
+        /// The new ARN for the IAM role that enables Amazon SageMaker to perform tasks on your
+        /// behalf.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]

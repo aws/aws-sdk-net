@@ -247,6 +247,15 @@ namespace Amazon.CloudWatch
         }    
 
         /// <summary>
+        /// Customize the pipeline
+        /// </summary>
+        /// <param name="pipeline"></param>
+        protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
+        {
+            pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonCloudWatchEndpointResolver());
+        }    
+        /// <summary>
         /// Capture metadata for the service.
         /// </summary>
         protected override IServiceMetadata ServiceMetadata
@@ -283,7 +292,10 @@ namespace Amazon.CloudWatch
         /// 
         ///  
         /// <para>
-        ///  In the event of an error, no alarms are deleted.
+        ///  If you specify an incorrect alarm name or make any other error in the operation,
+        /// no alarms are deleted. To confirm that alarms were deleted successfully, you can use
+        /// the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeAlarms.html">DescribeAlarms</a>
+        /// operation after using <code>DeleteAlarms</code>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -298,7 +310,7 @@ namespace Amazon.CloudWatch
         /// To get out of such a situation, you must break the cycle by changing the rule of one
         /// of the composite alarms in the cycle to remove a dependency that creates the cycle.
         /// The simplest change to make to break a cycle is to change the <code>AlarmRule</code>
-        /// of one of the alarms to <code>False</code>. 
+        /// of one of the alarms to <code>false</code>. 
         /// </para>
         ///  
         /// <para>
@@ -332,7 +344,10 @@ namespace Amazon.CloudWatch
         /// 
         ///  
         /// <para>
-        ///  In the event of an error, no alarms are deleted.
+        ///  If you specify an incorrect alarm name or make any other error in the operation,
+        /// no alarms are deleted. To confirm that alarms were deleted successfully, you can use
+        /// the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeAlarms.html">DescribeAlarms</a>
+        /// operation after using <code>DeleteAlarms</code>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -347,7 +362,7 @@ namespace Amazon.CloudWatch
         /// To get out of such a situation, you must break the cycle by changing the rule of one
         /// of the composite alarms in the cycle to remove a dependency that creates the cycle.
         /// The simplest change to make to break a cycle is to change the <code>AlarmRule</code>
-        /// of one of the alarms to <code>False</code>. 
+        /// of one of the alarms to <code>false</code>. 
         /// </para>
         ///  
         /// <para>
@@ -381,7 +396,9 @@ namespace Amazon.CloudWatch
 
 
         /// <summary>
-        /// Deletes the specified anomaly detection model from your account.
+        /// Deletes the specified anomaly detection model from your account. For more information
+        /// about how to delete an anomaly detection model, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Create_Anomaly_Detection_Alarm.html#Delete_Anomaly_Detection_Model">Deleting
+        /// an anomaly detection model</a> in the <i>CloudWatch User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAnomalyDetector service method.</param>
         /// 
@@ -413,7 +430,9 @@ namespace Amazon.CloudWatch
 
 
         /// <summary>
-        /// Deletes the specified anomaly detection model from your account.
+        /// Deletes the specified anomaly detection model from your account. For more information
+        /// about how to delete an anomaly detection model, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Create_Anomaly_Detection_Alarm.html#Delete_Anomaly_Detection_Model">Deleting
+        /// an anomaly detection model</a> in the <i>CloudWatch User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAnomalyDetector service method.</param>
         /// <param name="cancellationToken">
@@ -1508,15 +1527,29 @@ namespace Amazon.CloudWatch
 
 
         /// <summary>
-        /// You can use the <code>GetMetricData</code> API to retrieve as many as 500 different
-        /// metrics in a single request, with a total of as many as 100,800 data points. You can
-        /// also optionally perform math expressions on the values of the returned statistics,
-        /// to create new time series that represent new insights into your data. For example,
-        /// using Lambda metrics, you could divide the Errors metric by the Invocations metric
-        /// to get an error rate time series. For more information about metric math expressions,
-        /// see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax">Metric
-        /// Math Syntax and Functions</a> in the <i>Amazon CloudWatch User Guide</i>.
+        /// You can use the <code>GetMetricData</code> API to retrieve CloudWatch metric values.
+        /// The operation can also include a CloudWatch Metrics Insights query, and one or more
+        /// metric math functions.
         /// 
+        ///  
+        /// <para>
+        /// A <code>GetMetricData</code> operation that does not include a query can retrieve
+        /// as many as 500 different metrics in a single request, with a total of as many as 100,800
+        /// data points. You can also optionally perform metric math expressions on the values
+        /// of the returned statistics, to create new time series that represent new insights
+        /// into your data. For example, using Lambda metrics, you could divide the Errors metric
+        /// by the Invocations metric to get an error rate time series. For more information about
+        /// metric math expressions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax">Metric
+        /// Math Syntax and Functions</a> in the <i>Amazon CloudWatch User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you include a Metrics Insights query, each <code>GetMetricData</code> operation
+        /// can include only one query. But the same <code>GetMetricData</code> operation can
+        /// also retrieve other metrics. Metrics Insights queries can query only the most recent
+        /// three hours of metric data. For more information about Metrics Insights, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/query_with_cloudwatch-metrics-insights.html">Query
+        /// your metrics with CloudWatch Metrics Insights</a>.
+        /// </para>
         ///  
         /// <para>
         /// Calls to the <code>GetMetricData</code> API have a different pricing structure than
@@ -1563,6 +1596,20 @@ namespace Amazon.CloudWatch
         /// data that was collected with that unit specified. If you specify a unit that does
         /// not match the data collected, the results of the operation are null. CloudWatch does
         /// not perform unit conversions.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Using Metrics Insights queries with metric math</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// You can't mix a Metric Insights query and metric math syntax in the same expression,
+        /// but you can reference results from a Metrics Insights query within other Metric math
+        /// expressions. A Metrics Insights query without a <b>GROUP BY</b> clause returns a single
+        /// time-series (TS), and can be used as input for a metric math expression that expects
+        /// a single time series. A Metrics Insights query with a <b>GROUP BY</b> clause returns
+        /// an array of time-series (TS[]), and can be used as input for a metric math expression
+        /// that expects an array of time series. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMetricData service method.</param>
@@ -1583,15 +1630,29 @@ namespace Amazon.CloudWatch
 
 
         /// <summary>
-        /// You can use the <code>GetMetricData</code> API to retrieve as many as 500 different
-        /// metrics in a single request, with a total of as many as 100,800 data points. You can
-        /// also optionally perform math expressions on the values of the returned statistics,
-        /// to create new time series that represent new insights into your data. For example,
-        /// using Lambda metrics, you could divide the Errors metric by the Invocations metric
-        /// to get an error rate time series. For more information about metric math expressions,
-        /// see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax">Metric
-        /// Math Syntax and Functions</a> in the <i>Amazon CloudWatch User Guide</i>.
+        /// You can use the <code>GetMetricData</code> API to retrieve CloudWatch metric values.
+        /// The operation can also include a CloudWatch Metrics Insights query, and one or more
+        /// metric math functions.
         /// 
+        ///  
+        /// <para>
+        /// A <code>GetMetricData</code> operation that does not include a query can retrieve
+        /// as many as 500 different metrics in a single request, with a total of as many as 100,800
+        /// data points. You can also optionally perform metric math expressions on the values
+        /// of the returned statistics, to create new time series that represent new insights
+        /// into your data. For example, using Lambda metrics, you could divide the Errors metric
+        /// by the Invocations metric to get an error rate time series. For more information about
+        /// metric math expressions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax">Metric
+        /// Math Syntax and Functions</a> in the <i>Amazon CloudWatch User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you include a Metrics Insights query, each <code>GetMetricData</code> operation
+        /// can include only one query. But the same <code>GetMetricData</code> operation can
+        /// also retrieve other metrics. Metrics Insights queries can query only the most recent
+        /// three hours of metric data. For more information about Metrics Insights, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/query_with_cloudwatch-metrics-insights.html">Query
+        /// your metrics with CloudWatch Metrics Insights</a>.
+        /// </para>
         ///  
         /// <para>
         /// Calls to the <code>GetMetricData</code> API have a different pricing structure than
@@ -1638,6 +1699,20 @@ namespace Amazon.CloudWatch
         /// data that was collected with that unit specified. If you specify a unit that does
         /// not match the data collected, the results of the operation are null. CloudWatch does
         /// not perform unit conversions.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Using Metrics Insights queries with metric math</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// You can't mix a Metric Insights query and metric math syntax in the same expression,
+        /// but you can reference results from a Metrics Insights query within other Metric math
+        /// expressions. A Metrics Insights query without a <b>GROUP BY</b> clause returns a single
+        /// time-series (TS), and can be used as input for a metric math expression that expects
+        /// a single time series. A Metrics Insights query with a <b>GROUP BY</b> clause returns
+        /// an array of time-series (TS[]), and can be used as input for a metric math expression
+        /// that expects an array of time series. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMetricData service method.</param>
@@ -2115,13 +2190,74 @@ namespace Amazon.CloudWatch
 
         #endregion
         
+        #region  ListManagedInsightRules
+
+
+        /// <summary>
+        /// Returns a list that contains the number of managed Contributor Insights rules in
+        /// your account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListManagedInsightRules service method.</param>
+        /// 
+        /// <returns>The response from the ListManagedInsightRules service method, as returned by CloudWatch.</returns>
+        /// <exception cref="Amazon.CloudWatch.Model.InvalidNextTokenException">
+        /// The next token specified is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.InvalidParameterValueException">
+        /// The value of an input parameter is bad or out-of-range.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.MissingRequiredParameterException">
+        /// An input parameter that is required is missing.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/ListManagedInsightRules">REST API Reference for ListManagedInsightRules Operation</seealso>
+        public virtual ListManagedInsightRulesResponse ListManagedInsightRules(ListManagedInsightRulesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListManagedInsightRulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListManagedInsightRulesResponseUnmarshaller.Instance;
+
+            return Invoke<ListManagedInsightRulesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns a list that contains the number of managed Contributor Insights rules in
+        /// your account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListManagedInsightRules service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListManagedInsightRules service method, as returned by CloudWatch.</returns>
+        /// <exception cref="Amazon.CloudWatch.Model.InvalidNextTokenException">
+        /// The next token specified is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.InvalidParameterValueException">
+        /// The value of an input parameter is bad or out-of-range.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.MissingRequiredParameterException">
+        /// An input parameter that is required is missing.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/ListManagedInsightRules">REST API Reference for ListManagedInsightRules Operation</seealso>
+        public virtual Task<ListManagedInsightRulesResponse> ListManagedInsightRulesAsync(ListManagedInsightRulesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListManagedInsightRulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListManagedInsightRulesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListManagedInsightRulesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListMetrics
 
 
         /// <summary>
         /// List the specified metrics. You can use the returned metrics with <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html">GetMetricData</a>
         /// or <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html">GetMetricStatistics</a>
-        /// to obtain statistical data.
+        /// to get statistical data.
         /// 
         ///  
         /// <para>
@@ -2130,9 +2266,16 @@ namespace Amazon.CloudWatch
         /// </para>
         ///  
         /// <para>
-        /// After you create a metric, allow up to 15 minutes before the metric appears. You can
-        /// see statistics about the metric sooner by using <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html">GetMetricData</a>
+        /// After you create a metric, allow up to 15 minutes for the metric to appear. To see
+        /// metric statistics sooner, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html">GetMetricData</a>
         /// or <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html">GetMetricStatistics</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you are using CloudWatch cross-account observability, you can use this operation
+        /// in a monitoring account and view metrics from the linked source accounts. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html">CloudWatch
+        /// cross-account observability</a>.
         /// </para>
         ///  
         /// <para>
@@ -2159,7 +2302,7 @@ namespace Amazon.CloudWatch
         /// <summary>
         /// List the specified metrics. You can use the returned metrics with <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html">GetMetricData</a>
         /// or <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html">GetMetricStatistics</a>
-        /// to obtain statistical data.
+        /// to get statistical data.
         /// 
         ///  
         /// <para>
@@ -2168,9 +2311,16 @@ namespace Amazon.CloudWatch
         /// </para>
         ///  
         /// <para>
-        /// After you create a metric, allow up to 15 minutes before the metric appears. You can
-        /// see statistics about the metric sooner by using <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html">GetMetricData</a>
+        /// After you create a metric, allow up to 15 minutes for the metric to appear. To see
+        /// metric statistics sooner, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html">GetMetricData</a>
         /// or <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html">GetMetricStatistics</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you are using CloudWatch cross-account observability, you can use this operation
+        /// in a monitoring account and view metrics from the linked source accounts. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html">CloudWatch
+        /// cross-account observability</a>.
         /// </para>
         ///  
         /// <para>
@@ -2202,7 +2352,7 @@ namespace Amazon.CloudWatch
         /// <summary>
         /// List the specified metrics. You can use the returned metrics with <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html">GetMetricData</a>
         /// or <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html">GetMetricStatistics</a>
-        /// to obtain statistical data.
+        /// to get statistical data.
         /// 
         ///  
         /// <para>
@@ -2211,9 +2361,16 @@ namespace Amazon.CloudWatch
         /// </para>
         ///  
         /// <para>
-        /// After you create a metric, allow up to 15 minutes before the metric appears. You can
-        /// see statistics about the metric sooner by using <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html">GetMetricData</a>
+        /// After you create a metric, allow up to 15 minutes for the metric to appear. To see
+        /// metric statistics sooner, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html">GetMetricData</a>
         /// or <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html">GetMetricStatistics</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you are using CloudWatch cross-account observability, you can use this operation
+        /// in a monitoring account and view metrics from the linked source accounts. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html">CloudWatch
+        /// cross-account observability</a>.
         /// </para>
         ///  
         /// <para>
@@ -2242,7 +2399,7 @@ namespace Amazon.CloudWatch
         /// <summary>
         /// List the specified metrics. You can use the returned metrics with <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html">GetMetricData</a>
         /// or <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html">GetMetricStatistics</a>
-        /// to obtain statistical data.
+        /// to get statistical data.
         /// 
         ///  
         /// <para>
@@ -2251,9 +2408,16 @@ namespace Amazon.CloudWatch
         /// </para>
         ///  
         /// <para>
-        /// After you create a metric, allow up to 15 minutes before the metric appears. You can
-        /// see statistics about the metric sooner by using <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html">GetMetricData</a>
+        /// After you create a metric, allow up to 15 minutes for the metric to appear. To see
+        /// metric statistics sooner, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html">GetMetricData</a>
         /// or <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html">GetMetricStatistics</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you are using CloudWatch cross-account observability, you can use this operation
+        /// in a monitoring account and view metrics from the linked source accounts. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html">CloudWatch
+        /// cross-account observability</a>.
         /// </para>
         ///  
         /// <para>
@@ -2509,7 +2673,9 @@ namespace Amazon.CloudWatch
         ///  
         /// <para>
         /// The alarms specified in a composite alarm's rule expression can include metric alarms
-        /// and other composite alarms.
+        /// and other composite alarms. The rule expression of a composite alarm can include as
+        /// many as 100 underlying alarms. Any single alarm can be included in the rule expressions
+        /// of as many as 150 composite alarms.
         /// </para>
         ///  
         /// <para>
@@ -2536,7 +2702,7 @@ namespace Amazon.CloudWatch
         /// To get out of such a situation, you must break the cycle by changing the rule of one
         /// of the composite alarms in the cycle to remove a dependency that creates the cycle.
         /// The simplest change to make to break a cycle is to change the <code>AlarmRule</code>
-        /// of one of the alarms to <code>False</code>. 
+        /// of one of the alarms to <code>false</code>. 
         /// </para>
         ///  
         /// <para>
@@ -2594,7 +2760,9 @@ namespace Amazon.CloudWatch
         ///  
         /// <para>
         /// The alarms specified in a composite alarm's rule expression can include metric alarms
-        /// and other composite alarms.
+        /// and other composite alarms. The rule expression of a composite alarm can include as
+        /// many as 100 underlying alarms. Any single alarm can be included in the rule expressions
+        /// of as many as 150 composite alarms.
         /// </para>
         ///  
         /// <para>
@@ -2621,7 +2789,7 @@ namespace Amazon.CloudWatch
         /// To get out of such a situation, you must break the cycle by changing the rule of one
         /// of the composite alarms in the cycle to remove a dependency that creates the cycle.
         /// The simplest change to make to break a cycle is to change the <code>AlarmRule</code>
-        /// of one of the alarms to <code>False</code>. 
+        /// of one of the alarms to <code>false</code>. 
         /// </para>
         ///  
         /// <para>
@@ -2852,12 +3020,79 @@ namespace Amazon.CloudWatch
 
         #endregion
         
+        #region  PutManagedInsightRules
+
+
+        /// <summary>
+        /// Creates a managed Contributor Insights rule for a specified Amazon Web Services resource.
+        /// When you enable a managed rule, you create a Contributor Insights rule that collects
+        /// data from Amazon Web Services services. You cannot edit these rules with <code>PutInsightRule</code>.
+        /// The rules can be enabled, disabled, and deleted using <code>EnableInsightRules</code>,
+        /// <code>DisableInsightRules</code>, and <code>DeleteInsightRules</code>. If a previously
+        /// created managed rule is currently disabled, a subsequent call to this API will re-enable
+        /// it. Use <code>ListManagedInsightRules</code> to describe all available rules.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutManagedInsightRules service method.</param>
+        /// 
+        /// <returns>The response from the PutManagedInsightRules service method, as returned by CloudWatch.</returns>
+        /// <exception cref="Amazon.CloudWatch.Model.InvalidParameterValueException">
+        /// The value of an input parameter is bad or out-of-range.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.MissingRequiredParameterException">
+        /// An input parameter that is required is missing.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutManagedInsightRules">REST API Reference for PutManagedInsightRules Operation</seealso>
+        public virtual PutManagedInsightRulesResponse PutManagedInsightRules(PutManagedInsightRulesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutManagedInsightRulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutManagedInsightRulesResponseUnmarshaller.Instance;
+
+            return Invoke<PutManagedInsightRulesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a managed Contributor Insights rule for a specified Amazon Web Services resource.
+        /// When you enable a managed rule, you create a Contributor Insights rule that collects
+        /// data from Amazon Web Services services. You cannot edit these rules with <code>PutInsightRule</code>.
+        /// The rules can be enabled, disabled, and deleted using <code>EnableInsightRules</code>,
+        /// <code>DisableInsightRules</code>, and <code>DeleteInsightRules</code>. If a previously
+        /// created managed rule is currently disabled, a subsequent call to this API will re-enable
+        /// it. Use <code>ListManagedInsightRules</code> to describe all available rules.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutManagedInsightRules service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutManagedInsightRules service method, as returned by CloudWatch.</returns>
+        /// <exception cref="Amazon.CloudWatch.Model.InvalidParameterValueException">
+        /// The value of an input parameter is bad or out-of-range.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.MissingRequiredParameterException">
+        /// An input parameter that is required is missing.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutManagedInsightRules">REST API Reference for PutManagedInsightRules Operation</seealso>
+        public virtual Task<PutManagedInsightRulesResponse> PutManagedInsightRulesAsync(PutManagedInsightRulesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutManagedInsightRulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutManagedInsightRulesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<PutManagedInsightRulesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  PutMetricAlarm
 
 
         /// <summary>
         /// Creates or updates an alarm and associates it with the specified metric, metric math
-        /// expression, or anomaly detection model.
+        /// expression, anomaly detection model, or Metrics Insights query. For more information
+        /// about using a Metrics Insights query for an alarm, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Create_Metrics_Insights_Alarm.html">Create
+        /// alarms on Metrics Insights queries</a>.
         /// 
         ///  
         /// <para>
@@ -2880,12 +3115,12 @@ namespace Amazon.CloudWatch
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The <code>iam:CreateServiceLinkedRole</code> for all alarms with EC2 actions
+        /// The <code>iam:CreateServiceLinkedRole</code> permission for all alarms with EC2 actions
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The <code>iam:CreateServiceLinkedRole</code> to create an alarm with Systems Manager
-        /// OpsItem actions.
+        /// The <code>iam:CreateServiceLinkedRole</code> permissions to create an alarm with Systems
+        /// Manager OpsItem or response plan actions.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -2895,6 +3130,11 @@ namespace Amazon.CloudWatch
         /// and <code>AWSServiceRoleForCloudWatchAlarms_ActionSSM</code>. For more information,
         /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-linked-role">Amazon
         /// Web Services service-linked role</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Each <code>PutMetricAlarm</code> action has a maximum uncompressed payload of 120
+        /// KB.
         /// </para>
         ///  
         /// <para>
@@ -2945,7 +3185,9 @@ namespace Amazon.CloudWatch
 
         /// <summary>
         /// Creates or updates an alarm and associates it with the specified metric, metric math
-        /// expression, or anomaly detection model.
+        /// expression, anomaly detection model, or Metrics Insights query. For more information
+        /// about using a Metrics Insights query for an alarm, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Create_Metrics_Insights_Alarm.html">Create
+        /// alarms on Metrics Insights queries</a>.
         /// 
         ///  
         /// <para>
@@ -2968,12 +3210,12 @@ namespace Amazon.CloudWatch
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The <code>iam:CreateServiceLinkedRole</code> for all alarms with EC2 actions
+        /// The <code>iam:CreateServiceLinkedRole</code> permission for all alarms with EC2 actions
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The <code>iam:CreateServiceLinkedRole</code> to create an alarm with Systems Manager
-        /// OpsItem actions.
+        /// The <code>iam:CreateServiceLinkedRole</code> permissions to create an alarm with Systems
+        /// Manager OpsItem or response plan actions.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -2983,6 +3225,11 @@ namespace Amazon.CloudWatch
         /// and <code>AWSServiceRoleForCloudWatchAlarms_ActionSSM</code>. For more information,
         /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-linked-role">Amazon
         /// Web Services service-linked role</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Each <code>PutMetricAlarm</code> action has a maximum uncompressed payload of 120
+        /// KB.
         /// </para>
         ///  
         /// <para>
@@ -3055,9 +3302,9 @@ namespace Amazon.CloudWatch
         /// </para>
         ///  
         /// <para>
-        /// Each <code>PutMetricData</code> request is limited to 40 KB in size for HTTP POST
-        /// requests. You can send a payload compressed by gzip. Each request is also limited
-        /// to no more than 20 different metrics.
+        /// Each <code>PutMetricData</code> request is limited to 1 MB in size for HTTP POST requests.
+        /// You can send a payload compressed by gzip. Each request is also limited to no more
+        /// than 1000 different metrics.
         /// </para>
         ///  
         /// <para>
@@ -3068,7 +3315,7 @@ namespace Amazon.CloudWatch
         /// </para>
         ///  
         /// <para>
-        /// You can use up to 10 dimensions per metric to further clarify what data the metric
+        /// You can use up to 30 dimensions per metric to further clarify what data the metric
         /// collects. Each dimension consists of a Name and Value pair. For more information about
         /// specifying dimensions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing
         /// Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.
@@ -3149,9 +3396,9 @@ namespace Amazon.CloudWatch
         /// </para>
         ///  
         /// <para>
-        /// Each <code>PutMetricData</code> request is limited to 40 KB in size for HTTP POST
-        /// requests. You can send a payload compressed by gzip. Each request is also limited
-        /// to no more than 20 different metrics.
+        /// Each <code>PutMetricData</code> request is limited to 1 MB in size for HTTP POST requests.
+        /// You can send a payload compressed by gzip. Each request is also limited to no more
+        /// than 1000 different metrics.
         /// </para>
         ///  
         /// <para>
@@ -3162,7 +3409,7 @@ namespace Amazon.CloudWatch
         /// </para>
         ///  
         /// <para>
-        /// You can use up to 10 dimensions per metric to further clarify what data the metric
+        /// You can use up to 30 dimensions per metric to further clarify what data the metric
         /// collects. Each dimension consists of a Name and Value pair. For more information about
         /// specifying dimensions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing
         /// Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.
@@ -3235,7 +3482,7 @@ namespace Amazon.CloudWatch
 
         /// <summary>
         /// Creates or updates a metric stream. Metric streams can automatically stream CloudWatch
-        /// metrics to Amazon Web Services destinations including Amazon S3 and to many third-party
+        /// metrics to Amazon Web Services destinations, including Amazon S3, and to many third-party
         /// solutions.
         /// 
         ///  
@@ -3245,7 +3492,7 @@ namespace Amazon.CloudWatch
         /// </para>
         ///  
         /// <para>
-        /// To create a metric stream, you must be logged on to an account that has the <code>iam:PassRole</code>
+        /// To create a metric stream, you must be signed in to an account that has the <code>iam:PassRole</code>
         /// permission and either the <code>CloudWatchFullAccess</code> policy or the <code>cloudwatch:PutMetricStream</code>
         /// permission.
         /// </para>
@@ -3268,9 +3515,25 @@ namespace Amazon.CloudWatch
         /// </para>
         ///  </li> </ul> 
         /// <para>
+        /// By default, a metric stream always sends the <code>MAX</code>, <code>MIN</code>, <code>SUM</code>,
+        /// and <code>SAMPLECOUNT</code> statistics for each metric that is streamed. You can
+        /// use the <code>StatisticsConfigurations</code> parameter to have the metric stream
+        /// send additional statistics in the stream. Streaming additional statistics incurs additional
+        /// costs. For more information, see <a href="https://aws.amazon.com/cloudwatch/pricing/">Amazon
+        /// CloudWatch Pricing</a>. 
+        /// </para>
+        ///  
+        /// <para>
         /// When you use <code>PutMetricStream</code> to create a new metric stream, the stream
         /// is created in the <code>running</code> state. If you use it to update an existing
         /// stream, the state of the stream is not changed.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you are using CloudWatch cross-account observability and you create a metric stream
+        /// in a monitoring account, you can choose whether to include metrics from source accounts
+        /// in the stream. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html">CloudWatch
+        /// cross-account observability</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutMetricStream service method.</param>
@@ -3304,7 +3567,7 @@ namespace Amazon.CloudWatch
 
         /// <summary>
         /// Creates or updates a metric stream. Metric streams can automatically stream CloudWatch
-        /// metrics to Amazon Web Services destinations including Amazon S3 and to many third-party
+        /// metrics to Amazon Web Services destinations, including Amazon S3, and to many third-party
         /// solutions.
         /// 
         ///  
@@ -3314,7 +3577,7 @@ namespace Amazon.CloudWatch
         /// </para>
         ///  
         /// <para>
-        /// To create a metric stream, you must be logged on to an account that has the <code>iam:PassRole</code>
+        /// To create a metric stream, you must be signed in to an account that has the <code>iam:PassRole</code>
         /// permission and either the <code>CloudWatchFullAccess</code> policy or the <code>cloudwatch:PutMetricStream</code>
         /// permission.
         /// </para>
@@ -3337,9 +3600,25 @@ namespace Amazon.CloudWatch
         /// </para>
         ///  </li> </ul> 
         /// <para>
+        /// By default, a metric stream always sends the <code>MAX</code>, <code>MIN</code>, <code>SUM</code>,
+        /// and <code>SAMPLECOUNT</code> statistics for each metric that is streamed. You can
+        /// use the <code>StatisticsConfigurations</code> parameter to have the metric stream
+        /// send additional statistics in the stream. Streaming additional statistics incurs additional
+        /// costs. For more information, see <a href="https://aws.amazon.com/cloudwatch/pricing/">Amazon
+        /// CloudWatch Pricing</a>. 
+        /// </para>
+        ///  
+        /// <para>
         /// When you use <code>PutMetricStream</code> to create a new metric stream, the stream
         /// is created in the <code>running</code> state. If you use it to update an existing
         /// stream, the state of the stream is not changed.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you are using CloudWatch cross-account observability and you create a metric stream
+        /// in a monitoring account, you can choose whether to include metrics from source accounts
+        /// in the stream. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html">CloudWatch
+        /// cross-account observability</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutMetricStream service method.</param>

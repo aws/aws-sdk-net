@@ -64,6 +64,12 @@ namespace Amazon.Outposts.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AssetInformationList", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<LineItemAssetInformation, LineItemAssetInformationUnmarshaller>(LineItemAssetInformationUnmarshaller.Instance);
+                    unmarshalledObject.AssetInformationList = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CatalogItemId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -76,10 +82,28 @@ namespace Amazon.Outposts.Model.Internal.MarshallTransformations
                     unmarshalledObject.LineItemId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("PreviousLineItemId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PreviousLineItemId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("PreviousOrderId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PreviousOrderId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Quantity", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
                     unmarshalledObject.Quantity = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ShipmentInformation", targetDepth))
+                {
+                    var unmarshaller = ShipmentInformationUnmarshaller.Instance;
+                    unmarshalledObject.ShipmentInformation = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Status", targetDepth))

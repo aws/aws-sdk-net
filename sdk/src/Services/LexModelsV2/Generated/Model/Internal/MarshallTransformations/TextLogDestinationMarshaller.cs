@@ -34,7 +34,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// TextLogDestination Marshaller
-    /// </summary>       
+    /// </summary>
     public class TextLogDestinationMarshaller : IRequestMarshaller<TextLogDestination, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static TextLogDestinationMarshaller Instance = new TextLogDestinationMarshaller();
 
     }

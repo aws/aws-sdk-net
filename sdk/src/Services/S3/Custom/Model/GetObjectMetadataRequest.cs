@@ -120,11 +120,7 @@ namespace Amazon.S3.Model
     /// For more information about conditional requests, see <a href="https://tools.ietf.org/html/rfc7232">RFC
     /// 7232</a>.
     /// </para>
-    ///  
-    /// <para>
-    ///  <b>Permissions</b> 
-    /// </para>
-    ///  
+    ///  <dl> <dt>Permissions</dt> <dd> 
     /// <para>
     /// You need the relevant read object (or version) permission for this operation. For
     /// more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html">Specifying
@@ -141,7 +137,7 @@ namespace Amazon.S3.Model
     /// If you don’t have the <code>s3:ListBucket</code> permission, Amazon S3 returns an
     /// HTTP status code 403 ("access denied") error.
     /// </para>
-    ///  </li> </ul> 
+    ///  </li> </ul> </dd> </dl> 
     /// <para>
     /// The following action is related to <code>HeadObject</code>:
     /// </para>
@@ -155,6 +151,7 @@ namespace Amazon.S3.Model
     public partial class GetObjectMetadataRequest : AmazonWebServiceRequest
     {
         private string bucketName;
+        private ChecksumMode _checksumMode;
         DateTime? modifiedSinceDate;
         DateTime? unmodifiedSinceDate;
         DateTime? modifiedSinceDateUtc;
@@ -187,12 +184,12 @@ namespace Amazon.S3.Model
         /// </para>
         ///  
         /// <para>
-        /// When using this action with Amazon S3 on Outposts, you must direct requests to the
-        /// S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
-        /// When using this action using S3 on Outposts through the Amazon Web Services SDKs,
-        /// you provide the Outposts bucket ARN in place of the bucket name. For more information
-        /// about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
-        /// S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.
+        /// When you use this action with Amazon S3 on Outposts, you must direct requests to the
+        /// S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
+        /// When you use this action with S3 on Outposts through the Amazon Web Services SDKs,
+        /// you provide the Outposts access point ARN in place of the bucket name. For more information
+        /// about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
+        /// is S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         /// </summary>
         public string BucketName
@@ -205,6 +202,30 @@ namespace Amazon.S3.Model
         internal bool IsSetBucketName()
         {
             return this.bucketName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ChecksumMode. 
+        /// <para>
+        /// This must be enabled to retrieve the checksum.
+        /// </para>
+        ///  
+        /// <para>
+        /// In addition, if you enable <code>ChecksumMode</code> and the object is KMS encrypted,
+        /// you must have permission to the <code>kms:Decrypt</code> action for the request to
+        /// succeed.
+        /// </para>
+        /// </summary>
+        public ChecksumMode ChecksumMode
+        {
+            get { return this._checksumMode; }
+            set { this._checksumMode = value; }
+        }
+
+        // Check to see if ChecksumMode property is set
+        internal bool IsSetChecksumMode()
+        {
+            return this._checksumMode != null;
         }
 
         /// <summary>
@@ -401,6 +422,7 @@ namespace Amazon.S3.Model
         /// Important: Amazon S3 does not store the encryption key you provide.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string ServerSideEncryptionCustomerProvidedKey
         {
             get { return this.serverSideEncryptionCustomerProvidedKey; }

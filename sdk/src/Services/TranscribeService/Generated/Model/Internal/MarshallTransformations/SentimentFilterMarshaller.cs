@@ -34,7 +34,7 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SentimentFilter Marshaller
-    /// </summary>       
+    /// </summary>
     public class SentimentFilterMarshaller : IRequestMarshaller<SentimentFilter, JsonMarshallerContext> 
     {
         /// <summary>
@@ -94,7 +94,7 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SentimentFilterMarshaller Instance = new SentimentFilterMarshaller();
 
     }

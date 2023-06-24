@@ -40,7 +40,7 @@ namespace Amazon.Budgets.Model
         /// <summary>
         /// Gets and sets the property Notification. 
         /// <para>
-        /// The notification that is associated with a budget.
+        /// The notification that's associated with a budget.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

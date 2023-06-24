@@ -34,7 +34,7 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// GreenFleetProvisioningOption Marshaller
-    /// </summary>       
+    /// </summary>
     public class GreenFleetProvisioningOptionMarshaller : IRequestMarshaller<GreenFleetProvisioningOption, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static GreenFleetProvisioningOptionMarshaller Instance = new GreenFleetProvisioningOptionMarshaller();
 
     }

@@ -33,9 +33,29 @@ namespace Amazon.LocationService.Model
     /// </summary>
     public partial class DevicePositionUpdate
     {
+        private PositionalAccuracy _accuracy;
         private string _deviceId;
         private List<double> _position = new List<double>();
+        private Dictionary<string, string> _positionProperties = new Dictionary<string, string>();
         private DateTime? _sampleTime;
+
+        /// <summary>
+        /// Gets and sets the property Accuracy. 
+        /// <para>
+        /// The accuracy of the device position.
+        /// </para>
+        /// </summary>
+        public PositionalAccuracy Accuracy
+        {
+            get { return this._accuracy; }
+            set { this._accuracy = value; }
+        }
+
+        // Check to see if Accuracy property is set
+        internal bool IsSetAccuracy()
+        {
+            return this._accuracy != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DeviceId. 
@@ -59,11 +79,11 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property Position. 
         /// <para>
-        /// The latest device position defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS
+        /// The latest device position defined in <a href="https://earth-info.nga.mil/index.php?dir=wgs84&amp;action=wgs84">WGS
         /// 84</a> format: <code>[X or longitude, Y or latitude]</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=2, Max=2)]
+        [AWSProperty(Required=true, Sensitive=true, Min=2, Max=2)]
         public List<double> Position
         {
             get { return this._position; }
@@ -74,6 +94,31 @@ namespace Amazon.LocationService.Model
         internal bool IsSetPosition()
         {
             return this._position != null && this._position.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PositionProperties. 
+        /// <para>
+        /// Associates one of more properties with the position update. A property is a key-value
+        /// pair stored with the position update and added to any geofence event the update may
+        /// trigger.
+        /// </para>
+        ///  
+        /// <para>
+        /// Format: <code>"key" : "value"</code> 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Min=0, Max=3)]
+        public Dictionary<string, string> PositionProperties
+        {
+            get { return this._positionProperties; }
+            set { this._positionProperties = value; }
+        }
+
+        // Check to see if PositionProperties property is set
+        internal bool IsSetPositionProperties()
+        {
+            return this._positionProperties != null && this._positionProperties.Count > 0; 
         }
 
         /// <summary>

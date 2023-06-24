@@ -13,6 +13,24 @@
     "uid":"voice-id-2021-09-27"
   },
   "operations":{
+    "AssociateFraudster":{
+      "name":"AssociateFraudster",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"AssociateFraudsterRequest"},
+      "output":{"shape":"AssociateFraudsterResponse"},
+      "errors":[
+        {"shape":"ServiceQuotaExceededException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ValidationException"},
+        {"shape":"ConflictException"},
+        {"shape":"InternalServerException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"AccessDeniedException"}
+      ]
+    },
     "CreateDomain":{
       "name":"CreateDomain",
       "http":{
@@ -21,6 +39,25 @@
       },
       "input":{"shape":"CreateDomainRequest"},
       "output":{"shape":"CreateDomainResponse"},
+      "errors":[
+        {"shape":"ServiceQuotaExceededException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ValidationException"},
+        {"shape":"ConflictException"},
+        {"shape":"InternalServerException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"AccessDeniedException"}
+      ],
+      "idempotent":true
+    },
+    "CreateWatchlist":{
+      "name":"CreateWatchlist",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"CreateWatchlistRequest"},
+      "output":{"shape":"CreateWatchlistResponse"},
       "errors":[
         {"shape":"ServiceQuotaExceededException"},
         {"shape":"ResourceNotFoundException"},
@@ -46,7 +83,8 @@
         {"shape":"InternalServerException"},
         {"shape":"ThrottlingException"},
         {"shape":"AccessDeniedException"}
-      ]
+      ],
+      "idempotent":true
     },
     "DeleteFraudster":{
       "name":"DeleteFraudster",
@@ -58,6 +96,7 @@
       "errors":[
         {"shape":"ResourceNotFoundException"},
         {"shape":"ValidationException"},
+        {"shape":"ConflictException"},
         {"shape":"InternalServerException"},
         {"shape":"ThrottlingException"},
         {"shape":"AccessDeniedException"}
@@ -70,6 +109,22 @@
         "requestUri":"/"
       },
       "input":{"shape":"DeleteSpeakerRequest"},
+      "errors":[
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ValidationException"},
+        {"shape":"ConflictException"},
+        {"shape":"InternalServerException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"AccessDeniedException"}
+      ]
+    },
+    "DeleteWatchlist":{
+      "name":"DeleteWatchlist",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DeleteWatchlistRequest"},
       "errors":[
         {"shape":"ResourceNotFoundException"},
         {"shape":"ValidationException"},
@@ -159,6 +214,39 @@
         {"shape":"AccessDeniedException"}
       ]
     },
+    "DescribeWatchlist":{
+      "name":"DescribeWatchlist",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DescribeWatchlistRequest"},
+      "output":{"shape":"DescribeWatchlistResponse"},
+      "errors":[
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ValidationException"},
+        {"shape":"InternalServerException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"AccessDeniedException"}
+      ]
+    },
+    "DisassociateFraudster":{
+      "name":"DisassociateFraudster",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DisassociateFraudsterRequest"},
+      "output":{"shape":"DisassociateFraudsterResponse"},
+      "errors":[
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ValidationException"},
+        {"shape":"ConflictException"},
+        {"shape":"InternalServerException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"AccessDeniedException"}
+      ]
+    },
     "EvaluateSession":{
       "name":"EvaluateSession",
       "http":{
@@ -170,6 +258,7 @@
       "errors":[
         {"shape":"ResourceNotFoundException"},
         {"shape":"ValidationException"},
+        {"shape":"ConflictException"},
         {"shape":"InternalServerException"},
         {"shape":"ThrottlingException"},
         {"shape":"AccessDeniedException"}
@@ -198,6 +287,22 @@
       },
       "input":{"shape":"ListFraudsterRegistrationJobsRequest"},
       "output":{"shape":"ListFraudsterRegistrationJobsResponse"},
+      "errors":[
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ValidationException"},
+        {"shape":"InternalServerException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"AccessDeniedException"}
+      ]
+    },
+    "ListFraudsters":{
+      "name":"ListFraudsters",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"ListFraudstersRequest"},
+      "output":{"shape":"ListFraudstersResponse"},
       "errors":[
         {"shape":"ResourceNotFoundException"},
         {"shape":"ValidationException"},
@@ -254,6 +359,22 @@
         {"shape":"AccessDeniedException"}
       ]
     },
+    "ListWatchlists":{
+      "name":"ListWatchlists",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"ListWatchlistsRequest"},
+      "output":{"shape":"ListWatchlistsResponse"},
+      "errors":[
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ValidationException"},
+        {"shape":"InternalServerException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"AccessDeniedException"}
+      ]
+    },
     "OptOutSpeaker":{
       "name":"OptOutSpeaker",
       "http":{
@@ -263,6 +384,7 @@
       "input":{"shape":"OptOutSpeakerRequest"},
       "output":{"shape":"OptOutSpeakerResponse"},
       "errors":[
+        {"shape":"ServiceQuotaExceededException"},
         {"shape":"ResourceNotFoundException"},
         {"shape":"ValidationException"},
         {"shape":"ConflictException"},
@@ -359,6 +481,23 @@
         {"shape":"ThrottlingException"},
         {"shape":"AccessDeniedException"}
       ]
+    },
+    "UpdateWatchlist":{
+      "name":"UpdateWatchlist",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"UpdateWatchlistRequest"},
+      "output":{"shape":"UpdateWatchlistResponse"},
+      "errors":[
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ValidationException"},
+        {"shape":"ConflictException"},
+        {"shape":"InternalServerException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"AccessDeniedException"}
+      ]
     }
   },
   "shapes":{
@@ -379,6 +518,25 @@
       "type":"string",
       "pattern":"^arn:aws(-[^:]+)?:voiceid.+:[0-9]{12}:domain/[a-zA-Z0-9]{22}$"
     },
+    "AssociateFraudsterRequest":{
+      "type":"structure",
+      "required":[
+        "DomainId",
+        "FraudsterId",
+        "WatchlistId"
+      ],
+      "members":{
+        "DomainId":{"shape":"DomainId"},
+        "FraudsterId":{"shape":"FraudsterId"},
+        "WatchlistId":{"shape":"WatchlistId"}
+      }
+    },
+    "AssociateFraudsterResponse":{
+      "type":"structure",
+      "members":{
+        "Fraudster":{"shape":"Fraudster"}
+      }
+    },
     "AuthenticationConfiguration":{
       "type":"structure",
       "required":["AcceptanceThreshold"],
@@ -394,7 +552,8 @@
         "NOT_ENOUGH_SPEECH",
         "SPEAKER_NOT_ENROLLED",
         "SPEAKER_OPTED_OUT",
-        "SPEAKER_ID_NOT_PROVIDED"
+        "SPEAKER_ID_NOT_PROVIDED",
+        "SPEAKER_EXPIRED"
       ]
     },
     "AuthenticationResult":{
@@ -410,6 +569,7 @@
         "Score":{"shape":"Score"}
       }
     },
+    "Boolean":{"type":"boolean"},
     "ClientTokenString":{
       "type":"string",
       "max":64,
@@ -433,7 +593,10 @@
         "ENROLLMENT_ALREADY_EXISTS",
         "SPEAKER_NOT_SET",
         "SPEAKER_OPTED_OUT",
-        "CONCURRENT_CHANGES"
+        "CONCURRENT_CHANGES",
+        "DOMAIN_LOCKED_FROM_ENCRYPTION_UPDATES",
+        "CANNOT_DELETE_NON_EMPTY_WATCHLIST",
+        "FRAUDSTER_MUST_BELONG_TO_AT_LEAST_ONE_WATCHLIST"
       ]
     },
     "CreateDomainRequest":{
@@ -457,6 +620,28 @@
       "type":"structure",
       "members":{
         "Domain":{"shape":"Domain"}
+      }
+    },
+    "CreateWatchlistRequest":{
+      "type":"structure",
+      "required":[
+        "DomainId",
+        "Name"
+      ],
+      "members":{
+        "ClientToken":{
+          "shape":"ClientTokenString",
+          "idempotencyToken":true
+        },
+        "Description":{"shape":"WatchlistDescription"},
+        "DomainId":{"shape":"DomainId"},
+        "Name":{"shape":"WatchlistName"}
+      }
+    },
+    "CreateWatchlistResponse":{
+      "type":"structure",
+      "members":{
+        "Watchlist":{"shape":"Watchlist"}
       }
     },
     "CustomerSpeakerId":{
@@ -493,6 +678,17 @@
       "members":{
         "DomainId":{"shape":"DomainId"},
         "SpeakerId":{"shape":"SpeakerId"}
+      }
+    },
+    "DeleteWatchlistRequest":{
+      "type":"structure",
+      "required":[
+        "DomainId",
+        "WatchlistId"
+      ],
+      "members":{
+        "DomainId":{"shape":"DomainId"},
+        "WatchlistId":{"shape":"WatchlistId"}
       }
     },
     "DescribeDomainRequest":{
@@ -576,12 +772,48 @@
         "Speaker":{"shape":"Speaker"}
       }
     },
+    "DescribeWatchlistRequest":{
+      "type":"structure",
+      "required":[
+        "DomainId",
+        "WatchlistId"
+      ],
+      "members":{
+        "DomainId":{"shape":"DomainId"},
+        "WatchlistId":{"shape":"WatchlistId"}
+      }
+    },
+    "DescribeWatchlistResponse":{
+      "type":"structure",
+      "members":{
+        "Watchlist":{"shape":"Watchlist"}
+      }
+    },
     "Description":{
       "type":"string",
       "max":1024,
       "min":1,
       "pattern":"^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-%@]*)$",
       "sensitive":true
+    },
+    "DisassociateFraudsterRequest":{
+      "type":"structure",
+      "required":[
+        "DomainId",
+        "FraudsterId",
+        "WatchlistId"
+      ],
+      "members":{
+        "DomainId":{"shape":"DomainId"},
+        "FraudsterId":{"shape":"FraudsterId"},
+        "WatchlistId":{"shape":"WatchlistId"}
+      }
+    },
+    "DisassociateFraudsterResponse":{
+      "type":"structure",
+      "members":{
+        "Fraudster":{"shape":"Fraudster"}
+      }
     },
     "Domain":{
       "type":"structure",
@@ -593,7 +825,9 @@
         "DomainStatus":{"shape":"DomainStatus"},
         "Name":{"shape":"DomainName"},
         "ServerSideEncryptionConfiguration":{"shape":"ServerSideEncryptionConfiguration"},
-        "UpdatedAt":{"shape":"Timestamp"}
+        "ServerSideEncryptionUpdateDetails":{"shape":"ServerSideEncryptionUpdateDetails"},
+        "UpdatedAt":{"shape":"Timestamp"},
+        "WatchlistDetails":{"shape":"WatchlistDetails"}
       }
     },
     "DomainId":{
@@ -631,7 +865,9 @@
         "DomainStatus":{"shape":"DomainStatus"},
         "Name":{"shape":"DomainName"},
         "ServerSideEncryptionConfiguration":{"shape":"ServerSideEncryptionConfiguration"},
-        "UpdatedAt":{"shape":"Timestamp"}
+        "ServerSideEncryptionUpdateDetails":{"shape":"ServerSideEncryptionUpdateDetails"},
+        "UpdatedAt":{"shape":"Timestamp"},
+        "WatchlistDetails":{"shape":"WatchlistDetails"}
       }
     },
     "DuplicateRegistrationAction":{
@@ -652,8 +888,15 @@
       "type":"structure",
       "members":{
         "FraudDetectionAction":{"shape":"FraudDetectionAction"},
-        "RiskThreshold":{"shape":"Score"}
+        "RiskThreshold":{"shape":"Score"},
+        "WatchlistIds":{"shape":"EnrollmentJobFraudDetectionConfigWatchlistIds"}
       }
+    },
+    "EnrollmentJobFraudDetectionConfigWatchlistIds":{
+      "type":"list",
+      "member":{"shape":"WatchlistId"},
+      "max":1,
+      "min":1
     },
     "EvaluateSessionRequest":{
       "type":"structure",
@@ -700,9 +943,9 @@
     },
     "FraudDetectionConfiguration":{
       "type":"structure",
-      "required":["RiskThreshold"],
       "members":{
-        "RiskThreshold":{"shape":"Score"}
+        "RiskThreshold":{"shape":"Score"},
+        "WatchlistId":{"shape":"WatchlistId"}
       }
     },
     "FraudDetectionDecision":{
@@ -715,7 +958,10 @@
     },
     "FraudDetectionReason":{
       "type":"string",
-      "enum":["KNOWN_FRAUDSTER"]
+      "enum":[
+        "KNOWN_FRAUDSTER",
+        "VOICE_SPOOFING"
+      ]
     },
     "FraudDetectionReasons":{
       "type":"list",
@@ -737,9 +983,13 @@
     },
     "FraudRiskDetails":{
       "type":"structure",
-      "required":["KnownFraudsterRisk"],
+      "required":[
+        "KnownFraudsterRisk",
+        "VoiceSpoofingRisk"
+      ],
       "members":{
-        "KnownFraudsterRisk":{"shape":"KnownFraudsterRisk"}
+        "KnownFraudsterRisk":{"shape":"KnownFraudsterRisk"},
+        "VoiceSpoofingRisk":{"shape":"VoiceSpoofingRisk"}
       }
     },
     "Fraudster":{
@@ -747,7 +997,8 @@
       "members":{
         "CreatedAt":{"shape":"Timestamp"},
         "DomainId":{"shape":"DomainId"},
-        "GeneratedFraudsterId":{"shape":"GeneratedFraudsterId"}
+        "GeneratedFraudsterId":{"shape":"GeneratedFraudsterId"},
+        "WatchlistIds":{"shape":"ResponseWatchlistIds"}
       }
     },
     "FraudsterId":{
@@ -799,6 +1050,19 @@
         "JobName":{"shape":"JobName"},
         "JobProgress":{"shape":"JobProgress"},
         "JobStatus":{"shape":"FraudsterRegistrationJobStatus"}
+      }
+    },
+    "FraudsterSummaries":{
+      "type":"list",
+      "member":{"shape":"FraudsterSummary"}
+    },
+    "FraudsterSummary":{
+      "type":"structure",
+      "members":{
+        "CreatedAt":{"shape":"Timestamp"},
+        "DomainId":{"shape":"DomainId"},
+        "GeneratedFraudsterId":{"shape":"GeneratedFraudsterId"},
+        "WatchlistIds":{"shape":"ResponseWatchlistIds"}
       }
     },
     "GeneratedFraudsterId":{
@@ -901,6 +1165,23 @@
         "NextToken":{"shape":"String"}
       }
     },
+    "ListFraudstersRequest":{
+      "type":"structure",
+      "required":["DomainId"],
+      "members":{
+        "DomainId":{"shape":"DomainId"},
+        "MaxResults":{"shape":"MaxResultsForList"},
+        "NextToken":{"shape":"NextToken"},
+        "WatchlistId":{"shape":"WatchlistId"}
+      }
+    },
+    "ListFraudstersResponse":{
+      "type":"structure",
+      "members":{
+        "FraudsterSummaries":{"shape":"FraudsterSummaries"},
+        "NextToken":{"shape":"String"}
+      }
+    },
     "ListSpeakerEnrollmentJobsRequest":{
       "type":"structure",
       "required":["DomainId"],
@@ -945,6 +1226,22 @@
       "type":"structure",
       "members":{
         "Tags":{"shape":"TagList"}
+      }
+    },
+    "ListWatchlistsRequest":{
+      "type":"structure",
+      "required":["DomainId"],
+      "members":{
+        "DomainId":{"shape":"DomainId"},
+        "MaxResults":{"shape":"MaxResultsForList"},
+        "NextToken":{"shape":"NextToken"}
+      }
+    },
+    "ListWatchlistsResponse":{
+      "type":"structure",
+      "members":{
+        "NextToken":{"shape":"String"},
+        "WatchlistSummaries":{"shape":"WatchlistSummaries"}
       }
     },
     "MaxResultsForList":{
@@ -994,8 +1291,15 @@
       "type":"structure",
       "members":{
         "DuplicateRegistrationAction":{"shape":"DuplicateRegistrationAction"},
-        "FraudsterSimilarityThreshold":{"shape":"Score"}
+        "FraudsterSimilarityThreshold":{"shape":"Score"},
+        "WatchlistIds":{"shape":"RegistrationConfigWatchlistIds"}
       }
+    },
+    "RegistrationConfigWatchlistIds":{
+      "type":"list",
+      "member":{"shape":"WatchlistId"},
+      "max":1,
+      "min":1
     },
     "ResourceNotFoundException":{
       "type":"structure",
@@ -1013,8 +1317,13 @@
         "DOMAIN",
         "FRAUDSTER",
         "SESSION",
-        "SPEAKER"
+        "SPEAKER",
+        "WATCHLIST"
       ]
+    },
+    "ResponseWatchlistIds":{
+      "type":"list",
+      "member":{"shape":"WatchlistId"}
     },
     "S3Uri":{
       "type":"string",
@@ -1034,6 +1343,22 @@
       "members":{
         "KmsKeyId":{"shape":"KmsKeyId"}
       }
+    },
+    "ServerSideEncryptionUpdateDetails":{
+      "type":"structure",
+      "members":{
+        "Message":{"shape":"String"},
+        "OldKmsKeyId":{"shape":"KmsKeyId"},
+        "UpdateStatus":{"shape":"ServerSideEncryptionUpdateStatus"}
+      }
+    },
+    "ServerSideEncryptionUpdateStatus":{
+      "type":"string",
+      "enum":[
+        "IN_PROGRESS",
+        "COMPLETED",
+        "FAILED"
+      ]
     },
     "ServiceQuotaExceededException":{
       "type":"structure",
@@ -1067,6 +1392,7 @@
         "CustomerSpeakerId":{"shape":"CustomerSpeakerId"},
         "DomainId":{"shape":"DomainId"},
         "GeneratedSpeakerId":{"shape":"GeneratedSpeakerId"},
+        "LastAccessedAt":{"shape":"Timestamp"},
         "Status":{"shape":"SpeakerStatus"},
         "UpdatedAt":{"shape":"Timestamp"}
       }
@@ -1142,6 +1468,7 @@
         "CustomerSpeakerId":{"shape":"CustomerSpeakerId"},
         "DomainId":{"shape":"DomainId"},
         "GeneratedSpeakerId":{"shape":"GeneratedSpeakerId"},
+        "LastAccessedAt":{"shape":"Timestamp"},
         "Status":{"shape":"SpeakerStatus"},
         "UpdatedAt":{"shape":"Timestamp"}
       }
@@ -1315,12 +1642,93 @@
         "Domain":{"shape":"Domain"}
       }
     },
+    "UpdateWatchlistRequest":{
+      "type":"structure",
+      "required":[
+        "DomainId",
+        "WatchlistId"
+      ],
+      "members":{
+        "Description":{"shape":"WatchlistDescription"},
+        "DomainId":{"shape":"DomainId"},
+        "Name":{"shape":"WatchlistName"},
+        "WatchlistId":{"shape":"WatchlistId"}
+      }
+    },
+    "UpdateWatchlistResponse":{
+      "type":"structure",
+      "members":{
+        "Watchlist":{"shape":"Watchlist"}
+      }
+    },
     "ValidationException":{
       "type":"structure",
       "members":{
         "Message":{"shape":"String"}
       },
       "exception":true
+    },
+    "VoiceSpoofingRisk":{
+      "type":"structure",
+      "required":["RiskScore"],
+      "members":{
+        "RiskScore":{"shape":"Score"}
+      }
+    },
+    "Watchlist":{
+      "type":"structure",
+      "members":{
+        "CreatedAt":{"shape":"Timestamp"},
+        "DefaultWatchlist":{"shape":"Boolean"},
+        "Description":{"shape":"WatchlistDescription"},
+        "DomainId":{"shape":"DomainId"},
+        "Name":{"shape":"WatchlistName"},
+        "UpdatedAt":{"shape":"Timestamp"},
+        "WatchlistId":{"shape":"WatchlistId"}
+      }
+    },
+    "WatchlistDescription":{
+      "type":"string",
+      "max":1024,
+      "min":1,
+      "pattern":"^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-%@]*)$",
+      "sensitive":true
+    },
+    "WatchlistDetails":{
+      "type":"structure",
+      "required":["DefaultWatchlistId"],
+      "members":{
+        "DefaultWatchlistId":{"shape":"WatchlistId"}
+      }
+    },
+    "WatchlistId":{
+      "type":"string",
+      "max":22,
+      "min":22,
+      "pattern":"^[a-zA-Z0-9]{22}$"
+    },
+    "WatchlistName":{
+      "type":"string",
+      "max":256,
+      "min":1,
+      "pattern":"^[a-zA-Z0-9][a-zA-Z0-9_-]*$",
+      "sensitive":true
+    },
+    "WatchlistSummaries":{
+      "type":"list",
+      "member":{"shape":"WatchlistSummary"}
+    },
+    "WatchlistSummary":{
+      "type":"structure",
+      "members":{
+        "CreatedAt":{"shape":"Timestamp"},
+        "DefaultWatchlist":{"shape":"Boolean"},
+        "Description":{"shape":"WatchlistDescription"},
+        "DomainId":{"shape":"DomainId"},
+        "Name":{"shape":"WatchlistName"},
+        "UpdatedAt":{"shape":"Timestamp"},
+        "WatchlistId":{"shape":"WatchlistId"}
+      }
     }
   }
 }

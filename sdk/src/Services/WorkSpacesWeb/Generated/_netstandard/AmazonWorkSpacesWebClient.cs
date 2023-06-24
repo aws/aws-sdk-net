@@ -238,6 +238,15 @@ namespace Amazon.WorkSpacesWeb
         } 
 
         /// <summary>
+        /// Customizes the runtime pipeline.
+        /// </summary>
+        /// <param name="pipeline">Runtime pipeline for the current client.</param>
+        protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
+        {
+            pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonWorkSpacesWebEndpointResolver());
+        }
+        /// <summary>
         /// Capture metadata for the service.
         /// </summary>
         protected override IServiceMetadata ServiceMetadata
@@ -311,6 +320,58 @@ namespace Amazon.WorkSpacesWeb
             options.ResponseUnmarshaller = AssociateBrowserSettingsResponseUnmarshaller.Instance;
 
             return InvokeAsync<AssociateBrowserSettingsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  AssociateIpAccessSettings
+
+        internal virtual AssociateIpAccessSettingsResponse AssociateIpAccessSettings(AssociateIpAccessSettingsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateIpAccessSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateIpAccessSettingsResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateIpAccessSettingsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Associates an IP access settings resource with a web portal.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateIpAccessSettings service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociateIpAccessSettings service method, as returned by WorkSpacesWeb.</returns>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ConflictException">
+        /// There is a conflict.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.InternalServerException">
+        /// There is an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ResourceNotFoundException">
+        /// The resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ThrottlingException">
+        /// There is a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ValidationException">
+        /// There is a validation error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/AssociateIpAccessSettings">REST API Reference for AssociateIpAccessSettings Operation</seealso>
+        public virtual Task<AssociateIpAccessSettingsResponse> AssociateIpAccessSettingsAsync(AssociateIpAccessSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateIpAccessSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateIpAccessSettingsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AssociateIpAccessSettingsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -412,6 +473,58 @@ namespace Amazon.WorkSpacesWeb
             options.ResponseUnmarshaller = AssociateTrustStoreResponseUnmarshaller.Instance;
 
             return InvokeAsync<AssociateTrustStoreResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  AssociateUserAccessLoggingSettings
+
+        internal virtual AssociateUserAccessLoggingSettingsResponse AssociateUserAccessLoggingSettings(AssociateUserAccessLoggingSettingsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateUserAccessLoggingSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateUserAccessLoggingSettingsResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateUserAccessLoggingSettingsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Associates a user access logging settings resource with a web portal.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateUserAccessLoggingSettings service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociateUserAccessLoggingSettings service method, as returned by WorkSpacesWeb.</returns>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ConflictException">
+        /// There is a conflict.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.InternalServerException">
+        /// There is an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ResourceNotFoundException">
+        /// The resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ThrottlingException">
+        /// There is a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ValidationException">
+        /// There is a validation error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/AssociateUserAccessLoggingSettings">REST API Reference for AssociateUserAccessLoggingSettings Operation</seealso>
+        public virtual Task<AssociateUserAccessLoggingSettingsResponse> AssociateUserAccessLoggingSettingsAsync(AssociateUserAccessLoggingSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateUserAccessLoggingSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateUserAccessLoggingSettingsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AssociateUserAccessLoggingSettingsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -559,6 +672,9 @@ namespace Amazon.WorkSpacesWeb
         /// <exception cref="Amazon.WorkSpacesWeb.Model.ResourceNotFoundException">
         /// The resource cannot be found.
         /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
         /// <exception cref="Amazon.WorkSpacesWeb.Model.ThrottlingException">
         /// There is a throttling error.
         /// </exception>
@@ -573,6 +689,58 @@ namespace Amazon.WorkSpacesWeb
             options.ResponseUnmarshaller = CreateIdentityProviderResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateIdentityProviderResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateIpAccessSettings
+
+        internal virtual CreateIpAccessSettingsResponse CreateIpAccessSettings(CreateIpAccessSettingsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateIpAccessSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateIpAccessSettingsResponseUnmarshaller.Instance;
+
+            return Invoke<CreateIpAccessSettingsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates an IP access settings resource that can be associated with a web portal.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateIpAccessSettings service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateIpAccessSettings service method, as returned by WorkSpacesWeb.</returns>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ConflictException">
+        /// There is a conflict.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.InternalServerException">
+        /// There is an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ThrottlingException">
+        /// There is a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ValidationException">
+        /// There is a validation error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/CreateIpAccessSettings">REST API Reference for CreateIpAccessSettings Operation</seealso>
+        public virtual Task<CreateIpAccessSettingsResponse> CreateIpAccessSettingsAsync(CreateIpAccessSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateIpAccessSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateIpAccessSettingsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateIpAccessSettingsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -743,6 +911,59 @@ namespace Amazon.WorkSpacesWeb
 
         #endregion
         
+        #region  CreateUserAccessLoggingSettings
+
+        internal virtual CreateUserAccessLoggingSettingsResponse CreateUserAccessLoggingSettings(CreateUserAccessLoggingSettingsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateUserAccessLoggingSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateUserAccessLoggingSettingsResponseUnmarshaller.Instance;
+
+            return Invoke<CreateUserAccessLoggingSettingsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a user access logging settings resource that can be associated with a web
+        /// portal.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateUserAccessLoggingSettings service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateUserAccessLoggingSettings service method, as returned by WorkSpacesWeb.</returns>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ConflictException">
+        /// There is a conflict.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.InternalServerException">
+        /// There is an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ThrottlingException">
+        /// There is a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ValidationException">
+        /// There is a validation error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/CreateUserAccessLoggingSettings">REST API Reference for CreateUserAccessLoggingSettings Operation</seealso>
+        public virtual Task<CreateUserAccessLoggingSettingsResponse> CreateUserAccessLoggingSettingsAsync(CreateUserAccessLoggingSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateUserAccessLoggingSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateUserAccessLoggingSettingsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateUserAccessLoggingSettingsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateUserSettings
 
         internal virtual CreateUserSettingsResponse CreateUserSettings(CreateUserSettingsRequest request)
@@ -895,6 +1116,55 @@ namespace Amazon.WorkSpacesWeb
 
         #endregion
         
+        #region  DeleteIpAccessSettings
+
+        internal virtual DeleteIpAccessSettingsResponse DeleteIpAccessSettings(DeleteIpAccessSettingsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteIpAccessSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteIpAccessSettingsResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteIpAccessSettingsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes IP access settings.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIpAccessSettings service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteIpAccessSettings service method, as returned by WorkSpacesWeb.</returns>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ConflictException">
+        /// There is a conflict.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.InternalServerException">
+        /// There is an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ThrottlingException">
+        /// There is a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ValidationException">
+        /// There is a validation error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/DeleteIpAccessSettings">REST API Reference for DeleteIpAccessSettings Operation</seealso>
+        public virtual Task<DeleteIpAccessSettingsResponse> DeleteIpAccessSettingsAsync(DeleteIpAccessSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteIpAccessSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteIpAccessSettingsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteIpAccessSettingsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteNetworkSettings
 
         internal virtual DeleteNetworkSettingsResponse DeleteNetworkSettings(DeleteNetworkSettingsRequest request)
@@ -1042,6 +1312,55 @@ namespace Amazon.WorkSpacesWeb
 
         #endregion
         
+        #region  DeleteUserAccessLoggingSettings
+
+        internal virtual DeleteUserAccessLoggingSettingsResponse DeleteUserAccessLoggingSettings(DeleteUserAccessLoggingSettingsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteUserAccessLoggingSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteUserAccessLoggingSettingsResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteUserAccessLoggingSettingsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes user access logging settings.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteUserAccessLoggingSettings service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteUserAccessLoggingSettings service method, as returned by WorkSpacesWeb.</returns>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ConflictException">
+        /// There is a conflict.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.InternalServerException">
+        /// There is an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ThrottlingException">
+        /// There is a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ValidationException">
+        /// There is a validation error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/DeleteUserAccessLoggingSettings">REST API Reference for DeleteUserAccessLoggingSettings Operation</seealso>
+        public virtual Task<DeleteUserAccessLoggingSettingsResponse> DeleteUserAccessLoggingSettingsAsync(DeleteUserAccessLoggingSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteUserAccessLoggingSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteUserAccessLoggingSettingsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteUserAccessLoggingSettingsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteUserSettings
 
         internal virtual DeleteUserSettingsResponse DeleteUserSettings(DeleteUserSettingsRequest request)
@@ -1140,6 +1459,55 @@ namespace Amazon.WorkSpacesWeb
 
         #endregion
         
+        #region  DisassociateIpAccessSettings
+
+        internal virtual DisassociateIpAccessSettingsResponse DisassociateIpAccessSettings(DisassociateIpAccessSettingsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateIpAccessSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateIpAccessSettingsResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateIpAccessSettingsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Disassociates IP access settings from a web portal.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateIpAccessSettings service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociateIpAccessSettings service method, as returned by WorkSpacesWeb.</returns>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.InternalServerException">
+        /// There is an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ResourceNotFoundException">
+        /// The resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ThrottlingException">
+        /// There is a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ValidationException">
+        /// There is a validation error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/DisassociateIpAccessSettings">REST API Reference for DisassociateIpAccessSettings Operation</seealso>
+        public virtual Task<DisassociateIpAccessSettingsResponse> DisassociateIpAccessSettingsAsync(DisassociateIpAccessSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateIpAccessSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateIpAccessSettingsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DisassociateIpAccessSettingsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DisassociateNetworkSettings
 
         internal virtual DisassociateNetworkSettingsResponse DisassociateNetworkSettings(DisassociateNetworkSettingsRequest request)
@@ -1234,6 +1602,55 @@ namespace Amazon.WorkSpacesWeb
             options.ResponseUnmarshaller = DisassociateTrustStoreResponseUnmarshaller.Instance;
 
             return InvokeAsync<DisassociateTrustStoreResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DisassociateUserAccessLoggingSettings
+
+        internal virtual DisassociateUserAccessLoggingSettingsResponse DisassociateUserAccessLoggingSettings(DisassociateUserAccessLoggingSettingsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateUserAccessLoggingSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateUserAccessLoggingSettingsResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateUserAccessLoggingSettingsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Disassociates user access logging settings from a web portal.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateUserAccessLoggingSettings service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociateUserAccessLoggingSettings service method, as returned by WorkSpacesWeb.</returns>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.InternalServerException">
+        /// There is an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ResourceNotFoundException">
+        /// The resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ThrottlingException">
+        /// There is a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ValidationException">
+        /// There is a validation error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/DisassociateUserAccessLoggingSettings">REST API Reference for DisassociateUserAccessLoggingSettings Operation</seealso>
+        public virtual Task<DisassociateUserAccessLoggingSettingsResponse> DisassociateUserAccessLoggingSettingsAsync(DisassociateUserAccessLoggingSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateUserAccessLoggingSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateUserAccessLoggingSettingsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DisassociateUserAccessLoggingSettingsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1381,6 +1798,55 @@ namespace Amazon.WorkSpacesWeb
             options.ResponseUnmarshaller = GetIdentityProviderResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetIdentityProviderResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetIpAccessSettings
+
+        internal virtual GetIpAccessSettingsResponse GetIpAccessSettings(GetIpAccessSettingsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetIpAccessSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetIpAccessSettingsResponseUnmarshaller.Instance;
+
+            return Invoke<GetIpAccessSettingsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Gets the IP access settings.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetIpAccessSettings service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetIpAccessSettings service method, as returned by WorkSpacesWeb.</returns>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.InternalServerException">
+        /// There is an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ResourceNotFoundException">
+        /// The resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ThrottlingException">
+        /// There is a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ValidationException">
+        /// There is a validation error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/GetIpAccessSettings">REST API Reference for GetIpAccessSettings Operation</seealso>
+        public virtual Task<GetIpAccessSettingsResponse> GetIpAccessSettingsAsync(GetIpAccessSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetIpAccessSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetIpAccessSettingsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetIpAccessSettingsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1630,6 +2096,55 @@ namespace Amazon.WorkSpacesWeb
 
         #endregion
         
+        #region  GetUserAccessLoggingSettings
+
+        internal virtual GetUserAccessLoggingSettingsResponse GetUserAccessLoggingSettings(GetUserAccessLoggingSettingsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetUserAccessLoggingSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetUserAccessLoggingSettingsResponseUnmarshaller.Instance;
+
+            return Invoke<GetUserAccessLoggingSettingsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Gets user access logging settings.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetUserAccessLoggingSettings service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetUserAccessLoggingSettings service method, as returned by WorkSpacesWeb.</returns>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.InternalServerException">
+        /// There is an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ResourceNotFoundException">
+        /// The resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ThrottlingException">
+        /// There is a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ValidationException">
+        /// There is a validation error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/GetUserAccessLoggingSettings">REST API Reference for GetUserAccessLoggingSettings Operation</seealso>
+        public virtual Task<GetUserAccessLoggingSettingsResponse> GetUserAccessLoggingSettingsAsync(GetUserAccessLoggingSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetUserAccessLoggingSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetUserAccessLoggingSettingsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetUserAccessLoggingSettingsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetUserSettings
 
         internal virtual GetUserSettingsResponse GetUserSettings(GetUserSettingsRequest request)
@@ -1767,6 +2282,52 @@ namespace Amazon.WorkSpacesWeb
             options.ResponseUnmarshaller = ListIdentityProvidersResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListIdentityProvidersResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListIpAccessSettings
+
+        internal virtual ListIpAccessSettingsResponse ListIpAccessSettings(ListIpAccessSettingsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListIpAccessSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListIpAccessSettingsResponseUnmarshaller.Instance;
+
+            return Invoke<ListIpAccessSettingsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves a list of IP access settings.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListIpAccessSettings service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListIpAccessSettings service method, as returned by WorkSpacesWeb.</returns>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.InternalServerException">
+        /// There is an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ThrottlingException">
+        /// There is a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ValidationException">
+        /// There is a validation error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/ListIpAccessSettings">REST API Reference for ListIpAccessSettings Operation</seealso>
+        public virtual Task<ListIpAccessSettingsResponse> ListIpAccessSettingsAsync(ListIpAccessSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListIpAccessSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListIpAccessSettingsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListIpAccessSettingsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2003,6 +2564,52 @@ namespace Amazon.WorkSpacesWeb
             options.ResponseUnmarshaller = ListTrustStoresResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListTrustStoresResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListUserAccessLoggingSettings
+
+        internal virtual ListUserAccessLoggingSettingsResponse ListUserAccessLoggingSettings(ListUserAccessLoggingSettingsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListUserAccessLoggingSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListUserAccessLoggingSettingsResponseUnmarshaller.Instance;
+
+            return Invoke<ListUserAccessLoggingSettingsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves a list of user access logging settings.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListUserAccessLoggingSettings service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListUserAccessLoggingSettings service method, as returned by WorkSpacesWeb.</returns>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.InternalServerException">
+        /// There is an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ThrottlingException">
+        /// There is a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ValidationException">
+        /// There is a validation error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/ListUserAccessLoggingSettings">REST API Reference for ListUserAccessLoggingSettings Operation</seealso>
+        public virtual Task<ListUserAccessLoggingSettingsResponse> ListUserAccessLoggingSettingsAsync(ListUserAccessLoggingSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListUserAccessLoggingSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListUserAccessLoggingSettingsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListUserAccessLoggingSettingsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2252,6 +2859,55 @@ namespace Amazon.WorkSpacesWeb
 
         #endregion
         
+        #region  UpdateIpAccessSettings
+
+        internal virtual UpdateIpAccessSettingsResponse UpdateIpAccessSettings(UpdateIpAccessSettingsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateIpAccessSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateIpAccessSettingsResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateIpAccessSettingsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates IP access settings.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateIpAccessSettings service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateIpAccessSettings service method, as returned by WorkSpacesWeb.</returns>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.InternalServerException">
+        /// There is an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ResourceNotFoundException">
+        /// The resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ThrottlingException">
+        /// There is a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ValidationException">
+        /// There is a validation error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/UpdateIpAccessSettings">REST API Reference for UpdateIpAccessSettings Operation</seealso>
+        public virtual Task<UpdateIpAccessSettingsResponse> UpdateIpAccessSettingsAsync(UpdateIpAccessSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateIpAccessSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateIpAccessSettingsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateIpAccessSettingsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  UpdateNetworkSettings
 
         internal virtual UpdateNetworkSettingsResponse UpdateNetworkSettings(UpdateNetworkSettingsRequest request)
@@ -2326,6 +2982,9 @@ namespace Amazon.WorkSpacesWeb
         /// <exception cref="Amazon.WorkSpacesWeb.Model.AccessDeniedException">
         /// Access is denied.
         /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ConflictException">
+        /// There is a conflict.
+        /// </exception>
         /// <exception cref="Amazon.WorkSpacesWeb.Model.InternalServerException">
         /// There is an internal server error.
         /// </exception>
@@ -2398,6 +3057,55 @@ namespace Amazon.WorkSpacesWeb
             options.ResponseUnmarshaller = UpdateTrustStoreResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateTrustStoreResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateUserAccessLoggingSettings
+
+        internal virtual UpdateUserAccessLoggingSettingsResponse UpdateUserAccessLoggingSettings(UpdateUserAccessLoggingSettingsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateUserAccessLoggingSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateUserAccessLoggingSettingsResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateUserAccessLoggingSettingsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates the user access logging settings.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateUserAccessLoggingSettings service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateUserAccessLoggingSettings service method, as returned by WorkSpacesWeb.</returns>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.InternalServerException">
+        /// There is an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ResourceNotFoundException">
+        /// The resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ThrottlingException">
+        /// There is a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ValidationException">
+        /// There is a validation error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/UpdateUserAccessLoggingSettings">REST API Reference for UpdateUserAccessLoggingSettings Operation</seealso>
+        public virtual Task<UpdateUserAccessLoggingSettingsResponse> UpdateUserAccessLoggingSettingsAsync(UpdateUserAccessLoggingSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateUserAccessLoggingSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateUserAccessLoggingSettingsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateUserAccessLoggingSettingsResponse>(request, options, cancellationToken);
         }
 
         #endregion

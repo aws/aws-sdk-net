@@ -41,7 +41,7 @@ namespace Amazon.Inspector2.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The Amazon Web Services account ID that the AMI belongs.
+        /// The Amazon Web Services account ID for the AMI.
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=12)]

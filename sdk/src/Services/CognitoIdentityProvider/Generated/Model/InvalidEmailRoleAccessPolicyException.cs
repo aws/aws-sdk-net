@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// This exception is thrown when Amazon Cognito is not allowed to use your email identity.
+    /// This exception is thrown when Amazon Cognito isn't allowed to use your email identity.
     /// HTTP status code: 400.
     /// </summary>
     #if !NETSTANDARD

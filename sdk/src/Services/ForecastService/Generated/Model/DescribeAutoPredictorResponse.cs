@@ -39,16 +39,19 @@ namespace Amazon.ForecastService.Model
         private EncryptionConfig _encryptionConfig;
         private long? _estimatedTimeRemainingInMinutes;
         private ExplainabilityInfo _explainabilityInfo;
+        private List<string> _forecastDimensions = new List<string>();
         private string _forecastFrequency;
         private int? _forecastHorizon;
         private List<string> _forecastTypes = new List<string>();
         private DateTime? _lastModificationTime;
         private string _message;
+        private MonitorInfo _monitorInfo;
         private OptimizationMetric _optimizationMetric;
         private string _predictorArn;
         private string _predictorName;
         private ReferencePredictorSummary _referencePredictorSummary;
         private string _status;
+        private TimeAlignmentBoundary _timeAlignmentBoundary;
 
         /// <summary>
         /// Gets and sets the property CreationTime. 
@@ -139,7 +142,10 @@ namespace Amazon.ForecastService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ExplainabilityInfo.
+        /// Gets and sets the property ExplainabilityInfo. 
+        /// <para>
+        /// Provides the status and ARN of the Predictor Explainability.
+        /// </para>
         /// </summary>
         public ExplainabilityInfo ExplainabilityInfo
         {
@@ -151,6 +157,26 @@ namespace Amazon.ForecastService.Model
         internal bool IsSetExplainabilityInfo()
         {
             return this._explainabilityInfo != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ForecastDimensions. 
+        /// <para>
+        /// An array of dimension (field) names that specify the attributes used to group your
+        /// time series.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<string> ForecastDimensions
+        {
+            get { return this._forecastDimensions; }
+            set { this._forecastDimensions = value; }
+        }
+
+        // Check to see if ForecastDimensions property is set
+        internal bool IsSetForecastDimensions()
+        {
+            return this._forecastDimensions != null && this._forecastDimensions.Count > 0; 
         }
 
         /// <summary>
@@ -275,6 +301,24 @@ namespace Amazon.ForecastService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MonitorInfo. 
+        /// <para>
+        /// A object with the Amazon Resource Name (ARN) and status of the monitor resource.
+        /// </para>
+        /// </summary>
+        public MonitorInfo MonitorInfo
+        {
+            get { return this._monitorInfo; }
+            set { this._monitorInfo = value; }
+        }
+
+        // Check to see if MonitorInfo property is set
+        internal bool IsSetMonitorInfo()
+        {
+            return this._monitorInfo != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property OptimizationMetric. 
         /// <para>
         /// The accuracy metric used to optimize the predictor.
@@ -385,6 +429,24 @@ namespace Amazon.ForecastService.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TimeAlignmentBoundary. 
+        /// <para>
+        /// The time boundary Forecast uses when aggregating data.
+        /// </para>
+        /// </summary>
+        public TimeAlignmentBoundary TimeAlignmentBoundary
+        {
+            get { return this._timeAlignmentBoundary; }
+            set { this._timeAlignmentBoundary = value; }
+        }
+
+        // Check to see if TimeAlignmentBoundary property is set
+        internal bool IsSetTimeAlignmentBoundary()
+        {
+            return this._timeAlignmentBoundary != null;
         }
 
     }

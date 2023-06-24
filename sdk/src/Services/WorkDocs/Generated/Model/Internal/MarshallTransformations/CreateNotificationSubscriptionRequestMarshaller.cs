@@ -56,7 +56,7 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.WorkDocs");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-05-01";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-05-01";
             request.HttpMethod = "POST";
 
             if (!publicRequest.IsSetOrganizationId())
@@ -86,7 +86,6 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.SubscriptionType);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

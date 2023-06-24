@@ -1,5 +1,6 @@
 {
-    "active": true, 
-    "comment": "Turn off till we move to the latest version of the model.", 
-    "synopsis": "AWS CloudFormation gives developers and systems administrators an easy way to create and manage a collection of related AWS resources, provisioning and updating them in an orderly and predictable fashion."
+  "active": true,
+  "comment": "Turn off till we move to the latest version of the model.",
+  "synopsis": "AWS CloudFormation gives developers and systems administrators an easy way to create and manage a collection of related AWS resources, provisioning and updating them in an orderly and predictable fashion.",
+  "legacy-service-id": "CloudFormation"
 }

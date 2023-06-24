@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Batch.Model
 {
     /// <summary>
-    /// An object representing summary details of a job.
+    /// An object that represents summary details of a job.
     /// </summary>
     public partial class JobSummary
     {
@@ -49,7 +49,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property ArrayProperties. 
         /// <para>
-        /// The array properties of the job, if it is an array job.
+        /// The array properties of the job, if it's an array job.
         /// </para>
         /// </summary>
         public ArrayPropertiesSummary ArrayProperties
@@ -67,7 +67,8 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property Container. 
         /// <para>
-        /// An object representing the details of the container that's associated with the job.
+        /// An object that represents the details of the container that's associated with the
+        /// job.
         /// </para>
         /// </summary>
         public ContainerSummary Container
@@ -142,7 +143,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property JobId. 
         /// <para>
-        /// The ID of the job.
+        /// The job ID.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -161,7 +162,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property JobName. 
         /// <para>
-        /// The name of the job.
+        /// The job name.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -203,8 +204,9 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property StartedAt. 
         /// <para>
-        /// The Unix timestamp for when the job was started (when the job transitioned from the
-        /// <code>STARTING</code> state to the <code>RUNNING</code> state).
+        /// The Unix timestamp for when the job was started. More specifically, it's when the
+        /// job transitioned from the <code>STARTING</code> state to the <code>RUNNING</code>
+        /// state.
         /// </para>
         /// </summary>
         public long StartedAt
@@ -240,8 +242,8 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property StatusReason. 
         /// <para>
-        /// A short, human-readable string to provide additional details about the current status
-        /// of the job.
+        /// A short, human-readable string to provide more details for the current status of the
+        /// job.
         /// </para>
         /// </summary>
         public string StatusReason
@@ -259,9 +261,9 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property StoppedAt. 
         /// <para>
-        /// The Unix timestamp for when the job was stopped (when the job transitioned from the
-        /// <code>RUNNING</code> state to a terminal state, such as <code>SUCCEEDED</code> or
-        /// <code>FAILED</code>).
+        /// The Unix timestamp for when the job was stopped. More specifically, it's when the
+        /// job transitioned from the <code>RUNNING</code> state to a terminal state, such as
+        /// <code>SUCCEEDED</code> or <code>FAILED</code>.
         /// </para>
         /// </summary>
         public long StoppedAt

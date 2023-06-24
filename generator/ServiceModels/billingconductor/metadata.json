@@ -1,0 +1,6 @@
+{
+  "active": true,
+  "synopsis": "This is the initial SDK release for AWS Billing Conductor. The AWS Billing Conductor is a customizable billing service, allowing you to customize your billing data to match your desired business structure.",
+  "generate-client-constructors": true,
+  "legacy-service-id": "billingconductor"
+}

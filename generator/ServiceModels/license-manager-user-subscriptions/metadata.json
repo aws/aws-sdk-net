@@ -1,0 +1,6 @@
+{
+  "active": true,
+  "synopsis": "This release supports user based subscription for Microsoft Visual Studio Professional and Enterprise on EC2.",
+  "generate-client-constructors": true,
+  "legacy-service-id": "License Manager User Subscriptions"
+}

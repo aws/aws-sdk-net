@@ -42,6 +42,7 @@ namespace Amazon.QuickSight.Model
     public partial class RegisteredUserEmbeddingExperienceConfiguration
     {
         private RegisteredUserDashboardEmbeddingConfiguration _dashboard;
+        private RegisteredUserDashboardVisualEmbeddingConfiguration _dashboardVisual;
         private RegisteredUserQSearchBarEmbeddingConfiguration _qSearchBar;
         private RegisteredUserQuickSightConsoleEmbeddingConfiguration _quickSightConsole;
 
@@ -64,6 +65,24 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DashboardVisual. 
+        /// <para>
+        /// The type of embedding experience. In this case, Amazon QuickSight visuals.
+        /// </para>
+        /// </summary>
+        public RegisteredUserDashboardVisualEmbeddingConfiguration DashboardVisual
+        {
+            get { return this._dashboardVisual; }
+            set { this._dashboardVisual = value; }
+        }
+
+        // Check to see if DashboardVisual property is set
+        internal bool IsSetDashboardVisual()
+        {
+            return this._dashboardVisual != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property QSearchBar. 
         /// <para>
         /// The configuration details for embedding the Q search bar.
@@ -71,7 +90,7 @@ namespace Amazon.QuickSight.Model
         ///  
         /// <para>
         /// For more information about embedding the Q search bar, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-overview.html">Embedding
-        /// Overview</a>.
+        /// Overview</a> in the <i>Amazon QuickSight User Guide</i>.
         /// </para>
         /// </summary>
         public RegisteredUserQSearchBarEmbeddingConfiguration QSearchBar

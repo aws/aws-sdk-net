@@ -31,7 +31,40 @@ namespace Amazon.Route53
     /// <summary>
     /// Interface for accessing Route53
     ///
-    /// Amazon Route 53 is a highly available and scalable Domain Name System (DNS) web service.
+    /// Amazon Route 53 is a highly available and scalable Domain Name System (DNS) web service.
+    /// 
+    ///  
+    /// <para>
+    /// You can use Route 53 to:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// Register domain names.
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/welcome-domain-registration.html">How
+    /// domain registration works</a>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Route internet traffic to the resources for your domain
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/welcome-dns-service.html">How
+    /// internet traffic is routed to your website or web application</a>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Check the health of your resources.
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/welcome-health-checks.html">How
+    /// Route 53 checks the health of your resources</a>.
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial interface IAmazonRoute53 : IAmazonService, IDisposable
     {
@@ -131,6 +164,33 @@ namespace Amazon.Route53
         /// request. Then the account that created the VPC must submit an <code>AssociateVPCWithHostedZone</code>
         /// request.
         /// </para>
+        ///  </note> <note> 
+        /// <para>
+        /// When granting access, the hosted zone and the Amazon VPC must belong to the same partition.
+        /// A partition is a group of Amazon Web Services Regions. Each Amazon Web Services account
+        /// is scoped to one partition.
+        /// </para>
+        ///  
+        /// <para>
+        /// The following are the supported partitions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>aws</code> - Amazon Web Services Regions
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>aws-cn</code> - China Regions
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>aws-us-gov</code> - Amazon Web Services GovCloud (US) Region
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Access
+        /// Management</a> in the <i>Amazon Web Services General Reference</i>.
+        /// </para>
         ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateVPCWithHostedZone service method.</param>
@@ -168,13 +228,8 @@ namespace Amazon.Route53
         /// authorized to access this VPC.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.LimitsExceededException">
-        /// This operation can't be completed either because the current account has reached the
-        /// limit on reusable delegation sets that it can create or because you've reached the
-        /// limit on the number of Amazon VPCs that you can associate with a private hosted zone.
-        /// To get the current limit on the number of reusable delegation sets, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetAccountLimit.html">GetAccountLimit</a>.
-        /// To get the current limit on the number of Amazon VPCs that you can associate with
-        /// a private hosted zone, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetHostedZoneLimit.html">GetHostedZoneLimit</a>.
-        /// To request a higher limit, <a href="http://aws.amazon.com/route53-request">create
+        /// This operation can't be completed because the current account has reached the limit
+        /// on the resource you are trying to create. To request a higher limit, <a href="http://aws.amazon.com/route53-request">create
         /// a case</a> with the Amazon Web Services Support Center.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.NoSuchHostedZoneException">
@@ -214,6 +269,33 @@ namespace Amazon.Route53
         /// Web Services account that created the private hosted zone must first submit a <code>CreateVPCAssociationAuthorization</code>
         /// request. Then the account that created the VPC must submit an <code>AssociateVPCWithHostedZone</code>
         /// request.
+        /// </para>
+        ///  </note> <note> 
+        /// <para>
+        /// When granting access, the hosted zone and the Amazon VPC must belong to the same partition.
+        /// A partition is a group of Amazon Web Services Regions. Each Amazon Web Services account
+        /// is scoped to one partition.
+        /// </para>
+        ///  
+        /// <para>
+        /// The following are the supported partitions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>aws</code> - Amazon Web Services Regions
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>aws-cn</code> - China Regions
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>aws-us-gov</code> - Amazon Web Services GovCloud (US) Region
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Access
+        /// Management</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -255,13 +337,8 @@ namespace Amazon.Route53
         /// authorized to access this VPC.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.LimitsExceededException">
-        /// This operation can't be completed either because the current account has reached the
-        /// limit on reusable delegation sets that it can create or because you've reached the
-        /// limit on the number of Amazon VPCs that you can associate with a private hosted zone.
-        /// To get the current limit on the number of reusable delegation sets, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetAccountLimit.html">GetAccountLimit</a>.
-        /// To get the current limit on the number of Amazon VPCs that you can associate with
-        /// a private hosted zone, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetHostedZoneLimit.html">GetHostedZoneLimit</a>.
-        /// To request a higher limit, <a href="http://aws.amazon.com/route53-request">create
+        /// This operation can't be completed because the current account has reached the limit
+        /// on the resource you are trying to create. To request a higher limit, <a href="http://aws.amazon.com/route53-request">create
         /// a case</a> with the Amazon Web Services Support Center.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.NoSuchHostedZoneException">
@@ -283,6 +360,146 @@ namespace Amazon.Route53
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/AssociateVPCWithHostedZone">REST API Reference for AssociateVPCWithHostedZone Operation</seealso>
         Task<AssociateVPCWithHostedZoneResponse> AssociateVPCWithHostedZoneAsync(AssociateVPCWithHostedZoneRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ChangeCidrCollection
+
+
+        /// <summary>
+        /// Creates, changes, or deletes CIDR blocks within a collection. Contains authoritative
+        /// IP information mapping blocks to one or multiple locations.
+        /// 
+        ///  
+        /// <para>
+        /// A change request can update multiple locations in a collection at a time, which is
+        /// helpful if you want to move one or more CIDR blocks from one location to another in
+        /// one transaction, without downtime. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Limits</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The max number of CIDR blocks included in the request is 1000. As a result, big updates
+        /// require multiple API calls.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b> PUT and DELETE_IF_EXISTS</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Use <code>ChangeCidrCollection</code> to perform the following actions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>PUT</code>: Create a CIDR block within the specified collection.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code> DELETE_IF_EXISTS</code>: Delete an existing CIDR block from the collection.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ChangeCidrCollection service method.</param>
+        /// 
+        /// <returns>The response from the ChangeCidrCollection service method, as returned by Route53.</returns>
+        /// <exception cref="Amazon.Route53.Model.CidrBlockInUseException">
+        /// This CIDR block is already in use.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.CidrCollectionVersionMismatchException">
+        /// The CIDR collection version you provided, doesn't match the one in the <code>ListCidrCollections</code>
+        /// operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.ConcurrentModificationException">
+        /// Another user submitted a request to create, update, or delete the object at the same
+        /// time that you did. Retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
+        /// The input is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.LimitsExceededException">
+        /// This operation can't be completed because the current account has reached the limit
+        /// on the resource you are trying to create. To request a higher limit, <a href="http://aws.amazon.com/route53-request">create
+        /// a case</a> with the Amazon Web Services Support Center.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.NoSuchCidrCollectionException">
+        /// The CIDR collection you specified, doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ChangeCidrCollection">REST API Reference for ChangeCidrCollection Operation</seealso>
+        ChangeCidrCollectionResponse ChangeCidrCollection(ChangeCidrCollectionRequest request);
+
+
+
+        /// <summary>
+        /// Creates, changes, or deletes CIDR blocks within a collection. Contains authoritative
+        /// IP information mapping blocks to one or multiple locations.
+        /// 
+        ///  
+        /// <para>
+        /// A change request can update multiple locations in a collection at a time, which is
+        /// helpful if you want to move one or more CIDR blocks from one location to another in
+        /// one transaction, without downtime. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Limits</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The max number of CIDR blocks included in the request is 1000. As a result, big updates
+        /// require multiple API calls.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b> PUT and DELETE_IF_EXISTS</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Use <code>ChangeCidrCollection</code> to perform the following actions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>PUT</code>: Create a CIDR block within the specified collection.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code> DELETE_IF_EXISTS</code>: Delete an existing CIDR block from the collection.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ChangeCidrCollection service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ChangeCidrCollection service method, as returned by Route53.</returns>
+        /// <exception cref="Amazon.Route53.Model.CidrBlockInUseException">
+        /// This CIDR block is already in use.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.CidrCollectionVersionMismatchException">
+        /// The CIDR collection version you provided, doesn't match the one in the <code>ListCidrCollections</code>
+        /// operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.ConcurrentModificationException">
+        /// Another user submitted a request to create, update, or delete the object at the same
+        /// time that you did. Retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
+        /// The input is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.LimitsExceededException">
+        /// This operation can't be completed because the current account has reached the limit
+        /// on the resource you are trying to create. To request a higher limit, <a href="http://aws.amazon.com/route53-request">create
+        /// a case</a> with the Amazon Web Services Support Center.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.NoSuchCidrCollectionException">
+        /// The CIDR collection you specified, doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ChangeCidrCollection">REST API Reference for ChangeCidrCollection Operation</seealso>
+        Task<ChangeCidrCollectionResponse> ChangeCidrCollectionAsync(ChangeCidrCollectionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -366,8 +583,7 @@ namespace Amazon.Route53
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>UPSERT</code>: If a resource record set does not already exist, Amazon Web
-        /// Services creates it. If a resource set does exist, Route 53 updates it with the values
+        ///  <code>UPSERT</code>: If a resource set exists Route 53 updates it with the values
         /// in the request. 
         /// </para>
         ///  </li> </ul> 
@@ -519,8 +735,7 @@ namespace Amazon.Route53
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>UPSERT</code>: If a resource record set does not already exist, Amazon Web
-        /// Services creates it. If a resource set does exist, Route 53 updates it with the values
+        ///  <code>UPSERT</code>: If a resource set exists Route 53 updates it with the values
         /// in the request. 
         /// </para>
         ///  </li> </ul> 
@@ -673,6 +888,66 @@ namespace Amazon.Route53
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ChangeTagsForResource">REST API Reference for ChangeTagsForResource Operation</seealso>
         Task<ChangeTagsForResourceResponse> ChangeTagsForResourceAsync(ChangeTagsForResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateCidrCollection
+
+
+        /// <summary>
+        /// Creates a CIDR collection in the current Amazon Web Services account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCidrCollection service method.</param>
+        /// 
+        /// <returns>The response from the CreateCidrCollection service method, as returned by Route53.</returns>
+        /// <exception cref="Amazon.Route53.Model.CidrCollectionAlreadyExistsException">
+        /// A CIDR collection with this name and a different caller reference already exists in
+        /// this account.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.ConcurrentModificationException">
+        /// Another user submitted a request to create, update, or delete the object at the same
+        /// time that you did. Retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
+        /// The input is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.LimitsExceededException">
+        /// This operation can't be completed because the current account has reached the limit
+        /// on the resource you are trying to create. To request a higher limit, <a href="http://aws.amazon.com/route53-request">create
+        /// a case</a> with the Amazon Web Services Support Center.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateCidrCollection">REST API Reference for CreateCidrCollection Operation</seealso>
+        CreateCidrCollectionResponse CreateCidrCollection(CreateCidrCollectionRequest request);
+
+
+
+        /// <summary>
+        /// Creates a CIDR collection in the current Amazon Web Services account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCidrCollection service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateCidrCollection service method, as returned by Route53.</returns>
+        /// <exception cref="Amazon.Route53.Model.CidrCollectionAlreadyExistsException">
+        /// A CIDR collection with this name and a different caller reference already exists in
+        /// this account.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.ConcurrentModificationException">
+        /// Another user submitted a request to create, update, or delete the object at the same
+        /// time that you did. Retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
+        /// The input is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.LimitsExceededException">
+        /// This operation can't be completed because the current account has reached the limit
+        /// on the resource you are trying to create. To request a higher limit, <a href="http://aws.amazon.com/route53-request">create
+        /// a case</a> with the Amazon Web Services Support Center.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateCidrCollection">REST API Reference for CreateCidrCollection Operation</seealso>
+        Task<CreateCidrCollectionResponse> CreateCidrCollectionAsync(CreateCidrCollectionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -903,7 +1178,7 @@ namespace Amazon.Route53
         ///  </important> 
         /// <para>
         /// For more information about charges for hosted zones, see <a href="http://aws.amazon.com/route53/pricing/">Amazon
-        /// Route 53 Pricing</a>.
+        /// Route 53 Pricing</a>.
         /// </para>
         ///  
         /// <para>
@@ -917,7 +1192,7 @@ namespace Amazon.Route53
         /// <para>
         /// For public hosted zones, Route 53 automatically creates a default SOA record and four
         /// NS records for the zone. For more information about SOA and NS records, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/SOA-NSrecords.html">NS
-        /// and SOA Records that Route 53 Creates for a Hosted Zone</a> in the <i>Amazon Route
+        /// and SOA Records that Route 53 Creates for a Hosted Zone</a> in the <i>Amazon Route
         /// 53 Developer Guide</i>.
         /// </para>
         ///  
@@ -928,17 +1203,17 @@ namespace Amazon.Route53
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If your domain is registered with a registrar other than Route 53, you must update
+        /// If your domain is registered with a registrar other than Route 53, you must update
         /// the name servers with your registrar to make Route 53 the DNS service for the domain.
         /// For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/MigratingDNS.html">Migrating
-        /// DNS Service for an Existing Domain to Amazon Route 53</a> in the <i>Amazon Route 53
+        /// DNS Service for an Existing Domain to Amazon Route 53</a> in the <i>Amazon Route 53
         /// Developer Guide</i>. 
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// When you submit a <code>CreateHostedZone</code> request, the initial status of the
         /// hosted zone is <code>PENDING</code>. For public hosted zones, this means that the
-        /// NS and SOA records are not yet available on all Route 53 DNS servers. When the NS
+        /// NS and SOA records are not yet available on all Route 53 DNS servers. When the NS
         /// and SOA records are available, the status of the zone changes to <code>INSYNC</code>.
         /// </para>
         ///  
@@ -946,6 +1221,34 @@ namespace Amazon.Route53
         /// The <code>CreateHostedZone</code> request requires the caller to have an <code>ec2:DescribeVpcs</code>
         /// permission.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// When creating private hosted zones, the Amazon VPC must belong to the same partition
+        /// where the hosted zone is created. A partition is a group of Amazon Web Services Regions.
+        /// Each Amazon Web Services account is scoped to one partition.
+        /// </para>
+        ///  
+        /// <para>
+        /// The following are the supported partitions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>aws</code> - Amazon Web Services Regions
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>aws-cn</code> - China Regions
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>aws-us-gov</code> - Amazon Web Services GovCloud (US) Region
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Access
+        /// Management</a> in the <i>Amazon Web Services General Reference</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateHostedZone service method.</param>
         /// 
@@ -1047,7 +1350,7 @@ namespace Amazon.Route53
         ///  </important> 
         /// <para>
         /// For more information about charges for hosted zones, see <a href="http://aws.amazon.com/route53/pricing/">Amazon
-        /// Route 53 Pricing</a>.
+        /// Route 53 Pricing</a>.
         /// </para>
         ///  
         /// <para>
@@ -1061,7 +1364,7 @@ namespace Amazon.Route53
         /// <para>
         /// For public hosted zones, Route 53 automatically creates a default SOA record and four
         /// NS records for the zone. For more information about SOA and NS records, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/SOA-NSrecords.html">NS
-        /// and SOA Records that Route 53 Creates for a Hosted Zone</a> in the <i>Amazon Route
+        /// and SOA Records that Route 53 Creates for a Hosted Zone</a> in the <i>Amazon Route
         /// 53 Developer Guide</i>.
         /// </para>
         ///  
@@ -1072,17 +1375,17 @@ namespace Amazon.Route53
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If your domain is registered with a registrar other than Route 53, you must update
+        /// If your domain is registered with a registrar other than Route 53, you must update
         /// the name servers with your registrar to make Route 53 the DNS service for the domain.
         /// For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/MigratingDNS.html">Migrating
-        /// DNS Service for an Existing Domain to Amazon Route 53</a> in the <i>Amazon Route 53
+        /// DNS Service for an Existing Domain to Amazon Route 53</a> in the <i>Amazon Route 53
         /// Developer Guide</i>. 
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// When you submit a <code>CreateHostedZone</code> request, the initial status of the
         /// hosted zone is <code>PENDING</code>. For public hosted zones, this means that the
-        /// NS and SOA records are not yet available on all Route 53 DNS servers. When the NS
+        /// NS and SOA records are not yet available on all Route 53 DNS servers. When the NS
         /// and SOA records are available, the status of the zone changes to <code>INSYNC</code>.
         /// </para>
         ///  
@@ -1090,6 +1393,34 @@ namespace Amazon.Route53
         /// The <code>CreateHostedZone</code> request requires the caller to have an <code>ec2:DescribeVpcs</code>
         /// permission.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// When creating private hosted zones, the Amazon VPC must belong to the same partition
+        /// where the hosted zone is created. A partition is a group of Amazon Web Services Regions.
+        /// Each Amazon Web Services account is scoped to one partition.
+        /// </para>
+        ///  
+        /// <para>
+        /// The following are the supported partitions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>aws</code> - Amazon Web Services Regions
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>aws-cn</code> - China Regions
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>aws-us-gov</code> - Amazon Web Services GovCloud (US) Region
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Access
+        /// Management</a> in the <i>Amazon Web Services General Reference</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateHostedZone service method.</param>
         /// <param name="cancellationToken">
@@ -1213,7 +1544,7 @@ namespace Amazon.Route53
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.KeySigningKeyAlreadyExistsException">
         /// You've already created a key-signing key (KSK) with this name or with the same customer
-        /// managed customer master key (CMK) ARN.
+        /// managed key ARN.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.NoSuchHostedZoneException">
         /// No hosted zone exists with the ID that you specified.
@@ -1262,7 +1593,7 @@ namespace Amazon.Route53
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.KeySigningKeyAlreadyExistsException">
         /// You've already created a key-signing key (KSK) with this name or with the same customer
-        /// managed customer master key (CMK) ARN.
+        /// managed key ARN.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.NoSuchHostedZoneException">
         /// No hosted zone exists with the ID that you specified.
@@ -1356,6 +1687,29 @@ namespace Amazon.Route53
         ///  
         /// <para>
         ///  <code>arn:aws:logs:us-east-1:123412341234:log-group:/aws/route53/*</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// To avoid the confused deputy problem, a security issue where an entity without a permission
+        /// for an action can coerce a more-privileged entity to perform it, you can optionally
+        /// limit the permissions that a service has to a resource in a resource-based policy
+        /// by supplying the following values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// For <code>aws:SourceArn</code>, supply the hosted zone ARN used in creating the query
+        /// logging configuration. For example, <code>aws:SourceArn: arn:aws:route53:::hostedzone/hosted
+        /// zone ID</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For <code>aws:SourceAccount</code>, supply the account ID for the account that creates
+        /// the query logging configuration. For example, <code>aws:SourceAccount:111111111111</code>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/confused-deputy.html">The
+        /// confused deputy problem</a> in the <i>Amazon Web Services IAM User Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -1453,6 +1807,12 @@ namespace Amazon.Route53
         /// The Key management service (KMS) key you specified doesn’t exist or it can’t be used
         /// with the log group associated with query log. Update or provide a resource policy
         /// to grant permissions for the KMS key.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The Key management service (KMS) key you specified is marked as disabled for the log
+        /// group associated with query log. Update or provide a resource policy to grant permissions
+        /// for the KMS key.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -1552,6 +1912,29 @@ namespace Amazon.Route53
         /// <para>
         ///  <code>arn:aws:logs:us-east-1:123412341234:log-group:/aws/route53/*</code> 
         /// </para>
+        ///  
+        /// <para>
+        /// To avoid the confused deputy problem, a security issue where an entity without a permission
+        /// for an action can coerce a more-privileged entity to perform it, you can optionally
+        /// limit the permissions that a service has to a resource in a resource-based policy
+        /// by supplying the following values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// For <code>aws:SourceArn</code>, supply the hosted zone ARN used in creating the query
+        /// logging configuration. For example, <code>aws:SourceArn: arn:aws:route53:::hostedzone/hosted
+        /// zone ID</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For <code>aws:SourceAccount</code>, supply the account ID for the account that creates
+        /// the query logging configuration. For example, <code>aws:SourceAccount:111111111111</code>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/confused-deputy.html">The
+        /// confused deputy problem</a> in the <i>Amazon Web Services IAM User Guide</i>.
+        /// </para>
         ///  <note> 
         /// <para>
         /// You can't use the CloudWatch console to create or edit a resource policy. You must
@@ -1651,6 +2034,12 @@ namespace Amazon.Route53
         /// The Key management service (KMS) key you specified doesn’t exist or it can’t be used
         /// with the log group associated with query log. Update or provide a resource policy
         /// to grant permissions for the KMS key.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The Key management service (KMS) key you specified is marked as disabled for the log
+        /// group associated with query log. Update or provide a resource policy to grant permissions
+        /// for the KMS key.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -1777,13 +2166,8 @@ namespace Amazon.Route53
         /// The input is not valid.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.LimitsExceededException">
-        /// This operation can't be completed either because the current account has reached the
-        /// limit on reusable delegation sets that it can create or because you've reached the
-        /// limit on the number of Amazon VPCs that you can associate with a private hosted zone.
-        /// To get the current limit on the number of reusable delegation sets, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetAccountLimit.html">GetAccountLimit</a>.
-        /// To get the current limit on the number of Amazon VPCs that you can associate with
-        /// a private hosted zone, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetHostedZoneLimit.html">GetHostedZoneLimit</a>.
-        /// To request a higher limit, <a href="http://aws.amazon.com/route53-request">create
+        /// This operation can't be completed because the current account has reached the limit
+        /// on the resource you are trying to create. To request a higher limit, <a href="http://aws.amazon.com/route53-request">create
         /// a case</a> with the Amazon Web Services Support Center.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateReusableDelegationSet">REST API Reference for CreateReusableDelegationSet Operation</seealso>
@@ -1896,13 +2280,8 @@ namespace Amazon.Route53
         /// The input is not valid.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.LimitsExceededException">
-        /// This operation can't be completed either because the current account has reached the
-        /// limit on reusable delegation sets that it can create or because you've reached the
-        /// limit on the number of Amazon VPCs that you can associate with a private hosted zone.
-        /// To get the current limit on the number of reusable delegation sets, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetAccountLimit.html">GetAccountLimit</a>.
-        /// To get the current limit on the number of Amazon VPCs that you can associate with
-        /// a private hosted zone, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetHostedZoneLimit.html">GetHostedZoneLimit</a>.
-        /// To request a higher limit, <a href="http://aws.amazon.com/route53-request">create
+        /// This operation can't be completed because the current account has reached the limit
+        /// on the resource you are trying to create. To request a higher limit, <a href="http://aws.amazon.com/route53-request">create
         /// a case</a> with the Amazon Web Services Support Center.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateReusableDelegationSet">REST API Reference for CreateReusableDelegationSet Operation</seealso>
@@ -2368,6 +2747,62 @@ namespace Amazon.Route53
 
         #endregion
         
+        #region  DeleteCidrCollection
+
+
+        /// <summary>
+        /// Deletes a CIDR collection in the current Amazon Web Services account. The collection
+        /// must be empty before it can be deleted.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCidrCollection service method.</param>
+        /// 
+        /// <returns>The response from the DeleteCidrCollection service method, as returned by Route53.</returns>
+        /// <exception cref="Amazon.Route53.Model.CidrCollectionInUseException">
+        /// This CIDR collection is in use, and isn't empty.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.ConcurrentModificationException">
+        /// Another user submitted a request to create, update, or delete the object at the same
+        /// time that you did. Retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
+        /// The input is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.NoSuchCidrCollectionException">
+        /// The CIDR collection you specified, doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteCidrCollection">REST API Reference for DeleteCidrCollection Operation</seealso>
+        DeleteCidrCollectionResponse DeleteCidrCollection(DeleteCidrCollectionRequest request);
+
+
+
+        /// <summary>
+        /// Deletes a CIDR collection in the current Amazon Web Services account. The collection
+        /// must be empty before it can be deleted.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCidrCollection service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteCidrCollection service method, as returned by Route53.</returns>
+        /// <exception cref="Amazon.Route53.Model.CidrCollectionInUseException">
+        /// This CIDR collection is in use, and isn't empty.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.ConcurrentModificationException">
+        /// Another user submitted a request to create, update, or delete the object at the same
+        /// time that you did. Retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
+        /// The input is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.NoSuchCidrCollectionException">
+        /// The CIDR collection you specified, doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteCidrCollection">REST API Reference for DeleteCidrCollection Operation</seealso>
+        Task<DeleteCidrCollectionResponse> DeleteCidrCollectionAsync(DeleteCidrCollectionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeleteHealthCheck
 
 
@@ -2459,9 +2894,9 @@ namespace Amazon.Route53
         ///  
         /// <para>
         /// If the hosted zone was created by another service, such as Cloud Map, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DeleteHostedZone.html#delete-public-hosted-zone-created-by-another-service">Deleting
-        /// Public Hosted Zones That Were Created by Another Service</a> in the <i>Amazon Route
-        /// 53 Developer Guide</i> for information about how to delete it. (The process is the
-        /// same for public and private hosted zones that were created by another service.)
+        /// Public Hosted Zones That Were Created by Another Service</a> in the <i>Amazon Route 53
+        /// Developer Guide</i> for information about how to delete it. (The process is the same
+        /// for public and private hosted zones that were created by another service.)
         /// </para>
         ///  
         /// <para>
@@ -2483,8 +2918,8 @@ namespace Amazon.Route53
         /// If you want to avoid the monthly charge for the hosted zone, you can transfer DNS
         /// service for the domain to a free DNS service. When you transfer DNS service, you have
         /// to update the name servers for the domain registration. If the domain is registered
-        /// with Route 53, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_UpdateDomainNameservers.html">UpdateDomainNameservers</a>
-        /// for information about how to replace Route 53 name servers with name servers for the
+        /// with Route 53, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_UpdateDomainNameservers.html">UpdateDomainNameservers</a>
+        /// for information about how to replace Route 53 name servers with name servers for the
         /// new DNS service. If the domain is registered with another registrar, use the method
         /// provided by the registrar to update name servers for the domain registration. For
         /// more information, perform an internet search on "free DNS service."
@@ -2494,7 +2929,7 @@ namespace Amazon.Route53
         /// You can delete a hosted zone only if it contains only the default SOA record and NS
         /// resource record sets. If the hosted zone contains other resource record sets, you
         /// must delete them before you can delete the hosted zone. If you try to delete a hosted
-        /// zone that contains other resource record sets, the request fails, and Route 53 returns
+        /// zone that contains other resource record sets, the request fails, and Route 53 returns
         /// a <code>HostedZoneNotEmpty</code> error. For information about deleting records from
         /// your hosted zone, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ChangeResourceRecordSets.html">ChangeResourceRecordSets</a>.
         /// </para>
@@ -2547,9 +2982,9 @@ namespace Amazon.Route53
         ///  
         /// <para>
         /// If the hosted zone was created by another service, such as Cloud Map, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DeleteHostedZone.html#delete-public-hosted-zone-created-by-another-service">Deleting
-        /// Public Hosted Zones That Were Created by Another Service</a> in the <i>Amazon Route
-        /// 53 Developer Guide</i> for information about how to delete it. (The process is the
-        /// same for public and private hosted zones that were created by another service.)
+        /// Public Hosted Zones That Were Created by Another Service</a> in the <i>Amazon Route 53
+        /// Developer Guide</i> for information about how to delete it. (The process is the same
+        /// for public and private hosted zones that were created by another service.)
         /// </para>
         ///  
         /// <para>
@@ -2571,8 +3006,8 @@ namespace Amazon.Route53
         /// If you want to avoid the monthly charge for the hosted zone, you can transfer DNS
         /// service for the domain to a free DNS service. When you transfer DNS service, you have
         /// to update the name servers for the domain registration. If the domain is registered
-        /// with Route 53, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_UpdateDomainNameservers.html">UpdateDomainNameservers</a>
-        /// for information about how to replace Route 53 name servers with name servers for the
+        /// with Route 53, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_UpdateDomainNameservers.html">UpdateDomainNameservers</a>
+        /// for information about how to replace Route 53 name servers with name servers for the
         /// new DNS service. If the domain is registered with another registrar, use the method
         /// provided by the registrar to update name servers for the domain registration. For
         /// more information, perform an internet search on "free DNS service."
@@ -2582,7 +3017,7 @@ namespace Amazon.Route53
         /// You can delete a hosted zone only if it contains only the default SOA record and NS
         /// resource record sets. If the hosted zone contains other resource record sets, you
         /// must delete them before you can delete the hosted zone. If you try to delete a hosted
-        /// zone that contains other resource record sets, the request fails, and Route 53 returns
+        /// zone that contains other resource record sets, the request fails, and Route 53 returns
         /// a <code>HostedZoneNotEmpty</code> error. For information about deleting records from
         /// your hosted zone, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ChangeResourceRecordSets.html">ChangeResourceRecordSets</a>.
         /// </para>
@@ -2639,6 +3074,17 @@ namespace Amazon.Route53
         /// Deletes a key-signing key (KSK). Before you can delete a KSK, you must deactivate
         /// it. The KSK must be deactivated before you can delete it regardless of whether the
         /// hosted zone is enabled for DNSSEC signing.
+        /// 
+        ///  
+        /// <para>
+        /// You can use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_DeactivateKeySigningKey.html">DeactivateKeySigningKey</a>
+        /// to deactivate the key before you delete it.
+        /// </para>
+        ///  
+        /// <para>
+        /// Use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetDNSSEC.html">GetDNSSEC</a>
+        /// to verify that the KSK is in an <code>INACTIVE</code> status.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteKeySigningKey service method.</param>
         /// 
@@ -2672,6 +3118,17 @@ namespace Amazon.Route53
         /// Deletes a key-signing key (KSK). Before you can delete a KSK, you must deactivate
         /// it. The KSK must be deactivated before you can delete it regardless of whether the
         /// hosted zone is enabled for DNSSEC signing.
+        /// 
+        ///  
+        /// <para>
+        /// You can use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_DeactivateKeySigningKey.html">DeactivateKeySigningKey</a>
+        /// to deactivate the key before you delete it.
+        /// </para>
+        ///  
+        /// <para>
+        /// Use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetDNSSEC.html">GetDNSSEC</a>
+        /// to verify that the KSK is in an <code>INACTIVE</code> status.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteKeySigningKey service method.</param>
         /// <param name="cancellationToken">
@@ -3209,7 +3666,34 @@ namespace Amazon.Route53
         /// if the hosted zone has a value for <code>OwningAccount</code>, you can use <code>DisassociateVPCFromHostedZone</code>.
         /// If the hosted zone has a value for <code>OwningService</code>, you can't use <code>DisassociateVPCFromHostedZone</code>.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// When revoking access, the hosted zone and the Amazon VPC must belong to the same partition.
+        /// A partition is a group of Amazon Web Services Regions. Each Amazon Web Services account
+        /// is scoped to one partition.
+        /// </para>
+        ///  
+        /// <para>
+        /// The following are the supported partitions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>aws</code> - Amazon Web Services Regions
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>aws-cn</code> - China Regions
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>aws-us-gov</code> - Amazon Web Services GovCloud (US) Region
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Access
+        /// Management</a> in the <i>Amazon Web Services General Reference</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateVPCFromHostedZone service method.</param>
         /// 
@@ -3267,7 +3751,34 @@ namespace Amazon.Route53
         /// if the hosted zone has a value for <code>OwningAccount</code>, you can use <code>DisassociateVPCFromHostedZone</code>.
         /// If the hosted zone has a value for <code>OwningService</code>, you can't use <code>DisassociateVPCFromHostedZone</code>.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// When revoking access, the hosted zone and the Amazon VPC must belong to the same partition.
+        /// A partition is a group of Amazon Web Services Regions. Each Amazon Web Services account
+        /// is scoped to one partition.
+        /// </para>
+        ///  
+        /// <para>
+        /// The following are the supported partitions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>aws</code> - Amazon Web Services Regions
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>aws-cn</code> - China Regions
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>aws-us-gov</code> - Amazon Web Services GovCloud (US) Region
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Access
+        /// Management</a> in the <i>Amazon Web Services General Reference</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateVPCFromHostedZone service method.</param>
         /// <param name="cancellationToken">
@@ -4377,6 +4888,130 @@ namespace Amazon.Route53
 
         #endregion
         
+        #region  ListCidrBlocks
+
+
+        /// <summary>
+        /// Returns a paginated list of location objects and their CIDR blocks.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCidrBlocks service method.</param>
+        /// 
+        /// <returns>The response from the ListCidrBlocks service method, as returned by Route53.</returns>
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
+        /// The input is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.NoSuchCidrCollectionException">
+        /// The CIDR collection you specified, doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.NoSuchCidrLocationException">
+        /// The CIDR collection location doesn't match any locations in your account.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListCidrBlocks">REST API Reference for ListCidrBlocks Operation</seealso>
+        ListCidrBlocksResponse ListCidrBlocks(ListCidrBlocksRequest request);
+
+
+
+        /// <summary>
+        /// Returns a paginated list of location objects and their CIDR blocks.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCidrBlocks service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListCidrBlocks service method, as returned by Route53.</returns>
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
+        /// The input is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.NoSuchCidrCollectionException">
+        /// The CIDR collection you specified, doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.NoSuchCidrLocationException">
+        /// The CIDR collection location doesn't match any locations in your account.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListCidrBlocks">REST API Reference for ListCidrBlocks Operation</seealso>
+        Task<ListCidrBlocksResponse> ListCidrBlocksAsync(ListCidrBlocksRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListCidrCollections
+
+
+        /// <summary>
+        /// Returns a paginated list of CIDR collections in the Amazon Web Services account (metadata
+        /// only).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCidrCollections service method.</param>
+        /// 
+        /// <returns>The response from the ListCidrCollections service method, as returned by Route53.</returns>
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
+        /// The input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListCidrCollections">REST API Reference for ListCidrCollections Operation</seealso>
+        ListCidrCollectionsResponse ListCidrCollections(ListCidrCollectionsRequest request);
+
+
+
+        /// <summary>
+        /// Returns a paginated list of CIDR collections in the Amazon Web Services account (metadata
+        /// only).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCidrCollections service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListCidrCollections service method, as returned by Route53.</returns>
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
+        /// The input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListCidrCollections">REST API Reference for ListCidrCollections Operation</seealso>
+        Task<ListCidrCollectionsResponse> ListCidrCollectionsAsync(ListCidrCollectionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListCidrLocations
+
+
+        /// <summary>
+        /// Returns a paginated list of CIDR locations for the given collection (metadata only,
+        /// does not include CIDR blocks).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCidrLocations service method.</param>
+        /// 
+        /// <returns>The response from the ListCidrLocations service method, as returned by Route53.</returns>
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
+        /// The input is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.NoSuchCidrCollectionException">
+        /// The CIDR collection you specified, doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListCidrLocations">REST API Reference for ListCidrLocations Operation</seealso>
+        ListCidrLocationsResponse ListCidrLocations(ListCidrLocationsRequest request);
+
+
+
+        /// <summary>
+        /// Returns a paginated list of CIDR locations for the given collection (metadata only,
+        /// does not include CIDR blocks).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCidrLocations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListCidrLocations service method, as returned by Route53.</returns>
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
+        /// The input is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.NoSuchCidrCollectionException">
+        /// The CIDR collection you specified, doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListCidrLocations">REST API Reference for ListCidrLocations Operation</seealso>
+        Task<ListCidrLocationsResponse> ListCidrLocationsAsync(ListCidrLocationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListGeoLocations
 
 
@@ -4920,7 +5555,35 @@ namespace Amazon.Route53
         /// Amazon Elastic File System (Amazon EFS), the value of <code>Owner</code> is <code>efs.amazonaws.com</code>.
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// When listing private hosted zones, the hosted zone and the Amazon VPC must belong
+        /// to the same partition where the hosted zones were created. A partition is a group
+        /// of Amazon Web Services Regions. Each Amazon Web Services account is scoped to one
+        /// partition.
+        /// </para>
+        ///  
+        /// <para>
+        /// The following are the supported partitions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>aws</code> - Amazon Web Services Regions
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>aws-cn</code> - China Regions
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>aws-us-gov</code> - Amazon Web Services GovCloud (US) Region
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Access
+        /// Management</a> in the <i>Amazon Web Services General Reference</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListHostedZonesByVPC service method.</param>
         /// 
@@ -4955,7 +5618,35 @@ namespace Amazon.Route53
         /// Amazon Elastic File System (Amazon EFS), the value of <code>Owner</code> is <code>efs.amazonaws.com</code>.
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// When listing private hosted zones, the hosted zone and the Amazon VPC must belong
+        /// to the same partition where the hosted zones were created. A partition is a group
+        /// of Amazon Web Services Regions. Each Amazon Web Services account is scoped to one
+        /// partition.
+        /// </para>
+        ///  
+        /// <para>
+        /// The following are the supported partitions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>aws</code> - Amazon Web Services Regions
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>aws-cn</code> - China Regions
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>aws-us-gov</code> - Amazon Web Services GovCloud (US) Region
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Access
+        /// Management</a> in the <i>Amazon Web Services General Reference</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListHostedZonesByVPC service method.</param>
         /// <param name="cancellationToken">
@@ -6000,6 +6691,13 @@ namespace Amazon.Route53
         /// <exception cref="Amazon.Route53.Model.NoSuchHostedZoneException">
         /// No hosted zone exists with the ID that you specified.
         /// </exception>
+        /// <exception cref="Amazon.Route53.Model.PriorRequestNotCompleteException">
+        /// If Amazon Route 53 can't process a request before the next request arrives, it will
+        /// reject subsequent requests for the same hosted zone and return an <code>HTTP 400 error</code>
+        /// (<code>Bad request</code>). If Route 53 returns this error repeatedly for the same
+        /// request, we recommend that you wait, in intervals of increasing duration, before you
+        /// try the request again.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/UpdateHostedZoneComment">REST API Reference for UpdateHostedZoneComment Operation</seealso>
         UpdateHostedZoneCommentResponse UpdateHostedZoneComment(UpdateHostedZoneCommentRequest request);
 
@@ -6019,6 +6717,13 @@ namespace Amazon.Route53
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.NoSuchHostedZoneException">
         /// No hosted zone exists with the ID that you specified.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.PriorRequestNotCompleteException">
+        /// If Amazon Route 53 can't process a request before the next request arrives, it will
+        /// reject subsequent requests for the same hosted zone and return an <code>HTTP 400 error</code>
+        /// (<code>Bad request</code>). If Route 53 returns this error repeatedly for the same
+        /// request, we recommend that you wait, in intervals of increasing duration, before you
+        /// try the request again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/UpdateHostedZoneComment">REST API Reference for UpdateHostedZoneComment Operation</seealso>
         Task<UpdateHostedZoneCommentResponse> UpdateHostedZoneCommentAsync(UpdateHostedZoneCommentRequest request, CancellationToken cancellationToken = default(CancellationToken));

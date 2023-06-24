@@ -107,7 +107,7 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property IsMultiRegionTrail. 
         /// <para>
-        /// Specifies whether the trail exists in one region or in all regions.
+        /// Specifies whether the trail exists in one Region or in all Regions.
         /// </para>
         /// </summary>
         public bool IsMultiRegionTrail
@@ -143,7 +143,7 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// Specifies the KMS key ID that encrypts the logs delivered by CloudTrail. The value
+        /// Specifies the KMS key ID that encrypts the events delivered by CloudTrail. The value
         /// is a fully specified ARN to a KMS key in the following format.
         /// </para>
         ///  
@@ -264,7 +264,7 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property SnsTopicName. 
         /// <para>
-        /// This field is no longer in use. Use SnsTopicARN.
+        /// This field is no longer in use. Use <code>SnsTopicARN</code>.
         /// </para>
         /// </summary>
         [Obsolete("This field is deprecated. Use SnsTopicARN.")]

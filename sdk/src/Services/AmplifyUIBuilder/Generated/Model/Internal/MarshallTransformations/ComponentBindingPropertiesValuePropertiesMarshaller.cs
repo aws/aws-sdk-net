@@ -34,7 +34,7 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ComponentBindingPropertiesValueProperties Marshaller
-    /// </summary>       
+    /// </summary>
     public class ComponentBindingPropertiesValuePropertiesMarshaller : IRequestMarshaller<ComponentBindingPropertiesValueProperties, JsonMarshallerContext> 
     {
         /// <summary>
@@ -91,6 +91,12 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetSlotName())
+            {
+                context.Writer.WritePropertyName("slotName");
+                context.Writer.Write(requestObject.SlotName);
+            }
+
             if(requestObject.IsSetUserAttribute())
             {
                 context.Writer.WritePropertyName("userAttribute");
@@ -101,7 +107,7 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ComponentBindingPropertiesValuePropertiesMarshaller Instance = new ComponentBindingPropertiesValuePropertiesMarshaller();
 
     }

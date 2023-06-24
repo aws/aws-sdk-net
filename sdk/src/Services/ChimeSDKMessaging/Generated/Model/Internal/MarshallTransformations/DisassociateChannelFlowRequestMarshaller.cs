@@ -55,7 +55,7 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
         public IRequest Marshall(DisassociateChannelFlowRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ChimeSDKMessaging");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-05-15";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-05-15";
             request.HttpMethod = "DELETE";
 
             if (!publicRequest.IsSetChannelArn())
@@ -66,8 +66,10 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
             request.AddPathResource("{channelFlowArn}", StringUtils.FromString(publicRequest.ChannelFlowArn));
             request.ResourcePath = "/channels/{channelArn}/channel-flow/{channelFlowArn}";
         
-            if(publicRequest.IsSetChimeBearer())
+            if (publicRequest.IsSetChimeBearer()) 
+            {
                 request.Headers["x-amz-chime-bearer"] = publicRequest.ChimeBearer;
+            }
 
             return request;
         }

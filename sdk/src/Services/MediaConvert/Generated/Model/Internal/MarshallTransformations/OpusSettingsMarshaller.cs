@@ -34,7 +34,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// OpusSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class OpusSettingsMarshaller : IRequestMarshaller<OpusSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static OpusSettingsMarshaller Instance = new OpusSettingsMarshaller();
 
     }

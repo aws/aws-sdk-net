@@ -34,7 +34,7 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AudioParameters Marshaller
-    /// </summary>       
+    /// </summary>
     public class AudioParametersMarshaller : IRequestMarshaller<AudioParameters, JsonMarshallerContext> 
     {
         /// <summary>
@@ -90,7 +90,7 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AudioParametersMarshaller Instance = new AudioParametersMarshaller();
 
     }

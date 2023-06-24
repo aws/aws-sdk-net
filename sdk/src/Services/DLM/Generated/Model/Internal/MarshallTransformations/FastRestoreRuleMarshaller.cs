@@ -34,7 +34,7 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// FastRestoreRule Marshaller
-    /// </summary>       
+    /// </summary>
     public class FastRestoreRuleMarshaller : IRequestMarshaller<FastRestoreRule, JsonMarshallerContext> 
     {
         /// <summary>
@@ -78,7 +78,7 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static FastRestoreRuleMarshaller Instance = new FastRestoreRuleMarshaller();
 
     }

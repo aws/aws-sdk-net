@@ -1,0 +1,16 @@
+<Project>
+  <!--
+    Make sure to not copy project reference binaries to output directory when code signing is enabled. We are doing this do be sure we're not signing
+    AWSSDK.Core and such multiple times for a release while globbing the binaries to sign.
+  -->
+  <Target Name="SetProjectReferencesPrivate" AfterTargets="AssignProjectConfiguration" BeforeTargets="ResolveProjectReferences">
+    <ItemGroup>
+      <ProjectReferenceWithConfiguration Update="@(ProjectReferenceWithConfiguration)">
+        <Private>false</Private>
+      </ProjectReferenceWithConfiguration>
+      <ProjectReference Update="@(ProjectReference)" >
+        <Private>false</Private>
+      </ProjectReference>
+    </ItemGroup>
+  </Target>
+</Project>

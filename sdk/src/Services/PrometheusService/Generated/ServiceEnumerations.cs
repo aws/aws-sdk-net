@@ -91,6 +91,72 @@ namespace Amazon.PrometheusService
 
 
     /// <summary>
+    /// Constants used for properties of type LoggingConfigurationStatusCode.
+    /// </summary>
+    public class LoggingConfigurationStatusCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for LoggingConfigurationStatusCode
+        /// </summary>
+        public static readonly LoggingConfigurationStatusCode ACTIVE = new LoggingConfigurationStatusCode("ACTIVE");
+        /// <summary>
+        /// Constant CREATING for LoggingConfigurationStatusCode
+        /// </summary>
+        public static readonly LoggingConfigurationStatusCode CREATING = new LoggingConfigurationStatusCode("CREATING");
+        /// <summary>
+        /// Constant CREATION_FAILED for LoggingConfigurationStatusCode
+        /// </summary>
+        public static readonly LoggingConfigurationStatusCode CREATION_FAILED = new LoggingConfigurationStatusCode("CREATION_FAILED");
+        /// <summary>
+        /// Constant DELETING for LoggingConfigurationStatusCode
+        /// </summary>
+        public static readonly LoggingConfigurationStatusCode DELETING = new LoggingConfigurationStatusCode("DELETING");
+        /// <summary>
+        /// Constant UPDATE_FAILED for LoggingConfigurationStatusCode
+        /// </summary>
+        public static readonly LoggingConfigurationStatusCode UPDATE_FAILED = new LoggingConfigurationStatusCode("UPDATE_FAILED");
+        /// <summary>
+        /// Constant UPDATING for LoggingConfigurationStatusCode
+        /// </summary>
+        public static readonly LoggingConfigurationStatusCode UPDATING = new LoggingConfigurationStatusCode("UPDATING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LoggingConfigurationStatusCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LoggingConfigurationStatusCode FindValue(string value)
+        {
+            return FindValue<LoggingConfigurationStatusCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LoggingConfigurationStatusCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type RuleGroupsNamespaceStatusCode.
     /// </summary>
     public class RuleGroupsNamespaceStatusCode : ConstantClass

@@ -1,5 +1,6 @@
 {
   "active": true,
   "synopsis": "AWS Resource Groups lets you search and group AWS resources from multiple services based on their tags.",
-  "generate-client-constructors": true
+  "generate-client-constructors": true,
+  "legacy-service-id": "Resource Groups"
 }

@@ -46,6 +46,7 @@ namespace Amazon.DatabaseMigrationService.Model
         private bool? _autoMinorVersionUpgrade;
         private string _engineVersion;
         private bool? _multiAZ;
+        private string _networkType;
         private string _preferredMaintenanceWindow;
         private string _replicationInstanceArn;
         private string _replicationInstanceClass;
@@ -138,7 +139,18 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <para>
         /// DMS has enabled automatic patching for the given engine version. 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        /// When <code>AutoMinorVersionUpgrade</code> is enabled, DMS uses the current default
+        /// engine version when you modify a replication instance. For example, if you set <code>EngineVersion</code>
+        /// to a lower version number than the current default version, DMS uses the default version.
+        /// </para>
+        ///  
+        /// <para>
+        /// If <code>AutoMinorVersionUpgrade</code> <i>isn’t</i> enabled when you modify a replication
+        /// instance, DMS uses the engine version specified by the <code>EngineVersion</code>
+        /// parameter.
+        /// </para>
         /// </summary>
         public bool AutoMinorVersionUpgrade
         {
@@ -193,6 +205,25 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetMultiAZ()
         {
             return this._multiAZ.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkType. 
+        /// <para>
+        /// The type of IP address protocol used by a replication instance, such as IPv4 only
+        /// or Dual-stack that supports both IPv4 and IPv6 addressing. IPv6 only is not yet supported.
+        /// </para>
+        /// </summary>
+        public string NetworkType
+        {
+            get { return this._networkType; }
+            set { this._networkType = value; }
+        }
+
+        // Check to see if NetworkType property is set
+        internal bool IsSetNetworkType()
+        {
+            return this._networkType != null;
         }
 
         /// <summary>

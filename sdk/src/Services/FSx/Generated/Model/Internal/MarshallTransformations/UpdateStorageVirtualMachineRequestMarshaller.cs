@@ -58,7 +58,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
             string target = "AWSSimbaAPIService_v20180301.UpdateStorageVirtualMachine";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-03-01";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-03-01";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -87,7 +87,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                 else if(!(publicRequest.IsSetClientRequestToken()))
                 {
                     context.Writer.WritePropertyName("ClientRequestToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());                                                
+                    context.Writer.Write(Guid.NewGuid().ToString());
                 }
                 if(publicRequest.IsSetStorageVirtualMachineId())
                 {
@@ -101,7 +101,6 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.SvmAdminPassword);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

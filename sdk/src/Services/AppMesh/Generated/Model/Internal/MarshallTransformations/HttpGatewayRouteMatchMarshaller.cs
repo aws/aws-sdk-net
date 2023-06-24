@@ -34,7 +34,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// HttpGatewayRouteMatch Marshaller
-    /// </summary>       
+    /// </summary>
     public class HttpGatewayRouteMatchMarshaller : IRequestMarshaller<HttpGatewayRouteMatch, JsonMarshallerContext> 
     {
         /// <summary>
@@ -89,6 +89,12 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetPort())
+            {
+                context.Writer.WritePropertyName("port");
+                context.Writer.Write(requestObject.Port);
+            }
+
             if(requestObject.IsSetPrefix())
             {
                 context.Writer.WritePropertyName("prefix");
@@ -115,7 +121,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static HttpGatewayRouteMatchMarshaller Instance = new HttpGatewayRouteMatchMarshaller();
 
     }

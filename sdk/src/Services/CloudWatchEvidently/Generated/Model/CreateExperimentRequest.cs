@@ -42,6 +42,12 @@ namespace Amazon.CloudWatchEvidently.Model
     /// </para>
     ///  
     /// <para>
+    /// You can optionally specify a <code>segment</code> to have the experiment consider
+    /// only certain audience types in the experiment, such as using only user sessions from
+    /// a certain location or who use a certain internet browser.
+    /// </para>
+    ///  
+    /// <para>
     /// Don't use this operation to update an existing experiment. Instead, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_UpdateExperiment.html">UpdateExperiment</a>.
     /// 
     /// </para>
@@ -55,6 +61,7 @@ namespace Amazon.CloudWatchEvidently.Model
         private string _project;
         private string _randomizationSalt;
         private long? _samplingRate;
+        private string _segment;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private List<TreatmentConfig> _treatments = new List<TreatmentConfig>();
 
@@ -204,6 +211,27 @@ namespace Amazon.CloudWatchEvidently.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Segment. 
+        /// <para>
+        /// Specifies an audience <i>segment</i> to use in the experiment. When a segment is used
+        /// in an experiment, only user sessions that match the segment pattern are used in the
+        /// experiment.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=2048)]
+        public string Segment
+        {
+            get { return this._segment; }
+            set { this._segment = value; }
+        }
+
+        // Check to see if Segment property is set
+        internal bool IsSetSegment()
+        {
+            return this._segment != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
         /// Assigns one or more tags (key-value pairs) to the experiment.
@@ -219,9 +247,15 @@ namespace Amazon.CloudWatchEvidently.Model
         /// Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly
         /// as strings of characters.
         /// </para>
-        ///  <pre><code> &lt;p&gt;You can associate as many as 50 tags with an experiment.&lt;/p&gt;
-        /// &lt;p&gt;For more information, see &lt;a href=&quot;https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html&quot;&gt;Tagging
-        /// Amazon Web Services resources&lt;/a&gt;.&lt;/p&gt; </code></pre>
+        ///  
+        /// <para>
+        /// You can associate as many as 50 tags with an experiment.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+        /// Amazon Web Services resources</a>.
+        /// </para>
         /// </summary>
         public Dictionary<string, string> Tags
         {

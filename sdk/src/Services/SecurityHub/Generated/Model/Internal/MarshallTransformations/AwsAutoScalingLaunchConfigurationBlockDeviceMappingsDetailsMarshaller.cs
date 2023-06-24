@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails Marshaller
-    /// </summary>       
+    /// </summary>
     public class AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetailsMarshaller : IRequestMarshaller<AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails, JsonMarshallerContext> 
     {
         /// <summary>
@@ -78,7 +78,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetailsMarshaller Instance = new AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetailsMarshaller();
 
     }

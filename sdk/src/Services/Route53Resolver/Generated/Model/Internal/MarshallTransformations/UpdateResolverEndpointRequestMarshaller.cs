@@ -58,7 +58,7 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
             string target = "Route53Resolver.UpdateResolverEndpoint";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-04-01";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-04-01";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -79,7 +79,28 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ResolverEndpointId);
                 }
 
-        
+                if(publicRequest.IsSetResolverEndpointType())
+                {
+                    context.Writer.WritePropertyName("ResolverEndpointType");
+                    context.Writer.Write(publicRequest.ResolverEndpointType);
+                }
+
+                if(publicRequest.IsSetUpdateIpAddresses())
+                {
+                    context.Writer.WritePropertyName("UpdateIpAddresses");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestUpdateIpAddressesListValue in publicRequest.UpdateIpAddresses)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = UpdateIpAddressMarshaller.Instance;
+                        marshaller.Marshall(publicRequestUpdateIpAddressesListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AWSSupport.Model
 {
     /// <summary>
-    /// Details about AWS resources that were analyzed in a call to Trusted Advisor <a>DescribeTrustedAdvisorCheckSummaries</a>.
+    /// Details about Amazon Web Services resources that were analyzed in a call to Trusted
+    /// Advisor <a>DescribeTrustedAdvisorCheckSummaries</a>.
     /// </summary>
     public partial class TrustedAdvisorResourcesSummary
     {
@@ -41,7 +42,8 @@ namespace Amazon.AWSSupport.Model
         /// <summary>
         /// Gets and sets the property ResourcesFlagged. 
         /// <para>
-        /// The number of AWS resources that were flagged (listed) by the Trusted Advisor check.
+        /// The number of Amazon Web Services resources that were flagged (listed) by the Trusted
+        /// Advisor check.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -60,7 +62,8 @@ namespace Amazon.AWSSupport.Model
         /// <summary>
         /// Gets and sets the property ResourcesIgnored. 
         /// <para>
-        /// The number of AWS resources ignored by Trusted Advisor because information was unavailable.
+        /// The number of Amazon Web Services resources ignored by Trusted Advisor because information
+        /// was unavailable.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -79,7 +82,8 @@ namespace Amazon.AWSSupport.Model
         /// <summary>
         /// Gets and sets the property ResourcesProcessed. 
         /// <para>
-        /// The number of AWS resources that were analyzed by the Trusted Advisor check.
+        /// The number of Amazon Web Services resources that were analyzed by the Trusted Advisor
+        /// check.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -98,8 +102,8 @@ namespace Amazon.AWSSupport.Model
         /// <summary>
         /// Gets and sets the property ResourcesSuppressed. 
         /// <para>
-        /// The number of AWS resources ignored by Trusted Advisor because they were marked as
-        /// suppressed by the user.
+        /// The number of Amazon Web Services resources ignored by Trusted Advisor because they
+        /// were marked as suppressed by the user.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

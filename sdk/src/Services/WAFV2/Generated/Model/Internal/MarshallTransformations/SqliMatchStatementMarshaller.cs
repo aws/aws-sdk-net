@@ -34,7 +34,7 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SqliMatchStatement Marshaller
-    /// </summary>       
+    /// </summary>
     public class SqliMatchStatementMarshaller : IRequestMarshaller<SqliMatchStatement, JsonMarshallerContext> 
     {
         /// <summary>
@@ -54,6 +54,12 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
                 marshaller.Marshall(requestObject.FieldToMatch, context);
 
                 context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetSensitivityLevel())
+            {
+                context.Writer.WritePropertyName("SensitivityLevel");
+                context.Writer.Write(requestObject.SensitivityLevel);
             }
 
             if(requestObject.IsSetTextTransformations())
@@ -76,7 +82,7 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SqliMatchStatementMarshaller Instance = new SqliMatchStatementMarshaller();
 
     }

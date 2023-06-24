@@ -34,7 +34,7 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ContinuousHyperParameterRange Marshaller
-    /// </summary>       
+    /// </summary>
     public class ContinuousHyperParameterRangeMarshaller : IRequestMarshaller<ContinuousHyperParameterRange, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ContinuousHyperParameterRangeMarshaller Instance = new ContinuousHyperParameterRangeMarshaller();
 
     }

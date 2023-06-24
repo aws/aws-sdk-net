@@ -136,7 +136,7 @@ namespace AWSSDK.UnitTests
             } 
             catch (AmazonClientException e)
             {
-                Assert.AreEqual("Invalid configuration, cross region outpost access point ARN", e.Message);
+                Assert.AreEqual("Invalid configuration: region from ARN `us-east-1` does not match client region `us-west-2` and UseArnRegion is `false`", e.Message);
             }
             
         }
@@ -165,9 +165,8 @@ namespace AWSSDK.UnitTests
             } 
             catch (AmazonClientException e)
             {
-                Assert.AreEqual("Invalid configuration, cross partition outpost access point ARN", e.Message);
+                Assert.AreEqual("Client was configured for partition `aws` but ARN (`arn:aws-cn:s3-outposts:cn-north-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint`) has `aws-cn`", e.Message);
             }
-            
         }
 
         [TestMethod]
@@ -217,7 +216,7 @@ namespace AWSSDK.UnitTests
             }
             catch (AmazonClientException e)
             {
-                Assert.AreEqual("Invalid configuration outpost access points do not support dualstack", e.Message);
+                Assert.AreEqual("S3 Outposts does not support Dual-stack", e.Message);
             }
         }
 
@@ -246,17 +245,17 @@ namespace AWSSDK.UnitTests
             }
             catch (AmazonClientException e)
             {
-                Assert.AreEqual("Invalid configuration outpost access points do not support accelerate", e.Message);
+                Assert.AreEqual("S3 Outposts does not support S3 Accelerate", e.Message);
             }
         }
 
         [DataTestMethod]
         [TestCategory("S3")]
-        [DataRow("arn:aws:s3-outposts:us-west-2:123456789012:outpost", "us-west-2", S3ConfigFlags.ArnRegion, "", "Invalid ARN: arn:aws:s3-outposts:us-west-2:123456789012:outpost/foo.txt, outpost resource format is incorrect")]
-        [DataRow("arn:aws:s3-outposts:us-west-2:123456789012:outpost:myaccesspoint", "us-west-2", S3ConfigFlags.ArnRegion, "", "Invalid ARN: arn:aws:s3-outposts:us-west-2:123456789012:outpost:myaccesspoint/foo.txt, outpost resource format is incorrect")]
-        [DataRow("arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456", "us-west-2", S3ConfigFlags.ArnRegion, "", "Invalid ARN: arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456/foo.txt, outpost resource format is incorrect")]
-        [DataRow("arn:aws-us-gov:s3-outposts:us-gov-east-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint", "fips-us-gov-east-1", S3ConfigFlags.None, "", "Invalid configuration outpost access points do not support Fips- regions")]
-        [DataRow("arn:aws-us-gov:s3-outposts:us-gov-east-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint", "fips-us-gov-east-1", S3ConfigFlags.ArnRegion, "", "Invalid configuration outpost access points do not support Fips- regions")]
+        [DataRow("arn:aws:s3-outposts:us-west-2:123456789012:outpost", "us-west-2", S3ConfigFlags.ArnRegion, "", "Invalid ARN: The Outpost Id was not set")]
+        [DataRow("arn:aws:s3-outposts:us-west-2:123456789012:outpost:myaccesspoint", "us-west-2", S3ConfigFlags.ArnRegion, "", "Invalid ARN: Expected a 4-component resource")]
+        [DataRow("arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456", "us-west-2", S3ConfigFlags.ArnRegion, "", "Invalid ARN: Expected a 4-component resource")]
+        [DataRow("arn:aws-us-gov:s3-outposts:us-gov-east-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint", "fips-us-gov-east-1", S3ConfigFlags.None, "", "S3 Outposts does not support FIPS")]
+        [DataRow("arn:aws-us-gov:s3-outposts:us-gov-east-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint", "fips-us-gov-east-1", S3ConfigFlags.ArnRegion, "", "S3 Outposts does not support FIPS")]
         public void TestOutpostArnVariations(string arnString, string region, S3ConfigFlags flags, string host, string errorMessage)
         {
             var request = new GetObjectRequest
@@ -322,7 +321,7 @@ namespace AWSSDK.UnitTests
             }
             catch (AmazonClientException e)
             {
-                Assert.AreEqual("Invalid outpost ID: op-0123456.890123456. ID must contain only alphanumeric characters and dashes", e.Message);
+                Assert.AreEqual("Invalid ARN: The outpost Id may only contain a-z, A-Z, 0-9 and `-`. Found: `op-0123456.890123456`", e.Message);
             }
         }
 

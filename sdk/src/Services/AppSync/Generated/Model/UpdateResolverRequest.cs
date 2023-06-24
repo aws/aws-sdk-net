@@ -36,12 +36,15 @@ namespace Amazon.AppSync.Model
     {
         private string _apiId;
         private CachingConfig _cachingConfig;
+        private string _code;
         private string _dataSourceName;
         private string _fieldName;
         private ResolverKind _kind;
+        private int? _maxBatchSize;
         private PipelineConfig _pipelineConfig;
         private string _requestMappingTemplate;
         private string _responseMappingTemplate;
+        private AppSyncRuntime _runtime;
         private SyncConfig _syncConfig;
         private string _typeName;
 
@@ -80,6 +83,27 @@ namespace Amazon.AppSync.Model
         internal bool IsSetCachingConfig()
         {
             return this._cachingConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Code. 
+        /// <para>
+        /// The <code>resolver</code> code that contains the request and response functions. When
+        /// code is used, the <code>runtime</code> is required. The <code>runtime</code> value
+        /// must be <code>APPSYNC_JS</code>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=32768)]
+        public string Code
+        {
+            get { return this._code; }
+            set { this._code = value; }
+        }
+
+        // Check to see if Code property is set
+        internal bool IsSetCode()
+        {
+            return this._code != null;
         }
 
         /// <summary>
@@ -128,13 +152,13 @@ namespace Amazon.AppSync.Model
         ///  <ul> <li> 
         /// <para>
         ///  <b>UNIT</b>: A UNIT resolver type. A UNIT resolver is the default resolver type.
-        /// A UNIT resolver enables you to execute a GraphQL query against a single data source.
+        /// You can use a UNIT resolver to run a GraphQL query against a single data source.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>PIPELINE</b>: A PIPELINE resolver type. A PIPELINE resolver enables you to execute
-        /// a series of <code>Function</code> in a serial manner. You can use a pipeline resolver
-        /// to execute a GraphQL query against multiple data sources.
+        ///  <b>PIPELINE</b>: A PIPELINE resolver type. You can use a PIPELINE resolver to invoke
+        /// a series of <code>Function</code> objects in a serial manner. You can use a pipeline
+        /// resolver to run a GraphQL query against multiple data sources.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -148,6 +172,25 @@ namespace Amazon.AppSync.Model
         internal bool IsSetKind()
         {
             return this._kind != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxBatchSize. 
+        /// <para>
+        /// The maximum batching size for a resolver.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=2000)]
+        public int MaxBatchSize
+        {
+            get { return this._maxBatchSize.GetValueOrDefault(); }
+            set { this._maxBatchSize = value; }
+        }
+
+        // Check to see if MaxBatchSize property is set
+        internal bool IsSetMaxBatchSize()
+        {
+            return this._maxBatchSize.HasValue; 
         }
 
         /// <summary>
@@ -181,7 +224,7 @@ namespace Amazon.AppSync.Model
         /// </para>
         ///  
         /// <para>
-        /// VTL request mapping templates are optional when using a Lambda data source. For all
+        /// VTL request mapping templates are optional when using an Lambda data source. For all
         /// other data sources, VTL request and response mapping templates are required.
         /// </para>
         /// </summary>
@@ -218,9 +261,24 @@ namespace Amazon.AppSync.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Runtime.
+        /// </summary>
+        public AppSyncRuntime Runtime
+        {
+            get { return this._runtime; }
+            set { this._runtime = value; }
+        }
+
+        // Check to see if Runtime property is set
+        internal bool IsSetRuntime()
+        {
+            return this._runtime != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SyncConfig. 
         /// <para>
-        /// The <code>SyncConfig</code> for a resolver attached to a versioned datasource.
+        /// The <code>SyncConfig</code> for a resolver attached to a versioned data source.
         /// </para>
         /// </summary>
         public SyncConfig SyncConfig

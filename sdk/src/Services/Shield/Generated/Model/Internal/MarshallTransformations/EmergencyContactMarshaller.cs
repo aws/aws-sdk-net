@@ -34,7 +34,7 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// EmergencyContact Marshaller
-    /// </summary>       
+    /// </summary>
     public class EmergencyContactMarshaller : IRequestMarshaller<EmergencyContact, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static EmergencyContactMarshaller Instance = new EmergencyContactMarshaller();
 
     }

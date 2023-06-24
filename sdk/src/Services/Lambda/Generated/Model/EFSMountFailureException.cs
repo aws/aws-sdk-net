@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lambda.Model
 {
     /// <summary>
-    /// The function couldn't mount the configured file system due to a permission or configuration
-    /// issue.
+    /// The Lambda function couldn't mount the configured file system due to a permission
+    /// or configuration issue.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

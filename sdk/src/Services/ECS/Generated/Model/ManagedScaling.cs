@@ -33,16 +33,15 @@ namespace Amazon.ECS.Model
     /// 
     ///  
     /// <para>
-    /// When managed scaling is enabled, Amazon ECS manages the scale-in and scale-out actions
+    /// When managed scaling is turned on, Amazon ECS manages the scale-in and scale-out actions
     /// of the Auto Scaling group. Amazon ECS manages a target tracking scaling policy using
     /// an Amazon ECS managed CloudWatch metric with the specified <code>targetCapacity</code>
     /// value as the target value for the metric. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/asg-capacity-providers.html#asg-capacity-providers-managed-scaling">Using
-    /// Managed Scaling</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+    /// managed scaling</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
     /// </para>
     ///  
     /// <para>
-    /// If managed scaling is disabled, the user must manage the scaling of the Auto Scaling
-    /// group.
+    /// If managed scaling is off, the user must manage the scaling of the Auto Scaling group.
     /// </para>
     /// </summary>
     public partial class ManagedScaling
@@ -77,9 +76,9 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property MaximumScalingStepSize. 
         /// <para>
-        /// The maximum number of container instances that Amazon ECS scales in or scales out
-        /// at one time. If this parameter is omitted, the default value of <code>10000</code>
-        /// is used.
+        /// The maximum number of Amazon EC2 instances that Amazon ECS will scale out at one time.
+        /// The scale in process is not affected by this parameter. If this parameter is omitted,
+        /// the default value of <code>1</code> is used.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10000)]
@@ -98,9 +97,21 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property MinimumScalingStepSize. 
         /// <para>
-        /// The minimum number of container instances that Amazon ECS scales in or scales out
-        /// at one time. If this parameter is omitted, the default value of <code>1</code> is
-        /// used.
+        /// The minimum number of Amazon EC2 instances that Amazon ECS will scale out at one time.
+        /// The scale in process is not affected by this parameter If this parameter is omitted,
+        /// the default value of <code>1</code> is used.
+        /// </para>
+        ///  
+        /// <para>
+        /// When additional capacity is required, Amazon ECS will scale up the minimum scaling
+        /// step size even if the actual demand is less than the minimum scaling step size.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you use a capacity provider with an Auto Scaling group configured with more than
+        /// one Amazon EC2 instance type or Availability Zone, Amazon ECS will scale up by the
+        /// exact minimum scaling step size value and will ignore both the maximum scaling step
+        /// size as well as the capacity demand.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10000)]
@@ -119,7 +130,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// Determines whether to enable managed scaling for the capacity provider.
+        /// Determines whether to use managed scaling for the capacity provider.
         /// </para>
         /// </summary>
         public ManagedScalingStatus Status
@@ -137,9 +148,12 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property TargetCapacity. 
         /// <para>
-        /// The target capacity value for the capacity provider. The specified value must be greater
-        /// than <code>0</code> and less than or equal to <code>100</code>. A value of <code>100</code>
-        /// results in the Amazon EC2 instances in your Auto Scaling group being completely used.
+        /// The target capacity utilization as a percentage for the capacity provider. The specified
+        /// value must be greater than <code>0</code> and less than or equal to <code>100</code>.
+        /// For example, if you want the capacity provider to maintain 10% spare capacity, then
+        /// that means the utilization is 90%, so use a <code>targetCapacity</code> of <code>90</code>.
+        /// The default value of <code>100</code> percent results in the Amazon EC2 instances
+        /// in your Auto Scaling group being completely used.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

@@ -34,7 +34,7 @@ namespace Amazon.ServerlessApplicationRepository.Model.Internal.MarshallTransfor
 {
     /// <summary>
     /// ParameterValue Marshaller
-    /// </summary>       
+    /// </summary>
     public class ParameterValueMarshaller : IRequestMarshaller<ParameterValue, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.ServerlessApplicationRepository.Model.Internal.MarshallTransfor
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ParameterValueMarshaller Instance = new ParameterValueMarshaller();
 
     }

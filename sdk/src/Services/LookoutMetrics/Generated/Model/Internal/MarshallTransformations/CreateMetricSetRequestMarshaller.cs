@@ -56,7 +56,7 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.LookoutMetrics");
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-07-25";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-07-25";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/CreateMetricSet";
@@ -69,6 +69,22 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("AnomalyDetectorArn");
                     context.Writer.Write(publicRequest.AnomalyDetectorArn);
+                }
+
+                if(publicRequest.IsSetDimensionFilterList())
+                {
+                    context.Writer.WritePropertyName("DimensionFilterList");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestDimensionFilterListListValue in publicRequest.DimensionFilterList)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = MetricSetDimensionFilterMarshaller.Instance;
+                        marshaller.Marshall(publicRequestDimensionFilterListListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
                 }
 
                 if(publicRequest.IsSetDimensionList())
@@ -164,7 +180,6 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Timezone);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

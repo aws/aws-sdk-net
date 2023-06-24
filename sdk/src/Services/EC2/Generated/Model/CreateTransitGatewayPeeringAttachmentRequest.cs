@@ -31,9 +31,8 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Container for the parameters to the CreateTransitGatewayPeeringAttachment operation.
     /// Requests a transit gateway peering attachment between the specified transit gateway
-    /// (requester) and a peer transit gateway (accepter). The transit gateways must be in
-    /// different Regions. The peer transit gateway can be in your account or a different
-    /// Amazon Web Services account.
+    /// (requester) and a peer transit gateway (accepter). The peer transit gateway can be
+    /// in your account or a different Amazon Web Services account.
     /// 
     ///  
     /// <para>
@@ -43,11 +42,30 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class CreateTransitGatewayPeeringAttachmentRequest : AmazonEC2Request
     {
+        private CreateTransitGatewayPeeringAttachmentRequestOptions _options;
         private string _peerAccountId;
         private string _peerRegion;
         private string _peerTransitGatewayId;
         private List<TagSpecification> _tagSpecifications = new List<TagSpecification>();
         private string _transitGatewayId;
+
+        /// <summary>
+        /// Gets and sets the property Options. 
+        /// <para>
+        /// Requests a transit gateway peering attachment.
+        /// </para>
+        /// </summary>
+        public CreateTransitGatewayPeeringAttachmentRequestOptions Options
+        {
+            get { return this._options; }
+            set { this._options = value; }
+        }
+
+        // Check to see if Options property is set
+        internal bool IsSetOptions()
+        {
+            return this._options != null;
+        }
 
         /// <summary>
         /// Gets and sets the property PeerAccountId. 

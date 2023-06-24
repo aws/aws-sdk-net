@@ -34,7 +34,7 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// VolumeConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class VolumeConfigurationMarshaller : IRequestMarshaller<VolumeConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -91,7 +91,7 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static VolumeConfigurationMarshaller Instance = new VolumeConfigurationMarshaller();
 
     }

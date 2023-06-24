@@ -58,7 +58,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             string target = "SageMaker.CreateDomain";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-07-24";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-07-24";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -83,6 +83,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("AuthMode");
                     context.Writer.Write(publicRequest.AuthMode);
+                }
+
+                if(publicRequest.IsSetDefaultSpaceSettings())
+                {
+                    context.Writer.WritePropertyName("DefaultSpaceSettings");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = DefaultSpaceSettingsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.DefaultSpaceSettings, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
                 if(publicRequest.IsSetDefaultUserSettings())
@@ -158,7 +169,6 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.VpcId);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

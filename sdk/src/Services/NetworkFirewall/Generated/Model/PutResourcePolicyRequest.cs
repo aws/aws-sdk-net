@@ -30,9 +30,9 @@ namespace Amazon.NetworkFirewall.Model
 {
     /// <summary>
     /// Container for the parameters to the PutResourcePolicy operation.
-    /// Creates or updates an AWS Identity and Access Management policy for your rule group
-    /// or firewall policy. Use this to share rule groups and firewall policies between accounts.
-    /// This operation works in conjunction with the AWS Resource Access Manager (RAM) service
+    /// Creates or updates an IAM policy for your rule group or firewall policy. Use this
+    /// to share rule groups and firewall policies between accounts. This operation works
+    /// in conjunction with the Amazon Web Services Resource Access Manager (RAM) service
     /// to manage resource sharing for Network Firewall. 
     /// 
     ///  
@@ -59,8 +59,8 @@ namespace Amazon.NetworkFirewall.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// For additional information about resource sharing using RAM, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/what-is.html">AWS
-    /// Resource Access Manager User Guide</a>.
+    /// For additional information about resource sharing using RAM, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/what-is.html">Resource
+    /// Access Manager User Guide</a>.
     /// </para>
     /// </summary>
     public partial class PutResourcePolicyRequest : AmazonNetworkFirewallRequest
@@ -71,9 +71,9 @@ namespace Amazon.NetworkFirewall.Model
         /// <summary>
         /// Gets and sets the property Policy. 
         /// <para>
-        /// The AWS Identity and Access Management policy statement that lists the accounts that
-        /// you want to share your rule group or firewall policy with and the operations that
-        /// you want the accounts to be able to perform. 
+        /// The IAM policy statement that lists the accounts that you want to share your rule
+        /// group or firewall policy with and the operations that you want the accounts to be
+        /// able to perform. 
         /// </para>
         ///  
         /// <para>
@@ -98,14 +98,6 @@ namespace Amazon.NetworkFirewall.Model
         /// section of the statement:
         /// </para>
         ///  <ul> <li> 
-        /// <para>
-        /// network-firewall:CreateFirewall
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// network-firewall:UpdateFirewall
-        /// </para>
-        ///  </li> <li> 
         /// <para>
         /// network-firewall:AssociateFirewallPolicy
         /// </para>

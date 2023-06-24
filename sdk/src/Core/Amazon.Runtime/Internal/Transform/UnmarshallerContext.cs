@@ -13,13 +13,12 @@
  * permissions and limitations under the License.
  */
 
+using Amazon.Util.Internal;
 using Amazon.Runtime.Internal.Util;
 using System;
 using System.Collections.Generic;
-using System.Collections.Specialized;
 using System.Globalization;
 using System.IO;
-using System.Text;
 using System.Xml;
 using ThirdParty.Ionic.Zlib;
 
@@ -36,7 +35,10 @@ namespace Amazon.Runtime.Internal.Transform
         protected bool MaintainResponseBody { get; set; }
         protected bool IsException { get; set; }
         protected CrcCalculatorStream CrcStream { get; set; }
-        protected int Crc32Result { get; set; }        
+        protected int Crc32Result { get; set; }
+        protected CoreChecksumAlgorithm ChecksumAlgorithm { get; set; }
+        protected HashStream FlexibleChecksumStream { get; set; }
+        protected string ExpectedFlexibleChecksumResult { get; set; }
         protected IWebResponseData WebResponseData { get; set; }
 
         protected CachingWrapperStream WrappingStream { get; set; }
@@ -63,7 +65,7 @@ namespace Amazon.Runtime.Internal.Transform
             }
             else
             {
-                return new byte[0];
+                return ArrayEx.Empty<byte>();
             }
         }
 
@@ -83,6 +85,30 @@ namespace Amazon.Runtime.Internal.Transform
             }
         }
 
+        internal void ValidateFlexibleCheckumsIfAvailable(ResponseMetadata responseMetadata)
+        {
+            if (FlexibleChecksumStream == null)
+            {
+                return;
+            }
+            
+            responseMetadata.ChecksumAlgorithm = ChecksumAlgorithm;
+            responseMetadata.ChecksumValidationStatus = ChecksumValidationStatus.PENDING_RESPONSE_READ;
+
+            if (FlexibleChecksumStream.CalculatedHash != null)
+            {
+                if (Convert.ToBase64String(FlexibleChecksumStream.CalculatedHash) != ExpectedFlexibleChecksumResult)
+                {
+                    responseMetadata.ChecksumValidationStatus = ChecksumValidationStatus.INVALID;
+                    throw new AmazonClientException("Expected hash not equal to calculated hash");
+                }
+                else
+                {
+                    responseMetadata.ChecksumValidationStatus = ChecksumValidationStatus.SUCCESSFUL;
+                }
+            }
+        }
+
         protected void SetupCRCStream(IWebResponseData responseData, Stream responseStream, long contentLength)
         {
             this.CrcStream = null;
@@ -92,6 +118,38 @@ namespace Amazon.Runtime.Internal.Transform
             {
                 this.Crc32Result = unchecked((int) parsed);
                 this.CrcStream = new CrcCalculatorStream(responseStream, contentLength);
+            }
+        }
+
+        protected void SetupFlexibleChecksumStream(IWebResponseData responseData, Stream responseStream, long contentLength, IRequestContext requestContext)
+        {
+            var algorithm = ChecksumUtils.SelectChecksumForResponseValidation(requestContext?.OriginalRequest?.ChecksumResponseAlgorithms, responseData);
+
+            if (algorithm == CoreChecksumAlgorithm.NONE)
+            {
+                return;
+            }
+
+            ChecksumAlgorithm = algorithm;
+            ExpectedFlexibleChecksumResult = responseData.GetHeaderValue(ChecksumUtils.GetChecksumHeaderKey(algorithm));
+            var checksum = Convert.FromBase64String(ExpectedFlexibleChecksumResult);
+
+            switch (algorithm)
+            {
+                case CoreChecksumAlgorithm.CRC32C:
+                    FlexibleChecksumStream = new HashStream<HashingWrapperCRC32C>(responseStream, checksum, contentLength);
+                    break;
+                case CoreChecksumAlgorithm.CRC32:
+                    FlexibleChecksumStream = new HashStream<HashingWrapperCRC32>(responseStream, checksum, contentLength);
+                    break;
+                case CoreChecksumAlgorithm.SHA256:
+                    FlexibleChecksumStream = new HashStream<HashingWrapperSHA256>(responseStream, checksum, contentLength);
+                    break;
+                case CoreChecksumAlgorithm.SHA1:
+                    FlexibleChecksumStream = new HashStream<HashingWrapperSHA1>(responseStream, checksum, contentLength);
+                    break;
+                default:
+                    throw new AmazonClientException($"Unsupported checksum algorithm {algorithm}");
             }
         }
 
@@ -273,11 +331,6 @@ namespace Amazon.Runtime.Internal.Transform
     {
         #region Private members
 
-#if BCL35
-        private static readonly XmlReaderSettings READER_SETTINGS = new XmlReaderSettings() { ProhibitDtd = false, IgnoreWhitespace = true };
-#else
-        private static readonly XmlReaderSettings READER_SETTINGS = new XmlReaderSettings() { DtdProcessing = DtdProcessing.Ignore, IgnoreWhitespace = true };
-#endif
         private static HashSet<XmlNodeType> nodesToSkip = new HashSet<XmlNodeType>
         {
             XmlNodeType.None,
@@ -287,7 +340,7 @@ namespace Amazon.Runtime.Internal.Transform
         };
 
         private StreamReader streamReader;
-        private XmlReader _xmlReader;
+        private XmlTextReader _xmlTextReader;
         private Stack<string> stack = new Stack<string>();
         private string stackString = "";
         private Dictionary<string, string> attributeValues;
@@ -310,16 +363,28 @@ namespace Amazon.Runtime.Internal.Transform
         /// Lookup of element names that are not skipped if empty within the XML response structure.
         /// </summary>
         public HashSet<string> AllowEmptyElementLookup { get; private set; }
-        
-        private XmlReader XmlReader
+
+        /// <remarks>
+        /// Despite Microsoft's recommendation to use XmlReader for .NET Framework 2.0 or greater 
+        /// (https://docs.microsoft.com/en-us/dotnet/api/system.xml.xmltextreader#remarks), this class
+        /// intentionally uses XmlTextReader to handle the XML related object key constraints 
+        /// for S3 (https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html).
+        /// </remarks>
+        private XmlTextReader XmlReader
         {
             get
             {
-                if (_xmlReader == null)
+                if (_xmlTextReader == null)
                 {
-                    _xmlReader = XmlReader.Create(streamReader, READER_SETTINGS);
+                    _xmlTextReader = new XmlTextReader(streamReader);
+                    _xmlTextReader.WhitespaceHandling = WhitespaceHandling.None;
+#if BCL35
+                    _xmlTextReader.ProhibitDtd = false;
+#else
+                    _xmlTextReader.DtdProcessing = DtdProcessing.Ignore;
+#endif
                 }
-                return _xmlReader;
+                return _xmlTextReader;
             }
         }
 
@@ -335,6 +400,19 @@ namespace Amazon.Runtime.Internal.Transform
         /// <param name="responseData">Response data coming back from the request</param>
         /// <param name="isException">If set to true, maintains a copy of the complete response body as the stream is being read.</param>
         public XmlUnmarshallerContext(Stream responseStream, bool maintainResponseBody, IWebResponseData responseData, bool isException = false)
+            : this(responseStream, maintainResponseBody, responseData, isException, null)
+        {
+        }
+
+        /// <summary>
+        /// Wrap an XmlTextReader with state for event-based parsing of an XML stream.
+        /// </summary>
+        /// <param name="responseStream"><c>Stream</c> with the XML from a service response.</param>
+        /// <param name="maintainResponseBody"> If set to true, maintains a copy of the complete response body constraint to log response size as the stream is being read.</param>
+        /// <param name="responseData">Response data coming back from the request</param>
+        /// <param name="isException">If set to true, maintains a copy of the complete response body as the stream is being read.</param>
+        /// <param name="requestContext">Context for the request that produced this response</param>
+        public XmlUnmarshallerContext(Stream responseStream, bool maintainResponseBody, IWebResponseData responseData, bool isException, IRequestContext requestContext)
         {
             if (isException)
             {
@@ -349,8 +427,23 @@ namespace Amazon.Runtime.Internal.Transform
             {
                 responseStream = this.WrappingStream;
             }
+            // If the unmarshaller context is being called internally without there being a http response then the response data would be null
+            if (responseData != null)
+            {
+                long contentLength;
+                bool parsedContentLengthHeader = long.TryParse(responseData.GetHeaderValue("Content-Length"), out contentLength);
 
-            streamReader = new StreamReader(responseStream);
+                // Validate flexible checksums if we know the content length and the behavior was opted in to on the request
+                if (parsedContentLengthHeader && responseData.ContentLength == contentLength &&
+                        string.IsNullOrEmpty(responseData.GetHeaderValue("Content-Encoding")) &&
+                        requestContext?.OriginalRequest?.CoreChecksumMode == CoreChecksumResponseBehavior.ENABLED)
+                {
+                    SetupFlexibleChecksumStream(responseData, responseStream, contentLength, requestContext);
+                }
+            }
+
+            streamReader = new StreamReader(this.FlexibleChecksumStream ?? responseStream);
+
             this.WebResponseData = responseData;
             this.MaintainResponseBody = maintainResponseBody;
             this.IsException = isException;
@@ -552,14 +645,14 @@ namespace Amazon.Runtime.Internal.Transform
                         streamReader.Dispose();
                         streamReader = null;
                     }
-                    if (_xmlReader != null)
+                    if (_xmlTextReader != null)
                     {
 #if NETSTANDARD
-                        _xmlReader.Dispose();
+                        _xmlTextReader.Dispose();
 #else
-                        _xmlReader.Close();
+                        _xmlTextReader.Close();
 #endif
-                        _xmlReader = null;
+                        _xmlTextReader = null;
                     }
                 }
                 disposed = true;
@@ -579,6 +672,19 @@ namespace Amazon.Runtime.Internal.Transform
         /// <param name="isException">If set to true, maintains a copy of the complete response body as the stream is being read.</param>
         public EC2UnmarshallerContext(Stream responseStream, bool maintainResponseBody, IWebResponseData responseData, bool isException = false)
             : base(responseStream, maintainResponseBody, responseData, isException)
+        {
+        }
+
+        /// <summary>
+        /// Wrap an XmlTextReader with state for event-based parsing of an XML stream.
+        /// </summary>
+        /// <param name="responseStream"><c>Stream</c> with the XML from a service response.</param>
+        /// <param name="maintainResponseBody"> If set to true, maintains a copy of the complete response body constraint to log response size as the stream is being read.</param>
+        /// <param name="responseData">Response data coming back from the request</param>
+        /// <param name="isException">If set to true, maintains a copy of the complete response body as the stream is being read.</param>
+        /// <param name="requestContext">Context for the request that produced this response</param>
+        public EC2UnmarshallerContext(Stream responseStream, bool maintainResponseBody, IWebResponseData responseData, bool isException, IRequestContext requestContext)
+            : base(responseStream, maintainResponseBody, responseData, isException, requestContext)
         {
         }
 

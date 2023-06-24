@@ -34,7 +34,7 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ProvisionedThroughputOverride Marshaller
-    /// </summary>       
+    /// </summary>
     public class ProvisionedThroughputOverrideMarshaller : IRequestMarshaller<ProvisionedThroughputOverride, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ProvisionedThroughputOverrideMarshaller Instance = new ProvisionedThroughputOverrideMarshaller();
 
     }

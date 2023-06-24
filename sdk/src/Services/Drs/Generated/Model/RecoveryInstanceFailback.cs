@@ -39,6 +39,7 @@ namespace Amazon.Drs.Model
         private string _failbackClientLastSeenByServiceDateTime;
         private string _failbackInitiationTime;
         private string _failbackJobID;
+        private FailbackLaunchType _failbackLaunchType;
         private bool? _failbackToOriginalServer;
         private string _firstByteDateTime;
         private FailbackState _state;
@@ -155,6 +156,25 @@ namespace Amazon.Drs.Model
         internal bool IsSetFailbackJobID()
         {
             return this._failbackJobID != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FailbackLaunchType. 
+        /// <para>
+        /// The launch type (Recovery / Drill) of the last launch for the failback replication
+        /// of this recovery instance.
+        /// </para>
+        /// </summary>
+        public FailbackLaunchType FailbackLaunchType
+        {
+            get { return this._failbackLaunchType; }
+            set { this._failbackLaunchType = value; }
+        }
+
+        // Check to see if FailbackLaunchType property is set
+        internal bool IsSetFailbackLaunchType()
+        {
+            return this._failbackLaunchType != null;
         }
 
         /// <summary>

@@ -30,8 +30,8 @@ namespace Amazon.LexModelsV2.Model
 {
     /// <summary>
     /// Container for the parameters to the StartImport operation.
-    /// Starts importing a bot or bot locale from a zip archive that you uploaded to an S3
-    /// bucket.
+    /// Starts importing a bot, bot locale, or custom vocabulary from a zip archive that you
+    /// uploaded to an S3 bucket.
     /// </summary>
     public partial class StartImportRequest : AmazonLexModelsV2Request
     {
@@ -43,12 +43,12 @@ namespace Amazon.LexModelsV2.Model
         /// <summary>
         /// Gets and sets the property FilePassword. 
         /// <para>
-        /// The password used to encrypt the zip archive that contains the bot or bot locale definition.
+        /// The password used to encrypt the zip archive that contains the resource definition.
         /// You should always encrypt the zip archive to protect it during transit between your
         /// site and Amazon Lex.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Sensitive=true, Min=1, Max=1024)]
         public string FilePassword
         {
             get { return this._filePassword; }
@@ -64,7 +64,7 @@ namespace Amazon.LexModelsV2.Model
         /// <summary>
         /// Gets and sets the property ImportId. 
         /// <para>
-        /// The unique identifier for the import. It is included in the response from the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateUploadUrl.html">CreateUploadUrl</a>
+        /// The unique identifier for the import. It is included in the response from the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateUploadUrl.html">CreateUploadUrl</a>
         /// operation.
         /// </para>
         /// </summary>
@@ -105,7 +105,7 @@ namespace Amazon.LexModelsV2.Model
         /// <summary>
         /// Gets and sets the property ResourceSpecification. 
         /// <para>
-        /// Parameters for creating the bot or bot locale.
+        /// Parameters for creating the bot, bot locale or custom vocabulary.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

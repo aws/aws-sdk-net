@@ -63,6 +63,10 @@ namespace Amazon.IdentityManagement.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
+    /// A list of tags that are attached to the specified IAM OIDC provider
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     /// A list of thumbprints of one or more server certificates that the IdP uses
     /// </para>
     ///  </li> </ul> 
@@ -75,7 +79,7 @@ namespace Amazon.IdentityManagement.Model
     /// Amazon Web Services secures communication with some OIDC identity providers (IdPs)
     /// through our library of trusted certificate authorities (CAs) instead of using a certificate
     /// thumbprint to verify your IdP server certificate. These OIDC IdPs include Google,
-    /// and those that use an Amazon S3 bucket to host a JSON Web Key Set (JWKS) endpoint.
+    /// Auth0, and those that use an Amazon S3 bucket to host a JSON Web Key Set (JWKS) endpoint.
     /// In these cases, your legacy thumbprint remains in your configuration, but is no longer
     /// used for validation.
     /// </para>
@@ -178,7 +182,7 @@ namespace Amazon.IdentityManagement.Model
         ///  
         /// <para>
         /// For more information about obtaining the OIDC provider thumbprint, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/identity-providers-oidc-obtain-thumbprint.html">Obtaining
-        /// the thumbprint for an OpenID Connect provider</a> in the <i>IAM User Guide</i>.
+        /// the thumbprint for an OpenID Connect provider</a> in the <i>IAM user Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

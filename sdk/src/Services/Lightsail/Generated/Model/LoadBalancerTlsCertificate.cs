@@ -310,7 +310,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property Location. 
         /// <para>
-        /// The AWS Region and Availability Zone where you created your certificate.
+        /// The Amazon Web Services Region and Availability Zone where you created your certificate.
         /// </para>
         /// </summary>
         public ResourceLocation Location

@@ -30,7 +30,7 @@ namespace Amazon.CloudControlApi.Model
 {
     /// <summary>
     /// The resource handler has returned that the downstream service generated an error that
-    /// does not map to any other handler error code.
+    /// doesn't map to any other handler error code.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -1,5 +1,6 @@
 {
   "active": true,
   "synopsis": "Amazon Personalize is a machine learning service that makes it easy for developers to create individualized recommendations for customers using their applications.",
-  "generate-client-constructors": true
+  "generate-client-constructors": true,
+  "legacy-service-id": "Personalize"
 }

@@ -34,7 +34,7 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// S3Object Marshaller
-    /// </summary>       
+    /// </summary>
     public class S3ObjectMarshaller : IRequestMarshaller<S3Object, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static S3ObjectMarshaller Instance = new S3ObjectMarshaller();
 
     }

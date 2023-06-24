@@ -34,7 +34,7 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RequestDetails Marshaller
-    /// </summary>       
+    /// </summary>
     public class RequestDetailsMarshaller : IRequestMarshaller<RequestDetails, JsonMarshallerContext> 
     {
         /// <summary>
@@ -45,6 +45,17 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(RequestDetails requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetCreateS3DataAccessFromS3Bucket())
+            {
+                context.Writer.WritePropertyName("CreateS3DataAccessFromS3Bucket");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = CreateS3DataAccessFromS3BucketRequestDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.CreateS3DataAccessFromS3Bucket, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetExportAssetsToS3())
             {
                 context.Writer.WritePropertyName("ExportAssetsToS3");
@@ -78,6 +89,17 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetImportAssetFromApiGatewayApi())
+            {
+                context.Writer.WritePropertyName("ImportAssetFromApiGatewayApi");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ImportAssetFromApiGatewayApiRequestDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.ImportAssetFromApiGatewayApi, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetImportAssetFromSignedUrl())
             {
                 context.Writer.WritePropertyName("ImportAssetFromSignedUrl");
@@ -85,6 +107,17 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
 
                 var marshaller = ImportAssetFromSignedUrlRequestDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.ImportAssetFromSignedUrl, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetImportAssetsFromLakeFormationTagPolicy())
+            {
+                context.Writer.WritePropertyName("ImportAssetsFromLakeFormationTagPolicy");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ImportAssetsFromLakeFormationTagPolicyRequestDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.ImportAssetsFromLakeFormationTagPolicy, context);
 
                 context.Writer.WriteObjectEnd();
             }
@@ -115,7 +148,7 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RequestDetailsMarshaller Instance = new RequestDetailsMarshaller();
 
     }

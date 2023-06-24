@@ -18,9 +18,16 @@ using System;
 namespace Amazon.Runtime.Credentials.Internal
 {
     /// <summary>
-    /// An SSO Token is used by the SSO AWS Credentials provider to request permission to get credentials.
-    /// SSO Tokens are persisted using <see cref="SsoTokenCache"/>.
+    /// An <see cref="SsoToken"/> is used by the <see cref="SSOAWSCredentials"/> provider to request
+    /// permission to get credentials and by the <see cref="SSOTokenProvider"/> when a Service is using
+    /// <see cref="BearerTokenSigner"/>.
+    /// <para />
+    /// <see cref="SsoToken"/>s are persisted using <see cref="SSOTokenManager"/>.
     /// </summary>
+    /// <remarks>
+    /// This class is meant to be used internally.  It may be projected to a
+    /// <see cref="AWSToken"/>
+    /// </remarks>
     public class SsoToken
     {
         /// <summary>
@@ -34,6 +41,29 @@ namespace Amazon.Runtime.Credentials.Internal
         public DateTime ExpiresAt { get; set; }
 
         /// <summary>
+        ///  An opaque string returned by the sso-oidc service.
+        /// </summary>
+        public string RefreshToken { get; set; }
+
+        /// <summary>
+        /// The client ID generated when performing the registration portion of the OIDC authorization flow.
+        /// The clientId is used alongside the <see cref="RefreshToken"/> to refresh the <see cref="AccessToken"/>.
+        /// </summary>
+        public string ClientId { get; set; }
+
+        /// <summary>
+        /// he client secret generated when performing the registration portion of the OIDC authorization flow.
+        /// The <see cref="ClientSecret"/> is used alongside the <see cref="RefreshToken"/> to refresh the <see cref="AccessToken"/>.
+        /// </summary>
+        public string ClientSecret { get; set; }
+
+        /// <summary>
+        /// The expiration time of the client registration (<see cref="ClientId"/> and <see cref="ClientSecret"/>) as
+        /// an RFC 3339 formatted timestamp.
+        /// </summary>
+        public string RegistrationExpiresAt { get; set; }
+
+        /// <summary>
         /// The configured sso_region for the profile that credentials are being resolved for.
         /// </summary>
         public string Region { get; set; }
@@ -42,5 +72,10 @@ namespace Amazon.Runtime.Credentials.Internal
         /// The configured sso_start_url for the profile that credentials are being resolved for.
         /// </summary>
         public string StartUrl { get; set; }
+
+        /// <summary>
+        /// The configured sso_session for the profile that credentials are being resolved for.
+        /// </summary>
+        public string Session { get; set; }
     }
 }

@@ -93,6 +93,34 @@ namespace Amazon.Athena
 
         #endregion
                 
+        #region  BatchGetPreparedStatement
+
+
+
+        /// <summary>
+        /// Returns the details of a single prepared statement or a list of up to 256 prepared
+        /// statements for the array of prepared statement names that you provide. Requires you
+        /// to have access to the workgroup to which the prepared statements belong. If a prepared
+        /// statement cannot be retrieved for the name specified, the statement is listed in <code>UnprocessedPreparedStatementNames</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetPreparedStatement service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchGetPreparedStatement service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/BatchGetPreparedStatement">REST API Reference for BatchGetPreparedStatement Operation</seealso>
+        Task<BatchGetPreparedStatementResponse> BatchGetPreparedStatementAsync(BatchGetPreparedStatementRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  BatchGetQueryExecution
 
 
@@ -119,6 +147,60 @@ namespace Amazon.Athena
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/BatchGetQueryExecution">REST API Reference for BatchGetQueryExecution Operation</seealso>
         Task<BatchGetQueryExecutionResponse> BatchGetQueryExecutionAsync(BatchGetQueryExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CancelCapacityReservation
+
+
+
+        /// <summary>
+        /// Cancels the capacity reservation with the specified name. Cancelled reservations remain
+        /// in your account and will be deleted 45 days after cancellation. During the 45 days,
+        /// you cannot re-purpose or reuse a reservation that has been cancelled, but you can
+        /// refer to its tags and view it for historical reference.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelCapacityReservation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CancelCapacityReservation service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/CancelCapacityReservation">REST API Reference for CancelCapacityReservation Operation</seealso>
+        Task<CancelCapacityReservationResponse> CancelCapacityReservationAsync(CancelCapacityReservationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CreateCapacityReservation
+
+
+
+        /// <summary>
+        /// Creates a capacity reservation with the specified name and number of requested data
+        /// processing units.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCapacityReservation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateCapacityReservation service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/CreateCapacityReservation">REST API Reference for CreateCapacityReservation Operation</seealso>
+        Task<CreateCapacityReservationResponse> CreateCapacityReservationAsync(CreateCapacityReservationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -180,6 +262,35 @@ namespace Amazon.Athena
 
         #endregion
                 
+        #region  CreateNotebook
+
+
+
+        /// <summary>
+        /// Creates an empty <code>ipynb</code> file in the specified Apache Spark enabled workgroup.
+        /// Throws an error if a file in the workgroup with the same name already exists.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateNotebook service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateNotebook service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.TooManyRequestsException">
+        /// Indicates that the request was throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/CreateNotebook">REST API Reference for CreateNotebook Operation</seealso>
+        Task<CreateNotebookResponse> CreateNotebookAsync(CreateNotebookRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CreatePreparedStatement
 
 
@@ -205,12 +316,45 @@ namespace Amazon.Athena
 
         #endregion
                 
+        #region  CreatePresignedNotebookUrl
+
+
+
+        /// <summary>
+        /// Gets an authentication token and the URL at which the notebook can be accessed. During
+        /// programmatic access, <code>CreatePresignedNotebookUrl</code> must be called every
+        /// 10 minutes to refresh the authentication token. For information about granting programmatic
+        /// access, see <a href="https://docs.aws.amazon.com/athena/latest/ug/setting-up.html#setting-up-grant-programmatic-access">Grant
+        /// programmatic access</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePresignedNotebookUrl service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreatePresignedNotebookUrl service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.ResourceNotFoundException">
+        /// A resource, such as a workgroup, was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/CreatePresignedNotebookUrl">REST API Reference for CreatePresignedNotebookUrl Operation</seealso>
+        Task<CreatePresignedNotebookUrlResponse> CreatePresignedNotebookUrlAsync(CreatePresignedNotebookUrlRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CreateWorkGroup
 
 
 
         /// <summary>
-        /// Creates a workgroup with the specified name.
+        /// Creates a workgroup with the specified name. A workgroup can be an Apache Spark enabled
+        /// workgroup or an Athena SQL workgroup.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateWorkGroup service method.</param>
         /// <param name="cancellationToken">
@@ -227,6 +371,35 @@ namespace Amazon.Athena
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/CreateWorkGroup">REST API Reference for CreateWorkGroup Operation</seealso>
         Task<CreateWorkGroupResponse> CreateWorkGroupAsync(CreateWorkGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteCapacityReservation
+
+
+
+        /// <summary>
+        /// Deletes a cancelled capacity reservation. A reservation must be cancelled before it
+        /// can be deleted. A deleted reservation is immediately removed from your account and
+        /// can no longer be referenced, including by its ARN. A deleted reservation cannot be
+        /// called by <code>GetCapacityReservation</code>, and deleted reservations do not appear
+        /// in the output of <code>ListCapacityReservations</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCapacityReservation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteCapacityReservation service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/DeleteCapacityReservation">REST API Reference for DeleteCapacityReservation Operation</seealso>
+        Task<DeleteCapacityReservationResponse> DeleteCapacityReservationAsync(DeleteCapacityReservationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -287,6 +460,34 @@ namespace Amazon.Athena
 
         #endregion
                 
+        #region  DeleteNotebook
+
+
+
+        /// <summary>
+        /// Deletes the specified notebook.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteNotebook service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteNotebook service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.TooManyRequestsException">
+        /// Indicates that the request was throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/DeleteNotebook">REST API Reference for DeleteNotebook Operation</seealso>
+        Task<DeleteNotebookResponse> DeleteNotebookAsync(DeleteNotebookRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DeletePreparedStatement
 
 
@@ -337,6 +538,168 @@ namespace Amazon.Athena
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/DeleteWorkGroup">REST API Reference for DeleteWorkGroup Operation</seealso>
         Task<DeleteWorkGroupResponse> DeleteWorkGroupAsync(DeleteWorkGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ExportNotebook
+
+
+
+        /// <summary>
+        /// Exports the specified notebook and its metadata.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ExportNotebook service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ExportNotebook service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.TooManyRequestsException">
+        /// Indicates that the request was throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ExportNotebook">REST API Reference for ExportNotebook Operation</seealso>
+        Task<ExportNotebookResponse> ExportNotebookAsync(ExportNotebookRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetCalculationExecution
+
+
+
+        /// <summary>
+        /// Describes a previously submitted calculation execution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCalculationExecution service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetCalculationExecution service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.ResourceNotFoundException">
+        /// A resource, such as a workgroup, was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetCalculationExecution">REST API Reference for GetCalculationExecution Operation</seealso>
+        Task<GetCalculationExecutionResponse> GetCalculationExecutionAsync(GetCalculationExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetCalculationExecutionCode
+
+
+
+        /// <summary>
+        /// Retrieves the unencrypted code that was executed for the calculation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCalculationExecutionCode service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetCalculationExecutionCode service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.ResourceNotFoundException">
+        /// A resource, such as a workgroup, was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetCalculationExecutionCode">REST API Reference for GetCalculationExecutionCode Operation</seealso>
+        Task<GetCalculationExecutionCodeResponse> GetCalculationExecutionCodeAsync(GetCalculationExecutionCodeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetCalculationExecutionStatus
+
+
+
+        /// <summary>
+        /// Gets the status of a current calculation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCalculationExecutionStatus service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetCalculationExecutionStatus service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.ResourceNotFoundException">
+        /// A resource, such as a workgroup, was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetCalculationExecutionStatus">REST API Reference for GetCalculationExecutionStatus Operation</seealso>
+        Task<GetCalculationExecutionStatusResponse> GetCalculationExecutionStatusAsync(GetCalculationExecutionStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetCapacityAssignmentConfiguration
+
+
+
+        /// <summary>
+        /// Gets the capacity assignment configuration for a capacity reservation, if one exists.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCapacityAssignmentConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetCapacityAssignmentConfiguration service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetCapacityAssignmentConfiguration">REST API Reference for GetCapacityAssignmentConfiguration Operation</seealso>
+        Task<GetCapacityAssignmentConfigurationResponse> GetCapacityAssignmentConfigurationAsync(GetCapacityAssignmentConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetCapacityReservation
+
+
+
+        /// <summary>
+        /// Returns information about the capacity reservation with the specified name.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCapacityReservation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetCapacityReservation service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetCapacityReservation">REST API Reference for GetCapacityReservation Operation</seealso>
+        Task<GetCapacityReservationResponse> GetCapacityReservationAsync(GetCapacityReservationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -423,6 +786,34 @@ namespace Amazon.Athena
 
         #endregion
                 
+        #region  GetNotebookMetadata
+
+
+
+        /// <summary>
+        /// Retrieves notebook metadata for the specified notebook ID.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetNotebookMetadata service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetNotebookMetadata service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.TooManyRequestsException">
+        /// Indicates that the request was throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetNotebookMetadata">REST API Reference for GetNotebookMetadata Operation</seealso>
+        Task<GetNotebookMetadataResponse> GetNotebookMetadataAsync(GetNotebookMetadataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  GetPreparedStatement
 
 
@@ -485,9 +876,10 @@ namespace Amazon.Athena
         /// <summary>
         /// Streams the results of a single query execution specified by <code>QueryExecutionId</code>
         /// from the Athena query results location in Amazon S3. For more information, see <a
-        /// href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Query Results</a>
-        /// in the <i>Amazon Athena User Guide</i>. This request does not execute the query but
-        /// returns results. Use <a>StartQueryExecution</a> to run a query.
+        /// href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Working with query
+        /// results, recent queries, and output files</a> in the <i>Amazon Athena User Guide</i>.
+        /// This request does not execute the query but returns results. Use <a>StartQueryExecution</a>
+        /// to run a query.
         /// 
         ///  
         /// <para>
@@ -518,8 +910,97 @@ namespace Amazon.Athena
         /// Indicates that something is wrong with the input to the request. For example, a required
         /// parameter may be missing or out of range.
         /// </exception>
+        /// <exception cref="Amazon.Athena.Model.TooManyRequestsException">
+        /// Indicates that the request was throttled.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetQueryResults">REST API Reference for GetQueryResults Operation</seealso>
         Task<GetQueryResultsResponse> GetQueryResultsAsync(GetQueryResultsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetQueryRuntimeStatistics
+
+
+
+        /// <summary>
+        /// Returns query execution runtime statistics related to a single execution of a query
+        /// if you have access to the workgroup in which the query ran. Query execution runtime
+        /// statistics are returned only when <a>QueryExecutionStatus$State</a> is in a SUCCEEDED
+        /// or FAILED state. Stage-level input and output row count and data size statistics are
+        /// not shown when a query has row-level filters defined in Lake Formation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetQueryRuntimeStatistics service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetQueryRuntimeStatistics service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetQueryRuntimeStatistics">REST API Reference for GetQueryRuntimeStatistics Operation</seealso>
+        Task<GetQueryRuntimeStatisticsResponse> GetQueryRuntimeStatisticsAsync(GetQueryRuntimeStatisticsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetSession
+
+
+
+        /// <summary>
+        /// Gets the full details of a previously created session, including the session status
+        /// and configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSession service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetSession service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.ResourceNotFoundException">
+        /// A resource, such as a workgroup, was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetSession">REST API Reference for GetSession Operation</seealso>
+        Task<GetSessionResponse> GetSessionAsync(GetSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetSessionStatus
+
+
+
+        /// <summary>
+        /// Gets the current status of a session.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSessionStatus service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetSessionStatus service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.ResourceNotFoundException">
+        /// A resource, such as a workgroup, was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetSessionStatus">REST API Reference for GetSessionStatus Operation</seealso>
+        Task<GetSessionStatusResponse> GetSessionStatusAsync(GetSessionStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -580,6 +1061,119 @@ namespace Amazon.Athena
 
         #endregion
                 
+        #region  ImportNotebook
+
+
+
+        /// <summary>
+        /// Imports a single <code>ipynb</code> file to a Spark enabled workgroup. The maximum
+        /// file size that can be imported is 10 megabytes. If an <code>ipynb</code> file with
+        /// the same name already exists in the workgroup, throws an error.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ImportNotebook service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ImportNotebook service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.TooManyRequestsException">
+        /// Indicates that the request was throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ImportNotebook">REST API Reference for ImportNotebook Operation</seealso>
+        Task<ImportNotebookResponse> ImportNotebookAsync(ImportNotebookRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListApplicationDPUSizes
+
+
+
+        /// <summary>
+        /// Returns the supported DPU sizes for the supported application runtimes (for example,
+        /// <code>Athena notebook version 1</code>).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListApplicationDPUSizes service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListApplicationDPUSizes service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.TooManyRequestsException">
+        /// Indicates that the request was throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListApplicationDPUSizes">REST API Reference for ListApplicationDPUSizes Operation</seealso>
+        Task<ListApplicationDPUSizesResponse> ListApplicationDPUSizesAsync(ListApplicationDPUSizesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListCalculationExecutions
+
+
+
+        /// <summary>
+        /// Lists the calculations that have been submitted to a session in descending order.
+        /// Newer calculations are listed first; older calculations are listed later.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCalculationExecutions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListCalculationExecutions service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.ResourceNotFoundException">
+        /// A resource, such as a workgroup, was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListCalculationExecutions">REST API Reference for ListCalculationExecutions Operation</seealso>
+        Task<ListCalculationExecutionsResponse> ListCalculationExecutionsAsync(ListCalculationExecutionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListCapacityReservations
+
+
+
+        /// <summary>
+        /// Lists the capacity reservations for the current account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCapacityReservations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListCapacityReservations service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListCapacityReservations">REST API Reference for ListCapacityReservations Operation</seealso>
+        Task<ListCapacityReservationsResponse> ListCapacityReservationsAsync(ListCapacityReservationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListDatabases
 
 
@@ -618,6 +1212,13 @@ namespace Amazon.Athena
 
         /// <summary>
         /// Lists the data catalogs in the current Amazon Web Services account.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// In the Athena console, data catalogs are listed as "data sources" on the <b>Data sources</b>
+        /// page under the <b>Data source name</b> column.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDataCatalogs service method.</param>
         /// <param name="cancellationToken">
@@ -663,6 +1264,36 @@ namespace Amazon.Athena
 
         #endregion
                 
+        #region  ListExecutors
+
+
+
+        /// <summary>
+        /// Lists, in descending order, the executors that joined a session. Newer executors are
+        /// listed first; older executors are listed later. The result can be optionally filtered
+        /// by state.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListExecutors service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListExecutors service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.ResourceNotFoundException">
+        /// A resource, such as a workgroup, was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListExecutors">REST API Reference for ListExecutors Operation</seealso>
+        Task<ListExecutorsResponse> ListExecutorsAsync(ListExecutorsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListNamedQueries
 
 
@@ -696,12 +1327,70 @@ namespace Amazon.Athena
 
         #endregion
                 
+        #region  ListNotebookMetadata
+
+
+
+        /// <summary>
+        /// Displays the notebook files for the specified workgroup in paginated format.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListNotebookMetadata service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListNotebookMetadata service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.TooManyRequestsException">
+        /// Indicates that the request was throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListNotebookMetadata">REST API Reference for ListNotebookMetadata Operation</seealso>
+        Task<ListNotebookMetadataResponse> ListNotebookMetadataAsync(ListNotebookMetadataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListNotebookSessions
+
+
+
+        /// <summary>
+        /// Lists, in descending order, the sessions that have been created in a notebook that
+        /// are in an active state like <code>CREATING</code>, <code>CREATED</code>, <code>IDLE</code>
+        /// or <code>BUSY</code>. Newer sessions are listed first; older sessions are listed later.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListNotebookSessions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListNotebookSessions service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.ResourceNotFoundException">
+        /// A resource, such as a workgroup, was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListNotebookSessions">REST API Reference for ListNotebookSessions Operation</seealso>
+        Task<ListNotebookSessionsResponse> ListNotebookSessionsAsync(ListNotebookSessionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListPreparedStatements
 
 
 
         /// <summary>
-        /// Lists the prepared statements in the specfied workgroup.
+        /// Lists the prepared statements in the specified workgroup.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPreparedStatements service method.</param>
         /// <param name="cancellationToken">
@@ -755,6 +1444,36 @@ namespace Amazon.Athena
 
         #endregion
                 
+        #region  ListSessions
+
+
+
+        /// <summary>
+        /// Lists the sessions in a workgroup that are in an active state like <code>CREATING</code>,
+        /// <code>CREATED</code>, <code>IDLE</code>, or <code>BUSY</code>. Newer sessions are
+        /// listed first; older sessions are listed later.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSessions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListSessions service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.ResourceNotFoundException">
+        /// A resource, such as a workgroup, was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListSessions">REST API Reference for ListSessions Operation</seealso>
+        Task<ListSessionsResponse> ListSessionsAsync(ListSessionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListTableMetadata
 
 
@@ -792,7 +1511,7 @@ namespace Amazon.Athena
 
 
         /// <summary>
-        /// Lists the tags associated with an Athena workgroup or data catalog resource.
+        /// Lists the tags associated with an Athena resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// <param name="cancellationToken">
@@ -840,6 +1559,62 @@ namespace Amazon.Athena
 
         #endregion
                 
+        #region  PutCapacityAssignmentConfiguration
+
+
+
+        /// <summary>
+        /// Puts a new capacity assignment configuration for a specified capacity reservation.
+        /// If a capacity assignment configuration already exists for the capacity reservation,
+        /// replaces the existing capacity assignment configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutCapacityAssignmentConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutCapacityAssignmentConfiguration service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/PutCapacityAssignmentConfiguration">REST API Reference for PutCapacityAssignmentConfiguration Operation</seealso>
+        Task<PutCapacityAssignmentConfigurationResponse> PutCapacityAssignmentConfigurationAsync(PutCapacityAssignmentConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  StartCalculationExecution
+
+
+
+        /// <summary>
+        /// Submits calculations for execution within a session. You can supply the code to run
+        /// as an inline code block within the request.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartCalculationExecution service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartCalculationExecution service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.ResourceNotFoundException">
+        /// A resource, such as a workgroup, was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/StartCalculationExecution">REST API Reference for StartCalculationExecution Operation</seealso>
+        Task<StartCalculationExecutionResponse> StartCalculationExecutionAsync(StartCalculationExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  StartQueryExecution
 
 
@@ -869,6 +1644,80 @@ namespace Amazon.Athena
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/StartQueryExecution">REST API Reference for StartQueryExecution Operation</seealso>
         Task<StartQueryExecutionResponse> StartQueryExecutionAsync(StartQueryExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  StartSession
+
+
+
+        /// <summary>
+        /// Creates a session for running calculations within a workgroup. The session is ready
+        /// when it reaches an <code>IDLE</code> state.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartSession service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartSession service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.ResourceNotFoundException">
+        /// A resource, such as a workgroup, was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.SessionAlreadyExistsException">
+        /// The specified session already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.TooManyRequestsException">
+        /// Indicates that the request was throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/StartSession">REST API Reference for StartSession Operation</seealso>
+        Task<StartSessionResponse> StartSessionAsync(StartSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  StopCalculationExecution
+
+
+
+        /// <summary>
+        /// Requests the cancellation of a calculation. A <code>StopCalculationExecution</code>
+        /// call on a calculation that is already in a terminal state (for example, <code>STOPPED</code>,
+        /// <code>FAILED</code>, or <code>COMPLETED</code>) succeeds but has no effect.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Cancelling a calculation is done on a best effort basis. If a calculation cannot be
+        /// cancelled, you can be charged for its completion. If you are concerned about being
+        /// charged for a calculation that cannot be cancelled, consider terminating the session
+        /// in which the calculation is running.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopCalculationExecution service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StopCalculationExecution service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.ResourceNotFoundException">
+        /// A resource, such as a workgroup, was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/StopCalculationExecution">REST API Reference for StopCalculationExecution Operation</seealso>
+        Task<StopCalculationExecutionResponse> StopCalculationExecutionAsync(StopCalculationExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -910,11 +1759,11 @@ namespace Amazon.Athena
 
         /// <summary>
         /// Adds one or more tags to an Athena resource. A tag is a label that you assign to a
-        /// resource. In Athena, a resource can be a workgroup or data catalog. Each tag consists
-        /// of a key and an optional value, both of which you define. For example, you can use
-        /// tags to categorize Athena workgroups or data catalogs by purpose, owner, or environment.
-        /// Use a consistent set of tag keys to make it easier to search and filter workgroups
-        /// or data catalogs in your account. For best practices, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">Tagging
+        /// resource. Each tag consists of a key and an optional value, both of which you define.
+        /// For example, you can use tags to categorize Athena workgroups, data catalogs, or capacity
+        /// reservations by purpose, owner, or environment. Use a consistent set of tag keys to
+        /// make it easier to search and filter the resources in your account. For best practices,
+        /// see <a href="https://docs.aws.amazon.com/whitepapers/latest/tagging-best-practices/tagging-best-practices.html">Tagging
         /// Best Practices</a>. Tag keys can be from 1 to 128 UTF-8 Unicode characters, and tag
         /// values can be from 0 to 256 UTF-8 Unicode characters. Tags can use letters and numbers
         /// representable in UTF-8, and the following characters: + - = . _ : / @. Tag keys and
@@ -942,12 +1791,44 @@ namespace Amazon.Athena
 
         #endregion
                 
+        #region  TerminateSession
+
+
+
+        /// <summary>
+        /// Terminates an active session. A <code>TerminateSession</code> call on a session that
+        /// is already inactive (for example, in a <code>FAILED</code>, <code>TERMINATED</code>
+        /// or <code>TERMINATING</code> state) succeeds but has no effect. Calculations running
+        /// in the session when <code>TerminateSession</code> is called are forcefully stopped,
+        /// but may display as <code>FAILED</code> instead of <code>STOPPED</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TerminateSession service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the TerminateSession service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.ResourceNotFoundException">
+        /// A resource, such as a workgroup, was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/TerminateSession">REST API Reference for TerminateSession Operation</seealso>
+        Task<TerminateSessionResponse> TerminateSessionAsync(TerminateSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  UntagResource
 
 
 
         /// <summary>
-        /// Removes one or more tags from a data catalog or workgroup resource.
+        /// Removes one or more tags from an Athena resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// <param name="cancellationToken">
@@ -967,6 +1848,32 @@ namespace Amazon.Athena
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UntagResource">REST API Reference for UntagResource Operation</seealso>
         Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateCapacityReservation
+
+
+
+        /// <summary>
+        /// Updates the number of requested data processing units for the capacity reservation
+        /// with the specified name.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCapacityReservation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateCapacityReservation service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UpdateCapacityReservation">REST API Reference for UpdateCapacityReservation Operation</seealso>
+        Task<UpdateCapacityReservationResponse> UpdateCapacityReservationAsync(UpdateCapacityReservationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -992,6 +1899,87 @@ namespace Amazon.Athena
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UpdateDataCatalog">REST API Reference for UpdateDataCatalog Operation</seealso>
         Task<UpdateDataCatalogResponse> UpdateDataCatalogAsync(UpdateDataCatalogRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateNamedQuery
+
+
+
+        /// <summary>
+        /// Updates a <a>NamedQuery</a> object. The database or workgroup cannot be updated.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateNamedQuery service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateNamedQuery service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UpdateNamedQuery">REST API Reference for UpdateNamedQuery Operation</seealso>
+        Task<UpdateNamedQueryResponse> UpdateNamedQueryAsync(UpdateNamedQueryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateNotebook
+
+
+
+        /// <summary>
+        /// Updates the contents of a Spark notebook.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateNotebook service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateNotebook service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.TooManyRequestsException">
+        /// Indicates that the request was throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UpdateNotebook">REST API Reference for UpdateNotebook Operation</seealso>
+        Task<UpdateNotebookResponse> UpdateNotebookAsync(UpdateNotebookRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateNotebookMetadata
+
+
+
+        /// <summary>
+        /// Updates the metadata for a notebook.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateNotebookMetadata service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateNotebookMetadata service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.TooManyRequestsException">
+        /// Indicates that the request was throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UpdateNotebookMetadata">REST API Reference for UpdateNotebookMetadata Operation</seealso>
+        Task<UpdateNotebookMetadataResponse> UpdateNotebookMetadataAsync(UpdateNotebookMetadataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -1029,6 +2017,7 @@ namespace Amazon.Athena
 
         /// <summary>
         /// Updates the workgroup with the specified name. The workgroup's name cannot be changed.
+        /// Only <code>ConfigurationUpdates</code> can be specified.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateWorkGroup service method.</param>
         /// <param name="cancellationToken">

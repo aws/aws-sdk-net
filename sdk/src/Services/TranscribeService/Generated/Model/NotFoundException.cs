@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.TranscribeService.Model
 {
     /// <summary>
-    /// We can't find the requested resource. Check the name and try your request again.
+    /// We can't find the requested resource. Check that the specified name is correct and
+    /// try your request again.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

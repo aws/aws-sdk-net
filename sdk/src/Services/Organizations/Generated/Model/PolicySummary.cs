@@ -49,7 +49,8 @@ namespace Amazon.Organizations.Model
         ///  
         /// <para>
         /// For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN
-        /// Formats Supported by Organizations</a> in the <i>AWS Service Authorization Reference</i>.
+        /// Formats Supported by Organizations</a> in the <i>Amazon Web Services Service Authorization
+        /// Reference</i>.
         /// </para>
         /// </summary>
         public string Arn
@@ -67,9 +68,9 @@ namespace Amazon.Organizations.Model
         /// <summary>
         /// Gets and sets the property AwsManaged. 
         /// <para>
-        /// A boolean value that indicates whether the specified policy is an AWS managed policy.
-        /// If true, then you can attach the policy to roots, OUs, or accounts, but you cannot
-        /// edit it.
+        /// A boolean value that indicates whether the specified policy is an Amazon Web Services
+        /// managed policy. If true, then you can attach the policy to roots, OUs, or accounts,
+        /// but you cannot edit it.
         /// </para>
         /// </summary>
         public bool AwsManaged

@@ -39,7 +39,8 @@ namespace Amazon.Personalize.Model
         /// <summary>
         /// Gets and sets the property Metrics. 
         /// <para>
-        /// The metrics for the solution version.
+        /// The metrics for the solution version. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/working-with-training-metrics.html">
+        /// Evaluating a solution version with metrics </a>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=100)]

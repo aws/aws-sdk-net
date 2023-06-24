@@ -34,6 +34,7 @@ namespace Amazon.IoTSiteWise.Model
     public partial class CompositeModelProperty
     {
         private Property _assetProperty;
+        private string _id;
         private string _name;
         private string _type;
 
@@ -51,6 +52,25 @@ namespace Amazon.IoTSiteWise.Model
         internal bool IsSetAssetProperty()
         {
             return this._assetProperty != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Id. 
+        /// <para>
+        ///  The ID of the composite model that contains the property. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=36, Max=36)]
+        public string Id
+        {
+            get { return this._id; }
+            set { this._id = value; }
+        }
+
+        // Check to see if Id property is set
+        internal bool IsSetId()
+        {
+            return this._id != null;
         }
 
         /// <summary>

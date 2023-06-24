@@ -33,6 +33,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class Command
     {
+        private AlarmConfiguration _alarmConfiguration;
         private CloudWatchOutputConfig _cloudWatchOutputConfig;
         private string _commandId;
         private string _comment;
@@ -57,6 +58,25 @@ namespace Amazon.SimpleSystemsManagement.Model
         private int? _targetCount;
         private List<Target> _targets = new List<Target>();
         private int? _timeoutSeconds;
+        private List<AlarmStateInformation> _triggeredAlarms = new List<AlarmStateInformation>();
+
+        /// <summary>
+        /// Gets and sets the property AlarmConfiguration. 
+        /// <para>
+        /// The details for the CloudWatch alarm applied to your command.
+        /// </para>
+        /// </summary>
+        public AlarmConfiguration AlarmConfiguration
+        {
+            get { return this._alarmConfiguration; }
+            set { this._alarmConfiguration = value; }
+        }
+
+        // Check to see if AlarmConfiguration property is set
+        internal bool IsSetAlarmConfiguration()
+        {
+            return this._alarmConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CloudWatchOutputConfig. 
@@ -121,7 +141,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// The number of targets for which the command invocation reached a terminal state. Terminal
         /// states include the following: Success, Failed, Execution Timed Out, Delivery Timed
-        /// Out, Canceled, Terminated, or Undeliverable.
+        /// Out, Cancelled, Terminated, or Undeliverable.
         /// </para>
         /// </summary>
         public int CompletedCount
@@ -211,9 +231,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property ExpiresAfter. 
         /// <para>
-        /// If this time is reached and the command hasn't already started running, it won't run.
-        /// Calculated based on the <code>ExpiresAfter</code> user input provided as part of the
-        /// <code>SendCommand</code> API operation.
+        /// If a command expires, it changes status to <code>DeliveryTimedOut</code> for all invocations
+        /// that have the status <code>InProgress</code>, <code>Pending</code>, or <code>Delayed</code>.
+        /// <code>ExpiresAfter</code> is calculated based on the total timeout for the overall
+        /// command. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html?icmpid=docs_ec2_console#monitor-about-status-timeouts">Understanding
+        /// command timeout values</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
         /// </para>
         /// </summary>
         public DateTime ExpiresAfter
@@ -380,6 +402,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The parameter values to be inserted in the document when running the command.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public Dictionary<string, List<string>> Parameters
         {
             get { return this._parameters; }
@@ -494,13 +517,19 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Canceled: The command was terminated before it was completed. This is a terminal state.
+        /// Cancelled: The command was terminated before it was completed. This is a terminal
+        /// state.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// Rate Exceeded: The number of managed nodes targeted by the command exceeded the account
         /// limit for pending invocations. The system has canceled the command before running
         /// it on any managed node. This is a terminal state.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Delayed: The system attempted to send the command to the managed node but wasn't successful.
+        /// The system retries again.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -573,6 +602,25 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetTimeoutSeconds()
         {
             return this._timeoutSeconds.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TriggeredAlarms. 
+        /// <para>
+        /// The CloudWatch alarm that was invoked by the command.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1)]
+        public List<AlarmStateInformation> TriggeredAlarms
+        {
+            get { return this._triggeredAlarms; }
+            set { this._triggeredAlarms = value; }
+        }
+
+        // Check to see if TriggeredAlarms property is set
+        internal bool IsSetTriggeredAlarms()
+        {
+            return this._triggeredAlarms != null && this._triggeredAlarms.Count > 0; 
         }
 
     }

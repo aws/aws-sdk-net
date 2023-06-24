@@ -34,7 +34,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// BillingGroupProperties Marshaller
-    /// </summary>       
+    /// </summary>
     public class BillingGroupPropertiesMarshaller : IRequestMarshaller<BillingGroupProperties, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static BillingGroupPropertiesMarshaller Instance = new BillingGroupPropertiesMarshaller();
 
     }

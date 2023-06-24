@@ -45,7 +45,7 @@ namespace Amazon.CloudWatch.Model
         /// The metric dimensions to create the anomaly detection model for.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=10)]
+        [AWSProperty(Max=30)]
         public List<Dimension> Dimensions
         {
             get { return this._dimensions; }

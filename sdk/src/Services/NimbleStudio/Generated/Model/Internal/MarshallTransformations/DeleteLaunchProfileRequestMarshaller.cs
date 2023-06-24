@@ -55,7 +55,7 @@ namespace Amazon.NimbleStudio.Model.Internal.MarshallTransformations
         public IRequest Marshall(DeleteLaunchProfileRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.NimbleStudio");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-08-01";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-08-01";
             request.HttpMethod = "DELETE";
 
             if (!publicRequest.IsSetLaunchProfileId())
@@ -66,8 +66,10 @@ namespace Amazon.NimbleStudio.Model.Internal.MarshallTransformations
             request.AddPathResource("{studioId}", StringUtils.FromString(publicRequest.StudioId));
             request.ResourcePath = "/2020-08-01/studios/{studioId}/launch-profiles/{launchProfileId}";
         
-            if(publicRequest.IsSetClientToken())
+            if (publicRequest.IsSetClientToken()) 
+            {
                 request.Headers["X-Amz-Client-Token"] = publicRequest.ClientToken;
+            }
 
             return request;
         }

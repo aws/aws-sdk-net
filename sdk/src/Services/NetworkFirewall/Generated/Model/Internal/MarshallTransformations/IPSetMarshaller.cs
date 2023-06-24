@@ -34,7 +34,7 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// IPSet Marshaller
-    /// </summary>       
+    /// </summary>
     public class IPSetMarshaller : IRequestMarshaller<IPSet, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static IPSetMarshaller Instance = new IPSetMarshaller();
 
     }

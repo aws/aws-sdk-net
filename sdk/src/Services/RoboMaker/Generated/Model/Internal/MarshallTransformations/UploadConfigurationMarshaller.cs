@@ -34,7 +34,7 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// UploadConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class UploadConfigurationMarshaller : IRequestMarshaller<UploadConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static UploadConfigurationMarshaller Instance = new UploadConfigurationMarshaller();
 
     }

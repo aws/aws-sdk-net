@@ -34,7 +34,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// GlueTable Marshaller
-    /// </summary>       
+    /// </summary>
     public class GlueTableMarshaller : IRequestMarshaller<GlueTable, JsonMarshallerContext> 
     {
         /// <summary>
@@ -45,6 +45,20 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(GlueTable requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAdditionalOptions())
+            {
+                context.Writer.WritePropertyName("AdditionalOptions");
+                context.Writer.WriteObjectStart();
+                foreach (var requestObjectAdditionalOptionsKvp in requestObject.AdditionalOptions)
+                {
+                    context.Writer.WritePropertyName(requestObjectAdditionalOptionsKvp.Key);
+                    var requestObjectAdditionalOptionsValue = requestObjectAdditionalOptionsKvp.Value;
+
+                        context.Writer.Write(requestObjectAdditionalOptionsValue);
+                }
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetCatalogId())
             {
                 context.Writer.WritePropertyName("CatalogId");
@@ -73,7 +87,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static GlueTableMarshaller Instance = new GlueTableMarshaller();
 
     }

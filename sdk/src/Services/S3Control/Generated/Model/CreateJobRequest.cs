@@ -32,7 +32,7 @@ namespace Amazon.S3Control.Model
     /// Container for the parameters to the CreateJob operation.
     /// You can use S3 Batch Operations to perform large-scale batch actions on Amazon S3
     /// objects. Batch Operations can run a single action on lists of Amazon S3 objects that
-    /// you specify. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">S3
+    /// you specify. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/batch-ops.html">S3
     /// Batch Operations</a> in the <i>Amazon S3 User Guide</i>.
     /// 
     ///  
@@ -77,6 +77,7 @@ namespace Amazon.S3Control.Model
         private bool? _confirmationRequired;
         private string _description;
         private JobManifest _manifest;
+        private JobManifestGenerator _manifestGenerator;
         private JobOperation _operation;
         private int? _priority;
         private JobReport _report;
@@ -167,7 +168,6 @@ namespace Amazon.S3Control.Model
         /// Configuration parameters for the manifest.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public JobManifest Manifest
         {
             get { return this._manifest; }
@@ -178,6 +178,25 @@ namespace Amazon.S3Control.Model
         internal bool IsSetManifest()
         {
             return this._manifest != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ManifestGenerator. 
+        /// <para>
+        /// The attribute container for the ManifestGenerator details. Jobs must be created with
+        /// either a manifest file or a ManifestGenerator, but not both.
+        /// </para>
+        /// </summary>
+        public JobManifestGenerator ManifestGenerator
+        {
+            get { return this._manifestGenerator; }
+            set { this._manifestGenerator = value; }
+        }
+
+        // Check to see if ManifestGenerator property is set
+        internal bool IsSetManifestGenerator()
+        {
+            return this._manifestGenerator != null;
         }
 
         /// <summary>

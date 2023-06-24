@@ -34,7 +34,7 @@ namespace Amazon.SagemakerEdgeManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Model Marshaller
-    /// </summary>       
+    /// </summary>
     public class ModelMarshaller : IRequestMarshaller<Model, JsonMarshallerContext> 
     {
         /// <summary>
@@ -89,7 +89,7 @@ namespace Amazon.SagemakerEdgeManager.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ModelMarshaller Instance = new ModelMarshaller();
 
     }

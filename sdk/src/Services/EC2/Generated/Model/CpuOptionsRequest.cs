@@ -34,8 +34,29 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class CpuOptionsRequest
     {
+        private AmdSevSnpSpecification _amdSevSnp;
         private int? _coreCount;
         private int? _threadsPerCore;
+
+        /// <summary>
+        /// Gets and sets the property AmdSevSnp. 
+        /// <para>
+        /// Indicates whether to enable the instance for AMD SEV-SNP. AMD SEV-SNP is supported
+        /// with M6a, R6a, and C6a instance types only. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sev-snp.html">AMD
+        /// SEV-SNP</a>.
+        /// </para>
+        /// </summary>
+        public AmdSevSnpSpecification AmdSevSnp
+        {
+            get { return this._amdSevSnp; }
+            set { this._amdSevSnp = value; }
+        }
+
+        // Check to see if AmdSevSnp property is set
+        internal bool IsSetAmdSevSnp()
+        {
+            return this._amdSevSnp != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CoreCount. 

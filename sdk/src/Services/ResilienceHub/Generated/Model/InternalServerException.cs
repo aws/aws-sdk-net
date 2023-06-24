@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ResilienceHub.Model
 {
     /// <summary>
-    /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-    /// service.
+    /// This exception occurs when there is an internal failure in the Resilience Hub service.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53RecoveryReadiness.Model
 {
     /// <summary>
-    /// Summary of ReadinessCheck status, paginated in GetRecoveryGroupReadinessSummary and
-    /// GetCellReadinessSummary
+    /// Summary of all readiness check statuses in a recovery group, paginated in GetRecoveryGroupReadinessSummary
+    /// and GetCellReadinessSummary.
     /// </summary>
     public partial class ReadinessCheckSummary
     {
@@ -38,7 +38,10 @@ namespace Amazon.Route53RecoveryReadiness.Model
         private string _readinessCheckName;
 
         /// <summary>
-        /// Gets and sets the property Readiness. The readiness of this ReadinessCheck
+        /// Gets and sets the property Readiness. 
+        /// <para>
+        /// The readiness status of this readiness check.
+        /// </para>
         /// </summary>
         public Readiness Readiness
         {
@@ -53,8 +56,10 @@ namespace Amazon.Route53RecoveryReadiness.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ReadinessCheckName. The name of a ReadinessCheck which
-        /// is part of the given RecoveryGroup or Cell
+        /// Gets and sets the property ReadinessCheckName. 
+        /// <para>
+        /// The name of a readiness check.
+        /// </para>
         /// </summary>
         public string ReadinessCheckName
         {

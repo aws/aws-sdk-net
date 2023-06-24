@@ -1,5 +1,6 @@
 {
   "active": true,
   "synopsis": "AWS Elemental MediaLive is a video service that lets you easily create live outputs for broadcast and streaming delivery.",
-  "generate-client-constructors": true
+  "generate-client-constructors": true,
+  "legacy-service-id": "MediaLive"
 }

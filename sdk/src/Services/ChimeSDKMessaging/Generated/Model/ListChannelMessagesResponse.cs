@@ -36,6 +36,7 @@ namespace Amazon.ChimeSDKMessaging.Model
         private string _channelArn;
         private List<ChannelMessageSummary> _channelMessages = new List<ChannelMessageSummary>();
         private string _nextToken;
+        private string _subChannelId;
 
         /// <summary>
         /// Gets and sets the property ChannelArn. 
@@ -80,7 +81,7 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// The token passed by previous API calls until all requested messages are returned.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=2048)]
+        [AWSProperty(Sensitive=true, Min=0, Max=2048)]
         public string NextToken
         {
             get { return this._nextToken; }
@@ -91,6 +92,25 @@ namespace Amazon.ChimeSDKMessaging.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SubChannelId. 
+        /// <para>
+        /// The ID of the SubChannel in the response.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=128)]
+        public string SubChannelId
+        {
+            get { return this._subChannelId; }
+            set { this._subChannelId = value; }
+        }
+
+        // Check to see if SubChannelId property is set
+        internal bool IsSetSubChannelId()
+        {
+            return this._subChannelId != null;
         }
 
     }

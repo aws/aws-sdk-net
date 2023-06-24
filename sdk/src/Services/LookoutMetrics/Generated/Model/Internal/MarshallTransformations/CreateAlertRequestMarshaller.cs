@@ -56,7 +56,7 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.LookoutMetrics");
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-07-25";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-07-25";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/CreateAlert";
@@ -80,6 +80,17 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("AlertDescription");
                     context.Writer.Write(publicRequest.AlertDescription);
+                }
+
+                if(publicRequest.IsSetAlertFilters())
+                {
+                    context.Writer.WritePropertyName("AlertFilters");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = AlertFiltersMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.AlertFilters, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
                 if(publicRequest.IsSetAlertName())
@@ -114,7 +125,6 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

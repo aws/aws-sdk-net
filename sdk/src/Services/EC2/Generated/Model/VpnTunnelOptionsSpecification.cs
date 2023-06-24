@@ -35,7 +35,9 @@ namespace Amazon.EC2.Model
     {
         private string _dpdTimeoutAction;
         private int? _dpdTimeoutSeconds;
+        private bool? _enableTunnelLifecycleControl;
         private List<IKEVersionsRequestListValue> _ikeVersions = new List<IKEVersionsRequestListValue>();
+        private VpnTunnelLogOptionsSpecification _logOptions;
         private List<Phase1DHGroupNumbersRequestListValue> _phase1DHGroupNumbers = new List<Phase1DHGroupNumbersRequestListValue>();
         private List<Phase1EncryptionAlgorithmsRequestListValue> _phase1EncryptionAlgorithms = new List<Phase1EncryptionAlgorithmsRequestListValue>();
         private List<Phase1IntegrityAlgorithmsRequestListValue> _phase1IntegrityAlgorithms = new List<Phase1IntegrityAlgorithmsRequestListValue>();
@@ -86,7 +88,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Constraints: A value between 0 and 30.
+        /// Constraints: A value greater than or equal to 30.
         /// </para>
         ///  
         /// <para>
@@ -103,6 +105,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetDPDTimeoutSeconds()
         {
             return this._dpdTimeoutSeconds.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnableTunnelLifecycleControl. 
+        /// <para>
+        /// Turn on or off tunnel endpoint lifecycle control feature.
+        /// </para>
+        /// </summary>
+        public bool EnableTunnelLifecycleControl
+        {
+            get { return this._enableTunnelLifecycleControl.GetValueOrDefault(); }
+            set { this._enableTunnelLifecycleControl = value; }
+        }
+
+        // Check to see if EnableTunnelLifecycleControl property is set
+        internal bool IsSetEnableTunnelLifecycleControl()
+        {
+            return this._enableTunnelLifecycleControl.HasValue; 
         }
 
         /// <summary>
@@ -125,6 +145,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetIKEVersions()
         {
             return this._ikeVersions != null && this._ikeVersions.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LogOptions. 
+        /// <para>
+        /// Options for logging VPN tunnel activity.
+        /// </para>
+        /// </summary>
+        public VpnTunnelLogOptionsSpecification LogOptions
+        {
+            get { return this._logOptions; }
+            set { this._logOptions = value; }
+        }
+
+        // Check to see if LogOptions property is set
+        internal bool IsSetLogOptions()
+        {
+            return this._logOptions != null;
         }
 
         /// <summary>
@@ -338,6 +376,7 @@ namespace Amazon.EC2.Model
         /// (_). Must be between 8 and 64 characters in length and cannot start with zero (0).
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string PreSharedKey
         {
             get { return this._preSharedKey; }

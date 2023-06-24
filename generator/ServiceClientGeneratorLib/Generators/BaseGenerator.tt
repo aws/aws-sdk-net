@@ -4,11 +4,18 @@
 <#@ import namespace="System.Linq" #>
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="ServiceClientGenerator.DefaultConfiguration" #>
 
 
 <#+	
     // An object that contains all the information about a service
 	public ServiceConfiguration Config { get; set; }
+
+    /// <summary>
+    /// Model representing the default configuration modes as built
+    /// from the sdk-default-configurations.json file. 
+    /// </summary>
+    public DefaultConfigurationModel DefaultConfigurationModel { get; set; }
 
     // Adds the Amazon Apache 2.0 license
     public void AddLicenseHeader()
@@ -341,6 +348,11 @@
         if(documentation.StartsWith("<para>"))
         {
             int closePos= documentation.IndexOf("</para>");
+
+            if (closePos < 0)
+                // note: documentation was transformed a few lines above
+                throw new Exception("Documentation is missing closing tag (ie </p> or </para>): " + documentation);
+
             var firstParaContent= documentation.Substring("<para>".Length, closePos - "<para>".Length);
             documentation = firstParaContent + documentation.Substring(closePos + "</para>".Length);
         }

@@ -34,7 +34,7 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AnomalyDateInterval Marshaller
-    /// </summary>       
+    /// </summary>
     public class AnomalyDateIntervalMarshaller : IRequestMarshaller<AnomalyDateInterval, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AnomalyDateIntervalMarshaller Instance = new AnomalyDateIntervalMarshaller();
 
     }

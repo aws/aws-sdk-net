@@ -38,8 +38,10 @@ namespace Amazon.DataExchange.Model
         private string _revisionId;
 
         /// <summary>
-        /// Gets and sets the property AssetSources. A list of Amazon Redshift datashare asset
-        /// sources.
+        /// Gets and sets the property AssetSources. 
+        /// <para>
+        /// A list of Amazon Redshift datashare asset sources.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public List<RedshiftDataShareAssetSourceEntry> AssetSources
@@ -55,8 +57,10 @@ namespace Amazon.DataExchange.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DataSetId. The unique identifier for the data set associated
-        /// with this import job.
+        /// Gets and sets the property DataSetId. 
+        /// <para>
+        /// The unique identifier for the data set associated with this import job.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string DataSetId
@@ -72,8 +76,10 @@ namespace Amazon.DataExchange.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RevisionId. The unique identifier for the revision associated
-        /// with this import job.
+        /// Gets and sets the property RevisionId. 
+        /// <para>
+        /// The unique identifier for the revision associated with this import job.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string RevisionId

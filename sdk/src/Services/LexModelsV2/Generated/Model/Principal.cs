@@ -61,8 +61,8 @@ namespace Amazon.LexModelsV2.Model
         /// <summary>
         /// Gets and sets the property Service. 
         /// <para>
-        /// The name of the AWS service that should allowed or denied access to an Amazon Lex
-        /// action.
+        /// The name of the Amazon Web Services service that should allowed or denied access to
+        /// an Amazon Lex action.
         /// </para>
         /// </summary>
         [AWSProperty(Min=15, Max=1024)]

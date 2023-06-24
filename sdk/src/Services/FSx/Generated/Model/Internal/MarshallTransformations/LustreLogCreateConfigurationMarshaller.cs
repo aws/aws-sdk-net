@@ -34,7 +34,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// LustreLogCreateConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class LustreLogCreateConfigurationMarshaller : IRequestMarshaller<LustreLogCreateConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static LustreLogCreateConfigurationMarshaller Instance = new LustreLogCreateConfigurationMarshaller();
 
     }

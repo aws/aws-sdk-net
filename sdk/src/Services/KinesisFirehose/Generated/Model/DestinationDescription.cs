@@ -33,6 +33,7 @@ namespace Amazon.KinesisFirehose.Model
     /// </summary>
     public partial class DestinationDescription
     {
+        private AmazonOpenSearchServerlessDestinationDescription _amazonOpenSearchServerlessDestinationDescription;
         private AmazonopensearchserviceDestinationDescription _amazonopensearchserviceDestinationDescription;
         private string _destinationId;
         private ElasticsearchDestinationDescription _elasticsearchDestinationDescription;
@@ -43,7 +44,28 @@ namespace Amazon.KinesisFirehose.Model
         private SplunkDestinationDescription _splunkDestinationDescription;
 
         /// <summary>
-        /// Gets and sets the property AmazonopensearchserviceDestinationDescription.
+        /// Gets and sets the property AmazonOpenSearchServerlessDestinationDescription. 
+        /// <para>
+        /// The destination in the Serverless offering for Amazon OpenSearch Service.
+        /// </para>
+        /// </summary>
+        public AmazonOpenSearchServerlessDestinationDescription AmazonOpenSearchServerlessDestinationDescription
+        {
+            get { return this._amazonOpenSearchServerlessDestinationDescription; }
+            set { this._amazonOpenSearchServerlessDestinationDescription = value; }
+        }
+
+        // Check to see if AmazonOpenSearchServerlessDestinationDescription property is set
+        internal bool IsSetAmazonOpenSearchServerlessDestinationDescription()
+        {
+            return this._amazonOpenSearchServerlessDestinationDescription != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AmazonopensearchserviceDestinationDescription. 
+        /// <para>
+        /// The destination in Amazon OpenSearch Service.
+        /// </para>
         /// </summary>
         public AmazonopensearchserviceDestinationDescription AmazonopensearchserviceDestinationDescription
         {

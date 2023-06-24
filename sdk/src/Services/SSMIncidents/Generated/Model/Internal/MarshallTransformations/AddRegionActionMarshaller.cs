@@ -34,7 +34,7 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AddRegionAction Marshaller
-    /// </summary>       
+    /// </summary>
     public class AddRegionActionMarshaller : IRequestMarshaller<AddRegionAction, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AddRegionActionMarshaller Instance = new AddRegionActionMarshaller();
 
     }

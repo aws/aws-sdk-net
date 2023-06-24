@@ -39,6 +39,14 @@ namespace Amazon.NetworkFirewall
         /// </summary>
         public static readonly AttachmentStatus DELETING = new AttachmentStatus("DELETING");
         /// <summary>
+        /// Constant ERROR for AttachmentStatus
+        /// </summary>
+        public static readonly AttachmentStatus ERROR = new AttachmentStatus("ERROR");
+        /// <summary>
+        /// Constant FAILED for AttachmentStatus
+        /// </summary>
+        public static readonly AttachmentStatus FAILED = new AttachmentStatus("FAILED");
+        /// <summary>
         /// Constant READY for AttachmentStatus
         /// </summary>
         public static readonly AttachmentStatus READY = new AttachmentStatus("READY");
@@ -89,6 +97,10 @@ namespace Amazon.NetworkFirewall
     {
 
         /// <summary>
+        /// Constant CAPACITY_CONSTRAINED for ConfigurationSyncState
+        /// </summary>
+        public static readonly ConfigurationSyncState CAPACITY_CONSTRAINED = new ConfigurationSyncState("CAPACITY_CONSTRAINED");
+        /// <summary>
         /// Constant IN_SYNC for ConfigurationSyncState
         /// </summary>
         public static readonly ConfigurationSyncState IN_SYNC = new ConfigurationSyncState("IN_SYNC");
@@ -126,6 +138,56 @@ namespace Amazon.NetworkFirewall
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ConfigurationSyncState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type EncryptionType.
+    /// </summary>
+    public class EncryptionType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AWS_OWNED_KMS_KEY for EncryptionType
+        /// </summary>
+        public static readonly EncryptionType AWS_OWNED_KMS_KEY = new EncryptionType("AWS_OWNED_KMS_KEY");
+        /// <summary>
+        /// Constant CUSTOMER_KMS for EncryptionType
+        /// </summary>
+        public static readonly EncryptionType CUSTOMER_KMS = new EncryptionType("CUSTOMER_KMS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EncryptionType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EncryptionType FindValue(string value)
+        {
+            return FindValue<EncryptionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EncryptionType(string value)
         {
             return FindValue(value);
         }
@@ -237,6 +299,60 @@ namespace Amazon.NetworkFirewall
 
 
     /// <summary>
+    /// Constants used for properties of type IPAddressType.
+    /// </summary>
+    public class IPAddressType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DUALSTACK for IPAddressType
+        /// </summary>
+        public static readonly IPAddressType DUALSTACK = new IPAddressType("DUALSTACK");
+        /// <summary>
+        /// Constant IPV4 for IPAddressType
+        /// </summary>
+        public static readonly IPAddressType IPV4 = new IPAddressType("IPV4");
+        /// <summary>
+        /// Constant IPV6 for IPAddressType
+        /// </summary>
+        public static readonly IPAddressType IPV6 = new IPAddressType("IPV6");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public IPAddressType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IPAddressType FindValue(string value)
+        {
+            return FindValue<IPAddressType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IPAddressType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type LogDestinationType.
     /// </summary>
     public class LogDestinationType : ConstantClass
@@ -341,11 +457,61 @@ namespace Amazon.NetworkFirewall
 
 
     /// <summary>
+    /// Constants used for properties of type OverrideAction.
+    /// </summary>
+    public class OverrideAction : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DROP_TO_ALERT for OverrideAction
+        /// </summary>
+        public static readonly OverrideAction DROP_TO_ALERT = new OverrideAction("DROP_TO_ALERT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OverrideAction(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OverrideAction FindValue(string value)
+        {
+            return FindValue<OverrideAction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OverrideAction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type PerObjectSyncStatus.
     /// </summary>
     public class PerObjectSyncStatus : ConstantClass
     {
 
+        /// <summary>
+        /// Constant CAPACITY_CONSTRAINED for PerObjectSyncStatus
+        /// </summary>
+        public static readonly PerObjectSyncStatus CAPACITY_CONSTRAINED = new PerObjectSyncStatus("CAPACITY_CONSTRAINED");
         /// <summary>
         /// Constant IN_SYNC for PerObjectSyncStatus
         /// </summary>
@@ -384,6 +550,106 @@ namespace Amazon.NetworkFirewall
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator PerObjectSyncStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ResourceManagedStatus.
+    /// </summary>
+    public class ResourceManagedStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACCOUNT for ResourceManagedStatus
+        /// </summary>
+        public static readonly ResourceManagedStatus ACCOUNT = new ResourceManagedStatus("ACCOUNT");
+        /// <summary>
+        /// Constant MANAGED for ResourceManagedStatus
+        /// </summary>
+        public static readonly ResourceManagedStatus MANAGED = new ResourceManagedStatus("MANAGED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ResourceManagedStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResourceManagedStatus FindValue(string value)
+        {
+            return FindValue<ResourceManagedStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResourceManagedStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ResourceManagedType.
+    /// </summary>
+    public class ResourceManagedType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AWS_MANAGED_DOMAIN_LISTS for ResourceManagedType
+        /// </summary>
+        public static readonly ResourceManagedType AWS_MANAGED_DOMAIN_LISTS = new ResourceManagedType("AWS_MANAGED_DOMAIN_LISTS");
+        /// <summary>
+        /// Constant AWS_MANAGED_THREAT_SIGNATURES for ResourceManagedType
+        /// </summary>
+        public static readonly ResourceManagedType AWS_MANAGED_THREAT_SIGNATURES = new ResourceManagedType("AWS_MANAGED_THREAT_SIGNATURES");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ResourceManagedType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResourceManagedType FindValue(string value)
+        {
+            return FindValue<ResourceManagedType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResourceManagedType(string value)
         {
             return FindValue(value);
         }
@@ -558,6 +824,10 @@ namespace Amazon.NetworkFirewall
         /// Constant PASS for StatefulAction
         /// </summary>
         public static readonly StatefulAction PASS = new StatefulAction("PASS");
+        /// <summary>
+        /// Constant REJECT for StatefulAction
+        /// </summary>
+        public static readonly StatefulAction REJECT = new StatefulAction("REJECT");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -756,6 +1026,60 @@ namespace Amazon.NetworkFirewall
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator StatefulRuleProtocol(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type StreamExceptionPolicy.
+    /// </summary>
+    public class StreamExceptionPolicy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CONTINUE for StreamExceptionPolicy
+        /// </summary>
+        public static readonly StreamExceptionPolicy CONTINUE = new StreamExceptionPolicy("CONTINUE");
+        /// <summary>
+        /// Constant DROP for StreamExceptionPolicy
+        /// </summary>
+        public static readonly StreamExceptionPolicy DROP = new StreamExceptionPolicy("DROP");
+        /// <summary>
+        /// Constant REJECT for StreamExceptionPolicy
+        /// </summary>
+        public static readonly StreamExceptionPolicy REJECT = new StreamExceptionPolicy("REJECT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public StreamExceptionPolicy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StreamExceptionPolicy FindValue(string value)
+        {
+            return FindValue<StreamExceptionPolicy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StreamExceptionPolicy(string value)
         {
             return FindValue(value);
         }

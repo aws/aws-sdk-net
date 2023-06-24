@@ -166,7 +166,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
                     getObjectMetadataRequest.ServerSideEncryptionCustomerProvidedKey = copyBase64Key;
                     AssertExtensions.ExpectException(() =>
-                        httpClient.GetObjectMetadata(getObjectMetadataRequest), typeof(Amazon.Runtime.AmazonClientException));
+                        httpClient.GetObjectMetadata(getObjectMetadataRequest), typeof(AmazonS3Exception));
 
                     url = httpClient.GetPreSignedURL(getPresignedUrlRequest);
                     Assert.IsFalse(string.IsNullOrEmpty(url));

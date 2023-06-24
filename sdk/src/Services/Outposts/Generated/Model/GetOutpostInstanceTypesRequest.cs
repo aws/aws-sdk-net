@@ -30,7 +30,7 @@ namespace Amazon.Outposts.Model
 {
     /// <summary>
     /// Container for the parameters to the GetOutpostInstanceTypes operation.
-    /// Lists the instance types for the specified Outpost.
+    /// Gets the instance types for the specified Outpost.
     /// </summary>
     public partial class GetOutpostInstanceTypesRequest : AmazonOutpostsRequest
     {
@@ -57,7 +57,7 @@ namespace Amazon.Outposts.Model
         /// <summary>
         /// Gets and sets the property NextToken.
         /// </summary>
-        [AWSProperty(Min=1, Max=1005)]
+        [AWSProperty(Min=1, Max=2048)]
         public string NextToken
         {
             get { return this._nextToken; }
@@ -73,7 +73,7 @@ namespace Amazon.Outposts.Model
         /// <summary>
         /// Gets and sets the property OutpostId. 
         /// <para>
-        ///  The ID of the Outpost. 
+        ///  The ID or the Amazon Resource Name (ARN) of the Outpost. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=180)]

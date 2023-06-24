@@ -29,9 +29,9 @@ namespace Amazon.StepFunctions
     /// <summary>
     /// Interface for accessing StepFunctions
     ///
-    /// AWS Step Functions 
+    /// Step Functions 
     /// <para>
-    /// AWS Step Functions is a service that lets you coordinate the components of distributed
+    /// Step Functions is a service that lets you coordinate the components of distributed
     /// applications and microservices using visual workflows.
     /// </para>
     ///  
@@ -47,10 +47,10 @@ namespace Amazon.StepFunctions
     ///  
     /// <para>
     /// Step Functions manages operations and underlying infrastructure to ensure your application
-    /// is available at any scale. You can run tasks on AWS, your own servers, or any system
-    /// that has access to AWS. You can access and use Step Functions using the console, the
-    /// AWS SDKs, or an HTTP API. For more information about Step Functions, see the <i> <a
-    /// href="https://docs.aws.amazon.com/step-functions/latest/dg/welcome.html">AWS Step
+    /// is available at any scale. You can run tasks on Amazon Web Services, your own servers,
+    /// or any system that has access to Amazon Web Services. You can access and use Step
+    /// Functions using the console, the Amazon Web Services SDKs, or an HTTP API. For more
+    /// information about Step Functions, see the <i> <a href="https://docs.aws.amazon.com/step-functions/latest/dg/welcome.html">Step
     /// Functions Developer Guide</a> </i>.
     /// </para>
     /// </summary>
@@ -72,11 +72,10 @@ namespace Amazon.StepFunctions
 
         /// <summary>
         /// Creates an activity. An activity is a task that you write in any programming language
-        /// and host on any machine that has access to AWS Step Functions. Activities must poll
-        /// Step Functions using the <code>GetActivityTask</code> API action and respond using
-        /// <code>SendTask*</code> API actions. This function lets Step Functions know the existence
-        /// of your activity and returns an identifier for use in a state machine and when polling
-        /// from the activity.
+        /// and host on any machine that has access to Step Functions. Activities must poll Step
+        /// Functions using the <code>GetActivityTask</code> API action and respond using <code>SendTask*</code>
+        /// API actions. This function lets Step Functions know the existence of your activity
+        /// and returns an identifier for use in a state machine and when polling from the activity.
         /// 
         ///  <note> 
         /// <para>
@@ -102,11 +101,11 @@ namespace Amazon.StepFunctions
         /// before a new activity can be created.
         /// </exception>
         /// <exception cref="Amazon.StepFunctions.Model.InvalidNameException">
-        /// The provided name is invalid.
+        /// The provided name is not valid.
         /// </exception>
         /// <exception cref="Amazon.StepFunctions.Model.TooManyTagsException">
         /// You've exceeded the number of tags allowed for a resource. See the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html">
-        /// Limits Topic</a> in the AWS Step Functions Developer Guide.
+        /// Limits Topic</a> in the Step Functions Developer Guide.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/CreateActivity">REST API Reference for CreateActivity Operation</seealso>
         CreateActivityResponse CreateActivity(CreateActivityRequest request);
@@ -148,8 +147,13 @@ namespace Amazon.StepFunctions
         /// states), stop an execution with an error (<code>Fail</code> states), and so on. State
         /// machines are specified using a JSON-based, structured language. For more information,
         /// see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon
-        /// States Language</a> in the AWS Step Functions User Guide.
+        /// States Language</a> in the Step Functions User Guide.
         /// 
+        ///  
+        /// <para>
+        /// If you set the <code>publish</code> parameter of this API action to <code>true</code>,
+        /// it publishes version <code>1</code> as the first revision of the state machine.
+        /// </para>
         ///  <note> 
         /// <para>
         /// This operation is eventually consistent. The results are best effort and may not reflect
@@ -160,8 +164,9 @@ namespace Amazon.StepFunctions
         ///  <code>CreateStateMachine</code> is an idempotent API. Subsequent requests won’t create
         /// a duplicate resource if it was already created. <code>CreateStateMachine</code>'s
         /// idempotency check is based on the state machine <code>name</code>, <code>definition</code>,
-        /// <code>type</code>, <code>LoggingConfiguration</code> and <code>TracingConfiguration</code>.
-        /// If a following request has a different <code>roleArn</code> or <code>tags</code>,
+        /// <code>type</code>, <code>LoggingConfiguration</code>, and <code>TracingConfiguration</code>.
+        /// The check is also based on the <code>publish</code> and <code>versionDescription</code>
+        /// parameters. If a following request has a different <code>roleArn</code> or <code>tags</code>,
         /// Step Functions will ignore these differences and treat it as an idempotent request
         /// of the previous. In this case, <code>roleArn</code> and <code>tags</code> will not
         /// be updated, even if they are different.
@@ -171,17 +176,27 @@ namespace Amazon.StepFunctions
         /// <param name="request">Container for the necessary parameters to execute the CreateStateMachine service method.</param>
         /// 
         /// <returns>The response from the CreateStateMachine service method, as returned by StepFunctions.</returns>
+        /// <exception cref="Amazon.StepFunctions.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state. This error occurs
+        /// when there're concurrent requests for <a>DeleteStateMachineVersion</a>, <a>PublishStateMachineVersion</a>,
+        /// or <a>UpdateStateMachine</a> with the <code>publish</code> parameter set to <code>true</code>.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 409
+        /// </para>
+        /// </exception>
         /// <exception cref="Amazon.StepFunctions.Model.InvalidArnException">
-        /// The provided Amazon Resource Name (ARN) is invalid.
+        /// The provided Amazon Resource Name (ARN) is not valid.
         /// </exception>
         /// <exception cref="Amazon.StepFunctions.Model.InvalidDefinitionException">
-        /// The provided Amazon States Language definition is invalid.
+        /// The provided Amazon States Language definition is not valid.
         /// </exception>
         /// <exception cref="Amazon.StepFunctions.Model.InvalidLoggingConfigurationException">
         /// 
         /// </exception>
         /// <exception cref="Amazon.StepFunctions.Model.InvalidNameException">
-        /// The provided name is invalid.
+        /// The provided name is not valid.
         /// </exception>
         /// <exception cref="Amazon.StepFunctions.Model.InvalidTracingConfigurationException">
         /// Your <code>tracingConfiguration</code> key does not match, or <code>enabled</code>
@@ -203,7 +218,10 @@ namespace Amazon.StepFunctions
         /// </exception>
         /// <exception cref="Amazon.StepFunctions.Model.TooManyTagsException">
         /// You've exceeded the number of tags allowed for a resource. See the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html">
-        /// Limits Topic</a> in the AWS Step Functions Developer Guide.
+        /// Limits Topic</a> in the Step Functions Developer Guide.
+        /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/CreateStateMachine">REST API Reference for CreateStateMachine Operation</seealso>
         CreateStateMachineResponse CreateStateMachine(CreateStateMachineRequest request);
@@ -236,6 +254,132 @@ namespace Amazon.StepFunctions
 
         #endregion
         
+        #region  CreateStateMachineAlias
+
+
+        /// <summary>
+        /// Creates an <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-alias.html">alias</a>
+        /// for a state machine that points to one or two <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-version.html">versions</a>
+        /// of the same state machine. You can set your application to call <a>StartExecution</a>
+        /// with an alias and update the version the alias uses without changing the client's
+        /// code.
+        /// 
+        ///  
+        /// <para>
+        /// You can also map an alias to split <a>StartExecution</a> requests between two versions
+        /// of a state machine. To do this, add a second <code>RoutingConfig</code> object in
+        /// the <code>routingConfiguration</code> parameter. You must also specify the percentage
+        /// of execution run requests each version should receive in both <code>RoutingConfig</code>
+        /// objects. Step Functions randomly chooses which version runs a given execution based
+        /// on the percentage you specify.
+        /// </para>
+        ///  
+        /// <para>
+        /// To create an alias that points to a single version, specify a single <code>RoutingConfig</code>
+        /// object with a <code>weight</code> set to 100.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can create up to 100 aliases for each state machine. You must delete unused aliases
+        /// using the <a>DeleteStateMachineAlias</a> API action.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>CreateStateMachineAlias</code> is an idempotent API. Step Functions bases the
+        /// idempotency check on the <code>stateMachineArn</code>, <code>description</code>, <code>name</code>,
+        /// and <code>routingConfiguration</code> parameters. Requests that contain the same values
+        /// for these parameters return a successful idempotent response without creating a duplicate
+        /// resource.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Related operations:</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>DescribeStateMachineAlias</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>ListStateMachineAliases</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateStateMachineAlias</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DeleteStateMachineAlias</a> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateStateMachineAlias service method.</param>
+        /// 
+        /// <returns>The response from the CreateStateMachineAlias service method, as returned by StepFunctions.</returns>
+        /// <exception cref="Amazon.StepFunctions.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state. This error occurs
+        /// when there're concurrent requests for <a>DeleteStateMachineVersion</a>, <a>PublishStateMachineVersion</a>,
+        /// or <a>UpdateStateMachine</a> with the <code>publish</code> parameter set to <code>true</code>.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 409
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.InvalidArnException">
+        /// The provided Amazon Resource Name (ARN) is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.InvalidNameException">
+        /// The provided name is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.ResourceNotFoundException">
+        /// Could not find the referenced resource.
+        /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.ServiceQuotaExceededException">
+        /// The request would cause a service quota to be exceeded.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 402
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.StateMachineDeletingException">
+        /// The specified state machine is being deleted.
+        /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/CreateStateMachineAlias">REST API Reference for CreateStateMachineAlias Operation</seealso>
+        CreateStateMachineAliasResponse CreateStateMachineAlias(CreateStateMachineAliasRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateStateMachineAlias operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateStateMachineAlias operation on AmazonStepFunctionsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateStateMachineAlias
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/CreateStateMachineAlias">REST API Reference for CreateStateMachineAlias Operation</seealso>
+        IAsyncResult BeginCreateStateMachineAlias(CreateStateMachineAliasRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateStateMachineAlias operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateStateMachineAlias.</param>
+        /// 
+        /// <returns>Returns a  CreateStateMachineAliasResult from StepFunctions.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/CreateStateMachineAlias">REST API Reference for CreateStateMachineAlias Operation</seealso>
+        CreateStateMachineAliasResponse EndCreateStateMachineAlias(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeleteActivity
 
 
@@ -246,7 +390,7 @@ namespace Amazon.StepFunctions
         /// 
         /// <returns>The response from the DeleteActivity service method, as returned by StepFunctions.</returns>
         /// <exception cref="Amazon.StepFunctions.Model.InvalidArnException">
-        /// The provided Amazon Resource Name (ARN) is invalid.
+        /// The provided Amazon Resource Name (ARN) is not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DeleteActivity">REST API Reference for DeleteActivity Operation</seealso>
         DeleteActivityResponse DeleteActivity(DeleteActivityRequest request);
@@ -286,10 +430,48 @@ namespace Amazon.StepFunctions
         /// Deletes a state machine. This is an asynchronous operation: It sets the state machine's
         /// status to <code>DELETING</code> and begins the deletion process. 
         /// 
+        ///  
+        /// <para>
+        /// A qualified state machine ARN can either refer to a <i>Distributed Map state</i> defined
+        /// within a state machine, a version ARN, or an alias ARN.
+        /// </para>
+        ///  
+        /// <para>
+        /// The following are some examples of qualified and unqualified state machine ARNs:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The following qualified state machine ARN refers to a <i>Distributed Map state</i>
+        /// with a label <code>mapStateLabel</code> in a state machine named <code>myStateMachine</code>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>arn:partition:states:region:account-id:stateMachine:myStateMachine/mapStateLabel</code>
+        /// 
+        /// </para>
         ///  <note> 
         /// <para>
-        /// For <code>EXPRESS</code>state machines, the deletion will happen eventually (usually
-        /// less than a minute). Running executions may emit logs after <code>DeleteStateMachine</code>
+        /// If you provide a qualified state machine ARN that refers to a <i>Distributed Map state</i>,
+        /// the request fails with <code>ValidationException</code>.
+        /// </para>
+        ///  </note> </li> <li> 
+        /// <para>
+        /// The following unqualified state machine ARN refers to a state machine named <code>myStateMachine</code>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>arn:partition:states:region:account-id:stateMachine:myStateMachine</code> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// This API action also deletes all <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-version.html">versions</a>
+        /// and <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-alias.html">aliases</a>
+        /// associated with a state machine.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// For <code>EXPRESS</code> state machines, the deletion happens eventually (usually
+        /// in less than a minute). Running executions may emit logs after <code>DeleteStateMachine</code>
         /// API is called.
         /// </para>
         ///  </note>
@@ -298,7 +480,10 @@ namespace Amazon.StepFunctions
         /// 
         /// <returns>The response from the DeleteStateMachine service method, as returned by StepFunctions.</returns>
         /// <exception cref="Amazon.StepFunctions.Model.InvalidArnException">
-        /// The provided Amazon Resource Name (ARN) is invalid.
+        /// The provided Amazon Resource Name (ARN) is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DeleteStateMachine">REST API Reference for DeleteStateMachine Operation</seealso>
         DeleteStateMachineResponse DeleteStateMachine(DeleteStateMachineRequest request);
@@ -331,6 +516,175 @@ namespace Amazon.StepFunctions
 
         #endregion
         
+        #region  DeleteStateMachineAlias
+
+
+        /// <summary>
+        /// Deletes a state machine <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-alias.html">alias</a>.
+        /// 
+        ///  
+        /// <para>
+        /// After you delete a state machine alias, you can't use it to start executions. When
+        /// you delete a state machine alias, Step Functions doesn't delete the state machine
+        /// versions that alias references.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Related operations:</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>CreateStateMachineAlias</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeStateMachineAlias</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>ListStateMachineAliases</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateStateMachineAlias</a> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteStateMachineAlias service method.</param>
+        /// 
+        /// <returns>The response from the DeleteStateMachineAlias service method, as returned by StepFunctions.</returns>
+        /// <exception cref="Amazon.StepFunctions.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state. This error occurs
+        /// when there're concurrent requests for <a>DeleteStateMachineVersion</a>, <a>PublishStateMachineVersion</a>,
+        /// or <a>UpdateStateMachine</a> with the <code>publish</code> parameter set to <code>true</code>.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 409
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.InvalidArnException">
+        /// The provided Amazon Resource Name (ARN) is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.ResourceNotFoundException">
+        /// Could not find the referenced resource.
+        /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DeleteStateMachineAlias">REST API Reference for DeleteStateMachineAlias Operation</seealso>
+        DeleteStateMachineAliasResponse DeleteStateMachineAlias(DeleteStateMachineAliasRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteStateMachineAlias operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteStateMachineAlias operation on AmazonStepFunctionsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteStateMachineAlias
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DeleteStateMachineAlias">REST API Reference for DeleteStateMachineAlias Operation</seealso>
+        IAsyncResult BeginDeleteStateMachineAlias(DeleteStateMachineAliasRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteStateMachineAlias operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteStateMachineAlias.</param>
+        /// 
+        /// <returns>Returns a  DeleteStateMachineAliasResult from StepFunctions.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DeleteStateMachineAlias">REST API Reference for DeleteStateMachineAlias Operation</seealso>
+        DeleteStateMachineAliasResponse EndDeleteStateMachineAlias(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteStateMachineVersion
+
+
+        /// <summary>
+        /// Deletes a state machine <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-version.html">version</a>.
+        /// After you delete a version, you can't call <a>StartExecution</a> using that version's
+        /// ARN or use the version with a state machine <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-alias.html">alias</a>.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Deleting a state machine version won't terminate its in-progress executions.
+        /// </para>
+        ///  </note> <note> 
+        /// <para>
+        /// You can't delete a state machine version currently referenced by one or more aliases.
+        /// Before you delete a version, you must either delete the aliases or update them to
+        /// point to another state machine version.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        ///  <b>Related operations:</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>PublishStateMachineVersion</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>ListStateMachineVersions</a> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteStateMachineVersion service method.</param>
+        /// 
+        /// <returns>The response from the DeleteStateMachineVersion service method, as returned by StepFunctions.</returns>
+        /// <exception cref="Amazon.StepFunctions.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state. This error occurs
+        /// when there're concurrent requests for <a>DeleteStateMachineVersion</a>, <a>PublishStateMachineVersion</a>,
+        /// or <a>UpdateStateMachine</a> with the <code>publish</code> parameter set to <code>true</code>.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 409
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.InvalidArnException">
+        /// The provided Amazon Resource Name (ARN) is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DeleteStateMachineVersion">REST API Reference for DeleteStateMachineVersion Operation</seealso>
+        DeleteStateMachineVersionResponse DeleteStateMachineVersion(DeleteStateMachineVersionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteStateMachineVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteStateMachineVersion operation on AmazonStepFunctionsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteStateMachineVersion
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DeleteStateMachineVersion">REST API Reference for DeleteStateMachineVersion Operation</seealso>
+        IAsyncResult BeginDeleteStateMachineVersion(DeleteStateMachineVersionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteStateMachineVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteStateMachineVersion.</param>
+        /// 
+        /// <returns>Returns a  DeleteStateMachineVersionResult from StepFunctions.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DeleteStateMachineVersion">REST API Reference for DeleteStateMachineVersion Operation</seealso>
+        DeleteStateMachineVersionResponse EndDeleteStateMachineVersion(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribeActivity
 
 
@@ -351,7 +705,7 @@ namespace Amazon.StepFunctions
         /// The specified activity does not exist.
         /// </exception>
         /// <exception cref="Amazon.StepFunctions.Model.InvalidArnException">
-        /// The provided Amazon Resource Name (ARN) is invalid.
+        /// The provided Amazon Resource Name (ARN) is not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DescribeActivity">REST API Reference for DescribeActivity Operation</seealso>
         DescribeActivityResponse DescribeActivity(DescribeActivityRequest request);
@@ -388,8 +742,16 @@ namespace Amazon.StepFunctions
 
 
         /// <summary>
-        /// Describes an execution.
+        /// Provides information about a state machine execution, such as the state machine associated
+        /// with the execution, the execution input and output, and relevant execution metadata.
+        /// Use this API action to return the Map Run Amazon Resource Name (ARN) if the execution
+        /// was dispatched by a Map Run.
         /// 
+        ///  
+        /// <para>
+        /// If you specify a version or alias ARN when you call the <a>StartExecution</a> API
+        /// action, <code>DescribeExecution</code> returns that ARN.
+        /// </para>
         ///  <note> 
         /// <para>
         /// This operation is eventually consistent. The results are best effort and may not reflect
@@ -397,7 +759,8 @@ namespace Amazon.StepFunctions
         /// </para>
         ///  </note> 
         /// <para>
-        /// This API action is not supported by <code>EXPRESS</code> state machines.
+        /// Executions of an <code>EXPRESS</code> state machinearen't supported by <code>DescribeExecution</code>
+        /// unless a Map Run dispatched them.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeExecution service method.</param>
@@ -407,7 +770,7 @@ namespace Amazon.StepFunctions
         /// The specified execution does not exist.
         /// </exception>
         /// <exception cref="Amazon.StepFunctions.Model.InvalidArnException">
-        /// The provided Amazon Resource Name (ARN) is invalid.
+        /// The provided Amazon Resource Name (ARN) is not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DescribeExecution">REST API Reference for DescribeExecution Operation</seealso>
         DescribeExecutionResponse DescribeExecution(DescribeExecutionRequest request);
@@ -440,12 +803,113 @@ namespace Amazon.StepFunctions
 
         #endregion
         
+        #region  DescribeMapRun
+
+
+        /// <summary>
+        /// Provides information about a Map Run's configuration, progress, and results. For more
+        /// information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-examine-map-run.html">Examining
+        /// Map Run</a> in the <i>Step Functions Developer Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMapRun service method.</param>
+        /// 
+        /// <returns>The response from the DescribeMapRun service method, as returned by StepFunctions.</returns>
+        /// <exception cref="Amazon.StepFunctions.Model.InvalidArnException">
+        /// The provided Amazon Resource Name (ARN) is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.ResourceNotFoundException">
+        /// Could not find the referenced resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DescribeMapRun">REST API Reference for DescribeMapRun Operation</seealso>
+        DescribeMapRunResponse DescribeMapRun(DescribeMapRunRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeMapRun operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMapRun operation on AmazonStepFunctionsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeMapRun
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DescribeMapRun">REST API Reference for DescribeMapRun Operation</seealso>
+        IAsyncResult BeginDescribeMapRun(DescribeMapRunRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeMapRun operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeMapRun.</param>
+        /// 
+        /// <returns>Returns a  DescribeMapRunResult from StepFunctions.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DescribeMapRun">REST API Reference for DescribeMapRun Operation</seealso>
+        DescribeMapRunResponse EndDescribeMapRun(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribeStateMachine
 
 
         /// <summary>
-        /// Describes a state machine.
+        /// Provides information about a state machine's definition, its IAM role Amazon Resource
+        /// Name (ARN), and configuration.
         /// 
+        ///  
+        /// <para>
+        /// A qualified state machine ARN can either refer to a <i>Distributed Map state</i> defined
+        /// within a state machine, a version ARN, or an alias ARN.
+        /// </para>
+        ///  
+        /// <para>
+        /// The following are some examples of qualified and unqualified state machine ARNs:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The following qualified state machine ARN refers to a <i>Distributed Map state</i>
+        /// with a label <code>mapStateLabel</code> in a state machine named <code>myStateMachine</code>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>arn:partition:states:region:account-id:stateMachine:myStateMachine/mapStateLabel</code>
+        /// 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// If you provide a qualified state machine ARN that refers to a <i>Distributed Map state</i>,
+        /// the request fails with <code>ValidationException</code>.
+        /// </para>
+        ///  </note> </li> <li> 
+        /// <para>
+        /// The following qualified state machine ARN refers to an alias named <code>PROD</code>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>arn:&lt;partition&gt;:states:&lt;region&gt;:&lt;account-id&gt;:stateMachine:&lt;myStateMachine:PROD&gt;</code>
+        /// 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// If you provide a qualified state machine ARN that refers to a version ARN or an alias
+        /// ARN, the request starts execution for that version or alias.
+        /// </para>
+        ///  </note> </li> <li> 
+        /// <para>
+        /// The following unqualified state machine ARN refers to a state machine named <code>myStateMachine</code>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>arn:&lt;partition&gt;:states:&lt;region&gt;:&lt;account-id&gt;:stateMachine:&lt;myStateMachine&gt;</code>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// This API action returns the details for a state machine version if the <code>stateMachineArn</code>
+        /// you specify is a state machine version ARN.
+        /// </para>
         ///  <note> 
         /// <para>
         /// This operation is eventually consistent. The results are best effort and may not reflect
@@ -457,7 +921,7 @@ namespace Amazon.StepFunctions
         /// 
         /// <returns>The response from the DescribeStateMachine service method, as returned by StepFunctions.</returns>
         /// <exception cref="Amazon.StepFunctions.Model.InvalidArnException">
-        /// The provided Amazon Resource Name (ARN) is invalid.
+        /// The provided Amazon Resource Name (ARN) is not valid.
         /// </exception>
         /// <exception cref="Amazon.StepFunctions.Model.StateMachineDoesNotExistException">
         /// The specified state machine does not exist.
@@ -493,11 +957,85 @@ namespace Amazon.StepFunctions
 
         #endregion
         
+        #region  DescribeStateMachineAlias
+
+
+        /// <summary>
+        /// Returns details about a state machine <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-alias.html">alias</a>.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Related operations:</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>CreateStateMachineAlias</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>ListStateMachineAliases</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateStateMachineAlias</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DeleteStateMachineAlias</a> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeStateMachineAlias service method.</param>
+        /// 
+        /// <returns>The response from the DescribeStateMachineAlias service method, as returned by StepFunctions.</returns>
+        /// <exception cref="Amazon.StepFunctions.Model.InvalidArnException">
+        /// The provided Amazon Resource Name (ARN) is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.ResourceNotFoundException">
+        /// Could not find the referenced resource.
+        /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DescribeStateMachineAlias">REST API Reference for DescribeStateMachineAlias Operation</seealso>
+        DescribeStateMachineAliasResponse DescribeStateMachineAlias(DescribeStateMachineAliasRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeStateMachineAlias operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeStateMachineAlias operation on AmazonStepFunctionsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeStateMachineAlias
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DescribeStateMachineAlias">REST API Reference for DescribeStateMachineAlias Operation</seealso>
+        IAsyncResult BeginDescribeStateMachineAlias(DescribeStateMachineAliasRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeStateMachineAlias operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeStateMachineAlias.</param>
+        /// 
+        /// <returns>Returns a  DescribeStateMachineAliasResult from StepFunctions.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DescribeStateMachineAlias">REST API Reference for DescribeStateMachineAlias Operation</seealso>
+        DescribeStateMachineAliasResponse EndDescribeStateMachineAlias(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribeStateMachineForExecution
 
 
         /// <summary>
-        /// Describes the state machine associated with a specific execution.
+        /// Provides information about a state machine's definition, its execution role ARN, and
+        /// configuration. If a Map Run dispatched the execution, this action returns the Map
+        /// Run Amazon Resource Name (ARN) in the response. The state machine returned is the
+        /// state machine associated with the Map Run.
         /// 
         ///  <note> 
         /// <para>
@@ -516,7 +1054,7 @@ namespace Amazon.StepFunctions
         /// The specified execution does not exist.
         /// </exception>
         /// <exception cref="Amazon.StepFunctions.Model.InvalidArnException">
-        /// The provided Amazon Resource Name (ARN) is invalid.
+        /// The provided Amazon Resource Name (ARN) is not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DescribeStateMachineForExecution">REST API Reference for DescribeStateMachineForExecution Operation</seealso>
         DescribeStateMachineForExecutionResponse DescribeStateMachineForExecution(DescribeStateMachineForExecutionRequest request);
@@ -560,7 +1098,11 @@ namespace Amazon.StepFunctions
         /// service holds on to the request before responding is 60 seconds. If no task is available
         /// within 60 seconds, the poll returns a <code>taskToken</code> with a null string.
         /// 
-        ///  <important> 
+        ///  <note> 
+        /// <para>
+        /// This API action isn't logged in CloudTrail.
+        /// </para>
+        ///  </note> <important> 
         /// <para>
         /// Workers should set their client side socket timeout to at least 65 seconds (5 seconds
         /// higher than the maximum time the service may hold the poll request).
@@ -583,7 +1125,7 @@ namespace Amazon.StepFunctions
         /// The maximum number of workers concurrently polling for activity tasks has been reached.
         /// </exception>
         /// <exception cref="Amazon.StepFunctions.Model.InvalidArnException">
-        /// The provided Amazon Resource Name (ARN) is invalid.
+        /// The provided Amazon Resource Name (ARN) is not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/GetActivityTask">REST API Reference for GetActivityTask Operation</seealso>
         GetActivityTaskResponse GetActivityTask(GetActivityTaskRequest request);
@@ -644,10 +1186,10 @@ namespace Amazon.StepFunctions
         /// The specified execution does not exist.
         /// </exception>
         /// <exception cref="Amazon.StepFunctions.Model.InvalidArnException">
-        /// The provided Amazon Resource Name (ARN) is invalid.
+        /// The provided Amazon Resource Name (ARN) is not valid.
         /// </exception>
         /// <exception cref="Amazon.StepFunctions.Model.InvalidTokenException">
-        /// The provided token is invalid.
+        /// The provided token is not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/GetExecutionHistory">REST API Reference for GetExecutionHistory Operation</seealso>
         GetExecutionHistoryResponse GetExecutionHistory(GetExecutionHistoryRequest request);
@@ -705,7 +1247,7 @@ namespace Amazon.StepFunctions
         /// 
         /// <returns>The response from the ListActivities service method, as returned by StepFunctions.</returns>
         /// <exception cref="Amazon.StepFunctions.Model.InvalidTokenException">
-        /// The provided token is invalid.
+        /// The provided token is not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ListActivities">REST API Reference for ListActivities Operation</seealso>
         ListActivitiesResponse ListActivities(ListActivitiesRequest request);
@@ -742,9 +1284,20 @@ namespace Amazon.StepFunctions
 
 
         /// <summary>
-        /// Lists the executions of a state machine that meet the filtering criteria. Results
-        /// are sorted by time, with the most recent execution first.
+        /// Lists all executions of a state machine or a Map Run. You can list all executions
+        /// related to a state machine by specifying a state machine Amazon Resource Name (ARN),
+        /// or those related to a Map Run by specifying a Map Run ARN.
         /// 
+        ///  
+        /// <para>
+        /// You can also provide a state machine <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-alias.html">alias</a>
+        /// ARN or <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-version.html">version</a>
+        /// ARN to list the executions associated with a specific alias or version.
+        /// </para>
+        ///  
+        /// <para>
+        /// Results are sorted by time, with the most recent execution first.
+        /// </para>
         ///  
         /// <para>
         /// If <code>nextToken</code> is returned, there are more results available. The value
@@ -767,16 +1320,22 @@ namespace Amazon.StepFunctions
         /// 
         /// <returns>The response from the ListExecutions service method, as returned by StepFunctions.</returns>
         /// <exception cref="Amazon.StepFunctions.Model.InvalidArnException">
-        /// The provided Amazon Resource Name (ARN) is invalid.
+        /// The provided Amazon Resource Name (ARN) is not valid.
         /// </exception>
         /// <exception cref="Amazon.StepFunctions.Model.InvalidTokenException">
-        /// The provided token is invalid.
+        /// The provided token is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.ResourceNotFoundException">
+        /// Could not find the referenced resource.
         /// </exception>
         /// <exception cref="Amazon.StepFunctions.Model.StateMachineDoesNotExistException">
         /// The specified state machine does not exist.
         /// </exception>
         /// <exception cref="Amazon.StepFunctions.Model.StateMachineTypeNotSupportedException">
         /// 
+        /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ListExecutions">REST API Reference for ListExecutions Operation</seealso>
         ListExecutionsResponse ListExecutions(ListExecutionsRequest request);
@@ -809,6 +1368,149 @@ namespace Amazon.StepFunctions
 
         #endregion
         
+        #region  ListMapRuns
+
+
+        /// <summary>
+        /// Lists all Map Runs that were started by a given state machine execution. Use this
+        /// API action to obtain Map Run ARNs, and then call <code>DescribeMapRun</code> to obtain
+        /// more information, if needed.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMapRuns service method.</param>
+        /// 
+        /// <returns>The response from the ListMapRuns service method, as returned by StepFunctions.</returns>
+        /// <exception cref="Amazon.StepFunctions.Model.ExecutionDoesNotExistException">
+        /// The specified execution does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.InvalidArnException">
+        /// The provided Amazon Resource Name (ARN) is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.InvalidTokenException">
+        /// The provided token is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ListMapRuns">REST API Reference for ListMapRuns Operation</seealso>
+        ListMapRunsResponse ListMapRuns(ListMapRunsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListMapRuns operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListMapRuns operation on AmazonStepFunctionsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListMapRuns
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ListMapRuns">REST API Reference for ListMapRuns Operation</seealso>
+        IAsyncResult BeginListMapRuns(ListMapRunsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListMapRuns operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListMapRuns.</param>
+        /// 
+        /// <returns>Returns a  ListMapRunsResult from StepFunctions.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ListMapRuns">REST API Reference for ListMapRuns Operation</seealso>
+        ListMapRunsResponse EndListMapRuns(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListStateMachineAliases
+
+
+        /// <summary>
+        /// Lists <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-alias.html">aliases</a>
+        /// for a specified state machine ARN. Results are sorted by time, with the most recently
+        /// created aliases listed first. 
+        /// 
+        ///  
+        /// <para>
+        /// To list aliases that reference a state machine <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-version.html">version</a>,
+        /// you can specify the version ARN in the <code>stateMachineArn</code> parameter.
+        /// </para>
+        ///  
+        /// <para>
+        /// If <code>nextToken</code> is returned, there are more results available. The value
+        /// of <code>nextToken</code> is a unique pagination token for each page. Make the call
+        /// again using the returned token to retrieve the next page. Keep all other arguments
+        /// unchanged. Each pagination token expires after 24 hours. Using an expired pagination
+        /// token will return an <i>HTTP 400 InvalidToken</i> error.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Related operations:</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>CreateStateMachineAlias</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeStateMachineAlias</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateStateMachineAlias</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DeleteStateMachineAlias</a> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListStateMachineAliases service method.</param>
+        /// 
+        /// <returns>The response from the ListStateMachineAliases service method, as returned by StepFunctions.</returns>
+        /// <exception cref="Amazon.StepFunctions.Model.InvalidArnException">
+        /// The provided Amazon Resource Name (ARN) is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.InvalidTokenException">
+        /// The provided token is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.ResourceNotFoundException">
+        /// Could not find the referenced resource.
+        /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.StateMachineDeletingException">
+        /// The specified state machine is being deleted.
+        /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.StateMachineDoesNotExistException">
+        /// The specified state machine does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ListStateMachineAliases">REST API Reference for ListStateMachineAliases Operation</seealso>
+        ListStateMachineAliasesResponse ListStateMachineAliases(ListStateMachineAliasesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListStateMachineAliases operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListStateMachineAliases operation on AmazonStepFunctionsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListStateMachineAliases
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ListStateMachineAliases">REST API Reference for ListStateMachineAliases Operation</seealso>
+        IAsyncResult BeginListStateMachineAliases(ListStateMachineAliasesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListStateMachineAliases operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListStateMachineAliases.</param>
+        /// 
+        /// <returns>Returns a  ListStateMachineAliasesResult from StepFunctions.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ListStateMachineAliases">REST API Reference for ListStateMachineAliases Operation</seealso>
+        ListStateMachineAliasesResponse EndListStateMachineAliases(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListStateMachines
 
 
@@ -834,7 +1536,7 @@ namespace Amazon.StepFunctions
         /// 
         /// <returns>The response from the ListStateMachines service method, as returned by StepFunctions.</returns>
         /// <exception cref="Amazon.StepFunctions.Model.InvalidTokenException">
-        /// The provided token is invalid.
+        /// The provided token is not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ListStateMachines">REST API Reference for ListStateMachines Operation</seealso>
         ListStateMachinesResponse ListStateMachines(ListStateMachinesRequest request);
@@ -867,6 +1569,82 @@ namespace Amazon.StepFunctions
 
         #endregion
         
+        #region  ListStateMachineVersions
+
+
+        /// <summary>
+        /// Lists <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-version.html">versions</a>
+        /// for the specified state machine Amazon Resource Name (ARN).
+        /// 
+        ///  
+        /// <para>
+        /// The results are sorted in descending order of the version creation time.
+        /// </para>
+        ///  
+        /// <para>
+        /// If <code>nextToken</code> is returned, there are more results available. The value
+        /// of <code>nextToken</code> is a unique pagination token for each page. Make the call
+        /// again using the returned token to retrieve the next page. Keep all other arguments
+        /// unchanged. Each pagination token expires after 24 hours. Using an expired pagination
+        /// token will return an <i>HTTP 400 InvalidToken</i> error.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Related operations:</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>PublishStateMachineVersion</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DeleteStateMachineVersion</a> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListStateMachineVersions service method.</param>
+        /// 
+        /// <returns>The response from the ListStateMachineVersions service method, as returned by StepFunctions.</returns>
+        /// <exception cref="Amazon.StepFunctions.Model.InvalidArnException">
+        /// The provided Amazon Resource Name (ARN) is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.InvalidTokenException">
+        /// The provided token is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ListStateMachineVersions">REST API Reference for ListStateMachineVersions Operation</seealso>
+        ListStateMachineVersionsResponse ListStateMachineVersions(ListStateMachineVersionsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListStateMachineVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListStateMachineVersions operation on AmazonStepFunctionsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListStateMachineVersions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ListStateMachineVersions">REST API Reference for ListStateMachineVersions Operation</seealso>
+        IAsyncResult BeginListStateMachineVersions(ListStateMachineVersionsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListStateMachineVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListStateMachineVersions.</param>
+        /// 
+        /// <returns>Returns a  ListStateMachineVersionsResult from StepFunctions.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ListStateMachineVersions">REST API Reference for ListStateMachineVersions Operation</seealso>
+        ListStateMachineVersionsResponse EndListStateMachineVersions(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListTagsForResource
 
 
@@ -883,10 +1661,10 @@ namespace Amazon.StepFunctions
         /// 
         /// <returns>The response from the ListTagsForResource service method, as returned by StepFunctions.</returns>
         /// <exception cref="Amazon.StepFunctions.Model.InvalidArnException">
-        /// The provided Amazon Resource Name (ARN) is invalid.
+        /// The provided Amazon Resource Name (ARN) is not valid.
         /// </exception>
         /// <exception cref="Amazon.StepFunctions.Model.ResourceNotFoundException">
-        /// Could not find the referenced resource. Only state machine and activity ARNs are supported.
+        /// Could not find the referenced resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request);
@@ -919,6 +1697,108 @@ namespace Amazon.StepFunctions
 
         #endregion
         
+        #region  PublishStateMachineVersion
+
+
+        /// <summary>
+        /// Creates a <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-version.html">version</a>
+        /// from the current revision of a state machine. Use versions to create immutable snapshots
+        /// of your state machine. You can start executions from versions either directly or with
+        /// an alias. To create an alias, use <a>CreateStateMachineAlias</a>.
+        /// 
+        ///  
+        /// <para>
+        /// You can publish up to 1000 versions for each state machine. You must manually delete
+        /// unused versions using the <a>DeleteStateMachineVersion</a> API action.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>PublishStateMachineVersion</code> is an idempotent API. It doesn't create a
+        /// duplicate state machine version if it already exists for the current revision. Step
+        /// Functions bases <code>PublishStateMachineVersion</code>'s idempotency check on the
+        /// <code>stateMachineArn</code>, <code>name</code>, and <code>revisionId</code> parameters.
+        /// Requests with the same parameters return a successful idempotent response. If you
+        /// don't specify a <code>revisionId</code>, Step Functions checks for a previously published
+        /// version of the state machine's current revision.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Related operations:</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>DeleteStateMachineVersion</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>ListStateMachineVersions</a> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PublishStateMachineVersion service method.</param>
+        /// 
+        /// <returns>The response from the PublishStateMachineVersion service method, as returned by StepFunctions.</returns>
+        /// <exception cref="Amazon.StepFunctions.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state. This error occurs
+        /// when there're concurrent requests for <a>DeleteStateMachineVersion</a>, <a>PublishStateMachineVersion</a>,
+        /// or <a>UpdateStateMachine</a> with the <code>publish</code> parameter set to <code>true</code>.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 409
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.InvalidArnException">
+        /// The provided Amazon Resource Name (ARN) is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.ServiceQuotaExceededException">
+        /// The request would cause a service quota to be exceeded.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 402
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.StateMachineDeletingException">
+        /// The specified state machine is being deleted.
+        /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.StateMachineDoesNotExistException">
+        /// The specified state machine does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/PublishStateMachineVersion">REST API Reference for PublishStateMachineVersion Operation</seealso>
+        PublishStateMachineVersionResponse PublishStateMachineVersion(PublishStateMachineVersionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PublishStateMachineVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PublishStateMachineVersion operation on AmazonStepFunctionsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPublishStateMachineVersion
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/PublishStateMachineVersion">REST API Reference for PublishStateMachineVersion Operation</seealso>
+        IAsyncResult BeginPublishStateMachineVersion(PublishStateMachineVersionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PublishStateMachineVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPublishStateMachineVersion.</param>
+        /// 
+        /// <returns>Returns a  PublishStateMachineVersionResult from StepFunctions.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/PublishStateMachineVersion">REST API Reference for PublishStateMachineVersion Operation</seealso>
+        PublishStateMachineVersionResponse EndPublishStateMachineVersion(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  SendTaskFailure
 
 
@@ -930,7 +1810,7 @@ namespace Amazon.StepFunctions
         /// 
         /// <returns>The response from the SendTaskFailure service method, as returned by StepFunctions.</returns>
         /// <exception cref="Amazon.StepFunctions.Model.InvalidTokenException">
-        /// The provided token is invalid.
+        /// The provided token is not valid.
         /// </exception>
         /// <exception cref="Amazon.StepFunctions.Model.TaskDoesNotExistException">
         /// 
@@ -997,7 +1877,7 @@ namespace Amazon.StepFunctions
         /// 
         /// <returns>The response from the SendTaskHeartbeat service method, as returned by StepFunctions.</returns>
         /// <exception cref="Amazon.StepFunctions.Model.InvalidTokenException">
-        /// The provided token is invalid.
+        /// The provided token is not valid.
         /// </exception>
         /// <exception cref="Amazon.StepFunctions.Model.TaskDoesNotExistException">
         /// 
@@ -1048,10 +1928,10 @@ namespace Amazon.StepFunctions
         /// 
         /// <returns>The response from the SendTaskSuccess service method, as returned by StepFunctions.</returns>
         /// <exception cref="Amazon.StepFunctions.Model.InvalidOutputException">
-        /// The provided JSON output data is invalid.
+        /// The provided JSON output data is not valid.
         /// </exception>
         /// <exception cref="Amazon.StepFunctions.Model.InvalidTokenException">
-        /// The provided token is invalid.
+        /// The provided token is not valid.
         /// </exception>
         /// <exception cref="Amazon.StepFunctions.Model.TaskDoesNotExistException">
         /// 
@@ -1096,13 +1976,77 @@ namespace Amazon.StepFunctions
         /// <summary>
         /// Starts a state machine execution.
         /// 
+        ///  
+        /// <para>
+        /// A qualified state machine ARN can either refer to a <i>Distributed Map state</i> defined
+        /// within a state machine, a version ARN, or an alias ARN.
+        /// </para>
+        ///  
+        /// <para>
+        /// The following are some examples of qualified and unqualified state machine ARNs:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The following qualified state machine ARN refers to a <i>Distributed Map state</i>
+        /// with a label <code>mapStateLabel</code> in a state machine named <code>myStateMachine</code>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>arn:partition:states:region:account-id:stateMachine:myStateMachine/mapStateLabel</code>
+        /// 
+        /// </para>
         ///  <note> 
         /// <para>
-        ///  <code>StartExecution</code> is idempotent. If <code>StartExecution</code> is called
-        /// with the same name and input as a running execution, the call will succeed and return
-        /// the same response as the original request. If the execution is closed or if the input
-        /// is different, it will return a 400 <code>ExecutionAlreadyExists</code> error. Names
-        /// can be reused after 90 days. 
+        /// If you provide a qualified state machine ARN that refers to a <i>Distributed Map state</i>,
+        /// the request fails with <code>ValidationException</code>.
+        /// </para>
+        ///  </note> </li> <li> 
+        /// <para>
+        /// The following qualified state machine ARN refers to an alias named <code>PROD</code>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>arn:&lt;partition&gt;:states:&lt;region&gt;:&lt;account-id&gt;:stateMachine:&lt;myStateMachine:PROD&gt;</code>
+        /// 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// If you provide a qualified state machine ARN that refers to a version ARN or an alias
+        /// ARN, the request starts execution for that version or alias.
+        /// </para>
+        ///  </note> </li> <li> 
+        /// <para>
+        /// The following unqualified state machine ARN refers to a state machine named <code>myStateMachine</code>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>arn:&lt;partition&gt;:states:&lt;region&gt;:&lt;account-id&gt;:stateMachine:&lt;myStateMachine&gt;</code>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// If you start an execution with an unqualified state machine ARN, Step Functions uses
+        /// the latest revision of the state machine for the execution.
+        /// </para>
+        ///  
+        /// <para>
+        /// To start executions of a state machine <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-version.html">version</a>,
+        /// call <code>StartExecution</code> and provide the version ARN or the ARN of an <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-alias.html">alias</a>
+        /// that points to the version.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        ///  <code>StartExecution</code> is idempotent for <code>STANDARD</code> workflows. For
+        /// a <code>STANDARD</code> workflow, if you call <code>StartExecution</code> with the
+        /// same name and input as a running execution, the call succeeds and return the same
+        /// response as the original request. If the execution is closed or if the input is different,
+        /// it returns a <code>400 ExecutionAlreadyExists</code> error. You can reuse names after
+        /// 90 days. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>StartExecution</code> isn't idempotent for <code>EXPRESS</code> workflows.
+        /// 
         /// </para>
         ///  </note>
         /// </summary>
@@ -1124,19 +2068,22 @@ namespace Amazon.StepFunctions
         /// end or be stopped before a new execution can be started.
         /// </exception>
         /// <exception cref="Amazon.StepFunctions.Model.InvalidArnException">
-        /// The provided Amazon Resource Name (ARN) is invalid.
+        /// The provided Amazon Resource Name (ARN) is not valid.
         /// </exception>
         /// <exception cref="Amazon.StepFunctions.Model.InvalidExecutionInputException">
-        /// The provided JSON input data is invalid.
+        /// The provided JSON input data is not valid.
         /// </exception>
         /// <exception cref="Amazon.StepFunctions.Model.InvalidNameException">
-        /// The provided name is invalid.
+        /// The provided name is not valid.
         /// </exception>
         /// <exception cref="Amazon.StepFunctions.Model.StateMachineDeletingException">
         /// The specified state machine is being deleted.
         /// </exception>
         /// <exception cref="Amazon.StepFunctions.Model.StateMachineDoesNotExistException">
         /// The specified state machine does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/StartExecution">REST API Reference for StartExecution Operation</seealso>
         StartExecutionResponse StartExecution(StartExecutionRequest request);
@@ -1173,19 +2120,34 @@ namespace Amazon.StepFunctions
 
 
         /// <summary>
-        /// Starts a Synchronous Express state machine execution.
+        /// Starts a Synchronous Express state machine execution. <code>StartSyncExecution</code>
+        /// is not available for <code>STANDARD</code> workflows.
+        /// 
+        ///  <note> 
+        /// <para>
+        ///  <code>StartSyncExecution</code> will return a <code>200 OK</code> response, even
+        /// if your execution fails, because the status code in the API response doesn't reflect
+        /// function errors. Error codes are reserved for errors that prevent your execution from
+        /// running, such as permissions errors, limit errors, or issues with your state machine
+        /// code and configuration. 
+        /// </para>
+        ///  </note> <note> 
+        /// <para>
+        /// This API action isn't logged in CloudTrail.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartSyncExecution service method.</param>
         /// 
         /// <returns>The response from the StartSyncExecution service method, as returned by StepFunctions.</returns>
         /// <exception cref="Amazon.StepFunctions.Model.InvalidArnException">
-        /// The provided Amazon Resource Name (ARN) is invalid.
+        /// The provided Amazon Resource Name (ARN) is not valid.
         /// </exception>
         /// <exception cref="Amazon.StepFunctions.Model.InvalidExecutionInputException">
-        /// The provided JSON input data is invalid.
+        /// The provided JSON input data is not valid.
         /// </exception>
         /// <exception cref="Amazon.StepFunctions.Model.InvalidNameException">
-        /// The provided name is invalid.
+        /// The provided name is not valid.
         /// </exception>
         /// <exception cref="Amazon.StepFunctions.Model.StateMachineDeletingException">
         /// The specified state machine is being deleted.
@@ -1245,7 +2207,10 @@ namespace Amazon.StepFunctions
         /// The specified execution does not exist.
         /// </exception>
         /// <exception cref="Amazon.StepFunctions.Model.InvalidArnException">
-        /// The provided Amazon Resource Name (ARN) is invalid.
+        /// The provided Amazon Resource Name (ARN) is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/StopExecution">REST API Reference for StopExecution Operation</seealso>
         StopExecutionResponse StopExecution(StopExecutionRequest request);
@@ -1287,8 +2252,8 @@ namespace Amazon.StepFunctions
         ///  
         /// <para>
         /// An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
-        /// Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>,
-        /// and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling
+        /// Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management
+        /// User Guide</i>, and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling
         /// Access Using IAM Tags</a>.
         /// </para>
         ///  
@@ -1301,14 +2266,14 @@ namespace Amazon.StepFunctions
         /// 
         /// <returns>The response from the TagResource service method, as returned by StepFunctions.</returns>
         /// <exception cref="Amazon.StepFunctions.Model.InvalidArnException">
-        /// The provided Amazon Resource Name (ARN) is invalid.
+        /// The provided Amazon Resource Name (ARN) is not valid.
         /// </exception>
         /// <exception cref="Amazon.StepFunctions.Model.ResourceNotFoundException">
-        /// Could not find the referenced resource. Only state machine and activity ARNs are supported.
+        /// Could not find the referenced resource.
         /// </exception>
         /// <exception cref="Amazon.StepFunctions.Model.TooManyTagsException">
         /// You've exceeded the number of tags allowed for a resource. See the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html">
-        /// Limits Topic</a> in the AWS Step Functions Developer Guide.
+        /// Limits Topic</a> in the Step Functions Developer Guide.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/TagResource">REST API Reference for TagResource Operation</seealso>
         TagResourceResponse TagResource(TagResourceRequest request);
@@ -1351,10 +2316,10 @@ namespace Amazon.StepFunctions
         /// 
         /// <returns>The response from the UntagResource service method, as returned by StepFunctions.</returns>
         /// <exception cref="Amazon.StepFunctions.Model.InvalidArnException">
-        /// The provided Amazon Resource Name (ARN) is invalid.
+        /// The provided Amazon Resource Name (ARN) is not valid.
         /// </exception>
         /// <exception cref="Amazon.StepFunctions.Model.ResourceNotFoundException">
-        /// Could not find the referenced resource. Only state machine and activity ARNs are supported.
+        /// Could not find the referenced resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/UntagResource">REST API Reference for UntagResource Operation</seealso>
         UntagResourceResponse UntagResource(UntagResourceRequest request);
@@ -1387,6 +2352,56 @@ namespace Amazon.StepFunctions
 
         #endregion
         
+        #region  UpdateMapRun
+
+
+        /// <summary>
+        /// Updates an in-progress Map Run's configuration to include changes to the settings
+        /// that control maximum concurrency and Map Run failure.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateMapRun service method.</param>
+        /// 
+        /// <returns>The response from the UpdateMapRun service method, as returned by StepFunctions.</returns>
+        /// <exception cref="Amazon.StepFunctions.Model.InvalidArnException">
+        /// The provided Amazon Resource Name (ARN) is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.ResourceNotFoundException">
+        /// Could not find the referenced resource.
+        /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/UpdateMapRun">REST API Reference for UpdateMapRun Operation</seealso>
+        UpdateMapRunResponse UpdateMapRun(UpdateMapRunRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateMapRun operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateMapRun operation on AmazonStepFunctionsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateMapRun
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/UpdateMapRun">REST API Reference for UpdateMapRun Operation</seealso>
+        IAsyncResult BeginUpdateMapRun(UpdateMapRunRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateMapRun operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateMapRun.</param>
+        /// 
+        /// <returns>Returns a  UpdateMapRunResult from StepFunctions.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/UpdateMapRun">REST API Reference for UpdateMapRun Operation</seealso>
+        UpdateMapRunResponse EndUpdateMapRun(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  UpdateStateMachine
 
 
@@ -1397,10 +2412,75 @@ namespace Amazon.StepFunctions
         /// one of <code>definition</code> or <code>roleArn</code> or you will receive a <code>MissingRequiredParameter</code>
         /// error.
         /// 
+        ///  
+        /// <para>
+        /// A qualified state machine ARN refers to a <i>Distributed Map state</i> defined within
+        /// a state machine. For example, the qualified state machine ARN <code>arn:partition:states:region:account-id:stateMachine:stateMachineName/mapStateLabel</code>
+        /// refers to a <i>Distributed Map state</i> with a label <code>mapStateLabel</code> in
+        /// the state machine named <code>stateMachineName</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// A qualified state machine ARN can either refer to a <i>Distributed Map state</i> defined
+        /// within a state machine, a version ARN, or an alias ARN.
+        /// </para>
+        ///  
+        /// <para>
+        /// The following are some examples of qualified and unqualified state machine ARNs:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The following qualified state machine ARN refers to a <i>Distributed Map state</i>
+        /// with a label <code>mapStateLabel</code> in a state machine named <code>myStateMachine</code>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>arn:partition:states:region:account-id:stateMachine:myStateMachine/mapStateLabel</code>
+        /// 
+        /// </para>
         ///  <note> 
         /// <para>
-        /// All <code>StartExecution</code> calls within a few seconds will use the updated <code>definition</code>
-        /// and <code>roleArn</code>. Executions started immediately after calling <code>UpdateStateMachine</code>
+        /// If you provide a qualified state machine ARN that refers to a <i>Distributed Map state</i>,
+        /// the request fails with <code>ValidationException</code>.
+        /// </para>
+        ///  </note> </li> <li> 
+        /// <para>
+        /// The following qualified state machine ARN refers to an alias named <code>PROD</code>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>arn:&lt;partition&gt;:states:&lt;region&gt;:&lt;account-id&gt;:stateMachine:&lt;myStateMachine:PROD&gt;</code>
+        /// 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// If you provide a qualified state machine ARN that refers to a version ARN or an alias
+        /// ARN, the request starts execution for that version or alias.
+        /// </para>
+        ///  </note> </li> <li> 
+        /// <para>
+        /// The following unqualified state machine ARN refers to a state machine named <code>myStateMachine</code>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>arn:&lt;partition&gt;:states:&lt;region&gt;:&lt;account-id&gt;:stateMachine:&lt;myStateMachine&gt;</code>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// After you update your state machine, you can set the <code>publish</code> parameter
+        /// to <code>true</code> in the same action to publish a new <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-version.html">version</a>.
+        /// This way, you can opt-in to strict versioning of your state machine.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Step Functions assigns monotonically increasing integers for state machine versions,
+        /// starting at version number 1.
+        /// </para>
+        ///  </note> <note> 
+        /// <para>
+        /// All <code>StartExecution</code> calls within a few seconds use the updated <code>definition</code>
+        /// and <code>roleArn</code>. Executions started immediately after you call <code>UpdateStateMachine</code>
         /// may use the previous state machine <code>definition</code> and <code>roleArn</code>.
         /// 
         /// </para>
@@ -1409,11 +2489,21 @@ namespace Amazon.StepFunctions
         /// <param name="request">Container for the necessary parameters to execute the UpdateStateMachine service method.</param>
         /// 
         /// <returns>The response from the UpdateStateMachine service method, as returned by StepFunctions.</returns>
+        /// <exception cref="Amazon.StepFunctions.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state. This error occurs
+        /// when there're concurrent requests for <a>DeleteStateMachineVersion</a>, <a>PublishStateMachineVersion</a>,
+        /// or <a>UpdateStateMachine</a> with the <code>publish</code> parameter set to <code>true</code>.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 409
+        /// </para>
+        /// </exception>
         /// <exception cref="Amazon.StepFunctions.Model.InvalidArnException">
-        /// The provided Amazon Resource Name (ARN) is invalid.
+        /// The provided Amazon Resource Name (ARN) is not valid.
         /// </exception>
         /// <exception cref="Amazon.StepFunctions.Model.InvalidDefinitionException">
-        /// The provided Amazon States Language definition is invalid.
+        /// The provided Amazon States Language definition is not valid.
         /// </exception>
         /// <exception cref="Amazon.StepFunctions.Model.InvalidLoggingConfigurationException">
         /// 
@@ -1426,11 +2516,22 @@ namespace Amazon.StepFunctions
         /// Request is missing a required parameter. This error occurs if both <code>definition</code>
         /// and <code>roleArn</code> are not specified.
         /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.ServiceQuotaExceededException">
+        /// The request would cause a service quota to be exceeded.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 402
+        /// </para>
+        /// </exception>
         /// <exception cref="Amazon.StepFunctions.Model.StateMachineDeletingException">
         /// The specified state machine is being deleted.
         /// </exception>
         /// <exception cref="Amazon.StepFunctions.Model.StateMachineDoesNotExistException">
         /// The specified state machine does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/UpdateStateMachine">REST API Reference for UpdateStateMachine Operation</seealso>
         UpdateStateMachineResponse UpdateStateMachine(UpdateStateMachineRequest request);
@@ -1460,6 +2561,106 @@ namespace Amazon.StepFunctions
         /// <returns>Returns a  UpdateStateMachineResult from StepFunctions.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/UpdateStateMachine">REST API Reference for UpdateStateMachine Operation</seealso>
         UpdateStateMachineResponse EndUpdateStateMachine(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateStateMachineAlias
+
+
+        /// <summary>
+        /// Updates the configuration of an existing state machine <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-alias.html">alias</a>
+        /// by modifying its <code>description</code> or <code>routingConfiguration</code>.
+        /// 
+        ///  
+        /// <para>
+        /// You must specify at least one of the <code>description</code> or <code>routingConfiguration</code>
+        /// parameters to update a state machine alias.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        ///  <code>UpdateStateMachineAlias</code> is an idempotent API. Step Functions bases the
+        /// idempotency check on the <code>stateMachineAliasArn</code>, <code>description</code>,
+        /// and <code>routingConfiguration</code> parameters. Requests with the same parameters
+        /// return an idempotent response.
+        /// </para>
+        ///  </note> <note> 
+        /// <para>
+        /// This operation is eventually consistent. All <a>StartExecution</a> requests made within
+        /// a few seconds use the latest alias configuration. Executions started immediately after
+        /// calling <code>UpdateStateMachineAlias</code> may use the previous routing configuration.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        ///  <b>Related operations:</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>CreateStateMachineAlias</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeStateMachineAlias</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>ListStateMachineAliases</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DeleteStateMachineAlias</a> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateStateMachineAlias service method.</param>
+        /// 
+        /// <returns>The response from the UpdateStateMachineAlias service method, as returned by StepFunctions.</returns>
+        /// <exception cref="Amazon.StepFunctions.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state. This error occurs
+        /// when there're concurrent requests for <a>DeleteStateMachineVersion</a>, <a>PublishStateMachineVersion</a>,
+        /// or <a>UpdateStateMachine</a> with the <code>publish</code> parameter set to <code>true</code>.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 409
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.InvalidArnException">
+        /// The provided Amazon Resource Name (ARN) is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.ResourceNotFoundException">
+        /// Could not find the referenced resource.
+        /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/UpdateStateMachineAlias">REST API Reference for UpdateStateMachineAlias Operation</seealso>
+        UpdateStateMachineAliasResponse UpdateStateMachineAlias(UpdateStateMachineAliasRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateStateMachineAlias operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateStateMachineAlias operation on AmazonStepFunctionsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateStateMachineAlias
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/UpdateStateMachineAlias">REST API Reference for UpdateStateMachineAlias Operation</seealso>
+        IAsyncResult BeginUpdateStateMachineAlias(UpdateStateMachineAliasRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateStateMachineAlias operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateStateMachineAlias.</param>
+        /// 
+        /// <returns>Returns a  UpdateStateMachineAliasResult from StepFunctions.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/UpdateStateMachineAlias">REST API Reference for UpdateStateMachineAlias Operation</seealso>
+        UpdateStateMachineAliasResponse EndUpdateStateMachineAlias(IAsyncResult asyncResult);
 
         #endregion
         

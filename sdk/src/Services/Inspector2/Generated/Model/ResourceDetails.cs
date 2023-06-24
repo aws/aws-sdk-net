@@ -35,6 +35,7 @@ namespace Amazon.Inspector2.Model
     {
         private AwsEc2InstanceDetails _awsEc2Instance;
         private AwsEcrContainerImageDetails _awsEcrContainerImage;
+        private AwsLambdaFunctionDetails _awsLambdaFunction;
 
         /// <summary>
         /// Gets and sets the property AwsEc2Instance. 
@@ -71,6 +72,24 @@ namespace Amazon.Inspector2.Model
         internal bool IsSetAwsEcrContainerImage()
         {
             return this._awsEcrContainerImage != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AwsLambdaFunction. 
+        /// <para>
+        /// A summary of the information about an AWS Lambda function affected by a finding.
+        /// </para>
+        /// </summary>
+        public AwsLambdaFunctionDetails AwsLambdaFunction
+        {
+            get { return this._awsLambdaFunction; }
+            set { this._awsLambdaFunction = value; }
+        }
+
+        // Check to see if AwsLambdaFunction property is set
+        internal bool IsSetAwsLambdaFunction()
+        {
+            return this._awsLambdaFunction != null;
         }
 
     }

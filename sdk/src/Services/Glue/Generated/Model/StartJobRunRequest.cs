@@ -36,6 +36,7 @@ namespace Amazon.Glue.Model
     {
         private int? _allocatedCapacity;
         private Dictionary<string, string> _arguments = new Dictionary<string, string>();
+        private ExecutionClass _executionClass;
         private string _jobName;
         private string _jobRunId;
         private double? _maxCapacity;
@@ -52,8 +53,8 @@ namespace Amazon.Glue.Model
         /// </para>
         ///  
         /// <para>
-        /// The number of Glue data processing units (DPUs) to allocate to this JobRun. From 2
-        /// to 100 DPUs can be allocated; the default is 10. A DPU is a relative measure of processing
+        /// The number of Glue data processing units (DPUs) to allocate to this JobRun. You can
+        /// allocate a minimum of 2 DPUs; the default is 10. A DPU is a relative measure of processing
         /// power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information,
         /// see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.
         /// </para>
@@ -74,7 +75,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Arguments. 
         /// <para>
-        /// The job arguments specifically for this run. For this job run, they replace the default
+        /// The job arguments associated with this run. For this job run, they replace the default
         /// arguments set in the job definition itself.
         /// </para>
         ///  
@@ -84,15 +85,27 @@ namespace Amazon.Glue.Model
         /// </para>
         ///  
         /// <para>
+        /// Job arguments may be logged. Do not pass plaintext secrets as arguments. Retrieve
+        /// secrets from a Glue Connection, Secrets Manager or other secret management mechanism
+        /// if you intend to keep them within the Job. 
+        /// </para>
+        ///  
+        /// <para>
         /// For information about how to specify and consume your own Job arguments, see the <a
         /// href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
         /// Glue APIs in Python</a> topic in the developer guide.
         /// </para>
         ///  
         /// <para>
-        /// For information about the key-value pairs that Glue consumes to set up your job, see
-        /// the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
+        /// For information about the arguments you can provide to this field when configuring
+        /// Spark jobs, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
         /// Parameters Used by Glue</a> topic in the developer guide.
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about the arguments you can provide to this field when configuring
+        /// Ray jobs, see <a href="https://docs.aws.amazon.com/glue/latest/dg/author-job-ray-job-parameters.html">Using
+        /// job parameters in Ray jobs</a> in the developer guide.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Arguments
@@ -105,6 +118,38 @@ namespace Amazon.Glue.Model
         internal bool IsSetArguments()
         {
             return this._arguments != null && this._arguments.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExecutionClass. 
+        /// <para>
+        /// Indicates whether the job is run with a standard or flexible execution class. The
+        /// standard execution-class is ideal for time-sensitive workloads that require fast job
+        /// startup and dedicated resources.
+        /// </para>
+        ///  
+        /// <para>
+        /// The flexible execution class is appropriate for time-insensitive jobs whose start
+        /// and completion times may vary. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Only jobs with Glue version 3.0 and above and command type <code>glueetl</code> will
+        /// be allowed to set <code>ExecutionClass</code> to <code>FLEX</code>. The flexible execution
+        /// class is available for Spark jobs.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=16)]
+        public ExecutionClass ExecutionClass
+        {
+            get { return this._executionClass; }
+            set { this._executionClass = value; }
+        }
+
+        // Check to see if ExecutionClass property is set
+        internal bool IsSetExecutionClass()
+        {
+            return this._executionClass != null;
         }
 
         /// <summary>
@@ -148,19 +193,26 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property MaxCapacity. 
         /// <para>
-        /// The number of Glue data processing units (DPUs) that can be allocated when this job
-        /// runs. A DPU is a relative measure of processing power that consists of 4 vCPUs of
-        /// compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue
-        /// pricing page</a>.
+        /// For Glue version 1.0 or earlier jobs, using the standard worker type, the number of
+        /// Glue data processing units (DPUs) that can be allocated when this job runs. A DPU
+        /// is a relative measure of processing power that consists of 4 vCPUs of compute capacity
+        /// and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">
+        /// Glue pricing page</a>.
         /// </para>
         ///  
         /// <para>
-        /// Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.
+        /// For Glue version 2.0+ jobs, you cannot specify a <code>Maximum capacity</code>. Instead,
+        /// you should specify a <code>Worker type</code> and the <code>Number of workers</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Do not set <code>MaxCapacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.
         /// </para>
         ///  
         /// <para>
         /// The value that can be allocated for <code>MaxCapacity</code> depends on whether you
-        /// are running a Python shell job, or an Apache Spark ETL job:
+        /// are running a Python shell job, an Apache Spark ETL job, or an Apache Spark streaming
+        /// ETL job:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -169,7 +221,8 @@ namespace Amazon.Glue.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl"),
+        /// When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl")
+        /// or Apache Spark streaming ETL job (<code>JobCommand.Name</code>="gluestreaming"),
         /// you can allocate from 2 to 100 DPUs. The default is 10 DPUs. This job type cannot
         /// have a fractional DPU allocation.
         /// </para>
@@ -211,11 +264,6 @@ namespace Amazon.Glue.Model
         /// The number of workers of a defined <code>workerType</code> that are allocated when
         /// a job runs.
         /// </para>
-        ///  
-        /// <para>
-        /// The maximum number of workers you can define are 299 for <code>G.1X</code>, and 149
-        /// for <code>G.2X</code>. 
-        /// </para>
         /// </summary>
         public int NumberOfWorkers
         {
@@ -254,8 +302,12 @@ namespace Amazon.Glue.Model
         /// <para>
         /// The <code>JobRun</code> timeout in minutes. This is the maximum time that a job run
         /// can consume resources before it is terminated and enters <code>TIMEOUT</code> status.
-        /// The default is 2,880 minutes (48 hours). This overrides the timeout value set in the
-        /// parent job.
+        /// This value overrides the timeout value set in the parent job.
+        /// </para>
+        ///  
+        /// <para>
+        /// Streaming jobs do not have a timeout. The default for non-streaming jobs is 2,880
+        /// minutes (48 hours).
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -275,7 +327,7 @@ namespace Amazon.Glue.Model
         /// Gets and sets the property WorkerType. 
         /// <para>
         /// The type of predefined worker that is allocated when a job runs. Accepts a value of
-        /// Standard, G.1X, or G.2X.
+        /// Standard, G.1X, G.2X, or G.025X for Spark jobs. Accepts the value Z.2X for Ray jobs.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -284,13 +336,28 @@ namespace Amazon.Glue.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory
-        /// and a 64GB disk, and 1 executor per worker.
+        /// For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of
+        /// memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker
+        /// type for memory-intensive jobs.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory
-        /// and a 128GB disk, and 1 executor per worker.
+        /// For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of
+        /// memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker
+        /// type for memory-intensive jobs.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For the <code>G.025X</code> worker type, each worker maps to 0.25 DPU (2 vCPU, 4 GB
+        /// of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker
+        /// type for low volume streaming jobs. This worker type is only available for Glue version
+        /// 3.0 streaming jobs.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For the <code>Z.2X</code> worker type, each worker maps to 2 DPU (8vCPU, 64 GB of
+        /// m emory, 128 GB disk), and provides up to 8 Ray workers (one per vCPU) based on the
+        /// autoscaler.
         /// </para>
         ///  </li> </ul>
         /// </summary>

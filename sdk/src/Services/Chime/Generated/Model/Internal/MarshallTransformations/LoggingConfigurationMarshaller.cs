@@ -34,7 +34,7 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// LoggingConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class LoggingConfigurationMarshaller : IRequestMarshaller<LoggingConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -45,6 +45,12 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(LoggingConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetEnableMediaMetricLogs())
+            {
+                context.Writer.WritePropertyName("EnableMediaMetricLogs");
+                context.Writer.Write(requestObject.EnableMediaMetricLogs);
+            }
+
             if(requestObject.IsSetEnableSIPLogs())
             {
                 context.Writer.WritePropertyName("EnableSIPLogs");
@@ -55,7 +61,7 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static LoggingConfigurationMarshaller Instance = new LoggingConfigurationMarshaller();
 
     }

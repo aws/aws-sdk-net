@@ -34,7 +34,7 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// IngestedEventsTimeWindow Marshaller
-    /// </summary>       
+    /// </summary>
     public class IngestedEventsTimeWindowMarshaller : IRequestMarshaller<IngestedEventsTimeWindow, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static IngestedEventsTimeWindowMarshaller Instance = new IngestedEventsTimeWindowMarshaller();
 
     }

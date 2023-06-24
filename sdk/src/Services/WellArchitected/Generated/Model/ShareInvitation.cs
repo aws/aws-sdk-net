@@ -35,6 +35,7 @@ namespace Amazon.WellArchitected.Model
     {
         private string _lensAlias;
         private string _lensArn;
+        private string _profileArn;
         private string _shareInvitationId;
         private ShareResourceType _shareResourceType;
         private string _workloadId;
@@ -71,6 +72,25 @@ namespace Amazon.WellArchitected.Model
         internal bool IsSetLensArn()
         {
             return this._lensArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProfileArn. 
+        /// <para>
+        /// The profile ARN.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=2084)]
+        public string ProfileArn
+        {
+            get { return this._profileArn; }
+            set { this._profileArn = value; }
+        }
+
+        // Check to see if ProfileArn property is set
+        internal bool IsSetProfileArn()
+        {
+            return this._profileArn != null;
         }
 
         /// <summary>
@@ -112,6 +132,7 @@ namespace Amazon.WellArchitected.Model
         /// <summary>
         /// Gets and sets the property WorkloadId.
         /// </summary>
+        [AWSProperty(Min=32, Max=32)]
         public string WorkloadId
         {
             get { return this._workloadId; }

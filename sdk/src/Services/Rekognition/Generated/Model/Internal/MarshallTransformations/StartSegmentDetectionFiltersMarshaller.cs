@@ -34,7 +34,7 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// StartSegmentDetectionFilters Marshaller
-    /// </summary>       
+    /// </summary>
     public class StartSegmentDetectionFiltersMarshaller : IRequestMarshaller<StartSegmentDetectionFilters, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static StartSegmentDetectionFiltersMarshaller Instance = new StartSegmentDetectionFiltersMarshaller();
 
     }

@@ -70,6 +70,12 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.ARN = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("AssociationConfig", targetDepth))
+                {
+                    var unmarshaller = AssociationConfigUnmarshaller.Instance;
+                    unmarshalledObject.AssociationConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Capacity", targetDepth))
                 {
                     var unmarshaller = LongUnmarshaller.Instance;
@@ -80,6 +86,12 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = CaptchaConfigUnmarshaller.Instance;
                     unmarshalledObject.CaptchaConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ChallengeConfig", targetDepth))
+                {
+                    var unmarshaller = ChallengeConfigUnmarshaller.Instance;
+                    unmarshalledObject.ChallengeConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("CustomResponseBodies", targetDepth))
@@ -140,6 +152,12 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new ListUnmarshaller<Rule, RuleUnmarshaller>(RuleUnmarshaller.Instance);
                     unmarshalledObject.Rules = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("TokenDomains", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.TokenDomains = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("VisibilityConfig", targetDepth))

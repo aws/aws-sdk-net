@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisFirehose.Model
 {
     /// <summary>
-    /// 
+    /// The destination description in Amazon OpenSearch Service.
     /// </summary>
     public partial class AmazonopensearchserviceDestinationDescription
     {
@@ -48,7 +48,10 @@ namespace Amazon.KinesisFirehose.Model
         private VpcConfigurationDescription _vpcConfigurationDescription;
 
         /// <summary>
-        /// Gets and sets the property BufferingHints.
+        /// Gets and sets the property BufferingHints. 
+        /// <para>
+        /// The buffering options.
+        /// </para>
         /// </summary>
         public AmazonopensearchserviceBufferingHints BufferingHints
         {
@@ -78,7 +81,12 @@ namespace Amazon.KinesisFirehose.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ClusterEndpoint.
+        /// Gets and sets the property ClusterEndpoint. 
+        /// <para>
+        /// The endpoint to use when communicating with the cluster. Kinesis Data Firehose uses
+        /// either this ClusterEndpoint or the DomainARN field to send data to Amazon OpenSearch
+        /// Service. 
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=512)]
         public string ClusterEndpoint
@@ -94,7 +102,10 @@ namespace Amazon.KinesisFirehose.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DomainARN.
+        /// Gets and sets the property DomainARN. 
+        /// <para>
+        /// The ARN of the Amazon OpenSearch Service domain.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=512)]
         public string DomainARN
@@ -110,7 +121,10 @@ namespace Amazon.KinesisFirehose.Model
         }
 
         /// <summary>
-        /// Gets and sets the property IndexName.
+        /// Gets and sets the property IndexName. 
+        /// <para>
+        /// The Amazon OpenSearch Service index name.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=80)]
         public string IndexName
@@ -126,7 +140,10 @@ namespace Amazon.KinesisFirehose.Model
         }
 
         /// <summary>
-        /// Gets and sets the property IndexRotationPeriod.
+        /// Gets and sets the property IndexRotationPeriod. 
+        /// <para>
+        /// The Amazon OpenSearch Service index rotation period
+        /// </para>
         /// </summary>
         public AmazonopensearchserviceIndexRotationPeriod IndexRotationPeriod
         {
@@ -156,7 +173,10 @@ namespace Amazon.KinesisFirehose.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RetryOptions.
+        /// Gets and sets the property RetryOptions. 
+        /// <para>
+        /// The Amazon OpenSearch Service retry options.
+        /// </para>
         /// </summary>
         public AmazonopensearchserviceRetryOptions RetryOptions
         {
@@ -171,7 +191,10 @@ namespace Amazon.KinesisFirehose.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RoleARN.
+        /// Gets and sets the property RoleARN. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the Amazon Web Services credentials. 
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=512)]
         public string RoleARN
@@ -187,7 +210,10 @@ namespace Amazon.KinesisFirehose.Model
         }
 
         /// <summary>
-        /// Gets and sets the property S3BackupMode.
+        /// Gets and sets the property S3BackupMode. 
+        /// <para>
+        /// The Amazon S3 backup mode.
+        /// </para>
         /// </summary>
         public AmazonopensearchserviceS3BackupMode S3BackupMode
         {
@@ -217,7 +243,12 @@ namespace Amazon.KinesisFirehose.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TypeName.
+        /// Gets and sets the property TypeName. 
+        /// <para>
+        /// The Amazon OpenSearch Service type name. This applies to Elasticsearch 6.x and lower
+        /// versions. For Elasticsearch 7.x and OpenSearch Service 1.x, there's no value for TypeName.
+        /// 
+        /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
         public string TypeName

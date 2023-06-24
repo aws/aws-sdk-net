@@ -18,10 +18,13 @@ namespace TestWrapper
         {
             var xunitRunner = new XUnitTestRunner(TestSuiteRunnerFileInfo, TestContainerFileInfo, null);
             xunitRunner.Categories = CategoriesArray;
+            xunitRunner.CategoriesToIgnore = CategoriesToIgnoreArray;
+            xunitRunner.FrameworkCategoryAttribute = "Category";
             xunitRunner.Configuration = Configuration == null ?
                 TestRunner.TestConfiguration.Release :
                 (TestRunner.TestConfiguration)Enum.Parse(typeof(TestRunner.TestConfiguration), Configuration.ItemSpec);
             xunitRunner.TestExecutionProfile = TestExecutionProfile.ItemSpec;
+            xunitRunner.KeepTestResults = KeepTestResultsFile;
             Runner = xunitRunner;
         }
     }

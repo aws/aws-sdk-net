@@ -58,7 +58,7 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
             string target = "AWSHawksNestServiceFacade.PutEventType";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-11-15";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-11-15";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -88,6 +88,17 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("eventIngestion");
                     context.Writer.Write(publicRequest.EventIngestion);
+                }
+
+                if(publicRequest.IsSetEventOrchestration())
+                {
+                    context.Writer.WritePropertyName("eventOrchestration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = EventOrchestrationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.EventOrchestration, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
                 if(publicRequest.IsSetEventVariables())
@@ -134,7 +145,6 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

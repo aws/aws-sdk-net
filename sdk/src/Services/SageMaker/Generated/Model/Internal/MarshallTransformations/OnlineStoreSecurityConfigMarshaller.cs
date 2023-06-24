@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// OnlineStoreSecurityConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class OnlineStoreSecurityConfigMarshaller : IRequestMarshaller<OnlineStoreSecurityConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static OnlineStoreSecurityConfigMarshaller Instance = new OnlineStoreSecurityConfigMarshaller();
 
     }

@@ -1,4 +1,5 @@
 {
-    "active": true, 
-    "synopsis": "Amazon Polly is a service that turns text into lifelike speech, making it easy to develop applications that use high-quality speech to increase engagement and accessibility."
+  "active": true,
+  "synopsis": "Amazon Polly is a service that turns text into lifelike speech, making it easy to develop applications that use high-quality speech to increase engagement and accessibility.",
+  "legacy-service-id": "Polly"
 }

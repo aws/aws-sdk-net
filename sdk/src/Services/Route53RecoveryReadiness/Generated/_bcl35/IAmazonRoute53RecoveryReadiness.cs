@@ -29,7 +29,7 @@ namespace Amazon.Route53RecoveryReadiness
     /// <summary>
     /// Interface for accessing Route53RecoveryReadiness
     ///
-    /// AWS Route53 Recovery Readiness
+    /// Recovery readiness
     /// </summary>
     public partial interface IAmazonRoute53RecoveryReadiness : IAmazonService, IDisposable
     {
@@ -48,7 +48,7 @@ namespace Amazon.Route53RecoveryReadiness
 
 
         /// <summary>
-        /// Creates a new Cell.
+        /// Creates a cell in an account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCell service method.</param>
         /// 
@@ -103,7 +103,9 @@ namespace Amazon.Route53RecoveryReadiness
 
 
         /// <summary>
-        /// Create a new cross account readiness authorization.
+        /// Creates a cross-account readiness authorization. This lets you authorize another account
+        /// to work with Route 53 Application Recovery Controller, for example, to check the readiness
+        /// status of resources in a separate account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCrossAccountAuthorization service method.</param>
         /// 
@@ -158,7 +160,10 @@ namespace Amazon.Route53RecoveryReadiness
 
 
         /// <summary>
-        /// Creates a new Readiness Check.
+        /// Creates a readiness check in an account. A readiness check monitors a resource set
+        /// in your application, such as a set of Amazon Aurora instances, that Application Recovery
+        /// Controller is auditing recovery readiness for. The audits run once every minute on
+        /// every resource that's associated with a readiness check.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateReadinessCheck service method.</param>
         /// 
@@ -213,7 +218,8 @@ namespace Amazon.Route53RecoveryReadiness
 
 
         /// <summary>
-        /// Creates a new Recovery Group.
+        /// Creates a recovery group in an account. A recovery group corresponds to an application
+        /// and includes a list of the cells that make up the application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateRecoveryGroup service method.</param>
         /// 
@@ -268,7 +274,9 @@ namespace Amazon.Route53RecoveryReadiness
 
 
         /// <summary>
-        /// Creates a new Resource Set.
+        /// Creates a resource set. A resource set is a set of resources of one type that span
+        /// multiple cells. You can associate a resource set with a readiness check to monitor
+        /// the resources for failover readiness.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateResourceSet service method.</param>
         /// 
@@ -323,7 +331,7 @@ namespace Amazon.Route53RecoveryReadiness
 
 
         /// <summary>
-        /// Deletes an existing Cell.
+        /// Delete a cell. When successful, the response code is 204, with no response body.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteCell service method.</param>
         /// 
@@ -378,7 +386,7 @@ namespace Amazon.Route53RecoveryReadiness
 
 
         /// <summary>
-        /// Delete cross account readiness authorization
+        /// Deletes cross account readiness authorization.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteCrossAccountAuthorization service method.</param>
         /// 
@@ -430,7 +438,7 @@ namespace Amazon.Route53RecoveryReadiness
 
 
         /// <summary>
-        /// Deletes an existing Readiness Check.
+        /// Deletes a readiness check.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteReadinessCheck service method.</param>
         /// 
@@ -485,7 +493,7 @@ namespace Amazon.Route53RecoveryReadiness
 
 
         /// <summary>
-        /// Deletes an existing Recovery Group.
+        /// Deletes a recovery group.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteRecoveryGroup service method.</param>
         /// 
@@ -540,7 +548,7 @@ namespace Amazon.Route53RecoveryReadiness
 
 
         /// <summary>
-        /// Deletes an existing Resource Set.
+        /// Deletes a resource set.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteResourceSet service method.</param>
         /// 
@@ -595,8 +603,8 @@ namespace Amazon.Route53RecoveryReadiness
 
 
         /// <summary>
-        /// Returns a collection of recommendations to improve resilliance and readiness check
-        /// quality for a Recovery Group.
+        /// Gets recommendations about architecture designs for improving resiliency for an application,
+        /// based on a recovery group.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetArchitectureRecommendations service method.</param>
         /// 
@@ -651,7 +659,9 @@ namespace Amazon.Route53RecoveryReadiness
 
 
         /// <summary>
-        /// Returns information about a Cell.
+        /// Gets information about a cell including cell name, cell Amazon Resource Name (ARN),
+        /// ARNs of nested cells for this cell, and a list of those cell ARNs with their associated
+        /// recovery group ARNs.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetCell service method.</param>
         /// 
@@ -706,7 +716,8 @@ namespace Amazon.Route53RecoveryReadiness
 
 
         /// <summary>
-        /// Returns information about readiness of a Cell.
+        /// Gets readiness for a cell. Aggregates the readiness of all the resources that are
+        /// associated with the cell into a single value.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetCellReadinessSummary service method.</param>
         /// 
@@ -761,7 +772,7 @@ namespace Amazon.Route53RecoveryReadiness
 
 
         /// <summary>
-        /// Returns information about a ReadinessCheck.
+        /// Gets details about a readiness check.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetReadinessCheck service method.</param>
         /// 
@@ -816,8 +827,9 @@ namespace Amazon.Route53RecoveryReadiness
 
 
         /// <summary>
-        /// Returns detailed information about the status of an individual resource within a Readiness
-        /// Check's Resource Set.
+        /// Gets individual readiness status for a readiness check. To see the overall readiness
+        /// status for a recovery group, that considers the readiness status for all the readiness
+        /// checks in the recovery group, use GetRecoveryGroupReadinessSummary.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetReadinessCheckResourceStatus service method.</param>
         /// 
@@ -872,7 +884,9 @@ namespace Amazon.Route53RecoveryReadiness
 
 
         /// <summary>
-        /// Returns information about the status of a Readiness Check.
+        /// Gets the readiness status for an individual readiness check. To see the overall readiness
+        /// status for a recovery group, that considers the readiness status for all the readiness
+        /// checks in a recovery group, use GetRecoveryGroupReadinessSummary.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetReadinessCheckStatus service method.</param>
         /// 
@@ -927,7 +941,8 @@ namespace Amazon.Route53RecoveryReadiness
 
 
         /// <summary>
-        /// Returns information about a Recovery Group.
+        /// Gets details about a recovery group, including a list of the cells that are included
+        /// in it.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetRecoveryGroup service method.</param>
         /// 
@@ -982,7 +997,9 @@ namespace Amazon.Route53RecoveryReadiness
 
 
         /// <summary>
-        /// Returns information about a Recovery Group.
+        /// Displays a summary of information about a recovery group's readiness status. Includes
+        /// the readiness checks for resources in the recovery group and the readiness status
+        /// of each one.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetRecoveryGroupReadinessSummary service method.</param>
         /// 
@@ -1037,7 +1054,8 @@ namespace Amazon.Route53RecoveryReadiness
 
 
         /// <summary>
-        /// Returns information about a Resource Set.
+        /// Displays the details about a resource set, including a list of the resources in the
+        /// set.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetResourceSet service method.</param>
         /// 
@@ -1092,7 +1110,7 @@ namespace Amazon.Route53RecoveryReadiness
 
 
         /// <summary>
-        /// Returns a collection of Cells.
+        /// Lists the cells for an account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListCells service method.</param>
         /// 
@@ -1144,7 +1162,7 @@ namespace Amazon.Route53RecoveryReadiness
 
 
         /// <summary>
-        /// Returns a collection of cross account readiness authorizations.
+        /// Lists the cross-account readiness authorizations that are in place for an account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListCrossAccountAuthorizations service method.</param>
         /// 
@@ -1196,7 +1214,7 @@ namespace Amazon.Route53RecoveryReadiness
 
 
         /// <summary>
-        /// Returns a collection of Readiness Checks.
+        /// Lists the readiness checks for an account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListReadinessChecks service method.</param>
         /// 
@@ -1248,7 +1266,7 @@ namespace Amazon.Route53RecoveryReadiness
 
 
         /// <summary>
-        /// Returns a collection of Recovery Groups.
+        /// Lists the recovery groups in an account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListRecoveryGroups service method.</param>
         /// 
@@ -1300,7 +1318,7 @@ namespace Amazon.Route53RecoveryReadiness
 
 
         /// <summary>
-        /// Returns a collection of Resource Sets.
+        /// Lists the resource sets in an account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListResourceSets service method.</param>
         /// 
@@ -1352,7 +1370,7 @@ namespace Amazon.Route53RecoveryReadiness
 
 
         /// <summary>
-        /// Returns a collection of rules that are applied as part of Readiness Checks.
+        /// Lists all readiness rules, or lists the readiness rules for a specific resource type.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListRules service method.</param>
         /// 
@@ -1404,7 +1422,7 @@ namespace Amazon.Route53RecoveryReadiness
 
 
         /// <summary>
-        /// Returns a list of the tags assigned to the specified resource.
+        /// Lists the tags for a resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResources service method.</param>
         /// 
@@ -1453,7 +1471,7 @@ namespace Amazon.Route53RecoveryReadiness
 
 
         /// <summary>
-        /// Adds tags to the specified resource. You can specify one or more tags to add.
+        /// Adds a tag to a resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// 
@@ -1502,7 +1520,7 @@ namespace Amazon.Route53RecoveryReadiness
 
 
         /// <summary>
-        /// Removes tags from the specified resource. You can specify one or more tags to remove.
+        /// Removes a tag from a resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// 
@@ -1551,7 +1569,7 @@ namespace Amazon.Route53RecoveryReadiness
 
 
         /// <summary>
-        /// Updates an existing Cell.
+        /// Updates a cell to replace the list of nested cells with a new list of nested cells.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateCell service method.</param>
         /// 
@@ -1606,7 +1624,7 @@ namespace Amazon.Route53RecoveryReadiness
 
 
         /// <summary>
-        /// Updates an exisiting Readiness Check.
+        /// Updates a readiness check.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateReadinessCheck service method.</param>
         /// 
@@ -1661,7 +1679,7 @@ namespace Amazon.Route53RecoveryReadiness
 
 
         /// <summary>
-        /// Updates an existing Recovery Group.
+        /// Updates a recovery group.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateRecoveryGroup service method.</param>
         /// 
@@ -1716,7 +1734,7 @@ namespace Amazon.Route53RecoveryReadiness
 
 
         /// <summary>
-        /// Updates an existing Resource Set.
+        /// Updates a resource set.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateResourceSet service method.</param>
         /// 

@@ -18,6 +18,7 @@ using System.Xml.Serialization;
 using System.Text;
 
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.S3.Util;
 
 namespace Amazon.S3.Model
@@ -53,6 +54,10 @@ namespace Amazon.S3.Model
         private S3StorageClass storageClass;
         private RequestCharged requestCharged;
         private bool? bucketKeyEnabled;
+        private string _checksumCRC32;
+        private string _checksumCRC32C;
+        private string _checksumSHA1;
+        private string _checksumSHA256;
 
         /// <summary>
         /// Flag which returns true if the Expires property has been unmarshalled
@@ -286,10 +291,8 @@ namespace Amazon.S3.Model
         /// <summary>
         /// The Server-side encryption algorithm used when storing this object in S3.
         /// <para>
-        /// If the object is stored using server-side encryption either with an Amazon Web Services
-        /// KMS key or an Amazon S3-managed encryption key, the response
-        /// includes this header with the value of the server-side encryption algorithm used when
-        /// storing this object in Amazon S3 (for example, AES256, aws:kms).
+        /// The server-side encryption algorithm used when storing this object in Amazon S3 (for
+        /// example, AES256, <code>aws:kms</code>).
         /// </para>
         /// </summary>
         public ServerSideEncryptionMethod ServerSideEncryptionMethod
@@ -337,9 +340,11 @@ namespace Amazon.S3.Model
         /// The id of the AWS Key Management Service key that Amazon S3 uses to encrypt and decrypt the object.
         /// <para>
         /// If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon
-        /// Web Services KMS) symmetric customer managed key that was used for the object.
+        /// Web Services KMS) symmetric encryption customer managed key that was used for the
+        /// object.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string ServerSideEncryptionKeyManagementServiceKeyId
         {
             get { return this.serverSideEncryptionKeyManagementServiceKeyId; }
@@ -362,7 +367,7 @@ namespace Amazon.S3.Model
         /// where Amazon S3 stores object replicas. When you request an object (<code>GetObject</code>) or
         /// object metadata (<code>HeadObject</code>) from these buckets, Amazon S3 will 
         /// return the <code>x-amz-replication-status</code> header in the response as follows:</p> 
-        /// <ul> <li> <p>If requesting an object from the source bucket — Amazon S3 will return the 
+        /// <ul> <li> <p>If requesting an object from the source bucket, Amazon S3 will return the 
         /// <code>x-amz-replication-status</code> header if the object in your request is eligible for 
         /// replication.</p> <p> For example, suppose that in your replication configuration, you specify 
         /// object prefix <code>TaxDocs</code> requesting Amazon S3 to replicate objects with key 
@@ -370,7 +375,7 @@ namespace Amazon.S3.Model
         /// <code>TaxDocs/document1.pdf</code>, are eligible for replication. For any object request with 
         /// this key name prefix, Amazon S3 will return the <code>x-amz-replication-status</code> header 
         /// with value PENDING, COMPLETED or FAILED indicating object replication status.</p> </li> <li> <p>If 
-        /// requesting an object from a destination bucket — Amazon S3 will return the 
+        /// requesting an object from a destination bucket, Amazon S3 will return the 
         /// <code>x-amz-replication-status</code> header with value REPLICA if the object in your 
         /// request is a replica that Amazon S3 created.</p> </li> <li> <p>When replicating objects 
         /// to multiple destination buckets the <code>x-amz-replication-status</code> header acts differently. 
@@ -524,6 +529,78 @@ namespace Amazon.S3.Model
         {
             return bucketKeyEnabled.HasValue;
         }
+
+        /// <summary>
+        /// Gets and sets the property ChecksumCRC32. 
+        /// <para>
+        /// The base64-encoded, 32-bit CRC32 checksum of the object.
+        /// </para>
+        /// </summary>
+        public string ChecksumCRC32
+        {
+            get { return this._checksumCRC32; }
+            set { this._checksumCRC32 = value; }
+        }
+
+        // Check to see if ChecksumCRC32 property is set
+        internal bool IsSetChecksumCRC32()
+        {
+            return this._checksumCRC32 != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ChecksumCRC32C. 
+        /// <para>
+        /// The base64-encoded, 32-bit CRC32C checksum of the object.
+        /// </para>
+        /// </summary>
+        public string ChecksumCRC32C
+        {
+            get { return this._checksumCRC32C; }
+            set { this._checksumCRC32C = value; }
+        }
+
+        // Check to see if ChecksumCRC32C property is set
+        internal bool IsSetChecksumCRC32C()
+        {
+            return this._checksumCRC32C != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ChecksumSHA1. 
+        /// <para>
+        /// The base64-encoded, 160-bit SHA-1 digest of the object.
+        /// </para>
+        /// </summary>
+        public string ChecksumSHA1
+        {
+            get { return this._checksumSHA1; }
+            set { this._checksumSHA1 = value; }
+        }
+
+        // Check to see if ChecksumSHA1 property is set
+        internal bool IsSetChecksumSHA1()
+        {
+            return this._checksumSHA1 != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ChecksumSHA256. 
+        /// <para>
+        /// The base64-encoded, 256-bit SHA-256 digest of the object.
+        /// </para>
+        /// </summary>
+        public string ChecksumSHA256
+        {
+            get { return this._checksumSHA256; }
+            set { this._checksumSHA256 = value; }
+        }
+
+        // Check to see if ChecksumSHA256 property is set
+        internal bool IsSetChecksumSHA256()
+        {
+            return this._checksumSHA256 != null;
+        }
     }
 }
-    
+

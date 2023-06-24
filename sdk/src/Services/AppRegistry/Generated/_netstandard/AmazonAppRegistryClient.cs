@@ -236,6 +236,15 @@ namespace Amazon.AppRegistry
         } 
 
         /// <summary>
+        /// Customizes the runtime pipeline.
+        /// </summary>
+        /// <param name="pipeline">Runtime pipeline for the current client.</param>
+        protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
+        {
+            pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonAppRegistryEndpointResolver());
+        }
+        /// <summary>
         /// Capture metadata for the service.
         /// </summary>
         protected override IServiceMetadata ServiceMetadata
@@ -285,6 +294,10 @@ namespace Amazon.AppRegistry
         /// </param>
         /// 
         /// <returns>The response from the AssociateAttributeGroup service method, as returned by AppRegistry.</returns>
+        /// <exception cref="Amazon.AppRegistry.Model.ConflictException">
+        /// There was a conflict when processing the request (for example, a resource with the
+        /// given name already exists within the account).
+        /// </exception>
         /// <exception cref="Amazon.AppRegistry.Model.InternalServerException">
         /// The service is experiencing internal problems.
         /// </exception>
@@ -323,8 +336,8 @@ namespace Amazon.AppRegistry
 
 
         /// <summary>
-        /// Associates a resource with an application. Both the resource and the application can
-        /// be specified either by ID or name.
+        /// Associates a resource with an application. The resource can be specified by its ARN
+        /// or name. The application can be specified by ARN, ID, or name.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateResource service method.</param>
         /// <param name="cancellationToken">
@@ -344,6 +357,12 @@ namespace Amazon.AppRegistry
         /// </exception>
         /// <exception cref="Amazon.AppRegistry.Model.ServiceQuotaExceededException">
         /// The maximum number of resources per account has been reached.
+        /// </exception>
+        /// <exception cref="Amazon.AppRegistry.Model.ThrottlingException">
+        /// The maximum number of API requests has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.AppRegistry.Model.ValidationException">
+        /// The request has invalid or missing parameters.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/AssociateResource">REST API Reference for AssociateResource Operation</seealso>
         public virtual Task<AssociateResourceResponse> AssociateResourceAsync(AssociateResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -389,6 +408,12 @@ namespace Amazon.AppRegistry
         /// </exception>
         /// <exception cref="Amazon.AppRegistry.Model.ServiceQuotaExceededException">
         /// The maximum number of resources per account has been reached.
+        /// </exception>
+        /// <exception cref="Amazon.AppRegistry.Model.ThrottlingException">
+        /// The maximum number of API requests has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.AppRegistry.Model.ValidationException">
+        /// The request has invalid or missing parameters.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/CreateApplication">REST API Reference for CreateApplication Operation</seealso>
         public virtual Task<CreateApplicationResponse> CreateApplicationAsync(CreateApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -466,9 +491,9 @@ namespace Amazon.AppRegistry
 
 
         /// <summary>
-        /// Deletes an application that is specified either by its application ID or name. All
-        /// associated attribute groups and resources must be disassociated from it before deleting
-        /// an application.
+        /// Deletes an application that is specified either by its application ID, name, or ARN.
+        /// All associated attribute groups and resources must be disassociated from it before
+        /// deleting an application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteApplication service method.</param>
         /// <param name="cancellationToken">
@@ -511,7 +536,7 @@ namespace Amazon.AppRegistry
 
 
         /// <summary>
-        /// Deletes an attribute group, specified either by its attribute group ID or name.
+        /// Deletes an attribute group, specified either by its attribute group ID, name, or ARN.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAttributeGroup service method.</param>
         /// <param name="cancellationToken">
@@ -614,6 +639,12 @@ namespace Amazon.AppRegistry
         /// <exception cref="Amazon.AppRegistry.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
         /// </exception>
+        /// <exception cref="Amazon.AppRegistry.Model.ThrottlingException">
+        /// The maximum number of API requests has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.AppRegistry.Model.ValidationException">
+        /// The request has invalid or missing parameters.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/DisassociateResource">REST API Reference for DisassociateResource Operation</seealso>
         public virtual Task<DisassociateResourceResponse> DisassociateResourceAsync(DisassociateResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -641,9 +672,9 @@ namespace Amazon.AppRegistry
 
         /// <summary>
         /// Retrieves metadata information about one of your applications. The application can
-        /// be specified either by its unique ID or by its name (which is unique within one account
-        /// in one region at a given point in time). Specify by ID in automated workflows if you
-        /// want to make sure that the exact same application is returned or a <code>ResourceNotFoundException</code>
+        /// be specified by its ARN, ID, or name (which is unique within one account in one region
+        /// at a given point in time). Specify by ARN or ID in automated workflows if you want
+        /// to make sure that the exact same application is returned or a <code>ResourceNotFoundException</code>
         /// is thrown, avoiding the ABA addressing problem.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetApplication service method.</param>
@@ -652,6 +683,10 @@ namespace Amazon.AppRegistry
         /// </param>
         /// 
         /// <returns>The response from the GetApplication service method, as returned by AppRegistry.</returns>
+        /// <exception cref="Amazon.AppRegistry.Model.ConflictException">
+        /// There was a conflict when processing the request (for example, a resource with the
+        /// given name already exists within the account).
+        /// </exception>
         /// <exception cref="Amazon.AppRegistry.Model.InternalServerException">
         /// The service is experiencing internal problems.
         /// </exception>
@@ -730,8 +765,8 @@ namespace Amazon.AppRegistry
 
 
         /// <summary>
-        /// Retrieves an attribute group, either by its name or its ID. The attribute group can
-        /// be specified either by its unique ID or by its name.
+        /// Retrieves an attribute group by its ARN, ID, or name. The attribute group can be
+        /// specified by its ARN, ID, or name.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAttributeGroup service method.</param>
         /// <param name="cancellationToken">
@@ -739,6 +774,10 @@ namespace Amazon.AppRegistry
         /// </param>
         /// 
         /// <returns>The response from the GetAttributeGroup service method, as returned by AppRegistry.</returns>
+        /// <exception cref="Amazon.AppRegistry.Model.ConflictException">
+        /// There was a conflict when processing the request (for example, a resource with the
+        /// given name already exists within the account).
+        /// </exception>
         /// <exception cref="Amazon.AppRegistry.Model.InternalServerException">
         /// The service is experiencing internal problems.
         /// </exception>
@@ -756,6 +795,43 @@ namespace Amazon.AppRegistry
             options.ResponseUnmarshaller = GetAttributeGroupResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetAttributeGroupResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetConfiguration
+
+        internal virtual GetConfigurationResponse GetConfiguration(GetConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<GetConfigurationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves a <code>TagKey</code> configuration from an account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetConfiguration service method, as returned by AppRegistry.</returns>
+        /// <exception cref="Amazon.AppRegistry.Model.InternalServerException">
+        /// The service is experiencing internal problems.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/GetConfiguration">REST API Reference for GetConfiguration Operation</seealso>
+        public virtual Task<GetConfigurationResponse> GetConfigurationAsync(GetConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetConfigurationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -858,7 +934,16 @@ namespace Amazon.AppRegistry
 
 
         /// <summary>
-        /// Lists all resources that are associated with specified application. Results are paginated.
+        /// Lists all of the resources that are associated with the specified application. Results
+        /// are paginated. 
+        /// 
+        ///  <note> 
+        /// <para>
+        ///  If you share an application, and a consumer account associates a tag query to the
+        /// application, all of the users who can access the application can also view the tag
+        /// values in all accounts that are associated with it using this API. 
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAssociatedResources service method.</param>
         /// <param name="cancellationToken">
@@ -927,6 +1012,50 @@ namespace Amazon.AppRegistry
 
         #endregion
         
+        #region  ListAttributeGroupsForApplication
+
+        internal virtual ListAttributeGroupsForApplicationResponse ListAttributeGroupsForApplication(ListAttributeGroupsForApplicationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAttributeGroupsForApplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAttributeGroupsForApplicationResponseUnmarshaller.Instance;
+
+            return Invoke<ListAttributeGroupsForApplicationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists the details of all attribute groups associated with a specific application.
+        /// The results display in pages.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAttributeGroupsForApplication service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAttributeGroupsForApplication service method, as returned by AppRegistry.</returns>
+        /// <exception cref="Amazon.AppRegistry.Model.InternalServerException">
+        /// The service is experiencing internal problems.
+        /// </exception>
+        /// <exception cref="Amazon.AppRegistry.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.AppRegistry.Model.ValidationException">
+        /// The request has invalid or missing parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/ListAttributeGroupsForApplication">REST API Reference for ListAttributeGroupsForApplication Operation</seealso>
+        public virtual Task<ListAttributeGroupsForApplicationResponse> ListAttributeGroupsForApplicationAsync(ListAttributeGroupsForApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAttributeGroupsForApplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAttributeGroupsForApplicationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListAttributeGroupsForApplicationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListTagsForResource
 
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
@@ -970,6 +1099,50 @@ namespace Amazon.AppRegistry
 
         #endregion
         
+        #region  PutConfiguration
+
+        internal virtual PutConfigurationResponse PutConfiguration(PutConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<PutConfigurationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Associates a <code>TagKey</code> configuration to an account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutConfiguration service method, as returned by AppRegistry.</returns>
+        /// <exception cref="Amazon.AppRegistry.Model.ConflictException">
+        /// There was a conflict when processing the request (for example, a resource with the
+        /// given name already exists within the account).
+        /// </exception>
+        /// <exception cref="Amazon.AppRegistry.Model.InternalServerException">
+        /// The service is experiencing internal problems.
+        /// </exception>
+        /// <exception cref="Amazon.AppRegistry.Model.ValidationException">
+        /// The request has invalid or missing parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/PutConfiguration">REST API Reference for PutConfiguration Operation</seealso>
+        public virtual Task<PutConfigurationResponse> PutConfigurationAsync(PutConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  SyncResource
 
         internal virtual SyncResourceResponse SyncResource(SyncResourceRequest request)
@@ -1008,6 +1181,12 @@ namespace Amazon.AppRegistry
         /// </exception>
         /// <exception cref="Amazon.AppRegistry.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.AppRegistry.Model.ThrottlingException">
+        /// The maximum number of API requests has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.AppRegistry.Model.ValidationException">
+        /// The request has invalid or missing parameters.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/SyncResource">REST API Reference for SyncResource Operation</seealso>
         public virtual Task<SyncResourceResponse> SyncResourceAsync(SyncResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1153,6 +1332,12 @@ namespace Amazon.AppRegistry
         /// </exception>
         /// <exception cref="Amazon.AppRegistry.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.AppRegistry.Model.ThrottlingException">
+        /// The maximum number of API requests has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.AppRegistry.Model.ValidationException">
+        /// The request has invalid or missing parameters.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/UpdateApplication">REST API Reference for UpdateApplication Operation</seealso>
         public virtual Task<UpdateApplicationResponse> UpdateApplicationAsync(UpdateApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))

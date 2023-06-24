@@ -81,6 +81,7 @@ namespace Amazon.CloudFront.Model
         private CustomOriginConfig _customOriginConfig;
         private string _domainName;
         private string _id;
+        private string _originAccessControlId;
         private string _originPath;
         private OriginShield _originShield;
         private S3OriginConfig _s3OriginConfig;
@@ -89,12 +90,12 @@ namespace Amazon.CloudFront.Model
         /// Gets and sets the property ConnectionAttempts. 
         /// <para>
         /// The number of times that CloudFront attempts to connect to the origin. The minimum
-        /// number is 1, the maximum is 3, and the default (if you don’t specify otherwise) is
+        /// number is 1, the maximum is 3, and the default (if you don't specify otherwise) is
         /// 3.
         /// </para>
         ///  
         /// <para>
-        /// For a custom origin (including an Amazon S3 bucket that’s configured with static website
+        /// For a custom origin (including an Amazon S3 bucket that's configured with static website
         /// hosting), this value also specifies the number of times that CloudFront attempts to
         /// get a response from the origin, in the case of an <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginResponseTimeout">Origin
         /// Response Timeout</a>.
@@ -122,7 +123,7 @@ namespace Amazon.CloudFront.Model
         /// <para>
         /// The number of seconds that CloudFront waits when trying to establish a connection
         /// to the origin. The minimum timeout is 1 second, the maximum is 10 seconds, and the
-        /// default (if you don’t specify otherwise) is 10 seconds.
+        /// default (if you don't specify otherwise) is 10 seconds.
         /// </para>
         ///  
         /// <para>
@@ -233,6 +234,29 @@ namespace Amazon.CloudFront.Model
         internal bool IsSetId()
         {
             return this._id != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OriginAccessControlId. 
+        /// <para>
+        /// The unique identifier of an origin access control for this origin.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html">Restricting
+        /// access to an Amazon S3 origin</a> in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        public string OriginAccessControlId
+        {
+            get { return this._originAccessControlId; }
+            set { this._originAccessControlId = value; }
+        }
+
+        // Check to see if OriginAccessControlId property is set
+        internal bool IsSetOriginAccessControlId()
+        {
+            return this._originAccessControlId != null;
         }
 
         /// <summary>

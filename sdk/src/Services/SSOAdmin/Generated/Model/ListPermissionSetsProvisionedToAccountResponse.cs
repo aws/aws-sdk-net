@@ -59,7 +59,7 @@ namespace Amazon.SSOAdmin.Model
         /// <summary>
         /// Gets and sets the property PermissionSets. 
         /// <para>
-        /// Defines the level of access that an Amazon Web Services account has.
+        /// Defines the level of access that an AWS account has.
         /// </para>
         /// </summary>
         public List<string> PermissionSets

@@ -122,6 +122,12 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                         unmarshalledObject.EvaluationPeriods = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("EvaluationState", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.EvaluationState = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("ExtendedStatistic", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -177,6 +183,12 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.StateReasonData = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("StateTransitionedTimestamp", targetDepth))
+                    {
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        unmarshalledObject.StateTransitionedTimestamp = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("StateUpdatedTimestamp", targetDepth))

@@ -34,7 +34,7 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// IncidentTemplate Marshaller
-    /// </summary>       
+    /// </summary>
     public class IncidentTemplateMarshaller : IRequestMarshaller<IncidentTemplate, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,6 +55,20 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("impact");
                 context.Writer.Write(requestObject.Impact);
+            }
+
+            if(requestObject.IsSetIncidentTags())
+            {
+                context.Writer.WritePropertyName("incidentTags");
+                context.Writer.WriteObjectStart();
+                foreach (var requestObjectIncidentTagsKvp in requestObject.IncidentTags)
+                {
+                    context.Writer.WritePropertyName(requestObjectIncidentTagsKvp.Key);
+                    var requestObjectIncidentTagsValue = requestObjectIncidentTagsKvp.Value;
+
+                        context.Writer.Write(requestObjectIncidentTagsValue);
+                }
+                context.Writer.WriteObjectEnd();
             }
 
             if(requestObject.IsSetNotificationTargets())
@@ -89,7 +103,7 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static IncidentTemplateMarshaller Instance = new IncidentTemplateMarshaller();
 
     }

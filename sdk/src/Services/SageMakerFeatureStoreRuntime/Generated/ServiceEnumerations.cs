@@ -23,4 +23,104 @@ using Amazon.Runtime;
 
 namespace Amazon.SageMakerFeatureStoreRuntime
 {
+
+    /// <summary>
+    /// Constants used for properties of type DeletionMode.
+    /// </summary>
+    public class DeletionMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant HardDelete for DeletionMode
+        /// </summary>
+        public static readonly DeletionMode HardDelete = new DeletionMode("HardDelete");
+        /// <summary>
+        /// Constant SoftDelete for DeletionMode
+        /// </summary>
+        public static readonly DeletionMode SoftDelete = new DeletionMode("SoftDelete");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DeletionMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DeletionMode FindValue(string value)
+        {
+            return FindValue<DeletionMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DeletionMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TargetStore.
+    /// </summary>
+    public class TargetStore : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant OfflineStore for TargetStore
+        /// </summary>
+        public static readonly TargetStore OfflineStore = new TargetStore("OfflineStore");
+        /// <summary>
+        /// Constant OnlineStore for TargetStore
+        /// </summary>
+        public static readonly TargetStore OnlineStore = new TargetStore("OnlineStore");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TargetStore(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TargetStore FindValue(string value)
+        {
+            return FindValue<TargetStore>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TargetStore(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
 }

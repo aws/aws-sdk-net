@@ -300,6 +300,14 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
+        /// Paginator for GetResourcePolicies operation
+        ///</summary>
+        public IGetResourcePoliciesPaginator GetResourcePolicies(GetResourcePoliciesRequest request) 
+        {
+            return new GetResourcePoliciesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListAssociations operation
         ///</summary>
         public IListAssociationsPaginator ListAssociations(ListAssociationsRequest request) 

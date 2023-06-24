@@ -34,7 +34,7 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// QueryFilter Marshaller
-    /// </summary>       
+    /// </summary>
     public class QueryFilterMarshaller : IRequestMarshaller<QueryFilter, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static QueryFilterMarshaller Instance = new QueryFilterMarshaller();
 
     }

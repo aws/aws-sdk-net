@@ -70,6 +70,18 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
                     unmarshalledObject.ExecutionArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("itemCount", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.ItemCount = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("mapRunArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.MapRunArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -82,10 +94,22 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
                     unmarshalledObject.StartDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("stateMachineAliasArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.StateMachineAliasArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("stateMachineArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.StateMachineArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("stateMachineVersionArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.StateMachineVersionArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("status", targetDepth))

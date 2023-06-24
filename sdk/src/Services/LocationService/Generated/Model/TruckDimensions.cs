@@ -49,7 +49,12 @@ namespace Amazon.LocationService.Model
         /// <para>
         /// For example, <code>4.5</code>.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <note> 
+        /// <para>
+        ///  For routes calculated with a HERE resource, this value must be between 0 and 50 meters.
+        /// 
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=0)]
         public double Height
@@ -73,7 +78,12 @@ namespace Amazon.LocationService.Model
         /// <para>
         /// For example, <code>15.5</code>.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <note> 
+        /// <para>
+        ///  For routes calculated with a HERE resource, this value must be between 0 and 300
+        /// meters. 
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=0)]
         public double Length
@@ -119,7 +129,12 @@ namespace Amazon.LocationService.Model
         /// <para>
         /// For example, <code>4.5</code>.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <note> 
+        /// <para>
+        ///  For routes calculated with a HERE resource, this value must be between 0 and 50 meters.
+        /// 
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=0)]
         public double Width

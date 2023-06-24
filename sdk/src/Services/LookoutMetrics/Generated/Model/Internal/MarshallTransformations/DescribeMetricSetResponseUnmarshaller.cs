@@ -63,6 +63,12 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
                     response.CreationTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DimensionFilterList", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<MetricSetDimensionFilter, MetricSetDimensionFilterUnmarshaller>(MetricSetDimensionFilterUnmarshaller.Instance);
+                    response.DimensionFilterList = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DimensionList", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);

@@ -37,7 +37,9 @@ namespace Amazon.MediaConvert.Model
         private AlphaBehavior _alphaBehavior;
         private ColorSpace _colorSpace;
         private ColorSpaceUsage _colorSpaceUsage;
+        private EmbeddedTimecodeOverride _embeddedTimecodeOverride;
         private Hdr10Metadata _hdr10Metadata;
+        private PadVideo _padVideo;
         private int? _pid;
         private int? _programNumber;
         private InputRotate _rotate;
@@ -65,14 +67,18 @@ namespace Amazon.MediaConvert.Model
 
         /// <summary>
         /// Gets and sets the property ColorSpace. If your input video has accurate color space
-        /// metadata, or if you don't know about color space, leave this set to the default value
-        /// Follow (FOLLOW). The service will automatically detect your input color space. If
-        /// your input video has metadata indicating the wrong color space, specify the accurate
-        /// color space here. If your input video is HDR 10 and the SMPTE ST 2086 Mastering Display
-        /// Color Volume static metadata isn't present in your video stream, or if that metadata
-        /// is present but not accurate, choose Force HDR 10 (FORCE_HDR10) here and specify correct
-        /// values in the input HDR 10 metadata (Hdr10Metadata) settings. For more information
-        /// about MediaConvert HDR jobs, see https://docs.aws.amazon.com/console/mediaconvert/hdr.
+        /// metadata, or if you don't know about color space: Keep the default value, Follow.
+        /// MediaConvert will automatically detect your input color space. If your input video
+        /// has metadata indicating the wrong color space, or has missing metadata: Specify the
+        /// accurate color space here. If your input video is HDR 10 and the SMPTE ST 2086 Mastering
+        /// Display Color Volume static metadata isn't present in your video stream, or if that
+        /// metadata is present but not accurate: Choose Force HDR 10. Specify correct values
+        /// in the input HDR 10 metadata settings. For more information about HDR jobs, see https://docs.aws.amazon.com/console/mediaconvert/hdr.
+        /// When you specify an input color space, MediaConvert uses the following color space
+        /// metadata, which includes color primaries, transfer characteristics, and matrix coefficients:
+        /// * HDR 10: BT.2020, PQ, BT.2020 non-constant * HLG 2020: BT.2020, HLG, BT.2020 non-constant
+        /// * P3DCI (Theater): DCIP3, SMPTE 428M, BT.709 * P3D65 (SDR): Display P3, sRGB, BT.709
+        /// * P3D65 (HDR): Display P3, PQ, BT.709
         /// </summary>
         public ColorSpace ColorSpace
         {
@@ -109,6 +115,26 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EmbeddedTimecodeOverride. Set Embedded timecode override
+        /// (embeddedTimecodeOverride) to Use MDPM (USE_MDPM) when your AVCHD input contains timecode
+        /// tag data in the Modified Digital Video Pack Metadata (MDPM). When you do, we recommend
+        /// you also set Timecode source (inputTimecodeSource) to Embedded (EMBEDDED). Leave Embedded
+        /// timecode override blank, or set to None (NONE), when your input does not contain MDPM
+        /// timecode.
+        /// </summary>
+        public EmbeddedTimecodeOverride EmbeddedTimecodeOverride
+        {
+            get { return this._embeddedTimecodeOverride; }
+            set { this._embeddedTimecodeOverride = value; }
+        }
+
+        // Check to see if EmbeddedTimecodeOverride property is set
+        internal bool IsSetEmbeddedTimecodeOverride()
+        {
+            return this._embeddedTimecodeOverride != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Hdr10Metadata. Use these settings to provide HDR 10 metadata
         /// that is missing or inaccurate in your input video. Appropriate values vary depending
         /// on the input video and must be provided by a color grader. The color grader generates
@@ -130,6 +156,27 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetHdr10Metadata()
         {
             return this._hdr10Metadata != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PadVideo. Use this setting if your input has video and
+        /// audio durations that don't align, and your output or player has strict alignment requirements.
+        /// Examples: Input audio track has a delayed start. Input video track ends before audio
+        /// ends. When you set Pad video (padVideo) to Black (BLACK), MediaConvert generates black
+        /// video frames so that output video and audio durations match. Black video frames are
+        /// added at the beginning or end, depending on your input. To keep the default behavior
+        /// and not generate black video, set Pad video to Disabled (DISABLED) or leave blank.
+        /// </summary>
+        public PadVideo PadVideo
+        {
+            get { return this._padVideo; }
+            set { this._padVideo = value; }
+        }
+
+        // Check to see if PadVideo property is set
+        internal bool IsSetPadVideo()
+        {
+            return this._padVideo != null;
         }
 
         /// <summary>

@@ -34,7 +34,7 @@ namespace Amazon.WAFRegional.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SqlInjectionMatchSetUpdate Marshaller
-    /// </summary>       
+    /// </summary>
     public class SqlInjectionMatchSetUpdateMarshaller : IRequestMarshaller<SqlInjectionMatchSetUpdate, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.WAFRegional.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SqlInjectionMatchSetUpdateMarshaller Instance = new SqlInjectionMatchSetUpdateMarshaller();
 
     }

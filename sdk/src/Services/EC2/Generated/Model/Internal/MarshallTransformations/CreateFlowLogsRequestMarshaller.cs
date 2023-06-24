@@ -62,6 +62,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ClientToken", StringUtils.FromString(publicRequest.ClientToken));
                 }
+                if(publicRequest.IsSetDeliverCrossAccountRole())
+                {
+                    request.Parameters.Add("DeliverCrossAccountRole", StringUtils.FromString(publicRequest.DeliverCrossAccountRole));
+                }
                 if(publicRequest.IsSetDeliverLogsPermissionArn())
                 {
                     request.Parameters.Add("DeliverLogsPermissionArn", StringUtils.FromString(publicRequest.DeliverLogsPermissionArn));

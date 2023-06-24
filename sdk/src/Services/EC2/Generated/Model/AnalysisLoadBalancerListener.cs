@@ -42,7 +42,7 @@ namespace Amazon.EC2.Model
         /// [Classic Load Balancers] The back-end port for the listener.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=65535)]
+        [AWSProperty(Min=0, Max=65535)]
         public int InstancePort
         {
             get { return this._instancePort.GetValueOrDefault(); }
@@ -61,7 +61,7 @@ namespace Amazon.EC2.Model
         /// The port on which the load balancer is listening.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=65535)]
+        [AWSProperty(Min=0, Max=65535)]
         public int LoadBalancerPort
         {
             get { return this._loadBalancerPort.GetValueOrDefault(); }

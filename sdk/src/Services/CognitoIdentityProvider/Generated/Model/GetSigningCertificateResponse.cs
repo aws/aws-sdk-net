@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// Response from Cognito for a signing certificate request.
+    /// Response from Amazon Cognito for a signing certificate request.
     /// </summary>
     public partial class GetSigningCertificateResponse : AmazonWebServiceResponse
     {

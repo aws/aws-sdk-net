@@ -40,9 +40,17 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property CloudWatchMetricsEnabled. 
         /// <para>
-        /// A boolean indicating whether the associated resource sends metrics to Amazon CloudWatch.
-        /// For the list of available metrics, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#waf-metrics">WAF
-        /// Metrics</a>.
+        /// Indicates whether the associated resource sends metrics to Amazon CloudWatch. For
+        /// the list of available metrics, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#waf-metrics">WAF
+        /// Metrics</a> in the <i>WAF Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For web ACLs, the metrics are for web requests that have the web ACL default action
+        /// applied. WAF applies the default action to web requests that pass the inspection of
+        /// all rules in the web ACL without being either allowed or blocked. For more information,
+        /// see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/web-acl-default-action.html">The
+        /// web ACL default action</a> in the <i>WAF Developer Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -61,10 +69,10 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property MetricName. 
         /// <para>
-        /// A name of the Amazon CloudWatch metric. The name can contain only the characters:
+        /// A name of the Amazon CloudWatch metric dimension. The name can contain only the characters:
         /// A-Z, a-z, 0-9, - (hyphen), and _ (underscore). The name can be from one to 128 characters
-        /// long. It can't contain whitespace or metric names reserved for WAF, for example "All"
-        /// and "Default_Action." 
+        /// long. It can't contain whitespace or metric names that are reserved for WAF, for example
+        /// <code>All</code> and <code>Default_Action</code>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
@@ -83,8 +91,8 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property SampledRequestsEnabled. 
         /// <para>
-        /// A boolean indicating whether WAF should store a sampling of the web requests that
-        /// match the rules. You can view the sampled requests through the WAF console. 
+        /// Indicates whether WAF should store a sampling of the web requests that match the rules.
+        /// You can view the sampled requests through the WAF console. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

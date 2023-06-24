@@ -29,12 +29,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Rekognition.Model
 {
     /// <summary>
-    /// Input parameters used to recognize faces in a streaming video analyzed by a Amazon
-    /// Rekognition stream processor.
+    /// Input parameters used in a streaming video analyzed by a Amazon Rekognition stream
+    /// processor. You can use <code>FaceSearch</code> to recognize faces in a streaming video,
+    /// or you can use <code>ConnectedHome</code> to detect labels.
     /// </summary>
     public partial class StreamProcessorSettings
     {
+        private ConnectedHomeSettings _connectedHome;
         private FaceSearchSettings _faceSearch;
+
+        /// <summary>
+        /// Gets and sets the property ConnectedHome.
+        /// </summary>
+        public ConnectedHomeSettings ConnectedHome
+        {
+            get { return this._connectedHome; }
+            set { this._connectedHome = value; }
+        }
+
+        // Check to see if ConnectedHome property is set
+        internal bool IsSetConnectedHome()
+        {
+            return this._connectedHome != null;
+        }
 
         /// <summary>
         /// Gets and sets the property FaceSearch. 

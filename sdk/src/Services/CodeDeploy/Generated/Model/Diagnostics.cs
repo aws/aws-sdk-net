@@ -89,7 +89,7 @@ namespace Amazon.CodeDeploy.Model
         /// </para>
         ///  
         /// <para>
-        /// If available, AWS CodeDeploy returns up to the last 4 KB of the diagnostic log.
+        /// If available, CodeDeploy returns up to the last 4 KB of the diagnostic log.
         /// </para>
         /// </summary>
         public string LogTail

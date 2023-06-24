@@ -51,6 +51,12 @@ namespace Amazon.Honeycode.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("errorCode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ErrorCode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("jobMetadata", targetDepth))
                 {
                     var unmarshaller = TableDataImportJobMetadataUnmarshaller.Instance;
@@ -99,6 +105,10 @@ namespace Amazon.Honeycode.Model.Internal.MarshallTransformations
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerException"))
                 {
                     return InternalServerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("RequestTimeoutException"))
+                {
+                    return RequestTimeoutExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
                 {

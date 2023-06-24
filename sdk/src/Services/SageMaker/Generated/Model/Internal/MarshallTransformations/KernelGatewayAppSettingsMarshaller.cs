@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// KernelGatewayAppSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class KernelGatewayAppSettingsMarshaller : IRequestMarshaller<KernelGatewayAppSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -87,7 +87,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static KernelGatewayAppSettingsMarshaller Instance = new KernelGatewayAppSettingsMarshaller();
 
     }

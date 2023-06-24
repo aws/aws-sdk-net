@@ -34,7 +34,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RedshiftSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class RedshiftSettingsMarshaller : IRequestMarshaller<RedshiftSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -127,6 +127,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("LoadTimeout");
                 context.Writer.Write(requestObject.LoadTimeout);
+            }
+
+            if(requestObject.IsSetMapBooleanAsBoolean())
+            {
+                context.Writer.WritePropertyName("MapBooleanAsBoolean");
+                context.Writer.Write(requestObject.MapBooleanAsBoolean);
             }
 
             if(requestObject.IsSetMaxFileSize())
@@ -229,7 +235,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RedshiftSettingsMarshaller Instance = new RedshiftSettingsMarshaller();
 
     }

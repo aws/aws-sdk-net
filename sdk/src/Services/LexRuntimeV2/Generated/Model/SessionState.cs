@@ -37,6 +37,7 @@ namespace Amazon.LexRuntimeV2.Model
         private DialogAction _dialogAction;
         private Intent _intent;
         private string _originatingRequestId;
+        private RuntimeHints _runtimeHints;
         private Dictionary<string, string> _sessionAttributes = new Dictionary<string, string>();
 
         /// <summary>
@@ -97,7 +98,10 @@ namespace Amazon.LexRuntimeV2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OriginatingRequestId.
+        /// Gets and sets the property OriginatingRequestId. 
+        /// <para>
+        /// A unique identifier for a specific request.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
         public string OriginatingRequestId
@@ -110,6 +114,25 @@ namespace Amazon.LexRuntimeV2.Model
         internal bool IsSetOriginatingRequestId()
         {
             return this._originatingRequestId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RuntimeHints. 
+        /// <para>
+        /// Hints for phrases that a customer is likely to use for a slot. Amazon Lex V2 uses
+        /// the hints to help determine the correct value of a slot.
+        /// </para>
+        /// </summary>
+        public RuntimeHints RuntimeHints
+        {
+            get { return this._runtimeHints; }
+            set { this._runtimeHints = value; }
+        }
+
+        // Check to see if RuntimeHints property is set
+        internal bool IsSetRuntimeHints()
+        {
+            return this._runtimeHints != null;
         }
 
         /// <summary>

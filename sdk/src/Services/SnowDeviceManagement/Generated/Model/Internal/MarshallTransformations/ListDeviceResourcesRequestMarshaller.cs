@@ -55,7 +55,7 @@ namespace Amazon.SnowDeviceManagement.Model.Internal.MarshallTransformations
         public IRequest Marshall(ListDeviceResourcesRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.SnowDeviceManagement");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-08-04";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-08-04";
             request.HttpMethod = "GET";
 
             if (!publicRequest.IsSetManagedDeviceId())

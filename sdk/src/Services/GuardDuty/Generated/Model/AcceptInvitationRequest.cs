@@ -32,6 +32,7 @@ namespace Amazon.GuardDuty.Model
     /// Container for the parameters to the AcceptInvitation operation.
     /// Accepts the invitation to be monitored by a GuardDuty administrator account.
     /// </summary>
+    [Obsolete("This input is deprecated, use AcceptAdministratorInvitationRequest instead")]
     public partial class AcceptInvitationRequest : AmazonGuardDutyRequest
     {
         private string _detectorId;

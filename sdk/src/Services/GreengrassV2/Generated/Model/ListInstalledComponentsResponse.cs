@@ -41,6 +41,18 @@ namespace Amazon.GreengrassV2.Model
         /// <para>
         /// A list that summarizes each component on the core device.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Greengrass nucleus v2.7.0 or later is required to get an accurate <code>lastStatusChangeTimestamp</code>
+        /// response. This response can be inaccurate in earlier Greengrass nucleus versions.
+        /// </para>
+        ///  </note> <note> 
+        /// <para>
+        /// Greengrass nucleus v2.8.0 or later is required to get an accurate <code>lastInstallationSource</code>
+        /// and <code>lastReportedTimestamp</code> response. This response can be inaccurate or
+        /// null in earlier Greengrass nucleus versions.
+        /// </para>
+        ///  </note>
         /// </summary>
         public List<InstalledComponent> InstalledComponents
         {

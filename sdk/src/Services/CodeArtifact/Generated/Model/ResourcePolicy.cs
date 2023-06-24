@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeArtifact.Model
 {
     /// <summary>
-    /// An AWS CodeArtifact resource policy that contains a resource ARN, document details,
-    /// and a revision.
+    /// An CodeArtifact resource policy that contains a resource ARN, document details, and
+    /// a revision.
     /// </summary>
     public partial class ResourcePolicy
     {
@@ -44,7 +44,7 @@ namespace Amazon.CodeArtifact.Model
         ///  The resource policy formatted in JSON. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=5120)]
+        [AWSProperty(Min=1, Max=7168)]
         public string Document
         {
             get { return this._document; }

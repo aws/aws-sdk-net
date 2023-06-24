@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RecommendationJobInputConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class RecommendationJobInputConfigMarshaller : IRequestMarshaller<RecommendationJobInputConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -45,6 +45,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(RecommendationJobInputConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetContainerConfig())
+            {
+                context.Writer.WritePropertyName("ContainerConfig");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = RecommendationJobContainerConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.ContainerConfig, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetEndpointConfigurations())
             {
                 context.Writer.WritePropertyName("EndpointConfigurations");
@@ -61,10 +72,32 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetEndpoints())
+            {
+                context.Writer.WritePropertyName("Endpoints");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectEndpointsListValue in requestObject.Endpoints)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = EndpointInfoMarshaller.Instance;
+                    marshaller.Marshall(requestObjectEndpointsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetJobDurationInSeconds())
             {
                 context.Writer.WritePropertyName("JobDurationInSeconds");
                 context.Writer.Write(requestObject.JobDurationInSeconds);
+            }
+
+            if(requestObject.IsSetModelName())
+            {
+                context.Writer.WritePropertyName("ModelName");
+                context.Writer.Write(requestObject.ModelName);
             }
 
             if(requestObject.IsSetModelPackageVersionArn())
@@ -95,11 +128,28 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetVolumeKmsKeyId())
+            {
+                context.Writer.WritePropertyName("VolumeKmsKeyId");
+                context.Writer.Write(requestObject.VolumeKmsKeyId);
+            }
+
+            if(requestObject.IsSetVpcConfig())
+            {
+                context.Writer.WritePropertyName("VpcConfig");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = RecommendationJobVpcConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.VpcConfig, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RecommendationJobInputConfigMarshaller Instance = new RecommendationJobInputConfigMarshaller();
 
     }

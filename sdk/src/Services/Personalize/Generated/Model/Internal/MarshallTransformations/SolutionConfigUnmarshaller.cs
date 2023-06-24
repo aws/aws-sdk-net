@@ -100,6 +100,12 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
                     unmarshalledObject.OptimizationObjective = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("trainingDataConfig", targetDepth))
+                {
+                    var unmarshaller = TrainingDataConfigUnmarshaller.Instance;
+                    unmarshalledObject.TrainingDataConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

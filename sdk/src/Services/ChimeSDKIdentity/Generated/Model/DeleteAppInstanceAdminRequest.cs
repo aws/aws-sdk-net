@@ -30,8 +30,8 @@ namespace Amazon.ChimeSDKIdentity.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteAppInstanceAdmin operation.
-    /// Demotes an <code>AppInstanceAdmin</code> to an <code>AppInstanceUser</code>. This
-    /// action does not delete the user.
+    /// Demotes an <code>AppInstanceAdmin</code> to an <code>AppInstanceUser</code> or <code>AppInstanceBot</code>.
+    /// This action does not delete the user.
     /// </summary>
     public partial class DeleteAppInstanceAdminRequest : AmazonChimeSDKIdentityRequest
     {

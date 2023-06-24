@@ -17,22 +17,22 @@
  * Do not modify this file. This file is generated from the codeguru-reviewer-2019-09-19.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
-
+using Amazon.CodeGuruReviewer.Internal;
 
 namespace Amazon.CodeGuruReviewer
 {
     /// <summary>
     /// Configuration for accessing Amazon CodeGuruReviewer service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonCodeGuruReviewerConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.4.42");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.147");
 
         private string _userAgent = UserAgentString;
 
@@ -40,8 +40,10 @@ namespace Amazon.CodeGuruReviewer
         /// Default constructor
         /// </summary>
         public AmazonCodeGuruReviewerConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonCodeGuruReviewerDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "codeguru-reviewer";
+            this.EndpointProvider = new AmazonCodeGuruReviewerEndpointProvider();
         }
 
         /// <summary>
@@ -76,5 +78,6 @@ namespace Amazon.CodeGuruReviewer
                 return _userAgent;
             }
         }
+
     }
 }

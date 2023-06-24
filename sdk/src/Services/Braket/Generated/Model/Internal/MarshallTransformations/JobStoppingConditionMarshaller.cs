@@ -34,7 +34,7 @@ namespace Amazon.Braket.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// JobStoppingCondition Marshaller
-    /// </summary>       
+    /// </summary>
     public class JobStoppingConditionMarshaller : IRequestMarshaller<JobStoppingCondition, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.Braket.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static JobStoppingConditionMarshaller Instance = new JobStoppingConditionMarshaller();
 
     }

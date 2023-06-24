@@ -64,6 +64,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("headers", targetDepth))
+                {
+                    var unmarshaller = MqttHeadersUnmarshaller.Instance;
+                    unmarshalledObject.Headers = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("qos", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

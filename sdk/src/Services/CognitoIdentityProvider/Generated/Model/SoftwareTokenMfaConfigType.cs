@@ -38,7 +38,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Enabled. 
         /// <para>
-        /// Specifies whether software token MFA is enabled.
+        /// Specifies whether software token MFA is activated.
         /// </para>
         /// </summary>
         public bool Enabled

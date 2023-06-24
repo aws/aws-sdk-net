@@ -30,7 +30,7 @@ namespace Amazon.FIS.Model
 {
     /// <summary>
     /// Container for the parameters to the ListActions operation.
-    /// Lists the available AWS FIS actions.
+    /// Lists the available FIS actions.
     /// </summary>
     public partial class ListActionsRequest : AmazonFISRequest
     {

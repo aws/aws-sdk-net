@@ -30,7 +30,7 @@ namespace Amazon.Kendra.Model
 {
     /// <summary>
     /// Provides a relative ranking that indicates how confident Amazon Kendra is that the
-    /// response matches the query.
+    /// response is relevant to the query.
     /// </summary>
     public partial class ScoreAttributes
     {
@@ -39,7 +39,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property ScoreConfidence. 
         /// <para>
-        /// A relative ranking for how well the response matches the query.
+        /// A relative ranking for how relevant the response is to the query.
         /// </para>
         /// </summary>
         public ScoreConfidence ScoreConfidence

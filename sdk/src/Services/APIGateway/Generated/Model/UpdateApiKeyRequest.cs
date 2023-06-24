@@ -30,7 +30,7 @@ namespace Amazon.APIGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateApiKey operation.
-    /// Changes information about an <a>ApiKey</a> resource.
+    /// Changes information about an ApiKey resource.
     /// </summary>
     public partial class UpdateApiKeyRequest : AmazonAPIGatewayRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property ApiKey. 
         /// <para>
-        /// [Required] The identifier of the <a>ApiKey</a> resource to be updated.
+        /// The identifier of the ApiKey resource to be updated.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -59,8 +59,8 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property PatchOperations. 
         /// <para>
-        /// A list of update operations to be applied to the specified resource and in the order
-        /// specified in this list.
+        /// For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch
+        /// Operations</a>.
         /// </para>
         /// </summary>
         public List<PatchOperation> PatchOperations

@@ -30,13 +30,47 @@ namespace Amazon.WAFV2.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteWebACL operation.
-    /// Deletes the specified <a>WebACL</a>.
+    /// Deletes the specified <a>WebACL</a>. 
     /// 
     ///  
     /// <para>
     /// You can only use this if <code>ManagedByFirewallManager</code> is false in the specified
     /// <a>WebACL</a>. 
     /// </para>
+    ///  <note> 
+    /// <para>
+    /// Before deleting any web ACL, first disassociate it from all resources.
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// To retrieve a list of the resources that are associated with a web ACL, use the following
+    /// calls:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// For regional resources, call <a>ListResourcesForWebACL</a>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// For Amazon CloudFront distributions, use the CloudFront call <code>ListDistributionsByWebACLId</code>.
+    /// For information, see <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListDistributionsByWebACLId.html">ListDistributionsByWebACLId</a>
+    /// in the <i>Amazon CloudFront API Reference</i>. 
+    /// </para>
+    ///  </li> </ul> </li> <li> 
+    /// <para>
+    /// To disassociate a resource from a web ACL, use the following calls:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// For regional resources, call <a>DisassociateWebACL</a>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// For Amazon CloudFront distributions, provide an empty web ACL ID in the CloudFront
+    /// call <code>UpdateDistribution</code>. For information, see <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a>
+    /// in the <i>Amazon CloudFront API Reference</i>. 
+    /// </para>
+    ///  </li> </ul> </li> </ul> </note>
     /// </summary>
     public partial class DeleteWebACLRequest : AmazonWAFV2Request
     {
@@ -116,7 +150,8 @@ namespace Amazon.WAFV2.Model
         /// <para>
         /// Specifies whether this is for an Amazon CloudFront distribution or for a regional
         /// application. A regional application can be an Application Load Balancer (ALB), an
-        /// Amazon API Gateway REST API, or an AppSync GraphQL API. 
+        /// Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool,
+        /// an App Runner service, or an Amazon Web Services Verified Access instance. 
         /// </para>
         ///  
         /// <para>

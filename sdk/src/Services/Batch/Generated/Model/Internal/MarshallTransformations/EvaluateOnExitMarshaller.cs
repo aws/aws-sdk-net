@@ -34,7 +34,7 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// EvaluateOnExit Marshaller
-    /// </summary>       
+    /// </summary>
     public class EvaluateOnExitMarshaller : IRequestMarshaller<EvaluateOnExit, JsonMarshallerContext> 
     {
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static EvaluateOnExitMarshaller Instance = new EvaluateOnExitMarshaller();
 
     }

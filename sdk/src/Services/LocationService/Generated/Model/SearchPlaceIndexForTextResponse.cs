@@ -42,6 +42,11 @@ namespace Amazon.LocationService.Model
         /// A list of Places matching the input text. Each result contains additional information
         /// about the specific point of interest. 
         /// </para>
+        ///  
+        /// <para>
+        /// Not all response properties are included with all responses. Some properties may only
+        /// be returned by specific data partners.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public List<SearchForTextResult> Results

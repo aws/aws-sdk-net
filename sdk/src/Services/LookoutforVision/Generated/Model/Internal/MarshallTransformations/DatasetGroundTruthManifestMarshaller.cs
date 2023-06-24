@@ -34,7 +34,7 @@ namespace Amazon.LookoutforVision.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DatasetGroundTruthManifest Marshaller
-    /// </summary>       
+    /// </summary>
     public class DatasetGroundTruthManifestMarshaller : IRequestMarshaller<DatasetGroundTruthManifest, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.LookoutforVision.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DatasetGroundTruthManifestMarshaller Instance = new DatasetGroundTruthManifestMarshaller();
 
     }

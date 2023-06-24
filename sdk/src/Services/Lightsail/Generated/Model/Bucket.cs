@@ -58,11 +58,13 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  
         /// <para>
-        /// You can update a bucket's bundle only one time within a monthly AWS billing cycle.
+        /// You can update a bucket's bundle only one time within a monthly Amazon Web Services
+        /// billing cycle.
         /// </para>
         ///  
         /// <para>
-        /// Use the <a>UpdateBucketBundle</a> action to change a bucket's bundle.
+        /// Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateBucketBundle.html">UpdateBucketBundle</a>
+        /// action to change a bucket's bundle.
         /// </para>
         /// </summary>
         public bool AbleToUpdateBundle
@@ -143,7 +145,8 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  
         /// <para>
-        /// Use the <a>UpdateBucketBundle</a> action to change the bundle of a bucket.
+        /// Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateBucketBundle.html">UpdateBucketBundle</a>
+        /// action to change the bundle of a bucket.
         /// </para>
         /// </summary>
         public string BundleId
@@ -177,7 +180,11 @@ namespace Amazon.Lightsail.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Location.
+        /// Gets and sets the property Location. 
+        /// <para>
+        /// An object that describes the location of the bucket, such as the Amazon Web Services
+        /// Region and Availability Zone.
+        /// </para>
         /// </summary>
         public ResourceLocation Location
         {
@@ -249,8 +256,8 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property ReadonlyAccessAccounts. 
         /// <para>
-        /// An array of strings that specify the AWS account IDs that have read-only access to
-        /// the bucket.
+        /// An array of strings that specify the Amazon Web Services account IDs that have read-only
+        /// access to the bucket.
         /// </para>
         /// </summary>
         [AWSProperty(Max=10)]
@@ -273,8 +280,8 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  
         /// <para>
-        /// Use the <a>SetResourceAccessForBucket</a> action to update the instances that have
-        /// access to a bucket.
+        /// Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_SetResourceAccessForBucket.html">SetResourceAccessForBucket</a>
+        /// action to update the instances that have access to a bucket.
         /// </para>
         /// </summary>
         public List<ResourceReceivingAccess> ResourcesReceivingAccess

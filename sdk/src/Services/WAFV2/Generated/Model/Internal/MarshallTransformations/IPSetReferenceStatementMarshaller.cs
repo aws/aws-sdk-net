@@ -34,7 +34,7 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// IPSetReferenceStatement Marshaller
-    /// </summary>       
+    /// </summary>
     public class IPSetReferenceStatementMarshaller : IRequestMarshaller<IPSetReferenceStatement, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static IPSetReferenceStatementMarshaller Instance = new IPSetReferenceStatementMarshaller();
 
     }

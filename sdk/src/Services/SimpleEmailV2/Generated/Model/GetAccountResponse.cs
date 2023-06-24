@@ -41,6 +41,7 @@ namespace Amazon.SimpleEmailV2.Model
         private bool? _sendingEnabled;
         private SendQuota _sendQuota;
         private SuppressionAttributes _suppressionAttributes;
+        private VdmAttributes _vdmAttributes;
 
         /// <summary>
         /// Gets and sets the property DedicatedIpAutoWarmupEnabled. 
@@ -202,6 +203,24 @@ namespace Amazon.SimpleEmailV2.Model
         internal bool IsSetSuppressionAttributes()
         {
             return this._suppressionAttributes != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VdmAttributes. 
+        /// <para>
+        /// The VDM attributes that apply to your Amazon SES account.
+        /// </para>
+        /// </summary>
+        public VdmAttributes VdmAttributes
+        {
+            get { return this._vdmAttributes; }
+            set { this._vdmAttributes = value; }
+        }
+
+        // Check to see if VdmAttributes property is set
+        internal bool IsSetVdmAttributes()
+        {
+            return this._vdmAttributes != null;
         }
 
     }

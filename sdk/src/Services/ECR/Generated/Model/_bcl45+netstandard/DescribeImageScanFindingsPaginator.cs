@@ -47,6 +47,12 @@ namespace Amazon.ECR.Model
         public IPaginatedEnumerable<ImageScanFinding> Findings => 
             new PaginatedResultKeyResponse<DescribeImageScanFindingsResponse, ImageScanFinding>(this, (i) => i.ImageScanFindings.Findings);
 
+        /// <summary>
+        /// Enumerable containing all of the EnhancedFindings
+        /// </summary>
+        public IPaginatedEnumerable<EnhancedImageScanFinding> EnhancedFindings => 
+            new PaginatedResultKeyResponse<DescribeImageScanFindingsResponse, EnhancedImageScanFinding>(this, (i) => i.ImageScanFindings.EnhancedFindings);
+
         internal DescribeImageScanFindingsPaginator(IAmazonECR client, DescribeImageScanFindingsRequest request)
         {
             this._client = client;

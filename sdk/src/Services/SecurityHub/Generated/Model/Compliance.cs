@@ -34,9 +34,29 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class Compliance
     {
+        private List<AssociatedStandard> _associatedStandards = new List<AssociatedStandard>();
         private List<string> _relatedRequirements = new List<string>();
+        private string _securityControlId;
         private ComplianceStatus _status;
         private List<StatusReason> _statusReasons = new List<StatusReason>();
+
+        /// <summary>
+        /// Gets and sets the property AssociatedStandards. 
+        /// <para>
+        /// The enabled security standards in which a security control is currently enabled. 
+        /// </para>
+        /// </summary>
+        public List<AssociatedStandard> AssociatedStandards
+        {
+            get { return this._associatedStandards; }
+            set { this._associatedStandards = value; }
+        }
+
+        // Check to see if AssociatedStandards property is set
+        internal bool IsSetAssociatedStandards()
+        {
+            return this._associatedStandards != null && this._associatedStandards.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property RelatedRequirements. 
@@ -55,6 +75,25 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetRelatedRequirements()
         {
             return this._relatedRequirements != null && this._relatedRequirements.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SecurityControlId. 
+        /// <para>
+        ///  The unique identifier of a control across standards. Values for this field typically
+        /// consist of an Amazon Web Service and a number, such as APIGateway.5. 
+        /// </para>
+        /// </summary>
+        public string SecurityControlId
+        {
+            get { return this._securityControlId; }
+            set { this._securityControlId = value; }
+        }
+
+        // Check to see if SecurityControlId property is set
+        internal bool IsSetSecurityControlId()
+        {
+            return this._securityControlId != null;
         }
 
         /// <summary>

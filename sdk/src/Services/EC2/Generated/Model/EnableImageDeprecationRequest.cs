@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model
     ///  
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-deprecate.html">Deprecate
-    /// an AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// an AMI</a> in the <i>Amazon EC2 User Guide</i>.
     /// </para>
     /// </summary>
     public partial class EnableImageDeprecationRequest : AmazonEC2Request
@@ -52,7 +52,8 @@ namespace Amazon.EC2.Model
         ///  
         /// <para>
         /// You can’t specify a date in the past. The upper limit for <code>DeprecateAt</code>
-        /// is 10 years from now.
+        /// is 10 years from now, except for public AMIs, where the upper limit is 2 years from
+        /// the creation date.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

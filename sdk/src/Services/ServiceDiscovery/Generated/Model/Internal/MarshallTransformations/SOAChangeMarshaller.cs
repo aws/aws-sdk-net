@@ -34,7 +34,7 @@ namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SOAChange Marshaller
-    /// </summary>       
+    /// </summary>
     public class SOAChangeMarshaller : IRequestMarshaller<SOAChange, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SOAChangeMarshaller Instance = new SOAChangeMarshaller();
 
     }

@@ -33,8 +33,46 @@ namespace Amazon.S3Control.Model
     /// </summary>
     public partial class LifecycleRuleAndOperator
     {
+        private long? _objectSizeGreaterThan;
+        private long? _objectSizeLessThan;
         private string _prefix;
         private List<S3Tag> _tags = new List<S3Tag>();
+
+        /// <summary>
+        /// Gets and sets the property ObjectSizeGreaterThan. 
+        /// <para>
+        /// Minimum object size to which the rule applies.
+        /// </para>
+        /// </summary>
+        public long ObjectSizeGreaterThan
+        {
+            get { return this._objectSizeGreaterThan.GetValueOrDefault(); }
+            set { this._objectSizeGreaterThan = value; }
+        }
+
+        // Check to see if ObjectSizeGreaterThan property is set
+        internal bool IsSetObjectSizeGreaterThan()
+        {
+            return this._objectSizeGreaterThan.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ObjectSizeLessThan. 
+        /// <para>
+        /// Maximum object size to which the rule applies.
+        /// </para>
+        /// </summary>
+        public long ObjectSizeLessThan
+        {
+            get { return this._objectSizeLessThan.GetValueOrDefault(); }
+            set { this._objectSizeLessThan = value; }
+        }
+
+        // Check to see if ObjectSizeLessThan property is set
+        internal bool IsSetObjectSizeLessThan()
+        {
+            return this._objectSizeLessThan.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property Prefix. 

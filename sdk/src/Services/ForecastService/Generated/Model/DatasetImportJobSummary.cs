@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ForecastService.Model
 {
     /// <summary>
-    /// Provides a summary of the dataset import job properties used in the <a>ListDatasetImportJobs</a>
-    /// operation. To get the complete set of properties, call the <a>DescribeDatasetImportJob</a>
+    /// Provides a summary of the dataset import job properties used in the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_ListDatasetImportJobs.html">ListDatasetImportJobs</a>
+    /// operation. To get the complete set of properties, call the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_DescribeDatasetImportJob.html">DescribeDatasetImportJob</a>
     /// operation, and provide the <code>DatasetImportJobArn</code>.
     /// </summary>
     public partial class DatasetImportJobSummary
@@ -39,6 +39,7 @@ namespace Amazon.ForecastService.Model
         private string _datasetImportJobArn;
         private string _datasetImportJobName;
         private DataSource _dataSource;
+        private ImportMode _importMode;
         private DateTime? _lastModificationTime;
         private string _message;
         private string _status;
@@ -102,13 +103,13 @@ namespace Amazon.ForecastService.Model
         /// <summary>
         /// Gets and sets the property DataSource. 
         /// <para>
-        /// The location of the training data to import and an AWS Identity and Access Management
+        /// The location of the training data to import and an Identity and Access Management
         /// (IAM) role that Amazon Forecast can assume to access the data. The training data must
         /// be stored in an Amazon S3 bucket.
         /// </para>
         ///  
         /// <para>
-        /// If encryption is used, <code>DataSource</code> includes an AWS Key Management Service
+        /// If encryption is used, <code>DataSource</code> includes an Key Management Service
         /// (KMS) key.
         /// </para>
         /// </summary>
@@ -122,6 +123,24 @@ namespace Amazon.ForecastService.Model
         internal bool IsSetDataSource()
         {
             return this._dataSource != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ImportMode. 
+        /// <para>
+        /// The import mode of the dataset import job, FULL or INCREMENTAL.
+        /// </para>
+        /// </summary>
+        public ImportMode ImportMode
+        {
+            get { return this._importMode; }
+            set { this._importMode = value; }
+        }
+
+        // Check to see if ImportMode property is set
+        internal bool IsSetImportMode()
+        {
+            return this._importMode != null;
         }
 
         /// <summary>

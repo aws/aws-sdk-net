@@ -39,7 +39,7 @@ namespace Amazon.Mgn.Model
         /// <summary>
         /// Gets and sets the property SourceServerID. 
         /// <para>
-        /// Request to get Replication Configuaration by Source Server ID.
+        /// Request to get Replication Configuration by Source Server ID.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=19, Max=19)]

@@ -31,24 +31,60 @@ namespace Amazon.Route53RecoveryCluster.Model
     /// <summary>
     /// Container for the parameters to the UpdateRoutingControlState operation.
     /// Set the state of the routing control to reroute traffic. You can set the value to
-    /// be On or Off. When the state is On, traffic flows to a cell. When it's off, traffic
-    /// does not flow.
+    /// be On or Off. When the state is On, traffic flows to a cell. When the state is Off,
+    /// traffic does not flow.
     /// 
     ///  
     /// <para>
-    /// For more information about working with routing controls, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.html">Routing
-    /// control</a> in the Route 53 Application Recovery Controller Developer Guide.
+    /// With Route 53 ARC, you can add safety rules for routing controls, which are safeguards
+    /// for routing control state updates that help prevent unexpected outcomes, like fail
+    /// open traffic routing. However, there are scenarios when you might want to bypass the
+    /// routing control safeguards that are enforced with safety rules that you've configured.
+    /// For example, you might want to fail over quickly for disaster recovery, and one or
+    /// more safety rules might be unexpectedly preventing you from updating a routing control
+    /// state to reroute traffic. In a "break glass" scenario like this, you can override
+    /// one or more safety rules to change a routing control state and fail over your application.
     /// </para>
+    ///  
+    /// <para>
+    /// The <code>SafetyRulesToOverride</code> property enables you override one or more safety
+    /// rules and update routing control states. For more information, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.override-safety-rule.html">
+    /// Override safety rules to reroute traffic</a> in the Amazon Route 53 Application Recovery
+    /// Controller Developer Guide.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <i>You must specify Regional endpoints when you work with API cluster operations
+    /// to get or update routing control states in Route 53 ARC.</i> 
+    /// </para>
+    ///  
+    /// <para>
+    /// To see a code example for getting a routing control state, including accessing Regional
+    /// cluster endpoints in sequence, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/service_code_examples_actions.html">API
+    /// examples</a> in the Amazon Route 53 Application Recovery Controller Developer Guide.
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.update.html">
+    /// Viewing and updating routing control states</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.html">Working
+    /// with routing controls overall</a> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class UpdateRoutingControlStateRequest : AmazonRoute53RecoveryClusterRequest
     {
         private string _routingControlArn;
         private RoutingControlState _routingControlState;
+        private List<string> _safetyRulesToOverride = new List<string>();
 
         /// <summary>
         /// Gets and sets the property RoutingControlArn. 
         /// <para>
-        /// The Amazon Resource Number (ARN) for the routing control that you want to update the
+        /// The Amazon Resource Name (ARN) for the routing control that you want to update the
         /// state for.
         /// </para>
         /// </summary>
@@ -82,6 +118,32 @@ namespace Amazon.Route53RecoveryCluster.Model
         internal bool IsSetRoutingControlState()
         {
             return this._routingControlState != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SafetyRulesToOverride. 
+        /// <para>
+        /// The Amazon Resource Names (ARNs) for the safety rules that you want to override when
+        /// you're updating the state of a routing control. You can override one safety rule or
+        /// multiple safety rules by including one or more ARNs, separated by commas.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.override-safety-rule.html">
+        /// Override safety rules to reroute traffic</a> in the Amazon Route 53 Application Recovery
+        /// Controller Developer Guide.
+        /// </para>
+        /// </summary>
+        public List<string> SafetyRulesToOverride
+        {
+            get { return this._safetyRulesToOverride; }
+            set { this._safetyRulesToOverride = value; }
+        }
+
+        // Check to see if SafetyRulesToOverride property is set
+        internal bool IsSetSafetyRulesToOverride()
+        {
+            return this._safetyRulesToOverride != null && this._safetyRulesToOverride.Count > 0; 
         }
 
     }

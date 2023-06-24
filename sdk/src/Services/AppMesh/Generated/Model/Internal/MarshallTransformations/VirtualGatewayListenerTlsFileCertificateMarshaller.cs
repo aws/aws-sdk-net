@@ -34,7 +34,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// VirtualGatewayListenerTlsFileCertificate Marshaller
-    /// </summary>       
+    /// </summary>
     public class VirtualGatewayListenerTlsFileCertificateMarshaller : IRequestMarshaller<VirtualGatewayListenerTlsFileCertificate, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static VirtualGatewayListenerTlsFileCertificateMarshaller Instance = new VirtualGatewayListenerTlsFileCertificateMarshaller();
 
     }

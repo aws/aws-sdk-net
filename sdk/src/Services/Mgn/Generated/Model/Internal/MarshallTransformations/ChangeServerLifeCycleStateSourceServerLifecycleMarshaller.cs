@@ -34,7 +34,7 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ChangeServerLifeCycleStateSourceServerLifecycle Marshaller
-    /// </summary>       
+    /// </summary>
     public class ChangeServerLifeCycleStateSourceServerLifecycleMarshaller : IRequestMarshaller<ChangeServerLifeCycleStateSourceServerLifecycle, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ChangeServerLifeCycleStateSourceServerLifecycleMarshaller Instance = new ChangeServerLifeCycleStateSourceServerLifecycleMarshaller();
 
     }

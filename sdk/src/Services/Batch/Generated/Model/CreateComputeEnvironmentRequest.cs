@@ -53,9 +53,9 @@ namespace Amazon.Batch.Model
     ///  </note> 
     /// <para>
     /// In an unmanaged compute environment, you can manage your own EC2 compute resources
-    /// and have a lot of flexibility with how you configure your compute resources. For example,
-    /// you can use custom AMIs. However, you must verify that each of your AMIs meet the
-    /// Amazon ECS container instance AMI specification. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container_instance_AMIs.html">container
+    /// and have flexibility with how you configure your compute resources. For example, you
+    /// can use custom AMIs. However, you must verify that each of your AMIs meet the Amazon
+    /// ECS container instance AMI specification. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container_instance_AMIs.html">container
     /// instance AMIs</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
     /// After you created your unmanaged compute environment, you can use the <a>DescribeComputeEnvironments</a>
     /// operation to find the Amazon ECS cluster that's associated with it. Then, launch your
@@ -65,12 +65,18 @@ namespace Amazon.Batch.Model
     /// </para>
     ///  <note> 
     /// <para>
-    /// Batch doesn't upgrade the AMIs in a compute environment after the environment is created.
-    /// For example, it doesn't update the AMIs when a newer version of the Amazon ECS optimized
-    /// AMI is available. Therefore, you're responsible for managing the guest operating system
-    /// (including its updates and security patches) and any additional application software
-    /// or utilities that you install on the compute resources. To use a new AMI for your
-    /// Batch jobs, complete these steps:
+    /// To create a compute environment that uses EKS resources, the caller must have permissions
+    /// to call <code>eks:DescribeCluster</code>.
+    /// </para>
+    ///  </note> <note> 
+    /// <para>
+    /// Batch doesn't automatically upgrade the AMIs in a compute environment after it's created.
+    /// For example, it also doesn't update the AMIs in your compute environment when a newer
+    /// version of the Amazon ECS optimized AMI is available. You're responsible for the management
+    /// of the guest operating system. This includes any updates and security patches. You're
+    /// also responsible for any additional application software or utilities that you install
+    /// on the compute resources. There are two ways to use a new AMI for your Batch jobs.
+    /// The original method is to complete these steps:
     /// </para>
     ///  <ol> <li> 
     /// <para>
@@ -88,12 +94,60 @@ namespace Amazon.Batch.Model
     /// <para>
     /// Delete the earlier compute environment.
     /// </para>
-    ///  </li> </ol> </note>
+    ///  </li> </ol> 
+    /// <para>
+    /// In April 2022, Batch added enhanced support for updating compute environments. For
+    /// more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
+    /// compute environments</a>. To use the enhanced updating of compute environments to
+    /// update AMIs, follow these rules:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// Either don't set the service role (<code>serviceRole</code>) parameter or set it to
+    /// the <b>AWSBatchServiceRole</b> service-linked role.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Set the allocation strategy (<code>allocationStrategy</code>) parameter to <code>BEST_FIT_PROGRESSIVE</code>
+    /// or <code>SPOT_CAPACITY_OPTIMIZED</code>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Set the update to latest image version (<code>updateToLatestImageVersion</code>) parameter
+    /// to <code>true</code>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Don't specify an AMI ID in <code>imageId</code>, <code>imageIdOverride</code> (in
+    /// <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_Ec2Configuration.html">
+    /// <code>ec2Configuration</code> </a>), or in the launch template (<code>launchTemplate</code>).
+    /// In that case, Batch selects the latest Amazon ECS optimized AMI that's supported by
+    /// Batch at the time the infrastructure update is initiated. Alternatively, you can specify
+    /// the AMI ID in the <code>imageId</code> or <code>imageIdOverride</code> parameters,
+    /// or the launch template identified by the <code>LaunchTemplate</code> properties. Changing
+    /// any of these properties starts an infrastructure update. If the AMI ID is specified
+    /// in the launch template, it can't be replaced by specifying an AMI ID in either the
+    /// <code>imageId</code> or <code>imageIdOverride</code> parameters. It can only be replaced
+    /// by specifying a different launch template, or if the launch template version is set
+    /// to <code>$Default</code> or <code>$Latest</code>, by setting either a new default
+    /// version for the launch template (if <code>$Default</code>) or by adding a new version
+    /// to the launch template (if <code>$Latest</code>).
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// If these rules are followed, any update that starts an infrastructure update causes
+    /// the AMI ID to be re-selected. If the <code>version</code> setting in the launch template
+    /// (<code>launchTemplate</code>) is set to <code>$Latest</code> or <code>$Default</code>,
+    /// the latest or default version of the launch template is evaluated up at the time of
+    /// the infrastructure update, even if the <code>launchTemplate</code> wasn't updated.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class CreateComputeEnvironmentRequest : AmazonBatchRequest
     {
         private string _computeEnvironmentName;
         private ComputeResource _computeResources;
+        private EksConfiguration _eksConfiguration;
         private string _serviceRole;
         private CEState _state;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
@@ -103,8 +157,8 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property ComputeEnvironmentName. 
         /// <para>
-        /// The name for your compute environment. It can be up to 128 letters long. It can contain
-        /// uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).
+        /// The name for your compute environment. It can be up to 128 characters long. It can
+        /// contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -141,6 +195,24 @@ namespace Amazon.Batch.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EksConfiguration. 
+        /// <para>
+        /// The details for the Amazon EKS cluster that supports the compute environment.
+        /// </para>
+        /// </summary>
+        public EksConfiguration EksConfiguration
+        {
+            get { return this._eksConfiguration; }
+            set { this._eksConfiguration = value; }
+        }
+
+        // Check to see if EksConfiguration property is set
+        internal bool IsSetEksConfiguration()
+        {
+            return this._eksConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ServiceRole. 
         /// <para>
         /// The full Amazon Resource Name (ARN) of the IAM role that allows Batch to make calls
@@ -159,9 +231,8 @@ namespace Amazon.Batch.Model
         /// <para>
         /// If your specified role has a path other than <code>/</code>, then you must specify
         /// either the full role ARN (recommended) or prefix the role name with the path. For
-        /// example, if a role with the name <code>bar</code> has a path of <code>/foo/</code>
-        /// then you would specify <code>/foo/bar</code> as the role name. For more information,
-        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly
+        /// example, if a role with the name <code>bar</code> has a path of <code>/foo/</code>,
+        /// specify <code>/foo/bar</code> as the role name. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly
         /// names and paths</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  <note> 
@@ -205,8 +276,22 @@ namespace Amazon.Batch.Model
         /// If the state is <code>DISABLED</code>, then the Batch scheduler doesn't attempt to
         /// place jobs within the environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code>
         /// state continue to progress normally. Managed compute environments in the <code>DISABLED</code>
-        /// state don't scale out. However, they scale in to <code>minvCpus</code> value after
-        /// instances become idle.
+        /// state don't scale out. 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Compute environments in a <code>DISABLED</code> state may continue to incur billing
+        /// charges. To prevent additional charges, turn off and then delete the compute environment.
+        /// For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environment_parameters.html#compute_environment_state">State</a>
+        /// in the <i>Batch User Guide</i>.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// When an instance is idle, the instance scales down to the <code>minvCpus</code> value.
+        /// However, the instance size doesn't change. For example, consider a <code>c5.8xlarge</code>
+        /// instance with a <code>minvCpus</code> value of <code>4</code> and a <code>desiredvCpus</code>
+        /// value of <code>36</code>. This instance doesn't scale down to a <code>c5.large</code>
+        /// instance.
         /// </para>
         /// </summary>
         public CEState State
@@ -279,7 +364,7 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// This parameter is only supported when the <code>type</code> parameter is set to <code>UNMANAGED</code>/
+        /// This parameter is only supported when the <code>type</code> parameter is set to <code>UNMANAGED</code>.
         /// </para>
         ///  </note>
         /// </summary>

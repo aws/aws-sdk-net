@@ -60,8 +60,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property Limit. 
         /// <para>
-        /// The maximum number of items returned. If you don't specify a value, the default is
-        /// up to 50 items.
+        /// The maximum number of items returned. If you don't specify a value, the default maximum
+        /// value of 50 items is used.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

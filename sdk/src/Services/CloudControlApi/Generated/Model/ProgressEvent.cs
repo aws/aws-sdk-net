@@ -139,7 +139,7 @@ namespace Amazon.CloudControlApi.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>PENDING</code>: The resource operation has not yet started.
+        ///  <code>PENDING</code>: The resource operation hasn't yet started.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -208,7 +208,7 @@ namespace Amazon.CloudControlApi.Model
         /// and its current value.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=16384)]
+        [AWSProperty(Sensitive=true, Min=1, Max=65536)]
         public string ResourceModel
         {
             get { return this._resourceModel; }
@@ -245,7 +245,7 @@ namespace Amazon.CloudControlApi.Model
         /// Any message explaining the current status.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string StatusMessage
         {
             get { return this._statusMessage; }

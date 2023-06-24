@@ -56,7 +56,7 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CustomerProfiles");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-08-15";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-08-15";
             request.HttpMethod = "POST";
 
             if (!publicRequest.IsSetDomainName())
@@ -158,6 +158,12 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Gender);
                 }
 
+                if(publicRequest.IsSetGenderString())
+                {
+                    context.Writer.WritePropertyName("GenderString");
+                    context.Writer.Write(publicRequest.GenderString);
+                }
+
                 if(publicRequest.IsSetHomePhoneNumber())
                 {
                     context.Writer.WritePropertyName("HomePhoneNumber");
@@ -199,6 +205,12 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.PartyType);
                 }
 
+                if(publicRequest.IsSetPartyTypeString())
+                {
+                    context.Writer.WritePropertyName("PartyTypeString");
+                    context.Writer.Write(publicRequest.PartyTypeString);
+                }
+
                 if(publicRequest.IsSetPersonalEmailAddress())
                 {
                     context.Writer.WritePropertyName("PersonalEmailAddress");
@@ -222,7 +234,6 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

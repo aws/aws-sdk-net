@@ -36,6 +36,7 @@ namespace Amazon.EC2.Model
     public partial class DisableTransitGatewayRouteTablePropagationRequest : AmazonEC2Request
     {
         private string _transitGatewayAttachmentId;
+        private string _transitGatewayRouteTableAnnouncementId;
         private string _transitGatewayRouteTableId;
 
         /// <summary>
@@ -44,7 +45,6 @@ namespace Amazon.EC2.Model
         /// The ID of the attachment.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string TransitGatewayAttachmentId
         {
             get { return this._transitGatewayAttachmentId; }
@@ -55,6 +55,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetTransitGatewayAttachmentId()
         {
             return this._transitGatewayAttachmentId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TransitGatewayRouteTableAnnouncementId. 
+        /// <para>
+        /// The ID of the route table announcement.
+        /// </para>
+        /// </summary>
+        public string TransitGatewayRouteTableAnnouncementId
+        {
+            get { return this._transitGatewayRouteTableAnnouncementId; }
+            set { this._transitGatewayRouteTableAnnouncementId = value; }
+        }
+
+        // Check to see if TransitGatewayRouteTableAnnouncementId property is set
+        internal bool IsSetTransitGatewayRouteTableAnnouncementId()
+        {
+            return this._transitGatewayRouteTableAnnouncementId != null;
         }
 
         /// <summary>

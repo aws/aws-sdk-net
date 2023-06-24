@@ -41,11 +41,11 @@ namespace Amazon.CodeDeploy.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <b>EC2/On-premises</b>: Information about EC2 instance targets. 
+    ///  <b>EC2/On-premises</b>: Information about Amazon EC2 instance targets. 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <b>AWS Lambda</b>: Information about Lambda functions targets. 
+    ///  <b>Lambda</b>: Information about Lambda functions targets. 
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -91,13 +91,13 @@ namespace Amazon.CodeDeploy.Model
         ///  <ul> <li> 
         /// <para>
         ///  For deployments that use the EC2/On-premises compute platform, the target IDs are
-        /// EC2 or on-premises instances IDs, and their target type is <code>instanceTarget</code>.
+        /// Amazon EC2 or on-premises instances IDs, and their target type is <code>instanceTarget</code>.
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  For deployments that use the AWS Lambda compute platform, the target IDs are the
-        /// names of Lambda functions, and their target type is <code>instanceTarget</code>. 
+        ///  For deployments that use the Lambda compute platform, the target IDs are the names
+        /// of Lambda functions, and their target type is <code>instanceTarget</code>. 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -107,7 +107,7 @@ namespace Amazon.CodeDeploy.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  For deployments that are deployed with AWS CloudFormation, the target IDs are CloudFormation
+        ///  For deployments that are deployed with CloudFormation, the target IDs are CloudFormation
         /// stack IDs. Their target type is <code>cloudFormationTarget</code>. 
         /// </para>
         ///  </li> </ul>

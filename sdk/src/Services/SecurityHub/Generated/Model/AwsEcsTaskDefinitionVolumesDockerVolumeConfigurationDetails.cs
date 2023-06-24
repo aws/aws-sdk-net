@@ -117,6 +117,7 @@ namespace Amazon.SecurityHub.Model
         /// The scope for the Docker volume that determines its lifecycle. Docker volumes that
         /// are scoped to a task are provisioned automatically when the task starts and destroyed
         /// when the task stops. Docker volumes that are shared persist after the task stops.
+        /// Valid values are <code>shared</code> or <code>task</code>.
         /// </para>
         /// </summary>
         public string Scope

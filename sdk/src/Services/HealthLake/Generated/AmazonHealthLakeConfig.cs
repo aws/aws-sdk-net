@@ -17,22 +17,22 @@
  * Do not modify this file. This file is generated from the healthlake-2017-07-01.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
-
+using Amazon.HealthLake.Internal;
 
 namespace Amazon.HealthLake
 {
     /// <summary>
     /// Configuration for accessing Amazon HealthLake service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonHealthLakeConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.1.63");
+            InternalSDKUtils.BuildUserAgentString("3.7.101.10");
 
         private string _userAgent = UserAgentString;
 
@@ -40,8 +40,10 @@ namespace Amazon.HealthLake
         /// Default constructor
         /// </summary>
         public AmazonHealthLakeConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonHealthLakeDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "healthlake";
+            this.EndpointProvider = new AmazonHealthLakeEndpointProvider();
         }
 
         /// <summary>
@@ -76,5 +78,6 @@ namespace Amazon.HealthLake
                 return _userAgent;
             }
         }
+
     }
 }

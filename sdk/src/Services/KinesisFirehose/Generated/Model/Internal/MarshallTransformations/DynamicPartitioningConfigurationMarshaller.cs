@@ -34,7 +34,7 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DynamicPartitioningConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class DynamicPartitioningConfigurationMarshaller : IRequestMarshaller<DynamicPartitioningConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DynamicPartitioningConfigurationMarshaller Instance = new DynamicPartitioningConfigurationMarshaller();
 
     }

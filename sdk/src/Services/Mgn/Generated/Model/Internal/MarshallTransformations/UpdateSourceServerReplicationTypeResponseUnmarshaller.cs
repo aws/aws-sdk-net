@@ -51,6 +51,12 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("applicationID", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ApplicationID = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("arn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -61,6 +67,12 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = DataReplicationInfoUnmarshaller.Instance;
                     response.DataReplicationInfo = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("fqdnForActionFramework", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.FqdnForActionFramework = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("isArchived", targetDepth))
@@ -103,6 +115,12 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     response.Tags = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("userProvidedID", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.UserProvidedID = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("vcenterClientID", targetDepth))

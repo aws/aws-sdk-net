@@ -30,39 +30,33 @@ namespace Amazon.ECS.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateService operation.
-    /// <important> 
-    /// <para>
-    /// Updating the task placement strategies and constraints on an Amazon ECS service remains
-    /// in preview and is a Beta Service as defined by and subject to the Beta Service Participation
-    /// Service Terms located at <a href="https://aws.amazon.com/service-terms">https://aws.amazon.com/service-terms</a>
-    /// ("Beta Terms"). These Beta Terms apply to your participation in this preview.
-    /// </para>
-    ///  </important> 
-    /// <para>
     /// Modifies the parameters of a service.
-    /// </para>
+    /// 
     ///  
     /// <para>
-    /// For services using the rolling update (<code>ECS</code>) deployment controller, the
-    /// desired count, deployment configuration, network configuration, task placement constraints
-    /// and strategies, or task definition used can be updated.
+    /// For services using the rolling update (<code>ECS</code>) you can update the desired
+    /// count, deployment configuration, network configuration, load balancers, service registries,
+    /// enable ECS managed tags option, propagate tags option, task placement constraints
+    /// and strategies, and task definition. When you update any of these parameters, Amazon
+    /// ECS starts new tasks with the new configuration. 
     /// </para>
     ///  
     /// <para>
     /// For services using the blue/green (<code>CODE_DEPLOY</code>) deployment controller,
-    /// only the desired count, deployment configuration, task placement constraints and strategies,
-    /// and health check grace period can be updated using this API. If the network configuration,
-    /// platform version, or task definition need to be updated, a new CodeDeploy deployment
-    /// is created. For more information, see <a href="https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_CreateDeployment.html">CreateDeployment</a>
+    /// only the desired count, deployment configuration, health check grace period, task
+    /// placement constraints and strategies, enable ECS managed tags option, and propagate
+    /// tags can be updated using this API. If the network configuration, platform version,
+    /// task definition, or load balancer need to be updated, create a new CodeDeploy deployment.
+    /// For more information, see <a href="https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_CreateDeployment.html">CreateDeployment</a>
     /// in the <i>CodeDeploy API Reference</i>.
     /// </para>
     ///  
     /// <para>
     /// For services using an external deployment controller, you can update only the desired
-    /// count, task placement constraints and strategies, and health check grace period using
-    /// this API. If the launch type, load balancer, network configuration, platform version,
-    /// or task definition need to be updated, create a new task set. For more information,
-    /// see <a>CreateTaskSet</a>.
+    /// count, task placement constraints and strategies, health check grace period, enable
+    /// ECS managed tags option, and propagate tags option, using this API. If the launch
+    /// type, load balancer, network configuration, platform version, or task definition need
+    /// to be updated, create a new task set For more information, see <a>CreateTaskSet</a>.
     /// </para>
     ///  
     /// <para>
@@ -99,8 +93,8 @@ namespace Amazon.ECS.Model
     /// tasks, a minimum of 50% allows the scheduler to stop two existing tasks before starting
     /// two new tasks. Tasks for services that don't use a load balancer are considered healthy
     /// if they're in the <code>RUNNING</code> state. Tasks for services that use a load balancer
-    /// are considered healthy if they're in the <code>RUNNING</code> state and the container
-    /// instance they're hosted on is reported as healthy by the load balancer.
+    /// are considered healthy if they're in the <code>RUNNING</code> state and are reported
+    /// as healthy by the load balancer.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -165,7 +159,24 @@ namespace Amazon.ECS.Model
     /// previous steps), favoring container instances with the largest number of running tasks
     /// for this service.
     /// </para>
-    ///  </li> </ul>
+    ///  </li> </ul> <note> 
+    /// <para>
+    /// You must have a service-linked role when you update any of the following service properties.
+    /// If you specified a custom role when you created the service, Amazon ECS automatically
+    /// replaces the <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_Service.html#ECS-Type-Service-roleArn">roleARN</a>
+    /// associated with the service with the ARN of your service-linked role. For more information,
+    /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Service-linked
+    /// roles</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <code>loadBalancers,</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>serviceRegistries</code> 
+    /// </para>
+    ///  </li> </ul> </note>
     /// </summary>
     public partial class UpdateServiceRequest : AmazonECSRequest
     {
@@ -173,14 +184,19 @@ namespace Amazon.ECS.Model
         private string _cluster;
         private DeploymentConfiguration _deploymentConfiguration;
         private int? _desiredCount;
+        private bool? _enableecsManagedTags;
         private bool? _enableExecuteCommand;
         private bool? _forceNewDeployment;
         private int? _healthCheckGracePeriodSeconds;
+        private List<LoadBalancer> _loadBalancers = new List<LoadBalancer>();
         private NetworkConfiguration _networkConfiguration;
         private List<PlacementConstraint> _placementConstraints = new List<PlacementConstraint>();
         private List<PlacementStrategy> _placementStrategy = new List<PlacementStrategy>();
         private string _platformVersion;
+        private PropagateTags _propagateTags;
         private string _service;
+        private ServiceConnectConfiguration _serviceConnectConfiguration;
+        private List<ServiceRegistry> _serviceRegistries = new List<ServiceRegistry>();
         private string _taskDefinition;
 
         /// <summary>
@@ -292,6 +308,33 @@ namespace Amazon.ECS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EnableECSManagedTags. 
+        /// <para>
+        /// Determines whether to turn on Amazon ECS managed tags for the tasks in the service.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging
+        /// Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service Developer
+        /// Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Only tasks launched after the update will reflect the update. To update the tags on
+        /// all tasks, set <code>forceNewDeployment</code> to <code>true</code>, so that Amazon
+        /// ECS starts new tasks with the updated tags.
+        /// </para>
+        /// </summary>
+        public bool EnableECSManagedTags
+        {
+            get { return this._enableecsManagedTags.GetValueOrDefault(); }
+            set { this._enableecsManagedTags = value; }
+        }
+
+        // Check to see if EnableECSManagedTags property is set
+        internal bool IsSetEnableECSManagedTags()
+        {
+            return this._enableecsManagedTags.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property EnableExecuteCommand. 
         /// <para>
         /// If <code>true</code>, this enables execute command functionality on all task containers.
@@ -359,6 +402,60 @@ namespace Amazon.ECS.Model
         internal bool IsSetHealthCheckGracePeriodSeconds()
         {
             return this._healthCheckGracePeriodSeconds.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LoadBalancers. 
+        /// <para>
+        /// A list of Elastic Load Balancing load balancer objects. It contains the load balancer
+        /// name, the container name, and the container port to access from the load balancer.
+        /// The container name is as it appears in a container definition.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you add, update, or remove a load balancer configuration, Amazon ECS starts new
+        /// tasks with the updated Elastic Load Balancing configuration, and then stops the old
+        /// tasks when the new tasks are running.
+        /// </para>
+        ///  
+        /// <para>
+        /// For services that use rolling updates, you can add, update, or remove Elastic Load
+        /// Balancing target groups. You can update from a single target group to multiple target
+        /// groups and from multiple target groups to a single target group.
+        /// </para>
+        ///  
+        /// <para>
+        /// For services that use blue/green deployments, you can update Elastic Load Balancing
+        /// target groups by using <code> <a href="https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_CreateDeployment.html">CreateDeployment</a>
+        /// </code> through CodeDeploy. Note that multiple target groups are not supported for
+        /// blue/green deployments. For more information see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/register-multiple-targetgroups.html">Register
+        /// multiple target groups with a service</a> in the <i>Amazon Elastic Container Service
+        /// Developer Guide</i>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For services that use the external deployment controller, you can add, update, or
+        /// remove load balancers by using <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateTaskSet.html">CreateTaskSet</a>.
+        /// Note that multiple target groups are not supported for external deployments. For more
+        /// information see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/register-multiple-targetgroups.html">Register
+        /// multiple target groups with a service</a> in the <i>Amazon Elastic Container Service
+        /// Developer Guide</i>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// You can remove existing <code>loadBalancers</code> by passing an empty list.
+        /// </para>
+        /// </summary>
+        public List<LoadBalancer> LoadBalancers
+        {
+            get { return this._loadBalancers; }
+            set { this._loadBalancers = value; }
+        }
+
+        // Check to see if LoadBalancers property is set
+        internal bool IsSetLoadBalancers()
+        {
+            return this._loadBalancers != null && this._loadBalancers.Count > 0; 
         }
 
         /// <summary>
@@ -454,6 +551,31 @@ namespace Amazon.ECS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PropagateTags. 
+        /// <para>
+        /// Determines whether to propagate the tags from the task definition or the service to
+        /// the task. If no value is specified, the tags aren't propagated.
+        /// </para>
+        ///  
+        /// <para>
+        /// Only tasks launched after the update will reflect the update. To update the tags on
+        /// all tasks, set <code>forceNewDeployment</code> to <code>true</code>, so that Amazon
+        /// ECS starts new tasks with the updated tags.
+        /// </para>
+        /// </summary>
+        public PropagateTags PropagateTags
+        {
+            get { return this._propagateTags; }
+            set { this._propagateTags = value; }
+        }
+
+        // Check to see if PropagateTags property is set
+        internal bool IsSetPropagateTags()
+        {
+            return this._propagateTags != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Service. 
         /// <para>
         /// The name of the service to update.
@@ -470,6 +592,64 @@ namespace Amazon.ECS.Model
         internal bool IsSetService()
         {
             return this._service != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServiceConnectConfiguration. 
+        /// <para>
+        /// The configuration for this service to discover and connect to services, and be discovered
+        /// by, and connected from, other services within a namespace.
+        /// </para>
+        ///  
+        /// <para>
+        /// Tasks that run in a namespace can use short names to connect to services in the namespace.
+        /// Tasks can connect to services across all of the clusters in the namespace. Tasks connect
+        /// through a managed proxy container that collects logs and metrics for increased visibility.
+        /// Only the tasks that Amazon ECS services create are supported with Service Connect.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service
+        /// Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        public ServiceConnectConfiguration ServiceConnectConfiguration
+        {
+            get { return this._serviceConnectConfiguration; }
+            set { this._serviceConnectConfiguration = value; }
+        }
+
+        // Check to see if ServiceConnectConfiguration property is set
+        internal bool IsSetServiceConnectConfiguration()
+        {
+            return this._serviceConnectConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServiceRegistries. 
+        /// <para>
+        /// The details for the service discovery registries to assign to this service. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
+        /// Discovery</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you add, update, or remove the service registries configuration, Amazon ECS starts
+        /// new tasks with the updated service registries configuration, and then stops the old
+        /// tasks when the new tasks are running.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can remove existing <code>serviceRegistries</code> by passing an empty list.
+        /// </para>
+        /// </summary>
+        public List<ServiceRegistry> ServiceRegistries
+        {
+            get { return this._serviceRegistries; }
+            set { this._serviceRegistries = value; }
+        }
+
+        // Check to see if ServiceRegistries property is set
+        internal bool IsSetServiceRegistries()
+        {
+            return this._serviceRegistries != null && this._serviceRegistries.Count > 0; 
         }
 
         /// <summary>

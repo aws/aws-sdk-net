@@ -39,6 +39,7 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
         private int? _servers;
         private DateTime? _startTime;
         private AssessmentStatus _status;
+        private string _statusMessage;
         private int? _success;
 
         /// <summary>
@@ -147,6 +148,25 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StatusMessage. 
+        /// <para>
+        /// The status message of the assessment.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=512)]
+        public string StatusMessage
+        {
+            get { return this._statusMessage; }
+            set { this._statusMessage = value; }
+        }
+
+        // Check to see if StatusMessage property is set
+        internal bool IsSetStatusMessage()
+        {
+            return this._statusMessage != null;
         }
 
         /// <summary>

@@ -29,8 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ManagedBlockchain.Model
 {
     /// <summary>
-    /// An action to invite a specific AWS account to create a member and join the network.
-    /// The <code>InviteAction</code> is carried out when a <code>Proposal</code> is <code>APPROVED</code>.
+    /// An action to invite a specific Amazon Web Services account to create a member and
+    /// join the network. The <code>InviteAction</code> is carried out when a <code>Proposal</code>
+    /// is <code>APPROVED</code>.
     /// 
     ///  
     /// <para>
@@ -44,7 +45,7 @@ namespace Amazon.ManagedBlockchain.Model
         /// <summary>
         /// Gets and sets the property Principal. 
         /// <para>
-        /// The AWS account ID to invite.
+        /// The Amazon Web Services account ID to invite.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

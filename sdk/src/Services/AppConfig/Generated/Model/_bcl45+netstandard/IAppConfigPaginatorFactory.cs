@@ -51,6 +51,16 @@ namespace Amazon.AppConfig.Model
         IListEnvironmentsPaginator ListEnvironments(ListEnvironmentsRequest request);
 
         /// <summary>
+        /// Paginator for ListExtensionAssociations operation
+        ///</summary>
+        IListExtensionAssociationsPaginator ListExtensionAssociations(ListExtensionAssociationsRequest request);
+
+        /// <summary>
+        /// Paginator for ListExtensions operation
+        ///</summary>
+        IListExtensionsPaginator ListExtensions(ListExtensionsRequest request);
+
+        /// <summary>
         /// Paginator for ListHostedConfigurationVersions operation
         ///</summary>
         IListHostedConfigurationVersionsPaginator ListHostedConfigurationVersions(ListHostedConfigurationVersionsRequest request);

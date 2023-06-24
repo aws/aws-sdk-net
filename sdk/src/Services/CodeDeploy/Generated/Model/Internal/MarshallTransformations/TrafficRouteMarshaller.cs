@@ -34,7 +34,7 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// TrafficRoute Marshaller
-    /// </summary>       
+    /// </summary>
     public class TrafficRouteMarshaller : IRequestMarshaller<TrafficRoute, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static TrafficRouteMarshaller Instance = new TrafficRouteMarshaller();
 
     }

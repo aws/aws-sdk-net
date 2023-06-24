@@ -50,7 +50,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property AttributeName. 
         /// <para>
-        /// The name of the attribute you want to update. Valid values are below.
+        /// The name of the attribute you want to update.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -71,6 +71,49 @@ namespace Amazon.Lightsail.Model
         /// <para>
         /// The value that you want to specify for the attribute name.
         /// </para>
+        ///  
+        /// <para>
+        /// The following values are supported depending on what you specify for the <code>attributeName</code>
+        /// request parameter:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If you specify <code>HealthCheckPath</code> for the <code>attributeName</code> request
+        /// parameter, then the <code>attributeValue</code> request parameter must be the path
+        /// to ping on the target (for example, <code>/weather/us/wa/seattle</code>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you specify <code>SessionStickinessEnabled</code> for the <code>attributeName</code>
+        /// request parameter, then the <code>attributeValue</code> request parameter must be
+        /// <code>true</code> to activate session stickiness or <code>false</code> to deactivate
+        /// session stickiness.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you specify <code>SessionStickiness_LB_CookieDurationSeconds</code> for the <code>attributeName</code>
+        /// request parameter, then the <code>attributeValue</code> request parameter must be
+        /// an interger that represents the cookie duration in seconds.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you specify <code>HttpsRedirectionEnabled</code> for the <code>attributeName</code>
+        /// request parameter, then the <code>attributeValue</code> request parameter must be
+        /// <code>true</code> to activate HTTP to HTTPS redirection or <code>false</code> to deactivate
+        /// HTTP to HTTPS redirection.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you specify <code>TlsPolicyName</code> for the <code>attributeName</code> request
+        /// parameter, then the <code>attributeValue</code> request parameter must be the name
+        /// of the TLS policy.
+        /// </para>
+        ///  
+        /// <para>
+        /// Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetLoadBalancerTlsPolicies.html">GetLoadBalancerTlsPolicies</a>
+        /// action to get a list of TLS policy names that you can specify.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
         public string AttributeValue

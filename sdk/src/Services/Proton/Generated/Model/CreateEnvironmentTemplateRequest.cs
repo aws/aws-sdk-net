@@ -30,8 +30,8 @@ namespace Amazon.Proton.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateEnvironmentTemplate operation.
-    /// Create an environment template for Proton. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-templates.html">Environment
-    /// Templates</a> in the <i>Proton Administrator Guide</i>.
+    /// Create an environment template for Proton. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-templates.html">Environment
+    /// Templates</a> in the <i>Proton User Guide</i>.
     /// 
     ///  
     /// <para>
@@ -49,8 +49,8 @@ namespace Amazon.Proton.Model
     /// manage your existing provisioned infrastructure. To create an environment template
     /// for customer provisioned and managed infrastructure, include the <code>provisioning</code>
     /// parameter and set the value to <code>CUSTOMER_MANAGED</code>. For more information,
-    /// see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/template-create.html">Register
-    /// and publish an environment template</a> in the <i>Proton Administrator Guide</i>.
+    /// see <a href="https://docs.aws.amazon.com/proton/latest/userguide/template-create.html">Register
+    /// and publish an environment template</a> in the <i>Proton User Guide</i>.
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -69,7 +69,7 @@ namespace Amazon.Proton.Model
         /// A description of the environment template.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=500)]
+        [AWSProperty(Sensitive=true, Min=0, Max=500)]
         public string Description
         {
             get { return this._description; }
@@ -88,7 +88,7 @@ namespace Amazon.Proton.Model
         /// The environment template name as displayed in the developer interface.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
+        [AWSProperty(Sensitive=true, Min=1, Max=100)]
         public string DisplayName
         {
             get { return this._displayName; }
@@ -161,10 +161,13 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Create tags for your environment template. For more information, see <i>Proton resources
-        /// and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
-        /// Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
-        /// User Guide</a>.
+        /// An optional list of metadata items that you can associate with the Proton environment
+        /// template. A tag is a key-value pair.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
+        /// resources and tagging</a> in the <i>Proton User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]

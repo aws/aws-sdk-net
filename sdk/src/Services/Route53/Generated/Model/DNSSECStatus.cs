@@ -60,8 +60,8 @@ namespace Amazon.Route53.Model
         ///  </dd> <dt>ACTION_NEEDED</dt> <dd> 
         /// <para>
         /// There is a problem with signing in the hosted zone that requires you to take action
-        /// to resolve. For example, the customer managed customer master key (CMK) might have
-        /// been deleted, or the permissions for the customer managed CMK might have been changed.
+        /// to resolve. For example, the customer managed key might have been deleted, or the
+        /// permissions for the customer managed key might have been changed.
         /// </para>
         ///  </dd> <dt>INTERNAL_FAILURE</dt> <dd> 
         /// <para>

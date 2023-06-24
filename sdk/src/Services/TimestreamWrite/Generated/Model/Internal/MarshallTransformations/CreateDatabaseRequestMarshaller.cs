@@ -58,7 +58,7 @@ namespace Amazon.TimestreamWrite.Model.Internal.MarshallTransformations
             string target = "Timestream_20181101.CreateDatabase";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.0";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-11-01";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-11-01";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -95,7 +95,6 @@ namespace Amazon.TimestreamWrite.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

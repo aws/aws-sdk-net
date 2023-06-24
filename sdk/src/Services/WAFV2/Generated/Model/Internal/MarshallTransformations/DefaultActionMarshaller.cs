@@ -34,7 +34,7 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DefaultAction Marshaller
-    /// </summary>       
+    /// </summary>
     public class DefaultActionMarshaller : IRequestMarshaller<DefaultAction, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DefaultActionMarshaller Instance = new DefaultActionMarshaller();
 
     }

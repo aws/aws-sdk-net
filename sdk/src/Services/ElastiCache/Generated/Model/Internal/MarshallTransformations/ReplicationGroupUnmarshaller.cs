@@ -84,6 +84,12 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                         unmarshalledObject.AutomaticFailover = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("AutoMinorVersionUpgrade", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.AutoMinorVersionUpgrade = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("CacheNodeType", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -94,6 +100,12 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = BoolUnmarshaller.Instance;
                         unmarshalledObject.ClusterEnabled = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ClusterMode", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ClusterMode = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("ConfigurationEndpoint", targetDepth))
@@ -118,6 +130,12 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = GlobalReplicationGroupInfoUnmarshaller.Instance;
                         unmarshalledObject.GlobalReplicationGroupInfo = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("IpDiscovery", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.IpDiscovery = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("KmsKeyId", targetDepth))
@@ -151,6 +169,12 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.MultiAZ = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("NetworkType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.NetworkType = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("NodeGroups/NodeGroup", targetDepth))
@@ -206,6 +230,12 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = BoolUnmarshaller.Instance;
                         unmarshalledObject.TransitEncryptionEnabled = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("TransitEncryptionMode", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.TransitEncryptionMode = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("UserGroupIds/member", targetDepth))

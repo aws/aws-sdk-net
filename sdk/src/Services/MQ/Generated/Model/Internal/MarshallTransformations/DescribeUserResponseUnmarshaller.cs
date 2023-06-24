@@ -75,6 +75,12 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
                     response.Pending = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("replicationUser", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    response.ReplicationUser = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("username", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

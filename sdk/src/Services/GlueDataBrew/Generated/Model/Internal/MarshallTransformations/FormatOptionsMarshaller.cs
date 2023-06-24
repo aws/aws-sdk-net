@@ -34,7 +34,7 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// FormatOptions Marshaller
-    /// </summary>       
+    /// </summary>
     public class FormatOptionsMarshaller : IRequestMarshaller<FormatOptions, JsonMarshallerContext> 
     {
         /// <summary>
@@ -82,7 +82,7 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static FormatOptionsMarshaller Instance = new FormatOptionsMarshaller();
 
     }

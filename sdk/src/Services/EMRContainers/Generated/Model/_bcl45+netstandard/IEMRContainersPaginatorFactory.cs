@@ -31,6 +31,11 @@ namespace Amazon.EMRContainers.Model
         IListJobRunsPaginator ListJobRuns(ListJobRunsRequest request);
 
         /// <summary>
+        /// Paginator for ListJobTemplates operation
+        ///</summary>
+        IListJobTemplatesPaginator ListJobTemplates(ListJobTemplatesRequest request);
+
+        /// <summary>
         /// Paginator for ListManagedEndpoints operation
         ///</summary>
         IListManagedEndpointsPaginator ListManagedEndpoints(ListManagedEndpointsRequest request);

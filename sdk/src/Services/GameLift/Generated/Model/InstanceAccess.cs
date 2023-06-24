@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GameLift.Model
 {
     /// <summary>
-    /// Information required to remotely connect to a fleet instance. Access is requested
-    /// by calling <a>GetInstanceAccess</a>.
+    /// Information required to remotely connect to a fleet instance.
     /// </summary>
     public partial class InstanceAccess
     {
@@ -46,6 +45,7 @@ namespace Amazon.GameLift.Model
         /// Credentials required to access the instance.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public InstanceCredentials Credentials
         {
             get { return this._credentials; }

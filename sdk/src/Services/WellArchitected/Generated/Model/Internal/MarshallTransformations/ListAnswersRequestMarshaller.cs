@@ -55,7 +55,7 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
         public IRequest Marshall(ListAnswersRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.WellArchitected");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-03-31";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-03-31";
             request.HttpMethod = "GET";
 
             if (!publicRequest.IsSetLensAlias())
@@ -76,6 +76,9 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetPillarId())
                 request.Parameters.Add("PillarId", StringUtils.FromString(publicRequest.PillarId));
+            
+            if (publicRequest.IsSetQuestionPriority())
+                request.Parameters.Add("QuestionPriority", StringUtils.FromString(publicRequest.QuestionPriority));
             request.ResourcePath = "/workloads/{WorkloadId}/lensReviews/{LensAlias}/answers";
             request.UseQueryString = true;
 

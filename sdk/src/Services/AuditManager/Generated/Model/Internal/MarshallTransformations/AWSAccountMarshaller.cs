@@ -34,7 +34,7 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AWSAccount Marshaller
-    /// </summary>       
+    /// </summary>
     public class AWSAccountMarshaller : IRequestMarshaller<AWSAccount, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AWSAccountMarshaller Instance = new AWSAccountMarshaller();
 
     }

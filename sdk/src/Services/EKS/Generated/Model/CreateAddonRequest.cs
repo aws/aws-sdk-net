@@ -35,10 +35,7 @@ namespace Amazon.EKS.Model
     ///  
     /// <para>
     /// Amazon EKS add-ons help to automate the provisioning and lifecycle management of common
-    /// operational software for Amazon EKS clusters. Amazon EKS add-ons require clusters
-    /// running version 1.18 or later because Amazon EKS add-ons rely on the Server-side Apply
-    /// Kubernetes feature, which is only available in Kubernetes 1.18 and later. For more
-    /// information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-add-ons.html">Amazon
+    /// operational software for Amazon EKS clusters. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-add-ons.html">Amazon
     /// EKS add-ons</a> in the <i>Amazon EKS User Guide</i>.
     /// </para>
     /// </summary>
@@ -48,6 +45,7 @@ namespace Amazon.EKS.Model
         private string _addonVersion;
         private string _clientRequestToken;
         private string _clusterName;
+        private string _configurationValues;
         private ResolveConflicts _resolveConflicts;
         private string _serviceAccountRoleArn;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
@@ -55,8 +53,8 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property AddonName. 
         /// <para>
-        /// The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html">
-        /// <code>DescribeAddonVersions</code> </a>.
+        /// The name of the add-on. The name must match one of the names that <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html">
+        /// <code>DescribeAddonVersions</code> </a> returns.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -131,10 +129,52 @@ namespace Amazon.EKS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ConfigurationValues. 
+        /// <para>
+        /// The set of configuration values for the add-on that's created. The values that you
+        /// provide are validated against the schema in <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonConfiguration.html">
+        /// <code>DescribeAddonConfiguration</code> </a>.
+        /// </para>
+        /// </summary>
+        public string ConfigurationValues
+        {
+            get { return this._configurationValues; }
+            set { this._configurationValues = value; }
+        }
+
+        // Check to see if ConfigurationValues property is set
+        internal bool IsSetConfigurationValues()
+        {
+            return this._configurationValues != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ResolveConflicts. 
         /// <para>
-        /// How to resolve parameter value conflicts when migrating an existing add-on to an Amazon
-        /// EKS add-on.
+        /// How to resolve field value conflicts for an Amazon EKS add-on. Conflicts are handled
+        /// based on the value you choose:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>None</b> – If the self-managed version of the add-on is installed on your cluster,
+        /// Amazon EKS doesn't change the value. Creation of the add-on might fail.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Overwrite</b> – If the self-managed version of the add-on is installed on your
+        /// cluster and the Amazon EKS default value is different than the existing value, Amazon
+        /// EKS changes the value to the Amazon EKS default value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Preserve</b> – Not supported. You can set this value when updating an add-on though.
+        /// For more information, see <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_UpdateAddon.html">UpdateAddon</a>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// If you don't currently have the self-managed version of the add-on installed on your
+        /// cluster, the Amazon EKS add-on is installed. Amazon EKS sets all values to default
+        /// values, regardless of the option that you specify.
         /// </para>
         /// </summary>
         public ResolveConflicts ResolveConflicts

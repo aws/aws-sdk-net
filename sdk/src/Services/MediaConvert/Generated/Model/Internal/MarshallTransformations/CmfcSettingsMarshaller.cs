@@ -34,7 +34,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CmfcSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class CmfcSettingsMarshaller : IRequestMarshaller<CmfcSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -81,6 +81,18 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.IFrameOnlyManifest);
             }
 
+            if(requestObject.IsSetKlvMetadata())
+            {
+                context.Writer.WritePropertyName("klvMetadata");
+                context.Writer.Write(requestObject.KlvMetadata);
+            }
+
+            if(requestObject.IsSetManifestMetadataSignaling())
+            {
+                context.Writer.WritePropertyName("manifestMetadataSignaling");
+                context.Writer.Write(requestObject.ManifestMetadataSignaling);
+            }
+
             if(requestObject.IsSetScte35Esam())
             {
                 context.Writer.WritePropertyName("scte35Esam");
@@ -93,11 +105,35 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Scte35Source);
             }
 
+            if(requestObject.IsSetTimedMetadata())
+            {
+                context.Writer.WritePropertyName("timedMetadata");
+                context.Writer.Write(requestObject.TimedMetadata);
+            }
+
+            if(requestObject.IsSetTimedMetadataBoxVersion())
+            {
+                context.Writer.WritePropertyName("timedMetadataBoxVersion");
+                context.Writer.Write(requestObject.TimedMetadataBoxVersion);
+            }
+
+            if(requestObject.IsSetTimedMetadataSchemeIdUri())
+            {
+                context.Writer.WritePropertyName("timedMetadataSchemeIdUri");
+                context.Writer.Write(requestObject.TimedMetadataSchemeIdUri);
+            }
+
+            if(requestObject.IsSetTimedMetadataValue())
+            {
+                context.Writer.WritePropertyName("timedMetadataValue");
+                context.Writer.Write(requestObject.TimedMetadataValue);
+            }
+
         }
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CmfcSettingsMarshaller Instance = new CmfcSettingsMarshaller();
 
     }

@@ -57,7 +57,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The identifier of the agent who accepted the contact.
+        /// The unique identifier for the queue.
         /// </para>
         /// </summary>
         public string Id

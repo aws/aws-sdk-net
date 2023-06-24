@@ -29,12 +29,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GameLift.Model
 {
     /// <summary>
-    /// <b>This data type is used with the GameLift FleetIQ and game server groups.</b> 
+    /// <b>This data type is used with the Amazon GameLift FleetIQ and game server groups.</b>
+    /// 
     /// 
     ///  
     /// <para>
     /// Properties that describe a game server group resource. A game server group manages
-    /// certain properties related to a corresponding EC2 Auto Scaling group. 
+    /// certain properties related to a corresponding Amazon EC2 Auto Scaling group. 
     /// </para>
     ///  
     /// <para>
@@ -42,17 +43,6 @@ namespace Amazon.GameLift.Model
     /// and deleted by calling <code>DeleteGameServerGroup</code>. Game server group activity
     /// can be temporarily suspended and resumed by calling <code>SuspendGameServerGroup</code>
     /// and <code>ResumeGameServerGroup</code>, respectively. 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <b>Related actions</b> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <a>CreateGameServerGroup</a> | <a>ListGameServerGroups</a> | <a>DescribeGameServerGroup</a>
-    /// | <a>UpdateGameServerGroup</a> | <a>DeleteGameServerGroup</a> | <a>ResumeGameServerGroup</a>
-    /// | <a>SuspendGameServerGroup</a> | <a>DescribeGameServerInstances</a> | <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/reference-awssdk-fleetiq.html">All
-    /// APIs by task</a> 
     /// </para>
     /// </summary>
     public partial class GameServerGroup
@@ -73,8 +63,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property AutoScalingGroupArn. 
         /// <para>
-        /// A generated unique ID for the EC2 Auto Scaling group that is associated with this
-        /// game server group.
+        /// A generated unique ID for the Amazon EC2 Auto Scaling group that is associated with
+        /// this game server group.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=256)]
@@ -93,8 +83,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property BalancingStrategy. 
         /// <para>
-        /// Indicates how GameLift FleetIQ balances the use of Spot Instances and On-Demand Instances
-        /// in the game server group. Method options include the following:
+        /// Indicates how Amazon GameLift FleetIQ balances the use of Spot Instances and On-Demand
+        /// Instances in the game server group. Method options include the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -174,7 +164,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property GameServerGroupName. 
         /// <para>
         /// A developer-defined identifier for the game server group. The name is unique for each
-        /// Region in each AWS account.
+        /// Region in each Amazon Web Services account.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -198,8 +188,8 @@ namespace Amazon.GameLift.Model
         /// be terminated during a scale-down event, causing players to be dropped from the game.
         /// Protected instances cannot be terminated while there are active game servers running
         /// except in the event of a forced game server group deletion (see ). An exception to
-        /// this is with Spot Instances, which can be terminated by AWS regardless of protection
-        /// status. 
+        /// this is with Spot Instances, which can be terminated by Amazon Web Services regardless
+        /// of protection status. 
         /// </para>
         /// </summary>
         public GameServerProtectionPolicy GameServerProtectionPolicy
@@ -217,8 +207,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property InstanceDefinitions. 
         /// <para>
-        /// The set of EC2 instance types that GameLift FleetIQ can use when balancing and automatically
-        /// scaling instances in the corresponding Auto Scaling group. 
+        /// The set of Amazon EC2 instance types that Amazon GameLift FleetIQ can use when balancing
+        /// and automatically scaling instances in the corresponding Auto Scaling group. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=20)]
@@ -256,7 +246,8 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property RoleArn. 
         /// <para>
         /// The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-        /// for an IAM role that allows Amazon GameLift to access your EC2 Auto Scaling groups.
+        /// for an IAM role that allows Amazon GameLift to access your Amazon EC2 Auto Scaling
+        /// groups.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -279,13 +270,14 @@ namespace Amazon.GameLift.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>NEW</code> - GameLift FleetIQ has validated the <code>CreateGameServerGroup()</code>
+        ///  <code>NEW</code> - Amazon GameLift FleetIQ has validated the <code>CreateGameServerGroup()</code>
         /// request. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ACTIVATING</code> - GameLift FleetIQ is setting up a game server group, which
-        /// includes creating an Auto Scaling group in your AWS account. 
+        ///  <code>ACTIVATING</code> - Amazon GameLift FleetIQ is setting up a game server group,
+        /// which includes creating an Auto Scaling group in your Amazon Web Services account.
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -298,9 +290,9 @@ namespace Amazon.GameLift.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DELETING</code> - GameLift FleetIQ has received a valid <code>DeleteGameServerGroup()</code>
-        /// request and is processing it. GameLift FleetIQ must first complete and release hosts
-        /// before it deletes the Auto Scaling group and the game server group. 
+        ///  <code>DELETING</code> - Amazon GameLift FleetIQ has received a valid <code>DeleteGameServerGroup()</code>
+        /// request and is processing it. Amazon GameLift FleetIQ must first complete and release
+        /// hosts before it deletes the Auto Scaling group and the game server group. 
         /// </para>
         ///  </li> <li> 
         /// <para>

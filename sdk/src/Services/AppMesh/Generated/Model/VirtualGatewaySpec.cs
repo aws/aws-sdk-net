@@ -62,7 +62,7 @@ namespace Amazon.AppMesh.Model
         /// You can specify one listener.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=1)]
+        [AWSProperty(Required=true)]
         public List<VirtualGatewayListener> Listeners
         {
             get { return this._listeners; }

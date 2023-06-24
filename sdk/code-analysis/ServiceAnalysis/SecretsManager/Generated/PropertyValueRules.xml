@@ -41,12 +41,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecretsManager.Model.CreateSecretRequest.SecretBinary</property>
-    <min>0</min>
+    <min>1</min>
     <max>65536</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecretsManager.Model.CreateSecretRequest.SecretString</property>
-    <min>0</min>
+    <min>1</min>
     <max>65536</max>
   </property-value-rule>
   <property-value-rule>
@@ -196,12 +196,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecretsManager.Model.GetSecretValueResponse.SecretBinary</property>
-    <min>0</min>
+    <min>1</min>
     <max>65536</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecretsManager.Model.GetSecretValueResponse.SecretString</property>
-    <min>0</min>
+    <min>1</min>
     <max>65536</max>
   </property-value-rule>
   <property-value-rule>
@@ -281,7 +281,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecretsManager.Model.PutSecretValueRequest.SecretBinary</property>
-    <min>0</min>
+    <min>1</min>
     <max>65536</max>
   </property-value-rule>
   <property-value-rule>
@@ -291,7 +291,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecretsManager.Model.PutSecretValueRequest.SecretString</property>
-    <min>0</min>
+    <min>1</min>
     <max>65536</max>
   </property-value-rule>
   <property-value-rule>
@@ -410,7 +410,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecretsManager.Model.UpdateSecretRequest.SecretBinary</property>
-    <min>0</min>
+    <min>1</min>
     <max>65536</max>
   </property-value-rule>
   <property-value-rule>
@@ -420,7 +420,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecretsManager.Model.UpdateSecretRequest.SecretString</property>
-    <min>0</min>
+    <min>1</min>
     <max>65536</max>
   </property-value-rule>
   <property-value-rule>
@@ -509,6 +509,18 @@
     <property>Amazon.SecretsManager.Model.RotationRulesType.AutomaticallyAfterDays</property>
     <min>1</min>
     <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecretsManager.Model.RotationRulesType.Duration</property>
+    <min>2</min>
+    <max>3</max>
+    <pattern>[0-9h]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecretsManager.Model.RotationRulesType.ScheduleExpression</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[0-9A-Za-z\(\)#\?\*\-\/, ]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecretsManager.Model.SecretListEntry.ARN</property>

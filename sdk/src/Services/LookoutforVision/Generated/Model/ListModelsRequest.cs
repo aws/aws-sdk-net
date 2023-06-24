@@ -34,6 +34,11 @@ namespace Amazon.LookoutforVision.Model
     /// 
     ///  
     /// <para>
+    /// The <code>ListModels</code> operation is eventually consistent. Recent calls to <code>CreateModel</code>
+    /// might take a while to appear in the response from <code>ListProjects</code>.
+    /// </para>
+    ///  
+    /// <para>
     /// This operation requires permissions to perform the <code>lookoutvision:ListModels</code>
     /// operation.
     /// </para>

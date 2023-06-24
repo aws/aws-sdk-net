@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Drs.Model
 {
     /// <summary>
-    /// TYou do not have sufficient access to perform this action.
+    /// You do not have sufficient access to perform this action.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

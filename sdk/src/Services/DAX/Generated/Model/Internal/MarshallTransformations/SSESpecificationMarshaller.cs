@@ -34,7 +34,7 @@ namespace Amazon.DAX.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SSESpecification Marshaller
-    /// </summary>       
+    /// </summary>
     public class SSESpecificationMarshaller : IRequestMarshaller<SSESpecification, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.DAX.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SSESpecificationMarshaller Instance = new SSESpecificationMarshaller();
 
     }

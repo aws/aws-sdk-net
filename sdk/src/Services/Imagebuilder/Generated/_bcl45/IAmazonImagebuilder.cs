@@ -71,7 +71,7 @@ namespace Amazon.Imagebuilder
         /// from a previous request that used the same client token.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have made a request for an action that is not supported by the service.
+        /// You have requested an action that that the service doesn't support.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceInUseException">
         /// The resource that you are trying to operate on is currently in use. Review the message
@@ -114,7 +114,7 @@ namespace Amazon.Imagebuilder
         /// from a previous request that used the same client token.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have made a request for an action that is not supported by the service.
+        /// You have requested an action that that the service doesn't support.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceInUseException">
         /// The resource that you are trying to operate on is currently in use. Review the message
@@ -136,7 +136,19 @@ namespace Amazon.Imagebuilder
 
         /// <summary>
         /// Creates a new component that can be used to build, validate, test, and assess your
-        /// image.
+        /// image. The component is based on a YAML document that you specify using exactly one
+        /// of the following methods:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Inline, using the <code>data</code> property in the request body.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A URL that points to a YAML document file stored in Amazon S3, using the <code>uri</code>
+        /// property in the request body.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateComponent service method.</param>
         /// 
@@ -161,7 +173,7 @@ namespace Amazon.Imagebuilder
         /// for details.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have made a request for an action that is not supported by the service.
+        /// You have requested an action that that the service doesn't support.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidVersionNumberException">
         /// Your version number is out of bounds or does not follow the required syntax.
@@ -188,7 +200,19 @@ namespace Amazon.Imagebuilder
 
         /// <summary>
         /// Creates a new component that can be used to build, validate, test, and assess your
-        /// image.
+        /// image. The component is based on a YAML document that you specify using exactly one
+        /// of the following methods:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Inline, using the <code>data</code> property in the request body.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A URL that points to a YAML document file stored in Amazon S3, using the <code>uri</code>
+        /// property in the request body.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateComponent service method.</param>
         /// <param name="cancellationToken">
@@ -216,7 +240,7 @@ namespace Amazon.Imagebuilder
         /// for details.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have made a request for an action that is not supported by the service.
+        /// You have requested an action that that the service doesn't support.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidVersionNumberException">
         /// Your version number is out of bounds or does not follow the required syntax.
@@ -267,7 +291,7 @@ namespace Amazon.Imagebuilder
         /// from a previous request that used the same client token.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have made a request for an action that is not supported by the service.
+        /// You have requested an action that that the service doesn't support.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidVersionNumberException">
         /// Your version number is out of bounds or does not follow the required syntax.
@@ -321,7 +345,7 @@ namespace Amazon.Imagebuilder
         /// from a previous request that used the same client token.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have made a request for an action that is not supported by the service.
+        /// You have requested an action that that the service doesn't support.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidVersionNumberException">
         /// Your version number is out of bounds or does not follow the required syntax.
@@ -379,7 +403,7 @@ namespace Amazon.Imagebuilder
         /// for details.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have made a request for an action that is not supported by the service.
+        /// You have requested an action that that the service doesn't support.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceAlreadyExistsException">
         /// The resource that you are trying to create already exists.
@@ -434,7 +458,7 @@ namespace Amazon.Imagebuilder
         /// for details.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have made a request for an action that is not supported by the service.
+        /// You have requested an action that that the service doesn't support.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceAlreadyExistsException">
         /// The resource that you are trying to create already exists.
@@ -486,7 +510,7 @@ namespace Amazon.Imagebuilder
         /// from a previous request that used the same client token.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have made a request for an action that is not supported by the service.
+        /// You have requested an action that that the service doesn't support.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceInUseException">
         /// The resource that you are trying to operate on is currently in use. Review the message
@@ -535,7 +559,7 @@ namespace Amazon.Imagebuilder
         /// from a previous request that used the same client token.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have made a request for an action that is not supported by the service.
+        /// You have requested an action that that the service doesn't support.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceInUseException">
         /// The resource that you are trying to operate on is currently in use. Review the message
@@ -583,7 +607,7 @@ namespace Amazon.Imagebuilder
         /// from a previous request that used the same client token.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have made a request for an action that is not supported by the service.
+        /// You have requested an action that that the service doesn't support.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceAlreadyExistsException">
         /// The resource that you are trying to create already exists.
@@ -634,7 +658,7 @@ namespace Amazon.Imagebuilder
         /// from a previous request that used the same client token.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have made a request for an action that is not supported by the service.
+        /// You have requested an action that that the service doesn't support.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceAlreadyExistsException">
         /// The resource that you are trying to create already exists.
@@ -685,7 +709,7 @@ namespace Amazon.Imagebuilder
         /// from a previous request that used the same client token.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have made a request for an action that is not supported by the service.
+        /// You have requested an action that that the service doesn't support.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidVersionNumberException">
         /// Your version number is out of bounds or does not follow the required syntax.
@@ -739,7 +763,7 @@ namespace Amazon.Imagebuilder
         /// from a previous request that used the same client token.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have made a request for an action that is not supported by the service.
+        /// You have requested an action that that the service doesn't support.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidVersionNumberException">
         /// Your version number is out of bounds or does not follow the required syntax.
@@ -793,7 +817,7 @@ namespace Amazon.Imagebuilder
         /// from a previous request that used the same client token.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have made a request for an action that is not supported by the service.
+        /// You have requested an action that that the service doesn't support.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceAlreadyExistsException">
         /// The resource that you are trying to create already exists.
@@ -844,7 +868,7 @@ namespace Amazon.Imagebuilder
         /// from a previous request that used the same client token.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have made a request for an action that is not supported by the service.
+        /// You have requested an action that that the service doesn't support.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceAlreadyExistsException">
         /// The resource that you are trying to create already exists.
@@ -890,7 +914,7 @@ namespace Amazon.Imagebuilder
         /// You are not authorized to perform the requested operation.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have made a request for an action that is not supported by the service.
+        /// You have requested an action that that the service doesn't support.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceDependencyException">
         /// You have attempted to mutate or delete a resource with a dependency that prohibits
@@ -928,7 +952,7 @@ namespace Amazon.Imagebuilder
         /// You are not authorized to perform the requested operation.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have made a request for an action that is not supported by the service.
+        /// You have requested an action that that the service doesn't support.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceDependencyException">
         /// You have attempted to mutate or delete a resource with a dependency that prohibits
@@ -966,7 +990,7 @@ namespace Amazon.Imagebuilder
         /// You are not authorized to perform the requested operation.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have made a request for an action that is not supported by the service.
+        /// You have requested an action that that the service doesn't support.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceDependencyException">
         /// You have attempted to mutate or delete a resource with a dependency that prohibits
@@ -1004,7 +1028,7 @@ namespace Amazon.Imagebuilder
         /// You are not authorized to perform the requested operation.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have made a request for an action that is not supported by the service.
+        /// You have requested an action that that the service doesn't support.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceDependencyException">
         /// You have attempted to mutate or delete a resource with a dependency that prohibits
@@ -1042,7 +1066,7 @@ namespace Amazon.Imagebuilder
         /// You are not authorized to perform the requested operation.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have made a request for an action that is not supported by the service.
+        /// You have requested an action that that the service doesn't support.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceDependencyException">
         /// You have attempted to mutate or delete a resource with a dependency that prohibits
@@ -1080,7 +1104,7 @@ namespace Amazon.Imagebuilder
         /// You are not authorized to perform the requested operation.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have made a request for an action that is not supported by the service.
+        /// You have requested an action that that the service doesn't support.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceDependencyException">
         /// You have attempted to mutate or delete a resource with a dependency that prohibits
@@ -1138,7 +1162,7 @@ namespace Amazon.Imagebuilder
         /// You are not authorized to perform the requested operation.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have made a request for an action that is not supported by the service.
+        /// You have requested an action that that the service doesn't support.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceDependencyException">
         /// You have attempted to mutate or delete a resource with a dependency that prohibits
@@ -1196,7 +1220,7 @@ namespace Amazon.Imagebuilder
         /// You are not authorized to perform the requested operation.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have made a request for an action that is not supported by the service.
+        /// You have requested an action that that the service doesn't support.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceDependencyException">
         /// You have attempted to mutate or delete a resource with a dependency that prohibits
@@ -1234,7 +1258,7 @@ namespace Amazon.Imagebuilder
         /// You are not authorized to perform the requested operation.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have made a request for an action that is not supported by the service.
+        /// You have requested an action that that the service doesn't support.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceDependencyException">
         /// You have attempted to mutate or delete a resource with a dependency that prohibits
@@ -1272,7 +1296,7 @@ namespace Amazon.Imagebuilder
         /// You are not authorized to perform the requested operation.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have made a request for an action that is not supported by the service.
+        /// You have requested an action that that the service doesn't support.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceDependencyException">
         /// You have attempted to mutate or delete a resource with a dependency that prohibits
@@ -1310,7 +1334,7 @@ namespace Amazon.Imagebuilder
         /// You are not authorized to perform the requested operation.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have made a request for an action that is not supported by the service.
+        /// You have requested an action that that the service doesn't support.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceDependencyException">
         /// You have attempted to mutate or delete a resource with a dependency that prohibits
@@ -1348,7 +1372,7 @@ namespace Amazon.Imagebuilder
         /// You are not authorized to perform the requested operation.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have made a request for an action that is not supported by the service.
+        /// You have requested an action that that the service doesn't support.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceDependencyException">
         /// You have attempted to mutate or delete a resource with a dependency that prohibits
@@ -1386,7 +1410,7 @@ namespace Amazon.Imagebuilder
         /// You are not authorized to perform the requested operation.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have made a request for an action that is not supported by the service.
+        /// You have requested an action that that the service doesn't support.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceDependencyException">
         /// You have attempted to mutate or delete a resource with a dependency that prohibits
@@ -1424,7 +1448,7 @@ namespace Amazon.Imagebuilder
         /// You are not authorized to perform the requested operation.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have made a request for an action that is not supported by the service.
+        /// You have requested an action that that the service doesn't support.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceDependencyException">
         /// You have attempted to mutate or delete a resource with a dependency that prohibits
@@ -1462,7 +1486,7 @@ namespace Amazon.Imagebuilder
         /// You are not authorized to perform the requested operation.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have made a request for an action that is not supported by the service.
+        /// You have requested an action that that the service doesn't support.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
         /// This exception is thrown when the service encounters an unrecoverable exception.
@@ -1496,7 +1520,7 @@ namespace Amazon.Imagebuilder
         /// You are not authorized to perform the requested operation.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have made a request for an action that is not supported by the service.
+        /// You have requested an action that that the service doesn't support.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
         /// This exception is thrown when the service encounters an unrecoverable exception.
@@ -1525,7 +1549,7 @@ namespace Amazon.Imagebuilder
         /// You are not authorized to perform the requested operation.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have made a request for an action that is not supported by the service.
+        /// You have requested an action that that the service doesn't support.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceNotFoundException">
         /// At least one of the resources referenced by your request does not exist.
@@ -1557,7 +1581,7 @@ namespace Amazon.Imagebuilder
         /// You are not authorized to perform the requested operation.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have made a request for an action that is not supported by the service.
+        /// You have requested an action that that the service doesn't support.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceNotFoundException">
         /// At least one of the resources referenced by your request does not exist.
@@ -1594,7 +1618,7 @@ namespace Amazon.Imagebuilder
         /// You are not authorized to perform the requested operation.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have made a request for an action that is not supported by the service.
+        /// You have requested an action that that the service doesn't support.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
         /// This exception is thrown when the service encounters an unrecoverable exception.
@@ -1628,7 +1652,7 @@ namespace Amazon.Imagebuilder
         /// You are not authorized to perform the requested operation.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have made a request for an action that is not supported by the service.
+        /// You have requested an action that that the service doesn't support.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
         /// This exception is thrown when the service encounters an unrecoverable exception.
@@ -1657,7 +1681,7 @@ namespace Amazon.Imagebuilder
         /// You are not authorized to perform the requested operation.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have made a request for an action that is not supported by the service.
+        /// You have requested an action that that the service doesn't support.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceNotFoundException">
         /// At least one of the resources referenced by your request does not exist.
@@ -1689,7 +1713,7 @@ namespace Amazon.Imagebuilder
         /// You are not authorized to perform the requested operation.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have made a request for an action that is not supported by the service.
+        /// You have requested an action that that the service doesn't support.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceNotFoundException">
         /// At least one of the resources referenced by your request does not exist.
@@ -1726,7 +1750,7 @@ namespace Amazon.Imagebuilder
         /// You are not authorized to perform the requested operation.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have made a request for an action that is not supported by the service.
+        /// You have requested an action that that the service doesn't support.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
         /// This exception is thrown when the service encounters an unrecoverable exception.
@@ -1760,7 +1784,7 @@ namespace Amazon.Imagebuilder
         /// You are not authorized to perform the requested operation.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have made a request for an action that is not supported by the service.
+        /// You have requested an action that that the service doesn't support.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
         /// This exception is thrown when the service encounters an unrecoverable exception.
@@ -1794,7 +1818,7 @@ namespace Amazon.Imagebuilder
         /// You are not authorized to perform the requested operation.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have made a request for an action that is not supported by the service.
+        /// You have requested an action that that the service doesn't support.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
         /// This exception is thrown when the service encounters an unrecoverable exception.
@@ -1828,7 +1852,7 @@ namespace Amazon.Imagebuilder
         /// You are not authorized to perform the requested operation.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have made a request for an action that is not supported by the service.
+        /// You have requested an action that that the service doesn't support.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
         /// This exception is thrown when the service encounters an unrecoverable exception.
@@ -1862,7 +1886,7 @@ namespace Amazon.Imagebuilder
         /// You are not authorized to perform the requested operation.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have made a request for an action that is not supported by the service.
+        /// You have requested an action that that the service doesn't support.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
         /// This exception is thrown when the service encounters an unrecoverable exception.
@@ -1896,7 +1920,7 @@ namespace Amazon.Imagebuilder
         /// You are not authorized to perform the requested operation.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have made a request for an action that is not supported by the service.
+        /// You have requested an action that that the service doesn't support.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
         /// This exception is thrown when the service encounters an unrecoverable exception.
@@ -1925,7 +1949,7 @@ namespace Amazon.Imagebuilder
         /// You are not authorized to perform the requested operation.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have made a request for an action that is not supported by the service.
+        /// You have requested an action that that the service doesn't support.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceNotFoundException">
         /// At least one of the resources referenced by your request does not exist.
@@ -1957,7 +1981,7 @@ namespace Amazon.Imagebuilder
         /// You are not authorized to perform the requested operation.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have made a request for an action that is not supported by the service.
+        /// You have requested an action that that the service doesn't support.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceNotFoundException">
         /// At least one of the resources referenced by your request does not exist.
@@ -1994,7 +2018,7 @@ namespace Amazon.Imagebuilder
         /// You are not authorized to perform the requested operation.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have made a request for an action that is not supported by the service.
+        /// You have requested an action that that the service doesn't support.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
         /// This exception is thrown when the service encounters an unrecoverable exception.
@@ -2028,7 +2052,7 @@ namespace Amazon.Imagebuilder
         /// You are not authorized to perform the requested operation.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have made a request for an action that is not supported by the service.
+        /// You have requested an action that that the service doesn't support.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
         /// This exception is thrown when the service encounters an unrecoverable exception.
@@ -2057,7 +2081,7 @@ namespace Amazon.Imagebuilder
         /// You are not authorized to perform the requested operation.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have made a request for an action that is not supported by the service.
+        /// You have requested an action that that the service doesn't support.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceNotFoundException">
         /// At least one of the resources referenced by your request does not exist.
@@ -2089,7 +2113,7 @@ namespace Amazon.Imagebuilder
         /// You are not authorized to perform the requested operation.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have made a request for an action that is not supported by the service.
+        /// You have requested an action that that the service doesn't support.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceNotFoundException">
         /// At least one of the resources referenced by your request does not exist.
@@ -2126,7 +2150,7 @@ namespace Amazon.Imagebuilder
         /// You are not authorized to perform the requested operation.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have made a request for an action that is not supported by the service.
+        /// You have requested an action that that the service doesn't support.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
         /// This exception is thrown when the service encounters an unrecoverable exception.
@@ -2160,7 +2184,7 @@ namespace Amazon.Imagebuilder
         /// You are not authorized to perform the requested operation.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have made a request for an action that is not supported by the service.
+        /// You have requested an action that that the service doesn't support.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
         /// This exception is thrown when the service encounters an unrecoverable exception.
@@ -2170,6 +2194,146 @@ namespace Amazon.Imagebuilder
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetInfrastructureConfiguration">REST API Reference for GetInfrastructureConfiguration Operation</seealso>
         Task<GetInfrastructureConfigurationResponse> GetInfrastructureConfigurationAsync(GetInfrastructureConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetWorkflowExecution
+
+
+        /// <summary>
+        /// Get the runtime information that was logged for a specific runtime instance of the
+        /// workflow.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetWorkflowExecution service method.</param>
+        /// 
+        /// <returns>The response from the GetWorkflowExecution service method, as returned by Imagebuilder.</returns>
+        /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
+        /// You have exceeded the permitted request rate for the specific operation.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
+        /// These errors are usually caused by a client action, such as using an action or resource
+        /// on behalf of a user that doesn't have permissions to use the action or resource, or
+        /// specifying an invalid resource identifier.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
+        /// You are not authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
+        /// You have requested an action that that the service doesn't support.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
+        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
+        /// The service is unable to process your request at this time.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetWorkflowExecution">REST API Reference for GetWorkflowExecution Operation</seealso>
+        GetWorkflowExecutionResponse GetWorkflowExecution(GetWorkflowExecutionRequest request);
+
+
+
+        /// <summary>
+        /// Get the runtime information that was logged for a specific runtime instance of the
+        /// workflow.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetWorkflowExecution service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetWorkflowExecution service method, as returned by Imagebuilder.</returns>
+        /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
+        /// You have exceeded the permitted request rate for the specific operation.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
+        /// These errors are usually caused by a client action, such as using an action or resource
+        /// on behalf of a user that doesn't have permissions to use the action or resource, or
+        /// specifying an invalid resource identifier.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
+        /// You are not authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
+        /// You have requested an action that that the service doesn't support.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
+        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
+        /// The service is unable to process your request at this time.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetWorkflowExecution">REST API Reference for GetWorkflowExecution Operation</seealso>
+        Task<GetWorkflowExecutionResponse> GetWorkflowExecutionAsync(GetWorkflowExecutionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetWorkflowStepExecution
+
+
+        /// <summary>
+        /// Get the runtime information that was logged for a specific runtime instance of the
+        /// workflow step.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetWorkflowStepExecution service method.</param>
+        /// 
+        /// <returns>The response from the GetWorkflowStepExecution service method, as returned by Imagebuilder.</returns>
+        /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
+        /// You have exceeded the permitted request rate for the specific operation.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
+        /// These errors are usually caused by a client action, such as using an action or resource
+        /// on behalf of a user that doesn't have permissions to use the action or resource, or
+        /// specifying an invalid resource identifier.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
+        /// You are not authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
+        /// You have requested an action that that the service doesn't support.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
+        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
+        /// The service is unable to process your request at this time.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetWorkflowStepExecution">REST API Reference for GetWorkflowStepExecution Operation</seealso>
+        GetWorkflowStepExecutionResponse GetWorkflowStepExecution(GetWorkflowStepExecutionRequest request);
+
+
+
+        /// <summary>
+        /// Get the runtime information that was logged for a specific runtime instance of the
+        /// workflow step.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetWorkflowStepExecution service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetWorkflowStepExecution service method, as returned by Imagebuilder.</returns>
+        /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
+        /// You have exceeded the permitted request rate for the specific operation.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
+        /// These errors are usually caused by a client action, such as using an action or resource
+        /// on behalf of a user that doesn't have permissions to use the action or resource, or
+        /// specifying an invalid resource identifier.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
+        /// You are not authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
+        /// You have requested an action that that the service doesn't support.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
+        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
+        /// The service is unable to process your request at this time.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetWorkflowStepExecution">REST API Reference for GetWorkflowStepExecution Operation</seealso>
+        Task<GetWorkflowStepExecutionResponse> GetWorkflowStepExecutionAsync(GetWorkflowStepExecutionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -2202,7 +2366,7 @@ namespace Amazon.Imagebuilder
         /// for details.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have made a request for an action that is not supported by the service.
+        /// You have requested an action that that the service doesn't support.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidVersionNumberException">
         /// Your version number is out of bounds or does not follow the required syntax.
@@ -2251,7 +2415,7 @@ namespace Amazon.Imagebuilder
         /// for details.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have made a request for an action that is not supported by the service.
+        /// You have requested an action that that the service doesn't support.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidVersionNumberException">
         /// Your version number is out of bounds or does not follow the required syntax.
@@ -2268,6 +2432,78 @@ namespace Amazon.Imagebuilder
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ImportComponent">REST API Reference for ImportComponent Operation</seealso>
         Task<ImportComponentResponse> ImportComponentAsync(ImportComponentRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ImportVmImage
+
+
+        /// <summary>
+        /// When you export your virtual machine (VM) from its virtualization environment, that
+        /// process creates a set of one or more disk container files that act as snapshots of
+        /// your VM’s environment, settings, and data. The Amazon EC2 API <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportImage.html">ImportImage</a>
+        /// action uses those files to import your VM and create an AMI. To import using the CLI
+        /// command, see <a href="https://docs.aws.amazon.com/cli/latest/reference/ec2/import-image.html">import-image</a>
+        /// 
+        /// 
+        ///  
+        /// <para>
+        /// You can reference the task ID from the VM import to pull in the AMI that the import
+        /// created as the base image for your Image Builder recipe.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ImportVmImage service method.</param>
+        /// 
+        /// <returns>The response from the ImportVmImage service method, as returned by Imagebuilder.</returns>
+        /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
+        /// These errors are usually caused by a client action, such as using an action or resource
+        /// on behalf of a user that doesn't have permissions to use the action or resource, or
+        /// specifying an invalid resource identifier.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
+        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
+        /// The service is unable to process your request at this time.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ImportVmImage">REST API Reference for ImportVmImage Operation</seealso>
+        ImportVmImageResponse ImportVmImage(ImportVmImageRequest request);
+
+
+
+        /// <summary>
+        /// When you export your virtual machine (VM) from its virtualization environment, that
+        /// process creates a set of one or more disk container files that act as snapshots of
+        /// your VM’s environment, settings, and data. The Amazon EC2 API <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportImage.html">ImportImage</a>
+        /// action uses those files to import your VM and create an AMI. To import using the CLI
+        /// command, see <a href="https://docs.aws.amazon.com/cli/latest/reference/ec2/import-image.html">import-image</a>
+        /// 
+        /// 
+        ///  
+        /// <para>
+        /// You can reference the task ID from the VM import to pull in the AMI that the import
+        /// created as the base image for your Image Builder recipe.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ImportVmImage service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ImportVmImage service method, as returned by Imagebuilder.</returns>
+        /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
+        /// These errors are usually caused by a client action, such as using an action or resource
+        /// on behalf of a user that doesn't have permissions to use the action or resource, or
+        /// specifying an invalid resource identifier.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
+        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
+        /// The service is unable to process your request at this time.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ImportVmImage">REST API Reference for ImportVmImage Operation</seealso>
+        Task<ImportVmImageResponse> ImportVmImageAsync(ImportVmImageRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -2309,7 +2545,7 @@ namespace Amazon.Imagebuilder
         /// You have provided an invalid pagination token in your request.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have made a request for an action that is not supported by the service.
+        /// You have requested an action that that the service doesn't support.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
         /// This exception is thrown when the service encounters an unrecoverable exception.
@@ -2360,7 +2596,7 @@ namespace Amazon.Imagebuilder
         /// You have provided an invalid pagination token in your request.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have made a request for an action that is not supported by the service.
+        /// You have requested an action that that the service doesn't support.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
         /// This exception is thrown when the service encounters an unrecoverable exception.
@@ -2377,7 +2613,9 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Returns the list of component build versions for the specified semantic version.
+        /// Returns the list of components that can be filtered by name, or by using the listed
+        /// <code>filters</code> to streamline results. Newly created components can take up to
+        /// two minutes to appear in the ListComponents API Results.
         /// 
         ///  <note> 
         /// <para>
@@ -2411,7 +2649,7 @@ namespace Amazon.Imagebuilder
         /// You have provided an invalid pagination token in your request.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have made a request for an action that is not supported by the service.
+        /// You have requested an action that that the service doesn't support.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
         /// This exception is thrown when the service encounters an unrecoverable exception.
@@ -2425,7 +2663,9 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Returns the list of component build versions for the specified semantic version.
+        /// Returns the list of components that can be filtered by name, or by using the listed
+        /// <code>filters</code> to streamline results. Newly created components can take up to
+        /// two minutes to appear in the ListComponents API Results.
         /// 
         ///  <note> 
         /// <para>
@@ -2462,7 +2702,7 @@ namespace Amazon.Imagebuilder
         /// You have provided an invalid pagination token in your request.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have made a request for an action that is not supported by the service.
+        /// You have requested an action that that the service doesn't support.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
         /// This exception is thrown when the service encounters an unrecoverable exception.
@@ -2499,7 +2739,7 @@ namespace Amazon.Imagebuilder
         /// You have provided an invalid pagination token in your request.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have made a request for an action that is not supported by the service.
+        /// You have requested an action that that the service doesn't support.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
         /// This exception is thrown when the service encounters an unrecoverable exception.
@@ -2536,7 +2776,7 @@ namespace Amazon.Imagebuilder
         /// You have provided an invalid pagination token in your request.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have made a request for an action that is not supported by the service.
+        /// You have requested an action that that the service doesn't support.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
         /// This exception is thrown when the service encounters an unrecoverable exception.
@@ -2573,7 +2813,7 @@ namespace Amazon.Imagebuilder
         /// You have provided an invalid pagination token in your request.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have made a request for an action that is not supported by the service.
+        /// You have requested an action that that the service doesn't support.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
         /// This exception is thrown when the service encounters an unrecoverable exception.
@@ -2610,7 +2850,7 @@ namespace Amazon.Imagebuilder
         /// You have provided an invalid pagination token in your request.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have made a request for an action that is not supported by the service.
+        /// You have requested an action that that the service doesn't support.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
         /// This exception is thrown when the service encounters an unrecoverable exception.
@@ -2647,7 +2887,7 @@ namespace Amazon.Imagebuilder
         /// You have provided an invalid pagination token in your request.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have made a request for an action that is not supported by the service.
+        /// You have requested an action that that the service doesn't support.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
         /// This exception is thrown when the service encounters an unrecoverable exception.
@@ -2684,7 +2924,7 @@ namespace Amazon.Imagebuilder
         /// You have provided an invalid pagination token in your request.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have made a request for an action that is not supported by the service.
+        /// You have requested an action that that the service doesn't support.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
         /// This exception is thrown when the service encounters an unrecoverable exception.
@@ -2722,7 +2962,7 @@ namespace Amazon.Imagebuilder
         /// You have provided an invalid pagination token in your request.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have made a request for an action that is not supported by the service.
+        /// You have requested an action that that the service doesn't support.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceNotFoundException">
         /// At least one of the resources referenced by your request does not exist.
@@ -2763,7 +3003,7 @@ namespace Amazon.Imagebuilder
         /// You have provided an invalid pagination token in your request.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have made a request for an action that is not supported by the service.
+        /// You have requested an action that that the service doesn't support.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceNotFoundException">
         /// At least one of the resources referenced by your request does not exist.
@@ -2803,7 +3043,7 @@ namespace Amazon.Imagebuilder
         /// You have provided an invalid pagination token in your request.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have made a request for an action that is not supported by the service.
+        /// You have requested an action that that the service doesn't support.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceNotFoundException">
         /// At least one of the resources referenced by your request does not exist.
@@ -2843,7 +3083,7 @@ namespace Amazon.Imagebuilder
         /// You have provided an invalid pagination token in your request.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have made a request for an action that is not supported by the service.
+        /// You have requested an action that that the service doesn't support.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceNotFoundException">
         /// At least one of the resources referenced by your request does not exist.
@@ -2883,7 +3123,7 @@ namespace Amazon.Imagebuilder
         /// You have provided an invalid pagination token in your request.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have made a request for an action that is not supported by the service.
+        /// You have requested an action that that the service doesn't support.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
         /// This exception is thrown when the service encounters an unrecoverable exception.
@@ -2920,7 +3160,7 @@ namespace Amazon.Imagebuilder
         /// You have provided an invalid pagination token in your request.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have made a request for an action that is not supported by the service.
+        /// You have requested an action that that the service doesn't support.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
         /// This exception is thrown when the service encounters an unrecoverable exception.
@@ -2957,7 +3197,7 @@ namespace Amazon.Imagebuilder
         /// You have provided an invalid pagination token in your request.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have made a request for an action that is not supported by the service.
+        /// You have requested an action that that the service doesn't support.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
         /// This exception is thrown when the service encounters an unrecoverable exception.
@@ -2994,7 +3234,7 @@ namespace Amazon.Imagebuilder
         /// You have provided an invalid pagination token in your request.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have made a request for an action that is not supported by the service.
+        /// You have requested an action that that the service doesn't support.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
         /// This exception is thrown when the service encounters an unrecoverable exception.
@@ -3011,7 +3251,8 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Returns the list of images that you have access to.
+        /// Returns the list of images that you have access to. Newly created images can take
+        /// up to two minutes to appear in the ListImages API Results.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListImages service method.</param>
         /// 
@@ -3031,7 +3272,7 @@ namespace Amazon.Imagebuilder
         /// You have provided an invalid pagination token in your request.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have made a request for an action that is not supported by the service.
+        /// You have requested an action that that the service doesn't support.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
         /// This exception is thrown when the service encounters an unrecoverable exception.
@@ -3045,7 +3286,8 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Returns the list of images that you have access to.
+        /// Returns the list of images that you have access to. Newly created images can take
+        /// up to two minutes to appear in the ListImages API Results.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListImages service method.</param>
         /// <param name="cancellationToken">
@@ -3068,7 +3310,7 @@ namespace Amazon.Imagebuilder
         /// You have provided an invalid pagination token in your request.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have made a request for an action that is not supported by the service.
+        /// You have requested an action that that the service doesn't support.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
         /// This exception is thrown when the service encounters an unrecoverable exception.
@@ -3078,6 +3320,206 @@ namespace Amazon.Imagebuilder
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListImages">REST API Reference for ListImages Operation</seealso>
         Task<ListImagesResponse> ListImagesAsync(ListImagesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListImageScanFindingAggregations
+
+
+        /// <summary>
+        /// Returns a list of image scan aggregations for your account. You can filter by the
+        /// type of key that Image Builder uses to group results. For example, if you want to
+        /// get a list of findings by severity level for one of your pipelines, you might specify
+        /// your pipeline with the <code>imagePipelineArn</code> filter. If you don't specify
+        /// a filter, Image Builder returns an aggregation for your account.
+        /// 
+        ///  
+        /// <para>
+        /// To streamline results, you can use the following filters in your request:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>accountId</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>imageBuildVersionArn</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>imagePipelineArn</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>vulnerabilityId</code> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListImageScanFindingAggregations service method.</param>
+        /// 
+        /// <returns>The response from the ListImageScanFindingAggregations service method, as returned by Imagebuilder.</returns>
+        /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
+        /// You have exceeded the permitted request rate for the specific operation.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
+        /// These errors are usually caused by a client action, such as using an action or resource
+        /// on behalf of a user that doesn't have permissions to use the action or resource, or
+        /// specifying an invalid resource identifier.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
+        /// You are not authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.InvalidPaginationTokenException">
+        /// You have provided an invalid pagination token in your request.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
+        /// You have requested an action that that the service doesn't support.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
+        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
+        /// The service is unable to process your request at this time.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListImageScanFindingAggregations">REST API Reference for ListImageScanFindingAggregations Operation</seealso>
+        ListImageScanFindingAggregationsResponse ListImageScanFindingAggregations(ListImageScanFindingAggregationsRequest request);
+
+
+
+        /// <summary>
+        /// Returns a list of image scan aggregations for your account. You can filter by the
+        /// type of key that Image Builder uses to group results. For example, if you want to
+        /// get a list of findings by severity level for one of your pipelines, you might specify
+        /// your pipeline with the <code>imagePipelineArn</code> filter. If you don't specify
+        /// a filter, Image Builder returns an aggregation for your account.
+        /// 
+        ///  
+        /// <para>
+        /// To streamline results, you can use the following filters in your request:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>accountId</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>imageBuildVersionArn</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>imagePipelineArn</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>vulnerabilityId</code> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListImageScanFindingAggregations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListImageScanFindingAggregations service method, as returned by Imagebuilder.</returns>
+        /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
+        /// You have exceeded the permitted request rate for the specific operation.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
+        /// These errors are usually caused by a client action, such as using an action or resource
+        /// on behalf of a user that doesn't have permissions to use the action or resource, or
+        /// specifying an invalid resource identifier.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
+        /// You are not authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.InvalidPaginationTokenException">
+        /// You have provided an invalid pagination token in your request.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
+        /// You have requested an action that that the service doesn't support.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
+        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
+        /// The service is unable to process your request at this time.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListImageScanFindingAggregations">REST API Reference for ListImageScanFindingAggregations Operation</seealso>
+        Task<ListImageScanFindingAggregationsResponse> ListImageScanFindingAggregationsAsync(ListImageScanFindingAggregationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListImageScanFindings
+
+
+        /// <summary>
+        /// Returns a list of image scan findings for your account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListImageScanFindings service method.</param>
+        /// 
+        /// <returns>The response from the ListImageScanFindings service method, as returned by Imagebuilder.</returns>
+        /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
+        /// You have exceeded the permitted request rate for the specific operation.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
+        /// These errors are usually caused by a client action, such as using an action or resource
+        /// on behalf of a user that doesn't have permissions to use the action or resource, or
+        /// specifying an invalid resource identifier.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
+        /// You are not authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.InvalidPaginationTokenException">
+        /// You have provided an invalid pagination token in your request.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
+        /// You have requested an action that that the service doesn't support.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
+        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
+        /// The service is unable to process your request at this time.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListImageScanFindings">REST API Reference for ListImageScanFindings Operation</seealso>
+        ListImageScanFindingsResponse ListImageScanFindings(ListImageScanFindingsRequest request);
+
+
+
+        /// <summary>
+        /// Returns a list of image scan findings for your account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListImageScanFindings service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListImageScanFindings service method, as returned by Imagebuilder.</returns>
+        /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
+        /// You have exceeded the permitted request rate for the specific operation.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
+        /// These errors are usually caused by a client action, such as using an action or resource
+        /// on behalf of a user that doesn't have permissions to use the action or resource, or
+        /// specifying an invalid resource identifier.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
+        /// You are not authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.InvalidPaginationTokenException">
+        /// You have provided an invalid pagination token in your request.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
+        /// You have requested an action that that the service doesn't support.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
+        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
+        /// The service is unable to process your request at this time.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListImageScanFindings">REST API Reference for ListImageScanFindings Operation</seealso>
+        Task<ListImageScanFindingsResponse> ListImageScanFindingsAsync(ListImageScanFindingsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -3105,7 +3547,7 @@ namespace Amazon.Imagebuilder
         /// You have provided an invalid pagination token in your request.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have made a request for an action that is not supported by the service.
+        /// You have requested an action that that the service doesn't support.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
         /// This exception is thrown when the service encounters an unrecoverable exception.
@@ -3142,7 +3584,7 @@ namespace Amazon.Imagebuilder
         /// You have provided an invalid pagination token in your request.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have made a request for an action that is not supported by the service.
+        /// You have requested an action that that the service doesn't support.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
         /// This exception is thrown when the service encounters an unrecoverable exception.
@@ -3201,6 +3643,158 @@ namespace Amazon.Imagebuilder
 
         #endregion
         
+        #region  ListWorkflowExecutions
+
+
+        /// <summary>
+        /// Returns a list of workflow runtime instance metadata objects for a specific image
+        /// build version.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListWorkflowExecutions service method.</param>
+        /// 
+        /// <returns>The response from the ListWorkflowExecutions service method, as returned by Imagebuilder.</returns>
+        /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
+        /// You have exceeded the permitted request rate for the specific operation.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
+        /// These errors are usually caused by a client action, such as using an action or resource
+        /// on behalf of a user that doesn't have permissions to use the action or resource, or
+        /// specifying an invalid resource identifier.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
+        /// You are not authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.InvalidPaginationTokenException">
+        /// You have provided an invalid pagination token in your request.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
+        /// You have requested an action that that the service doesn't support.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
+        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
+        /// The service is unable to process your request at this time.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListWorkflowExecutions">REST API Reference for ListWorkflowExecutions Operation</seealso>
+        ListWorkflowExecutionsResponse ListWorkflowExecutions(ListWorkflowExecutionsRequest request);
+
+
+
+        /// <summary>
+        /// Returns a list of workflow runtime instance metadata objects for a specific image
+        /// build version.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListWorkflowExecutions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListWorkflowExecutions service method, as returned by Imagebuilder.</returns>
+        /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
+        /// You have exceeded the permitted request rate for the specific operation.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
+        /// These errors are usually caused by a client action, such as using an action or resource
+        /// on behalf of a user that doesn't have permissions to use the action or resource, or
+        /// specifying an invalid resource identifier.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
+        /// You are not authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.InvalidPaginationTokenException">
+        /// You have provided an invalid pagination token in your request.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
+        /// You have requested an action that that the service doesn't support.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
+        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
+        /// The service is unable to process your request at this time.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListWorkflowExecutions">REST API Reference for ListWorkflowExecutions Operation</seealso>
+        Task<ListWorkflowExecutionsResponse> ListWorkflowExecutionsAsync(ListWorkflowExecutionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListWorkflowStepExecutions
+
+
+        /// <summary>
+        /// Shows runtime data for each step in a runtime instance of the workflow that you specify
+        /// in the request.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListWorkflowStepExecutions service method.</param>
+        /// 
+        /// <returns>The response from the ListWorkflowStepExecutions service method, as returned by Imagebuilder.</returns>
+        /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
+        /// You have exceeded the permitted request rate for the specific operation.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
+        /// These errors are usually caused by a client action, such as using an action or resource
+        /// on behalf of a user that doesn't have permissions to use the action or resource, or
+        /// specifying an invalid resource identifier.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
+        /// You are not authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.InvalidPaginationTokenException">
+        /// You have provided an invalid pagination token in your request.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
+        /// You have requested an action that that the service doesn't support.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
+        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
+        /// The service is unable to process your request at this time.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListWorkflowStepExecutions">REST API Reference for ListWorkflowStepExecutions Operation</seealso>
+        ListWorkflowStepExecutionsResponse ListWorkflowStepExecutions(ListWorkflowStepExecutionsRequest request);
+
+
+
+        /// <summary>
+        /// Shows runtime data for each step in a runtime instance of the workflow that you specify
+        /// in the request.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListWorkflowStepExecutions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListWorkflowStepExecutions service method, as returned by Imagebuilder.</returns>
+        /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
+        /// You have exceeded the permitted request rate for the specific operation.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
+        /// These errors are usually caused by a client action, such as using an action or resource
+        /// on behalf of a user that doesn't have permissions to use the action or resource, or
+        /// specifying an invalid resource identifier.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
+        /// You are not authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.InvalidPaginationTokenException">
+        /// You have provided an invalid pagination token in your request.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
+        /// You have requested an action that that the service doesn't support.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
+        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
+        /// The service is unable to process your request at this time.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListWorkflowStepExecutions">REST API Reference for ListWorkflowStepExecutions Operation</seealso>
+        Task<ListWorkflowStepExecutionsResponse> ListWorkflowStepExecutionsAsync(ListWorkflowStepExecutionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  PutComponentPolicy
 
 
@@ -3229,7 +3823,7 @@ namespace Amazon.Imagebuilder
         /// The value that you provided for the specified parameter is invalid.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have made a request for an action that is not supported by the service.
+        /// You have requested an action that that the service doesn't support.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceNotFoundException">
         /// At least one of the resources referenced by your request does not exist.
@@ -3273,7 +3867,7 @@ namespace Amazon.Imagebuilder
         /// The value that you provided for the specified parameter is invalid.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have made a request for an action that is not supported by the service.
+        /// You have requested an action that that the service doesn't support.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceNotFoundException">
         /// At least one of the resources referenced by your request does not exist.
@@ -3318,7 +3912,7 @@ namespace Amazon.Imagebuilder
         /// The value that you provided for the specified parameter is invalid.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have made a request for an action that is not supported by the service.
+        /// You have requested an action that that the service doesn't support.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceNotFoundException">
         /// At least one of the resources referenced by your request does not exist.
@@ -3363,7 +3957,7 @@ namespace Amazon.Imagebuilder
         /// The value that you provided for the specified parameter is invalid.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have made a request for an action that is not supported by the service.
+        /// You have requested an action that that the service doesn't support.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceNotFoundException">
         /// At least one of the resources referenced by your request does not exist.
@@ -3407,7 +4001,7 @@ namespace Amazon.Imagebuilder
         /// The value that you provided for the specified parameter is invalid.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have made a request for an action that is not supported by the service.
+        /// You have requested an action that that the service doesn't support.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceNotFoundException">
         /// At least one of the resources referenced by your request does not exist.
@@ -3451,7 +4045,7 @@ namespace Amazon.Imagebuilder
         /// The value that you provided for the specified parameter is invalid.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have made a request for an action that is not supported by the service.
+        /// You have requested an action that that the service doesn't support.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceNotFoundException">
         /// At least one of the resources referenced by your request does not exist.
@@ -3495,7 +4089,7 @@ namespace Amazon.Imagebuilder
         /// The value that you provided for the specified parameter is invalid.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have made a request for an action that is not supported by the service.
+        /// You have requested an action that that the service doesn't support.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceNotFoundException">
         /// At least one of the resources referenced by your request does not exist.
@@ -3539,7 +4133,7 @@ namespace Amazon.Imagebuilder
         /// The value that you provided for the specified parameter is invalid.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have made a request for an action that is not supported by the service.
+        /// You have requested an action that that the service doesn't support.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceNotFoundException">
         /// At least one of the resources referenced by your request does not exist.
@@ -3580,7 +4174,7 @@ namespace Amazon.Imagebuilder
         /// from a previous request that used the same client token.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have made a request for an action that is not supported by the service.
+        /// You have requested an action that that the service doesn't support.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceInUseException">
         /// The resource that you are trying to operate on is currently in use. Review the message
@@ -3625,7 +4219,7 @@ namespace Amazon.Imagebuilder
         /// from a previous request that used the same client token.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have made a request for an action that is not supported by the service.
+        /// You have requested an action that that the service doesn't support.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceInUseException">
         /// The resource that you are trying to operate on is currently in use. Review the message
@@ -3741,8 +4335,8 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Updates a new distribution configuration. Distribution configurations define and
-        /// configure the outputs of your pipeline.
+        /// Updates a new distribution configuration. Distribution configurations define and configure
+        /// the outputs of your pipeline.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateDistributionConfiguration service method.</param>
         /// 
@@ -3767,7 +4361,7 @@ namespace Amazon.Imagebuilder
         /// for details.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have made a request for an action that is not supported by the service.
+        /// You have requested an action that that the service doesn't support.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceInUseException">
         /// The resource that you are trying to operate on is currently in use. Review the message
@@ -3785,8 +4379,8 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Updates a new distribution configuration. Distribution configurations define and
-        /// configure the outputs of your pipeline.
+        /// Updates a new distribution configuration. Distribution configurations define and configure
+        /// the outputs of your pipeline.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateDistributionConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -3814,7 +4408,7 @@ namespace Amazon.Imagebuilder
         /// for details.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have made a request for an action that is not supported by the service.
+        /// You have requested an action that that the service doesn't support.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceInUseException">
         /// The resource that you are trying to operate on is currently in use. Review the message
@@ -3865,7 +4459,7 @@ namespace Amazon.Imagebuilder
         /// from a previous request that used the same client token.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have made a request for an action that is not supported by the service.
+        /// You have requested an action that that the service doesn't support.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceInUseException">
         /// The resource that you are trying to operate on is currently in use. Review the message
@@ -3916,7 +4510,7 @@ namespace Amazon.Imagebuilder
         /// from a previous request that used the same client token.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have made a request for an action that is not supported by the service.
+        /// You have requested an action that that the service doesn't support.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceInUseException">
         /// The resource that you are trying to operate on is currently in use. Review the message
@@ -3959,7 +4553,7 @@ namespace Amazon.Imagebuilder
         /// from a previous request that used the same client token.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have made a request for an action that is not supported by the service.
+        /// You have requested an action that that the service doesn't support.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceInUseException">
         /// The resource that you are trying to operate on is currently in use. Review the message
@@ -4002,7 +4596,7 @@ namespace Amazon.Imagebuilder
         /// from a previous request that used the same client token.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have made a request for an action that is not supported by the service.
+        /// You have requested an action that that the service doesn't support.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceInUseException">
         /// The resource that you are trying to operate on is currently in use. Review the message

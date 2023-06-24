@@ -30,7 +30,7 @@ namespace Amazon.LookoutEquipment.Model
 {
     /// <summary>
     /// Specifies configuration information for the input data for the inference, including
-    /// S3 location of input data..
+    /// Amazon S3 location of input data..
     /// </summary>
     public partial class InferenceInputConfiguration
     {
@@ -60,7 +60,7 @@ namespace Amazon.LookoutEquipment.Model
         /// <summary>
         /// Gets and sets the property InputTimeZoneOffset. 
         /// <para>
-        /// Indicates the difference between your time zone and Greenwich Mean Time (GMT). 
+        /// Indicates the difference between your time zone and Coordinated Universal Time (UTC).
         /// </para>
         /// </summary>
         public string InputTimeZoneOffset
@@ -79,7 +79,7 @@ namespace Amazon.LookoutEquipment.Model
         /// Gets and sets the property S3InputConfiguration. 
         /// <para>
         ///  Specifies configuration information for the input data for the inference, including
-        /// S3 location of input data.. 
+        /// Amazon S3 location of input data.
         /// </para>
         /// </summary>
         public InferenceS3InputConfiguration S3InputConfiguration

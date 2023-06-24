@@ -114,6 +114,7 @@ namespace Amazon.EC2.Model
         /// connection is in the <code>pending</code> or <code>available</code> state.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string CustomerGatewayConfiguration
         {
             get { return this._customerGatewayConfiguration; }

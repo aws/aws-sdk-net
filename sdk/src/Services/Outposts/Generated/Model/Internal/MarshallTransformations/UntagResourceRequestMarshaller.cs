@@ -55,7 +55,7 @@ namespace Amazon.Outposts.Model.Internal.MarshallTransformations
         public IRequest Marshall(UntagResourceRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Outposts");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-12-03";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-12-03";
             request.HttpMethod = "DELETE";
 
             if (!publicRequest.IsSetResourceArn())

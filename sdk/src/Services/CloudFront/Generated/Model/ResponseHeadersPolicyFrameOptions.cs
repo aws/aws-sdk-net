@@ -30,7 +30,7 @@ namespace Amazon.CloudFront.Model
 {
     /// <summary>
     /// Determines whether CloudFront includes the <code>X-Frame-Options</code> HTTP response
-    /// header and the header’s value.
+    /// header and the header's value.
     /// 
     ///  
     /// <para>
@@ -48,7 +48,7 @@ namespace Amazon.CloudFront.Model
         /// Gets and sets the property FrameOption. 
         /// <para>
         /// The value of the <code>X-Frame-Options</code> HTTP response header. Valid values are
-        /// <code>DENY</code> and <code>SAMEORIGIN</code>. 
+        /// <code>DENY</code> and <code>SAMEORIGIN</code>.
         /// </para>
         ///  
         /// <para>

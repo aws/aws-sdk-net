@@ -17,22 +17,22 @@
  * Do not modify this file. This file is generated from the workmail-2017-10-01.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
-
+using Amazon.WorkMail.Internal;
 
 namespace Amazon.WorkMail
 {
     /// <summary>
     /// Configuration for accessing Amazon WorkMail service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonWorkMailConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.4.24");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.147");
 
         private string _userAgent = UserAgentString;
 
@@ -40,8 +40,10 @@ namespace Amazon.WorkMail
         /// Default constructor
         /// </summary>
         public AmazonWorkMailConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonWorkMailDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "workmail";
+            this.EndpointProvider = new AmazonWorkMailEndpointProvider();
         }
 
         /// <summary>
@@ -76,5 +78,6 @@ namespace Amazon.WorkMail
                 return _userAgent;
             }
         }
+
     }
 }

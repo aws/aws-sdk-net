@@ -57,7 +57,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property Message. 
         /// <para>
-        ///  The error message associated with the PartiQL batch resposne. 
+        ///  The error message associated with the PartiQL batch response. 
         /// </para>
         /// </summary>
         public string Message

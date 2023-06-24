@@ -45,8 +45,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "GetACLRequest.BucketName");
             //Not checking if Key is null or empty because GetAcl allows to query for both a Bucket or an Object. TODO: deprecate GetACL and create two separate operations
 
-			request.ResourcePath = string.Format(CultureInfo.InvariantCulture, "/{0}/{1}",
-                                                 S3Transforms.ToStringValue(getObjectAclRequest.BucketName),
+            request.ResourcePath = string.Format(CultureInfo.InvariantCulture, "/{0}",
                                                  S3Transforms.ToStringValue(getObjectAclRequest.Key));
 
             request.AddSubResource("acl");

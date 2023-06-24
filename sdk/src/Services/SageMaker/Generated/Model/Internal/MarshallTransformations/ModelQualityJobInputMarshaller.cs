@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ModelQualityJobInput Marshaller
-    /// </summary>       
+    /// </summary>
     public class ModelQualityJobInputMarshaller : IRequestMarshaller<ModelQualityJobInput, JsonMarshallerContext> 
     {
         /// <summary>
@@ -45,6 +45,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ModelQualityJobInput requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetBatchTransformInput())
+            {
+                context.Writer.WritePropertyName("BatchTransformInput");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = BatchTransformInputMarshaller.Instance;
+                marshaller.Marshall(requestObject.BatchTransformInput, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetEndpointInput())
             {
                 context.Writer.WritePropertyName("EndpointInput");
@@ -71,7 +82,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ModelQualityJobInputMarshaller Instance = new ModelQualityJobInputMarshaller();
 
     }

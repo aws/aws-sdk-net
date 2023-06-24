@@ -46,6 +46,7 @@ namespace Amazon.LexModelsV2.Model
         private ObfuscationSetting _obfuscationSetting;
         private string _slotName;
         private string _slotTypeId;
+        private SubSlotSetting _subSlotSetting;
         private SlotValueElicitationSetting _valueElicitationSetting;
 
         /// <summary>
@@ -150,7 +151,7 @@ namespace Amazon.LexModelsV2.Model
         /// Gets and sets the property MultipleValuesSetting. 
         /// <para>
         /// Indicates whether the slot returns multiple values in one response. Multi-value slots
-        /// are only available in the en-US locale. If you set this value to <code>true</code>
+        /// are only available in the <code>en-US</code> locale. If you set this value to <code>true</code>
         /// in any other locale, Amazon Lex throws a <code>ValidationException</code>. 
         /// </para>
         ///  
@@ -221,7 +222,7 @@ namespace Amazon.LexModelsV2.Model
         /// the values that can be entered into the slot.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=25)]
+        [AWSProperty(Min=1, Max=25)]
         public string SlotTypeId
         {
             get { return this._slotTypeId; }
@@ -232,6 +233,25 @@ namespace Amazon.LexModelsV2.Model
         internal bool IsSetSlotTypeId()
         {
             return this._slotTypeId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SubSlotSetting. 
+        /// <para>
+        /// Specifications for the constituent sub slots and the expression for the composite
+        /// slot.
+        /// </para>
+        /// </summary>
+        public SubSlotSetting SubSlotSetting
+        {
+            get { return this._subSlotSetting; }
+            set { this._subSlotSetting = value; }
+        }
+
+        // Check to see if SubSlotSetting property is set
+        internal bool IsSetSubSlotSetting()
+        {
+            return this._subSlotSetting != null;
         }
 
         /// <summary>

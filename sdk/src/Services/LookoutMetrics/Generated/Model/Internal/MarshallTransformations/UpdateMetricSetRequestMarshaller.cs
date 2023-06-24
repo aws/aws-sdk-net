@@ -56,7 +56,7 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.LookoutMetrics");
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-07-25";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-07-25";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/UpdateMetricSet";
@@ -65,6 +65,22 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetDimensionFilterList())
+                {
+                    context.Writer.WritePropertyName("DimensionFilterList");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestDimensionFilterListListValue in publicRequest.DimensionFilterList)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = MetricSetDimensionFilterMarshaller.Instance;
+                        marshaller.Marshall(publicRequestDimensionFilterListListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetDimensionList())
                 {
                     context.Writer.WritePropertyName("DimensionList");
@@ -138,7 +154,6 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

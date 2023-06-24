@@ -35,8 +35,8 @@ namespace Amazon.Batch.Model
     ///  
     /// <para>
     /// If you're using an unmanaged compute environment, you can use the <code>DescribeComputeEnvironment</code>
-    /// operation to determine the <code>ecsClusterArn</code> that you should launch your
-    /// Amazon ECS container instances into.
+    /// operation to determine the <code>ecsClusterArn</code> that you launch your Amazon
+    /// ECS container instances into.
     /// </para>
     /// </summary>
     public partial class DescribeComputeEnvironmentsRequest : AmazonBatchRequest
@@ -98,8 +98,8 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// This token should be treated as an opaque identifier that's only used to retrieve
-        /// the next items in a list and not for other programmatic purposes.
+        /// Treat this token as an opaque identifier that's only used to retrieve the next items
+        /// in a list and not for other programmatic purposes.
         /// </para>
         ///  </note>
         /// </summary>

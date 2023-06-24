@@ -58,7 +58,7 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
             string target = "ComputeOptimizerService.PutRecommendationPreferences";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.0";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-11-01";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-11-01";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -71,6 +71,23 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("enhancedInfrastructureMetrics");
                     context.Writer.Write(publicRequest.EnhancedInfrastructureMetrics);
+                }
+
+                if(publicRequest.IsSetExternalMetricsPreference())
+                {
+                    context.Writer.WritePropertyName("externalMetricsPreference");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ExternalMetricsPreferenceMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ExternalMetricsPreference, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetInferredWorkloadTypes())
+                {
+                    context.Writer.WritePropertyName("inferredWorkloadTypes");
+                    context.Writer.Write(publicRequest.InferredWorkloadTypes);
                 }
 
                 if(publicRequest.IsSetResourceType())
@@ -90,7 +107,6 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

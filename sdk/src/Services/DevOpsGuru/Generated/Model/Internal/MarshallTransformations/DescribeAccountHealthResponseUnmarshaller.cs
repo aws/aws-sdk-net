@@ -51,6 +51,12 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AnalyzedResourceCount", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    response.AnalyzedResourceCount = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("MetricsAnalyzed", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

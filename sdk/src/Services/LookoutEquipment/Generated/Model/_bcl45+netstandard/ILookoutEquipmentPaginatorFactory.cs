@@ -36,6 +36,11 @@ namespace Amazon.LookoutEquipment.Model
         IListDatasetsPaginator ListDatasets(ListDatasetsRequest request);
 
         /// <summary>
+        /// Paginator for ListInferenceEvents operation
+        ///</summary>
+        IListInferenceEventsPaginator ListInferenceEvents(ListInferenceEventsRequest request);
+
+        /// <summary>
         /// Paginator for ListInferenceExecutions operation
         ///</summary>
         IListInferenceExecutionsPaginator ListInferenceExecutions(ListInferenceExecutionsRequest request);
@@ -46,8 +51,23 @@ namespace Amazon.LookoutEquipment.Model
         IListInferenceSchedulersPaginator ListInferenceSchedulers(ListInferenceSchedulersRequest request);
 
         /// <summary>
+        /// Paginator for ListLabelGroups operation
+        ///</summary>
+        IListLabelGroupsPaginator ListLabelGroups(ListLabelGroupsRequest request);
+
+        /// <summary>
+        /// Paginator for ListLabels operation
+        ///</summary>
+        IListLabelsPaginator ListLabels(ListLabelsRequest request);
+
+        /// <summary>
         /// Paginator for ListModels operation
         ///</summary>
         IListModelsPaginator ListModels(ListModelsRequest request);
+
+        /// <summary>
+        /// Paginator for ListSensorStatistics operation
+        ///</summary>
+        IListSensorStatisticsPaginator ListSensorStatistics(ListSensorStatisticsRequest request);
     }
 }

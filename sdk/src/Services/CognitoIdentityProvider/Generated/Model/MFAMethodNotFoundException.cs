@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// This exception is thrown when Amazon Cognito cannot find a multi-factor authentication
+    /// This exception is thrown when Amazon Cognito can't find a multi-factor authentication
     /// (MFA) method.
     /// </summary>
     #if !NETSTANDARD

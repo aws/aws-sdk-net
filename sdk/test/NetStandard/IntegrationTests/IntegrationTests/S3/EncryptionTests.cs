@@ -69,7 +69,7 @@ namespace Amazon.DNXCore.IntegrationTests.S3
             {
                 writer.Write(sampleContent);
             }
-            bucketName = CallAsyncTask(UtilityMethods.CreateBucketAsync(s3EncryptionClientFileMode, GetType().Name));
+            bucketName = CallAsyncTask(UtilityMethods.CreateBucketAsync(s3EncryptionClientFileMode, GetType().Name, true));
         }
 
         protected override void Dispose(bool disposing)

@@ -34,7 +34,7 @@ namespace Amazon.IoT1ClickProjects.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DeviceTemplate Marshaller
-    /// </summary>       
+    /// </summary>
     public class DeviceTemplateMarshaller : IRequestMarshaller<DeviceTemplate, JsonMarshallerContext> 
     {
         /// <summary>
@@ -69,7 +69,7 @@ namespace Amazon.IoT1ClickProjects.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DeviceTemplateMarshaller Instance = new DeviceTemplateMarshaller();
 
     }

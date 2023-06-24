@@ -305,7 +305,7 @@
     <property>Amazon.AlexaForBusiness.Model.CreateUserRequest.Email</property>
     <min>1</min>
     <max>128</max>
-    <pattern>([0-9a-zA-Z]([+-.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z]([-\w]*[0-9a-zA-Z]+)*\.)+[a-zA-Z]{2,9})</pattern>
+    <pattern>\w[+-.\w]*@\w[\w\.\-]+\.[0-9a-zA-Z]{2,24}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AlexaForBusiness.Model.CreateUserRequest.FirstName</property>
@@ -465,7 +465,7 @@
     <property>Amazon.AlexaForBusiness.Model.GetInvitationConfigurationResponse.ContactEmail</property>
     <min>1</min>
     <max>128</max>
-    <pattern>([0-9a-zA-Z]([+-.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z]([-\w]*[0-9a-zA-Z]+)*\.)+[a-zA-Z]{2,9})</pattern>
+    <pattern>\w[+-.\w]*@\w[\w\.\-]+\.[0-9a-zA-Z]{2,24}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AlexaForBusiness.Model.GetInvitationConfigurationResponse.OrganizationName</property>
@@ -680,7 +680,7 @@
     <property>Amazon.AlexaForBusiness.Model.PutInvitationConfigurationRequest.ContactEmail</property>
     <min>1</min>
     <max>128</max>
-    <pattern>([0-9a-zA-Z]([+-.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z]([-\w]*[0-9a-zA-Z]+)*\.)+[a-zA-Z]{2,9})</pattern>
+    <pattern>\w[+-.\w]*@\w[\w\.\-]+\.[0-9a-zA-Z]{2,24}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AlexaForBusiness.Model.PutInvitationConfigurationRequest.OrganizationName</property>
@@ -1278,7 +1278,7 @@
     <property>Amazon.AlexaForBusiness.Model.DeveloperInfo.Email</property>
     <min>1</min>
     <max>128</max>
-    <pattern>([0-9a-zA-Z]([+-.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z]([-\w]*[0-9a-zA-Z]+)*\.)+[a-zA-Z]{2,9})</pattern>
+    <pattern>\w[+-.\w]*@\w[\w\.\-]+\.[0-9a-zA-Z]{2,24}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AlexaForBusiness.Model.Device.DeviceArn</property>
@@ -1749,7 +1749,7 @@
     <property>Amazon.AlexaForBusiness.Model.UserData.Email</property>
     <min>1</min>
     <max>128</max>
-    <pattern>([0-9a-zA-Z]([+-.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z]([-\w]*[0-9a-zA-Z]+)*\.)+[a-zA-Z]{2,9})</pattern>
+    <pattern>\w[+-.\w]*@\w[\w\.\-]+\.[0-9a-zA-Z]{2,24}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AlexaForBusiness.Model.UserData.EnrollmentId</property>

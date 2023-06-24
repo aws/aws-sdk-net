@@ -30,21 +30,26 @@ namespace Amazon.TranscribeService.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateCallAnalyticsCategory operation.
-    /// Updates the call analytics category with new values. The <code>UpdateCallAnalyticsCategory</code>
-    /// operation overwrites all of the existing information with the values that you provide
-    /// in the request.
+    /// Updates the specified Call Analytics category with new rules. Note that the <code>UpdateCallAnalyticsCategory</code>
+    /// operation overwrites all existing rules contained in the specified category. You cannot
+    /// append additional rules onto an existing category.
+    /// 
+    ///  
+    /// <para>
+    /// To create a new category, see .
+    /// </para>
     /// </summary>
     public partial class UpdateCallAnalyticsCategoryRequest : AmazonTranscribeServiceRequest
     {
         private string _categoryName;
+        private InputType _inputType;
         private List<Rule> _rules = new List<Rule>();
 
         /// <summary>
         /// Gets and sets the property CategoryName. 
         /// <para>
-        /// The name of the analytics category to update. The name is case sensitive. If you try
-        /// to update a call analytics category with the same name as a previous category you
-        /// will receive a <code>ConflictException</code> error.
+        /// The name of the Call Analytics category you want to update. Category names are case
+        /// sensitive.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=200)]
@@ -61,10 +66,31 @@ namespace Amazon.TranscribeService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property InputType. 
+        /// <para>
+        /// Choose whether you want to update a real-time or a post-call category. The input type
+        /// you specify must match the input type specified when the category was created. For
+        /// example, if you created a category with the <code>POST_CALL</code> input type, you
+        /// must use <code>POST_CALL</code> as the input type when updating this category.
+        /// </para>
+        /// </summary>
+        public InputType InputType
+        {
+            get { return this._inputType; }
+            set { this._inputType = value; }
+        }
+
+        // Check to see if InputType property is set
+        internal bool IsSetInputType()
+        {
+            return this._inputType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Rules. 
         /// <para>
-        /// The rules used for the updated analytics category. The rules that you provide in this
-        /// field replace the ones that are currently being used. 
+        /// The rules used for the updated Call Analytics category. The rules you provide in this
+        /// field replace the ones that are currently being used in the specified category.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=20)]

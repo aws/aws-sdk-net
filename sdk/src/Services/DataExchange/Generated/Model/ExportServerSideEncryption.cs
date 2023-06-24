@@ -30,7 +30,7 @@ namespace Amazon.DataExchange.Model
 {
     /// <summary>
     /// Encryption configuration of the export job. Includes the encryption type in addition
-    /// to the AWS KMS key. The KMS key is only necessary if you chose the KMS encryption.
+    /// to the AWS KMS key. The KMS key is only necessary if you chose the KMS encryption
     /// type.
     /// </summary>
     public partial class ExportServerSideEncryption

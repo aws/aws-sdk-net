@@ -34,7 +34,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// EsamSignalProcessingNotification Marshaller
-    /// </summary>       
+    /// </summary>
     public class EsamSignalProcessingNotificationMarshaller : IRequestMarshaller<EsamSignalProcessingNotification, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static EsamSignalProcessingNotificationMarshaller Instance = new EsamSignalProcessingNotificationMarshaller();
 
     }

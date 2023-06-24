@@ -56,7 +56,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.IoT");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-05-28";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-05-28";
             request.HttpMethod = "PUT";
 
             if (!publicRequest.IsSetJobTemplateId())
@@ -85,6 +85,17 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Description);
                 }
 
+                if(publicRequest.IsSetDestinationPackageVersions())
+                {
+                    context.Writer.WritePropertyName("destinationPackageVersions");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestDestinationPackageVersionsListValue in publicRequest.DestinationPackageVersions)
+                    {
+                            context.Writer.Write(publicRequestDestinationPackageVersionsListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetDocument())
                 {
                     context.Writer.WritePropertyName("document");
@@ -103,6 +114,17 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.JobArn);
                 }
 
+                if(publicRequest.IsSetJobExecutionsRetryConfig())
+                {
+                    context.Writer.WritePropertyName("jobExecutionsRetryConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = JobExecutionsRetryConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.JobExecutionsRetryConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetJobExecutionsRolloutConfig())
                 {
                     context.Writer.WritePropertyName("jobExecutionsRolloutConfig");
@@ -112,6 +134,22 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     marshaller.Marshall(publicRequest.JobExecutionsRolloutConfig, context);
 
                     context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetMaintenanceWindows())
+                {
+                    context.Writer.WritePropertyName("maintenanceWindows");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestMaintenanceWindowsListValue in publicRequest.MaintenanceWindows)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = MaintenanceWindowMarshaller.Instance;
+                        marshaller.Marshall(publicRequestMaintenanceWindowsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
                 }
 
                 if(publicRequest.IsSetPresignedUrlConfig())
@@ -152,7 +190,6 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

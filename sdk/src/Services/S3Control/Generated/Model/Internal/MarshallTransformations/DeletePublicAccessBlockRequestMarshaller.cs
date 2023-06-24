@@ -57,21 +57,13 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             var request = new DefaultRequest(publicRequest, "Amazon.S3Control");
             request.HttpMethod = "DELETE";
         
-            if(publicRequest.IsSetAccountId())
+            if (publicRequest.IsSetAccountId()) 
+            {
                 request.Headers["x-amz-account-id"] = publicRequest.AccountId;
+            }
             request.ResourcePath = "/v20180820/configuration/publicAccessBlock";
 
 
-
-            var hostPrefixLabels = new
-            {
-                AccountId = StringUtils.FromString(publicRequest.AccountId),
-            };
-
-            if (!HostPrefixUtils.IsValidLabelValue(hostPrefixLabels.AccountId))
-                throw new AmazonS3ControlException("AccountId can only contain alphanumeric characters and dashes and must be between 1 and 63 characters long.");        
-            
-            request.HostPrefix = $"{hostPrefixLabels.AccountId}.";
             return request;
         }
         private static DeletePublicAccessBlockRequestMarshaller _instance = new DeletePublicAccessBlockRequestMarshaller();        

@@ -34,23 +34,37 @@ namespace Amazon.KeyManagementService.Model
     /// 
     ///  
     /// <para>
-    /// By default, the random byte string is generated in KMS. To generate the byte string
-    /// in the CloudHSM cluster that is associated with a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
-    /// key store</a>, specify the custom key store ID.
+    /// You must use the <code>NumberOfBytes</code> parameter to specify the length of the
+    /// random byte string. There is no default value for string length.
     /// </para>
     ///  
     /// <para>
-    /// Applications in Amazon Web Services Nitro Enclaves can call this operation by using
-    /// the <a href="https://github.com/aws/aws-nitro-enclaves-sdk-c">Amazon Web Services
-    /// Nitro Enclaves Development Kit</a>. For information about the supporting parameters,
-    /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How
-    /// Amazon Web Services Nitro Enclaves use KMS</a> in the <i>Key Management Service Developer
+    /// By default, the random byte string is generated in KMS. To generate the byte string
+    /// in the CloudHSM cluster associated with an CloudHSM key store, use the <code>CustomKeyStoreId</code>
+    /// parameter.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <code>GenerateRandom</code> also supports <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave.html">Amazon
+    /// Web Services Nitro Enclaves</a>, which provide an isolated compute environment in
+    /// Amazon EC2. To call <code>GenerateRandom</code> for a Nitro enclave, use the <a href="https://docs.aws.amazon.com/enclaves/latest/user/developing-applications.html#sdk">Amazon
+    /// Web Services Nitro Enclaves SDK</a> or any Amazon Web Services SDK. Use the <code>Recipient</code>
+    /// parameter to provide the attestation document for the enclave. Instead of plaintext
+    /// bytes, the response includes the plaintext bytes encrypted under the public key from
+    /// the attestation document (<code>CiphertextForRecipient</code>).For information about
+    /// the interaction between KMS and Amazon Web Services Nitro Enclaves, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How
+    /// Amazon Web Services Nitro Enclaves uses KMS</a> in the <i>Key Management Service Developer
     /// Guide</i>.
     /// </para>
     ///  
     /// <para>
     /// For more information about entropy and random number generation, see <a href="https://docs.aws.amazon.com/kms/latest/cryptographic-details/">Key
     /// Management Service Cryptographic Details</a>.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Cross-account use</b>: Not applicable. <code>GenerateRandom</code> does not use
+    /// any account-specific resources, such as KMS keys.
     /// </para>
     ///  
     /// <para>
@@ -62,14 +76,19 @@ namespace Amazon.KeyManagementService.Model
     {
         private string _customKeyStoreId;
         private int? _numberOfBytes;
+        private RecipientInfo _recipient;
 
         /// <summary>
         /// Gets and sets the property CustomKeyStoreId. 
         /// <para>
         /// Generates the random byte string in the CloudHSM cluster that is associated with the
-        /// specified <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
-        /// key store</a>. To find the ID of a custom key store, use the <a>DescribeCustomKeyStores</a>
+        /// specified CloudHSM key store. To find the ID of a custom key store, use the <a>DescribeCustomKeyStores</a>
         /// operation.
+        /// </para>
+        ///  
+        /// <para>
+        /// External key store IDs are not valid for this parameter. If you specify the ID of
+        /// an external key store, <code>GenerateRandom</code> throws an <code>UnsupportedOperationException</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -88,7 +107,7 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property NumberOfBytes. 
         /// <para>
-        /// The length of the byte string.
+        /// The length of the random byte string. This parameter is required.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -102,6 +121,48 @@ namespace Amazon.KeyManagementService.Model
         internal bool IsSetNumberOfBytes()
         {
             return this._numberOfBytes.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Recipient. 
+        /// <para>
+        /// A signed <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave-how.html#term-attestdoc">attestation
+        /// document</a> from an Amazon Web Services Nitro enclave and the encryption algorithm
+        /// to use with the enclave's public key. The only valid encryption algorithm is <code>RSAES_OAEP_SHA_256</code>.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// This parameter only supports attestation documents for Amazon Web Services Nitro Enclaves.
+        /// To include this parameter, use the <a href="https://docs.aws.amazon.com/enclaves/latest/user/developing-applications.html#sdk">Amazon
+        /// Web Services Nitro Enclaves SDK</a> or any Amazon Web Services SDK.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you use this parameter, instead of returning plaintext bytes, KMS encrypts the
+        /// plaintext bytes under the public key in the attestation document, and returns the
+        /// resulting ciphertext in the <code>CiphertextForRecipient</code> field in the response.
+        /// This ciphertext can be decrypted only with the private key in the enclave. The <code>Plaintext</code>
+        /// field in the response is null or empty.
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about the interaction between KMS and Amazon Web Services Nitro Enclaves,
+        /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How
+        /// Amazon Web Services Nitro Enclaves uses KMS</a> in the <i>Key Management Service Developer
+        /// Guide</i>.
+        /// </para>
+        /// </summary>
+        public RecipientInfo Recipient
+        {
+            get { return this._recipient; }
+            set { this._recipient = value; }
+        }
+
+        // Check to see if Recipient property is set
+        internal bool IsSetRecipient()
+        {
+            return this._recipient != null;
         }
 
     }

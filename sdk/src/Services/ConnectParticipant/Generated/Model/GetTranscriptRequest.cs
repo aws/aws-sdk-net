@@ -30,10 +30,16 @@ namespace Amazon.ConnectParticipant.Model
 {
     /// <summary>
     /// Container for the parameters to the GetTranscript operation.
-    /// Retrieves a transcript of the session, including details about any attachments. Note
-    /// that ConnectionToken is used for invoking this API instead of ParticipantToken.
+    /// Retrieves a transcript of the session, including details about any attachments. For
+    /// information about accessing past chat contact transcripts for a persistent chat, see
+    /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-persistence.html">Enable
+    /// persistent chat</a>. 
     /// 
-    ///  
+    ///  <note> 
+    /// <para>
+    ///  <code>ConnectionToken</code> is used for invoking this API instead of <code>ParticipantToken</code>.
+    /// </para>
+    ///  </note> 
     /// <para>
     /// The Amazon Connect Participant Service APIs do not use <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
     /// Version 4 authentication</a>.

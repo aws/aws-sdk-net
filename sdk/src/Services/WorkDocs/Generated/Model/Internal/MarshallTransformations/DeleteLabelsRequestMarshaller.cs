@@ -55,7 +55,7 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
         public IRequest Marshall(DeleteLabelsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.WorkDocs");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-05-01";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-05-01";
             request.HttpMethod = "DELETE";
 
             if (!publicRequest.IsSetResourceId())
@@ -69,8 +69,10 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
                 request.ParameterCollection.Add("labels", publicRequest.Labels);
             request.ResourcePath = "/api/v1/resources/{ResourceId}/labels";
         
-            if(publicRequest.IsSetAuthenticationToken())
+            if (publicRequest.IsSetAuthenticationToken()) 
+            {
                 request.Headers["Authentication"] = publicRequest.AuthenticationToken;
+            }
             request.UseQueryString = true;
 
             return request;

@@ -84,6 +84,14 @@ namespace AWSSDK.UnitTests
             .AppendLine("    }")
             .AppendLine("}").ToString();
 
+        private static readonly string DefaultConfigurationModeNameOnlyProfileText = new StringBuilder()
+            .AppendLine("{")
+            .AppendLine("    \"" + UniqueKey + "\" : {")
+            .AppendLine("        \"DisplayName\" : \"DefaultConfigurationModeNameOnlyProfile\",")
+            .AppendLine("        \"DefaultsMode\" : \"InRegion\",")
+            .AppendLine("    }")
+            .AppendLine("}").ToString();
+
         private static readonly string InvalidProfileText = new StringBuilder()
             .AppendLine("{")
             .AppendLine("    \"" + UniqueKey + "\" : {")
@@ -211,13 +219,24 @@ namespace AWSSDK.UnitTests
         }
 
         [TestMethod]
+        public void ReadDefaultConfigurationModeNameOnlyProfile()
+        {
+            using (var tester = new NetSDKCredentialsFileTestFixture(DefaultConfigurationModeNameOnlyProfileText))
+            {
+                var profile = tester.TestTryGetProfile("DefaultConfigurationModeNameOnlyProfile", expectProfile: true, expectValidProfile: false);
+
+                Assert.AreEqual(DefaultConfigurationMode.InRegion.ToString(), profile.DefaultConfigurationModeName);
+            }
+        }
+
+        [TestMethod]
         public void ReadRegionOnlyProfile()
         {
             using (var tester = new NetSDKCredentialsFileTestFixture(RegionOnlyProfileText))
             {
                 tester.TestTryGetProfile("RegionOnlyProfile", true, false);
             }
-        }                
+        }
 
         [TestMethod]
         public void WriteRegionOnlyProfile()

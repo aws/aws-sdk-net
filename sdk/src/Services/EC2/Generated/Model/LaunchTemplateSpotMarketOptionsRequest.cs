@@ -42,8 +42,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property BlockDurationMinutes. 
         /// <para>
-        /// The required duration for the Spot Instances (also known as Spot blocks), in minutes.
-        /// This value must be a multiple of 60 (60, 120, 180, 240, 300, or 360).
+        /// Deprecated.
         /// </para>
         /// </summary>
         public int BlockDurationMinutes
@@ -79,8 +78,16 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property MaxPrice. 
         /// <para>
-        /// The maximum hourly price you're willing to pay for the Spot Instances.
+        /// The maximum hourly price you're willing to pay for the Spot Instances. We do not recommend
+        /// using this parameter because it can lead to increased interruptions. If you do not
+        /// specify this parameter, you will pay the current Spot price.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// If you specify a maximum price, your Spot Instances will be interrupted more frequently
+        /// than if you do not specify this parameter.
+        /// </para>
+        ///  </important>
         /// </summary>
         public string MaxPrice
         {
@@ -115,10 +122,22 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ValidUntilUtc. 
         /// <para>
-        /// The end date of the request. For a one-time request, the request remains active until
-        /// all instances launch, the request is canceled, or this date is reached. If the request
-        /// is persistent, it remains active until it is canceled or this date and time is reached.
-        /// The default end date is 7 days from the current date.
+        /// The end date of the request, in UTC format (<i>YYYY-MM-DD</i>T<i>HH:MM:SS</i>Z). Supported
+        /// only for persistent requests.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// For a persistent request, the request remains active until the <code>ValidUntil</code>
+        /// date and time is reached. Otherwise, the request remains active until you cancel it.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For a one-time request, <code>ValidUntil</code> is not supported. The request remains
+        /// active until all instances launch or you cancel the request.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Default: 7 days from the current date
         /// </para>
         /// </summary>
         public DateTime ValidUntilUtc
@@ -148,10 +167,22 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// The end date of the request. For a one-time request, the request remains active until
-        /// all instances launch, the request is canceled, or this date is reached. If the request
-        /// is persistent, it remains active until it is canceled or this date and time is reached.
-        /// The default end date is 7 days from the current date.
+        /// The end date of the request, in UTC format (<i>YYYY-MM-DD</i>T<i>HH:MM:SS</i>Z). Supported
+        /// only for persistent requests.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// For a persistent request, the request remains active until the <code>ValidUntil</code>
+        /// date and time is reached. Otherwise, the request remains active until you cancel it.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For a one-time request, <code>ValidUntil</code> is not supported. The request remains
+        /// active until all instances launch or you cancel the request.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Default: 7 days from the current date
         /// </para>
         /// </summary>
         [Obsolete("Setting this property results in non-UTC DateTimes not being marshalled correctly. " +

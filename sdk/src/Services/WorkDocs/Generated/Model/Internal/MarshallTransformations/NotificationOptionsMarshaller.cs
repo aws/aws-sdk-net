@@ -34,7 +34,7 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// NotificationOptions Marshaller
-    /// </summary>       
+    /// </summary>
     public class NotificationOptionsMarshaller : IRequestMarshaller<NotificationOptions, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static NotificationOptionsMarshaller Instance = new NotificationOptionsMarshaller();
 
     }

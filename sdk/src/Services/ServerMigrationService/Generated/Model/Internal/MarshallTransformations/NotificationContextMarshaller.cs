@@ -34,7 +34,7 @@ namespace Amazon.ServerMigrationService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// NotificationContext Marshaller
-    /// </summary>       
+    /// </summary>
     public class NotificationContextMarshaller : IRequestMarshaller<NotificationContext, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.ServerMigrationService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static NotificationContextMarshaller Instance = new NotificationContextMarshaller();
 
     }

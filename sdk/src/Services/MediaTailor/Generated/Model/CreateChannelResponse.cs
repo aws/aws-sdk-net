@@ -42,11 +42,12 @@ namespace Amazon.MediaTailor.Model
         private List<ResponseOutputItem> _outputs = new List<ResponseOutputItem>();
         private string _playbackMode;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private string _tier;
 
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The ARN of the channel.
+        /// The Amazon Resource Name (ARN) to assign to the channel.
         /// </para>
         /// </summary>
         public string Arn
@@ -64,7 +65,7 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property ChannelName. 
         /// <para>
-        /// The name of the channel.
+        /// The name to assign to the channel.
         /// </para>
         /// </summary>
         public string ChannelName
@@ -154,7 +155,7 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property Outputs. 
         /// <para>
-        /// The channel's output properties.
+        /// The output properties to assign to the channel.
         /// </para>
         /// </summary>
         public List<ResponseOutputItem> Outputs
@@ -172,7 +173,7 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property PlaybackMode. 
         /// <para>
-        /// The channel's playback mode.
+        /// The playback mode to assign to the channel.
         /// </para>
         /// </summary>
         public string PlaybackMode
@@ -190,7 +191,10 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags assigned to the channel.
+        /// The tags to assign to the channel. Tags are key-value pairs that you can associate
+        /// with Amazon resources to help with organization, access control, and cost tracking.
+        /// For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+        /// AWS Elemental MediaTailor Resources</a>.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Tags
@@ -203,6 +207,24 @@ namespace Amazon.MediaTailor.Model
         internal bool IsSetTags()
         {
             return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tier. 
+        /// <para>
+        /// The tier of the channel.
+        /// </para>
+        /// </summary>
+        public string Tier
+        {
+            get { return this._tier; }
+            set { this._tier = value; }
+        }
+
+        // Check to see if Tier property is set
+        internal bool IsSetTier()
+        {
+            return this._tier != null;
         }
 
     }

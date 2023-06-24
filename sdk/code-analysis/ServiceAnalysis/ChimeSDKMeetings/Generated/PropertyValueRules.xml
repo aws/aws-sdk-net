@@ -5,6 +5,10 @@
     <pattern>[a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ChimeSDKMeetings.Model.BatchUpdateAttendeeCapabilitiesExceptRequest.MeetingId</property>
+    <pattern>[a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ChimeSDKMeetings.Model.CreateAttendeeRequest.ExternalUserId</property>
     <min>2</min>
     <max>64</max>
@@ -35,6 +39,11 @@
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ChimeSDKMeetings.Model.CreateMeetingRequest.PrimaryMeetingId</property>
+    <min>2</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ChimeSDKMeetings.Model.CreateMeetingWithAttendeesRequest.ClientRequestToken</property>
     <min>2</min>
     <max>64</max>
@@ -52,6 +61,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKMeetings.Model.CreateMeetingWithAttendeesRequest.MeetingHostId</property>
+    <min>2</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMeetings.Model.CreateMeetingWithAttendeesRequest.PrimaryMeetingId</property>
     <min>2</min>
     <max>64</max>
   </property-value-rule>
@@ -97,11 +111,37 @@
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ChimeSDKMeetings.Model.ListTagsForResourceRequest.ResourceARN</property>
+    <min>1</min>
+    <max>1011</max>
+    <pattern>^arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ChimeSDKMeetings.Model.StartMeetingTranscriptionRequest.MeetingId</property>
     <pattern>[a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKMeetings.Model.StopMeetingTranscriptionRequest.MeetingId</property>
+    <pattern>[a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMeetings.Model.TagResourceRequest.ResourceARN</property>
+    <min>1</min>
+    <max>1011</max>
+    <pattern>^arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMeetings.Model.UntagResourceRequest.ResourceARN</property>
+    <min>1</min>
+    <max>1011</max>
+    <pattern>^arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMeetings.Model.UpdateAttendeeCapabilitiesRequest.AttendeeId</property>
+    <pattern>[a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMeetings.Model.UpdateAttendeeCapabilitiesRequest.MeetingId</property>
     <pattern>[a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -119,11 +159,23 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ChimeSDKMeetings.Model.AttendeeIdItem.AttendeeId</property>
+    <pattern>[a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ChimeSDKMeetings.Model.BadRequestException.Code</property>
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKMeetings.Model.BadRequestException.RequestId</property>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMeetings.Model.ConflictException.Code</property>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMeetings.Model.ConflictException.RequestId</property>
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
@@ -155,6 +207,12 @@
     <pattern>^[0-9a-zA-Z._-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ChimeSDKMeetings.Model.EngineTranscribeSettings.LanguageOptions</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>^[a-zA-Z-,]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ChimeSDKMeetings.Model.EngineTranscribeSettings.PiiEntityTypes</property>
     <min>1</min>
     <max>300</max>
@@ -165,8 +223,20 @@
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ChimeSDKMeetings.Model.EngineTranscribeSettings.VocabularyFilterNames</property>
+    <min>1</min>
+    <max>3000</max>
+    <pattern>^[a-zA-Z0-9,-._]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ChimeSDKMeetings.Model.EngineTranscribeSettings.VocabularyName</property>
     <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMeetings.Model.EngineTranscribeSettings.VocabularyNames</property>
+    <min>1</min>
+    <max>3000</max>
+    <pattern>^[a-zA-Z0-9,-._]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKMeetings.Model.ForbiddenException.Code</property>
@@ -227,6 +297,12 @@
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ChimeSDKMeetings.Model.Meeting.MeetingArn</property>
+    <min>1</min>
+    <max>1011</max>
+    <pattern>^arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ChimeSDKMeetings.Model.Meeting.MeetingHostId</property>
     <min>2</min>
     <max>64</max>
@@ -234,6 +310,11 @@
   <property-value-rule>
     <property>Amazon.ChimeSDKMeetings.Model.Meeting.MeetingId</property>
     <pattern>[a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMeetings.Model.Meeting.PrimaryMeetingId</property>
+    <min>2</min>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKMeetings.Model.NotFoundException.Code</property>
@@ -259,12 +340,68 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ChimeSDKMeetings.Model.ResourceNotFoundException.Code</property>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMeetings.Model.ResourceNotFoundException.RequestId</property>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMeetings.Model.ResourceNotFoundException.ResourceName</property>
+    <min>1</min>
+    <max>1011</max>
+    <pattern>^arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMeetings.Model.ServiceFailureException.Code</property>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMeetings.Model.ServiceFailureException.RequestId</property>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ChimeSDKMeetings.Model.ServiceUnavailableException.Code</property>
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKMeetings.Model.ServiceUnavailableException.RequestId</property>
     <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMeetings.Model.Tag.Key</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z+-=._:/]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMeetings.Model.Tag.Value</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>[\s\w+-=\.:/@]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMeetings.Model.ThrottlingException.Code</property>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMeetings.Model.ThrottlingException.RequestId</property>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMeetings.Model.TooManyTagsException.Code</property>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMeetings.Model.TooManyTagsException.RequestId</property>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMeetings.Model.TooManyTagsException.ResourceName</property>
+    <min>1</min>
+    <max>1011</max>
+    <pattern>^arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKMeetings.Model.UnauthorizedException.Code</property>

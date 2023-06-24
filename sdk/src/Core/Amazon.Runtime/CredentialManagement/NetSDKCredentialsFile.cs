@@ -45,6 +45,8 @@ namespace Amazon.Runtime.CredentialManagement
         private const string AWSCredentialsProfileType = "AWS";
         private const string SAMLRoleProfileType = "SAML";
 
+        private const string DefaultConfigurationModeNameField = "DefaultsMode";
+
         private const string RegionField = "Region";
 
         private const string EndpointDiscoveryEnabledField = "EndpointDiscoveryEnabled";
@@ -63,11 +65,13 @@ namespace Amazon.Runtime.CredentialManagement
         private const string SsoRegion = "sso_region";
         private const string SsoRoleName = "sso_role_name";
         private const string SsoStartUrl = "sso_start_url";
+        private const string SsoSession = "sso_session";
 
         private static readonly HashSet<string> ReservedPropertyNames = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
         {
             SettingsConstants.DisplayNameField,
             SettingsConstants.ProfileTypeField,
+            DefaultConfigurationModeNameField,
             RegionField,
             EndpointDiscoveryEnabledField,
             S3UseArnRegionField,
@@ -106,6 +110,7 @@ namespace Amazon.Runtime.CredentialManagement
                     { nameof(CredentialProfileOptions.SsoRegion), SsoRegion },
                     { nameof(CredentialProfileOptions.SsoRoleName), SsoRoleName },
                     { nameof(CredentialProfileOptions.SsoStartUrl), SsoStartUrl },
+                    { nameof(CredentialProfileOptions.SsoSession), SsoSession}
 #endif
                 }
             );
@@ -153,7 +158,15 @@ namespace Amazon.Runtime.CredentialManagement
                     CredentialProfileOptions profileOptions;
                     Dictionary<string, string> userProperties;
                     Dictionary<string, string> reservedProperties;
-                    PropertyMapping.ExtractProfileParts(properties, ReservedPropertyNames,out profileOptions, out reservedProperties, out userProperties);
+                    PropertyMapping.ExtractProfileParts(
+                        properties, 
+                        ReservedPropertyNames,
+                        out profileOptions,
+                        out reservedProperties,
+                        out userProperties);
+
+                    string defaultConfigurationModeName;
+                    reservedProperties.TryGetValue(DefaultConfigurationModeNameField, out defaultConfigurationModeName);
 
                     string regionString;
                     RegionEndpoint region = null;
@@ -175,7 +188,7 @@ namespace Amazon.Runtime.CredentialManagement
                     {
                         bool endpointDiscoveryEnabledOut;
                         if (!bool.TryParse(endpointDiscoveryEnabledString, out endpointDiscoveryEnabledOut))
-                        {                            
+                        {
                             profile = null;
                             return false;
                         }
@@ -299,6 +312,7 @@ namespace Amazon.Runtime.CredentialManagement
                         Properties = userProperties,
                         Region = region,
                         CredentialProfileStore = this,
+                        DefaultConfigurationModeName = defaultConfigurationModeName,
                         EndpointDiscoveryEnabled = endpointDiscoveryEnabled,
                         StsRegionalEndpoints = stsRegionalEndpoints,
                         S3UseArnRegion = s3UseArnRegion,

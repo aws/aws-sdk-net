@@ -34,6 +34,7 @@ namespace Amazon.Macie2.Model
     /// </summary>
     public partial class CreateClassificationJobRequest : AmazonMacie2Request
     {
+        private List<string> _allowListIds = new List<string>();
         private string _clientToken;
         private List<string> _customDataIdentifierIds = new List<string>();
         private string _description;
@@ -46,6 +47,25 @@ namespace Amazon.Macie2.Model
         private int? _samplingPercentage;
         private JobScheduleFrequency _scheduleFrequency;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
+
+        /// <summary>
+        /// Gets and sets the property AllowListIds. 
+        /// <para>
+        /// An array of unique identifiers, one for each allow list for the job to use when it
+        /// analyzes data.
+        /// </para>
+        /// </summary>
+        public List<string> AllowListIds
+        {
+            get { return this._allowListIds; }
+            set { this._allowListIds = value; }
+        }
+
+        // Check to see if AllowListIds property is set
+        internal bool IsSetAllowListIds()
+        {
+            return this._allowListIds != null && this._allowListIds.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
@@ -112,7 +132,7 @@ namespace Amazon.Macie2.Model
         /// changed after you create the job and before the job's first scheduled run, set this
         /// value to false.
         /// </para>
-        /// 
+        ///  
         /// <para>
         /// If you configure the job to run only once, don't specify a value for this property.
         /// </para>
@@ -167,7 +187,7 @@ namespace Amazon.Macie2.Model
         /// include (use) or exclude (not use) when it analyzes data. Inclusion or exclusion depends
         /// on the managed data identifier selection type that you specify for the job (managedDataIdentifierSelector).
         /// </para>
-        /// 
+        ///  
         /// <para>
         /// To retrieve a list of valid values for this property, use the ListManagedDataIdentifiers
         /// operation.

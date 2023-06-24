@@ -69,8 +69,7 @@ namespace Amazon.ECS.Model
     /// tasks until the replacement tasks are considered healthy. Tasks for services that
     /// do not use a load balancer are considered healthy if they're in the <code>RUNNING</code>
     /// state. Tasks for services that use a load balancer are considered healthy if they're
-    /// in the <code>RUNNING</code> state and the container instance they're hosted on is
-    /// reported as healthy by the load balancer.
+    /// in the <code>RUNNING</code> state and are reported as healthy by the load balancer.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -126,7 +125,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property ContainerInstances. 
         /// <para>
-        /// A list of container instance IDs or full ARN entries.
+        /// A list of up to 10 container instance IDs or full ARN entries.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

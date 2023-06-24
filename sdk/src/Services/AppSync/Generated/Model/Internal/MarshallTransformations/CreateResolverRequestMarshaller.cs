@@ -56,7 +56,7 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.AppSync");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-07-25";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-07-25";
             request.HttpMethod = "POST";
 
             if (!publicRequest.IsSetApiId())
@@ -82,6 +82,12 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetCode())
+                {
+                    context.Writer.WritePropertyName("code");
+                    context.Writer.Write(publicRequest.Code);
+                }
+
                 if(publicRequest.IsSetDataSourceName())
                 {
                     context.Writer.WritePropertyName("dataSourceName");
@@ -98,6 +104,12 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("kind");
                     context.Writer.Write(publicRequest.Kind);
+                }
+
+                if(publicRequest.IsSetMaxBatchSize())
+                {
+                    context.Writer.WritePropertyName("maxBatchSize");
+                    context.Writer.Write(publicRequest.MaxBatchSize);
                 }
 
                 if(publicRequest.IsSetPipelineConfig())
@@ -123,6 +135,17 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ResponseMappingTemplate);
                 }
 
+                if(publicRequest.IsSetRuntime())
+                {
+                    context.Writer.WritePropertyName("runtime");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = AppSyncRuntimeMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Runtime, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetSyncConfig())
                 {
                     context.Writer.WritePropertyName("syncConfig");
@@ -134,7 +157,6 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

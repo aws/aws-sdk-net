@@ -17,22 +17,22 @@
  * Do not modify this file. This file is generated from the amp-2020-08-01.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
-
+using Amazon.PrometheusService.Internal;
 
 namespace Amazon.PrometheusService
 {
     /// <summary>
     /// Configuration for accessing Amazon PrometheusService service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonPrometheusServiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.2.32");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.147");
 
         private string _userAgent = UserAgentString;
 
@@ -40,8 +40,10 @@ namespace Amazon.PrometheusService
         /// Default constructor
         /// </summary>
         public AmazonPrometheusServiceConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonPrometheusServiceDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "aps";
+            this.EndpointProvider = new AmazonPrometheusServiceEndpointProvider();
         }
 
         /// <summary>
@@ -76,5 +78,6 @@ namespace Amazon.PrometheusService
                 return _userAgent;
             }
         }
+
     }
 }

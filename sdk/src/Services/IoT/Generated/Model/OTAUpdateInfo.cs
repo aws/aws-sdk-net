@@ -238,7 +238,7 @@ namespace Amazon.IoT.Model
         /// A list of files associated with the OTA update.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=50)]
+        [AWSProperty(Min=1)]
         public List<OTAUpdateFile> OtaUpdateFiles
         {
             get { return this._otaUpdateFiles; }

@@ -34,7 +34,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AddressConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class AddressConfigurationMarshaller : IRequestMarshaller<AddressConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -106,7 +106,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AddressConfigurationMarshaller Instance = new AddressConfigurationMarshaller();
 
     }

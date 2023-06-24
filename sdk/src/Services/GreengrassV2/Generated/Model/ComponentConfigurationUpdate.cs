@@ -50,7 +50,7 @@ namespace Amazon.GreengrassV2.Model
         /// configuration updates</a> in the <i>IoT Greengrass V2 Developer Guide</i>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=65536)]
+        [AWSProperty(Min=1, Max=10485760)]
         public string Merge
         {
             get { return this._merge; }

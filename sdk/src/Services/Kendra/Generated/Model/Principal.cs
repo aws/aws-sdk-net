@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kendra.Model
 {
     /// <summary>
-    /// Provides user and group information for document access filtering.
+    /// Provides user and group information for <a href="https://docs.aws.amazon.com/kendra/latest/dg/user-context-filter.html">user
+    /// context filtering</a>.
     /// </summary>
     public partial class Principal
     {
@@ -41,7 +42,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Access. 
         /// <para>
-        /// Whether to allow or deny access to the principal.
+        /// Whether to allow or deny document access to the principal.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

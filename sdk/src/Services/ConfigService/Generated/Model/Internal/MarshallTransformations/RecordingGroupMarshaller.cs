@@ -34,7 +34,7 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RecordingGroup Marshaller
-    /// </summary>       
+    /// </summary>
     public class RecordingGroupMarshaller : IRequestMarshaller<RecordingGroup, JsonMarshallerContext> 
     {
         /// <summary>
@@ -51,10 +51,32 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.AllSupported);
             }
 
+            if(requestObject.IsSetExclusionByResourceTypes())
+            {
+                context.Writer.WritePropertyName("exclusionByResourceTypes");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ExclusionByResourceTypesMarshaller.Instance;
+                marshaller.Marshall(requestObject.ExclusionByResourceTypes, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetIncludeGlobalResourceTypes())
             {
                 context.Writer.WritePropertyName("includeGlobalResourceTypes");
                 context.Writer.Write(requestObject.IncludeGlobalResourceTypes);
+            }
+
+            if(requestObject.IsSetRecordingStrategy())
+            {
+                context.Writer.WritePropertyName("recordingStrategy");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = RecordingStrategyMarshaller.Instance;
+                marshaller.Marshall(requestObject.RecordingStrategy, context);
+
+                context.Writer.WriteObjectEnd();
             }
 
             if(requestObject.IsSetResourceTypes())
@@ -72,7 +94,7 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RecordingGroupMarshaller Instance = new RecordingGroupMarshaller();
 
     }

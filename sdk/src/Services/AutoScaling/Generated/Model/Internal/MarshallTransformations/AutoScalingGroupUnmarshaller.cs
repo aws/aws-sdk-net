@@ -97,6 +97,12 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                         unmarshalledObject.DefaultCooldown = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("DefaultInstanceWarmup", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.DefaultInstanceWarmup = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("DesiredCapacity", targetDepth))
                     {
                         var unmarshaller = IntUnmarshaller.Instance;
@@ -234,6 +240,13 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                         var unmarshaller = StringUnmarshaller.Instance;
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.TerminationPolicies.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("TrafficSources/member", targetDepth))
+                    {
+                        var unmarshaller = TrafficSourceIdentifierUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.TrafficSources.Add(item);
                         continue;
                     }
                     if (context.TestExpression("VPCZoneIdentifier", targetDepth))

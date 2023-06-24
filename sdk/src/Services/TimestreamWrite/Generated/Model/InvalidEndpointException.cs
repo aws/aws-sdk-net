@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.TimestreamWrite.Model
 {
     /// <summary>
-    /// The requested endpoint was invalid.
+    /// The requested endpoint was not valid.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

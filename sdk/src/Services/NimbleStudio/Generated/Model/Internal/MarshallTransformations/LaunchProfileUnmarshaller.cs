@@ -160,6 +160,12 @@ namespace Amazon.NimbleStudio.Model.Internal.MarshallTransformations
                     unmarshalledObject.UpdatedBy = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("validationResults", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ValidationResult, ValidationResultUnmarshaller>(ValidationResultUnmarshaller.Instance);
+                    unmarshalledObject.ValidationResults = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

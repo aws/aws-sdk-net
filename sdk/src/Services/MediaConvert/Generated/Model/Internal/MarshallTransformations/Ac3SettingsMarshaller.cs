@@ -34,7 +34,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Ac3Settings Marshaller
-    /// </summary>       
+    /// </summary>
     public class Ac3SettingsMarshaller : IRequestMarshaller<Ac3Settings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -109,7 +109,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static Ac3SettingsMarshaller Instance = new Ac3SettingsMarshaller();
 
     }

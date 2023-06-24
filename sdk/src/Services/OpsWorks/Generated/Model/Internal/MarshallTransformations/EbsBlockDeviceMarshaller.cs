@@ -34,7 +34,7 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// EbsBlockDevice Marshaller
-    /// </summary>       
+    /// </summary>
     public class EbsBlockDeviceMarshaller : IRequestMarshaller<EbsBlockDevice, JsonMarshallerContext> 
     {
         /// <summary>
@@ -79,7 +79,7 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static EbsBlockDeviceMarshaller Instance = new EbsBlockDeviceMarshaller();
 
     }

@@ -12,7 +12,9 @@ using StructureGenerator = ServiceClientGenerator.Generators.SourceFiles.Structu
 
 using Json.LitJson;
 using System.Collections.Concurrent;
-
+using ServiceClientGenerator.Generators.Endpoints;
+using ServiceClientGenerator.Endpoints.Partitions;
+using EventStreamExceptionGenerator = ServiceClientGenerator.Generators.SourceFiles.Exceptions.EventStreamExceptions;
 namespace ServiceClientGenerator
 {
     public class GeneratorDriver
@@ -86,7 +88,7 @@ namespace ServiceClientGenerator
         private const string MobileSubFolder = "_mobile";
         private const string UnitySubFolder = "_unity";
         private string PaginatorsSubFolder = string.Format("Model{0}_bcl45+netstandard", Path.DirectorySeparatorChar);
-        private string MarshallingTestsSubFolder = string.Format("UnitTests{0}Generated{0}Marshalling", Path.DirectorySeparatorChar);
+        private string GeneratedTestsSubFolder = string.Format("UnitTests{0}Generated", Path.DirectorySeparatorChar);
         private string CustomizationTestsSubFolder = string.Format("UnitTests{0}Generated{0}Customizations", Path.DirectorySeparatorChar);
         private string PaginatorTestsSubFolder = string.Format("UnitTests{0}Generated{0}_bcl45+netstandard{0}Paginators", Path.DirectorySeparatorChar);
 
@@ -100,7 +102,6 @@ namespace ServiceClientGenerator
         public const string CommonTestSubFoldername = "Common";
         public const string UnitTestsSubFoldername = "UnitTests";
         public const string IntegrationTestsSubFolderName = "IntegrationTests";
-
 
         // Records any new project files we produce as part of generation. If this collection is
         // not empty when we've processed all source, we must update the solution files to add
@@ -121,6 +122,12 @@ namespace ServiceClientGenerator
 
             ServiceFilesRoot = Path.Combine(Options.SdkRootFolder, SourceSubFoldername, ServicesSubFoldername, Configuration.ServiceFolderName);
             ServiceUnitTestFilesRoot = Path.Combine(Options.SdkRootFolder, TestsSubFoldername, ServicesSubFoldername, Configuration.ServiceFolderName);
+
+            if (config.IsTestService)
+            {
+                ServiceFilesRoot = ServiceUnitTestFilesRoot;
+            }
+
             GeneratedFilesRoot = Path.Combine(ServiceFilesRoot, GeneratedCodeFoldername);
 
             CodeAnalysisRoot = Path.Combine(Options.SdkRootFolder, CodeAnalysisFoldername, ServicesAnalysisSubFolderName, Configuration.ServiceFolderName);
@@ -165,7 +172,7 @@ namespace ServiceClientGenerator
             {
                 // Do not generate AssemblyInfo.cs and nuspec file for child model.
                 // Use the one generated for the parent model.
-                if (!this.Configuration.IsChildConfig)
+                if (!this.Configuration.IsChildConfig && !Configuration.IsTestService)
                 {
                     GenerateNuspec();
 
@@ -179,8 +186,20 @@ namespace ServiceClientGenerator
             }
 
             // Client config object
+            ExecuteGenerator(new Generators.SourceFiles.DefaultConfiguration(), "Amazon" + Configuration.ClassName + "DefaultConfiguration.cs");
             ExecuteGenerator(new ServiceConfig(), "Amazon" + Configuration.ClassName + "Config.cs");
             ExecuteGenerator(new ServiceMetadata(), "Amazon" + Configuration.ClassName + "Metadata.cs", "Internal");
+
+            if (Configuration.EndpointsRuleSet != null)
+            {
+                ExecuteGenerator(new EndpointParameters(), "Amazon" + Configuration.ClassName + "EndpointParameters.cs");
+                ExecuteGenerator(new EndpointProvider(), "Amazon" + Configuration.ClassName + "EndpointProvider.cs", "Internal");
+                ExecuteGenerator(new EndpointResolver(), "Amazon" + Configuration.ClassName + "EndpointResolver.cs", "Internal");
+            }
+            if (Configuration.EndpointTests != null)
+            {
+                ExecuteTestGenerator(new EndpointProviderTests(), Configuration.ClassName + "EndpointProviderTests.cs", "Endpoints");
+            }
 
             if (Configuration.Namespace == "Amazon.S3")
             {
@@ -207,7 +226,10 @@ namespace ServiceClientGenerator
                 ExecuteGenerator(new ServicePaginatorFactoryInterface(), $"I{Configuration.ServiceNameRoot}PaginatorFactory.cs", PaginatorsSubFolder);
                 ExecuteGenerator(new ServicePaginatorFactory(), $"{Configuration.ServiceNameRoot}PaginatorFactory.cs", PaginatorsSubFolder);
 
-                GeneratePaginatorTests();
+                // Paginator tests only need to be generated against a single service,
+                // so generate for the Test service
+                if (Configuration.IsTestService)
+                    GeneratePaginatorTests();
             }
 #endif
             // Do not generate base exception if this is a child model.
@@ -240,23 +262,23 @@ namespace ServiceClientGenerator
 
             // Generate tests based on the type of request it is
             if (Configuration.ServiceModel.Type == ServiceType.Json)
-                ExecuteTestGenerator(new JsonMarshallingTests(), fileName);
+                ExecuteTestGenerator(new JsonMarshallingTests(), fileName, "Marshalling");
             else if (Configuration.ServiceModel.Type == ServiceType.Query)
             {
                 if (Configuration.ServiceModel.IsEC2Protocol)
-                    ExecuteTestGenerator(new AWSQueryEC2MarshallingTests(), fileName);
+                    ExecuteTestGenerator(new AWSQueryEC2MarshallingTests(), fileName, "Marshalling");
                 else
-                    ExecuteTestGenerator(new AWSQueryMarshallingTests(), fileName);
+                    ExecuteTestGenerator(new AWSQueryMarshallingTests(), fileName, "Marshalling");
             }
             else if (Configuration.ServiceModel.Type == ServiceType.Rest_Xml || Configuration.ServiceModel.Type == ServiceType.Rest_Json)
-                ExecuteTestGenerator(new RestMarshallingTests(), fileName);
+                ExecuteTestGenerator(new RestMarshallingTests(), fileName, "Marshalling");
 
             //Generate endpoint discovery tests for classes that have an endpoint operation
             if(Configuration.ServiceModel.FindEndpointOperation() != null)
             {
                 fileName = string.Format("{0}EndpointDiscoveryMarshallingTests.cs", Configuration.ClassName);
-                ExecuteTestGenerator(new EndpointDiscoveryMarshallingTests(), fileName);
-            }            
+                ExecuteTestGenerator(new EndpointDiscoveryMarshallingTests(), fileName, "Marshalling");
+            }
 
             // Test that simple customizations were generated correctly
             GenerateCustomizationTests();
@@ -301,18 +323,18 @@ namespace ServiceClientGenerator
                 // These methods have already been released. The are broken and we need to work with the service teams to get them fixed.
                 if (string.Equals(operation.HttpMethod, "GET", StringComparison.InvariantCultureIgnoreCase) && operation.RequestHasBodyMembers)
                 {
-                    if ((string.Equals("QuickSight", Configuration.ServiceModel.ServiceId) && string.Equals("ListIAMPolicyAssignments", operation.Name)) ||
-                       (string.Equals("OpenSearch", Configuration.ServiceModel.ServiceId) && string.Equals("DescribeDomainAutoTunes", operation.Name)) ||
-                       (string.Equals("ivs", Configuration.ServiceModel.ServiceId) && string.Equals("ListTagsForResource", operation.Name)) ||
-                       (string.Equals("EFS", Configuration.ServiceModel.ServiceId) && string.Equals("DescribeAccountPreferences", operation.Name)) ||
-                       (string.Equals("SESv2", Configuration.ServiceModel.ServiceId) && string.Equals("ListContacts", operation.Name)) ||
-                       (string.Equals("SESv2", Configuration.ServiceModel.ServiceId) && string.Equals("ListImportJobs", operation.Name)) ||
-                       (string.Equals("Elasticsearch Service", Configuration.ServiceModel.ServiceId) && string.Equals("DescribeDomainAutoTunes", operation.Name))
+                    if ((string.Equals("QuickSight", Configuration.ServiceId) && string.Equals("ListIAMPolicyAssignments", operation.Name)) ||
+                       (string.Equals("OpenSearch", Configuration.ServiceId) && string.Equals("DescribeDomainAutoTunes", operation.Name)) ||
+                       (string.Equals("ivs", Configuration.ServiceId) && string.Equals("ListTagsForResource", operation.Name)) ||
+                       (string.Equals("EFS", Configuration.ServiceId) && string.Equals("DescribeAccountPreferences", operation.Name)) ||
+                       (string.Equals("SESv2", Configuration.ServiceId) && string.Equals("ListContacts", operation.Name)) ||
+                       (string.Equals("SESv2", Configuration.ServiceId) && string.Equals("ListImportJobs", operation.Name)) ||
+                       (string.Equals("Elasticsearch Service", Configuration.ServiceId) && string.Equals("DescribeDomainAutoTunes", operation.Name))
                         )
                     {
                         continue;
                     }
-                    throw new InvalidOperationException($"Failed to generate for service {Configuration.ServiceModel.ServiceFullName} because it contains a GET operation ({operation.Name}) with request body members.");
+                    throw new InvalidOperationException($"Failed to generate for service with Id {Configuration.ServiceId} because it contains a GET operation ({operation.Name}) with request body members.");
                 }
             }
         }
@@ -607,6 +629,23 @@ namespace ServiceClientGenerator
             {
                 var lookup = new NestedStructureLookup();
                 lookup.SearchForNestedStructures(operation.ResponseStructure);
+                //Do not generate an unmarshaller for the response's payload if it is of type EventStream
+                //This is because we attach the payload to the generic response and unmarshall it from there.
+                if (operation.IsEventStreamOutput)
+                {
+
+                    if (operation.ResponsePayloadMember.ModelShape.IsEventStream)
+                    {
+                        //If the file was already generated incorrectly delete it
+                        var unmarshallerName = operation.ResponsePayloadMember.ModelShape.Name + "Unmarshaller.cs";
+                        var unmarshallerPath = Path.Combine(GeneratedFilesRoot, "Model","Internal", "MarshallTransformations", unmarshallerName);
+                        if (File.Exists(unmarshallerPath))
+                        {
+                            File.Delete(unmarshallerPath);
+                        }
+                        return;
+                    }
+                }
 
                 foreach (var nestedStructure in lookup.NestedStructures)
                 {
@@ -679,11 +718,30 @@ namespace ServiceClientGenerator
         }
 
         /// <summary>
+        /// Invokes T4: <see cref="DefaultConfigurationModeGenerator"/>
+        /// </summary>
+        public static void GenerateDefaultConfigurationModeEnum(GenerationManifest generationManifest, GeneratorOptions options)
+        {
+            Console.WriteLine("Generating DefaultConfigurationMode Enum...");
+
+            var defaultConfigurationModeFilesRoot = Path.Combine(options.SdkRootFolder, "src", "Core", "Amazon.Runtime");
+            const string fileName = "DefaultConfigurationMode.generated.cs";
+
+            var generator = new DefaultConfigurationModeGenerator
+            {
+                DefaultConfigurationModel = generationManifest.DefaultConfiguration
+            };
+
+            var text = generator.TransformText();
+            WriteFile(defaultConfigurationModeFilesRoot, null, fileName, text);
+        }
+
+        /// <summary>
         /// Generates the endpoint discovery marshaller for the specified operation.
         /// </summary>
         /// <param name="operation">The operation to generate endpoint discovery marshaller for</param>
         void GenerateEndpointDiscoveryMarshaller(Operation operation)
-        {            
+        {
             if(operation.IsEndpointOperation || !operation.EndpointDiscoveryEnabled)
             {
                 return;
@@ -694,11 +752,20 @@ namespace ServiceClientGenerator
                 Operation = operation
             };
 
-            this.ExecuteGenerator(generator, operation.Name + "EndpointDiscoveryMarshaller.cs", "Model.Internal.MarshallTransformations");                        
+            this.ExecuteGenerator(generator, operation.Name + "EndpointDiscoveryMarshaller.cs", "Model.Internal.MarshallTransformations");            
         }
 
         private void GenerateExceptions(Operation operation)
         {
+            //Generate a special EventStreamException class that extends EventStreamException
+            //We need a parameterless constructor to use it in EnumerableEventStream. Only once per service
+            if (operation.IsEventStreamOutput && !Configuration.GeneratedEventStreamException)
+            {
+                var eventStreamExceptionGenerator = new EventStreamExceptionGenerator();
+                this.ExecuteGenerator(eventStreamExceptionGenerator, this.Configuration.ClassName + "EventStreamException.cs","Model");
+                Configuration.GeneratedEventStreamException = true;
+            }
+
             foreach (var exceptionShape in operation.Exceptions)
             {
                 // Skip exceptions that have already been generated for the parent model
@@ -730,13 +797,35 @@ namespace ServiceClientGenerator
             GeneratorOptions options)
         {
             Console.WriteLine("Updating Core project files.");
-            string coreFilesRoot = Path.Combine(options.SdkRootFolder, "src", "core");
+            string coreFilesRoot = Path.Combine(options.SdkRootFolder, "src", "Core");
             var creator = new ProjectFileCreator(options);
             creator.ExecuteCore(coreFilesRoot, generationManifest.ProjectFileConfigurations);
             foreach (var newProjectKey in creator.CreatedProjectFiles.Keys)
             {
                 NewlyCreatedProjectFiles.Add(newProjectKey, creator.CreatedProjectFiles[newProjectKey]);
             }
+        }
+
+        /// <summary>
+        /// Generates partial Partition class used to retrieve partition-specific data.
+        /// </summary>
+        public static void GeneratePartitions(GeneratorOptions options)
+        {
+            Console.WriteLine("Generate Partition class.");
+            var coreFilesRoot = Path.Combine(options.SdkRootFolder, "src", "Core");
+            var writeToFolder = Path.Combine(coreFilesRoot, "Amazon.Runtime", "Internal", "Endpoints", "StandardLibrary");
+            var partitionsFile = Path.Combine(coreFilesRoot, "partitions.json");
+
+            var json = File.ReadAllText(partitionsFile);
+            var partitions = JsonMapper.ToObject<Partitions>(json);
+
+            var generator = new PartitionsTemplate
+            {
+                Partitions = partitions
+            };
+
+            var text = generator.TransformText();
+            WriteFile(writeToFolder, null, "Partition.generated.cs", text);
         }
 
         /// <summary>
@@ -801,7 +890,7 @@ namespace ServiceClientGenerator
             foreach (var service in manifest.ServiceConfigurations.OrderBy(x => x.ClassName))
             {
                 // Service like DynamoDB streams are included in a parent service.
-                if (service.ParentConfig != null)
+                if (service.ParentConfig != null || service.IsTestService)
                     continue;
 
                 if (string.IsNullOrEmpty(service.Synopsis))
@@ -956,24 +1045,6 @@ namespace ServiceClientGenerator
             }
         }
 
-        string ConvertHtmlToMarkDown(string text)
-        {
-            var htmlText = text.Replace("<fullname>", "<h1>").Replace("</fullname>", "</h1>");
-            htmlText = htmlText.Replace("<note>", "<i>").Replace("</note>", "</i>");
-            var converter = new ReverseMarkdown.Converter(new ReverseMarkdown.Config(unknownTagsConverter: "raise", githubFlavored: true));
-            try
-            {
-                var markdownText = converter.Convert(htmlText);
-                return markdownText;
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("exception while parsing markdown for the service {0}", Configuration.ServiceModel.ServiceFullName);
-                Console.WriteLine("html text = {0}", text);
-                throw e;
-            }
-        }
-
         void GenerateNuspec()
         {
             var coreVersion = GenerationManifest.CoreVersion;
@@ -1012,26 +1083,27 @@ namespace ServiceClientGenerator
                 }
             }
 
-            var assemblyVersion = Configuration.ServiceFileVersion;
-            var assemblyName = Configuration.Namespace.Replace("Amazon.", "AWSSDK.");
-            var assemblyTitle = "AWSSDK - " + Configuration.ServiceModel.ServiceFullName;
-            var nugetTitle = assemblyTitle;
+
+            var nugetAssemblyName = Configuration.AssemblyTitle;
+            var nugetAssemblyTitle = Configuration.AssemblyTitle.Replace("AWSSDK.", "AWSSDK - ");
+
+            var nugetTitle = nugetAssemblyTitle;
             if (!string.IsNullOrEmpty(Configuration.NugetPackageTitleSuffix))
                 nugetTitle += " " + Configuration.NugetPackageTitleSuffix;
 
             var session = new Dictionary<string, object>
             {
-                { "AssemblyName", assemblyName },
-                { "AssemblyTitle",  assemblyTitle },
+                { "AssemblyName", nugetAssemblyName },
+                { "AssemblyTitle",  nugetAssemblyTitle },
                 { "NetStandardSupport",  Configuration.NetStandardSupport },
                 { "NetStandardCoreAssemblyName",  Configuration.ServiceFolderName },
                 { "NuGetTitle",  nugetTitle },
-                { "AssemblyDescription", Configuration.AssemblyDescription },
-                { "AssemblyVersion", assemblyVersion },
+                { "AssemblyDescription", Configuration.AssemblyDescription(includePreamble: false, includeBody: false) },
+                { "AssemblyVersion", Configuration.ServiceFileVersion },
                 { "AWSDependencies", awsDependencies },
-                { "BaseName", this.Configuration.ClassName },
-                { "CodeAnalysisServiceFolder", this.Configuration.Namespace.Replace("Amazon.", "") },
-                { "ProjectFileConfigurations", this.ProjectFileConfigurations},
+                { "BaseName", Configuration.ClassName },
+                { "CodeAnalysisServiceFolder", Configuration.Namespace.Replace("Amazon.", "") },
+                { "ProjectFileConfigurations", ProjectFileConfigurations},
                 { "ExtraTags", Configuration.Tags == null || Configuration.Tags.Count == 0 ? string.Empty : " " + string.Join(" ", Configuration.Tags) },
                 { "licenseUrl", Configuration.LicenseUrl },
                 { "requireLicenseAcceptance",Configuration.RequireLicenseAcceptance?"true":"false" }
@@ -1044,7 +1116,7 @@ namespace ServiceClientGenerator
 
             var nuspecGenerator = new Nuspec { Session = session };
             var text = nuspecGenerator.TransformText();
-            var nuspecFilename = assemblyName + ".nuspec";
+            var nuspecFilename = nugetAssemblyName + ".nuspec";
             WriteFile(ServiceFilesRoot, string.Empty, nuspecFilename, text);
         }
 
@@ -1094,6 +1166,8 @@ namespace ServiceClientGenerator
         void ExecuteGenerator(BaseGenerator generator, string fileName, string subNamespace = null)
         {
             generator.Config = this.Configuration;
+            generator.DefaultConfigurationModel = this.GenerationManifest.DefaultConfiguration;
+
             var text = generator.TransformText();
 
             string outputFile;
@@ -1111,7 +1185,7 @@ namespace ServiceClientGenerator
         {
             generator.Config = this.Configuration;
             var text = generator.TransformText();
-            var outputSubFolder = subNamespace == null ? MarshallingTestsSubFolder : Path.Combine(MarshallingTestsSubFolder, subNamespace);
+            var outputSubFolder = subNamespace == null ? GeneratedTestsSubFolder : Path.Combine(GeneratedTestsSubFolder, subNamespace);
             WriteFile(ServiceUnitTestFilesRoot, outputSubFolder, fileName, text);
         }
 
@@ -1126,10 +1200,12 @@ namespace ServiceClientGenerator
         {
             generator.Config = this.Configuration;
             var text = generator.TransformText();
-            var outputSubFolder = @"docgenerator\AWSSDKDocSamples";
+            var outputSubFolder = Path.Combine("docgenerator", "AWSSDKDocSamples");
             if (subNamespace != null)
                 outputSubFolder = Path.Combine(outputSubFolder, subNamespace);
-            WriteFile(Path.GetFullPath(TestFilesRoot + @"\..\..\"), outputSubFolder, fileName, text);
+            
+            WriteFile(Path.GetFullPath(TestFilesRoot + string.Format("{0}..{0}..{0}",
+                Path.DirectorySeparatorChar)), outputSubFolder, fileName, text);
         }
 
         /// <summary>
@@ -1153,7 +1229,7 @@ namespace ServiceClientGenerator
         {
             if (this.Configuration.ServiceModel.HasPaginators && this.Configuration.GenerateConstructors)
             {
-                var paginatorTests = new PaginatorTests()
+                var paginatorTests = new PaginatorTests
                 {
                     Config = this.Configuration
                 };
@@ -1161,7 +1237,7 @@ namespace ServiceClientGenerator
                 var text = paginatorTests.TransformText();
                 var outputSubFolder = PaginatorTestsSubFolder;
                 WriteFile(ServiceUnitTestFilesRoot, outputSubFolder, this.Configuration.ClassName + "PaginatorTests.cs", text);
-            }         
+            }
         }
 
         internal static bool WriteFile(string baseOutputDir,
@@ -1211,6 +1287,21 @@ namespace ServiceClientGenerator
                 var existingContent = File.ReadAllText(outputFilePath);
                 if (string.Equals(existingContent, cleanContent))
                     return false;
+
+                var outputFilePathFi = new FileInfo(outputFilePath);
+                // Handle Windows being case insensitive when a service makes a case change for shape name.
+                // Get a FileInfo that represents the casing of the file on disk
+                var fi = Directory.GetFiles(outputFilePathFi.DirectoryName)
+                                .Select(x => new FileInfo(x))
+                                .FirstOrDefault(x => string.Equals(x.Name, outputFilePathFi.Name, StringComparison.OrdinalIgnoreCase));
+
+                // Compare the casing on disk versus the computed value.
+                if(fi.FullName != new FileInfo(outputFilePath).FullName)
+                {
+                    // Casing is different so delete the on disk file so we can create a new file with the correct casing.
+                    File.Delete(outputFilePath);
+                    Console.WriteLine("...deleting existing file that is different by case from new file: {0}", filename);
+                }
             }
 
             File.WriteAllText(outputFilePath, cleanContent);
@@ -1391,7 +1482,7 @@ namespace ServiceClientGenerator
 
         public static List<EndpointConstant> ExtractEndpoints(GeneratorOptions options, Func<string, string> nameConverter, Func<string, string> codeConverter = null)
         {
-            var coreFilesRoot = Path.Combine(options.SdkRootFolder, "src", "core");
+            var coreFilesRoot = Path.Combine(options.SdkRootFolder, "src", "Core");
             var endpointsJsonFile = Path.Combine(coreFilesRoot, "endpoints.json");
 
             var endpointsJson = JsonMapper.ToObject(File.ReadAllText(endpointsJsonFile));
@@ -1420,20 +1511,16 @@ namespace ServiceClientGenerator
         {
             Console.WriteLine("Generating endpoints constants...");
 
-            var coreFilesRoot = Path.Combine(options.SdkRootFolder, "src", "core");
+            var coreFilesRoot = Path.Combine(options.SdkRootFolder, "src", "Core");
             var endpointsFilesRoot = Path.Combine(coreFilesRoot, "RegionEndpoint");
             const string fileName = "RegionEndpoint.generated.cs";
 
             var endpoints = ExtractEndpoints(options, ConstructEndpointName);
-
             var generator = new EndpointsGenerator
             {
-                Session = new Dictionary<string, object>
-                {
-                    ["endpoints"] = endpoints
-                }
+                Endpoints = endpoints
             };
-            generator.Initialize();
+
             var text = generator.TransformText();
             WriteFile(endpointsFilesRoot, null, fileName, text);
         }
@@ -1459,20 +1546,16 @@ namespace ServiceClientGenerator
             Console.WriteLine("Generating S3 enumerations constants...");
 
             var srcFilesRoot = Path.Combine(options.SdkRootFolder, "src");
-            var coreFilesRoot = Path.Combine(srcFilesRoot, "core");
+            var coreFilesRoot = Path.Combine(srcFilesRoot, "Core");
             var generatedFileRoot = Path.Combine(srcFilesRoot, "Services", "S3", "Generated");
             const string fileName = "S3Enumerations.cs";
 
             var endpoints = ExtractEndpoints(options, ConstructEndpointName, ConvertS3RegionCode);
-
             var generator = new S3EnumerationsGenerator()
             {
-                Session = new Dictionary<string, object>
-                {
-                    ["endpoints"] = endpoints
-                }
+                Endpoints = endpoints
             };
-            generator.Initialize();
+            
             var text = generator.TransformText();
             WriteFile(generatedFileRoot, null, fileName, text);
         }

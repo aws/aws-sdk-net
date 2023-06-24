@@ -52,11 +52,27 @@ namespace Amazon.Macie2.Model
         }
 
         /// <summary>
+        /// Paginator for ListAllowLists operation
+        ///</summary>
+        public IListAllowListsPaginator ListAllowLists(ListAllowListsRequest request) 
+        {
+            return new ListAllowListsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListClassificationJobs operation
         ///</summary>
         public IListClassificationJobsPaginator ListClassificationJobs(ListClassificationJobsRequest request) 
         {
             return new ListClassificationJobsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListClassificationScopes operation
+        ///</summary>
+        public IListClassificationScopesPaginator ListClassificationScopes(ListClassificationScopesRequest request) 
+        {
+            return new ListClassificationScopesPaginator(this.client, request);
         }
 
         /// <summary>
@@ -92,6 +108,14 @@ namespace Amazon.Macie2.Model
         }
 
         /// <summary>
+        /// Paginator for ListManagedDataIdentifiers operation
+        ///</summary>
+        public IListManagedDataIdentifiersPaginator ListManagedDataIdentifiers(ListManagedDataIdentifiersRequest request) 
+        {
+            return new ListManagedDataIdentifiersPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListMembers operation
         ///</summary>
         public IListMembersPaginator ListMembers(ListMembersRequest request) 
@@ -105,6 +129,30 @@ namespace Amazon.Macie2.Model
         public IListOrganizationAdminAccountsPaginator ListOrganizationAdminAccounts(ListOrganizationAdminAccountsRequest request) 
         {
             return new ListOrganizationAdminAccountsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListResourceProfileArtifacts operation
+        ///</summary>
+        public IListResourceProfileArtifactsPaginator ListResourceProfileArtifacts(ListResourceProfileArtifactsRequest request) 
+        {
+            return new ListResourceProfileArtifactsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListResourceProfileDetections operation
+        ///</summary>
+        public IListResourceProfileDetectionsPaginator ListResourceProfileDetections(ListResourceProfileDetectionsRequest request) 
+        {
+            return new ListResourceProfileDetectionsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListSensitivityInspectionTemplates operation
+        ///</summary>
+        public IListSensitivityInspectionTemplatesPaginator ListSensitivityInspectionTemplates(ListSensitivityInspectionTemplatesRequest request) 
+        {
+            return new ListSensitivityInspectionTemplatesPaginator(this.client, request);
         }
 
         /// <summary>

@@ -57,29 +57,45 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             var request = new DefaultRequest(publicRequest, "Amazon.S3Control");
             request.HttpMethod = "PUT";
         
-            if(publicRequest.IsSetACL())
+            if (publicRequest.IsSetACL()) 
+            {
                 request.Headers["x-amz-acl"] = publicRequest.ACL;
+            }
         
-            if(publicRequest.IsSetGrantFullControl())
+            if (publicRequest.IsSetGrantFullControl()) 
+            {
                 request.Headers["x-amz-grant-full-control"] = publicRequest.GrantFullControl;
+            }
         
-            if(publicRequest.IsSetGrantRead())
+            if (publicRequest.IsSetGrantRead()) 
+            {
                 request.Headers["x-amz-grant-read"] = publicRequest.GrantRead;
+            }
         
-            if(publicRequest.IsSetGrantReadACP())
+            if (publicRequest.IsSetGrantReadACP()) 
+            {
                 request.Headers["x-amz-grant-read-acp"] = publicRequest.GrantReadACP;
+            }
         
-            if(publicRequest.IsSetGrantWrite())
+            if (publicRequest.IsSetGrantWrite()) 
+            {
                 request.Headers["x-amz-grant-write"] = publicRequest.GrantWrite;
+            }
         
-            if(publicRequest.IsSetGrantWriteACP())
+            if (publicRequest.IsSetGrantWriteACP()) 
+            {
                 request.Headers["x-amz-grant-write-acp"] = publicRequest.GrantWriteACP;
+            }
         
-            if(publicRequest.IsSetObjectLockEnabledForBucket())
+            if (publicRequest.IsSetObjectLockEnabledForBucket()) 
+            {
                 request.Headers["x-amz-bucket-object-lock-enabled"] = StringUtils.FromBool(publicRequest.ObjectLockEnabledForBucket);
+            }
         
-            if(publicRequest.IsSetOutpostId())
+            if (publicRequest.IsSetOutpostId()) 
+            {
                 request.Headers["x-amz-outpost-id"] = publicRequest.OutpostId;
+            }
             if (!publicRequest.IsSetBucket())
                 throw new AmazonS3ControlException("Request object does not have required field Bucket set");
             request.AddPathResource("{name}", StringUtils.FromString(publicRequest.Bucket));
@@ -103,8 +119,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 string content = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(content);
                 request.Headers["Content-Type"] = "application/xml";
-                var checksum = Amazon.Util.AWSSDKUtils.GenerateChecksumForContent(content, true);
-                request.Headers[Amazon.Util.HeaderKeys.ContentMD5Header] = checksum;
+                ChecksumUtils.SetRequestChecksumMD5(request);
                 request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-08-20";            
             } 
             catch (EncoderFallbackException e) 

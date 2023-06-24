@@ -34,7 +34,7 @@ namespace Amazon.NimbleStudio.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ActiveDirectoryConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class ActiveDirectoryConfigurationMarshaller : IRequestMarshaller<ActiveDirectoryConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -77,7 +77,7 @@ namespace Amazon.NimbleStudio.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ActiveDirectoryConfigurationMarshaller Instance = new ActiveDirectoryConfigurationMarshaller();
 
     }

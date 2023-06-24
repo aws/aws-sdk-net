@@ -34,7 +34,7 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// WorkflowDetails Marshaller
-    /// </summary>       
+    /// </summary>
     public class WorkflowDetailsMarshaller : IRequestMarshaller<WorkflowDetails, JsonMarshallerContext> 
     {
         /// <summary>
@@ -45,6 +45,22 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(WorkflowDetails requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetOnPartialUpload())
+            {
+                context.Writer.WritePropertyName("OnPartialUpload");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectOnPartialUploadListValue in requestObject.OnPartialUpload)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = WorkflowDetailMarshaller.Instance;
+                    marshaller.Marshall(requestObjectOnPartialUploadListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetOnUpload())
             {
                 context.Writer.WritePropertyName("OnUpload");
@@ -65,7 +81,7 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static WorkflowDetailsMarshaller Instance = new WorkflowDetailsMarshaller();
 
     }

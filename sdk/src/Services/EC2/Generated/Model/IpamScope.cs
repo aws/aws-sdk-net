@@ -37,8 +37,8 @@ namespace Amazon.EC2.Model
     /// 
     ///  
     /// <para>
-    /// For more information, see <a href="/vpc/latest/ipam/how-it-works-ipam.html">How IPAM
-    /// works</a> in the <i>Amazon VPC IPAM User Guide</i> 
+    /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/how-it-works-ipam.html">How
+    /// IPAM works</a> in the <i>Amazon VPC IPAM User Guide</i>.
     /// </para>
     /// </summary>
     public partial class IpamScope
@@ -113,7 +113,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property IpamScopeArn. 
         /// <para>
-        /// The ARN of the scope.
+        /// The Amazon Resource Name (ARN) of the scope.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1283)]

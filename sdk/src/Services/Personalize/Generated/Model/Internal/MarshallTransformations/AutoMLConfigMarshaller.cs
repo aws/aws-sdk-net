@@ -34,7 +34,7 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AutoMLConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class AutoMLConfigMarshaller : IRequestMarshaller<AutoMLConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AutoMLConfigMarshaller Instance = new AutoMLConfigMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ScheduleConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class ScheduleConfigMarshaller : IRequestMarshaller<ScheduleConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ScheduleConfigMarshaller Instance = new ScheduleConfigMarshaller();
 
     }

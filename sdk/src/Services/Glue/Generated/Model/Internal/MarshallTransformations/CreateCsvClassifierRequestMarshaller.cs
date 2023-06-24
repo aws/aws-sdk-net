@@ -34,7 +34,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CreateCsvClassifierRequest Marshaller
-    /// </summary>       
+    /// </summary>
     public class CreateCsvClassifierRequestMarshaller : IRequestMarshaller<CreateCsvClassifierRequest, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,6 +55,23 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("ContainsHeader");
                 context.Writer.Write(requestObject.ContainsHeader);
+            }
+
+            if(requestObject.IsSetCustomDatatypeConfigured())
+            {
+                context.Writer.WritePropertyName("CustomDatatypeConfigured");
+                context.Writer.Write(requestObject.CustomDatatypeConfigured);
+            }
+
+            if(requestObject.IsSetCustomDatatypes())
+            {
+                context.Writer.WritePropertyName("CustomDatatypes");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectCustomDatatypesListValue in requestObject.CustomDatatypes)
+                {
+                        context.Writer.Write(requestObjectCustomDatatypesListValue);
+                }
+                context.Writer.WriteArrayEnd();
             }
 
             if(requestObject.IsSetDelimiter())
@@ -96,7 +113,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CreateCsvClassifierRequestMarshaller Instance = new CreateCsvClassifierRequestMarshaller();
 
     }

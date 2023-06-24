@@ -34,7 +34,7 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// QuotaSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class QuotaSettingsMarshaller : IRequestMarshaller<QuotaSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static QuotaSettingsMarshaller Instance = new QuotaSettingsMarshaller();
 
     }

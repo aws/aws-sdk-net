@@ -29,27 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GameLift.Model
 {
     /// <summary>
-    /// Object that describes a <a>StartGameSessionPlacement</a> request. This object includes
-    /// the full details of the original request plus the current status and start/end time
-    /// stamps.
-    /// 
-    ///  
-    /// <para>
-    /// Game session placement-related operations include:
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <a>StartGameSessionPlacement</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeGameSessionPlacement</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>StopGameSessionPlacement</a> 
-    /// </para>
-    ///  </li> </ul>
+    /// This object includes the full details of the original request plus the current status
+    /// and start/end time stamps.
     /// </summary>
     public partial class GameSessionPlacement
     {
@@ -128,8 +109,8 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property GameProperties. 
         /// <para>
         /// A set of custom properties for a game session, formatted as key:value pairs. These
-        /// properties are passed to a game server process in the <a>GameSession</a> object with
-        /// a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
+        /// properties are passed to a game server process with a request to start a new game
+        /// session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
         /// a Game Session</a>).
         /// </para>
         /// </summary>
@@ -172,8 +153,8 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property GameSessionData. 
         /// <para>
         /// A set of custom game session properties, formatted as a single string value. This
-        /// data is passed to a game server process in the <a>GameSession</a> object with a request
-        /// to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
+        /// data is passed to a game server process in the <code>GameSession</code> object with
+        /// a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
         /// a Game Session</a>).
         /// </para>
         /// </summary>
@@ -273,9 +254,9 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property IpAddress. 
         /// <para>
-        /// The IP address of the game session. To connect to a GameLift game server, an app needs
-        /// both the IP address and port number. This value is set once the new game session is
-        /// placed (placement status is <code>FULFILLED</code>). 
+        /// The IP address of the game session. To connect to a Amazon GameLift game server, an
+        /// app needs both the IP address and port number. This value is set once the new game
+        /// session is placed (placement status is <code>FULFILLED</code>). 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -340,8 +321,7 @@ namespace Amazon.GameLift.Model
         /// placement request. These player sessions are created only once a new game session
         /// is successfully placed (placement status is <code>FULFILLED</code>). This information
         /// includes the player ID (as provided in the placement request) and the corresponding
-        /// player session ID. Retrieve full player sessions by calling <a>DescribePlayerSessions</a>
-        /// with the player session ID.
+        /// player session ID.
         /// </para>
         /// </summary>
         public List<PlacedPlayerSession> PlacedPlayerSessions
@@ -379,7 +359,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property PlayerLatencies. 
         /// <para>
         /// A set of values, expressed in milliseconds, that indicates the amount of latency that
-        /// a player experiences when connected to AWS Regions.
+        /// a player experiences when connected to Amazon Web Services Regions.
         /// </para>
         /// </summary>
         public List<PlayerLatency> PlayerLatencies
@@ -397,9 +377,9 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Port. 
         /// <para>
-        /// The port number for the game session. To connect to a GameLift game server, an app
-        /// needs both the IP address and port number. This value is set once the new game session
-        /// is placed (placement status is <code>FULFILLED</code>).
+        /// The port number for the game session. To connect to a Amazon GameLift game server,
+        /// an app needs both the IP address and port number. This value is set once the new game
+        /// session is placed (placement status is <code>FULFILLED</code>).
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=60000)]
@@ -451,7 +431,7 @@ namespace Amazon.GameLift.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>CANCELLED</b> -- The placement request was canceled with a call to <a>StopGameSessionPlacement</a>.
+        ///  <b>CANCELLED</b> -- The placement request was canceled.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -460,9 +440,9 @@ namespace Amazon.GameLift.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>FAILED</b> -- GameLift is not able to complete the process of placing the game
-        /// session. Common reasons are the game session terminated before the placement process
-        /// was completed, or an unexpected internal error.
+        ///  <b>FAILED</b> -- Amazon GameLift is not able to complete the process of placing the
+        /// game session. Common reasons are the game session terminated before the placement
+        /// process was completed, or an unexpected internal error.
         /// </para>
         ///  </li> </ul>
         /// </summary>

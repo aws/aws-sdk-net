@@ -38,7 +38,6 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CognitoIdentityProvider.Model.AdminCreateUserRequest.TemporaryPassword</property>
-    <min>6</min>
     <max>256</max>
     <pattern>[\S]+</pattern>
   </property-value-rule>
@@ -320,7 +319,6 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CognitoIdentityProvider.Model.AdminSetUserPasswordRequest.Password</property>
-    <min>6</min>
     <max>256</max>
     <pattern>[\S]+</pattern>
   </property-value-rule>
@@ -433,13 +431,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CognitoIdentityProvider.Model.ChangePasswordRequest.PreviousPassword</property>
-    <min>6</min>
     <max>256</max>
     <pattern>[\S]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CognitoIdentityProvider.Model.ChangePasswordRequest.ProposedPassword</property>
-    <min>6</min>
     <max>256</max>
     <pattern>[\S]+</pattern>
   </property-value-rule>
@@ -472,7 +468,6 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CognitoIdentityProvider.Model.ConfirmForgotPasswordRequest.Password</property>
-    <min>6</min>
     <max>256</max>
     <pattern>[\S]+</pattern>
   </property-value-rule>
@@ -540,7 +535,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CognitoIdentityProvider.Model.CreateIdentityProviderRequest.ProviderName</property>
-    <min>1</min>
+    <min>3</min>
     <max>32</max>
     <pattern>[^_][\p{L}\p{M}\p{S}\p{N}\p{P}][^_]+</pattern>
   </property-value-rule>
@@ -620,6 +615,11 @@
     <property>Amazon.CognitoIdentityProvider.Model.CreateUserPoolClientRequest.AccessTokenValidity</property>
     <min>1</min>
     <max>86400</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.CreateUserPoolClientRequest.AuthSessionValidity</property>
+    <min>3</min>
+    <max>15</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CognitoIdentityProvider.Model.CreateUserPoolClientRequest.ClientName</property>
@@ -1239,7 +1239,6 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CognitoIdentityProvider.Model.SignUpRequest.Password</property>
-    <min>6</min>
     <max>256</max>
     <pattern>[\S]+</pattern>
   </property-value-rule>
@@ -1417,6 +1416,11 @@
     <property>Amazon.CognitoIdentityProvider.Model.UpdateUserPoolClientRequest.AccessTokenValidity</property>
     <min>1</min>
     <max>86400</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.UpdateUserPoolClientRequest.AuthSessionValidity</property>
+    <min>3</min>
+    <max>15</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CognitoIdentityProvider.Model.UpdateUserPoolClientRequest.ClientId</property>
@@ -1857,6 +1861,11 @@
     <pattern>arn:[\w+=/,.@-]+:[\w+=/,.@-]+:([\w+=/,.@-]*)?:[0-9]+:[\w+=/,.@-]+(:[\w+=/,.@-]+)?(:[\w+=/,.@-]+)?</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.SmsConfigurationType.SnsRegion</property>
+    <min>5</min>
+    <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CognitoIdentityProvider.Model.SmsMfaConfigType.SmsAuthenticationMessage</property>
     <min>6</min>
     <max>140</max>
@@ -1931,6 +1940,11 @@
     <property>Amazon.CognitoIdentityProvider.Model.UserPoolClientType.AccessTokenValidity</property>
     <min>1</min>
     <max>86400</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.UserPoolClientType.AuthSessionValidity</property>
+    <min>3</min>
+    <max>15</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CognitoIdentityProvider.Model.UserPoolClientType.ClientId</property>

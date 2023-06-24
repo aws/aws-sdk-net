@@ -46,27 +46,30 @@ namespace Amazon.Macie2.Model
         /// Gets and sets the property AllowsUnencryptedObjectUploads. 
         /// <para>
         /// Specifies whether the bucket policy for the bucket requires server-side encryption
-        /// of objects when objects are uploaded to the bucket. Possible values are:
+        /// of objects when objects are added to the bucket. Possible values are:
         /// </para>
         ///  <ul><li>
         /// <para>
         /// FALSE - The bucket policy requires server-side encryption of new objects. PutObject
-        /// requests must include the x-amz-server-side-encryption header and the value for that
-        /// header must be AES256 or aws:kms.
+        /// requests must include a valid server-side encryption header.
         /// </para>
         /// </li> <li>
         /// <para>
         /// TRUE - The bucket doesn't have a bucket policy or it has a bucket policy that doesn't
         /// require server-side encryption of new objects. If a bucket policy exists, it doesn't
-        /// require PutObject requests to include the x-amz-server-side-encryption header and
-        /// it doesn't require the value for that header to be AES256 or aws:kms.
+        /// require PutObject requests to include a valid server-side encryption header.
         /// </para>
         /// </li> <li>
         /// <para>
         /// UNKNOWN - Amazon Macie can't determine whether the bucket policy requires server-side
-        /// encryption of objects.
+        /// encryption of new objects.
         /// </para>
-        /// </li></ul>
+        /// </li></ul> 
+        /// <para>
+        /// Valid server-side encryption headers are: x-amz-server-side-encryption with a value
+        /// of AES256 or aws:kms, and x-amz-server-side-encryption-customer-algorithm with a value
+        /// of AES256.
+        /// </para>
         /// </summary>
         public AllowsUnencryptedObjectUploads AllowsUnencryptedObjectUploads
         {
@@ -102,6 +105,9 @@ namespace Amazon.Macie2.Model
         /// Gets and sets the property CreatedAt. 
         /// <para>
         /// The date and time, in UTC and extended ISO 8601 format, when the bucket was created.
+        /// This value can also indicate when changes such as edits to the bucket's policy were
+        /// most recently made to the bucket, relative to when the finding was created or last
+        /// updated.
         /// </para>
         /// </summary>
         public DateTime CreatedAt
@@ -119,8 +125,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property DefaultServerSideEncryption. 
         /// <para>
-        /// The type of server-side encryption that's used by default to encrypt objects in the
-        /// bucket.
+        /// The default server-side encryption settings for the bucket.
         /// </para>
         /// </summary>
         public ServerSideEncryption DefaultServerSideEncryption

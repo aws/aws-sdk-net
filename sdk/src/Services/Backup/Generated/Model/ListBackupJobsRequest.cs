@@ -38,8 +38,11 @@ namespace Amazon.Backup.Model
     {
         private string _byAccountId;
         private string _byBackupVaultName;
+        private DateTime? _byCompleteAfter;
+        private DateTime? _byCompleteBefore;
         private DateTime? _byCreatedAfter;
         private DateTime? _byCreatedBefore;
+        private string _byParentJobId;
         private string _byResourceArn;
         private string _byResourceType;
         private BackupJobState _byState;
@@ -92,6 +95,44 @@ namespace Amazon.Backup.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ByCompleteAfter. 
+        /// <para>
+        /// Returns only backup jobs completed after a date expressed in Unix format and Coordinated
+        /// Universal Time (UTC).
+        /// </para>
+        /// </summary>
+        public DateTime ByCompleteAfter
+        {
+            get { return this._byCompleteAfter.GetValueOrDefault(); }
+            set { this._byCompleteAfter = value; }
+        }
+
+        // Check to see if ByCompleteAfter property is set
+        internal bool IsSetByCompleteAfter()
+        {
+            return this._byCompleteAfter.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ByCompleteBefore. 
+        /// <para>
+        /// Returns only backup jobs completed before a date expressed in Unix format and Coordinated
+        /// Universal Time (UTC).
+        /// </para>
+        /// </summary>
+        public DateTime ByCompleteBefore
+        {
+            get { return this._byCompleteBefore.GetValueOrDefault(); }
+            set { this._byCompleteBefore = value; }
+        }
+
+        // Check to see if ByCompleteBefore property is set
+        internal bool IsSetByCompleteBefore()
+        {
+            return this._byCompleteBefore.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property ByCreatedAfter. 
         /// <para>
         /// Returns only backup jobs that were created after the specified date.
@@ -128,6 +169,24 @@ namespace Amazon.Backup.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ByParentJobId. 
+        /// <para>
+        /// This is a filter to list child (nested) jobs based on parent job ID.
+        /// </para>
+        /// </summary>
+        public string ByParentJobId
+        {
+            get { return this._byParentJobId; }
+            set { this._byParentJobId = value; }
+        }
+
+        // Check to see if ByParentJobId property is set
+        internal bool IsSetByParentJobId()
+        {
+            return this._byParentJobId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ByResourceArn. 
         /// <para>
         /// Returns only backup jobs that match the specified resource Amazon Resource Name (ARN).
@@ -152,6 +211,14 @@ namespace Amazon.Backup.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
+        ///  <code>Aurora</code> for Amazon Aurora
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>DynamoDB</code> for Amazon DynamoDB
         /// </para>
         ///  </li> <li> 
@@ -168,15 +235,27 @@ namespace Amazon.Backup.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>FSx</code> for Amazon FSx
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Neptune</code> for Amazon Neptune
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>RDS</code> for Amazon Relational Database Service
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Aurora</code> for Amazon Aurora
+        ///  <code>Storage Gateway</code> for Storage Gateway
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Storage Gateway</code> for Storage Gateway
+        ///  <code>S3</code> for Amazon S3
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>VirtualMachine</code> for virtual machines
         /// </para>
         ///  </li> </ul>
         /// </summary>

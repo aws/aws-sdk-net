@@ -111,6 +111,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ElasticIp", StringUtils.FromString(publicRequest.ElasticIp));
                 }
+                if(publicRequest.IsSetEncrypted())
+                {
+                    request.Parameters.Add("Encrypted", StringUtils.FromBool(publicRequest.Encrypted));
+                }
                 if(publicRequest.IsSetEnhancedVpcRouting())
                 {
                     request.Parameters.Add("EnhancedVpcRouting", StringUtils.FromBool(publicRequest.EnhancedVpcRouting));
@@ -171,6 +175,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetReservedNodeId())
                 {
                     request.Parameters.Add("ReservedNodeId", StringUtils.FromString(publicRequest.ReservedNodeId));
+                }
+                if(publicRequest.IsSetSnapshotArn())
+                {
+                    request.Parameters.Add("SnapshotArn", StringUtils.FromString(publicRequest.SnapshotArn));
                 }
                 if(publicRequest.IsSetSnapshotClusterIdentifier())
                 {

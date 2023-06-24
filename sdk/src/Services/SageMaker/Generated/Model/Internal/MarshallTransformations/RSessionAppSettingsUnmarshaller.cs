@@ -64,6 +64,18 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("CustomImages", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<CustomImage, CustomImageUnmarshaller>(CustomImageUnmarshaller.Instance);
+                    unmarshalledObject.CustomImages = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("DefaultResourceSpec", targetDepth))
+                {
+                    var unmarshaller = ResourceSpecUnmarshaller.Instance;
+                    unmarshalledObject.DefaultResourceSpec = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

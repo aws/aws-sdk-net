@@ -30,7 +30,7 @@ namespace Amazon.IoT.Model
 {
     /// <summary>
     /// Container for the parameters to the ListProvisioningTemplateVersions operation.
-    /// A list of fleet provisioning template versions.
+    /// A list of provisioning template versions.
     /// 
     ///  
     /// <para>
@@ -84,7 +84,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property TemplateName. 
         /// <para>
-        /// The name of the fleet provisioning template.
+        /// The name of the provisioning template.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=36)]

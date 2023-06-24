@@ -33,6 +33,7 @@ namespace Amazon.DevOpsGuru.Model
     /// </summary>
     public partial class ReactiveInsight
     {
+        private string _description;
         private string _id;
         private InsightTimeRange _insightTimeRange;
         private string _name;
@@ -40,6 +41,24 @@ namespace Amazon.DevOpsGuru.Model
         private InsightSeverity _severity;
         private string _ssmOpsItemId;
         private InsightStatus _status;
+
+        /// <summary>
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// Describes the reactive insight.
+        /// </para>
+        /// </summary>
+        public string Description
+        {
+            get { return this._description; }
+            set { this._description = value; }
+        }
+
+        // Check to see if Description property is set
+        internal bool IsSetDescription()
+        {
+            return this._description != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Id. 

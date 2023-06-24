@@ -35,7 +35,7 @@ namespace Amazon.Textract.Model
     /// 
     ///  
     /// <para>
-    /// Information is returned as <code>ExpenseDocuments</code> and seperated as follows.
+    /// Information is returned as <code>ExpenseDocuments</code> and seperated as follows:
     /// </para>
     ///  <ul> <li> 
     /// <para>

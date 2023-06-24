@@ -29,20 +29,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// <important> 
-    /// <para>
-    /// Serverless Inference is in preview release for Amazon SageMaker and is subject to
-    /// change. We do not recommend using this feature in production environments.
-    /// </para>
-    ///  </important> 
-    /// <para>
     /// Specifies the serverless configuration for an endpoint variant.
-    /// </para>
     /// </summary>
     public partial class ProductionVariantServerlessConfig
     {
         private int? _maxConcurrency;
         private int? _memorySizeInMB;
+        private int? _provisionedConcurrency;
 
         /// <summary>
         /// Gets and sets the property MaxConcurrency. 
@@ -50,7 +43,7 @@ namespace Amazon.SageMaker.Model
         /// The maximum number of concurrent invocations your serverless endpoint can process.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=50)]
+        [AWSProperty(Required=true, Min=1, Max=200)]
         public int MaxConcurrency
         {
             get { return this._maxConcurrency.GetValueOrDefault(); }
@@ -81,6 +74,26 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetMemorySizeInMB()
         {
             return this._memorySizeInMB.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProvisionedConcurrency. 
+        /// <para>
+        /// The amount of provisioned concurrency to allocate for the serverless endpoint. Should
+        /// be less than or equal to <code>MaxConcurrency</code>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=200)]
+        public int ProvisionedConcurrency
+        {
+            get { return this._provisionedConcurrency.GetValueOrDefault(); }
+            set { this._provisionedConcurrency = value; }
+        }
+
+        // Check to see if ProvisionedConcurrency property is set
+        internal bool IsSetProvisionedConcurrency()
+        {
+            return this._provisionedConcurrency.HasValue; 
         }
 
     }

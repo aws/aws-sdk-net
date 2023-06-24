@@ -35,6 +35,20 @@ namespace Amazon.EC2.Model
     /// 
     ///  
     /// <para>
+    /// By default, when Amazon EC2 creates the new AMI, it reboots the instance so that it
+    /// can take snapshots of the attached volumes while data is at rest, in order to ensure
+    /// a consistent state. You can set the <code>NoReboot</code> parameter to <code>true</code>
+    /// in the API request, or use the <code>--no-reboot</code> option in the CLI to prevent
+    /// Amazon EC2 from shutting down and rebooting the instance.
+    /// </para>
+    ///  <important> 
+    /// <para>
+    /// If you choose to bypass the shutdown and reboot process by setting the <code>NoReboot</code>
+    /// parameter to <code>true</code> in the API request, or by using the <code>--no-reboot</code>
+    /// option in the CLI, we can't guarantee the file system integrity of the created image.
+    /// </para>
+    ///  </important> 
+    /// <para>
     /// If you customized your instance with instance store volumes or Amazon EBS volumes
     /// in addition to the root device volume, the new AMI contains block device mapping information
     /// for those volumes. When you launch an instance from this new AMI, the instance automatically
@@ -42,8 +56,8 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  
     /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html">Creating
-    /// Amazon EBS-Backed Linux AMIs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html">Create
+    /// an Amazon EBS-backed Linux AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
     /// </para>
     /// </summary>
     public partial class CreateImageRequest : AmazonEC2Request
@@ -156,12 +170,21 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property NoReboot. 
         /// <para>
-        /// By default, Amazon EC2 attempts to shut down and reboot the instance before creating
-        /// the image. If the <code>No Reboot</code> option is set, Amazon EC2 doesn't shut down
-        /// the instance before creating the image. Without a reboot, the AMI will be crash consistent
-        /// (all the volumes are snapshotted at the same time), but not application consistent
-        /// (all the operating system buffers are not flushed to disk before the snapshots are
-        /// created).
+        /// By default, when Amazon EC2 creates the new AMI, it reboots the instance so that it
+        /// can take snapshots of the attached volumes while data is at rest, in order to ensure
+        /// a consistent state. You can set the <code>NoReboot</code> parameter to <code>true</code>
+        /// in the API request, or use the <code>--no-reboot</code> option in the CLI to prevent
+        /// Amazon EC2 from shutting down and rebooting the instance.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// If you choose to bypass the shutdown and reboot process by setting the <code>NoReboot</code>
+        /// parameter to <code>true</code> in the API request, or by using the <code>--no-reboot</code>
+        /// option in the CLI, we can't guarantee the file system integrity of the created image.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// Default: <code>false</code> (follow standard reboot process)
         /// </para>
         /// </summary>
         public bool NoReboot

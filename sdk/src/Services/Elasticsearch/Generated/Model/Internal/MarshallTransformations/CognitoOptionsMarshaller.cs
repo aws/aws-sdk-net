@@ -34,7 +34,7 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CognitoOptions Marshaller
-    /// </summary>       
+    /// </summary>
     public class CognitoOptionsMarshaller : IRequestMarshaller<CognitoOptions, JsonMarshallerContext> 
     {
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CognitoOptionsMarshaller Instance = new CognitoOptionsMarshaller();
 
     }

@@ -64,6 +64,12 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("Filters", targetDepth))
+                {
+                    var unmarshaller = NotificationFilterConfigUnmarshaller.Instance;
+                    unmarshalledObject.Filters = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Sns", targetDepth))
                 {
                     var unmarshaller = SnsChannelConfigUnmarshaller.Instance;

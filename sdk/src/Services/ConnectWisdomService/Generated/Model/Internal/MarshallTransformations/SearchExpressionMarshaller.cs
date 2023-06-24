@@ -34,7 +34,7 @@ namespace Amazon.ConnectWisdomService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SearchExpression Marshaller
-    /// </summary>       
+    /// </summary>
     public class SearchExpressionMarshaller : IRequestMarshaller<SearchExpression, JsonMarshallerContext> 
     {
         /// <summary>
@@ -65,7 +65,7 @@ namespace Amazon.ConnectWisdomService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SearchExpressionMarshaller Instance = new SearchExpressionMarshaller();
 
     }

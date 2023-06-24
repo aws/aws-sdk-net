@@ -70,10 +70,22 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
                     unmarshalledObject.CopyAllowed = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("disconnectTimeoutInMinutes", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.DisconnectTimeoutInMinutes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("downloadAllowed", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DownloadAllowed = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("idleDisconnectTimeoutInMinutes", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.IdleDisconnectTimeoutInMinutes = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("pasteAllowed", targetDepth))

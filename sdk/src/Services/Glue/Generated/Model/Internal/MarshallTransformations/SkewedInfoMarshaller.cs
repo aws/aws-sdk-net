@@ -34,7 +34,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SkewedInfo Marshaller
-    /// </summary>       
+    /// </summary>
     public class SkewedInfoMarshaller : IRequestMarshaller<SkewedInfo, JsonMarshallerContext> 
     {
         /// <summary>
@@ -85,7 +85,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SkewedInfoMarshaller Instance = new SkewedInfoMarshaller();
 
     }

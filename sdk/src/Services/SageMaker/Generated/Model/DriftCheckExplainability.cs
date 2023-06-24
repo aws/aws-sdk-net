@@ -56,7 +56,10 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Constraints.
+        /// Gets and sets the property Constraints. 
+        /// <para>
+        /// The drift check explainability constraints.
+        /// </para>
         /// </summary>
         public MetricsSource Constraints
         {

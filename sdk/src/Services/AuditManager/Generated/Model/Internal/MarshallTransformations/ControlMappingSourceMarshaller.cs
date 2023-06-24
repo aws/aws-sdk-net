@@ -34,7 +34,7 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ControlMappingSource Marshaller
-    /// </summary>       
+    /// </summary>
     public class ControlMappingSourceMarshaller : IRequestMarshaller<ControlMappingSource, JsonMarshallerContext> 
     {
         /// <summary>
@@ -102,7 +102,7 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ControlMappingSourceMarshaller Instance = new ControlMappingSourceMarshaller();
 
     }

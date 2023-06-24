@@ -30,8 +30,7 @@ namespace Amazon.Route53RecoveryControlConfig.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeSafetyRule operation.
-    /// Describes the safety rules (that is, the assertion rules and gating rules) for the
-    /// routing controls in a control panel.
+    /// Returns information about a safety rule.
     /// </summary>
     public partial class DescribeSafetyRuleRequest : AmazonRoute53RecoveryControlConfigRequest
     {
@@ -40,7 +39,7 @@ namespace Amazon.Route53RecoveryControlConfig.Model
         /// <summary>
         /// Gets and sets the property SafetyRuleArn. 
         /// <para>
-        /// The request body that you include when you update a safety rule.
+        /// The ARN of the safety rule.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

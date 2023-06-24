@@ -29,14 +29,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
-    /// Describes an instance fleet, which is a group of EC2 instances that host a particular
-    /// node type (master, core, or task) in an Amazon EMR cluster. Instance fleets can consist
-    /// of a mix of instance types and On-Demand and Spot Instances, which are provisioned
-    /// to meet a defined target capacity. 
+    /// Describes an instance fleet, which is a group of Amazon EC2 instances that host a
+    /// particular node type (master, core, or task) in an Amazon EMR cluster. Instance fleets
+    /// can consist of a mix of instance types and On-Demand and Spot Instances, which are
+    /// provisioned to meet a defined target capacity. 
     /// 
     ///  <note> 
     /// <para>
-    /// The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and
+    /// The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and
     /// later, excluding 5.0.x versions.
     /// </para>
     ///  </note>
@@ -50,6 +50,7 @@ namespace Amazon.ElasticMapReduce.Model
         private string _name;
         private int? _provisionedOnDemandCapacity;
         private int? _provisionedSpotCapacity;
+        private InstanceFleetResizingSpecifications _resizeSpecifications;
         private InstanceFleetStatus _status;
         private int? _targetOnDemandCapacity;
         private int? _targetSpotCapacity;
@@ -186,6 +187,24 @@ namespace Amazon.ElasticMapReduce.Model
         internal bool IsSetProvisionedSpotCapacity()
         {
             return this._provisionedSpotCapacity.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResizeSpecifications. 
+        /// <para>
+        /// The resize specification for the instance fleet.
+        /// </para>
+        /// </summary>
+        public InstanceFleetResizingSpecifications ResizeSpecifications
+        {
+            get { return this._resizeSpecifications; }
+            set { this._resizeSpecifications = value; }
+        }
+
+        // Check to see if ResizeSpecifications property is set
+        internal bool IsSetResizeSpecifications()
+        {
+            return this._resizeSpecifications != null;
         }
 
         /// <summary>

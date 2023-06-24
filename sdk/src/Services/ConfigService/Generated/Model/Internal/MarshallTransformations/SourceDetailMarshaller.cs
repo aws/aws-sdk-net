@@ -34,7 +34,7 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SourceDetail Marshaller
-    /// </summary>       
+    /// </summary>
     public class SourceDetailMarshaller : IRequestMarshaller<SourceDetail, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SourceDetailMarshaller Instance = new SourceDetailMarshaller();
 
     }

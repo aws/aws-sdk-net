@@ -34,7 +34,7 @@ namespace Amazon.Translate.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// TerminologyData Marshaller
-    /// </summary>       
+    /// </summary>
     public class TerminologyDataMarshaller : IRequestMarshaller<TerminologyData, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.Translate.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static TerminologyDataMarshaller Instance = new TerminologyDataMarshaller();
 
     }

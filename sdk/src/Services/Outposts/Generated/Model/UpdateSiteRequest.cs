@@ -30,7 +30,7 @@ namespace Amazon.Outposts.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateSite operation.
-    /// Updates the site.
+    /// Updates the specified site.
     /// </summary>
     public partial class UpdateSiteRequest : AmazonOutpostsRequest
     {
@@ -74,7 +74,7 @@ namespace Amazon.Outposts.Model
         /// <summary>
         /// Gets and sets the property Notes. 
         /// <para>
-        ///  Notes about a site. 
+        /// Notes about a site.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2000)]
@@ -91,7 +91,10 @@ namespace Amazon.Outposts.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SiteId.
+        /// Gets and sets the property SiteId. 
+        /// <para>
+        ///  The ID or the Amazon Resource Name (ARN) of the site. 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
         public string SiteId

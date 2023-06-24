@@ -58,7 +58,7 @@ namespace Amazon.AWSMarketplaceMetering.Model.Internal.MarshallTransformations
             string target = "AWSMPMeteringService.RegisterUsage";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-01-14";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-01-14";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -85,7 +85,6 @@ namespace Amazon.AWSMarketplaceMetering.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.PublicKeyVersion);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

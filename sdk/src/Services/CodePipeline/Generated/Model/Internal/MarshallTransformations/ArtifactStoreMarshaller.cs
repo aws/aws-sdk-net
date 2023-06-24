@@ -34,7 +34,7 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ArtifactStore Marshaller
-    /// </summary>       
+    /// </summary>
     public class ArtifactStoreMarshaller : IRequestMarshaller<ArtifactStore, JsonMarshallerContext> 
     {
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ArtifactStoreMarshaller Instance = new ArtifactStoreMarshaller();
 
     }

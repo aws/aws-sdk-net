@@ -34,7 +34,7 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// TaskList Marshaller
-    /// </summary>       
+    /// </summary>
     public class TaskListMarshaller : IRequestMarshaller<TaskList, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static TaskListMarshaller Instance = new TaskListMarshaller();
 
     }

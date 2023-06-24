@@ -36,6 +36,7 @@ namespace Amazon.Appflow.Model
     {
         private DataPullMode _dataPullMode;
         private DateTime? _firstExecutionFrom;
+        private int? _flowErrorDeactivationThreshold;
         private DateTime? _scheduleEndTime;
         private string _scheduleExpression;
         private long? _scheduleOffset;
@@ -81,9 +82,30 @@ namespace Amazon.Appflow.Model
         }
 
         /// <summary>
+        /// Gets and sets the property FlowErrorDeactivationThreshold. 
+        /// <para>
+        /// Defines how many times a scheduled flow fails consecutively before Amazon AppFlow
+        /// deactivates it.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=100)]
+        public int FlowErrorDeactivationThreshold
+        {
+            get { return this._flowErrorDeactivationThreshold.GetValueOrDefault(); }
+            set { this._flowErrorDeactivationThreshold = value; }
+        }
+
+        // Check to see if FlowErrorDeactivationThreshold property is set
+        internal bool IsSetFlowErrorDeactivationThreshold()
+        {
+            return this._flowErrorDeactivationThreshold.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property ScheduleEndTime. 
         /// <para>
-        ///  Specifies the scheduled end time for a schedule-triggered flow. 
+        /// The time at which the scheduled flow ends. The time is formatted as a timestamp that
+        /// follows the ISO 8601 standard, such as <code>2022-04-27T13:00:00-07:00</code>.
         /// </para>
         /// </summary>
         public DateTime ScheduleEndTime
@@ -141,7 +163,8 @@ namespace Amazon.Appflow.Model
         /// <summary>
         /// Gets and sets the property ScheduleStartTime. 
         /// <para>
-        ///  Specifies the scheduled start time for a schedule-triggered flow. 
+        /// The time at which the scheduled flow starts. The time is formatted as a timestamp
+        /// that follows the ISO 8601 standard, such as <code>2022-04-26T13:00:00-07:00</code>.
         /// </para>
         /// </summary>
         public DateTime ScheduleStartTime
@@ -159,8 +182,17 @@ namespace Amazon.Appflow.Model
         /// <summary>
         /// Gets and sets the property Timezone. 
         /// <para>
-        ///  Specifies the time zone used when referring to the date and time of a scheduled-triggered
-        /// flow, such as <code>America/New_York</code>. 
+        /// Specifies the time zone used when referring to the dates and times of a scheduled
+        /// flow, such as <code>America/New_York</code>. This time zone is only a descriptive
+        /// label. It doesn't affect how Amazon AppFlow interprets the timestamps that you specify
+        /// to schedule the flow.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you want to schedule a flow by using times in a particular time zone, indicate
+        /// the time zone as a UTC offset in your timestamps. For example, the UTC offsets for
+        /// the <code>America/New_York</code> timezone are <code>-04:00</code> EDT and <code>-05:00
+        /// EST</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=256)]

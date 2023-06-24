@@ -50,6 +50,7 @@ namespace Amazon.Route53Domains.Model
         /// Constraints: Each key can be 1-128 characters long.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string Key
         {
             get { return this._key; }
@@ -76,6 +77,7 @@ namespace Amazon.Route53Domains.Model
         /// Constraints: Each value can be 0-256 characters long.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=256)]
         public string Value
         {
             get { return this._value; }

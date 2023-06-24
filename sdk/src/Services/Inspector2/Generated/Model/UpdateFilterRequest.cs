@@ -39,6 +39,7 @@ namespace Amazon.Inspector2.Model
         private string _filterArn;
         private FilterCriteria _filterCriteria;
         private string _name;
+        private string _reason;
 
         /// <summary>
         /// Gets and sets the property Action. 
@@ -131,6 +132,25 @@ namespace Amazon.Inspector2.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Reason. 
+        /// <para>
+        /// The reason the filter was updated.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=512)]
+        public string Reason
+        {
+            get { return this._reason; }
+            set { this._reason = value; }
+        }
+
+        // Check to see if Reason property is set
+        internal bool IsSetReason()
+        {
+            return this._reason != null;
         }
 
     }

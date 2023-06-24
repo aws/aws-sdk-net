@@ -41,12 +41,13 @@ namespace Amazon.AmplifyBackend.Model
         private List<string> _requiredSignUpAttributes = new List<string>();
         private SignInMethod _signInMethod;
         private string _userPoolName;
+        private CreateBackendAuthVerificationMessageConfig _verificationMessage;
 
         /// <summary>
         /// Gets and sets the property ForgotPassword. 
         /// <para>
-        /// Describes the forgotten password policy for your Amazon Cognito user pool, configured
-        /// as a part of your Amplify project.
+        /// <b>(DEPRECATED)</b> Describes the forgotten password policy for your Amazon Cognito
+        /// user pool, configured as a part of your Amplify project.
         /// </para>
         /// </summary>
         public CreateBackendAuthForgotPasswordConfig ForgotPassword
@@ -174,6 +175,25 @@ namespace Amazon.AmplifyBackend.Model
         internal bool IsSetUserPoolName()
         {
             return this._userPoolName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VerificationMessage. 
+        /// <para>
+        /// Describes the email or SMS verification message for your Amazon Cognito user pool,
+        /// configured as a part of your Amplify project.
+        /// </para>
+        /// </summary>
+        public CreateBackendAuthVerificationMessageConfig VerificationMessage
+        {
+            get { return this._verificationMessage; }
+            set { this._verificationMessage = value; }
+        }
+
+        // Check to see if VerificationMessage property is set
+        internal bool IsSetVerificationMessage()
+        {
+            return this._verificationMessage != null;
         }
 
     }

@@ -30,7 +30,11 @@ namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
     /// Container for the parameters to the DissociatePackage operation.
-    /// Dissociates a package from the Amazon OpenSearch Service domain.
+    /// Removes a package from the specified Amazon OpenSearch Service domain. The package
+    /// can't be in use with any OpenSearch index for the dissociation to succeed. The package
+    /// is still available in OpenSearch Service for association later. For more information,
+    /// see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/custom-packages.html">Custom
+    /// packages for Amazon OpenSearch Service</a>.
     /// </summary>
     public partial class DissociatePackageRequest : AmazonOpenSearchServiceRequest
     {
@@ -40,7 +44,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property DomainName. 
         /// <para>
-        /// The name of the domain to associate the package with.
+        /// Name of the domain to dissociate the package from.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=3, Max=28)]
@@ -59,8 +63,8 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property PackageID. 
         /// <para>
-        /// The internal ID of the package to associate with a domain. Use <code>DescribePackages</code>
-        /// to find this value. 
+        /// Internal ID of the package to dissociate from the domain. Use <code>ListPackagesForDomain</code>
+        /// to find this value.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

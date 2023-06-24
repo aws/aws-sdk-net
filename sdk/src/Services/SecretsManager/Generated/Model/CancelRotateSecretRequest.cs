@@ -30,76 +30,38 @@ namespace Amazon.SecretsManager.Model
 {
     /// <summary>
     /// Container for the parameters to the CancelRotateSecret operation.
-    /// Disables automatic scheduled rotation and cancels the rotation of a secret if currently
-    /// in progress.
+    /// Turns off automatic rotation, and if a rotation is currently in progress, cancels
+    /// the rotation.
     /// 
     ///  
     /// <para>
-    /// To re-enable scheduled rotation, call <a>RotateSecret</a> with <code>AutomaticallyRotateAfterDays</code>
-    /// set to a value greater than 0. This immediately rotates your secret and then enables
-    /// the automatic schedule.
-    /// </para>
-    ///  <note> 
-    /// <para>
-    /// If you cancel a rotation while in progress, it can leave the <code>VersionStage</code>
-    /// labels in an unexpected state. Depending on the step of the rotation in progress,
-    /// you might need to remove the staging label <code>AWSPENDING</code> from the partially
-    /// created version, specified by the <code>VersionId</code> response value. You should
-    /// also evaluate the partially rotated new version to see if it should be deleted, which
-    /// you can do by removing all staging labels from the new version <code>VersionStage</code>
-    /// field.
-    /// </para>
-    ///  </note> 
-    /// <para>
-    /// To successfully start a rotation, the staging label <code>AWSPENDING</code> must be
-    /// in one of the following states:
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    /// Not attached to any version at all
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// Attached to the same version as the staging label <code>AWSCURRENT</code> 
-    /// </para>
-    ///  </li> </ul> 
-    /// <para>
-    /// If the staging label <code>AWSPENDING</code> attached to a different version than
-    /// the version with <code>AWSCURRENT</code> then the attempt to rotate fails.
+    /// If you cancel a rotation in progress, it can leave the <code>VersionStage</code> labels
+    /// in an unexpected state. You might need to remove the staging label <code>AWSPENDING</code>
+    /// from the partially created version. You also need to determine whether to roll back
+    /// to the previous version of the secret by moving the staging label <code>AWSCURRENT</code>
+    /// to the version that has <code>AWSPENDING</code>. To determine which version has a
+    /// specific staging label, call <a>ListSecretVersionIds</a>. Then use <a>UpdateSecretVersionStage</a>
+    /// to change staging labels. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_how.html">How
+    /// rotation works</a>.
     /// </para>
     ///  
     /// <para>
-    ///  <b>Minimum permissions</b> 
+    /// To turn on automatic rotation again, call <a>RotateSecret</a>.
     /// </para>
     ///  
     /// <para>
-    /// To run this command, you must have the following permissions:
+    /// Secrets Manager generates a CloudTrail log entry when you call this action. Do not
+    /// include sensitive information in request parameters because it might be logged. For
+    /// more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/retrieve-ct-entries.html">Logging
+    /// Secrets Manager events with CloudTrail</a>.
     /// </para>
-    ///  <ul> <li> 
+    ///  
     /// <para>
-    /// secretsmanager:CancelRotateSecret
+    ///  <b>Required permissions: </b> <code>secretsmanager:CancelRotateSecret</code>. For
+    /// more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions">
+    /// IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+    /// and access control in Secrets Manager</a>. 
     /// </para>
-    ///  </li> </ul> 
-    /// <para>
-    ///  <b>Related operations</b> 
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    /// To configure rotation for a secret or to manually trigger a rotation, use <a>RotateSecret</a>.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// To get the rotation configuration details for a secret, use <a>DescribeSecret</a>.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// To list all of the currently available secrets, use <a>ListSecrets</a>.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// To list all of the versions currently associated with a secret, use <a>ListSecretVersionIds</a>.
-    /// </para>
-    ///  </li> </ul>
     /// </summary>
     public partial class CancelRotateSecretRequest : AmazonSecretsManagerRequest
     {
@@ -108,12 +70,13 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property SecretId. 
         /// <para>
-        /// Specifies the secret to cancel a rotation request. You can specify either the Amazon
-        /// Resource Name (ARN) or the friendly name of the secret.
+        /// The ARN or name of the secret.
         /// </para>
         ///  
         /// <para>
         /// For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.
+        /// See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding
+        /// a secret from a partial ARN</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]

@@ -61,10 +61,7 @@ namespace Amazon.S3.Model
     /// ACLs are still supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">Controlling
     /// object ownership</a> in the <i>Amazon S3 User Guide</i>.
     /// </para>
-    ///  </important> 
-    /// <para>
-    ///  <b>Access Permissions</b> 
-    /// </para>
+    ///  </important> <dl> <dt>Permissions</dt> <dd> 
     ///  
     /// <para>
     /// You can set access permissions using one of the following methods:
@@ -276,6 +273,7 @@ namespace Amazon.S3.Model
         private S3AccessControlList accessControlPolicy;
         private S3CannedACL cannedACL;
         private string bucket;
+        private ChecksumAlgorithm _checksumAlgorithm;
         private string expectedBucketOwner;
         private string key;
         private string versionId;
@@ -326,6 +324,33 @@ namespace Amazon.S3.Model
             set { this.bucket = value; }
         }
 
+        // Check to see if BucketName property is set
+        internal bool IsSetBucketName()
+        {
+            return this.bucket != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ChecksumAlgorithm. 
+        /// <para>
+        /// Indicates the algorithm used to create the checksum for the object. Amazon S3 will
+        /// fail the request with a 400 error if there is no checksum associated with the object.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">
+        /// Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        /// </summary>
+        public ChecksumAlgorithm ChecksumAlgorithm
+        {
+            get { return this._checksumAlgorithm; }
+            set { this._checksumAlgorithm = value; }
+        }
+
+        // Check to see if ChecksumAlgorithm property is set
+        internal bool IsSetChecksumAlgorithm()
+        {
+            return this._checksumAlgorithm != null;
+        }
+
         /// <summary>
         /// The account ID of the expected bucket owner. 
         /// If the bucket is owned by a different account, the request will fail with an HTTP 403 (Access Denied) error.
@@ -345,25 +370,26 @@ namespace Amazon.S3.Model
             return !String.IsNullOrEmpty(this.expectedBucketOwner);
         }
 
-        // Check to see if BucketName property is set
-        internal bool IsSetBucketName()
-        {
-            return this.bucket != null;
-        }
-
         /// <summary>
         /// The key of an S3 object.
         /// If not specified, the ACLs are applied to the bucket.
-        /// <para>When using this API with an access point, you must direct requests to the access point hostname. 
+        /// <para>
+        /// Key for which the PUT action was initiated.
+        /// </para>
+        /// <para>
+        /// When using this action with an access point, you must direct requests to the access point hostname.
         /// The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. 
-        /// When using this operation with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. 
+        /// When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. 
         /// For more information about access point ARNs, see 
-        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</para> 
-        /// <para>When using this API with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. 
-        /// The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. 
-        /// When using this operation using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. 
+        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using Access Points</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para> 
+        /// <para>
+        /// When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. 
+        /// The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
+        /// When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. 
         /// For more information about S3 on Outposts ARNs, see 
-        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</para>
+        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts">What is S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
         /// </summary>
         /// <remarks>
         /// This property will be used as part of the resource path of the HTTP request. In .NET the System.Uri class

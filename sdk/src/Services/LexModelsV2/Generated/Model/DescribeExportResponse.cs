@@ -140,7 +140,7 @@ namespace Amazon.LexModelsV2.Model
         /// <summary>
         /// Gets and sets the property FileFormat. 
         /// <para>
-        /// The file format used in the files that describe the bot or bot locale.
+        /// The file format used in the files that describe the resource. 
         /// </para>
         /// </summary>
         public ImportExportFileFormat FileFormat

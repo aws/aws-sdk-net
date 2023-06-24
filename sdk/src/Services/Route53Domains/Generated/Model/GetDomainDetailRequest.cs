@@ -31,8 +31,8 @@ namespace Amazon.Route53Domains.Model
     /// <summary>
     /// Container for the parameters to the GetDomainDetail operation.
     /// This operation returns detailed information about a specified domain that is associated
-    /// with the current AWS account. Contact information for the domain is also returned
-    /// as part of the output.
+    /// with the current Amazon Web Services account. Contact information for the domain is
+    /// also returned as part of the output.
     /// </summary>
     public partial class GetDomainDetailRequest : AmazonRoute53DomainsRequest
     {

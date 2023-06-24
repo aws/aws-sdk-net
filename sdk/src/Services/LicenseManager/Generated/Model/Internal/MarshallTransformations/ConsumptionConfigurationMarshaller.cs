@@ -34,7 +34,7 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ConsumptionConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class ConsumptionConfigurationMarshaller : IRequestMarshaller<ConsumptionConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -77,7 +77,7 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ConsumptionConfigurationMarshaller Instance = new ConsumptionConfigurationMarshaller();
 
     }

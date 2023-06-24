@@ -130,9 +130,15 @@ namespace Amazon.ServiceDiscovery.Model
         /// <summary>
         /// Gets and sets the property DnsConfig. 
         /// <para>
-        /// A complex type that contains information about the Route 53 DNS records that you want
+        /// A complex type that contains information about the Route 53 DNS records that you want
         /// Cloud Map to create when you register an instance.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// The record types of a service can only be changed by deleting the service and recreating
+        /// it with a new <code>Dnsconfig</code>.
+        /// </para>
+        ///  </important>
         /// </summary>
         public DnsConfig DnsConfig
         {
@@ -156,7 +162,7 @@ namespace Amazon.ServiceDiscovery.Model
         ///  
         /// <para>
         /// For information about the charges for health checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon
-        /// Route 53 Pricing</a>.
+        /// Route 53 Pricing</a>.
         /// </para>
         /// </summary>
         public HealthCheckConfig HealthCheckConfig

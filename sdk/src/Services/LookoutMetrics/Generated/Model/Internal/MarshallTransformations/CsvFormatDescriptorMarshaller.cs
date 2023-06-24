@@ -34,7 +34,7 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CsvFormatDescriptor Marshaller
-    /// </summary>       
+    /// </summary>
     public class CsvFormatDescriptorMarshaller : IRequestMarshaller<CsvFormatDescriptor, JsonMarshallerContext> 
     {
         /// <summary>
@@ -90,7 +90,7 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CsvFormatDescriptorMarshaller Instance = new CsvFormatDescriptorMarshaller();
 
     }

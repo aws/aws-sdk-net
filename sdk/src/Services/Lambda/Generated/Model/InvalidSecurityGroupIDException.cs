@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lambda.Model
 {
     /// <summary>
-    /// The Security Group ID provided in the Lambda function VPC configuration is invalid.
+    /// The security group ID provided in the Lambda function VPC configuration is not valid.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

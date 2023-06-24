@@ -237,6 +237,64 @@ namespace Amazon.LookoutMetrics
 
 
     /// <summary>
+    /// Constants used for properties of type AnomalyDetectorFailureType.
+    /// </summary>
+    public class AnomalyDetectorFailureType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVATION_FAILURE for AnomalyDetectorFailureType
+        /// </summary>
+        public static readonly AnomalyDetectorFailureType ACTIVATION_FAILURE = new AnomalyDetectorFailureType("ACTIVATION_FAILURE");
+        /// <summary>
+        /// Constant BACK_TEST_ACTIVATION_FAILURE for AnomalyDetectorFailureType
+        /// </summary>
+        public static readonly AnomalyDetectorFailureType BACK_TEST_ACTIVATION_FAILURE = new AnomalyDetectorFailureType("BACK_TEST_ACTIVATION_FAILURE");
+        /// <summary>
+        /// Constant DEACTIVATION_FAILURE for AnomalyDetectorFailureType
+        /// </summary>
+        public static readonly AnomalyDetectorFailureType DEACTIVATION_FAILURE = new AnomalyDetectorFailureType("DEACTIVATION_FAILURE");
+        /// <summary>
+        /// Constant DELETION_FAILURE for AnomalyDetectorFailureType
+        /// </summary>
+        public static readonly AnomalyDetectorFailureType DELETION_FAILURE = new AnomalyDetectorFailureType("DELETION_FAILURE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AnomalyDetectorFailureType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AnomalyDetectorFailureType FindValue(string value)
+        {
+            return FindValue<AnomalyDetectorFailureType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AnomalyDetectorFailureType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AnomalyDetectorStatus.
     /// </summary>
     public class AnomalyDetectorStatus : ConstantClass
@@ -262,6 +320,14 @@ namespace Amazon.LookoutMetrics
         /// Constant BACK_TEST_COMPLETE for AnomalyDetectorStatus
         /// </summary>
         public static readonly AnomalyDetectorStatus BACK_TEST_COMPLETE = new AnomalyDetectorStatus("BACK_TEST_COMPLETE");
+        /// <summary>
+        /// Constant DEACTIVATED for AnomalyDetectorStatus
+        /// </summary>
+        public static readonly AnomalyDetectorStatus DEACTIVATED = new AnomalyDetectorStatus("DEACTIVATED");
+        /// <summary>
+        /// Constant DEACTIVATING for AnomalyDetectorStatus
+        /// </summary>
+        public static readonly AnomalyDetectorStatus DEACTIVATING = new AnomalyDetectorStatus("DEACTIVATING");
         /// <summary>
         /// Constant DELETING for AnomalyDetectorStatus
         /// </summary>
@@ -315,6 +381,60 @@ namespace Amazon.LookoutMetrics
 
 
     /// <summary>
+    /// Constants used for properties of type Confidence.
+    /// </summary>
+    public class Confidence : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant HIGH for Confidence
+        /// </summary>
+        public static readonly Confidence HIGH = new Confidence("HIGH");
+        /// <summary>
+        /// Constant LOW for Confidence
+        /// </summary>
+        public static readonly Confidence LOW = new Confidence("LOW");
+        /// <summary>
+        /// Constant NONE for Confidence
+        /// </summary>
+        public static readonly Confidence NONE = new Confidence("NONE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Confidence(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Confidence FindValue(string value)
+        {
+            return FindValue<Confidence>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Confidence(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type CSVFileCompression.
     /// </summary>
     public class CSVFileCompression : ConstantClass
@@ -358,6 +478,134 @@ namespace Amazon.LookoutMetrics
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator CSVFileCompression(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DataQualityMetricType.
+    /// </summary>
+    public class DataQualityMetricType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BACKTEST_INFERENCE_DATA_END_TIME_STAMP for DataQualityMetricType
+        /// </summary>
+        public static readonly DataQualityMetricType BACKTEST_INFERENCE_DATA_END_TIME_STAMP = new DataQualityMetricType("BACKTEST_INFERENCE_DATA_END_TIME_STAMP");
+        /// <summary>
+        /// Constant BACKTEST_INFERENCE_DATA_START_TIME_STAMP for DataQualityMetricType
+        /// </summary>
+        public static readonly DataQualityMetricType BACKTEST_INFERENCE_DATA_START_TIME_STAMP = new DataQualityMetricType("BACKTEST_INFERENCE_DATA_START_TIME_STAMP");
+        /// <summary>
+        /// Constant BACKTEST_TRAINING_DATA_END_TIME_STAMP for DataQualityMetricType
+        /// </summary>
+        public static readonly DataQualityMetricType BACKTEST_TRAINING_DATA_END_TIME_STAMP = new DataQualityMetricType("BACKTEST_TRAINING_DATA_END_TIME_STAMP");
+        /// <summary>
+        /// Constant BACKTEST_TRAINING_DATA_START_TIME_STAMP for DataQualityMetricType
+        /// </summary>
+        public static readonly DataQualityMetricType BACKTEST_TRAINING_DATA_START_TIME_STAMP = new DataQualityMetricType("BACKTEST_TRAINING_DATA_START_TIME_STAMP");
+        /// <summary>
+        /// Constant COLUMN_COMPLETENESS for DataQualityMetricType
+        /// </summary>
+        public static readonly DataQualityMetricType COLUMN_COMPLETENESS = new DataQualityMetricType("COLUMN_COMPLETENESS");
+        /// <summary>
+        /// Constant DIMENSION_UNIQUENESS for DataQualityMetricType
+        /// </summary>
+        public static readonly DataQualityMetricType DIMENSION_UNIQUENESS = new DataQualityMetricType("DIMENSION_UNIQUENESS");
+        /// <summary>
+        /// Constant INVALID_ROWS_COMPLIANCE for DataQualityMetricType
+        /// </summary>
+        public static readonly DataQualityMetricType INVALID_ROWS_COMPLIANCE = new DataQualityMetricType("INVALID_ROWS_COMPLIANCE");
+        /// <summary>
+        /// Constant ROWS_PARTIAL_COMPLIANCE for DataQualityMetricType
+        /// </summary>
+        public static readonly DataQualityMetricType ROWS_PARTIAL_COMPLIANCE = new DataQualityMetricType("ROWS_PARTIAL_COMPLIANCE");
+        /// <summary>
+        /// Constant ROWS_PROCESSED for DataQualityMetricType
+        /// </summary>
+        public static readonly DataQualityMetricType ROWS_PROCESSED = new DataQualityMetricType("ROWS_PROCESSED");
+        /// <summary>
+        /// Constant TIME_SERIES_COUNT for DataQualityMetricType
+        /// </summary>
+        public static readonly DataQualityMetricType TIME_SERIES_COUNT = new DataQualityMetricType("TIME_SERIES_COUNT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DataQualityMetricType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DataQualityMetricType FindValue(string value)
+        {
+            return FindValue<DataQualityMetricType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DataQualityMetricType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FilterOperation.
+    /// </summary>
+    public class FilterOperation : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EQUALS for FilterOperation
+        /// </summary>
+        public static readonly FilterOperation EQUALS = new FilterOperation("EQUALS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FilterOperation(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FilterOperation FindValue(string value)
+        {
+            return FindValue<FilterOperation>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FilterOperation(string value)
         {
             return FindValue(value);
         }
@@ -466,6 +714,110 @@ namespace Amazon.LookoutMetrics
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator JsonFileCompression(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RelationshipType.
+    /// </summary>
+    public class RelationshipType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CAUSE_OF_INPUT_ANOMALY_GROUP for RelationshipType
+        /// </summary>
+        public static readonly RelationshipType CAUSE_OF_INPUT_ANOMALY_GROUP = new RelationshipType("CAUSE_OF_INPUT_ANOMALY_GROUP");
+        /// <summary>
+        /// Constant EFFECT_OF_INPUT_ANOMALY_GROUP for RelationshipType
+        /// </summary>
+        public static readonly RelationshipType EFFECT_OF_INPUT_ANOMALY_GROUP = new RelationshipType("EFFECT_OF_INPUT_ANOMALY_GROUP");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RelationshipType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RelationshipType FindValue(string value)
+        {
+            return FindValue<RelationshipType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RelationshipType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SnsFormat.
+    /// </summary>
+    public class SnsFormat : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant JSON for SnsFormat
+        /// </summary>
+        public static readonly SnsFormat JSON = new SnsFormat("JSON");
+        /// <summary>
+        /// Constant LONG_TEXT for SnsFormat
+        /// </summary>
+        public static readonly SnsFormat LONG_TEXT = new SnsFormat("LONG_TEXT");
+        /// <summary>
+        /// Constant SHORT_TEXT for SnsFormat
+        /// </summary>
+        public static readonly SnsFormat SHORT_TEXT = new SnsFormat("SHORT_TEXT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SnsFormat(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SnsFormat FindValue(string value)
+        {
+            return FindValue<SnsFormat>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SnsFormat(string value)
         {
             return FindValue(value);
         }

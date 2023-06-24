@@ -53,8 +53,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (string.IsNullOrEmpty(deleteObjectRequest.Key))
                 throw new System.ArgumentException("Key is a required property and must be set before making this call.", "DeleteObjectRequest.Key");
 
-			request.ResourcePath = string.Format(CultureInfo.InvariantCulture, "/{0}/{1}", 
-                                                 S3Transforms.ToStringValue(deleteObjectRequest.BucketName), 
+            request.ResourcePath = string.Format(CultureInfo.InvariantCulture, "/{0}", 
                                                  S3Transforms.ToStringValue(deleteObjectRequest.Key));
 
             if (deleteObjectRequest.IsSetVersionId())

@@ -34,7 +34,7 @@ namespace Amazon.PinpointSMSVoice.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CloudWatchLogsDestination Marshaller
-    /// </summary>       
+    /// </summary>
     public class CloudWatchLogsDestinationMarshaller : IRequestMarshaller<CloudWatchLogsDestination, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.PinpointSMSVoice.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CloudWatchLogsDestinationMarshaller Instance = new CloudWatchLogsDestinationMarshaller();
 
     }

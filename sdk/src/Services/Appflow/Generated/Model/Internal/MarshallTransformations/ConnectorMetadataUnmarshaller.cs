@@ -118,6 +118,12 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
                     unmarshalledObject.Marketo = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Pardot", targetDepth))
+                {
+                    var unmarshaller = PardotMetadataUnmarshaller.Instance;
+                    unmarshalledObject.Pardot = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Redshift", targetDepth))
                 {
                     var unmarshaller = RedshiftMetadataUnmarshaller.Instance;

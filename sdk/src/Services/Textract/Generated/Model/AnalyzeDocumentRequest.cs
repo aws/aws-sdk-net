@@ -57,6 +57,22 @@ namespace Amazon.Textract.Model
     /// are returned (including text that doesn't have a relationship with the value of <code>FeatureTypes</code>).
     /// 
     /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Signatures. A SIGNATURE <code>Block</code> object contains the location information
+    /// of a signature in a document. If used in conjunction with forms or tables, a signature
+    /// can be given a Key-Value pairing or be detected in the cell of a table.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Query. A QUERY Block object contains the query text, alias and link to the associated
+    /// Query results block object.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Query Result. A QUERY_RESULT Block object contains the answer to the query and an
+    /// ID that connects it to the query asked. This Block also contains a confidence score.
+    /// </para>
     ///  </li> </ul> 
     /// <para>
     /// Selection elements such as check boxes and option buttons (radio buttons) can be detected
@@ -88,13 +104,14 @@ namespace Amazon.Textract.Model
         private Document _document;
         private List<string> _featureTypes = new List<string>();
         private HumanLoopConfig _humanLoopConfig;
+        private QueriesConfig _queriesConfig;
 
         /// <summary>
         /// Gets and sets the property Document. 
         /// <para>
         /// The input document as base64-encoded bytes or an Amazon S3 object. If you use the
         /// AWS CLI to call Amazon Textract operations, you can't pass image bytes. The document
-        /// must be an image in JPEG or PNG format.
+        /// must be an image in JPEG, PNG, PDF, or TIFF format.
         /// </para>
         ///  
         /// <para>
@@ -120,9 +137,11 @@ namespace Amazon.Textract.Model
         /// <para>
         /// A list of the types of analysis to perform. Add TABLES to the list to return information
         /// about the tables that are detected in the input document. Add FORMS to return detected
-        /// form data. To perform both types of analysis, add TABLES and FORMS to <code>FeatureTypes</code>.
-        /// All lines and words detected in the document are included in the response (including
-        /// text that isn't related to the value of <code>FeatureTypes</code>). 
+        /// form data. Add SIGNATURES to return the locations of detected signatures. To perform
+        /// both forms and table analysis, add TABLES and FORMS to <code>FeatureTypes</code>.
+        /// To detect signatures within form data and table data, add SIGNATURES to either TABLES
+        /// or FORMS. All lines and words detected in the document are included in the response
+        /// (including text that isn't related to the value of <code>FeatureTypes</code>). 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -154,6 +173,24 @@ namespace Amazon.Textract.Model
         internal bool IsSetHumanLoopConfig()
         {
             return this._humanLoopConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property QueriesConfig. 
+        /// <para>
+        /// Contains Queries and the alias for those Queries, as determined by the input. 
+        /// </para>
+        /// </summary>
+        public QueriesConfig QueriesConfig
+        {
+            get { return this._queriesConfig; }
+            set { this._queriesConfig = value; }
+        }
+
+        // Check to see if QueriesConfig property is set
+        internal bool IsSetQueriesConfig()
+        {
+            return this._queriesConfig != null;
         }
 
     }

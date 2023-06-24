@@ -76,6 +76,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.Type = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ViolatedEntities", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<Entity, EntityUnmarshaller>(EntityUnmarshaller.Instance);
+                    unmarshalledObject.ViolatedEntities = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

@@ -34,7 +34,7 @@ namespace Amazon.KinesisVideoArchivedMedia.Model.Internal.MarshallTransformation
 {
     /// <summary>
     /// DASHFragmentSelector Marshaller
-    /// </summary>       
+    /// </summary>
     public class DASHFragmentSelectorMarshaller : IRequestMarshaller<DASHFragmentSelector, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.KinesisVideoArchivedMedia.Model.Internal.MarshallTransformation
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DASHFragmentSelectorMarshaller Instance = new DASHFragmentSelectorMarshaller();
 
     }

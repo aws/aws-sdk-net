@@ -39,11 +39,22 @@ namespace Amazon.WAFV2.Model
     /// a <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced
     /// as a top-level statement within a rule.
     /// </para>
+    ///  <note> 
+    /// <para>
+    /// You are charged additional fees when you use the WAF Bot Control managed rule group
+    /// <code>AWSManagedRulesBotControlRuleSet</code>, the WAF Fraud Control account takeover
+    /// prevention (ATP) managed rule group <code>AWSManagedRulesATPRuleSet</code>, or the
+    /// WAF Fraud Control account creation fraud prevention (ACFP) managed rule group <code>AWSManagedRulesACFPRuleSet</code>.
+    /// For more information, see <a href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class ManagedRuleGroupStatement
     {
         private List<ExcludedRule> _excludedRules = new List<ExcludedRule>();
+        private List<ManagedRuleGroupConfig> _managedRuleGroupConfigs = new List<ManagedRuleGroupConfig>();
         private string _name;
+        private List<RuleActionOverride> _ruleActionOverrides = new List<RuleActionOverride>();
         private Statement _scopeDownStatement;
         private string _vendorName;
         private string _version;
@@ -51,12 +62,16 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property ExcludedRules. 
         /// <para>
-        /// The rules in the referenced rule group whose actions are set to <code>Count</code>.
-        /// When you exclude a rule, WAF evaluates it exactly as it would if the rule action setting
-        /// were <code>Count</code>. This is a useful option for testing the rules in a rule group
-        /// without modifying how they handle your web traffic.
+        /// Rules in the referenced rule group whose actions are set to <code>Count</code>. 
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Instead of this option, use <code>RuleActionOverrides</code>. It accepts any valid
+        /// action setting, including <code>Count</code>.
+        /// </para>
+        ///  </note>
         /// </summary>
+        [AWSProperty(Max=100)]
         public List<ExcludedRule> ExcludedRules
         {
             get { return this._excludedRules; }
@@ -67,6 +82,51 @@ namespace Amazon.WAFV2.Model
         internal bool IsSetExcludedRules()
         {
             return this._excludedRules != null && this._excludedRules.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ManagedRuleGroupConfigs. 
+        /// <para>
+        /// Additional information that's used by a managed rule group. Many managed rule groups
+        /// don't require this.
+        /// </para>
+        ///  
+        /// <para>
+        /// The rule groups used for intelligent threat mitigation require additional configuration:
+        /// 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Use the <code>AWSManagedRulesACFPRuleSet</code> configuration object to configure
+        /// the account creation fraud prevention managed rule group. The configuration includes
+        /// the registration and sign-up pages of your application and the locations in the account
+        /// creation request payload of data, such as the user email and phone number fields.
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use the <code>AWSManagedRulesATPRuleSet</code> configuration object to configure the
+        /// account takeover prevention managed rule group. The configuration includes the sign-in
+        /// page of your application and the locations in the login request payload of data such
+        /// as the username and password. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use the <code>AWSManagedRulesBotControlRuleSet</code> configuration object to configure
+        /// the protection level that you want the Bot Control rule group to use. 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public List<ManagedRuleGroupConfig> ManagedRuleGroupConfigs
+        {
+            get { return this._managedRuleGroupConfigs; }
+            set { this._managedRuleGroupConfigs = value; }
+        }
+
+        // Check to see if ManagedRuleGroupConfigs property is set
+        internal bool IsSetManagedRuleGroupConfigs()
+        {
+            return this._managedRuleGroupConfigs != null && this._managedRuleGroupConfigs.Count > 0; 
         }
 
         /// <summary>
@@ -87,6 +147,34 @@ namespace Amazon.WAFV2.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RuleActionOverrides. 
+        /// <para>
+        /// Action settings to use in the place of the rule actions that are configured inside
+        /// the rule group. You specify one override for each rule whose action you want to change.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// You can use overrides for testing, for example you can override all of rule actions
+        /// to <code>Count</code> and then monitor the resulting count metrics to understand how
+        /// the rule group would handle your web traffic. You can also permanently override some
+        /// or all actions, to modify how the rule group manages your web traffic.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=100)]
+        public List<RuleActionOverride> RuleActionOverrides
+        {
+            get { return this._ruleActionOverrides; }
+            set { this._ruleActionOverrides = value; }
+        }
+
+        // Check to see if RuleActionOverrides property is set
+        internal bool IsSetRuleActionOverrides()
+        {
+            return this._ruleActionOverrides != null && this._ruleActionOverrides.Count > 0; 
         }
 
         /// <summary>
@@ -115,7 +203,7 @@ namespace Amazon.WAFV2.Model
         /// Gets and sets the property VendorName. 
         /// <para>
         /// The name of the managed rule group vendor. You use this, along with the rule group
-        /// name, to identify the rule group.
+        /// name, to identify a rule group.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]

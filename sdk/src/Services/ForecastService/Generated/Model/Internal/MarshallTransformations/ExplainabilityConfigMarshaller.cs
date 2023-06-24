@@ -34,7 +34,7 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ExplainabilityConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class ExplainabilityConfigMarshaller : IRequestMarshaller<ExplainabilityConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ExplainabilityConfigMarshaller Instance = new ExplainabilityConfigMarshaller();
 
     }

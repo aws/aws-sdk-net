@@ -247,6 +247,15 @@ namespace Amazon.GreengrassV2
         }    
 
         /// <summary>
+        /// Customize the pipeline
+        /// </summary>
+        /// <param name="pipeline"></param>
+        protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
+        {
+            pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonGreengrassV2EndpointResolver());
+        }    
+        /// <summary>
         /// Capture metadata for the service.
         /// </summary>
         protected override IServiceMetadata ServiceMetadata
@@ -272,14 +281,81 @@ namespace Amazon.GreengrassV2
         #endregion
 
 
+        #region  AssociateServiceRoleToAccount
+
+
+        /// <summary>
+        /// Associates a Greengrass service role with IoT Greengrass for your Amazon Web Services
+        /// account in this Amazon Web Services Region. IoT Greengrass uses this role to verify
+        /// the identity of client devices and manage core device connectivity information. The
+        /// role must include the <a href="https://console.aws.amazon.com/iam/home#/policies/arn:awsiam::aws:policy/service-role/AWSGreengrassResourceAccessRolePolicy">AWSGreengrassResourceAccessRolePolicy</a>
+        /// managed policy or a custom policy that defines equivalent permissions for the IoT
+        /// Greengrass features that you use. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-service-role.html">Greengrass
+        /// service role</a> in the <i>IoT Greengrass Version 2 Developer Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateServiceRoleToAccount service method.</param>
+        /// 
+        /// <returns>The response from the AssociateServiceRoleToAccount service method, as returned by GreengrassV2.</returns>
+        /// <exception cref="Amazon.GreengrassV2.Model.InternalServerException">
+        /// IoT Greengrass can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.GreengrassV2.Model.ValidationException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/AssociateServiceRoleToAccount">REST API Reference for AssociateServiceRoleToAccount Operation</seealso>
+        public virtual AssociateServiceRoleToAccountResponse AssociateServiceRoleToAccount(AssociateServiceRoleToAccountRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateServiceRoleToAccountRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateServiceRoleToAccountResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateServiceRoleToAccountResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Associates a Greengrass service role with IoT Greengrass for your Amazon Web Services
+        /// account in this Amazon Web Services Region. IoT Greengrass uses this role to verify
+        /// the identity of client devices and manage core device connectivity information. The
+        /// role must include the <a href="https://console.aws.amazon.com/iam/home#/policies/arn:awsiam::aws:policy/service-role/AWSGreengrassResourceAccessRolePolicy">AWSGreengrassResourceAccessRolePolicy</a>
+        /// managed policy or a custom policy that defines equivalent permissions for the IoT
+        /// Greengrass features that you use. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-service-role.html">Greengrass
+        /// service role</a> in the <i>IoT Greengrass Version 2 Developer Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateServiceRoleToAccount service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociateServiceRoleToAccount service method, as returned by GreengrassV2.</returns>
+        /// <exception cref="Amazon.GreengrassV2.Model.InternalServerException">
+        /// IoT Greengrass can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.GreengrassV2.Model.ValidationException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/AssociateServiceRoleToAccount">REST API Reference for AssociateServiceRoleToAccount Operation</seealso>
+        public virtual Task<AssociateServiceRoleToAccountResponse> AssociateServiceRoleToAccountAsync(AssociateServiceRoleToAccountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateServiceRoleToAccountRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateServiceRoleToAccountResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<AssociateServiceRoleToAccountResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  BatchAssociateClientDeviceWithCoreDevice
 
 
         /// <summary>
-        /// Associate a list of client devices with a core device. Use this API operation to specify
-        /// which client devices can discover a core device through cloud discovery. With cloud
-        /// discovery, client devices connect to IoT Greengrass to retrieve associated core devices'
-        /// connectivity information and certificates. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-cloud-discovery.html">Configure
+        /// Associates a list of client devices with a core device. Use this API operation to
+        /// specify which client devices can discover a core device through cloud discovery. With
+        /// cloud discovery, client devices connect to IoT Greengrass to retrieve associated core
+        /// devices' connectivity information and certificates. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-cloud-discovery.html">Configure
         /// cloud discovery</a> in the <i>IoT Greengrass V2 Developer Guide</i>.
         /// 
         ///  <note> 
@@ -324,10 +400,10 @@ namespace Amazon.GreengrassV2
 
 
         /// <summary>
-        /// Associate a list of client devices with a core device. Use this API operation to specify
-        /// which client devices can discover a core device through cloud discovery. With cloud
-        /// discovery, client devices connect to IoT Greengrass to retrieve associated core devices'
-        /// connectivity information and certificates. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-cloud-discovery.html">Configure
+        /// Associates a list of client devices with a core device. Use this API operation to
+        /// specify which client devices can discover a core device through cloud discovery. With
+        /// cloud discovery, client devices connect to IoT Greengrass to retrieve associated core
+        /// devices' connectivity information and certificates. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-cloud-discovery.html">Configure
         /// cloud discovery</a> in the <i>IoT Greengrass V2 Developer Guide</i>.
         /// 
         ///  <note> 
@@ -379,8 +455,8 @@ namespace Amazon.GreengrassV2
 
 
         /// <summary>
-        /// Disassociate a list of client devices from a core device. After you disassociate a
-        /// client device from a core device, the client device won't be able to use cloud discovery
+        /// Disassociates a list of client devices from a core device. After you disassociate
+        /// a client device from a core device, the client device won't be able to use cloud discovery
         /// to retrieve the core device's connectivity information and certificates.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchDisassociateClientDeviceFromCoreDevice service method.</param>
@@ -415,8 +491,8 @@ namespace Amazon.GreengrassV2
 
 
         /// <summary>
-        /// Disassociate a list of client devices from a core device. After you disassociate a
-        /// client device from a core device, the client device won't be able to use cloud discovery
+        /// Disassociates a list of client devices from a core device. After you disassociate
+        /// a client device from a core device, the client device won't be able to use cloud discovery
         /// to retrieve the core device's connectivity information and certificates.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchDisassociateClientDeviceFromCoreDevice service method.</param>
@@ -599,7 +675,15 @@ namespace Amazon.GreengrassV2
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// Python 3.9 – <code>python3.9</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// Java 8 – <code>java8</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Java 11 – <code>java11</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -608,6 +692,10 @@ namespace Amazon.GreengrassV2
         ///  </li> <li> 
         /// <para>
         /// Node.js 12 – <code>nodejs12.x</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Node.js 14 – <code>nodejs14.x</code> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -716,7 +804,15 @@ namespace Amazon.GreengrassV2
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// Python 3.9 – <code>python3.9</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// Java 8 – <code>java8</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Java 11 – <code>java11</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -725,6 +821,10 @@ namespace Amazon.GreengrassV2
         ///  </li> <li> 
         /// <para>
         /// Node.js 12 – <code>nodejs12.x</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Node.js 14 – <code>nodejs14.x</code> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -800,8 +900,7 @@ namespace Amazon.GreengrassV2
         /// <para>
         /// Every deployment has a revision number that indicates how many deployment revisions
         /// you define for a target. Use this operation to create a new revision of an existing
-        /// deployment. This operation returns the revision number of the new deployment when
-        /// you create it.
+        /// deployment.
         /// </para>
         ///  
         /// <para>
@@ -814,6 +913,10 @@ namespace Amazon.GreengrassV2
         /// <returns>The response from the CreateDeployment service method, as returned by GreengrassV2.</returns>
         /// <exception cref="Amazon.GreengrassV2.Model.AccessDeniedException">
         /// You don't have permission to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.GreengrassV2.Model.ConflictException">
+        /// Your request has conflicting operations. This can occur if you're trying to perform
+        /// more than one operation on the same resource at the same time.
         /// </exception>
         /// <exception cref="Amazon.GreengrassV2.Model.InternalServerException">
         /// IoT Greengrass can't process your request right now. Try again later.
@@ -860,8 +963,7 @@ namespace Amazon.GreengrassV2
         /// <para>
         /// Every deployment has a revision number that indicates how many deployment revisions
         /// you define for a target. Use this operation to create a new revision of an existing
-        /// deployment. This operation returns the revision number of the new deployment when
-        /// you create it.
+        /// deployment.
         /// </para>
         ///  
         /// <para>
@@ -877,6 +979,10 @@ namespace Amazon.GreengrassV2
         /// <returns>The response from the CreateDeployment service method, as returned by GreengrassV2.</returns>
         /// <exception cref="Amazon.GreengrassV2.Model.AccessDeniedException">
         /// You don't have permission to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.GreengrassV2.Model.ConflictException">
+        /// Your request has conflicting operations. This can occur if you're trying to perform
+        /// more than one operation on the same resource at the same time.
         /// </exception>
         /// <exception cref="Amazon.GreengrassV2.Model.InternalServerException">
         /// IoT Greengrass can't process your request right now. Try again later.
@@ -1099,6 +1205,105 @@ namespace Amazon.GreengrassV2
 
         #endregion
         
+        #region  DeleteDeployment
+
+
+        /// <summary>
+        /// Deletes a deployment. To delete an active deployment, you must first cancel it. For
+        /// more information, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_CancelDeployment.html">CancelDeployment</a>.
+        /// 
+        ///  
+        /// <para>
+        /// Deleting a deployment doesn't affect core devices that run that deployment, because
+        /// core devices store the deployment's configuration on the device. Additionally, core
+        /// devices can roll back to a previous deployment that has been deleted.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDeployment service method.</param>
+        /// 
+        /// <returns>The response from the DeleteDeployment service method, as returned by GreengrassV2.</returns>
+        /// <exception cref="Amazon.GreengrassV2.Model.AccessDeniedException">
+        /// You don't have permission to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.GreengrassV2.Model.ConflictException">
+        /// Your request has conflicting operations. This can occur if you're trying to perform
+        /// more than one operation on the same resource at the same time.
+        /// </exception>
+        /// <exception cref="Amazon.GreengrassV2.Model.InternalServerException">
+        /// IoT Greengrass can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.GreengrassV2.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.GreengrassV2.Model.ThrottlingException">
+        /// Your request exceeded a request rate quota. For example, you might have exceeded the
+        /// amount of times that you can retrieve device or deployment status per second.
+        /// </exception>
+        /// <exception cref="Amazon.GreengrassV2.Model.ValidationException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/DeleteDeployment">REST API Reference for DeleteDeployment Operation</seealso>
+        public virtual DeleteDeploymentResponse DeleteDeployment(DeleteDeploymentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDeploymentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDeploymentResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteDeploymentResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes a deployment. To delete an active deployment, you must first cancel it. For
+        /// more information, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_CancelDeployment.html">CancelDeployment</a>.
+        /// 
+        ///  
+        /// <para>
+        /// Deleting a deployment doesn't affect core devices that run that deployment, because
+        /// core devices store the deployment's configuration on the device. Additionally, core
+        /// devices can roll back to a previous deployment that has been deleted.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDeployment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteDeployment service method, as returned by GreengrassV2.</returns>
+        /// <exception cref="Amazon.GreengrassV2.Model.AccessDeniedException">
+        /// You don't have permission to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.GreengrassV2.Model.ConflictException">
+        /// Your request has conflicting operations. This can occur if you're trying to perform
+        /// more than one operation on the same resource at the same time.
+        /// </exception>
+        /// <exception cref="Amazon.GreengrassV2.Model.InternalServerException">
+        /// IoT Greengrass can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.GreengrassV2.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.GreengrassV2.Model.ThrottlingException">
+        /// Your request exceeded a request rate quota. For example, you might have exceeded the
+        /// amount of times that you can retrieve device or deployment status per second.
+        /// </exception>
+        /// <exception cref="Amazon.GreengrassV2.Model.ValidationException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/DeleteDeployment">REST API Reference for DeleteDeployment Operation</seealso>
+        public virtual Task<DeleteDeploymentResponse> DeleteDeploymentAsync(DeleteDeploymentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDeploymentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDeploymentResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteDeploymentResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeComponent
 
 
@@ -1174,12 +1379,66 @@ namespace Amazon.GreengrassV2
 
         #endregion
         
+        #region  DisassociateServiceRoleFromAccount
+
+
+        /// <summary>
+        /// Disassociates the Greengrass service role from IoT Greengrass for your Amazon Web
+        /// Services account in this Amazon Web Services Region. Without a service role, IoT Greengrass
+        /// can't verify the identity of client devices or manage core device connectivity information.
+        /// For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-service-role.html">Greengrass
+        /// service role</a> in the <i>IoT Greengrass Version 2 Developer Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateServiceRoleFromAccount service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateServiceRoleFromAccount service method, as returned by GreengrassV2.</returns>
+        /// <exception cref="Amazon.GreengrassV2.Model.InternalServerException">
+        /// IoT Greengrass can't process your request right now. Try again later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/DisassociateServiceRoleFromAccount">REST API Reference for DisassociateServiceRoleFromAccount Operation</seealso>
+        public virtual DisassociateServiceRoleFromAccountResponse DisassociateServiceRoleFromAccount(DisassociateServiceRoleFromAccountRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateServiceRoleFromAccountRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateServiceRoleFromAccountResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateServiceRoleFromAccountResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Disassociates the Greengrass service role from IoT Greengrass for your Amazon Web
+        /// Services account in this Amazon Web Services Region. Without a service role, IoT Greengrass
+        /// can't verify the identity of client devices or manage core device connectivity information.
+        /// For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-service-role.html">Greengrass
+        /// service role</a> in the <i>IoT Greengrass Version 2 Developer Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateServiceRoleFromAccount service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociateServiceRoleFromAccount service method, as returned by GreengrassV2.</returns>
+        /// <exception cref="Amazon.GreengrassV2.Model.InternalServerException">
+        /// IoT Greengrass can't process your request right now. Try again later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/DisassociateServiceRoleFromAccount">REST API Reference for DisassociateServiceRoleFromAccount Operation</seealso>
+        public virtual Task<DisassociateServiceRoleFromAccountResponse> DisassociateServiceRoleFromAccountAsync(DisassociateServiceRoleFromAccountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateServiceRoleFromAccountRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateServiceRoleFromAccountResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DisassociateServiceRoleFromAccountResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetComponent
 
 
         /// <summary>
-        /// Gets the recipe for a version of a component. Core devices can call this operation
-        /// to identify the artifacts and requirements to install a component.
+        /// Gets the recipe for a version of a component.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetComponent service method.</param>
         /// 
@@ -1213,8 +1472,7 @@ namespace Amazon.GreengrassV2
 
 
         /// <summary>
-        /// Gets the recipe for a version of a component. Core devices can call this operation
-        /// to identify the artifacts and requirements to install a component.
+        /// Gets the recipe for a version of a component.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetComponent service method.</param>
         /// <param name="cancellationToken">
@@ -1255,8 +1513,9 @@ namespace Amazon.GreengrassV2
 
 
         /// <summary>
-        /// Gets the pre-signed URL to download a public component artifact. Core devices call
-        /// this operation to identify the URL that they can use to download an artifact to install.
+        /// Gets the pre-signed URL to download a public or a Lambda component artifact. Core
+        /// devices call this operation to identify the URL that they can use to download an artifact
+        /// to install.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetComponentVersionArtifact service method.</param>
         /// 
@@ -1290,8 +1549,9 @@ namespace Amazon.GreengrassV2
 
 
         /// <summary>
-        /// Gets the pre-signed URL to download a public component artifact. Core devices call
-        /// this operation to identify the URL that they can use to download an artifact to install.
+        /// Gets the pre-signed URL to download a public or a Lambda component artifact. Core
+        /// devices call this operation to identify the URL that they can use to download an artifact
+        /// to install.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetComponentVersionArtifact service method.</param>
         /// <param name="cancellationToken">
@@ -1328,11 +1588,122 @@ namespace Amazon.GreengrassV2
 
         #endregion
         
+        #region  GetConnectivityInfo
+
+
+        /// <summary>
+        /// Retrieves connectivity information for a Greengrass core device.
+        /// 
+        ///  
+        /// <para>
+        /// Connectivity information includes endpoints and ports where client devices can connect
+        /// to an MQTT broker on the core device. When a client device calls the <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-discover-api.html">IoT
+        /// Greengrass discovery API</a>, IoT Greengrass returns connectivity information for
+        /// all of the core devices where the client device can connect. For more information,
+        /// see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/connect-client-devices.html">Connect
+        /// client devices to core devices</a> in the <i>IoT Greengrass Version 2 Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetConnectivityInfo service method.</param>
+        /// 
+        /// <returns>The response from the GetConnectivityInfo service method, as returned by GreengrassV2.</returns>
+        /// <exception cref="Amazon.GreengrassV2.Model.InternalServerException">
+        /// IoT Greengrass can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.GreengrassV2.Model.ValidationException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/GetConnectivityInfo">REST API Reference for GetConnectivityInfo Operation</seealso>
+        public virtual GetConnectivityInfoResponse GetConnectivityInfo(GetConnectivityInfoRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetConnectivityInfoRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetConnectivityInfoResponseUnmarshaller.Instance;
+
+            return Invoke<GetConnectivityInfoResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves connectivity information for a Greengrass core device.
+        /// 
+        ///  
+        /// <para>
+        /// Connectivity information includes endpoints and ports where client devices can connect
+        /// to an MQTT broker on the core device. When a client device calls the <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-discover-api.html">IoT
+        /// Greengrass discovery API</a>, IoT Greengrass returns connectivity information for
+        /// all of the core devices where the client device can connect. For more information,
+        /// see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/connect-client-devices.html">Connect
+        /// client devices to core devices</a> in the <i>IoT Greengrass Version 2 Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetConnectivityInfo service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetConnectivityInfo service method, as returned by GreengrassV2.</returns>
+        /// <exception cref="Amazon.GreengrassV2.Model.InternalServerException">
+        /// IoT Greengrass can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.GreengrassV2.Model.ValidationException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/GetConnectivityInfo">REST API Reference for GetConnectivityInfo Operation</seealso>
+        public virtual Task<GetConnectivityInfoResponse> GetConnectivityInfoAsync(GetConnectivityInfoRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetConnectivityInfoRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetConnectivityInfoResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetConnectivityInfoResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetCoreDevice
 
 
         /// <summary>
         /// Retrieves metadata for a Greengrass core device.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// IoT Greengrass relies on individual devices to send status updates to the Amazon Web
+        /// Services Cloud. If the IoT Greengrass Core software isn't running on the device, or
+        /// if device isn't connected to the Amazon Web Services Cloud, then the reported status
+        /// of that device might not reflect its current status. The status timestamp indicates
+        /// when the device status was last updated.
+        /// </para>
+        ///  
+        /// <para>
+        /// Core devices send status updates at the following times:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// When the IoT Greengrass Core software starts
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When the core device receives a deployment from the Amazon Web Services Cloud
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When the status of any component on the core device becomes <code>BROKEN</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// At a <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-nucleus-component.html#greengrass-nucleus-component-configuration-fss">regular
+        /// interval that you can configure</a>, which defaults to 24 hours
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For IoT Greengrass Core v2.7.0, the core device sends status updates upon local deployment
+        /// and cloud deployment
+        /// </para>
+        ///  </li> </ul> </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetCoreDevice service method.</param>
         /// 
@@ -1367,6 +1738,42 @@ namespace Amazon.GreengrassV2
 
         /// <summary>
         /// Retrieves metadata for a Greengrass core device.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// IoT Greengrass relies on individual devices to send status updates to the Amazon Web
+        /// Services Cloud. If the IoT Greengrass Core software isn't running on the device, or
+        /// if device isn't connected to the Amazon Web Services Cloud, then the reported status
+        /// of that device might not reflect its current status. The status timestamp indicates
+        /// when the device status was last updated.
+        /// </para>
+        ///  
+        /// <para>
+        /// Core devices send status updates at the following times:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// When the IoT Greengrass Core software starts
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When the core device receives a deployment from the Amazon Web Services Cloud
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When the status of any component on the core device becomes <code>BROKEN</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// At a <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-nucleus-component.html#greengrass-nucleus-component-configuration-fss">regular
+        /// interval that you can configure</a>, which defaults to 24 hours
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For IoT Greengrass Core v2.7.0, the core device sends status updates upon local deployment
+        /// and cloud deployment
+        /// </para>
+        ///  </li> </ul> </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetCoreDevice service method.</param>
         /// <param name="cancellationToken">
@@ -1478,6 +1885,61 @@ namespace Amazon.GreengrassV2
 
         #endregion
         
+        #region  GetServiceRoleForAccount
+
+
+        /// <summary>
+        /// Gets the service role associated with IoT Greengrass for your Amazon Web Services
+        /// account in this Amazon Web Services Region. IoT Greengrass uses this role to verify
+        /// the identity of client devices and manage core device connectivity information. For
+        /// more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-service-role.html">Greengrass
+        /// service role</a> in the <i>IoT Greengrass Version 2 Developer Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetServiceRoleForAccount service method.</param>
+        /// 
+        /// <returns>The response from the GetServiceRoleForAccount service method, as returned by GreengrassV2.</returns>
+        /// <exception cref="Amazon.GreengrassV2.Model.InternalServerException">
+        /// IoT Greengrass can't process your request right now. Try again later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/GetServiceRoleForAccount">REST API Reference for GetServiceRoleForAccount Operation</seealso>
+        public virtual GetServiceRoleForAccountResponse GetServiceRoleForAccount(GetServiceRoleForAccountRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetServiceRoleForAccountRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetServiceRoleForAccountResponseUnmarshaller.Instance;
+
+            return Invoke<GetServiceRoleForAccountResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Gets the service role associated with IoT Greengrass for your Amazon Web Services
+        /// account in this Amazon Web Services Region. IoT Greengrass uses this role to verify
+        /// the identity of client devices and manage core device connectivity information. For
+        /// more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-service-role.html">Greengrass
+        /// service role</a> in the <i>IoT Greengrass Version 2 Developer Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetServiceRoleForAccount service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetServiceRoleForAccount service method, as returned by GreengrassV2.</returns>
+        /// <exception cref="Amazon.GreengrassV2.Model.InternalServerException">
+        /// IoT Greengrass can't process your request right now. Try again later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/GetServiceRoleForAccount">REST API Reference for GetServiceRoleForAccount Operation</seealso>
+        public virtual Task<GetServiceRoleForAccountResponse> GetServiceRoleForAccountAsync(GetServiceRoleForAccountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetServiceRoleForAccountRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetServiceRoleForAccountResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetServiceRoleForAccountResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListClientDevicesAssociatedWithCoreDevice
 
 
@@ -1569,6 +2031,9 @@ namespace Amazon.GreengrassV2
         /// <exception cref="Amazon.GreengrassV2.Model.InternalServerException">
         /// IoT Greengrass can't process your request right now. Try again later.
         /// </exception>
+        /// <exception cref="Amazon.GreengrassV2.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
         /// <exception cref="Amazon.GreengrassV2.Model.ThrottlingException">
         /// Your request exceeded a request rate quota. For example, you might have exceeded the
         /// amount of times that you can retrieve device or deployment status per second.
@@ -1603,6 +2068,9 @@ namespace Amazon.GreengrassV2
         /// </exception>
         /// <exception cref="Amazon.GreengrassV2.Model.InternalServerException">
         /// IoT Greengrass can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.GreengrassV2.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
         /// </exception>
         /// <exception cref="Amazon.GreengrassV2.Model.ThrottlingException">
         /// Your request exceeded a request rate quota. For example, you might have exceeded the
@@ -1706,6 +2174,42 @@ namespace Amazon.GreengrassV2
 
         /// <summary>
         /// Retrieves a paginated list of Greengrass core devices.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// IoT Greengrass relies on individual devices to send status updates to the Amazon Web
+        /// Services Cloud. If the IoT Greengrass Core software isn't running on the device, or
+        /// if device isn't connected to the Amazon Web Services Cloud, then the reported status
+        /// of that device might not reflect its current status. The status timestamp indicates
+        /// when the device status was last updated.
+        /// </para>
+        ///  
+        /// <para>
+        /// Core devices send status updates at the following times:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// When the IoT Greengrass Core software starts
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When the core device receives a deployment from the Amazon Web Services Cloud
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When the status of any component on the core device becomes <code>BROKEN</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// At a <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-nucleus-component.html#greengrass-nucleus-component-configuration-fss">regular
+        /// interval that you can configure</a>, which defaults to 24 hours
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For IoT Greengrass Core v2.7.0, the core device sends status updates upon local deployment
+        /// and cloud deployment
+        /// </para>
+        ///  </li> </ul> </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListCoreDevices service method.</param>
         /// 
@@ -1737,6 +2241,42 @@ namespace Amazon.GreengrassV2
 
         /// <summary>
         /// Retrieves a paginated list of Greengrass core devices.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// IoT Greengrass relies on individual devices to send status updates to the Amazon Web
+        /// Services Cloud. If the IoT Greengrass Core software isn't running on the device, or
+        /// if device isn't connected to the Amazon Web Services Cloud, then the reported status
+        /// of that device might not reflect its current status. The status timestamp indicates
+        /// when the device status was last updated.
+        /// </para>
+        ///  
+        /// <para>
+        /// Core devices send status updates at the following times:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// When the IoT Greengrass Core software starts
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When the core device receives a deployment from the Amazon Web Services Cloud
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When the status of any component on the core device becomes <code>BROKEN</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// At a <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-nucleus-component.html#greengrass-nucleus-component-configuration-fss">regular
+        /// interval that you can configure</a>, which defaults to 24 hours
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For IoT Greengrass Core v2.7.0, the core device sends status updates upon local deployment
+        /// and cloud deployment
+        /// </para>
+        ///  </li> </ul> </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListCoreDevices service method.</param>
         /// <param name="cancellationToken">
@@ -1920,7 +2460,46 @@ namespace Amazon.GreengrassV2
 
 
         /// <summary>
-        /// Retrieves a paginated list of the components that a Greengrass core device runs.
+        /// Retrieves a paginated list of the components that a Greengrass core device runs. By
+        /// default, this list doesn't include components that are deployed as dependencies of
+        /// other components. To include dependencies in the response, set the <code>topologyFilter</code>
+        /// parameter to <code>ALL</code>.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// IoT Greengrass relies on individual devices to send status updates to the Amazon Web
+        /// Services Cloud. If the IoT Greengrass Core software isn't running on the device, or
+        /// if device isn't connected to the Amazon Web Services Cloud, then the reported status
+        /// of that device might not reflect its current status. The status timestamp indicates
+        /// when the device status was last updated.
+        /// </para>
+        ///  
+        /// <para>
+        /// Core devices send status updates at the following times:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// When the IoT Greengrass Core software starts
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When the core device receives a deployment from the Amazon Web Services Cloud
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When the status of any component on the core device becomes <code>BROKEN</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// At a <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-nucleus-component.html#greengrass-nucleus-component-configuration-fss">regular
+        /// interval that you can configure</a>, which defaults to 24 hours
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For IoT Greengrass Core v2.7.0, the core device sends status updates upon local deployment
+        /// and cloud deployment
+        /// </para>
+        ///  </li> </ul> </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListInstalledComponents service method.</param>
         /// 
@@ -1954,7 +2533,46 @@ namespace Amazon.GreengrassV2
 
 
         /// <summary>
-        /// Retrieves a paginated list of the components that a Greengrass core device runs.
+        /// Retrieves a paginated list of the components that a Greengrass core device runs. By
+        /// default, this list doesn't include components that are deployed as dependencies of
+        /// other components. To include dependencies in the response, set the <code>topologyFilter</code>
+        /// parameter to <code>ALL</code>.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// IoT Greengrass relies on individual devices to send status updates to the Amazon Web
+        /// Services Cloud. If the IoT Greengrass Core software isn't running on the device, or
+        /// if device isn't connected to the Amazon Web Services Cloud, then the reported status
+        /// of that device might not reflect its current status. The status timestamp indicates
+        /// when the device status was last updated.
+        /// </para>
+        ///  
+        /// <para>
+        /// Core devices send status updates at the following times:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// When the IoT Greengrass Core software starts
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When the core device receives a deployment from the Amazon Web Services Cloud
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When the status of any component on the core device becomes <code>BROKEN</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// At a <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-nucleus-component.html#greengrass-nucleus-component-configuration-fss">regular
+        /// interval that you can configure</a>, which defaults to 24 hours
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For IoT Greengrass Core v2.7.0, the core device sends status updates upon local deployment
+        /// and cloud deployment
+        /// </para>
+        ///  </li> </ul> </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListInstalledComponents service method.</param>
         /// <param name="cancellationToken">
@@ -2305,6 +2923,81 @@ namespace Amazon.GreengrassV2
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateConnectivityInfo
+
+
+        /// <summary>
+        /// Updates connectivity information for a Greengrass core device.
+        /// 
+        ///  
+        /// <para>
+        /// Connectivity information includes endpoints and ports where client devices can connect
+        /// to an MQTT broker on the core device. When a client device calls the <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-discover-api.html">IoT
+        /// Greengrass discovery API</a>, IoT Greengrass returns connectivity information for
+        /// all of the core devices where the client device can connect. For more information,
+        /// see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/connect-client-devices.html">Connect
+        /// client devices to core devices</a> in the <i>IoT Greengrass Version 2 Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateConnectivityInfo service method.</param>
+        /// 
+        /// <returns>The response from the UpdateConnectivityInfo service method, as returned by GreengrassV2.</returns>
+        /// <exception cref="Amazon.GreengrassV2.Model.InternalServerException">
+        /// IoT Greengrass can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.GreengrassV2.Model.ValidationException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/UpdateConnectivityInfo">REST API Reference for UpdateConnectivityInfo Operation</seealso>
+        public virtual UpdateConnectivityInfoResponse UpdateConnectivityInfo(UpdateConnectivityInfoRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateConnectivityInfoRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateConnectivityInfoResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateConnectivityInfoResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates connectivity information for a Greengrass core device.
+        /// 
+        ///  
+        /// <para>
+        /// Connectivity information includes endpoints and ports where client devices can connect
+        /// to an MQTT broker on the core device. When a client device calls the <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-discover-api.html">IoT
+        /// Greengrass discovery API</a>, IoT Greengrass returns connectivity information for
+        /// all of the core devices where the client device can connect. For more information,
+        /// see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/connect-client-devices.html">Connect
+        /// client devices to core devices</a> in the <i>IoT Greengrass Version 2 Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateConnectivityInfo service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateConnectivityInfo service method, as returned by GreengrassV2.</returns>
+        /// <exception cref="Amazon.GreengrassV2.Model.InternalServerException">
+        /// IoT Greengrass can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.GreengrassV2.Model.ValidationException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/UpdateConnectivityInfo">REST API Reference for UpdateConnectivityInfo Operation</seealso>
+        public virtual Task<UpdateConnectivityInfoResponse> UpdateConnectivityInfoAsync(UpdateConnectivityInfoRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateConnectivityInfoRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateConnectivityInfoResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateConnectivityInfoResponse>(request, options, cancellationToken);
         }
 
         #endregion

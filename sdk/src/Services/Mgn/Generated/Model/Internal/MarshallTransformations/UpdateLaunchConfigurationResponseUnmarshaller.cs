@@ -51,6 +51,12 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("bootMode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.BootMode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("copyPrivateIp", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
@@ -69,6 +75,12 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
                     response.Ec2LaunchTemplateID = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("enableMapAutoTagging", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    response.EnableMapAutoTagging = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("launchDisposition", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -81,10 +93,22 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
                     response.Licensing = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("mapAutoTaggingMpeID", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.MapAutoTaggingMpeID = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Name = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("postLaunchActions", targetDepth))
+                {
+                    var unmarshaller = PostLaunchActionsUnmarshaller.Instance;
+                    response.PostLaunchActions = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("sourceServerID", targetDepth))

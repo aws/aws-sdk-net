@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Transfer.Model
 {
     /// <summary>
-    /// Specifies the details for the file location for the file being used in the workflow.
-    /// Only applicable if you are using S3 storage.
+    /// Specifies the details for the file location for the file that's being used in the
+    /// workflow. Only applicable if you are using S3 storage.
     /// </summary>
     public partial class S3FileLocation
     {
@@ -81,8 +81,8 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// The name assigned to the file when it was created in S3. You use the object key to
-        /// retrieve the object.
+        /// The name assigned to the file when it was created in Amazon S3. You use the object
+        /// key to retrieve the object.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]

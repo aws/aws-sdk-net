@@ -45,7 +45,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Action. 
         /// <para>
-        /// The action that's performed on findings that meet the filter criteria (findingCriteria).
+        /// The action that's performed on findings that match the filter criteria (findingCriteria).
         /// Possible values are: ARCHIVE, suppress (automatically archive) the findings; and,
         /// NOOP, don't perform any action on the findings.
         /// </para>
@@ -175,7 +175,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// A map of key-value pairs that identifies the tags (keys and values) that are associated
+        /// A map of key-value pairs that specifies which tags (keys and values) are associated
         /// with the filter.
         /// </para>
         /// </summary>

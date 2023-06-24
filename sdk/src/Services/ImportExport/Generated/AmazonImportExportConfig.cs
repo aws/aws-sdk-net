@@ -17,22 +17,22 @@
  * Do not modify this file. This file is generated from the importexport-2010-06-01.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
-
+using Amazon.ImportExport.Internal;
 
 namespace Amazon.ImportExport
 {
     /// <summary>
     /// Configuration for accessing Amazon ImportExport service
     /// </summary>
+    [AWSSignerType("v2")]
     public partial class AmazonImportExportConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.105");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.147");
 
         private string _userAgent = UserAgentString;
 
@@ -40,8 +40,10 @@ namespace Amazon.ImportExport
         /// Default constructor
         /// </summary>
         public AmazonImportExportConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonImportExportDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "importexport";
+            this.EndpointProvider = new AmazonImportExportEndpointProvider();
         }
 
         /// <summary>
@@ -76,5 +78,6 @@ namespace Amazon.ImportExport
                 return _userAgent;
             }
         }
+
     }
 }

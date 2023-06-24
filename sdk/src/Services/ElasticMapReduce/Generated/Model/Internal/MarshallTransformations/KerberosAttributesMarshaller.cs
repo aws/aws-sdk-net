@@ -34,7 +34,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// KerberosAttributes Marshaller
-    /// </summary>       
+    /// </summary>
     public class KerberosAttributesMarshaller : IRequestMarshaller<KerberosAttributes, JsonMarshallerContext> 
     {
         /// <summary>
@@ -79,7 +79,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static KerberosAttributesMarshaller Instance = new KerberosAttributesMarshaller();
 
     }

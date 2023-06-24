@@ -87,6 +87,12 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
                     response.FulfillmentCodeHook = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("initialResponseSetting", targetDepth))
+                {
+                    var unmarshaller = InitialResponseSettingUnmarshaller.Instance;
+                    response.InitialResponseSetting = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("inputContexts", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<InputContext, InputContextUnmarshaller>(InputContextUnmarshaller.Instance);

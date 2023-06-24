@@ -79,6 +79,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+                if(publicRequest.IsSetIncludePublicKey())
+                {
+                    request.Parameters.Add("IncludePublicKey", StringUtils.FromBool(publicRequest.IncludePublicKey));
+                }
                 if(publicRequest.IsSetKeyNames())
                 {
                     int publicRequestlistValueIndex = 1;

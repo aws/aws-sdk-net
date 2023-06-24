@@ -32,8 +32,8 @@ namespace Amazon.KinesisFirehose.Model
     /// Specifies that you want Kinesis Data Firehose to convert data from the JSON format
     /// to the Parquet or ORC format before writing it to Amazon S3. Kinesis Data Firehose
     /// uses the serializer and deserializer that you specify, in addition to the column information
-    /// from the AWS Glue table, to deserialize your input data from JSON and then serialize
-    /// it to the Parquet or ORC format. For more information, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/record-format-conversion.html">Kinesis
+    /// from the Amazon Web Services Glue table, to deserialize your input data from JSON
+    /// and then serialize it to the Parquet or ORC format. For more information, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/record-format-conversion.html">Kinesis
     /// Data Firehose Record Format Conversion</a>.
     /// </summary>
     public partial class DataFormatConversionConfiguration
@@ -105,8 +105,8 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property SchemaConfiguration. 
         /// <para>
-        /// Specifies the AWS Glue Data Catalog table that contains the column information. This
-        /// parameter is required if <code>Enabled</code> is set to true.
+        /// Specifies the Amazon Web Services Glue Data Catalog table that contains the column
+        /// information. This parameter is required if <code>Enabled</code> is set to true.
         /// </para>
         /// </summary>
         public SchemaConfiguration SchemaConfiguration

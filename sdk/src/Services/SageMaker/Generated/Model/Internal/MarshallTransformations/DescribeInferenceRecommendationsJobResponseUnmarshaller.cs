@@ -63,6 +63,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     response.CreationTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("EndpointPerformances", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<EndpointPerformance, EndpointPerformanceUnmarshaller>(EndpointPerformanceUnmarshaller.Instance);
+                    response.EndpointPerformances = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("FailureReason", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

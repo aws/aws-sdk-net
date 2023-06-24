@@ -55,7 +55,7 @@ namespace Amazon.Detective.Model.Internal.MarshallTransformations
         public IRequest Marshall(UntagResourceRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Detective");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-10-26";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-10-26";
             request.HttpMethod = "DELETE";
 
             if (!publicRequest.IsSetResourceArn())

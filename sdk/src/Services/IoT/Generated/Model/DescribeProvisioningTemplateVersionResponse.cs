@@ -41,7 +41,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property CreationDate. 
         /// <para>
-        /// The date when the fleet provisioning template version was created.
+        /// The date when the provisioning template version was created.
         /// </para>
         /// </summary>
         public DateTime CreationDate
@@ -59,7 +59,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property IsDefaultVersion. 
         /// <para>
-        /// True if the fleet provisioning template version is the default version.
+        /// True if the provisioning template version is the default version.
         /// </para>
         /// </summary>
         public bool IsDefaultVersion
@@ -77,9 +77,10 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property TemplateBody. 
         /// <para>
-        /// The JSON formatted contents of the fleet provisioning template version.
+        /// The JSON formatted contents of the provisioning template version.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=10240)]
         public string TemplateBody
         {
             get { return this._templateBody; }
@@ -95,7 +96,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property VersionId. 
         /// <para>
-        /// The fleet provisioning template version ID.
+        /// The provisioning template version ID.
         /// </para>
         /// </summary>
         public int VersionId

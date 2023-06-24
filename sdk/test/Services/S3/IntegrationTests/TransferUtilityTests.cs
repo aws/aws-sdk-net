@@ -325,6 +325,88 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
         [TestMethod]
         [TestCategory("S3")]
+        public void DownloadDirectoryWithDisableSlashCorrectionForS3DirectoryProgressTest()
+        {
+            // disable clock skew testing, this is a multithreaded test
+            using (RetryUtilities.DisableClockSkewCorrection())
+            {
+                var progressValidator = new DirectoryProgressValidator<DownloadDirectoryProgressArgs>();
+                ConfigureProgressValidator(progressValidator);
+
+                int numberOfTestFiles = 5;
+                var downloadDirectory = DownloadDirectoryWithDisableSlashCorrectionForS3Directory(numberOfTestFiles, progressValidator);
+                progressValidator.AssertOnCompletion();
+
+                Assert.AreEqual(numberOfTestFiles, downloadDirectory.GetFiles("*", SearchOption.AllDirectories).Count());
+                ValidateDirectoryContents(Client, bucketName, string.Empty, downloadDirectory);
+            }
+        }
+
+        DirectoryInfo DownloadDirectoryWithDisableSlashCorrectionForS3Directory(int numberOfTestFiles, DirectoryProgressValidator<DownloadDirectoryProgressArgs> progressValidator)
+        {
+            var keyPrefix = DateTime.Now.ToString("yyyy-MM-dd");
+            var directory = UploadDirectoryWithKeyPrefix(1 * KILO_SIZE, null, keyPrefix, numberOfTestFiles, false);
+            var directoryPath = directory.FullName;
+            Directory.Delete(directoryPath, true);
+
+            var transferUtility = new TransferUtility(Client);
+            var request = new TransferUtilityDownloadDirectoryRequest
+            {
+                BucketName = bucketName,
+                LocalDirectory = directoryPath,
+                S3Directory = keyPrefix,
+                DisableSlashCorrection = true
+            };
+
+            if (progressValidator != null)
+                request.DownloadedDirectoryProgressEvent += progressValidator.OnProgressEvent;
+
+            transferUtility.DownloadDirectory(request);
+
+            return directory;
+        }
+
+        DirectoryInfo UploadDirectoryWithKeyPrefix(long size, DirectoryProgressValidator<UploadDirectoryProgressArgs> progressValidator, string keyPrefix, int numberOfTestFiles, bool validate = true)
+        {
+            var directory = CreateTestDirectoryWithFilePrefix(size, keyPrefix, numberOfTestFiles);
+            var directoryPath = directory.FullName;
+
+            var config = new TransferUtilityConfig
+            {
+                ConcurrentServiceRequests = 10,
+            };
+            var transferUtility = new TransferUtility(Client, config);
+            var request = new TransferUtilityUploadDirectoryRequest
+            {
+                BucketName = bucketName,
+                Directory = directoryPath,
+                ContentType = plainTextContentType,
+                SearchPattern = "*",
+                SearchOption = SearchOption.AllDirectories,
+            };
+
+            if (progressValidator != null)
+            {
+                request.UploadDirectoryProgressEvent += progressValidator.OnProgressEvent;
+            }
+
+            HashSet<string> files = new HashSet<string>();
+            request.UploadDirectoryProgressEvent += (s, e) =>
+            {
+                files.Add(e.CurrentFile);
+                Console.WriteLine("Progress callback = " + e.ToString());
+            };
+
+            transferUtility.UploadDirectory(request);
+
+            if (validate)
+                ValidateDirectoryContents(Client, bucketName, string.Empty, directory, plainTextContentType);
+
+            return directory;
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
         public void DownloadProgressTest()
         {
             var fileName = UtilityMethods.GenerateName(@"DownloadTest\File");
@@ -339,6 +421,28 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 }
             };
             Download(fileName, 10 * MEG_SIZE, progressValidator);
+            progressValidator.AssertOnCompletion();
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public void DownloadProgressZeroLengthFileTest()
+        {
+            var fileName = UtilityMethods.GenerateName(@"DownloadTest\File");
+            var progressValidator = new TransferProgressValidator<WriteObjectProgressArgs>
+            {
+                Validate = (p) =>
+                {
+                    Assert.AreEqual(p.BucketName, bucketName);
+                    Assert.AreEqual(p.Key, fileName);
+                    Assert.IsNotNull(p.FilePath);
+                    Assert.IsTrue(p.FilePath.Contains(fileName));
+                    Assert.AreEqual(p.TotalBytes, 0);
+                    Assert.AreEqual(p.TransferredBytes, 0);
+                    Assert.AreEqual(p.PercentDone, 100);
+                }
+            };
+            Download(fileName, 0, progressValidator);
             progressValidator.AssertOnCompletion();
         }
 
@@ -574,24 +678,56 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             {
                 var filePath = file.FullName;
                 var key = filePath.Substring(directoryPath.Length + 1);
-                key = keyPrefix + "/" + key.Replace("\\", "/");
+                key = (!string.IsNullOrEmpty(keyPrefix) ? keyPrefix + "/" : string.Empty) + key.Replace("\\", "/");
                 ValidateFileContents(s3client, bucketName, key, filePath, contentType);
             }
         }
 
-        public static DirectoryInfo CreateTestDirectory(long size = 0)
+        public static DirectoryInfo CreateTestDirectory(long size = 0, int numberOfTestFiles = 5)
         {
             if (size == 0)
                 size = 1 * MEG_SIZE;
 
             var directoryPath = GenerateDirectoryPath();
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < numberOfTestFiles; i++)
             {
                 var filePath = Path.Combine(Path.Combine(directoryPath, i.ToString()), "file.txt");
                 UtilityMethods.GenerateFile(filePath, size);
             }
 
             return new DirectoryInfo(directoryPath);
+        }
+
+        public static DirectoryInfo CreateTestDirectoryWithFilePrefix(long size = 0, string filePrefix = null, int numberOfTestFiles = 5)
+        {
+            if (string.IsNullOrWhiteSpace(filePrefix))
+            {
+                return CreateTestDirectory(size, numberOfTestFiles);
+            }
+            else
+            {
+                int numberOfTestFilesInChildDirectory = numberOfTestFiles / 2;
+                int numberOfTestFilesInParentDirectory = numberOfTestFiles - numberOfTestFilesInChildDirectory;
+
+                if (size == 0)
+                    size = 1 * KILO_SIZE;
+
+                var parentDirectory = GenerateDirectoryPath();
+                for (int i = 0; i < numberOfTestFilesInParentDirectory; i++)
+                {
+                    var parentDirectoryFilePath = Path.Combine(parentDirectory, filePrefix.Trim() + i.ToString() + "file.txt");
+                    UtilityMethods.GenerateFile(parentDirectoryFilePath, size);
+                }
+
+                var childDirectory = Path.Combine(parentDirectory, filePrefix);
+                for (int i = 0; i < numberOfTestFilesInChildDirectory; i++)
+                {
+                    var childDirectoryFilePath = Path.Combine(childDirectory, i.ToString() + "file.txt");
+                    UtilityMethods.GenerateFile(childDirectoryFilePath, size);
+                }
+
+                return new DirectoryInfo(parentDirectory);
+            }
         }
 
         public static string GenerateDirectoryPath(string baseName = "DirectoryTest")

@@ -30,7 +30,7 @@ namespace Amazon.CloudFormation.Model
 {
     /// <summary>
     /// The specified change set name or ID doesn't exit. To view valid change sets for a
-    /// stack, use the <code>ListChangeSets</code> action.
+    /// stack, use the <code>ListChangeSets</code> operation.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

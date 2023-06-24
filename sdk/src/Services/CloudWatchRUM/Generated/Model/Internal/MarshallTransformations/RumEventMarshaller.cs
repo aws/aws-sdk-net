@@ -34,7 +34,7 @@ namespace Amazon.CloudWatchRUM.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RumEvent Marshaller
-    /// </summary>       
+    /// </summary>
     public class RumEventMarshaller : IRequestMarshaller<RumEvent, JsonMarshallerContext> 
     {
         /// <summary>
@@ -79,7 +79,7 @@ namespace Amazon.CloudWatchRUM.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RumEventMarshaller Instance = new RumEventMarshaller();
 
     }

@@ -32,6 +32,12 @@ namespace Amazon.EC2.Model
     /// A filter name and value pair that is used to return a more specific list of results
     /// from a describe operation. Filters can be used to match a set of resources by specific
     /// criteria, such as tags, attributes, or IDs.
+    /// 
+    ///  
+    /// <para>
+    /// If you specify multiple filters, the filters are joined with an <code>AND</code>,
+    /// and the request returns only results that match all of the specified filters.
+    /// </para>
     /// </summary>
     public partial class Filter
     {
@@ -47,7 +53,7 @@ namespace Amazon.EC2.Model
         /// Instantiates Filter with the parameterized properties
         /// </summary>
         /// <param name="name">The name of the filter. Filter names are case-sensitive.</param>
-        /// <param name="values">The filter values. Filter values are case-sensitive.</param>
+        /// <param name="values">The filter values. Filter values are case-sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</param>
         public Filter(string name, List<string> values)
         {
             _name = name;
@@ -84,7 +90,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Values. 
         /// <para>
-        /// The filter values. Filter values are case-sensitive.
+        /// The filter values. Filter values are case-sensitive. If you specify multiple values
+        /// for a filter, the values are joined with an <code>OR</code>, and the request returns
+        /// all results that match any of the specified values.
         /// </para>
         /// </summary>
         public List<string> Values

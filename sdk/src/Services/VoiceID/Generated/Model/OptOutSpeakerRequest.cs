@@ -30,12 +30,12 @@ namespace Amazon.VoiceID.Model
 {
     /// <summary>
     /// Container for the parameters to the OptOutSpeaker operation.
-    /// Opts out a speaker from Voice ID system. A speaker can be opted out regardless of
-    /// whether or not they already exist in the system. If they don't yet exist, a new speaker
-    /// is created in an opted out state. If they already exist, their existing status is
-    /// overridden and they are opted out. Enrollment and evaluation authentication requests
-    /// are rejected for opted out speakers, and opted out speakers have no voice embeddings
-    /// stored in the system.
+    /// Opts out a speaker from Voice ID. A speaker can be opted out regardless of whether
+    /// or not they already exist in Voice ID. If they don't yet exist, a new speaker is created
+    /// in an opted out state. If they already exist, their existing status is overridden
+    /// and they are opted out. Enrollment and evaluation authentication requests are rejected
+    /// for opted out speakers, and opted out speakers have no voice embeddings stored in
+    /// Voice ID.
     /// </summary>
     public partial class OptOutSpeakerRequest : AmazonVoiceIDRequest
     {
@@ -45,7 +45,7 @@ namespace Amazon.VoiceID.Model
         /// <summary>
         /// Gets and sets the property DomainId. 
         /// <para>
-        /// The identifier of the domain containing the speaker.
+        /// The identifier of the domain that contains the speaker.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=22, Max=22)]
@@ -67,7 +67,7 @@ namespace Amazon.VoiceID.Model
         /// The identifier of the speaker you want opted-out.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=256)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=256)]
         public string SpeakerId
         {
             get { return this._speakerId; }

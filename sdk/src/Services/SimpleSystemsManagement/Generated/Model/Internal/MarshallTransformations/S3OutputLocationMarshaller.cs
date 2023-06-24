@@ -34,7 +34,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// S3OutputLocation Marshaller
-    /// </summary>       
+    /// </summary>
     public class S3OutputLocationMarshaller : IRequestMarshaller<S3OutputLocation, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static S3OutputLocationMarshaller Instance = new S3OutputLocationMarshaller();
 
     }

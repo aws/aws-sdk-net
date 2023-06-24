@@ -29,9 +29,15 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataSync.Model
 {
     /// <summary>
-    /// You can use API filters to narrow down the list of resources returned by <code>ListLocations</code>.
-    /// For example, to retrieve all your Amazon S3 locations, you can use <code>ListLocations</code>
-    /// with filter name <code>LocationType S3</code> and <code>Operator Equals</code>.
+    /// Narrow down the list of resources returned by <code>ListLocations</code>. For example,
+    /// to see all your Amazon S3 locations, create a filter using <code>"Name": "LocationType"</code>,
+    /// <code>"Operator": "Equals"</code>, and <code>"Values": "S3"</code>.
+    /// 
+    ///  
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/query-resources.html">filtering
+    /// resources</a>.
+    /// </para>
     /// </summary>
     public partial class LocationFilter
     {
@@ -63,8 +69,7 @@ namespace Amazon.DataSync.Model
         /// Gets and sets the property Operator. 
         /// <para>
         /// The operator that is used to compare filter values (for example, <code>Equals</code>
-        /// or <code>Contains</code>). For more about API filtering operators, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/query-resources.html">API
-        /// filters for ListTasks and ListLocations</a>.
+        /// or <code>Contains</code>).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

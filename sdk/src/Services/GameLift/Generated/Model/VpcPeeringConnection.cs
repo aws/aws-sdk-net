@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GameLift.Model
 {
     /// <summary>
-    /// Represents a peering connection between a VPC on one of your AWS accounts and the
-    /// VPC for your Amazon GameLift fleets. This record may be for an active peering connection
-    /// or a pending connection that has not yet been established.
+    /// Represents a peering connection between a VPC on one of your Amazon Web Services accounts
+    /// and the VPC for your Amazon GameLift fleets. This record may be for an active peering
+    /// connection or a pending connection that has not yet been established.
     /// 
     ///  
     /// <para>
@@ -39,9 +39,7 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  
     /// <para>
-    ///  <a>CreateVpcPeeringAuthorization</a> | <a>DescribeVpcPeeringAuthorizations</a> |
-    /// <a>DeleteVpcPeeringAuthorization</a> | <a>CreateVpcPeeringConnection</a> | <a>DescribeVpcPeeringConnections</a>
-    /// | <a>DeleteVpcPeeringConnection</a> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
+    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
     /// APIs by task</a> 
     /// </para>
     /// </summary>
@@ -58,7 +56,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property FleetArn. 
         /// <para>
-        ///  The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+        /// The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
         /// associated with the GameLift fleet resource for this connection. 
         /// </para>
         /// </summary>
@@ -97,7 +95,8 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property GameLiftVpcId. 
         /// <para>
         /// A unique identifier for the VPC that contains the Amazon GameLift fleet for this connection.
-        /// This VPC is managed by Amazon GameLift and does not appear in your AWS account. 
+        /// This VPC is managed by Amazon GameLift and does not appear in your Amazon Web Services
+        /// account. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -137,11 +136,11 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property PeerVpcId. 
         /// <para>
-        /// A unique identifier for a VPC with resources to be accessed by your GameLift fleet.
-        /// The VPC must be in the same Region as your fleet. To look up a VPC ID, use the <a
-        /// href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the AWS Management
-        /// Console. Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
-        /// Peering with GameLift Fleets</a>.
+        /// A unique identifier for a VPC with resources to be accessed by your Amazon GameLift
+        /// fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID, use
+        /// the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the Amazon
+        /// Web Services Management Console. Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
+        /// Peering with Amazon GameLift Fleets</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -180,8 +179,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property VpcPeeringConnectionId. 
         /// <para>
         /// A unique identifier that is automatically assigned to the connection record. This
-        /// ID is referenced in VPC peering connection events, and is used when deleting a connection
-        /// with <a>DeleteVpcPeeringConnection</a>. 
+        /// ID is referenced in VPC peering connection events, and is used when deleting a connection.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

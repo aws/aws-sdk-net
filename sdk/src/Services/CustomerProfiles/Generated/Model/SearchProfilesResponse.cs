@@ -39,7 +39,7 @@ namespace Amazon.CustomerProfiles.Model
         /// <summary>
         /// Gets and sets the property Items. 
         /// <para>
-        /// The list of SearchProfiles instances.
+        /// The list of Profiles matching the search criteria.
         /// </para>
         /// </summary>
         public List<Profile> Items

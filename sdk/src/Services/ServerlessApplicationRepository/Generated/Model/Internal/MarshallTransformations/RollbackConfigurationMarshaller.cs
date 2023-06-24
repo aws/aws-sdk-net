@@ -34,7 +34,7 @@ namespace Amazon.ServerlessApplicationRepository.Model.Internal.MarshallTransfor
 {
     /// <summary>
     /// RollbackConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class RollbackConfigurationMarshaller : IRequestMarshaller<RollbackConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.ServerlessApplicationRepository.Model.Internal.MarshallTransfor
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RollbackConfigurationMarshaller Instance = new RollbackConfigurationMarshaller();
 
     }

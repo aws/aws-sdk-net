@@ -37,6 +37,7 @@ namespace Amazon.SSMIncidents.Model
         private string _clientToken;
         private string _eventData;
         private string _eventId;
+        private List<EventReference> _eventReferences = new List<EventReference>();
         private DateTime? _eventTime;
         private string _eventType;
         private string _incidentRecordArn;
@@ -44,7 +45,8 @@ namespace Amazon.SSMIncidents.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// A token ensuring that the operation is called only once with the specified details.
+        /// A token that ensures that a client calls the operation only once with the specified
+        /// details.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=128)]
@@ -66,7 +68,7 @@ namespace Amazon.SSMIncidents.Model
         /// A short description of the event.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=6000)]
+        [AWSProperty(Min=0, Max=12000)]
         public string EventData
         {
             get { return this._eventData; }
@@ -82,7 +84,8 @@ namespace Amazon.SSMIncidents.Model
         /// <summary>
         /// Gets and sets the property EventId. 
         /// <para>
-        /// The ID of the event you are updating. You can find this by using <code>ListTimelineEvents</code>.
+        /// The ID of the event to update. You can use <code>ListTimelineEvents</code> to find
+        /// an event's ID.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=50)]
@@ -96,6 +99,37 @@ namespace Amazon.SSMIncidents.Model
         internal bool IsSetEventId()
         {
             return this._eventId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EventReferences. 
+        /// <para>
+        /// Updates all existing references in a <code>TimelineEvent</code>. A reference is an
+        /// Amazon Web Services resource involved or associated with the incident. To specify
+        /// a reference, enter its Amazon Resource Name (ARN). You can also specify a related
+        /// item associated with that resource. For example, to specify an Amazon DynamoDB (DynamoDB)
+        /// table as a resource, use its ARN. You can also specify an Amazon CloudWatch metric
+        /// associated with the DynamoDB table as a related item.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// This update action overrides all existing references. If you want to keep existing
+        /// references, you must specify them in the call. If you don't, this action removes any
+        /// existing references and enters only new references.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        [AWSProperty(Min=0, Max=10)]
+        public List<EventReference> EventReferences
+        {
+            get { return this._eventReferences; }
+            set { this._eventReferences = value; }
+        }
+
+        // Check to see if EventReferences property is set
+        internal bool IsSetEventReferences()
+        {
+            return this._eventReferences != null && this._eventReferences.Count > 0; 
         }
 
         /// <summary>
@@ -119,7 +153,7 @@ namespace Amazon.SSMIncidents.Model
         /// <summary>
         /// Gets and sets the property EventType. 
         /// <para>
-        /// The type of the event. You can update events of type <code>Custom Event</code>.
+        /// The type of event. You can update events of type <code>Custom Event</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]

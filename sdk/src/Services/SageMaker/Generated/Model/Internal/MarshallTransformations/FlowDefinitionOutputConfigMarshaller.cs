@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// FlowDefinitionOutputConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class FlowDefinitionOutputConfigMarshaller : IRequestMarshaller<FlowDefinitionOutputConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static FlowDefinitionOutputConfigMarshaller Instance = new FlowDefinitionOutputConfigMarshaller();
 
     }

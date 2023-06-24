@@ -103,7 +103,7 @@
   <property-value-rule>
     <property>Amazon.CodeGuruReviewer.Model.ListRecommendationsRequest.MaxResults</property>
     <min>1</min>
-    <max>100</max>
+    <max>300</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeGuruReviewer.Model.ListRecommendationsRequest.NextToken</property>
@@ -318,7 +318,7 @@
   <property-value-rule>
     <property>Amazon.CodeGuruReviewer.Model.RecommendationSummary.Description</property>
     <min>1</min>
-    <max>2048</max>
+    <max>5000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeGuruReviewer.Model.RecommendationSummary.FilePath</property>

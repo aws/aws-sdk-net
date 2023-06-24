@@ -29,10 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kendra.Model
 {
     /// <summary>
-    /// Specifies configuration information for the knowledge article types that Amazon Kendra
-    /// indexes. Amazon Kendra indexes standard knowledge articles and the standard fields
-    /// of knowledge articles, or the custom fields of custom knowledge articles, but not
-    /// both
+    /// Provides the configuration information for the knowledge article types that Amazon
+    /// Kendra indexes. Amazon Kendra indexes standard knowledge articles and the standard
+    /// fields of knowledge articles, or the custom fields of custom knowledge articles, but
+    /// not both
     /// </summary>
     public partial class SalesforceKnowledgeArticleConfiguration
     {
@@ -43,7 +43,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property CustomKnowledgeArticleTypeConfigurations. 
         /// <para>
-        /// Provides configuration information for custom Salesforce knowledge articles.
+        /// Configuration information for custom Salesforce knowledge articles.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
@@ -82,7 +82,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property StandardKnowledgeArticleTypeConfiguration. 
         /// <para>
-        /// Provides configuration information for standard Salesforce knowledge articles.
+        /// Configuration information for standard Salesforce knowledge articles.
         /// </para>
         /// </summary>
         public SalesforceStandardKnowledgeArticleTypeConfiguration StandardKnowledgeArticleTypeConfiguration

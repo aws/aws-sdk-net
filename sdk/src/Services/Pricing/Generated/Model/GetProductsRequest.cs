@@ -124,6 +124,7 @@ namespace Amazon.Pricing.Model
         /// The code for the service whose products you want to retrieve. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ServiceCode
         {
             get { return this._serviceCode; }

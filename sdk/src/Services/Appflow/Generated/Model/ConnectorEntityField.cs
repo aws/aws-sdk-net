@@ -34,12 +34,55 @@ namespace Amazon.Appflow.Model
     /// </summary>
     public partial class ConnectorEntityField
     {
+        private Dictionary<string, string> _customProperties = new Dictionary<string, string>();
+        private string _defaultValue;
         private string _description;
         private DestinationFieldProperties _destinationProperties;
         private string _identifier;
+        private bool? _isDeprecated;
+        private bool? _isPrimaryKey;
         private string _label;
+        private string _parentIdentifier;
         private SourceFieldProperties _sourceProperties;
         private SupportedFieldTypeDetails _supportedFieldTypeDetails;
+
+        /// <summary>
+        /// Gets and sets the property CustomProperties. 
+        /// <para>
+        /// A map that has specific properties related to the ConnectorEntityField.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=50)]
+        public Dictionary<string, string> CustomProperties
+        {
+            get { return this._customProperties; }
+            set { this._customProperties = value; }
+        }
+
+        // Check to see if CustomProperties property is set
+        internal bool IsSetCustomProperties()
+        {
+            return this._customProperties != null && this._customProperties.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DefaultValue. 
+        /// <para>
+        /// Default value that can be assigned to this field.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=2048)]
+        public string DefaultValue
+        {
+            get { return this._defaultValue; }
+            set { this._defaultValue = value; }
+        }
+
+        // Check to see if DefaultValue property is set
+        internal bool IsSetDefaultValue()
+        {
+            return this._defaultValue != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -99,6 +142,42 @@ namespace Amazon.Appflow.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IsDeprecated. 
+        /// <para>
+        /// Booelan value that indicates whether this field is deprecated or not.
+        /// </para>
+        /// </summary>
+        public bool IsDeprecated
+        {
+            get { return this._isDeprecated.GetValueOrDefault(); }
+            set { this._isDeprecated = value; }
+        }
+
+        // Check to see if IsDeprecated property is set
+        internal bool IsSetIsDeprecated()
+        {
+            return this._isDeprecated.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IsPrimaryKey. 
+        /// <para>
+        /// Booelan value that indicates whether this field can be used as a primary key.
+        /// </para>
+        /// </summary>
+        public bool IsPrimaryKey
+        {
+            get { return this._isPrimaryKey.GetValueOrDefault(); }
+            set { this._isPrimaryKey = value; }
+        }
+
+        // Check to see if IsPrimaryKey property is set
+        internal bool IsSetIsPrimaryKey()
+        {
+            return this._isPrimaryKey.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Label. 
         /// <para>
         ///  The label applied to a connector entity field. 
@@ -115,6 +194,25 @@ namespace Amazon.Appflow.Model
         internal bool IsSetLabel()
         {
             return this._label != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ParentIdentifier. 
+        /// <para>
+        /// The parent identifier of the connector field.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=128)]
+        public string ParentIdentifier
+        {
+            get { return this._parentIdentifier; }
+            set { this._parentIdentifier = value; }
+        }
+
+        // Check to see if ParentIdentifier property is set
+        internal bool IsSetParentIdentifier()
+        {
+            return this._parentIdentifier != null;
         }
 
         /// <summary>

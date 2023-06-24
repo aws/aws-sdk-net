@@ -58,6 +58,7 @@ namespace Amazon.Kinesis.Model
     {
         private string _exclusiveStartStreamName;
         private int? _limit;
+        private string _nextToken;
 
         /// <summary>
         /// Gets and sets the property ExclusiveStartStreamName. 
@@ -96,6 +97,22 @@ namespace Amazon.Kinesis.Model
         internal bool IsSetLimit()
         {
             return this._limit.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NextToken.
+        /// </summary>
+        [AWSProperty(Min=1, Max=1048576)]
+        public string NextToken
+        {
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
+        }
+
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
+        {
+            return this._nextToken != null;
         }
 
     }

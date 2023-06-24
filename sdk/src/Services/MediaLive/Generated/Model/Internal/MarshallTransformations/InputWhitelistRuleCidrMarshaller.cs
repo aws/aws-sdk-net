@@ -34,7 +34,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// InputWhitelistRuleCidr Marshaller
-    /// </summary>       
+    /// </summary>
     public class InputWhitelistRuleCidrMarshaller : IRequestMarshaller<InputWhitelistRuleCidr, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static InputWhitelistRuleCidrMarshaller Instance = new InputWhitelistRuleCidrMarshaller();
 
     }

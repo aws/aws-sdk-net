@@ -120,6 +120,10 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 {
                     return InvalidIfMatchVersionExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidOriginAccessControl"))
+                {
+                    return InvalidOriginAccessControlExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidOriginAccessIdentity"))
                 {
                     return InvalidOriginAccessIdentityExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);

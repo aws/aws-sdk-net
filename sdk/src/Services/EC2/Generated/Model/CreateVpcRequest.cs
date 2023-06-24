@@ -30,10 +30,8 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateVpc operation.
-    /// Creates a VPC with the specified IPv4 CIDR block. The smallest VPC you can create
-    /// uses a /28 netmask (16 IPv4 addresses), and the largest uses a /16 netmask (65,536
-    /// IPv4 addresses). For more information about how large to make your VPC, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">Your
-    /// VPC and subnets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+    /// Creates a VPC with the specified CIDR blocks. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/configure-your-vpc.html#vpc-cidr-blocks">VPC
+    /// CIDR blocks</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
     /// 
     ///  
     /// <para>
@@ -43,10 +41,10 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  
     /// <para>
-    /// By default, each instance you launch in the VPC has the default DHCP options, which
-    /// include only a default DNS server that we provide (AmazonProvidedDNS). For more information,
-    /// see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP
-    /// options sets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+    /// By default, each instance that you launch in the VPC has the default DHCP options,
+    /// which include only a default DNS server that we provide (AmazonProvidedDNS). For more
+    /// information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP
+    /// option sets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -157,8 +155,8 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property Ipv4IpamPoolId. 
         /// <para>
         /// The ID of an IPv4 IPAM pool you want to use for allocating this VPC's CIDR. For more
-        /// information, see <a href="/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a>
-        /// in the <i>Amazon VPC IPAM User Guide</i>. 
+        /// information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/what-is-it-ipam.html">What
+        /// is IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>. 
         /// </para>
         /// </summary>
         public string Ipv4IpamPoolId
@@ -177,7 +175,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property Ipv4NetmaskLength. 
         /// <para>
         /// The netmask length of the IPv4 CIDR you want to allocate to this VPC from an Amazon
-        /// VPC IP Address Manager (IPAM) pool. For more information about IPAM, see <a href="/vpc/latest/ipam/what-is-it-ipam.html">What
+        /// VPC IP Address Manager (IPAM) pool. For more information about IPAM, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/what-is-it-ipam.html">What
         /// is IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>.
         /// </para>
         /// </summary>
@@ -247,8 +245,8 @@ namespace Amazon.EC2.Model
         /// IPAM is a VPC feature that you can use to automate your IP address management workflows
         /// including assigning, tracking, troubleshooting, and auditing IP addresses across Amazon
         /// Web Services Regions and accounts throughout your Amazon Web Services Organization.
-        /// For more information, see <a href="/vpc/latest/ipam/what-is-it-ipam.html">What is
-        /// IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/what-is-it-ipam.html">What
+        /// is IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>.
         /// </para>
         /// </summary>
         public string Ipv6IpamPoolId
@@ -267,7 +265,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property Ipv6NetmaskLength. 
         /// <para>
         /// The netmask length of the IPv6 CIDR you want to allocate to this VPC from an Amazon
-        /// VPC IP Address Manager (IPAM) pool. For more information about IPAM, see <a href="/vpc/latest/ipam/what-is-it-ipam.html">What
+        /// VPC IP Address Manager (IPAM) pool. For more information about IPAM, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/what-is-it-ipam.html">What
         /// is IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>.
         /// </para>
         /// </summary>

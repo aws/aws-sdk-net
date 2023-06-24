@@ -58,7 +58,7 @@ namespace Amazon.Cloud9.Model.Internal.MarshallTransformations
             string target = "AWSCloud9WorkspaceManagementService.DescribeEnvironments";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-09-23";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-09-23";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -78,7 +78,6 @@ namespace Amazon.Cloud9.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

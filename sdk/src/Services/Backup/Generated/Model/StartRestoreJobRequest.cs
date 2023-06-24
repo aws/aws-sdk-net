@@ -34,6 +34,7 @@ namespace Amazon.Backup.Model
     /// </summary>
     public partial class StartRestoreJobRequest : AmazonBackupRequest
     {
+        private bool? _copySourceTagsToRestoredResource;
         private string _iamRoleArn;
         private string _idempotencyToken;
         private Dictionary<string, string> _metadata = new Dictionary<string, string>();
@@ -41,13 +42,35 @@ namespace Amazon.Backup.Model
         private string _resourceType;
 
         /// <summary>
+        /// Gets and sets the property CopySourceTagsToRestoredResource. 
+        /// <para>
+        /// This is an optional parameter. If this equals <code>True</code>, tags included in
+        /// the backup will be copied to the restored resource.
+        /// </para>
+        ///  
+        /// <para>
+        /// This can only be applied to backups created through Backup.
+        /// </para>
+        /// </summary>
+        public bool CopySourceTagsToRestoredResource
+        {
+            get { return this._copySourceTagsToRestoredResource.GetValueOrDefault(); }
+            set { this._copySourceTagsToRestoredResource = value; }
+        }
+
+        // Check to see if CopySourceTagsToRestoredResource property is set
+        internal bool IsSetCopySourceTagsToRestoredResource()
+        {
+            return this._copySourceTagsToRestoredResource.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property IamRoleArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the IAM role that Backup uses to create the target
-        /// recovery point; for example, <code>arn:aws:iam::123456789012:role/S3Access</code>.
+        /// resource; for example: <code>arn:aws:iam::123456789012:role/S3Access</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string IamRoleArn
         {
             get { return this._iamRoleArn; }
@@ -139,7 +162,7 @@ namespace Amazon.Backup.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public Dictionary<string, string> Metadata
         {
             get { return this._metadata; }
@@ -178,6 +201,18 @@ namespace Amazon.Backup.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
+        ///  <code>Aurora</code> for Amazon Aurora
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>CloudFormation</code> for CloudFormation
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>DynamoDB</code> for Amazon DynamoDB
         /// </para>
         ///  </li> <li> 
@@ -194,15 +229,35 @@ namespace Amazon.Backup.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>FSx</code> for Amazon FSx
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Neptune</code> for Amazon Neptune
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>RDS</code> for Amazon Relational Database Service
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Aurora</code> for Amazon Aurora
+        ///  <code>Redshift</code> for Amazon Redshift
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>Storage Gateway</code> for Storage Gateway
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>S3</code> for Amazon S3
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Timestream</code> for Amazon Timestream
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>VirtualMachine</code> for virtual machines
         /// </para>
         ///  </li> </ul>
         /// </summary>

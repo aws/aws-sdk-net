@@ -53,6 +53,8 @@ namespace Amazon.EC2.Model
         private List<Filter> _filters = new List<Filter>();
         private List<string> _imageIds = new List<string>();
         private bool? _includeDeprecated;
+        private int? _maxResults;
+        private string _nextToken;
         private List<string> _owners = new List<string>();
 
         /// <summary>
@@ -135,6 +137,13 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>creation-date</code> - The time when the image was created, in the ISO 8601
+        /// format in the UTC time zone (YYYY-MM-DDThh:mm:ss.sssZ), for example, <code>2021-09-29T11:04:43.305Z</code>.
+        /// You can use a wildcard (<code>*</code>), for example, <code>2021-09-29T*</code>, which
+        /// matches an entire day.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>description</code> - The description of the image (provided during image creation).
         /// </para>
         ///  </li> <li> 
@@ -185,7 +194,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>platform</code> - The platform. To only list Windows-based AMIs, use <code>windows</code>.
+        ///  <code>platform</code> - The platform. The only supported value is <code>windows</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -284,14 +293,16 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property IncludeDeprecated. 
         /// <para>
-        /// If <code>true</code>, all deprecated AMIs are included in the response. If <code>false</code>,
-        /// no deprecated AMIs are included in the response. If no value is specified, the default
-        /// value is <code>false</code>.
+        /// Specifies whether to include deprecated AMIs.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: No deprecated AMIs are included in the response.
         /// </para>
         ///  <note> 
         /// <para>
         /// If you are the AMI owner, all deprecated AMIs appear in the response regardless of
-        /// the value (<code>true</code> or <code>false</code>) that you set for this parameter.
+        /// what you specify for this parameter.
         /// </para>
         ///  </note>
         /// </summary>
@@ -305,6 +316,45 @@ namespace Amazon.EC2.Model
         internal bool IsSetIncludeDeprecated()
         {
             return this._includeDeprecated.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// The maximum number of items to return for this request. To get the next page of items,
+        /// make another request with the token returned in the output. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.
+        /// </para>
+        /// </summary>
+        public int MaxResults
+        {
+            get { return this._maxResults.GetValueOrDefault(); }
+            set { this._maxResults = value; }
+        }
+
+        // Check to see if MaxResults property is set
+        internal bool IsSetMaxResults()
+        {
+            return this._maxResults.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The token returned from a previous paginated request. Pagination continues from the
+        /// end of the items returned by the previous request.
+        /// </para>
+        /// </summary>
+        public string NextToken
+        {
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
+        }
+
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
+        {
+            return this._nextToken != null;
         }
 
         /// <summary>

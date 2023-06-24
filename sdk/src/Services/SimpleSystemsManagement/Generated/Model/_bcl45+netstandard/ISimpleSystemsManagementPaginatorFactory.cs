@@ -191,6 +191,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         IGetParametersByPathPaginator GetParametersByPath(GetParametersByPathRequest request);
 
         /// <summary>
+        /// Paginator for GetResourcePolicies operation
+        ///</summary>
+        IGetResourcePoliciesPaginator GetResourcePolicies(GetResourcePoliciesRequest request);
+
+        /// <summary>
         /// Paginator for ListAssociations operation
         ///</summary>
         IListAssociationsPaginator ListAssociations(ListAssociationsRequest request);

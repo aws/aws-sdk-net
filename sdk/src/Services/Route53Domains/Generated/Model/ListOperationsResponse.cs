@@ -63,7 +63,6 @@ namespace Amazon.Route53Domains.Model
         /// Lists summaries of the operations.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public List<OperationSummary> Operations
         {
             get { return this._operations; }

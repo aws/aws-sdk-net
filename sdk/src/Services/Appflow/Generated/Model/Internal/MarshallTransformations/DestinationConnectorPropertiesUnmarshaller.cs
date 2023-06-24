@@ -64,6 +64,12 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("CustomConnector", targetDepth))
+                {
+                    var unmarshaller = CustomConnectorDestinationPropertiesUnmarshaller.Instance;
+                    unmarshalledObject.CustomConnector = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CustomerProfiles", targetDepth))
                 {
                     var unmarshaller = CustomerProfilesDestinationPropertiesUnmarshaller.Instance;
@@ -88,6 +94,12 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
                     unmarshalledObject.LookoutMetrics = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Marketo", targetDepth))
+                {
+                    var unmarshaller = MarketoDestinationPropertiesUnmarshaller.Instance;
+                    unmarshalledObject.Marketo = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Redshift", targetDepth))
                 {
                     var unmarshaller = RedshiftDestinationPropertiesUnmarshaller.Instance;
@@ -104,6 +116,12 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = SalesforceDestinationPropertiesUnmarshaller.Instance;
                     unmarshalledObject.Salesforce = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SAPOData", targetDepth))
+                {
+                    var unmarshaller = SAPODataDestinationPropertiesUnmarshaller.Instance;
+                    unmarshalledObject.SAPOData = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Snowflake", targetDepth))

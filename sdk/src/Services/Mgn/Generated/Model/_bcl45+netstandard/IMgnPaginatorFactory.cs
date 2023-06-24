@@ -36,6 +36,11 @@ namespace Amazon.Mgn.Model
         IDescribeJobsPaginator DescribeJobs(DescribeJobsRequest request);
 
         /// <summary>
+        /// Paginator for DescribeLaunchConfigurationTemplates operation
+        ///</summary>
+        IDescribeLaunchConfigurationTemplatesPaginator DescribeLaunchConfigurationTemplates(DescribeLaunchConfigurationTemplatesRequest request);
+
+        /// <summary>
         /// Paginator for DescribeReplicationConfigurationTemplates operation
         ///</summary>
         IDescribeReplicationConfigurationTemplatesPaginator DescribeReplicationConfigurationTemplates(DescribeReplicationConfigurationTemplatesRequest request);
@@ -49,5 +54,45 @@ namespace Amazon.Mgn.Model
         /// Paginator for DescribeVcenterClients operation
         ///</summary>
         IDescribeVcenterClientsPaginator DescribeVcenterClients(DescribeVcenterClientsRequest request);
+
+        /// <summary>
+        /// Paginator for ListApplications operation
+        ///</summary>
+        IListApplicationsPaginator ListApplications(ListApplicationsRequest request);
+
+        /// <summary>
+        /// Paginator for ListExportErrors operation
+        ///</summary>
+        IListExportErrorsPaginator ListExportErrors(ListExportErrorsRequest request);
+
+        /// <summary>
+        /// Paginator for ListExports operation
+        ///</summary>
+        IListExportsPaginator ListExports(ListExportsRequest request);
+
+        /// <summary>
+        /// Paginator for ListImportErrors operation
+        ///</summary>
+        IListImportErrorsPaginator ListImportErrors(ListImportErrorsRequest request);
+
+        /// <summary>
+        /// Paginator for ListImports operation
+        ///</summary>
+        IListImportsPaginator ListImports(ListImportsRequest request);
+
+        /// <summary>
+        /// Paginator for ListSourceServerActions operation
+        ///</summary>
+        IListSourceServerActionsPaginator ListSourceServerActions(ListSourceServerActionsRequest request);
+
+        /// <summary>
+        /// Paginator for ListTemplateActions operation
+        ///</summary>
+        IListTemplateActionsPaginator ListTemplateActions(ListTemplateActionsRequest request);
+
+        /// <summary>
+        /// Paginator for ListWaves operation
+        ///</summary>
+        IListWavesPaginator ListWaves(ListWavesRequest request);
     }
 }

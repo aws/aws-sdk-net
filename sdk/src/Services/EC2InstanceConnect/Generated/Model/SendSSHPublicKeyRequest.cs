@@ -47,7 +47,7 @@ namespace Amazon.EC2InstanceConnect.Model
         /// The Availability Zone in which the EC2 instance was launched.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=6, Max=32)]
+        [AWSProperty(Min=6, Max=32)]
         public string AvailabilityZone
         {
             get { return this._availabilityZone; }
@@ -105,7 +105,7 @@ namespace Amazon.EC2InstanceConnect.Model
         /// key.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=256, Max=4096)]
+        [AWSProperty(Required=true, Min=80, Max=4096)]
         public string SSHPublicKey
         {
             get { return this._sshPublicKey; }

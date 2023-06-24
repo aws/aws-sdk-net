@@ -34,7 +34,7 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CaptchaAction Marshaller
-    /// </summary>       
+    /// </summary>
     public class CaptchaActionMarshaller : IRequestMarshaller<CaptchaAction, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CaptchaActionMarshaller Instance = new CaptchaActionMarshaller();
 
     }

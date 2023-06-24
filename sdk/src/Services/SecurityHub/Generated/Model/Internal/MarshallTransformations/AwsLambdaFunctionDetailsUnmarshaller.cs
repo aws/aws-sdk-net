@@ -64,6 +64,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("Architectures", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.Architectures = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Code", targetDepth))
                 {
                     var unmarshaller = AwsLambdaFunctionCodeUnmarshaller.Instance;
@@ -128,6 +134,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
                     unmarshalledObject.MemorySize = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("PackageType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PackageType = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("RevisionId", targetDepth))

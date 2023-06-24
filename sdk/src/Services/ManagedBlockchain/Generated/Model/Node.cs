@@ -52,7 +52,7 @@ namespace Amazon.ManagedBlockchain.Model
         /// <para>
         /// The Amazon Resource Name (ARN) of the node. For more information about ARNs and their
         /// format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
+        /// Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1011)]
@@ -162,10 +162,15 @@ namespace Amazon.ManagedBlockchain.Model
         /// <summary>
         /// Gets and sets the property KmsKeyArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the customer managed key in AWS Key Management Service
-        /// (AWS KMS) that the node uses for encryption at rest. If the value of this parameter
-        /// is <code>"AWS Owned KMS Key"</code>, the node uses an AWS owned KMS key for encryption.
-        /// The node inherits this parameter from the member that it belongs to.
+        /// The Amazon Resource Name (ARN) of the customer managed key in Key Management Service
+        /// (KMS) that the node uses for encryption at rest. If the value of this parameter is
+        /// <code>"AWS Owned KMS Key"</code>, the node uses an Amazon Web Services owned KMS key
+        /// for encryption. The node inherits this parameter from the member that it belongs to.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/managed-blockchain-encryption-at-rest.html">Encryption
+        /// at Rest</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -274,7 +279,8 @@ namespace Amazon.ManagedBlockchain.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>CREATING</code> - The AWS account is in the process of creating a node.
+        ///  <code>CREATING</code> - The Amazon Web Services account is in the process of creating
+        /// a node.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -289,8 +295,8 @@ namespace Amazon.ManagedBlockchain.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CREATE_FAILED</code> - The AWS account attempted to create a node and creation
-        /// failed.
+        ///  <code>CREATE_FAILED</code> - The Amazon Web Services account attempted to create
+        /// a node and creation failed.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -312,15 +318,15 @@ namespace Amazon.ManagedBlockchain.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The node is impaired and might not function
-        /// as expected because it cannot access the specified customer managed key in AWS KMS
-        /// for encryption at rest. Either the KMS key was disabled or deleted, or the grants
-        /// on the key were revoked.
+        /// as expected because it cannot access the specified customer managed key in KMS for
+        /// encryption at rest. Either the KMS key was disabled or deleted, or the grants on the
+        /// key were revoked.
         /// </para>
         ///  
         /// <para>
-        /// The effect of disabling or deleting a key, or revoking a grant is not immediate. The
-        /// node resource might take some time to find that the key is inaccessible. When a resource
-        /// is in this state, we recommend deleting and recreating the resource.
+        /// The effect of disabling or deleting a key or of revoking a grant isn't immediate.
+        /// It might take some time for the node resource to discover that the key is inaccessible.
+        /// When a resource is in this state, we recommend deleting and recreating the resource.
         /// </para>
         ///  </li> </ul>
         /// </summary>

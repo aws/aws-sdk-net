@@ -30,7 +30,7 @@ namespace Amazon.Personalize.Model
 {
     /// <summary>
     /// An object that describes the deployment of a solution version. For more information
-    /// on campaigns, see <a>CreateCampaign</a>.
+    /// on campaigns, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateCampaign.html">CreateCampaign</a>.
     /// </summary>
     public partial class Campaign
     {
@@ -155,6 +155,9 @@ namespace Amazon.Personalize.Model
         /// Gets and sets the property MinProvisionedTPS. 
         /// <para>
         /// Specifies the requested minimum provisioned transactions (recommendations) per second.
+        /// A high <code>minProvisionedTPS</code> will increase your bill. We recommend starting
+        /// with 1 for <code>minProvisionedTPS</code> (the default). Track your usage using Amazon
+        /// CloudWatch metrics, and increase the <code>minProvisionedTPS</code> as necessary.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

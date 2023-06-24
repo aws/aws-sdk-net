@@ -30,17 +30,17 @@ namespace Amazon.Translate.Model
 {
     /// <summary>
     /// Container for the parameters to the ImportTerminology operation.
-    /// Creates or updates a custom terminology, depending on whether or not one already exists
-    /// for the given terminology name. Importing a terminology with the same name as an existing
-    /// one will merge the terminologies based on the chosen merge strategy. Currently, the
-    /// only supported merge strategy is OVERWRITE, and so the imported terminology will overwrite
-    /// an existing terminology of the same name.
+    /// Creates or updates a custom terminology, depending on whether one already exists for
+    /// the given terminology name. Importing a terminology with the same name as an existing
+    /// one will merge the terminologies based on the chosen merge strategy. The only supported
+    /// merge strategy is OVERWRITE, where the imported terminology overwrites the existing
+    /// terminology of the same name.
     /// 
     ///  
     /// <para>
-    /// If you import a terminology that overwrites an existing one, the new terminology take
-    /// up to 10 minutes to fully propagate and be available for use in a translation due
-    /// to cache policies with the DataPlane service that performs the translations.
+    /// If you import a terminology that overwrites an existing one, the new terminology takes
+    /// up to 10 minutes to fully propagate. After that, translations have access to the new
+    /// terminology.
     /// </para>
     /// </summary>
     public partial class ImportTerminologyRequest : AmazonTranslateRequest
@@ -49,6 +49,7 @@ namespace Amazon.Translate.Model
         private EncryptionKey _encryptionKey;
         private MergeStrategy _mergeStrategy;
         private string _name;
+        private List<Tag> _tags = new List<Tag>();
         private TerminologyData _terminologyData;
 
         /// <summary>
@@ -126,6 +127,28 @@ namespace Amazon.Translate.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// Tags to be associated with this resource. A tag is a key-value pair that adds metadata
+        /// to a resource. Each tag key for the resource must be unique. For more information,
+        /// see <a href="https://docs.aws.amazon.com/translate/latest/dg/tagging.html"> Tagging
+        /// your resources</a>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=200)]
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>

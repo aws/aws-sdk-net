@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AwsEc2NetworkInterfaceIpV6AddressDetail Marshaller
-    /// </summary>       
+    /// </summary>
     public class AwsEc2NetworkInterfaceIpV6AddressDetailMarshaller : IRequestMarshaller<AwsEc2NetworkInterfaceIpV6AddressDetail, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AwsEc2NetworkInterfaceIpV6AddressDetailMarshaller Instance = new AwsEc2NetworkInterfaceIpV6AddressDetailMarshaller();
 
     }

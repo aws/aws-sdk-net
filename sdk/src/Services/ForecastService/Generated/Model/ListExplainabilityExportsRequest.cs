@@ -65,7 +65,7 @@ namespace Amazon.ForecastService.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Key</code> - The name of the parameter to filter on. Valid values are <code>PredictorArn</code>
+        ///  <code>Key</code> - The name of the parameter to filter on. Valid values are <code>ResourceArn</code>
         /// and <code>Status</code>.
         /// </para>
         ///  </li> <li> 

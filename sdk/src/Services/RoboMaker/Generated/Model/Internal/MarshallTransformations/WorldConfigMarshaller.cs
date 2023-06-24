@@ -34,7 +34,7 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// WorldConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class WorldConfigMarshaller : IRequestMarshaller<WorldConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static WorldConfigMarshaller Instance = new WorldConfigMarshaller();
 
     }

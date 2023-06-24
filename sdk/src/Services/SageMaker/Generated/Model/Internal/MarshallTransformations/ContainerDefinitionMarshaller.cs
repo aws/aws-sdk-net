@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ContainerDefinition Marshaller
-    /// </summary>       
+    /// </summary>
     public class ContainerDefinitionMarshaller : IRequestMarshaller<ContainerDefinition, JsonMarshallerContext> 
     {
         /// <summary>
@@ -94,6 +94,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Mode);
             }
 
+            if(requestObject.IsSetModelDataSource())
+            {
+                context.Writer.WritePropertyName("ModelDataSource");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ModelDataSourceMarshaller.Instance;
+                marshaller.Marshall(requestObject.ModelDataSource, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetModelDataUrl())
             {
                 context.Writer.WritePropertyName("ModelDataUrl");
@@ -121,7 +132,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ContainerDefinitionMarshaller Instance = new ContainerDefinitionMarshaller();
 
     }

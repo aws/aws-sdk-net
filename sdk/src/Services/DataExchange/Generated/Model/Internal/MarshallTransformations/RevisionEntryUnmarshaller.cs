@@ -100,6 +100,24 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
                     unmarshalledObject.Id = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("RevocationComment", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RevocationComment = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Revoked", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.Revoked = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("RevokedAt", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.RevokedAt = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SourceId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

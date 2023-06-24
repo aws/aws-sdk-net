@@ -39,7 +39,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property History. 
         /// <para>
-        /// A history of synchronization jobs for the data source.
+        /// A history of synchronization jobs for the data source connector.
         /// </para>
         /// </summary>
         public List<DataSourceSyncJob> History

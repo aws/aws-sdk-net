@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.StepFunctions.Model
 {
     /// <summary>
-    /// The provided name is invalid.
+    /// The provided name is not valid.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

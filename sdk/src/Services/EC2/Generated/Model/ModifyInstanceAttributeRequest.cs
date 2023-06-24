@@ -36,10 +36,10 @@ namespace Amazon.EC2.Model
     ///  
     /// <para>
     ///  <b>Note: </b>Using this action to change the security groups associated with an elastic
-    /// network interface (ENI) attached to an instance in a VPC can result in an error if
-    /// the instance has more than one ENI. To change the security groups associated with
-    /// an ENI attached to an instance that has multiple ENIs, we recommend that you use the
-    /// <a>ModifyNetworkInterfaceAttribute</a> action.
+    /// network interface (ENI) attached to an instance can result in an error if the instance
+    /// has more than one ENI. To change the security groups associated with an ENI attached
+    /// to an instance that has multiple ENIs, we recommend that you use the <a>ModifyNetworkInterfaceAttribute</a>
+    /// action.
     /// </para>
     ///  
     /// <para>
@@ -52,6 +52,7 @@ namespace Amazon.EC2.Model
     {
         private InstanceAttributeName _attribute;
         private List<InstanceBlockDeviceMappingSpecification> _blockDeviceMappings = new List<InstanceBlockDeviceMappingSpecification>();
+        private bool? _disableApiStop;
         private bool? _disableApiTermination;
         private bool? _ebsOptimized;
         private bool? _enaSupport;
@@ -75,7 +76,7 @@ namespace Amazon.EC2.Model
         /// Instantiates ModifyInstanceAttributeRequest with the parameterized properties
         /// </summary>
         /// <param name="instanceId">The ID of the instance.</param>
-        /// <param name="attribute">The name of the attribute.</param>
+        /// <param name="attribute">The name of the attribute to modify. <important> You can modify the following attributes only: <code>disableApiTermination</code> | <code>instanceType</code> | <code>kernel</code> | <code>ramdisk</code> | <code>instanceInitiatedShutdownBehavior</code> | <code>blockDeviceMapping</code> | <code>userData</code> | <code>sourceDestCheck</code> | <code>groupSet</code> | <code>ebsOptimized</code> | <code>sriovNetSupport</code> | <code>enaSupport</code> | <code>nvmeSupport</code> | <code>disableApiStop</code> | <code>enclaveOptions</code>  </important></param>
         public ModifyInstanceAttributeRequest(string instanceId, InstanceAttributeName attribute)
         {
             _instanceId = instanceId;
@@ -85,8 +86,18 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Attribute. 
         /// <para>
-        /// The name of the attribute.
+        /// The name of the attribute to modify.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// You can modify the following attributes only: <code>disableApiTermination</code> |
+        /// <code>instanceType</code> | <code>kernel</code> | <code>ramdisk</code> | <code>instanceInitiatedShutdownBehavior</code>
+        /// | <code>blockDeviceMapping</code> | <code>userData</code> | <code>sourceDestCheck</code>
+        /// | <code>groupSet</code> | <code>ebsOptimized</code> | <code>sriovNetSupport</code>
+        /// | <code>enaSupport</code> | <code>nvmeSupport</code> | <code>disableApiStop</code>
+        /// | <code>enclaveOptions</code> 
+        /// </para>
+        ///  </important>
         /// </summary>
         public InstanceAttributeName Attribute
         {
@@ -125,6 +136,26 @@ namespace Amazon.EC2.Model
         internal bool IsSetBlockDeviceMappings()
         {
             return this._blockDeviceMappings != null && this._blockDeviceMappings.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DisableApiStop. 
+        /// <para>
+        /// Indicates whether an instance is enabled for stop protection. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Stop
+        /// Protection</a>.
+        /// </para>
+        /// </summary>
+        public bool DisableApiStop
+        {
+            get { return this._disableApiStop.GetValueOrDefault(); }
+            set { this._disableApiStop = value; }
+        }
+
+        // Check to see if DisableApiStop property is set
+        internal bool IsSetDisableApiStop()
+        {
+            return this._disableApiStop.HasValue; 
         }
 
         /// <summary>
@@ -194,10 +225,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Groups. 
         /// <para>
-        /// [EC2-VPC] Replaces the security groups of the instance with the specified security
-        /// groups. You must specify at least one security group, even if it's just the default
-        /// security group for the VPC. You must specify the security group ID, not the security
-        /// group name.
+        /// Replaces the security groups of the instance with the specified security groups. You
+        /// must specify the ID of at least one security group, even if it's just the default
+        /// security group for the VPC.
         /// </para>
         /// </summary>
         public List<string> Groups

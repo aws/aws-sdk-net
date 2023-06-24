@@ -5,6 +5,12 @@
     <pattern>^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Proton.Model.CancelComponentDeploymentRequest.ComponentName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^[0-9A-Za-z]+[0-9A-Za-z_\-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Proton.Model.CancelEnvironmentDeploymentRequest.EnvironmentName</property>
     <min>1</min>
     <max>100</max>
@@ -29,6 +35,68 @@
     <pattern>^[0-9A-Za-z]+[0-9A-Za-z_\-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Proton.Model.CreateComponentRequest.ClientToken</property>
+    <min>0</min>
+    <max>64</max>
+    <pattern>^[!-~]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Proton.Model.CreateComponentRequest.Description</property>
+    <min>0</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Proton.Model.CreateComponentRequest.EnvironmentName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^[0-9A-Za-z]+[0-9A-Za-z_\-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Proton.Model.CreateComponentRequest.Manifest</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Proton.Model.CreateComponentRequest.Name</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^[0-9A-Za-z]+[0-9A-Za-z_\-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Proton.Model.CreateComponentRequest.ServiceInstanceName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^[0-9A-Za-z]+[0-9A-Za-z_\-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Proton.Model.CreateComponentRequest.ServiceName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^[0-9A-Za-z]+[0-9A-Za-z_\-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Proton.Model.CreateComponentRequest.ServiceSpec</property>
+    <min>1</min>
+    <max>51200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Proton.Model.CreateComponentRequest.TemplateFile</property>
+    <min>1</min>
+    <max>51200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Proton.Model.CreateEnvironmentRequest.CodebuildRoleArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^arn:(aws|aws-cn|aws-us-gov):iam::\d{12}:role/([\w+=,.@-]{1,512}[/:])*([\w+=,.@-]{1,64})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Proton.Model.CreateEnvironmentRequest.ComponentRoleArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^arn:(aws|aws-cn|aws-us-gov):iam::\d{12}:role/([\w+=,.@-]{1,512}[/:])*([\w+=,.@-]{1,64})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Proton.Model.CreateEnvironmentRequest.Description</property>
     <min>0</min>
     <max>500</max>
@@ -47,6 +115,7 @@
     <property>Amazon.Proton.Model.CreateEnvironmentRequest.ProtonServiceRoleArn</property>
     <min>1</min>
     <max>200</max>
+    <pattern>^arn:(aws|aws-cn|aws-us-gov):[a-zA-Z0-9-]+:[a-zA-Z0-9-]*:\d{12}:([\w+=,.@-]+[/:])*[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Proton.Model.CreateEnvironmentRequest.Spec</property>
@@ -78,6 +147,18 @@
     <pattern>^[!-~]*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Proton.Model.CreateEnvironmentAccountConnectionRequest.CodebuildRoleArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^arn:(aws|aws-cn|aws-us-gov):iam::\d{12}:role/([\w+=,.@-]{1,512}[/:])*([\w+=,.@-]{1,64})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Proton.Model.CreateEnvironmentAccountConnectionRequest.ComponentRoleArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^arn:(aws|aws-cn|aws-us-gov):iam::\d{12}:role/([\w+=,.@-]{1,512}[/:])*([\w+=,.@-]{1,64})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Proton.Model.CreateEnvironmentAccountConnectionRequest.EnvironmentName</property>
     <min>1</min>
     <max>100</max>
@@ -90,7 +171,8 @@
   <property-value-rule>
     <property>Amazon.Proton.Model.CreateEnvironmentAccountConnectionRequest.RoleArn</property>
     <min>1</min>
-    <max>200</max>
+    <max>2048</max>
+    <pattern>^arn:(aws|aws-cn|aws-us-gov):iam::\d{12}:role/([\w+=,.@-]{1,512}[/:])*([\w+=,.@-]{1,64})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Proton.Model.CreateEnvironmentTemplateRequest.Description</property>
@@ -106,6 +188,7 @@
     <property>Amazon.Proton.Model.CreateEnvironmentTemplateRequest.EncryptionKey</property>
     <min>1</min>
     <max>200</max>
+    <pattern>^arn:(aws|aws-cn|aws-us-gov):[a-zA-Z0-9-]+:[a-zA-Z0-9-]*:\d{12}:([\w+=,.@-]+[/:])*[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Proton.Model.CreateEnvironmentTemplateRequest.Name</property>
@@ -140,11 +223,13 @@
     <property>Amazon.Proton.Model.CreateRepositoryRequest.ConnectionArn</property>
     <min>1</min>
     <max>200</max>
+    <pattern>^arn:(aws|aws-cn|aws-us-gov):[a-zA-Z0-9-]+:[a-zA-Z0-9-]*:\d{12}:([\w+=,.@-]+[/:])*[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Proton.Model.CreateRepositoryRequest.EncryptionKey</property>
     <min>1</min>
     <max>200</max>
+    <pattern>^arn:(aws|aws-cn|aws-us-gov):[a-zA-Z0-9-]+:[a-zA-Z0-9-]*:\d{12}:([\w+=,.@-]+[/:])*[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Proton.Model.CreateRepositoryRequest.Name</property>
@@ -172,6 +257,7 @@
     <property>Amazon.Proton.Model.CreateServiceRequest.RepositoryConnectionArn</property>
     <min>1</min>
     <max>200</max>
+    <pattern>^arn:(aws|aws-cn|aws-us-gov):[a-zA-Z0-9-]+:[a-zA-Z0-9-]*:\d{12}:([\w+=,.@-]+[/:])*[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Proton.Model.CreateServiceRequest.RepositoryId</property>
@@ -202,6 +288,63 @@
     <pattern>^[0-9A-Za-z]+[0-9A-Za-z_\-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Proton.Model.CreateServiceInstanceRequest.ClientToken</property>
+    <min>0</min>
+    <max>64</max>
+    <pattern>^[!-~]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Proton.Model.CreateServiceInstanceRequest.Name</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^[0-9A-Za-z]+[0-9A-Za-z_\-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Proton.Model.CreateServiceInstanceRequest.ServiceName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^[0-9A-Za-z]+[0-9A-Za-z_\-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Proton.Model.CreateServiceInstanceRequest.Spec</property>
+    <min>1</min>
+    <max>51200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Proton.Model.CreateServiceInstanceRequest.TemplateMajorVersion</property>
+    <min>1</min>
+    <max>20</max>
+    <pattern>^(0|([1-9]{1}\d*))$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Proton.Model.CreateServiceInstanceRequest.TemplateMinorVersion</property>
+    <min>1</min>
+    <max>20</max>
+    <pattern>^(0|([1-9]{1}\d*))$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Proton.Model.CreateServiceSyncConfigRequest.Branch</property>
+    <min>1</min>
+    <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Proton.Model.CreateServiceSyncConfigRequest.FilePath</property>
+    <min>1</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Proton.Model.CreateServiceSyncConfigRequest.RepositoryName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[A-Za-z0-9_.-].*/[A-Za-z0-9_.-].*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Proton.Model.CreateServiceSyncConfigRequest.ServiceName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^[0-9A-Za-z]+[0-9A-Za-z_\-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Proton.Model.CreateServiceTemplateRequest.Description</property>
     <min>0</min>
     <max>500</max>
@@ -215,6 +358,7 @@
     <property>Amazon.Proton.Model.CreateServiceTemplateRequest.EncryptionKey</property>
     <min>1</min>
     <max>200</max>
+    <pattern>^arn:(aws|aws-cn|aws-us-gov):[a-zA-Z0-9-]+:[a-zA-Z0-9-]*:\d{12}:([\w+=,.@-]+[/:])*[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Proton.Model.CreateServiceTemplateRequest.Name</property>
@@ -268,6 +412,12 @@
     <pattern>^[0-9A-Za-z]+[0-9A-Za-z_\-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Proton.Model.DeleteComponentRequest.Name</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^[0-9A-Za-z]+[0-9A-Za-z_\-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Proton.Model.DeleteEnvironmentRequest.Name</property>
     <min>1</min>
     <max>100</max>
@@ -314,6 +464,12 @@
     <pattern>^[0-9A-Za-z]+[0-9A-Za-z_\-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Proton.Model.DeleteServiceSyncConfigRequest.ServiceName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^[0-9A-Za-z]+[0-9A-Za-z_\-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Proton.Model.DeleteServiceTemplateRequest.Name</property>
     <min>1</min>
     <max>100</max>
@@ -339,6 +495,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Proton.Model.DeleteTemplateSyncConfigRequest.TemplateName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^[0-9A-Za-z]+[0-9A-Za-z_\-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Proton.Model.GetComponentRequest.Name</property>
     <min>1</min>
     <max>100</max>
     <pattern>^[0-9A-Za-z]+[0-9A-Za-z_\-]*$</pattern>
@@ -413,6 +575,36 @@
     <pattern>^[0-9A-Za-z]+[0-9A-Za-z_\-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Proton.Model.GetServiceInstanceSyncStatusRequest.ServiceInstanceName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^[0-9A-Za-z]+[0-9A-Za-z_\-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Proton.Model.GetServiceInstanceSyncStatusRequest.ServiceName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^[0-9A-Za-z]+[0-9A-Za-z_\-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Proton.Model.GetServiceSyncBlockerSummaryRequest.ServiceInstanceName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^[0-9A-Za-z]+[0-9A-Za-z_\-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Proton.Model.GetServiceSyncBlockerSummaryRequest.ServiceName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^[0-9A-Za-z]+[0-9A-Za-z_\-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Proton.Model.GetServiceSyncConfigRequest.ServiceName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^[0-9A-Za-z]+[0-9A-Za-z_\-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Proton.Model.GetServiceTemplateRequest.Name</property>
     <min>1</min>
     <max>100</max>
@@ -453,6 +645,69 @@
     <min>1</min>
     <max>20</max>
     <pattern>^(0|([1-9]{1}\d*))$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Proton.Model.ListComponentOutputsRequest.ComponentName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^[0-9A-Za-z]+[0-9A-Za-z_\-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Proton.Model.ListComponentOutputsRequest.NextToken</property>
+    <min>0</min>
+    <max>0</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Proton.Model.ListComponentOutputsResponse.NextToken</property>
+    <min>0</min>
+    <max>0</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Proton.Model.ListComponentProvisionedResourcesRequest.ComponentName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^[0-9A-Za-z]+[0-9A-Za-z_\-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Proton.Model.ListComponentProvisionedResourcesRequest.NextToken</property>
+    <min>0</min>
+    <max>0</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Proton.Model.ListComponentProvisionedResourcesResponse.NextToken</property>
+    <min>0</min>
+    <max>0</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Proton.Model.ListComponentsRequest.EnvironmentName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^[0-9A-Za-z]+[0-9A-Za-z_\-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Proton.Model.ListComponentsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Proton.Model.ListComponentsRequest.NextToken</property>
+    <pattern>^[A-Za-z0-9+=/]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Proton.Model.ListComponentsRequest.ServiceInstanceName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^[0-9A-Za-z]+[0-9A-Za-z_\-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Proton.Model.ListComponentsRequest.ServiceName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^[0-9A-Za-z]+[0-9A-Za-z_\-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Proton.Model.ListComponentsResponse.NextToken</property>
+    <pattern>^[A-Za-z0-9+=/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Proton.Model.ListEnvironmentAccountConnectionsRequest.EnvironmentName</property>
@@ -740,6 +995,7 @@
     <property>Amazon.Proton.Model.ListTagsForResourceRequest.ResourceArn</property>
     <min>1</min>
     <max>200</max>
+    <pattern>^arn:(aws|aws-cn|aws-us-gov):[a-zA-Z0-9-]+:[a-zA-Z0-9-]*:\d{12}:([\w+=,.@-]+[/:])*[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Proton.Model.NotifyResourceDeploymentStatusChangeRequest.DeploymentId</property>
@@ -749,6 +1005,7 @@
     <property>Amazon.Proton.Model.NotifyResourceDeploymentStatusChangeRequest.ResourceArn</property>
     <min>1</min>
     <max>200</max>
+    <pattern>^arn:(aws|aws-cn|aws-us-gov):[a-zA-Z0-9-]+:[a-zA-Z0-9-]*:\d{12}:([\w+=,.@-]+[/:])*[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Proton.Model.NotifyResourceDeploymentStatusChangeRequest.StatusMessage</property>
@@ -763,17 +1020,76 @@
     <property>Amazon.Proton.Model.TagResourceRequest.ResourceArn</property>
     <min>1</min>
     <max>200</max>
+    <pattern>^arn:(aws|aws-cn|aws-us-gov):[a-zA-Z0-9-]+:[a-zA-Z0-9-]*:\d{12}:([\w+=,.@-]+[/:])*[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Proton.Model.UntagResourceRequest.ResourceArn</property>
     <min>1</min>
     <max>200</max>
+    <pattern>^arn:(aws|aws-cn|aws-us-gov):[a-zA-Z0-9-]+:[a-zA-Z0-9-]*:\d{12}:([\w+=,.@-]+[/:])*[\w+=,.@-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Proton.Model.UpdateAccountSettingsRequest.PipelineCodebuildRoleArn</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>(^$)|(^arn:(aws|aws-cn|aws-us-gov):iam::\d{12}:role/([\w+=,.@-]{1,512}[/:])*([\w+=,.@-]{1,64})$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Proton.Model.UpdateAccountSettingsRequest.PipelineServiceRoleArn</property>
     <min>0</min>
     <max>2048</max>
-    <pattern>(^$)|(^arn:[a-zA-Z-]+:[a-zA-Z0-9-]+:[a-zA-Z0-9-]*:\d*:[\w+=\/:,\.@-]*)</pattern>
+    <pattern>(^$)|(^arn:(aws|aws-cn|aws-us-gov):iam::\d{12}:role/([\w+=,.@-]{1,512}[/:])*([\w+=,.@-]{1,64})$)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Proton.Model.UpdateComponentRequest.ClientToken</property>
+    <min>0</min>
+    <max>64</max>
+    <pattern>^[!-~]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Proton.Model.UpdateComponentRequest.Description</property>
+    <min>0</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Proton.Model.UpdateComponentRequest.Name</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^[0-9A-Za-z]+[0-9A-Za-z_\-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Proton.Model.UpdateComponentRequest.ServiceInstanceName</property>
+    <min>0</min>
+    <max>100</max>
+    <pattern>(^$)|^[0-9A-Za-z]+[0-9A-Za-z_\-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Proton.Model.UpdateComponentRequest.ServiceName</property>
+    <min>0</min>
+    <max>100</max>
+    <pattern>(^$)|^[0-9A-Za-z]+[0-9A-Za-z_\-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Proton.Model.UpdateComponentRequest.ServiceSpec</property>
+    <min>1</min>
+    <max>51200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Proton.Model.UpdateComponentRequest.TemplateFile</property>
+    <min>1</min>
+    <max>51200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Proton.Model.UpdateEnvironmentRequest.CodebuildRoleArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^arn:(aws|aws-cn|aws-us-gov):iam::\d{12}:role/([\w+=,.@-]{1,512}[/:])*([\w+=,.@-]{1,64})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Proton.Model.UpdateEnvironmentRequest.ComponentRoleArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^arn:(aws|aws-cn|aws-us-gov):iam::\d{12}:role/([\w+=,.@-]{1,512}[/:])*([\w+=,.@-]{1,64})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Proton.Model.UpdateEnvironmentRequest.Description</property>
@@ -794,6 +1110,7 @@
     <property>Amazon.Proton.Model.UpdateEnvironmentRequest.ProtonServiceRoleArn</property>
     <min>1</min>
     <max>200</max>
+    <pattern>^arn:(aws|aws-cn|aws-us-gov):[a-zA-Z0-9-]+:[a-zA-Z0-9-]*:\d{12}:([\w+=,.@-]+[/:])*[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Proton.Model.UpdateEnvironmentRequest.Spec</property>
@@ -813,13 +1130,26 @@
     <pattern>^(0|([1-9]{1}\d*))$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Proton.Model.UpdateEnvironmentAccountConnectionRequest.CodebuildRoleArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^arn:(aws|aws-cn|aws-us-gov):iam::\d{12}:role/([\w+=,.@-]{1,512}[/:])*([\w+=,.@-]{1,64})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Proton.Model.UpdateEnvironmentAccountConnectionRequest.ComponentRoleArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^arn:(aws|aws-cn|aws-us-gov):iam::\d{12}:role/([\w+=,.@-]{1,512}[/:])*([\w+=,.@-]{1,64})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Proton.Model.UpdateEnvironmentAccountConnectionRequest.Id</property>
     <pattern>^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Proton.Model.UpdateEnvironmentAccountConnectionRequest.RoleArn</property>
     <min>1</min>
-    <max>200</max>
+    <max>2048</max>
+    <pattern>^arn:(aws|aws-cn|aws-us-gov):iam::\d{12}:role/([\w+=,.@-]{1,512}[/:])*([\w+=,.@-]{1,64})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Proton.Model.UpdateEnvironmentTemplateRequest.Description</property>
@@ -877,6 +1207,12 @@
     <max>51200</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Proton.Model.UpdateServiceInstanceRequest.ClientToken</property>
+    <min>0</min>
+    <max>64</max>
+    <pattern>^[!-~]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Proton.Model.UpdateServiceInstanceRequest.Name</property>
     <min>1</min>
     <max>100</max>
@@ -927,6 +1263,40 @@
     <min>1</min>
     <max>20</max>
     <pattern>^(0|([1-9]{1}\d*))$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Proton.Model.UpdateServiceSyncBlockerResponse.ServiceInstanceName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^[0-9A-Za-z]+[0-9A-Za-z_\-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Proton.Model.UpdateServiceSyncBlockerResponse.ServiceName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^[0-9A-Za-z]+[0-9A-Za-z_\-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Proton.Model.UpdateServiceSyncConfigRequest.Branch</property>
+    <min>1</min>
+    <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Proton.Model.UpdateServiceSyncConfigRequest.FilePath</property>
+    <min>1</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Proton.Model.UpdateServiceSyncConfigRequest.RepositoryName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[A-Za-z0-9_.-].*/[A-Za-z0-9_.-].*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Proton.Model.UpdateServiceSyncConfigRequest.ServiceName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^[0-9A-Za-z]+[0-9A-Za-z_\-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Proton.Model.UpdateServiceTemplateRequest.Description</property>
@@ -990,10 +1360,16 @@
     <pattern>^[0-9A-Za-z]+[0-9A-Za-z_\-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Proton.Model.AccountSettings.PipelineCodebuildRoleArn</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>(^$)|(^arn:(aws|aws-cn|aws-us-gov):iam::\d{12}:role/([\w+=,.@-]{1,512}[/:])*([\w+=,.@-]{1,64})$)</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Proton.Model.AccountSettings.PipelineServiceRoleArn</property>
     <min>0</min>
     <max>2048</max>
-    <pattern>(^$)|(^arn:[a-zA-Z-]+:[a-zA-Z0-9-]+:[a-zA-Z0-9-]*:\d*:[\w+=\/:,\.@-]*)</pattern>
+    <pattern>(^$)|(^arn:(aws|aws-cn|aws-us-gov):iam::\d{12}:role/([\w+=,.@-]{1,512}[/:])*([\w+=,.@-]{1,64})$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Proton.Model.CompatibleEnvironmentTemplate.MajorVersion</property>
@@ -1020,6 +1396,76 @@
     <pattern>^[0-9A-Za-z]+[0-9A-Za-z_\-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Proton.Model.Component.Description</property>
+    <min>0</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Proton.Model.Component.EnvironmentName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^[0-9A-Za-z]+[0-9A-Za-z_\-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Proton.Model.Component.Name</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^[0-9A-Za-z]+[0-9A-Za-z_\-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Proton.Model.Component.ServiceInstanceName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^[0-9A-Za-z]+[0-9A-Za-z_\-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Proton.Model.Component.ServiceName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^[0-9A-Za-z]+[0-9A-Za-z_\-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Proton.Model.Component.ServiceSpec</property>
+    <min>1</min>
+    <max>51200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Proton.Model.ComponentSummary.EnvironmentName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^[0-9A-Za-z]+[0-9A-Za-z_\-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Proton.Model.ComponentSummary.Name</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^[0-9A-Za-z]+[0-9A-Za-z_\-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Proton.Model.ComponentSummary.ServiceInstanceName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^[0-9A-Za-z]+[0-9A-Za-z_\-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Proton.Model.ComponentSummary.ServiceName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^[0-9A-Za-z]+[0-9A-Za-z_\-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Proton.Model.Environment.CodebuildRoleArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^arn:(aws|aws-cn|aws-us-gov):iam::\d{12}:role/([\w+=,.@-]{1,512}[/:])*([\w+=,.@-]{1,64})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Proton.Model.Environment.ComponentRoleArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^arn:(aws|aws-cn|aws-us-gov):iam::\d{12}:role/([\w+=,.@-]{1,512}[/:])*([\w+=,.@-]{1,64})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Proton.Model.Environment.Description</property>
     <min>0</min>
     <max>500</max>
@@ -1042,6 +1488,7 @@
     <property>Amazon.Proton.Model.Environment.ProtonServiceRoleArn</property>
     <min>1</min>
     <max>200</max>
+    <pattern>^arn:(aws|aws-cn|aws-us-gov):[a-zA-Z0-9-]+:[a-zA-Z0-9-]*:\d{12}:([\w+=,.@-]+[/:])*[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Proton.Model.Environment.Spec</property>
@@ -1067,6 +1514,18 @@
     <pattern>^[0-9A-Za-z]+[0-9A-Za-z_\-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Proton.Model.EnvironmentAccountConnection.CodebuildRoleArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^arn:(aws|aws-cn|aws-us-gov):iam::\d{12}:role/([\w+=,.@-]{1,512}[/:])*([\w+=,.@-]{1,64})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Proton.Model.EnvironmentAccountConnection.ComponentRoleArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^arn:(aws|aws-cn|aws-us-gov):iam::\d{12}:role/([\w+=,.@-]{1,512}[/:])*([\w+=,.@-]{1,64})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Proton.Model.EnvironmentAccountConnection.EnvironmentAccountId</property>
     <pattern>^\d{12}$</pattern>
   </property-value-rule>
@@ -1088,6 +1547,13 @@
     <property>Amazon.Proton.Model.EnvironmentAccountConnection.RoleArn</property>
     <min>1</min>
     <max>200</max>
+    <pattern>^arn:(aws|aws-cn|aws-us-gov):[a-zA-Z0-9-]+:[a-zA-Z0-9-]*:\d{12}:([\w+=,.@-]+[/:])*[\w+=,.@-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Proton.Model.EnvironmentAccountConnectionSummary.ComponentRoleArn</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>^arn:(aws|aws-cn|aws-us-gov):[a-zA-Z0-9-]+:[a-zA-Z0-9-]*:\d{12}:([\w+=,.@-]+[/:])*[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Proton.Model.EnvironmentAccountConnectionSummary.EnvironmentAccountId</property>
@@ -1111,6 +1577,13 @@
     <property>Amazon.Proton.Model.EnvironmentAccountConnectionSummary.RoleArn</property>
     <min>1</min>
     <max>200</max>
+    <pattern>^arn:(aws|aws-cn|aws-us-gov):[a-zA-Z0-9-]+:[a-zA-Z0-9-]*:\d{12}:([\w+=,.@-]+[/:])*[\w+=,.@-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Proton.Model.EnvironmentSummary.ComponentRoleArn</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>^arn:(aws|aws-cn|aws-us-gov):[a-zA-Z0-9-]+:[a-zA-Z0-9-]*:\d{12}:([\w+=,.@-]+[/:])*[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Proton.Model.EnvironmentSummary.Description</property>
@@ -1135,6 +1608,7 @@
     <property>Amazon.Proton.Model.EnvironmentSummary.ProtonServiceRoleArn</property>
     <min>1</min>
     <max>200</max>
+    <pattern>^arn:(aws|aws-cn|aws-us-gov):[a-zA-Z0-9-]+:[a-zA-Z0-9-]*:\d{12}:([\w+=,.@-]+[/:])*[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Proton.Model.EnvironmentSummary.TemplateMajorVersion</property>
@@ -1168,6 +1642,7 @@
     <property>Amazon.Proton.Model.EnvironmentTemplate.EncryptionKey</property>
     <min>1</min>
     <max>200</max>
+    <pattern>^arn:(aws|aws-cn|aws-us-gov):[a-zA-Z0-9-]+:[a-zA-Z0-9-]*:\d{12}:([\w+=,.@-]+[/:])*[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Proton.Model.EnvironmentTemplate.Name</property>
@@ -1302,11 +1777,13 @@
     <property>Amazon.Proton.Model.Repository.ConnectionArn</property>
     <min>1</min>
     <max>200</max>
+    <pattern>^arn:(aws|aws-cn|aws-us-gov):[a-zA-Z0-9-]+:[a-zA-Z0-9-]*:\d{12}:([\w+=,.@-]+[/:])*[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Proton.Model.Repository.EncryptionKey</property>
     <min>1</min>
     <max>200</max>
+    <pattern>^arn:(aws|aws-cn|aws-us-gov):[a-zA-Z0-9-]+:[a-zA-Z0-9-]*:\d{12}:([\w+=,.@-]+[/:])*[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Proton.Model.Repository.Name</property>
@@ -1335,6 +1812,12 @@
     <min>1</min>
     <max>100</max>
     <pattern>[A-Za-z0-9_.-].*/[A-Za-z0-9_.-].*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Proton.Model.RepositorySummary.ConnectionArn</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>^arn:(aws|aws-cn|aws-us-gov):[a-zA-Z0-9-]+:[a-zA-Z0-9-]*:\d{12}:([\w+=,.@-]+[/:])*[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Proton.Model.RepositorySummary.Name</property>
@@ -1394,6 +1877,7 @@
     <property>Amazon.Proton.Model.Service.RepositoryConnectionArn</property>
     <min>1</min>
     <max>200</max>
+    <pattern>^arn:(aws|aws-cn|aws-us-gov):[a-zA-Z0-9-]+:[a-zA-Z0-9-]*:\d{12}:([\w+=,.@-]+[/:])*[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Proton.Model.Service.RepositoryId</property>
@@ -1492,6 +1976,7 @@
     <property>Amazon.Proton.Model.ServicePipeline.Arn</property>
     <min>1</min>
     <max>200</max>
+    <pattern>^arn:(aws|aws-cn|aws-us-gov):[a-zA-Z0-9-]+:[a-zA-Z0-9-]*:\d{12}:([\w+=,.@-]+[/:])*[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Proton.Model.ServicePipeline.Spec</property>
@@ -1534,6 +2019,28 @@
     <pattern>^[0-9A-Za-z]+[0-9A-Za-z_\-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Proton.Model.ServiceSyncConfig.Branch</property>
+    <min>1</min>
+    <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Proton.Model.ServiceSyncConfig.FilePath</property>
+    <min>1</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Proton.Model.ServiceSyncConfig.RepositoryName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[A-Za-z0-9_.-].*/[A-Za-z0-9_.-].*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Proton.Model.ServiceSyncConfig.ServiceName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^[0-9A-Za-z]+[0-9A-Za-z_\-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Proton.Model.ServiceTemplate.Description</property>
     <min>0</min>
     <max>500</max>
@@ -1547,6 +2054,7 @@
     <property>Amazon.Proton.Model.ServiceTemplate.EncryptionKey</property>
     <min>1</min>
     <max>200</max>
+    <pattern>^arn:(aws|aws-cn|aws-us-gov):[a-zA-Z0-9-]+:[a-zA-Z0-9-]*:\d{12}:([\w+=,.@-]+[/:])*[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Proton.Model.ServiceTemplate.Name</property>

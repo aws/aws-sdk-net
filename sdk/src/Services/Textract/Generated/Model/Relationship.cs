@@ -66,13 +66,44 @@ namespace Amazon.Textract.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of relationship that the blocks in the IDs array have with the current block.
-        /// The relationship can be <code>VALUE</code> or <code>CHILD</code>. A relationship of
-        /// type VALUE is a list that contains the ID of the VALUE block that's associated with
-        /// the KEY of a key-value pair. A relationship of type CHILD is a list of IDs that identify
-        /// WORD blocks in the case of lines Cell blocks in the case of Tables, and WORD blocks
-        /// in the case of Selection Elements.
+        /// The type of relationship between the blocks in the IDs array and the current block.
+        /// The following list describes the relationship types that can be returned. 
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <i>VALUE</i> - A list that contains the ID of the VALUE block that's associated with
+        /// the KEY of a key-value pair.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <i>CHILD</i> - A list of IDs that identify blocks found within the current block
+        /// object. For example, WORD blocks have a CHILD relationship to the LINE block type.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <i>MERGED_CELL</i> - A list of IDs that identify each of the MERGED_CELL block types
+        /// in a table.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <i>ANSWER</i> - A list that contains the ID of the QUERY_RESULT block that’s associated
+        /// with the corresponding QUERY block. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <i>TABLE</i> - A list of IDs that identify associated TABLE block types. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <i>TABLE_TITLE</i> - A list that contains the ID for the TABLE_TITLE block type in
+        /// a table. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <i>TABLE_FOOTER</i> - A list of IDs that identify the TABLE_FOOTER block types in
+        /// a table. 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public RelationshipType Type
         {

@@ -46,9 +46,9 @@ namespace Amazon.CloudWatch.Model
     /// </para>
     ///  
     /// <para>
-    /// Each <code>PutMetricData</code> request is limited to 40 KB in size for HTTP POST
-    /// requests. You can send a payload compressed by gzip. Each request is also limited
-    /// to no more than 20 different metrics.
+    /// Each <code>PutMetricData</code> request is limited to 1 MB in size for HTTP POST requests.
+    /// You can send a payload compressed by gzip. Each request is also limited to no more
+    /// than 1000 different metrics.
     /// </para>
     ///  
     /// <para>
@@ -59,7 +59,7 @@ namespace Amazon.CloudWatch.Model
     /// </para>
     ///  
     /// <para>
-    /// You can use up to 10 dimensions per metric to further clarify what data the metric
+    /// You can use up to 30 dimensions per metric to further clarify what data the metric
     /// collects. Each dimension consists of a Name and Value pair. For more information about
     /// specifying dimensions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing
     /// Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.
@@ -105,7 +105,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property MetricData. 
         /// <para>
-        /// The data for the metric. The array can include no more than 20 metrics per call.
+        /// The data for the metric. The array can include no more than 1000 metrics per call.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -124,7 +124,8 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property Namespace. 
         /// <para>
-        /// The namespace for the metric data.
+        /// The namespace for the metric data. You can use ASCII characters for the namespace,
+        /// except for control characters which are not supported.
         /// </para>
         ///  
         /// <para>

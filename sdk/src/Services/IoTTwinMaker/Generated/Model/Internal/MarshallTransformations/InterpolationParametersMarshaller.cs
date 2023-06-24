@@ -34,7 +34,7 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// InterpolationParameters Marshaller
-    /// </summary>       
+    /// </summary>
     public class InterpolationParametersMarshaller : IRequestMarshaller<InterpolationParameters, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static InterpolationParametersMarshaller Instance = new InterpolationParametersMarshaller();
 
     }

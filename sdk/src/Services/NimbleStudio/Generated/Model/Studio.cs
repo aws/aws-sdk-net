@@ -41,22 +41,22 @@ namespace Amazon.NimbleStudio.Model
     /// <para>
     /// When creating a studio, you must provides two IAM roles for use with the Nimble Studio
     /// portal. These roles are assumed by your users when they log in to the Nimble Studio
-    /// portal via Amazon Web Services SSO and your identity source.
+    /// portal via IAM Identity Center and your identity source.
     /// </para>
     ///  
     /// <para>
-    /// The user role must have the AmazonNimbleStudio-StudioUser managed policy attached
-    /// for the portal to function properly.
+    /// The user role must have the <code>AmazonNimbleStudio-StudioUser</code> managed policy
+    /// attached for the portal to function properly.
     /// </para>
     ///  
     /// <para>
-    /// The admin role must have the AmazonNimbleStudio-StudioAdmin managed policy attached
-    /// for the portal to function properly.
+    /// The admin role must have the <code>AmazonNimbleStudio-StudioAdmin</code> managed policy
+    /// attached for the portal to function properly.
     /// </para>
     ///  
     /// <para>
-    /// Your studio roles must trust the identity.nimble.amazonaws.com service principal to
-    /// function properly.
+    /// Your studio roles must trust the <code>identity.nimble.amazonaws.com</code> service
+    /// principal to function properly.
     /// </para>
     /// </summary>
     public partial class Studio
@@ -84,6 +84,7 @@ namespace Amazon.NimbleStudio.Model
         /// The IAM role that studio admins assume when logging in to the Nimble Studio portal.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=2048)]
         public string AdminRoleArn
         {
             get { return this._adminRoleArn; }
@@ -118,7 +119,7 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The Unix epoch timestamp in seconds for when the resource was created.
+        /// The ISO timestamp in seconds for when the resource was created.
         /// </para>
         /// </summary>
         public DateTime CreatedAt
@@ -139,7 +140,7 @@ namespace Amazon.NimbleStudio.Model
         /// A friendly name for the studio.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=64)]
+        [AWSProperty(Sensitive=true, Min=0, Max=64)]
         public string DisplayName
         {
             get { return this._displayName; }
@@ -174,8 +175,8 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property SsoClientId. 
         /// <para>
-        /// The Amazon Web Services SSO application client ID used to integrate with Amazon Web
-        /// Services SSO to enable Amazon Web Services SSO users to log in to Nimble Studio portal.
+        /// The IAM Identity Center application client ID used to integrate with IAM Identity
+        /// Center. This ID allows IAM Identity Center users to log in to Nimble Studio portal.
         /// </para>
         /// </summary>
         public string SsoClientId
@@ -322,7 +323,7 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// A collection of labels, in the form of key:value pairs, that apply to this resource.
+        /// A collection of labels, in the form of key-value pairs, that apply to this resource.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Tags
@@ -340,7 +341,7 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property UpdatedAt. 
         /// <para>
-        /// The Unix epoch timestamp in seconds for when the resource was updated.
+        /// The ISO timestamp in seconds for when the resource was updated.
         /// </para>
         /// </summary>
         public DateTime UpdatedAt
@@ -361,6 +362,7 @@ namespace Amazon.NimbleStudio.Model
         /// The IAM role that studio users assume when logging in to the Nimble Studio portal.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=2048)]
         public string UserRoleArn
         {
             get { return this._userRoleArn; }

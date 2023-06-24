@@ -42,6 +42,7 @@ namespace Amazon.FraudDetector.Model
         private string _description;
         private List<string> _entityTypes = new List<string>();
         private EventIngestion _eventIngestion;
+        private EventOrchestration _eventOrchestration;
         private List<string> _eventVariables = new List<string>();
         private List<string> _labels = new List<string>();
         private string _name;
@@ -88,7 +89,7 @@ namespace Amazon.FraudDetector.Model
         /// <summary>
         /// Gets and sets the property EventIngestion. 
         /// <para>
-        /// Specifies if ingenstion is enabled or disabled.
+        /// Specifies if ingestion is enabled or disabled.
         /// </para>
         /// </summary>
         public EventIngestion EventIngestion
@@ -101,6 +102,25 @@ namespace Amazon.FraudDetector.Model
         internal bool IsSetEventIngestion()
         {
             return this._eventIngestion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EventOrchestration. 
+        /// <para>
+        /// Enables or disables event orchestration. If enabled, you can send event predictions
+        /// to select AWS services for downstream processing of the events.
+        /// </para>
+        /// </summary>
+        public EventOrchestration EventOrchestration
+        {
+            get { return this._eventOrchestration; }
+            set { this._eventOrchestration = value; }
+        }
+
+        // Check to see if EventOrchestration property is set
+        internal bool IsSetEventOrchestration()
+        {
+            return this._eventOrchestration != null;
         }
 
         /// <summary>

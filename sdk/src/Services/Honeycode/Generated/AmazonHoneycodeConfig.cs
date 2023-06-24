@@ -17,22 +17,22 @@
  * Do not modify this file. This file is generated from the honeycode-2020-03-01.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
-
+using Amazon.Honeycode.Internal;
 
 namespace Amazon.Honeycode
 {
     /// <summary>
     /// Configuration for accessing Amazon Honeycode service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonHoneycodeConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.105");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.147");
 
         private string _userAgent = UserAgentString;
 
@@ -40,8 +40,10 @@ namespace Amazon.Honeycode
         /// Default constructor
         /// </summary>
         public AmazonHoneycodeConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonHoneycodeDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "honeycode";
+            this.EndpointProvider = new AmazonHoneycodeEndpointProvider();
         }
 
         /// <summary>
@@ -76,5 +78,6 @@ namespace Amazon.Honeycode
                 return _userAgent;
             }
         }
+
     }
 }

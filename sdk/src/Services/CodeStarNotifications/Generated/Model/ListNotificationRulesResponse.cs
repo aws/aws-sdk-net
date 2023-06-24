@@ -58,8 +58,8 @@ namespace Amazon.CodeStarNotifications.Model
         /// <summary>
         /// Gets and sets the property NotificationRules. 
         /// <para>
-        /// The list of notification rules for the AWS account, by Amazon Resource Name (ARN)
-        /// and ID. 
+        /// The list of notification rules for the Amazon Web Services account, by Amazon Resource
+        /// Name (ARN) and ID. 
         /// </para>
         /// </summary>
         public List<NotificationRuleSummary> NotificationRules

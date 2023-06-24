@@ -17,22 +17,22 @@
  * Do not modify this file. This file is generated from the xray-2016-04-12.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
-
+using Amazon.XRay.Internal;
 
 namespace Amazon.XRay
 {
     /// <summary>
     /// Configuration for accessing Amazon XRay service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonXRayConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.105");
+            InternalSDKUtils.BuildUserAgentString("3.7.102.128");
 
         private string _userAgent = UserAgentString;
 
@@ -40,8 +40,10 @@ namespace Amazon.XRay
         /// Default constructor
         /// </summary>
         public AmazonXRayConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonXRayDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "xray";
+            this.EndpointProvider = new AmazonXRayEndpointProvider();
         }
 
         /// <summary>
@@ -76,5 +78,6 @@ namespace Amazon.XRay
                 return _userAgent;
             }
         }
+
     }
 }

@@ -34,7 +34,7 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// MetricSource Marshaller
-    /// </summary>       
+    /// </summary>
     public class MetricSourceMarshaller : IRequestMarshaller<MetricSource, JsonMarshallerContext> 
     {
         /// <summary>
@@ -52,6 +52,17 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
 
                 var marshaller = AppFlowConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.AppFlowConfig, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetAthenaSourceConfig())
+            {
+                context.Writer.WritePropertyName("AthenaSourceConfig");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AthenaSourceConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.AthenaSourceConfig, context);
 
                 context.Writer.WriteObjectEnd();
             }
@@ -104,7 +115,7 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static MetricSourceMarshaller Instance = new MetricSourceMarshaller();
 
     }

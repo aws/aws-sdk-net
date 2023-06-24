@@ -34,7 +34,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// InputSourceRequest Marshaller
-    /// </summary>       
+    /// </summary>
     public class InputSourceRequestMarshaller : IRequestMarshaller<InputSourceRequest, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static InputSourceRequestMarshaller Instance = new InputSourceRequestMarshaller();
 
     }

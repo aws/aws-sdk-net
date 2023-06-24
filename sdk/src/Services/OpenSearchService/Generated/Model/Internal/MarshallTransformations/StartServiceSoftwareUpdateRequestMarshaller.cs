@@ -56,7 +56,7 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.OpenSearchService");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-01-01";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-01-01";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/2021-01-01/opensearch/serviceSoftwareUpdate/start";
@@ -65,13 +65,24 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetDesiredStartTime())
+                {
+                    context.Writer.WritePropertyName("DesiredStartTime");
+                    context.Writer.Write(publicRequest.DesiredStartTime);
+                }
+
                 if(publicRequest.IsSetDomainName())
                 {
                     context.Writer.WritePropertyName("DomainName");
                     context.Writer.Write(publicRequest.DomainName);
                 }
 
-        
+                if(publicRequest.IsSetScheduleAt())
+                {
+                    context.Writer.WritePropertyName("ScheduleAt");
+                    context.Writer.Write(publicRequest.ScheduleAt);
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

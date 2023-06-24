@@ -29,8 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.APIGateway.Model
 {
     /// <summary>
-    /// If specified, API Gateway performs two-way authentication between the client and the
-    /// server. Clients must present a trusted certificate to access your custom domain name.
+    /// The mutual TLS authentication configuration for a custom domain name. If specified,
+    /// API Gateway performs two-way authentication between the client and the server. Clients
+    /// must present a trusted certificate to access your API.
     /// </summary>
     public partial class MutualTlsAuthenticationInput
     {
@@ -40,8 +41,8 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property TruststoreUri. 
         /// <para>
-        /// An Amazon S3 resource ARN that specifies the truststore for mutual TLS authentication,
-        /// for example, <code>s3://bucket-name/key-name</code>. The truststore can contain certificates
+        /// An Amazon S3 URL that specifies the truststore for mutual TLS authentication, for
+        /// example <code>s3://bucket-name/key-name</code>. The truststore can contain certificates
         /// from public or private certificate authorities. To update the truststore, upload a
         /// new version to S3, and then update your custom domain name to use the new version.
         /// To update the truststore, you must have permissions to access the S3 object.
@@ -63,7 +64,7 @@ namespace Amazon.APIGateway.Model
         /// Gets and sets the property TruststoreVersion. 
         /// <para>
         /// The version of the S3 object that contains your truststore. To specify a version,
-        /// you must have versioning enabled for the S3 bucket.
+        /// you must have versioning enabled for the S3 bucket
         /// </para>
         /// </summary>
         public string TruststoreVersion

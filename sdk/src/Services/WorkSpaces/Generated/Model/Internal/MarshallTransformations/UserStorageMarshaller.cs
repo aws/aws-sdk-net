@@ -34,7 +34,7 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// UserStorage Marshaller
-    /// </summary>       
+    /// </summary>
     public class UserStorageMarshaller : IRequestMarshaller<UserStorage, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static UserStorageMarshaller Instance = new UserStorageMarshaller();
 
     }

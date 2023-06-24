@@ -58,6 +58,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             if(publicRequest != null)
             {
+                if(publicRequest.IsSetCascade())
+                {
+                    request.Parameters.Add("Cascade", StringUtils.FromBool(publicRequest.Cascade));
+                }
                 if(publicRequest.IsSetIpamId())
                 {
                     request.Parameters.Add("IpamId", StringUtils.FromString(publicRequest.IpamId));

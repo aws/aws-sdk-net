@@ -39,11 +39,33 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class CreateSecurityProfileRequest : AmazonConnectRequest
     {
+        private Dictionary<string, string> _allowedAccessControlTags = new Dictionary<string, string>();
         private string _description;
         private string _instanceId;
         private List<string> _permissions = new List<string>();
         private string _securityProfileName;
+        private List<string> _tagRestrictedResources = new List<string>();
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
+
+        /// <summary>
+        /// Gets and sets the property AllowedAccessControlTags. 
+        /// <para>
+        /// The list of tags that a security profile uses to restrict access to resources in Amazon
+        /// Connect.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=2)]
+        public Dictionary<string, string> AllowedAccessControlTags
+        {
+            get { return this._allowedAccessControlTags; }
+            set { this._allowedAccessControlTags = value; }
+        }
+
+        // Check to see if AllowedAccessControlTags property is set
+        internal bool IsSetAllowedAccessControlTags()
+        {
+            return this._allowedAccessControlTags != null && this._allowedAccessControlTags.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -67,8 +89,8 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The identifier of the Amazon Connect instance. You can find the instanceId in the
-        /// ARN of the instance.
+        /// The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+        /// the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
@@ -87,7 +109,9 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Permissions. 
         /// <para>
-        /// Permissions assigned to the security profile.
+        /// Permissions assigned to the security profile. For a list of valid permissions, see
+        /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List
+        /// of security profile permissions</a>. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=500)]
@@ -109,7 +133,7 @@ namespace Amazon.Connect.Model
         /// The name of the security profile.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=127)]
         public string SecurityProfileName
         {
             get { return this._securityProfileName; }
@@ -123,9 +147,31 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Gets and sets the property TagRestrictedResources. 
+        /// <para>
+        /// The list of resources that a security profile applies tag restrictions to in Amazon
+        /// Connect. Following are acceptable ResourceNames: <code>User</code> | <code>SecurityProfile</code>
+        /// | <code>Queue</code> | <code>RoutingProfile</code> 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=10)]
+        public List<string> TagRestrictedResources
+        {
+            get { return this._tagRestrictedResources; }
+            set { this._tagRestrictedResources = value; }
+        }
+
+        // Check to see if TagRestrictedResources property is set
+        internal bool IsSetTagRestrictedResources()
+        {
+            return this._tagRestrictedResources != null && this._tagRestrictedResources.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags used to organize, track, or control access for this resource.
+        /// The tags used to organize, track, or control access for this resource. For example,
+        /// { "tags": {"key1":"value1", "key2":"value2"} }.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

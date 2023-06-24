@@ -35,6 +35,7 @@ namespace Amazon.SageMaker.Model
     {
         private DateTime? _completionTime;
         private DateTime? _creationTime;
+        private List<EndpointPerformance> _endpointPerformances = new List<EndpointPerformance>();
         private string _failureReason;
         private List<InferenceRecommendation> _inferenceRecommendations = new List<InferenceRecommendation>();
         private RecommendationJobInputConfig _inputConfig;
@@ -82,6 +83,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetCreationTime()
         {
             return this._creationTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EndpointPerformances. 
+        /// <para>
+        /// The performance results from running an Inference Recommender job on an existing endpoint.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=1)]
+        public List<EndpointPerformance> EndpointPerformances
+        {
+            get { return this._endpointPerformances; }
+            set { this._endpointPerformances = value; }
+        }
+
+        // Check to see if EndpointPerformances property is set
+        internal bool IsSetEndpointPerformances()
+        {
+            return this._endpointPerformances != null && this._endpointPerformances.Count > 0; 
         }
 
         /// <summary>

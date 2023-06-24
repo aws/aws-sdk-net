@@ -34,23 +34,36 @@ namespace Amazon.WellArchitected.Model
     /// 
     ///  
     /// <para>
-    /// The owner of a workload can share the workload with other Amazon Web Services accounts
-    /// and IAM users in the same Amazon Web Services Region. Only the owner of a workload
-    /// can delete it.
+    /// The owner of a workload can share the workload with other Amazon Web Services accounts,
+    /// users, an organization, and organizational units (OUs) in the same Amazon Web Services
+    /// Region. Only the owner of a workload can delete it.
     /// </para>
     ///  
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/wellarchitected/latest/userguide/define-workload.html">Defining
     /// a Workload</a> in the <i>Well-Architected Tool User Guide</i>.
     /// </para>
+    ///  <important> 
+    /// <para>
+    /// Either <code>AwsRegions</code>, <code>NonAwsRegions</code>, or both must be specified
+    /// when creating a workload.
+    /// </para>
+    ///  
+    /// <para>
+    /// You also must specify <code>ReviewOwner</code>, even though the parameter is listed
+    /// as not being required in the following section. 
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class CreateWorkloadRequest : AmazonWellArchitectedRequest
     {
         private List<string> _accountIds = new List<string>();
+        private List<string> _applications = new List<string>();
         private string _architecturalDesign;
         private List<string> _awsRegions = new List<string>();
         private string _clientRequestToken;
         private string _description;
+        private WorkloadDiscoveryConfig _discoveryConfig;
         private WorkloadEnvironment _environment;
         private string _industry;
         private string _industryType;
@@ -58,6 +71,7 @@ namespace Amazon.WellArchitected.Model
         private List<string> _nonAwsRegions = new List<string>();
         private string _notes;
         private List<string> _pillarPriorities = new List<string>();
+        private List<string> _profileArns = new List<string>();
         private string _reviewOwner;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private string _workloadName;
@@ -76,6 +90,25 @@ namespace Amazon.WellArchitected.Model
         internal bool IsSetAccountIds()
         {
             return this._accountIds != null && this._accountIds.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Applications. 
+        /// <para>
+        /// List of AppRegistry application ARNs associated to the workload.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=1)]
+        public List<string> Applications
+        {
+            get { return this._applications; }
+            set { this._applications = value; }
+        }
+
+        // Check to see if Applications property is set
+        internal bool IsSetApplications()
+        {
+            return this._applications != null && this._applications.Count > 0; 
         }
 
         /// <summary>
@@ -113,6 +146,7 @@ namespace Amazon.WellArchitected.Model
         /// <summary>
         /// Gets and sets the property ClientRequestToken.
         /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
         public string ClientRequestToken
         {
             get { return this._clientRequestToken; }
@@ -139,6 +173,24 @@ namespace Amazon.WellArchitected.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DiscoveryConfig. 
+        /// <para>
+        /// Well-Architected discovery configuration settings associated to the workload.
+        /// </para>
+        /// </summary>
+        public WorkloadDiscoveryConfig DiscoveryConfig
+        {
+            get { return this._discoveryConfig; }
+            set { this._discoveryConfig = value; }
+        }
+
+        // Check to see if DiscoveryConfig property is set
+        internal bool IsSetDiscoveryConfig()
+        {
+            return this._discoveryConfig != null;
         }
 
         /// <summary>
@@ -253,9 +305,28 @@ namespace Amazon.WellArchitected.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ProfileArns. 
+        /// <para>
+        /// The list of profile ARNs associated with the workload.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=1)]
+        public List<string> ProfileArns
+        {
+            get { return this._profileArns; }
+            set { this._profileArns = value; }
+        }
+
+        // Check to see if ProfileArns property is set
+        internal bool IsSetProfileArns()
+        {
+            return this._profileArns != null && this._profileArns.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property ReviewOwner.
         /// </summary>
-        [AWSProperty(Required=true, Min=3, Max=255)]
+        [AWSProperty(Min=3, Max=255)]
         public string ReviewOwner
         {
             get { return this._reviewOwner; }

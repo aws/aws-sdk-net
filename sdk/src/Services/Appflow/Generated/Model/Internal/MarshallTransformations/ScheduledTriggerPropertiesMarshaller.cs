@@ -34,7 +34,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ScheduledTriggerProperties Marshaller
-    /// </summary>       
+    /// </summary>
     public class ScheduledTriggerPropertiesMarshaller : IRequestMarshaller<ScheduledTriggerProperties, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,6 +55,12 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("firstExecutionFrom");
                 context.Writer.Write(requestObject.FirstExecutionFrom);
+            }
+
+            if(requestObject.IsSetFlowErrorDeactivationThreshold())
+            {
+                context.Writer.WritePropertyName("flowErrorDeactivationThreshold");
+                context.Writer.Write(requestObject.FlowErrorDeactivationThreshold);
             }
 
             if(requestObject.IsSetScheduleEndTime())
@@ -91,7 +97,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ScheduledTriggerPropertiesMarshaller Instance = new ScheduledTriggerPropertiesMarshaller();
 
     }

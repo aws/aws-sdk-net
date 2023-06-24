@@ -29,12 +29,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// Contains the details of an Amazon RDS DB snapshot. 
+    /// Contains the details of an Amazon RDS DB snapshot.
     /// 
     ///  
     /// <para>
     /// This data type is used as a response element in the <code>DescribeDBSnapshots</code>
-    /// action. 
+    /// action.
     /// </para>
     /// </summary>
     public partial class DBSnapshot
@@ -60,11 +60,13 @@ namespace Amazon.RDS.Model
         private int? _port;
         private List<ProcessorFeature> _processorFeatures = new List<ProcessorFeature>();
         private DateTime? _snapshotCreateTime;
+        private DateTime? _snapshotDatabaseTime;
         private string _snapshotTarget;
         private string _snapshotType;
         private string _sourceDBSnapshotIdentifier;
         private string _sourceRegion;
         private string _status;
+        private int? _storageThroughput;
         private string _storageType;
         private List<Tag> _tagList = new List<Tag>();
         private string _tdeCredentialArn;
@@ -296,8 +298,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        ///  If <code>Encrypted</code> is true, the Amazon Web Services KMS key identifier for
-        /// the encrypted DB snapshot. 
+        /// If <code>Encrypted</code> is true, the Amazon Web Services KMS key identifier for
+        /// the encrypted DB snapshot.
         /// </para>
         ///  
         /// <para>
@@ -465,6 +467,33 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SnapshotDatabaseTime. 
+        /// <para>
+        /// The timestamp of the most recent transaction applied to the database that you're backing
+        /// up. Thus, if you restore a snapshot, SnapshotDatabaseTime is the most recent transaction
+        /// in the restored DB instance. In contrast, originalSnapshotCreateTime specifies the
+        /// system time that the snapshot completed.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you back up a read replica, you can determine the replica lag by comparing SnapshotDatabaseTime
+        /// with originalSnapshotCreateTime. For example, if originalSnapshotCreateTime is two
+        /// hours later than SnapshotDatabaseTime, then the replica lag is two hours.
+        /// </para>
+        /// </summary>
+        public DateTime SnapshotDatabaseTime
+        {
+            get { return this._snapshotDatabaseTime.GetValueOrDefault(); }
+            set { this._snapshotDatabaseTime = value; }
+        }
+
+        // Check to see if SnapshotDatabaseTime property is set
+        internal bool IsSetSnapshotDatabaseTime()
+        {
+            return this._snapshotDatabaseTime.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property SnapshotTarget. 
         /// <para>
         /// Specifies where manual snapshots are stored: Amazon Web Services Outposts or the Amazon
@@ -557,6 +586,24 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property StorageThroughput. 
+        /// <para>
+        /// Specifies the storage throughput for the DB snapshot.
+        /// </para>
+        /// </summary>
+        public int StorageThroughput
+        {
+            get { return this._storageThroughput.GetValueOrDefault(); }
+            set { this._storageThroughput = value; }
+        }
+
+        // Check to see if StorageThroughput property is set
+        internal bool IsSetStorageThroughput()
+        {
+            return this._storageThroughput.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property StorageType. 
         /// <para>
         /// Specifies the storage type associated with DB snapshot.
@@ -612,7 +659,7 @@ namespace Amazon.RDS.Model
         /// <para>
         /// The time zone of the DB snapshot. In most cases, the <code>Timezone</code> element
         /// is empty. <code>Timezone</code> content appears only for snapshots taken from Microsoft
-        /// SQL Server DB instances that were created with a time zone specified. 
+        /// SQL Server DB instances that were created with a time zone specified.
         /// </para>
         /// </summary>
         public string Timezone

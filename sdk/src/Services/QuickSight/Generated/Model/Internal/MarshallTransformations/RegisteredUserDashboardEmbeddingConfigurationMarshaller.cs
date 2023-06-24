@@ -34,7 +34,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RegisteredUserDashboardEmbeddingConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class RegisteredUserDashboardEmbeddingConfigurationMarshaller : IRequestMarshaller<RegisteredUserDashboardEmbeddingConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -45,6 +45,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(RegisteredUserDashboardEmbeddingConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetFeatureConfigurations())
+            {
+                context.Writer.WritePropertyName("FeatureConfigurations");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = RegisteredUserDashboardFeatureConfigurationsMarshaller.Instance;
+                marshaller.Marshall(requestObject.FeatureConfigurations, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetInitialDashboardId())
             {
                 context.Writer.WritePropertyName("InitialDashboardId");
@@ -55,7 +66,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RegisteredUserDashboardEmbeddingConfigurationMarshaller Instance = new RegisteredUserDashboardEmbeddingConfigurationMarshaller();
 
     }

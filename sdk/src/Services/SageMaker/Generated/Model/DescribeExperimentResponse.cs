@@ -195,7 +195,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Source. 
         /// <para>
-        /// The ARN of the source and, optionally, the type.
+        /// The Amazon Resource Name (ARN) of the source and, optionally, the type.
         /// </para>
         /// </summary>
         public ExperimentSource Source

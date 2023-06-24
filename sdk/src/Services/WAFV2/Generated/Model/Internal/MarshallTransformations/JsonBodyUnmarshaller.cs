@@ -82,6 +82,12 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.MatchScope = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("OversizeHandling", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.OversizeHandling = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

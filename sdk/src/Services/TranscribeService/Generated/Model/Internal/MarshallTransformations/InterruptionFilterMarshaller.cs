@@ -34,7 +34,7 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// InterruptionFilter Marshaller
-    /// </summary>       
+    /// </summary>
     public class InterruptionFilterMarshaller : IRequestMarshaller<InterruptionFilter, JsonMarshallerContext> 
     {
         /// <summary>
@@ -89,7 +89,7 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static InterruptionFilterMarshaller Instance = new InterruptionFilterMarshaller();
 
     }

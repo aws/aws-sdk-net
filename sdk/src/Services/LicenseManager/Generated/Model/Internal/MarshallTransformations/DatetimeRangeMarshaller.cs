@@ -34,7 +34,7 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DatetimeRange Marshaller
-    /// </summary>       
+    /// </summary>
     public class DatetimeRangeMarshaller : IRequestMarshaller<DatetimeRange, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DatetimeRangeMarshaller Instance = new DatetimeRangeMarshaller();
 
     }

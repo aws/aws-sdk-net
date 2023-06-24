@@ -41,6 +41,7 @@ namespace Amazon.ECR.Model
         private ImageScanStatus _imageScanStatus;
         private long? _imageSizeInBytes;
         private List<string> _imageTags = new List<string>();
+        private DateTime? _lastRecordedPullTime;
         private string _registryId;
         private string _repositoryName;
 
@@ -200,6 +201,35 @@ namespace Amazon.ECR.Model
         internal bool IsSetImageTags()
         {
             return this._imageTags != null && this._imageTags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastRecordedPullTime. 
+        /// <para>
+        /// The date and time, expressed in standard JavaScript date format, when Amazon ECR recorded
+        /// the last image pull.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Amazon ECR refreshes the last image pull timestamp at least once every 24 hours. For
+        /// example, if you pull an image once a day then the <code>lastRecordedPullTime</code>
+        /// timestamp will indicate the exact time that the image was last pulled. However, if
+        /// you pull an image once an hour, because Amazon ECR refreshes the <code>lastRecordedPullTime</code>
+        /// timestamp at least once every 24 hours, the result may not be the exact time that
+        /// the image was last pulled.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public DateTime LastRecordedPullTime
+        {
+            get { return this._lastRecordedPullTime.GetValueOrDefault(); }
+            set { this._lastRecordedPullTime = value; }
+        }
+
+        // Check to see if LastRecordedPullTime property is set
+        internal bool IsSetLastRecordedPullTime()
+        {
+            return this._lastRecordedPullTime.HasValue; 
         }
 
         /// <summary>

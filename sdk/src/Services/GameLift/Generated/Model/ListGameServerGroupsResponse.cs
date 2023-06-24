@@ -39,7 +39,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property GameServerGroups. 
         /// <para>
-        /// A collection of game server group objects that match the request.
+        /// The game server groups' game server groups.
         /// </para>
         /// </summary>
         public List<GameServerGroup> GameServerGroups
@@ -57,8 +57,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// A token that indicates where to resume retrieving results on the next call to this
-        /// operation. If no token is returned, these results represent the end of the list.
+        /// Specify the pagination token from a previous request to retrieve the next page of
+        /// results.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

@@ -46,8 +46,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Configuration. 
         /// <para>
-        /// Provides the user configuration information. This includes the Amazon Web Services
-        /// SSO field name that contains the identifiers of your users, such as their emails.
+        /// Configuration information you want to update for your Amazon Kendra experience.
         /// </para>
         /// </summary>
         public ExperienceConfiguration Configuration
@@ -65,7 +64,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description of your Amazon Kendra experience you want to update.
+        /// A new description for your Amazon Kendra experience.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1000)]
@@ -103,7 +102,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property IndexId. 
         /// <para>
-        /// The identifier of the index for your Amazon Kendra experience you want to update.
+        /// The identifier of the index for your Amazon Kendra experience.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]
@@ -122,7 +121,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of your Amazon Kendra experience you want to update.
+        /// A new name for your Amazon Kendra experience.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
@@ -142,9 +141,8 @@ namespace Amazon.Kendra.Model
         /// Gets and sets the property RoleArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of a role with permission to access <code>Query</code>
-        /// operations, <code>QuerySuggestions</code> operations, <code>SubmitFeedback</code>
-        /// operations, and Amazon Web Services SSO that stores your user and group information.
-        /// For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM
+        /// API, <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and IAM Identity
+        /// Center that stores your user and group information. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM
         /// roles for Amazon Kendra</a>.
         /// </para>
         /// </summary>

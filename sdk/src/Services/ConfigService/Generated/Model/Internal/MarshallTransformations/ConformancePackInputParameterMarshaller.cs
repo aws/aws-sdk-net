@@ -34,7 +34,7 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ConformancePackInputParameter Marshaller
-    /// </summary>       
+    /// </summary>
     public class ConformancePackInputParameterMarshaller : IRequestMarshaller<ConformancePackInputParameter, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ConformancePackInputParameterMarshaller Instance = new ConformancePackInputParameterMarshaller();
 
     }

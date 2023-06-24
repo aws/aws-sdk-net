@@ -96,7 +96,7 @@ namespace Amazon.Runtime
         #region Properties
 
         /// <summary>
-        /// The time before actual expiration to expire the credentials.        
+        /// The time before actual expiration to expire the credentials.
         /// Property cannot be set to a negative TimeSpan.
         /// </summary>
         public TimeSpan PreemptExpiryTime
@@ -130,7 +130,7 @@ namespace Amazon.Runtime
                 {
                     tempState = GenerateNewCredentials();
                     UpdateToGeneratedCredentials(tempState, PreemptExpiryTime);
-                    currentState = tempState;                    
+                    currentState = tempState;
                 }
                 return tempState.Credentials.Copy();
             }
@@ -175,13 +175,18 @@ namespace Amazon.Runtime
             {
                 string errorMessage;
                 if (state == null)
+                {
                     errorMessage = "Unable to generate temporary credentials";
+                }
                 else
+                {
                     errorMessage = string.Format(CultureInfo.InvariantCulture,
                         "The retrieved credentials have already expired: Now = {0}, Credentials expiration = {1}",
 #pragma warning disable CS0612 // Type or member is obsolete
                         AWSSDKUtils.CorrectedUtcNow.ToLocalTime(), state.Expiration);
 #pragma warning restore CS0612 // Type or member is obsolete
+                }
+
                 throw new AmazonClientException(errorMessage);
             }
 
@@ -232,8 +237,8 @@ namespace Amazon.Runtime
             // have the PreemptExpiryTime baked into to the expiration from a call to 
             // UpdateToGeneratedCredentials but it may not if this is new application 
             // load.
-            var isExpired = state?.IsExpiredWithin(TimeSpan.Zero) ?? true;
-            if (state != null && isExpired)
+            var isExpired = state?.IsExpiredWithin(TimeSpan.Zero);
+            if (isExpired == true)
             {
 #pragma warning disable CS0612 // Type or member is obsolete
                 var logger = Logger.GetLogger(typeof(RefreshingAWSCredentials));
@@ -243,7 +248,7 @@ namespace Amazon.Runtime
 #pragma warning restore CS0612 // Type or member is obsolete
             }
 
-            return isExpired;
+            return isExpired ?? true;
         }
 
         /// <summary>

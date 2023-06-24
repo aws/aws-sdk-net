@@ -30,7 +30,9 @@ namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
     /// Container for the parameters to the AssociatePackage operation.
-    /// Associates a package with an Amazon OpenSearch Service domain.
+    /// Associates a package with an Amazon OpenSearch Service domain. For more information,
+    /// see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/custom-packages.html">Custom
+    /// packages for Amazon OpenSearch Service</a>.
     /// </summary>
     public partial class AssociatePackageRequest : AmazonOpenSearchServiceRequest
     {
@@ -40,7 +42,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property DomainName. 
         /// <para>
-        /// The name of the domain to associate the package with.
+        /// Name of the domain to associate the package with.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=3, Max=28)]

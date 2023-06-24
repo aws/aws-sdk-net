@@ -30,7 +30,7 @@ namespace Amazon.WorkMail.Model
 {
     /// <summary>
     /// Container for the parameters to the UntagResource operation.
-    /// Untags the specified tags from the specified Amazon WorkMail organization resource.
+    /// Untags the specified tags from the specified WorkMail organization resource.
     /// </summary>
     public partial class UntagResourceRequest : AmazonWorkMailRequest
     {

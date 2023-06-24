@@ -30,7 +30,7 @@ namespace Amazon.DataSync.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeLocationEfs operation.
-    /// Returns metadata, such as the path information about an Amazon EFS location.
+    /// Returns metadata about your DataSync location for an Amazon EFS file system.
     /// </summary>
     public partial class DescribeLocationEfsRequest : AmazonDataSyncRequest
     {
@@ -39,7 +39,8 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property LocationArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the EFS location to describe.
+        /// The Amazon Resource Name (ARN) of the Amazon EFS file system location that you want
+        /// information about.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=128)]

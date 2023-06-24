@@ -36,6 +36,7 @@ namespace Amazon.DataSync.Model
     #endif
     public partial class InvalidRequestException : AmazonDataSyncException
     {
+        private string _datasyncErrorCode;
         private string _errorCode;
 
         /// <summary>
@@ -98,6 +99,7 @@ namespace Amazon.DataSync.Model
         protected InvalidRequestException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
+            this.DatasyncErrorCode = (string)info.GetValue("DatasyncErrorCode", typeof(string));
             this.ErrorCode = (string)info.GetValue("ErrorCode", typeof(string));
         }
 
@@ -119,9 +121,25 @@ namespace Amazon.DataSync.Model
         public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
         {
             base.GetObjectData(info, context);
+            info.AddValue("DatasyncErrorCode", this.DatasyncErrorCode);
             info.AddValue("ErrorCode", this.ErrorCode);
         }
 #endif
+
+        /// <summary>
+        /// Gets and sets the property DatasyncErrorCode.
+        /// </summary>
+        public string DatasyncErrorCode
+        {
+            get { return this._datasyncErrorCode; }
+            set { this._datasyncErrorCode = value; }
+        }
+
+        // Check to see if DatasyncErrorCode property is set
+        internal bool IsSetDatasyncErrorCode()
+        {
+            return this._datasyncErrorCode != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ErrorCode.

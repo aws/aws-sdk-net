@@ -56,7 +56,7 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Lambda");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-03-31";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-03-31";
             request.HttpMethod = "POST";
 
             if (!publicRequest.IsSetFunctionName())
@@ -67,18 +67,28 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                 request.Parameters.Add("Qualifier", StringUtils.FromString(publicRequest.Qualifier));
             request.ResourcePath = "/2015-03-31/functions/{FunctionName}/invocations";
             request.ContentStream =  publicRequest.PayloadStream ?? new MemoryStream();
-            request.Headers[Amazon.Util.HeaderKeys.ContentLengthHeader] =  
+            request.Headers[Amazon.Util.HeaderKeys.ContentLengthHeader] =
                 request.ContentStream.Length.ToString(CultureInfo.InvariantCulture);
-            request.Headers[Amazon.Util.HeaderKeys.ContentTypeHeader] = "binary/octet-stream";
+            request.Headers[Amazon.Util.HeaderKeys.ContentTypeHeader] = "binary/octet-stream"; 
+            if (request.ContentStream != null && request.ContentStream.Length == 0)
+            {
+                request.Headers.Remove(Amazon.Util.HeaderKeys.ContentTypeHeader);
+            }
         
-            if(publicRequest.IsSetClientContextBase64())
+            if (publicRequest.IsSetClientContextBase64()) 
+            {
                 request.Headers["X-Amz-Client-Context"] = publicRequest.ClientContextBase64;
+            }
         
-            if(publicRequest.IsSetInvocationType())
+            if (publicRequest.IsSetInvocationType()) 
+            {
                 request.Headers["X-Amz-Invocation-Type"] = publicRequest.InvocationType;
+            }
         
-            if(publicRequest.IsSetLogType())
+            if (publicRequest.IsSetLogType()) 
+            {
                 request.Headers["X-Amz-Log-Type"] = publicRequest.LogType;
+            }
             request.UseQueryString = true;
 
             return request;

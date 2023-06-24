@@ -34,7 +34,7 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// PropertyGroup Marshaller
-    /// </summary>       
+    /// </summary>
     public class PropertyGroupMarshaller : IRequestMarshaller<PropertyGroup, JsonMarshallerContext> 
     {
         /// <summary>
@@ -69,7 +69,7 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static PropertyGroupMarshaller Instance = new PropertyGroupMarshaller();
 
     }

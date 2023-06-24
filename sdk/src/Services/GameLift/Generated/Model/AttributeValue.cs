@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GameLift.Model
 {
     /// <summary>
-    /// Values for use in <a>Player</a> attribute key-value pairs. This object lets you specify
-    /// an attribute value using any of the valid data types: string, number, string array,
-    /// or data map. Each <code>AttributeValue</code> object can use only one of the available
+    /// Values for use in player attribute key-value pairs. This object lets you specify an
+    /// attribute value using any of the valid data types: string, number, string array, or
+    /// data map. Each <code>AttributeValue</code> object can use only one of the available
     /// properties.
     /// </summary>
     public partial class AttributeValue
@@ -65,7 +65,7 @@ namespace Amazon.GameLift.Model
         /// For single string values. Maximum string length is 100 characters.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Min=1, Max=100)]
         public string S
         {
             get { return this._s; }
@@ -100,7 +100,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property SL. 
         /// <para>
-        /// For a list of up to 10 strings. Maximum length for each string is 100 characters.
+        /// For a list of up to 100 strings. Maximum length for each string is 100 characters.
         /// Duplicate values are not recognized; all occurrences of the repeated value after the
         /// first of a repeated value are ignored.
         /// </para>

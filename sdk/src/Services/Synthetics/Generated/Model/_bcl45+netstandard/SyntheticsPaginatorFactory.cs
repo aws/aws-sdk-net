@@ -66,5 +66,29 @@ namespace Amazon.Synthetics.Model
         {
             return new GetCanaryRunsPaginator(this.client, request);
         }
+
+        /// <summary>
+        /// Paginator for ListAssociatedGroups operation
+        ///</summary>
+        public IListAssociatedGroupsPaginator ListAssociatedGroups(ListAssociatedGroupsRequest request) 
+        {
+            return new ListAssociatedGroupsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListGroupResources operation
+        ///</summary>
+        public IListGroupResourcesPaginator ListGroupResources(ListGroupResourcesRequest request) 
+        {
+            return new ListGroupResourcesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListGroups operation
+        ///</summary>
+        public IListGroupsPaginator ListGroups(ListGroupsRequest request) 
+        {
+            return new ListGroupsPaginator(this.client, request);
+        }
     }
 }

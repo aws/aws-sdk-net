@@ -34,7 +34,7 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// PackageFilter Marshaller
-    /// </summary>       
+    /// </summary>
     public class PackageFilterMarshaller : IRequestMarshaller<PackageFilter, JsonMarshallerContext> 
     {
         /// <summary>
@@ -89,6 +89,17 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetSourceLambdaLayerArn())
+            {
+                context.Writer.WritePropertyName("sourceLambdaLayerArn");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = StringFilterMarshaller.Instance;
+                marshaller.Marshall(requestObject.SourceLambdaLayerArn, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetSourceLayerHash())
             {
                 context.Writer.WritePropertyName("sourceLayerHash");
@@ -115,7 +126,7 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static PackageFilterMarshaller Instance = new PackageFilterMarshaller();
 
     }

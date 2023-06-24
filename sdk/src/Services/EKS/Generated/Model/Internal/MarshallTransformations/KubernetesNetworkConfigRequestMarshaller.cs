@@ -34,7 +34,7 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// KubernetesNetworkConfigRequest Marshaller
-    /// </summary>       
+    /// </summary>
     public class KubernetesNetworkConfigRequestMarshaller : IRequestMarshaller<KubernetesNetworkConfigRequest, JsonMarshallerContext> 
     {
         /// <summary>
@@ -45,6 +45,12 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(KubernetesNetworkConfigRequest requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetIpFamily())
+            {
+                context.Writer.WritePropertyName("ipFamily");
+                context.Writer.Write(requestObject.IpFamily);
+            }
+
             if(requestObject.IsSetServiceIpv4Cidr())
             {
                 context.Writer.WritePropertyName("serviceIpv4Cidr");
@@ -55,7 +61,7 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static KubernetesNetworkConfigRequestMarshaller Instance = new KubernetesNetworkConfigRequestMarshaller();
 
     }

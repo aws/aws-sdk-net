@@ -44,6 +44,11 @@ namespace Amazon.IoTTwinMaker.Model
         /// <para>
         /// A list of objects that filter the request.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Only one object is accepted as a valid input.
+        /// </para>
+        ///  </note>
         /// </summary>
         public List<ListEntitiesFilter> Filters
         {
@@ -60,7 +65,11 @@ namespace Amazon.IoTTwinMaker.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of results to display.
+        /// The maximum number of results to return at one time. The default is 25.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid Range: Minimum value of 1. Maximum value of 250.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=200)]

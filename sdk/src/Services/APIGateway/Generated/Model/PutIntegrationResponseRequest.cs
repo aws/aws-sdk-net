@@ -50,17 +50,7 @@ namespace Amazon.APIGateway.Model
         /// are <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with the following
         /// behaviors:
         /// </para>
-        ///  <ul> <li>
-        /// <para>
-        /// <code>CONVERT_TO_BINARY</code>: Converts a response payload from a Base64-encoded
-        /// string to the corresponding binary blob.
-        /// </para>
-        /// </li> <li>
-        /// <para>
-        /// <code>CONVERT_TO_TEXT</code>: Converts a response payload from a binary blob to a
-        /// Base64-encoded string.
-        /// </para>
-        /// </li> </ul> 
+        ///  
         /// <para>
         /// If this property is not defined, the response payload will be passed through from
         /// the integration response to the method response without modification.
@@ -81,7 +71,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property HttpMethod. 
         /// <para>
-        /// [Required] Specifies a put integration response request's HTTP method.
+        /// Specifies a put integration response request's HTTP method.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -100,7 +90,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property ResourceId. 
         /// <para>
-        /// [Required] Specifies a put integration response request's resource identifier.
+        /// Specifies a put integration response request's resource identifier.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -163,7 +153,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property RestApiId. 
         /// <para>
-        /// [Required] The string identifier of the associated <a>RestApi</a>.
+        /// The string identifier of the associated RestApi.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -200,8 +190,8 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property StatusCode. 
         /// <para>
-        /// [Required] Specifies the status code that is used to map the integration response
-        /// to an existing <a>MethodResponse</a>.
+        /// Specifies the status code that is used to map the integration response to an existing
+        /// MethodResponse.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -35,6 +35,7 @@ namespace Amazon.MediaConnect.Model
     public partial class UpdateFlowRequest : AmazonMediaConnectRequest
     {
         private string _flowArn;
+        private UpdateMaintenance _maintenance;
         private UpdateFailoverConfig _sourceFailoverConfig;
 
         /// <summary>
@@ -51,6 +52,21 @@ namespace Amazon.MediaConnect.Model
         internal bool IsSetFlowArn()
         {
             return this._flowArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Maintenance.
+        /// </summary>
+        public UpdateMaintenance Maintenance
+        {
+            get { return this._maintenance; }
+            set { this._maintenance = value; }
+        }
+
+        // Check to see if Maintenance property is set
+        internal bool IsSetMaintenance()
+        {
+            return this._maintenance != null;
         }
 
         /// <summary>

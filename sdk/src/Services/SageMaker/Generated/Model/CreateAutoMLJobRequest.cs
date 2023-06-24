@@ -30,16 +30,30 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateAutoMLJob operation.
-    /// Creates an Autopilot job.
+    /// Creates an Autopilot job also referred to as Autopilot experiment or AutoML job.
     /// 
-    ///  
+    ///  <note> 
     /// <para>
-    /// Find the best-performing model after you run an Autopilot job by calling .
+    /// We recommend using the new versions <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJobV2.html">CreateAutoMLJobV2</a>
+    /// and <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeAutoMLJobV2.html">DescribeAutoMLJobV2</a>,
+    /// which offer backward compatibility.
     /// </para>
     ///  
     /// <para>
-    /// For information about how to use Autopilot, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development.html">Automate
-    /// Model Development with Amazon SageMaker Autopilot</a>.
+    ///  <code>CreateAutoMLJobV2</code> can manage tabular problem types identical to those
+    /// of its previous version <code>CreateAutoMLJob</code>, as well as non-tabular problem
+    /// types such as image or text classification.
+    /// </para>
+    ///  
+    /// <para>
+    /// Find guidelines about how to migrate a <code>CreateAutoMLJob</code> to <code>CreateAutoMLJobV2</code>
+    /// in <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development-create-experiment-api.html#autopilot-create-experiment-api-migrate-v1-v2">Migrate
+    /// a CreateAutoMLJob to CreateAutoMLJobV2</a>.
+    /// </para>
+    ///  </note> 
+    /// <para>
+    /// You can find the best-performing model after you run an AutoML job by calling <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeAutoMLJobV2.html">DescribeAutoMLJobV2</a>
+    /// (recommended) or <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeAutoMLJob.html">DescribeAutoMLJob</a>.
     /// </para>
     /// </summary>
     public partial class CreateAutoMLJobRequest : AmazonSageMakerRequest
@@ -58,8 +72,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property AutoMLJobConfig. 
         /// <para>
-        /// Contains <code>CompletionCriteria</code> and <code>SecurityConfig</code> settings
-        /// for the AutoML job.
+        /// A collection of settings used to configure an AutoML job.
         /// </para>
         /// </summary>
         public AutoMLJobConfig AutoMLJobConfig
@@ -77,7 +90,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property AutoMLJobName. 
         /// <para>
-        /// Identifies an Autopilot job. The name must be unique to your account and is case-insensitive.
+        /// Identifies an Autopilot job. The name must be unique to your account and is case insensitive.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=32)]
@@ -96,9 +109,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property AutoMLJobObjective. 
         /// <para>
-        /// Defines the objective metric used to measure the predictive quality of an AutoML job.
-        /// You provide an <a>AutoMLJobObjective$MetricName</a> and Autopilot infers whether to
-        /// minimize or maximize it.
+        /// Specifies a metric to minimize or maximize as the objective of a job. If not specified,
+        /// the default objective metric depends on the problem type. See <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobObjective.html">AutoMLJobObjective</a>
+        /// for the default values.
         /// </para>
         /// </summary>
         public AutoMLJobObjective AutoMLJobObjective
@@ -136,11 +149,12 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property InputDataConfig. 
         /// <para>
         /// An array of channel objects that describes the input data and its location. Each channel
-        /// is a named input source. Similar to <code>InputDataConfig</code> supported by . Format(s)
-        /// supported: CSV. Minimum of 500 rows.
+        /// is a named input source. Similar to <code>InputDataConfig</code> supported by <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTrainingJobDefinition.html">HyperParameterTrainingJobDefinition</a>.
+        /// Format(s) supported: CSV, Parquet. A minimum of 500 rows is required for the training
+        /// dataset. There is not a minimum number of rows required for the validation dataset.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=20)]
+        [AWSProperty(Required=true, Min=1, Max=2)]
         public List<AutoMLChannel> InputDataConfig
         {
             get { return this._inputDataConfig; }
@@ -195,10 +209,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ProblemType. 
         /// <para>
-        /// Defines the type of supervised learning available for the candidates. Options include:
-        /// <code>BinaryClassification</code>, <code>MulticlassClassification</code>, and <code>Regression</code>.
-        /// For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development-problem-types.html">
-        /// Amazon SageMaker Autopilot problem types and algorithm support</a>.
+        /// Defines the type of supervised learning problem available for the candidates. For
+        /// more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-problem-types">
+        /// Amazon SageMaker Autopilot problem types</a>.
         /// </para>
         /// </summary>
         public ProblemType ProblemType
@@ -235,7 +248,10 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Each tag consists of a key and an optional value. Tag keys must be unique per resource.
+        /// An array of key-value pairs. You can use tags to categorize your Amazon Web Services
+        /// resources in different ways, for example, by purpose, owner, or environment. For more
+        /// information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+        /// Amazon Web ServicesResources</a>. Tag keys must be unique per resource.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]

@@ -34,7 +34,7 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// TlsConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class TlsConfigMarshaller : IRequestMarshaller<TlsConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static TlsConfigMarshaller Instance = new TlsConfigMarshaller();
 
     }

@@ -40,7 +40,7 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property ARN. 
         /// <para>
-        /// The ARN of the secret that is now scheduled for deletion.
+        /// The ARN of the secret.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -59,9 +59,9 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property DeletionDate. 
         /// <para>
-        /// The date and time after which this secret can be deleted by Secrets Manager and can
-        /// no longer be restored. This value is the date and time of the delete request plus
-        /// the number of days specified in <code>RecoveryWindowInDays</code>.
+        /// The date and time after which this secret Secrets Manager can permanently delete this
+        /// secret, and it can no longer be restored. This value is the date and time of the delete
+        /// request plus the number of days in <code>RecoveryWindowInDays</code>.
         /// </para>
         /// </summary>
         public DateTime DeletionDate
@@ -79,7 +79,7 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The friendly name of the secret currently scheduled for deletion.
+        /// The name of the secret.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]

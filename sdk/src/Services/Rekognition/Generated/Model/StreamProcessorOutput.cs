@@ -36,6 +36,7 @@ namespace Amazon.Rekognition.Model
     public partial class StreamProcessorOutput
     {
         private KinesisDataStream _kinesisDataStream;
+        private S3Destination _s3Destination;
 
         /// <summary>
         /// Gets and sets the property KinesisDataStream. 
@@ -54,6 +55,25 @@ namespace Amazon.Rekognition.Model
         internal bool IsSetKinesisDataStream()
         {
             return this._kinesisDataStream != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property S3Destination. 
+        /// <para>
+        ///  The Amazon S3 bucket location to which Amazon Rekognition publishes the detailed
+        /// inference results of a video analysis operation. 
+        /// </para>
+        /// </summary>
+        public S3Destination S3Destination
+        {
+            get { return this._s3Destination; }
+            set { this._s3Destination = value; }
+        }
+
+        // Check to see if S3Destination property is set
+        internal bool IsSetS3Destination()
+        {
+            return this._s3Destination != null;
         }
 
     }

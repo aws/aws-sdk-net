@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// 
+    /// Details about the metrics source.
     /// </summary>
     public partial class MetricsSource
     {
@@ -38,7 +38,10 @@ namespace Amazon.SageMaker.Model
         private string _s3Uri;
 
         /// <summary>
-        /// Gets and sets the property ContentDigest.
+        /// Gets and sets the property ContentDigest. 
+        /// <para>
+        /// The hash key used for the metrics source.
+        /// </para>
         /// </summary>
         [AWSProperty(Max=72)]
         public string ContentDigest
@@ -54,7 +57,10 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ContentType.
+        /// Gets and sets the property ContentType. 
+        /// <para>
+        /// The metric source content type.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=256)]
         public string ContentType
@@ -70,7 +76,10 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
-        /// Gets and sets the property S3Uri.
+        /// Gets and sets the property S3Uri. 
+        /// <para>
+        /// The S3 URI for the metrics source.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=1024)]
         public string S3Uri

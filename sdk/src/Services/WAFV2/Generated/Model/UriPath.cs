@@ -29,13 +29,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WAFV2.Model
 {
     /// <summary>
-    /// The path component of the URI of a web request. This is the part of a web request
-    /// that identifies a resource. For example, <code>/images/daily-ad.jpg</code>.
+    /// Inspect the path component of the URI of the web request. This is the part of the
+    /// web request that identifies a resource. For example, <code>/images/daily-ad.jpg</code>.
     /// 
     ///  
     /// <para>
-    /// This is used only to indicate the web request component for WAF to inspect, in the
-    /// <a>FieldToMatch</a> specification. 
+    /// This is used in the <a>FieldToMatch</a> specification for some web request component
+    /// types. 
     /// </para>
     ///  
     /// <para>

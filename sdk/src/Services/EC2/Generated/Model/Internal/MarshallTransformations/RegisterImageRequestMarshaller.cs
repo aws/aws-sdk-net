@@ -146,6 +146,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ImageLocation", StringUtils.FromString(publicRequest.ImageLocation));
                 }
+                if(publicRequest.IsSetImdsSupport())
+                {
+                    request.Parameters.Add("ImdsSupport", StringUtils.FromString(publicRequest.ImdsSupport));
+                }
                 if(publicRequest.IsSetKernelId())
                 {
                     request.Parameters.Add("KernelId", StringUtils.FromString(publicRequest.KernelId));
@@ -165,6 +169,14 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetSriovNetSupport())
                 {
                     request.Parameters.Add("SriovNetSupport", StringUtils.FromString(publicRequest.SriovNetSupport));
+                }
+                if(publicRequest.IsSetTpmSupport())
+                {
+                    request.Parameters.Add("TpmSupport", StringUtils.FromString(publicRequest.TpmSupport));
+                }
+                if(publicRequest.IsSetUefiData())
+                {
+                    request.Parameters.Add("UefiData", StringUtils.FromString(publicRequest.UefiData));
                 }
                 if(publicRequest.IsSetVirtualizationType())
                 {

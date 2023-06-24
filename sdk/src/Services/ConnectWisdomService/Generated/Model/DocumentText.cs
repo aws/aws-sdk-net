@@ -60,6 +60,7 @@ namespace Amazon.ConnectWisdomService.Model
         /// Text in the document.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string Text
         {
             get { return this._text; }

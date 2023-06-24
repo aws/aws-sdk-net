@@ -230,6 +230,15 @@ namespace Amazon.Mgn
         }
 
         /// <summary>
+        /// Customize the pipeline
+        /// </summary>
+        /// <param name="pipeline"></param>
+        protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
+        {
+            pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonMgnEndpointResolver());
+        }
+        /// <summary>
         /// Capture metadata for the service.
         /// </summary>
         protected override IServiceMetadata ServiceMetadata
@@ -255,6 +264,274 @@ namespace Amazon.Mgn
         #endregion
 
 
+        #region  ArchiveApplication
+
+        /// <summary>
+        /// Archive application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ArchiveApplication service method.</param>
+        /// 
+        /// <returns>The response from the ArchiveApplication service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ServiceQuotaExceededException">
+        /// The request could not be completed because its exceeded the service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ArchiveApplication">REST API Reference for ArchiveApplication Operation</seealso>
+        public virtual ArchiveApplicationResponse ArchiveApplication(ArchiveApplicationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ArchiveApplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ArchiveApplicationResponseUnmarshaller.Instance;
+
+            return Invoke<ArchiveApplicationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ArchiveApplication operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ArchiveApplication operation on AmazonMgnClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndArchiveApplication
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ArchiveApplication">REST API Reference for ArchiveApplication Operation</seealso>
+        public virtual IAsyncResult BeginArchiveApplication(ArchiveApplicationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ArchiveApplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ArchiveApplicationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ArchiveApplication operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginArchiveApplication.</param>
+        /// 
+        /// <returns>Returns a  ArchiveApplicationResult from Mgn.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ArchiveApplication">REST API Reference for ArchiveApplication Operation</seealso>
+        public virtual ArchiveApplicationResponse EndArchiveApplication(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ArchiveApplicationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ArchiveWave
+
+        /// <summary>
+        /// Archive wave.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ArchiveWave service method.</param>
+        /// 
+        /// <returns>The response from the ArchiveWave service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ServiceQuotaExceededException">
+        /// The request could not be completed because its exceeded the service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ArchiveWave">REST API Reference for ArchiveWave Operation</seealso>
+        public virtual ArchiveWaveResponse ArchiveWave(ArchiveWaveRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ArchiveWaveRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ArchiveWaveResponseUnmarshaller.Instance;
+
+            return Invoke<ArchiveWaveResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ArchiveWave operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ArchiveWave operation on AmazonMgnClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndArchiveWave
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ArchiveWave">REST API Reference for ArchiveWave Operation</seealso>
+        public virtual IAsyncResult BeginArchiveWave(ArchiveWaveRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ArchiveWaveRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ArchiveWaveResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ArchiveWave operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginArchiveWave.</param>
+        /// 
+        /// <returns>Returns a  ArchiveWaveResult from Mgn.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ArchiveWave">REST API Reference for ArchiveWave Operation</seealso>
+        public virtual ArchiveWaveResponse EndArchiveWave(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ArchiveWaveResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  AssociateApplications
+
+        /// <summary>
+        /// Associate applications to wave.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateApplications service method.</param>
+        /// 
+        /// <returns>The response from the AssociateApplications service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ServiceQuotaExceededException">
+        /// The request could not be completed because its exceeded the service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/AssociateApplications">REST API Reference for AssociateApplications Operation</seealso>
+        public virtual AssociateApplicationsResponse AssociateApplications(AssociateApplicationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateApplicationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateApplicationsResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateApplicationsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateApplications operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateApplications operation on AmazonMgnClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateApplications
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/AssociateApplications">REST API Reference for AssociateApplications Operation</seealso>
+        public virtual IAsyncResult BeginAssociateApplications(AssociateApplicationsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateApplicationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateApplicationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AssociateApplications operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssociateApplications.</param>
+        /// 
+        /// <returns>Returns a  AssociateApplicationsResult from Mgn.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/AssociateApplications">REST API Reference for AssociateApplications Operation</seealso>
+        public virtual AssociateApplicationsResponse EndAssociateApplications(IAsyncResult asyncResult)
+        {
+            return EndInvoke<AssociateApplicationsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  AssociateSourceServers
+
+        /// <summary>
+        /// Associate source servers to application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateSourceServers service method.</param>
+        /// 
+        /// <returns>The response from the AssociateSourceServers service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ServiceQuotaExceededException">
+        /// The request could not be completed because its exceeded the service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/AssociateSourceServers">REST API Reference for AssociateSourceServers Operation</seealso>
+        public virtual AssociateSourceServersResponse AssociateSourceServers(AssociateSourceServersRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateSourceServersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateSourceServersResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateSourceServersResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateSourceServers operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateSourceServers operation on AmazonMgnClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateSourceServers
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/AssociateSourceServers">REST API Reference for AssociateSourceServers Operation</seealso>
+        public virtual IAsyncResult BeginAssociateSourceServers(AssociateSourceServersRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateSourceServersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateSourceServersResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AssociateSourceServers operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssociateSourceServers.</param>
+        /// 
+        /// <returns>Returns a  AssociateSourceServersResult from Mgn.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/AssociateSourceServers">REST API Reference for AssociateSourceServers Operation</seealso>
+        public virtual AssociateSourceServersResponse EndAssociateSourceServers(IAsyncResult asyncResult)
+        {
+            return EndInvoke<AssociateSourceServersResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ChangeServerLifeCycleState
 
         /// <summary>
@@ -274,7 +551,7 @@ namespace Amazon.Mgn
         /// Resource not found exception.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
-        /// Unitialized account exception.
+        /// Uninitialized account exception.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ValidationException">
         /// Validate exception.
@@ -325,6 +602,133 @@ namespace Amazon.Mgn
 
         #endregion
         
+        #region  CreateApplication
+
+        /// <summary>
+        /// Create application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateApplication service method.</param>
+        /// 
+        /// <returns>The response from the CreateApplication service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ServiceQuotaExceededException">
+        /// The request could not be completed because its exceeded the service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/CreateApplication">REST API Reference for CreateApplication Operation</seealso>
+        public virtual CreateApplicationResponse CreateApplication(CreateApplicationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateApplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateApplicationResponseUnmarshaller.Instance;
+
+            return Invoke<CreateApplicationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateApplication operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateApplication operation on AmazonMgnClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateApplication
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/CreateApplication">REST API Reference for CreateApplication Operation</seealso>
+        public virtual IAsyncResult BeginCreateApplication(CreateApplicationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateApplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateApplicationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateApplication operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateApplication.</param>
+        /// 
+        /// <returns>Returns a  CreateApplicationResult from Mgn.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/CreateApplication">REST API Reference for CreateApplication Operation</seealso>
+        public virtual CreateApplicationResponse EndCreateApplication(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateApplicationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateLaunchConfigurationTemplate
+
+        /// <summary>
+        /// Creates a new Launch Configuration Template.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateLaunchConfigurationTemplate service method.</param>
+        /// 
+        /// <returns>The response from the CreateLaunchConfigurationTemplate service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
+        /// Operating denied due to a file permission or access check error.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/CreateLaunchConfigurationTemplate">REST API Reference for CreateLaunchConfigurationTemplate Operation</seealso>
+        public virtual CreateLaunchConfigurationTemplateResponse CreateLaunchConfigurationTemplate(CreateLaunchConfigurationTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateLaunchConfigurationTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateLaunchConfigurationTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<CreateLaunchConfigurationTemplateResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateLaunchConfigurationTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateLaunchConfigurationTemplate operation on AmazonMgnClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateLaunchConfigurationTemplate
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/CreateLaunchConfigurationTemplate">REST API Reference for CreateLaunchConfigurationTemplate Operation</seealso>
+        public virtual IAsyncResult BeginCreateLaunchConfigurationTemplate(CreateLaunchConfigurationTemplateRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateLaunchConfigurationTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateLaunchConfigurationTemplateResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateLaunchConfigurationTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateLaunchConfigurationTemplate.</param>
+        /// 
+        /// <returns>Returns a  CreateLaunchConfigurationTemplateResult from Mgn.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/CreateLaunchConfigurationTemplate">REST API Reference for CreateLaunchConfigurationTemplate Operation</seealso>
+        public virtual CreateLaunchConfigurationTemplateResponse EndCreateLaunchConfigurationTemplate(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateLaunchConfigurationTemplateResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateReplicationConfigurationTemplate
 
         /// <summary>
@@ -337,7 +741,7 @@ namespace Amazon.Mgn
         /// Operating denied due to a file permission or access check error.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
-        /// Unitialized account exception.
+        /// Uninitialized account exception.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ValidationException">
         /// Validate exception.
@@ -388,6 +792,134 @@ namespace Amazon.Mgn
 
         #endregion
         
+        #region  CreateWave
+
+        /// <summary>
+        /// Create wave.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateWave service method.</param>
+        /// 
+        /// <returns>The response from the CreateWave service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ServiceQuotaExceededException">
+        /// The request could not be completed because its exceeded the service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/CreateWave">REST API Reference for CreateWave Operation</seealso>
+        public virtual CreateWaveResponse CreateWave(CreateWaveRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateWaveRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateWaveResponseUnmarshaller.Instance;
+
+            return Invoke<CreateWaveResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateWave operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateWave operation on AmazonMgnClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateWave
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/CreateWave">REST API Reference for CreateWave Operation</seealso>
+        public virtual IAsyncResult BeginCreateWave(CreateWaveRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateWaveRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateWaveResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateWave operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateWave.</param>
+        /// 
+        /// <returns>Returns a  CreateWaveResult from Mgn.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/CreateWave">REST API Reference for CreateWave Operation</seealso>
+        public virtual CreateWaveResponse EndCreateWave(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateWaveResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteApplication
+
+        /// <summary>
+        /// Delete application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteApplication service method.</param>
+        /// 
+        /// <returns>The response from the DeleteApplication service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DeleteApplication">REST API Reference for DeleteApplication Operation</seealso>
+        public virtual DeleteApplicationResponse DeleteApplication(DeleteApplicationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteApplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteApplicationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteApplicationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteApplication operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteApplication operation on AmazonMgnClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteApplication
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DeleteApplication">REST API Reference for DeleteApplication Operation</seealso>
+        public virtual IAsyncResult BeginDeleteApplication(DeleteApplicationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteApplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteApplicationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteApplication operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteApplication.</param>
+        /// 
+        /// <returns>Returns a  DeleteApplicationResult from Mgn.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DeleteApplication">REST API Reference for DeleteApplication Operation</seealso>
+        public virtual DeleteApplicationResponse EndDeleteApplication(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteApplicationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteJob
 
         /// <summary>
@@ -404,7 +936,7 @@ namespace Amazon.Mgn
         /// Resource not found exception.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
-        /// Unitialized account exception.
+        /// Uninitialized account exception.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DeleteJob">REST API Reference for DeleteJob Operation</seealso>
         public virtual DeleteJobResponse DeleteJob(DeleteJobRequest request)
@@ -452,6 +984,70 @@ namespace Amazon.Mgn
 
         #endregion
         
+        #region  DeleteLaunchConfigurationTemplate
+
+        /// <summary>
+        /// Deletes a single Launch Configuration Template by ID.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLaunchConfigurationTemplate service method.</param>
+        /// 
+        /// <returns>The response from the DeleteLaunchConfigurationTemplate service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DeleteLaunchConfigurationTemplate">REST API Reference for DeleteLaunchConfigurationTemplate Operation</seealso>
+        public virtual DeleteLaunchConfigurationTemplateResponse DeleteLaunchConfigurationTemplate(DeleteLaunchConfigurationTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteLaunchConfigurationTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteLaunchConfigurationTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteLaunchConfigurationTemplateResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteLaunchConfigurationTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLaunchConfigurationTemplate operation on AmazonMgnClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteLaunchConfigurationTemplate
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DeleteLaunchConfigurationTemplate">REST API Reference for DeleteLaunchConfigurationTemplate Operation</seealso>
+        public virtual IAsyncResult BeginDeleteLaunchConfigurationTemplate(DeleteLaunchConfigurationTemplateRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteLaunchConfigurationTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteLaunchConfigurationTemplateResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteLaunchConfigurationTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteLaunchConfigurationTemplate.</param>
+        /// 
+        /// <returns>Returns a  DeleteLaunchConfigurationTemplateResult from Mgn.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DeleteLaunchConfigurationTemplate">REST API Reference for DeleteLaunchConfigurationTemplate Operation</seealso>
+        public virtual DeleteLaunchConfigurationTemplateResponse EndDeleteLaunchConfigurationTemplate(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteLaunchConfigurationTemplateResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteReplicationConfigurationTemplate
 
         /// <summary>
@@ -468,7 +1064,7 @@ namespace Amazon.Mgn
         /// Resource not found exception.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
-        /// Unitialized account exception.
+        /// Uninitialized account exception.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DeleteReplicationConfigurationTemplate">REST API Reference for DeleteReplicationConfigurationTemplate Operation</seealso>
         public virtual DeleteReplicationConfigurationTemplateResponse DeleteReplicationConfigurationTemplate(DeleteReplicationConfigurationTemplateRequest request)
@@ -532,7 +1128,7 @@ namespace Amazon.Mgn
         /// Resource not found exception.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
-        /// Unitialized account exception.
+        /// Uninitialized account exception.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DeleteSourceServer">REST API Reference for DeleteSourceServer Operation</seealso>
         public virtual DeleteSourceServerResponse DeleteSourceServer(DeleteSourceServerRequest request)
@@ -583,7 +1179,7 @@ namespace Amazon.Mgn
         #region  DeleteVcenterClient
 
         /// <summary>
-        /// Deletes a single vCenter client by ID.
+        /// Deletes a given vCenter client by ID.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteVcenterClient service method.</param>
         /// 
@@ -592,7 +1188,7 @@ namespace Amazon.Mgn
         /// Resource not found exception.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
-        /// Unitialized account exception.
+        /// Uninitialized account exception.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ValidationException">
         /// Validate exception.
@@ -643,16 +1239,80 @@ namespace Amazon.Mgn
 
         #endregion
         
+        #region  DeleteWave
+
+        /// <summary>
+        /// Delete wave.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteWave service method.</param>
+        /// 
+        /// <returns>The response from the DeleteWave service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DeleteWave">REST API Reference for DeleteWave Operation</seealso>
+        public virtual DeleteWaveResponse DeleteWave(DeleteWaveRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteWaveRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteWaveResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteWaveResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteWave operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteWave operation on AmazonMgnClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteWave
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DeleteWave">REST API Reference for DeleteWave Operation</seealso>
+        public virtual IAsyncResult BeginDeleteWave(DeleteWaveRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteWaveRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteWaveResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteWave operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteWave.</param>
+        /// 
+        /// <returns>Returns a  DeleteWaveResult from Mgn.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DeleteWave">REST API Reference for DeleteWave Operation</seealso>
+        public virtual DeleteWaveResponse EndDeleteWave(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteWaveResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeJobLogItems
 
         /// <summary>
-        /// Retrieves detailed Job log with paging.
+        /// Retrieves detailed job log items with paging.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeJobLogItems service method.</param>
         /// 
         /// <returns>The response from the DescribeJobLogItems service method, as returned by Mgn.</returns>
         /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
-        /// Unitialized account exception.
+        /// Uninitialized account exception.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ValidationException">
         /// Validate exception.
@@ -708,7 +1368,7 @@ namespace Amazon.Mgn
         /// <summary>
         /// Returns a list of Jobs. Use the JobsID and fromDate and toData filters to limit which
         /// jobs are returned. The response is sorted by creationDataTime - latest date first.
-        /// Jobs are normaly created by the StartTest, StartCutover, and TerminateTargetInstances
+        /// Jobs are normally created by the StartTest, StartCutover, and TerminateTargetInstances
         /// APIs. Jobs are also created by DiagnosticLaunch and TerminateDiagnosticInstances,
         /// which are APIs available only to *Support* and only used in response to relevant support
         /// tickets.
@@ -717,7 +1377,7 @@ namespace Amazon.Mgn
         /// 
         /// <returns>The response from the DescribeJobs service method, as returned by Mgn.</returns>
         /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
-        /// Unitialized account exception.
+        /// Uninitialized account exception.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ValidationException">
         /// Validate exception.
@@ -768,6 +1428,70 @@ namespace Amazon.Mgn
 
         #endregion
         
+        #region  DescribeLaunchConfigurationTemplates
+
+        /// <summary>
+        /// Lists all Launch Configuration Templates, filtered by Launch Configuration Template
+        /// IDs
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeLaunchConfigurationTemplates service method.</param>
+        /// 
+        /// <returns>The response from the DescribeLaunchConfigurationTemplates service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DescribeLaunchConfigurationTemplates">REST API Reference for DescribeLaunchConfigurationTemplates Operation</seealso>
+        public virtual DescribeLaunchConfigurationTemplatesResponse DescribeLaunchConfigurationTemplates(DescribeLaunchConfigurationTemplatesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeLaunchConfigurationTemplatesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeLaunchConfigurationTemplatesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeLaunchConfigurationTemplatesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeLaunchConfigurationTemplates operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeLaunchConfigurationTemplates operation on AmazonMgnClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeLaunchConfigurationTemplates
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DescribeLaunchConfigurationTemplates">REST API Reference for DescribeLaunchConfigurationTemplates Operation</seealso>
+        public virtual IAsyncResult BeginDescribeLaunchConfigurationTemplates(DescribeLaunchConfigurationTemplatesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeLaunchConfigurationTemplatesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeLaunchConfigurationTemplatesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeLaunchConfigurationTemplates operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeLaunchConfigurationTemplates.</param>
+        /// 
+        /// <returns>Returns a  DescribeLaunchConfigurationTemplatesResult from Mgn.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DescribeLaunchConfigurationTemplates">REST API Reference for DescribeLaunchConfigurationTemplates Operation</seealso>
+        public virtual DescribeLaunchConfigurationTemplatesResponse EndDescribeLaunchConfigurationTemplates(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeLaunchConfigurationTemplatesResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeReplicationConfigurationTemplates
 
         /// <summary>
@@ -780,7 +1504,7 @@ namespace Amazon.Mgn
         /// Resource not found exception.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
-        /// Unitialized account exception.
+        /// Uninitialized account exception.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ValidationException">
         /// Validate exception.
@@ -840,7 +1564,7 @@ namespace Amazon.Mgn
         /// 
         /// <returns>The response from the DescribeSourceServers service method, as returned by Mgn.</returns>
         /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
-        /// Unitialized account exception.
+        /// Uninitialized account exception.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ValidationException">
         /// Validate exception.
@@ -894,7 +1618,7 @@ namespace Amazon.Mgn
         #region  DescribeVcenterClients
 
         /// <summary>
-        /// Lists all vCenter clients.
+        /// Returns a list of the installed vCenter clients.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeVcenterClients service method.</param>
         /// 
@@ -903,7 +1627,7 @@ namespace Amazon.Mgn
         /// Resource not found exception.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
-        /// Unitialized account exception.
+        /// Uninitialized account exception.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ValidationException">
         /// Validate exception.
@@ -954,6 +1678,134 @@ namespace Amazon.Mgn
 
         #endregion
         
+        #region  DisassociateApplications
+
+        /// <summary>
+        /// Disassociate applications from wave.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateApplications service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateApplications service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DisassociateApplications">REST API Reference for DisassociateApplications Operation</seealso>
+        public virtual DisassociateApplicationsResponse DisassociateApplications(DisassociateApplicationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateApplicationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateApplicationsResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateApplicationsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateApplications operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateApplications operation on AmazonMgnClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateApplications
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DisassociateApplications">REST API Reference for DisassociateApplications Operation</seealso>
+        public virtual IAsyncResult BeginDisassociateApplications(DisassociateApplicationsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateApplicationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateApplicationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisassociateApplications operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisassociateApplications.</param>
+        /// 
+        /// <returns>Returns a  DisassociateApplicationsResult from Mgn.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DisassociateApplications">REST API Reference for DisassociateApplications Operation</seealso>
+        public virtual DisassociateApplicationsResponse EndDisassociateApplications(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DisassociateApplicationsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DisassociateSourceServers
+
+        /// <summary>
+        /// Disassociate source servers from application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateSourceServers service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateSourceServers service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DisassociateSourceServers">REST API Reference for DisassociateSourceServers Operation</seealso>
+        public virtual DisassociateSourceServersResponse DisassociateSourceServers(DisassociateSourceServersRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateSourceServersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateSourceServersResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateSourceServersResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateSourceServers operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateSourceServers operation on AmazonMgnClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateSourceServers
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DisassociateSourceServers">REST API Reference for DisassociateSourceServers Operation</seealso>
+        public virtual IAsyncResult BeginDisassociateSourceServers(DisassociateSourceServersRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateSourceServersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateSourceServersResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisassociateSourceServers operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisassociateSourceServers.</param>
+        /// 
+        /// <returns>Returns a  DisassociateSourceServersResult from Mgn.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DisassociateSourceServers">REST API Reference for DisassociateSourceServers Operation</seealso>
+        public virtual DisassociateSourceServersResponse EndDisassociateSourceServers(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DisassociateSourceServersResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DisconnectFromService
 
         /// <summary>
@@ -961,13 +1813,13 @@ namespace Amazon.Mgn
         /// is stopped immediately. All AWS resources created by Application Migration Service
         /// for enabling the replication of these source servers will be terminated / deleted
         /// within 90 minutes. Launched Test or Cutover instances will NOT be terminated. If the
-        /// agent on the source server has not been prevented from communciating with the Application
+        /// agent on the source server has not been prevented from communicating with the Application
         /// Migration Service service, then it will receive a command to uninstall itself (within
         /// approximately 10 minutes). The following properties of the SourceServer will be changed
         /// immediately: dataReplicationInfo.dataReplicationState will be set to DISCONNECTED;
         /// The totalStorageBytes property for each of dataReplicationInfo.replicatedDisks will
-        /// be set to zero; dataReplicationInfo.lagDuration and dataReplicationInfo.lagDurationwill
-        /// be nullified.
+        /// be set to zero; dataReplicationInfo.lagDuration and dataReplicationInfo.lagDuration
+        /// will be nullified.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisconnectFromService service method.</param>
         /// 
@@ -980,7 +1832,7 @@ namespace Amazon.Mgn
         /// Resource not found exception.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
-        /// Unitialized account exception.
+        /// Uninitialized account exception.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DisconnectFromService">REST API Reference for DisconnectFromService Operation</seealso>
         public virtual DisconnectFromServiceResponse DisconnectFromService(DisconnectFromServiceRequest request)
@@ -1036,10 +1888,10 @@ namespace Amazon.Mgn
         /// will be terminated / deleted within 90 minutes. Launched Test or Cutover instances
         /// will NOT be terminated. The AWS Replication Agent will receive a command to uninstall
         /// itself (within 10 minutes). The following properties of the SourceServer will be changed
-        /// immediately: dataReplicationInfo.dataReplicationState will be to DISCONNECTED; The
-        /// SourceServer.lifeCycle.state will be changed to CUTOVER; The totalStorageBytes property
-        /// fo each of dataReplicationInfo.replicatedDisks will be set to zero; dataReplicationInfo.lagDuration
-        /// and dataReplicationInfo.lagDurationwill be nullified.
+        /// immediately: dataReplicationInfo.dataReplicationState will be changed to DISCONNECTED;
+        /// The SourceServer.lifeCycle.state will be changed to CUTOVER; The totalStorageBytes
+        /// property fo each of dataReplicationInfo.replicatedDisks will be set to zero; dataReplicationInfo.lagDuration
+        /// and dataReplicationInfo.lagDuration will be nullified.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the FinalizeCutover service method.</param>
         /// 
@@ -1052,7 +1904,7 @@ namespace Amazon.Mgn
         /// Resource not found exception.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
-        /// Unitialized account exception.
+        /// Uninitialized account exception.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ValidationException">
         /// Validate exception.
@@ -1115,7 +1967,7 @@ namespace Amazon.Mgn
         /// Resource not found exception.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
-        /// Unitialized account exception.
+        /// Uninitialized account exception.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/GetLaunchConfiguration">REST API Reference for GetLaunchConfiguration Operation</seealso>
         public virtual GetLaunchConfigurationResponse GetLaunchConfiguration(GetLaunchConfigurationRequest request)
@@ -1175,7 +2027,7 @@ namespace Amazon.Mgn
         /// Resource not found exception.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
-        /// Unitialized account exception.
+        /// Uninitialized account exception.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/GetReplicationConfiguration">REST API Reference for GetReplicationConfiguration Operation</seealso>
         public virtual GetReplicationConfigurationResponse GetReplicationConfiguration(GetReplicationConfigurationRequest request)
@@ -1283,6 +2135,360 @@ namespace Amazon.Mgn
 
         #endregion
         
+        #region  ListApplications
+
+        /// <summary>
+        /// Retrieves all applications or multiple applications by ID.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListApplications service method.</param>
+        /// 
+        /// <returns>The response from the ListApplications service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListApplications">REST API Reference for ListApplications Operation</seealso>
+        public virtual ListApplicationsResponse ListApplications(ListApplicationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListApplicationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListApplicationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListApplicationsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListApplications operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListApplications operation on AmazonMgnClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListApplications
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListApplications">REST API Reference for ListApplications Operation</seealso>
+        public virtual IAsyncResult BeginListApplications(ListApplicationsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListApplicationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListApplicationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListApplications operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListApplications.</param>
+        /// 
+        /// <returns>Returns a  ListApplicationsResult from Mgn.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListApplications">REST API Reference for ListApplications Operation</seealso>
+        public virtual ListApplicationsResponse EndListApplications(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListApplicationsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListExportErrors
+
+        /// <summary>
+        /// List export errors.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListExportErrors service method.</param>
+        /// 
+        /// <returns>The response from the ListExportErrors service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListExportErrors">REST API Reference for ListExportErrors Operation</seealso>
+        public virtual ListExportErrorsResponse ListExportErrors(ListExportErrorsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListExportErrorsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListExportErrorsResponseUnmarshaller.Instance;
+
+            return Invoke<ListExportErrorsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListExportErrors operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListExportErrors operation on AmazonMgnClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListExportErrors
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListExportErrors">REST API Reference for ListExportErrors Operation</seealso>
+        public virtual IAsyncResult BeginListExportErrors(ListExportErrorsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListExportErrorsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListExportErrorsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListExportErrors operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListExportErrors.</param>
+        /// 
+        /// <returns>Returns a  ListExportErrorsResult from Mgn.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListExportErrors">REST API Reference for ListExportErrors Operation</seealso>
+        public virtual ListExportErrorsResponse EndListExportErrors(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListExportErrorsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListExports
+
+        /// <summary>
+        /// List exports.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListExports service method.</param>
+        /// 
+        /// <returns>The response from the ListExports service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListExports">REST API Reference for ListExports Operation</seealso>
+        public virtual ListExportsResponse ListExports(ListExportsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListExportsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListExportsResponseUnmarshaller.Instance;
+
+            return Invoke<ListExportsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListExports operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListExports operation on AmazonMgnClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListExports
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListExports">REST API Reference for ListExports Operation</seealso>
+        public virtual IAsyncResult BeginListExports(ListExportsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListExportsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListExportsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListExports operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListExports.</param>
+        /// 
+        /// <returns>Returns a  ListExportsResult from Mgn.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListExports">REST API Reference for ListExports Operation</seealso>
+        public virtual ListExportsResponse EndListExports(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListExportsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListImportErrors
+
+        /// <summary>
+        /// List import errors.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListImportErrors service method.</param>
+        /// 
+        /// <returns>The response from the ListImportErrors service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListImportErrors">REST API Reference for ListImportErrors Operation</seealso>
+        public virtual ListImportErrorsResponse ListImportErrors(ListImportErrorsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListImportErrorsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListImportErrorsResponseUnmarshaller.Instance;
+
+            return Invoke<ListImportErrorsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListImportErrors operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListImportErrors operation on AmazonMgnClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListImportErrors
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListImportErrors">REST API Reference for ListImportErrors Operation</seealso>
+        public virtual IAsyncResult BeginListImportErrors(ListImportErrorsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListImportErrorsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListImportErrorsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListImportErrors operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListImportErrors.</param>
+        /// 
+        /// <returns>Returns a  ListImportErrorsResult from Mgn.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListImportErrors">REST API Reference for ListImportErrors Operation</seealso>
+        public virtual ListImportErrorsResponse EndListImportErrors(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListImportErrorsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListImports
+
+        /// <summary>
+        /// List imports.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListImports service method.</param>
+        /// 
+        /// <returns>The response from the ListImports service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListImports">REST API Reference for ListImports Operation</seealso>
+        public virtual ListImportsResponse ListImports(ListImportsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListImportsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListImportsResponseUnmarshaller.Instance;
+
+            return Invoke<ListImportsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListImports operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListImports operation on AmazonMgnClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListImports
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListImports">REST API Reference for ListImports Operation</seealso>
+        public virtual IAsyncResult BeginListImports(ListImportsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListImportsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListImportsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListImports operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListImports.</param>
+        /// 
+        /// <returns>Returns a  ListImportsResult from Mgn.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListImports">REST API Reference for ListImports Operation</seealso>
+        public virtual ListImportsResponse EndListImports(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListImportsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListSourceServerActions
+
+        /// <summary>
+        /// List source server post migration custom actions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSourceServerActions service method.</param>
+        /// 
+        /// <returns>The response from the ListSourceServerActions service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListSourceServerActions">REST API Reference for ListSourceServerActions Operation</seealso>
+        public virtual ListSourceServerActionsResponse ListSourceServerActions(ListSourceServerActionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSourceServerActionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSourceServerActionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListSourceServerActionsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListSourceServerActions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListSourceServerActions operation on AmazonMgnClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListSourceServerActions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListSourceServerActions">REST API Reference for ListSourceServerActions Operation</seealso>
+        public virtual IAsyncResult BeginListSourceServerActions(ListSourceServerActionsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSourceServerActionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSourceServerActionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListSourceServerActions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListSourceServerActions.</param>
+        /// 
+        /// <returns>Returns a  ListSourceServerActionsResult from Mgn.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListSourceServerActions">REST API Reference for ListSourceServerActions Operation</seealso>
+        public virtual ListSourceServerActionsResponse EndListSourceServerActions(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListSourceServerActionsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListTagsForResource
 
         /// <summary>
@@ -1353,12 +2559,129 @@ namespace Amazon.Mgn
 
         #endregion
         
+        #region  ListTemplateActions
+
+        /// <summary>
+        /// List template post migration custom actions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTemplateActions service method.</param>
+        /// 
+        /// <returns>The response from the ListTemplateActions service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListTemplateActions">REST API Reference for ListTemplateActions Operation</seealso>
+        public virtual ListTemplateActionsResponse ListTemplateActions(ListTemplateActionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTemplateActionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTemplateActionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListTemplateActionsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTemplateActions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTemplateActions operation on AmazonMgnClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTemplateActions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListTemplateActions">REST API Reference for ListTemplateActions Operation</seealso>
+        public virtual IAsyncResult BeginListTemplateActions(ListTemplateActionsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTemplateActionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTemplateActionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListTemplateActions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTemplateActions.</param>
+        /// 
+        /// <returns>Returns a  ListTemplateActionsResult from Mgn.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListTemplateActions">REST API Reference for ListTemplateActions Operation</seealso>
+        public virtual ListTemplateActionsResponse EndListTemplateActions(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListTemplateActionsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListWaves
+
+        /// <summary>
+        /// Retrieves all waves or multiple waves by ID.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListWaves service method.</param>
+        /// 
+        /// <returns>The response from the ListWaves service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListWaves">REST API Reference for ListWaves Operation</seealso>
+        public virtual ListWavesResponse ListWaves(ListWavesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListWavesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListWavesResponseUnmarshaller.Instance;
+
+            return Invoke<ListWavesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListWaves operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListWaves operation on AmazonMgnClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListWaves
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListWaves">REST API Reference for ListWaves Operation</seealso>
+        public virtual IAsyncResult BeginListWaves(ListWavesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListWavesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListWavesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListWaves operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListWaves.</param>
+        /// 
+        /// <returns>Returns a  ListWavesResult from Mgn.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListWaves">REST API Reference for ListWaves Operation</seealso>
+        public virtual ListWavesResponse EndListWaves(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListWavesResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  MarkAsArchived
 
         /// <summary>
         /// Archives specific Source Servers by setting the SourceServer.isArchived property to
         /// true for specified SourceServers by ID. This command only works for SourceServers
-        /// with a lifecycle.state which equals DISCONNECTED or CUTOVER.
+        /// with a lifecycle. state which equals DISCONNECTED or CUTOVER.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the MarkAsArchived service method.</param>
         /// 
@@ -1371,7 +2694,7 @@ namespace Amazon.Mgn
         /// Resource not found exception.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
-        /// Unitialized account exception.
+        /// Uninitialized account exception.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/MarkAsArchived">REST API Reference for MarkAsArchived Operation</seealso>
         public virtual MarkAsArchivedResponse MarkAsArchived(MarkAsArchivedRequest request)
@@ -1419,6 +2742,266 @@ namespace Amazon.Mgn
 
         #endregion
         
+        #region  PutSourceServerAction
+
+        /// <summary>
+        /// Put source server post migration custom action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutSourceServerAction service method.</param>
+        /// 
+        /// <returns>The response from the PutSourceServerAction service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/PutSourceServerAction">REST API Reference for PutSourceServerAction Operation</seealso>
+        public virtual PutSourceServerActionResponse PutSourceServerAction(PutSourceServerActionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutSourceServerActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutSourceServerActionResponseUnmarshaller.Instance;
+
+            return Invoke<PutSourceServerActionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutSourceServerAction operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutSourceServerAction operation on AmazonMgnClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutSourceServerAction
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/PutSourceServerAction">REST API Reference for PutSourceServerAction Operation</seealso>
+        public virtual IAsyncResult BeginPutSourceServerAction(PutSourceServerActionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutSourceServerActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutSourceServerActionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutSourceServerAction operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutSourceServerAction.</param>
+        /// 
+        /// <returns>Returns a  PutSourceServerActionResult from Mgn.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/PutSourceServerAction">REST API Reference for PutSourceServerAction Operation</seealso>
+        public virtual PutSourceServerActionResponse EndPutSourceServerAction(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PutSourceServerActionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  PutTemplateAction
+
+        /// <summary>
+        /// Put template post migration custom action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutTemplateAction service method.</param>
+        /// 
+        /// <returns>The response from the PutTemplateAction service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/PutTemplateAction">REST API Reference for PutTemplateAction Operation</seealso>
+        public virtual PutTemplateActionResponse PutTemplateAction(PutTemplateActionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutTemplateActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutTemplateActionResponseUnmarshaller.Instance;
+
+            return Invoke<PutTemplateActionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutTemplateAction operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutTemplateAction operation on AmazonMgnClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutTemplateAction
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/PutTemplateAction">REST API Reference for PutTemplateAction Operation</seealso>
+        public virtual IAsyncResult BeginPutTemplateAction(PutTemplateActionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutTemplateActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutTemplateActionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutTemplateAction operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutTemplateAction.</param>
+        /// 
+        /// <returns>Returns a  PutTemplateActionResult from Mgn.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/PutTemplateAction">REST API Reference for PutTemplateAction Operation</seealso>
+        public virtual PutTemplateActionResponse EndPutTemplateAction(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PutTemplateActionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  RemoveSourceServerAction
+
+        /// <summary>
+        /// Remove source server post migration custom action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RemoveSourceServerAction service method.</param>
+        /// 
+        /// <returns>The response from the RemoveSourceServerAction service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/RemoveSourceServerAction">REST API Reference for RemoveSourceServerAction Operation</seealso>
+        public virtual RemoveSourceServerActionResponse RemoveSourceServerAction(RemoveSourceServerActionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RemoveSourceServerActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RemoveSourceServerActionResponseUnmarshaller.Instance;
+
+            return Invoke<RemoveSourceServerActionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RemoveSourceServerAction operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RemoveSourceServerAction operation on AmazonMgnClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRemoveSourceServerAction
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/RemoveSourceServerAction">REST API Reference for RemoveSourceServerAction Operation</seealso>
+        public virtual IAsyncResult BeginRemoveSourceServerAction(RemoveSourceServerActionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RemoveSourceServerActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RemoveSourceServerActionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  RemoveSourceServerAction operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRemoveSourceServerAction.</param>
+        /// 
+        /// <returns>Returns a  RemoveSourceServerActionResult from Mgn.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/RemoveSourceServerAction">REST API Reference for RemoveSourceServerAction Operation</seealso>
+        public virtual RemoveSourceServerActionResponse EndRemoveSourceServerAction(IAsyncResult asyncResult)
+        {
+            return EndInvoke<RemoveSourceServerActionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  RemoveTemplateAction
+
+        /// <summary>
+        /// Remove template post migration custom action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RemoveTemplateAction service method.</param>
+        /// 
+        /// <returns>The response from the RemoveTemplateAction service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/RemoveTemplateAction">REST API Reference for RemoveTemplateAction Operation</seealso>
+        public virtual RemoveTemplateActionResponse RemoveTemplateAction(RemoveTemplateActionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RemoveTemplateActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RemoveTemplateActionResponseUnmarshaller.Instance;
+
+            return Invoke<RemoveTemplateActionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RemoveTemplateAction operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RemoveTemplateAction operation on AmazonMgnClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRemoveTemplateAction
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/RemoveTemplateAction">REST API Reference for RemoveTemplateAction Operation</seealso>
+        public virtual IAsyncResult BeginRemoveTemplateAction(RemoveTemplateActionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RemoveTemplateActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RemoveTemplateActionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  RemoveTemplateAction operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRemoveTemplateAction.</param>
+        /// 
+        /// <returns>Returns a  RemoveTemplateActionResult from Mgn.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/RemoveTemplateAction">REST API Reference for RemoveTemplateAction Operation</seealso>
+        public virtual RemoveTemplateActionResponse EndRemoveTemplateAction(IAsyncResult asyncResult)
+        {
+            return EndInvoke<RemoveTemplateActionResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  RetryDataReplication
 
         /// <summary>
@@ -1434,7 +3017,7 @@ namespace Amazon.Mgn
         /// Resource not found exception.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
-        /// Unitialized account exception.
+        /// Uninitialized account exception.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ValidationException">
         /// Validate exception.
@@ -1500,7 +3083,7 @@ namespace Amazon.Mgn
         /// target resource.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
-        /// Unitialized account exception.
+        /// Uninitialized account exception.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ValidationException">
         /// Validate exception.
@@ -1551,10 +3134,143 @@ namespace Amazon.Mgn
 
         #endregion
         
+        #region  StartExport
+
+        /// <summary>
+        /// Start export.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartExport service method.</param>
+        /// 
+        /// <returns>The response from the StartExport service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.ServiceQuotaExceededException">
+        /// The request could not be completed because its exceeded the service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/StartExport">REST API Reference for StartExport Operation</seealso>
+        public virtual StartExportResponse StartExport(StartExportRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartExportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartExportResponseUnmarshaller.Instance;
+
+            return Invoke<StartExportResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartExport operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartExport operation on AmazonMgnClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartExport
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/StartExport">REST API Reference for StartExport Operation</seealso>
+        public virtual IAsyncResult BeginStartExport(StartExportRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartExportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartExportResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartExport operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartExport.</param>
+        /// 
+        /// <returns>Returns a  StartExportResult from Mgn.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/StartExport">REST API Reference for StartExport Operation</seealso>
+        public virtual StartExportResponse EndStartExport(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartExportResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StartImport
+
+        /// <summary>
+        /// Start import.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartImport service method.</param>
+        /// 
+        /// <returns>The response from the StartImport service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ServiceQuotaExceededException">
+        /// The request could not be completed because its exceeded the service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/StartImport">REST API Reference for StartImport Operation</seealso>
+        public virtual StartImportResponse StartImport(StartImportRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartImportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartImportResponseUnmarshaller.Instance;
+
+            return Invoke<StartImportResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartImport operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartImport operation on AmazonMgnClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartImport
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/StartImport">REST API Reference for StartImport Operation</seealso>
+        public virtual IAsyncResult BeginStartImport(StartImportRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartImportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartImportResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartImport operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartImport.</param>
+        /// 
+        /// <returns>Returns a  StartImportResult from Mgn.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/StartImport">REST API Reference for StartImport Operation</seealso>
+        public virtual StartImportResponse EndStartImport(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartImportResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  StartReplication
 
         /// <summary>
-        /// Starts replication on source server by ID.
+        /// Starts replication for SNAPSHOT_SHIPPING agents.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartReplication service method.</param>
         /// 
@@ -1570,7 +3286,7 @@ namespace Amazon.Mgn
         /// The request could not be completed because its exceeded the service quota.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
-        /// Unitialized account exception.
+        /// Uninitialized account exception.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ValidationException">
         /// Validate exception.
@@ -1624,7 +3340,7 @@ namespace Amazon.Mgn
         #region  StartTest
 
         /// <summary>
-        /// Lauches a Test Instance for specific Source Servers. This command starts a LAUNCH
+        /// Launches a Test Instance for specific Source Servers. This command starts a LAUNCH
         /// job whose initiatedBy property is StartTest and changes the SourceServer.lifeCycle.state
         /// property to TESTING.
         /// </summary>
@@ -1636,7 +3352,7 @@ namespace Amazon.Mgn
         /// target resource.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
-        /// Unitialized account exception.
+        /// Uninitialized account exception.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ValidationException">
         /// Validate exception.
@@ -1775,7 +3491,7 @@ namespace Amazon.Mgn
         /// target resource.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
-        /// Unitialized account exception.
+        /// Uninitialized account exception.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ValidationException">
         /// Validate exception.
@@ -1822,6 +3538,132 @@ namespace Amazon.Mgn
         public virtual TerminateTargetInstancesResponse EndTerminateTargetInstances(IAsyncResult asyncResult)
         {
             return EndInvoke<TerminateTargetInstancesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UnarchiveApplication
+
+        /// <summary>
+        /// Unarchive application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UnarchiveApplication service method.</param>
+        /// 
+        /// <returns>The response from the UnarchiveApplication service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ServiceQuotaExceededException">
+        /// The request could not be completed because its exceeded the service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UnarchiveApplication">REST API Reference for UnarchiveApplication Operation</seealso>
+        public virtual UnarchiveApplicationResponse UnarchiveApplication(UnarchiveApplicationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UnarchiveApplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UnarchiveApplicationResponseUnmarshaller.Instance;
+
+            return Invoke<UnarchiveApplicationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UnarchiveApplication operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UnarchiveApplication operation on AmazonMgnClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUnarchiveApplication
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UnarchiveApplication">REST API Reference for UnarchiveApplication Operation</seealso>
+        public virtual IAsyncResult BeginUnarchiveApplication(UnarchiveApplicationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UnarchiveApplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UnarchiveApplicationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UnarchiveApplication operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUnarchiveApplication.</param>
+        /// 
+        /// <returns>Returns a  UnarchiveApplicationResult from Mgn.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UnarchiveApplication">REST API Reference for UnarchiveApplication Operation</seealso>
+        public virtual UnarchiveApplicationResponse EndUnarchiveApplication(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UnarchiveApplicationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UnarchiveWave
+
+        /// <summary>
+        /// Unarchive wave.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UnarchiveWave service method.</param>
+        /// 
+        /// <returns>The response from the UnarchiveWave service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ServiceQuotaExceededException">
+        /// The request could not be completed because its exceeded the service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UnarchiveWave">REST API Reference for UnarchiveWave Operation</seealso>
+        public virtual UnarchiveWaveResponse UnarchiveWave(UnarchiveWaveRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UnarchiveWaveRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UnarchiveWaveResponseUnmarshaller.Instance;
+
+            return Invoke<UnarchiveWaveResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UnarchiveWave operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UnarchiveWave operation on AmazonMgnClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUnarchiveWave
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UnarchiveWave">REST API Reference for UnarchiveWave Operation</seealso>
+        public virtual IAsyncResult BeginUnarchiveWave(UnarchiveWaveRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UnarchiveWaveRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UnarchiveWaveResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UnarchiveWave operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUnarchiveWave.</param>
+        /// 
+        /// <returns>Returns a  UnarchiveWaveResult from Mgn.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UnarchiveWave">REST API Reference for UnarchiveWave Operation</seealso>
+        public virtual UnarchiveWaveResponse EndUnarchiveWave(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UnarchiveWaveResponse>(asyncResult);
         }
 
         #endregion
@@ -1897,6 +3739,70 @@ namespace Amazon.Mgn
 
         #endregion
         
+        #region  UpdateApplication
+
+        /// <summary>
+        /// Update application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateApplication service method.</param>
+        /// 
+        /// <returns>The response from the UpdateApplication service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UpdateApplication">REST API Reference for UpdateApplication Operation</seealso>
+        public virtual UpdateApplicationResponse UpdateApplication(UpdateApplicationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateApplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateApplicationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateApplicationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateApplication operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateApplication operation on AmazonMgnClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateApplication
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UpdateApplication">REST API Reference for UpdateApplication Operation</seealso>
+        public virtual IAsyncResult BeginUpdateApplication(UpdateApplicationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateApplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateApplicationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateApplication operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateApplication.</param>
+        /// 
+        /// <returns>Returns a  UpdateApplicationResult from Mgn.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UpdateApplication">REST API Reference for UpdateApplication Operation</seealso>
+        public virtual UpdateApplicationResponse EndUpdateApplication(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateApplicationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  UpdateLaunchConfiguration
 
         /// <summary>
@@ -1913,7 +3819,7 @@ namespace Amazon.Mgn
         /// Resource not found exception.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
-        /// Unitialized account exception.
+        /// Uninitialized account exception.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ValidationException">
         /// Validate exception.
@@ -1964,6 +3870,72 @@ namespace Amazon.Mgn
 
         #endregion
         
+        #region  UpdateLaunchConfigurationTemplate
+
+        /// <summary>
+        /// Updates an existing Launch Configuration Template by ID.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateLaunchConfigurationTemplate service method.</param>
+        /// 
+        /// <returns>The response from the UpdateLaunchConfigurationTemplate service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
+        /// Operating denied due to a file permission or access check error.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UpdateLaunchConfigurationTemplate">REST API Reference for UpdateLaunchConfigurationTemplate Operation</seealso>
+        public virtual UpdateLaunchConfigurationTemplateResponse UpdateLaunchConfigurationTemplate(UpdateLaunchConfigurationTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateLaunchConfigurationTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateLaunchConfigurationTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateLaunchConfigurationTemplateResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateLaunchConfigurationTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateLaunchConfigurationTemplate operation on AmazonMgnClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateLaunchConfigurationTemplate
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UpdateLaunchConfigurationTemplate">REST API Reference for UpdateLaunchConfigurationTemplate Operation</seealso>
+        public virtual IAsyncResult BeginUpdateLaunchConfigurationTemplate(UpdateLaunchConfigurationTemplateRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateLaunchConfigurationTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateLaunchConfigurationTemplateResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateLaunchConfigurationTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateLaunchConfigurationTemplate.</param>
+        /// 
+        /// <returns>Returns a  UpdateLaunchConfigurationTemplateResult from Mgn.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UpdateLaunchConfigurationTemplate">REST API Reference for UpdateLaunchConfigurationTemplate Operation</seealso>
+        public virtual UpdateLaunchConfigurationTemplateResponse EndUpdateLaunchConfigurationTemplate(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateLaunchConfigurationTemplateResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  UpdateReplicationConfiguration
 
         /// <summary>
@@ -1983,7 +3955,7 @@ namespace Amazon.Mgn
         /// Resource not found exception.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
-        /// Unitialized account exception.
+        /// Uninitialized account exception.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ValidationException">
         /// Validate exception.
@@ -2049,7 +4021,7 @@ namespace Amazon.Mgn
         /// Resource not found exception.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
-        /// Unitialized account exception.
+        /// Uninitialized account exception.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ValidationException">
         /// Validate exception.
@@ -2103,7 +4075,8 @@ namespace Amazon.Mgn
         #region  UpdateSourceServerReplicationType
 
         /// <summary>
-        /// Updates source server Replication Type by ID.
+        /// Allows you to change between the AGENT_BASED replication type and the SNAPSHOT_SHIPPING
+        /// replication type.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateSourceServerReplicationType service method.</param>
         /// 
@@ -2116,7 +4089,7 @@ namespace Amazon.Mgn
         /// Resource not found exception.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
-        /// Unitialized account exception.
+        /// Uninitialized account exception.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ValidationException">
         /// Validate exception.
@@ -2163,6 +4136,70 @@ namespace Amazon.Mgn
         public virtual UpdateSourceServerReplicationTypeResponse EndUpdateSourceServerReplicationType(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateSourceServerReplicationTypeResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateWave
+
+        /// <summary>
+        /// Update wave.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateWave service method.</param>
+        /// 
+        /// <returns>The response from the UpdateWave service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UpdateWave">REST API Reference for UpdateWave Operation</seealso>
+        public virtual UpdateWaveResponse UpdateWave(UpdateWaveRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateWaveRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateWaveResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateWaveResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateWave operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateWave operation on AmazonMgnClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateWave
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UpdateWave">REST API Reference for UpdateWave Operation</seealso>
+        public virtual IAsyncResult BeginUpdateWave(UpdateWaveRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateWaveRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateWaveResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateWave operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateWave.</param>
+        /// 
+        /// <returns>Returns a  UpdateWaveResult from Mgn.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UpdateWave">REST API Reference for UpdateWave Operation</seealso>
+        public virtual UpdateWaveResponse EndUpdateWave(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateWaveResponse>(asyncResult);
         }
 
         #endregion

@@ -43,8 +43,8 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  
         /// <para>
-        /// When omitted, the response includes all of your container services in the AWS Region
-        /// where the request is made.
+        /// When omitted, the response includes all of your container services in the Amazon Web
+        /// Services Region where the request is made.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=63)]

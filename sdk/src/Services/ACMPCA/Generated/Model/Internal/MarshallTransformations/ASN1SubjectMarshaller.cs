@@ -34,7 +34,7 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ASN1Subject Marshaller
-    /// </summary>       
+    /// </summary>
     public class ASN1SubjectMarshaller : IRequestMarshaller<ASN1Subject, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,6 +55,22 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("Country");
                 context.Writer.Write(requestObject.Country);
+            }
+
+            if(requestObject.IsSetCustomAttributes())
+            {
+                context.Writer.WritePropertyName("CustomAttributes");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectCustomAttributesListValue in requestObject.CustomAttributes)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = CustomAttributeMarshaller.Instance;
+                    marshaller.Marshall(requestObjectCustomAttributesListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
             }
 
             if(requestObject.IsSetDistinguishedNameQualifier())
@@ -133,7 +149,7 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ASN1SubjectMarshaller Instance = new ASN1SubjectMarshaller();
 
     }

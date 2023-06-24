@@ -34,7 +34,7 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SelectAttributesActivity Marshaller
-    /// </summary>       
+    /// </summary>
     public class SelectAttributesActivityMarshaller : IRequestMarshaller<SelectAttributesActivity, JsonMarshallerContext> 
     {
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SelectAttributesActivityMarshaller Instance = new SelectAttributesActivityMarshaller();
 
     }

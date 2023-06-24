@@ -35,13 +35,13 @@ namespace Amazon.ServiceCatalog
     /// <summary>
     /// Implementation for accessing ServiceCatalog
     ///
-    /// AWS Service Catalog 
+    /// Service Catalog 
     /// <para>
-    ///  <a href="https://aws.amazon.com/servicecatalog/">AWS Service Catalog</a> enables
-    /// organizations to create and manage catalogs of IT services that are approved for AWS.
+    ///  <a href="http://aws.amazon.com/servicecatalog">Service Catalog</a> enables organizations
+    /// to create and manage catalogs of IT services that are approved for Amazon Web Services.
     /// To get the most out of this documentation, you should be familiar with the terminology
-    /// discussed in <a href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/what-is_concepts.html">AWS
-    /// Service Catalog Concepts</a>.
+    /// discussed in <a href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/what-is_concepts.html">Service
+    /// Catalog Concepts</a>.
     /// </para>
     /// </summary>
     public partial class AmazonServiceCatalogClient : AmazonServiceClient, IAmazonServiceCatalog
@@ -237,6 +237,15 @@ namespace Amazon.ServiceCatalog
         }
 
         /// <summary>
+        /// Customize the pipeline
+        /// </summary>
+        /// <param name="pipeline"></param>
+        protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
+        {
+            pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonServiceCatalogEndpointResolver());
+        }
+        /// <summary>
         /// Capture metadata for the service.
         /// </summary>
         protected override IServiceMetadata ServiceMetadata
@@ -397,6 +406,36 @@ namespace Amazon.ServiceCatalog
 
         /// <summary>
         /// Associates the specified principal ARN with the specified portfolio.
+        /// 
+        ///  
+        /// <para>
+        /// If you share the portfolio with principal name sharing enabled, the <code>PrincipalARN</code>
+        /// association is included in the share. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The <code>PortfolioID</code>, <code>PrincipalARN</code>, and <code>PrincipalType</code>
+        /// parameters are required. 
+        /// </para>
+        ///  
+        /// <para>
+        /// You can associate a maximum of 10 Principals with a portfolio using <code>PrincipalType</code>
+        /// as <code>IAM_PATTERN</code> 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// When you associate a principal with portfolio, a potential privilege escalation path
+        /// may occur when that portfolio is then shared with other accounts. For a user in a
+        /// recipient account who is <i>not</i> an Service Catalog Admin, but still has the ability
+        /// to create Principals (Users/Groups/Roles), that user could create a role that matches
+        /// a principal name association for the portfolio. Although this user may not know which
+        /// principal names are associated through Service Catalog, they may be able to guess
+        /// the user. If this potential escalation path is a concern, then Service Catalog recommends
+        /// using <code>PrincipalType</code> as <code>IAM</code>. With this configuration, the
+        /// <code>PrincipalARN</code> must already exist in the recipient account before it can
+        /// be associated. 
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociatePrincipalWithPortfolio service method.</param>
         /// 
@@ -537,6 +576,9 @@ namespace Amazon.ServiceCatalog
         /// <exception cref="Amazon.ServiceCatalog.Model.DuplicateResourceException">
         /// The specified resource is a duplicate.
         /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
+        /// One or more parameters provided to the operation are not valid.
+        /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.LimitExceededException">
         /// The current limits of the service would have been exceeded by this operation. Decrease
         /// your resource use or increase your service limits and retry the operation.
@@ -617,8 +659,8 @@ namespace Amazon.ServiceCatalog
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.TagOptionNotMigratedException">
         /// An operation requiring TagOptions failed because the TagOptions migration process
-        /// has not been performed for this account. Please use the AWS console to perform the
-        /// migration process before retrying the operation.
+        /// has not been performed for this account. Use the Amazon Web Services Management Console
+        /// to perform the migration process before retrying the operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/AssociateTagOptionWithResource">REST API Reference for AssociateTagOptionWithResource Operation</seealso>
         public virtual AssociateTagOptionWithResourceResponse AssociateTagOptionWithResource(AssociateTagOptionWithResourceRequest request)
@@ -788,7 +830,8 @@ namespace Amazon.ServiceCatalog
         ///  
         /// <para>
         /// You can copy a product to the same account or another account. You can copy a product
-        /// to the same region or another region.
+        /// to the same Region or another Region. If you copy a product to another account, you
+        /// must first share the product in a portfolio using <a>CreatePortfolioShare</a>.
         /// </para>
         ///  
         /// <para>
@@ -945,8 +988,8 @@ namespace Amazon.ServiceCatalog
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.TagOptionNotMigratedException">
         /// An operation requiring TagOptions failed because the TagOptions migration process
-        /// has not been performed for this account. Please use the AWS console to perform the
-        /// migration process before retrying the operation.
+        /// has not been performed for this account. Use the Amazon Web Services Management Console
+        /// to perform the migration process before retrying the operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreatePortfolio">REST API Reference for CreatePortfolio Operation</seealso>
         public virtual CreatePortfolioResponse CreatePortfolio(CreatePortfolioRequest request)
@@ -1020,8 +1063,22 @@ namespace Amazon.ServiceCatalog
         /// <para>
         /// If the portfolio share with the specified account or organization node already exists,
         /// this action will have no effect and will not return an error. To update an existing
-        /// share, you must use the <code> UpdatePortfolioShare</code> API instead.
+        /// share, you must use the <code> UpdatePortfolioShare</code> API instead. 
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// When you associate a principal with portfolio, a potential privilege escalation path
+        /// may occur when that portfolio is then shared with other accounts. For a user in a
+        /// recipient account who is <i>not</i> an Service Catalog Admin, but still has the ability
+        /// to create Principals (Users/Groups/Roles), that user could create a role that matches
+        /// a principal name association for the portfolio. Although this user may not know which
+        /// principal names are associated through Service Catalog, they may be able to guess
+        /// the user. If this potential escalation path is a concern, then Service Catalog recommends
+        /// using <code>PrincipalType</code> as <code>IAM</code>. With this configuration, the
+        /// <code>PrincipalARN</code> must already exist in the recipient account before it can
+        /// be associated. 
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePortfolioShare service method.</param>
         /// 
@@ -1117,8 +1174,8 @@ namespace Amazon.ServiceCatalog
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.TagOptionNotMigratedException">
         /// An operation requiring TagOptions failed because the TagOptions migration process
-        /// has not been performed for this account. Please use the AWS console to perform the
-        /// migration process before retrying the operation.
+        /// has not been performed for this account. Use the Amazon Web Services Management Console
+        /// to perform the migration process before retrying the operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreateProduct">REST API Reference for CreateProduct Operation</seealso>
         public virtual CreateProductResponse CreateProduct(CreateProductRequest request)
@@ -1169,14 +1226,17 @@ namespace Amazon.ServiceCatalog
         #region  CreateProvisionedProductPlan
 
         /// <summary>
-        /// Creates a plan. A plan includes the list of resources to be created (when provisioning
-        /// a new product) or modified (when updating a provisioned product) when the plan is
-        /// executed.
+        /// Creates a plan.
         /// 
         ///  
         /// <para>
-        /// You can create one plan per provisioned product. To create a plan for an existing
-        /// provisioned product, the product status must be AVAILBLE or TAINTED.
+        /// A plan includes the list of resources to be created (when provisioning a new product)
+        /// or modified (when updating a provisioned product) when the plan is executed.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can create one plan for each provisioned product. To create a plan for an existing
+        /// provisioned product, the product status must be AVAILABLE or TAINTED.
         /// </para>
         ///  
         /// <para>
@@ -1396,8 +1456,8 @@ namespace Amazon.ServiceCatalog
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.TagOptionNotMigratedException">
         /// An operation requiring TagOptions failed because the TagOptions migration process
-        /// has not been performed for this account. Please use the AWS console to perform the
-        /// migration process before retrying the operation.
+        /// has not been performed for this account. Use the Amazon Web Services Management Console
+        /// to perform the migration process before retrying the operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreateTagOption">REST API Reference for CreateTagOption Operation</seealso>
         public virtual CreateTagOptionResponse CreateTagOption(CreateTagOptionRequest request)
@@ -1540,8 +1600,8 @@ namespace Amazon.ServiceCatalog
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.TagOptionNotMigratedException">
         /// An operation requiring TagOptions failed because the TagOptions migration process
-        /// has not been performed for this account. Please use the AWS console to perform the
-        /// migration process before retrying the operation.
+        /// has not been performed for this account. Use the Amazon Web Services Management Console
+        /// to perform the migration process before retrying the operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeletePortfolio">REST API Reference for DeletePortfolio Operation</seealso>
         public virtual DeletePortfolioResponse DeletePortfolio(DeletePortfolioRequest request)
@@ -1693,8 +1753,8 @@ namespace Amazon.ServiceCatalog
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.TagOptionNotMigratedException">
         /// An operation requiring TagOptions failed because the TagOptions migration process
-        /// has not been performed for this account. Please use the AWS console to perform the
-        /// migration process before retrying the operation.
+        /// has not been performed for this account. Use the Amazon Web Services Management Console
+        /// to perform the migration process before retrying the operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeleteProduct">REST API Reference for DeleteProduct Operation</seealso>
         public virtual DeleteProductResponse DeleteProduct(DeleteProductRequest request)
@@ -1957,8 +2017,8 @@ namespace Amazon.ServiceCatalog
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.TagOptionNotMigratedException">
         /// An operation requiring TagOptions failed because the TagOptions migration process
-        /// has not been performed for this account. Please use the AWS console to perform the
-        /// migration process before retrying the operation.
+        /// has not been performed for this account. Use the Amazon Web Services Management Console
+        /// to perform the migration process before retrying the operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeleteTagOption">REST API Reference for DeleteTagOption Operation</seealso>
         public virtual DeleteTagOptionResponse DeleteTagOption(DeleteTagOptionRequest request)
@@ -2322,6 +2382,13 @@ namespace Amazon.ServiceCatalog
 
         /// <summary>
         /// Gets information about the specified product.
+        /// 
+        ///  <note> 
+        /// <para>
+        ///  Running this operation with administrator access results in a failure. <a>DescribeProductAsAdmin</a>
+        /// should be used instead. 
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeProduct service method.</param>
         /// 
@@ -2953,8 +3020,8 @@ namespace Amazon.ServiceCatalog
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.TagOptionNotMigratedException">
         /// An operation requiring TagOptions failed because the TagOptions migration process
-        /// has not been performed for this account. Please use the AWS console to perform the
-        /// migration process before retrying the operation.
+        /// has not been performed for this account. Use the Amazon Web Services Management Console
+        /// to perform the migration process before retrying the operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeTagOption">REST API Reference for DescribeTagOption Operation</seealso>
         public virtual DescribeTagOptionResponse DescribeTagOption(DescribeTagOptionRequest request)
@@ -3005,20 +3072,29 @@ namespace Amazon.ServiceCatalog
         #region  DisableAWSOrganizationsAccess
 
         /// <summary>
-        /// Disable portfolio sharing through AWS Organizations feature. This feature will not
-        /// delete your current shares but it will prevent you from creating new shares throughout
-        /// your organization. Current shares will not be in sync with your organization structure
-        /// if it changes after calling this API. This API can only be called by the management
-        /// account in the organization.
+        /// Disable portfolio sharing through the Organizations service. This command will not
+        /// delete your current shares, but prevents you from creating new shares throughout your
+        /// organization. Current shares are not kept in sync with your organization structure
+        /// if the structure changes after calling this API. Only the management account in the
+        /// organization can call this API.
         /// 
         ///  
         /// <para>
-        /// This API can't be invoked if there are active delegated administrators in the organization.
+        /// You cannot call this API if there are active delegated administrators in the organization.
         /// </para>
         ///  
         /// <para>
         /// Note that a delegated administrator is not authorized to invoke <code>DisableAWSOrganizationsAccess</code>.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// If you share an Service Catalog portfolio in an organization within Organizations,
+        /// and then disable Organizations access for Service Catalog, the portfolio access permissions
+        /// will not sync with the latest changes to the organization structure. Specifically,
+        /// accounts that you removed from the organization after disabling Service Catalog access
+        /// will retain access to the previously shared portfolio.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisableAWSOrganizationsAccess service method.</param>
         /// 
@@ -3140,6 +3216,35 @@ namespace Amazon.ServiceCatalog
 
         /// <summary>
         /// Disassociates a previously associated principal ARN from a specified portfolio.
+        /// 
+        ///  
+        /// <para>
+        /// The <code>PrincipalType</code> and <code>PrincipalARN</code> must match the <code>AssociatePrincipalWithPortfolio</code>
+        /// call request details. For example, to disassociate an association created with a <code>PrincipalARN</code>
+        /// of <code>PrincipalType</code> IAM you must use the <code>PrincipalType</code> IAM
+        /// when calling <code>DisassociatePrincipalFromPortfolio</code>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For portfolios that have been shared with principal name sharing enabled: after disassociating
+        /// a principal, share recipient accounts will no longer be able to provision products
+        /// in this portfolio using a role matching the name of the associated principal. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, review <a href="https://docs.aws.amazon.com/cli/latest/reference/servicecatalog/associate-principal-with-portfolio.html#options">associate-principal-with-portfolio</a>
+        /// in the Amazon Web Services CLI Command Reference. 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// If you disassociate a principal from a portfolio, with PrincipalType as <code>IAM</code>,
+        /// the same principal will still have access to the portfolio if it matches one of the
+        /// associated principals of type <code>IAM_PATTERN</code>. To fully remove access for
+        /// a principal, verify all the associated Principals of type <code>IAM_PATTERN</code>,
+        /// and then ensure you disassociate any <code>IAM_PATTERN</code> principals that match
+        /// the principal whose access you are removing.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociatePrincipalFromPortfolio service method.</param>
         /// 
@@ -3336,8 +3441,8 @@ namespace Amazon.ServiceCatalog
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.TagOptionNotMigratedException">
         /// An operation requiring TagOptions failed because the TagOptions migration process
-        /// has not been performed for this account. Please use the AWS console to perform the
-        /// migration process before retrying the operation.
+        /// has not been performed for this account. Use the Amazon Web Services Management Console
+        /// to perform the migration process before retrying the operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DisassociateTagOptionFromResource">REST API Reference for DisassociateTagOptionFromResource Operation</seealso>
         public virtual DisassociateTagOptionFromResourceResponse DisassociateTagOptionFromResource(DisassociateTagOptionFromResourceRequest request)
@@ -3388,21 +3493,33 @@ namespace Amazon.ServiceCatalog
         #region  EnableAWSOrganizationsAccess
 
         /// <summary>
-        /// Enable portfolio sharing feature through AWS Organizations. This API will allow Service
+        /// Enable portfolio sharing feature through Organizations. This API will allow Service
         /// Catalog to receive updates on your organization in order to sync your shares with
         /// the current structure. This API can only be called by the management account in the
         /// organization.
         /// 
         ///  
         /// <para>
-        /// By calling this API Service Catalog will make a call to organizations:EnableAWSServiceAccess
-        /// on your behalf so that your shares can be in sync with any changes in your AWS Organizations
+        /// When you call this API, Service Catalog calls <code>organizations:EnableAWSServiceAccess</code>
+        /// on your behalf so that your shares stay in sync with any changes in your Organizations
         /// structure.
         /// </para>
         ///  
         /// <para>
         /// Note that a delegated administrator is not authorized to invoke <code>EnableAWSOrganizationsAccess</code>.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// If you have previously disabled Organizations access for Service Catalog, and then
+        /// enable access again, the portfolio access permissions might not sync with the latest
+        /// changes to the organization structure. Specifically, accounts that you removed from
+        /// the organization after disabling Service Catalog access, and before you enabled access
+        /// again, can retain access to the previously shared portfolio. As a result, an account
+        /// that has been removed from the organization might still be able to create or manage
+        /// Amazon Web Services resources when it is no longer authorized to do so. Amazon Web
+        /// Services is working to resolve this issue.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnableAWSOrganizationsAccess service method.</param>
         /// 
@@ -3594,7 +3711,7 @@ namespace Amazon.ServiceCatalog
         #region  GetAWSOrganizationsAccessStatus
 
         /// <summary>
-        /// Get the Access Status for AWS Organization portfolio share feature. This API can only
+        /// Get the Access Status for Organizations portfolio share feature. This API can only
         /// be called by the management account in the organization or by a delegated admin.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAWSOrganizationsAccessStatus service method.</param>
@@ -3717,30 +3834,36 @@ namespace Amazon.ServiceCatalog
         #region  ImportAsProvisionedProduct
 
         /// <summary>
-        /// Requests the import of a resource as a Service Catalog provisioned product that is
-        /// associated to a Service Catalog product and provisioning artifact. Once imported,
-        /// all supported Service Catalog governance actions are supported on the provisioned
-        /// product.
+        /// Requests the import of a resource as an Service Catalog provisioned product that
+        /// is associated to an Service Catalog product and provisioning artifact. Once imported,
+        /// all supported governance actions are supported on the provisioned product. 
         /// 
         ///  
         /// <para>
-        /// Resource import only supports CloudFormation stack ARNs. CloudFormation StackSets
-        /// and non-root nested stacks are not supported.
+        ///  Resource import only supports CloudFormation stack ARNs. CloudFormation StackSets,
+        /// and non-root nested stacks are not supported. 
         /// </para>
         ///  
         /// <para>
-        /// The CloudFormation stack must have one of the following statuses to be imported: <code>CREATE_COMPLETE</code>,
-        /// <code>UPDATE_COMPLETE</code>, <code>UPDATE_ROLLBACK_COMPLETE</code>, <code>IMPORT_COMPLETE</code>,
-        /// <code>IMPORT_ROLLBACK_COMPLETE</code>.
+        ///  The CloudFormation stack must have one of the following statuses to be imported:
+        /// <code>CREATE_COMPLETE</code>, <code>UPDATE_COMPLETE</code>, <code>UPDATE_ROLLBACK_COMPLETE</code>,
+        /// <code>IMPORT_COMPLETE</code>, and <code>IMPORT_ROLLBACK_COMPLETE</code>. 
         /// </para>
         ///  
         /// <para>
-        /// Import of the resource requires that the CloudFormation stack template matches the
+        ///  Import of the resource requires that the CloudFormation stack template matches the
         /// associated Service Catalog product provisioning artifact. 
         /// </para>
-        ///  
+        ///  <note> 
         /// <para>
-        /// The user or role that performs this operation must have the <code>cloudformation:GetTemplate</code>
+        ///  When you import an existing CloudFormation stack into a portfolio, constraints that
+        /// are associated with the product aren't applied during the import process. The constraints
+        /// are applied after you call <code>UpdateProvisionedProduct</code> for the provisioned
+        /// product. 
+        /// </para>
+        ///  </note> 
+        /// <para>
+        ///  The user or role that performs this operation must have the <code>cloudformation:GetTemplate</code>
         /// and <code>cloudformation:DescribeStacks</code> IAM policy permissions. 
         /// </para>
         /// </summary>
@@ -3809,7 +3932,9 @@ namespace Amazon.ServiceCatalog
         #region  ListAcceptedPortfolioShares
 
         /// <summary>
-        /// Lists all portfolios for which sharing was accepted by this account.
+        /// Lists all imported portfolios for which account-to-account shares were accepted by
+        /// this account. By specifying the <code>PortfolioShareType</code>, you can list portfolios
+        /// for which organizational shares were accepted by this account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAcceptedPortfolioShares service method.</param>
         /// 
@@ -3989,9 +4114,18 @@ namespace Amazon.ServiceCatalog
         #region  ListLaunchPaths
 
         /// <summary>
-        /// Lists the paths to the specified product. A path is how the user has access to a specified
-        /// product, and is necessary when provisioning a product. A path also determines the
-        /// constraints put on the product.
+        /// Lists the paths to the specified product. A path describes how the user gets access
+        /// to a specified product and is necessary when provisioning a product. A path also determines
+        /// the constraints that are put on a product. A path is dependent on a specific product,
+        /// porfolio, and principal. 
+        /// 
+        ///  <note> 
+        /// <para>
+        ///  When provisioning a product that's been added to a portfolio, you must grant your
+        /// user, group, or role access to the portfolio. For more information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/catalogs_portfolios_users.html">Granting
+        /// users access</a> in the <i>Service Catalog User Guide</i>. 
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListLaunchPaths service method.</param>
         /// 
@@ -4304,7 +4438,8 @@ namespace Amazon.ServiceCatalog
         #region  ListPrincipalsForPortfolio
 
         /// <summary>
-        /// Lists all principal ARNs associated with the specified portfolio.
+        /// Lists all <code>PrincipalARN</code>s and corresponding <code>PrincipalType</code>s
+        /// associated with the specified portfolio.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPrincipalsForPortfolio service method.</param>
         /// 
@@ -4616,8 +4751,8 @@ namespace Amazon.ServiceCatalog
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.TagOptionNotMigratedException">
         /// An operation requiring TagOptions failed because the TagOptions migration process
-        /// has not been performed for this account. Please use the AWS console to perform the
-        /// migration process before retrying the operation.
+        /// has not been performed for this account. Use the Amazon Web Services Management Console
+        /// to perform the migration process before retrying the operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListResourcesForTagOption">REST API Reference for ListResourcesForTagOption Operation</seealso>
         public virtual ListResourcesForTagOptionResponse ListResourcesForTagOption(ListResourcesForTagOptionRequest request)
@@ -4788,7 +4923,7 @@ namespace Amazon.ServiceCatalog
         /// <summary>
         /// Returns summary information about stack instances that are associated with the specified
         /// <code>CFN_STACKSET</code> type provisioned product. You can filter for stack instances
-        /// that are associated with a specific AWS account name or region.
+        /// that are associated with a specific Amazon Web Services account name or Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListStackInstancesForProvisionedProduct service method.</param>
         /// 
@@ -4858,8 +4993,8 @@ namespace Amazon.ServiceCatalog
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.TagOptionNotMigratedException">
         /// An operation requiring TagOptions failed because the TagOptions migration process
-        /// has not been performed for this account. Please use the AWS console to perform the
-        /// migration process before retrying the operation.
+        /// has not been performed for this account. Use the Amazon Web Services Management Console
+        /// to perform the migration process before retrying the operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListTagOptions">REST API Reference for ListTagOptions Operation</seealso>
         public virtual ListTagOptionsResponse ListTagOptions(ListTagOptionsRequest request)
@@ -4907,23 +5042,212 @@ namespace Amazon.ServiceCatalog
 
         #endregion
         
+        #region  NotifyProvisionProductEngineWorkflowResult
+
+        /// <summary>
+        /// Notifies the result of the provisioning engine execution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the NotifyProvisionProductEngineWorkflowResult service method.</param>
+        /// 
+        /// <returns>The response from the NotifyProvisionProductEngineWorkflowResult service method, as returned by ServiceCatalog.</returns>
+        /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
+        /// One or more parameters provided to the operation are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/NotifyProvisionProductEngineWorkflowResult">REST API Reference for NotifyProvisionProductEngineWorkflowResult Operation</seealso>
+        public virtual NotifyProvisionProductEngineWorkflowResultResponse NotifyProvisionProductEngineWorkflowResult(NotifyProvisionProductEngineWorkflowResultRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = NotifyProvisionProductEngineWorkflowResultRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = NotifyProvisionProductEngineWorkflowResultResponseUnmarshaller.Instance;
+
+            return Invoke<NotifyProvisionProductEngineWorkflowResultResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the NotifyProvisionProductEngineWorkflowResult operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the NotifyProvisionProductEngineWorkflowResult operation on AmazonServiceCatalogClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndNotifyProvisionProductEngineWorkflowResult
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/NotifyProvisionProductEngineWorkflowResult">REST API Reference for NotifyProvisionProductEngineWorkflowResult Operation</seealso>
+        public virtual IAsyncResult BeginNotifyProvisionProductEngineWorkflowResult(NotifyProvisionProductEngineWorkflowResultRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = NotifyProvisionProductEngineWorkflowResultRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = NotifyProvisionProductEngineWorkflowResultResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  NotifyProvisionProductEngineWorkflowResult operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginNotifyProvisionProductEngineWorkflowResult.</param>
+        /// 
+        /// <returns>Returns a  NotifyProvisionProductEngineWorkflowResultResult from ServiceCatalog.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/NotifyProvisionProductEngineWorkflowResult">REST API Reference for NotifyProvisionProductEngineWorkflowResult Operation</seealso>
+        public virtual NotifyProvisionProductEngineWorkflowResultResponse EndNotifyProvisionProductEngineWorkflowResult(IAsyncResult asyncResult)
+        {
+            return EndInvoke<NotifyProvisionProductEngineWorkflowResultResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  NotifyTerminateProvisionedProductEngineWorkflowResult
+
+        /// <summary>
+        /// Notifies the result of the terminate engine execution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the NotifyTerminateProvisionedProductEngineWorkflowResult service method.</param>
+        /// 
+        /// <returns>The response from the NotifyTerminateProvisionedProductEngineWorkflowResult service method, as returned by ServiceCatalog.</returns>
+        /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
+        /// One or more parameters provided to the operation are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/NotifyTerminateProvisionedProductEngineWorkflowResult">REST API Reference for NotifyTerminateProvisionedProductEngineWorkflowResult Operation</seealso>
+        public virtual NotifyTerminateProvisionedProductEngineWorkflowResultResponse NotifyTerminateProvisionedProductEngineWorkflowResult(NotifyTerminateProvisionedProductEngineWorkflowResultRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = NotifyTerminateProvisionedProductEngineWorkflowResultRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = NotifyTerminateProvisionedProductEngineWorkflowResultResponseUnmarshaller.Instance;
+
+            return Invoke<NotifyTerminateProvisionedProductEngineWorkflowResultResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the NotifyTerminateProvisionedProductEngineWorkflowResult operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the NotifyTerminateProvisionedProductEngineWorkflowResult operation on AmazonServiceCatalogClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndNotifyTerminateProvisionedProductEngineWorkflowResult
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/NotifyTerminateProvisionedProductEngineWorkflowResult">REST API Reference for NotifyTerminateProvisionedProductEngineWorkflowResult Operation</seealso>
+        public virtual IAsyncResult BeginNotifyTerminateProvisionedProductEngineWorkflowResult(NotifyTerminateProvisionedProductEngineWorkflowResultRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = NotifyTerminateProvisionedProductEngineWorkflowResultRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = NotifyTerminateProvisionedProductEngineWorkflowResultResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  NotifyTerminateProvisionedProductEngineWorkflowResult operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginNotifyTerminateProvisionedProductEngineWorkflowResult.</param>
+        /// 
+        /// <returns>Returns a  NotifyTerminateProvisionedProductEngineWorkflowResultResult from ServiceCatalog.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/NotifyTerminateProvisionedProductEngineWorkflowResult">REST API Reference for NotifyTerminateProvisionedProductEngineWorkflowResult Operation</seealso>
+        public virtual NotifyTerminateProvisionedProductEngineWorkflowResultResponse EndNotifyTerminateProvisionedProductEngineWorkflowResult(IAsyncResult asyncResult)
+        {
+            return EndInvoke<NotifyTerminateProvisionedProductEngineWorkflowResultResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  NotifyUpdateProvisionedProductEngineWorkflowResult
+
+        /// <summary>
+        /// Notifies the result of the update engine execution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the NotifyUpdateProvisionedProductEngineWorkflowResult service method.</param>
+        /// 
+        /// <returns>The response from the NotifyUpdateProvisionedProductEngineWorkflowResult service method, as returned by ServiceCatalog.</returns>
+        /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
+        /// One or more parameters provided to the operation are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/NotifyUpdateProvisionedProductEngineWorkflowResult">REST API Reference for NotifyUpdateProvisionedProductEngineWorkflowResult Operation</seealso>
+        public virtual NotifyUpdateProvisionedProductEngineWorkflowResultResponse NotifyUpdateProvisionedProductEngineWorkflowResult(NotifyUpdateProvisionedProductEngineWorkflowResultRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = NotifyUpdateProvisionedProductEngineWorkflowResultRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = NotifyUpdateProvisionedProductEngineWorkflowResultResponseUnmarshaller.Instance;
+
+            return Invoke<NotifyUpdateProvisionedProductEngineWorkflowResultResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the NotifyUpdateProvisionedProductEngineWorkflowResult operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the NotifyUpdateProvisionedProductEngineWorkflowResult operation on AmazonServiceCatalogClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndNotifyUpdateProvisionedProductEngineWorkflowResult
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/NotifyUpdateProvisionedProductEngineWorkflowResult">REST API Reference for NotifyUpdateProvisionedProductEngineWorkflowResult Operation</seealso>
+        public virtual IAsyncResult BeginNotifyUpdateProvisionedProductEngineWorkflowResult(NotifyUpdateProvisionedProductEngineWorkflowResultRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = NotifyUpdateProvisionedProductEngineWorkflowResultRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = NotifyUpdateProvisionedProductEngineWorkflowResultResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  NotifyUpdateProvisionedProductEngineWorkflowResult operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginNotifyUpdateProvisionedProductEngineWorkflowResult.</param>
+        /// 
+        /// <returns>Returns a  NotifyUpdateProvisionedProductEngineWorkflowResultResult from ServiceCatalog.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/NotifyUpdateProvisionedProductEngineWorkflowResult">REST API Reference for NotifyUpdateProvisionedProductEngineWorkflowResult Operation</seealso>
+        public virtual NotifyUpdateProvisionedProductEngineWorkflowResultResponse EndNotifyUpdateProvisionedProductEngineWorkflowResult(IAsyncResult asyncResult)
+        {
+            return EndInvoke<NotifyUpdateProvisionedProductEngineWorkflowResultResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ProvisionProduct
 
         /// <summary>
-        /// Provisions the specified product.
+        /// Provisions the specified product. 
         /// 
         ///  
         /// <para>
-        /// A provisioned product is a resourced instance of a product. For example, provisioning
-        /// a product based on a CloudFormation template launches a CloudFormation stack and its
-        /// underlying resources. You can check the status of this request using <a>DescribeRecord</a>.
+        ///  A provisioned product is a resourced instance of a product. For example, provisioning
+        /// a product that's based on an CloudFormation template launches an CloudFormation stack
+        /// and its underlying resources. You can check the status of this request using <a>DescribeRecord</a>.
+        /// 
         /// </para>
         ///  
         /// <para>
-        /// If the request contains a tag key with an empty list of values, there is a tag conflict
-        /// for that key. Do not include conflicted keys as tags, or this causes the error "Parameter
-        /// validation failed: Missing required parameter in Tags[<i>N</i>]:<i>Value</i>".
+        ///  If the request contains a tag key with an empty list of values, there's a tag conflict
+        /// for that key. Don't include conflicted keys as tags, or this will cause the error
+        /// "Parameter validation failed: Missing required parameter in Tags[<i>N</i>]:<i>Value</i>".
+        /// 
         /// </para>
+        ///  <note> 
+        /// <para>
+        ///  When provisioning a product that's been added to a portfolio, you must grant your
+        /// user, group, or role access to the portfolio. For more information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/catalogs_portfolios_users.html">Granting
+        /// users access</a> in the <i>Service Catalog User Guide</i>. 
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ProvisionProduct service method.</param>
         /// 
@@ -5427,8 +5751,8 @@ namespace Amazon.ServiceCatalog
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.TagOptionNotMigratedException">
         /// An operation requiring TagOptions failed because the TagOptions migration process
-        /// has not been performed for this account. Please use the AWS console to perform the
-        /// migration process before retrying the operation.
+        /// has not been performed for this account. Use the Amazon Web Services Management Console
+        /// to perform the migration process before retrying the operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdatePortfolio">REST API Reference for UpdatePortfolio Operation</seealso>
         public virtual UpdatePortfolioResponse UpdatePortfolio(UpdatePortfolioRequest request)
@@ -5479,12 +5803,12 @@ namespace Amazon.ServiceCatalog
         #region  UpdatePortfolioShare
 
         /// <summary>
-        /// Updates the specified portfolio share. You can use this API to enable or disable TagOptions
-        /// sharing for an existing portfolio share. 
+        /// Updates the specified portfolio share. You can use this API to enable or disable <code>TagOptions</code>
+        /// sharing or Principal sharing for an existing portfolio share. 
         /// 
         ///  
         /// <para>
-        /// The portfolio share cannot be updated if the <code> CreatePortfolioShare</code> operation
+        /// The portfolio share cannot be updated if the <code>CreatePortfolioShare</code> operation
         /// is <code>IN_PROGRESS</code>, as the share is not available to recipient entities.
         /// In this case, you must wait for the portfolio share to be COMPLETED.
         /// </para>
@@ -5504,6 +5828,20 @@ namespace Amazon.ServiceCatalog
         /// This API cannot be used for removing the portfolio share. You must use <code>DeletePortfolioShare</code>
         /// API for that action. 
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// When you associate a principal with portfolio, a potential privilege escalation path
+        /// may occur when that portfolio is then shared with other accounts. For a user in a
+        /// recipient account who is <i>not</i> an Service Catalog Admin, but still has the ability
+        /// to create Principals (Users/Groups/Roles), that user could create a role that matches
+        /// a principal name association for the portfolio. Although this user may not know which
+        /// principal names are associated through Service Catalog, they may be able to guess
+        /// the user. If this potential escalation path is a concern, then Service Catalog recommends
+        /// using <code>PrincipalType</code> as <code>IAM</code>. With this configuration, the
+        /// <code>PrincipalARN</code> must already exist in the recipient account before it can
+        /// be associated. 
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdatePortfolioShare service method.</param>
         /// 
@@ -5583,8 +5921,8 @@ namespace Amazon.ServiceCatalog
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.TagOptionNotMigratedException">
         /// An operation requiring TagOptions failed because the TagOptions migration process
-        /// has not been performed for this account. Please use the AWS console to perform the
-        /// migration process before retrying the operation.
+        /// has not been performed for this account. Use the Amazon Web Services Management Console
+        /// to perform the migration process before retrying the operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateProduct">REST API Reference for UpdateProduct Operation</seealso>
         public virtual UpdateProductResponse UpdateProduct(UpdateProductRequest request)
@@ -5912,8 +6250,8 @@ namespace Amazon.ServiceCatalog
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.TagOptionNotMigratedException">
         /// An operation requiring TagOptions failed because the TagOptions migration process
-        /// has not been performed for this account. Please use the AWS console to perform the
-        /// migration process before retrying the operation.
+        /// has not been performed for this account. Use the Amazon Web Services Management Console
+        /// to perform the migration process before retrying the operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateTagOption">REST API Reference for UpdateTagOption Operation</seealso>
         public virtual UpdateTagOptionResponse UpdateTagOption(UpdateTagOptionRequest request)

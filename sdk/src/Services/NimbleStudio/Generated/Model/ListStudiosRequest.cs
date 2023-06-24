@@ -30,7 +30,7 @@ namespace Amazon.NimbleStudio.Model
 {
     /// <summary>
     /// Container for the parameters to the ListStudios operation.
-    /// List studios in your Amazon Web Services account in the requested Amazon Web Services
+    /// List studios in your Amazon Web Services accounts in the requested Amazon Web Services
     /// Region.
     /// </summary>
     public partial class ListStudiosRequest : AmazonNimbleStudioRequest
@@ -40,7 +40,7 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token to request the next page of results. 
+        /// The token for the next set of results, or null if there are no more results.
         /// </para>
         /// </summary>
         public string NextToken

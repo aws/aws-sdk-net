@@ -38,7 +38,7 @@ namespace Amazon.Shield.Model
         /// <summary>
         /// Gets and sets the property Protection. 
         /// <para>
-        /// The <a>Protection</a> object that is described.
+        /// The <a>Protection</a> that you requested. 
         /// </para>
         /// </summary>
         public Protection Protection

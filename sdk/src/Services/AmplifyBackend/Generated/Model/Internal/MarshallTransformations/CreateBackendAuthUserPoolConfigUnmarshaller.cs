@@ -106,6 +106,12 @@ namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
                     unmarshalledObject.UserPoolName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("verificationMessage", targetDepth))
+                {
+                    var unmarshaller = CreateBackendAuthVerificationMessageConfigUnmarshaller.Instance;
+                    unmarshalledObject.VerificationMessage = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

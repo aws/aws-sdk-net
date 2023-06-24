@@ -101,7 +101,7 @@
       "errors":[
         {"shape":"InvalidDataShareFault"}
       ],
-      "documentation":"<p>From a data producer account, authorizes the sharing of a datashare with one or more consumer accounts. To authorize a datashare for a data consumer, the producer account must have the correct access privileges.</p>"
+      "documentation":"<p>From a data producer account, authorizes the sharing of a datashare with one or more consumer accounts or managing entities. To authorize a datashare for a data consumer, the producer account must have the correct access permissions.</p>"
     },
     "AuthorizeEndpointAccess":{
       "name":"AuthorizeEndpointAccess",
@@ -141,7 +141,8 @@
         {"shape":"AuthorizationQuotaExceededFault"},
         {"shape":"DependentServiceRequestThrottlingFault"},
         {"shape":"InvalidClusterSnapshotStateFault"},
-        {"shape":"LimitExceededFault"}
+        {"shape":"LimitExceededFault"},
+        {"shape":"UnsupportedOperationFault"}
       ],
       "documentation":"<p>Authorizes the specified Amazon Web Services account to restore the specified snapshot.</p> <p> For more information about working with snapshots, go to <a href=\"https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html\">Amazon Redshift Snapshots</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>"
     },
@@ -355,6 +356,24 @@
       ],
       "documentation":"<p>Creates a new Amazon Redshift subnet group. You must provide a list of one or more subnets in your existing Amazon Virtual Private Cloud (Amazon VPC) when creating Amazon Redshift subnet group.</p> <p> For information about subnet groups, go to <a href=\"https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-cluster-subnet-groups.html\">Amazon Redshift Cluster Subnet Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>"
     },
+    "CreateCustomDomainAssociation":{
+      "name":"CreateCustomDomainAssociation",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"CreateCustomDomainAssociationMessage"},
+      "output":{
+        "shape":"CreateCustomDomainAssociationResult",
+        "resultWrapper":"CreateCustomDomainAssociationResult"
+      },
+      "errors":[
+        {"shape":"UnsupportedOperationFault"},
+        {"shape":"ClusterNotFoundFault"},
+        {"shape":"CustomCnameAssociationFault"}
+      ],
+      "documentation":"<p>Used to create a custom domain name for a cluster. Properties include the custom domain name, the cluster the custom domain is associated with, and the certificate Amazon Resource Name (ARN).</p>"
+    },
     "CreateEndpointAccess":{
       "name":"CreateEndpointAccess",
       "http":{
@@ -484,7 +503,7 @@
         {"shape":"InvalidTagFault"},
         {"shape":"DependentServiceRequestThrottlingFault"}
       ],
-      "documentation":"<p>Creates a snapshot copy grant that permits Amazon Redshift to use a customer master key (CMK) from Key Management Service (KMS) to encrypt copied snapshots in a destination region.</p> <p> For more information about managing snapshot copy grants, go to <a href=\"https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html\">Amazon Redshift Database Encryption</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>"
+      "documentation":"<p>Creates a snapshot copy grant that permits Amazon Redshift to use an encrypted symmetric key from Key Management Service (KMS) to encrypt copied snapshots in a destination region.</p> <p> For more information about managing snapshot copy grants, go to <a href=\"https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html\">Amazon Redshift Database Encryption</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>"
     },
     "CreateSnapshotSchedule":{
       "name":"CreateSnapshotSchedule",
@@ -558,7 +577,7 @@
       "errors":[
         {"shape":"InvalidDataShareFault"}
       ],
-      "documentation":"<p>From the producer account, removes authorization from the specified datashare. </p>"
+      "documentation":"<p>From a datashare producer account, removes authorization from the specified datashare. </p>"
     },
     "DeleteAuthenticationProfile":{
       "name":"DeleteAuthenticationProfile",
@@ -653,6 +672,20 @@
         {"shape":"ClusterSubnetGroupNotFoundFault"}
       ],
       "documentation":"<p>Deletes the specified cluster subnet group.</p>"
+    },
+    "DeleteCustomDomainAssociation":{
+      "name":"DeleteCustomDomainAssociation",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DeleteCustomDomainAssociationMessage"},
+      "errors":[
+        {"shape":"UnsupportedOperationFault"},
+        {"shape":"ClusterNotFoundFault"},
+        {"shape":"CustomCnameAssociationFault"}
+      ],
+      "documentation":"<p>Contains information about deleting a custom domain association for a cluster.</p>"
     },
     "DeleteEndpointAccess":{
       "name":"DeleteEndpointAccess",
@@ -907,7 +940,8 @@
       "errors":[
         {"shape":"ClusterNotFoundFault"},
         {"shape":"ClusterSnapshotNotFoundFault"},
-        {"shape":"InvalidTagFault"}
+        {"shape":"InvalidTagFault"},
+        {"shape":"UnsupportedOperationFault"}
       ],
       "documentation":"<p>Returns one or more snapshot objects, which contain metadata about your cluster snapshots. By default, this operation returns information about all snapshots of all clusters that are owned by your Amazon Web Services account. No information is returned for snapshots owned by inactive Amazon Web Services accounts.</p> <p>If you specify both tag keys and tag values in the same request, Amazon Redshift returns all snapshots that match any combination of the specified keys and values. For example, if you have <code>owner</code> and <code>environment</code> for tag keys, and <code>admin</code> and <code>test</code> for tag values, all snapshots that have any combination of those values are returned. Only snapshots that you own are returned in the response; shared snapshots are not returned with the tag key and tag value request parameters.</p> <p>If both tag keys and values are omitted from the request, snapshots are returned regardless of whether they have tag keys or values associated with them.</p>"
     },
@@ -974,6 +1008,23 @@
         {"shape":"InvalidTagFault"}
       ],
       "documentation":"<p>Returns properties of provisioned clusters including general cluster properties, cluster database properties, maintenance and backup properties, and security and access properties. This operation supports pagination. For more information about managing clusters, go to <a href=\"https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html\">Amazon Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p> <p>If you specify both tag keys and tag values in the same request, Amazon Redshift returns all clusters that match any combination of the specified keys and values. For example, if you have <code>owner</code> and <code>environment</code> for tag keys, and <code>admin</code> and <code>test</code> for tag values, all clusters that have any combination of those values are returned.</p> <p>If both tag keys and values are omitted from the request, clusters are returned regardless of whether they have tag keys or values associated with them.</p>"
+    },
+    "DescribeCustomDomainAssociations":{
+      "name":"DescribeCustomDomainAssociations",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DescribeCustomDomainAssociationsMessage"},
+      "output":{
+        "shape":"CustomDomainAssociationsMessage",
+        "resultWrapper":"DescribeCustomDomainAssociationsResult"
+      },
+      "errors":[
+        {"shape":"CustomDomainAssociationNotFoundFault"},
+        {"shape":"UnsupportedOperationFault"}
+      ],
+      "documentation":"<p>Contains information for custom domain associations for a cluster.</p>"
     },
     "DescribeDataShares":{
       "name":"DescribeDataShares",
@@ -1179,7 +1230,8 @@
         {"shape":"ClusterSnapshotNotFoundFault"},
         {"shape":"InvalidClusterSnapshotStateFault"},
         {"shape":"ClusterNotFoundFault"},
-        {"shape":"AccessToSnapshotDeniedFault"}
+        {"shape":"AccessToSnapshotDeniedFault"},
+        {"shape":"UnsupportedOperationFault"}
       ],
       "documentation":"<p>Returns properties of possible node configurations such as node type, number of nodes, and disk usage for the specified action type.</p>"
     },
@@ -1427,7 +1479,7 @@
         {"shape":"InvalidClusterStateFault"},
         {"shape":"UnauthorizedOperation"}
       ],
-      "documentation":"<p>Disables the automatic copying of snapshots from one region to another region for a specified cluster.</p> <p>If your cluster and its snapshots are encrypted using a customer master key (CMK) from Key Management Service, use <a>DeleteSnapshotCopyGrant</a> to delete the grant that grants Amazon Redshift permission to the CMK in the destination region. </p>"
+      "documentation":"<p>Disables the automatic copying of snapshots from one region to another region for a specified cluster.</p> <p>If your cluster and its snapshots are encrypted using an encrypted symmetric key from Key Management Service, use <a>DeleteSnapshotCopyGrant</a> to delete the grant that grants Amazon Redshift permission to the key in the destination region. </p>"
     },
     "DisassociateDataShareConsumer":{
       "name":"DisassociateDataShareConsumer",
@@ -1444,7 +1496,7 @@
         {"shape":"InvalidDataShareFault"},
         {"shape":"InvalidNamespaceFault"}
       ],
-      "documentation":"<p>From a consumer account, remove association for the specified datashare. </p>"
+      "documentation":"<p>From a datashare consumer account, remove association for the specified datashare. </p>"
     },
     "EnableLogging":{
       "name":"EnableLogging",
@@ -1508,7 +1560,24 @@
         {"shape":"ClusterNotFoundFault"},
         {"shape":"UnsupportedOperationFault"}
       ],
-      "documentation":"<p>Returns a database user name and temporary password with temporary authorization to log on to an Amazon Redshift database. The action returns the database user name prefixed with <code>IAM:</code> if <code>AutoCreate</code> is <code>False</code> or <code>IAMA:</code> if <code>AutoCreate</code> is <code>True</code>. You can optionally specify one or more database user groups that the user will join at log on. By default, the temporary credentials expire in 900 seconds. You can optionally specify a duration between 900 seconds (15 minutes) and 3600 seconds (60 minutes). For more information, see <a href=\"https://docs.aws.amazon.com/redshift/latest/mgmt/generating-user-credentials.html\">Using IAM Authentication to Generate Database User Credentials</a> in the Amazon Redshift Cluster Management Guide.</p> <p>The Identity and Access Management (IAM) user or role that runs GetClusterCredentials must have an IAM policy attached that allows access to all necessary actions and resources. For more information about permissions, see <a href=\"https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-identity-based.html#redshift-policy-resources.getclustercredentials-resources\">Resource Policies for GetClusterCredentials</a> in the Amazon Redshift Cluster Management Guide.</p> <p>If the <code>DbGroups</code> parameter is specified, the IAM policy must allow the <code>redshift:JoinGroup</code> action with access to the listed <code>dbgroups</code>. </p> <p>In addition, if the <code>AutoCreate</code> parameter is set to <code>True</code>, then the policy must include the <code>redshift:CreateClusterUser</code> privilege.</p> <p>If the <code>DbName</code> parameter is specified, the IAM policy must allow access to the resource <code>dbname</code> for the specified database name. </p>"
+      "documentation":"<p>Returns a database user name and temporary password with temporary authorization to log on to an Amazon Redshift database. The action returns the database user name prefixed with <code>IAM:</code> if <code>AutoCreate</code> is <code>False</code> or <code>IAMA:</code> if <code>AutoCreate</code> is <code>True</code>. You can optionally specify one or more database user groups that the user will join at log on. By default, the temporary credentials expire in 900 seconds. You can optionally specify a duration between 900 seconds (15 minutes) and 3600 seconds (60 minutes). For more information, see <a href=\"https://docs.aws.amazon.com/redshift/latest/mgmt/generating-user-credentials.html\">Using IAM Authentication to Generate Database User Credentials</a> in the Amazon Redshift Cluster Management Guide.</p> <p>The Identity and Access Management (IAM) user or role that runs GetClusterCredentials must have an IAM policy attached that allows access to all necessary actions and resources. For more information about permissions, see <a href=\"https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-identity-based.html#redshift-policy-resources.getclustercredentials-resources\">Resource Policies for GetClusterCredentials</a> in the Amazon Redshift Cluster Management Guide.</p> <p>If the <code>DbGroups</code> parameter is specified, the IAM policy must allow the <code>redshift:JoinGroup</code> action with access to the listed <code>dbgroups</code>. </p> <p>In addition, if the <code>AutoCreate</code> parameter is set to <code>True</code>, then the policy must include the <code>redshift:CreateClusterUser</code> permission.</p> <p>If the <code>DbName</code> parameter is specified, the IAM policy must allow access to the resource <code>dbname</code> for the specified database name. </p>"
+    },
+    "GetClusterCredentialsWithIAM":{
+      "name":"GetClusterCredentialsWithIAM",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"GetClusterCredentialsWithIAMMessage"},
+      "output":{
+        "shape":"ClusterExtendedCredentials",
+        "resultWrapper":"GetClusterCredentialsWithIAMResult"
+      },
+      "errors":[
+        {"shape":"ClusterNotFoundFault"},
+        {"shape":"UnsupportedOperationFault"}
+      ],
+      "documentation":"<p>Returns a database user name and temporary password with temporary authorization to log in to an Amazon Redshift database. The database user is mapped 1:1 to the source Identity and Access Management (IAM) identity. For more information about IAM identities, see <a href=\"https://docs.aws.amazon.com/IAM/latest/UserGuide/id.html\">IAM Identities (users, user groups, and roles)</a> in the Amazon Web Services Identity and Access Management User Guide.</p> <p>The Identity and Access Management (IAM) identity that runs this operation must have an IAM policy attached that allows access to all necessary actions and resources. For more information about permissions, see <a href=\"https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-identity-based.html\">Using identity-based policies (IAM policies)</a> in the Amazon Redshift Cluster Management Guide. </p>"
     },
     "GetReservedNodeExchangeConfigurationOptions":{
       "name":"GetReservedNodeExchangeConfigurationOptions",
@@ -1570,7 +1639,7 @@
         {"shape":"InvalidClusterStateFault"},
         {"shape":"UnsupportedOperationFault"}
       ],
-      "documentation":"<p>Modifies whether a cluster can use AQUA (Advanced Query Accelerator). </p>"
+      "documentation":"<p>This operation is retired. Calling this operation does not change AQUA configuration. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator). </p>"
     },
     "ModifyAuthenticationProfile":{
       "name":"ModifyAuthenticationProfile",
@@ -1620,7 +1689,9 @@
         {"shape":"InvalidElasticIpFault"},
         {"shape":"TableLimitExceededFault"},
         {"shape":"InvalidClusterTrackFault"},
-        {"shape":"InvalidRetentionPeriodFault"}
+        {"shape":"InvalidRetentionPeriodFault"},
+        {"shape":"UnsupportedOperationFault"},
+        {"shape":"CustomCnameAssociationFault"}
       ],
       "documentation":"<p>Modifies the settings for a cluster.</p> <p>You can also change node type and the number of nodes to scale up or down the cluster. When resizing a cluster, you must specify both the number of nodes and the node type even if one of the parameters does not change.</p> <p>You can add another security or parameter group, or change the admin user password. Resetting a cluster password or modifying the security groups associated with a cluster do not need a reboot. However, modifying a parameter group requires a reboot for parameters to take effect. For more information about managing clusters, go to <a href=\"https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html\">Amazon Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>"
     },
@@ -1657,7 +1728,7 @@
         {"shape":"InvalidClusterStateFault"},
         {"shape":"ClusterNotFoundFault"}
       ],
-      "documentation":"<p>Modifies the list of Identity and Access Management (IAM) roles that can be used by the cluster to access other Amazon Web Services services.</p> <p>A cluster can have up to 10 IAM roles associated at any time.</p>"
+      "documentation":"<p>Modifies the list of Identity and Access Management (IAM) roles that can be used by the cluster to access other Amazon Web Services services.</p> <p>The maximum number of IAM roles that you can associate is subject to a quota. For more information, go to <a href=\"https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html\">Quotas and limits</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>"
     },
     "ModifyClusterMaintenance":{
       "name":"ModifyClusterMaintenance",
@@ -1745,6 +1816,24 @@
         {"shape":"DependentServiceRequestThrottlingFault"}
       ],
       "documentation":"<p>Modifies a cluster subnet group to include the specified list of VPC subnets. The operation replaces the existing list of subnets with the new list of subnets.</p>"
+    },
+    "ModifyCustomDomainAssociation":{
+      "name":"ModifyCustomDomainAssociation",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"ModifyCustomDomainAssociationMessage"},
+      "output":{
+        "shape":"ModifyCustomDomainAssociationResult",
+        "resultWrapper":"ModifyCustomDomainAssociationResult"
+      },
+      "errors":[
+        {"shape":"UnsupportedOperationFault"},
+        {"shape":"ClusterNotFoundFault"},
+        {"shape":"CustomCnameAssociationFault"}
+      ],
+      "documentation":"<p>Contains information for changing a custom domain association.</p>"
     },
     "ModifyEndpointAccess":{
       "name":"ModifyEndpointAccess",
@@ -1934,7 +2023,7 @@
       "errors":[
         {"shape":"InvalidDataShareFault"}
       ],
-      "documentation":"<p>From the consumer account, rejects the specified datashare.</p>"
+      "documentation":"<p>From a datashare consumer account, rejects the specified datashare.</p>"
     },
     "ResetClusterParameterGroup":{
       "name":"ResetClusterParameterGroup",
@@ -2050,7 +2139,7 @@
         {"shape":"InvalidClusterStateFault"},
         {"shape":"UnsupportedOperationFault"}
       ],
-      "documentation":"<p>Creates a new table from a table in an Amazon Redshift cluster snapshot. You must create the new table within the Amazon Redshift cluster that the snapshot was taken from.</p> <p>You cannot use <code>RestoreTableFromClusterSnapshot</code> to restore a table with the same name as an existing table in an Amazon Redshift cluster. That is, you cannot overwrite an existing table in a cluster with a restored table. If you want to replace your original table with a new, restored table, then rename or drop your original table before you call <code>RestoreTableFromClusterSnapshot</code>. When you have renamed your original table, then you can pass the original name of the table as the <code>NewTableName</code> parameter value in the call to <code>RestoreTableFromClusterSnapshot</code>. This way, you can replace the original table with the table created from the snapshot.</p>"
+      "documentation":"<p>Creates a new table from a table in an Amazon Redshift cluster snapshot. You must create the new table within the Amazon Redshift cluster that the snapshot was taken from.</p> <p>You cannot use <code>RestoreTableFromClusterSnapshot</code> to restore a table with the same name as an existing table in an Amazon Redshift cluster. That is, you cannot overwrite an existing table in a cluster with a restored table. If you want to replace your original table with a new, restored table, then rename or drop your original table before you call <code>RestoreTableFromClusterSnapshot</code>. When you have renamed your original table, then you can pass the original name of the table as the <code>NewTableName</code> parameter value in the call to <code>RestoreTableFromClusterSnapshot</code>. This way, you can replace the original table with the table created from the snapshot.</p> <p>You can't use this operation to restore tables with <a href=\"https://docs.aws.amazon.com/redshift/latest/dg/t_Sorting_data.html#t_Sorting_data-interleaved\">interleaved sort keys</a>.</p>"
     },
     "ResumeCluster":{
       "name":"ResumeCluster",
@@ -2124,7 +2213,8 @@
       "errors":[
         {"shape":"AccessToSnapshotDeniedFault"},
         {"shape":"AuthorizationNotFoundFault"},
-        {"shape":"ClusterSnapshotNotFoundFault"}
+        {"shape":"ClusterSnapshotNotFoundFault"},
+        {"shape":"UnsupportedOperationFault"}
       ],
       "documentation":"<p>Removes the ability of the specified Amazon Web Services account to restore the specified snapshot. If the account is currently restoring the snapshot, the restore will run to completion.</p> <p> For more information about working with snapshots, go to <a href=\"https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html\">Amazon Redshift Snapshots</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>"
     },
@@ -2273,14 +2363,14 @@
       "members":{
         "AquaStatus":{
           "shape":"AquaStatus",
-          "documentation":"<p>The value indicates the status of AQUA on the cluster. Possible values include the following.</p> <ul> <li> <p>enabled - AQUA is enabled.</p> </li> <li> <p>disabled - AQUA is not enabled. </p> </li> <li> <p>applying - AQUA status is being applied. </p> </li> </ul>"
+          "documentation":"<p>This field is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).</p>"
         },
         "AquaConfigurationStatus":{
           "shape":"AquaConfigurationStatus",
-          "documentation":"<p>The value represents how the cluster is configured to use AQUA. Possible values include the following.</p> <ul> <li> <p>enabled - Use AQUA if it is available for the current Amazon Web Services Region and Amazon Redshift node type.</p> </li> <li> <p>disabled - Don't use AQUA. </p> </li> <li> <p>auto - Amazon Redshift determines whether to use AQUA.</p> </li> </ul>"
+          "documentation":"<p>This field is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).</p>"
         }
       },
-      "documentation":"<p>The AQUA (Advanced Query Accelerator) configuration of the cluster.</p>"
+      "documentation":"<p>The operation that uses this structure is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).</p>"
     },
     "AquaConfigurationStatus":{
       "type":"string",
@@ -2313,6 +2403,10 @@
         "ConsumerArn":{
           "shape":"String",
           "documentation":"<p>The Amazon Resource Name (ARN) of the consumer that is associated with the datashare.</p>"
+        },
+        "ConsumerRegion":{
+          "shape":"String",
+          "documentation":"<p>From a datashare consumer account, associates a datashare with all existing and future namespaces in the specified Amazon Web Services Region.</p>"
         }
       }
     },
@@ -2321,6 +2415,32 @@
       "member":{
         "shape":"ClusterAssociatedToSchedule",
         "locationName":"ClusterAssociatedToSchedule"
+      }
+    },
+    "Association":{
+      "type":"structure",
+      "members":{
+        "CustomDomainCertificateArn":{
+          "shape":"String",
+          "documentation":"<p>The Amazon Resource Name (ARN) for the certificate associated with the custom domain.</p>"
+        },
+        "CustomDomainCertificateExpiryDate":{
+          "shape":"TStamp",
+          "documentation":"<p>The expiration date for the certificate.</p>"
+        },
+        "CertificateAssociations":{
+          "shape":"CertificateAssociationList",
+          "documentation":"<p>A list of all associated clusters and domain names tied to a specific certificate.</p>"
+        }
+      },
+      "documentation":"<p>Contains information about the custom domain name association.</p>",
+      "wrapper":true
+    },
+    "AssociationList":{
+      "type":"list",
+      "member":{
+        "shape":"Association",
+        "locationName":"Association"
       }
     },
     "AttributeList":{
@@ -2498,7 +2618,7 @@
         },
         "ConsumerIdentifier":{
           "shape":"String",
-          "documentation":"<p>The identifier of the data consumer that is authorized to access the datashare. This identifier is an Amazon Web Services account ID.</p>"
+          "documentation":"<p>The identifier of the data consumer that is authorized to access the datashare. This identifier is an Amazon Web Services account ID or a keyword, such as ADX.</p>"
         }
       }
     },
@@ -2522,14 +2642,15 @@
     },
     "AuthorizeSnapshotAccessMessage":{
       "type":"structure",
-      "required":[
-        "SnapshotIdentifier",
-        "AccountWithRestoreAccess"
-      ],
+      "required":["AccountWithRestoreAccess"],
       "members":{
         "SnapshotIdentifier":{
           "shape":"String",
           "documentation":"<p>The identifier of the snapshot the account is authorized to restore.</p>"
+        },
+        "SnapshotArn":{
+          "shape":"String",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the snapshot to authorize access to.</p>"
         },
         "SnapshotClusterIdentifier":{
           "shape":"String",
@@ -2684,6 +2805,27 @@
           "shape":"String",
           "documentation":"<p>The unique identifier for the cluster that you want to cancel a resize operation for.</p>"
         }
+      }
+    },
+    "CertificateAssociation":{
+      "type":"structure",
+      "members":{
+        "CustomDomainName":{
+          "shape":"String",
+          "documentation":"<p>The custom domain name for the certificate association.</p>"
+        },
+        "ClusterIdentifier":{
+          "shape":"String",
+          "documentation":"<p>The cluster identifier for the certificate association.</p>"
+        }
+      },
+      "documentation":"<p>A cluster ID and custom domain name tied to a specific certificate. These are typically returned in a list.</p>"
+    },
+    "CertificateAssociationList":{
+      "type":"list",
+      "member":{
+        "shape":"CertificateAssociation",
+        "locationName":"CertificateAssociation"
       }
     },
     "Cluster":{
@@ -2887,7 +3029,7 @@
         },
         "AquaConfiguration":{
           "shape":"AquaConfiguration",
-          "documentation":"<p>The AQUA (Advanced Query Accelerator) configuration of the cluster.</p>"
+          "documentation":"<p>This field is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).</p>"
         },
         "DefaultIamRoleArn":{
           "shape":"String",
@@ -2896,6 +3038,18 @@
         "ReservedNodeExchangeStatus":{
           "shape":"ReservedNodeExchangeStatus",
           "documentation":"<p>The status of the reserved-node exchange request. Statuses include in-progress and requested.</p>"
+        },
+        "CustomDomainName":{
+          "shape":"String",
+          "documentation":"<p>The custom domain name associated with the cluster.</p>"
+        },
+        "CustomDomainCertificateArn":{
+          "shape":"String",
+          "documentation":"<p>The certificate Amazon Resource Name (ARN) for the custom domain name.</p>"
+        },
+        "CustomDomainCertificateExpiryDate":{
+          "shape":"TStamp",
+          "documentation":"<p>The expiration date for the certificate associated with the custom domain name.</p>"
         }
       },
       "documentation":"<p>Describes a cluster.</p>",
@@ -2932,7 +3086,7 @@
       "members":{
         "DbUser":{
           "shape":"String",
-          "documentation":"<p>A database user name that is authorized to log on to the database <code>DbName</code> using the password <code>DbPassword</code>. If the specified DbUser exists in the database, the new user name has the same database privileges as the the user named in DbUser. By default, the user is added to PUBLIC. If the <code>DbGroups</code> parameter is specifed, <code>DbUser</code> is added to the listed groups for any sessions created using these credentials.</p>"
+          "documentation":"<p>A database user name that is authorized to log on to the database <code>DbName</code> using the password <code>DbPassword</code>. If the specified DbUser exists in the database, the new user name has the same database permissions as the the user named in DbUser. By default, the user is added to PUBLIC. If the <code>DbGroups</code> parameter is specifed, <code>DbUser</code> is added to the listed groups for any sessions created using these credentials.</p>"
         },
         "DbPassword":{
           "shape":"SensitiveString",
@@ -2984,6 +3138,27 @@
         "ClusterDbRevisions":{
           "shape":"ClusterDbRevisionsList",
           "documentation":"<p>A list of revisions.</p>"
+        }
+      }
+    },
+    "ClusterExtendedCredentials":{
+      "type":"structure",
+      "members":{
+        "DbUser":{
+          "shape":"String",
+          "documentation":"<p>A database user name that you provide when you connect to a database. The database user is mapped 1:1 to the source IAM identity. </p>"
+        },
+        "DbPassword":{
+          "shape":"SensitiveString",
+          "documentation":"<p>A temporary password that you provide when you connect to a database.</p>"
+        },
+        "Expiration":{
+          "shape":"TStamp",
+          "documentation":"<p>The time (UTC) when the temporary password expires. After this timestamp, a log in with the temporary password fails.</p>"
+        },
+        "NextRefreshTime":{
+          "shape":"TStamp",
+          "documentation":"<p>Reserved for future use.</p>"
         }
       }
     },
@@ -3645,11 +3820,11 @@
         },
         "MasterUsername":{
           "shape":"String",
-          "documentation":"<p>The user name associated with the admin user account for the cluster that is being created.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 - 128 alphanumeric characters. The user name can't be <code>PUBLIC</code>.</p> </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot be a reserved word. A list of reserved words can be found in <a href=\"https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html\">Reserved Words</a> in the Amazon Redshift Database Developer Guide. </p> </li> </ul>"
+          "documentation":"<p>The user name associated with the admin user account for the cluster that is being created.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 - 128 alphanumeric characters or hyphens. The user name can't be <code>PUBLIC</code>.</p> </li> <li> <p>Must contain only lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.</p> </li> <li> <p>The first character must be a letter.</p> </li> <li> <p>Must not contain a colon (:) or a slash (/).</p> </li> <li> <p>Cannot be a reserved word. A list of reserved words can be found in <a href=\"https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html\">Reserved Words</a> in the Amazon Redshift Database Developer Guide. </p> </li> </ul>"
         },
         "MasterUserPassword":{
           "shape":"String",
-          "documentation":"<p>The password associated with the admin user account for the cluster that is being created.</p> <p>Constraints:</p> <ul> <li> <p>Must be between 8 and 64 characters in length.</p> </li> <li> <p>Must contain at least one uppercase letter.</p> </li> <li> <p>Must contain at least one lowercase letter.</p> </li> <li> <p>Must contain one number.</p> </li> <li> <p>Can be any printable ASCII character (ASCII code 33 to 126) except ' (single quote), \" (double quote), \\, /, @, or space.</p> </li> </ul>"
+          "documentation":"<p>The password associated with the admin user account for the cluster that is being created.</p> <p>Constraints:</p> <ul> <li> <p>Must be between 8 and 64 characters in length.</p> </li> <li> <p>Must contain at least one uppercase letter.</p> </li> <li> <p>Must contain at least one lowercase letter.</p> </li> <li> <p>Must contain one number.</p> </li> <li> <p>Can be any printable ASCII character (ASCII code 33-126) except <code>'</code> (single quote), <code>\"</code> (double quote), <code>\\</code>, <code>/</code>, or <code>@</code>.</p> </li> </ul>"
         },
         "ClusterSecurityGroups":{
           "shape":"ClusterSecurityGroupNameList",
@@ -3717,7 +3892,7 @@
         },
         "ElasticIp":{
           "shape":"String",
-          "documentation":"<p>The Elastic IP (EIP) address for the cluster.</p> <p>Constraints: The cluster must be provisioned in EC2-VPC and publicly-accessible through an Internet gateway. For more information about provisioning clusters in EC2-VPC, go to <a href=\"https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms\">Supported Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management Guide.</p>"
+          "documentation":"<p>The Elastic IP (EIP) address for the cluster.</p> <p>Constraints: The cluster must be provisioned in EC2-VPC and publicly-accessible through an Internet gateway. Don't specify the Elastic IP address for a publicly accessible cluster with availability zone relocation turned on. For more information about provisioning clusters in EC2-VPC, go to <a href=\"https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms\">Supported Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management Guide.</p>"
         },
         "Tags":{
           "shape":"TagList",
@@ -3737,7 +3912,7 @@
         },
         "IamRoles":{
           "shape":"IamRoleArnList",
-          "documentation":"<p>A list of Identity and Access Management (IAM) roles that can be used by the cluster to access other Amazon Web Services services. You must supply the IAM roles in their Amazon Resource Name (ARN) format. You can supply up to 10 IAM roles in a single request.</p> <p>A cluster can have up to 10 IAM roles associated with it at any time.</p>"
+          "documentation":"<p>A list of Identity and Access Management (IAM) roles that can be used by the cluster to access other Amazon Web Services services. You must supply the IAM roles in their Amazon Resource Name (ARN) format. </p> <p>The maximum number of IAM roles that you can associate is subject to a quota. For more information, go to <a href=\"https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html\">Quotas and limits</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>"
         },
         "MaintenanceTrackName":{
           "shape":"String",
@@ -3753,11 +3928,15 @@
         },
         "AquaConfigurationStatus":{
           "shape":"AquaConfigurationStatus",
-          "documentation":"<p>The value represents how the cluster is configured to use AQUA (Advanced Query Accelerator) when it is created. Possible values include the following.</p> <ul> <li> <p>enabled - Use AQUA if it is available for the current Amazon Web Services Region and Amazon Redshift node type.</p> </li> <li> <p>disabled - Don't use AQUA. </p> </li> <li> <p>auto - Amazon Redshift determines whether to use AQUA.</p> </li> </ul>"
+          "documentation":"<p>This parameter is retired. It does not set the AQUA configuration status. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).</p>"
         },
         "DefaultIamRoleArn":{
           "shape":"String",
           "documentation":"<p>The Amazon Resource Name (ARN) for the IAM role that was set as default for the cluster when the cluster was created. </p>"
+        },
+        "LoadSampleData":{
+          "shape":"String",
+          "documentation":"<p>A flag that specifies whether to load sample data once the cluster is created.</p>"
         }
       },
       "documentation":"<p/>"
@@ -3892,6 +4071,49 @@
       "type":"structure",
       "members":{
         "ClusterSubnetGroup":{"shape":"ClusterSubnetGroup"}
+      }
+    },
+    "CreateCustomDomainAssociationMessage":{
+      "type":"structure",
+      "required":[
+        "CustomDomainName",
+        "CustomDomainCertificateArn",
+        "ClusterIdentifier"
+      ],
+      "members":{
+        "CustomDomainName":{
+          "shape":"CustomDomainNameString",
+          "documentation":"<p>The custom domain name for a custom domain association.</p>"
+        },
+        "CustomDomainCertificateArn":{
+          "shape":"CustomDomainCertificateArnString",
+          "documentation":"<p>The certificate Amazon Resource Name (ARN) for the custom domain name association.</p>"
+        },
+        "ClusterIdentifier":{
+          "shape":"String",
+          "documentation":"<p>The cluster identifier that the custom domain is associated with.</p>"
+        }
+      }
+    },
+    "CreateCustomDomainAssociationResult":{
+      "type":"structure",
+      "members":{
+        "CustomDomainName":{
+          "shape":"CustomDomainNameString",
+          "documentation":"<p>The custom domain name for the association result.</p>"
+        },
+        "CustomDomainCertificateArn":{
+          "shape":"CustomDomainCertificateArnString",
+          "documentation":"<p>The Amazon Resource Name (ARN) for the certificate associated with the custom domain name.</p>"
+        },
+        "ClusterIdentifier":{
+          "shape":"String",
+          "documentation":"<p>The identifier of the cluster that the custom domain is associated with.</p>"
+        },
+        "CustomDomainCertExpiryTime":{
+          "shape":"String",
+          "documentation":"<p>The expiration time for the certificate for the custom domain.</p>"
+        }
       }
     },
     "CreateEndpointAccessMessage":{
@@ -4093,7 +4315,7 @@
         },
         "KmsKeyId":{
           "shape":"String",
-          "documentation":"<p>The unique identifier of the customer master key (CMK) to which to grant Amazon Redshift permission. If no key is specified, the default key is used.</p>"
+          "documentation":"<p>The unique identifier of the encrypted symmetric key to which to grant Amazon Redshift permission. If no key is specified, the default key is used.</p>"
         },
         "Tags":{
           "shape":"TagList",
@@ -4174,7 +4396,7 @@
         },
         "LimitType":{
           "shape":"UsageLimitLimitType",
-          "documentation":"<p>The type of limit. Depending on the feature type, this can be based on a time duration or data size. If <code>FeatureType</code> is <code>spectrum</code>, then <code>LimitType</code> must be <code>data-scanned</code>. If <code>FeatureType</code> is <code>concurrency-scaling</code>, then <code>LimitType</code> must be <code>time</code>. </p>"
+          "documentation":"<p>The type of limit. Depending on the feature type, this can be based on a time duration or data size. If <code>FeatureType</code> is <code>spectrum</code>, then <code>LimitType</code> must be <code>data-scanned</code>. If <code>FeatureType</code> is <code>concurrency-scaling</code>, then <code>LimitType</code> must be <code>time</code>. If <code>FeatureType</code> is <code>cross-region-datasharing</code>, then <code>LimitType</code> must be <code>data-scanned</code>. </p>"
         },
         "Amount":{
           "shape":"Long",
@@ -4193,6 +4415,55 @@
           "documentation":"<p>A list of tag instances.</p>"
         }
       }
+    },
+    "CustomCnameAssociationFault":{
+      "type":"structure",
+      "members":{
+      },
+      "documentation":"<p>An error occurred when an attempt was made to change the custom domain association.</p>",
+      "error":{
+        "code":"CustomCnameAssociationFault",
+        "httpStatusCode":400,
+        "senderFault":true
+      },
+      "exception":true
+    },
+    "CustomDomainAssociationNotFoundFault":{
+      "type":"structure",
+      "members":{
+      },
+      "documentation":"<p>An error occurred. The custom domain name couldn't be found.</p>",
+      "error":{
+        "code":"CustomDomainAssociationNotFoundFault",
+        "httpStatusCode":404,
+        "senderFault":true
+      },
+      "exception":true
+    },
+    "CustomDomainAssociationsMessage":{
+      "type":"structure",
+      "members":{
+        "Marker":{
+          "shape":"String",
+          "documentation":"<p>The marker for the custom domain association.</p>"
+        },
+        "Associations":{
+          "shape":"AssociationList",
+          "documentation":"<p>The associations for the custom domain.</p>"
+        }
+      }
+    },
+    "CustomDomainCertificateArnString":{
+      "type":"string",
+      "max":2048,
+      "min":20,
+      "pattern":"arn:[\\w+=/,.@-]+:acm:[\\w+=/,.@-]*:[0-9]+:[\\w+=,.@-]+(/[\\w+=,.@-]+)*"
+    },
+    "CustomDomainNameString":{
+      "type":"string",
+      "max":253,
+      "min":1,
+      "pattern":"^((?!-)[A-Za-z0-9-]{1,63}(?<!-)\\.)+[A-Za-z]{2,6}$"
     },
     "CustomerStorageMessage":{
       "type":"structure",
@@ -4224,7 +4495,11 @@
         },
         "DataShareAssociations":{
           "shape":"DataShareAssociationList",
-          "documentation":"<p>A value that specifies when the datashare has an association between a producer and data consumers.</p>"
+          "documentation":"<p>A value that specifies when the datashare has an association between producer and data consumers.</p>"
+        },
+        "ManagedBy":{
+          "shape":"String",
+          "documentation":"<p>The identifier of a datashare to show its managing entity.</p>"
         }
       }
     },
@@ -4238,6 +4513,10 @@
         "Status":{
           "shape":"DataShareStatus",
           "documentation":"<p>The status of the datashare that is associated.</p>"
+        },
+        "ConsumerRegion":{
+          "shape":"String",
+          "documentation":"<p>The Amazon Web Services Region of the consumer accounts that have an association with a producer datashare.</p>"
         },
         "CreatedDate":{
           "shape":"TStamp",
@@ -4336,7 +4615,7 @@
         },
         "ConsumerIdentifier":{
           "shape":"String",
-          "documentation":"<p>The identifier of the data consumer that is to have authorization removed from the datashare. This identifier is an Amazon Web Services account ID.</p>"
+          "documentation":"<p>The identifier of the data consumer that is to have authorization removed from the datashare. This identifier is an Amazon Web Services account ID or a keyword, such as ADX.</p>"
         }
       }
     },
@@ -4492,6 +4771,16 @@
         }
       },
       "documentation":"<p/>"
+    },
+    "DeleteCustomDomainAssociationMessage":{
+      "type":"structure",
+      "required":["ClusterIdentifier"],
+      "members":{
+        "ClusterIdentifier":{
+          "shape":"String",
+          "documentation":"<p>The identifier of the cluster to delete a custom domain association for.</p>"
+        }
+      }
     },
     "DeleteEndpointAccessMessage":{
       "type":"structure",
@@ -4717,7 +5006,7 @@
       "members":{
         "ClusterSecurityGroupName":{
           "shape":"String",
-          "documentation":"<p>The name of a cluster security group for which you are requesting details. You can specify either the <b>Marker</b> parameter or a <b>ClusterSecurityGroupName</b> parameter, but not both. </p> <p> Example: <code>securitygroup1</code> </p>"
+          "documentation":"<p>The name of a cluster security group for which you are requesting details. You must specify either the <b>Marker</b> parameter or a <b>ClusterSecurityGroupName</b> parameter, but not both. </p> <p> Example: <code>securitygroup1</code> </p>"
         },
         "MaxRecords":{
           "shape":"IntegerOptional",
@@ -4725,7 +5014,7 @@
         },
         "Marker":{
           "shape":"String",
-          "documentation":"<p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeClusterSecurityGroups</a> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p> <p>Constraints: You can specify either the <b>ClusterSecurityGroupName</b> parameter or the <b>Marker</b> parameter, but not both. </p>"
+          "documentation":"<p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeClusterSecurityGroups</a> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p> <p>Constraints: You must specify either the <b>ClusterSecurityGroupName</b> parameter or the <b>Marker</b> parameter, but not both. </p>"
         },
         "TagKeys":{
           "shape":"TagKeyList",
@@ -4748,6 +5037,10 @@
         "SnapshotIdentifier":{
           "shape":"String",
           "documentation":"<p>The snapshot identifier of the snapshot about which to return information.</p>"
+        },
+        "SnapshotArn":{
+          "shape":"String",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the snapshot associated with the message to describe cluster snapshots.</p>"
         },
         "SnapshotType":{
           "shape":"String",
@@ -4882,6 +5175,27 @@
         }
       },
       "documentation":"<p/>"
+    },
+    "DescribeCustomDomainAssociationsMessage":{
+      "type":"structure",
+      "members":{
+        "CustomDomainName":{
+          "shape":"CustomDomainNameString",
+          "documentation":"<p>The custom domain name for the custom domain association.</p>"
+        },
+        "CustomDomainCertificateArn":{
+          "shape":"CustomDomainCertificateArnString",
+          "documentation":"<p>The certificate Amazon Resource Name (ARN) for the custom domain association.</p>"
+        },
+        "MaxRecords":{
+          "shape":"IntegerOptional",
+          "documentation":"<p>The maximum records setting for the associated custom domain.</p>"
+        },
+        "Marker":{
+          "shape":"String",
+          "documentation":"<p>The marker for the custom domain association.</p>"
+        }
+      }
     },
     "DescribeDataSharesForConsumerMessage":{
       "type":"structure",
@@ -5044,7 +5358,7 @@
         },
         "Account":{
           "shape":"String",
-          "documentation":"<p>The AAmazon Web Services account ID of either the cluster owner (grantor) or grantee. If <code>Grantee</code> parameter is true, then the <code>Account</code> value is of the grantor.</p>"
+          "documentation":"<p>The Amazon Web Services account ID of either the cluster owner (grantor) or grantee. If <code>Grantee</code> parameter is true, then the <code>Account</code> value is of the grantor.</p>"
         },
         "Grantee":{
           "shape":"BooleanOptional",
@@ -5208,6 +5522,10 @@
         "SnapshotIdentifier":{
           "shape":"String",
           "documentation":"<p>The identifier of the snapshot to evaluate for possible node configurations.</p>"
+        },
+        "SnapshotArn":{
+          "shape":"String",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the snapshot associated with the message to describe node configuration.</p>"
         },
         "OwnerAccount":{
           "shape":"String",
@@ -5598,6 +5916,10 @@
         "ConsumerArn":{
           "shape":"String",
           "documentation":"<p>The Amazon Resource Name (ARN) of the consumer that association for the datashare is removed from.</p>"
+        },
+        "ConsumerRegion":{
+          "shape":"String",
+          "documentation":"<p>From a datashare consumer account, removes association of a datashare from all the existing and future namespaces in the specified Amazon Web Services Region.</p>"
         }
       }
     },
@@ -5655,10 +5977,7 @@
     },
     "EnableLoggingMessage":{
       "type":"structure",
-      "required":[
-        "ClusterIdentifier",
-        "BucketName"
-      ],
+      "required":["ClusterIdentifier"],
       "members":{
         "ClusterIdentifier":{
           "shape":"String",
@@ -5671,6 +5990,14 @@
         "S3KeyPrefix":{
           "shape":"String",
           "documentation":"<p>The prefix applied to the log file names.</p> <p>Constraints:</p> <ul> <li> <p>Cannot exceed 512 characters</p> </li> <li> <p>Cannot contain spaces( ), double quotes (\"), single quotes ('), a backslash (\\), or control characters. The hexadecimal codes for invalid characters are: </p> <ul> <li> <p>x00 to x20</p> </li> <li> <p>x22</p> </li> <li> <p>x27</p> </li> <li> <p>x5c</p> </li> <li> <p>x7f or larger</p> </li> </ul> </li> </ul>"
+        },
+        "LogDestinationType":{
+          "shape":"LogDestinationType",
+          "documentation":"<p>The log destination type. An enum with possible values of <code>s3</code> and <code>cloudwatch</code>.</p>"
+        },
+        "LogExports":{
+          "shape":"LogTypeList",
+          "documentation":"<p>The collection of exported log types. Possible values are <code>connectionlog</code>, <code>useractivitylog</code>, and <code>userlog</code>.</p>"
         }
       },
       "documentation":"<p/>"
@@ -6142,22 +6469,19 @@
     },
     "GetClusterCredentialsMessage":{
       "type":"structure",
-      "required":[
-        "DbUser",
-        "ClusterIdentifier"
-      ],
+      "required":["DbUser"],
       "members":{
         "DbUser":{
           "shape":"String",
-          "documentation":"<p>The name of a database user. If a user name matching <code>DbUser</code> exists in the database, the temporary user credentials have the same permissions as the existing user. If <code>DbUser</code> doesn't exist in the database and <code>Autocreate</code> is <code>True</code>, a new user is created using the value for <code>DbUser</code> with PUBLIC permissions. If a database user matching the value for <code>DbUser</code> doesn't exist and <code>Autocreate</code> is <code>False</code>, then the command succeeds but the connection attempt will fail because the user doesn't exist in the database.</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html\">CREATE USER</a> in the Amazon Redshift Database Developer Guide. </p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 64 alphanumeric characters or hyphens. The user name can't be <code>PUBLIC</code>.</p> </li> <li> <p>Must contain only lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.</p> </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Must not contain a colon ( : ) or slash ( / ). </p> </li> <li> <p>Cannot be a reserved word. A list of reserved words can be found in <a href=\"http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html\">Reserved Words</a> in the Amazon Redshift Database Developer Guide.</p> </li> </ul>"
+          "documentation":"<p>The name of a database user. If a user name matching <code>DbUser</code> exists in the database, the temporary user credentials have the same permissions as the existing user. If <code>DbUser</code> doesn't exist in the database and <code>Autocreate</code> is <code>True</code>, a new user is created using the value for <code>DbUser</code> with PUBLIC permissions. If a database user matching the value for <code>DbUser</code> doesn't exist and <code>Autocreate</code> is <code>False</code>, then the command succeeds but the connection attempt will fail because the user doesn't exist in the database.</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html\">CREATE USER</a> in the Amazon Redshift Database Developer Guide. </p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 64 alphanumeric characters or hyphens. The user name can't be <code>PUBLIC</code>.</p> </li> <li> <p>Must contain uppercase or lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.</p> </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Must not contain a colon ( : ) or slash ( / ). </p> </li> <li> <p>Cannot be a reserved word. A list of reserved words can be found in <a href=\"http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html\">Reserved Words</a> in the Amazon Redshift Database Developer Guide.</p> </li> </ul>"
         },
         "DbName":{
           "shape":"String",
-          "documentation":"<p>The name of a database that <code>DbUser</code> is authorized to log on to. If <code>DbName</code> is not specified, <code>DbUser</code> can log on to any existing database.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 64 alphanumeric characters or hyphens</p> </li> <li> <p>Must contain only lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.</p> </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Must not contain a colon ( : ) or slash ( / ). </p> </li> <li> <p>Cannot be a reserved word. A list of reserved words can be found in <a href=\"http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html\">Reserved Words</a> in the Amazon Redshift Database Developer Guide.</p> </li> </ul>"
+          "documentation":"<p>The name of a database that <code>DbUser</code> is authorized to log on to. If <code>DbName</code> is not specified, <code>DbUser</code> can log on to any existing database.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 64 alphanumeric characters or hyphens</p> </li> <li> <p>Must contain uppercase or lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.</p> </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Must not contain a colon ( : ) or slash ( / ). </p> </li> <li> <p>Cannot be a reserved word. A list of reserved words can be found in <a href=\"http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html\">Reserved Words</a> in the Amazon Redshift Database Developer Guide.</p> </li> </ul>"
         },
         "ClusterIdentifier":{
           "shape":"String",
-          "documentation":"<p>The unique identifier of the cluster that contains the database for which your are requesting credentials. This parameter is case sensitive.</p>"
+          "documentation":"<p>The unique identifier of the cluster that contains the database for which you are requesting credentials. This parameter is case sensitive.</p>"
         },
         "DurationSeconds":{
           "shape":"IntegerOptional",
@@ -6170,9 +6494,34 @@
         "DbGroups":{
           "shape":"DbGroupList",
           "documentation":"<p>A list of the names of existing database groups that the user named in <code>DbUser</code> will join for the current session, in addition to any group memberships for an existing user. If not specified, a new user is added only to PUBLIC.</p> <p>Database group name constraints</p> <ul> <li> <p>Must be 1 to 64 alphanumeric characters or hyphens</p> </li> <li> <p>Must contain only lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.</p> </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Must not contain a colon ( : ) or slash ( / ). </p> </li> <li> <p>Cannot be a reserved word. A list of reserved words can be found in <a href=\"http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html\">Reserved Words</a> in the Amazon Redshift Database Developer Guide.</p> </li> </ul>"
+        },
+        "CustomDomainName":{
+          "shape":"String",
+          "documentation":"<p>The custom domain name for the cluster credentials.</p>"
         }
       },
       "documentation":"<p>The request parameters to get cluster credentials.</p>"
+    },
+    "GetClusterCredentialsWithIAMMessage":{
+      "type":"structure",
+      "members":{
+        "DbName":{
+          "shape":"String",
+          "documentation":"<p>The name of the database for which you are requesting credentials. If the database name is specified, the IAM policy must allow access to the resource <code>dbname</code> for the specified database name. If the database name is not specified, access to all databases is allowed.</p>"
+        },
+        "ClusterIdentifier":{
+          "shape":"String",
+          "documentation":"<p>The unique identifier of the cluster that contains the database for which you are requesting credentials. </p>"
+        },
+        "DurationSeconds":{
+          "shape":"IntegerOptional",
+          "documentation":"<p>The number of seconds until the returned temporary password expires.</p> <p>Range: 900-3600. Default: 900.</p>"
+        },
+        "CustomDomainName":{
+          "shape":"String",
+          "documentation":"<p>The custom domain name for the IAM message cluster credentials.</p>"
+        }
+      }
     },
     "GetReservedNodeExchangeConfigurationOptionsInputMessage":{
       "type":"structure",
@@ -6889,6 +7238,17 @@
       },
       "exception":true
     },
+    "LogDestinationType":{
+      "type":"string",
+      "enum":[
+        "s3",
+        "cloudwatch"
+      ]
+    },
+    "LogTypeList":{
+      "type":"list",
+      "member":{"shape":"String"}
+    },
     "LoggingStatus":{
       "type":"structure",
       "members":{
@@ -6915,6 +7275,14 @@
         "LastFailureMessage":{
           "shape":"String",
           "documentation":"<p>The message indicating that logs failed to be delivered.</p>"
+        },
+        "LogDestinationType":{
+          "shape":"LogDestinationType",
+          "documentation":"<p>The log destination type. An enum with possible values of <code>s3</code> and <code>cloudwatch</code>.</p>"
+        },
+        "LogExports":{
+          "shape":"LogTypeList",
+          "documentation":"<p>The collection of exported log types. Possible values are <code>connectionlog</code>, <code>useractivitylog</code>, and <code>userlog</code>.</p>"
         }
       },
       "documentation":"<p>Describes the status of logging for a cluster.</p>"
@@ -6956,7 +7324,7 @@
         },
         "AquaConfigurationStatus":{
           "shape":"AquaConfigurationStatus",
-          "documentation":"<p>The new value of AQUA configuration status. Possible values include the following.</p> <ul> <li> <p>enabled - Use AQUA if it is available for the current Amazon Web Services Region and Amazon Redshift node type.</p> </li> <li> <p>disabled - Don't use AQUA. </p> </li> <li> <p>auto - Amazon Redshift determines whether to use AQUA.</p> </li> </ul>"
+          "documentation":"<p>This parameter is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).</p>"
         }
       }
     },
@@ -6965,7 +7333,7 @@
       "members":{
         "AquaConfiguration":{
           "shape":"AquaConfiguration",
-          "documentation":"<p>The updated AQUA configuration of the cluster. </p>"
+          "documentation":"<p>This parameter is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator). </p>"
         }
       }
     },
@@ -7032,11 +7400,11 @@
         },
         "AddIamRoles":{
           "shape":"IamRoleArnList",
-          "documentation":"<p>Zero or more IAM roles to associate with the cluster. The roles must be in their Amazon Resource Name (ARN) format. You can associate up to 10 IAM roles with a single cluster in a single request.</p>"
+          "documentation":"<p>Zero or more IAM roles to associate with the cluster. The roles must be in their Amazon Resource Name (ARN) format. </p>"
         },
         "RemoveIamRoles":{
           "shape":"IamRoleArnList",
-          "documentation":"<p>Zero or more IAM roles in ARN format to disassociate from the cluster. You can disassociate up to 10 IAM roles from a single cluster in a single request.</p>"
+          "documentation":"<p>Zero or more IAM roles in ARN format to disassociate from the cluster. </p>"
         },
         "DefaultIamRoleArn":{
           "shape":"String",
@@ -7117,7 +7485,7 @@
         },
         "MasterUserPassword":{
           "shape":"String",
-          "documentation":"<p>The new password for the cluster admin user. This change is asynchronously applied as soon as possible. Between the time of the request and the completion of the request, the <code>MasterUserPassword</code> element exists in the <code>PendingModifiedValues</code> element of the operation response. </p> <note> <p>Operations never return the password, so this operation provides a way to regain access to the admin user account for a cluster if the password is lost.</p> </note> <p>Default: Uses existing setting.</p> <p>Constraints:</p> <ul> <li> <p>Must be between 8 and 64 characters in length.</p> </li> <li> <p>Must contain at least one uppercase letter.</p> </li> <li> <p>Must contain at least one lowercase letter.</p> </li> <li> <p>Must contain one number.</p> </li> <li> <p>Can be any printable ASCII character (ASCII code 33 to 126) except ' (single quote), \" (double quote), \\, /, @, or space.</p> </li> </ul>"
+          "documentation":"<p>The new password for the cluster admin user. This change is asynchronously applied as soon as possible. Between the time of the request and the completion of the request, the <code>MasterUserPassword</code> element exists in the <code>PendingModifiedValues</code> element of the operation response. </p> <note> <p>Operations never return the password, so this operation provides a way to regain access to the admin user account for a cluster if the password is lost.</p> </note> <p>Default: Uses existing setting.</p> <p>Constraints:</p> <ul> <li> <p>Must be between 8 and 64 characters in length.</p> </li> <li> <p>Must contain at least one uppercase letter.</p> </li> <li> <p>Must contain at least one lowercase letter.</p> </li> <li> <p>Must contain one number.</p> </li> <li> <p>Can be any printable ASCII character (ASCII code 33-126) except <code>'</code> (single quote), <code>\"</code> (double quote), <code>\\</code>, <code>/</code>, or <code>@</code>.</p> </li> </ul>"
         },
         "ClusterParameterGroupName":{
           "shape":"String",
@@ -7286,6 +7654,45 @@
       "type":"structure",
       "members":{
         "ClusterSubnetGroup":{"shape":"ClusterSubnetGroup"}
+      }
+    },
+    "ModifyCustomDomainAssociationMessage":{
+      "type":"structure",
+      "required":["ClusterIdentifier"],
+      "members":{
+        "CustomDomainName":{
+          "shape":"CustomDomainNameString",
+          "documentation":"<p>The custom domain name for a changed custom domain association.</p>"
+        },
+        "CustomDomainCertificateArn":{
+          "shape":"CustomDomainCertificateArnString",
+          "documentation":"<p>The certificate Amazon Resource Name (ARN) for the changed custom domain association.</p>"
+        },
+        "ClusterIdentifier":{
+          "shape":"String",
+          "documentation":"<p>The identifier of the cluster to change a custom domain association for.</p>"
+        }
+      }
+    },
+    "ModifyCustomDomainAssociationResult":{
+      "type":"structure",
+      "members":{
+        "CustomDomainName":{
+          "shape":"CustomDomainNameString",
+          "documentation":"<p>The custom domain name associated with the result for the changed custom domain association.</p>"
+        },
+        "CustomDomainCertificateArn":{
+          "shape":"CustomDomainCertificateArnString",
+          "documentation":"<p>The certificate Amazon Resource Name (ARN) associated with the result for the changed custom domain association.</p>"
+        },
+        "ClusterIdentifier":{
+          "shape":"String",
+          "documentation":"<p>The identifier of the cluster associated with the result for the changed custom domain association.</p>"
+        },
+        "CustomDomainCertExpiryTime":{
+          "shape":"String",
+          "documentation":"<p>The certificate expiration time associated with the result for the changed custom domain association.</p>"
+        }
       }
     },
     "ModifyEndpointAccessMessage":{
@@ -8446,10 +8853,7 @@
     },
     "RestoreFromClusterSnapshotMessage":{
       "type":"structure",
-      "required":[
-        "ClusterIdentifier",
-        "SnapshotIdentifier"
-      ],
+      "required":["ClusterIdentifier"],
       "members":{
         "ClusterIdentifier":{
           "shape":"String",
@@ -8457,7 +8861,11 @@
         },
         "SnapshotIdentifier":{
           "shape":"String",
-          "documentation":"<p>The name of the snapshot from which to create the new cluster. This parameter isn't case sensitive.</p> <p>Example: <code>my-snapshot-id</code> </p>"
+          "documentation":"<p>The name of the snapshot from which to create the new cluster. This parameter isn't case sensitive. You must specify this parameter or <code>snapshotArn</code>, but not both.</p> <p>Example: <code>my-snapshot-id</code> </p>"
+        },
+        "SnapshotArn":{
+          "shape":"String",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the snapshot associated with the message to restore from a cluster. You must specify this parameter or <code>snapshotIdentifier</code>, but not both.</p>"
         },
         "SnapshotClusterIdentifier":{
           "shape":"String",
@@ -8497,7 +8905,7 @@
         },
         "ElasticIp":{
           "shape":"String",
-          "documentation":"<p>The elastic IP (EIP) address for the cluster.</p>"
+          "documentation":"<p>The Elastic IP (EIP) address for the cluster. Don't specify the Elastic IP address for a publicly accessible cluster with availability zone relocation turned on.</p>"
         },
         "ClusterParameterGroupName":{
           "shape":"String",
@@ -8525,7 +8933,7 @@
         },
         "KmsKeyId":{
           "shape":"String",
-          "documentation":"<p>The Key Management Service (KMS) key ID of the encryption key that you want to use to encrypt data in the cluster that you restore from a shared snapshot.</p>"
+          "documentation":"<p>The Key Management Service (KMS) key ID of the encryption key that encrypts data in the cluster restored from a shared snapshot. You can also provide the key ID when you restore from an unencrypted snapshot to an encrypted cluster in the same account. Additionally, you can specify a new KMS key ID when you restore from an encrypted snapshot in the same account in order to change it. In that case, the restored cluster is encrypted with the new KMS key ID.</p>"
         },
         "NodeType":{
           "shape":"String",
@@ -8541,7 +8949,7 @@
         },
         "IamRoles":{
           "shape":"IamRoleArnList",
-          "documentation":"<p>A list of Identity and Access Management (IAM) roles that can be used by the cluster to access other Amazon Web Services services. You must supply the IAM roles in their Amazon Resource Name (ARN) format. You can supply up to 10 IAM roles in a single request.</p> <p>A cluster can have up to 10 IAM roles associated at any time.</p>"
+          "documentation":"<p>A list of Identity and Access Management (IAM) roles that can be used by the cluster to access other Amazon Web Services services. You must supply the IAM roles in their Amazon Resource Name (ARN) format. </p> <p>The maximum number of IAM roles that you can associate is subject to a quota. For more information, go to <a href=\"https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html\">Quotas and limits</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>"
         },
         "MaintenanceTrackName":{
           "shape":"String",
@@ -8561,7 +8969,7 @@
         },
         "AquaConfigurationStatus":{
           "shape":"AquaConfigurationStatus",
-          "documentation":"<p>The value represents how the cluster is configured to use AQUA (Advanced Query Accelerator) after the cluster is restored. Possible values include the following.</p> <ul> <li> <p>enabled - Use AQUA if it is available for the current Amazon Web Services Region and Amazon Redshift node type.</p> </li> <li> <p>disabled - Don't use AQUA. </p> </li> <li> <p>auto - Amazon Redshift determines whether to use AQUA.</p> </li> </ul>"
+          "documentation":"<p>This parameter is retired. It does not set the AQUA configuration status. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).</p>"
         },
         "DefaultIamRoleArn":{
           "shape":"String",
@@ -8574,6 +8982,10 @@
         "TargetReservedNodeOfferingId":{
           "shape":"String",
           "documentation":"<p>The identifier of the target reserved node offering.</p>"
+        },
+        "Encrypted":{
+          "shape":"BooleanOptional",
+          "documentation":"<p>Enables support for restoring an unencrypted snapshot to a cluster encrypted with Key Management Service (KMS) and a customer managed key.</p>"
         }
       },
       "documentation":"<p/>"
@@ -8763,14 +9175,15 @@
     },
     "RevokeSnapshotAccessMessage":{
       "type":"structure",
-      "required":[
-        "SnapshotIdentifier",
-        "AccountWithRestoreAccess"
-      ],
+      "required":["AccountWithRestoreAccess"],
       "members":{
         "SnapshotIdentifier":{
           "shape":"String",
           "documentation":"<p>The identifier of the snapshot that the account can no longer access.</p>"
+        },
+        "SnapshotArn":{
+          "shape":"String",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the snapshot associated with the message to revoke access.</p>"
         },
         "SnapshotClusterIdentifier":{
           "shape":"String",
@@ -9258,14 +9671,14 @@
         },
         "KmsKeyId":{
           "shape":"String",
-          "documentation":"<p>The unique identifier of the customer master key (CMK) in Amazon Web Services KMS to which Amazon Redshift is granted permission.</p>"
+          "documentation":"<p>The unique identifier of the encrypted symmetric key in Amazon Web Services KMS to which Amazon Redshift is granted permission.</p>"
         },
         "Tags":{
           "shape":"TagList",
           "documentation":"<p>A list of tag instances.</p>"
         }
       },
-      "documentation":"<p>The snapshot copy grant that grants Amazon Redshift permission to encrypt copied snapshots with the specified customer master key (CMK) from Amazon Web Services KMS in the destination region.</p> <p> For more information about managing snapshot copy grants, go to <a href=\"https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html\">Amazon Redshift Database Encryption</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>",
+      "documentation":"<p>The snapshot copy grant that grants Amazon Redshift permission to encrypt copied snapshots with the specified encrypted symmetric key from Amazon Web Services KMS in the destination region.</p> <p> For more information about managing snapshot copy grants, go to <a href=\"https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html\">Amazon Redshift Database Encryption</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>",
       "wrapper":true
     },
     "SnapshotCopyGrantAlreadyExistsFault":{
@@ -10066,7 +10479,8 @@
       "type":"string",
       "enum":[
         "spectrum",
-        "concurrency-scaling"
+        "concurrency-scaling",
+        "cross-region-datasharing"
       ]
     },
     "UsageLimitLimitType":{

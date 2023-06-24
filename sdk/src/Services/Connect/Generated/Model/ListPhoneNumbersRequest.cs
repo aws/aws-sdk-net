@@ -39,6 +39,15 @@ namespace Amazon.Connect.Model
     /// Up Phone Numbers for Your Contact Center</a> in the <i>Amazon Connect Administrator
     /// Guide</i>.
     /// </para>
+    ///  <important> 
+    /// <para>
+    /// The phone number <code>Arn</code> value that is returned from each of the items in
+    /// the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ListPhoneNumbers.html#connect-ListPhoneNumbers-response-PhoneNumberSummaryList">PhoneNumberSummaryList</a>
+    /// cannot be used to tag phone number resources. It will fail with a <code>ResourceNotFoundException</code>.
+    /// Instead, use the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ListPhoneNumbersV2.html">ListPhoneNumbersV2</a>
+    /// API. It returns the new phone number ARN that can be used to tag phone number resources.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class ListPhoneNumbersRequest : AmazonConnectRequest
     {
@@ -51,8 +60,8 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The identifier of the Amazon Connect instance. You can find the instanceId in the
-        /// ARN of the instance.
+        /// The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+        /// the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
@@ -71,7 +80,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of results to return per page.
+        /// The maximum number of results to return per page. The default MaxResult size is 100.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]

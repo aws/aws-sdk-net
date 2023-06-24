@@ -34,7 +34,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// UpsolverS3OutputFormatConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class UpsolverS3OutputFormatConfigMarshaller : IRequestMarshaller<UpsolverS3OutputFormatConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -77,7 +77,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static UpsolverS3OutputFormatConfigMarshaller Instance = new UpsolverS3OutputFormatConfigMarshaller();
 
     }

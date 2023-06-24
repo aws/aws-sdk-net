@@ -34,7 +34,7 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CanaryRunConfigInput Marshaller
-    /// </summary>       
+    /// </summary>
     public class CanaryRunConfigInputMarshaller : IRequestMarshaller<CanaryRunConfigInput, JsonMarshallerContext> 
     {
         /// <summary>
@@ -81,7 +81,7 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CanaryRunConfigInputMarshaller Instance = new CanaryRunConfigInputMarshaller();
 
     }

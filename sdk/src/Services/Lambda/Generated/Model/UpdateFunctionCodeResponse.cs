@@ -39,6 +39,7 @@ namespace Amazon.Lambda.Model
         private DeadLetterConfig _deadLetterConfig;
         private string _description;
         private EnvironmentResponse _environment;
+        private EphemeralStorage _ephemeralStorage;
         private List<FileSystemConfig> _fileSystemConfigs = new List<FileSystemConfig>();
         private string _functionArn;
         private string _functionName;
@@ -56,8 +57,10 @@ namespace Amazon.Lambda.Model
         private string _revisionId;
         private string _role;
         private Runtime _runtime;
+        private RuntimeVersionConfig _runtimeVersionConfig;
         private string _signingJobArn;
         private string _signingProfileVersionArn;
+        private SnapStartResponse _snapStart;
         private State _state;
         private string _stateReason;
         private StateReasonCode _stateReasonCode;
@@ -163,7 +166,7 @@ namespace Amazon.Lambda.Model
         /// Gets and sets the property Environment. 
         /// <para>
         /// The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">environment
-        /// variables</a>.
+        /// variables</a>. Omitted from CloudTrail logs.
         /// </para>
         /// </summary>
         public EnvironmentResponse Environment
@@ -176,6 +179,25 @@ namespace Amazon.Lambda.Model
         internal bool IsSetEnvironment()
         {
             return this._environment != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EphemeralStorage. 
+        /// <para>
+        /// The size of the function’s <code>/tmp</code> directory in MB. The default value is
+        /// 512, but it can be any whole number between 512 and 10,240 MB.
+        /// </para>
+        /// </summary>
+        public EphemeralStorage EphemeralStorage
+        {
+            get { return this._ephemeralStorage; }
+            set { this._ephemeralStorage = value; }
+        }
+
+        // Check to see if EphemeralStorage property is set
+        internal bool IsSetEphemeralStorage()
+        {
+            return this._ephemeralStorage != null;
         }
 
         /// <summary>
@@ -238,7 +260,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Handler. 
         /// <para>
-        /// The function that Lambda calls to begin executing your function.
+        /// The function that Lambda calls to begin running your function.
         /// </para>
         /// </summary>
         [AWSProperty(Max=128)]
@@ -275,8 +297,10 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property KMSKeyArn. 
         /// <para>
-        /// The KMS key that's used to encrypt the function's environment variables. This key
-        /// is only returned if you've configured a customer managed key.
+        /// The KMS key that's used to encrypt the function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-encryption">environment
+        /// variables</a>. When <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart-security.html">Lambda
+        /// SnapStart</a> is activated, this key is also used to encrypt the function's snapshot.
+        /// This key is returned only if you've configured a customer managed key.
         /// </para>
         /// </summary>
         public string KMSKeyArn
@@ -368,8 +392,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Layers. 
         /// <para>
-        /// The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">
-        /// layers</a>.
+        /// The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">layers</a>.
         /// </para>
         /// </summary>
         public List<Layer> Layers
@@ -405,7 +428,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property MemorySize. 
         /// <para>
-        /// The amount of memory available to the function at runtime. 
+        /// The amount of memory available to the function at runtime.
         /// </para>
         /// </summary>
         [AWSProperty(Min=128, Max=10240)]
@@ -479,7 +502,13 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Runtime. 
         /// <para>
-        /// The runtime environment for the Lambda function.
+        /// The identifier of the function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>.
+        /// Runtime is required if the deployment package is a .zip file archive.
+        /// </para>
+        ///  
+        /// <para>
+        /// The following list includes deprecated runtimes. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime
+        /// deprecation policy</a>.
         /// </para>
         /// </summary>
         public Runtime Runtime
@@ -492,6 +521,24 @@ namespace Amazon.Lambda.Model
         internal bool IsSetRuntime()
         {
             return this._runtime != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RuntimeVersionConfig. 
+        /// <para>
+        /// The ARN of the runtime and any errors that occured.
+        /// </para>
+        /// </summary>
+        public RuntimeVersionConfig RuntimeVersionConfig
+        {
+            get { return this._runtimeVersionConfig; }
+            set { this._runtimeVersionConfig = value; }
+        }
+
+        // Check to see if RuntimeVersionConfig property is set
+        internal bool IsSetRuntimeVersionConfig()
+        {
+            return this._runtimeVersionConfig != null;
         }
 
         /// <summary>
@@ -528,6 +575,27 @@ namespace Amazon.Lambda.Model
         internal bool IsSetSigningProfileVersionArn()
         {
             return this._signingProfileVersionArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SnapStart. 
+        /// <para>
+        /// Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a snapshot of
+        /// the initialized execution environment when you publish a function version. For more
+        /// information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Improving
+        /// startup performance with Lambda SnapStart</a>.
+        /// </para>
+        /// </summary>
+        public SnapStartResponse SnapStart
+        {
+            get { return this._snapStart; }
+            set { this._snapStart = value; }
+        }
+
+        // Check to see if SnapStart property is set
+        internal bool IsSetSnapStart()
+        {
+            return this._snapStart != null;
         }
 
         /// <summary>

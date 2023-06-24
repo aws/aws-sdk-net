@@ -51,6 +51,12 @@ namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("approximateAssetCount", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    response.ApproximateAssetCount = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("arn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -61,6 +67,12 @@ namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = AuthorizationUnmarshaller.Instance;
                     response.Authorization = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("createdAt", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.CreatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("domainName", targetDepth))

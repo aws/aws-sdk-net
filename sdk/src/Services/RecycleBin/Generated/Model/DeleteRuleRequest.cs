@@ -31,7 +31,8 @@ namespace Amazon.RecycleBin.Model
     /// <summary>
     /// Container for the parameters to the DeleteRule operation.
     /// Deletes a Recycle Bin retention rule. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin-working-with-rules.html#recycle-bin-delete-rule">
-    /// Delete Recycle Bin retention rules</a> in the <i>Amazon EC2 User Guide</i>.
+    /// Delete Recycle Bin retention rules</a> in the <i>Amazon Elastic Compute Cloud User
+    /// Guide</i>.
     /// </summary>
     public partial class DeleteRuleRequest : AmazonRecycleBinRequest
     {
@@ -40,7 +41,7 @@ namespace Amazon.RecycleBin.Model
         /// <summary>
         /// Gets and sets the property Identifier. 
         /// <para>
-        /// The unique ID of the retention rule to delete.
+        /// The unique ID of the retention rule.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

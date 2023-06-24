@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SensitiveDataResult Marshaller
-    /// </summary>       
+    /// </summary>
     public class SensitiveDataResultMarshaller : IRequestMarshaller<SensitiveDataResult, JsonMarshallerContext> 
     {
         /// <summary>
@@ -77,7 +77,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SensitiveDataResultMarshaller Instance = new SensitiveDataResultMarshaller();
 
     }

@@ -29,7 +29,27 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisVideo.Model
 {
     /// <summary>
-    /// The signaling channel is currently not available for this operation.
+    /// When the input <code>StreamARN</code> or <code>ChannelARN</code> in <code>CLOUD_STORAGE_MODE</code>
+    /// is already mapped to a different Kinesis Video Stream resource, or if the provided
+    /// input <code>StreamARN</code> or <code>ChannelARN</code> is not in Active status, try
+    /// one of the following : 
+    /// 
+    ///  <ol> <li> 
+    /// <para>
+    /// The <code>DescribeMediaStorageConfiguration</code> API to determine what the stream
+    /// given channel is mapped to. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The <code>DescribeMappedResourceConfiguration</code> API to determine the channel
+    /// that the given stream is mapped to. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The <code>DescribeStream</code> or <code>DescribeSignalingChannel</code> API to determine
+    /// the status of the resource. 
+    /// </para>
+    ///  </li> </ol>
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -35,7 +35,7 @@ namespace Amazon.Lightsail.Model
     ///  <note> 
     /// <para>
     /// When you delete your bucket, the bucket name is released and can be reused for a new
-    /// bucket in your account or another AWS account.
+    /// bucket in your account or another Amazon Web Services account.
     /// </para>
     ///  </note>
     /// </summary>
@@ -51,7 +51,8 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  
         /// <para>
-        /// Use the <a>GetBuckets</a> action to get a list of bucket names that you can specify.
+        /// Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetBuckets.html">GetBuckets</a>
+        /// action to get a list of bucket names that you can specify.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=3, Max=54)]
@@ -82,7 +83,7 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The bucket has instances that were granted access to it using the <a>SetResourceAccessForBucket</a>
+        /// The bucket has instances that were granted access to it using the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_SetResourceAccessForBucket.html">SetResourceAccessForBucket</a>
         /// action.
         /// </para>
         ///  </li> <li> 

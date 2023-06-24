@@ -34,7 +34,7 @@ namespace Amazon.ManagedBlockchain.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// NodeLogPublishingConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class NodeLogPublishingConfigurationMarshaller : IRequestMarshaller<NodeLogPublishingConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.ManagedBlockchain.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static NodeLogPublishingConfigurationMarshaller Instance = new NodeLogPublishingConfigurationMarshaller();
 
     }

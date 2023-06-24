@@ -33,6 +33,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class MaintenanceWindowTask
     {
+        private AlarmConfiguration _alarmConfiguration;
         private MaintenanceWindowTaskCutoffBehavior _cutoffBehavior;
         private string _description;
         private LoggingInfo _loggingInfo;
@@ -47,6 +48,24 @@ namespace Amazon.SimpleSystemsManagement.Model
         private MaintenanceWindowTaskType _type;
         private string _windowId;
         private string _windowTaskId;
+
+        /// <summary>
+        /// Gets and sets the property AlarmConfiguration. 
+        /// <para>
+        /// The details for the CloudWatch alarm applied to your maintenance window task.
+        /// </para>
+        /// </summary>
+        public AlarmConfiguration AlarmConfiguration
+        {
+            get { return this._alarmConfiguration; }
+            set { this._alarmConfiguration = value; }
+        }
+
+        // Check to see if AlarmConfiguration property is set
+        internal bool IsSetAlarmConfiguration()
+        {
+            return this._alarmConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CutoffBehavior. 
@@ -73,7 +92,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// A description of the task.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=128)]
+        [AWSProperty(Sensitive=true, Min=1, Max=128)]
         public string Description
         {
             get { return this._description; }
@@ -118,6 +137,19 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// The maximum number of targets this task can be run for, in parallel.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Although this element is listed as "Required: No", a value can be omitted only when
+        /// you are registering or updating a <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">targetless
+        /// task</a> You must provide a value in all other cases.
+        /// </para>
+        ///  
+        /// <para>
+        /// For maintenance window tasks without a target specified, you can't supply a value
+        /// for this option. Instead, the system inserts a placeholder value of <code>1</code>.
+        /// This value doesn't affect the running of your task.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=1, Max=7)]
         public string MaxConcurrency
@@ -137,6 +169,19 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// The maximum number of errors allowed before this task stops being scheduled.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Although this element is listed as "Required: No", a value can be omitted only when
+        /// you are registering or updating a <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">targetless
+        /// task</a> You must provide a value in all other cases.
+        /// </para>
+        ///  
+        /// <para>
+        /// For maintenance window tasks without a target specified, you can't supply a value
+        /// for this option. Instead, the system inserts a placeholder value of <code>1</code>.
+        /// This value doesn't affect the running of your task.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=1, Max=7)]
         public string MaxErrors
@@ -267,6 +312,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public Dictionary<string, MaintenanceWindowTaskParameterValueExpression> TaskParameters
         {
             get { return this._taskParameters; }

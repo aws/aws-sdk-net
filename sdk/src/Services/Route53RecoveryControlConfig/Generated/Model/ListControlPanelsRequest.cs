@@ -30,7 +30,7 @@ namespace Amazon.Route53RecoveryControlConfig.Model
 {
     /// <summary>
     /// Container for the parameters to the ListControlPanels operation.
-    /// Returns an array of control panels for a cluster.
+    /// Returns an array of control panels in an account or in a cluster.
     /// </summary>
     public partial class ListControlPanelsRequest : AmazonRoute53RecoveryControlConfigRequest
     {

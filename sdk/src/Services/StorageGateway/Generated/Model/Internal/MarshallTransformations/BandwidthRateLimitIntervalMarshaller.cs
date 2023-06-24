@@ -34,7 +34,7 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// BandwidthRateLimitInterval Marshaller
-    /// </summary>       
+    /// </summary>
     public class BandwidthRateLimitIntervalMarshaller : IRequestMarshaller<BandwidthRateLimitInterval, JsonMarshallerContext> 
     {
         /// <summary>
@@ -96,7 +96,7 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static BandwidthRateLimitIntervalMarshaller Instance = new BandwidthRateLimitIntervalMarshaller();
 
     }

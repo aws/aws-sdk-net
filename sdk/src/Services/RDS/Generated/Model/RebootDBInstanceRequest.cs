@@ -34,12 +34,10 @@ namespace Amazon.RDS.Model
     /// if you make certain modifications, or if you change the DB parameter group associated
     /// with the DB instance, you must reboot the instance for the changes to take effect.
     /// 
-    /// 
     ///  
     /// <para>
     /// Rebooting a DB instance restarts the database engine service. Rebooting a DB instance
     /// results in a momentary outage, during which the DB instance status is set to rebooting.
-    /// 
     /// </para>
     ///  
     /// <para>
@@ -49,6 +47,11 @@ namespace Amazon.RDS.Model
     ///  
     /// <para>
     /// This command doesn't apply to RDS Custom.
+    /// </para>
+    ///  
+    /// <para>
+    /// If your DB instance is part of a Multi-AZ DB cluster, you can reboot the DB cluster
+    /// with the <code>RebootDBCluster</code> operation.
     /// </para>
     /// </summary>
     public partial class RebootDBInstanceRequest : AmazonRDSRequest
@@ -101,8 +104,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property ForceFailover. 
         /// <para>
-        ///  A value that indicates whether the reboot is conducted through a Multi-AZ failover.
-        /// 
+        /// A value that indicates whether the reboot is conducted through a Multi-AZ failover.
         /// </para>
         ///  
         /// <para>

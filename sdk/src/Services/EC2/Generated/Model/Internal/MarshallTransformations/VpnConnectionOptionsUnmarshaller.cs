@@ -72,6 +72,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.LocalIpv6NetworkCidr = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("outsideIpAddressType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.OutsideIpAddressType = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("remoteIpv4NetworkCidr", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -88,6 +94,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = BoolUnmarshaller.Instance;
                         unmarshalledObject.StaticRoutesOnly = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("transportTransitGatewayAttachmentId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.TransportTransitGatewayAttachmentId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("tunnelInsideIpVersion", targetDepth))

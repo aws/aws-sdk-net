@@ -30,8 +30,8 @@ namespace Amazon.APIGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteDeployment operation.
-    /// Deletes a <a>Deployment</a> resource. Deleting a deployment will only succeed if there
-    /// are no <a>Stage</a> resources associated with it.
+    /// Deletes a Deployment resource. Deleting a deployment will only succeed if there are
+    /// no Stage resources associated with it.
     /// </summary>
     public partial class DeleteDeploymentRequest : AmazonAPIGatewayRequest
     {
@@ -41,7 +41,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property DeploymentId. 
         /// <para>
-        /// [Required] The identifier of the <a>Deployment</a> resource to delete.
+        /// The identifier of the Deployment resource to delete.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -60,7 +60,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property RestApiId. 
         /// <para>
-        /// [Required] The string identifier of the associated <a>RestApi</a>.
+        /// The string identifier of the associated RestApi.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

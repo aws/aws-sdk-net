@@ -41,8 +41,8 @@ namespace Amazon.IVS.Model
         /// <summary>
         /// Gets and sets the property EndTime. 
         /// <para>
-        /// UTC ISO-8601 formatted timestamp of when the channel went offline. For live streams,
-        /// this is <code>NULL</code>.
+        /// Time when the channel went offline. This is an ISO 8601 timestamp; <i>note that this
+        /// is returned as a string</i>. For live streams, this is <code>NULL</code>.
         /// </para>
         /// </summary>
         public DateTime EndTime
@@ -78,7 +78,8 @@ namespace Amazon.IVS.Model
         /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
-        /// UTC ISO-8601 formatted timestamp of when the channel went live.
+        /// Time when the channel went live. This is an ISO 8601 timestamp; <i>note that this
+        /// is returned as a string</i>.
         /// </para>
         /// </summary>
         public DateTime StartTime

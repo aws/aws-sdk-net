@@ -43,6 +43,7 @@ namespace Amazon.EC2.Model
         private string _maxVersion;
         private string _minVersion;
         private string _nextToken;
+        private bool? _resolveAlias;
         private List<string> _versions = new List<string>();
 
         /// <summary>
@@ -58,6 +59,26 @@ namespace Amazon.EC2.Model
         /// <para>
         ///  <code>ebs-optimized</code> - A boolean that indicates whether the instance is optimized
         /// for Amazon EBS I/O.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>http-endpoint</code> - Indicates whether the HTTP metadata endpoint on your
+        /// instances is enabled (<code>enabled</code> | <code>disabled</code>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>http-protocol-ipv4</code> - Indicates whether the IPv4 endpoint for the instance
+        /// metadata service is enabled (<code>enabled</code> | <code>disabled</code>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>host-resource-group-arn</code> - The ARN of the host resource group in which
+        /// to launch the instances.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>http-tokens</code> - The state of token usage for your instance metadata requests
+        /// (<code>optional</code> | <code>required</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -82,6 +103,14 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>license-configuration-arn</code> - The ARN of the license configuration.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>network-card-index</code> - The index of the network card.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>ram-disk-id</code> - The RAM disk ID.
         /// </para>
         ///  </li> </ul>
@@ -101,10 +130,18 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property LaunchTemplateId. 
         /// <para>
-        /// The ID of the launch template. To describe one or more versions of a specified launch
-        /// template, you must specify either the launch template ID or the launch template name
-        /// in the request. To describe all the latest or default launch template versions in
-        /// your account, you must omit this parameter.
+        /// The ID of the launch template.
+        /// </para>
+        ///  
+        /// <para>
+        /// To describe one or more versions of a specified launch template, you must specify
+        /// either the <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>, but
+        /// not both.
+        /// </para>
+        ///  
+        /// <para>
+        /// To describe all the latest or default launch template versions in your account, you
+        /// must omit this parameter.
         /// </para>
         /// </summary>
         public string LaunchTemplateId
@@ -122,10 +159,18 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property LaunchTemplateName. 
         /// <para>
-        /// The name of the launch template. To describe one or more versions of a specified launch
-        /// template, you must specify either the launch template ID or the launch template name
-        /// in the request. To describe all the latest or default launch template versions in
-        /// your account, you must omit this parameter.
+        /// The name of the launch template.
+        /// </para>
+        ///  
+        /// <para>
+        /// To describe one or more versions of a specified launch template, you must specify
+        /// either the <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>, but
+        /// not both.
+        /// </para>
+        ///  
+        /// <para>
+        /// To describe all the latest or default launch template versions in your account, you
+        /// must omit this parameter.
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=128)]
@@ -216,6 +261,40 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ResolveAlias. 
+        /// <para>
+        /// If <code>true</code>, and if a Systems Manager parameter is specified for <code>ImageId</code>,
+        /// the AMI ID is displayed in the response for <code>imageId</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If <code>false</code>, and if a Systems Manager parameter is specified for <code>ImageId</code>,
+        /// the parameter is displayed in the response for <code>imageId</code>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#use-an-ssm-parameter-instead-of-an-ami-id">Use
+        /// a Systems Manager parameter instead of an AMI ID</a> in the <i>Amazon Elastic Compute
+        /// Cloud User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: <code>false</code> 
+        /// </para>
+        /// </summary>
+        public bool ResolveAlias
+        {
+            get { return this._resolveAlias.GetValueOrDefault(); }
+            set { this._resolveAlias = value; }
+        }
+
+        // Check to see if ResolveAlias property is set
+        internal bool IsSetResolveAlias()
+        {
+            return this._resolveAlias.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Versions. 
         /// <para>
         /// One or more versions of the launch template. Valid values depend on whether you are
@@ -232,8 +311,8 @@ namespace Amazon.EC2.Model
         /// To describe all launch templates in your account that are defined as the latest version,
         /// the valid value is <code>$Latest</code>. To describe all launch templates in your
         /// account that are defined as the default version, the valid value is <code>$Default</code>.
-        /// You can specify <code>$Latest</code> and <code>$Default</code> in the same call. You
-        /// cannot specify numbers.
+        /// You can specify <code>$Latest</code> and <code>$Default</code> in the same request.
+        /// You cannot specify numbers.
         /// </para>
         /// </summary>
         public List<string> Versions

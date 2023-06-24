@@ -48,7 +48,7 @@ namespace Amazon.LookoutMetrics.Model
         /// The host name of the database.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=253)]
+        [AWSProperty(Min=1, Max=253)]
         public string DatabaseHost
         {
             get { return this._databaseHost; }
@@ -67,7 +67,7 @@ namespace Amazon.LookoutMetrics.Model
         /// The name of the RDS database.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=64)]
+        [AWSProperty(Min=1, Max=64)]
         public string DatabaseName
         {
             get { return this._databaseName; }
@@ -86,7 +86,7 @@ namespace Amazon.LookoutMetrics.Model
         /// The port number where the database can be accessed.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=65535)]
+        [AWSProperty(Min=1, Max=65535)]
         public int DatabasePort
         {
             get { return this._databasePort.GetValueOrDefault(); }
@@ -105,7 +105,7 @@ namespace Amazon.LookoutMetrics.Model
         /// A string identifying the database instance.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=63)]
+        [AWSProperty(Min=1, Max=63)]
         public string DBInstanceIdentifier
         {
             get { return this._dbInstanceIdentifier; }
@@ -124,7 +124,7 @@ namespace Amazon.LookoutMetrics.Model
         /// The Amazon Resource Name (ARN) of the role.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=256)]
+        [AWSProperty(Max=256)]
         public string RoleArn
         {
             get { return this._roleArn; }
@@ -143,7 +143,7 @@ namespace Amazon.LookoutMetrics.Model
         /// The Amazon Resource Name (ARN) of the AWS Secrets Manager role.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=256)]
+        [AWSProperty(Max=256)]
         public string SecretManagerArn
         {
             get { return this._secretManagerArn; }
@@ -162,7 +162,7 @@ namespace Amazon.LookoutMetrics.Model
         /// The name of the table in the database.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=100)]
+        [AWSProperty(Min=1, Max=100)]
         public string TableName
         {
             get { return this._tableName; }
@@ -181,7 +181,6 @@ namespace Amazon.LookoutMetrics.Model
         /// An object containing information about the Amazon Virtual Private Cloud (VPC) configuration.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public VpcConfiguration VpcConfiguration
         {
             get { return this._vpcConfiguration; }

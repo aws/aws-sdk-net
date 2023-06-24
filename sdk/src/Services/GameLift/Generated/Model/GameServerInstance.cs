@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GameLift.Model
 {
     /// <summary>
-    /// <b>This data type is used with the GameLift FleetIQ and game server groups.</b> 
+    /// <b>This data type is used with the Amazon GameLift FleetIQ and game server groups.</b>
+    /// 
     /// 
     ///  
     /// <para>
@@ -42,17 +43,6 @@ namespace Amazon.GameLift.Model
     /// <para>
     /// Retrieve game server instances for a game server group by calling <code>DescribeGameServerInstances</code>.
     /// 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <b>Related actions</b> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <a>CreateGameServerGroup</a> | <a>ListGameServerGroups</a> | <a>DescribeGameServerGroup</a>
-    /// | <a>UpdateGameServerGroup</a> | <a>DeleteGameServerGroup</a> | <a>ResumeGameServerGroup</a>
-    /// | <a>SuspendGameServerGroup</a> | <a>DescribeGameServerInstances</a> | <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/reference-awssdk-fleetiq.html">All
-    /// APIs by task</a> 
     /// </para>
     /// </summary>
     public partial class GameServerInstance
@@ -86,7 +76,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property GameServerGroupName. 
         /// <para>
         /// A developer-defined identifier for the game server group that includes the game server
-        /// instance. The name is unique for each Region in each AWS account.
+        /// instance. The name is unique for each Region in each Amazon Web Services account.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -126,26 +116,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property InstanceStatus. 
         /// <para>
-        ///  Current status of the game server instance. 
+        /// Current status of the game server instance
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <b>ACTIVE</b> -- The instance is viable for hosting game servers. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <b>DRAINING</b> -- The instance is not viable for hosting game servers. Existing
-        /// game servers are in the process of ending, and new game servers are not started on
-        /// this instance unless no other resources are available. When the instance is put in
-        /// DRAINING, a new instance is started up to replace it. Once the instance has no UTILIZED
-        /// game servers, it will be terminated in favor of the new instance.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <b>SPOT_TERMINATING</b> -- The instance is in the process of shutting down due to
-        /// a Spot instance interruption. No new game servers are started on this instance.
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         public GameServerInstanceStatus InstanceStatus
         {

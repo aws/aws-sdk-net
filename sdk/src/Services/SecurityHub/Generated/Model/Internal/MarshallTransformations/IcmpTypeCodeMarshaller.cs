@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// IcmpTypeCode Marshaller
-    /// </summary>       
+    /// </summary>
     public class IcmpTypeCodeMarshaller : IRequestMarshaller<IcmpTypeCode, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static IcmpTypeCodeMarshaller Instance = new IcmpTypeCodeMarshaller();
 
     }

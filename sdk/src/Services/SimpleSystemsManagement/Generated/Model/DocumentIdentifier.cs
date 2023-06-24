@@ -195,7 +195,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Owner. 
         /// <para>
-        /// The Amazon Web Services user account that created the document.
+        /// The Amazon Web Services user that created the document.
         /// </para>
         /// </summary>
         public string Owner

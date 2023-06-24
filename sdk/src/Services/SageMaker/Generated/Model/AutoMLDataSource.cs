@@ -40,11 +40,6 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// The Amazon S3 location of the input data.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// The input data must be in CSV format and contain at least 500 rows.
-        /// </para>
-        ///  </note>
         /// </summary>
         [AWSProperty(Required=true)]
         public AutoMLS3DataSource S3DataSource

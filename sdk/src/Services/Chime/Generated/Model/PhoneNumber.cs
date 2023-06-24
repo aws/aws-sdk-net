@@ -71,6 +71,7 @@ namespace Amazon.Chime.Model
         /// The outbound calling name associated with the phone number.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string CallingName
         {
             get { return this._callingName; }
@@ -179,6 +180,7 @@ namespace Amazon.Chime.Model
         /// The phone number, in E.164 format.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string E164PhoneNumber
         {
             get { return this._e164PhoneNumber; }

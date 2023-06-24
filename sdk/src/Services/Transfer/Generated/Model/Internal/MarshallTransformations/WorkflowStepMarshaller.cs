@@ -34,7 +34,7 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// WorkflowStep Marshaller
-    /// </summary>       
+    /// </summary>
     public class WorkflowStepMarshaller : IRequestMarshaller<WorkflowStep, JsonMarshallerContext> 
     {
         /// <summary>
@@ -63,6 +63,17 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
 
                 var marshaller = CustomStepDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.CustomStepDetails, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetDecryptStepDetails())
+            {
+                context.Writer.WritePropertyName("DecryptStepDetails");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = DecryptStepDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.DecryptStepDetails, context);
 
                 context.Writer.WriteObjectEnd();
             }
@@ -99,7 +110,7 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static WorkflowStepMarshaller Instance = new WorkflowStepMarshaller();
 
     }

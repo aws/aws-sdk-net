@@ -29,12 +29,16 @@ using Amazon.Runtime.Internal;
 namespace Amazon.XRay.Model
 {
     /// <summary>
-    /// Information about a connection between two services.
+    /// Information about a connection between two services. An edge can be a synchronous
+    /// connection, such as typical call between client and service, or an asynchronous link,
+    /// such as a Lambda function which retrieves an event from an SNS queue.
     /// </summary>
     public partial class Edge
     {
         private List<Alias> _aliases = new List<Alias>();
+        private string _edgeType;
         private DateTime? _endTime;
+        private List<HistogramEntry> _receivedEventAgeHistogram = new List<HistogramEntry>();
         private int? _referenceId;
         private List<HistogramEntry> _responseTimeHistogram = new List<HistogramEntry>();
         private DateTime? _startTime;
@@ -59,6 +63,24 @@ namespace Amazon.XRay.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EdgeType. 
+        /// <para>
+        /// Describes an asynchronous connection, with a value of <code>link</code>.
+        /// </para>
+        /// </summary>
+        public string EdgeType
+        {
+            get { return this._edgeType; }
+            set { this._edgeType = value; }
+        }
+
+        // Check to see if EdgeType property is set
+        internal bool IsSetEdgeType()
+        {
+            return this._edgeType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property EndTime. 
         /// <para>
         /// The end time of the last segment on the edge.
@@ -74,6 +96,25 @@ namespace Amazon.XRay.Model
         internal bool IsSetEndTime()
         {
             return this._endTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReceivedEventAgeHistogram. 
+        /// <para>
+        /// A histogram that maps the spread of event age when received by consumers. Age is calculated
+        /// each time an event is received. Only populated when <i>EdgeType</i> is <code>link</code>.
+        /// </para>
+        /// </summary>
+        public List<HistogramEntry> ReceivedEventAgeHistogram
+        {
+            get { return this._receivedEventAgeHistogram; }
+            set { this._receivedEventAgeHistogram = value; }
+        }
+
+        // Check to see if ReceivedEventAgeHistogram property is set
+        internal bool IsSetReceivedEventAgeHistogram()
+        {
+            return this._receivedEventAgeHistogram != null && this._receivedEventAgeHistogram.Count > 0; 
         }
 
         /// <summary>
@@ -97,7 +138,8 @@ namespace Amazon.XRay.Model
         /// <summary>
         /// Gets and sets the property ResponseTimeHistogram. 
         /// <para>
-        /// A histogram that maps the spread of client response times on an edge.
+        /// A histogram that maps the spread of client response times on an edge. Only populated
+        /// for synchronous edges.
         /// </para>
         /// </summary>
         public List<HistogramEntry> ResponseTimeHistogram

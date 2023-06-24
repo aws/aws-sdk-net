@@ -30,10 +30,10 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the ModifyGlobalCluster operation.
-    /// Modify a setting for an Amazon Aurora global cluster. You can change one or more
-    /// database configuration parameters by specifying these parameters and the new values
-    /// in the request. For more information on Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
-    /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> 
+    /// Modify a setting for an Amazon Aurora global cluster. You can change one or more database
+    /// configuration parameters by specifying these parameters and the new values in the
+    /// request. For more information on Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
+    /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.
     /// 
     ///  <note> 
     /// <para>
@@ -82,8 +82,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DeletionProtection. 
         /// <para>
-        ///  Indicates if the global database cluster has deletion protection enabled. The global
-        /// database cluster can't be deleted when deletion protection is enabled. 
+        /// Indicates if the global database cluster has deletion protection enabled. The global
+        /// database cluster can't be deleted when deletion protection is enabled.
         /// </para>
         /// </summary>
         public bool DeletionProtection
@@ -107,18 +107,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// To list all of the available engine versions for <code>aurora</code> (for MySQL 5.6-compatible
-        /// Aurora), use the following command:
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>aws rds describe-db-engine-versions --engine aurora --query '*[]|[?SupportsGlobalDatabases
-        /// == `true`].[EngineVersion]'</code> 
-        /// </para>
-        ///  
-        /// <para>
-        /// To list all of the available engine versions for <code>aurora-mysql</code> (for MySQL
-        /// 5.7-compatible Aurora), use the following command:
+        /// To list all of the available engine versions for <code>aurora-mysql</code> (for MySQL-based
+        /// Aurora global databases), use the following command:
         /// </para>
         ///  
         /// <para>
@@ -127,8 +117,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// To list all of the available engine versions for <code>aurora-postgresql</code>, use
-        /// the following command:
+        /// To list all of the available engine versions for <code>aurora-postgresql</code> (for
+        /// PostgreSQL-based Aurora global databases), use the following command:
         /// </para>
         ///  
         /// <para>
@@ -151,8 +141,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property GlobalClusterIdentifier. 
         /// <para>
-        ///  The DB cluster identifier for the global cluster being modified. This parameter isn't
-        /// case-sensitive. 
+        /// The DB cluster identifier for the global cluster being modified. This parameter isn't
+        /// case-sensitive.
         /// </para>
         ///  
         /// <para>
@@ -179,8 +169,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property NewGlobalClusterIdentifier. 
         /// <para>
-        ///  The new cluster identifier for the global database cluster when modifying a global
-        /// database cluster. This value is stored as a lowercase string. 
+        /// The new cluster identifier for the global database cluster when modifying a global
+        /// database cluster. This value is stored as a lowercase string.
         /// </para>
         ///  
         /// <para>

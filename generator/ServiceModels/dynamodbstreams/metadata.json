@@ -1,6 +1,7 @@
 {
-    "active": true, 
-    "max-retries": 10, 
-    "namespace": "Amazon.DynamoDBv2", 
-    "parent-base-name": "DynamoDB"
+  "active": true,
+  "max-retries": 10,
+  "namespace": "Amazon.DynamoDBv2",
+  "parent-base-name": "DynamoDB",
+  "legacy-service-id": "DynamoDB Streams"
 }

@@ -30,10 +30,9 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteVpcEndpointServiceConfigurations operation.
-    /// Deletes one or more VPC endpoint service configurations in your account. Before you
-    /// delete the endpoint service configuration, you must reject any <code>Available</code>
-    /// or <code>PendingAcceptance</code> interface endpoint connections that are attached
-    /// to the service.
+    /// Deletes the specified VPC endpoint service configurations. Before you can delete an
+    /// endpoint service configuration, you must reject any <code>Available</code> or <code>PendingAcceptance</code>
+    /// interface endpoint connections that are attached to the service.
     /// </summary>
     public partial class DeleteVpcEndpointServiceConfigurationsRequest : AmazonEC2Request
     {
@@ -42,7 +41,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ServiceIds. 
         /// <para>
-        /// The IDs of one or more services.
+        /// The IDs of the services.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

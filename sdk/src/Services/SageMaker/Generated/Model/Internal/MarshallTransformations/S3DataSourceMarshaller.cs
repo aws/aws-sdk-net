@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// S3DataSource Marshaller
-    /// </summary>       
+    /// </summary>
     public class S3DataSourceMarshaller : IRequestMarshaller<S3DataSource, JsonMarshallerContext> 
     {
         /// <summary>
@@ -52,6 +52,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 foreach(var requestObjectAttributeNamesListValue in requestObject.AttributeNames)
                 {
                         context.Writer.Write(requestObjectAttributeNamesListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetInstanceGroupNames())
+            {
+                context.Writer.WritePropertyName("InstanceGroupNames");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectInstanceGroupNamesListValue in requestObject.InstanceGroupNames)
+                {
+                        context.Writer.Write(requestObjectInstanceGroupNamesListValue);
                 }
                 context.Writer.WriteArrayEnd();
             }
@@ -78,7 +89,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static S3DataSourceMarshaller Instance = new S3DataSourceMarshaller();
 
     }

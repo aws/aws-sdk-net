@@ -34,7 +34,7 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ItemValue Marshaller
-    /// </summary>       
+    /// </summary>
     public class ItemValueMarshaller : IRequestMarshaller<ItemValue, JsonMarshallerContext> 
     {
         /// <summary>
@@ -57,6 +57,17 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.MetricDefinition);
             }
 
+            if(requestObject.IsSetPagerDutyIncidentDetail())
+            {
+                context.Writer.WritePropertyName("pagerDutyIncidentDetail");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = PagerDutyIncidentDetailMarshaller.Instance;
+                marshaller.Marshall(requestObject.PagerDutyIncidentDetail, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetUrl())
             {
                 context.Writer.WritePropertyName("url");
@@ -67,7 +78,7 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ItemValueMarshaller Instance = new ItemValueMarshaller();
 
     }

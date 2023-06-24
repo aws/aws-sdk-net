@@ -82,6 +82,12 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
                     unmarshalledObject.Resource = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("taskCredentials", targetDepth))
+                {
+                    var unmarshaller = TaskCredentialsUnmarshaller.Instance;
+                    unmarshalledObject.TaskCredentials = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("timeoutInSeconds", targetDepth))
                 {
                     var unmarshaller = LongUnmarshaller.Instance;

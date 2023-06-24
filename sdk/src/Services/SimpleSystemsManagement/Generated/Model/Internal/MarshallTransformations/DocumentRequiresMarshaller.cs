@@ -34,7 +34,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DocumentRequires Marshaller
-    /// </summary>       
+    /// </summary>
     public class DocumentRequiresMarshaller : IRequestMarshaller<DocumentRequires, JsonMarshallerContext> 
     {
         /// <summary>
@@ -51,17 +51,29 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Name);
             }
 
+            if(requestObject.IsSetRequireType())
+            {
+                context.Writer.WritePropertyName("RequireType");
+                context.Writer.Write(requestObject.RequireType);
+            }
+
             if(requestObject.IsSetVersion())
             {
                 context.Writer.WritePropertyName("Version");
                 context.Writer.Write(requestObject.Version);
             }
 
+            if(requestObject.IsSetVersionName())
+            {
+                context.Writer.WritePropertyName("VersionName");
+                context.Writer.Write(requestObject.VersionName);
+            }
+
         }
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DocumentRequiresMarshaller Instance = new DocumentRequiresMarshaller();
 
     }

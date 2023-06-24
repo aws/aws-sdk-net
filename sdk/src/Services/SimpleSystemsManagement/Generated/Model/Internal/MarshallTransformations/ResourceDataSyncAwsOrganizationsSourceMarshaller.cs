@@ -34,7 +34,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ResourceDataSyncAwsOrganizationsSource Marshaller
-    /// </summary>       
+    /// </summary>
     public class ResourceDataSyncAwsOrganizationsSourceMarshaller : IRequestMarshaller<ResourceDataSyncAwsOrganizationsSource, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ResourceDataSyncAwsOrganizationsSourceMarshaller Instance = new ResourceDataSyncAwsOrganizationsSourceMarshaller();
 
     }

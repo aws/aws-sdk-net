@@ -34,7 +34,7 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// VirtualObject Marshaller
-    /// </summary>       
+    /// </summary>
     public class VirtualObjectMarshaller : IRequestMarshaller<VirtualObject, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static VirtualObjectMarshaller Instance = new VirtualObjectMarshaller();
 
     }

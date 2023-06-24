@@ -100,6 +100,18 @@ namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
                     unmarshalledObject.InstanceConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("NetworkConfiguration", targetDepth))
+                {
+                    var unmarshaller = NetworkConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.NetworkConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ObservabilityConfiguration", targetDepth))
+                {
+                    var unmarshaller = ServiceObservabilityConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.ObservabilityConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ServiceArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

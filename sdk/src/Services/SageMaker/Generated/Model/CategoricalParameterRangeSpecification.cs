@@ -41,7 +41,7 @@ namespace Amazon.SageMaker.Model
         /// The allowed categories for the hyperparameter.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=20)]
+        [AWSProperty(Required=true, Min=1, Max=30)]
         public List<string> Values
         {
             get { return this._values; }

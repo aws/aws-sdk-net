@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// 
+    /// Configuration to control how SageMaker captures inference data.
     /// </summary>
     public partial class DataCaptureConfig
     {
@@ -41,7 +41,11 @@ namespace Amazon.SageMaker.Model
         private string _kmsKeyId;
 
         /// <summary>
-        /// Gets and sets the property CaptureContentTypeHeader.
+        /// Gets and sets the property CaptureContentTypeHeader. 
+        /// <para>
+        /// Configuration specifying how to treat different headers. If no headers are specified
+        /// SageMaker will by default base64 encode when capturing the data.
+        /// </para>
         /// </summary>
         public CaptureContentTypeHeader CaptureContentTypeHeader
         {
@@ -56,7 +60,11 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CaptureOptions.
+        /// Gets and sets the property CaptureOptions. 
+        /// <para>
+        /// Specifies data Model Monitor will capture. You can configure whether to collect only
+        /// input, only output, or both
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2)]
         public List<CaptureOption> CaptureOptions
@@ -72,7 +80,10 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DestinationS3Uri.
+        /// Gets and sets the property DestinationS3Uri. 
+        /// <para>
+        /// The Amazon S3 location used to capture the data.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=512)]
         public string DestinationS3Uri
@@ -88,7 +99,10 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EnableCapture.
+        /// Gets and sets the property EnableCapture. 
+        /// <para>
+        /// Whether data capture should be enabled or disabled (defaults to enabled).
+        /// </para>
         /// </summary>
         public bool EnableCapture
         {
@@ -103,7 +117,11 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
-        /// Gets and sets the property InitialSamplingPercentage.
+        /// Gets and sets the property InitialSamplingPercentage. 
+        /// <para>
+        /// The percentage of requests SageMaker will capture. A lower value is recommended for
+        /// Endpoints with high traffic.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=100)]
         public int InitialSamplingPercentage
@@ -119,7 +137,35 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
-        /// Gets and sets the property KmsKeyId.
+        /// Gets and sets the property KmsKeyId. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key
+        /// that SageMaker uses to encrypt the captured data at rest using Amazon S3 server-side
+        /// encryption.
+        /// </para>
+        ///  
+        /// <para>
+        /// The KmsKeyId can be any of the following formats: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Key ARN: <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Alias name: <code>alias/ExampleAlias</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Alias name ARN: <code>arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias</code>
+        /// 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Max=2048)]
         public string KmsKeyId

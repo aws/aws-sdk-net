@@ -62,6 +62,13 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("AutoScalingGroupName", StringUtils.FromString(publicRequest.AutoScalingGroupName));
                 }
+                if(publicRequest.IsSetInstanceReusePolicy())
+                {
+                    if(publicRequest.InstanceReusePolicy.IsSetReuseOnScaleIn())
+                    {
+                        request.Parameters.Add("InstanceReusePolicy" + "." + "ReuseOnScaleIn", StringUtils.FromBool(publicRequest.InstanceReusePolicy.ReuseOnScaleIn));
+                    }
+                }
                 if(publicRequest.IsSetMaxGroupPreparedCapacity())
                 {
                     request.Parameters.Add("MaxGroupPreparedCapacity", StringUtils.FromInt(publicRequest.MaxGroupPreparedCapacity));

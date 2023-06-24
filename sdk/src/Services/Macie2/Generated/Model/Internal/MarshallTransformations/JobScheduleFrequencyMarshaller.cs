@@ -34,7 +34,7 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// JobScheduleFrequency Marshaller
-    /// </summary>       
+    /// </summary>
     public class JobScheduleFrequencyMarshaller : IRequestMarshaller<JobScheduleFrequency, JsonMarshallerContext> 
     {
         /// <summary>
@@ -82,7 +82,7 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static JobScheduleFrequencyMarshaller Instance = new JobScheduleFrequencyMarshaller();
 
     }

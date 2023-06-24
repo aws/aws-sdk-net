@@ -106,5 +106,21 @@ namespace Amazon.ChimeSDKMessaging.Model
         {
             return new ListChannelsModeratedByAppInstanceUserPaginator(this.client, request);
         }
+
+        /// <summary>
+        /// Paginator for ListSubChannels operation
+        ///</summary>
+        public IListSubChannelsPaginator ListSubChannels(ListSubChannelsRequest request) 
+        {
+            return new ListSubChannelsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for SearchChannels operation
+        ///</summary>
+        public ISearchChannelsPaginator SearchChannels(SearchChannelsRequest request) 
+        {
+            return new SearchChannelsPaginator(this.client, request);
+        }
     }
 }

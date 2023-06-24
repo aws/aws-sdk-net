@@ -100,10 +100,22 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.EnableNetworkIsolation = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Environment", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.Environment = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("HyperParameterRanges", targetDepth))
                 {
                     var unmarshaller = ParameterRangesUnmarshaller.Instance;
                     unmarshalledObject.HyperParameterRanges = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("HyperParameterTuningResourceConfig", targetDepth))
+                {
+                    var unmarshaller = HyperParameterTuningResourceConfigUnmarshaller.Instance;
+                    unmarshalledObject.HyperParameterTuningResourceConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("InputDataConfig", targetDepth))

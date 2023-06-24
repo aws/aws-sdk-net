@@ -29,5 +29,10 @@ namespace Amazon.CloudControlApi.Model
         /// Enumerable containing all full responses for the operation
         /// </summary>
         IPaginatedEnumerable<ListResourcesResponse> Responses { get; }
+
+        /// <summary>
+        /// Enumerable containing all of the ResourceDescriptions
+        /// </summary>
+        IPaginatedEnumerable<ResourceDescription> ResourceDescriptions { get; }
     }
 }

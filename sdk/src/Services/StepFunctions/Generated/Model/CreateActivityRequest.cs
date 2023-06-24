@@ -31,11 +31,10 @@ namespace Amazon.StepFunctions.Model
     /// <summary>
     /// Container for the parameters to the CreateActivity operation.
     /// Creates an activity. An activity is a task that you write in any programming language
-    /// and host on any machine that has access to AWS Step Functions. Activities must poll
-    /// Step Functions using the <code>GetActivityTask</code> API action and respond using
-    /// <code>SendTask*</code> API actions. This function lets Step Functions know the existence
-    /// of your activity and returns an identifier for use in a state machine and when polling
-    /// from the activity.
+    /// and host on any machine that has access to Step Functions. Activities must poll Step
+    /// Functions using the <code>GetActivityTask</code> API action and respond using <code>SendTask*</code>
+    /// API actions. This function lets Step Functions know the existence of your activity
+    /// and returns an identifier for use in a state machine and when polling from the activity.
     /// 
     ///  <note> 
     /// <para>
@@ -61,9 +60,9 @@ namespace Amazon.StepFunctions.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the activity to create. This name must be unique for your AWS account
-        /// and region for 90 days. For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
-        /// Limits Related to State Machine Executions</a> in the <i>AWS Step Functions Developer
+        /// The name of the activity to create. This name must be unique for your Amazon Web Services
+        /// account and region for 90 days. For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
+        /// Limits Related to State Machine Executions</a> in the <i>Step Functions Developer
         /// Guide</i>.
         /// </para>
         ///  
@@ -117,8 +116,8 @@ namespace Amazon.StepFunctions.Model
         ///  
         /// <para>
         /// An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
-        /// Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>,
-        /// and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling
+        /// Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management
+        /// User Guide</i>, and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling
         /// Access Using IAM Tags</a>.
         /// </para>
         ///  

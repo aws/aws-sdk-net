@@ -34,7 +34,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// StaticKeyProvider Marshaller
-    /// </summary>       
+    /// </summary>
     public class StaticKeyProviderMarshaller : IRequestMarshaller<StaticKeyProvider, JsonMarshallerContext> 
     {
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static StaticKeyProviderMarshaller Instance = new StaticKeyProviderMarshaller();
 
     }

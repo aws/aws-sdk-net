@@ -67,6 +67,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("Auth" + "." + "member" + "." + publicRequestlistValueIndex + "." + "AuthScheme", StringUtils.FromString(publicRequestlistValue.AuthScheme));
                         }
+                        if(publicRequestlistValue.IsSetClientPasswordAuthType())
+                        {
+                            request.Parameters.Add("Auth" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ClientPasswordAuthType", StringUtils.FromString(publicRequestlistValue.ClientPasswordAuthType));
+                        }
                         if(publicRequestlistValue.IsSetDescription())
                         {
                             request.Parameters.Add("Auth" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Description", StringUtils.FromString(publicRequestlistValue.Description));

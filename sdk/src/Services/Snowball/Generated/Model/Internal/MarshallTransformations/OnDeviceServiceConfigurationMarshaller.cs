@@ -34,7 +34,7 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// OnDeviceServiceConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class OnDeviceServiceConfigurationMarshaller : IRequestMarshaller<OnDeviceServiceConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -45,6 +45,17 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(OnDeviceServiceConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetEKSOnDeviceService())
+            {
+                context.Writer.WritePropertyName("EKSOnDeviceService");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = EKSOnDeviceServiceConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.EKSOnDeviceService, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetNFSOnDeviceService())
             {
                 context.Writer.WritePropertyName("NFSOnDeviceService");
@@ -52,6 +63,17 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
 
                 var marshaller = NFSOnDeviceServiceConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.NFSOnDeviceService, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetS3OnDeviceService())
+            {
+                context.Writer.WritePropertyName("S3OnDeviceService");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = S3OnDeviceServiceConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.S3OnDeviceService, context);
 
                 context.Writer.WriteObjectEnd();
             }
@@ -71,7 +93,7 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static OnDeviceServiceConfigurationMarshaller Instance = new OnDeviceServiceConfigurationMarshaller();
 
     }

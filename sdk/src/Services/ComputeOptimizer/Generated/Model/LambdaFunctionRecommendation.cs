@@ -44,6 +44,7 @@ namespace Amazon.ComputeOptimizer.Model
         private double? _lookbackPeriodInDays;
         private List<LambdaFunctionMemoryRecommendationOption> _memorySizeRecommendationOptions = new List<LambdaFunctionMemoryRecommendationOption>();
         private long? _numberOfInvocations;
+        private List<Tag> _tags = new List<Tag>();
         private List<LambdaFunctionUtilizationMetric> _utilizationMetrics = new List<LambdaFunctionUtilizationMetric>();
 
         /// <summary>
@@ -86,8 +87,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// Gets and sets the property CurrentPerformanceRisk. 
         /// <para>
         /// The risk of the current Lambda function not meeting the performance needs of its workloads.
-        /// The higher the risk, the more likely the current Lambda function configuration is
-        /// underperforming in its workload.
+        /// The higher the risk, the more likely the current Lambda function requires more memory.
         /// </para>
         /// </summary>
         public CurrentPerformanceRisk CurrentPerformanceRisk
@@ -318,6 +318,24 @@ namespace Amazon.ComputeOptimizer.Model
         internal bool IsSetNumberOfInvocations()
         {
             return this._numberOfInvocations.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        ///  A list of tags assigned to your Lambda function recommendations. 
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>

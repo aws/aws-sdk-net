@@ -124,6 +124,12 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                     unmarshalledObject.PerUnitStorageThroughput = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("RootSquashConfiguration", targetDepth))
+                {
+                    var unmarshaller = LustreRootSquashConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.RootSquashConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("WeeklyMaintenanceStartTime", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

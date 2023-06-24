@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// The tag specification for the launch template.
+    /// The tags specification for the launch template.
     /// </summary>
     public partial class LaunchTemplateTagSpecification
     {
@@ -39,7 +39,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The type of resource.
+        /// The type of resource to tag.
         /// </para>
         /// </summary>
         public ResourceType ResourceType

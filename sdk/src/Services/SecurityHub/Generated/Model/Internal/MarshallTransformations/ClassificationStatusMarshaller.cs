@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ClassificationStatus Marshaller
-    /// </summary>       
+    /// </summary>
     public class ClassificationStatusMarshaller : IRequestMarshaller<ClassificationStatus, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ClassificationStatusMarshaller Instance = new ClassificationStatusMarshaller();
 
     }

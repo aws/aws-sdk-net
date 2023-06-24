@@ -97,6 +97,10 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetDeploymentTargets())
                 {
+                    if(publicRequest.DeploymentTargets.IsSetAccountFilterType())
+                    {
+                        request.Parameters.Add("DeploymentTargets" + "." + "AccountFilterType", StringUtils.FromString(publicRequest.DeploymentTargets.AccountFilterType));
+                    }
                     if(publicRequest.DeploymentTargets.IsSetAccounts())
                     {
                         int publicRequestDeploymentTargetslistValueIndex = 1;

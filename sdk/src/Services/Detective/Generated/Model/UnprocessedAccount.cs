@@ -40,7 +40,7 @@ namespace Amazon.Detective.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The AWS account identifier of the member account that was not processed.
+        /// The Amazon Web Services account identifier of the member account that was not processed.
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=12)]

@@ -35,6 +35,25 @@ namespace Amazon.FraudDetector
     /// need detailed information about Amazon Fraud Detector API actions, data types, and
     /// errors. For more information about Amazon Fraud Detector features, see the <a href="https://docs.aws.amazon.com/frauddetector/latest/ug/">Amazon
     /// Fraud Detector User Guide</a>.
+    /// 
+    ///  
+    /// <para>
+    /// We provide the Query API as well as AWS software development kits (SDK) for Amazon
+    /// Fraud Detector in Java and Python programming languages.
+    /// </para>
+    ///  
+    /// <para>
+    /// The Amazon Fraud Detector Query API provides HTTPS requests that use the HTTP verb
+    /// GET or POST and a Query parameter <code>Action</code>. AWS SDK provides libraries,
+    /// sample code, tutorials, and other resources for software developers who prefer to
+    /// build applications using language-specific APIs instead of submitting a request over
+    /// HTTP or HTTPS. These libraries provide basic functions that automatically take care
+    /// of tasks such as cryptographically signing your requests, retrying requests, and handling
+    /// error responses, so that it is easier for you to get started. For more information
+    /// about the AWS SDKs, go to <a href="https://aws.amazon.com/developer/tools/">Tools
+    /// to build on AWS</a> page, scroll down to the <b>SDK</b> section, and choose plus (+)
+    /// sign to expand the section. 
+    /// </para>
     /// </summary>
     public partial interface IAmazonFraudDetector : IAmazonService, IDisposable
     {
@@ -467,6 +486,76 @@ namespace Amazon.FraudDetector
 
         #endregion
         
+        #region  CreateList
+
+
+        /// <summary>
+        /// Creates a list. 
+        /// 
+        ///  
+        /// <para>
+        /// List is a set of input data for a variable in your event dataset. You use the input
+        /// data in a rule that's associated with your detector. For more information, see <a
+        /// href="https://docs.aws.amazon.com/frauddetector/latest/ug/lists.html">Lists</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateList service method.</param>
+        /// 
+        /// <returns>The response from the CreateList service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.AccessDeniedException">
+        /// An exception indicating Amazon Fraud Detector does not have the needed permissions.
+        /// This can occur if you submit a request, such as <code>PutExternalModel</code>, that
+        /// specifies a role that is not in your account.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
+        /// An exception indicating an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ThrottlingException">
+        /// An exception indicating a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ValidationException">
+        /// An exception indicating a specified value is not allowed.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/CreateList">REST API Reference for CreateList Operation</seealso>
+        CreateListResponse CreateList(CreateListRequest request);
+
+
+
+        /// <summary>
+        /// Creates a list. 
+        /// 
+        ///  
+        /// <para>
+        /// List is a set of input data for a variable in your event dataset. You use the input
+        /// data in a rule that's associated with your detector. For more information, see <a
+        /// href="https://docs.aws.amazon.com/frauddetector/latest/ug/lists.html">Lists</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateList service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateList service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.AccessDeniedException">
+        /// An exception indicating Amazon Fraud Detector does not have the needed permissions.
+        /// This can occur if you submit a request, such as <code>PutExternalModel</code>, that
+        /// specifies a role that is not in your account.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
+        /// An exception indicating an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ThrottlingException">
+        /// An exception indicating a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ValidationException">
+        /// An exception indicating a specified value is not allowed.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/CreateList">REST API Reference for CreateList Operation</seealso>
+        Task<CreateListResponse> CreateListAsync(CreateListRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  CreateModel
 
 
@@ -701,7 +790,8 @@ namespace Amazon.FraudDetector
 
 
         /// <summary>
-        /// Deletes data that was batch imported to Amazon Fraud Detector.
+        /// Deletes the specified batch import job ID record. This action does not delete the
+        /// data that was batch imported.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteBatchImportJob service method.</param>
         /// 
@@ -726,7 +816,8 @@ namespace Amazon.FraudDetector
 
 
         /// <summary>
-        /// Deletes data that was batch imported to Amazon Fraud Detector.
+        /// Deletes the specified batch import job ID record. This action does not delete the
+        /// data that was batch imported.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteBatchImportJob service method.</param>
         /// <param name="cancellationToken">
@@ -1058,7 +1149,9 @@ namespace Amazon.FraudDetector
         ///  
         /// <para>
         /// When you delete an event, Amazon Fraud Detector permanently deletes that event and
-        /// the event data is no longer stored in Amazon Fraud Detector.
+        /// the event data is no longer stored in Amazon Fraud Detector. If <code>deleteAuditHistory</code>
+        /// is <code>True</code>, event data is available through search for up to 30 seconds
+        /// after the delete operation is completed.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteEvent service method.</param>
@@ -1089,7 +1182,9 @@ namespace Amazon.FraudDetector
         ///  
         /// <para>
         /// When you delete an event, Amazon Fraud Detector permanently deletes that event and
-        /// the event data is no longer stored in Amazon Fraud Detector.
+        /// the event data is no longer stored in Amazon Fraud Detector. If <code>deleteAuditHistory</code>
+        /// is <code>True</code>, event data is available through search for up to 30 seconds
+        /// after the delete operation is completed.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteEvent service method.</param>
@@ -1422,6 +1517,80 @@ namespace Amazon.FraudDetector
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteLabel">REST API Reference for DeleteLabel Operation</seealso>
         Task<DeleteLabelResponse> DeleteLabelAsync(DeleteLabelRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteList
+
+
+        /// <summary>
+        /// Deletes the list, provided it is not used in a rule. 
+        /// 
+        ///  
+        /// <para>
+        ///  When you delete a list, Amazon Fraud Detector permanently deletes that list and the
+        /// elements in the list.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteList service method.</param>
+        /// 
+        /// <returns>The response from the DeleteList service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.AccessDeniedException">
+        /// An exception indicating Amazon Fraud Detector does not have the needed permissions.
+        /// This can occur if you submit a request, such as <code>PutExternalModel</code>, that
+        /// specifies a role that is not in your account.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ConflictException">
+        /// An exception indicating there was a conflict during a delete operation.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
+        /// An exception indicating an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ThrottlingException">
+        /// An exception indicating a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ValidationException">
+        /// An exception indicating a specified value is not allowed.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteList">REST API Reference for DeleteList Operation</seealso>
+        DeleteListResponse DeleteList(DeleteListRequest request);
+
+
+
+        /// <summary>
+        /// Deletes the list, provided it is not used in a rule. 
+        /// 
+        ///  
+        /// <para>
+        ///  When you delete a list, Amazon Fraud Detector permanently deletes that list and the
+        /// elements in the list.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteList service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteList service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.AccessDeniedException">
+        /// An exception indicating Amazon Fraud Detector does not have the needed permissions.
+        /// This can occur if you submit a request, such as <code>PutExternalModel</code>, that
+        /// specifies a role that is not in your account.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ConflictException">
+        /// An exception indicating there was a conflict during a delete operation.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
+        /// An exception indicating an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ThrottlingException">
+        /// An exception indicating a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ValidationException">
+        /// An exception indicating a specified value is not allowed.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteList">REST API Reference for DeleteList Operation</seealso>
+        Task<DeleteListResponse> DeleteListAsync(DeleteListRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -2521,6 +2690,70 @@ namespace Amazon.FraudDetector
 
         #endregion
         
+        #region  GetEventPredictionMetadata
+
+
+        /// <summary>
+        /// Gets details of the past fraud predictions for the specified event ID, event type,
+        /// detector ID, and detector version ID that was generated in the specified time period.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetEventPredictionMetadata service method.</param>
+        /// 
+        /// <returns>The response from the GetEventPredictionMetadata service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.AccessDeniedException">
+        /// An exception indicating Amazon Fraud Detector does not have the needed permissions.
+        /// This can occur if you submit a request, such as <code>PutExternalModel</code>, that
+        /// specifies a role that is not in your account.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
+        /// An exception indicating an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ResourceNotFoundException">
+        /// An exception indicating the specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ThrottlingException">
+        /// An exception indicating a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ValidationException">
+        /// An exception indicating a specified value is not allowed.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetEventPredictionMetadata">REST API Reference for GetEventPredictionMetadata Operation</seealso>
+        GetEventPredictionMetadataResponse GetEventPredictionMetadata(GetEventPredictionMetadataRequest request);
+
+
+
+        /// <summary>
+        /// Gets details of the past fraud predictions for the specified event ID, event type,
+        /// detector ID, and detector version ID that was generated in the specified time period.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetEventPredictionMetadata service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetEventPredictionMetadata service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.AccessDeniedException">
+        /// An exception indicating Amazon Fraud Detector does not have the needed permissions.
+        /// This can occur if you submit a request, such as <code>PutExternalModel</code>, that
+        /// specifies a role that is not in your account.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
+        /// An exception indicating an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ResourceNotFoundException">
+        /// An exception indicating the specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ThrottlingException">
+        /// An exception indicating a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ValidationException">
+        /// An exception indicating a specified value is not allowed.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetEventPredictionMetadata">REST API Reference for GetEventPredictionMetadata Operation</seealso>
+        Task<GetEventPredictionMetadataResponse> GetEventPredictionMetadataAsync(GetEventPredictionMetadataRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetEventTypes
 
 
@@ -2790,6 +3023,130 @@ namespace Amazon.FraudDetector
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetLabels">REST API Reference for GetLabels Operation</seealso>
         Task<GetLabelsResponse> GetLabelsAsync(GetLabelsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetListElements
+
+
+        /// <summary>
+        /// Gets all the elements in the specified list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetListElements service method.</param>
+        /// 
+        /// <returns>The response from the GetListElements service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.AccessDeniedException">
+        /// An exception indicating Amazon Fraud Detector does not have the needed permissions.
+        /// This can occur if you submit a request, such as <code>PutExternalModel</code>, that
+        /// specifies a role that is not in your account.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
+        /// An exception indicating an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ResourceNotFoundException">
+        /// An exception indicating the specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ThrottlingException">
+        /// An exception indicating a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ValidationException">
+        /// An exception indicating a specified value is not allowed.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetListElements">REST API Reference for GetListElements Operation</seealso>
+        GetListElementsResponse GetListElements(GetListElementsRequest request);
+
+
+
+        /// <summary>
+        /// Gets all the elements in the specified list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetListElements service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetListElements service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.AccessDeniedException">
+        /// An exception indicating Amazon Fraud Detector does not have the needed permissions.
+        /// This can occur if you submit a request, such as <code>PutExternalModel</code>, that
+        /// specifies a role that is not in your account.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
+        /// An exception indicating an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ResourceNotFoundException">
+        /// An exception indicating the specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ThrottlingException">
+        /// An exception indicating a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ValidationException">
+        /// An exception indicating a specified value is not allowed.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetListElements">REST API Reference for GetListElements Operation</seealso>
+        Task<GetListElementsResponse> GetListElementsAsync(GetListElementsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetListsMetadata
+
+
+        /// <summary>
+        /// Gets the metadata of either all the lists under the account or the specified list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetListsMetadata service method.</param>
+        /// 
+        /// <returns>The response from the GetListsMetadata service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.AccessDeniedException">
+        /// An exception indicating Amazon Fraud Detector does not have the needed permissions.
+        /// This can occur if you submit a request, such as <code>PutExternalModel</code>, that
+        /// specifies a role that is not in your account.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
+        /// An exception indicating an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ResourceNotFoundException">
+        /// An exception indicating the specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ThrottlingException">
+        /// An exception indicating a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ValidationException">
+        /// An exception indicating a specified value is not allowed.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetListsMetadata">REST API Reference for GetListsMetadata Operation</seealso>
+        GetListsMetadataResponse GetListsMetadata(GetListsMetadataRequest request);
+
+
+
+        /// <summary>
+        /// Gets the metadata of either all the lists under the account or the specified list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetListsMetadata service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetListsMetadata service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.AccessDeniedException">
+        /// An exception indicating Amazon Fraud Detector does not have the needed permissions.
+        /// This can occur if you submit a request, such as <code>PutExternalModel</code>, that
+        /// specifies a role that is not in your account.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
+        /// An exception indicating an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ResourceNotFoundException">
+        /// An exception indicating the specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ThrottlingException">
+        /// An exception indicating a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ValidationException">
+        /// An exception indicating a specified value is not allowed.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetListsMetadata">REST API Reference for GetListsMetadata Operation</seealso>
+        Task<GetListsMetadataResponse> GetListsMetadataAsync(GetListsMetadataRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -3162,6 +3519,94 @@ namespace Amazon.FraudDetector
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetVariables">REST API Reference for GetVariables Operation</seealso>
         Task<GetVariablesResponse> GetVariablesAsync(GetVariablesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListEventPredictions
+
+
+        /// <summary>
+        /// Gets a list of past predictions. The list can be filtered by detector ID, detector
+        /// version ID, event ID, event type, or by specifying a time period. If filter is not
+        /// specified, the most recent prediction is returned.
+        /// 
+        ///  
+        /// <para>
+        /// For example, the following filter lists all past predictions for <code>xyz</code>
+        /// event type - <code>{ "eventType":{ "value": "xyz" }” } </code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// This is a paginated API. If you provide a null <code>maxResults</code>, this action
+        /// will retrieve a maximum of 10 records per page. If you provide a <code>maxResults</code>,
+        /// the value must be between 50 and 100. To get the next page results, provide the <code>nextToken</code>
+        /// from the response as part of your request. A null <code>nextToken</code> fetches the
+        /// records from the beginning. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListEventPredictions service method.</param>
+        /// 
+        /// <returns>The response from the ListEventPredictions service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.AccessDeniedException">
+        /// An exception indicating Amazon Fraud Detector does not have the needed permissions.
+        /// This can occur if you submit a request, such as <code>PutExternalModel</code>, that
+        /// specifies a role that is not in your account.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
+        /// An exception indicating an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ThrottlingException">
+        /// An exception indicating a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ValidationException">
+        /// An exception indicating a specified value is not allowed.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/ListEventPredictions">REST API Reference for ListEventPredictions Operation</seealso>
+        ListEventPredictionsResponse ListEventPredictions(ListEventPredictionsRequest request);
+
+
+
+        /// <summary>
+        /// Gets a list of past predictions. The list can be filtered by detector ID, detector
+        /// version ID, event ID, event type, or by specifying a time period. If filter is not
+        /// specified, the most recent prediction is returned.
+        /// 
+        ///  
+        /// <para>
+        /// For example, the following filter lists all past predictions for <code>xyz</code>
+        /// event type - <code>{ "eventType":{ "value": "xyz" }” } </code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// This is a paginated API. If you provide a null <code>maxResults</code>, this action
+        /// will retrieve a maximum of 10 records per page. If you provide a <code>maxResults</code>,
+        /// the value must be between 50 and 100. To get the next page results, provide the <code>nextToken</code>
+        /// from the response as part of your request. A null <code>nextToken</code> fetches the
+        /// records from the beginning. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListEventPredictions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListEventPredictions service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.AccessDeniedException">
+        /// An exception indicating Amazon Fraud Detector does not have the needed permissions.
+        /// This can occur if you submit a request, such as <code>PutExternalModel</code>, that
+        /// specifies a role that is not in your account.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
+        /// An exception indicating an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ThrottlingException">
+        /// An exception indicating a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ValidationException">
+        /// An exception indicating a specified value is not allowed.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/ListEventPredictions">REST API Reference for ListEventPredictions Operation</seealso>
+        Task<ListEventPredictionsResponse> ListEventPredictionsAsync(ListEventPredictionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -4149,6 +4594,74 @@ namespace Amazon.FraudDetector
 
         #endregion
         
+        #region  UpdateList
+
+
+        /// <summary>
+        /// Updates a list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateList service method.</param>
+        /// 
+        /// <returns>The response from the UpdateList service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.AccessDeniedException">
+        /// An exception indicating Amazon Fraud Detector does not have the needed permissions.
+        /// This can occur if you submit a request, such as <code>PutExternalModel</code>, that
+        /// specifies a role that is not in your account.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ConflictException">
+        /// An exception indicating there was a conflict during a delete operation.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
+        /// An exception indicating an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ResourceNotFoundException">
+        /// An exception indicating the specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ThrottlingException">
+        /// An exception indicating a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ValidationException">
+        /// An exception indicating a specified value is not allowed.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/UpdateList">REST API Reference for UpdateList Operation</seealso>
+        UpdateListResponse UpdateList(UpdateListRequest request);
+
+
+
+        /// <summary>
+        /// Updates a list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateList service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateList service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.AccessDeniedException">
+        /// An exception indicating Amazon Fraud Detector does not have the needed permissions.
+        /// This can occur if you submit a request, such as <code>PutExternalModel</code>, that
+        /// specifies a role that is not in your account.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ConflictException">
+        /// An exception indicating there was a conflict during a delete operation.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
+        /// An exception indicating an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ResourceNotFoundException">
+        /// An exception indicating the specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ThrottlingException">
+        /// An exception indicating a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ValidationException">
+        /// An exception indicating a specified value is not allowed.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/UpdateList">REST API Reference for UpdateList Operation</seealso>
+        Task<UpdateListResponse> UpdateListAsync(UpdateListRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  UpdateModel
 
 
@@ -4305,6 +4818,10 @@ namespace Amazon.FraudDetector
         /// </para>
         ///  <ol> <li> 
         /// <para>
+        /// Change the <code>TRAINING_IN_PROGRESS</code> status to <code>TRAINING_CANCELLED</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// Change the <code>TRAINING_COMPLETE</code> status to <code>ACTIVE</code>.
         /// </para>
         ///  </li> <li> 
@@ -4349,6 +4866,10 @@ namespace Amazon.FraudDetector
         /// You can perform the following status updates:
         /// </para>
         ///  <ol> <li> 
+        /// <para>
+        /// Change the <code>TRAINING_IN_PROGRESS</code> status to <code>TRAINING_CANCELLED</code>.
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         /// Change the <code>TRAINING_COMPLETE</code> status to <code>ACTIVE</code>.
         /// </para>

@@ -35,7 +35,9 @@ namespace Amazon.SageMaker.Model
     public partial class CreatePipelineRequest : AmazonSageMakerRequest
     {
         private string _clientRequestToken;
+        private ParallelismConfiguration _parallelismConfiguration;
         private string _pipelineDefinition;
+        private PipelineDefinitionS3Location _pipelineDefinitionS3Location;
         private string _pipelineDescription;
         private string _pipelineDisplayName;
         private string _pipelineName;
@@ -63,12 +65,31 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ParallelismConfiguration. 
+        /// <para>
+        /// This is the configuration that controls the parallelism of the pipeline. If specified,
+        /// it applies to all runs of this pipeline by default.
+        /// </para>
+        /// </summary>
+        public ParallelismConfiguration ParallelismConfiguration
+        {
+            get { return this._parallelismConfiguration; }
+            set { this._parallelismConfiguration = value; }
+        }
+
+        // Check to see if ParallelismConfiguration property is set
+        internal bool IsSetParallelismConfiguration()
+        {
+            return this._parallelismConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property PipelineDefinition. 
         /// <para>
         /// The JSON pipeline definition of the pipeline.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1048576)]
+        [AWSProperty(Min=1, Max=1048576)]
         public string PipelineDefinition
         {
             get { return this._pipelineDefinition; }
@@ -79,6 +100,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetPipelineDefinition()
         {
             return this._pipelineDefinition != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PipelineDefinitionS3Location. 
+        /// <para>
+        /// The location of the pipeline definition stored in Amazon S3. If specified, SageMaker
+        /// will retrieve the pipeline definition from this location.
+        /// </para>
+        /// </summary>
+        public PipelineDefinitionS3Location PipelineDefinitionS3Location
+        {
+            get { return this._pipelineDefinitionS3Location; }
+            set { this._pipelineDefinitionS3Location = value; }
+        }
+
+        // Check to see if PipelineDefinitionS3Location property is set
+        internal bool IsSetPipelineDefinitionS3Location()
+        {
+            return this._pipelineDefinitionS3Location != null;
         }
 
         /// <summary>

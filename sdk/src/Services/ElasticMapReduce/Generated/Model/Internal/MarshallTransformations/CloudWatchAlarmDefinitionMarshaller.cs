@@ -34,7 +34,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CloudWatchAlarmDefinition Marshaller
-    /// </summary>       
+    /// </summary>
     public class CloudWatchAlarmDefinitionMarshaller : IRequestMarshaller<CloudWatchAlarmDefinition, JsonMarshallerContext> 
     {
         /// <summary>
@@ -113,7 +113,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CloudWatchAlarmDefinitionMarshaller Instance = new CloudWatchAlarmDefinitionMarshaller();
 
     }

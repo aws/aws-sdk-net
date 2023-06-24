@@ -59,7 +59,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property GenerationTimestamp. 
         /// <para>
-        /// The timestamp showing when the recommendations were generated.
+        /// The timestamp that shows when the recommendations were generated.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]

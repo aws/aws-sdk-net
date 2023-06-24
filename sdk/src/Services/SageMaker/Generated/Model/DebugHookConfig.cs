@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Configuration information for the Debugger hook parameters, metric and tensor collections,
-    /// and storage paths. To learn more about how to configure the <code>DebugHookConfig</code>
-    /// parameter, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/debugger-createtrainingjob-api.html">Use
+    /// Configuration information for the Amazon SageMaker Debugger hook parameters, metric
+    /// and tensor collections, and storage paths. To learn more about how to configure the
+    /// <code>DebugHookConfig</code> parameter, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/debugger-createtrainingjob-api.html">Use
     /// the SageMaker and Debugger Configuration API Operations to Create, Update, and Debug
     /// Your Training Job</a>.
     /// </summary>
@@ -45,8 +45,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property CollectionConfigurations. 
         /// <para>
-        /// Configuration information for Debugger tensor collections. To learn more about how
-        /// to configure the <code>CollectionConfiguration</code> parameter, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/debugger-createtrainingjob-api.html">Use
+        /// Configuration information for Amazon SageMaker Debugger tensor collections. To learn
+        /// more about how to configure the <code>CollectionConfiguration</code> parameter, see
+        /// <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/debugger-createtrainingjob-api.html">Use
         /// the SageMaker and Debugger Configuration API Operations to Create, Update, and Debug
         /// Your Training Job</a>. 
         /// </para>
@@ -67,7 +68,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property HookParameters. 
         /// <para>
-        /// Configuration information for the Debugger hook parameters.
+        /// Configuration information for the Amazon SageMaker Debugger hook parameters.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=20)]

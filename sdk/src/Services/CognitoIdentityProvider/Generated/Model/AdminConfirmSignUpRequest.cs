@@ -48,7 +48,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// Gets and sets the property ClientMetadata. 
         /// <para>
         /// A map of custom key-value pairs that you can provide as input for any custom workflows
-        /// that this action triggers. 
+        /// that this action triggers.
         /// </para>
         ///  
         /// <para>
@@ -62,29 +62,28 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing
-        /// User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">
+        /// Customizing user pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito
+        /// Developer Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
-        /// Take the following limitations into consideration when you use the ClientMetadata
-        /// parameter:
+        /// When you use the ClientMetadata parameter, remember that Amazon Cognito won't do the
+        /// following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Amazon Cognito does not store the ClientMetadata value. This data is available only
-        /// to Lambda triggers that are assigned to a user pool to support custom workflows. If
-        /// your user pool configuration does not include triggers, the ClientMetadata parameter
-        /// serves no purpose.
+        /// Store the ClientMetadata value. This data is available only to Lambda triggers that
+        /// are assigned to a user pool to support custom workflows. If your user pool configuration
+        /// doesn't include triggers, the ClientMetadata parameter serves no purpose.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Amazon Cognito does not validate the ClientMetadata value.
+        /// Validate the ClientMetadata value.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Amazon Cognito does not encrypt the the ClientMetadata value, so don't use it to provide
-        /// sensitive information.
+        /// Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide sensitive information.
         /// </para>
         ///  </li> </ul> </note>
         /// </summary>
@@ -106,7 +105,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The user name for which you want to confirm user registration.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=128)]
         public string Username
         {
             get { return this._username; }

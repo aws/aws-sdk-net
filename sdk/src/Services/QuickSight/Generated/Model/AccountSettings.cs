@@ -37,6 +37,8 @@ namespace Amazon.QuickSight.Model
         private string _defaultNamespace;
         private Edition _edition;
         private string _notificationEmail;
+        private bool? _publicSharingEnabled;
+        private bool? _terminationProtectionEnabled;
 
         /// <summary>
         /// Gets and sets the property AccountName. 
@@ -112,6 +114,46 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetNotificationEmail()
         {
             return this._notificationEmail != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PublicSharingEnabled. 
+        /// <para>
+        /// A Boolean value that indicates whether public sharing is turned on for an Amazon QuickSight
+        /// account. For more information about turning on public sharing, see <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdatePublicSharingSettings.html">UpdatePublicSharingSettings</a>.
+        /// </para>
+        /// </summary>
+        public bool PublicSharingEnabled
+        {
+            get { return this._publicSharingEnabled.GetValueOrDefault(); }
+            set { this._publicSharingEnabled = value; }
+        }
+
+        // Check to see if PublicSharingEnabled property is set
+        internal bool IsSetPublicSharingEnabled()
+        {
+            return this._publicSharingEnabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TerminationProtectionEnabled. 
+        /// <para>
+        /// A boolean value that determines whether or not an Amazon QuickSight account can be
+        /// deleted. A <code>True</code> value doesn't allow the account to be deleted and results
+        /// in an error message if a user tries to make a <code>DeleteAccountSubsctiption</code>
+        /// request. A <code>False</code> value will allow the ccount to be deleted. 
+        /// </para>
+        /// </summary>
+        public bool TerminationProtectionEnabled
+        {
+            get { return this._terminationProtectionEnabled.GetValueOrDefault(); }
+            set { this._terminationProtectionEnabled = value; }
+        }
+
+        // Check to see if TerminationProtectionEnabled property is set
+        internal bool IsSetTerminationProtectionEnabled()
+        {
+            return this._terminationProtectionEnabled.HasValue; 
         }
 
     }

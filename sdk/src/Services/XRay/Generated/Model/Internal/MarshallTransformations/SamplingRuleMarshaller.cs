@@ -34,7 +34,7 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SamplingRule Marshaller
-    /// </summary>       
+    /// </summary>
     public class SamplingRuleMarshaller : IRequestMarshaller<SamplingRule, JsonMarshallerContext> 
     {
         /// <summary>
@@ -135,7 +135,7 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SamplingRuleMarshaller Instance = new SamplingRuleMarshaller();
 
     }

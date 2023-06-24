@@ -80,7 +80,7 @@ namespace Amazon.ECS.Model
         /// <para>
         ///  The status of the attachment. Valid values are <code>PRECREATED</code>, <code>CREATED</code>,
         /// <code>ATTACHING</code>, <code>ATTACHED</code>, <code>DETACHING</code>, <code>DETACHED</code>,
-        /// and <code>DELETED</code>.
+        /// <code>DELETED</code>, and <code>FAILED</code>.
         /// </para>
         /// </summary>
         public string Status

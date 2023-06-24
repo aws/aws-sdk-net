@@ -33,15 +33,15 @@ namespace Amazon.WAFV2.Model
     /// 
     ///  <ul> <li> 
     /// <para>
-    /// If the request includes a valid, unexpired <code>CAPTCHA</code> token, WAF allows
-    /// the web request inspection to proceed to the next rule, similar to a <code>CountAction</code>.
+    /// If the request includes a valid, unexpired <code>CAPTCHA</code> token, WAF applies
+    /// any custom request handling and labels that you've configured and then allows the
+    /// web request inspection to proceed to the next rule, similar to a <code>CountAction</code>.
     /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// If the request doesn't include a valid, unexpired <code>CAPTCHA</code> token, WAF
-    /// discontinues the web ACL evaluation of the request and blocks it from going to its
-    /// intended destination.
+    /// If the request doesn't include a valid, unexpired token, WAF discontinues the web
+    /// ACL evaluation of the request and blocks it from going to its intended destination.
     /// </para>
     ///  
     /// <para>
@@ -59,7 +59,7 @@ namespace Amazon.WAFV2.Model
     ///  </li> <li> 
     /// <para>
     /// If the request contains an <code>Accept</code> header with a value of <code>text/html</code>,
-    /// the response includes a <code>CAPTCHA</code> challenge. 
+    /// the response includes a <code>CAPTCHA</code> JavaScript page interstitial. 
     /// </para>
     ///  </li> </ul> </li> </ul> 
     /// <para>
@@ -72,11 +72,6 @@ namespace Amazon.WAFV2.Model
     /// This action option is available for rules. It isn't available for web ACL default
     /// actions. 
     /// </para>
-    ///  
-    /// <para>
-    /// This is used in the context of other settings, for example to specify values for <a>RuleAction</a>
-    /// and web ACL <a>DefaultAction</a>. 
-    /// </para>
     /// </summary>
     public partial class CaptchaAction
     {
@@ -85,13 +80,13 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property CustomRequestHandling. 
         /// <para>
-        /// Defines custom handling for the web request.
+        /// Defines custom handling for the web request, used when the <code>CAPTCHA</code> inspection
+        /// determines that the request's token is valid and unexpired.
         /// </para>
         ///  
         /// <para>
         /// For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
-        /// web requests and responses in WAF</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
-        /// Developer Guide</a>. 
+        /// web requests and responses in WAF</a> in the <i>WAF Developer Guide</i>. 
         /// </para>
         /// </summary>
         public CustomRequestHandling CustomRequestHandling

@@ -34,7 +34,7 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// LifecyclePolicyPreviewFilter Marshaller
-    /// </summary>       
+    /// </summary>
     public class LifecyclePolicyPreviewFilterMarshaller : IRequestMarshaller<LifecyclePolicyPreviewFilter, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static LifecyclePolicyPreviewFilterMarshaller Instance = new LifecyclePolicyPreviewFilterMarshaller();
 
     }

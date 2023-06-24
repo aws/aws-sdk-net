@@ -34,9 +34,13 @@ namespace Amazon.StepFunctions.Model
     public partial class ExecutionListItem
     {
         private string _executionArn;
+        private int? _itemCount;
+        private string _mapRunArn;
         private string _name;
         private DateTime? _startDate;
+        private string _stateMachineAliasArn;
         private string _stateMachineArn;
+        private string _stateMachineVersionArn;
         private ExecutionStatus _status;
         private DateTime? _stopDate;
 
@@ -57,6 +61,49 @@ namespace Amazon.StepFunctions.Model
         internal bool IsSetExecutionArn()
         {
             return this._executionArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ItemCount. 
+        /// <para>
+        /// The total number of items processed in a child workflow execution. This field is returned
+        /// only if <code>mapRunArn</code> was specified in the <code>ListExecutions</code> API
+        /// action. If <code>stateMachineArn</code> was specified in <code>ListExecutions</code>,
+        /// the <code>itemCount</code> field isn't returned.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0)]
+        public int ItemCount
+        {
+            get { return this._itemCount.GetValueOrDefault(); }
+            set { this._itemCount = value; }
+        }
+
+        // Check to see if ItemCount property is set
+        internal bool IsSetItemCount()
+        {
+            return this._itemCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MapRunArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of a Map Run. This field is returned only if <code>mapRunArn</code>
+        /// was specified in the <code>ListExecutions</code> API action. If <code>stateMachineArn</code>
+        /// was specified in <code>ListExecutions</code>, the <code>mapRunArn</code> isn't returned.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2000)]
+        public string MapRunArn
+        {
+            get { return this._mapRunArn; }
+            set { this._mapRunArn = value; }
+        }
+
+        // Check to see if MapRunArn property is set
+        internal bool IsSetMapRunArn()
+        {
+            return this._mapRunArn != null;
         }
 
         /// <summary>
@@ -127,9 +174,33 @@ namespace Amazon.StepFunctions.Model
         }
 
         /// <summary>
+        /// Gets and sets the property StateMachineAliasArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the state machine alias used to start an execution.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the state machine execution was started with an unqualified ARN or a version ARN,
+        /// it returns null.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string StateMachineAliasArn
+        {
+            get { return this._stateMachineAliasArn; }
+            set { this._stateMachineAliasArn = value; }
+        }
+
+        // Check to see if StateMachineAliasArn property is set
+        internal bool IsSetStateMachineAliasArn()
+        {
+            return this._stateMachineAliasArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property StateMachineArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the executed state machine.
+        /// The Amazon Resource Name (ARN) of the state machine that ran the execution.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
@@ -143,6 +214,34 @@ namespace Amazon.StepFunctions.Model
         internal bool IsSetStateMachineArn()
         {
             return this._stateMachineArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StateMachineVersionArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the state machine version associated with the execution.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the state machine execution was started with an unqualified ARN, it returns null.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the execution was started using a <code>stateMachineAliasArn</code>, both the <code>stateMachineAliasArn</code>
+        /// and <code>stateMachineVersionArn</code> parameters contain the respective values.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string StateMachineVersionArn
+        {
+            get { return this._stateMachineVersionArn; }
+            set { this._stateMachineVersionArn = value; }
+        }
+
+        // Check to see if StateMachineVersionArn property is set
+        internal bool IsSetStateMachineVersionArn()
+        {
+            return this._stateMachineVersionArn != null;
         }
 
         /// <summary>

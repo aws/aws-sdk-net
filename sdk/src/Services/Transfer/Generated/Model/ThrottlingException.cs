@@ -30,11 +30,6 @@ namespace Amazon.Transfer.Model
 {
     /// <summary>
     /// The request was denied due to request throttling.
-    /// 
-    ///  
-    /// <para>
-    ///  HTTP Status Code: 400
-    /// </para>
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

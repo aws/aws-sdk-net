@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppSync.Model
 {
     /// <summary>
-    /// Describes an OpenID Connect configuration.
+    /// Describes an OpenID Connect (OIDC) configuration.
     /// </summary>
     public partial class OpenIDConnectConfig
     {
@@ -41,7 +41,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property AuthTTL. 
         /// <para>
-        /// The number of milliseconds a token is valid after being authenticated.
+        /// The number of milliseconds that a token is valid after being authenticated.
         /// </para>
         /// </summary>
         public long AuthTTL
@@ -59,9 +59,9 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property ClientId. 
         /// <para>
-        /// The client identifier of the Relying party at the OpenID identity provider. This identifier
-        /// is typically obtained when the Relying party is registered with the OpenID identity
-        /// provider. You can specify a regular expression so the AppSync can validate against
+        /// The client identifier of the relying party at the OpenID identity provider. This identifier
+        /// is typically obtained when the relying party is registered with the OpenID identity
+        /// provider. You can specify a regular expression so that AppSync can validate against
         /// multiple client identifiers at a time.
         /// </para>
         /// </summary>
@@ -80,7 +80,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property IatTTL. 
         /// <para>
-        /// The number of milliseconds a token is valid after being issued to a user.
+        /// The number of milliseconds that a token is valid after it's issued to a user.
         /// </para>
         /// </summary>
         public long IatTTL
@@ -98,8 +98,8 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property Issuer. 
         /// <para>
-        /// The issuer for the OpenID Connect configuration. The issuer returned by discovery
-        /// must exactly match the value of <code>iss</code> in the ID token.
+        /// The issuer for the OIDC configuration. The issuer returned by discovery must exactly
+        /// match the value of <code>iss</code> in the ID token.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

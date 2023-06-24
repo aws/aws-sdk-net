@@ -34,8 +34,10 @@ namespace Amazon.GlobalAccelerator.Model
     /// 
     ///  <important> 
     /// <para>
-    /// Global Accelerator is a global service that supports endpoints in multiple AWS Regions
-    /// but you must specify the US West (Oregon) Region to create or update accelerators.
+    /// Global Accelerator is a global service that supports endpoints in multiple Amazon
+    /// Web Services Regions but you must specify the US West (Oregon) Region to create, update,
+    /// or otherwise work with accelerators. That is, for example, specify <code>--region
+    /// us-west-2</code> on AWS CLI commands.
     /// </para>
     ///  </important>
     /// </summary>
@@ -92,7 +94,8 @@ namespace Amazon.GlobalAccelerator.Model
         /// <summary>
         /// Gets and sets the property IpAddressType. 
         /// <para>
-        /// The IP address type, which must be IPv4.
+        /// The IP address type that an accelerator supports. For a standard accelerator, the
+        /// value can be IPV4 or DUAL_STACK.
         /// </para>
         /// </summary>
         public IpAddressType IpAddressType
@@ -110,8 +113,9 @@ namespace Amazon.GlobalAccelerator.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the accelerator. The name can have a maximum of 32 characters, must contain
-        /// only alphanumeric characters or hyphens (-), and must not begin or end with a hyphen.
+        /// The name of the accelerator. The name can have a maximum of 64 characters, must contain
+        /// only alphanumeric characters, periods (.), or hyphens (-), and must not begin or end
+        /// with a hyphen or period.
         /// </para>
         /// </summary>
         [AWSProperty(Max=255)]

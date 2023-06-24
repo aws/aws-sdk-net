@@ -33,6 +33,42 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class RSessionAppSettings
     {
+        private List<CustomImage> _customImages = new List<CustomImage>();
+        private ResourceSpec _defaultResourceSpec;
+
+        /// <summary>
+        /// Gets and sets the property CustomImages. 
+        /// <para>
+        /// A list of custom SageMaker images that are configured to run as a RSession app.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=200)]
+        public List<CustomImage> CustomImages
+        {
+            get { return this._customImages; }
+            set { this._customImages = value; }
+        }
+
+        // Check to see if CustomImages property is set
+        internal bool IsSetCustomImages()
+        {
+            return this._customImages != null && this._customImages.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DefaultResourceSpec.
+        /// </summary>
+        public ResourceSpec DefaultResourceSpec
+        {
+            get { return this._defaultResourceSpec; }
+            set { this._defaultResourceSpec = value; }
+        }
+
+        // Check to see if DefaultResourceSpec property is set
+        internal bool IsSetDefaultResourceSpec()
+        {
+            return this._defaultResourceSpec != null;
+        }
 
     }
 }

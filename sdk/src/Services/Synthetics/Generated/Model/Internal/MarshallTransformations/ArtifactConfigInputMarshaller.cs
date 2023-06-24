@@ -34,7 +34,7 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ArtifactConfigInput Marshaller
-    /// </summary>       
+    /// </summary>
     public class ArtifactConfigInputMarshaller : IRequestMarshaller<ArtifactConfigInput, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ArtifactConfigInputMarshaller Instance = new ArtifactConfigInputMarshaller();
 
     }

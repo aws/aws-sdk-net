@@ -34,7 +34,7 @@ namespace Amazon.KafkaConnect.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// LogDelivery Marshaller
-    /// </summary>       
+    /// </summary>
     public class LogDeliveryMarshaller : IRequestMarshaller<LogDelivery, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.KafkaConnect.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static LogDeliveryMarshaller Instance = new LogDeliveryMarshaller();
 
     }

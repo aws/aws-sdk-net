@@ -34,7 +34,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// WriteTreatmentResource Marshaller
-    /// </summary>       
+    /// </summary>
     public class WriteTreatmentResourceMarshaller : IRequestMarshaller<WriteTreatmentResource, JsonMarshallerContext> 
     {
         /// <summary>
@@ -111,7 +111,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static WriteTreatmentResourceMarshaller Instance = new WriteTreatmentResourceMarshaller();
 
     }

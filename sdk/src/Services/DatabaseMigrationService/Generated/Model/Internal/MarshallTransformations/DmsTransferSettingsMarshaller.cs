@@ -34,7 +34,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DmsTransferSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class DmsTransferSettingsMarshaller : IRequestMarshaller<DmsTransferSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DmsTransferSettingsMarshaller Instance = new DmsTransferSettingsMarshaller();
 
     }

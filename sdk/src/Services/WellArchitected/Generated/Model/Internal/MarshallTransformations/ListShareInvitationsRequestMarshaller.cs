@@ -55,7 +55,7 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
         public IRequest Marshall(ListShareInvitationsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.WellArchitected");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-03-31";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-03-31";
             request.HttpMethod = "GET";
 
             
@@ -67,6 +67,9 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("NextToken", StringUtils.FromString(publicRequest.NextToken));
+            
+            if (publicRequest.IsSetProfileNamePrefix())
+                request.Parameters.Add("ProfileNamePrefix", StringUtils.FromString(publicRequest.ProfileNamePrefix));
             
             if (publicRequest.IsSetShareResourceType())
                 request.Parameters.Add("ShareResourceType", StringUtils.FromString(publicRequest.ShareResourceType));

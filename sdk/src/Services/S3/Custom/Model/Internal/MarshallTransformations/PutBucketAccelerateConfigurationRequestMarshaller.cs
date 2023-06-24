@@ -44,13 +44,16 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             request.HttpMethod = "PUT";
 
+            if (putBucketAccelerateRequest.IsSetChecksumAlgorithm())
+                request.Headers.Add(S3Constants.AmzHeaderSdkChecksumAlgorithm, S3Transforms.ToStringValue(putBucketAccelerateRequest.ChecksumAlgorithm));
+
             if (putBucketAccelerateRequest.IsSetExpectedBucketOwner())
                 request.Headers.Add(S3Constants.AmzHeaderExpectedBucketOwner, S3Transforms.ToStringValue(putBucketAccelerateRequest.ExpectedBucketOwner));
 
             if (string.IsNullOrEmpty(putBucketAccelerateRequest.BucketName))
                 throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "PutBucketAccelerateConfigurationRequest.BucketName");
 
-			request.ResourcePath = string.Concat("/", S3Transforms.ToStringValue(putBucketAccelerateRequest.BucketName));
+            request.ResourcePath = "/";
 
             request.AddSubResource("accelerate");
 
@@ -66,11 +69,12 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 var accelerateConfiguration = putBucketAccelerateRequest.AccelerateConfiguration;
                 if (accelerateConfiguration != null)
                 {
-                    xmlWriter.WriteStartElement("AccelerateConfiguration", "");
+                    xmlWriter.WriteStartElement("AccelerateConfiguration", S3Constants.S3RequestXmlNamespace);
+
                     var accelerateConfigurationStatus = accelerateConfiguration.Status;
                     if (accelerateConfiguration.IsSetBucketAccelerateStatus() && accelerateConfigurationStatus != null)
                     {
-                        xmlWriter.WriteElementString("Status", "", S3Transforms.ToXmlStringValue(accelerateConfiguration.Status));
+                        xmlWriter.WriteElementString("Status", S3Transforms.ToXmlStringValue(accelerateConfiguration.Status));
                     }
                     xmlWriter.WriteEndElement();
                 }
@@ -81,9 +85,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 request.Content = Encoding.UTF8.GetBytes(content);
                 request.Headers[HeaderKeys.ContentTypeHeader] = "application/xml";
 
-                string checksum = AWSSDKUtils.GenerateChecksumForContent(content, true);
-                request.Headers[HeaderKeys.ContentMD5Header] = checksum;
-
+                ChecksumUtils.SetRequestChecksum(request, putBucketAccelerateRequest.ChecksumAlgorithm);
             }
             catch (EncoderFallbackException e)
             {

@@ -30,7 +30,7 @@ namespace Amazon.ChimeSDKMessaging.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateChannelMembership operation.
-    /// Adds a user to a channel. The <code>InvitedBy</code> field in <code>ChannelMembership</code>
+    /// Adds a member to a channel. The <code>InvitedBy</code> field in <code>ChannelMembership</code>
     /// is derived from the request header. A channel member can:
     /// 
     ///  <ul> <li> 
@@ -68,8 +68,9 @@ namespace Amazon.ChimeSDKMessaging.Model
     /// </para>
     ///  </li> </ul> <note> 
     /// <para>
-    /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
-    /// of the user that makes the API call as the value in the header.
+    /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the
+    /// <code>AppInstanceUserArn</code> or <code>AppInstanceBot</code> that makes the API
+    /// call as the value in the header.
     /// </para>
     ///  </note>
     /// </summary>
@@ -78,6 +79,7 @@ namespace Amazon.ChimeSDKMessaging.Model
         private string _channelArn;
         private string _chimeBearer;
         private string _memberArn;
+        private string _subChannelId;
         private ChannelMembershipType _type;
 
         /// <summary>
@@ -102,7 +104,8 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// <summary>
         /// Gets and sets the property ChimeBearer. 
         /// <para>
-        /// The <code>AppInstanceUserArn</code> of the user that makes the API call.
+        /// The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes
+        /// the API call.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=5, Max=1600)]
@@ -135,6 +138,31 @@ namespace Amazon.ChimeSDKMessaging.Model
         internal bool IsSetMemberArn()
         {
             return this._memberArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SubChannelId. 
+        /// <para>
+        /// The ID of the SubChannel in the request.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Only required when creating membership in a SubChannel for a moderator in an elastic
+        /// channel.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        [AWSProperty(Min=1, Max=128)]
+        public string SubChannelId
+        {
+            get { return this._subChannelId; }
+            set { this._subChannelId = value; }
+        }
+
+        // Check to see if SubChannelId property is set
+        internal bool IsSetSubChannelId()
+        {
+            return this._subChannelId != null;
         }
 
         /// <summary>

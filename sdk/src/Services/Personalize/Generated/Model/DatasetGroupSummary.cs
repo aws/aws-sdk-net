@@ -30,7 +30,8 @@ namespace Amazon.Personalize.Model
 {
     /// <summary>
     /// Provides a summary of the properties of a dataset group. For a complete listing, call
-    /// the <a>DescribeDatasetGroup</a> API.
+    /// the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeDatasetGroup.html">DescribeDatasetGroup</a>
+    /// API.
     /// </summary>
     public partial class DatasetGroupSummary
     {

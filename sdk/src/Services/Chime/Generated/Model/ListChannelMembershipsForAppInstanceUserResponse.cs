@@ -39,7 +39,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property ChannelMemberships. 
         /// <para>
-        /// The token passed by previous API calls until all requested users are returned.
+        /// The information for the requested channel memberships.
         /// </para>
         /// </summary>
         public List<ChannelMembershipForAppInstanceUserSummary> ChannelMemberships
@@ -60,7 +60,7 @@ namespace Amazon.Chime.Model
         /// The token passed by previous API calls until all requested users are returned.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=2048)]
+        [AWSProperty(Sensitive=true, Min=0, Max=2048)]
         public string NextToken
         {
             get { return this._nextToken; }

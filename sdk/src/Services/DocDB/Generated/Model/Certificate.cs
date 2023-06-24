@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DocDB.Model
 {
     /// <summary>
-    /// A certificate authority (CA) certificate for an account.
+    /// A certificate authority (CA) certificate for an Amazon Web Services account.
     /// </summary>
     public partial class Certificate
     {

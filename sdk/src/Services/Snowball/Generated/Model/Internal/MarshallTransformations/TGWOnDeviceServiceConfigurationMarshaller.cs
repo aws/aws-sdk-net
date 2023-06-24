@@ -34,7 +34,7 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// TGWOnDeviceServiceConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class TGWOnDeviceServiceConfigurationMarshaller : IRequestMarshaller<TGWOnDeviceServiceConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static TGWOnDeviceServiceConfigurationMarshaller Instance = new TGWOnDeviceServiceConfigurationMarshaller();
 
     }

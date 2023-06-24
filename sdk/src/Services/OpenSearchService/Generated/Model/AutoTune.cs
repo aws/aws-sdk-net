@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// Specifies the Auto-Tune type and Auto-Tune action details.
+    /// Information about an Auto-Tune action. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html">Auto-Tune
+    /// for Amazon OpenSearch Service</a>.
     /// </summary>
     public partial class AutoTune
     {
@@ -39,9 +40,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property AutoTuneDetails. 
         /// <para>
-        /// Specifies details about the Auto-Tune action. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html"
-        /// target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more information.
-        /// 
+        /// Details about an Auto-Tune action.
         /// </para>
         /// </summary>
         public AutoTuneDetails AutoTuneDetails
@@ -59,7 +58,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property AutoTuneType. 
         /// <para>
-        /// Specifies the Auto-Tune type. Valid value is SCHEDULED_ACTION.
+        /// The type of Auto-Tune action.
         /// </para>
         /// </summary>
         public AutoTuneType AutoTuneType

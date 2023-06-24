@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// Status of the EBS options for the specified domain.
+    /// The status of the EBS options for the specified OpenSearch Service domain.
     /// </summary>
     public partial class EBSOptionsStatus
     {
@@ -39,7 +39,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property Options. 
         /// <para>
-        /// The EBS options for the specified domain.
+        /// The configured EBS options for the specified domain.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

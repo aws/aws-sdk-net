@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kendra.Model
 {
     /// <summary>
-    /// A summary of information about an index.
+    /// Summary information on the configuration of an index.
     /// </summary>
     public partial class IndexConfigurationSummary
     {
@@ -62,7 +62,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Edition. 
         /// <para>
-        /// Indicates whether the index is a enterprise edition index or a developer edition index.
+        /// Indicates whether the index is a Enterprise Edition index or a Developer Edition index.
         /// 
         /// </para>
         /// </summary>
@@ -81,8 +81,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// A unique identifier for the index. Use this to identify the index when you are using
-        /// operations such as <code>Query</code>, <code>DescribeIndex</code>, <code>UpdateIndex</code>,
+        /// A identifier for the index. Use this to identify the index when you are using APIs
+        /// such as <code>Query</code>, <code>DescribeIndex</code>, <code>UpdateIndex</code>,
         /// and <code>DeleteIndex</code>.
         /// </para>
         /// </summary>
@@ -141,8 +141,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property UpdatedAt. 
         /// <para>
-        /// The Unix timestamp when the index was last updated by the <code>UpdateIndex</code>
-        /// operation.
+        /// The Unix timestamp when the index was last updated.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

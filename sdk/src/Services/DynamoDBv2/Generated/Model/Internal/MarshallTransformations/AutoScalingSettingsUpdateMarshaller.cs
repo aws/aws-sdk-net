@@ -34,7 +34,7 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AutoScalingSettingsUpdate Marshaller
-    /// </summary>       
+    /// </summary>
     public class AutoScalingSettingsUpdateMarshaller : IRequestMarshaller<AutoScalingSettingsUpdate, JsonMarshallerContext> 
     {
         /// <summary>
@@ -84,7 +84,7 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AutoScalingSettingsUpdateMarshaller Instance = new AutoScalingSettingsUpdateMarshaller();
 
     }

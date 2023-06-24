@@ -33,15 +33,34 @@ namespace Amazon.MediaTailor.Model
     /// </summary>
     public partial class Transition
     {
+        private long? _durationMillis;
         private RelativePosition _relativePosition;
         private string _relativeProgram;
         private long? _scheduledStartTimeMillis;
         private string _type;
 
         /// <summary>
+        /// Gets and sets the property DurationMillis. 
+        /// <para>
+        /// The duration of the live program in seconds.
+        /// </para>
+        /// </summary>
+        public long DurationMillis
+        {
+            get { return this._durationMillis.GetValueOrDefault(); }
+            set { this._durationMillis = value; }
+        }
+
+        // Check to see if DurationMillis property is set
+        internal bool IsSetDurationMillis()
+        {
+            return this._durationMillis.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property RelativePosition. 
         /// <para>
-        /// The position where this program will be inserted relative to the RelativePosition.
+        /// The position where this program will be inserted relative to the <code>RelativePosition</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -61,7 +80,7 @@ namespace Amazon.MediaTailor.Model
         /// Gets and sets the property RelativeProgram. 
         /// <para>
         /// The name of the program that this program will be inserted next to, as defined by
-        /// RelativePosition.
+        /// <code>RelativePosition</code>.
         /// </para>
         /// </summary>
         public string RelativeProgram
@@ -97,17 +116,17 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// Defines when the program plays in the schedule. You can set the value to ABSOLUTE
-        /// or RELATIVE.
+        /// Defines when the program plays in the schedule. You can set the value to <code>ABSOLUTE</code>
+        /// or <code>RELATIVE</code>.
         /// </para>
         ///  
         /// <para>
-        /// ABSOLUTE - The program plays at a specific wall clock time. This setting can only
-        /// be used for channels using the LINEAR PlaybackMode.
+        ///  <code>ABSOLUTE</code> - The program plays at a specific wall clock time. This setting
+        /// can only be used for channels using the <code>LINEAR</code> <code>PlaybackMode</code>.
         /// </para>
         ///  
         /// <para>
-        /// Note the following considerations when using ABSOLUTE transitions:
+        /// Note the following considerations when using <code>ABSOLUTE</code> transitions:
         /// </para>
         ///  
         /// <para>
@@ -116,13 +135,13 @@ namespace Amazon.MediaTailor.Model
         /// </para>
         ///  
         /// <para>
-        /// If there are gaps in playback, MediaTailor plays the FillerSlate you configured for
-        /// your linear channel.
+        /// If there are gaps in playback, MediaTailor plays the <code>FillerSlate</code> you
+        /// configured for your linear channel.
         /// </para>
         ///  
         /// <para>
-        /// RELATIVE - The program is inserted into the schedule either before or after a program
-        /// that you specify via RelativePosition.
+        ///  <code>RELATIVE</code> - The program is inserted into the schedule either before or
+        /// after a program that you specify via <code>RelativePosition</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

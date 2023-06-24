@@ -34,7 +34,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// VolumeSpecification Marshaller
-    /// </summary>       
+    /// </summary>
     public class VolumeSpecificationMarshaller : IRequestMarshaller<VolumeSpecification, JsonMarshallerContext> 
     {
         /// <summary>
@@ -57,6 +57,12 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.SizeInGB);
             }
 
+            if(requestObject.IsSetThroughput())
+            {
+                context.Writer.WritePropertyName("Throughput");
+                context.Writer.Write(requestObject.Throughput);
+            }
+
             if(requestObject.IsSetVolumeType())
             {
                 context.Writer.WritePropertyName("VolumeType");
@@ -67,7 +73,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static VolumeSpecificationMarshaller Instance = new VolumeSpecificationMarshaller();
 
     }

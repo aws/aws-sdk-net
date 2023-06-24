@@ -82,6 +82,12 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
                     unmarshalledObject.AlertDescription = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("AlertFilters", targetDepth))
+                {
+                    var unmarshaller = AlertFiltersUnmarshaller.Instance;
+                    unmarshalledObject.AlertFilters = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("AlertName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -31,12 +31,12 @@ namespace Amazon.Proton.Model
     /// <summary>
     /// Container for the parameters to the CreateServiceTemplate operation.
     /// Create a service template. The administrator creates a service template to define
-    /// standardized infrastructure and an optional CICD service pipeline. Developers, in
+    /// standardized infrastructure and an optional CI/CD service pipeline. Developers, in
     /// turn, select the service template from Proton. If the selected service template includes
     /// a service pipeline definition, they provide a link to their source code repository.
     /// Proton then deploys and manages the infrastructure defined by the selected service
-    /// template. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/managing-svc-templates.html">Service
-    /// Templates</a> in the <i>Proton Administrator Guide</i>.
+    /// template. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-templates.html">Proton
+    /// templates</a> in the <i>Proton User Guide</i>.
     /// </summary>
     public partial class CreateServiceTemplateRequest : AmazonProtonRequest
     {
@@ -53,7 +53,7 @@ namespace Amazon.Proton.Model
         /// A description of the service template.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=500)]
+        [AWSProperty(Sensitive=true, Min=0, Max=500)]
         public string Description
         {
             get { return this._description; }
@@ -72,7 +72,7 @@ namespace Amazon.Proton.Model
         /// The name of the service template as displayed in the developer interface.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
+        [AWSProperty(Sensitive=true, Min=1, Max=100)]
         public string DisplayName
         {
             get { return this._displayName; }
@@ -126,11 +126,11 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property PipelineProvisioning. 
         /// <para>
-        /// Proton includes a service pipeline for your service by default. When included, this
-        /// parameter indicates that an Proton service pipeline <i>won't</i> be included for your
-        /// service. Once specified, this parameter <i>can't</i> be changed. For more information,
-        /// see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-template-bundles.html">Service
-        /// template bundles</a> in the <i>Proton Administrator Guide</i>.
+        /// By default, Proton provides a service pipeline for your service. When this parameter
+        /// is included, it indicates that an Proton service pipeline <i>isn't</i> provided for
+        /// your service. After it's included, it <i>can't</i> be changed. For more information,
+        /// see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-template-authoring.html#ag-template-bundles">Template
+        /// bundles</a> in the <i>Proton User Guide</i>.
         /// </para>
         /// </summary>
         public Provisioning PipelineProvisioning
@@ -148,10 +148,13 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Create tags for your service template. For more information, see <i>Proton resources
-        /// and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
-        /// Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
-        /// User Guide</a>.
+        /// An optional list of metadata items that you can associate with the Proton service
+        /// template. A tag is a key-value pair.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
+        /// resources and tagging</a> in the <i>Proton User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]

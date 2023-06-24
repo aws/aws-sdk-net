@@ -30,7 +30,7 @@ namespace Amazon.Kendra.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeThesaurus operation.
-    /// Describes an existing Amazon Kendra thesaurus.
+    /// Gets information about an existing Amazon Kendra thesaurus.
     /// </summary>
     public partial class DescribeThesaurusRequest : AmazonKendraRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The identifier of the thesaurus to describe.
+        /// The identifier of the thesaurus you want to get information on.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
@@ -59,7 +59,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property IndexId. 
         /// <para>
-        /// The identifier of the index associated with the thesaurus to describe.
+        /// The identifier of the index for the thesaurus.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]

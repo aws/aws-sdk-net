@@ -30,7 +30,8 @@ namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
     /// Container for the parameters to the GetUpgradeHistory operation.
-    /// Retrieves the complete history of the last 10 upgrades performed on the domain.
+    /// Retrieves the complete history of the last 10 upgrades performed on an Amazon OpenSearch
+    /// Service domain.
     /// </summary>
     public partial class GetUpgradeHistoryRequest : AmazonOpenSearchServiceRequest
     {
@@ -39,7 +40,10 @@ namespace Amazon.OpenSearchService.Model
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property DomainName.
+        /// Gets and sets the property DomainName. 
+        /// <para>
+        /// The name of an existing domain.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=3, Max=28)]
         public string DomainName
@@ -55,7 +59,11 @@ namespace Amazon.OpenSearchService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MaxResults.
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// An optional parameter that specifies the maximum number of results to return. You
+        /// can use <code>nextToken</code> to get the next page of results.
+        /// </para>
         /// </summary>
         [AWSProperty(Max=100)]
         public int MaxResults
@@ -71,7 +79,12 @@ namespace Amazon.OpenSearchService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// If your initial <code>GetUpgradeHistory</code> operation returns a <code>nextToken</code>,
+        /// you can include the returned <code>nextToken</code> in subsequent <code>GetUpgradeHistory</code>
+        /// operations, which returns results in the next page.
+        /// </para>
         /// </summary>
         public string NextToken
         {

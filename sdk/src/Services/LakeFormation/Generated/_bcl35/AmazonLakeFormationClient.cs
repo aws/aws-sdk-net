@@ -233,6 +233,15 @@ namespace Amazon.LakeFormation
         }
 
         /// <summary>
+        /// Customize the pipeline
+        /// </summary>
+        /// <param name="pipeline"></param>
+        protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
+        {
+            pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonLakeFormationEndpointResolver());
+        }
+        /// <summary>
         /// Capture metadata for the service.
         /// </summary>
         protected override IServiceMetadata ServiceMetadata
@@ -273,7 +282,7 @@ namespace Amazon.LakeFormation
         /// Two processes are trying to modify a resource simultaneously.
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
-        /// A specified entity does not exist
+        /// A specified entity does not exist.
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.InternalServiceException">
         /// An internal service error occurred.
@@ -326,6 +335,90 @@ namespace Amazon.LakeFormation
         public virtual AddLFTagsToResourceResponse EndAddLFTagsToResource(IAsyncResult asyncResult)
         {
             return EndInvoke<AddLFTagsToResourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  AssumeDecoratedRoleWithSAML
+
+        /// <summary>
+        /// Allows a caller to assume an IAM role decorated as the SAML user specified in the
+        /// SAML assertion included in the request. This decoration allows Lake Formation to enforce
+        /// access policies against the SAML users and groups. This API operation requires SAML
+        /// federation setup in the caller’s account as it can only be called with valid SAML
+        /// assertions. Lake Formation does not scope down the permission of the assumed role.
+        /// All permissions attached to the role via the SAML federation setup will be included
+        /// in the role session. 
+        /// 
+        ///  
+        /// <para>
+        ///  This decorated role is expected to access data in Amazon S3 by getting temporary
+        /// access from Lake Formation which is authorized via the virtual API <code>GetDataAccess</code>.
+        /// Therefore, all SAML roles that can be assumed via <code>AssumeDecoratedRoleWithSAML</code>
+        /// must at a minimum include <code>lakeformation:GetDataAccess</code> in their role policies.
+        /// A typical IAM policy attached to such a role would look as follows: 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssumeDecoratedRoleWithSAML service method.</param>
+        /// 
+        /// <returns>The response from the AssumeDecoratedRoleWithSAML service method, as returned by LakeFormation.</returns>
+        /// <exception cref="Amazon.LakeFormation.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
+        /// A specified entity does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/AssumeDecoratedRoleWithSAML">REST API Reference for AssumeDecoratedRoleWithSAML Operation</seealso>
+        public virtual AssumeDecoratedRoleWithSAMLResponse AssumeDecoratedRoleWithSAML(AssumeDecoratedRoleWithSAMLRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssumeDecoratedRoleWithSAMLRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssumeDecoratedRoleWithSAMLResponseUnmarshaller.Instance;
+
+            return Invoke<AssumeDecoratedRoleWithSAMLResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssumeDecoratedRoleWithSAML operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssumeDecoratedRoleWithSAML operation on AmazonLakeFormationClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssumeDecoratedRoleWithSAML
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/AssumeDecoratedRoleWithSAML">REST API Reference for AssumeDecoratedRoleWithSAML Operation</seealso>
+        public virtual IAsyncResult BeginAssumeDecoratedRoleWithSAML(AssumeDecoratedRoleWithSAMLRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssumeDecoratedRoleWithSAMLRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssumeDecoratedRoleWithSAMLResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AssumeDecoratedRoleWithSAML operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssumeDecoratedRoleWithSAML.</param>
+        /// 
+        /// <returns>Returns a  AssumeDecoratedRoleWithSAMLResult from LakeFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/AssumeDecoratedRoleWithSAML">REST API Reference for AssumeDecoratedRoleWithSAML Operation</seealso>
+        public virtual AssumeDecoratedRoleWithSAMLResponse EndAssumeDecoratedRoleWithSAML(IAsyncResult asyncResult)
+        {
+            return EndInvoke<AssumeDecoratedRoleWithSAMLResponse>(asyncResult);
         }
 
         #endregion
@@ -463,7 +556,7 @@ namespace Amazon.LakeFormation
         /// Two processes are trying to modify a resource simultaneously.
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
-        /// A specified entity does not exist
+        /// A specified entity does not exist.
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.InternalServiceException">
         /// An internal service error occurred.
@@ -541,7 +634,7 @@ namespace Amazon.LakeFormation
         /// Two processes are trying to modify a resource simultaneously.
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
-        /// A specified entity does not exist
+        /// A specified entity does not exist.
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.InternalServiceException">
         /// An internal service error occurred.
@@ -617,7 +710,7 @@ namespace Amazon.LakeFormation
         /// A resource to be created or added already exists.
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
-        /// A specified entity does not exist
+        /// A specified entity does not exist.
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.InternalServiceException">
         /// An internal service error occurred.
@@ -689,7 +782,7 @@ namespace Amazon.LakeFormation
         /// Access to a resource was denied.
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
-        /// A specified entity does not exist
+        /// A specified entity does not exist.
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.InternalServiceException">
         /// An internal service error occurred.
@@ -761,7 +854,7 @@ namespace Amazon.LakeFormation
         /// Access to a resource was denied.
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
-        /// A specified entity does not exist
+        /// A specified entity does not exist.
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.InternalServiceException">
         /// An internal service error occurred.
@@ -821,12 +914,11 @@ namespace Amazon.LakeFormation
         #region  DeleteLFTag
 
         /// <summary>
-        /// Deletes the specified LF-tag key name. If the attribute key does not exist or the
-        /// LF-tag does not exist, then the operation will not do anything. If the attribute key
-        /// exists, then the operation checks if any resources are tagged with this attribute
-        /// key, if yes, the API throws a 400 Exception with the message "Delete not allowed"
-        /// as the LF-tag key is still attached with resources. You can consider untagging resources
-        /// with this LF-tag key.
+        /// Deletes the specified LF-tag given a key name. If the input parameter tag key was
+        /// not found, then the operation will throw an exception. When you delete an LF-tag,
+        /// the <code>LFTagPolicy</code> attached to the LF-tag becomes invalid. If the deleted
+        /// LF-tag was still assigned to any resource, the tag policy attach to the deleted LF-tag
+        /// will no longer be applied to the resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteLFTag service method.</param>
         /// 
@@ -835,7 +927,7 @@ namespace Amazon.LakeFormation
         /// Access to a resource was denied.
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
-        /// A specified entity does not exist
+        /// A specified entity does not exist.
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.InternalServiceException">
         /// An internal service error occurred.
@@ -915,7 +1007,7 @@ namespace Amazon.LakeFormation
         /// Two processes are trying to modify a resource simultaneously.
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
-        /// A specified entity does not exist
+        /// A specified entity does not exist.
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.InternalServiceException">
         /// An internal service error occurred.
@@ -997,7 +1089,7 @@ namespace Amazon.LakeFormation
         /// 
         /// <returns>The response from the DeregisterResource service method, as returned by LakeFormation.</returns>
         /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
-        /// A specified entity does not exist
+        /// A specified entity does not exist.
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.InternalServiceException">
         /// An internal service error occurred.
@@ -1063,7 +1155,7 @@ namespace Amazon.LakeFormation
         /// 
         /// <returns>The response from the DescribeResource service method, as returned by LakeFormation.</returns>
         /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
-        /// A specified entity does not exist
+        /// A specified entity does not exist.
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.InternalServiceException">
         /// An internal service error occurred.
@@ -1129,7 +1221,7 @@ namespace Amazon.LakeFormation
         /// 
         /// <returns>The response from the DescribeTransaction service method, as returned by LakeFormation.</returns>
         /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
-        /// A specified entity does not exist
+        /// A specified entity does not exist.
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.InternalServiceException">
         /// An internal service error occurred.
@@ -1202,7 +1294,7 @@ namespace Amazon.LakeFormation
         /// 
         /// <returns>The response from the ExtendTransaction service method, as returned by LakeFormation.</returns>
         /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
-        /// A specified entity does not exist
+        /// A specified entity does not exist.
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.InternalServiceException">
         /// An internal service error occurred.
@@ -1269,6 +1361,75 @@ namespace Amazon.LakeFormation
 
         #endregion
         
+        #region  GetDataCellsFilter
+
+        /// <summary>
+        /// Returns a data cells filter.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDataCellsFilter service method.</param>
+        /// 
+        /// <returns>The response from the GetDataCellsFilter service method, as returned by LakeFormation.</returns>
+        /// <exception cref="Amazon.LakeFormation.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
+        /// A specified entity does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetDataCellsFilter">REST API Reference for GetDataCellsFilter Operation</seealso>
+        public virtual GetDataCellsFilterResponse GetDataCellsFilter(GetDataCellsFilterRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDataCellsFilterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDataCellsFilterResponseUnmarshaller.Instance;
+
+            return Invoke<GetDataCellsFilterResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetDataCellsFilter operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetDataCellsFilter operation on AmazonLakeFormationClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDataCellsFilter
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetDataCellsFilter">REST API Reference for GetDataCellsFilter Operation</seealso>
+        public virtual IAsyncResult BeginGetDataCellsFilter(GetDataCellsFilterRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDataCellsFilterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDataCellsFilterResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetDataCellsFilter operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDataCellsFilter.</param>
+        /// 
+        /// <returns>Returns a  GetDataCellsFilterResult from LakeFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetDataCellsFilter">REST API Reference for GetDataCellsFilter Operation</seealso>
+        public virtual GetDataCellsFilterResponse EndGetDataCellsFilter(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetDataCellsFilterResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetDataLakeSettings
 
         /// <summary>
@@ -1279,7 +1440,7 @@ namespace Amazon.LakeFormation
         /// 
         /// <returns>The response from the GetDataLakeSettings service method, as returned by LakeFormation.</returns>
         /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
-        /// A specified entity does not exist
+        /// A specified entity does not exist.
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.InternalServiceException">
         /// An internal service error occurred.
@@ -1344,7 +1505,7 @@ namespace Amazon.LakeFormation
         /// 
         /// <returns>The response from the GetEffectivePermissionsForPath service method, as returned by LakeFormation.</returns>
         /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
-        /// A specified entity does not exist
+        /// A specified entity does not exist.
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.InternalServiceException">
         /// An internal service error occurred.
@@ -1413,7 +1574,7 @@ namespace Amazon.LakeFormation
         /// Access to a resource was denied.
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
-        /// A specified entity does not exist
+        /// A specified entity does not exist.
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.InternalServiceException">
         /// An internal service error occurred.
@@ -1619,7 +1780,7 @@ namespace Amazon.LakeFormation
         /// Access to a resource was denied.
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
-        /// A specified entity does not exist
+        /// A specified entity does not exist.
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.GlueEncryptionException">
         /// An encryption operation failed.
@@ -1689,7 +1850,7 @@ namespace Amazon.LakeFormation
         /// 
         /// <returns>The response from the GetTableObjects service method, as returned by LakeFormation.</returns>
         /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
-        /// A specified entity does not exist
+        /// A specified entity does not exist.
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.InternalServiceException">
         /// An internal service error occurred.
@@ -1752,6 +1913,162 @@ namespace Amazon.LakeFormation
         public virtual GetTableObjectsResponse EndGetTableObjects(IAsyncResult asyncResult)
         {
             return EndInvoke<GetTableObjectsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetTemporaryGluePartitionCredentials
+
+        /// <summary>
+        /// This API is identical to <code>GetTemporaryTableCredentials</code> except that this
+        /// is used when the target Data Catalog resource is of type Partition. Lake Formation
+        /// restricts the permission of the vended credentials with the same scope down policy
+        /// which restricts access to a single Amazon S3 prefix.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTemporaryGluePartitionCredentials service method.</param>
+        /// 
+        /// <returns>The response from the GetTemporaryGluePartitionCredentials service method, as returned by LakeFormation.</returns>
+        /// <exception cref="Amazon.LakeFormation.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
+        /// A specified entity does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.PermissionTypeMismatchException">
+        /// The engine does not support filtering data based on the enforced permissions. For
+        /// example, if you call the <code>GetTemporaryGlueTableCredentials</code> operation with
+        /// <code>SupportedPermissionType</code> equal to <code>ColumnPermission</code>, but cell-level
+        /// permissions exist on the table, this exception is thrown.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetTemporaryGluePartitionCredentials">REST API Reference for GetTemporaryGluePartitionCredentials Operation</seealso>
+        public virtual GetTemporaryGluePartitionCredentialsResponse GetTemporaryGluePartitionCredentials(GetTemporaryGluePartitionCredentialsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTemporaryGluePartitionCredentialsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTemporaryGluePartitionCredentialsResponseUnmarshaller.Instance;
+
+            return Invoke<GetTemporaryGluePartitionCredentialsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetTemporaryGluePartitionCredentials operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetTemporaryGluePartitionCredentials operation on AmazonLakeFormationClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetTemporaryGluePartitionCredentials
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetTemporaryGluePartitionCredentials">REST API Reference for GetTemporaryGluePartitionCredentials Operation</seealso>
+        public virtual IAsyncResult BeginGetTemporaryGluePartitionCredentials(GetTemporaryGluePartitionCredentialsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTemporaryGluePartitionCredentialsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTemporaryGluePartitionCredentialsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetTemporaryGluePartitionCredentials operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetTemporaryGluePartitionCredentials.</param>
+        /// 
+        /// <returns>Returns a  GetTemporaryGluePartitionCredentialsResult from LakeFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetTemporaryGluePartitionCredentials">REST API Reference for GetTemporaryGluePartitionCredentials Operation</seealso>
+        public virtual GetTemporaryGluePartitionCredentialsResponse EndGetTemporaryGluePartitionCredentials(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetTemporaryGluePartitionCredentialsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetTemporaryGlueTableCredentials
+
+        /// <summary>
+        /// Allows a caller in a secure environment to assume a role with permission to access
+        /// Amazon S3. In order to vend such credentials, Lake Formation assumes the role associated
+        /// with a registered location, for example an Amazon S3 bucket, with a scope down policy
+        /// which restricts the access to a single prefix.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTemporaryGlueTableCredentials service method.</param>
+        /// 
+        /// <returns>The response from the GetTemporaryGlueTableCredentials service method, as returned by LakeFormation.</returns>
+        /// <exception cref="Amazon.LakeFormation.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
+        /// A specified entity does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.PermissionTypeMismatchException">
+        /// The engine does not support filtering data based on the enforced permissions. For
+        /// example, if you call the <code>GetTemporaryGlueTableCredentials</code> operation with
+        /// <code>SupportedPermissionType</code> equal to <code>ColumnPermission</code>, but cell-level
+        /// permissions exist on the table, this exception is thrown.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetTemporaryGlueTableCredentials">REST API Reference for GetTemporaryGlueTableCredentials Operation</seealso>
+        public virtual GetTemporaryGlueTableCredentialsResponse GetTemporaryGlueTableCredentials(GetTemporaryGlueTableCredentialsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTemporaryGlueTableCredentialsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTemporaryGlueTableCredentialsResponseUnmarshaller.Instance;
+
+            return Invoke<GetTemporaryGlueTableCredentialsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetTemporaryGlueTableCredentials operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetTemporaryGlueTableCredentials operation on AmazonLakeFormationClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetTemporaryGlueTableCredentials
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetTemporaryGlueTableCredentials">REST API Reference for GetTemporaryGlueTableCredentials Operation</seealso>
+        public virtual IAsyncResult BeginGetTemporaryGlueTableCredentials(GetTemporaryGlueTableCredentialsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTemporaryGlueTableCredentialsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTemporaryGlueTableCredentialsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetTemporaryGlueTableCredentials operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetTemporaryGlueTableCredentials.</param>
+        /// 
+        /// <returns>Returns a  GetTemporaryGlueTableCredentialsResult from LakeFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetTemporaryGlueTableCredentials">REST API Reference for GetTemporaryGlueTableCredentials Operation</seealso>
+        public virtual GetTemporaryGlueTableCredentialsResponse EndGetTemporaryGlueTableCredentials(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetTemporaryGlueTableCredentialsResponse>(asyncResult);
         }
 
         #endregion
@@ -1903,7 +2220,7 @@ namespace Amazon.LakeFormation
         /// 
         ///  
         /// <para>
-        /// For information about permissions, see <a href="https://docs-aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security
+        /// For information about permissions, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security
         /// and Access Control to Metadata and Data</a>.
         /// </para>
         /// </summary>
@@ -1914,7 +2231,7 @@ namespace Amazon.LakeFormation
         /// Two processes are trying to modify a resource simultaneously.
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
-        /// A specified entity does not exist
+        /// A specified entity does not exist.
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.InvalidInputException">
         /// The input provided was not valid.
@@ -2043,7 +2360,7 @@ namespace Amazon.LakeFormation
         /// Access to a resource was denied.
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
-        /// A specified entity does not exist
+        /// A specified entity does not exist.
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.InternalServiceException">
         /// An internal service error occurred.
@@ -2250,7 +2567,7 @@ namespace Amazon.LakeFormation
         /// Access to a resource was denied.
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
-        /// A specified entity does not exist
+        /// A specified entity does not exist.
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.InternalServiceException">
         /// An internal service error occurred.
@@ -2487,7 +2804,7 @@ namespace Amazon.LakeFormation
         /// A resource to be created or added already exists.
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
-        /// A specified entity does not exist
+        /// A specified entity does not exist.
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.InternalServiceException">
         /// An internal service error occurred.
@@ -2564,7 +2881,7 @@ namespace Amazon.LakeFormation
         /// Two processes are trying to modify a resource simultaneously.
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
-        /// A specified entity does not exist
+        /// A specified entity does not exist.
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.GlueEncryptionException">
         /// An encryption operation failed.
@@ -2637,7 +2954,7 @@ namespace Amazon.LakeFormation
         /// Two processes are trying to modify a resource simultaneously.
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
-        /// A specified entity does not exist
+        /// A specified entity does not exist.
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.InvalidInputException">
         /// The input provided was not valid.
@@ -2704,7 +3021,7 @@ namespace Amazon.LakeFormation
         /// Access to a resource was denied.
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
-        /// A specified entity does not exist
+        /// A specified entity does not exist.
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.GlueEncryptionException">
         /// An encryption operation failed.
@@ -2780,7 +3097,7 @@ namespace Amazon.LakeFormation
         /// Access to a resource was denied.
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
-        /// A specified entity does not exist
+        /// A specified entity does not exist.
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.GlueEncryptionException">
         /// An encryption operation failed.
@@ -2973,6 +3290,78 @@ namespace Amazon.LakeFormation
 
         #endregion
         
+        #region  UpdateDataCellsFilter
+
+        /// <summary>
+        /// Updates a data cell filter.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDataCellsFilter service method.</param>
+        /// 
+        /// <returns>The response from the UpdateDataCellsFilter service method, as returned by LakeFormation.</returns>
+        /// <exception cref="Amazon.LakeFormation.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
+        /// A specified entity does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/UpdateDataCellsFilter">REST API Reference for UpdateDataCellsFilter Operation</seealso>
+        public virtual UpdateDataCellsFilterResponse UpdateDataCellsFilter(UpdateDataCellsFilterRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateDataCellsFilterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDataCellsFilterResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateDataCellsFilterResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateDataCellsFilter operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDataCellsFilter operation on AmazonLakeFormationClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateDataCellsFilter
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/UpdateDataCellsFilter">REST API Reference for UpdateDataCellsFilter Operation</seealso>
+        public virtual IAsyncResult BeginUpdateDataCellsFilter(UpdateDataCellsFilterRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateDataCellsFilterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDataCellsFilterResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateDataCellsFilter operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateDataCellsFilter.</param>
+        /// 
+        /// <returns>Returns a  UpdateDataCellsFilterResult from LakeFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/UpdateDataCellsFilter">REST API Reference for UpdateDataCellsFilter Operation</seealso>
+        public virtual UpdateDataCellsFilterResponse EndUpdateDataCellsFilter(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateDataCellsFilterResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  UpdateLFTag
 
         /// <summary>
@@ -2992,7 +3381,7 @@ namespace Amazon.LakeFormation
         /// Two processes are trying to modify a resource simultaneously.
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
-        /// A specified entity does not exist
+        /// A specified entity does not exist.
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.InternalServiceException">
         /// An internal service error occurred.
@@ -3059,7 +3448,7 @@ namespace Amazon.LakeFormation
         /// 
         /// <returns>The response from the UpdateResource service method, as returned by LakeFormation.</returns>
         /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
-        /// A specified entity does not exist
+        /// A specified entity does not exist.
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.InternalServiceException">
         /// An internal service error occurred.
@@ -3128,7 +3517,7 @@ namespace Amazon.LakeFormation
         /// Two processes are trying to modify a resource simultaneously.
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
-        /// A specified entity does not exist
+        /// A specified entity does not exist.
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.InternalServiceException">
         /// An internal service error occurred.
@@ -3210,7 +3599,7 @@ namespace Amazon.LakeFormation
         /// Access to a resource was denied.
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
-        /// A specified entity does not exist
+        /// A specified entity does not exist.
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.InternalServiceException">
         /// An internal service error occurred.

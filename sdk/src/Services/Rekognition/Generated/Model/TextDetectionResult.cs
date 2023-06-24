@@ -60,6 +60,8 @@ namespace Amazon.Rekognition.Model
         /// Gets and sets the property Timestamp. 
         /// <para>
         /// The time, in milliseconds from the start of the video, that the text was detected.
+        /// Note that <code>Timestamp</code> is not guaranteed to be accurate to the individual
+        /// frame where the text first appears.
         /// </para>
         /// </summary>
         public long Timestamp

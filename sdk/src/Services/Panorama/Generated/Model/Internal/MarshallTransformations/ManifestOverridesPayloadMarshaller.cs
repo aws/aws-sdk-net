@@ -34,7 +34,7 @@ namespace Amazon.Panorama.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ManifestOverridesPayload Marshaller
-    /// </summary>       
+    /// </summary>
     public class ManifestOverridesPayloadMarshaller : IRequestMarshaller<ManifestOverridesPayload, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.Panorama.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ManifestOverridesPayloadMarshaller Instance = new ManifestOverridesPayloadMarshaller();
 
     }

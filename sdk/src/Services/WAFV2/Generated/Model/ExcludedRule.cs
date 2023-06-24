@@ -30,9 +30,14 @@ namespace Amazon.WAFV2.Model
 {
     /// <summary>
     /// Specifies a single rule in a rule group whose action you want to override to <code>Count</code>.
-    /// When you exclude a rule, WAF evaluates it exactly as it would if the rule action setting
-    /// were <code>Count</code>. This is a useful option for testing the rules in a rule group
-    /// without modifying how they handle your web traffic.
+    /// 
+    /// 
+    ///  <note> 
+    /// <para>
+    /// Instead of this option, use <code>RuleActionOverrides</code>. It accepts any valid
+    /// action setting, including <code>Count</code>.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class ExcludedRule
     {

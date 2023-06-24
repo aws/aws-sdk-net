@@ -17,22 +17,22 @@
  * Do not modify this file. This file is generated from the network-firewall-2020-11-12.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
-
+using Amazon.NetworkFirewall.Internal;
 
 namespace Amazon.NetworkFirewall
 {
     /// <summary>
     /// Configuration for accessing Amazon NetworkFirewall service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonNetworkFirewallConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.1.31");
+            InternalSDKUtils.BuildUserAgentString("3.7.107.22");
 
         private string _userAgent = UserAgentString;
 
@@ -40,8 +40,10 @@ namespace Amazon.NetworkFirewall
         /// Default constructor
         /// </summary>
         public AmazonNetworkFirewallConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonNetworkFirewallDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "network-firewall";
+            this.EndpointProvider = new AmazonNetworkFirewallEndpointProvider();
         }
 
         /// <summary>
@@ -76,5 +78,6 @@ namespace Amazon.NetworkFirewall
                 return _userAgent;
             }
         }
+
     }
 }

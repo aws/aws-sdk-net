@@ -75,6 +75,64 @@ namespace Amazon.RDS
 
 
     /// <summary>
+    /// Constants used for properties of type ActivityStreamPolicyStatus.
+    /// </summary>
+    public class ActivityStreamPolicyStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Locked for ActivityStreamPolicyStatus
+        /// </summary>
+        public static readonly ActivityStreamPolicyStatus Locked = new ActivityStreamPolicyStatus("locked");
+        /// <summary>
+        /// Constant LockingPolicy for ActivityStreamPolicyStatus
+        /// </summary>
+        public static readonly ActivityStreamPolicyStatus LockingPolicy = new ActivityStreamPolicyStatus("locking-policy");
+        /// <summary>
+        /// Constant Unlocked for ActivityStreamPolicyStatus
+        /// </summary>
+        public static readonly ActivityStreamPolicyStatus Unlocked = new ActivityStreamPolicyStatus("unlocked");
+        /// <summary>
+        /// Constant UnlockingPolicy for ActivityStreamPolicyStatus
+        /// </summary>
+        public static readonly ActivityStreamPolicyStatus UnlockingPolicy = new ActivityStreamPolicyStatus("unlocking-policy");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ActivityStreamPolicyStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ActivityStreamPolicyStatus FindValue(string value)
+        {
+            return FindValue<ActivityStreamPolicyStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ActivityStreamPolicyStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ActivityStreamStatus.
     /// </summary>
     public class ActivityStreamStatus : ConstantClass
@@ -183,6 +241,56 @@ namespace Amazon.RDS
 
 
     /// <summary>
+    /// Constants used for properties of type AuditPolicyState.
+    /// </summary>
+    public class AuditPolicyState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Locked for AuditPolicyState
+        /// </summary>
+        public static readonly AuditPolicyState Locked = new AuditPolicyState("locked");
+        /// <summary>
+        /// Constant Unlocked for AuditPolicyState
+        /// </summary>
+        public static readonly AuditPolicyState Unlocked = new AuditPolicyState("unlocked");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AuditPolicyState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AuditPolicyState FindValue(string value)
+        {
+            return FindValue<AuditPolicyState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AuditPolicyState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AuthScheme.
     /// </summary>
     public class AuthScheme : ConstantClass
@@ -272,6 +380,64 @@ namespace Amazon.RDS
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator AutomationMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ClientPasswordAuthType.
+    /// </summary>
+    public class ClientPasswordAuthType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MYSQL_NATIVE_PASSWORD for ClientPasswordAuthType
+        /// </summary>
+        public static readonly ClientPasswordAuthType MYSQL_NATIVE_PASSWORD = new ClientPasswordAuthType("MYSQL_NATIVE_PASSWORD");
+        /// <summary>
+        /// Constant POSTGRES_MD5 for ClientPasswordAuthType
+        /// </summary>
+        public static readonly ClientPasswordAuthType POSTGRES_MD5 = new ClientPasswordAuthType("POSTGRES_MD5");
+        /// <summary>
+        /// Constant POSTGRES_SCRAM_SHA_256 for ClientPasswordAuthType
+        /// </summary>
+        public static readonly ClientPasswordAuthType POSTGRES_SCRAM_SHA_256 = new ClientPasswordAuthType("POSTGRES_SCRAM_SHA_256");
+        /// <summary>
+        /// Constant SQL_SERVER_AUTHENTICATION for ClientPasswordAuthType
+        /// </summary>
+        public static readonly ClientPasswordAuthType SQL_SERVER_AUTHENTICATION = new ClientPasswordAuthType("SQL_SERVER_AUTHENTICATION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ClientPasswordAuthType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ClientPasswordAuthType FindValue(string value)
+        {
+            return FindValue<ClientPasswordAuthType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ClientPasswordAuthType(string value)
         {
             return FindValue(value);
         }
@@ -540,6 +706,10 @@ namespace Amazon.RDS
         /// Constant POSTGRESQL for EngineFamily
         /// </summary>
         public static readonly EngineFamily POSTGRESQL = new EngineFamily("POSTGRESQL");
+        /// <summary>
+        /// Constant SQLSERVER for EngineFamily
+        /// </summary>
+        public static readonly EngineFamily SQLSERVER = new EngineFamily("SQLSERVER");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -570,6 +740,56 @@ namespace Amazon.RDS
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator EngineFamily(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ExportSourceType.
+    /// </summary>
+    public class ExportSourceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CLUSTER for ExportSourceType
+        /// </summary>
+        public static readonly ExportSourceType CLUSTER = new ExportSourceType("CLUSTER");
+        /// <summary>
+        /// Constant SNAPSHOT for ExportSourceType
+        /// </summary>
+        public static readonly ExportSourceType SNAPSHOT = new ExportSourceType("SNAPSHOT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ExportSourceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ExportSourceType FindValue(string value)
+        {
+            return FindValue<ExportSourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ExportSourceType(string value)
         {
             return FindValue(value);
         }
@@ -640,6 +860,10 @@ namespace Amazon.RDS
         /// Constant DISABLED for IAMAuthMode
         /// </summary>
         public static readonly IAMAuthMode DISABLED = new IAMAuthMode("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for IAMAuthMode
+        /// </summary>
+        public static readonly IAMAuthMode ENABLED = new IAMAuthMode("ENABLED");
         /// <summary>
         /// Constant REQUIRED for IAMAuthMode
         /// </summary>
@@ -737,6 +961,10 @@ namespace Amazon.RDS
     {
 
         /// <summary>
+        /// Constant BlueGreenDeployment for SourceType
+        /// </summary>
+        public static readonly SourceType BlueGreenDeployment = new SourceType("blue-green-deployment");
+        /// <summary>
         /// Constant CustomEngineVersion for SourceType
         /// </summary>
         public static readonly SourceType CustomEngineVersion = new SourceType("custom-engine-version");
@@ -756,6 +984,10 @@ namespace Amazon.RDS
         /// Constant DbParameterGroup for SourceType
         /// </summary>
         public static readonly SourceType DbParameterGroup = new SourceType("db-parameter-group");
+        /// <summary>
+        /// Constant DbProxy for SourceType
+        /// </summary>
+        public static readonly SourceType DbProxy = new SourceType("db-proxy");
         /// <summary>
         /// Constant DbSecurityGroup for SourceType
         /// </summary>

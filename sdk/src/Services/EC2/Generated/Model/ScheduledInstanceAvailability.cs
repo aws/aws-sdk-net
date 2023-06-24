@@ -176,7 +176,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property NetworkPlatform. 
         /// <para>
-        /// The network platform (<code>EC2-Classic</code> or <code>EC2-VPC</code>).
+        /// The network platform.
         /// </para>
         /// </summary>
         public string NetworkPlatform

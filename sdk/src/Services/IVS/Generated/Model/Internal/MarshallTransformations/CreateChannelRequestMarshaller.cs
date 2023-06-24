@@ -56,7 +56,7 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.IVS");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-07-14";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-07-14";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/CreateChannel";
@@ -71,6 +71,12 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Authorized);
                 }
 
+                if(publicRequest.IsSetInsecureIngest())
+                {
+                    context.Writer.WritePropertyName("insecureIngest");
+                    context.Writer.Write(publicRequest.InsecureIngest);
+                }
+
                 if(publicRequest.IsSetLatencyMode())
                 {
                     context.Writer.WritePropertyName("latencyMode");
@@ -81,6 +87,12 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("name");
                     context.Writer.Write(publicRequest.Name);
+                }
+
+                if(publicRequest.IsSetPreset())
+                {
+                    context.Writer.WritePropertyName("preset");
+                    context.Writer.Write(publicRequest.Preset);
                 }
 
                 if(publicRequest.IsSetRecordingConfigurationArn())
@@ -109,7 +121,6 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Type);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

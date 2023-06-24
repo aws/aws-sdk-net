@@ -45,9 +45,8 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property EndDate. 
         /// <para>
-        /// The last day, in Unix time format, that you want to obtain deliverability data for.
-        /// This value has to be less than or equal to 30 days after the value of the <code>StartDate</code>
-        /// parameter.
+        /// The last day that you want to obtain deliverability data for. This value has to be
+        /// less than or equal to 30 days after the value of the <code>StartDate</code> parameter.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -106,7 +105,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property StartDate. 
         /// <para>
-        /// The first day, in Unix time format, that you want to obtain deliverability data for.
+        /// The first day that you want to obtain deliverability data for.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

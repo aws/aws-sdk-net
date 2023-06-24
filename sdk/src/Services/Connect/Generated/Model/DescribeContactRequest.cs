@@ -41,6 +41,10 @@ namespace Amazon.Connect.Model
     /// Contact information remains available in Amazon Connect for 24 months, and then it
     /// is deleted.
     /// </para>
+    ///  
+    /// <para>
+    /// Only data from November 12, 2021, and later is returned by this API.
+    /// </para>
     ///  </important>
     /// </summary>
     public partial class DescribeContactRequest : AmazonConnectRequest
@@ -70,8 +74,8 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The identifier of the Amazon Connect instance. You can find the instanceId in the
-        /// ARN of the instance.
+        /// The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+        /// the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]

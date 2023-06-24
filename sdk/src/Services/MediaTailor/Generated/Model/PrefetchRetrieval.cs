@@ -47,10 +47,10 @@ namespace Amazon.MediaTailor.Model
         /// </para>
         ///  
         /// <para>
-        /// You intially configure <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables.html">dynamic
+        /// You initially configure <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables.html">dynamic
         /// variables</a> for the ADS URL when you set up your playback configuration. When you
-        /// specify DynamicVariables for prefetch retrieval, MediaTailor includes the dynamic
-        /// variables in the request to the ADS.
+        /// specify <code>DynamicVariables</code> for prefetch retrieval, MediaTailor includes
+        /// the dynamic variables in the request to the ADS.
         /// </para>
         /// </summary>
         public Dictionary<string, string> DynamicVariables

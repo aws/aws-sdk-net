@@ -356,6 +356,64 @@ namespace Amazon.EventBridge
 
         #endregion
         
+        #region  CreateEndpoint
+
+
+        /// <summary>
+        /// Creates a global endpoint. Global endpoints improve your application's availability
+        /// by making it regional-fault tolerant. To do this, you define a primary and secondary
+        /// Region with event buses in each Region. You also create a Amazon Route 53 health check
+        /// that will tell EventBridge to route events to the secondary Region when an "unhealthy"
+        /// state is encountered and events will be routed back to the primary Region when the
+        /// health check reports a "healthy" state.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateEndpoint service method.</param>
+        /// 
+        /// <returns>The response from the CreateEndpoint service method, as returned by EventBridge.</returns>
+        /// <exception cref="Amazon.EventBridge.Model.InternalException">
+        /// This exception occurs due to unexpected causes.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.LimitExceededException">
+        /// The request failed because it attempted to create resource beyond the allowed service
+        /// quota.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.ResourceAlreadyExistsException">
+        /// The resource you are trying to create already exists.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/CreateEndpoint">REST API Reference for CreateEndpoint Operation</seealso>
+        CreateEndpointResponse CreateEndpoint(CreateEndpointRequest request);
+
+
+
+        /// <summary>
+        /// Creates a global endpoint. Global endpoints improve your application's availability
+        /// by making it regional-fault tolerant. To do this, you define a primary and secondary
+        /// Region with event buses in each Region. You also create a Amazon Route 53 health check
+        /// that will tell EventBridge to route events to the secondary Region when an "unhealthy"
+        /// state is encountered and events will be routed back to the primary Region when the
+        /// health check reports a "healthy" state.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateEndpoint service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateEndpoint service method, as returned by EventBridge.</returns>
+        /// <exception cref="Amazon.EventBridge.Model.InternalException">
+        /// This exception occurs due to unexpected causes.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.LimitExceededException">
+        /// The request failed because it attempted to create resource beyond the allowed service
+        /// quota.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.ResourceAlreadyExistsException">
+        /// The resource you are trying to create already exists.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/CreateEndpoint">REST API Reference for CreateEndpoint Operation</seealso>
+        Task<CreateEndpointResponse> CreateEndpointAsync(CreateEndpointRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  CreateEventBus
 
 
@@ -834,6 +892,58 @@ namespace Amazon.EventBridge
 
         #endregion
         
+        #region  DeleteEndpoint
+
+
+        /// <summary>
+        /// Delete an existing global endpoint. For more information about global endpoints, see
+        /// <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-global-endpoints.html">Making
+        /// applications Regional-fault tolerant with global endpoints and event replication</a>
+        /// in the Amazon EventBridge User Guide.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEndpoint service method.</param>
+        /// 
+        /// <returns>The response from the DeleteEndpoint service method, as returned by EventBridge.</returns>
+        /// <exception cref="Amazon.EventBridge.Model.ConcurrentModificationException">
+        /// There is concurrent modification on a rule, target, archive, or replay.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.InternalException">
+        /// This exception occurs due to unexpected causes.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.ResourceNotFoundException">
+        /// An entity that you specified does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DeleteEndpoint">REST API Reference for DeleteEndpoint Operation</seealso>
+        DeleteEndpointResponse DeleteEndpoint(DeleteEndpointRequest request);
+
+
+
+        /// <summary>
+        /// Delete an existing global endpoint. For more information about global endpoints, see
+        /// <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-global-endpoints.html">Making
+        /// applications Regional-fault tolerant with global endpoints and event replication</a>
+        /// in the Amazon EventBridge User Guide.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEndpoint service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteEndpoint service method, as returned by EventBridge.</returns>
+        /// <exception cref="Amazon.EventBridge.Model.ConcurrentModificationException">
+        /// There is concurrent modification on a rule, target, archive, or replay.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.InternalException">
+        /// This exception occurs due to unexpected causes.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.ResourceNotFoundException">
+        /// An entity that you specified does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DeleteEndpoint">REST API Reference for DeleteEndpoint Operation</seealso>
+        Task<DeleteEndpointResponse> DeleteEndpointAsync(DeleteEndpointRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeleteEventBus
 
 
@@ -1171,6 +1281,52 @@ namespace Amazon.EventBridge
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DescribeConnection">REST API Reference for DescribeConnection Operation</seealso>
         Task<DescribeConnectionResponse> DescribeConnectionAsync(DescribeConnectionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeEndpoint
+
+
+        /// <summary>
+        /// Get the information about an existing global endpoint. For more information about
+        /// global endpoints, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-global-endpoints.html">Making
+        /// applications Regional-fault tolerant with global endpoints and event replication</a>
+        /// in the Amazon EventBridge User Guide..
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEndpoint service method.</param>
+        /// 
+        /// <returns>The response from the DescribeEndpoint service method, as returned by EventBridge.</returns>
+        /// <exception cref="Amazon.EventBridge.Model.InternalException">
+        /// This exception occurs due to unexpected causes.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.ResourceNotFoundException">
+        /// An entity that you specified does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DescribeEndpoint">REST API Reference for DescribeEndpoint Operation</seealso>
+        DescribeEndpointResponse DescribeEndpoint(DescribeEndpointRequest request);
+
+
+
+        /// <summary>
+        /// Get the information about an existing global endpoint. For more information about
+        /// global endpoints, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-global-endpoints.html">Making
+        /// applications Regional-fault tolerant with global endpoints and event replication</a>
+        /// in the Amazon EventBridge User Guide..
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEndpoint service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeEndpoint service method, as returned by EventBridge.</returns>
+        /// <exception cref="Amazon.EventBridge.Model.InternalException">
+        /// This exception occurs due to unexpected causes.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.ResourceNotFoundException">
+        /// An entity that you specified does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DescribeEndpoint">REST API Reference for DescribeEndpoint Operation</seealso>
+        Task<DescribeEndpointResponse> DescribeEndpointAsync(DescribeEndpointRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1708,6 +1864,46 @@ namespace Amazon.EventBridge
 
         #endregion
         
+        #region  ListEndpoints
+
+
+        /// <summary>
+        /// List the global endpoints associated with this account. For more information about
+        /// global endpoints, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-global-endpoints.html">Making
+        /// applications Regional-fault tolerant with global endpoints and event replication</a>
+        /// in the Amazon EventBridge User Guide..
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListEndpoints service method.</param>
+        /// 
+        /// <returns>The response from the ListEndpoints service method, as returned by EventBridge.</returns>
+        /// <exception cref="Amazon.EventBridge.Model.InternalException">
+        /// This exception occurs due to unexpected causes.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/ListEndpoints">REST API Reference for ListEndpoints Operation</seealso>
+        ListEndpointsResponse ListEndpoints(ListEndpointsRequest request);
+
+
+
+        /// <summary>
+        /// List the global endpoints associated with this account. For more information about
+        /// global endpoints, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-global-endpoints.html">Making
+        /// applications Regional-fault tolerant with global endpoints and event replication</a>
+        /// in the Amazon EventBridge User Guide..
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListEndpoints service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListEndpoints service method, as returned by EventBridge.</returns>
+        /// <exception cref="Amazon.EventBridge.Model.InternalException">
+        /// This exception occurs due to unexpected causes.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/ListEndpoints">REST API Reference for ListEndpoints Operation</seealso>
+        Task<ListEndpointsResponse> ListEndpointsAsync(ListEndpointsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListEventBuses
 
 
@@ -2099,6 +2295,12 @@ namespace Amazon.EventBridge
 
         /// <summary>
         /// Sends custom events to Amazon EventBridge so that they can be matched to rules.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// PutEvents will only process nested JSON up to 1100 levels deep.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutEvents service method.</param>
         /// 
@@ -2113,6 +2315,12 @@ namespace Amazon.EventBridge
 
         /// <summary>
         /// Sends custom events to Amazon EventBridge so that they can be matched to rules.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// PutEvents will only process nested JSON up to 1100 levels deep.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutEvents service method.</param>
         /// <param name="cancellationToken">
@@ -2521,7 +2729,11 @@ namespace Amazon.EventBridge
         /// <para>
         /// Targets are the resources that are invoked when a rule is triggered.
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        /// Each rule can have up to five (5) targets associated with it at one time.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// You can configure the following as targets for Events:
         /// </para>
@@ -2532,11 +2744,8 @@ namespace Amazon.EventBridge
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Amazon API Gateway REST API endpoints
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// API Gateway
+        ///  <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-api-gateway-target.html">API
+        /// Gateway</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2544,7 +2753,7 @@ namespace Amazon.EventBridge
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// CloudWatch Logs group
+        /// CloudWatch group
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2556,44 +2765,58 @@ namespace Amazon.EventBridge
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Amazon EC2 <code>CreateSnapshot</code> API call
+        /// EC2 <code>CreateSnapshot</code> API call
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Amazon EC2 <code>RebootInstances</code> API call
+        /// EC2 Image Builder
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Amazon EC2 <code>StopInstances</code> API call
+        /// EC2 <code>RebootInstances</code> API call
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Amazon EC2 <code>TerminateInstances</code> API call
+        /// EC2 <code>StopInstances</code> API call
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Amazon ECS tasks
+        /// EC2 <code>TerminateInstances</code> API call
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Event bus in a different Amazon Web Services account or Region.
-        /// </para>
-        ///  
-        /// <para>
-        /// You can use an event bus in the US East (N. Virginia) us-east-1, US West (Oregon)
-        /// us-west-2, or Europe (Ireland) eu-west-1 Regions as a target for a rule.
+        /// ECS task
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Firehose delivery stream (Kinesis Data Firehose)
+        ///  <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-cross-account.html">Event
+        /// bus in a different account or Region</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Inspector assessment template (Amazon Inspector)
+        ///  <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-bus-to-bus.html">Event
+        /// bus in the same account and Region</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Kinesis stream (Kinesis Data Stream)
+        /// Firehose delivery stream
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Glue workflow
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/incident-manager/latest/userguide/incident-creation.html#incident-tracking-auto-eventbridge">Incident
+        /// Manager response plan</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Inspector assessment template
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Kinesis stream
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2601,31 +2824,39 @@ namespace Amazon.EventBridge
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Redshift clusters (Data API statement execution)
+        /// Redshift cluster
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Amazon SNS topic
+        /// Redshift Serverless workgroup
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Amazon SQS queues (includes FIFO queues
+        /// SageMaker Pipeline
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// SSM Automation
+        /// SNS topic
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// SSM OpsItem
+        /// SQS queue
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// SSM Run Command
+        /// Step Functions state machine
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Step Functions state machines
+        /// Systems Manager Automation
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Systems Manager OpsItem
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Systems Manager Run Command
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -2647,9 +2878,9 @@ namespace Amazon.EventBridge
         /// To be able to make API calls against the resources that you own, Amazon EventBridge
         /// needs the appropriate permissions. For Lambda and Amazon SNS resources, EventBridge
         /// relies on resource-based policies. For EC2 instances, Kinesis Data Streams, Step Functions
-        /// state machines and API Gateway REST APIs, EventBridge relies on IAM roles that you
-        /// specify in the <code>RoleARN</code> argument in <code>PutTargets</code>. For more
-        /// information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/auth-and-access-control-eventbridge.html">Authentication
+        /// state machines and API Gateway APIs, EventBridge relies on IAM roles that you specify
+        /// in the <code>RoleARN</code> argument in <code>PutTargets</code>. For more information,
+        /// see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/auth-and-access-control-eventbridge.html">Authentication
         /// and Access Control</a> in the <i>Amazon EventBridge User Guide</i>.
         /// </para>
         ///  
@@ -2766,7 +2997,11 @@ namespace Amazon.EventBridge
         /// <para>
         /// Targets are the resources that are invoked when a rule is triggered.
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        /// Each rule can have up to five (5) targets associated with it at one time.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// You can configure the following as targets for Events:
         /// </para>
@@ -2777,11 +3012,8 @@ namespace Amazon.EventBridge
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Amazon API Gateway REST API endpoints
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// API Gateway
+        ///  <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-api-gateway-target.html">API
+        /// Gateway</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2789,7 +3021,7 @@ namespace Amazon.EventBridge
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// CloudWatch Logs group
+        /// CloudWatch group
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2801,44 +3033,58 @@ namespace Amazon.EventBridge
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Amazon EC2 <code>CreateSnapshot</code> API call
+        /// EC2 <code>CreateSnapshot</code> API call
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Amazon EC2 <code>RebootInstances</code> API call
+        /// EC2 Image Builder
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Amazon EC2 <code>StopInstances</code> API call
+        /// EC2 <code>RebootInstances</code> API call
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Amazon EC2 <code>TerminateInstances</code> API call
+        /// EC2 <code>StopInstances</code> API call
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Amazon ECS tasks
+        /// EC2 <code>TerminateInstances</code> API call
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Event bus in a different Amazon Web Services account or Region.
-        /// </para>
-        ///  
-        /// <para>
-        /// You can use an event bus in the US East (N. Virginia) us-east-1, US West (Oregon)
-        /// us-west-2, or Europe (Ireland) eu-west-1 Regions as a target for a rule.
+        /// ECS task
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Firehose delivery stream (Kinesis Data Firehose)
+        ///  <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-cross-account.html">Event
+        /// bus in a different account or Region</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Inspector assessment template (Amazon Inspector)
+        ///  <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-bus-to-bus.html">Event
+        /// bus in the same account and Region</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Kinesis stream (Kinesis Data Stream)
+        /// Firehose delivery stream
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Glue workflow
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/incident-manager/latest/userguide/incident-creation.html#incident-tracking-auto-eventbridge">Incident
+        /// Manager response plan</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Inspector assessment template
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Kinesis stream
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2846,31 +3092,39 @@ namespace Amazon.EventBridge
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Redshift clusters (Data API statement execution)
+        /// Redshift cluster
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Amazon SNS topic
+        /// Redshift Serverless workgroup
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Amazon SQS queues (includes FIFO queues
+        /// SageMaker Pipeline
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// SSM Automation
+        /// SNS topic
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// SSM OpsItem
+        /// SQS queue
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// SSM Run Command
+        /// Step Functions state machine
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Step Functions state machines
+        /// Systems Manager Automation
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Systems Manager OpsItem
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Systems Manager Run Command
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -2892,9 +3146,9 @@ namespace Amazon.EventBridge
         /// To be able to make API calls against the resources that you own, Amazon EventBridge
         /// needs the appropriate permissions. For Lambda and Amazon SNS resources, EventBridge
         /// relies on resource-based policies. For EC2 instances, Kinesis Data Streams, Step Functions
-        /// state machines and API Gateway REST APIs, EventBridge relies on IAM roles that you
-        /// specify in the <code>RoleARN</code> argument in <code>PutTargets</code>. For more
-        /// information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/auth-and-access-control-eventbridge.html">Authentication
+        /// state machines and API Gateway APIs, EventBridge relies on IAM roles that you specify
+        /// in the <code>RoleARN</code> argument in <code>PutTargets</code>. For more information,
+        /// see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/auth-and-access-control-eventbridge.html">Authentication
         /// and Access Control</a> in the <i>Amazon EventBridge User Guide</i>.
         /// </para>
         ///  
@@ -3071,7 +3325,12 @@ namespace Amazon.EventBridge
         /// Removes the specified targets from the specified rule. When the rule is triggered,
         /// those targets are no longer be invoked.
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// A successful execution of <code>RemoveTargets</code> doesn't guarantee all targets
+        /// are removed from the rule, it means that the target(s) listed in the request are removed.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// When you remove a target, when the associated rule triggers, removed targets might
         /// continue to be invoked. Allow a short period of time for changes to take effect.
@@ -3112,7 +3371,12 @@ namespace Amazon.EventBridge
         /// Removes the specified targets from the specified rule. When the rule is triggered,
         /// those targets are no longer be invoked.
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// A successful execution of <code>RemoveTargets</code> doesn't guarantee all targets
+        /// are removed from the rule, it means that the target(s) listed in the request are removed.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// When you remove a target, when the associated rule triggers, removed targets might
         /// continue to be invoked. Allow a short period of time for changes to take effect.
@@ -3615,6 +3879,56 @@ namespace Amazon.EventBridge
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/UpdateConnection">REST API Reference for UpdateConnection Operation</seealso>
         Task<UpdateConnectionResponse> UpdateConnectionAsync(UpdateConnectionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateEndpoint
+
+
+        /// <summary>
+        /// Update an existing endpoint. For more information about global endpoints, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-global-endpoints.html">Making
+        /// applications Regional-fault tolerant with global endpoints and event replication</a>
+        /// in the Amazon EventBridge User Guide..
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateEndpoint service method.</param>
+        /// 
+        /// <returns>The response from the UpdateEndpoint service method, as returned by EventBridge.</returns>
+        /// <exception cref="Amazon.EventBridge.Model.ConcurrentModificationException">
+        /// There is concurrent modification on a rule, target, archive, or replay.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.InternalException">
+        /// This exception occurs due to unexpected causes.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.ResourceNotFoundException">
+        /// An entity that you specified does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/UpdateEndpoint">REST API Reference for UpdateEndpoint Operation</seealso>
+        UpdateEndpointResponse UpdateEndpoint(UpdateEndpointRequest request);
+
+
+
+        /// <summary>
+        /// Update an existing endpoint. For more information about global endpoints, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-global-endpoints.html">Making
+        /// applications Regional-fault tolerant with global endpoints and event replication</a>
+        /// in the Amazon EventBridge User Guide..
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateEndpoint service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateEndpoint service method, as returned by EventBridge.</returns>
+        /// <exception cref="Amazon.EventBridge.Model.ConcurrentModificationException">
+        /// There is concurrent modification on a rule, target, archive, or replay.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.InternalException">
+        /// This exception occurs due to unexpected causes.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.ResourceNotFoundException">
+        /// An entity that you specified does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/UpdateEndpoint">REST API Reference for UpdateEndpoint Operation</seealso>
+        Task<UpdateEndpointResponse> UpdateEndpointAsync(UpdateEndpointRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

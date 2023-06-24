@@ -82,6 +82,12 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
                     unmarshalledObject.IsBootDisk = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("optimizedStagingDiskType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.OptimizedStagingDiskType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("stagingDiskType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

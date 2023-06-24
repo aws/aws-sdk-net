@@ -34,7 +34,7 @@ namespace Amazon.GlobalAccelerator.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// PortOverride Marshaller
-    /// </summary>       
+    /// </summary>
     public class PortOverrideMarshaller : IRequestMarshaller<PortOverride, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.GlobalAccelerator.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static PortOverrideMarshaller Instance = new PortOverrideMarshaller();
 
     }

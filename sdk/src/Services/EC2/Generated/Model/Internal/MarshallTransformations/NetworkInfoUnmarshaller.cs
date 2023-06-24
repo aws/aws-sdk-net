@@ -72,6 +72,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.EfaSupported = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("enaSrdSupported", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.EnaSrdSupported = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("enaSupport", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// Container for the response returned by the <code> <a>UpdatePackage</a> </code> operation.
+    /// Container for the response returned by the <code>UpdatePackage</code> operation.
     /// </summary>
     public partial class UpdatePackageResponse : AmazonWebServiceResponse
     {
@@ -38,7 +38,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property PackageDetails. 
         /// <para>
-        /// Information about the package. 
+        /// Information about a package.
         /// </para>
         /// </summary>
         public PackageDetails PackageDetails

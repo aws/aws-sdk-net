@@ -38,7 +38,7 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property Service. 
         /// <para>
-        /// The service detail data that's returned by Proton.
+        /// The detailed data of the requested service.
         /// </para>
         /// </summary>
         public Service Service

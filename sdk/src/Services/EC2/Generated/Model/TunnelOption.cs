@@ -35,7 +35,9 @@ namespace Amazon.EC2.Model
     {
         private string _dpdTimeoutAction;
         private int? _dpdTimeoutSeconds;
+        private bool? _enableTunnelLifecycleControl;
         private List<IKEVersionsListValue> _ikeVersions = new List<IKEVersionsListValue>();
+        private VpnTunnelLogOptions _logOptions;
         private string _outsideIpAddress;
         private List<Phase1DHGroupNumbersListValue> _phase1DHGroupNumbers = new List<Phase1DHGroupNumbersListValue>();
         private List<Phase1EncryptionAlgorithmsListValue> _phase1EncryptionAlgorithms = new List<Phase1EncryptionAlgorithmsListValue>();
@@ -90,6 +92,24 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EnableTunnelLifecycleControl. 
+        /// <para>
+        /// Status of tunnel endpoint lifecycle control feature.
+        /// </para>
+        /// </summary>
+        public bool EnableTunnelLifecycleControl
+        {
+            get { return this._enableTunnelLifecycleControl.GetValueOrDefault(); }
+            set { this._enableTunnelLifecycleControl = value; }
+        }
+
+        // Check to see if EnableTunnelLifecycleControl property is set
+        internal bool IsSetEnableTunnelLifecycleControl()
+        {
+            return this._enableTunnelLifecycleControl.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property IkeVersions. 
         /// <para>
         /// The IKE versions that are permitted for the VPN tunnel.
@@ -105,6 +125,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetIkeVersions()
         {
             return this._ikeVersions != null && this._ikeVersions.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LogOptions. 
+        /// <para>
+        /// Options for logging VPN tunnel activity.
+        /// </para>
+        /// </summary>
+        public VpnTunnelLogOptions LogOptions
+        {
+            get { return this._logOptions; }
+            set { this._logOptions = value; }
+        }
+
+        // Check to see if LogOptions property is set
+        internal bool IsSetLogOptions()
+        {
+            return this._logOptions != null;
         }
 
         /// <summary>
@@ -276,6 +314,7 @@ namespace Amazon.EC2.Model
         /// gateway and the customer gateway.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string PreSharedKey
         {
             get { return this._preSharedKey; }

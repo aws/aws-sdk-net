@@ -37,7 +37,10 @@ namespace Amazon.Backup.Model
         private string _backupVaultName;
         private DateTime? _creationDate;
         private string _encryptionKeyArn;
+        private bool? _isParent;
+        private string _parentRecoveryPointArn;
         private string _recoveryPointArn;
+        private string _resourceName;
         private RecoveryPointStatus _status;
         private string _statusMessage;
 
@@ -120,6 +123,42 @@ namespace Amazon.Backup.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IsParent. 
+        /// <para>
+        /// This is a boolean value indicating this is a parent (composite) recovery point.
+        /// </para>
+        /// </summary>
+        public bool IsParent
+        {
+            get { return this._isParent.GetValueOrDefault(); }
+            set { this._isParent = value; }
+        }
+
+        // Check to see if IsParent property is set
+        internal bool IsSetIsParent()
+        {
+            return this._isParent.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ParentRecoveryPointArn. 
+        /// <para>
+        /// This is the Amazon Resource Name (ARN) of the parent (composite) recovery point.
+        /// </para>
+        /// </summary>
+        public string ParentRecoveryPointArn
+        {
+            get { return this._parentRecoveryPointArn; }
+            set { this._parentRecoveryPointArn = value; }
+        }
+
+        // Check to see if ParentRecoveryPointArn property is set
+        internal bool IsSetParentRecoveryPointArn()
+        {
+            return this._parentRecoveryPointArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property RecoveryPointArn. 
         /// <para>
         /// An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example,
@@ -136,6 +175,24 @@ namespace Amazon.Backup.Model
         internal bool IsSetRecoveryPointArn()
         {
             return this._recoveryPointArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceName. 
+        /// <para>
+        /// This is the non-unique name of the resource that belongs to the specified backup.
+        /// </para>
+        /// </summary>
+        public string ResourceName
+        {
+            get { return this._resourceName; }
+            set { this._resourceName = value; }
+        }
+
+        // Check to see if ResourceName property is set
+        internal bool IsSetResourceName()
+        {
+            return this._resourceName != null;
         }
 
         /// <summary>

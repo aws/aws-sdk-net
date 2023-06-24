@@ -64,10 +64,22 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("evidenceFileName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.EvidenceFileName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("s3ResourcePath", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.S3ResourcePath = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("textResponse", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TextResponse = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

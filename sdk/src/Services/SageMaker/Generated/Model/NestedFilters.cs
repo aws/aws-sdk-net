@@ -29,8 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// A list of nested <a>Filter</a> objects. A resource must satisfy the conditions of
-    /// all filters to be included in the results returned from the <a>Search</a> API.
+    /// A list of nested <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Filter.html">Filter</a>
+    /// objects. A resource must satisfy the conditions of all filters to be included in the
+    /// results returned from the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a>
+    /// API.
     /// 
     ///  
     /// <para>

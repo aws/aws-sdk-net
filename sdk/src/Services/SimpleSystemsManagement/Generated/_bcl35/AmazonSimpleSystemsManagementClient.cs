@@ -35,58 +35,42 @@ namespace Amazon.SimpleSystemsManagement
     /// <summary>
     /// Implementation for accessing SimpleSystemsManagement
     ///
-    /// Amazon Web Services Systems Manager is a collection of capabilities that helps you
-    /// automate management tasks such as collecting system inventory, applying operating
-    /// system (OS) patches, automating the creation of Amazon Machine Images (AMIs), and
-    /// configuring operating systems (OSs) and applications at scale. Systems Manager lets
-    /// you remotely and securely manage the configuration of your managed nodes. A <i>managed
-    /// node</i> is any Amazon Elastic Compute Cloud (Amazon EC2) instance, edge device, or
-    /// on-premises server or virtual machine (VM) that has been configured for Systems Manager.
+    /// Amazon Web Services Systems Manager is the operations hub for your Amazon Web Services
+    /// applications and resources and a secure end-to-end management solution for hybrid
+    /// cloud environments that enables safe and secure operations at scale.
     /// 
-    /// 
-    ///  <note> 
-    /// <para>
-    /// With support for IoT Greengrass Version 2 devices, the phrase <i>managed instance</i>
-    /// has been changed to <i>managed node</i> in most of the Systems Manager documentation.
-    /// The Systems Manager console, API calls, error messages, and SSM documents still use
-    /// the term instance.
-    /// </para>
-    ///  </note> 
-    /// <para>
-    /// This reference is intended to be used with the <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/">Amazon
-    /// Web Services Systems Manager User Guide</a>.
-    /// </para>
     ///  
     /// <para>
-    /// To get started, verify prerequisites and configure managed nodes. For more information,
-    /// see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up.html">Setting
-    /// up Amazon Web Services Systems Manager</a> in the <i>Amazon Web Services Systems Manager
-    /// User Guide</i>.
+    /// This reference is intended to be used with the <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/">Amazon
+    /// Web Services Systems Manager User Guide</a>. To get started, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up.html">Setting
+    /// up Amazon Web Services Systems Manager</a>.
     /// </para>
     ///  <p class="title"> <b>Related resources</b> 
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// For information about how to use a Query API, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/making-api-requests.html">Making
-    /// API requests</a>. 
+    /// For information about each of the capabilities that comprise Systems Manager, see
+    /// <a href="https://docs.aws.amazon.com/systems-manager-automation-runbooks/latest/userguide/what-is-systems-manager.html#systems-manager-capabilities">Systems
+    /// Manager capabilities</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// For information about other API operations you can perform on EC2 instances, see the
-    /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/">Amazon EC2 API Reference</a>.
+    /// For details about predefined runbooks for Automation, a capability of Amazon Web Services
+    /// Systems Manager, see the <i> <a href="https://docs.aws.amazon.com/systems-manager-automation-runbooks/latest/userguide/automation-runbook-reference.html">Systems
+    /// Manager Automation runbook reference</a> </i>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// For information about AppConfig, a capability of Systems Manager, see the <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/">AppConfig
-    /// User Guide</a> and the <a href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/">AppConfig
-    /// API Reference</a>.
+    /// For information about AppConfig, a capability of Systems Manager, see the <i> <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/">AppConfig
+    /// User Guide</a> </i> and the <i> <a href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/">AppConfig
+    /// API Reference</a> </i>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// For information about Incident Manager, a capability of Systems Manager, see the <a
-    /// href="https://docs.aws.amazon.com/incident-manager/latest/userguide/">Incident Manager
-    /// User Guide</a> and the <a href="https://docs.aws.amazon.com/incident-manager/latest/APIReference/">Incident
-    /// Manager API Reference</a>.
+    /// For information about Incident Manager, a capability of Systems Manager, see the <i>
+    /// <a href="https://docs.aws.amazon.com/incident-manager/latest/userguide/">Systems Manager
+    /// Incident Manager User Guide</a> </i> and the <i> <a href="https://docs.aws.amazon.com/incident-manager/latest/APIReference/">Systems
+    /// Manager Incident Manager API Reference</a> </i>.
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -283,6 +267,15 @@ namespace Amazon.SimpleSystemsManagement
         }
 
         /// <summary>
+        /// Customize the pipeline
+        /// </summary>
+        /// <param name="pipeline"></param>
+        protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
+        {
+            pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonSimpleSystemsManagementEndpointResolver());
+        }
+        /// <summary>
         /// Capture metadata for the service.
         /// </summary>
         protected override IServiceMetadata ServiceMetadata
@@ -311,13 +304,13 @@ namespace Amazon.SimpleSystemsManagement
         #region  AddTagsToResource
 
         /// <summary>
-        /// Adds or overwrites one or more tags for the specified resource. Tags are metadata
-        /// that you can assign to your documents, managed nodes, maintenance windows, Parameter
-        /// Store parameters, and patch baselines. Tags enable you to categorize your resources
-        /// in different ways, for example, by purpose, owner, or environment. Each tag consists
-        /// of a key and an optional value, both of which you define. For example, you could define
-        /// a set of tags for your account's managed nodes that helps you track each node's owner
-        /// and stack level. For example:
+        /// Adds or overwrites one or more tags for the specified resource. <i>Tags</i> are metadata
+        /// that you can assign to your automations, documents, managed nodes, maintenance windows,
+        /// Parameter Store parameters, and patch baselines. Tags enable you to categorize your
+        /// resources in different ways, for example, by purpose, owner, or environment. Each
+        /// tag consists of a key and an optional value, both of which you define. For example,
+        /// you could define a set of tags for your account's managed nodes that helps you track
+        /// each node's owner and stack level. For example:
         /// 
         ///  <ul> <li> 
         /// <para>
@@ -345,14 +338,15 @@ namespace Amazon.SimpleSystemsManagement
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Each resource can have a maximum of 50 tags.
+        /// Most resources can have a maximum of 50 tags. Automations can have a maximum of 5
+        /// tags.
         /// </para>
         ///  
         /// <para>
         /// We recommend that you devise a set of tag keys that meets your needs for each resource
         /// type. Using a consistent set of tag keys makes it easier for you to manage your resources.
         /// You can search and filter the resources based on the tags you add. Tags don't have
-        /// any semantic meaning to and are interpreted strictly as a string of characters. 
+        /// any semantic meaning to and are interpreted strictly as a string of characters.
         /// </para>
         ///  
         /// <para>
@@ -852,7 +846,7 @@ namespace Amazon.SimpleSystemsManagement
         /// isn't running, then the association might instruct State Manager to start the service.
         /// </summary>
         /// <param name="instanceId">The managed node ID. <note>  <code>InstanceId</code> has been deprecated. To specify a managed node ID for an association, use the <code>Targets</code> parameter. Requests that include the parameter <code>InstanceID</code> with Systems Manager documents (SSM documents) that use schema version 2.0 or later will fail. In addition, if you use the parameter <code>InstanceId</code>, you can't use the parameters <code>AssociationName</code>, <code>DocumentVersion</code>, <code>MaxErrors</code>, <code>MaxConcurrency</code>, <code>OutputLocation</code>, or <code>ScheduleExpression</code>. To use these parameters, you must use the <code>Targets</code> parameter. </note></param>
-        /// <param name="name">The name of the SSM Command document or Automation runbook that contains the configuration information for the managed node. You can specify Amazon Web Services-predefined documents, documents you created, or a document that is shared with you from another account. For Systems Manager documents (SSM documents) that are shared with you from other Amazon Web Services accounts, you must specify the complete SSM document ARN, in the following format:  <code>arn:<i>partition</i>:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i> </code>  For example:  <code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code>  For Amazon Web Services-predefined documents and SSM documents you created in your account, you only need to specify the document name. For example, <code>AWS-ApplyPatchBaseline</code> or <code>My-Document</code>.</param>
+        /// <param name="name">The name of the SSM Command document or Automation runbook that contains the configuration information for the managed node. You can specify Amazon Web Services-predefined documents, documents you created, or a document that is shared with you from another Amazon Web Services account. For Systems Manager documents (SSM documents) that are shared with you from other Amazon Web Services accounts, you must specify the complete SSM document ARN, in the following format:  <code>arn:<i>partition</i>:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i> </code>  For example:  <code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code>  For Amazon Web Services-predefined documents and SSM documents you created in your account, you only need to specify the document name. For example, <code>AWS-ApplyPatchBaseline</code> or <code>My-Document</code>.</param>
         /// 
         /// <returns>The response from the CreateAssociation service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.AssociationAlreadyExistsException">
@@ -905,9 +899,15 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidScheduleException">
         /// The schedule is invalid. Verify your cron or rate expression and try again.
         /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidTagException">
+        /// The specified tag key or value isn't valid.
+        /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidTargetException">
         /// The target isn't valid or doesn't exist. It might not be configured for Systems Manager
         /// or you might not have permission to perform the operation.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidTargetMapsException">
+        /// TargetMap parameter isn't valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.UnsupportedPlatformTypeException">
         /// The document doesn't support the platform type of the given managed node ID(s). For
@@ -989,9 +989,15 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidScheduleException">
         /// The schedule is invalid. Verify your cron or rate expression and try again.
         /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidTagException">
+        /// The specified tag key or value isn't valid.
+        /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidTargetException">
         /// The target isn't valid or doesn't exist. It might not be configured for Systems Manager
         /// or you might not have permission to perform the operation.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidTargetMapsException">
+        /// TargetMap parameter isn't valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.UnsupportedPlatformTypeException">
         /// The document doesn't support the platform type of the given managed node ID(s). For
@@ -1118,6 +1124,9 @@ namespace Amazon.SimpleSystemsManagement
         /// The target isn't valid or doesn't exist. It might not be configured for Systems Manager
         /// or you might not have permission to perform the operation.
         /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidTargetMapsException">
+        /// TargetMap parameter isn't valid.
+        /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.UnsupportedPlatformTypeException">
         /// The document doesn't support the platform type of the given managed node ID(s). For
         /// example, you sent an document for a Windows managed node to a Linux node.
@@ -1178,8 +1187,8 @@ namespace Amazon.SimpleSystemsManagement
         /// Web Services Systems Manager Documents</a> in the <i>Amazon Web Services Systems Manager
         /// User Guide</i>.
         /// </summary>
-        /// <param name="content">The content for the new SSM document in JSON or YAML format. We recommend storing the contents for your new document in an external JSON or YAML file and referencing the file in a command. For examples, see the following topics in the <i>Amazon Web Services Systems Manager User Guide</i>. <ul> <li>  <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (Amazon Web Services API)</a>  </li> <li>  <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create an SSM document (Amazon Web Services CLI)</a>  </li> <li>  <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (API)</a>  </li> </ul></param>
-        /// <param name="name">A name for the SSM document. <important> You can't use the following strings as document name prefixes. These are reserved by Amazon Web Services for use as document name prefixes: <ul> <li>  <code>aws-</code>  </li> <li>  <code>amazon</code>  </li> <li>  <code>amzn</code>  </li> </ul> </important></param>
+        /// <param name="content">The content for the new SSM document in JSON or YAML format. The content of the document must not exceed 64KB. This quota also includes the content specified for input parameters at runtime. We recommend storing the contents for your new document in an external JSON or YAML file and referencing the file in a command. For examples, see the following topics in the <i>Amazon Web Services Systems Manager User Guide</i>. <ul> <li>  <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (Amazon Web Services API)</a>  </li> <li>  <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create an SSM document (Amazon Web Services CLI)</a>  </li> <li>  <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (API)</a>  </li> </ul></param>
+        /// <param name="name">A name for the SSM document. <important> You can't use the following strings as document name prefixes. These are reserved by Amazon Web Services for use as document name prefixes: <ul> <li>  <code>aws</code>  </li> <li>  <code>amazon</code>  </li> <li>  <code>amzn</code>  </li> </ul> </important></param>
         /// 
         /// <returns>The response from the CreateDocument service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DocumentAlreadyExistsException">
@@ -1388,6 +1397,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <returns>The response from the CreateOpsItem service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.OpsItemAccessDeniedException">
+        /// You don't have permission to view OpsItems in the specified account. Verify that your
+        /// account is configured either as a Systems Manager delegated administrator or that
+        /// you are logged into the Organizations management account.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.OpsItemAlreadyExistsException">
         /// The OpsItem already exists.
@@ -2476,6 +2490,77 @@ namespace Amazon.SimpleSystemsManagement
         public virtual DeleteResourceDataSyncResponse EndDeleteResourceDataSync(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteResourceDataSyncResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteResourcePolicy
+
+        /// <summary>
+        /// Deletes a Systems Manager resource policy. A resource policy helps you to define the
+        /// IAM entity (for example, an Amazon Web Services account) that can manage your Systems
+        /// Manager resources. Currently, <code>OpsItemGroup</code> is the only resource that
+        /// supports Systems Manager resource policies. The resource policy for <code>OpsItemGroup</code>
+        /// enables Amazon Web Services accounts to view and interact with OpsCenter operational
+        /// work items (OpsItems).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteResourcePolicy service method.</param>
+        /// 
+        /// <returns>The response from the DeleteResourcePolicy service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ResourcePolicyConflictException">
+        /// The hash provided in the call doesn't match the stored hash. This exception is thrown
+        /// when trying to update an obsolete policy version or when multiple requests to update
+        /// a policy are sent.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ResourcePolicyInvalidParameterException">
+        /// One or more parameters specified for the call aren't valid. Verify the parameters
+        /// and their values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
+        public virtual DeleteResourcePolicyResponse DeleteResourcePolicy(DeleteResourcePolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteResourcePolicyResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteResourcePolicyResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteResourcePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteResourcePolicy operation on AmazonSimpleSystemsManagementClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteResourcePolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
+        public virtual IAsyncResult BeginDeleteResourcePolicy(DeleteResourcePolicyRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteResourcePolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteResourcePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteResourcePolicy.</param>
+        /// 
+        /// <returns>Returns a  DeleteResourcePolicyResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
+        public virtual DeleteResourcePolicyResponse EndDeleteResourcePolicy(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteResourcePolicyResponse>(asyncResult);
         }
 
         #endregion
@@ -6211,7 +6296,7 @@ namespace Amazon.SimpleSystemsManagement
         #region  GetMaintenanceWindowTask
 
         /// <summary>
-        /// Lists the tasks in a maintenance window.
+        /// Retrieves the details of a maintenance window task.
         /// 
         ///  <note> 
         /// <para>
@@ -6220,7 +6305,11 @@ namespace Amazon.SimpleSystemsManagement
         /// inserts a placeholder value of <code>1</code>, which may be reported in the response
         /// to this command. These values don't affect the running of your task and can be ignored.
         /// </para>
-        ///  </note>
+        ///  </note> 
+        /// <para>
+        /// To retrieve a list of tasks in a maintenance window, instead use the <a>DescribeMaintenanceWindowTasks</a>
+        /// command.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMaintenanceWindowTask service method.</param>
         /// 
@@ -6306,6 +6395,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <returns>The response from the GetOpsItem service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.OpsItemAccessDeniedException">
+        /// You don't have permission to view OpsItems in the specified account. Verify that your
+        /// account is configured either as a Systems Manager delegated administrator or that
+        /// you are logged into the Organizations management account.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.OpsItemNotFoundException">
         /// The specified OpsItem ID doesn't exist. Verify the ID and try again.
@@ -6919,6 +7013,67 @@ namespace Amazon.SimpleSystemsManagement
         public virtual GetPatchBaselineForPatchGroupResponse EndGetPatchBaselineForPatchGroup(IAsyncResult asyncResult)
         {
             return EndInvoke<GetPatchBaselineForPatchGroupResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetResourcePolicies
+
+        /// <summary>
+        /// Returns an array of the <code>Policy</code> object.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetResourcePolicies service method.</param>
+        /// 
+        /// <returns>The response from the GetResourcePolicies service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ResourcePolicyInvalidParameterException">
+        /// One or more parameters specified for the call aren't valid. Verify the parameters
+        /// and their values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetResourcePolicies">REST API Reference for GetResourcePolicies Operation</seealso>
+        public virtual GetResourcePoliciesResponse GetResourcePolicies(GetResourcePoliciesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetResourcePoliciesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResourcePoliciesResponseUnmarshaller.Instance;
+
+            return Invoke<GetResourcePoliciesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetResourcePolicies operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetResourcePolicies operation on AmazonSimpleSystemsManagementClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetResourcePolicies
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetResourcePolicies">REST API Reference for GetResourcePolicies Operation</seealso>
+        public virtual IAsyncResult BeginGetResourcePolicies(GetResourcePoliciesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetResourcePoliciesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResourcePoliciesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetResourcePolicies operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetResourcePolicies.</param>
+        /// 
+        /// <returns>Returns a  GetResourcePoliciesResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetResourcePolicies">REST API Reference for GetResourcePolicies Operation</seealso>
+        public virtual GetResourcePoliciesResponse EndGetResourcePolicies(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetResourcePoliciesResponse>(asyncResult);
         }
 
         #endregion
@@ -8488,9 +8643,9 @@ namespace Amazon.SimpleSystemsManagement
 
         /// <summary>
         /// Shares a Amazon Web Services Systems Manager document (SSM document)publicly or privately.
-        /// If you share a document privately, you must specify the Amazon Web Services user account
-        /// IDs for those people who can use the document. If you share a document publicly, you
-        /// must specify <i>All</i> as the account ID.
+        /// If you share a document privately, you must specify the Amazon Web Services user IDs
+        /// for those people who can use the document. If you share a document publicly, you must
+        /// specify <i>All</i> as the account ID.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyDocumentPermission service method.</param>
         /// 
@@ -8499,9 +8654,19 @@ namespace Amazon.SimpleSystemsManagement
         /// You can have at most 500 active SSM documents.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DocumentPermissionLimitException">
-        /// The document can't be shared with more Amazon Web Services user accounts. You can
-        /// share a document with a maximum of 20 accounts. You can publicly share up to five
-        /// documents. If you need to increase this limit, contact Amazon Web Services Support.
+        /// The document can't be shared with more Amazon Web Services accounts. You can specify
+        /// a maximum of 20 accounts per API operation to share a private document.
+        /// 
+        ///  
+        /// <para>
+        /// By default, you can share a private document with a maximum of 1,000 accounts and
+        /// publicly share up to five documents.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you need to increase the quota for privately or publicly shared Systems Manager
+        /// documents, contact Amazon Web Services Support.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
@@ -8600,7 +8765,7 @@ namespace Amazon.SimpleSystemsManagement
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Severity: A patch severity. For example, <code>critical</code>.
+        /// Severity: A patch severity. For example, <code>Critical</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -8952,6 +9117,82 @@ namespace Amazon.SimpleSystemsManagement
         public virtual PutParameterResponse EndPutParameter(IAsyncResult asyncResult)
         {
             return EndInvoke<PutParameterResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  PutResourcePolicy
+
+        /// <summary>
+        /// Creates or updates a Systems Manager resource policy. A resource policy helps you
+        /// to define the IAM entity (for example, an Amazon Web Services account) that can manage
+        /// your Systems Manager resources. Currently, <code>OpsItemGroup</code> is the only resource
+        /// that supports Systems Manager resource policies. The resource policy for <code>OpsItemGroup</code>
+        /// enables Amazon Web Services accounts to view and interact with OpsCenter operational
+        /// work items (OpsItems).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutResourcePolicy service method.</param>
+        /// 
+        /// <returns>The response from the PutResourcePolicy service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ResourcePolicyConflictException">
+        /// The hash provided in the call doesn't match the stored hash. This exception is thrown
+        /// when trying to update an obsolete policy version or when multiple requests to update
+        /// a policy are sent.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ResourcePolicyInvalidParameterException">
+        /// One or more parameters specified for the call aren't valid. Verify the parameters
+        /// and their values and try again.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ResourcePolicyLimitExceededException">
+        /// The <a>PutResourcePolicy</a> API action enforces two limits. A policy can't be greater
+        /// than 1024 bytes in size. And only one policy can be attached to <code>OpsItemGroup</code>.
+        /// Verify these limits and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
+        public virtual PutResourcePolicyResponse PutResourcePolicy(PutResourcePolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutResourcePolicyResponseUnmarshaller.Instance;
+
+            return Invoke<PutResourcePolicyResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutResourcePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutResourcePolicy operation on AmazonSimpleSystemsManagementClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutResourcePolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
+        public virtual IAsyncResult BeginPutResourcePolicy(PutResourcePolicyRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutResourcePolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutResourcePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutResourcePolicy.</param>
+        /// 
+        /// <returns>Returns a  PutResourcePolicyResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
+        public virtual PutResourcePolicyResponse EndPutResourcePolicy(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PutResourcePolicyResponse>(asyncResult);
         }
 
         #endregion
@@ -10154,22 +10395,11 @@ namespace Amazon.SimpleSystemsManagement
 
         /// <summary>
         /// Permanently ends a session and closes the data connection between the Session Manager
-        /// client and SSM Agent on the managed node. A terminated session isn't be resumed.
+        /// client and SSM Agent on the managed node. A terminated session can't be resumed.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TerminateSession service method.</param>
         /// 
         /// <returns>The response from the TerminateSession service method, as returned by SimpleSystemsManagement.</returns>
-        /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
-        /// Error returned when the ID specified for a resource, such as a maintenance window
-        /// or patch baseline, doesn't exist.
-        /// 
-        ///  
-        /// <para>
-        /// For information about resource quotas in Amazon Web Services Systems Manager, see
-        /// <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
-        /// Manager service quotas</a> in the <i>Amazon Web Services General Reference</i>.
-        /// </para>
-        /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
@@ -10291,21 +10521,28 @@ namespace Amazon.SimpleSystemsManagement
         /// <summary>
         /// Updates an association. You can update the association name and version, the document
         /// version, schedule, parameters, and Amazon Simple Storage Service (Amazon S3) output.
-        /// 
+        /// When you call <code>UpdateAssociation</code>, the system removes all optional parameters
+        /// from the request and overwrites the association with null values for those parameters.
+        /// This is by design. You must specify all optional parameters in the call, even if you
+        /// are not changing the parameters. This includes the <code>Name</code> parameter. Before
+        /// calling this API action, we recommend that you call the <a>DescribeAssociation</a>
+        /// API operation and make a note of all optional parameters required for your <code>UpdateAssociation</code>
+        /// call.
         /// 
         ///  
         /// <para>
-        /// In order to call this API operation, your Identity and Access Management (IAM) user
-        /// account, group, or role must be configured with permission to call the <a>DescribeAssociation</a>
-        /// API operation. If you don't have permission to call <code>DescribeAssociation</code>,
-        /// then you receive the following error: <code>An error occurred (AccessDeniedException)
-        /// when calling the UpdateAssociation operation: User: &lt;user_arn&gt; isn't authorized
-        /// to perform: ssm:DescribeAssociation on resource: &lt;resource_arn&gt;</code> 
+        /// In order to call this API operation, a user, group, or role must be granted permission
+        /// to call the <a>DescribeAssociation</a> API operation. If you don't have permission
+        /// to call <code>DescribeAssociation</code>, then you receive the following error: <code>An
+        /// error occurred (AccessDeniedException) when calling the UpdateAssociation operation:
+        /// User: &lt;user_arn&gt; isn't authorized to perform: ssm:DescribeAssociation on resource:
+        /// &lt;resource_arn&gt;</code> 
         /// </para>
         ///  <important> 
         /// <para>
         /// When you update an association, the association immediately runs against the specified
-        /// targets.
+        /// targets. You can add the <code>ApplyOnlyAtCronInterval</code> parameter to run the
+        /// association during the next schedule run.
         /// </para>
         ///  </important>
         /// </summary>
@@ -10347,6 +10584,9 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidTargetException">
         /// The target isn't valid or doesn't exist. It might not be configured for Systems Manager
         /// or you might not have permission to perform the operation.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidTargetMapsException">
+        /// TargetMap parameter isn't valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidUpdateException">
         /// The update isn't valid.
@@ -10592,7 +10832,15 @@ namespace Amazon.SimpleSystemsManagement
         #region  UpdateDocumentDefaultVersion
 
         /// <summary>
-        /// Set the default version of a document.
+        /// Set the default version of a document. 
+        /// 
+        ///  <note> 
+        /// <para>
+        /// If you change a document version for a State Manager association, Systems Manager
+        /// immediately runs the association unless you previously specifed the <code>apply-only-at-cron-interval</code>
+        /// parameter.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateDocumentDefaultVersion service method.</param>
         /// 
@@ -11127,6 +11375,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <returns>The response from the UpdateOpsItem service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.OpsItemAccessDeniedException">
+        /// You don't have permission to view OpsItems in the specified account. Verify that your
+        /// account is configured either as a Systems Manager delegated administrator or that
+        /// you are logged into the Organizations management account.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.OpsItemAlreadyExistsException">
         /// The OpsItem already exists.

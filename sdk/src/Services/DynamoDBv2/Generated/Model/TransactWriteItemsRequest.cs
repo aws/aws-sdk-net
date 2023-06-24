@@ -31,7 +31,7 @@ namespace Amazon.DynamoDBv2.Model
     /// <summary>
     /// Container for the parameters to the TransactWriteItems operation.
     /// <code>TransactWriteItems</code> is a synchronous write operation that groups up to
-    /// 25 action requests. These actions can target items in different tables, but not in
+    /// 100 action requests. These actions can target items in different tables, but not in
     /// different Amazon Web Services accounts or Regions, and no two actions can target the
     /// same item. For example, you cannot both <code>ConditionCheck</code> and <code>Update</code>
     /// the same item. The aggregate size of the items in the transaction cannot exceed 4
@@ -126,8 +126,8 @@ namespace Amazon.DynamoDBv2.Model
         /// <para>
         /// Although multiple identical calls using the same client request token produce the
         /// same result on the server (no side effects), the responses to the calls might not
-        /// be the same. If the <code>ReturnConsumedCapacity&gt;</code> parameter is set, then
-        /// the initial <code>TransactWriteItems</code> call returns the amount of write capacity
+        /// be the same. If the <code>ReturnConsumedCapacity</code> parameter is set, then the
+        /// initial <code>TransactWriteItems</code> call returns the amount of write capacity
         /// units consumed in making the changes. Subsequent <code>TransactWriteItems</code> calls
         /// with the same client token return the number of read capacity units consumed in reading
         /// the item.
@@ -198,14 +198,14 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property TransactItems. 
         /// <para>
-        /// An ordered array of up to 25 <code>TransactWriteItem</code> objects, each of which
+        /// An ordered array of up to 100 <code>TransactWriteItem</code> objects, each of which
         /// contains a <code>ConditionCheck</code>, <code>Put</code>, <code>Update</code>, or
         /// <code>Delete</code> object. These can operate on items in different tables, but the
         /// tables must reside in the same Amazon Web Services account and Region, and no two
         /// of them can operate on the same item. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=25)]
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public List<TransactWriteItem> TransactItems
         {
             get { return this._transactItems; }

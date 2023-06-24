@@ -106,7 +106,7 @@ namespace Amazon.RoboMaker.Model
         /// </para>
         ///  </note>
         /// </summary>
-        [AWSProperty(Min=1, Max=5)]
+        [AWSProperty(Min=1, Max=6)]
         public List<DataSourceConfig> DataSources
         {
             get { return this._dataSources; }

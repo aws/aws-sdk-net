@@ -34,7 +34,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ErrorHandlingConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class ErrorHandlingConfigMarshaller : IRequestMarshaller<ErrorHandlingConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ErrorHandlingConfigMarshaller Instance = new ErrorHandlingConfigMarshaller();
 
     }

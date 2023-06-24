@@ -34,6 +34,7 @@ namespace Amazon.Snowball.Model
     public partial class CreateClusterResponse : AmazonWebServiceResponse
     {
         private string _clusterId;
+        private List<JobListEntry> _jobListEntries = new List<JobListEntry>();
 
         /// <summary>
         /// Gets and sets the property ClusterId. 
@@ -52,6 +53,25 @@ namespace Amazon.Snowball.Model
         internal bool IsSetClusterId()
         {
             return this._clusterId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property JobListEntries. 
+        /// <para>
+        /// List of jobs created for this cluster. For syntax, see <a href="https://docs.aws.amazon.com/snowball/latest/api-reference/API_ListJobs.html#API_ListJobs_ResponseSyntax">ListJobsResult$JobListEntries</a>
+        /// in this guide.
+        /// </para>
+        /// </summary>
+        public List<JobListEntry> JobListEntries
+        {
+            get { return this._jobListEntries; }
+            set { this._jobListEntries = value; }
+        }
+
+        // Check to see if JobListEntries property is set
+        internal bool IsSetJobListEntries()
+        {
+            return this._jobListEntries != null && this._jobListEntries.Count > 0; 
         }
 
     }

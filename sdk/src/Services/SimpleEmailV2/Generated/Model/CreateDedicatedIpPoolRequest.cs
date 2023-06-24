@@ -38,6 +38,7 @@ namespace Amazon.SimpleEmailV2.Model
     public partial class CreateDedicatedIpPoolRequest : AmazonSimpleEmailServiceV2Request
     {
         private string _poolName;
+        private ScalingMode _scalingMode;
         private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
@@ -57,6 +58,24 @@ namespace Amazon.SimpleEmailV2.Model
         internal bool IsSetPoolName()
         {
             return this._poolName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ScalingMode. 
+        /// <para>
+        /// The type of scaling mode.
+        /// </para>
+        /// </summary>
+        public ScalingMode ScalingMode
+        {
+            get { return this._scalingMode; }
+            set { this._scalingMode = value; }
+        }
+
+        // Check to see if ScalingMode property is set
+        internal bool IsSetScalingMode()
+        {
+            return this._scalingMode != null;
         }
 
         /// <summary>

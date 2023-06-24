@@ -29,13 +29,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// Shows the scaling configuration for an Aurora DB cluster in <code>serverless</code>
-    /// DB engine mode.
+    /// The scaling configuration for an Aurora DB cluster in <code>serverless</code> DB engine
+    /// mode.
     /// 
     ///  
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using
-    /// Amazon Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.
+    /// Amazon Aurora Serverless v1</a> in the <i>Amazon Aurora User Guide</i>.
     /// </para>
     /// </summary>
     public partial class ScalingConfigurationInfo
@@ -55,7 +55,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// When the value is set to false for an Aurora Serverless DB cluster, the DB cluster
+        /// When the value is set to false for an Aurora Serverless v1 DB cluster, the DB cluster
         /// automatically resumes.
         /// </para>
         /// </summary>
@@ -93,7 +93,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property MinCapacity. 
         /// <para>
-        /// The maximum capacity for the Aurora DB cluster in <code>serverless</code> DB engine
+        /// The minimum capacity for an Aurora DB cluster in <code>serverless</code> DB engine
         /// mode.
         /// </para>
         /// </summary>
@@ -151,7 +151,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property TimeoutAction. 
         /// <para>
         /// The action that occurs when Aurora times out while attempting to change the capacity
-        /// of an Aurora Serverless cluster. The value is either <code>ForceApplyCapacityChange</code>
+        /// of an Aurora Serverless v1 cluster. The value is either <code>ForceApplyCapacityChange</code>
         /// or <code>RollbackCapacityChange</code>.
         /// </para>
         ///  

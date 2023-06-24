@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GlobalAccelerator.Model
 {
     /// <summary>
-    /// Processing your request would cause you to exceed an AWS Global Accelerator limit.
+    /// Processing your request would cause you to exceed an Global Accelerator limit.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -43,13 +43,16 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             request.HttpMethod = "PUT";
 
+            if (putBucketLoggingRequest.IsSetChecksumAlgorithm())
+                request.Headers.Add(S3Constants.AmzHeaderSdkChecksumAlgorithm, S3Transforms.ToStringValue(putBucketLoggingRequest.ChecksumAlgorithm));
+
             if (putBucketLoggingRequest.IsSetExpectedBucketOwner())
                 request.Headers.Add(S3Constants.AmzHeaderExpectedBucketOwner, S3Transforms.ToStringValue(putBucketLoggingRequest.ExpectedBucketOwner));
 
             if (string.IsNullOrEmpty(putBucketLoggingRequest.BucketName))
                 throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "PutBucketLoggingRequest.BucketName");
 
-			request.ResourcePath = string.Concat("/", S3Transforms.ToStringValue(putBucketLoggingRequest.BucketName));
+            request.ResourcePath = "/";
 
             request.AddSubResource("logging");
 
@@ -57,7 +60,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {
-                xmlWriter.WriteStartElement("BucketLoggingStatus", "");
+                xmlWriter.WriteStartElement("BucketLoggingStatus", S3Constants.S3RequestXmlNamespace);
                 var bucketLoggingStatusBucketLoggingStatus = putBucketLoggingRequest.LoggingConfig;
                 if (bucketLoggingStatusBucketLoggingStatus != null)
                 {
@@ -66,48 +69,48 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                         var loggingEnabledLoggingEnabled = bucketLoggingStatusBucketLoggingStatus;
                         if (loggingEnabledLoggingEnabled != null && loggingEnabledLoggingEnabled.IsSetTargetBucket())
                         {
-                            xmlWriter.WriteStartElement("LoggingEnabled", "");
-                            xmlWriter.WriteElementString("TargetBucket", "", S3Transforms.ToXmlStringValue(loggingEnabledLoggingEnabled.TargetBucketName));
+                            xmlWriter.WriteStartElement("LoggingEnabled");
+                            xmlWriter.WriteElementString("TargetBucket", S3Transforms.ToXmlStringValue(loggingEnabledLoggingEnabled.TargetBucketName));
 
                             var loggingEnabledLoggingEnabledtargetGrantsList = loggingEnabledLoggingEnabled.Grants;
                             if (loggingEnabledLoggingEnabledtargetGrantsList != null && loggingEnabledLoggingEnabledtargetGrantsList.Count > 0)
                             {
-                                xmlWriter.WriteStartElement("TargetGrants", "");
+                                xmlWriter.WriteStartElement("TargetGrants");
                                 foreach (var loggingEnabledLoggingEnabledtargetGrantsListValue in loggingEnabledLoggingEnabledtargetGrantsList)
                                 {
-                                    xmlWriter.WriteStartElement("Grant", "");
+                                    xmlWriter.WriteStartElement("Grant");
                                     if (loggingEnabledLoggingEnabledtargetGrantsListValue != null)
                                     {
                                         var granteeGrantee = loggingEnabledLoggingEnabledtargetGrantsListValue.Grantee;
                                         if (granteeGrantee != null)
                                         {
-                                            xmlWriter.WriteStartElement("Grantee", "");
+                                            xmlWriter.WriteStartElement("Grantee");
                                             if (granteeGrantee.IsSetType())
                                             {
                                                 xmlWriter.WriteAttributeString("xsi", "type", "http://www.w3.org/2001/XMLSchema-instance", granteeGrantee.Type.ToString());
                                             }
                                             if (granteeGrantee.IsSetDisplayName())
                                             {
-                                                xmlWriter.WriteElementString("DisplayName", "", S3Transforms.ToXmlStringValue(granteeGrantee.DisplayName));
+                                                xmlWriter.WriteElementString("DisplayName", S3Transforms.ToXmlStringValue(granteeGrantee.DisplayName));
                                             }
                                             if (granteeGrantee.IsSetEmailAddress())
                                             {
-                                                xmlWriter.WriteElementString("EmailAddress", "", S3Transforms.ToXmlStringValue(granteeGrantee.EmailAddress));
+                                                xmlWriter.WriteElementString("EmailAddress", S3Transforms.ToXmlStringValue(granteeGrantee.EmailAddress));
                                             }
                                             if (granteeGrantee.IsSetCanonicalUser())
                                             {
-                                                xmlWriter.WriteElementString("ID", "", S3Transforms.ToXmlStringValue(granteeGrantee.CanonicalUser));
+                                                xmlWriter.WriteElementString("ID", S3Transforms.ToXmlStringValue(granteeGrantee.CanonicalUser));
                                             }
                                             if (granteeGrantee.IsSetURI())
                                             {
-                                                xmlWriter.WriteElementString("URI", "", S3Transforms.ToXmlStringValue(granteeGrantee.URI));
+                                                xmlWriter.WriteElementString("URI", S3Transforms.ToXmlStringValue(granteeGrantee.URI));
                                             }
                                             xmlWriter.WriteEndElement();
                                         }
 
                                         if (loggingEnabledLoggingEnabledtargetGrantsListValue.IsSetPermission())
                                         {
-                                            xmlWriter.WriteElementString("Permission", "", S3Transforms.ToXmlStringValue(loggingEnabledLoggingEnabledtargetGrantsListValue.Permission));
+                                            xmlWriter.WriteElementString("Permission", S3Transforms.ToXmlStringValue(loggingEnabledLoggingEnabledtargetGrantsListValue.Permission));
                                         }
                                     }
 
@@ -117,7 +120,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                             }
                             if (loggingEnabledLoggingEnabled.IsSetTargetPrefix())
                             {
-                                xmlWriter.WriteElementString("TargetPrefix", "", S3Transforms.ToXmlStringValue(loggingEnabledLoggingEnabled.TargetPrefix));
+                                xmlWriter.WriteElementString("TargetPrefix", S3Transforms.ToXmlStringValue(loggingEnabledLoggingEnabled.TargetPrefix));
                             }
                             else
                             {
@@ -138,8 +141,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 request.Content = Encoding.UTF8.GetBytes(content);
                 request.Headers[HeaderKeys.ContentTypeHeader] = "application/xml";
 
-                var checksum = AWSSDKUtils.GenerateChecksumForContent(content, true);
-                request.Headers[HeaderKeys.ContentMD5Header] = checksum;
+                ChecksumUtils.SetRequestChecksum(request, putBucketLoggingRequest.ChecksumAlgorithm);
             }
             catch (EncoderFallbackException e)
             {

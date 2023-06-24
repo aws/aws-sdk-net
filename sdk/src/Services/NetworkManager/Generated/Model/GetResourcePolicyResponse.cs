@@ -41,6 +41,7 @@ namespace Amazon.NetworkManager.Model
         /// The resource policy document.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=10000000)]
         public string PolicyDocument
         {
             get { return this._policyDocument; }

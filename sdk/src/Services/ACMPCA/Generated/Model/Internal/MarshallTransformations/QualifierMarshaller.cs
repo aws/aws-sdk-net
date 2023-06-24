@@ -34,7 +34,7 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Qualifier Marshaller
-    /// </summary>       
+    /// </summary>
     public class QualifierMarshaller : IRequestMarshaller<Qualifier, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static QualifierMarshaller Instance = new QualifierMarshaller();
 
     }

@@ -39,7 +39,7 @@ namespace Amazon.IoTTwinMaker.Model
         /// <summary>
         /// Gets and sets the property IsNative. 
         /// <para>
-        /// A Boolean value that specifies whether the data connector is native to TwinMaker.
+        /// A Boolean value that specifies whether the data connector is native to IoT TwinMaker.
         /// </para>
         /// </summary>
         public bool IsNative

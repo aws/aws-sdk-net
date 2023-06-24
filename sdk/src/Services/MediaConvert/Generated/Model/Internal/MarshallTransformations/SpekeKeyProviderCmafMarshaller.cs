@@ -34,7 +34,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SpekeKeyProviderCmaf Marshaller
-    /// </summary>       
+    /// </summary>
     public class SpekeKeyProviderCmafMarshaller : IRequestMarshaller<SpekeKeyProviderCmaf, JsonMarshallerContext> 
     {
         /// <summary>
@@ -89,7 +89,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SpekeKeyProviderCmafMarshaller Instance = new SpekeKeyProviderCmafMarshaller();
 
     }

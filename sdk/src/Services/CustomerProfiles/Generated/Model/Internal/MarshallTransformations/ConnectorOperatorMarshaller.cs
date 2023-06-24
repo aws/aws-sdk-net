@@ -34,7 +34,7 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ConnectorOperator Marshaller
-    /// </summary>       
+    /// </summary>
     public class ConnectorOperatorMarshaller : IRequestMarshaller<ConnectorOperator, JsonMarshallerContext> 
     {
         /// <summary>
@@ -79,7 +79,7 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ConnectorOperatorMarshaller Instance = new ConnectorOperatorMarshaller();
 
     }

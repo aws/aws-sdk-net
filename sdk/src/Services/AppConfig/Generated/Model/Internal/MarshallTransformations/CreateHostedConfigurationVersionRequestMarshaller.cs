@@ -56,7 +56,7 @@ namespace Amazon.AppConfig.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.AppConfig");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-10-09";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-10-09";
             request.HttpMethod = "POST";
 
             if (!publicRequest.IsSetApplicationId())
@@ -67,18 +67,33 @@ namespace Amazon.AppConfig.Model.Internal.MarshallTransformations
             request.AddPathResource("{ConfigurationProfileId}", StringUtils.FromString(publicRequest.ConfigurationProfileId));
             request.ResourcePath = "/applications/{ApplicationId}/configurationprofiles/{ConfigurationProfileId}/hostedconfigurationversions";
             request.ContentStream =  publicRequest.Content ?? new MemoryStream();
-            request.Headers[Amazon.Util.HeaderKeys.ContentLengthHeader] =  
+            request.Headers[Amazon.Util.HeaderKeys.ContentLengthHeader] =
                 request.ContentStream.Length.ToString(CultureInfo.InvariantCulture);
-            request.Headers[Amazon.Util.HeaderKeys.ContentTypeHeader] = "binary/octet-stream";
+            request.Headers[Amazon.Util.HeaderKeys.ContentTypeHeader] = "binary/octet-stream"; 
+            if (request.ContentStream != null && request.ContentStream.Length == 0)
+            {
+                request.Headers.Remove(Amazon.Util.HeaderKeys.ContentTypeHeader);
+            }
         
-            if(publicRequest.IsSetContentType())
+            if (publicRequest.IsSetContentType()) 
+            {
                 request.Headers["Content-Type"] = publicRequest.ContentType;
+            }
         
-            if(publicRequest.IsSetDescription())
+            if (publicRequest.IsSetDescription()) 
+            {
                 request.Headers["Description"] = publicRequest.Description;
+            }
         
-            if(publicRequest.IsSetLatestVersionNumber())
+            if (publicRequest.IsSetLatestVersionNumber()) 
+            {
                 request.Headers["Latest-Version-Number"] = StringUtils.FromInt(publicRequest.LatestVersionNumber);
+            }
+        
+            if (publicRequest.IsSetVersionLabel()) 
+            {
+                request.Headers["VersionLabel"] = publicRequest.VersionLabel;
+            }
 
             return request;
         }

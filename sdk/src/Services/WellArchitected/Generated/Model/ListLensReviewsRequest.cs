@@ -30,7 +30,7 @@ namespace Amazon.WellArchitected.Model
 {
     /// <summary>
     /// Container for the parameters to the ListLensReviews operation.
-    /// List lens reviews.
+    /// List lens reviews for a particular workload.
     /// </summary>
     public partial class ListLensReviewsRequest : AmazonWellArchitectedRequest
     {
@@ -89,7 +89,7 @@ namespace Amazon.WellArchitected.Model
         /// <summary>
         /// Gets and sets the property WorkloadId.
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=32, Max=32)]
         public string WorkloadId
         {
             get { return this._workloadId; }

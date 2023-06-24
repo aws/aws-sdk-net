@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// PropertyNameQuery Marshaller
-    /// </summary>       
+    /// </summary>
     public class PropertyNameQueryMarshaller : IRequestMarshaller<PropertyNameQuery, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static PropertyNameQueryMarshaller Instance = new PropertyNameQueryMarshaller();
 
     }

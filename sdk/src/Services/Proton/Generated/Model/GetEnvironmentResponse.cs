@@ -38,7 +38,7 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property Environment. 
         /// <para>
-        /// The environment detail data that's returned by Proton.
+        /// The detailed data of the requested environment.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

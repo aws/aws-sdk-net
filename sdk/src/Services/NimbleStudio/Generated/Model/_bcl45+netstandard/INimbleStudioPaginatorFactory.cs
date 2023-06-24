@@ -51,6 +51,11 @@ namespace Amazon.NimbleStudio.Model
         IListStreamingImagesPaginator ListStreamingImages(ListStreamingImagesRequest request);
 
         /// <summary>
+        /// Paginator for ListStreamingSessionBackups operation
+        ///</summary>
+        IListStreamingSessionBackupsPaginator ListStreamingSessionBackups(ListStreamingSessionBackupsRequest request);
+
+        /// <summary>
         /// Paginator for ListStreamingSessions operation
         ///</summary>
         IListStreamingSessionsPaginator ListStreamingSessions(ListStreamingSessionsRequest request);

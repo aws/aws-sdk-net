@@ -410,7 +410,8 @@ namespace Amazon.IoT
         /// 
         ///  
         /// <para>
-        ///  <b>Note:</b> This action is deprecated. Please use <a>AttachPolicy</a> instead.
+        ///  <b>Note:</b> This action is deprecated and works as expected for backward compatibility,
+        /// but we won't add enhancements. Use <a>AttachPolicy</a> instead.
         /// </para>
         ///  
         /// <para>
@@ -452,7 +453,8 @@ namespace Amazon.IoT
         /// 
         ///  
         /// <para>
-        ///  <b>Note:</b> This action is deprecated. Please use <a>AttachPolicy</a> instead.
+        ///  <b>Note:</b> This action is deprecated and works as expected for backward compatibility,
+        /// but we won't add enhancements. Use <a>AttachPolicy</a> instead.
         /// </para>
         ///  
         /// <para>
@@ -590,8 +592,7 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Attaches the specified principal to the specified thing. A principal can be X.509
-        /// certificates, IAM users, groups, and roles, Amazon Cognito identities or federated
-        /// identities.
+        /// certificates, Amazon Cognito identities or federated identities.
         /// 
         ///  
         /// <para>
@@ -626,8 +627,7 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Attaches the specified principal to the specified thing. A principal can be X.509
-        /// certificates, IAM users, groups, and roles, Amazon Cognito identities or federated
-        /// identities.
+        /// certificates, Amazon Cognito identities or federated identities.
         /// 
         ///  
         /// <para>
@@ -1007,6 +1007,9 @@ namespace Amazon.IoT
         /// <returns>The response from the CancelJob service method, as returned by IoT.</returns>
         /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
         /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.LimitExceededException">
+        /// A limit has been exceeded.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
@@ -1433,60 +1436,56 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Creates an X.509 certificate using the specified certificate signing request.
+        /// Creates an X.509 certificate using the specified certificate signing request. 
         /// 
         ///  
         /// <para>
-        ///  <b>Note:</b> The CSR must include a public key that is either an RSA key with a length
-        /// of at least 2048 bits or an ECC key from NIST P-256, NIST P-384, or NIST P-512 curves.
-        /// For supported certificates, consult <a href="https://docs.aws.amazon.com/iot/latest/developerguide/x509-client-certs.html#x509-cert-algorithms">
-        /// Certificate signing algorithms supported by IoT</a>.
-        /// </para>
-        ///  
-        /// <para>
-        ///  <b>Note:</b> Reusing the same certificate signing request (CSR) results in a distinct
-        /// certificate.
-        /// </para>
-        ///  
-        /// <para>
         /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateCertificateFromCsr</a>
-        /// action.
+        /// action. 
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        /// The CSR must include a public key that is either an RSA key with a length of at least
+        /// 2048 bits or an ECC key from NIST P-256 or NIST P-384 curves. For supported certificates,
+        /// consult <a href="https://docs.aws.amazon.com/iot/latest/developerguide/x509-client-certs.html#x509-cert-algorithms">
+        /// Certificate signing algorithms supported by IoT</a>. 
+        /// </para>
+        ///  </note> <note> 
+        /// <para>
+        /// Reusing the same certificate signing request (CSR) results in a distinct certificate.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// You can create multiple certificates in a batch by creating a directory, copying multiple
-        /// .csr files into that directory, and then specifying that directory on the command
-        /// line. The following commands show how to create a batch of certificates given a batch
-        /// of CSRs.
+        /// <code>.csr</code> files into that directory, and then specifying that directory on
+        /// the command line. The following commands show how to create a batch of certificates
+        /// given a batch of CSRs. In the following commands, we assume that a set of CSRs are
+        /// located inside of the directory my-csr-directory:
         /// </para>
         ///  
         /// <para>
-        /// Assuming a set of CSRs are located inside of the directory my-csr-directory:
+        /// On Linux and OS X, the command is: 
         /// </para>
         ///  
         /// <para>
-        /// On Linux and OS X, the command is:
-        /// </para>
-        ///  
-        /// <para>
-        /// $ ls my-csr-directory/ | xargs -I {} aws iot create-certificate-from-csr --certificate-signing-request
-        /// file://my-csr-directory/{}
+        ///  <code>$ ls my-csr-directory/ | xargs -I {} aws iot create-certificate-from-csr --certificate-signing-request
+        /// file://my-csr-directory/{}</code> 
         /// </para>
         ///  
         /// <para>
         /// This command lists all of the CSRs in my-csr-directory and pipes each CSR file name
-        /// to the aws iot create-certificate-from-csr Amazon Web Services CLI command to create
-        /// a certificate for the corresponding CSR.
+        /// to the <code>aws iot create-certificate-from-csr</code> Amazon Web Services CLI command
+        /// to create a certificate for the corresponding CSR. 
         /// </para>
         ///  
         /// <para>
-        /// The aws iot create-certificate-from-csr part of the command can also be run in parallel
-        /// to speed up the certificate creation process:
+        /// You can also run the <code>aws iot create-certificate-from-csr</code> part of the
+        /// command in parallel to speed up the certificate creation process:
         /// </para>
         ///  
         /// <para>
-        /// $ ls my-csr-directory/ | xargs -P 10 -I {} aws iot create-certificate-from-csr --certificate-signing-request
-        /// file://my-csr-directory/{}
+        ///  <code>$ ls my-csr-directory/ | xargs -P 10 -I {} aws iot create-certificate-from-csr
+        /// --certificate-signing-request file://my-csr-directory/{} </code> 
         /// </para>
         ///  
         /// <para>
@@ -1495,8 +1494,8 @@ namespace Amazon.IoT
         /// </para>
         ///  
         /// <para>
-        /// &gt; ls -Name my-csr-directory | %{aws iot create-certificate-from-csr --certificate-signing-request
-        /// file://my-csr-directory/$_}
+        ///  <code>&gt; ls -Name my-csr-directory | %{aws iot create-certificate-from-csr --certificate-signing-request
+        /// file://my-csr-directory/$_} </code> 
         /// </para>
         ///  
         /// <para>
@@ -1505,8 +1504,8 @@ namespace Amazon.IoT
         /// </para>
         ///  
         /// <para>
-        /// &gt; forfiles /p my-csr-directory /c "cmd /c aws iot create-certificate-from-csr --certificate-signing-request
-        /// file://@path"
+        ///  <code>&gt; forfiles /p my-csr-directory /c "cmd /c aws iot create-certificate-from-csr
+        /// --certificate-signing-request file://@path" </code> 
         /// </para>
         /// </summary>
         /// <param name="certificateSigningRequest">The certificate signing request (CSR).</param>
@@ -1531,60 +1530,56 @@ namespace Amazon.IoT
         CreateCertificateFromCsrResponse CreateCertificateFromCsr(string certificateSigningRequest);
 
         /// <summary>
-        /// Creates an X.509 certificate using the specified certificate signing request.
+        /// Creates an X.509 certificate using the specified certificate signing request. 
         /// 
         ///  
         /// <para>
-        ///  <b>Note:</b> The CSR must include a public key that is either an RSA key with a length
-        /// of at least 2048 bits or an ECC key from NIST P-256, NIST P-384, or NIST P-512 curves.
-        /// For supported certificates, consult <a href="https://docs.aws.amazon.com/iot/latest/developerguide/x509-client-certs.html#x509-cert-algorithms">
-        /// Certificate signing algorithms supported by IoT</a>.
-        /// </para>
-        ///  
-        /// <para>
-        ///  <b>Note:</b> Reusing the same certificate signing request (CSR) results in a distinct
-        /// certificate.
-        /// </para>
-        ///  
-        /// <para>
         /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateCertificateFromCsr</a>
-        /// action.
+        /// action. 
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        /// The CSR must include a public key that is either an RSA key with a length of at least
+        /// 2048 bits or an ECC key from NIST P-256 or NIST P-384 curves. For supported certificates,
+        /// consult <a href="https://docs.aws.amazon.com/iot/latest/developerguide/x509-client-certs.html#x509-cert-algorithms">
+        /// Certificate signing algorithms supported by IoT</a>. 
+        /// </para>
+        ///  </note> <note> 
+        /// <para>
+        /// Reusing the same certificate signing request (CSR) results in a distinct certificate.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// You can create multiple certificates in a batch by creating a directory, copying multiple
-        /// .csr files into that directory, and then specifying that directory on the command
-        /// line. The following commands show how to create a batch of certificates given a batch
-        /// of CSRs.
+        /// <code>.csr</code> files into that directory, and then specifying that directory on
+        /// the command line. The following commands show how to create a batch of certificates
+        /// given a batch of CSRs. In the following commands, we assume that a set of CSRs are
+        /// located inside of the directory my-csr-directory:
         /// </para>
         ///  
         /// <para>
-        /// Assuming a set of CSRs are located inside of the directory my-csr-directory:
+        /// On Linux and OS X, the command is: 
         /// </para>
         ///  
         /// <para>
-        /// On Linux and OS X, the command is:
-        /// </para>
-        ///  
-        /// <para>
-        /// $ ls my-csr-directory/ | xargs -I {} aws iot create-certificate-from-csr --certificate-signing-request
-        /// file://my-csr-directory/{}
+        ///  <code>$ ls my-csr-directory/ | xargs -I {} aws iot create-certificate-from-csr --certificate-signing-request
+        /// file://my-csr-directory/{}</code> 
         /// </para>
         ///  
         /// <para>
         /// This command lists all of the CSRs in my-csr-directory and pipes each CSR file name
-        /// to the aws iot create-certificate-from-csr Amazon Web Services CLI command to create
-        /// a certificate for the corresponding CSR.
+        /// to the <code>aws iot create-certificate-from-csr</code> Amazon Web Services CLI command
+        /// to create a certificate for the corresponding CSR. 
         /// </para>
         ///  
         /// <para>
-        /// The aws iot create-certificate-from-csr part of the command can also be run in parallel
-        /// to speed up the certificate creation process:
+        /// You can also run the <code>aws iot create-certificate-from-csr</code> part of the
+        /// command in parallel to speed up the certificate creation process:
         /// </para>
         ///  
         /// <para>
-        /// $ ls my-csr-directory/ | xargs -P 10 -I {} aws iot create-certificate-from-csr --certificate-signing-request
-        /// file://my-csr-directory/{}
+        ///  <code>$ ls my-csr-directory/ | xargs -P 10 -I {} aws iot create-certificate-from-csr
+        /// --certificate-signing-request file://my-csr-directory/{} </code> 
         /// </para>
         ///  
         /// <para>
@@ -1593,8 +1588,8 @@ namespace Amazon.IoT
         /// </para>
         ///  
         /// <para>
-        /// &gt; ls -Name my-csr-directory | %{aws iot create-certificate-from-csr --certificate-signing-request
-        /// file://my-csr-directory/$_}
+        ///  <code>&gt; ls -Name my-csr-directory | %{aws iot create-certificate-from-csr --certificate-signing-request
+        /// file://my-csr-directory/$_} </code> 
         /// </para>
         ///  
         /// <para>
@@ -1603,8 +1598,8 @@ namespace Amazon.IoT
         /// </para>
         ///  
         /// <para>
-        /// &gt; forfiles /p my-csr-directory /c "cmd /c aws iot create-certificate-from-csr --certificate-signing-request
-        /// file://@path"
+        ///  <code>&gt; forfiles /p my-csr-directory /c "cmd /c aws iot create-certificate-from-csr
+        /// --certificate-signing-request file://@path" </code> 
         /// </para>
         /// </summary>
         /// <param name="certificateSigningRequest">The certificate signing request (CSR).</param>
@@ -1630,60 +1625,56 @@ namespace Amazon.IoT
         CreateCertificateFromCsrResponse CreateCertificateFromCsr(string certificateSigningRequest, bool setAsActive);
 
         /// <summary>
-        /// Creates an X.509 certificate using the specified certificate signing request.
+        /// Creates an X.509 certificate using the specified certificate signing request. 
         /// 
         ///  
         /// <para>
-        ///  <b>Note:</b> The CSR must include a public key that is either an RSA key with a length
-        /// of at least 2048 bits or an ECC key from NIST P-256, NIST P-384, or NIST P-512 curves.
-        /// For supported certificates, consult <a href="https://docs.aws.amazon.com/iot/latest/developerguide/x509-client-certs.html#x509-cert-algorithms">
-        /// Certificate signing algorithms supported by IoT</a>.
-        /// </para>
-        ///  
-        /// <para>
-        ///  <b>Note:</b> Reusing the same certificate signing request (CSR) results in a distinct
-        /// certificate.
-        /// </para>
-        ///  
-        /// <para>
         /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateCertificateFromCsr</a>
-        /// action.
+        /// action. 
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        /// The CSR must include a public key that is either an RSA key with a length of at least
+        /// 2048 bits or an ECC key from NIST P-256 or NIST P-384 curves. For supported certificates,
+        /// consult <a href="https://docs.aws.amazon.com/iot/latest/developerguide/x509-client-certs.html#x509-cert-algorithms">
+        /// Certificate signing algorithms supported by IoT</a>. 
+        /// </para>
+        ///  </note> <note> 
+        /// <para>
+        /// Reusing the same certificate signing request (CSR) results in a distinct certificate.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// You can create multiple certificates in a batch by creating a directory, copying multiple
-        /// .csr files into that directory, and then specifying that directory on the command
-        /// line. The following commands show how to create a batch of certificates given a batch
-        /// of CSRs.
+        /// <code>.csr</code> files into that directory, and then specifying that directory on
+        /// the command line. The following commands show how to create a batch of certificates
+        /// given a batch of CSRs. In the following commands, we assume that a set of CSRs are
+        /// located inside of the directory my-csr-directory:
         /// </para>
         ///  
         /// <para>
-        /// Assuming a set of CSRs are located inside of the directory my-csr-directory:
+        /// On Linux and OS X, the command is: 
         /// </para>
         ///  
         /// <para>
-        /// On Linux and OS X, the command is:
-        /// </para>
-        ///  
-        /// <para>
-        /// $ ls my-csr-directory/ | xargs -I {} aws iot create-certificate-from-csr --certificate-signing-request
-        /// file://my-csr-directory/{}
+        ///  <code>$ ls my-csr-directory/ | xargs -I {} aws iot create-certificate-from-csr --certificate-signing-request
+        /// file://my-csr-directory/{}</code> 
         /// </para>
         ///  
         /// <para>
         /// This command lists all of the CSRs in my-csr-directory and pipes each CSR file name
-        /// to the aws iot create-certificate-from-csr Amazon Web Services CLI command to create
-        /// a certificate for the corresponding CSR.
+        /// to the <code>aws iot create-certificate-from-csr</code> Amazon Web Services CLI command
+        /// to create a certificate for the corresponding CSR. 
         /// </para>
         ///  
         /// <para>
-        /// The aws iot create-certificate-from-csr part of the command can also be run in parallel
-        /// to speed up the certificate creation process:
+        /// You can also run the <code>aws iot create-certificate-from-csr</code> part of the
+        /// command in parallel to speed up the certificate creation process:
         /// </para>
         ///  
         /// <para>
-        /// $ ls my-csr-directory/ | xargs -P 10 -I {} aws iot create-certificate-from-csr --certificate-signing-request
-        /// file://my-csr-directory/{}
+        ///  <code>$ ls my-csr-directory/ | xargs -P 10 -I {} aws iot create-certificate-from-csr
+        /// --certificate-signing-request file://my-csr-directory/{} </code> 
         /// </para>
         ///  
         /// <para>
@@ -1692,8 +1683,8 @@ namespace Amazon.IoT
         /// </para>
         ///  
         /// <para>
-        /// &gt; ls -Name my-csr-directory | %{aws iot create-certificate-from-csr --certificate-signing-request
-        /// file://my-csr-directory/$_}
+        ///  <code>&gt; ls -Name my-csr-directory | %{aws iot create-certificate-from-csr --certificate-signing-request
+        /// file://my-csr-directory/$_} </code> 
         /// </para>
         ///  
         /// <para>
@@ -1702,8 +1693,8 @@ namespace Amazon.IoT
         /// </para>
         ///  
         /// <para>
-        /// &gt; forfiles /p my-csr-directory /c "cmd /c aws iot create-certificate-from-csr --certificate-signing-request
-        /// file://@path"
+        ///  <code>&gt; forfiles /p my-csr-directory /c "cmd /c aws iot create-certificate-from-csr
+        /// --certificate-signing-request file://@path" </code> 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCertificateFromCsr service method.</param>
@@ -2503,6 +2494,132 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  CreatePackage
+
+
+        /// <summary>
+        /// Creates an IoT software package that can be deployed to your fleet.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreatePackage</a>
+        /// and <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetIndexingConfiguration</a>
+        /// actions.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePackage service method.</param>
+        /// 
+        /// <returns>The response from the CreatePackage service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.ConflictException">
+        /// A resource with the same name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InternalServerException">
+        /// Internal error from the service that indicates an unexpected error or that the service
+        /// is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceQuotaExceededException">
+        /// A limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ValidationException">
+        /// The request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreatePackage">REST API Reference for CreatePackage Operation</seealso>
+        CreatePackageResponse CreatePackage(CreatePackageRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreatePackage operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreatePackage operation on AmazonIoTClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreatePackage
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreatePackage">REST API Reference for CreatePackage Operation</seealso>
+        IAsyncResult BeginCreatePackage(CreatePackageRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreatePackage operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreatePackage.</param>
+        /// 
+        /// <returns>Returns a  CreatePackageResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreatePackage">REST API Reference for CreatePackage Operation</seealso>
+        CreatePackageResponse EndCreatePackage(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreatePackageVersion
+
+
+        /// <summary>
+        /// Creates a new version for an existing IoT software package.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreatePackageVersion</a>
+        /// and <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetIndexingConfiguration</a>
+        /// actions.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePackageVersion service method.</param>
+        /// 
+        /// <returns>The response from the CreatePackageVersion service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.ConflictException">
+        /// A resource with the same name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InternalServerException">
+        /// Internal error from the service that indicates an unexpected error or that the service
+        /// is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceQuotaExceededException">
+        /// A limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ValidationException">
+        /// The request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreatePackageVersion">REST API Reference for CreatePackageVersion Operation</seealso>
+        CreatePackageVersionResponse CreatePackageVersion(CreatePackageVersionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreatePackageVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreatePackageVersion operation on AmazonIoTClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreatePackageVersion
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreatePackageVersion">REST API Reference for CreatePackageVersion Operation</seealso>
+        IAsyncResult BeginCreatePackageVersion(CreatePackageVersionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreatePackageVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreatePackageVersion.</param>
+        /// 
+        /// <returns>Returns a  CreatePackageVersionResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreatePackageVersion">REST API Reference for CreatePackageVersion Operation</seealso>
+        CreatePackageVersionResponse EndCreatePackageVersion(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreatePolicy
 
 
@@ -2865,7 +2982,7 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Creates a fleet provisioning template.
+        /// Creates a provisioning template.
         /// 
         ///  
         /// <para>
@@ -2929,7 +3046,7 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Creates a new version of a fleet provisioning template.
+        /// Creates a new version of a provisioning template.
         /// 
         ///  
         /// <para>
@@ -4632,6 +4749,122 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  DeletePackage
+
+
+        /// <summary>
+        /// Deletes a specific version from a software package.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Note:</b> All package versions must be deleted before deleting the software package.
+        /// </para>
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeletePackageVersion</a>
+        /// action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePackage service method.</param>
+        /// 
+        /// <returns>The response from the DeletePackage service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalServerException">
+        /// Internal error from the service that indicates an unexpected error or that the service
+        /// is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ValidationException">
+        /// The request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeletePackage">REST API Reference for DeletePackage Operation</seealso>
+        DeletePackageResponse DeletePackage(DeletePackageRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeletePackage operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeletePackage operation on AmazonIoTClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeletePackage
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeletePackage">REST API Reference for DeletePackage Operation</seealso>
+        IAsyncResult BeginDeletePackage(DeletePackageRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeletePackage operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeletePackage.</param>
+        /// 
+        /// <returns>Returns a  DeletePackageResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeletePackage">REST API Reference for DeletePackage Operation</seealso>
+        DeletePackageResponse EndDeletePackage(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeletePackageVersion
+
+
+        /// <summary>
+        /// Deletes a specific version from a software package.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Note:</b> If a package version is designated as default, you must remove the designation
+        /// from the package using the <a>UpdatePackage</a> action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePackageVersion service method.</param>
+        /// 
+        /// <returns>The response from the DeletePackageVersion service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalServerException">
+        /// Internal error from the service that indicates an unexpected error or that the service
+        /// is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ValidationException">
+        /// The request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeletePackageVersion">REST API Reference for DeletePackageVersion Operation</seealso>
+        DeletePackageVersionResponse DeletePackageVersion(DeletePackageVersionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeletePackageVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeletePackageVersion operation on AmazonIoTClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeletePackageVersion
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeletePackageVersion">REST API Reference for DeletePackageVersion Operation</seealso>
+        IAsyncResult BeginDeletePackageVersion(DeletePackageVersionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeletePackageVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeletePackageVersion.</param>
+        /// 
+        /// <returns>Returns a  DeletePackageVersionResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeletePackageVersion">REST API Reference for DeletePackageVersion Operation</seealso>
+        DeletePackageVersionResponse EndDeletePackageVersion(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeletePolicy
 
 
@@ -4889,7 +5122,7 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Deletes a fleet provisioning template.
+        /// Deletes a provisioning template.
         /// 
         ///  
         /// <para>
@@ -4957,7 +5190,7 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Deletes a fleet provisioning template version.
+        /// Deletes a provisioning template version.
         /// 
         ///  
         /// <para>
@@ -7249,7 +7482,7 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Returns information about a fleet provisioning template.
+        /// Returns information about a provisioning template.
         /// 
         ///  
         /// <para>
@@ -7310,7 +7543,7 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Returns information about a fleet provisioning template version.
+        /// Returns information about a provisioning template version.
         /// 
         ///  
         /// <para>
@@ -7966,11 +8199,12 @@ namespace Amazon.IoT
         /// <summary>
         /// Removes the specified policy from the specified certificate.
         /// 
-        ///  <note> 
+        ///  
         /// <para>
-        /// This action is deprecated. Please use <a>DetachPolicy</a> instead.
+        ///  <b>Note:</b> This action is deprecated and works as expected for backward compatibility,
+        /// but we won't add enhancements. Use <a>DetachPolicy</a> instead.
         /// </para>
-        ///  </note> 
+        ///  
         /// <para>
         /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DetachPrincipalPolicy</a>
         /// action.
@@ -8005,11 +8239,12 @@ namespace Amazon.IoT
         /// <summary>
         /// Removes the specified policy from the specified certificate.
         /// 
-        ///  <note> 
+        ///  
         /// <para>
-        /// This action is deprecated. Please use <a>DetachPolicy</a> instead.
+        ///  <b>Note:</b> This action is deprecated and works as expected for backward compatibility,
+        /// but we won't add enhancements. Use <a>DetachPolicy</a> instead.
         /// </para>
-        ///  </note> 
+        ///  
         /// <para>
         /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DetachPrincipalPolicy</a>
         /// action.
@@ -8874,6 +9109,177 @@ namespace Amazon.IoT
         /// <returns>Returns a  GetOTAUpdateResult from IoT.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetOTAUpdate">REST API Reference for GetOTAUpdate Operation</seealso>
         GetOTAUpdateResponse EndGetOTAUpdate(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetPackage
+
+
+        /// <summary>
+        /// Gets information about the specified software package.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetPackage</a>
+        /// action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPackage service method.</param>
+        /// 
+        /// <returns>The response from the GetPackage service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalServerException">
+        /// Internal error from the service that indicates an unexpected error or that the service
+        /// is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ValidationException">
+        /// The request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetPackage">REST API Reference for GetPackage Operation</seealso>
+        GetPackageResponse GetPackage(GetPackageRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetPackage operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetPackage operation on AmazonIoTClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetPackage
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetPackage">REST API Reference for GetPackage Operation</seealso>
+        IAsyncResult BeginGetPackage(GetPackageRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetPackage operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetPackage.</param>
+        /// 
+        /// <returns>Returns a  GetPackageResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetPackage">REST API Reference for GetPackage Operation</seealso>
+        GetPackageResponse EndGetPackage(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetPackageConfiguration
+
+
+        /// <summary>
+        /// Gets information about the specified software package's configuration.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetPackageConfiguration</a>
+        /// action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPackageConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the GetPackageConfiguration service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalServerException">
+        /// Internal error from the service that indicates an unexpected error or that the service
+        /// is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetPackageConfiguration">REST API Reference for GetPackageConfiguration Operation</seealso>
+        GetPackageConfigurationResponse GetPackageConfiguration(GetPackageConfigurationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetPackageConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetPackageConfiguration operation on AmazonIoTClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetPackageConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetPackageConfiguration">REST API Reference for GetPackageConfiguration Operation</seealso>
+        IAsyncResult BeginGetPackageConfiguration(GetPackageConfigurationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetPackageConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetPackageConfiguration.</param>
+        /// 
+        /// <returns>Returns a  GetPackageConfigurationResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetPackageConfiguration">REST API Reference for GetPackageConfiguration Operation</seealso>
+        GetPackageConfigurationResponse EndGetPackageConfiguration(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetPackageVersion
+
+
+        /// <summary>
+        /// Gets information about the specified package version. 
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetPackageVersion</a>
+        /// action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPackageVersion service method.</param>
+        /// 
+        /// <returns>The response from the GetPackageVersion service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalServerException">
+        /// Internal error from the service that indicates an unexpected error or that the service
+        /// is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ValidationException">
+        /// The request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetPackageVersion">REST API Reference for GetPackageVersion Operation</seealso>
+        GetPackageVersionResponse GetPackageVersion(GetPackageVersionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetPackageVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetPackageVersion operation on AmazonIoTClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetPackageVersion
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetPackageVersion">REST API Reference for GetPackageVersion Operation</seealso>
+        IAsyncResult BeginGetPackageVersion(GetPackageVersionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetPackageVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetPackageVersion.</param>
+        /// 
+        /// <returns>Returns a  GetPackageVersionResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetPackageVersion">REST API Reference for GetPackageVersion Operation</seealso>
+        GetPackageVersionResponse EndGetPackageVersion(IAsyncResult asyncResult);
 
         #endregion
         
@@ -10923,6 +11329,59 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  ListMetricValues
+
+
+        /// <summary>
+        /// Lists the values reported for an IoT Device Defender metric (device-side metric, cloud-side
+        /// metric, or custom metric) by the given thing during the specified time period.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMetricValues service method.</param>
+        /// 
+        /// <returns>The response from the ListMetricValues service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListMetricValues">REST API Reference for ListMetricValues Operation</seealso>
+        ListMetricValuesResponse ListMetricValues(ListMetricValuesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListMetricValues operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListMetricValues operation on AmazonIoTClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListMetricValues
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListMetricValues">REST API Reference for ListMetricValues Operation</seealso>
+        IAsyncResult BeginListMetricValues(ListMetricValuesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListMetricValues operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListMetricValues.</param>
+        /// 
+        /// <returns>Returns a  ListMetricValuesResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListMetricValues">REST API Reference for ListMetricValues Operation</seealso>
+        ListMetricValuesResponse EndListMetricValues(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListMitigationActions
 
 
@@ -11100,6 +11559,118 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  ListPackages
+
+
+        /// <summary>
+        /// Lists the software packages associated to the account.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListPackages</a>
+        /// action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPackages service method.</param>
+        /// 
+        /// <returns>The response from the ListPackages service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalServerException">
+        /// Internal error from the service that indicates an unexpected error or that the service
+        /// is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ValidationException">
+        /// The request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListPackages">REST API Reference for ListPackages Operation</seealso>
+        ListPackagesResponse ListPackages(ListPackagesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListPackages operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListPackages operation on AmazonIoTClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListPackages
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListPackages">REST API Reference for ListPackages Operation</seealso>
+        IAsyncResult BeginListPackages(ListPackagesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListPackages operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListPackages.</param>
+        /// 
+        /// <returns>Returns a  ListPackagesResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListPackages">REST API Reference for ListPackages Operation</seealso>
+        ListPackagesResponse EndListPackages(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListPackageVersions
+
+
+        /// <summary>
+        /// Lists the software package versions associated to the account.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListPackageVersions</a>
+        /// action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPackageVersions service method.</param>
+        /// 
+        /// <returns>The response from the ListPackageVersions service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalServerException">
+        /// Internal error from the service that indicates an unexpected error or that the service
+        /// is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ValidationException">
+        /// The request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListPackageVersions">REST API Reference for ListPackageVersions Operation</seealso>
+        ListPackageVersionsResponse ListPackageVersions(ListPackageVersionsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListPackageVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListPackageVersions operation on AmazonIoTClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListPackageVersions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListPackageVersions">REST API Reference for ListPackageVersions Operation</seealso>
+        IAsyncResult BeginListPackageVersions(ListPackageVersionsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListPackageVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListPackageVersions.</param>
+        /// 
+        /// <returns>Returns a  ListPackageVersionsResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListPackageVersions">REST API Reference for ListPackageVersions Operation</seealso>
+        ListPackageVersionsResponse EndListPackageVersions(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListPolicies
 
 
@@ -11198,7 +11769,8 @@ namespace Amazon.IoT
         /// 
         ///  
         /// <para>
-        ///  <b>Note:</b> This action is deprecated. Please use <a>ListTargetsForPolicy</a> instead.
+        ///  <b>Note:</b> This action is deprecated and works as expected for backward compatibility,
+        /// but we won't add enhancements. Use <a>ListTargetsForPolicy</a> instead.
         /// </para>
         ///  
         /// <para>
@@ -11368,7 +11940,8 @@ namespace Amazon.IoT
         /// 
         ///  
         /// <para>
-        ///  <b>Note:</b> This action is deprecated. Please use <a>ListAttachedPolicies</a> instead.
+        ///  <b>Note:</b> This action is deprecated and works as expected for backward compatibility,
+        /// but we won't add enhancements. Use <a>ListAttachedPolicies</a> instead.
         /// </para>
         ///  
         /// <para>
@@ -11408,7 +11981,8 @@ namespace Amazon.IoT
         /// 
         ///  
         /// <para>
-        ///  <b>Note:</b> This action is deprecated. Please use <a>ListAttachedPolicies</a> instead.
+        ///  <b>Note:</b> This action is deprecated and works as expected for backward compatibility,
+        /// but we won't add enhancements. Use <a>ListAttachedPolicies</a> instead.
         /// </para>
         ///  
         /// <para>
@@ -11576,7 +12150,7 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Lists the fleet provisioning templates in your Amazon Web Services account.
+        /// Lists the provisioning templates in your Amazon Web Services account.
         /// 
         ///  
         /// <para>
@@ -11634,7 +12208,7 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// A list of fleet provisioning template versions.
+        /// A list of provisioning template versions.
         /// 
         ///  
         /// <para>
@@ -11688,6 +12262,105 @@ namespace Amazon.IoT
         /// <returns>Returns a  ListProvisioningTemplateVersionsResult from IoT.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListProvisioningTemplateVersions">REST API Reference for ListProvisioningTemplateVersions Operation</seealso>
         ListProvisioningTemplateVersionsResponse EndListProvisioningTemplateVersions(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListRelatedResourcesForAuditFinding
+
+
+        /// <summary>
+        /// The related resources of an Audit finding. The following resources can be returned
+        /// from calling this API:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// DEVICE_CERTIFICATE
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CA_CERTIFICATE
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// IOT_POLICY
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// COGNITO_IDENTITY_POOL
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CLIENT_ID
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ACCOUNT_SETTINGS
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ROLE_ALIAS
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// IAM_ROLE
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ISSUER_CERTIFICATE
+        /// </para>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// This API is similar to DescribeAuditFinding's <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_DescribeAuditFinding.html">RelatedResources</a>
+        /// but provides pagination and is not limited to 10 resources. When calling <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_DescribeAuditFinding.html">DescribeAuditFinding</a>
+        /// for the intermediate CA revoked for active device certificates check, RelatedResources
+        /// will not be populated. You must use this API, ListRelatedResourcesForAuditFinding,
+        /// to list the certificates.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRelatedResourcesForAuditFinding service method.</param>
+        /// 
+        /// <returns>The response from the ListRelatedResourcesForAuditFinding service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListRelatedResourcesForAuditFinding">REST API Reference for ListRelatedResourcesForAuditFinding Operation</seealso>
+        ListRelatedResourcesForAuditFindingResponse ListRelatedResourcesForAuditFinding(ListRelatedResourcesForAuditFindingRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListRelatedResourcesForAuditFinding operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListRelatedResourcesForAuditFinding operation on AmazonIoTClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListRelatedResourcesForAuditFinding
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListRelatedResourcesForAuditFinding">REST API Reference for ListRelatedResourcesForAuditFinding Operation</seealso>
+        IAsyncResult BeginListRelatedResourcesForAuditFinding(ListRelatedResourcesForAuditFindingRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListRelatedResourcesForAuditFinding operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListRelatedResourcesForAuditFinding.</param>
+        /// 
+        /// <returns>Returns a  ListRelatedResourcesForAuditFindingResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListRelatedResourcesForAuditFinding">REST API Reference for ListRelatedResourcesForAuditFinding Operation</seealso>
+        ListRelatedResourcesForAuditFindingResponse EndListRelatedResourcesForAuditFinding(IAsyncResult asyncResult);
 
         #endregion
         
@@ -12509,7 +13182,8 @@ namespace Amazon.IoT
         /// Lists your things. Use the <b>attributeName</b> and <b>attributeValue</b> parameters
         /// to filter your things. For example, calling <code>ListThings</code> with attributeName=Color
         /// and attributeValue=Red retrieves all things in the registry that contain an attribute
-        /// <b>Color</b> with the value <b>Red</b>. 
+        /// <b>Color</b> with the value <b>Red</b>. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/thing-registry.html#list-things">List
+        /// Things</a> from the <i>Amazon Web Services IoT Core Developer Guide</i>.
         /// 
         ///  
         /// <para>
@@ -12548,7 +13222,8 @@ namespace Amazon.IoT
         /// Lists your things. Use the <b>attributeName</b> and <b>attributeValue</b> parameters
         /// to filter your things. For example, calling <code>ListThings</code> with attributeName=Color
         /// and attributeValue=Red retrieves all things in the registry that contain an attribute
-        /// <b>Color</b> with the value <b>Red</b>. 
+        /// <b>Color</b> with the value <b>Red</b>. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/thing-registry.html#list-things">List
+        /// Things</a> from the <i>Amazon Web Services IoT Core Developer Guide</i>.
         /// 
         ///  
         /// <para>
@@ -13095,12 +13770,10 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Registers a CA certificate with IoT. This CA certificate can then be used to sign
-        /// device certificates, which can be then registered with IoT. You can register up to
-        /// 10 CA certificates per Amazon Web Services account that have the same subject field.
-        /// This enables you to have up to 10 certificate authorities sign your device certificates.
-        /// If you have more than one CA certificate registered, make sure you pass the CA certificate
-        /// when you register your device certificates with the <a>RegisterCertificate</a> action.
+        /// Registers a CA certificate with Amazon Web Services IoT Core. There is no limit to
+        /// the number of CA certificates you can register in your Amazon Web Services account.
+        /// You can register up to 10 CA certificates with the same <code>CA subject field</code>
+        /// per Amazon Web Services account.
         /// 
         ///  
         /// <para>
@@ -13128,6 +13801,9 @@ namespace Amazon.IoT
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.ResourceAlreadyExistsException">
         /// The resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
         /// The service is temporarily unavailable.
@@ -13173,9 +13849,10 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Registers a device certificate with IoT. If you have more than one CA certificate
-        /// that has the same subject field, you must specify the CA certificate that was used
-        /// to sign the device certificate being registered.
+        /// Registers a device certificate with IoT in the same <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_CertificateDescription.html#iot-Type-CertificateDescription-certificateMode">certificate
+        /// mode</a> as the signing CA. If you have more than one CA certificate that has the
+        /// same subject field, you must specify the CA certificate that was used to sign the
+        /// device certificate being registered.
         /// 
         ///  
         /// <para>
@@ -15813,11 +16490,188 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  UpdatePackage
+
+
+        /// <summary>
+        /// Updates the supported fields for a specific package.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdatePackage</a>
+        /// and <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetIndexingConfiguration</a>
+        /// actions.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePackage service method.</param>
+        /// 
+        /// <returns>The response from the UpdatePackage service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalServerException">
+        /// Internal error from the service that indicates an unexpected error or that the service
+        /// is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ValidationException">
+        /// The request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdatePackage">REST API Reference for UpdatePackage Operation</seealso>
+        UpdatePackageResponse UpdatePackage(UpdatePackageRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdatePackage operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePackage operation on AmazonIoTClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdatePackage
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdatePackage">REST API Reference for UpdatePackage Operation</seealso>
+        IAsyncResult BeginUpdatePackage(UpdatePackageRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdatePackage operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdatePackage.</param>
+        /// 
+        /// <returns>Returns a  UpdatePackageResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdatePackage">REST API Reference for UpdatePackage Operation</seealso>
+        UpdatePackageResponse EndUpdatePackage(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdatePackageConfiguration
+
+
+        /// <summary>
+        /// Updates the package configuration.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdatePackageConfiguration</a>
+        /// and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html">iam:PassRole</a>
+        /// actions.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePackageConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the UpdatePackageConfiguration service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalServerException">
+        /// Internal error from the service that indicates an unexpected error or that the service
+        /// is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ValidationException">
+        /// The request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdatePackageConfiguration">REST API Reference for UpdatePackageConfiguration Operation</seealso>
+        UpdatePackageConfigurationResponse UpdatePackageConfiguration(UpdatePackageConfigurationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdatePackageConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePackageConfiguration operation on AmazonIoTClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdatePackageConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdatePackageConfiguration">REST API Reference for UpdatePackageConfiguration Operation</seealso>
+        IAsyncResult BeginUpdatePackageConfiguration(UpdatePackageConfigurationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdatePackageConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdatePackageConfiguration.</param>
+        /// 
+        /// <returns>Returns a  UpdatePackageConfigurationResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdatePackageConfiguration">REST API Reference for UpdatePackageConfiguration Operation</seealso>
+        UpdatePackageConfigurationResponse EndUpdatePackageConfiguration(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdatePackageVersion
+
+
+        /// <summary>
+        /// Updates the supported fields for a specific package version.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdatePackageVersion</a>
+        /// and <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetIndexingConfiguration</a>
+        /// actions.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePackageVersion service method.</param>
+        /// 
+        /// <returns>The response from the UpdatePackageVersion service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalServerException">
+        /// Internal error from the service that indicates an unexpected error or that the service
+        /// is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ValidationException">
+        /// The request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdatePackageVersion">REST API Reference for UpdatePackageVersion Operation</seealso>
+        UpdatePackageVersionResponse UpdatePackageVersion(UpdatePackageVersionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdatePackageVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePackageVersion operation on AmazonIoTClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdatePackageVersion
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdatePackageVersion">REST API Reference for UpdatePackageVersion Operation</seealso>
+        IAsyncResult BeginUpdatePackageVersion(UpdatePackageVersionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdatePackageVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdatePackageVersion.</param>
+        /// 
+        /// <returns>Returns a  UpdatePackageVersionResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdatePackageVersion">REST API Reference for UpdatePackageVersion Operation</seealso>
+        UpdatePackageVersionResponse EndUpdatePackageVersion(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  UpdateProvisioningTemplate
 
 
         /// <summary>
-        /// Updates a fleet provisioning template.
+        /// Updates a provisioning template.
         /// 
         ///  
         /// <para>

@@ -56,7 +56,7 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ResilienceHub");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-04-30";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-04-30";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/remove-draft-app-version-resource-mappings";
@@ -78,6 +78,17 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
                     foreach(var publicRequestAppRegistryAppNamesListValue in publicRequest.AppRegistryAppNames)
                     {
                             context.Writer.Write(publicRequestAppRegistryAppNamesListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetEksSourceNames())
+                {
+                    context.Writer.WritePropertyName("eksSourceNames");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestEksSourceNamesListValue in publicRequest.EksSourceNames)
+                    {
+                            context.Writer.Write(publicRequestEksSourceNamesListValue);
                     }
                     context.Writer.WriteArrayEnd();
                 }
@@ -115,7 +126,17 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
-        
+                if(publicRequest.IsSetTerraformSourceNames())
+                {
+                    context.Writer.WritePropertyName("terraformSourceNames");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestTerraformSourceNamesListValue in publicRequest.TerraformSourceNames)
+                    {
+                            context.Writer.Write(publicRequestTerraformSourceNamesListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

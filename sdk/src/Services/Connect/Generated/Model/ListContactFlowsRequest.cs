@@ -30,17 +30,17 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the ListContactFlows operation.
-    /// Provides information about the contact flows for the specified Amazon Connect instance.
+    /// Provides information about the flows for the specified Amazon Connect instance.
     /// 
     ///  
     /// <para>
-    /// You can also create and update contact flows using the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon
+    /// You can also create and update flows using the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language.html">Amazon
     /// Connect Flow language</a>.
     /// </para>
     ///  
     /// <para>
-    /// For more information about contact flows, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-contact-flows.html">Contact
-    /// Flows</a> in the <i>Amazon Connect Administrator Guide</i>.
+    /// For more information about flows, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-contact-flows.html">Flows</a>
+    /// in the <i>Amazon Connect Administrator Guide</i>.
     /// </para>
     /// </summary>
     public partial class ListContactFlowsRequest : AmazonConnectRequest
@@ -53,7 +53,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property ContactFlowTypes. 
         /// <para>
-        /// The type of contact flow.
+        /// The type of flow.
         /// </para>
         /// </summary>
         [AWSProperty(Max=10)]
@@ -72,8 +72,8 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The identifier of the Amazon Connect instance. You can find the instanceId in the
-        /// ARN of the instance.
+        /// The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+        /// the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
@@ -92,7 +92,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of results to return per page.
+        /// The maximum number of results to return per page. The default MaxResult size is 100.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]

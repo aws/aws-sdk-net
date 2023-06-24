@@ -30,8 +30,18 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeLoadBalancers operation.
+    /// <note> 
+    /// <para>
+    /// This API operation is superseded by <a>DescribeTrafficSources</a>, which can describe
+    /// multiple traffic sources types. We recommend using <code>DescribeTrafficSources</code>
+    /// to simplify how you manage traffic sources. However, we continue to support <code>DescribeLoadBalancers</code>.
+    /// You can use both the original <code>DescribeLoadBalancers</code> API operation and
+    /// <code>DescribeTrafficSources</code> on the same Auto Scaling group.
+    /// </para>
+    ///  </note> 
+    /// <para>
     /// Gets information about the load balancers for the specified Auto Scaling group.
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// This operation describes only Classic Load Balancers. If you have Application Load
@@ -40,7 +50,7 @@ namespace Amazon.AutoScaling.Model
     /// </para>
     ///  
     /// <para>
-    /// To determine the availability of registered instances, use the <code>State</code>
+    /// To determine the attachment status of the load balancer, use the <code>State</code>
     /// element in the response. When you attach a load balancer to an Auto Scaling group,
     /// the initial <code>State</code> value is <code>Adding</code>. The state transitions
     /// to <code>Added</code> after all Auto Scaling instances are registered with the load
@@ -62,9 +72,9 @@ namespace Amazon.AutoScaling.Model
     /// <para>
     /// For help with failed health checks, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ts-as-healthchecks.html">Troubleshooting
     /// Amazon EC2 Auto Scaling: Health checks</a> in the <i>Amazon EC2 Auto Scaling User
-    /// Guide</i>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Elastic
-    /// Load Balancing and Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User
-    /// Guide</i>. 
+    /// Guide</i>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Use
+    /// Elastic Load Balancing to distribute traffic across the instances in your Auto Scaling
+    /// group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. 
     /// </para>
     /// </summary>
     public partial class DescribeLoadBalancersRequest : AmazonAutoScalingRequest

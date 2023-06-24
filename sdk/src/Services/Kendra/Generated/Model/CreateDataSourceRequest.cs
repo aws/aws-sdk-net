@@ -30,7 +30,7 @@ namespace Amazon.Kendra.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDataSource operation.
-    /// Creates a data source that you want to use with an Amazon Kendra index. 
+    /// Creates a data source connector that you want to use with an Amazon Kendra index.
     /// 
     ///  
     /// <para>
@@ -44,9 +44,10 @@ namespace Amazon.Kendra.Model
     /// </para>
     ///  
     /// <para>
-    /// Amazon S3 and <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-custom.html">custom</a>
-    /// data sources are the only supported data sources in the Amazon Web Services GovCloud
-    /// (US-West) region.
+    /// For an example of creating an index and data source using the Python SDK, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/gs-python.html">Getting
+    /// started with Python SDK</a>. For an example of creating an index and data source using
+    /// the Java SDK, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/gs-java.html">Getting
+    /// started with Java SDK</a>.
     /// </para>
     /// </summary>
     public partial class CreateDataSourceRequest : AmazonKendraRequest
@@ -62,13 +63,14 @@ namespace Amazon.Kendra.Model
         private string _schedule;
         private List<Tag> _tags = new List<Tag>();
         private DataSourceType _type;
+        private DataSourceVpcConfiguration _vpcConfiguration;
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// A token that you provide to identify the request to create a data source. Multiple
-        /// calls to the <code>CreateDataSource</code> operation with the same client token will
-        /// create only one data source.
+        /// A token that you provide to identify the request to create a data source connector.
+        /// Multiple calls to the <code>CreateDataSource</code> API with the same client token
+        /// will create only one data source connector.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -87,7 +89,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Configuration. 
         /// <para>
-        /// The connector configuration information that is required to access the repository.
+        /// Configuration information to connect to your data source repository.
         /// </para>
         ///  
         /// <para>
@@ -116,7 +118,7 @@ namespace Amazon.Kendra.Model
         /// Gets and sets the property CustomDocumentEnrichmentConfiguration. 
         /// <para>
         /// Configuration information for altering document metadata and content during the document
-        /// ingestion process when you create a data source.
+        /// ingestion process.
         /// </para>
         ///  
         /// <para>
@@ -140,7 +142,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// A description for the data source.
+        /// A description for the data source connector.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1000)]
@@ -159,7 +161,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property IndexId. 
         /// <para>
-        /// The identifier of the index that should be associated with this data source.
+        /// The identifier of the index you want to use with the data source connector.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]
@@ -179,8 +181,8 @@ namespace Amazon.Kendra.Model
         /// Gets and sets the property LanguageCode. 
         /// <para>
         /// The code for a language. This allows you to support a language for all documents when
-        /// creating the data source. English is supported by default. For more information on
-        /// supported languages, including their codes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding
+        /// creating the data source connector. English is supported by default. For more information
+        /// on supported languages, including their codes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding
         /// documents in languages other than English</a>.
         /// </para>
         /// </summary>
@@ -200,8 +202,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// A unique name for the data source. A data source name can't be changed without deleting
-        /// and recreating the data source.
+        /// A name for the data source connector.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1000)]
@@ -220,9 +221,9 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of a role with permission to access the data source.
-        /// For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM
-        /// Roles for Amazon Kendra</a>.
+        /// The Amazon Resource Name (ARN) of an IAM role with permission to access the data source
+        /// and required resources. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM
+        /// access roles for Amazon Kendra.</a>.
         /// </para>
         ///  
         /// <para>
@@ -251,10 +252,15 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Schedule. 
         /// <para>
-        /// Sets the frequency that Amazon Kendra will check the documents in your repository
+        /// Sets the frequency for Amazon Kendra to check the documents in your data source repository
         /// and update the index. If you don't set a schedule Amazon Kendra will not periodically
-        /// update the index. You can call the <code>StartDataSourceSyncJob</code> operation to
-        /// update the index.
+        /// update the index. You can call the <code>StartDataSourceSyncJob</code> API to update
+        /// the index.
+        /// </para>
+        ///  
+        /// <para>
+        /// Specify a <code>cron-</code> format schedule string or an empty string to indicate
+        /// that the index is updated on demand.
         /// </para>
         ///  
         /// <para>
@@ -278,8 +284,10 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// A list of key-value pairs that identify the data source. You can use the tags to identify
-        /// and organize your resources and to control access to resources.
+        /// A list of key-value pairs that identify or categorize the data source connector. You
+        /// can also use tags to help control access to the data source connector. Tag keys and
+        /// values can consist of Unicode letters, digits, white space, and any of the following
+        /// symbols: _ . : / = + - @.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=200)]
@@ -298,7 +306,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of repository that contains the data source.
+        /// The type of data source repository. For example, <code>SHAREPOINT</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -312,6 +320,26 @@ namespace Amazon.Kendra.Model
         internal bool IsSetType()
         {
             return this._type != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcConfiguration. 
+        /// <para>
+        /// Configuration information for an Amazon Virtual Private Cloud to connect to your data
+        /// source. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring
+        /// a VPC</a>.
+        /// </para>
+        /// </summary>
+        public DataSourceVpcConfiguration VpcConfiguration
+        {
+            get { return this._vpcConfiguration; }
+            set { this._vpcConfiguration = value; }
+        }
+
+        // Check to see if VpcConfiguration property is set
+        internal bool IsSetVpcConfiguration()
+        {
+            return this._vpcConfiguration != null;
         }
 
     }

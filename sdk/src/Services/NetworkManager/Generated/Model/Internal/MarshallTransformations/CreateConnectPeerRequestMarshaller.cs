@@ -56,7 +56,7 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.NetworkManager");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-07-05";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-07-05";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/connect-peers";
@@ -85,7 +85,7 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
                 else if(!(publicRequest.IsSetClientToken()))
                 {
                     context.Writer.WritePropertyName("ClientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());                                                
+                    context.Writer.Write(Guid.NewGuid().ToString());
                 }
                 if(publicRequest.IsSetConnectAttachmentId())
                 {
@@ -132,7 +132,6 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

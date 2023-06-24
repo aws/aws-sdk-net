@@ -34,7 +34,7 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AnomalyGroupTimeSeries Marshaller
-    /// </summary>       
+    /// </summary>
     public class AnomalyGroupTimeSeriesMarshaller : IRequestMarshaller<AnomalyGroupTimeSeries, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AnomalyGroupTimeSeriesMarshaller Instance = new AnomalyGroupTimeSeriesMarshaller();
 
     }

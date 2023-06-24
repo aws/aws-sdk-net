@@ -34,7 +34,7 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SchemaAttribute Marshaller
-    /// </summary>       
+    /// </summary>
     public class SchemaAttributeMarshaller : IRequestMarshaller<SchemaAttribute, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SchemaAttributeMarshaller Instance = new SchemaAttributeMarshaller();
 
     }

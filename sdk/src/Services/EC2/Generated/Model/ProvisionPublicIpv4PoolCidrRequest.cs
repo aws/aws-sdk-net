@@ -34,8 +34,8 @@ namespace Amazon.EC2.Model
     /// 
     ///  
     /// <para>
-    /// For more information about IPAM, see <a href="/vpc/latest/ipam/what-is-it-ipam.html">What
-    /// is IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>. 
+    /// For more information about IPAM, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/what-is-it-ipam.html">What
+    /// is IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>.
     /// </para>
     /// </summary>
     public partial class ProvisionPublicIpv4PoolCidrRequest : AmazonEC2Request

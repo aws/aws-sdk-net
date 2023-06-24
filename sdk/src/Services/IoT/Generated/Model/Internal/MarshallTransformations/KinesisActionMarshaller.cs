@@ -34,7 +34,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// KinesisAction Marshaller
-    /// </summary>       
+    /// </summary>
     public class KinesisActionMarshaller : IRequestMarshaller<KinesisAction, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static KinesisActionMarshaller Instance = new KinesisActionMarshaller();
 
     }

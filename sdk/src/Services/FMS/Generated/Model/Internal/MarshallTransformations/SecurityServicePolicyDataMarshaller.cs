@@ -34,7 +34,7 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SecurityServicePolicyData Marshaller
-    /// </summary>       
+    /// </summary>
     public class SecurityServicePolicyDataMarshaller : IRequestMarshaller<SecurityServicePolicyData, JsonMarshallerContext> 
     {
         /// <summary>
@@ -51,6 +51,17 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ManagedServiceData);
             }
 
+            if(requestObject.IsSetPolicyOption())
+            {
+                context.Writer.WritePropertyName("PolicyOption");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = PolicyOptionMarshaller.Instance;
+                marshaller.Marshall(requestObject.PolicyOption, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetType())
             {
                 context.Writer.WritePropertyName("Type");
@@ -61,7 +72,7 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SecurityServicePolicyDataMarshaller Instance = new SecurityServicePolicyDataMarshaller();
 
     }

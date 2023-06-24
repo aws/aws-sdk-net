@@ -35,7 +35,9 @@ namespace Amazon.CostExplorer.Model
     public partial class CreateCostCategoryDefinitionRequest : AmazonCostExplorerRequest
     {
         private string _defaultValue;
+        private string _effectiveStart;
         private string _name;
+        private List<ResourceTag> _resourceTags = new List<ResourceTag>();
         private List<CostCategoryRule> _rules = new List<CostCategoryRule>();
         private CostCategoryRuleVersion _ruleVersion;
         private List<CostCategorySplitChargeRule> _splitChargeRules = new List<CostCategorySplitChargeRule>();
@@ -57,6 +59,27 @@ namespace Amazon.CostExplorer.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EffectiveStart. 
+        /// <para>
+        /// The Cost Category's effective start date. It can only be a billing start date (first
+        /// day of the month). If the date isn't provided, it's the first day of the current month.
+        /// Dates can't be before the previous twelve months, or in the future.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=25)]
+        public string EffectiveStart
+        {
+            get { return this._effectiveStart; }
+            set { this._effectiveStart = value; }
+        }
+
+        // Check to see if EffectiveStart property is set
+        internal bool IsSetEffectiveStart()
+        {
+            return this._effectiveStart != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Name.
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=50)]
@@ -70,6 +93,64 @@ namespace Amazon.CostExplorer.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceTags. 
+        /// <para>
+        /// An optional list of tags to associate with the specified <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategory.html">
+        /// <code>CostCategory</code> </a>. You can use resource tags to control access to your
+        /// <code>cost category</code> using IAM policies.
+        /// </para>
+        ///  
+        /// <para>
+        /// Each tag consists of a key and a value, and each key must be unique for the resource.
+        /// The following restrictions apply to resource tags:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Although the maximum number of array members is 200, you can assign a maximum of 50
+        /// user-tags to one resource. The remaining are reserved for Amazon Web Services use
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The maximum length of a key is 128 characters
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The maximum length of a value is 256 characters
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Keys and values can only contain alphanumeric characters, spaces, and any of the following:
+        /// <code>_.:/=+@-</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Keys and values are case sensitive
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Keys and values are trimmed for any leading or trailing whitespaces
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Don’t use <code>aws:</code> as a prefix for your keys. This prefix is reserved for
+        /// Amazon Web Services use
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        [AWSProperty(Min=0, Max=200)]
+        public List<ResourceTag> ResourceTags
+        {
+            get { return this._resourceTags; }
+            set { this._resourceTags = value; }
+        }
+
+        // Check to see if ResourceTags property is set
+        internal bool IsSetResourceTags()
+        {
+            return this._resourceTags != null && this._resourceTags.Count > 0; 
         }
 
         /// <summary>

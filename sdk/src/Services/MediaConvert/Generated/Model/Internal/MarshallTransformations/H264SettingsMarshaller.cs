@@ -34,7 +34,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// H264Settings Marshaller
-    /// </summary>       
+    /// </summary>
     public class H264SettingsMarshaller : IRequestMarshaller<H264Settings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -49,6 +49,17 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("adaptiveQuantization");
                 context.Writer.Write(requestObject.AdaptiveQuantization);
+            }
+
+            if(requestObject.IsSetBandwidthReductionFilter())
+            {
+                context.Writer.WritePropertyName("bandwidthReductionFilter");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = BandwidthReductionFilterMarshaller.Instance;
+                marshaller.Marshall(requestObject.BandwidthReductionFilter, context);
+
+                context.Writer.WriteObjectEnd();
             }
 
             if(requestObject.IsSetBitrate())
@@ -139,6 +150,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("gopSizeUnits");
                 context.Writer.Write(requestObject.GopSizeUnits);
+            }
+
+            if(requestObject.IsSetHrdBufferFinalFillPercentage())
+            {
+                context.Writer.WritePropertyName("hrdBufferFinalFillPercentage");
+                context.Writer.Write(requestObject.HrdBufferFinalFillPercentage);
             }
 
             if(requestObject.IsSetHrdBufferInitialFillPercentage())
@@ -294,7 +311,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static H264SettingsMarshaller Instance = new H264SettingsMarshaller();
 
     }

@@ -38,7 +38,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property MedicalTranscriptionJob. 
         /// <para>
-        /// An object that contains the results of the medical transcription job.
+        /// Provides detailed information about the specified medical transcription job, including
+        /// job status and, if applicable, failure reason.
         /// </para>
         /// </summary>
         public MedicalTranscriptionJob MedicalTranscriptionJob

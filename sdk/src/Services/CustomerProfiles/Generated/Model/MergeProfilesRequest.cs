@@ -30,12 +30,8 @@ namespace Amazon.CustomerProfiles.Model
 {
     /// <summary>
     /// Container for the parameters to the MergeProfiles operation.
-    /// This API is in preview release for Amazon Connect and subject to change.
-    /// 
-    ///  
-    /// <para>
     /// Runs an AWS Lambda job that does the following:
-    /// </para>
+    /// 
     ///  <ol> <li> 
     /// <para>
     /// All the profileKeys in the <code>ProfileToBeMerged</code> will be moved to the main

@@ -58,8 +58,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Instantiates CreateDocumentRequest with the parameterized properties
         /// </summary>
-        /// <param name="name">A name for the SSM document. <important> You can't use the following strings as document name prefixes. These are reserved by Amazon Web Services for use as document name prefixes: <ul> <li>  <code>aws-</code>  </li> <li>  <code>amazon</code>  </li> <li>  <code>amzn</code>  </li> </ul> </important></param>
-        /// <param name="content">The content for the new SSM document in JSON or YAML format. We recommend storing the contents for your new document in an external JSON or YAML file and referencing the file in a command. For examples, see the following topics in the <i>Amazon Web Services Systems Manager User Guide</i>. <ul> <li>  <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (Amazon Web Services API)</a>  </li> <li>  <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create an SSM document (Amazon Web Services CLI)</a>  </li> <li>  <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (API)</a>  </li> </ul></param>
+        /// <param name="name">A name for the SSM document. <important> You can't use the following strings as document name prefixes. These are reserved by Amazon Web Services for use as document name prefixes: <ul> <li>  <code>aws</code>  </li> <li>  <code>amazon</code>  </li> <li>  <code>amzn</code>  </li> </ul> </important></param>
+        /// <param name="content">The content for the new SSM document in JSON or YAML format. The content of the document must not exceed 64KB. This quota also includes the content specified for input parameters at runtime. We recommend storing the contents for your new document in an external JSON or YAML file and referencing the file in a command. For examples, see the following topics in the <i>Amazon Web Services Systems Manager User Guide</i>. <ul> <li>  <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (Amazon Web Services API)</a>  </li> <li>  <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create an SSM document (Amazon Web Services CLI)</a>  </li> <li>  <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (API)</a>  </li> </ul></param>
         public CreateDocumentRequest(string name, string content)
         {
             _name = name;
@@ -88,9 +88,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Content. 
         /// <para>
-        /// The content for the new SSM document in JSON or YAML format. We recommend storing
-        /// the contents for your new document in an external JSON or YAML file and referencing
-        /// the file in a command.
+        /// The content for the new SSM document in JSON or YAML format. The content of the document
+        /// must not exceed 64KB. This quota also includes the content specified for input parameters
+        /// at runtime. We recommend storing the contents for your new document in an external
+        /// JSON or YAML file and referencing the file in a command.
         /// </para>
         ///  
         /// <para>
@@ -172,6 +173,12 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// The type of document to create.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <code>DeploymentStrategy</code> document type is an internal-use-only document
+        /// type reserved for AppConfig.
+        /// </para>
+        ///  </note>
         /// </summary>
         public DocumentType DocumentType
         {
@@ -197,7 +204,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>aws-</code> 
+        ///  <code>aws</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -310,7 +317,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property VersionName. 
         /// <para>
         /// An optional field specifying the version of the artifact you are creating with the
-        /// document. For example, "Release 12, Update 6". This value is unique across all versions
+        /// document. For example, <code>Release12.1</code>. This value is unique across all versions
         /// of a document, and can't be changed.
         /// </para>
         /// </summary>

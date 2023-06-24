@@ -275,7 +275,7 @@ namespace Amazon.DeviceFarm.Model
         ///  
         /// <para>
         /// For more information on how Device Farm modifies your uploads during tests, see <a
-        /// href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> 
+        /// href="http://aws.amazon.com/device-farm/faqs/">Do you modify my app?</a> 
         /// </para>
         /// </summary>
         public bool SkipAppResign

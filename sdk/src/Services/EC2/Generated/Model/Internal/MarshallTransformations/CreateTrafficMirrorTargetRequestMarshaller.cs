@@ -70,6 +70,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Description", StringUtils.FromString(publicRequest.Description));
                 }
+                if(publicRequest.IsSetGatewayLoadBalancerEndpointId())
+                {
+                    request.Parameters.Add("GatewayLoadBalancerEndpointId", StringUtils.FromString(publicRequest.GatewayLoadBalancerEndpointId));
+                }
                 if(publicRequest.IsSetNetworkInterfaceId())
                 {
                     request.Parameters.Add("NetworkInterfaceId", StringUtils.FromString(publicRequest.NetworkInterfaceId));

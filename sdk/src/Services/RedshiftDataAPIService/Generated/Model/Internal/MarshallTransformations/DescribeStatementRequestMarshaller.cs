@@ -58,7 +58,7 @@ namespace Amazon.RedshiftDataAPIService.Model.Internal.MarshallTransformations
             string target = "RedshiftData.DescribeStatement";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-12-20";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-12-20";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -73,7 +73,6 @@ namespace Amazon.RedshiftDataAPIService.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Id);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

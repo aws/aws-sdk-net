@@ -56,7 +56,7 @@ namespace Amazon.SavingsPlans.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.SavingsPlans");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-06-28";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-06-28";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/TagResource";
@@ -85,7 +85,6 @@ namespace Amazon.SavingsPlans.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

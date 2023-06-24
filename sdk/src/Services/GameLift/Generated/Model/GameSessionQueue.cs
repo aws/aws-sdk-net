@@ -31,16 +31,6 @@ namespace Amazon.GameLift.Model
     /// <summary>
     /// Configuration for a game session placement mechanism that processes requests for new
     /// game sessions. A queue can be used on its own or as part of a matchmaking solution.
-    /// 
-    ///  
-    /// <para>
-    ///  <b>Related actions</b> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <a>CreateGameSessionQueue</a> | <a>DescribeGameSessionQueues</a> | <a>UpdateGameSessionQueue</a>
-    /// 
-    /// </para>
     /// </summary>
     public partial class GameSessionQueue
     {
@@ -58,7 +48,6 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property CustomEventData. 
         /// <para>
         ///  Information that is added to all events that are related to this game session queue.
-        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=256)]
@@ -98,8 +87,8 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property FilterConfiguration. 
         /// <para>
         /// A list of locations where a queue is allowed to place new game sessions. Locations
-        /// are specified in the form of AWS Region codes, such as <code>us-west-2</code>. If
-        /// this parameter is not set, game sessions can be placed in any queue location. 
+        /// are specified in the form of Amazon Web Services Region codes, such as <code>us-west-2</code>.
+        /// If this parameter is not set, game sessions can be placed in any queue location. 
         /// </para>
         /// </summary>
         public FilterConfiguration FilterConfiguration
@@ -118,10 +107,10 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property GameSessionQueueArn. 
         /// <para>
         /// The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-        /// that is assigned to a GameLift game session queue resource and uniquely identifies
+        /// that is assigned to a Amazon GameLift game session queue resource and uniquely identifies
         /// it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:&lt;region&gt;::gamesessionqueue/&lt;queue
-        /// name&gt;</code>. In a GameLift game session queue ARN, the resource ID matches the
-        /// <i>Name</i> value.
+        /// name&gt;</code>. In a Amazon GameLift game session queue ARN, the resource ID matches
+        /// the <i>Name</i> value.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -226,7 +215,7 @@ namespace Amazon.GameLift.Model
         /// <para>
         /// The maximum time, in seconds, that a new game session placement request remains in
         /// the queue. When a request exceeds this time, the game session placement changes to
-        /// a <code>TIMED_OUT</code> status.
+        /// a <code>TIMED_OUT</code> status. By default, this property is set to <code>600</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]

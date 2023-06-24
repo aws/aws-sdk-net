@@ -34,7 +34,7 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SNSConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class SNSConfigurationMarshaller : IRequestMarshaller<SNSConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -51,6 +51,12 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.RoleArn);
             }
 
+            if(requestObject.IsSetSnsFormat())
+            {
+                context.Writer.WritePropertyName("SnsFormat");
+                context.Writer.Write(requestObject.SnsFormat);
+            }
+
             if(requestObject.IsSetSnsTopicArn())
             {
                 context.Writer.WritePropertyName("SnsTopicArn");
@@ -61,7 +67,7 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SNSConfigurationMarshaller Instance = new SNSConfigurationMarshaller();
 
     }

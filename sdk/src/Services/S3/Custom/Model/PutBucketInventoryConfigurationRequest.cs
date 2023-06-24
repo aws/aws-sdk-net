@@ -52,50 +52,59 @@ namespace Amazon.S3.Model
     /// policy, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/example-bucket-policies.html#example-bucket-policies-use-case-9">
     /// Granting Permissions for Amazon S3 Inventory and Storage Class Analysis</a>.
     /// </para>
-    ///  </important> 
+    ///  </important> <dl> <dt>Permissions</dt> <dd> 
     /// <para>
     /// To use this operation, you must have permissions to perform the <code>s3:PutInventoryConfiguration</code>
     /// action. The bucket owner has this permission by default and can grant this permission
-    /// to others. For more information about permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">Permissions
-    /// Related to Bucket Subresource Operations</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-access-control.html">Managing
-    /// Access Permissions to Your Amazon S3 Resources</a> in the Amazon S3 User Guide.
+    /// to others. 
     /// </para>
-    ///  <para class="title"> <b>Special Errors</b> 
+    ///  
+    /// <para>
+    /// The <code>s3:PutInventoryConfiguration</code> permission allows a user to create an
+    /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-inventory.html">S3
+    /// Inventory</a> report that includes all object metadata fields available and to specify
+    /// the destination bucket to store the inventory. A user with read access to objects
+    /// in the destination bucket can also access all object metadata fields that are available
+    /// in the inventory report. 
     /// </para>
-    ///  <ul> <li> <para class="title"> <b>HTTP 400 Bad Request Error</b> 
+    ///  
+    /// <para>
+    /// To restrict access to an inventory report, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/example-bucket-policies.html#example-bucket-policies-use-case-10">Restricting
+    /// access to an Amazon S3 Inventory report</a> in the <i>Amazon S3 User Guide</i>. For
+    /// more information about the metadata fields available in S3 Inventory, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-inventory.html#storage-inventory-contents">Amazon
+    /// S3 Inventory lists</a> in the <i>Amazon S3 User Guide</i>. For more information about
+    /// permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">Permissions
+    /// related to bucket subresource operations</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-access-control.html">Identity
+    /// and access management in Amazon S3</a> in the <i>Amazon S3 User Guide</i>.
     /// </para>
-    ///  <ul> <li> 
+    ///  </dd> </dl> 
+    /// <para>
+    ///  <code>PutBucketInventoryConfiguration</code> has the following special errors:
+    /// </para>
+    ///  <dl> <dt>HTTP 400 Bad Request Error</dt> <dd> 
     /// <para>
     ///  <i>Code:</i> InvalidArgument
     /// </para>
-    ///  </li> <li> 
     /// <para>
     ///  <i>Cause:</i> Invalid Argument
     /// </para>
-    ///  </li> </ul> </li> <li> <para class="title"> <b>HTTP 400 Bad Request Error</b> 
-    /// </para>
-    ///  <ul> <li> 
+    ///  </dd> <dt>HTTP 400 Bad Request Error</dt> <dd> 
     /// <para>
     ///  <i>Code:</i> TooManyConfigurations
     /// </para>
-    ///  </li> <li> 
     /// <para>
     ///  <i>Cause:</i> You are attempting to create a new configuration but have already reached
     /// the 1,000-configuration limit. 
     /// </para>
-    ///  </li> </ul> </li> <li> <para class="title"> <b>HTTP 403 Forbidden Error</b> 
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <i>Code:</i> AccessDenied
-    /// </para>
-    ///  </li> <li> 
+    ///  </dd> <dt>HTTP 400 Bad Request Error</dt> <dd> 
     /// <para>
     ///  <i>Cause:</i> You are not the owner of the specified bucket, or you do not have the
     /// <code>s3:PutInventoryConfiguration</code> bucket permission to set the configuration
     /// on the bucket. 
     /// </para>
-    ///  </li> </ul> </li> </ul> <para class="title"> <b>Related Resources</b> 
+    ///  </dd> </dl> 
+    /// <para>
+    /// The following operations are related to <code>PutBucketInventoryConfiguration</code>:
     /// </para>
     ///  <ul> <li> 
     /// <para>

@@ -35,12 +35,16 @@ namespace Amazon.EC2.Model
     {
         private DateTime? _createdDate;
         private string _destination;
+        private string _destinationArn;
         private string _destinationIp;
         private int? _destinationPort;
+        private PathFilter _filterAtDestination;
+        private PathFilter _filterAtSource;
         private string _networkInsightsPathArn;
         private string _networkInsightsPathId;
         private Protocol _protocol;
         private string _source;
+        private string _sourceArn;
         private string _sourceIp;
         private List<Tag> _tags = new List<Tag>();
 
@@ -65,7 +69,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Destination. 
         /// <para>
-        /// The Amazon Web Services resource that is the destination of the path.
+        /// The ID of the destination.
         /// </para>
         /// </summary>
         public string Destination
@@ -81,10 +85,28 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DestinationArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the destination.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1283)]
+        public string DestinationArn
+        {
+            get { return this._destinationArn; }
+            set { this._destinationArn = value; }
+        }
+
+        // Check to see if DestinationArn property is set
+        internal bool IsSetDestinationArn()
+        {
+            return this._destinationArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property DestinationIp. 
         /// <para>
-        /// The IP address of the Amazon Web Services resource that is the destination of the
-        /// path.
+        /// The IP address of the destination.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=15)]
@@ -116,6 +138,42 @@ namespace Amazon.EC2.Model
         internal bool IsSetDestinationPort()
         {
             return this._destinationPort.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property FilterAtDestination. 
+        /// <para>
+        /// Scopes the analysis to network paths that match specific filters at the destination.
+        /// </para>
+        /// </summary>
+        public PathFilter FilterAtDestination
+        {
+            get { return this._filterAtDestination; }
+            set { this._filterAtDestination = value; }
+        }
+
+        // Check to see if FilterAtDestination property is set
+        internal bool IsSetFilterAtDestination()
+        {
+            return this._filterAtDestination != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FilterAtSource. 
+        /// <para>
+        /// Scopes the analysis to network paths that match specific filters at the source.
+        /// </para>
+        /// </summary>
+        public PathFilter FilterAtSource
+        {
+            get { return this._filterAtSource; }
+            set { this._filterAtSource = value; }
+        }
+
+        // Check to see if FilterAtSource property is set
+        internal bool IsSetFilterAtSource()
+        {
+            return this._filterAtSource != null;
         }
 
         /// <summary>
@@ -176,7 +234,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Source. 
         /// <para>
-        /// The Amazon Web Services resource that is the source of the path.
+        /// The ID of the source.
         /// </para>
         /// </summary>
         public string Source
@@ -192,9 +250,28 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SourceArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the source.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1283)]
+        public string SourceArn
+        {
+            get { return this._sourceArn; }
+            set { this._sourceArn = value; }
+        }
+
+        // Check to see if SourceArn property is set
+        internal bool IsSetSourceArn()
+        {
+            return this._sourceArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SourceIp. 
         /// <para>
-        /// The IP address of the Amazon Web Services resource that is the source of the path.
+        /// The IP address of the source.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=15)]

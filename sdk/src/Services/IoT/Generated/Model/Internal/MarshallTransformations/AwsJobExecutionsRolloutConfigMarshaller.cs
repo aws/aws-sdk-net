@@ -34,7 +34,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AwsJobExecutionsRolloutConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class AwsJobExecutionsRolloutConfigMarshaller : IRequestMarshaller<AwsJobExecutionsRolloutConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AwsJobExecutionsRolloutConfigMarshaller Instance = new AwsJobExecutionsRolloutConfigMarshaller();
 
     }

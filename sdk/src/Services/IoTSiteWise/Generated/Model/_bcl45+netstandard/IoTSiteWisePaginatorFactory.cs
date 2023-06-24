@@ -36,6 +36,30 @@ namespace Amazon.IoTSiteWise.Model
         }
 
         /// <summary>
+        /// Paginator for BatchGetAssetPropertyAggregates operation
+        ///</summary>
+        public IBatchGetAssetPropertyAggregatesPaginator BatchGetAssetPropertyAggregates(BatchGetAssetPropertyAggregatesRequest request) 
+        {
+            return new BatchGetAssetPropertyAggregatesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for BatchGetAssetPropertyValue operation
+        ///</summary>
+        public IBatchGetAssetPropertyValuePaginator BatchGetAssetPropertyValue(BatchGetAssetPropertyValueRequest request) 
+        {
+            return new BatchGetAssetPropertyValuePaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for BatchGetAssetPropertyValueHistory operation
+        ///</summary>
+        public IBatchGetAssetPropertyValueHistoryPaginator BatchGetAssetPropertyValueHistory(BatchGetAssetPropertyValueHistoryRequest request) 
+        {
+            return new BatchGetAssetPropertyValueHistoryPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for GetAssetPropertyAggregates operation
         ///</summary>
         public IGetAssetPropertyAggregatesPaginator GetAssetPropertyAggregates(GetAssetPropertyAggregatesRequest request) 
@@ -68,11 +92,27 @@ namespace Amazon.IoTSiteWise.Model
         }
 
         /// <summary>
+        /// Paginator for ListAssetModelProperties operation
+        ///</summary>
+        public IListAssetModelPropertiesPaginator ListAssetModelProperties(ListAssetModelPropertiesRequest request) 
+        {
+            return new ListAssetModelPropertiesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListAssetModels operation
         ///</summary>
         public IListAssetModelsPaginator ListAssetModels(ListAssetModelsRequest request) 
         {
             return new ListAssetModelsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListAssetProperties operation
+        ///</summary>
+        public IListAssetPropertiesPaginator ListAssetProperties(ListAssetPropertiesRequest request) 
+        {
+            return new ListAssetPropertiesPaginator(this.client, request);
         }
 
         /// <summary>
@@ -97,6 +137,14 @@ namespace Amazon.IoTSiteWise.Model
         public IListAssociatedAssetsPaginator ListAssociatedAssets(ListAssociatedAssetsRequest request) 
         {
             return new ListAssociatedAssetsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListBulkImportJobs operation
+        ///</summary>
+        public IListBulkImportJobsPaginator ListBulkImportJobs(ListBulkImportJobsRequest request) 
+        {
+            return new ListBulkImportJobsPaginator(this.client, request);
         }
 
         /// <summary>

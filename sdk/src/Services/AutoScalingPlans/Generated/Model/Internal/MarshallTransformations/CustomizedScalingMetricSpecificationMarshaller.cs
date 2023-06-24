@@ -34,7 +34,7 @@ namespace Amazon.AutoScalingPlans.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CustomizedScalingMetricSpecification Marshaller
-    /// </summary>       
+    /// </summary>
     public class CustomizedScalingMetricSpecificationMarshaller : IRequestMarshaller<CustomizedScalingMetricSpecification, JsonMarshallerContext> 
     {
         /// <summary>
@@ -89,7 +89,7 @@ namespace Amazon.AutoScalingPlans.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CustomizedScalingMetricSpecificationMarshaller Instance = new CustomizedScalingMetricSpecificationMarshaller();
 
     }

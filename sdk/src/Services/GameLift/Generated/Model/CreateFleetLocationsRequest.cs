@@ -37,9 +37,8 @@ namespace Amazon.GameLift.Model
     ///  <note> 
     /// <para>
     /// This operation cannot be used with fleets that don't support remote locations. Fleets
-    /// can have multiple locations only if they reside in AWS Regions that support this feature
-    /// (see <a>CreateFleet</a> for the complete list) and were created after the feature
-    /// was released in March 2021.
+    /// can have multiple locations only if they reside in Amazon Web Services Regions that
+    /// support this feature and were created after the feature was released in March 2021.
     /// </para>
     ///  </note> 
     /// <para>
@@ -49,12 +48,9 @@ namespace Amazon.GameLift.Model
     ///  
     /// <para>
     /// If successful, this operation returns the list of added locations with their status
-    /// set to <code>NEW</code>. GameLift initiates the process of starting an instance in
-    /// each added location. You can track the status of each new location by monitoring location
-    /// creation events using <a>DescribeFleetEvents</a>. Alternatively, you can poll location
-    /// status by calling <a>DescribeFleetLocationAttributes</a>. After a location status
-    /// becomes <code>ACTIVE</code>, you can adjust the location's capacity as needed with
-    /// <a>UpdateFleetCapacity</a>.
+    /// set to <code>NEW</code>. Amazon GameLift initiates the process of starting an instance
+    /// in each added location. You can track the status of each new location by monitoring
+    /// location creation events using <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetEvents.html">DescribeFleetEvents</a>.
     /// </para>
     ///  
     /// <para>
@@ -69,18 +65,6 @@ namespace Amazon.GameLift.Model
     /// <para>
     ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Multi-location
     /// fleets</a> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <b>Related actions</b> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <a>CreateFleetLocations</a> | <a>DescribeFleetLocationAttributes</a> | <a>DescribeFleetLocationCapacity</a>
-    /// | <a>DescribeFleetLocationUtilization</a> | <a>DescribeFleetAttributes</a> | <a>DescribeFleetCapacity</a>
-    /// | <a>DescribeFleetUtilization</a> | <a>UpdateFleetCapacity</a> | <a>StopFleetActions</a>
-    /// | <a>DeleteFleetLocations</a> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
-    /// APIs by task</a> 
     /// </para>
     /// </summary>
     public partial class CreateFleetLocationsRequest : AmazonGameLiftRequest
@@ -112,8 +96,9 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property Locations. 
         /// <para>
         /// A list of locations to deploy additional instances to and manage as part of the fleet.
-        /// You can add any GameLift-supported AWS Region as a remote location, in the form of
-        /// an AWS Region code such as <code>us-west-2</code>. 
+        /// You can add any Amazon GameLift-supported Amazon Web Services Region as a remote location,
+        /// in the form of an Amazon Web Services Region code such as <code>us-west-2</code>.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]

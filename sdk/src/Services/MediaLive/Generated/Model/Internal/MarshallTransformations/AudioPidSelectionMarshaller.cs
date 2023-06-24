@@ -34,7 +34,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AudioPidSelection Marshaller
-    /// </summary>       
+    /// </summary>
     public class AudioPidSelectionMarshaller : IRequestMarshaller<AudioPidSelection, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AudioPidSelectionMarshaller Instance = new AudioPidSelectionMarshaller();
 
     }

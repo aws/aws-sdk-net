@@ -39,7 +39,6 @@ namespace Amazon.FraudDetector.Model
         /// <summary>
         /// Gets and sets the property LabelSchema.
         /// </summary>
-        [AWSProperty(Required=true)]
         public LabelSchema LabelSchema
         {
             get { return this._labelSchema; }

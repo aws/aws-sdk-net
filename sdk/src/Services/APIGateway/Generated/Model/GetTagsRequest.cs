@@ -30,7 +30,7 @@ namespace Amazon.APIGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the GetTags operation.
-    /// Gets the <a>Tags</a> collection for a given resource.
+    /// Gets the Tags collection for a given resource.
     /// </summary>
     public partial class GetTagsRequest : AmazonAPIGatewayRequest
     {
@@ -78,7 +78,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// [Required] The ARN of a resource that can be tagged.
+        /// The ARN of a resource that can be tagged.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

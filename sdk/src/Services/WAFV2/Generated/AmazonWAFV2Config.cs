@@ -17,22 +17,22 @@
  * Do not modify this file. This file is generated from the wafv2-2019-07-29.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
-
+using Amazon.WAFV2.Internal;
 
 namespace Amazon.WAFV2
 {
     /// <summary>
     /// Configuration for accessing Amazon WAFV2 service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonWAFV2Config : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.8.7");
+            InternalSDKUtils.BuildUserAgentString("3.7.112.2");
 
         private string _userAgent = UserAgentString;
 
@@ -40,8 +40,10 @@ namespace Amazon.WAFV2
         /// Default constructor
         /// </summary>
         public AmazonWAFV2Config()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonWAFV2DefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "wafv2";
+            this.EndpointProvider = new AmazonWAFV2EndpointProvider();
         }
 
         /// <summary>
@@ -76,5 +78,6 @@ namespace Amazon.WAFV2
                 return _userAgent;
             }
         }
+
     }
 }

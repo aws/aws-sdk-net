@@ -34,7 +34,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// WindowsAuditLogCreateConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class WindowsAuditLogCreateConfigurationMarshaller : IRequestMarshaller<WindowsAuditLogCreateConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static WindowsAuditLogCreateConfigurationMarshaller Instance = new WindowsAuditLogCreateConfigurationMarshaller();
 
     }

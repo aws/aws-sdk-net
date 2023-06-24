@@ -29,12 +29,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// Contains the details for an Amazon RDS DB security group. 
+    /// Contains the details for an Amazon RDS DB security group.
     /// 
     ///  
     /// <para>
     /// This data type is used as a response element in the <code>DescribeDBSecurityGroups</code>
-    /// action. 
+    /// action.
     /// </para>
     /// </summary>
     public partial class DBSecurityGroup
@@ -104,7 +104,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property EC2SecurityGroups. 
         /// <para>
-        ///  Contains a list of <code>EC2SecurityGroup</code> elements. 
+        /// Contains a list of <code>EC2SecurityGroup</code> elements.
         /// </para>
         /// </summary>
         public List<EC2SecurityGroup> EC2SecurityGroups
@@ -122,7 +122,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property IPRanges. 
         /// <para>
-        ///  Contains a list of <code>IPRange</code> elements. 
+        /// Contains a list of <code>IPRange</code> elements.
         /// </para>
         /// </summary>
         public List<IPRange> IPRanges

@@ -62,12 +62,12 @@ namespace Amazon.CostExplorer.Model
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// This field is only used when SortBy is provided in the request. The maximum number
-        /// of objects that to be returned for this request. If MaxResults is not specified with
-        /// SortBy, the request will return 1000 results as the default value for this parameter.
+        /// of objects that are returned for this request. If MaxResults isn't specified with
+        /// SortBy, the request returns 1000 results as the default value for this parameter.
         /// </para>
         ///  
         /// <para>
-        /// For <code>GetTags</code>, MaxResults has an upper limit of 1000.
+        /// For <code>GetTags</code>, MaxResults has an upper quota of 1000.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -125,7 +125,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property SortBy. 
         /// <para>
-        /// The value by which you want to sort the data.
+        /// The value that you want to sort the data by.
         /// </para>
         ///  
         /// <para>
@@ -161,12 +161,12 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.
+        /// The supported values for <code>SortOrder</code> are <code>ASCENDING</code> and <code>DESCENDING</code>.
         /// </para>
         ///  
         /// <para>
-        /// When using <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code>
-        /// are not supported.
+        /// When you use <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code>
+        /// aren't supported.
         /// </para>
         /// </summary>
         public List<SortDefinition> SortBy

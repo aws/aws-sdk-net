@@ -34,7 +34,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// S3OutputFormatConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class S3OutputFormatConfigMarshaller : IRequestMarshaller<S3OutputFormatConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -73,11 +73,17 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetPreserveSourceDataTyping())
+            {
+                context.Writer.WritePropertyName("preserveSourceDataTyping");
+                context.Writer.Write(requestObject.PreserveSourceDataTyping);
+            }
+
         }
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static S3OutputFormatConfigMarshaller Instance = new S3OutputFormatConfigMarshaller();
 
     }

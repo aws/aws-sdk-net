@@ -38,8 +38,10 @@ namespace Amazon.SageMaker.Model
         private DataCaptureConfig _dataCaptureConfig;
         private string _endpointConfigArn;
         private string _endpointConfigName;
+        private ExplainerConfig _explainerConfig;
         private string _kmsKeyId;
         private List<ProductionVariant> _productionVariants = new List<ProductionVariant>();
+        private List<ProductionVariant> _shadowProductionVariants = new List<ProductionVariant>();
 
         /// <summary>
         /// Gets and sets the property AsyncInferenceConfig. 
@@ -116,7 +118,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property EndpointConfigName. 
         /// <para>
-        /// Name of the Amazon SageMaker endpoint configuration.
+        /// Name of the SageMaker endpoint configuration.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=63)]
@@ -130,6 +132,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetEndpointConfigName()
         {
             return this._endpointConfigName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExplainerConfig. 
+        /// <para>
+        /// The configuration parameters for an explainer.
+        /// </para>
+        /// </summary>
+        public ExplainerConfig ExplainerConfig
+        {
+            get { return this._explainerConfig; }
+            set { this._explainerConfig = value; }
+        }
+
+        // Check to see if ExplainerConfig property is set
+        internal bool IsSetExplainerConfig()
+        {
+            return this._explainerConfig != null;
         }
 
         /// <summary>
@@ -170,6 +190,27 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetProductionVariants()
         {
             return this._productionVariants != null && this._productionVariants.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ShadowProductionVariants. 
+        /// <para>
+        /// An array of <code>ProductionVariant</code> objects, one for each model that you want
+        /// to host at this endpoint in shadow mode with production traffic replicated from the
+        /// model specified on <code>ProductionVariants</code>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<ProductionVariant> ShadowProductionVariants
+        {
+            get { return this._shadowProductionVariants; }
+            set { this._shadowProductionVariants = value; }
+        }
+
+        // Check to see if ShadowProductionVariants property is set
+        internal bool IsSetShadowProductionVariants()
+        {
+            return this._shadowProductionVariants != null && this._shadowProductionVariants.Count > 0; 
         }
 
     }

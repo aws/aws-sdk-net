@@ -45,7 +45,7 @@ namespace Amazon.CloudFront.Model
     /// <para>
     /// If you pick the second choice for your Amazon S3 Origin, you may need to forward Access-Control-Request-Method,
     /// Access-Control-Request-Headers, and Origin headers for the responses to be cached
-    /// correctly. 
+    /// correctly.
     /// </para>
     /// </summary>
     public partial class CachedMethods

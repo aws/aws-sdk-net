@@ -36,8 +36,8 @@ namespace Amazon.CostExplorer.Model
     ///  
     /// <para>
     /// Recommendations are generated to either downsize or terminate instances, along with
-    /// providing savings detail and metrics. For details on calculation and function, see
-    /// <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/ce-rightsizing.html">Optimizing
+    /// providing savings detail and metrics. For more information about calculation and function,
+    /// see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/ce-rightsizing.html">Optimizing
     /// Your Cost with Rightsizing Recommendations</a> in the <i>Billing and Cost Management
     /// User Guide</i>.
     /// </para>
@@ -53,11 +53,11 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property Configuration. 
         /// <para>
-        ///  Enables you to customize recommendations across two attributes. You can choose to
-        /// view recommendations for instances within the same instance families or across different
-        /// instance families. You can also choose to view your estimated savings associated with
-        /// recommendations with consideration of existing Savings Plans or RI benefits, or neither.
-        /// 
+        /// You can use Configuration to customize recommendations across two attributes. You
+        /// can choose to view recommendations for instances within the same instance families
+        /// or across different instance families. You can also choose to view your estimated
+        /// savings that are associated with recommendations with consideration of existing Savings
+        /// Plans or RI benefits, or neither. 
         /// </para>
         /// </summary>
         public RightsizingRecommendationConfiguration Configuration

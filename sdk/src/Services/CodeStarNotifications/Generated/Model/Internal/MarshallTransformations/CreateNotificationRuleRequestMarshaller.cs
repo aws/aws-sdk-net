@@ -56,7 +56,7 @@ namespace Amazon.CodeStarNotifications.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CodeStarNotifications");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-10-15";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-10-15";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/createNotificationRule";
@@ -74,7 +74,7 @@ namespace Amazon.CodeStarNotifications.Model.Internal.MarshallTransformations
                 else if(!(publicRequest.IsSetClientRequestToken()))
                 {
                     context.Writer.WritePropertyName("ClientRequestToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());                                                
+                    context.Writer.Write(Guid.NewGuid().ToString());
                 }
                 if(publicRequest.IsSetDetailType())
                 {
@@ -141,7 +141,6 @@ namespace Amazon.CodeStarNotifications.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

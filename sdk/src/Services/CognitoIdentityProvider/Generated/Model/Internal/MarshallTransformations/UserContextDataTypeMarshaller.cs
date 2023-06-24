@@ -34,7 +34,7 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// UserContextDataType Marshaller
-    /// </summary>       
+    /// </summary>
     public class UserContextDataTypeMarshaller : IRequestMarshaller<UserContextDataType, JsonMarshallerContext> 
     {
         /// <summary>
@@ -51,11 +51,17 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.EncodedData);
             }
 
+            if(requestObject.IsSetIpAddress())
+            {
+                context.Writer.WritePropertyName("IpAddress");
+                context.Writer.Write(requestObject.IpAddress);
+            }
+
         }
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static UserContextDataTypeMarshaller Instance = new UserContextDataTypeMarshaller();
 
     }

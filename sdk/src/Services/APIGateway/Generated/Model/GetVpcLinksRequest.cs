@@ -30,7 +30,7 @@ namespace Amazon.APIGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the GetVpcLinks operation.
-    /// Gets the <a>VpcLinks</a> collection under the caller's account in a selected region.
+    /// Gets the VpcLinks collection under the caller's account in a selected region.
     /// </summary>
     public partial class GetVpcLinksRequest : AmazonAPIGatewayRequest
     {

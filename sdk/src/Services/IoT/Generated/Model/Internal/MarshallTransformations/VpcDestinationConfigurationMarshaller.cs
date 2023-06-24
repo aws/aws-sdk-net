@@ -34,7 +34,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// VpcDestinationConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class VpcDestinationConfigurationMarshaller : IRequestMarshaller<VpcDestinationConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -83,7 +83,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static VpcDestinationConfigurationMarshaller Instance = new VpcDestinationConfigurationMarshaller();
 
     }

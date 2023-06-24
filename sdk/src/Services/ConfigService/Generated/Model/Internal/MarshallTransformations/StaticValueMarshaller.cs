@@ -34,7 +34,7 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// StaticValue Marshaller
-    /// </summary>       
+    /// </summary>
     public class StaticValueMarshaller : IRequestMarshaller<StaticValue, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static StaticValueMarshaller Instance = new StaticValueMarshaller();
 
     }

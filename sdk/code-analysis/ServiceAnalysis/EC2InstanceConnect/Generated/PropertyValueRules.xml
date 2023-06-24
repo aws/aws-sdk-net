@@ -13,7 +13,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2InstanceConnect.Model.SendSerialConsoleSSHPublicKeyRequest.SSHPublicKey</property>
-    <min>256</min>
+    <min>80</min>
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
@@ -36,7 +36,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2InstanceConnect.Model.SendSSHPublicKeyRequest.SSHPublicKey</property>
-    <min>256</min>
+    <min>80</min>
     <max>4096</max>
   </property-value-rule>
 </property-value-rules>

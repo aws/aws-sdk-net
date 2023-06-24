@@ -88,6 +88,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     unmarshalledObject.StandardsArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("StandardsManagedBy", targetDepth))
+                {
+                    var unmarshaller = StandardsManagedByUnmarshaller.Instance;
+                    unmarshalledObject.StandardsManagedBy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

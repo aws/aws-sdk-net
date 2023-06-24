@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Batch.Model
 {
     /// <summary>
-    /// An object representing an Batch job dependency.
+    /// An object that represents an Batch job dependency.
     /// </summary>
     public partial class JobDependency
     {
@@ -39,7 +39,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property JobId. 
         /// <para>
-        /// The job ID of the Batch job associated with this dependency.
+        /// The job ID of the Batch job that's associated with this dependency.
         /// </para>
         /// </summary>
         public string JobId

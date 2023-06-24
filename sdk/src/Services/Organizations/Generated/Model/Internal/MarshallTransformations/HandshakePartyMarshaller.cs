@@ -34,7 +34,7 @@ namespace Amazon.Organizations.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// HandshakeParty Marshaller
-    /// </summary>       
+    /// </summary>
     public class HandshakePartyMarshaller : IRequestMarshaller<HandshakeParty, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Organizations.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static HandshakePartyMarshaller Instance = new HandshakePartyMarshaller();
 
     }

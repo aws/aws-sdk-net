@@ -76,6 +76,12 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
                     unmarshalledObject.DocumentAttributeValue = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("FacetResults", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<FacetResult, FacetResultUnmarshaller>(FacetResultUnmarshaller.Instance);
+                    unmarshalledObject.FacetResults = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

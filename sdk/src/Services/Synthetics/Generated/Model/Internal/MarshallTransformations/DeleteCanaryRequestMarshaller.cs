@@ -55,13 +55,17 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
         public IRequest Marshall(DeleteCanaryRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Synthetics");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-10-11";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-10-11";
             request.HttpMethod = "DELETE";
 
             if (!publicRequest.IsSetName())
                 throw new AmazonSyntheticsException("Request object does not have required field Name set");
             request.AddPathResource("{name}", StringUtils.FromString(publicRequest.Name));
+            
+            if (publicRequest.IsSetDeleteLambda())
+                request.Parameters.Add("deleteLambda", StringUtils.FromBool(publicRequest.DeleteLambda));
             request.ResourcePath = "/canary/{name}";
+            request.UseQueryString = true;
 
             return request;
         }

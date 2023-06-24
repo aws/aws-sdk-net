@@ -36,6 +36,7 @@ namespace Amazon.QuickSight.Model
     {
         private DataColorPalette _dataColorPalette;
         private SheetStyle _sheet;
+        private Typography _typography;
         private UIColorPalette _uiColorPalette;
 
         /// <summary>
@@ -72,6 +73,21 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetSheet()
         {
             return this._sheet != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Typography.
+        /// </summary>
+        public Typography Typography
+        {
+            get { return this._typography; }
+            set { this._typography = value; }
+        }
+
+        // Check to see if Typography property is set
+        internal bool IsSetTypography()
+        {
+            return this._typography != null;
         }
 
         /// <summary>

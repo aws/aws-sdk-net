@@ -64,6 +64,12 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("generatedId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.GeneratedId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("identifier", targetDepth))
                 {
                     var unmarshaller = ItemIdentifierUnmarshaller.Instance;

@@ -38,9 +38,9 @@ namespace Amazon.NetworkManager
     /// <summary>
     /// Implementation for accessing NetworkManager
     ///
-    /// Transit Gateway Network Manager (Network Manager) enables you to create a global network,
-    /// in which you can monitor your Amazon Web Services and on-premises networks that are
-    /// built around transit gateways.
+    /// Amazon Web Services enables you to centrally manage your Amazon Web Services Cloud
+    /// WAN core network and your Transit Gateway network across Amazon Web Services accounts,
+    /// Regions, and on-premises locations.
     /// </summary>
     public partial class AmazonNetworkManagerClient : AmazonServiceClient, IAmazonNetworkManager
     {
@@ -235,6 +235,15 @@ namespace Amazon.NetworkManager
         } 
 
         /// <summary>
+        /// Customizes the runtime pipeline.
+        /// </summary>
+        /// <param name="pipeline">Runtime pipeline for the current client.</param>
+        protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
+        {
+            pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonNetworkManagerEndpointResolver());
+        }
+        /// <summary>
         /// Capture metadata for the service.
         /// </summary>
         protected override IServiceMetadata ServiceMetadata
@@ -403,8 +412,8 @@ namespace Amazon.NetworkManager
         ///  
         /// <para>
         /// You can only associate customer gateways that are connected to a VPN attachment on
-        /// a transit gateway. The transit gateway must be registered in your global network.
-        /// When you register a transit gateway, customer gateways that are connected to the transit
+        /// a transit gateway or core network registered in your global network. When you register
+        /// a transit gateway or core network, customer gateways that are connected to the transit
         /// gateway are automatically included in the global network. To list customer gateways
         /// that are connected to a transit gateway, use the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVpnConnections.html">DescribeVpnConnections</a>
         /// EC2 API and filter by <code>transit-gateway-id</code>.
@@ -710,7 +719,7 @@ namespace Amazon.NetworkManager
 
 
         /// <summary>
-        /// Creates a core network connect peer for a specified core network connect attachment
+        /// Creates a core network Connect peer for a specified core network connect attachment
         /// between a core network and an appliance. The peer address and transit gateway address
         /// must be the same IP address family (IPv4 or IPv6).
         /// </summary>
@@ -1044,7 +1053,8 @@ namespace Amazon.NetworkManager
 
 
         /// <summary>
-        /// Creates a site-to-site VPN attachment on an edge location of a core network.
+        /// Creates an Amazon Web Services site-to-site VPN attachment on an edge location of
+        /// a core network.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSiteToSiteVpnAttachment service method.</param>
         /// <param name="cancellationToken">
@@ -1079,6 +1089,112 @@ namespace Amazon.NetworkManager
             options.ResponseUnmarshaller = CreateSiteToSiteVpnAttachmentResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateSiteToSiteVpnAttachmentResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateTransitGatewayPeering
+
+        internal virtual CreateTransitGatewayPeeringResponse CreateTransitGatewayPeering(CreateTransitGatewayPeeringRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateTransitGatewayPeeringRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTransitGatewayPeeringResponseUnmarshaller.Instance;
+
+            return Invoke<CreateTransitGatewayPeeringResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a transit gateway peering connection.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTransitGatewayPeering service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateTransitGatewayPeering service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateTransitGatewayPeering">REST API Reference for CreateTransitGatewayPeering Operation</seealso>
+        public virtual Task<CreateTransitGatewayPeeringResponse> CreateTransitGatewayPeeringAsync(CreateTransitGatewayPeeringRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateTransitGatewayPeeringRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTransitGatewayPeeringResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateTransitGatewayPeeringResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateTransitGatewayRouteTableAttachment
+
+        internal virtual CreateTransitGatewayRouteTableAttachmentResponse CreateTransitGatewayRouteTableAttachment(CreateTransitGatewayRouteTableAttachmentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateTransitGatewayRouteTableAttachmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTransitGatewayRouteTableAttachmentResponseUnmarshaller.Instance;
+
+            return Invoke<CreateTransitGatewayRouteTableAttachmentResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a transit gateway route table attachment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTransitGatewayRouteTableAttachment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateTransitGatewayRouteTableAttachment service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateTransitGatewayRouteTableAttachment">REST API Reference for CreateTransitGatewayRouteTableAttachment Operation</seealso>
+        public virtual Task<CreateTransitGatewayRouteTableAttachmentResponse> CreateTransitGatewayRouteTableAttachmentAsync(CreateTransitGatewayRouteTableAttachmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateTransitGatewayRouteTableAttachmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTransitGatewayRouteTableAttachmentResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateTransitGatewayRouteTableAttachmentResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1471,7 +1587,8 @@ namespace Amazon.NetworkManager
 
         /// <summary>
         /// Deletes an existing global network. You must first delete all global network objects
-        /// (devices, links, and sites) and deregister all transit gateways.
+        /// (devices, links, and sites), deregister all transit gateways, and delete any core
+        /// networks.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteGlobalNetwork service method.</param>
         /// <param name="cancellationToken">
@@ -1560,6 +1677,59 @@ namespace Amazon.NetworkManager
             options.ResponseUnmarshaller = DeleteLinkResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteLinkResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeletePeering
+
+        internal virtual DeletePeeringResponse DeletePeering(DeletePeeringRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePeeringRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePeeringResponseUnmarshaller.Instance;
+
+            return Invoke<DeletePeeringResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes an existing peering connection.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePeering service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeletePeering service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeletePeering">REST API Reference for DeletePeering Operation</seealso>
+        public virtual Task<DeletePeeringResponse> DeletePeeringAsync(DeletePeeringRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePeeringRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePeeringResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeletePeeringResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2255,7 +2425,7 @@ namespace Amazon.NetworkManager
 
 
         /// <summary>
-        /// Returns information about a core network. By default it returns the LIVE policy.
+        /// Returns information about the LIVE policy for a core network.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetCoreNetwork service method.</param>
         /// <param name="cancellationToken">
@@ -2286,6 +2456,55 @@ namespace Amazon.NetworkManager
             options.ResponseUnmarshaller = GetCoreNetworkResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetCoreNetworkResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetCoreNetworkChangeEvents
+
+        internal virtual GetCoreNetworkChangeEventsResponse GetCoreNetworkChangeEvents(GetCoreNetworkChangeEventsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCoreNetworkChangeEventsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCoreNetworkChangeEventsResponseUnmarshaller.Instance;
+
+            return Invoke<GetCoreNetworkChangeEventsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns information about a core network change event.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCoreNetworkChangeEvents service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetCoreNetworkChangeEvents service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetCoreNetworkChangeEvents">REST API Reference for GetCoreNetworkChangeEvents Operation</seealso>
+        public virtual Task<GetCoreNetworkChangeEventsResponse> GetCoreNetworkChangeEventsAsync(GetCoreNetworkChangeEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCoreNetworkChangeEventsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCoreNetworkChangeEventsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetCoreNetworkChangeEventsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2353,8 +2572,8 @@ namespace Amazon.NetworkManager
 
 
         /// <summary>
-        /// Gets details about a core network policy. You can get details about your current live
-        /// policy or any previous policy version.
+        /// Returns details about a core network policy. You can get details about your current
+        /// live policy or any previous policy version.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetCoreNetworkPolicy service method.</param>
         /// <param name="cancellationToken">
@@ -3092,6 +3311,55 @@ namespace Amazon.NetworkManager
 
         #endregion
         
+        #region  GetTransitGatewayPeering
+
+        internal virtual GetTransitGatewayPeeringResponse GetTransitGatewayPeering(GetTransitGatewayPeeringRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTransitGatewayPeeringRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTransitGatewayPeeringResponseUnmarshaller.Instance;
+
+            return Invoke<GetTransitGatewayPeeringResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns information about a transit gateway peer.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTransitGatewayPeering service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetTransitGatewayPeering service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetTransitGatewayPeering">REST API Reference for GetTransitGatewayPeering Operation</seealso>
+        public virtual Task<GetTransitGatewayPeeringResponse> GetTransitGatewayPeeringAsync(GetTransitGatewayPeeringRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTransitGatewayPeeringRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTransitGatewayPeeringResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetTransitGatewayPeeringResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetTransitGatewayRegistrations
 
         internal virtual GetTransitGatewayRegistrationsResponse GetTransitGatewayRegistrations(GetTransitGatewayRegistrationsRequest request)
@@ -3137,6 +3405,55 @@ namespace Amazon.NetworkManager
             options.ResponseUnmarshaller = GetTransitGatewayRegistrationsResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetTransitGatewayRegistrationsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetTransitGatewayRouteTableAttachment
+
+        internal virtual GetTransitGatewayRouteTableAttachmentResponse GetTransitGatewayRouteTableAttachment(GetTransitGatewayRouteTableAttachmentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTransitGatewayRouteTableAttachmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTransitGatewayRouteTableAttachmentResponseUnmarshaller.Instance;
+
+            return Invoke<GetTransitGatewayRouteTableAttachmentResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns information about a transit gateway route table attachment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTransitGatewayRouteTableAttachment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetTransitGatewayRouteTableAttachment service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetTransitGatewayRouteTableAttachment">REST API Reference for GetTransitGatewayRouteTableAttachment Operation</seealso>
+        public virtual Task<GetTransitGatewayRouteTableAttachmentResponse> GetTransitGatewayRouteTableAttachmentAsync(GetTransitGatewayRouteTableAttachmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTransitGatewayRouteTableAttachmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTransitGatewayRouteTableAttachmentResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetTransitGatewayRouteTableAttachmentResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3377,6 +3694,87 @@ namespace Amazon.NetworkManager
 
         #endregion
         
+        #region  ListOrganizationServiceAccessStatus
+
+        internal virtual ListOrganizationServiceAccessStatusResponse ListOrganizationServiceAccessStatus(ListOrganizationServiceAccessStatusRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListOrganizationServiceAccessStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListOrganizationServiceAccessStatusResponseUnmarshaller.Instance;
+
+            return Invoke<ListOrganizationServiceAccessStatusResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Gets the status of the Service Linked Role (SLR) deployment for the accounts in a
+        /// given Amazon Web Services Organization.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListOrganizationServiceAccessStatus service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListOrganizationServiceAccessStatus service method, as returned by NetworkManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListOrganizationServiceAccessStatus">REST API Reference for ListOrganizationServiceAccessStatus Operation</seealso>
+        public virtual Task<ListOrganizationServiceAccessStatusResponse> ListOrganizationServiceAccessStatusAsync(ListOrganizationServiceAccessStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListOrganizationServiceAccessStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListOrganizationServiceAccessStatusResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListOrganizationServiceAccessStatusResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListPeerings
+
+        internal virtual ListPeeringsResponse ListPeerings(ListPeeringsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPeeringsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPeeringsResponseUnmarshaller.Instance;
+
+            return Invoke<ListPeeringsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists the peerings for a core network.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPeerings service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListPeerings service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListPeerings">REST API Reference for ListPeerings Operation</seealso>
+        public virtual Task<ListPeeringsResponse> ListPeeringsAsync(ListPeeringsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPeeringsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPeeringsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListPeeringsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListTagsForResource
 
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
@@ -3550,10 +3948,12 @@ namespace Amazon.NetworkManager
 
 
         /// <summary>
-        /// Registers a transit gateway in your global network. The transit gateway can be in
-        /// any Amazon Web Services Region, but it must be owned by the same Amazon Web Services
-        /// account that owns the global network. You cannot register a transit gateway in more
-        /// than one global network.
+        /// Registers a transit gateway in your global network. Not all Regions support transit
+        /// gateways for global networks. For a list of the supported Regions, see <a href="https://docs.aws.amazon.com/network-manager/latest/tgwnm/what-are-global-networks.html#nm-available-regions">Region
+        /// Availability</a> in the <i>Amazon Web Services Transit Gateways for Global Networks
+        /// User Guide</i>. The transit gateway can be in any of the supported Amazon Web Services
+        /// Regions, but it must be owned by the same Amazon Web Services account that owns the
+        /// global network. You cannot register a transit gateway in more than one global network.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RegisterTransitGateway service method.</param>
         /// <param name="cancellationToken">
@@ -3696,6 +4096,60 @@ namespace Amazon.NetworkManager
             options.ResponseUnmarshaller = RestoreCoreNetworkPolicyVersionResponseUnmarshaller.Instance;
 
             return InvokeAsync<RestoreCoreNetworkPolicyVersionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartOrganizationServiceAccessUpdate
+
+        internal virtual StartOrganizationServiceAccessUpdateResponse StartOrganizationServiceAccessUpdate(StartOrganizationServiceAccessUpdateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartOrganizationServiceAccessUpdateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartOrganizationServiceAccessUpdateResponseUnmarshaller.Instance;
+
+            return Invoke<StartOrganizationServiceAccessUpdateResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Enables the Network Manager service for an Amazon Web Services Organization. This
+        /// can only be called by a management account within the organization.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartOrganizationServiceAccessUpdate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartOrganizationServiceAccessUpdate service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ServiceQuotaExceededException">
+        /// A service limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/StartOrganizationServiceAccessUpdate">REST API Reference for StartOrganizationServiceAccessUpdate Operation</seealso>
+        public virtual Task<StartOrganizationServiceAccessUpdateResponse> StartOrganizationServiceAccessUpdateAsync(StartOrganizationServiceAccessUpdateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartOrganizationServiceAccessUpdateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartOrganizationServiceAccessUpdateResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartOrganizationServiceAccessUpdateResponse>(request, options, cancellationToken);
         }
 
         #endregion

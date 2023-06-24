@@ -62,7 +62,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property ReferenceSummaryList. 
         /// <para>
-        /// Information about the contact flows.
+        /// Information about the flows.
         /// </para>
         /// </summary>
         public List<ReferenceSummary> ReferenceSummaryList

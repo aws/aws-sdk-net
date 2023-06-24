@@ -33,9 +33,15 @@ namespace Amazon.Kinesis.Model
     /// Splits a shard into two new shards in the Kinesis data stream, to increase the stream's
     /// capacity to ingest and transport data. <code>SplitShard</code> is called when there
     /// is a need to increase the overall capacity of a stream because of an expected increase
-    /// in the volume of data records being ingested. 
+    /// in the volume of data records being ingested. This API is only supported for the data
+    /// streams with the provisioned capacity mode.
     /// 
-    ///  
+    ///  <note> 
+    /// <para>
+    /// When invoking this API, it is recommended you use the <code>StreamARN</code> input
+    /// parameter rather than the <code>StreamName</code> input parameter.
+    /// </para>
+    ///  </note> 
     /// <para>
     /// You can also use <code>SplitShard</code> when a shard appears to be approaching its
     /// maximum utilization; for example, the producers sending data into the specific shard
@@ -99,6 +105,7 @@ namespace Amazon.Kinesis.Model
     {
         private string _newStartingHashKey;
         private string _shardToSplit;
+        private string _streamARN;
         private string _streamName;
 
         /// <summary>
@@ -146,12 +153,31 @@ namespace Amazon.Kinesis.Model
         }
 
         /// <summary>
+        /// Gets and sets the property StreamARN. 
+        /// <para>
+        /// The ARN of the stream.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string StreamARN
+        {
+            get { return this._streamARN; }
+            set { this._streamARN = value; }
+        }
+
+        // Check to see if StreamARN property is set
+        internal bool IsSetStreamARN()
+        {
+            return this._streamARN != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property StreamName. 
         /// <para>
         /// The name of the stream for the shard split.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [AWSProperty(Min=1, Max=128)]
         public string StreamName
         {
             get { return this._streamName; }

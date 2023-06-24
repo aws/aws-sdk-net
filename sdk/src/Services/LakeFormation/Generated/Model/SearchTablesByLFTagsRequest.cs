@@ -70,7 +70,7 @@ namespace Amazon.LakeFormation.Model
         /// A list of conditions (<code>LFTag</code> structures) to search for in table resources.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=5)]
+        [AWSProperty(Required=true)]
         public List<LFTag> Expression
         {
             get { return this._expression; }
@@ -89,7 +89,7 @@ namespace Amazon.LakeFormation.Model
         /// The maximum number of results to return.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1000)]
+        [AWSProperty(Min=1, Max=100)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

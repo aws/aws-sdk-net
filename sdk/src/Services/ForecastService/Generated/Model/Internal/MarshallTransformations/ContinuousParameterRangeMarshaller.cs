@@ -34,7 +34,7 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ContinuousParameterRange Marshaller
-    /// </summary>       
+    /// </summary>
     public class ContinuousParameterRangeMarshaller : IRequestMarshaller<ContinuousParameterRange, JsonMarshallerContext> 
     {
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ContinuousParameterRangeMarshaller Instance = new ContinuousParameterRangeMarshaller();
 
     }

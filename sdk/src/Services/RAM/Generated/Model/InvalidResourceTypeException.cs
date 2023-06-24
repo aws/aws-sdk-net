@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RAM.Model
 {
     /// <summary>
-    /// The specified resource type is not valid.
+    /// The operation failed because the specified resource type isn't valid.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

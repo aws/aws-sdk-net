@@ -34,7 +34,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// GroupMembers Marshaller
-    /// </summary>       
+    /// </summary>
     public class GroupMembersMarshaller : IRequestMarshaller<GroupMembers, JsonMarshallerContext> 
     {
         /// <summary>
@@ -92,7 +92,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static GroupMembersMarshaller Instance = new GroupMembersMarshaller();
 
     }

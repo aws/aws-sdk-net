@@ -33,8 +33,91 @@ namespace Amazon.MWAA
     /// <para>
     /// This section contains the Amazon Managed Workflows for Apache Airflow (MWAA) API reference
     /// documentation. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/what-is-mwaa.html">What
-    /// Is Amazon MWAA?</a>.
+    /// is Amazon MWAA?</a>.
     /// 
+    ///  
+    /// <para>
+    ///  <b>Endpoints</b> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <code>api.airflow.{region}.amazonaws.com</code> - This endpoint is used for environment
+    /// management.
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/mwaa/latest/API/API_CreateEnvironment.html">CreateEnvironment</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/mwaa/latest/API/API_DeleteEnvironment.html">DeleteEnvironment</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/mwaa/latest/API/API_GetEnvironment.html">GetEnvironment</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/mwaa/latest/API/API_ListEnvironments.html">ListEnvironments</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/mwaa/latest/API/API_ListTagsForResource.html">ListTagsForResource</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/mwaa/latest/API/API_TagResource.html">TagResource</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/mwaa/latest/API/API_UntagResource.html">UntagResource</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/mwaa/latest/API/API_UpdateEnvironment.html">UpdateEnvironment</a>
+    /// 
+    /// </para>
+    ///  </li> </ul> </li> <li> 
+    /// <para>
+    ///  <code>env.airflow.{region}.amazonaws.com</code> - This endpoint is used to operate
+    /// the Airflow environment.
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/mwaa/latest/API/API_CreateCliToken.html ">CreateCliToken</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/mwaa/latest/API/API_CreateWebLoginToken.html">CreateWebLoginToken</a>
+    /// 
+    /// </para>
+    ///  </li> </ul> </li> <li> 
+    /// <para>
+    ///  <code>ops.airflow.{region}.amazonaws.com</code> - This endpoint is used to push environment
+    /// metrics that track environment health.
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/mwaa/latest/API/API_PublishMetrics.html ">PublishMetrics</a>
+    /// 
+    /// </para>
+    ///  </li> </ul> </li> </ul> 
+    /// <para>
+    ///  <b>Regions</b> 
+    /// </para>
+    ///  
+    /// <para>
+    /// For a list of regions that Amazon MWAA supports, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/what-is-mwaa.html#regions-mwaa">Region
+    /// availability</a> in the <i>Amazon MWAA User Guide</i>.
+    /// </para>
     /// 
     /// </para>
     /// </summary>
@@ -55,7 +138,8 @@ namespace Amazon.MWAA
 
 
         /// <summary>
-        /// Create a CLI token to use Airflow CLI.
+        /// Creates a CLI token for the Airflow CLI. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/call-mwaa-apis-cli.html">Creating
+        /// an Apache Airflow CLI token</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCliToken service method.</param>
         /// 
@@ -144,14 +228,16 @@ namespace Amazon.MWAA
 
 
         /// <summary>
-        /// Create a JWT token to be used to login to Airflow Web UI with claims based Authentication.
+        /// Creates a web login token for the Airflow Web UI. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/call-mwaa-apis-web.html">Creating
+        /// an Apache Airflow web login token</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateWebLoginToken service method.</param>
         /// 
         /// <returns>The response from the CreateWebLoginToken service method, as returned by MWAA.</returns>
         /// <exception cref="Amazon.MWAA.Model.AccessDeniedException">
-        /// Access to the Airflow Web UI or CLI has been Denied. Please follow the MWAA user guide
-        /// to setup permissions to access the Web UI and CLI functionality.
+        /// Access to the Apache Airflow Web UI or CLI has been denied due to insufficient permissions.
+        /// To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/access-policies.html">Accessing
+        /// an Amazon MWAA environment</a>.
         /// </exception>
         /// <exception cref="Amazon.MWAA.Model.InternalServerException">
         /// InternalServerException: An internal error has occurred.
@@ -246,7 +332,7 @@ namespace Amazon.MWAA
 
 
         /// <summary>
-        /// Retrieves the details of an Amazon Managed Workflows for Apache Airflow (MWAA) environment.
+        /// Describes an Amazon Managed Workflows for Apache Airflow (MWAA) environment.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetEnvironment service method.</param>
         /// 
@@ -391,7 +477,7 @@ namespace Amazon.MWAA
 
 
         /// <summary>
-        /// An operation for publishing metrics from the customers to the Ops plane.
+        /// <b>Internal only</b>. Publishes environment health metrics to Amazon CloudWatch.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PublishMetrics service method.</param>
         /// 

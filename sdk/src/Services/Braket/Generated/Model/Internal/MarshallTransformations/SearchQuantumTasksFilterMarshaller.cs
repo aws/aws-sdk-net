@@ -34,7 +34,7 @@ namespace Amazon.Braket.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SearchQuantumTasksFilter Marshaller
-    /// </summary>       
+    /// </summary>
     public class SearchQuantumTasksFilterMarshaller : IRequestMarshaller<SearchQuantumTasksFilter, JsonMarshallerContext> 
     {
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.Braket.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SearchQuantumTasksFilterMarshaller Instance = new SearchQuantumTasksFilterMarshaller();
 
     }

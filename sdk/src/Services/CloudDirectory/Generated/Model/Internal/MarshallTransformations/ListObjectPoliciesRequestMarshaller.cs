@@ -56,7 +56,7 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CloudDirectory");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-01-11";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-01-11";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/amazonclouddirectory/2017-01-11/object/policy";
@@ -88,18 +88,21 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
 
         
-            if(publicRequest.IsSetConsistencyLevel())
+            if (publicRequest.IsSetConsistencyLevel()) 
+            {
                 request.Headers["x-amz-consistency-level"] = publicRequest.ConsistencyLevel;
+            }
         
-            if(publicRequest.IsSetDirectoryArn())
+            if (publicRequest.IsSetDirectoryArn()) 
+            {
                 request.Headers["x-amz-data-partition"] = publicRequest.DirectoryArn;
+            }
 
             return request;
         }

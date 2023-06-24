@@ -39,7 +39,7 @@ namespace Amazon.CodeGuruReviewer.Model
         /// <summary>
         /// Gets and sets the property CodeReviewSummaries. 
         /// <para>
-        ///  A list of code reviews that meet the criteria of the request. 
+        /// A list of code reviews that meet the criteria of the request.
         /// </para>
         /// </summary>
         public List<CodeReviewSummary> CodeReviewSummaries
@@ -57,7 +57,7 @@ namespace Amazon.CodeGuruReviewer.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        ///  Pagination token. 
+        /// Pagination token.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

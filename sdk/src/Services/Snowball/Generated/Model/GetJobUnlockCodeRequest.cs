@@ -39,7 +39,9 @@ namespace Amazon.Snowball.Model
     /// The <code>UnlockCode</code> value is a 29-character code with 25 alphanumeric characters
     /// and 4 hyphens. This code is used to decrypt the manifest file when it is passed along
     /// with the manifest to the Snow device through the Snowball client when the client is
-    /// started for the first time.
+    /// started for the first time. The only valid status for calling this API is <code>WithCustomer</code>
+    /// as the manifest and <code>Unlock</code> code values are used for securing your device
+    /// and should only be used when you have the device.
     /// </para>
     ///  
     /// <para>

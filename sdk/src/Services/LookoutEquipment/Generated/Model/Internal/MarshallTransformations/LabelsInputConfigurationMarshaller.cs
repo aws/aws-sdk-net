@@ -34,7 +34,7 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// LabelsInputConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class LabelsInputConfigurationMarshaller : IRequestMarshaller<LabelsInputConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -45,6 +45,12 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(LabelsInputConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetLabelGroupName())
+            {
+                context.Writer.WritePropertyName("LabelGroupName");
+                context.Writer.Write(requestObject.LabelGroupName);
+            }
+
             if(requestObject.IsSetS3InputConfiguration())
             {
                 context.Writer.WritePropertyName("S3InputConfiguration");
@@ -60,7 +66,7 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static LabelsInputConfigurationMarshaller Instance = new LabelsInputConfigurationMarshaller();
 
     }

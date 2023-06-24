@@ -60,10 +60,7 @@ namespace Amazon.S3.Model
     /// be able to handle 307 redirect. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/VirtualHosting.html">Virtual
     /// hosting of buckets</a>.
     /// </para>
-    ///  </note> 
-    /// <para>
-    ///  <b>Access control lists (ACLs)</b> 
-    /// </para>
+    ///  </note> <dl> <dt>Access control lists (ACLs)</dt> <dd> 
     ///  
     /// <para>
     /// When creating a bucket using this operation, you can optionally configure the bucket
@@ -173,10 +170,7 @@ namespace Amazon.S3.Model
     /// You can use either a canned ACL or specify access permissions explicitly. You cannot
     /// do both.
     /// </para>
-    ///  </note> 
-    /// <para>
-    ///  <b>Permissions</b> 
-    /// </para>
+    ///  </note> </dd> <dt>Permissions</dt> <dd> 
     ///  
     /// <para>
     /// In addition to <code>s3:CreateBucket</code>, the following permissions are required
@@ -202,7 +196,7 @@ namespace Amazon.S3.Model
     ///  <b>S3 Object Ownership</b> - If your CreateBucket request includes the the <code>x-amz-object-ownership</code>
     /// header, <code>s3:PutBucketOwnershipControls</code> permission is required.
     /// </para>
-    ///  </li> </ul> 
+    ///  </li> </ul> </dd> </dl> 
     /// <para>
     /// The following operations are related to <code>CreateBucket</code>:
     /// </para>

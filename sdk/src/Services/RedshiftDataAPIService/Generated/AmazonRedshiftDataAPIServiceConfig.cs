@@ -17,22 +17,22 @@
  * Do not modify this file. This file is generated from the redshift-data-2019-12-20.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
-
+using Amazon.RedshiftDataAPIService.Internal;
 
 namespace Amazon.RedshiftDataAPIService
 {
     /// <summary>
     /// Configuration for accessing Amazon RedshiftDataAPIService service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonRedshiftDataAPIServiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.5.1");
+            InternalSDKUtils.BuildUserAgentString("3.7.102.61");
 
         private string _userAgent = UserAgentString;
 
@@ -40,8 +40,10 @@ namespace Amazon.RedshiftDataAPIService
         /// Default constructor
         /// </summary>
         public AmazonRedshiftDataAPIServiceConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonRedshiftDataAPIServiceDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "redshift-data";
+            this.EndpointProvider = new AmazonRedshiftDataAPIServiceEndpointProvider();
         }
 
         /// <summary>
@@ -76,5 +78,6 @@ namespace Amazon.RedshiftDataAPIService
                 return _userAgent;
             }
         }
+
     }
 }

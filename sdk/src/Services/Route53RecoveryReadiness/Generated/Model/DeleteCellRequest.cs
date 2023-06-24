@@ -30,14 +30,17 @@ namespace Amazon.Route53RecoveryReadiness.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteCell operation.
-    /// Deletes an existing Cell.
+    /// Delete a cell. When successful, the response code is 204, with no response body.
     /// </summary>
     public partial class DeleteCellRequest : AmazonRoute53RecoveryReadinessRequest
     {
         private string _cellName;
 
         /// <summary>
-        /// Gets and sets the property CellName. The Cell to delete
+        /// Gets and sets the property CellName. 
+        /// <para>
+        /// The name of the cell.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string CellName

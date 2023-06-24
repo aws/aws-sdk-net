@@ -30,7 +30,7 @@ namespace Amazon.APIGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the GetModel operation.
-    /// Describes an existing model defined for a <a>RestApi</a> resource.
+    /// Describes an existing model defined for a RestApi resource.
     /// </summary>
     public partial class GetModelRequest : AmazonAPIGatewayRequest
     {
@@ -61,7 +61,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property ModelName. 
         /// <para>
-        /// [Required] The name of the model as an identifier.
+        /// The name of the model as an identifier.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -80,7 +80,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property RestApiId. 
         /// <para>
-        /// [Required] The <a>RestApi</a> identifier under which the <a>Model</a> exists.
+        /// The RestApi identifier under which the Model exists.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -34,7 +34,7 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// JobSample Marshaller
-    /// </summary>       
+    /// </summary>
     public class JobSampleMarshaller : IRequestMarshaller<JobSample, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static JobSampleMarshaller Instance = new JobSampleMarshaller();
 
     }

@@ -100,7 +100,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Unencrypted. 
         /// <para>
-        /// The total number of objects that aren't encrypted or use client-side encryption.
+        /// The total number of objects that use client-side encryption or aren't encrypted.
         /// </para>
         /// </summary>
         public long Unencrypted

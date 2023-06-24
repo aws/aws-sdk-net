@@ -34,7 +34,7 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SortDefinition Marshaller
-    /// </summary>       
+    /// </summary>
     public class SortDefinitionMarshaller : IRequestMarshaller<SortDefinition, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SortDefinitionMarshaller Instance = new SortDefinitionMarshaller();
 
     }

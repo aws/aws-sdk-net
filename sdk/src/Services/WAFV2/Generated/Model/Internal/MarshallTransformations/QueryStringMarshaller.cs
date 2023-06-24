@@ -34,7 +34,7 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// QueryString Marshaller
-    /// </summary>       
+    /// </summary>
     public class QueryStringMarshaller : IRequestMarshaller<QueryString, JsonMarshallerContext> 
     {
         /// <summary>
@@ -49,7 +49,7 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static QueryStringMarshaller Instance = new QueryStringMarshaller();
 
     }

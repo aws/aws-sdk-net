@@ -68,8 +68,8 @@ namespace Amazon.CodeArtifact.Model
         /// <summary>
         /// Gets and sets the property DomainOwner. 
         /// <para>
-        ///  The 12-digit account number of the AWS account that owns the domain. It does not
-        /// include dashes or spaces. 
+        ///  The 12-digit account number of the Amazon Web Services account that owns the domain.
+        /// It does not include dashes or spaces. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=12)]
@@ -97,6 +97,10 @@ namespace Amazon.CodeArtifact.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>public:nuget-org</code> - for the NuGet Gallery. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>public:pypi</code> - for the Python Package Index. 
         /// </para>
         ///  </li> <li> 
@@ -115,9 +119,13 @@ namespace Amazon.CodeArtifact.Model
         /// <para>
         ///  <code>public:maven-commonsware</code> - for the CommonsWare Android repository. 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>public:maven-clojars</code> - for the Clojars repository. 
+        /// </para>
         ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=2, Max=100)]
         public string ExternalConnection
         {
             get { return this._externalConnection; }

@@ -34,7 +34,7 @@ namespace Amazon.IoTEventsData.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SnoozeAlarmActionRequest Marshaller
-    /// </summary>       
+    /// </summary>
     public class SnoozeAlarmActionRequestMarshaller : IRequestMarshaller<SnoozeAlarmActionRequest, JsonMarshallerContext> 
     {
         /// <summary>
@@ -79,7 +79,7 @@ namespace Amazon.IoTEventsData.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SnoozeAlarmActionRequestMarshaller Instance = new SnoozeAlarmActionRequestMarshaller();
 
     }

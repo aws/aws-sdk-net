@@ -34,7 +34,7 @@ namespace Amazon.ServerMigrationService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// S3Location Marshaller
-    /// </summary>       
+    /// </summary>
     public class S3LocationMarshaller : IRequestMarshaller<S3Location, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.ServerMigrationService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static S3LocationMarshaller Instance = new S3LocationMarshaller();
 
     }

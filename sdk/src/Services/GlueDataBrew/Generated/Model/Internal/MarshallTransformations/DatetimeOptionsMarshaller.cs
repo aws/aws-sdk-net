@@ -34,7 +34,7 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DatetimeOptions Marshaller
-    /// </summary>       
+    /// </summary>
     public class DatetimeOptionsMarshaller : IRequestMarshaller<DatetimeOptions, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DatetimeOptionsMarshaller Instance = new DatetimeOptionsMarshaller();
 
     }

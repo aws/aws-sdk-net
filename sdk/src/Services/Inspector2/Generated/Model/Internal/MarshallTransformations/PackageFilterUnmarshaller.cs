@@ -88,6 +88,12 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
                     unmarshalledObject.Release = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("sourceLambdaLayerArn", targetDepth))
+                {
+                    var unmarshaller = StringFilterUnmarshaller.Instance;
+                    unmarshalledObject.SourceLambdaLayerArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("sourceLayerHash", targetDepth))
                 {
                     var unmarshaller = StringFilterUnmarshaller.Instance;

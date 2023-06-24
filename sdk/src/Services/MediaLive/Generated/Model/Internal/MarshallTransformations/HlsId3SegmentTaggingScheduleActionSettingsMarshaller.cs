@@ -34,7 +34,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// HlsId3SegmentTaggingScheduleActionSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class HlsId3SegmentTaggingScheduleActionSettingsMarshaller : IRequestMarshaller<HlsId3SegmentTaggingScheduleActionSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -45,6 +45,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(HlsId3SegmentTaggingScheduleActionSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetId3())
+            {
+                context.Writer.WritePropertyName("id3");
+                context.Writer.Write(requestObject.Id3);
+            }
+
             if(requestObject.IsSetTag())
             {
                 context.Writer.WritePropertyName("tag");
@@ -55,7 +61,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static HlsId3SegmentTaggingScheduleActionSettingsMarshaller Instance = new HlsId3SegmentTaggingScheduleActionSettingsMarshaller();
 
     }

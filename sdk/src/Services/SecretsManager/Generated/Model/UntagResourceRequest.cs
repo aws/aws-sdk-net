@@ -30,7 +30,7 @@ namespace Amazon.SecretsManager.Model
 {
     /// <summary>
     /// Container for the parameters to the UntagResource operation.
-    /// Removes one or more tags from the specified secret.
+    /// Removes specific tags from a secret.
     /// 
     ///  
     /// <para>
@@ -46,29 +46,18 @@ namespace Amazon.SecretsManager.Model
     /// </para>
     ///  </important> 
     /// <para>
-    ///  <b>Minimum permissions</b> 
+    /// Secrets Manager generates a CloudTrail log entry when you call this action. Do not
+    /// include sensitive information in request parameters because it might be logged. For
+    /// more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/retrieve-ct-entries.html">Logging
+    /// Secrets Manager events with CloudTrail</a>.
     /// </para>
     ///  
     /// <para>
-    /// To run this command, you must have the following permissions:
+    ///  <b>Required permissions: </b> <code>secretsmanager:UntagResource</code>. For more
+    /// information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions">
+    /// IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+    /// and access control in Secrets Manager</a>. 
     /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    /// secretsmanager:UntagResource
-    /// </para>
-    ///  </li> </ul> 
-    /// <para>
-    ///  <b>Related operations</b> 
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    /// To add one or more tags to the collection attached to a secret, use <a>TagResource</a>.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// To view the list of tags attached to a secret, use <a>DescribeSecret</a>.
-    /// </para>
-    ///  </li> </ul>
     /// </summary>
     public partial class UntagResourceRequest : AmazonSecretsManagerRequest
     {
@@ -78,12 +67,13 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property SecretId. 
         /// <para>
-        /// The identifier for the secret that you want to remove tags from. You can specify either
-        /// the Amazon Resource Name (ARN) or the friendly name of the secret.
+        /// The ARN or name of the secret.
         /// </para>
         ///  
         /// <para>
         /// For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.
+        /// See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding
+        /// a secret from a partial ARN</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]
@@ -107,7 +97,7 @@ namespace Amazon.SecretsManager.Model
         /// </para>
         ///  
         /// <para>
-        /// This parameter to the API requires a JSON text string argument.
+        /// This parameter requires a JSON text string argument.
         /// </para>
         ///  
         /// <para>

@@ -34,10 +34,30 @@ namespace Amazon.Appflow.Model
     /// </summary>
     public partial class SourceFlowConfig
     {
+        private string _apiVersion;
         private string _connectorProfileName;
         private ConnectorType _connectorType;
         private IncrementalPullConfig _incrementalPullConfig;
         private SourceConnectorProperties _sourceConnectorProperties;
+
+        /// <summary>
+        /// Gets and sets the property ApiVersion. 
+        /// <para>
+        /// The API version of the connector when it's used as a source in the flow.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=256)]
+        public string ApiVersion
+        {
+            get { return this._apiVersion; }
+            set { this._apiVersion = value; }
+        }
+
+        // Check to see if ApiVersion property is set
+        internal bool IsSetApiVersion()
+        {
+            return this._apiVersion != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ConnectorProfileName. 

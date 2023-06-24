@@ -1,5 +1,6 @@
 {
   "active": true,
   "synopsis": "Introducing Amazon Honeycode - a fully managed service that allows you to quickly build mobile and web apps for teams without programming.",
-  "generate-client-constructors": true
+  "generate-client-constructors": true,
+  "legacy-service-id": "Honeycode"
 }

@@ -29,9 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataSync.Model
 {
     /// <summary>
-    /// Represents a single entry in a list of Amazon Web Services resource tags. <code>TagListEntry</code>
-    /// returns an array that contains a list of tasks when the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_ListTagsForResource.html">ListTagsForResource</a>
-    /// operation is called.
+    /// A key-value pair representing a single tag that's been applied to an Amazon Web Services
+    /// resource.
     /// </summary>
     public partial class TagListEntry
     {

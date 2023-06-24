@@ -25,6 +25,42 @@
     <pattern>[0-9a-z]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EMRContainers.Model.CreateJobTemplateRequest.ClientToken</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRContainers.Model.CreateJobTemplateRequest.KmsKeyArn</property>
+    <min>3</min>
+    <max>2048</max>
+    <pattern>^(arn:(aws[a-zA-Z0-9-]*):kms:.+:(\d{12})?:key\/[(0-9a-zA-Z)-?]+|\$\{[a-zA-Z]\w*\})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRContainers.Model.CreateJobTemplateRequest.Name</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[\.\-_/#A-Za-z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRContainers.Model.CreateJobTemplateResponse.Arn</property>
+    <min>60</min>
+    <max>1024</max>
+    <pattern>^arn:(aws[a-zA-Z0-9-]*):emr-containers:.+:(\d{12}):\/jobtemplates\/[0-9a-zA-Z]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRContainers.Model.CreateJobTemplateResponse.Id</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[0-9a-z]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRContainers.Model.CreateJobTemplateResponse.Name</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[\.\-_/#A-Za-z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EMRContainers.Model.CreateManagedEndpointRequest.CertificateArn</property>
     <min>44</min>
     <max>2048</max>
@@ -121,6 +157,18 @@
     <pattern>[\.\-_/#A-Za-z0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EMRContainers.Model.DeleteJobTemplateRequest.Id</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[0-9a-z]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRContainers.Model.DeleteJobTemplateResponse.Id</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[0-9a-z]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EMRContainers.Model.DeleteManagedEndpointRequest.Id</property>
     <min>1</min>
     <max>64</max>
@@ -169,6 +217,12 @@
     <pattern>[0-9a-z]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EMRContainers.Model.DescribeJobTemplateRequest.Id</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[0-9a-z]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EMRContainers.Model.DescribeManagedEndpointRequest.Id</property>
     <min>1</min>
     <max>64</max>
@@ -182,6 +236,48 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EMRContainers.Model.DescribeVirtualClusterRequest.Id</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[0-9a-z]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRContainers.Model.GetManagedEndpointSessionCredentialsRequest.ClientToken</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRContainers.Model.GetManagedEndpointSessionCredentialsRequest.CredentialType</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^.*\S.*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRContainers.Model.GetManagedEndpointSessionCredentialsRequest.EndpointIdentifier</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRContainers.Model.GetManagedEndpointSessionCredentialsRequest.ExecutionRoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:(aws[a-zA-Z0-9-]*):iam::(\d{12})?:(role((\u002F)|(\u002F[\u0021-\u007F]+\u002F))[\w+=,.@-]+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRContainers.Model.GetManagedEndpointSessionCredentialsRequest.LogContext</property>
+    <min>3</min>
+    <max>63</max>
+    <pattern>^((?!.*-s3alias)(?!xn--.*)[a-z0-9][-a-z0-9.]*)?[a-z0-9]$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRContainers.Model.GetManagedEndpointSessionCredentialsRequest.VirtualClusterIdentifier</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRContainers.Model.GetManagedEndpointSessionCredentialsResponse.Id</property>
     <min>1</min>
     <max>64</max>
     <pattern>[0-9a-z]+</pattern>
@@ -206,6 +302,18 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EMRContainers.Model.ListJobRunsResponse.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRContainers.Model.ListJobTemplatesRequest.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRContainers.Model.ListJobTemplatesResponse.NextToken</property>
     <min>1</min>
     <max>1024</max>
     <pattern>.*\S.*</pattern>
@@ -263,6 +371,12 @@
     <min>20</min>
     <max>2048</max>
     <pattern>^arn:(aws[a-zA-Z0-9-]*):iam::(\d{12})?:(role((\u002F)|(\u002F[\u0021-\u007F]+\u002F))[\w+=,.@-]+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRContainers.Model.StartJobRunRequest.JobTemplateId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[0-9a-z]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EMRContainers.Model.StartJobRunRequest.Name</property>
@@ -348,10 +462,26 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EMRContainers.Model.ContainerLogRotationConfiguration.MaxFilesToKeep</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRContainers.Model.ContainerLogRotationConfiguration.RotationSize</property>
+    <min>3</min>
+    <max>12</max>
+    <pattern>^\d+(\.\d+)?[KMG][Bb]?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EMRContainers.Model.ContainerProvider.Id</property>
     <min>1</min>
     <max>100</max>
     <pattern>^[0-9A-Za-z][A-Za-z0-9\-_]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRContainers.Model.Credentials.Token</property>
+    <min>1</min>
+    <pattern>^.*\S.*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EMRContainers.Model.EksInfo.Namespace</property>
@@ -480,22 +610,112 @@
     <pattern>[0-9a-z]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EMRContainers.Model.JobTemplate.Arn</property>
+    <min>60</min>
+    <max>1024</max>
+    <pattern>^arn:(aws[a-zA-Z0-9-]*):emr-containers:.+:(\d{12}):\/jobtemplates\/[0-9a-zA-Z]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRContainers.Model.JobTemplate.CreatedBy</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:(aws[a-zA-Z0-9-]*):(iam|sts)::(\d{12})?:[\w/+=,.@-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRContainers.Model.JobTemplate.DecryptionError</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRContainers.Model.JobTemplate.Id</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[0-9a-z]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRContainers.Model.JobTemplate.KmsKeyArn</property>
+    <min>3</min>
+    <max>2048</max>
+    <pattern>^(arn:(aws[a-zA-Z0-9-]*):kms:.+:(\d{12})?:key\/[(0-9a-zA-Z)-?]+|\$\{[a-zA-Z]\w*\})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRContainers.Model.JobTemplate.Name</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[\.\-_/#A-Za-z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRContainers.Model.JobTemplateData.ExecutionRoleArn</property>
+    <min>4</min>
+    <max>2048</max>
+    <pattern>(^arn:(aws[a-zA-Z0-9-]*):iam::(\d{12})?:(role((\u002F)|(\u002F[\u0021-\u007F]+\u002F))[\w+=,.@-]+)$)|([\.\-_\#A-Za-z0-9\$\{\}]+)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRContainers.Model.JobTemplateData.ReleaseLabel</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>([\.\-_/A-Za-z0-9]+|\$\{[a-zA-Z]\w*\})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRContainers.Model.ParametricCloudWatchMonitoringConfiguration.LogGroupName</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>[\.\-_/#A-Za-z0-9\$\{\}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRContainers.Model.ParametricCloudWatchMonitoringConfiguration.LogStreamNamePrefix</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRContainers.Model.ParametricMonitoringConfiguration.PersistentAppUI</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>[\.\-_/#A-Za-z0-9\$\{\}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRContainers.Model.ParametricS3MonitoringConfiguration.LogUri</property>
+    <min>1</min>
+    <max>10280</max>
+    <pattern>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDBFF-\uDC00\uDFFF\r\n\t]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EMRContainers.Model.S3MonitoringConfiguration.LogUri</property>
     <min>1</min>
     <max>10280</max>
     <pattern>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDBFF-\uDC00\uDFFF\r\n\t]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EMRContainers.Model.SparkSqlJobDriver.EntryPoint</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRContainers.Model.SparkSqlJobDriver.SparkSqlParameters</property>
+    <min>1</min>
+    <max>102400</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EMRContainers.Model.SparkSubmitJobDriver.EntryPoint</property>
     <min>1</min>
     <max>256</max>
-    <pattern>(?!\s*$)(^[^';|\u0026\u003C\u003E*?`$(){}\[\]!#\\]*$)</pattern>
+    <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EMRContainers.Model.SparkSubmitJobDriver.SparkSubmitParameters</property>
     <min>1</min>
     <max>102400</max>
-    <pattern>(?!\s*$)(^[^';|\u0026\u003C\u003E*?`$(){}\[\]!#\\]*$)</pattern>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRContainers.Model.TemplateParameterConfiguration.DefaultValue</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EMRContainers.Model.VirtualCluster.Arn</property>

@@ -94,10 +94,22 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.Properties = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("propertyGroups", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, ComponentPropertyGroupResponse, StringUnmarshaller, ComponentPropertyGroupResponseUnmarshaller>(StringUnmarshaller.Instance, ComponentPropertyGroupResponseUnmarshaller.Instance);
+                    unmarshalledObject.PropertyGroups = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("status", targetDepth))
                 {
                     var unmarshaller = StatusUnmarshaller.Instance;
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("syncSource", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SyncSource = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

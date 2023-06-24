@@ -31,8 +31,9 @@
     <ProjectReference Include="..\..\src\Core\AWSSDK.Core.Net45.csproj"/>
     <ProjectReference Include="..\Common\AWSSDK.CommonTest.csproj"/>
     <ProjectReference Include="..\..\..\generator\ServiceClientGeneratorLib\ServiceClientGeneratorLib.csproj"/>
-    <ProjectReference Include="..\..\src\Services\*\*.Net45.csproj"/>
     <ProjectReference Include="..\..\..\extensions\src\AWSSDK.Extensions.CrtIntegration\AWSSDK.Extensions.CrtIntegration.Net45.csproj"/>
+    <ProjectReference Include="..\..\src\Services\*\*.Net45.csproj"/>
+    <ProjectReference Include="..\..\test\Services\*\*.Net45.csproj"/>
   </ItemGroup>
 
   <ItemGroup Condition="$(RunAnalyzersDuringBuild)">
@@ -57,4 +58,5 @@
     <EmbeddedResource Include="Custom\TestTools\ComparerTest.json"/>
     <EmbeddedResource Include="..\Services\CloudFront\UnitTests\Custom\EmbeddedResource\sample.rsa.private.key.txt"/>
   </ItemGroup>
+
 </Project>

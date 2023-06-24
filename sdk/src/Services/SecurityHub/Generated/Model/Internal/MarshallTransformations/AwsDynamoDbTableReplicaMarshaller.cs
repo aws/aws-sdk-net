@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AwsDynamoDbTableReplica Marshaller
-    /// </summary>       
+    /// </summary>
     public class AwsDynamoDbTableReplicaMarshaller : IRequestMarshaller<AwsDynamoDbTableReplica, JsonMarshallerContext> 
     {
         /// <summary>
@@ -100,7 +100,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AwsDynamoDbTableReplicaMarshaller Instance = new AwsDynamoDbTableReplicaMarshaller();
 
     }

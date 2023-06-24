@@ -70,6 +70,12 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
                     unmarshalledObject.BundleId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("BundleType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.BundleType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ComputeType", targetDepth))
                 {
                     var unmarshaller = ComputeTypeUnmarshaller.Instance;
@@ -116,6 +122,12 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = RootStorageUnmarshaller.Instance;
                     unmarshalledObject.RootStorage = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("State", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.State = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("UserStorage", targetDepth))

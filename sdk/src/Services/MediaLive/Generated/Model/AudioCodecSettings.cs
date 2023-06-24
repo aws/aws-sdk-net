@@ -35,6 +35,7 @@ namespace Amazon.MediaLive.Model
     {
         private AacSettings _aacSettings;
         private Ac3Settings _ac3Settings;
+        private Eac3AtmosSettings _eac3AtmosSettings;
         private Eac3Settings _eac3Settings;
         private Mp2Settings _mp2Settings;
         private PassThroughSettings _passThroughSettings;
@@ -68,6 +69,21 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetAc3Settings()
         {
             return this._ac3Settings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Eac3AtmosSettings.
+        /// </summary>
+        public Eac3AtmosSettings Eac3AtmosSettings
+        {
+            get { return this._eac3AtmosSettings; }
+            set { this._eac3AtmosSettings = value; }
+        }
+
+        // Check to see if Eac3AtmosSettings property is set
+        internal bool IsSetEac3AtmosSettings()
+        {
+            return this._eac3AtmosSettings != null;
         }
 
         /// <summary>

@@ -275,8 +275,16 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SpotPrice. 
         /// <para>
-        /// The maximum price per hour that you are willing to pay for a Spot Instance.
+        /// The maximum price per unit hour that you are willing to pay for a Spot Instance. We
+        /// do not recommend using this parameter because it can lead to increased interruptions.
+        /// If you do not specify this parameter, you will pay the current Spot price.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// If you specify a maximum price, your instances will be interrupted more frequently
+        /// than if you do not specify this parameter.
+        /// </para>
+        ///  </important>
         /// </summary>
         public string SpotPrice
         {
@@ -293,9 +301,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// The state of the Spot Instance request. Spot status information helps track your Spot
-        /// Instance requests. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
-        /// status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+        /// The state of the Spot Instance request. Spot request status information helps track
+        /// your Spot Instance requests. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-request-status.html">Spot
+        /// request status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
         /// </para>
         /// </summary>
         public SpotInstanceState State

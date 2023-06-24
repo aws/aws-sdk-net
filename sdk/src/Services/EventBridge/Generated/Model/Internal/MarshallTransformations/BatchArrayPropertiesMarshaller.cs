@@ -34,7 +34,7 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// BatchArrayProperties Marshaller
-    /// </summary>       
+    /// </summary>
     public class BatchArrayPropertiesMarshaller : IRequestMarshaller<BatchArrayProperties, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static BatchArrayPropertiesMarshaller Instance = new BatchArrayPropertiesMarshaller();
 
     }

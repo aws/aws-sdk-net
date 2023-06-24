@@ -56,7 +56,7 @@ namespace Amazon.SSOOIDC.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.SSOOIDC");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-06-10";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-06-10";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/device_authorization";
@@ -83,7 +83,6 @@ namespace Amazon.SSOOIDC.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.StartUrl);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

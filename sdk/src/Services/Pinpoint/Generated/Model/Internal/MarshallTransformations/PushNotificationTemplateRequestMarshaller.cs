@@ -34,7 +34,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// PushNotificationTemplateRequest Marshaller
-    /// </summary>       
+    /// </summary>
     public class PushNotificationTemplateRequestMarshaller : IRequestMarshaller<PushNotificationTemplateRequest, JsonMarshallerContext> 
     {
         /// <summary>
@@ -136,7 +136,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static PushNotificationTemplateRequestMarshaller Instance = new PushNotificationTemplateRequestMarshaller();
 
     }

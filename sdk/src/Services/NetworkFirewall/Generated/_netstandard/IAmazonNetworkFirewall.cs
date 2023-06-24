@@ -31,16 +31,16 @@ namespace Amazon.NetworkFirewall
     /// <summary>
     /// Interface for accessing NetworkFirewall
     ///
-    /// This is the API Reference for AWS Network Firewall. This guide is for developers who
-    /// need detailed information about the Network Firewall API actions, data types, and
-    /// errors. 
+    /// This is the API Reference for Network Firewall. This guide is for developers who need
+    /// detailed information about the Network Firewall API actions, data types, and errors.
+    /// 
     /// 
     ///  <ul> <li> 
     /// <para>
     /// The REST API requires you to handle connection details, such as calculating signatures,
     /// handling request retries, and error handling. For general information about using
-    /// the AWS REST APIs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-apis.html">AWS
-    /// APIs</a>. 
+    /// the Amazon Web Services REST APIs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-apis.html">Amazon
+    /// Web Services APIs</a>. 
     /// </para>
     ///  
     /// <para>
@@ -49,9 +49,9 @@ namespace Amazon.NetworkFirewall
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Alternatively, you can use one of the AWS SDKs to access an API that's tailored to
-    /// the programming language or platform that you're using. For more information, see
-    /// <a href="http://aws.amazon.com/tools/#SDKs">AWS SDKs</a>.
+    /// Alternatively, you can use one of the Amazon Web Services SDKs to access an API that's
+    /// tailored to the programming language or platform that you're using. For more information,
+    /// see <a href="http://aws.amazon.com/tools/#SDKs">Amazon Web Services SDKs</a>.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -65,9 +65,9 @@ namespace Amazon.NetworkFirewall
     /// and prevention service for Amazon Virtual Private Cloud (Amazon VPC). With Network
     /// Firewall, you can filter traffic at the perimeter of your VPC. This includes filtering
     /// traffic going to and coming from an internet gateway, NAT gateway, or over VPN or
-    /// AWS Direct Connect. Network Firewall uses rules that are compatible with Suricata,
-    /// a free, open source intrusion detection system (IDS) engine. AWS Network Firewall
-    /// supports Suricata version 5.0.2. For information about Suricata, see the <a href="https://suricata-ids.org/">Suricata
+    /// Direct Connect. Network Firewall uses rules that are compatible with Suricata, a free,
+    /// open source network analysis and threat detection engine. Network Firewall supports
+    /// Suricata version 6.0.9. For information about Suricata, see the <a href="https://suricata.io/">Suricata
     /// website</a>.
     /// </para>
     ///  
@@ -77,8 +77,8 @@ namespace Amazon.NetworkFirewall
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Allow domains or IP addresses for known AWS service endpoints, such as Amazon S3,
-    /// and block all other forms of traffic.
+    /// Allow domains or IP addresses for known Amazon Web Services service endpoints, such
+    /// as Amazon S3, and block all other forms of traffic.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -217,7 +217,7 @@ namespace Amazon.NetworkFirewall
         /// 
         ///  
         /// <para>
-        /// This request creates an AWS Network Firewall firewall endpoint in each of the subnets.
+        /// This request creates an Network Firewall firewall endpoint in each of the subnets.
         /// To enable the firewall's protections, you must also modify the VPC's route tables
         /// for each subnet's Availability Zone, to redirect the traffic that's coming into and
         /// going out of the zone through the firewall endpoint. 
@@ -230,8 +230,8 @@ namespace Amazon.NetworkFirewall
         /// 
         /// <returns>The response from the AssociateSubnets service method, as returned by NetworkFirewall.</returns>
         /// <exception cref="Amazon.NetworkFirewall.Model.InsufficientCapacityException">
-        /// AWS doesn't currently have enough available capacity to fulfill your request. Try
-        /// your request later.
+        /// Amazon Web Services doesn't currently have enough available capacity to fulfill your
+        /// request. Try your request later.
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
         /// Your request is valid, but Network Firewall couldn’t perform the operation because
@@ -278,15 +278,15 @@ namespace Amazon.NetworkFirewall
 
 
         /// <summary>
-        /// Creates an AWS Network Firewall <a>Firewall</a> and accompanying <a>FirewallStatus</a>
+        /// Creates an Network Firewall <a>Firewall</a> and accompanying <a>FirewallStatus</a>
         /// for a VPC. 
         /// 
         ///  
         /// <para>
-        /// The firewall defines the configuration settings for an AWS Network Firewall firewall.
+        /// The firewall defines the configuration settings for an Network Firewall firewall.
         /// The settings that you can define at creation include the firewall policy, the subnets
         /// in your VPC to use for the firewall endpoints, and any tags that are attached to the
-        /// firewall AWS resource. 
+        /// firewall Amazon Web Services resource. 
         /// </para>
         ///  
         /// <para>
@@ -301,8 +301,8 @@ namespace Amazon.NetworkFirewall
         /// </para>
         ///  
         /// <para>
-        /// To manage a firewall's tags, use the standard AWS resource tagging operations, <a>ListTagsForResource</a>,
-        /// <a>TagResource</a>, and <a>UntagResource</a>.
+        /// To manage a firewall's tags, use the standard Amazon Web Services resource tagging
+        /// operations, <a>ListTagsForResource</a>, <a>TagResource</a>, and <a>UntagResource</a>.
         /// </para>
         ///  
         /// <para>
@@ -316,8 +316,8 @@ namespace Amazon.NetworkFirewall
         /// 
         /// <returns>The response from the CreateFirewall service method, as returned by NetworkFirewall.</returns>
         /// <exception cref="Amazon.NetworkFirewall.Model.InsufficientCapacityException">
-        /// AWS doesn't currently have enough available capacity to fulfill your request. Try
-        /// your request later.
+        /// Amazon Web Services doesn't currently have enough available capacity to fulfill your
+        /// request. Try your request later.
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
         /// Your request is valid, but Network Firewall couldn’t perform the operation because
@@ -365,7 +365,7 @@ namespace Amazon.NetworkFirewall
         /// 
         ///  
         /// <para>
-        /// An AWS Network Firewall firewall policy defines the behavior of a firewall, in a collection
+        /// An Network Firewall firewall policy defines the behavior of a firewall, in a collection
         /// of stateless and stateful rule groups and other settings. You can use one firewall
         /// policy for multiple firewalls. 
         /// </para>
@@ -377,8 +377,8 @@ namespace Amazon.NetworkFirewall
         /// 
         /// <returns>The response from the CreateFirewallPolicy service method, as returned by NetworkFirewall.</returns>
         /// <exception cref="Amazon.NetworkFirewall.Model.InsufficientCapacityException">
-        /// AWS doesn't currently have enough available capacity to fulfill your request. Try
-        /// your request later.
+        /// Amazon Web Services doesn't currently have enough available capacity to fulfill your
+        /// request. Try your request later.
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
         /// Your request is valid, but Network Firewall couldn’t perform the operation because
@@ -434,8 +434,8 @@ namespace Amazon.NetworkFirewall
         /// 
         /// <returns>The response from the CreateRuleGroup service method, as returned by NetworkFirewall.</returns>
         /// <exception cref="Amazon.NetworkFirewall.Model.InsufficientCapacityException">
-        /// AWS doesn't currently have enough available capacity to fulfill your request. Try
-        /// your request later.
+        /// Amazon Web Services doesn't currently have enough available capacity to fulfill your
+        /// request. Try your request later.
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
         /// Your request is valid, but Network Firewall couldn’t perform the operation because
@@ -467,6 +467,77 @@ namespace Amazon.NetworkFirewall
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/CreateRuleGroup">REST API Reference for CreateRuleGroup Operation</seealso>
         Task<CreateRuleGroupResponse> CreateRuleGroupAsync(CreateRuleGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CreateTLSInspectionConfiguration
+
+
+
+        /// <summary>
+        /// Creates an Network Firewall TLS inspection configuration. A TLS inspection configuration
+        /// contains the Certificate Manager certificate references that Network Firewall uses
+        /// to decrypt and re-encrypt inbound traffic.
+        /// 
+        ///  
+        /// <para>
+        /// After you create a TLS inspection configuration, you associate it with a firewall
+        /// policy.
+        /// </para>
+        ///  
+        /// <para>
+        /// To update the settings for a TLS inspection configuration, use <a>UpdateTLSInspectionConfiguration</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To manage a TLS inspection configuration's tags, use the standard Amazon Web Services
+        /// resource tagging operations, <a>ListTagsForResource</a>, <a>TagResource</a>, and <a>UntagResource</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To retrieve information about TLS inspection configurations, use <a>ListTLSInspectionConfigurations</a>
+        /// and <a>DescribeTLSInspectionConfiguration</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  For more information about TLS inspection configurations, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/tls-inspection.html">Decrypting
+        /// SSL/TLS traffic with TLS inspection configurations</a> in the <i>Network Firewall
+        /// Developer Guide</i>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTLSInspectionConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateTLSInspectionConfiguration service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn’t perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
+        /// The operation failed because of a problem with your request. Examples include: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an unsupported parameter name or value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a property with a value that isn't among the available types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource that
+        /// isn't valid in the context of the request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/CreateTLSInspectionConfiguration">REST API Reference for CreateTLSInspectionConfiguration Operation</seealso>
+        Task<CreateTLSInspectionConfigurationResponse> CreateTLSInspectionConfigurationAsync(CreateTLSInspectionConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -692,6 +763,56 @@ namespace Amazon.NetworkFirewall
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DeleteRuleGroup">REST API Reference for DeleteRuleGroup Operation</seealso>
         Task<DeleteRuleGroupResponse> DeleteRuleGroupAsync(DeleteRuleGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteTLSInspectionConfiguration
+
+
+
+        /// <summary>
+        /// Deletes the specified <a>TLSInspectionConfiguration</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTLSInspectionConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteTLSInspectionConfiguration service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn’t perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidOperationException">
+        /// The operation failed because it's not valid. For example, you might have tried to
+        /// delete a rule group or firewall policy that's in use.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
+        /// The operation failed because of a problem with your request. Examples include: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an unsupported parameter name or value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a property with a value that isn't among the available types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource that
+        /// isn't valid in the context of the request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
+        /// Unable to locate a resource using the parameters that you provided.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DeleteTLSInspectionConfiguration">REST API Reference for DeleteTLSInspectionConfiguration Operation</seealso>
+        Task<DeleteTLSInspectionConfigurationResponse> DeleteTLSInspectionConfigurationAsync(DeleteTLSInspectionConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -925,6 +1046,100 @@ namespace Amazon.NetworkFirewall
 
         #endregion
                 
+        #region  DescribeRuleGroupMetadata
+
+
+
+        /// <summary>
+        /// High-level information about a rule group, returned by operations like create and
+        /// describe. You can use the information provided in the metadata to retrieve and manage
+        /// a rule group. You can retrieve all objects for a rule group by calling <a>DescribeRuleGroup</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeRuleGroupMetadata service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeRuleGroupMetadata service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn’t perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
+        /// The operation failed because of a problem with your request. Examples include: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an unsupported parameter name or value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a property with a value that isn't among the available types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource that
+        /// isn't valid in the context of the request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
+        /// Unable to locate a resource using the parameters that you provided.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DescribeRuleGroupMetadata">REST API Reference for DescribeRuleGroupMetadata Operation</seealso>
+        Task<DescribeRuleGroupMetadataResponse> DescribeRuleGroupMetadataAsync(DescribeRuleGroupMetadataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribeTLSInspectionConfiguration
+
+
+
+        /// <summary>
+        /// Returns the data objects for the specified TLS inspection configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTLSInspectionConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeTLSInspectionConfiguration service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn’t perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
+        /// The operation failed because of a problem with your request. Examples include: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an unsupported parameter name or value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a property with a value that isn't among the available types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource that
+        /// isn't valid in the context of the request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
+        /// Unable to locate a resource using the parameters that you provided.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DescribeTLSInspectionConfiguration">REST API Reference for DescribeTLSInspectionConfiguration Operation</seealso>
+        Task<DescribeTLSInspectionConfigurationResponse> DescribeTLSInspectionConfigurationAsync(DescribeTLSInspectionConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DisassociateSubnets
 
 
@@ -1128,13 +1343,13 @@ namespace Amazon.NetworkFirewall
         /// Retrieves the tags associated with the specified resource. Tags are key:value pairs
         /// that you can use to categorize and manage your resources, for purposes like billing.
         /// For example, you might set the tag key to "customer" and the value to the customer
-        /// name or ID. You can specify one or more tags to add to each AWS resource, up to 50
-        /// tags for a resource.
+        /// name or ID. You can specify one or more tags to add to each Amazon Web Services resource,
+        /// up to 50 tags for a resource.
         /// 
         ///  
         /// <para>
-        /// You can tag the AWS resources that you manage through AWS Network Firewall: firewalls,
-        /// firewall policies, and rule groups. 
+        /// You can tag the Amazon Web Services resources that you manage through Network Firewall:
+        /// firewalls, firewall policies, and rule groups. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
@@ -1143,6 +1358,10 @@ namespace Amazon.NetworkFirewall
         /// </param>
         /// 
         /// <returns>The response from the ListTagsForResource service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn’t perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
         /// The operation failed because of a problem with your request. Examples include: 
         /// 
@@ -1164,8 +1383,56 @@ namespace Amazon.NetworkFirewall
         /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
         /// Unable to locate a resource using the parameters that you provided.
         /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListTLSInspectionConfigurations
+
+
+
+        /// <summary>
+        /// Retrieves the metadata for the TLS inspection configurations that you have defined.
+        /// Depending on your setting for max results and the number of TLS inspection configurations,
+        /// a single call might not return the full list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTLSInspectionConfigurations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTLSInspectionConfigurations service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn’t perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
+        /// The operation failed because of a problem with your request. Examples include: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an unsupported parameter name or value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a property with a value that isn't among the available types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource that
+        /// isn't valid in the context of the request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/ListTLSInspectionConfigurations">REST API Reference for ListTLSInspectionConfigurations Operation</seealso>
+        Task<ListTLSInspectionConfigurationsResponse> ListTLSInspectionConfigurationsAsync(ListTLSInspectionConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -1174,9 +1441,9 @@ namespace Amazon.NetworkFirewall
 
 
         /// <summary>
-        /// Creates or updates an AWS Identity and Access Management policy for your rule group
-        /// or firewall policy. Use this to share rule groups and firewall policies between accounts.
-        /// This operation works in conjunction with the AWS Resource Access Manager (RAM) service
+        /// Creates or updates an IAM policy for your rule group or firewall policy. Use this
+        /// to share rule groups and firewall policies between accounts. This operation works
+        /// in conjunction with the Amazon Web Services Resource Access Manager (RAM) service
         /// to manage resource sharing for Network Firewall. 
         /// 
         ///  
@@ -1203,8 +1470,8 @@ namespace Amazon.NetworkFirewall
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For additional information about resource sharing using RAM, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/what-is.html">AWS
-        /// Resource Access Manager User Guide</a>.
+        /// For additional information about resource sharing using RAM, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/what-is.html">Resource
+        /// Access Manager User Guide</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutResourcePolicy service method.</param>
@@ -1257,13 +1524,13 @@ namespace Amazon.NetworkFirewall
         /// Adds the specified tags to the specified resource. Tags are key:value pairs that you
         /// can use to categorize and manage your resources, for purposes like billing. For example,
         /// you might set the tag key to "customer" and the value to the customer name or ID.
-        /// You can specify one or more tags to add to each AWS resource, up to 50 tags for a
-        /// resource.
+        /// You can specify one or more tags to add to each Amazon Web Services resource, up to
+        /// 50 tags for a resource.
         /// 
         ///  
         /// <para>
-        /// You can tag the AWS resources that you manage through AWS Network Firewall: firewalls,
-        /// firewall policies, and rule groups. 
+        /// You can tag the Amazon Web Services resources that you manage through Network Firewall:
+        /// firewalls, firewall policies, and rule groups. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
@@ -1272,6 +1539,10 @@ namespace Amazon.NetworkFirewall
         /// </param>
         /// 
         /// <returns>The response from the TagResource service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn’t perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
         /// The operation failed because of a problem with your request. Examples include: 
         /// 
@@ -1292,6 +1563,9 @@ namespace Amazon.NetworkFirewall
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
         /// Unable to locate a resource using the parameters that you provided.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/TagResource">REST API Reference for TagResource Operation</seealso>
         Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -1306,13 +1580,13 @@ namespace Amazon.NetworkFirewall
         /// Removes the tags with the specified keys from the specified resource. Tags are key:value
         /// pairs that you can use to categorize and manage your resources, for purposes like
         /// billing. For example, you might set the tag key to "customer" and the value to the
-        /// customer name or ID. You can specify one or more tags to add to each AWS resource,
-        /// up to 50 tags for a resource.
+        /// customer name or ID. You can specify one or more tags to add to each Amazon Web Services
+        /// resource, up to 50 tags for a resource.
         /// 
         ///  
         /// <para>
-        /// You can manage tags for the AWS resources that you manage through AWS Network Firewall:
-        /// firewalls, firewall policies, and rule groups. 
+        /// You can manage tags for the Amazon Web Services resources that you manage through
+        /// Network Firewall: firewalls, firewall policies, and rule groups. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
@@ -1321,6 +1595,10 @@ namespace Amazon.NetworkFirewall
         /// </param>
         /// 
         /// <returns>The response from the UntagResource service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn’t perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
         /// The operation failed because of a problem with your request. Examples include: 
         /// 
@@ -1341,6 +1619,9 @@ namespace Amazon.NetworkFirewall
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
         /// Unable to locate a resource using the parameters that you provided.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UntagResource">REST API Reference for UntagResource Operation</seealso>
         Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -1452,6 +1733,58 @@ namespace Amazon.NetworkFirewall
 
         #endregion
                 
+        #region  UpdateFirewallEncryptionConfiguration
+
+
+
+        /// <summary>
+        /// A complex type that contains settings for encryption of your firewall resources.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateFirewallEncryptionConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateFirewallEncryptionConfiguration service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn’t perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
+        /// The operation failed because of a problem with your request. Examples include: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an unsupported parameter name or value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a property with a value that isn't among the available types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource that
+        /// isn't valid in the context of the request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidTokenException">
+        /// The token you provided is stale or isn't valid for the operation.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
+        /// Unable to locate a resource using the parameters that you provided.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceOwnerCheckException">
+        /// Unable to change the resource because your account doesn't own it.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UpdateFirewallEncryptionConfiguration">REST API Reference for UpdateFirewallEncryptionConfiguration Operation</seealso>
+        Task<UpdateFirewallEncryptionConfigurationResponse> UpdateFirewallEncryptionConfigurationAsync(UpdateFirewallEncryptionConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  UpdateFirewallPolicy
 
 
@@ -1506,7 +1839,10 @@ namespace Amazon.NetworkFirewall
 
 
         /// <summary>
-        /// 
+        /// Modifies the flag, <code>ChangeProtection</code>, which indicates whether it is possible
+        /// to change the firewall. If the flag is set to <code>TRUE</code>, the firewall is protected
+        /// from changes. This setting helps protect against accidentally changing a firewall
+        /// that's in use.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateFirewallPolicyChangeProtection service method.</param>
         /// <param name="cancellationToken">
@@ -1746,6 +2082,65 @@ namespace Amazon.NetworkFirewall
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UpdateSubnetChangeProtection">REST API Reference for UpdateSubnetChangeProtection Operation</seealso>
         Task<UpdateSubnetChangeProtectionResponse> UpdateSubnetChangeProtectionAsync(UpdateSubnetChangeProtectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateTLSInspectionConfiguration
+
+
+
+        /// <summary>
+        /// Updates the TLS inspection configuration settings for the specified TLS inspection
+        /// configuration. You use a TLS inspection configuration by reference in one or more
+        /// firewall policies. When you modify a TLS inspection configuration, you modify all
+        /// firewall policies that use the TLS inspection configuration. 
+        /// 
+        ///  
+        /// <para>
+        /// To update a TLS inspection configuration, first call <a>DescribeTLSInspectionConfiguration</a>
+        /// to retrieve the current <a>TLSInspectionConfiguration</a> object, update the object
+        /// as needed, and then provide the updated object to this call. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTLSInspectionConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateTLSInspectionConfiguration service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn’t perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
+        /// The operation failed because of a problem with your request. Examples include: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an unsupported parameter name or value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a property with a value that isn't among the available types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource that
+        /// isn't valid in the context of the request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidTokenException">
+        /// The token you provided is stale or isn't valid for the operation.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
+        /// Unable to locate a resource using the parameters that you provided.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UpdateTLSInspectionConfiguration">REST API Reference for UpdateTLSInspectionConfiguration Operation</seealso>
+        Task<UpdateTLSInspectionConfigurationResponse> UpdateTLSInspectionConfigurationAsync(UpdateTLSInspectionConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

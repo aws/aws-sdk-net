@@ -34,7 +34,7 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// LaunchTemplateSpecification Marshaller
-    /// </summary>       
+    /// </summary>
     public class LaunchTemplateSpecificationMarshaller : IRequestMarshaller<LaunchTemplateSpecification, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static LaunchTemplateSpecificationMarshaller Instance = new LaunchTemplateSpecificationMarshaller();
 
     }

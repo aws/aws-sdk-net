@@ -34,7 +34,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// IntegerParameter Marshaller
-    /// </summary>       
+    /// </summary>
     public class IntegerParameterMarshaller : IRequestMarshaller<IntegerParameter, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static IntegerParameterMarshaller Instance = new IntegerParameterMarshaller();
 
     }

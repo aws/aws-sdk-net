@@ -105,7 +105,7 @@ namespace Amazon.BackupGateway.Model
         /// The password for the hypervisor.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
+        [AWSProperty(Sensitive=true, Min=1, Max=100)]
         public string Password
         {
             get { return this._password; }
@@ -142,7 +142,7 @@ namespace Amazon.BackupGateway.Model
         /// The username for the hypervisor.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
+        [AWSProperty(Sensitive=true, Min=1, Max=100)]
         public string Username
         {
             get { return this._username; }

@@ -50,7 +50,7 @@ namespace Amazon.Rekognition.Model
     /// </para>
     ///  
     /// <para>
-    /// For an example, see Searching for a Face Using Its Face ID in the Amazon Rekognition
+    /// For an example, see Searching for a face using its face ID in the Amazon Rekognition
     /// Developer Guide.
     /// </para>
     ///  

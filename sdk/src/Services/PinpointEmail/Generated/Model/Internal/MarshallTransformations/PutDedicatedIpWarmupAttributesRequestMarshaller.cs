@@ -56,7 +56,7 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.PinpointEmail");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-07-26";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-07-26";
             request.HttpMethod = "PUT";
 
             if (!publicRequest.IsSetIp())
@@ -74,7 +74,6 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.WarmupPercentage);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

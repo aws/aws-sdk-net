@@ -34,7 +34,7 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// WebhookFilter Marshaller
-    /// </summary>       
+    /// </summary>
     public class WebhookFilterMarshaller : IRequestMarshaller<WebhookFilter, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static WebhookFilterMarshaller Instance = new WebhookFilterMarshaller();
 
     }

@@ -82,6 +82,12 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
                     unmarshalledObject.FilterBBox = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("FilterCategories", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.FilterCategories = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("FilterCountries", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);

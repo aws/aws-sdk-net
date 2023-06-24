@@ -34,7 +34,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// PrefixConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class PrefixConfigMarshaller : IRequestMarshaller<PrefixConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -45,6 +45,17 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(PrefixConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetPathPrefixHierarchy())
+            {
+                context.Writer.WritePropertyName("pathPrefixHierarchy");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectPathPrefixHierarchyListValue in requestObject.PathPrefixHierarchy)
+                {
+                        context.Writer.Write(requestObjectPathPrefixHierarchyListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetPrefixFormat())
             {
                 context.Writer.WritePropertyName("prefixFormat");
@@ -61,7 +72,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static PrefixConfigMarshaller Instance = new PrefixConfigMarshaller();
 
     }

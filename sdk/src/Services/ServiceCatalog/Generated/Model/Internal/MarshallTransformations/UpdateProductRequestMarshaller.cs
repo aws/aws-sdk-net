@@ -58,7 +58,7 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
             string target = "AWS242ServiceCatalogService.UpdateProduct";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-12-10";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-12-10";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -130,6 +130,17 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetSourceConnection())
+                {
+                    context.Writer.WritePropertyName("SourceConnection");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = SourceConnectionMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.SourceConnection, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetSupportDescription())
                 {
                     context.Writer.WritePropertyName("SupportDescription");
@@ -148,7 +159,6 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.SupportUrl);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

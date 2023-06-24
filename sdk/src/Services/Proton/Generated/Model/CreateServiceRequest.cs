@@ -32,8 +32,7 @@ namespace Amazon.Proton.Model
     /// Container for the parameters to the CreateService operation.
     /// Create an Proton service. An Proton service is an instantiation of a service template
     /// and often includes several service instances and pipeline. For more information, see
-    /// <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-services.html">Services</a>
-    /// in the <i>Proton Administrator Guide</i> and <a href="https://docs.aws.amazon.com/proton/latest/userguide/ug-service.html">Services</a>
+    /// <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-services.html">Services</a>
     /// in the <i>Proton User Guide</i>.
     /// </summary>
     public partial class CreateServiceRequest : AmazonProtonRequest
@@ -76,7 +75,7 @@ namespace Amazon.Proton.Model
         /// A description of the Proton service.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=500)]
+        [AWSProperty(Sensitive=true, Min=0, Max=500)]
         public string Description
         {
             get { return this._description; }
@@ -112,10 +111,9 @@ namespace Amazon.Proton.Model
         /// Gets and sets the property RepositoryConnectionArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the repository connection. For more information,
-        /// see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html#setting-up-vcontrol">Set
-        /// up repository connection</a> in the <i>Proton Administrator Guide</i> and <a href="https://docs.aws.amazon.com/proton/latest/userguide/proton-setup.html#setup-repo-connection">Setting
-        /// up with Proton</a> in the <i>Proton User Guide</i>. <i>Don't</i> include this parameter
-        /// if your service template <i>doesn't</i> include a service pipeline.
+        /// see <a href="https://docs.aws.amazon.com/proton/latest/userguide/setting-up-for-service.html#setting-up-vcontrol">Setting
+        /// up an AWS CodeStar connection</a> in the <i>Proton User Guide</i>. <i>Don't</i> include
+        /// this parameter if your service template <i>doesn't</i> include a service pipeline.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
@@ -155,14 +153,13 @@ namespace Amazon.Proton.Model
         /// Gets and sets the property Spec. 
         /// <para>
         /// A link to a spec file that provides inputs as defined in the service template bundle
-        /// schema file. The spec file is in YAML format. Don’t include pipeline inputs in the
-        /// spec if your service template <i>doesn’t</i> include a service pipeline. For more
-        /// information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-create-svc.html.html">Create
-        /// a service</a> in the <i>Proton Administrator Guide</i> and <a href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-create.html">Create
+        /// schema file. The spec file is in YAML format. <i>Don’t</i> include pipeline inputs
+        /// in the spec if your service template <i>doesn’t</i> include a service pipeline. For
+        /// more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-create-svc.html">Create
         /// a service</a> in the <i>Proton User Guide</i>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=51200)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=51200)]
         public string Spec
         {
             get { return this._spec; }
@@ -178,10 +175,13 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Create tags for your service. For more information, see <i>Proton resources and tagging</i>
-        /// in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
-        /// Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
-        /// User Guide</a>.
+        /// An optional list of metadata items that you can associate with the Proton service.
+        /// A tag is a key-value pair.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
+        /// resources and tagging</a> in the <i>Proton User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]

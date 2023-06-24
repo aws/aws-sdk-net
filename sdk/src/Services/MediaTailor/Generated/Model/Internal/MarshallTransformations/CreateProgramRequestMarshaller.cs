@@ -56,16 +56,16 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.MediaTailor");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-04-23";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-04-23";
             request.HttpMethod = "POST";
 
             if (!publicRequest.IsSetChannelName())
                 throw new AmazonMediaTailorException("Request object does not have required field ChannelName set");
-            request.AddPathResource("{channelName}", StringUtils.FromString(publicRequest.ChannelName));
+            request.AddPathResource("{ChannelName}", StringUtils.FromString(publicRequest.ChannelName));
             if (!publicRequest.IsSetProgramName())
                 throw new AmazonMediaTailorException("Request object does not have required field ProgramName set");
-            request.AddPathResource("{programName}", StringUtils.FromString(publicRequest.ProgramName));
-            request.ResourcePath = "/channel/{channelName}/program/{programName}";
+            request.AddPathResource("{ProgramName}", StringUtils.FromString(publicRequest.ProgramName));
+            request.ResourcePath = "/channel/{ChannelName}/program/{ProgramName}";
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
@@ -85,6 +85,12 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
                         context.Writer.WriteObjectEnd();
                     }
                     context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetLiveSourceName())
+                {
+                    context.Writer.WritePropertyName("LiveSourceName");
+                    context.Writer.Write(publicRequest.LiveSourceName);
                 }
 
                 if(publicRequest.IsSetScheduleConfiguration())
@@ -110,7 +116,6 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.VodSourceName);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

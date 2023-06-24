@@ -71,6 +71,19 @@
     <pattern>^([A-Za-z0-9-]_?)+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Translate.Model.ListLanguagesRequest.MaxResults</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Translate.Model.ListLanguagesRequest.NextToken</property>
+    <max>8192</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Translate.Model.ListLanguagesResponse.NextToken</property>
+    <max>8192</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Translate.Model.ListParallelDataRequest.MaxResults</property>
     <min>1</min>
     <max>500</max>
@@ -82,6 +95,11 @@
   <property-value-rule>
     <property>Amazon.Translate.Model.ListParallelDataResponse.NextToken</property>
     <max>8192</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Translate.Model.ListTagsForResourceRequest.ResourceArn</property>
+    <min>1</min>
+    <max>512</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Translate.Model.ListTerminologiesRequest.MaxResults</property>
@@ -151,6 +169,31 @@
     <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Translate.Model.TagResourceRequest.ResourceArn</property>
+    <min>1</min>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Translate.Model.TranslateDocumentRequest.SourceLanguageCode</property>
+    <min>2</min>
+    <max>5</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Translate.Model.TranslateDocumentRequest.TargetLanguageCode</property>
+    <min>2</min>
+    <max>5</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Translate.Model.TranslateDocumentResponse.SourceLanguageCode</property>
+    <min>2</min>
+    <max>5</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Translate.Model.TranslateDocumentResponse.TargetLanguageCode</property>
+    <min>2</min>
+    <max>5</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Translate.Model.TranslateTextRequest.SourceLanguageCode</property>
     <min>2</min>
     <max>5</max>
@@ -163,8 +206,8 @@
   <property-value-rule>
     <property>Amazon.Translate.Model.TranslateTextRequest.Text</property>
     <min>1</min>
-    <max>5000</max>
-    <pattern>[\P{M}\p{M}]{1,5000}</pattern>
+    <max>10000</max>
+    <pattern>[\P{M}\p{M}]{1,10000}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Translate.Model.TranslateTextResponse.SourceLanguageCode</property>
@@ -178,8 +221,13 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Translate.Model.TranslateTextResponse.TranslatedText</property>
-    <max>10000</max>
-    <pattern>[\P{M}\p{M}]{0,10000}</pattern>
+    <max>20000</max>
+    <pattern>[\P{M}\p{M}]{0,20000}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Translate.Model.UntagResourceRequest.ResourceArn</property>
+    <min>1</min>
+    <max>512</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Translate.Model.UpdateParallelDataRequest.ClientToken</property>
@@ -216,6 +264,15 @@
     <max>5</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Translate.Model.Document.Content</property>
+    <max>102400</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Translate.Model.Document.ContentType</property>
+    <max>256</max>
+    <pattern>^[-\w.]+\/[-\w.+]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Translate.Model.EncryptionKey.Id</property>
     <min>1</min>
     <max>400</max>
@@ -230,6 +287,16 @@
     <property>Amazon.Translate.Model.InputDataConfig.S3Uri</property>
     <max>1024</max>
     <pattern>s3://[a-z0-9][\.\-a-z0-9]{1,61}[a-z0-9](/.*)?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Translate.Model.Language.LanguageCode</property>
+    <min>2</min>
+    <max>5</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Translate.Model.Language.LanguageName</property>
+    <min>1</min>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Translate.Model.OutputDataConfig.S3Uri</property>
@@ -271,6 +338,16 @@
     <property>Amazon.Translate.Model.ParallelDataProperties.SourceLanguageCode</property>
     <min>2</min>
     <max>5</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Translate.Model.Tag.Key</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Translate.Model.Tag.Value</property>
+    <min>0</min>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Translate.Model.Term.SourceText</property>
@@ -343,6 +420,16 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Translate.Model.TextTranslationJobProperties.SourceLanguageCode</property>
+    <min>2</min>
+    <max>5</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Translate.Model.TooManyTagsException.ResourceArn</property>
+    <min>1</min>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Translate.Model.UnsupportedDisplayLanguageCodeException.DisplayLanguageCode</property>
     <min>2</min>
     <max>5</max>
   </property-value-rule>

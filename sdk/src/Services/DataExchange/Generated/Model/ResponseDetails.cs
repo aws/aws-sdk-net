@@ -33,12 +33,33 @@ namespace Amazon.DataExchange.Model
     /// </summary>
     public partial class ResponseDetails
     {
+        private CreateS3DataAccessFromS3BucketResponseDetails _createS3DataAccessFromS3Bucket;
         private ExportAssetsToS3ResponseDetails _exportAssetsToS3;
         private ExportAssetToSignedUrlResponseDetails _exportAssetToSignedUrl;
         private ExportRevisionsToS3ResponseDetails _exportRevisionsToS3;
+        private ImportAssetFromApiGatewayApiResponseDetails _importAssetFromApiGatewayApi;
         private ImportAssetFromSignedUrlResponseDetails _importAssetFromSignedUrl;
+        private ImportAssetsFromLakeFormationTagPolicyResponseDetails _importAssetsFromLakeFormationTagPolicy;
         private ImportAssetsFromRedshiftDataSharesResponseDetails _importAssetsFromRedshiftDataShares;
         private ImportAssetsFromS3ResponseDetails _importAssetsFromS3;
+
+        /// <summary>
+        /// Gets and sets the property CreateS3DataAccessFromS3Bucket. 
+        /// <para>
+        /// Response details from the CreateS3DataAccessFromS3Bucket job.
+        /// </para>
+        /// </summary>
+        public CreateS3DataAccessFromS3BucketResponseDetails CreateS3DataAccessFromS3Bucket
+        {
+            get { return this._createS3DataAccessFromS3Bucket; }
+            set { this._createS3DataAccessFromS3Bucket = value; }
+        }
+
+        // Check to see if CreateS3DataAccessFromS3Bucket property is set
+        internal bool IsSetCreateS3DataAccessFromS3Bucket()
+        {
+            return this._createS3DataAccessFromS3Bucket != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ExportAssetsToS3. 
@@ -95,6 +116,24 @@ namespace Amazon.DataExchange.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ImportAssetFromApiGatewayApi. 
+        /// <para>
+        /// The response details.
+        /// </para>
+        /// </summary>
+        public ImportAssetFromApiGatewayApiResponseDetails ImportAssetFromApiGatewayApi
+        {
+            get { return this._importAssetFromApiGatewayApi; }
+            set { this._importAssetFromApiGatewayApi = value; }
+        }
+
+        // Check to see if ImportAssetFromApiGatewayApi property is set
+        internal bool IsSetImportAssetFromApiGatewayApi()
+        {
+            return this._importAssetFromApiGatewayApi != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ImportAssetFromSignedUrl. 
         /// <para>
         /// Details for the import from signed URL response.
@@ -110,6 +149,24 @@ namespace Amazon.DataExchange.Model
         internal bool IsSetImportAssetFromSignedUrl()
         {
             return this._importAssetFromSignedUrl != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ImportAssetsFromLakeFormationTagPolicy. 
+        /// <para>
+        /// Response details from the ImportAssetsFromLakeFormationTagPolicy job.
+        /// </para>
+        /// </summary>
+        public ImportAssetsFromLakeFormationTagPolicyResponseDetails ImportAssetsFromLakeFormationTagPolicy
+        {
+            get { return this._importAssetsFromLakeFormationTagPolicy; }
+            set { this._importAssetsFromLakeFormationTagPolicy = value; }
+        }
+
+        // Check to see if ImportAssetsFromLakeFormationTagPolicy property is set
+        internal bool IsSetImportAssetsFromLakeFormationTagPolicy()
+        {
+            return this._importAssetsFromLakeFormationTagPolicy != null;
         }
 
         /// <summary>

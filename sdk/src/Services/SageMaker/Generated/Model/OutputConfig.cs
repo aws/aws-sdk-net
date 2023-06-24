@@ -149,8 +149,8 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CoreML</code>: Compilation for the CoreML <a>OutputConfig$TargetDevice</a>
-        /// supports the following compiler options:
+        ///  <code>CoreML</code>: Compilation for the CoreML <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html">OutputConfig</a>
+        /// <code>TargetDevice</code> supports the following compiler options:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -271,9 +271,15 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// Identifies the target device or the machine learning instance that you want to run
         /// your model on after the compilation has completed. Alternatively, you can specify
-        /// OS, architecture, and accelerator using <a>TargetPlatform</a> fields. It can be used
-        /// instead of <code>TargetPlatform</code>.
+        /// OS, architecture, and accelerator using <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TargetPlatform.html">TargetPlatform</a>
+        /// fields. It can be used instead of <code>TargetPlatform</code>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Currently <code>ml_trn1</code> is available only in US East (N. Virginia) Region,
+        /// and <code>ml_inf2</code> is available only in US East (Ohio) Region.
+        /// </para>
+        ///  </note>
         /// </summary>
         public TargetDevice TargetDevice
         {

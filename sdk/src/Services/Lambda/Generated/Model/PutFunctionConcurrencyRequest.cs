@@ -46,8 +46,8 @@ namespace Amazon.Lambda.Model
     /// Use <a>GetAccountSettings</a> to see your Regional concurrency limit. You can reserve
     /// concurrency for as many functions as you like, as long as you leave at least 100 simultaneous
     /// executions unreserved for functions that aren't configured with a per-function limit.
-    /// For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">Managing
-    /// Concurrency</a>.
+    /// For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-scaling.html">Lambda
+    /// function scaling</a>.
     /// </para>
     /// </summary>
     public partial class PutFunctionConcurrencyRequest : AmazonLambdaRequest
@@ -64,15 +64,15 @@ namespace Amazon.Lambda.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b>Function name</b> - <code>my-function</code>.
+        ///  <b>Function name</b> – <code>my-function</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
+        ///  <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.
+        ///  <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.
         /// </para>
         ///  </li> </ul> 
         /// <para>

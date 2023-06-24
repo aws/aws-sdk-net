@@ -650,7 +650,6 @@ namespace Amazon.KinesisAnalyticsV2
 
         /// <summary>
         /// Creates and returns a URL that you can use to connect to an application's extension.
-        /// Currently, the only available extension is the Apache Flink dashboard.
         /// 
         ///  
         /// <para>
@@ -692,7 +691,6 @@ namespace Amazon.KinesisAnalyticsV2
 
         /// <summary>
         /// Creates and returns a URL that you can use to connect to an application's extension.
-        /// Currently, the only available extension is the Apache Flink dashboard.
         /// 
         ///  
         /// <para>
@@ -1160,6 +1158,11 @@ namespace Amazon.KinesisAnalyticsV2
         /// <param name="request">Container for the necessary parameters to execute the DeleteApplicationSnapshot service method.</param>
         /// 
         /// <returns>The response from the DeleteApplicationSnapshot service method, as returned by KinesisAnalyticsV2.</returns>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ConcurrentModificationException">
+        /// Exception thrown as a result of concurrent modifications to an application. This error
+        /// can be the result of attempting to modify an application without using the current
+        /// application ID.
+        /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.InvalidArgumentException">
         /// The specified input parameter value is not valid.
         /// </exception>
@@ -1190,6 +1193,11 @@ namespace Amazon.KinesisAnalyticsV2
         /// </param>
         /// 
         /// <returns>The response from the DeleteApplicationSnapshot service method, as returned by KinesisAnalyticsV2.</returns>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ConcurrentModificationException">
+        /// Exception thrown as a result of concurrent modifications to an application. This error
+        /// can be the result of attempting to modify an application without using the current
+        /// application ID.
+        /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.InvalidArgumentException">
         /// The specified input parameter value is not valid.
         /// </exception>

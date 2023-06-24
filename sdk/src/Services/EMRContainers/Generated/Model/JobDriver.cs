@@ -29,11 +29,31 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EMRContainers.Model
 {
     /// <summary>
-    /// Specify the driver that the job runs on.
+    /// Specify the driver that the job runs on. Exactly one of the two available job drivers
+    /// is required, either sparkSqlJobDriver or sparkSubmitJobDriver.
     /// </summary>
     public partial class JobDriver
     {
+        private SparkSqlJobDriver _sparkSqlJobDriver;
         private SparkSubmitJobDriver _sparkSubmitJobDriver;
+
+        /// <summary>
+        /// Gets and sets the property SparkSqlJobDriver. 
+        /// <para>
+        /// The job driver for job type.
+        /// </para>
+        /// </summary>
+        public SparkSqlJobDriver SparkSqlJobDriver
+        {
+            get { return this._sparkSqlJobDriver; }
+            set { this._sparkSqlJobDriver = value; }
+        }
+
+        // Check to see if SparkSqlJobDriver property is set
+        internal bool IsSetSparkSqlJobDriver()
+        {
+            return this._sparkSqlJobDriver != null;
+        }
 
         /// <summary>
         /// Gets and sets the property SparkSubmitJobDriver. 

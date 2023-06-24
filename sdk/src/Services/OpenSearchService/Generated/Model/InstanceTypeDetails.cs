@@ -29,12 +29,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// 
+    /// Lists all instance types and available features for a given OpenSearch or Elasticsearch
+    /// version.
     /// </summary>
     public partial class InstanceTypeDetails
     {
         private bool? _advancedSecurityEnabled;
         private bool? _appLogsEnabled;
+        private List<string> _availabilityZones = new List<string>();
         private bool? _cognitoEnabled;
         private bool? _encryptionEnabled;
         private List<string> _instanceRole = new List<string>();
@@ -42,7 +44,10 @@ namespace Amazon.OpenSearchService.Model
         private bool? _warmEnabled;
 
         /// <summary>
-        /// Gets and sets the property AdvancedSecurityEnabled.
+        /// Gets and sets the property AdvancedSecurityEnabled. 
+        /// <para>
+        /// Whether fine-grained access control is supported for the instance type.
+        /// </para>
         /// </summary>
         public bool AdvancedSecurityEnabled
         {
@@ -57,7 +62,10 @@ namespace Amazon.OpenSearchService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property AppLogsEnabled.
+        /// Gets and sets the property AppLogsEnabled. 
+        /// <para>
+        /// Whether logging is supported for the instance type.
+        /// </para>
         /// </summary>
         public bool AppLogsEnabled
         {
@@ -72,7 +80,28 @@ namespace Amazon.OpenSearchService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CognitoEnabled.
+        /// Gets and sets the property AvailabilityZones. 
+        /// <para>
+        /// The supported Availability Zones for the instance type.
+        /// </para>
+        /// </summary>
+        public List<string> AvailabilityZones
+        {
+            get { return this._availabilityZones; }
+            set { this._availabilityZones = value; }
+        }
+
+        // Check to see if AvailabilityZones property is set
+        internal bool IsSetAvailabilityZones()
+        {
+            return this._availabilityZones != null && this._availabilityZones.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CognitoEnabled. 
+        /// <para>
+        /// Whether Amazon Cognito access is supported for the instance type.
+        /// </para>
         /// </summary>
         public bool CognitoEnabled
         {
@@ -87,7 +116,11 @@ namespace Amazon.OpenSearchService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EncryptionEnabled.
+        /// Gets and sets the property EncryptionEnabled. 
+        /// <para>
+        /// Whether encryption at rest and node-to-node encryption are supported for the instance
+        /// type.
+        /// </para>
         /// </summary>
         public bool EncryptionEnabled
         {
@@ -102,7 +135,11 @@ namespace Amazon.OpenSearchService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property InstanceRole.
+        /// Gets and sets the property InstanceRole. 
+        /// <para>
+        /// Whether the instance acts as a data node, a dedicated master node, or an UltraWarm
+        /// node.
+        /// </para>
         /// </summary>
         public List<string> InstanceRole
         {
@@ -117,7 +154,10 @@ namespace Amazon.OpenSearchService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property InstanceType.
+        /// Gets and sets the property InstanceType. 
+        /// <para>
+        /// The instance type.
+        /// </para>
         /// </summary>
         public OpenSearchPartitionInstanceType InstanceType
         {
@@ -132,7 +172,10 @@ namespace Amazon.OpenSearchService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property WarmEnabled.
+        /// Gets and sets the property WarmEnabled. 
+        /// <para>
+        /// Whether UltraWarm is supported for the instance type.
+        /// </para>
         /// </summary>
         public bool WarmEnabled
         {

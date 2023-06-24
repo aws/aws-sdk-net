@@ -34,7 +34,7 @@ namespace Amazon.KinesisVideo.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// StreamNameCondition Marshaller
-    /// </summary>       
+    /// </summary>
     public class StreamNameConditionMarshaller : IRequestMarshaller<StreamNameCondition, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.KinesisVideo.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static StreamNameConditionMarshaller Instance = new StreamNameConditionMarshaller();
 
     }

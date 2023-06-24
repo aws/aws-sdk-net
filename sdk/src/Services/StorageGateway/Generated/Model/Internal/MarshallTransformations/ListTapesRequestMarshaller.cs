@@ -58,7 +58,7 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
             string target = "StorageGateway_20130630.ListTapes";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2013-06-30";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2013-06-30";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -90,7 +90,6 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

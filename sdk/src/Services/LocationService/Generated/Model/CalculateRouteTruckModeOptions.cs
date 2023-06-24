@@ -68,7 +68,7 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property AvoidTolls. 
         /// <para>
-        /// Avoids ferries when calculating routes.
+        /// Avoids tolls when calculating routes.
         /// </para>
         ///  
         /// <para>

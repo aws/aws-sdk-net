@@ -64,6 +64,18 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("advancedInputFilter", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AdvancedInputFilter = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("advancedInputFilterSettings", targetDepth))
+                {
+                    var unmarshaller = AdvancedInputFilterSettingsUnmarshaller.Instance;
+                    unmarshalledObject.AdvancedInputFilterSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("audioSelectorGroups", targetDepth))
                 {
                     var unmarshaller = new DictionaryUnmarshaller<string, AudioSelectorGroup, StringUnmarshaller, AudioSelectorGroupUnmarshaller>(StringUnmarshaller.Instance, AudioSelectorGroupUnmarshaller.Instance);
@@ -104,6 +116,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DenoiseFilter = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("dolbyVisionMetadataXml", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DolbyVisionMetadataXml = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("fileInput", targetDepth))
@@ -176,6 +194,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TimecodeStart = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("videoGenerator", targetDepth))
+                {
+                    var unmarshaller = InputVideoGeneratorUnmarshaller.Instance;
+                    unmarshalledObject.VideoGenerator = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("videoSelector", targetDepth))

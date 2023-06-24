@@ -35,14 +35,19 @@ namespace Amazon.AWSMarketplaceMetering.Model
     /// 
     ///  
     /// <para>
-    /// MeterUsage is authenticated on the buyer's AWS account using credentials from the
-    /// EC2 instance, ECS task, or EKS pod.
+    ///  <code>MeterUsage</code> is authenticated on the buyer's AWS account using credentials
+    /// from the EC2 instance, ECS task, or EKS pod.
     /// </para>
     ///  
     /// <para>
-    /// MeterUsage can optionally include multiple usage allocations, to provide customers
-    /// with usage data split into buckets by tags that you define (or allow the customer
-    /// to define).
+    ///  <code>MeterUsage</code> can optionally include multiple usage allocations, to provide
+    /// customers with usage data split into buckets by tags that you define (or allow the
+    /// customer to define).
+    /// </para>
+    ///  
+    /// <para>
+    /// Usage records are expected to be submitted as quickly as possible after the event
+    /// that is being recorded, and are not accepted more than 6 hours after the event.
     /// </para>
     /// </summary>
     public partial class MeterUsageRequest : AmazonAWSMarketplaceMeteringRequest
@@ -58,8 +63,9 @@ namespace Amazon.AWSMarketplaceMetering.Model
         /// Gets and sets the property DryRun. 
         /// <para>
         /// Checks whether you have the permissions required for the action, but does not make
-        /// the request. If you have the permissions, the request returns DryRunOperation; otherwise,
-        /// it returns UnauthorizedException. Defaults to <code>false</code> if not specified.
+        /// the request. If you have the permissions, the request returns <code>DryRunOperation</code>;
+        /// otherwise, it returns <code>UnauthorizedException</code>. Defaults to <code>false</code>
+        /// if not specified.
         /// </para>
         /// </summary>
         public bool DryRun
@@ -98,8 +104,8 @@ namespace Amazon.AWSMarketplaceMetering.Model
         /// Gets and sets the property Timestamp. 
         /// <para>
         /// Timestamp, in UTC, for which the usage is being reported. Your application can meter
-        /// usage for up to one hour in the past. Make sure the timestamp value is not before
-        /// the start of the software usage.
+        /// usage for up to one hour in the past. Make sure the <code>timestamp</code> value is
+        /// not before the start of the software usage.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -118,15 +124,16 @@ namespace Amazon.AWSMarketplaceMetering.Model
         /// <summary>
         /// Gets and sets the property UsageAllocations. 
         /// <para>
-        /// The set of UsageAllocations to submit.
+        /// The set of <code>UsageAllocations</code> to submit.
         /// </para>
         ///  
         /// <para>
-        /// The sum of all UsageAllocation quantities must equal the UsageQuantity of the MeterUsage
-        /// request, and each UsageAllocation must have a unique set of tags (include no tags).
+        /// The sum of all <code>UsageAllocation</code> quantities must equal the <code>UsageQuantity</code>
+        /// of the <code>MeterUsage</code> request, and each <code>UsageAllocation</code> must
+        /// have a unique set of tags (include no tags).
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=500)]
+        [AWSProperty(Min=1, Max=2500)]
         public List<UsageAllocation> UsageAllocations
         {
             get { return this._usageAllocations; }

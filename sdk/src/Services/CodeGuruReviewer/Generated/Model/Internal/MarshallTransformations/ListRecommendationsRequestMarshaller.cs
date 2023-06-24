@@ -55,7 +55,7 @@ namespace Amazon.CodeGuruReviewer.Model.Internal.MarshallTransformations
         public IRequest Marshall(ListRecommendationsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CodeGuruReviewer");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-09-19";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-09-19";
             request.HttpMethod = "GET";
 
             if (!publicRequest.IsSetCodeReviewArn())

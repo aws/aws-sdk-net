@@ -34,9 +34,13 @@ namespace Amazon.WellArchitected.Model
     /// 
     ///  
     /// <para>
+    /// Only the owner of a lens can export it. Lenses provided by Amazon Web Services (Amazon
+    /// Web Services Official Content) cannot be exported.
+    /// </para>
+    ///  
+    /// <para>
     /// Lenses are defined in JSON. For more information, see <a href="https://docs.aws.amazon.com/wellarchitected/latest/userguide/lenses-format-specification.html">JSON
-    /// format specification</a> in the <i>Well-Architected Tool User Guide</i>. Only the
-    /// owner of a lens can export it. 
+    /// format specification</a> in the <i>Well-Architected Tool User Guide</i>.
     /// </para>
     ///  <note> 
     /// <para>

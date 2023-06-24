@@ -112,6 +112,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.FinalAutoMLJobObjectiveMetric = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("InferenceContainerDefinitions", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, List<AutoMLContainerDefinition>, StringUnmarshaller, ListUnmarshaller<AutoMLContainerDefinition, AutoMLContainerDefinitionUnmarshaller>>(StringUnmarshaller.Instance, new ListUnmarshaller<AutoMLContainerDefinition, AutoMLContainerDefinitionUnmarshaller>(AutoMLContainerDefinitionUnmarshaller.Instance));
+                    unmarshalledObject.InferenceContainerDefinitions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("InferenceContainers", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<AutoMLContainerDefinition, AutoMLContainerDefinitionUnmarshaller>(AutoMLContainerDefinitionUnmarshaller.Instance);

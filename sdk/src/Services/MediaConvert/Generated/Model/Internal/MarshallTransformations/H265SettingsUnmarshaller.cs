@@ -76,6 +76,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.AlternateTransferFunctionSei = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("bandwidthReductionFilter", targetDepth))
+                {
+                    var unmarshaller = BandwidthReductionFilterUnmarshaller.Instance;
+                    unmarshalledObject.BandwidthReductionFilter = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("bitrate", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
@@ -152,6 +158,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.GopSizeUnits = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("hrdBufferFinalFillPercentage", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.HrdBufferFinalFillPercentage = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("hrdBufferInitialFillPercentage", targetDepth))

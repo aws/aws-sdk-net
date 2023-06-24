@@ -34,6 +34,7 @@ namespace Amazon.AppMesh.Model
     public partial class MeshSpec
     {
         private EgressFilter _egressFilter;
+        private MeshServiceDiscovery _serviceDiscovery;
 
         /// <summary>
         /// Gets and sets the property EgressFilter. 
@@ -51,6 +52,21 @@ namespace Amazon.AppMesh.Model
         internal bool IsSetEgressFilter()
         {
             return this._egressFilter != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServiceDiscovery.
+        /// </summary>
+        public MeshServiceDiscovery ServiceDiscovery
+        {
+            get { return this._serviceDiscovery; }
+            set { this._serviceDiscovery = value; }
+        }
+
+        // Check to see if ServiceDiscovery property is set
+        internal bool IsSetServiceDiscovery()
+        {
+            return this._serviceDiscovery != null;
         }
 
     }

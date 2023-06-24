@@ -30,7 +30,10 @@ namespace Amazon.StepFunctions.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeStateMachineForExecution operation.
-    /// Describes the state machine associated with a specific execution.
+    /// Provides information about a state machine's definition, its execution role ARN, and
+    /// configuration. If a Map Run dispatched the execution, this action returns the Map
+    /// Run Amazon Resource Name (ARN) in the response. The state machine returned is the
+    /// state machine associated with the Map Run.
     /// 
     ///  <note> 
     /// <para>

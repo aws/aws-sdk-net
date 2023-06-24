@@ -38,7 +38,7 @@ namespace Amazon.NetworkFirewall.Model
         /// <summary>
         /// Gets and sets the property Policy. 
         /// <para>
-        /// The AWS Identity and Access Management policy for the resource. 
+        /// The IAM policy for the resource. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=395000)]

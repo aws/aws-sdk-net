@@ -30,25 +30,68 @@ namespace Amazon.Proton.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateAccountSettings operation.
-    /// Update the Proton service pipeline role or repository settings.
+    /// Update Proton settings that are used for multiple services in the Amazon Web Services
+    /// account.
     /// </summary>
     public partial class UpdateAccountSettingsRequest : AmazonProtonRequest
     {
+        private bool? _deletePipelineProvisioningRepository;
+        private string _pipelineCodebuildRoleArn;
         private RepositoryBranchInput _pipelineProvisioningRepository;
         private string _pipelineServiceRoleArn;
 
         /// <summary>
+        /// Gets and sets the property DeletePipelineProvisioningRepository. 
+        /// <para>
+        /// Set to <code>true</code> to remove a configured pipeline repository from the account
+        /// settings. Don't set this field if you are updating the configured pipeline repository.
+        /// </para>
+        /// </summary>
+        public bool DeletePipelineProvisioningRepository
+        {
+            get { return this._deletePipelineProvisioningRepository.GetValueOrDefault(); }
+            set { this._deletePipelineProvisioningRepository = value; }
+        }
+
+        // Check to see if DeletePipelineProvisioningRepository property is set
+        internal bool IsSetDeletePipelineProvisioningRepository()
+        {
+            return this._deletePipelineProvisioningRepository.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PipelineCodebuildRoleArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the service role you want to use for provisioning
+        /// pipelines. Proton assumes this role for CodeBuild-based provisioning.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=2048)]
+        public string PipelineCodebuildRoleArn
+        {
+            get { return this._pipelineCodebuildRoleArn; }
+            set { this._pipelineCodebuildRoleArn = value; }
+        }
+
+        // Check to see if PipelineCodebuildRoleArn property is set
+        internal bool IsSetPipelineCodebuildRoleArn()
+        {
+            return this._pipelineCodebuildRoleArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property PipelineProvisioningRepository. 
         /// <para>
-        /// The repository that you provide with pull request provisioning.
+        /// A linked repository for pipeline provisioning. Specify it if you have environments
+        /// configured for self-managed provisioning with services that include pipelines. A linked
+        /// repository is a repository that has been registered with Proton. For more information,
+        /// see <a>CreateRepository</a>.
         /// </para>
-        ///  <important> 
+        ///  
         /// <para>
-        /// Provisioning by pull request is currently in feature preview and is only usable with
-        /// Terraform based Proton Templates. To learn more about <a href="https://aws.amazon.com/service-terms">Amazon
-        /// Web Services Feature Preview terms</a>, see section 2 on Beta and Previews.
+        /// To remove a previously configured repository, set <code>deletePipelineProvisioningRepository</code>
+        /// to <code>true</code>, and don't set <code>pipelineProvisioningRepository</code>.
         /// </para>
-        ///  </important>
         /// </summary>
         public RepositoryBranchInput PipelineProvisioningRepository
         {
@@ -65,15 +108,14 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property PipelineServiceRoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the Proton pipeline service role.
+        /// The Amazon Resource Name (ARN) of the service role you want to use for provisioning
+        /// pipelines. Assumed by Proton for Amazon Web Services-managed provisioning, and by
+        /// customer-owned automation for self-managed provisioning.
         /// </para>
-        ///  <important> 
+        ///  
         /// <para>
-        /// Provisioning by pull request is currently in feature preview and is only usable with
-        /// Terraform based Proton Templates. To learn more about <a href="https://aws.amazon.com/service-terms">Amazon
-        /// Web Services Feature Preview terms</a>, see section 2 on Beta and Previews.
+        /// To remove a previously configured ARN, specify an empty string.
         /// </para>
-        ///  </important>
         /// </summary>
         [AWSProperty(Min=0, Max=2048)]
         public string PipelineServiceRoleArn

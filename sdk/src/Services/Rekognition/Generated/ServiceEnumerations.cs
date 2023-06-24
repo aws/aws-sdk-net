@@ -31,13 +31,61 @@ namespace Amazon.Rekognition
     {
 
         /// <summary>
+        /// Constant AGE_RANGE for Attribute
+        /// </summary>
+        public static readonly Attribute AGE_RANGE = new Attribute("AGE_RANGE");
+        /// <summary>
         /// Constant ALL for Attribute
         /// </summary>
         public static readonly Attribute ALL = new Attribute("ALL");
         /// <summary>
+        /// Constant BEARD for Attribute
+        /// </summary>
+        public static readonly Attribute BEARD = new Attribute("BEARD");
+        /// <summary>
         /// Constant DEFAULT for Attribute
         /// </summary>
         public static readonly Attribute DEFAULT = new Attribute("DEFAULT");
+        /// <summary>
+        /// Constant EMOTIONS for Attribute
+        /// </summary>
+        public static readonly Attribute EMOTIONS = new Attribute("EMOTIONS");
+        /// <summary>
+        /// Constant EYE_DIRECTION for Attribute
+        /// </summary>
+        public static readonly Attribute EYE_DIRECTION = new Attribute("EYE_DIRECTION");
+        /// <summary>
+        /// Constant EYEGLASSES for Attribute
+        /// </summary>
+        public static readonly Attribute EYEGLASSES = new Attribute("EYEGLASSES");
+        /// <summary>
+        /// Constant EYES_OPEN for Attribute
+        /// </summary>
+        public static readonly Attribute EYES_OPEN = new Attribute("EYES_OPEN");
+        /// <summary>
+        /// Constant FACE_OCCLUDED for Attribute
+        /// </summary>
+        public static readonly Attribute FACE_OCCLUDED = new Attribute("FACE_OCCLUDED");
+        /// <summary>
+        /// Constant GENDER for Attribute
+        /// </summary>
+        public static readonly Attribute GENDER = new Attribute("GENDER");
+        /// <summary>
+        /// Constant MOUTH_OPEN for Attribute
+        /// </summary>
+        public static readonly Attribute MOUTH_OPEN = new Attribute("MOUTH_OPEN");
+        /// <summary>
+        /// Constant MUSTACHE for Attribute
+        /// </summary>
+        public static readonly Attribute MUSTACHE = new Attribute("MUSTACHE");
+        /// <summary>
+        /// Constant SMILE for Attribute
+        /// </summary>
+        public static readonly Attribute SMILE = new Attribute("SMILE");
+        /// <summary>
+        /// Constant SUNGLASSES for Attribute
+        /// </summary>
+        public static readonly Attribute SUNGLASSES = new Attribute("SUNGLASSES");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -226,6 +274,56 @@ namespace Amazon.Rekognition
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ContentClassifier(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ContentModerationAggregateBy.
+    /// </summary>
+    public class ContentModerationAggregateBy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SEGMENTS for ContentModerationAggregateBy
+        /// </summary>
+        public static readonly ContentModerationAggregateBy SEGMENTS = new ContentModerationAggregateBy("SEGMENTS");
+        /// <summary>
+        /// Constant TIMESTAMPS for ContentModerationAggregateBy
+        /// </summary>
+        public static readonly ContentModerationAggregateBy TIMESTAMPS = new ContentModerationAggregateBy("TIMESTAMPS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ContentModerationAggregateBy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContentModerationAggregateBy FindValue(string value)
+        {
+            return FindValue<ContentModerationAggregateBy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ContentModerationAggregateBy(string value)
         {
             return FindValue(value);
         }
@@ -450,6 +548,56 @@ namespace Amazon.Rekognition
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator DatasetType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DetectLabelsFeatureName.
+    /// </summary>
+    public class DetectLabelsFeatureName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant GENERAL_LABELS for DetectLabelsFeatureName
+        /// </summary>
+        public static readonly DetectLabelsFeatureName GENERAL_LABELS = new DetectLabelsFeatureName("GENERAL_LABELS");
+        /// <summary>
+        /// Constant IMAGE_PROPERTIES for DetectLabelsFeatureName
+        /// </summary>
+        public static readonly DetectLabelsFeatureName IMAGE_PROPERTIES = new DetectLabelsFeatureName("IMAGE_PROPERTIES");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DetectLabelsFeatureName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DetectLabelsFeatureName FindValue(string value)
+        {
+            return FindValue<DetectLabelsFeatureName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DetectLabelsFeatureName(string value)
         {
             return FindValue(value);
         }
@@ -743,6 +891,102 @@ namespace Amazon.Rekognition
 
 
     /// <summary>
+    /// Constants used for properties of type LabelDetectionAggregateBy.
+    /// </summary>
+    public class LabelDetectionAggregateBy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SEGMENTS for LabelDetectionAggregateBy
+        /// </summary>
+        public static readonly LabelDetectionAggregateBy SEGMENTS = new LabelDetectionAggregateBy("SEGMENTS");
+        /// <summary>
+        /// Constant TIMESTAMPS for LabelDetectionAggregateBy
+        /// </summary>
+        public static readonly LabelDetectionAggregateBy TIMESTAMPS = new LabelDetectionAggregateBy("TIMESTAMPS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LabelDetectionAggregateBy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LabelDetectionAggregateBy FindValue(string value)
+        {
+            return FindValue<LabelDetectionAggregateBy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LabelDetectionAggregateBy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type LabelDetectionFeatureName.
+    /// </summary>
+    public class LabelDetectionFeatureName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant GENERAL_LABELS for LabelDetectionFeatureName
+        /// </summary>
+        public static readonly LabelDetectionFeatureName GENERAL_LABELS = new LabelDetectionFeatureName("GENERAL_LABELS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LabelDetectionFeatureName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LabelDetectionFeatureName FindValue(string value)
+        {
+            return FindValue<LabelDetectionFeatureName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LabelDetectionFeatureName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type LabelDetectionSortBy.
     /// </summary>
     public class LabelDetectionSortBy : ConstantClass
@@ -955,6 +1199,68 @@ namespace Amazon.Rekognition
 
 
     /// <summary>
+    /// Constants used for properties of type LivenessSessionStatus.
+    /// </summary>
+    public class LivenessSessionStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CREATED for LivenessSessionStatus
+        /// </summary>
+        public static readonly LivenessSessionStatus CREATED = new LivenessSessionStatus("CREATED");
+        /// <summary>
+        /// Constant EXPIRED for LivenessSessionStatus
+        /// </summary>
+        public static readonly LivenessSessionStatus EXPIRED = new LivenessSessionStatus("EXPIRED");
+        /// <summary>
+        /// Constant FAILED for LivenessSessionStatus
+        /// </summary>
+        public static readonly LivenessSessionStatus FAILED = new LivenessSessionStatus("FAILED");
+        /// <summary>
+        /// Constant IN_PROGRESS for LivenessSessionStatus
+        /// </summary>
+        public static readonly LivenessSessionStatus IN_PROGRESS = new LivenessSessionStatus("IN_PROGRESS");
+        /// <summary>
+        /// Constant SUCCEEDED for LivenessSessionStatus
+        /// </summary>
+        public static readonly LivenessSessionStatus SUCCEEDED = new LivenessSessionStatus("SUCCEEDED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LivenessSessionStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LivenessSessionStatus FindValue(string value)
+        {
+            return FindValue<LivenessSessionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LivenessSessionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type OrientationCorrection.
     /// </summary>
     public class OrientationCorrection : ConstantClass
@@ -1122,6 +1428,18 @@ namespace Amazon.Rekognition
     public class ProjectVersionStatus : ConstantClass
     {
 
+        /// <summary>
+        /// Constant COPYING_COMPLETED for ProjectVersionStatus
+        /// </summary>
+        public static readonly ProjectVersionStatus COPYING_COMPLETED = new ProjectVersionStatus("COPYING_COMPLETED");
+        /// <summary>
+        /// Constant COPYING_FAILED for ProjectVersionStatus
+        /// </summary>
+        public static readonly ProjectVersionStatus COPYING_FAILED = new ProjectVersionStatus("COPYING_FAILED");
+        /// <summary>
+        /// Constant COPYING_IN_PROGRESS for ProjectVersionStatus
+        /// </summary>
+        public static readonly ProjectVersionStatus COPYING_IN_PROGRESS = new ProjectVersionStatus("COPYING_IN_PROGRESS");
         /// <summary>
         /// Constant DELETING for ProjectVersionStatus
         /// </summary>
@@ -1431,6 +1749,56 @@ namespace Amazon.Rekognition
 
 
     /// <summary>
+    /// Constants used for properties of type StreamProcessorParameterToDelete.
+    /// </summary>
+    public class StreamProcessorParameterToDelete : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ConnectedHomeMinConfidence for StreamProcessorParameterToDelete
+        /// </summary>
+        public static readonly StreamProcessorParameterToDelete ConnectedHomeMinConfidence = new StreamProcessorParameterToDelete("ConnectedHomeMinConfidence");
+        /// <summary>
+        /// Constant RegionsOfInterest for StreamProcessorParameterToDelete
+        /// </summary>
+        public static readonly StreamProcessorParameterToDelete RegionsOfInterest = new StreamProcessorParameterToDelete("RegionsOfInterest");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public StreamProcessorParameterToDelete(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StreamProcessorParameterToDelete FindValue(string value)
+        {
+            return FindValue<StreamProcessorParameterToDelete>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StreamProcessorParameterToDelete(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type StreamProcessorStatus.
     /// </summary>
     public class StreamProcessorStatus : ConstantClass
@@ -1456,6 +1824,10 @@ namespace Amazon.Rekognition
         /// Constant STOPPING for StreamProcessorStatus
         /// </summary>
         public static readonly StreamProcessorStatus STOPPING = new StreamProcessorStatus("STOPPING");
+        /// <summary>
+        /// Constant UPDATING for StreamProcessorStatus
+        /// </summary>
+        public static readonly StreamProcessorStatus UPDATING = new StreamProcessorStatus("UPDATING");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1606,6 +1978,292 @@ namespace Amazon.Rekognition
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator TextTypes(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type UnsearchedFaceReason.
+    /// </summary>
+    public class UnsearchedFaceReason : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EXCEEDS_MAX_FACES for UnsearchedFaceReason
+        /// </summary>
+        public static readonly UnsearchedFaceReason EXCEEDS_MAX_FACES = new UnsearchedFaceReason("EXCEEDS_MAX_FACES");
+        /// <summary>
+        /// Constant EXTREME_POSE for UnsearchedFaceReason
+        /// </summary>
+        public static readonly UnsearchedFaceReason EXTREME_POSE = new UnsearchedFaceReason("EXTREME_POSE");
+        /// <summary>
+        /// Constant FACE_NOT_LARGEST for UnsearchedFaceReason
+        /// </summary>
+        public static readonly UnsearchedFaceReason FACE_NOT_LARGEST = new UnsearchedFaceReason("FACE_NOT_LARGEST");
+        /// <summary>
+        /// Constant LOW_BRIGHTNESS for UnsearchedFaceReason
+        /// </summary>
+        public static readonly UnsearchedFaceReason LOW_BRIGHTNESS = new UnsearchedFaceReason("LOW_BRIGHTNESS");
+        /// <summary>
+        /// Constant LOW_CONFIDENCE for UnsearchedFaceReason
+        /// </summary>
+        public static readonly UnsearchedFaceReason LOW_CONFIDENCE = new UnsearchedFaceReason("LOW_CONFIDENCE");
+        /// <summary>
+        /// Constant LOW_FACE_QUALITY for UnsearchedFaceReason
+        /// </summary>
+        public static readonly UnsearchedFaceReason LOW_FACE_QUALITY = new UnsearchedFaceReason("LOW_FACE_QUALITY");
+        /// <summary>
+        /// Constant LOW_SHARPNESS for UnsearchedFaceReason
+        /// </summary>
+        public static readonly UnsearchedFaceReason LOW_SHARPNESS = new UnsearchedFaceReason("LOW_SHARPNESS");
+        /// <summary>
+        /// Constant SMALL_BOUNDING_BOX for UnsearchedFaceReason
+        /// </summary>
+        public static readonly UnsearchedFaceReason SMALL_BOUNDING_BOX = new UnsearchedFaceReason("SMALL_BOUNDING_BOX");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public UnsearchedFaceReason(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static UnsearchedFaceReason FindValue(string value)
+        {
+            return FindValue<UnsearchedFaceReason>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator UnsearchedFaceReason(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type UnsuccessfulFaceAssociationReason.
+    /// </summary>
+    public class UnsuccessfulFaceAssociationReason : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ASSOCIATED_TO_A_DIFFERENT_USER for UnsuccessfulFaceAssociationReason
+        /// </summary>
+        public static readonly UnsuccessfulFaceAssociationReason ASSOCIATED_TO_A_DIFFERENT_USER = new UnsuccessfulFaceAssociationReason("ASSOCIATED_TO_A_DIFFERENT_USER");
+        /// <summary>
+        /// Constant FACE_NOT_FOUND for UnsuccessfulFaceAssociationReason
+        /// </summary>
+        public static readonly UnsuccessfulFaceAssociationReason FACE_NOT_FOUND = new UnsuccessfulFaceAssociationReason("FACE_NOT_FOUND");
+        /// <summary>
+        /// Constant LOW_MATCH_CONFIDENCE for UnsuccessfulFaceAssociationReason
+        /// </summary>
+        public static readonly UnsuccessfulFaceAssociationReason LOW_MATCH_CONFIDENCE = new UnsuccessfulFaceAssociationReason("LOW_MATCH_CONFIDENCE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public UnsuccessfulFaceAssociationReason(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static UnsuccessfulFaceAssociationReason FindValue(string value)
+        {
+            return FindValue<UnsuccessfulFaceAssociationReason>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator UnsuccessfulFaceAssociationReason(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type UnsuccessfulFaceDeletionReason.
+    /// </summary>
+    public class UnsuccessfulFaceDeletionReason : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ASSOCIATED_TO_AN_EXISTING_USER for UnsuccessfulFaceDeletionReason
+        /// </summary>
+        public static readonly UnsuccessfulFaceDeletionReason ASSOCIATED_TO_AN_EXISTING_USER = new UnsuccessfulFaceDeletionReason("ASSOCIATED_TO_AN_EXISTING_USER");
+        /// <summary>
+        /// Constant FACE_NOT_FOUND for UnsuccessfulFaceDeletionReason
+        /// </summary>
+        public static readonly UnsuccessfulFaceDeletionReason FACE_NOT_FOUND = new UnsuccessfulFaceDeletionReason("FACE_NOT_FOUND");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public UnsuccessfulFaceDeletionReason(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static UnsuccessfulFaceDeletionReason FindValue(string value)
+        {
+            return FindValue<UnsuccessfulFaceDeletionReason>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator UnsuccessfulFaceDeletionReason(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type UnsuccessfulFaceDisassociationReason.
+    /// </summary>
+    public class UnsuccessfulFaceDisassociationReason : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ASSOCIATED_TO_A_DIFFERENT_USER for UnsuccessfulFaceDisassociationReason
+        /// </summary>
+        public static readonly UnsuccessfulFaceDisassociationReason ASSOCIATED_TO_A_DIFFERENT_USER = new UnsuccessfulFaceDisassociationReason("ASSOCIATED_TO_A_DIFFERENT_USER");
+        /// <summary>
+        /// Constant FACE_NOT_FOUND for UnsuccessfulFaceDisassociationReason
+        /// </summary>
+        public static readonly UnsuccessfulFaceDisassociationReason FACE_NOT_FOUND = new UnsuccessfulFaceDisassociationReason("FACE_NOT_FOUND");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public UnsuccessfulFaceDisassociationReason(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static UnsuccessfulFaceDisassociationReason FindValue(string value)
+        {
+            return FindValue<UnsuccessfulFaceDisassociationReason>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator UnsuccessfulFaceDisassociationReason(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type UserStatus.
+    /// </summary>
+    public class UserStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for UserStatus
+        /// </summary>
+        public static readonly UserStatus ACTIVE = new UserStatus("ACTIVE");
+        /// <summary>
+        /// Constant CREATED for UserStatus
+        /// </summary>
+        public static readonly UserStatus CREATED = new UserStatus("CREATED");
+        /// <summary>
+        /// Constant CREATING for UserStatus
+        /// </summary>
+        public static readonly UserStatus CREATING = new UserStatus("CREATING");
+        /// <summary>
+        /// Constant UPDATING for UserStatus
+        /// </summary>
+        public static readonly UserStatus UPDATING = new UserStatus("UPDATING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public UserStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static UserStatus FindValue(string value)
+        {
+            return FindValue<UserStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator UserStatus(string value)
         {
             return FindValue(value);
         }

@@ -95,7 +95,7 @@ namespace Amazon.DynamoDBv2.Model
         /// The list of PartiQL statements representing the transaction to run.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=25)]
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public List<ParameterizedStatement> TransactStatements
         {
             get { return this._transactStatements; }

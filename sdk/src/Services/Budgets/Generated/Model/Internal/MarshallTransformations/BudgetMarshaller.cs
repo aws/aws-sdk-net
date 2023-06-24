@@ -34,7 +34,7 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Budget Marshaller
-    /// </summary>       
+    /// </summary>
     public class BudgetMarshaller : IRequestMarshaller<Budget, JsonMarshallerContext> 
     {
         /// <summary>
@@ -45,6 +45,17 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Budget requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAutoAdjustData())
+            {
+                context.Writer.WritePropertyName("AutoAdjustData");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AutoAdjustDataMarshaller.Instance;
+                marshaller.Marshall(requestObject.AutoAdjustData, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetBudgetLimit())
             {
                 context.Writer.WritePropertyName("BudgetLimit");
@@ -155,7 +166,7 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static BudgetMarshaller Instance = new BudgetMarshaller();
 
     }

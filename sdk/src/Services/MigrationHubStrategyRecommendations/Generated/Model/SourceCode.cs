@@ -34,6 +34,7 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
     public partial class SourceCode
     {
         private string _location;
+        private string _projectName;
         private string _sourceVersion;
         private VersionControl _versionControl;
 
@@ -54,6 +55,25 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
         internal bool IsSetLocation()
         {
             return this._location != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProjectName. 
+        /// <para>
+        /// The name of the project.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=128)]
+        public string ProjectName
+        {
+            get { return this._projectName; }
+            set { this._projectName = value; }
+        }
+
+        // Check to see if ProjectName property is set
+        internal bool IsSetProjectName()
+        {
+            return this._projectName != null;
         }
 
         /// <summary>

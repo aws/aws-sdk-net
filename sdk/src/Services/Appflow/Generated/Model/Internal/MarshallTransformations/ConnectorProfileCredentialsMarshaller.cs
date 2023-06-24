@@ -34,7 +34,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ConnectorProfileCredentials Marshaller
-    /// </summary>       
+    /// </summary>
     public class ConnectorProfileCredentialsMarshaller : IRequestMarshaller<ConnectorProfileCredentials, JsonMarshallerContext> 
     {
         /// <summary>
@@ -52,6 +52,17 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 
                 var marshaller = AmplitudeConnectorProfileCredentialsMarshaller.Instance;
                 marshaller.Marshall(requestObject.Amplitude, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetCustomConnector())
+            {
+                context.Writer.WritePropertyName("CustomConnector");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = CustomConnectorProfileCredentialsMarshaller.Instance;
+                marshaller.Marshall(requestObject.CustomConnector, context);
 
                 context.Writer.WriteObjectEnd();
             }
@@ -118,6 +129,17 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 
                 var marshaller = MarketoConnectorProfileCredentialsMarshaller.Instance;
                 marshaller.Marshall(requestObject.Marketo, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetPardot())
+            {
+                context.Writer.WritePropertyName("Pardot");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = PardotConnectorProfileCredentialsMarshaller.Instance;
+                marshaller.Marshall(requestObject.Pardot, context);
 
                 context.Writer.WriteObjectEnd();
             }
@@ -236,7 +258,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ConnectorProfileCredentialsMarshaller Instance = new ConnectorProfileCredentialsMarshaller();
 
     }

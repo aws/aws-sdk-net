@@ -47,7 +47,10 @@ namespace Amazon.Elasticsearch.Model
         /// <li>MaximumIops</li> Maximum amount of Iops that is applicable for given storage type.It
         /// can be empty if it is not applicable. <li>MinimumIops</li> Minimum amount of Iops
         /// that is applicable for given storage type.It can be empty if it is not applicable.
-        /// </ol> 
+        /// <li>MaximumThroughput</li> Maximum amount of Throughput that is applicable for given
+        /// storage type.It can be empty if it is not applicable. <li>MinimumThroughput</li> Minimum
+        /// amount of Throughput that is applicable for given storage type.It can be empty if
+        /// it is not applicable. </ol> 
         /// </para>
         /// </summary>
         public string LimitName

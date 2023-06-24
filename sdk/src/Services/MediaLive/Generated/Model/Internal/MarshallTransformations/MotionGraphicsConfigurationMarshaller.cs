@@ -34,7 +34,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// MotionGraphicsConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class MotionGraphicsConfigurationMarshaller : IRequestMarshaller<MotionGraphicsConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static MotionGraphicsConfigurationMarshaller Instance = new MotionGraphicsConfigurationMarshaller();
 
     }

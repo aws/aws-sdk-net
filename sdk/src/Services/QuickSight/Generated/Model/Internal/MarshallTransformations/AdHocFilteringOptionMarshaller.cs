@@ -34,7 +34,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AdHocFilteringOption Marshaller
-    /// </summary>       
+    /// </summary>
     public class AdHocFilteringOptionMarshaller : IRequestMarshaller<AdHocFilteringOption, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AdHocFilteringOptionMarshaller Instance = new AdHocFilteringOptionMarshaller();
 
     }

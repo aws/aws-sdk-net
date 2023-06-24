@@ -34,7 +34,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// EbuTtDDestinationSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class EbuTtDDestinationSettingsMarshaller : IRequestMarshaller<EbuTtDDestinationSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static EbuTtDDestinationSettingsMarshaller Instance = new EbuTtDDestinationSettingsMarshaller();
 
     }

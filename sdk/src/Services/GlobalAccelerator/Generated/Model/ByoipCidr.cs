@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GlobalAccelerator.Model
 {
     /// <summary>
-    /// Information about an IP address range that is provisioned for use with your AWS resources
-    /// through bring your own IP address (BYOIP).
+    /// Information about an IP address range that is provisioned for use with your Amazon
+    /// Web Services resources through bring your own IP address (BYOIP).
     /// 
     ///  
     /// <para>
@@ -40,61 +40,62 @@ namespace Amazon.GlobalAccelerator.Model
     ///  <ul> <li> 
     /// <para>
     ///  <b>PENDING_PROVISIONING</b> — You’ve submitted a request to provision an IP address
-    /// range but it is not yet provisioned with AWS Global Accelerator.
+    /// range but it is not yet provisioned with Global Accelerator.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <b>READY</b> — The address range is provisioned with AWS Global Accelerator and can
-    /// be advertised.
+    ///  <b>READY</b> — The address range is provisioned with Global Accelerator and can be
+    /// advertised.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <b>PENDING_ADVERTISING</b> — You’ve submitted a request for AWS Global Accelerator
-    /// to advertise an address range but it is not yet being advertised.
+    ///  <b>PENDING_ADVERTISING</b> — You’ve submitted a request for Global Accelerator to
+    /// advertise an address range but it is not yet being advertised.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <b>ADVERTISING</b> — The address range is being advertised by AWS Global Accelerator.
+    ///  <b>ADVERTISING</b> — The address range is being advertised by Global Accelerator.
     /// </para>
     ///  </li> <li> 
     /// <para>
     ///  <b>PENDING_WITHDRAWING</b> — You’ve submitted a request to withdraw an address range
-    /// from being advertised but it is still being advertised by AWS Global Accelerator.
+    /// from being advertised but it is still being advertised by Global Accelerator.
     /// </para>
     ///  </li> <li> 
     /// <para>
     ///  <b>PENDING_DEPROVISIONING</b> — You’ve submitted a request to deprovision an address
-    /// range from AWS Global Accelerator but it is still provisioned.
+    /// range from Global Accelerator but it is still provisioned.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <b>DEPROVISIONED</b> — The address range is deprovisioned from AWS Global Accelerator.
+    ///  <b>DEPROVISIONED</b> — The address range is deprovisioned from Global Accelerator.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <b>FAILED_PROVISION </b> — The request to provision the address range from AWS Global
+    ///  <b>FAILED_PROVISION </b> — The request to provision the address range from Global
     /// Accelerator was not successful. Please make sure that you provide all of the correct
-    /// information, and try again. If the request fails a second time, contact AWS support.
+    /// information, and try again. If the request fails a second time, contact Amazon Web
+    /// Services support.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <b>FAILED_ADVERTISING</b> — The request for AWS Global Accelerator to advertise the
-    /// address range was not successful. Please make sure that you provide all of the correct
-    /// information, and try again. If the request fails a second time, contact AWS support.
+    ///  <b>FAILED_ADVERTISING</b> — The request for Global Accelerator to advertise the address
+    /// range was not successful. Please make sure that you provide all of the correct information,
+    /// and try again. If the request fails a second time, contact Amazon Web Services support.
     /// </para>
     ///  </li> <li> 
     /// <para>
     ///  <b>FAILED_WITHDRAW</b> — The request to withdraw the address range from advertising
-    /// by AWS Global Accelerator was not successful. Please make sure that you provide all
-    /// of the correct information, and try again. If the request fails a second time, contact
-    /// AWS support.
+    /// by Global Accelerator was not successful. Please make sure that you provide all of
+    /// the correct information, and try again. If the request fails a second time, contact
+    /// Amazon Web Services support.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <b>FAILED_DEPROVISION </b> — The request to deprovision the address range from AWS
-    /// Global Accelerator was not successful. Please make sure that you provide all of the
-    /// correct information, and try again. If the request fails a second time, contact AWS
-    /// support.
+    ///  <b>FAILED_DEPROVISION </b> — The request to deprovision the address range from Global
+    /// Accelerator was not successful. Please make sure that you provide all of the correct
+    /// information, and try again. If the request fails a second time, contact Amazon Web
+    /// Services support.
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -126,7 +127,7 @@ namespace Amazon.GlobalAccelerator.Model
         /// <summary>
         /// Gets and sets the property Events. 
         /// <para>
-        /// A history of status changes for an IP address range that you bring to AWS Global Accelerator
+        /// A history of status changes for an IP address range that you bring to Global Accelerator
         /// through bring your own IP address (BYOIP).
         /// </para>
         /// </summary>

@@ -48,7 +48,7 @@ namespace Amazon.GlobalAccelerator.Model
         /// </para>
         ///  
         /// <para>
-        /// AWS Global Accelerator uses a consistent-flow hashing algorithm to choose the optimal
+        /// Global Accelerator uses a consistent-flow hashing algorithm to choose the optimal
         /// endpoint for a connection. If client affinity is <code>NONE</code>, Global Accelerator
         /// uses the "five-tuple" (5-tuple) properties—source IP address, source port, destination
         /// IP address, destination port, and protocol—to select the hash value, and then chooses

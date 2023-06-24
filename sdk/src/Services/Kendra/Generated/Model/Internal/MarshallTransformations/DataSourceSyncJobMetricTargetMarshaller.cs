@@ -34,7 +34,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DataSourceSyncJobMetricTarget Marshaller
-    /// </summary>       
+    /// </summary>
     public class DataSourceSyncJobMetricTargetMarshaller : IRequestMarshaller<DataSourceSyncJobMetricTarget, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DataSourceSyncJobMetricTargetMarshaller Instance = new DataSourceSyncJobMetricTargetMarshaller();
 
     }

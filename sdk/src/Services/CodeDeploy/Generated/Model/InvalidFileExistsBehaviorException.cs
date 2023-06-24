@@ -29,10 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeDeploy.Model
 {
     /// <summary>
-    /// An invalid fileExistsBehavior option was specified to determine how AWS CodeDeploy
-    /// handles files or directories that already exist in a deployment target location, but
-    /// weren't part of the previous successful deployment. Valid values include "DISALLOW,"
-    /// "OVERWRITE," and "RETAIN."
+    /// An invalid fileExistsBehavior option was specified to determine how CodeDeploy handles
+    /// files or directories that already exist in a deployment target location, but weren't
+    /// part of the previous successful deployment. Valid values include "DISALLOW," "OVERWRITE,"
+    /// and "RETAIN."
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

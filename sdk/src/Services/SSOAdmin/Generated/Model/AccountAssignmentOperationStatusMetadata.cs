@@ -62,6 +62,7 @@ namespace Amazon.SSOAdmin.Model
         /// unique identifier (UUID) workflow.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=36, Max=36)]
         public string RequestId
         {
             get { return this._requestId; }

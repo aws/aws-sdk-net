@@ -34,7 +34,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// KantarWatermarkSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class KantarWatermarkSettingsMarshaller : IRequestMarshaller<KantarWatermarkSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -127,7 +127,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static KantarWatermarkSettingsMarshaller Instance = new KantarWatermarkSettingsMarshaller();
 
     }

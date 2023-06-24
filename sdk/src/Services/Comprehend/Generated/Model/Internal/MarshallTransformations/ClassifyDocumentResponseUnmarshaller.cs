@@ -57,10 +57,34 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
                     response.Classes = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DocumentMetadata", targetDepth))
+                {
+                    var unmarshaller = DocumentMetadataUnmarshaller.Instance;
+                    response.DocumentMetadata = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("DocumentType", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<DocumentTypeListItem, DocumentTypeListItemUnmarshaller>(DocumentTypeListItemUnmarshaller.Instance);
+                    response.DocumentType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Errors", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ErrorsListItem, ErrorsListItemUnmarshaller>(ErrorsListItemUnmarshaller.Instance);
+                    response.Errors = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Labels", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<DocumentLabel, DocumentLabelUnmarshaller>(DocumentLabelUnmarshaller.Instance);
                     response.Labels = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Warnings", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<WarningsListItem, WarningsListItemUnmarshaller>(WarningsListItemUnmarshaller.Instance);
+                    response.Warnings = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

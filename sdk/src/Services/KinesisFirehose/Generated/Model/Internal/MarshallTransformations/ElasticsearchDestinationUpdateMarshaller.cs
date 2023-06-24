@@ -34,7 +34,7 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ElasticsearchDestinationUpdate Marshaller
-    /// </summary>       
+    /// </summary>
     public class ElasticsearchDestinationUpdateMarshaller : IRequestMarshaller<ElasticsearchDestinationUpdate, JsonMarshallerContext> 
     {
         /// <summary>
@@ -140,7 +140,7 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ElasticsearchDestinationUpdateMarshaller Instance = new ElasticsearchDestinationUpdateMarshaller();
 
     }

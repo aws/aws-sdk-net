@@ -88,6 +88,12 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
                     unmarshalledObject.SpliceInsertMessage = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("TimeSignalMessage", targetDepth))
+                {
+                    var unmarshaller = TimeSignalMessageUnmarshaller.Instance;
+                    unmarshalledObject.TimeSignalMessage = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

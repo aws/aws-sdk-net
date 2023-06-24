@@ -79,7 +79,7 @@ namespace Amazon.Amplify.Model
         /// app. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1000)]
+        [AWSProperty(Min=0, Max=1000)]
         public string BackendEnvironmentArn
         {
             get { return this._backendEnvironmentArn; }
@@ -95,10 +95,11 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property BasicAuthCredentials. 
         /// <para>
-        ///  The basic authorization credentials for the branch. 
+        ///  The basic authorization credentials for the branch. You must base64-encode the authorization
+        /// credentials and provide them in the format <code>user:password</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=2000)]
+        [AWSProperty(Sensitive=true, Max=2000)]
         public string BasicAuthCredentials
         {
             get { return this._basicAuthCredentials; }
@@ -136,7 +137,7 @@ namespace Amazon.Amplify.Model
         ///  The build specification (build spec) for the branch. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=25000)]
+        [AWSProperty(Sensitive=true, Min=1, Max=25000)]
         public string BuildSpec
         {
             get { return this._buildSpec; }
@@ -363,7 +364,7 @@ namespace Amazon.Amplify.Model
         ///  The tag for the branch. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=50)]
+        [AWSProperty(Min=0, Max=50)]
         public Dictionary<string, string> Tags
         {
             get { return this._tags; }
@@ -382,6 +383,7 @@ namespace Amazon.Amplify.Model
         ///  The content Time To Live (TTL) for the website in seconds. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=32)]
         public string Ttl
         {
             get { return this._ttl; }

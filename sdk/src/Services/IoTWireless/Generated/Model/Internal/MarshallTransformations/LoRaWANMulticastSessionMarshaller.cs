@@ -34,7 +34,7 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// LoRaWANMulticastSession Marshaller
-    /// </summary>       
+    /// </summary>
     public class LoRaWANMulticastSessionMarshaller : IRequestMarshaller<LoRaWANMulticastSession, JsonMarshallerContext> 
     {
         /// <summary>
@@ -57,6 +57,12 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.DlFreq);
             }
 
+            if(requestObject.IsSetPingSlotPeriod())
+            {
+                context.Writer.WritePropertyName("PingSlotPeriod");
+                context.Writer.Write(requestObject.PingSlotPeriod);
+            }
+
             if(requestObject.IsSetSessionStartTime())
             {
                 context.Writer.WritePropertyName("SessionStartTime");
@@ -73,7 +79,7 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static LoRaWANMulticastSessionMarshaller Instance = new LoRaWANMulticastSessionMarshaller();
 
     }

@@ -17,22 +17,22 @@
  * Do not modify this file. This file is generated from the ecr-public-2020-10-30.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
-
+using Amazon.ECRPublic.Internal;
 
 namespace Amazon.ECRPublic
 {
     /// <summary>
     /// Configuration for accessing Amazon ECRPublic service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonECRPublicConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.105");
+            InternalSDKUtils.BuildUserAgentString("3.7.102.37");
 
         private string _userAgent = UserAgentString;
 
@@ -40,8 +40,10 @@ namespace Amazon.ECRPublic
         /// Default constructor
         /// </summary>
         public AmazonECRPublicConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonECRPublicDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "ecr-public";
+            this.EndpointProvider = new AmazonECRPublicEndpointProvider();
         }
 
         /// <summary>
@@ -76,5 +78,6 @@ namespace Amazon.ECRPublic
                 return _userAgent;
             }
         }
+
     }
 }

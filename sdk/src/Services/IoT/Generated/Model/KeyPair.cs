@@ -42,7 +42,7 @@ namespace Amazon.IoT.Model
         /// The private key.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
+        [AWSProperty(Sensitive=true, Min=1)]
         public string PrivateKey
         {
             get { return this._privateKey; }

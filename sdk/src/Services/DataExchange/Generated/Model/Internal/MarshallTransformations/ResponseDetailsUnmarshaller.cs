@@ -64,6 +64,12 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("CreateS3DataAccessFromS3Bucket", targetDepth))
+                {
+                    var unmarshaller = CreateS3DataAccessFromS3BucketResponseDetailsUnmarshaller.Instance;
+                    unmarshalledObject.CreateS3DataAccessFromS3Bucket = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ExportAssetsToS3", targetDepth))
                 {
                     var unmarshaller = ExportAssetsToS3ResponseDetailsUnmarshaller.Instance;
@@ -82,10 +88,22 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
                     unmarshalledObject.ExportRevisionsToS3 = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ImportAssetFromApiGatewayApi", targetDepth))
+                {
+                    var unmarshaller = ImportAssetFromApiGatewayApiResponseDetailsUnmarshaller.Instance;
+                    unmarshalledObject.ImportAssetFromApiGatewayApi = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ImportAssetFromSignedUrl", targetDepth))
                 {
                     var unmarshaller = ImportAssetFromSignedUrlResponseDetailsUnmarshaller.Instance;
                     unmarshalledObject.ImportAssetFromSignedUrl = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ImportAssetsFromLakeFormationTagPolicy", targetDepth))
+                {
+                    var unmarshaller = ImportAssetsFromLakeFormationTagPolicyResponseDetailsUnmarshaller.Instance;
+                    unmarshalledObject.ImportAssetsFromLakeFormationTagPolicy = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ImportAssetsFromRedshiftDataShares", targetDepth))

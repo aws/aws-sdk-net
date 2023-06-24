@@ -38,6 +38,7 @@ namespace Amazon.Mgn.Model
     {
         private string _code;
         private string _quotaCode;
+        private int? _quotaValue;
         private string _resourceId;
         private string _resourceType;
         private string _serviceCode;
@@ -104,6 +105,7 @@ namespace Amazon.Mgn.Model
         {
             this.Code = (string)info.GetValue("Code", typeof(string));
             this.QuotaCode = (string)info.GetValue("QuotaCode", typeof(string));
+            this.QuotaValue = (int)info.GetValue("QuotaValue", typeof(int));
             this.ResourceId = (string)info.GetValue("ResourceId", typeof(string));
             this.ResourceType = (string)info.GetValue("ResourceType", typeof(string));
             this.ServiceCode = (string)info.GetValue("ServiceCode", typeof(string));
@@ -129,6 +131,7 @@ namespace Amazon.Mgn.Model
             base.GetObjectData(info, context);
             info.AddValue("Code", this.Code);
             info.AddValue("QuotaCode", this.QuotaCode);
+            info.AddValue("QuotaValue", this.QuotaValue);
             info.AddValue("ResourceId", this.ResourceId);
             info.AddValue("ResourceType", this.ResourceType);
             info.AddValue("ServiceCode", this.ServiceCode);
@@ -171,9 +174,28 @@ namespace Amazon.Mgn.Model
         }
 
         /// <summary>
+        /// Gets and sets the property QuotaValue. 
+        /// <para>
+        /// Exceeded the service quota value.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public int QuotaValue
+        {
+            get { return this._quotaValue.GetValueOrDefault(); }
+            set { this._quotaValue = value; }
+        }
+
+        // Check to see if QuotaValue property is set
+        internal bool IsSetQuotaValue()
+        {
+            return this._quotaValue.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property ResourceId. 
         /// <para>
-        /// Exceeded the service quota resource Id.
+        /// Exceeded the service quota resource ID.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=65536)]

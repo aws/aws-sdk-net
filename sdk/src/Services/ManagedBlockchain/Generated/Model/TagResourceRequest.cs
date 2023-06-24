@@ -61,7 +61,7 @@ namespace Amazon.ManagedBlockchain.Model
         /// <para>
         /// The Amazon Resource Name (ARN) of the resource. For more information about ARNs and
         /// their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
+        /// Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1011)]

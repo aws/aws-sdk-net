@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DatasetDefinition Marshaller
-    /// </summary>       
+    /// </summary>
     public class DatasetDefinitionMarshaller : IRequestMarshaller<DatasetDefinition, JsonMarshallerContext> 
     {
         /// <summary>
@@ -89,7 +89,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DatasetDefinitionMarshaller Instance = new DatasetDefinitionMarshaller();
 
     }

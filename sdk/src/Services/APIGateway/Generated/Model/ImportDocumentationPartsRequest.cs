@@ -30,7 +30,7 @@ namespace Amazon.APIGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the ImportDocumentationParts operation.
-    /// 
+    /// Imports documentation parts
     /// </summary>
     public partial class ImportDocumentationPartsRequest : AmazonAPIGatewayRequest
     {
@@ -42,8 +42,8 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Body. 
         /// <para>
-        /// [Required] Raw byte array representing the to-be-imported documentation parts. To
-        /// import from an OpenAPI file, this is a JSON object.
+        /// Raw byte array representing the to-be-imported documentation parts. To import from
+        /// an OpenAPI file, this is a JSON object.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -82,7 +82,7 @@ namespace Amazon.APIGateway.Model
         /// Gets and sets the property Mode. 
         /// <para>
         /// A query parameter to indicate whether to overwrite (<code>OVERWRITE</code>) any existing
-        /// <a>DocumentationParts</a> definition or to merge (<code>MERGE</code>) the new definition
+        /// DocumentationParts definition or to merge (<code>MERGE</code>) the new definition
         /// into the existing one. The default value is <code>MERGE</code>.
         /// </para>
         /// </summary>
@@ -101,7 +101,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property RestApiId. 
         /// <para>
-        /// [Required] The string identifier of the associated <a>RestApi</a>.
+        /// The string identifier of the associated RestApi.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

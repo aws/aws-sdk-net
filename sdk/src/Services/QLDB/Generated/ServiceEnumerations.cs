@@ -241,6 +241,60 @@ namespace Amazon.QLDB
 
 
     /// <summary>
+    /// Constants used for properties of type OutputFormat.
+    /// </summary>
+    public class OutputFormat : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ION_BINARY for OutputFormat
+        /// </summary>
+        public static readonly OutputFormat ION_BINARY = new OutputFormat("ION_BINARY");
+        /// <summary>
+        /// Constant ION_TEXT for OutputFormat
+        /// </summary>
+        public static readonly OutputFormat ION_TEXT = new OutputFormat("ION_TEXT");
+        /// <summary>
+        /// Constant JSON for OutputFormat
+        /// </summary>
+        public static readonly OutputFormat JSON = new OutputFormat("JSON");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OutputFormat(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OutputFormat FindValue(string value)
+        {
+            return FindValue<OutputFormat>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OutputFormat(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type PermissionsMode.
     /// </summary>
     public class PermissionsMode : ConstantClass

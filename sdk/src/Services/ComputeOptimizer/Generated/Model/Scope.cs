@@ -44,8 +44,10 @@ namespace Amazon.ComputeOptimizer.Model
     /// and account levels. You can create recommendation preferences for Auto Scaling groups
     /// only at the resource level by specifying a scope name of <code>ResourceArn</code>
     /// and a scope value of the Auto Scaling group Amazon Resource Name (ARN). This will
-    /// configure the preference for all instances that are part of the specified the Auto
-    /// Scaling group.
+    /// configure the preference for all instances that are part of the specified Auto Scaling
+    /// group. You also cannot create recommendation preferences at the resource level for
+    /// instances that are part of an Auto Scaling group. You can create recommendation preferences
+    /// at the resource level only for standalone instances.
     /// </para>
     ///  </note>
     /// </summary>

@@ -116,7 +116,7 @@ namespace Amazon.IdentityManagement.Model
         /// The secret key used to sign requests.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public string SecretAccessKey
         {
             get { return this._secretAccessKey; }

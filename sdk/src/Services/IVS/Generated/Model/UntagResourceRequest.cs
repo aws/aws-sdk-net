@@ -40,7 +40,7 @@ namespace Amazon.IVS.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// ARN of the resource for which tags are to be removed.
+        /// ARN of the resource for which tags are to be removed. The ARN must be URL-encoded.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -59,7 +59,11 @@ namespace Amazon.IVS.Model
         /// <summary>
         /// Gets and sets the property TagKeys. 
         /// <para>
-        /// Array of tags to be removed.
+        /// Array of tags to be removed. Array of maps, each of the form s<code>tring:string (key:value)</code>.
+        /// See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+        /// Amazon Web Services Resources</a> for more information, including restrictions that
+        /// apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific
+        /// constraints beyond what is documented there.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=50)]

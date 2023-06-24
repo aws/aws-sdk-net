@@ -68,7 +68,6 @@ namespace Amazon.GreengrassV2.Model
         /// The list of components to resolve.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public List<ComponentCandidate> ComponentCandidates
         {
             get { return this._componentCandidates; }
@@ -87,7 +86,6 @@ namespace Amazon.GreengrassV2.Model
         /// The platform to use to resolve compatible components.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public ComponentPlatform Platform
         {
             get { return this._platform; }

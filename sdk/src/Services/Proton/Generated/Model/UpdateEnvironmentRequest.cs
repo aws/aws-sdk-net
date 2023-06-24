@@ -40,15 +40,16 @@ namespace Amazon.Proton.Model
     /// </para>
     ///  
     /// <para>
-    /// You can only update to a new environment account connection if it was created in the
-    /// same environment account that the current environment account connection was created
-    /// in and is associated with the current environment.
+    /// You can only update to a new environment account connection if that connection was
+    /// created in the same environment account that the current environment account connection
+    /// was created in. The account connection must also be associated with the current environment.
     /// </para>
     ///  
     /// <para>
     /// If the environment <i>isn't</i> associated with an environment account connection,
-    /// <i>don't</i> update or include the <code>environmentAccountConnectionId</code> parameter
-    /// to update or connect to an environment account connection.
+    /// <i>don't</i> update or include the <code>environmentAccountConnectionId</code> parameter.
+    /// You <i>can't</i> update or connect the environment to an environment account connection
+    /// if it <i>isn't</i> already associated with an environment connection.
     /// </para>
     ///  
     /// <para>
@@ -57,19 +58,25 @@ namespace Amazon.Proton.Model
     /// </para>
     ///  
     /// <para>
-    /// If the environment was provisioned with pull request provisioning, include the <code>provisioningRepository</code>
+    /// If the environment was configured for Amazon Web Services-managed provisioning, omit
+    /// the <code>provisioningRepository</code> parameter.
+    /// </para>
+    ///  
+    /// <para>
+    /// If the environment was configured for self-managed provisioning, specify the <code>provisioningRepository</code>
     /// parameter and omit the <code>protonServiceRoleArn</code> and <code>environmentAccountConnectionId</code>
     /// parameters.
     /// </para>
     ///  
     /// <para>
-    /// If the environment wasn't provisioned with pull request provisioning, omit the <code>provisioningRepository</code>
-    /// parameter.
+    /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-environments.html">Environments</a>
+    /// and <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-works-prov-methods.html">Provisioning
+    /// methods</a> in the <i>Proton User Guide</i>.
     /// </para>
     ///  
     /// <para>
-    /// There are four modes for updating an environment as described in the following. The
-    /// <code>deploymentType</code> field defines the mode.
+    /// There are four modes for updating an environment. The <code>deploymentType</code>
+    /// field defines the mode.
     /// </para>
     ///  <dl> <dt/> <dd> 
     /// <para>
@@ -109,12 +116,14 @@ namespace Amazon.Proton.Model
     /// In this mode, the environment is deployed and updated with the published, recommended
     /// (latest) major and minor version of the current template, by default. You can also
     /// specify a different major version that's higher than the major version in use and
-    /// a minor version (optional).
+    /// a minor version.
     /// </para>
     ///  </dd> </dl>
     /// </summary>
     public partial class UpdateEnvironmentRequest : AmazonProtonRequest
     {
+        private string _codebuildRoleArn;
+        private string _componentRoleArn;
         private DeploymentUpdateType _deploymentType;
         private string _description;
         private string _environmentAccountConnectionId;
@@ -126,10 +135,61 @@ namespace Amazon.Proton.Model
         private string _templateMinorVersion;
 
         /// <summary>
+        /// Gets and sets the property CodebuildRoleArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the IAM service role that allows Proton to provision
+        /// infrastructure using CodeBuild-based provisioning on your behalf.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string CodebuildRoleArn
+        {
+            get { return this._codebuildRoleArn; }
+            set { this._codebuildRoleArn = value; }
+        }
+
+        // Check to see if CodebuildRoleArn property is set
+        internal bool IsSetCodebuildRoleArn()
+        {
+            return this._codebuildRoleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ComponentRoleArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning
+        /// directly defined components in this environment. It determines the scope of infrastructure
+        /// that a component can provision.
+        /// </para>
+        ///  
+        /// <para>
+        /// The environment must have a <code>componentRoleArn</code> to allow directly defined
+        /// components to be associated with the environment.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+        /// components</a> in the <i>Proton User Guide</i>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string ComponentRoleArn
+        {
+            get { return this._componentRoleArn; }
+            set { this._componentRoleArn = value; }
+        }
+
+        // Check to see if ComponentRoleArn property is set
+        internal bool IsSetComponentRoleArn()
+        {
+            return this._componentRoleArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property DeploymentType. 
         /// <para>
-        /// There are four modes for updating an environment as described in the following. The
-        /// <code>deploymentType</code> field defines the mode.
+        /// There are four modes for updating an environment. The <code>deploymentType</code>
+        /// field defines the mode.
         /// </para>
         ///  <dl> <dt/> <dd> 
         /// <para>
@@ -147,7 +207,7 @@ namespace Amazon.Proton.Model
         ///  
         /// <para>
         /// In this mode, the environment is deployed and updated with the new spec that you provide.
-        /// Only requested parameters are updated. <i>Don’t</i> include minor or major version
+        /// Only requested parameters are updated. <i>Don’t</i> include major or minor version
         /// parameters when you use this <code>deployment-type</code>.
         /// </para>
         ///  </dd> <dt/> <dd> 
@@ -192,7 +252,7 @@ namespace Amazon.Proton.Model
         /// A description of the environment update.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=500)]
+        [AWSProperty(Sensitive=true, Min=0, Max=500)]
         public string Description
         {
             get { return this._description; }
@@ -271,15 +331,10 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property ProvisioningRepository. 
         /// <para>
-        /// The repository that you provide with pull request provisioning.
+        /// The linked repository that you use to host your rendered infrastructure templates
+        /// for self-managed provisioning. A linked repository is a repository that has been registered
+        /// with Proton. For more information, see <a>CreateRepository</a>.
         /// </para>
-        ///  <important> 
-        /// <para>
-        /// Provisioning by pull request is currently in feature preview and is only usable with
-        /// Terraform based Proton Templates. To learn more about <a href="https://aws.amazon.com/service-terms">Amazon
-        /// Web Services Feature Preview terms</a>, see section 2 on Beta and Previews.
-        /// </para>
-        ///  </important>
         /// </summary>
         public RepositoryBranchInput ProvisioningRepository
         {
@@ -299,7 +354,7 @@ namespace Amazon.Proton.Model
         /// The formatted specification that defines the update.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=51200)]
+        [AWSProperty(Sensitive=true, Min=1, Max=51200)]
         public string Spec
         {
             get { return this._spec; }

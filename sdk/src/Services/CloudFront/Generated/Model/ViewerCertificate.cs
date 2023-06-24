@@ -29,12 +29,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// A complex type that determines the distribution’s SSL/TLS configuration for communicating
+    /// A complex type that determines the distribution's SSL/TLS configuration for communicating
     /// with viewers.
     /// 
     ///  
     /// <para>
-    /// If the distribution doesn’t use <code>Aliases</code> (also known as alternate domain
+    /// If the distribution doesn't use <code>Aliases</code> (also known as alternate domain
     /// names or CNAMEs)—that is, if the distribution uses the CloudFront domain name such
     /// as <code>d111111abcdef8.cloudfront.net</code>—set <code>CloudFrontDefaultCertificate</code>
     /// to <code>true</code> and leave all other fields empty.
@@ -48,7 +48,7 @@ namespace Amazon.CloudFront.Model
     /// <para>
     /// Which viewers the distribution accepts HTTPS connections from: only viewers that support
     /// <a href="https://en.wikipedia.org/wiki/Server_Name_Indication">server name indication
-    /// (SNI)</a> (recommended), or all viewers including those that don’t support SNI.
+    /// (SNI)</a> (recommended), or all viewers including those that don't support SNI.
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -58,7 +58,7 @@ namespace Amazon.CloudFront.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// To accept HTTPS connections from all viewers, including those that don’t support SNI,
+    /// To accept HTTPS connections from all viewers, including those that don't support SNI,
     /// set <code>SSLSupportMethod</code> to <code>vip</code>. This is not recommended, and
     /// results in additional monthly charges from CloudFront.
     /// </para>
@@ -289,7 +289,7 @@ namespace Amazon.CloudFront.Model
         /// </para>
         ///  </note> 
         /// <para>
-        /// When you’re using SNI only (you set <code>SSLSupportMethod</code> to <code>sni-only</code>),
+        /// When you're using SNI only (you set <code>SSLSupportMethod</code> to <code>sni-only</code>),
         /// you must specify <code>TLSv1</code> or higher.
         /// </para>
         ///  
@@ -328,7 +328,7 @@ namespace Amazon.CloudFront.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>vip</code> – The distribution accepts HTTPS connections from all viewers including
-        /// those that don’t support SNI. This is not recommended, and results in additional monthly
+        /// those that don't support SNI. This is not recommended, and results in additional monthly
         /// charges from CloudFront.
         /// </para>
         ///  </li> <li> 
@@ -341,7 +341,7 @@ namespace Amazon.CloudFront.Model
         ///  </li> </ul> 
         /// <para>
         /// If the distribution uses the CloudFront domain name such as <code>d111111abcdef8.cloudfront.net</code>,
-        /// don’t set a value for this field.
+        /// don't set a value for this field.
         /// </para>
         /// </summary>
         public SSLSupportMethod SSLSupportMethod

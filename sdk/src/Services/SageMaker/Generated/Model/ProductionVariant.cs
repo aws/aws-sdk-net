@@ -30,19 +30,25 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// Identifies a model that you want to host and the resources chosen to deploy for hosting
-    /// it. If you are deploying multiple models, tell Amazon SageMaker how to distribute
-    /// traffic among the models by specifying variant weights.
+    /// it. If you are deploying multiple models, tell SageMaker how to distribute traffic
+    /// among the models by specifying variant weights. For more information on production
+    /// variants, check <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-ab-testing.html">
+    /// Production variants</a>.
     /// </summary>
     public partial class ProductionVariant
     {
         private ProductionVariantAcceleratorType _acceleratorType;
+        private int? _containerStartupHealthCheckTimeoutInSeconds;
         private ProductionVariantCoreDumpConfig _coreDumpConfig;
+        private bool? _enableSSMAccess;
         private int? _initialInstanceCount;
         private float? _initialVariantWeight;
         private ProductionVariantInstanceType _instanceType;
+        private int? _modelDataDownloadTimeoutInSeconds;
         private string _modelName;
         private ProductionVariantServerlessConfig _serverlessConfig;
         private string _variantName;
+        private int? _volumeSizeInGB;
 
         /// <summary>
         /// Gets and sets the property AcceleratorType. 
@@ -66,6 +72,27 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ContainerStartupHealthCheckTimeoutInSeconds. 
+        /// <para>
+        /// The timeout value, in seconds, for your inference container to pass health check by
+        /// SageMaker Hosting. For more information about health check, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-inference-code.html#your-algorithms-inference-algo-ping-requests">How
+        /// Your Container Should Respond to Health Check (Ping) Requests</a>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=60, Max=3600)]
+        public int ContainerStartupHealthCheckTimeoutInSeconds
+        {
+            get { return this._containerStartupHealthCheckTimeoutInSeconds.GetValueOrDefault(); }
+            set { this._containerStartupHealthCheckTimeoutInSeconds = value; }
+        }
+
+        // Check to see if ContainerStartupHealthCheckTimeoutInSeconds property is set
+        internal bool IsSetContainerStartupHealthCheckTimeoutInSeconds()
+        {
+            return this._containerStartupHealthCheckTimeoutInSeconds.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property CoreDumpConfig. 
         /// <para>
         /// Specifies configuration for a core dump from the model container when the process
@@ -82,6 +109,28 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetCoreDumpConfig()
         {
             return this._coreDumpConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnableSSMAccess. 
+        /// <para>
+        ///  You can use this parameter to turn on native Amazon Web Services Systems Manager
+        /// (SSM) access for a production variant behind an endpoint. By default, SSM access is
+        /// disabled for all production variants behind an endpoint. You can turn on or turn off
+        /// SSM access for a production variant behind an existing endpoint by creating a new
+        /// endpoint configuration and calling <code>UpdateEndpoint</code>. 
+        /// </para>
+        /// </summary>
+        public bool EnableSSMAccess
+        {
+            get { return this._enableSSMAccess.GetValueOrDefault(); }
+            set { this._enableSSMAccess = value; }
+        }
+
+        // Check to see if EnableSSMAccess property is set
+        internal bool IsSetEnableSSMAccess()
+        {
+            return this._enableSSMAccess.HasValue; 
         }
 
         /// <summary>
@@ -144,6 +193,27 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ModelDataDownloadTimeoutInSeconds. 
+        /// <para>
+        /// The timeout value, in seconds, to download and extract the model that you want to
+        /// host from Amazon S3 to the individual inference instance associated with this production
+        /// variant.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=60, Max=3600)]
+        public int ModelDataDownloadTimeoutInSeconds
+        {
+            get { return this._modelDataDownloadTimeoutInSeconds.GetValueOrDefault(); }
+            set { this._modelDataDownloadTimeoutInSeconds = value; }
+        }
+
+        // Check to see if ModelDataDownloadTimeoutInSeconds property is set
+        internal bool IsSetModelDataDownloadTimeoutInSeconds()
+        {
+            return this._modelDataDownloadTimeoutInSeconds.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property ModelName. 
         /// <para>
         /// The name of the model that you want to host. This is the name that you specified when
@@ -169,12 +239,6 @@ namespace Amazon.SageMaker.Model
         /// The serverless configuration for an endpoint. Specifies a serverless endpoint configuration
         /// instead of an instance-based endpoint configuration.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// Serverless Inference is in preview release for Amazon SageMaker and is subject to
-        /// change. We do not recommend using this feature in production environments.
-        /// </para>
-        ///  </note>
         /// </summary>
         public ProductionVariantServerlessConfig ServerlessConfig
         {
@@ -205,6 +269,27 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetVariantName()
         {
             return this._variantName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VolumeSizeInGB. 
+        /// <para>
+        /// The size, in GB, of the ML storage volume attached to individual inference instance
+        /// associated with the production variant. Currently only Amazon EBS gp2 storage volumes
+        /// are supported.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=512)]
+        public int VolumeSizeInGB
+        {
+            get { return this._volumeSizeInGB.GetValueOrDefault(); }
+            set { this._volumeSizeInGB = value; }
+        }
+
+        // Check to see if VolumeSizeInGB property is set
+        internal bool IsSetVolumeSizeInGB()
+        {
+            return this._volumeSizeInGB.HasValue; 
         }
 
     }

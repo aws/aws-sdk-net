@@ -111,6 +111,12 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
                     response.Status = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("TimeSeriesSelector", targetDepth))
+                {
+                    var unmarshaller = TimeSeriesSelectorUnmarshaller.Instance;
+                    response.TimeSeriesSelector = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

@@ -235,6 +235,15 @@ namespace Amazon.LookoutMetrics
         } 
 
         /// <summary>
+        /// Customizes the runtime pipeline.
+        /// </summary>
+        /// <param name="pipeline">Runtime pipeline for the current client.</param>
+        protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
+        {
+            pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonLookoutMetricsEndpointResolver());
+        }
+        /// <summary>
         /// Capture metadata for the service.
         /// </summary>
         protected override IServiceMetadata ServiceMetadata
@@ -524,6 +533,59 @@ namespace Amazon.LookoutMetrics
             options.ResponseUnmarshaller = CreateMetricSetResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateMetricSetResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeactivateAnomalyDetector
+
+        internal virtual DeactivateAnomalyDetectorResponse DeactivateAnomalyDetector(DeactivateAnomalyDetectorRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeactivateAnomalyDetectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeactivateAnomalyDetectorResponseUnmarshaller.Instance;
+
+            return Invoke<DeactivateAnomalyDetectorResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deactivates an anomaly detector.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeactivateAnomalyDetector service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeactivateAnomalyDetector service method, as returned by LookoutMetrics.</returns>
+        /// <exception cref="Amazon.LookoutMetrics.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutMetrics.Model.ConflictException">
+        /// There was a conflict processing the request. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutMetrics.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutMetrics.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found. Check the ARN of the resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutMetrics.Model.TooManyRequestsException">
+        /// The request was denied due to too many requests being submitted at the same time.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutMetrics.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the AWS service. Check your
+        /// input values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/DeactivateAnomalyDetector">REST API Reference for DeactivateAnomalyDetector Operation</seealso>
+        public virtual Task<DeactivateAnomalyDetectorResponse> DeactivateAnomalyDetectorAsync(DeactivateAnomalyDetectorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeactivateAnomalyDetectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeactivateAnomalyDetectorResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeactivateAnomalyDetectorResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -853,6 +915,56 @@ namespace Amazon.LookoutMetrics
 
         #endregion
         
+        #region  DetectMetricSetConfig
+
+        internal virtual DetectMetricSetConfigResponse DetectMetricSetConfig(DetectMetricSetConfigRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DetectMetricSetConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DetectMetricSetConfigResponseUnmarshaller.Instance;
+
+            return Invoke<DetectMetricSetConfigResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Detects an Amazon S3 dataset's file format, interval, and offset.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DetectMetricSetConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DetectMetricSetConfig service method, as returned by LookoutMetrics.</returns>
+        /// <exception cref="Amazon.LookoutMetrics.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutMetrics.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutMetrics.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found. Check the ARN of the resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutMetrics.Model.TooManyRequestsException">
+        /// The request was denied due to too many requests being submitted at the same time.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutMetrics.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the AWS service. Check your
+        /// input values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/DetectMetricSetConfig">REST API Reference for DetectMetricSetConfig Operation</seealso>
+        public virtual Task<DetectMetricSetConfigResponse> DetectMetricSetConfigAsync(DetectMetricSetConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DetectMetricSetConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DetectMetricSetConfigResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DetectMetricSetConfigResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetAnomalyGroup
 
         internal virtual GetAnomalyGroupResponse GetAnomalyGroup(GetAnomalyGroupRequest request)
@@ -899,6 +1011,56 @@ namespace Amazon.LookoutMetrics
             options.ResponseUnmarshaller = GetAnomalyGroupResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetAnomalyGroupResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetDataQualityMetrics
+
+        internal virtual GetDataQualityMetricsResponse GetDataQualityMetrics(GetDataQualityMetricsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDataQualityMetricsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDataQualityMetricsResponseUnmarshaller.Instance;
+
+            return Invoke<GetDataQualityMetricsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns details about the requested data quality metrics.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDataQualityMetrics service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetDataQualityMetrics service method, as returned by LookoutMetrics.</returns>
+        /// <exception cref="Amazon.LookoutMetrics.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutMetrics.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutMetrics.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found. Check the ARN of the resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutMetrics.Model.TooManyRequestsException">
+        /// The request was denied due to too many requests being submitted at the same time.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutMetrics.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the AWS service. Check your
+        /// input values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/GetDataQualityMetrics">REST API Reference for GetDataQualityMetrics Operation</seealso>
+        public virtual Task<GetDataQualityMetricsResponse> GetDataQualityMetricsAsync(GetDataQualityMetricsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDataQualityMetricsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDataQualityMetricsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetDataQualityMetricsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1113,6 +1275,56 @@ namespace Amazon.LookoutMetrics
             options.ResponseUnmarshaller = ListAnomalyDetectorsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListAnomalyDetectorsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListAnomalyGroupRelatedMetrics
+
+        internal virtual ListAnomalyGroupRelatedMetricsResponse ListAnomalyGroupRelatedMetrics(ListAnomalyGroupRelatedMetricsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAnomalyGroupRelatedMetricsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAnomalyGroupRelatedMetricsResponseUnmarshaller.Instance;
+
+            return Invoke<ListAnomalyGroupRelatedMetricsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns a list of measures that are potential causes or effects of an anomaly group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAnomalyGroupRelatedMetrics service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAnomalyGroupRelatedMetrics service method, as returned by LookoutMetrics.</returns>
+        /// <exception cref="Amazon.LookoutMetrics.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutMetrics.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutMetrics.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found. Check the ARN of the resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutMetrics.Model.TooManyRequestsException">
+        /// The request was denied due to too many requests being submitted at the same time.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutMetrics.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the AWS service. Check your
+        /// input values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/ListAnomalyGroupRelatedMetrics">REST API Reference for ListAnomalyGroupRelatedMetrics Operation</seealso>
+        public virtual Task<ListAnomalyGroupRelatedMetricsResponse> ListAnomalyGroupRelatedMetricsAsync(ListAnomalyGroupRelatedMetricsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAnomalyGroupRelatedMetricsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAnomalyGroupRelatedMetricsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListAnomalyGroupRelatedMetricsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1459,6 +1671,56 @@ namespace Amazon.LookoutMetrics
 
         #endregion
         
+        #region  UpdateAlert
+
+        internal virtual UpdateAlertResponse UpdateAlert(UpdateAlertRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAlertRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAlertResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateAlertResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Make changes to an existing alert.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAlert service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateAlert service method, as returned by LookoutMetrics.</returns>
+        /// <exception cref="Amazon.LookoutMetrics.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutMetrics.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutMetrics.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found. Check the ARN of the resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutMetrics.Model.TooManyRequestsException">
+        /// The request was denied due to too many requests being submitted at the same time.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutMetrics.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the AWS service. Check your
+        /// input values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/UpdateAlert">REST API Reference for UpdateAlert Operation</seealso>
+        public virtual Task<UpdateAlertResponse> UpdateAlertAsync(UpdateAlertRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAlertRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAlertResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateAlertResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  UpdateAnomalyDetector
 
         internal virtual UpdateAnomalyDetectorResponse UpdateAnomalyDetector(UpdateAnomalyDetectorRequest request)
@@ -1540,6 +1802,9 @@ namespace Amazon.LookoutMetrics
         /// </exception>
         /// <exception cref="Amazon.LookoutMetrics.Model.ResourceNotFoundException">
         /// The specified resource cannot be found. Check the ARN of the resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutMetrics.Model.ServiceQuotaExceededException">
+        /// The request exceeded the service's quotas. Check the service quotas and try again.
         /// </exception>
         /// <exception cref="Amazon.LookoutMetrics.Model.TooManyRequestsException">
         /// The request was denied due to too many requests being submitted at the same time.

@@ -106,6 +106,11 @@ namespace Amazon.GameLift.Model
         IListBuildsPaginator ListBuilds(ListBuildsRequest request);
 
         /// <summary>
+        /// Paginator for ListCompute operation
+        ///</summary>
+        IListComputePaginator ListCompute(ListComputeRequest request);
+
+        /// <summary>
         /// Paginator for ListFleets operation
         ///</summary>
         IListFleetsPaginator ListFleets(ListFleetsRequest request);
@@ -119,6 +124,11 @@ namespace Amazon.GameLift.Model
         /// Paginator for ListGameServers operation
         ///</summary>
         IListGameServersPaginator ListGameServers(ListGameServersRequest request);
+
+        /// <summary>
+        /// Paginator for ListLocations operation
+        ///</summary>
+        IListLocationsPaginator ListLocations(ListLocationsRequest request);
 
         /// <summary>
         /// Paginator for ListScripts operation

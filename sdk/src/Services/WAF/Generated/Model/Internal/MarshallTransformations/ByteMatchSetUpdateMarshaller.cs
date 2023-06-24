@@ -34,7 +34,7 @@ namespace Amazon.WAF.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ByteMatchSetUpdate Marshaller
-    /// </summary>       
+    /// </summary>
     public class ByteMatchSetUpdateMarshaller : IRequestMarshaller<ByteMatchSetUpdate, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.WAF.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ByteMatchSetUpdateMarshaller Instance = new ByteMatchSetUpdateMarshaller();
 
     }

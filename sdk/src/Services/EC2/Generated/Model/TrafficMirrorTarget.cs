@@ -34,6 +34,7 @@ namespace Amazon.EC2.Model
     public partial class TrafficMirrorTarget
     {
         private string _description;
+        private string _gatewayLoadBalancerEndpointId;
         private string _networkInterfaceId;
         private string _networkLoadBalancerArn;
         private string _ownerId;
@@ -57,6 +58,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GatewayLoadBalancerEndpointId. 
+        /// <para>
+        /// The ID of the Gateway Load Balancer endpoint.
+        /// </para>
+        /// </summary>
+        public string GatewayLoadBalancerEndpointId
+        {
+            get { return this._gatewayLoadBalancerEndpointId; }
+            set { this._gatewayLoadBalancerEndpointId = value; }
+        }
+
+        // Check to see if GatewayLoadBalancerEndpointId property is set
+        internal bool IsSetGatewayLoadBalancerEndpointId()
+        {
+            return this._gatewayLoadBalancerEndpointId != null;
         }
 
         /// <summary>

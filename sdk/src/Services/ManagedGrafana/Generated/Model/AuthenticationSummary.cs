@@ -29,9 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ManagedGrafana.Model
 {
     /// <summary>
-    /// A structure that describes whether the workspace uses SAML, Amazon Web Services SSO,
-    /// or both methods for user authentication, and whether that authentication is fully
-    /// configured.
+    /// A structure that describes whether the workspace uses SAML, IAM Identity Center, or
+    /// both methods for user authentication, and whether that authentication is fully configured.
     /// </summary>
     public partial class AuthenticationSummary
     {
@@ -41,8 +40,8 @@ namespace Amazon.ManagedGrafana.Model
         /// <summary>
         /// Gets and sets the property Providers. 
         /// <para>
-        /// Specifies whether the workspace uses SAML, Amazon Web Services SSO, or both methods
-        /// for user authentication.
+        /// Specifies whether the workspace uses SAML, IAM Identity Center, or both methods for
+        /// user authentication.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

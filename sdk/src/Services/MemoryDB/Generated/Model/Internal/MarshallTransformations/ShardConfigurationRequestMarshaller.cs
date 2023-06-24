@@ -34,7 +34,7 @@ namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ShardConfigurationRequest Marshaller
-    /// </summary>       
+    /// </summary>
     public class ShardConfigurationRequestMarshaller : IRequestMarshaller<ShardConfigurationRequest, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ShardConfigurationRequestMarshaller Instance = new ShardConfigurationRequestMarshaller();
 
     }

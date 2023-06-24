@@ -39,7 +39,7 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// A token to indicate the location of the next output in the array of outputs, after
+        /// A token that indicates the location of the next output in the array of outputs, after
         /// the current requested list of outputs.
         /// </para>
         /// </summary>
@@ -59,7 +59,7 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property Outputs. 
         /// <para>
-        /// An array of outputs.
+        /// An array of service pipeline Infrastructure as Code (IaC) outputs.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

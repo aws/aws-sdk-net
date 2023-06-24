@@ -461,6 +461,152 @@ namespace Amazon.ConnectWisdomService
 
 
     /// <summary>
+    /// Constants used for properties of type RecommendationSourceType.
+    /// </summary>
+    public class RecommendationSourceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ISSUE_DETECTION for RecommendationSourceType
+        /// </summary>
+        public static readonly RecommendationSourceType ISSUE_DETECTION = new RecommendationSourceType("ISSUE_DETECTION");
+        /// <summary>
+        /// Constant OTHER for RecommendationSourceType
+        /// </summary>
+        public static readonly RecommendationSourceType OTHER = new RecommendationSourceType("OTHER");
+        /// <summary>
+        /// Constant RULE_EVALUATION for RecommendationSourceType
+        /// </summary>
+        public static readonly RecommendationSourceType RULE_EVALUATION = new RecommendationSourceType("RULE_EVALUATION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RecommendationSourceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RecommendationSourceType FindValue(string value)
+        {
+            return FindValue<RecommendationSourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RecommendationSourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RecommendationTriggerType.
+    /// </summary>
+    public class RecommendationTriggerType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant QUERY for RecommendationTriggerType
+        /// </summary>
+        public static readonly RecommendationTriggerType QUERY = new RecommendationTriggerType("QUERY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RecommendationTriggerType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RecommendationTriggerType FindValue(string value)
+        {
+            return FindValue<RecommendationTriggerType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RecommendationTriggerType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RecommendationType.
+    /// </summary>
+    public class RecommendationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant KNOWLEDGE_CONTENT for RecommendationType
+        /// </summary>
+        public static readonly RecommendationType KNOWLEDGE_CONTENT = new RecommendationType("KNOWLEDGE_CONTENT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RecommendationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RecommendationType FindValue(string value)
+        {
+            return FindValue<RecommendationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RecommendationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type RelevanceLevel.
     /// </summary>
     public class RelevanceLevel : ConstantClass

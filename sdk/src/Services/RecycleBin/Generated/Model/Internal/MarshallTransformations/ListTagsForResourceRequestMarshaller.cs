@@ -55,7 +55,7 @@ namespace Amazon.RecycleBin.Model.Internal.MarshallTransformations
         public IRequest Marshall(ListTagsForResourceRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.RecycleBin");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-06-15";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-06-15";
             request.HttpMethod = "GET";
 
             if (!publicRequest.IsSetResourceArn())

@@ -34,7 +34,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// PlacementType Marshaller
-    /// </summary>       
+    /// </summary>
     public class PlacementTypeMarshaller : IRequestMarshaller<PlacementType, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static PlacementTypeMarshaller Instance = new PlacementTypeMarshaller();
 
     }

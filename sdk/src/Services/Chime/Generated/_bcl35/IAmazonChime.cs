@@ -29,21 +29,18 @@ namespace Amazon.Chime
     /// <summary>
     /// Interface for accessing Chime
     ///
-    /// The Amazon Chime API (application programming interface) is designed for developers
-    /// to perform key tasks, such as creating and managing Amazon Chime accounts, users,
+    /// The Amazon Chime application programming interface (API) is designed so administrators
+    /// can perform key tasks, such as creating and managing Amazon Chime accounts, users,
     /// and Voice Connectors. This guide provides detailed information about the Amazon Chime
-    /// API, including operations, types, inputs and outputs, and error codes. It also includes
-    /// API actions for use with the Amazon Chime SDK, which developers use to build their
-    /// own communication applications. For more information about the Amazon Chime SDK, see
-    /// <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html"> Using the
-    /// Amazon Chime SDK </a> in the <i>Amazon Chime Developer Guide</i>.
+    /// API, including operations, types, inputs and outputs, and error codes.
     /// 
     ///  
     /// <para>
     /// You can use an AWS SDK, the AWS Command Line Interface (AWS CLI), or the REST API
-    /// to make API calls. We recommend using an AWS SDK or the AWS CLI. Each API operation
-    /// includes links to information about using it with a language-specific AWS SDK or the
-    /// AWS CLI.
+    /// to make API calls for Amazon Chime. We recommend using an AWS SDK or the AWS CLI.
+    /// The page for each API action contains a <i>See Also</i> section that includes links
+    /// to information about using the action with a language-specific AWS SDK or the AWS
+    /// CLI.
     /// </para>
     ///  <dl> <dt>Using an AWS SDK</dt> <dd> 
     /// <para>
@@ -63,7 +60,7 @@ namespace Amazon.Chime
     ///  </dd> <dt>Using REST APIs</dt> <dd> 
     /// <para>
     /// If you use REST to make API calls, you must authenticate your request by providing
-    /// a signature. Amazon Chime supports signature version 4. For more information, see
+    /// a signature. Amazon Chime supports Signature Version 4. For more information, see
     /// <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
     /// Version 4 Signing Process</a> in the <i>Amazon Web Services General Reference</i>.
     /// </para>
@@ -350,8 +347,8 @@ namespace Amazon.Chime
 
         /// <summary>
         /// Creates up to 100 new attendees for an active Amazon Chime SDK meeting. For more
-        /// information about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using
-        /// the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.
+        /// information about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/meetings-sdk.html">Using
+        /// the Amazon Chime SDK</a> in the <i>Amazon Chime SDK Developer Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchCreateAttendee service method.</param>
         /// 
@@ -1174,8 +1171,8 @@ namespace Amazon.Chime
 
         /// <summary>
         /// Creates a new attendee for an active Amazon Chime SDK meeting. For more information
-        /// about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using
-        /// the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.
+        /// about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/meetings-sdk.html">Using
+        /// the Amazon Chime SDK</a> in the <i>Amazon Chime SDK Developer Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAttendee service method.</param>
         /// 
@@ -1719,10 +1716,10 @@ namespace Amazon.Chime
 
         /// <summary>
         /// Creates a new Amazon Chime SDK meeting in the specified media Region with no initial
-        /// attendees. For more information about specifying media Regions, see <a href="https://docs.aws.amazon.com/chime/latest/dg/chime-sdk-meetings-regions.html">Amazon
-        /// Chime SDK Media Regions</a> in the <i>Amazon Chime Developer Guide</i> . For more
-        /// information about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using
-        /// the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i> .
+        /// attendees. For more information about specifying media Regions, see <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/chime-sdk-meetings-regions.html">Amazon
+        /// Chime SDK Media Regions</a> in the <i>Amazon Chime SDK Developer Guide</i> . For more
+        /// information about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/meetings-sdk.html">Using
+        /// the Amazon Chime SDK</a> in the <i>Amazon Chime SDK Developer Guide</i> .
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateMeeting service method.</param>
         /// 
@@ -1797,6 +1794,9 @@ namespace Amazon.Chime
         /// <param name="request">Container for the necessary parameters to execute the CreateMeetingDialOut service method.</param>
         /// 
         /// <returns>The response from the CreateMeetingDialOut service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.AccessDeniedException">
+        /// You don't have permissions to perform the requested operation.
+        /// </exception>
         /// <exception cref="Amazon.Chime.Model.BadRequestException">
         /// The input parameters don't match the service's restrictions.
         /// </exception>
@@ -1854,10 +1854,10 @@ namespace Amazon.Chime
 
         /// <summary>
         /// Creates a new Amazon Chime SDK meeting in the specified media Region, with attendees.
-        /// For more information about specifying media Regions, see <a href="https://docs.aws.amazon.com/chime/latest/dg/chime-sdk-meetings-regions.html">Amazon
-        /// Chime SDK Media Regions</a> in the <i>Amazon Chime Developer Guide</i> . For more
-        /// information about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using
-        /// the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i> .
+        /// For more information about specifying media Regions, see <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/chime-sdk-meetings-regions.html">Amazon
+        /// Chime SDK Media Regions</a> in the <i>Amazon Chime SDK Developer Guide</i> . For more
+        /// information about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/meetings-sdk.html">Using
+        /// the Amazon Chime SDK</a> in the <i>Amazon Chime SDK Developer Guide</i> .
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateMeetingWithAttendees service method.</param>
         /// 
@@ -2917,8 +2917,8 @@ namespace Amazon.Chime
         /// <summary>
         /// Deletes an attendee from the specified Amazon Chime SDK meeting and deletes their
         /// <code>JoinToken</code>. Attendees are automatically deleted when a Amazon Chime SDK
-        /// meeting is deleted. For more information about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using
-        /// the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.
+        /// meeting is deleted. For more information about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/meetings-sdk.html">Using
+        /// the Amazon Chime SDK</a> in the <i>Amazon Chime SDK Developer Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAttendee service method.</param>
         /// 
@@ -3431,8 +3431,8 @@ namespace Amazon.Chime
         /// <summary>
         /// Deletes the specified Amazon Chime SDK meeting. The operation deletes all attendees,
         /// disconnects all clients, and prevents new clients from joining the meeting. For more
-        /// information about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using
-        /// the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.
+        /// information about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/meetings-sdk.html">Using
+        /// the Amazon Chime SDK</a> in the <i>Amazon Chime SDK Developer Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteMeeting service method.</param>
         /// 
@@ -5457,8 +5457,8 @@ namespace Amazon.Chime
 
         /// <summary>
         /// Gets the Amazon Chime SDK attendee details for a specified meeting ID and attendee
-        /// ID. For more information about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using
-        /// the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i> .
+        /// ID. For more information about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/meetings-sdk.html">Using
+        /// the Amazon Chime SDK</a> in the <i>Amazon Chime SDK Developer Guide</i> .
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAttendee service method.</param>
         /// 
@@ -5832,8 +5832,8 @@ namespace Amazon.Chime
 
         /// <summary>
         /// Gets the Amazon Chime SDK meeting details for the specified meeting ID. For more
-        /// information about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using
-        /// the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i> .
+        /// information about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/meetings-sdk.html">Using
+        /// the Amazon Chime SDK</a> in the <i>Amazon Chime SDK Developer Guide</i> .
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMeeting service method.</param>
         /// 
@@ -7490,8 +7490,8 @@ namespace Amazon.Chime
 
         /// <summary>
         /// Lists the attendees for the specified Amazon Chime SDK meeting. For more information
-        /// about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using
-        /// the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.
+        /// about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/meetings-sdk.html">Using
+        /// the Amazon Chime SDK</a> in the <i>Amazon Chime SDK Developer Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAttendees service method.</param>
         /// 
@@ -8210,8 +8210,8 @@ namespace Amazon.Chime
 
         /// <summary>
         /// Lists up to 100 active Amazon Chime SDK meetings. For more information about the
-        /// Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using
-        /// the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.
+        /// Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/meetings-sdk.html">Using
+        /// the Amazon Chime SDK</a> in the <i>Amazon Chime SDK Developer Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListMeetings service method.</param>
         /// 
@@ -9759,7 +9759,7 @@ namespace Amazon.Chime
         /// <summary>
         /// Adds a streaming configuration for the specified Amazon Chime Voice Connector. The
         /// streaming configuration specifies whether media streaming is enabled for sending to
-        /// Indonesians. It also sets the retention period, in hours, for the Amazon Kinesis data.
+        /// Kinesis. It also sets the retention period, in hours, for the Amazon Kinesis data.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutVoiceConnectorStreamingConfiguration service method.</param>
         /// 
@@ -10466,7 +10466,27 @@ namespace Amazon.Chime
 
 
         /// <summary>
-        /// Starts transcription for the specified <code>meetingId</code>.
+        /// Starts transcription for the specified <code>meetingId</code>. For more information,
+        /// refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/meeting-transcription.html">
+        /// Using Amazon Chime SDK live transcription </a> in the <i>Amazon Chime SDK Developer
+        /// Guide</i>.
+        /// 
+        ///  
+        /// <para>
+        /// If you specify an invalid configuration, a <code>TranscriptFailed</code> event will
+        /// be sent with the contents of the <code>BadRequestException</code> generated by Amazon
+        /// Transcribe. For more information on each parameter and which combinations are valid,
+        /// refer to the <a href="https://docs.aws.amazon.com/transcribe/latest/APIReference/API_streaming_StartStreamTranscription.html">StartStreamTranscription</a>
+        /// API in the <i>Amazon Transcribe Developer Guide</i>.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// Amazon Chime SDK live transcription is powered by Amazon Transcribe. Use of Amazon
+        /// Transcribe is subject to the <a href="https://aws.amazon.com/service-terms/">AWS Service
+        /// Terms</a>, including the terms specific to the AWS Machine Learning and Artificial
+        /// Intelligence Services.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartMeetingTranscription service method.</param>
         /// 
@@ -11940,8 +11960,8 @@ namespace Amazon.Chime
 
 
         /// <summary>
-        /// Allows you to trigger a Lambda function at any time while a call is active, and replace
-        /// the current actions with new actions returned by the invocation.
+        /// Invokes the AWS Lambda function associated with the SIP media application and transaction
+        /// ID in an update request. The Lambda function can then return a new set of actions.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateSipMediaApplicationCall service method.</param>
         /// 
@@ -12316,6 +12336,70 @@ namespace Amazon.Chime
         /// <returns>Returns a  UpdateVoiceConnectorGroupResult from Chime.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateVoiceConnectorGroup">REST API Reference for UpdateVoiceConnectorGroup Operation</seealso>
         UpdateVoiceConnectorGroupResponse EndUpdateVoiceConnectorGroup(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ValidateE911Address
+
+
+        /// <summary>
+        /// Validates an address to be used for 911 calls made with Amazon Chime Voice Connectors.
+        /// You can use validated addresses in a Presence Information Data Format Location Object
+        /// file that you include in SIP requests. That helps ensure that addresses are routed
+        /// to the appropriate Public Safety Answering Point.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ValidateE911Address service method.</param>
+        /// 
+        /// <returns>The response from the ValidateE911Address service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ValidateE911Address">REST API Reference for ValidateE911Address Operation</seealso>
+        ValidateE911AddressResponse ValidateE911Address(ValidateE911AddressRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ValidateE911Address operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ValidateE911Address operation on AmazonChimeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndValidateE911Address
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ValidateE911Address">REST API Reference for ValidateE911Address Operation</seealso>
+        IAsyncResult BeginValidateE911Address(ValidateE911AddressRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ValidateE911Address operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginValidateE911Address.</param>
+        /// 
+        /// <returns>Returns a  ValidateE911AddressResult from Chime.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ValidateE911Address">REST API Reference for ValidateE911Address Operation</seealso>
+        ValidateE911AddressResponse EndValidateE911Address(IAsyncResult asyncResult);
 
         #endregion
         

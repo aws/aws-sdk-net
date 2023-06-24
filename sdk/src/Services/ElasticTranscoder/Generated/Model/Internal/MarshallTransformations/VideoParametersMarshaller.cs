@@ -34,7 +34,7 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// VideoParameters Marshaller
-    /// </summary>       
+    /// </summary>
     public class VideoParametersMarshaller : IRequestMarshaller<VideoParameters, JsonMarshallerContext> 
     {
         /// <summary>
@@ -157,7 +157,7 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static VideoParametersMarshaller Instance = new VideoParametersMarshaller();
 
     }

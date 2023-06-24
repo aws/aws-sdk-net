@@ -34,7 +34,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CreateApplicationRequest Marshaller
-    /// </summary>       
+    /// </summary>
     public class CreateApplicationRequestMarshaller : IRequestMarshaller<CreateApplicationRequest, JsonMarshallerContext> 
     {
         /// <summary>
@@ -69,7 +69,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CreateApplicationRequestMarshaller Instance = new CreateApplicationRequestMarshaller();
 
     }

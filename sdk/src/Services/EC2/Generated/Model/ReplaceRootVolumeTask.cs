@@ -34,8 +34,11 @@ namespace Amazon.EC2.Model
     public partial class ReplaceRootVolumeTask
     {
         private string _completeTime;
+        private bool? _deleteReplacedRootVolume;
+        private string _imageId;
         private string _instanceId;
         private string _replaceRootVolumeTaskId;
+        private string _snapshotId;
         private string _startTime;
         private List<Tag> _tags = new List<Tag>();
         private ReplaceRootVolumeTaskState _taskState;
@@ -56,6 +59,43 @@ namespace Amazon.EC2.Model
         internal bool IsSetCompleteTime()
         {
             return this._completeTime != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeleteReplacedRootVolume. 
+        /// <para>
+        /// Indicates whether the original root volume is to be deleted after the root volume
+        /// replacement task completes.
+        /// </para>
+        /// </summary>
+        public bool DeleteReplacedRootVolume
+        {
+            get { return this._deleteReplacedRootVolume.GetValueOrDefault(); }
+            set { this._deleteReplacedRootVolume = value; }
+        }
+
+        // Check to see if DeleteReplacedRootVolume property is set
+        internal bool IsSetDeleteReplacedRootVolume()
+        {
+            return this._deleteReplacedRootVolume.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ImageId. 
+        /// <para>
+        /// The ID of the AMI used to create the replacement root volume.
+        /// </para>
+        /// </summary>
+        public string ImageId
+        {
+            get { return this._imageId; }
+            set { this._imageId = value; }
+        }
+
+        // Check to see if ImageId property is set
+        internal bool IsSetImageId()
+        {
+            return this._imageId != null;
         }
 
         /// <summary>
@@ -92,6 +132,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetReplaceRootVolumeTaskId()
         {
             return this._replaceRootVolumeTaskId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SnapshotId. 
+        /// <para>
+        /// The ID of the snapshot used to create the replacement root volume.
+        /// </para>
+        /// </summary>
+        public string SnapshotId
+        {
+            get { return this._snapshotId; }
+            set { this._snapshotId = value; }
+        }
+
+        // Check to see if SnapshotId property is set
+        internal bool IsSetSnapshotId()
+        {
+            return this._snapshotId != null;
         }
 
         /// <summary>

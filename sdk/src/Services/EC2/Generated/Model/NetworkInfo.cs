@@ -36,6 +36,7 @@ namespace Amazon.EC2.Model
         private int? _defaultNetworkCardIndex;
         private EfaInfo _efaInfo;
         private bool? _efaSupported;
+        private bool? _enaSrdSupported;
         private EnaSupport _enaSupport;
         private bool? _encryptionInTransitSupported;
         private int? _ipv4AddressesPerInterface;
@@ -98,6 +99,26 @@ namespace Amazon.EC2.Model
         internal bool IsSetEfaSupported()
         {
             return this._efaSupported.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnaSrdSupported. 
+        /// <para>
+        /// Indicates whether the instance type supports ENA Express. ENA Express uses Amazon
+        /// Web Services Scalable Reliable Datagram (SRD) technology to increase the maximum bandwidth
+        /// used per stream and minimize tail latency of network traffic between EC2 instances.
+        /// </para>
+        /// </summary>
+        public bool EnaSrdSupported
+        {
+            get { return this._enaSrdSupported.GetValueOrDefault(); }
+            set { this._enaSrdSupported = value; }
+        }
+
+        // Check to see if EnaSrdSupported property is set
+        internal bool IsSetEnaSrdSupported()
+        {
+            return this._enaSrdSupported.HasValue; 
         }
 
         /// <summary>

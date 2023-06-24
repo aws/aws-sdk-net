@@ -34,7 +34,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ViolationEventOccurrenceRange Marshaller
-    /// </summary>       
+    /// </summary>
     public class ViolationEventOccurrenceRangeMarshaller : IRequestMarshaller<ViolationEventOccurrenceRange, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ViolationEventOccurrenceRangeMarshaller Instance = new ViolationEventOccurrenceRangeMarshaller();
 
     }

@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// A map from an <code> <a>EngineVersion</a> </code> to a list of compatible <code>
-    /// <a>EngineVersion</a> </code> s to which the domain can be upgraded.
+    /// A map of OpenSearch or Elasticsearch versions and the versions you can upgrade them
+    /// to.
     /// </summary>
     public partial class CompatibleVersionsMap
     {
@@ -40,7 +40,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property SourceVersion. 
         /// <para>
-        /// The current version of OpenSearch a domain is on.
+        /// The current version that the OpenSearch Service domain is running.
         /// </para>
         /// </summary>
         [AWSProperty(Min=14, Max=18)]
@@ -57,7 +57,10 @@ namespace Amazon.OpenSearchService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TargetVersions.
+        /// Gets and sets the property TargetVersions. 
+        /// <para>
+        /// The possible versions that you can upgrade the domain to.
+        /// </para>
         /// </summary>
         public List<string> TargetVersions
         {

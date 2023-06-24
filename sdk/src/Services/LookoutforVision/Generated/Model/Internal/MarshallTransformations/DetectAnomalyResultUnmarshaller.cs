@@ -64,6 +64,18 @@ namespace Amazon.LookoutforVision.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("Anomalies", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<Anomaly, AnomalyUnmarshaller>(AnomalyUnmarshaller.Instance);
+                    unmarshalledObject.Anomalies = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("AnomalyMask", targetDepth))
+                {
+                    var unmarshaller = MemoryStreamUnmarshaller.Instance;
+                    unmarshalledObject.AnomalyMask = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Confidence", targetDepth))
                 {
                     var unmarshaller = FloatUnmarshaller.Instance;

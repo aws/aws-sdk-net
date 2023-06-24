@@ -34,7 +34,7 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// EBSStorageInfo Marshaller
-    /// </summary>       
+    /// </summary>
     public class EBSStorageInfoMarshaller : IRequestMarshaller<EBSStorageInfo, JsonMarshallerContext> 
     {
         /// <summary>
@@ -45,6 +45,17 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(EBSStorageInfo requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetProvisionedThroughput())
+            {
+                context.Writer.WritePropertyName("provisionedThroughput");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ProvisionedThroughputMarshaller.Instance;
+                marshaller.Marshall(requestObject.ProvisionedThroughput, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetVolumeSize())
             {
                 context.Writer.WritePropertyName("volumeSize");
@@ -55,7 +66,7 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static EBSStorageInfoMarshaller Instance = new EBSStorageInfoMarshaller();
 
     }

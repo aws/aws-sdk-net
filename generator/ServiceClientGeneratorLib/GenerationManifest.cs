@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using Json.LitJson;
+using ServiceClientGenerator.DefaultConfiguration;
+using ServiceClientGenerator.Endpoints;
+using ServiceClientGenerator.Endpoints.Tests;
 
 namespace ServiceClientGenerator
 {
@@ -35,7 +38,8 @@ namespace ServiceClientGenerator
             public const string ParentBaseNameKey = "parent-base-name";
             public const string TagsKey = "tags";
             public const string LicenseUrlKey = "license-url";
-
+            public const string TestServiceKey = "test-service";
+            public const string LegacyServiceIdKey = "legacy-service-id";
         }
 
         abstract class ProjectsSectionKeys
@@ -96,22 +100,31 @@ namespace ServiceClientGenerator
             private set;
         }
 
+        /// <summary>
+        /// Model representing the default configuration modes as built
+        /// from the sdk-default-configurations.json file.
+        /// </summary>
+        public DefaultConfiguration.DefaultConfigurationModel DefaultConfiguration { get; set; }
+
         //This should be the same version number as SdkVersioning.DefaultAssemblyVersion in BuildTasks
         private const string DefaultAssemblyVersion = "3.3";
- 
+
         /// <summary>
         /// Processes the control manifest to yield the set of services available to
         /// generate and the Visual Studio project file information used to create
         /// new projects for services.
         /// </summary>
-        /// <param name="manifestPath">Path to the manifest file to pull basic info from</param>
-        /// <param name="versionsPath">Path to _sdk-versions.json file</param>
-        /// <param name="modelsFolder">Path to the service models to be parsed</param>
-        public static GenerationManifest Load(string manifestPath, string versionsPath, string modelsFolder)
+        /// <param name="options">GeneratorOptions containing information requred to load GenerationManifest</param>
+        public static GenerationManifest Load(GeneratorOptions options)
         {
-            var generationManifest = new GenerationManifest();
-            var manifest = LoadJsonFromFile(manifestPath);
-            var versionsManifest = LoadJsonFromFile(versionsPath);
+            var generationManifest = 
+                new GenerationManifest(
+                    new DefaultConfigurationController(
+                        new FileReader(),
+                        new DefaultConfigurationParser()));
+
+            var manifest = LoadJsonFromFile(options.Manifest);
+            var versionsManifest = LoadJsonFromFile(options.Versions);
 
             generationManifest.CoreFileVersion = versionsManifest["CoreVersion"].ToString();
             generationManifest.CoreVersion = Utils.GetVersion(versionsManifest["OverrideCoreVersion"]?.ToString() ?? generationManifest.CoreFileVersion);
@@ -124,7 +137,8 @@ namespace ServiceClientGenerator
             if (!string.IsNullOrEmpty(generationManifest.PreviewLabel))
                 generationManifest.PreviewLabel = "-" + generationManifest.PreviewLabel;
 
-            generationManifest.LoadServiceConfigurations(manifest, versionsManifest["ServiceVersions"], modelsFolder);
+            generationManifest.LoadDefaultConfiguration(options.ModelsFolder);
+            generationManifest.LoadServiceConfigurations(manifest, versionsManifest["ServiceVersions"], options);
             generationManifest.LoadProjectConfigurations(manifest);
             generationManifest.LoadUnitTestProjectConfigurations(manifest);
 
@@ -132,18 +146,30 @@ namespace ServiceClientGenerator
         }
 
         /// <summary>
-        /// Recursively walk thorugh the ServiceModels folder and load/parse the 
+        /// Loads the sdk-default-configurations.json file.
+        /// </summary>
+        private void LoadDefaultConfiguration(string manifestPath)
+        {
+            // ../../../ServiceModels/ + ../../
+            var repositoryRootDirectoryPath = Path.Combine(manifestPath, "..","..");
+
+            DefaultConfiguration = _defaultConfigurationController.LoadDefaultConfiguration(repositoryRootDirectoryPath);
+        }
+
+        /// <summary>
+        /// Recursively walk through the ServiceModels folder and load/parse the 
         /// model files to generate ServiceConfiguration objects.
         /// </summary>
         /// <param name="manifest">loaded _manifest.json file</param>
         /// <param name="serviceVersions">loaded _sdk-versions.json file</param>
-        /// <param name="serviceModelsFolder">path to ServiceModels directory folder</param>
-        void LoadServiceConfigurations(JsonData manifest, JsonData serviceVersions, string serviceModelsFolder)
+        /// <param name="options">generator options</param>
+        void LoadServiceConfigurations(JsonData manifest, JsonData serviceVersions, GeneratorOptions options)
         {
             List<Tuple<JsonData, ServiceConfiguration>> modelConfigList = new List<Tuple<JsonData, ServiceConfiguration>>();
             var serviceConfigurations = new List<ServiceConfiguration>();
 
-            var serviceDirectories = Directory.GetDirectories(Path.Combine(serviceModelsFolder));
+            var serviceDirectories = Utils.GetServiceDirectories(options);
+
             foreach (string serviceDirectory in serviceDirectories)
             {
                 string metadataJsonFile = Path.Combine(serviceDirectory, "metadata.json");
@@ -152,11 +178,11 @@ namespace ServiceClientGenerator
                     JsonData metadataNode = LoadJsonFromFile(metadataJsonFile);
 
                     var activeNode = metadataNode[ModelsSectionKeys.ActiveKey];
-                    if (    activeNode != null
+                    if (activeNode != null
                         &&  activeNode.IsBoolean
                         && !(bool)activeNode )
                     {
-                        continue;                             
+                        continue;
                     }
 
                     var serviceModelFileName = GetLatestModel(serviceDirectory);
@@ -169,12 +195,19 @@ namespace ServiceClientGenerator
                 }
             }
 
-            //We need to make sure that we have configuration files for all expected services and that there aren't mismatches in the service names
-            foreach (string serviceVersionEntry in serviceVersions.GetMap().Keys)
+            
+            if (string.IsNullOrEmpty(options.ServiceModels))
             {
-                if (!serviceConfigurations.Any(config => config.ServiceNameRoot == serviceVersionEntry))
+                // We skip this check if ServiceModels provided, as we would never satisfy condition below.
+                //
+                // We need to make sure that we have configuration files for all expected services and
+                // that there aren't mismatches in the service names.
+                foreach (string serviceVersionEntry in serviceVersions.GetMap().Keys)
                 {
-                    throw new Exception($"Service entry {serviceVersionEntry} doesn't match any of the available service configurations.");
+                    if (!serviceConfigurations.Any(config => config.ServiceNameRoot == serviceVersionEntry))
+                    {
+                        throw new Exception($"Service entry {serviceVersionEntry} doesn't match any of the available service configurations.");
+                    }
                 }
             }
 
@@ -247,6 +280,9 @@ namespace ServiceClientGenerator
             return Path.GetFileName(latestPaginatorsName);
         }
 
+        private const string EndpointRuleSetFile = "endpoint-rule-set.json";
+        private const string EndpointRuleSetTestsFile = "endpoint-tests.json";
+
         private ServiceConfiguration CreateServiceConfiguration(JsonData modelNode, JsonData serviceVersions, string serviceDirectoryPath, string serviceModelFileName, string servicePaginatorsFileName)
         {
             var modelFullPath = Path.Combine(serviceDirectoryPath, serviceModelFileName);
@@ -265,7 +301,30 @@ namespace ServiceClientGenerator
                 ClassNameOverride = Utils.JsonDataToString(modelNode[ModelsSectionKeys.BaseNameKey]),
                 DefaultRegion = Utils.JsonDataToString(modelNode[ModelsSectionKeys.DefaultRegionKey]),
                 GenerateConstructors = modelNode[ModelsSectionKeys.GenerateClientConstructorsKey] == null || (bool)modelNode[ModelsSectionKeys.GenerateClientConstructorsKey], // A way to prevent generating basic constructors
+                IsTestService = modelNode[ModelsSectionKeys.TestServiceKey] != null && (bool)modelNode[ModelsSectionKeys.TestServiceKey]
             };
+
+            // Load endpoints ruleset and tests if present
+            var rulesetFileName = Directory.GetFiles(serviceDirectoryPath, "*." + EndpointRuleSetFile, SearchOption.TopDirectoryOnly).FirstOrDefault();
+            var testsFileName = Directory.GetFiles(serviceDirectoryPath, "*." + EndpointRuleSetTestsFile, SearchOption.TopDirectoryOnly).FirstOrDefault();
+
+            // We have found tests but not rules, something is wrong!
+            if (rulesetFileName == null && testsFileName != null)
+            {
+                throw new FileNotFoundException($"We have found endpoints tests but endpoints rules are missing. Expected file suffix is .{EndpointRuleSetFile}");
+            }
+
+            if (rulesetFileName != null)
+            {
+                var json = File.ReadAllText(rulesetFileName);
+                config.EndpointsRuleSet = JsonMapper.ToObject<RuleSet>(json);
+                if (testsFileName == null)
+                {
+                    throw new FileNotFoundException($"Endpoints tests are missing. Expected file suffix is .{EndpointRuleSetTestsFile}");
+                }
+                json = File.ReadAllText(testsFileName);
+                config.EndpointTests = JsonMapper.ToObject<EndpointTests>(json);
+            }
 
             if (modelNode[ModelsSectionKeys.NugetPackageTitleSuffix] != null)
                 config.NugetPackageTitleSuffix = modelNode[ModelsSectionKeys.NugetPackageTitleSuffix].ToString();
@@ -330,6 +389,9 @@ namespace ServiceClientGenerator
             if (modelNode[ModelsSectionKeys.SynopsisKey] != null)
                 config.Synopsis = (string)modelNode[ModelsSectionKeys.SynopsisKey];
 
+            if (modelNode[ModelsSectionKeys.LegacyServiceIdKey] != null)
+                config.LegacyServiceId = (string)modelNode[ModelsSectionKeys.LegacyServiceIdKey];            
+            
             if (modelNode[ModelsSectionKeys.NetStandardSupportKey] != null)
                 config.NetStandardSupport = (bool)modelNode[ModelsSectionKeys.NetStandardSupportKey];
             else
@@ -494,6 +556,10 @@ namespace ServiceClientGenerator
         /// <returns>Full path to the customization if it exists, null if it wasn't found</returns>
         private static string DetermineCustomizationsPath(string serviceKey)
         {
+            if (!Directory.Exists("customizations"))
+            {
+                return null;
+            }
             var files = Directory.GetFiles("customizations", serviceKey + ".customizations.json").OrderByDescending(x => x);
             return !files.Any() ? null : files.Single();
         }
@@ -511,7 +577,13 @@ namespace ServiceClientGenerator
             return data;
         }
 
-        private GenerationManifest()
+        private readonly IDefaultConfigurationController _defaultConfigurationController;
+        private GenerationManifest(IDefaultConfigurationController defaultConfigurationController)
+        {
+            _defaultConfigurationController = defaultConfigurationController;
+        }
+
+        public GenerationManifest()
         {
 
         }

@@ -39,7 +39,7 @@ namespace Amazon.CostExplorer.Model
     /// </para>
     ///  
     /// <para>
-    /// If <code>Values</code> is provided and <code>Key</code> isn't specified, the <code>ABSENT</code>
+    /// If <code>Key</code> is provided and <code>Values</code> isn't specified, the <code>ABSENT</code>
     /// <code>MatchOption</code> is applied to the tag <code>Key</code> only. That is, it's
     /// filtered on resources without the given tag key.
     /// </para>

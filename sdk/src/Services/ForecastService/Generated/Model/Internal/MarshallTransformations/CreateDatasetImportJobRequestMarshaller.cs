@@ -58,7 +58,7 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
             string target = "AmazonForecast.CreateDatasetImportJob";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-06-26";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-06-26";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -90,10 +90,22 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetFormat())
+                {
+                    context.Writer.WritePropertyName("Format");
+                    context.Writer.Write(publicRequest.Format);
+                }
+
                 if(publicRequest.IsSetGeolocationFormat())
                 {
                     context.Writer.WritePropertyName("GeolocationFormat");
                     context.Writer.Write(publicRequest.GeolocationFormat);
+                }
+
+                if(publicRequest.IsSetImportMode())
+                {
+                    context.Writer.WritePropertyName("ImportMode");
+                    context.Writer.Write(publicRequest.ImportMode);
                 }
 
                 if(publicRequest.IsSetTags())
@@ -130,7 +142,6 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.UseGeolocationForTimeZone);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

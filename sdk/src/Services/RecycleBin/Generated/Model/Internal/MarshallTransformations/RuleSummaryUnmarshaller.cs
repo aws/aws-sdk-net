@@ -76,6 +76,12 @@ namespace Amazon.RecycleBin.Model.Internal.MarshallTransformations
                     unmarshalledObject.Identifier = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("LockState", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.LockState = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("RetentionPeriod", targetDepth))
                 {
                     var unmarshaller = RetentionPeriodUnmarshaller.Instance;

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// Container for the response returned by <code> <a>AssociatePackage</a> </code> operation.
+    /// Container for the response returned by the <code>AssociatePackage</code> operation.
     /// </summary>
     public partial class AssociatePackageResponse : AmazonWebServiceResponse
     {
@@ -38,7 +38,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property DomainPackageDetails. 
         /// <para>
-        ///  <code>DomainPackageDetails</code> 
+        /// Information about a package that is associated with a domain.
         /// </para>
         /// </summary>
         public DomainPackageDetails DomainPackageDetails

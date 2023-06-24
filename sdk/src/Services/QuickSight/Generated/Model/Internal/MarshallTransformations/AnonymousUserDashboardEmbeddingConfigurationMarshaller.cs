@@ -34,7 +34,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AnonymousUserDashboardEmbeddingConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class AnonymousUserDashboardEmbeddingConfigurationMarshaller : IRequestMarshaller<AnonymousUserDashboardEmbeddingConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AnonymousUserDashboardEmbeddingConfigurationMarshaller Instance = new AnonymousUserDashboardEmbeddingConfigurationMarshaller();
 
     }

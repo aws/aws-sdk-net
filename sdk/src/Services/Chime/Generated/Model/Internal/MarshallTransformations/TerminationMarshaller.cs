@@ -34,7 +34,7 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Termination Marshaller
-    /// </summary>       
+    /// </summary>
     public class TerminationMarshaller : IRequestMarshaller<Termination, JsonMarshallerContext> 
     {
         /// <summary>
@@ -89,7 +89,7 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static TerminationMarshaller Instance = new TerminationMarshaller();
 
     }

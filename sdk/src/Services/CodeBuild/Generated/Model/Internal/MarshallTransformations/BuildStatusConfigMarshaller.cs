@@ -34,7 +34,7 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// BuildStatusConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class BuildStatusConfigMarshaller : IRequestMarshaller<BuildStatusConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static BuildStatusConfigMarshaller Instance = new BuildStatusConfigMarshaller();
 
     }

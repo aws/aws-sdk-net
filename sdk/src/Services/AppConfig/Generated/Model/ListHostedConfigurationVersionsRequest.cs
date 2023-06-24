@@ -38,6 +38,7 @@ namespace Amazon.AppConfig.Model
         private string _configurationProfileId;
         private int? _maxResults;
         private string _nextToken;
+        private string _versionLabel;
 
         /// <summary>
         /// Gets and sets the property ApplicationId. 
@@ -114,6 +115,28 @@ namespace Amazon.AppConfig.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VersionLabel. 
+        /// <para>
+        /// An optional filter that can be used to specify the version label of an AppConfig hosted
+        /// configuration version. This parameter supports filtering by prefix using a wildcard,
+        /// for example "v2*". If you don't specify an asterisk at the end of the value, only
+        /// an exact match is returned.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public string VersionLabel
+        {
+            get { return this._versionLabel; }
+            set { this._versionLabel = value; }
+        }
+
+        // Check to see if VersionLabel property is set
+        internal bool IsSetVersionLabel()
+        {
+            return this._versionLabel != null;
         }
 
     }

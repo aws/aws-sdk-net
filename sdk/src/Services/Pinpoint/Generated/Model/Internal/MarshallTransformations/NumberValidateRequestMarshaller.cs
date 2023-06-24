@@ -34,7 +34,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// NumberValidateRequest Marshaller
-    /// </summary>       
+    /// </summary>
     public class NumberValidateRequestMarshaller : IRequestMarshaller<NumberValidateRequest, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static NumberValidateRequestMarshaller Instance = new NumberValidateRequestMarshaller();
 
     }

@@ -39,7 +39,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property S3BucketName. 
         /// <para>
-        /// The Amazon S3 bucket in which to store the logs.
+        /// The S3 bucket in which to store the logs.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -58,7 +58,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property S3KeyPrefix. 
         /// <para>
-        /// The Amazon S3 path in which to store the logs.
+        /// The Amazon S3 path to the bucket where the logs are stored.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

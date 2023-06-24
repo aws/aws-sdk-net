@@ -44,7 +44,6 @@ namespace Amazon.Drs.Model
         /// A set of filters by which to return Source Servers.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public DescribeSourceServersRequestFilters Filters
         {
             get { return this._filters; }

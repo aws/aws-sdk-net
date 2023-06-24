@@ -95,8 +95,29 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The attachment state of the volume.
+        /// The attachment state of the volume. Valid values are as follows:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>attaching</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>attached</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>busy</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>detaching</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>detached</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string Status
         {

@@ -57,12 +57,30 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property AccessToken. 
         /// <para>
-        ///  The personal access token for a third-party source control system for an Amplify
-        /// app. The token is used to create webhook and a read-only deploy key. The token is
-        /// not stored. 
+        /// The personal access token for a GitHub repository for an Amplify app. The personal
+        /// access token is used to authorize access to a GitHub repository using the Amplify
+        /// GitHub App. The token is not stored.
+        /// </para>
+        ///  
+        /// <para>
+        /// Use <code>accessToken</code> for GitHub repositories only. To authorize access to
+        /// a repository provider such as Bitbucket or CodeCommit, use <code>oauthToken</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You must specify either <code>accessToken</code> or <code>oauthToken</code> when you
+        /// update an app.
+        /// </para>
+        ///  
+        /// <para>
+        /// Existing Amplify apps deployed from a GitHub repository using OAuth continue to work
+        /// with CI/CD. However, we strongly recommend that you migrate these apps to use the
+        /// GitHub App. For more information, see <a href="https://docs.aws.amazon.com/amplify/latest/UserGuide/setting-up-GitHub-access.html#migrating-to-github-app-auth">Migrating
+        /// an existing OAuth app to the Amplify GitHub App</a> in the <i>Amplify User Guide</i>
+        /// .
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=255)]
+        [AWSProperty(Sensitive=true, Min=1, Max=255)]
         public string AccessToken
         {
             get { return this._accessToken; }
@@ -133,10 +151,11 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property BasicAuthCredentials. 
         /// <para>
-        ///  The basic authorization credentials for an Amplify app. 
+        ///  The basic authorization credentials for an Amplify app. You must base64-encode the
+        /// authorization credentials and provide them in the format <code>user:password</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=2000)]
+        [AWSProperty(Sensitive=true, Max=2000)]
         public string BasicAuthCredentials
         {
             get { return this._basicAuthCredentials; }
@@ -155,7 +174,7 @@ namespace Amazon.Amplify.Model
         ///  The build specification (build spec) for an Amplify app. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=25000)]
+        [AWSProperty(Sensitive=true, Min=1, Max=25000)]
         public string BuildSpec
         {
             get { return this._buildSpec; }
@@ -174,7 +193,7 @@ namespace Amazon.Amplify.Model
         /// The custom HTTP headers for an Amplify app.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=25000)]
+        [AWSProperty(Min=0, Max=25000)]
         public string CustomHeaders
         {
             get { return this._customHeaders; }
@@ -321,7 +340,7 @@ namespace Amazon.Amplify.Model
         ///  The AWS Identity and Access Management (IAM) service role for an Amplify app. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1000)]
+        [AWSProperty(Min=0, Max=1000)]
         public string IamServiceRoleArn
         {
             get { return this._iamServiceRoleArn; }
@@ -356,12 +375,34 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property OauthToken. 
         /// <para>
-        ///  The OAuth token for a third-party source control system for an Amplify app. The token
-        /// is used to create a webhook and a read-only deploy key. The OAuth token is not stored.
-        /// 
+        /// The OAuth token for a third-party source control system for an Amplify app. The OAuth
+        /// token is used to create a webhook and a read-only deploy key using SSH cloning. The
+        /// OAuth token is not stored.
+        /// </para>
+        ///  
+        /// <para>
+        /// Use <code>oauthToken</code> for repository providers other than GitHub, such as Bitbucket
+        /// or CodeCommit.
+        /// </para>
+        ///  
+        /// <para>
+        /// To authorize access to GitHub as your repository provider, use <code>accessToken</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You must specify either <code>oauthToken</code> or <code>accessToken</code> when you
+        /// update an app.
+        /// </para>
+        ///  
+        /// <para>
+        /// Existing Amplify apps deployed from a GitHub repository using OAuth continue to work
+        /// with CI/CD. However, we strongly recommend that you migrate these apps to use the
+        /// GitHub App. For more information, see <a href="https://docs.aws.amazon.com/amplify/latest/UserGuide/setting-up-GitHub-access.html#migrating-to-github-app-auth">Migrating
+        /// an existing OAuth app to the Amplify GitHub App</a> in the <i>Amplify User Guide</i>
+        /// .
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1000)]
+        [AWSProperty(Sensitive=true, Max=1000)]
         public string OauthToken
         {
             get { return this._oauthToken; }
@@ -377,7 +418,10 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property Platform. 
         /// <para>
-        ///  The platform for an Amplify app. 
+        ///  The platform for the Amplify app. For a static app, set the platform type to <code>WEB</code>.
+        /// For a dynamic server-side rendered (SSR) app, set the platform type to <code>WEB_COMPUTE</code>.
+        /// For an app requiring Amplify Hosting's original SSR support only, set the platform
+        /// type to <code>WEB_DYNAMIC</code>.
         /// </para>
         /// </summary>
         public Platform Platform

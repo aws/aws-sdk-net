@@ -40,6 +40,7 @@ namespace Amazon.Glue.Model
         private string _crawlerSecurityConfiguration;
         private string _databaseName;
         private string _description;
+        private LakeFormationConfiguration _lakeFormationConfiguration;
         private LineageConfiguration _lineageConfiguration;
         private string _name;
         private RecrawlPolicy _recrawlPolicy;
@@ -73,8 +74,8 @@ namespace Amazon.Glue.Model
         /// Gets and sets the property Configuration. 
         /// <para>
         /// Crawler configuration information. This versioned JSON string allows users to specify
-        /// aspects of a crawler's behavior. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring
-        /// a Crawler</a>.
+        /// aspects of a crawler's behavior. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Setting
+        /// crawler configuration options</a>.
         /// </para>
         /// </summary>
         public string Configuration
@@ -143,6 +144,24 @@ namespace Amazon.Glue.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LakeFormationConfiguration. 
+        /// <para>
+        /// Specifies Lake Formation configuration settings for the crawler.
+        /// </para>
+        /// </summary>
+        public LakeFormationConfiguration LakeFormationConfiguration
+        {
+            get { return this._lakeFormationConfiguration; }
+            set { this._lakeFormationConfiguration = value; }
+        }
+
+        // Check to see if LakeFormationConfiguration property is set
+        internal bool IsSetLakeFormationConfiguration()
+        {
+            return this._lakeFormationConfiguration != null;
         }
 
         /// <summary>

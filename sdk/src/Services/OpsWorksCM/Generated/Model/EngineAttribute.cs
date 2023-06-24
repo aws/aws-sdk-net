@@ -61,7 +61,7 @@ namespace Amazon.OpsWorksCM.Model
         /// The value of the engine attribute. 
         /// </para>
         /// </summary>
-        [AWSProperty(Max=10000)]
+        [AWSProperty(Sensitive=true, Max=10000)]
         public string Value
         {
             get { return this._value; }

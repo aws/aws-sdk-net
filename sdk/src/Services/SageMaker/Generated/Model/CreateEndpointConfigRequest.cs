@@ -30,42 +30,44 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateEndpointConfig operation.
-    /// Creates an endpoint configuration that Amazon SageMaker hosting services uses to deploy
-    /// models. In the configuration, you identify one or more models, created using the <code>CreateModel</code>
-    /// API, to deploy and the resources that you want Amazon SageMaker to provision. Then
-    /// you call the <a>CreateEndpoint</a> API.
+    /// Creates an endpoint configuration that SageMaker hosting services uses to deploy models.
+    /// In the configuration, you identify one or more models, created using the <code>CreateModel</code>
+    /// API, to deploy and the resources that you want SageMaker to provision. Then you call
+    /// the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpoint.html">CreateEndpoint</a>
+    /// API.
     /// 
     ///  <note> 
     /// <para>
-    ///  Use this API if you want to use Amazon SageMaker hosting services to deploy models
-    /// into production. 
+    ///  Use this API if you want to use SageMaker hosting services to deploy models into
+    /// production. 
     /// </para>
     ///  </note> 
     /// <para>
     /// In the request, you define a <code>ProductionVariant</code>, for each model that you
     /// want to deploy. Each <code>ProductionVariant</code> parameter also describes the resources
-    /// that you want Amazon SageMaker to provision. This includes the number and type of
-    /// ML compute instances to deploy. 
+    /// that you want SageMaker to provision. This includes the number and type of ML compute
+    /// instances to deploy. 
     /// </para>
     ///  
     /// <para>
     /// If you are hosting multiple models, you also assign a <code>VariantWeight</code> to
     /// specify how much traffic you want to allocate to each model. For example, suppose
     /// that you want to host two models, A and B, and you assign traffic weight 2 for model
-    /// A and 1 for model B. Amazon SageMaker distributes two-thirds of the traffic to Model
-    /// A, and one-third to model B. 
+    /// A and 1 for model B. SageMaker distributes two-thirds of the traffic to Model A, and
+    /// one-third to model B. 
     /// </para>
     ///  <note> 
     /// <para>
-    /// When you call <a>CreateEndpoint</a>, a load call is made to DynamoDB to verify that
-    /// your endpoint configuration exists. When you read data from a DynamoDB table supporting
-    /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadConsistency.html">
+    /// When you call <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpoint.html">CreateEndpoint</a>,
+    /// a load call is made to DynamoDB to verify that your endpoint configuration exists.
+    /// When you read data from a DynamoDB table supporting <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadConsistency.html">
     /// <code>Eventually Consistent Reads</code> </a>, the response might not reflect the
     /// results of a recently completed write operation. The response might include some stale
     /// data. If the dependent entities are not yet in DynamoDB, this causes a validation
     /// error. If you repeat your read request after a short time, the response should return
     /// the latest data. So retry logic is recommended to handle these possible issues. We
-    /// also recommend that customers call <a>DescribeEndpointConfig</a> before calling <a>CreateEndpoint</a>
+    /// also recommend that customers call <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeEndpointConfig.html">DescribeEndpointConfig</a>
+    /// before calling <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpoint.html">CreateEndpoint</a>
     /// to minimize the potential impact of a DynamoDB eventually consistent read.
     /// </para>
     ///  </note>
@@ -75,16 +77,17 @@ namespace Amazon.SageMaker.Model
         private AsyncInferenceConfig _asyncInferenceConfig;
         private DataCaptureConfig _dataCaptureConfig;
         private string _endpointConfigName;
+        private ExplainerConfig _explainerConfig;
         private string _kmsKeyId;
         private List<ProductionVariant> _productionVariants = new List<ProductionVariant>();
+        private List<ProductionVariant> _shadowProductionVariants = new List<ProductionVariant>();
         private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property AsyncInferenceConfig. 
         /// <para>
         /// Specifies configuration for how an endpoint performs asynchronous inference. This
-        /// is a required field in order for your Endpoint to be invoked using <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpoint.html">
-        /// <code>InvokeEndpointAsync</code> </a>.
+        /// is a required field in order for your Endpoint to be invoked using <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpointAsync.html">InvokeEndpointAsync</a>.
         /// </para>
         /// </summary>
         public AsyncInferenceConfig AsyncInferenceConfig
@@ -117,7 +120,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property EndpointConfigName. 
         /// <para>
-        /// The name of the endpoint configuration. You specify this name in a <a>CreateEndpoint</a>
+        /// The name of the endpoint configuration. You specify this name in a <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpoint.html">CreateEndpoint</a>
         /// request. 
         /// </para>
         /// </summary>
@@ -135,11 +138,29 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ExplainerConfig. 
+        /// <para>
+        /// A member of <code>CreateEndpointConfig</code> that enables explainers.
+        /// </para>
+        /// </summary>
+        public ExplainerConfig ExplainerConfig
+        {
+            get { return this._explainerConfig; }
+            set { this._explainerConfig = value; }
+        }
+
+        // Check to see if ExplainerConfig property is set
+        internal bool IsSetExplainerConfig()
+        {
+            return this._explainerConfig != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
         /// The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key
-        /// that Amazon SageMaker uses to encrypt data on the storage volume attached to the ML
-        /// compute instance that hosts the endpoint.
+        /// that SageMaker uses to encrypt data on the storage volume attached to the ML compute
+        /// instance that hosts the endpoint.
         /// </para>
         ///  
         /// <para>
@@ -208,7 +229,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ProductionVariants. 
         /// <para>
-        /// An list of <code>ProductionVariant</code> objects, one for each model that you want
+        /// An array of <code>ProductionVariant</code> objects, one for each model that you want
         /// to host at this endpoint.
         /// </para>
         /// </summary>
@@ -223,6 +244,28 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetProductionVariants()
         {
             return this._productionVariants != null && this._productionVariants.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ShadowProductionVariants. 
+        /// <para>
+        /// An array of <code>ProductionVariant</code> objects, one for each model that you want
+        /// to host at this endpoint in shadow mode with production traffic replicated from the
+        /// model specified on <code>ProductionVariants</code>. If you use this field, you can
+        /// only specify one variant for <code>ProductionVariants</code> and one variant for <code>ShadowProductionVariants</code>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<ProductionVariant> ShadowProductionVariants
+        {
+            get { return this._shadowProductionVariants; }
+            set { this._shadowProductionVariants = value; }
+        }
+
+        // Check to see if ShadowProductionVariants property is set
+        internal bool IsSetShadowProductionVariants()
+        {
+            return this._shadowProductionVariants != null && this._shadowProductionVariants.Count > 0; 
         }
 
         /// <summary>

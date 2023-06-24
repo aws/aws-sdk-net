@@ -34,7 +34,7 @@ namespace Amazon.CloudHSMV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// BackupRetentionPolicy Marshaller
-    /// </summary>       
+    /// </summary>
     public class BackupRetentionPolicyMarshaller : IRequestMarshaller<BackupRetentionPolicy, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.CloudHSMV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static BackupRetentionPolicyMarshaller Instance = new BackupRetentionPolicyMarshaller();
 
     }

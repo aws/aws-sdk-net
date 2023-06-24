@@ -58,7 +58,7 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
             string target = "Comprehend_20171127.ClassifyDocument";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-11-27";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-11-27";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -67,6 +67,23 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetBytes())
+                {
+                    context.Writer.WritePropertyName("Bytes");
+                    context.Writer.Write(StringUtils.FromMemoryStream(publicRequest.Bytes));
+                }
+
+                if(publicRequest.IsSetDocumentReaderConfig())
+                {
+                    context.Writer.WritePropertyName("DocumentReaderConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = DocumentReaderConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.DocumentReaderConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetEndpointArn())
                 {
                     context.Writer.WritePropertyName("EndpointArn");
@@ -79,7 +96,6 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Text);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

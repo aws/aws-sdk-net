@@ -34,7 +34,7 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// TimeSpan Marshaller
-    /// </summary>       
+    /// </summary>
     public class TimeSpanMarshaller : IRequestMarshaller<TimeSpan, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static TimeSpanMarshaller Instance = new TimeSpanMarshaller();
 
     }

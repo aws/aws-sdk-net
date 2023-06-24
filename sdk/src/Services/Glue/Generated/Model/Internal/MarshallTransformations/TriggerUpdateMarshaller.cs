@@ -34,7 +34,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// TriggerUpdate Marshaller
-    /// </summary>       
+    /// </summary>
     public class TriggerUpdateMarshaller : IRequestMarshaller<TriggerUpdate, JsonMarshallerContext> 
     {
         /// <summary>
@@ -105,7 +105,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static TriggerUpdateMarshaller Instance = new TriggerUpdateMarshaller();
 
     }

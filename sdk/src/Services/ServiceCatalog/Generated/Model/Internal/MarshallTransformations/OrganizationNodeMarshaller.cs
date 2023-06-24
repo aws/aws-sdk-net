@@ -34,7 +34,7 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// OrganizationNode Marshaller
-    /// </summary>       
+    /// </summary>
     public class OrganizationNodeMarshaller : IRequestMarshaller<OrganizationNode, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static OrganizationNodeMarshaller Instance = new OrganizationNodeMarshaller();
 
     }

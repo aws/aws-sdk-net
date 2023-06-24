@@ -34,7 +34,7 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Firehose Marshaller
-    /// </summary>       
+    /// </summary>
     public class FirehoseMarshaller : IRequestMarshaller<Firehose, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static FirehoseMarshaller Instance = new FirehoseMarshaller();
 
     }

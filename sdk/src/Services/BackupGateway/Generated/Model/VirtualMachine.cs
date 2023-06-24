@@ -136,7 +136,7 @@ namespace Amazon.BackupGateway.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the virtual machine.
+        /// The Amazon Resource Name (ARN) of the virtual machine. For example, <code>arn:aws:backup-gateway:us-west-1:0000000000000:vm/vm-0000ABCDEFGIJKL</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=50, Max=500)]

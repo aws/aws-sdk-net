@@ -34,7 +34,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// S3Settings Marshaller
-    /// </summary>       
+    /// </summary>
     public class S3SettingsMarshaller : IRequestMarshaller<S3Settings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -49,6 +49,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("AddColumnName");
                 context.Writer.Write(requestObject.AddColumnName);
+            }
+
+            if(requestObject.IsSetAddTrailingPaddingCharacter())
+            {
+                context.Writer.WritePropertyName("AddTrailingPaddingCharacter");
+                context.Writer.Write(requestObject.AddTrailingPaddingCharacter);
             }
 
             if(requestObject.IsSetBucketFolder())
@@ -189,10 +195,22 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.EncryptionMode);
             }
 
+            if(requestObject.IsSetExpectedBucketOwner())
+            {
+                context.Writer.WritePropertyName("ExpectedBucketOwner");
+                context.Writer.Write(requestObject.ExpectedBucketOwner);
+            }
+
             if(requestObject.IsSetExternalTableDefinition())
             {
                 context.Writer.WritePropertyName("ExternalTableDefinition");
                 context.Writer.Write(requestObject.ExternalTableDefinition);
+            }
+
+            if(requestObject.IsSetGlueCatalogGeneration())
+            {
+                context.Writer.WritePropertyName("GlueCatalogGeneration");
+                context.Writer.Write(requestObject.GlueCatalogGeneration);
             }
 
             if(requestObject.IsSetIgnoreHeaderRows())
@@ -277,7 +295,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static S3SettingsMarshaller Instance = new S3SettingsMarshaller();
 
     }

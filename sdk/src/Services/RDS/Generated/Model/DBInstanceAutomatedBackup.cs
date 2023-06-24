@@ -58,6 +58,7 @@ namespace Amazon.RDS.Model
         private string _region;
         private RestoreWindow _restoreWindow;
         private string _status;
+        private int? _storageThroughput;
         private string _storageType;
         private string _tdeCredentialArn;
         private string _timezone;
@@ -197,7 +198,6 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property DBInstanceIdentifier. 
         /// <para>
         /// The customer id of the instance that is/was associated with the automated backup.
-        /// 
         /// </para>
         /// </summary>
         public string DBInstanceIdentifier
@@ -307,7 +307,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property InstanceCreateTime. 
         /// <para>
-        /// Provides the date and time that the DB instance was created. 
+        /// Provides the date and time that the DB instance was created.
         /// </para>
         /// </summary>
         public DateTime InstanceCreateTime
@@ -325,7 +325,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Iops. 
         /// <para>
-        /// The IOPS (I/O operations per second) value for the automated backup. 
+        /// The IOPS (I/O operations per second) value for the automated backup.
         /// </para>
         /// </summary>
         public int Iops
@@ -513,6 +513,24 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property StorageThroughput. 
+        /// <para>
+        /// Specifies the storage throughput for the automated backup.
+        /// </para>
+        /// </summary>
+        public int StorageThroughput
+        {
+            get { return this._storageThroughput.GetValueOrDefault(); }
+            set { this._storageThroughput = value; }
+        }
+
+        // Check to see if StorageThroughput property is set
+        internal bool IsSetStorageThroughput()
+        {
+            return this._storageThroughput.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property StorageType. 
         /// <para>
         /// Specifies the storage type associated with the automated backup.
@@ -571,7 +589,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property VpcId. 
         /// <para>
-        /// Provides the VPC ID associated with the DB instance
+        /// Provides the VPC ID associated with the DB instance.
         /// </para>
         /// </summary>
         public string VpcId

@@ -34,7 +34,7 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// FindingTypeAggregation Marshaller
-    /// </summary>       
+    /// </summary>
     public class FindingTypeAggregationMarshaller : IRequestMarshaller<FindingTypeAggregation, JsonMarshallerContext> 
     {
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static FindingTypeAggregationMarshaller Instance = new FindingTypeAggregationMarshaller();
 
     }

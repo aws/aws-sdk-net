@@ -47,8 +47,8 @@ namespace Amazon.ComprehendMedical.Model
         /// <summary>
         /// Gets and sets the property ClientRequestToken. 
         /// <para>
-        /// A unique identifier for the request. If you don't set the client request token, Amazon
-        /// Comprehend Medical generates one.
+        /// A unique identifier for the request. If you don't set the client request token, Comprehend
+        /// Medical; generates one for you.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -68,7 +68,7 @@ namespace Amazon.ComprehendMedical.Model
         /// Gets and sets the property DataAccessRoleArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role
-        /// that grants Amazon Comprehend Medical read access to your input data. For more information,
+        /// that grants Comprehend Medical; read access to your input data. For more information,
         /// see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med">
         /// Role-Based Permissions Required for Asynchronous Operations</a>.
         /// </para>
@@ -89,7 +89,8 @@ namespace Amazon.ComprehendMedical.Model
         /// <summary>
         /// Gets and sets the property InputDataConfig. 
         /// <para>
-        /// Specifies the format and location of the input data for the job.
+        /// The input configuration that specifies the format and location of the input data for
+        /// the job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -147,7 +148,8 @@ namespace Amazon.ComprehendMedical.Model
         /// <summary>
         /// Gets and sets the property LanguageCode. 
         /// <para>
-        /// The language of the input documents. All documents must be in the same language.
+        /// The language of the input documents. All documents must be in the same language. Comprehend
+        /// Medical; processes files in US English (en).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -166,7 +168,7 @@ namespace Amazon.ComprehendMedical.Model
         /// <summary>
         /// Gets and sets the property OutputDataConfig. 
         /// <para>
-        /// Specifies where to send the output files.
+        /// The output configuration that specifies where to send the output files.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

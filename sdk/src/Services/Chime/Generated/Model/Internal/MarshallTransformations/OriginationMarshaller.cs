@@ -34,7 +34,7 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Origination Marshaller
-    /// </summary>       
+    /// </summary>
     public class OriginationMarshaller : IRequestMarshaller<Origination, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static OriginationMarshaller Instance = new OriginationMarshaller();
 
     }

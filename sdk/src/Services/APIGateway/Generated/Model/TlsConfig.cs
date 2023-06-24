@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.APIGateway.Model
 {
     /// <summary>
-    /// 
+    /// Specifies the TLS configuration for an integration.
     /// </summary>
     public partial class TlsConfig
     {
@@ -39,13 +39,20 @@ namespace Amazon.APIGateway.Model
         /// Gets and sets the property InsecureSkipVerification. 
         /// <para>
         /// Specifies whether or not API Gateway skips verification that the certificate for an
-        /// integration endpoint is issued by a <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-supported-certificate-authorities-for-http-endpoints.html">supported
-        /// certificate authority</a>. This isn’t recommended, but it enables you to use certificates
-        /// that are signed by private certificate authorities, or certificates that are self-signed.
-        /// If enabled, API Gateway still performs basic certificate validation, which includes
-        /// checking the certificate's expiration date, hostname, and presence of a root certificate
-        /// authority. Supported only for <code>HTTP</code> and <code>HTTP_PROXY</code> integrations.
+        /// integration endpoint is issued by a supported certificate authority. This isn’t recommended,
+        /// but it enables you to use certificates that are signed by private certificate authorities,
+        /// or certificates that are self-signed. If enabled, API Gateway still performs basic
+        /// certificate validation, which includes checking the certificate's expiration date,
+        /// hostname, and presence of a root certificate authority. Supported only for <code>HTTP</code>
+        /// and <code>HTTP_PROXY</code> integrations.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// Enabling <code>insecureSkipVerification</code> isn't recommended, especially for integrations
+        /// with public HTTPS endpoints. If you enable <code>insecureSkipVerification</code>,
+        /// you increase the risk of man-in-the-middle attacks.
+        /// </para>
+        ///  </important>
         /// </summary>
         public bool InsecureSkipVerification
         {

@@ -34,7 +34,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// WaitTime Marshaller
-    /// </summary>       
+    /// </summary>
     public class WaitTimeMarshaller : IRequestMarshaller<WaitTime, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static WaitTimeMarshaller Instance = new WaitTimeMarshaller();
 
     }

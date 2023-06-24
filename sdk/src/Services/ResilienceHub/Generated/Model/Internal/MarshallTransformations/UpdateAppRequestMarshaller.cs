@@ -56,7 +56,7 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ResilienceHub");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-04-30";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-04-30";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/update-app";
@@ -69,6 +69,12 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("appArn");
                     context.Writer.Write(publicRequest.AppArn);
+                }
+
+                if(publicRequest.IsSetAssessmentSchedule())
+                {
+                    context.Writer.WritePropertyName("assessmentSchedule");
+                    context.Writer.Write(publicRequest.AssessmentSchedule);
                 }
 
                 if(publicRequest.IsSetClearResiliencyPolicyArn())
@@ -89,7 +95,6 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.PolicyArn);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

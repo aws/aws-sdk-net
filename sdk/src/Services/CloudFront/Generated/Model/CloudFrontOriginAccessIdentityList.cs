@@ -99,7 +99,7 @@ namespace Amazon.CloudFront.Model
         /// access identities. The results include identities in the list that occur after the
         /// marker. To get the next page of results, set the <code>Marker</code> to the value
         /// of the <code>NextMarker</code> from the current page's response (which is also the
-        /// ID of the last identity on that page). 
+        /// ID of the last identity on that page).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -118,7 +118,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property MaxItems. 
         /// <para>
-        /// The maximum number of origin access identities you want in the response body. 
+        /// The maximum number of origin access identities you want in the response body.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -139,7 +139,7 @@ namespace Amazon.CloudFront.Model
         /// <para>
         /// If <code>IsTruncated</code> is <code>true</code>, this element is present and contains
         /// the value you can use for the <code>Marker</code> request parameter to continue listing
-        /// your origin access identities where they left off. 
+        /// your origin access identities where they left off.
         /// </para>
         /// </summary>
         public string NextMarker

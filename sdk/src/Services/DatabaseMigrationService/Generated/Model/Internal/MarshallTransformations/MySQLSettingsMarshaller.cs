@@ -34,7 +34,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// MySQLSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class MySQLSettingsMarshaller : IRequestMarshaller<MySQLSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -133,7 +133,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static MySQLSettingsMarshaller Instance = new MySQLSettingsMarshaller();
 
     }

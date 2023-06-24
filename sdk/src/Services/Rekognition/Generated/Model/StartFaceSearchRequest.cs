@@ -43,7 +43,8 @@ namespace Amazon.Rekognition.Model
     /// To get the search results, first check that the status value published to the Amazon
     /// SNS topic is <code>SUCCEEDED</code>. If so, call <a>GetFaceSearch</a> and pass the
     /// job identifier (<code>JobId</code>) from the initial call to <code>StartFaceSearch</code>.
-    /// For more information, see <a>procedure-person-search-videos</a>.
+    /// For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/procedure-person-search-videos.html">Searching
+    /// stored videos for faces</a>. 
     /// </para>
     /// </summary>
     public partial class StartFaceSearchRequest : AmazonRekognitionRequest
@@ -124,7 +125,7 @@ namespace Amazon.Rekognition.Model
         /// to group related jobs and identify them in the completion notification.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=256)]
+        [AWSProperty(Min=1, Max=1024)]
         public string JobTag
         {
             get { return this._jobTag; }

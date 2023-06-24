@@ -33,11 +33,31 @@ namespace Amazon.Lightsail.Model
     /// </summary>
     public partial class LoadBalancerTlsCertificateDomainValidationRecord
     {
+        private LoadBalancerTlsCertificateDnsRecordCreationState _dnsRecordCreationState;
         private string _domainName;
         private string _name;
         private string _type;
         private LoadBalancerTlsCertificateDomainStatus _validationStatus;
         private string _value;
+
+        /// <summary>
+        /// Gets and sets the property DnsRecordCreationState. 
+        /// <para>
+        /// An object that describes the state of the canonical name (CNAME) records that are
+        /// automatically added by Lightsail to the DNS of a domain to validate domain ownership.
+        /// </para>
+        /// </summary>
+        public LoadBalancerTlsCertificateDnsRecordCreationState DnsRecordCreationState
+        {
+            get { return this._dnsRecordCreationState; }
+            set { this._dnsRecordCreationState = value; }
+        }
+
+        // Check to see if DnsRecordCreationState property is set
+        internal bool IsSetDnsRecordCreationState()
+        {
+            return this._dnsRecordCreationState != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DomainName. 

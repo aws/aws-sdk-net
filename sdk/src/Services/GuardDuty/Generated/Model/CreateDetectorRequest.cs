@@ -34,12 +34,21 @@ namespace Amazon.GuardDuty.Model
     /// the GuardDuty service. To start using GuardDuty, you must create a detector in each
     /// Region where you enable the service. You can have only one detector per account per
     /// Region. All data sources are enabled in a new detector by default.
+    /// 
+    ///  
+    /// <para>
+    /// There might be regional differences because some data sources might not be available
+    /// in all the Amazon Web Services Regions where GuardDuty is presently supported. For
+    /// more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions
+    /// and endpoints</a>.
+    /// </para>
     /// </summary>
     public partial class CreateDetectorRequest : AmazonGuardDutyRequest
     {
         private string _clientToken;
         private DataSourceConfigurations _dataSources;
         private bool? _enable;
+        private List<DetectorFeatureConfiguration> _features = new List<DetectorFeatureConfiguration>();
         private FindingPublishingFrequency _findingPublishingFrequency;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
@@ -67,7 +76,15 @@ namespace Amazon.GuardDuty.Model
         /// <para>
         /// Describes which data sources will be enabled for the detector.
         /// </para>
+        ///  
+        /// <para>
+        /// There might be regional differences because some data sources might not be available
+        /// in all the Amazon Web Services Regions where GuardDuty is presently supported. For
+        /// more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions
+        /// and endpoints</a>.
+        /// </para>
         /// </summary>
+        [Obsolete("This parameter is deprecated, use Features instead")]
         public DataSourceConfigurations DataSources
         {
             get { return this._dataSources; }
@@ -97,6 +114,24 @@ namespace Amazon.GuardDuty.Model
         internal bool IsSetEnable()
         {
             return this._enable.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Features. 
+        /// <para>
+        /// A list of features that will be configured for the detector.
+        /// </para>
+        /// </summary>
+        public List<DetectorFeatureConfiguration> Features
+        {
+            get { return this._features; }
+            set { this._features = value; }
+        }
+
+        // Check to see if Features property is set
+        internal bool IsSetFeatures()
+        {
+            return this._features != null && this._features.Count > 0; 
         }
 
         /// <summary>

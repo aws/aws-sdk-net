@@ -76,6 +76,12 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
                     unmarshalledObject.Identifier = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("IdentifierPath", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.IdentifierPath = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("NewValues", targetDepth))
                 {
                     var unmarshaller = CoreNetworkChangeValuesUnmarshaller.Instance;

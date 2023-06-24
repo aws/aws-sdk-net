@@ -76,6 +76,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.Sheet = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Typography", targetDepth))
+                {
+                    var unmarshaller = TypographyUnmarshaller.Instance;
+                    unmarshalledObject.Typography = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("UIColorPalette", targetDepth))
                 {
                     var unmarshaller = UIColorPaletteUnmarshaller.Instance;

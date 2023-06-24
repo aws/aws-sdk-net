@@ -41,17 +41,8 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property ARN. 
         /// <para>
-        /// The Amazon Resource Name (ARN) for the secret.
+        /// The ARN of the secret.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// Secrets Manager automatically adds several random characters to the name at the end
-        /// of the ARN when you initially create a secret. This affects only the ARN and not the
-        /// actual friendly name. This ensures that if you create a new secret with the same name
-        /// as an old secret that you previously deleted, then users with access to the old secret
-        /// <i>don't</i> automatically get access to the new secret because the ARNs are different.
-        /// </para>
-        ///  </note>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
         public string ARN
@@ -69,7 +60,7 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The friendly name of the secret.
+        /// The name of the secret.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -88,13 +79,10 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If present in the response, this value indicates that there's more output available
-        /// than included in the current response. This can occur even when the response includes
-        /// no values at all, such as when you ask for a filtered view of a very long list. Use
-        /// this value in the <code>NextToken</code> request parameter in a subsequent call to
-        /// the operation to continue processing and get the next part of the output. You should
-        /// repeat this until the <code>NextToken</code> response element comes back empty (as
-        /// <code>null</code>).
+        /// Secrets Manager includes this value if there's more output available than what is
+        /// included in the current response. This can occur even when the response includes no
+        /// values at all, such as when you ask for a filtered view of a long list. To get the
+        /// next results, call <code>ListSecretVersionIds</code> again with this value. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=4096)]
@@ -113,7 +101,7 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property Versions. 
         /// <para>
-        /// The list of the currently available versions of the specified secret.
+        /// A list of the versions of the secret.
         /// </para>
         /// </summary>
         public List<SecretVersionsListEntry> Versions

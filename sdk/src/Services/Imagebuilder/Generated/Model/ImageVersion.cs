@@ -34,7 +34,9 @@ namespace Amazon.Imagebuilder.Model
     public partial class ImageVersion
     {
         private string _arn;
+        private BuildType _buildType;
         private string _dateCreated;
+        private ImageSource _imageSource;
         private string _name;
         private string _osVersion;
         private string _owner;
@@ -82,6 +84,39 @@ namespace Amazon.Imagebuilder.Model
         }
 
         /// <summary>
+        /// Gets and sets the property BuildType. 
+        /// <para>
+        /// Indicates the type of build that created this image. The build can be initiated in
+        /// the following ways:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>USER_INITIATED</b> – A manual pipeline build request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>SCHEDULED</b> – A pipeline build initiated by a cron expression in the Image Builder
+        /// pipeline, or from EventBridge.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>IMPORT</b> – A VM import created the image to use as the base image for the recipe.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public BuildType BuildType
+        {
+            get { return this._buildType; }
+            set { this._buildType = value; }
+        }
+
+        // Check to see if BuildType property is set
+        internal bool IsSetBuildType()
+        {
+            return this._buildType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property DateCreated. 
         /// <para>
         /// The date on which this specific version of the Image Builder image was created.
@@ -97,6 +132,24 @@ namespace Amazon.Imagebuilder.Model
         internal bool IsSetDateCreated()
         {
             return this._dateCreated != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ImageSource. 
+        /// <para>
+        /// The origin of the base image that Image Builder used to build this image.
+        /// </para>
+        /// </summary>
+        public ImageSource ImageSource
+        {
+            get { return this._imageSource; }
+            set { this._imageSource = value; }
+        }
+
+        // Check to see if ImageSource property is set
+        internal bool IsSetImageSource()
+        {
+            return this._imageSource != null;
         }
 
         /// <summary>
@@ -159,7 +212,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Platform. 
         /// <para>
-        /// The platform of the image version, for example "Windows" or "Linux".
+        /// The operating system platform of the image version, for example "Windows" or "Linux".
         /// </para>
         /// </summary>
         public Platform Platform
@@ -177,7 +230,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// Specifies whether this image is an AMI or a container image.
+        /// Specifies whether this image produces an AMI or a container image.
         /// </para>
         /// </summary>
         public ImageType Type

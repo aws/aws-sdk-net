@@ -65,6 +65,7 @@ namespace Amazon.MediaLive.Model
         private HlsMode _mode;
         private HlsOutputSelection _outputSelection;
         private HlsProgramDateTime _programDateTime;
+        private HlsProgramDateTimeClock _programDateTimeClock;
         private int? _programDateTimePeriod;
         private HlsRedundantManifest _redundantManifest;
         private HlsSegmentationMode _segmentationMode;
@@ -564,9 +565,10 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MinSegmentLength. When set, minimumSegmentLength is enforced
-        /// by looking ahead and back within the specified range for a nearby avail and extending
-        /// the segment size if needed.
+        /// Gets and sets the property MinSegmentLength. Minimum length of MPEG-2 Transport Stream
+        /// segments in seconds. When set, minimum segment length is enforced by looking ahead
+        /// and back within the specified range for a nearby avail and extending the segment size
+        /// if needed.
         /// </summary>
         [AWSProperty(Min=0)]
         public int MinSegmentLength
@@ -621,9 +623,7 @@ namespace Amazon.MediaLive.Model
 
         /// <summary>
         /// Gets and sets the property ProgramDateTime. Includes or excludes EXT-X-PROGRAM-DATE-TIME
-        /// tag in .m3u8 manifest files. The value is calculated as follows: either the program
-        /// date and time are initialized using the input timecode source, or the time is initialized
-        /// using the input timecode source and the date is initialized using the timestampOffset.
+        /// tag in .m3u8 manifest files. The value is calculated using the program date time clock.
         /// </summary>
         public HlsProgramDateTime ProgramDateTime
         {
@@ -635,6 +635,27 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetProgramDateTime()
         {
             return this._programDateTime != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProgramDateTimeClock. Specifies the algorithm used to drive
+        /// the HLS EXT-X-PROGRAM-DATE-TIME clock. Options include:INITIALIZE_FROM_OUTPUT_TIMECODE:
+        /// The PDT clock is initialized as a function of the first output timecode, then incremented
+        /// by the EXTINF duration of each encoded segment.SYSTEM_CLOCK: The PDT clock is initialized
+        /// as a function of the UTC wall clock, then incremented by the EXTINF duration of each
+        /// encoded segment. If the PDT clock diverges from the wall clock by more than 500ms,
+        /// it is resynchronized to the wall clock.
+        /// </summary>
+        public HlsProgramDateTimeClock ProgramDateTimeClock
+        {
+            get { return this._programDateTimeClock; }
+            set { this._programDateTimeClock = value; }
+        }
+
+        // Check to see if ProgramDateTimeClock property is set
+        internal bool IsSetProgramDateTimeClock()
+        {
+            return this._programDateTimeClock != null;
         }
 
         /// <summary>
@@ -696,8 +717,8 @@ namespace Amazon.MediaLive.Model
 
         /// <summary>
         /// Gets and sets the property SegmentLength. Length of MPEG-2 Transport Stream segments
-        /// to create (in seconds). Note that segments will end on the next keyframe after this
-        /// number of seconds, so actual segment length may be longer.
+        /// to create in seconds. Note that segments will end on the next keyframe after this
+        /// duration, so actual segment length may be longer.
         /// </summary>
         [AWSProperty(Min=1)]
         public int SegmentLength

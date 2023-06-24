@@ -52,6 +52,14 @@ namespace Amazon.Mgn.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeLaunchConfigurationTemplates operation
+        ///</summary>
+        public IDescribeLaunchConfigurationTemplatesPaginator DescribeLaunchConfigurationTemplates(DescribeLaunchConfigurationTemplatesRequest request) 
+        {
+            return new DescribeLaunchConfigurationTemplatesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribeReplicationConfigurationTemplates operation
         ///</summary>
         public IDescribeReplicationConfigurationTemplatesPaginator DescribeReplicationConfigurationTemplates(DescribeReplicationConfigurationTemplatesRequest request) 
@@ -73,6 +81,70 @@ namespace Amazon.Mgn.Model
         public IDescribeVcenterClientsPaginator DescribeVcenterClients(DescribeVcenterClientsRequest request) 
         {
             return new DescribeVcenterClientsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListApplications operation
+        ///</summary>
+        public IListApplicationsPaginator ListApplications(ListApplicationsRequest request) 
+        {
+            return new ListApplicationsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListExportErrors operation
+        ///</summary>
+        public IListExportErrorsPaginator ListExportErrors(ListExportErrorsRequest request) 
+        {
+            return new ListExportErrorsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListExports operation
+        ///</summary>
+        public IListExportsPaginator ListExports(ListExportsRequest request) 
+        {
+            return new ListExportsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListImportErrors operation
+        ///</summary>
+        public IListImportErrorsPaginator ListImportErrors(ListImportErrorsRequest request) 
+        {
+            return new ListImportErrorsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListImports operation
+        ///</summary>
+        public IListImportsPaginator ListImports(ListImportsRequest request) 
+        {
+            return new ListImportsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListSourceServerActions operation
+        ///</summary>
+        public IListSourceServerActionsPaginator ListSourceServerActions(ListSourceServerActionsRequest request) 
+        {
+            return new ListSourceServerActionsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListTemplateActions operation
+        ///</summary>
+        public IListTemplateActionsPaginator ListTemplateActions(ListTemplateActionsRequest request) 
+        {
+            return new ListTemplateActionsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListWaves operation
+        ///</summary>
+        public IListWavesPaginator ListWaves(ListWavesRequest request) 
+        {
+            return new ListWavesPaginator(this.client, request);
         }
     }
 }

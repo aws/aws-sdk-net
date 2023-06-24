@@ -45,7 +45,7 @@ namespace Amazon.CloudFront.Model
     ///  
     /// <para>
     /// A complex type that contains information about the query string parameters that you
-    /// want CloudFront to use for caching for a cache behavior. 
+    /// want CloudFront to use for caching for a cache behavior.
     /// </para>
     /// </summary>
     public partial class QueryStringCacheKeys
@@ -58,7 +58,7 @@ namespace Amazon.CloudFront.Model
         /// <para>
         /// A list that contains the query string parameters that you want CloudFront to use as
         /// a basis for caching for a cache behavior. If <code>Quantity</code> is 0, you can omit
-        /// <code>Items</code>. 
+        /// <code>Items</code>.
         /// </para>
         /// </summary>
         public List<string> Items

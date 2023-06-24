@@ -34,7 +34,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AnswerMachineDetectionConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class AnswerMachineDetectionConfigMarshaller : IRequestMarshaller<AnswerMachineDetectionConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AnswerMachineDetectionConfigMarshaller Instance = new AnswerMachineDetectionConfigMarshaller();
 
     }

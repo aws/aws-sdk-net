@@ -69,7 +69,9 @@ namespace Amazon.RAM.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The type of the resource.
+        /// The type of the resource. This takes the form of: <code>service-code</code>:<code>resource-code</code>,
+        /// and is case-insensitive. For example, an Amazon EC2 Subnet would be represented by
+        /// the string <code>ec2:subnet</code>.
         /// </para>
         /// </summary>
         public string ResourceType

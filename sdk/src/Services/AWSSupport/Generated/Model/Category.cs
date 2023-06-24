@@ -30,7 +30,8 @@ namespace Amazon.AWSSupport.Model
 {
     /// <summary>
     /// A JSON-formatted name/value pair that represents the category name and category code
-    /// of the problem, selected from the <a>DescribeServices</a> response for each AWS service.
+    /// of the problem, selected from the <a>DescribeServices</a> response for each Amazon
+    /// Web Services service.
     /// </summary>
     public partial class Category
     {

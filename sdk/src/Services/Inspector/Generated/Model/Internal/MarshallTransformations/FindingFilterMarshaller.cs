@@ -34,7 +34,7 @@ namespace Amazon.Inspector.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// FindingFilter Marshaller
-    /// </summary>       
+    /// </summary>
     public class FindingFilterMarshaller : IRequestMarshaller<FindingFilter, JsonMarshallerContext> 
     {
         /// <summary>
@@ -147,7 +147,7 @@ namespace Amazon.Inspector.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static FindingFilterMarshaller Instance = new FindingFilterMarshaller();
 
     }

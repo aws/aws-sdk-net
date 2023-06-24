@@ -62,7 +62,6 @@ namespace Amazon.QuickSight.Model
         /// Country code.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public GeoSpatialCountryCode CountryCode
         {
             get { return this._countryCode; }

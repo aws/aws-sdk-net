@@ -441,11 +441,6 @@ namespace Amazon.StorageGateway
         /// in the S3 storage class that is associated with the pool. When you use your backup
         /// application to eject the tape, the tape is archived directly into the S3 storage class
         /// (S3 Glacier or S3 Glacier Deep Archive) that corresponds to the pool.
-        /// 
-        ///  
-        /// <para>
-        /// Valid Values: <code>GLACIER</code> | <code>DEEP_ARCHIVE</code> 
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssignTapePool service method.</param>
         /// 
@@ -1342,7 +1337,7 @@ namespace Amazon.StorageGateway
         /// download bandwidth rate limit, or you can delete both. If you delete only one of the
         /// limits, the other limit remains unchanged. To specify which gateway to work with,
         /// use the Amazon Resource Name (ARN) of the gateway in your request. This operation
-        /// is supported for the stored volume, cached volume and tape gateway types.
+        /// is supported only for the stored volume, cached volume, and tape gateway types.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteBandwidthRateLimit service method.</param>
         /// 
@@ -1566,7 +1561,7 @@ namespace Amazon.StorageGateway
         /// see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/backing-up-volumes.html">Backing
         /// up your volumes</a>. In the <code>DeleteSnapshotSchedule</code> request, you identify
         /// the volume by providing its Amazon Resource Name (ARN). This operation is only supported
-        /// in stored and cached volume gateway types.
+        /// for cached volume gateway types.
         /// </para>
         ///  <note> 
         /// <para>
@@ -1888,13 +1883,14 @@ namespace Amazon.StorageGateway
 
         /// <summary>
         /// Returns the bandwidth rate limits of a gateway. By default, these limits are not set,
-        /// which means no bandwidth rate limiting is in effect. This operation is supported for
-        /// the stored volume, cached volume, and tape gateway types.
+        /// which means no bandwidth rate limiting is in effect. This operation is supported only
+        /// for the stored volume, cached volume, and tape gateway types. To describe bandwidth
+        /// rate limits for S3 file gateways, use <a>DescribeBandwidthRateLimitSchedule</a>.
         /// 
         ///  
         /// <para>
-        /// This operation only returns a value for a bandwidth rate limit only if the limit is
-        /// set. If no limits are set for the gateway, then this operation returns only the gateway
+        /// This operation returns a value for a bandwidth rate limit only if the limit is set.
+        /// If no limits are set for the gateway, then this operation returns only the gateway
         /// ARN in the response body. To specify which gateway to describe, use the Amazon Resource
         /// Name (ARN) of the gateway in your request.
         /// </para>
@@ -1947,8 +1943,8 @@ namespace Amazon.StorageGateway
         /// <summary>
         /// Returns information about the bandwidth rate limit schedule of a gateway. By default,
         /// gateways do not have bandwidth rate limit schedules, which means no bandwidth rate
-        /// limiting is in effect. This operation is supported only in the volume and tape gateway
-        /// types. 
+        /// limiting is in effect. This operation is supported only for volume, tape and S3 file
+        /// gateways. FSx file gateways do not support bandwidth rate limits.
         /// 
         ///  
         /// <para>
@@ -3786,7 +3782,7 @@ namespace Amazon.StorageGateway
 
         /// <summary>
         /// Sends you notification through CloudWatch Events when all files written to your file
-        /// share have been uploaded to Amazon S3.
+        /// share have been uploaded to S3. Amazon S3.
         /// 
         ///  
         /// <para>
@@ -3880,13 +3876,27 @@ namespace Amazon.StorageGateway
         /// notification before issuing additional requests. For more information, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-notification">Getting
         /// notified about file operations</a> in the <i>Storage Gateway User Guide</i>.
         /// </para>
-        ///  
+        ///  <important> <ul> <li> 
+        /// <para>
+        /// Wait at least 60 seconds between consecutive RefreshCache API requests.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// RefreshCache does not evict cache entries if invoked consecutively within 60 seconds
+        /// of a previous RefreshCache request.
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         /// If you invoke the RefreshCache API when two requests are already being processed,
         /// any new request will cause an <code>InvalidGatewayRequestException</code> error because
         /// too many requests were sent to the server.
         /// </para>
-        ///  
+        ///  </li> </ul> </important> <note> 
+        /// <para>
+        /// The S3 bucket name does not need to be included when entering the list of folders
+        /// in the FolderList parameter.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-notification">Getting
         /// notified about file operations</a> in the <i>Storage Gateway User Guide</i>.
@@ -4567,8 +4577,9 @@ namespace Amazon.StorageGateway
         /// <summary>
         /// Updates the bandwidth rate limits of a gateway. You can update both the upload and
         /// download bandwidth rate limit or specify only one of the two. If you don't set a bandwidth
-        /// rate limit, the existing rate limit remains. This operation is supported for the stored
-        /// volume, cached volume, and tape gateway types.
+        /// rate limit, the existing rate limit remains. This operation is supported only for
+        /// the stored volume, cached volume, and tape gateway types. To update bandwidth rate
+        /// limits for S3 file gateways, use <a>UpdateBandwidthRateLimitSchedule</a>.
         /// 
         ///  
         /// <para>
@@ -4631,7 +4642,8 @@ namespace Amazon.StorageGateway
         /// Updates the bandwidth rate limit schedule for a specified gateway. By default, gateways
         /// do not have bandwidth rate limit schedules, which means no bandwidth rate limiting
         /// is in effect. Use this to initiate or update a gateway's bandwidth rate limit schedule.
-        /// This operation is supported in the volume and tape gateway types.
+        /// This operation is supported only for volume, tape and S3 file gateways. FSx file gateways
+        /// do not support bandwidth rate limits.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateBandwidthRateLimitSchedule service method.</param>
         /// 

@@ -34,7 +34,7 @@ namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SSOIdentity Marshaller
-    /// </summary>       
+    /// </summary>
     public class SSOIdentityMarshaller : IRequestMarshaller<SSOIdentity, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SSOIdentityMarshaller Instance = new SSOIdentityMarshaller();
 
     }

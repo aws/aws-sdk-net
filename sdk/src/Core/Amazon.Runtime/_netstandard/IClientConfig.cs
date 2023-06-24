@@ -30,12 +30,12 @@ namespace Amazon.Runtime
         /// <summary>
         /// Gets the ProxyHost property.
         /// </summary>
-        string ProxyHost { get;  }
+        string ProxyHost { get; }
 
         /// <summary>
         /// Gets the ProxyPort property.
         /// </summary>
-        int ProxyPort { get;  }
+        int ProxyPort { get; }
 
         /// <summary>
         /// Returns a WebProxy instance configured to match the proxy settings

@@ -92,7 +92,7 @@ namespace Amazon.DynamoDBv2.Model
     /// If using Java, DynamoDB lists the cancellation reasons on the <code>CancellationReasons</code>
     /// property. This property is not set for other languages. Transaction cancellation reasons
     /// are ordered in the order of requested items, if an item has no error it will have
-    /// <code>NONE</code> code and <code>Null</code> message.
+    /// <code>None</code> code and <code>Null</code> message.
     /// </para>
     ///  </note> 
     /// <para>
@@ -104,7 +104,7 @@ namespace Amazon.DynamoDBv2.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Code: <code>NONE</code> 
+    /// Code: <code>None</code> 
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -209,7 +209,7 @@ namespace Amazon.DynamoDBv2.Model
     /// </para>
     ///  <note> 
     /// <para>
-    /// This message is returned when when writes get throttled on an On-Demand GSI as DynamoDB
+    /// This message is returned when writes get throttled on an On-Demand GSI as DynamoDB
     /// is automatically scaling the GSI.
     /// </para>
     ///  </note> </li> </ul> </li> </ul> </li> <li> 
@@ -366,7 +366,7 @@ namespace Amazon.DynamoDBv2.Model
         /// A list of cancellation reasons.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=25)]
+        [AWSProperty(Min=1, Max=100)]
         public List<CancellationReason> CancellationReasons
         {
             get { return this._cancellationReasons; }

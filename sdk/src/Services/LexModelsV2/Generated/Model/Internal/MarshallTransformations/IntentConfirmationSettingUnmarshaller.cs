@@ -70,10 +70,70 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.Active = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("codeHook", targetDepth))
+                {
+                    var unmarshaller = DialogCodeHookInvocationSettingUnmarshaller.Instance;
+                    unmarshalledObject.CodeHook = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("confirmationConditional", targetDepth))
+                {
+                    var unmarshaller = ConditionalSpecificationUnmarshaller.Instance;
+                    unmarshalledObject.ConfirmationConditional = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("confirmationNextStep", targetDepth))
+                {
+                    var unmarshaller = DialogStateUnmarshaller.Instance;
+                    unmarshalledObject.ConfirmationNextStep = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("confirmationResponse", targetDepth))
+                {
+                    var unmarshaller = ResponseSpecificationUnmarshaller.Instance;
+                    unmarshalledObject.ConfirmationResponse = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("declinationConditional", targetDepth))
+                {
+                    var unmarshaller = ConditionalSpecificationUnmarshaller.Instance;
+                    unmarshalledObject.DeclinationConditional = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("declinationNextStep", targetDepth))
+                {
+                    var unmarshaller = DialogStateUnmarshaller.Instance;
+                    unmarshalledObject.DeclinationNextStep = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("declinationResponse", targetDepth))
                 {
                     var unmarshaller = ResponseSpecificationUnmarshaller.Instance;
                     unmarshalledObject.DeclinationResponse = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("elicitationCodeHook", targetDepth))
+                {
+                    var unmarshaller = ElicitationCodeHookInvocationSettingUnmarshaller.Instance;
+                    unmarshalledObject.ElicitationCodeHook = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("failureConditional", targetDepth))
+                {
+                    var unmarshaller = ConditionalSpecificationUnmarshaller.Instance;
+                    unmarshalledObject.FailureConditional = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("failureNextStep", targetDepth))
+                {
+                    var unmarshaller = DialogStateUnmarshaller.Instance;
+                    unmarshalledObject.FailureNextStep = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("failureResponse", targetDepth))
+                {
+                    var unmarshaller = ResponseSpecificationUnmarshaller.Instance;
+                    unmarshalledObject.FailureResponse = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("promptSpecification", targetDepth))

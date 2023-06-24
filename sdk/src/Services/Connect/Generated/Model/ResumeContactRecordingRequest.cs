@@ -31,11 +31,11 @@ namespace Amazon.Connect.Model
     /// <summary>
     /// Container for the parameters to the ResumeContactRecording operation.
     /// When a contact is being recorded, and the recording has been suspended using SuspendContactRecording,
-    /// this API resumes recording the call.
+    /// this API resumes recording the call or screen.
     /// 
     ///  
     /// <para>
-    /// Only voice recordings are supported at this time.
+    /// Voice and screen recordings are supported.
     /// </para>
     /// </summary>
     public partial class ResumeContactRecordingRequest : AmazonConnectRequest
@@ -86,8 +86,8 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The identifier of the Amazon Connect instance. You can find the instanceId in the
-        /// ARN of the instance.
+        /// The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+        /// the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]

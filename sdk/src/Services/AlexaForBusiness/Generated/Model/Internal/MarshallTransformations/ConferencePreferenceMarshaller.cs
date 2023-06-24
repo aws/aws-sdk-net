@@ -34,7 +34,7 @@ namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ConferencePreference Marshaller
-    /// </summary>       
+    /// </summary>
     public class ConferencePreferenceMarshaller : IRequestMarshaller<ConferencePreference, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ConferencePreferenceMarshaller Instance = new ConferencePreferenceMarshaller();
 
     }

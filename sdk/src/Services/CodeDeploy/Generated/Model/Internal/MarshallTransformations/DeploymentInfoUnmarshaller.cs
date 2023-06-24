@@ -190,6 +190,12 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
                     unmarshalledObject.LoadBalancerInfo = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("overrideAlarmConfiguration", targetDepth))
+                {
+                    var unmarshaller = AlarmConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.OverrideAlarmConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("previousRevision", targetDepth))
                 {
                     var unmarshaller = RevisionLocationUnmarshaller.Instance;

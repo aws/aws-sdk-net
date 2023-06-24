@@ -82,6 +82,18 @@ namespace Amazon.IoTDeviceAdvisor.Model.Internal.MarshallTransformations
                     unmarshalledObject.IntendedForQualification = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("isLongDurationTest", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.IsLongDurationTest = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("protocol", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Protocol = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("suiteDefinitionId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

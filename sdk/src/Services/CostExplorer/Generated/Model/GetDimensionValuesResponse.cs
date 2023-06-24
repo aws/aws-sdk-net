@@ -113,7 +113,9 @@ namespace Amazon.CostExplorer.Model
         ///  </li> <li> 
         /// <para>
         /// RESOURCE_ID - The unique identifier of the resource. ResourceId is an opt-in feature
-        /// only available for last 14 days for EC2-Compute Service.
+        /// only available for last 14 days for EC2-Compute Service. You can opt-in by enabling
+        /// <code>Hourly</code> and <code>Resource Level Data</code> in Cost Management Console
+        /// preferences.
         /// </para>
         ///  </li> </ul> 
         /// <para>

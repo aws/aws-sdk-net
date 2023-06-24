@@ -34,7 +34,7 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RequestCancelExternalWorkflowExecutionDecisionAttributes Marshaller
-    /// </summary>       
+    /// </summary>
     public class RequestCancelExternalWorkflowExecutionDecisionAttributesMarshaller : IRequestMarshaller<RequestCancelExternalWorkflowExecutionDecisionAttributes, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RequestCancelExternalWorkflowExecutionDecisionAttributesMarshaller Instance = new RequestCancelExternalWorkflowExecutionDecisionAttributesMarshaller();
 
     }

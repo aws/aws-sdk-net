@@ -31,11 +31,11 @@ namespace Amazon.KinesisVideo.Model
     /// <summary>
     /// Container for the parameters to the TagStream operation.
     /// Adds one or more tags to a stream. A <i>tag</i> is a key-value pair (the value is
-    /// optional) that you can define and assign to AWS resources. If you specify a tag that
-    /// already exists, the tag value is replaced with the value that you specify in the request.
-    /// For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
-    /// Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
-    /// 
+    /// optional) that you can define and assign to Amazon Web Services resources. If you
+    /// specify a tag that already exists, the tag value is replaced with the value that you
+    /// specify in the request. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
+    /// Cost Allocation Tags</a> in the <i>Billing and Cost Management and Cost Management
+    /// User Guide</i>. 
     /// 
     ///  
     /// <para>
@@ -47,7 +47,7 @@ namespace Amazon.KinesisVideo.Model
     /// </para>
     ///  
     /// <para>
-    /// Kinesis video streams support up to 50 tags.
+    /// A Kinesis video stream can support up to 50 tags.
     /// </para>
     /// </summary>
     public partial class TagStreamRequest : AmazonKinesisVideoRequest

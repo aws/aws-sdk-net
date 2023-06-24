@@ -30,13 +30,26 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateLocalGatewayRoute operation.
-    /// Creates a static route for the specified local gateway route table.
+    /// Creates a static route for the specified local gateway route table. You must specify
+    /// one of the following targets: 
+    /// 
+    ///  <ul> <li> 
+    /// <para>
+    ///  <code>LocalGatewayVirtualInterfaceGroupId</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>NetworkInterfaceId</code> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class CreateLocalGatewayRouteRequest : AmazonEC2Request
     {
         private string _destinationCidrBlock;
+        private string _destinationPrefixListId;
         private string _localGatewayRouteTableId;
         private string _localGatewayVirtualInterfaceGroupId;
+        private string _networkInterfaceId;
 
         /// <summary>
         /// Gets and sets the property DestinationCidrBlock. 
@@ -45,7 +58,6 @@ namespace Amazon.EC2.Model
         /// specific match.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string DestinationCidrBlock
         {
             get { return this._destinationCidrBlock; }
@@ -56,6 +68,26 @@ namespace Amazon.EC2.Model
         internal bool IsSetDestinationCidrBlock()
         {
             return this._destinationCidrBlock != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DestinationPrefixListId. 
+        /// <para>
+        ///  The ID of the prefix list. Use a prefix list in place of <code>DestinationCidrBlock</code>.
+        /// You cannot use <code>DestinationPrefixListId</code> and <code>DestinationCidrBlock</code>
+        /// in the same request. 
+        /// </para>
+        /// </summary>
+        public string DestinationPrefixListId
+        {
+            get { return this._destinationPrefixListId; }
+            set { this._destinationPrefixListId = value; }
+        }
+
+        // Check to see if DestinationPrefixListId property is set
+        internal bool IsSetDestinationPrefixListId()
+        {
+            return this._destinationPrefixListId != null;
         }
 
         /// <summary>
@@ -83,7 +115,6 @@ namespace Amazon.EC2.Model
         /// The ID of the virtual interface group.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string LocalGatewayVirtualInterfaceGroupId
         {
             get { return this._localGatewayVirtualInterfaceGroupId; }
@@ -94,6 +125,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetLocalGatewayVirtualInterfaceGroupId()
         {
             return this._localGatewayVirtualInterfaceGroupId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkInterfaceId. 
+        /// <para>
+        /// The ID of the network interface.
+        /// </para>
+        /// </summary>
+        public string NetworkInterfaceId
+        {
+            get { return this._networkInterfaceId; }
+            set { this._networkInterfaceId = value; }
+        }
+
+        // Check to see if NetworkInterfaceId property is set
+        internal bool IsSetNetworkInterfaceId()
+        {
+            return this._networkInterfaceId != null;
         }
 
     }

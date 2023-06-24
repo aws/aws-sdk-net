@@ -70,6 +70,12 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
                     unmarshalledObject.AnomalyReportedTimeRange = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("AnomalyResources", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<AnomalyResource, AnomalyResourceUnmarshaller>(AnomalyResourceUnmarshaller.Instance);
+                    unmarshalledObject.AnomalyResources = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("AnomalyTimeRange", targetDepth))
                 {
                     var unmarshaller = AnomalyTimeRangeUnmarshaller.Instance;
@@ -80,6 +86,12 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AssociatedInsightId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Description", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Description = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Id", targetDepth))
@@ -116,6 +128,12 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = AnomalySourceDetailsUnmarshaller.Instance;
                     unmarshalledObject.SourceDetails = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SourceMetadata", targetDepth))
+                {
+                    var unmarshaller = AnomalySourceMetadataUnmarshaller.Instance;
+                    unmarshalledObject.SourceMetadata = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Status", targetDepth))

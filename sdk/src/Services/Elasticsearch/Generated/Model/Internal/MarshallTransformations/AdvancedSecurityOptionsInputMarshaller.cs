@@ -34,7 +34,7 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AdvancedSecurityOptionsInput Marshaller
-    /// </summary>       
+    /// </summary>
     public class AdvancedSecurityOptionsInputMarshaller : IRequestMarshaller<AdvancedSecurityOptionsInput, JsonMarshallerContext> 
     {
         /// <summary>
@@ -45,6 +45,12 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AdvancedSecurityOptionsInput requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAnonymousAuthEnabled())
+            {
+                context.Writer.WritePropertyName("AnonymousAuthEnabled");
+                context.Writer.Write(requestObject.AnonymousAuthEnabled);
+            }
+
             if(requestObject.IsSetEnabled())
             {
                 context.Writer.WritePropertyName("Enabled");
@@ -83,7 +89,7 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AdvancedSecurityOptionsInputMarshaller Instance = new AdvancedSecurityOptionsInputMarshaller();
 
     }

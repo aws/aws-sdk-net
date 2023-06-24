@@ -88,7 +88,6 @@ namespace Amazon.IoT.Model
         /// </para>
         ///  </note>
         /// </summary>
-        [AWSProperty(Min=1, Max=64)]
         public string NamespaceId
         {
             get { return this._namespaceId; }
@@ -146,6 +145,13 @@ namespace Amazon.IoT.Model
         /// a job will run on a thing when the thing is added to a target group, even after the
         /// job was completed by all things originally in the group. 
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// We recommend that you use continuous jobs instead of snapshot jobs for dynamic thing
+        /// group targets. By using continuous jobs, devices that join the group receive the job
+        /// execution even after the job has been created.
+        /// </para>
+        ///  </note>
         /// </summary>
         public TargetSelection TargetSelection
         {

@@ -70,6 +70,18 @@ namespace Amazon.SecretsManager.Model.Internal.MarshallTransformations
                     unmarshalledObject.AutomaticallyAfterDays = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Duration", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Duration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ScheduleExpression", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ScheduleExpression = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

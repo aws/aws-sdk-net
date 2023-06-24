@@ -34,7 +34,7 @@ namespace Amazon.CloudWatchEvents.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RunCommandParameters Marshaller
-    /// </summary>       
+    /// </summary>
     public class RunCommandParametersMarshaller : IRequestMarshaller<RunCommandParameters, JsonMarshallerContext> 
     {
         /// <summary>
@@ -65,7 +65,7 @@ namespace Amazon.CloudWatchEvents.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RunCommandParametersMarshaller Instance = new RunCommandParametersMarshaller();
 
     }

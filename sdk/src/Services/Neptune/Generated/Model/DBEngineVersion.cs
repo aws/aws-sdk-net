@@ -42,6 +42,7 @@ namespace Amazon.Neptune.Model
         private List<string> _exportableLogTypes = new List<string>();
         private List<CharacterSet> _supportedCharacterSets = new List<CharacterSet>();
         private List<Timezone> _supportedTimezones = new List<Timezone>();
+        private bool? _supportsGlobalDatabases;
         private bool? _supportsLogExportsToCloudwatchLogs;
         private bool? _supportsReadReplica;
         private List<UpgradeTarget> _validUpgradeTarget = new List<UpgradeTarget>();
@@ -208,6 +209,25 @@ namespace Amazon.Neptune.Model
         internal bool IsSetSupportedTimezones()
         {
             return this._supportedTimezones != null && this._supportedTimezones.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SupportsGlobalDatabases. 
+        /// <para>
+        /// A value that indicates whether you can use Aurora global databases with a specific
+        /// DB engine version.
+        /// </para>
+        /// </summary>
+        public bool SupportsGlobalDatabases
+        {
+            get { return this._supportsGlobalDatabases.GetValueOrDefault(); }
+            set { this._supportsGlobalDatabases = value; }
+        }
+
+        // Check to see if SupportsGlobalDatabases property is set
+        internal bool IsSetSupportsGlobalDatabases()
+        {
+            return this._supportsGlobalDatabases.HasValue; 
         }
 
         /// <summary>

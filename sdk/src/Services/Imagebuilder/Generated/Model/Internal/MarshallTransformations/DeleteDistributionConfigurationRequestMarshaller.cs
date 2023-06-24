@@ -55,7 +55,7 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
         public IRequest Marshall(DeleteDistributionConfigurationRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Imagebuilder");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-12-02";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-12-02";
             request.HttpMethod = "DELETE";
 
             

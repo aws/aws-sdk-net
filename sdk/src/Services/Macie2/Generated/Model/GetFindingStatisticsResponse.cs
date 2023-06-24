@@ -38,7 +38,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property CountsByGroup. 
         /// <para>
-        /// An array of objects, one for each group of findings that meet the filter criteria
+        /// An array of objects, one for each group of findings that matches the filter criteria
         /// specified in the request.
         /// </para>
         /// </summary>

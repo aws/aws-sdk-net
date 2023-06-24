@@ -34,7 +34,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// QueueQuickConnectConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class QueueQuickConnectConfigMarshaller : IRequestMarshaller<QueueQuickConnectConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static QueueQuickConnectConfigMarshaller Instance = new QueueQuickConnectConfigMarshaller();
 
     }

@@ -26,6 +26,8 @@ namespace Amazon.Runtime.Internal.Util
     public class ProfileIniFile : IniFile
     {
         private const string ProfileMarker = "profile";
+        private const string SsoSessionMarker = "sso-session";
+
         public bool ProfileMarkerRequired { get; set; }
         public override HashSet<string> ListSectionNames()
         {
@@ -51,18 +53,48 @@ namespace Amazon.Runtime.Internal.Util
 
         public override bool TryGetSection(string sectionName, out Dictionary<string, string> properties)
         {
+            return this.TryGetSection(sectionName, isSsoSession: false, out properties);
+        }
+
+        public bool TryGetSection(string sectionName, bool isSsoSession, out Dictionary<string, string> properties)
+        {
             bool hasCredentialsProperties = false;
             properties = null;
 
-            if (!ProfileMarkerRequired)
+            if (!ProfileMarkerRequired && !isSsoSession)
                 hasCredentialsProperties = base.TryGetSection(sectionName, out properties);
 
             if (!hasCredentialsProperties)
             {
-                var credentialSectionNameRegex = new Regex("^" + ProfileMarker + "[ \\t]+" + Regex.Escape(sectionName) + "$", RegexOptions.Singleline);
+                var marker = isSsoSession ? SsoSessionMarker : ProfileMarker;
+
+                var credentialSectionNameRegex = new Regex("^" + marker + "[ \\t]+" + Regex.Escape(sectionName) + "$", RegexOptions.Singleline);
                 hasCredentialsProperties = this.TryGetSection(credentialSectionNameRegex, out properties);
             }
             return hasCredentialsProperties;
+        }
+
+        public override void EditSection(string sectionName, SortedDictionary<string, string> properties)
+        {
+            this.EditSection(sectionName, isSsoSession: false, properties);
+        }
+
+        public void EditSection(string sectionName, bool isSsoSession, SortedDictionary<string, string> properties)
+        {
+            if (!ProfileMarkerRequired && !isSsoSession)
+            {
+                base.EditSection(sectionName, properties);
+                return;
+            }
+
+            var marker = isSsoSession ? SsoSessionMarker : ProfileMarker;
+
+            var credentialSectionNameRegex = new Regex("^" + marker + "[ \\t]+" + Regex.Escape(sectionName) + "$", RegexOptions.Singleline);
+
+            if(SectionExists(credentialSectionNameRegex, out var fullSectionName))
+            {
+                base.EditSection(fullSectionName, properties);
+            }
         }
 
     }

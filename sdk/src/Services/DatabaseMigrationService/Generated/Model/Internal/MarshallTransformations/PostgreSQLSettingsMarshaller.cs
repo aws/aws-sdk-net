@@ -34,7 +34,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// PostgreSQLSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class PostgreSQLSettingsMarshaller : IRequestMarshaller<PostgreSQLSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -99,6 +99,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.HeartbeatSchema);
             }
 
+            if(requestObject.IsSetMapBooleanAsBoolean())
+            {
+                context.Writer.WritePropertyName("MapBooleanAsBoolean");
+                context.Writer.Write(requestObject.MapBooleanAsBoolean);
+            }
+
             if(requestObject.IsSetMaxFileSize())
             {
                 context.Writer.WritePropertyName("MaxFileSize");
@@ -147,6 +153,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.SlotName);
             }
 
+            if(requestObject.IsSetTrimSpaceInChar())
+            {
+                context.Writer.WritePropertyName("TrimSpaceInChar");
+                context.Writer.Write(requestObject.TrimSpaceInChar);
+            }
+
             if(requestObject.IsSetUsername())
             {
                 context.Writer.WritePropertyName("Username");
@@ -157,7 +169,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static PostgreSQLSettingsMarshaller Instance = new PostgreSQLSettingsMarshaller();
 
     }

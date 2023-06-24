@@ -29,10 +29,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DLM.Model
 {
     /// <summary>
-    /// Specifies a backup schedule for a snapshot or AMI lifecycle policy.
+    /// <b>[Snapshot and AMI policies only]</b> Specifies a schedule for a snapshot or AMI
+    /// lifecycle policy.
     /// </summary>
     public partial class Schedule
     {
+        private ArchiveRule _archiveRule;
         private bool? _copyTags;
         private CreateRule _createRule;
         private List<CrossRegionCopyRule> _crossRegionCopyRules = new List<CrossRegionCopyRule>();
@@ -43,6 +45,33 @@ namespace Amazon.DLM.Model
         private List<ShareRule> _shareRules = new List<ShareRule>();
         private List<Tag> _tagsToAdd = new List<Tag>();
         private List<Tag> _variableTags = new List<Tag>();
+
+        /// <summary>
+        /// Gets and sets the property ArchiveRule. 
+        /// <para>
+        ///  <b>[Snapshot policies that target volumes only]</b> The snapshot archiving rule for
+        /// the schedule. When you specify an archiving rule, snapshots are automatically moved
+        /// from the standard tier to the archive tier once the schedule's retention threshold
+        /// is met. Snapshots are then retained in the archive tier for the archive retention
+        /// period that you specify. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about using snapshot archiving, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshot-ami-policy.html#dlm-archive">Considerations
+        /// for snapshot lifecycle policies</a>.
+        /// </para>
+        /// </summary>
+        public ArchiveRule ArchiveRule
+        {
+            get { return this._archiveRule; }
+            set { this._archiveRule = value; }
+        }
+
+        // Check to see if ArchiveRule property is set
+        internal bool IsSetArchiveRule()
+        {
+            return this._archiveRule != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CopyTags. 
@@ -84,15 +113,15 @@ namespace Amazon.DLM.Model
         /// <summary>
         /// Gets and sets the property CrossRegionCopyRules. 
         /// <para>
-        /// The rule for cross-Region snapshot copies.
+        /// Specifies a rule for copying snapshots or AMIs across regions.
         /// </para>
-        ///  
+        ///  <note> 
         /// <para>
-        /// You can only specify cross-Region copy rules for policies that create snapshots in
-        /// a Region. If the policy creates snapshots on an Outpost, then you cannot copy the
-        /// snapshots to a Region or to an Outpost. If the policy creates snapshots in a Region,
-        /// then snapshots can be copied to up to three Regions or Outposts.
+        /// You can't specify cross-Region copy rules for policies that create snapshots on an
+        /// Outpost. If the policy creates snapshots in a Region, then snapshots can be copied
+        /// to up to three Regions or Outposts.
         /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=0, Max=3)]
         public List<CrossRegionCopyRule> CrossRegionCopyRules
@@ -110,7 +139,7 @@ namespace Amazon.DLM.Model
         /// <summary>
         /// Gets and sets the property DeprecateRule. 
         /// <para>
-        /// The AMI deprecation rule for the schedule.
+        ///  <b>[AMI policies only]</b> The AMI deprecation rule for the schedule.
         /// </para>
         /// </summary>
         public DeprecateRule DeprecateRule
@@ -128,7 +157,7 @@ namespace Amazon.DLM.Model
         /// <summary>
         /// Gets and sets the property FastRestoreRule. 
         /// <para>
-        /// The rule for enabling fast snapshot restore.
+        ///  <b>[Snapshot policies only]</b> The rule for enabling fast snapshot restore.
         /// </para>
         /// </summary>
         public FastRestoreRule FastRestoreRule
@@ -165,7 +194,7 @@ namespace Amazon.DLM.Model
         /// <summary>
         /// Gets and sets the property RetainRule. 
         /// <para>
-        /// The retention rule.
+        /// The retention rule for snapshots or AMIs created by the policy.
         /// </para>
         /// </summary>
         public RetainRule RetainRule
@@ -183,7 +212,8 @@ namespace Amazon.DLM.Model
         /// <summary>
         /// Gets and sets the property ShareRules. 
         /// <para>
-        /// The rule for sharing snapshots with other Amazon Web Services accounts.
+        ///  <b>[Snapshot policies only]</b> The rule for sharing snapshots with other Amazon
+        /// Web Services accounts.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]
@@ -222,10 +252,11 @@ namespace Amazon.DLM.Model
         /// <summary>
         /// Gets and sets the property VariableTags. 
         /// <para>
-        /// A collection of key/value pairs with values determined dynamically when the policy
-        /// is executed. Keys may be any valid Amazon EC2 tag key. Values must be in one of the
-        /// two following formats: <code>$(instance-id)</code> or <code>$(timestamp)</code>. Variable
-        /// tags are only valid for EBS Snapshot Management – Instance policies.
+        ///  <b>[AMI policies and snapshot policies that target instances only]</b> A collection
+        /// of key/value pairs with values determined dynamically when the policy is executed.
+        /// Keys may be any valid Amazon EC2 tag key. Values must be in one of the two following
+        /// formats: <code>$(instance-id)</code> or <code>$(timestamp)</code>. Variable tags are
+        /// only valid for EBS Snapshot Management – Instance policies.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=45)]

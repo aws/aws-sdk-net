@@ -30,19 +30,13 @@ namespace Amazon.DataSync.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateTaskExecution operation.
-    /// Updates execution of a task.
+    /// Modifies a running DataSync task.
     /// 
-    ///  
-    /// <para>
-    /// You can modify bandwidth throttling for a task execution that is running or queued.
-    /// For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/working-with-task-executions.html#adjust-bandwidth-throttling">Adjusting
-    /// Bandwidth Throttling for a Task Execution</a>.
-    /// </para>
     ///  <note> 
     /// <para>
-    /// The only <code>Option</code> that can be modified by <code>UpdateTaskExecution</code>
+    /// Currently, the only <code>Option</code> that you can modify with <code>UpdateTaskExecution</code>
     /// is <code> <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_Options.html#DataSync-Type-Options-BytesPerSecond">BytesPerSecond</a>
-    /// </code>.
+    /// </code>, which throttles bandwidth for a running or queued task.
     /// </para>
     ///  </note>
     /// </summary>
@@ -70,8 +64,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property TaskExecutionArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the specific task execution that is being updated.
-        /// 
+        /// Specifies the Amazon Resource Name (ARN) of the task execution that you're updating.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=128)]

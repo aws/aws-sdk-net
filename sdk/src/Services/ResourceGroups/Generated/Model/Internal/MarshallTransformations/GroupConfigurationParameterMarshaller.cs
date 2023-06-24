@@ -34,7 +34,7 @@ namespace Amazon.ResourceGroups.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// GroupConfigurationParameter Marshaller
-    /// </summary>       
+    /// </summary>
     public class GroupConfigurationParameterMarshaller : IRequestMarshaller<GroupConfigurationParameter, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.ResourceGroups.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static GroupConfigurationParameterMarshaller Instance = new GroupConfigurationParameterMarshaller();
 
     }

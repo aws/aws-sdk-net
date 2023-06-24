@@ -34,7 +34,7 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AlarmConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class AlarmConfigurationMarshaller : IRequestMarshaller<AlarmConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -77,7 +77,7 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AlarmConfigurationMarshaller Instance = new AlarmConfigurationMarshaller();
 
     }

@@ -38,15 +38,17 @@ namespace Amazon.MigrationHubStrategyRecommendations
     /// <summary>
     /// Implementation for accessing MigrationHubStrategyRecommendations
     ///
-    /// Migration Hub Strategy Recommendations
+    /// Migration Hub Strategy Recommendations 
+    /// <para>
+    /// This API reference provides descriptions, syntax, and other details about each of
+    /// the actions and data types for Migration Hub Strategy Recommendations (Strategy Recommendations).
+    /// The topic for each action shows the API request parameters and the response. Alternatively,
+    /// you can use one of the AWS SDKs to access an API that is tailored to the programming
+    /// language or platform that you're using. For more information, see <a href="http://aws.amazon.com/tools/#SDKs">AWS
+    /// SDKs</a>.
     /// 
-    ///  <pre><code> &lt;p&gt;This API reference provides descriptions, syntax, and other
-    /// details about each of the actions and data types for Migration Hub Strategy Recommendations
-    /// (Strategy Recommendations). The topic for each action shows the API request parameters
-    /// and the response. Alternatively, you can use one of the AWS SDKs to access an API
-    /// that is tailored to the programming language or platform that you're using. For more
-    /// information, see &lt;a href=&quot;http://aws.amazon.com/tools/#SDKs&quot;&gt;AWS SDKs&lt;/a&gt;.&lt;/p&gt;
-    /// </code></pre>
+    /// 
+    /// </para>
     /// </summary>
     public partial class AmazonMigrationHubStrategyRecommendationsClient : AmazonServiceClient, IAmazonMigrationHubStrategyRecommendations
     {
@@ -237,6 +239,15 @@ namespace Amazon.MigrationHubStrategyRecommendations
         }    
 
         /// <summary>
+        /// Customize the pipeline
+        /// </summary>
+        /// <param name="pipeline"></param>
+        protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
+        {
+            pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonMigrationHubStrategyRecommendationsEndpointResolver());
+        }    
+        /// <summary>
         /// Capture metadata for the service.
         /// </summary>
         protected override IServiceMetadata ServiceMetadata
@@ -392,8 +403,8 @@ namespace Amazon.MigrationHubStrategyRecommendations
         /// 
         /// <returns>The response from the GetAssessment service method, as returned by MigrationHubStrategyRecommendations.</returns>
         /// <exception cref="Amazon.MigrationHubStrategyRecommendations.Model.AccessDeniedException">
-        /// The AWS user account does not have permission to perform the action. Check the AWS
-        /// Identity and Access Management (IAM) policy associated with this account.
+        /// The user does not have permission to perform the action. Check the AWS Identity and
+        /// Access Management (IAM) policy associated with this user.
         /// </exception>
         /// <exception cref="Amazon.MigrationHubStrategyRecommendations.Model.InternalServerException">
         /// The server experienced an internal error. Try again.
@@ -425,8 +436,8 @@ namespace Amazon.MigrationHubStrategyRecommendations
         /// 
         /// <returns>The response from the GetAssessment service method, as returned by MigrationHubStrategyRecommendations.</returns>
         /// <exception cref="Amazon.MigrationHubStrategyRecommendations.Model.AccessDeniedException">
-        /// The AWS user account does not have permission to perform the action. Check the AWS
-        /// Identity and Access Management (IAM) policy associated with this account.
+        /// The user does not have permission to perform the action. Check the AWS Identity and
+        /// Access Management (IAM) policy associated with this user.
         /// </exception>
         /// <exception cref="Amazon.MigrationHubStrategyRecommendations.Model.InternalServerException">
         /// The server experienced an internal error. Try again.
@@ -459,8 +470,8 @@ namespace Amazon.MigrationHubStrategyRecommendations
         /// 
         /// <returns>The response from the GetImportFileTask service method, as returned by MigrationHubStrategyRecommendations.</returns>
         /// <exception cref="Amazon.MigrationHubStrategyRecommendations.Model.AccessDeniedException">
-        /// The AWS user account does not have permission to perform the action. Check the AWS
-        /// Identity and Access Management (IAM) policy associated with this account.
+        /// The user does not have permission to perform the action. Check the AWS Identity and
+        /// Access Management (IAM) policy associated with this user.
         /// </exception>
         /// <exception cref="Amazon.MigrationHubStrategyRecommendations.Model.InternalServerException">
         /// The server experienced an internal error. Try again.
@@ -495,8 +506,8 @@ namespace Amazon.MigrationHubStrategyRecommendations
         /// 
         /// <returns>The response from the GetImportFileTask service method, as returned by MigrationHubStrategyRecommendations.</returns>
         /// <exception cref="Amazon.MigrationHubStrategyRecommendations.Model.AccessDeniedException">
-        /// The AWS user account does not have permission to perform the action. Check the AWS
-        /// Identity and Access Management (IAM) policy associated with this account.
+        /// The user does not have permission to perform the action. Check the AWS Identity and
+        /// Access Management (IAM) policy associated with this user.
         /// </exception>
         /// <exception cref="Amazon.MigrationHubStrategyRecommendations.Model.InternalServerException">
         /// The server experienced an internal error. Try again.
@@ -522,6 +533,73 @@ namespace Amazon.MigrationHubStrategyRecommendations
 
         #endregion
         
+        #region  GetLatestAssessmentId
+
+
+        /// <summary>
+        /// Retrieve the latest ID of a specific assessment task.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetLatestAssessmentId service method.</param>
+        /// 
+        /// <returns>The response from the GetLatestAssessmentId service method, as returned by MigrationHubStrategyRecommendations.</returns>
+        /// <exception cref="Amazon.MigrationHubStrategyRecommendations.Model.AccessDeniedException">
+        /// The user does not have permission to perform the action. Check the AWS Identity and
+        /// Access Management (IAM) policy associated with this user.
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHubStrategyRecommendations.Model.DependencyException">
+        /// Dependency encountered an error.
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHubStrategyRecommendations.Model.InternalServerException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHubStrategyRecommendations.Model.ValidationException">
+        /// The request body isn't valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhubstrategy-2020-02-19/GetLatestAssessmentId">REST API Reference for GetLatestAssessmentId Operation</seealso>
+        public virtual GetLatestAssessmentIdResponse GetLatestAssessmentId(GetLatestAssessmentIdRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetLatestAssessmentIdRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetLatestAssessmentIdResponseUnmarshaller.Instance;
+
+            return Invoke<GetLatestAssessmentIdResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieve the latest ID of a specific assessment task.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetLatestAssessmentId service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetLatestAssessmentId service method, as returned by MigrationHubStrategyRecommendations.</returns>
+        /// <exception cref="Amazon.MigrationHubStrategyRecommendations.Model.AccessDeniedException">
+        /// The user does not have permission to perform the action. Check the AWS Identity and
+        /// Access Management (IAM) policy associated with this user.
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHubStrategyRecommendations.Model.DependencyException">
+        /// Dependency encountered an error.
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHubStrategyRecommendations.Model.InternalServerException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHubStrategyRecommendations.Model.ValidationException">
+        /// The request body isn't valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhubstrategy-2020-02-19/GetLatestAssessmentId">REST API Reference for GetLatestAssessmentId Operation</seealso>
+        public virtual Task<GetLatestAssessmentIdResponse> GetLatestAssessmentIdAsync(GetLatestAssessmentIdRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetLatestAssessmentIdRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetLatestAssessmentIdResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetLatestAssessmentIdResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetPortfolioPreferences
 
 
@@ -532,8 +610,8 @@ namespace Amazon.MigrationHubStrategyRecommendations
         /// 
         /// <returns>The response from the GetPortfolioPreferences service method, as returned by MigrationHubStrategyRecommendations.</returns>
         /// <exception cref="Amazon.MigrationHubStrategyRecommendations.Model.AccessDeniedException">
-        /// The AWS user account does not have permission to perform the action. Check the AWS
-        /// Identity and Access Management (IAM) policy associated with this account.
+        /// The user does not have permission to perform the action. Check the AWS Identity and
+        /// Access Management (IAM) policy associated with this user.
         /// </exception>
         /// <exception cref="Amazon.MigrationHubStrategyRecommendations.Model.InternalServerException">
         /// The server experienced an internal error. Try again.
@@ -565,8 +643,8 @@ namespace Amazon.MigrationHubStrategyRecommendations
         /// 
         /// <returns>The response from the GetPortfolioPreferences service method, as returned by MigrationHubStrategyRecommendations.</returns>
         /// <exception cref="Amazon.MigrationHubStrategyRecommendations.Model.AccessDeniedException">
-        /// The AWS user account does not have permission to perform the action. Check the AWS
-        /// Identity and Access Management (IAM) policy associated with this account.
+        /// The user does not have permission to perform the action. Check the AWS Identity and
+        /// Access Management (IAM) policy associated with this user.
         /// </exception>
         /// <exception cref="Amazon.MigrationHubStrategyRecommendations.Model.InternalServerException">
         /// The server experienced an internal error. Try again.
@@ -600,8 +678,8 @@ namespace Amazon.MigrationHubStrategyRecommendations
         /// 
         /// <returns>The response from the GetPortfolioSummary service method, as returned by MigrationHubStrategyRecommendations.</returns>
         /// <exception cref="Amazon.MigrationHubStrategyRecommendations.Model.AccessDeniedException">
-        /// The AWS user account does not have permission to perform the action. Check the AWS
-        /// Identity and Access Management (IAM) policy associated with this account.
+        /// The user does not have permission to perform the action. Check the AWS Identity and
+        /// Access Management (IAM) policy associated with this user.
         /// </exception>
         /// <exception cref="Amazon.MigrationHubStrategyRecommendations.Model.InternalServerException">
         /// The server experienced an internal error. Try again.
@@ -631,8 +709,8 @@ namespace Amazon.MigrationHubStrategyRecommendations
         /// 
         /// <returns>The response from the GetPortfolioSummary service method, as returned by MigrationHubStrategyRecommendations.</returns>
         /// <exception cref="Amazon.MigrationHubStrategyRecommendations.Model.AccessDeniedException">
-        /// The AWS user account does not have permission to perform the action. Check the AWS
-        /// Identity and Access Management (IAM) policy associated with this account.
+        /// The user does not have permission to perform the action. Check the AWS Identity and
+        /// Access Management (IAM) policy associated with this user.
         /// </exception>
         /// <exception cref="Amazon.MigrationHubStrategyRecommendations.Model.InternalServerException">
         /// The server experienced an internal error. Try again.
@@ -662,8 +740,8 @@ namespace Amazon.MigrationHubStrategyRecommendations
         /// 
         /// <returns>The response from the GetRecommendationReportDetails service method, as returned by MigrationHubStrategyRecommendations.</returns>
         /// <exception cref="Amazon.MigrationHubStrategyRecommendations.Model.AccessDeniedException">
-        /// The AWS user account does not have permission to perform the action. Check the AWS
-        /// Identity and Access Management (IAM) policy associated with this account.
+        /// The user does not have permission to perform the action. Check the AWS Identity and
+        /// Access Management (IAM) policy associated with this user.
         /// </exception>
         /// <exception cref="Amazon.MigrationHubStrategyRecommendations.Model.InternalServerException">
         /// The server experienced an internal error. Try again.
@@ -698,8 +776,8 @@ namespace Amazon.MigrationHubStrategyRecommendations
         /// 
         /// <returns>The response from the GetRecommendationReportDetails service method, as returned by MigrationHubStrategyRecommendations.</returns>
         /// <exception cref="Amazon.MigrationHubStrategyRecommendations.Model.AccessDeniedException">
-        /// The AWS user account does not have permission to perform the action. Check the AWS
-        /// Identity and Access Management (IAM) policy associated with this account.
+        /// The user does not have permission to perform the action. Check the AWS Identity and
+        /// Access Management (IAM) policy associated with this user.
         /// </exception>
         /// <exception cref="Amazon.MigrationHubStrategyRecommendations.Model.InternalServerException">
         /// The server experienced an internal error. Try again.
@@ -735,8 +813,8 @@ namespace Amazon.MigrationHubStrategyRecommendations
         /// 
         /// <returns>The response from the GetServerDetails service method, as returned by MigrationHubStrategyRecommendations.</returns>
         /// <exception cref="Amazon.MigrationHubStrategyRecommendations.Model.AccessDeniedException">
-        /// The AWS user account does not have permission to perform the action. Check the AWS
-        /// Identity and Access Management (IAM) policy associated with this account.
+        /// The user does not have permission to perform the action. Check the AWS Identity and
+        /// Access Management (IAM) policy associated with this user.
         /// </exception>
         /// <exception cref="Amazon.MigrationHubStrategyRecommendations.Model.InternalServerException">
         /// The server experienced an internal error. Try again.
@@ -771,8 +849,8 @@ namespace Amazon.MigrationHubStrategyRecommendations
         /// 
         /// <returns>The response from the GetServerDetails service method, as returned by MigrationHubStrategyRecommendations.</returns>
         /// <exception cref="Amazon.MigrationHubStrategyRecommendations.Model.AccessDeniedException">
-        /// The AWS user account does not have permission to perform the action. Check the AWS
-        /// Identity and Access Management (IAM) policy associated with this account.
+        /// The user does not have permission to perform the action. Check the AWS Identity and
+        /// Access Management (IAM) policy associated with this user.
         /// </exception>
         /// <exception cref="Amazon.MigrationHubStrategyRecommendations.Model.InternalServerException">
         /// The server experienced an internal error. Try again.
@@ -808,8 +886,8 @@ namespace Amazon.MigrationHubStrategyRecommendations
         /// 
         /// <returns>The response from the GetServerStrategies service method, as returned by MigrationHubStrategyRecommendations.</returns>
         /// <exception cref="Amazon.MigrationHubStrategyRecommendations.Model.AccessDeniedException">
-        /// The AWS user account does not have permission to perform the action. Check the AWS
-        /// Identity and Access Management (IAM) policy associated with this account.
+        /// The user does not have permission to perform the action. Check the AWS Identity and
+        /// Access Management (IAM) policy associated with this user.
         /// </exception>
         /// <exception cref="Amazon.MigrationHubStrategyRecommendations.Model.InternalServerException">
         /// The server experienced an internal error. Try again.
@@ -844,8 +922,8 @@ namespace Amazon.MigrationHubStrategyRecommendations
         /// 
         /// <returns>The response from the GetServerStrategies service method, as returned by MigrationHubStrategyRecommendations.</returns>
         /// <exception cref="Amazon.MigrationHubStrategyRecommendations.Model.AccessDeniedException">
-        /// The AWS user account does not have permission to perform the action. Check the AWS
-        /// Identity and Access Management (IAM) policy associated with this account.
+        /// The user does not have permission to perform the action. Check the AWS Identity and
+        /// Access Management (IAM) policy associated with this user.
         /// </exception>
         /// <exception cref="Amazon.MigrationHubStrategyRecommendations.Model.InternalServerException">
         /// The server experienced an internal error. Try again.
@@ -881,8 +959,8 @@ namespace Amazon.MigrationHubStrategyRecommendations
         /// 
         /// <returns>The response from the ListApplicationComponents service method, as returned by MigrationHubStrategyRecommendations.</returns>
         /// <exception cref="Amazon.MigrationHubStrategyRecommendations.Model.AccessDeniedException">
-        /// The AWS user account does not have permission to perform the action. Check the AWS
-        /// Identity and Access Management (IAM) policy associated with this account.
+        /// The user does not have permission to perform the action. Check the AWS Identity and
+        /// Access Management (IAM) policy associated with this user.
         /// </exception>
         /// <exception cref="Amazon.MigrationHubStrategyRecommendations.Model.InternalServerException">
         /// The server experienced an internal error. Try again.
@@ -914,8 +992,8 @@ namespace Amazon.MigrationHubStrategyRecommendations
         /// 
         /// <returns>The response from the ListApplicationComponents service method, as returned by MigrationHubStrategyRecommendations.</returns>
         /// <exception cref="Amazon.MigrationHubStrategyRecommendations.Model.AccessDeniedException">
-        /// The AWS user account does not have permission to perform the action. Check the AWS
-        /// Identity and Access Management (IAM) policy associated with this account.
+        /// The user does not have permission to perform the action. Check the AWS Identity and
+        /// Access Management (IAM) policy associated with this user.
         /// </exception>
         /// <exception cref="Amazon.MigrationHubStrategyRecommendations.Model.InternalServerException">
         /// The server experienced an internal error. Try again.
@@ -948,8 +1026,8 @@ namespace Amazon.MigrationHubStrategyRecommendations
         /// 
         /// <returns>The response from the ListCollectors service method, as returned by MigrationHubStrategyRecommendations.</returns>
         /// <exception cref="Amazon.MigrationHubStrategyRecommendations.Model.AccessDeniedException">
-        /// The AWS user account does not have permission to perform the action. Check the AWS
-        /// Identity and Access Management (IAM) policy associated with this account.
+        /// The user does not have permission to perform the action. Check the AWS Identity and
+        /// Access Management (IAM) policy associated with this user.
         /// </exception>
         /// <exception cref="Amazon.MigrationHubStrategyRecommendations.Model.InternalServerException">
         /// The server experienced an internal error. Try again.
@@ -981,8 +1059,8 @@ namespace Amazon.MigrationHubStrategyRecommendations
         /// 
         /// <returns>The response from the ListCollectors service method, as returned by MigrationHubStrategyRecommendations.</returns>
         /// <exception cref="Amazon.MigrationHubStrategyRecommendations.Model.AccessDeniedException">
-        /// The AWS user account does not have permission to perform the action. Check the AWS
-        /// Identity and Access Management (IAM) policy associated with this account.
+        /// The user does not have permission to perform the action. Check the AWS Identity and
+        /// Access Management (IAM) policy associated with this user.
         /// </exception>
         /// <exception cref="Amazon.MigrationHubStrategyRecommendations.Model.InternalServerException">
         /// The server experienced an internal error. Try again.
@@ -1015,8 +1093,8 @@ namespace Amazon.MigrationHubStrategyRecommendations
         /// 
         /// <returns>The response from the ListImportFileTask service method, as returned by MigrationHubStrategyRecommendations.</returns>
         /// <exception cref="Amazon.MigrationHubStrategyRecommendations.Model.AccessDeniedException">
-        /// The AWS user account does not have permission to perform the action. Check the AWS
-        /// Identity and Access Management (IAM) policy associated with this account.
+        /// The user does not have permission to perform the action. Check the AWS Identity and
+        /// Access Management (IAM) policy associated with this user.
         /// </exception>
         /// <exception cref="Amazon.MigrationHubStrategyRecommendations.Model.InternalServerException">
         /// The server experienced an internal error. Try again.
@@ -1048,8 +1126,8 @@ namespace Amazon.MigrationHubStrategyRecommendations
         /// 
         /// <returns>The response from the ListImportFileTask service method, as returned by MigrationHubStrategyRecommendations.</returns>
         /// <exception cref="Amazon.MigrationHubStrategyRecommendations.Model.AccessDeniedException">
-        /// The AWS user account does not have permission to perform the action. Check the AWS
-        /// Identity and Access Management (IAM) policy associated with this account.
+        /// The user does not have permission to perform the action. Check the AWS Identity and
+        /// Access Management (IAM) policy associated with this user.
         /// </exception>
         /// <exception cref="Amazon.MigrationHubStrategyRecommendations.Model.InternalServerException">
         /// The server experienced an internal error. Try again.
@@ -1082,8 +1160,8 @@ namespace Amazon.MigrationHubStrategyRecommendations
         /// 
         /// <returns>The response from the ListServers service method, as returned by MigrationHubStrategyRecommendations.</returns>
         /// <exception cref="Amazon.MigrationHubStrategyRecommendations.Model.AccessDeniedException">
-        /// The AWS user account does not have permission to perform the action. Check the AWS
-        /// Identity and Access Management (IAM) policy associated with this account.
+        /// The user does not have permission to perform the action. Check the AWS Identity and
+        /// Access Management (IAM) policy associated with this user.
         /// </exception>
         /// <exception cref="Amazon.MigrationHubStrategyRecommendations.Model.InternalServerException">
         /// The server experienced an internal error. Try again.
@@ -1115,8 +1193,8 @@ namespace Amazon.MigrationHubStrategyRecommendations
         /// 
         /// <returns>The response from the ListServers service method, as returned by MigrationHubStrategyRecommendations.</returns>
         /// <exception cref="Amazon.MigrationHubStrategyRecommendations.Model.AccessDeniedException">
-        /// The AWS user account does not have permission to perform the action. Check the AWS
-        /// Identity and Access Management (IAM) policy associated with this account.
+        /// The user does not have permission to perform the action. Check the AWS Identity and
+        /// Access Management (IAM) policy associated with this user.
         /// </exception>
         /// <exception cref="Amazon.MigrationHubStrategyRecommendations.Model.InternalServerException">
         /// The server experienced an internal error. Try again.
@@ -1149,8 +1227,8 @@ namespace Amazon.MigrationHubStrategyRecommendations
         /// 
         /// <returns>The response from the PutPortfolioPreferences service method, as returned by MigrationHubStrategyRecommendations.</returns>
         /// <exception cref="Amazon.MigrationHubStrategyRecommendations.Model.AccessDeniedException">
-        /// The AWS user account does not have permission to perform the action. Check the AWS
-        /// Identity and Access Management (IAM) policy associated with this account.
+        /// The user does not have permission to perform the action. Check the AWS Identity and
+        /// Access Management (IAM) policy associated with this user.
         /// </exception>
         /// <exception cref="Amazon.MigrationHubStrategyRecommendations.Model.ConflictException">
         /// Exception to indicate that there is an ongoing task when a new task is created. Return
@@ -1186,8 +1264,8 @@ namespace Amazon.MigrationHubStrategyRecommendations
         /// 
         /// <returns>The response from the PutPortfolioPreferences service method, as returned by MigrationHubStrategyRecommendations.</returns>
         /// <exception cref="Amazon.MigrationHubStrategyRecommendations.Model.AccessDeniedException">
-        /// The AWS user account does not have permission to perform the action. Check the AWS
-        /// Identity and Access Management (IAM) policy associated with this account.
+        /// The user does not have permission to perform the action. Check the AWS Identity and
+        /// Access Management (IAM) policy associated with this user.
         /// </exception>
         /// <exception cref="Amazon.MigrationHubStrategyRecommendations.Model.ConflictException">
         /// Exception to indicate that there is an ongoing task when a new task is created. Return
@@ -1224,8 +1302,8 @@ namespace Amazon.MigrationHubStrategyRecommendations
         /// 
         /// <returns>The response from the StartAssessment service method, as returned by MigrationHubStrategyRecommendations.</returns>
         /// <exception cref="Amazon.MigrationHubStrategyRecommendations.Model.AccessDeniedException">
-        /// The AWS user account does not have permission to perform the action. Check the AWS
-        /// Identity and Access Management (IAM) policy associated with this account.
+        /// The user does not have permission to perform the action. Check the AWS Identity and
+        /// Access Management (IAM) policy associated with this user.
         /// </exception>
         /// <exception cref="Amazon.MigrationHubStrategyRecommendations.Model.InternalServerException">
         /// The server experienced an internal error. Try again.
@@ -1258,8 +1336,8 @@ namespace Amazon.MigrationHubStrategyRecommendations
         /// 
         /// <returns>The response from the StartAssessment service method, as returned by MigrationHubStrategyRecommendations.</returns>
         /// <exception cref="Amazon.MigrationHubStrategyRecommendations.Model.AccessDeniedException">
-        /// The AWS user account does not have permission to perform the action. Check the AWS
-        /// Identity and Access Management (IAM) policy associated with this account.
+        /// The user does not have permission to perform the action. Check the AWS Identity and
+        /// Access Management (IAM) policy associated with this user.
         /// </exception>
         /// <exception cref="Amazon.MigrationHubStrategyRecommendations.Model.InternalServerException">
         /// The server experienced an internal error. Try again.
@@ -1293,8 +1371,8 @@ namespace Amazon.MigrationHubStrategyRecommendations
         /// 
         /// <returns>The response from the StartImportFileTask service method, as returned by MigrationHubStrategyRecommendations.</returns>
         /// <exception cref="Amazon.MigrationHubStrategyRecommendations.Model.AccessDeniedException">
-        /// The AWS user account does not have permission to perform the action. Check the AWS
-        /// Identity and Access Management (IAM) policy associated with this account.
+        /// The user does not have permission to perform the action. Check the AWS Identity and
+        /// Access Management (IAM) policy associated with this user.
         /// </exception>
         /// <exception cref="Amazon.MigrationHubStrategyRecommendations.Model.InternalServerException">
         /// The server experienced an internal error. Try again.
@@ -1330,8 +1408,8 @@ namespace Amazon.MigrationHubStrategyRecommendations
         /// 
         /// <returns>The response from the StartImportFileTask service method, as returned by MigrationHubStrategyRecommendations.</returns>
         /// <exception cref="Amazon.MigrationHubStrategyRecommendations.Model.AccessDeniedException">
-        /// The AWS user account does not have permission to perform the action. Check the AWS
-        /// Identity and Access Management (IAM) policy associated with this account.
+        /// The user does not have permission to perform the action. Check the AWS Identity and
+        /// Access Management (IAM) policy associated with this user.
         /// </exception>
         /// <exception cref="Amazon.MigrationHubStrategyRecommendations.Model.InternalServerException">
         /// The server experienced an internal error. Try again.
@@ -1368,8 +1446,8 @@ namespace Amazon.MigrationHubStrategyRecommendations
         /// 
         /// <returns>The response from the StartRecommendationReportGeneration service method, as returned by MigrationHubStrategyRecommendations.</returns>
         /// <exception cref="Amazon.MigrationHubStrategyRecommendations.Model.AccessDeniedException">
-        /// The AWS user account does not have permission to perform the action. Check the AWS
-        /// Identity and Access Management (IAM) policy associated with this account.
+        /// The user does not have permission to perform the action. Check the AWS Identity and
+        /// Access Management (IAM) policy associated with this user.
         /// </exception>
         /// <exception cref="Amazon.MigrationHubStrategyRecommendations.Model.ConflictException">
         /// Exception to indicate that there is an ongoing task when a new task is created. Return
@@ -1405,8 +1483,8 @@ namespace Amazon.MigrationHubStrategyRecommendations
         /// 
         /// <returns>The response from the StartRecommendationReportGeneration service method, as returned by MigrationHubStrategyRecommendations.</returns>
         /// <exception cref="Amazon.MigrationHubStrategyRecommendations.Model.AccessDeniedException">
-        /// The AWS user account does not have permission to perform the action. Check the AWS
-        /// Identity and Access Management (IAM) policy associated with this account.
+        /// The user does not have permission to perform the action. Check the AWS Identity and
+        /// Access Management (IAM) policy associated with this user.
         /// </exception>
         /// <exception cref="Amazon.MigrationHubStrategyRecommendations.Model.ConflictException">
         /// Exception to indicate that there is an ongoing task when a new task is created. Return
@@ -1443,8 +1521,8 @@ namespace Amazon.MigrationHubStrategyRecommendations
         /// 
         /// <returns>The response from the StopAssessment service method, as returned by MigrationHubStrategyRecommendations.</returns>
         /// <exception cref="Amazon.MigrationHubStrategyRecommendations.Model.AccessDeniedException">
-        /// The AWS user account does not have permission to perform the action. Check the AWS
-        /// Identity and Access Management (IAM) policy associated with this account.
+        /// The user does not have permission to perform the action. Check the AWS Identity and
+        /// Access Management (IAM) policy associated with this user.
         /// </exception>
         /// <exception cref="Amazon.MigrationHubStrategyRecommendations.Model.InternalServerException">
         /// The server experienced an internal error. Try again.
@@ -1476,8 +1554,8 @@ namespace Amazon.MigrationHubStrategyRecommendations
         /// 
         /// <returns>The response from the StopAssessment service method, as returned by MigrationHubStrategyRecommendations.</returns>
         /// <exception cref="Amazon.MigrationHubStrategyRecommendations.Model.AccessDeniedException">
-        /// The AWS user account does not have permission to perform the action. Check the AWS
-        /// Identity and Access Management (IAM) policy associated with this account.
+        /// The user does not have permission to perform the action. Check the AWS Identity and
+        /// Access Management (IAM) policy associated with this user.
         /// </exception>
         /// <exception cref="Amazon.MigrationHubStrategyRecommendations.Model.InternalServerException">
         /// The server experienced an internal error. Try again.

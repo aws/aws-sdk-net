@@ -34,7 +34,7 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// EndTimeRange Marshaller
-    /// </summary>       
+    /// </summary>
     public class EndTimeRangeMarshaller : IRequestMarshaller<EndTimeRange, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static EndTimeRangeMarshaller Instance = new EndTimeRangeMarshaller();
 
     }

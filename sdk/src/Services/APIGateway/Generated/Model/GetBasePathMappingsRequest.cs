@@ -30,7 +30,7 @@ namespace Amazon.APIGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the GetBasePathMappings operation.
-    /// Represents a collection of <a>BasePathMapping</a> resources.
+    /// Represents a collection of BasePathMapping resources.
     /// </summary>
     public partial class GetBasePathMappingsRequest : AmazonAPIGatewayRequest
     {
@@ -41,7 +41,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property DomainName. 
         /// <para>
-        /// [Required] The domain name of a <a>BasePathMapping</a> resource.
+        /// The domain name of a BasePathMapping resource.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

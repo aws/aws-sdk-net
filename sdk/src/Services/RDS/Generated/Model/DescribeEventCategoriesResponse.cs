@@ -38,7 +38,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property EventCategoriesMapList. 
         /// <para>
-        /// A list of EventCategoriesMap data types.
+        /// A list of <code>EventCategoriesMap</code> data types.
         /// </para>
         /// </summary>
         public List<EventCategoriesMap> EventCategoriesMapList

@@ -56,7 +56,7 @@ namespace Amazon.CodeGuruProfiler.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CodeGuruProfiler");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-07-18";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-07-18";
             request.HttpMethod = "POST";
 
             if (!publicRequest.IsSetProfilingGroupName())
@@ -70,12 +70,18 @@ namespace Amazon.CodeGuruProfiler.Model.Internal.MarshallTransformations
                 
             request.ResourcePath = "/profilingGroups/{profilingGroupName}/agentProfile";
             request.ContentStream =  publicRequest.AgentProfile ?? new MemoryStream();
-            request.Headers[Amazon.Util.HeaderKeys.ContentLengthHeader] =  
+            request.Headers[Amazon.Util.HeaderKeys.ContentLengthHeader] =
                 request.ContentStream.Length.ToString(CultureInfo.InvariantCulture);
-            request.Headers[Amazon.Util.HeaderKeys.ContentTypeHeader] = "binary/octet-stream";
+            request.Headers[Amazon.Util.HeaderKeys.ContentTypeHeader] = "binary/octet-stream"; 
+            if (request.ContentStream != null && request.ContentStream.Length == 0)
+            {
+                request.Headers.Remove(Amazon.Util.HeaderKeys.ContentTypeHeader);
+            }
         
-            if(publicRequest.IsSetContentType())
+            if (publicRequest.IsSetContentType()) 
+            {
                 request.Headers["Content-Type"] = publicRequest.ContentType;
+            }
             request.UseQueryString = true;
 
             return request;

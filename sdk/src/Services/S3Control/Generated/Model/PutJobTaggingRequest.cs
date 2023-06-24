@@ -83,8 +83,8 @@ namespace Amazon.S3Control.Model
     /// </para>
     ///  </li> </ul> </li> </ul> </note>  
     /// <para>
-    /// To use this action, you must have permission to perform the <code>s3:PutJobTagging</code>
-    /// action.
+    /// To use the <code>PutJobTagging</code> operation, you must have permission to perform
+    /// the <code>s3:PutJobTagging</code> action.
     /// </para>
     ///  
     /// <para>
@@ -92,7 +92,7 @@ namespace Amazon.S3Control.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateJob.html">CreatJob</a>
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateJob.html">CreateJob</a>
     /// 
     /// </para>
     ///  </li> <li> 

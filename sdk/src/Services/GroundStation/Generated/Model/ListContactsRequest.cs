@@ -52,7 +52,7 @@ namespace Amazon.GroundStation.Model
         /// <summary>
         /// Gets and sets the property EndTime. 
         /// <para>
-        /// End time of a contact.
+        /// End time of a contact in UTC.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -74,6 +74,7 @@ namespace Amazon.GroundStation.Model
         /// Name of a ground station.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=4, Max=500)]
         public string GroundStation
         {
             get { return this._groundStation; }
@@ -92,6 +93,7 @@ namespace Amazon.GroundStation.Model
         /// Maximum number of contacts returned.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=100)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -129,6 +131,7 @@ namespace Amazon.GroundStation.Model
         /// to get the next page of results.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=3, Max=1000)]
         public string NextToken
         {
             get { return this._nextToken; }
@@ -162,7 +165,7 @@ namespace Amazon.GroundStation.Model
         /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
-        /// Start time of a contact.
+        /// Start time of a contact in UTC.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -184,7 +187,7 @@ namespace Amazon.GroundStation.Model
         /// Status of a contact reservation.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=0, Max=500)]
         public List<string> StatusList
         {
             get { return this._statusList; }

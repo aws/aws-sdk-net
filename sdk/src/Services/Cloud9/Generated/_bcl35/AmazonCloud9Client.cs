@@ -300,6 +300,15 @@ namespace Amazon.Cloud9
         }
 
         /// <summary>
+        /// Customize the pipeline
+        /// </summary>
+        /// <param name="pipeline"></param>
+        protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
+        {
+            pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonCloud9EndpointResolver());
+        }
+        /// <summary>
         /// Capture metadata for the service.
         /// </summary>
         protected override IServiceMetadata ServiceMetadata
@@ -555,7 +564,7 @@ namespace Amazon.Cloud9
         #region  DeleteEnvironmentMembership
 
         /// <summary>
-        /// Deletes an environment member from an Cloud9 development environment.
+        /// Deletes an environment member from a development environment.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteEnvironmentMembership service method.</param>
         /// 

@@ -34,12 +34,15 @@ namespace Amazon.RDS.Model
     public partial class OptionGroup
     {
         private bool? _allowsVpcAndNonVpcInstanceMemberships;
+        private DateTime? _copyTimestamp;
         private string _engineName;
         private string _majorEngineVersion;
         private string _optionGroupArn;
         private string _optionGroupDescription;
         private string _optionGroupName;
         private List<Option> _options = new List<Option>();
+        private string _sourceAccountId;
+        private string _sourceOptionGroup;
         private string _vpcId;
 
         /// <summary>
@@ -47,7 +50,7 @@ namespace Amazon.RDS.Model
         /// <para>
         /// Indicates whether this option group can be applied to both VPC and non-VPC instances.
         /// The value <code>true</code> indicates the option group can be applied to both VPC
-        /// and non-VPC instances. 
+        /// and non-VPC instances.
         /// </para>
         /// </summary>
         public bool AllowsVpcAndNonVpcInstanceMemberships
@@ -60,6 +63,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetAllowsVpcAndNonVpcInstanceMemberships()
         {
             return this._allowsVpcAndNonVpcInstanceMemberships.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CopyTimestamp. 
+        /// <para>
+        /// Indicates when the option group was copied.
+        /// </para>
+        /// </summary>
+        public DateTime CopyTimestamp
+        {
+            get { return this._copyTimestamp.GetValueOrDefault(); }
+            set { this._copyTimestamp = value; }
+        }
+
+        // Check to see if CopyTimestamp property is set
+        internal bool IsSetCopyTimestamp()
+        {
+            return this._copyTimestamp.HasValue; 
         }
 
         /// <summary>
@@ -101,7 +122,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property OptionGroupArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) for the option group.
+        /// Specifies the Amazon Resource Name (ARN) for the option group.
         /// </para>
         /// </summary>
         public string OptionGroupArn
@@ -171,13 +192,50 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SourceAccountId. 
+        /// <para>
+        /// Specifies the Amazon Web Services account ID for the option group from which this
+        /// option group is copied.
+        /// </para>
+        /// </summary>
+        public string SourceAccountId
+        {
+            get { return this._sourceAccountId; }
+            set { this._sourceAccountId = value; }
+        }
+
+        // Check to see if SourceAccountId property is set
+        internal bool IsSetSourceAccountId()
+        {
+            return this._sourceAccountId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceOptionGroup. 
+        /// <para>
+        /// Specifies the name of the option group from which this option group is copied.
+        /// </para>
+        /// </summary>
+        public string SourceOptionGroup
+        {
+            get { return this._sourceOptionGroup; }
+            set { this._sourceOptionGroup = value; }
+        }
+
+        // Check to see if SourceOptionGroup property is set
+        internal bool IsSetSourceOptionGroup()
+        {
+            return this._sourceOptionGroup != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property VpcId. 
         /// <para>
         /// If <b>AllowsVpcAndNonVpcInstanceMemberships</b> is <code>false</code>, this field
         /// is blank. If <b>AllowsVpcAndNonVpcInstanceMemberships</b> is <code>true</code> and
         /// this field is blank, then this option group can be applied to both VPC and non-VPC
         /// instances. If this field contains a value, then this option group can only be applied
-        /// to instances that are in the VPC indicated by this field. 
+        /// to instances that are in the VPC indicated by this field.
         /// </para>
         /// </summary>
         public string VpcId

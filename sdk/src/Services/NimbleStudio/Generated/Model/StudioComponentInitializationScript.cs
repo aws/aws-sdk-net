@@ -61,7 +61,7 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property Platform. 
         /// <para>
-        /// The platform of the initialization script, either WINDOWS or LINUX.
+        /// The platform of the initialization script, either Windows or Linux.
         /// </para>
         /// </summary>
         public LaunchProfilePlatform Platform
@@ -100,7 +100,7 @@ namespace Amazon.NimbleStudio.Model
         /// The initialization script.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=5120)]
+        [AWSProperty(Sensitive=true, Min=1, Max=5120)]
         public string Script
         {
             get { return this._script; }

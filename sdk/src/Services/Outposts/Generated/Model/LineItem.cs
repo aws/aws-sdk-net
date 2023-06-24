@@ -33,10 +33,32 @@ namespace Amazon.Outposts.Model
     /// </summary>
     public partial class LineItem
     {
+        private List<LineItemAssetInformation> _assetInformationList = new List<LineItemAssetInformation>();
         private string _catalogItemId;
         private string _lineItemId;
+        private string _previousLineItemId;
+        private string _previousOrderId;
         private int? _quantity;
+        private ShipmentInformation _shipmentInformation;
         private LineItemStatus _status;
+
+        /// <summary>
+        /// Gets and sets the property AssetInformationList. 
+        /// <para>
+        ///  Information about assets. 
+        /// </para>
+        /// </summary>
+        public List<LineItemAssetInformation> AssetInformationList
+        {
+            get { return this._assetInformationList; }
+            set { this._assetInformationList = value; }
+        }
+
+        // Check to see if AssetInformationList property is set
+        internal bool IsSetAssetInformationList()
+        {
+            return this._assetInformationList != null && this._assetInformationList.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property CatalogItemId. 
@@ -76,6 +98,43 @@ namespace Amazon.Outposts.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PreviousLineItemId. 
+        /// <para>
+        /// The ID of the previous line item.
+        /// </para>
+        /// </summary>
+        public string PreviousLineItemId
+        {
+            get { return this._previousLineItemId; }
+            set { this._previousLineItemId = value; }
+        }
+
+        // Check to see if PreviousLineItemId property is set
+        internal bool IsSetPreviousLineItemId()
+        {
+            return this._previousLineItemId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PreviousOrderId. 
+        /// <para>
+        /// The ID of the previous order.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=20)]
+        public string PreviousOrderId
+        {
+            get { return this._previousOrderId; }
+            set { this._previousOrderId = value; }
+        }
+
+        // Check to see if PreviousOrderId property is set
+        internal bool IsSetPreviousOrderId()
+        {
+            return this._previousOrderId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Quantity. 
         /// <para>
         /// The quantity of the line item.
@@ -92,6 +151,24 @@ namespace Amazon.Outposts.Model
         internal bool IsSetQuantity()
         {
             return this._quantity.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ShipmentInformation. 
+        /// <para>
+        ///  Information about a line item shipment. 
+        /// </para>
+        /// </summary>
+        public ShipmentInformation ShipmentInformation
+        {
+            get { return this._shipmentInformation; }
+            set { this._shipmentInformation = value; }
+        }
+
+        // Check to see if ShipmentInformation property is set
+        internal bool IsSetShipmentInformation()
+        {
+            return this._shipmentInformation != null;
         }
 
         /// <summary>

@@ -34,7 +34,7 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// LambdaVolumeMount Marshaller
-    /// </summary>       
+    /// </summary>
     public class LambdaVolumeMountMarshaller : IRequestMarshaller<LambdaVolumeMount, JsonMarshallerContext> 
     {
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static LambdaVolumeMountMarshaller Instance = new LambdaVolumeMountMarshaller();
 
     }

@@ -43,6 +43,10 @@ namespace Amazon.FSx.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
+    /// Amazon FSx for OpenZFS
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     /// Amazon FSx for Windows File Server
     /// </para>
     ///  </li> </ul> 
@@ -73,21 +77,9 @@ namespace Amazon.FSx.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Returns the description of the file system.
+    /// Returns the description of the file system in JSON format.
     /// </para>
-    ///  </li> </ul> 
-    /// <para>
-    /// This operation requires a client request token in the request that Amazon FSx uses
-    /// to ensure idempotent creation. This means that calling the operation multiple times
-    /// with the same client request token has no effect. By using the idempotent operation,
-    /// you can retry a <code>CreateFileSystem</code> operation without the risk of creating
-    /// an extra file system. This approach can be useful when an initial call fails in a
-    /// way that makes it unclear whether a file system was created. Examples are if a transport-level
-    /// timeout occurred, or your connection was reset. If you use the same client request
-    /// token and the initial call created a file system, the client receives a success message
-    /// as long as the parameters are the same.
-    /// </para>
-    ///  <note> 
+    ///  </li> </ul> <note> 
     /// <para>
     /// The <code>CreateFileSystem</code> call returns while the file system's lifecycle state
     /// is still <code>CREATING</code>. You can check the file-system creation status by calling
@@ -115,7 +107,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property ClientRequestToken. 
         /// <para>
-        /// A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent creation.
+        /// A string of up to 63 ASCII characters that Amazon FSx uses to ensure idempotent creation.
         /// This string is automatically filled on your behalf when you use the Command Line Interface
         /// (CLI) or an Amazon Web Services SDK.
         /// </para>
@@ -358,7 +350,7 @@ namespace Amazon.FSx.Model
         ///  </li> <li> 
         /// <para>
         /// Set to <code>HDD</code> to use hard disk drive storage. HDD is supported on <code>SINGLE_AZ_2</code>
-        /// and <code>MULTI_AZ_1</code> Windows file system deployment types, and on <code>PERSISTENT</code>
+        /// and <code>MULTI_AZ_1</code> Windows file system deployment types, and on <code>PERSISTENT_1</code>
         /// Lustre file system deployment types. 
         /// </para>
         ///  </li> </ul> 

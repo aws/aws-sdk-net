@@ -37,6 +37,7 @@ namespace Amazon.AmplifyUIBuilder.Model
         private List<Predicate> _and = new List<Predicate>();
         private string _field;
         private string _operand;
+        private string _operandType;
         private string _operator;
         private List<Predicate> _or = new List<Predicate>();
 
@@ -92,6 +93,24 @@ namespace Amazon.AmplifyUIBuilder.Model
         internal bool IsSetOperand()
         {
             return this._operand != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OperandType. 
+        /// <para>
+        /// The type of value to use when performing the evaluation.
+        /// </para>
+        /// </summary>
+        public string OperandType
+        {
+            get { return this._operandType; }
+            set { this._operandType = value; }
+        }
+
+        // Check to see if OperandType property is set
+        internal bool IsSetOperandType()
+        {
+            return this._operandType != null;
         }
 
         /// <summary>

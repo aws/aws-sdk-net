@@ -34,7 +34,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ExecutionProperty Marshaller
-    /// </summary>       
+    /// </summary>
     public class ExecutionPropertyMarshaller : IRequestMarshaller<ExecutionProperty, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ExecutionPropertyMarshaller Instance = new ExecutionPropertyMarshaller();
 
     }

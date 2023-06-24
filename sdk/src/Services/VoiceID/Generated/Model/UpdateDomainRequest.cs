@@ -47,7 +47,7 @@ namespace Amazon.VoiceID.Model
         /// A brief description about this domain.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Sensitive=true, Min=1, Max=1024)]
         public string Description
         {
             get { return this._description; }
@@ -85,7 +85,7 @@ namespace Amazon.VoiceID.Model
         /// The name of the domain.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=256)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=256)]
         public string Name
         {
             get { return this._name; }
@@ -101,10 +101,11 @@ namespace Amazon.VoiceID.Model
         /// <summary>
         /// Gets and sets the property ServerSideEncryptionConfiguration. 
         /// <para>
-        /// The configuration, containing the KMS Key Identifier, to be used by Voice ID for the
-        /// server-side encryption of your data. Note that all the existing data in the domain
-        /// are still encrypted using the existing key, only the data added to domain after updating
-        /// the key is encrypted using the new key. 
+        /// The configuration, containing the KMS key identifier, to be used by Voice ID for the
+        /// server-side encryption of your data. Changing the domain's associated KMS key immediately
+        /// triggers an asynchronous process to remove dependency on the old KMS key, such that
+        /// the domain's data can only be accessed using the new KMS key. The domain's <code>ServerSideEncryptionUpdateDetails</code>
+        /// contains the details for this process.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

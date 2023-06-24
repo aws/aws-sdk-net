@@ -30,7 +30,8 @@ namespace Amazon.DevOpsGuru.Model
 {
     /// <summary>
     /// Information about whether DevOps Guru is configured to create an OpsItem in Amazon
-    /// Web Services Systems Manager OpsCenter for each created insight.
+    /// Web Services Systems Manager OpsCenter for each created insight. You can use this
+    /// to update the configuration.
     /// </summary>
     public partial class OpsCenterIntegrationConfig
     {

@@ -42,7 +42,7 @@ namespace Amazon.GroundStation.Model
         /// UUID of a satellite.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string SatelliteId
         {
             get { return this._satelliteId; }

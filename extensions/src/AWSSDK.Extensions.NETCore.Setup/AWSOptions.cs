@@ -45,11 +45,26 @@ namespace Amazon.Extensions.NETCore.Setup
         /// The AWS region the service client should use when making service operations.
         /// </summary>
         public RegionEndpoint Region { get; set; }
+     
+        /// <summary>
+        /// If set this role will be assumed using the resolved AWS credentials.
+        /// </summary>
+        public string SessionRoleArn { get; set; }
+
+        /// <summary>
+        /// The session name for the assumed session using the SessionRoleArn.
+        /// </summary>
+        public string SessionName { get; set; } = "DefaultSessionName";
 
         /// <summary>
         /// AWS Credentials used for creating service clients. If this is set it overrides the Profile property.
         /// </summary>
         public AWSCredentials Credentials { get; set; }
+
+        /// <summary>
+        /// The default configuration mode set for created service clients.
+        /// </summary>
+        public DefaultConfigurationMode? DefaultConfigurationMode { get; set; }
 
         private ClientConfig _defaultClientConfig;
 
@@ -66,15 +81,17 @@ namespace Amazon.Extensions.NETCore.Setup
 
                 return this._defaultClientConfig;
             }
-        }
-
-        internal bool IsDefaultClientConfigSet
-        {
-            get
+            internal set
             {
-                return this._defaultClientConfig != null;
+                this._defaultClientConfig = value;
             }
         }
+
+        /// <summary>
+        /// Logging settings that should be applied to SDK global configuration. This setting is applied while creating
+        /// the service client through this package.
+        /// </summary>
+        public LoggingSetting Logging { get; set; }
 
         /// <summary>
         /// Create a service client for the specified service interface using the options set in this instance.
@@ -86,6 +103,34 @@ namespace Amazon.Extensions.NETCore.Setup
         public T CreateServiceClient<T>() where T : IAmazonService
         {
             return (T)ClientFactory.CreateServiceClient(null, typeof(T), this);
+        }
+
+        /// <summary>
+        /// Container for logging settings of the SDK
+        /// </summary>
+        public class LoggingSetting
+        {
+            /// <summary>
+            /// Logging destination.
+            /// </summary>
+            public LoggingOptions? LogTo { get; set; }
+
+            /// <summary>
+            /// When to log responses.
+            /// </summary>
+            public ResponseLoggingOption? LogResponses { get; set; }
+
+            /// <summary>
+            /// Gets or sets the size limit in bytes for logged responses. If logging for response
+            ///     body is enabled, logged response body is limited to this size. The SDK defaults to 1KB if this property is net set.
+            /// </summary>
+            public int? LogResponsesSizeLimit { get; set; }
+
+            /// <summary>
+            /// Whether or not to log SDK metrics.
+            /// </summary>
+            public bool? LogMetrics { get; set; }
+
         }
     }
 }

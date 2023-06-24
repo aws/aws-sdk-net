@@ -30,9 +30,7 @@ namespace Amazon.DataSync.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeLocationObjectStorage operation.
-    /// Returns metadata about a self-managed object storage server location. For more information
-    /// about self-managed object storage locations, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-object-location.html">Creating
-    /// a location for object storage</a>.
+    /// Returns metadata about your DataSync location for an object storage system.
     /// </summary>
     public partial class DescribeLocationObjectStorageRequest : AmazonDataSyncRequest
     {
@@ -41,8 +39,8 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property LocationArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the self-managed object storage server location
-        /// that was described.
+        /// The Amazon Resource Name (ARN) of the object storage system location that you want
+        /// information about.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=128)]

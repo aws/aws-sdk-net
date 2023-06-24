@@ -33,22 +33,32 @@ namespace Amazon.ECS.Model
     /// Runs and maintains your desired number of tasks from a specified task definition.
     /// If the number of tasks running in a service drops below the <code>desiredCount</code>,
     /// Amazon ECS runs another copy of the task in the specified cluster. To update an existing
-    /// service, see the UpdateService action.
+    /// service, see the <a>UpdateService</a> action.
     /// 
-    ///  
+    ///  <note> 
+    /// <para>
+    /// Starting April 15, 2023, Amazon Web Services will not onboard new customers to Amazon
+    /// Elastic Inference (EI), and will help current customers migrate their workloads to
+    /// options that offer better price and performance. After April 15, 2023, new customers
+    /// will not be able to launch instances with Amazon EI accelerators in Amazon SageMaker,
+    /// Amazon ECS, or Amazon EC2. However, customers who have used Amazon EI at least once
+    /// during the past 30-day period are considered current customers and will be able to
+    /// continue using the service. 
+    /// </para>
+    ///  </note> 
     /// <para>
     /// In addition to maintaining the desired count of tasks in your service, you can optionally
     /// run your service behind one or more load balancers. The load balancers distribute
     /// traffic across the tasks that are associated with the service. For more information,
     /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service
-    /// Load Balancing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+    /// load balancing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
     /// </para>
     ///  
     /// <para>
     /// Tasks for services that don't use a load balancer are considered healthy if they're
     /// in the <code>RUNNING</code> state. Tasks for services that use a load balancer are
-    /// considered healthy if they're in the <code>RUNNING</code> state and the container
-    /// instance that they're hosted on is reported as healthy by the load balancer.
+    /// considered healthy if they're in the <code>RUNNING</code> state and are reported as
+    /// healthy by the load balancer.
     /// </para>
     ///  
     /// <para>
@@ -60,7 +70,7 @@ namespace Amazon.ECS.Model
     /// desired number of tasks across your cluster. By default, the service scheduler spreads
     /// tasks across Availability Zones. You can use task placement strategies and constraints
     /// to customize task placement decisions. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Service
-    /// Scheduler Concepts</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+    /// scheduler concepts</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -71,7 +81,7 @@ namespace Amazon.ECS.Model
     /// When using this strategy, you don't need to specify a desired number of tasks, a task
     /// placement strategy, or use Service Auto Scaling policies. For more information, see
     /// <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Service
-    /// Scheduler Concepts</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+    /// scheduler concepts</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -129,39 +139,14 @@ namespace Amazon.ECS.Model
     /// you can specify only parameters that aren't controlled at the task set level. The
     /// only required parameter is the service name. You control your services using the <a>CreateTaskSet</a>
     /// operation. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
-    /// ECS Deployment Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+    /// ECS deployment types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
     /// </para>
     ///  
     /// <para>
-    /// When the service scheduler launches new tasks, it determines task placement in your
-    /// cluster using the following logic:
+    /// When the service scheduler launches new tasks, it determines task placement. For information
+    /// about task placement and task placement strategies, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement.html">Amazon
+    /// ECS task placement</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
     /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    /// Determine which of the container instances in your cluster can support the task definition
-    /// of your service. For example, they have the required CPU, memory, ports, and container
-    /// instance attributes.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// By default, the service scheduler attempts to balance tasks across Availability Zones
-    /// in this manner. This is the case even if you can choose a different placement strategy
-    /// with the <code>placementStrategy</code> parameter.
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    /// Sort the valid container instances, giving priority to instances that have the fewest
-    /// number of running tasks for this service in their respective Availability Zone. For
-    /// example, if zone A has one running service task and zones B and C each have zero,
-    /// valid container instances in either zone B or C are considered optimal for placement.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// Place the new service task on a valid container instance in an optimal Availability
-    /// Zone based on the previous steps, favoring container instances with the fewest number
-    /// of running tasks for this service.
-    /// </para>
-    ///  </li> </ul> </li> </ul>
     /// </summary>
     public partial class CreateServiceRequest : AmazonECSRequest
     {
@@ -183,6 +168,7 @@ namespace Amazon.ECS.Model
         private PropagateTags _propagateTags;
         private string _role;
         private SchedulingStrategy _schedulingStrategy;
+        private ServiceConnectConfiguration _serviceConnectConfiguration;
         private string _serviceName;
         private List<ServiceRegistry> _serviceRegistries = new List<ServiceRegistry>();
         private List<Tag> _tags = new List<Tag>();
@@ -297,7 +283,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property DesiredCount. 
         /// <para>
         /// The number of instantiations of the specified task definition to place and keep running
-        /// on your cluster.
+        /// in your service.
         /// </para>
         ///  
         /// <para>
@@ -321,10 +307,15 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property EnableECSManagedTags. 
         /// <para>
-        /// Specifies whether to enable Amazon ECS managed tags for the tasks within the service.
+        /// Specifies whether to turn on Amazon ECS managed tags for the tasks within the service.
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging
-        /// Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service Developer
+        /// your Amazon ECS resources</a> in the <i>Amazon Elastic Container Service Developer
         /// Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you use Amazon ECS managed tags, you need to set the <code>propagateTags</code>
+        /// request parameter.
         /// </para>
         /// </summary>
         public bool EnableECSManagedTags
@@ -342,9 +333,9 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property EnableExecuteCommand. 
         /// <para>
-        /// Determines whether the execute command functionality is enabled for the service. If
-        /// <code>true</code>, this enables execute command functionality on all containers in
-        /// the service tasks.
+        /// Determines whether the execute command functionality is turned on for the service.
+        /// If <code>true</code>, this enables execute command functionality on all containers
+        /// in the service tasks.
         /// </para>
         /// </summary>
         public bool EnableExecuteCommand
@@ -367,6 +358,12 @@ namespace Amazon.ECS.Model
         /// only used when your service is configured to use a load balancer. If your service
         /// has a load balancer defined and you don't specify a health check grace period value,
         /// the default value of <code>0</code> is used.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you do not use an Elastic Load Balancing, we recommend that you use the <code>startPeriod</code>
+        /// in the task definition health check parameters. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_HealthCheck.html">Health
+        /// check</a>.
         /// </para>
         ///  
         /// <para>
@@ -438,7 +435,7 @@ namespace Amazon.ECS.Model
         /// <para>
         /// A load balancer object representing the load balancers to use with your service. For
         /// more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service
-        /// Load Balancing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+        /// load balancing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -464,10 +461,8 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// After you create a service using the <code>ECS</code> deployment controller, the load
-        /// balancer name or target group ARN, container name, and container port that's specified
-        /// in the service definition are immutable. If you use the <code>CODE_DEPLOY</code> deployment
-        /// controller, these values can be changed when updating the service.
+        /// If you use the <code>CODE_DEPLOY</code> deployment controller, these values can be
+        /// changed when updating the service.
         /// </para>
         ///  
         /// <para>
@@ -593,11 +588,14 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property PropagateTags. 
         /// <para>
-        /// Specifies whether to propagate the tags from the task definition or the service to
-        /// the tasks in the service. If no value is specified, the tags aren't propagated. Tags
-        /// can only be propagated to the tasks within the service during service creation. To
-        /// add tags to a task after service creation or task creation, use the <a>TagResource</a>
+        /// Specifies whether to propagate the tags from the task definition to the task. If no
+        /// value is specified, the tags aren't propagated. Tags can only be propagated to the
+        /// task during task creation. To add tags to a task after task creation, use the <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TagResource.html">TagResource</a>
         /// API action.
+        /// </para>
+        ///  
+        /// <para>
+        /// The default is <code>NONE</code>.
         /// </para>
         /// </summary>
         public PropagateTags PropagateTags
@@ -697,6 +695,34 @@ namespace Amazon.ECS.Model
         internal bool IsSetSchedulingStrategy()
         {
             return this._schedulingStrategy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServiceConnectConfiguration. 
+        /// <para>
+        /// The configuration for this service to discover and connect to services, and be discovered
+        /// by, and connected from, other services within a namespace.
+        /// </para>
+        ///  
+        /// <para>
+        /// Tasks that run in a namespace can use short names to connect to services in the namespace.
+        /// Tasks can connect to services across all of the clusters in the namespace. Tasks connect
+        /// through a managed proxy container that collects logs and metrics for increased visibility.
+        /// Only the tasks that Amazon ECS services create are supported with Service Connect.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service
+        /// Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        public ServiceConnectConfiguration ServiceConnectConfiguration
+        {
+            get { return this._serviceConnectConfiguration; }
+            set { this._serviceConnectConfiguration = value; }
+        }
+
+        // Check to see if ServiceConnectConfiguration property is set
+        internal bool IsSetServiceConnectConfiguration()
+        {
+            return this._serviceConnectConfiguration != null;
         }
 
         /// <summary>
@@ -819,6 +845,11 @@ namespace Amazon.ECS.Model
         /// <para>
         /// A task definition must be specified if the service uses either the <code>ECS</code>
         /// or <code>CODE_DEPLOY</code> deployment controllers.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about deployment types, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
+        /// ECS deployment types</a>.
         /// </para>
         /// </summary>
         public string TaskDefinition

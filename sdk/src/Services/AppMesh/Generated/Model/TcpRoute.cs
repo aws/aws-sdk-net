@@ -34,6 +34,7 @@ namespace Amazon.AppMesh.Model
     public partial class TcpRoute
     {
         private TcpRouteAction _action;
+        private TcpRouteMatch _match;
         private TcpTimeout _timeout;
 
         /// <summary>
@@ -53,6 +54,24 @@ namespace Amazon.AppMesh.Model
         internal bool IsSetAction()
         {
             return this._action != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Match. 
+        /// <para>
+        /// An object that represents the criteria for determining a request match.
+        /// </para>
+        /// </summary>
+        public TcpRouteMatch Match
+        {
+            get { return this._match; }
+            set { this._match = value; }
+        }
+
+        // Check to see if Match property is set
+        internal bool IsSetMatch()
+        {
+            return this._match != null;
         }
 
         /// <summary>

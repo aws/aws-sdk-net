@@ -44,7 +44,7 @@ namespace Amazon.QuickSight.Model
         /// analysis URL.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=2048)]
+        [AWSProperty(Required=true, Min=1, Max=512)]
         public string AnalysisId
         {
             get { return this._analysisId; }

@@ -60,8 +60,8 @@ namespace Amazon.ACMPCA.Model
         /// <summary>
         /// Gets and sets the property PolicyQualifiers. 
         /// <para>
-        /// Modifies the given <code>CertPolicyId</code> with a qualifier. ACM Private CA supports
-        /// the certification practice statement (CPS) qualifier.
+        /// Modifies the given <code>CertPolicyId</code> with a qualifier. Amazon Web Services
+        /// Private CA supports the certification practice statement (CPS) qualifier.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=20)]

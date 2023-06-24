@@ -34,7 +34,7 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CsvOptions Marshaller
-    /// </summary>       
+    /// </summary>
     public class CsvOptionsMarshaller : IRequestMarshaller<CsvOptions, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CsvOptionsMarshaller Instance = new CsvOptionsMarshaller();
 
     }

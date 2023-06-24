@@ -31,42 +31,39 @@ namespace Amazon.CodeDeploy
     /// <summary>
     /// Interface for accessing CodeDeploy
     ///
-    /// AWS CodeDeploy 
-    /// <para>
-    /// AWS CodeDeploy is a deployment service that automates application deployments to Amazon
-    /// EC2 instances, on-premises instances running in your own facility, serverless AWS
-    /// Lambda functions, or applications in an Amazon ECS service.
-    /// </para>
+    /// CodeDeploy is a deployment service that automates application deployments to Amazon
+    /// EC2 instances, on-premises instances running in your own facility, serverless Lambda
+    /// functions, or applications in an Amazon ECS service.
+    /// 
     ///  
     /// <para>
     /// You can deploy a nearly unlimited variety of application content, such as an updated
     /// Lambda function, updated applications in an Amazon ECS service, code, web and configuration
-    /// files, executables, packages, scripts, multimedia files, and so on. AWS CodeDeploy
-    /// can deploy application content stored in Amazon S3 buckets, GitHub repositories, or
-    /// Bitbucket repositories. You do not need to make changes to your existing code before
-    /// you can use AWS CodeDeploy.
+    /// files, executables, packages, scripts, multimedia files, and so on. CodeDeploy can
+    /// deploy application content stored in Amazon S3 buckets, GitHub repositories, or Bitbucket
+    /// repositories. You do not need to make changes to your existing code before you can
+    /// use CodeDeploy.
     /// </para>
     ///  
     /// <para>
-    /// AWS CodeDeploy makes it easier for you to rapidly release new features, helps you
-    /// avoid downtime during application deployment, and handles the complexity of updating
-    /// your applications, without many of the risks associated with error-prone manual deployments.
+    /// CodeDeploy makes it easier for you to rapidly release new features, helps you avoid
+    /// downtime during application deployment, and handles the complexity of updating your
+    /// applications, without many of the risks associated with error-prone manual deployments.
     /// </para>
     ///  
     /// <para>
-    ///  <b>AWS CodeDeploy Components</b> 
+    ///  <b>CodeDeploy Components</b> 
     /// </para>
     ///  
     /// <para>
-    /// Use the information in this guide to help you work with the following AWS CodeDeploy
-    /// components:
+    /// Use the information in this guide to help you work with the following CodeDeploy components:
     /// </para>
     ///  <ul> <li> 
     /// <para>
     ///  <b>Application</b>: A name that uniquely identifies the application you want to deploy.
-    /// AWS CodeDeploy uses this name, which functions as a container, to ensure the correct
-    /// combination of revision, deployment configuration, and deployment group are referenced
-    /// during a deployment.
+    /// CodeDeploy uses this name, which functions as a container, to ensure the correct combination
+    /// of revision, deployment configuration, and deployment group are referenced during
+    /// a deployment.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -75,14 +72,14 @@ namespace Amazon.CodeDeploy
     /// group specifies how to route traffic to a new version of a Lambda function. An Amazon
     /// ECS deployment group specifies the service created in Amazon ECS to deploy, a load
     /// balancer, and a listener to reroute production traffic to an updated containerized
-    /// application. An EC2/On-premises deployment group contains individually tagged instances,
-    /// Amazon EC2 instances in Amazon EC2 Auto Scaling groups, or both. All deployment groups
-    /// can specify optional trigger, alarm, and rollback settings.
+    /// application. An Amazon EC2/On-premises deployment group contains individually tagged
+    /// instances, Amazon EC2 instances in Amazon EC2 Auto Scaling groups, or both. All deployment
+    /// groups can specify optional trigger, alarm, and rollback settings.
     /// </para>
     ///  </li> <li> 
     /// <para>
     ///  <b>Deployment configuration</b>: A set of deployment rules and deployment success
-    /// and failure conditions used by AWS CodeDeploy during a deployment.
+    /// and failure conditions used by CodeDeploy during a deployment.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -92,8 +89,8 @@ namespace Amazon.CodeDeploy
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <b>Application revisions</b>: For an AWS Lambda deployment, this is an AppSpec file
-    /// that specifies the Lambda function to be updated and one or more functions to validate
+    ///  <b>Application revisions</b>: For an Lambda deployment, this is an AppSpec file that
+    /// specifies the Lambda function to be updated and one or more functions to validate
     /// deployment lifecycle events. For an Amazon ECS deployment, this is an AppSpec file
     /// that specifies the Amazon ECS task definition, container, and port where production
     /// traffic is rerouted. For an EC2/On-premises deployment, this is an archive file that
@@ -106,32 +103,32 @@ namespace Amazon.CodeDeploy
     ///  </li> </ul> 
     /// <para>
     /// This guide also contains information to help you get details about the instances in
-    /// your deployments, to make on-premises instances available for AWS CodeDeploy deployments,
+    /// your deployments, to make on-premises instances available for CodeDeploy deployments,
     /// to get details about a Lambda function deployment, and to get details about Amazon
     /// ECS service deployments.
     /// </para>
     ///  
     /// <para>
-    ///  <b>AWS CodeDeploy Information Resources</b> 
+    ///  <b>CodeDeploy Information Resources</b> 
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy
-    /// User Guide</a> 
+    ///  <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide">CodeDeploy User
+    /// Guide</a> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a href="https://docs.aws.amazon.com/codedeploy/latest/APIReference/">AWS CodeDeploy
+    ///  <a href="https://docs.aws.amazon.com/codedeploy/latest/APIReference/">CodeDeploy
     /// API Reference Guide</a> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a href="https://docs.aws.amazon.com/cli/latest/reference/deploy/index.html">AWS
-    /// CLI Reference for AWS CodeDeploy</a> 
+    ///  <a href="https://docs.aws.amazon.com/cli/latest/reference/deploy/index.html">CLI
+    /// Reference for CodeDeploy</a> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a href="https://forums.aws.amazon.com/forum.jspa?forumID=179">AWS CodeDeploy Developer
+    ///  <a href="https://forums.aws.amazon.com/forum.jspa?forumID=179">CodeDeploy Developer
     /// Forum</a> 
     /// </para>
     ///  </li> </ul>
@@ -226,7 +223,7 @@ namespace Amazon.CodeDeploy
         /// 
         /// <returns>The response from the BatchGetApplicationRevisions service method, as returned by CodeDeploy.</returns>
         /// <exception cref="Amazon.CodeDeploy.Model.ApplicationDoesNotExistException">
-        /// The application does not exist with the IAM user or AWS account.
+        /// The application does not exist with the IAM user or Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.ApplicationNameRequiredException">
         /// The minimum number of required application names was not specified.
@@ -259,7 +256,7 @@ namespace Amazon.CodeDeploy
         /// 
         /// <returns>The response from the BatchGetApplicationRevisions service method, as returned by CodeDeploy.</returns>
         /// <exception cref="Amazon.CodeDeploy.Model.ApplicationDoesNotExistException">
-        /// The application does not exist with the IAM user or AWS account.
+        /// The application does not exist with the IAM user or Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.ApplicationNameRequiredException">
         /// The minimum number of required application names was not specified.
@@ -292,7 +289,7 @@ namespace Amazon.CodeDeploy
         /// 
         /// <returns>The response from the BatchGetApplications service method, as returned by CodeDeploy.</returns>
         /// <exception cref="Amazon.CodeDeploy.Model.ApplicationDoesNotExistException">
-        /// The application does not exist with the IAM user or AWS account.
+        /// The application does not exist with the IAM user or Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.ApplicationNameRequiredException">
         /// The minimum number of required application names was not specified.
@@ -319,7 +316,7 @@ namespace Amazon.CodeDeploy
         /// 
         /// <returns>The response from the BatchGetApplications service method, as returned by CodeDeploy.</returns>
         /// <exception cref="Amazon.CodeDeploy.Model.ApplicationDoesNotExistException">
-        /// The application does not exist with the IAM user or AWS account.
+        /// The application does not exist with the IAM user or Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.ApplicationNameRequiredException">
         /// The minimum number of required application names was not specified.
@@ -345,7 +342,7 @@ namespace Amazon.CodeDeploy
         /// 
         /// <returns>The response from the BatchGetDeploymentGroups service method, as returned by CodeDeploy.</returns>
         /// <exception cref="Amazon.CodeDeploy.Model.ApplicationDoesNotExistException">
-        /// The application does not exist with the IAM user or AWS account.
+        /// The application does not exist with the IAM user or Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.ApplicationNameRequiredException">
         /// The minimum number of required application names was not specified.
@@ -354,7 +351,8 @@ namespace Amazon.CodeDeploy
         /// The maximum number of names or IDs allowed for this request (100) was exceeded.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentConfigDoesNotExistException">
-        /// The deployment configuration does not exist with the IAM user or AWS account.
+        /// The deployment configuration does not exist with the IAM user or Amazon Web Services
+        /// account.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentGroupNameRequiredException">
         /// The deployment group name was not specified.
@@ -380,7 +378,7 @@ namespace Amazon.CodeDeploy
         /// 
         /// <returns>The response from the BatchGetDeploymentGroups service method, as returned by CodeDeploy.</returns>
         /// <exception cref="Amazon.CodeDeploy.Model.ApplicationDoesNotExistException">
-        /// The application does not exist with the IAM user or AWS account.
+        /// The application does not exist with the IAM user or Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.ApplicationNameRequiredException">
         /// The minimum number of required application names was not specified.
@@ -389,7 +387,8 @@ namespace Amazon.CodeDeploy
         /// The maximum number of names or IDs allowed for this request (100) was exceeded.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentConfigDoesNotExistException">
-        /// The deployment configuration does not exist with the IAM user or AWS account.
+        /// The deployment configuration does not exist with the IAM user or Amazon Web Services
+        /// account.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentGroupNameRequiredException">
         /// The deployment group name was not specified.
@@ -417,7 +416,7 @@ namespace Amazon.CodeDeploy
         ///  </note> 
         /// <para>
         ///  Returns an array of one or more instances associated with a deployment. This method
-        /// works with EC2/On-premises and AWS Lambda compute platforms. The newer <code>BatchGetDeploymentTargets</code>
+        /// works with EC2/On-premises and Lambda compute platforms. The newer <code>BatchGetDeploymentTargets</code>
         /// works with all compute platforms. The maximum number of instances that can be returned
         /// is 25.
         /// </para>
@@ -429,7 +428,7 @@ namespace Amazon.CodeDeploy
         /// The maximum number of names or IDs allowed for this request (100) was exceeded.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentDoesNotExistException">
-        /// The deployment with the IAM user or AWS account does not exist.
+        /// The deployment with the IAM user or Amazon Web Services account does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentIdRequiredException">
         /// At least one deployment ID must be specified.
@@ -462,7 +461,7 @@ namespace Amazon.CodeDeploy
         ///  </note> 
         /// <para>
         ///  Returns an array of one or more instances associated with a deployment. This method
-        /// works with EC2/On-premises and AWS Lambda compute platforms. The newer <code>BatchGetDeploymentTargets</code>
+        /// works with EC2/On-premises and Lambda compute platforms. The newer <code>BatchGetDeploymentTargets</code>
         /// works with all compute platforms. The maximum number of instances that can be returned
         /// is 25.
         /// </para>
@@ -477,7 +476,7 @@ namespace Amazon.CodeDeploy
         /// The maximum number of names or IDs allowed for this request (100) was exceeded.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentDoesNotExistException">
-        /// The deployment with the IAM user or AWS account does not exist.
+        /// The deployment with the IAM user or Amazon Web Services account does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentIdRequiredException">
         /// At least one deployment ID must be specified.
@@ -564,11 +563,11 @@ namespace Amazon.CodeDeploy
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b>EC2/On-premises</b>: Information about EC2 instance targets. 
+        ///  <b>EC2/On-premises</b>: Information about Amazon EC2 instance targets. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>AWS Lambda</b>: Information about Lambda functions targets. 
+        ///  <b>Lambda</b>: Information about Lambda functions targets. 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -585,7 +584,7 @@ namespace Amazon.CodeDeploy
         /// 
         /// <returns>The response from the BatchGetDeploymentTargets service method, as returned by CodeDeploy.</returns>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentDoesNotExistException">
-        /// The deployment with the IAM user or AWS account does not exist.
+        /// The deployment with the IAM user or Amazon Web Services account does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentIdRequiredException">
         /// At least one deployment ID must be specified.
@@ -600,7 +599,7 @@ namespace Amazon.CodeDeploy
         /// A deployment target ID was not provided.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentTargetListSizeExceededException">
-        /// The maximum number of targets that can be associated with an Amazon ECS or AWS Lambda
+        /// The maximum number of targets that can be associated with an Amazon ECS or Lambda
         /// deployment was exceeded. The target list of both types of deployments must have exactly
         /// one item. This exception does not apply to EC2/On-premises deployments.
         /// </exception>
@@ -630,11 +629,11 @@ namespace Amazon.CodeDeploy
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b>EC2/On-premises</b>: Information about EC2 instance targets. 
+        ///  <b>EC2/On-premises</b>: Information about Amazon EC2 instance targets. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>AWS Lambda</b>: Information about Lambda functions targets. 
+        ///  <b>Lambda</b>: Information about Lambda functions targets. 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -654,7 +653,7 @@ namespace Amazon.CodeDeploy
         /// 
         /// <returns>The response from the BatchGetDeploymentTargets service method, as returned by CodeDeploy.</returns>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentDoesNotExistException">
-        /// The deployment with the IAM user or AWS account does not exist.
+        /// The deployment with the IAM user or Amazon Web Services account does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentIdRequiredException">
         /// At least one deployment ID must be specified.
@@ -669,7 +668,7 @@ namespace Amazon.CodeDeploy
         /// A deployment target ID was not provided.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentTargetListSizeExceededException">
-        /// The maximum number of targets that can be associated with an Amazon ECS or AWS Lambda
+        /// The maximum number of targets that can be associated with an Amazon ECS or Lambda
         /// deployment was exceeded. The target list of both types of deployments must have exactly
         /// one item. This exception does not apply to EC2/On-premises deployments.
         /// </exception>
@@ -752,7 +751,7 @@ namespace Amazon.CodeDeploy
         /// The deployment is already complete.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentDoesNotExistException">
-        /// The deployment with the IAM user or AWS account does not exist.
+        /// The deployment with the IAM user or Amazon Web Services account does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentIdRequiredException">
         /// At least one deployment ID must be specified.
@@ -794,7 +793,7 @@ namespace Amazon.CodeDeploy
         /// The deployment is already complete.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentDoesNotExistException">
-        /// The deployment with the IAM user or AWS account does not exist.
+        /// The deployment with the IAM user or Amazon Web Services account does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentIdRequiredException">
         /// At least one deployment ID must be specified.
@@ -829,7 +828,8 @@ namespace Amazon.CodeDeploy
         /// 
         /// <returns>The response from the CreateApplication service method, as returned by CodeDeploy.</returns>
         /// <exception cref="Amazon.CodeDeploy.Model.ApplicationAlreadyExistsException">
-        /// An application with the specified name with the IAM user or AWS account already exists.
+        /// An application with the specified name with the IAM user or Amazon Web Services account
+        /// already exists.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.ApplicationLimitExceededException">
         /// More applications were attempted to be created than are allowed.
@@ -862,7 +862,8 @@ namespace Amazon.CodeDeploy
         /// 
         /// <returns>The response from the CreateApplication service method, as returned by CodeDeploy.</returns>
         /// <exception cref="Amazon.CodeDeploy.Model.ApplicationAlreadyExistsException">
-        /// An application with the specified name with the IAM user or AWS account already exists.
+        /// An application with the specified name with the IAM user or Amazon Web Services account
+        /// already exists.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.ApplicationLimitExceededException">
         /// More applications were attempted to be created than are allowed.
@@ -894,17 +895,22 @@ namespace Amazon.CodeDeploy
         /// <param name="request">Container for the necessary parameters to execute the CreateDeployment service method.</param>
         /// 
         /// <returns>The response from the CreateDeployment service method, as returned by CodeDeploy.</returns>
+        /// <exception cref="Amazon.CodeDeploy.Model.AlarmsLimitExceededException">
+        /// The maximum number of alarms for a deployment group (10) was exceeded.
+        /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.ApplicationDoesNotExistException">
-        /// The application does not exist with the IAM user or AWS account.
+        /// The application does not exist with the IAM user or Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.ApplicationNameRequiredException">
         /// The minimum number of required application names was not specified.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentConfigDoesNotExistException">
-        /// The deployment configuration does not exist with the IAM user or AWS account.
+        /// The deployment configuration does not exist with the IAM user or Amazon Web Services
+        /// account.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentGroupDoesNotExistException">
-        /// The named deployment group with the IAM user or AWS account does not exist.
+        /// The named deployment group with the IAM user or Amazon Web Services account does not
+        /// exist.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentGroupNameRequiredException">
         /// The deployment group name was not specified.
@@ -914,6 +920,31 @@ namespace Amazon.CodeDeploy
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.DescriptionTooLongException">
         /// The description is too long.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.InvalidAlarmConfigException">
+        /// The format of the alarm configuration is invalid. Possible causes include:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// The alarm list is null.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The alarm object is null.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The alarm name is empty or null or exceeds the limit of 255 characters.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Two alarms with the same name have been specified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The alarm configuration is enabled, but the alarm list is empty.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidApplicationNameException">
         /// The application name was specified in an invalid format.
@@ -933,16 +964,16 @@ namespace Amazon.CodeDeploy
         /// The deployment group name was specified in an invalid format.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidFileExistsBehaviorException">
-        /// An invalid fileExistsBehavior option was specified to determine how AWS CodeDeploy
-        /// handles files or directories that already exist in a deployment target location, but
-        /// weren't part of the previous successful deployment. Valid values include "DISALLOW,"
-        /// "OVERWRITE," and "RETAIN."
+        /// An invalid fileExistsBehavior option was specified to determine how CodeDeploy handles
+        /// files or directories that already exist in a deployment target location, but weren't
+        /// part of the previous successful deployment. Valid values include "DISALLOW," "OVERWRITE,"
+        /// and "RETAIN."
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidGitHubAccountTokenException">
         /// The GitHub token is not valid.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidIgnoreApplicationStopFailuresValueException">
-        /// The IgnoreApplicationStopFailures value is invalid. For AWS Lambda deployments, <code>false</code>
+        /// The IgnoreApplicationStopFailures value is invalid. For Lambda deployments, <code>false</code>
         /// is expected. For EC2/On-premises deployments, <code>true</code> or <code>false</code>
         /// is expected.
         /// </exception>
@@ -982,12 +1013,12 @@ namespace Amazon.CodeDeploy
         /// The configuration that specifies how traffic is routed during a deployment is invalid.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidUpdateOutdatedInstancesOnlyValueException">
-        /// The UpdateOutdatedInstancesOnly value is invalid. For AWS Lambda deployments, <code>false</code>
+        /// The UpdateOutdatedInstancesOnly value is invalid. For Lambda deployments, <code>false</code>
         /// is expected. For EC2/On-premises deployments, <code>true</code> or <code>false</code>
         /// is expected.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.RevisionDoesNotExistException">
-        /// The named revision does not exist with the IAM user or AWS account.
+        /// The named revision does not exist with the IAM user or Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.RevisionRequiredException">
         /// The revision ID was not specified.
@@ -1009,17 +1040,22 @@ namespace Amazon.CodeDeploy
         /// </param>
         /// 
         /// <returns>The response from the CreateDeployment service method, as returned by CodeDeploy.</returns>
+        /// <exception cref="Amazon.CodeDeploy.Model.AlarmsLimitExceededException">
+        /// The maximum number of alarms for a deployment group (10) was exceeded.
+        /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.ApplicationDoesNotExistException">
-        /// The application does not exist with the IAM user or AWS account.
+        /// The application does not exist with the IAM user or Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.ApplicationNameRequiredException">
         /// The minimum number of required application names was not specified.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentConfigDoesNotExistException">
-        /// The deployment configuration does not exist with the IAM user or AWS account.
+        /// The deployment configuration does not exist with the IAM user or Amazon Web Services
+        /// account.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentGroupDoesNotExistException">
-        /// The named deployment group with the IAM user or AWS account does not exist.
+        /// The named deployment group with the IAM user or Amazon Web Services account does not
+        /// exist.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentGroupNameRequiredException">
         /// The deployment group name was not specified.
@@ -1029,6 +1065,31 @@ namespace Amazon.CodeDeploy
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.DescriptionTooLongException">
         /// The description is too long.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.InvalidAlarmConfigException">
+        /// The format of the alarm configuration is invalid. Possible causes include:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// The alarm list is null.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The alarm object is null.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The alarm name is empty or null or exceeds the limit of 255 characters.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Two alarms with the same name have been specified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The alarm configuration is enabled, but the alarm list is empty.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidApplicationNameException">
         /// The application name was specified in an invalid format.
@@ -1048,16 +1109,16 @@ namespace Amazon.CodeDeploy
         /// The deployment group name was specified in an invalid format.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidFileExistsBehaviorException">
-        /// An invalid fileExistsBehavior option was specified to determine how AWS CodeDeploy
-        /// handles files or directories that already exist in a deployment target location, but
-        /// weren't part of the previous successful deployment. Valid values include "DISALLOW,"
-        /// "OVERWRITE," and "RETAIN."
+        /// An invalid fileExistsBehavior option was specified to determine how CodeDeploy handles
+        /// files or directories that already exist in a deployment target location, but weren't
+        /// part of the previous successful deployment. Valid values include "DISALLOW," "OVERWRITE,"
+        /// and "RETAIN."
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidGitHubAccountTokenException">
         /// The GitHub token is not valid.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidIgnoreApplicationStopFailuresValueException">
-        /// The IgnoreApplicationStopFailures value is invalid. For AWS Lambda deployments, <code>false</code>
+        /// The IgnoreApplicationStopFailures value is invalid. For Lambda deployments, <code>false</code>
         /// is expected. For EC2/On-premises deployments, <code>true</code> or <code>false</code>
         /// is expected.
         /// </exception>
@@ -1097,12 +1158,12 @@ namespace Amazon.CodeDeploy
         /// The configuration that specifies how traffic is routed during a deployment is invalid.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidUpdateOutdatedInstancesOnlyValueException">
-        /// The UpdateOutdatedInstancesOnly value is invalid. For AWS Lambda deployments, <code>false</code>
+        /// The UpdateOutdatedInstancesOnly value is invalid. For Lambda deployments, <code>false</code>
         /// is expected. For EC2/On-premises deployments, <code>true</code> or <code>false</code>
         /// is expected.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.RevisionDoesNotExistException">
-        /// The named revision does not exist with the IAM user or AWS account.
+        /// The named revision does not exist with the IAM user or Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.RevisionRequiredException">
         /// The revision ID was not specified.
@@ -1125,8 +1186,8 @@ namespace Amazon.CodeDeploy
         /// 
         /// <returns>The response from the CreateDeploymentConfig service method, as returned by CodeDeploy.</returns>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentConfigAlreadyExistsException">
-        /// A deployment configuration with the specified name with the IAM user or AWS account
-        /// already exists.
+        /// A deployment configuration with the specified name with the IAM user or Amazon Web
+        /// Services account already exists.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentConfigLimitExceededException">
         /// The deployment configurations limit was exceeded.
@@ -1162,8 +1223,8 @@ namespace Amazon.CodeDeploy
         /// 
         /// <returns>The response from the CreateDeploymentConfig service method, as returned by CodeDeploy.</returns>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentConfigAlreadyExistsException">
-        /// A deployment configuration with the specified name with the IAM user or AWS account
-        /// already exists.
+        /// A deployment configuration with the specified name with the IAM user or Amazon Web
+        /// Services account already exists.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentConfigLimitExceededException">
         /// The deployment configurations limit was exceeded.
@@ -1202,17 +1263,18 @@ namespace Amazon.CodeDeploy
         /// The maximum number of alarms for a deployment group (10) was exceeded.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.ApplicationDoesNotExistException">
-        /// The application does not exist with the IAM user or AWS account.
+        /// The application does not exist with the IAM user or Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.ApplicationNameRequiredException">
         /// The minimum number of required application names was not specified.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentConfigDoesNotExistException">
-        /// The deployment configuration does not exist with the IAM user or AWS account.
+        /// The deployment configuration does not exist with the IAM user or Amazon Web Services
+        /// account.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentGroupAlreadyExistsException">
-        /// A deployment group with the specified name with the IAM user or AWS account already
-        /// exists.
+        /// A deployment group with the specified name with the IAM user or Amazon Web Services
+        /// account already exists.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentGroupLimitExceededException">
         /// The deployment groups limit was exceeded.
@@ -1348,17 +1410,18 @@ namespace Amazon.CodeDeploy
         /// The maximum number of alarms for a deployment group (10) was exceeded.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.ApplicationDoesNotExistException">
-        /// The application does not exist with the IAM user or AWS account.
+        /// The application does not exist with the IAM user or Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.ApplicationNameRequiredException">
         /// The minimum number of required application names was not specified.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentConfigDoesNotExistException">
-        /// The deployment configuration does not exist with the IAM user or AWS account.
+        /// The deployment configuration does not exist with the IAM user or Amazon Web Services
+        /// account.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentGroupAlreadyExistsException">
-        /// A deployment group with the specified name with the IAM user or AWS account already
-        /// exists.
+        /// A deployment group with the specified name with the IAM user or Amazon Web Services
+        /// account already exists.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentGroupLimitExceededException">
         /// The deployment groups limit was exceeded.
@@ -1795,7 +1858,7 @@ namespace Amazon.CodeDeploy
         /// 
         /// <returns>The response from the GetApplication service method, as returned by CodeDeploy.</returns>
         /// <exception cref="Amazon.CodeDeploy.Model.ApplicationDoesNotExistException">
-        /// The application does not exist with the IAM user or AWS account.
+        /// The application does not exist with the IAM user or Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.ApplicationNameRequiredException">
         /// The minimum number of required application names was not specified.
@@ -1818,7 +1881,7 @@ namespace Amazon.CodeDeploy
         /// 
         /// <returns>The response from the GetApplication service method, as returned by CodeDeploy.</returns>
         /// <exception cref="Amazon.CodeDeploy.Model.ApplicationDoesNotExistException">
-        /// The application does not exist with the IAM user or AWS account.
+        /// The application does not exist with the IAM user or Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.ApplicationNameRequiredException">
         /// The minimum number of required application names was not specified.
@@ -1841,7 +1904,7 @@ namespace Amazon.CodeDeploy
         /// 
         /// <returns>The response from the GetApplicationRevision service method, as returned by CodeDeploy.</returns>
         /// <exception cref="Amazon.CodeDeploy.Model.ApplicationDoesNotExistException">
-        /// The application does not exist with the IAM user or AWS account.
+        /// The application does not exist with the IAM user or Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.ApplicationNameRequiredException">
         /// The minimum number of required application names was not specified.
@@ -1853,7 +1916,7 @@ namespace Amazon.CodeDeploy
         /// The revision was specified in an invalid format.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.RevisionDoesNotExistException">
-        /// The named revision does not exist with the IAM user or AWS account.
+        /// The named revision does not exist with the IAM user or Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.RevisionRequiredException">
         /// The revision ID was not specified.
@@ -1873,7 +1936,7 @@ namespace Amazon.CodeDeploy
         /// 
         /// <returns>The response from the GetApplicationRevision service method, as returned by CodeDeploy.</returns>
         /// <exception cref="Amazon.CodeDeploy.Model.ApplicationDoesNotExistException">
-        /// The application does not exist with the IAM user or AWS account.
+        /// The application does not exist with the IAM user or Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.ApplicationNameRequiredException">
         /// The minimum number of required application names was not specified.
@@ -1885,7 +1948,7 @@ namespace Amazon.CodeDeploy
         /// The revision was specified in an invalid format.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.RevisionDoesNotExistException">
-        /// The named revision does not exist with the IAM user or AWS account.
+        /// The named revision does not exist with the IAM user or Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.RevisionRequiredException">
         /// The revision ID was not specified.
@@ -1914,7 +1977,7 @@ namespace Amazon.CodeDeploy
         /// 
         /// <returns>The response from the GetDeployment service method, as returned by CodeDeploy.</returns>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentDoesNotExistException">
-        /// The deployment with the IAM user or AWS account does not exist.
+        /// The deployment with the IAM user or Amazon Web Services account does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentIdRequiredException">
         /// At least one deployment ID must be specified.
@@ -1946,7 +2009,7 @@ namespace Amazon.CodeDeploy
         /// 
         /// <returns>The response from the GetDeployment service method, as returned by CodeDeploy.</returns>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentDoesNotExistException">
-        /// The deployment with the IAM user or AWS account does not exist.
+        /// The deployment with the IAM user or Amazon Web Services account does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentIdRequiredException">
         /// At least one deployment ID must be specified.
@@ -1969,7 +2032,8 @@ namespace Amazon.CodeDeploy
         /// 
         /// <returns>The response from the GetDeploymentConfig service method, as returned by CodeDeploy.</returns>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentConfigDoesNotExistException">
-        /// The deployment configuration does not exist with the IAM user or AWS account.
+        /// The deployment configuration does not exist with the IAM user or Amazon Web Services
+        /// account.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentConfigNameRequiredException">
         /// The deployment configuration name was not specified.
@@ -1996,7 +2060,8 @@ namespace Amazon.CodeDeploy
         /// 
         /// <returns>The response from the GetDeploymentConfig service method, as returned by CodeDeploy.</returns>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentConfigDoesNotExistException">
-        /// The deployment configuration does not exist with the IAM user or AWS account.
+        /// The deployment configuration does not exist with the IAM user or Amazon Web Services
+        /// account.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentConfigNameRequiredException">
         /// The deployment configuration name was not specified.
@@ -2023,16 +2088,18 @@ namespace Amazon.CodeDeploy
         /// 
         /// <returns>The response from the GetDeploymentGroup service method, as returned by CodeDeploy.</returns>
         /// <exception cref="Amazon.CodeDeploy.Model.ApplicationDoesNotExistException">
-        /// The application does not exist with the IAM user or AWS account.
+        /// The application does not exist with the IAM user or Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.ApplicationNameRequiredException">
         /// The minimum number of required application names was not specified.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentConfigDoesNotExistException">
-        /// The deployment configuration does not exist with the IAM user or AWS account.
+        /// The deployment configuration does not exist with the IAM user or Amazon Web Services
+        /// account.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentGroupDoesNotExistException">
-        /// The named deployment group with the IAM user or AWS account does not exist.
+        /// The named deployment group with the IAM user or Amazon Web Services account does not
+        /// exist.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentGroupNameRequiredException">
         /// The deployment group name was not specified.
@@ -2058,16 +2125,18 @@ namespace Amazon.CodeDeploy
         /// 
         /// <returns>The response from the GetDeploymentGroup service method, as returned by CodeDeploy.</returns>
         /// <exception cref="Amazon.CodeDeploy.Model.ApplicationDoesNotExistException">
-        /// The application does not exist with the IAM user or AWS account.
+        /// The application does not exist with the IAM user or Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.ApplicationNameRequiredException">
         /// The minimum number of required application names was not specified.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentConfigDoesNotExistException">
-        /// The deployment configuration does not exist with the IAM user or AWS account.
+        /// The deployment configuration does not exist with the IAM user or Amazon Web Services
+        /// account.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentGroupDoesNotExistException">
-        /// The named deployment group with the IAM user or AWS account does not exist.
+        /// The named deployment group with the IAM user or Amazon Web Services account does not
+        /// exist.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentGroupNameRequiredException">
         /// The deployment group name was not specified.
@@ -2093,7 +2162,7 @@ namespace Amazon.CodeDeploy
         /// 
         /// <returns>The response from the GetDeploymentInstance service method, as returned by CodeDeploy.</returns>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentDoesNotExistException">
-        /// The deployment with the IAM user or AWS account does not exist.
+        /// The deployment with the IAM user or Amazon Web Services account does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentIdRequiredException">
         /// At least one deployment ID must be specified.
@@ -2130,7 +2199,7 @@ namespace Amazon.CodeDeploy
         /// 
         /// <returns>The response from the GetDeploymentInstance service method, as returned by CodeDeploy.</returns>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentDoesNotExistException">
-        /// The deployment with the IAM user or AWS account does not exist.
+        /// The deployment with the IAM user or Amazon Web Services account does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentIdRequiredException">
         /// At least one deployment ID must be specified.
@@ -2167,7 +2236,7 @@ namespace Amazon.CodeDeploy
         /// 
         /// <returns>The response from the GetDeploymentTarget service method, as returned by CodeDeploy.</returns>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentDoesNotExistException">
-        /// The deployment with the IAM user or AWS account does not exist.
+        /// The deployment with the IAM user or Amazon Web Services account does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentIdRequiredException">
         /// At least one deployment ID must be specified.
@@ -2205,7 +2274,7 @@ namespace Amazon.CodeDeploy
         /// 
         /// <returns>The response from the GetDeploymentTarget service method, as returned by CodeDeploy.</returns>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentDoesNotExistException">
-        /// The deployment with the IAM user or AWS account does not exist.
+        /// The deployment with the IAM user or Amazon Web Services account does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentIdRequiredException">
         /// At least one deployment ID must be specified.
@@ -2289,7 +2358,7 @@ namespace Amazon.CodeDeploy
         /// 
         /// <returns>The response from the ListApplicationRevisions service method, as returned by CodeDeploy.</returns>
         /// <exception cref="Amazon.CodeDeploy.Model.ApplicationDoesNotExistException">
-        /// The application does not exist with the IAM user or AWS account.
+        /// The application does not exist with the IAM user or Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.ApplicationNameRequiredException">
         /// The minimum number of required application names was not specified.
@@ -2333,7 +2402,7 @@ namespace Amazon.CodeDeploy
         /// 
         /// <returns>The response from the ListApplicationRevisions service method, as returned by CodeDeploy.</returns>
         /// <exception cref="Amazon.CodeDeploy.Model.ApplicationDoesNotExistException">
-        /// The application does not exist with the IAM user or AWS account.
+        /// The application does not exist with the IAM user or Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.ApplicationNameRequiredException">
         /// The minimum number of required application names was not specified.
@@ -2371,7 +2440,7 @@ namespace Amazon.CodeDeploy
 
 
         /// <summary>
-        /// Lists the applications registered with the IAM user or AWS account.
+        /// Lists the applications registered with the IAM user or Amazon Web Services account.
         /// </summary>
         /// 
         /// <returns>The response from the ListApplications service method, as returned by CodeDeploy.</returns>
@@ -2383,7 +2452,7 @@ namespace Amazon.CodeDeploy
 
 
         /// <summary>
-        /// Lists the applications registered with the IAM user or AWS account.
+        /// Lists the applications registered with the IAM user or Amazon Web Services account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListApplications service method.</param>
         /// 
@@ -2396,7 +2465,7 @@ namespace Amazon.CodeDeploy
 
 
         /// <summary>
-        /// Lists the applications registered with the IAM user or AWS account.
+        /// Lists the applications registered with the IAM user or Amazon Web Services account.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -2412,7 +2481,7 @@ namespace Amazon.CodeDeploy
 
 
         /// <summary>
-        /// Lists the applications registered with the IAM user or AWS account.
+        /// Lists the applications registered with the IAM user or Amazon Web Services account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListApplications service method.</param>
         /// <param name="cancellationToken">
@@ -2432,7 +2501,7 @@ namespace Amazon.CodeDeploy
 
 
         /// <summary>
-        /// Lists the deployment configurations with the IAM user or AWS account.
+        /// Lists the deployment configurations with the IAM user or Amazon Web Services account.
         /// </summary>
         /// 
         /// <returns>The response from the ListDeploymentConfigs service method, as returned by CodeDeploy.</returns>
@@ -2444,7 +2513,7 @@ namespace Amazon.CodeDeploy
 
 
         /// <summary>
-        /// Lists the deployment configurations with the IAM user or AWS account.
+        /// Lists the deployment configurations with the IAM user or Amazon Web Services account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDeploymentConfigs service method.</param>
         /// 
@@ -2457,7 +2526,7 @@ namespace Amazon.CodeDeploy
 
 
         /// <summary>
-        /// Lists the deployment configurations with the IAM user or AWS account.
+        /// Lists the deployment configurations with the IAM user or Amazon Web Services account.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -2473,7 +2542,7 @@ namespace Amazon.CodeDeploy
 
 
         /// <summary>
-        /// Lists the deployment configurations with the IAM user or AWS account.
+        /// Lists the deployment configurations with the IAM user or Amazon Web Services account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDeploymentConfigs service method.</param>
         /// <param name="cancellationToken">
@@ -2493,14 +2562,14 @@ namespace Amazon.CodeDeploy
 
 
         /// <summary>
-        /// Lists the deployment groups for an application registered with the IAM user or AWS
-        /// account.
+        /// Lists the deployment groups for an application registered with the IAM user or Amazon
+        /// Web Services account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDeploymentGroups service method.</param>
         /// 
         /// <returns>The response from the ListDeploymentGroups service method, as returned by CodeDeploy.</returns>
         /// <exception cref="Amazon.CodeDeploy.Model.ApplicationDoesNotExistException">
-        /// The application does not exist with the IAM user or AWS account.
+        /// The application does not exist with the IAM user or Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.ApplicationNameRequiredException">
         /// The minimum number of required application names was not specified.
@@ -2517,8 +2586,8 @@ namespace Amazon.CodeDeploy
 
 
         /// <summary>
-        /// Lists the deployment groups for an application registered with the IAM user or AWS
-        /// account.
+        /// Lists the deployment groups for an application registered with the IAM user or Amazon
+        /// Web Services account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDeploymentGroups service method.</param>
         /// <param name="cancellationToken">
@@ -2527,7 +2596,7 @@ namespace Amazon.CodeDeploy
         /// 
         /// <returns>The response from the ListDeploymentGroups service method, as returned by CodeDeploy.</returns>
         /// <exception cref="Amazon.CodeDeploy.Model.ApplicationDoesNotExistException">
-        /// The application does not exist with the IAM user or AWS account.
+        /// The application does not exist with the IAM user or Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.ApplicationNameRequiredException">
         /// The minimum number of required application names was not specified.
@@ -2551,19 +2620,19 @@ namespace Amazon.CodeDeploy
         /// <para>
         ///  The newer <code>BatchGetDeploymentTargets</code> should be used instead because it
         /// works with all compute types. <code>ListDeploymentInstances</code> throws an exception
-        /// if it is used with a compute platform other than EC2/On-premises or AWS Lambda. 
+        /// if it is used with a compute platform other than EC2/On-premises or Lambda. 
         /// </para>
         ///  </note> 
         /// <para>
-        ///  Lists the instance for a deployment associated with the IAM user or AWS account.
-        /// 
+        ///  Lists the instance for a deployment associated with the IAM user or Amazon Web Services
+        /// account. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDeploymentInstances service method.</param>
         /// 
         /// <returns>The response from the ListDeploymentInstances service method, as returned by CodeDeploy.</returns>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentDoesNotExistException">
-        /// The deployment with the IAM user or AWS account does not exist.
+        /// The deployment with the IAM user or Amazon Web Services account does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentIdRequiredException">
         /// At least one deployment ID must be specified.
@@ -2606,12 +2675,12 @@ namespace Amazon.CodeDeploy
         /// <para>
         ///  The newer <code>BatchGetDeploymentTargets</code> should be used instead because it
         /// works with all compute types. <code>ListDeploymentInstances</code> throws an exception
-        /// if it is used with a compute platform other than EC2/On-premises or AWS Lambda. 
+        /// if it is used with a compute platform other than EC2/On-premises or Lambda. 
         /// </para>
         ///  </note> 
         /// <para>
-        ///  Lists the instance for a deployment associated with the IAM user or AWS account.
-        /// 
+        ///  Lists the instance for a deployment associated with the IAM user or Amazon Web Services
+        /// account. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDeploymentInstances service method.</param>
@@ -2621,7 +2690,7 @@ namespace Amazon.CodeDeploy
         /// 
         /// <returns>The response from the ListDeploymentInstances service method, as returned by CodeDeploy.</returns>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentDoesNotExistException">
-        /// The deployment with the IAM user or AWS account does not exist.
+        /// The deployment with the IAM user or Amazon Web Services account does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentIdRequiredException">
         /// At least one deployment ID must be specified.
@@ -2664,19 +2733,20 @@ namespace Amazon.CodeDeploy
 
         /// <summary>
         /// Lists the deployments in a deployment group for an application registered with the
-        /// IAM user or AWS account.
+        /// IAM user or Amazon Web Services account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDeployments service method.</param>
         /// 
         /// <returns>The response from the ListDeployments service method, as returned by CodeDeploy.</returns>
         /// <exception cref="Amazon.CodeDeploy.Model.ApplicationDoesNotExistException">
-        /// The application does not exist with the IAM user or AWS account.
+        /// The application does not exist with the IAM user or Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.ApplicationNameRequiredException">
         /// The minimum number of required application names was not specified.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentGroupDoesNotExistException">
-        /// The named deployment group with the IAM user or AWS account does not exist.
+        /// The named deployment group with the IAM user or Amazon Web Services account does not
+        /// exist.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentGroupNameRequiredException">
         /// The deployment group name was not specified.
@@ -2709,7 +2779,7 @@ namespace Amazon.CodeDeploy
 
         /// <summary>
         /// Lists the deployments in a deployment group for an application registered with the
-        /// IAM user or AWS account.
+        /// IAM user or Amazon Web Services account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDeployments service method.</param>
         /// <param name="cancellationToken">
@@ -2718,13 +2788,14 @@ namespace Amazon.CodeDeploy
         /// 
         /// <returns>The response from the ListDeployments service method, as returned by CodeDeploy.</returns>
         /// <exception cref="Amazon.CodeDeploy.Model.ApplicationDoesNotExistException">
-        /// The application does not exist with the IAM user or AWS account.
+        /// The application does not exist with the IAM user or Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.ApplicationNameRequiredException">
         /// The minimum number of required application names was not specified.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentGroupDoesNotExistException">
-        /// The named deployment group with the IAM user or AWS account does not exist.
+        /// The named deployment group with the IAM user or Amazon Web Services account does not
+        /// exist.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentGroupNameRequiredException">
         /// The deployment group name was not specified.
@@ -2765,7 +2836,7 @@ namespace Amazon.CodeDeploy
         /// 
         /// <returns>The response from the ListDeploymentTargets service method, as returned by CodeDeploy.</returns>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentDoesNotExistException">
-        /// The deployment with the IAM user or AWS account does not exist.
+        /// The deployment with the IAM user or Amazon Web Services account does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentIdRequiredException">
         /// At least one deployment ID must be specified.
@@ -2805,7 +2876,7 @@ namespace Amazon.CodeDeploy
         /// 
         /// <returns>The response from the ListDeploymentTargets service method, as returned by CodeDeploy.</returns>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentDoesNotExistException">
-        /// The deployment with the IAM user or AWS account does not exist.
+        /// The deployment with the IAM user or Amazon Web Services account does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentIdRequiredException">
         /// At least one deployment ID must be specified.
@@ -2996,21 +3067,21 @@ namespace Amazon.CodeDeploy
 
         /// <summary>
         /// Sets the result of a Lambda validation function. The function validates lifecycle
-        /// hooks during a deployment that uses the AWS Lambda or Amazon ECS compute platform.
-        /// For AWS Lambda deployments, the available lifecycle hooks are <code>BeforeAllowTraffic</code>
+        /// hooks during a deployment that uses the Lambda or Amazon ECS compute platform. For
+        /// Lambda deployments, the available lifecycle hooks are <code>BeforeAllowTraffic</code>
         /// and <code>AfterAllowTraffic</code>. For Amazon ECS deployments, the available lifecycle
         /// hooks are <code>BeforeInstall</code>, <code>AfterInstall</code>, <code>AfterAllowTestTraffic</code>,
         /// <code>BeforeAllowTraffic</code>, and <code>AfterAllowTraffic</code>. Lambda validation
         /// functions return <code>Succeeded</code> or <code>Failed</code>. For more information,
         /// see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/reference-appspec-file-structure-hooks.html#appspec-hooks-lambda">AppSpec
-        /// 'hooks' Section for an AWS Lambda Deployment </a> and <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/reference-appspec-file-structure-hooks.html#appspec-hooks-ecs">AppSpec
+        /// 'hooks' Section for an Lambda Deployment </a> and <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/reference-appspec-file-structure-hooks.html#appspec-hooks-ecs">AppSpec
         /// 'hooks' Section for an Amazon ECS Deployment</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutLifecycleEventHookExecutionStatus service method.</param>
         /// 
         /// <returns>The response from the PutLifecycleEventHookExecutionStatus service method, as returned by CodeDeploy.</returns>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentDoesNotExistException">
-        /// The deployment with the IAM user or AWS account does not exist.
+        /// The deployment with the IAM user or Amazon Web Services account does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentIdRequiredException">
         /// At least one deployment ID must be specified.
@@ -3039,14 +3110,14 @@ namespace Amazon.CodeDeploy
 
         /// <summary>
         /// Sets the result of a Lambda validation function. The function validates lifecycle
-        /// hooks during a deployment that uses the AWS Lambda or Amazon ECS compute platform.
-        /// For AWS Lambda deployments, the available lifecycle hooks are <code>BeforeAllowTraffic</code>
+        /// hooks during a deployment that uses the Lambda or Amazon ECS compute platform. For
+        /// Lambda deployments, the available lifecycle hooks are <code>BeforeAllowTraffic</code>
         /// and <code>AfterAllowTraffic</code>. For Amazon ECS deployments, the available lifecycle
         /// hooks are <code>BeforeInstall</code>, <code>AfterInstall</code>, <code>AfterAllowTestTraffic</code>,
         /// <code>BeforeAllowTraffic</code>, and <code>AfterAllowTraffic</code>. Lambda validation
         /// functions return <code>Succeeded</code> or <code>Failed</code>. For more information,
         /// see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/reference-appspec-file-structure-hooks.html#appspec-hooks-lambda">AppSpec
-        /// 'hooks' Section for an AWS Lambda Deployment </a> and <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/reference-appspec-file-structure-hooks.html#appspec-hooks-ecs">AppSpec
+        /// 'hooks' Section for an Lambda Deployment </a> and <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/reference-appspec-file-structure-hooks.html#appspec-hooks-ecs">AppSpec
         /// 'hooks' Section for an Amazon ECS Deployment</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutLifecycleEventHookExecutionStatus service method.</param>
@@ -3056,7 +3127,7 @@ namespace Amazon.CodeDeploy
         /// 
         /// <returns>The response from the PutLifecycleEventHookExecutionStatus service method, as returned by CodeDeploy.</returns>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentDoesNotExistException">
-        /// The deployment with the IAM user or AWS account does not exist.
+        /// The deployment with the IAM user or Amazon Web Services account does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentIdRequiredException">
         /// At least one deployment ID must be specified.
@@ -3087,13 +3158,13 @@ namespace Amazon.CodeDeploy
 
 
         /// <summary>
-        /// Registers with AWS CodeDeploy a revision for the specified application.
+        /// Registers with CodeDeploy a revision for the specified application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RegisterApplicationRevision service method.</param>
         /// 
         /// <returns>The response from the RegisterApplicationRevision service method, as returned by CodeDeploy.</returns>
         /// <exception cref="Amazon.CodeDeploy.Model.ApplicationDoesNotExistException">
-        /// The application does not exist with the IAM user or AWS account.
+        /// The application does not exist with the IAM user or Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.ApplicationNameRequiredException">
         /// The minimum number of required application names was not specified.
@@ -3116,7 +3187,7 @@ namespace Amazon.CodeDeploy
 
 
         /// <summary>
-        /// Registers with AWS CodeDeploy a revision for the specified application.
+        /// Registers with CodeDeploy a revision for the specified application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RegisterApplicationRevision service method.</param>
         /// <param name="cancellationToken">
@@ -3125,7 +3196,7 @@ namespace Amazon.CodeDeploy
         /// 
         /// <returns>The response from the RegisterApplicationRevision service method, as returned by CodeDeploy.</returns>
         /// <exception cref="Amazon.CodeDeploy.Model.ApplicationDoesNotExistException">
-        /// The application does not exist with the IAM user or AWS account.
+        /// The application does not exist with the IAM user or Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.ApplicationNameRequiredException">
         /// The minimum number of required application names was not specified.
@@ -3339,7 +3410,7 @@ namespace Amazon.CodeDeploy
         /// The deployment is already complete.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentDoesNotExistException">
-        /// The deployment with the IAM user or AWS account does not exist.
+        /// The deployment with the IAM user or Amazon Web Services account does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentIdRequiredException">
         /// At least one deployment ID must be specified.
@@ -3373,7 +3444,7 @@ namespace Amazon.CodeDeploy
         /// The deployment is already complete.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentDoesNotExistException">
-        /// The deployment with the IAM user or AWS account does not exist.
+        /// The deployment with the IAM user or Amazon Web Services account does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentIdRequiredException">
         /// At least one deployment ID must be specified.
@@ -3406,10 +3477,11 @@ namespace Amazon.CodeDeploy
         /// The deployment is already complete.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentDoesNotExistException">
-        /// The deployment with the IAM user or AWS account does not exist.
+        /// The deployment with the IAM user or Amazon Web Services account does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentGroupDoesNotExistException">
-        /// The named deployment group with the IAM user or AWS account does not exist.
+        /// The named deployment group with the IAM user or Amazon Web Services account does not
+        /// exist.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentIdRequiredException">
         /// At least one deployment ID must be specified.
@@ -3438,10 +3510,11 @@ namespace Amazon.CodeDeploy
         /// The deployment is already complete.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentDoesNotExistException">
-        /// The deployment with the IAM user or AWS account does not exist.
+        /// The deployment with the IAM user or Amazon Web Services account does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentGroupDoesNotExistException">
-        /// The named deployment group with the IAM user or AWS account does not exist.
+        /// The named deployment group with the IAM user or Amazon Web Services account does not
+        /// exist.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentIdRequiredException">
         /// At least one deployment ID must be specified.
@@ -3468,17 +3541,19 @@ namespace Amazon.CodeDeploy
         /// 
         /// <returns>The response from the TagResource service method, as returned by CodeDeploy.</returns>
         /// <exception cref="Amazon.CodeDeploy.Model.ApplicationDoesNotExistException">
-        /// The application does not exist with the IAM user or AWS account.
+        /// The application does not exist with the IAM user or Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.ArnNotSupportedException">
         /// The specified ARN is not supported. For example, it might be an ARN for a resource
         /// that is not expected.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentConfigDoesNotExistException">
-        /// The deployment configuration does not exist with the IAM user or AWS account.
+        /// The deployment configuration does not exist with the IAM user or Amazon Web Services
+        /// account.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentGroupDoesNotExistException">
-        /// The named deployment group with the IAM user or AWS account does not exist.
+        /// The named deployment group with the IAM user or Amazon Web Services account does not
+        /// exist.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidArnException">
         /// The specified ARN is not in a valid format.
@@ -3508,17 +3583,19 @@ namespace Amazon.CodeDeploy
         /// 
         /// <returns>The response from the TagResource service method, as returned by CodeDeploy.</returns>
         /// <exception cref="Amazon.CodeDeploy.Model.ApplicationDoesNotExistException">
-        /// The application does not exist with the IAM user or AWS account.
+        /// The application does not exist with the IAM user or Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.ArnNotSupportedException">
         /// The specified ARN is not supported. For example, it might be an ARN for a resource
         /// that is not expected.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentConfigDoesNotExistException">
-        /// The deployment configuration does not exist with the IAM user or AWS account.
+        /// The deployment configuration does not exist with the IAM user or Amazon Web Services
+        /// account.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentGroupDoesNotExistException">
-        /// The named deployment group with the IAM user or AWS account does not exist.
+        /// The named deployment group with the IAM user or Amazon Web Services account does not
+        /// exist.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidArnException">
         /// The specified ARN is not in a valid format.
@@ -3549,17 +3626,19 @@ namespace Amazon.CodeDeploy
         /// 
         /// <returns>The response from the UntagResource service method, as returned by CodeDeploy.</returns>
         /// <exception cref="Amazon.CodeDeploy.Model.ApplicationDoesNotExistException">
-        /// The application does not exist with the IAM user or AWS account.
+        /// The application does not exist with the IAM user or Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.ArnNotSupportedException">
         /// The specified ARN is not supported. For example, it might be an ARN for a resource
         /// that is not expected.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentConfigDoesNotExistException">
-        /// The deployment configuration does not exist with the IAM user or AWS account.
+        /// The deployment configuration does not exist with the IAM user or Amazon Web Services
+        /// account.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentGroupDoesNotExistException">
-        /// The named deployment group with the IAM user or AWS account does not exist.
+        /// The named deployment group with the IAM user or Amazon Web Services account does not
+        /// exist.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidArnException">
         /// The specified ARN is not in a valid format.
@@ -3590,17 +3669,19 @@ namespace Amazon.CodeDeploy
         /// 
         /// <returns>The response from the UntagResource service method, as returned by CodeDeploy.</returns>
         /// <exception cref="Amazon.CodeDeploy.Model.ApplicationDoesNotExistException">
-        /// The application does not exist with the IAM user or AWS account.
+        /// The application does not exist with the IAM user or Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.ArnNotSupportedException">
         /// The specified ARN is not supported. For example, it might be an ARN for a resource
         /// that is not expected.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentConfigDoesNotExistException">
-        /// The deployment configuration does not exist with the IAM user or AWS account.
+        /// The deployment configuration does not exist with the IAM user or Amazon Web Services
+        /// account.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentGroupDoesNotExistException">
-        /// The named deployment group with the IAM user or AWS account does not exist.
+        /// The named deployment group with the IAM user or Amazon Web Services account does not
+        /// exist.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidArnException">
         /// The specified ARN is not in a valid format.
@@ -3629,10 +3710,11 @@ namespace Amazon.CodeDeploy
         /// 
         /// <returns>The response from the UpdateApplication service method, as returned by CodeDeploy.</returns>
         /// <exception cref="Amazon.CodeDeploy.Model.ApplicationAlreadyExistsException">
-        /// An application with the specified name with the IAM user or AWS account already exists.
+        /// An application with the specified name with the IAM user or Amazon Web Services account
+        /// already exists.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.ApplicationDoesNotExistException">
-        /// The application does not exist with the IAM user or AWS account.
+        /// The application does not exist with the IAM user or Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.ApplicationNameRequiredException">
         /// The minimum number of required application names was not specified.
@@ -3655,10 +3737,11 @@ namespace Amazon.CodeDeploy
         /// 
         /// <returns>The response from the UpdateApplication service method, as returned by CodeDeploy.</returns>
         /// <exception cref="Amazon.CodeDeploy.Model.ApplicationAlreadyExistsException">
-        /// An application with the specified name with the IAM user or AWS account already exists.
+        /// An application with the specified name with the IAM user or Amazon Web Services account
+        /// already exists.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.ApplicationDoesNotExistException">
-        /// The application does not exist with the IAM user or AWS account.
+        /// The application does not exist with the IAM user or Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.ApplicationNameRequiredException">
         /// The minimum number of required application names was not specified.
@@ -3684,20 +3767,22 @@ namespace Amazon.CodeDeploy
         /// The maximum number of alarms for a deployment group (10) was exceeded.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.ApplicationDoesNotExistException">
-        /// The application does not exist with the IAM user or AWS account.
+        /// The application does not exist with the IAM user or Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.ApplicationNameRequiredException">
         /// The minimum number of required application names was not specified.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentConfigDoesNotExistException">
-        /// The deployment configuration does not exist with the IAM user or AWS account.
+        /// The deployment configuration does not exist with the IAM user or Amazon Web Services
+        /// account.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentGroupAlreadyExistsException">
-        /// A deployment group with the specified name with the IAM user or AWS account already
-        /// exists.
+        /// A deployment group with the specified name with the IAM user or Amazon Web Services
+        /// account already exists.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentGroupDoesNotExistException">
-        /// The named deployment group with the IAM user or AWS account does not exist.
+        /// The named deployment group with the IAM user or Amazon Web Services account does not
+        /// exist.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentGroupNameRequiredException">
         /// The deployment group name was not specified.
@@ -3824,20 +3909,22 @@ namespace Amazon.CodeDeploy
         /// The maximum number of alarms for a deployment group (10) was exceeded.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.ApplicationDoesNotExistException">
-        /// The application does not exist with the IAM user or AWS account.
+        /// The application does not exist with the IAM user or Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.ApplicationNameRequiredException">
         /// The minimum number of required application names was not specified.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentConfigDoesNotExistException">
-        /// The deployment configuration does not exist with the IAM user or AWS account.
+        /// The deployment configuration does not exist with the IAM user or Amazon Web Services
+        /// account.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentGroupAlreadyExistsException">
-        /// A deployment group with the specified name with the IAM user or AWS account already
-        /// exists.
+        /// A deployment group with the specified name with the IAM user or Amazon Web Services
+        /// account already exists.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentGroupDoesNotExistException">
-        /// The named deployment group with the IAM user or AWS account does not exist.
+        /// The named deployment group with the IAM user or Amazon Web Services account does not
+        /// exist.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentGroupNameRequiredException">
         /// The deployment group name was not specified.

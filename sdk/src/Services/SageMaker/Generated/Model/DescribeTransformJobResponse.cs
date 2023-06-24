@@ -36,6 +36,7 @@ namespace Amazon.SageMaker.Model
         private string _autoMLJobArn;
         private BatchStrategy _batchStrategy;
         private DateTime? _creationTime;
+        private BatchDataCaptureConfig _dataCaptureConfig;
         private DataProcessing _dataProcessing;
         private Dictionary<string, string> _environment = new Dictionary<string, string>();
         private ExperimentConfig _experimentConfig;
@@ -115,6 +116,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetCreationTime()
         {
             return this._creationTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DataCaptureConfig. 
+        /// <para>
+        /// Configuration to control how SageMaker captures inference data.
+        /// </para>
+        /// </summary>
+        public BatchDataCaptureConfig DataCaptureConfig
+        {
+            get { return this._dataCaptureConfig; }
+            set { this._dataCaptureConfig = value; }
+        }
+
+        // Check to see if DataCaptureConfig property is set
+        internal bool IsSetDataCaptureConfig()
+        {
+            return this._dataCaptureConfig != null;
         }
 
         /// <summary>

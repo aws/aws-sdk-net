@@ -29,11 +29,7 @@ namespace Amazon.RDS
     /// <summary>
     /// Interface for accessing RDS
     ///
-    /// Amazon Relational Database Service 
-    /// <para>
-    ///  
-    /// </para>
-    ///  
+    /// Amazon Relational Database Service  
     /// <para>
     /// Amazon Relational Database Service (Amazon RDS) is a web service that makes it easier
     /// to set up, operate, and scale a relational database in the cloud. It provides cost-efficient,
@@ -296,6 +292,10 @@ namespace Amazon.RDS
         /// <param name="request">Container for the necessary parameters to execute the AddTagsToResource service method.</param>
         /// 
         /// <returns>The response from the AddTagsToResource service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.BlueGreenDeploymentNotFoundException">
+        /// <code>BlueGreenDeploymentIdentifier</code> doesn't refer to an existing blue/green
+        /// deployment.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
         /// <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
         /// </exception>
@@ -404,17 +404,27 @@ namespace Amazon.RDS
         /// for this API are one of CIDR range, EC2SecurityGroupId for VPC, or (EC2SecurityGroupOwnerId
         /// and either EC2SecurityGroupName or EC2SecurityGroupId for non-VPC).
         /// 
-        ///  <note> 
+        ///  
         /// <para>
         /// You can't authorize ingress from an EC2 security group in one Amazon Web Services
         /// Region to an Amazon RDS DB instance in another. You can't authorize ingress from a
         /// VPC security group in one VPC to an Amazon RDS DB instance in another.
         /// </para>
-        ///  </note> 
+        ///  
         /// <para>
         /// For an overview of CIDR ranges, go to the <a href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Wikipedia
-        /// Tutorial</a>. 
+        /// Tutorial</a>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// EC2-Classic was retired on August 15, 2022. If you haven't migrated from EC2-Classic
+        /// to a VPC, we recommend that you migrate as soon as possible. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+        /// from EC2-Classic to a VPC</a> in the <i>Amazon EC2 User Guide</i>, the blog <a href="http://aws.amazon.com/blogs/aws/ec2-classic-is-retiring-heres-how-to-prepare/">EC2-Classic
+        /// Networking is Retiring – Here’s How to Prepare</a>, and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.Non-VPC2VPC.html">Moving
+        /// a DB instance not in a VPC into a VPC</a> in the <i>Amazon RDS User Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AuthorizeDBSecurityGroupIngress service method.</param>
         /// 
@@ -472,11 +482,11 @@ namespace Amazon.RDS
         ///  
         /// <para>
         /// For more information on backtracking, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Managing.Backtrack.html">
-        /// Backtracking an Aurora DB Cluster</a> in the <i>Amazon Aurora User Guide.</i> 
+        /// Backtracking an Aurora DB Cluster</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
-        /// This action only applies to Aurora MySQL DB clusters.
+        /// This action applies only to Aurora MySQL DB clusters.
         /// </para>
         ///  </note>
         /// </summary>
@@ -524,8 +534,8 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// Cancels an export task in progress that is exporting a snapshot to Amazon S3. Any
-        /// data that has already been written to the S3 bucket isn't removed.
+        /// Cancels an export task in progress that is exporting a snapshot or cluster to Amazon
+        /// S3. Any data that has already been written to the S3 bucket isn't removed.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelExportTask service method.</param>
         /// 
@@ -632,7 +642,7 @@ namespace Amazon.RDS
         /// <para>
         /// You can copy an encrypted DB cluster snapshot from another Amazon Web Services Region.
         /// In that case, the Amazon Web Services Region where you call the <code>CopyDBClusterSnapshot</code>
-        /// action is the destination Amazon Web Services Region for the encrypted DB cluster
+        /// operation is the destination Amazon Web Services Region for the encrypted DB cluster
         /// snapshot to be copied to. To copy an encrypted DB cluster snapshot from another Amazon
         /// Web Services Region, you must provide the following values:
         /// </para>
@@ -644,56 +654,6 @@ namespace Amazon.RDS
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PreSignedUrl</code> - A URL that contains a Signature Version 4 signed request
-        /// for the <code>CopyDBClusterSnapshot</code> action to be called in the source Amazon
-        /// Web Services Region where the DB cluster snapshot is copied from. The pre-signed URL
-        /// must be a valid request for the <code>CopyDBClusterSnapshot</code> API action that
-        /// can be executed in the source Amazon Web Services Region that contains the encrypted
-        /// DB cluster snapshot to be copied.
-        /// </para>
-        ///  
-        /// <para>
-        /// The pre-signed URL request must contain the following parameter values:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>KmsKeyId</code> - The Amazon Web Services KMS key identifier for the KMS key
-        /// to use to encrypt the copy of the DB cluster snapshot in the destination Amazon Web
-        /// Services Region. This is the same identifier for both the <code>CopyDBClusterSnapshot</code>
-        /// action that is called in the destination Amazon Web Services Region, and the action
-        /// contained in the pre-signed URL.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>DestinationRegion</code> - The name of the Amazon Web Services Region that
-        /// the DB cluster snapshot is to be created in.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>SourceDBClusterSnapshotIdentifier</code> - The DB cluster snapshot identifier
-        /// for the encrypted DB cluster snapshot to be copied. This identifier must be in the
-        /// Amazon Resource Name (ARN) format for the source Amazon Web Services Region. For example,
-        /// if you are copying an encrypted DB cluster snapshot from the us-west-2 Amazon Web
-        /// Services Region, then your <code>SourceDBClusterSnapshotIdentifier</code> looks like
-        /// the following example: <code>arn:aws:rds:us-west-2:123456789012:cluster-snapshot:aurora-cluster1-snapshot-20161115</code>.
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// To learn how to generate a Signature Version 4 signed request, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">
-        /// Authenticating Requests: Using Query Parameters (Amazon Web Services Signature Version
-        /// 4)</a> and <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">
-        /// Signature Version 4 Signing Process</a>.
-        /// </para>
-        ///  <note> 
-        /// <para>
-        /// If you are using an Amazon Web Services SDK tool or the CLI, you can specify <code>SourceRegion</code>
-        /// (or <code>--source-region</code> for the CLI) instead of specifying <code>PreSignedUrl</code>
-        /// manually. Specifying <code>SourceRegion</code> autogenerates a pre-signed URL that
-        /// is a valid request for the operation that can be executed in the source Amazon Web
-        /// Services Region.
-        /// </para>
-        ///  </note> </li> <li> 
-        /// <para>
         ///  <code>TargetDBClusterSnapshotIdentifier</code> - The identifier for the new copy
         /// of the DB cluster snapshot in the destination Amazon Web Services Region.
         /// </para>
@@ -702,7 +662,7 @@ namespace Amazon.RDS
         ///  <code>SourceDBClusterSnapshotIdentifier</code> - The DB cluster snapshot identifier
         /// for the encrypted DB cluster snapshot to be copied. This identifier must be in the
         /// ARN format for the source Amazon Web Services Region and is the same value as the
-        /// <code>SourceDBClusterSnapshotIdentifier</code> in the pre-signed URL. 
+        /// <code>SourceDBClusterSnapshotIdentifier</code> in the presigned URL.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -714,24 +674,18 @@ namespace Amazon.RDS
         /// <para>
         /// For more information on copying encrypted Amazon Aurora DB cluster snapshots from
         /// one Amazon Web Services Region to another, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_CopySnapshot.html">
-        /// Copying a Snapshot</a> in the <i>Amazon Aurora User Guide.</i> 
+        /// Copying a Snapshot</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
-        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> 
+        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
-        /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS
-        /// User Guide.</i> 
+        /// Multi-AZ DB cluster deployments</a> in the <i>Amazon RDS User Guide</i>.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// The Multi-AZ DB clusters feature is in preview and is subject to change.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CopyDBClusterSnapshot service method.</param>
         /// 
@@ -846,8 +800,8 @@ namespace Amazon.RDS
         ///  
         /// <para>
         /// You can copy a snapshot from one Amazon Web Services Region to another. In that case,
-        /// the Amazon Web Services Region where you call the <code>CopyDBSnapshot</code> action
-        /// is the destination Amazon Web Services Region for the DB snapshot copy. 
+        /// the Amazon Web Services Region where you call the <code>CopyDBSnapshot</code> operation
+        /// is the destination Amazon Web Services Region for the DB snapshot copy.
         /// </para>
         ///  
         /// <para>
@@ -856,7 +810,7 @@ namespace Amazon.RDS
         ///  
         /// <para>
         /// For more information about copying snapshots, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html#USER_CopyDBSnapshot">Copying
-        /// a DB Snapshot</a> in the <i>Amazon RDS User Guide.</i> 
+        /// a DB Snapshot</a> in the <i>Amazon RDS User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CopyDBSnapshot service method.</param>
@@ -961,63 +915,103 @@ namespace Amazon.RDS
 
         #endregion
         
-        #region  CreateCustomAvailabilityZone
+        #region  CreateBlueGreenDeployment
 
 
         /// <summary>
-        /// Creates a custom Availability Zone (AZ).
+        /// Creates a blue/green deployment.
         /// 
         ///  
         /// <para>
-        /// A custom AZ is an on-premises AZ that is integrated with a VMware vSphere cluster.
+        /// A blue/green deployment creates a staging environment that copies the production environment.
+        /// In a blue/green deployment, the blue environment is the current production environment.
+        /// The green environment is the staging environment. The staging environment stays in
+        /// sync with the current production environment using logical replication.
         /// </para>
         ///  
         /// <para>
-        /// For more information about RDS on VMware, see the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html">
-        /// RDS on VMware User Guide.</a> 
+        /// You can make changes to the databases in the green environment without affecting production
+        /// workloads. For example, you can upgrade the major or minor DB engine version, change
+        /// database parameters, or make schema changes in the staging environment. You can thoroughly
+        /// test changes in the green environment. When ready, you can switch over the environments
+        /// to promote the green environment to be the new production environment. The switchover
+        /// typically takes under a minute.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments.html">Using
+        /// Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon RDS User
+        /// Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/blue-green-deployments.html">
+        /// Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon
+        /// Aurora User Guide</i>.
         /// </para>
         /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the CreateCustomAvailabilityZone service method.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateBlueGreenDeployment service method.</param>
         /// 
-        /// <returns>The response from the CreateCustomAvailabilityZone service method, as returned by RDS.</returns>
-        /// <exception cref="Amazon.RDS.Model.CustomAvailabilityZoneAlreadyExistsException">
-        /// <code>CustomAvailabilityZoneName</code> is already used by an existing custom Availability
-        /// Zone.
+        /// <returns>The response from the CreateBlueGreenDeployment service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.BlueGreenDeploymentAlreadyExistsException">
+        /// A blue/green deployment with the specified name already exists.
         /// </exception>
-        /// <exception cref="Amazon.RDS.Model.CustomAvailabilityZoneQuotaExceededException">
-        /// You have exceeded the maximum number of custom Availability Zones.
+        /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
+        /// <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
         /// </exception>
-        /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
-        /// An error occurred accessing an Amazon Web Services KMS key.
+        /// <exception cref="Amazon.RDS.Model.DBClusterParameterGroupNotFoundException">
+        /// <code>DBClusterParameterGroupName</code> doesn't refer to an existing DB cluster
+        /// parameter group.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateCustomAvailabilityZone">REST API Reference for CreateCustomAvailabilityZone Operation</seealso>
-        CreateCustomAvailabilityZoneResponse CreateCustomAvailabilityZone(CreateCustomAvailabilityZoneRequest request);
+        /// <exception cref="Amazon.RDS.Model.DBClusterQuotaExceededException">
+        /// The user attempted to create a new DB cluster and the user has already reached the
+        /// maximum allowed DB cluster quota.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
+        /// <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBParameterGroupNotFoundException">
+        /// <code>DBParameterGroupName</code> doesn't refer to an existing DB parameter group.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InstanceQuotaExceededException">
+        /// The request would result in the user exceeding the allowed number of DB instances.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
+        /// The requested operation can't be performed while the cluster is in this state.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceStateException">
+        /// The DB instance isn't in a valid state.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.SourceClusterNotSupportedException">
+        /// The source DB cluster isn't supported for a blue/green deployment.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.SourceDatabaseNotSupportedException">
+        /// The source DB instance isn't supported for a blue/green deployment.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateBlueGreenDeployment">REST API Reference for CreateBlueGreenDeployment Operation</seealso>
+        CreateBlueGreenDeploymentResponse CreateBlueGreenDeployment(CreateBlueGreenDeploymentRequest request);
 
         /// <summary>
-        /// Initiates the asynchronous execution of the CreateCustomAvailabilityZone operation.
+        /// Initiates the asynchronous execution of the CreateBlueGreenDeployment operation.
         /// </summary>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateCustomAvailabilityZone operation on AmazonRDSClient.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateBlueGreenDeployment operation on AmazonRDSClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateCustomAvailabilityZone
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateBlueGreenDeployment
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateCustomAvailabilityZone">REST API Reference for CreateCustomAvailabilityZone Operation</seealso>
-        IAsyncResult BeginCreateCustomAvailabilityZone(CreateCustomAvailabilityZoneRequest request, AsyncCallback callback, object state);
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateBlueGreenDeployment">REST API Reference for CreateBlueGreenDeployment Operation</seealso>
+        IAsyncResult BeginCreateBlueGreenDeployment(CreateBlueGreenDeploymentRequest request, AsyncCallback callback, object state);
 
 
 
         /// <summary>
-        /// Finishes the asynchronous execution of the  CreateCustomAvailabilityZone operation.
+        /// Finishes the asynchronous execution of the  CreateBlueGreenDeployment operation.
         /// </summary>
         /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateCustomAvailabilityZone.</param>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateBlueGreenDeployment.</param>
         /// 
-        /// <returns>Returns a  CreateCustomAvailabilityZoneResult from RDS.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateCustomAvailabilityZone">REST API Reference for CreateCustomAvailabilityZone Operation</seealso>
-        CreateCustomAvailabilityZoneResponse EndCreateCustomAvailabilityZone(IAsyncResult asyncResult);
+        /// <returns>Returns a  CreateBlueGreenDeploymentResult from RDS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateBlueGreenDeployment">REST API Reference for CreateBlueGreenDeployment Operation</seealso>
+        CreateBlueGreenDeploymentResponse EndCreateBlueGreenDeployment(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1025,59 +1019,22 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// Creates a custom DB engine version (CEV). A CEV is a binary volume snapshot of a database
-        /// engine and specific AMI. The only supported engine is Oracle Database 19c Enterprise
-        /// Edition with the January 2021 or later RU/RUR.
-        /// 
-        ///  
-        /// <para>
-        /// Amazon RDS, which is a fully managed service, supplies the Amazon Machine Image (AMI)
-        /// and database software. The Amazon RDS database software is preinstalled, so you need
-        /// only select a DB engine and version, and create your database. With Amazon RDS Custom,
-        /// you upload your database installation files in Amazon S3.
-        /// </para>
-        ///  
-        /// <para>
-        /// When you create a custom engine version, you specify the files in a JSON document
-        /// called a CEV manifest. This document describes installation .zip files stored in Amazon
-        /// S3. RDS Custom creates your CEV from the installation files that you provided. This
-        /// service model is called Bring Your Own Media (BYOM).
-        /// </para>
-        ///  
-        /// <para>
-        /// Creation takes approximately two hours. If creation fails, RDS Custom issues <code>RDS-EVENT-0196</code>
-        /// with the message <code>Creation failed for custom engine version</code>, and includes
-        /// details about the failure. For example, the event prints missing files.
-        /// </para>
-        ///  
-        /// <para>
-        /// After you create the CEV, it is available for use. You can create multiple CEVs, and
-        /// create multiple RDS Custom instances from any CEV. You can also change the status
-        /// of a CEV to make it available or inactive.
-        /// </para>
-        ///  <note> 
-        /// <para>
-        /// The MediaImport service that imports files from Amazon S3 to create CEVs isn't integrated
-        /// with Amazon Web Services CloudTrail. If you turn on data logging for Amazon RDS in
-        /// CloudTrail, calls to the <code>CreateCustomDbEngineVersion</code> event aren't logged.
-        /// However, you might see calls from the API gateway that accesses your Amazon S3 bucket.
-        /// These calls originate from the MediaImport service for the <code>CreateCustomDbEngineVersion</code>
-        /// event.
-        /// </para>
-        ///  </note> 
-        /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.html#custom-cev.create">
-        /// Creating a CEV</a> in the <i>Amazon RDS User Guide</i>.
-        /// </para>
+        /// Creates a custom DB engine version (CEV).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCustomDBEngineVersion service method.</param>
         /// 
         /// <returns>The response from the CreateCustomDBEngineVersion service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.CreateCustomDBEngineVersionException">
+        /// An error occurred while trying to create the CEV.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.CustomDBEngineVersionAlreadyExistsException">
         /// A CEV with the specified name already exists.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.CustomDBEngineVersionQuotaExceededException">
         /// You have exceeded your CEV quota.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.Ec2ImagePropertiesNotSupportedException">
+        /// The AMI configuration prerequisite has not been met.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
         /// An error occurred accessing an Amazon Web Services KMS key.
@@ -1121,27 +1078,25 @@ namespace Amazon.RDS
         /// 
         ///  
         /// <para>
+        /// If you create an Aurora DB cluster, the request creates an empty cluster. You must
+        /// explicitly create the writer instance for your DB cluster using the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBInstance.html">CreateDBInstance</a>
+        /// operation. If you create a Multi-AZ DB cluster, the request creates a writer and two
+        /// reader DB instances for you, each in a different Availability Zone.
+        /// </para>
+        ///  
+        /// <para>
         /// You can use the <code>ReplicationSourceIdentifier</code> parameter to create an Amazon
-        /// Aurora DB cluster as a read replica of another DB cluster or Amazon RDS MySQL or PostgreSQL
-        /// DB instance. For cross-Region replication where the DB cluster identified by <code>ReplicationSourceIdentifier</code>
-        /// is encrypted, also specify the <code>PreSignedUrl</code> parameter.
+        /// Aurora DB cluster as a read replica of another DB cluster or Amazon RDS for MySQL
+        /// or PostgreSQL DB instance. For more information about Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">What
+        /// is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// For more information on Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
-        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> 
+        /// You can also use the <code>ReplicationSourceIdentifier</code> parameter to create
+        /// a Multi-AZ DB cluster read replica with an RDS for MySQL or PostgreSQL DB instance
+        /// as the source. For more information about Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">Multi-AZ
+        /// DB cluster deployments</a> in the <i>Amazon RDS User Guide</i>.
         /// </para>
-        ///  
-        /// <para>
-        /// For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
-        /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS
-        /// User Guide.</i> 
-        /// </para>
-        ///  <note> 
-        /// <para>
-        /// The Multi-AZ DB clusters feature is in preview and is subject to change.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDBCluster service method.</param>
         /// 
@@ -1248,7 +1203,7 @@ namespace Amazon.RDS
         /// 
         ///  <note> 
         /// <para>
-        /// This action only applies to Aurora DB clusters.
+        /// This action applies only to Aurora DB clusters.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1316,7 +1271,7 @@ namespace Amazon.RDS
         /// </para>
         ///  
         /// <para>
-        ///  A DB cluster parameter group is initially created with the default parameters for
+        /// A DB cluster parameter group is initially created with the default parameters for
         /// the database engine used by instances in the DB cluster. To provide custom values
         /// for any of the parameters, you must modify the group after creating it using <code>ModifyDBClusterParameterGroup</code>.
         /// Once you've created a DB cluster parameter group, you need to associate it with your
@@ -1326,13 +1281,13 @@ namespace Amazon.RDS
         /// <para>
         /// When you associate a new DB cluster parameter group with a running Aurora DB cluster,
         /// reboot the DB instances in the DB cluster without failover for the new DB cluster
-        /// parameter group and associated settings to take effect. 
+        /// parameter group and associated settings to take effect.
         /// </para>
         ///  
         /// <para>
         /// When you associate a new DB cluster parameter group with a running Multi-AZ DB cluster,
         /// reboot the DB cluster without failover for the new DB cluster parameter group and
-        /// associated settings to take effect. 
+        /// associated settings to take effect.
         /// </para>
         ///  <important> 
         /// <para>
@@ -1344,25 +1299,19 @@ namespace Amazon.RDS
         /// database for a DB cluster, such as the character set for the default database defined
         /// by the <code>character_set_database</code> parameter. You can use the <i>Parameter
         /// Groups</i> option of the <a href="https://console.aws.amazon.com/rds/">Amazon RDS
-        /// console</a> or the <code>DescribeDBClusterParameters</code> action to verify that
+        /// console</a> or the <code>DescribeDBClusterParameters</code> operation to verify that
         /// your DB cluster parameter group has been created or modified.
         /// </para>
         ///  </important> 
         /// <para>
         /// For more information on Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
-        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> 
+        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
-        /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS
-        /// User Guide.</i> 
+        /// Multi-AZ DB cluster deployments</a> in the <i>Amazon RDS User Guide</i>.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// The Multi-AZ DB clusters feature is in preview and is subject to change.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDBClusterParameterGroup service method.</param>
         /// 
@@ -1414,19 +1363,13 @@ namespace Amazon.RDS
         ///  
         /// <para>
         /// For more information on Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
-        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> 
+        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
-        /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS
-        /// User Guide.</i> 
+        /// Multi-AZ DB cluster deployments</a> in the <i>Amazon RDS User Guide</i>.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// The Multi-AZ DB clusters feature is in preview and is subject to change.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDBClusterSnapshot service method.</param>
         /// 
@@ -1482,6 +1425,24 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Creates a new DB instance.
+        /// 
+        ///  
+        /// <para>
+        /// The new DB instance can be an RDS DB instance, or it can be a DB instance in an Aurora
+        /// DB cluster. For an Aurora DB cluster, you can call this operation multiple times to
+        /// add more than one DB instance to the cluster.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about creating an RDS DB instance, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CreateDBInstance.html">
+        /// Creating an Amazon RDS DB instance</a> in the <i>Amazon RDS User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about creating a DB instance in an Aurora DB cluster, see <a
+        /// href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.CreateInstance.html">
+        /// Creating an Amazon Aurora DB cluster</a> in the <i>Amazon Aurora User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDBInstance service method.</param>
         /// 
@@ -1497,6 +1458,9 @@ namespace Amazon.RDS
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.BackupPolicyNotFoundException">
         /// 
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.CertificateNotFoundException">
+        /// <code>CertificateIdentifier</code> doesn't refer to an existing certificate.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
         /// <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
@@ -1540,6 +1504,10 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
         /// An error occurred accessing an Amazon Web Services KMS key.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.NetworkTypeNotSupportedException">
+        /// The network type is invalid for the DB instance. Valid nework type values are <code>IPV4</code>
+        /// and <code>DUAL</code>.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.OptionGroupNotFoundException">
         /// The specified option group could not be found.
         /// </exception>
@@ -1551,8 +1519,7 @@ namespace Amazon.RDS
         /// across all DB instances.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.StorageTypeNotSupportedException">
-        /// Storage of the <code>StorageType</code> specified can't be associated with the DB
-        /// instance.
+        /// The specified <code>StorageType</code> can't be associated with the DB instance.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBInstance">REST API Reference for CreateDBInstance Operation</seealso>
         CreateDBInstanceResponse CreateDBInstance(CreateDBInstanceRequest request);
@@ -1589,31 +1556,37 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// Creates a new DB instance that acts as a read replica for an existing source DB instance.
-        /// You can create a read replica for a DB instance running MySQL, MariaDB, Oracle, PostgreSQL,
-        /// or SQL Server. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html">Working
-        /// with Read Replicas</a> in the <i>Amazon RDS User Guide</i>. 
+        /// Creates a new DB instance that acts as a read replica for an existing source DB instance
+        /// or Multi-AZ DB cluster. You can create a read replica for a DB instance running MySQL,
+        /// MariaDB, Oracle, PostgreSQL, or SQL Server. You can create a read replica for a Multi-AZ
+        /// DB cluster running MySQL or PostgreSQL. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html">Working
+        /// with read replicas</a> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html#multi-az-db-clusters-migrating-to-instance-with-read-replica">Migrating
+        /// from a Multi-AZ DB cluster to a DB instance using a read replica</a> in the <i>Amazon
+        /// RDS User Guide</i>.
         /// 
         ///  
         /// <para>
-        /// Amazon Aurora doesn't support this action. Call the <code>CreateDBInstance</code>
-        /// action to create a DB instance for an Aurora DB cluster.
+        /// Amazon Aurora doesn't support this operation. Call the <code>CreateDBInstance</code>
+        /// operation to create a DB instance for an Aurora DB cluster.
         /// </para>
         ///  
         /// <para>
-        /// All read replica DB instances are created with backups disabled. All other DB instance
-        /// attributes (including DB security groups and DB parameter groups) are inherited from
-        /// the source DB instance, except as specified.
+        /// All read replica DB instances are created with backups disabled. All other attributes
+        /// (including DB security groups and DB parameter groups) are inherited from the source
+        /// DB instance or cluster, except as specified.
         /// </para>
         ///  <important> 
         /// <para>
-        /// Your source DB instance must have backup retention enabled. 
+        /// Your source DB instance or cluster must have backup retention enabled.
         /// </para>
         ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDBInstanceReadReplica service method.</param>
         /// 
         /// <returns>The response from the CreateDBInstanceReadReplica service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
+        /// <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBInstanceAlreadyExistsException">
         /// The user already has a DB instance with the given identifier.
         /// </exception>
@@ -1646,6 +1619,9 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.InsufficientDBInstanceCapacityException">
         /// The specified DB instance class isn't available in the specified Availability Zone.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
+        /// The requested operation can't be performed while the cluster is in this state.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceStateException">
         /// The DB instance isn't in a valid state.
         /// </exception>
@@ -1664,6 +1640,10 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
         /// An error occurred accessing an Amazon Web Services KMS key.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.NetworkTypeNotSupportedException">
+        /// The network type is invalid for the DB instance. Valid nework type values are <code>IPV4</code>
+        /// and <code>DUAL</code>.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.OptionGroupNotFoundException">
         /// The specified option group could not be found.
         /// </exception>
@@ -1675,8 +1655,7 @@ namespace Amazon.RDS
         /// across all DB instances.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.StorageTypeNotSupportedException">
-        /// Storage of the <code>StorageType</code> specified can't be associated with the DB
-        /// instance.
+        /// The specified <code>StorageType</code> can't be associated with the DB instance.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBInstanceReadReplica">REST API Reference for CreateDBInstanceReadReplica Operation</seealso>
         CreateDBInstanceReadReplicaResponse CreateDBInstanceReadReplica(CreateDBInstanceReadReplicaRequest request);
@@ -1717,13 +1696,13 @@ namespace Amazon.RDS
         /// 
         ///  
         /// <para>
-        ///  A DB parameter group is initially created with the default parameters for the database
+        /// A DB parameter group is initially created with the default parameters for the database
         /// engine used by the DB instance. To provide custom values for any of the parameters,
         /// you must modify the group after creating it using <code>ModifyDBParameterGroup</code>.
         /// Once you've created a DB parameter group, you need to associate it with your DB instance
         /// using <code>ModifyDBInstance</code>. When you associate a new DB parameter group with
         /// a running DB instance, you need to reboot the DB instance without failover for the
-        /// new DB parameter group and associated settings to take effect. 
+        /// new DB parameter group and associated settings to take effect.
         /// </para>
         ///  
         /// <para>
@@ -1903,10 +1882,19 @@ namespace Amazon.RDS
         /// <summary>
         /// Creates a new DB security group. DB security groups control access to a DB instance.
         /// 
-        ///  <note> 
+        ///  
         /// <para>
         /// A DB security group controls access to EC2-Classic DB instances that are not in a
         /// VPC.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// EC2-Classic was retired on August 15, 2022. If you haven't migrated from EC2-Classic
+        /// to a VPC, we recommend that you migrate as soon as possible. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+        /// from EC2-Classic to a VPC</a> in the <i>Amazon EC2 User Guide</i>, the blog <a href="http://aws.amazon.com/blogs/aws/ec2-classic-is-retiring-heres-how-to-prepare/">EC2-Classic
+        /// Networking is Retiring – Here’s How to Prepare</a>, and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.Non-VPC2VPC.html">Moving
+        /// a DB instance not in a VPC into a VPC</a> in the <i>Amazon RDS User Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -2070,7 +2058,7 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// Creates an RDS event notification subscription. This action requires a topic Amazon
+        /// Creates an RDS event notification subscription. This operation requires a topic Amazon
         /// Resource Name (ARN) created by either the RDS console, the SNS console, or the SNS
         /// API. To obtain an ARN with SNS, you must create a topic in Amazon SNS and subscribe
         /// to the topic. The ARN is displayed in the SNS console.
@@ -2087,20 +2075,23 @@ namespace Amazon.RDS
         ///  
         /// <para>
         /// If you specify both the <code>SourceType</code> and <code>SourceIds</code>, such as
-        /// <code>SourceType</code> = <code>db-instance</code> and <code>SourceIdentifier</code>
-        /// = <code>myDBInstance1</code>, you are notified of all the <code>db-instance</code>
-        /// events for the specified source. If you specify a <code>SourceType</code> but do not
-        /// specify a <code>SourceIdentifier</code>, you receive notice of the events for that
-        /// source type for all your RDS sources. If you don't specify either the SourceType or
-        /// the <code>SourceIdentifier</code>, you are notified of events generated from all RDS
-        /// sources belonging to your customer account.
+        /// <code>SourceType</code> = <code>db-instance</code> and <code>SourceIds</code> = <code>myDBInstance1</code>,
+        /// you are notified of all the <code>db-instance</code> events for the specified source.
+        /// If you specify a <code>SourceType</code> but do not specify <code>SourceIds</code>,
+        /// you receive notice of the events for that source type for all your RDS sources. If
+        /// you don't specify either the SourceType or the <code>SourceIds</code>, you are notified
+        /// of events generated from all RDS sources belonging to your customer account.
         /// </para>
-        ///  <note> 
+        ///  
         /// <para>
-        /// RDS event notification is only available for unencrypted SNS topics. If you specify
-        /// an encrypted SNS topic, event notifications aren't sent for the topic.
+        /// For more information about subscribing to an event for RDS DB engines, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.Subscribing.html">
+        /// Subscribing to Amazon RDS event notification</a> in the <i>Amazon RDS User Guide</i>.
         /// </para>
-        ///  </note>
+        ///  
+        /// <para>
+        /// For more information about subscribing to an event for Aurora DB engines, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Events.Subscribing.html">
+        /// Subscribing to Amazon RDS event notification</a> in the <i>Amazon Aurora User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateEventSubscription service method.</param>
         /// 
@@ -2109,7 +2100,7 @@ namespace Amazon.RDS
         /// You have reached the maximum number of event subscriptions.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.SNSInvalidTopicException">
-        /// SNS has responded that there is a problem with the SND topic specified.
+        /// SNS has responded that there is a problem with the SNS topic specified.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.SNSNoAuthorizationException">
         /// You do not have permission to publish to the SNS topic ARN.
@@ -2164,18 +2155,17 @@ namespace Amazon.RDS
         /// Creates an Aurora global database spread across multiple Amazon Web Services Regions.
         /// The global database contains a single primary cluster with read-write capability,
         /// and a read-only secondary cluster that receives data from the primary cluster through
-        /// high-speed replication performed by the Aurora storage subsystem. 
+        /// high-speed replication performed by the Aurora storage subsystem.
         /// 
         ///  
         /// <para>
-        ///  You can create a global database that is initially empty, and then add a primary
-        /// cluster and a secondary cluster to it. Or you can specify an existing Aurora cluster
-        /// during the create operation, and this cluster becomes the primary cluster of the global
-        /// database. 
+        /// You can create a global database that is initially empty, and then add a primary cluster
+        /// and a secondary cluster to it. Or you can specify an existing Aurora cluster during
+        /// the create operation, and this cluster becomes the primary cluster of the global database.
         /// </para>
         ///  <note> 
         /// <para>
-        /// This action only applies to Aurora DB clusters.
+        /// This action applies only to Aurora DB clusters.
         /// </para>
         ///  </note>
         /// </summary>
@@ -2278,60 +2268,60 @@ namespace Amazon.RDS
 
         #endregion
         
-        #region  DeleteCustomAvailabilityZone
+        #region  DeleteBlueGreenDeployment
 
 
         /// <summary>
-        /// Deletes a custom Availability Zone (AZ).
+        /// Deletes a blue/green deployment.
         /// 
         ///  
         /// <para>
-        /// A custom AZ is an on-premises AZ that is integrated with a VMware vSphere cluster.
-        /// </para>
-        ///  
-        /// <para>
-        /// For more information about RDS on VMware, see the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html">
-        /// RDS on VMware User Guide.</a> 
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments.html">Using
+        /// Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon RDS User
+        /// Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/blue-green-deployments.html">
+        /// Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon
+        /// Aurora User Guide</i>.
         /// </para>
         /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the DeleteCustomAvailabilityZone service method.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBlueGreenDeployment service method.</param>
         /// 
-        /// <returns>The response from the DeleteCustomAvailabilityZone service method, as returned by RDS.</returns>
-        /// <exception cref="Amazon.RDS.Model.CustomAvailabilityZoneNotFoundException">
-        /// <code>CustomAvailabilityZoneId</code> doesn't refer to an existing custom Availability
-        /// Zone identifier.
+        /// <returns>The response from the DeleteBlueGreenDeployment service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.BlueGreenDeploymentNotFoundException">
+        /// <code>BlueGreenDeploymentIdentifier</code> doesn't refer to an existing blue/green
+        /// deployment.
         /// </exception>
-        /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
-        /// An error occurred accessing an Amazon Web Services KMS key.
+        /// <exception cref="Amazon.RDS.Model.InvalidBlueGreenDeploymentStateException">
+        /// The blue/green deployment can't be switched over or deleted because there is an invalid
+        /// configuration in the green environment.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteCustomAvailabilityZone">REST API Reference for DeleteCustomAvailabilityZone Operation</seealso>
-        DeleteCustomAvailabilityZoneResponse DeleteCustomAvailabilityZone(DeleteCustomAvailabilityZoneRequest request);
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteBlueGreenDeployment">REST API Reference for DeleteBlueGreenDeployment Operation</seealso>
+        DeleteBlueGreenDeploymentResponse DeleteBlueGreenDeployment(DeleteBlueGreenDeploymentRequest request);
 
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteCustomAvailabilityZone operation.
+        /// Initiates the asynchronous execution of the DeleteBlueGreenDeployment operation.
         /// </summary>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteCustomAvailabilityZone operation on AmazonRDSClient.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBlueGreenDeployment operation on AmazonRDSClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteCustomAvailabilityZone
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteBlueGreenDeployment
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteCustomAvailabilityZone">REST API Reference for DeleteCustomAvailabilityZone Operation</seealso>
-        IAsyncResult BeginDeleteCustomAvailabilityZone(DeleteCustomAvailabilityZoneRequest request, AsyncCallback callback, object state);
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteBlueGreenDeployment">REST API Reference for DeleteBlueGreenDeployment Operation</seealso>
+        IAsyncResult BeginDeleteBlueGreenDeployment(DeleteBlueGreenDeploymentRequest request, AsyncCallback callback, object state);
 
 
 
         /// <summary>
-        /// Finishes the asynchronous execution of the  DeleteCustomAvailabilityZone operation.
+        /// Finishes the asynchronous execution of the  DeleteBlueGreenDeployment operation.
         /// </summary>
         /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteCustomAvailabilityZone.</param>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteBlueGreenDeployment.</param>
         /// 
-        /// <returns>Returns a  DeleteCustomAvailabilityZoneResult from RDS.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteCustomAvailabilityZone">REST API Reference for DeleteCustomAvailabilityZone Operation</seealso>
-        DeleteCustomAvailabilityZoneResponse EndDeleteCustomAvailabilityZone(IAsyncResult asyncResult);
+        /// <returns>Returns a  DeleteBlueGreenDeploymentResult from RDS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteBlueGreenDeployment">REST API Reference for DeleteBlueGreenDeployment Operation</seealso>
+        DeleteBlueGreenDeploymentResponse EndDeleteBlueGreenDeployment(IAsyncResult asyncResult);
 
         #endregion
         
@@ -2367,8 +2357,8 @@ namespace Amazon.RDS
         /// </para>
         ///  </note> 
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.html#custom-cev.delete">
-        /// Deleting a CEV</a> in the <i>Amazon RDS User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.html#custom-cev.delete">Deleting
+        /// a CEV</a> in the <i>Amazon RDS User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteCustomDBEngineVersion service method.</param>
@@ -2421,20 +2411,19 @@ namespace Amazon.RDS
         /// 
         ///  
         /// <para>
+        /// If you're deleting a Multi-AZ DB cluster with read replicas, all cluster members are
+        /// terminated and read replicas are promoted to standalone instances.
+        /// </para>
+        ///  
+        /// <para>
         /// For more information on Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
-        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> 
+        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
-        /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS
-        /// User Guide.</i> 
+        /// Multi-AZ DB cluster deployments</a> in the <i>Amazon RDS User Guide</i>.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// The Multi-AZ DB clusters feature is in preview and is subject to change.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDBCluster service method.</param>
         /// 
@@ -2551,19 +2540,13 @@ namespace Amazon.RDS
         ///  
         /// <para>
         /// For more information on Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
-        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> 
+        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
-        /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS
-        /// User Guide.</i> 
+        /// Multi-AZ DB cluster deployments</a> in the <i>Amazon RDS User Guide</i>.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// The Multi-AZ DB clusters feature is in preview and is subject to change.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDBClusterParameterGroup service method.</param>
         /// 
@@ -2621,19 +2604,13 @@ namespace Amazon.RDS
         ///  </note> 
         /// <para>
         /// For more information on Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
-        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> 
+        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
-        /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS
-        /// User Guide.</i> 
+        /// Multi-AZ DB cluster deployments</a> in the <i>Amazon RDS User Guide</i>.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// The Multi-AZ DB clusters feature is in preview and is subject to change.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDBClusterSnapshot service method.</param>
         /// 
@@ -2687,10 +2664,10 @@ namespace Amazon.RDS
         /// 
         ///  
         /// <para>
-        ///  If you request a final DB snapshot the status of the Amazon RDS DB instance is <code>deleting</code>
+        /// If you request a final DB snapshot the status of the Amazon RDS DB instance is <code>deleting</code>
         /// until the DB snapshot is created. The API action <code>DescribeDBInstance</code> is
         /// used to monitor the status of this operation. The action can't be canceled or reverted
-        /// once submitted. 
+        /// once submitted.
         /// </para>
         ///  
         /// <para>
@@ -2973,9 +2950,18 @@ namespace Amazon.RDS
         /// <summary>
         /// Deletes a DB security group.
         /// 
-        ///  <note> 
+        ///  
         /// <para>
         /// The specified DB security group must not be associated with any DB instances.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// EC2-Classic was retired on August 15, 2022. If you haven't migrated from EC2-Classic
+        /// to a VPC, we recommend that you migrate as soon as possible. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+        /// from EC2-Classic to a VPC</a> in the <i>Amazon EC2 User Guide</i>, the blog <a href="http://aws.amazon.com/blogs/aws/ec2-classic-is-retiring-heres-how-to-prepare/">EC2-Classic
+        /// Networking is Retiring – Here’s How to Prepare</a>, and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.Non-VPC2VPC.html">Moving
+        /// a DB instance not in a VPC into a VPC</a> in the <i>Amazon RDS User Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -3178,7 +3164,7 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Deletes a global database cluster. The primary and secondary clusters must already
-        /// be detached or destroyed first. 
+        /// be detached or destroyed first.
         /// 
         ///  <note> 
         /// <para>
@@ -3224,50 +3210,6 @@ namespace Amazon.RDS
         /// <returns>Returns a  DeleteGlobalClusterResult from RDS.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteGlobalCluster">REST API Reference for DeleteGlobalCluster Operation</seealso>
         DeleteGlobalClusterResponse EndDeleteGlobalCluster(IAsyncResult asyncResult);
-
-        #endregion
-        
-        #region  DeleteInstallationMedia
-
-
-        /// <summary>
-        /// Deletes the installation medium for a DB engine that requires an on-premises customer
-        /// provided license, such as Microsoft SQL Server.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the DeleteInstallationMedia service method.</param>
-        /// 
-        /// <returns>The response from the DeleteInstallationMedia service method, as returned by RDS.</returns>
-        /// <exception cref="Amazon.RDS.Model.InstallationMediaNotFoundException">
-        /// <code>InstallationMediaID</code> doesn't refer to an existing installation medium.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteInstallationMedia">REST API Reference for DeleteInstallationMedia Operation</seealso>
-        DeleteInstallationMediaResponse DeleteInstallationMedia(DeleteInstallationMediaRequest request);
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the DeleteInstallationMedia operation.
-        /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteInstallationMedia operation on AmazonRDSClient.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteInstallationMedia
-        ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteInstallationMedia">REST API Reference for DeleteInstallationMedia Operation</seealso>
-        IAsyncResult BeginDeleteInstallationMedia(DeleteInstallationMediaRequest request, AsyncCallback callback, object state);
-
-
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the  DeleteInstallationMedia operation.
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteInstallationMedia.</param>
-        /// 
-        /// <returns>Returns a  DeleteInstallationMediaResult from RDS.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteInstallationMedia">REST API Reference for DeleteInstallationMedia Operation</seealso>
-        DeleteInstallationMediaResponse EndDeleteInstallationMedia(IAsyncResult asyncResult);
 
         #endregion
         
@@ -3437,12 +3379,74 @@ namespace Amazon.RDS
 
         #endregion
         
+        #region  DescribeBlueGreenDeployments
+
+
+        /// <summary>
+        /// Returns information about blue/green deployments.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments.html">Using
+        /// Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon RDS User
+        /// Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/blue-green-deployments.html">
+        /// Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon
+        /// Aurora User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeBlueGreenDeployments service method.</param>
+        /// 
+        /// <returns>The response from the DescribeBlueGreenDeployments service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.BlueGreenDeploymentNotFoundException">
+        /// <code>BlueGreenDeploymentIdentifier</code> doesn't refer to an existing blue/green
+        /// deployment.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeBlueGreenDeployments">REST API Reference for DescribeBlueGreenDeployments Operation</seealso>
+        DescribeBlueGreenDeploymentsResponse DescribeBlueGreenDeployments(DescribeBlueGreenDeploymentsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeBlueGreenDeployments operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeBlueGreenDeployments operation on AmazonRDSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeBlueGreenDeployments
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeBlueGreenDeployments">REST API Reference for DescribeBlueGreenDeployments Operation</seealso>
+        IAsyncResult BeginDescribeBlueGreenDeployments(DescribeBlueGreenDeploymentsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeBlueGreenDeployments operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeBlueGreenDeployments.</param>
+        /// 
+        /// <returns>Returns a  DescribeBlueGreenDeploymentsResult from RDS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeBlueGreenDeployments">REST API Reference for DescribeBlueGreenDeployments Operation</seealso>
+        DescribeBlueGreenDeploymentsResponse EndDescribeBlueGreenDeployments(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribeCertificates
 
 
         /// <summary>
         /// Lists the set of CA certificates provided by Amazon RDS for this Amazon Web Services
         /// account.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using
+        /// SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i>
+        /// and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html">
+        /// Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora
+        /// User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeCertificates service method.</param>
         /// 
@@ -3481,60 +3485,6 @@ namespace Amazon.RDS
 
         #endregion
         
-        #region  DescribeCustomAvailabilityZones
-
-
-        /// <summary>
-        /// Returns information about custom Availability Zones (AZs).
-        /// 
-        ///  
-        /// <para>
-        /// A custom AZ is an on-premises AZ that is integrated with a VMware vSphere cluster.
-        /// </para>
-        ///  
-        /// <para>
-        /// For more information about RDS on VMware, see the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html">
-        /// RDS on VMware User Guide.</a> 
-        /// </para>
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the DescribeCustomAvailabilityZones service method.</param>
-        /// 
-        /// <returns>The response from the DescribeCustomAvailabilityZones service method, as returned by RDS.</returns>
-        /// <exception cref="Amazon.RDS.Model.CustomAvailabilityZoneNotFoundException">
-        /// <code>CustomAvailabilityZoneId</code> doesn't refer to an existing custom Availability
-        /// Zone identifier.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeCustomAvailabilityZones">REST API Reference for DescribeCustomAvailabilityZones Operation</seealso>
-        DescribeCustomAvailabilityZonesResponse DescribeCustomAvailabilityZones(DescribeCustomAvailabilityZonesRequest request);
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the DescribeCustomAvailabilityZones operation.
-        /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DescribeCustomAvailabilityZones operation on AmazonRDSClient.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeCustomAvailabilityZones
-        ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeCustomAvailabilityZones">REST API Reference for DescribeCustomAvailabilityZones Operation</seealso>
-        IAsyncResult BeginDescribeCustomAvailabilityZones(DescribeCustomAvailabilityZonesRequest request, AsyncCallback callback, object state);
-
-
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the  DescribeCustomAvailabilityZones operation.
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeCustomAvailabilityZones.</param>
-        /// 
-        /// <returns>Returns a  DescribeCustomAvailabilityZonesResult from RDS.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeCustomAvailabilityZones">REST API Reference for DescribeCustomAvailabilityZones Operation</seealso>
-        DescribeCustomAvailabilityZonesResponse EndDescribeCustomAvailabilityZones(IAsyncResult asyncResult);
-
-        #endregion
-        
         #region  DescribeDBClusterBacktracks
 
 
@@ -3544,7 +3494,7 @@ namespace Amazon.RDS
         ///  
         /// <para>
         /// For more information on Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
-        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> 
+        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -3647,24 +3597,18 @@ namespace Amazon.RDS
         /// <summary>
         /// Returns a list of <code>DBClusterParameterGroup</code> descriptions. If a <code>DBClusterParameterGroupName</code>
         /// parameter is specified, the list will contain only the description of the specified
-        /// DB cluster parameter group. 
+        /// DB cluster parameter group.
         /// 
         ///  
         /// <para>
         /// For more information on Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
-        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> 
+        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
-        /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS
-        /// User Guide.</i> 
+        /// Multi-AZ DB cluster deployments</a> in the <i>Amazon RDS User Guide</i>.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// The Multi-AZ DB clusters feature is in preview and is subject to change.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDBClusterParameterGroups service method.</param>
         /// 
@@ -3712,19 +3656,13 @@ namespace Amazon.RDS
         ///  
         /// <para>
         /// For more information on Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
-        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> 
+        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
-        /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS
-        /// User Guide.</i> 
+        /// Multi-AZ DB cluster deployments</a> in the <i>Amazon RDS User Guide</i>.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// The Multi-AZ DB clusters feature is in preview and is subject to change.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDBClusterParameters service method.</param>
         /// 
@@ -3767,25 +3705,20 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// Returns information about Amazon Aurora DB clusters and Multi-AZ DB clusters. This
-        /// API supports pagination.
+        /// Describes existing Amazon Aurora DB clusters and Multi-AZ DB clusters. This API supports
+        /// pagination.
         /// 
         ///  
         /// <para>
         /// For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
-        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> 
+        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
-        /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS
-        /// User Guide.</i> 
+        /// Multi-AZ DB cluster deployments</a> in the <i>Amazon RDS User Guide</i>.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// The Multi-AZ DB clusters feature is in preview and is subject to change.
-        /// </para>
-        ///  </note> 
+        ///  
         /// <para>
         /// This operation can also return information for Amazon Neptune DB instances and Amazon
         /// DocumentDB instances.
@@ -3898,19 +3831,13 @@ namespace Amazon.RDS
         ///  
         /// <para>
         /// For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
-        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> 
+        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
-        /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS
-        /// User Guide.</i> 
+        /// Multi-AZ DB cluster deployments</a> in the <i>Amazon RDS User Guide</i>.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// The Multi-AZ DB clusters feature is in preview and is subject to change.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDBClusterSnapshots service method.</param>
         /// 
@@ -4053,7 +3980,7 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// Returns information about provisioned RDS instances. This API supports pagination.
+        /// Describes provisioned RDS instances. This API supports pagination.
         /// 
         ///  <note> 
         /// <para>
@@ -4071,7 +3998,7 @@ namespace Amazon.RDS
         DescribeDBInstancesResponse DescribeDBInstances();
 
         /// <summary>
-        /// Returns information about provisioned RDS instances. This API supports pagination.
+        /// Describes provisioned RDS instances. This API supports pagination.
         /// 
         ///  <note> 
         /// <para>
@@ -4471,6 +4398,17 @@ namespace Amazon.RDS
         /// Returns a list of <code>DBSecurityGroup</code> descriptions. If a <code>DBSecurityGroupName</code>
         /// is specified, the list will contain only the descriptions of the specified DB security
         /// group.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// EC2-Classic was retired on August 15, 2022. If you haven't migrated from EC2-Classic
+        /// to a VPC, we recommend that you migrate as soon as possible. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+        /// from EC2-Classic to a VPC</a> in the <i>Amazon EC2 User Guide</i>, the blog <a href="http://aws.amazon.com/blogs/aws/ec2-classic-is-retiring-heres-how-to-prepare/">EC2-Classic
+        /// Networking is Retiring – Here’s How to Prepare</a>, and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.Non-VPC2VPC.html">Moving
+        /// a DB instance not in a VPC into a VPC</a> in the <i>Amazon RDS User Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// 
         /// <returns>The response from the DescribeDBSecurityGroups service method, as returned by RDS.</returns>
@@ -4484,6 +4422,17 @@ namespace Amazon.RDS
         /// Returns a list of <code>DBSecurityGroup</code> descriptions. If a <code>DBSecurityGroupName</code>
         /// is specified, the list will contain only the descriptions of the specified DB security
         /// group.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// EC2-Classic was retired on August 15, 2022. If you haven't migrated from EC2-Classic
+        /// to a VPC, we recommend that you migrate as soon as possible. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+        /// from EC2-Classic to a VPC</a> in the <i>Amazon EC2 User Guide</i>, the blog <a href="http://aws.amazon.com/blogs/aws/ec2-classic-is-retiring-heres-how-to-prepare/">EC2-Classic
+        /// Networking is Retiring – Here’s How to Prepare</a>, and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.Non-VPC2VPC.html">Moving
+        /// a DB instance not in a VPC into a VPC</a> in the <i>Amazon RDS User Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDBSecurityGroups service method.</param>
         /// 
@@ -4645,7 +4594,7 @@ namespace Amazon.RDS
         ///  
         /// <para>
         /// For an overview of CIDR ranges, go to the <a href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Wikipedia
-        /// Tutorial</a>. 
+        /// Tutorial</a>.
         /// </para>
         /// </summary>
         /// 
@@ -4663,7 +4612,7 @@ namespace Amazon.RDS
         ///  
         /// <para>
         /// For an overview of CIDR ranges, go to the <a href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Wikipedia
-        /// Tutorial</a>. 
+        /// Tutorial</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDBSubnetGroups service method.</param>
@@ -4713,7 +4662,7 @@ namespace Amazon.RDS
         ///  
         /// <para>
         /// For more information on Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
-        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> 
+        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeEngineDefaultClusterParameters service method.</param>
@@ -4796,9 +4745,10 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Displays a list of categories for all event source types, or, if specified, for a
-        /// specified source type. You can see a list of the event categories and source types
-        /// in <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">
-        /// Events</a> in the <i>Amazon RDS User Guide.</i>
+        /// specified source type. You can also see this list in the "Amazon RDS event categories
+        /// and event messages" section of the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.Messages.html">
+        /// <i>Amazon RDS User Guide</i> </a> or the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Events.Messages.html">
+        /// <i>Amazon Aurora User Guide</i> </a>.
         /// </summary>
         /// 
         /// <returns>The response from the DescribeEventCategories service method, as returned by RDS.</returns>
@@ -4807,9 +4757,10 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Displays a list of categories for all event source types, or, if specified, for a
-        /// specified source type. You can see a list of the event categories and source types
-        /// in <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">
-        /// Events</a> in the <i>Amazon RDS User Guide.</i>
+        /// specified source type. You can also see this list in the "Amazon RDS event categories
+        /// and event messages" section of the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.Messages.html">
+        /// <i>Amazon RDS User Guide</i> </a> or the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Events.Messages.html">
+        /// <i>Amazon Aurora User Guide</i> </a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeEventCategories service method.</param>
         /// 
@@ -4850,14 +4801,20 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Returns events related to DB instances, DB clusters, DB parameter groups, DB security
-        /// groups, DB snapshots, and DB cluster snapshots for the past 14 days. Events specific
-        /// to a particular DB instances, DB clusters, DB parameter groups, DB security groups,
-        /// DB snapshots, and DB cluster snapshots group can be obtained by providing the name
-        /// as a parameter.
+        /// groups, DB snapshots, DB cluster snapshots, and RDS Proxies for the past 14 days.
+        /// Events specific to a particular DB instance, DB cluster, DB parameter group, DB security
+        /// group, DB snapshot, DB cluster snapshot group, or RDS Proxy can be obtained by providing
+        /// the name as a parameter.
         /// 
+        ///  
+        /// <para>
+        /// For more information on working with events, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/working-with-events.html">Monitoring
+        /// Amazon RDS events</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/working-with-events.html">Monitoring
+        /// Amazon Aurora events</a> in the <i>Amazon Aurora User Guide</i>.
+        /// </para>
         ///  <note> 
         /// <para>
-        /// By default, the past hour of events are returned.
+        /// By default, RDS returns events that were generated in the past hour.
         /// </para>
         ///  </note>
         /// </summary>
@@ -4868,14 +4825,20 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Returns events related to DB instances, DB clusters, DB parameter groups, DB security
-        /// groups, DB snapshots, and DB cluster snapshots for the past 14 days. Events specific
-        /// to a particular DB instances, DB clusters, DB parameter groups, DB security groups,
-        /// DB snapshots, and DB cluster snapshots group can be obtained by providing the name
-        /// as a parameter.
+        /// groups, DB snapshots, DB cluster snapshots, and RDS Proxies for the past 14 days.
+        /// Events specific to a particular DB instance, DB cluster, DB parameter group, DB security
+        /// group, DB snapshot, DB cluster snapshot group, or RDS Proxy can be obtained by providing
+        /// the name as a parameter.
         /// 
+        ///  
+        /// <para>
+        /// For more information on working with events, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/working-with-events.html">Monitoring
+        /// Amazon RDS events</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/working-with-events.html">Monitoring
+        /// Amazon Aurora events</a> in the <i>Amazon Aurora User Guide</i>.
+        /// </para>
         ///  <note> 
         /// <para>
-        /// By default, the past hour of events are returned.
+        /// By default, RDS returns events that were generated in the past hour.
         /// </para>
         ///  </note>
         /// </summary>
@@ -4985,8 +4948,8 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// Returns information about a snapshot export to Amazon S3. This API operation supports
-        /// pagination.
+        /// Returns information about a snapshot or cluster export to Amazon S3. This API operation
+        /// supports pagination.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeExportTasks service method.</param>
         /// 
@@ -5031,11 +4994,10 @@ namespace Amazon.RDS
         /// <summary>
         /// Returns information about Aurora global database clusters. This API supports pagination.
         /// 
-        /// 
         ///  
         /// <para>
-        ///  For more information on Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
-        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> 
+        /// For more information on Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
+        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -5078,50 +5040,6 @@ namespace Amazon.RDS
         /// <returns>Returns a  DescribeGlobalClustersResult from RDS.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeGlobalClusters">REST API Reference for DescribeGlobalClusters Operation</seealso>
         DescribeGlobalClustersResponse EndDescribeGlobalClusters(IAsyncResult asyncResult);
-
-        #endregion
-        
-        #region  DescribeInstallationMedia
-
-
-        /// <summary>
-        /// Describes the available installation media for a DB engine that requires an on-premises
-        /// customer provided license, such as Microsoft SQL Server.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the DescribeInstallationMedia service method.</param>
-        /// 
-        /// <returns>The response from the DescribeInstallationMedia service method, as returned by RDS.</returns>
-        /// <exception cref="Amazon.RDS.Model.InstallationMediaNotFoundException">
-        /// <code>InstallationMediaID</code> doesn't refer to an existing installation medium.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeInstallationMedia">REST API Reference for DescribeInstallationMedia Operation</seealso>
-        DescribeInstallationMediaResponse DescribeInstallationMedia(DescribeInstallationMediaRequest request);
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the DescribeInstallationMedia operation.
-        /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DescribeInstallationMedia operation on AmazonRDSClient.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeInstallationMedia
-        ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeInstallationMedia">REST API Reference for DescribeInstallationMedia Operation</seealso>
-        IAsyncResult BeginDescribeInstallationMedia(DescribeInstallationMediaRequest request, AsyncCallback callback, object state);
-
-
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the  DescribeInstallationMedia operation.
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeInstallationMedia.</param>
-        /// 
-        /// <returns>Returns a  DescribeInstallationMediaResult from RDS.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeInstallationMedia">REST API Reference for DescribeInstallationMedia Operation</seealso>
-        DescribeInstallationMediaResponse EndDescribeInstallationMedia(IAsyncResult asyncResult);
 
         #endregion
         
@@ -5420,7 +5338,20 @@ namespace Amazon.RDS
         /// <summary>
         /// Returns a list of the source Amazon Web Services Regions where the current Amazon
         /// Web Services Region can create a read replica, copy a DB snapshot from, or replicate
-        /// automated backups from. This API action supports pagination.
+        /// automated backups from.
+        /// 
+        ///  
+        /// <para>
+        /// Use this operation to determine whether cross-Region features are supported between
+        /// other Regions and your current Region. This operation supports pagination.
+        /// </para>
+        ///  
+        /// <para>
+        /// To return information about the Regions that are enabled for your account, or all
+        /// Regions, use the EC2 operation <code>DescribeRegions</code>. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeRegions.html">
+        /// DescribeRegions</a> in the <i>Amazon EC2 API Reference</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeSourceRegions service method.</param>
         /// 
@@ -5462,7 +5393,6 @@ namespace Amazon.RDS
         /// <summary>
         /// You can call <code>DescribeValidDBInstanceModifications</code> to learn what modifications
         /// you can make to your DB instance. You can use this information when you call <code>ModifyDBInstance</code>.
-        /// 
         /// 
         ///  
         /// <para>
@@ -5582,7 +5512,7 @@ namespace Amazon.RDS
         /// <para>
         /// An Amazon Aurora DB cluster automatically fails over to an Aurora Replica, if one
         /// exists, when the primary DB instance fails. A Multi-AZ DB cluster automatically fails
-        /// over to a readbable standby DB instance when the primary DB instance fails.
+        /// over to a readable standby DB instance when the primary DB instance fails.
         /// </para>
         ///  
         /// <para>
@@ -5594,19 +5524,13 @@ namespace Amazon.RDS
         ///  
         /// <para>
         /// For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
-        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> 
+        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
-        /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS
-        /// User Guide.</i> 
+        /// Multi-AZ DB cluster deployments</a> in the <i>Amazon RDS User Guide</i>.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// The Multi-AZ DB clusters feature is in preview and is subject to change.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the FailoverDBCluster service method.</param>
         /// 
@@ -5669,14 +5593,14 @@ namespace Amazon.RDS
         /// <para>
         /// For more information about failing over an Amazon Aurora global database, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database-disaster-recovery.html#aurora-global-database-disaster-recovery.managed-failover">Managed
         /// planned failover for Amazon Aurora global databases</a> in the <i>Amazon Aurora User
-        /// Guide.</i> 
+        /// Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
         /// This action applies to <a>GlobalCluster</a> (Aurora global databases) only. Use this
         /// action only on healthy Aurora global databases with running Aurora DB clusters and
         /// no Region-wide outages, to test disaster recovery scenarios or to reconfigure your
-        /// Aurora global database topology. 
+        /// Aurora global database topology.
         /// </para>
         ///  </note>
         /// </summary>
@@ -5727,54 +5651,6 @@ namespace Amazon.RDS
 
         #endregion
         
-        #region  ImportInstallationMedia
-
-
-        /// <summary>
-        /// Imports the installation media for a DB engine that requires an on-premises customer
-        /// provided license, such as SQL Server.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the ImportInstallationMedia service method.</param>
-        /// 
-        /// <returns>The response from the ImportInstallationMedia service method, as returned by RDS.</returns>
-        /// <exception cref="Amazon.RDS.Model.CustomAvailabilityZoneNotFoundException">
-        /// <code>CustomAvailabilityZoneId</code> doesn't refer to an existing custom Availability
-        /// Zone identifier.
-        /// </exception>
-        /// <exception cref="Amazon.RDS.Model.InstallationMediaAlreadyExistsException">
-        /// The specified installation medium has already been imported.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ImportInstallationMedia">REST API Reference for ImportInstallationMedia Operation</seealso>
-        ImportInstallationMediaResponse ImportInstallationMedia(ImportInstallationMediaRequest request);
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the ImportInstallationMedia operation.
-        /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ImportInstallationMedia operation on AmazonRDSClient.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndImportInstallationMedia
-        ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ImportInstallationMedia">REST API Reference for ImportInstallationMedia Operation</seealso>
-        IAsyncResult BeginImportInstallationMedia(ImportInstallationMediaRequest request, AsyncCallback callback, object state);
-
-
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the  ImportInstallationMedia operation.
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginImportInstallationMedia.</param>
-        /// 
-        /// <returns>Returns a  ImportInstallationMediaResult from RDS.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ImportInstallationMedia">REST API Reference for ImportInstallationMedia Operation</seealso>
-        ImportInstallationMediaResponse EndImportInstallationMedia(IAsyncResult asyncResult);
-
-        #endregion
-        
         #region  ListTagsForResource
 
 
@@ -5790,6 +5666,10 @@ namespace Amazon.RDS
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// 
         /// <returns>The response from the ListTagsForResource service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.BlueGreenDeploymentNotFoundException">
+        /// <code>BlueGreenDeploymentIdentifier</code> doesn't refer to an existing blue/green
+        /// deployment.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
         /// <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
         /// </exception>
@@ -5838,12 +5718,71 @@ namespace Amazon.RDS
 
         #endregion
         
+        #region  ModifyActivityStream
+
+
+        /// <summary>
+        /// Changes the audit policy state of a database activity stream to either locked (default)
+        /// or unlocked. A locked policy is read-only, whereas an unlocked policy is read/write.
+        /// If your activity stream is started and locked, you can unlock it, customize your audit
+        /// policy, and then lock your activity stream. Restarting the activity stream isn't required.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/DBActivityStreams.Modifying.html">
+        /// Modifying a database activity stream</a> in the <i>Amazon RDS User Guide</i>. 
+        /// 
+        ///  
+        /// <para>
+        /// This operation is supported for RDS for Oracle and Microsoft SQL Server.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyActivityStream service method.</param>
+        /// 
+        /// <returns>The response from the ModifyActivityStream service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
+        /// <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceStateException">
+        /// The DB instance isn't in a valid state.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.ResourceNotFoundException">
+        /// The specified resource ID was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyActivityStream">REST API Reference for ModifyActivityStream Operation</seealso>
+        ModifyActivityStreamResponse ModifyActivityStream(ModifyActivityStreamRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyActivityStream operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyActivityStream operation on AmazonRDSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyActivityStream
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyActivityStream">REST API Reference for ModifyActivityStream Operation</seealso>
+        IAsyncResult BeginModifyActivityStream(ModifyActivityStreamRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifyActivityStream operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyActivityStream.</param>
+        /// 
+        /// <returns>Returns a  ModifyActivityStreamResult from RDS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyActivityStream">REST API Reference for ModifyActivityStream Operation</seealso>
+        ModifyActivityStreamResponse EndModifyActivityStream(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ModifyCertificates
 
 
         /// <summary>
         /// Override the system-default Secure Sockets Layer/Transport Layer Security (SSL/TLS)
-        /// certificate for Amazon RDS for new DB instances temporarily, or remove the override.
+        /// certificate for Amazon RDS for new DB instances, or remove the override.
         /// 
         ///  
         /// <para>
@@ -5922,36 +5861,36 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// Set the capacity of an Aurora Serverless DB cluster to a specific value.
+        /// Set the capacity of an Aurora Serverless v1 DB cluster to a specific value.
         /// 
         ///  
         /// <para>
-        /// Aurora Serverless scales seamlessly based on the workload on the DB cluster. In some
-        /// cases, the capacity might not scale fast enough to meet a sudden change in workload,
+        /// Aurora Serverless v1 scales seamlessly based on the workload on the DB cluster. In
+        /// some cases, the capacity might not scale fast enough to meet a sudden change in workload,
         /// such as a large number of new transactions. Call <code>ModifyCurrentDBClusterCapacity</code>
         /// to set the capacity explicitly.
         /// </para>
         ///  
         /// <para>
-        /// After this call sets the DB cluster capacity, Aurora Serverless can automatically
+        /// After this call sets the DB cluster capacity, Aurora Serverless v1 can automatically
         /// scale the DB cluster based on the cooldown period for scaling up and the cooldown
         /// period for scaling down.
         /// </para>
         ///  
         /// <para>
-        /// For more information about Aurora Serverless, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using
-        /// Amazon Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.
+        /// For more information about Aurora Serverless v1, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using
+        /// Amazon Aurora Serverless v1</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         ///  <important> 
         /// <para>
         /// If you call <code>ModifyCurrentDBClusterCapacity</code> with the default <code>TimeoutAction</code>,
-        /// connections that prevent Aurora Serverless from finding a scaling point might be dropped.
-        /// For more information about scaling points, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.how-it-works.html#aurora-serverless.how-it-works.auto-scaling">
-        /// Autoscaling for Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.
+        /// connections that prevent Aurora Serverless v1 from finding a scaling point might be
+        /// dropped. For more information about scaling points, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.how-it-works.html#aurora-serverless.how-it-works.auto-scaling">
+        /// Autoscaling for Aurora Serverless v1</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         ///  </important> <note> 
         /// <para>
-        /// This action only applies to Aurora Serverless DB clusters.
+        /// This action only applies to Aurora Serverless v1 DB clusters.
         /// </para>
         ///  </note>
         /// </summary>
@@ -6066,26 +6005,20 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// Modify the settings for an Amazon Aurora DB cluster or a Multi-AZ DB cluster. You
+        /// Modifies the settings of an Amazon Aurora DB cluster or a Multi-AZ DB cluster. You
         /// can change one or more settings by specifying these parameters and the new values
         /// in the request.
         /// 
         ///  
         /// <para>
         /// For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
-        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> 
+        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
-        /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS
-        /// User Guide.</i> 
+        /// Multi-AZ DB cluster deployments</a> in the <i>Amazon RDS User Guide</i>.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// The Multi-AZ DB clusters feature is in preview and is subject to change.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyDBCluster service method.</param>
         /// 
@@ -6099,6 +6032,9 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBClusterParameterGroupNotFoundException">
         /// <code>DBClusterParameterGroupName</code> doesn't refer to an existing DB cluster
         /// parameter group.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBInstanceAlreadyExistsException">
+        /// The user already has a DB instance with the given identifier.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBSubnetGroupNotFoundException">
         /// <code>DBSubnetGroupName</code> doesn't refer to an existing DB subnet group.
@@ -6129,6 +6065,10 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.StorageQuotaExceededException">
         /// The request would result in the user exceeding the allowed amount of storage available
         /// across all DB instances.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.StorageTypeNotAvailableException">
+        /// The <code>aurora-iopt1</code> storage type isn't available, because you modified the
+        /// DB cluster to use this storage type less than one month ago.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBCluster">REST API Reference for ModifyDBCluster Operation</seealso>
         ModifyDBClusterResponse ModifyDBCluster(ModifyDBClusterRequest request);
@@ -6227,10 +6167,10 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// Modifies the parameters of a DB cluster parameter group. To modify more than one
-        /// parameter, submit a list of the following: <code>ParameterName</code>, <code>ParameterValue</code>,
+        /// Modifies the parameters of a DB cluster parameter group. To modify more than one parameter,
+        /// submit a list of the following: <code>ParameterName</code>, <code>ParameterValue</code>,
         /// and <code>ApplyMethod</code>. A maximum of 20 parameters can be modified in a single
-        /// request. 
+        /// request.
         /// 
         ///  <important> 
         /// <para>
@@ -6241,12 +6181,12 @@ namespace Amazon.RDS
         /// important for parameters that are critical when creating the default database for
         /// a DB cluster, such as the character set for the default database defined by the <code>character_set_database</code>
         /// parameter. You can use the <i>Parameter Groups</i> option of the <a href="https://console.aws.amazon.com/rds/">Amazon
-        /// RDS console</a> or the <code>DescribeDBClusterParameters</code> action to verify that
-        /// your DB cluster parameter group has been created or modified.
+        /// RDS console</a> or the <code>DescribeDBClusterParameters</code> operation to verify
+        /// that your DB cluster parameter group has been created or modified.
         /// </para>
         ///  
         /// <para>
-        /// If the modified DB cluster parameter group is used by an Aurora Serverless cluster,
+        /// If the modified DB cluster parameter group is used by an Aurora Serverless v1 cluster,
         /// Aurora applies the update immediately. The cluster restart might interrupt your workload.
         /// In that case, your application must reopen any connections and retry any transactions
         /// that were active when the parameter changes took effect.
@@ -6254,19 +6194,13 @@ namespace Amazon.RDS
         ///  </important> 
         /// <para>
         /// For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
-        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> 
+        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
-        /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS
-        /// User Guide.</i> 
+        /// Multi-AZ DB cluster deployments</a> in the <i>Amazon RDS User Guide.</i> 
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// The Multi-AZ DB clusters feature is in preview and is subject to change.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyDBClusterParameterGroup service method.</param>
         /// 
@@ -6341,8 +6275,8 @@ namespace Amazon.RDS
         /// <para>
         /// To view which Amazon Web Services accounts have access to copy or restore a manual
         /// DB cluster snapshot, or whether a manual DB cluster snapshot is public or private,
-        /// use the <a>DescribeDBClusterSnapshotAttributes</a> API action. The accounts are returned
-        /// as values for the <code>restore</code> attribute.
+        /// use the <a>DescribeDBClusterSnapshotAttributes</a> API operation. The accounts are
+        /// returned as values for the <code>restore</code> attribute.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyDBClusterSnapshotAttribute service method.</param>
@@ -6454,6 +6388,10 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
         /// An error occurred accessing an Amazon Web Services KMS key.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.NetworkTypeNotSupportedException">
+        /// The network type is invalid for the DB instance. Valid nework type values are <code>IPV4</code>
+        /// and <code>DUAL</code>.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.OptionGroupNotFoundException">
         /// The specified option group could not be found.
         /// </exception>
@@ -6465,8 +6403,7 @@ namespace Amazon.RDS
         /// across all DB instances.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.StorageTypeNotSupportedException">
-        /// Storage of the <code>StorageType</code> specified can't be associated with the DB
-        /// instance.
+        /// The specified <code>StorageType</code> can't be associated with the DB instance.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBInstance">REST API Reference for ModifyDBInstance Operation</seealso>
         ModifyDBInstanceResponse ModifyDBInstance(ModifyDBInstanceRequest request);
@@ -6506,7 +6443,7 @@ namespace Amazon.RDS
         /// Modifies the parameters of a DB parameter group. To modify more than one parameter,
         /// submit a list of the following: <code>ParameterName</code>, <code>ParameterValue</code>,
         /// and <code>ApplyMethod</code>. A maximum of 20 parameters can be modified in a single
-        /// request. 
+        /// request.
         /// 
         ///  <important> 
         /// <para>
@@ -6729,7 +6666,7 @@ namespace Amazon.RDS
         ///  
         /// <para>
         /// Amazon RDS supports upgrading DB snapshots for MySQL, PostgreSQL, and Oracle. This
-        /// command doesn't apply to RDS Custom. 
+        /// command doesn't apply to RDS Custom.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyDBSnapshot service method.</param>
@@ -6799,7 +6736,7 @@ namespace Amazon.RDS
         /// <para>
         /// To view which Amazon Web Services accounts have access to copy or restore a manual
         /// DB snapshot, or whether a manual DB snapshot public or private, use the <a>DescribeDBSnapshotAttributes</a>
-        /// API action. The accounts are returned as values for the <code>restore</code> attribute.
+        /// API operation. The accounts are returned as values for the <code>restore</code> attribute.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyDBSnapshotAttribute service method.</param>
@@ -6929,7 +6866,7 @@ namespace Amazon.RDS
         /// You have reached the maximum number of event subscriptions.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.SNSInvalidTopicException">
-        /// SNS has responded that there is a problem with the SND topic specified.
+        /// SNS has responded that there is a problem with the SNS topic specified.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.SNSNoAuthorizationException">
         /// You do not have permission to publish to the SNS topic ARN.
@@ -6978,10 +6915,10 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// Modify a setting for an Amazon Aurora global cluster. You can change one or more
-        /// database configuration parameters by specifying these parameters and the new values
-        /// in the request. For more information on Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
-        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> 
+        /// Modify a setting for an Amazon Aurora global cluster. You can change one or more database
+        /// configuration parameters by specifying these parameters and the new values in the
+        /// request. For more information on Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
+        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.
         /// 
         ///  <note> 
         /// <para>
@@ -7246,23 +7183,19 @@ namespace Amazon.RDS
         /// if you make certain modifications, or if you change the DB cluster parameter group
         /// associated with the DB cluster, reboot the DB cluster for the changes to take effect.
         /// 
-        /// 
         ///  
         /// <para>
         /// Rebooting a DB cluster restarts the database engine service. Rebooting a DB cluster
         /// results in a momentary outage, during which the DB cluster status is set to rebooting.
-        /// 
         /// </para>
         ///  
         /// <para>
-        /// Use this operation only for a non-Aurora Multi-AZ DB cluster. The Multi-AZ DB clusters
-        /// feature is in preview and is subject to change.
+        /// Use this operation only for a non-Aurora Multi-AZ DB cluster.
         /// </para>
         ///  
         /// <para>
         /// For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
-        /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS
-        /// User Guide.</i> 
+        /// Multi-AZ DB cluster deployments</a> in the <i>Amazon RDS User Guide.</i> 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RebootDBCluster service method.</param>
@@ -7316,12 +7249,10 @@ namespace Amazon.RDS
         /// if you make certain modifications, or if you change the DB parameter group associated
         /// with the DB instance, you must reboot the instance for the changes to take effect.
         /// 
-        /// 
         ///  
         /// <para>
         /// Rebooting a DB instance restarts the database engine service. Rebooting a DB instance
         /// results in a momentary outage, during which the DB instance status is set to rebooting.
-        /// 
         /// </para>
         ///  
         /// <para>
@@ -7331,6 +7262,11 @@ namespace Amazon.RDS
         ///  
         /// <para>
         /// This command doesn't apply to RDS Custom.
+        /// </para>
+        ///  
+        /// <para>
+        /// If your DB instance is part of a Multi-AZ DB cluster, you can reboot the DB cluster
+        /// with the <code>RebootDBCluster</code> operation.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RebootDBInstance service method.</param>
@@ -7448,9 +7384,9 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// Detaches an Aurora secondary cluster from an Aurora global database cluster. The
-        /// cluster becomes a standalone cluster with read-write capability instead of being read-only
-        /// and receiving data from a primary cluster in a different Region. 
+        /// Detaches an Aurora secondary cluster from an Aurora global database cluster. The cluster
+        /// becomes a standalone cluster with read-write capability instead of being read-only
+        /// and receiving data from a primary cluster in a different Region.
         /// 
         ///  <note> 
         /// <para>
@@ -7512,19 +7448,13 @@ namespace Amazon.RDS
         ///  
         /// <para>
         /// For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
-        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> 
+        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
-        /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS
-        /// User Guide.</i> 
+        /// Multi-AZ DB cluster deployments</a> in the <i>Amazon RDS User Guide.</i> 
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// The Multi-AZ DB clusters feature is in preview and is subject to change.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RemoveRoleFromDBCluster service method.</param>
         /// 
@@ -7682,6 +7612,10 @@ namespace Amazon.RDS
         /// <param name="request">Container for the necessary parameters to execute the RemoveTagsFromResource service method.</param>
         /// 
         /// <returns>The response from the RemoveTagsFromResource service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.BlueGreenDeploymentNotFoundException">
+        /// <code>BlueGreenDeploymentIdentifier</code> doesn't refer to an existing blue/green
+        /// deployment.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
         /// <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
         /// </exception>
@@ -7734,15 +7668,14 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// Modifies the parameters of a DB cluster parameter group to the default value. To
-        /// reset specific parameters submit a list of the following: <code>ParameterName</code>
-        /// and <code>ApplyMethod</code>. To reset the entire DB cluster parameter group, specify
+        /// Modifies the parameters of a DB cluster parameter group to the default value. To reset
+        /// specific parameters submit a list of the following: <code>ParameterName</code> and
+        /// <code>ApplyMethod</code>. To reset the entire DB cluster parameter group, specify
         /// the <code>DBClusterParameterGroupName</code> and <code>ResetAllParameters</code> parameters.
-        /// 
         /// 
         ///  
         /// <para>
-        ///  When resetting the entire group, dynamic parameters are updated immediately and static
+        /// When resetting the entire group, dynamic parameters are updated immediately and static
         /// parameters are set to <code>pending-reboot</code> to take effect on the next DB instance
         /// restart or <code>RebootDBInstance</code> request. You must call <code>RebootDBInstance</code>
         /// for every DB instance in your DB cluster that you want the updated static parameter
@@ -7751,19 +7684,13 @@ namespace Amazon.RDS
         ///  
         /// <para>
         /// For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
-        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> 
+        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
-        /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS
-        /// User Guide.</i> 
+        /// Multi-AZ DB cluster deployments</a> in the <i>Amazon RDS User Guide.</i> 
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// The Multi-AZ DB clusters feature is in preview and is subject to change.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ResetDBClusterParameterGroup service method.</param>
         /// 
@@ -7882,7 +7809,7 @@ namespace Amazon.RDS
         ///  </note> 
         /// <para>
         /// For more information on Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
-        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> 
+        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -7944,6 +7871,9 @@ namespace Amazon.RDS
         /// The request would result in the user exceeding the allowed amount of storage available
         /// across all DB instances.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.StorageTypeNotSupportedException">
+        /// The specified <code>StorageType</code> can't be associated with the DB instance.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBClusterFromS3">REST API Reference for RestoreDBClusterFromS3 Operation</seealso>
         RestoreDBClusterFromS3Response RestoreDBClusterFromS3(RestoreDBClusterFromS3Request request);
 
@@ -7998,19 +7928,13 @@ namespace Amazon.RDS
         ///  </note> 
         /// <para>
         /// For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
-        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> 
+        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
-        /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS
-        /// User Guide.</i> 
+        /// Multi-AZ DB cluster deployments</a> in the <i>Amazon RDS User Guide.</i> 
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// The Multi-AZ DB clusters feature is in preview and is subject to change.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RestoreDBClusterFromSnapshot service method.</param>
         /// 
@@ -8049,6 +7973,9 @@ namespace Amazon.RDS
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBClusterSnapshotStateException">
         /// The supplied value isn't a valid DB cluster snapshot state.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceStateException">
+        /// The DB instance isn't in a valid state.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBSnapshotStateException">
         /// The state of the DB snapshot doesn't allow deletion.
@@ -8113,7 +8040,7 @@ namespace Amazon.RDS
         /// in time before <code>LatestRestorableTime</code> for up to <code>BackupRetentionPeriod</code>
         /// days. The target DB cluster is created from the source DB cluster with the same configuration
         /// as the original DB cluster, except that the new DB cluster is created with the default
-        /// DB security group. 
+        /// DB security group.
         /// 
         ///  <note> 
         /// <para>
@@ -8127,19 +8054,13 @@ namespace Amazon.RDS
         ///  </note> 
         /// <para>
         /// For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
-        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> 
+        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
-        /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS
-        /// User Guide.</i> 
+        /// Multi-AZ DB cluster deployments</a> in the <i>Amazon RDS User Guide.</i> 
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// The Multi-AZ DB clusters feature is in preview and is subject to change.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RestoreDBClusterToPointInTime service method.</param>
         /// 
@@ -8285,6 +8206,10 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.BackupPolicyNotFoundException">
         /// 
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBClusterSnapshotNotFoundException">
+        /// <code>DBClusterSnapshotIdentifier</code> doesn't refer to an existing DB cluster
+        /// snapshot.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBInstanceAlreadyExistsException">
         /// The user already has a DB instance with the given identifier.
         /// </exception>
@@ -8330,6 +8255,10 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
         /// An error occurred accessing an Amazon Web Services KMS key.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.NetworkTypeNotSupportedException">
+        /// The network type is invalid for the DB instance. Valid nework type values are <code>IPV4</code>
+        /// and <code>DUAL</code>.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.OptionGroupNotFoundException">
         /// The specified option group could not be found.
         /// </exception>
@@ -8341,8 +8270,7 @@ namespace Amazon.RDS
         /// across all DB instances.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.StorageTypeNotSupportedException">
-        /// Storage of the <code>StorageType</code> specified can't be associated with the DB
-        /// instance.
+        /// The specified <code>StorageType</code> can't be associated with the DB instance.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBInstanceFromDBSnapshot">REST API Reference for RestoreDBInstanceFromDBSnapshot Operation</seealso>
         RestoreDBInstanceFromDBSnapshotResponse RestoreDBInstanceFromDBSnapshot(RestoreDBInstanceFromDBSnapshotRequest request);
@@ -8444,6 +8372,10 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
         /// An error occurred accessing an Amazon Web Services KMS key.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.NetworkTypeNotSupportedException">
+        /// The network type is invalid for the DB instance. Valid nework type values are <code>IPV4</code>
+        /// and <code>DUAL</code>.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.OptionGroupNotFoundException">
         /// The specified option group could not be found.
         /// </exception>
@@ -8455,8 +8387,7 @@ namespace Amazon.RDS
         /// across all DB instances.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.StorageTypeNotSupportedException">
-        /// Storage of the <code>StorageType</code> specified can't be associated with the DB
-        /// instance.
+        /// The specified <code>StorageType</code> can't be associated with the DB instance.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBInstanceFromS3">REST API Reference for RestoreDBInstanceFromS3 Operation</seealso>
         RestoreDBInstanceFromS3Response RestoreDBInstanceFromS3(RestoreDBInstanceFromS3Request request);
@@ -8576,6 +8507,10 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
         /// An error occurred accessing an Amazon Web Services KMS key.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.NetworkTypeNotSupportedException">
+        /// The network type is invalid for the DB instance. Valid nework type values are <code>IPV4</code>
+        /// and <code>DUAL</code>.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.OptionGroupNotFoundException">
         /// The specified option group could not be found.
         /// </exception>
@@ -8591,8 +8526,7 @@ namespace Amazon.RDS
         /// across all DB instances.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.StorageTypeNotSupportedException">
-        /// Storage of the <code>StorageType</code> specified can't be associated with the DB
-        /// instance.
+        /// The specified <code>StorageType</code> can't be associated with the DB instance.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBInstanceToPointInTime">REST API Reference for RestoreDBInstanceToPointInTime Operation</seealso>
         RestoreDBInstanceToPointInTimeResponse RestoreDBInstanceToPointInTime(RestoreDBInstanceToPointInTimeRequest request);
@@ -8632,6 +8566,17 @@ namespace Amazon.RDS
         /// Revokes ingress from a DBSecurityGroup for previously authorized IP ranges or EC2
         /// or VPC security groups. Required parameters for this API are one of CIDRIP, EC2SecurityGroupId
         /// for VPC, or (EC2SecurityGroupOwnerId and either EC2SecurityGroupName or EC2SecurityGroupId).
+        /// 
+        ///  <note> 
+        /// <para>
+        /// EC2-Classic was retired on August 15, 2022. If you haven't migrated from EC2-Classic
+        /// to a VPC, we recommend that you migrate as soon as possible. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+        /// from EC2-Classic to a VPC</a> in the <i>Amazon EC2 User Guide</i>, the blog <a href="http://aws.amazon.com/blogs/aws/ec2-classic-is-retiring-heres-how-to-prepare/">EC2-Classic
+        /// Networking is Retiring – Here’s How to Prepare</a>, and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.Non-VPC2VPC.html">Moving
+        /// a DB instance not in a VPC into a VPC</a> in the <i>Amazon RDS User Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RevokeDBSecurityGroupIngress service method.</param>
         /// 
@@ -8687,8 +8632,11 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Starts a database activity stream to monitor activity on the database. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/DBActivityStreams.html">Database
-        /// Activity Streams</a> in the <i>Amazon Aurora User Guide</i>.
+        /// see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/DBActivityStreams.html">
+        /// Monitoring Amazon Aurora with Database Activity Streams</a> in the <i>Amazon Aurora
+        /// User Guide</i> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/DBActivityStreams.html">
+        /// Monitoring Amazon RDS with Database Activity Streams</a> in the <i>Amazon RDS User
+        /// Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartActivityStream service method.</param>
         /// 
@@ -8752,8 +8700,7 @@ namespace Amazon.RDS
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-cluster-stop-start.html">
-        /// Stopping and Starting an Aurora Cluster</a> in the <i>Amazon Aurora User Guide.</i>
-        /// 
+        /// Stopping and Starting an Aurora Cluster</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -8809,7 +8756,7 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Starts an Amazon RDS DB instance that was stopped using the Amazon Web Services console,
-        /// the stop-db-instance CLI command, or the StopDBInstance action. 
+        /// the stop-db-instance CLI command, or the StopDBInstance action.
         /// 
         ///  
         /// <para>
@@ -8819,8 +8766,8 @@ namespace Amazon.RDS
         /// </para>
         ///  <note> 
         /// <para>
-        ///  This command doesn't apply to RDS Custom, Aurora MySQL, and Aurora PostgreSQL. For
-        /// Aurora DB clusters, use <code>StartDBCluster</code> instead. 
+        /// This command doesn't apply to RDS Custom, Aurora MySQL, and Aurora PostgreSQL. For
+        /// Aurora DB clusters, use <code>StartDBCluster</code> instead.
         /// </para>
         ///  </note>
         /// </summary>
@@ -8935,8 +8882,7 @@ namespace Amazon.RDS
         /// An error occurred accessing an Amazon Web Services KMS key.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.StorageTypeNotSupportedException">
-        /// Storage of the <code>StorageType</code> specified can't be associated with the DB
-        /// instance.
+        /// The specified <code>StorageType</code> can't be associated with the DB instance.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StartDBInstanceAutomatedBackupsReplication">REST API Reference for StartDBInstanceAutomatedBackupsReplication Operation</seealso>
         StartDBInstanceAutomatedBackupsReplicationResponse StartDBInstanceAutomatedBackupsReplication(StartDBInstanceAutomatedBackupsReplicationRequest request);
@@ -8973,17 +8919,35 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// Starts an export of a snapshot to Amazon S3. The provided IAM role must have access
-        /// to the S3 bucket. 
+        /// Starts an export of DB snapshot or DB cluster data to Amazon S3. The provided IAM
+        /// role must have access to the S3 bucket.
         /// 
         ///  
         /// <para>
-        /// This command doesn't apply to RDS Custom.
+        /// You can't export snapshot data from RDS Custom DB instances.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can't export cluster data from Multi-AZ DB clusters.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information on exporting DB snapshot data, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ExportSnapshot.html">Exporting
+        /// DB snapshot data to Amazon S3</a> in the <i>Amazon RDS User Guide</i> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-export-snapshot.html">Exporting
+        /// DB cluster snapshot data to Amazon S3</a> in the <i>Amazon Aurora User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information on exporting DB cluster data, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/export-cluster-data.html">Exporting
+        /// DB cluster data to Amazon S3</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartExportTask service method.</param>
         /// 
         /// <returns>The response from the StartExportTask service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
+        /// <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBClusterSnapshotNotFoundException">
         /// <code>DBClusterSnapshotIdentifier</code> doesn't refer to an existing DB cluster
         /// snapshot.
@@ -9055,8 +9019,11 @@ namespace Amazon.RDS
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/DBActivityStreams.html">Database
-        /// Activity Streams</a> in the <i>Amazon Aurora User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/DBActivityStreams.html">
+        /// Monitoring Amazon Aurora with Database Activity Streams</a> in the <i>Amazon Aurora
+        /// User Guide</i> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/DBActivityStreams.html">
+        /// Monitoring Amazon RDS with Database Activity Streams</a> in the <i>Amazon RDS User
+        /// Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopActivityStream service method.</param>
@@ -9114,13 +9081,12 @@ namespace Amazon.RDS
         /// <summary>
         /// Stops an Amazon Aurora DB cluster. When you stop a DB cluster, Aurora retains the
         /// DB cluster's metadata, including its endpoints and DB parameter groups. Aurora also
-        /// retains the transaction logs so you can do a point-in-time restore if necessary. 
+        /// retains the transaction logs so you can do a point-in-time restore if necessary.
         /// 
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-cluster-stop-start.html">
-        /// Stopping and Starting an Aurora Cluster</a> in the <i>Amazon Aurora User Guide.</i>
-        /// 
+        /// Stopping and Starting an Aurora Cluster</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -9175,10 +9141,10 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// Stops an Amazon RDS DB instance. When you stop a DB instance, Amazon RDS retains
-        /// the DB instance's metadata, including its endpoint, DB parameter group, and option
-        /// group membership. Amazon RDS also retains the transaction logs so you can do a point-in-time
-        /// restore if necessary. 
+        /// Stops an Amazon RDS DB instance. When you stop a DB instance, Amazon RDS retains the
+        /// DB instance's metadata, including its endpoint, DB parameter group, and option group
+        /// membership. Amazon RDS also retains the transaction logs so you can do a point-in-time
+        /// restore if necessary.
         /// 
         ///  
         /// <para>
@@ -9188,8 +9154,8 @@ namespace Amazon.RDS
         /// </para>
         ///  <note> 
         /// <para>
-        ///  This command doesn't apply to RDS Custom, Aurora MySQL, and Aurora PostgreSQL. For
-        /// Aurora clusters, use <code>StopDBCluster</code> instead. 
+        /// This command doesn't apply to RDS Custom, Aurora MySQL, and Aurora PostgreSQL. For
+        /// Aurora clusters, use <code>StopDBCluster</code> instead.
         /// </para>
         ///  </note>
         /// </summary>
@@ -9250,7 +9216,7 @@ namespace Amazon.RDS
         /// 
         ///  
         /// <para>
-        /// This command doesn't apply to RDS Custom.
+        /// This command doesn't apply to RDS Custom, Aurora MySQL, and Aurora PostgreSQL.
         /// </para>
         ///  
         /// <para>
@@ -9296,6 +9262,117 @@ namespace Amazon.RDS
         /// <returns>Returns a  StopDBInstanceAutomatedBackupsReplicationResult from RDS.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StopDBInstanceAutomatedBackupsReplication">REST API Reference for StopDBInstanceAutomatedBackupsReplication Operation</seealso>
         StopDBInstanceAutomatedBackupsReplicationResponse EndStopDBInstanceAutomatedBackupsReplication(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  SwitchoverBlueGreenDeployment
+
+
+        /// <summary>
+        /// Switches over a blue/green deployment.
+        /// 
+        ///  
+        /// <para>
+        /// Before you switch over, production traffic is routed to the databases in the blue
+        /// environment. After you switch over, production traffic is routed to the databases
+        /// in the green environment.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments.html">Using
+        /// Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon RDS User
+        /// Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/blue-green-deployments.html">
+        /// Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon
+        /// Aurora User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SwitchoverBlueGreenDeployment service method.</param>
+        /// 
+        /// <returns>The response from the SwitchoverBlueGreenDeployment service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.BlueGreenDeploymentNotFoundException">
+        /// <code>BlueGreenDeploymentIdentifier</code> doesn't refer to an existing blue/green
+        /// deployment.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidBlueGreenDeploymentStateException">
+        /// The blue/green deployment can't be switched over or deleted because there is an invalid
+        /// configuration in the green environment.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/SwitchoverBlueGreenDeployment">REST API Reference for SwitchoverBlueGreenDeployment Operation</seealso>
+        SwitchoverBlueGreenDeploymentResponse SwitchoverBlueGreenDeployment(SwitchoverBlueGreenDeploymentRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SwitchoverBlueGreenDeployment operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SwitchoverBlueGreenDeployment operation on AmazonRDSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSwitchoverBlueGreenDeployment
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/SwitchoverBlueGreenDeployment">REST API Reference for SwitchoverBlueGreenDeployment Operation</seealso>
+        IAsyncResult BeginSwitchoverBlueGreenDeployment(SwitchoverBlueGreenDeploymentRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  SwitchoverBlueGreenDeployment operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSwitchoverBlueGreenDeployment.</param>
+        /// 
+        /// <returns>Returns a  SwitchoverBlueGreenDeploymentResult from RDS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/SwitchoverBlueGreenDeployment">REST API Reference for SwitchoverBlueGreenDeployment Operation</seealso>
+        SwitchoverBlueGreenDeploymentResponse EndSwitchoverBlueGreenDeployment(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  SwitchoverReadReplica
+
+
+        /// <summary>
+        /// Switches over an Oracle standby database in an Oracle Data Guard environment, making
+        /// it the new primary database. Issue this command in the Region that hosts the current
+        /// standby database.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SwitchoverReadReplica service method.</param>
+        /// 
+        /// <returns>The response from the SwitchoverReadReplica service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
+        /// <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceStateException">
+        /// The DB instance isn't in a valid state.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/SwitchoverReadReplica">REST API Reference for SwitchoverReadReplica Operation</seealso>
+        SwitchoverReadReplicaResponse SwitchoverReadReplica(SwitchoverReadReplicaRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SwitchoverReadReplica operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SwitchoverReadReplica operation on AmazonRDSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSwitchoverReadReplica
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/SwitchoverReadReplica">REST API Reference for SwitchoverReadReplica Operation</seealso>
+        IAsyncResult BeginSwitchoverReadReplica(SwitchoverReadReplicaRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  SwitchoverReadReplica operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSwitchoverReadReplica.</param>
+        /// 
+        /// <returns>Returns a  SwitchoverReadReplicaResult from RDS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/SwitchoverReadReplica">REST API Reference for SwitchoverReadReplica Operation</seealso>
+        SwitchoverReadReplicaResponse EndSwitchoverReadReplica(IAsyncResult asyncResult);
 
         #endregion
         

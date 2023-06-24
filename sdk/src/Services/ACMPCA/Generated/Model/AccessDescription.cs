@@ -30,7 +30,8 @@ namespace Amazon.ACMPCA.Model
 {
     /// <summary>
     /// Provides access information used by the <code>authorityInfoAccess</code> and <code>subjectInfoAccess</code>
-    /// extensions described in <a href="https://tools.ietf.org/html/rfc5280">RFC 5280</a>.
+    /// extensions described in <a href="https://datatracker.ietf.org/doc/html/rfc5280">RFC
+    /// 5280</a>.
     /// </summary>
     public partial class AccessDescription
     {

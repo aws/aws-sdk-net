@@ -34,7 +34,7 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// GroupOwnerSetting Marshaller
-    /// </summary>       
+    /// </summary>
     public class GroupOwnerSettingMarshaller : IRequestMarshaller<GroupOwnerSetting, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static GroupOwnerSettingMarshaller Instance = new GroupOwnerSettingMarshaller();
 
     }

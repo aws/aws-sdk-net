@@ -30,7 +30,7 @@ namespace Amazon.Mgn.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeVcenterClients operation.
-    /// Lists all vCenter clients.
+    /// Returns a list of the installed vCenter clients.
     /// </summary>
     public partial class DescribeVcenterClientsRequest : AmazonMgnRequest
     {
@@ -43,7 +43,7 @@ namespace Amazon.Mgn.Model
         /// Maximum results to be returned in DescribeVcenterClients.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
+        [AWSProperty(Min=1, Max=1000)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

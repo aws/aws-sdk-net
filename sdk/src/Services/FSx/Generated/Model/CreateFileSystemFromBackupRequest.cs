@@ -36,10 +36,10 @@ namespace Amazon.FSx.Model
     ///  
     /// <para>
     /// If a file system with the specified client request token exists and the parameters
-    /// match, this operation returns the description of the file system. If a client request
-    /// token with the specified by the file system exists and the parameters don't match,
-    /// this call returns <code>IncompatibleParameterError</code>. If a file system with the
-    /// specified client request token doesn't exist, this operation does the following:
+    /// match, this operation returns the description of the file system. If a file system
+    /// with the specified client request token exists but the parameters don't match, this
+    /// call returns <code>IncompatibleParameterError</code>. If a file system with the specified
+    /// client request token doesn't exist, this operation does the following:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -84,6 +84,7 @@ namespace Amazon.FSx.Model
         private CreateFileSystemLustreConfiguration _lustreConfiguration;
         private CreateFileSystemOpenZFSConfiguration _openZFSConfiguration;
         private List<string> _securityGroupIds = new List<string>();
+        private int? _storageCapacity;
         private StorageType _storageType;
         private List<string> _subnetIds = new List<string>();
         private List<Tag> _tags = new List<Tag>();
@@ -108,7 +109,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property ClientRequestToken. 
         /// <para>
-        /// A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent creation.
+        /// A string of up to 63 ASCII characters that Amazon FSx uses to ensure idempotent creation.
         /// This string is automatically filled on your behalf when you use the Command Line Interface
         /// (CLI) or an Amazon Web Services SDK.
         /// </para>
@@ -221,6 +222,35 @@ namespace Amazon.FSx.Model
         internal bool IsSetSecurityGroupIds()
         {
             return this._securityGroupIds != null && this._securityGroupIds.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property StorageCapacity. 
+        /// <para>
+        /// Sets the storage capacity of the OpenZFS file system that you're creating from a backup,
+        /// in gibibytes (GiB). Valid values are from 64 GiB up to 524,288 GiB (512 TiB). However,
+        /// the value that you specify must be equal to or greater than the backup's storage capacity
+        /// value. If you don't use the <code>StorageCapacity</code> parameter, the default is
+        /// the backup's <code>StorageCapacity</code> value.
+        /// </para>
+        ///  
+        /// <para>
+        /// If used to create a file system other than OpenZFS, you must provide a value that
+        /// matches the backup's <code>StorageCapacity</code> value. If you provide any other
+        /// value, Amazon FSx responds with a 400 Bad Request. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=2147483647)]
+        public int StorageCapacity
+        {
+            get { return this._storageCapacity.GetValueOrDefault(); }
+            set { this._storageCapacity = value; }
+        }
+
+        // Check to see if StorageCapacity property is set
+        internal bool IsSetStorageCapacity()
+        {
+            return this._storageCapacity.HasValue; 
         }
 
         /// <summary>

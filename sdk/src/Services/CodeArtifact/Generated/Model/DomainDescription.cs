@@ -102,8 +102,7 @@ namespace Amazon.CodeArtifact.Model
         /// <summary>
         /// Gets and sets the property EncryptionKey. 
         /// <para>
-        ///  The ARN of an AWS Key Management Service (AWS KMS) key associated with a domain.
-        /// 
+        ///  The ARN of an Key Management Service (KMS) key associated with a domain. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1011)]
@@ -141,7 +140,7 @@ namespace Amazon.CodeArtifact.Model
         /// <summary>
         /// Gets and sets the property Owner. 
         /// <para>
-        ///  The AWS account ID that owns the domain. 
+        ///  The Amazon Web Services account ID that owns the domain. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=12)]
@@ -198,17 +197,8 @@ namespace Amazon.CodeArtifact.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        ///  The current status of a domain. The valid values are 
+        ///  The current status of a domain. 
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>Active</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>Deleted</code> 
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         public DomainStatus Status
         {

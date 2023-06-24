@@ -34,7 +34,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AvailConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class AvailConfigurationMarshaller : IRequestMarshaller<AvailConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AvailConfigurationMarshaller Instance = new AvailConfigurationMarshaller();
 
     }

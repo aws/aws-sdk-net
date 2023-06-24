@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DomainSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class DomainSettingsMarshaller : IRequestMarshaller<DomainSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -45,6 +45,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DomainSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetExecutionRoleIdentityConfig())
+            {
+                context.Writer.WritePropertyName("ExecutionRoleIdentityConfig");
+                context.Writer.Write(requestObject.ExecutionRoleIdentityConfig);
+            }
+
             if(requestObject.IsSetRStudioServerProDomainSettings())
             {
                 context.Writer.WritePropertyName("RStudioServerProDomainSettings");
@@ -71,7 +77,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DomainSettingsMarshaller Instance = new DomainSettingsMarshaller();
 
     }

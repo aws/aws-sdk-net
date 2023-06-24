@@ -36,6 +36,14 @@ namespace Amazon.Detective.Model
         }
 
         /// <summary>
+        /// Paginator for ListDatasourcePackages operation
+        ///</summary>
+        public IListDatasourcePackagesPaginator ListDatasourcePackages(ListDatasourcePackagesRequest request) 
+        {
+            return new ListDatasourcePackagesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListGraphs operation
         ///</summary>
         public IListGraphsPaginator ListGraphs(ListGraphsRequest request) 
@@ -57,6 +65,14 @@ namespace Amazon.Detective.Model
         public IListMembersPaginator ListMembers(ListMembersRequest request) 
         {
             return new ListMembersPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListOrganizationAdminAccounts operation
+        ///</summary>
+        public IListOrganizationAdminAccountsPaginator ListOrganizationAdminAccounts(ListOrganizationAdminAccountsRequest request) 
+        {
+            return new ListOrganizationAdminAccountsPaginator(this.client, request);
         }
     }
 }

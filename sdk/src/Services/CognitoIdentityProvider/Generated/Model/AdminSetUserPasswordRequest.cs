@@ -35,16 +35,16 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// 
     ///  
     /// <para>
-    /// The password can be temporary or permanent. If it is temporary, the user status will
-    /// be placed into the <code>FORCE_CHANGE_PASSWORD</code> state. When the user next tries
-    /// to sign in, the InitiateAuth/AdminInitiateAuth response will contain the <code>NEW_PASSWORD_REQUIRED</code>
-    /// challenge. If the user does not sign in before it expires, the user will not be able
-    /// to sign in and their password will need to be reset by an administrator. 
+    /// The password can be temporary or permanent. If it is temporary, the user status enters
+    /// the <code>FORCE_CHANGE_PASSWORD</code> state. When the user next tries to sign in,
+    /// the InitiateAuth/AdminInitiateAuth response will contain the <code>NEW_PASSWORD_REQUIRED</code>
+    /// challenge. If the user doesn't sign in before it expires, the user won't be able to
+    /// sign in, and an administrator must reset their password. 
     /// </para>
     ///  
     /// <para>
     /// Once the user has set a new password, or the password is permanent, the user status
-    /// will be set to <code>Confirmed</code>.
+    /// is set to <code>Confirmed</code>.
     /// </para>
     /// </summary>
     public partial class AdminSetUserPasswordRequest : AmazonCognitoIdentityProviderRequest
@@ -60,7 +60,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The password for the user.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=6, Max=256)]
+        [AWSProperty(Required=true, Sensitive=true, Max=256)]
         public string Password
         {
             get { return this._password; }
@@ -94,10 +94,10 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Username. 
         /// <para>
-        /// The user name of the user whose password you wish to set.
+        /// The user name of the user whose password you want to set.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=128)]
         public string Username
         {
             get { return this._username; }

@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.APIGateway.Model
 {
     /// <summary>
-    /// The endpoint configuration to indicate the types of endpoints an API (<a>RestApi</a>)
-    /// or its custom domain name (<a>DomainName</a>) has.
+    /// The endpoint configuration to indicate the types of endpoints an API (RestApi) or
+    /// its custom domain name (DomainName) has.
     /// </summary>
     public partial class EndpointConfiguration
     {
@@ -40,7 +40,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Types. 
         /// <para>
-        /// A list of endpoint types of an API (<a>RestApi</a>) or its custom domain name (<a>DomainName</a>).
+        /// A list of endpoint types of an API (RestApi) or its custom domain name (DomainName).
         /// For an edge-optimized API and its custom domain name, the endpoint type is <code>"EDGE"</code>.
         /// For a regional API and its custom domain name, the endpoint type is <code>REGIONAL</code>.
         /// For a private API, the endpoint type is <code>PRIVATE</code>.
@@ -61,8 +61,8 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property VpcEndpointIds. 
         /// <para>
-        /// A list of VpcEndpointIds of an API (<a>RestApi</a>) against which to create Route53
-        /// ALIASes. It is only supported for <code>PRIVATE</code> endpoint type.
+        /// A list of VpcEndpointIds of an API (RestApi) against which to create Route53 ALIASes.
+        /// It is only supported for <code>PRIVATE</code> endpoint type.
         /// </para>
         /// </summary>
         public List<string> VpcEndpointIds

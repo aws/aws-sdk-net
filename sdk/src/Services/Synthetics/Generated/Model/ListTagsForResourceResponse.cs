@@ -38,7 +38,7 @@ namespace Amazon.Synthetics.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The list of tag keys and values associated with the canary that you specified.
+        /// The list of tag keys and values associated with the resource that you specified.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

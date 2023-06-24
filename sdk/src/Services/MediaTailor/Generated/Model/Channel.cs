@@ -29,7 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaTailor.Model
 {
     /// <summary>
-    /// The configuration parameters for a channel.
+    /// The configuration parameters for a channel. For information about MediaTailor channels,
+    /// see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-channels.html">Working
+    /// with channels</a> in the <i>MediaTailor User Guide</i>.
     /// </summary>
     public partial class Channel
     {
@@ -39,9 +41,11 @@ namespace Amazon.MediaTailor.Model
         private DateTime? _creationTime;
         private SlateSource _fillerSlate;
         private DateTime? _lastModifiedTime;
+        private LogConfigurationForChannel _logConfiguration;
         private List<ResponseOutputItem> _outputs = new List<ResponseOutputItem>();
         private string _playbackMode;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private string _tier;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -121,8 +125,9 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property FillerSlate. 
         /// <para>
-        /// Contains information about the slate used to fill gaps between programs in the schedule.
-        /// You must configure FillerSlate if your channel uses an LINEAR PlaybackMode.
+        /// The slate used to fill gaps between programs in the schedule. You must configure filler
+        /// slate if your channel uses the <code>LINEAR</code> <code>PlaybackMode</code>. MediaTailor
+        /// doesn't support filler slate for channels using the <code>LOOP</code> <code>PlaybackMode</code>.
         /// </para>
         /// </summary>
         public SlateSource FillerSlate
@@ -156,6 +161,25 @@ namespace Amazon.MediaTailor.Model
         }
 
         /// <summary>
+        /// Gets and sets the property LogConfiguration. 
+        /// <para>
+        /// The log configuration.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public LogConfigurationForChannel LogConfiguration
+        {
+            get { return this._logConfiguration; }
+            set { this._logConfiguration = value; }
+        }
+
+        // Check to see if LogConfiguration property is set
+        internal bool IsSetLogConfiguration()
+        {
+            return this._logConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Outputs. 
         /// <para>
         /// The channel's output properties.
@@ -181,12 +205,12 @@ namespace Amazon.MediaTailor.Model
         /// </para>
         ///  
         /// <para>
-        /// LINEAR - Programs play back-to-back only once.
+        ///  <code>LINEAR</code> - Programs play back-to-back only once.
         /// </para>
         ///  
         /// <para>
-        /// LOOP - Programs play back-to-back in an endless loop. When the last program in the
-        /// schedule plays, playback loops back to the first program in the schedule.
+        ///  <code>LOOP</code> - Programs play back-to-back in an endless loop. When the last
+        /// program in the schedule plays, playback loops back to the first program in the schedule.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -205,7 +229,10 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags to assign to the channel.
+        /// The tags to assign to the channel. Tags are key-value pairs that you can associate
+        /// with Amazon resources to help with organization, access control, and cost tracking.
+        /// For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+        /// AWS Elemental MediaTailor Resources</a>.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Tags
@@ -218,6 +245,25 @@ namespace Amazon.MediaTailor.Model
         internal bool IsSetTags()
         {
             return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tier. 
+        /// <para>
+        /// The tier for this channel. STANDARD tier channels can contain live programs.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public string Tier
+        {
+            get { return this._tier; }
+            set { this._tier = value; }
+        }
+
+        // Check to see if Tier property is set
+        internal bool IsSetTier()
+        {
+            return this._tier != null;
         }
 
     }

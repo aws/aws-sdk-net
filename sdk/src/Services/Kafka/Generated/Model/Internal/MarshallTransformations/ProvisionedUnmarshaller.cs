@@ -112,6 +112,12 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
                     unmarshalledObject.OpenMonitoring = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("storageMode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.StorageMode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("zookeeperConnectString", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

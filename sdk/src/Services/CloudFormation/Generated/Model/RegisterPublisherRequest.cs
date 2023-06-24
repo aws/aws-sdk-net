@@ -36,8 +36,8 @@ namespace Amazon.CloudFormation.Model
     /// 
     ///  
     /// <para>
-    /// For information on requirements for registering as a public extension publisher, see
-    /// <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html#publish-extension-prereqs">Registering
+    /// For information about requirements for registering as a public extension publisher,
+    /// see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html#publish-extension-prereqs">Registering
     /// your account to publish CloudFormation extensions</a> in the <i>CloudFormation CLI
     /// User Guide</i>.
     /// </para>

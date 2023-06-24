@@ -54,7 +54,7 @@ namespace Amazon.ChimeSDKMessaging.Model
     ///  </li> </ol> <note> 
     /// <para>
     /// Channel flows don't process Control or System messages. For more information about
-    /// the message types provided by Chime SDK Messaging, refer to <a href="https://docs.aws.amazon.com/chime/latest/dg/using-the-messaging-sdk.html#msg-types">Message
+    /// the message types provided by Chime SDK messaging, refer to <a href="https://docs.aws.amazon.com/chime/latest/dg/using-the-messaging-sdk.html#msg-types">Message
     /// types</a> in the <i>Amazon Chime developer guide</i>.
     /// </para>
     ///  </note>
@@ -92,7 +92,7 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// The client token for the request. An Idempotency token.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=2, Max=64)]
+        [AWSProperty(Sensitive=true, Min=2, Max=64)]
         public string ClientRequestToken
         {
             get { return this._clientRequestToken; }
@@ -111,7 +111,7 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// The name of the channel flow.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=256)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=256)]
         public string Name
         {
             get { return this._name; }

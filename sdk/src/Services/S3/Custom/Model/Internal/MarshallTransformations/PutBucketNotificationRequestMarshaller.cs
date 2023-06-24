@@ -49,17 +49,20 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
              if(putBucketNotificationRequest.IsSetSkipDestinationValidation())
                 request.Headers[S3Constants.AmzHeaderSkipDestinationValidation] = StringUtils.FromBool(putBucketNotificationRequest.SkipDestinationValidation);
 
+            if (putBucketNotificationRequest.IsSetChecksumAlgorithm())
+                request.Headers[S3Constants.AmzHeaderSdkChecksumAlgorithm] = S3Transforms.ToStringValue(putBucketNotificationRequest.ChecksumAlgorithm);
+
             if (string.IsNullOrEmpty(putBucketNotificationRequest.BucketName))
                 throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "PutBucketNotificationRequest.BucketName");
 
-			request.ResourcePath = string.Concat("/", S3Transforms.ToStringValue(putBucketNotificationRequest.BucketName));
+            request.ResourcePath = "/";
 
             request.AddSubResource("notification");
 
             var stringWriter = new XMLEncodedStringWriter(System.Globalization.CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {
-                xmlWriter.WriteStartElement("NotificationConfiguration", "");
+                xmlWriter.WriteStartElement("NotificationConfiguration", S3Constants.S3RequestXmlNamespace);
 
                 if (putBucketNotificationRequest.IsSetTopicConfigurations())
                 {
@@ -67,14 +70,14 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     {
                         if (topicConfiguartion != null)
                         {
-                            xmlWriter.WriteStartElement("TopicConfiguration", "");
+                            xmlWriter.WriteStartElement("TopicConfiguration");
                             if (topicConfiguartion.IsSetId())
                             {
-                                xmlWriter.WriteElementString("Id", "", S3Transforms.ToXmlStringValue(topicConfiguartion.Id));
+                                xmlWriter.WriteElementString("Id", S3Transforms.ToXmlStringValue(topicConfiguartion.Id));
                             }
                             if (topicConfiguartion.IsSetTopic())
                             {
-                                xmlWriter.WriteElementString("Topic", "", S3Transforms.ToXmlStringValue(topicConfiguartion.Topic));
+                                xmlWriter.WriteElementString("Topic", S3Transforms.ToXmlStringValue(topicConfiguartion.Topic));
                             }
 
                             WriteConfigurationCommon(xmlWriter, topicConfiguartion);
@@ -90,14 +93,14 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     {
                         if (queueConfiguartion != null)
                         {
-                            xmlWriter.WriteStartElement("QueueConfiguration", "");
+                            xmlWriter.WriteStartElement("QueueConfiguration");
                             if (queueConfiguartion.IsSetId())
                             {
-                                xmlWriter.WriteElementString("Id", "", S3Transforms.ToXmlStringValue(queueConfiguartion.Id));
+                                xmlWriter.WriteElementString("Id", S3Transforms.ToXmlStringValue(queueConfiguartion.Id));
                             }
                             if (queueConfiguartion.IsSetQueue())
                             {
-                                xmlWriter.WriteElementString("Queue", "", S3Transforms.ToXmlStringValue(queueConfiguartion.Queue));
+                                xmlWriter.WriteElementString("Queue", S3Transforms.ToXmlStringValue(queueConfiguartion.Queue));
                             }
 
                             WriteConfigurationCommon(xmlWriter, queueConfiguartion);
@@ -114,14 +117,14 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     {
                         if (lambdaFunctionConfiguartion != null)
                         {
-                            xmlWriter.WriteStartElement("CloudFunctionConfiguration", "");
+                            xmlWriter.WriteStartElement("CloudFunctionConfiguration");
                             if (lambdaFunctionConfiguartion.IsSetId())
                             {
-                                xmlWriter.WriteElementString("Id", "", S3Transforms.ToXmlStringValue(lambdaFunctionConfiguartion.Id));
+                                xmlWriter.WriteElementString("Id", S3Transforms.ToXmlStringValue(lambdaFunctionConfiguartion.Id));
                             }
                             if (lambdaFunctionConfiguartion.IsSetFunctionArn())
                             {
-                                xmlWriter.WriteElementString("CloudFunction", "", S3Transforms.ToXmlStringValue(lambdaFunctionConfiguartion.FunctionArn));
+                                xmlWriter.WriteElementString("CloudFunction", S3Transforms.ToXmlStringValue(lambdaFunctionConfiguartion.FunctionArn));
                             }
 
                             WriteConfigurationCommon(xmlWriter, lambdaFunctionConfiguartion);
@@ -133,7 +136,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
                 if (putBucketNotificationRequest.IsSetEventBridgeConfiguration())
                 {
-                    xmlWriter.WriteStartElement("EventBridgeConfiguration", "http://s3.amazonaws.com/doc/2006-03-01/");
+                    xmlWriter.WriteStartElement("EventBridgeConfiguration");
                     xmlWriter.WriteEndElement();
                 }
 
@@ -145,11 +148,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 var content = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(content);
                 request.Headers[HeaderKeys.ContentTypeHeader] = "application/xml";
-                
-                var checksum = AWSSDKUtils.GenerateChecksumForContent(content, true);
-                request.Headers[HeaderKeys.ContentMD5Header] = checksum;
-                
-            } 
+
+                ChecksumUtils.SetRequestChecksum(request, putBucketNotificationRequest.ChecksumAlgorithm);
+            }
             catch (EncoderFallbackException e) 
             {
                 throw new AmazonServiceException("Unable to marshall request to XML", e);
@@ -164,17 +165,17 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             {
                 foreach (var evnt in notificationConfiguration.Events)
                 {
-                    xmlWriter.WriteElementString("Event", "", S3Transforms.ToXmlStringValue(evnt));
+                    xmlWriter.WriteElementString("Event", S3Transforms.ToXmlStringValue(evnt));
                 }
             }
 
             if (notificationConfiguration.IsSetFilter())
             {
-                xmlWriter.WriteStartElement("Filter", "");
+                xmlWriter.WriteStartElement("Filter");
                 var filter = notificationConfiguration.Filter;
                 if (filter.IsSetS3KeyFilter())
                 {
-                    xmlWriter.WriteStartElement("S3Key", "");
+                    xmlWriter.WriteStartElement("S3Key");
                     var s3key = filter.S3KeyFilter;
                     if (s3key.IsSetFilterRules())
                     {
@@ -183,7 +184,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                         {
                             if (filterRule != null)
                             {
-                                xmlWriter.WriteStartElement("FilterRule", "");
+                                xmlWriter.WriteStartElement("FilterRule");
                                 xmlWriter.WriteElementString("Name", filterRule.Name);
                                 xmlWriter.WriteElementString("Value", filterRule.Value);
                                 xmlWriter.WriteEndElement();

@@ -34,7 +34,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AuthInfo Marshaller
-    /// </summary>       
+    /// </summary>
     public class AuthInfoMarshaller : IRequestMarshaller<AuthInfo, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AuthInfoMarshaller Instance = new AuthInfoMarshaller();
 
     }

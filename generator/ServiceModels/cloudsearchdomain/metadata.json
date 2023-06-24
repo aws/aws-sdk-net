@@ -1,5 +1,6 @@
 {
-    "active": true, 
-    "generate-client-constructors": false, 
-    "synopsis": "Amazon CloudSearch Domain encapsulates a collection of data you want to search, the search instances that process your search requests, and a configuration that controls how your data is indexed and searched."
+  "active": true,
+  "generate-client-constructors": false,
+  "synopsis": "Amazon CloudSearch Domain encapsulates a collection of data you want to search, the search instances that process your search requests, and a configuration that controls how your data is indexed and searched.",
+  "legacy-service-id": "CloudSearch Domain"
 }

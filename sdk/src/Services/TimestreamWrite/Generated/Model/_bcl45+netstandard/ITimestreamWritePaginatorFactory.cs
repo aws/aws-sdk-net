@@ -26,6 +26,11 @@ namespace Amazon.TimestreamWrite.Model
     {
 
         /// <summary>
+        /// Paginator for ListBatchLoadTasks operation
+        ///</summary>
+        IListBatchLoadTasksPaginator ListBatchLoadTasks(ListBatchLoadTasksRequest request);
+
+        /// <summary>
         /// Paginator for ListDatabases operation
         ///</summary>
         IListDatabasesPaginator ListDatabases(ListDatabasesRequest request);

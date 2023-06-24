@@ -34,7 +34,7 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CategoricalParameterRange Marshaller
-    /// </summary>       
+    /// </summary>
     public class CategoricalParameterRangeMarshaller : IRequestMarshaller<CategoricalParameterRange, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CategoricalParameterRangeMarshaller Instance = new CategoricalParameterRangeMarshaller();
 
     }

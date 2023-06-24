@@ -30,10 +30,20 @@ namespace Amazon.Proton.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateRepository operation.
-    /// Create and register a link to a repository that can be used with pull request provisioning
-    /// or template sync configurations. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-template-bundles.html">Template
-    /// bundles</a> and <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-template-sync-configs.html">Template
-    /// sync configurations</a> in the <i>Proton Administrator Guide</i>.
+    /// Create and register a link to a repository. Proton uses the link to repeatedly access
+    /// the repository, to either push to it (self-managed provisioning) or pull from it (template
+    /// sync). You can share a linked repository across multiple resources (like environments
+    /// using self-managed provisioning, or synced templates). When you create a repository
+    /// link, Proton creates a <a href="https://docs.aws.amazon.com/proton/latest/userguide/using-service-linked-roles.html">service-linked
+    /// role</a> for you.
+    /// 
+    ///  
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-works-prov-methods.html#ag-works-prov-methods-self">Self-managed
+    /// provisioning</a>, <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-template-authoring.html#ag-template-bundles">Template
+    /// bundles</a>, and <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-template-sync-configs.html">Template
+    /// sync configurations</a> in the <i>Proton User Guide</i>.
+    /// </para>
     /// </summary>
     public partial class CreateRepositoryRequest : AmazonProtonRequest
     {
@@ -41,13 +51,14 @@ namespace Amazon.Proton.Model
         private string _encryptionKey;
         private string _name;
         private RepositoryProvider _provider;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property ConnectionArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of your Amazon Web Services CodeStar connection. For
-        /// more information, see <a href="https://docs.aws.amazon.com/setting-up-for-service">Setting
-        /// up for Proton</a> in the <i>Proton Administrator Guide</i>.
+        /// The Amazon Resource Name (ARN) of your AWS CodeStar connection that connects Proton
+        /// to your repository provider account. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/setting-up-for-service.html">Setting
+        /// up for Proton</a> in the <i>Proton User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=200)]
@@ -86,7 +97,7 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The repository name, for example <code>myrepos/myrepo</code>.
+        /// The repository name (for example, <code>myrepos/myrepo</code>).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
@@ -119,6 +130,31 @@ namespace Amazon.Proton.Model
         internal bool IsSetProvider()
         {
             return this._provider != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// An optional list of metadata items that you can associate with the Proton repository.
+        /// A tag is a key-value pair.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
+        /// resources and tagging</a> in the <i>Proton User Guide</i>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=50)]
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

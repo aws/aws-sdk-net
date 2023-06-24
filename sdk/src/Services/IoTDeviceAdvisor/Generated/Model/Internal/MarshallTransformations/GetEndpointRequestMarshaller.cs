@@ -55,12 +55,18 @@ namespace Amazon.IoTDeviceAdvisor.Model.Internal.MarshallTransformations
         public IRequest Marshall(GetEndpointRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.IoTDeviceAdvisor");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-09-18";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-09-18";
             request.HttpMethod = "GET";
 
             
+            if (publicRequest.IsSetAuthenticationMethod())
+                request.Parameters.Add("authenticationMethod", StringUtils.FromString(publicRequest.AuthenticationMethod));
+            
             if (publicRequest.IsSetCertificateArn())
                 request.Parameters.Add("certificateArn", StringUtils.FromString(publicRequest.CertificateArn));
+            
+            if (publicRequest.IsSetDeviceRoleArn())
+                request.Parameters.Add("deviceRoleArn", StringUtils.FromString(publicRequest.DeviceRoleArn));
             
             if (publicRequest.IsSetThingArn())
                 request.Parameters.Add("thingArn", StringUtils.FromString(publicRequest.ThingArn));

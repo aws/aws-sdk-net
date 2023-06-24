@@ -34,7 +34,7 @@ namespace Amazon.ChimeSDKMeetings.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CreateAttendeeRequestItem Marshaller
-    /// </summary>       
+    /// </summary>
     public class CreateAttendeeRequestItemMarshaller : IRequestMarshaller<CreateAttendeeRequestItem, JsonMarshallerContext> 
     {
         /// <summary>
@@ -45,6 +45,17 @@ namespace Amazon.ChimeSDKMeetings.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CreateAttendeeRequestItem requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetCapabilities())
+            {
+                context.Writer.WritePropertyName("Capabilities");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AttendeeCapabilitiesMarshaller.Instance;
+                marshaller.Marshall(requestObject.Capabilities, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetExternalUserId())
             {
                 context.Writer.WritePropertyName("ExternalUserId");
@@ -55,7 +66,7 @@ namespace Amazon.ChimeSDKMeetings.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CreateAttendeeRequestItemMarshaller Instance = new CreateAttendeeRequestItemMarshaller();
 
     }

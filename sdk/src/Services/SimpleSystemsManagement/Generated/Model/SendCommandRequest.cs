@@ -34,6 +34,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class SendCommandRequest : AmazonSimpleSystemsManagementRequest
     {
+        private AlarmConfiguration _alarmConfiguration;
         private CloudWatchOutputConfig _cloudWatchOutputConfig;
         private string _comment;
         private string _documentHash;
@@ -66,6 +67,24 @@ namespace Amazon.SimpleSystemsManagement.Model
         {
             _documentName = documentName;
             _instanceIds = instanceIds;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AlarmConfiguration. 
+        /// <para>
+        /// The CloudWatch alarm you want to apply to your command.
+        /// </para>
+        /// </summary>
+        public AlarmConfiguration AlarmConfiguration
+        {
+            get { return this._alarmConfiguration; }
+            set { this._alarmConfiguration = value; }
+        }
+
+        // Check to see if AlarmConfiguration property is set
+        internal bool IsSetAlarmConfiguration()
+        {
+            return this._alarmConfiguration != null;
         }
 
         /// <summary>
@@ -380,6 +399,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The required and optional parameters specified in the document being run.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public Dictionary<string, List<string>> Parameters
         {
             get { return this._parameters; }
@@ -397,6 +417,13 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// The ARN of the Identity and Access Management (IAM) service role to use to publish
         /// Amazon Simple Notification Service (Amazon SNS) notifications for Run Command commands.
+        /// </para>
+        ///  
+        /// <para>
+        /// This role must provide the <code>sns:Publish</code> permission for your notification
+        /// topic. For information about creating and using this service role, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitoring-sns-notifications.html">Monitoring
+        /// Systems Manager status changes using Amazon SNS notifications</a> in the <i>Amazon
+        /// Web Services Systems Manager User Guide</i>.
         /// </para>
         /// </summary>
         public string ServiceRoleArn

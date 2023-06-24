@@ -34,7 +34,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Hdr10Settings Marshaller
-    /// </summary>       
+    /// </summary>
     public class Hdr10SettingsMarshaller : IRequestMarshaller<Hdr10Settings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static Hdr10SettingsMarshaller Instance = new Hdr10SettingsMarshaller();
 
     }

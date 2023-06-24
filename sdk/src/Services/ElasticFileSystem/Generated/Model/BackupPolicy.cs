@@ -54,7 +54,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>DISABLED</code> </b> - automatic back ups are turned off for the file system.
+        ///  <b> <code>DISABLED</code> </b> - Automatic back ups are turned off for the file system.
         /// </para>
         ///  </li> <li> 
         /// <para>

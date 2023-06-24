@@ -295,6 +295,56 @@ namespace Amazon.CloudFront
 
 
     /// <summary>
+    /// Constants used for properties of type ContinuousDeploymentPolicyType.
+    /// </summary>
+    public class ContinuousDeploymentPolicyType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SingleHeader for ContinuousDeploymentPolicyType
+        /// </summary>
+        public static readonly ContinuousDeploymentPolicyType SingleHeader = new ContinuousDeploymentPolicyType("SingleHeader");
+        /// <summary>
+        /// Constant SingleWeight for ContinuousDeploymentPolicyType
+        /// </summary>
+        public static readonly ContinuousDeploymentPolicyType SingleWeight = new ContinuousDeploymentPolicyType("SingleWeight");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ContinuousDeploymentPolicyType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContinuousDeploymentPolicyType FindValue(string value)
+        {
+            return FindValue<ContinuousDeploymentPolicyType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ContinuousDeploymentPolicyType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type EventType.
     /// </summary>
     public class EventType : ConstantClass
@@ -612,6 +662,14 @@ namespace Amazon.CloudFront
         /// Constant Http2 for HttpVersion
         /// </summary>
         public static readonly HttpVersion Http2 = new HttpVersion("http2");
+        /// <summary>
+        /// Constant Http2and3 for HttpVersion
+        /// </summary>
+        public static readonly HttpVersion Http2and3 = new HttpVersion("http2and3");
+        /// <summary>
+        /// Constant Http3 for HttpVersion
+        /// </summary>
+        public static readonly HttpVersion Http3 = new HttpVersion("http3");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -897,6 +955,156 @@ namespace Amazon.CloudFront
 
 
     /// <summary>
+    /// Constants used for properties of type OriginAccessControlOriginTypes.
+    /// </summary>
+    public class OriginAccessControlOriginTypes : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Mediastore for OriginAccessControlOriginTypes
+        /// </summary>
+        public static readonly OriginAccessControlOriginTypes Mediastore = new OriginAccessControlOriginTypes("mediastore");
+        /// <summary>
+        /// Constant S3 for OriginAccessControlOriginTypes
+        /// </summary>
+        public static readonly OriginAccessControlOriginTypes S3 = new OriginAccessControlOriginTypes("s3");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OriginAccessControlOriginTypes(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OriginAccessControlOriginTypes FindValue(string value)
+        {
+            return FindValue<OriginAccessControlOriginTypes>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OriginAccessControlOriginTypes(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type OriginAccessControlSigningBehaviors.
+    /// </summary>
+    public class OriginAccessControlSigningBehaviors : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Always for OriginAccessControlSigningBehaviors
+        /// </summary>
+        public static readonly OriginAccessControlSigningBehaviors Always = new OriginAccessControlSigningBehaviors("always");
+        /// <summary>
+        /// Constant Never for OriginAccessControlSigningBehaviors
+        /// </summary>
+        public static readonly OriginAccessControlSigningBehaviors Never = new OriginAccessControlSigningBehaviors("never");
+        /// <summary>
+        /// Constant NoOverride for OriginAccessControlSigningBehaviors
+        /// </summary>
+        public static readonly OriginAccessControlSigningBehaviors NoOverride = new OriginAccessControlSigningBehaviors("no-override");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OriginAccessControlSigningBehaviors(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OriginAccessControlSigningBehaviors FindValue(string value)
+        {
+            return FindValue<OriginAccessControlSigningBehaviors>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OriginAccessControlSigningBehaviors(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type OriginAccessControlSigningProtocols.
+    /// </summary>
+    public class OriginAccessControlSigningProtocols : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Sigv4 for OriginAccessControlSigningProtocols
+        /// </summary>
+        public static readonly OriginAccessControlSigningProtocols Sigv4 = new OriginAccessControlSigningProtocols("sigv4");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OriginAccessControlSigningProtocols(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OriginAccessControlSigningProtocols FindValue(string value)
+        {
+            return FindValue<OriginAccessControlSigningProtocols>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OriginAccessControlSigningProtocols(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type OriginProtocolPolicy.
     /// </summary>
     public class OriginProtocolPolicy : ConstantClass
@@ -961,6 +1169,10 @@ namespace Amazon.CloudFront
         /// </summary>
         public static readonly OriginRequestPolicyCookieBehavior All = new OriginRequestPolicyCookieBehavior("all");
         /// <summary>
+        /// Constant AllExcept for OriginRequestPolicyCookieBehavior
+        /// </summary>
+        public static readonly OriginRequestPolicyCookieBehavior AllExcept = new OriginRequestPolicyCookieBehavior("allExcept");
+        /// <summary>
         /// Constant None for OriginRequestPolicyCookieBehavior
         /// </summary>
         public static readonly OriginRequestPolicyCookieBehavior None = new OriginRequestPolicyCookieBehavior("none");
@@ -1010,6 +1222,10 @@ namespace Amazon.CloudFront
     public class OriginRequestPolicyHeaderBehavior : ConstantClass
     {
 
+        /// <summary>
+        /// Constant AllExcept for OriginRequestPolicyHeaderBehavior
+        /// </summary>
+        public static readonly OriginRequestPolicyHeaderBehavior AllExcept = new OriginRequestPolicyHeaderBehavior("allExcept");
         /// <summary>
         /// Constant AllViewer for OriginRequestPolicyHeaderBehavior
         /// </summary>
@@ -1072,6 +1288,10 @@ namespace Amazon.CloudFront
         /// Constant All for OriginRequestPolicyQueryStringBehavior
         /// </summary>
         public static readonly OriginRequestPolicyQueryStringBehavior All = new OriginRequestPolicyQueryStringBehavior("all");
+        /// <summary>
+        /// Constant AllExcept for OriginRequestPolicyQueryStringBehavior
+        /// </summary>
+        public static readonly OriginRequestPolicyQueryStringBehavior AllExcept = new OriginRequestPolicyQueryStringBehavior("allExcept");
         /// <summary>
         /// Constant None for OriginRequestPolicyQueryStringBehavior
         /// </summary>

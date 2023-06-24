@@ -128,8 +128,8 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property ControlSources. 
         /// <para>
-        ///  The data source that determines where Audit Manager collects evidence from for the
-        /// control. 
+        ///  The data source types that determine where Audit Manager collects evidence from for
+        /// the control. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -148,7 +148,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        ///  Specifies when the control was created. 
+        ///  The time when the control was created. 
         /// </para>
         /// </summary>
         public DateTime CreatedAt
@@ -166,7 +166,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property CreatedBy. 
         /// <para>
-        ///  The IAM user or role that created the control. 
+        ///  The user or role that created the control. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -223,7 +223,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property LastUpdatedAt. 
         /// <para>
-        ///  Specifies when the control was most recently updated. 
+        ///  The time when the control was most recently updated. 
         /// </para>
         /// </summary>
         public DateTime LastUpdatedAt
@@ -241,7 +241,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property LastUpdatedBy. 
         /// <para>
-        ///  The IAM user or role that most recently updated the control. 
+        ///  The user or role that most recently updated the control. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -318,7 +318,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        ///  The type of control, such as a custom control or a standard control. 
+        ///  Specifies whether the control is a standard control or a custom control.
         /// </para>
         /// </summary>
         public ControlType Type

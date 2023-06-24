@@ -37,7 +37,10 @@ namespace Amazon.EC2.Model
         private string _poolId;
 
         /// <summary>
-        /// Gets and sets the property PoolAddressRange.
+        /// Gets and sets the property PoolAddressRange. 
+        /// <para>
+        /// Information about the address range of the public IPv4 pool.
+        /// </para>
         /// </summary>
         public PublicIpv4PoolRange PoolAddressRange
         {

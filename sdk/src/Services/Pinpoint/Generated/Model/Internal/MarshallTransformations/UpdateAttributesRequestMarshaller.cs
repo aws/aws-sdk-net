@@ -34,7 +34,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// UpdateAttributesRequest Marshaller
-    /// </summary>       
+    /// </summary>
     public class UpdateAttributesRequestMarshaller : IRequestMarshaller<UpdateAttributesRequest, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static UpdateAttributesRequestMarshaller Instance = new UpdateAttributesRequestMarshaller();
 
     }

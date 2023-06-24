@@ -96,7 +96,7 @@ namespace Amazon.IoTSiteWise.Model
         /// in Unix epoch time.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=31556889864403199)]
+        [AWSProperty(Required=true, Min=1, Max=9223372036854774)]
         public long EndTimeInSeconds
         {
             get { return this._endTimeInSeconds.GetValueOrDefault(); }
@@ -298,7 +298,7 @@ namespace Amazon.IoTSiteWise.Model
         /// in Unix epoch time.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=31556889864403199)]
+        [AWSProperty(Required=true, Min=1, Max=9223372036854774)]
         public long StartTimeInSeconds
         {
             get { return this._startTimeInSeconds.GetValueOrDefault(); }

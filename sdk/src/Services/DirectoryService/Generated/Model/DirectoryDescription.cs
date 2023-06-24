@@ -43,6 +43,7 @@ namespace Amazon.DirectoryService.Model
         private DirectoryEdition _edition;
         private DateTime? _launchTime;
         private string _name;
+        private OSVersion _osVersion;
         private OwnerDirectoryDescription _ownerDirectoryDescription;
         private RadiusSettings _radiusSettings;
         private RadiusStatus _radiusStatus;
@@ -254,6 +255,24 @@ namespace Amazon.DirectoryService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property OsVersion. 
+        /// <para>
+        /// The operating system (OS) version of the directory.
+        /// </para>
+        /// </summary>
+        public OSVersion OsVersion
+        {
+            get { return this._osVersion; }
+            set { this._osVersion = value; }
+        }
+
+        // Check to see if OsVersion property is set
+        internal bool IsSetOsVersion()
+        {
+            return this._osVersion != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property OwnerDirectoryDescription. 
         /// <para>
         /// Describes the Managed Microsoft AD directory in the directory owner account.
@@ -354,7 +373,7 @@ namespace Amazon.DirectoryService.Model
         /// determine whether to approve or reject the share invitation.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Sensitive=true, Max=1024)]
         public string ShareNotes
         {
             get { return this._shareNotes; }

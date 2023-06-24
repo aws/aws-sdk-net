@@ -62,7 +62,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property KernelGatewayImageConfig. 
         /// <para>
-        /// The KernelGatewayImageConfig.
+        /// The KernelGatewayImageConfig. You can only specify one image kernel in the AppImageConfig
+        /// API. This kernel will be shown to users before the image starts. Once the image runs,
+        /// all kernels are visible in JupyterLab.
         /// </para>
         /// </summary>
         public KernelGatewayImageConfig KernelGatewayImageConfig

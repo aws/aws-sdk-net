@@ -30,7 +30,7 @@ namespace Amazon.CodeArtifact.Model
 {
     /// <summary>
     /// A tag is a key-value pair that can be used to manage, search for, or filter resources
-    /// in AWS CodeArtifact.
+    /// in CodeArtifact.
     /// </summary>
     public partial class Tag
     {

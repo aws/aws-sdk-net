@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kendra.Model
 {
     /// <summary>
-    /// Provides information for connecting to an Amazon VPC.
+    /// Provides the configuration information to connect to an Amazon VPC.
     /// </summary>
     public partial class DataSourceVpcConfiguration
     {

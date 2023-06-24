@@ -42,7 +42,8 @@ namespace Amazon.SimpleEmailV2.Model
         /// Gets and sets the property Max24HourSend. 
         /// <para>
         /// The maximum number of emails that you can send in the current Amazon Web Services
-        /// Region over a 24-hour period. This value is also called your <i>sending quota</i>.
+        /// Region over a 24-hour period. A value of -1 signifies an unlimited quota. (This value
+        /// is also referred to as your <i>sending quota</i>.)
         /// </para>
         /// </summary>
         public double Max24HourSend

@@ -34,7 +34,7 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SetSourceRequest Marshaller
-    /// </summary>       
+    /// </summary>
     public class SetSourceRequestMarshaller : IRequestMarshaller<SetSourceRequest, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,6 +66,17 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("entitlementArn");
                 context.Writer.Write(requestObject.EntitlementArn);
+            }
+
+            if(requestObject.IsSetGatewayBridgeSource())
+            {
+                context.Writer.WritePropertyName("gatewayBridgeSource");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = SetGatewayBridgeSourceRequestMarshaller.Instance;
+                marshaller.Marshall(requestObject.GatewayBridgeSource, context);
+
+                context.Writer.WriteObjectEnd();
             }
 
             if(requestObject.IsSetIngestPort())
@@ -126,6 +137,30 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Protocol);
             }
 
+            if(requestObject.IsSetSenderControlPort())
+            {
+                context.Writer.WritePropertyName("senderControlPort");
+                context.Writer.Write(requestObject.SenderControlPort);
+            }
+
+            if(requestObject.IsSetSenderIpAddress())
+            {
+                context.Writer.WritePropertyName("senderIpAddress");
+                context.Writer.Write(requestObject.SenderIpAddress);
+            }
+
+            if(requestObject.IsSetSourceListenerAddress())
+            {
+                context.Writer.WritePropertyName("sourceListenerAddress");
+                context.Writer.Write(requestObject.SourceListenerAddress);
+            }
+
+            if(requestObject.IsSetSourceListenerPort())
+            {
+                context.Writer.WritePropertyName("sourceListenerPort");
+                context.Writer.Write(requestObject.SourceListenerPort);
+            }
+
             if(requestObject.IsSetStreamId())
             {
                 context.Writer.WritePropertyName("streamId");
@@ -148,7 +183,7 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SetSourceRequestMarshaller Instance = new SetSourceRequestMarshaller();
 
     }

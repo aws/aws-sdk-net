@@ -82,6 +82,12 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.ParentSlotTypeSignature = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("slotTypeCategory", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SlotTypeCategory = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("slotTypeId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -34,7 +34,7 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SchemaConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class SchemaConfigurationMarshaller : IRequestMarshaller<SchemaConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -85,7 +85,7 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SchemaConfigurationMarshaller Instance = new SchemaConfigurationMarshaller();
 
     }

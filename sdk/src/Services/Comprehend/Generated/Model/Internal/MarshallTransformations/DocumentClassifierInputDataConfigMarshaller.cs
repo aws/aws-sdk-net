@@ -34,7 +34,7 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DocumentClassifierInputDataConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class DocumentClassifierInputDataConfigMarshaller : IRequestMarshaller<DocumentClassifierInputDataConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,6 +67,34 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.DataFormat);
             }
 
+            if(requestObject.IsSetDocumentReaderConfig())
+            {
+                context.Writer.WritePropertyName("DocumentReaderConfig");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = DocumentReaderConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.DocumentReaderConfig, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetDocuments())
+            {
+                context.Writer.WritePropertyName("Documents");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = DocumentClassifierDocumentsMarshaller.Instance;
+                marshaller.Marshall(requestObject.Documents, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetDocumentType())
+            {
+                context.Writer.WritePropertyName("DocumentType");
+                context.Writer.Write(requestObject.DocumentType);
+            }
+
             if(requestObject.IsSetLabelDelimiter())
             {
                 context.Writer.WritePropertyName("LabelDelimiter");
@@ -89,7 +117,7 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DocumentClassifierInputDataConfigMarshaller Instance = new DocumentClassifierInputDataConfigMarshaller();
 
     }

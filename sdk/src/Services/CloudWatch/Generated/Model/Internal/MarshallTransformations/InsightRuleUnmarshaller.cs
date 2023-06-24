@@ -60,6 +60,12 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                         unmarshalledObject.Definition = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("ManagedRule", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.ManagedRule = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("Name", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

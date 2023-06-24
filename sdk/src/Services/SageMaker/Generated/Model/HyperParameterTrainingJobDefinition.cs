@@ -39,7 +39,9 @@ namespace Amazon.SageMaker.Model
         private bool? _enableInterContainerTrafficEncryption;
         private bool? _enableManagedSpotTraining;
         private bool? _enableNetworkIsolation;
+        private Dictionary<string, string> _environment = new Dictionary<string, string>();
         private ParameterRanges _hyperParameterRanges;
+        private HyperParameterTuningResourceConfig _hyperParameterTuningResourceConfig;
         private List<Channel> _inputDataConfig = new List<Channel>();
         private OutputDataConfig _outputDataConfig;
         private ResourceConfig _resourceConfig;
@@ -53,8 +55,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property AlgorithmSpecification. 
         /// <para>
-        /// The <a>HyperParameterAlgorithmSpecification</a> object that specifies the resource
-        /// algorithm to use for the training jobs that the tuning job launches.
+        /// The <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterAlgorithmSpecification.html">HyperParameterAlgorithmSpecification</a>
+        /// object that specifies the resource algorithm to use for the training jobs that the
+        /// tuning job launches.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -150,9 +153,9 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// Isolates the training container. No inbound or outbound network calls can be made,
         /// except for calls between peers within a training cluster for distributed training.
-        /// If network isolation is used for training jobs that are configured to use a VPC, Amazon
-        /// SageMaker downloads and uploads customer data and model artifacts through the specified
-        /// VPC, but the training container does not have network access.
+        /// If network isolation is used for training jobs that are configured to use a VPC, SageMaker
+        /// downloads and uploads customer data and model artifacts through the specified VPC,
+        /// but the training container does not have network access.
         /// </para>
         /// </summary>
         public bool EnableNetworkIsolation
@@ -165,6 +168,37 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetEnableNetworkIsolation()
         {
             return this._enableNetworkIsolation.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Environment. 
+        /// <para>
+        /// An environment variable that you can pass into the SageMaker <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html">CreateTrainingJob</a>
+        /// API. You can use an existing <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html#sagemaker-CreateTrainingJob-request-Environment">environment
+        /// variable from the training container</a> or use your own. See <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics-variables.html">Define
+        /// metrics and variables</a> for more information.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The maximum number of items specified for <code>Map Entries</code> refers to the maximum
+        /// number of environment variables for each <code>TrainingJobDefinition</code> and also
+        /// the maximum for the hyperparameter tuning job itself. That is, the sum of the number
+        /// of environment variables for all the training job definitions can't exceed the maximum
+        /// number specified.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        [AWSProperty(Max=48)]
+        public Dictionary<string, string> Environment
+        {
+            get { return this._environment; }
+            set { this._environment = value; }
+        }
+
+        // Check to see if Environment property is set
+        internal bool IsSetEnvironment()
+        {
+            return this._environment != null && this._environment.Count > 0; 
         }
 
         /// <summary>
@@ -183,10 +217,32 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property HyperParameterTuningResourceConfig. 
+        /// <para>
+        /// The configuration for the hyperparameter tuning resources, including the compute instances
+        /// and storage volumes, used for training jobs launched by the tuning job. By default,
+        /// storage volumes hold model artifacts and incremental states. Choose <code>File</code>
+        /// for <code>TrainingInputMode</code> in the <code>AlgorithmSpecification</code> parameter
+        /// to additionally store training data in the storage volume (optional).
+        /// </para>
+        /// </summary>
+        public HyperParameterTuningResourceConfig HyperParameterTuningResourceConfig
+        {
+            get { return this._hyperParameterTuningResourceConfig; }
+            set { this._hyperParameterTuningResourceConfig = value; }
+        }
+
+        // Check to see if HyperParameterTuningResourceConfig property is set
+        internal bool IsSetHyperParameterTuningResourceConfig()
+        {
+            return this._hyperParameterTuningResourceConfig != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property InputDataConfig. 
         /// <para>
-        /// An array of <a>Channel</a> objects that specify the input for the training jobs that
-        /// the tuning job launches.
+        /// An array of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Channel.html">Channel</a>
+        /// objects that specify the input for the training jobs that the tuning job launches.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=20)]
@@ -231,13 +287,18 @@ namespace Amazon.SageMaker.Model
         ///  
         /// <para>
         /// Storage volumes store model artifacts and incremental states. Training algorithms
-        /// might also use storage volumes for scratch space. If you want Amazon SageMaker to
-        /// use the storage volume to store the training data, choose <code>File</code> as the
-        /// <code>TrainingInputMode</code> in the algorithm specification. For distributed training
-        /// algorithms, specify an instance count greater than 1.
+        /// might also use storage volumes for scratch space. If you want SageMaker to use the
+        /// storage volume to store the training data, choose <code>File</code> as the <code>TrainingInputMode</code>
+        /// in the algorithm specification. For distributed training algorithms, specify an instance
+        /// count greater than 1.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// If you want to use hyperparameter optimization with instance type flexibility, use
+        /// <code>HyperParameterTuningResourceConfig</code> instead.
+        /// </para>
+        ///  </note>
         /// </summary>
-        [AWSProperty(Required=true)]
         public ResourceConfig ResourceConfig
         {
             get { return this._resourceConfig; }
@@ -312,8 +373,8 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// Specifies a limit to how long a model hyperparameter training job can run. It also
         /// specifies how long a managed spot training job has to complete. When the job reaches
-        /// the time limit, Amazon SageMaker ends the training job. Use this API to cap model
-        /// training costs.
+        /// the time limit, SageMaker ends the training job. Use this API to cap model training
+        /// costs.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -347,11 +408,11 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property VpcConfig. 
         /// <para>
-        /// The <a>VpcConfig</a> object that specifies the VPC that you want the training jobs
-        /// that this hyperparameter tuning job launches to connect to. Control access to and
-        /// from your training container by configuring the VPC. For more information, see <a
-        /// href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training
-        /// Jobs by Using an Amazon Virtual Private Cloud</a>.
+        /// The <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a>
+        /// object that specifies the VPC that you want the training jobs that this hyperparameter
+        /// tuning job launches to connect to. Control access to and from your training container
+        /// by configuring the VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect
+        /// Training Jobs by Using an Amazon Virtual Private Cloud</a>.
         /// </para>
         /// </summary>
         public VpcConfig VpcConfig

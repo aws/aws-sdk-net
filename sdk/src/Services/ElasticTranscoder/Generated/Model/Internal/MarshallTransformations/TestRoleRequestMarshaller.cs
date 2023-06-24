@@ -56,7 +56,7 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ElasticTranscoder");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2012-09-25";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2012-09-25";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/2012-09-25/roleTests";
@@ -94,7 +94,6 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

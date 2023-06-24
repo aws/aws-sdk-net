@@ -39,7 +39,7 @@ namespace Amazon.KinesisVideo.Model
         /// <summary>
         /// Gets and sets the property MessageTtlSeconds. 
         /// <para>
-        /// The period of time a signaling channel retains underlivered messages before they are
+        /// The period of time a signaling channel retains undelivered messages before they are
         /// discarded.
         /// </para>
         /// </summary>

@@ -63,7 +63,7 @@ namespace Amazon.Runtime.Internal
             {
                 executionContext.RequestContext.Metrics.StartEvent(Metric.ClientExecuteTime);
                 var response = await base.InvokeAsync<T>(executionContext).ConfigureAwait(false);    
-                return response;                              
+                return response;                  
             }
             finally
             {

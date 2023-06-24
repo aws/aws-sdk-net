@@ -39,7 +39,7 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// A token to indicate the location of the next resource tag in the array of resource
+        /// A token that indicates the location of the next resource tag in the array of resource
         /// tags, after the current requested list of resource tags.
         /// </para>
         /// </summary>
@@ -58,7 +58,7 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// An array of resource tags with detail data.
+        /// A list of resource tags with detail data.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=50)]

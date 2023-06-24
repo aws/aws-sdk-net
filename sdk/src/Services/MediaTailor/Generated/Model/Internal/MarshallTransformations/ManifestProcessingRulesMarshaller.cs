@@ -34,7 +34,7 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ManifestProcessingRules Marshaller
-    /// </summary>       
+    /// </summary>
     public class ManifestProcessingRulesMarshaller : IRequestMarshaller<ManifestProcessingRules, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ManifestProcessingRulesMarshaller Instance = new ManifestProcessingRulesMarshaller();
 
     }

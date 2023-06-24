@@ -17,22 +17,22 @@
  * Do not modify this file. This file is generated from the email-2010-12-01.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
-
+using Amazon.SimpleEmail.Internal;
 
 namespace Amazon.SimpleEmail
 {
     /// <summary>
     /// Configuration for accessing Amazon SimpleEmailService service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonSimpleEmailServiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.105");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.147");
 
         private string _userAgent = UserAgentString;
 
@@ -40,8 +40,10 @@ namespace Amazon.SimpleEmail
         /// Default constructor
         /// </summary>
         public AmazonSimpleEmailServiceConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonSimpleEmailServiceDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "ses";
+            this.EndpointProvider = new AmazonSimpleEmailServiceEndpointProvider();
         }
 
         /// <summary>
@@ -76,5 +78,6 @@ namespace Amazon.SimpleEmail
                 return _userAgent;
             }
         }
+
     }
 }

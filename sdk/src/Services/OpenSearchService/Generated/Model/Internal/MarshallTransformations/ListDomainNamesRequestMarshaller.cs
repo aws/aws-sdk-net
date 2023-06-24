@@ -55,7 +55,7 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
         public IRequest Marshall(ListDomainNamesRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.OpenSearchService");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-01-01";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-01-01";
             request.HttpMethod = "GET";
 
             

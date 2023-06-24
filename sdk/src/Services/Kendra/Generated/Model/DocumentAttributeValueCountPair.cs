@@ -36,6 +36,7 @@ namespace Amazon.Kendra.Model
     {
         private int? _count;
         private DocumentAttributeValue _documentAttributeValue;
+        private List<FacetResult> _facetResults = new List<FacetResult>();
 
         /// <summary>
         /// Gets and sets the property Count. 
@@ -58,7 +59,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property DocumentAttributeValue. 
         /// <para>
-        /// The value of the attribute. For example, "HR."
+        /// The value of the attribute. For example, "HR".
         /// </para>
         /// </summary>
         public DocumentAttributeValue DocumentAttributeValue
@@ -71,6 +72,35 @@ namespace Amazon.Kendra.Model
         internal bool IsSetDocumentAttributeValue()
         {
             return this._documentAttributeValue != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FacetResults. 
+        /// <para>
+        /// Contains the results of a document attribute that is a nested facet. A <code>FacetResult</code>
+        /// contains the counts for each facet nested within a facet.
+        /// </para>
+        ///  
+        /// <para>
+        /// For example, the document attribute or facet "Department" includes a value called
+        /// "Engineering". In addition, the document attribute or facet "SubDepartment" includes
+        /// the values "Frontend" and "Backend" for documents assigned to "Engineering". You can
+        /// display nested facets in the search results so that documents can be searched not
+        /// only by department but also by a sub department within a department. The counts for
+        /// documents that belong to "Frontend" and "Backend" within "Engineering" are returned
+        /// for a query.
+        /// </para>
+        /// </summary>
+        public List<FacetResult> FacetResults
+        {
+            get { return this._facetResults; }
+            set { this._facetResults = value; }
+        }
+
+        // Check to see if FacetResults property is set
+        internal bool IsSetFacetResults()
+        {
+            return this._facetResults != null && this._facetResults.Count > 0; 
         }
 
     }

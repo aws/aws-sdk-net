@@ -30,8 +30,8 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// Container for the parameters to the GetCSVHeader operation.
-    /// Gets the header information for the .csv file to be used as input for the user import
-    /// job.
+    /// Gets the header information for the comma-separated value (CSV) file to be used as
+    /// input for the user import job.
     /// </summary>
     public partial class GetCSVHeaderRequest : AmazonCognitoIdentityProviderRequest
     {

@@ -17,22 +17,22 @@
  * Do not modify this file. This file is generated from the securityhub-2018-10-26.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
-
+using Amazon.SecurityHub.Internal;
 
 namespace Amazon.SecurityHub
 {
     /// <summary>
     /// Configuration for accessing Amazon SecurityHub service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonSecurityHubConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.7.23");
+            InternalSDKUtils.BuildUserAgentString("3.7.109.2");
 
         private string _userAgent = UserAgentString;
 
@@ -40,8 +40,10 @@ namespace Amazon.SecurityHub
         /// Default constructor
         /// </summary>
         public AmazonSecurityHubConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonSecurityHubDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "securityhub";
+            this.EndpointProvider = new AmazonSecurityHubEndpointProvider();
         }
 
         /// <summary>
@@ -76,5 +78,6 @@ namespace Amazon.SecurityHub
                 return _userAgent;
             }
         }
+
     }
 }

@@ -34,7 +34,7 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// LoRaWANSendDataToDevice Marshaller
-    /// </summary>       
+    /// </summary>
     public class LoRaWANSendDataToDeviceMarshaller : IRequestMarshaller<LoRaWANSendDataToDevice, JsonMarshallerContext> 
     {
         /// <summary>
@@ -51,11 +51,22 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.FPort);
             }
 
+            if(requestObject.IsSetParticipatingGateways())
+            {
+                context.Writer.WritePropertyName("ParticipatingGateways");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ParticipatingGatewaysMarshaller.Instance;
+                marshaller.Marshall(requestObject.ParticipatingGateways, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static LoRaWANSendDataToDeviceMarshaller Instance = new LoRaWANSendDataToDeviceMarshaller();
 
     }

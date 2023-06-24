@@ -32,14 +32,16 @@ namespace Amazon.EC2.Model
     /// Container for the parameters to the ModifyVpcEndpoint operation.
     /// Modifies attributes of a specified VPC endpoint. The attributes that you can modify
     /// depend on the type of VPC endpoint (interface, gateway, or Gateway Load Balancer).
-    /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-endpoints.html">VPC
-    /// Endpoints</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+    /// For more information, see the <a href="https://docs.aws.amazon.com/vpc/latest/privatelink/">Amazon
+    /// Web Services PrivateLink Guide</a>.
     /// </summary>
     public partial class ModifyVpcEndpointRequest : AmazonEC2Request
     {
         private List<string> _addRouteTableIds = new List<string>();
         private List<string> _addSecurityGroupIds = new List<string>();
         private List<string> _addSubnetIds = new List<string>();
+        private DnsOptionsSpecification _dnsOptions;
+        private IpAddressType _ipAddressType;
         private string _policyDocument;
         private bool? _privateDnsEnabled;
         private List<string> _removeRouteTableIds = new List<string>();
@@ -51,7 +53,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property AddRouteTableIds. 
         /// <para>
-        /// (Gateway endpoint) One or more route tables IDs to associate with the endpoint.
+        /// (Gateway endpoint) The IDs of the route tables to associate with the endpoint.
         /// </para>
         /// </summary>
         public List<string> AddRouteTableIds
@@ -69,7 +71,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property AddSecurityGroupIds. 
         /// <para>
-        /// (Interface endpoint) One or more security group IDs to associate with the network
+        /// (Interface endpoint) The IDs of the security groups to associate with the network
         /// interface.
         /// </para>
         /// </summary>
@@ -88,7 +90,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property AddSubnetIds. 
         /// <para>
-        /// (Interface and Gateway Load Balancer endpoints) One or more subnet IDs in which to
+        /// (Interface and Gateway Load Balancer endpoints) The IDs of the subnets in which to
         /// serve the endpoint. For a Gateway Load Balancer endpoint, you can specify only one
         /// subnet.
         /// </para>
@@ -103,6 +105,42 @@ namespace Amazon.EC2.Model
         internal bool IsSetAddSubnetIds()
         {
             return this._addSubnetIds != null && this._addSubnetIds.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DnsOptions. 
+        /// <para>
+        /// The DNS options for the endpoint.
+        /// </para>
+        /// </summary>
+        public DnsOptionsSpecification DnsOptions
+        {
+            get { return this._dnsOptions; }
+            set { this._dnsOptions = value; }
+        }
+
+        // Check to see if DnsOptions property is set
+        internal bool IsSetDnsOptions()
+        {
+            return this._dnsOptions != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IpAddressType. 
+        /// <para>
+        /// The IP address type for the endpoint.
+        /// </para>
+        /// </summary>
+        public IpAddressType IpAddressType
+        {
+            get { return this._ipAddressType; }
+            set { this._ipAddressType = value; }
+        }
+
+        // Check to see if IpAddressType property is set
+        internal bool IsSetIpAddressType()
+        {
+            return this._ipAddressType != null;
         }
 
         /// <summary>
@@ -146,7 +184,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property RemoveRouteTableIds. 
         /// <para>
-        /// (Gateway endpoint) One or more route table IDs to disassociate from the endpoint.
+        /// (Gateway endpoint) The IDs of the route tables to disassociate from the endpoint.
         /// </para>
         /// </summary>
         public List<string> RemoveRouteTableIds
@@ -164,7 +202,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property RemoveSecurityGroupIds. 
         /// <para>
-        /// (Interface endpoint) One or more security group IDs to disassociate from the network
+        /// (Interface endpoint) The IDs of the security groups to disassociate from the network
         /// interface.
         /// </para>
         /// </summary>
@@ -183,7 +221,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property RemoveSubnetIds. 
         /// <para>
-        /// (Interface endpoint) One or more subnets IDs in which to remove the endpoint.
+        /// (Interface endpoint) The IDs of the subnets from which to remove the endpoint.
         /// </para>
         /// </summary>
         public List<string> RemoveSubnetIds

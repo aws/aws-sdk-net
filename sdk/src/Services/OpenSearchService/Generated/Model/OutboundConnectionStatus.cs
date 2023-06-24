@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// The connection status of an outbound cross-cluster connection.
+    /// The status of an outbound cross-cluster connection.
     /// </summary>
     public partial class OutboundConnectionStatus
     {
@@ -39,7 +39,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property Message. 
         /// <para>
-        /// Verbose information for the outbound connection status.
+        /// Verbose information for the outbound connection.
         /// </para>
         /// </summary>
         public string Message
@@ -57,18 +57,51 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property StatusCode. 
         /// <para>
-        /// The state code for the outbound connection. Can be one of the following:
+        /// The status code for the outbound connection. Can be one of the following:
         /// </para>
-        ///  <ul> <li>VALIDATING: The outbound connection request is being validated.</li> <li>VALIDATION_FAILED:
-        /// Validation failed for the connection request.</li> <li>PENDING_ACCEPTANCE: Outbound
-        /// connection request is validated and is not yet accepted by the remote domain owner.
-        /// </li> <li>APPROVED: Outbound connection has been approved by the remote domain owner
-        /// for getting provisioned.</li> <li>PROVISIONING: Outbound connection request is in
-        /// process.</li> <li>ACTIVE: Outbound connection is active and ready to use.</li> <li>REJECTING:
-        /// Outbound connection rejection by remote domain owner is in progress.</li> <li>REJECTED:
-        /// Outbound connection request is rejected by remote domain owner.</li> <li>DELETING:
-        /// Outbound connection deletion is in progress.</li> <li>DELETED: Outbound connection
-        /// is deleted and can no longer be used.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>VALIDATING</b> - The outbound connection request is being validated.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>VALIDATION_FAILED</b> - Validation failed for the connection request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>PENDING_ACCEPTANCE</b>: Outbound connection request is validated and is not yet
+        /// accepted by the remote domain owner.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>APPROVED</b> - Outbound connection has been approved by the remote domain owner
+        /// for getting provisioned.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>PROVISIONING</b> - Outbound connection request is in process.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>ACTIVE</b> - Outbound connection is active and ready to use.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>REJECTING</b> - Outbound connection rejection by remote domain owner is in progress.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>REJECTED</b> - Outbound connection request is rejected by remote domain owner.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>DELETING</b> - Outbound connection deletion is in progress.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>DELETED</b> - Outbound connection is deleted and can no longer be used.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public OutboundConnectionStatusCode StatusCode
         {

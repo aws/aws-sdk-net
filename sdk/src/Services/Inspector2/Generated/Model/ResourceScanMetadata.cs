@@ -36,6 +36,7 @@ namespace Amazon.Inspector2.Model
         private Ec2Metadata _ec2;
         private EcrContainerImageMetadata _ecrImage;
         private EcrRepositoryMetadata _ecrRepository;
+        private LambdaFunctionMetadata _lambdaFunction;
 
         /// <summary>
         /// Gets and sets the property Ec2. 
@@ -89,6 +90,24 @@ namespace Amazon.Inspector2.Model
         internal bool IsSetEcrRepository()
         {
             return this._ecrRepository != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LambdaFunction. 
+        /// <para>
+        /// An object that contains metadata details for an AWS Lambda function.
+        /// </para>
+        /// </summary>
+        public LambdaFunctionMetadata LambdaFunction
+        {
+            get { return this._lambdaFunction; }
+            set { this._lambdaFunction = value; }
+        }
+
+        // Check to see if LambdaFunction property is set
+        internal bool IsSetLambdaFunction()
+        {
+            return this._lambdaFunction != null;
         }
 
     }

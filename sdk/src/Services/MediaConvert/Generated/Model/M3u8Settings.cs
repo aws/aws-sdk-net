@@ -326,9 +326,11 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TimedMetadata. Applies only to HLS outputs. Use this setting
-        /// to specify whether the service inserts the ID3 timed metadata from the input in this
-        /// output.
+        /// Gets and sets the property TimedMetadata. Set ID3 metadata (timedMetadata) to Passthrough
+        /// (PASSTHROUGH) to include ID3 metadata in this output. This includes ID3 metadata from
+        /// the following features: ID3 timestamp period (timedMetadataId3Period), and Custom
+        /// ID3 metadata inserter (timedMetadataInsertion). To exclude this ID3 metadata in this
+        /// output: set ID3 metadata to None (NONE) or leave blank.
         /// </summary>
         public TimedMetadata TimedMetadata
         {
@@ -343,8 +345,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TimedMetadataPid. Packet Identifier (PID) of the timed
-        /// metadata stream in the transport stream.
+        /// Gets and sets the property TimedMetadataPid. Packet Identifier (PID) of the ID3 metadata
+        /// stream in the transport stream.
         /// </summary>
         [AWSProperty(Min=32, Max=8182)]
         public int TimedMetadataPid

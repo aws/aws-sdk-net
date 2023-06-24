@@ -34,7 +34,7 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ConnectivityInfo Marshaller
-    /// </summary>       
+    /// </summary>
     public class ConnectivityInfoMarshaller : IRequestMarshaller<ConnectivityInfo, JsonMarshallerContext> 
     {
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ConnectivityInfoMarshaller Instance = new ConnectivityInfoMarshaller();
 
     }

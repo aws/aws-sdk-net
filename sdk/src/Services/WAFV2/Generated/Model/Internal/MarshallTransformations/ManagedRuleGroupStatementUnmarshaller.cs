@@ -70,10 +70,22 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.ExcludedRules = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ManagedRuleGroupConfigs", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ManagedRuleGroupConfig, ManagedRuleGroupConfigUnmarshaller>(ManagedRuleGroupConfigUnmarshaller.Instance);
+                    unmarshalledObject.ManagedRuleGroupConfigs = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("RuleActionOverrides", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<RuleActionOverride, RuleActionOverrideUnmarshaller>(RuleActionOverrideUnmarshaller.Instance);
+                    unmarshalledObject.RuleActionOverrides = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ScopeDownStatement", targetDepth))

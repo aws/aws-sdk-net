@@ -37,6 +37,8 @@ namespace Amazon.ChimeSDKMessaging.Model
         private string _channelFlowArn;
         private Identity _createdBy;
         private DateTime? _createdTimestamp;
+        private ElasticChannelConfiguration _elasticChannelConfiguration;
+        private ExpirationSettings _expirationSettings;
         private DateTime? _lastMessageTimestamp;
         private DateTime? _lastUpdatedTimestamp;
         private string _metadata;
@@ -119,6 +121,43 @@ namespace Amazon.ChimeSDKMessaging.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ElasticChannelConfiguration. 
+        /// <para>
+        /// The attributes required to configure and create an elastic channel. An elastic channel
+        /// can support a maximum of 1-million members.
+        /// </para>
+        /// </summary>
+        public ElasticChannelConfiguration ElasticChannelConfiguration
+        {
+            get { return this._elasticChannelConfiguration; }
+            set { this._elasticChannelConfiguration = value; }
+        }
+
+        // Check to see if ElasticChannelConfiguration property is set
+        internal bool IsSetElasticChannelConfiguration()
+        {
+            return this._elasticChannelConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExpirationSettings. 
+        /// <para>
+        /// Settings that control when a channel expires.
+        /// </para>
+        /// </summary>
+        public ExpirationSettings ExpirationSettings
+        {
+            get { return this._expirationSettings; }
+            set { this._expirationSettings = value; }
+        }
+
+        // Check to see if ExpirationSettings property is set
+        internal bool IsSetExpirationSettings()
+        {
+            return this._expirationSettings != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property LastMessageTimestamp. 
         /// <para>
         /// The time at which a member sent the last message in the channel.
@@ -160,7 +199,7 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// The channel's metadata.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=1024)]
+        [AWSProperty(Sensitive=true, Min=0, Max=1024)]
         public string Metadata
         {
             get { return this._metadata; }
@@ -197,7 +236,7 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// The name of a channel.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=256)]
+        [AWSProperty(Sensitive=true, Min=1, Max=256)]
         public string Name
         {
             get { return this._name; }

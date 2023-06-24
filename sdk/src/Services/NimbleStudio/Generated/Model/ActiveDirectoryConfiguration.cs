@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.NimbleStudio.Model
 {
     /// <summary>
-    /// The configuration for a Microsoft Active Directory (Microsoft AD) studio resource.
+    /// The configuration for a Directory Service for Microsoft Active Directory studio resource.
     /// </summary>
     public partial class ActiveDirectoryConfiguration
     {
@@ -43,7 +43,7 @@ namespace Amazon.NimbleStudio.Model
         /// A collection of custom attributes for an Active Directory computer.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=50)]
+        [AWSProperty(Sensitive=true, Min=0, Max=50)]
         public List<ActiveDirectoryComputerAttribute> ComputerAttributes
         {
             get { return this._computerAttributes; }

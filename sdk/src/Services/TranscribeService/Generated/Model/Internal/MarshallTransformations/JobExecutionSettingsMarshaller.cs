@@ -34,7 +34,7 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// JobExecutionSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class JobExecutionSettingsMarshaller : IRequestMarshaller<JobExecutionSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static JobExecutionSettingsMarshaller Instance = new JobExecutionSettingsMarshaller();
 
     }

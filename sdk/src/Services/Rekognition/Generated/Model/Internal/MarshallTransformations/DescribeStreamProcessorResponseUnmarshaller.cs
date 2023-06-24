@@ -57,10 +57,22 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                     response.CreationTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DataSharingPreference", targetDepth))
+                {
+                    var unmarshaller = StreamProcessorDataSharingPreferenceUnmarshaller.Instance;
+                    response.DataSharingPreference = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Input", targetDepth))
                 {
                     var unmarshaller = StreamProcessorInputUnmarshaller.Instance;
                     response.Input = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("KmsKeyId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.KmsKeyId = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("LastUpdateTimestamp", targetDepth))
@@ -75,10 +87,22 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                     response.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("NotificationChannel", targetDepth))
+                {
+                    var unmarshaller = StreamProcessorNotificationChannelUnmarshaller.Instance;
+                    response.NotificationChannel = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Output", targetDepth))
                 {
                     var unmarshaller = StreamProcessorOutputUnmarshaller.Instance;
                     response.Output = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("RegionsOfInterest", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<RegionOfInterest, RegionOfInterestUnmarshaller>(RegionOfInterestUnmarshaller.Instance);
+                    response.RegionsOfInterest = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("RoleArn", targetDepth))

@@ -34,7 +34,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// BuiltInSlotTypeSortBy Marshaller
-    /// </summary>       
+    /// </summary>
     public class BuiltInSlotTypeSortByMarshaller : IRequestMarshaller<BuiltInSlotTypeSortBy, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static BuiltInSlotTypeSortByMarshaller Instance = new BuiltInSlotTypeSortByMarshaller();
 
     }

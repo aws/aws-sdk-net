@@ -56,10 +56,10 @@ namespace Amazon.Batch.Model
         /// <para>
         /// The set of compute environments mapped to a job queue and their order relative to
         /// each other. The job scheduler uses this parameter to determine which compute environment
-        /// should run a specific job. Compute environments must be in the <code>VALID</code>
-        /// state before you can associate them with a job queue. You can associate up to three
-        /// compute environments with a job queue. All of the compute environments must be either
-        /// EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>);
+        /// runs a specific job. Compute environments must be in the <code>VALID</code> state
+        /// before you can associate them with a job queue. You can associate up to three compute
+        /// environments with a job queue. All of the compute environments must be either EC2
+        /// (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>);
         /// EC2 and Fargate compute environments can't be mixed.
         /// </para>
         ///  <note> 
@@ -137,7 +137,7 @@ namespace Amazon.Batch.Model
         /// isn't specified, the job queue uses a first in, first out (FIFO) scheduling policy.
         /// After a job queue is created, you can replace but can't remove the fair share scheduling
         /// policy. The format is <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i>
-        /// </code>. An example is <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.
+        /// </code>. An example is <code>aws:aws:batch:us-west-2:123456789012:scheduling-policy/MySchedulingPolicy</code>.
         /// </para>
         /// </summary>
         public string SchedulingPolicyArn

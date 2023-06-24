@@ -34,7 +34,7 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AutoTuneOptions Marshaller
-    /// </summary>       
+    /// </summary>
     public class AutoTuneOptionsMarshaller : IRequestMarshaller<AutoTuneOptions, JsonMarshallerContext> 
     {
         /// <summary>
@@ -73,11 +73,17 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.RollbackOnDisable);
             }
 
+            if(requestObject.IsSetUseOffPeakWindow())
+            {
+                context.Writer.WritePropertyName("UseOffPeakWindow");
+                context.Writer.Write(requestObject.UseOffPeakWindow);
+            }
+
         }
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AutoTuneOptionsMarshaller Instance = new AutoTuneOptionsMarshaller();
 
     }

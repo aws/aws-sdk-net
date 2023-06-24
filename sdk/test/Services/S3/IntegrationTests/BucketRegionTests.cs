@@ -71,10 +71,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
         [TestMethod]
         [TestCategory("S3")]
+        [TestCategory("RequiresIAMUser")]
         public void GetObjectMetedataSessionCredentials()
         {
             // make sure the cache works when it gets the region from a HEAD bucket request
-            using (var runner = new BucketRegionTestRunner(true))
+            using (var runner = new BucketRegionTestRunner(true, setupClientWithSessionCredentials: true))
             {
                 if (runner.TestBucketIsReady)
                 {

@@ -34,7 +34,7 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
 {
     /// <summary>
     /// Tag Marshaller
-    /// </summary>       
+    /// </summary>
     public class TagMarshaller : IRequestMarshaller<Tag, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static TagMarshaller Instance = new TagMarshaller();
 
     }

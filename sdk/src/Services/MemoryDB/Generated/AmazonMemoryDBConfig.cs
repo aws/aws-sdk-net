@@ -17,22 +17,22 @@
  * Do not modify this file. This file is generated from the memorydb-2021-01-01.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
-
+using Amazon.MemoryDB.Internal;
 
 namespace Amazon.MemoryDB
 {
     /// <summary>
     /// Configuration for accessing Amazon MemoryDB service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonMemoryDBConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.52");
+            InternalSDKUtils.BuildUserAgentString("3.7.103.10");
 
         private string _userAgent = UserAgentString;
 
@@ -40,8 +40,10 @@ namespace Amazon.MemoryDB
         /// Default constructor
         /// </summary>
         public AmazonMemoryDBConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonMemoryDBDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "memorydb";
+            this.EndpointProvider = new AmazonMemoryDBEndpointProvider();
         }
 
         /// <summary>
@@ -76,5 +78,6 @@ namespace Amazon.MemoryDB
                 return _userAgent;
             }
         }
+
     }
 }

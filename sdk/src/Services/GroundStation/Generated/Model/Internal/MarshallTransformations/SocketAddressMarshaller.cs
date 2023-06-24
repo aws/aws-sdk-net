@@ -34,7 +34,7 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SocketAddress Marshaller
-    /// </summary>       
+    /// </summary>
     public class SocketAddressMarshaller : IRequestMarshaller<SocketAddress, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SocketAddressMarshaller Instance = new SocketAddressMarshaller();
 
     }

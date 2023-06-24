@@ -37,6 +37,7 @@ namespace Amazon.Appflow.Model
         private DateTime? _createdAt;
         private string _createdBy;
         private string _description;
+        private string _destinationConnectorLabel;
         private ConnectorType _destinationConnectorType;
         private string _flowArn;
         private string _flowName;
@@ -44,6 +45,7 @@ namespace Amazon.Appflow.Model
         private ExecutionDetails _lastRunExecutionDetails;
         private DateTime? _lastUpdatedAt;
         private string _lastUpdatedBy;
+        private string _sourceConnectorLabel;
         private ConnectorType _sourceConnectorType;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private TriggerType _triggerType;
@@ -102,6 +104,25 @@ namespace Amazon.Appflow.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DestinationConnectorLabel. 
+        /// <para>
+        /// The label of the destination connector in the flow.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=256)]
+        public string DestinationConnectorLabel
+        {
+            get { return this._destinationConnectorLabel; }
+            set { this._destinationConnectorLabel = value; }
+        }
+
+        // Check to see if DestinationConnectorLabel property is set
+        internal bool IsSetDestinationConnectorLabel()
+        {
+            return this._destinationConnectorLabel != null;
         }
 
         /// <summary>
@@ -233,6 +254,25 @@ namespace Amazon.Appflow.Model
         internal bool IsSetLastUpdatedBy()
         {
             return this._lastUpdatedBy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceConnectorLabel. 
+        /// <para>
+        /// The label of the source connector in the flow.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=256)]
+        public string SourceConnectorLabel
+        {
+            get { return this._sourceConnectorLabel; }
+            set { this._sourceConnectorLabel = value; }
+        }
+
+        // Check to see if SourceConnectorLabel property is set
+        internal bool IsSetSourceConnectorLabel()
+        {
+            return this._sourceConnectorLabel != null;
         }
 
         /// <summary>

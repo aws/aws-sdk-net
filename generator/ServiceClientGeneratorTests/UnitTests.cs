@@ -11,29 +11,8 @@ namespace ServiceClientGeneratorTests
     [Trait("Category", "UnitTests")]
     public class UnitTests
     {
-        // This goes serviceAbbreviation : serviceFullName : serviceId
-        static readonly IList<Tuple<string, string, string>> serviceIDMetadata = new List<Tuple<string, string, string>>();
-        private readonly ServiceModel _model;
-        private readonly string _modelsPath = "../../../TestModel.json";
-        private readonly string _paginatorsPath = "../../../TestPaginators.json";
-
-        public UnitTests()
-        {
-            _model = new ServiceModel(_modelsPath, null, _paginatorsPath);
-            serviceIDMetadata.Add(Tuple.Create("Amazon EC2", "Amazon Elastic Compute Cloud", "EC2"));
-            serviceIDMetadata.Add(Tuple.Create("AWS IoT", string.Empty, "IoT"));
-            serviceIDMetadata.Add(Tuple.Create(string.Empty, "Amazon DynamoDB Streams", "DynamoDB Streams"));
-            serviceIDMetadata.Add(Tuple.Create("Route 53", "Amazon Route 53", "Route 53"));
-            serviceIDMetadata.Add(Tuple.Create(string.Empty, "AWS Import/Export", "ImportExport"));
-        }
-        [Fact]
-        public void TestDetermineServiceId()
-        {
-            foreach (var tuple in serviceIDMetadata)
-            {
-                Assert.Equal(tuple.Item3, Utils.DetermineServiceId(tuple.Item1, tuple.Item2));
-            }
-        }
+        private const string _modelsPath = "../../../Content/TestModel.json";
+        private const string _paginatorsPath = "../../../Content/TestPaginators.json";
 
         [Theory]
         [InlineData("notJmespath", false)]
@@ -62,7 +41,9 @@ namespace ServiceClientGeneratorTests
         [InlineData("ListItems", "ParentItem.SubItem.ChildItem", "ChildItem")]
         public void TestHandleJmesPathWithServiceModel(string operationName, string jmesPathInput, string childName)
         {
-            var operation = _model.Operations.Single(x => x.Name.Equals(operationName));
+            var model = new ServiceModel(_modelsPath, null, _paginatorsPath);
+
+            var operation = model.Operations.Single(x => x.Name.Equals(operationName));
             var shapes = operation.model.Shapes;
             var testNode = new JsonData(jmesPathInput);
 

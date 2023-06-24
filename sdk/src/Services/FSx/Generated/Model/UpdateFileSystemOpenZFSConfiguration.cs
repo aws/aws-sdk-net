@@ -66,7 +66,7 @@ namespace Amazon.FSx.Model
         /// user doesn't specify tags. If this value is <code>true</code> and you specify one
         /// or more tags, only the specified tags are copied to backups. If you specify one or
         /// more tags when creating a user-initiated backup, no tags are copied from the file
-        /// system, regardless of this value. 
+        /// system, regardless of this value.
         /// </para>
         /// </summary>
         public bool CopyTagsToBackups
@@ -89,7 +89,7 @@ namespace Amazon.FSx.Model
         /// for the volume are copied to snapshots where the user doesn't specify tags. If this
         /// value is <code>true</code> and you specify one or more tags, only the specified tags
         /// are copied to snapshots. If you specify one or more tags when creating the snapshot,
-        /// no tags are copied from the volume, regardless of this value. 
+        /// no tags are copied from the volume, regardless of this value.
         /// </para>
         /// </summary>
         public bool CopyTagsToVolumes
@@ -138,11 +138,22 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property ThroughputCapacity. 
         /// <para>
-        /// The throughput of an Amazon FSx file system, measured in megabytes per second (MBps),
-        /// in 2 to the nth increments, between 2^3 (8) and 2^11 (2048). 
+        /// The throughput of an Amazon FSx for OpenZFS file system, measured in megabytes per
+        /// second&#x2028; (MB/s). Valid values depend on the DeploymentType you choose, as follows:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// For <code>SINGLE_AZ_1</code>, valid values are 64, 128, 256, 512, 1024, 2048, 3072,
+        /// or 4096 MB/s.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For <code>SINGLE_AZ_2</code>, valid values are 160, 320, 640, 1280, 2560, 3840, 5120,
+        /// 7680, or 10240 MB/s.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Min=8, Max=4096)]
+        [AWSProperty(Min=8, Max=100000)]
         public int ThroughputCapacity
         {
             get { return this._throughputCapacity.GetValueOrDefault(); }

@@ -31,7 +31,8 @@ namespace Amazon.NetworkManager.Model
     /// <summary>
     /// Container for the parameters to the DeleteGlobalNetwork operation.
     /// Deletes an existing global network. You must first delete all global network objects
-    /// (devices, links, and sites) and deregister all transit gateways.
+    /// (devices, links, and sites), deregister all transit gateways, and delete any core
+    /// networks.
     /// </summary>
     public partial class DeleteGlobalNetworkRequest : AmazonNetworkManagerRequest
     {

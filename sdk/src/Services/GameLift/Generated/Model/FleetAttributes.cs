@@ -29,22 +29,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GameLift.Model
 {
     /// <summary>
-    /// Describes a GameLift fleet of game hosting resources.
+    /// Describes a Amazon GameLift fleet of game hosting resources.
     /// 
     ///  
     /// <para>
     ///  <b>Related actions</b> 
     /// </para>
-    ///  
-    /// <para>
-    ///  <a>CreateFleet</a> | <a>DescribeFleetAttributes</a> 
-    /// </para>
     /// </summary>
     public partial class FleetAttributes
     {
+        private AnywhereConfiguration _anywhereConfiguration;
         private string _buildArn;
         private string _buildId;
         private CertificateConfiguration _certificateConfiguration;
+        private ComputeType _computeType;
         private DateTime? _creationTime;
         private string _description;
         private string _fleetArn;
@@ -67,11 +65,27 @@ namespace Amazon.GameLift.Model
         private DateTime? _terminationTime;
 
         /// <summary>
+        /// Gets and sets the property AnywhereConfiguration.
+        /// </summary>
+        public AnywhereConfiguration AnywhereConfiguration
+        {
+            get { return this._anywhereConfiguration; }
+            set { this._anywhereConfiguration = value; }
+        }
+
+        // Check to see if AnywhereConfiguration property is set
+        internal bool IsSetAnywhereConfiguration()
+        {
+            return this._anywhereConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property BuildArn. 
         /// <para>
         ///  The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-        /// associated with the GameLift build resource that is deployed on instances in this
-        /// fleet. In a GameLift build ARN, the resource ID matches the <code>BuildId</code> value.
+        /// associated with the Amazon GameLift build resource that is deployed on instances in
+        /// this fleet. In a GameLift build ARN, the resource ID matches the <code>BuildId</code>
+        /// value.
         /// </para>
         /// </summary>
         public string BuildArn
@@ -105,10 +119,7 @@ namespace Amazon.GameLift.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CertificateConfiguration. 
-        /// <para>
-        /// Indicates whether a TLS/SSL certificate was generated for the fleet. 
-        /// </para>
+        /// Gets and sets the property CertificateConfiguration.
         /// </summary>
         public CertificateConfiguration CertificateConfiguration
         {
@@ -120,6 +131,26 @@ namespace Amazon.GameLift.Model
         internal bool IsSetCertificateConfiguration()
         {
             return this._certificateConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ComputeType. 
+        /// <para>
+        /// The type of compute resource used to host your game servers. You can use your own
+        /// compute resources with Amazon GameLift Anywhere or use Amazon EC2 instances with managed
+        /// Amazon GameLift.
+        /// </para>
+        /// </summary>
+        public ComputeType ComputeType
+        {
+            get { return this._computeType; }
+            set { this._computeType = value; }
+        }
+
+        // Check to see if ComputeType property is set
+        internal bool IsSetComputeType()
+        {
+            return this._computeType != null;
         }
 
         /// <summary>
@@ -164,8 +195,8 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property FleetArn. 
         /// <para>
         /// The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-        /// that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are
-        /// unique across all Regions. Format is <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
+        /// that is assigned to a Amazon GameLift fleet resource and uniquely identifies it. ARNs
+        /// are unique across all Regions. Format is <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
         /// In a GameLift fleet ARN, the resource ID matches the <code>FleetId</code> value.
         /// </para>
         /// </summary>
@@ -202,7 +233,10 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property FleetType. 
         /// <para>
-        /// The kind of instances, On-Demand or Spot, that this fleet uses.
+        /// Indicates whether to use On-Demand or Spot instances for this fleet. By default, this
+        /// property is set to <code>ON_DEMAND</code>. Learn more about when to use <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html#gamelift-ec2-instances-spot">
+        /// On-Demand versus Spot Instances</a>. This property cannot be changed after the fleet
+        /// is created.
         /// </para>
         /// </summary>
         public FleetType FleetType
@@ -220,12 +254,13 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property InstanceRoleArn. 
         /// <para>
-        /// A unique identifier for an AWS IAM role that manages access to your AWS services.
-        /// With an instance role ARN set, any application that runs on an instance in this fleet
-        /// can assume the role, including install scripts, server processes, and daemons (background
-        /// processes). Create a role or look up a role's ARN by using the <a href="https://console.aws.amazon.com/iam/">IAM
-        /// dashboard</a> in the AWS Management Console. Learn more about using on-box credentials
-        /// for your game servers at <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
+        /// A unique identifier for an IAM role that manages access to your Amazon Web Services
+        /// services. With an instance role ARN set, any application that runs on an instance
+        /// in this fleet can assume the role, including install scripts, server processes, and
+        /// daemons (background processes). Create a role or look up a role's ARN by using the
+        /// <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the Amazon Web
+        /// Services Management Console. Learn more about using on-box credentials for your game
+        /// servers at <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
         /// Access external resources from a game server</a>.
         /// </para>
         /// </summary>
@@ -245,10 +280,10 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property InstanceType. 
         /// <para>
-        /// The EC2 instance type that determines the computing resources of each instance in
-        /// the fleet. Instance type defines the CPU, memory, storage, and networking capacity.
-        /// See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>
-        /// for detailed descriptions.
+        /// The Amazon EC2 instance type that determines the computing resources of each instance
+        /// in the fleet. Instance type defines the CPU, memory, storage, and networking capacity.
+        /// See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud
+        /// Instance Types</a> for detailed descriptions.
         /// </para>
         /// </summary>
         public EC2InstanceType InstanceType
@@ -267,8 +302,8 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property LogPaths. 
         /// <para>
         ///  <b>This parameter is no longer used.</b> Game session log paths are now defined using
-        /// the GameLift server API <code>ProcessReady()</code> <code>logParameters</code>. See
-        /// more information in the <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process">Server
+        /// the Amazon GameLift server API <code>ProcessReady()</code> <code>logParameters</code>.
+        /// See more information in the <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process">Server
         /// API Reference</a>. 
         /// </para>
         /// </summary>
@@ -374,11 +409,7 @@ namespace Amazon.GameLift.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ResourceCreationLimitPolicy. 
-        /// <para>
-        /// The fleet policy that limits the number of game sessions an individual player can
-        /// create over a span of time.
-        /// </para>
+        /// Gets and sets the property ResourceCreationLimitPolicy.
         /// </summary>
         public ResourceCreationLimitPolicy ResourceCreationLimitPolicy
         {
@@ -436,8 +467,8 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property ServerLaunchParameters. 
         /// <para>
         ///  <b>This parameter is no longer used.</b> Server launch parameters are now defined
-        /// using the fleet's <a>RuntimeConfiguration</a> parameter. Requests that use this parameter
-        /// instead continue to be valid.
+        /// using the fleet's runtime configuration . Requests that use this parameter instead
+        /// continue to be valid.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -457,8 +488,8 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property ServerLaunchPath. 
         /// <para>
         ///  <b>This parameter is no longer used.</b> Server launch paths are now defined using
-        /// the fleet's <a>RuntimeConfiguration</a> parameter. Requests that use this parameter
-        /// instead continue to be valid.
+        /// the fleet's <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/RuntimeConfiguration.html">RuntimeConfiguration</a>
+        /// . Requests that use this parameter instead continue to be valid.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -485,8 +516,8 @@ namespace Amazon.GameLift.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> -- GameLift is setting up the new
-        /// fleet, creating new instances with the game build or Realtime script and starting
+        ///  <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> -- Amazon GameLift is setting up
+        /// the new fleet, creating new instances with the game build or Realtime script and starting
         /// server processes.
         /// </para>
         ///  </li> <li> 
@@ -523,8 +554,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property StoppedActions. 
         /// <para>
-        /// A list of fleet activity that has been suspended using <a>StopFleetActions</a>. This
-        /// includes fleet auto-scaling.
+        /// A list of fleet activity that has been suspended using <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StopFleetActions.html">StopFleetActions</a>
+        /// . This includes fleet auto-scaling.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1)]

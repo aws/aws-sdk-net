@@ -34,7 +34,7 @@ namespace Amazon.CognitoIdentity.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// MappingRule Marshaller
-    /// </summary>       
+    /// </summary>
     public class MappingRuleMarshaller : IRequestMarshaller<MappingRule, JsonMarshallerContext> 
     {
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.CognitoIdentity.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static MappingRuleMarshaller Instance = new MappingRuleMarshaller();
 
     }

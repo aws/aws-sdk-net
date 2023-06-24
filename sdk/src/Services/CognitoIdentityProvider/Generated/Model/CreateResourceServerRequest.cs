@@ -30,7 +30,7 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateResourceServer operation.
-    /// Creates a new OAuth2.0 resource server and defines custom scopes in it.
+    /// Creates a new OAuth2.0 resource server and defines custom scopes within it.
     /// </summary>
     public partial class CreateResourceServerRequest : AmazonCognitoIdentityProviderRequest
     {
@@ -43,7 +43,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// Gets and sets the property Identifier. 
         /// <para>
         /// A unique resource server identifier for the resource server. This could be an HTTPS
-        /// endpoint where the resource server is located. For example, <code>https://my-weather-api.example.com</code>.
+        /// endpoint where the resource server is located, such as <code>https://my-weather-api.example.com</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
@@ -81,7 +81,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Scopes. 
         /// <para>
-        /// A list of scopes. Each scope is map, where the keys are <code>name</code> and <code>description</code>.
+        /// A list of scopes. Each scope is a key-value map with the keys <code>name</code> and
+        /// <code>description</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=100)]

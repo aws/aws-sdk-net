@@ -34,7 +34,27 @@ namespace Amazon.LookoutEquipment.Model
     /// </summary>
     public partial class LabelsInputConfiguration
     {
+        private string _labelGroupName;
         private LabelsS3InputConfiguration _s3InputConfiguration;
+
+        /// <summary>
+        /// Gets and sets the property LabelGroupName. 
+        /// <para>
+        ///  The name of the label group to be used for label data. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=200)]
+        public string LabelGroupName
+        {
+            get { return this._labelGroupName; }
+            set { this._labelGroupName = value; }
+        }
+
+        // Check to see if LabelGroupName property is set
+        internal bool IsSetLabelGroupName()
+        {
+            return this._labelGroupName != null;
+        }
 
         /// <summary>
         /// Gets and sets the property S3InputConfiguration. 
@@ -42,7 +62,6 @@ namespace Amazon.LookoutEquipment.Model
         /// Contains location information for the S3 location being used for label data. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public LabelsS3InputConfiguration S3InputConfiguration
         {
             get { return this._s3InputConfiguration; }

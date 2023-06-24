@@ -42,10 +42,32 @@ namespace Amazon.Appflow.Model
     /// </summary>
     public partial class DescribeConnectorProfilesRequest : AmazonAppflowRequest
     {
+        private string _connectorLabel;
         private List<string> _connectorProfileNames = new List<string>();
         private ConnectorType _connectorType;
         private int? _maxResults;
         private string _nextToken;
+
+        /// <summary>
+        /// Gets and sets the property ConnectorLabel. 
+        /// <para>
+        /// The name of the connector. The name is unique for each <code>ConnectorRegistration</code>
+        /// in your Amazon Web Services account. Only needed if calling for CUSTOMCONNECTOR connector
+        /// type/.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=256)]
+        public string ConnectorLabel
+        {
+            get { return this._connectorLabel; }
+            set { this._connectorLabel = value; }
+        }
+
+        // Check to see if ConnectorLabel property is set
+        internal bool IsSetConnectorLabel()
+        {
+            return this._connectorLabel != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ConnectorProfileNames. 

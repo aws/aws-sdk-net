@@ -4,9 +4,12 @@ using Amazon.S3.Model;
 using Amazon.S3.Util;
 using Amazon.S3Control;
 using Amazon.S3Control.Model;
+using Amazon.SecurityToken;
+using Amazon.SecurityToken.Model;
 using AWSSDK_DotNet.IntegrationTests.Utils;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Net;
 using System.Threading;
@@ -16,6 +19,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
     public static class S3TestUtils
     {
         private const int MAX_SPIN_LOOPS = 100;
+        private const string TEST_MRAP_NAME = UtilityMethods.SDK_TEST_PREFIX + "-for-mrap-tests";
 
         public static string CreateBucket(IAmazonS3 s3Client)
         {
@@ -26,24 +30,60 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 
         public static string CreateBucket(IAmazonS3 s3Client, PutBucketRequest bucketRequest)
         {
-            string bucketName = UtilityMethods.SDK_TEST_PREFIX + DateTime.Now.Ticks;
+            string bucketName = string.IsNullOrEmpty(bucketRequest.BucketName) ?
+                UtilityMethods.SDK_TEST_PREFIX + DateTime.Now.Ticks :
+                bucketRequest.BucketName;
+
             bucketRequest.BucketName = bucketName;
+
             s3Client.PutBucket(bucketRequest);
             return bucketName;
         }
 
-        public static string CreateBucketWithWait(IAmazonS3 s3Client)
+        public static string CreateBucketWithWait(IAmazonS3 s3Client, bool setPublicACLs = false)
         {
             string bucketName = CreateBucket(s3Client);
             WaitForBucket(s3Client, bucketName);
+            if (setPublicACLs)
+            {
+                SetPublicBucketACLs(s3Client, bucketName);
+            }
             return bucketName;
         }
 
-        public static string CreateBucketWithWait(IAmazonS3 s3Client, PutBucketRequest bucketRequest)
+        public static string CreateBucketWithWait(IAmazonS3 s3Client, PutBucketRequest bucketRequest, bool setPublicACLs = false)
         {
             string bucketName = CreateBucket(s3Client, bucketRequest);
             WaitForBucket(s3Client, bucketName);
+            if (setPublicACLs)
+            {
+                SetPublicBucketACLs(s3Client, bucketName);
+            }
             return bucketName;
+        }
+
+        private static void SetPublicBucketACLs(IAmazonS3 client, string bucketName)
+        {
+            client.PutBucketOwnershipControls(new PutBucketOwnershipControlsRequest
+            {
+                BucketName = bucketName,
+                OwnershipControls = new OwnershipControls
+                {
+                    Rules = new List<OwnershipControlsRule>
+                        {
+                            new OwnershipControlsRule{ObjectOwnership = ObjectOwnership.BucketOwnerPreferred}
+                        }
+                }
+            });
+
+            client.PutPublicAccessBlock(new Amazon.S3.Model.PutPublicAccessBlockRequest
+            {
+                BucketName = bucketName,
+                PublicAccessBlockConfiguration = new Amazon.S3.Model.PublicAccessBlockConfiguration
+                {
+                    BlockPublicAcls = false
+                }
+            });
         }
 
         public static void WaitForBucket(IAmazonS3 client, string bucketName)
@@ -91,28 +131,63 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         }
 
         /// <summary>
-        /// Creates an S3 Multi-Region Access Point and waits for it to be ready
+        /// Gets a long-lived S3 Multi-Region Access Point for running integration tests against if
+        /// if exists in the current account. If not, creates it and waits for it to be ready.
         /// </summary>
         /// <param name="s3ControlClient">S3Control client to create the MRAP with</param>
-        /// <param name="mrapRequest">Prepared CreateMultiRegionAccessPoint request</param>
-        /// <returns>Alias of the new Multi-Region Access Point</returns>
-        public static string CreateMRAPWithWait(IAmazonS3Control s3ControlClient, CreateMultiRegionAccessPointRequest mrapRequest)
+        /// <param name="s3Client">S3 client to create the backing bucket with</param>
+        /// <returns>ARN of the new Multi-Region Access Point</returns>
+        public static string GetOrCreateTestMRAP(IAmazonS3Control s3ControlClient, IAmazonS3 s3Client)
         {
-            var asyncRequestArn = s3ControlClient.CreateMultiRegionAccessPoint(mrapRequest).RequestTokenARN;
+            var accountId = new AmazonSecurityTokenServiceClient().GetCallerIdentity(new GetCallerIdentityRequest()).Account;
 
-            var mrapAlias = UtilityMethods.WaitUntilSuccess(() =>
+            // If the MRAP already exists, return it
+            var mrapArn = CheckIfMRAPExists(s3ControlClient, accountId, TEST_MRAP_NAME);
+            if (!string.IsNullOrEmpty(mrapArn))
+            {
+                return mrapArn;
+            }
+
+            // Otherwise the MRAP doesn't exist, so we must create it, starting with the backing bucket.
+            var putBucketRequest = new PutBucketRequest { BucketName = $"{accountId}-{TEST_MRAP_NAME}" };
+            var backingBucketName = CreateBucketWithWait(s3Client, putBucketRequest);
+
+            var createMrapRequest = new CreateMultiRegionAccessPointRequest
+            {
+                AccountId = accountId,
+                Details = new CreateMultiRegionAccessPointInput
+                {
+                    Name = TEST_MRAP_NAME,
+                    Regions = new List<Region>
+                    {
+                        new Region
+                        {
+                            Bucket = backingBucketName
+                        }
+                    }
+                }
+            };
+
+            // Initiate the MRAP creation
+            var asyncRequestArn = s3ControlClient.CreateMultiRegionAccessPoint(createMrapRequest).RequestTokenARN;
+
+            // Wait until its status is READY
+            UtilityMethods.WaitUntilSuccess(() =>
             {
                 var request = new GetMultiRegionAccessPointRequest
                 {
-                    AccountId = mrapRequest.AccountId,
-                    Name = mrapRequest.Details.Name
+                    AccountId = accountId,
+                    Name = TEST_MRAP_NAME
                 };
 
                 var response = s3ControlClient.GetMultiRegionAccessPoint(request);
 
                 if (response.AccessPoint.Status == MultiRegionAccessPointStatus.READY)
                 {
-                    return response.AccessPoint.Alias;
+                    // Wait for SSL provisioning to finish
+                    Thread.Sleep(TimeSpan.FromMinutes(1));
+
+                    return $"arn:aws:s3::{accountId}:accesspoint/{response.AccessPoint.Alias}";
                 }
                 else
                 {
@@ -120,37 +195,91 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 }
             });
 
-            return mrapAlias;
+            throw new Exception($"{nameof(GetOrCreateTestMRAP)} timed out while creating a new Multi-Region Access Point");
         }
 
         /// <summary>
-        /// Deletes an S3 Multi-Region Access Point and waits for the delete to succeed
+        /// Checks if an S3 multi-region access point already exists.
+        /// Note: does not validate that the MRAP is ready.
         /// </summary>
-        /// <param name="s3ControlClient">S3Control client to delete the MRAP with</param>
-        /// <param name="deleteRequest">Prepared DeleteMultiRegionAccessPoint request</param>
-        public static void DeleteMRAPWithWait(IAmazonS3Control s3ControlClient, DeleteMultiRegionAccessPointRequest deleteRequest)
+        /// <param name="s3ControlClient">S3Control client</param>
+        /// <param name="accountId">AWS account ID that is expected to contain the MRAP</param>
+        /// <param name="mrapName">Name of the multi-region access point</param>
+        /// <returns>The MRAP's ARN if it exists, an empty string otherwise</returns>
+        private static string CheckIfMRAPExists(IAmazonS3Control s3ControlClient, string accountId, string mrapName)
         {
-            var asyncRequestArn = s3ControlClient.DeleteMultiRegionAccessPoint(deleteRequest).RequestTokenARN;
+            var nextToken = "";
+            var request = new ListMultiRegionAccessPointsRequest { AccountId = accountId };
+            ListMultiRegionAccessPointsResponse response;
 
-            UtilityMethods.WaitUntilSuccess(() =>
+            // Use a loop instead of paginators since we need net35 support
+            do
             {
-                var request = new DescribeMultiRegionAccessPointOperationRequest
-                {
-                    AccountId = deleteRequest.AccountId,
-                    RequestTokenARN = asyncRequestArn
-                };
+                request.NextToken = nextToken;
+                response = s3ControlClient.ListMultiRegionAccessPoints(request);
 
-                var response = s3ControlClient.DescribeMultiRegionAccessPointOperation(request);
-
-                if (response.AsyncOperation.RequestStatus == "SUCCEEDED")
+                foreach (var accessPoint in response.AccessPoints)
                 {
+                    if (accessPoint.Name == mrapName)
+                        return $"arn:aws:s3::{accountId}:accesspoint/{accessPoint.Alias}";
+                }
+
+                nextToken = response.NextToken;
+            }
+            while (!string.IsNullOrEmpty(nextToken));
+
+            return "";
+        }
+
+        /// <summary>
+        /// Deletes all objects in a bucket.
+        /// Based on DeleteS3BucketWithObjects, but 
+        /// without deleting the bucket at the end.
+        /// </summary>
+        /// <param name="client">S3 Client</param>
+        /// <param name="bucketName">Bucket whose objects to delete</param>
+        public static void DeleteObjects(IAmazonS3 client, string bucketName)
+        {
+            var listVersionsRequest = new ListVersionsRequest
+            {
+                BucketName = bucketName
+            };
+            ListVersionsResponse listVersionsResponse;
+
+            do
+            {
+                // List all the versions of all the objects in the bucket.
+                listVersionsResponse = client.ListVersions(listVersionsRequest);
+
+                if (listVersionsResponse.Versions.Count == 0)
+                {
+                    // If the bucket has no objects we're finished
                     return;
                 }
-                else
+
+                var keyVersionList = new List<KeyVersion>(listVersionsResponse.Versions.Count);
+                for (int index = 0; index < listVersionsResponse.Versions.Count; index++)
                 {
-                    throw new Exception("S3 Multi-Region Access Point not deleted yet, will continue waiting.");
+                    keyVersionList.Add(new KeyVersion
+                    {
+                        Key = listVersionsResponse.Versions[index].Key,
+                        VersionId = listVersionsResponse.Versions[index].VersionId
+                    });
                 }
-            });
+
+                // Delete the current set of objects.
+                client.DeleteObjects(new DeleteObjectsRequest
+                {
+                    BucketName = bucketName,
+                    Objects = keyVersionList
+                });
+
+                // Set the markers to get next set of objects from the bucket.
+                listVersionsRequest.KeyMarker = listVersionsResponse.NextKeyMarker;
+                listVersionsRequest.VersionIdMarker = listVersionsResponse.NextVersionIdMarker;
+            }
+            // Continue listing objects and deleting them until the bucket is empty.
+            while (listVersionsResponse.IsTruncated);
         }
 
         public static T WaitForConsistency<T>(Func<T> loadFunction)

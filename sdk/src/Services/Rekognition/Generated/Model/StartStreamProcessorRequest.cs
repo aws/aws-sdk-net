@@ -33,10 +33,19 @@ namespace Amazon.Rekognition.Model
     /// Starts processing a stream processor. You create a stream processor by calling <a>CreateStreamProcessor</a>.
     /// To tell <code>StartStreamProcessor</code> which stream processor to start, use the
     /// value of the <code>Name</code> field specified in the call to <code>CreateStreamProcessor</code>.
+    /// 
+    ///  
+    /// <para>
+    /// If you are using a label detection stream processor to detect labels, you need to
+    /// provide a <code>Start selector</code> and a <code>Stop selector</code> to determine
+    /// the length of the stream processing time.
+    /// </para>
     /// </summary>
     public partial class StartStreamProcessorRequest : AmazonRekognitionRequest
     {
         private string _name;
+        private StreamProcessingStartSelector _startSelector;
+        private StreamProcessingStopSelector _stopSelector;
 
         /// <summary>
         /// Gets and sets the property Name. 
@@ -55,6 +64,57 @@ namespace Amazon.Rekognition.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StartSelector. 
+        /// <para>
+        ///  Specifies the starting point in the Kinesis stream to start processing. You can use
+        /// the producer timestamp or the fragment number. If you use the producer timestamp,
+        /// you must put the time in milliseconds. For more information about fragment numbers,
+        /// see <a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_reader_Fragment.html">Fragment</a>.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// This is a required parameter for label detection stream processors and should not
+        /// be used to start a face search stream processor.
+        /// </para>
+        /// </summary>
+        public StreamProcessingStartSelector StartSelector
+        {
+            get { return this._startSelector; }
+            set { this._startSelector = value; }
+        }
+
+        // Check to see if StartSelector property is set
+        internal bool IsSetStartSelector()
+        {
+            return this._startSelector != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StopSelector. 
+        /// <para>
+        ///  Specifies when to stop processing the stream. You can specify a maximum amount of
+        /// time to process the video. 
+        /// </para>
+        ///  
+        /// <para>
+        /// This is a required parameter for label detection stream processors and should not
+        /// be used to start a face search stream processor.
+        /// </para>
+        /// </summary>
+        public StreamProcessingStopSelector StopSelector
+        {
+            get { return this._stopSelector; }
+            set { this._stopSelector = value; }
+        }
+
+        // Check to see if StopSelector property is set
+        internal bool IsSetStopSelector()
+        {
+            return this._stopSelector != null;
         }
 
     }

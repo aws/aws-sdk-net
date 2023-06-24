@@ -34,7 +34,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// PartnerWatermarking Marshaller
-    /// </summary>       
+    /// </summary>
     public class PartnerWatermarkingMarshaller : IRequestMarshaller<PartnerWatermarking, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static PartnerWatermarkingMarshaller Instance = new PartnerWatermarkingMarshaller();
 
     }

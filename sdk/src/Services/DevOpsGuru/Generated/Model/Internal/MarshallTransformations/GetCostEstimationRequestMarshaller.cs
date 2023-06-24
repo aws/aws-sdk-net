@@ -55,7 +55,7 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
         public IRequest Marshall(GetCostEstimationRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.DevOpsGuru");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-12-01";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-12-01";
             request.HttpMethod = "GET";
 
             

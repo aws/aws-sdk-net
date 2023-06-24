@@ -34,7 +34,7 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CountAction Marshaller
-    /// </summary>       
+    /// </summary>
     public class CountActionMarshaller : IRequestMarshaller<CountAction, JsonMarshallerContext> 
     {
         /// <summary>
@@ -49,7 +49,7 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CountActionMarshaller Instance = new CountActionMarshaller();
 
     }

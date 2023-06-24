@@ -34,7 +34,7 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AccountAggregation Marshaller
-    /// </summary>       
+    /// </summary>
     public class AccountAggregationMarshaller : IRequestMarshaller<AccountAggregation, JsonMarshallerContext> 
     {
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AccountAggregationMarshaller Instance = new AccountAggregationMarshaller();
 
     }

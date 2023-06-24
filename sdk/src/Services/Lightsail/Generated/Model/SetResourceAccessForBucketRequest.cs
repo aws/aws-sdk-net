@@ -35,7 +35,7 @@ namespace Amazon.Lightsail.Model
     ///  
     /// <para>
     /// Lightsail buckets currently support setting access for Lightsail instances in the
-    /// same AWS Region.
+    /// same Amazon Web Services Region.
     /// </para>
     /// </summary>
     public partial class SetResourceAccessForBucketRequest : AmazonLightsailRequest

@@ -149,7 +149,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property DomainName. 
         /// <para>
-        /// [Required] The name of the <a>DomainName</a> resource.
+        /// The name of the DomainName resource.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -168,8 +168,8 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property EndpointConfiguration. 
         /// <para>
-        /// The endpoint configuration of this <a>DomainName</a> showing the endpoint types of
-        /// the domain name.
+        /// The endpoint configuration of this DomainName showing the endpoint types of the domain
+        /// name. 
         /// </para>
         /// </summary>
         public EndpointConfiguration EndpointConfiguration
@@ -260,8 +260,8 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property SecurityPolicy. 
         /// <para>
-        /// The Transport Layer Security (TLS) version + cipher suite for this <a>DomainName</a>.
-        /// The valid values are <code>TLS_1_0</code> and <code>TLS_1_2</code>.
+        /// The Transport Layer Security (TLS) version + cipher suite for this DomainName. The
+        /// valid values are <code>TLS_1_0</code> and <code>TLS_1_2</code>.
         /// </para>
         /// </summary>
         public SecurityPolicy SecurityPolicy

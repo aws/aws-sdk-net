@@ -34,7 +34,7 @@ namespace Amazon.Lex.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// IntentSummary Marshaller
-    /// </summary>       
+    /// </summary>
     public class IntentSummaryMarshaller : IRequestMarshaller<IntentSummary, JsonMarshallerContext> 
     {
         /// <summary>
@@ -99,7 +99,7 @@ namespace Amazon.Lex.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static IntentSummaryMarshaller Instance = new IntentSummaryMarshaller();
 
     }

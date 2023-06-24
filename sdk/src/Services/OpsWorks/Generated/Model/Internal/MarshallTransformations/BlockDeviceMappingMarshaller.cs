@@ -34,7 +34,7 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// BlockDeviceMapping Marshaller
-    /// </summary>       
+    /// </summary>
     public class BlockDeviceMappingMarshaller : IRequestMarshaller<BlockDeviceMapping, JsonMarshallerContext> 
     {
         /// <summary>
@@ -78,7 +78,7 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static BlockDeviceMappingMarshaller Instance = new BlockDeviceMappingMarshaller();
 
     }

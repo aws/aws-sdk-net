@@ -18,10 +18,13 @@ using System.Collections.Generic;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// Specifies lifecycle rules for an Amazon S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTlifecycle.html">Put
-    /// Bucket Lifecycle Configuration</a> in the <i>Amazon S3 API Reference</i>. For examples,
-    /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycleConfiguration.html#API_PutBucketLifecycleConfiguration_Examples">Put
-    /// Bucket Lifecycle Configuration Examples</a>.
+    /// <para>
+    /// A lifecycle rule for individual objects in an Amazon S3 bucket.
+    /// </para>
+    /// <para>
+    /// For more information see, <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lifecycle-mgmt.html">Managing
+    /// your storage lifecycle</a> in the <i>Amazon S3 User Guide</i>.
+    /// </para>
     /// </summary>
     public class LifecycleRule
     {

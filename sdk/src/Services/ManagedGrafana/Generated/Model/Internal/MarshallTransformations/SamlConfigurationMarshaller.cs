@@ -34,7 +34,7 @@ namespace Amazon.ManagedGrafana.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SamlConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class SamlConfigurationMarshaller : IRequestMarshaller<SamlConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -99,7 +99,7 @@ namespace Amazon.ManagedGrafana.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SamlConfigurationMarshaller Instance = new SamlConfigurationMarshaller();
 
     }

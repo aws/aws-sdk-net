@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// GeoLocation Marshaller
-    /// </summary>       
+    /// </summary>
     public class GeoLocationMarshaller : IRequestMarshaller<GeoLocation, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static GeoLocationMarshaller Instance = new GeoLocationMarshaller();
 
     }

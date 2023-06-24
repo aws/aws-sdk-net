@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTWireless.Model
 {
     /// <summary>
-    /// SidewalkEventNotificationConfigurations object Event configuration object for Sidewalk
-    /// related event topics.
+    /// <code>SidewalkEventNotificationConfigurations</code> object, which is the event configuration
+    /// object for Sidewalk-related event topics.
     /// </summary>
     public partial class SidewalkEventNotificationConfigurations
     {
@@ -39,7 +39,7 @@ namespace Amazon.IoTWireless.Model
         /// <summary>
         /// Gets and sets the property AmazonIdEventTopic. 
         /// <para>
-        /// Enum to denote whether amazon id event topic is enabled or disabled.
+        /// Denotes whether the Amazon ID event topic is enabled or disabled.
         /// </para>
         /// </summary>
         public EventNotificationTopicStatus AmazonIdEventTopic

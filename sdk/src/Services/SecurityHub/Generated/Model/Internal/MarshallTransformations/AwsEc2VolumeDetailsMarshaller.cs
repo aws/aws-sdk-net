@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AwsEc2VolumeDetails Marshaller
-    /// </summary>       
+    /// </summary>
     public class AwsEc2VolumeDetailsMarshaller : IRequestMarshaller<AwsEc2VolumeDetails, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,6 +67,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.CreateTime);
             }
 
+            if(requestObject.IsSetDeviceName())
+            {
+                context.Writer.WritePropertyName("DeviceName");
+                context.Writer.Write(requestObject.DeviceName);
+            }
+
             if(requestObject.IsSetEncrypted())
             {
                 context.Writer.WritePropertyName("Encrypted");
@@ -97,11 +103,29 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Status);
             }
 
+            if(requestObject.IsSetVolumeId())
+            {
+                context.Writer.WritePropertyName("VolumeId");
+                context.Writer.Write(requestObject.VolumeId);
+            }
+
+            if(requestObject.IsSetVolumeScanStatus())
+            {
+                context.Writer.WritePropertyName("VolumeScanStatus");
+                context.Writer.Write(requestObject.VolumeScanStatus);
+            }
+
+            if(requestObject.IsSetVolumeType())
+            {
+                context.Writer.WritePropertyName("VolumeType");
+                context.Writer.Write(requestObject.VolumeType);
+            }
+
         }
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AwsEc2VolumeDetailsMarshaller Instance = new AwsEc2VolumeDetailsMarshaller();
 
     }

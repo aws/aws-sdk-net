@@ -157,7 +157,7 @@ namespace Amazon.FSx.Model
         /// user to manage the SVM.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=8, Max=50)]
+        [AWSProperty(Sensitive=true, Min=8, Max=50)]
         public string SvmAdminPassword
         {
             get { return this._svmAdminPassword; }

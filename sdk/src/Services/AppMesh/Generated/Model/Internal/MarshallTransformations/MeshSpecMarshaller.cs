@@ -34,7 +34,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// MeshSpec Marshaller
-    /// </summary>       
+    /// </summary>
     public class MeshSpecMarshaller : IRequestMarshaller<MeshSpec, JsonMarshallerContext> 
     {
         /// <summary>
@@ -56,11 +56,22 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetServiceDiscovery())
+            {
+                context.Writer.WritePropertyName("serviceDiscovery");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = MeshServiceDiscoveryMarshaller.Instance;
+                marshaller.Marshall(requestObject.ServiceDiscovery, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static MeshSpecMarshaller Instance = new MeshSpecMarshaller();
 
     }

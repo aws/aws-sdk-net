@@ -34,7 +34,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RouteSpec Marshaller
-    /// </summary>       
+    /// </summary>
     public class RouteSpecMarshaller : IRequestMarshaller<RouteSpec, JsonMarshallerContext> 
     {
         /// <summary>
@@ -99,7 +99,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RouteSpecMarshaller Instance = new RouteSpecMarshaller();
 
     }

@@ -52,6 +52,14 @@ namespace Amazon.CloudWatch.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeAnomalyDetectors operation
+        ///</summary>
+        public IDescribeAnomalyDetectorsPaginator DescribeAnomalyDetectors(DescribeAnomalyDetectorsRequest request) 
+        {
+            return new DescribeAnomalyDetectorsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribeInsightRules operation
         ///</summary>
         public IDescribeInsightRulesPaginator DescribeInsightRules(DescribeInsightRulesRequest request) 
@@ -73,6 +81,14 @@ namespace Amazon.CloudWatch.Model
         public IListDashboardsPaginator ListDashboards(ListDashboardsRequest request) 
         {
             return new ListDashboardsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListManagedInsightRules operation
+        ///</summary>
+        public IListManagedInsightRulesPaginator ListManagedInsightRules(ListManagedInsightRulesRequest request) 
+        {
+            return new ListManagedInsightRulesPaginator(this.client, request);
         }
 
         /// <summary>

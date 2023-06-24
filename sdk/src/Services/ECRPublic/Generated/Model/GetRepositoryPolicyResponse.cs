@@ -40,8 +40,8 @@ namespace Amazon.ECRPublic.Model
         /// <summary>
         /// Gets and sets the property PolicyText. 
         /// <para>
-        /// The repository policy text associated with the repository. The policy text will be
-        /// in JSON format.
+        /// The repository policy text that's associated with the repository. The policy text
+        /// will be in JSON format.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=10240)]
@@ -60,7 +60,7 @@ namespace Amazon.ECRPublic.Model
         /// <summary>
         /// Gets and sets the property RegistryId. 
         /// <para>
-        /// The registry ID associated with the request.
+        /// The registry ID that's associated with the request.
         /// </para>
         /// </summary>
         public string RegistryId
@@ -78,7 +78,7 @@ namespace Amazon.ECRPublic.Model
         /// <summary>
         /// Gets and sets the property RepositoryName. 
         /// <para>
-        /// The repository name associated with the request.
+        /// The repository name that's associated with the request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=205)]

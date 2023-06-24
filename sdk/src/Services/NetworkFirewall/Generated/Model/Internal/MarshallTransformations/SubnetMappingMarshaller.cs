@@ -34,7 +34,7 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SubnetMapping Marshaller
-    /// </summary>       
+    /// </summary>
     public class SubnetMappingMarshaller : IRequestMarshaller<SubnetMapping, JsonMarshallerContext> 
     {
         /// <summary>
@@ -45,6 +45,12 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SubnetMapping requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetIPAddressType())
+            {
+                context.Writer.WritePropertyName("IPAddressType");
+                context.Writer.Write(requestObject.IPAddressType);
+            }
+
             if(requestObject.IsSetSubnetId())
             {
                 context.Writer.WritePropertyName("SubnetId");
@@ -55,7 +61,7 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SubnetMappingMarshaller Instance = new SubnetMappingMarshaller();
 
     }

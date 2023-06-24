@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Batch.Model
 {
     /// <summary>
-    /// These errors are usually caused by a client action, such as using an action or resource
-    /// on behalf of a user that doesn't have permissions to use the action or resource, or
-    /// specifying an identifier that's not valid.
+    /// These errors are usually caused by a client action. One example cause is using an
+    /// action or resource on behalf of a user that doesn't have permissions to use the action
+    /// or resource. Another cause is specifying an identifier that's not valid.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

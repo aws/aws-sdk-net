@@ -34,7 +34,7 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CustomRequestHandling Marshaller
-    /// </summary>       
+    /// </summary>
     public class CustomRequestHandlingMarshaller : IRequestMarshaller<CustomRequestHandling, JsonMarshallerContext> 
     {
         /// <summary>
@@ -65,7 +65,7 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CustomRequestHandlingMarshaller Instance = new CustomRequestHandlingMarshaller();
 
     }

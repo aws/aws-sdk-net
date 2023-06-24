@@ -56,7 +56,7 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.OpenSearchService");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-01-01";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-01-01";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/2021-01-01/opensearch/cc/outboundConnection";
@@ -69,6 +69,23 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("ConnectionAlias");
                     context.Writer.Write(publicRequest.ConnectionAlias);
+                }
+
+                if(publicRequest.IsSetConnectionMode())
+                {
+                    context.Writer.WritePropertyName("ConnectionMode");
+                    context.Writer.Write(publicRequest.ConnectionMode);
+                }
+
+                if(publicRequest.IsSetConnectionProperties())
+                {
+                    context.Writer.WritePropertyName("ConnectionProperties");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ConnectionPropertiesMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ConnectionProperties, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
                 if(publicRequest.IsSetLocalDomainInfo())
@@ -93,7 +110,6 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

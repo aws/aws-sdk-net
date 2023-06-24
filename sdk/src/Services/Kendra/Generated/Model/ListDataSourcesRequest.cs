@@ -30,7 +30,7 @@ namespace Amazon.Kendra.Model
 {
     /// <summary>
     /// Container for the parameters to the ListDataSources operation.
-    /// Lists the data sources that you have created.
+    /// Lists the data source connectors that you have created.
     /// </summary>
     public partial class ListDataSourcesRequest : AmazonKendraRequest
     {
@@ -41,7 +41,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property IndexId. 
         /// <para>
-        /// The identifier of the index that contains the data source.
+        /// The identifier of the index used with one or more data source connectors.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]
@@ -60,7 +60,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of data sources to return.
+        /// The maximum number of data source connectors to return.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -81,8 +81,7 @@ namespace Amazon.Kendra.Model
         /// <para>
         /// If the previous response was incomplete (because there is more data to retrieve),
         /// Amazon Kendra returns a pagination token in the response. You can use this pagination
-        /// token to retrieve the next set of data sources (<code>DataSourceSummaryItems</code>).
-        /// 
+        /// token to retrieve the next set of data source connectors. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=800)]

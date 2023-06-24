@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MWAA.Model
 {
     /// <summary>
-    /// Defines the Apache Airflow logs to send to CloudWatch Logs: <code>DagProcessingLogs</code>,
-    /// <code>SchedulerLogs</code>, <code>TaskLogs</code>, <code>WebserverLogs</code>, <code>WorkerLogs</code>.
+    /// Defines the Apache Airflow log types to send to CloudWatch Logs.
     /// </summary>
     public partial class LoggingConfigurationInput
     {
@@ -41,7 +40,10 @@ namespace Amazon.MWAA.Model
         private ModuleLoggingConfigurationInput _workerLogs;
 
         /// <summary>
-        /// Gets and sets the property DagProcessingLogs.
+        /// Gets and sets the property DagProcessingLogs. 
+        /// <para>
+        /// Publishes Airflow DAG processing logs to CloudWatch Logs.
+        /// </para>
         /// </summary>
         public ModuleLoggingConfigurationInput DagProcessingLogs
         {
@@ -56,7 +58,10 @@ namespace Amazon.MWAA.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SchedulerLogs.
+        /// Gets and sets the property SchedulerLogs. 
+        /// <para>
+        /// Publishes Airflow scheduler logs to CloudWatch Logs.
+        /// </para>
         /// </summary>
         public ModuleLoggingConfigurationInput SchedulerLogs
         {
@@ -71,7 +76,10 @@ namespace Amazon.MWAA.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TaskLogs.
+        /// Gets and sets the property TaskLogs. 
+        /// <para>
+        /// Publishes Airflow task logs to CloudWatch Logs.
+        /// </para>
         /// </summary>
         public ModuleLoggingConfigurationInput TaskLogs
         {
@@ -86,7 +94,10 @@ namespace Amazon.MWAA.Model
         }
 
         /// <summary>
-        /// Gets and sets the property WebserverLogs.
+        /// Gets and sets the property WebserverLogs. 
+        /// <para>
+        /// Publishes Airflow web server logs to CloudWatch Logs.
+        /// </para>
         /// </summary>
         public ModuleLoggingConfigurationInput WebserverLogs
         {
@@ -101,7 +112,10 @@ namespace Amazon.MWAA.Model
         }
 
         /// <summary>
-        /// Gets and sets the property WorkerLogs.
+        /// Gets and sets the property WorkerLogs. 
+        /// <para>
+        /// Publishes Airflow worker logs to CloudWatch Logs.
+        /// </para>
         /// </summary>
         public ModuleLoggingConfigurationInput WorkerLogs
         {

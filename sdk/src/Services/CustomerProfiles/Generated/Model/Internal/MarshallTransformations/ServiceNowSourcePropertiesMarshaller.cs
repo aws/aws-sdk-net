@@ -34,7 +34,7 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ServiceNowSourceProperties Marshaller
-    /// </summary>       
+    /// </summary>
     public class ServiceNowSourcePropertiesMarshaller : IRequestMarshaller<ServiceNowSourceProperties, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ServiceNowSourcePropertiesMarshaller Instance = new ServiceNowSourcePropertiesMarshaller();
 
     }

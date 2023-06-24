@@ -34,7 +34,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// BackendDefaults Marshaller
-    /// </summary>       
+    /// </summary>
     public class BackendDefaultsMarshaller : IRequestMarshaller<BackendDefaults, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static BackendDefaultsMarshaller Instance = new BackendDefaultsMarshaller();
 
     }

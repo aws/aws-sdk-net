@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// Represents a single step of the upgrade or upgrade eligibility check workflow.
+    /// Represents a single step of an upgrade or upgrade eligibility check workflow.
     /// </summary>
     public partial class UpgradeStepItem
     {
@@ -78,9 +78,21 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property UpgradeStep. 
         /// <para>
-        ///  One of three steps an upgrade or upgrade eligibility check goes through: <ul> <li>PreUpgradeCheck</li>
-        /// <li>Snapshot</li> <li>Upgrade</li> </ul> 
+        ///  One of three steps that an upgrade or upgrade eligibility check goes through: 
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// PreUpgradeCheck
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Snapshot
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Upgrade
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public UpgradeStep UpgradeStep
         {
@@ -98,9 +110,25 @@ namespace Amazon.OpenSearchService.Model
         /// Gets and sets the property UpgradeStepStatus. 
         /// <para>
         ///  The current status of the upgrade. The status can take one of the following values:
-        /// <ul> <li>In Progress</li> <li>Succeeded</li> <li>Succeeded with Issues</li> <li>Failed</li>
-        /// </ul> 
+        /// 
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// In Progress
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Succeeded
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Succeeded with Issues
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Failed
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public UpgradeStatus UpgradeStepStatus
         {

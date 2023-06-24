@@ -34,9 +34,11 @@ namespace Amazon.Lambda.Model
     /// </summary>
     public partial class GetEventSourceMappingResponse : AmazonWebServiceResponse
     {
+        private AmazonManagedKafkaEventSourceConfig _amazonManagedKafkaEventSourceConfig;
         private int? _batchSize;
         private bool? _bisectBatchOnFunctionError;
         private DestinationConfig _destinationConfig;
+        private DocumentDBEventSourceConfig _documentDBEventSourceConfig;
         private string _eventSourceArn;
         private FilterCriteria _filterCriteria;
         private string _functionArn;
@@ -48,7 +50,9 @@ namespace Amazon.Lambda.Model
         private int? _maximumRetryAttempts;
         private int? _parallelizationFactor;
         private List<string> _queues = new List<string>();
+        private ScalingConfig _scalingConfig;
         private SelfManagedEventSource _selfManagedEventSource;
+        private SelfManagedKafkaEventSourceConfig _selfManagedKafkaEventSourceConfig;
         private List<SourceAccessConfiguration> _sourceAccessConfigurations = new List<SourceAccessConfiguration>();
         private EventSourcePosition _startingPosition;
         private DateTime? _startingPositionTimestamp;
@@ -57,6 +61,25 @@ namespace Amazon.Lambda.Model
         private List<string> _topics = new List<string>();
         private int? _tumblingWindowInSeconds;
         private string _uuid;
+
+        /// <summary>
+        /// Gets and sets the property AmazonManagedKafkaEventSourceConfig. 
+        /// <para>
+        /// Specific configuration settings for an Amazon Managed Streaming for Apache Kafka (Amazon
+        /// MSK) event source.
+        /// </para>
+        /// </summary>
+        public AmazonManagedKafkaEventSourceConfig AmazonManagedKafkaEventSourceConfig
+        {
+            get { return this._amazonManagedKafkaEventSourceConfig; }
+            set { this._amazonManagedKafkaEventSourceConfig = value; }
+        }
+
+        // Check to see if AmazonManagedKafkaEventSourceConfig property is set
+        internal bool IsSetAmazonManagedKafkaEventSourceConfig()
+        {
+            return this._amazonManagedKafkaEventSourceConfig != null;
+        }
 
         /// <summary>
         /// Gets and sets the property BatchSize. 
@@ -93,8 +116,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property BisectBatchOnFunctionError. 
         /// <para>
-        /// (Streams only) If the function returns an error, split the batch in two and retry.
-        /// The default value is false.
+        /// (Kinesis and DynamoDB Streams only) If the function returns an error, split the batch
+        /// in two and retry. The default value is false.
         /// </para>
         /// </summary>
         public bool BisectBatchOnFunctionError
@@ -112,7 +135,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property DestinationConfig. 
         /// <para>
-        /// (Streams only) An Amazon SQS queue or Amazon SNS topic destination for discarded records.
+        /// (Kinesis and DynamoDB Streams only) An Amazon SQS queue or Amazon SNS topic destination
+        /// for discarded records.
         /// </para>
         /// </summary>
         public DestinationConfig DestinationConfig
@@ -125,6 +149,24 @@ namespace Amazon.Lambda.Model
         internal bool IsSetDestinationConfig()
         {
             return this._destinationConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DocumentDBEventSourceConfig. 
+        /// <para>
+        /// Specific configuration settings for a DocumentDB event source.
+        /// </para>
+        /// </summary>
+        public DocumentDBEventSourceConfig DocumentDBEventSourceConfig
+        {
+            get { return this._documentDBEventSourceConfig; }
+            set { this._documentDBEventSourceConfig = value; }
+        }
+
+        // Check to see if DocumentDBEventSourceConfig property is set
+        internal bool IsSetDocumentDBEventSourceConfig()
+        {
+            return this._documentDBEventSourceConfig != null;
         }
 
         /// <summary>
@@ -148,8 +190,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property FilterCriteria. 
         /// <para>
-        /// (Streams and Amazon SQS) An object that defines the filter criteria that determine
-        /// whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda
+        /// An object that defines the filter criteria that determine whether Lambda should process
+        /// an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda
         /// event filtering</a>.
         /// </para>
         /// </summary>
@@ -186,7 +228,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property FunctionResponseTypes. 
         /// <para>
-        /// (Streams only) A list of current response type enums applied to the event source mapping.
+        /// (Kinesis, DynamoDB Streams, and Amazon SQS) A list of current response type enums
+        /// applied to the event source mapping.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]
@@ -241,17 +284,24 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property MaximumBatchingWindowInSeconds. 
         /// <para>
-        /// (Streams and Amazon SQS standard queues) The maximum amount of time, in seconds, that
-        /// Lambda spends gathering records before invoking the function.
+        /// The maximum amount of time, in seconds, that Lambda spends gathering records before
+        /// invoking the function. You can configure <code>MaximumBatchingWindowInSeconds</code>
+        /// to any value from 0 seconds to 300 seconds in increments of seconds.
         /// </para>
         ///  
         /// <para>
-        /// Default: 0
+        /// For streams and Amazon SQS event sources, the default batching window is 0 seconds.
+        /// For Amazon MSK, Self-managed Apache Kafka, Amazon MQ, and DocumentDB event sources,
+        /// the default batching window is 500 ms. Note that because you can only change <code>MaximumBatchingWindowInSeconds</code>
+        /// in increments of seconds, you cannot revert back to the 500 ms default batching window
+        /// after you have changed it. To restore the default batching window, you must create
+        /// a new event source mapping.
         /// </para>
         ///  
         /// <para>
-        /// Related setting: When you set <code>BatchSize</code> to a value greater than 10, you
-        /// must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.
+        /// Related setting: For streams and Amazon SQS event sources, when you set <code>BatchSize</code>
+        /// to a value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code>
+        /// to at least 1.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=300)]
@@ -270,10 +320,16 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property MaximumRecordAgeInSeconds. 
         /// <para>
-        /// (Streams only) Discard records older than the specified age. The default value is
-        /// -1, which sets the maximum age to infinite. When the value is set to infinite, Lambda
-        /// never discards old records. 
+        /// (Kinesis and DynamoDB Streams only) Discard records older than the specified age.
+        /// The default value is -1, which sets the maximum age to infinite. When the value is
+        /// set to infinite, Lambda never discards old records.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The minimum valid value for maximum record age is 60s. Although values less than 60
+        /// and greater than -1 fall within the parameter's absolute range, they are not allowed
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=-1, Max=604800)]
         public int MaximumRecordAgeInSeconds
@@ -291,9 +347,10 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property MaximumRetryAttempts. 
         /// <para>
-        /// (Streams only) Discard records after the specified number of retries. The default
-        /// value is -1, which sets the maximum number of retries to infinite. When MaximumRetryAttempts
-        /// is infinite, Lambda retries failed records until the record expires in the event source.
+        /// (Kinesis and DynamoDB Streams only) Discard records after the specified number of
+        /// retries. The default value is -1, which sets the maximum number of retries to infinite.
+        /// When MaximumRetryAttempts is infinite, Lambda retries failed records until the record
+        /// expires in the event source.
         /// </para>
         /// </summary>
         [AWSProperty(Min=-1, Max=10000)]
@@ -312,8 +369,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property ParallelizationFactor. 
         /// <para>
-        /// (Streams only) The number of batches to process concurrently from each shard. The
-        /// default value is 1.
+        /// (Kinesis and DynamoDB Streams only) The number of batches to process concurrently
+        /// from each shard. The default value is 1.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
@@ -349,6 +406,26 @@ namespace Amazon.Lambda.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ScalingConfig. 
+        /// <para>
+        /// (Amazon SQS only) The scaling configuration for the event source. For more information,
+        /// see <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-max-concurrency">Configuring
+        /// maximum concurrency for Amazon SQS event sources</a>.
+        /// </para>
+        /// </summary>
+        public ScalingConfig ScalingConfig
+        {
+            get { return this._scalingConfig; }
+            set { this._scalingConfig = value; }
+        }
+
+        // Check to see if ScalingConfig property is set
+        internal bool IsSetScalingConfig()
+        {
+            return this._scalingConfig != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SelfManagedEventSource. 
         /// <para>
         /// The self-managed Apache Kafka cluster for your event source.
@@ -364,6 +441,24 @@ namespace Amazon.Lambda.Model
         internal bool IsSetSelfManagedEventSource()
         {
             return this._selfManagedEventSource != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SelfManagedKafkaEventSourceConfig. 
+        /// <para>
+        /// Specific configuration settings for a self-managed Apache Kafka event source.
+        /// </para>
+        /// </summary>
+        public SelfManagedKafkaEventSourceConfig SelfManagedKafkaEventSourceConfig
+        {
+            get { return this._selfManagedKafkaEventSourceConfig; }
+            set { this._selfManagedKafkaEventSourceConfig = value; }
+        }
+
+        // Check to see if SelfManagedKafkaEventSourceConfig property is set
+        internal bool IsSetSelfManagedKafkaEventSourceConfig()
+        {
+            return this._selfManagedKafkaEventSourceConfig != null;
         }
 
         /// <summary>
@@ -391,7 +486,7 @@ namespace Amazon.Lambda.Model
         /// <para>
         /// The position in a stream from which to start reading. Required for Amazon Kinesis,
         /// Amazon DynamoDB, and Amazon MSK stream sources. <code>AT_TIMESTAMP</code> is supported
-        /// only for Amazon Kinesis streams.
+        /// only for Amazon Kinesis streams and Amazon DocumentDB.
         /// </para>
         /// </summary>
         public EventSourcePosition StartingPosition
@@ -485,8 +580,9 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property TumblingWindowInSeconds. 
         /// <para>
-        /// (Streams only) The duration in seconds of a processing window. The range is 1–900
-        /// seconds.
+        /// (Kinesis and DynamoDB Streams only) The duration in seconds of a processing window
+        /// for DynamoDB and Kinesis Streams event sources. A value of 0 seconds indicates no
+        /// tumbling window.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=900)]

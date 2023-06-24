@@ -17,22 +17,22 @@
  * Do not modify this file. This file is generated from the cloudfront-2020-05-31.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
-
+using Amazon.CloudFront.Internal;
 
 namespace Amazon.CloudFront
 {
     /// <summary>
     /// Configuration for accessing Amazon CloudFront service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonCloudFrontConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.4.15");
+            InternalSDKUtils.BuildUserAgentString("3.7.105.69");
 
         private string _userAgent = UserAgentString;
 
@@ -40,8 +40,10 @@ namespace Amazon.CloudFront
         /// Default constructor
         /// </summary>
         public AmazonCloudFrontConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonCloudFrontDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "cloudfront";
+            this.EndpointProvider = new AmazonCloudFrontEndpointProvider();
         }
 
         /// <summary>
@@ -76,5 +78,6 @@ namespace Amazon.CloudFront
                 return _userAgent;
             }
         }
+
     }
 }

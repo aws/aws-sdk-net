@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kendra.Model
 {
     /// <summary>
-    /// Provides the information necessary to connect to a database.
+    /// Provides the configuration information that's required to connect to a database.
     /// </summary>
     public partial class ConnectionConfiguration
     {

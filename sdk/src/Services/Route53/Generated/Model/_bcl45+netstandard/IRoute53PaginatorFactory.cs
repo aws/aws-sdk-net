@@ -26,6 +26,21 @@ namespace Amazon.Route53.Model
     {
 
         /// <summary>
+        /// Paginator for ListCidrBlocks operation
+        ///</summary>
+        IListCidrBlocksPaginator ListCidrBlocks(ListCidrBlocksRequest request);
+
+        /// <summary>
+        /// Paginator for ListCidrCollections operation
+        ///</summary>
+        IListCidrCollectionsPaginator ListCidrCollections(ListCidrCollectionsRequest request);
+
+        /// <summary>
+        /// Paginator for ListCidrLocations operation
+        ///</summary>
+        IListCidrLocationsPaginator ListCidrLocations(ListCidrLocationsRequest request);
+
+        /// <summary>
         /// Paginator for ListHealthChecks operation
         ///</summary>
         IListHealthChecksPaginator ListHealthChecks(ListHealthChecksRequest request);

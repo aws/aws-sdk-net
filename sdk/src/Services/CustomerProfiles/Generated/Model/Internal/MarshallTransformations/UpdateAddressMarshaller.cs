@@ -34,7 +34,7 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// UpdateAddress Marshaller
-    /// </summary>       
+    /// </summary>
     public class UpdateAddressMarshaller : IRequestMarshaller<UpdateAddress, JsonMarshallerContext> 
     {
         /// <summary>
@@ -109,7 +109,7 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static UpdateAddressMarshaller Instance = new UpdateAddressMarshaller();
 
     }

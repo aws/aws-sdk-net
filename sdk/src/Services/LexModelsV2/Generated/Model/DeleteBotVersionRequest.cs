@@ -30,7 +30,7 @@ namespace Amazon.LexModelsV2.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteBotVersion operation.
-    /// Deletes a specific version of a bot. To delete all version of a bot, use the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DeleteBot.html">DeleteBot</a>
+    /// Deletes a specific version of a bot. To delete all versions of a bot, use the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DeleteBot.html">DeleteBot</a>
     /// operation.
     /// </summary>
     public partial class DeleteBotVersionRequest : AmazonLexModelsV2Request
@@ -80,10 +80,11 @@ namespace Amazon.LexModelsV2.Model
         /// <summary>
         /// Gets and sets the property SkipResourceInUseCheck. 
         /// <para>
-        /// By default, the <code>DeleteBotVersion</code> operations throws a <code>ResourceInUseException</code>
-        /// exception if you try to delete a bot version that has an alias pointing at it. Set
-        /// the <code>skipResourceInUseCheck</code> parameter to <code>true</code> to skip this
-        /// check and remove the version even if an alias points to it.
+        /// By default, Amazon Lex checks if any other resource, such as an alias or bot network,
+        /// is using the bot version before it is deleted and throws a <code>ResourceInUseException</code>
+        /// exception if the version is being used by another resource. Set this parameter to
+        /// <code>true</code> to skip this check and remove the version even if it is being used
+        /// by another resource.
         /// </para>
         /// </summary>
         public bool SkipResourceInUseCheck

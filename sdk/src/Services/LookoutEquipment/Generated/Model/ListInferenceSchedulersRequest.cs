@@ -38,6 +38,7 @@ namespace Amazon.LookoutEquipment.Model
         private int? _maxResults;
         private string _modelName;
         private string _nextToken;
+        private InferenceSchedulerStatus _status;
 
         /// <summary>
         /// Gets and sets the property InferenceSchedulerNameBeginsWith. 
@@ -114,6 +115,24 @@ namespace Amazon.LookoutEquipment.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// Specifies the current status of the inference schedulers to list.
+        /// </para>
+        /// </summary>
+        public InferenceSchedulerStatus Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null;
         }
 
     }

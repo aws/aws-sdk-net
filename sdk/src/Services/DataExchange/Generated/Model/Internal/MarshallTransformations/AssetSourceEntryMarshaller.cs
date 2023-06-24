@@ -34,7 +34,7 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AssetSourceEntry Marshaller
-    /// </summary>       
+    /// </summary>
     public class AssetSourceEntryMarshaller : IRequestMarshaller<AssetSourceEntry, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AssetSourceEntryMarshaller Instance = new AssetSourceEntryMarshaller();
 
     }

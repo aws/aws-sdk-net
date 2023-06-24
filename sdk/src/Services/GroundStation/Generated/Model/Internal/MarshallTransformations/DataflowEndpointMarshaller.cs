@@ -34,7 +34,7 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DataflowEndpoint Marshaller
-    /// </summary>       
+    /// </summary>
     public class DataflowEndpointMarshaller : IRequestMarshaller<DataflowEndpoint, JsonMarshallerContext> 
     {
         /// <summary>
@@ -78,7 +78,7 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DataflowEndpointMarshaller Instance = new DataflowEndpointMarshaller();
 
     }

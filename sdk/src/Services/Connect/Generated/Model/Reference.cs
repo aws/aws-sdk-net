@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// A link that an agent selects to complete a given task. You can have up to 4,096 UTF-8
-    /// bytes across all references for a contact.
+    /// Well-formed data on a contact, used by agents to complete a contact request. You can
+    /// have up to 4,096 UTF-8 bytes across all references for a contact.
     /// </summary>
     public partial class Reference
     {
@@ -40,8 +40,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of the reference. Only <code>URL</code> type can be added or updated on a
-        /// contact.
+        /// The type of the reference. <code>DATE</code> must be of type Epoch timestamp. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

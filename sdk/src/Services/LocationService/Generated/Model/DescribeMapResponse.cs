@@ -124,11 +124,11 @@ namespace Amazon.LocationService.Model
         /// Gets and sets the property MapArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across
-        /// all AWS.
+        /// all Amazon Web Services.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Format example: <code>arn:aws:geo:region:account-id:maps/ExampleMap</code> 
+        /// Format example: <code>arn:aws:geo:region:account-id:map/ExampleMap</code> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -167,13 +167,10 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property PricingPlan. 
         /// <para>
-        /// The pricing plan selected for the specified map resource.
+        /// No longer used. Always returns <code>RequestBasedUsage</code>.
         /// </para>
-        ///  <pre><code> &lt;p&gt;For additional details and restrictions on each pricing plan
-        /// option, see &lt;a href=&quot;https://aws.amazon.com/location/pricing/&quot;&gt;Amazon
-        /// Location Service pricing&lt;/a&gt;.&lt;/p&gt; </code></pre>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [Obsolete("Deprecated. Always returns RequestBasedUsage.")]
         public PricingPlan PricingPlan
         {
             get { return this._pricingPlan; }

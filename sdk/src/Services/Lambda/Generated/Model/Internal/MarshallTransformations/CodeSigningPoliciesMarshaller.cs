@@ -34,7 +34,7 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CodeSigningPolicies Marshaller
-    /// </summary>       
+    /// </summary>
     public class CodeSigningPoliciesMarshaller : IRequestMarshaller<CodeSigningPolicies, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CodeSigningPoliciesMarshaller Instance = new CodeSigningPoliciesMarshaller();
 
     }

@@ -40,7 +40,27 @@ namespace Amazon.Lightsail.Model
     /// </summary>
     public partial class GetRelationalDatabaseBundlesRequest : AmazonLightsailRequest
     {
+        private bool? _includeInactive;
         private string _pageToken;
+
+        /// <summary>
+        /// Gets and sets the property IncludeInactive. 
+        /// <para>
+        /// A Boolean value that indicates whether to include inactive (unavailable) bundles in
+        /// the response of your request.
+        /// </para>
+        /// </summary>
+        public bool IncludeInactive
+        {
+            get { return this._includeInactive.GetValueOrDefault(); }
+            set { this._includeInactive = value; }
+        }
+
+        // Check to see if IncludeInactive property is set
+        internal bool IsSetIncludeInactive()
+        {
+            return this._includeInactive.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property PageToken. 

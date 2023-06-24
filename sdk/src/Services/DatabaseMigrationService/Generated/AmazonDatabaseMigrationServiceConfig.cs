@@ -17,22 +17,22 @@
  * Do not modify this file. This file is generated from the dms-2016-01-01.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
-
+using Amazon.DatabaseMigrationService.Internal;
 
 namespace Amazon.DatabaseMigrationService
 {
     /// <summary>
     /// Configuration for accessing Amazon DatabaseMigrationService service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonDatabaseMigrationServiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.6.2");
+            InternalSDKUtils.BuildUserAgentString("3.7.103.53");
 
         private string _userAgent = UserAgentString;
 
@@ -40,8 +40,10 @@ namespace Amazon.DatabaseMigrationService
         /// Default constructor
         /// </summary>
         public AmazonDatabaseMigrationServiceConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonDatabaseMigrationServiceDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "dms";
+            this.EndpointProvider = new AmazonDatabaseMigrationServiceEndpointProvider();
         }
 
         /// <summary>
@@ -76,5 +78,6 @@ namespace Amazon.DatabaseMigrationService
                 return _userAgent;
             }
         }
+
     }
 }

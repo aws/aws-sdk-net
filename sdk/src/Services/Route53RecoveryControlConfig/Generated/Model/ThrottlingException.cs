@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53RecoveryControlConfig.Model
 {
     /// <summary>
-    /// 429 response - ThrottlingException.
+    /// 429 response - LimitExceededException or TooManyRequestsException.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

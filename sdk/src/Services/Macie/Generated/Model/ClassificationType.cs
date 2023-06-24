@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Macie.Model
 {
     /// <summary>
-    /// The classification type that Amazon Macie Classic applies to the associated S3 resources.
+    /// (Discontinued) The classification type that Amazon Macie Classic applies to the associated
+    /// S3 resources.
     /// </summary>
     public partial class ClassificationType
     {
@@ -39,9 +40,9 @@ namespace Amazon.Macie.Model
         /// <summary>
         /// Gets and sets the property Continuous. 
         /// <para>
-        /// A continuous classification of the objects that are added to a specified S3 bucket.
-        /// Amazon Macie Classic begins performing continuous classification after a bucket is
-        /// successfully associated with Macie Classic. 
+        /// (Discontinued) A continuous classification of the objects that are added to a specified
+        /// S3 bucket. Amazon Macie Classic begins performing continuous classification after
+        /// a bucket is successfully associated with Macie Classic.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -60,8 +61,8 @@ namespace Amazon.Macie.Model
         /// <summary>
         /// Gets and sets the property OneTime. 
         /// <para>
-        /// A one-time classification of all of the existing objects in a specified S3 bucket.
-        /// 
+        /// (Discontinued) A one-time classification of all of the existing objects in a specified
+        /// S3 bucket. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -105,7 +105,7 @@ namespace Amazon.Amplify.Model
         /// downloads a single .zip file. 
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1000)]
+        [AWSProperty(Max=3000)]
         public string SourceUrl
         {
             get { return this._sourceUrl; }

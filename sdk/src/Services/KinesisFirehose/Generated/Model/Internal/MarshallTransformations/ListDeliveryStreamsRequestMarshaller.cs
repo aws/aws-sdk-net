@@ -58,7 +58,7 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
             string target = "Firehose_20150804.ListDeliveryStreams";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-08-04";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-08-04";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -85,7 +85,6 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Limit);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

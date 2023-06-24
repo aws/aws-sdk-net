@@ -30,9 +30,9 @@ namespace Amazon.Route53RecoveryControlConfig.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateSafetyRule operation.
-    /// Update a safety rule (an assertion rule or gating rule) for the routing controls in
-    /// a control panel. You can only update the name and the waiting period for a safety
-    /// rule. To make other updates, delete the safety rule and create a new safety rule.
+    /// Update a safety rule (an assertion rule or gating rule). You can only update the name
+    /// and the waiting period for a safety rule. To make other updates, delete the safety
+    /// rule and create a new one.
     /// </summary>
     public partial class UpdateSafetyRuleRequest : AmazonRoute53RecoveryControlConfigRequest
     {
@@ -40,7 +40,10 @@ namespace Amazon.Route53RecoveryControlConfig.Model
         private GatingRuleUpdate _gatingRuleUpdate;
 
         /// <summary>
-        /// Gets and sets the property AssertionRuleUpdate.
+        /// Gets and sets the property AssertionRuleUpdate. 
+        /// <para>
+        /// The assertion rule to update.
+        /// </para>
         /// </summary>
         public AssertionRuleUpdate AssertionRuleUpdate
         {
@@ -55,7 +58,10 @@ namespace Amazon.Route53RecoveryControlConfig.Model
         }
 
         /// <summary>
-        /// Gets and sets the property GatingRuleUpdate.
+        /// Gets and sets the property GatingRuleUpdate. 
+        /// <para>
+        /// The gating rule to update.
+        /// </para>
         /// </summary>
         public GatingRuleUpdate GatingRuleUpdate
         {

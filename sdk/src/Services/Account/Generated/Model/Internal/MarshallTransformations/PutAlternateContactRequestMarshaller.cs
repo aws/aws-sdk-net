@@ -56,7 +56,7 @@ namespace Amazon.Account.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Account");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-02-01";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-02-01";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/putAlternateContact";
@@ -101,7 +101,6 @@ namespace Amazon.Account.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Title);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

@@ -30,12 +30,37 @@ namespace Amazon.Shield.Model
 {
     /// <summary>
     /// Container for the parameters to the ListProtections operation.
-    /// Lists all <a>Protection</a> objects for the account.
+    /// Retrieves <a>Protection</a> objects for the account. You can retrieve all protections
+    /// or you can provide filtering criteria and retrieve just the subset of protections
+    /// that match the criteria.
     /// </summary>
     public partial class ListProtectionsRequest : AmazonShieldRequest
     {
+        private InclusionProtectionFilters _inclusionFilters;
         private int? _maxResults;
         private string _nextToken;
+
+        /// <summary>
+        /// Gets and sets the property InclusionFilters. 
+        /// <para>
+        /// Narrows the set of protections that the call retrieves. You can retrieve a single
+        /// protection by providing its name or the ARN (Amazon Resource Name) of its protected
+        /// resource. You can also retrieve all protections for a specific resource type. You
+        /// can provide up to one criteria per filter type. Shield Advanced returns protections
+        /// that exactly match all of the filter criteria that you provide.
+        /// </para>
+        /// </summary>
+        public InclusionProtectionFilters InclusionFilters
+        {
+            get { return this._inclusionFilters; }
+            set { this._inclusionFilters = value; }
+        }
+
+        // Check to see if InclusionFilters property is set
+        internal bool IsSetInclusionFilters()
+        {
+            return this._inclusionFilters != null;
+        }
 
         /// <summary>
         /// Gets and sets the property MaxResults. 

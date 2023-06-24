@@ -62,7 +62,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// [Required] The name used to label and identify the VPC link.
+        /// The name used to label and identify the VPC link.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -101,8 +101,8 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property TargetArns. 
         /// <para>
-        /// [Required] The ARN of the network load balancer of the VPC targeted by the VPC link.
-        /// The network load balancer must be owned by the same AWS account of the API owner.
+        /// The ARN of the network load balancer of the VPC targeted by the VPC link. The network
+        /// load balancer must be owned by the same AWS account of the API owner.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

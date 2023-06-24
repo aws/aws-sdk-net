@@ -65,7 +65,7 @@ namespace Amazon.CertificateManager.Model
         /// <para>
         /// Default filtering returns only <code>RSA_1024</code> and <code>RSA_2048</code> certificates
         /// that have at least one domain. To return other certificate types, provide the desired
-        /// type signatures in a comma-separated list. For example, <code>"keyTypes": ["RSA_2048,RSA_4096"]</code>
+        /// type signatures in a comma-separated list. For example, <code>"keyTypes": ["RSA_2048","RSA_4096"]</code>
         /// returns both <code>RSA_2048</code> and <code>RSA_4096</code> certificates.
         /// </para>
         /// </summary>

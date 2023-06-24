@@ -47,6 +47,7 @@ namespace Amazon.ECS.Model
         private int? _pendingTasksCount;
         private int? _registeredContainerInstancesCount;
         private int? _runningTasksCount;
+        private ClusterServiceConnectDefaults _serviceConnectDefaults;
         private List<ClusterSetting> _settings = new List<ClusterSetting>();
         private List<KeyValuePair> _statistics = new List<KeyValuePair>();
         private string _status;
@@ -75,7 +76,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property Attachments. 
         /// <para>
         /// The resources attached to a cluster. When using a capacity provider with a cluster,
-        /// the Auto Scaling plan that's created is returned as a cluster attachment.
+        /// the capacity provider and associated resources are returned as cluster attachments.
         /// </para>
         /// </summary>
         public List<Attachment> Attachments
@@ -98,8 +99,7 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  <dl> <dt>UPDATE_IN_PROGRESS</dt> <dd> 
         /// <para>
-        /// The available capacity providers for the cluster are updating. This occurs when the
-        /// Auto Scaling plan is provisioning or deprovisioning.
+        /// The available capacity providers for the cluster are updating.
         /// </para>
         ///  </dd> <dt>UPDATE_COMPLETE</dt> <dd> 
         /// <para>
@@ -144,10 +144,9 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property ClusterArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) that identifies the cluster. The ARN contains the <code>arn:aws:ecs</code>
-        /// namespace, followed by the Region of the cluster, the Amazon Web Services account
-        /// ID of the cluster owner, the <code>cluster</code> namespace, and then the cluster
-        /// name. For example, <code>arn:aws:ecs:region:012345678910:cluster/test</code>.
+        /// The Amazon Resource Name (ARN) that identifies the cluster. For more information about
+        /// the ARN format, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#ecs-resource-ids">Amazon
+        /// Resource Name (ARN)</a> in the <i>Amazon ECS Developer Guide</i>.
         /// </para>
         /// </summary>
         public string ClusterArn
@@ -274,10 +273,43 @@ namespace Amazon.ECS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ServiceConnectDefaults. 
+        /// <para>
+        /// Use this parameter to set a default Service Connect namespace. After you set a default
+        /// Service Connect namespace, any new services with Service Connect turned on that are
+        /// created in the cluster are added as client services in the namespace. This setting
+        /// only applies to new services that set the <code>enabled</code> parameter to <code>true</code>
+        /// in the <code>ServiceConnectConfiguration</code>. You can set the namespace of each
+        /// service individually in the <code>ServiceConnectConfiguration</code> to override this
+        /// default parameter.
+        /// </para>
+        ///  
+        /// <para>
+        /// Tasks that run in a namespace can use short names to connect to services in the namespace.
+        /// Tasks can connect to services across all of the clusters in the namespace. Tasks connect
+        /// through a managed proxy container that collects logs and metrics for increased visibility.
+        /// Only the tasks that Amazon ECS services create are supported with Service Connect.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service
+        /// Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        public ClusterServiceConnectDefaults ServiceConnectDefaults
+        {
+            get { return this._serviceConnectDefaults; }
+            set { this._serviceConnectDefaults = value; }
+        }
+
+        // Check to see if ServiceConnectDefaults property is set
+        internal bool IsSetServiceConnectDefaults()
+        {
+            return this._serviceConnectDefaults != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Settings. 
         /// <para>
         /// The settings for the cluster. This parameter indicates whether CloudWatch Container
-        /// Insights is enabled or disabled for a cluster.
+        /// Insights is on or off for a cluster.
         /// </para>
         /// </summary>
         public List<ClusterSetting> Settings

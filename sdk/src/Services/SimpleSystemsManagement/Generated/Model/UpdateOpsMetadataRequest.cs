@@ -80,7 +80,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property OpsMetadataArn. 
         /// <para>
-        /// The Amazon Resoure Name (ARN) of the OpsMetadata Object to update.
+        /// The Amazon Resource Name (ARN) of the OpsMetadata Object to update.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1011)]

@@ -56,7 +56,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.LexModelsV2");
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-08-07";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-08-07";
             request.HttpMethod = "PUT";
 
             if (!publicRequest.IsSetBotId())
@@ -68,10 +68,32 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetBotMembers())
+                {
+                    context.Writer.WritePropertyName("botMembers");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestBotMembersListValue in publicRequest.BotMembers)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = BotMemberMarshaller.Instance;
+                        marshaller.Marshall(publicRequestBotMembersListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetBotName())
                 {
                     context.Writer.WritePropertyName("botName");
                     context.Writer.Write(publicRequest.BotName);
+                }
+
+                if(publicRequest.IsSetBotType())
+                {
+                    context.Writer.WritePropertyName("botType");
+                    context.Writer.Write(publicRequest.BotType);
                 }
 
                 if(publicRequest.IsSetDataPrivacy())
@@ -103,7 +125,6 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.RoleArn);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

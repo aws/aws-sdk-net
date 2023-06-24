@@ -64,5 +64,10 @@ namespace Amazon.AutoScaling.Model
         /// Paginator for DescribeTags operation
         ///</summary>
         IDescribeTagsPaginator DescribeTags(DescribeTagsRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeTrafficSources operation
+        ///</summary>
+        IDescribeTrafficSourcesPaginator DescribeTrafficSources(DescribeTrafficSourcesRequest request);
     }
 }

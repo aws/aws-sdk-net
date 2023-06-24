@@ -39,7 +39,7 @@ namespace Amazon.Inspector2.Model
         /// <summary>
         /// Gets and sets the property Comparison. 
         /// <para>
-        /// The operator to use when comparing values in the filter
+        /// The operator to use when comparing values in the filter.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

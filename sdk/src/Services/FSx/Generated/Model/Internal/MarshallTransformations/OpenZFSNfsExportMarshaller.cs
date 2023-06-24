@@ -34,7 +34,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// OpenZFSNfsExport Marshaller
-    /// </summary>       
+    /// </summary>
     public class OpenZFSNfsExportMarshaller : IRequestMarshaller<OpenZFSNfsExport, JsonMarshallerContext> 
     {
         /// <summary>
@@ -65,7 +65,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static OpenZFSNfsExportMarshaller Instance = new OpenZFSNfsExportMarshaller();
 
     }

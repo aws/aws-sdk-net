@@ -58,7 +58,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             string target = "AmazonSSM.GetOpsItem";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2014-11-06";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2014-11-06";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -67,13 +67,18 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetOpsItemArn())
+                {
+                    context.Writer.WritePropertyName("OpsItemArn");
+                    context.Writer.Write(publicRequest.OpsItemArn);
+                }
+
                 if(publicRequest.IsSetOpsItemId())
                 {
                     context.Writer.WritePropertyName("OpsItemId");
                     context.Writer.Write(publicRequest.OpsItemId);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

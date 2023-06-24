@@ -34,7 +34,7 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// FargatePlatformConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class FargatePlatformConfigurationMarshaller : IRequestMarshaller<FargatePlatformConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static FargatePlatformConfigurationMarshaller Instance = new FargatePlatformConfigurationMarshaller();
 
     }

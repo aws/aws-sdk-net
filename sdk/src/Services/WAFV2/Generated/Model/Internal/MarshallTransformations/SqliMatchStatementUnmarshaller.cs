@@ -70,6 +70,12 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.FieldToMatch = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SensitivityLevel", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SensitivityLevel = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("TextTransformations", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<TextTransformation, TextTransformationUnmarshaller>(TextTransformationUnmarshaller.Instance);

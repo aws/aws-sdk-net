@@ -34,7 +34,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SSMLMessage Marshaller
-    /// </summary>       
+    /// </summary>
     public class SSMLMessageMarshaller : IRequestMarshaller<SSMLMessage, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SSMLMessageMarshaller Instance = new SSMLMessageMarshaller();
 
     }

@@ -58,7 +58,7 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
             string target = "Lightsail_20161128.UpdateContainerService";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-11-28";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-11-28";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -77,6 +77,17 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("power");
                     context.Writer.Write(publicRequest.Power);
+                }
+
+                if(publicRequest.IsSetPrivateRegistryAccess())
+                {
+                    context.Writer.WritePropertyName("privateRegistryAccess");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = PrivateRegistryAccessRequestMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.PrivateRegistryAccess, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
                 if(publicRequest.IsSetPublicDomainNames())
@@ -110,7 +121,6 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ServiceName);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

@@ -34,7 +34,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CreateXMLClassifierRequest Marshaller
-    /// </summary>       
+    /// </summary>
     public class CreateXMLClassifierRequestMarshaller : IRequestMarshaller<CreateXMLClassifierRequest, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CreateXMLClassifierRequestMarshaller Instance = new CreateXMLClassifierRequestMarshaller();
 
     }

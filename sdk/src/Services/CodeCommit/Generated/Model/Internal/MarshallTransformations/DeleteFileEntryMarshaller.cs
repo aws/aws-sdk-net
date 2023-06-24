@@ -34,7 +34,7 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DeleteFileEntry Marshaller
-    /// </summary>       
+    /// </summary>
     public class DeleteFileEntryMarshaller : IRequestMarshaller<DeleteFileEntry, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DeleteFileEntryMarshaller Instance = new DeleteFileEntryMarshaller();
 
     }

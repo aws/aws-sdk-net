@@ -26,6 +26,16 @@ namespace Amazon.WorkDocs.Model
     {
 
         /// <summary>
+        /// Paginator for DescribeActivities operation
+        ///</summary>
+        IDescribeActivitiesPaginator DescribeActivities(DescribeActivitiesRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeComments operation
+        ///</summary>
+        IDescribeCommentsPaginator DescribeComments(DescribeCommentsRequest request);
+
+        /// <summary>
         /// Paginator for DescribeDocumentVersions operation
         ///</summary>
         IDescribeDocumentVersionsPaginator DescribeDocumentVersions(DescribeDocumentVersionsRequest request);
@@ -36,8 +46,33 @@ namespace Amazon.WorkDocs.Model
         IDescribeFolderContentsPaginator DescribeFolderContents(DescribeFolderContentsRequest request);
 
         /// <summary>
+        /// Paginator for DescribeGroups operation
+        ///</summary>
+        IDescribeGroupsPaginator DescribeGroups(DescribeGroupsRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeNotificationSubscriptions operation
+        ///</summary>
+        IDescribeNotificationSubscriptionsPaginator DescribeNotificationSubscriptions(DescribeNotificationSubscriptionsRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeResourcePermissions operation
+        ///</summary>
+        IDescribeResourcePermissionsPaginator DescribeResourcePermissions(DescribeResourcePermissionsRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeRootFolders operation
+        ///</summary>
+        IDescribeRootFoldersPaginator DescribeRootFolders(DescribeRootFoldersRequest request);
+
+        /// <summary>
         /// Paginator for DescribeUsers operation
         ///</summary>
         IDescribeUsersPaginator DescribeUsers(DescribeUsersRequest request);
+
+        /// <summary>
+        /// Paginator for SearchResources operation
+        ///</summary>
+        ISearchResourcesPaginator SearchResources(SearchResourcesRequest request);
     }
 }

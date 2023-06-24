@@ -36,6 +36,7 @@ namespace Amazon.MediaPackage.Model
         private AdsOnDeliveryRestrictions _adsOnDeliveryRestrictions;
         private List<string> _adTriggers = new List<string>();
         private DashEncryption _encryption;
+        private bool? _includeIframeOnlyStream;
         private ManifestLayout _manifestLayout;
         private int? _manifestWindowSeconds;
         private int? _minBufferTimeSeconds;
@@ -92,6 +93,22 @@ namespace Amazon.MediaPackage.Model
         internal bool IsSetEncryption()
         {
             return this._encryption != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IncludeIframeOnlyStream. When enabled, an I-Frame only
+        /// stream will be included in the output.
+        /// </summary>
+        public bool IncludeIframeOnlyStream
+        {
+            get { return this._includeIframeOnlyStream.GetValueOrDefault(); }
+            set { this._includeIframeOnlyStream = value; }
+        }
+
+        // Check to see if IncludeIframeOnlyStream property is set
+        internal bool IsSetIncludeIframeOnlyStream()
+        {
+            return this._includeIframeOnlyStream.HasValue; 
         }
 
         /// <summary>
@@ -182,7 +199,8 @@ namespace Amazon.MediaPackage.Model
 
         /// <summary>
         /// Gets and sets the property Profile. The Dynamic Adaptive Streaming over HTTP (DASH)
-        /// profile type.  When set to "HBBTV_1_5", HbbTV 1.5 compliant output is enabled.
+        /// profile type.  When set to "HBBTV_1_5", HbbTV 1.5 compliant output is enabled. When
+        /// set to "DVB-DASH_2014", DVB-DASH 2014 compliant output is enabled.
         /// </summary>
         public Profile Profile
         {
@@ -281,7 +299,7 @@ namespace Amazon.MediaPackage.Model
 
         /// <summary>
         /// Gets and sets the property UtcTimingUri. Specifies the value attribute of the UTCTiming
-        /// field when utcTiming is set to HTTP-ISO or HTTP-HEAD
+        /// field when utcTiming is set to HTTP-ISO, HTTP-HEAD or HTTP-XSDATE
         /// </summary>
         public string UtcTimingUri
         {

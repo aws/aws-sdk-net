@@ -34,7 +34,7 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// S3ReportExportConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class S3ReportExportConfigMarshaller : IRequestMarshaller<S3ReportExportConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -85,7 +85,7 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static S3ReportExportConfigMarshaller Instance = new S3ReportExportConfigMarshaller();
 
     }

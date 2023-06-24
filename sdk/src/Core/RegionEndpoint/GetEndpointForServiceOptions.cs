@@ -1,10 +1,12 @@
 ﻿using Amazon.Runtime;
+using System;
 
 namespace Amazon.Internal
 {
     /// <summary>
     /// Customizations for <see cref="IRegionEndpoint.GetEndpointForService(string,GetEndpointForServiceOptions)"/>
     /// </summary>
+    [Obsolete("This class is obsoleted because as of version 3.7.100 endpoint is resolved using a newer system that uses request level parameters to resolve the endpoint.")]
     public class GetEndpointForServiceOptions
     {
         /// <summary>
@@ -19,6 +21,7 @@ namespace Amazon.Internal
         public bool FIPS { get; set; }
     }
 
+    [Obsolete("This class is obsoleted because as of version 3.7.100 endpoint is resolved using a newer system that uses request level parameters to resolve the endpoint.")]
     public static class GetEndpointForServiceOptionsExtensions
     {
         public static GetEndpointForServiceOptions ToGetEndpointForServiceOptions(this IClientConfig config)

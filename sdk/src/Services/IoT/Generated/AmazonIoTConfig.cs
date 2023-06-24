@@ -17,22 +17,22 @@
  * Do not modify this file. This file is generated from the iot-2015-05-28.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
-
+using Amazon.IoT.Internal;
 
 namespace Amazon.IoT
 {
     /// <summary>
     /// Configuration for accessing Amazon IoT service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonIoTConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.8.1");
+            InternalSDKUtils.BuildUserAgentString("3.7.109.5");
 
         private string _userAgent = UserAgentString;
 
@@ -40,8 +40,10 @@ namespace Amazon.IoT
         /// Default constructor
         /// </summary>
         public AmazonIoTConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonIoTDefaultConfiguration.GetAllConfigurations()))
         {
-            this.AuthenticationServiceName = "execute-api";
+            this.AuthenticationServiceName = "iot";
+            this.EndpointProvider = new AmazonIoTEndpointProvider();
         }
 
         /// <summary>
@@ -76,5 +78,6 @@ namespace Amazon.IoT
                 return _userAgent;
             }
         }
+
     }
 }

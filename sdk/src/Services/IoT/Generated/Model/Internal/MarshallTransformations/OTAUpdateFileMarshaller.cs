@@ -34,7 +34,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// OTAUpdateFile Marshaller
-    /// </summary>       
+    /// </summary>
     public class OTAUpdateFileMarshaller : IRequestMarshaller<OTAUpdateFile, JsonMarshallerContext> 
     {
         /// <summary>
@@ -103,7 +103,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static OTAUpdateFileMarshaller Instance = new OTAUpdateFileMarshaller();
 
     }

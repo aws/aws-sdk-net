@@ -26,6 +26,11 @@ namespace Amazon.Translate.Model
     {
 
         /// <summary>
+        /// Paginator for ListLanguages operation
+        ///</summary>
+        IListLanguagesPaginator ListLanguages(ListLanguagesRequest request);
+
+        /// <summary>
         /// Paginator for ListParallelData operation
         ///</summary>
         IListParallelDataPaginator ListParallelData(ListParallelDataRequest request);

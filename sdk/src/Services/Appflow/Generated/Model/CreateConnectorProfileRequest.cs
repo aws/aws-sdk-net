@@ -33,15 +33,53 @@ namespace Amazon.Appflow.Model
     /// Creates a new connector profile associated with your Amazon Web Services account.
     /// There is a soft quota of 100 connector profiles per Amazon Web Services account. If
     /// you need more connector profiles than this quota allows, you can submit a request
-    /// to the Amazon AppFlow team through the Amazon AppFlow support channel.
+    /// to the Amazon AppFlow team through the Amazon AppFlow support channel. In each connector
+    /// profile that you create, you can provide the credentials and properties for only one
+    /// connector.
     /// </summary>
     public partial class CreateConnectorProfileRequest : AmazonAppflowRequest
     {
+        private string _clientToken;
         private ConnectionMode _connectionMode;
+        private string _connectorLabel;
         private ConnectorProfileConfig _connectorProfileConfig;
         private string _connectorProfileName;
         private ConnectorType _connectorType;
         private string _kmsArn;
+
+        /// <summary>
+        /// Gets and sets the property ClientToken. 
+        /// <para>
+        /// The <code>clientToken</code> parameter is an idempotency token. It ensures that your
+        /// <code>CreateConnectorProfile</code> request completes only once. You choose the value
+        /// to pass. For example, if you don't receive a response from your request, you can safely
+        /// retry the request with the same <code>clientToken</code> parameter value.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you omit a <code>clientToken</code> value, the Amazon Web Services SDK that you
+        /// are using inserts a value for you. This way, the SDK can safely retry requests multiple
+        /// times after a network error. You must provide your own value for other use cases.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify input parameters that differ from your first request, an error occurs.
+        /// If you use a different value for <code>clientToken</code>, Amazon AppFlow considers
+        /// it a new call to <code>CreateConnectorProfile</code>. The token is active for 8 hours.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string ClientToken
+        {
+            get { return this._clientToken; }
+            set { this._clientToken = value; }
+        }
+
+        // Check to see if ClientToken property is set
+        internal bool IsSetClientToken()
+        {
+            return this._clientToken != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ConnectionMode. 
@@ -62,6 +100,27 @@ namespace Amazon.Appflow.Model
         internal bool IsSetConnectionMode()
         {
             return this._connectionMode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ConnectorLabel. 
+        /// <para>
+        /// The label of the connector. The label is unique for each <code>ConnectorRegistration</code>
+        /// in your Amazon Web Services account. Only needed if calling for CUSTOMCONNECTOR connector
+        /// type/.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=256)]
+        public string ConnectorLabel
+        {
+            get { return this._connectorLabel; }
+            set { this._connectorLabel = value; }
+        }
+
+        // Check to see if ConnectorLabel property is set
+        internal bool IsSetConnectorLabel()
+        {
+            return this._connectorLabel != null;
         }
 
         /// <summary>

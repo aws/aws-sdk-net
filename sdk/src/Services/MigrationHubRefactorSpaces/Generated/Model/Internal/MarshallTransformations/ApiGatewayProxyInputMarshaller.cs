@@ -34,7 +34,7 @@ namespace Amazon.MigrationHubRefactorSpaces.Model.Internal.MarshallTransformatio
 {
     /// <summary>
     /// ApiGatewayProxyInput Marshaller
-    /// </summary>       
+    /// </summary>
     public class ApiGatewayProxyInputMarshaller : IRequestMarshaller<ApiGatewayProxyInput, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.MigrationHubRefactorSpaces.Model.Internal.MarshallTransformatio
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ApiGatewayProxyInputMarshaller Instance = new ApiGatewayProxyInputMarshaller();
 
     }

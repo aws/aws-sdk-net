@@ -37,8 +37,10 @@ namespace Amazon.Outposts.Model
         private DateTime? _orderFulfilledDate;
         private string _orderId;
         private DateTime? _orderSubmissionDate;
+        private OrderType _orderType;
         private string _outpostId;
         private PaymentOption _paymentOption;
+        private PaymentTerm _paymentTerm;
         private OrderStatus _status;
 
         /// <summary>
@@ -115,6 +117,24 @@ namespace Amazon.Outposts.Model
         }
 
         /// <summary>
+        /// Gets and sets the property OrderType. 
+        /// <para>
+        /// The type of order.
+        /// </para>
+        /// </summary>
+        public OrderType OrderType
+        {
+            get { return this._orderType; }
+            set { this._orderType = value; }
+        }
+
+        // Check to see if OrderType property is set
+        internal bool IsSetOrderType()
+        {
+            return this._orderType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property OutpostId. 
         /// <para>
         ///  The ID of the Outpost in the order. 
@@ -152,6 +172,24 @@ namespace Amazon.Outposts.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PaymentTerm. 
+        /// <para>
+        /// The payment term.
+        /// </para>
+        /// </summary>
+        public PaymentTerm PaymentTerm
+        {
+            get { return this._paymentTerm; }
+            set { this._paymentTerm = value; }
+        }
+
+        // Check to see if PaymentTerm property is set
+        internal bool IsSetPaymentTerm()
+        {
+            return this._paymentTerm != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
         /// The status of the order.
@@ -163,7 +201,7 @@ namespace Amazon.Outposts.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>IN_PROGRESS</code> - Order is either being built, shipped, or installed. To
-        /// get more details, see the <code>LineItem</code> status.
+        /// get more details, see the line item status.
         /// </para>
         ///  </li> <li> 
         /// <para>

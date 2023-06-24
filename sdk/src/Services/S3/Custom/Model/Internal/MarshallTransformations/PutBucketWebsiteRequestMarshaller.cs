@@ -43,13 +43,16 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             request.HttpMethod = "PUT";
 
+            if (putBucketWebsiteRequest.IsSetChecksumAlgorithm())
+                request.Headers.Add(S3Constants.AmzHeaderSdkChecksumAlgorithm, S3Transforms.ToStringValue(putBucketWebsiteRequest.ChecksumAlgorithm));
+
             if (putBucketWebsiteRequest.IsSetExpectedBucketOwner())
                 request.Headers.Add(S3Constants.AmzHeaderExpectedBucketOwner, S3Transforms.ToStringValue(putBucketWebsiteRequest.ExpectedBucketOwner));
 
             if (string.IsNullOrEmpty(putBucketWebsiteRequest.BucketName))
                 throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "PutBucketWebsiteRequest.BucketName");
 
-			request.ResourcePath = string.Concat("/", S3Transforms.ToStringValue(putBucketWebsiteRequest.BucketName));
+            request.ResourcePath = "/";
 
             request.AddSubResource("website");
 
@@ -59,14 +62,15 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 var websiteConfigurationWebsiteConfiguration = putBucketWebsiteRequest.WebsiteConfiguration;
                 if (websiteConfigurationWebsiteConfiguration != null)
                 {
-                    xmlWriter.WriteStartElement("WebsiteConfiguration", "");
+                    xmlWriter.WriteStartElement("WebsiteConfiguration", S3Constants.S3RequestXmlNamespace);
+
                     if (websiteConfigurationWebsiteConfiguration != null)
                     {
                         string errorDocumentErrorDocument = websiteConfigurationWebsiteConfiguration.ErrorDocument;
                         if (errorDocumentErrorDocument != null)
                         {
-                            xmlWriter.WriteStartElement("ErrorDocument", "");
-                            xmlWriter.WriteElementString("Key", "", S3Transforms.ToXmlStringValue(errorDocumentErrorDocument));
+                            xmlWriter.WriteStartElement("ErrorDocument");
+                            xmlWriter.WriteElementString("Key", S3Transforms.ToXmlStringValue(errorDocumentErrorDocument));
                             xmlWriter.WriteEndElement();
                         }
                     }
@@ -75,8 +79,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                         string indexDocumentIndexDocument = websiteConfigurationWebsiteConfiguration.IndexDocumentSuffix;
                         if (indexDocumentIndexDocument != null)
                         {
-                            xmlWriter.WriteStartElement("IndexDocument", "");
-                            xmlWriter.WriteElementString("Suffix", "", S3Transforms.ToXmlStringValue(indexDocumentIndexDocument));
+                            xmlWriter.WriteStartElement("IndexDocument");
+                            xmlWriter.WriteElementString("Suffix", S3Transforms.ToXmlStringValue(indexDocumentIndexDocument));
                             xmlWriter.WriteEndElement();
                         }
                     }
@@ -85,26 +89,26 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                         var redirectAllRequestsToRedirectAllRequestsTo = websiteConfigurationWebsiteConfiguration.RedirectAllRequestsTo;
                         if (redirectAllRequestsToRedirectAllRequestsTo != null)
                         {
-                            xmlWriter.WriteStartElement("RedirectAllRequestsTo", "");
+                            xmlWriter.WriteStartElement("RedirectAllRequestsTo");
                             if (redirectAllRequestsToRedirectAllRequestsTo.IsSetHostName())
                             {
-                                xmlWriter.WriteElementString("HostName", "", S3Transforms.ToXmlStringValue(redirectAllRequestsToRedirectAllRequestsTo.HostName));
+                                xmlWriter.WriteElementString("HostName", S3Transforms.ToXmlStringValue(redirectAllRequestsToRedirectAllRequestsTo.HostName));
                             }
                             if (redirectAllRequestsToRedirectAllRequestsTo.IsSetHttpRedirectCode())
                             {
-                                xmlWriter.WriteElementString("HttpRedirectCode", "", S3Transforms.ToXmlStringValue(redirectAllRequestsToRedirectAllRequestsTo.HttpRedirectCode));
+                                xmlWriter.WriteElementString("HttpRedirectCode", S3Transforms.ToXmlStringValue(redirectAllRequestsToRedirectAllRequestsTo.HttpRedirectCode));
                             }
                             if (redirectAllRequestsToRedirectAllRequestsTo.IsSetProtocol())
                             {
-                                xmlWriter.WriteElementString("Protocol", "", S3Transforms.ToXmlStringValue(redirectAllRequestsToRedirectAllRequestsTo.Protocol));
+                                xmlWriter.WriteElementString("Protocol", S3Transforms.ToXmlStringValue(redirectAllRequestsToRedirectAllRequestsTo.Protocol));
                             }
                             if (redirectAllRequestsToRedirectAllRequestsTo.IsSetReplaceKeyPrefixWith())
                             {
-                                xmlWriter.WriteElementString("ReplaceKeyPrefixWith", "", S3Transforms.ToXmlStringValue(redirectAllRequestsToRedirectAllRequestsTo.ReplaceKeyPrefixWith));
+                                xmlWriter.WriteElementString("ReplaceKeyPrefixWith", S3Transforms.ToXmlStringValue(redirectAllRequestsToRedirectAllRequestsTo.ReplaceKeyPrefixWith));
                             }
                             if (redirectAllRequestsToRedirectAllRequestsTo.IsSetReplaceKeyWith())
                             {
-                                xmlWriter.WriteElementString("ReplaceKeyWith", "", S3Transforms.ToXmlStringValue(redirectAllRequestsToRedirectAllRequestsTo.ReplaceKeyWith));
+                                xmlWriter.WriteElementString("ReplaceKeyWith", S3Transforms.ToXmlStringValue(redirectAllRequestsToRedirectAllRequestsTo.ReplaceKeyWith));
                             }
                             xmlWriter.WriteEndElement();
                         }
@@ -115,23 +119,23 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                         var websiteConfigurationWebsiteConfigurationroutingRulesList = websiteConfigurationWebsiteConfiguration.RoutingRules;
                         if (websiteConfigurationWebsiteConfigurationroutingRulesList != null && websiteConfigurationWebsiteConfigurationroutingRulesList.Count > 0)
                         {
-                            xmlWriter.WriteStartElement("RoutingRules", "");
+                            xmlWriter.WriteStartElement("RoutingRules");
                             foreach (var websiteConfigurationWebsiteConfigurationroutingRulesListValue in websiteConfigurationWebsiteConfigurationroutingRulesList)
                             {
-                                xmlWriter.WriteStartElement("RoutingRule", "");
+                                xmlWriter.WriteStartElement("RoutingRule");
                                 if (websiteConfigurationWebsiteConfigurationroutingRulesListValue != null)
                                 {
                                     var conditionCondition = websiteConfigurationWebsiteConfigurationroutingRulesListValue.Condition;
                                     if (conditionCondition != null)
                                     {
-                                        xmlWriter.WriteStartElement("Condition", "");
+                                        xmlWriter.WriteStartElement("Condition");
                                         if (conditionCondition.IsSetHttpErrorCodeReturnedEquals())
                                         {
-                                            xmlWriter.WriteElementString("HttpErrorCodeReturnedEquals", "", S3Transforms.ToXmlStringValue(conditionCondition.HttpErrorCodeReturnedEquals));
+                                            xmlWriter.WriteElementString("HttpErrorCodeReturnedEquals", S3Transforms.ToXmlStringValue(conditionCondition.HttpErrorCodeReturnedEquals));
                                         }
                                         if (conditionCondition.IsSetKeyPrefixEquals())
                                         {
-                                            xmlWriter.WriteElementString("KeyPrefixEquals", "", S3Transforms.ToXmlStringValue(conditionCondition.KeyPrefixEquals));
+                                            xmlWriter.WriteElementString("KeyPrefixEquals", S3Transforms.ToXmlStringValue(conditionCondition.KeyPrefixEquals));
                                         }
                                         xmlWriter.WriteEndElement();
                                     }
@@ -141,26 +145,26 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                                     var redirectRedirect = websiteConfigurationWebsiteConfigurationroutingRulesListValue.Redirect;
                                     if (redirectRedirect != null)
                                     {
-                                        xmlWriter.WriteStartElement("Redirect", "");
+                                        xmlWriter.WriteStartElement("Redirect");
                                         if (redirectRedirect.IsSetHostName())
                                         {
-                                            xmlWriter.WriteElementString("HostName", "", S3Transforms.ToXmlStringValue(redirectRedirect.HostName));
+                                            xmlWriter.WriteElementString("HostName", S3Transforms.ToXmlStringValue(redirectRedirect.HostName));
                                         }
                                         if (redirectRedirect.IsSetHttpRedirectCode())
                                         {
-                                            xmlWriter.WriteElementString("HttpRedirectCode", "", S3Transforms.ToXmlStringValue(redirectRedirect.HttpRedirectCode));
+                                            xmlWriter.WriteElementString("HttpRedirectCode", S3Transforms.ToXmlStringValue(redirectRedirect.HttpRedirectCode));
                                         }
                                         if (redirectRedirect.IsSetProtocol())
                                         {
-                                            xmlWriter.WriteElementString("Protocol", "", S3Transforms.ToXmlStringValue(redirectRedirect.Protocol));
+                                            xmlWriter.WriteElementString("Protocol", S3Transforms.ToXmlStringValue(redirectRedirect.Protocol));
                                         }
                                         if (redirectRedirect.IsSetReplaceKeyPrefixWith())
                                         {
-                                            xmlWriter.WriteElementString("ReplaceKeyPrefixWith", "", S3Transforms.ToXmlStringValue(redirectRedirect.ReplaceKeyPrefixWith));
+                                            xmlWriter.WriteElementString("ReplaceKeyPrefixWith", S3Transforms.ToXmlStringValue(redirectRedirect.ReplaceKeyPrefixWith));
                                         }
                                         if (redirectRedirect.IsSetReplaceKeyWith())
                                         {
-                                            xmlWriter.WriteElementString("ReplaceKeyWith", "", S3Transforms.ToXmlStringValue(redirectRedirect.ReplaceKeyWith));
+                                            xmlWriter.WriteElementString("ReplaceKeyWith", S3Transforms.ToXmlStringValue(redirectRedirect.ReplaceKeyWith));
                                         }
                                         xmlWriter.WriteEndElement();
                                     }
@@ -180,9 +184,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 request.Content = Encoding.UTF8.GetBytes(content);
                 request.Headers[HeaderKeys.ContentTypeHeader] = "application/xml";
 
-                var checksum = AWSSDKUtils.GenerateChecksumForContent(content, true);
-                request.Headers[HeaderKeys.ContentMD5Header] = checksum;
-
+                ChecksumUtils.SetRequestChecksum(request, putBucketWebsiteRequest.ChecksumAlgorithm);
             }
             catch (EncoderFallbackException e)
             {

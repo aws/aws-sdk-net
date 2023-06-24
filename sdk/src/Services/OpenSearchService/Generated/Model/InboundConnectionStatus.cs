@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// The connection status of an inbound cross-cluster connection.
+    /// The status of an inbound cross-cluster connection for OpenSearch Service.
     /// </summary>
     public partial class InboundConnectionStatus
     {
@@ -39,7 +39,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property Message. 
         /// <para>
-        /// Verbose information for the inbound connection status.
+        /// Information about the connection.
         /// </para>
         /// </summary>
         public string Message
@@ -57,15 +57,42 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property StatusCode. 
         /// <para>
-        /// The state code for the inbound connection. Can be one of the following:
+        /// The status code for the connection. Can be one of the following:
         /// </para>
-        ///  <ul> <li>PENDING_ACCEPTANCE: Inbound connection is not yet accepted by the remote
-        /// domain owner.</li> <li>APPROVED: Inbound connection is pending acceptance by the remote
-        /// domain owner.</li> <li>PROVISIONING: Inbound connection provisioning is in progress.</li>
-        /// <li>ACTIVE: Inbound connection is active and ready to use.</li> <li>REJECTING: Inbound
-        /// connection rejection is in process.</li> <li>REJECTED: Inbound connection is rejected.</li>
-        /// <li>DELETING: Inbound connection deletion is in progress.</li> <li>DELETED: Inbound
-        /// connection is deleted and can no longer be used.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>PENDING_ACCEPTANCE</b> - Inbound connection is not yet accepted by the remote
+        /// domain owner.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>APPROVED</b>: Inbound connection is pending acceptance by the remote domain owner.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>PROVISIONING</b>: Inbound connection is being provisioned.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>ACTIVE</b>: Inbound connection is active and ready to use.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>REJECTING</b>: Inbound connection rejection is in process.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>REJECTED</b>: Inbound connection is rejected.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>DELETING</b>: Inbound connection deletion is in progress.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>DELETED</b>: Inbound connection is deleted and can no longer be used.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public InboundConnectionStatusCode StatusCode
         {

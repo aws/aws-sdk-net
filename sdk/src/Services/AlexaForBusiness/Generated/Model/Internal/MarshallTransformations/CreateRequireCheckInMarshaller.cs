@@ -34,7 +34,7 @@ namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CreateRequireCheckIn Marshaller
-    /// </summary>       
+    /// </summary>
     public class CreateRequireCheckInMarshaller : IRequestMarshaller<CreateRequireCheckIn, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CreateRequireCheckInMarshaller Instance = new CreateRequireCheckInMarshaller();
 
     }

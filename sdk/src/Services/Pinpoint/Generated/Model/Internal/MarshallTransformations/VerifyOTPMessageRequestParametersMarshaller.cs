@@ -34,7 +34,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// VerifyOTPMessageRequestParameters Marshaller
-    /// </summary>       
+    /// </summary>
     public class VerifyOTPMessageRequestParametersMarshaller : IRequestMarshaller<VerifyOTPMessageRequestParameters, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static VerifyOTPMessageRequestParametersMarshaller Instance = new VerifyOTPMessageRequestParametersMarshaller();
 
     }

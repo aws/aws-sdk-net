@@ -30,7 +30,7 @@ namespace Amazon.LocationService.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateRouteCalculator operation.
-    /// Creates a route calculator resource in your AWS account.
+    /// Creates a route calculator resource in your Amazon Web Services account.
     /// 
     ///  
     /// <para>
@@ -38,6 +38,14 @@ namespace Amazon.LocationService.Model
     /// and get directions. A route calculator sources traffic and road network data from
     /// your chosen data provider.
     /// </para>
+    ///  <note> 
+    /// <para>
+    /// If your application is tracking or routing assets you use in your business, such as
+    /// delivery vehicles or employees, you must not use Esri as your geolocation provider.
+    /// See section 82 of the <a href="http://aws.amazon.com/service-terms">Amazon Web Services
+    /// service terms</a> for more details.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class CreateRouteCalculatorRequest : AmazonLocationServiceRequest
     {
@@ -92,8 +100,7 @@ namespace Amazon.LocationService.Model
         ///  <note> 
         /// <para>
         /// This field is case-sensitive. Enter the valid values as shown. For example, entering
-        /// <code>HERE</code> returns an error. Route calculators that use Esri as a data source
-        /// only calculate routes that are shorter than 400 km.
+        /// <code>HERE</code> returns an error.
         /// </para>
         ///  </note> 
         /// <para>
@@ -104,6 +111,18 @@ namespace Amazon.LocationService.Model
         ///  <code>Esri</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>'s
         /// coverage in your region of interest, see <a href="https://doc.arcgis.com/en/arcgis-online/reference/network-coverage.htm">Esri
         /// details on street networks and traffic coverage</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Route calculators that use Esri as a data source only calculate routes that are shorter
+        /// than 400 km.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Grab</code> – Grab provides routing functionality for Southeast Asia. For additional
+        /// information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a>'
+        /// coverage, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html#grab-coverage-area">GrabMaps
+        /// countries and areas covered</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -153,15 +172,10 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property PricingPlan. 
         /// <para>
-        /// Specifies the pricing plan for your route calculator resource.
-        /// </para>
-        ///  
-        /// <para>
-        /// For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon
-        /// Location Service pricing</a>.
+        /// No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [Obsolete("Deprecated. If included, the only allowed value is RequestBasedUsage.")]
         public PricingPlan PricingPlan
         {
             get { return this._pricingPlan; }

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kendra.Model
 {
     /// <summary>
-    /// Specifies the page settings for the Confluence data source.
+    /// Configuration of the page settings for the Confluence data source.
     /// </summary>
     public partial class ConfluencePageConfiguration
     {
@@ -38,9 +38,11 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property PageFieldMappings. 
         /// <para>
-        /// Defines how page metadata fields should be mapped to index fields. Before you can
-        /// map a field, you must first create an index field with a matching type using the console
-        /// or the <code>UpdateIndex</code> operation.
+        /// Maps attributes or field names of Confluence pages to Amazon Kendra index field names.
+        /// To create custom fields, use the <code>UpdateIndex</code> API before you map to Confluence
+        /// fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
+        /// data source fields</a>. The Confluence data source field names must exist in your
+        /// Confluence custom metadata.
         /// </para>
         ///  
         /// <para>

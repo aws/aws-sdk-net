@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AsyncInferenceNotificationConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class AsyncInferenceNotificationConfigMarshaller : IRequestMarshaller<AsyncInferenceNotificationConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -51,6 +51,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ErrorTopic);
             }
 
+            if(requestObject.IsSetIncludeInferenceResponseIn())
+            {
+                context.Writer.WritePropertyName("IncludeInferenceResponseIn");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectIncludeInferenceResponseInListValue in requestObject.IncludeInferenceResponseIn)
+                {
+                        context.Writer.Write(requestObjectIncludeInferenceResponseInListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetSuccessTopic())
             {
                 context.Writer.WritePropertyName("SuccessTopic");
@@ -61,7 +72,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AsyncInferenceNotificationConfigMarshaller Instance = new AsyncInferenceNotificationConfigMarshaller();
 
     }

@@ -103,11 +103,11 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property OutpostId. 
         /// <para>
-        /// The ID of the Outposts.
+        /// The ID of the Outposts resource.
         /// </para>
         ///  <note> 
         /// <para>
-        /// This is required by Amazon S3 on Outposts buckets.
+        /// This ID is required by Amazon S3 on Outposts buckets.
         /// </para>
         ///  </note>
         /// </summary>

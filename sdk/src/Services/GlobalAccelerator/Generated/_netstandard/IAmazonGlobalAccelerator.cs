@@ -31,16 +31,16 @@ namespace Amazon.GlobalAccelerator
     /// <summary>
     /// Interface for accessing GlobalAccelerator
     ///
-    /// AWS Global Accelerator 
+    /// Global Accelerator 
     /// <para>
-    /// This is the <i>AWS Global Accelerator API Reference</i>. This guide is for developers
-    /// who need detailed information about AWS Global Accelerator API actions, data types,
-    /// and errors. For more information about Global Accelerator features, see the <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/Welcome.html">AWS
-    /// Global Accelerator Developer Guide</a>.
+    /// This is the <i>Global Accelerator API Reference</i>. This guide is for developers
+    /// who need detailed information about Global Accelerator API actions, data types, and
+    /// errors. For more information about Global Accelerator features, see the <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/what-is-global-accelerator.html">Global
+    /// Accelerator Developer Guide</a>.
     /// </para>
     ///  
     /// <para>
-    /// AWS Global Accelerator is a service in which you create <i>accelerators</i> to improve
+    /// Global Accelerator is a service in which you create <i>accelerators</i> to improve
     /// the performance of your applications for local and global users. Depending on the
     /// type of accelerator you choose, you can gain additional benefits. 
     /// </para>
@@ -48,7 +48,8 @@ namespace Amazon.GlobalAccelerator
     /// <para>
     /// By using a standard accelerator, you can improve availability of your internet applications
     /// that are used by a global audience. With a standard accelerator, Global Accelerator
-    /// directs traffic to optimal endpoints over the AWS global network. 
+    /// directs traffic to optimal endpoints over the Amazon Web Services global network.
+    /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -58,23 +59,31 @@ namespace Amazon.GlobalAccelerator
     /// </para>
     ///  </li> </ul> <important> 
     /// <para>
-    /// Global Accelerator is a global service that supports endpoints in multiple AWS Regions
-    /// but you must specify the US West (Oregon) Region to create or update accelerators.
+    /// Global Accelerator is a global service that supports endpoints in multiple Amazon
+    /// Web Services Regions but you must specify the US West (Oregon) Region to create, update,
+    /// or otherwise work with accelerators. That is, for example, specify <code>--region
+    /// us-west-2</code> on AWS CLI commands.
     /// </para>
     ///  </important> 
     /// <para>
-    /// By default, Global Accelerator provides you with two static IP addresses that you
-    /// associate with your accelerator. With a standard accelerator, instead of using the
-    /// IP addresses that Global Accelerator provides, you can configure these entry points
-    /// to be IPv4 addresses from your own IP address ranges that you bring to Global Accelerator.
-    /// The static IP addresses are anycast from the AWS edge network. For a standard accelerator,
-    /// they distribute incoming application traffic across multiple endpoint resources in
-    /// multiple AWS Regions, which increases the availability of your applications. Endpoints
-    /// for standard accelerators can be Network Load Balancers, Application Load Balancers,
-    /// Amazon EC2 instances, or Elastic IP addresses that are located in one AWS Region or
-    /// multiple Regions. For custom routing accelerators, you map traffic that arrives to
-    /// the static IP addresses to specific Amazon EC2 servers in endpoints that are virtual
-    /// private cloud (VPC) subnets.
+    /// By default, Global Accelerator provides you with static IP addresses that you associate
+    /// with your accelerator. The static IP addresses are anycast from the Amazon Web Services
+    /// edge network. For IPv4, Global Accelerator provides two static IPv4 addresses. For
+    /// dual-stack, Global Accelerator provides a total of four addresses: two static IPv4
+    /// addresses and two static IPv6 addresses. With a standard accelerator for IPv4, instead
+    /// of using the addresses that Global Accelerator provides, you can configure these entry
+    /// points to be IPv4 addresses from your own IP address ranges that you bring toGlobal
+    /// Accelerator (BYOIP). 
+    /// </para>
+    ///  
+    /// <para>
+    /// For a standard accelerator, they distribute incoming application traffic across multiple
+    /// endpoint resources in multiple Amazon Web Services Regions , which increases the availability
+    /// of your applications. Endpoints for standard accelerators can be Network Load Balancers,
+    /// Application Load Balancers, Amazon EC2 instances, or Elastic IP addresses that are
+    /// located in one Amazon Web Services Region or multiple Amazon Web Services Regions.
+    /// For custom routing accelerators, you map traffic that arrives to the static IP addresses
+    /// to specific Amazon EC2 servers in endpoints that are virtual private cloud (VPC) subnets.
     /// </para>
     ///  <important> 
     /// <para>
@@ -88,139 +97,18 @@ namespace Amazon.GlobalAccelerator
     /// </para>
     ///  </important> 
     /// <para>
-    /// For standard accelerators, Global Accelerator uses the AWS global network to route
-    /// traffic to the optimal regional endpoint based on health, client location, and policies
-    /// that you configure. The service reacts instantly to changes in health or configuration
-    /// to ensure that internet traffic from clients is always directed to healthy endpoints.
+    /// For standard accelerators, Global Accelerator uses the Amazon Web Services global
+    /// network to route traffic to the optimal regional endpoint based on health, client
+    /// location, and policies that you configure. The service reacts instantly to changes
+    /// in health or configuration to ensure that internet traffic from clients is always
+    /// directed to healthy endpoints.
     /// </para>
     ///  
     /// <para>
-    /// For a list of the AWS Regions where Global Accelerator and other services are currently
-    /// supported, see the <a href="https://docs.aws.amazon.com/about-aws/global-infrastructure/regional-product-services/">AWS
-    /// Region Table</a>.
+    /// For more information about understanding and using Global Accelerator, see the <a
+    /// href="https://docs.aws.amazon.com/global-accelerator/latest/dg/what-is-global-accelerator.html">Global
+    /// Accelerator Developer Guide</a>.
     /// </para>
-    ///  
-    /// <para>
-    /// AWS Global Accelerator includes the following components:
-    /// </para>
-    ///  <dl> <dt>Static IP addresses</dt> <dd> 
-    /// <para>
-    /// Global Accelerator provides you with a set of two static IP addresses that are anycast
-    /// from the AWS edge network. If you bring your own IP address range to AWS (BYOIP) to
-    /// use with a standard accelerator, you can instead assign IP addresses from your own
-    /// pool to use with your accelerator. For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">
-    /// Bring your own IP addresses (BYOIP) in AWS Global Accelerator</a>.
-    /// </para>
-    ///  
-    /// <para>
-    /// The IP addresses serve as single fixed entry points for your clients. If you already
-    /// have Elastic Load Balancing load balancers, Amazon EC2 instances, or Elastic IP address
-    /// resources set up for your applications, you can easily add those to a standard accelerator
-    /// in Global Accelerator. This allows Global Accelerator to use static IP addresses to
-    /// access the resources.
-    /// </para>
-    ///  
-    /// <para>
-    /// The static IP addresses remain assigned to your accelerator for as long as it exists,
-    /// even if you disable the accelerator and it no longer accepts or routes traffic. However,
-    /// when you <i>delete</i> an accelerator, you lose the static IP addresses that are assigned
-    /// to it, so you can no longer route traffic by using them. You can use IAM policies
-    /// like tag-based permissions with Global Accelerator to delete an accelerator. For more
-    /// information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/access-control-manage-access-tag-policies.html">Tag-based
-    /// policies</a>.
-    /// </para>
-    ///  </dd> <dt>Accelerator</dt> <dd> 
-    /// <para>
-    /// An accelerator directs traffic to endpoints over the AWS global network to improve
-    /// the performance of your internet applications. Each accelerator includes one or more
-    /// listeners.
-    /// </para>
-    ///  
-    /// <para>
-    /// There are two types of accelerators:
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    /// A <i>standard</i> accelerator directs traffic to the optimal AWS endpoint based on
-    /// several factors, including the user’s location, the health of the endpoint, and the
-    /// endpoint weights that you configure. This improves the availability and performance
-    /// of your applications. Endpoints can be Network Load Balancers, Application Load Balancers,
-    /// Amazon EC2 instances, or Elastic IP addresses.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// A <i>custom routing</i> accelerator directs traffic to one of possibly thousands of
-    /// Amazon EC2 instances running in a single or multiple virtual private clouds (VPCs).
-    /// With custom routing, listener ports are mapped to statically associate port ranges
-    /// with VPC subnets, which allows Global Accelerator to determine an EC2 instance IP
-    /// address at the time of connection. By default, all port mapping destinations in a
-    /// VPC subnet can't receive traffic. You can choose to configure all destinations in
-    /// the subnet to receive traffic, or to specify individual port mappings that can receive
-    /// traffic.
-    /// </para>
-    ///  </li> </ul> 
-    /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/introduction-accelerator-types.html">Types
-    /// of accelerators</a>.
-    /// </para>
-    ///  </dd> <dt>DNS name</dt> <dd> 
-    /// <para>
-    /// Global Accelerator assigns each accelerator a default Domain Name System (DNS) name,
-    /// similar to <code>a1234567890abcdef.awsglobalaccelerator.com</code>, that points to
-    /// the static IP addresses that Global Accelerator assigns to you or that you choose
-    /// from your own IP address range. Depending on the use case, you can use your accelerator's
-    /// static IP addresses or DNS name to route traffic to your accelerator, or set up DNS
-    /// records to route traffic using your own custom domain name.
-    /// </para>
-    ///  </dd> <dt>Network zone</dt> <dd> 
-    /// <para>
-    /// A network zone services the static IP addresses for your accelerator from a unique
-    /// IP subnet. Similar to an AWS Availability Zone, a network zone is an isolated unit
-    /// with its own set of physical infrastructure. When you configure an accelerator, by
-    /// default, Global Accelerator allocates two IPv4 addresses for it. If one IP address
-    /// from a network zone becomes unavailable due to IP address blocking by certain client
-    /// networks, or network disruptions, then client applications can retry on the healthy
-    /// static IP address from the other isolated network zone.
-    /// </para>
-    ///  </dd> <dt>Listener</dt> <dd> 
-    /// <para>
-    /// A listener processes inbound connections from clients to Global Accelerator, based
-    /// on the port (or port range) and protocol (or protocols) that you configure. A listener
-    /// can be configured for TCP, UDP, or both TCP and UDP protocols. Each listener has one
-    /// or more endpoint groups associated with it, and traffic is forwarded to endpoints
-    /// in one of the groups. You associate endpoint groups with listeners by specifying the
-    /// Regions that you want to distribute traffic to. With a standard accelerator, traffic
-    /// is distributed to optimal endpoints within the endpoint groups associated with a listener.
-    /// </para>
-    ///  </dd> <dt>Endpoint group</dt> <dd> 
-    /// <para>
-    /// Each endpoint group is associated with a specific AWS Region. Endpoint groups include
-    /// one or more endpoints in the Region. With a standard accelerator, you can increase
-    /// or reduce the percentage of traffic that would be otherwise directed to an endpoint
-    /// group by adjusting a setting called a <i>traffic dial</i>. The traffic dial lets you
-    /// easily do performance testing or blue/green deployment testing, for example, for new
-    /// releases across different AWS Regions. 
-    /// </para>
-    ///  </dd> <dt>Endpoint</dt> <dd> 
-    /// <para>
-    /// An endpoint is a resource that Global Accelerator directs traffic to.
-    /// </para>
-    ///  
-    /// <para>
-    /// Endpoints for standard accelerators can be Network Load Balancers, Application Load
-    /// Balancers, Amazon EC2 instances, or Elastic IP addresses. An Application Load Balancer
-    /// endpoint can be internet-facing or internal. Traffic for standard accelerators is
-    /// routed to endpoints based on the health of the endpoint along with configuration options
-    /// that you choose, such as endpoint weights. For each endpoint, you can configure weights,
-    /// which are numbers that you can use to specify the proportion of traffic to route to
-    /// each one. This can be useful, for example, to do performance testing within a Region.
-    /// </para>
-    ///  
-    /// <para>
-    /// Endpoints for custom routing accelerators are virtual private cloud (VPC) subnets
-    /// with one or many EC2 instances.
-    /// </para>
-    ///  </dd> </dl>
     /// </summary>
     public partial interface IAmazonGlobalAccelerator : IAmazonService, IDisposable
     {
@@ -277,16 +165,73 @@ namespace Amazon.GlobalAccelerator
         /// The endpoint group that you specified doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InternalServiceErrorException">
-        /// There was an internal error for AWS Global Accelerator.
+        /// There was an internal error for Global Accelerator.
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InvalidArgumentException">
         /// An argument that you specified is invalid.
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.LimitExceededException">
-        /// Processing your request would cause you to exceed an AWS Global Accelerator limit.
+        /// Processing your request would cause you to exceed an Global Accelerator limit.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/AddCustomRoutingEndpoints">REST API Reference for AddCustomRoutingEndpoints Operation</seealso>
         Task<AddCustomRoutingEndpointsResponse> AddCustomRoutingEndpointsAsync(AddCustomRoutingEndpointsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  AddEndpoints
+
+
+
+        /// <summary>
+        /// Add endpoints to an endpoint group. The <code>AddEndpoints</code> API operation is
+        /// the recommended option for adding endpoints. The alternative options are to add endpoints
+        /// when you create an endpoint group (with the <a href="https://docs.aws.amazon.com/global-accelerator/latest/api/API_CreateEndpointGroup.html">CreateEndpointGroup</a>
+        /// API) or when you update an endpoint group (with the <a href="https://docs.aws.amazon.com/global-accelerator/latest/api/API_UpdateEndpointGroup.html">UpdateEndpointGroup</a>
+        /// API). 
+        /// 
+        ///  
+        /// <para>
+        /// There are two advantages to using <code>AddEndpoints</code> to add endpoints:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// It's faster, because Global Accelerator only has to resolve the new endpoints that
+        /// you're adding.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// It's more convenient, because you don't need to specify all of the current endpoints
+        /// that are already in the endpoint group in addition to the new endpoints that you want
+        /// to add.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AddEndpoints service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AddEndpoints service method, as returned by GlobalAccelerator.</returns>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.AccessDeniedException">
+        /// You don't have access permission.
+        /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.EndpointGroupNotFoundException">
+        /// The endpoint group that you specified doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.InternalServiceErrorException">
+        /// There was an internal error for Global Accelerator.
+        /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.InvalidArgumentException">
+        /// An argument that you specified is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.LimitExceededException">
+        /// Processing your request would cause you to exceed an Global Accelerator limit.
+        /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.TransactionInProgressException">
+        /// There's already a transaction in progress. Another transaction can't be processed.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/AddEndpoints">REST API Reference for AddEndpoints Operation</seealso>
+        Task<AddEndpointsResponse> AddEndpointsAsync(AddEndpointsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -295,9 +240,10 @@ namespace Amazon.GlobalAccelerator
 
 
         /// <summary>
-        /// Advertises an IPv4 address range that is provisioned for use with your AWS resources
-        /// through bring your own IP addresses (BYOIP). It can take a few minutes before traffic
-        /// to the specified addresses starts routing to AWS because of propagation delays. 
+        /// Advertises an IPv4 address range that is provisioned for use with your Amazon Web
+        /// Services resources through bring your own IP addresses (BYOIP). It can take a few
+        /// minutes before traffic to the specified addresses starts routing to Amazon Web Services
+        /// because of propagation delays. 
         /// 
         ///  
         /// <para>
@@ -307,7 +253,7 @@ namespace Amazon.GlobalAccelerator
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring
-        /// Your Own IP Addresses (BYOIP)</a> in the <i>AWS Global Accelerator Developer Guide</i>.
+        /// your own IP addresses (BYOIP)</a> in the <i>Global Accelerator Developer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AdvertiseByoipCidr service method.</param>
@@ -327,7 +273,7 @@ namespace Amazon.GlobalAccelerator
         /// the CIDR might be incorrect for this action.
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InternalServiceErrorException">
-        /// There was an internal error for AWS Global Accelerator.
+        /// There was an internal error for Global Accelerator.
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InvalidArgumentException">
         /// An argument that you specified is invalid.
@@ -360,8 +306,11 @@ namespace Amazon.GlobalAccelerator
         /// </param>
         /// 
         /// <returns>The response from the AllowCustomRoutingTraffic service method, as returned by GlobalAccelerator.</returns>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.EndpointGroupNotFoundException">
+        /// The endpoint group that you specified doesn't exist.
+        /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InternalServiceErrorException">
-        /// There was an internal error for AWS Global Accelerator.
+        /// There was an internal error for Global Accelerator.
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InvalidArgumentException">
         /// An argument that you specified is invalid.
@@ -382,8 +331,10 @@ namespace Amazon.GlobalAccelerator
         /// 
         ///  <important> 
         /// <para>
-        /// Global Accelerator is a global service that supports endpoints in multiple AWS Regions
-        /// but you must specify the US West (Oregon) Region to create or update accelerators.
+        /// Global Accelerator is a global service that supports endpoints in multiple Amazon
+        /// Web Services Regions but you must specify the US West (Oregon) Region to create, update,
+        /// or otherwise work with accelerators. That is, for example, specify <code>--region
+        /// us-west-2</code> on AWS CLI commands.
         /// </para>
         ///  </important>
         /// </summary>
@@ -394,13 +345,13 @@ namespace Amazon.GlobalAccelerator
         /// 
         /// <returns>The response from the CreateAccelerator service method, as returned by GlobalAccelerator.</returns>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InternalServiceErrorException">
-        /// There was an internal error for AWS Global Accelerator.
+        /// There was an internal error for Global Accelerator.
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InvalidArgumentException">
         /// An argument that you specified is invalid.
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.LimitExceededException">
-        /// Processing your request would cause you to exceed an AWS Global Accelerator limit.
+        /// Processing your request would cause you to exceed an Global Accelerator limit.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/CreateAccelerator">REST API Reference for CreateAccelerator Operation</seealso>
         Task<CreateAcceleratorResponse> CreateAcceleratorAsync(CreateAcceleratorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -425,8 +376,10 @@ namespace Amazon.GlobalAccelerator
         /// </para>
         ///  <important> 
         /// <para>
-        /// Global Accelerator is a global service that supports endpoints in multiple AWS Regions
-        /// but you must specify the US West (Oregon) Region to create or update accelerators.
+        /// Global Accelerator is a global service that supports endpoints in multiple Amazon
+        /// Web Services Regions but you must specify the US West (Oregon) Region to create, update,
+        /// or otherwise work with accelerators. That is, for example, specify <code>--region
+        /// us-west-2</code> on AWS CLI commands.
         /// </para>
         ///  </important>
         /// </summary>
@@ -440,13 +393,13 @@ namespace Amazon.GlobalAccelerator
         /// You don't have access permission.
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InternalServiceErrorException">
-        /// There was an internal error for AWS Global Accelerator.
+        /// There was an internal error for Global Accelerator.
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InvalidArgumentException">
         /// An argument that you specified is invalid.
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.LimitExceededException">
-        /// Processing your request would cause you to exceed an AWS Global Accelerator limit.
+        /// Processing your request would cause you to exceed an Global Accelerator limit.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/CreateCustomRoutingAccelerator">REST API Reference for CreateCustomRoutingAccelerator Operation</seealso>
         Task<CreateCustomRoutingAcceleratorResponse> CreateCustomRoutingAcceleratorAsync(CreateCustomRoutingAcceleratorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -459,7 +412,7 @@ namespace Amazon.GlobalAccelerator
 
         /// <summary>
         /// Create an endpoint group for the specified listener for a custom routing accelerator.
-        /// An endpoint group is a collection of endpoints in one AWS Region.
+        /// An endpoint group is a collection of endpoints in one Amazon Web Services Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCustomRoutingEndpointGroup service method.</param>
         /// <param name="cancellationToken">
@@ -477,7 +430,7 @@ namespace Amazon.GlobalAccelerator
         /// The endpoint group that you specified already exists.
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InternalServiceErrorException">
-        /// There was an internal error for AWS Global Accelerator.
+        /// There was an internal error for Global Accelerator.
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InvalidArgumentException">
         /// An argument that you specified is invalid.
@@ -487,7 +440,7 @@ namespace Amazon.GlobalAccelerator
         /// accelerator.
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.LimitExceededException">
-        /// Processing your request would cause you to exceed an AWS Global Accelerator limit.
+        /// Processing your request would cause you to exceed an Global Accelerator limit.
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.ListenerNotFoundException">
         /// The listener that you specified doesn't exist.
@@ -516,7 +469,7 @@ namespace Amazon.GlobalAccelerator
         /// The accelerator that you specified doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InternalServiceErrorException">
-        /// There was an internal error for AWS Global Accelerator.
+        /// There was an internal error for Global Accelerator.
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InvalidArgumentException">
         /// An argument that you specified is invalid.
@@ -526,7 +479,7 @@ namespace Amazon.GlobalAccelerator
         /// accelerator.
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.LimitExceededException">
-        /// Processing your request would cause you to exceed an AWS Global Accelerator limit.
+        /// Processing your request would cause you to exceed an Global Accelerator limit.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/CreateCustomRoutingListener">REST API Reference for CreateCustomRoutingListener Operation</seealso>
         Task<CreateCustomRoutingListenerResponse> CreateCustomRoutingListenerAsync(CreateCustomRoutingListenerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -539,8 +492,8 @@ namespace Amazon.GlobalAccelerator
 
         /// <summary>
         /// Create an endpoint group for the specified listener. An endpoint group is a collection
-        /// of endpoints in one AWS Region. A resource must be valid and active when you add it
-        /// as an endpoint.
+        /// of endpoints in one Amazon Web Services Region. A resource must be valid and active
+        /// when you add it as an endpoint.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateEndpointGroup service method.</param>
         /// <param name="cancellationToken">
@@ -558,13 +511,13 @@ namespace Amazon.GlobalAccelerator
         /// The endpoint group that you specified already exists.
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InternalServiceErrorException">
-        /// There was an internal error for AWS Global Accelerator.
+        /// There was an internal error for Global Accelerator.
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InvalidArgumentException">
         /// An argument that you specified is invalid.
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.LimitExceededException">
-        /// Processing your request would cause you to exceed an AWS Global Accelerator limit.
+        /// Processing your request would cause you to exceed an Global Accelerator limit.
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.ListenerNotFoundException">
         /// The listener that you specified doesn't exist.
@@ -593,7 +546,7 @@ namespace Amazon.GlobalAccelerator
         /// The accelerator that you specified doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InternalServiceErrorException">
-        /// There was an internal error for AWS Global Accelerator.
+        /// There was an internal error for Global Accelerator.
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InvalidArgumentException">
         /// An argument that you specified is invalid.
@@ -603,7 +556,7 @@ namespace Amazon.GlobalAccelerator
         /// accelerator.
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.LimitExceededException">
-        /// Processing your request would cause you to exceed an AWS Global Accelerator limit.
+        /// Processing your request would cause you to exceed an Global Accelerator limit.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/CreateListener">REST API Reference for CreateListener Operation</seealso>
         Task<CreateListenerResponse> CreateListenerAsync(CreateListenerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -633,8 +586,8 @@ namespace Amazon.GlobalAccelerator
         /// to the accelerator, so you can no longer route traffic by using them. As a best practice,
         /// ensure that you have permissions in place to avoid inadvertently deleting accelerators.
         /// You can use IAM policies with Global Accelerator to limit the users who have permissions
-        /// to delete an accelerator. For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/auth-and-access-control.html">Authentication
-        /// and Access Control</a> in the <i>AWS Global Accelerator Developer Guide</i>.
+        /// to delete an accelerator. For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/auth-and-access-control.html">Identity
+        /// and access management</a> in the <i>Global Accelerator Developer Guide</i>.
         /// </para>
         ///  </important>
         /// </summary>
@@ -655,7 +608,7 @@ namespace Amazon.GlobalAccelerator
         /// all dependent resources from an accelerator before you can delete it.
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InternalServiceErrorException">
-        /// There was an internal error for AWS Global Accelerator.
+        /// There was an internal error for Global Accelerator.
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InvalidArgumentException">
         /// An argument that you specified is invalid.
@@ -687,8 +640,8 @@ namespace Amazon.GlobalAccelerator
         /// to the accelerator, so you can no longer route traffic by using them. As a best practice,
         /// ensure that you have permissions in place to avoid inadvertently deleting accelerators.
         /// You can use IAM policies with Global Accelerator to limit the users who have permissions
-        /// to delete an accelerator. For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/auth-and-access-control.html">Authentication
-        /// and Access Control</a> in the <i>AWS Global Accelerator Developer Guide</i>.
+        /// to delete an accelerator. For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/auth-and-access-control.html">Identity
+        /// and access management</a> in the <i>Global Accelerator Developer Guide</i>.
         /// </para>
         ///  </important>
         /// </summary>
@@ -709,7 +662,7 @@ namespace Amazon.GlobalAccelerator
         /// all dependent resources from an accelerator before you can delete it.
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InternalServiceErrorException">
-        /// There was an internal error for AWS Global Accelerator.
+        /// There was an internal error for Global Accelerator.
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InvalidArgumentException">
         /// An argument that you specified is invalid.
@@ -736,7 +689,7 @@ namespace Amazon.GlobalAccelerator
         /// The endpoint group that you specified doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InternalServiceErrorException">
-        /// There was an internal error for AWS Global Accelerator.
+        /// There was an internal error for Global Accelerator.
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InvalidArgumentException">
         /// An argument that you specified is invalid.
@@ -764,7 +717,7 @@ namespace Amazon.GlobalAccelerator
         /// remove all dependent resources from a listener before you can delete it.
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InternalServiceErrorException">
-        /// There was an internal error for AWS Global Accelerator.
+        /// There was an internal error for Global Accelerator.
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InvalidArgumentException">
         /// An argument that you specified is invalid.
@@ -794,7 +747,7 @@ namespace Amazon.GlobalAccelerator
         /// The endpoint group that you specified doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InternalServiceErrorException">
-        /// There was an internal error for AWS Global Accelerator.
+        /// There was an internal error for Global Accelerator.
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InvalidArgumentException">
         /// An argument that you specified is invalid.
@@ -822,7 +775,7 @@ namespace Amazon.GlobalAccelerator
         /// remove all dependent resources from a listener before you can delete it.
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InternalServiceErrorException">
-        /// There was an internal error for AWS Global Accelerator.
+        /// There was an internal error for Global Accelerator.
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InvalidArgumentException">
         /// An argument that you specified is invalid.
@@ -858,8 +811,11 @@ namespace Amazon.GlobalAccelerator
         /// </param>
         /// 
         /// <returns>The response from the DenyCustomRoutingTraffic service method, as returned by GlobalAccelerator.</returns>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.EndpointGroupNotFoundException">
+        /// The endpoint group that you specified doesn't exist.
+        /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InternalServiceErrorException">
-        /// There was an internal error for AWS Global Accelerator.
+        /// There was an internal error for Global Accelerator.
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InvalidArgumentException">
         /// An argument that you specified is invalid.
@@ -874,9 +830,9 @@ namespace Amazon.GlobalAccelerator
 
 
         /// <summary>
-        /// Releases the specified address range that you provisioned to use with your AWS resources
-        /// through bring your own IP addresses (BYOIP) and deletes the corresponding address
-        /// pool. 
+        /// Releases the specified address range that you provisioned to use with your Amazon
+        /// Web Services resources through bring your own IP addresses (BYOIP) and deletes the
+        /// corresponding address pool. 
         /// 
         ///  
         /// <para>
@@ -888,7 +844,7 @@ namespace Amazon.GlobalAccelerator
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring
-        /// Your Own IP Addresses (BYOIP)</a> in the <i>AWS Global Accelerator Developer Guide</i>.
+        /// your own IP addresses (BYOIP)</a> in the <i>Global Accelerator Developer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeprovisionByoipCidr service method.</param>
@@ -908,7 +864,7 @@ namespace Amazon.GlobalAccelerator
         /// the CIDR might be incorrect for this action.
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InternalServiceErrorException">
-        /// There was an internal error for AWS Global Accelerator.
+        /// There was an internal error for Global Accelerator.
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InvalidArgumentException">
         /// An argument that you specified is invalid.
@@ -935,7 +891,7 @@ namespace Amazon.GlobalAccelerator
         /// The accelerator that you specified doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InternalServiceErrorException">
-        /// There was an internal error for AWS Global Accelerator.
+        /// There was an internal error for Global Accelerator.
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InvalidArgumentException">
         /// An argument that you specified is invalid.
@@ -962,7 +918,7 @@ namespace Amazon.GlobalAccelerator
         /// The accelerator that you specified doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InternalServiceErrorException">
-        /// There was an internal error for AWS Global Accelerator.
+        /// There was an internal error for Global Accelerator.
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InvalidArgumentException">
         /// An argument that you specified is invalid.
@@ -989,7 +945,7 @@ namespace Amazon.GlobalAccelerator
         /// The accelerator that you specified doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InternalServiceErrorException">
-        /// There was an internal error for AWS Global Accelerator.
+        /// There was an internal error for Global Accelerator.
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InvalidArgumentException">
         /// An argument that you specified is invalid.
@@ -1016,7 +972,7 @@ namespace Amazon.GlobalAccelerator
         /// The accelerator that you specified doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InternalServiceErrorException">
-        /// There was an internal error for AWS Global Accelerator.
+        /// There was an internal error for Global Accelerator.
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InvalidArgumentException">
         /// An argument that you specified is invalid.
@@ -1043,7 +999,7 @@ namespace Amazon.GlobalAccelerator
         /// The endpoint group that you specified doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InternalServiceErrorException">
-        /// There was an internal error for AWS Global Accelerator.
+        /// There was an internal error for Global Accelerator.
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InvalidArgumentException">
         /// An argument that you specified is invalid.
@@ -1067,7 +1023,7 @@ namespace Amazon.GlobalAccelerator
         /// 
         /// <returns>The response from the DescribeCustomRoutingListener service method, as returned by GlobalAccelerator.</returns>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InternalServiceErrorException">
-        /// There was an internal error for AWS Global Accelerator.
+        /// There was an internal error for Global Accelerator.
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InvalidArgumentException">
         /// An argument that you specified is invalid.
@@ -1097,7 +1053,7 @@ namespace Amazon.GlobalAccelerator
         /// The endpoint group that you specified doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InternalServiceErrorException">
-        /// There was an internal error for AWS Global Accelerator.
+        /// There was an internal error for Global Accelerator.
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InvalidArgumentException">
         /// An argument that you specified is invalid.
@@ -1121,7 +1077,7 @@ namespace Amazon.GlobalAccelerator
         /// 
         /// <returns>The response from the DescribeListener service method, as returned by GlobalAccelerator.</returns>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InternalServiceErrorException">
-        /// There was an internal error for AWS Global Accelerator.
+        /// There was an internal error for Global Accelerator.
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InvalidArgumentException">
         /// An argument that you specified is invalid.
@@ -1139,7 +1095,7 @@ namespace Amazon.GlobalAccelerator
 
 
         /// <summary>
-        /// List the accelerators for an AWS account.
+        /// List the accelerators for an Amazon Web Services account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAccelerators service method.</param>
         /// <param name="cancellationToken">
@@ -1148,7 +1104,7 @@ namespace Amazon.GlobalAccelerator
         /// 
         /// <returns>The response from the ListAccelerators service method, as returned by GlobalAccelerator.</returns>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InternalServiceErrorException">
-        /// There was an internal error for AWS Global Accelerator.
+        /// There was an internal error for Global Accelerator.
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InvalidArgumentException">
         /// An argument that you specified is invalid.
@@ -1179,7 +1135,7 @@ namespace Amazon.GlobalAccelerator
         /// You don't have access permission.
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InternalServiceErrorException">
-        /// There was an internal error for AWS Global Accelerator.
+        /// There was an internal error for Global Accelerator.
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InvalidArgumentException">
         /// An argument that you specified is invalid.
@@ -1197,7 +1153,7 @@ namespace Amazon.GlobalAccelerator
 
 
         /// <summary>
-        /// List the custom routing accelerators for an AWS account.
+        /// List the custom routing accelerators for an Amazon Web Services account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListCustomRoutingAccelerators service method.</param>
         /// <param name="cancellationToken">
@@ -1206,7 +1162,7 @@ namespace Amazon.GlobalAccelerator
         /// 
         /// <returns>The response from the ListCustomRoutingAccelerators service method, as returned by GlobalAccelerator.</returns>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InternalServiceErrorException">
-        /// There was an internal error for AWS Global Accelerator.
+        /// There was an internal error for Global Accelerator.
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InvalidArgumentException">
         /// An argument that you specified is invalid.
@@ -1234,7 +1190,7 @@ namespace Amazon.GlobalAccelerator
         /// 
         /// <returns>The response from the ListCustomRoutingEndpointGroups service method, as returned by GlobalAccelerator.</returns>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InternalServiceErrorException">
-        /// There was an internal error for AWS Global Accelerator.
+        /// There was an internal error for Global Accelerator.
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InvalidArgumentException">
         /// An argument that you specified is invalid.
@@ -1267,7 +1223,7 @@ namespace Amazon.GlobalAccelerator
         /// The accelerator that you specified doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InternalServiceErrorException">
-        /// There was an internal error for AWS Global Accelerator.
+        /// There was an internal error for Global Accelerator.
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InvalidArgumentException">
         /// An argument that you specified is invalid.
@@ -1319,7 +1275,7 @@ namespace Amazon.GlobalAccelerator
         /// The endpoint group that you specified doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InternalServiceErrorException">
-        /// There was an internal error for AWS Global Accelerator.
+        /// There was an internal error for Global Accelerator.
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InvalidArgumentException">
         /// An argument that you specified is invalid.
@@ -1353,7 +1309,7 @@ namespace Amazon.GlobalAccelerator
         /// The endpoint that you specified doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InternalServiceErrorException">
-        /// There was an internal error for AWS Global Accelerator.
+        /// There was an internal error for Global Accelerator.
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InvalidArgumentException">
         /// An argument that you specified is invalid.
@@ -1380,7 +1336,7 @@ namespace Amazon.GlobalAccelerator
         /// 
         /// <returns>The response from the ListEndpointGroups service method, as returned by GlobalAccelerator.</returns>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InternalServiceErrorException">
-        /// There was an internal error for AWS Global Accelerator.
+        /// There was an internal error for Global Accelerator.
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InvalidArgumentException">
         /// An argument that you specified is invalid.
@@ -1413,7 +1369,7 @@ namespace Amazon.GlobalAccelerator
         /// The accelerator that you specified doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InternalServiceErrorException">
-        /// There was an internal error for AWS Global Accelerator.
+        /// There was an internal error for Global Accelerator.
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InvalidArgumentException">
         /// An argument that you specified is invalid.
@@ -1436,8 +1392,7 @@ namespace Amazon.GlobalAccelerator
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/tagging-in-global-accelerator.html">Tagging
-        /// in AWS Global Accelerator</a> in the <i>AWS Global Accelerator Developer Guide</i>.
-        /// 
+        /// in Global Accelerator</a> in the <i>Global Accelerator Developer Guide</i>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
@@ -1450,7 +1405,7 @@ namespace Amazon.GlobalAccelerator
         /// The accelerator that you specified doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InternalServiceErrorException">
-        /// There was an internal error for AWS Global Accelerator.
+        /// There was an internal error for Global Accelerator.
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InvalidArgumentException">
         /// An argument that you specified is invalid.
@@ -1465,15 +1420,15 @@ namespace Amazon.GlobalAccelerator
 
 
         /// <summary>
-        /// Provisions an IP address range to use with your AWS resources through bring your own
-        /// IP addresses (BYOIP) and creates a corresponding address pool. After the address range
-        /// is provisioned, it is ready to be advertised using <a href="https://docs.aws.amazon.com/global-accelerator/latest/api/AdvertiseByoipCidr.html">
+        /// Provisions an IP address range to use with your Amazon Web Services resources through
+        /// bring your own IP addresses (BYOIP) and creates a corresponding address pool. After
+        /// the address range is provisioned, it is ready to be advertised using <a href="https://docs.aws.amazon.com/global-accelerator/latest/api/AdvertiseByoipCidr.html">
         /// AdvertiseByoipCidr</a>.
         /// 
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring
-        /// Your Own IP Addresses (BYOIP)</a> in the <i>AWS Global Accelerator Developer Guide</i>.
+        /// your own IP addresses (BYOIP)</a> in the <i>Global Accelerator Developer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ProvisionByoipCidr service method.</param>
@@ -1490,13 +1445,13 @@ namespace Amazon.GlobalAccelerator
         /// the CIDR might be incorrect for this action.
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InternalServiceErrorException">
-        /// There was an internal error for AWS Global Accelerator.
+        /// There was an internal error for Global Accelerator.
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InvalidArgumentException">
         /// An argument that you specified is invalid.
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.LimitExceededException">
-        /// Processing your request would cause you to exceed an AWS Global Accelerator limit.
+        /// Processing your request would cause you to exceed an Global Accelerator limit.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/ProvisionByoipCidr">REST API Reference for ProvisionByoipCidr Operation</seealso>
         Task<ProvisionByoipCidrResponse> ProvisionByoipCidrAsync(ProvisionByoipCidrRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -1529,13 +1484,69 @@ namespace Amazon.GlobalAccelerator
         /// The endpoint that you specified doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InternalServiceErrorException">
-        /// There was an internal error for AWS Global Accelerator.
+        /// There was an internal error for Global Accelerator.
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InvalidArgumentException">
         /// An argument that you specified is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/RemoveCustomRoutingEndpoints">REST API Reference for RemoveCustomRoutingEndpoints Operation</seealso>
         Task<RemoveCustomRoutingEndpointsResponse> RemoveCustomRoutingEndpointsAsync(RemoveCustomRoutingEndpointsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  RemoveEndpoints
+
+
+
+        /// <summary>
+        /// Remove endpoints from an endpoint group. 
+        /// 
+        ///  
+        /// <para>
+        /// The <code>RemoveEndpoints</code> API operation is the recommended option for removing
+        /// endpoints. The alternative is to remove endpoints by updating an endpoint group by
+        /// using the <a href="https://docs.aws.amazon.com/global-accelerator/latest/api/API_UpdateEndpointGroup.html">UpdateEndpointGroup</a>
+        /// API operation. There are two advantages to using <code>AddEndpoints</code> to remove
+        /// endpoints instead:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// It's more convenient, because you only need to specify the endpoints that you want
+        /// to remove. With the <code>UpdateEndpointGroup</code> API operation, you must specify
+        /// all of the endpoints in the endpoint group except the ones that you want to remove
+        /// from the group.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// It's faster, because Global Accelerator doesn't need to resolve any endpoints. With
+        /// the <code>UpdateEndpointGroup</code> API operation, Global Accelerator must resolve
+        /// all of the endpoints that remain in the group.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RemoveEndpoints service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RemoveEndpoints service method, as returned by GlobalAccelerator.</returns>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.AccessDeniedException">
+        /// You don't have access permission.
+        /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.EndpointGroupNotFoundException">
+        /// The endpoint group that you specified doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.InternalServiceErrorException">
+        /// There was an internal error for Global Accelerator.
+        /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.InvalidArgumentException">
+        /// An argument that you specified is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.TransactionInProgressException">
+        /// There's already a transaction in progress. Another transaction can't be processed.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/RemoveEndpoints">REST API Reference for RemoveEndpoints Operation</seealso>
+        Task<RemoveEndpointsResponse> RemoveEndpointsAsync(RemoveEndpointsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -1549,8 +1560,7 @@ namespace Amazon.GlobalAccelerator
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/tagging-in-global-accelerator.html">Tagging
-        /// in AWS Global Accelerator</a> in the <i>AWS Global Accelerator Developer Guide</i>.
-        /// 
+        /// in Global Accelerator</a> in the <i>Global Accelerator Developer Guide</i>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
@@ -1563,7 +1573,7 @@ namespace Amazon.GlobalAccelerator
         /// The accelerator that you specified doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InternalServiceErrorException">
-        /// There was an internal error for AWS Global Accelerator.
+        /// There was an internal error for Global Accelerator.
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InvalidArgumentException">
         /// An argument that you specified is invalid.
@@ -1585,7 +1595,7 @@ namespace Amazon.GlobalAccelerator
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/tagging-in-global-accelerator.html">Tagging
-        /// in AWS Global Accelerator</a> in the <i>AWS Global Accelerator Developer Guide</i>.
+        /// in Global Accelerator</a> in the <i>Global Accelerator Developer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
@@ -1598,7 +1608,7 @@ namespace Amazon.GlobalAccelerator
         /// The accelerator that you specified doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InternalServiceErrorException">
-        /// There was an internal error for AWS Global Accelerator.
+        /// There was an internal error for Global Accelerator.
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InvalidArgumentException">
         /// An argument that you specified is invalid.
@@ -1617,8 +1627,10 @@ namespace Amazon.GlobalAccelerator
         /// 
         ///  <important> 
         /// <para>
-        /// Global Accelerator is a global service that supports endpoints in multiple AWS Regions
-        /// but you must specify the US West (Oregon) Region to create or update accelerators.
+        /// Global Accelerator is a global service that supports endpoints in multiple Amazon
+        /// Web Services Regions but you must specify the US West (Oregon) Region to create, update,
+        /// or otherwise work with accelerators. That is, for example, specify <code>--region
+        /// us-west-2</code> on AWS CLI commands.
         /// </para>
         ///  </important>
         /// </summary>
@@ -1631,8 +1643,11 @@ namespace Amazon.GlobalAccelerator
         /// <exception cref="Amazon.GlobalAccelerator.Model.AcceleratorNotFoundException">
         /// The accelerator that you specified doesn't exist.
         /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.AccessDeniedException">
+        /// You don't have access permission.
+        /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InternalServiceErrorException">
-        /// There was an internal error for AWS Global Accelerator.
+        /// There was an internal error for Global Accelerator.
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InvalidArgumentException">
         /// An argument that you specified is invalid.
@@ -1662,7 +1677,7 @@ namespace Amazon.GlobalAccelerator
         /// You don't have access permission.
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InternalServiceErrorException">
-        /// There was an internal error for AWS Global Accelerator.
+        /// There was an internal error for Global Accelerator.
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InvalidArgumentException">
         /// An argument that you specified is invalid.
@@ -1689,7 +1704,7 @@ namespace Amazon.GlobalAccelerator
         /// The accelerator that you specified doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InternalServiceErrorException">
-        /// There was an internal error for AWS Global Accelerator.
+        /// There was an internal error for Global Accelerator.
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InvalidArgumentException">
         /// An argument that you specified is invalid.
@@ -1719,7 +1734,7 @@ namespace Amazon.GlobalAccelerator
         /// You don't have access permission.
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InternalServiceErrorException">
-        /// There was an internal error for AWS Global Accelerator.
+        /// There was an internal error for Global Accelerator.
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InvalidArgumentException">
         /// An argument that you specified is invalid.
@@ -1743,7 +1758,7 @@ namespace Amazon.GlobalAccelerator
         /// 
         /// <returns>The response from the UpdateCustomRoutingListener service method, as returned by GlobalAccelerator.</returns>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InternalServiceErrorException">
-        /// There was an internal error for AWS Global Accelerator.
+        /// There was an internal error for Global Accelerator.
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InvalidArgumentException">
         /// An argument that you specified is invalid.
@@ -1753,7 +1768,7 @@ namespace Amazon.GlobalAccelerator
         /// accelerator.
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.LimitExceededException">
-        /// Processing your request would cause you to exceed an AWS Global Accelerator limit.
+        /// Processing your request would cause you to exceed an Global Accelerator limit.
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.ListenerNotFoundException">
         /// The listener that you specified doesn't exist.
@@ -1784,13 +1799,13 @@ namespace Amazon.GlobalAccelerator
         /// The endpoint group that you specified doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InternalServiceErrorException">
-        /// There was an internal error for AWS Global Accelerator.
+        /// There was an internal error for Global Accelerator.
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InvalidArgumentException">
         /// An argument that you specified is invalid.
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.LimitExceededException">
-        /// Processing your request would cause you to exceed an AWS Global Accelerator limit.
+        /// Processing your request would cause you to exceed an Global Accelerator limit.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/UpdateEndpointGroup">REST API Reference for UpdateEndpointGroup Operation</seealso>
         Task<UpdateEndpointGroupResponse> UpdateEndpointGroupAsync(UpdateEndpointGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -1811,7 +1826,7 @@ namespace Amazon.GlobalAccelerator
         /// 
         /// <returns>The response from the UpdateListener service method, as returned by GlobalAccelerator.</returns>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InternalServiceErrorException">
-        /// There was an internal error for AWS Global Accelerator.
+        /// There was an internal error for Global Accelerator.
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InvalidArgumentException">
         /// An argument that you specified is invalid.
@@ -1821,7 +1836,7 @@ namespace Amazon.GlobalAccelerator
         /// accelerator.
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.LimitExceededException">
-        /// Processing your request would cause you to exceed an AWS Global Accelerator limit.
+        /// Processing your request would cause you to exceed an Global Accelerator limit.
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.ListenerNotFoundException">
         /// The listener that you specified doesn't exist.
@@ -1843,12 +1858,12 @@ namespace Amazon.GlobalAccelerator
         ///  
         /// <para>
         /// It can take a few minutes before traffic to the specified addresses stops routing
-        /// to AWS because of propagation delays.
+        /// to Amazon Web Services because of propagation delays.
         /// </para>
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring
-        /// Your Own IP Addresses (BYOIP)</a> in the <i>AWS Global Accelerator Developer Guide</i>.
+        /// your own IP addresses (BYOIP)</a> in the <i>Global Accelerator Developer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the WithdrawByoipCidr service method.</param>
@@ -1868,7 +1883,7 @@ namespace Amazon.GlobalAccelerator
         /// the CIDR might be incorrect for this action.
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InternalServiceErrorException">
-        /// There was an internal error for AWS Global Accelerator.
+        /// There was an internal error for Global Accelerator.
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InvalidArgumentException">
         /// An argument that you specified is invalid.

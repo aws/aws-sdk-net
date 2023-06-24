@@ -43,6 +43,10 @@ namespace Amazon.WAFV2
         /// </summary>
         public static readonly ActionValue CAPTCHA = new ActionValue("CAPTCHA");
         /// <summary>
+        /// Constant CHALLENGE for ActionValue
+        /// </summary>
+        public static readonly ActionValue CHALLENGE = new ActionValue("CHALLENGE");
+        /// <summary>
         /// Constant COUNT for ActionValue
         /// </summary>
         public static readonly ActionValue COUNT = new ActionValue("COUNT");
@@ -80,6 +84,52 @@ namespace Amazon.WAFV2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ActionValue(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AssociatedResourceType.
+    /// </summary>
+    public class AssociatedResourceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CLOUDFRONT for AssociatedResourceType
+        /// </summary>
+        public static readonly AssociatedResourceType CLOUDFRONT = new AssociatedResourceType("CLOUDFRONT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AssociatedResourceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AssociatedResourceType FindValue(string value)
+        {
+            return FindValue<AssociatedResourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AssociatedResourceType(string value)
         {
             return FindValue(value);
         }
@@ -1189,6 +1239,10 @@ namespace Amazon.WAFV2
         /// </summary>
         public static readonly CountryCode WS = new CountryCode("WS");
         /// <summary>
+        /// Constant XK for CountryCode
+        /// </summary>
+        public static readonly CountryCode XK = new CountryCode("XK");
+        /// <summary>
         /// Constant YE for CountryCode
         /// </summary>
         public static readonly CountryCode YE = new CountryCode("YE");
@@ -1251,9 +1305,17 @@ namespace Amazon.WAFV2
     {
 
         /// <summary>
+        /// Constant TOKEN_DOMAIN_MISMATCH for FailureReason
+        /// </summary>
+        public static readonly FailureReason TOKEN_DOMAIN_MISMATCH = new FailureReason("TOKEN_DOMAIN_MISMATCH");
+        /// <summary>
         /// Constant TOKEN_EXPIRED for FailureReason
         /// </summary>
         public static readonly FailureReason TOKEN_EXPIRED = new FailureReason("TOKEN_EXPIRED");
+        /// <summary>
+        /// Constant TOKEN_INVALID for FailureReason
+        /// </summary>
+        public static readonly FailureReason TOKEN_INVALID = new FailureReason("TOKEN_INVALID");
         /// <summary>
         /// Constant TOKEN_MISSING for FailureReason
         /// </summary>
@@ -1499,6 +1561,56 @@ namespace Amazon.WAFV2
 
 
     /// <summary>
+    /// Constants used for properties of type InspectionLevel.
+    /// </summary>
+    public class InspectionLevel : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMMON for InspectionLevel
+        /// </summary>
+        public static readonly InspectionLevel COMMON = new InspectionLevel("COMMON");
+        /// <summary>
+        /// Constant TARGETED for InspectionLevel
+        /// </summary>
+        public static readonly InspectionLevel TARGETED = new InspectionLevel("TARGETED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InspectionLevel(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InspectionLevel FindValue(string value)
+        {
+            return FindValue<InspectionLevel>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InspectionLevel(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type IPAddressVersion.
     /// </summary>
     public class IPAddressVersion : ConstantClass
@@ -1653,11 +1765,123 @@ namespace Amazon.WAFV2
 
 
     /// <summary>
+    /// Constants used for properties of type MapMatchScope.
+    /// </summary>
+    public class MapMatchScope : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALL for MapMatchScope
+        /// </summary>
+        public static readonly MapMatchScope ALL = new MapMatchScope("ALL");
+        /// <summary>
+        /// Constant KEY for MapMatchScope
+        /// </summary>
+        public static readonly MapMatchScope KEY = new MapMatchScope("KEY");
+        /// <summary>
+        /// Constant VALUE for MapMatchScope
+        /// </summary>
+        public static readonly MapMatchScope VALUE = new MapMatchScope("VALUE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MapMatchScope(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MapMatchScope FindValue(string value)
+        {
+            return FindValue<MapMatchScope>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MapMatchScope(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type OversizeHandling.
+    /// </summary>
+    public class OversizeHandling : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CONTINUE for OversizeHandling
+        /// </summary>
+        public static readonly OversizeHandling CONTINUE = new OversizeHandling("CONTINUE");
+        /// <summary>
+        /// Constant MATCH for OversizeHandling
+        /// </summary>
+        public static readonly OversizeHandling MATCH = new OversizeHandling("MATCH");
+        /// <summary>
+        /// Constant NO_MATCH for OversizeHandling
+        /// </summary>
+        public static readonly OversizeHandling NO_MATCH = new OversizeHandling("NO_MATCH");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OversizeHandling(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OversizeHandling FindValue(string value)
+        {
+            return FindValue<OversizeHandling>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OversizeHandling(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ParameterExceptionField.
     /// </summary>
     public class ParameterExceptionField : ConstantClass
     {
 
+        /// <summary>
+        /// Constant ACP_RULE_SET_RESPONSE_INSPECTION for ParameterExceptionField
+        /// </summary>
+        public static readonly ParameterExceptionField ACP_RULE_SET_RESPONSE_INSPECTION = new ParameterExceptionField("ACP_RULE_SET_RESPONSE_INSPECTION");
         /// <summary>
         /// Constant AND_STATEMENT for ParameterExceptionField
         /// </summary>
@@ -1667,6 +1891,14 @@ namespace Amazon.WAFV2
         /// </summary>
         public static readonly ParameterExceptionField ASSOCIABLE_RESOURCE = new ParameterExceptionField("ASSOCIABLE_RESOURCE");
         /// <summary>
+        /// Constant ASSOCIATED_RESOURCE_TYPE for ParameterExceptionField
+        /// </summary>
+        public static readonly ParameterExceptionField ASSOCIATED_RESOURCE_TYPE = new ParameterExceptionField("ASSOCIATED_RESOURCE_TYPE");
+        /// <summary>
+        /// Constant ATP_RULE_SET_RESPONSE_INSPECTION for ParameterExceptionField
+        /// </summary>
+        public static readonly ParameterExceptionField ATP_RULE_SET_RESPONSE_INSPECTION = new ParameterExceptionField("ATP_RULE_SET_RESPONSE_INSPECTION");
+        /// <summary>
         /// Constant BODY_PARSING_FALLBACK_BEHAVIOR for ParameterExceptionField
         /// </summary>
         public static readonly ParameterExceptionField BODY_PARSING_FALLBACK_BEHAVIOR = new ParameterExceptionField("BODY_PARSING_FALLBACK_BEHAVIOR");
@@ -1675,9 +1907,21 @@ namespace Amazon.WAFV2
         /// </summary>
         public static readonly ParameterExceptionField BYTE_MATCH_STATEMENT = new ParameterExceptionField("BYTE_MATCH_STATEMENT");
         /// <summary>
+        /// Constant CHALLENGE_CONFIG for ParameterExceptionField
+        /// </summary>
+        public static readonly ParameterExceptionField CHALLENGE_CONFIG = new ParameterExceptionField("CHALLENGE_CONFIG");
+        /// <summary>
         /// Constant CHANGE_PROPAGATION_STATUS for ParameterExceptionField
         /// </summary>
         public static readonly ParameterExceptionField CHANGE_PROPAGATION_STATUS = new ParameterExceptionField("CHANGE_PROPAGATION_STATUS");
+        /// <summary>
+        /// Constant COOKIE_MATCH_PATTERN for ParameterExceptionField
+        /// </summary>
+        public static readonly ParameterExceptionField COOKIE_MATCH_PATTERN = new ParameterExceptionField("COOKIE_MATCH_PATTERN");
+        /// <summary>
+        /// Constant CUSTOM_KEYS for ParameterExceptionField
+        /// </summary>
+        public static readonly ParameterExceptionField CUSTOM_KEYS = new ParameterExceptionField("CUSTOM_KEYS");
         /// <summary>
         /// Constant CUSTOM_REQUEST_HANDLING for ParameterExceptionField
         /// </summary>
@@ -1731,6 +1975,10 @@ namespace Amazon.WAFV2
         /// </summary>
         public static readonly ParameterExceptionField GEO_MATCH_STATEMENT = new ParameterExceptionField("GEO_MATCH_STATEMENT");
         /// <summary>
+        /// Constant HEADER_MATCH_PATTERN for ParameterExceptionField
+        /// </summary>
+        public static readonly ParameterExceptionField HEADER_MATCH_PATTERN = new ParameterExceptionField("HEADER_MATCH_PATTERN");
+        /// <summary>
         /// Constant HEADER_NAME for ParameterExceptionField
         /// </summary>
         public static readonly ParameterExceptionField HEADER_NAME = new ParameterExceptionField("HEADER_NAME");
@@ -1775,6 +2023,10 @@ namespace Amazon.WAFV2
         /// </summary>
         public static readonly ParameterExceptionField LOGGING_FILTER = new ParameterExceptionField("LOGGING_FILTER");
         /// <summary>
+        /// Constant MANAGED_RULE_GROUP_CONFIG for ParameterExceptionField
+        /// </summary>
+        public static readonly ParameterExceptionField MANAGED_RULE_GROUP_CONFIG = new ParameterExceptionField("MANAGED_RULE_GROUP_CONFIG");
+        /// <summary>
         /// Constant MANAGED_RULE_SET for ParameterExceptionField
         /// </summary>
         public static readonly ParameterExceptionField MANAGED_RULE_SET = new ParameterExceptionField("MANAGED_RULE_SET");
@@ -1782,6 +2034,10 @@ namespace Amazon.WAFV2
         /// Constant MANAGED_RULE_SET_STATEMENT for ParameterExceptionField
         /// </summary>
         public static readonly ParameterExceptionField MANAGED_RULE_SET_STATEMENT = new ParameterExceptionField("MANAGED_RULE_SET_STATEMENT");
+        /// <summary>
+        /// Constant MAP_MATCH_SCOPE for ParameterExceptionField
+        /// </summary>
+        public static readonly ParameterExceptionField MAP_MATCH_SCOPE = new ParameterExceptionField("MAP_MATCH_SCOPE");
         /// <summary>
         /// Constant METRIC_NAME for ParameterExceptionField
         /// </summary>
@@ -1798,6 +2054,14 @@ namespace Amazon.WAFV2
         /// Constant OVERRIDE_ACTION for ParameterExceptionField
         /// </summary>
         public static readonly ParameterExceptionField OVERRIDE_ACTION = new ParameterExceptionField("OVERRIDE_ACTION");
+        /// <summary>
+        /// Constant OVERSIZE_HANDLING for ParameterExceptionField
+        /// </summary>
+        public static readonly ParameterExceptionField OVERSIZE_HANDLING = new ParameterExceptionField("OVERSIZE_HANDLING");
+        /// <summary>
+        /// Constant PAYLOAD_TYPE for ParameterExceptionField
+        /// </summary>
+        public static readonly ParameterExceptionField PAYLOAD_TYPE = new ParameterExceptionField("PAYLOAD_TYPE");
         /// <summary>
         /// Constant POSITION for ParameterExceptionField
         /// </summary>
@@ -1843,6 +2107,10 @@ namespace Amazon.WAFV2
         /// </summary>
         public static readonly ParameterExceptionField RULE_GROUP_REFERENCE_STATEMENT = new ParameterExceptionField("RULE_GROUP_REFERENCE_STATEMENT");
         /// <summary>
+        /// Constant SCOPE_DOWN for ParameterExceptionField
+        /// </summary>
+        public static readonly ParameterExceptionField SCOPE_DOWN = new ParameterExceptionField("SCOPE_DOWN");
+        /// <summary>
         /// Constant SCOPE_VALUE for ParameterExceptionField
         /// </summary>
         public static readonly ParameterExceptionField SCOPE_VALUE = new ParameterExceptionField("SCOPE_VALUE");
@@ -1878,6 +2146,10 @@ namespace Amazon.WAFV2
         /// Constant TEXT_TRANSFORMATION for ParameterExceptionField
         /// </summary>
         public static readonly ParameterExceptionField TEXT_TRANSFORMATION = new ParameterExceptionField("TEXT_TRANSFORMATION");
+        /// <summary>
+        /// Constant TOKEN_DOMAIN for ParameterExceptionField
+        /// </summary>
+        public static readonly ParameterExceptionField TOKEN_DOMAIN = new ParameterExceptionField("TOKEN_DOMAIN");
         /// <summary>
         /// Constant WEB_ACL for ParameterExceptionField
         /// </summary>
@@ -1916,6 +2188,106 @@ namespace Amazon.WAFV2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ParameterExceptionField(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PayloadType.
+    /// </summary>
+    public class PayloadType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FORM_ENCODED for PayloadType
+        /// </summary>
+        public static readonly PayloadType FORM_ENCODED = new PayloadType("FORM_ENCODED");
+        /// <summary>
+        /// Constant JSON for PayloadType
+        /// </summary>
+        public static readonly PayloadType JSON = new PayloadType("JSON");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PayloadType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PayloadType FindValue(string value)
+        {
+            return FindValue<PayloadType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PayloadType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Platform.
+    /// </summary>
+    public class Platform : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ANDROID for Platform
+        /// </summary>
+        public static readonly Platform ANDROID = new Platform("ANDROID");
+        /// <summary>
+        /// Constant IOS for Platform
+        /// </summary>
+        public static readonly Platform IOS = new Platform("IOS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Platform(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Platform FindValue(string value)
+        {
+            return FindValue<Platform>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Platform(string value)
         {
             return FindValue(value);
         }
@@ -1991,6 +2363,14 @@ namespace Amazon.WAFV2
     {
 
         /// <summary>
+        /// Constant CONSTANT for RateBasedStatementAggregateKeyType
+        /// </summary>
+        public static readonly RateBasedStatementAggregateKeyType CONSTANT = new RateBasedStatementAggregateKeyType("CONSTANT");
+        /// <summary>
+        /// Constant CUSTOM_KEYS for RateBasedStatementAggregateKeyType
+        /// </summary>
+        public static readonly RateBasedStatementAggregateKeyType CUSTOM_KEYS = new RateBasedStatementAggregateKeyType("CUSTOM_KEYS");
+        /// <summary>
         /// Constant FORWARDED_IP for RateBasedStatementAggregateKeyType
         /// </summary>
         public static readonly RateBasedStatementAggregateKeyType FORWARDED_IP = new RateBasedStatementAggregateKeyType("FORWARDED_IP");
@@ -2045,6 +2425,10 @@ namespace Amazon.WAFV2
         /// </summary>
         public static readonly ResourceType API_GATEWAY = new ResourceType("API_GATEWAY");
         /// <summary>
+        /// Constant APP_RUNNER_SERVICE for ResourceType
+        /// </summary>
+        public static readonly ResourceType APP_RUNNER_SERVICE = new ResourceType("APP_RUNNER_SERVICE");
+        /// <summary>
         /// Constant APPLICATION_LOAD_BALANCER for ResourceType
         /// </summary>
         public static readonly ResourceType APPLICATION_LOAD_BALANCER = new ResourceType("APPLICATION_LOAD_BALANCER");
@@ -2052,6 +2436,14 @@ namespace Amazon.WAFV2
         /// Constant APPSYNC for ResourceType
         /// </summary>
         public static readonly ResourceType APPSYNC = new ResourceType("APPSYNC");
+        /// <summary>
+        /// Constant COGNITO_USER_POOL for ResourceType
+        /// </summary>
+        public static readonly ResourceType COGNITO_USER_POOL = new ResourceType("COGNITO_USER_POOL");
+        /// <summary>
+        /// Constant VERIFIED_ACCESS_INSTANCE for ResourceType
+        /// </summary>
+        public static readonly ResourceType VERIFIED_ACCESS_INSTANCE = new ResourceType("VERIFIED_ACCESS_INSTANCE");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -2186,6 +2578,114 @@ namespace Amazon.WAFV2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Scope(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SensitivityLevel.
+    /// </summary>
+    public class SensitivityLevel : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant HIGH for SensitivityLevel
+        /// </summary>
+        public static readonly SensitivityLevel HIGH = new SensitivityLevel("HIGH");
+        /// <summary>
+        /// Constant LOW for SensitivityLevel
+        /// </summary>
+        public static readonly SensitivityLevel LOW = new SensitivityLevel("LOW");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SensitivityLevel(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SensitivityLevel FindValue(string value)
+        {
+            return FindValue<SensitivityLevel>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SensitivityLevel(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SizeInspectionLimit.
+    /// </summary>
+    public class SizeInspectionLimit : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant KB_16 for SizeInspectionLimit
+        /// </summary>
+        public static readonly SizeInspectionLimit KB_16 = new SizeInspectionLimit("KB_16");
+        /// <summary>
+        /// Constant KB_32 for SizeInspectionLimit
+        /// </summary>
+        public static readonly SizeInspectionLimit KB_32 = new SizeInspectionLimit("KB_32");
+        /// <summary>
+        /// Constant KB_48 for SizeInspectionLimit
+        /// </summary>
+        public static readonly SizeInspectionLimit KB_48 = new SizeInspectionLimit("KB_48");
+        /// <summary>
+        /// Constant KB_64 for SizeInspectionLimit
+        /// </summary>
+        public static readonly SizeInspectionLimit KB_64 = new SizeInspectionLimit("KB_64");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SizeInspectionLimit(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SizeInspectionLimit FindValue(string value)
+        {
+            return FindValue<SizeInspectionLimit>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SizeInspectionLimit(string value)
         {
             return FindValue(value);
         }

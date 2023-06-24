@@ -30,7 +30,8 @@ namespace Amazon.ManagedBlockchain.Model
 {
     /// <summary>
     /// Container for the parameters to the ListNetworks operation.
-    /// Returns information about the networks in which the current AWS account participates.
+    /// Returns information about the networks in which the current Amazon Web Services account
+    /// participates.
     /// 
     ///  
     /// <para>

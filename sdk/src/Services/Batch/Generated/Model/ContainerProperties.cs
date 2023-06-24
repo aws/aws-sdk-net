@@ -29,13 +29,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Batch.Model
 {
     /// <summary>
-    /// Container properties are used in job definitions to describe the container that's
-    /// launched as part of a job.
+    /// Container properties are used for Amazon ECS based job definitions. These properties
+    /// to describe the container that's launched as part of a job.
     /// </summary>
     public partial class ContainerProperties
     {
         private List<string> _command = new List<string>();
         private List<KeyValuePair> _environment = new List<KeyValuePair>();
+        private EphemeralStorage _ephemeralStorage;
         private string _executionRoleArn;
         private FargatePlatformConfiguration _fargatePlatformConfiguration;
         private string _image;
@@ -93,8 +94,8 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  </important> <note> 
         /// <para>
-        /// Environment variables must not start with <code>AWS_BATCH</code>; this naming convention
-        /// is reserved for variables that are set by the Batch service.
+        /// Environment variables cannot start with "<code>AWS_BATCH</code>". This naming convention
+        /// is reserved for variables that Batch sets.
         /// </para>
         ///  </note>
         /// </summary>
@@ -108,6 +109,26 @@ namespace Amazon.Batch.Model
         internal bool IsSetEnvironment()
         {
             return this._environment != null && this._environment.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EphemeralStorage. 
+        /// <para>
+        /// The amount of ephemeral storage to allocate for the task. This parameter is used to
+        /// expand the total amount of ephemeral storage available, beyond the default amount,
+        /// for tasks hosted on Fargate.
+        /// </para>
+        /// </summary>
+        public EphemeralStorage EphemeralStorage
+        {
+            get { return this._ephemeralStorage; }
+            set { this._ephemeralStorage = value; }
+        }
+
+        // Check to see if EphemeralStorage property is set
+        internal bool IsSetEphemeralStorage()
+        {
+            return this._ephemeralStorage != null;
         }
 
         /// <summary>
@@ -155,10 +176,10 @@ namespace Amazon.Batch.Model
         /// <para>
         /// The image used to start a container. This string is passed directly to the Docker
         /// daemon. Images in the Docker Hub registry are available by default. Other repositories
-        /// are specified with <code> <i>repository-url</i>/<i>image</i>:<i>tag</i> </code>. Up
-        /// to 255 letters (uppercase and lowercase), numbers, hyphens, underscores, colons, periods,
-        /// forward slashes, and number signs are allowed. This parameter maps to <code>Image</code>
-        /// in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create
+        /// are specified with <code> <i>repository-url</i>/<i>image</i>:<i>tag</i> </code>. It
+        /// can be 255 characters long. It can contain uppercase and lowercase letters, numbers,
+        /// hyphens (-), underscores (_), colons (:), periods (.), forward slashes (/), and number
+        /// signs (#). This parameter maps to <code>Image</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create
         /// a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker
         /// Remote API</a> and the <code>IMAGE</code> parameter of <a href="https://docs.docker.com/engine/reference/run/">docker
         /// run</a>.
@@ -171,8 +192,14 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  </note> <ul> <li> 
         /// <para>
+        /// Images in Amazon ECR Public repositories use the full <code>registry/repository[:tag]</code>
+        /// or <code>registry/repository[@digest]</code> naming conventions. For example, <code>public.ecr.aws/<i>registry_alias</i>/<i>my-web-app</i>:<i>latest</i>
+        /// </code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// Images in Amazon ECR repositories use the full registry and repository URI (for example,
-        /// <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;</code>).
+        /// <code>123456789012.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -233,7 +260,7 @@ namespace Amazon.Batch.Model
         /// <para>
         /// The Amazon Resource Name (ARN) of the IAM role that the container can assume for Amazon
         /// Web Services permissions. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
-        /// Roles for Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+        /// roles for tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         /// </summary>
         public string JobRoleArn
@@ -293,9 +320,9 @@ namespace Amazon.Batch.Model
         ///  </note> 
         /// <para>
         /// This parameter requires version 1.18 of the Docker Remote API or greater on your container
-        /// instance. To check the Docker Remote API version on your container instance, log into
-        /// your container instance and run the following command: <code>sudo docker version |
-        /// grep "Server API version"</code> 
+        /// instance. To check the Docker Remote API version on your container instance, log in
+        /// to your container instance and run the following command: <code>sudo docker version
+        /// | grep "Server API version"</code> 
         /// </para>
         ///  <note> 
         /// <para>
@@ -303,7 +330,7 @@ namespace Amazon.Batch.Model
         /// drivers available on that instance with the <code>ECS_AVAILABLE_LOGGING_DRIVERS</code>
         /// environment variable before containers placed on that instance can use these log configuration
         /// options. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
-        /// ECS Container Agent Configuration</a> in the <i>Amazon Elastic Container Service Developer
+        /// ECS container agent configuration</a> in the <i>Amazon Elastic Container Service Developer
         /// Guide</i>.
         /// </para>
         ///  </note>
@@ -324,12 +351,12 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property Memory. 
         /// <para>
         /// This parameter is deprecated, use <code>resourceRequirements</code> to specify the
-        /// memory requirements for the job definition. It's not supported for jobs that run on
-        /// Fargate resources. For jobs run on EC2 resources, it specifies the memory hard limit
-        /// (in MiB) for a container. If your container attempts to exceed the specified number,
-        /// it's terminated. You must specify at least 4 MiB of memory for a job using this parameter.
-        /// The memory hard limit can be specified in several places. It must be specified for
-        /// each node at least once.
+        /// memory requirements for the job definition. It's not supported for jobs running on
+        /// Fargate resources. For jobs that run on EC2 resources, it specifies the memory hard
+        /// limit (in MiB) for a container. If your container attempts to exceed the specified
+        /// number, it's terminated. You must specify at least 4 MiB of memory for a job using
+        /// this parameter. The memory hard limit can be specified in several places. It must
+        /// be specified for each node at least once.
         /// </para>
         /// </summary>
         [Obsolete("This field is deprecated, use resourceRequirements instead.")]
@@ -528,9 +555,9 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property Vcpus. 
         /// <para>
         /// This parameter is deprecated, use <code>resourceRequirements</code> to specify the
-        /// vCPU requirements for the job definition. It's not supported for jobs that run on
-        /// Fargate resources. For jobs run on EC2 resources, it specifies the number of vCPUs
-        /// reserved for the job.
+        /// vCPU requirements for the job definition. It's not supported for jobs running on Fargate
+        /// resources. For jobs running on EC2 resources, it specifies the number of vCPUs reserved
+        /// for the job.
         /// </para>
         ///  
         /// <para>

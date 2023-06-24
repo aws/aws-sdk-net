@@ -30,7 +30,7 @@ namespace Amazon.APIGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateDeployment operation.
-    /// Changes information about a <a>Deployment</a> resource.
+    /// Changes information about a Deployment resource.
     /// </summary>
     public partial class UpdateDeploymentRequest : AmazonAPIGatewayRequest
     {
@@ -41,8 +41,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property DeploymentId. 
         /// <para>
-        /// The replacement identifier for the <a>Deployment</a> resource to change information
-        /// about.
+        /// The replacement identifier for the Deployment resource to change information about.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -61,8 +60,8 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property PatchOperations. 
         /// <para>
-        /// A list of update operations to be applied to the specified resource and in the order
-        /// specified in this list.
+        /// For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch
+        /// Operations</a>.
         /// </para>
         /// </summary>
         public List<PatchOperation> PatchOperations
@@ -80,7 +79,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property RestApiId. 
         /// <para>
-        /// [Required] The string identifier of the associated <a>RestApi</a>.
+        /// The string identifier of the associated RestApi.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

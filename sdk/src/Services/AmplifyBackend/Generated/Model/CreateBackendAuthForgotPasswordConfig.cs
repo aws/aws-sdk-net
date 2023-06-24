@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AmplifyBackend.Model
 {
     /// <summary>
-    /// Describes the forgot password policy for authenticating into the Amplify app.
+    /// <b>(DEPRECATED)</b> Describes the forgot password policy for authenticating into the
+    /// Amplify app.
     /// </summary>
     public partial class CreateBackendAuthForgotPasswordConfig
     {
@@ -40,8 +41,8 @@ namespace Amazon.AmplifyBackend.Model
         /// <summary>
         /// Gets and sets the property DeliveryMethod. 
         /// <para>
-        /// Describes which mode to use (either SMS or email) to deliver messages to app users
-        /// who want to recover their password.
+        /// <b>(DEPRECATED)</b> Describes which mode to use (either SMS or email) to deliver messages
+        /// to app users who want to recover their password.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -60,7 +61,8 @@ namespace Amazon.AmplifyBackend.Model
         /// <summary>
         /// Gets and sets the property EmailSettings. 
         /// <para>
-        /// The configuration for the email sent when an app user forgets their password.
+        /// <b>(DEPRECATED)</b> The configuration for the email sent when an app user forgets
+        /// their password.
         /// </para>
         /// </summary>
         public EmailSettings EmailSettings
@@ -78,7 +80,8 @@ namespace Amazon.AmplifyBackend.Model
         /// <summary>
         /// Gets and sets the property SmsSettings. 
         /// <para>
-        /// The configuration for the SMS message sent when an app user forgets their password.
+        /// <b>(DEPRECATED)</b> The configuration for the SMS message sent when an app user forgets
+        /// their password.
         /// </para>
         /// </summary>
         public SmsSettings SmsSettings

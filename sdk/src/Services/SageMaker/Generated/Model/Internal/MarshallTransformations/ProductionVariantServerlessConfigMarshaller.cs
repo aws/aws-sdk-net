@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ProductionVariantServerlessConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class ProductionVariantServerlessConfigMarshaller : IRequestMarshaller<ProductionVariantServerlessConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -57,11 +57,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.MemorySizeInMB);
             }
 
+            if(requestObject.IsSetProvisionedConcurrency())
+            {
+                context.Writer.WritePropertyName("ProvisionedConcurrency");
+                context.Writer.Write(requestObject.ProvisionedConcurrency);
+            }
+
         }
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ProductionVariantServerlessConfigMarshaller Instance = new ProductionVariantServerlessConfigMarshaller();
 
     }

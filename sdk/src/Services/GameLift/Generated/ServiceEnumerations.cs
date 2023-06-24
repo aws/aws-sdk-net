@@ -341,6 +341,110 @@ namespace Amazon.GameLift
 
 
     /// <summary>
+    /// Constants used for properties of type ComputeStatus.
+    /// </summary>
+    public class ComputeStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for ComputeStatus
+        /// </summary>
+        public static readonly ComputeStatus ACTIVE = new ComputeStatus("ACTIVE");
+        /// <summary>
+        /// Constant PENDING for ComputeStatus
+        /// </summary>
+        public static readonly ComputeStatus PENDING = new ComputeStatus("PENDING");
+        /// <summary>
+        /// Constant TERMINATING for ComputeStatus
+        /// </summary>
+        public static readonly ComputeStatus TERMINATING = new ComputeStatus("TERMINATING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ComputeStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ComputeStatus FindValue(string value)
+        {
+            return FindValue<ComputeStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ComputeStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ComputeType.
+    /// </summary>
+    public class ComputeType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ANYWHERE for ComputeType
+        /// </summary>
+        public static readonly ComputeType ANYWHERE = new ComputeType("ANYWHERE");
+        /// <summary>
+        /// Constant EC2 for ComputeType
+        /// </summary>
+        public static readonly ComputeType EC2 = new ComputeType("EC2");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ComputeType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ComputeType FindValue(string value)
+        {
+            return FindValue<ComputeType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ComputeType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type EC2InstanceType.
     /// </summary>
     public class EC2InstanceType : ConstantClass
@@ -443,6 +547,38 @@ namespace Amazon.GameLift
         /// </summary>
         public static readonly EC2InstanceType C5aXlarge = new EC2InstanceType("c5a.xlarge");
         /// <summary>
+        /// Constant C5d12xlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType C5d12xlarge = new EC2InstanceType("c5d.12xlarge");
+        /// <summary>
+        /// Constant C5d18xlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType C5d18xlarge = new EC2InstanceType("c5d.18xlarge");
+        /// <summary>
+        /// Constant C5d24xlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType C5d24xlarge = new EC2InstanceType("c5d.24xlarge");
+        /// <summary>
+        /// Constant C5d2xlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType C5d2xlarge = new EC2InstanceType("c5d.2xlarge");
+        /// <summary>
+        /// Constant C5d4xlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType C5d4xlarge = new EC2InstanceType("c5d.4xlarge");
+        /// <summary>
+        /// Constant C5d9xlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType C5d9xlarge = new EC2InstanceType("c5d.9xlarge");
+        /// <summary>
+        /// Constant C5dLarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType C5dLarge = new EC2InstanceType("c5d.large");
+        /// <summary>
+        /// Constant C5dXlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType C5dXlarge = new EC2InstanceType("c5d.xlarge");
+        /// <summary>
         /// Constant C5Large for EC2InstanceType
         /// </summary>
         public static readonly EC2InstanceType C5Large = new EC2InstanceType("c5.large");
@@ -450,6 +586,70 @@ namespace Amazon.GameLift
         /// Constant C5Xlarge for EC2InstanceType
         /// </summary>
         public static readonly EC2InstanceType C5Xlarge = new EC2InstanceType("c5.xlarge");
+        /// <summary>
+        /// Constant C6a12xlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType C6a12xlarge = new EC2InstanceType("c6a.12xlarge");
+        /// <summary>
+        /// Constant C6a16xlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType C6a16xlarge = new EC2InstanceType("c6a.16xlarge");
+        /// <summary>
+        /// Constant C6a24xlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType C6a24xlarge = new EC2InstanceType("c6a.24xlarge");
+        /// <summary>
+        /// Constant C6a2xlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType C6a2xlarge = new EC2InstanceType("c6a.2xlarge");
+        /// <summary>
+        /// Constant C6a4xlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType C6a4xlarge = new EC2InstanceType("c6a.4xlarge");
+        /// <summary>
+        /// Constant C6a8xlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType C6a8xlarge = new EC2InstanceType("c6a.8xlarge");
+        /// <summary>
+        /// Constant C6aLarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType C6aLarge = new EC2InstanceType("c6a.large");
+        /// <summary>
+        /// Constant C6aXlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType C6aXlarge = new EC2InstanceType("c6a.xlarge");
+        /// <summary>
+        /// Constant C6i12xlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType C6i12xlarge = new EC2InstanceType("c6i.12xlarge");
+        /// <summary>
+        /// Constant C6i16xlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType C6i16xlarge = new EC2InstanceType("c6i.16xlarge");
+        /// <summary>
+        /// Constant C6i24xlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType C6i24xlarge = new EC2InstanceType("c6i.24xlarge");
+        /// <summary>
+        /// Constant C6i2xlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType C6i2xlarge = new EC2InstanceType("c6i.2xlarge");
+        /// <summary>
+        /// Constant C6i4xlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType C6i4xlarge = new EC2InstanceType("c6i.4xlarge");
+        /// <summary>
+        /// Constant C6i8xlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType C6i8xlarge = new EC2InstanceType("c6i.8xlarge");
+        /// <summary>
+        /// Constant C6iLarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType C6iLarge = new EC2InstanceType("c6i.large");
+        /// <summary>
+        /// Constant C6iXlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType C6iXlarge = new EC2InstanceType("c6i.xlarge");
         /// <summary>
         /// Constant M32xlarge for EC2InstanceType
         /// </summary>
@@ -651,6 +851,38 @@ namespace Amazon.GameLift
         /// </summary>
         public static readonly EC2InstanceType R5aXlarge = new EC2InstanceType("r5a.xlarge");
         /// <summary>
+        /// Constant R5d12xlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType R5d12xlarge = new EC2InstanceType("r5d.12xlarge");
+        /// <summary>
+        /// Constant R5d16xlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType R5d16xlarge = new EC2InstanceType("r5d.16xlarge");
+        /// <summary>
+        /// Constant R5d24xlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType R5d24xlarge = new EC2InstanceType("r5d.24xlarge");
+        /// <summary>
+        /// Constant R5d2xlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType R5d2xlarge = new EC2InstanceType("r5d.2xlarge");
+        /// <summary>
+        /// Constant R5d4xlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType R5d4xlarge = new EC2InstanceType("r5d.4xlarge");
+        /// <summary>
+        /// Constant R5d8xlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType R5d8xlarge = new EC2InstanceType("r5d.8xlarge");
+        /// <summary>
+        /// Constant R5dLarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType R5dLarge = new EC2InstanceType("r5d.large");
+        /// <summary>
+        /// Constant R5dXlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType R5dXlarge = new EC2InstanceType("r5d.xlarge");
+        /// <summary>
         /// Constant R5Large for EC2InstanceType
         /// </summary>
         public static readonly EC2InstanceType R5Large = new EC2InstanceType("r5.large");
@@ -821,6 +1053,10 @@ namespace Amazon.GameLift
         /// </summary>
         public static readonly EventCode INSTANCE_INTERRUPTED = new EventCode("INSTANCE_INTERRUPTED");
         /// <summary>
+        /// Constant INSTANCE_RECYCLED for EventCode
+        /// </summary>
+        public static readonly EventCode INSTANCE_RECYCLED = new EventCode("INSTANCE_RECYCLED");
+        /// <summary>
         /// Constant SERVER_PROCESS_CRASHED for EventCode
         /// </summary>
         public static readonly EventCode SERVER_PROCESS_CRASHED = new EventCode("SERVER_PROCESS_CRASHED");
@@ -878,6 +1114,56 @@ namespace Amazon.GameLift
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator EventCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FilterInstanceStatus.
+    /// </summary>
+    public class FilterInstanceStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for FilterInstanceStatus
+        /// </summary>
+        public static readonly FilterInstanceStatus ACTIVE = new FilterInstanceStatus("ACTIVE");
+        /// <summary>
+        /// Constant DRAINING for FilterInstanceStatus
+        /// </summary>
+        public static readonly FilterInstanceStatus DRAINING = new FilterInstanceStatus("DRAINING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FilterInstanceStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FilterInstanceStatus FindValue(string value)
+        {
+            return FindValue<FilterInstanceStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FilterInstanceStatus(string value)
         {
             return FindValue(value);
         }
@@ -964,6 +1250,10 @@ namespace Amazon.GameLift
         /// Constant NEW for FleetStatus
         /// </summary>
         public static readonly FleetStatus NEW = new FleetStatus("NEW");
+        /// <summary>
+        /// Constant NOT_FOUND for FleetStatus
+        /// </summary>
+        public static readonly FleetStatus NOT_FOUND = new FleetStatus("NOT_FOUND");
         /// <summary>
         /// Constant TERMINATED for FleetStatus
         /// </summary>
@@ -2193,6 +2483,56 @@ namespace Amazon.GameLift
 
 
     /// <summary>
+    /// Constants used for properties of type LocationFilter.
+    /// </summary>
+    public class LocationFilter : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AWS for LocationFilter
+        /// </summary>
+        public static readonly LocationFilter AWS = new LocationFilter("AWS");
+        /// <summary>
+        /// Constant CUSTOM for LocationFilter
+        /// </summary>
+        public static readonly LocationFilter CUSTOM = new LocationFilter("CUSTOM");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LocationFilter(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LocationFilter FindValue(string value)
+        {
+            return FindValue<LocationFilter>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LocationFilter(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type LocationUpdateStatus.
     /// </summary>
     public class LocationUpdateStatus : ConstantClass
@@ -2339,6 +2679,10 @@ namespace Amazon.GameLift
         /// </summary>
         public static readonly MetricName AvailablePlayerSessions = new MetricName("AvailablePlayerSessions");
         /// <summary>
+        /// Constant ConcurrentActivatableGameSessions for MetricName
+        /// </summary>
+        public static readonly MetricName ConcurrentActivatableGameSessions = new MetricName("ConcurrentActivatableGameSessions");
+        /// <summary>
         /// Constant CurrentPlayerSessions for MetricName
         /// </summary>
         public static readonly MetricName CurrentPlayerSessions = new MetricName("CurrentPlayerSessions");
@@ -2416,6 +2760,10 @@ namespace Amazon.GameLift
         /// Constant WINDOWS_2012 for OperatingSystem
         /// </summary>
         public static readonly OperatingSystem WINDOWS_2012 = new OperatingSystem("WINDOWS_2012");
+        /// <summary>
+        /// Constant WINDOWS_2016 for OperatingSystem
+        /// </summary>
+        public static readonly OperatingSystem WINDOWS_2016 = new OperatingSystem("WINDOWS_2016");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

@@ -82,10 +82,22 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.ColorSpaceUsage = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("embeddedTimecodeOverride", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.EmbeddedTimecodeOverride = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("hdr10Metadata", targetDepth))
                 {
                     var unmarshaller = Hdr10MetadataUnmarshaller.Instance;
                     unmarshalledObject.Hdr10Metadata = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("padVideo", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PadVideo = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("pid", targetDepth))

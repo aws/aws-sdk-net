@@ -94,6 +94,30 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                     unmarshalledObject.DependsOn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("eksAttempts", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<EksAttemptDetail, EksAttemptDetailUnmarshaller>(EksAttemptDetailUnmarshaller.Instance);
+                    unmarshalledObject.EksAttempts = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("eksProperties", targetDepth))
+                {
+                    var unmarshaller = EksPropertiesDetailUnmarshaller.Instance;
+                    unmarshalledObject.EksProperties = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("isCancelled", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.IsCancelled = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("isTerminated", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.IsTerminated = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("jobArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

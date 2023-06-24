@@ -34,7 +34,7 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ProtocolDetails Marshaller
-    /// </summary>       
+    /// </summary>
     public class ProtocolDetailsMarshaller : IRequestMarshaller<ProtocolDetails, JsonMarshallerContext> 
     {
         /// <summary>
@@ -45,17 +45,40 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ProtocolDetails requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAs2Transports())
+            {
+                context.Writer.WritePropertyName("As2Transports");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectAs2TransportsListValue in requestObject.As2Transports)
+                {
+                        context.Writer.Write(requestObjectAs2TransportsListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetPassiveIp())
             {
                 context.Writer.WritePropertyName("PassiveIp");
                 context.Writer.Write(requestObject.PassiveIp);
             }
 
+            if(requestObject.IsSetSetStatOption())
+            {
+                context.Writer.WritePropertyName("SetStatOption");
+                context.Writer.Write(requestObject.SetStatOption);
+            }
+
+            if(requestObject.IsSetTlsSessionResumptionMode())
+            {
+                context.Writer.WritePropertyName("TlsSessionResumptionMode");
+                context.Writer.Write(requestObject.TlsSessionResumptionMode);
+            }
+
         }
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ProtocolDetailsMarshaller Instance = new ProtocolDetailsMarshaller();
 
     }

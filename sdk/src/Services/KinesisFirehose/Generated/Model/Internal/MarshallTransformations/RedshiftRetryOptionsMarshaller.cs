@@ -34,7 +34,7 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RedshiftRetryOptions Marshaller
-    /// </summary>       
+    /// </summary>
     public class RedshiftRetryOptionsMarshaller : IRequestMarshaller<RedshiftRetryOptions, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RedshiftRetryOptionsMarshaller Instance = new RedshiftRetryOptionsMarshaller();
 
     }

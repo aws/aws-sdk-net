@@ -41,7 +41,7 @@ namespace Amazon.AppRegistry.Model
         /// <summary>
         /// Gets and sets the property Application. 
         /// <para>
-        /// The name or ID of the application that will be updated.
+        ///  The name, ID, or ARN of the application that will be updated. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
@@ -79,10 +79,12 @@ namespace Amazon.AppRegistry.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The new name of the application. The name must be unique in the region in which you
-        /// are updating the application.
+        /// Deprecated: The new name of the application. The name must be unique in the region
+        /// in which you are updating the application. Please do not use this field as we have
+        /// stopped supporting name updates.
         /// </para>
         /// </summary>
+        [Obsolete("Name update for application is deprecated.")]
         [AWSProperty(Min=1, Max=256)]
         public string Name
         {

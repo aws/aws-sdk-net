@@ -34,7 +34,7 @@ namespace Amazon.FinSpaceData.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DataViewDestinationTypeParams Marshaller
-    /// </summary>       
+    /// </summary>
     public class DataViewDestinationTypeParamsMarshaller : IRequestMarshaller<DataViewDestinationTypeParams, JsonMarshallerContext> 
     {
         /// <summary>
@@ -51,11 +51,31 @@ namespace Amazon.FinSpaceData.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.DestinationType);
             }
 
+            if(requestObject.IsSetS3DestinationExportFileFormat())
+            {
+                context.Writer.WritePropertyName("s3DestinationExportFileFormat");
+                context.Writer.Write(requestObject.S3DestinationExportFileFormat);
+            }
+
+            if(requestObject.IsSetS3DestinationExportFileFormatOptions())
+            {
+                context.Writer.WritePropertyName("s3DestinationExportFileFormatOptions");
+                context.Writer.WriteObjectStart();
+                foreach (var requestObjectS3DestinationExportFileFormatOptionsKvp in requestObject.S3DestinationExportFileFormatOptions)
+                {
+                    context.Writer.WritePropertyName(requestObjectS3DestinationExportFileFormatOptionsKvp.Key);
+                    var requestObjectS3DestinationExportFileFormatOptionsValue = requestObjectS3DestinationExportFileFormatOptionsKvp.Value;
+
+                        context.Writer.Write(requestObjectS3DestinationExportFileFormatOptionsValue);
+                }
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DataViewDestinationTypeParamsMarshaller Instance = new DataViewDestinationTypeParamsMarshaller();
 
     }

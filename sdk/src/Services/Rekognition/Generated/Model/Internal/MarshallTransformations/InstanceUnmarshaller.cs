@@ -76,6 +76,12 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                     unmarshalledObject.Confidence = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DominantColors", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<DominantColor, DominantColorUnmarshaller>(DominantColorUnmarshaller.Instance);
+                    unmarshalledObject.DominantColors = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

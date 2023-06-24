@@ -70,6 +70,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.Brightness = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("clipLimits", targetDepth))
+                {
+                    var unmarshaller = ClipLimitsUnmarshaller.Instance;
+                    unmarshalledObject.ClipLimits = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("colorSpaceConversion", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -88,6 +94,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.Hdr10Metadata = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("hdrToSdrToneMapper", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.HdrToSdrToneMapper = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("hue", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
@@ -104,6 +116,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
                     unmarshalledObject.Saturation = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("sdrReferenceWhiteLevel", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.SdrReferenceWhiteLevel = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

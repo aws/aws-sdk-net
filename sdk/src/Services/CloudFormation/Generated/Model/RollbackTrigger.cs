@@ -47,7 +47,7 @@ namespace Amazon.CloudFormation.Model
         ///  
         /// <para>
         /// If a specified trigger is missing, the entire stack operation fails and is rolled
-        /// back. 
+        /// back.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

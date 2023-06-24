@@ -51,6 +51,12 @@ namespace Amazon.Route53.Model
     /// with the log group associated with query log. Update or provide a resource policy
     /// to grant permissions for the KMS key.
     /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The Key management service (KMS) key you specified is marked as disabled for the log
+    /// group associated with query log. Update or provide a resource policy to grant permissions
+    /// for the KMS key.
+    /// </para>
     ///  </li> </ul>
     /// </summary>
     #if !NETSTANDARD

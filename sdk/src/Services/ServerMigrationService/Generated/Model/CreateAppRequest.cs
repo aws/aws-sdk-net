@@ -100,7 +100,8 @@ namespace Amazon.ServerMigrationService.Model
         /// <summary>
         /// Gets and sets the property RoleName. 
         /// <para>
-        /// The name of the service role in the customer's account to be used by AWS SMS.
+        /// The name of the service role in the customer's account to be used by Server Migration
+        /// Service.
         /// </para>
         /// </summary>
         public string RoleName

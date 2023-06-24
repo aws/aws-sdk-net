@@ -34,7 +34,7 @@ namespace Amazon.PI.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// MetricQuery Marshaller
-    /// </summary>       
+    /// </summary>
     public class MetricQueryMarshaller : IRequestMarshaller<MetricQuery, JsonMarshallerContext> 
     {
         /// <summary>
@@ -80,7 +80,7 @@ namespace Amazon.PI.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static MetricQueryMarshaller Instance = new MetricQueryMarshaller();
 
     }

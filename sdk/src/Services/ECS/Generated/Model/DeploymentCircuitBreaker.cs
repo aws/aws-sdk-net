@@ -32,15 +32,15 @@ namespace Amazon.ECS.Model
     /// <note> 
     /// <para>
     /// The deployment circuit breaker can only be used for services using the rolling update
-    /// (<code>ECS</code>) deployment type that aren't behind a Classic Load Balancer.
+    /// (<code>ECS</code>) deployment type.
     /// </para>
     ///  </note> 
     /// <para>
     /// The <b>deployment circuit breaker</b> determines whether a service deployment will
-    /// fail if the service can't reach a steady state. If enabled, a service deployment will
-    /// transition to a failed state and stop launching new tasks. You can also enable Amazon
-    /// ECS to roll back your service to the last completed deployment after a failure. For
-    /// more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-type-ecs.html">Rolling
+    /// fail if the service can't reach a steady state. If it is turned on, a service deployment
+    /// will transition to a failed state and stop launching new tasks. You can also configure
+    /// Amazon ECS to roll back your service to the last completed deployment after a failure.
+    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-type-ecs.html">Rolling
     /// update</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
     /// </para>
     /// </summary>
@@ -52,7 +52,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Enable. 
         /// <para>
-        /// Determines whether to enable the deployment circuit breaker logic for the service.
+        /// Determines whether to use the deployment circuit breaker logic for the service.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -71,9 +71,9 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Rollback. 
         /// <para>
-        /// Determines whether to enable Amazon ECS to roll back the service if a service deployment
-        /// fails. If rollback is enabled, when a service deployment fails, the service is rolled
-        /// back to the last deployment that completed successfully.
+        /// Determines whether to configure Amazon ECS to roll back the service if a service deployment
+        /// fails. If rollback is on, when a service deployment fails, the service is rolled back
+        /// to the last deployment that completed successfully.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

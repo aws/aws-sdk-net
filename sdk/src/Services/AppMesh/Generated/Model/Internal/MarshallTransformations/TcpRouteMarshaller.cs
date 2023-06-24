@@ -34,7 +34,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// TcpRoute Marshaller
-    /// </summary>       
+    /// </summary>
     public class TcpRouteMarshaller : IRequestMarshaller<TcpRoute, JsonMarshallerContext> 
     {
         /// <summary>
@@ -56,6 +56,17 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetMatch())
+            {
+                context.Writer.WritePropertyName("match");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = TcpRouteMatchMarshaller.Instance;
+                marshaller.Marshall(requestObject.Match, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetTimeout())
             {
                 context.Writer.WritePropertyName("timeout");
@@ -71,7 +82,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static TcpRouteMarshaller Instance = new TcpRouteMarshaller();
 
     }

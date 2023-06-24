@@ -29,10 +29,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// The request was rejected because only the service that depends on the service-linked
-    /// role can modify or delete the role on your behalf. The error message includes the
-    /// name of the service that depends on this service-linked role. You must request the
-    /// change through that service.
+    /// The request was rejected because service-linked roles are protected Amazon Web Services
+    /// resources. Only the service that depends on the service-linked role can modify or
+    /// delete the role on your behalf. The error message includes the name of the service
+    /// that depends on this service-linked role. You must request the change through that
+    /// service.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

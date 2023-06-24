@@ -34,7 +34,7 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ChannelMessages Marshaller
-    /// </summary>       
+    /// </summary>
     public class ChannelMessagesMarshaller : IRequestMarshaller<ChannelMessages, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ChannelMessagesMarshaller Instance = new ChannelMessagesMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// BusinessCallingSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class BusinessCallingSettingsMarshaller : IRequestMarshaller<BusinessCallingSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static BusinessCallingSettingsMarshaller Instance = new BusinessCallingSettingsMarshaller();
 
     }

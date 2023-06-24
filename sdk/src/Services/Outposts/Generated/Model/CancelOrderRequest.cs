@@ -30,7 +30,7 @@ namespace Amazon.Outposts.Model
 {
     /// <summary>
     /// Container for the parameters to the CancelOrder operation.
-    /// Cancels an order for an Outpost.
+    /// Cancels the specified order for an Outpost.
     /// </summary>
     public partial class CancelOrderRequest : AmazonOutpostsRequest
     {
@@ -39,7 +39,7 @@ namespace Amazon.Outposts.Model
         /// <summary>
         /// Gets and sets the property OrderId. 
         /// <para>
-        ///  The ID of the order to cancel. 
+        ///  The ID of the order. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=20)]

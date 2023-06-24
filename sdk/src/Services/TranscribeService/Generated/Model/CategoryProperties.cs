@@ -29,20 +29,22 @@ using Amazon.Runtime.Internal;
 namespace Amazon.TranscribeService.Model
 {
     /// <summary>
-    /// An object that contains the rules and additional information about a call analytics
-    /// category.
+    /// Provides you with the properties of the Call Analytics category you specified in your
+    /// request. This includes the list of rules that define the specified category.
     /// </summary>
     public partial class CategoryProperties
     {
         private string _categoryName;
         private DateTime? _createTime;
+        private InputType _inputType;
         private DateTime? _lastUpdateTime;
         private List<Rule> _rules = new List<Rule>();
 
         /// <summary>
         /// Gets and sets the property CategoryName. 
         /// <para>
-        /// The name of the call analytics category.
+        /// The name of the Call Analytics category. Category names are case sensitive and must
+        /// be unique within an Amazon Web Services account.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
@@ -61,7 +63,13 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property CreateTime. 
         /// <para>
-        /// A timestamp that shows when the call analytics category was created.
+        /// The date and time the specified Call Analytics category was created.
+        /// </para>
+        ///  
+        /// <para>
+        /// Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+        /// <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May 4,
+        /// 2022.
         /// </para>
         /// </summary>
         public DateTime CreateTime
@@ -77,9 +85,35 @@ namespace Amazon.TranscribeService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property InputType. 
+        /// <para>
+        /// The input type associated with the specified category. <code>POST_CALL</code> refers
+        /// to a category that is applied to batch transcriptions; <code>REAL_TIME</code> refers
+        /// to a category that is applied to streaming transcriptions.
+        /// </para>
+        /// </summary>
+        public InputType InputType
+        {
+            get { return this._inputType; }
+            set { this._inputType = value; }
+        }
+
+        // Check to see if InputType property is set
+        internal bool IsSetInputType()
+        {
+            return this._inputType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property LastUpdateTime. 
         /// <para>
-        /// A timestamp that shows when the call analytics category was most recently updated.
+        /// The date and time the specified Call Analytics category was last updated.
+        /// </para>
+        ///  
+        /// <para>
+        /// Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+        /// <code>2022-05-05T12:45:32.691000-07:00</code> represents 12:45 PM UTC-7 on May 5,
+        /// 2022.
         /// </para>
         /// </summary>
         public DateTime LastUpdateTime
@@ -97,7 +131,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property Rules. 
         /// <para>
-        /// The rules used to create a call analytics category.
+        /// The rules used to define a Call Analytics category. Each category can have between
+        /// 1 and 20 rules.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=20)]

@@ -38,8 +38,13 @@ namespace Amazon.Drs.Model
         private LastLaunchResult _lastLaunchResult;
         private LifeCycle _lifeCycle;
         private string _recoveryInstanceId;
+        private ReplicationDirection _replicationDirection;
+        private string _reversedDirectionSourceServerArn;
+        private SourceCloudProperties _sourceCloudProperties;
+        private string _sourceNetworkID;
         private SourceProperties _sourceProperties;
         private string _sourceServerID;
+        private StagingArea _stagingArea;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
@@ -135,6 +140,81 @@ namespace Amazon.Drs.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ReplicationDirection. 
+        /// <para>
+        /// Replication direction of the Source Server.
+        /// </para>
+        /// </summary>
+        public ReplicationDirection ReplicationDirection
+        {
+            get { return this._replicationDirection; }
+            set { this._replicationDirection = value; }
+        }
+
+        // Check to see if ReplicationDirection property is set
+        internal bool IsSetReplicationDirection()
+        {
+            return this._replicationDirection != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReversedDirectionSourceServerArn. 
+        /// <para>
+        /// For EC2-originated Source Servers which have been failed over and then failed back,
+        /// this value will mean the ARN of the Source Server on the opposite replication direction.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string ReversedDirectionSourceServerArn
+        {
+            get { return this._reversedDirectionSourceServerArn; }
+            set { this._reversedDirectionSourceServerArn = value; }
+        }
+
+        // Check to see if ReversedDirectionSourceServerArn property is set
+        internal bool IsSetReversedDirectionSourceServerArn()
+        {
+            return this._reversedDirectionSourceServerArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceCloudProperties. 
+        /// <para>
+        /// Source cloud properties of the Source Server.
+        /// </para>
+        /// </summary>
+        public SourceCloudProperties SourceCloudProperties
+        {
+            get { return this._sourceCloudProperties; }
+            set { this._sourceCloudProperties = value; }
+        }
+
+        // Check to see if SourceCloudProperties property is set
+        internal bool IsSetSourceCloudProperties()
+        {
+            return this._sourceCloudProperties != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceNetworkID. 
+        /// <para>
+        /// ID of the Source Network which is protecting this Source Server's network.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=20)]
+        public string SourceNetworkID
+        {
+            get { return this._sourceNetworkID; }
+            set { this._sourceNetworkID = value; }
+        }
+
+        // Check to see if SourceNetworkID property is set
+        internal bool IsSetSourceNetworkID()
+        {
+            return this._sourceNetworkID != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SourceProperties. 
         /// <para>
         /// The source properties of the Source Server.
@@ -172,11 +252,30 @@ namespace Amazon.Drs.Model
         }
 
         /// <summary>
+        /// Gets and sets the property StagingArea. 
+        /// <para>
+        /// The staging area of the source server.
+        /// </para>
+        /// </summary>
+        public StagingArea StagingArea
+        {
+            get { return this._stagingArea; }
+            set { this._stagingArea = value; }
+        }
+
+        // Check to see if StagingArea property is set
+        internal bool IsSetStagingArea()
+        {
+            return this._stagingArea != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
         /// The tags associated with the Source Server.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public Dictionary<string, string> Tags
         {
             get { return this._tags; }

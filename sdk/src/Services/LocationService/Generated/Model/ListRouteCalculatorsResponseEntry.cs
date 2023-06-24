@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LocationService.Model
 {
     /// <summary>
-    /// A route calculator resource listed in your AWS account.
+    /// A route calculator resource listed in your Amazon Web Services account.
     /// </summary>
     public partial class ListRouteCalculatorsResponseEntry
     {
@@ -96,6 +96,10 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>Grab</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>Here</code> 
         /// </para>
         ///  </li> </ul> 
@@ -139,15 +143,10 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property PricingPlan. 
         /// <para>
-        /// The pricing plan for the specified route calculator resource.
-        /// </para>
-        ///  
-        /// <para>
-        /// For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon
-        /// Location Service pricing</a>.
+        /// Always returns <code>RequestBasedUsage</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [Obsolete("Deprecated. Always returns RequestBasedUsage.")]
         public PricingPlan PricingPlan
         {
             get { return this._pricingPlan; }

@@ -20,6 +20,11 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaTailor.Model.ListLiveSourcesRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaTailor.Model.ListPlaybackConfigurationsRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>

@@ -1,0 +1,6 @@
+{
+  "active": true,
+  "synopsis": "This release adds support for data definition language (DDL) operations",
+  "generate-client-constructors": true,
+  "legacy-service-id": "Keyspaces"
+}

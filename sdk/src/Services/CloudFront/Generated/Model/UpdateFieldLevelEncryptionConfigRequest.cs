@@ -41,7 +41,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property FieldLevelEncryptionConfig. 
         /// <para>
-        /// Request to update a field-level encryption configuration. 
+        /// Request to update a field-level encryption configuration.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

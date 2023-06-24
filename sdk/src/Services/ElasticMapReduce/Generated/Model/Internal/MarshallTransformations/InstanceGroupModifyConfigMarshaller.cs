@@ -34,7 +34,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// InstanceGroupModifyConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class InstanceGroupModifyConfigMarshaller : IRequestMarshaller<InstanceGroupModifyConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -84,6 +84,12 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.InstanceGroupId);
             }
 
+            if(requestObject.IsSetReconfigurationType())
+            {
+                context.Writer.WritePropertyName("ReconfigurationType");
+                context.Writer.Write(requestObject.ReconfigurationType);
+            }
+
             if(requestObject.IsSetShrinkPolicy())
             {
                 context.Writer.WritePropertyName("ShrinkPolicy");
@@ -99,7 +105,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static InstanceGroupModifyConfigMarshaller Instance = new InstanceGroupModifyConfigMarshaller();
 
     }

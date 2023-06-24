@@ -34,7 +34,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// APNSVoipSandboxChannelRequest Marshaller
-    /// </summary>       
+    /// </summary>
     public class APNSVoipSandboxChannelRequestMarshaller : IRequestMarshaller<APNSVoipSandboxChannelRequest, JsonMarshallerContext> 
     {
         /// <summary>
@@ -97,7 +97,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static APNSVoipSandboxChannelRequestMarshaller Instance = new APNSVoipSandboxChannelRequestMarshaller();
 
     }

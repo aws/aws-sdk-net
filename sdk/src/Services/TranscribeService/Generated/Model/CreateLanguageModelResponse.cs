@@ -42,8 +42,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property BaseModelName. 
         /// <para>
-        /// The Amazon Transcribe standard language model, or base model you've used to create
-        /// a custom language model.
+        /// The Amazon Transcribe standard language model, or base model, you specified when creating
+        /// your custom language model.
         /// </para>
         /// </summary>
         public BaseModelName BaseModelName
@@ -61,8 +61,9 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property InputDataConfig. 
         /// <para>
-        /// The data access role and Amazon S3 prefixes you've chosen to create your custom language
-        /// model.
+        /// Lists your data access role ARN (Amazon Resource Name) and the Amazon S3 locations
+        /// you provided for your training (<code>S3Uri</code>) and tuning (<code>TuningDataS3Uri</code>)
+        /// data.
         /// </para>
         /// </summary>
         public InputDataConfig InputDataConfig
@@ -80,7 +81,7 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property LanguageCode. 
         /// <para>
-        /// The language code of the text you've used to create a custom language model.
+        /// The language code you selected for your custom language model.
         /// </para>
         /// </summary>
         public CLMLanguageCode LanguageCode
@@ -98,7 +99,7 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property ModelName. 
         /// <para>
-        /// The name you've chosen for your custom language model.
+        /// The name of your custom language model.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
@@ -117,8 +118,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property ModelStatus. 
         /// <para>
-        /// The status of the custom language model. When the status is <code>COMPLETED</code>
-        /// the model is ready to use.
+        /// The status of your custom language model. When the status displays as <code>COMPLETED</code>,
+        /// your model is ready to use.
         /// </para>
         /// </summary>
         public ModelStatus ModelStatus

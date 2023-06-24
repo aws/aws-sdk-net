@@ -123,7 +123,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ImageArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the image.
+        /// The ARN of the image.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=256)]

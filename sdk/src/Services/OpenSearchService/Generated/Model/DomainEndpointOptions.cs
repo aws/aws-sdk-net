@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// Options to configure the endpoint for the domain.
+    /// Options to configure a custom endpoint for an OpenSearch Service domain.
     /// </summary>
     public partial class DomainEndpointOptions
     {
@@ -42,7 +42,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property CustomEndpoint. 
         /// <para>
-        /// The fully qualified domain for your custom endpoint.
+        /// The fully qualified URL for the custom endpoint.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -61,7 +61,8 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property CustomEndpointCertificateArn. 
         /// <para>
-        /// The ACM certificate ARN for your custom endpoint.
+        /// The ARN for your security certificate, managed in Amazon Web Services Certificate
+        /// Manager (ACM).
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -98,7 +99,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property EnforceHTTPS. 
         /// <para>
-        /// Whether only HTTPS endpoint should be enabled for the domain.
+        /// True to require that all traffic to the domain arrive over HTTPS.
         /// </para>
         /// </summary>
         public bool EnforceHTTPS
@@ -116,11 +117,23 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property TLSSecurityPolicy. 
         /// <para>
-        /// Specify the TLS security policy to apply to the HTTPS endpoint of the domain. <br/>
-        /// Can be one of the following values: <ul> <li> <b>Policy-Min-TLS-1-0-2019-07:</b> TLS
-        /// security policy which supports TLSv1.0 and higher. </li> <li> <b>Policy-Min-TLS-1-2-2019-07:</b>
-        /// TLS security policy which supports only TLSv1.2 </li> </ul> 
+        /// Specify the TLS security policy to apply to the HTTPS endpoint of the domain.
         /// </para>
+        ///  
+        /// <para>
+        ///  Can be one of the following values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>Policy-Min-TLS-1-0-2019-07:</b> TLS security policy which supports TLS version
+        /// 1.0 and higher.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Policy-Min-TLS-1-2-2019-07:</b> TLS security policy which supports only TLS version
+        /// 1.2 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public TLSSecurityPolicy TLSSecurityPolicy
         {

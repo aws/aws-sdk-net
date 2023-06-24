@@ -43,6 +43,7 @@ namespace Amazon.GroundStation.Model
         /// Maximum number of mission profiles returned.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=100)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -62,6 +63,7 @@ namespace Amazon.GroundStation.Model
         /// call. Used to get the next page of results.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=3, Max=1000)]
         public string NextToken
         {
             get { return this._nextToken; }

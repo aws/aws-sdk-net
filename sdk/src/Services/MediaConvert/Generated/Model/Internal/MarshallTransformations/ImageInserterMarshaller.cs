@@ -34,7 +34,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ImageInserter Marshaller
-    /// </summary>       
+    /// </summary>
     public class ImageInserterMarshaller : IRequestMarshaller<ImageInserter, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,11 +61,17 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetSdrReferenceWhiteLevel())
+            {
+                context.Writer.WritePropertyName("sdrReferenceWhiteLevel");
+                context.Writer.Write(requestObject.SdrReferenceWhiteLevel);
+            }
+
         }
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ImageInserterMarshaller Instance = new ImageInserterMarshaller();
 
     }

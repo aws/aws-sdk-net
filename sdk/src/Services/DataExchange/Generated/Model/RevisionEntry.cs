@@ -39,6 +39,9 @@ namespace Amazon.DataExchange.Model
         private string _dataSetId;
         private bool? _finalized;
         private string _id;
+        private string _revocationComment;
+        private bool? _revoked;
+        private DateTime? _revokedAt;
         private string _sourceId;
         private DateTime? _updatedAt;
 
@@ -102,7 +105,7 @@ namespace Amazon.DataExchange.Model
         /// <summary>
         /// Gets and sets the property DataSetId. 
         /// <para>
-        /// The unique identifier for the data set associated with this revision.
+        /// The unique identifier for the data set associated with the data set revision.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -124,13 +127,10 @@ namespace Amazon.DataExchange.Model
         /// To publish a revision to a data set in a product, the revision must first be finalized.
         /// Finalizing a revision tells AWS Data Exchange that your changes to the assets in the
         /// revision are complete. After it's in this read-only state, you can publish the revision
-        /// to your products.
-        /// </para>
-        ///  
-        /// <para>
-        /// Finalized revisions can be published through the AWS Data Exchange console or the
-        /// AWS Marketplace Catalog API, using the StartChangeSet AWS Marketplace Catalog API
-        /// action. When using the API, revisions are uniquely identified by their ARN.
+        /// to your products. Finalized revisions can be published through the AWS Data Exchange
+        /// console or the AWS Marketplace Catalog API, using the StartChangeSet AWS Marketplace
+        /// Catalog API action. When using the API, revisions are uniquely identified by their
+        /// ARN.
         /// </para>
         /// </summary>
         public bool Finalized
@@ -162,6 +162,62 @@ namespace Amazon.DataExchange.Model
         internal bool IsSetId()
         {
             return this._id != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RevocationComment. 
+        /// <para>
+        /// A required comment to inform subscribers of the reason their access to the revision
+        /// was revoked.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=10, Max=512)]
+        public string RevocationComment
+        {
+            get { return this._revocationComment; }
+            set { this._revocationComment = value; }
+        }
+
+        // Check to see if RevocationComment property is set
+        internal bool IsSetRevocationComment()
+        {
+            return this._revocationComment != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Revoked. 
+        /// <para>
+        /// A status indicating that subscribers' access to the revision was revoked.
+        /// </para>
+        /// </summary>
+        public bool Revoked
+        {
+            get { return this._revoked.GetValueOrDefault(); }
+            set { this._revoked = value; }
+        }
+
+        // Check to see if Revoked property is set
+        internal bool IsSetRevoked()
+        {
+            return this._revoked.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RevokedAt. 
+        /// <para>
+        /// The date and time that the revision was revoked, in ISO 8601 format.
+        /// </para>
+        /// </summary>
+        public DateTime RevokedAt
+        {
+            get { return this._revokedAt.GetValueOrDefault(); }
+            set { this._revokedAt = value; }
+        }
+
+        // Check to see if RevokedAt property is set
+        internal bool IsSetRevokedAt()
+        {
+            return this._revokedAt.HasValue; 
         }
 
         /// <summary>

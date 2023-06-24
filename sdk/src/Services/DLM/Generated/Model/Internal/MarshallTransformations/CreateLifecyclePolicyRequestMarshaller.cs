@@ -56,7 +56,7 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.DLM");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-01-12";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-01-12";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/policies";
@@ -108,7 +108,6 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

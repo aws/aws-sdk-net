@@ -30,12 +30,24 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateLaunchTemplate operation.
-    /// Creates a launch template. A launch template contains the parameters to launch an
-    /// instance. When you launch an instance using <a>RunInstances</a>, you can specify a
-    /// launch template instead of providing the launch parameters in the request. For more
-    /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html">Launching
+    /// Creates a launch template.
+    /// 
+    ///  
+    /// <para>
+    /// A launch template contains the parameters to launch an instance. When you launch an
+    /// instance using <a>RunInstances</a>, you can specify a launch template instead of providing
+    /// the launch parameters in the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html">Launch
     /// an instance from a launch template</a> in the <i>Amazon Elastic Compute Cloud User
     /// Guide</i>.
+    /// </para>
+    ///  
+    /// <para>
+    /// If you want to clone an existing launch template as the basis for creating a new launch
+    /// template, you can use the Amazon EC2 console. The API, SDKs, and CLI do not support
+    /// cloning a template. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template-from-existing-launch-template">Create
+    /// a launch template from an existing launch template</a> in the <i>Amazon Elastic Compute
+    /// Cloud User Guide</i>.
+    /// </para>
     /// </summary>
     public partial class CreateLaunchTemplateRequest : AmazonEC2Request
     {
@@ -50,7 +62,7 @@ namespace Amazon.EC2.Model
         /// <para>
         /// Unique, case-sensitive identifier you provide to ensure the idempotency of the request.
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-        /// Idempotency</a>.
+        /// idempotency</a>.
         /// </para>
         ///  
         /// <para>
@@ -110,8 +122,16 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property TagSpecifications. 
         /// <para>
-        /// The tags to apply to the launch template during creation.
+        /// The tags to apply to the launch template on creation. To tag the launch template,
+        /// the resource type must be <code>launch-template</code>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// To specify the tags for the resources that are created when an instance is launched,
+        /// you must use the <code>TagSpecifications</code> parameter in the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestLaunchTemplateData.html">launch
+        /// template data</a> structure.
+        /// </para>
+        ///  </note>
         /// </summary>
         public List<TagSpecification> TagSpecifications
         {

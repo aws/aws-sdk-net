@@ -34,7 +34,7 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DataDestination Marshaller
-    /// </summary>       
+    /// </summary>
     public class DataDestinationMarshaller : IRequestMarshaller<DataDestination, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DataDestinationMarshaller Instance = new DataDestinationMarshaller();
 
     }

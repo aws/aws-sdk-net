@@ -44,6 +44,7 @@ namespace Amazon.Connect.Model
         /// An access token generated for a federated user to access Amazon Connect.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string AccessToken
         {
             get { return this._accessToken; }
@@ -81,6 +82,7 @@ namespace Amazon.Connect.Model
         /// Renews a token generated for a user to access the Amazon Connect instance.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string RefreshToken
         {
             get { return this._refreshToken; }

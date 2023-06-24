@@ -38,11 +38,11 @@ namespace Amazon.Detective
     /// <summary>
     /// Implementation for accessing Detective
     ///
-    /// Detective uses machine learning and purpose-built visualizations to help you analyze
-    /// and investigate security issues across your Amazon Web Services (AWS) workloads. Detective
-    /// automatically extracts time-based events such as login attempts, API calls, and network
-    /// traffic from AWS CloudTrail and Amazon Virtual Private Cloud (Amazon VPC) flow logs.
-    /// It also extracts findings detected by Amazon GuardDuty.
+    /// Detective uses machine learning and purpose-built visualizations to help you to analyze
+    /// and investigate security issues across your Amazon Web Services (Amazon Web Services)
+    /// workloads. Detective automatically extracts time-based events such as login attempts,
+    /// API calls, and network traffic from CloudTrail and Amazon Virtual Private Cloud (Amazon
+    /// VPC) flow logs. It also extracts findings detected by Amazon GuardDuty.
     /// 
     ///  
     /// <para>
@@ -52,12 +52,34 @@ namespace Amazon.Detective
     /// </para>
     ///  
     /// <para>
-    /// Every behavior graph is specific to a Region. You can only use the API to manage graphs
-    /// that belong to the Region that is associated with the currently selected endpoint.
+    /// To add a member account to the behavior graph, the administrator account sends an
+    /// invitation to the account. When the account accepts the invitation, it becomes a member
+    /// account in the behavior graph.
     /// </para>
     ///  
     /// <para>
-    /// A Detective administrator account can use the Detective API to do the following:
+    /// Detective is also integrated with Organizations. The organization management account
+    /// designates the Detective administrator account for the organization. That account
+    /// becomes the administrator account for the organization behavior graph. The Detective
+    /// administrator account is also the delegated administrator account for Detective in
+    /// Organizations.
+    /// </para>
+    ///  
+    /// <para>
+    /// The Detective administrator account can enable any organization account as a member
+    /// account in the organization behavior graph. The organization accounts do not receive
+    /// invitations. The Detective administrator account can also invite other accounts to
+    /// the organization behavior graph.
+    /// </para>
+    ///  
+    /// <para>
+    /// Every behavior graph is specific to a Region. You can only use the API to manage behavior
+    /// graphs that belong to the Region that is associated with the currently selected endpoint.
+    /// </para>
+    ///  
+    /// <para>
+    /// The administrator account for a behavior graph can use the Detective API to do the
+    /// following:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -75,9 +97,32 @@ namespace Amazon.Detective
     /// <para>
     /// Remove member accounts from a behavior graph.
     /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Apply tags to a behavior graph.
+    /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// A member account can use the Detective API to do the following:
+    /// The organization management account can use the Detective API to select the delegated
+    /// administrator for Detective.
+    /// </para>
+    ///  
+    /// <para>
+    /// The Detective administrator account for an organization can use the Detective API
+    /// to do the following:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// Perform all of the functions of an administrator account.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Determine whether to automatically enable new organization accounts as member accounts
+    /// in the organization behavior graph.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// An invited member account can use the Detective API to do the following:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -297,6 +342,15 @@ namespace Amazon.Detective
         }    
 
         /// <summary>
+        /// Customize the pipeline
+        /// </summary>
+        /// <param name="pipeline"></param>
+        protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
+        {
+            pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonDetectiveEndpointResolver());
+        }    
+        /// <summary>
         /// Capture metadata for the service.
         /// </summary>
         protected override IServiceMetadata ServiceMetadata
@@ -341,6 +395,10 @@ namespace Amazon.Detective
         /// <param name="request">Container for the necessary parameters to execute the AcceptInvitation service method.</param>
         /// 
         /// <returns>The response from the AcceptInvitation service method, as returned by Detective.</returns>
+        /// <exception cref="Amazon.Detective.Model.AccessDeniedException">
+        /// The request issuer does not have permission to access this resource or perform this
+        /// operation.
+        /// </exception>
         /// <exception cref="Amazon.Detective.Model.ConflictException">
         /// The request attempted an invalid action.
         /// </exception>
@@ -383,6 +441,10 @@ namespace Amazon.Detective
         /// </param>
         /// 
         /// <returns>The response from the AcceptInvitation service method, as returned by Detective.</returns>
+        /// <exception cref="Amazon.Detective.Model.AccessDeniedException">
+        /// The request issuer does not have permission to access this resource or perform this
+        /// operation.
+        /// </exception>
         /// <exception cref="Amazon.Detective.Model.ConflictException">
         /// The request attempted an invalid action.
         /// </exception>
@@ -403,6 +465,140 @@ namespace Amazon.Detective
             options.ResponseUnmarshaller = AcceptInvitationResponseUnmarshaller.Instance;
             
             return InvokeAsync<AcceptInvitationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  BatchGetGraphMemberDatasources
+
+
+        /// <summary>
+        /// Gets data source package information for the behavior graph.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetGraphMemberDatasources service method.</param>
+        /// 
+        /// <returns>The response from the BatchGetGraphMemberDatasources service method, as returned by Detective.</returns>
+        /// <exception cref="Amazon.Detective.Model.AccessDeniedException">
+        /// The request issuer does not have permission to access this resource or perform this
+        /// operation.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.InternalServerException">
+        /// The request was valid but failed because of a problem with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.ResourceNotFoundException">
+        /// The request refers to a nonexistent resource.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.ValidationException">
+        /// The request parameters are invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/BatchGetGraphMemberDatasources">REST API Reference for BatchGetGraphMemberDatasources Operation</seealso>
+        public virtual BatchGetGraphMemberDatasourcesResponse BatchGetGraphMemberDatasources(BatchGetGraphMemberDatasourcesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetGraphMemberDatasourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetGraphMemberDatasourcesResponseUnmarshaller.Instance;
+
+            return Invoke<BatchGetGraphMemberDatasourcesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Gets data source package information for the behavior graph.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetGraphMemberDatasources service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchGetGraphMemberDatasources service method, as returned by Detective.</returns>
+        /// <exception cref="Amazon.Detective.Model.AccessDeniedException">
+        /// The request issuer does not have permission to access this resource or perform this
+        /// operation.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.InternalServerException">
+        /// The request was valid but failed because of a problem with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.ResourceNotFoundException">
+        /// The request refers to a nonexistent resource.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.ValidationException">
+        /// The request parameters are invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/BatchGetGraphMemberDatasources">REST API Reference for BatchGetGraphMemberDatasources Operation</seealso>
+        public virtual Task<BatchGetGraphMemberDatasourcesResponse> BatchGetGraphMemberDatasourcesAsync(BatchGetGraphMemberDatasourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetGraphMemberDatasourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetGraphMemberDatasourcesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<BatchGetGraphMemberDatasourcesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  BatchGetMembershipDatasources
+
+
+        /// <summary>
+        /// Gets information on the data source package history for an account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetMembershipDatasources service method.</param>
+        /// 
+        /// <returns>The response from the BatchGetMembershipDatasources service method, as returned by Detective.</returns>
+        /// <exception cref="Amazon.Detective.Model.AccessDeniedException">
+        /// The request issuer does not have permission to access this resource or perform this
+        /// operation.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.InternalServerException">
+        /// The request was valid but failed because of a problem with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.ResourceNotFoundException">
+        /// The request refers to a nonexistent resource.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.ValidationException">
+        /// The request parameters are invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/BatchGetMembershipDatasources">REST API Reference for BatchGetMembershipDatasources Operation</seealso>
+        public virtual BatchGetMembershipDatasourcesResponse BatchGetMembershipDatasources(BatchGetMembershipDatasourcesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetMembershipDatasourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetMembershipDatasourcesResponseUnmarshaller.Instance;
+
+            return Invoke<BatchGetMembershipDatasourcesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Gets information on the data source package history for an account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetMembershipDatasources service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchGetMembershipDatasources service method, as returned by Detective.</returns>
+        /// <exception cref="Amazon.Detective.Model.AccessDeniedException">
+        /// The request issuer does not have permission to access this resource or perform this
+        /// operation.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.InternalServerException">
+        /// The request was valid but failed because of a problem with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.ResourceNotFoundException">
+        /// The request refers to a nonexistent resource.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.ValidationException">
+        /// The request parameters are invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/BatchGetMembershipDatasources">REST API Reference for BatchGetMembershipDatasources Operation</seealso>
+        public virtual Task<BatchGetMembershipDatasourcesResponse> BatchGetMembershipDatasourcesAsync(BatchGetMembershipDatasourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetMembershipDatasourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetMembershipDatasourcesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<BatchGetMembershipDatasourcesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -442,6 +638,10 @@ namespace Amazon.Detective
         /// <param name="request">Container for the necessary parameters to execute the CreateGraph service method.</param>
         /// 
         /// <returns>The response from the CreateGraph service method, as returned by Detective.</returns>
+        /// <exception cref="Amazon.Detective.Model.AccessDeniedException">
+        /// The request issuer does not have permission to access this resource or perform this
+        /// operation.
+        /// </exception>
         /// <exception cref="Amazon.Detective.Model.ConflictException">
         /// The request attempted an invalid action.
         /// </exception>
@@ -454,7 +654,7 @@ namespace Amazon.Detective
         ///  <ul> <li> 
         /// <para>
         /// The request would cause the number of member accounts in the behavior graph to exceed
-        /// the maximum allowed. A behavior graph cannot have more than 1000 member accounts.
+        /// the maximum allowed. A behavior graph cannot have more than 1200 member accounts.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -464,7 +664,7 @@ namespace Amazon.Detective
         ///  </li> <li> 
         /// <para>
         /// Detective is unable to verify the data rate for the member account. This is usually
-        /// because the member account is not enrolled in Amazon GuardDuty. 
+        /// because the member account is not enrolled in Amazon GuardDuty.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -514,6 +714,10 @@ namespace Amazon.Detective
         /// </param>
         /// 
         /// <returns>The response from the CreateGraph service method, as returned by Detective.</returns>
+        /// <exception cref="Amazon.Detective.Model.AccessDeniedException">
+        /// The request issuer does not have permission to access this resource or perform this
+        /// operation.
+        /// </exception>
         /// <exception cref="Amazon.Detective.Model.ConflictException">
         /// The request attempted an invalid action.
         /// </exception>
@@ -526,7 +730,7 @@ namespace Amazon.Detective
         ///  <ul> <li> 
         /// <para>
         /// The request would cause the number of member accounts in the behavior graph to exceed
-        /// the maximum allowed. A behavior graph cannot have more than 1000 member accounts.
+        /// the maximum allowed. A behavior graph cannot have more than 1200 member accounts.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -536,7 +740,7 @@ namespace Amazon.Detective
         ///  </li> <li> 
         /// <para>
         /// Detective is unable to verify the data rate for the member account. This is usually
-        /// because the member account is not enrolled in Amazon GuardDuty. 
+        /// because the member account is not enrolled in Amazon GuardDuty.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -556,10 +760,16 @@ namespace Amazon.Detective
 
 
         /// <summary>
-        /// Sends a request to invite the specified AWS accounts to be member accounts in the
-        /// behavior graph. This operation can only be called by the administrator account for
-        /// a behavior graph. 
+        /// <code>CreateMembers</code> is used to send invitations to accounts. For the organization
+        /// behavior graph, the Detective administrator account uses <code>CreateMembers</code>
+        /// to enable organization accounts as member accounts.
         /// 
+        ///  
+        /// <para>
+        /// For invited accounts, <code>CreateMembers</code> sends a request to invite the specified
+        /// Amazon Web Services accounts to be member accounts in the behavior graph. This operation
+        /// can only be called by the administrator account for a behavior graph. 
+        /// </para>
         ///  
         /// <para>
         ///  <code>CreateMembers</code> verifies the accounts and then invites the verified accounts.
@@ -569,7 +779,13 @@ namespace Amazon.Detective
         /// </para>
         ///  
         /// <para>
-        /// The request provides the behavior graph ARN and the list of accounts to invite.
+        /// For organization accounts in the organization behavior graph, <code>CreateMembers</code>
+        /// attempts to enable the accounts. The organization accounts do not receive invitations.
+        /// </para>
+        ///  
+        /// <para>
+        /// The request provides the behavior graph ARN and the list of accounts to invite or
+        /// to enable.
         /// </para>
         ///  
         /// <para>
@@ -577,9 +793,11 @@ namespace Amazon.Detective
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The accounts that <code>CreateMembers</code> was able to start the verification for.
-        /// This list includes member accounts that are being verified, that have passed verification
-        /// and are to be invited, and that have failed verification.
+        /// The accounts that <code>CreateMembers</code> was able to process. For invited accounts,
+        /// includes member accounts that are being verified, that have passed verification and
+        /// are to be invited, and that have failed verification. For organization accounts in
+        /// the organization behavior graph, includes accounts that can be enabled and that cannot
+        /// be enabled.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -591,6 +809,10 @@ namespace Amazon.Detective
         /// <param name="request">Container for the necessary parameters to execute the CreateMembers service method.</param>
         /// 
         /// <returns>The response from the CreateMembers service method, as returned by Detective.</returns>
+        /// <exception cref="Amazon.Detective.Model.AccessDeniedException">
+        /// The request issuer does not have permission to access this resource or perform this
+        /// operation.
+        /// </exception>
         /// <exception cref="Amazon.Detective.Model.InternalServerException">
         /// The request was valid but failed because of a problem with the service.
         /// </exception>
@@ -603,7 +825,7 @@ namespace Amazon.Detective
         ///  <ul> <li> 
         /// <para>
         /// The request would cause the number of member accounts in the behavior graph to exceed
-        /// the maximum allowed. A behavior graph cannot have more than 1000 member accounts.
+        /// the maximum allowed. A behavior graph cannot have more than 1200 member accounts.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -613,7 +835,7 @@ namespace Amazon.Detective
         ///  </li> <li> 
         /// <para>
         /// Detective is unable to verify the data rate for the member account. This is usually
-        /// because the member account is not enrolled in Amazon GuardDuty. 
+        /// because the member account is not enrolled in Amazon GuardDuty.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -632,10 +854,16 @@ namespace Amazon.Detective
 
 
         /// <summary>
-        /// Sends a request to invite the specified AWS accounts to be member accounts in the
-        /// behavior graph. This operation can only be called by the administrator account for
-        /// a behavior graph. 
+        /// <code>CreateMembers</code> is used to send invitations to accounts. For the organization
+        /// behavior graph, the Detective administrator account uses <code>CreateMembers</code>
+        /// to enable organization accounts as member accounts.
         /// 
+        ///  
+        /// <para>
+        /// For invited accounts, <code>CreateMembers</code> sends a request to invite the specified
+        /// Amazon Web Services accounts to be member accounts in the behavior graph. This operation
+        /// can only be called by the administrator account for a behavior graph. 
+        /// </para>
         ///  
         /// <para>
         ///  <code>CreateMembers</code> verifies the accounts and then invites the verified accounts.
@@ -645,7 +873,13 @@ namespace Amazon.Detective
         /// </para>
         ///  
         /// <para>
-        /// The request provides the behavior graph ARN and the list of accounts to invite.
+        /// For organization accounts in the organization behavior graph, <code>CreateMembers</code>
+        /// attempts to enable the accounts. The organization accounts do not receive invitations.
+        /// </para>
+        ///  
+        /// <para>
+        /// The request provides the behavior graph ARN and the list of accounts to invite or
+        /// to enable.
         /// </para>
         ///  
         /// <para>
@@ -653,9 +887,11 @@ namespace Amazon.Detective
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The accounts that <code>CreateMembers</code> was able to start the verification for.
-        /// This list includes member accounts that are being verified, that have passed verification
-        /// and are to be invited, and that have failed verification.
+        /// The accounts that <code>CreateMembers</code> was able to process. For invited accounts,
+        /// includes member accounts that are being verified, that have passed verification and
+        /// are to be invited, and that have failed verification. For organization accounts in
+        /// the organization behavior graph, includes accounts that can be enabled and that cannot
+        /// be enabled.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -670,6 +906,10 @@ namespace Amazon.Detective
         /// </param>
         /// 
         /// <returns>The response from the CreateMembers service method, as returned by Detective.</returns>
+        /// <exception cref="Amazon.Detective.Model.AccessDeniedException">
+        /// The request issuer does not have permission to access this resource or perform this
+        /// operation.
+        /// </exception>
         /// <exception cref="Amazon.Detective.Model.InternalServerException">
         /// The request was valid but failed because of a problem with the service.
         /// </exception>
@@ -682,7 +922,7 @@ namespace Amazon.Detective
         ///  <ul> <li> 
         /// <para>
         /// The request would cause the number of member accounts in the behavior graph to exceed
-        /// the maximum allowed. A behavior graph cannot have more than 1000 member accounts.
+        /// the maximum allowed. A behavior graph cannot have more than 1200 member accounts.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -692,7 +932,7 @@ namespace Amazon.Detective
         ///  </li> <li> 
         /// <para>
         /// Detective is unable to verify the data rate for the member account. This is usually
-        /// because the member account is not enrolled in Amazon GuardDuty. 
+        /// because the member account is not enrolled in Amazon GuardDuty.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -716,7 +956,7 @@ namespace Amazon.Detective
 
         /// <summary>
         /// Disables the specified behavior graph and queues it to be deleted. This operation
-        /// removes the graph from each member account's list of behavior graphs.
+        /// removes the behavior graph from each member account's list of behavior graphs.
         /// 
         ///  
         /// <para>
@@ -727,6 +967,10 @@ namespace Amazon.Detective
         /// <param name="request">Container for the necessary parameters to execute the DeleteGraph service method.</param>
         /// 
         /// <returns>The response from the DeleteGraph service method, as returned by Detective.</returns>
+        /// <exception cref="Amazon.Detective.Model.AccessDeniedException">
+        /// The request issuer does not have permission to access this resource or perform this
+        /// operation.
+        /// </exception>
         /// <exception cref="Amazon.Detective.Model.InternalServerException">
         /// The request was valid but failed because of a problem with the service.
         /// </exception>
@@ -749,7 +993,7 @@ namespace Amazon.Detective
 
         /// <summary>
         /// Disables the specified behavior graph and queues it to be deleted. This operation
-        /// removes the graph from each member account's list of behavior graphs.
+        /// removes the behavior graph from each member account's list of behavior graphs.
         /// 
         ///  
         /// <para>
@@ -763,6 +1007,10 @@ namespace Amazon.Detective
         /// </param>
         /// 
         /// <returns>The response from the DeleteGraph service method, as returned by Detective.</returns>
+        /// <exception cref="Amazon.Detective.Model.AccessDeniedException">
+        /// The request issuer does not have permission to access this resource or perform this
+        /// operation.
+        /// </exception>
         /// <exception cref="Amazon.Detective.Model.InternalServerException">
         /// The request was valid but failed because of a problem with the service.
         /// </exception>
@@ -788,15 +1036,37 @@ namespace Amazon.Detective
 
 
         /// <summary>
-        /// Deletes one or more member accounts from the administrator account's behavior graph.
-        /// This operation can only be called by a Detective administrator account. That account
-        /// cannot use <code>DeleteMembers</code> to delete their own account from the behavior
-        /// graph. To disable a behavior graph, the administrator account uses the <code>DeleteGraph</code>
-        /// API method.
+        /// Removes the specified member accounts from the behavior graph. The removed accounts
+        /// no longer contribute data to the behavior graph. This operation can only be called
+        /// by the administrator account for the behavior graph.
+        /// 
+        ///  
+        /// <para>
+        /// For invited accounts, the removed accounts are deleted from the list of accounts in
+        /// the behavior graph. To restore the account, the administrator account must send another
+        /// invitation.
+        /// </para>
+        ///  
+        /// <para>
+        /// For organization accounts in the organization behavior graph, the Detective administrator
+        /// account can always enable the organization account again. Organization accounts that
+        /// are not enabled as member accounts are not included in the <code>ListMembers</code>
+        /// results for the organization behavior graph.
+        /// </para>
+        ///  
+        /// <para>
+        /// An administrator account cannot use <code>DeleteMembers</code> to remove their own
+        /// account from the behavior graph. To disable a behavior graph, the administrator account
+        /// uses the <code>DeleteGraph</code> API method.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteMembers service method.</param>
         /// 
         /// <returns>The response from the DeleteMembers service method, as returned by Detective.</returns>
+        /// <exception cref="Amazon.Detective.Model.AccessDeniedException">
+        /// The request issuer does not have permission to access this resource or perform this
+        /// operation.
+        /// </exception>
         /// <exception cref="Amazon.Detective.Model.ConflictException">
         /// The request attempted an invalid action.
         /// </exception>
@@ -821,11 +1091,29 @@ namespace Amazon.Detective
 
 
         /// <summary>
-        /// Deletes one or more member accounts from the administrator account's behavior graph.
-        /// This operation can only be called by a Detective administrator account. That account
-        /// cannot use <code>DeleteMembers</code> to delete their own account from the behavior
-        /// graph. To disable a behavior graph, the administrator account uses the <code>DeleteGraph</code>
-        /// API method.
+        /// Removes the specified member accounts from the behavior graph. The removed accounts
+        /// no longer contribute data to the behavior graph. This operation can only be called
+        /// by the administrator account for the behavior graph.
+        /// 
+        ///  
+        /// <para>
+        /// For invited accounts, the removed accounts are deleted from the list of accounts in
+        /// the behavior graph. To restore the account, the administrator account must send another
+        /// invitation.
+        /// </para>
+        ///  
+        /// <para>
+        /// For organization accounts in the organization behavior graph, the Detective administrator
+        /// account can always enable the organization account again. Organization accounts that
+        /// are not enabled as member accounts are not included in the <code>ListMembers</code>
+        /// results for the organization behavior graph.
+        /// </para>
+        ///  
+        /// <para>
+        /// An administrator account cannot use <code>DeleteMembers</code> to remove their own
+        /// account from the behavior graph. To disable a behavior graph, the administrator account
+        /// uses the <code>DeleteGraph</code> API method.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteMembers service method.</param>
         /// <param name="cancellationToken">
@@ -833,6 +1121,10 @@ namespace Amazon.Detective
         /// </param>
         /// 
         /// <returns>The response from the DeleteMembers service method, as returned by Detective.</returns>
+        /// <exception cref="Amazon.Detective.Model.AccessDeniedException">
+        /// The request issuer does not have permission to access this resource or perform this
+        /// operation.
+        /// </exception>
         /// <exception cref="Amazon.Detective.Model.ConflictException">
         /// The request attempted an invalid action.
         /// </exception>
@@ -857,16 +1149,214 @@ namespace Amazon.Detective
 
         #endregion
         
+        #region  DescribeOrganizationConfiguration
+
+
+        /// <summary>
+        /// Returns information about the configuration for the organization behavior graph. Currently
+        /// indicates whether to automatically enable new organization accounts as member accounts.
+        /// 
+        ///  
+        /// <para>
+        /// Can only be called by the Detective administrator account for the organization. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeOrganizationConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DescribeOrganizationConfiguration service method, as returned by Detective.</returns>
+        /// <exception cref="Amazon.Detective.Model.AccessDeniedException">
+        /// The request issuer does not have permission to access this resource or perform this
+        /// operation.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.InternalServerException">
+        /// The request was valid but failed because of a problem with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.TooManyRequestsException">
+        /// The request cannot be completed because too many other requests are occurring at the
+        /// same time.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.ValidationException">
+        /// The request parameters are invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/DescribeOrganizationConfiguration">REST API Reference for DescribeOrganizationConfiguration Operation</seealso>
+        public virtual DescribeOrganizationConfigurationResponse DescribeOrganizationConfiguration(DescribeOrganizationConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeOrganizationConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeOrganizationConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeOrganizationConfigurationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns information about the configuration for the organization behavior graph. Currently
+        /// indicates whether to automatically enable new organization accounts as member accounts.
+        /// 
+        ///  
+        /// <para>
+        /// Can only be called by the Detective administrator account for the organization. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeOrganizationConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeOrganizationConfiguration service method, as returned by Detective.</returns>
+        /// <exception cref="Amazon.Detective.Model.AccessDeniedException">
+        /// The request issuer does not have permission to access this resource or perform this
+        /// operation.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.InternalServerException">
+        /// The request was valid but failed because of a problem with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.TooManyRequestsException">
+        /// The request cannot be completed because too many other requests are occurring at the
+        /// same time.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.ValidationException">
+        /// The request parameters are invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/DescribeOrganizationConfiguration">REST API Reference for DescribeOrganizationConfiguration Operation</seealso>
+        public virtual Task<DescribeOrganizationConfigurationResponse> DescribeOrganizationConfigurationAsync(DescribeOrganizationConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeOrganizationConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeOrganizationConfigurationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeOrganizationConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DisableOrganizationAdminAccount
+
+
+        /// <summary>
+        /// Removes the Detective administrator account in the current Region. Deletes the organization
+        /// behavior graph.
+        /// 
+        ///  
+        /// <para>
+        /// Can only be called by the organization management account.
+        /// </para>
+        ///  
+        /// <para>
+        /// Removing the Detective administrator account does not affect the delegated administrator
+        /// account for Detective in Organizations.
+        /// </para>
+        ///  
+        /// <para>
+        /// To remove the delegated administrator account in Organizations, use the Organizations
+        /// API. Removing the delegated administrator account also removes the Detective administrator
+        /// account in all Regions, except for Regions where the Detective administrator account
+        /// is the organization management account.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableOrganizationAdminAccount service method.</param>
+        /// 
+        /// <returns>The response from the DisableOrganizationAdminAccount service method, as returned by Detective.</returns>
+        /// <exception cref="Amazon.Detective.Model.AccessDeniedException">
+        /// The request issuer does not have permission to access this resource or perform this
+        /// operation.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.InternalServerException">
+        /// The request was valid but failed because of a problem with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.TooManyRequestsException">
+        /// The request cannot be completed because too many other requests are occurring at the
+        /// same time.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.ValidationException">
+        /// The request parameters are invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/DisableOrganizationAdminAccount">REST API Reference for DisableOrganizationAdminAccount Operation</seealso>
+        public virtual DisableOrganizationAdminAccountResponse DisableOrganizationAdminAccount(DisableOrganizationAdminAccountRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisableOrganizationAdminAccountRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisableOrganizationAdminAccountResponseUnmarshaller.Instance;
+
+            return Invoke<DisableOrganizationAdminAccountResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Removes the Detective administrator account in the current Region. Deletes the organization
+        /// behavior graph.
+        /// 
+        ///  
+        /// <para>
+        /// Can only be called by the organization management account.
+        /// </para>
+        ///  
+        /// <para>
+        /// Removing the Detective administrator account does not affect the delegated administrator
+        /// account for Detective in Organizations.
+        /// </para>
+        ///  
+        /// <para>
+        /// To remove the delegated administrator account in Organizations, use the Organizations
+        /// API. Removing the delegated administrator account also removes the Detective administrator
+        /// account in all Regions, except for Regions where the Detective administrator account
+        /// is the organization management account.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableOrganizationAdminAccount service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisableOrganizationAdminAccount service method, as returned by Detective.</returns>
+        /// <exception cref="Amazon.Detective.Model.AccessDeniedException">
+        /// The request issuer does not have permission to access this resource or perform this
+        /// operation.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.InternalServerException">
+        /// The request was valid but failed because of a problem with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.TooManyRequestsException">
+        /// The request cannot be completed because too many other requests are occurring at the
+        /// same time.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.ValidationException">
+        /// The request parameters are invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/DisableOrganizationAdminAccount">REST API Reference for DisableOrganizationAdminAccount Operation</seealso>
+        public virtual Task<DisableOrganizationAdminAccountResponse> DisableOrganizationAdminAccountAsync(DisableOrganizationAdminAccountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisableOrganizationAdminAccountRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisableOrganizationAdminAccountResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DisableOrganizationAdminAccountResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DisassociateMembership
 
 
         /// <summary>
         /// Removes the member account from the specified behavior graph. This operation can only
-        /// be called by a member account that has the <code>ENABLED</code> status.
+        /// be called by an invited member account that has the <code>ENABLED</code> status.
+        /// 
+        ///  
+        /// <para>
+        ///  <code>DisassociateMembership</code> cannot be called by an organization account in
+        /// the organization behavior graph. For the organization behavior graph, the Detective
+        /// administrator account determines which organization accounts to enable or disable
+        /// as member accounts.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateMembership service method.</param>
         /// 
         /// <returns>The response from the DisassociateMembership service method, as returned by Detective.</returns>
+        /// <exception cref="Amazon.Detective.Model.AccessDeniedException">
+        /// The request issuer does not have permission to access this resource or perform this
+        /// operation.
+        /// </exception>
         /// <exception cref="Amazon.Detective.Model.ConflictException">
         /// The request attempted an invalid action.
         /// </exception>
@@ -892,7 +1382,15 @@ namespace Amazon.Detective
 
         /// <summary>
         /// Removes the member account from the specified behavior graph. This operation can only
-        /// be called by a member account that has the <code>ENABLED</code> status.
+        /// be called by an invited member account that has the <code>ENABLED</code> status.
+        /// 
+        ///  
+        /// <para>
+        ///  <code>DisassociateMembership</code> cannot be called by an organization account in
+        /// the organization behavior graph. For the organization behavior graph, the Detective
+        /// administrator account determines which organization accounts to enable or disable
+        /// as member accounts.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateMembership service method.</param>
         /// <param name="cancellationToken">
@@ -900,6 +1398,10 @@ namespace Amazon.Detective
         /// </param>
         /// 
         /// <returns>The response from the DisassociateMembership service method, as returned by Detective.</returns>
+        /// <exception cref="Amazon.Detective.Model.AccessDeniedException">
+        /// The request issuer does not have permission to access this resource or perform this
+        /// operation.
+        /// </exception>
         /// <exception cref="Amazon.Detective.Model.ConflictException">
         /// The request attempted an invalid action.
         /// </exception>
@@ -924,6 +1426,125 @@ namespace Amazon.Detective
 
         #endregion
         
+        #region  EnableOrganizationAdminAccount
+
+
+        /// <summary>
+        /// Designates the Detective administrator account for the organization in the current
+        /// Region.
+        /// 
+        ///  
+        /// <para>
+        /// If the account does not have Detective enabled, then enables Detective for that account
+        /// and creates a new behavior graph.
+        /// </para>
+        ///  
+        /// <para>
+        /// Can only be called by the organization management account.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the organization has a delegated administrator account in Organizations, then the
+        /// Detective administrator account must be either the delegated administrator account
+        /// or the organization management account.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the organization does not have a delegated administrator account in Organizations,
+        /// then you can choose any account in the organization. If you choose an account other
+        /// than the organization management account, Detective calls Organizations to make that
+        /// account the delegated administrator account for Detective. The organization management
+        /// account cannot be the delegated administrator account.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableOrganizationAdminAccount service method.</param>
+        /// 
+        /// <returns>The response from the EnableOrganizationAdminAccount service method, as returned by Detective.</returns>
+        /// <exception cref="Amazon.Detective.Model.AccessDeniedException">
+        /// The request issuer does not have permission to access this resource or perform this
+        /// operation.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.InternalServerException">
+        /// The request was valid but failed because of a problem with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.TooManyRequestsException">
+        /// The request cannot be completed because too many other requests are occurring at the
+        /// same time.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.ValidationException">
+        /// The request parameters are invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/EnableOrganizationAdminAccount">REST API Reference for EnableOrganizationAdminAccount Operation</seealso>
+        public virtual EnableOrganizationAdminAccountResponse EnableOrganizationAdminAccount(EnableOrganizationAdminAccountRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = EnableOrganizationAdminAccountRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EnableOrganizationAdminAccountResponseUnmarshaller.Instance;
+
+            return Invoke<EnableOrganizationAdminAccountResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Designates the Detective administrator account for the organization in the current
+        /// Region.
+        /// 
+        ///  
+        /// <para>
+        /// If the account does not have Detective enabled, then enables Detective for that account
+        /// and creates a new behavior graph.
+        /// </para>
+        ///  
+        /// <para>
+        /// Can only be called by the organization management account.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the organization has a delegated administrator account in Organizations, then the
+        /// Detective administrator account must be either the delegated administrator account
+        /// or the organization management account.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the organization does not have a delegated administrator account in Organizations,
+        /// then you can choose any account in the organization. If you choose an account other
+        /// than the organization management account, Detective calls Organizations to make that
+        /// account the delegated administrator account for Detective. The organization management
+        /// account cannot be the delegated administrator account.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableOrganizationAdminAccount service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the EnableOrganizationAdminAccount service method, as returned by Detective.</returns>
+        /// <exception cref="Amazon.Detective.Model.AccessDeniedException">
+        /// The request issuer does not have permission to access this resource or perform this
+        /// operation.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.InternalServerException">
+        /// The request was valid but failed because of a problem with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.TooManyRequestsException">
+        /// The request cannot be completed because too many other requests are occurring at the
+        /// same time.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.ValidationException">
+        /// The request parameters are invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/EnableOrganizationAdminAccount">REST API Reference for EnableOrganizationAdminAccount Operation</seealso>
+        public virtual Task<EnableOrganizationAdminAccountResponse> EnableOrganizationAdminAccountAsync(EnableOrganizationAdminAccountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = EnableOrganizationAdminAccountRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EnableOrganizationAdminAccountResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<EnableOrganizationAdminAccountResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetMembers
 
 
@@ -933,6 +1554,10 @@ namespace Amazon.Detective
         /// <param name="request">Container for the necessary parameters to execute the GetMembers service method.</param>
         /// 
         /// <returns>The response from the GetMembers service method, as returned by Detective.</returns>
+        /// <exception cref="Amazon.Detective.Model.AccessDeniedException">
+        /// The request issuer does not have permission to access this resource or perform this
+        /// operation.
+        /// </exception>
         /// <exception cref="Amazon.Detective.Model.InternalServerException">
         /// The request was valid but failed because of a problem with the service.
         /// </exception>
@@ -962,6 +1587,10 @@ namespace Amazon.Detective
         /// </param>
         /// 
         /// <returns>The response from the GetMembers service method, as returned by Detective.</returns>
+        /// <exception cref="Amazon.Detective.Model.AccessDeniedException">
+        /// The request issuer does not have permission to access this resource or perform this
+        /// operation.
+        /// </exception>
         /// <exception cref="Amazon.Detective.Model.InternalServerException">
         /// The request was valid but failed because of a problem with the service.
         /// </exception>
@@ -983,6 +1612,73 @@ namespace Amazon.Detective
 
         #endregion
         
+        #region  ListDatasourcePackages
+
+
+        /// <summary>
+        /// Lists data source packages in the behavior graph.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDatasourcePackages service method.</param>
+        /// 
+        /// <returns>The response from the ListDatasourcePackages service method, as returned by Detective.</returns>
+        /// <exception cref="Amazon.Detective.Model.AccessDeniedException">
+        /// The request issuer does not have permission to access this resource or perform this
+        /// operation.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.InternalServerException">
+        /// The request was valid but failed because of a problem with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.ResourceNotFoundException">
+        /// The request refers to a nonexistent resource.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.ValidationException">
+        /// The request parameters are invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/ListDatasourcePackages">REST API Reference for ListDatasourcePackages Operation</seealso>
+        public virtual ListDatasourcePackagesResponse ListDatasourcePackages(ListDatasourcePackagesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDatasourcePackagesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDatasourcePackagesResponseUnmarshaller.Instance;
+
+            return Invoke<ListDatasourcePackagesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists data source packages in the behavior graph.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDatasourcePackages service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListDatasourcePackages service method, as returned by Detective.</returns>
+        /// <exception cref="Amazon.Detective.Model.AccessDeniedException">
+        /// The request issuer does not have permission to access this resource or perform this
+        /// operation.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.InternalServerException">
+        /// The request was valid but failed because of a problem with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.ResourceNotFoundException">
+        /// The request refers to a nonexistent resource.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.ValidationException">
+        /// The request parameters are invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/ListDatasourcePackages">REST API Reference for ListDatasourcePackages Operation</seealso>
+        public virtual Task<ListDatasourcePackagesResponse> ListDatasourcePackagesAsync(ListDatasourcePackagesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDatasourcePackagesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDatasourcePackagesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListDatasourcePackagesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListGraphs
 
 
@@ -999,6 +1695,10 @@ namespace Amazon.Detective
         /// <param name="request">Container for the necessary parameters to execute the ListGraphs service method.</param>
         /// 
         /// <returns>The response from the ListGraphs service method, as returned by Detective.</returns>
+        /// <exception cref="Amazon.Detective.Model.AccessDeniedException">
+        /// The request issuer does not have permission to access this resource or perform this
+        /// operation.
+        /// </exception>
         /// <exception cref="Amazon.Detective.Model.InternalServerException">
         /// The request was valid but failed because of a problem with the service.
         /// </exception>
@@ -1032,6 +1732,10 @@ namespace Amazon.Detective
         /// </param>
         /// 
         /// <returns>The response from the ListGraphs service method, as returned by Detective.</returns>
+        /// <exception cref="Amazon.Detective.Model.AccessDeniedException">
+        /// The request issuer does not have permission to access this resource or perform this
+        /// operation.
+        /// </exception>
         /// <exception cref="Amazon.Detective.Model.InternalServerException">
         /// The request was valid but failed because of a problem with the service.
         /// </exception>
@@ -1055,7 +1759,7 @@ namespace Amazon.Detective
 
         /// <summary>
         /// Retrieves the list of open and accepted behavior graph invitations for the member
-        /// account. This operation can only be called by a member account.
+        /// account. This operation can only be called by an invited member account.
         /// 
         ///  
         /// <para>
@@ -1071,6 +1775,10 @@ namespace Amazon.Detective
         /// <param name="request">Container for the necessary parameters to execute the ListInvitations service method.</param>
         /// 
         /// <returns>The response from the ListInvitations service method, as returned by Detective.</returns>
+        /// <exception cref="Amazon.Detective.Model.AccessDeniedException">
+        /// The request issuer does not have permission to access this resource or perform this
+        /// operation.
+        /// </exception>
         /// <exception cref="Amazon.Detective.Model.InternalServerException">
         /// The request was valid but failed because of a problem with the service.
         /// </exception>
@@ -1090,7 +1798,7 @@ namespace Amazon.Detective
 
         /// <summary>
         /// Retrieves the list of open and accepted behavior graph invitations for the member
-        /// account. This operation can only be called by a member account.
+        /// account. This operation can only be called by an invited member account.
         /// 
         ///  
         /// <para>
@@ -1109,6 +1817,10 @@ namespace Amazon.Detective
         /// </param>
         /// 
         /// <returns>The response from the ListInvitations service method, as returned by Detective.</returns>
+        /// <exception cref="Amazon.Detective.Model.AccessDeniedException">
+        /// The request issuer does not have permission to access this resource or perform this
+        /// operation.
+        /// </exception>
         /// <exception cref="Amazon.Detective.Model.InternalServerException">
         /// The request was valid but failed because of a problem with the service.
         /// </exception>
@@ -1131,12 +1843,26 @@ namespace Amazon.Detective
 
 
         /// <summary>
-        /// Retrieves the list of member accounts for a behavior graph. Does not return member
-        /// accounts that were removed from the behavior graph.
+        /// Retrieves the list of member accounts for a behavior graph.
+        /// 
+        ///  
+        /// <para>
+        /// For invited accounts, the results do not include member accounts that were removed
+        /// from the behavior graph.
+        /// </para>
+        ///  
+        /// <para>
+        /// For the organization behavior graph, the results do not include organization accounts
+        /// that the Detective administrator account has not enabled as member accounts.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListMembers service method.</param>
         /// 
         /// <returns>The response from the ListMembers service method, as returned by Detective.</returns>
+        /// <exception cref="Amazon.Detective.Model.AccessDeniedException">
+        /// The request issuer does not have permission to access this resource or perform this
+        /// operation.
+        /// </exception>
         /// <exception cref="Amazon.Detective.Model.InternalServerException">
         /// The request was valid but failed because of a problem with the service.
         /// </exception>
@@ -1158,8 +1884,18 @@ namespace Amazon.Detective
 
 
         /// <summary>
-        /// Retrieves the list of member accounts for a behavior graph. Does not return member
-        /// accounts that were removed from the behavior graph.
+        /// Retrieves the list of member accounts for a behavior graph.
+        /// 
+        ///  
+        /// <para>
+        /// For invited accounts, the results do not include member accounts that were removed
+        /// from the behavior graph.
+        /// </para>
+        ///  
+        /// <para>
+        /// For the organization behavior graph, the results do not include organization accounts
+        /// that the Detective administrator account has not enabled as member accounts.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListMembers service method.</param>
         /// <param name="cancellationToken">
@@ -1167,6 +1903,10 @@ namespace Amazon.Detective
         /// </param>
         /// 
         /// <returns>The response from the ListMembers service method, as returned by Detective.</returns>
+        /// <exception cref="Amazon.Detective.Model.AccessDeniedException">
+        /// The request issuer does not have permission to access this resource or perform this
+        /// operation.
+        /// </exception>
         /// <exception cref="Amazon.Detective.Model.InternalServerException">
         /// The request was valid but failed because of a problem with the service.
         /// </exception>
@@ -1188,6 +1928,77 @@ namespace Amazon.Detective
 
         #endregion
         
+        #region  ListOrganizationAdminAccounts
+
+
+        /// <summary>
+        /// Returns information about the Detective administrator account for an organization.
+        /// Can only be called by the organization management account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListOrganizationAdminAccounts service method.</param>
+        /// 
+        /// <returns>The response from the ListOrganizationAdminAccounts service method, as returned by Detective.</returns>
+        /// <exception cref="Amazon.Detective.Model.AccessDeniedException">
+        /// The request issuer does not have permission to access this resource or perform this
+        /// operation.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.InternalServerException">
+        /// The request was valid but failed because of a problem with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.TooManyRequestsException">
+        /// The request cannot be completed because too many other requests are occurring at the
+        /// same time.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.ValidationException">
+        /// The request parameters are invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/ListOrganizationAdminAccounts">REST API Reference for ListOrganizationAdminAccounts Operation</seealso>
+        public virtual ListOrganizationAdminAccountsResponse ListOrganizationAdminAccounts(ListOrganizationAdminAccountsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListOrganizationAdminAccountsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListOrganizationAdminAccountsResponseUnmarshaller.Instance;
+
+            return Invoke<ListOrganizationAdminAccountsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns information about the Detective administrator account for an organization.
+        /// Can only be called by the organization management account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListOrganizationAdminAccounts service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListOrganizationAdminAccounts service method, as returned by Detective.</returns>
+        /// <exception cref="Amazon.Detective.Model.AccessDeniedException">
+        /// The request issuer does not have permission to access this resource or perform this
+        /// operation.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.InternalServerException">
+        /// The request was valid but failed because of a problem with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.TooManyRequestsException">
+        /// The request cannot be completed because too many other requests are occurring at the
+        /// same time.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.ValidationException">
+        /// The request parameters are invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/ListOrganizationAdminAccounts">REST API Reference for ListOrganizationAdminAccounts Operation</seealso>
+        public virtual Task<ListOrganizationAdminAccountsResponse> ListOrganizationAdminAccountsAsync(ListOrganizationAdminAccountsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListOrganizationAdminAccountsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListOrganizationAdminAccountsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListOrganizationAdminAccountsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListTagsForResource
 
 
@@ -1197,6 +2008,10 @@ namespace Amazon.Detective
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// 
         /// <returns>The response from the ListTagsForResource service method, as returned by Detective.</returns>
+        /// <exception cref="Amazon.Detective.Model.AccessDeniedException">
+        /// The request issuer does not have permission to access this resource or perform this
+        /// operation.
+        /// </exception>
         /// <exception cref="Amazon.Detective.Model.InternalServerException">
         /// The request was valid but failed because of a problem with the service.
         /// </exception>
@@ -1226,6 +2041,10 @@ namespace Amazon.Detective
         /// </param>
         /// 
         /// <returns>The response from the ListTagsForResource service method, as returned by Detective.</returns>
+        /// <exception cref="Amazon.Detective.Model.AccessDeniedException">
+        /// The request issuer does not have permission to access this resource or perform this
+        /// operation.
+        /// </exception>
         /// <exception cref="Amazon.Detective.Model.InternalServerException">
         /// The request was valid but failed because of a problem with the service.
         /// </exception>
@@ -1252,11 +2071,22 @@ namespace Amazon.Detective
 
         /// <summary>
         /// Rejects an invitation to contribute the account data to a behavior graph. This operation
-        /// must be called by a member account that has the <code>INVITED</code> status.
+        /// must be called by an invited member account that has the <code>INVITED</code> status.
+        /// 
+        ///  
+        /// <para>
+        ///  <code>RejectInvitation</code> cannot be called by an organization account in the
+        /// organization behavior graph. In the organization behavior graph, organization accounts
+        /// do not receive an invitation.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RejectInvitation service method.</param>
         /// 
         /// <returns>The response from the RejectInvitation service method, as returned by Detective.</returns>
+        /// <exception cref="Amazon.Detective.Model.AccessDeniedException">
+        /// The request issuer does not have permission to access this resource or perform this
+        /// operation.
+        /// </exception>
         /// <exception cref="Amazon.Detective.Model.ConflictException">
         /// The request attempted an invalid action.
         /// </exception>
@@ -1282,7 +2112,14 @@ namespace Amazon.Detective
 
         /// <summary>
         /// Rejects an invitation to contribute the account data to a behavior graph. This operation
-        /// must be called by a member account that has the <code>INVITED</code> status.
+        /// must be called by an invited member account that has the <code>INVITED</code> status.
+        /// 
+        ///  
+        /// <para>
+        ///  <code>RejectInvitation</code> cannot be called by an organization account in the
+        /// organization behavior graph. In the organization behavior graph, organization accounts
+        /// do not receive an invitation.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RejectInvitation service method.</param>
         /// <param name="cancellationToken">
@@ -1290,6 +2127,10 @@ namespace Amazon.Detective
         /// </param>
         /// 
         /// <returns>The response from the RejectInvitation service method, as returned by Detective.</returns>
+        /// <exception cref="Amazon.Detective.Model.AccessDeniedException">
+        /// The request issuer does not have permission to access this resource or perform this
+        /// operation.
+        /// </exception>
         /// <exception cref="Amazon.Detective.Model.ConflictException">
         /// The request attempted an invalid action.
         /// </exception>
@@ -1338,6 +2179,10 @@ namespace Amazon.Detective
         /// <param name="request">Container for the necessary parameters to execute the StartMonitoringMember service method.</param>
         /// 
         /// <returns>The response from the StartMonitoringMember service method, as returned by Detective.</returns>
+        /// <exception cref="Amazon.Detective.Model.AccessDeniedException">
+        /// The request issuer does not have permission to access this resource or perform this
+        /// operation.
+        /// </exception>
         /// <exception cref="Amazon.Detective.Model.ConflictException">
         /// The request attempted an invalid action.
         /// </exception>
@@ -1353,7 +2198,7 @@ namespace Amazon.Detective
         ///  <ul> <li> 
         /// <para>
         /// The request would cause the number of member accounts in the behavior graph to exceed
-        /// the maximum allowed. A behavior graph cannot have more than 1000 member accounts.
+        /// the maximum allowed. A behavior graph cannot have more than 1200 member accounts.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1363,7 +2208,7 @@ namespace Amazon.Detective
         ///  </li> <li> 
         /// <para>
         /// Detective is unable to verify the data rate for the member account. This is usually
-        /// because the member account is not enrolled in Amazon GuardDuty. 
+        /// because the member account is not enrolled in Amazon GuardDuty.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -1405,6 +2250,10 @@ namespace Amazon.Detective
         /// </param>
         /// 
         /// <returns>The response from the StartMonitoringMember service method, as returned by Detective.</returns>
+        /// <exception cref="Amazon.Detective.Model.AccessDeniedException">
+        /// The request issuer does not have permission to access this resource or perform this
+        /// operation.
+        /// </exception>
         /// <exception cref="Amazon.Detective.Model.ConflictException">
         /// The request attempted an invalid action.
         /// </exception>
@@ -1420,7 +2269,7 @@ namespace Amazon.Detective
         ///  <ul> <li> 
         /// <para>
         /// The request would cause the number of member accounts in the behavior graph to exceed
-        /// the maximum allowed. A behavior graph cannot have more than 1000 member accounts.
+        /// the maximum allowed. A behavior graph cannot have more than 1200 member accounts.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1430,7 +2279,7 @@ namespace Amazon.Detective
         ///  </li> <li> 
         /// <para>
         /// Detective is unable to verify the data rate for the member account. This is usually
-        /// because the member account is not enrolled in Amazon GuardDuty. 
+        /// because the member account is not enrolled in Amazon GuardDuty.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -1458,6 +2307,10 @@ namespace Amazon.Detective
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// 
         /// <returns>The response from the TagResource service method, as returned by Detective.</returns>
+        /// <exception cref="Amazon.Detective.Model.AccessDeniedException">
+        /// The request issuer does not have permission to access this resource or perform this
+        /// operation.
+        /// </exception>
         /// <exception cref="Amazon.Detective.Model.InternalServerException">
         /// The request was valid but failed because of a problem with the service.
         /// </exception>
@@ -1487,6 +2340,10 @@ namespace Amazon.Detective
         /// </param>
         /// 
         /// <returns>The response from the TagResource service method, as returned by Detective.</returns>
+        /// <exception cref="Amazon.Detective.Model.AccessDeniedException">
+        /// The request issuer does not have permission to access this resource or perform this
+        /// operation.
+        /// </exception>
         /// <exception cref="Amazon.Detective.Model.InternalServerException">
         /// The request was valid but failed because of a problem with the service.
         /// </exception>
@@ -1517,6 +2374,10 @@ namespace Amazon.Detective
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// 
         /// <returns>The response from the UntagResource service method, as returned by Detective.</returns>
+        /// <exception cref="Amazon.Detective.Model.AccessDeniedException">
+        /// The request issuer does not have permission to access this resource or perform this
+        /// operation.
+        /// </exception>
         /// <exception cref="Amazon.Detective.Model.InternalServerException">
         /// The request was valid but failed because of a problem with the service.
         /// </exception>
@@ -1546,6 +2407,10 @@ namespace Amazon.Detective
         /// </param>
         /// 
         /// <returns>The response from the UntagResource service method, as returned by Detective.</returns>
+        /// <exception cref="Amazon.Detective.Model.AccessDeniedException">
+        /// The request issuer does not have permission to access this resource or perform this
+        /// operation.
+        /// </exception>
         /// <exception cref="Amazon.Detective.Model.InternalServerException">
         /// The request was valid but failed because of a problem with the service.
         /// </exception>
@@ -1563,6 +2428,184 @@ namespace Amazon.Detective
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateDatasourcePackages
+
+
+        /// <summary>
+        /// Starts a data source packages for the behavior graph.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDatasourcePackages service method.</param>
+        /// 
+        /// <returns>The response from the UpdateDatasourcePackages service method, as returned by Detective.</returns>
+        /// <exception cref="Amazon.Detective.Model.AccessDeniedException">
+        /// The request issuer does not have permission to access this resource or perform this
+        /// operation.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.InternalServerException">
+        /// The request was valid but failed because of a problem with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.ResourceNotFoundException">
+        /// The request refers to a nonexistent resource.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.ServiceQuotaExceededException">
+        /// This request cannot be completed for one of the following reasons.
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// The request would cause the number of member accounts in the behavior graph to exceed
+        /// the maximum allowed. A behavior graph cannot have more than 1200 member accounts.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The request would cause the data rate for the behavior graph to exceed the maximum
+        /// allowed.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Detective is unable to verify the data rate for the member account. This is usually
+        /// because the member account is not enrolled in Amazon GuardDuty.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.ValidationException">
+        /// The request parameters are invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/UpdateDatasourcePackages">REST API Reference for UpdateDatasourcePackages Operation</seealso>
+        public virtual UpdateDatasourcePackagesResponse UpdateDatasourcePackages(UpdateDatasourcePackagesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateDatasourcePackagesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDatasourcePackagesResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateDatasourcePackagesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Starts a data source packages for the behavior graph.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDatasourcePackages service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateDatasourcePackages service method, as returned by Detective.</returns>
+        /// <exception cref="Amazon.Detective.Model.AccessDeniedException">
+        /// The request issuer does not have permission to access this resource or perform this
+        /// operation.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.InternalServerException">
+        /// The request was valid but failed because of a problem with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.ResourceNotFoundException">
+        /// The request refers to a nonexistent resource.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.ServiceQuotaExceededException">
+        /// This request cannot be completed for one of the following reasons.
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// The request would cause the number of member accounts in the behavior graph to exceed
+        /// the maximum allowed. A behavior graph cannot have more than 1200 member accounts.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The request would cause the data rate for the behavior graph to exceed the maximum
+        /// allowed.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Detective is unable to verify the data rate for the member account. This is usually
+        /// because the member account is not enrolled in Amazon GuardDuty.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.ValidationException">
+        /// The request parameters are invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/UpdateDatasourcePackages">REST API Reference for UpdateDatasourcePackages Operation</seealso>
+        public virtual Task<UpdateDatasourcePackagesResponse> UpdateDatasourcePackagesAsync(UpdateDatasourcePackagesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateDatasourcePackagesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDatasourcePackagesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateDatasourcePackagesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateOrganizationConfiguration
+
+
+        /// <summary>
+        /// Updates the configuration for the Organizations integration in the current Region.
+        /// Can only be called by the Detective administrator account for the organization.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateOrganizationConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the UpdateOrganizationConfiguration service method, as returned by Detective.</returns>
+        /// <exception cref="Amazon.Detective.Model.AccessDeniedException">
+        /// The request issuer does not have permission to access this resource or perform this
+        /// operation.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.InternalServerException">
+        /// The request was valid but failed because of a problem with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.TooManyRequestsException">
+        /// The request cannot be completed because too many other requests are occurring at the
+        /// same time.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.ValidationException">
+        /// The request parameters are invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/UpdateOrganizationConfiguration">REST API Reference for UpdateOrganizationConfiguration Operation</seealso>
+        public virtual UpdateOrganizationConfigurationResponse UpdateOrganizationConfiguration(UpdateOrganizationConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateOrganizationConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateOrganizationConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateOrganizationConfigurationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates the configuration for the Organizations integration in the current Region.
+        /// Can only be called by the Detective administrator account for the organization.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateOrganizationConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateOrganizationConfiguration service method, as returned by Detective.</returns>
+        /// <exception cref="Amazon.Detective.Model.AccessDeniedException">
+        /// The request issuer does not have permission to access this resource or perform this
+        /// operation.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.InternalServerException">
+        /// The request was valid but failed because of a problem with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.TooManyRequestsException">
+        /// The request cannot be completed because too many other requests are occurring at the
+        /// same time.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.ValidationException">
+        /// The request parameters are invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/UpdateOrganizationConfiguration">REST API Reference for UpdateOrganizationConfiguration Operation</seealso>
+        public virtual Task<UpdateOrganizationConfigurationResponse> UpdateOrganizationConfigurationAsync(UpdateOrganizationConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateOrganizationConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateOrganizationConfigurationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateOrganizationConfigurationResponse>(request, options, cancellationToken);
         }
 
         #endregion

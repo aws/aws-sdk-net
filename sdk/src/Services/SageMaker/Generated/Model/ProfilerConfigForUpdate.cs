@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Configuration information for updating the Debugger profile parameters, system and
-    /// framework metrics configurations, and storage paths.
+    /// Configuration information for updating the Amazon SageMaker Debugger profile parameters,
+    /// system and framework metrics configurations, and storage paths.
     /// </summary>
     public partial class ProfilerConfigForUpdate
     {
@@ -42,7 +42,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property DisableProfiler. 
         /// <para>
-        /// To disable Debugger monitoring and profiling, set to <code>True</code>.
+        /// To turn off Amazon SageMaker Debugger monitoring and profiling while a training job
+        /// is in progress, set to <code>True</code>.
         /// </para>
         /// </summary>
         public bool DisableProfiler

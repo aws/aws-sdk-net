@@ -56,7 +56,7 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.MQ");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-11-27";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-11-27";
             request.HttpMethod = "PUT";
 
             if (!publicRequest.IsSetBrokerId())
@@ -89,6 +89,12 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
                     marshaller.Marshall(publicRequest.Configuration, context);
 
                     context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetDataReplicationMode())
+                {
+                    context.Writer.WritePropertyName("dataReplicationMode");
+                    context.Writer.Write(publicRequest.DataReplicationMode);
                 }
 
                 if(publicRequest.IsSetEngineVersion())
@@ -147,7 +153,6 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

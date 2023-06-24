@@ -17,22 +17,22 @@
  * Do not modify this file. This file is generated from the imagebuilder-2019-12-02.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
-
+using Amazon.Imagebuilder.Internal;
 
 namespace Amazon.Imagebuilder
 {
     /// <summary>
     /// Configuration for accessing Amazon Imagebuilder service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonImagebuilderConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.4.2");
+            InternalSDKUtils.BuildUserAgentString("3.7.103.45");
 
         private string _userAgent = UserAgentString;
 
@@ -40,8 +40,10 @@ namespace Amazon.Imagebuilder
         /// Default constructor
         /// </summary>
         public AmazonImagebuilderConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonImagebuilderDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "imagebuilder";
+            this.EndpointProvider = new AmazonImagebuilderEndpointProvider();
         }
 
         /// <summary>
@@ -76,5 +78,6 @@ namespace Amazon.Imagebuilder
                 return _userAgent;
             }
         }
+
     }
 }

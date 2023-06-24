@@ -30,7 +30,7 @@ namespace Amazon.WorkMail.Model
 {
     /// <summary>
     /// Container for the parameters to the RegisterMailDomain operation.
-    /// Registers a new domain in Amazon WorkMail and SES, and configures it for use by WorkMail.
+    /// Registers a new domain in WorkMail and SES, and configures it for use by WorkMail.
     /// Emails received by SES for this domain are routed to the specified WorkMail organization,
     /// and WorkMail has permanent permission to use the specified domain for sending your
     /// users' emails.
@@ -63,7 +63,7 @@ namespace Amazon.WorkMail.Model
         /// <summary>
         /// Gets and sets the property DomainName. 
         /// <para>
-        /// The name of the mail domain to create in Amazon WorkMail and SES.
+        /// The name of the mail domain to create in WorkMail and SES.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=3, Max=209)]
@@ -82,7 +82,7 @@ namespace Amazon.WorkMail.Model
         /// <summary>
         /// Gets and sets the property OrganizationId. 
         /// <para>
-        /// The Amazon WorkMail organization under which you're creating the domain.
+        /// The WorkMail organization under which you're creating the domain.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=34, Max=34)]

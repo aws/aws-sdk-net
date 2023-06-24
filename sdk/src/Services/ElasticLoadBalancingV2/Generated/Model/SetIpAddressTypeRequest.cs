@@ -30,8 +30,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
 {
     /// <summary>
     /// Container for the parameters to the SetIpAddressType operation.
-    /// Sets the type of IP addresses used by the subnets of the specified Application Load
-    /// Balancer or Network Load Balancer.
+    /// Sets the type of IP addresses used by the subnets of the specified load balancer.
     /// </summary>
     public partial class SetIpAddressTypeRequest : AmazonElasticLoadBalancingV2Request
     {

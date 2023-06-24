@@ -31,7 +31,7 @@ namespace Amazon.ECS.Model
     /// <summary>
     /// This parameter is specified when you're using an Amazon Elastic File System file system
     /// for task storage. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/efs-volumes.html">Amazon
-    /// EFS Volumes</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+    /// EFS volumes</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
     /// </summary>
     public partial class EFSVolumeConfiguration
     {
@@ -108,11 +108,11 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property TransitEncryption. 
         /// <para>
-        /// Determines whether to enable encryption for Amazon EFS data in transit between the
-        /// Amazon ECS host and the Amazon EFS server. Transit encryption must be enabled if Amazon
+        /// Determines whether to use encryption for Amazon EFS data in transit between the Amazon
+        /// ECS host and the Amazon EFS server. Transit encryption must be turned on if Amazon
         /// EFS IAM authorization is used. If this parameter is omitted, the default value of
         /// <code>DISABLED</code> is used. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/encryption-in-transit.html">Encrypting
-        /// Data in Transit</a> in the <i>Amazon Elastic File System User Guide</i>.
+        /// data in transit</a> in the <i>Amazon Elastic File System User Guide</i>.
         /// </para>
         /// </summary>
         public EFSTransitEncryption TransitEncryption
@@ -133,8 +133,8 @@ namespace Amazon.ECS.Model
         /// The port to use when sending encrypted data between the Amazon ECS host and the Amazon
         /// EFS server. If you do not specify a transit encryption port, it will use the port
         /// selection strategy that the Amazon EFS mount helper uses. For more information, see
-        /// <a href="https://docs.aws.amazon.com/efs/latest/ug/efs-mount-helper.html">EFS Mount
-        /// Helper</a> in the <i>Amazon Elastic File System User Guide</i>.
+        /// <a href="https://docs.aws.amazon.com/efs/latest/ug/efs-mount-helper.html">EFS mount
+        /// helper</a> in the <i>Amazon Elastic File System User Guide</i>.
         /// </para>
         /// </summary>
         public int TransitEncryptionPort

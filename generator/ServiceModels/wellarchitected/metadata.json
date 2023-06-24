@@ -1,5 +1,6 @@
 {
   "active": true,
   "synopsis": "This is the first release of AWS Well-Architected Tool API support, use to review your workload and compare against the latest AWS architectural best practices.",
-  "generate-client-constructors": true
+  "generate-client-constructors": true,
+  "legacy-service-id": "WellArchitected"
 }

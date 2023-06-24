@@ -48,8 +48,8 @@ namespace Amazon.S3Control.Model
         /// Specifies the days since the initiation of an incomplete multipart upload that Amazon
         /// S3 waits before permanently removing all parts of the upload. For more information,
         /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config">
-        /// Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Policy</a> in the <i>Amazon
-        /// S3 User Guide</i>.
+        /// Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Configuration</a> in
+        /// the <i>Amazon S3 User Guide</i>.
         /// </para>
         /// </summary>
         public AbortIncompleteMultipartUpload AbortIncompleteMultipartUpload
@@ -124,11 +124,6 @@ namespace Amazon.S3Control.Model
         /// <para>
         /// The noncurrent version expiration of the lifecycle rule.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// This is not supported by Amazon S3 on Outposts buckets.
-        /// </para>
-        ///  </note>
         /// </summary>
         public NoncurrentVersionExpiration NoncurrentVersionExpiration
         {

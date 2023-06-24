@@ -34,6 +34,8 @@ namespace Amazon.ComputeOptimizer.Model
     public partial class RecommendationPreferencesDetail
     {
         private EnhancedInfrastructureMetrics _enhancedInfrastructureMetrics;
+        private ExternalMetricsPreference _externalMetricsPreference;
+        private InferredWorkloadTypesPreference _inferredWorkloadTypes;
         private ResourceType _resourceType;
         private Scope _scope;
 
@@ -44,9 +46,14 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  
         /// <para>
-        /// A status of <code>Active</code> confirms that the preference is applied in the latest
-        /// recommendation refresh, and a status of <code>Inactive</code> confirms that it's not
-        /// yet applied.
+        /// When the recommendations page is refreshed, a status of <code>Active</code> confirms
+        /// that the preference is applied to the recommendations, and a status of <code>Inactive</code>
+        /// confirms that the preference isn't yet applied to recommendations.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Enhanced
+        /// infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.
         /// </para>
         /// </summary>
         public EnhancedInfrastructureMetrics EnhancedInfrastructureMetrics
@@ -59,6 +66,55 @@ namespace Amazon.ComputeOptimizer.Model
         internal bool IsSetEnhancedInfrastructureMetrics()
         {
             return this._enhancedInfrastructureMetrics != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExternalMetricsPreference. 
+        /// <para>
+        ///  An object that describes the external metrics recommendation preference. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  If the preference is applied in the latest recommendation refresh, an object with
+        /// a valid <code>source</code> value appears in the response. If the preference isn't
+        /// applied to the recommendations already, then this object doesn't appear in the response.
+        /// 
+        /// </para>
+        /// </summary>
+        public ExternalMetricsPreference ExternalMetricsPreference
+        {
+            get { return this._externalMetricsPreference; }
+            set { this._externalMetricsPreference = value; }
+        }
+
+        // Check to see if ExternalMetricsPreference property is set
+        internal bool IsSetExternalMetricsPreference()
+        {
+            return this._externalMetricsPreference != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InferredWorkloadTypes. 
+        /// <para>
+        /// The status of the inferred workload types recommendation preference.
+        /// </para>
+        ///  
+        /// <para>
+        /// When the recommendations page is refreshed, a status of <code>Active</code> confirms
+        /// that the preference is applied to the recommendations, and a status of <code>Inactive</code>
+        /// confirms that the preference isn't yet applied to recommendations.
+        /// </para>
+        /// </summary>
+        public InferredWorkloadTypesPreference InferredWorkloadTypes
+        {
+            get { return this._inferredWorkloadTypes; }
+            set { this._inferredWorkloadTypes = value; }
+        }
+
+        // Check to see if InferredWorkloadTypes property is set
+        internal bool IsSetInferredWorkloadTypes()
+        {
+            return this._inferredWorkloadTypes != null;
         }
 
         /// <summary>

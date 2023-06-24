@@ -36,6 +36,10 @@ namespace Amazon.SageMaker.Model
     /// 
     ///  
     /// <para>
+    /// The worker portal is now supported in VPC and public internet.
+    /// </para>
+    ///  
+    /// <para>
     ///  Use <code>SourceIpConfig</code> to restrict worker access to tasks to a specific
     /// range of IP addresses. You specify allowed IP addresses by creating a list of up to
     /// ten <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>.
@@ -46,18 +50,30 @@ namespace Amazon.SageMaker.Model
     /// </para>
     ///  
     /// <para>
+    /// To restrict access to all the workers in public internet, add the <code>SourceIpConfig</code>
+    /// CIDR value as "10.0.0.0/16".
+    /// </para>
+    ///  <important> 
+    /// <para>
+    /// Amazon SageMaker does not support Source Ip restriction for worker portals in VPC.
+    /// </para>
+    ///  </important> 
+    /// <para>
     /// Use <code>OidcConfig</code> to update the configuration of a workforce created using
     /// your own OIDC IdP. 
     /// </para>
     ///  <important> 
     /// <para>
     /// You can only update your OIDC IdP configuration when there are no work teams associated
-    /// with your workforce. You can delete work teams using the operation.
+    /// with your workforce. You can delete work teams using the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteWorkteam.html">DeleteWorkteam</a>
+    /// operation.
     /// </para>
     ///  </important> 
     /// <para>
     /// After restricting access to a range of IP addresses or updating your OIDC IdP configuration
-    /// with this operation, you can view details about your update workforce using the operation.
+    /// with this operation, you can view details about your update workforce using the <a
+    /// href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeWorkforce.html">DescribeWorkforce</a>
+    /// operation.
     /// </para>
     ///  <important> 
     /// <para>
@@ -70,6 +86,7 @@ namespace Amazon.SageMaker.Model
         private OidcConfig _oidcConfig;
         private SourceIpConfig _sourceIpConfig;
         private string _workforceName;
+        private WorkforceVpcConfigRequest _workforceVpcConfig;
 
         /// <summary>
         /// Gets and sets the property OidcConfig. 
@@ -117,7 +134,8 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property WorkforceName. 
         /// <para>
         /// The name of the private workforce that you want to update. You can find your workforce
-        /// name by using the operation.
+        /// name by using the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListWorkforces.html">ListWorkforces</a>
+        /// operation.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=63)]
@@ -131,6 +149,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetWorkforceName()
         {
             return this._workforceName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WorkforceVpcConfig. 
+        /// <para>
+        /// Use this parameter to update your VPC configuration for a workforce.
+        /// </para>
+        /// </summary>
+        public WorkforceVpcConfigRequest WorkforceVpcConfig
+        {
+            get { return this._workforceVpcConfig; }
+            set { this._workforceVpcConfig = value; }
+        }
+
+        // Check to see if WorkforceVpcConfig property is set
+        internal bool IsSetWorkforceVpcConfig()
+        {
+            return this._workforceVpcConfig != null;
         }
 
     }

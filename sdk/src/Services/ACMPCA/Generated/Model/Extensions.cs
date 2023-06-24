@@ -34,6 +34,7 @@ namespace Amazon.ACMPCA.Model
     public partial class Extensions
     {
         private List<PolicyInformation> _certificatePolicies = new List<PolicyInformation>();
+        private List<CustomExtension> _customExtensions = new List<CustomExtension>();
         private List<ExtendedKeyUsage> _extendedKeyUsage = new List<ExtendedKeyUsage>();
         private KeyUsage _keyUsage;
         private List<GeneralName> _subjectAlternativeNames = new List<GeneralName>();
@@ -64,6 +65,27 @@ namespace Amazon.ACMPCA.Model
         internal bool IsSetCertificatePolicies()
         {
             return this._certificatePolicies != null && this._certificatePolicies.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomExtensions.  
+        /// <para>
+        /// Contains a sequence of one or more X.509 extensions, each of which consists of an
+        /// object identifier (OID), a base64-encoded value, and the critical flag. For more information,
+        /// see the <a href="https://oidref.com/2.5.29">Global OID reference database.</a> 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=20)]
+        public List<CustomExtension> CustomExtensions
+        {
+            get { return this._customExtensions; }
+            set { this._customExtensions = value; }
+        }
+
+        // Check to see if CustomExtensions property is set
+        internal bool IsSetCustomExtensions()
+        {
+            return this._customExtensions != null && this._customExtensions.Count > 0; 
         }
 
         /// <summary>

@@ -34,7 +34,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// JobUpdate Marshaller
-    /// </summary>       
+    /// </summary>
     public class JobUpdateMarshaller : IRequestMarshaller<JobUpdate, JsonMarshallerContext> 
     {
         /// <summary>
@@ -49,6 +49,25 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("AllocatedCapacity");
                 context.Writer.Write(requestObject.AllocatedCapacity);
+            }
+
+            if(requestObject.IsSetCodeGenConfigurationNodes())
+            {
+                context.Writer.WritePropertyName("CodeGenConfigurationNodes");
+                context.Writer.WriteObjectStart();
+                foreach (var requestObjectCodeGenConfigurationNodesKvp in requestObject.CodeGenConfigurationNodes)
+                {
+                    context.Writer.WritePropertyName(requestObjectCodeGenConfigurationNodesKvp.Key);
+                    var requestObjectCodeGenConfigurationNodesValue = requestObjectCodeGenConfigurationNodesKvp.Value;
+
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = CodeGenConfigurationNodeMarshaller.Instance;
+                    marshaller.Marshall(requestObjectCodeGenConfigurationNodesValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteObjectEnd();
             }
 
             if(requestObject.IsSetCommand())
@@ -91,6 +110,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("Description");
                 context.Writer.Write(requestObject.Description);
+            }
+
+            if(requestObject.IsSetExecutionClass())
+            {
+                context.Writer.WritePropertyName("ExecutionClass");
+                context.Writer.Write(requestObject.ExecutionClass);
             }
 
             if(requestObject.IsSetExecutionProperty())
@@ -171,6 +196,17 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.SecurityConfiguration);
             }
 
+            if(requestObject.IsSetSourceControlDetails())
+            {
+                context.Writer.WritePropertyName("SourceControlDetails");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = SourceControlDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.SourceControlDetails, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetTimeout())
             {
                 context.Writer.WritePropertyName("Timeout");
@@ -187,7 +223,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static JobUpdateMarshaller Instance = new JobUpdateMarshaller();
 
     }

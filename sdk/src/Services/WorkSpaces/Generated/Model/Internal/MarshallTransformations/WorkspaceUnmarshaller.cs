@@ -106,6 +106,12 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
                     unmarshalledObject.ModificationStates = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("RelatedWorkspaces", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<RelatedWorkspaceProperties, RelatedWorkspacePropertiesUnmarshaller>(RelatedWorkspacePropertiesUnmarshaller.Instance);
+                    unmarshalledObject.RelatedWorkspaces = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("RootVolumeEncryptionEnabled", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;

@@ -66,6 +66,19 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ClusterIdentifier", StringUtils.FromString(publicRequest.ClusterIdentifier));
                 }
+                if(publicRequest.IsSetLogDestinationType())
+                {
+                    request.Parameters.Add("LogDestinationType", StringUtils.FromString(publicRequest.LogDestinationType));
+                }
+                if(publicRequest.IsSetLogExports())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.LogExports)
+                    {
+                        request.Parameters.Add("LogExports" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
+                }
                 if(publicRequest.IsSetS3KeyPrefix())
                 {
                     request.Parameters.Add("S3KeyPrefix", StringUtils.FromString(publicRequest.S3KeyPrefix));

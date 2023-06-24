@@ -50,6 +50,7 @@ namespace Amazon.Chime.Model
         /// The bot email address.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string BotEmail
         {
             get { return this._botEmail; }
@@ -140,6 +141,7 @@ namespace Amazon.Chime.Model
         /// The bot display name.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string DisplayName
         {
             get { return this._displayName; }
@@ -158,6 +160,7 @@ namespace Amazon.Chime.Model
         /// The security token used to authenticate Amazon Chime with the outgoing event endpoint.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string SecurityToken
         {
             get { return this._securityToken; }

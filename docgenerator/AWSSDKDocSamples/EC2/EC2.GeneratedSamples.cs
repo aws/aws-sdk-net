@@ -18,27 +18,13 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
             var client = new AmazonEC2Client();
             var response = client.AllocateAddress(new AllocateAddressRequest 
             {
-                Domain = "vpc"
             });
 
             string allocationId = response.AllocationId;
             string domain = response.Domain;
+            string networkBorderGroup = response.NetworkBorderGroup;
             string publicIp = response.PublicIp;
-
-            #endregion
-        }
-
-        public void EC2AllocateAddress()
-        {
-            #region ec2-allocate-address-2
-
-            var client = new AmazonEC2Client();
-            var response = client.AllocateAddress(new AllocateAddressRequest 
-            {
-            });
-
-            string domain = response.Domain;
-            string publicIp = response.PublicIp;
+            string publicIpv4Pool = response.PublicIpv4Pool;
 
             #endregion
         }
@@ -103,21 +89,6 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
             });
 
             string associationId = response.AssociationId;
-
-            #endregion
-        }
-
-        public void EC2AssociateAddress()
-        {
-            #region ec2-associate-address-3
-
-            var client = new AmazonEC2Client();
-            var response = client.AssociateAddress(new AssociateAddressRequest 
-            {
-                InstanceId = "i-07ffe74c7330ebf53",
-                PublicIp = "198.51.100.0"
-            });
-
 
             #endregion
         }
@@ -1238,50 +1209,6 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
             #endregion
         }
 
-        public void EC2DescribeAddresses()
-        {
-            #region ec2-describe-addresses-2
-
-            var client = new AmazonEC2Client();
-            var response = client.DescribeAddresses(new DescribeAddressesRequest 
-            {
-                Filters = new List<Filter> {
-                    new Filter {
-                        Name = "domain",
-                        Values = new List<string> {
-                            "vpc"
-                        }
-                    }
-                }
-            });
-
-            List<Address> addresses = response.Addresses;
-
-            #endregion
-        }
-
-        public void EC2DescribeAddresses()
-        {
-            #region ec2-describe-addresses-3
-
-            var client = new AmazonEC2Client();
-            var response = client.DescribeAddresses(new DescribeAddressesRequest 
-            {
-                Filters = new List<Filter> {
-                    new Filter {
-                        Name = "domain",
-                        Values = new List<string> {
-                            "standard"
-                        }
-                    }
-                }
-            });
-
-            List<Address> addresses = response.Addresses;
-
-            #endregion
-        }
-
         public void EC2DescribeAvailabilityZones()
         {
             #region ec2-describe-availability-zones-1
@@ -1747,48 +1674,6 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
             #endregion
         }
 
-        public void EC2DescribeScheduledInstanceAvailability()
-        {
-            #region ec2-describe-scheduled-instance-availability-1
-
-            var client = new AmazonEC2Client();
-            var response = client.DescribeScheduledInstanceAvailability(new DescribeScheduledInstanceAvailabilityRequest 
-            {
-                FirstSlotStartTimeRange = new SlotDateTimeRangeRequest {
-                    EarliestTimeUtc = new DateTime(2016, 1, 30, 4, 0, 0, DateTimeKind.Utc),
-                    LatestTimeUtc = new DateTime(2016, 1, 30, 8, 0, 0, DateTimeKind.Utc)
-                },
-                Recurrence = new ScheduledInstanceRecurrenceRequest {
-                    Frequency = "Weekly",
-                    Interval = 1,
-                    OccurrenceDays = new List<int> {
-                        1
-                    }
-                }
-            });
-
-            List<ScheduledInstanceAvailability> scheduledInstanceAvailabilitySet = response.ScheduledInstanceAvailabilitySet;
-
-            #endregion
-        }
-
-        public void EC2DescribeScheduledInstances()
-        {
-            #region ec2-describe-scheduled-instances-1
-
-            var client = new AmazonEC2Client();
-            var response = client.DescribeScheduledInstances(new DescribeScheduledInstancesRequest 
-            {
-                ScheduledInstanceIds = new List<string> {
-                    "sci-1234-1234-1234-1234-123456789012"
-                }
-            });
-
-            List<ScheduledInstance> scheduledInstanceSet = response.ScheduledInstanceSet;
-
-            #endregion
-        }
-
         public void EC2DescribeSecurityGroupReferences()
         {
             #region to-describe-security-group-references-1529354312088
@@ -1994,14 +1879,14 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
             var client = new AmazonEC2Client();
             var response = client.DescribeSpotPriceHistory(new DescribeSpotPriceHistoryRequest 
             {
-                EndTimeUtc = new DateTime(2014, 1, 6, 8, 9, 10, DateTimeKind.Utc),
+                EndTimeUtc = new DateTime(2014, 1, 6, 12, 9, 10, DateTimeKind.Utc),
                 InstanceTypes = new List<string> {
                     "m1.xlarge"
                 },
                 ProductDescriptions = new List<string> {
                     "Linux/UNIX (Amazon VPC)"
                 },
-                StartTimeUtc = new DateTime(2014, 1, 6, 7, 8, 9, DateTimeKind.Utc)
+                StartTimeUtc = new DateTime(2014, 1, 5, 11, 8, 9, DateTimeKind.Utc)
             });
 
             List<SpotPrice> spotPriceHistory = response.SpotPriceHistory;
@@ -2274,20 +2159,6 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
             var response = client.DisassociateAddress(new DisassociateAddressRequest 
             {
                 AssociationId = "eipassoc-2bebb745"
-            });
-
-
-            #endregion
-        }
-
-        public void EC2DisassociateAddress()
-        {
-            #region ec2-disassociate-address-2
-
-            var client = new AmazonEC2Client();
-            var response = client.DisassociateAddress(new DisassociateAddressRequest 
-            {
-                PublicIp = "198.51.100.0"
             });
 
 
@@ -2676,26 +2547,6 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
             #endregion
         }
 
-        public void EC2PurchaseScheduledInstances()
-        {
-            #region ec2-purchase-scheduled-instances-1
-
-            var client = new AmazonEC2Client();
-            var response = client.PurchaseScheduledInstances(new PurchaseScheduledInstancesRequest 
-            {
-                PurchaseRequests = new List<PurchaseRequest> {
-                    new PurchaseRequest {
-                        InstanceCount = 1,
-                        PurchaseToken = "eyJ2IjoiMSIsInMiOjEsImMiOi..."
-                    }
-                }
-            });
-
-            List<ScheduledInstance> scheduledInstanceSet = response.ScheduledInstanceSet;
-
-            #endregion
-        }
-
         public void EC2RebootInstances()
         {
             #region to-reboot-an-ec2-instance-1529358566382
@@ -2720,20 +2571,6 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
             var response = client.ReleaseAddress(new ReleaseAddressRequest 
             {
                 AllocationId = "eipalloc-64d5890a"
-            });
-
-
-            #endregion
-        }
-
-        public void EC2ReleaseAddress()
-        {
-            #region ec2-release-address-2
-
-            var client = new AmazonEC2Client();
-            var response = client.ReleaseAddress(new ReleaseAddressRequest 
-            {
-                PublicIp = "198.51.100.0"
             });
 
 
@@ -3038,22 +2875,6 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
             #endregion
         }
 
-        public void EC2RestoreAddressToClassic()
-        {
-            #region ec2-restore-address-to-classic-1
-
-            var client = new AmazonEC2Client();
-            var response = client.RestoreAddressToClassic(new RestoreAddressToClassicRequest 
-            {
-                PublicIp = "198.51.100.0"
-            });
-
-            string publicIp = response.PublicIp;
-            string status = response.Status;
-
-            #endregion
-        }
-
         public void EC2RunInstances()
         {
             #region to-launch-an-instance-1529360150806
@@ -3089,64 +2910,6 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
                 }
             });
 
-
-            #endregion
-        }
-
-        public void EC2RunScheduledInstances()
-        {
-            #region ec2-run-scheduled-instances-1
-
-            var client = new AmazonEC2Client();
-            var response = client.RunScheduledInstances(new RunScheduledInstancesRequest 
-            {
-                InstanceCount = 1,
-                LaunchSpecification = new ScheduledInstancesLaunchSpecification {
-                    IamInstanceProfile = new ScheduledInstancesIamInstanceProfile { Name = "my-iam-role" },
-                    ImageId = "ami-12345678",
-                    InstanceType = "c4.large",
-                    KeyName = "my-key-pair",
-                    NetworkInterfaces = new List<ScheduledInstancesNetworkInterface> {
-                        new ScheduledInstancesNetworkInterface {
-                            AssociatePublicIpAddress = true,
-                            DeviceIndex = 0,
-                            Groups = new List<string> {
-                                "sg-12345678"
-                            },
-                            SubnetId = "subnet-12345678"
-                        }
-                    }
-                },
-                ScheduledInstanceId = "sci-1234-1234-1234-1234-123456789012"
-            });
-
-            List<string> instanceIdSet = response.InstanceIdSet;
-
-            #endregion
-        }
-
-        public void EC2RunScheduledInstances()
-        {
-            #region ec2-run-scheduled-instances-2
-
-            var client = new AmazonEC2Client();
-            var response = client.RunScheduledInstances(new RunScheduledInstancesRequest 
-            {
-                InstanceCount = 1,
-                LaunchSpecification = new ScheduledInstancesLaunchSpecification {
-                    IamInstanceProfile = new ScheduledInstancesIamInstanceProfile { Name = "my-iam-role" },
-                    ImageId = "ami-12345678",
-                    InstanceType = "c4.large",
-                    KeyName = "my-key-pair",
-                    Placement = new ScheduledInstancesPlacement { AvailabilityZone = "us-west-2b" },
-                    SecurityGroupIds = new List<string> {
-                        "sg-12345678"
-                    }
-                },
-                ScheduledInstanceId = "sci-1234-1234-1234-1234-123456789012"
-            });
-
-            List<string> instanceIdSet = response.InstanceIdSet;
 
             #endregion
         }

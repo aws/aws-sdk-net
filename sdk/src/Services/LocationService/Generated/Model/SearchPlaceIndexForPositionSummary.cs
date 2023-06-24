@@ -50,6 +50,10 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// Grab
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// Here
         /// </para>
         ///  </li> </ul> 
@@ -121,7 +125,7 @@ namespace Amazon.LocationService.Model
         /// The position specified in the request.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=2, Max=2)]
+        [AWSProperty(Required=true, Sensitive=true, Min=2, Max=2)]
         public List<double> Position
         {
             get { return this._position; }

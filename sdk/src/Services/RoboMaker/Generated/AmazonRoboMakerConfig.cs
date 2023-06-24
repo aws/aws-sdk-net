@@ -17,22 +17,22 @@
  * Do not modify this file. This file is generated from the robomaker-2018-06-29.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
-
+using Amazon.RoboMaker.Internal;
 
 namespace Amazon.RoboMaker
 {
     /// <summary>
     /// Configuration for accessing Amazon RoboMaker service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonRoboMakerConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.5.23");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.147");
 
         private string _userAgent = UserAgentString;
 
@@ -40,8 +40,10 @@ namespace Amazon.RoboMaker
         /// Default constructor
         /// </summary>
         public AmazonRoboMakerConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonRoboMakerDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "robomaker";
+            this.EndpointProvider = new AmazonRoboMakerEndpointProvider();
         }
 
         /// <summary>
@@ -76,5 +78,6 @@ namespace Amazon.RoboMaker
                 return _userAgent;
             }
         }
+
     }
 }

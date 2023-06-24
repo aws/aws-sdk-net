@@ -39,8 +39,8 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property BurstLimit. 
         /// <para>
-        /// The API request burst limit, the maximum rate limit over a time ranging from one to
-        /// a few seconds, depending upon whether the underlying token bucket is at its full capacity.
+        /// The API target request burst rate limit. This allows more requests through for a period
+        /// of time than the target rate limit.
         /// </para>
         /// </summary>
         public int BurstLimit
@@ -58,7 +58,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property RateLimit. 
         /// <para>
-        /// The API request steady-state rate limit.
+        /// The API target request rate limit.
         /// </para>
         /// </summary>
         public double RateLimit

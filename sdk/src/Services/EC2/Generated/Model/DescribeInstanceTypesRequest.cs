@@ -47,8 +47,8 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>auto-recovery-supported</code> - Indicates whether auto recovery is supported
-        /// (<code>true</code> | <code>false</code>).
+        ///  <code>auto-recovery-supported</code> - Indicates whether Amazon CloudWatch action
+        /// based recovery is supported (<code>true</code> | <code>false</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -141,8 +141,8 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>instance-storage-info.encryption-supported</code> - Indicates whether data
-        /// is encrypted at rest (<code>required</code> | <code>unsupported</code>).
+        ///  <code>instance-storage-info.encryption-support</code> - Indicates whether data is
+        /// encrypted at rest (<code>required</code> | <code>supported</code> | <code>unsupported</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -207,6 +207,11 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>network-info.maximum-network-cards</code> - The maximum number of network cards
+        /// per instance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>network-info.maximum-network-interfaces</code> - The maximum number of network
         /// interfaces per instance.
         /// </para>
@@ -224,6 +229,10 @@ namespace Amazon.EC2.Model
         /// <para>
         ///  <code>processor-info.sustained-clock-speed-in-ghz</code> - The CPU clock speed, in
         /// GHz.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>processor-info.supported-features</code> - The supported CPU features (<code>amd-sev-snp</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -305,8 +314,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of results to return for the request in a single page. The remaining
-        /// results can be seen by sending another request with the next token value.
+        /// The maximum number of items to return for this request. To get the next page of items,
+        /// make another request with the token returned in the output. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=5, Max=100)]
@@ -325,7 +335,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token to retrieve the next page of results.
+        /// The token returned from a previous paginated request. Pagination continues from the
+        /// end of the items returned by the previous request.
         /// </para>
         /// </summary>
         public string NextToken

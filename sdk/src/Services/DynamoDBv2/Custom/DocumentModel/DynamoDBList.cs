@@ -173,7 +173,10 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 {
                     entryAttributeValue = entry.ConvertToAttributeValue(conversionConfig);
                 }
-                items.Add(entryAttributeValue);
+                if(entryAttributeValue != null)
+                {
+                    items.Add(entryAttributeValue);
+                }
             }
 
             attribute.L = items;

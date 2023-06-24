@@ -34,7 +34,7 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RedactionConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class RedactionConfigMarshaller : IRequestMarshaller<RedactionConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RedactionConfigMarshaller Instance = new RedactionConfigMarshaller();
 
     }

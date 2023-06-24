@@ -56,7 +56,7 @@ namespace Amazon.RecycleBin.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.RecycleBin");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-06-15";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-06-15";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/rules";
@@ -69,6 +69,17 @@ namespace Amazon.RecycleBin.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("Description");
                     context.Writer.Write(publicRequest.Description);
+                }
+
+                if(publicRequest.IsSetLockConfiguration())
+                {
+                    context.Writer.WritePropertyName("LockConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = LockConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.LockConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
                 if(publicRequest.IsSetResourceTags())
@@ -120,7 +131,6 @@ namespace Amazon.RecycleBin.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

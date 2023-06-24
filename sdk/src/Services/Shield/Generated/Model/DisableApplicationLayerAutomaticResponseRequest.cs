@@ -31,8 +31,8 @@ namespace Amazon.Shield.Model
     /// <summary>
     /// Container for the parameters to the DisableApplicationLayerAutomaticResponse operation.
     /// Disable the Shield Advanced automatic application layer DDoS mitigation feature for
-    /// the resource. This stops Shield Advanced from creating, verifying, and applying WAF
-    /// rules for attacks that it detects for the resource.
+    /// the protected resource. This stops Shield Advanced from creating, verifying, and applying
+    /// WAF rules for attacks that it detects for the resource.
     /// </summary>
     public partial class DisableApplicationLayerAutomaticResponseRequest : AmazonShieldRequest
     {
@@ -41,7 +41,7 @@ namespace Amazon.Shield.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The ARN (Amazon Resource Name) of the resource.
+        /// The ARN (Amazon Resource Name) of the protected resource.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]

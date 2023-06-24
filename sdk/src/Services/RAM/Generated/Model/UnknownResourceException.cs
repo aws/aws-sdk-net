@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RAM.Model
 {
     /// <summary>
-    /// A specified resource was not found.
+    /// The operation failed because a specified resource couldn't be found.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -34,7 +34,7 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ServiceManagedChannelS3Storage Marshaller
-    /// </summary>       
+    /// </summary>
     public class ServiceManagedChannelS3StorageMarshaller : IRequestMarshaller<ServiceManagedChannelS3Storage, JsonMarshallerContext> 
     {
         /// <summary>
@@ -49,7 +49,7 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ServiceManagedChannelS3StorageMarshaller Instance = new ServiceManagedChannelS3StorageMarshaller();
 
     }

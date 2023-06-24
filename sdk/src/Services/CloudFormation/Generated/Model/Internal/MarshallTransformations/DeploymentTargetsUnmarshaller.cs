@@ -54,6 +54,12 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("AccountFilterType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.AccountFilterType = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("Accounts/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

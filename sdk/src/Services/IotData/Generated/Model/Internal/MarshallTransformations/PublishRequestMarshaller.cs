@@ -56,23 +56,51 @@ namespace Amazon.IotData.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.IotData");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-05-28";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-05-28";
             request.HttpMethod = "POST";
 
             if (!publicRequest.IsSetTopic())
                 throw new AmazonIotDataException("Request object does not have required field Topic set");
             request.AddPathResource("{topic}", StringUtils.FromString(publicRequest.Topic));
             
+            if (publicRequest.IsSetContentType())
+                request.Parameters.Add("contentType", StringUtils.FromString(publicRequest.ContentType));
+            
+            if (publicRequest.IsSetMessageExpiry())
+                request.Parameters.Add("messageExpiry", StringUtils.FromLong(publicRequest.MessageExpiry));
+            
             if (publicRequest.IsSetQos())
                 request.Parameters.Add("qos", StringUtils.FromInt(publicRequest.Qos));
+            
+            if (publicRequest.IsSetResponseTopic())
+                request.Parameters.Add("responseTopic", StringUtils.FromString(publicRequest.ResponseTopic));
             
             if (publicRequest.IsSetRetain())
                 request.Parameters.Add("retain", StringUtils.FromBool(publicRequest.Retain));
             request.ResourcePath = "/topics/{topic}";
             request.ContentStream =  publicRequest.Payload ?? new MemoryStream();
-            request.Headers[Amazon.Util.HeaderKeys.ContentLengthHeader] =  
+            request.Headers[Amazon.Util.HeaderKeys.ContentLengthHeader] =
                 request.ContentStream.Length.ToString(CultureInfo.InvariantCulture);
-            request.Headers[Amazon.Util.HeaderKeys.ContentTypeHeader] = "binary/octet-stream";
+            request.Headers[Amazon.Util.HeaderKeys.ContentTypeHeader] = "binary/octet-stream"; 
+            if (request.ContentStream != null && request.ContentStream.Length == 0)
+            {
+                request.Headers.Remove(Amazon.Util.HeaderKeys.ContentTypeHeader);
+            }
+        
+            if (publicRequest.IsSetCorrelationData()) 
+            {
+                request.Headers["x-amz-mqtt5-correlation-data"] = publicRequest.CorrelationData;
+            }
+        
+            if (publicRequest.IsSetPayloadFormatIndicator()) 
+            {
+                request.Headers["x-amz-mqtt5-payload-format-indicator"] = publicRequest.PayloadFormatIndicator;
+            }
+        
+            if (publicRequest.IsSetUserProperties()) 
+            {
+                request.Headers["x-amz-mqtt5-user-properties"] = Convert.ToBase64String(Encoding.UTF8.GetBytes(publicRequest.UserProperties));
+            }
             request.UseQueryString = true;
 
             return request;

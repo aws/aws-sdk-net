@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53RecoveryReadiness.Model
 {
     /// <summary>
-    /// The Route 53 resource a DNS Target Resource record points to
+    /// The Route 53 resource that a DNS target resource record points to.
     /// </summary>
     public partial class R53ResourceRecord
     {
@@ -37,7 +37,10 @@ namespace Amazon.Route53RecoveryReadiness.Model
         private string _recordSetId;
 
         /// <summary>
-        /// Gets and sets the property DomainName. The DNS target name
+        /// Gets and sets the property DomainName. 
+        /// <para>
+        /// The DNS target domain name.
+        /// </para>
         /// </summary>
         public string DomainName
         {
@@ -52,7 +55,10 @@ namespace Amazon.Route53RecoveryReadiness.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RecordSetId. The Resource Record set id
+        /// Gets and sets the property RecordSetId. 
+        /// <para>
+        /// The Route 53 Resource Record Set ID.
+        /// </para>
         /// </summary>
         public string RecordSetId
         {

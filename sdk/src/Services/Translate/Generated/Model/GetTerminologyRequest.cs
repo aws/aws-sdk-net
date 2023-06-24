@@ -63,14 +63,14 @@ namespace Amazon.Translate.Model
         /// </para>
         ///  
         /// <para>
-        /// If you don't specify this parameter, Amazon Translate returns a file that has the
-        /// same format as the file that was imported to create the terminology. 
+        /// If you don't specify this parameter, Amazon Translate returns a file with the same
+        /// format as the file that was imported to create the terminology. 
         /// </para>
         ///  
         /// <para>
         /// If you specify this parameter when you retrieve a multi-directional terminology resource,
-        /// you must specify the same format as that of the input file that was imported to create
-        /// it. Otherwise, Amazon Translate throws an error.
+        /// you must specify the same format as the input file that was imported to create it.
+        /// Otherwise, Amazon Translate throws an error.
         /// </para>
         /// </summary>
         public TerminologyDataFormat TerminologyDataFormat

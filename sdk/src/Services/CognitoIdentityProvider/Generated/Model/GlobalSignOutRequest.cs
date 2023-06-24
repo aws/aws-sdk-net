@@ -30,9 +30,9 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// Container for the parameters to the GlobalSignOut operation.
-    /// Signs out users from all devices. It also invalidates all refresh tokens issued to
-    /// a user. The user's current access and Id tokens remain valid until their expiry. Access
-    /// and Id tokens expire one hour after they are issued.
+    /// Signs out users from all devices. It also invalidates all refresh tokens that Amazon
+    /// Cognito has issued to a user. A user can still use a hosted UI cookie to retrieve
+    /// new tokens for the duration of the 1-hour cookie validity period.
     /// </summary>
     public partial class GlobalSignOutRequest : AmazonCognitoIdentityProviderRequest
     {
@@ -41,10 +41,10 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AccessToken. 
         /// <para>
-        /// The access token.
+        /// A valid access token that Amazon Cognito issued to the user who you want to sign out.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public string AccessToken
         {
             get { return this._accessToken; }

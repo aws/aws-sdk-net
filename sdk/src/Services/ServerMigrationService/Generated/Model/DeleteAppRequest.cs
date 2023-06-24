@@ -31,7 +31,8 @@ namespace Amazon.ServerMigrationService.Model
     /// <summary>
     /// Container for the parameters to the DeleteApp operation.
     /// Deletes the specified application. Optionally deletes the launched stack associated
-    /// with the application and all AWS SMS replication jobs for servers in the application.
+    /// with the application and all Server Migration Service replication jobs for servers
+    /// in the application.
     /// </summary>
     public partial class DeleteAppRequest : AmazonServerMigrationServiceRequest
     {

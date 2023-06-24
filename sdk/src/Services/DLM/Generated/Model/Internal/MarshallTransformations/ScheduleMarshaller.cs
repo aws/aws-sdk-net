@@ -34,7 +34,7 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Schedule Marshaller
-    /// </summary>       
+    /// </summary>
     public class ScheduleMarshaller : IRequestMarshaller<Schedule, JsonMarshallerContext> 
     {
         /// <summary>
@@ -45,6 +45,17 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Schedule requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetArchiveRule())
+            {
+                context.Writer.WritePropertyName("ArchiveRule");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ArchiveRuleMarshaller.Instance;
+                marshaller.Marshall(requestObject.ArchiveRule, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetCopyTags())
             {
                 context.Writer.WritePropertyName("CopyTags");
@@ -169,7 +180,7 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ScheduleMarshaller Instance = new ScheduleMarshaller();
 
     }

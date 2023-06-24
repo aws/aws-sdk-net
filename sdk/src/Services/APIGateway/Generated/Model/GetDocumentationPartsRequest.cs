@@ -30,7 +30,7 @@ namespace Amazon.APIGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the GetDocumentationParts operation.
-    /// 
+    /// Gets documentation parts.
     /// </summary>
     public partial class GetDocumentationPartsRequest : AmazonAPIGatewayRequest
     {
@@ -65,8 +65,8 @@ namespace Amazon.APIGateway.Model
         /// Gets and sets the property LocationStatus. 
         /// <para>
         /// The status of the API documentation parts to retrieve. Valid values are <code>DOCUMENTED</code>
-        /// for retrieving <a>DocumentationPart</a> resources with content and <code>UNDOCUMENTED</code>
-        /// for <a>DocumentationPart</a> resources without content.
+        /// for retrieving DocumentationPart resources with content and <code>UNDOCUMENTED</code>
+        /// for DocumentationPart resources without content.
         /// </para>
         /// </summary>
         public LocationStatusType LocationStatus
@@ -138,7 +138,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property RestApiId. 
         /// <para>
-        /// [Required] The string identifier of the associated <a>RestApi</a>.
+        /// The string identifier of the associated RestApi.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

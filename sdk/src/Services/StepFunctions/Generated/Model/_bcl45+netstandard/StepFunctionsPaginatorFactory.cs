@@ -60,6 +60,14 @@ namespace Amazon.StepFunctions.Model
         }
 
         /// <summary>
+        /// Paginator for ListMapRuns operation
+        ///</summary>
+        public IListMapRunsPaginator ListMapRuns(ListMapRunsRequest request) 
+        {
+            return new ListMapRunsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListStateMachines operation
         ///</summary>
         public IListStateMachinesPaginator ListStateMachines(ListStateMachinesRequest request) 

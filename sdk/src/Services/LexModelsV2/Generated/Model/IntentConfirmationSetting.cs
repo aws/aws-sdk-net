@@ -34,7 +34,17 @@ namespace Amazon.LexModelsV2.Model
     public partial class IntentConfirmationSetting
     {
         private bool? _active;
+        private DialogCodeHookInvocationSetting _codeHook;
+        private ConditionalSpecification _confirmationConditional;
+        private DialogState _confirmationNextStep;
+        private ResponseSpecification _confirmationResponse;
+        private ConditionalSpecification _declinationConditional;
+        private DialogState _declinationNextStep;
         private ResponseSpecification _declinationResponse;
+        private ElicitationCodeHookInvocationSetting _elicitationCodeHook;
+        private ConditionalSpecification _failureConditional;
+        private DialogState _failureNextStep;
+        private ResponseSpecification _failureResponse;
         private PromptSpecification _promptSpecification;
 
         /// <summary>
@@ -58,6 +68,114 @@ namespace Amazon.LexModelsV2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CodeHook. 
+        /// <para>
+        /// The <code>DialogCodeHookInvocationSetting</code> object associated with intent's confirmation
+        /// step. The dialog code hook is triggered based on these invocation settings when the
+        /// confirmation next step or declination next step or failure next step is <code>InvokeDialogCodeHook</code>.
+        /// 
+        /// </para>
+        /// </summary>
+        public DialogCodeHookInvocationSetting CodeHook
+        {
+            get { return this._codeHook; }
+            set { this._codeHook = value; }
+        }
+
+        // Check to see if CodeHook property is set
+        internal bool IsSetCodeHook()
+        {
+            return this._codeHook != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ConfirmationConditional. 
+        /// <para>
+        /// A list of conditional branches to evaluate after the intent is closed.
+        /// </para>
+        /// </summary>
+        public ConditionalSpecification ConfirmationConditional
+        {
+            get { return this._confirmationConditional; }
+            set { this._confirmationConditional = value; }
+        }
+
+        // Check to see if ConfirmationConditional property is set
+        internal bool IsSetConfirmationConditional()
+        {
+            return this._confirmationConditional != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ConfirmationNextStep. 
+        /// <para>
+        /// Specifies the next step that the bot executes when the customer confirms the intent.
+        /// </para>
+        /// </summary>
+        public DialogState ConfirmationNextStep
+        {
+            get { return this._confirmationNextStep; }
+            set { this._confirmationNextStep = value; }
+        }
+
+        // Check to see if ConfirmationNextStep property is set
+        internal bool IsSetConfirmationNextStep()
+        {
+            return this._confirmationNextStep != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ConfirmationResponse.
+        /// </summary>
+        public ResponseSpecification ConfirmationResponse
+        {
+            get { return this._confirmationResponse; }
+            set { this._confirmationResponse = value; }
+        }
+
+        // Check to see if ConfirmationResponse property is set
+        internal bool IsSetConfirmationResponse()
+        {
+            return this._confirmationResponse != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeclinationConditional. 
+        /// <para>
+        /// A list of conditional branches to evaluate after the intent is declined.
+        /// </para>
+        /// </summary>
+        public ConditionalSpecification DeclinationConditional
+        {
+            get { return this._declinationConditional; }
+            set { this._declinationConditional = value; }
+        }
+
+        // Check to see if DeclinationConditional property is set
+        internal bool IsSetDeclinationConditional()
+        {
+            return this._declinationConditional != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeclinationNextStep. 
+        /// <para>
+        /// Specifies the next step that the bot executes when the customer declines the intent.
+        /// </para>
+        /// </summary>
+        public DialogState DeclinationNextStep
+        {
+            get { return this._declinationNextStep; }
+            set { this._declinationNextStep = value; }
+        }
+
+        // Check to see if DeclinationNextStep property is set
+        internal bool IsSetDeclinationNextStep()
+        {
+            return this._declinationNextStep != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property DeclinationResponse. 
         /// <para>
         /// When the user answers "no" to the question defined in <code>promptSpecification</code>,
@@ -65,7 +183,6 @@ namespace Amazon.LexModelsV2.Model
         /// 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public ResponseSpecification DeclinationResponse
         {
             get { return this._declinationResponse; }
@@ -76,6 +193,73 @@ namespace Amazon.LexModelsV2.Model
         internal bool IsSetDeclinationResponse()
         {
             return this._declinationResponse != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ElicitationCodeHook. 
+        /// <para>
+        /// The <code>DialogCodeHookInvocationSetting</code> used when the code hook is invoked
+        /// during confirmation prompt retries.
+        /// </para>
+        /// </summary>
+        public ElicitationCodeHookInvocationSetting ElicitationCodeHook
+        {
+            get { return this._elicitationCodeHook; }
+            set { this._elicitationCodeHook = value; }
+        }
+
+        // Check to see if ElicitationCodeHook property is set
+        internal bool IsSetElicitationCodeHook()
+        {
+            return this._elicitationCodeHook != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FailureConditional.
+        /// </summary>
+        public ConditionalSpecification FailureConditional
+        {
+            get { return this._failureConditional; }
+            set { this._failureConditional = value; }
+        }
+
+        // Check to see if FailureConditional property is set
+        internal bool IsSetFailureConditional()
+        {
+            return this._failureConditional != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FailureNextStep. 
+        /// <para>
+        /// The next step to take in the conversation if the confirmation step fails.
+        /// </para>
+        /// </summary>
+        public DialogState FailureNextStep
+        {
+            get { return this._failureNextStep; }
+            set { this._failureNextStep = value; }
+        }
+
+        // Check to see if FailureNextStep property is set
+        internal bool IsSetFailureNextStep()
+        {
+            return this._failureNextStep != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FailureResponse.
+        /// </summary>
+        public ResponseSpecification FailureResponse
+        {
+            get { return this._failureResponse; }
+            set { this._failureResponse = value; }
+        }
+
+        // Check to see if FailureResponse property is set
+        internal bool IsSetFailureResponse()
+        {
+            return this._failureResponse != null;
         }
 
         /// <summary>

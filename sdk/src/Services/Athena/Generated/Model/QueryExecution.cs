@@ -34,13 +34,16 @@ namespace Amazon.Athena.Model
     public partial class QueryExecution
     {
         private EngineVersion _engineVersion;
+        private List<string> _executionParameters = new List<string>();
         private string _query;
         private QueryExecutionContext _queryExecutionContext;
         private string _queryExecutionId;
         private ResultConfiguration _resultConfiguration;
+        private ResultReuseConfiguration _resultReuseConfiguration;
         private StatementType _statementType;
         private QueryExecutionStatistics _statistics;
         private QueryExecutionStatus _status;
+        private string _substatementType;
         private string _workGroup;
 
         /// <summary>
@@ -59,6 +62,27 @@ namespace Amazon.Athena.Model
         internal bool IsSetEngineVersion()
         {
             return this._engineVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExecutionParameters. 
+        /// <para>
+        /// A list of values for the parameters in a query. The values are applied sequentially
+        /// to the parameters in the query in the order in which the parameters occur. The list
+        /// of parameters is not returned in the response.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public List<string> ExecutionParameters
+        {
+            get { return this._executionParameters; }
+            set { this._executionParameters = value; }
+        }
+
+        // Check to see if ExecutionParameters property is set
+        internal bool IsSetExecutionParameters()
+        {
+            return this._executionParameters != null && this._executionParameters.Count > 0; 
         }
 
         /// <summary>
@@ -104,6 +128,7 @@ namespace Amazon.Athena.Model
         /// The unique identifier for each query execution.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string QueryExecutionId
         {
             get { return this._queryExecutionId; }
@@ -119,10 +144,11 @@ namespace Amazon.Athena.Model
         /// <summary>
         /// Gets and sets the property ResultConfiguration. 
         /// <para>
-        /// The location in Amazon S3 where query results were stored and the encryption option,
-        /// if any, used for query results. These are known as "client-side settings". If workgroup
-        /// settings override client-side settings, then the query uses the location for the query
-        /// results and the encryption configuration that are specified for the workgroup.
+        /// The location in Amazon S3 where query and calculation results are stored and the encryption
+        /// option, if any, used for query results. These are known as "client-side settings".
+        /// If workgroup settings override client-side settings, then the query uses the location
+        /// for the query results and the encryption configuration that are specified for the
+        /// workgroup.
         /// </para>
         /// </summary>
         public ResultConfiguration ResultConfiguration
@@ -135,6 +161,24 @@ namespace Amazon.Athena.Model
         internal bool IsSetResultConfiguration()
         {
             return this._resultConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResultReuseConfiguration. 
+        /// <para>
+        /// Specifies the query result reuse behavior that was used for the query.
+        /// </para>
+        /// </summary>
+        public ResultReuseConfiguration ResultReuseConfiguration
+        {
+            get { return this._resultReuseConfiguration; }
+            set { this._resultReuseConfiguration = value; }
+        }
+
+        // Check to see if ResultReuseConfiguration property is set
+        internal bool IsSetResultReuseConfiguration()
+        {
+            return this._resultReuseConfiguration != null;
         }
 
         /// <summary>
@@ -195,6 +239,24 @@ namespace Amazon.Athena.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SubstatementType. 
+        /// <para>
+        /// The kind of query statement that was run.
+        /// </para>
+        /// </summary>
+        public string SubstatementType
+        {
+            get { return this._substatementType; }
+            set { this._substatementType = value; }
+        }
+
+        // Check to see if SubstatementType property is set
+        internal bool IsSetSubstatementType()
+        {
+            return this._substatementType != null;
         }
 
         /// <summary>

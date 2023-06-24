@@ -30,7 +30,7 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the StartTaskContact operation.
-    /// Initiates a contact flow to start a new task.
+    /// Initiates a flow to start a new task.
     /// </summary>
     public partial class StartTaskContactRequest : AmazonConnectRequest
     {
@@ -41,15 +41,17 @@ namespace Amazon.Connect.Model
         private string _instanceId;
         private string _name;
         private string _previousContactId;
+        private string _quickConnectId;
         private Dictionary<string, Reference> _references = new Dictionary<string, Reference>();
+        private string _relatedContactId;
         private DateTime? _scheduledTime;
+        private string _taskTemplateId;
 
         /// <summary>
         /// Gets and sets the property Attributes. 
         /// <para>
         /// A custom key-value pair using an attribute map. The attributes are standard Amazon
-        /// Connect attributes, and can be accessed in contact flows just like any other contact
-        /// attributes.
+        /// Connect attributes, and can be accessed in flows just like any other contact attributes.
         /// </para>
         ///  
         /// <para>
@@ -73,7 +75,9 @@ namespace Amazon.Connect.Model
         /// Gets and sets the property ClientToken. 
         /// <para>
         /// A unique, case-sensitive identifier that you provide to ensure the idempotency of
-        /// the request.
+        /// the request. If not provided, the Amazon Web Services SDK populates this field. For
+        /// more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
+        /// retries safe with idempotent APIs</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=500)]
@@ -92,11 +96,11 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property ContactFlowId. 
         /// <para>
-        /// The identifier of the contact flow for initiating the tasks. To see the ContactFlowId
-        /// in the Amazon Connect console user interface, on the navigation menu go to <b>Routing</b>,
-        /// <b>Contact Flows</b>. Choose the contact flow. On the contact flow page, under the
-        /// name of the contact flow, choose <b>Show additional flow information</b>. The ContactFlowId
-        /// is the last part of the ARN, shown here in bold: 
+        /// The identifier of the flow for initiating the tasks. To see the ContactFlowId in the
+        /// Amazon Connect console user interface, on the navigation menu go to <b>Routing</b>,
+        /// <b>Contact Flows</b>. Choose the flow. On the flow page, under the name of the flow,
+        /// choose <b>Show additional flow information</b>. The ContactFlowId is the last part
+        /// of the ARN, shown here in bold: 
         /// </para>
         ///  
         /// <para>
@@ -104,7 +108,7 @@ namespace Amazon.Connect.Model
         /// 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=500)]
+        [AWSProperty(Max=500)]
         public string ContactFlowId
         {
             get { return this._contactFlowId; }
@@ -139,8 +143,8 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The identifier of the Amazon Connect instance. You can find the instanceId in the
-        /// ARN of the instance.
+        /// The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+        /// the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
@@ -195,6 +199,24 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Gets and sets the property QuickConnectId. 
+        /// <para>
+        /// The identifier for the quick connect.
+        /// </para>
+        /// </summary>
+        public string QuickConnectId
+        {
+            get { return this._quickConnectId; }
+            set { this._quickConnectId = value; }
+        }
+
+        // Check to see if QuickConnectId property is set
+        internal bool IsSetQuickConnectId()
+        {
+            return this._quickConnectId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property References. 
         /// <para>
         /// A formatted URL that is shown to an agent in the Contact Control Panel (CCP).
@@ -213,11 +235,31 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Gets and sets the property RelatedContactId. 
+        /// <para>
+        /// The contactId that is <a href="https://docs.aws.amazon.com/connect/latest/adminguide/tasks.html#linked-tasks">related</a>
+        /// to this contact.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string RelatedContactId
+        {
+            get { return this._relatedContactId; }
+            set { this._relatedContactId = value; }
+        }
+
+        // Check to see if RelatedContactId property is set
+        internal bool IsSetRelatedContactId()
+        {
+            return this._relatedContactId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ScheduledTime. 
         /// <para>
         /// The timestamp, in Unix Epoch seconds format, at which to start running the inbound
-        /// contact flow. The scheduled time cannot be in the past. It must be within up to 6
-        /// days in future. 
+        /// flow. The scheduled time cannot be in the past. It must be within up to 6 days in
+        /// future. 
         /// </para>
         /// </summary>
         public DateTime ScheduledTime
@@ -230,6 +272,25 @@ namespace Amazon.Connect.Model
         internal bool IsSetScheduledTime()
         {
             return this._scheduledTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TaskTemplateId. 
+        /// <para>
+        /// A unique identifier for the task template.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=500)]
+        public string TaskTemplateId
+        {
+            get { return this._taskTemplateId; }
+            set { this._taskTemplateId = value; }
+        }
+
+        // Check to see if TaskTemplateId property is set
+        internal bool IsSetTaskTemplateId()
+        {
+            return this._taskTemplateId != null;
         }
 
     }

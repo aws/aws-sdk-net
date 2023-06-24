@@ -39,8 +39,8 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
-        /// the output results from an analysis job.
+        /// ID for the Amazon Web Services Key Management Service (KMS) key that Amazon Comprehend
+        /// uses to encrypt the output results from an analysis job.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2048)]
@@ -61,6 +61,12 @@ namespace Amazon.Comprehend.Model
         /// <para>
         /// When you use the <code>PiiOutputDataConfig</code> object with asynchronous operations,
         /// you specify the Amazon S3 location where you want to write the output data. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  For a PII entity detection job, the output file is plain text, not a compressed archive.
+        /// The output file name is the same as the input file, with <code>.out</code> appended
+        /// at the end. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=1024)]

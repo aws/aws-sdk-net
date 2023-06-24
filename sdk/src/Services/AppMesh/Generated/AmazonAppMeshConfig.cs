@@ -17,22 +17,22 @@
  * Do not modify this file. This file is generated from the appmesh-2019-01-25.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
-
+using Amazon.AppMesh.Internal;
 
 namespace Amazon.AppMesh
 {
     /// <summary>
     /// Configuration for accessing Amazon AppMesh service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonAppMeshConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.1.76");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.147");
 
         private string _userAgent = UserAgentString;
 
@@ -40,8 +40,10 @@ namespace Amazon.AppMesh
         /// Default constructor
         /// </summary>
         public AmazonAppMeshConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonAppMeshDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "appmesh";
+            this.EndpointProvider = new AmazonAppMeshEndpointProvider();
         }
 
         /// <summary>
@@ -76,5 +78,6 @@ namespace Amazon.AppMesh
                 return _userAgent;
             }
         }
+
     }
 }

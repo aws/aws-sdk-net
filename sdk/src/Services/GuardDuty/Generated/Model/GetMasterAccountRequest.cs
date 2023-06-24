@@ -33,6 +33,7 @@ namespace Amazon.GuardDuty.Model
     /// Provides the details for the GuardDuty administrator account associated with the current
     /// GuardDuty member account.
     /// </summary>
+    [Obsolete("This input is deprecated, use GetAdministratorAccountRequest instead")]
     public partial class GetMasterAccountRequest : AmazonGuardDutyRequest
     {
         private string _detectorId;

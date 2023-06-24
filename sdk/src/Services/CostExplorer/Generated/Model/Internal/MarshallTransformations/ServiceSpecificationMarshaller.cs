@@ -34,7 +34,7 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ServiceSpecification Marshaller
-    /// </summary>       
+    /// </summary>
     public class ServiceSpecificationMarshaller : IRequestMarshaller<ServiceSpecification, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ServiceSpecificationMarshaller Instance = new ServiceSpecificationMarshaller();
 
     }

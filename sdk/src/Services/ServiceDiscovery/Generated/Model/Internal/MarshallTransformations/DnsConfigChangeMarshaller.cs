@@ -34,7 +34,7 @@ namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DnsConfigChange Marshaller
-    /// </summary>       
+    /// </summary>
     public class DnsConfigChangeMarshaller : IRequestMarshaller<DnsConfigChange, JsonMarshallerContext> 
     {
         /// <summary>
@@ -65,7 +65,7 @@ namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DnsConfigChangeMarshaller Instance = new DnsConfigChangeMarshaller();
 
     }

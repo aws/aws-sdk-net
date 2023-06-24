@@ -36,6 +36,7 @@ namespace Amazon.S3Control.Model
     {
         private long? _numberOfTasksFailed;
         private long? _numberOfTasksSucceeded;
+        private JobTimers _timers;
         private long? _totalNumberOfTasks;
 
         /// <summary>
@@ -68,6 +69,24 @@ namespace Amazon.S3Control.Model
         internal bool IsSetNumberOfTasksSucceeded()
         {
             return this._numberOfTasksSucceeded.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Timers. 
+        /// <para>
+        /// The JobTimers attribute of a job's progress summary.
+        /// </para>
+        /// </summary>
+        public JobTimers Timers
+        {
+            get { return this._timers; }
+            set { this._timers = value; }
+        }
+
+        // Check to see if Timers property is set
+        internal bool IsSetTimers()
+        {
+            return this._timers != null;
         }
 
         /// <summary>

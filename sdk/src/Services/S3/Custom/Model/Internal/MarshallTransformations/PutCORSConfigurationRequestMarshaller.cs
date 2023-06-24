@@ -43,13 +43,16 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             request.HttpMethod = "PUT";
 
+            if (putCORSConfigurationRequest.IsSetChecksumAlgorithm())
+                request.Headers.Add(S3Constants.AmzHeaderSdkChecksumAlgorithm, S3Transforms.ToStringValue(putCORSConfigurationRequest.ChecksumAlgorithm));
+
             if (putCORSConfigurationRequest.IsSetExpectedBucketOwner())
                 request.Headers.Add(S3Constants.AmzHeaderExpectedBucketOwner, S3Transforms.ToStringValue(putCORSConfigurationRequest.ExpectedBucketOwner));
 
             if (string.IsNullOrEmpty(putCORSConfigurationRequest.BucketName))
                 throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "PutCORSConfigurationRequest.BucketName");
 
-			request.ResourcePath = string.Concat("/", S3Transforms.ToStringValue(putCORSConfigurationRequest.BucketName));
+            request.ResourcePath = "/";
 
             request.AddSubResource("cors");
 
@@ -59,7 +62,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 var configuration = putCORSConfigurationRequest.Configuration;
                 if (configuration != null)
                 {
-                    xmlWriter.WriteStartElement("CORSConfiguration", "");
+                    xmlWriter.WriteStartElement("CORSConfiguration", S3Constants.S3RequestXmlNamespace);
 
                     if (configuration != null)
                     {
@@ -68,7 +71,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                         {
                             foreach (var cORSConfigurationCORSConfigurationcORSRulesListValue in cORSConfigurationCORSConfigurationcORSRulesList)
                             {
-                                xmlWriter.WriteStartElement("CORSRule", "");
+                                xmlWriter.WriteStartElement("CORSRule");
 
                                 if (cORSConfigurationCORSConfigurationcORSRulesListValue != null)
                                 {
@@ -77,7 +80,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                                     {
                                         foreach (string cORSRuleMemberallowedMethodsListValue in cORSRuleMemberallowedMethodsList)
                                         {
-                                            xmlWriter.WriteStartElement("AllowedMethod", "");
+                                            xmlWriter.WriteStartElement("AllowedMethod");
                                             xmlWriter.WriteValue(cORSRuleMemberallowedMethodsListValue);
                                             xmlWriter.WriteEndElement();
                                         }
@@ -91,7 +94,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                                     {
                                         foreach (string cORSRuleMemberallowedOriginsListValue in cORSRuleMemberallowedOriginsList)
                                         {
-                                            xmlWriter.WriteStartElement("AllowedOrigin", "");
+                                            xmlWriter.WriteStartElement("AllowedOrigin");
                                             xmlWriter.WriteValue(cORSRuleMemberallowedOriginsListValue);
                                             xmlWriter.WriteEndElement();
                                         }
@@ -105,7 +108,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                                     {
                                         foreach (string cORSRuleMemberexposeHeadersListValue in cORSRuleMemberexposeHeadersList)
                                         {
-                                            xmlWriter.WriteStartElement("ExposeHeader", "");
+                                            xmlWriter.WriteStartElement("ExposeHeader");
                                             xmlWriter.WriteValue(cORSRuleMemberexposeHeadersListValue);
                                             xmlWriter.WriteEndElement();
                                         }
@@ -119,7 +122,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                                     {
                                         foreach (string cORSRuleMemberallowedHeadersListValue in cORSRuleMemberallowedHeadersList)
                                         {
-                                            xmlWriter.WriteStartElement("AllowedHeader", "");
+                                            xmlWriter.WriteStartElement("AllowedHeader");
                                             xmlWriter.WriteValue(cORSRuleMemberallowedHeadersListValue);
                                             xmlWriter.WriteEndElement();
                                         }
@@ -128,12 +131,12 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
                                 if (cORSConfigurationCORSConfigurationcORSRulesListValue.IsSetMaxAgeSeconds())
                                 {
-                                    xmlWriter.WriteElementString("MaxAgeSeconds", "", S3Transforms.ToXmlStringValue(cORSConfigurationCORSConfigurationcORSRulesListValue.MaxAgeSeconds));
+                                    xmlWriter.WriteElementString("MaxAgeSeconds", S3Transforms.ToXmlStringValue(cORSConfigurationCORSConfigurationcORSRulesListValue.MaxAgeSeconds));
                                 }
 
                                 if (cORSConfigurationCORSConfigurationcORSRulesListValue.IsSetId())
                                 {
-                                    xmlWriter.WriteElementString("ID", "", S3Transforms.ToXmlStringValue(cORSConfigurationCORSConfigurationcORSRulesListValue.Id));
+                                    xmlWriter.WriteElementString("ID", S3Transforms.ToXmlStringValue(cORSConfigurationCORSConfigurationcORSRulesListValue.Id));
                                 }
 
                                 xmlWriter.WriteEndElement();
@@ -151,9 +154,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 request.Content = Encoding.UTF8.GetBytes(content);
                 request.Headers[HeaderKeys.ContentTypeHeader] = "application/xml";
 
-                var checksum = AWSSDKUtils.GenerateChecksumForContent(content, true);
-                request.Headers[HeaderKeys.ContentMD5Header] = checksum;
-
+                ChecksumUtils.SetRequestChecksum(request, putCORSConfigurationRequest.ChecksumAlgorithm);
             }
             catch (EncoderFallbackException e)
             {

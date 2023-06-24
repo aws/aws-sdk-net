@@ -34,7 +34,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// TransformOperation Marshaller
-    /// </summary>       
+    /// </summary>
     public class TransformOperationMarshaller : IRequestMarshaller<TransformOperation, JsonMarshallerContext> 
     {
         /// <summary>
@@ -74,6 +74,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 
                 var marshaller = FilterOperationMarshaller.Instance;
                 marshaller.Marshall(requestObject.FilterOperation, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetOverrideDatasetParameterOperation())
+            {
+                context.Writer.WritePropertyName("OverrideDatasetParameterOperation");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = OverrideDatasetParameterOperationMarshaller.Instance;
+                marshaller.Marshall(requestObject.OverrideDatasetParameterOperation, context);
 
                 context.Writer.WriteObjectEnd();
             }
@@ -126,7 +137,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static TransformOperationMarshaller Instance = new TransformOperationMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// PosixProfile Marshaller
-    /// </summary>       
+    /// </summary>
     public class PosixProfileMarshaller : IRequestMarshaller<PosixProfile, JsonMarshallerContext> 
     {
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static PosixProfileMarshaller Instance = new PosixProfileMarshaller();
 
     }

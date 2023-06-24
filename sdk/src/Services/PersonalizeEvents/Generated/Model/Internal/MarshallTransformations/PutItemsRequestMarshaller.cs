@@ -56,7 +56,7 @@ namespace Amazon.PersonalizeEvents.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.PersonalizeEvents");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-03-22";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-03-22";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/items";
@@ -87,7 +87,6 @@ namespace Amazon.PersonalizeEvents.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

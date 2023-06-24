@@ -29,7 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTTwinMaker.Model
 {
     /// <summary>
-    /// An object that specifies information about time series property values.
+    /// An object that specifies information about time series property values. This object
+    /// is used and consumed by the <a href="https://docs.aws.amazon.com/iot-twinmaker/latest/apireference/API_BatchPutPropertyValues.html">BatchPutPropertyValues</a>
+    /// action.
     /// </summary>
     public partial class PropertyValueEntry
     {

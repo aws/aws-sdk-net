@@ -36,37 +36,36 @@ namespace Amazon.CloudFormation.Model
     /// 
     ///  <ul> <li> 
     /// <para>
-    /// Validating the extension schema
+    /// Validating the extension schema.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Determining which handlers, if any, have been specified for the extension
+    /// Determining which handlers, if any, have been specified for the extension.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Making the extension available for use in your account
+    /// Making the extension available for use in your account.
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// For more information on how to develop extensions and ready them for registeration,
+    /// For more information about how to develop extensions and ready them for registration,
     /// see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-types.html">Creating
     /// Resource Providers</a> in the <i>CloudFormation CLI User Guide</i>.
     /// </para>
     ///  
     /// <para>
     /// You can have a maximum of 50 resource extension versions registered at a time. This
-    /// maximum is per account and per region. Use <a href="AWSCloudFormation/latest/APIReference/API_DeregisterType.html">DeregisterType</a>
+    /// maximum is per account and per Region. Use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeregisterType.html">DeregisterType</a>
     /// to deregister specific extension versions if necessary.
     /// </para>
     ///  
     /// <para>
-    /// Once you have initiated a registration request using <code> <a>RegisterType</a> </code>,
-    /// you can use <code> <a>DescribeTypeRegistration</a> </code> to monitor the progress
-    /// of the registration request.
+    /// Once you have initiated a registration request using <a>RegisterType</a>, you can
+    /// use <a>DescribeTypeRegistration</a> to monitor the progress of the registration request.
     /// </para>
     ///  
     /// <para>
-    /// Once you have registered a private extension in your account and region, use <a href="AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html">SetTypeConfiguration</a>
+    /// Once you have registered a private extension in your account and Region, use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html">SetTypeConfiguration</a>
     /// to specify configuration properties for the extension. For more information, see <a
     /// href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration">Configuring
     /// extensions at the account level</a> in the <i>CloudFormation User Guide</i>.
@@ -86,8 +85,8 @@ namespace Amazon.CloudFormation.Model
         /// <para>
         /// A unique identifier that acts as an idempotency key for this registration request.
         /// Specifying a client request token prevents CloudFormation from generating more than
-        /// one version of an extension from the same registeration request, even if the request
-        /// is submitted multiple times. 
+        /// one version of an extension from the same registration request, even if the request
+        /// is submitted multiple times.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -113,7 +112,7 @@ namespace Amazon.CloudFormation.Model
         /// <para>
         /// For CloudFormation to assume the specified execution role, the role must contain a
         /// trust relationship with the CloudFormation service principle (<code>resources.cloudformation.amazonaws.com</code>).
-        /// For more information on adding trust relationships, see <a href="IAM/latest/UserGuide/roles-managingrole-editing-console.html#roles-managingrole_edit-trust-policy">Modifying
+        /// For more information about adding trust relationships, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/roles-managingrole-editing-console.html#roles-managingrole_edit-trust-policy">Modifying
         /// a role trust policy</a> in the <i>Identity and Access Management User Guide</i>.
         /// </para>
         ///  
@@ -161,19 +160,19 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property SchemaHandlerPackage. 
         /// <para>
-        /// A url to the S3 bucket containing the extension project package that contains the
-        /// neccessary files for the extension you want to register.
+        /// A URL to the S3 bucket containing the extension project package that contains the
+        /// necessary files for the extension you want to register.
         /// </para>
         ///  
         /// <para>
-        /// For information on generating a schema handler package for the extension you want
+        /// For information about generating a schema handler package for the extension you want
         /// to register, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-cli-submit.html">submit</a>
         /// in the <i>CloudFormation CLI User Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
         /// The user registering the extension must be able to access the package in the S3 bucket.
-        /// That is, the user needs to have <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
+        /// That's, the user needs to have <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
         /// permissions for the schema handler package. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazons3.html">Actions,
         /// Resources, and Condition Keys for Amazon S3</a> in the <i>Identity and Access Management
         /// User Guide</i>.
@@ -218,7 +217,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// We recommend that extension names adhere to the following patterns: 
+        /// We suggest that extension names adhere to the following patterns:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -228,9 +227,13 @@ namespace Amazon.CloudFormation.Model
         /// <para>
         /// For modules, <i>company_or_organization</i>::<i>service</i>::<i>type</i>::MODULE.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For hooks, <i>MyCompany</i>::<i>Testing</i>::<i>MyTestHook</i>.
+        /// </para>
         ///  </li> </ul> <note> 
         /// <para>
-        /// The following organization namespaces are reserved and cannot be used in your extension
+        /// The following organization namespaces are reserved and can't be used in your extension
         /// names:
         /// </para>
         ///  <ul> <li> 

@@ -39,6 +39,7 @@ namespace Amazon.ServiceCatalog.Model
         private ProvisioningArtifactGuidance _guidance;
         private string _id;
         private string _name;
+        private string _sourceRevision;
         private ProvisioningArtifactType _type;
 
         /// <summary>
@@ -154,21 +155,50 @@ namespace Amazon.ServiceCatalog.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SourceRevision. 
+        /// <para>
+        /// Specifies the revision of the external artifact that was used to automatically sync
+        /// the Service Catalog product and create the provisioning artifact. Service Catalog
+        /// includes this response parameter as a high level field to the existing <code>ProvisioningArtifactDetail</code>
+        /// type, which is returned as part of the response for <code>CreateProduct</code>, <code>UpdateProduct</code>,
+        /// <code>DescribeProductAsAdmin</code>, <code>DescribeProvisioningArtifact</code>, <code>ListProvisioningArtifact</code>,
+        /// and <code>UpdateProvisioningArticat</code> APIs. 
+        /// </para>
+        ///  
+        /// <para>
+        /// This field only exists for Repo-Synced products. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=512)]
+        public string SourceRevision
+        {
+            get { return this._sourceRevision; }
+            set { this._sourceRevision = value; }
+        }
+
+        // Check to see if SourceRevision property is set
+        internal bool IsSetSourceRevision()
+        {
+            return this._sourceRevision != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
         /// The type of provisioning artifact.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>CLOUD_FORMATION_TEMPLATE</code> - AWS CloudFormation template
+        ///  <code>CLOUD_FORMATION_TEMPLATE</code> - CloudFormation template
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>MARKETPLACE_AMI</code> - AWS Marketplace AMI
+        ///  <code>MARKETPLACE_AMI</code> - Amazon Web Services Marketplace AMI
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>MARKETPLACE_CAR</code> - AWS Marketplace Clusters and AWS Resources
+        ///  <code>MARKETPLACE_CAR</code> - Amazon Web Services Marketplace Clusters and Amazon
+        /// Web Services Resources
         /// </para>
         ///  </li> </ul>
         /// </summary>

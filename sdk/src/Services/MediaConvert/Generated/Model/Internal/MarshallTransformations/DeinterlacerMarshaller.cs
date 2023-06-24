@@ -34,7 +34,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Deinterlacer Marshaller
-    /// </summary>       
+    /// </summary>
     public class DeinterlacerMarshaller : IRequestMarshaller<Deinterlacer, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DeinterlacerMarshaller Instance = new DeinterlacerMarshaller();
 
     }

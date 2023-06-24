@@ -34,7 +34,27 @@ namespace Amazon.Lightsail.Model
     /// </summary>
     public partial class GetKeyPairsRequest : AmazonLightsailRequest
     {
+        private bool? _includeDefaultKeyPair;
         private string _pageToken;
+
+        /// <summary>
+        /// Gets and sets the property IncludeDefaultKeyPair. 
+        /// <para>
+        /// A Boolean value that indicates whether to include the default key pair in the response
+        /// of your request.
+        /// </para>
+        /// </summary>
+        public bool IncludeDefaultKeyPair
+        {
+            get { return this._includeDefaultKeyPair.GetValueOrDefault(); }
+            set { this._includeDefaultKeyPair = value; }
+        }
+
+        // Check to see if IncludeDefaultKeyPair property is set
+        internal bool IsSetIncludeDefaultKeyPair()
+        {
+            return this._includeDefaultKeyPair.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property PageToken. 

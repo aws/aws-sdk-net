@@ -307,6 +307,35 @@ namespace Amazon.DynamoDBv2.DataModel
 
         #endregion
 
+        #region Transact Get
+
+        /// <summary>
+        /// Issues a transactional get request with multiple TransactGet objects.
+        /// Results are stored in the individual TransactGet objects.
+        /// </summary>
+        /// <param name="transactionParts">Configured TransactGet objects.</param>
+        public void ExecuteTransactGet(params TransactGet[] transactionParts)
+        {
+            MultiTableTransactGet transaction = new MultiTableTransactGet(transactionParts);
+            transaction.Execute();
+        }
+
+        #endregion
+
+        #region Transact Write
+
+        /// <summary>
+        /// Issues a transactional write request with multiple TransactWrite objects.
+        /// </summary>
+        /// <param name="transactionParts">Configured TransactWrite objects.</param>
+        public void ExecuteTransactWrite(params TransactWrite[] transactionParts)
+        {
+            MultiTableTransactWrite transaction = new MultiTableTransactWrite(transactionParts);
+            transaction.Execute();
+        }
+
+        #endregion
+
         #region Scan
 
         /// <summary>

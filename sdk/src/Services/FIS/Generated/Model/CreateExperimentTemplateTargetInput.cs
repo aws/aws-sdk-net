@@ -31,10 +31,17 @@ namespace Amazon.FIS.Model
     /// <summary>
     /// Specifies a target for an experiment. You must specify at least one Amazon Resource
     /// Name (ARN) or at least one resource tag. You cannot specify both ARNs and tags.
+    /// 
+    ///  
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/fis/latest/userguide/targets.html">Targets</a>
+    /// in the <i>Fault Injection Simulator User Guide</i>.
+    /// </para>
     /// </summary>
     public partial class CreateExperimentTemplateTargetInput
     {
         private List<ExperimentTemplateTargetInputFilter> _filters = new List<ExperimentTemplateTargetInputFilter>();
+        private Dictionary<string, string> _parameters = new Dictionary<string, string>();
         private List<string> _resourceArns = new List<string>();
         private Dictionary<string, string> _resourceTags = new Dictionary<string, string>();
         private string _resourceType;
@@ -56,6 +63,24 @@ namespace Amazon.FIS.Model
         internal bool IsSetFilters()
         {
             return this._filters != null && this._filters.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Parameters. 
+        /// <para>
+        /// The resource type parameters.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> Parameters
+        {
+            get { return this._parameters; }
+            set { this._parameters = value; }
+        }
+
+        // Check to see if Parameters property is set
+        internal bool IsSetParameters()
+        {
+            return this._parameters != null && this._parameters.Count > 0; 
         }
 
         /// <summary>
@@ -99,10 +124,10 @@ namespace Amazon.FIS.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The AWS resource type. The resource type must be supported for the specified action.
+        /// The resource type. The resource type must be supported for the specified action.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=64)]
+        [AWSProperty(Required=true, Max=128)]
         public string ResourceType
         {
             get { return this._resourceType; }

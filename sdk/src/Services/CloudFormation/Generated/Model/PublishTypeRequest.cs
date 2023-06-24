@@ -31,8 +31,8 @@ namespace Amazon.CloudFormation.Model
     /// <summary>
     /// Container for the parameters to the PublishType operation.
     /// Publishes the specified extension to the CloudFormation registry as a public extension
-    /// in this region. Public extensions are available for use by all CloudFormation users.
-    /// For more information on publishing extensions, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html">Publishing
+    /// in this Region. Public extensions are available for use by all CloudFormation users.
+    /// For more information about publishing extensions, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html">Publishing
     /// extensions to make them available for public use</a> in the <i>CloudFormation CLI
     /// User Guide</i>.
     /// 
@@ -52,7 +52,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Number (ARN) of the extension.
+        /// The Amazon Resource Name (ARN) of the extension.
         /// </para>
         ///  
         /// <para>
@@ -80,7 +80,7 @@ namespace Amazon.CloudFormation.Model
         ///  
         /// <para>
         /// Use the following format, and adhere to semantic versioning when assigning a version
-        /// number to your extension: 
+        /// number to your extension:
         /// </para>
         ///  
         /// <para>
@@ -92,7 +92,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// If you do not specify a version number, CloudFormation increments the version number
+        /// If you don't specify a version number, CloudFormation increments the version number
         /// by one minor version release.
         /// </para>
         ///  

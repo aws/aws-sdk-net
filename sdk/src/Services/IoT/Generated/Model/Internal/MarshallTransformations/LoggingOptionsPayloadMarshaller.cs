@@ -34,7 +34,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// LoggingOptionsPayload Marshaller
-    /// </summary>       
+    /// </summary>
     public class LoggingOptionsPayloadMarshaller : IRequestMarshaller<LoggingOptionsPayload, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static LoggingOptionsPayloadMarshaller Instance = new LoggingOptionsPayloadMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// NotificationWithSubscribers Marshaller
-    /// </summary>       
+    /// </summary>
     public class NotificationWithSubscribersMarshaller : IRequestMarshaller<NotificationWithSubscribers, JsonMarshallerContext> 
     {
         /// <summary>
@@ -76,7 +76,7 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static NotificationWithSubscribersMarshaller Instance = new NotificationWithSubscribersMarshaller();
 
     }

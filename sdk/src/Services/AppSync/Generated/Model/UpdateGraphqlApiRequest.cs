@@ -39,8 +39,10 @@ namespace Amazon.AppSync.Model
         private AuthenticationType _authenticationType;
         private LambdaAuthorizerConfig _lambdaAuthorizerConfig;
         private LogConfig _logConfig;
+        private string _mergedApiExecutionRoleArn;
         private string _name;
         private OpenIDConnectConfig _openidConnectConfig;
+        private string _ownerContact;
         private UserPoolConfig _userPoolConfig;
         private bool? _xrayEnabled;
 
@@ -102,7 +104,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property LambdaAuthorizerConfig. 
         /// <para>
-        /// Configuration for Amazon Web Services Lambda function authorization.
+        /// Configuration for Lambda function authorization.
         /// </para>
         /// </summary>
         public LambdaAuthorizerConfig LambdaAuthorizerConfig
@@ -133,6 +135,27 @@ namespace Amazon.AppSync.Model
         internal bool IsSetLogConfig()
         {
             return this._logConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MergedApiExecutionRoleArn. 
+        /// <para>
+        /// The Identity and Access Management service role ARN for a merged API. The AppSync
+        /// service assumes this role on behalf of the Merged API to validate access to source
+        /// APIs at runtime and to prompt the <code>AUTO_MERGE</code> to update the merged API
+        /// endpoint with the source API changes automatically.
+        /// </para>
+        /// </summary>
+        public string MergedApiExecutionRoleArn
+        {
+            get { return this._mergedApiExecutionRoleArn; }
+            set { this._mergedApiExecutionRoleArn = value; }
+        }
+
+        // Check to see if MergedApiExecutionRoleArn property is set
+        internal bool IsSetMergedApiExecutionRoleArn()
+        {
+            return this._mergedApiExecutionRoleArn != null;
         }
 
         /// <summary>
@@ -173,9 +196,31 @@ namespace Amazon.AppSync.Model
         }
 
         /// <summary>
+        /// Gets and sets the property OwnerContact. 
+        /// <para>
+        /// The owner contact information for an API resource.
+        /// </para>
+        ///  
+        /// <para>
+        /// This field accepts any string input with a length of 0 - 256 characters.
+        /// </para>
+        /// </summary>
+        public string OwnerContact
+        {
+            get { return this._ownerContact; }
+            set { this._ownerContact = value; }
+        }
+
+        // Check to see if OwnerContact property is set
+        internal bool IsSetOwnerContact()
+        {
+            return this._ownerContact != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property UserPoolConfig. 
         /// <para>
-        /// The new Amazon Cognito user pool configuration for the <code>GraphqlApi</code> object.
+        /// The new Amazon Cognito user pool configuration for the <code>~GraphqlApi</code> object.
         /// </para>
         /// </summary>
         public UserPoolConfig UserPoolConfig
@@ -193,7 +238,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property XrayEnabled. 
         /// <para>
-        /// A flag indicating whether to enable X-Ray tracing for the <code>GraphqlApi</code>.
+        /// A flag indicating whether to use X-Ray tracing for the <code>GraphqlApi</code>.
         /// </para>
         /// </summary>
         public bool XrayEnabled

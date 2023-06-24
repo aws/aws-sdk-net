@@ -35,6 +35,7 @@ namespace Amazon.LocationService.Model
     {
         private double? _distance;
         private Place _place;
+        private string _placeId;
         private double? _relevance;
 
         /// <summary>
@@ -84,6 +85,31 @@ namespace Amazon.LocationService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PlaceId. 
+        /// <para>
+        /// The unique identifier of the place. You can use this with the <code>GetPlace</code>
+        /// operation to find the place again later.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// For <code>SearchPlaceIndexForText</code> operations, the <code>PlaceId</code> is returned
+        /// only by place indexes that use HERE or Grab as a data provider.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public string PlaceId
+        {
+            get { return this._placeId; }
+            set { this._placeId = value; }
+        }
+
+        // Check to see if PlaceId property is set
+        internal bool IsSetPlaceId()
+        {
+            return this._placeId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Relevance. 
         /// <para>
         /// The relative confidence in the match for a result among the results returned. For
@@ -92,7 +118,7 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  
         /// <para>
-        /// Returned only when the partner selected is Esri.
+        /// Returned only when the partner selected is Esri or Grab.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]

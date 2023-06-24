@@ -34,7 +34,7 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// TopicPreference Marshaller
-    /// </summary>       
+    /// </summary>
     public class TopicPreferenceMarshaller : IRequestMarshaller<TopicPreference, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static TopicPreferenceMarshaller Instance = new TopicPreferenceMarshaller();
 
     }

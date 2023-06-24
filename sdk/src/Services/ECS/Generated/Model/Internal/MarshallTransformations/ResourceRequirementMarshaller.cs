@@ -34,7 +34,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ResourceRequirement Marshaller
-    /// </summary>       
+    /// </summary>
     public class ResourceRequirementMarshaller : IRequestMarshaller<ResourceRequirement, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ResourceRequirementMarshaller Instance = new ResourceRequirementMarshaller();
 
     }

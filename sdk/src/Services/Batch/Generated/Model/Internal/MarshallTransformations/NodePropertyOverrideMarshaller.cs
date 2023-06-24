@@ -34,7 +34,7 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// NodePropertyOverride Marshaller
-    /// </summary>       
+    /// </summary>
     public class NodePropertyOverrideMarshaller : IRequestMarshaller<NodePropertyOverride, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static NodePropertyOverrideMarshaller Instance = new NodePropertyOverrideMarshaller();
 
     }

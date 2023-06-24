@@ -91,6 +91,60 @@ namespace Amazon.ECS
 
 
     /// <summary>
+    /// Constants used for properties of type ApplicationProtocol.
+    /// </summary>
+    public class ApplicationProtocol : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Grpc for ApplicationProtocol
+        /// </summary>
+        public static readonly ApplicationProtocol Grpc = new ApplicationProtocol("grpc");
+        /// <summary>
+        /// Constant Http for ApplicationProtocol
+        /// </summary>
+        public static readonly ApplicationProtocol Http = new ApplicationProtocol("http");
+        /// <summary>
+        /// Constant Http2 for ApplicationProtocol
+        /// </summary>
+        public static readonly ApplicationProtocol Http2 = new ApplicationProtocol("http2");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ApplicationProtocol(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ApplicationProtocol FindValue(string value)
+        {
+            return FindValue<ApplicationProtocol>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ApplicationProtocol(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AssignPublicIp.
     /// </summary>
     public class AssignPublicIp : ConstantClass
@@ -2025,6 +2079,10 @@ namespace Amazon.ECS
     {
 
         /// <summary>
+        /// Constant NONE for PropagateTags
+        /// </summary>
+        public static readonly PropagateTags NONE = new PropagateTags("NONE");
+        /// <summary>
         /// Constant SERVICE for PropagateTags
         /// </summary>
         public static readonly PropagateTags SERVICE = new PropagateTags("SERVICE");
@@ -2375,9 +2433,17 @@ namespace Amazon.ECS
         /// </summary>
         public static readonly SettingName ContainerInstanceLongArnFormat = new SettingName("containerInstanceLongArnFormat");
         /// <summary>
+        /// Constant FargateFIPSMode for SettingName
+        /// </summary>
+        public static readonly SettingName FargateFIPSMode = new SettingName("fargateFIPSMode");
+        /// <summary>
         /// Constant ServiceLongArnFormat for SettingName
         /// </summary>
         public static readonly SettingName ServiceLongArnFormat = new SettingName("serviceLongArnFormat");
+        /// <summary>
+        /// Constant TagResourceAuthorization for SettingName
+        /// </summary>
+        public static readonly SettingName TagResourceAuthorization = new SettingName("tagResourceAuthorization");
         /// <summary>
         /// Constant TaskLongArnFormat for SettingName
         /// </summary>
@@ -2721,6 +2787,10 @@ namespace Amazon.ECS
         /// </summary>
         public static readonly TaskDefinitionStatus ACTIVE = new TaskDefinitionStatus("ACTIVE");
         /// <summary>
+        /// Constant DELETE_IN_PROGRESS for TaskDefinitionStatus
+        /// </summary>
+        public static readonly TaskDefinitionStatus DELETE_IN_PROGRESS = new TaskDefinitionStatus("DELETE_IN_PROGRESS");
+        /// <summary>
         /// Constant INACTIVE for TaskDefinitionStatus
         /// </summary>
         public static readonly TaskDefinitionStatus INACTIVE = new TaskDefinitionStatus("INACTIVE");
@@ -2863,9 +2933,21 @@ namespace Amazon.ECS
         /// </summary>
         public static readonly TaskStopCode EssentialContainerExited = new TaskStopCode("EssentialContainerExited");
         /// <summary>
+        /// Constant ServiceSchedulerInitiated for TaskStopCode
+        /// </summary>
+        public static readonly TaskStopCode ServiceSchedulerInitiated = new TaskStopCode("ServiceSchedulerInitiated");
+        /// <summary>
+        /// Constant SpotInterruption for TaskStopCode
+        /// </summary>
+        public static readonly TaskStopCode SpotInterruption = new TaskStopCode("SpotInterruption");
+        /// <summary>
         /// Constant TaskFailedToStart for TaskStopCode
         /// </summary>
         public static readonly TaskStopCode TaskFailedToStart = new TaskStopCode("TaskFailedToStart");
+        /// <summary>
+        /// Constant TerminationNotice for TaskStopCode
+        /// </summary>
+        public static readonly TaskStopCode TerminationNotice = new TaskStopCode("TerminationNotice");
         /// <summary>
         /// Constant UserInitiated for TaskStopCode
         /// </summary>

@@ -9,6 +9,16 @@
     <pattern>^[!-~]{1,64}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ManagedGrafana.Model.CreateWorkspaceRequest.Configuration</property>
+    <min>2</min>
+    <max>65536</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ManagedGrafana.Model.CreateWorkspaceRequest.GrafanaVersion</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ManagedGrafana.Model.CreateWorkspaceRequest.OrganizationRoleName</property>
     <min>1</min>
     <max>2048</max>
@@ -28,7 +38,48 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ManagedGrafana.Model.CreateWorkspaceApiKeyRequest.KeyName</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ManagedGrafana.Model.CreateWorkspaceApiKeyRequest.SecondsToLive</property>
+    <min>1</min>
+    <max>2592000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ManagedGrafana.Model.CreateWorkspaceApiKeyRequest.WorkspaceId</property>
+    <pattern>^g-[0-9a-f]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ManagedGrafana.Model.CreateWorkspaceApiKeyResponse.KeyName</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ManagedGrafana.Model.CreateWorkspaceApiKeyResponse.WorkspaceId</property>
+    <pattern>^g-[0-9a-f]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ManagedGrafana.Model.DeleteWorkspaceRequest.WorkspaceId</property>
+    <pattern>^g-[0-9a-f]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ManagedGrafana.Model.DeleteWorkspaceApiKeyRequest.KeyName</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ManagedGrafana.Model.DeleteWorkspaceApiKeyRequest.WorkspaceId</property>
+    <pattern>^g-[0-9a-f]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ManagedGrafana.Model.DeleteWorkspaceApiKeyResponse.KeyName</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ManagedGrafana.Model.DeleteWorkspaceApiKeyResponse.WorkspaceId</property>
     <pattern>^g-[0-9a-f]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -38,6 +89,15 @@
   <property-value-rule>
     <property>Amazon.ManagedGrafana.Model.DescribeWorkspaceAuthenticationRequest.WorkspaceId</property>
     <pattern>^g-[0-9a-f]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ManagedGrafana.Model.DescribeWorkspaceConfigurationRequest.WorkspaceId</property>
+    <pattern>^g-[0-9a-f]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ManagedGrafana.Model.DescribeWorkspaceConfigurationResponse.Configuration</property>
+    <min>2</min>
+    <max>65536</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ManagedGrafana.Model.DisassociateLicenseRequest.WorkspaceId</property>
@@ -96,6 +156,15 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ManagedGrafana.Model.UpdateWorkspaceAuthenticationRequest.WorkspaceId</property>
+    <pattern>^g-[0-9a-f]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ManagedGrafana.Model.UpdateWorkspaceConfigurationRequest.Configuration</property>
+    <min>2</min>
+    <max>65536</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ManagedGrafana.Model.UpdateWorkspaceConfigurationRequest.WorkspaceId</property>
     <pattern>^g-[0-9a-f]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>

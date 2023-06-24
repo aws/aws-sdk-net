@@ -38,6 +38,7 @@ using System.Linq;
 
 namespace Amazon.Internal
 {
+    [Obsolete("This class is obsoleted because as of version 3.7.100 endpoint is resolved using a newer system that uses request level parameters to resolve the endpoint.")]
     public class RegionEndpointProviderV2 : IRegionEndpointProvider
     {
         /// <summary>
@@ -188,10 +189,11 @@ namespace Amazon.Internal
                 if (string.Equals(authRegion, this.SystemName, StringComparison.OrdinalIgnoreCase))
                     authRegion = null;
 
-                // v2 doesn't support the 'deprecated' property
+                // v2 doesn't support the 'deprecated' and 'dnsSuffix' property
                 var deprecated = false;
+                string dnsSuffix = null;
 
-                return new Amazon.RegionEndpoint.Endpoint(hostName, authRegion, signatureVersion, deprecated);
+                return new Amazon.RegionEndpoint.Endpoint(hostName, authRegion, signatureVersion, dnsSuffix, deprecated);
             }
 
             JsonData GetEndpointRule(string serviceName)
@@ -211,7 +213,7 @@ namespace Amazon.Internal
 
             // Creates a new RegionEndpoint and stores it in the hash
             private static RegionEndpoint GetEndpoint(string systemName, string displayName)
-            {                
+            {        
                 RegionEndpoint regionEndpoint = null;
                 lock (hashBySystemName)
                 {

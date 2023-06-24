@@ -34,7 +34,7 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SsmAutomation Marshaller
-    /// </summary>       
+    /// </summary>
     public class SsmAutomationMarshaller : IRequestMarshaller<SsmAutomation, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,6 +55,25 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("documentVersion");
                 context.Writer.Write(requestObject.DocumentVersion);
+            }
+
+            if(requestObject.IsSetDynamicParameters())
+            {
+                context.Writer.WritePropertyName("dynamicParameters");
+                context.Writer.WriteObjectStart();
+                foreach (var requestObjectDynamicParametersKvp in requestObject.DynamicParameters)
+                {
+                    context.Writer.WritePropertyName(requestObjectDynamicParametersKvp.Key);
+                    var requestObjectDynamicParametersValue = requestObjectDynamicParametersKvp.Value;
+
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = DynamicSsmParameterValueMarshaller.Instance;
+                    marshaller.Marshall(requestObjectDynamicParametersValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteObjectEnd();
             }
 
             if(requestObject.IsSetParameters())
@@ -92,7 +111,7 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SsmAutomationMarshaller Instance = new SsmAutomationMarshaller();
 
     }

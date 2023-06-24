@@ -33,7 +33,28 @@ namespace Amazon.IoTTwinMaker.Model
     /// </summary>
     public partial class GetPropertyValueResponse : AmazonWebServiceResponse
     {
+        private string _nextToken;
         private Dictionary<string, PropertyLatestValue> _propertyValues = new Dictionary<string, PropertyLatestValue>();
+        private List<List<Dictionary<string, DataValue>>> _tabularPropertyValues = new List<List<Dictionary<string, DataValue>>>();
+
+        /// <summary>
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The string that specifies the next page of results.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=17880)]
+        public string NextToken
+        {
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
+        }
+
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
+        {
+            return this._nextToken != null;
+        }
 
         /// <summary>
         /// Gets and sets the property PropertyValues. 
@@ -42,7 +63,6 @@ namespace Amazon.IoTTwinMaker.Model
         /// Each string in the mapping must be unique to this object.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public Dictionary<string, PropertyLatestValue> PropertyValues
         {
             get { return this._propertyValues; }
@@ -53,6 +73,24 @@ namespace Amazon.IoTTwinMaker.Model
         internal bool IsSetPropertyValues()
         {
             return this._propertyValues != null && this._propertyValues.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TabularPropertyValues. 
+        /// <para>
+        /// A table of property values.
+        /// </para>
+        /// </summary>
+        public List<List<Dictionary<string, DataValue>>> TabularPropertyValues
+        {
+            get { return this._tabularPropertyValues; }
+            set { this._tabularPropertyValues = value; }
+        }
+
+        // Check to see if TabularPropertyValues property is set
+        internal bool IsSetTabularPropertyValues()
+        {
+            return this._tabularPropertyValues != null && this._tabularPropertyValues.Count > 0; 
         }
 
     }

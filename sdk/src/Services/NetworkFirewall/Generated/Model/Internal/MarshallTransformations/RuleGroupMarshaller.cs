@@ -34,7 +34,7 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RuleGroup Marshaller
-    /// </summary>       
+    /// </summary>
     public class RuleGroupMarshaller : IRequestMarshaller<RuleGroup, JsonMarshallerContext> 
     {
         /// <summary>
@@ -45,6 +45,17 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(RuleGroup requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetReferenceSets())
+            {
+                context.Writer.WritePropertyName("ReferenceSets");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ReferenceSetsMarshaller.Instance;
+                marshaller.Marshall(requestObject.ReferenceSets, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetRulesSource())
             {
                 context.Writer.WritePropertyName("RulesSource");
@@ -82,7 +93,7 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RuleGroupMarshaller Instance = new RuleGroupMarshaller();
 
     }

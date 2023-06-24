@@ -81,7 +81,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property LogResult. 
         /// <para>
-        /// The last 4 KB of the execution log, which is base64 encoded.
+        /// The last 4 KB of the execution log, which is base64-encoded.
         /// </para>
         /// </summary>
         public string LogResult
@@ -102,6 +102,7 @@ namespace Amazon.Lambda.Model
         /// The response from the function, or an error object.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public MemoryStream Payload
         {
             get { return this._payload; }

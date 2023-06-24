@@ -58,7 +58,7 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
             string target = "AWS242ServiceCatalogService.DescribeProvisioningArtifact";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-12-10";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-12-10";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -71,6 +71,12 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("AcceptLanguage");
                     context.Writer.Write(publicRequest.AcceptLanguage);
+                }
+
+                if(publicRequest.IsSetIncludeProvisioningArtifactParameters())
+                {
+                    context.Writer.WritePropertyName("IncludeProvisioningArtifactParameters");
+                    context.Writer.Write(publicRequest.IncludeProvisioningArtifactParameters);
                 }
 
                 if(publicRequest.IsSetProductId())
@@ -103,7 +109,6 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Verbose);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

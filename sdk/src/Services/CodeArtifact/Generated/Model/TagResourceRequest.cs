@@ -30,7 +30,7 @@ namespace Amazon.CodeArtifact.Model
 {
     /// <summary>
     /// Container for the parameters to the TagResource operation.
-    /// Adds or updates tags for a resource in AWS CodeArtifact.
+    /// Adds or updates tags for a resource in CodeArtifact.
     /// </summary>
     public partial class TagResourceRequest : AmazonCodeArtifactRequest
     {

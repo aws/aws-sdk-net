@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kendra.Model
 {
     /// <summary>
-    /// Provides configuration information for connecting to a Salesforce data source.
+    /// Provides the configuration information to connect to Salesforce as your data source.
     /// </summary>
     public partial class SalesforceConfiguration
     {
@@ -46,7 +46,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property ChatterFeedConfiguration. 
         /// <para>
-        /// Specifies configuration information for Salesforce chatter feeds.
+        /// Configuration information for Salesforce chatter feeds.
         /// </para>
         /// </summary>
         public SalesforceChatterFeedConfiguration ChatterFeedConfiguration
@@ -82,17 +82,18 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property ExcludeAttachmentFilePatterns. 
         /// <para>
-        /// A list of regular expression patterns. Documents that match the patterns are excluded
-        /// from the index. Documents that don't match the patterns are included in the index.
-        /// If a document matches both an exclusion pattern and an inclusion pattern, the document
-        /// is not included in the index.
+        /// A list of regular expression patterns to exclude certain documents in your Salesforce.
+        /// Documents that match the patterns are excluded from the index. Documents that don't
+        /// match the patterns are included in the index. If a document matches both an inclusion
+        /// and exclusion pattern, the exclusion pattern takes precedence and the document isn't
+        /// included in the index.
         /// </para>
         ///  
         /// <para>
-        /// The regex is applied to the name of the attached file.
+        /// The pattern is applied to the name of the attached file.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=100)]
+        [AWSProperty(Min=0, Max=250)]
         public List<string> ExcludeAttachmentFilePatterns
         {
             get { return this._excludeAttachmentFilePatterns; }
@@ -108,17 +109,18 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property IncludeAttachmentFilePatterns. 
         /// <para>
-        /// A list of regular expression patterns. Documents that match the patterns are included
-        /// in the index. Documents that don't match the patterns are excluded from the index.
-        /// If a document matches both an inclusion pattern and an exclusion pattern, the document
-        /// is not included in the index.
+        /// A list of regular expression patterns to include certain documents in your Salesforce.
+        /// Documents that match the patterns are included in the index. Documents that don't
+        /// match the patterns are excluded from the index. If a document matches both an inclusion
+        /// and exclusion pattern, the exclusion pattern takes precedence and the document isn't
+        /// included in the index.
         /// </para>
         ///  
         /// <para>
-        /// The regex is applied to the name of the attached file.
+        /// The pattern is applied to the name of the attached file.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=100)]
+        [AWSProperty(Min=0, Max=250)]
         public List<string> IncludeAttachmentFilePatterns
         {
             get { return this._includeAttachmentFilePatterns; }
@@ -134,10 +136,9 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property KnowledgeArticleConfiguration. 
         /// <para>
-        /// Specifies configuration information for the knowledge article types that Amazon Kendra
-        /// indexes. Amazon Kendra indexes standard knowledge articles and the standard fields
-        /// of knowledge articles, or the custom fields of custom knowledge articles, but not
-        /// both.
+        /// Configuration information for the knowledge article types that Amazon Kendra indexes.
+        /// Amazon Kendra indexes standard knowledge articles and the standard fields of knowledge
+        /// articles, or the custom fields of custom knowledge articles, but not both.
         /// </para>
         /// </summary>
         public SalesforceKnowledgeArticleConfiguration KnowledgeArticleConfiguration
@@ -180,8 +181,7 @@ namespace Amazon.Kendra.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// securityToken - The token associated with the user account logging in to the Salesforce
-        /// instance.
+        /// securityToken - The token associated with the user logging in to the Salesforce instance.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -224,8 +224,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property StandardObjectAttachmentConfiguration. 
         /// <para>
-        /// Provides configuration information for processing attachments to Salesforce standard
-        /// objects. 
+        /// Configuration information for processing attachments to Salesforce standard objects.
+        /// 
         /// </para>
         /// </summary>
         public SalesforceStandardObjectAttachmentConfiguration StandardObjectAttachmentConfiguration
@@ -243,7 +243,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property StandardObjectConfigurations. 
         /// <para>
-        /// Specifies the Salesforce standard objects that Amazon Kendra indexes.
+        /// Configuration of the Salesforce standard objects that Amazon Kendra indexes.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=17)]

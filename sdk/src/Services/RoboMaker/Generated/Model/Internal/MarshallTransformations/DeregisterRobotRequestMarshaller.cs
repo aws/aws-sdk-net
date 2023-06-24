@@ -56,7 +56,7 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.RoboMaker");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-06-29";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-06-29";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/deregisterRobot";
@@ -77,7 +77,6 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Robot);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

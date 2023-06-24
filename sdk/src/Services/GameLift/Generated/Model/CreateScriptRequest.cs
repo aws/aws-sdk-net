@@ -47,10 +47,10 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// An Amazon Simple Storage Service (Amazon S3) bucket under your AWS account. Use the
-    /// <i>StorageLocation</i> parameter for this option. You'll need to have an Identity
-    /// Access Management (IAM) role that allows the Amazon GameLift service to access your
-    /// S3 bucket. 
+    /// An Amazon Simple Storage Service (Amazon S3) bucket under your Amazon Web Services
+    /// account. Use the <i>StorageLocation</i> parameter for this option. You'll need to
+    /// have an Identity Access Management (IAM) role that allows the Amazon GameLift service
+    /// to access your S3 bucket. 
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -80,8 +80,7 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  
     /// <para>
-    ///  <a>CreateScript</a> | <a>ListScripts</a> | <a>DescribeScript</a> | <a>UpdateScript</a>
-    /// | <a>DeleteScript</a> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
+    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
     /// APIs by task</a> 
     /// </para>
     /// </summary>
@@ -96,8 +95,9 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// A descriptive label that is associated with a script. Script names do not need to
-        /// be unique. You can use <a>UpdateScript</a> to change this value later. 
+        /// A descriptive label that is associated with a script. Script names don't need to be
+        /// unique. You can use <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateScript.html">UpdateScript</a>
+        /// to change this value later. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -141,12 +141,14 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property Tags. 
         /// <para>
         /// A list of labels to assign to the new script resource. Tags are developer-defined
-        /// key-value pairs. Tagging AWS resources are useful for resource management, access
-        /// management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">
-        /// Tagging AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is
-        /// created, you can use <a>TagResource</a>, <a>UntagResource</a>, and <a>ListTagsForResource</a>
+        /// key-value pairs. Tagging Amazon Web Services resources are useful for resource management,
+        /// access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">
+        /// Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>.
+        /// Once the resource is created, you can use <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_TagResource.html">TagResource</a>,
+        /// <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UntagResource.html">UntagResource</a>,
+        /// and <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListTagsForResource.html">ListTagsForResource</a>
         /// to add, remove, and view tags. The maximum tag limit may be lower than stated. See
-        /// the AWS General Reference for actual tagging limits.
+        /// the Amazon Web Services General Reference for actual tagging limits.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=200)]
@@ -165,9 +167,9 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Version. 
         /// <para>
-        /// Version information that is associated with a build or script. Version strings do
-        /// not need to be unique. You can use <a>UpdateScript</a> to change this value later.
-        /// 
+        /// Version information associated with a build or script. Version strings don't need
+        /// to be unique. You can use <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateScript.html">UpdateScript</a>
+        /// to change this value later. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -191,9 +193,9 @@ namespace Amazon.GameLift.Model
         /// </para>
         ///  
         /// <para>
-        /// When using the AWS CLI tool to create a script, this parameter is set to the zip file
-        /// name. It must be prepended with the string "fileb://" to indicate that the file data
-        /// is a binary object. For example: <code>--zip-file fileb://myRealtimeScript.zip</code>.
+        /// When using the Amazon Web Services CLI tool to create a script, this parameter is
+        /// set to the zip file name. It must be prepended with the string "fileb://" to indicate
+        /// that the file data is a binary object. For example: <code>--zip-file fileb://myRealtimeScript.zip</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=5000000)]

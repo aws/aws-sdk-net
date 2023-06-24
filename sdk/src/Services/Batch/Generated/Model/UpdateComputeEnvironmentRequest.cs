@@ -39,6 +39,7 @@ namespace Amazon.Batch.Model
         private string _serviceRole;
         private CEState _state;
         private int? _unmanagedvCpus;
+        private UpdatePolicy _updatePolicy;
 
         /// <summary>
         /// Gets and sets the property ComputeEnvironment. 
@@ -91,12 +92,15 @@ namespace Amazon.Batch.Model
         /// <para>
         /// If the compute environment has a service-linked role, it can't be changed to use a
         /// regular IAM role. Likewise, if the compute environment has a regular IAM role, it
-        /// can't be changed to use a service-linked role.
+        /// can't be changed to use a service-linked role. To update the parameters for the compute
+        /// environment that require an infrastructure update to change, the <b>AWSServiceRoleForBatch</b>
+        /// service-linked role must be used. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
+        /// compute environments</a> in the <i>Batch User Guide</i>.
         /// </para>
         ///  </important> 
         /// <para>
         /// If your specified role has a path other than <code>/</code>, then you must either
-        /// specify the full role ARN (this is recommended) or prefix the role name with the path.
+        /// specify the full role ARN (recommended) or prefix the role name with the path.
         /// </para>
         ///  <note> 
         /// <para>
@@ -139,8 +143,22 @@ namespace Amazon.Batch.Model
         /// If the state is <code>DISABLED</code>, then the Batch scheduler doesn't attempt to
         /// place jobs within the environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code>
         /// state continue to progress normally. Managed compute environments in the <code>DISABLED</code>
-        /// state don't scale out. However, they scale in to <code>minvCpus</code> value after
-        /// instances become idle.
+        /// state don't scale out. 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Compute environments in a <code>DISABLED</code> state may continue to incur billing
+        /// charges. To prevent additional charges, turn off and then delete the compute environment.
+        /// For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environment_parameters.html#compute_environment_state">State</a>
+        /// in the <i>Batch User Guide</i>.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// When an instance is idle, the instance scales down to the <code>minvCpus</code> value.
+        /// However, the instance size doesn't change. For example, consider a <code>c5.8xlarge</code>
+        /// instance with a <code>minvCpus</code> value of <code>4</code> and a <code>desiredvCpus</code>
+        /// value of <code>36</code>. This instance doesn't scale down to a <code>c5.large</code>
+        /// instance.
         /// </para>
         /// </summary>
         public CEState State
@@ -159,10 +177,9 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property UnmanagedvCpus. 
         /// <para>
         /// The maximum number of vCPUs expected to be used for an unmanaged compute environment.
-        /// This parameter should not be specified for a managed compute environment. This parameter
-        /// is only used for fair share scheduling to reserve vCPU capacity for new share identifiers.
-        /// If this parameter is not provided for a fair share job queue, no vCPU capacity will
-        /// be reserved.
+        /// Don't specify this parameter for a managed compute environment. This parameter is
+        /// only used for fair share scheduling to reserve vCPU capacity for new share identifiers.
+        /// If this parameter isn't provided for a fair share job queue, no vCPU capacity is reserved.
         /// </para>
         /// </summary>
         public int UnmanagedvCpus
@@ -175,6 +192,26 @@ namespace Amazon.Batch.Model
         internal bool IsSetUnmanagedvCpus()
         {
             return this._unmanagedvCpus.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UpdatePolicy. 
+        /// <para>
+        /// Specifies the updated infrastructure update policy for the compute environment. For
+        /// more information about infrastructure updates, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
+        /// compute environments</a> in the <i>Batch User Guide</i>.
+        /// </para>
+        /// </summary>
+        public UpdatePolicy UpdatePolicy
+        {
+            get { return this._updatePolicy; }
+            set { this._updatePolicy = value; }
+        }
+
+        // Check to see if UpdatePolicy property is set
+        internal bool IsSetUpdatePolicy()
+        {
+            return this._updatePolicy != null;
         }
 
     }

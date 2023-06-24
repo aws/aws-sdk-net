@@ -44,6 +44,16 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// The instance type that the image version runs on.
         /// </para>
+        ///  <note> 
+        /// <para>
+        ///  <b>JupyterServer apps</b> only support the <code>system</code> value.
+        /// </para>
+        ///  
+        /// <para>
+        /// For <b>KernelGateway apps</b>, the <code>system</code> value is translated to <code>ml.t3.medium</code>.
+        /// KernelGateway apps also support all other values for available instance types.
+        /// </para>
+        ///  </note>
         /// </summary>
         public AppInstanceType InstanceType
         {

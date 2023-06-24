@@ -82,7 +82,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// The ID of the server that accepted the network connection.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=200)]
         public string DestinationServerId
         {
             get { return this._destinationServerId; }
@@ -101,7 +101,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// The ID of the server that opened the network connection.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=200)]
         public string SourceServerId
         {
             get { return this._sourceServerId; }
@@ -120,6 +120,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// The network protocol used for the connection.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=10000)]
         public string TransportProtocol
         {
             get { return this._transportProtocol; }

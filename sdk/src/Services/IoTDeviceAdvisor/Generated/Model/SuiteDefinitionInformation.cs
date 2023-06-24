@@ -36,6 +36,8 @@ namespace Amazon.IoTDeviceAdvisor.Model
         private DateTime? _createdAt;
         private List<DeviceUnderTest> _defaultDevices = new List<DeviceUnderTest>();
         private bool? _intendedForQualification;
+        private bool? _isLongDurationTest;
+        private Protocol _protocol;
         private string _suiteDefinitionId;
         private string _suiteDefinitionName;
 
@@ -92,6 +94,42 @@ namespace Amazon.IoTDeviceAdvisor.Model
         internal bool IsSetIntendedForQualification()
         {
             return this._intendedForQualification.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IsLongDurationTest. 
+        /// <para>
+        /// Verifies if the test suite is a long duration test.
+        /// </para>
+        /// </summary>
+        public bool IsLongDurationTest
+        {
+            get { return this._isLongDurationTest.GetValueOrDefault(); }
+            set { this._isLongDurationTest = value; }
+        }
+
+        // Check to see if IsLongDurationTest property is set
+        internal bool IsSetIsLongDurationTest()
+        {
+            return this._isLongDurationTest.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Protocol. 
+        /// <para>
+        /// Gets the MQTT protocol that is configured in the suite definition.
+        /// </para>
+        /// </summary>
+        public Protocol Protocol
+        {
+            get { return this._protocol; }
+            set { this._protocol = value; }
+        }
+
+        // Check to see if Protocol property is set
+        internal bool IsSetProtocol()
+        {
+            return this._protocol != null;
         }
 
         /// <summary>

@@ -34,7 +34,7 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RetryPolicy Marshaller
-    /// </summary>       
+    /// </summary>
     public class RetryPolicyMarshaller : IRequestMarshaller<RetryPolicy, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RetryPolicyMarshaller Instance = new RetryPolicyMarshaller();
 
     }

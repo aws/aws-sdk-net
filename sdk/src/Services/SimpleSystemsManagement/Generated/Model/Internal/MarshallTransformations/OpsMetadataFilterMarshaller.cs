@@ -34,7 +34,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// OpsMetadataFilter Marshaller
-    /// </summary>       
+    /// </summary>
     public class OpsMetadataFilterMarshaller : IRequestMarshaller<OpsMetadataFilter, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static OpsMetadataFilterMarshaller Instance = new OpsMetadataFilterMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ServiceDiscovery Marshaller
-    /// </summary>       
+    /// </summary>
     public class ServiceDiscoveryMarshaller : IRequestMarshaller<ServiceDiscovery, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ServiceDiscoveryMarshaller Instance = new ServiceDiscoveryMarshaller();
 
     }

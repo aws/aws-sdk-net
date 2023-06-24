@@ -48,18 +48,18 @@ namespace Amazon.CloudFormation.Model
     /// </para>
     ///  
     /// <para>
-    /// If you do not specify a version, CloudFormation uses the default version of the extension
-    /// in your account and region for testing.
+    /// If you don't specify a version, CloudFormation uses the default version of the extension
+    /// in your account and Region for testing.
     /// </para>
     ///  
     /// <para>
     /// To perform testing, CloudFormation assumes the execution role specified when the type
-    /// was registered. For more information, see <a href="AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.
+    /// was registered. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.
     /// </para>
     ///  
     /// <para>
     /// Once you've initiated testing on an extension using <code>TestType</code>, you can
-    /// use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">DescribeType</a>
+    /// pass the returned <code>TypeVersionArn</code> into <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">DescribeType</a>
     /// to monitor the current test status and test status description for the extension.
     /// </para>
     ///  
@@ -81,7 +81,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Number (ARN) of the extension.
+        /// The Amazon Resource Name (ARN) of the extension.
         /// </para>
         ///  
         /// <para>
@@ -118,11 +118,11 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// GetObject
+        ///  <code>GetObject</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// PutObject
+        ///  <code>PutObject</code> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -201,8 +201,8 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// If you do not specify a version, CloudFormation uses the default version of the extension
-        /// in this account and region for testing.
+        /// If you don't specify a version, CloudFormation uses the default version of the extension
+        /// in this account and Region for testing.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

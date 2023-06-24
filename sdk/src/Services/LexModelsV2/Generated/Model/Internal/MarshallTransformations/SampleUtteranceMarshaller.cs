@@ -34,7 +34,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SampleUtterance Marshaller
-    /// </summary>       
+    /// </summary>
     public class SampleUtteranceMarshaller : IRequestMarshaller<SampleUtterance, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SampleUtteranceMarshaller Instance = new SampleUtteranceMarshaller();
 
     }

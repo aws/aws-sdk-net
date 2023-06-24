@@ -34,7 +34,7 @@ namespace Amazon.Proton.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CompatibleEnvironmentTemplateInput Marshaller
-    /// </summary>       
+    /// </summary>
     public class CompatibleEnvironmentTemplateInputMarshaller : IRequestMarshaller<CompatibleEnvironmentTemplateInput, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Proton.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CompatibleEnvironmentTemplateInputMarshaller Instance = new CompatibleEnvironmentTemplateInputMarshaller();
 
     }

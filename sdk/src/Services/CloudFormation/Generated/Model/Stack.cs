@@ -156,11 +156,11 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>true</code>: disable rollback
+        ///  <code>true</code>: disable rollback.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>false</code>: enable rollback
+        ///  <code>false</code>: enable rollback.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -179,9 +179,9 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property DriftInformation. 
         /// <para>
-        /// Information on whether a stack's actual configuration differs, or has <i>drifted</i>,
-        /// from it's expected configuration, as defined in the stack template and any values
-        /// specified as template parameters. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
+        /// Information about whether a stack's actual configuration differs, or has <i>drifted</i>,
+        /// from its expected configuration, as defined in the stack template and any values specified
+        /// as template parameters. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
         /// Unregulated Configuration Changes to Stacks and Resources</a>.
         /// </para>
         /// </summary>
@@ -204,9 +204,9 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        ///  For <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested
-        /// stacks</a>, termination protection is set on the root stack and cannot be changed
-        /// directly on the nested stack. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting
+        /// For <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested
+        /// stacks</a>, termination protection is set on the root stack and can't be changed directly
+        /// on the nested stack. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting
         /// a Stack From Being Deleted</a> in the <i>CloudFormation User Guide</i>.
         /// </para>
         /// </summary>
@@ -244,7 +244,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property NotificationARNs. 
         /// <para>
-        /// SNS topic ARNs to which stack related events are published.
+        /// Amazon SNS topic Amazon Resource Names (ARNs) to which stack related events are published.
         /// </para>
         /// </summary>
         [AWSProperty(Max=5)]
@@ -324,8 +324,8 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property RoleARN. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role that
-        /// is associated with the stack. During a stack operation, CloudFormation uses this role's
+        /// The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role that's
+        /// associated with the stack. During a stack operation, CloudFormation uses this role's
         /// credentials to make calls on your behalf.
         /// </para>
         /// </summary>

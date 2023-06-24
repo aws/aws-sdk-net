@@ -58,7 +58,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             string target = "ElasticMapReduce.AddJobFlowSteps";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2009-03-31";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2009-03-31";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -67,6 +67,12 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetExecutionRoleArn())
+                {
+                    context.Writer.WritePropertyName("ExecutionRoleArn");
+                    context.Writer.Write(publicRequest.ExecutionRoleArn);
+                }
+
                 if(publicRequest.IsSetJobFlowId())
                 {
                     context.Writer.WritePropertyName("JobFlowId");
@@ -89,7 +95,6 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

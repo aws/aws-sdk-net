@@ -60,7 +60,7 @@ namespace Amazon.WorkDocs.Model
         /// The URL of the upload.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Sensitive=true, Min=1, Max=1024)]
         public string UploadUrl
         {
             get { return this._uploadUrl; }

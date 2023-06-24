@@ -126,7 +126,7 @@ namespace Amazon.DataExchange.Model
         /// <summary>
         /// Gets and sets the property ExceptionCause. 
         /// <para>
-        /// The message that informs you about what the exception was.
+        /// The unique identifier for the resource that couldn't be found.
         /// </para>
         /// </summary>
         public ExceptionCause ExceptionCause

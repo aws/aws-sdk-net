@@ -138,10 +138,9 @@ namespace Amazon.S3
             var immutableCredentials = Credentials.GetCredentials();
             var irequest = Marshall(this.Config, request, immutableCredentials.AccessKey, immutableCredentials.Token, signatureVersionToUse);
 
-            irequest.Endpoint = EndpointResolver.DetermineEndpoint(this.Config, irequest);
 
             var context = new Amazon.Runtime.Internal.ExecutionContext(new Amazon.Runtime.Internal.RequestContext(true, new NullSigner()) { Request = irequest, ClientConfig = this.Config }, null);
-            AmazonS3PostMarshallHandler.ProcessRequestHandlers(context);
+            new AmazonS3EndpointResolver().ProcessRequestHandlers(context);
 
             var metrics = new RequestMetrics();
             string result;
@@ -234,12 +233,8 @@ namespace Amazon.S3
             var queryParameters = request.Parameters;
 
             var uriResourcePath = new StringBuilder("/");
-            if (!string.IsNullOrEmpty(getPreSignedUrlRequest.BucketName))
-                uriResourcePath.Append(S3Transforms.ToStringValue(getPreSignedUrlRequest.BucketName));
             if (!string.IsNullOrEmpty(getPreSignedUrlRequest.Key))
             {
-                if (uriResourcePath.Length > 1)
-                    uriResourcePath.Append("/");
                 uriResourcePath.Append(S3Transforms.ToStringValue(getPreSignedUrlRequest.Key));
             }
 

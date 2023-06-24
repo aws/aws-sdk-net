@@ -37,6 +37,7 @@ namespace Amazon.SageMaker.Model
         private AppType _appType;
         private DateTime? _creationTime;
         private string _domainId;
+        private string _spaceName;
         private AppStatus _status;
         private string _userProfileName;
 
@@ -112,6 +113,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetDomainId()
         {
             return this._domainId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SpaceName. 
+        /// <para>
+        /// The name of the space.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=63)]
+        public string SpaceName
+        {
+            get { return this._spaceName; }
+            set { this._spaceName = value; }
+        }
+
+        // Check to see if SpaceName property is set
+        internal bool IsSetSpaceName()
+        {
+            return this._spaceName != null;
         }
 
         /// <summary>

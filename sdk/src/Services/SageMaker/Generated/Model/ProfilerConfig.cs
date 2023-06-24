@@ -29,14 +29,34 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Configuration information for Debugger system monitoring, framework profiling, and
-    /// storage paths.
+    /// Configuration information for Amazon SageMaker Debugger system monitoring, framework
+    /// profiling, and storage paths.
     /// </summary>
     public partial class ProfilerConfig
     {
+        private bool? _disableProfiler;
         private long? _profilingIntervalInMilliseconds;
         private Dictionary<string, string> _profilingParameters = new Dictionary<string, string>();
         private string _s3OutputPath;
+
+        /// <summary>
+        /// Gets and sets the property DisableProfiler. 
+        /// <para>
+        /// Configuration to turn off Amazon SageMaker Debugger's system monitoring and profiling
+        /// functionality. To turn it off, set to <code>True</code>.
+        /// </para>
+        /// </summary>
+        public bool DisableProfiler
+        {
+            get { return this._disableProfiler.GetValueOrDefault(); }
+            set { this._disableProfiler = value; }
+        }
+
+        // Check to see if DisableProfiler property is set
+        internal bool IsSetDisableProfiler()
+        {
+            return this._disableProfiler.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property ProfilingIntervalInMilliseconds. 
@@ -89,7 +109,7 @@ namespace Amazon.SageMaker.Model
         /// Path to Amazon S3 storage location for system and framework metrics.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=1024)]
+        [AWSProperty(Max=1024)]
         public string S3OutputPath
         {
             get { return this._s3OutputPath; }

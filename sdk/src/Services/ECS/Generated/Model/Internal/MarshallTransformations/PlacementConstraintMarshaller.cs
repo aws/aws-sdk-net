@@ -34,7 +34,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// PlacementConstraint Marshaller
-    /// </summary>       
+    /// </summary>
     public class PlacementConstraintMarshaller : IRequestMarshaller<PlacementConstraint, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static PlacementConstraintMarshaller Instance = new PlacementConstraintMarshaller();
 
     }

@@ -33,8 +33,47 @@ namespace Amazon.IoTWireless.Model
     /// </summary>
     public partial class LoRaWANUpdateDevice
     {
+        private UpdateAbpV1_0_x _abpV1_0_x;
+        private UpdateAbpV1_1 _abpV1_1;
         private string _deviceProfileId;
+        private UpdateFPorts _fPorts;
         private string _serviceProfileId;
+
+        /// <summary>
+        /// Gets and sets the property AbpV1_0_x. 
+        /// <para>
+        /// ABP device object for update APIs for v1.0.x
+        /// </para>
+        /// </summary>
+        public UpdateAbpV1_0_x AbpV1_0_x
+        {
+            get { return this._abpV1_0_x; }
+            set { this._abpV1_0_x = value; }
+        }
+
+        // Check to see if AbpV1_0_x property is set
+        internal bool IsSetAbpV1_0_x()
+        {
+            return this._abpV1_0_x != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AbpV1_1. 
+        /// <para>
+        /// ABP device object for update APIs for v1.1
+        /// </para>
+        /// </summary>
+        public UpdateAbpV1_1 AbpV1_1
+        {
+            get { return this._abpV1_1; }
+            set { this._abpV1_1 = value; }
+        }
+
+        // Check to see if AbpV1_1 property is set
+        internal bool IsSetAbpV1_1()
+        {
+            return this._abpV1_1 != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DeviceProfileId. 
@@ -53,6 +92,24 @@ namespace Amazon.IoTWireless.Model
         internal bool IsSetDeviceProfileId()
         {
             return this._deviceProfileId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FPorts. 
+        /// <para>
+        /// FPorts object for the positioning information of the device.
+        /// </para>
+        /// </summary>
+        public UpdateFPorts FPorts
+        {
+            get { return this._fPorts; }
+            set { this._fPorts = value; }
+        }
+
+        // Check to see if FPorts property is set
+        internal bool IsSetFPorts()
+        {
+            return this._fPorts != null;
         }
 
         /// <summary>

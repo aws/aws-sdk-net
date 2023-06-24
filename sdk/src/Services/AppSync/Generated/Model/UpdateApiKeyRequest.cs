@@ -30,7 +30,7 @@ namespace Amazon.AppSync.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateApiKey operation.
-    /// Updates an API key. The key can be updated while it is not deleted.
+    /// Updates an API key. You can update the key as long as it's not deleted.
     /// </summary>
     public partial class UpdateApiKeyRequest : AmazonAppSyncRequest
     {
@@ -79,7 +79,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property Expires. 
         /// <para>
-        /// The time from update time after which the API key expires. The date is represented
+        /// From the update time, the time after which the API key expires. The date is represented
         /// as seconds since the epoch. For more information, see .
         /// </para>
         /// </summary>

@@ -33,16 +33,41 @@ namespace Amazon.FSx.Model
     /// </summary>
     public partial class OntapVolumeConfiguration
     {
+        private bool? _copyTagsToBackups;
         private FlexCacheEndpointType _flexCacheEndpointType;
         private string _junctionPath;
         private OntapVolumeType _ontapVolumeType;
         private SecurityStyle _securityStyle;
         private int? _sizeInMegabytes;
+        private string _snapshotPolicy;
         private bool? _storageEfficiencyEnabled;
         private string _storageVirtualMachineId;
         private bool? _storageVirtualMachineRoot;
         private TieringPolicy _tieringPolicy;
         private string _uuid;
+
+        /// <summary>
+        /// Gets and sets the property CopyTagsToBackups. 
+        /// <para>
+        /// A boolean flag indicating whether tags for the volume should be copied to backups.
+        /// This value defaults to false. If it's set to true, all tags for the volume are copied
+        /// to all automatic and user-initiated backups where the user doesn't specify tags. If
+        /// this value is true, and you specify one or more tags, only the specified tags are
+        /// copied to backups. If you specify one or more tags when creating a user-initiated
+        /// backup, no tags are copied from the volume, regardless of this value.
+        /// </para>
+        /// </summary>
+        public bool CopyTagsToBackups
+        {
+            get { return this._copyTagsToBackups.GetValueOrDefault(); }
+            set { this._copyTagsToBackups = value; }
+        }
+
+        // Check to see if CopyTagsToBackups property is set
+        internal bool IsSetCopyTagsToBackups()
+        {
+            return this._copyTagsToBackups.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property FlexCacheEndpointType. 
@@ -172,6 +197,52 @@ namespace Amazon.FSx.Model
         internal bool IsSetSizeInMegabytes()
         {
             return this._sizeInMegabytes.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SnapshotPolicy. 
+        /// <para>
+        /// Specifies the snapshot policy for the volume. There are three built-in snapshot policies:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>default</code>: This is the default policy. A maximum of six hourly snapshots
+        /// taken five minutes past the hour. A maximum of two daily snapshots taken Monday through
+        /// Saturday at 10 minutes after midnight. A maximum of two weekly snapshots taken every
+        /// Sunday at 15 minutes after midnight.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>default-1weekly</code>: This policy is the same as the <code>default</code>
+        /// policy except that it only retains one snapshot from the weekly schedule.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>none</code>: This policy does not take any snapshots. This policy can be assigned
+        /// to volumes to prevent automatic snapshots from being taken.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// You can also provide the name of a custom policy that you created with the ONTAP CLI
+        /// or REST API.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snapshots-ontap.html#snapshot-policies">Snapshot
+        /// policies</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string SnapshotPolicy
+        {
+            get { return this._snapshotPolicy; }
+            set { this._snapshotPolicy = value; }
+        }
+
+        // Check to see if SnapshotPolicy property is set
+        internal bool IsSetSnapshotPolicy()
+        {
+            return this._snapshotPolicy != null;
         }
 
         /// <summary>

@@ -34,6 +34,7 @@ namespace Amazon.AppMesh.Model
     public partial class DnsServiceDiscovery
     {
         private string _hostname;
+        private IpPreference _ipPreference;
         private DnsResponseType _responseType;
 
         /// <summary>
@@ -53,6 +54,26 @@ namespace Amazon.AppMesh.Model
         internal bool IsSetHostname()
         {
             return this._hostname != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IpPreference. 
+        /// <para>
+        /// The preferred IP version that this virtual node uses. Setting the IP preference on
+        /// the virtual node only overrides the IP preference set for the mesh on this specific
+        /// node.
+        /// </para>
+        /// </summary>
+        public IpPreference IpPreference
+        {
+            get { return this._ipPreference; }
+            set { this._ipPreference = value; }
+        }
+
+        // Check to see if IpPreference property is set
+        internal bool IsSetIpPreference()
+        {
+            return this._ipPreference != null;
         }
 
         /// <summary>

@@ -30,7 +30,8 @@ namespace Amazon.Macie.Model
 {
     /// <summary>
     /// Container for the parameters to the AssociateMemberAccount operation.
-    /// Associates a specified AWS account with Amazon Macie Classic as a member account.
+    /// (Discontinued) Associates a specified Amazon Web Services account with Amazon Macie
+    /// Classic as a member account.
     /// </summary>
     public partial class AssociateMemberAccountRequest : AmazonMacieRequest
     {
@@ -39,8 +40,8 @@ namespace Amazon.Macie.Model
         /// <summary>
         /// Gets and sets the property MemberAccountId. 
         /// <para>
-        /// The ID of the AWS account that you want to associate with Amazon Macie Classic as
-        /// a member account.
+        /// (Discontinued) The ID of the Amazon Web Services account that you want to associate
+        /// with Amazon Macie Classic as a member account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -35,9 +35,30 @@ namespace Amazon.NetworkFirewall.Model
     /// </summary>
     public partial class FirewallStatus
     {
+        private CapacityUsageSummary _capacityUsageSummary;
         private ConfigurationSyncState _configurationSyncStateSummary;
         private FirewallStatusValue _status;
         private Dictionary<string, SyncState> _syncStates = new Dictionary<string, SyncState>();
+
+        /// <summary>
+        /// Gets and sets the property CapacityUsageSummary. 
+        /// <para>
+        /// Describes the capacity usage of the resources contained in a firewall's reference
+        /// sets. Network Firewall calclulates the capacity usage by taking an aggregated count
+        /// of all of the resources used by all of the reference sets in a firewall.
+        /// </para>
+        /// </summary>
+        public CapacityUsageSummary CapacityUsageSummary
+        {
+            get { return this._capacityUsageSummary; }
+            set { this._capacityUsageSummary = value; }
+        }
+
+        // Check to see if CapacityUsageSummary property is set
+        internal bool IsSetCapacityUsageSummary()
+        {
+            return this._capacityUsageSummary != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ConfigurationSyncStateSummary. 

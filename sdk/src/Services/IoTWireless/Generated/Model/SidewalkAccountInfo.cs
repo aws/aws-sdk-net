@@ -61,7 +61,7 @@ namespace Amazon.IoTWireless.Model
         /// The Sidewalk application server private key.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=4096)]
+        [AWSProperty(Sensitive=true, Min=1, Max=4096)]
         public string AppServerPrivateKey
         {
             get { return this._appServerPrivateKey; }

@@ -36,6 +36,7 @@ namespace Amazon.DocDB.Model
         private List<DBClusterRole> _associatedRoles = new List<DBClusterRole>();
         private List<string> _availabilityZones = new List<string>();
         private int? _backupRetentionPeriod;
+        private string _cloneGroupId;
         private DateTime? _clusterCreateTime;
         private string _dbClusterArn;
         private string _dbClusterIdentifier;
@@ -120,6 +121,24 @@ namespace Amazon.DocDB.Model
         internal bool IsSetBackupRetentionPeriod()
         {
             return this._backupRetentionPeriod.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CloneGroupId. 
+        /// <para>
+        /// Identifies the clone group to which the DB cluster is associated.
+        /// </para>
+        /// </summary>
+        public string CloneGroupId
+        {
+            get { return this._cloneGroupId; }
+            set { this._cloneGroupId = value; }
+        }
+
+        // Check to see if CloneGroupId property is set
+        internal bool IsSetCloneGroupId()
+        {
+            return this._cloneGroupId != null;
         }
 
         /// <summary>
@@ -216,8 +235,9 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property DbClusterResourceId. 
         /// <para>
-        /// The Region-unique, immutable identifier for the cluster. This identifier is found
-        /// in CloudTrail log entries whenever the KMS key for the cluster is accessed.
+        /// The Amazon Web Services Region-unique, immutable identifier for the cluster. This
+        /// identifier is found in CloudTrail log entries whenever the KMS key for the cluster
+        /// is accessed.
         /// </para>
         /// </summary>
         public string DbClusterResourceId

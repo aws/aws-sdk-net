@@ -70,10 +70,10 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property Values. 
         /// <para>
-        /// One or more strings to compare against the value of the HTTP header. The maximum size
-        /// of each string is 128 characters. The comparison strings are case insensitive. The
-        /// following wildcard characters are supported: * (matches 0 or more characters) and
-        /// ? (matches exactly 1 character).
+        /// The strings to compare against the value of the HTTP header. The maximum size of each
+        /// string is 128 characters. The comparison strings are case insensitive. The following
+        /// wildcard characters are supported: * (matches 0 or more characters) and ? (matches
+        /// exactly 1 character).
         /// </para>
         ///  
         /// <para>

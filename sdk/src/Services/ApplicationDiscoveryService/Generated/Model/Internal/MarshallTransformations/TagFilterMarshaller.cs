@@ -34,7 +34,7 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
 {
     /// <summary>
     /// TagFilter Marshaller
-    /// </summary>       
+    /// </summary>
     public class TagFilterMarshaller : IRequestMarshaller<TagFilter, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static TagFilterMarshaller Instance = new TagFilterMarshaller();
 
     }

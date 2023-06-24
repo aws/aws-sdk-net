@@ -30,13 +30,8 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DeregisterInstanceEventNotificationAttributes operation.
-    /// c
-    /// 
-    ///  
-    /// <para>
     /// Deregisters tag keys to prevent tags that have the specified tag keys from being included
     /// in scheduled event notifications for resources in the Region.
-    /// </para>
     /// </summary>
     public partial class DeregisterInstanceEventNotificationAttributesRequest : AmazonEC2Request
     {
@@ -48,6 +43,7 @@ namespace Amazon.EC2.Model
         /// Information about the tag keys to deregister.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DeregisterInstanceTagAttributeRequest InstanceTagAttribute
         {
             get { return this._instanceTagAttribute; }

@@ -17,22 +17,22 @@
  * Do not modify this file. This file is generated from the worklink-2018-09-25.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
-
+using Amazon.WorkLink.Internal;
 
 namespace Amazon.WorkLink
 {
     /// <summary>
     /// Configuration for accessing Amazon WorkLink service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonWorkLinkConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.105");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.147");
 
         private string _userAgent = UserAgentString;
 
@@ -40,8 +40,10 @@ namespace Amazon.WorkLink
         /// Default constructor
         /// </summary>
         public AmazonWorkLinkConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonWorkLinkDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "worklink";
+            this.EndpointProvider = new AmazonWorkLinkEndpointProvider();
         }
 
         /// <summary>
@@ -76,5 +78,6 @@ namespace Amazon.WorkLink
                 return _userAgent;
             }
         }
+
     }
 }

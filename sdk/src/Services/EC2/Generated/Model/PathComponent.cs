@@ -34,16 +34,24 @@ namespace Amazon.EC2.Model
     public partial class PathComponent
     {
         private AnalysisAclRule _aclRule;
+        private List<AdditionalDetail> _additionalDetails = new List<AdditionalDetail>();
         private AnalysisComponent _attachedTo;
         private AnalysisComponent _component;
         private AnalysisComponent _destinationVpc;
+        private AnalysisComponent _elasticLoadBalancerListener;
+        private List<Explanation> _explanations = new List<Explanation>();
+        private FirewallStatefulRule _firewallStatefulRule;
+        private FirewallStatelessRule _firewallStatelessRule;
         private AnalysisPacketHeader _inboundHeader;
         private AnalysisPacketHeader _outboundHeader;
         private AnalysisRouteTableRoute _routeTableRoute;
         private AnalysisSecurityGroupRule _securityGroupRule;
         private int? _sequenceNumber;
+        private string _serviceName;
         private AnalysisComponent _sourceVpc;
         private AnalysisComponent _subnet;
+        private AnalysisComponent _transitGateway;
+        private TransitGatewayRouteTableRoute _transitGatewayRouteTableRoute;
         private AnalysisComponent _vpc;
 
         /// <summary>
@@ -62,6 +70,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetAclRule()
         {
             return this._aclRule != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AdditionalDetails. 
+        /// <para>
+        /// The additional details.
+        /// </para>
+        /// </summary>
+        public List<AdditionalDetail> AdditionalDetails
+        {
+            get { return this._additionalDetails; }
+            set { this._additionalDetails = value; }
+        }
+
+        // Check to see if AdditionalDetails property is set
+        internal bool IsSetAdditionalDetails()
+        {
+            return this._additionalDetails != null && this._additionalDetails.Count > 0; 
         }
 
         /// <summary>
@@ -116,6 +142,78 @@ namespace Amazon.EC2.Model
         internal bool IsSetDestinationVpc()
         {
             return this._destinationVpc != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ElasticLoadBalancerListener. 
+        /// <para>
+        /// The load balancer listener.
+        /// </para>
+        /// </summary>
+        public AnalysisComponent ElasticLoadBalancerListener
+        {
+            get { return this._elasticLoadBalancerListener; }
+            set { this._elasticLoadBalancerListener = value; }
+        }
+
+        // Check to see if ElasticLoadBalancerListener property is set
+        internal bool IsSetElasticLoadBalancerListener()
+        {
+            return this._elasticLoadBalancerListener != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Explanations. 
+        /// <para>
+        /// The explanation codes.
+        /// </para>
+        /// </summary>
+        public List<Explanation> Explanations
+        {
+            get { return this._explanations; }
+            set { this._explanations = value; }
+        }
+
+        // Check to see if Explanations property is set
+        internal bool IsSetExplanations()
+        {
+            return this._explanations != null && this._explanations.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property FirewallStatefulRule. 
+        /// <para>
+        /// The Network Firewall stateful rule.
+        /// </para>
+        /// </summary>
+        public FirewallStatefulRule FirewallStatefulRule
+        {
+            get { return this._firewallStatefulRule; }
+            set { this._firewallStatefulRule = value; }
+        }
+
+        // Check to see if FirewallStatefulRule property is set
+        internal bool IsSetFirewallStatefulRule()
+        {
+            return this._firewallStatefulRule != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FirewallStatelessRule. 
+        /// <para>
+        /// The Network Firewall stateless rule.
+        /// </para>
+        /// </summary>
+        public FirewallStatelessRule FirewallStatelessRule
+        {
+            get { return this._firewallStatelessRule; }
+            set { this._firewallStatelessRule = value; }
+        }
+
+        // Check to see if FirewallStatelessRule property is set
+        internal bool IsSetFirewallStatelessRule()
+        {
+            return this._firewallStatelessRule != null;
         }
 
         /// <summary>
@@ -209,6 +307,24 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ServiceName. 
+        /// <para>
+        /// The name of the VPC endpoint service.
+        /// </para>
+        /// </summary>
+        public string ServiceName
+        {
+            get { return this._serviceName; }
+            set { this._serviceName = value; }
+        }
+
+        // Check to see if ServiceName property is set
+        internal bool IsSetServiceName()
+        {
+            return this._serviceName != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SourceVpc. 
         /// <para>
         /// The source VPC.
@@ -242,6 +358,42 @@ namespace Amazon.EC2.Model
         internal bool IsSetSubnet()
         {
             return this._subnet != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TransitGateway. 
+        /// <para>
+        /// The transit gateway.
+        /// </para>
+        /// </summary>
+        public AnalysisComponent TransitGateway
+        {
+            get { return this._transitGateway; }
+            set { this._transitGateway = value; }
+        }
+
+        // Check to see if TransitGateway property is set
+        internal bool IsSetTransitGateway()
+        {
+            return this._transitGateway != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TransitGatewayRouteTableRoute. 
+        /// <para>
+        /// The route in a transit gateway route table.
+        /// </para>
+        /// </summary>
+        public TransitGatewayRouteTableRoute TransitGatewayRouteTableRoute
+        {
+            get { return this._transitGatewayRouteTableRoute; }
+            set { this._transitGatewayRouteTableRoute = value; }
+        }
+
+        // Check to see if TransitGatewayRouteTableRoute property is set
+        internal bool IsSetTransitGatewayRouteTableRoute()
+        {
+            return this._transitGatewayRouteTableRoute != null;
         }
 
         /// <summary>

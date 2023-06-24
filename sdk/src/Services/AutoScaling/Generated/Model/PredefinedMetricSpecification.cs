@@ -59,8 +59,8 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ALBRequestCountPerTarget</code> - Number of requests completed per target in
-        /// an Application Load Balancer target group.
+        ///  <code>ALBRequestCountPerTarget</code> - Average Application Load Balancer request
+        /// count per target for your Auto Scaling group.
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -46,6 +46,7 @@ namespace Amazon.QuickSight.Model
         /// a user session that is valid for 10 hours. 
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string EmbedUrl
         {
             get { return this._embedUrl; }

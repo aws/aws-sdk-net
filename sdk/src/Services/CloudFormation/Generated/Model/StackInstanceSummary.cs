@@ -36,6 +36,7 @@ namespace Amazon.CloudFormation.Model
         private string _account;
         private StackDriftStatus _driftStatus;
         private DateTime? _lastDriftCheckTimestamp;
+        private string _lastOperationId;
         private string _organizationalUnitId;
         private string _region;
         private string _stackId;
@@ -67,7 +68,7 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property DriftStatus. 
         /// <para>
         /// Status of the stack instance's actual configuration compared to the expected template
-        /// and parameter configuration of the stack set to which it belongs. 
+        /// and parameter configuration of the stack set to which it belongs.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -77,7 +78,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NOT_CHECKED</code>: CloudFormation has not checked if the stack instance differs
+        ///  <code>NOT_CHECKED</code>: CloudFormation hasn't checked if the stack instance differs
         /// from its expected stack set configuration.
         /// </para>
         ///  </li> <li> 
@@ -108,7 +109,7 @@ namespace Amazon.CloudFormation.Model
         /// <para>
         /// Most recent time when CloudFormation performed a drift detection operation on the
         /// stack instance. This value will be <code>NULL</code> for any stack instance on which
-        /// drift detection has not yet been performed.
+        /// drift detection hasn't yet been performed.
         /// </para>
         /// </summary>
         public DateTime LastDriftCheckTimestamp
@@ -121,6 +122,25 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetLastDriftCheckTimestamp()
         {
             return this._lastDriftCheckTimestamp.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastOperationId. 
+        /// <para>
+        /// The last unique ID of a StackSet operation performed on a stack instance.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=128)]
+        public string LastOperationId
+        {
+            get { return this._lastOperationId; }
+            set { this._lastOperationId = value; }
+        }
+
+        // Check to see if LastOperationId property is set
+        internal bool IsSetLastOperationId()
+        {
+            return this._lastOperationId != null;
         }
 
         /// <summary>
@@ -235,12 +255,12 @@ namespace Amazon.CloudFormation.Model
         ///  <ul> <li> 
         /// <para>
         /// The associated stack failed during a <code>CreateStackSet</code> or <code>UpdateStackSet</code>
-        /// operation. 
+        /// operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// The stack was part of a <code>CreateStackSet</code> or <code>UpdateStackSet</code>
-        /// operation that failed or was stopped before the stack was created or updated. 
+        /// operation that failed or was stopped before the stack was created or updated.
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>

@@ -34,7 +34,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RegistrationConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class RegistrationConfigMarshaller : IRequestMarshaller<RegistrationConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -57,11 +57,17 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.TemplateBody);
             }
 
+            if(requestObject.IsSetTemplateName())
+            {
+                context.Writer.WritePropertyName("templateName");
+                context.Writer.Write(requestObject.TemplateName);
+            }
+
         }
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RegistrationConfigMarshaller Instance = new RegistrationConfigMarshaller();
 
     }

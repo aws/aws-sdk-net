@@ -35,9 +35,9 @@ namespace Amazon.NetworkFirewall.Model
     /// 
     ///  
     /// <para>
-    /// AWS Network Firewall uses a rule group to inspect and control network traffic. You
-    /// define stateless rule groups to inspect individual packets and you define stateful
-    /// rule groups to inspect packets in the context of their traffic flow. 
+    /// Network Firewall uses a rule group to inspect and control network traffic. You define
+    /// stateless rule groups to inspect individual packets and you define stateful rule groups
+    /// to inspect packets in the context of their traffic flow. 
     /// </para>
     ///  
     /// <para>
@@ -49,9 +49,28 @@ namespace Amazon.NetworkFirewall.Model
     /// </summary>
     public partial class RuleGroup
     {
+        private ReferenceSets _referenceSets;
         private RulesSource _rulesSource;
         private RuleVariables _ruleVariables;
         private StatefulRuleOptions _statefulRuleOptions;
+
+        /// <summary>
+        /// Gets and sets the property ReferenceSets. 
+        /// <para>
+        /// The list of a rule group's reference sets.
+        /// </para>
+        /// </summary>
+        public ReferenceSets ReferenceSets
+        {
+            get { return this._referenceSets; }
+            set { this._referenceSets = value; }
+        }
+
+        // Check to see if ReferenceSets property is set
+        internal bool IsSetReferenceSets()
+        {
+            return this._referenceSets != null;
+        }
 
         /// <summary>
         /// Gets and sets the property RulesSource. 

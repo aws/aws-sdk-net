@@ -42,10 +42,6 @@ namespace Amazon.Lightsail.Model
     /// cache behavior can be used to specify a directory, file, or file type that your distribution
     /// will not cache.
     /// </para>
-    ///  
-    /// <para>
-    /// if the cacheBehavior's behavior is set to 'cache', then
-    /// </para>
     /// </summary>
     public partial class CacheBehaviorPerPath
     {

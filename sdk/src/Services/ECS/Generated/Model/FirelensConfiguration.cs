@@ -31,7 +31,7 @@ namespace Amazon.ECS.Model
     /// <summary>
     /// The FireLens configuration for the container. This is used to specify and configure
     /// a log router for container logs. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html">Custom
-    /// Log Routing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+    /// log routing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
     /// </summary>
     public partial class FirelensConfiguration
     {
@@ -46,7 +46,7 @@ namespace Amazon.ECS.Model
         /// as the task, task definition, cluster, and container instance details to the log event.
         /// If specified, the syntax to use is <code>"options":{"enable-ecs-log-metadata":"true|false","config-file-type:"s3|file","config-file-value":"arn:aws:s3:::mybucket/fluent.conf|filepath"}</code>.
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html#firelens-taskdef">Creating
-        /// a Task Definition that Uses a FireLens Configuration</a> in the <i>Amazon Elastic
+        /// a task definition that uses a FireLens configuration</a> in the <i>Amazon Elastic
         /// Container Service Developer Guide</i>.
         /// </para>
         ///  <note> 

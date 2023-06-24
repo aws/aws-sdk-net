@@ -70,10 +70,22 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.InstanceCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("InstanceGroups", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<InstanceGroup, InstanceGroupUnmarshaller>(InstanceGroupUnmarshaller.Instance);
+                    unmarshalledObject.InstanceGroups = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("InstanceType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.InstanceType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("KeepAlivePeriodInSeconds", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.KeepAlivePeriodInSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("VolumeKmsKeyId", targetDepth))

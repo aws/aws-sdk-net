@@ -34,7 +34,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// S3DestinationAccessControl Marshaller
-    /// </summary>       
+    /// </summary>
     public class S3DestinationAccessControlMarshaller : IRequestMarshaller<S3DestinationAccessControl, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static S3DestinationAccessControlMarshaller Instance = new S3DestinationAccessControlMarshaller();
 
     }

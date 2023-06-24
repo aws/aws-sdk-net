@@ -30,8 +30,8 @@ namespace Amazon.CloudFormation.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteStackSet operation.
-    /// Deletes a stack set. Before you can delete a stack set, all of its member stack instances
-    /// must be deleted. For more information about how to do this, see <a>DeleteStackInstances</a>.
+    /// Deletes a stack set. Before you can delete a stack set, all its member stack instances
+    /// must be deleted. For more information about how to complete this, see <a>DeleteStackInstances</a>.
     /// </summary>
     public partial class DeleteStackSetRequest : AmazonCloudFormationRequest
     {

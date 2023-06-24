@@ -30,8 +30,7 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the AcceptVpcEndpointConnections operation.
-    /// Accepts one or more interface VPC endpoint connection requests to your VPC endpoint
-    /// service.
+    /// Accepts connection requests to your VPC endpoint service.
     /// </summary>
     public partial class AcceptVpcEndpointConnectionsRequest : AmazonEC2Request
     {
@@ -60,7 +59,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property VpcEndpointIds. 
         /// <para>
-        /// The IDs of one or more interface VPC endpoints.
+        /// The IDs of the interface VPC endpoints.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

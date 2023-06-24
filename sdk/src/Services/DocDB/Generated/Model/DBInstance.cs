@@ -37,6 +37,7 @@ namespace Amazon.DocDB.Model
         private string _availabilityZone;
         private int? _backupRetentionPeriod;
         private string _caCertificateIdentifier;
+        private bool? _copyTagsToSnapshot;
         private string _dbClusterIdentifier;
         private string _dbInstanceArn;
         private string _dbInstanceClass;
@@ -134,6 +135,25 @@ namespace Amazon.DocDB.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CopyTagsToSnapshot. 
+        /// <para>
+        /// A value that indicates whether to copy tags from the DB instance to snapshots of the
+        /// DB instance. By default, tags are not copied.
+        /// </para>
+        /// </summary>
+        public bool CopyTagsToSnapshot
+        {
+            get { return this._copyTagsToSnapshot.GetValueOrDefault(); }
+            set { this._copyTagsToSnapshot = value; }
+        }
+
+        // Check to see if CopyTagsToSnapshot property is set
+        internal bool IsSetCopyTagsToSnapshot()
+        {
+            return this._copyTagsToSnapshot.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property DBClusterIdentifier. 
         /// <para>
         /// Contains the name of the cluster that the instance is a member of if the instance
@@ -228,8 +248,9 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property DbiResourceId. 
         /// <para>
-        /// The Region-unique, immutable identifier for the instance. This identifier is found
-        /// in CloudTrail log entries whenever the KMS key for the instance is accessed.
+        /// The Amazon Web Services Region-unique, immutable identifier for the instance. This
+        /// identifier is found in CloudTrail log entries whenever the KMS key for the instance
+        /// is accessed.
         /// </para>
         /// </summary>
         public string DbiResourceId

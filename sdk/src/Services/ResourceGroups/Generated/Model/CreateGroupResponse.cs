@@ -61,7 +61,7 @@ namespace Amazon.ResourceGroups.Model
         /// <para>
         /// The service configuration associated with the resource group. For details about the
         /// syntax of a service configuration, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service
-        /// configurations for resource groups</a>.
+        /// configurations for Resource Groups</a>.
         /// </para>
         /// </summary>
         public GroupConfiguration GroupConfiguration

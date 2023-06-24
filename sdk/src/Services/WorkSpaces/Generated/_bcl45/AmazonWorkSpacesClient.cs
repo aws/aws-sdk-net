@@ -41,7 +41,29 @@ namespace Amazon.WorkSpaces
     /// Amazon WorkSpaces Service 
     /// <para>
     /// Amazon WorkSpaces enables you to provision virtual, cloud-based Microsoft Windows
-    /// and Amazon Linux desktops for your users.
+    /// or Amazon Linux desktops for your users, known as <i>WorkSpaces</i>. WorkSpaces eliminates
+    /// the need to procure and deploy hardware or install complex software. You can quickly
+    /// add or remove users as your needs change. Users can access their virtual desktops
+    /// from multiple devices or web browsers.
+    /// </para>
+    ///  
+    /// <para>
+    /// This API Reference provides detailed information about the actions, data types, parameters,
+    /// and errors of the WorkSpaces service. For more information about the supported Amazon
+    /// Web Services Regions, endpoints, and service quotas of the Amazon WorkSpaces service,
+    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/wsp.html">WorkSpaces endpoints
+    /// and quotas</a> in the <i>Amazon Web Services General Reference</i>.
+    /// </para>
+    ///  
+    /// <para>
+    /// You can also manage your WorkSpaces resources using the WorkSpaces console, Command
+    /// Line Interface (CLI), and SDKs. For more information about administering WorkSpaces,
+    /// see the <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/">Amazon
+    /// WorkSpaces Administration Guide</a>. For more information about using the Amazon WorkSpaces
+    /// client application or web browser to access provisioned WorkSpaces, see the <a href="https://docs.aws.amazon.com/workspaces/latest/userguide/">Amazon
+    /// WorkSpaces User Guide</a>. For more information about using the CLI to manage your
+    /// WorkSpaces resources, see the <a href="https://docs.aws.amazon.com/cli/latest/reference/workspaces/index.html">WorkSpaces
+    /// section of the CLI Reference</a>.
     /// </para>
     /// </summary>
     public partial class AmazonWorkSpacesClient : AmazonServiceClient, IAmazonWorkSpaces
@@ -232,6 +254,15 @@ namespace Amazon.WorkSpaces
             return new AWS4Signer();
         }    
 
+        /// <summary>
+        /// Customize the pipeline
+        /// </summary>
+        /// <param name="pipeline"></param>
+        protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
+        {
+            pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonWorkSpacesEndpointResolver());
+        }    
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>
@@ -640,6 +671,89 @@ namespace Amazon.WorkSpaces
 
         #endregion
         
+        #region  CreateConnectClientAddIn
+
+
+        /// <summary>
+        /// Creates a client-add-in for Amazon Connect within a directory. You can create only
+        /// one Amazon Connect client add-in within a directory.
+        /// 
+        ///  
+        /// <para>
+        /// This client add-in allows WorkSpaces users to seamlessly connect to Amazon Connect.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateConnectClientAddIn service method.</param>
+        /// 
+        /// <returns>The response from the CreateConnectClientAddIn service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceAlreadyExistsException">
+        /// The specified resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceCreationFailedException">
+        /// The resource could not be created.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateConnectClientAddIn">REST API Reference for CreateConnectClientAddIn Operation</seealso>
+        public virtual CreateConnectClientAddInResponse CreateConnectClientAddIn(CreateConnectClientAddInRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateConnectClientAddInRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateConnectClientAddInResponseUnmarshaller.Instance;
+
+            return Invoke<CreateConnectClientAddInResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a client-add-in for Amazon Connect within a directory. You can create only
+        /// one Amazon Connect client add-in within a directory.
+        /// 
+        ///  
+        /// <para>
+        /// This client add-in allows WorkSpaces users to seamlessly connect to Amazon Connect.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateConnectClientAddIn service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateConnectClientAddIn service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceAlreadyExistsException">
+        /// The specified resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceCreationFailedException">
+        /// The resource could not be created.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateConnectClientAddIn">REST API Reference for CreateConnectClientAddIn Operation</seealso>
+        public virtual Task<CreateConnectClientAddInResponse> CreateConnectClientAddInAsync(CreateConnectClientAddInRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateConnectClientAddInRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateConnectClientAddInResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateConnectClientAddInResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateConnectionAlias
 
 
@@ -824,6 +938,77 @@ namespace Amazon.WorkSpaces
 
         #endregion
         
+        #region  CreateStandbyWorkspaces
+
+
+        /// <summary>
+        /// Creates a standby WorkSpace in a secondary Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateStandbyWorkspaces service method.</param>
+        /// 
+        /// <returns>The response from the CreateStandbyWorkspaces service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.OperationNotSupportedException">
+        /// This operation is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceLimitExceededException">
+        /// Your resource limits have been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateStandbyWorkspaces">REST API Reference for CreateStandbyWorkspaces Operation</seealso>
+        public virtual CreateStandbyWorkspacesResponse CreateStandbyWorkspaces(CreateStandbyWorkspacesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateStandbyWorkspacesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateStandbyWorkspacesResponseUnmarshaller.Instance;
+
+            return Invoke<CreateStandbyWorkspacesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a standby WorkSpace in a secondary Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateStandbyWorkspaces service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateStandbyWorkspaces service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.OperationNotSupportedException">
+        /// This operation is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceLimitExceededException">
+        /// Your resource limits have been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateStandbyWorkspaces">REST API Reference for CreateStandbyWorkspaces Operation</seealso>
+        public virtual Task<CreateStandbyWorkspacesResponse> CreateStandbyWorkspacesAsync(CreateStandbyWorkspacesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateStandbyWorkspacesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateStandbyWorkspacesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateStandbyWorkspacesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateTags
 
 
@@ -899,7 +1084,7 @@ namespace Amazon.WorkSpaces
         /// </para>
         ///  <note> <ul> <li> 
         /// <para>
-        /// Only Windows 10, Windows Sever 2016, and Windows Server 2019 WorkSpace images can
+        /// Only Windows 10, Windows Server 2016, and Windows Server 2019 WorkSpace images can
         /// be programmatically updated at this time.
         /// </para>
         ///  </li> <li> 
@@ -962,7 +1147,7 @@ namespace Amazon.WorkSpaces
         /// </para>
         ///  <note> <ul> <li> 
         /// <para>
-        /// Only Windows 10, Windows Sever 2016, and Windows Server 2019 WorkSpace images can
+        /// Only Windows 10, Windows Server 2016, and Windows Server 2019 WorkSpace images can
         /// be programmatically updated at this time.
         /// </para>
         ///  </li> <li> 
@@ -1097,6 +1282,89 @@ namespace Amazon.WorkSpaces
 
         #endregion
         
+        #region  CreateWorkspaceImage
+
+
+        /// <summary>
+        /// Creates a new WorkSpace image from an existing WorkSpace.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateWorkspaceImage service method.</param>
+        /// 
+        /// <returns>The response from the CreateWorkspaceImage service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidResourceStateException">
+        /// The state of the resource is not valid for this operation.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.OperationNotSupportedException">
+        /// This operation is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceAlreadyExistsException">
+        /// The specified resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceLimitExceededException">
+        /// Your resource limits have been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateWorkspaceImage">REST API Reference for CreateWorkspaceImage Operation</seealso>
+        public virtual CreateWorkspaceImageResponse CreateWorkspaceImage(CreateWorkspaceImageRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateWorkspaceImageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateWorkspaceImageResponseUnmarshaller.Instance;
+
+            return Invoke<CreateWorkspaceImageResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a new WorkSpace image from an existing WorkSpace.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateWorkspaceImage service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateWorkspaceImage service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidResourceStateException">
+        /// The state of the resource is not valid for this operation.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.OperationNotSupportedException">
+        /// This operation is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceAlreadyExistsException">
+        /// The specified resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceLimitExceededException">
+        /// Your resource limits have been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateWorkspaceImage">REST API Reference for CreateWorkspaceImage Operation</seealso>
+        public virtual Task<CreateWorkspaceImageResponse> CreateWorkspaceImageAsync(CreateWorkspaceImageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateWorkspaceImageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateWorkspaceImageResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateWorkspaceImageResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateWorkspaces
 
 
@@ -1107,6 +1375,13 @@ namespace Amazon.WorkSpaces
         /// <para>
         /// This operation is asynchronous and returns before the WorkSpaces are created.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <code>MANUAL</code> running mode value is only supported by Amazon WorkSpaces
+        /// Core. Contact your account team to be allow-listed to use this value. For more information,
+        /// see <a href="http://aws.amazon.com/workspaces/core/">Amazon WorkSpaces Core</a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateWorkspaces service method.</param>
         /// 
@@ -1135,6 +1410,13 @@ namespace Amazon.WorkSpaces
         /// <para>
         /// This operation is asynchronous and returns before the WorkSpaces are created.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <code>MANUAL</code> running mode value is only supported by Amazon WorkSpaces
+        /// Core. Contact your account team to be allow-listed to use this value. For more information,
+        /// see <a href="http://aws.amazon.com/workspaces/core/">Amazon WorkSpaces Core</a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateWorkspaces service method.</param>
         /// <param name="cancellationToken">
@@ -1156,6 +1438,142 @@ namespace Amazon.WorkSpaces
             options.ResponseUnmarshaller = CreateWorkspacesResponseUnmarshaller.Instance;
             
             return InvokeAsync<CreateWorkspacesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteClientBranding
+
+
+        /// <summary>
+        /// Deletes customized client branding. Client branding allows you to customize your WorkSpace's
+        /// client login portal. You can tailor your login portal company logo, the support email
+        /// address, support link, link to reset password, and a custom message for users trying
+        /// to sign in.
+        /// 
+        ///  
+        /// <para>
+        /// After you delete your customized client branding, your login portal reverts to the
+        /// default client branding.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteClientBranding service method.</param>
+        /// 
+        /// <returns>The response from the DeleteClientBranding service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DeleteClientBranding">REST API Reference for DeleteClientBranding Operation</seealso>
+        public virtual DeleteClientBrandingResponse DeleteClientBranding(DeleteClientBrandingRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteClientBrandingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteClientBrandingResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteClientBrandingResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes customized client branding. Client branding allows you to customize your WorkSpace's
+        /// client login portal. You can tailor your login portal company logo, the support email
+        /// address, support link, link to reset password, and a custom message for users trying
+        /// to sign in.
+        /// 
+        ///  
+        /// <para>
+        /// After you delete your customized client branding, your login portal reverts to the
+        /// default client branding.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteClientBranding service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteClientBranding service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DeleteClientBranding">REST API Reference for DeleteClientBranding Operation</seealso>
+        public virtual Task<DeleteClientBrandingResponse> DeleteClientBrandingAsync(DeleteClientBrandingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteClientBrandingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteClientBrandingResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteClientBrandingResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteConnectClientAddIn
+
+
+        /// <summary>
+        /// Deletes a client-add-in for Amazon Connect that is configured within a directory.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConnectClientAddIn service method.</param>
+        /// 
+        /// <returns>The response from the DeleteConnectClientAddIn service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DeleteConnectClientAddIn">REST API Reference for DeleteConnectClientAddIn Operation</seealso>
+        public virtual DeleteConnectClientAddInResponse DeleteConnectClientAddIn(DeleteConnectClientAddInRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteConnectClientAddInRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteConnectClientAddInResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteConnectClientAddInResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes a client-add-in for Amazon Connect that is configured within a directory.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConnectClientAddIn service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteConnectClientAddIn service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DeleteConnectClientAddIn">REST API Reference for DeleteConnectClientAddIn Operation</seealso>
+        public virtual Task<DeleteConnectClientAddInResponse> DeleteConnectClientAddInAsync(DeleteConnectClientAddInRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteConnectClientAddInRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteConnectClientAddInResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteConnectClientAddInResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1740,6 +2158,83 @@ namespace Amazon.WorkSpaces
 
         #endregion
         
+        #region  DescribeClientBranding
+
+
+        /// <summary>
+        /// Describes the specified client branding. Client branding allows you to customize the
+        /// log in page of various device types for your users. You can add your company logo,
+        /// the support email address, support link, link to reset password, and a custom message
+        /// for users trying to sign in.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Only device types that have branding information configured will be shown in the response.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeClientBranding service method.</param>
+        /// 
+        /// <returns>The response from the DescribeClientBranding service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeClientBranding">REST API Reference for DescribeClientBranding Operation</seealso>
+        public virtual DescribeClientBrandingResponse DescribeClientBranding(DescribeClientBrandingRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeClientBrandingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeClientBrandingResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeClientBrandingResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Describes the specified client branding. Client branding allows you to customize the
+        /// log in page of various device types for your users. You can add your company logo,
+        /// the support email address, support link, link to reset password, and a custom message
+        /// for users trying to sign in.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Only device types that have branding information configured will be shown in the response.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeClientBranding service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeClientBranding service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeClientBranding">REST API Reference for DescribeClientBranding Operation</seealso>
+        public virtual Task<DescribeClientBrandingResponse> DescribeClientBrandingAsync(DescribeClientBrandingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeClientBrandingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeClientBrandingResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeClientBrandingResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeClientProperties
 
 
@@ -1795,6 +2290,65 @@ namespace Amazon.WorkSpaces
             options.ResponseUnmarshaller = DescribeClientPropertiesResponseUnmarshaller.Instance;
             
             return InvokeAsync<DescribeClientPropertiesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeConnectClientAddIns
+
+
+        /// <summary>
+        /// Retrieves a list of Amazon Connect client add-ins that have been created.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeConnectClientAddIns service method.</param>
+        /// 
+        /// <returns>The response from the DescribeConnectClientAddIns service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeConnectClientAddIns">REST API Reference for DescribeConnectClientAddIns Operation</seealso>
+        public virtual DescribeConnectClientAddInsResponse DescribeConnectClientAddIns(DescribeConnectClientAddInsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeConnectClientAddInsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeConnectClientAddInsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeConnectClientAddInsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves a list of Amazon Connect client add-ins that have been created.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeConnectClientAddIns service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeConnectClientAddIns service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeConnectClientAddIns">REST API Reference for DescribeConnectClientAddIns Operation</seealso>
+        public virtual Task<DescribeConnectClientAddInsResponse> DescribeConnectClientAddInsAsync(DescribeConnectClientAddInsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeConnectClientAddInsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeConnectClientAddInsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeConnectClientAddInsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2709,14 +3263,139 @@ namespace Amazon.WorkSpaces
 
         #endregion
         
+        #region  ImportClientBranding
+
+
+        /// <summary>
+        /// Imports client branding. Client branding allows you to customize your WorkSpace's
+        /// client login portal. You can tailor your login portal company logo, the support email
+        /// address, support link, link to reset password, and a custom message for users trying
+        /// to sign in.
+        /// 
+        ///  
+        /// <para>
+        /// After you import client branding, the default branding experience for the specified
+        /// platform type is replaced with the imported experience
+        /// </para>
+        ///  <note> <ul> <li> 
+        /// <para>
+        /// You must specify at least one platform type when importing client branding.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You can import up to 6 MB of data with each request. If your request exceeds this
+        /// limit, you can import client branding for different platform types using separate
+        /// requests.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// In each platform type, the <code>SupportEmail</code> and <code>SupportLink</code>
+        /// parameters are mutually exclusive. You can specify only one parameter for each platform
+        /// type, but not both.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Imported data can take up to a minute to appear in the WorkSpaces client.
+        /// </para>
+        ///  </li> </ul> </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ImportClientBranding service method.</param>
+        /// 
+        /// <returns>The response from the ImportClientBranding service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceLimitExceededException">
+        /// Your resource limits have been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ImportClientBranding">REST API Reference for ImportClientBranding Operation</seealso>
+        public virtual ImportClientBrandingResponse ImportClientBranding(ImportClientBrandingRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ImportClientBrandingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ImportClientBrandingResponseUnmarshaller.Instance;
+
+            return Invoke<ImportClientBrandingResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Imports client branding. Client branding allows you to customize your WorkSpace's
+        /// client login portal. You can tailor your login portal company logo, the support email
+        /// address, support link, link to reset password, and a custom message for users trying
+        /// to sign in.
+        /// 
+        ///  
+        /// <para>
+        /// After you import client branding, the default branding experience for the specified
+        /// platform type is replaced with the imported experience
+        /// </para>
+        ///  <note> <ul> <li> 
+        /// <para>
+        /// You must specify at least one platform type when importing client branding.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You can import up to 6 MB of data with each request. If your request exceeds this
+        /// limit, you can import client branding for different platform types using separate
+        /// requests.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// In each platform type, the <code>SupportEmail</code> and <code>SupportLink</code>
+        /// parameters are mutually exclusive. You can specify only one parameter for each platform
+        /// type, but not both.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Imported data can take up to a minute to appear in the WorkSpaces client.
+        /// </para>
+        ///  </li> </ul> </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ImportClientBranding service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ImportClientBranding service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceLimitExceededException">
+        /// Your resource limits have been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ImportClientBranding">REST API Reference for ImportClientBranding Operation</seealso>
+        public virtual Task<ImportClientBrandingResponse> ImportClientBrandingAsync(ImportClientBrandingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ImportClientBrandingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ImportClientBrandingResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ImportClientBrandingResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ImportWorkspaceImage
 
 
         /// <summary>
-        /// Imports the specified Windows 10 Bring Your Own License (BYOL) image into Amazon WorkSpaces.
-        /// The image must be an already licensed Amazon EC2 image that is in your Amazon Web
-        /// Services account, and you must own the image. For more information about creating
-        /// BYOL images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">
+        /// Imports the specified Windows 10 or 11 Bring Your Own License (BYOL) image into Amazon
+        /// WorkSpaces. The image must be an already licensed Amazon EC2 image that is in your
+        /// Amazon Web Services account, and you must own the image. For more information about
+        /// creating BYOL images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">
         /// Bring Your Own Windows Desktop Licenses</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ImportWorkspaceImage service method.</param>
@@ -2752,10 +3431,10 @@ namespace Amazon.WorkSpaces
 
 
         /// <summary>
-        /// Imports the specified Windows 10 Bring Your Own License (BYOL) image into Amazon WorkSpaces.
-        /// The image must be an already licensed Amazon EC2 image that is in your Amazon Web
-        /// Services account, and you must own the image. For more information about creating
-        /// BYOL images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">
+        /// Imports the specified Windows 10 or 11 Bring Your Own License (BYOL) image into Amazon
+        /// WorkSpaces. The image must be an already licensed Amazon EC2 image that is in your
+        /// Amazon Web Services account, and you must own the image. For more information about
+        /// creating BYOL images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">
         /// Bring Your Own Windows Desktop Licenses</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ImportWorkspaceImage service method.</param>
@@ -3059,6 +3738,73 @@ namespace Amazon.WorkSpaces
 
         #endregion
         
+        #region  ModifyCertificateBasedAuthProperties
+
+
+        /// <summary>
+        /// Modifies the properties of the certificate-based authentication you want to use with
+        /// your WorkSpaces.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyCertificateBasedAuthProperties service method.</param>
+        /// 
+        /// <returns>The response from the ModifyCertificateBasedAuthProperties service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.OperationNotSupportedException">
+        /// This operation is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifyCertificateBasedAuthProperties">REST API Reference for ModifyCertificateBasedAuthProperties Operation</seealso>
+        public virtual ModifyCertificateBasedAuthPropertiesResponse ModifyCertificateBasedAuthProperties(ModifyCertificateBasedAuthPropertiesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyCertificateBasedAuthPropertiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyCertificateBasedAuthPropertiesResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyCertificateBasedAuthPropertiesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Modifies the properties of the certificate-based authentication you want to use with
+        /// your WorkSpaces.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyCertificateBasedAuthProperties service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyCertificateBasedAuthProperties service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.OperationNotSupportedException">
+        /// This operation is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifyCertificateBasedAuthProperties">REST API Reference for ModifyCertificateBasedAuthProperties Operation</seealso>
+        public virtual Task<ModifyCertificateBasedAuthPropertiesResponse> ModifyCertificateBasedAuthPropertiesAsync(ModifyCertificateBasedAuthPropertiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyCertificateBasedAuthPropertiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyCertificateBasedAuthPropertiesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ModifyCertificateBasedAuthPropertiesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ModifyClientProperties
 
 
@@ -3114,6 +3860,75 @@ namespace Amazon.WorkSpaces
             options.ResponseUnmarshaller = ModifyClientPropertiesResponseUnmarshaller.Instance;
             
             return InvokeAsync<ModifyClientPropertiesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ModifySamlProperties
+
+
+        /// <summary>
+        /// Modifies multiple properties related to SAML 2.0 authentication, including the enablement
+        /// status, user access URL, and relay state parameter name that are used for configuring
+        /// federation with an SAML 2.0 identity provider.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifySamlProperties service method.</param>
+        /// 
+        /// <returns>The response from the ModifySamlProperties service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.OperationNotSupportedException">
+        /// This operation is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifySamlProperties">REST API Reference for ModifySamlProperties Operation</seealso>
+        public virtual ModifySamlPropertiesResponse ModifySamlProperties(ModifySamlPropertiesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifySamlPropertiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifySamlPropertiesResponseUnmarshaller.Instance;
+
+            return Invoke<ModifySamlPropertiesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Modifies multiple properties related to SAML 2.0 authentication, including the enablement
+        /// status, user access URL, and relay state parameter name that are used for configuring
+        /// federation with an SAML 2.0 identity provider.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifySamlProperties service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifySamlProperties service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.OperationNotSupportedException">
+        /// This operation is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifySamlProperties">REST API Reference for ModifySamlProperties Operation</seealso>
+        public virtual Task<ModifySamlPropertiesResponse> ModifySamlPropertiesAsync(ModifySamlPropertiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifySamlPropertiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifySamlPropertiesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ModifySamlPropertiesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3309,7 +4124,15 @@ namespace Amazon.WorkSpaces
         /// <summary>
         /// Modifies the specified WorkSpace properties. For important information about how to
         /// modify the size of the root and user volumes, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/modify-workspaces.html">
-        /// Modify a WorkSpace</a>.
+        /// Modify a WorkSpace</a>. 
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The <code>MANUAL</code> running mode value is only supported by Amazon WorkSpaces
+        /// Core. Contact your account team to be allow-listed to use this value. For more information,
+        /// see <a href="http://aws.amazon.com/workspaces/core/">Amazon WorkSpaces Core</a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyWorkspaceProperties service method.</param>
         /// 
@@ -3351,7 +4174,15 @@ namespace Amazon.WorkSpaces
         /// <summary>
         /// Modifies the specified WorkSpace properties. For important information about how to
         /// modify the size of the root and user volumes, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/modify-workspaces.html">
-        /// Modify a WorkSpace</a>.
+        /// Modify a WorkSpace</a>. 
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The <code>MANUAL</code> running mode value is only supported by Amazon WorkSpaces
+        /// Core. Contact your account team to be allow-listed to use this value. For more information,
+        /// see <a href="http://aws.amazon.com/workspaces/core/">Amazon WorkSpaces Core</a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyWorkspaceProperties service method.</param>
         /// <param name="cancellationToken">
@@ -3417,6 +4248,9 @@ namespace Amazon.WorkSpaces
         /// <exception cref="Amazon.WorkSpaces.Model.InvalidResourceStateException">
         /// The state of the resource is not valid for this operation.
         /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.OperationNotSupportedException">
+        /// This operation is not supported.
+        /// </exception>
         /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
         /// The resource could not be found.
         /// </exception>
@@ -3454,6 +4288,9 @@ namespace Amazon.WorkSpaces
         /// <exception cref="Amazon.WorkSpaces.Model.InvalidResourceStateException">
         /// The state of the resource is not valid for this operation.
         /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.OperationNotSupportedException">
+        /// This operation is not supported.
+        /// </exception>
         /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
         /// The resource could not be found.
         /// </exception>
@@ -3487,6 +4324,9 @@ namespace Amazon.WorkSpaces
         /// <param name="request">Container for the necessary parameters to execute the RebootWorkspaces service method.</param>
         /// 
         /// <returns>The response from the RebootWorkspaces service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.OperationNotSupportedException">
+        /// This operation is not supported.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/RebootWorkspaces">REST API Reference for RebootWorkspaces Operation</seealso>
         public virtual RebootWorkspacesResponse RebootWorkspaces(RebootWorkspacesRequest request)
         {
@@ -3516,6 +4356,9 @@ namespace Amazon.WorkSpaces
         /// </param>
         /// 
         /// <returns>The response from the RebootWorkspaces service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.OperationNotSupportedException">
+        /// This operation is not supported.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/RebootWorkspaces">REST API Reference for RebootWorkspaces Operation</seealso>
         public virtual Task<RebootWorkspacesResponse> RebootWorkspacesAsync(RebootWorkspacesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -3554,6 +4397,9 @@ namespace Amazon.WorkSpaces
         /// <param name="request">Container for the necessary parameters to execute the RebuildWorkspaces service method.</param>
         /// 
         /// <returns>The response from the RebuildWorkspaces service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.OperationNotSupportedException">
+        /// This operation is not supported.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/RebuildWorkspaces">REST API Reference for RebuildWorkspaces Operation</seealso>
         public virtual RebuildWorkspacesResponse RebuildWorkspaces(RebuildWorkspacesRequest request)
         {
@@ -3591,6 +4437,9 @@ namespace Amazon.WorkSpaces
         /// </param>
         /// 
         /// <returns>The response from the RebuildWorkspaces service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.OperationNotSupportedException">
+        /// This operation is not supported.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/RebuildWorkspaces">REST API Reference for RebuildWorkspaces Operation</seealso>
         public virtual Task<RebuildWorkspacesResponse> RebuildWorkspacesAsync(RebuildWorkspacesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -3743,6 +4592,9 @@ namespace Amazon.WorkSpaces
         /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
         /// One or more parameter values are not valid.
         /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.OperationNotSupportedException">
+        /// This operation is not supported.
+        /// </exception>
         /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
         /// The resource could not be found.
         /// </exception>
@@ -3787,6 +4639,9 @@ namespace Amazon.WorkSpaces
         /// </exception>
         /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
         /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.OperationNotSupportedException">
+        /// This operation is not supported.
         /// </exception>
         /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
         /// The resource could not be found.
@@ -4091,6 +4946,67 @@ namespace Amazon.WorkSpaces
 
         #endregion
         
+        #region  UpdateConnectClientAddIn
+
+
+        /// <summary>
+        /// Updates a Amazon Connect client add-in. Use this action to update the name and endpoint
+        /// URL of a Amazon Connect client add-in.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateConnectClientAddIn service method.</param>
+        /// 
+        /// <returns>The response from the UpdateConnectClientAddIn service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/UpdateConnectClientAddIn">REST API Reference for UpdateConnectClientAddIn Operation</seealso>
+        public virtual UpdateConnectClientAddInResponse UpdateConnectClientAddIn(UpdateConnectClientAddInRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateConnectClientAddInRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateConnectClientAddInResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateConnectClientAddInResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates a Amazon Connect client add-in. Use this action to update the name and endpoint
+        /// URL of a Amazon Connect client add-in.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateConnectClientAddIn service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateConnectClientAddIn service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/UpdateConnectClientAddIn">REST API Reference for UpdateConnectClientAddIn Operation</seealso>
+        public virtual Task<UpdateConnectClientAddInResponse> UpdateConnectClientAddInAsync(UpdateConnectClientAddInRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateConnectClientAddInRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateConnectClientAddInResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateConnectClientAddInResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  UpdateConnectionAliasPermission
 
 
@@ -4314,6 +5230,9 @@ namespace Amazon.WorkSpaces
         /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
         /// One or more parameter values are not valid.
         /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.OperationNotSupportedException">
+        /// This operation is not supported.
+        /// </exception>
         /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
         /// The resource could not be found.
         /// </exception>
@@ -4355,6 +5274,9 @@ namespace Amazon.WorkSpaces
         /// </exception>
         /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
         /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.OperationNotSupportedException">
+        /// This operation is not supported.
         /// </exception>
         /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
         /// The resource could not be found.

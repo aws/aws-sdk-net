@@ -77,7 +77,10 @@ namespace Amazon.CloudFormation.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TypeConfigurationIdentifier.
+        /// Gets and sets the property TypeConfigurationIdentifier. 
+        /// <para>
+        /// Identifying information for the configuration of a CloudFormation extension.
+        /// </para>
         /// </summary>
         public TypeConfigurationIdentifier TypeConfigurationIdentifier
         {

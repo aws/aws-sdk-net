@@ -30,7 +30,7 @@ namespace Amazon.APIGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateModel operation.
-    /// Adds a new <a>Model</a> resource to an existing <a>RestApi</a> resource.
+    /// Adds a new Model resource to an existing RestApi resource.
     /// </summary>
     public partial class CreateModelRequest : AmazonAPIGatewayRequest
     {
@@ -43,7 +43,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property ContentType. 
         /// <para>
-        /// [Required] The content-type for the model.
+        /// The content-type for the model.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -80,7 +80,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// [Required] The name of the model. Must be alphanumeric.
+        /// The name of the model. Must be alphanumeric.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -99,7 +99,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property RestApiId. 
         /// <para>
-        /// [Required] The <a>RestApi</a> identifier under which the <a>Model</a> will be created.
+        /// The RestApi identifier under which the Model will be created.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -119,8 +119,7 @@ namespace Amazon.APIGateway.Model
         /// Gets and sets the property Schema. 
         /// <para>
         /// The schema for the model. For <code>application/json</code> models, this should be
-        /// <a href="https://tools.ietf.org/html/draft-zyp-json-schema-04" target="_blank">JSON
-        /// schema draft 4</a> model.
+        /// JSON schema draft 4 model.
         /// </para>
         /// </summary>
         public string Schema

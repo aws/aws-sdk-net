@@ -700,7 +700,7 @@ namespace Amazon.Util
         }
 
         public static void ClearTokenFlag()
-        {            
+        {    
             useNullToken = false;
         }
 
@@ -717,7 +717,7 @@ namespace Amazon.Util
             Dictionary<string, string> headers = null;
             if(token == null)
             {
-                token = FetchApiToken(DEFAULT_RETRIES);                
+                token = FetchApiToken(DEFAULT_RETRIES);    
             }
 
             if (!string.IsNullOrEmpty(token))

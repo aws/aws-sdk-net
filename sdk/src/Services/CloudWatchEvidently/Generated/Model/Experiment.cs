@@ -45,6 +45,7 @@ namespace Amazon.CloudWatchEvidently.Model
         private string _randomizationSalt;
         private long? _samplingRate;
         private ExperimentSchedule _schedule;
+        private string _segment;
         private ExperimentStatus _status;
         private string _statusReason;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
@@ -287,6 +288,25 @@ namespace Amazon.CloudWatchEvidently.Model
         internal bool IsSetSchedule()
         {
             return this._schedule != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Segment. 
+        /// <para>
+        /// The audience segment being used for the experiment, if a segment is being used.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=2048)]
+        public string Segment
+        {
+            get { return this._segment; }
+            set { this._segment = value; }
+        }
+
+        // Check to see if Segment property is set
+        internal bool IsSetSegment()
+        {
+            return this._segment != null;
         }
 
         /// <summary>

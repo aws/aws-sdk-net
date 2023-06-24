@@ -59,8 +59,8 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// A token to indicate the location of the next environment output in the array of environment
-        /// outputs, after the list of environment outputs that was previously requested.
+        /// A token that indicates the location of the next environment output in the array of
+        /// environment outputs, after the list of environment outputs that was previously requested.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=0)]

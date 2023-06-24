@@ -34,7 +34,7 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// VpcConfigRequest Marshaller
-    /// </summary>       
+    /// </summary>
     public class VpcConfigRequestMarshaller : IRequestMarshaller<VpcConfigRequest, JsonMarshallerContext> 
     {
         /// <summary>
@@ -94,7 +94,7 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static VpcConfigRequestMarshaller Instance = new VpcConfigRequestMarshaller();
 
     }

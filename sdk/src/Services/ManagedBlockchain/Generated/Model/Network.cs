@@ -51,7 +51,7 @@ namespace Amazon.ManagedBlockchain.Model
         /// <para>
         /// The Amazon Resource Name (ARN) of the network. For more information about ARNs and
         /// their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
+        /// Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1011)]
@@ -244,7 +244,7 @@ namespace Amazon.ManagedBlockchain.Model
         /// <summary>
         /// Gets and sets the property VotingPolicy. 
         /// <para>
-        /// The voting rules for the network to decide if a proposal is accepted.
+        /// The voting rules that the network uses to decide if a proposal is accepted.
         /// </para>
         /// </summary>
         public VotingPolicy VotingPolicy

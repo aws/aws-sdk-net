@@ -39,7 +39,7 @@ namespace Amazon.SSOAdmin.Model
         /// <summary>
         /// Gets and sets the property AttachedManagedPolicies. 
         /// <para>
-        /// The array of the <a>AttachedManagedPolicy</a> data type object.
+        /// An array of the <a>AttachedManagedPolicy</a> data type object.
         /// </para>
         /// </summary>
         public List<AttachedManagedPolicy> AttachedManagedPolicies

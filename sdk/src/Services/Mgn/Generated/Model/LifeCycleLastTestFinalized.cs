@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Mgn.Model
 {
     /// <summary>
-    /// Lifecycle last Test finlized.
+    /// Lifecycle last Test finalized.
     /// </summary>
     public partial class LifeCycleLastTestFinalized
     {

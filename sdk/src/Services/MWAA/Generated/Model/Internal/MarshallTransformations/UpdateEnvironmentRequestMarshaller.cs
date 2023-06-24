@@ -56,7 +56,7 @@ namespace Amazon.MWAA.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.MWAA");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-07-01";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-07-01";
             request.HttpMethod = "PATCH";
 
             if (!publicRequest.IsSetName())
@@ -176,6 +176,18 @@ namespace Amazon.MWAA.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.SourceBucketArn);
                 }
 
+                if(publicRequest.IsSetStartupScriptS3ObjectVersion())
+                {
+                    context.Writer.WritePropertyName("StartupScriptS3ObjectVersion");
+                    context.Writer.Write(publicRequest.StartupScriptS3ObjectVersion);
+                }
+
+                if(publicRequest.IsSetStartupScriptS3Path())
+                {
+                    context.Writer.WritePropertyName("StartupScriptS3Path");
+                    context.Writer.Write(publicRequest.StartupScriptS3Path);
+                }
+
                 if(publicRequest.IsSetWebserverAccessMode())
                 {
                     context.Writer.WritePropertyName("WebserverAccessMode");
@@ -188,7 +200,6 @@ namespace Amazon.MWAA.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.WeeklyMaintenanceWindowStart);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

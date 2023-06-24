@@ -46,11 +46,11 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property Values. 
         /// <para>
-        /// One or more key/value pairs or values to find in the query string. The maximum size
-        /// of each string is 128 characters. The comparison is case insensitive. The following
-        /// wildcard characters are supported: * (matches 0 or more characters) and ? (matches
-        /// exactly 1 character). To search for a literal '*' or '?' character in a query string,
-        /// you must escape these characters in <code>Values</code> using a '\' character.
+        /// The key/value pairs or values to find in the query string. The maximum size of each
+        /// string is 128 characters. The comparison is case insensitive. The following wildcard
+        /// characters are supported: * (matches 0 or more characters) and ? (matches exactly
+        /// 1 character). To search for a literal '*' or '?' character in a query string, you
+        /// must escape these characters in <code>Values</code> using a '\' character.
         /// </para>
         ///  
         /// <para>

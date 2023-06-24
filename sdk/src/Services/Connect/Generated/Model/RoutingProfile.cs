@@ -38,6 +38,8 @@ namespace Amazon.Connect.Model
         private string _instanceId;
         private List<MediaConcurrency> _mediaConcurrencies = new List<MediaConcurrency>();
         private string _name;
+        private long? _numberOfAssociatedQueues;
+        private long? _numberOfAssociatedUsers;
         private string _routingProfileArn;
         private string _routingProfileId;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
@@ -82,8 +84,8 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The identifier of the Amazon Connect instance. You can find the instanceId in the
-        /// ARN of the instance.
+        /// The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+        /// the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -138,6 +140,42 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Gets and sets the property NumberOfAssociatedQueues. 
+        /// <para>
+        /// The number of associated queues in routing profile.
+        /// </para>
+        /// </summary>
+        public long NumberOfAssociatedQueues
+        {
+            get { return this._numberOfAssociatedQueues.GetValueOrDefault(); }
+            set { this._numberOfAssociatedQueues = value; }
+        }
+
+        // Check to see if NumberOfAssociatedQueues property is set
+        internal bool IsSetNumberOfAssociatedQueues()
+        {
+            return this._numberOfAssociatedQueues.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NumberOfAssociatedUsers. 
+        /// <para>
+        /// The number of associated users in routing profile.
+        /// </para>
+        /// </summary>
+        public long NumberOfAssociatedUsers
+        {
+            get { return this._numberOfAssociatedUsers.GetValueOrDefault(); }
+            set { this._numberOfAssociatedUsers = value; }
+        }
+
+        // Check to see if NumberOfAssociatedUsers property is set
+        internal bool IsSetNumberOfAssociatedUsers()
+        {
+            return this._numberOfAssociatedUsers.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property RoutingProfileArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the routing profile.
@@ -176,7 +214,8 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// One or more tags.
+        /// The tags used to organize, track, or control access for this resource. For example,
+        /// { "tags": {"key1":"value1", "key2":"value2"} }.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

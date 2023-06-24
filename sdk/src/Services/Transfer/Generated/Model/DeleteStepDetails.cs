@@ -34,6 +34,7 @@ namespace Amazon.Transfer.Model
     public partial class DeleteStepDetails
     {
         private string _name;
+        private string _sourceFileLocation;
 
         /// <summary>
         /// Gets and sets the property Name. 
@@ -52,6 +53,37 @@ namespace Amazon.Transfer.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceFileLocation. 
+        /// <para>
+        /// Specifies which file to use as input to the workflow step: either the output from
+        /// the previous step, or the originally uploaded file for the workflow.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// To use the previous file as the input, enter <code>${previous.file}</code>. In this
+        /// case, this workflow step uses the output file from the previous workflow step as input.
+        /// This is the default value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To use the originally uploaded file location as input for this step, enter <code>${original.file}</code>.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        [AWSProperty(Max=256)]
+        public string SourceFileLocation
+        {
+            get { return this._sourceFileLocation; }
+            set { this._sourceFileLocation = value; }
+        }
+
+        // Check to see if SourceFileLocation property is set
+        internal bool IsSetSourceFileLocation()
+        {
+            return this._sourceFileLocation != null;
         }
 
     }

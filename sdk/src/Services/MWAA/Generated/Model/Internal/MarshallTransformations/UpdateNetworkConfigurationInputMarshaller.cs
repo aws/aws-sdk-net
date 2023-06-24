@@ -34,7 +34,7 @@ namespace Amazon.MWAA.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// UpdateNetworkConfigurationInput Marshaller
-    /// </summary>       
+    /// </summary>
     public class UpdateNetworkConfigurationInputMarshaller : IRequestMarshaller<UpdateNetworkConfigurationInput, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.MWAA.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static UpdateNetworkConfigurationInputMarshaller Instance = new UpdateNetworkConfigurationInputMarshaller();
 
     }

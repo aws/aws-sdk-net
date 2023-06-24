@@ -34,7 +34,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// HlsCaptionLanguageMapping Marshaller
-    /// </summary>       
+    /// </summary>
     public class HlsCaptionLanguageMappingMarshaller : IRequestMarshaller<HlsCaptionLanguageMapping, JsonMarshallerContext> 
     {
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static HlsCaptionLanguageMappingMarshaller Instance = new HlsCaptionLanguageMappingMarshaller();
 
     }

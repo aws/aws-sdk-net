@@ -34,7 +34,7 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// LifecycleEventConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class LifecycleEventConfigurationMarshaller : IRequestMarshaller<LifecycleEventConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static LifecycleEventConfigurationMarshaller Instance = new LifecycleEventConfigurationMarshaller();
 
     }

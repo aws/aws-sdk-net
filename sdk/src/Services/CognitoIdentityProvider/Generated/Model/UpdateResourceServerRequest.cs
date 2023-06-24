@@ -34,7 +34,7 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// 
     ///  <important> 
     /// <para>
-    /// If you don't provide a value for an attribute, it will be set to the default value.
+    /// If you don't provide a value for an attribute, it is set to the default value.
     /// </para>
     ///  </important>
     /// </summary>

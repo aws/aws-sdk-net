@@ -34,7 +34,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RelationalTable Marshaller
-    /// </summary>       
+    /// </summary>
     public class RelationalTableMarshaller : IRequestMarshaller<RelationalTable, JsonMarshallerContext> 
     {
         /// <summary>
@@ -89,7 +89,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RelationalTableMarshaller Instance = new RelationalTableMarshaller();
 
     }

@@ -63,6 +63,12 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
                     response.DomainName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("IsUnstructured", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    response.IsUnstructured = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("LastUpdatedAt", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
@@ -75,6 +81,12 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
                     response.ObjectTypeName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ObjectTypeNames", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    response.ObjectTypeNames = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Tags", targetDepth))
                 {
                     var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
@@ -85,6 +97,12 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Uri = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("WorkflowId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.WorkflowId = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

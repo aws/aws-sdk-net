@@ -30,7 +30,7 @@ namespace Amazon.APIGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the GetClientCertificate operation.
-    /// Gets information about the current <a>ClientCertificate</a> resource.
+    /// Gets information about the current ClientCertificate resource.
     /// </summary>
     public partial class GetClientCertificateRequest : AmazonAPIGatewayRequest
     {
@@ -39,7 +39,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property ClientCertificateId. 
         /// <para>
-        /// [Required] The identifier of the <a>ClientCertificate</a> resource to be described.
+        /// The identifier of the ClientCertificate resource to be described.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

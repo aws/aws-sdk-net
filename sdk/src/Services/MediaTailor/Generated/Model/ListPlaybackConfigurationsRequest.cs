@@ -30,11 +30,9 @@ namespace Amazon.MediaTailor.Model
 {
     /// <summary>
     /// Container for the parameters to the ListPlaybackConfigurations operation.
-    /// Returns a list of the playback configurations defined in AWS Elemental MediaTailor.
-    /// You can specify a maximum number of configurations to return at a time. The default
-    /// maximum is 50. Results are returned in pagefuls. If MediaTailor has more configurations
-    /// than the specified maximum, it provides parameters in the response that you can use
-    /// to retrieve the next pageful.
+    /// Retrieves existing playback configurations. For information about MediaTailor configurations,
+    /// see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/configurations.html">Working
+    /// with Configurations in AWS Elemental MediaTailor</a>.
     /// </summary>
     public partial class ListPlaybackConfigurationsRequest : AmazonMediaTailorRequest
     {
@@ -44,7 +42,10 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// Maximum number of records to return.
+        /// The maximum number of playback configurations that you want MediaTailor to return
+        /// in response to the current request. If there are more than <code>MaxResults</code>
+        /// playback configurations, use the value of <code>NextToken</code> in the response to
+        /// get the next page of results.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -63,8 +64,8 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Pagination token returned by the GET list request when results exceed the maximum
-        /// allowed. Use the token to fetch the next page of results.
+        /// Pagination token returned by the list request when results exceed the maximum allowed.
+        /// Use the token to fetch the next page of results.
         /// </para>
         /// </summary>
         public string NextToken

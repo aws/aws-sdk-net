@@ -34,7 +34,7 @@ namespace Amazon.ChimeSDKIdentity.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AppInstanceRetentionSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class AppInstanceRetentionSettingsMarshaller : IRequestMarshaller<AppInstanceRetentionSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.ChimeSDKIdentity.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AppInstanceRetentionSettingsMarshaller Instance = new AppInstanceRetentionSettingsMarshaller();
 
     }

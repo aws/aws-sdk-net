@@ -33,6 +33,8 @@ namespace Amazon.MediaConnect.Model
     /// </summary>
     public partial class Output
     {
+        private string _bridgeArn;
+        private List<int> _bridgePorts = new List<int>();
         private int? _dataTransferSubscriberFeePercent;
         private string _description;
         private string _destination;
@@ -46,6 +48,36 @@ namespace Amazon.MediaConnect.Model
         private int? _port;
         private Transport _transport;
         private VpcInterfaceAttachment _vpcInterfaceAttachment;
+
+        /// <summary>
+        /// Gets and sets the property BridgeArn. The ARN of the bridge that added this output.
+        /// </summary>
+        public string BridgeArn
+        {
+            get { return this._bridgeArn; }
+            set { this._bridgeArn = value; }
+        }
+
+        // Check to see if BridgeArn property is set
+        internal bool IsSetBridgeArn()
+        {
+            return this._bridgeArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BridgePorts. The bridge output ports currently in use.
+        /// </summary>
+        public List<int> BridgePorts
+        {
+            get { return this._bridgePorts; }
+            set { this._bridgePorts = value; }
+        }
+
+        // Check to see if BridgePorts property is set
+        internal bool IsSetBridgePorts()
+        {
+            return this._bridgePorts != null && this._bridgePorts.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property DataTransferSubscriberFeePercent. Percentage from 0-100

@@ -34,7 +34,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// FileAccessLog Marshaller
-    /// </summary>       
+    /// </summary>
     public class FileAccessLogMarshaller : IRequestMarshaller<FileAccessLog, JsonMarshallerContext> 
     {
         /// <summary>
@@ -45,6 +45,17 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(FileAccessLog requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetFormat())
+            {
+                context.Writer.WritePropertyName("format");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = LoggingFormatMarshaller.Instance;
+                marshaller.Marshall(requestObject.Format, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetPath())
             {
                 context.Writer.WritePropertyName("path");
@@ -55,7 +66,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static FileAccessLogMarshaller Instance = new FileAccessLogMarshaller();
 
     }

@@ -34,6 +34,7 @@ namespace Amazon.EMRContainers.Model
     public partial class MonitoringConfiguration
     {
         private CloudWatchMonitoringConfiguration _cloudWatchMonitoringConfiguration;
+        private ContainerLogRotationConfiguration _containerLogRotationConfiguration;
         private PersistentAppUI _persistentAppUI;
         private S3MonitoringConfiguration _s3MonitoringConfiguration;
 
@@ -53,6 +54,24 @@ namespace Amazon.EMRContainers.Model
         internal bool IsSetCloudWatchMonitoringConfiguration()
         {
             return this._cloudWatchMonitoringConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ContainerLogRotationConfiguration. 
+        /// <para>
+        /// Enable or disable container log rotation.
+        /// </para>
+        /// </summary>
+        public ContainerLogRotationConfiguration ContainerLogRotationConfiguration
+        {
+            get { return this._containerLogRotationConfiguration; }
+            set { this._containerLogRotationConfiguration = value; }
+        }
+
+        // Check to see if ContainerLogRotationConfiguration property is set
+        internal bool IsSetContainerLogRotationConfiguration()
+        {
+            return this._containerLogRotationConfiguration != null;
         }
 
         /// <summary>

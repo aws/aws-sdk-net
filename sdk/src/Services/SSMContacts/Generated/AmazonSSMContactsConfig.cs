@@ -17,22 +17,22 @@
  * Do not modify this file. This file is generated from the ssm-contacts-2021-05-03.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
-
+using Amazon.SSMContacts.Internal;
 
 namespace Amazon.SSMContacts
 {
     /// <summary>
     /// Configuration for accessing Amazon SSMContacts service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonSSMContactsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.2.58");
+            InternalSDKUtils.BuildUserAgentString("3.7.101.47");
 
         private string _userAgent = UserAgentString;
 
@@ -40,8 +40,10 @@ namespace Amazon.SSMContacts
         /// Default constructor
         /// </summary>
         public AmazonSSMContactsConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonSSMContactsDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "ssm-contacts";
+            this.EndpointProvider = new AmazonSSMContactsEndpointProvider();
         }
 
         /// <summary>
@@ -76,5 +78,6 @@ namespace Amazon.SSMContacts
                 return _userAgent;
             }
         }
+
     }
 }

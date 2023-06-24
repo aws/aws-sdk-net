@@ -34,7 +34,7 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ChannelMessageCallback Marshaller
-    /// </summary>       
+    /// </summary>
     public class ChannelMessageCallbackMarshaller : IRequestMarshaller<ChannelMessageCallback, JsonMarshallerContext> 
     {
         /// <summary>
@@ -51,6 +51,31 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Content);
             }
 
+            if(requestObject.IsSetContentType())
+            {
+                context.Writer.WritePropertyName("ContentType");
+                context.Writer.Write(requestObject.ContentType);
+            }
+
+            if(requestObject.IsSetMessageAttributes())
+            {
+                context.Writer.WritePropertyName("MessageAttributes");
+                context.Writer.WriteObjectStart();
+                foreach (var requestObjectMessageAttributesKvp in requestObject.MessageAttributes)
+                {
+                    context.Writer.WritePropertyName(requestObjectMessageAttributesKvp.Key);
+                    var requestObjectMessageAttributesValue = requestObjectMessageAttributesKvp.Value;
+
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = MessageAttributeValueMarshaller.Instance;
+                    marshaller.Marshall(requestObjectMessageAttributesValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetMessageId())
             {
                 context.Writer.WritePropertyName("MessageId");
@@ -63,11 +88,28 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Metadata);
             }
 
+            if(requestObject.IsSetPushNotification())
+            {
+                context.Writer.WritePropertyName("PushNotification");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = PushNotificationConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.PushNotification, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetSubChannelId())
+            {
+                context.Writer.WritePropertyName("SubChannelId");
+                context.Writer.Write(requestObject.SubChannelId);
+            }
+
         }
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ChannelMessageCallbackMarshaller Instance = new ChannelMessageCallbackMarshaller();
 
     }

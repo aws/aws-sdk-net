@@ -55,7 +55,7 @@ namespace Amazon.EBS.Model.Internal.MarshallTransformations
         public IRequest Marshall(ListSnapshotBlocksRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.EBS");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-11-02";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-11-02";
             request.HttpMethod = "GET";
 
             if (!publicRequest.IsSetSnapshotId())

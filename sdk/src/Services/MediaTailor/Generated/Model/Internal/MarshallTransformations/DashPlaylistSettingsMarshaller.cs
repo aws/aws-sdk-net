@@ -34,7 +34,7 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DashPlaylistSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class DashPlaylistSettingsMarshaller : IRequestMarshaller<DashPlaylistSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DashPlaylistSettingsMarshaller Instance = new DashPlaylistSettingsMarshaller();
 
     }

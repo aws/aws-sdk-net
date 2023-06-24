@@ -59,9 +59,12 @@ namespace Amazon.MediaTailor.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MaxDurationSeconds. The maximum allowed duration for the
-        /// pre-roll ad avail. AWS Elemental MediaTailor won't play pre-roll ads to exceed this
-        /// duration, regardless of the total duration of ads that the ADS returns.
+        /// Gets and sets the property MaxDurationSeconds. 
+        /// <para>
+        /// The maximum allowed duration for the pre-roll ad avail. AWS Elemental MediaTailor
+        /// won't play pre-roll ads to exceed this duration, regardless of the total duration
+        /// of ads that the ADS returns.
+        /// </para>
         /// </summary>
         public int MaxDurationSeconds
         {

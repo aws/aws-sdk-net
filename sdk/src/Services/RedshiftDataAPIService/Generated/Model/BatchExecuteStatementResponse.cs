@@ -39,12 +39,13 @@ namespace Amazon.RedshiftDataAPIService.Model
         private string _dbUser;
         private string _id;
         private string _secretArn;
+        private string _workgroupName;
 
         /// <summary>
         /// Gets and sets the property ClusterIdentifier. 
         /// <para>
-        /// The cluster identifier. This parameter is not returned when connecting to a serverless
-        /// endpoint. 
+        /// The cluster identifier. This element is not returned when connecting to a serverless
+        /// workgroup. 
         /// </para>
         /// </summary>
         public string ClusterIdentifier
@@ -149,6 +150,26 @@ namespace Amazon.RedshiftDataAPIService.Model
         internal bool IsSetSecretArn()
         {
             return this._secretArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WorkgroupName. 
+        /// <para>
+        /// The serverless workgroup name or Amazon Resource Name (ARN). This element is not returned
+        /// when connecting to a provisioned cluster.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=3, Max=128)]
+        public string WorkgroupName
+        {
+            get { return this._workgroupName; }
+            set { this._workgroupName = value; }
+        }
+
+        // Check to see if WorkgroupName property is set
+        internal bool IsSetWorkgroupName()
+        {
+            return this._workgroupName != null;
         }
 
     }

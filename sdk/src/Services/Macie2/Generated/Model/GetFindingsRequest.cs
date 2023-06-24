@@ -41,6 +41,7 @@ namespace Amazon.Macie2.Model
         /// Gets and sets the property FindingIds. 
         /// <para>
         /// An array of strings that lists the unique identifiers for the findings to retrieve.
+        /// You can specify as many as 50 unique identifiers in this array.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

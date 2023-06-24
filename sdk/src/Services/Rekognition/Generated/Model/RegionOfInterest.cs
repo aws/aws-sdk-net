@@ -29,19 +29,22 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Rekognition.Model
 {
     /// <summary>
-    /// Specifies a location within the frame that Rekognition checks for text. Uses a <code>BoundingBox</code>
-    /// object to set a region of the screen.
+    /// Specifies a location within the frame that Rekognition checks for objects of interest
+    /// such as text, labels, or faces. It uses a <code>BoundingBox</code> or <code>Polygon</code>
+    /// to set a region of the screen.
     /// 
     ///  
     /// <para>
-    /// A word is included in the region if the word is more than half in that region. If
-    /// there is more than one region, the word will be compared with all regions of the screen.
-    /// Any word more than half in a region is kept in the results.
+    /// A word, face, or label is included in the region if it is more than half in that region.
+    /// If there is more than one region, the word, face, or label is compared with all regions
+    /// of the screen. Any object of interest that is more than half in a region is kept in
+    /// the results.
     /// </para>
     /// </summary>
     public partial class RegionOfInterest
     {
         private BoundingBox _boundingBox;
+        private List<Point> _polygon = new List<Point>();
 
         /// <summary>
         /// Gets and sets the property BoundingBox. 
@@ -59,6 +62,25 @@ namespace Amazon.Rekognition.Model
         internal bool IsSetBoundingBox()
         {
             return this._boundingBox != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Polygon. 
+        /// <para>
+        ///  Specifies a shape made up of up to 10 <code>Point</code> objects to define a region
+        /// of interest. 
+        /// </para>
+        /// </summary>
+        public List<Point> Polygon
+        {
+            get { return this._polygon; }
+            set { this._polygon = value; }
+        }
+
+        // Check to see if Polygon property is set
+        internal bool IsSetPolygon()
+        {
+            return this._polygon != null && this._polygon.Count > 0; 
         }
 
     }

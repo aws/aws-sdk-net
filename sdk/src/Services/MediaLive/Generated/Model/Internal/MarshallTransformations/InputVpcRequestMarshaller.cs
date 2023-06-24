@@ -34,7 +34,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// InputVpcRequest Marshaller
-    /// </summary>       
+    /// </summary>
     public class InputVpcRequestMarshaller : IRequestMarshaller<InputVpcRequest, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static InputVpcRequestMarshaller Instance = new InputVpcRequestMarshaller();
 
     }

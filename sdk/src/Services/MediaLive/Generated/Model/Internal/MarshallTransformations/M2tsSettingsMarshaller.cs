@@ -34,7 +34,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// M2tsSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class M2tsSettingsMarshaller : IRequestMarshaller<M2tsSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -300,6 +300,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Scte35Pid);
             }
 
+            if(requestObject.IsSetScte35PrerollPullupMilliseconds())
+            {
+                context.Writer.WritePropertyName("scte35PrerollPullupMilliseconds");
+                context.Writer.Write(requestObject.Scte35PrerollPullupMilliseconds);
+            }
+
             if(requestObject.IsSetSegmentationMarkers())
             {
                 context.Writer.WritePropertyName("segmentationMarkers");
@@ -346,7 +352,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static M2tsSettingsMarshaller Instance = new M2tsSettingsMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AthenaDatasetDefinition Marshaller
-    /// </summary>       
+    /// </summary>
     public class AthenaDatasetDefinitionMarshaller : IRequestMarshaller<AthenaDatasetDefinition, JsonMarshallerContext> 
     {
         /// <summary>
@@ -97,7 +97,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AthenaDatasetDefinitionMarshaller Instance = new AthenaDatasetDefinitionMarshaller();
 
     }

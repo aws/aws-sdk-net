@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RSessionAppSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class RSessionAppSettingsMarshaller : IRequestMarshaller<RSessionAppSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -45,11 +45,38 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(RSessionAppSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetCustomImages())
+            {
+                context.Writer.WritePropertyName("CustomImages");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectCustomImagesListValue in requestObject.CustomImages)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = CustomImageMarshaller.Instance;
+                    marshaller.Marshall(requestObjectCustomImagesListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetDefaultResourceSpec())
+            {
+                context.Writer.WritePropertyName("DefaultResourceSpec");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ResourceSpecMarshaller.Instance;
+                marshaller.Marshall(requestObject.DefaultResourceSpec, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RSessionAppSettingsMarshaller Instance = new RSessionAppSettingsMarshaller();
 
     }

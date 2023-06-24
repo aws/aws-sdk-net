@@ -30,7 +30,7 @@ namespace Amazon.Kendra.Model
 {
     /// <summary>
     /// Gathers information about when a particular result was clicked by a user. Your application
-    /// uses the <code>SubmitFeedback</code> operation to provide click information.
+    /// uses the <code>SubmitFeedback</code> API to provide click information.
     /// </summary>
     public partial class ClickFeedback
     {
@@ -40,7 +40,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property ClickTime. 
         /// <para>
-        /// The Unix timestamp of the date and time that the result was clicked.
+        /// The Unix timestamp when the result was clicked.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -59,7 +59,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property ResultId. 
         /// <para>
-        /// The unique identifier of the search result that was clicked.
+        /// The identifier of the search result that was clicked.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=73)]

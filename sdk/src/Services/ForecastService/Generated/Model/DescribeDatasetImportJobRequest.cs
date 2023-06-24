@@ -30,7 +30,8 @@ namespace Amazon.ForecastService.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeDatasetImportJob operation.
-    /// Describes a dataset import job created using the <a>CreateDatasetImportJob</a> operation.
+    /// Describes a dataset import job created using the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetImportJob.html">CreateDatasetImportJob</a>
+    /// operation.
     /// 
     ///  
     /// <para>

@@ -63,6 +63,12 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
                     response.MessageId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SubChannelId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.SubChannelId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;
@@ -89,6 +95,10 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
                 if (errorResponse.Code != null && errorResponse.Code.Equals("BadRequestException"))
                 {
                     return BadRequestExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ConflictException"))
+                {
+                    return ConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ForbiddenException"))
                 {

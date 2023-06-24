@@ -56,7 +56,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.IoT");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-05-28";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-05-28";
             request.HttpMethod = "POST";
 
             
@@ -75,6 +75,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("caCertificate");
                     context.Writer.Write(publicRequest.CaCertificate);
+                }
+
+                if(publicRequest.IsSetCertificateMode())
+                {
+                    context.Writer.WritePropertyName("certificateMode");
+                    context.Writer.Write(publicRequest.CertificateMode);
                 }
 
                 if(publicRequest.IsSetRegistrationConfig())
@@ -110,7 +116,6 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.VerificationCertificate);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

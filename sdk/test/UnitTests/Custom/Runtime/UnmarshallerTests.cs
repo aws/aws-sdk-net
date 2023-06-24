@@ -164,7 +164,7 @@ namespace AWSSDK.UnitTests
         {
             string jsonResponse = @"
             {
-                ""Cluster"": {        
+                ""Cluster"": {    
                     ""Configurations"": [                    
                         {
                             ""Classification"": ""value1"",
@@ -284,6 +284,71 @@ namespace AWSSDK.UnitTests
             var unmarshaller = new S3ErrorResponseUnmarshaller();
             S3ErrorResponse response = unmarshaller.Unmarshall(context);
             Assert.IsNotNull(response);
+        }
+
+        [TestMethod]
+        [DataRow("x-amz-checksum-sha1", "e1AsOh9IyGCa4hLN+2Od7jlnP14=", CoreChecksumAlgorithm.SHA1)]
+        [DataRow("x-amz-checksum-sha256", "ZOyIygCyaOW6GjVnihtTFtIS9PNmskdyMlNKiuyjfzw=", CoreChecksumAlgorithm.SHA256)]
+        [DataRow("x-amz-checksum-crc32", "i9aeUg==", CoreChecksumAlgorithm.CRC32)]
+        [DataRow("x-amz-checksum-crc32c", "crUfeA==", CoreChecksumAlgorithm.CRC32C)]
+        public void TestGetObjectResponseValidChecksum(string header, string checksumValue, CoreChecksumAlgorithm expectedAlgorithm)
+        {
+            Tester.Reset();
+
+            var context = CreateTestContext();
+            var request = new GetObjectRequest
+            { 
+                BucketName = "foo", 
+                Key = "bar",
+                ChecksumMode =  ChecksumMode.ENABLED
+            };
+
+            ((RequestContext)context.RequestContext).OriginalRequest = request;
+            ((RequestContext)context.RequestContext).Request = new GetObjectRequestMarshaller().Marshall(request);
+            ((RequestContext)context.RequestContext).Unmarshaller = GetObjectResponseUnmarshaller.Instance;
+
+            var expectedResponseBody = "Hello world";
+            var response = MockWebResponse.Create(HttpStatusCode.OK, new Dictionary<string, string>(), expectedResponseBody);
+            response.Headers.Add("Content-Length", "11");
+            response.Headers.Add(header,checksumValue);
+            
+            context.ResponseContext.HttpResponse = new HttpWebRequestResponseData(response);
+
+            RuntimePipeline.InvokeSync(context);
+
+            Assert.AreEqual(1, Tester.CallCount);
+            Assert.IsInstanceOfType(context.ResponseContext.Response, typeof(GetObjectResponse));
+
+            var getObjectResponse = context.ResponseContext.Response as GetObjectResponse;
+            Assert.AreEqual(expectedAlgorithm, getObjectResponse.ResponseMetadata.ChecksumAlgorithm);
+            Assert.AreEqual(ChecksumValidationStatus.PENDING_RESPONSE_READ, getObjectResponse.ResponseMetadata.ChecksumValidationStatus);
+
+            // Read the stream to the end to finish checksum calcuation and validation
+            // This implicitly asserts that the checksum is valid because an exception would be thrown otherwise
+            var responseBody =  new StreamReader(getObjectResponse.ResponseStream).ReadToEnd();
+            Assert.AreEqual(expectedResponseBody, responseBody);
+        }
+
+        [TestMethod]
+        [DataRow("x-amz-checksum-sha1", "invalid=", CoreChecksumAlgorithm.SHA1)]
+        [DataRow("x-amz-checksum-sha256", "invalid=", CoreChecksumAlgorithm.SHA256)]
+        [DataRow("x-amz-checksum-crc32", "invalid=", CoreChecksumAlgorithm.CRC32)]
+        [DataRow("x-amz-checksum-crc32c", "invalid=", CoreChecksumAlgorithm.CRC32C)]
+        public void TestGetObjectResponseInvalidChecksum_ThrowsException(string header, string checksumValue, CoreChecksumAlgorithm expectedAlgorithm)
+        {
+            Exception exception = null;
+            try
+            {
+                TestGetObjectResponseValidChecksum(header, checksumValue, expectedAlgorithm);
+            }
+            catch (Exception e)
+            {
+                exception = e;
+            }
+
+            Assert.IsNotNull(exception);
+            Assert.IsInstanceOfType(exception, typeof(AmazonClientException));
+            Assert.AreEqual(exception.Message, "Expected hash not equal to calculated hash");
         }
 
         public class FakeResponseData : IWebResponseData

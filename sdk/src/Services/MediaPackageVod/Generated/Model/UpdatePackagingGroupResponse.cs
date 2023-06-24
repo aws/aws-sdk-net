@@ -33,12 +33,30 @@ namespace Amazon.MediaPackageVod.Model
     /// </summary>
     public partial class UpdatePackagingGroupResponse : AmazonWebServiceResponse
     {
+        private int? _approximateAssetCount;
         private string _arn;
         private Authorization _authorization;
+        private string _createdAt;
         private string _domainName;
         private EgressAccessLogs _egressAccessLogs;
         private string _id;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
+
+        /// <summary>
+        /// Gets and sets the property ApproximateAssetCount. The approximate asset count of the
+        /// PackagingGroup.
+        /// </summary>
+        public int ApproximateAssetCount
+        {
+            get { return this._approximateAssetCount.GetValueOrDefault(); }
+            set { this._approximateAssetCount = value; }
+        }
+
+        // Check to see if ApproximateAssetCount property is set
+        internal bool IsSetApproximateAssetCount()
+        {
+            return this._approximateAssetCount.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property Arn. The ARN of the PackagingGroup.
@@ -68,6 +86,21 @@ namespace Amazon.MediaPackageVod.Model
         internal bool IsSetAuthorization()
         {
             return this._authorization != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CreatedAt. The time the PackagingGroup was created.
+        /// </summary>
+        public string CreatedAt
+        {
+            get { return this._createdAt; }
+            set { this._createdAt = value; }
+        }
+
+        // Check to see if CreatedAt property is set
+        internal bool IsSetCreatedAt()
+        {
+            return this._createdAt != null;
         }
 
         /// <summary>

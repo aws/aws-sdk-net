@@ -63,33 +63,50 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property AllocationStrategy. 
         /// <para>
-        /// Indicates how to allocate the target Spot Instance capacity across the Spot Instance
-        /// pools specified by the Spot Fleet request.
+        /// The strategy that determines how to allocate the target Spot Instance capacity across
+        /// the Spot Instance pools specified by the Spot Fleet launch configuration. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-allocation-strategy.html">Allocation
+        /// strategies for Spot Instances</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
-        ///  
+        ///  <dl> <dt>priceCapacityOptimized (recommended)</dt> <dd> 
         /// <para>
-        /// If the allocation strategy is <code>lowestPrice</code>, Spot Fleet launches instances
-        /// from the Spot Instance pools with the lowest price. This is the default allocation
-        /// strategy.
+        /// Spot Fleet identifies the pools with the highest capacity availability for the number
+        /// of instances that are launching. This means that we will request Spot Instances from
+        /// the pools that we believe have the lowest chance of interruption in the near term.
+        /// Spot Fleet then requests Spot Instances from the lowest priced of these pools.
         /// </para>
-        ///  
+        ///  </dd> <dt>capacityOptimized</dt> <dd> 
         /// <para>
-        /// If the allocation strategy is <code>diversified</code>, Spot Fleet launches instances
-        /// from all the Spot Instance pools that you specify.
-        /// </para>
-        ///  
-        /// <para>
-        /// If the allocation strategy is <code>capacityOptimized</code> (recommended), Spot Fleet
-        /// launches instances from Spot Instance pools with optimal capacity for the number of
-        /// instances that are launching. To give certain instance types a higher chance of launching
-        /// first, use <code>capacityOptimizedPrioritized</code>. Set a priority for each instance
-        /// type by using the <code>Priority</code> parameter for <code>LaunchTemplateOverrides</code>.
-        /// You can assign the same priority to different <code>LaunchTemplateOverrides</code>.
-        /// EC2 implements the priorities on a best-effort basis, but optimizes for capacity first.
-        /// <code>capacityOptimizedPrioritized</code> is supported only if your Spot Fleet uses
-        /// a launch template. Note that if the <code>OnDemandAllocationStrategy</code> is set
-        /// to <code>prioritized</code>, the same priority is applied when fulfilling On-Demand
+        /// Spot Fleet identifies the pools with the highest capacity availability for the number
+        /// of instances that are launching. This means that we will request Spot Instances from
+        /// the pools that we believe have the lowest chance of interruption in the near term.
+        /// To give certain instance types a higher chance of launching first, use <code>capacityOptimizedPrioritized</code>.
+        /// Set a priority for each instance type by using the <code>Priority</code> parameter
+        /// for <code>LaunchTemplateOverrides</code>. You can assign the same priority to different
+        /// <code>LaunchTemplateOverrides</code>. EC2 implements the priorities on a best-effort
+        /// basis, but optimizes for capacity first. <code>capacityOptimizedPrioritized</code>
+        /// is supported only if your Spot Fleet uses a launch template. Note that if the <code>OnDemandAllocationStrategy</code>
+        /// is set to <code>prioritized</code>, the same priority is applied when fulfilling On-Demand
         /// capacity.
+        /// </para>
+        ///  </dd> <dt>diversified</dt> <dd> 
+        /// <para>
+        /// Spot Fleet requests instances from all of the Spot Instance pools that you specify.
+        /// </para>
+        ///  </dd> <dt>lowestPrice</dt> <dd> 
+        /// <para>
+        /// Spot Fleet requests instances from the lowest priced Spot Instance pool that has available
+        /// capacity. If the lowest priced pool doesn't have available capacity, the Spot Instances
+        /// come from the next lowest priced pool that has available capacity. If a pool runs
+        /// out of capacity before fulfilling your desired capacity, Spot Fleet will continue
+        /// to fulfill your request by drawing from the next lowest priced pool. To ensure that
+        /// your desired capacity is met, you might receive Spot Instances from several pools.
+        /// Because this strategy only considers instance price and not capacity availability,
+        /// it might lead to high interruption rates.
+        /// </para>
+        ///  </dd> </dl> 
+        /// <para>
+        /// Default: <code>lowestPrice</code> 
         /// </para>
         /// </summary>
         public AllocationStrategy AllocationStrategy
@@ -146,8 +163,12 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ExcessCapacityTerminationPolicy. 
         /// <para>
-        /// Indicates whether running Spot Instances should be terminated if you decrease the
-        /// target capacity of the Spot Fleet request below the current size of the Spot Fleet.
+        /// Indicates whether running instances should be terminated if you decrease the target
+        /// capacity of the Spot Fleet request below the current size of the Spot Fleet.
+        /// </para>
+        ///  
+        /// <para>
+        /// Supported only for fleets of type <code>maintain</code>.
         /// </para>
         /// </summary>
         public ExcessCapacityTerminationPolicy ExcessCapacityTerminationPolicy
@@ -187,9 +208,8 @@ namespace Amazon.EC2.Model
         /// The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role that
         /// grants the Spot Fleet the permission to request, launch, terminate, and tag instances
         /// on your behalf. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html#spot-fleet-prerequisites">Spot
-        /// Fleet prerequisites</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>. Spot
-        /// Fleet can terminate Spot Instances on your behalf when you cancel its Spot Fleet request
-        /// using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CancelSpotFleetRequests">CancelSpotFleetRequests</a>
+        /// Fleet prerequisites</a> in the <i>Amazon EC2 User Guide</i>. Spot Fleet can terminate
+        /// Spot Instances on your behalf when you cancel its Spot Fleet request using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CancelSpotFleetRequests">CancelSpotFleetRequests</a>
         /// or when the Spot Fleet request expires, if you set <code>TerminateInstancesWithExpiration</code>.
         /// </para>
         /// </summary>
@@ -472,9 +492,16 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SpotPrice. 
         /// <para>
-        /// The maximum price per unit hour that you are willing to pay for a Spot Instance. The
-        /// default is the On-Demand price.
+        /// The maximum price per unit hour that you are willing to pay for a Spot Instance. We
+        /// do not recommend using this parameter because it can lead to increased interruptions.
+        /// If you do not specify this parameter, you will pay the current Spot price.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// If you specify a maximum price, your instances will be interrupted more frequently
+        /// than if you do not specify this parameter.
+        /// </para>
+        ///  </important>
         /// </summary>
         public string SpotPrice
         {
@@ -495,9 +522,9 @@ namespace Amazon.EC2.Model
         /// must be <code>spot-fleet-request</code>, otherwise the Spot Fleet request fails. To
         /// tag instances at launch, specify the tags in the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template">launch
         /// template</a> (valid only if you use <code>LaunchTemplateConfigs</code>) or in the
-        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotFleetTagSpecification.html">
-        /// <code>SpotFleetTagSpecification</code> </a> (valid only if you use <code>LaunchSpecifications</code>).
-        /// For information about tagging after launch, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging
+        /// <code> <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotFleetTagSpecification.html">SpotFleetTagSpecification</a>
+        /// </code> (valid only if you use <code>LaunchSpecifications</code>). For information
+        /// about tagging after launch, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging
         /// Your Resources</a>.
         /// </para>
         /// </summary>
@@ -538,7 +565,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property TargetCapacityUnitType. 
         /// <para>
-        /// The unit for the target capacity.
+        /// The unit for the target capacity. <code>TargetCapacityUnitType</code> can only be
+        /// specified when <code>InstanceRequirements</code> is specified.
         /// </para>
         ///  
         /// <para>

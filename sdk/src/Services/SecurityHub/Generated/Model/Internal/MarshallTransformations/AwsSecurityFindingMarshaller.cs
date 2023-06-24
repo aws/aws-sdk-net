@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AwsSecurityFinding Marshaller
-    /// </summary>       
+    /// </summary>
     public class AwsSecurityFindingMarshaller : IRequestMarshaller<AwsSecurityFinding, JsonMarshallerContext> 
     {
         /// <summary>
@@ -295,6 +295,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetSample())
+            {
+                context.Writer.WritePropertyName("Sample");
+                context.Writer.Write(requestObject.Sample);
+            }
+
             if(requestObject.IsSetSchemaVersion())
             {
                 context.Writer.WritePropertyName("SchemaVersion");
@@ -328,6 +334,22 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
                     var marshaller = ThreatIntelIndicatorMarshaller.Instance;
                     marshaller.Marshall(requestObjectThreatIntelIndicatorsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetThreats())
+            {
+                context.Writer.WritePropertyName("Threats");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectThreatsListValue in requestObject.Threats)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ThreatMarshaller.Instance;
+                    marshaller.Marshall(requestObjectThreatsListValue, context);
 
                     context.Writer.WriteObjectEnd();
                 }
@@ -414,7 +436,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AwsSecurityFindingMarshaller Instance = new AwsSecurityFindingMarshaller();
 
     }

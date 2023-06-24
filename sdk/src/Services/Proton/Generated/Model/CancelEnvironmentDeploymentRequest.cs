@@ -31,8 +31,8 @@ namespace Amazon.Proton.Model
     /// <summary>
     /// Container for the parameters to the CancelEnvironmentDeployment operation.
     /// Attempts to cancel an environment deployment on an <a>UpdateEnvironment</a> action,
-    /// if the deployment is <code>IN_PROGRESS</code>. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-update.html">Update
-    /// an environment</a> in the <i>Proton Administrator guide</i>.
+    /// if the deployment is <code>IN_PROGRESS</code>. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-env-update.html">Update
+    /// an environment</a> in the <i>Proton User guide</i>.
     /// 
     ///  
     /// <para>

@@ -31,7 +31,8 @@ namespace Amazon.Kendra.Model
     /// <summary>
     /// Container for the parameters to the CreateExperience operation.
     /// Creates an Amazon Kendra experience such as a search application. For more information
-    /// on creating a search application experience, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building
+    /// on creating a search application experience, including using the Python and Java SDKs,
+    /// see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building
     /// a search experience with no code</a>.
     /// </summary>
     public partial class CreateExperienceRequest : AmazonKendraRequest
@@ -47,8 +48,8 @@ namespace Amazon.Kendra.Model
         /// Gets and sets the property ClientToken. 
         /// <para>
         /// A token that you provide to identify the request to create your Amazon Kendra experience.
-        /// Multiple calls to the <code>CreateExperience</code> operation with the same client
-        /// token creates only one Amazon Kendra experience.
+        /// Multiple calls to the <code>CreateExperience</code> API with the same client token
+        /// creates only one Amazon Kendra experience.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -67,10 +68,10 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Configuration. 
         /// <para>
-        /// Provides the configuration information for your Amazon Kendra experience. This includes
-        /// <code>ContentSourceConfiguration</code>, which specifies the data source IDs and/or
-        /// FAQ IDs, and <code>UserIdentityConfiguration</code>, which specifies the user or group
-        /// information to grant access to your Amazon Kendra experience.
+        /// Configuration information for your Amazon Kendra experience. This includes <code>ContentSourceConfiguration</code>,
+        /// which specifies the data source IDs and/or FAQ IDs, and <code>UserIdentityConfiguration</code>,
+        /// which specifies the user or group information to grant access to your Amazon Kendra
+        /// experience.
         /// </para>
         /// </summary>
         public ExperienceConfiguration Configuration
@@ -145,11 +146,11 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of a role with permission to access <code>Query</code>
-        /// operations, <code>QuerySuggestions</code> operations, <code>SubmitFeedback</code>
-        /// operations, and Amazon Web Services SSO that stores your user and group information.
-        /// For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM
-        /// roles for Amazon Kendra</a>.
+        /// The Amazon Resource Name (ARN) of an IAM role with permission to access <code>Query</code>
+        /// API, <code>GetQuerySuggestions</code> API, and other required APIs. The role also
+        /// must include permission to access IAM Identity Center (successor to Single Sign-On)
+        /// that stores your user and group information. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM
+        /// access roles for Amazon Kendra</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1284)]

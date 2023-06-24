@@ -56,7 +56,7 @@ namespace Amazon.Signer.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Signer");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-08-25";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-08-25";
             request.HttpMethod = "PUT";
 
             if (!publicRequest.IsSetProfileName())
@@ -86,7 +86,6 @@ namespace Amazon.Signer.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Reason);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

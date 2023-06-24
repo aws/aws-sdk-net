@@ -58,8 +58,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Parameters. 
         /// <para>
-        /// A group of parameter settings that are used to configure the component for a specific
-        /// recipe.
+        /// A group of parameter settings that Image Builder uses to configure the component for
+        /// a specific recipe.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

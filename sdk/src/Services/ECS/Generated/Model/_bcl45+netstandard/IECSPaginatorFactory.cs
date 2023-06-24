@@ -51,6 +51,11 @@ namespace Amazon.ECS.Model
         IListServicesPaginator ListServices(ListServicesRequest request);
 
         /// <summary>
+        /// Paginator for ListServicesByNamespace operation
+        ///</summary>
+        IListServicesByNamespacePaginator ListServicesByNamespace(ListServicesByNamespaceRequest request);
+
+        /// <summary>
         /// Paginator for ListTaskDefinitionFamilies operation
         ///</summary>
         IListTaskDefinitionFamiliesPaginator ListTaskDefinitionFamilies(ListTaskDefinitionFamiliesRequest request);

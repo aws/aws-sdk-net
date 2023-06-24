@@ -58,7 +58,7 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
             string target = "AWSIESnowballJobManagementService.UpdateCluster";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-06-30";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-06-30";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -136,7 +136,6 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ShippingOption);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

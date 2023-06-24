@@ -111,6 +111,12 @@ namespace Amazon.Neptune.Model.Internal.MarshallTransformations
                         unmarshalledObject.SupportedTimezones.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("SupportsGlobalDatabases", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.SupportsGlobalDatabases = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("SupportsLogExportsToCloudwatchLogs", targetDepth))
                     {
                         var unmarshaller = BoolUnmarshaller.Instance;

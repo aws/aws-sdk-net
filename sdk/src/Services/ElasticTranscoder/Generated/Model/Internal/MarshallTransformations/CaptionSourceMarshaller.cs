@@ -34,7 +34,7 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CaptionSource Marshaller
-    /// </summary>       
+    /// </summary>
     public class CaptionSourceMarshaller : IRequestMarshaller<CaptionSource, JsonMarshallerContext> 
     {
         /// <summary>
@@ -84,7 +84,7 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CaptionSourceMarshaller Instance = new CaptionSourceMarshaller();
 
     }

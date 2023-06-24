@@ -34,7 +34,7 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// EndpointFilter Marshaller
-    /// </summary>       
+    /// </summary>
     public class EndpointFilterMarshaller : IRequestMarshaller<EndpointFilter, JsonMarshallerContext> 
     {
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static EndpointFilterMarshaller Instance = new EndpointFilterMarshaller();
 
     }

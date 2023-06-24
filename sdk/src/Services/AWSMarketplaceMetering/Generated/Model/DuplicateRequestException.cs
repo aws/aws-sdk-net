@@ -30,7 +30,8 @@ namespace Amazon.AWSMarketplaceMetering.Model
 {
     /// <summary>
     /// A metering record has already been emitted by the same EC2 instance, ECS task, or
-    /// EKS pod for the given {usageDimension, timestamp} with a different usageQuantity.
+    /// EKS pod for the given {<code>usageDimension</code>, <code>timestamp</code>} with a
+    /// different <code>usageQuantity</code>.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

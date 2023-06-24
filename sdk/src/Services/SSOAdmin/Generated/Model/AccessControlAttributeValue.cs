@@ -29,7 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SSOAdmin.Model
 {
     /// <summary>
-    /// The value used for mapping a specified attribute to an identity source.
+    /// The value used for mapping a specified attribute to an identity source. For more information,
+    /// see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/attributemappingsconcept.html">Attribute
+    /// mappings</a> in the <i>IAM Identity Center User Guide</i>.
     /// </summary>
     public partial class AccessControlAttributeValue
     {
@@ -38,8 +40,7 @@ namespace Amazon.SSOAdmin.Model
         /// <summary>
         /// Gets and sets the property Source. 
         /// <para>
-        /// The identity source to use when mapping a specified attribute to Amazon Web Services
-        /// SSO.
+        /// The identity source to use when mapping a specified attribute to IAM Identity Center.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1)]

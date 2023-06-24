@@ -34,7 +34,7 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// HttpHeader Marshaller
-    /// </summary>       
+    /// </summary>
     public class HttpHeaderMarshaller : IRequestMarshaller<HttpHeader, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static HttpHeaderMarshaller Instance = new HttpHeaderMarshaller();
 
     }

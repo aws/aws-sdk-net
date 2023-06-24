@@ -31,9 +31,9 @@ namespace Amazon.SageMaker.Model
     /// <summary>
     /// Container for the parameters to the CreatePresignedNotebookInstanceUrl operation.
     /// Returns a URL that you can use to connect to the Jupyter server from a notebook instance.
-    /// In the Amazon SageMaker console, when you choose <code>Open</code> next to a notebook
-    /// instance, Amazon SageMaker opens a new tab showing the Jupyter server home page from
-    /// the notebook instance. The console uses this API to get the URL and show the page.
+    /// In the SageMaker console, when you choose <code>Open</code> next to a notebook instance,
+    /// SageMaker opens a new tab showing the Jupyter server home page from the notebook instance.
+    /// The console uses this API to get the URL and show the page.
     /// 
     ///  
     /// <para>
@@ -54,9 +54,9 @@ namespace Amazon.SageMaker.Model
     /// </para>
     ///  <note> 
     /// <para>
-    /// The URL that you get from a call to <a>CreatePresignedNotebookInstanceUrl</a> is valid
-    /// only for 5 minutes. If you try to use the URL after the 5-minute limit expires, you
-    /// are directed to the Amazon Web Services console sign-in page.
+    /// The URL that you get from a call to <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreatePresignedNotebookInstanceUrl.html">CreatePresignedNotebookInstanceUrl</a>
+    /// is valid only for 5 minutes. If you try to use the URL after the 5-minute limit expires,
+    /// you are directed to the Amazon Web Services console sign-in page.
     /// </para>
     ///  </note>
     /// </summary>

@@ -76,6 +76,14 @@ namespace Amazon.ECS.Model
         }
 
         /// <summary>
+        /// Paginator for ListServicesByNamespace operation
+        ///</summary>
+        public IListServicesByNamespacePaginator ListServicesByNamespace(ListServicesByNamespaceRequest request) 
+        {
+            return new ListServicesByNamespacePaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListTaskDefinitionFamilies operation
         ///</summary>
         public IListTaskDefinitionFamiliesPaginator ListTaskDefinitionFamilies(ListTaskDefinitionFamiliesRequest request) 

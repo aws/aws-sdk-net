@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticFileSystem.Model
 {
     /// <summary>
-    /// Returned if you don’t wait at least 24 hours before changing the throughput mode,
-    /// or decreasing the Provisioned Throughput value.
+    /// Returned if you don’t wait at least 24 hours before either changing the throughput
+    /// mode, or decreasing the Provisioned Throughput value.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

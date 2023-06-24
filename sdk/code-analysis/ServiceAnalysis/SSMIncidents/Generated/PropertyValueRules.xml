@@ -41,7 +41,7 @@
   <property-value-rule>
     <property>Amazon.SSMIncidents.Model.CreateTimelineEventRequest.EventData</property>
     <min>0</min>
-    <max>6000</max>
+    <max>12000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSMIncidents.Model.CreateTimelineEventRequest.EventType</property>
@@ -332,7 +332,7 @@
   <property-value-rule>
     <property>Amazon.SSMIncidents.Model.UpdateIncidentRecordRequest.Summary</property>
     <min>0</min>
-    <max>4000</max>
+    <max>8000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSMIncidents.Model.UpdateIncidentRecordRequest.Title</property>
@@ -390,7 +390,7 @@
   <property-value-rule>
     <property>Amazon.SSMIncidents.Model.UpdateResponsePlanRequest.IncidentTemplateSummary</property>
     <min>0</min>
-    <max>4000</max>
+    <max>8000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSMIncidents.Model.UpdateResponsePlanRequest.IncidentTemplateTitle</property>
@@ -405,7 +405,7 @@
   <property-value-rule>
     <property>Amazon.SSMIncidents.Model.UpdateTimelineEventRequest.EventData</property>
     <min>0</min>
-    <max>6000</max>
+    <max>12000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSMIncidents.Model.UpdateTimelineEventRequest.EventId</property>
@@ -443,6 +443,18 @@
     <property>Amazon.SSMIncidents.Model.DeleteRegionAction.RegionName</property>
     <min>0</min>
     <max>20</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SSMIncidents.Model.EventReference.RelatedItemId</property>
+    <min>0</min>
+    <max>200</max>
+    <pattern>^related-item/(ANALYSIS|INCIDENT|METRIC|PARENT|ATTACHMENT|OTHER|AUTOMATION|INVOLVED_RESOURCE|TASK)/([0-9]|[A-F]){32}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SSMIncidents.Model.EventReference.Resource</property>
+    <min>0</min>
+    <max>1000</max>
+    <pattern>^arn:aws(-cn|-us-gov)?:[a-z0-9-]*:[a-z0-9-]*:([0-9]{12})?:.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSMIncidents.Model.EventSummary.EventId</property>
@@ -490,7 +502,7 @@
   <property-value-rule>
     <property>Amazon.SSMIncidents.Model.IncidentRecord.Summary</property>
     <min>0</min>
-    <max>4000</max>
+    <max>8000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSMIncidents.Model.IncidentRecord.Title</property>
@@ -507,7 +519,6 @@
     <property>Amazon.SSMIncidents.Model.IncidentRecordSource.InvokedBy</property>
     <min>0</min>
     <max>1000</max>
-    <pattern>^arn:aws(-cn|-us-gov)?:[a-z0-9-]*:[a-z0-9-]*:([0-9]{12})?:.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSMIncidents.Model.IncidentRecordSource.ResourceArn</property>
@@ -549,7 +560,7 @@
   <property-value-rule>
     <property>Amazon.SSMIncidents.Model.IncidentTemplate.Summary</property>
     <min>0</min>
-    <max>4000</max>
+    <max>8000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSMIncidents.Model.IncidentTemplate.Title</property>
@@ -579,6 +590,31 @@
     <pattern>^arn:aws(-cn|-us-gov)?:[a-z0-9-]*:[a-z0-9-]*:([0-9]{12})?:.+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SSMIncidents.Model.PagerDutyConfiguration.Name</property>
+    <min>1</min>
+    <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SSMIncidents.Model.PagerDutyConfiguration.SecretId</property>
+    <min>1</min>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SSMIncidents.Model.PagerDutyIncidentConfiguration.ServiceId</property>
+    <min>1</min>
+    <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SSMIncidents.Model.PagerDutyIncidentDetail.Id</property>
+    <min>1</min>
+    <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SSMIncidents.Model.PagerDutyIncidentDetail.SecretId</property>
+    <min>1</min>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SSMIncidents.Model.RegionInfo.SseKmsKeyId</property>
     <min>0</min>
     <max>2048</max>
@@ -587,6 +623,12 @@
     <property>Amazon.SSMIncidents.Model.RegionMapInputValue.SseKmsKeyId</property>
     <min>0</min>
     <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SSMIncidents.Model.RelatedItem.GeneratedId</property>
+    <min>0</min>
+    <max>200</max>
+    <pattern>^related-item/(ANALYSIS|INCIDENT|METRIC|PARENT|ATTACHMENT|OTHER|AUTOMATION|INVOLVED_RESOURCE|TASK)/([0-9]|[A-F]){32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSMIncidents.Model.RelatedItem.Title</property>
@@ -656,7 +698,7 @@
   <property-value-rule>
     <property>Amazon.SSMIncidents.Model.TimelineEvent.EventData</property>
     <min>0</min>
-    <max>6000</max>
+    <max>12000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSMIncidents.Model.TimelineEvent.EventId</property>
@@ -677,7 +719,7 @@
   <property-value-rule>
     <property>Amazon.SSMIncidents.Model.TriggerDetails.RawData</property>
     <min>0</min>
-    <max>4000</max>
+    <max>10000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSMIncidents.Model.TriggerDetails.Source</property>

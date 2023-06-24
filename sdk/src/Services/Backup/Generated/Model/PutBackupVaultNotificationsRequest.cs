@@ -67,9 +67,15 @@ namespace Amazon.Backup.Model
         ///  <code>RESTORE_JOB_STARTED</code> | <code>RESTORE_JOB_COMPLETED</code> | <code>RECOVERY_POINT_MODIFIED</code>
         /// 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>S3_BACKUP_OBJECT_FAILED</code> | <code>S3_RESTORE_OBJECT_FAILED</code> 
+        /// </para>
         ///  </li> </ul> <note> 
         /// <para>
-        /// Ignore the list below because it includes deprecated events. Refer to the list above.
+        /// The list below shows items that are deprecated events (for reference) and are no longer
+        /// in use. They are no longer supported and will not return statuses or notifications.
+        /// Refer to the list above for current supported events.
         /// </para>
         ///  </note>
         /// </summary>

@@ -34,7 +34,7 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// VPCConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class VPCConfigMarshaller : IRequestMarshaller<VPCConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -77,7 +77,7 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static VPCConfigMarshaller Instance = new VPCConfigMarshaller();
 
     }

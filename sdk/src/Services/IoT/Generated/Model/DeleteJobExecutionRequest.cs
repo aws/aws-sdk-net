@@ -138,7 +138,6 @@ namespace Amazon.IoT.Model
         /// </para>
         ///  </note>
         /// </summary>
-        [AWSProperty(Min=1, Max=64)]
         public string NamespaceId
         {
             get { return this._namespaceId; }

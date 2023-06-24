@@ -43,6 +43,7 @@ namespace Amazon.CloudFormation.Model
         private bool? _includeNestedStacks;
         private string _nextToken;
         private List<string> _notificationARNs = new List<string>();
+        private OnStackFailure _onStackFailure;
         private List<Parameter> _parameters = new List<Parameter>();
         private string _parentChangeSetId;
         private RollbackConfiguration _rollbackConfiguration;
@@ -94,7 +95,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property ChangeSetId. 
         /// <para>
-        /// The ARN of the change set.
+        /// The Amazon Resource Name (ARN) of the change set.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -170,7 +171,7 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property ExecutionStatus. 
         /// <para>
         /// If the change set execution status is <code>AVAILABLE</code>, you can execute the
-        /// change set. If you can’t execute the change set, the status indicates why. For example,
+        /// change set. If you can't execute the change set, the status indicates why. For example,
         /// a change set might be in an <code>UNAVAILABLE</code> state because CloudFormation
         /// is still creating it or in an <code>OBSOLETE</code> state because the stack was already
         /// updated.
@@ -244,6 +245,47 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetNotificationARNs()
         {
             return this._notificationARNs != null && this._notificationARNs.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property OnStackFailure. 
+        /// <para>
+        /// Determines what action will be taken if stack creation fails. When this parameter
+        /// is specified, the <code>DisableRollback</code> parameter to the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">ExecuteChangeSet</a>
+        /// API operation must not be specified. This must be one of these values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>DELETE</code> - Deletes the change set if the stack creation fails. This is
+        /// only valid when the <code>ChangeSetType</code> parameter is set to <code>CREATE</code>.
+        /// If the deletion of the stack fails, the status of the stack is <code>DELETE_FAILED</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>DO_NOTHING</code> - if the stack creation fails, do nothing. This is equivalent
+        /// to specifying <code>true</code> for the <code>DisableRollback</code> parameter to
+        /// the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">ExecuteChangeSet</a>
+        /// API operation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ROLLBACK</code> - if the stack creation fails, roll back the stack. This is
+        /// equivalent to specifying <code>false</code> for the <code>DisableRollback</code> parameter
+        /// to the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">ExecuteChangeSet</a>
+        /// API operation.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public OnStackFailure OnStackFailure
+        {
+            get { return this._onStackFailure; }
+            set { this._onStackFailure = value; }
+        }
+
+        // Check to see if OnStackFailure property is set
+        internal bool IsSetOnStackFailure()
+        {
+            return this._onStackFailure != null;
         }
 
         /// <summary>
@@ -328,7 +370,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property StackId. 
         /// <para>
-        /// The ARN of the stack that is associated with the change set.
+        /// The Amazon Resource Name (ARN) of the stack that's associated with the change set.
         /// </para>
         /// </summary>
         public string StackId
@@ -346,7 +388,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property StackName. 
         /// <para>
-        /// The name of the stack that is associated with the change set.
+        /// The name of the stack that's associated with the change set.
         /// </para>
         /// </summary>
         public string StackName

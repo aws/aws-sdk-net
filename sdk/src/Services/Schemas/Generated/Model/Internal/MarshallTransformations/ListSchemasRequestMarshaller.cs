@@ -55,7 +55,7 @@ namespace Amazon.Schemas.Model.Internal.MarshallTransformations
         public IRequest Marshall(ListSchemasRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Schemas");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-12-02";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-12-02";
             request.HttpMethod = "GET";
 
             if (!publicRequest.IsSetRegistryName())

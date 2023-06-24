@@ -34,7 +34,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// LinuxParameters Marshaller
-    /// </summary>       
+    /// </summary>
     public class LinuxParametersMarshaller : IRequestMarshaller<LinuxParameters, JsonMarshallerContext> 
     {
         /// <summary>
@@ -116,7 +116,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static LinuxParametersMarshaller Instance = new LinuxParametersMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Logs Marshaller
-    /// </summary>       
+    /// </summary>
     public class LogsMarshaller : IRequestMarshaller<Logs, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static LogsMarshaller Instance = new LogsMarshaller();
 
     }

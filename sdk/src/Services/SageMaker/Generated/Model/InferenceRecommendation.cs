@@ -34,8 +34,11 @@ namespace Amazon.SageMaker.Model
     public partial class InferenceRecommendation
     {
         private EndpointOutputConfiguration _endpointConfiguration;
+        private DateTime? _invocationEndTime;
+        private DateTime? _invocationStartTime;
         private RecommendationMetrics _metrics;
         private ModelConfiguration _modelConfiguration;
+        private string _recommendationId;
 
         /// <summary>
         /// Gets and sets the property EndpointConfiguration. 
@@ -54,6 +57,42 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetEndpointConfiguration()
         {
             return this._endpointConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InvocationEndTime. 
+        /// <para>
+        /// A timestamp that shows when the benchmark completed.
+        /// </para>
+        /// </summary>
+        public DateTime InvocationEndTime
+        {
+            get { return this._invocationEndTime.GetValueOrDefault(); }
+            set { this._invocationEndTime = value; }
+        }
+
+        // Check to see if InvocationEndTime property is set
+        internal bool IsSetInvocationEndTime()
+        {
+            return this._invocationEndTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property InvocationStartTime. 
+        /// <para>
+        /// A timestamp that shows when the benchmark started.
+        /// </para>
+        /// </summary>
+        public DateTime InvocationStartTime
+        {
+            get { return this._invocationStartTime.GetValueOrDefault(); }
+            set { this._invocationStartTime = value; }
+        }
+
+        // Check to see if InvocationStartTime property is set
+        internal bool IsSetInvocationStartTime()
+        {
+            return this._invocationStartTime.HasValue; 
         }
 
         /// <summary>
@@ -92,6 +131,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetModelConfiguration()
         {
             return this._modelConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RecommendationId. 
+        /// <para>
+        /// The recommendation ID which uniquely identifies each recommendation.
+        /// </para>
+        /// </summary>
+        public string RecommendationId
+        {
+            get { return this._recommendationId; }
+            set { this._recommendationId = value; }
+        }
+
+        // Check to see if RecommendationId property is set
+        internal bool IsSetRecommendationId()
+        {
+            return this._recommendationId != null;
         }
 
     }

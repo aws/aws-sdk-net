@@ -82,7 +82,6 @@ namespace Amazon.AppMesh.Model
         /// can specify one listener.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=1)]
         public List<Listener> Listeners
         {
             get { return this._listeners; }

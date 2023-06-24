@@ -32,21 +32,24 @@ namespace Amazon.ForecastService.Model
     /// Container for the parameters to the CreateDatasetGroup operation.
     /// Creates a dataset group, which holds a collection of related datasets. You can add
     /// datasets to the dataset group when you create the dataset group, or later by using
-    /// the <a>UpdateDatasetGroup</a> operation.
+    /// the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_UpdateDatasetGroup.html">UpdateDatasetGroup</a>
+    /// operation.
     /// 
     ///  
     /// <para>
     /// After creating a dataset group and adding datasets, you use the dataset group when
-    /// you create a predictor. For more information, see <a>howitworks-datasets-groups</a>.
+    /// you create a predictor. For more information, see <a href="https://docs.aws.amazon.com/forecast/latest/dg/howitworks-datasets-groups.html">Dataset
+    /// groups</a>.
     /// </para>
     ///  
     /// <para>
-    /// To get a list of all your datasets groups, use the <a>ListDatasetGroups</a> operation.
+    /// To get a list of all your datasets groups, use the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_ListDatasetGroups.html">ListDatasetGroups</a>
+    /// operation.
     /// </para>
     ///  <note> 
     /// <para>
     /// The <code>Status</code> of a dataset group must be <code>ACTIVE</code> before you
-    /// can use the dataset group to create a predictor. To get the status, use the <a>DescribeDatasetGroup</a>
+    /// can use the dataset group to create a predictor. To get the status, use the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_DescribeDatasetGroup.html">DescribeDatasetGroup</a>
     /// operation.
     /// </para>
     ///  </note>
@@ -101,7 +104,8 @@ namespace Amazon.ForecastService.Model
         /// <para>
         /// The domain associated with the dataset group. When you add a dataset to a dataset
         /// group, this value and the value specified for the <code>Domain</code> parameter of
-        /// the <a>CreateDataset</a> operation must match.
+        /// the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDataset.html">CreateDataset</a>
+        /// operation must match.
         /// </para>
         ///  
         /// <para>
@@ -110,7 +114,8 @@ namespace Amazon.ForecastService.Model
         /// if you choose the <code>RETAIL</code> domain and <code>TARGET_TIME_SERIES</code> as
         /// the <code>DatasetType</code>, Amazon Forecast requires that <code>item_id</code>,
         /// <code>timestamp</code>, and <code>demand</code> fields are present in your data. For
-        /// more information, see <a>howitworks-datasets-groups</a>.
+        /// more information, see <a href="https://docs.aws.amazon.com/forecast/latest/dg/howitworks-datasets-groups.html">Dataset
+        /// groups</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -168,11 +173,11 @@ namespace Amazon.ForecastService.Model
         ///  </li> <li> 
         /// <para>
         /// Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination
-        /// of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete
-        /// tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code>
-        /// as its prefix but the key does not, then Forecast considers it to be a user tag and
-        /// will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code>
-        /// do not count against your tags per resource limit.
+        /// of such as a prefix for keys as it is reserved for Amazon Web Services use. You cannot
+        /// edit or delete tag keys with this prefix. Values can have this prefix. If a tag value
+        /// has <code>aws</code> as its prefix but the key does not, then Forecast considers it
+        /// to be a user tag and will count against the limit of 50 tags. Tags with only the key
+        /// prefix of <code>aws</code> do not count against your tags per resource limit.
         /// </para>
         ///  </li> </ul>
         /// </summary>

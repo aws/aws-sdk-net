@@ -58,7 +58,7 @@ namespace Amazon.Pricing.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The pagination token for the next set of retreivable results.
+        /// The pagination token for the next set of retrievable results.
         /// </para>
         /// </summary>
         public string NextToken

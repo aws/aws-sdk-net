@@ -33,7 +33,7 @@ namespace Amazon.AppMesh.Model
     /// 
     ///  <note> 
     /// <para>
-    /// AWS Cloud Map is not available in the eu-south-1 Region.
+    /// Cloud Map is not available in the eu-south-1 Region.
     /// </para>
     ///  </note>
     /// </summary>

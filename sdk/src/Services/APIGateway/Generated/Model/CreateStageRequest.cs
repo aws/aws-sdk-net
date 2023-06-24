@@ -30,8 +30,7 @@ namespace Amazon.APIGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateStage operation.
-    /// Creates a new <a>Stage</a> resource that references a pre-existing <a>Deployment</a>
-    /// for the API.
+    /// Creates a new Stage resource that references a pre-existing Deployment for the API.
     /// </summary>
     public partial class CreateStageRequest : AmazonAPIGatewayRequest
     {
@@ -68,7 +67,9 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property CacheClusterSize. 
         /// <para>
-        /// The stage's cache cluster size.
+        /// The stage's cache capacity in GB. For more information about choosing a cache size,
+        /// see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-caching.html">Enabling
+        /// API caching to enhance responsiveness</a>.
         /// </para>
         /// </summary>
         public CacheClusterSize CacheClusterSize
@@ -104,7 +105,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property DeploymentId. 
         /// <para>
-        /// [Required] The identifier of the <a>Deployment</a> resource for the <a>Stage</a> resource.
+        /// The identifier of the Deployment resource for the Stage resource.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -123,7 +124,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description of the <a>Stage</a> resource.
+        /// The description of the Stage resource.
         /// </para>
         /// </summary>
         public string Description
@@ -159,7 +160,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property RestApiId. 
         /// <para>
-        /// [Required] The string identifier of the associated <a>RestApi</a>.
+        /// The string identifier of the associated RestApi.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -178,8 +179,8 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property StageName. 
         /// <para>
-        /// [Required] The name for the <a>Stage</a> resource. Stage names can only contain alphanumeric
-        /// characters, hyphens, and underscores. Maximum length is 128 characters.
+        /// The name for the Stage resource. Stage names can only contain alphanumeric characters,
+        /// hyphens, and underscores. Maximum length is 128 characters.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -218,7 +219,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property TracingEnabled. 
         /// <para>
-        /// Specifies whether active tracing with X-ray is enabled for the <a>Stage</a>.
+        /// Specifies whether active tracing with X-ray is enabled for the Stage.
         /// </para>
         /// </summary>
         public bool TracingEnabled
@@ -236,8 +237,8 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Variables. 
         /// <para>
-        /// A map that defines the stage variables for the new <a>Stage</a> resource. Variable
-        /// names can have alphanumeric and underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.
+        /// A map that defines the stage variables for the new Stage resource. Variable names
+        /// can have alphanumeric and underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Variables

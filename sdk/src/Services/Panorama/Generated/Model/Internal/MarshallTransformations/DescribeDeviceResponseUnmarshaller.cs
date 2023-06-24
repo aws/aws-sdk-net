@@ -51,10 +51,22 @@ namespace Amazon.Panorama.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AlternateSoftwares", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<AlternateSoftwareMetadata, AlternateSoftwareMetadataUnmarshaller>(AlternateSoftwareMetadataUnmarshaller.Instance);
+                    response.AlternateSoftwares = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Arn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Arn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Brand", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Brand = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("CreatedTime", targetDepth))
@@ -81,6 +93,12 @@ namespace Amazon.Panorama.Model.Internal.MarshallTransformations
                     response.Description = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DeviceAggregatedStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.DeviceAggregatedStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DeviceConnectionStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -91,6 +109,18 @@ namespace Amazon.Panorama.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.DeviceId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("LatestAlternateSoftware", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.LatestAlternateSoftware = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("LatestDeviceJob", targetDepth))
+                {
+                    var unmarshaller = LatestDeviceJobUnmarshaller.Instance;
+                    response.LatestDeviceJob = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("LatestSoftware", targetDepth))

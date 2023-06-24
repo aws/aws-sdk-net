@@ -78,7 +78,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property UserName. 
         /// <para>
-        /// A unique string that identifies a user account associated with a server.
+        /// A unique string that identifies a Transfer Family user associated with a server.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=3, Max=100)]

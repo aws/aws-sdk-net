@@ -30,11 +30,17 @@ namespace Amazon.SSOAdmin.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateInstanceAccessControlAttributeConfiguration operation.
-    /// Enables the attributes-based access control (ABAC) feature for the specified Amazon
-    /// Web Services SSO instance. You can also specify new attributes to add to your ABAC
-    /// configuration during the enabling process. For more information about ABAC, see <a
-    /// href="/singlesignon/latest/userguide/abac.html">Attribute-Based Access Control</a>
-    /// in the <i>Amazon Web Services SSO User Guide</i>.
+    /// Enables the attributes-based access control (ABAC) feature for the specified IAM Identity
+    /// Center instance. You can also specify new attributes to add to your ABAC configuration
+    /// during the enabling process. For more information about ABAC, see <a href="/singlesignon/latest/userguide/abac.html">Attribute-Based
+    /// Access Control</a> in the <i>IAM Identity Center User Guide</i>.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// After a successful response, call <code>DescribeInstanceAccessControlAttributeConfiguration</code>
+    /// to validate that <code>InstanceAccessControlAttributeConfiguration</code> was created.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class CreateInstanceAccessControlAttributeConfigurationRequest : AmazonSSOAdminRequest
     {
@@ -44,12 +50,12 @@ namespace Amazon.SSOAdmin.Model
         /// <summary>
         /// Gets and sets the property InstanceAccessControlAttributeConfiguration. 
         /// <para>
-        /// Specifies the Amazon Web Services SSO identity store attributes to add to your ABAC
-        /// configuration. When using an external identity provider as an identity source, you
-        /// can pass attributes through the SAML assertion. Doing so provides an alternative to
-        /// configuring attributes from the Amazon Web Services SSO identity store. If a SAML
-        /// assertion passes any of these attributes, Amazon Web Services SSO will replace the
-        /// attribute value with the value from the Amazon Web Services SSO identity store.
+        /// Specifies the IAM Identity Center identity store attributes to add to your ABAC configuration.
+        /// When using an external identity provider as an identity source, you can pass attributes
+        /// through the SAML assertion. Doing so provides an alternative to configuring attributes
+        /// from the IAM Identity Center identity store. If a SAML assertion passes any of these
+        /// attributes, IAM Identity Center will replace the attribute value with the value from
+        /// the IAM Identity Center identity store.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -68,7 +74,7 @@ namespace Amazon.SSOAdmin.Model
         /// <summary>
         /// Gets and sets the property InstanceArn. 
         /// <para>
-        /// The ARN of the SSO instance under which the operation will be executed.
+        /// The ARN of the IAM Identity Center instance under which the operation will be executed.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=10, Max=1224)]

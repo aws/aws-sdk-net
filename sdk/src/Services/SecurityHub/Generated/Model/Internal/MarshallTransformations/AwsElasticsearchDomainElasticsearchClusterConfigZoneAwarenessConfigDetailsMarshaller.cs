@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails Marshaller
-    /// </summary>       
+    /// </summary>
     public class AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetailsMarshaller : IRequestMarshaller<AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetailsMarshaller Instance = new AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetailsMarshaller();
 
     }

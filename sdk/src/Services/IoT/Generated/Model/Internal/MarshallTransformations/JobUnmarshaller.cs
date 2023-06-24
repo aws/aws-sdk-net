@@ -94,6 +94,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("destinationPackageVersions", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.DestinationPackageVersions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("documentParameters", targetDepth))
                 {
                     var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
@@ -106,10 +112,22 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     unmarshalledObject.ForceCanceled = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("isConcurrent", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.IsConcurrent = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("jobArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.JobArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("jobExecutionsRetryConfig", targetDepth))
+                {
+                    var unmarshaller = JobExecutionsRetryConfigUnmarshaller.Instance;
+                    unmarshalledObject.JobExecutionsRetryConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("jobExecutionsRolloutConfig", targetDepth))
@@ -158,6 +176,18 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ReasonCode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("scheduledJobRollouts", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ScheduledJobRollout, ScheduledJobRolloutUnmarshaller>(ScheduledJobRolloutUnmarshaller.Instance);
+                    unmarshalledObject.ScheduledJobRollouts = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("schedulingConfig", targetDepth))
+                {
+                    var unmarshaller = SchedulingConfigUnmarshaller.Instance;
+                    unmarshalledObject.SchedulingConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("status", targetDepth))

@@ -41,6 +41,8 @@ namespace Amazon.CertificateManager.Model
         private Filters _includes;
         private int? _maxItems;
         private string _nextToken;
+        private SortBy _sortBy;
+        private SortOrder _sortOrder;
 
         /// <summary>
         /// Gets and sets the property CertificateStatuses. 
@@ -119,6 +121,44 @@ namespace Amazon.CertificateManager.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SortBy. 
+        /// <para>
+        /// Specifies the field to sort results by. If you specify <code>SortBy</code>, you must
+        /// also specify <code>SortOrder</code>.
+        /// </para>
+        /// </summary>
+        public SortBy SortBy
+        {
+            get { return this._sortBy; }
+            set { this._sortBy = value; }
+        }
+
+        // Check to see if SortBy property is set
+        internal bool IsSetSortBy()
+        {
+            return this._sortBy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SortOrder. 
+        /// <para>
+        /// Specifies the order of sorted results. If you specify <code>SortOrder</code>, you
+        /// must also specify <code>SortBy</code>.
+        /// </para>
+        /// </summary>
+        public SortOrder SortOrder
+        {
+            get { return this._sortOrder; }
+            set { this._sortOrder = value; }
+        }
+
+        // Check to see if SortOrder property is set
+        internal bool IsSetSortOrder()
+        {
+            return this._sortOrder != null;
         }
 
     }

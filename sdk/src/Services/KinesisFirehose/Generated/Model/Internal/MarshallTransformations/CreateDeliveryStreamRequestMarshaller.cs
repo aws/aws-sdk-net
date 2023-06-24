@@ -58,7 +58,7 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
             string target = "Firehose_20150804.CreateDeliveryStream";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-08-04";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-08-04";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -67,6 +67,17 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAmazonOpenSearchServerlessDestinationConfiguration())
+                {
+                    context.Writer.WritePropertyName("AmazonOpenSearchServerlessDestinationConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = AmazonOpenSearchServerlessDestinationConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.AmazonOpenSearchServerlessDestinationConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetAmazonopensearchserviceDestinationConfiguration())
                 {
                     context.Writer.WritePropertyName("AmazonopensearchserviceDestinationConfiguration");
@@ -194,7 +205,6 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

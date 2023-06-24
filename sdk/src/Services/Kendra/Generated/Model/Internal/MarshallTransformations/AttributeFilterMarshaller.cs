@@ -34,7 +34,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AttributeFilter Marshaller
-    /// </summary>       
+    /// </summary>
     public class AttributeFilterMarshaller : IRequestMarshaller<AttributeFilter, JsonMarshallerContext> 
     {
         /// <summary>
@@ -169,7 +169,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AttributeFilterMarshaller Instance = new AttributeFilterMarshaller();
 
     }

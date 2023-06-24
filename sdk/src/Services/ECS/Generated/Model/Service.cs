@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// Details on a service within a cluster
+    /// Details on a service within a cluster.
     /// </summary>
     public partial class Service
     {
@@ -160,9 +160,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property DeploymentController. 
         /// <para>
-        /// The deployment controller type the service is using. When using the DescribeServices
-        /// API, this field is omitted if the service uses the <code>ECS</code> deployment controller
-        /// type.
+        /// The deployment controller type the service is using. 
         /// </para>
         /// </summary>
         public DeploymentController DeploymentController
@@ -218,8 +216,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property EnableECSManagedTags. 
         /// <para>
-        /// Determines whether to enable Amazon ECS managed tags for the tasks in the service.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging
+        /// Determines whether to use Amazon ECS managed tags for the tasks in the service. For
+        /// more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging
         /// Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service Developer
         /// Guide</i>.
         /// </para>
@@ -239,8 +237,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property EnableExecuteCommand. 
         /// <para>
-        /// Determines whether the execute command functionality is enabled for the service. If
-        /// <code>true</code>, the execute command functionality is enabled for all containers
+        /// Determines whether the execute command functionality is turned on for the service.
+        /// If <code>true</code>, the execute command functionality is turned on for all containers
         /// in tasks as part of the service.
         /// </para>
         /// </summary>
@@ -526,7 +524,7 @@ namespace Amazon.ECS.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on each
-        /// active container instance. This taskmeets all of the task placement constraints that
+        /// active container instance. This task meets all of the task placement constraints that
         /// you specify in your cluster. The service scheduler also evaluates the task placement
         /// constraints for running tasks. It stop tasks that don't meet the placement constraints.
         /// </para>
@@ -551,10 +549,9 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property ServiceArn. 
         /// <para>
-        /// The ARN that identifies the service. The ARN contains the <code>arn:aws:ecs</code>
-        /// namespace, followed by the Region of the service, the Amazon Web Services account
-        /// ID of the service owner, the <code>service</code> namespace, and then the service
-        /// name. For example, <code>arn:aws:ecs:region:012345678910:service/my-service</code>.
+        /// The ARN that identifies the service. For more information about the ARN format, see
+        /// <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#ecs-resource-ids">Amazon
+        /// Resource Name (ARN)</a> in the <i>Amazon ECS Developer Guide</i>.
         /// </para>
         /// </summary>
         public string ServiceArn

@@ -43,7 +43,7 @@ namespace Amazon.FinSpaceData.Model
         /// Email address for the Dataset owner.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=4, Max=320)]
+        [AWSProperty(Sensitive=true, Min=4, Max=320)]
         public string Email
         {
             get { return this._email; }
@@ -59,7 +59,7 @@ namespace Amazon.FinSpaceData.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Name of the Dataset owner.
+        /// The name of the Dataset owner.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=250)]

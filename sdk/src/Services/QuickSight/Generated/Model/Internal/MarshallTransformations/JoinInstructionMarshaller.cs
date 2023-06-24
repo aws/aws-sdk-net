@@ -34,7 +34,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// JoinInstruction Marshaller
-    /// </summary>       
+    /// </summary>
     public class JoinInstructionMarshaller : IRequestMarshaller<JoinInstruction, JsonMarshallerContext> 
     {
         /// <summary>
@@ -95,7 +95,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static JoinInstructionMarshaller Instance = new JoinInstructionMarshaller();
 
     }

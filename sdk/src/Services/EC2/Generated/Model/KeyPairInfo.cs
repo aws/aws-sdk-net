@@ -33,11 +33,39 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class KeyPairInfo
     {
+        private DateTime? _createTime;
         private string _keyFingerprint;
         private string _keyName;
         private string _keyPairId;
         private KeyType _keyType;
+        private string _publicKey;
         private List<Tag> _tags = new List<Tag>();
+
+        /// <summary>
+        /// Gets and sets the property CreateTime. 
+        /// <para>
+        /// If you used Amazon EC2 to create the key pair, this is the date and time when the
+        /// key was created, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO
+        /// 8601 date-time format</a>, in the UTC time zone.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you imported an existing key pair to Amazon EC2, this is the date and time the
+        /// key was imported, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO
+        /// 8601 date-time format</a>, in the UTC time zone.
+        /// </para>
+        /// </summary>
+        public DateTime CreateTime
+        {
+            get { return this._createTime.GetValueOrDefault(); }
+            set { this._createTime = value; }
+        }
+
+        // Check to see if CreateTime property is set
+        internal bool IsSetCreateTime()
+        {
+            return this._createTime.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property KeyFingerprint. 
@@ -47,7 +75,7 @@ namespace Amazon.EC2.Model
         ///  <ul> <li> 
         /// <para>
         /// For RSA key pairs, the key fingerprint is the SHA-1 digest of the DER encoded private
-        /// key. 
+        /// key.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -136,6 +164,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetKeyType()
         {
             return this._keyType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PublicKey. 
+        /// <para>
+        /// The public key material.
+        /// </para>
+        /// </summary>
+        public string PublicKey
+        {
+            get { return this._publicKey; }
+            set { this._publicKey = value; }
+        }
+
+        // Check to see if PublicKey property is set
+        internal bool IsSetPublicKey()
+        {
+            return this._publicKey != null;
         }
 
         /// <summary>

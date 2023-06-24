@@ -45,6 +45,7 @@ namespace Amazon.EC2.Model
         private string _imageLocation;
         private string _imageOwnerAlias;
         private ImageTypeValues _imageType;
+        private ImdsSupportValues _imdsSupport;
         private string _kernelId;
         private string _name;
         private string _ownerId;
@@ -59,6 +60,7 @@ namespace Amazon.EC2.Model
         private ImageState _state;
         private StateReason _stateReason;
         private List<Tag> _tags = new List<Tag>();
+        private TpmSupportValues _tpmSupport;
         private string _usageOperation;
         private VirtualizationType _virtualizationType;
 
@@ -102,7 +104,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property BootMode. 
         /// <para>
         /// The boot mode of the image. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot
-        /// modes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// modes</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         public BootModeValues BootMode
@@ -283,6 +285,29 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ImdsSupport. 
+        /// <para>
+        /// If <code>v2.0</code>, it indicates that IMDSv2 is specified in the AMI. Instances
+        /// launched from this AMI will have <code>HttpTokens</code> automatically set to <code>required</code>
+        /// so that, by default, the instance requires that IMDSv2 is used when requesting instance
+        /// metadata. In addition, <code>HttpPutResponseHopLimit</code> is set to <code>2</code>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration">Configure
+        /// the AMI</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        public ImdsSupportValues ImdsSupport
+        {
+            get { return this._imdsSupport; }
+            set { this._imdsSupport = value; }
+        }
+
+        // Check to see if ImdsSupport property is set
+        internal bool IsSetImdsSupport()
+        {
+            return this._imdsSupport != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property KernelId. 
         /// <para>
         /// The kernel associated with the image, if any. Only applicable for machine images.
@@ -358,8 +383,8 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property PlatformDetails. 
         /// <para>
         /// The platform details associated with the billing code of the AMI. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Understanding
-        /// AMI billing</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Understand
+        /// AMI billing information</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         public string PlatformDetails
@@ -539,6 +564,26 @@ namespace Amazon.EC2.Model
         internal bool IsSetTags()
         {
             return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TpmSupport. 
+        /// <para>
+        /// If the image is configured for NitroTPM support, the value is <code>v2.0</code>. For
+        /// more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a>
+        /// in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        public TpmSupportValues TpmSupport
+        {
+            get { return this._tpmSupport; }
+            set { this._tpmSupport = value; }
+        }
+
+        // Check to see if TpmSupport property is set
+        internal bool IsSetTpmSupport()
+        {
+            return this._tpmSupport != null;
         }
 
         /// <summary>

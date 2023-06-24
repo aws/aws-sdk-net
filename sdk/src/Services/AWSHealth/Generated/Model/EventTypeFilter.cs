@@ -81,7 +81,7 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property Services. 
         /// <para>
-        /// The Amazon Web Services services associated with the event. For example, <code>EC2</code>,
+        /// The Amazon Web Services associated with the event. For example, <code>EC2</code>,
         /// <code>RDS</code>.
         /// </para>
         /// </summary>

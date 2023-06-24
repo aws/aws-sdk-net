@@ -34,7 +34,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// EsamManifestConfirmConditionNotification Marshaller
-    /// </summary>       
+    /// </summary>
     public class EsamManifestConfirmConditionNotificationMarshaller : IRequestMarshaller<EsamManifestConfirmConditionNotification, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static EsamManifestConfirmConditionNotificationMarshaller Instance = new EsamManifestConfirmConditionNotificationMarshaller();
 
     }

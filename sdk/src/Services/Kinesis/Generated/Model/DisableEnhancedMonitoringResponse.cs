@@ -35,6 +35,7 @@ namespace Amazon.Kinesis.Model
     {
         private List<string> _currentShardLevelMetrics = new List<string>();
         private List<string> _desiredShardLevelMetrics = new List<string>();
+        private string _streamARN;
         private string _streamName;
 
         /// <summary>
@@ -75,6 +76,25 @@ namespace Amazon.Kinesis.Model
         internal bool IsSetDesiredShardLevelMetrics()
         {
             return this._desiredShardLevelMetrics != null && this._desiredShardLevelMetrics.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property StreamARN. 
+        /// <para>
+        /// The ARN of the stream.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string StreamARN
+        {
+            get { return this._streamARN; }
+            set { this._streamARN = value; }
+        }
+
+        // Check to see if StreamARN property is set
+        internal bool IsSetStreamARN()
+        {
+            return this._streamARN != null;
         }
 
         /// <summary>

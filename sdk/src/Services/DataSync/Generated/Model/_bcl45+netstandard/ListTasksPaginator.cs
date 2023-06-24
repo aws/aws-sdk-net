@@ -41,6 +41,12 @@ namespace Amazon.DataSync.Model
         /// </summary>
         public IPaginatedEnumerable<ListTasksResponse> Responses => new PaginatedResponse<ListTasksResponse>(this);
 
+        /// <summary>
+        /// Enumerable containing all of the Tasks
+        /// </summary>
+        public IPaginatedEnumerable<TaskListEntry> Tasks => 
+            new PaginatedResultKeyResponse<ListTasksResponse, TaskListEntry>(this, (i) => i.Tasks);
+
         internal ListTasksPaginator(IAmazonDataSync client, ListTasksRequest request)
         {
             this._client = client;

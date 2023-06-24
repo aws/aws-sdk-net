@@ -44,5 +44,15 @@ namespace Amazon.CloudWatchEvidently.Model
         /// Paginator for ListProjects operation
         ///</summary>
         IListProjectsPaginator ListProjects(ListProjectsRequest request);
+
+        /// <summary>
+        /// Paginator for ListSegmentReferences operation
+        ///</summary>
+        IListSegmentReferencesPaginator ListSegmentReferences(ListSegmentReferencesRequest request);
+
+        /// <summary>
+        /// Paginator for ListSegments operation
+        ///</summary>
+        IListSegmentsPaginator ListSegments(ListSegmentsRequest request);
     }
 }

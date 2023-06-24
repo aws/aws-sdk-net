@@ -58,7 +58,7 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
             string target = "OvertureService.AllocatePrivateVirtualInterface";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2012-10-25";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2012-10-25";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -90,7 +90,6 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.OwnerAccount);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

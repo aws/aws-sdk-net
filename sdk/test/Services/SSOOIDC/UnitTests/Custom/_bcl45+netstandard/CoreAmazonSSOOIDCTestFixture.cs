@@ -16,6 +16,7 @@
 using System;
 using System.Linq.Expressions;
 using System.Threading;
+using Amazon;
 using Amazon.Runtime;
 using Amazon.Runtime.SharedInterfaces;
 using Amazon.SSOOIDC;
@@ -92,9 +93,20 @@ namespace AWSSDK.UnitTests
                 StartUrl = "start-url",
             };
 
+            WithValidConfig();
             WithRegisterClientSuccess();
             WithStartDeviceAuthorizationSuccess();
             WithCreateTokenSuccess();
+        }
+
+        private void WithValidConfig()
+        {
+            OidcClient
+                .Setup(x => x.Config)
+                .Returns(new AmazonSSOOIDCConfig
+                {
+                    RegionEndpoint = RegionEndpoint.USWest2
+                });
         }
 
         // Sets up RegisterClient calls to succeed

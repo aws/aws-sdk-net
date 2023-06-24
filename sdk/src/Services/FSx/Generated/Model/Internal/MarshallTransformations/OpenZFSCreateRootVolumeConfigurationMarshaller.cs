@@ -34,7 +34,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// OpenZFSCreateRootVolumeConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class OpenZFSCreateRootVolumeConfigurationMarshaller : IRequestMarshaller<OpenZFSCreateRootVolumeConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -79,6 +79,12 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ReadOnly);
             }
 
+            if(requestObject.IsSetRecordSizeKiB())
+            {
+                context.Writer.WritePropertyName("RecordSizeKiB");
+                context.Writer.Write(requestObject.RecordSizeKiB);
+            }
+
             if(requestObject.IsSetUserAndGroupQuotas())
             {
                 context.Writer.WritePropertyName("UserAndGroupQuotas");
@@ -99,7 +105,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static OpenZFSCreateRootVolumeConfigurationMarshaller Instance = new OpenZFSCreateRootVolumeConfigurationMarshaller();
 
     }

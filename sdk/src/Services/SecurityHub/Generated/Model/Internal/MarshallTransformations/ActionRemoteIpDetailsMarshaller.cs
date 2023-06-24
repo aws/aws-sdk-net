@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ActionRemoteIpDetails Marshaller
-    /// </summary>       
+    /// </summary>
     public class ActionRemoteIpDetailsMarshaller : IRequestMarshaller<ActionRemoteIpDetails, JsonMarshallerContext> 
     {
         /// <summary>
@@ -99,7 +99,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ActionRemoteIpDetailsMarshaller Instance = new ActionRemoteIpDetailsMarshaller();
 
     }

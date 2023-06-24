@@ -31,8 +31,9 @@ namespace Amazon.SageMaker.Model
     /// <summary>
     /// Container for the parameters to the DeleteDomain operation.
     /// Used to delete a domain. If you onboarded with IAM mode, you will need to delete your
-    /// domain to onboard again using SSO. Use with caution. All of the members of the domain
-    /// will lose access to their EFS volume, including data, notebooks, and other artifacts.
+    /// domain to onboard again using IAM Identity Center. Use with caution. All of the members
+    /// of the domain will lose access to their EFS volume, including data, notebooks, and
+    /// other artifacts.
     /// </summary>
     public partial class DeleteDomainRequest : AmazonSageMakerRequest
     {

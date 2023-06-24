@@ -34,7 +34,7 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AddOnRequest Marshaller
-    /// </summary>       
+    /// </summary>
     public class AddOnRequestMarshaller : IRequestMarshaller<AddOnRequest, JsonMarshallerContext> 
     {
         /// <summary>
@@ -62,11 +62,22 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetStopInstanceOnIdleRequest())
+            {
+                context.Writer.WritePropertyName("stopInstanceOnIdleRequest");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = StopInstanceOnIdleRequestMarshaller.Instance;
+                marshaller.Marshall(requestObject.StopInstanceOnIdleRequest, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AddOnRequestMarshaller Instance = new AddOnRequestMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// UpdateFileSystemOntapConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class UpdateFileSystemOntapConfigurationMarshaller : IRequestMarshaller<UpdateFileSystemOntapConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -45,6 +45,17 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(UpdateFileSystemOntapConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAddRouteTableIds())
+            {
+                context.Writer.WritePropertyName("AddRouteTableIds");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectAddRouteTableIdsListValue in requestObject.AddRouteTableIds)
+                {
+                        context.Writer.Write(requestObjectAddRouteTableIdsListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetAutomaticBackupRetentionDays())
             {
                 context.Writer.WritePropertyName("AutomaticBackupRetentionDays");
@@ -57,10 +68,38 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.DailyAutomaticBackupStartTime);
             }
 
+            if(requestObject.IsSetDiskIopsConfiguration())
+            {
+                context.Writer.WritePropertyName("DiskIopsConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = DiskIopsConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.DiskIopsConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetFsxAdminPassword())
             {
                 context.Writer.WritePropertyName("FsxAdminPassword");
                 context.Writer.Write(requestObject.FsxAdminPassword);
+            }
+
+            if(requestObject.IsSetRemoveRouteTableIds())
+            {
+                context.Writer.WritePropertyName("RemoveRouteTableIds");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectRemoveRouteTableIdsListValue in requestObject.RemoveRouteTableIds)
+                {
+                        context.Writer.Write(requestObjectRemoveRouteTableIdsListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetThroughputCapacity())
+            {
+                context.Writer.WritePropertyName("ThroughputCapacity");
+                context.Writer.Write(requestObject.ThroughputCapacity);
             }
 
             if(requestObject.IsSetWeeklyMaintenanceStartTime())
@@ -73,7 +112,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static UpdateFileSystemOntapConfigurationMarshaller Instance = new UpdateFileSystemOntapConfigurationMarshaller();
 
     }

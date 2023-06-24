@@ -30,9 +30,13 @@ namespace Amazon.TranscribeService.Model
 {
     /// <summary>
     /// Container for the parameters to the ListLanguageModels operation.
-    /// Provides more information about the custom language models you've created. You can
-    /// use the information in this list to find a specific custom language model. You can
-    /// then use the operation to get more information about it.
+    /// Provides a list of custom language models that match the specified criteria. If no
+    /// criteria are specified, all custom language models are returned.
+    /// 
+    ///  
+    /// <para>
+    /// To get detailed information about a specific custom language model, use the operation.
+    /// </para>
     /// </summary>
     public partial class ListLanguageModelsRequest : AmazonTranscribeServiceRequest
     {
@@ -44,9 +48,9 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        ///  The maximum number of language models to return in each page of results. If there
-        /// are fewer results than the value you specify, only the actual results are returned.
-        /// If you do not specify a value, the default of 5 is used.
+        /// The maximum number of custom language models to return in each page of results. If
+        /// there are fewer results than the value that you specify, only the actual results are
+        /// returned. If you don't specify a value, a default of 5 is used.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -65,8 +69,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property NameContains. 
         /// <para>
-        /// When specified, the custom language model names returned contain the substring you've
-        /// specified.
+        /// Returns only the custom language models that contain the specified string. The search
+        /// is not case sensitive.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
@@ -85,8 +89,11 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// When included, fetches the next set of jobs if the result of the previous request
-        /// was truncated.
+        /// If your <code>ListLanguageModels</code> request returns more results than can be displayed,
+        /// <code>NextToken</code> is displayed in the response with an associated string. To
+        /// get the next page of results, copy this string and repeat your request, including
+        /// <code>NextToken</code> with the value of the copied string. Repeat as needed to view
+        /// all your results.
         /// </para>
         /// </summary>
         [AWSProperty(Max=8192)]
@@ -105,9 +112,9 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property StatusEquals. 
         /// <para>
-        /// When specified, returns only custom language models with the specified status. Language
-        /// models are ordered by creation date, with the newest models first. If you don't specify
-        /// a status, Amazon Transcribe returns all custom language models ordered by date.
+        /// Returns only custom language models with the specified status. Language models are
+        /// ordered by creation date, with the newest model first. If you don't include <code>StatusEquals</code>,
+        /// all custom language models are returned.
         /// </para>
         /// </summary>
         public ModelStatus StatusEquals

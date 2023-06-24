@@ -37,10 +37,13 @@ namespace Amazon.FMS.Model
         private Dictionary<string, List<string>> _excludeMap = new Dictionary<string, List<string>>();
         private bool? _excludeResourceTags;
         private Dictionary<string, List<string>> _includeMap = new Dictionary<string, List<string>>();
+        private string _policyDescription;
         private string _policyId;
         private string _policyName;
+        private CustomerPolicyStatus _policyStatus;
         private string _policyUpdateToken;
         private bool? _remediationEnabled;
+        private List<string> _resourceSetIds = new List<string>();
         private List<ResourceTag> _resourceTags = new List<ResourceTag>();
         private string _resourceType;
         private List<string> _resourceTypeList = new List<string>();
@@ -49,10 +52,20 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property DeleteUnusedFMManagedResources. 
         /// <para>
-        /// Indicates whether Firewall Manager should delete Firewall Manager managed resources,
-        /// such as web ACLs and security groups, when they are not in use by the Firewall Manager
-        /// policy. By default, Firewall Manager doesn't delete unused Firewall Manager managed
-        /// resources. This option is not available for Shield Advanced or WAF Classic policies.
+        /// Indicates whether Firewall Manager should automatically remove protections from resources
+        /// that leave the policy scope and clean up resources that Firewall Manager is managing
+        /// for accounts when those accounts leave policy scope. For example, Firewall Manager
+        /// will disassociate a Firewall Manager managed web ACL from a protected customer resource
+        /// when the customer resource leaves policy scope. 
+        /// </para>
+        ///  
+        /// <para>
+        /// By default, Firewall Manager doesn't remove protections or delete Firewall Manager
+        /// managed resources. 
+        /// </para>
+        ///  
+        /// <para>
+        /// This option is not available for Shield Advanced or WAF Classic policies.
         /// </para>
         /// </summary>
         public bool DeleteUnusedFMManagedResources
@@ -189,6 +202,25 @@ namespace Amazon.FMS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PolicyDescription. 
+        /// <para>
+        /// The definition of the Network Firewall firewall policy.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=256)]
+        public string PolicyDescription
+        {
+            get { return this._policyDescription; }
+            set { this._policyDescription = value; }
+        }
+
+        // Check to see if PolicyDescription property is set
+        internal bool IsSetPolicyDescription()
+        {
+            return this._policyDescription != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property PolicyId. 
         /// <para>
         /// The ID of the Firewall Manager policy.
@@ -224,6 +256,35 @@ namespace Amazon.FMS.Model
         internal bool IsSetPolicyName()
         {
             return this._policyName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PolicyStatus. 
+        /// <para>
+        /// Indicates whether the policy is in or out of an admin's policy or Region scope.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>ACTIVE</code> - The administrator can manage and delete the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>OUT_OF_ADMIN_SCOPE</code> - The administrator can view the policy, but they
+        /// can't edit or delete the policy. Existing policy protections stay in place. Any new
+        /// resources that come into scope of the policy won't be protected.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public CustomerPolicyStatus PolicyStatus
+        {
+            get { return this._policyStatus; }
+            set { this._policyStatus = value; }
+        }
+
+        // Check to see if PolicyStatus property is set
+        internal bool IsSetPolicyStatus()
+        {
+            return this._policyStatus != null;
         }
 
         /// <summary>
@@ -268,6 +329,24 @@ namespace Amazon.FMS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ResourceSetIds. 
+        /// <para>
+        /// The unique identifiers of the resource sets used by the policy.
+        /// </para>
+        /// </summary>
+        public List<string> ResourceSetIds
+        {
+            get { return this._resourceSetIds; }
+            set { this._resourceSetIds = value; }
+        }
+
+        // Check to see if ResourceSetIds property is set
+        internal bool IsSetResourceSetIds()
+        {
+            return this._resourceSetIds != null && this._resourceSetIds.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property ResourceTags. 
         /// <para>
         /// An array of <code>ResourceTag</code> objects.
@@ -297,7 +376,8 @@ namespace Amazon.FMS.Model
         /// </para>
         ///  
         /// <para>
-        /// For WAF and Shield Advanced, example resource types include <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>
+        /// For WAF and Shield Advanced, resource types include <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>,
+        /// <code>AWS::ElasticLoadBalancing::LoadBalancer</code>, <code>AWS::EC2::EIP</code>,
         /// and <code>AWS::CloudFront::Distribution</code>. For a security group common policy,
         /// valid values are <code>AWS::EC2::NetworkInterface</code> and <code>AWS::EC2::Instance</code>.
         /// For a security group content audit policy, valid values are <code>AWS::EC2::SecurityGroup</code>,

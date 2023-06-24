@@ -39,7 +39,7 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property PolicyValidationPassed. 
         /// <para>
-        /// Returns a message stating that your Reource Policy passed validation. 
+        /// True if your policy passes validation, otherwise false.
         /// </para>
         /// </summary>
         public bool PolicyValidationPassed
@@ -57,7 +57,7 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property ValidationErrors. 
         /// <para>
-        /// Returns an error message if your policy doesn't pass validatation.
+        /// Validation errors if your policy didn't pass validation.
         /// </para>
         /// </summary>
         public List<ValidationErrorsEntry> ValidationErrors

@@ -33,8 +33,34 @@ namespace Amazon.Lightsail.Model
     /// </summary>
     public partial class GetBucketsResponse : AmazonWebServiceResponse
     {
+        private AccountLevelBpaSync _accountLevelBpaSync;
         private List<Bucket> _buckets = new List<Bucket>();
         private string _nextPageToken;
+
+        /// <summary>
+        /// Gets and sets the property AccountLevelBpaSync. 
+        /// <para>
+        /// An object that describes the synchronization status of the Amazon S3 account-level
+        /// block public access feature for your Lightsail buckets.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about this feature and how it affects Lightsail buckets, see
+        /// <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-block-public-access-for-buckets">Block
+        /// public access for buckets in Amazon Lightsail</a>.
+        /// </para>
+        /// </summary>
+        public AccountLevelBpaSync AccountLevelBpaSync
+        {
+            get { return this._accountLevelBpaSync; }
+            set { this._accountLevelBpaSync = value; }
+        }
+
+        // Check to see if AccountLevelBpaSync property is set
+        internal bool IsSetAccountLevelBpaSync()
+        {
+            return this._accountLevelBpaSync != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Buckets. 

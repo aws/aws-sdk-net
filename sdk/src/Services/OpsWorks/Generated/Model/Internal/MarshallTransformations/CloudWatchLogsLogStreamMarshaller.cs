@@ -34,7 +34,7 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CloudWatchLogsLogStream Marshaller
-    /// </summary>       
+    /// </summary>
     public class CloudWatchLogsLogStreamMarshaller : IRequestMarshaller<CloudWatchLogsLogStream, JsonMarshallerContext> 
     {
         /// <summary>
@@ -115,7 +115,7 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CloudWatchLogsLogStreamMarshaller Instance = new CloudWatchLogsLogStreamMarshaller();
 
     }

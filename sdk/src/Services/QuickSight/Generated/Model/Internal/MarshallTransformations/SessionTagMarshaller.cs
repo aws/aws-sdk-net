@@ -34,7 +34,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SessionTag Marshaller
-    /// </summary>       
+    /// </summary>
     public class SessionTagMarshaller : IRequestMarshaller<SessionTag, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SessionTagMarshaller Instance = new SessionTagMarshaller();
 
     }

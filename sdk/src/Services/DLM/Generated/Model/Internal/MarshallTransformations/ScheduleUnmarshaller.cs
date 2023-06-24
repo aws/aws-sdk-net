@@ -64,6 +64,12 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("ArchiveRule", targetDepth))
+                {
+                    var unmarshaller = ArchiveRuleUnmarshaller.Instance;
+                    unmarshalledObject.ArchiveRule = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CopyTags", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;

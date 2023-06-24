@@ -41,8 +41,8 @@ namespace Amazon.ManagedGrafana.Model
         /// <summary>
         /// Gets and sets the property AwsSso. 
         /// <para>
-        /// A structure containing information about how this workspace works with Amazon Web
-        /// Services SSO. 
+        /// A structure containing information about how this workspace works with IAM Identity
+        /// Center. 
         /// </para>
         /// </summary>
         public AwsSsoAuthentication AwsSso
@@ -60,8 +60,8 @@ namespace Amazon.ManagedGrafana.Model
         /// <summary>
         /// Gets and sets the property Providers. 
         /// <para>
-        /// Specifies whether this workspace uses Amazon Web Services SSO, SAML, or both methods
-        /// to authenticate users to use the Grafana console in the Amazon Managed Grafana workspace.
+        /// Specifies whether this workspace uses IAM Identity Center, SAML, or both methods to
+        /// authenticate users to use the Grafana console in the Amazon Managed Grafana workspace.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

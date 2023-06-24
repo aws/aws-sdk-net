@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// TransformJobDefinition Marshaller
-    /// </summary>       
+    /// </summary>
     public class TransformJobDefinitionMarshaller : IRequestMarshaller<TransformJobDefinition, JsonMarshallerContext> 
     {
         /// <summary>
@@ -114,7 +114,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static TransformJobDefinitionMarshaller Instance = new TransformJobDefinitionMarshaller();
 
     }

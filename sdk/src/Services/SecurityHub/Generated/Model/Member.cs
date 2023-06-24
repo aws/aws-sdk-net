@@ -150,37 +150,37 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>CREATED</code> - Indicates that the administrator account added the member
+        ///  <code>Created</code> - Indicates that the administrator account added the member
         /// account, but has not yet invited the member account.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>INVITED</code> - Indicates that the administrator account invited the member
+        ///  <code>Invited</code> - Indicates that the administrator account invited the member
         /// account. The member account has not yet responded to the invitation.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ENABLED</code> - Indicates that the member account is currently active. For
+        ///  <code>Enabled</code> - Indicates that the member account is currently active. For
         /// manually invited member accounts, indicates that the member account accepted the invitation.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>REMOVED</code> - Indicates that the administrator account disassociated the
+        ///  <code>Removed</code> - Indicates that the administrator account disassociated the
         /// member account.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>RESIGNED</code> - Indicates that the member account disassociated themselves
+        ///  <code>Resigned</code> - Indicates that the member account disassociated themselves
         /// from the administrator account.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DELETED</code> - Indicates that the administrator account deleted the member
+        ///  <code>Deleted</code> - Indicates that the administrator account deleted the member
         /// account.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ACCOUNT_SUSPENDED</code> - Indicates that an organization account was suspended
+        ///  <code>AccountSuspended</code> - Indicates that an organization account was suspended
         /// from Amazon Web Services at the same time that the administrator account tried to
         /// enable the organization account as a member account.
         /// </para>

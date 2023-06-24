@@ -58,7 +58,7 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
             string target = "AWSLicenseManager.CreateGrantVersion";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-08-01";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-08-01";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -96,6 +96,17 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.GrantName);
                 }
 
+                if(publicRequest.IsSetOptions())
+                {
+                    context.Writer.WritePropertyName("Options");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = OptionsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Options, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetSourceVersion())
                 {
                     context.Writer.WritePropertyName("SourceVersion");
@@ -114,7 +125,6 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.StatusReason);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

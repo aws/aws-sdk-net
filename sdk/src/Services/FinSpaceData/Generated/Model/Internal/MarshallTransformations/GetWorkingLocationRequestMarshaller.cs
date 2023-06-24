@@ -56,7 +56,7 @@ namespace Amazon.FinSpaceData.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.FinSpaceData");
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-07-13";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-07-13";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/workingLocationV1";
@@ -71,7 +71,6 @@ namespace Amazon.FinSpaceData.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.LocationType);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

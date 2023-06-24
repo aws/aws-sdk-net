@@ -31,11 +31,10 @@ namespace Amazon.SecurityToken.Model
     /// <summary>
     /// Container for the parameters to the AssumeRole operation.
     /// Returns a set of temporary security credentials that you can use to access Amazon
-    /// Web Services resources that you might not normally have access to. These temporary
-    /// credentials consist of an access key ID, a secret access key, and a security token.
-    /// Typically, you use <code>AssumeRole</code> within your account or for cross-account
-    /// access. For a comparison of <code>AssumeRole</code> with other API operations that
-    /// produce temporary credentials, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html">Requesting
+    /// Web Services resources. These temporary credentials consist of an access key ID, a
+    /// secret access key, and a security token. Typically, you use <code>AssumeRole</code>
+    /// within your account or for cross-account access. For a comparison of <code>AssumeRole</code>
+    /// with other API operations that produce temporary credentials, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html">Requesting
     /// Temporary Security Credentials</a> and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#stsapi_comparison">Comparing
     /// the Amazon Web Services STS API operations</a> in the <i>IAM User Guide</i>.
     /// 
@@ -54,22 +53,22 @@ namespace Amazon.SecurityToken.Model
     /// <para>
     /// (Optional) You can pass inline or managed <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">session
     /// policies</a> to this operation. You can pass a single JSON policy document to use
-    /// as an inline session policy. You can also specify up to 10 managed policies to use
-    /// as managed session policies. The plaintext that you use for both inline and managed
-    /// session policies can't exceed 2,048 characters. Passing policies to this operation
-    /// returns new temporary credentials. The resulting session's permissions are the intersection
-    /// of the role's identity-based policy and the session policies. You can use the role's
-    /// temporary credentials in subsequent Amazon Web Services API calls to access resources
-    /// in the account that owns the role. You cannot use session policies to grant more permissions
-    /// than those allowed by the identity-based policy of the role that is being assumed.
-    /// For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
+    /// as an inline session policy. You can also specify up to 10 managed policy Amazon Resource
+    /// Names (ARNs) to use as managed session policies. The plaintext that you use for both
+    /// inline and managed session policies can't exceed 2,048 characters. Passing policies
+    /// to this operation returns new temporary credentials. The resulting session's permissions
+    /// are the intersection of the role's identity-based policy and the session policies.
+    /// You can use the role's temporary credentials in subsequent Amazon Web Services API
+    /// calls to access resources in the account that owns the role. You cannot use session
+    /// policies to grant more permissions than those allowed by the identity-based policy
+    /// of the role that is being assumed. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
     /// Policies</a> in the <i>IAM User Guide</i>.
     /// </para>
     ///  
     /// <para>
-    /// When you create a role, you create two policies: A role trust policy that specifies
-    /// <i>who</i> can assume the role and a permissions policy that specifies <i>what</i>
-    /// can be done with the role. You specify the trusted principal who is allowed to assume
+    /// When you create a role, you create two policies: a role trust policy that specifies
+    /// <i>who</i> can assume the role, and a permissions policy that specifies <i>what</i>
+    /// can be done with the role. You specify the trusted principal that is allowed to assume
     /// the role in the role trust policy.
     /// </para>
     ///  
@@ -82,8 +81,8 @@ namespace Amazon.SecurityToken.Model
     ///  
     /// <para>
     /// A user who wants to access a role in a different account must also have permissions
-    /// that are delegated from the user account administrator. The administrator must attach
-    /// a policy that allows the user to call <code>AssumeRole</code> for the ARN of the role
+    /// that are delegated from the account administrator. The administrator must attach a
+    /// policy that allows the user to call <code>AssumeRole</code> for the ARN of the role
     /// in the other account.
     /// </para>
     ///  
@@ -286,11 +285,11 @@ namespace Amazon.SecurityToken.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// An Amazon Web Services conversion compresses the passed session policies and session
-        /// tags into a packed binary format that has a separate limit. Your request can fail
-        /// for this limit even if your plaintext meets the other requirements. The <code>PackedPolicySize</code>
-        /// response element indicates by percentage how close the policies and tags for your
-        /// request are to the upper size limit. 
+        /// An Amazon Web Services conversion compresses the passed inline session policy, managed
+        /// policy ARNs, and session tags into a packed binary format that has a separate limit.
+        /// Your request can fail for this limit even if your plaintext meets the other requirements.
+        /// The <code>PackedPolicySize</code> response element indicates by percentage how close
+        /// the policies and tags for your request are to the upper size limit.
         /// </para>
         ///  </note>
         /// </summary>
@@ -323,11 +322,11 @@ namespace Amazon.SecurityToken.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// An Amazon Web Services conversion compresses the passed session policies and session
-        /// tags into a packed binary format that has a separate limit. Your request can fail
-        /// for this limit even if your plaintext meets the other requirements. The <code>PackedPolicySize</code>
-        /// response element indicates by percentage how close the policies and tags for your
-        /// request are to the upper size limit. 
+        /// An Amazon Web Services conversion compresses the passed inline session policy, managed
+        /// policy ARNs, and session tags into a packed binary format that has a separate limit.
+        /// Your request can fail for this limit even if your plaintext meets the other requirements.
+        /// The <code>PackedPolicySize</code> response element indicates by percentage how close
+        /// the policies and tags for your request are to the upper size limit.
         /// </para>
         ///  </note> 
         /// <para>
@@ -488,11 +487,11 @@ namespace Amazon.SecurityToken.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// An Amazon Web Services conversion compresses the passed session policies and session
-        /// tags into a packed binary format that has a separate limit. Your request can fail
-        /// for this limit even if your plaintext meets the other requirements. The <code>PackedPolicySize</code>
-        /// response element indicates by percentage how close the policies and tags for your
-        /// request are to the upper size limit. 
+        /// An Amazon Web Services conversion compresses the passed inline session policy, managed
+        /// policy ARNs, and session tags into a packed binary format that has a separate limit.
+        /// Your request can fail for this limit even if your plaintext meets the other requirements.
+        /// The <code>PackedPolicySize</code> response element indicates by percentage how close
+        /// the policies and tags for your request are to the upper size limit.
         /// </para>
         ///  </note> 
         /// <para>
@@ -514,7 +513,7 @@ namespace Amazon.SecurityToken.Model
         /// session inherits any transitive session tags from the calling session. If you pass
         /// a session tag with the same key as an inherited tag, the operation fails. To view
         /// the inherited tags for a session, see the CloudTrail logs. For more information, see
-        /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/session-tags.html#id_session-tags_ctlogs">Viewing
+        /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html#id_session-tags_ctlogs">Viewing
         /// Session Tags in CloudTrail</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>

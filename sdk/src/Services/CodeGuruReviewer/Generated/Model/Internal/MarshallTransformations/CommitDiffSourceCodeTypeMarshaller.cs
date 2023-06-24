@@ -34,7 +34,7 @@ namespace Amazon.CodeGuruReviewer.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CommitDiffSourceCodeType Marshaller
-    /// </summary>       
+    /// </summary>
     public class CommitDiffSourceCodeTypeMarshaller : IRequestMarshaller<CommitDiffSourceCodeType, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.CodeGuruReviewer.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CommitDiffSourceCodeTypeMarshaller Instance = new CommitDiffSourceCodeTypeMarshaller();
 
     }

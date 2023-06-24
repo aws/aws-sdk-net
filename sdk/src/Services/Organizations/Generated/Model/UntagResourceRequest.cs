@@ -34,11 +34,11 @@ namespace Amazon.Organizations.Model
     /// 
     ///  
     /// <para>
-    /// You can attach tags to the following resources in AWS Organizations.
+    /// You can attach tags to the following resources in Organizations.
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// AWS account
+    /// Amazon Web Services account
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -73,7 +73,7 @@ namespace Amazon.Organizations.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// AWS account – specify the account ID number.
+        /// Amazon Web Services account – specify the account ID number.
         /// </para>
         ///  </li> <li> 
         /// <para>

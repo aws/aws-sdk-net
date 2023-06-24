@@ -55,7 +55,7 @@ namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
         public IRequest Marshall(UntagResourceRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.IoTEvents");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-07-27";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-07-27";
             request.HttpMethod = "DELETE";
 
             

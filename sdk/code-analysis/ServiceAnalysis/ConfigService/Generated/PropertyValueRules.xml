@@ -336,6 +336,11 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ConfigService.Model.GetComplianceDetailsByResourceRequest.ResourceEvaluationId</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ConfigService.Model.GetComplianceDetailsByResourceRequest.ResourceId</property>
     <min>1</min>
     <max>768</max>
@@ -368,6 +373,17 @@
     <max>20</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ConfigService.Model.GetCustomRulePolicyRequest.ConfigRuleName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.GetCustomRulePolicyResponse.PolicyText</property>
+    <min>0</min>
+    <max>10000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ConfigService.Model.GetDiscoveredResourceCountsRequest.Limit</property>
     <min>0</min>
     <max>100</max>
@@ -395,6 +411,17 @@
     <pattern>[a-zA-Z][-a-zA-Z0-9]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ConfigService.Model.GetOrganizationCustomRulePolicyRequest.OrganizationConfigRuleName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.GetOrganizationCustomRulePolicyResponse.PolicyText</property>
+    <min>0</min>
+    <max>10000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ConfigService.Model.GetResourceConfigHistoryRequest.Limit</property>
     <min>0</min>
     <max>100</max>
@@ -403,6 +430,16 @@
     <property>Amazon.ConfigService.Model.GetResourceConfigHistoryRequest.ResourceId</property>
     <min>1</min>
     <max>768</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.GetResourceEvaluationSummaryRequest.ResourceEvaluationId</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.GetResourceEvaluationSummaryResponse.ResourceEvaluationId</property>
+    <min>1</min>
+    <max>128</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConfigService.Model.GetStoredQueryRequest.QueryName</property>
@@ -422,7 +459,17 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ConfigService.Model.ListConformancePackComplianceScoresRequest.Limit</property>
+    <min>0</min>
+    <max>20</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ConfigService.Model.ListDiscoveredResourcesRequest.Limit</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.ListResourceEvaluationsRequest.Limit</property>
     <min>0</min>
     <max>100</max>
   </property-value-rule>
@@ -616,6 +663,21 @@
     <min>1</min>
     <max>128</max>
     <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.StartResourceEvaluationRequest.ClientToken</property>
+    <min>64</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.StartResourceEvaluationRequest.EvaluationTimeout</property>
+    <min>0</min>
+    <max>3600</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.StartResourceEvaluationResponse.ResourceEvaluationId</property>
+    <min>1</min>
+    <max>128</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConfigService.Model.StopConfigurationRecorderRequest.ConfigurationRecorderName</property>
@@ -868,6 +930,12 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ConfigService.Model.ConformancePackComplianceScore.ConformancePackName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z][-a-zA-Z0-9]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ConfigService.Model.ConformancePackComplianceSummary.ConformancePackName</property>
     <min>1</min>
     <max>256</max>
@@ -957,6 +1025,17 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ConfigService.Model.CustomPolicyDetails.PolicyRuntime</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>guard\-2\.x\.x</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.CustomPolicyDetails.PolicyText</property>
+    <min>0</min>
+    <max>10000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ConfigService.Model.DeliveryChannel.Name</property>
     <min>1</min>
     <max>256</max>
@@ -977,9 +1056,19 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ConfigService.Model.EvaluationContext.EvaluationContextIdentifier</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ConfigService.Model.EvaluationResult.Annotation</property>
     <min>1</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.EvaluationResultIdentifier.ResourceEvaluationId</property>
+    <min>1</min>
+    <max>128</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConfigService.Model.EvaluationResultQualifier.ConfigRuleName</property>
@@ -996,6 +1085,11 @@
     <property>Amazon.ConfigService.Model.EvaluationResultQualifier.ResourceType</property>
     <min>1</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.EvaluationStatus.FailureReason</property>
+    <min>1</min>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConfigService.Model.ExternalEvaluation.Annotation</property>
@@ -1078,6 +1172,73 @@
     <min>1</min>
     <max>128</max>
     <pattern>[a-zA-Z][-a-zA-Z0-9]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.OrganizationCustomPolicyRuleMetadata.Description</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.OrganizationCustomPolicyRuleMetadata.InputParameters</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.OrganizationCustomPolicyRuleMetadata.PolicyRuntime</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>guard\-2\.x\.x</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.OrganizationCustomPolicyRuleMetadata.PolicyText</property>
+    <min>0</min>
+    <max>10000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.OrganizationCustomPolicyRuleMetadata.ResourceIdScope</property>
+    <min>1</min>
+    <max>768</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.OrganizationCustomPolicyRuleMetadata.TagKeyScope</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.OrganizationCustomPolicyRuleMetadata.TagValueScope</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.OrganizationCustomPolicyRuleMetadataNoPolicy.Description</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.OrganizationCustomPolicyRuleMetadataNoPolicy.InputParameters</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.OrganizationCustomPolicyRuleMetadataNoPolicy.PolicyRuntime</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>guard\-2\.x\.x</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.OrganizationCustomPolicyRuleMetadataNoPolicy.ResourceIdScope</property>
+    <min>1</min>
+    <max>768</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.OrganizationCustomPolicyRuleMetadataNoPolicy.TagKeyScope</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.OrganizationCustomPolicyRuleMetadataNoPolicy.TagValueScope</property>
+    <min>1</min>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConfigService.Model.OrganizationCustomRuleMetadata.Description</property>
@@ -1229,6 +1390,31 @@
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ConfigService.Model.ResourceDetails.ResourceConfiguration</property>
+    <min>1</min>
+    <max>51200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.ResourceDetails.ResourceId</property>
+    <min>1</min>
+    <max>768</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.ResourceDetails.ResourceType</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.ResourceEvaluation.ResourceEvaluationId</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.ResourceEvaluationFilters.EvaluationContextIdentifier</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ConfigService.Model.ResourceFilters.AccountId</property>
     <pattern>\d{12}</pattern>
   </property-value-rule>
@@ -1360,5 +1546,13 @@
     <property>Amazon.ConfigService.Model.Tag.Value</property>
     <min>0</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.TemplateSSMDocumentDetails.DocumentName</property>
+    <pattern>^[a-zA-Z0-9_\-.:/]{3,200}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.TemplateSSMDocumentDetails.DocumentVersion</property>
+    <pattern>([$]LATEST|[$]DEFAULT|^[1-9][0-9]*$)</pattern>
   </property-value-rule>
 </property-value-rules>

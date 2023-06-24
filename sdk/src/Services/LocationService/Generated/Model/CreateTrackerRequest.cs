@@ -30,8 +30,8 @@ namespace Amazon.LocationService.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateTracker operation.
-    /// Creates a tracker resource in your AWS account, which lets you retrieve current and
-    /// historical location of devices.
+    /// Creates a tracker resource in your Amazon Web Services account, which lets you retrieve
+    /// current and historical location of devices.
     /// </summary>
     public partial class CreateTrackerRequest : AmazonLocationServiceRequest
     {
@@ -65,8 +65,9 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS
-        /// KMS customer managed key</a>. Enter a key ID, key ARN, alias name, or alias ARN.
+        /// A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon
+        /// Web Services KMS customer managed key</a>. Enter a key ID, key ARN, alias name, or
+        /// alias ARN.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
@@ -106,6 +107,16 @@ namespace Amazon.LocationService.Model
         /// Distance-based filtering can also reduce the effects of GPS noise when displaying
         /// device trajectories on a map. 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AccuracyBased</code> - If the device has moved less than the measured accuracy,
+        /// location updates are ignored. For example, if two consecutive updates from a device
+        /// have a horizontal accuracy of 5 m and 10 m, the second update is ignored if the device
+        /// has moved less than 15 m. Ignored location updates are neither evaluated against linked
+        /// geofence collections, nor stored. This can reduce the effects of GPS noise when displaying
+        /// device trajectories on a map, and can help control your costs by reducing the number
+        /// of geofence evaluations. 
+        /// </para>
         ///  </li> </ul> 
         /// <para>
         /// This field is optional. If not specified, the default value is <code>TimeBased</code>.
@@ -126,15 +137,10 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property PricingPlan. 
         /// <para>
-        /// Specifies the pricing plan for the tracker resource.
-        /// </para>
-        ///  
-        /// <para>
-        /// For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon
-        /// Location Service pricing</a>.
+        /// No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [Obsolete("Deprecated. If included, the only allowed value is RequestBasedUsage.")]
         public PricingPlan PricingPlan
         {
             get { return this._pricingPlan; }
@@ -150,30 +156,10 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property PricingPlanDataSource. 
         /// <para>
-        /// Specifies the data provider for the tracker resource.
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Required value for the following pricing plans: <code>MobileAssetTracking </code>|
-        /// <code>MobileAssetManagement</code> 
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// For more information about <a href="https://aws.amazon.com/location/data-providers/">Data
-        /// Providers</a>, and <a href="https://aws.amazon.com/location/pricing/">Pricing plans</a>,
-        /// see the Amazon Location Service product page.
-        /// </para>
-        ///  <note> 
-        /// <para>
-        /// Amazon Location Service only uses <code>PricingPlanDataSource</code> to calculate
-        /// billing for your tracker resource. Your data will not be shared with the data provider,
-        /// and will remain in your AWS account or Region unless you move it.
-        /// </para>
-        ///  </note> 
-        /// <para>
-        /// Valid values: <code>Esri</code> | <code>Here</code> 
+        /// This parameter is no longer used.
         /// </para>
         /// </summary>
+        [Obsolete("Deprecated. No longer allowed.")]
         public string PricingPlanDataSource
         {
             get { return this._pricingPlanDataSource; }

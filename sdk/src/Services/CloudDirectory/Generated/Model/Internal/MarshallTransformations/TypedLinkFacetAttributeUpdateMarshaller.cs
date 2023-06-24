@@ -34,7 +34,7 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// TypedLinkFacetAttributeUpdate Marshaller
-    /// </summary>       
+    /// </summary>
     public class TypedLinkFacetAttributeUpdateMarshaller : IRequestMarshaller<TypedLinkFacetAttributeUpdate, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static TypedLinkFacetAttributeUpdateMarshaller Instance = new TypedLinkFacetAttributeUpdateMarshaller();
 
     }

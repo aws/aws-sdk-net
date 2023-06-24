@@ -34,7 +34,7 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CustomerManagedS3Storage Marshaller
-    /// </summary>       
+    /// </summary>
     public class CustomerManagedS3StorageMarshaller : IRequestMarshaller<CustomerManagedS3Storage, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CustomerManagedS3StorageMarshaller Instance = new CustomerManagedS3StorageMarshaller();
 
     }

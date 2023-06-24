@@ -86,16 +86,30 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property Field. 
         /// <para>
-        ///  A field in an event record on which to filter events to be logged. Supported fields
-        /// include <code>readOnly</code>, <code>eventCategory</code>, <code>eventSource</code>
-        /// (for management events), <code>eventName</code>, <code>resources.type</code>, and
-        /// <code>resources.ARN</code>. 
+        ///  A field in a CloudTrail event record on which to filter events to be logged. For
+        /// event data stores for Config configuration items, Audit Manager evidence, or non-Amazon
+        /// Web Services events, the field is used only for selecting events as filtering is not
+        /// supported. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  For CloudTrail event records, supported fields include <code>readOnly</code>, <code>eventCategory</code>,
+        /// <code>eventSource</code> (for management events), <code>eventName</code>, <code>resources.type</code>,
+        /// and <code>resources.ARN</code>. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  For event data stores for Config configuration items, Audit Manager evidence, or
+        /// non-Amazon Web Services events, the only supported field is <code>eventCategory</code>.
+        /// 
         /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <b> <code>readOnly</code> </b> - Optional. Can be set to <code>Equals</code> a value
-        /// of <code>true</code> or <code>false</code>. A value of <code>false</code> logs both
-        /// <code>read</code> and <code>write</code> events.
+        /// of <code>true</code> or <code>false</code>. If you do not add this field, CloudTrail
+        /// logs both <code>read</code> and <code>write</code> events. A value of <code>true</code>
+        /// logs only <code>read</code> events. A value of <code>false</code> logs only <code>write</code>
+        /// events.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -111,17 +125,37 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>eventCategory</code> </b> - This is required. It must be set to <code>Equals</code>,
-        /// and the value must be <code>Management</code> or <code>Data</code>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <b> <code>resources.type</code> </b> - This ﬁeld is required. <code>resources.type</code>
-        /// can only use the <code>Equals</code> operator, and the value can be one of the following:
+        ///  <b> <code>eventCategory</code> </b> - This is required and must be set to <code>Equals</code>.
+        /// 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>AWS::S3::Object</code> 
+        ///  For CloudTrail event records, the value must be <code>Management</code> or <code>Data</code>.
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  For Config configuration items, the value must be <code>ConfigurationItem</code>.
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  For Audit Manager evidence, the value must be <code>Evidence</code>. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  For non-Amazon Web Services events, the value must be <code>ActivityAuditLog</code>.
+        /// 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        ///  <b> <code>resources.type</code> </b> - This ﬁeld is required for CloudTrail data
+        /// events. <code>resources.type</code> can only use the <code>Equals</code> operator,
+        /// and the value can be one of the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>AWS::DynamoDB::Table</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -129,19 +163,23 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AWS::DynamoDB::Table</code> 
+        ///  <code>AWS::S3::Object</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AWS::S3Outposts::Object</code> 
+        ///  <code>AWS::CloudTrail::Channel</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AWS::ManagedBlockchain::Node</code> 
+        ///  <code>AWS::CodeWhisperer::Profile</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AWS::S3ObjectLambda::AccessPoint</code> 
+        ///  <code>AWS::Cognito::IdentityPool</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AWS::DynamoDB::Stream</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -149,11 +187,47 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>AWS::EMRWAL::Workspace</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AWS::FinSpace::Environment</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AWS::Glue::Table</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AWS::GuardDuty::Detector</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AWS::KendraRanking::ExecutionPlan</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AWS::ManagedBlockchain::Node</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AWS::SageMaker::ExperimentTrialComponent</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AWS::SageMaker::FeatureGroup</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>AWS::S3::AccessPoint</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AWS::DynamoDB::Stream</code> 
+        ///  <code>AWS::S3ObjectLambda::AccessPoint</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AWS::S3Outposts::Object</code> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -186,6 +260,171 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
+        /// When resources.type equals <code>AWS::DynamoDB::Table</code>, and the operator is
+        /// set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+        /// format:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>arn:&lt;partition&gt;:dynamodb:&lt;region&gt;:&lt;account_ID&gt;:table/&lt;table_name&gt;</code>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When resources.type equals <code>AWS::Lambda::Function</code>, and the operator is
+        /// set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+        /// format:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>arn:&lt;partition&gt;:lambda:&lt;region&gt;:&lt;account_ID&gt;:function:&lt;function_name&gt;</code>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When resources.type equals <code>AWS::CloudTrail::Channel</code>, and the operator
+        /// is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+        /// format:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>arn:&lt;partition&gt;:cloudtrail:&lt;region&gt;:&lt;account_ID&gt;:channel/&lt;channel_UUID&gt;</code>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When resources.type equals <code>AWS::CodeWhisperer::Profile</code>, and the operator
+        /// is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+        /// format:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>arn:&lt;partition&gt;:codewhisperer:&lt;region&gt;:&lt;account_ID&gt;:profile/&lt;profile_ID&gt;</code>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When resources.type equals <code>AWS::Cognito::IdentityPool</code>, and the operator
+        /// is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+        /// format:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>arn:&lt;partition&gt;:cognito-identity:&lt;region&gt;:&lt;account_ID&gt;:identitypool/&lt;identity_pool_ID&gt;</code>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When <code>resources.type</code> equals <code>AWS::DynamoDB::Stream</code>, and the
+        /// operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be
+        /// in the following format:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>arn:&lt;partition&gt;:dynamodb:&lt;region&gt;:&lt;account_ID&gt;:table/&lt;table_name&gt;/stream/&lt;date_time&gt;</code>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When <code>resources.type</code> equals <code>AWS::EC2::Snapshot</code>, and the operator
+        /// is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+        /// format:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>arn:&lt;partition&gt;:ec2:&lt;region&gt;::snapshot/&lt;snapshot_ID&gt;</code>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When <code>resources.type</code> equals <code>AWS::EMRWAL::Workspace</code>, and the
+        /// operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be
+        /// in the following format:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>arn:&lt;partition&gt;:emrwal:&lt;region&gt;::workspace/&lt;workspace_name&gt;</code>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When <code>resources.type</code> equals <code>AWS::FinSpace::Environment</code>, and
+        /// the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must
+        /// be in the following format:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>arn:&lt;partition&gt;:finspace:&lt;region&gt;:&lt;account_ID&gt;:environment/&lt;environment_ID&gt;</code>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When <code>resources.type</code> equals <code>AWS::Glue::Table</code>, and the operator
+        /// is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+        /// format:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>arn:&lt;partition&gt;:glue:&lt;region&gt;:&lt;account_ID&gt;:table/&lt;database_name&gt;/&lt;table_name&gt;</code>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When <code>resources.type</code> equals <code>AWS::GuardDuty::Detector</code>, and
+        /// the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must
+        /// be in the following format:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>arn:&lt;partition&gt;:guardduty:&lt;region&gt;:&lt;account_ID&gt;:detector/&lt;detector_ID&gt;</code>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When <code>resources.type</code> equals <code>AWS::KendraRanking::ExecutionPlan</code>,
+        /// and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN
+        /// must be in the following format:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>arn:&lt;partition&gt;:kendra-ranking:&lt;region&gt;:&lt;account_ID&gt;:rescore-execution-plan/&lt;rescore_execution_plan_ID&gt;</code>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When <code>resources.type</code> equals <code>AWS::ManagedBlockchain::Node</code>,
+        /// and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN
+        /// must be in the following format:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>arn:&lt;partition&gt;:managedblockchain:&lt;region&gt;:&lt;account_ID&gt;:nodes/&lt;node_ID&gt;</code>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When <code>resources.type</code> equals <code>AWS::SageMaker::ExperimentTrialComponent</code>,
+        /// and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN
+        /// must be in the following format:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>arn:&lt;partition&gt;:sagemaker:&lt;region&gt;:&lt;account_ID&gt;:experiment-trial-component/&lt;experiment_trial_component_name&gt;</code>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When <code>resources.type</code> equals <code>AWS::SageMaker::FeatureGroup</code>,
+        /// and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN
+        /// must be in the following format:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>arn:&lt;partition&gt;:sagemaker:&lt;region&gt;:&lt;account_ID&gt;:feature-group/&lt;feature_group_name&gt;</code>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
         /// When <code>resources.type</code> equals <code>AWS::S3::AccessPoint</code>, and the
         /// operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be
         /// in one of the following formats. To log events on all objects in an S3 access point,
@@ -204,50 +443,6 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// When resources.type equals <code>AWS::Lambda::Function</code>, and the operator is
-        /// set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
-        /// format:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>arn:&lt;partition&gt;:lambda:&lt;region&gt;:&lt;account_ID&gt;:function:&lt;function_name&gt;</code>
-        /// 
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// When resources.type equals <code>AWS::DynamoDB::Table</code>, and the operator is
-        /// set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
-        /// format:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>arn:&lt;partition&gt;:dynamodb:&lt;region&gt;:&lt;account_ID&gt;:table/&lt;table_name&gt;</code>
-        /// 
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// When <code>resources.type</code> equals <code>AWS::S3Outposts::Object</code>, and
-        /// the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must
-        /// be in the following format:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>arn:&lt;partition&gt;:s3-outposts:&lt;region&gt;:&lt;account_ID&gt;:&lt;object_path&gt;</code>
-        /// 
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// When <code>resources.type</code> equals <code>AWS::ManagedBlockchain::Node</code>,
-        /// and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN
-        /// must be in the following format:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>arn:&lt;partition&gt;:managedblockchain:&lt;region&gt;:&lt;account_ID&gt;:nodes/&lt;node_ID&gt;</code>
-        /// 
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
         /// When <code>resources.type</code> equals <code>AWS::S3ObjectLambda::AccessPoint</code>,
         /// and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN
         /// must be in the following format:
@@ -259,24 +454,13 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// When <code>resources.type</code> equals <code>AWS::EC2::Snapshot</code>, and the operator
-        /// is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
-        /// format:
+        /// When <code>resources.type</code> equals <code>AWS::S3Outposts::Object</code>, and
+        /// the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must
+        /// be in the following format:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>arn:&lt;partition&gt;:ec2:&lt;region&gt;::snapshot/&lt;snapshot_ID&gt;</code>
-        /// 
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// When <code>resources.type</code> equals <code>AWS::DynamoDB::Stream</code>, and the
-        /// operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be
-        /// in the following format:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>arn:&lt;partition&gt;:dynamodb:&lt;region&gt;:&lt;account_ID&gt;:table/&lt;table_name&gt;/stream/&lt;date_time&gt;</code>
+        ///  <code>arn:&lt;partition&gt;:s3-outposts:&lt;region&gt;:&lt;account_ID&gt;:&lt;object_path&gt;</code>
         /// 
         /// </para>
         ///  </li> </ul> </li> </ul>

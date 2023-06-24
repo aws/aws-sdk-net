@@ -36,6 +36,7 @@ namespace Amazon.SecurityHub.Model
         private string _standardsArn;
         private Dictionary<string, string> _standardsInput = new Dictionary<string, string>();
         private StandardsStatus _standardsStatus;
+        private StandardsStatusReason _standardsStatusReason;
         private string _standardsSubscriptionArn;
 
         /// <summary>
@@ -119,6 +120,24 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetStandardsStatus()
         {
             return this._standardsStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StandardsStatusReason. 
+        /// <para>
+        /// The reason for the current status.
+        /// </para>
+        /// </summary>
+        public StandardsStatusReason StandardsStatusReason
+        {
+            get { return this._standardsStatusReason; }
+            set { this._standardsStatusReason = value; }
+        }
+
+        // Check to see if StandardsStatusReason property is set
+        internal bool IsSetStandardsStatusReason()
+        {
+            return this._standardsStatusReason != null;
         }
 
         /// <summary>

@@ -200,7 +200,7 @@ namespace Amazon.MigrationHubRefactorSpaces.Model
         /// <summary>
         /// Gets and sets the property ServiceId. 
         /// <para>
-        /// The ID of service in which the rute iscreated. Traffic that matches this route is
+        /// The ID of service in which the route is created. Traffic that matches this route is
         /// forwarded to this service.
         /// </para>
         /// </summary>
@@ -220,7 +220,9 @@ namespace Amazon.MigrationHubRefactorSpaces.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// he current state of the route. 
+        /// The current state of the route. Activation state only allows <code>ACTIVE</code> or
+        /// <code>INACTIVE</code> as user inputs. <code>FAILED</code> is a route state that is
+        /// system generated.
         /// </para>
         /// </summary>
         public RouteState State
@@ -242,7 +244,7 @@ namespace Amazon.MigrationHubRefactorSpaces.Model
         /// Web Services resource. Each tag consists of a key-value pair. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=50)]
+        [AWSProperty(Sensitive=true, Min=0, Max=50)]
         public Dictionary<string, string> Tags
         {
             get { return this._tags; }
@@ -258,7 +260,7 @@ namespace Amazon.MigrationHubRefactorSpaces.Model
         /// <summary>
         /// Gets and sets the property UriPathRoute. 
         /// <para>
-        /// onfiguration for the URI path route type. 
+        /// Configuration for the URI path route type. 
         /// </para>
         /// </summary>
         public UriPathRouteInput UriPathRoute

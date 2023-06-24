@@ -36,6 +36,7 @@ namespace Amazon.NetworkFirewall.Model
     {
         private string _description;
         private bool? _dryRun;
+        private EncryptionConfiguration _encryptionConfiguration;
         private FirewallPolicy _firewallPolicy;
         private string _firewallPolicyArn;
         private string _firewallPolicyName;
@@ -91,6 +92,24 @@ namespace Amazon.NetworkFirewall.Model
         internal bool IsSetDryRun()
         {
             return this._dryRun.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EncryptionConfiguration. 
+        /// <para>
+        /// A complex type that contains settings for encryption of your firewall policy resources.
+        /// </para>
+        /// </summary>
+        public EncryptionConfiguration EncryptionConfiguration
+        {
+            get { return this._encryptionConfiguration; }
+            set { this._encryptionConfiguration = value; }
+        }
+
+        // Check to see if EncryptionConfiguration property is set
+        internal bool IsSetEncryptionConfiguration()
+        {
+            return this._encryptionConfiguration != null;
         }
 
         /// <summary>

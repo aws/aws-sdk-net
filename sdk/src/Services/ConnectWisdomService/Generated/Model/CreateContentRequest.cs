@@ -48,7 +48,9 @@ namespace Amazon.ConnectWisdomService.Model
         /// Gets and sets the property ClientToken. 
         /// <para>
         /// A unique, case-sensitive identifier that you provide to ensure the idempotency of
-        /// the request.
+        /// the request. If not provided, the Amazon Web Services SDK populates this field. For
+        /// more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
+        /// retries safe with idempotent APIs</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=4096)]
@@ -67,7 +69,7 @@ namespace Amazon.ConnectWisdomService.Model
         /// <summary>
         /// Gets and sets the property KnowledgeBaseId. 
         /// <para>
-        /// The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot
+        /// The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot
         /// contain the ARN.
         /// </para>
         /// </summary>
@@ -92,6 +94,7 @@ namespace Amazon.ConnectWisdomService.Model
         /// store an external version identifier as metadata to utilize for determining drift.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=10)]
         public Dictionary<string, string> Metadata
         {
             get { return this._metadata; }
@@ -189,7 +192,7 @@ namespace Amazon.ConnectWisdomService.Model
         /// A pointer to the uploaded asset. This value is returned by <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_StartContentUpload.html">StartContentUpload</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=4096)]
+        [AWSProperty(Required=true, Min=1, Max=1200)]
         public string UploadId
         {
             get { return this._uploadId; }

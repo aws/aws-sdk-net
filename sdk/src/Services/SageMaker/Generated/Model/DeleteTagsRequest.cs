@@ -30,7 +30,7 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteTags operation.
-    /// Deletes the specified tags from an Amazon SageMaker resource.
+    /// Deletes the specified tags from an SageMaker resource.
     /// 
     ///  
     /// <para>

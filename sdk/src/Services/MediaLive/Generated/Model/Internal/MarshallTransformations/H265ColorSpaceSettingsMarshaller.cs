@@ -34,7 +34,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// H265ColorSpaceSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class H265ColorSpaceSettingsMarshaller : IRequestMarshaller<H265ColorSpaceSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -52,6 +52,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 
                 var marshaller = ColorSpacePassthroughSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.ColorSpacePassthroughSettings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetDolbyVision81Settings())
+            {
+                context.Writer.WritePropertyName("dolbyVision81Settings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = DolbyVision81SettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.DolbyVision81Settings, context);
 
                 context.Writer.WriteObjectEnd();
             }
@@ -93,7 +104,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static H265ColorSpaceSettingsMarshaller Instance = new H265ColorSpaceSettingsMarshaller();
 
     }

@@ -30,12 +30,10 @@ namespace Amazon.CloudFormation.Model
 {
     /// <summary>
     /// Container for the parameters to the ImportStacksToStackSet operation.
-    /// Use the stack import operations for self-managed or service-managed StackSets. For
-    /// self-managed StackSets, the import operation can import stacks in the administrator
-    /// account or in different target accounts and Amazon Web Services Regions. For service-managed
-    /// StackSets, the import operation can import any stack in the same AWS Organizations
-    /// as the management account. The import operation can import up to 10 stacks using inline
-    /// stack IDs or up to 10,000 stacks using an Amazon S3 object.
+    /// Import existing stacks into a new stack sets. Use the stack import operation to import
+    /// up to 10 stacks into a new stack set in the same account as the source stack or in
+    /// a different administrator account and Region, by specifying the stack ID of the stack
+    /// you intend to import.
     /// </summary>
     public partial class ImportStacksToStackSetRequest : AmazonCloudFormationRequest
     {
@@ -95,7 +93,16 @@ namespace Amazon.CloudFormation.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OperationPreferences.
+        /// Gets and sets the property OperationPreferences. 
+        /// <para>
+        /// The user-specified preferences for how CloudFormation performs a stack set operation.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about maximum concurrent accounts and failure tolerance, see
+        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack
+        /// set operation options</a>.
+        /// </para>
         /// </summary>
         public StackSetOperationPreferences OperationPreferences
         {
@@ -112,7 +119,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property OrganizationalUnitIds. 
         /// <para>
-        /// The list of OU ID’s to which the stacks being imported has to be mapped as deployment
+        /// The list of OU ID's to which the stacks being imported has to be mapped as deployment
         /// target.
         /// </para>
         /// </summary>

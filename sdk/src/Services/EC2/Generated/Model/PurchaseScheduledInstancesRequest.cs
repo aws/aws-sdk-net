@@ -30,8 +30,14 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the PurchaseScheduledInstances operation.
+    /// <note> 
+    /// <para>
+    /// You can no longer purchase Scheduled Instances.
+    /// </para>
+    ///  </note> 
+    /// <para>
     /// Purchases the Scheduled Instances with the specified schedule.
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// Scheduled Instances enable you to purchase Amazon EC2 compute capacity by the hour

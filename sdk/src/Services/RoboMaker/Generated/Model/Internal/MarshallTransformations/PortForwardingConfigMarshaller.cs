@@ -34,7 +34,7 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// PortForwardingConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class PortForwardingConfigMarshaller : IRequestMarshaller<PortForwardingConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -65,7 +65,7 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static PortForwardingConfigMarshaller Instance = new PortForwardingConfigMarshaller();
 
     }

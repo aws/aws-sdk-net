@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LookoutforVision.Model
 {
     /// <summary>
-    /// Information about the location training output.
+    /// Information about the location of training output or the output of a model packaging
+    /// job.
     /// </summary>
     public partial class S3Location
     {
@@ -39,7 +40,10 @@ namespace Amazon.LookoutforVision.Model
         /// <summary>
         /// Gets and sets the property Bucket. 
         /// <para>
-        /// The S3 bucket that contains the training output.
+        /// The S3 bucket that contains the training or model packaging job output. If you are
+        /// training a model, the bucket must in your AWS account. If you use an S3 bucket for
+        /// a model packaging job, the S3 bucket must be in the same AWS Region and AWS account
+        /// in which you use AWS IoT Greengrass.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=3, Max=63)]
@@ -58,7 +62,7 @@ namespace Amazon.LookoutforVision.Model
         /// <summary>
         /// Gets and sets the property Prefix. 
         /// <para>
-        /// The path of the folder, within the S3 bucket, that contains the training output.
+        /// The path of the folder, within the S3 bucket, that contains the output.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]

@@ -66,8 +66,7 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  
     /// <para>
-    ///  <a>CreateScript</a> | <a>ListScripts</a> | <a>DescribeScript</a> | <a>UpdateScript</a>
-    /// | <a>DeleteScript</a> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
+    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
     /// APIs by task</a> 
     /// </para>
     /// </summary>
@@ -82,8 +81,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// A descriptive label that is associated with a script. Script names do not need to
-        /// be unique.
+        /// A descriptive label that is associated with a script. Script names don't need to be
+        /// unique.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -146,8 +145,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Version. 
         /// <para>
-        /// Version information that is associated with a build or script. Version strings do
-        /// not need to be unique.
+        /// Version information associated with a build or script. Version strings don't need
+        /// to be unique.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -171,9 +170,9 @@ namespace Amazon.GameLift.Model
         /// </para>
         ///  
         /// <para>
-        /// When using the AWS CLI tool to create a script, this parameter is set to the zip file
-        /// name. It must be prepended with the string "fileb://" to indicate that the file data
-        /// is a binary object. For example: <code>--zip-file fileb://myRealtimeScript.zip</code>.
+        /// When using the Amazon Web Services CLI tool to create a script, this parameter is
+        /// set to the zip file name. It must be prepended with the string "fileb://" to indicate
+        /// that the file data is a binary object. For example: <code>--zip-file fileb://myRealtimeScript.zip</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=5000000)]

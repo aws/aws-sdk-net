@@ -74,6 +74,10 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+                if(publicRequest.IsSetIncludeLinkedAccounts())
+                {
+                    request.Parameters.Add("IncludeLinkedAccounts", StringUtils.FromBool(publicRequest.IncludeLinkedAccounts));
+                }
                 if(publicRequest.IsSetMetricName())
                 {
                     request.Parameters.Add("MetricName", StringUtils.FromString(publicRequest.MetricName));
@@ -85,6 +89,10 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetNextToken())
                 {
                     request.Parameters.Add("NextToken", StringUtils.FromString(publicRequest.NextToken));
+                }
+                if(publicRequest.IsSetOwningAccount())
+                {
+                    request.Parameters.Add("OwningAccount", StringUtils.FromString(publicRequest.OwningAccount));
                 }
                 if(publicRequest.IsSetRecentlyActive())
                 {

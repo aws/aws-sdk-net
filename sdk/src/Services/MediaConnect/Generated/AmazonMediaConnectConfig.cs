@@ -17,22 +17,22 @@
  * Do not modify this file. This file is generated from the mediaconnect-2018-11-14.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
-
+using Amazon.MediaConnect.Internal;
 
 namespace Amazon.MediaConnect
 {
     /// <summary>
     /// Configuration for accessing Amazon MediaConnect service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonMediaConnectConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.3.75");
+            InternalSDKUtils.BuildUserAgentString("3.7.101.35");
 
         private string _userAgent = UserAgentString;
 
@@ -40,8 +40,10 @@ namespace Amazon.MediaConnect
         /// Default constructor
         /// </summary>
         public AmazonMediaConnectConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonMediaConnectDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "mediaconnect";
+            this.EndpointProvider = new AmazonMediaConnectEndpointProvider();
         }
 
         /// <summary>
@@ -76,5 +78,6 @@ namespace Amazon.MediaConnect
                 return _userAgent;
             }
         }
+
     }
 }

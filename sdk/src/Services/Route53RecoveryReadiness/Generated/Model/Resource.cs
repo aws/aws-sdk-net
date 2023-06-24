@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53RecoveryReadiness.Model
 {
     /// <summary>
-    /// The resource element of a ResourceSet
+    /// The resource element of a resource set.
     /// </summary>
     public partial class Resource
     {
@@ -39,8 +39,10 @@ namespace Amazon.Route53RecoveryReadiness.Model
         private string _resourceArn;
 
         /// <summary>
-        /// Gets and sets the property ComponentId. The component id of the resource, generated
-        /// by the service when dnsTargetResource is used
+        /// Gets and sets the property ComponentId. 
+        /// <para>
+        /// The component identifier of the resource, generated when DNS target resource is used.
+        /// </para>
         /// </summary>
         public string ComponentId
         {
@@ -55,7 +57,10 @@ namespace Amazon.Route53RecoveryReadiness.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DnsTargetResource.
+        /// Gets and sets the property DnsTargetResource. 
+        /// <para>
+        /// The DNS target resource.
+        /// </para>
         /// </summary>
         public DNSTargetResource DnsTargetResource
         {
@@ -70,8 +75,11 @@ namespace Amazon.Route53RecoveryReadiness.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ReadinessScopes. A list of RecoveryGroup ARNs and/or Cell
-        /// ARNs that this resource is contained within.
+        /// Gets and sets the property ReadinessScopes. 
+        /// <para>
+        /// A list of recovery group Amazon Resource Names (ARNs) and cell ARNs that this resource
+        /// is contained within.
+        /// </para>
         /// </summary>
         public List<string> ReadinessScopes
         {
@@ -86,8 +94,10 @@ namespace Amazon.Route53RecoveryReadiness.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ResourceArn. The ARN of the AWS resource, can be skipped
-        /// if dnsTargetResource is used
+        /// Gets and sets the property ResourceArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the Amazon Web Services resource.
+        /// </para>
         /// </summary>
         public string ResourceArn
         {

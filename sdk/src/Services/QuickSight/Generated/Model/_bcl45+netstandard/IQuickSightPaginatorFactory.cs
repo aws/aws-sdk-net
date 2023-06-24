@@ -31,6 +31,16 @@ namespace Amazon.QuickSight.Model
         IListAnalysesPaginator ListAnalyses(ListAnalysesRequest request);
 
         /// <summary>
+        /// Paginator for ListAssetBundleExportJobs operation
+        ///</summary>
+        IListAssetBundleExportJobsPaginator ListAssetBundleExportJobs(ListAssetBundleExportJobsRequest request);
+
+        /// <summary>
+        /// Paginator for ListAssetBundleImportJobs operation
+        ///</summary>
+        IListAssetBundleImportJobsPaginator ListAssetBundleImportJobs(ListAssetBundleImportJobsRequest request);
+
+        /// <summary>
         /// Paginator for ListDashboards operation
         ///</summary>
         IListDashboardsPaginator ListDashboards(ListDashboardsRequest request);
@@ -86,6 +96,16 @@ namespace Amazon.QuickSight.Model
         IListThemeVersionsPaginator ListThemeVersions(ListThemeVersionsRequest request);
 
         /// <summary>
+        /// Paginator for ListTopics operation
+        ///</summary>
+        IListTopicsPaginator ListTopics(ListTopicsRequest request);
+
+        /// <summary>
+        /// Paginator for ListVPCConnections operation
+        ///</summary>
+        IListVPCConnectionsPaginator ListVPCConnections(ListVPCConnectionsRequest request);
+
+        /// <summary>
         /// Paginator for SearchAnalyses operation
         ///</summary>
         ISearchAnalysesPaginator SearchAnalyses(SearchAnalysesRequest request);
@@ -94,5 +114,15 @@ namespace Amazon.QuickSight.Model
         /// Paginator for SearchDashboards operation
         ///</summary>
         ISearchDashboardsPaginator SearchDashboards(SearchDashboardsRequest request);
+
+        /// <summary>
+        /// Paginator for SearchDataSets operation
+        ///</summary>
+        ISearchDataSetsPaginator SearchDataSets(SearchDataSetsRequest request);
+
+        /// <summary>
+        /// Paginator for SearchDataSources operation
+        ///</summary>
+        ISearchDataSourcesPaginator SearchDataSources(SearchDataSourcesRequest request);
     }
 }

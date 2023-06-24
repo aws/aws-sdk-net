@@ -29,9 +29,19 @@ using Amazon.Runtime.Internal;
 namespace Amazon.TranscribeService.Model
 {
     /// <summary>
-    /// A key:value pair that adds metadata to a resource used by Amazon Transcribe. For example,
-    /// a tag with the key:value pair ‘Department’:’Sales’ might be added to a resource to
-    /// indicate its use by your organization's sales department.
+    /// Adds metadata, in the form of a key:value pair, to the specified resource.
+    /// 
+    ///  
+    /// <para>
+    /// For example, you could add the tag <code>Department:Sales</code> to a resource to
+    /// indicate that it pertains to your organization's sales department. You can also use
+    /// tags for tag-based access control.
+    /// </para>
+    ///  
+    /// <para>
+    /// To learn more about tagging, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging
+    /// resources</a>.
+    /// </para>
     /// </summary>
     public partial class Tag
     {
@@ -42,7 +52,7 @@ namespace Amazon.TranscribeService.Model
         /// Gets and sets the property Key. 
         /// <para>
         /// The first part of a key:value pair that forms a tag associated with a given resource.
-        /// For example, in the tag ‘Department’:’Sales’, the key is 'Department'.
+        /// For example, in the tag <code>Department:Sales</code>, the key is 'Department'.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -62,7 +72,12 @@ namespace Amazon.TranscribeService.Model
         /// Gets and sets the property Value. 
         /// <para>
         /// The second part of a key:value pair that forms a tag associated with a given resource.
-        /// For example, in the tag ‘Department’:’Sales’, the value is 'Sales'.
+        /// For example, in the tag <code>Department:Sales</code>, the value is 'Sales'.
+        /// </para>
+        ///  
+        /// <para>
+        /// Note that you can set the value of a tag to an empty string, but you can't set the
+        /// value of a tag to null. Omitting the tag value is the same as using an empty string.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=256)]

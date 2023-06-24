@@ -42,7 +42,7 @@ namespace Amazon.GroundStation.Model
         /// UUID of a contact.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string ContactId
         {
             get { return this._contactId; }

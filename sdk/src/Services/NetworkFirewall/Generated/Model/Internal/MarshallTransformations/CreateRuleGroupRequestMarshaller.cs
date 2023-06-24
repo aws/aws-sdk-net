@@ -58,7 +58,7 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
             string target = "NetworkFirewall_20201112.CreateRuleGroup";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.0";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-11-12";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-11-12";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -85,6 +85,17 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.DryRun);
                 }
 
+                if(publicRequest.IsSetEncryptionConfiguration())
+                {
+                    context.Writer.WritePropertyName("EncryptionConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = EncryptionConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.EncryptionConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetRuleGroup())
                 {
                     context.Writer.WritePropertyName("RuleGroup");
@@ -106,6 +117,17 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("Rules");
                     context.Writer.Write(publicRequest.Rules);
+                }
+
+                if(publicRequest.IsSetSourceMetadata())
+                {
+                    context.Writer.WritePropertyName("SourceMetadata");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = SourceMetadataMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.SourceMetadata, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
                 if(publicRequest.IsSetTags())
@@ -130,7 +152,6 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Type);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

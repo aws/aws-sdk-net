@@ -94,9 +94,17 @@ namespace Amazon.EC2InstanceConnect.Model.Internal.MarshallTransformations
                 {
                     return EC2InstanceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("EC2InstanceStateInvalidException"))
+                {
+                    return EC2InstanceStateInvalidExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("EC2InstanceTypeInvalidException"))
                 {
                     return EC2InstanceTypeInvalidExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("EC2InstanceUnavailableException"))
+                {
+                    return EC2InstanceUnavailableExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidArgsException"))
                 {

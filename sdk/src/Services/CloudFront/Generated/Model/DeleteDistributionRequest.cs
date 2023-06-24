@@ -45,8 +45,8 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Instantiates DeleteDistributionRequest with the parameterized properties
         /// </summary>
-        /// <param name="id">The distribution ID. </param>
-        /// <param name="ifMatch">The value of the <code>ETag</code> header that you received when you disabled the distribution. For example: <code>E2QWRUHAPOMQZL</code>. </param>
+        /// <param name="id">The distribution ID.</param>
+        /// <param name="ifMatch">The value of the <code>ETag</code> header that you received when you disabled the distribution. For example: <code>E2QWRUHAPOMQZL</code>.</param>
         public DeleteDistributionRequest(string id, string ifMatch)
         {
             _id = id;
@@ -56,7 +56,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The distribution ID. 
+        /// The distribution ID.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -76,7 +76,7 @@ namespace Amazon.CloudFront.Model
         /// Gets and sets the property IfMatch. 
         /// <para>
         /// The value of the <code>ETag</code> header that you received when you disabled the
-        /// distribution. For example: <code>E2QWRUHAPOMQZL</code>. 
+        /// distribution. For example: <code>E2QWRUHAPOMQZL</code>.
         /// </para>
         /// </summary>
         public string IfMatch

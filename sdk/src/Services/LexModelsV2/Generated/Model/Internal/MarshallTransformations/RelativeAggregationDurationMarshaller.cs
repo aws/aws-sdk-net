@@ -34,7 +34,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RelativeAggregationDuration Marshaller
-    /// </summary>       
+    /// </summary>
     public class RelativeAggregationDurationMarshaller : IRequestMarshaller<RelativeAggregationDuration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RelativeAggregationDurationMarshaller Instance = new RelativeAggregationDurationMarshaller();
 
     }

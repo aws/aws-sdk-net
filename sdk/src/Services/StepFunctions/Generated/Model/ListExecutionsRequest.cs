@@ -30,9 +30,20 @@ namespace Amazon.StepFunctions.Model
 {
     /// <summary>
     /// Container for the parameters to the ListExecutions operation.
-    /// Lists the executions of a state machine that meet the filtering criteria. Results
-    /// are sorted by time, with the most recent execution first.
+    /// Lists all executions of a state machine or a Map Run. You can list all executions
+    /// related to a state machine by specifying a state machine Amazon Resource Name (ARN),
+    /// or those related to a Map Run by specifying a Map Run ARN.
     /// 
+    ///  
+    /// <para>
+    /// You can also provide a state machine <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-alias.html">alias</a>
+    /// ARN or <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-version.html">version</a>
+    /// ARN to list the executions associated with a specific alias or version.
+    /// </para>
+    ///  
+    /// <para>
+    /// Results are sorted by time, with the most recent execution first.
+    /// </para>
     ///  
     /// <para>
     /// If <code>nextToken</code> is returned, there are more results available. The value
@@ -53,10 +64,38 @@ namespace Amazon.StepFunctions.Model
     /// </summary>
     public partial class ListExecutionsRequest : AmazonStepFunctionsRequest
     {
+        private string _mapRunArn;
         private int? _maxResults;
         private string _nextToken;
         private string _stateMachineArn;
         private ExecutionStatus _statusFilter;
+
+        /// <summary>
+        /// Gets and sets the property MapRunArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the Map Run that started the child workflow executions.
+        /// If the <code>mapRunArn</code> field is specified, a list of all of the child workflow
+        /// executions started by a Map Run is returned. For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-examine-map-run.html">Examining
+        /// Map Run</a> in the <i>Step Functions Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can specify either a <code>mapRunArn</code> or a <code>stateMachineArn</code>,
+        /// but not both.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2000)]
+        public string MapRunArn
+        {
+            get { return this._mapRunArn; }
+            set { this._mapRunArn = value; }
+        }
+
+        // Check to see if MapRunArn property is set
+        internal bool IsSetMapRunArn()
+        {
+            return this._mapRunArn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
@@ -112,8 +151,19 @@ namespace Amazon.StepFunctions.Model
         /// <para>
         /// The Amazon Resource Name (ARN) of the state machine whose executions is listed.
         /// </para>
+        ///  
+        /// <para>
+        /// You can specify either a <code>mapRunArn</code> or a <code>stateMachineArn</code>,
+        /// but not both.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can also return a list of executions associated with a specific <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-alias.html">alias</a>
+        /// or <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-version.html">version</a>,
+        /// by specifying an alias ARN or a version ARN in the <code>stateMachineArn</code> parameter.
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=256)]
+        [AWSProperty(Min=1, Max=256)]
         public string StateMachineArn
         {
             get { return this._stateMachineArn; }

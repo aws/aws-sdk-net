@@ -207,7 +207,7 @@ namespace Amazon.ChimeSDKIdentity.Model
         /// The name of the <code>AppInstanceUserEndpoint</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=1600)]
+        [AWSProperty(Sensitive=true, Min=0, Max=1600)]
         public string Name
         {
             get { return this._name; }

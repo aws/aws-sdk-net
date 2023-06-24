@@ -59,6 +59,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.AutoScaling.IAmazonAutoScaling.AttachTrafficSources(Amazon.AutoScaling.Model.AttachTrafficSourcesRequest)" />
+            <member name="M:Amazon.AutoScaling.AmazonAutoScalingClient.AttachTrafficSources(Amazon.AutoScaling.Model.AttachTrafficSourcesRequest)" />
+            <member name="T:Amazon.AutoScaling.Model.AttachTrafficSourcesRequest" />
+            <member name="T:Amazon.AutoScaling.Model.AttachTrafficSourcesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example attaches the specified target group to the specified Auto Scaling group.
+                </para>
+                <code
+                    title="To attach a target group to an Auto Scaling group"
+                    source=".\AWSSDKDocSamples\AutoScaling\AutoScaling.GeneratedSamples.cs"
+                    region="to-attach-a-target-group-to-an-auto-scaling-group-1680036570089" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.AutoScaling.IAmazonAutoScaling.CancelInstanceRefresh(Amazon.AutoScaling.Model.CancelInstanceRefreshRequest)" />
             <member name="M:Amazon.AutoScaling.AmazonAutoScalingClient.CancelInstanceRefresh(Amazon.AutoScaling.Model.CancelInstanceRefreshRequest)" />
             <member name="T:Amazon.AutoScaling.Model.CancelInstanceRefreshRequest" />
@@ -705,6 +724,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.AutoScaling.IAmazonAutoScaling.DescribeTrafficSources(Amazon.AutoScaling.Model.DescribeTrafficSourcesRequest)" />
+            <member name="M:Amazon.AutoScaling.AmazonAutoScalingClient.DescribeTrafficSources(Amazon.AutoScaling.Model.DescribeTrafficSourcesRequest)" />
+            <member name="T:Amazon.AutoScaling.Model.DescribeTrafficSourcesRequest" />
+            <member name="T:Amazon.AutoScaling.Model.DescribeTrafficSourcesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example describes the target groups attached to the specified Auto Scaling group.
+                </para>
+                <code
+                    title="To describe the target groups for an Auto Scaling group"
+                    source=".\AWSSDKDocSamples\AutoScaling\AutoScaling.GeneratedSamples.cs"
+                    region="to-describe-the-target-groups-for-an-auto-scaling-group-1680040714521" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.AutoScaling.IAmazonAutoScaling.DetachInstances(Amazon.AutoScaling.Model.DetachInstancesRequest)" />
             <member name="M:Amazon.AutoScaling.AmazonAutoScalingClient.DetachInstances(Amazon.AutoScaling.Model.DetachInstancesRequest)" />
             <member name="T:Amazon.AutoScaling.Model.DetachInstancesRequest" />
@@ -757,6 +795,25 @@
                     title="To detach a target group from an Auto Scaling group"
                     source=".\AWSSDKDocSamples\AutoScaling\AutoScaling.GeneratedSamples.cs"
                     region="autoscaling-detach-load-balancer-target-groups-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AutoScaling.IAmazonAutoScaling.DetachTrafficSources(Amazon.AutoScaling.Model.DetachTrafficSourcesRequest)" />
+            <member name="M:Amazon.AutoScaling.AmazonAutoScalingClient.DetachTrafficSources(Amazon.AutoScaling.Model.DetachTrafficSourcesRequest)" />
+            <member name="T:Amazon.AutoScaling.Model.DetachTrafficSourcesRequest" />
+            <member name="T:Amazon.AutoScaling.Model.DetachTrafficSourcesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example detaches the specified target group from the specified Auto Scaling group.
+                </para>
+                <code
+                    title="To detach a target group from an Auto Scaling group"
+                    source=".\AWSSDKDocSamples\AutoScaling\AutoScaling.GeneratedSamples.cs"
+                    region="to-detach-a-target-group-from-an-auto-scaling-group-1680040404169" />
             </example>
         </value>
     </doc>
@@ -865,10 +922,10 @@
         <value>
             <example>
                 <para>
-                    This example creates a lifecycle hook.
+                    This example creates a lifecycle hook for instance launch.
                 </para>
                 <code
-                    title="To create a lifecycle hook"
+                    title="To create a launch lifecycle hook"
                     source=".\AWSSDKDocSamples\AutoScaling\AutoScaling.GeneratedSamples.cs"
                     region="autoscaling-put-lifecycle-hook-1" />
             </example>
@@ -941,10 +998,10 @@
         <value>
             <example>
                 <para>
-                    This example adds a warm pool to the specified Auto Scaling group.
+                    This example creates a warm pool for the specified Auto Scaling group.
                 </para>
                 <code
-                    title="To add a warm pool to an Auto Scaling group"
+                    title="To create a warm pool for an Auto Scaling group"
                     source=".\AWSSDKDocSamples\AutoScaling\AutoScaling.GeneratedSamples.cs"
                     region="to-add-a-warm-pool-to-an-auto-scaling-group-1617818810383" />
             </example>
@@ -1131,50 +1188,12 @@
         <value>
             <example>
                 <para>
-                    This example updates the launch configuration of the specified Auto Scaling group.
+                    This example updates multiple properties at the same time.
                 </para>
                 <code
-                    title="To update the launch configuration"
+                    title="To update an Auto Scaling group"
                     source=".\AWSSDKDocSamples\AutoScaling\AutoScaling.GeneratedSamples.cs"
                     region="autoscaling-update-auto-scaling-group-1" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.AutoScaling.IAmazonAutoScaling.UpdateAutoScalingGroup(Amazon.AutoScaling.Model.UpdateAutoScalingGroupRequest)" />
-            <member name="M:Amazon.AutoScaling.AmazonAutoScalingClient.UpdateAutoScalingGroup(Amazon.AutoScaling.Model.UpdateAutoScalingGroupRequest)" />
-            <member name="T:Amazon.AutoScaling.Model.UpdateAutoScalingGroupRequest" />
-            <member name="T:Amazon.AutoScaling.Model.UpdateAutoScalingGroupResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    This example updates the minimum size and maximum size of the specified Auto Scaling group.
-                </para>
-                <code
-                    title="To update the minimum and maximum size"
-                    source=".\AWSSDKDocSamples\AutoScaling\AutoScaling.GeneratedSamples.cs"
-                    region="autoscaling-update-auto-scaling-group-2" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.AutoScaling.IAmazonAutoScaling.UpdateAutoScalingGroup(Amazon.AutoScaling.Model.UpdateAutoScalingGroupRequest)" />
-            <member name="M:Amazon.AutoScaling.AmazonAutoScalingClient.UpdateAutoScalingGroup(Amazon.AutoScaling.Model.UpdateAutoScalingGroupRequest)" />
-            <member name="T:Amazon.AutoScaling.Model.UpdateAutoScalingGroupRequest" />
-            <member name="T:Amazon.AutoScaling.Model.UpdateAutoScalingGroupResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    This example enables instance protection for the specified Auto Scaling group.
-                </para>
-                <code
-                    title="To enable instance protection"
-                    source=".\AWSSDKDocSamples\AutoScaling\AutoScaling.GeneratedSamples.cs"
-                    region="autoscaling-update-auto-scaling-group-3" />
             </example>
         </value>
     </doc>

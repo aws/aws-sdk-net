@@ -30,15 +30,8 @@ namespace Amazon.FSx.Model
 {
     /// <summary>
     /// The configuration for Lustre logging used to write the enabled logging events for
-    /// your file system to Amazon CloudWatch Logs.
-    /// 
-    ///  
-    /// <para>
-    /// When logging is enabled, Lustre logs error and warning events from data repository
-    /// operations such as automatic export and data repository tasks. To learn more about
-    /// Lustre logging, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/cw-event-logging.html">Logging
-    /// with Amazon CloudWatch Logs</a>. 
-    /// </para>
+    /// your Amazon FSx for Lustre file system or Amazon File Cache resource to Amazon CloudWatch
+    /// Logs.
     /// </summary>
     public partial class LustreLogConfiguration
     {
@@ -88,7 +81,11 @@ namespace Amazon.FSx.Model
         /// <para>
         ///  <code>DISABLED</code> - logging of data repository events is turned off.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        /// Note that Amazon File Cache uses a default setting of <code>WARN_ERROR</code>, which
+        /// can't be changed.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public LustreAccessAuditLogLevel Level

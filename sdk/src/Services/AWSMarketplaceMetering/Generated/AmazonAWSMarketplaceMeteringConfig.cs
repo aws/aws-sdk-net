@@ -17,22 +17,22 @@
  * Do not modify this file. This file is generated from the meteringmarketplace-2016-01-14.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
-
+using Amazon.AWSMarketplaceMetering.Internal;
 
 namespace Amazon.AWSMarketplaceMetering
 {
     /// <summary>
     /// Configuration for accessing Amazon AWSMarketplaceMetering service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonAWSMarketplaceMeteringConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.105");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.147");
 
         private string _userAgent = UserAgentString;
 
@@ -40,8 +40,10 @@ namespace Amazon.AWSMarketplaceMetering
         /// Default constructor
         /// </summary>
         public AmazonAWSMarketplaceMeteringConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonAWSMarketplaceMeteringDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "aws-marketplace";
+            this.EndpointProvider = new AmazonAWSMarketplaceMeteringEndpointProvider();
         }
 
         /// <summary>
@@ -76,5 +78,6 @@ namespace Amazon.AWSMarketplaceMetering
                 return _userAgent;
             }
         }
+
     }
 }

@@ -34,7 +34,7 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// PhysicalResourceId Marshaller
-    /// </summary>       
+    /// </summary>
     public class PhysicalResourceIdMarshaller : IRequestMarshaller<PhysicalResourceId, JsonMarshallerContext> 
     {
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static PhysicalResourceIdMarshaller Instance = new PhysicalResourceIdMarshaller();
 
     }

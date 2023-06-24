@@ -34,7 +34,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// HealthCheck Marshaller
-    /// </summary>       
+    /// </summary>
     public class HealthCheckMarshaller : IRequestMarshaller<HealthCheck, JsonMarshallerContext> 
     {
         /// <summary>
@@ -84,7 +84,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static HealthCheckMarshaller Instance = new HealthCheckMarshaller();
 
     }

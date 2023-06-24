@@ -38,6 +38,7 @@ namespace Amazon.AppSync.Model
         private string _description;
         private DynamodbDataSourceConfig _dynamodbConfig;
         private ElasticsearchDataSourceConfig _elasticsearchConfig;
+        private EventBridgeDataSourceConfig _eventBridgeConfig;
         private HttpDataSourceConfig _httpConfig;
         private LambdaDataSourceConfig _lambdaConfig;
         private string _name;
@@ -126,6 +127,24 @@ namespace Amazon.AppSync.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EventBridgeConfig. 
+        /// <para>
+        /// Amazon EventBridge settings.
+        /// </para>
+        /// </summary>
+        public EventBridgeDataSourceConfig EventBridgeConfig
+        {
+            get { return this._eventBridgeConfig; }
+            set { this._eventBridgeConfig = value; }
+        }
+
+        // Check to see if EventBridgeConfig property is set
+        internal bool IsSetEventBridgeConfig()
+        {
+            return this._eventBridgeConfig != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property HttpConfig. 
         /// <para>
         /// HTTP endpoint settings.
@@ -146,7 +165,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property LambdaConfig. 
         /// <para>
-        /// Amazon Web Services Lambda settings.
+        /// Lambda settings.
         /// </para>
         /// </summary>
         public LambdaDataSourceConfig LambdaConfig
@@ -219,8 +238,8 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property ServiceRoleArn. 
         /// <para>
-        /// The Identity and Access Management service role ARN for the data source. The system
-        /// assumes this role when accessing the data source.
+        /// The Identity and Access Management (IAM) service role Amazon Resource Name (ARN) for
+        /// the data source. The system assumes this role when accessing the data source.
         /// </para>
         /// </summary>
         public string ServiceRoleArn

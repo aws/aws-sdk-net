@@ -29,15 +29,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// InstanceLimits represents the list of instance-related attributes that are available
-    /// for a given InstanceType.
+    /// Instance-related attributes that are available for a given instance type.
     /// </summary>
     public partial class InstanceLimits
     {
         private InstanceCountLimits _instanceCountLimits;
 
         /// <summary>
-        /// Gets and sets the property InstanceCountLimits.
+        /// Gets and sets the property InstanceCountLimits. 
+        /// <para>
+        /// Limits on the number of instances that can be created for a given instance type.
+        /// </para>
         /// </summary>
         public InstanceCountLimits InstanceCountLimits
         {

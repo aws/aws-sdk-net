@@ -48,6 +48,25 @@
       ],
       "idempotent":true
     },
+    "CreateWorkspaceApiKey":{
+      "name":"CreateWorkspaceApiKey",
+      "http":{
+        "method":"POST",
+        "requestUri":"/workspaces/{workspaceId}/apikeys",
+        "responseCode":200
+      },
+      "input":{"shape":"CreateWorkspaceApiKeyRequest"},
+      "output":{"shape":"CreateWorkspaceApiKeyResponse"},
+      "errors":[
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"ConflictException"},
+        {"shape":"ValidationException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"InternalServerException"},
+        {"shape":"ServiceQuotaExceededException"}
+      ]
+    },
     "DeleteWorkspace":{
       "name":"DeleteWorkspace",
       "http":{
@@ -66,6 +85,24 @@
         {"shape":"InternalServerException"}
       ],
       "idempotent":true
+    },
+    "DeleteWorkspaceApiKey":{
+      "name":"DeleteWorkspaceApiKey",
+      "http":{
+        "method":"DELETE",
+        "requestUri":"/workspaces/{workspaceId}/apikeys/{keyName}",
+        "responseCode":200
+      },
+      "input":{"shape":"DeleteWorkspaceApiKeyRequest"},
+      "output":{"shape":"DeleteWorkspaceApiKeyResponse"},
+      "errors":[
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"ConflictException"},
+        {"shape":"ValidationException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"InternalServerException"}
+      ]
     },
     "DescribeWorkspace":{
       "name":"DescribeWorkspace",
@@ -97,6 +134,22 @@
         {"shape":"ResourceNotFoundException"},
         {"shape":"ThrottlingException"},
         {"shape":"ValidationException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"InternalServerException"}
+      ]
+    },
+    "DescribeWorkspaceConfiguration":{
+      "name":"DescribeWorkspaceConfiguration",
+      "http":{
+        "method":"GET",
+        "requestUri":"/workspaces/{workspaceId}/configuration",
+        "responseCode":200
+      },
+      "input":{"shape":"DescribeWorkspaceConfigurationRequest"},
+      "output":{"shape":"DescribeWorkspaceConfigurationResponse"},
+      "errors":[
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ThrottlingException"},
         {"shape":"AccessDeniedException"},
         {"shape":"InternalServerException"}
       ]
@@ -135,6 +188,23 @@
         {"shape":"InternalServerException"}
       ]
     },
+    "ListTagsForResource":{
+      "name":"ListTagsForResource",
+      "http":{
+        "method":"GET",
+        "requestUri":"/tags/{resourceArn}",
+        "responseCode":200
+      },
+      "input":{"shape":"ListTagsForResourceRequest"},
+      "output":{"shape":"ListTagsForResourceResponse"},
+      "errors":[
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"ValidationException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"InternalServerException"}
+      ]
+    },
     "ListWorkspaces":{
       "name":"ListWorkspaces",
       "http":{
@@ -149,6 +219,41 @@
         {"shape":"AccessDeniedException"},
         {"shape":"InternalServerException"}
       ]
+    },
+    "TagResource":{
+      "name":"TagResource",
+      "http":{
+        "method":"POST",
+        "requestUri":"/tags/{resourceArn}",
+        "responseCode":200
+      },
+      "input":{"shape":"TagResourceRequest"},
+      "output":{"shape":"TagResourceResponse"},
+      "errors":[
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"ValidationException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"InternalServerException"}
+      ]
+    },
+    "UntagResource":{
+      "name":"UntagResource",
+      "http":{
+        "method":"DELETE",
+        "requestUri":"/tags/{resourceArn}",
+        "responseCode":200
+      },
+      "input":{"shape":"UntagResourceRequest"},
+      "output":{"shape":"UntagResourceResponse"},
+      "errors":[
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"ValidationException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"InternalServerException"}
+      ],
+      "idempotent":true
     },
     "UpdatePermissions":{
       "name":"UpdatePermissions",
@@ -202,6 +307,24 @@
         {"shape":"AccessDeniedException"},
         {"shape":"InternalServerException"}
       ]
+    },
+    "UpdateWorkspaceConfiguration":{
+      "name":"UpdateWorkspaceConfiguration",
+      "http":{
+        "method":"PUT",
+        "requestUri":"/workspaces/{workspaceId}/configuration",
+        "responseCode":202
+      },
+      "input":{"shape":"UpdateWorkspaceConfigurationRequest"},
+      "output":{"shape":"UpdateWorkspaceConfigurationResponse"},
+      "errors":[
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"ConflictException"},
+        {"shape":"ValidationException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"InternalServerException"}
+      ]
     }
   },
   "shapes":{
@@ -232,6 +355,15 @@
     "AllowedOrganizations":{
       "type":"list",
       "member":{"shape":"AllowedOrganization"}
+    },
+    "ApiKeyName":{
+      "type":"string",
+      "max":100,
+      "min":1
+    },
+    "ApiKeyToken":{
+      "type":"string",
+      "sensitive":true
     },
     "AssertionAttribute":{
       "type":"string",
@@ -335,6 +467,44 @@
       },
       "exception":true
     },
+    "CreateWorkspaceApiKeyRequest":{
+      "type":"structure",
+      "required":[
+        "keyName",
+        "keyRole",
+        "secondsToLive",
+        "workspaceId"
+      ],
+      "members":{
+        "keyName":{"shape":"ApiKeyName"},
+        "keyRole":{"shape":"String"},
+        "secondsToLive":{"shape":"CreateWorkspaceApiKeyRequestSecondsToLiveInteger"},
+        "workspaceId":{
+          "shape":"WorkspaceId",
+          "location":"uri",
+          "locationName":"workspaceId"
+        }
+      }
+    },
+    "CreateWorkspaceApiKeyRequestSecondsToLiveInteger":{
+      "type":"integer",
+      "box":true,
+      "max":2592000,
+      "min":1
+    },
+    "CreateWorkspaceApiKeyResponse":{
+      "type":"structure",
+      "required":[
+        "key",
+        "keyName",
+        "workspaceId"
+      ],
+      "members":{
+        "key":{"shape":"ApiKeyToken"},
+        "keyName":{"shape":"ApiKeyName"},
+        "workspaceId":{"shape":"WorkspaceId"}
+      }
+    },
     "CreateWorkspaceRequest":{
       "type":"structure",
       "required":[
@@ -349,9 +519,17 @@
           "shape":"ClientToken",
           "idempotencyToken":true
         },
+        "configuration":{
+          "shape":"OverridableConfigurationJson",
+          "jsonvalue":true
+        },
+        "grafanaVersion":{"shape":"GrafanaVersion"},
+        "networkAccessControl":{"shape":"NetworkAccessConfiguration"},
         "organizationRoleName":{"shape":"OrganizationRoleName"},
         "permissionType":{"shape":"PermissionType"},
         "stackSetName":{"shape":"StackSetName"},
+        "tags":{"shape":"TagMap"},
+        "vpcConfiguration":{"shape":"VpcConfiguration"},
         "workspaceDataSources":{"shape":"DataSourceTypesList"},
         "workspaceDescription":{"shape":"Description"},
         "workspaceName":{"shape":"WorkspaceName"},
@@ -375,12 +553,45 @@
         "PROMETHEUS",
         "XRAY",
         "TIMESTREAM",
-        "SITEWISE"
+        "SITEWISE",
+        "ATHENA",
+        "REDSHIFT",
+        "TWINMAKER"
       ]
     },
     "DataSourceTypesList":{
       "type":"list",
       "member":{"shape":"DataSourceType"}
+    },
+    "DeleteWorkspaceApiKeyRequest":{
+      "type":"structure",
+      "required":[
+        "keyName",
+        "workspaceId"
+      ],
+      "members":{
+        "keyName":{
+          "shape":"ApiKeyName",
+          "location":"uri",
+          "locationName":"keyName"
+        },
+        "workspaceId":{
+          "shape":"WorkspaceId",
+          "location":"uri",
+          "locationName":"workspaceId"
+        }
+      }
+    },
+    "DeleteWorkspaceApiKeyResponse":{
+      "type":"structure",
+      "required":[
+        "keyName",
+        "workspaceId"
+      ],
+      "members":{
+        "keyName":{"shape":"ApiKeyName"},
+        "workspaceId":{"shape":"WorkspaceId"}
+      }
     },
     "DeleteWorkspaceRequest":{
       "type":"structure",
@@ -416,6 +627,27 @@
       "required":["authentication"],
       "members":{
         "authentication":{"shape":"AuthenticationDescription"}
+      }
+    },
+    "DescribeWorkspaceConfigurationRequest":{
+      "type":"structure",
+      "required":["workspaceId"],
+      "members":{
+        "workspaceId":{
+          "shape":"WorkspaceId",
+          "location":"uri",
+          "locationName":"workspaceId"
+        }
+      }
+    },
+    "DescribeWorkspaceConfigurationResponse":{
+      "type":"structure",
+      "required":["configuration"],
+      "members":{
+        "configuration":{
+          "shape":"OverridableConfigurationJson",
+          "jsonvalue":true
+        }
       }
     },
     "DescribeWorkspaceRequest":{
@@ -574,6 +806,23 @@
         "permissions":{"shape":"PermissionEntryList"}
       }
     },
+    "ListTagsForResourceRequest":{
+      "type":"structure",
+      "required":["resourceArn"],
+      "members":{
+        "resourceArn":{
+          "shape":"String",
+          "location":"uri",
+          "locationName":"resourceArn"
+        }
+      }
+    },
+    "ListTagsForResourceResponse":{
+      "type":"structure",
+      "members":{
+        "tags":{"shape":"TagMap"}
+      }
+    },
     "ListWorkspacesRequest":{
       "type":"structure",
       "members":{
@@ -604,6 +853,17 @@
       }
     },
     "LoginValidityDuration":{"type":"integer"},
+    "NetworkAccessConfiguration":{
+      "type":"structure",
+      "required":[
+        "prefixListIds",
+        "vpceIds"
+      ],
+      "members":{
+        "prefixListIds":{"shape":"PrefixListIds"},
+        "vpceIds":{"shape":"VpceIds"}
+      }
+    },
     "NotificationDestinationType":{
       "type":"string",
       "enum":["SNS"]
@@ -623,6 +883,11 @@
       "type":"list",
       "member":{"shape":"OrganizationalUnit"},
       "sensitive":true
+    },
+    "OverridableConfigurationJson":{
+      "type":"string",
+      "max":65536,
+      "min":2
     },
     "PaginationToken":{"type":"string"},
     "PermissionEntry":{
@@ -647,6 +912,15 @@
         "SERVICE_MANAGED"
       ]
     },
+    "PrefixListId":{
+      "type":"string",
+      "max":100,
+      "min":1
+    },
+    "PrefixListIds":{
+      "type":"list",
+      "member":{"shape":"PrefixListId"}
+    },
     "ResourceNotFoundException":{
       "type":"structure",
       "required":[
@@ -669,7 +943,8 @@
       "type":"string",
       "enum":[
         "ADMIN",
-        "EDITOR"
+        "EDITOR",
+        "VIEWER"
       ]
     },
     "RoleValue":{
@@ -715,6 +990,17 @@
         "NOT_CONFIGURED"
       ]
     },
+    "SecurityGroupId":{
+      "type":"string",
+      "max":255,
+      "min":0
+    },
+    "SecurityGroupIds":{
+      "type":"list",
+      "member":{"shape":"SecurityGroupId"},
+      "max":100,
+      "min":1
+    },
     "ServiceQuotaExceededException":{
       "type":"structure",
       "required":[
@@ -744,6 +1030,58 @@
     },
     "StackSetName":{"type":"string"},
     "String":{"type":"string"},
+    "SubnetId":{
+      "type":"string",
+      "max":255,
+      "min":0
+    },
+    "SubnetIds":{
+      "type":"list",
+      "member":{"shape":"SubnetId"},
+      "max":100,
+      "min":1
+    },
+    "TagKey":{
+      "type":"string",
+      "max":128,
+      "min":1
+    },
+    "TagKeys":{
+      "type":"list",
+      "member":{"shape":"TagKey"}
+    },
+    "TagMap":{
+      "type":"map",
+      "key":{"shape":"TagKey"},
+      "value":{"shape":"TagValue"},
+      "max":50,
+      "min":0
+    },
+    "TagResourceRequest":{
+      "type":"structure",
+      "required":[
+        "resourceArn",
+        "tags"
+      ],
+      "members":{
+        "resourceArn":{
+          "shape":"String",
+          "location":"uri",
+          "locationName":"resourceArn"
+        },
+        "tags":{"shape":"TagMap"}
+      }
+    },
+    "TagResourceResponse":{
+      "type":"structure",
+      "members":{
+      }
+    },
+    "TagValue":{
+      "type":"string",
+      "max":256,
+      "min":0
+    },
     "ThrottlingException":{
       "type":"structure",
       "required":["message"],
@@ -765,6 +1103,30 @@
       "retryable":{"throttling":false}
     },
     "Timestamp":{"type":"timestamp"},
+    "UntagResourceRequest":{
+      "type":"structure",
+      "required":[
+        "resourceArn",
+        "tagKeys"
+      ],
+      "members":{
+        "resourceArn":{
+          "shape":"String",
+          "location":"uri",
+          "locationName":"resourceArn"
+        },
+        "tagKeys":{
+          "shape":"TagKeys",
+          "location":"querystring",
+          "locationName":"tagKeys"
+        }
+      }
+    },
+    "UntagResourceResponse":{
+      "type":"structure",
+      "members":{
+      }
+    },
     "UpdateAction":{
       "type":"string",
       "enum":[
@@ -859,14 +1221,41 @@
         "authentication":{"shape":"AuthenticationDescription"}
       }
     },
+    "UpdateWorkspaceConfigurationRequest":{
+      "type":"structure",
+      "required":[
+        "configuration",
+        "workspaceId"
+      ],
+      "members":{
+        "configuration":{
+          "shape":"OverridableConfigurationJson",
+          "jsonvalue":true
+        },
+        "workspaceId":{
+          "shape":"WorkspaceId",
+          "location":"uri",
+          "locationName":"workspaceId"
+        }
+      }
+    },
+    "UpdateWorkspaceConfigurationResponse":{
+      "type":"structure",
+      "members":{
+      }
+    },
     "UpdateWorkspaceRequest":{
       "type":"structure",
       "required":["workspaceId"],
       "members":{
         "accountAccessType":{"shape":"AccountAccessType"},
+        "networkAccessControl":{"shape":"NetworkAccessConfiguration"},
         "organizationRoleName":{"shape":"OrganizationRoleName"},
         "permissionType":{"shape":"PermissionType"},
+        "removeNetworkAccessConfiguration":{"shape":"Boolean"},
+        "removeVpcConfiguration":{"shape":"Boolean"},
         "stackSetName":{"shape":"StackSetName"},
+        "vpcConfiguration":{"shape":"VpcConfiguration"},
         "workspaceDataSources":{"shape":"DataSourceTypesList"},
         "workspaceDescription":{"shape":"Description"},
         "workspaceId":{
@@ -950,6 +1339,26 @@
         "OTHER"
       ]
     },
+    "VpcConfiguration":{
+      "type":"structure",
+      "required":[
+        "securityGroupIds",
+        "subnetIds"
+      ],
+      "members":{
+        "securityGroupIds":{"shape":"SecurityGroupIds"},
+        "subnetIds":{"shape":"SubnetIds"}
+      }
+    },
+    "VpceId":{
+      "type":"string",
+      "max":100,
+      "min":1
+    },
+    "VpceIds":{
+      "type":"list",
+      "member":{"shape":"VpceId"}
+    },
     "WorkspaceDescription":{
       "type":"structure",
       "required":[
@@ -977,12 +1386,15 @@
         "licenseType":{"shape":"LicenseType"},
         "modified":{"shape":"Timestamp"},
         "name":{"shape":"WorkspaceName"},
+        "networkAccessControl":{"shape":"NetworkAccessConfiguration"},
         "notificationDestinations":{"shape":"NotificationDestinationsList"},
         "organizationRoleName":{"shape":"OrganizationRoleName"},
         "organizationalUnits":{"shape":"OrganizationalUnitList"},
         "permissionType":{"shape":"PermissionType"},
         "stackSetName":{"shape":"StackSetName"},
         "status":{"shape":"WorkspaceStatus"},
+        "tags":{"shape":"TagMap"},
+        "vpcConfiguration":{"shape":"VpcConfiguration"},
         "workspaceRoleArn":{"shape":"IamRoleArn"}
       }
     },
@@ -1036,7 +1448,8 @@
         "modified":{"shape":"Timestamp"},
         "name":{"shape":"WorkspaceName"},
         "notificationDestinations":{"shape":"NotificationDestinationsList"},
-        "status":{"shape":"WorkspaceStatus"}
+        "status":{"shape":"WorkspaceStatus"},
+        "tags":{"shape":"TagMap"}
       }
     }
   }

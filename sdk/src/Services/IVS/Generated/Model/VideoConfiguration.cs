@@ -29,7 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IVS.Model
 {
     /// <summary>
-    /// Object specifying a stream’s video configuration.
+    /// Object specifying a stream’s video configuration, as set up by the broadcaster (usually
+    /// in an encoder). This is part of the <a>IngestConfiguration</a> object and used for
+    /// monitoring stream health.
     /// </summary>
     public partial class VideoConfiguration
     {

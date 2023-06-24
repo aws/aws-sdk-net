@@ -1977,9 +1977,17 @@ namespace Amazon.SimpleSystemsManagement
         /// </summary>
         public static readonly DocumentType ChangeCalendar = new DocumentType("ChangeCalendar");
         /// <summary>
+        /// Constant CloudFormation for DocumentType
+        /// </summary>
+        public static readonly DocumentType CloudFormation = new DocumentType("CloudFormation");
+        /// <summary>
         /// Constant Command for DocumentType
         /// </summary>
         public static readonly DocumentType Command = new DocumentType("Command");
+        /// <summary>
+        /// Constant ConformancePackTemplate for DocumentType
+        /// </summary>
+        public static readonly DocumentType ConformancePackTemplate = new DocumentType("ConformancePackTemplate");
         /// <summary>
         /// Constant DeploymentStrategy for DocumentType
         /// </summary>
@@ -2000,6 +2008,10 @@ namespace Amazon.SimpleSystemsManagement
         /// Constant ProblemAnalysisTemplate for DocumentType
         /// </summary>
         public static readonly DocumentType ProblemAnalysisTemplate = new DocumentType("ProblemAnalysisTemplate");
+        /// <summary>
+        /// Constant QuickSetup for DocumentType
+        /// </summary>
+        public static readonly DocumentType QuickSetup = new DocumentType("QuickSetup");
         /// <summary>
         /// Constant Session for DocumentType
         /// </summary>
@@ -2084,6 +2096,56 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ExecutionMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ExternalAlarmState.
+    /// </summary>
+    public class ExternalAlarmState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALARM for ExternalAlarmState
+        /// </summary>
+        public static readonly ExternalAlarmState ALARM = new ExternalAlarmState("ALARM");
+        /// <summary>
+        /// Constant UNKNOWN for ExternalAlarmState
+        /// </summary>
+        public static readonly ExternalAlarmState UNKNOWN = new ExternalAlarmState("UNKNOWN");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ExternalAlarmState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ExternalAlarmState FindValue(string value)
+        {
+            return FindValue<ExternalAlarmState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ExternalAlarmState(string value)
         {
             return FindValue(value);
         }
@@ -2901,6 +2963,10 @@ namespace Amazon.SimpleSystemsManagement
     {
 
         /// <summary>
+        /// Constant ALMA_LINUX for OperatingSystem
+        /// </summary>
+        public static readonly OperatingSystem ALMA_LINUX = new OperatingSystem("ALMA_LINUX");
+        /// <summary>
         /// Constant AMAZON_LINUX for OperatingSystem
         /// </summary>
         public static readonly OperatingSystem AMAZON_LINUX = new OperatingSystem("AMAZON_LINUX");
@@ -2908,6 +2974,14 @@ namespace Amazon.SimpleSystemsManagement
         /// Constant AMAZON_LINUX_2 for OperatingSystem
         /// </summary>
         public static readonly OperatingSystem AMAZON_LINUX_2 = new OperatingSystem("AMAZON_LINUX_2");
+        /// <summary>
+        /// Constant AMAZON_LINUX_2022 for OperatingSystem
+        /// </summary>
+        public static readonly OperatingSystem AMAZON_LINUX_2022 = new OperatingSystem("AMAZON_LINUX_2022");
+        /// <summary>
+        /// Constant AMAZON_LINUX_2023 for OperatingSystem
+        /// </summary>
+        public static readonly OperatingSystem AMAZON_LINUX_2023 = new OperatingSystem("AMAZON_LINUX_2023");
         /// <summary>
         /// Constant CENTOS for OperatingSystem
         /// </summary>
@@ -2932,6 +3006,10 @@ namespace Amazon.SimpleSystemsManagement
         /// Constant REDHAT_ENTERPRISE_LINUX for OperatingSystem
         /// </summary>
         public static readonly OperatingSystem REDHAT_ENTERPRISE_LINUX = new OperatingSystem("REDHAT_ENTERPRISE_LINUX");
+        /// <summary>
+        /// Constant ROCKY_LINUX for OperatingSystem
+        /// </summary>
+        public static readonly OperatingSystem ROCKY_LINUX = new OperatingSystem("ROCKY_LINUX");
         /// <summary>
         /// Constant SUSE for OperatingSystem
         /// </summary>
@@ -3194,6 +3272,10 @@ namespace Amazon.SimpleSystemsManagement
     public class OpsItemFilterKey : ConstantClass
     {
 
+        /// <summary>
+        /// Constant AccountId for OpsItemFilterKey
+        /// </summary>
+        public static readonly OpsItemFilterKey AccountId = new OpsItemFilterKey("AccountId");
         /// <summary>
         /// Constant ActualEndTime for OpsItemFilterKey
         /// </summary>
@@ -4568,6 +4650,14 @@ namespace Amazon.SimpleSystemsManagement
     public class ResourceTypeForTagging : ConstantClass
     {
 
+        /// <summary>
+        /// Constant Association for ResourceTypeForTagging
+        /// </summary>
+        public static readonly ResourceTypeForTagging Association = new ResourceTypeForTagging("Association");
+        /// <summary>
+        /// Constant Automation for ResourceTypeForTagging
+        /// </summary>
+        public static readonly ResourceTypeForTagging Automation = new ResourceTypeForTagging("Automation");
         /// <summary>
         /// Constant Document for ResourceTypeForTagging
         /// </summary>

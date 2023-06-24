@@ -31,14 +31,14 @@ namespace Amazon.CodeDeploy.Model
     /// <summary>
     /// Container for the parameters to the PutLifecycleEventHookExecutionStatus operation.
     /// Sets the result of a Lambda validation function. The function validates lifecycle
-    /// hooks during a deployment that uses the AWS Lambda or Amazon ECS compute platform.
-    /// For AWS Lambda deployments, the available lifecycle hooks are <code>BeforeAllowTraffic</code>
+    /// hooks during a deployment that uses the Lambda or Amazon ECS compute platform. For
+    /// Lambda deployments, the available lifecycle hooks are <code>BeforeAllowTraffic</code>
     /// and <code>AfterAllowTraffic</code>. For Amazon ECS deployments, the available lifecycle
     /// hooks are <code>BeforeInstall</code>, <code>AfterInstall</code>, <code>AfterAllowTestTraffic</code>,
     /// <code>BeforeAllowTraffic</code>, and <code>AfterAllowTraffic</code>. Lambda validation
     /// functions return <code>Succeeded</code> or <code>Failed</code>. For more information,
     /// see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/reference-appspec-file-structure-hooks.html#appspec-hooks-lambda">AppSpec
-    /// 'hooks' Section for an AWS Lambda Deployment </a> and <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/reference-appspec-file-structure-hooks.html#appspec-hooks-ecs">AppSpec
+    /// 'hooks' Section for an Lambda Deployment </a> and <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/reference-appspec-file-structure-hooks.html#appspec-hooks-ecs">AppSpec
     /// 'hooks' Section for an Amazon ECS Deployment</a>.
     /// </summary>
     public partial class PutLifecycleEventHookExecutionStatusRequest : AmazonCodeDeployRequest
@@ -88,8 +88,10 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The result of a Lambda function that validates a deployment lifecycle event. <code>Succeeded</code>
-        /// and <code>Failed</code> are the only valid values for <code>status</code>.
+        /// The result of a Lambda function that validates a deployment lifecycle event. The values
+        /// listed in <b>Valid Values</b> are valid for lifecycle statuses in general; however,
+        /// only <code>Succeeded</code> and <code>Failed</code> can be passed successfully in
+        /// your API call.
         /// </para>
         /// </summary>
         public LifecycleEventStatus Status

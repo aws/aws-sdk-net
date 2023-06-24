@@ -34,7 +34,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// TopicRulePayload Marshaller
-    /// </summary>       
+    /// </summary>
     public class TopicRulePayloadMarshaller : IRequestMarshaller<TopicRulePayload, JsonMarshallerContext> 
     {
         /// <summary>
@@ -100,7 +100,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static TopicRulePayloadMarshaller Instance = new TopicRulePayloadMarshaller();
 
     }

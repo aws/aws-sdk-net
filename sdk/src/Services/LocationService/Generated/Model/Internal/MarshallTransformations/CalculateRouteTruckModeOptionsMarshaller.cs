@@ -34,7 +34,7 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CalculateRouteTruckModeOptions Marshaller
-    /// </summary>       
+    /// </summary>
     public class CalculateRouteTruckModeOptionsMarshaller : IRequestMarshaller<CalculateRouteTruckModeOptions, JsonMarshallerContext> 
     {
         /// <summary>
@@ -83,7 +83,7 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CalculateRouteTruckModeOptionsMarshaller Instance = new CalculateRouteTruckModeOptionsMarshaller();
 
     }

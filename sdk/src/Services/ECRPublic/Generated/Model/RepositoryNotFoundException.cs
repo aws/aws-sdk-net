@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECRPublic.Model
 {
     /// <summary>
-    /// The specified repository could not be found. Check the spelling of the specified repository
-    /// and ensure that you are performing operations on the correct registry.
+    /// The specified repository can't be found. Check the spelling of the specified repository
+    /// and ensure that you're performing operations on the correct registry.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

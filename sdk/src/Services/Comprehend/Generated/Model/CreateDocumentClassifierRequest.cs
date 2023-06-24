@@ -31,9 +31,9 @@ namespace Amazon.Comprehend.Model
     /// <summary>
     /// Container for the parameters to the CreateDocumentClassifier operation.
     /// Creates a new document classifier that you can use to categorize documents. To create
-    /// a classifier, you provide a set of training documents that labeled with the categories
-    /// that you want to use. After the classifier is trained you can use it to categorize
-    /// a set of labeled documents into the categories. For more information, see <a>how-document-classification</a>.
+    /// a classifier, you provide a set of training documents that are labeled with the categories
+    /// that you want to use. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/training-classifier-model.html">Training
+    /// classifier models</a> in the Comprehend Developer Guide.
     /// </summary>
     public partial class CreateDocumentClassifierRequest : AmazonComprehendRequest
     {
@@ -44,6 +44,7 @@ namespace Amazon.Comprehend.Model
         private LanguageCode _languageCode;
         private DocumentClassifierMode _mode;
         private string _modelKmsKeyId;
+        private string _modelPolicy;
         private DocumentClassifierOutputDataConfig _outputDataConfig;
         private List<Tag> _tags = new List<Tag>();
         private string _versionName;
@@ -73,8 +74,8 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property DataAccessRoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role that
-        /// grants Amazon Comprehend read access to your input data.
+        /// The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read
+        /// access to your input data.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]
@@ -131,9 +132,8 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property LanguageCode. 
         /// <para>
-        /// The language of the input documents. You can specify any of the following languages
-        /// supported by Amazon Comprehend: German ("de"), English ("en"), Spanish ("es"), French
-        /// ("fr"), Italian ("it"), or Portuguese ("pt"). All documents must be in the same language.
+        /// The language of the input documents. You can specify any of the languages supported
+        /// by Amazon Comprehend. All documents must be in the same language.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -174,8 +174,8 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property ModelKmsKeyId. 
         /// <para>
-        /// ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
-        /// trained custom models. The ModelKmsKeyId can be either of the following formats:
+        /// ID for the KMS key that Amazon Comprehend uses to encrypt trained custom models. The
+        /// ModelKmsKeyId can be either of the following formats:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -202,10 +202,51 @@ namespace Amazon.Comprehend.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ModelPolicy. 
+        /// <para>
+        /// The resource-based policy to attach to your custom document classifier model. You
+        /// can use this policy to allow another Amazon Web Services account to import your custom
+        /// model.
+        /// </para>
+        ///  
+        /// <para>
+        /// Provide your policy as a JSON body that you enter as a UTF-8 encoded string without
+        /// line breaks. To provide valid JSON, enclose the attribute names and values in double
+        /// quotes. If the JSON body is also enclosed in double quotes, then you must escape the
+        /// double quotes that are inside the policy:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>"{\"attribute\": \"value\", \"attribute\": [\"value\"]}"</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// To avoid escaping quotes, you can use single quotes to enclose the policy and double
+        /// quotes to enclose the JSON names and values:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>'{"attribute": "value", "attribute": ["value"]}'</code> 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=20000)]
+        public string ModelPolicy
+        {
+            get { return this._modelPolicy; }
+            set { this._modelPolicy = value; }
+        }
+
+        // Check to see if ModelPolicy property is set
+        internal bool IsSetModelPolicy()
+        {
+            return this._modelPolicy != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property OutputDataConfig. 
         /// <para>
-        /// Enables the addition of output results configuration parameters for custom classifier
-        /// jobs.
+        /// Specifies the location for the output files from a custom classifier job. This parameter
+        /// is required for a request that creates a native classifier model.
         /// </para>
         /// </summary>
         public DocumentClassifierOutputDataConfig OutputDataConfig
@@ -223,10 +264,10 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Tags to be associated with the document classifier being created. A tag is a key-value
-        /// pair that adds as a metadata to a resource used by Amazon Comprehend. For example,
-        /// a tag with "Sales" as the key might be added to a resource to indicate its use by
-        /// the sales department. 
+        /// Tags to associate with the document classifier. A tag is a key-value pair that adds
+        /// as a metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales"
+        /// as the key might be added to a resource to indicate its use by the sales department.
+        /// 
         /// </para>
         /// </summary>
         public List<Tag> Tags
@@ -247,7 +288,7 @@ namespace Amazon.Comprehend.Model
         /// The version name given to the newly created classifier. Version names can have a maximum
         /// of 256 characters. Alphanumeric characters, hyphens (-) and underscores (_) are allowed.
         /// The version name must be unique among all models with the same classifier name in
-        /// the account/AWS Region.
+        /// the Amazon Web Services account/Amazon Web Services Region.
         /// </para>
         /// </summary>
         [AWSProperty(Max=63)]
@@ -266,9 +307,9 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property VolumeKmsKeyId. 
         /// <para>
-        /// ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
-        /// data on the storage volume attached to the ML compute instance(s) that process the
-        /// analysis job. The VolumeKmsKeyId can be either of the following formats:
+        /// ID for the Amazon Web Services Key Management Service (KMS) key that Amazon Comprehend
+        /// uses to encrypt data on the storage volume attached to the ML compute instance(s)
+        /// that process the analysis job. The VolumeKmsKeyId can be either of the following formats:
         /// </para>
         ///  <ul> <li> 
         /// <para>

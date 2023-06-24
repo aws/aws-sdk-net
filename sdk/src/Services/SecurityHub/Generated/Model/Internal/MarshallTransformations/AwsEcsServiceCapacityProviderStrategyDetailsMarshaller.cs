@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AwsEcsServiceCapacityProviderStrategyDetails Marshaller
-    /// </summary>       
+    /// </summary>
     public class AwsEcsServiceCapacityProviderStrategyDetailsMarshaller : IRequestMarshaller<AwsEcsServiceCapacityProviderStrategyDetails, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AwsEcsServiceCapacityProviderStrategyDetailsMarshaller Instance = new AwsEcsServiceCapacityProviderStrategyDetailsMarshaller();
 
     }

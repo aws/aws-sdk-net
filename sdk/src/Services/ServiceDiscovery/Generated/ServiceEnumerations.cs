@@ -81,6 +81,10 @@ namespace Amazon.ServiceDiscovery
     {
 
         /// <summary>
+        /// Constant BEGINS_WITH for FilterCondition
+        /// </summary>
+        public static readonly FilterCondition BEGINS_WITH = new FilterCondition("BEGINS_WITH");
+        /// <summary>
         /// Constant BETWEEN for FilterCondition
         /// </summary>
         public static readonly FilterCondition BETWEEN = new FilterCondition("BETWEEN");
@@ -300,6 +304,14 @@ namespace Amazon.ServiceDiscovery
     public class NamespaceFilterName : ConstantClass
     {
 
+        /// <summary>
+        /// Constant HTTP_NAME for NamespaceFilterName
+        /// </summary>
+        public static readonly NamespaceFilterName HTTP_NAME = new NamespaceFilterName("HTTP_NAME");
+        /// <summary>
+        /// Constant NAME for NamespaceFilterName
+        /// </summary>
+        public static readonly NamespaceFilterName NAME = new NamespaceFilterName("NAME");
         /// <summary>
         /// Constant TYPE for NamespaceFilterName
         /// </summary>

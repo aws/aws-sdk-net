@@ -40,7 +40,7 @@ namespace Amazon.DataExchange.Model
         /// <summary>
         /// Gets and sets the property Bucket. 
         /// <para>
-        /// The S3 bucket that is the destination for the event action.
+        /// The Amazon S3 bucket that is the destination for the event action.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

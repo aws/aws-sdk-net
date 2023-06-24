@@ -70,6 +70,12 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
                     unmarshalledObject.IsCreatable = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("isDefaultedOnCreate", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.IsDefaultedOnCreate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("isNullable", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;

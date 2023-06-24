@@ -42,7 +42,7 @@ namespace Amazon.LookoutMetrics.Model
         ///  name of the flow.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=256)]
+        [AWSProperty(Max=256)]
         public string FlowName
         {
             get { return this._flowName; }
@@ -61,7 +61,7 @@ namespace Amazon.LookoutMetrics.Model
         /// An IAM role that gives Amazon Lookout for Metrics permission to access the flow.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=256)]
+        [AWSProperty(Max=256)]
         public string RoleArn
         {
             get { return this._roleArn; }

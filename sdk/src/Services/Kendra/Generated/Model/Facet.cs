@@ -29,11 +29,25 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kendra.Model
 {
     /// <summary>
-    /// Information about a document attribute
+    /// Information about a document attribute. You can use document attributes as facets.
+    /// 
+    ///  
+    /// <para>
+    /// For example, the document attribute or facet "Department" includes the values "HR",
+    /// "Engineering", and "Accounting". You can display these values in the search results
+    /// so that documents can be searched by department.
+    /// </para>
+    ///  
+    /// <para>
+    /// You can display up to 10 facet values per facet for a query. If you want to increase
+    /// this limit, contact <a href="http://aws.amazon.com/contact-us/">Support</a>.
+    /// </para>
     /// </summary>
     public partial class Facet
     {
         private string _documentAttributeKey;
+        private List<Facet> _facets = new List<Facet>();
+        private int? _maxResults;
 
         /// <summary>
         /// Gets and sets the property DocumentAttributeKey. 
@@ -52,6 +66,59 @@ namespace Amazon.Kendra.Model
         internal bool IsSetDocumentAttributeKey()
         {
             return this._documentAttributeKey != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Facets. 
+        /// <para>
+        /// An array of document attributes that are nested facets within a facet.
+        /// </para>
+        ///  
+        /// <para>
+        /// For example, the document attribute or facet "Department" includes a value called
+        /// "Engineering". In addition, the document attribute or facet "SubDepartment" includes
+        /// the values "Frontend" and "Backend" for documents assigned to "Engineering". You can
+        /// display nested facets in the search results so that documents can be searched not
+        /// only by department but also by a sub department within a department. This helps your
+        /// users further narrow their search.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can only have one nested facet within a facet. If you want to increase this limit,
+        /// contact <a href="http://aws.amazon.com/contact-us/">Support</a>.
+        /// </para>
+        /// </summary>
+        public List<Facet> Facets
+        {
+            get { return this._facets; }
+            set { this._facets = value; }
+        }
+
+        // Check to see if Facets property is set
+        internal bool IsSetFacets()
+        {
+            return this._facets != null && this._facets.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// Maximum number of facet values per facet. The default is 10. You can use this to limit
+        /// the number of facet values to less than 10. If you want to increase the default, contact
+        /// <a href="http://aws.amazon.com/contact-us/">Support</a>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=5000)]
+        public int MaxResults
+        {
+            get { return this._maxResults.GetValueOrDefault(); }
+            set { this._maxResults = value; }
+        }
+
+        // Check to see if MaxResults property is set
+        internal bool IsSetMaxResults()
+        {
+            return this._maxResults.HasValue; 
         }
 
     }

@@ -45,7 +45,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Action. 
         /// <para>
-        /// The action to perform on findings that meet the filter criteria (findingCriteria).
+        /// The action to perform on findings that match the filter criteria (findingCriteria).
         /// Valid values are: ARCHIVE, suppress (automatically archive) the findings; and, NOOP,
         /// don't perform any action on the findings.
         /// </para>
@@ -88,8 +88,8 @@ namespace Amazon.Macie2.Model
         ///  
         /// <para>
         /// We strongly recommend that you avoid including any sensitive data in the description
-        /// of a filter. Other users might be able to see this description, depending on the actions
-        /// that they're allowed to perform in Amazon Macie.
+        /// of a filter. Other users of your account might be able to see this description, depending
+        /// on the actions that they're allowed to perform in Amazon Macie.
         /// </para>
         /// </summary>
         public string Description
@@ -125,8 +125,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The unique identifier for the Amazon Macie resource or account that the request applies
-        /// to.
+        /// The unique identifier for the Amazon Macie resource that the request applies to.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -151,8 +150,8 @@ namespace Amazon.Macie2.Model
         ///  
         /// <para>
         /// We strongly recommend that you avoid including any sensitive data in the name of a
-        /// filter. Other users might be able to see this name, depending on the actions that
-        /// they're allowed to perform in Amazon Macie.
+        /// filter. Other users of your account might be able to see this name, depending on the
+        /// actions that they're allowed to perform in Amazon Macie.
         /// </para>
         /// </summary>
         public string Name

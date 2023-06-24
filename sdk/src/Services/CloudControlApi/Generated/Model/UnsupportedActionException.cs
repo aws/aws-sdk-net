@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudControlApi.Model
 {
     /// <summary>
-    /// The specified resource does not support this resource operation.
+    /// The specified resource doesn't support this resource operation.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

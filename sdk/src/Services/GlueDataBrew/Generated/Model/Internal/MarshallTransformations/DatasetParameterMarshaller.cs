@@ -34,7 +34,7 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DatasetParameter Marshaller
-    /// </summary>       
+    /// </summary>
     public class DatasetParameterMarshaller : IRequestMarshaller<DatasetParameter, JsonMarshallerContext> 
     {
         /// <summary>
@@ -89,7 +89,7 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DatasetParameterMarshaller Instance = new DatasetParameterMarshaller();
 
     }

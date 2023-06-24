@@ -34,7 +34,7 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// OpsCenterIntegrationConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class OpsCenterIntegrationConfigMarshaller : IRequestMarshaller<OpsCenterIntegrationConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static OpsCenterIntegrationConfigMarshaller Instance = new OpsCenterIntegrationConfigMarshaller();
 
     }

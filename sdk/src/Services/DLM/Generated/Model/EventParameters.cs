@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DLM.Model
 {
     /// <summary>
-    /// Specifies an event that triggers an event-based policy.
+    /// <b>[Event-based policies only]</b> Specifies an event that activates an event-based
+    /// policy.
     /// </summary>
     public partial class EventParameters
     {

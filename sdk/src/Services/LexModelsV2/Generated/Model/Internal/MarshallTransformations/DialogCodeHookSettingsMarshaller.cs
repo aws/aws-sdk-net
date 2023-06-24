@@ -34,7 +34,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DialogCodeHookSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class DialogCodeHookSettingsMarshaller : IRequestMarshaller<DialogCodeHookSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DialogCodeHookSettingsMarshaller Instance = new DialogCodeHookSettingsMarshaller();
 
     }

@@ -36,6 +36,7 @@ namespace Amazon.IoTSiteWise.Model
         private string _assetArn;
         private List<AssetCompositeModel> _assetCompositeModels = new List<AssetCompositeModel>();
         private DateTime? _assetCreationDate;
+        private string _assetDescription;
         private List<AssetHierarchy> _assetHierarchies = new List<AssetHierarchy>();
         private string _assetId;
         private DateTime? _assetLastUpdateDate;
@@ -103,6 +104,25 @@ namespace Amazon.IoTSiteWise.Model
         internal bool IsSetAssetCreationDate()
         {
             return this._assetCreationDate.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AssetDescription. 
+        /// <para>
+        /// A description for the asset.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string AssetDescription
+        {
+            get { return this._assetDescription; }
+            set { this._assetDescription = value; }
+        }
+
+        // Check to see if AssetDescription property is set
+        internal bool IsSetAssetDescription()
+        {
+            return this._assetDescription != null;
         }
 
         /// <summary>

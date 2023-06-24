@@ -38,7 +38,7 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property Oidc. 
         /// <para>
-        /// An object that represents an OpenID Connect (OIDC) identity provider configuration.
+        /// An object representing an OpenID Connect (OIDC) identity provider configuration.
         /// </para>
         /// </summary>
         public OidcIdentityProviderConfig Oidc

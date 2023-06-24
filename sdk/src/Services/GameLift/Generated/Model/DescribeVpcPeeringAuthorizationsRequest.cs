@@ -30,9 +30,9 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeVpcPeeringAuthorizations operation.
-    /// Retrieves valid VPC peering authorizations that are pending for the AWS account. This
-    /// operation returns all VPC peering authorizations and requests for peering. This includes
-    /// those initiated and received by this account. 
+    /// Retrieves valid VPC peering authorizations that are pending for the Amazon Web Services
+    /// account. This operation returns all VPC peering authorizations and requests for peering.
+    /// This includes those initiated and received by this account. 
     /// 
     ///  
     /// <para>
@@ -40,9 +40,7 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  
     /// <para>
-    ///  <a>CreateVpcPeeringAuthorization</a> | <a>DescribeVpcPeeringAuthorizations</a> |
-    /// <a>DeleteVpcPeeringAuthorization</a> | <a>CreateVpcPeeringConnection</a> | <a>DescribeVpcPeeringConnections</a>
-    /// | <a>DeleteVpcPeeringConnection</a> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
+    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
     /// APIs by task</a> 
     /// </para>
     /// </summary>

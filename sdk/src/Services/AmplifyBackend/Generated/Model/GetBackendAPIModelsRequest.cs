@@ -30,7 +30,7 @@ namespace Amazon.AmplifyBackend.Model
 {
     /// <summary>
     /// Container for the parameters to the GetBackendAPIModels operation.
-    /// Generates a model schema for existing backend API resource.
+    /// Gets a model introspection schema for an existing backend API resource.
     /// </summary>
     public partial class GetBackendAPIModelsRequest : AmazonAmplifyBackendRequest
     {

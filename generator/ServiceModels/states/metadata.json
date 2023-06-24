@@ -1,5 +1,6 @@
 {
-    "active": true, 
-    "base-name": "StepFunctions", 
-    "synopsis": "AWS Step Functions is a web service that enables you to coordinate a network of computing resources across distributed components using state machines."
+  "active": true,
+  "base-name": "StepFunctions",
+  "synopsis": "AWS Step Functions is a web service that enables you to coordinate a network of computing resources across distributed components using state machines.",
+  "legacy-service-id": "SFN"
 }

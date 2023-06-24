@@ -34,7 +34,7 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SourceAuth Marshaller
-    /// </summary>       
+    /// </summary>
     public class SourceAuthMarshaller : IRequestMarshaller<SourceAuth, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SourceAuthMarshaller Instance = new SourceAuthMarshaller();
 
     }

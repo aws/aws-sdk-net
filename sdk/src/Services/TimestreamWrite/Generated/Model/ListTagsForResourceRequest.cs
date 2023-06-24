@@ -30,7 +30,7 @@ namespace Amazon.TimestreamWrite.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTagsForResource operation.
-    /// List all tags on a Timestream resource.
+    /// Lists all tags on a Timestream resource.
     /// </summary>
     public partial class ListTagsForResourceRequest : AmazonTimestreamWriteRequest
     {

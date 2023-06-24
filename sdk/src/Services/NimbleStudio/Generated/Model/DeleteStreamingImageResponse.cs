@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.NimbleStudio.Model
 {
     /// <summary>
-    /// <zonbook></zonbook><xhtml></xhtml>
+    /// This is the response object from the DeleteStreamingImage operation.
     /// </summary>
     public partial class DeleteStreamingImageResponse : AmazonWebServiceResponse
     {

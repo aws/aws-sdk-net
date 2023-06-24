@@ -30,8 +30,23 @@ namespace Amazon.SecretsManager.Model
 {
     /// <summary>
     /// Container for the parameters to the ReplicateSecretToRegions operation.
-    /// Converts an existing secret to a multi-Region secret and begins replication the secret
-    /// to a list of new regions.
+    /// Replicates the secret to a new Regions. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/create-manage-multi-region-secrets.html">Multi-Region
+    /// secrets</a>.
+    /// 
+    ///  
+    /// <para>
+    /// Secrets Manager generates a CloudTrail log entry when you call this action. Do not
+    /// include sensitive information in request parameters because it might be logged. For
+    /// more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/retrieve-ct-entries.html">Logging
+    /// Secrets Manager events with CloudTrail</a>.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Required permissions: </b> <code>secretsmanager:ReplicateSecretToRegions</code>.
+    /// For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions">
+    /// IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+    /// and access control in Secrets Manager</a>. 
+    /// </para>
     /// </summary>
     public partial class ReplicateSecretToRegionsRequest : AmazonSecretsManagerRequest
     {
@@ -42,7 +57,7 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property AddReplicaRegions. 
         /// <para>
-        /// Add Regions to replicate the secret.
+        /// A list of Regions in which to replicate the secret.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
@@ -61,8 +76,8 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property ForceOverwriteReplicaSecret. 
         /// <para>
-        /// (Optional) If set, Secrets Manager replication overwrites a secret with the same name
-        /// in the destination region.
+        /// Specifies whether to overwrite a secret with the same name in the destination Region.
+        /// By default, secrets aren't overwritten.
         /// </para>
         /// </summary>
         public bool ForceOverwriteReplicaSecret
@@ -80,7 +95,7 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property SecretId. 
         /// <para>
-        /// Use the <code>Secret Id</code> to replicate a secret to regions.
+        /// The ARN or name of the secret to replicate.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]

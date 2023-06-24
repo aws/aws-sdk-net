@@ -188,7 +188,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property BestCandidate. 
         /// <para>
-        /// Returns the job's best <code>AutoMLCandidate</code>.
+        /// The best model candidate selected by SageMaker Autopilot using both the best objective
+        /// metric and lowest <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-metrics-validation.html">InferenceLatency</a>
+        /// for an experiment.
         /// </para>
         /// </summary>
         public AutoMLCandidate BestCandidate
@@ -280,10 +282,10 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property InputDataConfig. 
         /// <para>
-        /// Returns the input data configuration for the AutoML job..
+        /// Returns the input data configuration for the AutoML job.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=20)]
+        [AWSProperty(Required=true, Min=1, Max=2)]
         public List<AutoMLChannel> InputDataConfig
         {
             get { return this._inputDataConfig; }
@@ -411,9 +413,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ResolvedAttributes. 
         /// <para>
-        /// This contains <code>ProblemType</code>, <code>AutoMLJobObjective</code>, and <code>CompletionCriteria</code>.
-        /// If you do not provide these values, they are auto-inferred. If you do provide them,
-        /// the values used are the ones you provide.
+        /// Contains <code>ProblemType</code>, <code>AutoMLJobObjective</code>, and <code>CompletionCriteria</code>.
+        /// If you do not provide these values, they are inferred.
         /// </para>
         /// </summary>
         public ResolvedAttributes ResolvedAttributes
@@ -431,9 +432,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management
-        /// (IAM) role that has read permission to the input data location and write permission
-        /// to the output data location in Amazon S3.
+        /// The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that
+        /// has read permission to the input data location and write permission to the output
+        /// data location in Amazon S3.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]

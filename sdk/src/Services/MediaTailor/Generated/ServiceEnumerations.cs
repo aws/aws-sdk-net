@@ -125,6 +125,102 @@ namespace Amazon.MediaTailor
 
 
     /// <summary>
+    /// Constants used for properties of type FillPolicy.
+    /// </summary>
+    public class FillPolicy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FULL_AVAIL_ONLY for FillPolicy
+        /// </summary>
+        public static readonly FillPolicy FULL_AVAIL_ONLY = new FillPolicy("FULL_AVAIL_ONLY");
+        /// <summary>
+        /// Constant PARTIAL_AVAIL for FillPolicy
+        /// </summary>
+        public static readonly FillPolicy PARTIAL_AVAIL = new FillPolicy("PARTIAL_AVAIL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FillPolicy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FillPolicy FindValue(string value)
+        {
+            return FindValue<FillPolicy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FillPolicy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type LogType.
+    /// </summary>
+    public class LogType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AS_RUN for LogType
+        /// </summary>
+        public static readonly LogType AS_RUN = new LogType("AS_RUN");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LogType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LogType FindValue(string value)
+        {
+            return FindValue<LogType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LogType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type MessageType.
     /// </summary>
     public class MessageType : ConstantClass
@@ -134,6 +230,10 @@ namespace Amazon.MediaTailor
         /// Constant SPLICE_INSERT for MessageType
         /// </summary>
         public static readonly MessageType SPLICE_INSERT = new MessageType("SPLICE_INSERT");
+        /// <summary>
+        /// Constant TIME_SIGNAL for MessageType
+        /// </summary>
+        public static readonly MessageType TIME_SIGNAL = new MessageType("TIME_SIGNAL");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -176,6 +276,10 @@ namespace Amazon.MediaTailor
     public class Mode : ConstantClass
     {
 
+        /// <summary>
+        /// Constant AFTER_LIVE_EDGE for Mode
+        /// </summary>
+        public static readonly Mode AFTER_LIVE_EDGE = new Mode("AFTER_LIVE_EDGE");
         /// <summary>
         /// Constant BEHIND_LIVE_EDGE for Mode
         /// </summary>
@@ -460,6 +564,56 @@ namespace Amazon.MediaTailor
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ScheduleEntryType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Tier.
+    /// </summary>
+    public class Tier : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BASIC for Tier
+        /// </summary>
+        public static readonly Tier BASIC = new Tier("BASIC");
+        /// <summary>
+        /// Constant STANDARD for Tier
+        /// </summary>
+        public static readonly Tier STANDARD = new Tier("STANDARD");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Tier(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Tier FindValue(string value)
+        {
+            return FindValue<Tier>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Tier(string value)
         {
             return FindValue(value);
         }

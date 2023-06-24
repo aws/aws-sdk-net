@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ServiceDiscovery.Model
 {
     /// <summary>
-    /// A complex type that contains information about the Route 53 DNS records that you want
+    /// A complex type that contains information about the Route 53 DNS records that you want
     /// Cloud Map to create when you register an instance.
     /// </summary>
     public partial class DnsRecord
@@ -45,7 +45,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// Alias records don't include a TTL because Route 53 uses the TTL for the Amazon Web
+        /// Alias records don't include a TTL because Route 53 uses the TTL for the Amazon Web
         /// Services resource that an alias record routes traffic to. If you include the <code>AWS_ALIAS_DNS_NAME</code>
         /// attribute when you submit a <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_RegisterInstance.html">RegisterInstance</a>
         /// request, the <code>TTL</code> value is ignored. Always specify a TTL for the service;
@@ -70,7 +70,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of the resource, which indicates the type of value that Route 53 returns
+        /// The type of the resource, which indicates the type of value that Route 53 returns
         /// in response to DNS queries. You can specify values for <code>Type</code> in the following
         /// combinations:
         /// </para>
@@ -96,7 +96,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If you want Cloud Map to create a Route 53 alias record when you register an instance,
+        /// If you want Cloud Map to create a Route 53 alias record when you register an instance,
         /// specify <code>A</code> or <code>AAAA</code> for <code>Type</code>.
         /// </para>
         ///  
@@ -110,15 +110,15 @@ namespace Amazon.ServiceDiscovery.Model
         /// </para>
         ///  <dl> <dt>A</dt> <dd> 
         /// <para>
-        /// Route 53 returns the IP address of the resource in IPv4 format, such as 192.0.2.44.
+        /// Route 53 returns the IP address of the resource in IPv4 format, such as 192.0.2.44.
         /// </para>
         ///  </dd> <dt>AAAA</dt> <dd> 
         /// <para>
-        /// Route 53 returns the IP address of the resource in IPv6 format, such as 2001:0db8:85a3:0000:0000:abcd:0001:2345.
+        /// Route 53 returns the IP address of the resource in IPv6 format, such as 2001:0db8:85a3:0000:0000:abcd:0001:2345.
         /// </para>
         ///  </dd> <dt>CNAME</dt> <dd> 
         /// <para>
-        /// Route 53 returns the domain name of the resource, such as www.example.com. Note the
+        /// Route 53 returns the domain name of the resource, such as www.example.com. Note the
         /// following:
         /// </para>
         ///  <ul> <li> 
@@ -138,7 +138,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// </para>
         ///  </li> </ul> </dd> <dt>SRV</dt> <dd> 
         /// <para>
-        /// Route 53 returns the value for an <code>SRV</code> record. The value for an <code>SRV</code>
+        /// Route 53 returns the value for an <code>SRV</code> record. The value for an <code>SRV</code>
         /// record uses the following values:
         /// </para>
         ///  

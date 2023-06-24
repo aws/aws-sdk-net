@@ -39,7 +39,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property AccountIds. 
         /// <para>
-        /// Information about the AWS accounts with access to the portfolio.
+        /// Information about the Amazon Web Services accounts with access to the portfolio.
         /// </para>
         /// </summary>
         public List<string> AccountIds

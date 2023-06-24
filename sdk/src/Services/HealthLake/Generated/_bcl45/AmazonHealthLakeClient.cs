@@ -230,6 +230,15 @@ namespace Amazon.HealthLake
         }    
 
         /// <summary>
+        /// Customize the pipeline
+        /// </summary>
+        /// <param name="pipeline"></param>
+        protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
+        {
+            pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonHealthLakeEndpointResolver());
+        }    
+        /// <summary>
         /// Capture metadata for the service.
         /// </summary>
         protected override IServiceMetadata ServiceMetadata
@@ -1002,7 +1011,7 @@ namespace Amazon.HealthLake
 
 
         /// <summary>
-        /// Adds a user specifed key and value tag to a Data Store.
+        /// Adds a user specified key and value tag to a Data Store.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// 
@@ -1025,7 +1034,7 @@ namespace Amazon.HealthLake
 
 
         /// <summary>
-        /// Adds a user specifed key and value tag to a Data Store.
+        /// Adds a user specified key and value tag to a Data Store.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// <param name="cancellationToken">

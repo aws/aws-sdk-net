@@ -34,7 +34,7 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// FrameworkControl Marshaller
-    /// </summary>       
+    /// </summary>
     public class FrameworkControlMarshaller : IRequestMarshaller<FrameworkControl, JsonMarshallerContext> 
     {
         /// <summary>
@@ -82,7 +82,7 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static FrameworkControlMarshaller Instance = new FrameworkControlMarshaller();
 
     }

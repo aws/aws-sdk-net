@@ -56,7 +56,7 @@ namespace Amazon.CodeArtifact.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CodeArtifact");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-09-22";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-09-22";
             request.HttpMethod = "POST";
 
             
@@ -81,8 +81,14 @@ namespace Amazon.CodeArtifact.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetPackagePrefix())
                 request.Parameters.Add("package-prefix", StringUtils.FromString(publicRequest.PackagePrefix));
             
+            if (publicRequest.IsSetPublish())
+                request.Parameters.Add("publish", StringUtils.FromString(publicRequest.Publish));
+            
             if (publicRequest.IsSetRepository())
                 request.Parameters.Add("repository", StringUtils.FromString(publicRequest.Repository));
+            
+            if (publicRequest.IsSetUpstream())
+                request.Parameters.Add("upstream", StringUtils.FromString(publicRequest.Upstream));
             request.ResourcePath = "/v1/packages";
             request.UseQueryString = true;
 

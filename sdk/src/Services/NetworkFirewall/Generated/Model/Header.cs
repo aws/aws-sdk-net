@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.NetworkFirewall.Model
 {
     /// <summary>
-    /// The basic rule criteria for AWS Network Firewall to use to inspect packet headers
-    /// in stateful traffic flow inspection. Traffic flows that match the criteria are a match
-    /// for the corresponding <a>StatefulRule</a>.
+    /// The basic rule criteria for Network Firewall to use to inspect packet headers in stateful
+    /// traffic flow inspection. Traffic flows that match the criteria are a match for the
+    /// corresponding <a>StatefulRule</a>.
     /// </summary>
     public partial class Header
     {
@@ -51,7 +51,7 @@ namespace Amazon.NetworkFirewall.Model
         ///  
         /// <para>
         /// Specify an IP address or a block of IP addresses in Classless Inter-Domain Routing
-        /// (CIDR) notation. Network Firewall supports all address ranges for IPv4. 
+        /// (CIDR) notation. Network Firewall supports all address ranges for IPv4 and IPv6. 
         /// </para>
         ///  
         /// <para>
@@ -65,6 +65,16 @@ namespace Amazon.NetworkFirewall.Model
         /// <para>
         /// To configure Network Firewall to inspect for IP addresses from 192.0.2.0 to 192.0.2.255,
         /// specify <code>192.0.2.0/24</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To configure Network Firewall to inspect for the IP address 1111:0000:0000:0000:0000:0000:0000:0111,
+        /// specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To configure Network Firewall to inspect for IP addresses from 1111:0000:0000:0000:0000:0000:0000:0000
+        /// to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -132,7 +142,7 @@ namespace Amazon.NetworkFirewall.Model
         /// Gets and sets the property Protocol. 
         /// <para>
         /// The protocol to inspect for. To specify all, you can use <code>IP</code>, because
-        /// all traffic on AWS and on the internet is IP.
+        /// all traffic on Amazon Web Services and on the internet is IP.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -157,7 +167,7 @@ namespace Amazon.NetworkFirewall.Model
         ///  
         /// <para>
         /// Specify an IP address or a block of IP addresses in Classless Inter-Domain Routing
-        /// (CIDR) notation. Network Firewall supports all address ranges for IPv4. 
+        /// (CIDR) notation. Network Firewall supports all address ranges for IPv4 and IPv6. 
         /// </para>
         ///  
         /// <para>
@@ -171,6 +181,16 @@ namespace Amazon.NetworkFirewall.Model
         /// <para>
         /// To configure Network Firewall to inspect for IP addresses from 192.0.2.0 to 192.0.2.255,
         /// specify <code>192.0.2.0/24</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To configure Network Firewall to inspect for the IP address 1111:0000:0000:0000:0000:0000:0000:0111,
+        /// specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To configure Network Firewall to inspect for IP addresses from 1111:0000:0000:0000:0000:0000:0000:0000
+        /// to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.
         /// </para>
         ///  </li> </ul> 
         /// <para>

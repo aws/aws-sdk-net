@@ -58,7 +58,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             string target = "AmazonSSM.UpdateAssociation";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2014-11-06";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2014-11-06";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -67,6 +67,17 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAlarmConfiguration())
+                {
+                    context.Writer.WritePropertyName("AlarmConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = AlarmConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.AlarmConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetApplyOnlyAtCronInterval())
                 {
                     context.Writer.WritePropertyName("ApplyOnlyAtCronInterval");
@@ -174,6 +185,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ScheduleExpression);
                 }
 
+                if(publicRequest.IsSetScheduleOffset())
+                {
+                    context.Writer.WritePropertyName("ScheduleOffset");
+                    context.Writer.Write(publicRequest.ScheduleOffset);
+                }
+
                 if(publicRequest.IsSetSyncCompliance())
                 {
                     context.Writer.WritePropertyName("SyncCompliance");
@@ -196,6 +213,30 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetTargetMaps())
+                {
+                    context.Writer.WritePropertyName("TargetMaps");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestTargetMapsListValue in publicRequest.TargetMaps)
+                    {
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTargetMapsListValueKvp in publicRequestTargetMapsListValue)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTargetMapsListValueKvp.Key);
+                            var publicRequestTargetMapsListValueValue = publicRequestTargetMapsListValueKvp.Value;
+
+                            context.Writer.WriteArrayStart();
+                            foreach(var publicRequestTargetMapsListValueValueListValue in publicRequestTargetMapsListValueValue)
+                            {
+                                    context.Writer.Write(publicRequestTargetMapsListValueValueListValue);
+                            }
+                            context.Writer.WriteArrayEnd();
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetTargets())
                 {
                     context.Writer.WritePropertyName("Targets");
@@ -212,7 +253,6 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

@@ -30,7 +30,19 @@ namespace Amazon.TranscribeService.Model
 {
     /// <summary>
     /// Container for the parameters to the GetMedicalVocabulary operation.
-    /// Retrieves information about a medical vocabulary.
+    /// Provides information about the specified custom medical vocabulary.
+    /// 
+    ///  
+    /// <para>
+    /// To view the status of the specified custom medical vocabulary, check the <code>VocabularyState</code>
+    /// field. If the status is <code>READY</code>, your custom vocabulary is available to
+    /// use. If the status is <code>FAILED</code>, <code>FailureReason</code> provides details
+    /// on why your vocabulary failed.
+    /// </para>
+    ///  
+    /// <para>
+    /// To get a list of your custom medical vocabularies, use the operation.
+    /// </para>
     /// </summary>
     public partial class GetMedicalVocabularyRequest : AmazonTranscribeServiceRequest
     {
@@ -39,8 +51,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property VocabularyName. 
         /// <para>
-        /// The name of the vocabulary that you want information about. The value is case sensitive.
-        /// 
+        /// The name of the custom medical vocabulary you want information about. Custom medical
+        /// vocabulary names are case sensitive.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=200)]

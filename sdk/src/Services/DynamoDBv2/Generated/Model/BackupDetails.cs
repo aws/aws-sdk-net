@@ -120,7 +120,8 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property BackupSizeBytes. 
         /// <para>
-        /// Size of the backup in bytes.
+        /// Size of the backup in bytes. DynamoDB updates this value approximately every six hours.
+        /// Recent changes might not be reflected in this value.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]

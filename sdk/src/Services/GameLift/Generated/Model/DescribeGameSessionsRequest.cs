@@ -31,9 +31,7 @@ namespace Amazon.GameLift.Model
     /// <summary>
     /// Container for the parameters to the DescribeGameSessions operation.
     /// Retrieves a set of one or more game sessions in a specific fleet location. You can
-    /// optionally filter the results by current game session status. Alternatively, use <a>SearchGameSessions</a>
-    /// to request a set of active game sessions that are filtered by certain criteria. To
-    /// retrieve the protection policy for game sessions, use <a>DescribeGameSessionDetails</a>.
+    /// optionally filter the results by current game session status.
     /// 
     ///  
     /// <para>
@@ -54,8 +52,8 @@ namespace Amazon.GameLift.Model
     ///  </li> <li> 
     /// <para>
     /// To retrieve a specific game session, provide the game session ID. This approach looks
-    /// for the game session ID in all fleets that reside in the AWS Region defined in the
-    /// request.
+    /// for the game session ID in all fleets that reside in the Amazon Web Services Region
+    /// defined in the request.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -68,7 +66,15 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  
     /// <para>
-    ///  <i>Available in GameLift Local.</i> 
+    /// This operation is not designed to be continually called to track game session status.
+    /// This practice can cause you to exceed your API limit, which results in errors. Instead,
+    /// you must configure an Amazon Simple Notification Service (SNS) topic to receive notifications
+    /// from FlexMatch or queues. Continuously polling with <code>DescribeGameSessions</code>
+    /// should only be used for games in development with low game session usage. 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <i>Available in Amazon GameLift Local.</i> 
     /// </para>
     ///  
     /// <para>
@@ -81,14 +87,7 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  
     /// <para>
-    ///  <b>Related actions</b> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <a>CreateGameSession</a> | <a>DescribeGameSessions</a> | <a>DescribeGameSessionDetails</a>
-    /// | <a>SearchGameSessions</a> | <a>UpdateGameSession</a> | <a>GetGameSessionLogUrl</a>
-    /// | <a>StartGameSessionPlacement</a> | <a>DescribeGameSessionPlacement</a> | <a>StopGameSessionPlacement</a>
-    /// | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
+    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
     /// APIs by task</a> 
     /// </para>
     /// </summary>
@@ -182,8 +181,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Location. 
         /// <para>
-        /// A fleet location to get game session details for. You can specify a fleet's home Region
-        /// or a remote location. Use the AWS Region code format, such as <code>us-west-2</code>.
+        /// A fleet location to get game sessions for. You can specify a fleet's home Region or
+        /// a remote location. Use the Amazon Web Services Region code format, such as <code>us-west-2</code>.
         /// 
         /// </para>
         /// </summary>

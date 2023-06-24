@@ -30,30 +30,65 @@ namespace Amazon.TranscribeService.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateVocabularyFilter operation.
-    /// Updates a vocabulary filter with a new list of filtered words.
+    /// Updates an existing custom vocabulary filter with a new list of words. The new list
+    /// you provide overwrites all previous entries; you cannot append new terms onto an existing
+    /// custom vocabulary filter.
     /// </summary>
     public partial class UpdateVocabularyFilterRequest : AmazonTranscribeServiceRequest
     {
+        private string _dataAccessRoleArn;
         private string _vocabularyFilterFileUri;
         private string _vocabularyFilterName;
         private List<string> _words = new List<string>();
 
         /// <summary>
+        /// Gets and sets the property DataAccessRoleArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon
+        /// S3 bucket that contains your input files (in this case, your custom vocabulary filter).
+        /// If the role that you specify doesn’t have the appropriate permissions to access the
+        /// specified Amazon S3 location, your request fails.
+        /// </para>
+        ///  
+        /// <para>
+        /// IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>.
+        /// For example: <code>arn:aws:iam::111122223333:role/Admin</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM
+        /// ARNs</a>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string DataAccessRoleArn
+        {
+            get { return this._dataAccessRoleArn; }
+            set { this._dataAccessRoleArn = value; }
+        }
+
+        // Check to see if DataAccessRoleArn property is set
+        internal bool IsSetDataAccessRoleArn()
+        {
+            return this._dataAccessRoleArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property VocabularyFilterFileUri. 
         /// <para>
-        /// The Amazon S3 location of a text file used as input to create the vocabulary filter.
-        /// Only use characters from the character set defined for custom vocabularies. For a
-        /// list of character sets, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary.html#charsets">Character
-        /// Sets for Custom Vocabularies</a>.
+        /// The Amazon S3 location of the text file that contains your custom vocabulary filter
+        /// terms. The URI must be located in the same Amazon Web Services Region as the resource
+        /// you're calling.
         /// </para>
         ///  
         /// <para>
-        /// The specified file must be less than 50 KB of UTF-8 characters.
+        /// Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-vocab-filter-file.txt</code>
+        /// 
         /// </para>
         ///  
         /// <para>
-        /// If you provide the location of a list of words in the <code>VocabularyFilterFileUri</code>
-        /// parameter, you can't use the <code>Words</code> parameter.
+        /// Note that if you include <code>VocabularyFilterFileUri</code> in your request, you
+        /// cannot use <code>Words</code>; you must choose one or the other.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2000)]
@@ -72,9 +107,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property VocabularyFilterName. 
         /// <para>
-        /// The name of the vocabulary filter to update. If you try to update a vocabulary filter
-        /// with the same name as another vocabulary filter, you get a <code>ConflictException</code>
-        /// error.
+        /// The name of the custom vocabulary filter you want to update. Custom vocabulary filter
+        /// names are case sensitive.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=200)]
@@ -93,14 +127,23 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property Words. 
         /// <para>
-        /// The words to use in the vocabulary filter. Only use characters from the character
-        /// set defined for custom vocabularies. For a list of character sets, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary.html#charsets">Character
-        /// Sets for Custom Vocabularies</a>.
+        /// Use this parameter if you want to update your custom vocabulary filter by including
+        /// all desired terms, as comma-separated values, within your request. The other option
+        /// for updating your vocabulary filter is to save your entries in a text file and upload
+        /// them to an Amazon S3 bucket, then specify the location of your file using the <code>VocabularyFilterFileUri</code>
+        /// parameter.
         /// </para>
         ///  
         /// <para>
-        /// If you provide a list of words in the <code>Words</code> parameter, you can't use
-        /// the <code>VocabularyFilterFileUri</code> parameter.
+        /// Note that if you include <code>Words</code> in your request, you cannot use <code>VocabularyFilterFileUri</code>;
+        /// you must choose one or the other.
+        /// </para>
+        ///  
+        /// <para>
+        /// Each language has a character set that contains all allowed characters for that specific
+        /// language. If you use unsupported characters, your custom vocabulary filter request
+        /// fails. Refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character
+        /// Sets for Custom Vocabularies</a> to get the character set for your language.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

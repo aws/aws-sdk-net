@@ -55,8 +55,8 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  
         /// <para>
-        /// Use the <a>GetBucketAccessKeys</a> action to get a list of access key IDs that you
-        /// can specify.
+        /// Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetBucketAccessKeys.html">GetBucketAccessKeys</a>
+        /// action to get a list of access key IDs that you can specify.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

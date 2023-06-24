@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Specifies summary information about a training job.
+    /// The container for the summary information about a training job.
     /// </summary>
     public partial class HyperParameterTrainingJobSummary
     {
@@ -87,8 +87,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property FinalHyperParameterTuningJobObjectiveMetric. 
         /// <para>
-        /// The <a>FinalHyperParameterTuningJobObjectiveMetric</a> object that specifies the value
-        /// of the objective metric of the tuning job that launched this training job.
+        /// The <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_FinalHyperParameterTuningJobObjectiveMetric.html">FinalHyperParameterTuningJobObjectiveMetric</a>
+        /// object that specifies the value of the objective metric of the tuning job that launched
+        /// this training job.
         /// </para>
         /// </summary>
         public FinalHyperParameterTuningJobObjectiveMetric FinalHyperParameterTuningJobObjectiveMetric
@@ -144,8 +145,7 @@ namespace Amazon.SageMaker.Model
         /// Specifies the time when the training job ends on training instances. You are billed
         /// for the time interval between the value of <code>TrainingStartTime</code> and this
         /// time. For successful jobs and stopped jobs, this is the time after model artifacts
-        /// are uploaded. For failed jobs, this is the time when Amazon SageMaker detects a job
-        /// failure.
+        /// are uploaded. For failed jobs, this is the time when SageMaker detects a job failure.
         /// </para>
         /// </summary>
         public DateTime TrainingEndTime

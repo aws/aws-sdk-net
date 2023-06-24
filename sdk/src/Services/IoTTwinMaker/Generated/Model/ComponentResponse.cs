@@ -38,7 +38,9 @@ namespace Amazon.IoTTwinMaker.Model
         private string _definedIn;
         private string _description;
         private Dictionary<string, PropertyResponse> _properties = new Dictionary<string, PropertyResponse>();
+        private Dictionary<string, ComponentPropertyGroupResponse> _propertyGroups = new Dictionary<string, ComponentPropertyGroupResponse>();
         private Status _status;
+        private string _syncSource;
 
         /// <summary>
         /// Gets and sets the property ComponentName. 
@@ -103,7 +105,7 @@ namespace Amazon.IoTTwinMaker.Model
         /// The description of the component type.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=512)]
+        [AWSProperty(Min=0, Max=2048)]
         public string Description
         {
             get { return this._description; }
@@ -136,6 +138,24 @@ namespace Amazon.IoTTwinMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PropertyGroups. 
+        /// <para>
+        /// The property groups.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, ComponentPropertyGroupResponse> PropertyGroups
+        {
+            get { return this._propertyGroups; }
+            set { this._propertyGroups = value; }
+        }
+
+        // Check to see if PropertyGroups property is set
+        internal bool IsSetPropertyGroups()
+        {
+            return this._propertyGroups != null && this._propertyGroups.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
         /// The status of the component type.
@@ -151,6 +171,24 @@ namespace Amazon.IoTTwinMaker.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SyncSource. 
+        /// <para>
+        /// The syncSource of the sync job, if this entity was created by a sync job.
+        /// </para>
+        /// </summary>
+        public string SyncSource
+        {
+            get { return this._syncSource; }
+            set { this._syncSource = value; }
+        }
+
+        // Check to see if SyncSource property is set
+        internal bool IsSetSyncSource()
+        {
+            return this._syncSource != null;
         }
 
     }

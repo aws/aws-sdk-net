@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.TimestreamWrite.Model
 {
     /// <summary>
-    /// Retention properties contain the duration for which your time series data must be
+    /// Retention properties contain the duration for which your time-series data must be
     /// stored in the magnetic store and the memory store.
     /// </summary>
     public partial class RetentionProperties

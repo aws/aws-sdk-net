@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// The minimum and maximum value of an attribute that is of the number data type.
+    /// The minimum and maximum values of an attribute that is of the number data type.
     /// </summary>
     public partial class NumberAttributeConstraintsType
     {

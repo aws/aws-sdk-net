@@ -29,7 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.TranscribeService.Model
 {
     /// <summary>
-    /// Provides optional settings for the <code>StartTranscriptionJob</code> operation.
+    /// Allows additional optional settings in your request, including channel identification,
+    /// alternative transcriptions, and speaker partitioning. You can use that to apply custom
+    /// vocabularies to your transcription job.
     /// </summary>
     public partial class Settings
     {
@@ -45,19 +47,22 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property ChannelIdentification. 
         /// <para>
-        /// Instructs Amazon Transcribe to process each audio channel separately and then merge
-        /// the transcription output of each channel into a single transcription. 
+        /// Enables channel identification in multi-channel audio.
         /// </para>
         ///  
         /// <para>
-        /// Amazon Transcribe also produces a transcription of each item detected on an audio
-        /// channel, including the start time and end time of the item and alternative transcriptions
-        /// of the item including the confidence that Amazon Transcribe has in the transcription.
+        /// Channel identification transcribes the audio on each channel independently, then appends
+        /// the output for each channel into one transcript.
         /// </para>
         ///  
         /// <para>
-        /// You can't set both <code>ShowSpeakerLabels</code> and <code>ChannelIdentification</code>
-        /// in the same request. If you set both, your request returns a <code>BadRequestException</code>.
+        /// You can't include both <code>ShowSpeakerLabels</code> and <code>ChannelIdentification</code>
+        /// in the same request. Including both parameters returns a <code>BadRequestException</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/channel-id.html">Transcribing
+        /// multi-channel audio</a>.
         /// </para>
         /// </summary>
         public bool ChannelIdentification
@@ -75,9 +80,23 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property MaxAlternatives. 
         /// <para>
-        /// The number of alternative transcriptions that the service should return. If you specify
-        /// the <code>MaxAlternatives</code> field, you must set the <code>ShowAlternatives</code>
-        /// field to true.
+        /// Indicate the maximum number of alternative transcriptions you want Amazon Transcribe
+        /// to include in your transcript.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you select a number greater than the number of alternative transcriptions generated
+        /// by Amazon Transcribe, only the actual number of alternative transcriptions are included.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you include <code>MaxAlternatives</code> in your request, you must also include
+        /// <code>ShowAlternatives</code> with a value of <code>true</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-alternatives.html">Alternative
+        /// transcriptions</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=10)]
@@ -96,8 +115,15 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property MaxSpeakerLabels. 
         /// <para>
-        /// The maximum number of speakers to identify in the input audio. If there are more speakers
-        /// in the audio than this number, multiple speakers are identified as a single speaker.
+        /// Specify the maximum number of speakers you want to partition in your media.
+        /// </para>
+        ///  
+        /// <para>
+        /// Note that if your media contains more speakers than the specified number, multiple
+        /// speakers are treated as a single speaker.
+        /// </para>
+        ///  
+        /// <para>
         /// If you specify the <code>MaxSpeakerLabels</code> field, you must set the <code>ShowSpeakerLabels</code>
         /// field to true.
         /// </para>
@@ -118,9 +144,25 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property ShowAlternatives. 
         /// <para>
-        /// Determines whether the transcription contains alternative transcriptions. If you set
-        /// the <code>ShowAlternatives</code> field to true, you must also set the maximum number
-        /// of alternatives to return in the <code>MaxAlternatives</code> field.
+        /// To include alternative transcriptions within your transcription output, include <code>ShowAlternatives</code>
+        /// in your transcription request.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you have multi-channel audio and do not enable channel identification, your audio
+        /// is transcribed in a continuous manner and your transcript does not separate the speech
+        /// by channel.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you include <code>ShowAlternatives</code>, you must also include <code>MaxAlternatives</code>,
+        /// which is the maximum number of alternative transcriptions you want Amazon Transcribe
+        /// to generate.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-alternatives.html">Alternative
+        /// transcriptions</a>.
         /// </para>
         /// </summary>
         public bool ShowAlternatives
@@ -138,15 +180,23 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property ShowSpeakerLabels. 
         /// <para>
-        /// Determines whether the transcription job uses speaker recognition to identify different
-        /// speakers in the input audio. Speaker recognition labels individual speakers in the
-        /// audio file. If you set the <code>ShowSpeakerLabels</code> field to true, you must
-        /// also set the maximum number of speaker labels <code>MaxSpeakerLabels</code> field.
+        /// Enables speaker partitioning (diarization) in your transcription output. Speaker partitioning
+        /// labels the speech from individual speakers in your media file.
         /// </para>
         ///  
         /// <para>
-        /// You can't set both <code>ShowSpeakerLabels</code> and <code>ChannelIdentification</code>
-        /// in the same request. If you set both, your request returns a <code>BadRequestException</code>.
+        /// If you enable <code>ShowSpeakerLabels</code> in your request, you must also include
+        /// <code>MaxSpeakerLabels</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can't include both <code>ShowSpeakerLabels</code> and <code>ChannelIdentification</code>
+        /// in the same request. Including both parameters returns a <code>BadRequestException</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/diarization.html">Partitioning
+        /// speakers (diarization)</a>.
         /// </para>
         /// </summary>
         public bool ShowSpeakerLabels
@@ -164,12 +214,19 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property VocabularyFilterMethod. 
         /// <para>
-        /// Set to <code>mask</code> to remove filtered text from the transcript and replace it
-        /// with three asterisks ("***") as placeholder text. Set to <code>remove</code> to remove
-        /// filtered text from the transcript without using placeholder text. Set to <code>tag</code>
-        /// to mark the word in the transcription output that matches the vocabulary filter. When
-        /// you set the filter method to <code>tag</code>, the words matching your vocabulary
-        /// filter are not masked or removed.
+        /// Specify how you want your custom vocabulary filter applied to your transcript.
+        /// </para>
+        ///  
+        /// <para>
+        /// To replace words with <code>***</code>, choose <code>mask</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To delete words, choose <code>remove</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To flag words without changing them, choose <code>tag</code>.
         /// </para>
         /// </summary>
         public VocabularyFilterMethod VocabularyFilterMethod
@@ -187,8 +244,14 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property VocabularyFilterName. 
         /// <para>
-        /// The name of the vocabulary filter to use when transcribing the audio. The filter that
-        /// you specify must have the same language code as the transcription job.
+        /// The name of the custom vocabulary filter you want to use in your transcription job
+        /// request. This name is case sensitive, cannot contain spaces, and must be unique within
+        /// an Amazon Web Services account.
+        /// </para>
+        ///  
+        /// <para>
+        /// Note that if you include <code>VocabularyFilterName</code> in your request, you must
+        /// also include <code>VocabularyFilterMethod</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
@@ -207,7 +270,9 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property VocabularyName. 
         /// <para>
-        /// The name of a vocabulary to use when processing the transcription job.
+        /// The name of the custom vocabulary you want to use in your transcription job request.
+        /// This name is case sensitive, cannot contain spaces, and must be unique within an Amazon
+        /// Web Services account.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]

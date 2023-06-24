@@ -31,11 +31,11 @@ namespace Amazon.ChimeSDKMessaging
     /// <summary>
     /// Interface for accessing ChimeSDKMessaging
     ///
-    /// The Amazon Chime SDK Messaging APIs in this section allow software developers to send
+    /// The Amazon Chime SDK messaging APIs in this section allow software developers to send
     /// and receive messages in custom messaging applications. These APIs depend on the frameworks
-    /// provided by the Amazon Chime SDK Identity APIs. For more information about the messaging
-    /// APIs, see <a href="https://docs.aws.amazon.com/chime/latest/APIReference/API_Operations_Amazon_Chime_SDK_Messaging">Amazon
-    /// Chime SDK messaging</a>
+    /// provided by the Amazon Chime SDK identity APIs. For more information about the messaging
+    /// APIs, see <a href="https://docs.aws.amazon.com/chime/latest/APIReference/API_Operations_Amazon_Chime_SDK_Messaging.html">Amazon
+    /// Chime SDK messaging</a>.
     /// </summary>
     public partial interface IAmazonChimeSDKMessaging : IAmazonService, IDisposable
     {
@@ -57,8 +57,8 @@ namespace Amazon.ChimeSDKMessaging
         ///  <note> 
         /// <para>
         /// Only administrators or channel moderators can associate a channel flow. The <code>x-amz-chime-bearer</code>
-        /// request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that
-        /// makes the API call as the value in the header.
+        /// request header is mandatory. Use the ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code>
+        /// that makes the API call as the value in the header.
         /// </para>
         ///  </note>
         /// </summary>
@@ -103,8 +103,8 @@ namespace Amazon.ChimeSDKMessaging
         ///  <note> 
         /// <para>
         /// Only administrators or channel moderators can associate a channel flow. The <code>x-amz-chime-bearer</code>
-        /// request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that
-        /// makes the API call as the value in the header.
+        /// request header is mandatory. Use the ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code>
+        /// that makes the API call as the value in the header.
         /// </para>
         ///  </note>
         /// </summary>
@@ -148,7 +148,7 @@ namespace Amazon.ChimeSDKMessaging
 
 
         /// <summary>
-        /// Adds a specified number of users to a channel.
+        /// Adds a specified number of users and bots to a channel.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchCreateChannelMembership service method.</param>
         /// 
@@ -158,6 +158,12 @@ namespace Amazon.ChimeSDKMessaging
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMessaging.Model.ForbiddenException">
         /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.ResourceLimitExceededException">
+        /// The request exceeds the resource limit.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMessaging.Model.ServiceFailureException">
         /// The service encountered an unexpected error.
@@ -177,7 +183,7 @@ namespace Amazon.ChimeSDKMessaging
 
 
         /// <summary>
-        /// Adds a specified number of users to a channel.
+        /// Adds a specified number of users and bots to a channel.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchCreateChannelMembership service method.</param>
         /// <param name="cancellationToken">
@@ -190,6 +196,12 @@ namespace Amazon.ChimeSDKMessaging
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMessaging.Model.ForbiddenException">
         /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.ResourceLimitExceededException">
+        /// The request exceeds the resource limit.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMessaging.Model.ServiceFailureException">
         /// The service encountered an unexpected error.
@@ -212,8 +224,8 @@ namespace Amazon.ChimeSDKMessaging
 
 
         /// <summary>
-        /// Calls back Chime SDK Messaging with a processing response message. This should be
-        /// invoked from the processor Lambda. This is a developer API.
+        /// Calls back Amazon Chime SDK messaging with a processing response message. This should
+        /// be invoked from the processor Lambda. This is a developer API.
         /// 
         ///  
         /// <para>
@@ -264,8 +276,8 @@ namespace Amazon.ChimeSDKMessaging
 
 
         /// <summary>
-        /// Calls back Chime SDK Messaging with a processing response message. This should be
-        /// invoked from the processor Lambda. This is a developer API.
+        /// Calls back Amazon Chime SDK messaging with a processing response message. This should
+        /// be invoked from the processor Lambda. This is a developer API.
         /// 
         ///  
         /// <para>
@@ -330,8 +342,9 @@ namespace Amazon.ChimeSDKMessaging
         /// </para>
         ///  <note> 
         /// <para>
-        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
-        /// of the user that makes the API call as the value in the header.
+        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the
+        /// <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call
+        /// as the value in the header.
         /// </para>
         ///  </note>
         /// </summary>
@@ -377,8 +390,9 @@ namespace Amazon.ChimeSDKMessaging
         /// </para>
         ///  <note> 
         /// <para>
-        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
-        /// of the user that makes the API call as the value in the header.
+        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the
+        /// <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call
+        /// as the value in the header.
         /// </para>
         ///  </note>
         /// </summary>
@@ -434,8 +448,9 @@ namespace Amazon.ChimeSDKMessaging
         /// </para>
         ///  <note> 
         /// <para>
-        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
-        /// of the user that makes the API call as the value in the header.
+        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the
+        /// <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call
+        /// as the value in the header.
         /// </para>
         ///  </note>
         /// </summary>
@@ -485,8 +500,9 @@ namespace Amazon.ChimeSDKMessaging
         /// </para>
         ///  <note> 
         /// <para>
-        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
-        /// of the user that makes the API call as the value in the header.
+        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the
+        /// <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call
+        /// as the value in the header.
         /// </para>
         ///  </note>
         /// </summary>
@@ -554,7 +570,7 @@ namespace Amazon.ChimeSDKMessaging
         ///  </li> </ol> <note> 
         /// <para>
         /// Channel flows don't process Control or System messages. For more information about
-        /// the message types provided by Chime SDK Messaging, refer to <a href="https://docs.aws.amazon.com/chime/latest/dg/using-the-messaging-sdk.html#msg-types">Message
+        /// the message types provided by Chime SDK messaging, refer to <a href="https://docs.aws.amazon.com/chime/latest/dg/using-the-messaging-sdk.html#msg-types">Message
         /// types</a> in the <i>Amazon Chime developer guide</i>.
         /// </para>
         ///  </note>
@@ -617,7 +633,7 @@ namespace Amazon.ChimeSDKMessaging
         ///  </li> </ol> <note> 
         /// <para>
         /// Channel flows don't process Control or System messages. For more information about
-        /// the message types provided by Chime SDK Messaging, refer to <a href="https://docs.aws.amazon.com/chime/latest/dg/using-the-messaging-sdk.html#msg-types">Message
+        /// the message types provided by Chime SDK messaging, refer to <a href="https://docs.aws.amazon.com/chime/latest/dg/using-the-messaging-sdk.html#msg-types">Message
         /// types</a> in the <i>Amazon Chime developer guide</i>.
         /// </para>
         ///  </note>
@@ -662,7 +678,7 @@ namespace Amazon.ChimeSDKMessaging
 
 
         /// <summary>
-        /// Adds a user to a channel. The <code>InvitedBy</code> field in <code>ChannelMembership</code>
+        /// Adds a member to a channel. The <code>InvitedBy</code> field in <code>ChannelMembership</code>
         /// is derived from the request header. A channel member can:
         /// 
         ///  <ul> <li> 
@@ -700,8 +716,9 @@ namespace Amazon.ChimeSDKMessaging
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
-        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
-        /// of the user that makes the API call as the value in the header.
+        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the
+        /// <code>AppInstanceUserArn</code> or <code>AppInstanceBot</code> that makes the API
+        /// call as the value in the header.
         /// </para>
         ///  </note>
         /// </summary>
@@ -717,6 +734,9 @@ namespace Amazon.ChimeSDKMessaging
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMessaging.Model.ForbiddenException">
         /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMessaging.Model.ResourceLimitExceededException">
         /// The request exceeds the resource limit.
@@ -739,7 +759,7 @@ namespace Amazon.ChimeSDKMessaging
 
 
         /// <summary>
-        /// Adds a user to a channel. The <code>InvitedBy</code> field in <code>ChannelMembership</code>
+        /// Adds a member to a channel. The <code>InvitedBy</code> field in <code>ChannelMembership</code>
         /// is derived from the request header. A channel member can:
         /// 
         ///  <ul> <li> 
@@ -777,8 +797,9 @@ namespace Amazon.ChimeSDKMessaging
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
-        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
-        /// of the user that makes the API call as the value in the header.
+        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the
+        /// <code>AppInstanceUserArn</code> or <code>AppInstanceBot</code> that makes the API
+        /// call as the value in the header.
         /// </para>
         ///  </note>
         /// </summary>
@@ -797,6 +818,9 @@ namespace Amazon.ChimeSDKMessaging
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMessaging.Model.ForbiddenException">
         /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMessaging.Model.ResourceLimitExceededException">
         /// The request exceeds the resource limit.
@@ -846,8 +870,9 @@ namespace Amazon.ChimeSDKMessaging
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
-        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
-        /// of the user that makes the API call as the value in the header.
+        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the
+        /// <code>AppInstanceUser</code> or <code>AppInstanceBot</code>of the user that makes
+        /// the API call as the value in the header.
         /// </para>
         ///  </note>
         /// </summary>
@@ -909,8 +934,9 @@ namespace Amazon.ChimeSDKMessaging
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
-        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
-        /// of the user that makes the API call as the value in the header.
+        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the
+        /// <code>AppInstanceUser</code> or <code>AppInstanceBot</code>of the user that makes
+        /// the API call as the value in the header.
         /// </para>
         ///  </note>
         /// </summary>
@@ -959,8 +985,9 @@ namespace Amazon.ChimeSDKMessaging
         /// 
         ///  <note> 
         /// <para>
-        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
-        /// of the user that makes the API call as the value in the header.
+        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the
+        /// <code>AppInstanceUserArn</code> or <code>AppInstanceBot</code> that makes the API
+        /// call as the value in the header.
         /// </para>
         ///  </note>
         /// </summary>
@@ -969,6 +996,10 @@ namespace Amazon.ChimeSDKMessaging
         /// <returns>The response from the DeleteChannel service method, as returned by ChimeSDKMessaging.</returns>
         /// <exception cref="Amazon.ChimeSDKMessaging.Model.BadRequestException">
         /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMessaging.Model.ForbiddenException">
         /// The client is permanently forbidden from making the request.
@@ -996,8 +1027,9 @@ namespace Amazon.ChimeSDKMessaging
         /// 
         ///  <note> 
         /// <para>
-        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
-        /// of the user that makes the API call as the value in the header.
+        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the
+        /// <code>AppInstanceUserArn</code> or <code>AppInstanceBot</code> that makes the API
+        /// call as the value in the header.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1009,6 +1041,10 @@ namespace Amazon.ChimeSDKMessaging
         /// <returns>The response from the DeleteChannel service method, as returned by ChimeSDKMessaging.</returns>
         /// <exception cref="Amazon.ChimeSDKMessaging.Model.BadRequestException">
         /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMessaging.Model.ForbiddenException">
         /// The client is permanently forbidden from making the request.
@@ -1034,12 +1070,13 @@ namespace Amazon.ChimeSDKMessaging
 
 
         /// <summary>
-        /// Removes a user from a channel's ban list.
+        /// Removes a member from a channel's ban list.
         /// 
         ///  <note> 
         /// <para>
-        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
-        /// of the user that makes the API call as the value in the header.
+        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the
+        /// <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call
+        /// as the value in the header.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1070,12 +1107,13 @@ namespace Amazon.ChimeSDKMessaging
 
 
         /// <summary>
-        /// Removes a user from a channel's ban list.
+        /// Removes a member from a channel's ban list.
         /// 
         ///  <note> 
         /// <para>
-        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
-        /// of the user that makes the API call as the value in the header.
+        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the
+        /// <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call
+        /// as the value in the header.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1293,8 +1331,9 @@ namespace Amazon.ChimeSDKMessaging
         /// 
         ///  <note> 
         /// <para>
-        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
-        /// of the user that makes the API call as the value in the header.
+        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the
+        /// <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call
+        /// as the value in the header.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1330,8 +1369,9 @@ namespace Amazon.ChimeSDKMessaging
         /// 
         ///  <note> 
         /// <para>
-        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
-        /// of the user that makes the API call as the value in the header.
+        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the
+        /// <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call
+        /// as the value in the header.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1372,8 +1412,9 @@ namespace Amazon.ChimeSDKMessaging
         /// 
         ///  <note> 
         /// <para>
-        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
-        /// of the user that makes the API call as the value in the header.
+        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the
+        /// <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call
+        /// as the value in the header.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1408,8 +1449,9 @@ namespace Amazon.ChimeSDKMessaging
         /// 
         ///  <note> 
         /// <para>
-        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
-        /// of the user that makes the API call as the value in the header.
+        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the
+        /// <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call
+        /// as the value in the header.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1442,6 +1484,74 @@ namespace Amazon.ChimeSDKMessaging
 
         #endregion
         
+        #region  DeleteMessagingStreamingConfigurations
+
+
+        /// <summary>
+        /// Deletes the streaming configurations for an <code>AppInstance</code>. For more information,
+        /// see <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/streaming-export.html">Streaming
+        /// messaging data</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMessagingStreamingConfigurations service method.</param>
+        /// 
+        /// <returns>The response from the DeleteMessagingStreamingConfigurations service method, as returned by ChimeSDKMessaging.</returns>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/DeleteMessagingStreamingConfigurations">REST API Reference for DeleteMessagingStreamingConfigurations Operation</seealso>
+        DeleteMessagingStreamingConfigurationsResponse DeleteMessagingStreamingConfigurations(DeleteMessagingStreamingConfigurationsRequest request);
+
+
+
+        /// <summary>
+        /// Deletes the streaming configurations for an <code>AppInstance</code>. For more information,
+        /// see <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/streaming-export.html">Streaming
+        /// messaging data</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMessagingStreamingConfigurations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteMessagingStreamingConfigurations service method, as returned by ChimeSDKMessaging.</returns>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/DeleteMessagingStreamingConfigurations">REST API Reference for DeleteMessagingStreamingConfigurations Operation</seealso>
+        Task<DeleteMessagingStreamingConfigurationsResponse> DeleteMessagingStreamingConfigurationsAsync(DeleteMessagingStreamingConfigurationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DescribeChannel
 
 
@@ -1450,8 +1560,9 @@ namespace Amazon.ChimeSDKMessaging
         /// 
         ///  <note> 
         /// <para>
-        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
-        /// of the user that makes the API call as the value in the header.
+        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the
+        /// <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call
+        /// as the value in the header.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1486,8 +1597,9 @@ namespace Amazon.ChimeSDKMessaging
         /// 
         ///  <note> 
         /// <para>
-        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
-        /// of the user that makes the API call as the value in the header.
+        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the
+        /// <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call
+        /// as the value in the header.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1528,8 +1640,9 @@ namespace Amazon.ChimeSDKMessaging
         /// 
         ///  <note> 
         /// <para>
-        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
-        /// of the user that makes the API call as the value in the header.
+        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the
+        /// <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call
+        /// as the value in the header.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1567,8 +1680,9 @@ namespace Amazon.ChimeSDKMessaging
         /// 
         ///  <note> 
         /// <para>
-        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
-        /// of the user that makes the API call as the value in the header.
+        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the
+        /// <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call
+        /// as the value in the header.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1678,8 +1792,9 @@ namespace Amazon.ChimeSDKMessaging
         /// 
         ///  <note> 
         /// <para>
-        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
-        /// of the user that makes the API call as the value in the header.
+        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the
+        /// <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call
+        /// as the value in the header.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1717,8 +1832,9 @@ namespace Amazon.ChimeSDKMessaging
         /// 
         ///  <note> 
         /// <para>
-        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
-        /// of the user that makes the API call as the value in the header.
+        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the
+        /// <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call
+        /// as the value in the header.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1758,12 +1874,14 @@ namespace Amazon.ChimeSDKMessaging
 
 
         /// <summary>
-        /// Returns the details of a channel based on the membership of the specified <code>AppInstanceUser</code>.
+        /// Returns the details of a channel based on the membership of the specified <code>AppInstanceUser</code>
+        /// or <code>AppInstanceBot</code>.
         /// 
         ///  <note> 
         /// <para>
-        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
-        /// of the user that makes the API call as the value in the header.
+        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the
+        /// <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call
+        /// as the value in the header.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1794,12 +1912,14 @@ namespace Amazon.ChimeSDKMessaging
 
 
         /// <summary>
-        /// Returns the details of a channel based on the membership of the specified <code>AppInstanceUser</code>.
+        /// Returns the details of a channel based on the membership of the specified <code>AppInstanceUser</code>
+        /// or <code>AppInstanceBot</code>.
         /// 
         ///  <note> 
         /// <para>
-        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
-        /// of the user that makes the API call as the value in the header.
+        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the
+        /// <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call
+        /// as the value in the header.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1836,12 +1956,14 @@ namespace Amazon.ChimeSDKMessaging
 
 
         /// <summary>
-        /// Returns the full details of a channel moderated by the specified <code>AppInstanceUser</code>.
+        /// Returns the full details of a channel moderated by the specified <code>AppInstanceUser</code>
+        /// or <code>AppInstanceBot</code>.
         /// 
         ///  <note> 
         /// <para>
-        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
-        /// of the user that makes the API call as the value in the header.
+        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the
+        /// <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call
+        /// as the value in the header.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1872,12 +1994,14 @@ namespace Amazon.ChimeSDKMessaging
 
 
         /// <summary>
-        /// Returns the full details of a channel moderated by the specified <code>AppInstanceUser</code>.
+        /// Returns the full details of a channel moderated by the specified <code>AppInstanceUser</code>
+        /// or <code>AppInstanceBot</code>.
         /// 
         ///  <note> 
         /// <para>
-        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
-        /// of the user that makes the API call as the value in the header.
+        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the
+        /// <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call
+        /// as the value in the header.
         /// </para>
         ///  </note>
         /// </summary>
@@ -2003,9 +2127,13 @@ namespace Amazon.ChimeSDKMessaging
         /// 
         ///  <note> 
         /// <para>
-        /// Only administrators or channel moderators can disassociate a channel flow. The <code>x-amz-chime-bearer</code>
-        /// request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that
-        /// makes the API call as the value in the header.
+        /// Only administrators or channel moderators can disassociate a channel flow.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the
+        /// <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call
+        /// as the value in the header.
         /// </para>
         ///  </note>
         /// </summary>
@@ -2048,9 +2176,13 @@ namespace Amazon.ChimeSDKMessaging
         /// 
         ///  <note> 
         /// <para>
-        /// Only administrators or channel moderators can disassociate a channel flow. The <code>x-amz-chime-bearer</code>
-        /// request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that
-        /// makes the API call as the value in the header.
+        /// Only administrators or channel moderators can disassociate a channel flow.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the
+        /// <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call
+        /// as the value in the header.
         /// </para>
         ///  </note>
         /// </summary>
@@ -2094,12 +2226,20 @@ namespace Amazon.ChimeSDKMessaging
 
 
         /// <summary>
-        /// Gets the membership preferences of an <code>AppInstanceUser</code> for the specified
-        /// channel. The <code>AppInstanceUser</code> must be a member of the channel. Only the
-        /// <code>AppInstanceUser</code> who owns the membership can retrieve preferences. Users
-        /// in the <code>AppInstanceAdmin</code> and channel moderator roles can't retrieve preferences
-        /// for other users. Banned users can't retrieve membership preferences for the channel
-        /// from which they are banned.
+        /// Gets the membership preferences of an <code>AppInstanceUser</code> or <code>AppInstanceBot</code>
+        /// for the specified channel. A user or a bot must be a member of the channel and own
+        /// the membership in order to retrieve membership preferences. Users or bots in the <code>AppInstanceAdmin</code>
+        /// and channel moderator roles can't retrieve preferences for other users or bots. Banned
+        /// users or bots can't retrieve membership preferences for the channel from which they
+        /// are banned.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the
+        /// <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call
+        /// as the value in the header.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetChannelMembershipPreferences service method.</param>
         /// 
@@ -2128,12 +2268,20 @@ namespace Amazon.ChimeSDKMessaging
 
 
         /// <summary>
-        /// Gets the membership preferences of an <code>AppInstanceUser</code> for the specified
-        /// channel. The <code>AppInstanceUser</code> must be a member of the channel. Only the
-        /// <code>AppInstanceUser</code> who owns the membership can retrieve preferences. Users
-        /// in the <code>AppInstanceAdmin</code> and channel moderator roles can't retrieve preferences
-        /// for other users. Banned users can't retrieve membership preferences for the channel
-        /// from which they are banned.
+        /// Gets the membership preferences of an <code>AppInstanceUser</code> or <code>AppInstanceBot</code>
+        /// for the specified channel. A user or a bot must be a member of the channel and own
+        /// the membership in order to retrieve membership preferences. Users or bots in the <code>AppInstanceAdmin</code>
+        /// and channel moderator roles can't retrieve preferences for other users or bots. Banned
+        /// users or bots can't retrieve membership preferences for the channel from which they
+        /// are banned.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the
+        /// <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call
+        /// as the value in the header.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetChannelMembershipPreferences service method.</param>
         /// <param name="cancellationToken">
@@ -2172,8 +2320,9 @@ namespace Amazon.ChimeSDKMessaging
         /// 
         ///  <note> 
         /// <para>
-        /// The x-amz-chime-bearer request header is mandatory. Use the <code>AppInstanceUserArn</code>
-        /// of the user that makes the API call as the value in the header.
+        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the
+        /// <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call
+        /// as the value in the header.
         /// </para>
         ///  </note>
         /// </summary>
@@ -2211,8 +2360,9 @@ namespace Amazon.ChimeSDKMessaging
         /// 
         ///  <note> 
         /// <para>
-        /// The x-amz-chime-bearer request header is mandatory. Use the <code>AppInstanceUserArn</code>
-        /// of the user that makes the API call as the value in the header.
+        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the
+        /// <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call
+        /// as the value in the header.
         /// </para>
         ///  </note>
         /// </summary>
@@ -2275,7 +2425,7 @@ namespace Amazon.ChimeSDKMessaging
         /// </para>
         ///  </dd> <dt>DENIED</dt> <dd> 
         /// <para>
-        /// Messasge denied by the processor
+        /// Message denied by the processor
         /// </para>
         ///  </dd> </dl> <note> <ul> <li> 
         /// <para>
@@ -2288,8 +2438,9 @@ namespace Amazon.ChimeSDKMessaging
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
-        /// of the user that makes the API call as the value in the header
+        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the
+        /// <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call
+        /// as the value in the header.
         /// </para>
         ///  </li> </ul> </note>
         /// </summary>
@@ -2343,7 +2494,7 @@ namespace Amazon.ChimeSDKMessaging
         /// </para>
         ///  </dd> <dt>DENIED</dt> <dd> 
         /// <para>
-        /// Messasge denied by the processor
+        /// Message denied by the processor
         /// </para>
         ///  </dd> </dl> <note> <ul> <li> 
         /// <para>
@@ -2356,8 +2507,9 @@ namespace Amazon.ChimeSDKMessaging
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
-        /// of the user that makes the API call as the value in the header
+        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the
+        /// <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call
+        /// as the value in the header.
         /// </para>
         ///  </li> </ul> </note>
         /// </summary>
@@ -2448,16 +2600,91 @@ namespace Amazon.ChimeSDKMessaging
 
         #endregion
         
+        #region  GetMessagingStreamingConfigurations
+
+
+        /// <summary>
+        /// Retrieves the data streaming configuration for an <code>AppInstance</code>. For more
+        /// information, see <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/streaming-export.html">Streaming
+        /// messaging data</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMessagingStreamingConfigurations service method.</param>
+        /// 
+        /// <returns>The response from the GetMessagingStreamingConfigurations service method, as returned by ChimeSDKMessaging.</returns>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/GetMessagingStreamingConfigurations">REST API Reference for GetMessagingStreamingConfigurations Operation</seealso>
+        GetMessagingStreamingConfigurationsResponse GetMessagingStreamingConfigurations(GetMessagingStreamingConfigurationsRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves the data streaming configuration for an <code>AppInstance</code>. For more
+        /// information, see <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/streaming-export.html">Streaming
+        /// messaging data</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMessagingStreamingConfigurations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetMessagingStreamingConfigurations service method, as returned by ChimeSDKMessaging.</returns>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/GetMessagingStreamingConfigurations">REST API Reference for GetMessagingStreamingConfigurations Operation</seealso>
+        Task<GetMessagingStreamingConfigurationsResponse> GetMessagingStreamingConfigurationsAsync(GetMessagingStreamingConfigurationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListChannelBans
 
 
         /// <summary>
-        /// Lists all the users banned from a particular channel.
+        /// Lists all the users and bots banned from a particular channel.
         /// 
         ///  <note> 
         /// <para>
-        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
-        /// of the user that makes the API call as the value in the header.
+        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the
+        /// <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call
+        /// as the value in the header.
         /// </para>
         ///  </note>
         /// </summary>
@@ -2488,12 +2715,13 @@ namespace Amazon.ChimeSDKMessaging
 
 
         /// <summary>
-        /// Lists all the users banned from a particular channel.
+        /// Lists all the users and bots banned from a particular channel.
         /// 
         ///  <note> 
         /// <para>
-        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
-        /// of the user that makes the API call as the value in the header.
+        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the
+        /// <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call
+        /// as the value in the header.
         /// </para>
         ///  </note>
         /// </summary>
@@ -2600,8 +2828,9 @@ namespace Amazon.ChimeSDKMessaging
         /// 
         ///  <note> 
         /// <para>
-        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
-        /// of the user that makes the API call as the value in the header.
+        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the
+        /// <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call
+        /// as the value in the header.
         /// </para>
         ///  </note> 
         /// <para>
@@ -2641,8 +2870,9 @@ namespace Amazon.ChimeSDKMessaging
         /// 
         ///  <note> 
         /// <para>
-        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
-        /// of the user that makes the API call as the value in the header.
+        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the
+        /// <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call
+        /// as the value in the header.
         /// </para>
         ///  </note> 
         /// <para>
@@ -2684,14 +2914,15 @@ namespace Amazon.ChimeSDKMessaging
 
 
         /// <summary>
-        /// Lists all channels that a particular <code>AppInstanceUser</code> is a part of. Only
-        /// an <code>AppInstanceAdmin</code> can call the API with a user ARN that is not their
-        /// own. 
+        /// Lists all channels that an <code>AppInstanceUser</code> or <code>AppInstanceBot</code>
+        /// is a part of. Only an <code>AppInstanceAdmin</code> can call the API with a user ARN
+        /// that is not their own. 
         /// 
         ///  <note> 
         /// <para>
-        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
-        /// of the user that makes the API call as the value in the header.
+        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the
+        /// <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call
+        /// as the value in the header.
         /// </para>
         ///  </note>
         /// </summary>
@@ -2722,14 +2953,15 @@ namespace Amazon.ChimeSDKMessaging
 
 
         /// <summary>
-        /// Lists all channels that a particular <code>AppInstanceUser</code> is a part of. Only
-        /// an <code>AppInstanceAdmin</code> can call the API with a user ARN that is not their
-        /// own. 
+        /// Lists all channels that an <code>AppInstanceUser</code> or <code>AppInstanceBot</code>
+        /// is a part of. Only an <code>AppInstanceAdmin</code> can call the API with a user ARN
+        /// that is not their own. 
         /// 
         ///  <note> 
         /// <para>
-        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
-        /// of the user that makes the API call as the value in the header.
+        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the
+        /// <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call
+        /// as the value in the header.
         /// </para>
         ///  </note>
         /// </summary>
@@ -2777,8 +3009,9 @@ namespace Amazon.ChimeSDKMessaging
         /// </para>
         ///  
         /// <para>
-        /// Also, the x-amz-chime-bearer request header is mandatory. Use the <code>AppInstanceUserArn</code>
-        /// of the user that makes the API call as the value in the header.
+        /// Also, the <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN
+        /// of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the
+        /// API call as the value in the header.
         /// </para>
         ///  </note>
         /// </summary>
@@ -2820,8 +3053,9 @@ namespace Amazon.ChimeSDKMessaging
         /// </para>
         ///  
         /// <para>
-        /// Also, the x-amz-chime-bearer request header is mandatory. Use the <code>AppInstanceUserArn</code>
-        /// of the user that makes the API call as the value in the header.
+        /// Also, the <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN
+        /// of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the
+        /// API call as the value in the header.
         /// </para>
         ///  </note>
         /// </summary>
@@ -2862,8 +3096,9 @@ namespace Amazon.ChimeSDKMessaging
         /// 
         ///  <note> 
         /// <para>
-        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
-        /// of the user that makes the API call as the value in the header.
+        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the
+        /// <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call
+        /// as the value in the header.
         /// </para>
         ///  </note>
         /// </summary>
@@ -2898,8 +3133,9 @@ namespace Amazon.ChimeSDKMessaging
         /// 
         ///  <note> 
         /// <para>
-        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
-        /// of the user that makes the API call as the value in the header.
+        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the
+        /// <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call
+        /// as the value in the header.
         /// </para>
         ///  </note>
         /// </summary>
@@ -2952,8 +3188,9 @@ namespace Amazon.ChimeSDKMessaging
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
-        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
-        /// of the user that makes the API call as the value in the header.
+        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the
+        /// <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call
+        /// as the value in the header.
         /// </para>
         ///  </note>
         /// </summary>
@@ -3000,8 +3237,9 @@ namespace Amazon.ChimeSDKMessaging
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
-        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
-        /// of the user that makes the API call as the value in the header.
+        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the
+        /// <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call
+        /// as the value in the header.
         /// </para>
         ///  </note>
         /// </summary>
@@ -3110,8 +3348,9 @@ namespace Amazon.ChimeSDKMessaging
         /// 
         ///  <note> 
         /// <para>
-        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
-        /// of the user that makes the API call as the value in the header.
+        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the
+        /// <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call
+        /// as the value in the header.
         /// </para>
         ///  </note>
         /// </summary>
@@ -3146,8 +3385,9 @@ namespace Amazon.ChimeSDKMessaging
         /// 
         ///  <note> 
         /// <para>
-        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
-        /// of the user that makes the API call as the value in the header.
+        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the
+        /// <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call
+        /// as the value in the header.
         /// </para>
         ///  </note>
         /// </summary>
@@ -3177,6 +3417,72 @@ namespace Amazon.ChimeSDKMessaging
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/ListChannelsModeratedByAppInstanceUser">REST API Reference for ListChannelsModeratedByAppInstanceUser Operation</seealso>
         Task<ListChannelsModeratedByAppInstanceUserResponse> ListChannelsModeratedByAppInstanceUserAsync(ListChannelsModeratedByAppInstanceUserRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListSubChannels
+
+
+        /// <summary>
+        /// Lists all the SubChannels in an elastic channel when given a channel ID. Available
+        /// only to the app instance admins and channel moderators of elastic channels.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSubChannels service method.</param>
+        /// 
+        /// <returns>The response from the ListSubChannels service method, as returned by ChimeSDKMessaging.</returns>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/ListSubChannels">REST API Reference for ListSubChannels Operation</seealso>
+        ListSubChannelsResponse ListSubChannels(ListSubChannelsRequest request);
+
+
+
+        /// <summary>
+        /// Lists all the SubChannels in an elastic channel when given a channel ID. Available
+        /// only to the app instance admins and channel moderators of elastic channels.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSubChannels service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListSubChannels service method, as returned by ChimeSDKMessaging.</returns>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/ListSubChannels">REST API Reference for ListSubChannels Operation</seealso>
+        Task<ListSubChannelsResponse> ListSubChannelsAsync(ListSubChannelsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -3244,16 +3550,130 @@ namespace Amazon.ChimeSDKMessaging
 
         #endregion
         
+        #region  PutChannelExpirationSettings
+
+
+        /// <summary>
+        /// Sets the number of days before the channel is automatically deleted.
+        /// 
+        ///  <note> <ul> <li> 
+        /// <para>
+        /// A background process deletes expired channels within 6 hours of expiration. Actual
+        /// deletion times may vary.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Expired channels that have not yet been deleted appear as active, and you can update
+        /// their expiration settings. The system honors the new settings.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the
+        /// <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call
+        /// as the value in the header.
+        /// </para>
+        ///  </li> </ul> </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutChannelExpirationSettings service method.</param>
+        /// 
+        /// <returns>The response from the PutChannelExpirationSettings service method, as returned by ChimeSDKMessaging.</returns>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/PutChannelExpirationSettings">REST API Reference for PutChannelExpirationSettings Operation</seealso>
+        PutChannelExpirationSettingsResponse PutChannelExpirationSettings(PutChannelExpirationSettingsRequest request);
+
+
+
+        /// <summary>
+        /// Sets the number of days before the channel is automatically deleted.
+        /// 
+        ///  <note> <ul> <li> 
+        /// <para>
+        /// A background process deletes expired channels within 6 hours of expiration. Actual
+        /// deletion times may vary.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Expired channels that have not yet been deleted appear as active, and you can update
+        /// their expiration settings. The system honors the new settings.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the
+        /// <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call
+        /// as the value in the header.
+        /// </para>
+        ///  </li> </ul> </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutChannelExpirationSettings service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutChannelExpirationSettings service method, as returned by ChimeSDKMessaging.</returns>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/PutChannelExpirationSettings">REST API Reference for PutChannelExpirationSettings Operation</seealso>
+        Task<PutChannelExpirationSettingsResponse> PutChannelExpirationSettingsAsync(PutChannelExpirationSettingsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  PutChannelMembershipPreferences
 
 
         /// <summary>
-        /// Sets the membership preferences of an <code>AppInstanceUser</code> for the specified
-        /// channel. The <code>AppInstanceUser</code> must be a member of the channel. Only the
-        /// <code>AppInstanceUser</code> who owns the membership can set preferences. Users in
-        /// the <code>AppInstanceAdmin</code> and channel moderator roles can't set preferences
-        /// for other users. Banned users can't set membership preferences for the channel from
-        /// which they are banned.
+        /// Sets the membership preferences of an <code>AppInstanceUser</code> or <code>AppInstanceBot</code>
+        /// for the specified channel. The user or bot must be a member of the channel. Only the
+        /// user or bot who owns the membership can set preferences. Users or bots in the <code>AppInstanceAdmin</code>
+        /// and channel moderator roles can't set preferences for other users. Banned users or
+        /// bots can't set membership preferences for the channel from which they are banned.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The x-amz-chime-bearer request header is mandatory. Use the ARN of an <code>AppInstanceUser</code>
+        /// or <code>AppInstanceBot</code> that makes the API call as the value in the header.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutChannelMembershipPreferences service method.</param>
         /// 
@@ -3286,12 +3706,18 @@ namespace Amazon.ChimeSDKMessaging
 
 
         /// <summary>
-        /// Sets the membership preferences of an <code>AppInstanceUser</code> for the specified
-        /// channel. The <code>AppInstanceUser</code> must be a member of the channel. Only the
-        /// <code>AppInstanceUser</code> who owns the membership can set preferences. Users in
-        /// the <code>AppInstanceAdmin</code> and channel moderator roles can't set preferences
-        /// for other users. Banned users can't set membership preferences for the channel from
-        /// which they are banned.
+        /// Sets the membership preferences of an <code>AppInstanceUser</code> or <code>AppInstanceBot</code>
+        /// for the specified channel. The user or bot must be a member of the channel. Only the
+        /// user or bot who owns the membership can set preferences. Users or bots in the <code>AppInstanceAdmin</code>
+        /// and channel moderator roles can't set preferences for other users. Banned users or
+        /// bots can't set membership preferences for the channel from which they are banned.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The x-amz-chime-bearer request header is mandatory. Use the ARN of an <code>AppInstanceUser</code>
+        /// or <code>AppInstanceBot</code> that makes the API call as the value in the header.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutChannelMembershipPreferences service method.</param>
         /// <param name="cancellationToken">
@@ -3326,6 +3752,88 @@ namespace Amazon.ChimeSDKMessaging
 
         #endregion
         
+        #region  PutMessagingStreamingConfigurations
+
+
+        /// <summary>
+        /// Sets the data streaming configuration for an <code>AppInstance</code>. For more information,
+        /// see <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/streaming-export.html">Streaming
+        /// messaging data</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutMessagingStreamingConfigurations service method.</param>
+        /// 
+        /// <returns>The response from the PutMessagingStreamingConfigurations service method, as returned by ChimeSDKMessaging.</returns>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/PutMessagingStreamingConfigurations">REST API Reference for PutMessagingStreamingConfigurations Operation</seealso>
+        PutMessagingStreamingConfigurationsResponse PutMessagingStreamingConfigurations(PutMessagingStreamingConfigurationsRequest request);
+
+
+
+        /// <summary>
+        /// Sets the data streaming configuration for an <code>AppInstance</code>. For more information,
+        /// see <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/streaming-export.html">Streaming
+        /// messaging data</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutMessagingStreamingConfigurations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutMessagingStreamingConfigurations service method, as returned by ChimeSDKMessaging.</returns>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/PutMessagingStreamingConfigurations">REST API Reference for PutMessagingStreamingConfigurations Operation</seealso>
+        Task<PutMessagingStreamingConfigurationsResponse> PutMessagingStreamingConfigurationsAsync(PutMessagingStreamingConfigurationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  RedactChannelMessage
 
 
@@ -3335,8 +3843,9 @@ namespace Amazon.ChimeSDKMessaging
         /// 
         ///  <note> 
         /// <para>
-        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
-        /// of the user that makes the API call as the value in the header.
+        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the
+        /// <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call
+        /// as the value in the header.
         /// </para>
         ///  </note>
         /// </summary>
@@ -3345,6 +3854,10 @@ namespace Amazon.ChimeSDKMessaging
         /// <returns>The response from the RedactChannelMessage service method, as returned by ChimeSDKMessaging.</returns>
         /// <exception cref="Amazon.ChimeSDKMessaging.Model.BadRequestException">
         /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMessaging.Model.ForbiddenException">
         /// The client is permanently forbidden from making the request.
@@ -3372,8 +3885,9 @@ namespace Amazon.ChimeSDKMessaging
         /// 
         ///  <note> 
         /// <para>
-        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
-        /// of the user that makes the API call as the value in the header.
+        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the
+        /// <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call
+        /// as the value in the header.
         /// </para>
         ///  </note>
         /// </summary>
@@ -3385,6 +3899,10 @@ namespace Amazon.ChimeSDKMessaging
         /// <returns>The response from the RedactChannelMessage service method, as returned by ChimeSDKMessaging.</returns>
         /// <exception cref="Amazon.ChimeSDKMessaging.Model.BadRequestException">
         /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMessaging.Model.ForbiddenException">
         /// The client is permanently forbidden from making the request.
@@ -3406,6 +3924,88 @@ namespace Amazon.ChimeSDKMessaging
 
         #endregion
         
+        #region  SearchChannels
+
+
+        /// <summary>
+        /// Allows the <code>ChimeBearer</code> to search channels by channel members. Users or
+        /// bots can search across the channels that they belong to. Users in the <code>AppInstanceAdmin</code>
+        /// role can search across all channels.
+        /// 
+        ///  
+        /// <para>
+        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the
+        /// <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call
+        /// as the value in the header.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchChannels service method.</param>
+        /// 
+        /// <returns>The response from the SearchChannels service method, as returned by ChimeSDKMessaging.</returns>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/SearchChannels">REST API Reference for SearchChannels Operation</seealso>
+        SearchChannelsResponse SearchChannels(SearchChannelsRequest request);
+
+
+
+        /// <summary>
+        /// Allows the <code>ChimeBearer</code> to search channels by channel members. Users or
+        /// bots can search across the channels that they belong to. Users in the <code>AppInstanceAdmin</code>
+        /// role can search across all channels.
+        /// 
+        ///  
+        /// <para>
+        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the
+        /// <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call
+        /// as the value in the header.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchChannels service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SearchChannels service method, as returned by ChimeSDKMessaging.</returns>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/SearchChannels">REST API Reference for SearchChannels Operation</seealso>
+        Task<SearchChannelsResponse> SearchChannelsAsync(SearchChannelsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  SendChannelMessage
 
 
@@ -3414,13 +4014,19 @@ namespace Amazon.ChimeSDKMessaging
         /// 
         ///  <note> 
         /// <para>
-        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
-        /// of the user that makes the API call as the value in the header.
+        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the
+        /// <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call
+        /// as the value in the header.
         /// </para>
         ///  
         /// <para>
-        /// Also, <code>STANDARD</code> messages can contain 4KB of data and the 1KB of metadata.
-        /// <code>CONTROL</code> messages can contain 30 bytes of data and no metadata.
+        /// Also, <code>STANDARD</code> messages can be up to 4KB in size and contain metadata.
+        /// Metadata is arbitrary, and you can use it in a variety of ways, such as containing
+        /// a link to an attachment.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>CONTROL</code> messages are limited to 30 bytes and do not contain metadata.
         /// </para>
         ///  </note>
         /// </summary>
@@ -3459,13 +4065,19 @@ namespace Amazon.ChimeSDKMessaging
         /// 
         ///  <note> 
         /// <para>
-        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
-        /// of the user that makes the API call as the value in the header.
+        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the
+        /// <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call
+        /// as the value in the header.
         /// </para>
         ///  
         /// <para>
-        /// Also, <code>STANDARD</code> messages can contain 4KB of data and the 1KB of metadata.
-        /// <code>CONTROL</code> messages can contain 30 bytes of data and no metadata.
+        /// Also, <code>STANDARD</code> messages can be up to 4KB in size and contain metadata.
+        /// Metadata is arbitrary, and you can use it in a variety of ways, such as containing
+        /// a link to an attachment.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>CONTROL</code> messages are limited to 30 bytes and do not contain metadata.
         /// </para>
         ///  </note>
         /// </summary>
@@ -3648,8 +4260,9 @@ namespace Amazon.ChimeSDKMessaging
         /// </para>
         ///  <note> 
         /// <para>
-        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
-        /// of the user that makes the API call as the value in the header.
+        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the
+        /// <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call
+        /// as the value in the header.
         /// </para>
         ///  </note>
         /// </summary>
@@ -3692,8 +4305,9 @@ namespace Amazon.ChimeSDKMessaging
         /// </para>
         ///  <note> 
         /// <para>
-        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
-        /// of the user that makes the API call as the value in the header.
+        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the
+        /// <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call
+        /// as the value in the header.
         /// </para>
         ///  </note>
         /// </summary>
@@ -3810,8 +4424,9 @@ namespace Amazon.ChimeSDKMessaging
         /// 
         ///  <note> 
         /// <para>
-        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
-        /// of the user that makes the API call as the value in the header.
+        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the
+        /// <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call
+        /// as the value in the header.
         /// </para>
         ///  </note>
         /// </summary>
@@ -3850,8 +4465,9 @@ namespace Amazon.ChimeSDKMessaging
         /// 
         ///  <note> 
         /// <para>
-        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
-        /// of the user that makes the API call as the value in the header.
+        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the
+        /// <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call
+        /// as the value in the header.
         /// </para>
         ///  </note>
         /// </summary>
@@ -3896,8 +4512,9 @@ namespace Amazon.ChimeSDKMessaging
         /// 
         ///  <note> 
         /// <para>
-        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
-        /// of the user that makes the API call as the value in the header.
+        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the
+        /// <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call
+        /// as the value in the header.
         /// </para>
         ///  </note>
         /// </summary>
@@ -3936,8 +4553,9 @@ namespace Amazon.ChimeSDKMessaging
         /// 
         ///  <note> 
         /// <para>
-        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
-        /// of the user that makes the API call as the value in the header.
+        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the
+        /// <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call
+        /// as the value in the header.
         /// </para>
         ///  </note>
         /// </summary>

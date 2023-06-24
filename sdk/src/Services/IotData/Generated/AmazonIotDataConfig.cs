@@ -17,22 +17,22 @@
  * Do not modify this file. This file is generated from the iot-data-2015-05-28.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
-
+using Amazon.IotData.Internal;
 
 namespace Amazon.IotData
 {
     /// <summary>
     /// Configuration for accessing Amazon IotData service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonIotDataConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.1.51");
+            InternalSDKUtils.BuildUserAgentString("3.7.104.5");
 
         private string _userAgent = UserAgentString;
 
@@ -40,8 +40,10 @@ namespace Amazon.IotData
         /// Default constructor
         /// </summary>
         public AmazonIotDataConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonIotDataDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "iotdata";
+            this.EndpointProvider = new AmazonIotDataEndpointProvider();
         }
 
         /// <summary>
@@ -51,7 +53,7 @@ namespace Amazon.IotData
         {
             get
             {
-                return "data.iot";
+                return "data-ats.iot";
             }
         }
 
@@ -76,5 +78,6 @@ namespace Amazon.IotData
                 return _userAgent;
             }
         }
+
     }
 }

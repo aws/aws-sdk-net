@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DebugRuleConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class DebugRuleConfigurationMarshaller : IRequestMarshaller<DebugRuleConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -99,7 +99,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DebugRuleConfigurationMarshaller Instance = new DebugRuleConfigurationMarshaller();
 
     }

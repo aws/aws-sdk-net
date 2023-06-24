@@ -85,7 +85,7 @@ namespace Amazon.ConnectWisdomService.Model
         /// <summary>
         /// Gets and sets the property KnowledgeBaseId. 
         /// <para>
-        /// The the identifier of the knowledge base.
+        /// The identifier of the knowledge base.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -178,7 +178,7 @@ namespace Amazon.ConnectWisdomService.Model
         /// <summary>
         /// Gets and sets the property SourceConfiguration. 
         /// <para>
-        /// [KEVIN]
+        /// Configuration information about the external data source.
         /// </para>
         /// </summary>
         public SourceConfiguration SourceConfiguration

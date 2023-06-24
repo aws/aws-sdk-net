@@ -39,7 +39,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the processor feature.
+        /// The name of the processor feature. Valid values are <code>coreCount</code> or <code>threadsPerCore</code>.
         /// </para>
         /// </summary>
         public string Name

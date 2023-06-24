@@ -56,7 +56,7 @@ namespace Amazon.Outposts.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Outposts");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-12-03";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-12-03";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/orders";
@@ -99,7 +99,6 @@ namespace Amazon.Outposts.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.PaymentTerm);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

@@ -47,14 +47,16 @@ namespace Amazon.Signer
     /// </para>
     ///  
     /// <para>
-    /// With <i>code signing for AWS Lambda</i>, you can sign AWS Lambda deployment packages.
-    /// Integrated support is provided for Amazon S3, Amazon CloudWatch, and AWS CloudTrail.
-    /// In order to sign code, you create a signing profile and then use Signer to sign Lambda
-    /// zip files in S3. 
+    /// With code signing for AWS Lambda, you can sign <a href="http://docs.aws.amazon.com/lambda/latest/dg/">AWS
+    /// Lambda</a> deployment packages. Integrated support is provided for <a href="http://docs.aws.amazon.com/AmazonS3/latest/gsg/">Amazon
+    /// S3</a>, <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/">Amazon
+    /// CloudWatch</a>, and <a href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/">AWS
+    /// CloudTrail</a>. In order to sign code, you create a signing profile and then use Signer
+    /// to sign Lambda zip files in S3. 
     /// </para>
     ///  
     /// <para>
-    /// With <i>code signing for IoT</i>, you can sign code for any IoT device that is supported
+    /// With code signing for IoT, you can sign code for any IoT device that is supported
     /// by AWS. IoT code signing is available for <a href="http://docs.aws.amazon.com/freertos/latest/userguide/">Amazon
     /// FreeRTOS</a> and <a href="http://docs.aws.amazon.com/iot/latest/developerguide/">AWS
     /// IoT Device Management</a>, and is integrated with <a href="http://docs.aws.amazon.com/acm/latest/userguide/">AWS
@@ -64,7 +66,11 @@ namespace Amazon.Signer
     /// </para>
     ///  
     /// <para>
-    /// For more information about AWS Signer, see the <a href="http://docs.aws.amazon.com/signer/latest/developerguide/Welcome.html">AWS
+    /// With code signing for containers …(TBD)
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information about AWS Signer, see the <a href="https://docs.aws.amazon.com/signer/latest/developerguide/Welcome.html">AWS
     /// Signer Developer Guide</a>.
     /// </para>
     /// </summary>
@@ -261,6 +267,15 @@ namespace Amazon.Signer
         } 
 
         /// <summary>
+        /// Customizes the runtime pipeline.
+        /// </summary>
+        /// <param name="pipeline">Runtime pipeline for the current client.</param>
+        protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
+        {
+            pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonSignerEndpointResolver());
+        }
+        /// <summary>
         /// Capture metadata for the service.
         /// </summary>
         protected override IServiceMetadata ServiceMetadata
@@ -447,6 +462,58 @@ namespace Amazon.Signer
             options.ResponseUnmarshaller = DescribeSigningJobResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeSigningJobResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetRevocationStatus
+
+        internal virtual GetRevocationStatusResponse GetRevocationStatus(GetRevocationStatusRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetRevocationStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRevocationStatusResponseUnmarshaller.Instance;
+
+            return Invoke<GetRevocationStatusResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves the revocation status of one or more of the signing profile, signing job,
+        /// and signing certificate.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRevocationStatus service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetRevocationStatus service method, as returned by Signer.</returns>
+        /// <exception cref="Amazon.Signer.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Signer.Model.InternalServiceErrorException">
+        /// An internal error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Signer.Model.TooManyRequestsException">
+        /// The allowed number of job-signing requests has been exceeded.
+        /// 
+        ///  
+        /// <para>
+        /// This error supersedes the error <code>ThrottlingException</code>.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.Signer.Model.ValidationException">
+        /// You signing certificate could not be validated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/GetRevocationStatus">REST API Reference for GetRevocationStatus Operation</seealso>
+        public virtual Task<GetRevocationStatusResponse> GetRevocationStatusAsync(GetRevocationStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetRevocationStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRevocationStatusResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetRevocationStatusResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -842,7 +909,7 @@ namespace Amazon.Signer
 
         /// <summary>
         /// Creates a signing profile. A signing profile is a code signing template that can be
-        /// used to carry out a pre-defined signing job. For more information, see <a href="http://docs.aws.amazon.com/signer/latest/developerguide/gs-profile.html">http://docs.aws.amazon.com/signer/latest/developerguide/gs-profile.html</a>
+        /// used to carry out a pre-defined signing job.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutSigningProfile service method.</param>
         /// <param name="cancellationToken">
@@ -1049,6 +1116,60 @@ namespace Amazon.Signer
 
         #endregion
         
+        #region  SignPayload
+
+        internal virtual SignPayloadResponse SignPayload(SignPayloadRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SignPayloadRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SignPayloadResponseUnmarshaller.Instance;
+
+            return Invoke<SignPayloadResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Signs a binary payload and returns a signature envelope.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SignPayload service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SignPayload service method, as returned by Signer.</returns>
+        /// <exception cref="Amazon.Signer.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Signer.Model.InternalServiceErrorException">
+        /// An internal error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Signer.Model.ResourceNotFoundException">
+        /// A specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.Signer.Model.TooManyRequestsException">
+        /// The allowed number of job-signing requests has been exceeded.
+        /// 
+        ///  
+        /// <para>
+        /// This error supersedes the error <code>ThrottlingException</code>.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.Signer.Model.ValidationException">
+        /// You signing certificate could not be validated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/SignPayload">REST API Reference for SignPayload Operation</seealso>
+        public virtual Task<SignPayloadResponse> SignPayloadAsync(SignPayloadRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SignPayloadRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SignPayloadResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SignPayloadResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  StartSigningJob
 
         internal virtual StartSigningJobResponse StartSigningJob(StartSigningJobRequest request)
@@ -1069,7 +1190,7 @@ namespace Amazon.Signer
         /// 
         ///  <ul> <li> 
         /// <para>
-        ///  You must create an Amazon S3 source bucket. For more information, see <a href="http://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html">Create
+        ///  You must create an Amazon S3 source bucket. For more information, see <a href="http://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html">Creating
         /// a Bucket</a> in the <i>Amazon S3 Getting Started Guide</i>. 
         /// </para>
         ///  </li> <li> 
@@ -1097,8 +1218,7 @@ namespace Amazon.Signer
         /// </para>
         ///  
         /// <para>
-        /// For a Java example that shows how to use this action, see <a href="http://docs.aws.amazon.com/acm/latest/userguide/">http://docs.aws.amazon.com/acm/latest/userguide/</a>
-        /// 
+        /// For a Java example that shows how to use this action, see <a href="https://docs.aws.amazon.com/signer/latest/developerguide/api-startsigningjob.html">StartSigningJob</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartSigningJob service method.</param>

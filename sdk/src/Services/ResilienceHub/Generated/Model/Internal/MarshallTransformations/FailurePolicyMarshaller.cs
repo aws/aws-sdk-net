@@ -34,7 +34,7 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// FailurePolicy Marshaller
-    /// </summary>       
+    /// </summary>
     public class FailurePolicyMarshaller : IRequestMarshaller<FailurePolicy, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static FailurePolicyMarshaller Instance = new FailurePolicyMarshaller();
 
     }

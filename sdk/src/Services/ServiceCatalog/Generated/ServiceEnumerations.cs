@@ -345,6 +345,56 @@ namespace Amazon.ServiceCatalog
 
 
     /// <summary>
+    /// Constants used for properties of type EngineWorkflowStatus.
+    /// </summary>
+    public class EngineWorkflowStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED for EngineWorkflowStatus
+        /// </summary>
+        public static readonly EngineWorkflowStatus FAILED = new EngineWorkflowStatus("FAILED");
+        /// <summary>
+        /// Constant SUCCEEDED for EngineWorkflowStatus
+        /// </summary>
+        public static readonly EngineWorkflowStatus SUCCEEDED = new EngineWorkflowStatus("SUCCEEDED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EngineWorkflowStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EngineWorkflowStatus FindValue(string value)
+        {
+            return FindValue<EngineWorkflowStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EngineWorkflowStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type EvaluationType.
     /// </summary>
     public class EvaluationType : ConstantClass
@@ -388,6 +438,56 @@ namespace Amazon.ServiceCatalog
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator EvaluationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type LastSyncStatus.
+    /// </summary>
+    public class LastSyncStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED for LastSyncStatus
+        /// </summary>
+        public static readonly LastSyncStatus FAILED = new LastSyncStatus("FAILED");
+        /// <summary>
+        /// Constant SUCCEEDED for LastSyncStatus
+        /// </summary>
+        public static readonly LastSyncStatus SUCCEEDED = new LastSyncStatus("SUCCEEDED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LastSyncStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LastSyncStatus FindValue(string value)
+        {
+            return FindValue<LastSyncStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LastSyncStatus(string value)
         {
             return FindValue(value);
         }
@@ -512,6 +612,10 @@ namespace Amazon.ServiceCatalog
         /// Constant IAM for PrincipalType
         /// </summary>
         public static readonly PrincipalType IAM = new PrincipalType("IAM");
+        /// <summary>
+        /// Constant IAM_PATTERN for PrincipalType
+        /// </summary>
+        public static readonly PrincipalType IAM_PATTERN = new PrincipalType("IAM_PATTERN");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -608,6 +712,10 @@ namespace Amazon.ServiceCatalog
         /// Constant MARKETPLACE for ProductType
         /// </summary>
         public static readonly ProductType MARKETPLACE = new ProductType("MARKETPLACE");
+        /// <summary>
+        /// Constant TERRAFORM_OPEN_SOURCE for ProductType
+        /// </summary>
+        public static readonly ProductType TERRAFORM_OPEN_SOURCE = new ProductType("TERRAFORM_OPEN_SOURCE");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1140,6 +1248,10 @@ namespace Amazon.ServiceCatalog
         /// Constant MARKETPLACE_CAR for ProvisioningArtifactType
         /// </summary>
         public static readonly ProvisioningArtifactType MARKETPLACE_CAR = new ProvisioningArtifactType("MARKETPLACE_CAR");
+        /// <summary>
+        /// Constant TERRAFORM_OPEN_SOURCE for ProvisioningArtifactType
+        /// </summary>
+        public static readonly ProvisioningArtifactType TERRAFORM_OPEN_SOURCE = new ProvisioningArtifactType("TERRAFORM_OPEN_SOURCE");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1427,6 +1539,10 @@ namespace Amazon.ServiceCatalog
         /// </summary>
         public static readonly ServiceActionAssociationErrorCode INTERNAL_FAILURE = new ServiceActionAssociationErrorCode("INTERNAL_FAILURE");
         /// <summary>
+        /// Constant INVALID_PARAMETER for ServiceActionAssociationErrorCode
+        /// </summary>
+        public static readonly ServiceActionAssociationErrorCode INVALID_PARAMETER = new ServiceActionAssociationErrorCode("INVALID_PARAMETER");
+        /// <summary>
         /// Constant LIMIT_EXCEEDED for ServiceActionAssociationErrorCode
         /// </summary>
         public static readonly ServiceActionAssociationErrorCode LIMIT_EXCEEDED = new ServiceActionAssociationErrorCode("LIMIT_EXCEEDED");
@@ -1684,6 +1800,52 @@ namespace Amazon.ServiceCatalog
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SortOrder(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SourceType.
+    /// </summary>
+    public class SourceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CODESTAR for SourceType
+        /// </summary>
+        public static readonly SourceType CODESTAR = new SourceType("CODESTAR");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SourceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SourceType FindValue(string value)
+        {
+            return FindValue<SourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SourceType(string value)
         {
             return FindValue(value);
         }

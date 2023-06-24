@@ -34,7 +34,7 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Frequency Marshaller
-    /// </summary>       
+    /// </summary>
     public class FrequencyMarshaller : IRequestMarshaller<Frequency, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static FrequencyMarshaller Instance = new FrequencyMarshaller();
 
     }

@@ -44,7 +44,10 @@ namespace Amazon.OpenSearchService.Model
         private PackageType _packageType;
 
         /// <summary>
-        /// Gets and sets the property AvailablePackageVersion.
+        /// Gets and sets the property AvailablePackageVersion. 
+        /// <para>
+        /// The package version.
+        /// </para>
         /// </summary>
         public string AvailablePackageVersion
         {
@@ -61,7 +64,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The timestamp of when the package was created.
+        /// The timestamp when the package was created.
         /// </para>
         /// </summary>
         public DateTime CreatedAt
@@ -95,7 +98,10 @@ namespace Amazon.OpenSearchService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LastUpdatedAt.
+        /// Gets and sets the property LastUpdatedAt. 
+        /// <para>
+        /// Date and time when the package was last updated.
+        /// </para>
         /// </summary>
         public DateTime LastUpdatedAt
         {
@@ -131,7 +137,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property PackageID. 
         /// <para>
-        /// Internal ID of the package.
+        /// The unique identifier of the package.
         /// </para>
         /// </summary>
         public string PackageID
@@ -149,7 +155,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property PackageName. 
         /// <para>
-        /// User-specified name of the package.
+        /// The user-specified name of the package.
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=28)]
@@ -168,8 +174,9 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property PackageStatus. 
         /// <para>
-        /// Current state of the package. Values are COPYING, COPY_FAILED, AVAILABLE, DELETING,
-        /// and DELETE_FAILED.
+        /// The current status of the package. The available options are <code>AVAILABLE</code>,
+        /// <code>COPYING</code>, <code>COPY_FAILED</code>, <code>VALIDATNG</code>, <code>VALIDATION_FAILED</code>,
+        /// <code>DELETING</code>, and <code>DELETE_FAILED</code>.
         /// </para>
         /// </summary>
         public PackageStatus PackageStatus
@@ -187,7 +194,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property PackageType. 
         /// <para>
-        /// Currently supports only TXT-DICTIONARY.
+        /// The type of package.
         /// </para>
         /// </summary>
         public PackageType PackageType

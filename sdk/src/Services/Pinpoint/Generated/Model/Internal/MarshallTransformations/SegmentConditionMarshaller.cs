@@ -34,7 +34,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SegmentCondition Marshaller
-    /// </summary>       
+    /// </summary>
     public class SegmentConditionMarshaller : IRequestMarshaller<SegmentCondition, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SegmentConditionMarshaller Instance = new SegmentConditionMarshaller();
 
     }

@@ -83,7 +83,11 @@ namespace Amazon.IVS.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Any tags provided with the request are added to the playback key pair tags.
+        /// Any tags provided with the request are added to the playback key pair tags. See <a
+        /// href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon
+        /// Web Services Resources</a> for more information, including restrictions that apply
+        /// to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific
+        /// constraints beyond what is documented there.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]

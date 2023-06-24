@@ -34,7 +34,7 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// VpcOptions Marshaller
-    /// </summary>       
+    /// </summary>
     public class VpcOptionsMarshaller : IRequestMarshaller<VpcOptions, JsonMarshallerContext> 
     {
         /// <summary>
@@ -45,6 +45,12 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(VpcOptions requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetApplianceModeSupport())
+            {
+                context.Writer.WritePropertyName("ApplianceModeSupport");
+                context.Writer.Write(requestObject.ApplianceModeSupport);
+            }
+
             if(requestObject.IsSetIpv6Support())
             {
                 context.Writer.WritePropertyName("Ipv6Support");
@@ -55,7 +61,7 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static VpcOptionsMarshaller Instance = new VpcOptionsMarshaller();
 
     }

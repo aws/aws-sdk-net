@@ -34,7 +34,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AwsCloudMapInstanceAttribute Marshaller
-    /// </summary>       
+    /// </summary>
     public class AwsCloudMapInstanceAttributeMarshaller : IRequestMarshaller<AwsCloudMapInstanceAttribute, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AwsCloudMapInstanceAttributeMarshaller Instance = new AwsCloudMapInstanceAttributeMarshaller();
 
     }

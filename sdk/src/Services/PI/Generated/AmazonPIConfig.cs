@@ -17,22 +17,22 @@
  * Do not modify this file. This file is generated from the pi-2018-02-27.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
-
+using Amazon.PI.Internal;
 
 namespace Amazon.PI
 {
     /// <summary>
     /// Configuration for accessing Amazon PI service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonPIConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.1.76");
+            InternalSDKUtils.BuildUserAgentString("3.7.101.64");
 
         private string _userAgent = UserAgentString;
 
@@ -40,8 +40,10 @@ namespace Amazon.PI
         /// Default constructor
         /// </summary>
         public AmazonPIConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonPIDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "pi";
+            this.EndpointProvider = new AmazonPIEndpointProvider();
         }
 
         /// <summary>
@@ -76,5 +78,6 @@ namespace Amazon.PI
                 return _userAgent;
             }
         }
+
     }
 }

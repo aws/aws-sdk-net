@@ -32,6 +32,12 @@ namespace Amazon.DLM.Model
     /// Container for the parameters to the DeleteLifecyclePolicy operation.
     /// Deletes the specified lifecycle policy and halts the automated operations that the
     /// policy specified.
+    /// 
+    ///  
+    /// <para>
+    /// For more information about deleting a policy, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/view-modify-delete.html#delete">Delete
+    /// lifecycle policies</a>.
+    /// </para>
     /// </summary>
     public partial class DeleteLifecyclePolicyRequest : AmazonDLMRequest
     {

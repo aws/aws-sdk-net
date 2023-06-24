@@ -61,7 +61,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property Responses. 
         /// <para>
-        /// An ordered array of up to 25 <code>ItemResponse</code> objects, each of which corresponds
+        /// An ordered array of up to 100 <code>ItemResponse</code> objects, each of which corresponds
         /// to the <code>TransactGetItem</code> object in the same position in the <i>TransactItems</i>
         /// array. Each <code>ItemResponse</code> object contains a Map of the name-value pairs
         /// that are the projected attributes of the requested item.
@@ -73,7 +73,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <code>ItemResponse</code> object is an empty Map. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=25)]
+        [AWSProperty(Min=1, Max=100)]
         public List<ItemResponse> Responses
         {
             get { return this._responses; }

@@ -56,7 +56,7 @@ namespace Amazon.ManagedGrafana.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ManagedGrafana");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-08-18";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-08-18";
             request.HttpMethod = "PUT";
 
             if (!publicRequest.IsSetWorkspaceId())
@@ -74,6 +74,17 @@ namespace Amazon.ManagedGrafana.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.AccountAccessType);
                 }
 
+                if(publicRequest.IsSetNetworkAccessControl())
+                {
+                    context.Writer.WritePropertyName("networkAccessControl");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = NetworkAccessConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.NetworkAccessControl, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetOrganizationRoleName())
                 {
                     context.Writer.WritePropertyName("organizationRoleName");
@@ -86,10 +97,33 @@ namespace Amazon.ManagedGrafana.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.PermissionType);
                 }
 
+                if(publicRequest.IsSetRemoveNetworkAccessConfiguration())
+                {
+                    context.Writer.WritePropertyName("removeNetworkAccessConfiguration");
+                    context.Writer.Write(publicRequest.RemoveNetworkAccessConfiguration);
+                }
+
+                if(publicRequest.IsSetRemoveVpcConfiguration())
+                {
+                    context.Writer.WritePropertyName("removeVpcConfiguration");
+                    context.Writer.Write(publicRequest.RemoveVpcConfiguration);
+                }
+
                 if(publicRequest.IsSetStackSetName())
                 {
                     context.Writer.WritePropertyName("stackSetName");
                     context.Writer.Write(publicRequest.StackSetName);
+                }
+
+                if(publicRequest.IsSetVpcConfiguration())
+                {
+                    context.Writer.WritePropertyName("vpcConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = VpcConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.VpcConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
                 if(publicRequest.IsSetWorkspaceDataSources())
@@ -143,7 +177,6 @@ namespace Amazon.ManagedGrafana.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.WorkspaceRoleArn);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

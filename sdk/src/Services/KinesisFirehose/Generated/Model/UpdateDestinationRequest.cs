@@ -73,6 +73,7 @@ namespace Amazon.KinesisFirehose.Model
     /// </summary>
     public partial class UpdateDestinationRequest : AmazonKinesisFirehoseRequest
     {
+        private AmazonOpenSearchServerlessDestinationUpdate _amazonOpenSearchServerlessDestinationUpdate;
         private AmazonopensearchserviceDestinationUpdate _amazonopensearchserviceDestinationUpdate;
         private string _currentDeliveryStreamVersionId;
         private string _deliveryStreamName;
@@ -85,7 +86,29 @@ namespace Amazon.KinesisFirehose.Model
         private SplunkDestinationUpdate _splunkDestinationUpdate;
 
         /// <summary>
-        /// Gets and sets the property AmazonopensearchserviceDestinationUpdate.
+        /// Gets and sets the property AmazonOpenSearchServerlessDestinationUpdate. 
+        /// <para>
+        /// Describes an update for a destination in the Serverless offering for Amazon OpenSearch
+        /// Service.
+        /// </para>
+        /// </summary>
+        public AmazonOpenSearchServerlessDestinationUpdate AmazonOpenSearchServerlessDestinationUpdate
+        {
+            get { return this._amazonOpenSearchServerlessDestinationUpdate; }
+            set { this._amazonOpenSearchServerlessDestinationUpdate = value; }
+        }
+
+        // Check to see if AmazonOpenSearchServerlessDestinationUpdate property is set
+        internal bool IsSetAmazonOpenSearchServerlessDestinationUpdate()
+        {
+            return this._amazonOpenSearchServerlessDestinationUpdate != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AmazonopensearchserviceDestinationUpdate. 
+        /// <para>
+        /// Describes an update for a destination in Amazon OpenSearch Service.
+        /// </para>
         /// </summary>
         public AmazonopensearchserviceDestinationUpdate AmazonopensearchserviceDestinationUpdate
         {

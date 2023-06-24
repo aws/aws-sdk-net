@@ -17,22 +17,22 @@
  * Do not modify this file. This file is generated from the quicksight-2018-04-01.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
-
+using Amazon.QuickSight.Internal;
 
 namespace Amazon.QuickSight
 {
     /// <summary>
     /// Configuration for accessing Amazon QuickSight service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonQuickSightConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.9.2");
+            InternalSDKUtils.BuildUserAgentString("3.7.110.5");
 
         private string _userAgent = UserAgentString;
 
@@ -40,8 +40,10 @@ namespace Amazon.QuickSight
         /// Default constructor
         /// </summary>
         public AmazonQuickSightConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonQuickSightDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "quicksight";
+            this.EndpointProvider = new AmazonQuickSightEndpointProvider();
         }
 
         /// <summary>
@@ -76,5 +78,6 @@ namespace Amazon.QuickSight
                 return _userAgent;
             }
         }
+
     }
 }

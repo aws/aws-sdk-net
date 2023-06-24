@@ -33,9 +33,29 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class GenerateEmbedUrlForAnonymousUserResponse : AmazonWebServiceResponse
     {
+        private string _anonymousUserArn;
         private string _embedUrl;
         private string _requestId;
         private int? _status;
+
+        /// <summary>
+        /// Gets and sets the property AnonymousUserArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) to use for the anonymous Amazon QuickSight user.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public string AnonymousUserArn
+        {
+            get { return this._anonymousUserArn; }
+            set { this._anonymousUserArn = value; }
+        }
+
+        // Check to see if AnonymousUserArn property is set
+        internal bool IsSetAnonymousUserArn()
+        {
+            return this._anonymousUserArn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property EmbedUrl. 
@@ -43,7 +63,7 @@ namespace Amazon.QuickSight.Model
         /// The embed URL for the dashboard.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public string EmbedUrl
         {
             get { return this._embedUrl; }

@@ -40,7 +40,10 @@ namespace Amazon.Route53RecoveryReadiness.Model
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
-        /// Gets and sets the property CellArn. The arn for the Cell
+        /// Gets and sets the property CellArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) for the cell.
+        /// </para>
         /// </summary>
         [AWSProperty(Max=256)]
         public string CellArn
@@ -56,7 +59,10 @@ namespace Amazon.Route53RecoveryReadiness.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CellName. The name of the Cell
+        /// Gets and sets the property CellName. 
+        /// <para>
+        /// The name of the cell.
+        /// </para>
         /// </summary>
         [AWSProperty(Max=64)]
         public string CellName
@@ -72,7 +78,10 @@ namespace Amazon.Route53RecoveryReadiness.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Cells. A list of Cell arns
+        /// Gets and sets the property Cells. 
+        /// <para>
+        /// A list of cell ARNs.
+        /// </para>
         /// </summary>
         public List<string> Cells
         {
@@ -87,8 +96,11 @@ namespace Amazon.Route53RecoveryReadiness.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ParentReadinessScopes. A list of Cell ARNs and/or RecoveryGroup
-        /// ARNs
+        /// Gets and sets the property ParentReadinessScopes. 
+        /// <para>
+        /// The readiness scope for the cell, which can be a cell Amazon Resource Name (ARN) or
+        /// a recovery group ARN. This is a list but currently can have only one element.
+        /// </para>
         /// </summary>
         public List<string> ParentReadinessScopes
         {
@@ -103,7 +115,10 @@ namespace Amazon.Route53RecoveryReadiness.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Tags.
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// Tags on the resources.
+        /// </para>
         /// </summary>
         public Dictionary<string, string> Tags
         {

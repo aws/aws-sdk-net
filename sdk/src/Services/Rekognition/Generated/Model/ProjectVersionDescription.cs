@@ -38,9 +38,11 @@ namespace Amazon.Rekognition.Model
         private EvaluationResult _evaluationResult;
         private string _kmsKeyId;
         private GroundTruthManifest _manifestSummary;
+        private int? _maxInferenceUnits;
         private int? _minInferenceUnits;
         private OutputConfig _outputConfig;
         private string _projectVersionArn;
+        private string _sourceProjectVersionArn;
         private ProjectVersionStatus _status;
         private string _statusMessage;
         private TestingDataResult _testingDataResult;
@@ -144,6 +146,26 @@ namespace Amazon.Rekognition.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MaxInferenceUnits. 
+        /// <para>
+        /// The maximum number of inference units Amazon Rekognition Custom Labels uses to auto-scale
+        /// the model. For more information, see <a>StartProjectVersion</a>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public int MaxInferenceUnits
+        {
+            get { return this._maxInferenceUnits.GetValueOrDefault(); }
+            set { this._maxInferenceUnits = value; }
+        }
+
+        // Check to see if MaxInferenceUnits property is set
+        internal bool IsSetMaxInferenceUnits()
+        {
+            return this._maxInferenceUnits.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property MinInferenceUnits. 
         /// <para>
         /// The minimum number of inference units used by the model. For more information, see
@@ -198,6 +220,26 @@ namespace Amazon.Rekognition.Model
         internal bool IsSetProjectVersionArn()
         {
             return this._projectVersionArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceProjectVersionArn. 
+        /// <para>
+        /// If the model version was copied from a different project, <code>SourceProjectVersionArn</code>
+        /// contains the ARN of the source model version. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string SourceProjectVersionArn
+        {
+            get { return this._sourceProjectVersionArn; }
+            set { this._sourceProjectVersionArn = value; }
+        }
+
+        // Check to see if SourceProjectVersionArn property is set
+        internal bool IsSetSourceProjectVersionArn()
+        {
+            return this._sourceProjectVersionArn != null;
         }
 
         /// <summary>

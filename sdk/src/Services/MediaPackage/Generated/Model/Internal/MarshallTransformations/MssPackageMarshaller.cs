@@ -34,7 +34,7 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// MssPackage Marshaller
-    /// </summary>       
+    /// </summary>
     public class MssPackageMarshaller : IRequestMarshaller<MssPackage, JsonMarshallerContext> 
     {
         /// <summary>
@@ -83,7 +83,7 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static MssPackageMarshaller Instance = new MssPackageMarshaller();
 
     }

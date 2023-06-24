@@ -58,7 +58,7 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
             string target = "Logs_20140328.GetLogEvents";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2014-03-28";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2014-03-28";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -77,6 +77,12 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("limit");
                     context.Writer.Write(publicRequest.Limit);
+                }
+
+                if(publicRequest.IsSetLogGroupIdentifier())
+                {
+                    context.Writer.WritePropertyName("logGroupIdentifier");
+                    context.Writer.Write(publicRequest.LogGroupIdentifier);
                 }
 
                 if(publicRequest.IsSetLogGroupName())
@@ -109,7 +115,12 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
                     context.Writer.Write(Amazon.Runtime.Internal.Transform.CustomMarshallTransformations.ConvertDateTimeToEpochMilliseconds(publicRequest.StartTime));
                 }
 
-        
+                if(publicRequest.IsSetUnmask())
+                {
+                    context.Writer.WritePropertyName("unmask");
+                    context.Writer.Write(publicRequest.Unmask);
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

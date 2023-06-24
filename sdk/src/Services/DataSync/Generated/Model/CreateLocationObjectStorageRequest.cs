@@ -30,8 +30,8 @@ namespace Amazon.DataSync.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateLocationObjectStorage operation.
-    /// Creates an endpoint for a self-managed object storage bucket. For more information
-    /// about self-managed object storage locations, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-object-location.html">Creating
+    /// Creates an endpoint for an object storage system that DataSync can access for a transfer.
+    /// For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-object-location.html">Creating
     /// a location for object storage</a>.
     /// </summary>
     public partial class CreateLocationObjectStorageRequest : AmazonDataSyncRequest
@@ -40,6 +40,7 @@ namespace Amazon.DataSync.Model
         private List<string> _agentArns = new List<string>();
         private string _bucketName;
         private string _secretKey;
+        private MemoryStream _serverCertificate;
         private string _serverHostname;
         private int? _serverPort;
         private ObjectStorageServerProtocol _serverProtocol;
@@ -49,13 +50,11 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property AccessKey. 
         /// <para>
-        /// Optional. The access key is used if credentials are required to access the self-managed
-        /// object storage server. If your object storage requires a user name and password to
-        /// authenticate, use <code>AccessKey</code> and <code>SecretKey</code> to provide the
-        /// user name and password, respectively.
+        /// Specifies the access key (for example, a user name) if credentials are required to
+        /// authenticate with the object storage server.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=8, Max=200)]
+        [AWSProperty(Min=1, Max=200)]
         public string AccessKey
         {
             get { return this._accessKey; }
@@ -71,8 +70,8 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property AgentArns. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the agents associated with the self-managed object
-        /// storage server location.
+        /// Specifies the Amazon Resource Names (ARNs) of the DataSync agents that can securely
+        /// connect with your location.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=4)]
@@ -91,7 +90,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property BucketName. 
         /// <para>
-        /// The bucket on the self-managed object storage server that is used to read data from.
+        /// Specifies the name of the object storage bucket involved in the transfer.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=3, Max=63)]
@@ -110,13 +109,11 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property SecretKey. 
         /// <para>
-        /// Optional. The secret key is used if credentials are required to access the self-managed
-        /// object storage server. If your object storage requires a user name and password to
-        /// authenticate, use <code>AccessKey</code> and <code>SecretKey</code> to provide the
-        /// user name and password, respectively.
+        /// Specifies the secret key (for example, a password) if credentials are required to
+        /// authenticate with the object storage server.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=8, Max=200)]
+        [AWSProperty(Sensitive=true, Min=1, Max=200)]
         public string SecretKey
         {
             get { return this._secretKey; }
@@ -130,11 +127,36 @@ namespace Amazon.DataSync.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ServerCertificate. 
+        /// <para>
+        /// Specifies a certificate to authenticate with an object storage system that uses a
+        /// private or self-signed certificate authority (CA). You must specify a Base64-encoded
+        /// <code>.pem</code> file (for example, <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>).
+        /// The certificate can be up to 32768 bytes (before Base64 encoding).
+        /// </para>
+        ///  
+        /// <para>
+        /// To use this parameter, configure <code>ServerProtocol</code> to <code>HTTPS</code>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=32768)]
+        public MemoryStream ServerCertificate
+        {
+            get { return this._serverCertificate; }
+            set { this._serverCertificate = value; }
+        }
+
+        // Check to see if ServerCertificate property is set
+        internal bool IsSetServerCertificate()
+        {
+            return this._serverCertificate != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ServerHostname. 
         /// <para>
-        /// The name of the self-managed object storage server. This value is the IP address or
-        /// Domain Name Service (DNS) name of the object storage server. An agent uses this host
-        /// name to mount the object storage server in a network. 
+        /// Specifies the domain name or IP address of the object storage server. A DataSync agent
+        /// uses this hostname to mount the object storage server in a network.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=255)]
@@ -153,9 +175,8 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property ServerPort. 
         /// <para>
-        /// The port that your self-managed object storage server accepts inbound network traffic
-        /// on. The server port is set by default to TCP 80 (HTTP) or TCP 443 (HTTPS). You can
-        /// specify a custom port if your self-managed object storage server requires one.
+        /// Specifies the port that your object storage server accepts inbound network traffic
+        /// on (for example, port 443).
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=65536)]
@@ -174,8 +195,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property ServerProtocol. 
         /// <para>
-        /// The protocol that the object storage server uses to communicate. Valid values are
-        /// HTTP or HTTPS.
+        /// Specifies the protocol that your object storage server uses to communicate.
         /// </para>
         /// </summary>
         public ObjectStorageServerProtocol ServerProtocol
@@ -193,8 +213,9 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property Subdirectory. 
         /// <para>
-        /// The subdirectory in the self-managed object storage server that is used to read data
-        /// from.
+        /// Specifies the object prefix for your object storage server. If this is a source location,
+        /// DataSync only copies objects with this prefix. If this is a destination location,
+        /// DataSync writes all objects with this prefix. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=4096)]
@@ -213,8 +234,9 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The key-value pair that represents the tag that you want to add to the location. The
-        /// value can be an empty string. We recommend using tags to name your resources.
+        /// Specifies the key-value pair that represents a tag that you want to add to the resource.
+        /// Tags can help you manage, filter, and search for your resources. We recommend creating
+        /// a name tag for your location.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]

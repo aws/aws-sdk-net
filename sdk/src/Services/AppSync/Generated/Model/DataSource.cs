@@ -37,6 +37,7 @@ namespace Amazon.AppSync.Model
         private string _description;
         private DynamodbDataSourceConfig _dynamodbConfig;
         private ElasticsearchDataSourceConfig _elasticsearchConfig;
+        private EventBridgeDataSourceConfig _eventBridgeConfig;
         private HttpDataSourceConfig _httpConfig;
         private LambdaDataSourceConfig _lambdaConfig;
         private string _name;
@@ -48,7 +49,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property DataSourceArn. 
         /// <para>
-        /// The data source ARN.
+        /// The data source Amazon Resource Name (ARN).
         /// </para>
         /// </summary>
         public string DataSourceArn
@@ -84,7 +85,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property DynamodbConfig. 
         /// <para>
-        /// Amazon DynamoDB settings.
+        /// DynamoDB settings.
         /// </para>
         /// </summary>
         public DynamodbDataSourceConfig DynamodbConfig
@@ -118,6 +119,24 @@ namespace Amazon.AppSync.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EventBridgeConfig. 
+        /// <para>
+        /// Amazon EventBridge settings.
+        /// </para>
+        /// </summary>
+        public EventBridgeDataSourceConfig EventBridgeConfig
+        {
+            get { return this._eventBridgeConfig; }
+            set { this._eventBridgeConfig = value; }
+        }
+
+        // Check to see if EventBridgeConfig property is set
+        internal bool IsSetEventBridgeConfig()
+        {
+            return this._eventBridgeConfig != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property HttpConfig. 
         /// <para>
         /// HTTP endpoint settings.
@@ -138,7 +157,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property LambdaConfig. 
         /// <para>
-        /// Amazon Web Services Lambda settings.
+        /// Lambda settings.
         /// </para>
         /// </summary>
         public LambdaDataSourceConfig LambdaConfig
@@ -211,8 +230,8 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property ServiceRoleArn. 
         /// <para>
-        /// The Identity and Access Management service role ARN for the data source. The system
-        /// assumes this role when accessing the data source.
+        /// The Identity and Access Management (IAM) service role Amazon Resource Name (ARN) for
+        /// the data source. The system assumes this role when accessing the data source.
         /// </para>
         /// </summary>
         public string ServiceRoleArn
@@ -234,7 +253,7 @@ namespace Amazon.AppSync.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b>AWS_LAMBDA</b>: The data source is an Amazon Web Services Lambda function.
+        ///  <b>AWS_LAMBDA</b>: The data source is an Lambda function.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -251,9 +270,13 @@ namespace Amazon.AppSync.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>NONE</b>: There is no data source. This type is used when you wish to invoke a
-        /// GraphQL operation without connecting to a data source, such as performing data transformation
-        /// with resolvers or triggering a subscription to be invoked from a mutation.
+        ///  <b>AMAZON_EVENTBRIDGE</b>: The data source is an Amazon EventBridge configuration.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>NONE</b>: There is no data source. Use this type when you want to invoke a GraphQL
+        /// operation without connecting to a data source, such as when you're performing data
+        /// transformation with resolvers or invoking a subscription from a mutation.
         /// </para>
         ///  </li> <li> 
         /// <para>

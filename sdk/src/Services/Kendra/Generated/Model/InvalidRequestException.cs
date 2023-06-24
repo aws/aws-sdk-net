@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kendra.Model
 {
     /// <summary>
-    /// The input to the request is not valid.
+    /// The input to the request is not valid. Please provide the correct input and try again.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

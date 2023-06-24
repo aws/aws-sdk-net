@@ -34,7 +34,7 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AccountTakeoverActionsType Marshaller
-    /// </summary>       
+    /// </summary>
     public class AccountTakeoverActionsTypeMarshaller : IRequestMarshaller<AccountTakeoverActionsType, JsonMarshallerContext> 
     {
         /// <summary>
@@ -82,7 +82,7 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AccountTakeoverActionsTypeMarshaller Instance = new AccountTakeoverActionsTypeMarshaller();
 
     }

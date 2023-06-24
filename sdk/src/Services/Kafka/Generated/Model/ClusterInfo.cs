@@ -48,6 +48,7 @@ namespace Amazon.Kafka.Model
         private OpenMonitoring _openMonitoring;
         private ClusterState _state;
         private StateInfo _stateInfo;
+        private StorageMode _storageMode;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private string _zookeeperConnectString;
         private string _zookeeperConnectStringTls;
@@ -319,6 +320,24 @@ namespace Amazon.Kafka.Model
         internal bool IsSetStateInfo()
         {
             return this._stateInfo != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StorageMode.             
+        /// <para>
+        /// This controls storage mode for supported storage tiers.
+        /// </para>
+        /// </summary>
+        public StorageMode StorageMode
+        {
+            get { return this._storageMode; }
+            set { this._storageMode = value; }
+        }
+
+        // Check to see if StorageMode property is set
+        internal bool IsSetStorageMode()
+        {
+            return this._storageMode != null;
         }
 
         /// <summary>

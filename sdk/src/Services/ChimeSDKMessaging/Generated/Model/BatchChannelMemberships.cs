@@ -37,12 +37,13 @@ namespace Amazon.ChimeSDKMessaging.Model
         private string _channelArn;
         private Identity _invitedBy;
         private List<Identity> _members = new List<Identity>();
+        private string _subChannelId;
         private ChannelMembershipType _type;
 
         /// <summary>
         /// Gets and sets the property ChannelArn. 
         /// <para>
-        /// The ARN of the channel to which you're adding users.
+        /// The ARN of the channel to which you're adding members.
         /// </para>
         /// </summary>
         [AWSProperty(Min=5, Max=1600)]
@@ -95,9 +96,28 @@ namespace Amazon.ChimeSDKMessaging.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SubChannelId. 
+        /// <para>
+        /// The ID of the SubChannel.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=128)]
+        public string SubChannelId
+        {
+            get { return this._subChannelId; }
+            set { this._subChannelId = value; }
+        }
+
+        // Check to see if SubChannelId property is set
+        internal bool IsSetSubChannelId()
+        {
+            return this._subChannelId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The membership types set for the channel users.
+        /// The membership types set for the channel members.
         /// </para>
         /// </summary>
         public ChannelMembershipType Type

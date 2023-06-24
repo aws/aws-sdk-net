@@ -50,7 +50,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (string.IsNullOrEmpty(putBucketAnalyticsConfigurationRequest.BucketName))
                 throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "PutBucketAnalyticsConfigurationRequest.BucketName");
 
-			request.ResourcePath = string.Concat("/", S3Transforms.ToStringValue(putBucketAnalyticsConfigurationRequest.BucketName));
+            request.ResourcePath = "/";
 
             request.AddSubResource("analytics");
 
@@ -65,14 +65,14 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 if (putBucketAnalyticsConfigurationRequest.IsSetAnalyticsConfiguration())
                 {
                     var analyticsConfiguration = putBucketAnalyticsConfigurationRequest.AnalyticsConfiguration;
-                    xmlWriter.WriteStartElement("AnalyticsConfiguration", "http://s3.amazonaws.com/doc/2006-03-01/");
+                    xmlWriter.WriteStartElement("AnalyticsConfiguration", S3Constants.S3RequestXmlNamespace);
                     if (analyticsConfiguration.IsSetAnalyticsId())
                     {
-                        xmlWriter.WriteElementString("Id", "http://s3.amazonaws.com/doc/2006-03-01/", analyticsConfiguration.AnalyticsId);
+                        xmlWriter.WriteElementString("Id", analyticsConfiguration.AnalyticsId);
                     }
                     if (analyticsConfiguration.IsSetAnalyticsFilter())
                     {
-                        xmlWriter.WriteStartElement("Filter", "http://s3.amazonaws.com/doc/2006-03-01/");
+                        xmlWriter.WriteStartElement("Filter");
                         var predicate = analyticsConfiguration.AnalyticsFilter.AnalyticsFilterPredicate;
                         predicate.Accept(new AnalyticsPredicateVisitor(xmlWriter));
                         xmlWriter.WriteEndElement();
@@ -82,42 +82,42 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                         if (analyticsConfiguration.IsSetStorageClassAnalysis())
                         {
                             StorageClassAnalysis storageClassAnalysis = analyticsConfiguration.StorageClassAnalysis;
-                            xmlWriter.WriteStartElement("StorageClassAnalysis", "http://s3.amazonaws.com/doc/2006-03-01/");
+                            xmlWriter.WriteStartElement("StorageClassAnalysis");
                             if (storageClassAnalysis.IsSetDataExport())
                             {
-                                xmlWriter.WriteStartElement("DataExport", "http://s3.amazonaws.com/doc/2006-03-01/");
+                                xmlWriter.WriteStartElement("DataExport");
                                 StorageClassAnalysisDataExport storageClassAnalysisDataExport = storageClassAnalysis.DataExport;
                                 if(storageClassAnalysisDataExport.IsSetOutputSchemaVersion())
                                 {
                                     StorageClassAnalysisSchemaVersion storageClassAnalysisSchemaVersion = storageClassAnalysisDataExport.OutputSchemaVersion;
                                     if (storageClassAnalysisSchemaVersion != null)
                                     {
-                                        xmlWriter.WriteElementString("OutputSchemaVersion", "http://s3.amazonaws.com/doc/2006-03-01/", storageClassAnalysisSchemaVersion);
+                                        xmlWriter.WriteElementString("OutputSchemaVersion", storageClassAnalysisSchemaVersion);
                                     }
                                 }
                                 if (storageClassAnalysisDataExport.IsSetDestination())
                                 {
-                                    xmlWriter.WriteStartElement("Destination", "http://s3.amazonaws.com/doc/2006-03-01/");
+                                    xmlWriter.WriteStartElement("Destination");
                                     AnalyticsExportDestination analyticsExportDestination = storageClassAnalysisDataExport.Destination;
                                     if (analyticsExportDestination.IsSetS3BucketDestination())
                                     {
-                                        xmlWriter.WriteStartElement("S3BucketDestination", "http://s3.amazonaws.com/doc/2006-03-01/");
+                                        xmlWriter.WriteStartElement("S3BucketDestination");
                                         AnalyticsS3BucketDestination analyticsS3BucketDestination = analyticsExportDestination.S3BucketDestination;
                                         if (analyticsS3BucketDestination.IsSetFormat())
                                         {
-                                            xmlWriter.WriteElementString("Format", "http://s3.amazonaws.com/doc/2006-03-01/", analyticsS3BucketDestination.Format);
+                                            xmlWriter.WriteElementString("Format", analyticsS3BucketDestination.Format);
                                         }
                                         if (analyticsS3BucketDestination.IsSetBucketAccountId())
                                         {
-                                            xmlWriter.WriteElementString("BucketAccountId", "http://s3.amazonaws.com/doc/2006-03-01/", analyticsS3BucketDestination.BucketAccountId);
+                                            xmlWriter.WriteElementString("BucketAccountId", analyticsS3BucketDestination.BucketAccountId);
                                         }
                                         if (analyticsS3BucketDestination.IsSetBucketName())
                                         {
-                                            xmlWriter.WriteElementString("Bucket", "http://s3.amazonaws.com/doc/2006-03-01/", analyticsS3BucketDestination.BucketName);
+                                            xmlWriter.WriteElementString("Bucket", analyticsS3BucketDestination.BucketName);
                                         }
                                         if (analyticsS3BucketDestination.IsSetPrefix())
                                         {
-                                            xmlWriter.WriteElementString("Prefix", "http://s3.amazonaws.com/doc/2006-03-01/", analyticsS3BucketDestination.Prefix);
+                                            xmlWriter.WriteElementString("Prefix", analyticsS3BucketDestination.Prefix);
                                         }
                                         xmlWriter.WriteEndElement();
                                     }

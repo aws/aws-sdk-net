@@ -34,7 +34,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DvbTdtSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class DvbTdtSettingsMarshaller : IRequestMarshaller<DvbTdtSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DvbTdtSettingsMarshaller Instance = new DvbTdtSettingsMarshaller();
 
     }

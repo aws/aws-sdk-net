@@ -37,6 +37,7 @@ namespace Amazon.Runtime.Internal
         readonly ParameterCollection parametersCollection;
         readonly IDictionary<string,string> parametersFacade;
         readonly IDictionary<string, string> headers = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
+        readonly IDictionary<string, string> trailingHeaders = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
         readonly IDictionary<string, string> subResources = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
         readonly IDictionary<string, string> pathResources = new Dictionary<string, string>(StringComparer.Ordinal);
 
@@ -445,6 +446,14 @@ namespace Amazon.Runtime.Internal
         public bool UseChunkEncoding { get; set; }
 
         /// <summary>
+        /// Determine whether to use double encoding for request's signer.
+        /// Propagated from the endpoint's authSchemes.
+        /// Default value is "true".
+        /// Currently only S3 and S3 Control will disable double encoding.
+        /// </summary>
+        public bool UseDoubleEncoding { get; set; } = true;
+
+        /// <summary>
         /// Used for Amazon S3 requests where the bucket name is removed from
         /// the marshalled resource path into the host header. To comply with
         /// AWS2 signature calculation, we need to recover the bucket name
@@ -491,6 +500,17 @@ namespace Amazon.Runtime.Internal
         /// the result of DetermineService in AWS4Signer
         /// </summary>
         public string OverrideSigningServiceName { get; set; }
+
+        /// <summary>
+        /// The checksum algorithm that was selected to validate this request's integrity
+        /// </summary>
+        public CoreChecksumAlgorithm SelectedChecksum { get; set; }
+
+        /// <summary>
+        /// Returns a dictionary of the trailing headers included
+        /// after this request's content.
+        /// </summary>
+        public IDictionary<string, string> TrailingHeaders => this.trailingHeaders;
 
         /// <summary>
         /// Checks if the request stream can be rewinded.

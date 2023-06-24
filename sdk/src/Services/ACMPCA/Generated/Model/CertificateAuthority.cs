@@ -32,12 +32,12 @@ namespace Amazon.ACMPCA.Model
     /// Contains information about your private certificate authority (CA). Your private CA
     /// can issue and revoke X.509 digital certificates. Digital certificates verify that
     /// the entity named in the certificate <b>Subject</b> field owns or controls the public
-    /// key contained in the <b>Subject Public Key Info</b> field. Call the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>
-    /// action to create your private CA. You must then call the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_GetCertificateAuthorityCertificate.html">GetCertificateAuthorityCertificate</a>
+    /// key contained in the <b>Subject Public Key Info</b> field. Call the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>
+    /// action to create your private CA. You must then call the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_GetCertificateAuthorityCertificate.html">GetCertificateAuthorityCertificate</a>
     /// action to retrieve a private CA certificate signing request (CSR). Sign the CSR with
-    /// your ACM Private CA-hosted or on-premises root or subordinate CA certificate. Call
-    /// the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ImportCertificateAuthorityCertificate.html">ImportCertificateAuthorityCertificate</a>
-    /// action to import the signed certificate into AWS Certificate Manager (ACM).
+    /// your Amazon Web Services Private CA-hosted or on-premises root or subordinate CA certificate.
+    /// Call the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_ImportCertificateAuthorityCertificate.html">ImportCertificateAuthorityCertificate</a>
+    /// action to import the signed certificate into Certificate Manager (ACM).
     /// </summary>
     public partial class CertificateAuthority
     {
@@ -55,6 +55,7 @@ namespace Amazon.ACMPCA.Model
         private string _serial;
         private CertificateAuthorityStatus _status;
         private CertificateAuthorityType _type;
+        private CertificateAuthorityUsageMode _usageMode;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -142,11 +143,11 @@ namespace Amazon.ACMPCA.Model
         /// </para>
         ///  
         /// <para>
-        /// Note: AWS Region ap-northeast-3 supports only FIPS_140_2_LEVEL_2_OR_HIGHER. You must
-        /// explicitly specify this parameter and value when creating a CA in that Region. Specifying
-        /// a different value (or no value) results in an <code>InvalidArgsException</code> with
-        /// the message "A certificate authority cannot be created in this region with the specified
-        /// security standard."
+        /// Note: Amazon Web Services Region ap-northeast-3 supports only FIPS_140_2_LEVEL_2_OR_HIGHER.
+        /// You must explicitly specify this parameter and value when creating a CA in that Region.
+        /// Specifying a different value (or no value) results in an <code>InvalidArgsException</code>
+        /// with the message "A certificate authority cannot be created in this region with the
+        /// specified security standard."
         /// </para>
         /// </summary>
         public KeyStorageSecurityStandard KeyStorageSecurityStandard
@@ -218,7 +219,7 @@ namespace Amazon.ACMPCA.Model
         /// <summary>
         /// Gets and sets the property OwnerAccount. 
         /// <para>
-        /// The AWS account ID that owns the certificate authority.
+        /// The Amazon Web Services account ID that owns the certificate authority.
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=12)]
@@ -238,7 +239,7 @@ namespace Amazon.ACMPCA.Model
         /// Gets and sets the property RestorableUntil. 
         /// <para>
         /// The period during which a deleted CA can be restored. For more information, see the
-        /// <code>PermanentDeletionTimeInDays</code> parameter of the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_DeleteCertificateAuthorityRequest.html">DeleteCertificateAuthorityRequest</a>
+        /// <code>PermanentDeletionTimeInDays</code> parameter of the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_DeleteCertificateAuthorityRequest.html">DeleteCertificateAuthorityRequest</a>
         /// action. 
         /// </para>
         /// </summary>
@@ -325,6 +326,31 @@ namespace Amazon.ACMPCA.Model
         internal bool IsSetType()
         {
             return this._type != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UsageMode. 
+        /// <para>
+        /// Specifies whether the CA issues general-purpose certificates that typically require
+        /// a revocation mechanism, or short-lived certificates that may optionally omit revocation
+        /// because they expire quickly. Short-lived certificate validity is limited to seven
+        /// days.
+        /// </para>
+        ///  
+        /// <para>
+        /// The default value is GENERAL_PURPOSE.
+        /// </para>
+        /// </summary>
+        public CertificateAuthorityUsageMode UsageMode
+        {
+            get { return this._usageMode; }
+            set { this._usageMode = value; }
+        }
+
+        // Check to see if UsageMode property is set
+        internal bool IsSetUsageMode()
+        {
+            return this._usageMode != null;
         }
 
     }

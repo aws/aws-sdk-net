@@ -31,6 +31,7 @@ namespace Amazon.GuardDuty.Model
     /// <summary>
     /// This is the response object from the GetMasterAccount operation.
     /// </summary>
+    [Obsolete("This output is deprecated, use GetAdministratorAccountResponse instead")]
     public partial class GetMasterAccountResponse : AmazonWebServiceResponse
     {
         private Master _master;

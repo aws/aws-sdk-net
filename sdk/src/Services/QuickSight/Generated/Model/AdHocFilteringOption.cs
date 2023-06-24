@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// Ad hoc (one-time) filtering option.
+    /// An ad hoc (one-time) filtering option.
     /// </summary>
     public partial class AdHocFilteringOption
     {

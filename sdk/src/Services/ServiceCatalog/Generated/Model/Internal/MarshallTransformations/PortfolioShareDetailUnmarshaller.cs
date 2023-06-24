@@ -76,6 +76,12 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
                     unmarshalledObject.PrincipalId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SharePrincipals", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.SharePrincipals = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ShareTagOptions", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;

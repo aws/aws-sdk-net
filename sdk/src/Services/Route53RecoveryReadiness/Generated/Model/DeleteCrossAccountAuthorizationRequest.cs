@@ -30,14 +30,17 @@ namespace Amazon.Route53RecoveryReadiness.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteCrossAccountAuthorization operation.
-    /// Delete cross account readiness authorization
+    /// Deletes cross account readiness authorization.
     /// </summary>
     public partial class DeleteCrossAccountAuthorizationRequest : AmazonRoute53RecoveryReadinessRequest
     {
         private string _crossAccountAuthorization;
 
         /// <summary>
-        /// Gets and sets the property CrossAccountAuthorization. The cross account authorization
+        /// Gets and sets the property CrossAccountAuthorization. 
+        /// <para>
+        /// The cross-account authorization.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string CrossAccountAuthorization

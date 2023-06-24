@@ -244,6 +244,12 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
                     unmarshalledObject.Type = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("vpcConfig", targetDepth))
+                {
+                    var unmarshaller = VpcConfigUnmarshaller.Instance;
+                    unmarshalledObject.VpcConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("webUrl", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

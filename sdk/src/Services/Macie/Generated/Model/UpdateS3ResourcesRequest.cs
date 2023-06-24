@@ -30,11 +30,12 @@ namespace Amazon.Macie.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateS3Resources operation.
-    /// Updates the classification types for the specified S3 resources. If memberAccountId
-    /// isn't specified, the action updates the classification types of the S3 resources associated
-    /// with Amazon Macie Classic for the current Macie Classic administrator account. If
-    /// memberAccountId is specified, the action updates the classification types of the S3
-    /// resources associated with Macie Classic for the specified member account.
+    /// (Discontinued) Updates the classification types for the specified S3 resources. If
+    /// <code>memberAccountId</code> isn't specified, the action updates the classification
+    /// types of the S3 resources associated with Amazon Macie Classic for the current Macie
+    /// Classic administrator account. If <code>memberAccountId</code> is specified, the action
+    /// updates the classification types of the S3 resources associated with Macie Classic
+    /// for the specified member account.
     /// </summary>
     public partial class UpdateS3ResourcesRequest : AmazonMacieRequest
     {
@@ -44,8 +45,8 @@ namespace Amazon.Macie.Model
         /// <summary>
         /// Gets and sets the property MemberAccountId. 
         /// <para>
-        /// The AWS ID of the Amazon Macie Classic member account whose S3 resources' classification
-        /// types you want to update. 
+        /// (Discontinued) The Amazon Web Services account ID of the Amazon Macie Classic member
+        /// account whose S3 resources' classification types you want to update.
         /// </para>
         /// </summary>
         public string MemberAccountId
@@ -63,7 +64,7 @@ namespace Amazon.Macie.Model
         /// <summary>
         /// Gets and sets the property S3ResourcesUpdate. 
         /// <para>
-        /// The S3 resources whose classification types you want to update.
+        /// (Discontinued) The S3 resources whose classification types you want to update.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

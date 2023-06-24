@@ -34,7 +34,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// GatewayRouteHostnameMatch Marshaller
-    /// </summary>       
+    /// </summary>
     public class GatewayRouteHostnameMatchMarshaller : IRequestMarshaller<GatewayRouteHostnameMatch, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static GatewayRouteHostnameMatchMarshaller Instance = new GatewayRouteHostnameMatchMarshaller();
 
     }

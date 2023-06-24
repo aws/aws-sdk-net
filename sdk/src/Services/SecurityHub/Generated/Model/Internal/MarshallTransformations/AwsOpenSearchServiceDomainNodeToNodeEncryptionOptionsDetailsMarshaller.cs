@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetails Marshaller
-    /// </summary>       
+    /// </summary>
     public class AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetailsMarshaller : IRequestMarshaller<AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetails, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetailsMarshaller Instance = new AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetailsMarshaller();
 
     }

@@ -43,6 +43,10 @@ namespace Amazon.KinesisVideo
         /// </summary>
         public static readonly APIName GET_HLS_STREAMING_SESSION_URL = new APIName("GET_HLS_STREAMING_SESSION_URL");
         /// <summary>
+        /// Constant GET_IMAGES for APIName
+        /// </summary>
+        public static readonly APIName GET_IMAGES = new APIName("GET_IMAGES");
+        /// <summary>
         /// Constant GET_MEDIA for APIName
         /// </summary>
         public static readonly APIName GET_MEDIA = new APIName("GET_MEDIA");
@@ -104,6 +108,10 @@ namespace Amazon.KinesisVideo
         /// Constant HTTPS for ChannelProtocol
         /// </summary>
         public static readonly ChannelProtocol HTTPS = new ChannelProtocol("HTTPS");
+        /// <summary>
+        /// Constant WEBRTC for ChannelProtocol
+        /// </summary>
+        public static readonly ChannelProtocol WEBRTC = new ChannelProtocol("WEBRTC");
         /// <summary>
         /// Constant WSS for ChannelProtocol
         /// </summary>
@@ -201,6 +209,10 @@ namespace Amazon.KinesisVideo
     {
 
         /// <summary>
+        /// Constant FULL_MESH for ChannelType
+        /// </summary>
+        public static readonly ChannelType FULL_MESH = new ChannelType("FULL_MESH");
+        /// <summary>
         /// Constant SINGLE_MASTER for ChannelType
         /// </summary>
         public static readonly ChannelType SINGLE_MASTER = new ChannelType("SINGLE_MASTER");
@@ -287,6 +299,302 @@ namespace Amazon.KinesisVideo
 
 
     /// <summary>
+    /// Constants used for properties of type ConfigurationStatus.
+    /// </summary>
+    public class ConfigurationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for ConfigurationStatus
+        /// </summary>
+        public static readonly ConfigurationStatus DISABLED = new ConfigurationStatus("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for ConfigurationStatus
+        /// </summary>
+        public static readonly ConfigurationStatus ENABLED = new ConfigurationStatus("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ConfigurationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConfigurationStatus FindValue(string value)
+        {
+            return FindValue<ConfigurationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConfigurationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Format.
+    /// </summary>
+    public class Format : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant JPEG for Format
+        /// </summary>
+        public static readonly Format JPEG = new Format("JPEG");
+        /// <summary>
+        /// Constant PNG for Format
+        /// </summary>
+        public static readonly Format PNG = new Format("PNG");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Format(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Format FindValue(string value)
+        {
+            return FindValue<Format>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Format(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FormatConfigKey.
+    /// </summary>
+    public class FormatConfigKey : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant JPEGQuality for FormatConfigKey
+        /// </summary>
+        public static readonly FormatConfigKey JPEGQuality = new FormatConfigKey("JPEGQuality");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FormatConfigKey(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FormatConfigKey FindValue(string value)
+        {
+            return FindValue<FormatConfigKey>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FormatConfigKey(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ImageSelectorType.
+    /// </summary>
+    public class ImageSelectorType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PRODUCER_TIMESTAMP for ImageSelectorType
+        /// </summary>
+        public static readonly ImageSelectorType PRODUCER_TIMESTAMP = new ImageSelectorType("PRODUCER_TIMESTAMP");
+        /// <summary>
+        /// Constant SERVER_TIMESTAMP for ImageSelectorType
+        /// </summary>
+        public static readonly ImageSelectorType SERVER_TIMESTAMP = new ImageSelectorType("SERVER_TIMESTAMP");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ImageSelectorType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ImageSelectorType FindValue(string value)
+        {
+            return FindValue<ImageSelectorType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ImageSelectorType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MediaStorageConfigurationStatus.
+    /// </summary>
+    public class MediaStorageConfigurationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for MediaStorageConfigurationStatus
+        /// </summary>
+        public static readonly MediaStorageConfigurationStatus DISABLED = new MediaStorageConfigurationStatus("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for MediaStorageConfigurationStatus
+        /// </summary>
+        public static readonly MediaStorageConfigurationStatus ENABLED = new MediaStorageConfigurationStatus("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MediaStorageConfigurationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MediaStorageConfigurationStatus FindValue(string value)
+        {
+            return FindValue<MediaStorageConfigurationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MediaStorageConfigurationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MediaUriType.
+    /// </summary>
+    public class MediaUriType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FILE_URI for MediaUriType
+        /// </summary>
+        public static readonly MediaUriType FILE_URI = new MediaUriType("FILE_URI");
+        /// <summary>
+        /// Constant RTSP_URI for MediaUriType
+        /// </summary>
+        public static readonly MediaUriType RTSP_URI = new MediaUriType("RTSP_URI");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MediaUriType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MediaUriType FindValue(string value)
+        {
+            return FindValue<MediaUriType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MediaUriType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Status.
     /// </summary>
     public class Status : ConstantClass
@@ -338,6 +646,122 @@ namespace Amazon.KinesisVideo
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Status(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type StrategyOnFullSize.
+    /// </summary>
+    public class StrategyOnFullSize : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DELETE_OLDEST_MEDIA for StrategyOnFullSize
+        /// </summary>
+        public static readonly StrategyOnFullSize DELETE_OLDEST_MEDIA = new StrategyOnFullSize("DELETE_OLDEST_MEDIA");
+        /// <summary>
+        /// Constant DENY_NEW_MEDIA for StrategyOnFullSize
+        /// </summary>
+        public static readonly StrategyOnFullSize DENY_NEW_MEDIA = new StrategyOnFullSize("DENY_NEW_MEDIA");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public StrategyOnFullSize(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StrategyOnFullSize FindValue(string value)
+        {
+            return FindValue<StrategyOnFullSize>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StrategyOnFullSize(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SyncStatus.
+    /// </summary>
+    public class SyncStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACKNOWLEDGED for SyncStatus
+        /// </summary>
+        public static readonly SyncStatus ACKNOWLEDGED = new SyncStatus("ACKNOWLEDGED");
+        /// <summary>
+        /// Constant DELETE_FAILED for SyncStatus
+        /// </summary>
+        public static readonly SyncStatus DELETE_FAILED = new SyncStatus("DELETE_FAILED");
+        /// <summary>
+        /// Constant DELETING for SyncStatus
+        /// </summary>
+        public static readonly SyncStatus DELETING = new SyncStatus("DELETING");
+        /// <summary>
+        /// Constant IN_SYNC for SyncStatus
+        /// </summary>
+        public static readonly SyncStatus IN_SYNC = new SyncStatus("IN_SYNC");
+        /// <summary>
+        /// Constant SYNC_FAILED for SyncStatus
+        /// </summary>
+        public static readonly SyncStatus SYNC_FAILED = new SyncStatus("SYNC_FAILED");
+        /// <summary>
+        /// Constant SYNCING for SyncStatus
+        /// </summary>
+        public static readonly SyncStatus SYNCING = new SyncStatus("SYNCING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SyncStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SyncStatus FindValue(string value)
+        {
+            return FindValue<SyncStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SyncStatus(string value)
         {
             return FindValue(value);
         }

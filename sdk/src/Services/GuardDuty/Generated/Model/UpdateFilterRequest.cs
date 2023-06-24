@@ -63,7 +63,10 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description of the filter.
+        /// The description of the filter. Valid characters include alphanumeric characters, and
+        /// special characters such as hyphen, period, colon, underscore, parentheses (<code>{
+        /// }</code>, <code>[ ]</code>, and <code>( )</code>), forward slash, horizontal tab,
+        /// vertical tab, newline, form feed, return, and whitespace.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=512)]

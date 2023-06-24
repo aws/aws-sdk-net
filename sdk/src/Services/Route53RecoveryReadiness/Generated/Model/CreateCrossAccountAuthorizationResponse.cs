@@ -36,7 +36,10 @@ namespace Amazon.Route53RecoveryReadiness.Model
         private string _crossAccountAuthorization;
 
         /// <summary>
-        /// Gets and sets the property CrossAccountAuthorization. The cross account authorization
+        /// Gets and sets the property CrossAccountAuthorization. 
+        /// <para>
+        /// The cross-account authorization.
+        /// </para>
         /// </summary>
         public string CrossAccountAuthorization
         {

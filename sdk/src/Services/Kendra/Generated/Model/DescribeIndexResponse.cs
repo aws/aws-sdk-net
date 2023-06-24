@@ -53,10 +53,12 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property CapacityUnits. 
         /// <para>
-        /// For Enterprise edition indexes, you can choose to use additional capacity to meet
+        /// For Enterprise Edition indexes, you can choose to use additional capacity to meet
         /// the needs of your application. This contains the capacity units used for the index.
-        /// A 0 for the query capacity or the storage capacity indicates that the index is using
-        /// the default capacity for the index.
+        /// A query or document storage capacity of zero indicates that the index is using the
+        /// default capacity. For more information on the default capacity for an index and adjusting
+        /// this, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/adjusting-capacity.html">Adjusting
+        /// capacity</a>.
         /// </para>
         /// </summary>
         public CapacityUnitsConfiguration CapacityUnits
@@ -74,7 +76,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The Unix datetime that the index was created.
+        /// The Unix timestamp when the index was created.
         /// </para>
         /// </summary>
         public DateTime CreatedAt
@@ -92,7 +94,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description of the index.
+        /// The description for the index.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1000)]
@@ -111,7 +113,9 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property DocumentMetadataConfigurations. 
         /// <para>
-        /// Configuration settings for any metadata applied to the documents in the index.
+        /// Configuration information for document metadata or fields. Document metadata are fields
+        /// or attributes associated with your documents. For example, the company department
+        /// name associated with each document.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=500)]
@@ -149,7 +153,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property ErrorMessage. 
         /// <para>
-        /// When th e<code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code>
+        /// When the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code>
         /// field contains a message that explains why.
         /// </para>
         /// </summary>
@@ -169,7 +173,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The name of the index.
+        /// The identifier of the index.
         /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=36)]
@@ -246,8 +250,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property ServerSideEncryptionConfiguration. 
         /// <para>
-        /// The identifier of the KMScustomer master key (CMK) used to encrypt your data. Amazon
-        /// Kendra doesn't support asymmetric CMKs.
+        /// The identifier of the KMScustomer master key (CMK) that is used to encrypt your data.
+        /// Amazon Kendra doesn't support asymmetric CMKs.
         /// </para>
         /// </summary>
         public ServerSideEncryptionConfiguration ServerSideEncryptionConfiguration
@@ -285,7 +289,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property UpdatedAt. 
         /// <para>
-        /// The Unix datetime that the index was last updated.
+        /// The Unix when the index was last updated.
         /// </para>
         /// </summary>
         public DateTime UpdatedAt
@@ -321,8 +325,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property UserGroupResolutionConfiguration. 
         /// <para>
-        /// Shows whether you have enabled the configuration for fetching access levels of groups
-        /// and users from an Amazon Web Services Single Sign On identity source.
+        /// Whether you have enabled the configuration for fetching access levels of groups and
+        /// users from an IAM Identity Center (successor to Single Sign-On) identity source.
         /// </para>
         /// </summary>
         public UserGroupResolutionConfiguration UserGroupResolutionConfiguration

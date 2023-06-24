@@ -34,7 +34,7 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AllRowsWildcard Marshaller
-    /// </summary>       
+    /// </summary>
     public class AllRowsWildcardMarshaller : IRequestMarshaller<AllRowsWildcard, JsonMarshallerContext> 
     {
         /// <summary>
@@ -49,7 +49,7 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AllRowsWildcardMarshaller Instance = new AllRowsWildcardMarshaller();
 
     }

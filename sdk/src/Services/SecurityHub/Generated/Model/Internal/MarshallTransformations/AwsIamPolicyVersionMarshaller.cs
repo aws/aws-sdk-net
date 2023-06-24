@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AwsIamPolicyVersion Marshaller
-    /// </summary>       
+    /// </summary>
     public class AwsIamPolicyVersionMarshaller : IRequestMarshaller<AwsIamPolicyVersion, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AwsIamPolicyVersionMarshaller Instance = new AwsIamPolicyVersionMarshaller();
 
     }

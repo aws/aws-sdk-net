@@ -44,7 +44,7 @@ namespace Amazon.AuditManager.Model
         ///  The list of controls that are contained within the control set. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
+        [AWSProperty(Required=true, Min=1)]
         public List<CreateAssessmentFrameworkControl> Controls
         {
             get { return this._controls; }

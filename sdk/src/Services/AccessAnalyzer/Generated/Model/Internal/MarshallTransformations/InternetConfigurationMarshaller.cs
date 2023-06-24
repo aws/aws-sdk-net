@@ -34,7 +34,7 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// InternetConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class InternetConfigurationMarshaller : IRequestMarshaller<InternetConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -49,7 +49,7 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static InternetConfigurationMarshaller Instance = new InternetConfigurationMarshaller();
 
     }

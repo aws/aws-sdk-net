@@ -34,7 +34,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AudioDescription Marshaller
-    /// </summary>       
+    /// </summary>
     public class AudioDescriptionMarshaller : IRequestMarshaller<AudioDescription, JsonMarshallerContext> 
     {
         /// <summary>
@@ -135,7 +135,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AudioDescriptionMarshaller Instance = new AudioDescriptionMarshaller();
 
     }

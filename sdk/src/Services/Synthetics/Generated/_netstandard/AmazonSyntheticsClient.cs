@@ -251,6 +251,15 @@ namespace Amazon.Synthetics
         } 
 
         /// <summary>
+        /// Customizes the runtime pipeline.
+        /// </summary>
+        /// <param name="pipeline">Runtime pipeline for the current client.</param>
+        protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
+        {
+            pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonSyntheticsEndpointResolver());
+        }
+        /// <summary>
         /// Capture metadata for the service.
         /// </summary>
         protected override IServiceMetadata ServiceMetadata
@@ -276,6 +285,62 @@ namespace Amazon.Synthetics
         #endregion
 
 
+        #region  AssociateResource
+
+        internal virtual AssociateResourceResponse AssociateResource(AssociateResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateResourceResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateResourceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Associates a canary with a group. Using groups can help you with managing and automating
+        /// your canaries, and you can also view aggregated run results and statistics for all
+        /// canaries in a group. 
+        /// 
+        ///  
+        /// <para>
+        /// You must run this operation in the Region where the canary exists.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociateResource service method, as returned by Synthetics.</returns>
+        /// <exception cref="Amazon.Synthetics.Model.ConflictException">
+        /// A conflicting operation is already in progress.
+        /// </exception>
+        /// <exception cref="Amazon.Synthetics.Model.InternalServerException">
+        /// An unknown internal error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Synthetics.Model.ResourceNotFoundException">
+        /// One of the specified resources was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Synthetics.Model.ServiceQuotaExceededException">
+        /// The request exceeded a service quota value.
+        /// </exception>
+        /// <exception cref="Amazon.Synthetics.Model.ValidationException">
+        /// A parameter could not be validated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/synthetics-2017-10-11/AssociateResource">REST API Reference for AssociateResource Operation</seealso>
+        public virtual Task<AssociateResourceResponse> AssociateResourceAsync(AssociateResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateResourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AssociateResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateCanary
 
         internal virtual CreateCanaryResponse CreateCanary(CreateCanaryRequest request)
@@ -303,7 +368,7 @@ namespace Amazon.Synthetics
         ///  
         /// <para>
         /// To create canaries, you must have the <code>CloudWatchSyntheticsFullAccess</code>
-        /// policy. If you are creating a new IAM role for the canary, you also need the the <code>iam:CreateRole</code>,
+        /// policy. If you are creating a new IAM role for the canary, you also need the <code>iam:CreateRole</code>,
         /// <code>iam:CreatePolicy</code> and <code>iam:AttachRolePolicy</code> permissions. For
         /// more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Roles">Necessary
         /// Roles and Permissions</a>.
@@ -325,6 +390,9 @@ namespace Amazon.Synthetics
         /// <exception cref="Amazon.Synthetics.Model.InternalServerException">
         /// An unknown internal error occurred.
         /// </exception>
+        /// <exception cref="Amazon.Synthetics.Model.RequestEntityTooLargeException">
+        /// One of the input resources is larger than is allowed.
+        /// </exception>
         /// <exception cref="Amazon.Synthetics.Model.ValidationException">
         /// A parameter could not be validated.
         /// </exception>
@@ -336,6 +404,76 @@ namespace Amazon.Synthetics
             options.ResponseUnmarshaller = CreateCanaryResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateCanaryResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateGroup
+
+        internal virtual CreateGroupResponse CreateGroup(CreateGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateGroupResponseUnmarshaller.Instance;
+
+            return Invoke<CreateGroupResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a group which you can use to associate canaries with each other, including
+        /// cross-Region canaries. Using groups can help you with managing and automating your
+        /// canaries, and you can also view aggregated run results and statistics for all canaries
+        /// in a group. 
+        /// 
+        ///  
+        /// <para>
+        /// Groups are global resources. When you create a group, it is replicated across Amazon
+        /// Web Services Regions, and you can view it and add canaries to it from any Region.
+        /// Although the group ARN format reflects the Region name where it was created, a group
+        /// is not constrained to any Region. This means that you can put canaries from multiple
+        /// Regions into the same group, and then use that group to view and manage all of those
+        /// canaries in a single view.
+        /// </para>
+        ///  
+        /// <para>
+        /// Groups are supported in all Regions except the Regions that are disabled by default.
+        /// For more information about these Regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande-manage.html#rande-manage-enable">Enabling
+        /// a Region</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Each group can contain as many as 10 canaries. You can have as many as 20 groups in
+        /// your account. Any single canary can be a member of up to 10 groups.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateGroup service method, as returned by Synthetics.</returns>
+        /// <exception cref="Amazon.Synthetics.Model.ConflictException">
+        /// A conflicting operation is already in progress.
+        /// </exception>
+        /// <exception cref="Amazon.Synthetics.Model.InternalServerException">
+        /// An unknown internal error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Synthetics.Model.ServiceQuotaExceededException">
+        /// The request exceeded a service quota value.
+        /// </exception>
+        /// <exception cref="Amazon.Synthetics.Model.ValidationException">
+        /// A parameter could not be validated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/synthetics-2017-10-11/CreateGroup">REST API Reference for CreateGroup Operation</seealso>
+        public virtual Task<CreateGroupResponse> CreateGroupAsync(CreateGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateGroupResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateGroupResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -358,16 +496,16 @@ namespace Amazon.Synthetics
         /// 
         ///  
         /// <para>
-        /// When you delete a canary, resources used and created by the canary are not automatically
-        /// deleted. After you delete a canary that you do not intend to use again, you should
-        /// also delete the following:
+        /// If you specify <code>DeleteLambda</code> to <code>true</code>, CloudWatch Synthetics
+        /// also deletes the Lambda functions and layers that are used by the canary.
+        /// </para>
+        ///  
+        /// <para>
+        /// Other resources used and created by the canary are not automatically deleted. After
+        /// you delete a canary that you do not intend to use again, you should also delete the
+        /// following:
         /// </para>
         ///  <ul> <li> 
-        /// <para>
-        /// The Lambda functions and layers used by this canary. These have the prefix <code>cwsyn-<i>MyCanaryName</i>
-        /// </code>.
-        /// </para>
-        ///  </li> <li> 
         /// <para>
         /// The CloudWatch alarms created for this canary. These alarms have a name of <code>Synthetics-SharpDrop-Alarm-<i>MyCanaryName</i>
         /// </code>.
@@ -424,6 +562,60 @@ namespace Amazon.Synthetics
 
         #endregion
         
+        #region  DeleteGroup
+
+        internal virtual DeleteGroupResponse DeleteGroup(DeleteGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteGroupResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteGroupResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a group. The group doesn't need to be empty to be deleted. If there are canaries
+        /// in the group, they are not deleted when you delete the group. 
+        /// 
+        ///  
+        /// <para>
+        /// Groups are a global resource that appear in all Regions, but the request to delete
+        /// a group must be made from its home Region. You can find the home Region of a group
+        /// within its ARN.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteGroup service method, as returned by Synthetics.</returns>
+        /// <exception cref="Amazon.Synthetics.Model.ConflictException">
+        /// A conflicting operation is already in progress.
+        /// </exception>
+        /// <exception cref="Amazon.Synthetics.Model.InternalServerException">
+        /// An unknown internal error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Synthetics.Model.ResourceNotFoundException">
+        /// One of the specified resources was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Synthetics.Model.ValidationException">
+        /// A parameter could not be validated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/synthetics-2017-10-11/DeleteGroup">REST API Reference for DeleteGroup Operation</seealso>
+        public virtual Task<DeleteGroupResponse> DeleteGroupAsync(DeleteGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteGroupResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteGroupResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeCanaries
 
         internal virtual DescribeCanariesResponse DescribeCanaries(DescribeCanariesRequest request)
@@ -443,10 +635,18 @@ namespace Amazon.Synthetics
         /// 
         ///  
         /// <para>
-        /// This operation does not have resource-level authorization, so if a user is able to
-        /// use <code>DescribeCanaries</code>, the user can see all of the canaries in the account.
-        /// A deny policy can only be used to restrict access to all canaries. It cannot be used
-        /// on specific resources. 
+        /// This operation supports resource-level authorization using an IAM policy and the <code>Names</code>
+        /// parameter. If you specify the <code>Names</code> parameter, the operation is successful
+        /// only if you have authorization to view all the canaries that you specify in your request.
+        /// If you do not have permission to view any of the canaries, the request fails with
+        /// a 403 response.
+        /// </para>
+        ///  
+        /// <para>
+        /// You are required to use the <code>Names</code> parameter if you are logged on to a
+        /// user or role that has an IAM policy that restricts which canaries that you are allowed
+        /// to view. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Restricted.html">
+        /// Limiting a user to viewing specific canaries</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeCanaries service method.</param>
@@ -489,6 +689,22 @@ namespace Amazon.Synthetics
         /// <summary>
         /// Use this operation to see information from the most recent run of each canary that
         /// you have created.
+        /// 
+        ///  
+        /// <para>
+        /// This operation supports resource-level authorization using an IAM policy and the <code>Names</code>
+        /// parameter. If you specify the <code>Names</code> parameter, the operation is successful
+        /// only if you have authorization to view all the canaries that you specify in your request.
+        /// If you do not have permission to view any of the canaries, the request fails with
+        /// a 403 response.
+        /// </para>
+        ///  
+        /// <para>
+        /// You are required to use the <code>Names</code> parameter if you are logged on to a
+        /// user or role that has an IAM policy that restricts which canaries that you are allowed
+        /// to view. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Restricted.html">
+        /// Limiting a user to viewing specific canaries</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeCanariesLastRun service method.</param>
         /// <param name="cancellationToken">
@@ -552,6 +768,53 @@ namespace Amazon.Synthetics
             options.ResponseUnmarshaller = DescribeRuntimeVersionsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeRuntimeVersionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DisassociateResource
+
+        internal virtual DisassociateResourceResponse DisassociateResource(DisassociateResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateResourceResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateResourceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Removes a canary from a group. You must run this operation in the Region where the
+        /// canary exists.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociateResource service method, as returned by Synthetics.</returns>
+        /// <exception cref="Amazon.Synthetics.Model.ConflictException">
+        /// A conflicting operation is already in progress.
+        /// </exception>
+        /// <exception cref="Amazon.Synthetics.Model.InternalServerException">
+        /// An unknown internal error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Synthetics.Model.ResourceNotFoundException">
+        /// One of the specified resources was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Synthetics.Model.ValidationException">
+        /// A parameter could not be validated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/synthetics-2017-10-11/DisassociateResource">REST API Reference for DisassociateResource Operation</seealso>
+        public virtual Task<DisassociateResourceResponse> DisassociateResourceAsync(DisassociateResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateResourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DisassociateResourceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -640,6 +903,185 @@ namespace Amazon.Synthetics
 
         #endregion
         
+        #region  GetGroup
+
+        internal virtual GetGroupResponse GetGroup(GetGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetGroupResponseUnmarshaller.Instance;
+
+            return Invoke<GetGroupResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns information about one group. Groups are a global resource, so you can use
+        /// this operation from any Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetGroup service method, as returned by Synthetics.</returns>
+        /// <exception cref="Amazon.Synthetics.Model.ConflictException">
+        /// A conflicting operation is already in progress.
+        /// </exception>
+        /// <exception cref="Amazon.Synthetics.Model.InternalServerException">
+        /// An unknown internal error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Synthetics.Model.ResourceNotFoundException">
+        /// One of the specified resources was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Synthetics.Model.ValidationException">
+        /// A parameter could not be validated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/synthetics-2017-10-11/GetGroup">REST API Reference for GetGroup Operation</seealso>
+        public virtual Task<GetGroupResponse> GetGroupAsync(GetGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetGroupResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetGroupResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListAssociatedGroups
+
+        internal virtual ListAssociatedGroupsResponse ListAssociatedGroups(ListAssociatedGroupsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAssociatedGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAssociatedGroupsResponseUnmarshaller.Instance;
+
+            return Invoke<ListAssociatedGroupsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns a list of the groups that the specified canary is associated with. The canary
+        /// that you specify must be in the current Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAssociatedGroups service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAssociatedGroups service method, as returned by Synthetics.</returns>
+        /// <exception cref="Amazon.Synthetics.Model.InternalServerException">
+        /// An unknown internal error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Synthetics.Model.ResourceNotFoundException">
+        /// One of the specified resources was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Synthetics.Model.ValidationException">
+        /// A parameter could not be validated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/synthetics-2017-10-11/ListAssociatedGroups">REST API Reference for ListAssociatedGroups Operation</seealso>
+        public virtual Task<ListAssociatedGroupsResponse> ListAssociatedGroupsAsync(ListAssociatedGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAssociatedGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAssociatedGroupsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListAssociatedGroupsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListGroupResources
+
+        internal virtual ListGroupResourcesResponse ListGroupResources(ListGroupResourcesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListGroupResourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListGroupResourcesResponseUnmarshaller.Instance;
+
+            return Invoke<ListGroupResourcesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// This operation returns a list of the ARNs of the canaries that are associated with
+        /// the specified group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListGroupResources service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListGroupResources service method, as returned by Synthetics.</returns>
+        /// <exception cref="Amazon.Synthetics.Model.ConflictException">
+        /// A conflicting operation is already in progress.
+        /// </exception>
+        /// <exception cref="Amazon.Synthetics.Model.InternalServerException">
+        /// An unknown internal error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Synthetics.Model.ResourceNotFoundException">
+        /// One of the specified resources was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Synthetics.Model.ValidationException">
+        /// A parameter could not be validated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/synthetics-2017-10-11/ListGroupResources">REST API Reference for ListGroupResources Operation</seealso>
+        public virtual Task<ListGroupResourcesResponse> ListGroupResourcesAsync(ListGroupResourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListGroupResourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListGroupResourcesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListGroupResourcesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListGroups
+
+        internal virtual ListGroupsResponse ListGroups(ListGroupsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListGroupsResponseUnmarshaller.Instance;
+
+            return Invoke<ListGroupsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns a list of all groups in the account, displaying their names, unique IDs, and
+        /// ARNs. The groups from all Regions are returned.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListGroups service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListGroups service method, as returned by Synthetics.</returns>
+        /// <exception cref="Amazon.Synthetics.Model.InternalServerException">
+        /// An unknown internal error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Synthetics.Model.ValidationException">
+        /// A parameter could not be validated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/synthetics-2017-10-11/ListGroups">REST API Reference for ListGroups Operation</seealso>
+        public virtual Task<ListGroupsResponse> ListGroupsAsync(ListGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListGroupsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListGroupsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListTagsForResource
 
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
@@ -654,7 +1096,7 @@ namespace Amazon.Synthetics
 
 
         /// <summary>
-        /// Displays the tags associated with a canary.
+        /// Displays the tags associated with a canary or group.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// <param name="cancellationToken">
@@ -662,14 +1104,20 @@ namespace Amazon.Synthetics
         /// </param>
         /// 
         /// <returns>The response from the ListTagsForResource service method, as returned by Synthetics.</returns>
-        /// <exception cref="Amazon.Synthetics.Model.InternalServerException">
-        /// An unknown internal error occurred.
+        /// <exception cref="Amazon.Synthetics.Model.BadRequestException">
+        /// The request was not valid.
         /// </exception>
-        /// <exception cref="Amazon.Synthetics.Model.ResourceNotFoundException">
-        /// One of the specified resources was not found.
+        /// <exception cref="Amazon.Synthetics.Model.ConflictException">
+        /// A conflicting operation is already in progress.
         /// </exception>
-        /// <exception cref="Amazon.Synthetics.Model.ValidationException">
-        /// A parameter could not be validated.
+        /// <exception cref="Amazon.Synthetics.Model.InternalFailureException">
+        /// An internal failure occurred. Try the operation again.
+        /// </exception>
+        /// <exception cref="Amazon.Synthetics.Model.NotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Synthetics.Model.TooManyRequestsException">
+        /// There were too many simultaneous requests. Try the operation again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/synthetics-2017-10-11/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -745,10 +1193,9 @@ namespace Amazon.Synthetics
 
 
         /// <summary>
-        /// Stops the canary to prevent all future runs. If the canary is currently running, Synthetics
-        /// stops waiting for the current run of the specified canary to complete. The run that
-        /// is in progress completes on its own, publishes metrics, and uploads artifacts, but
-        /// it is not recorded in Synthetics as a completed run.
+        /// Stops the canary to prevent all future runs. If the canary is currently running,the
+        /// run that is in progress completes on its own, publishes metrics, and uploads artifacts,
+        /// but it is not recorded in Synthetics as a completed run.
         /// 
         ///  
         /// <para>
@@ -800,7 +1247,7 @@ namespace Amazon.Synthetics
 
 
         /// <summary>
-        /// Assigns one or more tags (key-value pairs) to the specified canary. 
+        /// Assigns one or more tags (key-value pairs) to the specified canary or group. 
         /// 
         ///  
         /// <para>
@@ -815,15 +1262,15 @@ namespace Amazon.Synthetics
         /// </para>
         ///  
         /// <para>
-        /// You can use the <code>TagResource</code> action with a canary that already has tags.
-        /// If you specify a new tag key for the alarm, this tag is appended to the list of tags
-        /// associated with the alarm. If you specify a tag key that is already associated with
-        /// the alarm, the new tag value that you specify replaces the previous value for that
-        /// tag.
+        /// You can use the <code>TagResource</code> action with a resource that already has tags.
+        /// If you specify a new tag key for the resource, this tag is appended to the list of
+        /// tags associated with the resource. If you specify a tag key that is already associated
+        /// with the resource, the new tag value that you specify replaces the previous value
+        /// for that tag.
         /// </para>
         ///  
         /// <para>
-        /// You can associate as many as 50 tags with a canary.
+        /// You can associate as many as 50 tags with a canary or group.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
@@ -832,14 +1279,20 @@ namespace Amazon.Synthetics
         /// </param>
         /// 
         /// <returns>The response from the TagResource service method, as returned by Synthetics.</returns>
-        /// <exception cref="Amazon.Synthetics.Model.InternalServerException">
-        /// An unknown internal error occurred.
+        /// <exception cref="Amazon.Synthetics.Model.BadRequestException">
+        /// The request was not valid.
         /// </exception>
-        /// <exception cref="Amazon.Synthetics.Model.ResourceNotFoundException">
-        /// One of the specified resources was not found.
+        /// <exception cref="Amazon.Synthetics.Model.ConflictException">
+        /// A conflicting operation is already in progress.
         /// </exception>
-        /// <exception cref="Amazon.Synthetics.Model.ValidationException">
-        /// A parameter could not be validated.
+        /// <exception cref="Amazon.Synthetics.Model.InternalFailureException">
+        /// An internal failure occurred. Try the operation again.
+        /// </exception>
+        /// <exception cref="Amazon.Synthetics.Model.NotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Synthetics.Model.TooManyRequestsException">
+        /// There were too many simultaneous requests. Try the operation again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/synthetics-2017-10-11/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -867,7 +1320,7 @@ namespace Amazon.Synthetics
 
 
         /// <summary>
-        /// Removes one or more tags from the specified canary.
+        /// Removes one or more tags from the specified resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// <param name="cancellationToken">
@@ -875,14 +1328,20 @@ namespace Amazon.Synthetics
         /// </param>
         /// 
         /// <returns>The response from the UntagResource service method, as returned by Synthetics.</returns>
-        /// <exception cref="Amazon.Synthetics.Model.InternalServerException">
-        /// An unknown internal error occurred.
+        /// <exception cref="Amazon.Synthetics.Model.BadRequestException">
+        /// The request was not valid.
         /// </exception>
-        /// <exception cref="Amazon.Synthetics.Model.ResourceNotFoundException">
-        /// One of the specified resources was not found.
+        /// <exception cref="Amazon.Synthetics.Model.ConflictException">
+        /// A conflicting operation is already in progress.
         /// </exception>
-        /// <exception cref="Amazon.Synthetics.Model.ValidationException">
-        /// A parameter could not be validated.
+        /// <exception cref="Amazon.Synthetics.Model.InternalFailureException">
+        /// An internal failure occurred. Try the operation again.
+        /// </exception>
+        /// <exception cref="Amazon.Synthetics.Model.NotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Synthetics.Model.TooManyRequestsException">
+        /// There were too many simultaneous requests. Try the operation again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/synthetics-2017-10-11/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -910,7 +1369,7 @@ namespace Amazon.Synthetics
 
 
         /// <summary>
-        /// Use this operation to change the settings of a canary that has already been created.
+        /// Updates the configuration of a canary that has already been created.
         /// 
         ///  
         /// <para>
@@ -929,6 +1388,9 @@ namespace Amazon.Synthetics
         /// </exception>
         /// <exception cref="Amazon.Synthetics.Model.InternalServerException">
         /// An unknown internal error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Synthetics.Model.RequestEntityTooLargeException">
+        /// One of the input resources is larger than is allowed.
         /// </exception>
         /// <exception cref="Amazon.Synthetics.Model.ResourceNotFoundException">
         /// One of the specified resources was not found.

@@ -82,6 +82,12 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
                     unmarshalledObject.CollectionBindingProperties = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("componentName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ComponentName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("concat", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<ComponentProperty, ComponentPropertyUnmarshaller>(ComponentPropertyUnmarshaller.Instance);
@@ -122,6 +128,12 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Model = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("property", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Property = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("type", targetDepth))

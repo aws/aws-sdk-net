@@ -70,6 +70,12 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
                     unmarshalledObject.Bucket = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("KeyPattern", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.KeyPattern = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Prefix", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

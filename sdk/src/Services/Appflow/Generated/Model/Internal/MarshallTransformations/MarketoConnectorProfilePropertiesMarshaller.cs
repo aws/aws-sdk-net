@@ -34,7 +34,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// MarketoConnectorProfileProperties Marshaller
-    /// </summary>       
+    /// </summary>
     public class MarketoConnectorProfilePropertiesMarshaller : IRequestMarshaller<MarketoConnectorProfileProperties, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static MarketoConnectorProfilePropertiesMarshaller Instance = new MarketoConnectorProfilePropertiesMarshaller();
 
     }

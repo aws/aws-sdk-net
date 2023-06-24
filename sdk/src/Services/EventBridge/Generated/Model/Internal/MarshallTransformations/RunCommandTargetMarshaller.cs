@@ -34,7 +34,7 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RunCommandTarget Marshaller
-    /// </summary>       
+    /// </summary>
     public class RunCommandTargetMarshaller : IRequestMarshaller<RunCommandTarget, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RunCommandTargetMarshaller Instance = new RunCommandTargetMarshaller();
 
     }

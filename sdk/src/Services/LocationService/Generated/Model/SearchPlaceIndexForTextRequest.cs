@@ -53,6 +53,7 @@ namespace Amazon.LocationService.Model
     {
         private List<double> _biasPosition = new List<double>();
         private List<double> _filterBBox = new List<double>();
+        private List<string> _filterCategories = new List<string>();
         private List<string> _filterCountries = new List<string>();
         private string _indexName;
         private string _language;
@@ -83,7 +84,7 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  </note>
         /// </summary>
-        [AWSProperty(Min=2, Max=2)]
+        [AWSProperty(Sensitive=true, Min=2, Max=2)]
         public List<double> BiasPosition
         {
             get { return this._biasPosition; }
@@ -123,7 +124,7 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  </note>
         /// </summary>
-        [AWSProperty(Min=4, Max=4)]
+        [AWSProperty(Sensitive=true, Min=4, Max=4)]
         public List<double> FilterBBox
         {
             get { return this._filterBBox; }
@@ -134,6 +135,33 @@ namespace Amazon.LocationService.Model
         internal bool IsSetFilterBBox()
         {
             return this._filterBBox != null && this._filterBBox.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property FilterCategories. 
+        /// <para>
+        /// A list of one or more Amazon Location categories to filter the returned places. If
+        /// you include more than one category, the results will include results that match <i>any</i>
+        /// of the categories listed.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about using categories, including a list of Amazon Location categories,
+        /// see <a href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories
+        /// and filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=5)]
+        public List<string> FilterCategories
+        {
+            get { return this._filterCategories; }
+            set { this._filterCategories = value; }
+        }
+
+        // Check to see if FilterCategories property is set
+        internal bool IsSetFilterCategories()
+        {
+            return this._filterCategories != null && this._filterCategories.Count > 0; 
         }
 
         /// <summary>
@@ -190,9 +218,25 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  
         /// <para>
-        /// This setting affects the languages used in the results. It does not change which results
-        /// are returned. If the language is not specified, or not supported for a particular
-        /// result, the partner automatically chooses a language for the result.
+        /// This setting affects the languages used in the results, but not the results themselves.
+        /// If no language is specified, or not supported for a particular result, the partner
+        /// automatically chooses a language for the result.
+        /// </para>
+        ///  
+        /// <para>
+        /// For an example, we'll use the Greek language. You search for <code>Athens, Greece</code>,
+        /// with the <code>language</code> parameter set to <code>en</code>. The result found
+        /// will most likely be returned as <code>Athens</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you set the <code>language</code> parameter to <code>el</code>, for Greek, then
+        /// the result found will more likely be returned as <code>Αθήνα</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the data provider does not have a value for Greek, the result will be in a language
+        /// that the provider does support.
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=35)]
@@ -238,7 +282,7 @@ namespace Amazon.LocationService.Model
         /// For example, <code>123 Any Street</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=200)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=200)]
         public string Text
         {
             get { return this._text; }

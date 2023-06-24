@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// The contact flow has not been published.
+    /// The flow has not been published.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

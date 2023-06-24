@@ -31,7 +31,7 @@ namespace Amazon.Detective.Model
     /// <summary>
     /// Container for the parameters to the ListInvitations operation.
     /// Retrieves the list of open and accepted behavior graph invitations for the member
-    /// account. This operation can only be called by a member account.
+    /// account. This operation can only be called by an invited member account.
     /// 
     ///  
     /// <para>

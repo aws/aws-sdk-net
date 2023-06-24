@@ -31,8 +31,7 @@ namespace Amazon.GameLift.Model
     /// <summary>
     /// Ticket generated to track the progress of a matchmaking request. Each ticket is uniquely
     /// identified by a ticket ID, supplied by the requester, when creating a matchmaking
-    /// request with <a>StartMatchmaking</a>. Tickets can be retrieved by calling <a>DescribeMatchmaking</a>
-    /// with the ticket ID.
+    /// request.
     /// </summary>
     public partial class MatchmakingTicket
     {
@@ -71,9 +70,9 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property ConfigurationName. 
         /// <para>
-        /// Name of the <a>MatchmakingConfiguration</a> that is used with this ticket. Matchmaking
-        /// configurations determine how players are grouped into a match and how a new game session
-        /// is created for the match.
+        /// Name of the matchmaking configuration that is used with this ticket. Matchmaking configurations
+        /// determine how players are grouped into a match and how a new game session is created
+        /// for the match.
         /// </para>
         /// </summary>
         [AWSProperty(Max=128)]
@@ -92,9 +91,9 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property EndTime. 
         /// <para>
-        /// Time stamp indicating when this matchmaking request stopped being processed due to
-        /// success, failure, or cancellation. Format is a number expressed in Unix time as milliseconds
-        /// (for example <code>"1469498468.057"</code>).
+        /// Time stamp indicating when the matchmaking request stopped being processed due to
+        /// successful completion, timeout, or cancellation. Format is a number expressed in Unix
+        /// time as milliseconds (for example <code>"1469498468.057"</code>).
         /// </para>
         /// </summary>
         public DateTime EndTime
@@ -132,10 +131,10 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property GameSessionConnectionInfo. 
         /// <para>
-        /// Identifier and connection information of the game session created for the match. This
-        /// information is added to the ticket only after the matchmaking request has been successfully
-        /// completed. This parameter is not set when FlexMatch is being used without GameLift
-        /// hosting.
+        /// Connection information for a new game session. Once a match is made, the FlexMatch
+        /// engine creates a new game session for it. This information is added to the matchmaking
+        /// ticket, which you can be retrieve by calling <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeMatchmaking.html">DescribeMatchmaking</a>
+        /// .
         /// </para>
         /// </summary>
         public GameSessionConnectionInfo GameSessionConnectionInfo
@@ -207,8 +206,8 @@ namespace Amazon.GameLift.Model
         ///  </li> <li> 
         /// <para>
         ///  <b>REQUIRES_ACCEPTANCE</b> -- A match has been proposed and the players must accept
-        /// the match (see <a>AcceptMatch</a>). This status is used only with requests that use
-        /// a matchmaking configuration with a player acceptance requirement.
+        /// the match. This status is used only with requests that use a matchmaking configuration
+        /// with a player acceptance requirement.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -228,8 +227,8 @@ namespace Amazon.GameLift.Model
         ///  </li> <li> 
         /// <para>
         ///  <b>CANCELLED</b> -- The matchmaking request was canceled. This may be the result
-        /// of a call to <a>StopMatchmaking</a> or a proposed match that one or more players failed
-        /// to accept.
+        /// of a <code>StopMatchmaking</code> operation or a proposed match that one or more players
+        /// failed to accept.
         /// </para>
         ///  </li> <li> 
         /// <para>

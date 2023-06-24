@@ -1,7 +1,8 @@
-﻿using System;
+﻿using ServiceClientGenerator.Endpoints;
+using ServiceClientGenerator.Endpoints.Tests;
+using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Runtime.Remoting.Messaging;
 using System.Text;
 
 namespace ServiceClientGenerator
@@ -85,6 +86,9 @@ namespace ServiceClientGenerator
 
         private static string SanitizeStringForClassName(string name)
         {
+            if (null == name)
+                return null;
+
             string className = name;
             className = className.Replace("AWS", "");
             className = className.Replace("Amazon", "");
@@ -114,8 +118,9 @@ namespace ServiceClientGenerator
                 {
                     _className = ClassNameOverride;
                 }
-                else
+                else if (!string.IsNullOrEmpty(this.LegacyServiceId))
                 {
+                    //Use legacy service class name calculation
                     if (this.ServiceModel.ServiceAbbreviation != null)
                     {
                         _className = SanitizeStringForClassName(_serviceModel.ServiceAbbreviation);
@@ -128,6 +133,18 @@ namespace ServiceClientGenerator
                     {
                         throw new InvalidDataException("Generator was not able to determine the ClassName for a service.");
                     }
+                }
+                else
+                {
+                    //All new services will not have a legacy-service-id metadata property value which indicates that they
+                    //must use the ServiceId for the class name.
+                    if (string.IsNullOrEmpty(this.ServiceId))
+                    {
+                        throw new InvalidDataException(
+                            "Generator was not able to determine the ClassName for a service.");
+                    }
+
+                    _className = SanitizeStringForClassName(this.ServiceId);
                 }
 
                 return _className;
@@ -188,14 +205,36 @@ namespace ServiceClientGenerator
             }
         }
 
-        public string AssemblyDescription
+        public string AssemblyDescription(
+            string versionIdentifier = "", 
+            bool includePreamble = true, 
+            bool includeBody = true, 
+            bool includePostamble = true)
         {
-            get
-            {
-                return !string.IsNullOrEmpty(Synopsis) ? Synopsis : ServiceModel.ServiceFullName;
-            }
-        }
+            if (!string.IsNullOrEmpty(versionIdentifier) && !versionIdentifier.StartsWith("("))
+                versionIdentifier = $"({versionIdentifier})";
 
+            var preamble =
+                includePreamble
+                    ? $"The Amazon Web Services SDK for .NET {versionIdentifier} - "
+                    : "";
+
+            string body = "";
+            if (includeBody)
+            {
+                body =
+                    !string.IsNullOrEmpty(ServiceModel.ServiceFullName)
+                        ? $"{ServiceModel.ServiceFullName}. "
+                        : $"{ServiceId}. ";
+            }
+            
+            var postamble =
+                includePostamble 
+                    ? $"{ (!string.IsNullOrEmpty(Synopsis) ? Synopsis : ServiceId) }"
+                    : "";
+            return $"{preamble}{body}{postamble}";
+        }
+        
         public string BaseException
         {
             get
@@ -231,7 +270,22 @@ namespace ServiceClientGenerator
 
         public bool HasOverrideNamespace { get { return !string.IsNullOrEmpty(this._namespace); } }
         public string RegionLookupName { get { return this.ServiceModel.EndpointPrefix; } }
-        public string ServiceId { get { return this.ServiceModel.ServiceId; } }
+        public string LegacyServiceId { get; set; }
+        public string ServiceId { 
+            get {
+                if (!string.IsNullOrEmpty(ServiceModel.ServiceId))
+                    return ServiceModel.ServiceId;
+                
+                //ServiceID is required, but there are a few services that were created before that requirement
+                if(!string.IsNullOrEmpty(LegacyServiceId)) 
+                {
+                    return LegacyServiceId;
+                }
+
+                //If it's a newer service, then the ServiceId field is required
+                throw new Exception($"Invalid Service Model:  Missing required {ServiceModel.ServiceIdKey}");
+            } 
+        }
         public string AuthenticationServiceName { get { return this.ServiceModel.SigningName != null ? this.ServiceModel.SigningName : this.ServiceModel.EndpointPrefix; } }
         public int? OverrideMaxRetries { get; set; }
         public string DefaultRegion { get; set; }
@@ -245,7 +299,7 @@ namespace ServiceClientGenerator
         public Dictionary<string, List<Dependency>> NugetDependencies { get; set; }
         public List<string> Tags { get; set; }
         public bool NetStandardSupport { get; set; }
-
+        public bool GeneratedEventStreamException { get; set; }
         public string ServiceVersion
         {
             get
@@ -307,7 +361,11 @@ namespace ServiceClientGenerator
                 return Path.GetFileName(ModelPath);
             }
         }
+        
+        public bool IsTestService { get; set; }
 
+        public RuleSet EndpointsRuleSet { get; set; }
+        public EndpointTests EndpointTests { get; set; }
 
         public override string ToString()
         {

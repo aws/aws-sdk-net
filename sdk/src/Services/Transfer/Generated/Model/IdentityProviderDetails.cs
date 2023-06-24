@@ -38,13 +38,13 @@ namespace Amazon.Transfer.Model
         private string _directoryId;
         private string _function;
         private string _invocationRole;
+        private SftpAuthenticationMethods _sftpAuthenticationMethods;
         private string _url;
 
         /// <summary>
         /// Gets and sets the property DirectoryId. 
         /// <para>
-        /// The identifier of the Amazon Web ServicesDirectory Service directory that you want
-        /// to stop sharing.
+        /// The identifier of the Directory Service directory that you want to stop sharing.
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=12)]
@@ -63,7 +63,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property Function. 
         /// <para>
-        /// The ARN for a lambda function to use for the Identity provider.
+        /// The ARN for a Lambda function to use for the Identity provider.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=170)]
@@ -82,6 +82,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property InvocationRole. 
         /// <para>
+        /// This parameter is only applicable if your <code>IdentityProviderType</code> is <code>API_GATEWAY</code>.
         /// Provides the type of <code>InvocationRole</code> used to authenticate the user account.
         /// </para>
         /// </summary>
@@ -96,6 +97,46 @@ namespace Amazon.Transfer.Model
         internal bool IsSetInvocationRole()
         {
             return this._invocationRole != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SftpAuthenticationMethods. 
+        /// <para>
+        /// For SFTP-enabled servers, and for custom identity providers <i>only</i>, you can specify
+        /// whether to authenticate using a password, SSH key pair, or both.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>PASSWORD</code> - users must provide their password to connect.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>PUBLIC_KEY</code> - users must provide their private key to connect.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>PUBLIC_KEY_OR_PASSWORD</code> - users can authenticate with either their password
+        /// or their key. This is the default value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>PUBLIC_KEY_AND_PASSWORD</code> - users must provide both their private key
+        /// and their password to connect. The server checks the key first, and then if the key
+        /// is valid, the system prompts for a password. If the private key provided does not
+        /// match the public key that is stored, authentication fails.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public SftpAuthenticationMethods SftpAuthenticationMethods
+        {
+            get { return this._sftpAuthenticationMethods; }
+            set { this._sftpAuthenticationMethods = value; }
+        }
+
+        // Check to see if SftpAuthenticationMethods property is set
+        internal bool IsSetSftpAuthenticationMethods()
+        {
+            return this._sftpAuthenticationMethods != null;
         }
 
         /// <summary>

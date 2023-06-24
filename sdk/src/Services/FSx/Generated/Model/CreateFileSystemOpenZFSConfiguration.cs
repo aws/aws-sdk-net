@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FSx.Model
 {
     /// <summary>
-    /// The OpenZFS configuration properties for the file system that you are creating.
+    /// The Amazon FSx for OpenZFS configuration properties for the file system that you are
+    /// creating.
     /// </summary>
     public partial class CreateFileSystemOpenZFSConfiguration
     {
@@ -86,12 +87,12 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property CopyTagsToVolumes. 
         /// <para>
-        /// A Boolean value indicating whether tags for the volume should be copied to snapshots.
+        /// A Boolean value indicating whether tags for the file system should be copied to volumes.
         /// This value defaults to <code>false</code>. If it's set to <code>true</code>, all tags
-        /// for the volume are copied to snapshots where the user doesn't specify tags. If this
-        /// value is <code>true</code>, and you specify one or more tags, only the specified tags
-        /// are copied to snapshots. If you specify one or more tags when creating the snapshot,
-        /// no tags are copied from the volume, regardless of this value. 
+        /// for the file system are copied to volumes where the user doesn't specify tags. If
+        /// this value is <code>true</code>, and you specify one or more tags, only the specified
+        /// tags are copied to volumes. If you specify one or more tags when creating the volume,
+        /// no tags are copied from the file system, regardless of this value.
         /// </para>
         /// </summary>
         public bool CopyTagsToVolumes
@@ -125,9 +126,28 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property DeploymentType. 
         /// <para>
-        /// Specifies the file system deployment type. Amazon FSx for OpenZFS supports <code>SINGLE_AZ_1</code>.
-        /// <code>SINGLE_AZ_1</code> is a file system configured for a single Availability Zone
-        /// (AZ) of redundancy.
+        /// Specifies the file system deployment type. Single AZ deployment types are configured
+        /// for redundancy within a single Availability Zone in an Amazon Web Services Region
+        /// . Valid values are the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>SINGLE_AZ_1</code>- (Default) Creates file systems with throughput capacities
+        /// of 64 - 4,096 MBps. <code>Single_AZ_1</code> is available in all Amazon Web Services
+        /// Regions where Amazon FSx for OpenZFS is available.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>SINGLE_AZ_2</code>- Creates file systems with throughput capacities of 160
+        /// - 10,240 MB/s using an NVMe L2ARC cache. <code>Single_AZ_2</code> is available only
+        /// in the US East (N. Virginia), US East (Ohio), US West (Oregon), and Europe (Ireland)
+        /// Amazon Web Services Regions.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information, see: <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/availability-durability.html#available-aws-regions">Deployment
+        /// type availability</a> and <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/performance.html#zfs-fs-performance">File
+        /// system performance</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -181,11 +201,24 @@ namespace Amazon.FSx.Model
         /// Gets and sets the property ThroughputCapacity. 
         /// <para>
         /// Specifies the throughput of an Amazon FSx for OpenZFS file system, measured in megabytes
-        /// per second (MB/s). Valid values are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MB/s.
+        /// per second (MBps). Valid values depend on the DeploymentType you choose, as follows:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// For <code>SINGLE_AZ_1</code>, valid values are 64, 128, 256, 512, 1024, 2048, 3072,
+        /// or 4096 MBps.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For <code>SINGLE_AZ_2</code>, valid values are 160, 320, 640, 1280, 2560, 3840, 5120,
+        /// 7680, or 10240 MBps.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
         /// You pay for additional throughput capacity that you provision.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=8, Max=4096)]
+        [AWSProperty(Required=true, Min=8, Max=100000)]
         public int ThroughputCapacity
         {
             get { return this._throughputCapacity.GetValueOrDefault(); }

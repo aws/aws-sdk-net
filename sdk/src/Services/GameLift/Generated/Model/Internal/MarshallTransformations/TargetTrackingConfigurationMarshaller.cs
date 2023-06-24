@@ -34,7 +34,7 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// TargetTrackingConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class TargetTrackingConfigurationMarshaller : IRequestMarshaller<TargetTrackingConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static TargetTrackingConfigurationMarshaller Instance = new TargetTrackingConfigurationMarshaller();
 
     }

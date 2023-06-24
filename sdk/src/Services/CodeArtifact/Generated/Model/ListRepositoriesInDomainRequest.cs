@@ -46,8 +46,8 @@ namespace Amazon.CodeArtifact.Model
         /// <summary>
         /// Gets and sets the property AdministratorAccount. 
         /// <para>
-        ///  Filter the list of repositories to only include those that are managed by the AWS
-        /// account ID. 
+        ///  Filter the list of repositories to only include those that are managed by the Amazon
+        /// Web Services account ID. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=12)]
@@ -85,8 +85,8 @@ namespace Amazon.CodeArtifact.Model
         /// <summary>
         /// Gets and sets the property DomainOwner. 
         /// <para>
-        ///  The 12-digit account number of the AWS account that owns the domain. It does not
-        /// include dashes or spaces. 
+        ///  The 12-digit account number of the Amazon Web Services account that owns the domain.
+        /// It does not include dashes or spaces. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=12)]

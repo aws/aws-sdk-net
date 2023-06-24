@@ -40,8 +40,7 @@ namespace Amazon.MediaLive.Model
 
         /// <summary>
         /// Gets and sets the property Name. Custom output group name optionally defined by the
-        /// user.  Only letters, numbers, and the underscore character allowed; only 32 characters
-        /// allowed.
+        /// user.
         /// </summary>
         [AWSProperty(Max=32)]
         public string Name

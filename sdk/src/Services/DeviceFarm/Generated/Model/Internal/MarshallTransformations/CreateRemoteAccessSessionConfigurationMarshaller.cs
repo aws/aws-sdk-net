@@ -34,7 +34,7 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CreateRemoteAccessSessionConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class CreateRemoteAccessSessionConfigurationMarshaller : IRequestMarshaller<CreateRemoteAccessSessionConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CreateRemoteAccessSessionConfigurationMarshaller Instance = new CreateRemoteAccessSessionConfigurationMarshaller();
 
     }

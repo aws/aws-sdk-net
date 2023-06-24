@@ -34,7 +34,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// InstanceAssociationOutputLocation Marshaller
-    /// </summary>       
+    /// </summary>
     public class InstanceAssociationOutputLocationMarshaller : IRequestMarshaller<InstanceAssociationOutputLocation, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static InstanceAssociationOutputLocationMarshaller Instance = new InstanceAssociationOutputLocationMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.MWAA.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Dimension Marshaller
-    /// </summary>       
+    /// </summary>
     public class DimensionMarshaller : IRequestMarshaller<Dimension, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.MWAA.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DimensionMarshaller Instance = new DimensionMarshaller();
 
     }

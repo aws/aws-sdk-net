@@ -29,8 +29,16 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ForecastService.Model
 {
     /// <summary>
+    /// <note> 
+    /// <para>
+    /// This object belongs to the <a>CreatePredictor</a> operation. If you created your predictor
+    /// with <a>CreateAutoPredictor</a>, see <a>DataConfig</a>.
+    /// </para>
+    ///  </note> 
+    /// <para>
     /// The data used to train a predictor. The data includes a dataset group and any supplementary
     /// features. You specify this object in the <a>CreatePredictor</a> request.
+    /// </para>
     /// </summary>
     public partial class InputDataConfig
     {

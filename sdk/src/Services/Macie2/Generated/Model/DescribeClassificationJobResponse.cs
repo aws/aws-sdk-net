@@ -33,6 +33,7 @@ namespace Amazon.Macie2.Model
     /// </summary>
     public partial class DescribeClassificationJobResponse : AmazonWebServiceResponse
     {
+        private List<string> _allowListIds = new List<string>();
         private string _clientToken;
         private DateTime? _createdAt;
         private List<string> _customDataIdentifierIds = new List<string>();
@@ -53,6 +54,25 @@ namespace Amazon.Macie2.Model
         private Statistics _statistics;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private UserPausedDetails _userPausedDetails;
+
+        /// <summary>
+        /// Gets and sets the property AllowListIds. 
+        /// <para>
+        /// An array of unique identifiers, one for each allow list that the job uses when it
+        /// analyzes data.
+        /// </para>
+        /// </summary>
+        public List<string> AllowListIds
+        {
+            get { return this._allowListIds; }
+            set { this._allowListIds = value; }
+        }
+
+        // Check to see if AllowListIds property is set
+        internal bool IsSetAllowListIds()
+        {
+            return this._allowListIds != null && this._allowListIds.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
@@ -95,7 +115,7 @@ namespace Amazon.Macie2.Model
         /// Gets and sets the property CustomDataIdentifierIds. 
         /// <para>
         /// An array of unique identifiers, one for each custom data identifier that the job uses
-        /// to analyze data. This value is null if the job uses only managed data identifiers
+        /// when it analyzes data. This value is null if the job uses only managed data identifiers
         /// to analyze data.
         /// </para>
         /// </summary>
@@ -291,7 +311,8 @@ namespace Amazon.Macie2.Model
         /// Gets and sets the property LastRunTime. 
         /// <para>
         /// The date and time, in UTC and extended ISO 8601 format, when the job started. If the
-        /// job is a recurring job, this value indicates when the most recent run started.
+        /// job is a recurring job, this value indicates when the most recent run started or,
+        /// if the job hasn't run yet, when the job was created.
         /// </para>
         /// </summary>
         public DateTime LastRunTime

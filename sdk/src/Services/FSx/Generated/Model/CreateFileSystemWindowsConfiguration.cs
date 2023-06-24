@@ -148,9 +148,9 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property AutomaticBackupRetentionDays. 
         /// <para>
-        /// The number of days to retain automatic backups. The default is to retain backups for
-        /// 7 days. Setting this value to 0 disables the creation of automatic backups. The maximum
-        /// retention period for backups is 90 days.
+        /// The number of days to retain automatic backups. Setting this property to <code>0</code>
+        /// disables automatic backups. You can retain automatic backups for a maximum of 90 days.
+        /// The default is <code>30</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=90)]
@@ -295,7 +295,7 @@ namespace Amazon.FSx.Model
         /// second (MB/s), in 2 to the <i>n</i>th increments, between 2^3 (8) and 2^11 (2048).
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=8, Max=4096)]
+        [AWSProperty(Required=true, Min=8, Max=100000)]
         public int ThroughputCapacity
         {
             get { return this._throughputCapacity.GetValueOrDefault(); }

@@ -58,7 +58,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property Options. 
         /// <para>
-        /// The settings used when restoring the specified volume from snapshot. 
+        /// The settings used when restoring the specified volume from snapshot.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -68,9 +68,9 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DELETE_CLONED_VOLUMES</code> - Deletes any volumes cloned from this volume.
-        /// If there are any cloned volumes and this option isn't used, <code>RestoreVolumeFromSnapshot</code>
-        /// fails.
+        ///  <code>DELETE_CLONED_VOLUMES</code> - Deletes any dependent clone volumes created
+        /// from intermediate snapshots. If there are any dependent clone volumes and this option
+        /// isn't used, <code>RestoreVolumeFromSnapshot</code> fails.
         /// </para>
         ///  </li> </ul>
         /// </summary>

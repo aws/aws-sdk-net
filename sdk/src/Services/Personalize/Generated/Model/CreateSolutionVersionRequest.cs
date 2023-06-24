@@ -31,9 +31,9 @@ namespace Amazon.Personalize.Model
     /// <summary>
     /// Container for the parameters to the CreateSolutionVersion operation.
     /// Trains or retrains an active solution in a Custom dataset group. A solution is created
-    /// using the <a>CreateSolution</a> operation and must be in the ACTIVE state before calling
-    /// <code>CreateSolutionVersion</code>. A new version of the solution is created every
-    /// time you call this operation.
+    /// using the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolution.html">CreateSolution</a>
+    /// operation and must be in the ACTIVE state before calling <code>CreateSolutionVersion</code>.
+    /// A new version of the solution is created every time you call this operation.
     /// 
     ///  
     /// <para>
@@ -69,8 +69,8 @@ namespace Amazon.Personalize.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// To get the status of the version, call <a>DescribeSolutionVersion</a>. Wait until
-    /// the status shows as ACTIVE before calling <code>CreateCampaign</code>.
+    /// To get the status of the version, call <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeSolutionVersion.html">DescribeSolutionVersion</a>.
+    /// Wait until the status shows as ACTIVE before calling <code>CreateCampaign</code>.
     /// </para>
     ///  
     /// <para>
@@ -81,34 +81,61 @@ namespace Amazon.Personalize.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a>ListSolutionVersions</a> 
+    ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_ListSolutionVersions.html">ListSolutionVersions</a>
+    /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>DescribeSolutionVersion</a> 
-    /// </para>
-    ///  </li> </ul> <ul> <li> 
-    /// <para>
-    ///  <a>ListSolutions</a> 
+    ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeSolutionVersion.html">DescribeSolutionVersion</a>
+    /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>CreateSolution</a> 
+    ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_ListSolutions.html">ListSolutions</a>
+    /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>DescribeSolution</a> 
+    ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolution.html">CreateSolution</a>
+    /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>DeleteSolution</a> 
+    ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeSolution.html">DescribeSolution</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DeleteSolution.html">DeleteSolution</a>
+    /// 
     /// </para>
     ///  </li> </ul>
     /// </summary>
     public partial class CreateSolutionVersionRequest : AmazonPersonalizeRequest
     {
+        private string _name;
         private string _solutionArn;
+        private List<Tag> _tags = new List<Tag>();
         private TrainingMode _trainingMode;
+
+        /// <summary>
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The name of the solution version.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=63)]
+        public string Name
+        {
+            get { return this._name; }
+            set { this._name = value; }
+        }
+
+        // Check to see if Name property is set
+        internal bool IsSetName()
+        {
+            return this._name != null;
+        }
 
         /// <summary>
         /// Gets and sets the property SolutionArn. 
@@ -128,6 +155,26 @@ namespace Amazon.Personalize.Model
         internal bool IsSetSolutionArn()
         {
             return this._solutionArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a>
+        /// to apply to the solution version.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=200)]
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>

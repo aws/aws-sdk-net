@@ -44,9 +44,9 @@ namespace Amazon.ForecastService.Model
     /// </para>
     ///  
     /// <para>
-    /// You must specify a <a>DataDestination</a> object that includes an AWS Identity and
-    /// Access Management (IAM) role that Amazon Forecast can assume to access the Amazon
-    /// S3 bucket. For more information, see <a>aws-forecast-iam-roles</a>.
+    /// You must specify a <a>DataDestination</a> object that includes an Identity and Access
+    /// Management (IAM) role that Amazon Forecast can assume to access the Amazon S3 bucket.
+    /// For more information, see <a>aws-forecast-iam-roles</a>.
     /// </para>
     ///  
     /// <para>
@@ -70,20 +70,20 @@ namespace Amazon.ForecastService.Model
         private DataDestination _destination;
         private string _forecastArn;
         private string _forecastExportJobName;
+        private string _format;
         private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property Destination. 
         /// <para>
-        /// The location where you want to save the forecast and an AWS Identity and Access Management
+        /// The location where you want to save the forecast and an Identity and Access Management
         /// (IAM) role that Amazon Forecast can assume to access the location. The forecast must
         /// be exported to an Amazon S3 bucket.
         /// </para>
         ///  
         /// <para>
-        /// If encryption is used, <code>Destination</code> must include an AWS Key Management
-        /// Service (KMS) key. The IAM role must allow Amazon Forecast permission to access the
-        /// key.
+        /// If encryption is used, <code>Destination</code> must include an Key Management Service
+        /// (KMS) key. The IAM role must allow Amazon Forecast permission to access the key.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -138,6 +138,25 @@ namespace Amazon.ForecastService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Format. 
+        /// <para>
+        /// The format of the exported data, CSV or PARQUET. The default value is CSV.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=7)]
+        public string Format
+        {
+            get { return this._format; }
+            set { this._format = value; }
+        }
+
+        // Check to see if Format property is set
+        internal bool IsSetFormat()
+        {
+            return this._format != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
         /// The optional metadata that you apply to the forecast export job to help you categorize
@@ -179,11 +198,11 @@ namespace Amazon.ForecastService.Model
         ///  </li> <li> 
         /// <para>
         /// Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination
-        /// of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete
-        /// tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code>
-        /// as its prefix but the key does not, then Forecast considers it to be a user tag and
-        /// will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code>
-        /// do not count against your tags per resource limit.
+        /// of such as a prefix for keys as it is reserved for Amazon Web Services use. You cannot
+        /// edit or delete tag keys with this prefix. Values can have this prefix. If a tag value
+        /// has <code>aws</code> as its prefix but the key does not, then Forecast considers it
+        /// to be a user tag and will count against the limit of 50 tags. Tags with only the key
+        /// prefix of <code>aws</code> do not count against your tags per resource limit.
         /// </para>
         ///  </li> </ul>
         /// </summary>

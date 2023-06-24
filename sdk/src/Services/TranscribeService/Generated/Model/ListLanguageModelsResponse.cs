@@ -39,7 +39,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property Models. 
         /// <para>
-        /// A list of objects containing information about custom language models.
+        /// Provides information about the custom language models that match the criteria specified
+        /// in your request.
         /// </para>
         /// </summary>
         public List<LanguageModel> Models
@@ -57,10 +58,11 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The operation returns a page of jobs at a time. The maximum size of the list is set
-        /// by the MaxResults parameter. If there are more language models in the list than the
-        /// page size, Amazon Transcribe returns the <code>NextPage</code> token. Include the
-        /// token in the next request to the operation to return the next page of language models.
+        /// If <code>NextToken</code> is present in your response, it indicates that not all results
+        /// are displayed. To view the next set of results, copy the string associated with the
+        /// <code>NextToken</code> parameter in your results output, then run your request again
+        /// including <code>NextToken</code> with the value of the copied string. Repeat as needed
+        /// to view all your results.
         /// </para>
         /// </summary>
         [AWSProperty(Max=8192)]

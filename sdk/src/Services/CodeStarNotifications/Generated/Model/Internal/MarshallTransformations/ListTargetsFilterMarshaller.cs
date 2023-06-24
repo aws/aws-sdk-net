@@ -34,7 +34,7 @@ namespace Amazon.CodeStarNotifications.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ListTargetsFilter Marshaller
-    /// </summary>       
+    /// </summary>
     public class ListTargetsFilterMarshaller : IRequestMarshaller<ListTargetsFilter, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.CodeStarNotifications.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ListTargetsFilterMarshaller Instance = new ListTargetsFilterMarshaller();
 
     }

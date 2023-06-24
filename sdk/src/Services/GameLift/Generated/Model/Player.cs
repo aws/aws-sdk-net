@@ -44,8 +44,9 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property LatencyInMs. 
         /// <para>
         /// A set of values, expressed in milliseconds, that indicates the amount of latency that
-        /// a player experiences when connected to AWS Regions. If this property is present, FlexMatch
-        /// considers placing the match only in Regions for which latency is reported. 
+        /// a player experiences when connected to @aws; Regions. If this property is present,
+        /// FlexMatch considers placing the match only in Regions for which latency is reported.
+        /// 
         /// </para>
         ///  
         /// <para>
@@ -73,6 +74,10 @@ namespace Amazon.GameLift.Model
         /// Player attribute keys must match the <i>playerAttributes</i> used in a matchmaking
         /// rule set. Example: <code>"PlayerAttributes": {"skill": {"N": "23"}, "gameMode": {"S":
         /// "deathmatch"}}</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can provide up to 10 <code>PlayerAttributes</code>.
         /// </para>
         /// </summary>
         public Dictionary<string, AttributeValue> PlayerAttributes

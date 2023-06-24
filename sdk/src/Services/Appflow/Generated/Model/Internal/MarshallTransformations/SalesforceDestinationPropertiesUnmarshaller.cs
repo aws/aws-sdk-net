@@ -64,6 +64,12 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("dataTransferApi", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DataTransferApi = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("errorHandlingConfig", targetDepth))
                 {
                     var unmarshaller = ErrorHandlingConfigUnmarshaller.Instance;

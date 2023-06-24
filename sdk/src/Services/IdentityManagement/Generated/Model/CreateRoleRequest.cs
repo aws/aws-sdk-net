@@ -120,12 +120,12 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property MaxSessionDuration. 
         /// <para>
         /// The maximum session duration (in seconds) that you want to set for the specified role.
-        /// If you do not specify a value for this setting, the default maximum of one hour is
-        /// applied. This setting can have a value from 1 hour to 12 hours.
+        /// If you do not specify a value for this setting, the default value of one hour is applied.
+        /// This setting can have a value from 1 hour to 12 hours.
         /// </para>
         ///  
         /// <para>
-        /// Anyone who assumes the role from the or API can use the <code>DurationSeconds</code>
+        /// Anyone who assumes the role from the CLI or API can use the <code>DurationSeconds</code>
         /// API parameter or the <code>duration-seconds</code> CLI parameter to request a longer
         /// session. The <code>MaxSessionDuration</code> setting determines the maximum duration
         /// that can be requested using the <code>DurationSeconds</code> parameter. If users don't
@@ -185,7 +185,21 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property PermissionsBoundary. 
         /// <para>
-        /// The ARN of the policy that is used to set the permissions boundary for the role.
+        /// The ARN of the managed policy that is used to set the permissions boundary for the
+        /// role.
+        /// </para>
+        ///  
+        /// <para>
+        /// A permissions boundary policy defines the maximum permissions that identity-based
+        /// policies can grant to an entity, but does not grant permissions. Permissions boundaries
+        /// do not define the maximum permissions that a resource-based policy can grant to an
+        /// entity. To learn more, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
+        /// boundaries for IAM entities</a> in the <i>IAM User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about policy types, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#access_policy-types">Policy
+        /// types </a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -211,6 +225,12 @@ namespace Amazon.IdentityManagement.Model
         /// IAM user, group, role, and policy names must be unique within the account. Names are
         /// not distinguished by case. For example, you cannot create resources named both "MyResource"
         /// and "myresource".
+        /// </para>
+        ///  
+        /// <para>
+        /// This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex
+        /// pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+        /// characters with no spaces. You can also include any of the following characters: _+=,.@-
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]

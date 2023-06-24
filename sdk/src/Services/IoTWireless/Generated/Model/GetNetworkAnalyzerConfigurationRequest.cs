@@ -30,7 +30,7 @@ namespace Amazon.IoTWireless.Model
 {
     /// <summary>
     /// Container for the parameters to the GetNetworkAnalyzerConfiguration operation.
-    /// Get NetworkAnalyzer configuration.
+    /// Get network analyzer configuration.
     /// </summary>
     public partial class GetNetworkAnalyzerConfigurationRequest : AmazonIoTWirelessRequest
     {

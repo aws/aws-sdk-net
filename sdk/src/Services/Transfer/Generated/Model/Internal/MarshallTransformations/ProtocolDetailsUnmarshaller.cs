@@ -64,10 +64,28 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("As2Transports", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.As2Transports = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("PassiveIp", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PassiveIp = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SetStatOption", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SetStatOption = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("TlsSessionResumptionMode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TlsSessionResumptionMode = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

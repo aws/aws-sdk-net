@@ -34,7 +34,7 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RouteSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class RouteSettingsMarshaller : IRequestMarshaller<RouteSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -79,7 +79,7 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RouteSettingsMarshaller Instance = new RouteSettingsMarshaller();
 
     }

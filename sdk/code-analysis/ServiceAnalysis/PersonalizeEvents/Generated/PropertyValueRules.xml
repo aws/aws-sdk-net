@@ -61,6 +61,11 @@
     <max>24262</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.PersonalizeEvents.Model.MetricAttribution.EventAttributionSource</property>
+    <max>1024</max>
+    <pattern>^[\x20-\x7E]*[\x21-\x7E]+[\x20-\x7E]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.PersonalizeEvents.Model.User.Properties</property>
     <min>1</min>
     <max>4096</max>

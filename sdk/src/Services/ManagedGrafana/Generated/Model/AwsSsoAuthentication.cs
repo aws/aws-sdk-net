@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ManagedGrafana.Model
 {
     /// <summary>
-    /// A structure containing information about how this workspace works with Amazon Web
-    /// Services SSO.
+    /// A structure containing information about how this workspace works with IAM Identity
+    /// Center.
     /// </summary>
     public partial class AwsSsoAuthentication
     {
@@ -39,8 +39,8 @@ namespace Amazon.ManagedGrafana.Model
         /// <summary>
         /// Gets and sets the property SsoClientId. 
         /// <para>
-        /// The ID of the Amazon Web Services SSO-managed application that is created by Amazon
-        /// Managed Grafana.
+        /// The ID of the IAM Identity Center-managed application that is created by Amazon Managed
+        /// Grafana.
         /// </para>
         /// </summary>
         public string SsoClientId

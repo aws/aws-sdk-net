@@ -1,5 +1,6 @@
 {
   "active": true,
   "synopsis": "This is the first release of Savings Plans, a new flexible pricing model that offers low prices on Amazon EC2 and AWS Fargate usage.",
-  "generate-client-constructors": true
+  "generate-client-constructors": true,
+  "legacy-service-id": "savingsplans"
 }

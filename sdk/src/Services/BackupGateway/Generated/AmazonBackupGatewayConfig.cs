@@ -17,22 +17,22 @@
  * Do not modify this file. This file is generated from the backup-gateway-2021-01-01.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
-
+using Amazon.BackupGateway.Internal;
 
 namespace Amazon.BackupGateway
 {
     /// <summary>
     /// Configuration for accessing Amazon BackupGateway service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonBackupGatewayConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.1");
+            InternalSDKUtils.BuildUserAgentString("3.7.101.110");
 
         private string _userAgent = UserAgentString;
 
@@ -40,8 +40,10 @@ namespace Amazon.BackupGateway
         /// Default constructor
         /// </summary>
         public AmazonBackupGatewayConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonBackupGatewayDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "backup-gateway";
+            this.EndpointProvider = new AmazonBackupGatewayEndpointProvider();
         }
 
         /// <summary>
@@ -76,5 +78,6 @@ namespace Amazon.BackupGateway
                 return _userAgent;
             }
         }
+
     }
 }

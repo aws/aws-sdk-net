@@ -34,7 +34,7 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// PrefetchConsumption Marshaller
-    /// </summary>       
+    /// </summary>
     public class PrefetchConsumptionMarshaller : IRequestMarshaller<PrefetchConsumption, JsonMarshallerContext> 
     {
         /// <summary>
@@ -77,7 +77,7 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static PrefetchConsumptionMarshaller Instance = new PrefetchConsumptionMarshaller();
 
     }

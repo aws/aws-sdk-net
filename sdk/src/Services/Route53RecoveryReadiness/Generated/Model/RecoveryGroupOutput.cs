@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53RecoveryReadiness.Model
 {
     /// <summary>
-    /// A Recovery Group generally containing multiple Cells
+    /// A representation of the application, typically containing multiple cells.
     /// </summary>
     public partial class RecoveryGroupOutput
     {
@@ -39,7 +39,10 @@ namespace Amazon.Route53RecoveryReadiness.Model
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
-        /// Gets and sets the property Cells. A list of Cell arns
+        /// Gets and sets the property Cells. 
+        /// <para>
+        /// A list of a cell's Amazon Resource Names (ARNs).
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public List<string> Cells
@@ -55,7 +58,10 @@ namespace Amazon.Route53RecoveryReadiness.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RecoveryGroupArn. The arn for the RecoveryGroup
+        /// Gets and sets the property RecoveryGroupArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) for the recovery group.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=256)]
         public string RecoveryGroupArn
@@ -71,7 +77,10 @@ namespace Amazon.Route53RecoveryReadiness.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RecoveryGroupName. The name of the RecoveryGroup
+        /// Gets and sets the property RecoveryGroupName. 
+        /// <para>
+        /// The name of the recovery group.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=64)]
         public string RecoveryGroupName
@@ -87,7 +96,10 @@ namespace Amazon.Route53RecoveryReadiness.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Tags.
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags associated with the recovery group.
+        /// </para>
         /// </summary>
         public Dictionary<string, string> Tags
         {

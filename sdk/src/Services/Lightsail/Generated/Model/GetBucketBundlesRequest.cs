@@ -39,7 +39,8 @@ namespace Amazon.Lightsail.Model
     /// </para>
     ///  
     /// <para>
-    /// Use the <a>UpdateBucketBundle</a> action to update the bundle for a bucket.
+    /// Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateBucketBundle.html">UpdateBucketBundle</a>
+    /// action to update the bundle for a bucket.
     /// </para>
     /// </summary>
     public partial class GetBucketBundlesRequest : AmazonLightsailRequest
@@ -50,7 +51,7 @@ namespace Amazon.Lightsail.Model
         /// Gets and sets the property IncludeInactive. 
         /// <para>
         /// A Boolean value that indicates whether to include inactive (unavailable) bundles in
-        /// the response.
+        /// the response of your request.
         /// </para>
         /// </summary>
         public bool IncludeInactive

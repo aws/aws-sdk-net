@@ -63,7 +63,7 @@ namespace Amazon.Runtime
             if(!RuntimeInformation.IsOSPlatform(OSPlatform.Windows))            
             {
                 fileName = "sh";
-                var escapedArgs = processCredentialInfo.Replace("\\", "\\\\").Replace("\"", "\\\"");                
+                var escapedArgs = processCredentialInfo.Replace("\\", "\\\\").Replace("\"", "\\\"");    
                 arguments = $"-c \"{escapedArgs}\"";
             }
 #endif
@@ -75,7 +75,7 @@ namespace Amazon.Runtime
                 RedirectStandardError = true,
                 RedirectStandardOutput = true,
                 CreateNoWindow = true
-            };            
+            };
 
             // Make sure to fetch new credentials well before the current credentials expire to avoid
             // any request being made with expired credentials.
@@ -106,7 +106,7 @@ namespace Amazon.Runtime
         /// Generates new credentials by running the "credential_process" process.
         /// </summary>
         public CredentialsRefreshState DetermineProcessCredential()
-        {            
+        {    
             try
             {
                 var processInfo = AWSSDKUtils.RunProcess(_processStartInfo);
@@ -125,7 +125,7 @@ namespace Amazon.Runtime
 
 #if AWS_ASYNC_API
         public async Task<CredentialsRefreshState> DetermineProcessCredentialAsync()
-        {            
+        {    
             try
             {
                 var processInfo = await AWSSDKUtils.RunProcessAsync(_processStartInfo).ConfigureAwait(false);
@@ -147,7 +147,7 @@ namespace Amazon.Runtime
         #region Private methods
         [SuppressMessage("Microsoft.Security", "CA2122:DoNotIndirectlyExposeMethodsWithLinkDemands")]
         private CredentialsRefreshState SetCredentialsRefreshState(ProcessExecutionResult processInfo)
-        {            
+        {    
             _logger.InfoFormat("Process ends with exitcode - {0}", processInfo.ExitCode);
             // Setting useShellExecute to false enables the user to just specify the executable name.
             // The system will attempt to find the executable within folders specified by the PATH environment variable.
@@ -171,7 +171,7 @@ namespace Amazon.Runtime
                 switch (version)
                 {
                     case 1:
-                        ProcessCredentialVersion1 processCredentialDataV1 = null;                        
+                        ProcessCredentialVersion1 processCredentialDataV1 = null;            
                         try
                         {
                             processCredentialDataV1 = JsonMapper.ToObject<ProcessCredentialVersion1>(processInfo.StandardOutput);

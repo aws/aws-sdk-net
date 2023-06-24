@@ -30,7 +30,7 @@ namespace Amazon.WorkMail.Model
 {
     /// <summary>
     /// Container for the parameters to the TagResource operation.
-    /// Applies the specified tags to the specified Amazon WorkMail organization resource.
+    /// Applies the specified tags to the specified WorkMailorganization resource.
     /// </summary>
     public partial class TagResourceRequest : AmazonWorkMailRequest
     {

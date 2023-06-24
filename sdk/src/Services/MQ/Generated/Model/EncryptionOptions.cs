@@ -29,14 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MQ.Model
 {
     /// <summary>
-    /// <important>
-    /// <para>
-    /// Does not apply to RabbitMQ brokers.
-    /// </para>
-    /// </important> 
-    /// <para>
     /// Encryption options for the broker.
-    /// </para>
     /// </summary>
     public partial class EncryptionOptions
     {
@@ -46,9 +39,9 @@ namespace Amazon.MQ.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The customer master key (CMK) to use for the AWS Key Management Service (KMS). This
-        /// key is used to encrypt your data at rest. If not provided, Amazon MQ will use a default
-        /// CMK to encrypt your data.
+        /// The customer master key (CMK) to use for the A KMS (KMS). This key is used to encrypt
+        /// your data at rest. If not provided, Amazon MQ will use a default CMK to encrypt your
+        /// data.
         /// </para>
         /// </summary>
         public string KmsKeyId
@@ -66,8 +59,8 @@ namespace Amazon.MQ.Model
         /// <summary>
         /// Gets and sets the property UseAwsOwnedKey. 
         /// <para>
-        /// Enables the use of an AWS owned CMK using AWS Key Management Service (KMS). Set to
-        /// true by default, if no value is provided, for example, for RabbitMQ brokers.
+        /// Enables the use of an Amazon Web Services owned CMK using KMS (KMS). Set to true by
+        /// default, if no value is provided, for example, for RabbitMQ brokers.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

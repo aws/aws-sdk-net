@@ -130,6 +130,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     unmarshalledObject.RunningTasksCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("serviceConnectDefaults", targetDepth))
+                {
+                    var unmarshaller = ClusterServiceConnectDefaultsUnmarshaller.Instance;
+                    unmarshalledObject.ServiceConnectDefaults = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("settings", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<ClusterSetting, ClusterSettingUnmarshaller>(ClusterSettingUnmarshaller.Instance);

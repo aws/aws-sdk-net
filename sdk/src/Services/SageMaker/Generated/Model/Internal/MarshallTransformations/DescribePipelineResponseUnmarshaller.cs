@@ -81,6 +81,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     response.LastRunTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ParallelismConfiguration", targetDepth))
+                {
+                    var unmarshaller = ParallelismConfigurationUnmarshaller.Instance;
+                    response.ParallelismConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("PipelineArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

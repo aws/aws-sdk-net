@@ -64,6 +64,12 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AthenaError", targetDepth))
+                {
+                    var unmarshaller = AthenaErrorUnmarshaller.Instance;
+                    unmarshalledObject.AthenaError = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CompletionDateTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

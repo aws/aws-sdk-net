@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// The configured access rules for the domain's document and search endpoints, and the
-    /// current status of those rules.
+    /// The configured access rules for the domain's search endpoint, and the current status
+    /// of those rules.
     /// </summary>
     public partial class AccessPoliciesStatus
     {
@@ -41,8 +41,8 @@ namespace Amazon.OpenSearchService.Model
         /// Gets and sets the property Options. 
         /// <para>
         /// The access policy configured for the domain. Access policies can be resource-based,
-        /// IP-based, or IAM-based. See <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-access-policies"
-        /// target="_blank"> Configuring access policies</a>for more information. 
+        /// IP-based, or IAM-based. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-access-policies">Configuring
+        /// access policies</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=102400)]
@@ -61,8 +61,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the access policy for the domain. See <code>OptionStatus</code> for
-        /// the status information that's included. 
+        /// The status of the access policy for the domain.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

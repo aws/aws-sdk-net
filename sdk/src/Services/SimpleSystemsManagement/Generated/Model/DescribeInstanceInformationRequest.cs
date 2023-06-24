@@ -60,7 +60,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property Filters. 
         /// <para>
         /// One or more filters. Use a filter to return a more specific list of managed nodes.
-        /// You can filter based on tags applied to EC2 instances. Use this <code>Filters</code>
+        /// You can filter based on tags applied to your managed nodes. Use this <code>Filters</code>
         /// data type instead of <code>InstanceInformationFilterList</code>, which is deprecated.
         /// </para>
         /// </summary>

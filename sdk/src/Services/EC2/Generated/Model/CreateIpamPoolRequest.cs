@@ -38,8 +38,8 @@ namespace Amazon.EC2.Model
     /// 
     ///  
     /// <para>
-    /// For more information, see <a href="/vpc/latest/ipam/create-top-ipam.html">Create a
-    /// top-level pool</a> in the <i>Amazon VPC IPAM User Guide</i>. 
+    /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/create-top-ipam.html">Create
+    /// a top-level pool</a> in the <i>Amazon VPC IPAM User Guide</i>. 
     /// </para>
     /// </summary>
     public partial class CreateIpamPoolRequest : AmazonEC2Request
@@ -55,6 +55,7 @@ namespace Amazon.EC2.Model
         private string _description;
         private string _ipamScopeId;
         private string _locale;
+        private IpamPoolPublicIpSource _publicIpSource;
         private bool? _publiclyAdvertisable;
         private string _sourceIpamPoolId;
         private List<TagSpecification> _tagSpecifications = new List<TagSpecification>();
@@ -66,6 +67,7 @@ namespace Amazon.EC2.Model
         /// for a pool.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public AddressFamily AddressFamily
         {
             get { return this._addressFamily; }
@@ -295,6 +297,30 @@ namespace Amazon.EC2.Model
         internal bool IsSetLocale()
         {
             return this._locale != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PublicIpSource. 
+        /// <para>
+        /// The IP address source for pools in the public scope. Only used for provisioning IP
+        /// address CIDRs to pools in the public scope. Default is <code>byoip</code>. For more
+        /// information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/intro-create-ipv6-pools.html">Create
+        /// IPv6 pools</a> in the <i>Amazon VPC IPAM User Guide</i>. By default, you can add only
+        /// one Amazon-provided IPv6 CIDR block to a top-level IPv6 pool if PublicIpSource is
+        /// <code>amazon</code>. For information on increasing the default limit, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/quotas-ipam.html">
+        /// Quotas for your IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.
+        /// </para>
+        /// </summary>
+        public IpamPoolPublicIpSource PublicIpSource
+        {
+            get { return this._publicIpSource; }
+            set { this._publicIpSource = value; }
+        }
+
+        // Check to see if PublicIpSource property is set
+        internal bool IsSetPublicIpSource()
+        {
+            return this._publicIpSource != null;
         }
 
         /// <summary>

@@ -102,7 +102,7 @@ namespace Amazon.WorkMail.Model
         /// <summary>
         /// Gets and sets the property OrganizationId. 
         /// <para>
-        /// The Amazon WorkMail organization under which to list mobile device access overrides.
+        /// The WorkMail organization under which to list mobile device access overrides.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=34, Max=34)]

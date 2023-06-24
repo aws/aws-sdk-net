@@ -34,7 +34,7 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// FaceSearchSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class FaceSearchSettingsMarshaller : IRequestMarshaller<FaceSearchSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static FaceSearchSettingsMarshaller Instance = new FaceSearchSettingsMarshaller();
 
     }

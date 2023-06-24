@@ -34,7 +34,7 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// QueryExecutionContext Marshaller
-    /// </summary>       
+    /// </summary>
     public class QueryExecutionContextMarshaller : IRequestMarshaller<QueryExecutionContext, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static QueryExecutionContextMarshaller Instance = new QueryExecutionContextMarshaller();
 
     }

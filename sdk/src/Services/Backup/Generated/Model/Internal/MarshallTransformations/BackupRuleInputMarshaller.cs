@@ -34,7 +34,7 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// BackupRuleInput Marshaller
-    /// </summary>       
+    /// </summary>
     public class BackupRuleInputMarshaller : IRequestMarshaller<BackupRuleInput, JsonMarshallerContext> 
     {
         /// <summary>
@@ -126,7 +126,7 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static BackupRuleInputMarshaller Instance = new BackupRuleInputMarshaller();
 
     }

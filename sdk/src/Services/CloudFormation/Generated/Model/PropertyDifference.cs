@@ -68,8 +68,8 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ADD</code>: A value has been added to a resource property that is an array
-        /// or list data type.
+        ///  <code>ADD</code>: A value has been added to a resource property that's an array or
+        /// list data type.
         /// </para>
         ///  </li> <li> 
         /// <para>

@@ -29,12 +29,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// Contains the details of an Amazon RDS DB parameter group. 
+    /// Contains the details of an Amazon RDS DB parameter group.
     /// 
     ///  
     /// <para>
     /// This data type is used as a response element in the <code>DescribeDBParameterGroups</code>
-    /// action. 
+    /// action.
     /// </para>
     /// </summary>
     public partial class DBParameterGroup

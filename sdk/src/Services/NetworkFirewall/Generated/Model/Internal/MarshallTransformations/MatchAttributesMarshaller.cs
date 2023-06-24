@@ -34,7 +34,7 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// MatchAttributes Marshaller
-    /// </summary>       
+    /// </summary>
     public class MatchAttributesMarshaller : IRequestMarshaller<MatchAttributes, JsonMarshallerContext> 
     {
         /// <summary>
@@ -140,7 +140,7 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static MatchAttributesMarshaller Instance = new MatchAttributesMarshaller();
 
     }

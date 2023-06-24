@@ -42,7 +42,9 @@ namespace Amazon.LexModelsV2.Model
     {
         private string _botId;
         private string _botVersion;
+        private CompositeSlotTypeSetting _compositeSlotTypeSetting;
         private string _description;
+        private ExternalSourceSetting _externalSourceSetting;
         private string _localeId;
         private string _parentSlotTypeSignature;
         private string _slotTypeName;
@@ -88,6 +90,24 @@ namespace Amazon.LexModelsV2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CompositeSlotTypeSetting. 
+        /// <para>
+        /// Specifications for a composite slot type.
+        /// </para>
+        /// </summary>
+        public CompositeSlotTypeSetting CompositeSlotTypeSetting
+        {
+            get { return this._compositeSlotTypeSetting; }
+            set { this._compositeSlotTypeSetting = value; }
+        }
+
+        // Check to see if CompositeSlotTypeSetting property is set
+        internal bool IsSetCompositeSlotTypeSetting()
+        {
+            return this._compositeSlotTypeSetting != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
         /// A description of the slot type. Use the description to help identify the slot type
@@ -105,6 +125,24 @@ namespace Amazon.LexModelsV2.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExternalSourceSetting. 
+        /// <para>
+        /// Sets the type of external information used to create the slot type.
+        /// </para>
+        /// </summary>
+        public ExternalSourceSetting ExternalSourceSetting
+        {
+            get { return this._externalSourceSetting; }
+            set { this._externalSourceSetting = value; }
+        }
+
+        // Check to see if ExternalSourceSetting property is set
+        internal bool IsSetExternalSourceSetting()
+        {
+            return this._externalSourceSetting != null;
         }
 
         /// <summary>
@@ -155,7 +193,7 @@ namespace Amazon.LexModelsV2.Model
         /// <summary>
         /// Gets and sets the property SlotTypeName. 
         /// <para>
-        /// The name for the slot. A slot type name must be unique within the account.
+        /// The name for the slot. A slot type name must be unique within the intent.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
@@ -200,21 +238,20 @@ namespace Amazon.LexModelsV2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>OriginalValue</code> - Returns the value entered by the user, if the user value
-        /// is similar to the slot value.
+        ///  <code>ORIGINAL_VALUE</code> - Returns the value entered by the user, if the user
+        /// value is similar to the slot value.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>TopResolution</code> - If there is a resolution list for the slot, return the
-        /// first value in the resolution list. If there is no resolution list, return null.
+        ///  <code>TOP_RESOLUTION</code> - If there is a resolution list for the slot, return
+        /// the first value in the resolution list. If there is no resolution list, return null.
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// If you don't specify the <code>valueSelectionSetting</code> parameter, the default
-        /// is <code>OriginalValue</code>.
+        /// is <code>ORIGINAL_VALUE</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public SlotValueSelectionSetting ValueSelectionSetting
         {
             get { return this._valueSelectionSetting; }

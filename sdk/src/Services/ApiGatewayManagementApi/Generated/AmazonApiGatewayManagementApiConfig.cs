@@ -17,22 +17,22 @@
  * Do not modify this file. This file is generated from the apigatewaymanagementapi-2018-11-29.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
-
+using Amazon.ApiGatewayManagementApi.Internal;
 
 namespace Amazon.ApiGatewayManagementApi
 {
     /// <summary>
     /// Configuration for accessing Amazon ApiGatewayManagementApi service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonApiGatewayManagementApiConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.105");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.147");
 
         private string _userAgent = UserAgentString;
 
@@ -40,8 +40,10 @@ namespace Amazon.ApiGatewayManagementApi
         /// Default constructor
         /// </summary>
         public AmazonApiGatewayManagementApiConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonApiGatewayManagementApiDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "execute-api";
+            this.EndpointProvider = new AmazonApiGatewayManagementApiEndpointProvider();
         }
 
         /// <summary>
@@ -76,5 +78,6 @@ namespace Amazon.ApiGatewayManagementApi
                 return _userAgent;
             }
         }
+
     }
 }

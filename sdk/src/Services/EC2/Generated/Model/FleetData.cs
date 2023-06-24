@@ -82,7 +82,7 @@ namespace Amazon.EC2.Model
         /// <para>
         /// Unique, case-sensitive identifier that you provide to ensure the idempotency of the
         /// request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-        /// Idempotency</a>.
+        /// idempotency</a>.
         /// </para>
         ///  
         /// <para>
@@ -161,6 +161,10 @@ namespace Amazon.EC2.Model
         /// <para>
         /// Indicates whether running instances should be terminated if the target capacity of
         /// the EC2 Fleet is decreased below the current size of the EC2 Fleet.
+        /// </para>
+        ///  
+        /// <para>
+        /// Supported only for fleets of type <code>maintain</code>.
         /// </para>
         /// </summary>
         public FleetExcessCapacityTerminationPolicy ExcessCapacityTerminationPolicy

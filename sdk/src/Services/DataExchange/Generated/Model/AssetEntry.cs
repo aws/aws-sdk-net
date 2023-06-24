@@ -29,10 +29,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataExchange.Model
 {
     /// <summary>
-    /// An asset in AWS Data Exchange is a piece of data. The asset can be a structured data
-    /// file, an image file, or some other data file that can be stored as an S3 object, or
-    /// an Amazon Redshift datashare (Preview). When you create an import job for your files,
-    /// you create an asset in AWS Data Exchange for each of those files.
+    /// An asset in AWS Data Exchange is a piece of data (Amazon S3 object) or a means of
+    /// fulfilling data (Amazon Redshift datashare or Amazon API Gateway API, AWS Lake Formation
+    /// data permission, or Amazon S3 data access). The asset can be a structured data file,
+    /// an image file, or some other data file that can be stored as an Amazon S3 object,
+    /// an Amazon API Gateway API, or an Amazon Redshift datashare, an AWS Lake Formation
+    /// data permission, or an Amazon S3 data access. When you create an import job for your
+    /// files, API Gateway APIs, Amazon Redshift datashares, AWS Lake Formation data permission,
+    /// or Amazon S3 data access, you create an asset in AWS Data Exchange.
     /// </summary>
     public partial class AssetEntry
     {
@@ -69,7 +73,7 @@ namespace Amazon.DataExchange.Model
         /// <summary>
         /// Gets and sets the property AssetDetails. 
         /// <para>
-        /// Information about the asset.
+        /// Details about the asset.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -164,9 +168,13 @@ namespace Amazon.DataExchange.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the asset. When importing from Amazon S3, the S3 object key is used as
-        /// the asset name. When exporting to Amazon S3, the asset name is used as default target
-        /// S3 object key.
+        /// The name of the asset. When importing from Amazon S3, the Amazon S3 object key is
+        /// used as the asset name. When exporting to Amazon S3, the asset name is used as default
+        /// target Amazon S3 object key. When importing from Amazon API Gateway API, the API name
+        /// is used as the asset name. When importing from Amazon Redshift, the datashare name
+        /// is used as the asset name. When importing from AWS Lake Formation, the static values
+        /// of "Database(s) included in LF-tag policy" or "Table(s) included in LF-tag policy"
+        /// are used as the asset name.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

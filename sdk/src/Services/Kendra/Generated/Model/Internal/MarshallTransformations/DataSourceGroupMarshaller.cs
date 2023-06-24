@@ -34,7 +34,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DataSourceGroup Marshaller
-    /// </summary>       
+    /// </summary>
     public class DataSourceGroupMarshaller : IRequestMarshaller<DataSourceGroup, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DataSourceGroupMarshaller Instance = new DataSourceGroupMarshaller();
 
     }

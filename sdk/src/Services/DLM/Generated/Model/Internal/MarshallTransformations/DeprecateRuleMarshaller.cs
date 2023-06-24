@@ -34,7 +34,7 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DeprecateRule Marshaller
-    /// </summary>       
+    /// </summary>
     public class DeprecateRuleMarshaller : IRequestMarshaller<DeprecateRule, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DeprecateRuleMarshaller Instance = new DeprecateRuleMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SearchResourcesSortCriteria Marshaller
-    /// </summary>       
+    /// </summary>
     public class SearchResourcesSortCriteriaMarshaller : IRequestMarshaller<SearchResourcesSortCriteria, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SearchResourcesSortCriteriaMarshaller Instance = new SearchResourcesSortCriteriaMarshaller();
 
     }

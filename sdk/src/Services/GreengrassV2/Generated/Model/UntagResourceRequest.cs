@@ -63,7 +63,7 @@ namespace Amazon.GreengrassV2.Model
         /// A list of keys for tags to remove from the resource.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=50)]
+        [AWSProperty(Required=true, Min=1, Max=200)]
         public List<string> TagKeys
         {
             get { return this._tagKeys; }

@@ -87,8 +87,13 @@ namespace Amazon.AppConfig.Model
         /// <summary>
         /// Gets and sets the property FinalBakeTimeInMinutes. 
         /// <para>
-        /// The amount of time AppConfig monitors for alarms before considering the deployment
-        /// to be complete and no longer eligible for automatic roll back.
+        /// Specifies the amount of time AppConfig monitors for Amazon CloudWatch alarms after
+        /// the configuration has been deployed to 100% of its targets, before considering the
+        /// deployment to be complete. If an alarm is triggered during this time, AppConfig rolls
+        /// back the deployment. You must configure permissions for AppConfig to roll back based
+        /// on CloudWatch alarms. For more information, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/getting-started-with-appconfig-cloudwatch-alarms-permissions.html">Configuring
+        /// permissions for rollback based on Amazon CloudWatch alarms</a> in the <i>AppConfig
+        /// User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1440)]
@@ -202,7 +207,6 @@ namespace Amazon.AppConfig.Model
         /// Save the deployment strategy to a Systems Manager (SSM) document.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public ReplicateTo ReplicateTo
         {
             get { return this._replicateTo; }

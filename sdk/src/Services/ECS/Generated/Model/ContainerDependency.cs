@@ -36,7 +36,7 @@ namespace Amazon.ECS.Model
     ///  
     /// <para>
     /// Your Amazon ECS container instances require at least version 1.26.0 of the container
-    /// agent to enable container dependencies. However, we recommend using the latest container
+    /// agent to use container dependencies. However, we recommend using the latest container
     /// agent version. For information about checking your agent version and updating to the
     /// latest version, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
     /// the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service Developer

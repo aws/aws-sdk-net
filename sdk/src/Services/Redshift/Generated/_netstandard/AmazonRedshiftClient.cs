@@ -267,6 +267,15 @@ namespace Amazon.Redshift
         } 
 
         /// <summary>
+        /// Customizes the runtime pipeline.
+        /// </summary>
+        /// <param name="pipeline">Runtime pipeline for the current client.</param>
+        protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
+        {
+            pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonRedshiftEndpointResolver());
+        }
+        /// <summary>
         /// Capture metadata for the service.
         /// </summary>
         protected override IServiceMetadata ServiceMetadata
@@ -522,8 +531,8 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// From a data producer account, authorizes the sharing of a datashare with one or more
-        /// consumer accounts. To authorize a datashare for a data consumer, the producer account
-        /// must have the correct access privileges.
+        /// consumer accounts or managing entities. To authorize a datashare for a data consumer,
+        /// the producer account must have the correct access permissions.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AuthorizeDataShare service method.</param>
         /// <param name="cancellationToken">
@@ -646,6 +655,9 @@ namespace Amazon.Redshift
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.LimitExceededException">
         /// The encryption key has exceeded its grant limit in Amazon Web Services KMS.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/AuthorizeSnapshotAccess">REST API Reference for AuthorizeSnapshotAccess Operation</seealso>
         public virtual Task<AuthorizeSnapshotAccessResponse> AuthorizeSnapshotAccessAsync(AuthorizeSnapshotAccessRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1281,6 +1293,51 @@ namespace Amazon.Redshift
 
         #endregion
         
+        #region  CreateCustomDomainAssociation
+
+        internal virtual CreateCustomDomainAssociationResponse CreateCustomDomainAssociation(CreateCustomDomainAssociationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateCustomDomainAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateCustomDomainAssociationResponseUnmarshaller.Instance;
+
+            return Invoke<CreateCustomDomainAssociationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Used to create a custom domain name for a cluster. Properties include the custom domain
+        /// name, the cluster the custom domain is associated with, and the certificate Amazon
+        /// Resource Name (ARN).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCustomDomainAssociation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateCustomDomainAssociation service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
+        /// The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.CustomCnameAssociationException">
+        /// An error occurred when an attempt was made to change the custom domain association.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateCustomDomainAssociation">REST API Reference for CreateCustomDomainAssociation Operation</seealso>
+        public virtual Task<CreateCustomDomainAssociationResponse> CreateCustomDomainAssociationAsync(CreateCustomDomainAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateCustomDomainAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateCustomDomainAssociationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateCustomDomainAssociationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateEndpointAccess
 
         internal virtual CreateEndpointAccessResponse CreateEndpointAccess(CreateEndpointAccessRequest request)
@@ -1630,8 +1687,8 @@ namespace Amazon.Redshift
 
 
         /// <summary>
-        /// Creates a snapshot copy grant that permits Amazon Redshift to use a customer master
-        /// key (CMK) from Key Management Service (KMS) to encrypt copied snapshots in a destination
+        /// Creates a snapshot copy grant that permits Amazon Redshift to use an encrypted symmetric
+        /// key from Key Management Service (KMS) to encrypt copied snapshots in a destination
         /// region.
         /// 
         ///  
@@ -1860,7 +1917,7 @@ namespace Amazon.Redshift
 
 
         /// <summary>
-        /// From the producer account, removes authorization from the specified datashare.
+        /// From a datashare producer account, removes authorization from the specified datashare.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeauthorizeDataShare service method.</param>
         /// <param name="cancellationToken">
@@ -2189,6 +2246,49 @@ namespace Amazon.Redshift
             options.ResponseUnmarshaller = DeleteClusterSubnetGroupResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteClusterSubnetGroupResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteCustomDomainAssociation
+
+        internal virtual DeleteCustomDomainAssociationResponse DeleteCustomDomainAssociation(DeleteCustomDomainAssociationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteCustomDomainAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCustomDomainAssociationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteCustomDomainAssociationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Contains information about deleting a custom domain association for a cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCustomDomainAssociation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteCustomDomainAssociation service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
+        /// The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.CustomCnameAssociationException">
+        /// An error occurred when an attempt was made to change the custom domain association.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteCustomDomainAssociation">REST API Reference for DeleteCustomDomainAssociation Operation</seealso>
+        public virtual Task<DeleteCustomDomainAssociationResponse> DeleteCustomDomainAssociationAsync(DeleteCustomDomainAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteCustomDomainAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCustomDomainAssociationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteCustomDomainAssociationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3150,6 +3250,9 @@ namespace Amazon.Redshift
         /// <exception cref="Amazon.Redshift.Model.InvalidTagException">
         /// The tag is invalid.
         /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterSnapshots">REST API Reference for DescribeClusterSnapshots Operation</seealso>
         public virtual Task<DescribeClusterSnapshotsResponse> DescribeClusterSnapshotsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -3193,6 +3296,9 @@ namespace Amazon.Redshift
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.InvalidTagException">
         /// The tag is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterSnapshots">REST API Reference for DescribeClusterSnapshots Operation</seealso>
         public virtual Task<DescribeClusterSnapshotsResponse> DescribeClusterSnapshotsAsync(DescribeClusterSnapshotsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3398,6 +3504,46 @@ namespace Amazon.Redshift
             options.ResponseUnmarshaller = DescribeClusterVersionsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeClusterVersionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeCustomDomainAssociations
+
+        internal virtual DescribeCustomDomainAssociationsResponse DescribeCustomDomainAssociations(DescribeCustomDomainAssociationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeCustomDomainAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeCustomDomainAssociationsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeCustomDomainAssociationsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Contains information for custom domain associations for a cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCustomDomainAssociations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeCustomDomainAssociations service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.CustomDomainAssociationNotFoundException">
+        /// An error occurred. The custom domain name couldn't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeCustomDomainAssociations">REST API Reference for DescribeCustomDomainAssociations Operation</seealso>
+        public virtual Task<DescribeCustomDomainAssociationsResponse> DescribeCustomDomainAssociationsAsync(DescribeCustomDomainAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeCustomDomainAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeCustomDomainAssociationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeCustomDomainAssociationsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4122,6 +4268,9 @@ namespace Amazon.Redshift
         /// <exception cref="Amazon.Redshift.Model.InvalidClusterSnapshotStateException">
         /// The specified cluster snapshot is not in the <code>available</code> state, or other
         /// accounts are authorized to access the snapshot.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeNodeConfigurationOptions">REST API Reference for DescribeNodeConfigurationOptions Operation</seealso>
         public virtual Task<DescribeNodeConfigurationOptionsResponse> DescribeNodeConfigurationOptionsAsync(DescribeNodeConfigurationOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -4896,9 +5045,9 @@ namespace Amazon.Redshift
         /// 
         ///  
         /// <para>
-        /// If your cluster and its snapshots are encrypted using a customer master key (CMK)
-        /// from Key Management Service, use <a>DeleteSnapshotCopyGrant</a> to delete the grant
-        /// that grants Amazon Redshift permission to the CMK in the destination region. 
+        /// If your cluster and its snapshots are encrypted using an encrypted symmetric key from
+        /// Key Management Service, use <a>DeleteSnapshotCopyGrant</a> to delete the grant that
+        /// grants Amazon Redshift permission to the key in the destination region. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisableSnapshotCopy service method.</param>
@@ -4945,7 +5094,7 @@ namespace Amazon.Redshift
 
 
         /// <summary>
-        /// From a consumer account, remove association for the specified datashare.
+        /// From a datashare consumer account, remove association for the specified datashare.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateDataShareConsumer service method.</param>
         /// <param name="cancellationToken">
@@ -5143,7 +5292,7 @@ namespace Amazon.Redshift
         ///  
         /// <para>
         /// In addition, if the <code>AutoCreate</code> parameter is set to <code>True</code>,
-        /// then the policy must include the <code>redshift:CreateClusterUser</code> privilege.
+        /// then the policy must include the <code>redshift:CreateClusterUser</code> permission.
         /// </para>
         ///  
         /// <para>
@@ -5171,6 +5320,60 @@ namespace Amazon.Redshift
             options.ResponseUnmarshaller = GetClusterCredentialsResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetClusterCredentialsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetClusterCredentialsWithIAM
+
+        internal virtual GetClusterCredentialsWithIAMResponse GetClusterCredentialsWithIAM(GetClusterCredentialsWithIAMRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetClusterCredentialsWithIAMRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetClusterCredentialsWithIAMResponseUnmarshaller.Instance;
+
+            return Invoke<GetClusterCredentialsWithIAMResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns a database user name and temporary password with temporary authorization to
+        /// log in to an Amazon Redshift database. The database user is mapped 1:1 to the source
+        /// Identity and Access Management (IAM) identity. For more information about IAM identities,
+        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id.html">IAM Identities
+        /// (users, user groups, and roles)</a> in the Amazon Web Services Identity and Access
+        /// Management User Guide.
+        /// 
+        ///  
+        /// <para>
+        /// The Identity and Access Management (IAM) identity that runs this operation must have
+        /// an IAM policy attached that allows access to all necessary actions and resources.
+        /// For more information about permissions, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-identity-based.html">Using
+        /// identity-based policies (IAM policies)</a> in the Amazon Redshift Cluster Management
+        /// Guide. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetClusterCredentialsWithIAM service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetClusterCredentialsWithIAM service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
+        /// The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/GetClusterCredentialsWithIAM">REST API Reference for GetClusterCredentialsWithIAM Operation</seealso>
+        public virtual Task<GetClusterCredentialsWithIAMResponse> GetClusterCredentialsWithIAMAsync(GetClusterCredentialsWithIAMRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetClusterCredentialsWithIAMRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetClusterCredentialsWithIAMResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetClusterCredentialsWithIAMResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5304,7 +5507,8 @@ namespace Amazon.Redshift
 
 
         /// <summary>
-        /// Modifies whether a cluster can use AQUA (Advanced Query Accelerator).
+        /// This operation is retired. Calling this operation does not change AQUA configuration.
+        /// Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyAquaConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -5429,6 +5633,9 @@ namespace Amazon.Redshift
         /// <exception cref="Amazon.Redshift.Model.ClusterSecurityGroupNotFoundException">
         /// The cluster security group name does not refer to an existing cluster security group.
         /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.CustomCnameAssociationException">
+        /// An error occurred when an attempt was made to change the custom domain association.
+        /// </exception>
         /// <exception cref="Amazon.Redshift.Model.DependentServiceRequestThrottlingException">
         /// The request cannot be completed because a dependent service is throttling requests
         /// made by Amazon Redshift on your behalf. Wait and retry the request.
@@ -5479,6 +5686,9 @@ namespace Amazon.Redshift
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.UnauthorizedOperationException">
         /// Your account is not authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.UnsupportedOptionException">
         /// A request option was specified that is not supported.
@@ -5558,7 +5768,9 @@ namespace Amazon.Redshift
         /// 
         ///  
         /// <para>
-        /// A cluster can have up to 10 IAM roles associated at any time.
+        /// The maximum number of IAM roles that you can associate is subject to a quota. For
+        /// more information, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Quotas
+        /// and limits</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyClusterIamRoles service method.</param>
@@ -5823,6 +6035,49 @@ namespace Amazon.Redshift
             options.ResponseUnmarshaller = ModifyClusterSubnetGroupResponseUnmarshaller.Instance;
 
             return InvokeAsync<ModifyClusterSubnetGroupResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ModifyCustomDomainAssociation
+
+        internal virtual ModifyCustomDomainAssociationResponse ModifyCustomDomainAssociation(ModifyCustomDomainAssociationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyCustomDomainAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyCustomDomainAssociationResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyCustomDomainAssociationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Contains information for changing a custom domain association.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyCustomDomainAssociation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyCustomDomainAssociation service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
+        /// The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.CustomCnameAssociationException">
+        /// An error occurred when an attempt was made to change the custom domain association.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyCustomDomainAssociation">REST API Reference for ModifyCustomDomainAssociation Operation</seealso>
+        public virtual Task<ModifyCustomDomainAssociationResponse> ModifyCustomDomainAssociationAsync(ModifyCustomDomainAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyCustomDomainAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyCustomDomainAssociationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ModifyCustomDomainAssociationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -6299,7 +6554,7 @@ namespace Amazon.Redshift
 
 
         /// <summary>
-        /// From the consumer account, rejects the specified datashare.
+        /// From a datashare consumer account, rejects the specified datashare.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RejectDataShare service method.</param>
         /// <param name="cancellationToken">
@@ -6686,6 +6941,11 @@ namespace Amazon.Redshift
         /// <code>NewTableName</code> parameter value in the call to <code>RestoreTableFromClusterSnapshot</code>.
         /// This way, you can replace the original table with the table created from the snapshot.
         /// </para>
+        ///  
+        /// <para>
+        /// You can't use this operation to restore tables with <a href="https://docs.aws.amazon.com/redshift/latest/dg/t_Sorting_data.html#t_Sorting_data-interleaved">interleaved
+        /// sort keys</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RestoreTableFromClusterSnapshot service method.</param>
         /// <param name="cancellationToken">
@@ -6916,6 +7176,9 @@ namespace Amazon.Redshift
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.ClusterSnapshotNotFoundException">
         /// The snapshot identifier does not refer to an existing cluster snapshot.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RevokeSnapshotAccess">REST API Reference for RevokeSnapshotAccess Operation</seealso>
         public virtual Task<RevokeSnapshotAccessResponse> RevokeSnapshotAccessAsync(RevokeSnapshotAccessRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))

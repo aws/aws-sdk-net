@@ -34,7 +34,7 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ConnectivityInfo Marshaller
-    /// </summary>       
+    /// </summary>
     public class ConnectivityInfoMarshaller : IRequestMarshaller<ConnectivityInfo, JsonMarshallerContext> 
     {
         /// <summary>
@@ -56,11 +56,22 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetVpcConnectivity())
+            {
+                context.Writer.WritePropertyName("vpcConnectivity");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = VpcConnectivityMarshaller.Instance;
+                marshaller.Marshall(requestObject.VpcConnectivity, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ConnectivityInfoMarshaller Instance = new ConnectivityInfoMarshaller();
 
     }

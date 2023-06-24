@@ -56,7 +56,7 @@ namespace Amazon.MigrationHubRefactorSpaces.Model.Internal.MarshallTransformatio
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.MigrationHubRefactorSpaces");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-10-26";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-10-26";
             request.HttpMethod = "POST";
 
             if (!publicRequest.IsSetResourceArn())
@@ -82,7 +82,6 @@ namespace Amazon.MigrationHubRefactorSpaces.Model.Internal.MarshallTransformatio
                     context.Writer.WriteObjectEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

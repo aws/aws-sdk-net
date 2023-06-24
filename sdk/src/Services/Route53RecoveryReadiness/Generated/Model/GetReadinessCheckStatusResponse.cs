@@ -39,7 +39,10 @@ namespace Amazon.Route53RecoveryReadiness.Model
         private List<ResourceResult> _resources = new List<ResourceResult>();
 
         /// <summary>
-        /// Gets and sets the property Messages. Top level messages for readiness check status
+        /// Gets and sets the property Messages. 
+        /// <para>
+        /// Top level messages for readiness check status
+        /// </para>
         /// </summary>
         public List<Message> Messages
         {
@@ -54,8 +57,10 @@ namespace Amazon.Route53RecoveryReadiness.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken. A token that can be used to resume pagination
-        /// from the end of the collection.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The token that identifies which batch of results you want to see.
+        /// </para>
         /// </summary>
         public string NextToken
         {
@@ -70,7 +75,10 @@ namespace Amazon.Route53RecoveryReadiness.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Readiness. The readiness at rule level.
+        /// Gets and sets the property Readiness. 
+        /// <para>
+        /// The readiness at rule level.
+        /// </para>
         /// </summary>
         public Readiness Readiness
         {
@@ -85,7 +93,10 @@ namespace Amazon.Route53RecoveryReadiness.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Resources. Summary of resources's readiness
+        /// Gets and sets the property Resources. 
+        /// <para>
+        /// Summary of the readiness of resources.
+        /// </para>
         /// </summary>
         public List<ResourceResult> Resources
         {

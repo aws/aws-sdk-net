@@ -64,6 +64,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("DisableProfiler", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.DisableProfiler = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ProfilingIntervalInMilliseconds", targetDepth))
                 {
                     var unmarshaller = LongUnmarshaller.Instance;

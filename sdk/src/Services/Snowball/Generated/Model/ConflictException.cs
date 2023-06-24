@@ -125,7 +125,11 @@ namespace Amazon.Snowball.Model
 #endif
 
         /// <summary>
-        /// Gets and sets the property ConflictResource.
+        /// Gets and sets the property ConflictResource. 
+        /// <para>
+        /// You get this resource when you call <code>CreateReturnShippingLabel</code> more than
+        /// once when other requests are not completed. .
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
         public string ConflictResource

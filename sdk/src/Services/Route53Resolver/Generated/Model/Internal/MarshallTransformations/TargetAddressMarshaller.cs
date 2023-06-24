@@ -34,7 +34,7 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// TargetAddress Marshaller
-    /// </summary>       
+    /// </summary>
     public class TargetAddressMarshaller : IRequestMarshaller<TargetAddress, JsonMarshallerContext> 
     {
         /// <summary>
@@ -51,6 +51,12 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Ip);
             }
 
+            if(requestObject.IsSetIpv6())
+            {
+                context.Writer.WritePropertyName("Ipv6");
+                context.Writer.Write(requestObject.Ipv6);
+            }
+
             if(requestObject.IsSetPort())
             {
                 context.Writer.WritePropertyName("Port");
@@ -61,7 +67,7 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static TargetAddressMarshaller Instance = new TargetAddressMarshaller();
 
     }

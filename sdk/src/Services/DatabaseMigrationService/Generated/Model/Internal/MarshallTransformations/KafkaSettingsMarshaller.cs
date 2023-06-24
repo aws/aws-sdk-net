@@ -34,7 +34,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// KafkaSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class KafkaSettingsMarshaller : IRequestMarshaller<KafkaSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -105,6 +105,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.PartitionIncludeSchemaTable);
             }
 
+            if(requestObject.IsSetSaslMechanism())
+            {
+                context.Writer.WritePropertyName("SaslMechanism");
+                context.Writer.Write(requestObject.SaslMechanism);
+            }
+
             if(requestObject.IsSetSaslPassword())
             {
                 context.Writer.WritePropertyName("SaslPassword");
@@ -157,7 +163,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static KafkaSettingsMarshaller Instance = new KafkaSettingsMarshaller();
 
     }

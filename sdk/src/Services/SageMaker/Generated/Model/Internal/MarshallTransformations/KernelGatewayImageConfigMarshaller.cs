@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// KernelGatewayImageConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class KernelGatewayImageConfigMarshaller : IRequestMarshaller<KernelGatewayImageConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -76,7 +76,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static KernelGatewayImageConfigMarshaller Instance = new KernelGatewayImageConfigMarshaller();
 
     }

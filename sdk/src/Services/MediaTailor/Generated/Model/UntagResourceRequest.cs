@@ -30,8 +30,7 @@ namespace Amazon.MediaTailor.Model
 {
     /// <summary>
     /// Container for the parameters to the UntagResource operation.
-    /// Removes tags from the specified playback configuration resource. You can specify one
-    /// or more tags to remove.
+    /// The resource to untag.
     /// </summary>
     public partial class UntagResourceRequest : AmazonMediaTailorRequest
     {
@@ -41,8 +40,7 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) for the playback configuration. You can get this from
-        /// the response to any playback configuration request.
+        /// The Amazon Resource Name (ARN) of the resource to untag.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -61,7 +59,7 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property TagKeys. 
         /// <para>
-        /// A comma-separated list of the tag keys to remove from the playback configuration.
+        /// The tag keys associated with the resource.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

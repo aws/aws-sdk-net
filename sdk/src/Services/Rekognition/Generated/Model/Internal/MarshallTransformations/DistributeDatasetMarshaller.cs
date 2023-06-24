@@ -34,7 +34,7 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DistributeDataset Marshaller
-    /// </summary>       
+    /// </summary>
     public class DistributeDatasetMarshaller : IRequestMarshaller<DistributeDataset, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DistributeDatasetMarshaller Instance = new DistributeDatasetMarshaller();
 
     }

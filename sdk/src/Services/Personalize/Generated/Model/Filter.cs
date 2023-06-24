@@ -122,10 +122,11 @@ namespace Amazon.Personalize.Model
         /// <para>
         /// Specifies the type of item interactions to filter out of recommendation results. The
         /// filter expression must follow specific format rules. For information about filter
-        /// expression structure and syntax, see <a>filter-expressions</a>.
+        /// expression structure and syntax, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter-expressions.html">Filter
+        /// expressions</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=2500)]
+        [AWSProperty(Sensitive=true, Min=1, Max=2500)]
         public string FilterExpression
         {
             get { return this._filterExpression; }

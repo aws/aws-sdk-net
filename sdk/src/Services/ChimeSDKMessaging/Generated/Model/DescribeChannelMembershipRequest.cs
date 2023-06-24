@@ -34,8 +34,9 @@ namespace Amazon.ChimeSDKMessaging.Model
     /// 
     ///  <note> 
     /// <para>
-    /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
-    /// of the user that makes the API call as the value in the header.
+    /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the
+    /// <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call
+    /// as the value in the header.
     /// </para>
     ///  </note>
     /// </summary>
@@ -44,6 +45,7 @@ namespace Amazon.ChimeSDKMessaging.Model
         private string _channelArn;
         private string _chimeBearer;
         private string _memberArn;
+        private string _subChannelId;
 
         /// <summary>
         /// Gets and sets the property ChannelArn. 
@@ -67,7 +69,8 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// <summary>
         /// Gets and sets the property ChimeBearer. 
         /// <para>
-        /// The <code>AppInstanceUserArn</code> of the user that makes the API call.
+        /// The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes
+        /// the API call.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=5, Max=1600)]
@@ -100,6 +103,31 @@ namespace Amazon.ChimeSDKMessaging.Model
         internal bool IsSetMemberArn()
         {
             return this._memberArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SubChannelId. 
+        /// <para>
+        /// The ID of the SubChannel in the request. The response contains an <code>ElasticChannelConfiguration</code>
+        /// object.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Only required to get a user’s SubChannel membership details.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        [AWSProperty(Min=1, Max=128)]
+        public string SubChannelId
+        {
+            get { return this._subChannelId; }
+            set { this._subChannelId = value; }
+        }
+
+        // Check to see if SubChannelId property is set
+        internal bool IsSetSubChannelId()
+        {
+            return this._subChannelId != null;
         }
 
     }

@@ -30,8 +30,8 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeExportTasks operation.
-    /// Returns information about a snapshot export to Amazon S3. This API operation supports
-    /// pagination.
+    /// Returns information about a snapshot or cluster export to Amazon S3. This API operation
+    /// supports pagination.
     /// </summary>
     public partial class DescribeExportTasksRequest : AmazonRDSRequest
     {
@@ -40,11 +40,12 @@ namespace Amazon.RDS.Model
         private string _marker;
         private int? _maxRecords;
         private string _sourceArn;
+        private ExportSourceType _sourceType;
 
         /// <summary>
         /// Gets and sets the property ExportTaskIdentifier. 
         /// <para>
-        /// The identifier of the snapshot export task to be described.
+        /// The identifier of the snapshot or cluster export task to be described.
         /// </para>
         /// </summary>
         public string ExportTaskIdentifier
@@ -62,26 +63,27 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// Filters specify one or more snapshot exports to describe. The filters are specified
-        /// as name-value pairs that define what to include in the output. Filter names and values
-        /// are case-sensitive.
+        /// Filters specify one or more snapshot or cluster exports to describe. The filters are
+        /// specified as name-value pairs that define what to include in the output. Filter names
+        /// and values are case-sensitive.
         /// </para>
         ///  
         /// <para>
-        /// Supported filters include the following: 
+        /// Supported filters include the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>export-task-identifier</code> - An identifier for the snapshot export task.
+        ///  <code>export-task-identifier</code> - An identifier for the snapshot or cluster export
+        /// task.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>s3-bucket</code> - The Amazon S3 bucket the snapshot is exported to.
+        ///  <code>s3-bucket</code> - The Amazon S3 bucket the data is exported to.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>source-arn</code> - The Amazon Resource Name (ARN) of the snapshot exported
-        /// to Amazon S3
+        ///  <code>source-arn</code> - The Amazon Resource Name (ARN) of the snapshot or cluster
+        /// exported to Amazon S3.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -129,9 +131,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        ///  An optional pagination token provided by a previous <code>DescribeExportTasks</code>
+        /// An optional pagination token provided by a previous <code>DescribeExportTasks</code>
         /// request. If you specify this parameter, the response includes only records beyond
-        /// the marker, up to the value specified by the <code>MaxRecords</code> parameter. 
+        /// the marker, up to the value specified by the <code>MaxRecords</code> parameter.
         /// </para>
         /// </summary>
         public string Marker
@@ -149,10 +151,10 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property MaxRecords. 
         /// <para>
-        ///  The maximum number of records to include in the response. If more records exist than
+        /// The maximum number of records to include in the response. If more records exist than
         /// the specified value, a pagination token called a marker is included in the response.
         /// You can use the marker in a later <code>DescribeExportTasks</code> request to retrieve
-        /// the remaining results. 
+        /// the remaining results.
         /// </para>
         ///  
         /// <para>
@@ -179,7 +181,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property SourceArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the snapshot exported to Amazon S3.
+        /// The Amazon Resource Name (ARN) of the snapshot or cluster exported to Amazon S3.
         /// </para>
         /// </summary>
         public string SourceArn
@@ -192,6 +194,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetSourceArn()
         {
             return this._sourceArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceType. 
+        /// <para>
+        /// The type of source for the export.
+        /// </para>
+        /// </summary>
+        public ExportSourceType SourceType
+        {
+            get { return this._sourceType; }
+            set { this._sourceType = value; }
+        }
+
+        // Check to see if SourceType property is set
+        internal bool IsSetSourceType()
+        {
+            return this._sourceType != null;
         }
 
     }

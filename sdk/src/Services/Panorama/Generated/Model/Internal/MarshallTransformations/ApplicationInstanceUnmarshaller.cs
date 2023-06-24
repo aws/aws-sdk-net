@@ -112,6 +112,12 @@ namespace Amazon.Panorama.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("RuntimeContextStates", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ReportedRuntimeContextState, ReportedRuntimeContextStateUnmarshaller>(ReportedRuntimeContextStateUnmarshaller.Instance);
+                    unmarshalledObject.RuntimeContextStates = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

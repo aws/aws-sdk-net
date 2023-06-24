@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// The result of a <code> <a>DescribeOutboundConnections</a> </code> request. Contains
-    /// the list of connections matching the filter criteria.
+    /// Contains a list of connections matching the filter criteria.
     /// </summary>
     public partial class DescribeOutboundConnectionsResponse : AmazonWebServiceResponse
     {
@@ -40,8 +39,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property Connections. 
         /// <para>
-        /// A list of <code> <a>OutboundConnection</a> </code> matching the specified filter criteria.
-        /// 
+        /// List of outbound connections that match the filter criteria.
         /// </para>
         /// </summary>
         public List<OutboundConnection> Connections
@@ -59,8 +57,9 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If more results are available and NextToken is present, make the next request to the
-        /// same API with the received NextToken to paginate the remaining results. 
+        /// When <code>nextToken</code> is returned, there are more results available. The value
+        /// of <code>nextToken</code> is a unique pagination token for each page. Make the call
+        /// again using the returned token to retrieve the next page.
         /// </para>
         /// </summary>
         public string NextToken

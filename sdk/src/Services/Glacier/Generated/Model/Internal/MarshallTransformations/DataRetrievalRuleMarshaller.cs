@@ -34,7 +34,7 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DataRetrievalRule Marshaller
-    /// </summary>       
+    /// </summary>
     public class DataRetrievalRuleMarshaller : IRequestMarshaller<DataRetrievalRule, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DataRetrievalRuleMarshaller Instance = new DataRetrievalRuleMarshaller();
 
     }

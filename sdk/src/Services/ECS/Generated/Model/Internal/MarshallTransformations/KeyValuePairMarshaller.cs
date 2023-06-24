@@ -34,7 +34,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// KeyValuePair Marshaller
-    /// </summary>       
+    /// </summary>
     public class KeyValuePairMarshaller : IRequestMarshaller<KeyValuePair, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static KeyValuePairMarshaller Instance = new KeyValuePairMarshaller();
 
     }

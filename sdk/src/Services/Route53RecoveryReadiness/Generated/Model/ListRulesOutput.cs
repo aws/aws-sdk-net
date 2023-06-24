@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53RecoveryReadiness.Model
 {
     /// <summary>
-    /// A collection of rules used in a readiness check
+    /// Readiness rule information, including the resource type, rule ID, and rule description.
     /// </summary>
     public partial class ListRulesOutput
     {
@@ -38,7 +38,10 @@ namespace Amazon.Route53RecoveryReadiness.Model
         private string _ruleId;
 
         /// <summary>
-        /// Gets and sets the property ResourceType. The resource type the rule applies to.
+        /// Gets and sets the property ResourceType. 
+        /// <para>
+        /// The resource type that the readiness rule applies to.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=64)]
         public string ResourceType
@@ -54,7 +57,10 @@ namespace Amazon.Route53RecoveryReadiness.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RuleDescription. A description of the rule
+        /// Gets and sets the property RuleDescription. 
+        /// <para>
+        /// The description of a readiness rule.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=256)]
         public string RuleDescription
@@ -70,7 +76,10 @@ namespace Amazon.Route53RecoveryReadiness.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RuleId. The Rule's ID.
+        /// Gets and sets the property RuleId. 
+        /// <para>
+        /// The ID for the readiness rule.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=64)]
         public string RuleId

@@ -70,6 +70,22 @@ namespace Amazon.Textract
         /// are returned (including text that doesn't have a relationship with the value of <code>FeatureTypes</code>).
         /// 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Signatures. A SIGNATURE <code>Block</code> object contains the location information
+        /// of a signature in a document. If used in conjunction with forms or tables, a signature
+        /// can be given a Key-Value pairing or be detected in the cell of a table.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Query. A QUERY Block object contains the query text, alias and link to the associated
+        /// Query results block object.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Query Result. A QUERY_RESULT Block object contains the answer to the query and an
+        /// ID that connects it to the query asked. This Block also contains a confidence score.
+        /// </para>
         ///  </li> </ul> 
         /// <para>
         /// Selection elements such as check boxes and option buttons (radio buttons) can be detected
@@ -139,9 +155,8 @@ namespace Amazon.Textract
         /// Amazon Textract is temporarily unable to process the request. Try your call again.
         /// </exception>
         /// <exception cref="Amazon.Textract.Model.UnsupportedDocumentException">
-        /// The format of the input document isn't supported. Documents for synchronous operations
-        /// can be in PNG or JPEG format only. Documents for asynchronous operations can be in
-        /// PDF format.
+        /// The format of the input document isn't supported. Documents for operations can be
+        /// in PNG, JPEG, PDF, or TIFF format.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/AnalyzeDocument">REST API Reference for AnalyzeDocument Operation</seealso>
         AnalyzeDocumentResponse AnalyzeDocument(AnalyzeDocumentRequest request);
@@ -183,7 +198,7 @@ namespace Amazon.Textract
         /// 
         ///  
         /// <para>
-        /// Information is returned as <code>ExpenseDocuments</code> and seperated as follows.
+        /// Information is returned as <code>ExpenseDocuments</code> and seperated as follows:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -237,9 +252,8 @@ namespace Amazon.Textract
         /// Amazon Textract is temporarily unable to process the request. Try your call again.
         /// </exception>
         /// <exception cref="Amazon.Textract.Model.UnsupportedDocumentException">
-        /// The format of the input document isn't supported. Documents for synchronous operations
-        /// can be in PNG or JPEG format only. Documents for asynchronous operations can be in
-        /// PDF format.
+        /// The format of the input document isn't supported. Documents for operations can be
+        /// in PNG, JPEG, PDF, or TIFF format.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/AnalyzeExpense">REST API Reference for AnalyzeExpense Operation</seealso>
         AnalyzeExpenseResponse AnalyzeExpense(AnalyzeExpenseRequest request);
@@ -278,7 +292,8 @@ namespace Amazon.Textract
         /// <summary>
         /// Analyzes identity documents for relevant information. This information is extracted
         /// and returned as <code>IdentityDocumentFields</code>, which records both the normalized
-        /// field and value of the extracted text.
+        /// field and value of the extracted text. Unlike other Amazon Textract operations, <code>AnalyzeID</code>
+        /// doesn't return any Geometry data.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AnalyzeID service method.</param>
         /// 
@@ -319,9 +334,8 @@ namespace Amazon.Textract
         /// Amazon Textract is temporarily unable to process the request. Try your call again.
         /// </exception>
         /// <exception cref="Amazon.Textract.Model.UnsupportedDocumentException">
-        /// The format of the input document isn't supported. Documents for synchronous operations
-        /// can be in PNG or JPEG format only. Documents for asynchronous operations can be in
-        /// PDF format.
+        /// The format of the input document isn't supported. Documents for operations can be
+        /// in PNG, JPEG, PDF, or TIFF format.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/AnalyzeID">REST API Reference for AnalyzeID Operation</seealso>
         AnalyzeIDResponse AnalyzeID(AnalyzeIDRequest request);
@@ -359,9 +373,9 @@ namespace Amazon.Textract
 
         /// <summary>
         /// Detects text in the input document. Amazon Textract can detect lines of text and the
-        /// words that make up a line of text. The input document must be an image in JPEG or
-        /// PNG format. <code>DetectDocumentText</code> returns the detected text in an array
-        /// of <a>Block</a> objects. 
+        /// words that make up a line of text. The input document must be in one of the following
+        /// image formats: JPEG, PNG, PDF, or TIFF. <code>DetectDocumentText</code> returns the
+        /// detected text in an array of <a>Block</a> objects. 
         /// 
         ///  
         /// <para>
@@ -421,9 +435,8 @@ namespace Amazon.Textract
         /// Amazon Textract is temporarily unable to process the request. Try your call again.
         /// </exception>
         /// <exception cref="Amazon.Textract.Model.UnsupportedDocumentException">
-        /// The format of the input document isn't supported. Documents for synchronous operations
-        /// can be in PNG or JPEG format only. Documents for asynchronous operations can be in
-        /// PDF format.
+        /// The format of the input document isn't supported. Documents for operations can be
+        /// in PNG, JPEG, PDF, or TIFF format.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/DetectDocumentText">REST API Reference for DetectDocumentText Operation</seealso>
         DetectDocumentTextResponse DetectDocumentText(DetectDocumentTextRequest request);
@@ -499,7 +512,23 @@ namespace Amazon.Textract
         /// are returned (including text that doesn't have a relationship with the value of the
         /// <code>StartDocumentAnalysis</code> <code>FeatureTypes</code> input parameter). 
         /// </para>
-        ///  </li> </ul> 
+        ///  </li> <li> 
+        /// <para>
+        /// Query. A QUERY Block object contains the query text, alias and link to the associated
+        /// Query results block object.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Query Results. A QUERY_RESULT Block object contains the answer to the query and an
+        /// ID that connects it to the query asked. This Block also contains a confidence score.
+        /// </para>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// While processing a document with queries, look out for <code>INVALID_REQUEST_PARAMETERS</code>
+        /// output. This indicates that either the per page query limit has been exceeded or that
+        /// the operation is trying to query a page in the document which doesn’t exist. 
+        /// </para>
+        ///  </note> 
         /// <para>
         /// Selection elements such as check boxes and option buttons (radio buttons) can be detected
         /// in form data and in tables. A SELECTION_ELEMENT <code>Block</code> object contains
@@ -531,7 +560,7 @@ namespace Amazon.Textract
         /// Amazon Textract experienced a service issue. Try your call again.
         /// </exception>
         /// <exception cref="Amazon.Textract.Model.InvalidJobIdException">
-        /// An invalid job identifier was passed to <a>GetDocumentAnalysis</a> or to <a>GetDocumentAnalysis</a>.
+        /// An invalid job identifier was passed to an asynchronous analysis operation.
         /// </exception>
         /// <exception cref="Amazon.Textract.Model.InvalidKMSKeyException">
         /// Indicates you do not have decrypt permissions with the KMS key entered, or the KMS
@@ -643,7 +672,7 @@ namespace Amazon.Textract
         /// Amazon Textract experienced a service issue. Try your call again.
         /// </exception>
         /// <exception cref="Amazon.Textract.Model.InvalidJobIdException">
-        /// An invalid job identifier was passed to <a>GetDocumentAnalysis</a> or to <a>GetDocumentAnalysis</a>.
+        /// An invalid job identifier was passed to an asynchronous analysis operation.
         /// </exception>
         /// <exception cref="Amazon.Textract.Model.InvalidKMSKeyException">
         /// Indicates you do not have decrypt permissions with the KMS key entered, or the KMS
@@ -744,7 +773,7 @@ namespace Amazon.Textract
         /// Amazon Textract experienced a service issue. Try your call again.
         /// </exception>
         /// <exception cref="Amazon.Textract.Model.InvalidJobIdException">
-        /// An invalid job identifier was passed to <a>GetDocumentAnalysis</a> or to <a>GetDocumentAnalysis</a>.
+        /// An invalid job identifier was passed to an asynchronous analysis operation.
         /// </exception>
         /// <exception cref="Amazon.Textract.Model.InvalidKMSKeyException">
         /// Indicates you do not have decrypt permissions with the KMS key entered, or the KMS
@@ -797,6 +826,187 @@ namespace Amazon.Textract
         /// <returns>Returns a  GetExpenseAnalysisResult from Textract.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/GetExpenseAnalysis">REST API Reference for GetExpenseAnalysis Operation</seealso>
         GetExpenseAnalysisResponse EndGetExpenseAnalysis(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetLendingAnalysis
+
+
+        /// <summary>
+        /// Gets the results for an Amazon Textract asynchronous operation that analyzes text
+        /// in a lending document. 
+        /// 
+        ///  
+        /// <para>
+        /// You start asynchronous text analysis by calling <code>StartLendingAnalysis</code>,
+        /// which returns a job identifier (<code>JobId</code>). When the text analysis operation
+        /// finishes, Amazon Textract publishes a completion status to the Amazon Simple Notification
+        /// Service (Amazon SNS) topic that's registered in the initial call to <code>StartLendingAnalysis</code>.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// To get the results of the text analysis operation, first check that the status value
+        /// published to the Amazon SNS topic is SUCCEEDED. If so, call GetLendingAnalysis, and
+        /// pass the job identifier (<code>JobId</code>) from the initial call to <code>StartLendingAnalysis</code>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetLendingAnalysis service method.</param>
+        /// 
+        /// <returns>The response from the GetLendingAnalysis service method, as returned by Textract.</returns>
+        /// <exception cref="Amazon.Textract.Model.AccessDeniedException">
+        /// You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of
+        /// an authorized user or IAM role to perform the operation.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.InternalServerErrorException">
+        /// Amazon Textract experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.InvalidJobIdException">
+        /// An invalid job identifier was passed to an asynchronous analysis operation.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.InvalidKMSKeyException">
+        /// Indicates you do not have decrypt permissions with the KMS key entered, or the KMS
+        /// key was entered incorrectly.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.InvalidParameterException">
+        /// An input parameter violated a constraint. For example, in synchronous operations,
+        /// an <code>InvalidParameterException</code> exception occurs when neither of the <code>S3Object</code>
+        /// or <code>Bytes</code> values are supplied in the <code>Document</code> request parameter.
+        /// Validate your parameter before calling the API operation again.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.InvalidS3ObjectException">
+        /// Amazon Textract is unable to access the S3 object that's specified in the request.
+        /// for more information, <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Configure
+        /// Access to Amazon S3</a> For troubleshooting information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/troubleshooting.html">Troubleshooting
+        /// Amazon S3</a>
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ProvisionedThroughputExceededException">
+        /// The number of requests exceeded your throughput limit. If you want to increase this
+        /// limit, contact Amazon Textract.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ThrottlingException">
+        /// Amazon Textract is temporarily unable to process the request. Try your call again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/GetLendingAnalysis">REST API Reference for GetLendingAnalysis Operation</seealso>
+        GetLendingAnalysisResponse GetLendingAnalysis(GetLendingAnalysisRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetLendingAnalysis operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetLendingAnalysis operation on AmazonTextractClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetLendingAnalysis
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/GetLendingAnalysis">REST API Reference for GetLendingAnalysis Operation</seealso>
+        IAsyncResult BeginGetLendingAnalysis(GetLendingAnalysisRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetLendingAnalysis operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetLendingAnalysis.</param>
+        /// 
+        /// <returns>Returns a  GetLendingAnalysisResult from Textract.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/GetLendingAnalysis">REST API Reference for GetLendingAnalysis Operation</seealso>
+        GetLendingAnalysisResponse EndGetLendingAnalysis(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetLendingAnalysisSummary
+
+
+        /// <summary>
+        /// Gets summarized results for the <code>StartLendingAnalysis</code> operation, which
+        /// analyzes text in a lending document. The returned summary consists of information
+        /// about documents grouped together by a common document type. Information like detected
+        /// signatures, page numbers, and split documents is returned with respect to the type
+        /// of grouped document. 
+        /// 
+        ///  
+        /// <para>
+        /// You start asynchronous text analysis by calling <code>StartLendingAnalysis</code>,
+        /// which returns a job identifier (<code>JobId</code>). When the text analysis operation
+        /// finishes, Amazon Textract publishes a completion status to the Amazon Simple Notification
+        /// Service (Amazon SNS) topic that's registered in the initial call to <code>StartLendingAnalysis</code>.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// To get the results of the text analysis operation, first check that the status value
+        /// published to the Amazon SNS topic is SUCCEEDED. If so, call <code>GetLendingAnalysisSummary</code>,
+        /// and pass the job identifier (<code>JobId</code>) from the initial call to <code>StartLendingAnalysis</code>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetLendingAnalysisSummary service method.</param>
+        /// 
+        /// <returns>The response from the GetLendingAnalysisSummary service method, as returned by Textract.</returns>
+        /// <exception cref="Amazon.Textract.Model.AccessDeniedException">
+        /// You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of
+        /// an authorized user or IAM role to perform the operation.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.InternalServerErrorException">
+        /// Amazon Textract experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.InvalidJobIdException">
+        /// An invalid job identifier was passed to an asynchronous analysis operation.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.InvalidKMSKeyException">
+        /// Indicates you do not have decrypt permissions with the KMS key entered, or the KMS
+        /// key was entered incorrectly.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.InvalidParameterException">
+        /// An input parameter violated a constraint. For example, in synchronous operations,
+        /// an <code>InvalidParameterException</code> exception occurs when neither of the <code>S3Object</code>
+        /// or <code>Bytes</code> values are supplied in the <code>Document</code> request parameter.
+        /// Validate your parameter before calling the API operation again.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.InvalidS3ObjectException">
+        /// Amazon Textract is unable to access the S3 object that's specified in the request.
+        /// for more information, <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Configure
+        /// Access to Amazon S3</a> For troubleshooting information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/troubleshooting.html">Troubleshooting
+        /// Amazon S3</a>
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ProvisionedThroughputExceededException">
+        /// The number of requests exceeded your throughput limit. If you want to increase this
+        /// limit, contact Amazon Textract.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ThrottlingException">
+        /// Amazon Textract is temporarily unable to process the request. Try your call again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/GetLendingAnalysisSummary">REST API Reference for GetLendingAnalysisSummary Operation</seealso>
+        GetLendingAnalysisSummaryResponse GetLendingAnalysisSummary(GetLendingAnalysisSummaryRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetLendingAnalysisSummary operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetLendingAnalysisSummary operation on AmazonTextractClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetLendingAnalysisSummary
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/GetLendingAnalysisSummary">REST API Reference for GetLendingAnalysisSummary Operation</seealso>
+        IAsyncResult BeginGetLendingAnalysisSummary(GetLendingAnalysisSummaryRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetLendingAnalysisSummary operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetLendingAnalysisSummary.</param>
+        /// 
+        /// <returns>Returns a  GetLendingAnalysisSummaryResult from Textract.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/GetLendingAnalysisSummary">REST API Reference for GetLendingAnalysisSummary Operation</seealso>
+        GetLendingAnalysisSummaryResponse EndGetLendingAnalysisSummary(IAsyncResult asyncResult);
 
         #endregion
         
@@ -883,9 +1093,8 @@ namespace Amazon.Textract
         /// Amazon Textract is temporarily unable to process the request. Try your call again.
         /// </exception>
         /// <exception cref="Amazon.Textract.Model.UnsupportedDocumentException">
-        /// The format of the input document isn't supported. Documents for synchronous operations
-        /// can be in PNG or JPEG format only. Documents for asynchronous operations can be in
-        /// PDF format.
+        /// The format of the input document isn't supported. Documents for operations can be
+        /// in PNG, JPEG, PDF, or TIFF format.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/StartDocumentAnalysis">REST API Reference for StartDocumentAnalysis Operation</seealso>
         StartDocumentAnalysisResponse StartDocumentAnalysis(StartDocumentAnalysisRequest request);
@@ -1002,9 +1211,8 @@ namespace Amazon.Textract
         /// Amazon Textract is temporarily unable to process the request. Try your call again.
         /// </exception>
         /// <exception cref="Amazon.Textract.Model.UnsupportedDocumentException">
-        /// The format of the input document isn't supported. Documents for synchronous operations
-        /// can be in PNG or JPEG format only. Documents for asynchronous operations can be in
-        /// PDF format.
+        /// The format of the input document isn't supported. Documents for operations can be
+        /// in PNG, JPEG, PDF, or TIFF format.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/StartDocumentTextDetection">REST API Reference for StartDocumentTextDetection Operation</seealso>
         StartDocumentTextDetectionResponse StartDocumentTextDetection(StartDocumentTextDetectionRequest request);
@@ -1123,9 +1331,8 @@ namespace Amazon.Textract
         /// Amazon Textract is temporarily unable to process the request. Try your call again.
         /// </exception>
         /// <exception cref="Amazon.Textract.Model.UnsupportedDocumentException">
-        /// The format of the input document isn't supported. Documents for synchronous operations
-        /// can be in PNG or JPEG format only. Documents for asynchronous operations can be in
-        /// PDF format.
+        /// The format of the input document isn't supported. Documents for operations can be
+        /// in PNG, JPEG, PDF, or TIFF format.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/StartExpenseAnalysis">REST API Reference for StartExpenseAnalysis Operation</seealso>
         StartExpenseAnalysisResponse StartExpenseAnalysis(StartExpenseAnalysisRequest request);
@@ -1155,6 +1362,139 @@ namespace Amazon.Textract
         /// <returns>Returns a  StartExpenseAnalysisResult from Textract.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/StartExpenseAnalysis">REST API Reference for StartExpenseAnalysis Operation</seealso>
         StartExpenseAnalysisResponse EndStartExpenseAnalysis(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  StartLendingAnalysis
+
+
+        /// <summary>
+        /// Starts the classification and analysis of an input document. <code>StartLendingAnalysis</code>
+        /// initiates the classification and analysis of a packet of lending documents. <code>StartLendingAnalysis</code>
+        /// operates on a document file located in an Amazon S3 bucket.
+        /// 
+        ///  
+        /// <para>
+        ///  <code>StartLendingAnalysis</code> can analyze text in documents that are in one of
+        /// the following formats: JPEG, PNG, TIFF, PDF. Use <code>DocumentLocation</code> to
+        /// specify the bucket name and the file name of the document. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>StartLendingAnalysis</code> returns a job identifier (<code>JobId</code>) that
+        /// you use to get the results of the operation. When the text analysis is finished, Amazon
+        /// Textract publishes a completion status to the Amazon Simple Notification Service (Amazon
+        /// SNS) topic that you specify in <code>NotificationChannel</code>. To get the results
+        /// of the text analysis operation, first check that the status value published to the
+        /// Amazon SNS topic is SUCCEEDED. If the status is SUCCEEDED you can call either <code>GetLendingAnalysis</code>
+        /// or <code>GetLendingAnalysisSummary</code> and provide the <code>JobId</code> to obtain
+        /// the results of the analysis.
+        /// </para>
+        ///  
+        /// <para>
+        /// If using <code>OutputConfig</code> to specify an Amazon S3 bucket, the output will
+        /// be contained within the specified prefix in a directory labeled with the job-id. In
+        /// the directory there are 3 sub-directories: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// detailedResponse (contains the GetLendingAnalysis response)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// summaryResponse (for the GetLendingAnalysisSummary response)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// splitDocuments (documents split across logical boundaries)
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartLendingAnalysis service method.</param>
+        /// 
+        /// <returns>The response from the StartLendingAnalysis service method, as returned by Textract.</returns>
+        /// <exception cref="Amazon.Textract.Model.AccessDeniedException">
+        /// You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of
+        /// an authorized user or IAM role to perform the operation.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.BadDocumentException">
+        /// Amazon Textract isn't able to read the document. For more information on the document
+        /// limits in Amazon Textract, see <a>limits</a>.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.DocumentTooLargeException">
+        /// The document can't be processed because it's too large. The maximum document size
+        /// for synchronous operations 10 MB. The maximum document size for asynchronous operations
+        /// is 500 MB for PDF files.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.IdempotentParameterMismatchException">
+        /// A <code>ClientRequestToken</code> input parameter was reused with an operation, but
+        /// at least one of the other input parameters is different from the previous call to
+        /// the operation.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.InternalServerErrorException">
+        /// Amazon Textract experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.InvalidKMSKeyException">
+        /// Indicates you do not have decrypt permissions with the KMS key entered, or the KMS
+        /// key was entered incorrectly.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.InvalidParameterException">
+        /// An input parameter violated a constraint. For example, in synchronous operations,
+        /// an <code>InvalidParameterException</code> exception occurs when neither of the <code>S3Object</code>
+        /// or <code>Bytes</code> values are supplied in the <code>Document</code> request parameter.
+        /// Validate your parameter before calling the API operation again.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.InvalidS3ObjectException">
+        /// Amazon Textract is unable to access the S3 object that's specified in the request.
+        /// for more information, <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Configure
+        /// Access to Amazon S3</a> For troubleshooting information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/troubleshooting.html">Troubleshooting
+        /// Amazon S3</a>
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.LimitExceededException">
+        /// An Amazon Textract service limit was exceeded. For example, if you start too many
+        /// asynchronous jobs concurrently, calls to start operations (<code>StartDocumentTextDetection</code>,
+        /// for example) raise a LimitExceededException exception (HTTP status code: 400) until
+        /// the number of concurrently running jobs is below the Amazon Textract service limit.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ProvisionedThroughputExceededException">
+        /// The number of requests exceeded your throughput limit. If you want to increase this
+        /// limit, contact Amazon Textract.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ThrottlingException">
+        /// Amazon Textract is temporarily unable to process the request. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.UnsupportedDocumentException">
+        /// The format of the input document isn't supported. Documents for operations can be
+        /// in PNG, JPEG, PDF, or TIFF format.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/StartLendingAnalysis">REST API Reference for StartLendingAnalysis Operation</seealso>
+        StartLendingAnalysisResponse StartLendingAnalysis(StartLendingAnalysisRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartLendingAnalysis operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartLendingAnalysis operation on AmazonTextractClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartLendingAnalysis
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/StartLendingAnalysis">REST API Reference for StartLendingAnalysis Operation</seealso>
+        IAsyncResult BeginStartLendingAnalysis(StartLendingAnalysisRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartLendingAnalysis operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartLendingAnalysis.</param>
+        /// 
+        /// <returns>Returns a  StartLendingAnalysisResult from Textract.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/StartLendingAnalysis">REST API Reference for StartLendingAnalysis Operation</seealso>
+        StartLendingAnalysisResponse EndStartLendingAnalysis(IAsyncResult asyncResult);
 
         #endregion
         

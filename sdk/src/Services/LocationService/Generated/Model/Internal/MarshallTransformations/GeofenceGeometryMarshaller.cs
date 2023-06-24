@@ -34,7 +34,7 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// GeofenceGeometry Marshaller
-    /// </summary>       
+    /// </summary>
     public class GeofenceGeometryMarshaller : IRequestMarshaller<GeofenceGeometry, JsonMarshallerContext> 
     {
         /// <summary>
@@ -45,6 +45,17 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(GeofenceGeometry requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetCircle())
+            {
+                context.Writer.WritePropertyName("Circle");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = CircleMarshaller.Instance;
+                marshaller.Marshall(requestObject.Circle, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetPolygon())
             {
                 context.Writer.WritePropertyName("Polygon");
@@ -70,7 +81,7 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static GeofenceGeometryMarshaller Instance = new GeofenceGeometryMarshaller();
 
     }

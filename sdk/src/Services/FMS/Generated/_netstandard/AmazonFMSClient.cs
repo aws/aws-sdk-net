@@ -46,8 +46,8 @@ namespace Amazon.FMS
     ///  
     /// <para>
     /// Some API actions require explicit resource permissions. For information, see the developer
-    /// guide topic <a href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-api-permissions-ref.html">Firewall
-    /// Manager required permissions for API actions</a>. 
+    /// guide topic <a href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-security_iam_service-with-iam.html#fms-security_iam_service-with-iam-roles-service">Service
+    /// roles for Firewall Manager</a>. 
     /// </para>
     /// </summary>
     public partial class AmazonFMSClient : AmazonServiceClient, IAmazonFMS
@@ -243,6 +243,15 @@ namespace Amazon.FMS
         } 
 
         /// <summary>
+        /// Customizes the runtime pipeline.
+        /// </summary>
+        /// <param name="pipeline">Runtime pipeline for the current client.</param>
+        protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
+        {
+            pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonFMSEndpointResolver());
+        }
+        /// <summary>
         /// Capture metadata for the service.
         /// </summary>
         protected override IServiceMetadata ServiceMetadata
@@ -282,14 +291,17 @@ namespace Amazon.FMS
 
 
         /// <summary>
-        /// Sets the Firewall Manager administrator account. The account must be a member of the
-        /// organization in Organizations whose resources you want to protect. Firewall Manager
-        /// sets the permissions that allow the account to administer your Firewall Manager policies.
+        /// Sets a Firewall Manager default administrator account. The Firewall Manager default
+        /// administrator account can manage third-party firewalls and has full administrative
+        /// scope that allows administration of all policy types, accounts, organizational units,
+        /// and Regions. This account must be a member account of the organization in Organizations
+        /// whose resources you want to protect.
         /// 
         ///  
         /// <para>
-        /// The account that you associate with Firewall Manager is called the Firewall Manager
-        /// administrator account. 
+        /// For information about working with Firewall Manager administrator accounts, see <a
+        /// href="https://docs.aws.amazon.com/organizations/latest/userguide/fms-administrators.html">Managing
+        /// Firewall Manager administrators</a> in the <i>Firewall Manager Developer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateAdminAccount service method.</param>
@@ -330,6 +342,170 @@ namespace Amazon.FMS
             options.ResponseUnmarshaller = AssociateAdminAccountResponseUnmarshaller.Instance;
 
             return InvokeAsync<AssociateAdminAccountResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  AssociateThirdPartyFirewall
+
+        internal virtual AssociateThirdPartyFirewallResponse AssociateThirdPartyFirewall(AssociateThirdPartyFirewallRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateThirdPartyFirewallRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateThirdPartyFirewallResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateThirdPartyFirewallResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Sets the Firewall Manager policy administrator as a tenant administrator of a third-party
+        /// firewall service. A tenant is an instance of the third-party firewall service that's
+        /// associated with your Amazon Web Services customer account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateThirdPartyFirewall service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociateThirdPartyFirewall service method, as returned by FMS.</returns>
+        /// <exception cref="Amazon.FMS.Model.InternalErrorException">
+        /// The operation failed because of a system problem, even though the request was valid.
+        /// Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.InvalidInputException">
+        /// The parameters of the request were invalid.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.InvalidOperationException">
+        /// The operation failed because there was nothing to do or the operation wasn't possible.
+        /// For example, you might have submitted an <code>AssociateAdminAccount</code> request
+        /// for an account ID that was already set as the Firewall Manager administrator. Or you
+        /// might have tried to access a Region that's disabled by default, and that you need
+        /// to enable for the Firewall Manager administrator account and for Organizations before
+        /// you can access it.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/AssociateThirdPartyFirewall">REST API Reference for AssociateThirdPartyFirewall Operation</seealso>
+        public virtual Task<AssociateThirdPartyFirewallResponse> AssociateThirdPartyFirewallAsync(AssociateThirdPartyFirewallRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateThirdPartyFirewallRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateThirdPartyFirewallResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AssociateThirdPartyFirewallResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  BatchAssociateResource
+
+        internal virtual BatchAssociateResourceResponse BatchAssociateResource(BatchAssociateResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchAssociateResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchAssociateResourceResponseUnmarshaller.Instance;
+
+            return Invoke<BatchAssociateResourceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Associate resources to a Firewall Manager resource set.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchAssociateResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchAssociateResource service method, as returned by FMS.</returns>
+        /// <exception cref="Amazon.FMS.Model.InternalErrorException">
+        /// The operation failed because of a system problem, even though the request was valid.
+        /// Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.InvalidInputException">
+        /// The parameters of the request were invalid.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.InvalidOperationException">
+        /// The operation failed because there was nothing to do or the operation wasn't possible.
+        /// For example, you might have submitted an <code>AssociateAdminAccount</code> request
+        /// for an account ID that was already set as the Firewall Manager administrator. Or you
+        /// might have tried to access a Region that's disabled by default, and that you need
+        /// to enable for the Firewall Manager administrator account and for Organizations before
+        /// you can access it.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.LimitExceededException">
+        /// The operation exceeds a resource limit, for example, the maximum number of <code>policy</code>
+        /// objects that you can create for an Amazon Web Services account. For more information,
+        /// see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-limits.html">Firewall
+        /// Manager Limits</a> in the <i>WAF Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/BatchAssociateResource">REST API Reference for BatchAssociateResource Operation</seealso>
+        public virtual Task<BatchAssociateResourceResponse> BatchAssociateResourceAsync(BatchAssociateResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchAssociateResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchAssociateResourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<BatchAssociateResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  BatchDisassociateResource
+
+        internal virtual BatchDisassociateResourceResponse BatchDisassociateResource(BatchDisassociateResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchDisassociateResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDisassociateResourceResponseUnmarshaller.Instance;
+
+            return Invoke<BatchDisassociateResourceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Disassociates resources from a Firewall Manager resource set.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchDisassociateResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchDisassociateResource service method, as returned by FMS.</returns>
+        /// <exception cref="Amazon.FMS.Model.InternalErrorException">
+        /// The operation failed because of a system problem, even though the request was valid.
+        /// Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.InvalidInputException">
+        /// The parameters of the request were invalid.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.InvalidOperationException">
+        /// The operation failed because there was nothing to do or the operation wasn't possible.
+        /// For example, you might have submitted an <code>AssociateAdminAccount</code> request
+        /// for an account ID that was already set as the Firewall Manager administrator. Or you
+        /// might have tried to access a Region that's disabled by default, and that you need
+        /// to enable for the Firewall Manager administrator account and for Organizations before
+        /// you can access it.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/BatchDisassociateResource">REST API Reference for BatchDisassociateResource Operation</seealso>
+        public virtual Task<BatchDisassociateResourceResponse> BatchDisassociateResourceAsync(BatchDisassociateResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchDisassociateResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDisassociateResourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<BatchDisassociateResourceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -540,6 +716,58 @@ namespace Amazon.FMS
 
         #endregion
         
+        #region  DeleteResourceSet
+
+        internal virtual DeleteResourceSetResponse DeleteResourceSet(DeleteResourceSetRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteResourceSetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteResourceSetResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteResourceSetResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes the specified <a>ResourceSet</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteResourceSet service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteResourceSet service method, as returned by FMS.</returns>
+        /// <exception cref="Amazon.FMS.Model.InternalErrorException">
+        /// The operation failed because of a system problem, even though the request was valid.
+        /// Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.InvalidInputException">
+        /// The parameters of the request were invalid.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.InvalidOperationException">
+        /// The operation failed because there was nothing to do or the operation wasn't possible.
+        /// For example, you might have submitted an <code>AssociateAdminAccount</code> request
+        /// for an account ID that was already set as the Firewall Manager administrator. Or you
+        /// might have tried to access a Region that's disabled by default, and that you need
+        /// to enable for the Firewall Manager administrator account and for Organizations before
+        /// you can access it.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/DeleteResourceSet">REST API Reference for DeleteResourceSet Operation</seealso>
+        public virtual Task<DeleteResourceSetResponse> DeleteResourceSetAsync(DeleteResourceSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteResourceSetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteResourceSetResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteResourceSetResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DisassociateAdminAccount
 
         internal virtual DisassociateAdminAccountResponse DisassociateAdminAccount(DisassociateAdminAccountRequest request)
@@ -554,9 +782,18 @@ namespace Amazon.FMS
 
 
         /// <summary>
-        /// Disassociates the account that has been set as the Firewall Manager administrator
-        /// account. To set a different account as the administrator account, you must submit
-        /// an <code>AssociateAdminAccount</code> request.
+        /// Disassociates an Firewall Manager administrator account. To set a different account
+        /// as an Firewall Manager administrator, submit a <a>PutAdminAccount</a> request. To
+        /// set an account as a default administrator account, you must submit an <a>AssociateAdminAccount</a>
+        /// request.
+        /// 
+        ///  
+        /// <para>
+        /// Disassociation of the default administrator account follows the first in, last out
+        /// principle. If you are the default administrator, all Firewall Manager administrators
+        /// within the organization must first disassociate their accounts before you can disassociate
+        /// your account.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateAdminAccount service method.</param>
         /// <param name="cancellationToken">
@@ -591,6 +828,60 @@ namespace Amazon.FMS
 
         #endregion
         
+        #region  DisassociateThirdPartyFirewall
+
+        internal virtual DisassociateThirdPartyFirewallResponse DisassociateThirdPartyFirewall(DisassociateThirdPartyFirewallRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateThirdPartyFirewallRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateThirdPartyFirewallResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateThirdPartyFirewallResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Disassociates a Firewall Manager policy administrator from a third-party firewall
+        /// tenant. When you call <code>DisassociateThirdPartyFirewall</code>, the third-party
+        /// firewall vendor deletes all of the firewalls that are associated with the account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateThirdPartyFirewall service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociateThirdPartyFirewall service method, as returned by FMS.</returns>
+        /// <exception cref="Amazon.FMS.Model.InternalErrorException">
+        /// The operation failed because of a system problem, even though the request was valid.
+        /// Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.InvalidInputException">
+        /// The parameters of the request were invalid.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.InvalidOperationException">
+        /// The operation failed because there was nothing to do or the operation wasn't possible.
+        /// For example, you might have submitted an <code>AssociateAdminAccount</code> request
+        /// for an account ID that was already set as the Firewall Manager administrator. Or you
+        /// might have tried to access a Region that's disabled by default, and that you need
+        /// to enable for the Firewall Manager administrator account and for Organizations before
+        /// you can access it.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/DisassociateThirdPartyFirewall">REST API Reference for DisassociateThirdPartyFirewall Operation</seealso>
+        public virtual Task<DisassociateThirdPartyFirewallResponse> DisassociateThirdPartyFirewallAsync(DisassociateThirdPartyFirewallRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateThirdPartyFirewallRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateThirdPartyFirewallResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DisassociateThirdPartyFirewallResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetAdminAccount
 
         internal virtual GetAdminAccountResponse GetAdminAccount(GetAdminAccountRequest request)
@@ -606,7 +897,7 @@ namespace Amazon.FMS
 
         /// <summary>
         /// Returns the Organizations account that is associated with Firewall Manager as the
-        /// Firewall Manager administrator.
+        /// Firewall Manager default administrator.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAdminAccount service method.</param>
         /// <param name="cancellationToken">
@@ -637,6 +928,65 @@ namespace Amazon.FMS
             options.ResponseUnmarshaller = GetAdminAccountResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetAdminAccountResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetAdminScope
+
+        internal virtual GetAdminScopeResponse GetAdminScope(GetAdminScopeRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAdminScopeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAdminScopeResponseUnmarshaller.Instance;
+
+            return Invoke<GetAdminScopeResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns information about the specified account's administrative scope. The admistrative
+        /// scope defines the resources that an Firewall Manager administrator can manage.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAdminScope service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetAdminScope service method, as returned by FMS.</returns>
+        /// <exception cref="Amazon.FMS.Model.InternalErrorException">
+        /// The operation failed because of a system problem, even though the request was valid.
+        /// Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.InvalidInputException">
+        /// The parameters of the request were invalid.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.InvalidOperationException">
+        /// The operation failed because there was nothing to do or the operation wasn't possible.
+        /// For example, you might have submitted an <code>AssociateAdminAccount</code> request
+        /// for an account ID that was already set as the Firewall Manager administrator. Or you
+        /// might have tried to access a Region that's disabled by default, and that you need
+        /// to enable for the Firewall Manager administrator account and for Organizations before
+        /// you can access it.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.LimitExceededException">
+        /// The operation exceeds a resource limit, for example, the maximum number of <code>policy</code>
+        /// objects that you can create for an Amazon Web Services account. For more information,
+        /// see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-limits.html">Firewall
+        /// Manager Limits</a> in the <i>WAF Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetAdminScope">REST API Reference for GetAdminScope Operation</seealso>
+        public virtual Task<GetAdminScopeResponse> GetAdminScopeAsync(GetAdminScopeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAdminScopeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAdminScopeResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetAdminScopeResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -965,6 +1315,111 @@ namespace Amazon.FMS
 
         #endregion
         
+        #region  GetResourceSet
+
+        internal virtual GetResourceSetResponse GetResourceSet(GetResourceSetRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetResourceSetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResourceSetResponseUnmarshaller.Instance;
+
+            return Invoke<GetResourceSetResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Gets information about a specific resource set.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetResourceSet service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetResourceSet service method, as returned by FMS.</returns>
+        /// <exception cref="Amazon.FMS.Model.InternalErrorException">
+        /// The operation failed because of a system problem, even though the request was valid.
+        /// Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.InvalidInputException">
+        /// The parameters of the request were invalid.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.InvalidOperationException">
+        /// The operation failed because there was nothing to do or the operation wasn't possible.
+        /// For example, you might have submitted an <code>AssociateAdminAccount</code> request
+        /// for an account ID that was already set as the Firewall Manager administrator. Or you
+        /// might have tried to access a Region that's disabled by default, and that you need
+        /// to enable for the Firewall Manager administrator account and for Organizations before
+        /// you can access it.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetResourceSet">REST API Reference for GetResourceSet Operation</seealso>
+        public virtual Task<GetResourceSetResponse> GetResourceSetAsync(GetResourceSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetResourceSetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResourceSetResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetResourceSetResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetThirdPartyFirewallAssociationStatus
+
+        internal virtual GetThirdPartyFirewallAssociationStatusResponse GetThirdPartyFirewallAssociationStatus(GetThirdPartyFirewallAssociationStatusRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetThirdPartyFirewallAssociationStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetThirdPartyFirewallAssociationStatusResponseUnmarshaller.Instance;
+
+            return Invoke<GetThirdPartyFirewallAssociationStatusResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// The onboarding status of a Firewall Manager admin account to third-party firewall
+        /// vendor tenant.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetThirdPartyFirewallAssociationStatus service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetThirdPartyFirewallAssociationStatus service method, as returned by FMS.</returns>
+        /// <exception cref="Amazon.FMS.Model.InternalErrorException">
+        /// The operation failed because of a system problem, even though the request was valid.
+        /// Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.InvalidInputException">
+        /// The parameters of the request were invalid.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.InvalidOperationException">
+        /// The operation failed because there was nothing to do or the operation wasn't possible.
+        /// For example, you might have submitted an <code>AssociateAdminAccount</code> request
+        /// for an account ID that was already set as the Firewall Manager administrator. Or you
+        /// might have tried to access a Region that's disabled by default, and that you need
+        /// to enable for the Firewall Manager administrator account and for Organizations before
+        /// you can access it.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetThirdPartyFirewallAssociationStatus">REST API Reference for GetThirdPartyFirewallAssociationStatus Operation</seealso>
+        public virtual Task<GetThirdPartyFirewallAssociationStatusResponse> GetThirdPartyFirewallAssociationStatusAsync(GetThirdPartyFirewallAssociationStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetThirdPartyFirewallAssociationStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetThirdPartyFirewallAssociationStatusResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetThirdPartyFirewallAssociationStatusResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetViolationDetails
 
         internal virtual GetViolationDetailsResponse GetViolationDetails(GetViolationDetailsRequest request)
@@ -1006,6 +1461,114 @@ namespace Amazon.FMS
             options.ResponseUnmarshaller = GetViolationDetailsResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetViolationDetailsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListAdminAccountsForOrganization
+
+        internal virtual ListAdminAccountsForOrganizationResponse ListAdminAccountsForOrganization(ListAdminAccountsForOrganizationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAdminAccountsForOrganizationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAdminAccountsForOrganizationResponseUnmarshaller.Instance;
+
+            return Invoke<ListAdminAccountsForOrganizationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns a <code>AdminAccounts</code> object that lists the Firewall Manager administrators
+        /// within the organization that are onboarded to Firewall Manager by <a>AssociateAdminAccount</a>.
+        /// 
+        ///  
+        /// <para>
+        /// This operation can be called only from the organization's management account.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAdminAccountsForOrganization service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAdminAccountsForOrganization service method, as returned by FMS.</returns>
+        /// <exception cref="Amazon.FMS.Model.InternalErrorException">
+        /// The operation failed because of a system problem, even though the request was valid.
+        /// Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.InvalidOperationException">
+        /// The operation failed because there was nothing to do or the operation wasn't possible.
+        /// For example, you might have submitted an <code>AssociateAdminAccount</code> request
+        /// for an account ID that was already set as the Firewall Manager administrator. Or you
+        /// might have tried to access a Region that's disabled by default, and that you need
+        /// to enable for the Firewall Manager administrator account and for Organizations before
+        /// you can access it.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.LimitExceededException">
+        /// The operation exceeds a resource limit, for example, the maximum number of <code>policy</code>
+        /// objects that you can create for an Amazon Web Services account. For more information,
+        /// see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-limits.html">Firewall
+        /// Manager Limits</a> in the <i>WAF Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListAdminAccountsForOrganization">REST API Reference for ListAdminAccountsForOrganization Operation</seealso>
+        public virtual Task<ListAdminAccountsForOrganizationResponse> ListAdminAccountsForOrganizationAsync(ListAdminAccountsForOrganizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAdminAccountsForOrganizationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAdminAccountsForOrganizationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListAdminAccountsForOrganizationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListAdminsManagingAccount
+
+        internal virtual ListAdminsManagingAccountResponse ListAdminsManagingAccount(ListAdminsManagingAccountRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAdminsManagingAccountRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAdminsManagingAccountResponseUnmarshaller.Instance;
+
+            return Invoke<ListAdminsManagingAccountResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists the accounts that are managing the specified Organizations member account. This
+        /// is useful for any member account so that they can view the accounts who are managing
+        /// their account. This operation only returns the managing administrators that have the
+        /// requested account within their <a>AdminScope</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAdminsManagingAccount service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAdminsManagingAccount service method, as returned by FMS.</returns>
+        /// <exception cref="Amazon.FMS.Model.InternalErrorException">
+        /// The operation failed because of a system problem, even though the request was valid.
+        /// Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.InvalidInputException">
+        /// The parameters of the request were invalid.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListAdminsManagingAccount">REST API Reference for ListAdminsManagingAccount Operation</seealso>
+        public virtual Task<ListAdminsManagingAccountResponse> ListAdminsManagingAccountAsync(ListAdminsManagingAccountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAdminsManagingAccountRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAdminsManagingAccountResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListAdminsManagingAccountResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1107,6 +1670,56 @@ namespace Amazon.FMS
 
         #endregion
         
+        #region  ListDiscoveredResources
+
+        internal virtual ListDiscoveredResourcesResponse ListDiscoveredResources(ListDiscoveredResourcesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDiscoveredResourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDiscoveredResourcesResponseUnmarshaller.Instance;
+
+            return Invoke<ListDiscoveredResourcesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns an array of resources in the organization's accounts that are available to
+        /// be associated with a resource set.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDiscoveredResources service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListDiscoveredResources service method, as returned by FMS.</returns>
+        /// <exception cref="Amazon.FMS.Model.InternalErrorException">
+        /// The operation failed because of a system problem, even though the request was valid.
+        /// Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.InvalidInputException">
+        /// The parameters of the request were invalid.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.InvalidOperationException">
+        /// The operation failed because there was nothing to do or the operation wasn't possible.
+        /// For example, you might have submitted an <code>AssociateAdminAccount</code> request
+        /// for an account ID that was already set as the Firewall Manager administrator. Or you
+        /// might have tried to access a Region that's disabled by default, and that you need
+        /// to enable for the Firewall Manager administrator account and for Organizations before
+        /// you can access it.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListDiscoveredResources">REST API Reference for ListDiscoveredResources Operation</seealso>
+        public virtual Task<ListDiscoveredResourcesResponse> ListDiscoveredResourcesAsync(ListDiscoveredResourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDiscoveredResourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDiscoveredResourcesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListDiscoveredResourcesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListMemberAccounts
 
         internal virtual ListMemberAccountsResponse ListMemberAccounts(ListMemberAccountsRequest request)
@@ -1126,8 +1739,8 @@ namespace Amazon.FMS
         /// 
         ///  
         /// <para>
-        /// The <code>ListMemberAccounts</code> must be submitted by the account that is set as
-        /// the Firewall Manager administrator.
+        /// Either an Firewall Manager administrator or the organization's management account
+        /// can make this request.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListMemberAccounts service method.</param>
@@ -1259,6 +1872,107 @@ namespace Amazon.FMS
 
         #endregion
         
+        #region  ListResourceSetResources
+
+        internal virtual ListResourceSetResourcesResponse ListResourceSetResources(ListResourceSetResourcesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListResourceSetResourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResourceSetResourcesResponseUnmarshaller.Instance;
+
+            return Invoke<ListResourceSetResourcesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns an array of resources that are currently associated to a resource set.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListResourceSetResources service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListResourceSetResources service method, as returned by FMS.</returns>
+        /// <exception cref="Amazon.FMS.Model.InternalErrorException">
+        /// The operation failed because of a system problem, even though the request was valid.
+        /// Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.InvalidInputException">
+        /// The parameters of the request were invalid.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.InvalidOperationException">
+        /// The operation failed because there was nothing to do or the operation wasn't possible.
+        /// For example, you might have submitted an <code>AssociateAdminAccount</code> request
+        /// for an account ID that was already set as the Firewall Manager administrator. Or you
+        /// might have tried to access a Region that's disabled by default, and that you need
+        /// to enable for the Firewall Manager administrator account and for Organizations before
+        /// you can access it.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListResourceSetResources">REST API Reference for ListResourceSetResources Operation</seealso>
+        public virtual Task<ListResourceSetResourcesResponse> ListResourceSetResourcesAsync(ListResourceSetResourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListResourceSetResourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResourceSetResourcesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListResourceSetResourcesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListResourceSets
+
+        internal virtual ListResourceSetsResponse ListResourceSets(ListResourceSetsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListResourceSetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResourceSetsResponseUnmarshaller.Instance;
+
+            return Invoke<ListResourceSetsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns an array of <code>ResourceSetSummary</code> objects.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListResourceSets service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListResourceSets service method, as returned by FMS.</returns>
+        /// <exception cref="Amazon.FMS.Model.InternalErrorException">
+        /// The operation failed because of a system problem, even though the request was valid.
+        /// Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.InvalidInputException">
+        /// The parameters of the request were invalid.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.InvalidOperationException">
+        /// The operation failed because there was nothing to do or the operation wasn't possible.
+        /// For example, you might have submitted an <code>AssociateAdminAccount</code> request
+        /// for an account ID that was already set as the Firewall Manager administrator. Or you
+        /// might have tried to access a Region that's disabled by default, and that you need
+        /// to enable for the Firewall Manager administrator account and for Organizations before
+        /// you can access it.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListResourceSets">REST API Reference for ListResourceSets Operation</seealso>
+        public virtual Task<ListResourceSetsResponse> ListResourceSetsAsync(ListResourceSetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListResourceSetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResourceSetsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListResourceSetsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListTagsForResource
 
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
@@ -1307,6 +2021,122 @@ namespace Amazon.FMS
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListThirdPartyFirewallFirewallPolicies
+
+        internal virtual ListThirdPartyFirewallFirewallPoliciesResponse ListThirdPartyFirewallFirewallPolicies(ListThirdPartyFirewallFirewallPoliciesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListThirdPartyFirewallFirewallPoliciesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListThirdPartyFirewallFirewallPoliciesResponseUnmarshaller.Instance;
+
+            return Invoke<ListThirdPartyFirewallFirewallPoliciesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves a list of all of the third-party firewall policies that are associated with
+        /// the third-party firewall administrator's account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListThirdPartyFirewallFirewallPolicies service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListThirdPartyFirewallFirewallPolicies service method, as returned by FMS.</returns>
+        /// <exception cref="Amazon.FMS.Model.InternalErrorException">
+        /// The operation failed because of a system problem, even though the request was valid.
+        /// Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.InvalidInputException">
+        /// The parameters of the request were invalid.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.InvalidOperationException">
+        /// The operation failed because there was nothing to do or the operation wasn't possible.
+        /// For example, you might have submitted an <code>AssociateAdminAccount</code> request
+        /// for an account ID that was already set as the Firewall Manager administrator. Or you
+        /// might have tried to access a Region that's disabled by default, and that you need
+        /// to enable for the Firewall Manager administrator account and for Organizations before
+        /// you can access it.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListThirdPartyFirewallFirewallPolicies">REST API Reference for ListThirdPartyFirewallFirewallPolicies Operation</seealso>
+        public virtual Task<ListThirdPartyFirewallFirewallPoliciesResponse> ListThirdPartyFirewallFirewallPoliciesAsync(ListThirdPartyFirewallFirewallPoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListThirdPartyFirewallFirewallPoliciesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListThirdPartyFirewallFirewallPoliciesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListThirdPartyFirewallFirewallPoliciesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutAdminAccount
+
+        internal virtual PutAdminAccountResponse PutAdminAccount(PutAdminAccountRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutAdminAccountRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutAdminAccountResponseUnmarshaller.Instance;
+
+            return Invoke<PutAdminAccountResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates or updates an Firewall Manager administrator account. The account must be
+        /// a member of the organization that was onboarded to Firewall Manager by <a>AssociateAdminAccount</a>.
+        /// Only the organization's management account can create an Firewall Manager administrator
+        /// account. When you create an Firewall Manager administrator account, the service checks
+        /// to see if the account is already a delegated administrator within Organizations. If
+        /// the account isn't a delegated administrator, Firewall Manager calls Organizations
+        /// to delegate the account within Organizations. For more information about administrator
+        /// accounts within Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts.html">Managing
+        /// the Amazon Web Services Accounts in Your Organization</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutAdminAccount service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutAdminAccount service method, as returned by FMS.</returns>
+        /// <exception cref="Amazon.FMS.Model.InternalErrorException">
+        /// The operation failed because of a system problem, even though the request was valid.
+        /// Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.InvalidInputException">
+        /// The parameters of the request were invalid.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.InvalidOperationException">
+        /// The operation failed because there was nothing to do or the operation wasn't possible.
+        /// For example, you might have submitted an <code>AssociateAdminAccount</code> request
+        /// for an account ID that was already set as the Firewall Manager administrator. Or you
+        /// might have tried to access a Region that's disabled by default, and that you need
+        /// to enable for the Firewall Manager administrator account and for Organizations before
+        /// you can access it.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.LimitExceededException">
+        /// The operation exceeds a resource limit, for example, the maximum number of <code>policy</code>
+        /// objects that you can create for an Amazon Web Services account. For more information,
+        /// see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-limits.html">Firewall
+        /// Manager Limits</a> in the <i>WAF Developer Guide</i>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/PutAdminAccount">REST API Reference for PutAdminAccount Operation</seealso>
+        public virtual Task<PutAdminAccountResponse> PutAdminAccountAsync(PutAdminAccountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutAdminAccountRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutAdminAccountResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutAdminAccountResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1388,11 +2218,13 @@ namespace Amazon.FMS
         /// 
         ///  
         /// <para>
-        /// To perform this action outside of the console, you must configure the SNS topic to
-        /// allow the Firewall Manager role <code>AWSServiceRoleForFMS</code> to publish SNS logs.
-        /// For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-api-permissions-ref.html">Firewall
-        /// Manager required permissions for API actions</a> in the <i>Firewall Manager Developer
-        /// Guide</i>.
+        /// To perform this action outside of the console, you must first configure the SNS topic's
+        /// access policy to allow the <code>SnsRoleName</code> to publish SNS logs. If the <code>SnsRoleName</code>
+        /// provided is a role other than the <code>AWSServiceRoleForFMS</code> service-linked
+        /// role, this role must have a trust relationship configured to allow the Firewall Manager
+        /// service principal <code>fms.amazonaws.com</code> to assume this role. For information
+        /// about configuring an SNS access policy, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-security_iam_service-with-iam.html#fms-security_iam_service-with-iam-roles-service">Service
+        /// roles for Firewall Manager</a> in the <i>Firewall Manager Developer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutNotificationChannel service method.</param>
@@ -1474,7 +2306,7 @@ namespace Amazon.FMS
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// A DNS Firewall policy, which provides Route 53 Resolver DNS Firewall rules to filter
+        /// A DNS Firewall policy, which provides Route 53 Resolver DNS Firewall rules to filter
         /// DNS queries for specified VPCs.
         /// </para>
         ///  </li> </ul> 
@@ -1588,6 +2420,67 @@ namespace Amazon.FMS
             options.ResponseUnmarshaller = PutProtocolsListResponseUnmarshaller.Instance;
 
             return InvokeAsync<PutProtocolsListResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutResourceSet
+
+        internal virtual PutResourceSetResponse PutResourceSet(PutResourceSetRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutResourceSetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutResourceSetResponseUnmarshaller.Instance;
+
+            return Invoke<PutResourceSetResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates the resource set.
+        /// 
+        ///  
+        /// <para>
+        /// An Firewall Manager resource set defines the resources to import into an Firewall
+        /// Manager policy from another Amazon Web Services service.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutResourceSet service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutResourceSet service method, as returned by FMS.</returns>
+        /// <exception cref="Amazon.FMS.Model.InternalErrorException">
+        /// The operation failed because of a system problem, even though the request was valid.
+        /// Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.InvalidInputException">
+        /// The parameters of the request were invalid.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.InvalidOperationException">
+        /// The operation failed because there was nothing to do or the operation wasn't possible.
+        /// For example, you might have submitted an <code>AssociateAdminAccount</code> request
+        /// for an account ID that was already set as the Firewall Manager administrator. Or you
+        /// might have tried to access a Region that's disabled by default, and that you need
+        /// to enable for the Firewall Manager administrator account and for Organizations before
+        /// you can access it.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.LimitExceededException">
+        /// The operation exceeds a resource limit, for example, the maximum number of <code>policy</code>
+        /// objects that you can create for an Amazon Web Services account. For more information,
+        /// see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-limits.html">Firewall
+        /// Manager Limits</a> in the <i>WAF Developer Guide</i>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/PutResourceSet">REST API Reference for PutResourceSet Operation</seealso>
+        public virtual Task<PutResourceSetResponse> PutResourceSetAsync(PutResourceSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutResourceSetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutResourceSetResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutResourceSetResponse>(request, options, cancellationToken);
         }
 
         #endregion

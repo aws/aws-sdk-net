@@ -31,16 +31,29 @@ namespace Amazon.SecurityToken.Model
     /// <summary>
     /// Container for the parameters to the GetFederationToken operation.
     /// Returns a set of temporary security credentials (consisting of an access key ID, a
-    /// secret access key, and a security token) for a federated user. A typical use is in
-    /// a proxy application that gets temporary security credentials on behalf of distributed
-    /// applications inside a corporate network. You must call the <code>GetFederationToken</code>
-    /// operation using the long-term security credentials of an IAM user. As a result, this
-    /// call is appropriate in contexts where those credentials can be safely stored, usually
-    /// in a server-based application. For a comparison of <code>GetFederationToken</code>
-    /// with the other API operations that produce temporary credentials, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html">Requesting
+    /// secret access key, and a security token) for a user. A typical use is in a proxy application
+    /// that gets temporary security credentials on behalf of distributed applications inside
+    /// a corporate network.
+    /// 
+    ///  
+    /// <para>
+    /// You must call the <code>GetFederationToken</code> operation using the long-term security
+    /// credentials of an IAM user. As a result, this call is appropriate in contexts where
+    /// those credentials can be safeguarded, usually in a server-based application. For a
+    /// comparison of <code>GetFederationToken</code> with the other API operations that produce
+    /// temporary credentials, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html">Requesting
     /// Temporary Security Credentials</a> and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#stsapi_comparison">Comparing
     /// the Amazon Web Services STS API operations</a> in the <i>IAM User Guide</i>.
-    /// 
+    /// </para>
+    ///  
+    /// <para>
+    /// Although it is possible to call <code>GetFederationToken</code> using the security
+    /// credentials of an Amazon Web Services account root user rather than an IAM user that
+    /// you create for the purpose of a proxy application, we do not recommend it. For more
+    /// information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html#lock-away-credentials">Safeguard
+    /// your root user credentials and don't use them for everyday tasks</a> in the <i>IAM
+    /// User Guide</i>. 
+    /// </para>
     ///  <note> 
     /// <para>
     /// You can create a mobile-based or browser-based app that can authenticate users using
@@ -52,24 +65,14 @@ namespace Amazon.SecurityToken.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// You can also call <code>GetFederationToken</code> using the security credentials of
-    /// an Amazon Web Services account root user, but we do not recommend it. Instead, we
-    /// recommend that you create an IAM user for the purpose of the proxy application. Then
-    /// attach a policy to the IAM user that limits federated users to only the actions and
-    /// resources that they need to access. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html">IAM
-    /// Best Practices</a> in the <i>IAM User Guide</i>. 
-    /// </para>
-    ///  
-    /// <para>
     ///  <b>Session duration</b> 
     /// </para>
     ///  
     /// <para>
     /// The temporary credentials are valid for the specified duration, from 900 seconds (15
     /// minutes) up to a maximum of 129,600 seconds (36 hours). The default session duration
-    /// is 43,200 seconds (12 hours). Temporary credentials obtained by using the Amazon Web
-    /// Services account root user credentials have a maximum duration of 3,600 seconds (1
-    /// hour).
+    /// is 43,200 seconds (12 hours). Temporary credentials obtained by using the root user
+    /// credentials have a maximum duration of 3,600 seconds (1 hour).
     /// </para>
     ///  
     /// <para>
@@ -78,11 +81,12 @@ namespace Amazon.SecurityToken.Model
     ///  
     /// <para>
     /// You can use the temporary credentials created by <code>GetFederationToken</code> in
-    /// any Amazon Web Services service except the following:
+    /// any Amazon Web Services service with the following exceptions:
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// You cannot call any IAM operations using the CLI or the Amazon Web Services API. 
+    /// You cannot call any IAM operations using the CLI or the Amazon Web Services API. This
+    /// limitation does not apply to console sessions.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -90,11 +94,15 @@ namespace Amazon.SecurityToken.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
+    /// You can use temporary credentials for single sign-on (SSO) to the console.
+    /// </para>
+    ///  
+    /// <para>
     /// You must pass an inline or managed <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">session
     /// policy</a> to this operation. You can pass a single JSON policy document to use as
-    /// an inline session policy. You can also specify up to 10 managed policies to use as
-    /// managed session policies. The plaintext that you use for both inline and managed session
-    /// policies can't exceed 2,048 characters.
+    /// an inline session policy. You can also specify up to 10 managed policy Amazon Resource
+    /// Names (ARNs) to use as managed session policies. The plaintext that you use for both
+    /// inline and managed session policies can't exceed 2,048 characters.
     /// </para>
     ///  
     /// <para>
@@ -179,10 +187,10 @@ namespace Amazon.SecurityToken.Model
         /// <para>
         /// The duration, in seconds, that the session should last. Acceptable durations for federation
         /// sessions range from 900 seconds (15 minutes) to 129,600 seconds (36 hours), with 43,200
-        /// seconds (12 hours) as the default. Sessions obtained using Amazon Web Services account
-        /// root user credentials are restricted to a maximum of 3,600 seconds (one hour). If
-        /// the specified duration is longer than one hour, the session obtained by using root
-        /// user credentials defaults to one hour.
+        /// seconds (12 hours) as the default. Sessions obtained using root user credentials are
+        /// restricted to a maximum of 3,600 seconds (one hour). If the specified duration is
+        /// longer than one hour, the session obtained by using root user credentials defaults
+        /// to one hour.
         /// </para>
         /// </summary>
         [AWSProperty(Min=900, Max=129600)]
@@ -234,8 +242,8 @@ namespace Amazon.SecurityToken.Model
         /// <para>
         /// You must pass an inline or managed <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">session
         /// policy</a> to this operation. You can pass a single JSON policy document to use as
-        /// an inline session policy. You can also specify up to 10 managed policies to use as
-        /// managed session policies.
+        /// an inline session policy. You can also specify up to 10 managed policy Amazon Resource
+        /// Names (ARNs) to use as managed session policies.
         /// </para>
         ///  
         /// <para>
@@ -268,11 +276,11 @@ namespace Amazon.SecurityToken.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// An Amazon Web Services conversion compresses the passed session policies and session
-        /// tags into a packed binary format that has a separate limit. Your request can fail
-        /// for this limit even if your plaintext meets the other requirements. The <code>PackedPolicySize</code>
-        /// response element indicates by percentage how close the policies and tags for your
-        /// request are to the upper size limit. 
+        /// An Amazon Web Services conversion compresses the passed inline session policy, managed
+        /// policy ARNs, and session tags into a packed binary format that has a separate limit.
+        /// Your request can fail for this limit even if your plaintext meets the other requirements.
+        /// The <code>PackedPolicySize</code> response element indicates by percentage how close
+        /// the policies and tags for your request are to the upper size limit.
         /// </para>
         ///  </note>
         /// </summary>
@@ -300,10 +308,10 @@ namespace Amazon.SecurityToken.Model
         /// <para>
         /// You must pass an inline or managed <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">session
         /// policy</a> to this operation. You can pass a single JSON policy document to use as
-        /// an inline session policy. You can also specify up to 10 managed policies to use as
-        /// managed session policies. The plaintext that you use for both inline and managed session
-        /// policies can't exceed 2,048 characters. You can provide up to 10 managed policy ARNs.
-        /// For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// an inline session policy. You can also specify up to 10 managed policy Amazon Resource
+        /// Names (ARNs) to use as managed session policies. The plaintext that you use for both
+        /// inline and managed session policies can't exceed 2,048 characters. You can provide
+        /// up to 10 managed policy ARNs. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
         /// Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the Amazon
         /// Web Services General Reference.
         /// </para>
@@ -331,11 +339,11 @@ namespace Amazon.SecurityToken.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// An Amazon Web Services conversion compresses the passed session policies and session
-        /// tags into a packed binary format that has a separate limit. Your request can fail
-        /// for this limit even if your plaintext meets the other requirements. The <code>PackedPolicySize</code>
-        /// response element indicates by percentage how close the policies and tags for your
-        /// request are to the upper size limit. 
+        /// An Amazon Web Services conversion compresses the passed inline session policy, managed
+        /// policy ARNs, and session tags into a packed binary format that has a separate limit.
+        /// Your request can fail for this limit even if your plaintext meets the other requirements.
+        /// The <code>PackedPolicySize</code> response element indicates by percentage how close
+        /// the policies and tags for your request are to the upper size limit.
         /// </para>
         ///  </note>
         /// </summary>
@@ -367,11 +375,11 @@ namespace Amazon.SecurityToken.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// An Amazon Web Services conversion compresses the passed session policies and session
-        /// tags into a packed binary format that has a separate limit. Your request can fail
-        /// for this limit even if your plaintext meets the other requirements. The <code>PackedPolicySize</code>
-        /// response element indicates by percentage how close the policies and tags for your
-        /// request are to the upper size limit. 
+        /// An Amazon Web Services conversion compresses the passed inline session policy, managed
+        /// policy ARNs, and session tags into a packed binary format that has a separate limit.
+        /// Your request can fail for this limit even if your plaintext meets the other requirements.
+        /// The <code>PackedPolicySize</code> response element indicates by percentage how close
+        /// the policies and tags for your request are to the upper size limit.
         /// </para>
         ///  </note> 
         /// <para>

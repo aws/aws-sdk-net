@@ -34,7 +34,7 @@ namespace Amazon.KinesisAnalytics.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// InputParallelismUpdate Marshaller
-    /// </summary>       
+    /// </summary>
     public class InputParallelismUpdateMarshaller : IRequestMarshaller<InputParallelismUpdate, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.KinesisAnalytics.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static InputParallelismUpdateMarshaller Instance = new InputParallelismUpdateMarshaller();
 
     }

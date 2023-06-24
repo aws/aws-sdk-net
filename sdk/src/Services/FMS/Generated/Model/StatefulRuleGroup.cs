@@ -33,8 +33,62 @@ namespace Amazon.FMS.Model
     /// </summary>
     public partial class StatefulRuleGroup
     {
+        private NetworkFirewallStatefulRuleGroupOverride _override;
+        private int? _priority;
         private string _resourceId;
         private string _ruleGroupName;
+
+        /// <summary>
+        /// Gets and sets the property Override. 
+        /// <para>
+        /// The action that allows the policy owner to override the behavior of the rule group
+        /// within a policy.
+        /// </para>
+        /// </summary>
+        public NetworkFirewallStatefulRuleGroupOverride Override
+        {
+            get { return this._override; }
+            set { this._override = value; }
+        }
+
+        // Check to see if Override property is set
+        internal bool IsSetOverride()
+        {
+            return this._override != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Priority. 
+        /// <para>
+        /// An integer setting that indicates the order in which to run the stateful rule groups
+        /// in a single Network Firewall firewall policy. This setting only applies to firewall
+        /// policies that specify the <code>STRICT_ORDER</code> rule order in the stateful engine
+        /// options settings.
+        /// </para>
+        ///  
+        /// <para>
+        ///  Network Firewall evalutes each stateful rule group against a packet starting with
+        /// the group that has the lowest priority setting. You must ensure that the priority
+        /// settings are unique within each policy. For information about 
+        /// </para>
+        ///  
+        /// <para>
+        ///  You can change the priority settings of your rule groups at any time. To make it
+        /// easier to insert rule groups later, number them so there's a wide range in between,
+        /// for example use 100, 200, and so on. 
+        /// </para>
+        /// </summary>
+        public int Priority
+        {
+            get { return this._priority.GetValueOrDefault(); }
+            set { this._priority = value; }
+        }
+
+        // Check to see if Priority property is set
+        internal bool IsSetPriority()
+        {
+            return this._priority.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property ResourceId. 

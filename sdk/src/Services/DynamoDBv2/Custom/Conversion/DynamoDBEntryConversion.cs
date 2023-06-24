@@ -14,7 +14,6 @@
  */
 
 using System;
-using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
@@ -198,6 +197,23 @@ namespace Amazon.DynamoDBv2
         }
 
         /// <summary>
+        /// Convert value to DynamoDBEntry
+        /// </summary>
+        /// <typeparam name="TInput"></typeparam>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public DynamoDBEntry ConvertToEntry(Type inputType, object value)
+        {
+            if (inputType == null) throw new ArgumentNullException("inputType");
+            if (value == null) throw new ArgumentNullException("value");
+
+            var converter = ConverterCache.GetConverter(inputType);
+            DynamoDBEntry output = converter.ToEntry(value);
+
+            return output;
+        }
+
+        /// <summary>
         /// Try to convert value to DynamoDBEntry. If it fails the method returns false.
         /// </summary>
         /// <typeparam name="TInput"></typeparam>
@@ -208,6 +224,23 @@ namespace Amazon.DynamoDBv2
         {
             var inputType = typeof(TInput);
             return TryConvertToEntry(inputType, value, out entry);
+        }
+
+        /// <summary>
+        /// Try to convert value to DynamoDBEntry. If it fails the method returns false.
+        /// </summary>
+        /// <param name="inputType"></param>
+        /// <param name="value"></param>
+        /// <param name="entry"></param>
+        /// <returns></returns>
+        /// <exception cref="ArgumentNullException"></exception>
+        public bool TryConvertToEntry(Type inputType, object value, out DynamoDBEntry entry)
+        {
+            if (inputType == null) throw new ArgumentNullException("inputType");
+            if (value == null) throw new ArgumentNullException("value");
+
+            var converter = ConverterCache.GetConverter(inputType);
+            return converter.TryToEntry(value, out entry);
         }
 
         /// <summary>
@@ -224,6 +257,24 @@ namespace Amazon.DynamoDBv2
 
             throw new InvalidOperationException(string.Format(CultureInfo.InvariantCulture,
                 "Unable to convert [{0}] of type {1} to {2}", entry, entry.GetType().FullName, typeof(TOutput).FullName));
+        }
+
+        /// <summary>
+        /// Convert the DynamoDBEntry to the specified type.
+        /// </summary>
+        /// <param name="outputType"></param>
+        /// <param name="entry"></param>
+        /// <returns></returns>
+        /// <exception cref="ArgumentNullException"></exception>
+        public object ConvertFromEntry(Type outputType, DynamoDBEntry entry)
+        {
+            if (outputType == null) throw new ArgumentNullException("outputType");
+            if (entry == null) throw new ArgumentNullException("entry");
+
+            var converter = ConverterCache.GetConverter(outputType);
+            object output = converter.FromEntry(entry, outputType);
+
+            return output;
         }
 
         /// <summary>
@@ -251,6 +302,23 @@ namespace Amazon.DynamoDBv2
             return false;
         }
 
+        /// <summary>
+        /// Try to convert the DynamoDBEntry to the specified type. If it fails the method returns false.
+        /// </summary>
+        /// <param name="outputType"></param>
+        /// <param name="entry"></param>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        /// <exception cref="ArgumentNullException"></exception>
+        public bool TryConvertFromEntry(Type outputType, DynamoDBEntry entry, out object value)
+        {
+            if (outputType == null) throw new ArgumentNullException("outputType");
+            if (entry == null) throw new ArgumentNullException("entry");
+
+            var converter = ConverterCache.GetConverter(outputType);
+            return converter.TryFromEntry(entry, outputType, out value);
+        }
+
         #endregion
 
         #region Internal members
@@ -266,44 +334,6 @@ namespace Amazon.DynamoDBv2
             return ConverterCache.HasConverter(type);
         }
 
-        internal bool TryConvertToEntry(Type inputType, object value, out DynamoDBEntry entry)
-        {
-            if (inputType == null) throw new ArgumentNullException("inputType");
-            if (value == null) throw new ArgumentNullException("value");
-
-            var converter = ConverterCache.GetConverter(inputType);
-            return converter.TryToEntry(value, out entry);
-        }
-        internal bool TryConvertFromEntry(Type outputType, DynamoDBEntry entry, out object value)
-        {
-            if (outputType == null) throw new ArgumentNullException("outputType");
-            if (entry == null) throw new ArgumentNullException("entry");
-
-            var converter = ConverterCache.GetConverter(outputType);
-            return converter.TryFromEntry(entry, outputType, out value);
-        }
-
-        internal DynamoDBEntry ConvertToEntry(Type inputType, object value)
-        {
-            if (inputType == null) throw new ArgumentNullException("inputType");
-            if (value == null) throw new ArgumentNullException("value");
-
-            var converter = ConverterCache.GetConverter(inputType);
-            DynamoDBEntry output = converter.ToEntry(value);
-
-            return output;
-        }
-        internal object ConvertFromEntry(Type outputType, DynamoDBEntry entry)
-        {
-            if (outputType == null) throw new ArgumentNullException("outputType");
-            if (entry == null) throw new ArgumentNullException("entry");
-
-            var converter = ConverterCache.GetConverter(outputType);
-            object output = converter.FromEntry(entry, outputType);
-
-            return output;
-        }
-
         internal IEnumerable<DynamoDBEntry> ConvertToEntries(Type elementType, IEnumerable values)
         {
             if (values == null) throw new ArgumentNullException("values");
@@ -314,7 +344,7 @@ namespace Amazon.DynamoDBv2
         internal IEnumerable<DynamoDBEntry> ConvertToEntries<T>(IEnumerable<T> values)
         {
             if (values == null) throw new ArgumentNullException("values");
-            
+
             var elementType = typeof(T);
             foreach (var value in values)
                 yield return ConvertToEntry(elementType, value);
@@ -424,7 +454,7 @@ namespace Amazon.DynamoDBv2
             }
         }
 
-#endregion
+        #endregion
     }
 
     internal abstract class Converter
@@ -543,10 +573,14 @@ namespace Amazon.DynamoDBv2
             if (d != null && TryFrom(d, targetType, out value))
                 return true;
 
-            //var n = entry as DynamoDBNull;
-            //if (n != null)
-            //    return null;
+            var n = entry as DynamoDBNull;
+            if (n != null)
+            {
+                value = null;
+                return true;
+            }
 
+            // Could not convert entry to a known type, setting value to null as it's an out parameter
             value = null;
             return false;
         }

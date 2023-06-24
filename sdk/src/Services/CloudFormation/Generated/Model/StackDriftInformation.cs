@@ -62,7 +62,6 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property StackDriftStatus. 
         /// <para>
         /// Status of the stack's actual configuration compared to its expected template configuration.
-        /// 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -71,7 +70,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NOT_CHECKED</code>: CloudFormation has not checked if the stack differs from
+        ///  <code>NOT_CHECKED</code>: CloudFormation hasn't checked if the stack differs from
         /// its expected template configuration.
         /// </para>
         ///  </li> <li> 

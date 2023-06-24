@@ -38,8 +38,7 @@ namespace Amazon.WorkMail.Model
         /// <summary>
         /// Gets and sets the property Rules. 
         /// <para>
-        /// The list of mobile device access rules that exist under the specified Amazon WorkMail
-        /// organization.
+        /// The list of mobile device access rules that exist under the specified WorkMail organization.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=10)]

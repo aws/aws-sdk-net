@@ -34,7 +34,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// InferenceAccelerator Marshaller
-    /// </summary>       
+    /// </summary>
     public class InferenceAcceleratorMarshaller : IRequestMarshaller<InferenceAccelerator, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static InferenceAcceleratorMarshaller Instance = new InferenceAcceleratorMarshaller();
 
     }

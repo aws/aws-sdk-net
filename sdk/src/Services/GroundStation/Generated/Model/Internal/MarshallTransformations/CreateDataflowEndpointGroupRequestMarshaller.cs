@@ -56,7 +56,7 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.GroundStation");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-05-23";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-05-23";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/dataflowEndpointGroup";
@@ -65,6 +65,18 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetContactPostPassDurationSeconds())
+                {
+                    context.Writer.WritePropertyName("contactPostPassDurationSeconds");
+                    context.Writer.Write(publicRequest.ContactPostPassDurationSeconds);
+                }
+
+                if(publicRequest.IsSetContactPrePassDurationSeconds())
+                {
+                    context.Writer.WritePropertyName("contactPrePassDurationSeconds");
+                    context.Writer.Write(publicRequest.ContactPrePassDurationSeconds);
+                }
+
                 if(publicRequest.IsSetEndpointDetails())
                 {
                     context.Writer.WritePropertyName("endpointDetails");
@@ -95,7 +107,6 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

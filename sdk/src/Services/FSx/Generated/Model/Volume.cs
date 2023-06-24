@@ -49,9 +49,9 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property AdministrativeActions. 
         /// <para>
-        /// A list of administrative actions for the file system that are in process or waiting
-        /// to be processed. Administrative actions describe changes to the Amazon FSx system
-        /// that you initiated.
+        /// A list of administrative actions for the volume that are in process or waiting to
+        /// be processed. Administrative actions describe changes to the volume that you have
+        /// initiated using the <code>UpdateVolume</code> action.
         /// </para>
         /// </summary>
         [AWSProperty(Max=50)]

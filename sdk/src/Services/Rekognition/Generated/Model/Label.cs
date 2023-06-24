@@ -39,10 +39,48 @@ namespace Amazon.Rekognition.Model
     /// </summary>
     public partial class Label
     {
+        private List<LabelAlias> _aliases = new List<LabelAlias>();
+        private List<LabelCategory> _categories = new List<LabelCategory>();
         private float? _confidence;
         private List<Instance> _instances = new List<Instance>();
         private string _name;
         private List<Parent> _parents = new List<Parent>();
+
+        /// <summary>
+        /// Gets and sets the property Aliases. 
+        /// <para>
+        /// A list of potential aliases for a given label.
+        /// </para>
+        /// </summary>
+        public List<LabelAlias> Aliases
+        {
+            get { return this._aliases; }
+            set { this._aliases = value; }
+        }
+
+        // Check to see if Aliases property is set
+        internal bool IsSetAliases()
+        {
+            return this._aliases != null && this._aliases.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Categories. 
+        /// <para>
+        /// A list of the categories associated with a given label.
+        /// </para>
+        /// </summary>
+        public List<LabelCategory> Categories
+        {
+            get { return this._categories; }
+            set { this._categories = value; }
+        }
+
+        // Check to see if Categories property is set
+        internal bool IsSetCategories()
+        {
+            return this._categories != null && this._categories.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property Confidence. 

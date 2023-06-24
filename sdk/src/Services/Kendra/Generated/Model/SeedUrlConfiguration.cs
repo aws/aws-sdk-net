@@ -29,13 +29,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kendra.Model
 {
     /// <summary>
-    /// Provides the configuration information of the seed or starting point URLs to crawl.
+    /// Provides the configuration information for the seed or starting point URLs to crawl.
     /// 
     ///  
     /// <para>
     ///  <i>When selecting websites to index, you must adhere to the <a href="https://aws.amazon.com/aup/">Amazon
     /// Acceptable Use Policy</a> and all other Amazon terms. Remember that you must only
-    /// use Amazon Kendra Web Crawler to index your own webpages, or webpages that you have
+    /// use Amazon Kendra Web Crawler to index your own web pages, or web pages that you have
     /// authorization to index.</i> 
     /// </para>
     /// </summary>
@@ -74,19 +74,19 @@ namespace Amazon.Kendra.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>HOST_ONLY</code> – crawl only the website host names. For example, if the seed
+        ///  <code>HOST_ONLY</code>—crawl only the website host names. For example, if the seed
         /// URL is "abc.example.com", then only URLs with host name "abc.example.com" are crawled.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SUBDOMAINS</code> – crawl the website host names with subdomains. For example,
+        ///  <code>SUBDOMAINS</code>—crawl the website host names with subdomains. For example,
         /// if the seed URL is "abc.example.com", then "a.abc.example.com" and "b.abc.example.com"
         /// are also crawled.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>EVERYTHING</code> – crawl the website host names with subdomains and other
-        /// domains that the webpages link to.
+        ///  <code>EVERYTHING</code>—crawl the website host names with subdomains and other domains
+        /// that the web pages link to.
         /// </para>
         ///  </li> </ul> 
         /// <para>

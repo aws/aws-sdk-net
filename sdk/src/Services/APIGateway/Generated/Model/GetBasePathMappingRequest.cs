@@ -30,7 +30,7 @@ namespace Amazon.APIGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the GetBasePathMapping operation.
-    /// Describe a <a>BasePathMapping</a> resource.
+    /// Describe a BasePathMapping resource.
     /// </summary>
     public partial class GetBasePathMappingRequest : AmazonAPIGatewayRequest
     {
@@ -40,10 +40,10 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property BasePath. 
         /// <para>
-        /// [Required] The base path name that callers of the API must provide as part of the
-        /// URL after the domain name. This value must be unique for all of the mappings across
-        /// a single API. Specify '(none)' if you do not want callers to specify any base path
-        /// name after the domain name.
+        /// The base path name that callers of the API must provide as part of the URL after the
+        /// domain name. This value must be unique for all of the mappings across a single API.
+        /// Specify '(none)' if you do not want callers to specify any base path name after the
+        /// domain name.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -62,7 +62,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property DomainName. 
         /// <para>
-        /// [Required] The domain name of the <a>BasePathMapping</a> resource to be described.
+        /// The domain name of the BasePathMapping resource to be described.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

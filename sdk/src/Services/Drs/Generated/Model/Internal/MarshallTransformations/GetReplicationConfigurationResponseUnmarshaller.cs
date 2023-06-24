@@ -57,6 +57,12 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
                     response.AssociateDefaultSecurityGroup = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("autoReplicateNewDisks", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    response.AutoReplicateNewDisks = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("bandwidthThrottling", targetDepth))
                 {
                     var unmarshaller = LongUnmarshaller.Instance;
@@ -170,6 +176,10 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
             using (var streamCopy = new MemoryStream(responseBodyBytes))
             using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
             {
+                if (errorResponse.Code != null && errorResponse.Code.Equals("AccessDeniedException"))
+                {
+                    return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerException"))
                 {
                     return InternalServerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);

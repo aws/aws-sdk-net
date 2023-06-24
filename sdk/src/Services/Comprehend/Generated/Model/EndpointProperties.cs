@@ -29,7 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Comprehend.Model
 {
     /// <summary>
-    /// Specifies information about the specified endpoint.
+    /// Specifies information about the specified endpoint. For information about endpoints,
+    /// see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html">Managing
+    /// endpoints</a>.
     /// </summary>
     public partial class EndpointProperties
     {
@@ -40,6 +42,7 @@ namespace Amazon.Comprehend.Model
         private int? _desiredInferenceUnits;
         private string _desiredModelArn;
         private string _endpointArn;
+        private string _flywheelArn;
         private DateTime? _lastModifiedTime;
         private string _message;
         private string _modelArn;
@@ -85,9 +88,8 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property DataAccessRoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the AWS identity and Access Management (IAM) role
-        /// that grants Amazon Comprehend read access to trained custom models encrypted with
-        /// a customer managed key (ModelKmsKeyId).
+        /// The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read
+        /// access to trained custom models encrypted with a customer managed key (ModelKmsKeyId).
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -180,6 +182,25 @@ namespace Amazon.Comprehend.Model
         internal bool IsSetEndpointArn()
         {
             return this._endpointArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FlywheelArn. 
+        /// <para>
+        /// The Amazon Resource Number (ARN) of the flywheel
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=256)]
+        public string FlywheelArn
+        {
+            get { return this._flywheelArn; }
+            set { this._flywheelArn = value; }
+        }
+
+        // Check to see if FlywheelArn property is set
+        internal bool IsSetFlywheelArn()
+        {
+            return this._flywheelArn != null;
         }
 
         /// <summary>

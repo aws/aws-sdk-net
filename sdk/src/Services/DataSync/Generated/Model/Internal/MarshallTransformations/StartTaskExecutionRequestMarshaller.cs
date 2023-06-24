@@ -58,7 +58,7 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
             string target = "FmrsService.StartTaskExecution";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-11-09";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-11-09";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -110,13 +110,28 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetTags())
+                {
+                    context.Writer.WritePropertyName("Tags");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = TagListEntryMarshaller.Instance;
+                        marshaller.Marshall(publicRequestTagsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetTaskArn())
                 {
                     context.Writer.WritePropertyName("TaskArn");
                     context.Writer.Write(publicRequest.TaskArn);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

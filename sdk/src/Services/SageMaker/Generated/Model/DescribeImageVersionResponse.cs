@@ -37,10 +37,17 @@ namespace Amazon.SageMaker.Model
         private string _containerImage;
         private DateTime? _creationTime;
         private string _failureReason;
+        private bool? _horovod;
         private string _imageArn;
         private string _imageVersionArn;
         private ImageVersionStatus _imageVersionStatus;
+        private JobType _jobType;
         private DateTime? _lastModifiedTime;
+        private string _mlFramework;
+        private Processor _processor;
+        private string _programmingLang;
+        private string _releaseNotes;
+        private VendorGuidance _vendorGuidance;
         private int? _version;
 
         /// <summary>
@@ -119,9 +126,27 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Horovod. 
+        /// <para>
+        /// Indicates Horovod compatibility.
+        /// </para>
+        /// </summary>
+        public bool Horovod
+        {
+            get { return this._horovod.GetValueOrDefault(); }
+            set { this._horovod = value; }
+        }
+
+        // Check to see if Horovod property is set
+        internal bool IsSetHorovod()
+        {
+            return this._horovod.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property ImageArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the image the version is based on.
+        /// The ARN of the image the version is based on.
         /// </para>
         /// </summary>
         [AWSProperty(Max=256)]
@@ -175,6 +200,39 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property JobType. 
+        /// <para>
+        /// Indicates SageMaker job type compatibility.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>TRAINING</code>: The image version is compatible with SageMaker training jobs.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>INFERENCE</code>: The image version is compatible with SageMaker inference
+        /// jobs.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>NOTEBOOK_KERNEL</code>: The image version is compatible with SageMaker notebook
+        /// kernels.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public JobType JobType
+        {
+            get { return this._jobType; }
+            set { this._jobType = value; }
+        }
+
+        // Check to see if JobType property is set
+        internal bool IsSetJobType()
+        {
+            return this._jobType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property LastModifiedTime. 
         /// <para>
         /// When the version was last modified.
@@ -190,6 +248,128 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetLastModifiedTime()
         {
             return this._lastModifiedTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MLFramework. 
+        /// <para>
+        /// The machine learning framework vended in the image version.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=128)]
+        public string MLFramework
+        {
+            get { return this._mlFramework; }
+            set { this._mlFramework = value; }
+        }
+
+        // Check to see if MLFramework property is set
+        internal bool IsSetMLFramework()
+        {
+            return this._mlFramework != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Processor. 
+        /// <para>
+        /// Indicates CPU or GPU compatibility.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>CPU</code>: The image version is compatible with CPU.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>GPU</code>: The image version is compatible with GPU.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public Processor Processor
+        {
+            get { return this._processor; }
+            set { this._processor = value; }
+        }
+
+        // Check to see if Processor property is set
+        internal bool IsSetProcessor()
+        {
+            return this._processor != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProgrammingLang. 
+        /// <para>
+        /// The supported programming language and its version.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=128)]
+        public string ProgrammingLang
+        {
+            get { return this._programmingLang; }
+            set { this._programmingLang = value; }
+        }
+
+        // Check to see if ProgrammingLang property is set
+        internal bool IsSetProgrammingLang()
+        {
+            return this._programmingLang != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReleaseNotes. 
+        /// <para>
+        /// The maintainer description of the image version.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string ReleaseNotes
+        {
+            get { return this._releaseNotes; }
+            set { this._releaseNotes = value; }
+        }
+
+        // Check to see if ReleaseNotes property is set
+        internal bool IsSetReleaseNotes()
+        {
+            return this._releaseNotes != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VendorGuidance. 
+        /// <para>
+        /// The stability of the image version specified by the maintainer.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>NOT_PROVIDED</code>: The maintainers did not provide a status for image version
+        /// stability.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>STABLE</code>: The image version is stable.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>TO_BE_ARCHIVED</code>: The image version is set to be archived. Custom image
+        /// versions that are set to be archived are automatically archived after three months.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ARCHIVED</code>: The image version is archived. Archived image versions are
+        /// not searchable and are no longer actively supported. 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public VendorGuidance VendorGuidance
+        {
+            get { return this._vendorGuidance; }
+            set { this._vendorGuidance = value; }
+        }
+
+        // Check to see if VendorGuidance property is set
+        internal bool IsSetVendorGuidance()
+        {
+            return this._vendorGuidance != null;
         }
 
         /// <summary>

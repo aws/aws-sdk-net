@@ -35,6 +35,7 @@ namespace Amazon.EC2.Model
     {
         private bool? _enableDnsHostnames;
         private bool? _enableDnsSupport;
+        private bool? _enableNetworkAddressUsageMetrics;
         private string _vpcId;
 
         /// <summary>
@@ -74,6 +75,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetEnableDnsSupport()
         {
             return this._enableDnsSupport.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnableNetworkAddressUsageMetrics. 
+        /// <para>
+        /// Indicates whether Network Address Usage metrics are enabled for your VPC.
+        /// </para>
+        /// </summary>
+        public bool EnableNetworkAddressUsageMetrics
+        {
+            get { return this._enableNetworkAddressUsageMetrics.GetValueOrDefault(); }
+            set { this._enableNetworkAddressUsageMetrics = value; }
+        }
+
+        // Check to see if EnableNetworkAddressUsageMetrics property is set
+        internal bool IsSetEnableNetworkAddressUsageMetrics()
+        {
+            return this._enableNetworkAddressUsageMetrics.HasValue; 
         }
 
         /// <summary>

@@ -34,7 +34,7 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ClientProperties Marshaller
-    /// </summary>       
+    /// </summary>
     public class ClientPropertiesMarshaller : IRequestMarshaller<ClientProperties, JsonMarshallerContext> 
     {
         /// <summary>
@@ -45,6 +45,12 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ClientProperties requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetLogUploadEnabled())
+            {
+                context.Writer.WritePropertyName("LogUploadEnabled");
+                context.Writer.Write(requestObject.LogUploadEnabled);
+            }
+
             if(requestObject.IsSetReconnectEnabled())
             {
                 context.Writer.WritePropertyName("ReconnectEnabled");
@@ -55,7 +61,7 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ClientPropertiesMarshaller Instance = new ClientPropertiesMarshaller();
 
     }

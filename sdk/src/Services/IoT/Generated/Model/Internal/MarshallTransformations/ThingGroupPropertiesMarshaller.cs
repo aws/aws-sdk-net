@@ -34,7 +34,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ThingGroupProperties Marshaller
-    /// </summary>       
+    /// </summary>
     public class ThingGroupPropertiesMarshaller : IRequestMarshaller<ThingGroupProperties, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ThingGroupPropertiesMarshaller Instance = new ThingGroupPropertiesMarshaller();
 
     }

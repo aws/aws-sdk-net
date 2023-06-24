@@ -62,6 +62,14 @@ namespace Amazon.ForecastService.Model
     /// <para>
     /// Predictor Backtest Export Job
     /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Explainability Job
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Explainability Export Job
+    /// </para>
     ///  </li> </ul>
     /// </summary>
     public partial class StopResourceRequest : AmazonForecastServiceRequest
@@ -73,7 +81,8 @@ namespace Amazon.ForecastService.Model
         /// <para>
         /// The Amazon Resource Name (ARN) that identifies the resource to stop. The supported
         /// ARNs are <code>DatasetImportJobArn</code>, <code>PredictorArn</code>, <code>PredictorBacktestExportJobArn</code>,
-        /// <code>ForecastArn</code>, and <code>ForecastExportJobArn</code>. 
+        /// <code>ForecastArn</code>, <code>ForecastExportJobArn</code>, <code>ExplainabilityArn</code>,
+        /// and <code>ExplainabilityExportArn</code>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=256)]

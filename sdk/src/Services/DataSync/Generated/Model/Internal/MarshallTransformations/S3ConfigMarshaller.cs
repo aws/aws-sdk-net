@@ -34,7 +34,7 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// S3Config Marshaller
-    /// </summary>       
+    /// </summary>
     public class S3ConfigMarshaller : IRequestMarshaller<S3Config, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static S3ConfigMarshaller Instance = new S3ConfigMarshaller();
 
     }

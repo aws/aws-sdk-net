@@ -56,7 +56,7 @@ namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.MediaPackageVod");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-11-07";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-11-07";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/packaging_configurations";
@@ -135,7 +135,6 @@ namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

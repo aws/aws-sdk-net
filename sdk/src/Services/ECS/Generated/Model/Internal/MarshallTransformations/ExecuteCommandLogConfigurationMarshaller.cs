@@ -34,7 +34,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ExecuteCommandLogConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class ExecuteCommandLogConfigurationMarshaller : IRequestMarshaller<ExecuteCommandLogConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -79,7 +79,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ExecuteCommandLogConfigurationMarshaller Instance = new ExecuteCommandLogConfigurationMarshaller();
 
     }

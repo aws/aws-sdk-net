@@ -34,7 +34,7 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DataSourceConfigurations Marshaller
-    /// </summary>       
+    /// </summary>
     public class DataSourceConfigurationsMarshaller : IRequestMarshaller<DataSourceConfigurations, JsonMarshallerContext> 
     {
         /// <summary>
@@ -45,6 +45,28 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DataSourceConfigurations requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetKubernetes())
+            {
+                context.Writer.WritePropertyName("kubernetes");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = KubernetesConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.Kubernetes, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetMalwareProtection())
+            {
+                context.Writer.WritePropertyName("malwareProtection");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = MalwareProtectionConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.MalwareProtection, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetS3Logs())
             {
                 context.Writer.WritePropertyName("s3Logs");
@@ -60,7 +82,7 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DataSourceConfigurationsMarshaller Instance = new DataSourceConfigurationsMarshaller();
 
     }

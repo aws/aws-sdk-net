@@ -17,22 +17,22 @@
  * Do not modify this file. This file is generated from the fsx-2018-03-01.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
-
+using Amazon.FSx.Internal;
 
 namespace Amazon.FSx
 {
     /// <summary>
     /// Configuration for accessing Amazon FSx service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonFSxConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.6.1");
+            InternalSDKUtils.BuildUserAgentString("3.7.103.4");
 
         private string _userAgent = UserAgentString;
 
@@ -40,8 +40,10 @@ namespace Amazon.FSx
         /// Default constructor
         /// </summary>
         public AmazonFSxConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonFSxDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "fsx";
+            this.EndpointProvider = new AmazonFSxEndpointProvider();
         }
 
         /// <summary>
@@ -76,5 +78,6 @@ namespace Amazon.FSx
                 return _userAgent;
             }
         }
+
     }
 }

@@ -79,8 +79,10 @@ namespace Amazon.LexModelsV2.Model
         /// <summary>
         /// Gets and sets the property SkipResourceInUseCheck. 
         /// <para>
-        /// When this parameter is true, Amazon Lex doesn't check to see if any other resource
-        /// is using the alias before it is deleted.
+        /// By default, Amazon Lex checks if any other resource, such as a bot network, is using
+        /// the bot alias before it is deleted and throws a <code>ResourceInUseException</code>
+        /// exception if the alias is being used by another resource. Set this parameter to <code>true</code>
+        /// to skip this check and remove the alias even if it is being used by another resource.
         /// </para>
         /// </summary>
         public bool SkipResourceInUseCheck

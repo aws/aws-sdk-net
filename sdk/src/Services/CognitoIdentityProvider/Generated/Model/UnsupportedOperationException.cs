@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// This exception is thrown when you attempt to perform an operation that is not enabled
+    /// Exception that is thrown when you attempt to perform an operation that isn't enabled
     /// for the user pool client.
     /// </summary>
     #if !NETSTANDARD

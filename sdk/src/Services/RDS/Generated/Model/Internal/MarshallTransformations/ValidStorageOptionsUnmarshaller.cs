@@ -68,11 +68,25 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.ProvisionedIops.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("ProvisionedStorageThroughput/Range", targetDepth))
+                    {
+                        var unmarshaller = RangeUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.ProvisionedStorageThroughput.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("StorageSize/Range", targetDepth))
                     {
                         var unmarshaller = RangeUnmarshaller.Instance;
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.StorageSize.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("StorageThroughputToIopsRatio/DoubleRange", targetDepth))
+                    {
+                        var unmarshaller = DoubleRangeUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.StorageThroughputToIopsRatio.Add(item);
                         continue;
                     }
                     if (context.TestExpression("StorageType", targetDepth))

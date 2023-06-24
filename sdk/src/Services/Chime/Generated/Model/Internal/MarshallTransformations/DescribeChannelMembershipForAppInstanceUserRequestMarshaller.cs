@@ -55,7 +55,7 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
         public IRequest Marshall(DescribeChannelMembershipForAppInstanceUserRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Chime");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-05-01";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-05-01";
             request.HttpMethod = "GET";
 
             request.AddSubResource("scope", "app-instance-user-membership");
@@ -67,8 +67,10 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
                 request.Parameters.Add("app-instance-user-arn", StringUtils.FromString(publicRequest.AppInstanceUserArn));
             request.ResourcePath = "/channels/{channelArn}";
         
-            if(publicRequest.IsSetChimeBearer())
+            if (publicRequest.IsSetChimeBearer()) 
+            {
                 request.Headers["x-amz-chime-bearer"] = publicRequest.ChimeBearer;
+            }
             request.UseQueryString = true;
             
             request.HostPrefix = $"messaging-";

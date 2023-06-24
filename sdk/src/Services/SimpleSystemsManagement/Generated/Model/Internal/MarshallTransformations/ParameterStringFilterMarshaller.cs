@@ -34,7 +34,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ParameterStringFilter Marshaller
-    /// </summary>       
+    /// </summary>
     public class ParameterStringFilterMarshaller : IRequestMarshaller<ParameterStringFilter, JsonMarshallerContext> 
     {
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ParameterStringFilterMarshaller Instance = new ParameterStringFilterMarshaller();
 
     }

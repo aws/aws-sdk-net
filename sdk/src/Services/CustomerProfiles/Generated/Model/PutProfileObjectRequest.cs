@@ -34,10 +34,10 @@ namespace Amazon.CustomerProfiles.Model
     /// 
     ///  
     /// <para>
-    /// When adding a specific profile object, like a Contact Trace Record (CTR), an inferred
-    /// profile can get created if it is not mapped to an existing profile. The resulting
-    /// profile will only have a phone number populated in the standard ProfileObject. Any
-    /// additional CTRs with the same phone number will be mapped to the same inferred profile.
+    /// When adding a specific profile object, like a Contact Record, an inferred profile
+    /// can get created if it is not mapped to an existing profile. The resulting profile
+    /// will only have a phone number populated in the standard ProfileObject. Any additional
+    /// Contact Records with the same phone number will be mapped to the same inferred profile.
     /// </para>
     ///  
     /// <para>

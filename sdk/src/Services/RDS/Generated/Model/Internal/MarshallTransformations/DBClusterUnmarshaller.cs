@@ -227,6 +227,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.DBSubnetGroup = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("DBSystemId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.DBSystemId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("DeletionProtection", targetDepth))
                     {
                         var unmarshaller = BoolUnmarshaller.Instance;
@@ -313,6 +319,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.IAMDatabaseAuthenticationEnabled = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("IOOptimizedNextAllowedModificationTime", targetDepth))
+                    {
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        unmarshalledObject.IOOptimizedNextAllowedModificationTime = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("Iops", targetDepth))
                     {
                         var unmarshaller = IntUnmarshaller.Instance;
@@ -337,6 +349,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.MasterUsername = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("MasterUserSecret", targetDepth))
+                    {
+                        var unmarshaller = MasterUserSecretUnmarshaller.Instance;
+                        unmarshalledObject.MasterUserSecret = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("MonitoringInterval", targetDepth))
                     {
                         var unmarshaller = IntUnmarshaller.Instance;
@@ -353,6 +371,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = BoolUnmarshaller.Instance;
                         unmarshalledObject.MultiAZ = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("NetworkType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.NetworkType = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("PendingModifiedValues", targetDepth))
@@ -432,6 +456,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = ScalingConfigurationInfoUnmarshaller.Instance;
                         unmarshalledObject.ScalingConfigurationInfo = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ServerlessV2ScalingConfiguration", targetDepth))
+                    {
+                        var unmarshaller = ServerlessV2ScalingConfigurationInfoUnmarshaller.Instance;
+                        unmarshalledObject.ServerlessV2ScalingConfiguration = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Status", targetDepth))

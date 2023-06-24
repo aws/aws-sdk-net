@@ -34,7 +34,7 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// PolicyInformation Marshaller
-    /// </summary>       
+    /// </summary>
     public class PolicyInformationMarshaller : IRequestMarshaller<PolicyInformation, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static PolicyInformationMarshaller Instance = new PolicyInformationMarshaller();
 
     }

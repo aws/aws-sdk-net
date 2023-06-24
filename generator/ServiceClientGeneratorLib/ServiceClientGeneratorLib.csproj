@@ -1,13 +1,14 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net45</TargetFramework>
+    <TargetFrameworks Condition="'$(OS)' == 'Windows_NT'">netstandard2.0;net45</TargetFrameworks>
+    <TargetFramework Condition="'$(OS)' != 'Windows_NT'">netstandard2.0</TargetFramework>
     <DebugType>portable</DebugType>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <RootNamespace>ServiceClientGenerator</RootNamespace>
     <AssemblyName>ServiceClientGeneratorLib</AssemblyName>
     <PackageId>ServiceClientGeneratorLib</PackageId>
     <RootNamespace>ServiceClientGenerator</RootNamespace>
-    
+
     <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
     <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
     <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
@@ -18,7 +19,7 @@
     <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
 
     <NoWarn>CS1591;CS1572;CS1573;CS1570;CS0109;CS0252</NoWarn>
-  </PropertyGroup>
+  </PropertyGroup> 
   <ItemGroup>
     <Compile Update="Generators\CodeAnalysis\CodeAnalysisAssemblyInfo.cs">
       <AutoGen>True</AutoGen>
@@ -49,6 +50,31 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>VsixTestProfileFile.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Generators\Endpoints\PartitionsTemplate.cs">
+      <DependentUpon>PartitionsTemplate.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Generators\Endpoints\EndpointParameters.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EndpointParameters.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Generators\Endpoints\EndpointProvider.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EndpointProvider.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Generators\Endpoints\EndpointProviderTests.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EndpointProviderTests.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Generators\Endpoints\EndpointResolver.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EndpointResolver.tt</DependentUpon>
     </Compile>
     <Compile Update="Generators\Examples\ExampleCode.cs">
       <AutoGen>True</AutoGen>
@@ -125,10 +151,25 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CoreAssemblyInfo.tt</DependentUpon>
     </Compile>
+    <Compile Update="Generators\SourceFiles\DefaultConfiguration.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DefaultConfiguration.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Generators\SourceFiles\DefaultConfigurationModeGenerator.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>DefaultConfigurationModeGenerator.tt</DependentUpon>
+    </Compile>
     <Compile Update="Generators\SourceFiles\EndpointsGenerator.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>EndpointsGenerator.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Generators\SourceFiles\Exceptions\EventStreamExceptions.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EventStreamExceptions.tt</DependentUpon>
     </Compile>
     <Compile Update="Generators\SourceFiles\InternalSDKUtils.cs">
       <AutoGen>True</AutoGen>
@@ -387,6 +428,30 @@
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>GettingStarted.cs</LastGenOutput>
     </None>
+    <None Update="Generators\Endpoints\PartitionsTemplate.tt">
+      <LastGenOutput>PartitionsTemplate.cs</LastGenOutput>
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+    </None>
+    <None Update="Generators\Endpoints\EndpointProvider.tt">
+      <LastGenOutput>EndpointProvider.cs</LastGenOutput>
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+    </None>
+    <None Update="Generators\Endpoints\EndpointParameters.tt">
+      <LastGenOutput>EndpointParameters.cs</LastGenOutput>
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+    </None>
+    <None Update="Generators\Endpoints\EndpointProviderTests.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>EndpointProviderTests.cs</LastGenOutput>
+    </None>
+    <None Update="Generators\Endpoints\EndpointResolver.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>EndpointResolver.cs</LastGenOutput>
+    </None>
+    <None Update="Generators\Endpoints\RestMarshallingTests.tt">
+      <LastGenOutput>RestMarshallingTests.cs</LastGenOutput>
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+    </None>
     <None Update="Generators\Marshallers\AWSQueryExceptionUnmarshaller.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>AWSQueryExceptionUnmarshaller.cs</LastGenOutput>
@@ -422,6 +487,22 @@
     <None Update="Generators\SourceFiles\CoreAssemblyInfo.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>CoreAssemblyInfo.cs</LastGenOutput>
+    </None>
+    <None Update="Generators\SourceFiles\DefaultConfiguration.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>DefaultConfiguration.cs</LastGenOutput>
+    </None>
+    <None Update="Generators\SourceFiles\DefaultConfigurationModeGenerator.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>DefaultConfigurationModeGenerator.cs</LastGenOutput>
+    </None>
+    <None Update="Generators\SourceFiles\EventStreamInterfaces.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>EventStreamInterfaces.cs</LastGenOutput>
+    </None>
+    <None Update="Generators\SourceFiles\Exceptions\EventStreamExceptions.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>EventStreamExceptions.cs</LastGenOutput>
     </None>
     <None Update="Generators\SourceFiles\InternalSDKUtils.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
@@ -660,11 +741,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="HtmlAgilityPack" Version="1.4.9" />
-    <PackageReference Include="Microsoft.CSharp" Version="4.4.1" />
-    <PackageReference Include="ReverseMarkdown" Version="0.1.12" />
+	<PackageReference Include="Microsoft.CSharp" Version="4.4.1" />
   </ItemGroup>
-  <ItemGroup>
-    <Reference Include="mscorlib" />
+  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
+	<PackageReference Include="System.CodeDom" Version="6.0.0" />
   </ItemGroup>
 </Project>

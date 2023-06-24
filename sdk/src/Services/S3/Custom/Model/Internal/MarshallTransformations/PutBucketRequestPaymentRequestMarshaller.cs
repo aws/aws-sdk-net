@@ -43,13 +43,16 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             request.HttpMethod = "PUT";
 
+            if (putBucketRequestPaymentRequest.IsSetChecksumAlgorithm())
+                request.Headers.Add(S3Constants.AmzHeaderSdkChecksumAlgorithm, S3Transforms.ToStringValue(putBucketRequestPaymentRequest.ChecksumAlgorithm));
+
             if (putBucketRequestPaymentRequest.IsSetExpectedBucketOwner())
                 request.Headers.Add(S3Constants.AmzHeaderExpectedBucketOwner, S3Transforms.ToStringValue(putBucketRequestPaymentRequest.ExpectedBucketOwner));
 
             if (string.IsNullOrEmpty(putBucketRequestPaymentRequest.BucketName))
                 throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "PutBucketRequestPaymentRequest.BucketName");
 
-			request.ResourcePath = string.Concat("/", S3Transforms.ToStringValue(putBucketRequestPaymentRequest.BucketName));
+            request.ResourcePath = "/";
 
             request.AddSubResource("requestPayment");
 
@@ -59,10 +62,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 var requestPaymentConfigurationRequestPaymentConfiguration = putBucketRequestPaymentRequest.RequestPaymentConfiguration;
                 if (requestPaymentConfigurationRequestPaymentConfiguration != null)
                 {
-                    xmlWriter.WriteStartElement("RequestPaymentConfiguration", "");
+                    xmlWriter.WriteStartElement("RequestPaymentConfiguration", S3Constants.S3RequestXmlNamespace);
+
                     if (requestPaymentConfigurationRequestPaymentConfiguration.IsSetPayer())
                     {
-                        xmlWriter.WriteElementString("Payer", "", S3Transforms.ToXmlStringValue(requestPaymentConfigurationRequestPaymentConfiguration.Payer));
+                        xmlWriter.WriteElementString("Payer", S3Transforms.ToXmlStringValue(requestPaymentConfigurationRequestPaymentConfiguration.Payer));
                     }
                     xmlWriter.WriteEndElement();
                 }
@@ -74,9 +78,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 request.Content = Encoding.UTF8.GetBytes(content);
                 request.Headers[HeaderKeys.ContentTypeHeader] = "application/xml";
 
-                var checksum = AWSSDKUtils.GenerateChecksumForContent(content, true);
-                request.Headers[HeaderKeys.ContentMD5Header] = checksum;
-
+                ChecksumUtils.SetRequestChecksum(request, putBucketRequestPaymentRequest.ChecksumAlgorithm);
             }
             catch (EncoderFallbackException e)
             {

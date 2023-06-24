@@ -108,7 +108,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// events raised while running tasks for these targets in this maintenance window.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=128)]
+        [AWSProperty(Sensitive=true, Min=1, Max=128)]
         public string OwnerInformation
         {
             get { return this._ownerInformation; }
@@ -127,6 +127,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The parameters used at the time that the task ran.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string Parameters
         {
             get { return this._parameters; }

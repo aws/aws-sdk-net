@@ -39,11 +39,11 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The <code>ListVocabularyFilters</code> operation returns a page of collections at
-        /// a time. The maximum size of the page is set by the <code>MaxResults</code> parameter.
-        /// If there are more jobs in the list than the page size, Amazon Transcribe returns the
-        /// <code>NextPage</code> token. Include the token in the next request to the <code>ListVocabularyFilters</code>
-        /// operation to return in the next page of jobs.
+        /// If <code>NextToken</code> is present in your response, it indicates that not all results
+        /// are displayed. To view the next set of results, copy the string associated with the
+        /// <code>NextToken</code> parameter in your results output, then run your request again
+        /// including <code>NextToken</code> with the value of the copied string. Repeat as needed
+        /// to view all your results.
         /// </para>
         /// </summary>
         [AWSProperty(Max=8192)]
@@ -62,10 +62,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property VocabularyFilters. 
         /// <para>
-        /// The list of vocabulary filters. It contains at most <code>MaxResults</code> number
-        /// of filters. If there are more filters, call the <code>ListVocabularyFilters</code>
-        /// operation again with the <code>NextToken</code> parameter in the request set to the
-        /// value of the <code>NextToken</code> field in the response.
+        /// Provides information about the custom vocabulary filters that match the criteria specified
+        /// in your request.
         /// </para>
         /// </summary>
         public List<VocabularyFilterInfo> VocabularyFilters

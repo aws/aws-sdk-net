@@ -29,5 +29,10 @@ namespace Amazon.Kinesis.Model
         /// Paginator for ListStreamConsumers operation
         ///</summary>
         IListStreamConsumersPaginator ListStreamConsumers(ListStreamConsumersRequest request);
+
+        /// <summary>
+        /// Paginator for ListStreams operation
+        ///</summary>
+        IListStreamsPaginator ListStreams(ListStreamsRequest request);
     }
 }

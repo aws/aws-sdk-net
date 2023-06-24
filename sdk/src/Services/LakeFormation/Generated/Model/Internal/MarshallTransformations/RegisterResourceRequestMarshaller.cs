@@ -56,7 +56,7 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.LakeFormation");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-03-31";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-03-31";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/RegisterResource";
@@ -83,7 +83,12 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.UseServiceLinkedRole);
                 }
 
-        
+                if(publicRequest.IsSetWithFederation())
+                {
+                    context.Writer.WritePropertyName("WithFederation");
+                    context.Writer.Write(publicRequest.WithFederation);
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

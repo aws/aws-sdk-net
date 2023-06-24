@@ -34,7 +34,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DefaultMessage Marshaller
-    /// </summary>       
+    /// </summary>
     public class DefaultMessageMarshaller : IRequestMarshaller<DefaultMessage, JsonMarshallerContext> 
     {
         /// <summary>
@@ -74,7 +74,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DefaultMessageMarshaller Instance = new DefaultMessageMarshaller();
 
     }

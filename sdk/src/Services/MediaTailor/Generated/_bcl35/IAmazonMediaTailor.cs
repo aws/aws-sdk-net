@@ -57,11 +57,51 @@ namespace Amazon.MediaTailor
 
 
         
+        #region  ConfigureLogsForChannel
+
+
+        /// <summary>
+        /// Configures Amazon CloudWatch log settings for a channel.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ConfigureLogsForChannel service method.</param>
+        /// 
+        /// <returns>The response from the ConfigureLogsForChannel service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ConfigureLogsForChannel">REST API Reference for ConfigureLogsForChannel Operation</seealso>
+        ConfigureLogsForChannelResponse ConfigureLogsForChannel(ConfigureLogsForChannelRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ConfigureLogsForChannel operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ConfigureLogsForChannel operation on AmazonMediaTailorClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndConfigureLogsForChannel
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ConfigureLogsForChannel">REST API Reference for ConfigureLogsForChannel Operation</seealso>
+        IAsyncResult BeginConfigureLogsForChannel(ConfigureLogsForChannelRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ConfigureLogsForChannel operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginConfigureLogsForChannel.</param>
+        /// 
+        /// <returns>Returns a  ConfigureLogsForChannelResult from MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ConfigureLogsForChannel">REST API Reference for ConfigureLogsForChannel Operation</seealso>
+        ConfigureLogsForChannelResponse EndConfigureLogsForChannel(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ConfigureLogsForPlaybackConfiguration
 
 
         /// <summary>
-        /// Configures Amazon CloudWatch log settings for a playback configuration.
+        /// Amazon CloudWatch log settings for a playback configuration.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ConfigureLogsForPlaybackConfiguration service method.</param>
         /// 
@@ -101,7 +141,8 @@ namespace Amazon.MediaTailor
 
 
         /// <summary>
-        /// Creates a channel.
+        /// Creates a channel. For information about MediaTailor channels, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-channels.html">Working
+        /// with channels</a> in the <i>MediaTailor User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateChannel service method.</param>
         /// 
@@ -137,11 +178,54 @@ namespace Amazon.MediaTailor
 
         #endregion
         
+        #region  CreateLiveSource
+
+
+        /// <summary>
+        /// The live source configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateLiveSource service method.</param>
+        /// 
+        /// <returns>The response from the CreateLiveSource service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/CreateLiveSource">REST API Reference for CreateLiveSource Operation</seealso>
+        CreateLiveSourceResponse CreateLiveSource(CreateLiveSourceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateLiveSource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateLiveSource operation on AmazonMediaTailorClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateLiveSource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/CreateLiveSource">REST API Reference for CreateLiveSource Operation</seealso>
+        IAsyncResult BeginCreateLiveSource(CreateLiveSourceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateLiveSource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateLiveSource.</param>
+        /// 
+        /// <returns>Returns a  CreateLiveSourceResult from MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/CreateLiveSource">REST API Reference for CreateLiveSource Operation</seealso>
+        CreateLiveSourceResponse EndCreateLiveSource(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreatePrefetchSchedule
 
 
         /// <summary>
-        /// Creates a new prefetch schedule for the specified playback configuration.
+        /// Creates a prefetch schedule for a playback configuration. A prefetch schedule allows
+        /// you to tell MediaTailor to fetch and prepare certain ads before an ad break happens.
+        /// For more information about ad prefetching, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/prefetching-ads.html">Using
+        /// ad prefetching</a> in the <i>MediaTailor User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePrefetchSchedule service method.</param>
         /// 
@@ -181,7 +265,8 @@ namespace Amazon.MediaTailor
 
 
         /// <summary>
-        /// Creates a program.
+        /// Creates a program within a channel. For information about programs, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-programs.html">Working
+        /// with programs</a> in the <i>MediaTailor User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateProgram service method.</param>
         /// 
@@ -221,7 +306,9 @@ namespace Amazon.MediaTailor
 
 
         /// <summary>
-        /// Creates a source location on a specific channel.
+        /// Creates a source location. A source location is a container for sources. For more
+        /// information about source locations, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-source-locations.html">Working
+        /// with source locations</a> in the <i>MediaTailor User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSourceLocation service method.</param>
         /// 
@@ -261,7 +348,7 @@ namespace Amazon.MediaTailor
 
 
         /// <summary>
-        /// Creates name for a specific VOD source in a source location.
+        /// The VOD source configuration parameters.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateVodSource service method.</param>
         /// 
@@ -301,7 +388,8 @@ namespace Amazon.MediaTailor
 
 
         /// <summary>
-        /// Deletes a channel. You must stop the channel before it can be deleted.
+        /// Deletes a channel. For information about MediaTailor channels, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-channels.html">Working
+        /// with channels</a> in the <i>MediaTailor User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteChannel service method.</param>
         /// 
@@ -341,7 +429,7 @@ namespace Amazon.MediaTailor
 
 
         /// <summary>
-        /// Deletes a channel's IAM policy.
+        /// The channel policy to delete.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteChannelPolicy service method.</param>
         /// 
@@ -377,11 +465,53 @@ namespace Amazon.MediaTailor
 
         #endregion
         
+        #region  DeleteLiveSource
+
+
+        /// <summary>
+        /// The live source to delete.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLiveSource service method.</param>
+        /// 
+        /// <returns>The response from the DeleteLiveSource service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DeleteLiveSource">REST API Reference for DeleteLiveSource Operation</seealso>
+        DeleteLiveSourceResponse DeleteLiveSource(DeleteLiveSourceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteLiveSource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLiveSource operation on AmazonMediaTailorClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteLiveSource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DeleteLiveSource">REST API Reference for DeleteLiveSource Operation</seealso>
+        IAsyncResult BeginDeleteLiveSource(DeleteLiveSourceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteLiveSource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteLiveSource.</param>
+        /// 
+        /// <returns>Returns a  DeleteLiveSourceResult from MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DeleteLiveSource">REST API Reference for DeleteLiveSource Operation</seealso>
+        DeleteLiveSourceResponse EndDeleteLiveSource(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeletePlaybackConfiguration
 
 
         /// <summary>
-        /// Deletes the playback configuration for the specified name.
+        /// Deletes a playback configuration. For information about MediaTailor configurations,
+        /// see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/configurations.html">Working
+        /// with configurations in AWS Elemental MediaTailor</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeletePlaybackConfiguration service method.</param>
         /// 
@@ -421,8 +551,10 @@ namespace Amazon.MediaTailor
 
 
         /// <summary>
-        /// Deletes a prefetch schedule for a specific playback configuration. If you call DeletePrefetchSchedule
-        /// on an expired prefetch schedule, MediaTailor returns an HTTP 404 status code.
+        /// Deletes a prefetch schedule for a specific playback configuration. If you call <code>DeletePrefetchSchedule</code>
+        /// on an expired prefetch schedule, MediaTailor returns an HTTP 404 status code. For
+        /// more information about ad prefetching, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/prefetching-ads.html">Using
+        /// ad prefetching</a> in the <i>MediaTailor User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeletePrefetchSchedule service method.</param>
         /// 
@@ -462,7 +594,8 @@ namespace Amazon.MediaTailor
 
 
         /// <summary>
-        /// Deletes a specific program on a specific channel.
+        /// Deletes a program within a channel. For information about programs, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-programs.html">Working
+        /// with programs</a> in the <i>MediaTailor User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteProgram service method.</param>
         /// 
@@ -502,7 +635,9 @@ namespace Amazon.MediaTailor
 
 
         /// <summary>
-        /// Deletes a source location on a specific channel.
+        /// Deletes a source location. A source location is a container for sources. For more
+        /// information about source locations, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-source-locations.html">Working
+        /// with source locations</a> in the <i>MediaTailor User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteSourceLocation service method.</param>
         /// 
@@ -542,7 +677,7 @@ namespace Amazon.MediaTailor
 
 
         /// <summary>
-        /// Deletes a specific VOD source in a specific source location.
+        /// The video on demand (VOD) source to delete.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteVodSource service method.</param>
         /// 
@@ -582,7 +717,8 @@ namespace Amazon.MediaTailor
 
 
         /// <summary>
-        /// Describes the properties of a specific channel.
+        /// Describes a channel. For information about MediaTailor channels, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-channels.html">Working
+        /// with channels</a> in the <i>MediaTailor User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeChannel service method.</param>
         /// 
@@ -618,11 +754,52 @@ namespace Amazon.MediaTailor
 
         #endregion
         
+        #region  DescribeLiveSource
+
+
+        /// <summary>
+        /// The live source to describe.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeLiveSource service method.</param>
+        /// 
+        /// <returns>The response from the DescribeLiveSource service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DescribeLiveSource">REST API Reference for DescribeLiveSource Operation</seealso>
+        DescribeLiveSourceResponse DescribeLiveSource(DescribeLiveSourceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeLiveSource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeLiveSource operation on AmazonMediaTailorClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeLiveSource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DescribeLiveSource">REST API Reference for DescribeLiveSource Operation</seealso>
+        IAsyncResult BeginDescribeLiveSource(DescribeLiveSourceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeLiveSource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeLiveSource.</param>
+        /// 
+        /// <returns>Returns a  DescribeLiveSourceResult from MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DescribeLiveSource">REST API Reference for DescribeLiveSource Operation</seealso>
+        DescribeLiveSourceResponse EndDescribeLiveSource(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribeProgram
 
 
         /// <summary>
-        /// Retrieves the properties of the requested program.
+        /// Describes a program within a channel. For information about programs, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-programs.html">Working
+        /// with programs</a> in the <i>MediaTailor User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeProgram service method.</param>
         /// 
@@ -662,7 +839,9 @@ namespace Amazon.MediaTailor
 
 
         /// <summary>
-        /// Retrieves the properties of the requested source location.
+        /// Describes a source location. A source location is a container for sources. For more
+        /// information about source locations, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-source-locations.html">Working
+        /// with source locations</a> in the <i>MediaTailor User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeSourceLocation service method.</param>
         /// 
@@ -702,7 +881,8 @@ namespace Amazon.MediaTailor
 
 
         /// <summary>
-        /// Provides details about a specific VOD source in a specific source location.
+        /// Provides details about a specific video on demand (VOD) source in a specific source
+        /// location.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeVodSource service method.</param>
         /// 
@@ -742,7 +922,8 @@ namespace Amazon.MediaTailor
 
 
         /// <summary>
-        /// Retrieves information about a channel's IAM policy.
+        /// Returns the channel's IAM policy. IAM policies are used to control access to your
+        /// channel.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetChannelPolicy service method.</param>
         /// 
@@ -822,7 +1003,9 @@ namespace Amazon.MediaTailor
 
 
         /// <summary>
-        /// Returns the playback configuration for the specified name.
+        /// Retrieves a playback configuration. For information about MediaTailor configurations,
+        /// see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/configurations.html">Working
+        /// with configurations in AWS Elemental MediaTailor</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetPlaybackConfiguration service method.</param>
         /// 
@@ -862,9 +1045,10 @@ namespace Amazon.MediaTailor
 
 
         /// <summary>
-        /// Returns information about the prefetch schedule for a specific playback configuration.
-        /// If you call GetPrefetchSchedule on an expired prefetch schedule, MediaTailor returns
-        /// an HTTP 404 status code.
+        /// Retrieves a prefetch schedule for a playback configuration. A prefetch schedule allows
+        /// you to tell MediaTailor to fetch and prepare certain ads before an ad break happens.
+        /// For more information about ad prefetching, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/prefetching-ads.html">Using
+        /// ad prefetching</a> in the <i>MediaTailor User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetPrefetchSchedule service method.</param>
         /// 
@@ -904,7 +1088,7 @@ namespace Amazon.MediaTailor
 
 
         /// <summary>
-        /// Returns a list of alerts for the given resource.
+        /// Lists the alerts that are associated with a MediaTailor channel assembly resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAlerts service method.</param>
         /// 
@@ -944,7 +1128,8 @@ namespace Amazon.MediaTailor
 
 
         /// <summary>
-        /// Retrieves a list of channels that are associated with this account.
+        /// Retrieves information about the channels that are associated with the current AWS
+        /// account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListChannels service method.</param>
         /// 
@@ -980,15 +1165,54 @@ namespace Amazon.MediaTailor
 
         #endregion
         
+        #region  ListLiveSources
+
+
+        /// <summary>
+        /// Lists the live sources contained in a source location. A source represents a piece
+        /// of content.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListLiveSources service method.</param>
+        /// 
+        /// <returns>The response from the ListLiveSources service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ListLiveSources">REST API Reference for ListLiveSources Operation</seealso>
+        ListLiveSourcesResponse ListLiveSources(ListLiveSourcesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListLiveSources operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListLiveSources operation on AmazonMediaTailorClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListLiveSources
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ListLiveSources">REST API Reference for ListLiveSources Operation</seealso>
+        IAsyncResult BeginListLiveSources(ListLiveSourcesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListLiveSources operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListLiveSources.</param>
+        /// 
+        /// <returns>Returns a  ListLiveSourcesResult from MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ListLiveSources">REST API Reference for ListLiveSources Operation</seealso>
+        ListLiveSourcesResponse EndListLiveSources(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListPlaybackConfigurations
 
 
         /// <summary>
-        /// Returns a list of the playback configurations defined in AWS Elemental MediaTailor.
-        /// You can specify a maximum number of configurations to return at a time. The default
-        /// maximum is 50. Results are returned in pagefuls. If MediaTailor has more configurations
-        /// than the specified maximum, it provides parameters in the response that you can use
-        /// to retrieve the next pageful.
+        /// Retrieves existing playback configurations. For information about MediaTailor configurations,
+        /// see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/configurations.html">Working
+        /// with Configurations in AWS Elemental MediaTailor</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPlaybackConfigurations service method.</param>
         /// 
@@ -1028,7 +1252,7 @@ namespace Amazon.MediaTailor
 
 
         /// <summary>
-        /// Creates a new prefetch schedule.
+        /// Lists the prefetch schedules for a playback configuration.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPrefetchSchedules service method.</param>
         /// 
@@ -1068,7 +1292,8 @@ namespace Amazon.MediaTailor
 
 
         /// <summary>
-        /// Retrieves a list of source locations.
+        /// Lists the source locations for a channel. A source location defines the host server
+        /// URL, and contains a list of sources.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListSourceLocations service method.</param>
         /// 
@@ -1108,13 +1333,16 @@ namespace Amazon.MediaTailor
 
 
         /// <summary>
-        /// Returns a list of the tags assigned to the specified playback configuration resource.
+        /// A list of tags that are associated with this resource. Tags are key-value pairs that
+        /// you can associate with Amazon resources to help with organization, access control,
+        /// and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+        /// AWS Elemental MediaTailor Resources</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// 
         /// <returns>The response from the ListTagsForResource service method, as returned by MediaTailor.</returns>
         /// <exception cref="Amazon.MediaTailor.Model.BadRequestException">
-        /// Invalid request parameters.
+        /// A request contains unexpected data.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request);
@@ -1151,7 +1379,8 @@ namespace Amazon.MediaTailor
 
 
         /// <summary>
-        /// Lists all the VOD sources in a source location.
+        /// Lists the VOD sources contained in a source location. A source represents a piece
+        /// of content.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListVodSources service method.</param>
         /// 
@@ -1191,7 +1420,8 @@ namespace Amazon.MediaTailor
 
 
         /// <summary>
-        /// Creates an IAM policy for the channel.
+        /// Creates an IAM policy for the channel. IAM policies are used to control access to
+        /// your channel.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutChannelPolicy service method.</param>
         /// 
@@ -1231,7 +1461,9 @@ namespace Amazon.MediaTailor
 
 
         /// <summary>
-        /// Adds a new playback configuration to AWS Elemental MediaTailor.
+        /// Creates a playback configuration. For information about MediaTailor configurations,
+        /// see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/configurations.html">Working
+        /// with configurations in AWS Elemental MediaTailor</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutPlaybackConfiguration service method.</param>
         /// 
@@ -1271,7 +1503,8 @@ namespace Amazon.MediaTailor
 
 
         /// <summary>
-        /// Starts a specific channel.
+        /// Starts a channel. For information about MediaTailor channels, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-channels.html">Working
+        /// with channels</a> in the <i>MediaTailor User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartChannel service method.</param>
         /// 
@@ -1311,7 +1544,8 @@ namespace Amazon.MediaTailor
 
 
         /// <summary>
-        /// Stops a specific channel.
+        /// Stops a channel. For information about MediaTailor channels, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-channels.html">Working
+        /// with channels</a> in the <i>MediaTailor User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopChannel service method.</param>
         /// 
@@ -1351,14 +1585,16 @@ namespace Amazon.MediaTailor
 
 
         /// <summary>
-        /// Adds tags to the specified playback configuration resource. You can specify one or
-        /// more tags to add.
+        /// The resource to tag. Tags are key-value pairs that you can associate with Amazon resources
+        /// to help with organization, access control, and cost tracking. For more information,
+        /// see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+        /// AWS Elemental MediaTailor Resources</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// 
         /// <returns>The response from the TagResource service method, as returned by MediaTailor.</returns>
         /// <exception cref="Amazon.MediaTailor.Model.BadRequestException">
-        /// Invalid request parameters.
+        /// A request contains unexpected data.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/TagResource">REST API Reference for TagResource Operation</seealso>
         TagResourceResponse TagResource(TagResourceRequest request);
@@ -1395,14 +1631,13 @@ namespace Amazon.MediaTailor
 
 
         /// <summary>
-        /// Removes tags from the specified playback configuration resource. You can specify one
-        /// or more tags to remove.
+        /// The resource to untag.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// 
         /// <returns>The response from the UntagResource service method, as returned by MediaTailor.</returns>
         /// <exception cref="Amazon.MediaTailor.Model.BadRequestException">
-        /// Invalid request parameters.
+        /// A request contains unexpected data.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/UntagResource">REST API Reference for UntagResource Operation</seealso>
         UntagResourceResponse UntagResource(UntagResourceRequest request);
@@ -1439,7 +1674,8 @@ namespace Amazon.MediaTailor
 
 
         /// <summary>
-        /// Updates an existing channel.
+        /// Updates a channel. For information about MediaTailor channels, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-channels.html">Working
+        /// with channels</a> in the <i>MediaTailor User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateChannel service method.</param>
         /// 
@@ -1475,11 +1711,93 @@ namespace Amazon.MediaTailor
 
         #endregion
         
+        #region  UpdateLiveSource
+
+
+        /// <summary>
+        /// Updates a live source's configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateLiveSource service method.</param>
+        /// 
+        /// <returns>The response from the UpdateLiveSource service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/UpdateLiveSource">REST API Reference for UpdateLiveSource Operation</seealso>
+        UpdateLiveSourceResponse UpdateLiveSource(UpdateLiveSourceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateLiveSource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateLiveSource operation on AmazonMediaTailorClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateLiveSource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/UpdateLiveSource">REST API Reference for UpdateLiveSource Operation</seealso>
+        IAsyncResult BeginUpdateLiveSource(UpdateLiveSourceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateLiveSource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateLiveSource.</param>
+        /// 
+        /// <returns>Returns a  UpdateLiveSourceResult from MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/UpdateLiveSource">REST API Reference for UpdateLiveSource Operation</seealso>
+        UpdateLiveSourceResponse EndUpdateLiveSource(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateProgram
+
+
+        /// <summary>
+        /// Updates a program within a channel.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateProgram service method.</param>
+        /// 
+        /// <returns>The response from the UpdateProgram service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/UpdateProgram">REST API Reference for UpdateProgram Operation</seealso>
+        UpdateProgramResponse UpdateProgram(UpdateProgramRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateProgram operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateProgram operation on AmazonMediaTailorClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateProgram
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/UpdateProgram">REST API Reference for UpdateProgram Operation</seealso>
+        IAsyncResult BeginUpdateProgram(UpdateProgramRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateProgram operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateProgram.</param>
+        /// 
+        /// <returns>Returns a  UpdateProgramResult from MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/UpdateProgram">REST API Reference for UpdateProgram Operation</seealso>
+        UpdateProgramResponse EndUpdateProgram(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  UpdateSourceLocation
 
 
         /// <summary>
-        /// Updates a source location on a specific channel.
+        /// Updates a source location. A source location is a container for sources. For more
+        /// information about source locations, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-source-locations.html">Working
+        /// with source locations</a> in the <i>MediaTailor User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateSourceLocation service method.</param>
         /// 
@@ -1519,7 +1837,7 @@ namespace Amazon.MediaTailor
 
 
         /// <summary>
-        /// Updates a specific VOD source in a specific source location.
+        /// Updates a VOD source's configuration.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateVodSource service method.</param>
         /// 

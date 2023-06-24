@@ -38,11 +38,11 @@ namespace Amazon.GreengrassV2.Model
         /// <summary>
         /// Gets and sets the property ErrorEntries. 
         /// <para>
-        /// The list of errors (if any) for the entries in the request. Each error entry contains
-        /// the name of the IoT thing that failed to disassociate.
+        /// The list of any errors for the entries in the request. Each error entry contains the
+        /// name of the IoT thing that failed to disassociate.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
+        [AWSProperty(Max=100)]
         public List<DisassociateClientDeviceFromCoreDeviceErrorEntry> ErrorEntries
         {
             get { return this._errorEntries; }

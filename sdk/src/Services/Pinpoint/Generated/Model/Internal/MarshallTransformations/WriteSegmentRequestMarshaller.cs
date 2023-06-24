@@ -34,7 +34,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// WriteSegmentRequest Marshaller
-    /// </summary>       
+    /// </summary>
     public class WriteSegmentRequestMarshaller : IRequestMarshaller<WriteSegmentRequest, JsonMarshallerContext> 
     {
         /// <summary>
@@ -91,7 +91,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static WriteSegmentRequestMarshaller Instance = new WriteSegmentRequestMarshaller();
 
     }

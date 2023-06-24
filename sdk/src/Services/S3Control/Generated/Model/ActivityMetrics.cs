@@ -29,7 +29,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.S3Control.Model
 {
     /// <summary>
-    /// A container for the activity metrics.
+    /// The container element for Amazon S3 Storage Lens activity metrics. Activity metrics
+    /// show details about how your storage is requested, such as requests (for example, All
+    /// requests, Get requests, Put requests), bytes uploaded or downloaded, and errors.
+    /// 
+    ///  
+    /// <para>
+    /// For more information about S3 Storage Lens, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens.html">Assessing
+    /// your storage activity and usage with S3 Storage Lens</a> in the <i>Amazon S3 User
+    /// Guide</i>. For a complete list of S3 Storage Lens metrics, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_metrics_glossary.html">S3
+    /// Storage Lens metrics glossary</a> in the <i>Amazon S3 User Guide</i>.
+    /// </para>
     /// </summary>
     public partial class ActivityMetrics
     {
@@ -38,7 +48,7 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property IsEnabled. 
         /// <para>
-        /// A container for whether the activity metrics are enabled.
+        /// A container that indicates whether activity metrics are enabled.
         /// </para>
         /// </summary>
         public bool IsEnabled

@@ -34,7 +34,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SlackConnectorProfileProperties Marshaller
-    /// </summary>       
+    /// </summary>
     public class SlackConnectorProfilePropertiesMarshaller : IRequestMarshaller<SlackConnectorProfileProperties, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SlackConnectorProfilePropertiesMarshaller Instance = new SlackConnectorProfilePropertiesMarshaller();
 
     }

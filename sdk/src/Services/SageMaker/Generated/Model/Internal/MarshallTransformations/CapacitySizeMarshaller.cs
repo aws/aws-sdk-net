@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CapacitySize Marshaller
-    /// </summary>       
+    /// </summary>
     public class CapacitySizeMarshaller : IRequestMarshaller<CapacitySize, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CapacitySizeMarshaller Instance = new CapacitySizeMarshaller();
 
     }

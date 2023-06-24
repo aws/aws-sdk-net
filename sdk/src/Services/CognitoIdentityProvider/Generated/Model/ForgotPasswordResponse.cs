@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// Respresents the response from the server regarding the request to reset a password.
+    /// The response from Amazon Cognito to a request to reset a password.
     /// </summary>
     public partial class ForgotPasswordResponse : AmazonWebServiceResponse
     {

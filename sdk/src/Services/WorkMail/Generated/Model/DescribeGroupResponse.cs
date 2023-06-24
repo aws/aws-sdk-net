@@ -136,7 +136,7 @@ namespace Amazon.WorkMail.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// The state of the user: enabled (registered to Amazon WorkMail) or disabled (deregistered
+        /// The state of the user: enabled (registered to WorkMail) or disabled (deregistered
         /// or never registered to WorkMail).
         /// </para>
         /// </summary>

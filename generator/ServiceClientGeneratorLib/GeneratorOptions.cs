@@ -37,6 +37,8 @@ namespace ServiceClientGenerator
         /// </summary>
         public string ModelsFolder { get; set; }
 
+        public string TestModelsFolder { get; set; }
+
         /// <summary>
         /// The root folder beneath which the code for the SDK is arranged. Source code exists under
         /// a .\src folder, which is further partitioned into core runtime (.\Core) and service code 
@@ -52,6 +54,14 @@ namespace ServiceClientGenerator
         /// 'model' values in the service manifest file.
         /// </summary>
         public string ServiceModels { get; set; }
+
+        /// <summary>
+        /// Allows disabling orphaned shape and service cleanup.
+        /// Useful to set if you a) specify <see cref="ServiceModels"/> and b)
+        /// don't want to remove previously generated services.  This is often the case
+        /// in a development environment.
+        /// </summary>
+        public bool SkipRemoveOrphanCleanup { get; set; }
 
         /// <summary>
         /// If set causes all servicename.customizations*.json files to be 'compiled' into 
@@ -86,6 +96,7 @@ namespace ServiceClientGenerator
             Manifest = Path.Combine("..", "..", "..", "ServiceModels", "_manifest.json");
             Versions = Path.Combine("..", "..", "..", "ServiceModels", "_sdk-versions.json");
             ModelsFolder = Path.Combine("..", "..", "..", "ServiceModels");
+            TestModelsFolder = Path.Combine("..", "..", "..", "TestServiceModels");
             SdkRootFolder = Path.Combine("..", "..", "..", "..", "sdk");
             ServiceModels = string.Empty; // process all services
             CompileCustomizations = true;

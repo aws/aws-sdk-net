@@ -32,8 +32,9 @@ namespace Amazon.SecurityToken.Model
     /// Container for the parameters to the AssumeRoleWithWebIdentity operation.
     /// Returns a set of temporary security credentials for users who have been authenticated
     /// in a mobile or web application with a web identity provider. Example providers include
-    /// Amazon Cognito, Login with Amazon, Facebook, Google, or any OpenID Connect-compatible
-    /// identity provider.
+    /// the OAuth 2.0 providers Login with Amazon and Facebook, or any OpenID Connect-compatible
+    /// identity provider such as Google or <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-identity.html">Amazon
+    /// Cognito federated identities</a>.
     /// 
     ///  <note> 
     /// <para>
@@ -46,10 +47,8 @@ namespace Amazon.SecurityToken.Model
     /// </para>
     ///  
     /// <para>
-    /// To learn more about Amazon Cognito, see <a href="https://docs.aws.amazon.com/mobile/sdkforandroid/developerguide/cognito-auth.html#d0e840">Amazon
-    /// Cognito Overview</a> in <i>Amazon Web Services SDK for Android Developer Guide</i>
-    /// and <a href="https://docs.aws.amazon.com/mobile/sdkforios/developerguide/cognito-auth.html#d0e664">Amazon
-    /// Cognito Overview</a> in the <i>Amazon Web Services SDK for iOS Developer Guide</i>.
+    /// To learn more about Amazon Cognito, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-identity.html">Amazon
+    /// Cognito identity pools</a> in <i>Amazon Cognito Developer Guide</i>.
     /// </para>
     ///  </note> 
     /// <para>
@@ -104,15 +103,15 @@ namespace Amazon.SecurityToken.Model
     /// <para>
     /// (Optional) You can pass inline or managed <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">session
     /// policies</a> to this operation. You can pass a single JSON policy document to use
-    /// as an inline session policy. You can also specify up to 10 managed policies to use
-    /// as managed session policies. The plaintext that you use for both inline and managed
-    /// session policies can't exceed 2,048 characters. Passing policies to this operation
-    /// returns new temporary credentials. The resulting session's permissions are the intersection
-    /// of the role's identity-based policy and the session policies. You can use the role's
-    /// temporary credentials in subsequent Amazon Web Services API calls to access resources
-    /// in the account that owns the role. You cannot use session policies to grant more permissions
-    /// than those allowed by the identity-based policy of the role that is being assumed.
-    /// For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
+    /// as an inline session policy. You can also specify up to 10 managed policy Amazon Resource
+    /// Names (ARNs) to use as managed session policies. The plaintext that you use for both
+    /// inline and managed session policies can't exceed 2,048 characters. Passing policies
+    /// to this operation returns new temporary credentials. The resulting session's permissions
+    /// are the intersection of the role's identity-based policy and the session policies.
+    /// You can use the role's temporary credentials in subsequent Amazon Web Services API
+    /// calls to access resources in the account that owns the role. You cannot use session
+    /// policies to grant more permissions than those allowed by the identity-based policy
+    /// of the role that is being assumed. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
     /// Policies</a> in the <i>IAM User Guide</i>.
     /// </para>
     ///  
@@ -135,11 +134,11 @@ namespace Amazon.SecurityToken.Model
     /// </para>
     ///  <note> 
     /// <para>
-    /// An Amazon Web Services conversion compresses the passed session policies and session
-    /// tags into a packed binary format that has a separate limit. Your request can fail
-    /// for this limit even if your plaintext meets the other requirements. The <code>PackedPolicySize</code>
-    /// response element indicates by percentage how close the policies and tags for your
-    /// request are to the upper size limit. 
+    /// An Amazon Web Services conversion compresses the passed inline session policy, managed
+    /// policy ARNs, and session tags into a packed binary format that has a separate limit.
+    /// Your request can fail for this limit even if your plaintext meets the other requirements.
+    /// The <code>PackedPolicySize</code> response element indicates by percentage how close
+    /// the policies and tags for your request are to the upper size limit.
     /// </para>
     ///  </note> 
     /// <para>
@@ -290,11 +289,11 @@ namespace Amazon.SecurityToken.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// An Amazon Web Services conversion compresses the passed session policies and session
-        /// tags into a packed binary format that has a separate limit. Your request can fail
-        /// for this limit even if your plaintext meets the other requirements. The <code>PackedPolicySize</code>
-        /// response element indicates by percentage how close the policies and tags for your
-        /// request are to the upper size limit. 
+        /// An Amazon Web Services conversion compresses the passed inline session policy, managed
+        /// policy ARNs, and session tags into a packed binary format that has a separate limit.
+        /// Your request can fail for this limit even if your plaintext meets the other requirements.
+        /// The <code>PackedPolicySize</code> response element indicates by percentage how close
+        /// the policies and tags for your request are to the upper size limit.
         /// </para>
         ///  </note>
         /// </summary>
@@ -327,11 +326,11 @@ namespace Amazon.SecurityToken.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// An Amazon Web Services conversion compresses the passed session policies and session
-        /// tags into a packed binary format that has a separate limit. Your request can fail
-        /// for this limit even if your plaintext meets the other requirements. The <code>PackedPolicySize</code>
-        /// response element indicates by percentage how close the policies and tags for your
-        /// request are to the upper size limit. 
+        /// An Amazon Web Services conversion compresses the passed inline session policy, managed
+        /// policy ARNs, and session tags into a packed binary format that has a separate limit.
+        /// Your request can fail for this limit even if your plaintext meets the other requirements.
+        /// The <code>PackedPolicySize</code> response element indicates by percentage how close
+        /// the policies and tags for your request are to the upper size limit.
         /// </para>
         ///  </note> 
         /// <para>
@@ -359,13 +358,14 @@ namespace Amazon.SecurityToken.Model
         /// <summary>
         /// Gets and sets the property ProviderId. 
         /// <para>
-        /// The fully qualified host component of the domain name of the identity provider.
+        /// The fully qualified host component of the domain name of the OAuth 2.0 identity provider.
+        /// Do not specify this value for an OpenID Connect identity provider.
         /// </para>
         ///  
         /// <para>
-        /// Specify this value only for OAuth 2.0 access tokens. Currently <code>www.amazon.com</code>
-        /// and <code>graph.facebook.com</code> are the only supported identity providers for
-        /// OAuth 2.0 access tokens. Do not include URL schemes and port numbers.
+        /// Currently <code>www.amazon.com</code> and <code>graph.facebook.com</code> are the
+        /// only supported identity providers for OAuth 2.0 access tokens. Do not include URL
+        /// schemes and port numbers.
         /// </para>
         ///  
         /// <para>
@@ -442,7 +442,7 @@ namespace Amazon.SecurityToken.Model
         /// call. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=4, Max=20000)]
+        [AWSProperty(Required=true, Sensitive=true, Min=4, Max=20000)]
         public string WebIdentityToken
         {
             get { return this._webIdentityToken; }

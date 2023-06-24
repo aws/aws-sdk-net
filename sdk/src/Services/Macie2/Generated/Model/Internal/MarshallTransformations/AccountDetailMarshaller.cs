@@ -34,7 +34,7 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AccountDetail Marshaller
-    /// </summary>       
+    /// </summary>
     public class AccountDetailMarshaller : IRequestMarshaller<AccountDetail, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AccountDetailMarshaller Instance = new AccountDetailMarshaller();
 
     }

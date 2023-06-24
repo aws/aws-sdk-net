@@ -34,7 +34,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DataRepositoryTaskFilter Marshaller
-    /// </summary>       
+    /// </summary>
     public class DataRepositoryTaskFilterMarshaller : IRequestMarshaller<DataRepositoryTaskFilter, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DataRepositoryTaskFilterMarshaller Instance = new DataRepositoryTaskFilterMarshaller();
 
     }

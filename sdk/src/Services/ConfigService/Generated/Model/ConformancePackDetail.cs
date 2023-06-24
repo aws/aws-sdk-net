@@ -42,6 +42,7 @@ namespace Amazon.ConfigService.Model
         private string _deliveryS3Bucket;
         private string _deliveryS3KeyPrefix;
         private DateTime? _lastUpdateRequestedTime;
+        private TemplateSSMDocumentDetails _templateSSMDocumentDetails;
 
         /// <summary>
         /// Gets and sets the property ConformancePackArn. 
@@ -122,7 +123,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property CreatedBy. 
         /// <para>
-        /// Amazon Web Services service that created the conformance pack.
+        /// The Amazon Web Services service that created the conformance pack.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -189,7 +190,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property LastUpdateRequestedTime. 
         /// <para>
-        /// Last time when conformation pack update was requested. 
+        /// The last time a conformation pack update was requested. 
         /// </para>
         /// </summary>
         public DateTime LastUpdateRequestedTime
@@ -202,6 +203,26 @@ namespace Amazon.ConfigService.Model
         internal bool IsSetLastUpdateRequestedTime()
         {
             return this._lastUpdateRequestedTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TemplateSSMDocumentDetails. 
+        /// <para>
+        /// An object that contains the name or Amazon Resource Name (ARN) of the Amazon Web Services
+        /// Systems Manager document (SSM document) and the version of the SSM document that is
+        /// used to create a conformance pack.
+        /// </para>
+        /// </summary>
+        public TemplateSSMDocumentDetails TemplateSSMDocumentDetails
+        {
+            get { return this._templateSSMDocumentDetails; }
+            set { this._templateSSMDocumentDetails = value; }
+        }
+
+        // Check to see if TemplateSSMDocumentDetails property is set
+        internal bool IsSetTemplateSSMDocumentDetails()
+        {
+            return this._templateSSMDocumentDetails != null;
         }
 
     }

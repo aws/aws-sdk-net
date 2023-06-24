@@ -46,7 +46,7 @@ namespace Amazon.DynamoDBv2.Model
         /// Gets and sets the property ApproximateCreationDateTime. 
         /// <para>
         /// The approximate date and time when the stream record was created, in <a href="http://www.epochconverter.com/">UNIX
-        /// epoch time</a> format.
+        /// epoch time</a> format and rounded down to the closest second.
         /// </para>
         /// </summary>
         public DateTime ApproximateCreationDateTime

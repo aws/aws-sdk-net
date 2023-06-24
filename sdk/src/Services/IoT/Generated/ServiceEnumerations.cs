@@ -2411,6 +2411,60 @@ namespace Amazon.IoT
 
 
     /// <summary>
+    /// Constants used for properties of type JobEndBehavior.
+    /// </summary>
+    public class JobEndBehavior : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CANCEL for JobEndBehavior
+        /// </summary>
+        public static readonly JobEndBehavior CANCEL = new JobEndBehavior("CANCEL");
+        /// <summary>
+        /// Constant FORCE_CANCEL for JobEndBehavior
+        /// </summary>
+        public static readonly JobEndBehavior FORCE_CANCEL = new JobEndBehavior("FORCE_CANCEL");
+        /// <summary>
+        /// Constant STOP_ROLLOUT for JobEndBehavior
+        /// </summary>
+        public static readonly JobEndBehavior STOP_ROLLOUT = new JobEndBehavior("STOP_ROLLOUT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public JobEndBehavior(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static JobEndBehavior FindValue(string value)
+        {
+            return FindValue<JobEndBehavior>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator JobEndBehavior(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type JobExecutionFailureType.
     /// </summary>
     public class JobExecutionFailureType : ConstantClass
@@ -2564,6 +2618,10 @@ namespace Amazon.IoT
         /// Constant IN_PROGRESS for JobStatus
         /// </summary>
         public static readonly JobStatus IN_PROGRESS = new JobStatus("IN_PROGRESS");
+        /// <summary>
+        /// Constant SCHEDULED for JobStatus
+        /// </summary>
+        public static readonly JobStatus SCHEDULED = new JobStatus("SCHEDULED");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -2669,9 +2727,21 @@ namespace Amazon.IoT
     {
 
         /// <summary>
+        /// Constant CLIENT_ID for LogTargetType
+        /// </summary>
+        public static readonly LogTargetType CLIENT_ID = new LogTargetType("CLIENT_ID");
+        /// <summary>
         /// Constant DEFAULT for LogTargetType
         /// </summary>
         public static readonly LogTargetType DEFAULT = new LogTargetType("DEFAULT");
+        /// <summary>
+        /// Constant PRINCIPAL_ID for LogTargetType
+        /// </summary>
+        public static readonly LogTargetType PRINCIPAL_ID = new LogTargetType("PRINCIPAL_ID");
+        /// <summary>
+        /// Constant SOURCE_IP for LogTargetType
+        /// </summary>
+        public static readonly LogTargetType SOURCE_IP = new LogTargetType("SOURCE_IP");
         /// <summary>
         /// Constant THING_GROUP for LogTargetType
         /// </summary>
@@ -2954,6 +3024,14 @@ namespace Amazon.IoT
         /// Constant CREATE_PENDING for OTAUpdateStatus
         /// </summary>
         public static readonly OTAUpdateStatus CREATE_PENDING = new OTAUpdateStatus("CREATE_PENDING");
+        /// <summary>
+        /// Constant DELETE_FAILED for OTAUpdateStatus
+        /// </summary>
+        public static readonly OTAUpdateStatus DELETE_FAILED = new OTAUpdateStatus("DELETE_FAILED");
+        /// <summary>
+        /// Constant DELETE_IN_PROGRESS for OTAUpdateStatus
+        /// </summary>
+        public static readonly OTAUpdateStatus DELETE_IN_PROGRESS = new OTAUpdateStatus("DELETE_IN_PROGRESS");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -2984,6 +3062,110 @@ namespace Amazon.IoT
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator OTAUpdateStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PackageVersionAction.
+    /// </summary>
+    public class PackageVersionAction : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DEPRECATE for PackageVersionAction
+        /// </summary>
+        public static readonly PackageVersionAction DEPRECATE = new PackageVersionAction("DEPRECATE");
+        /// <summary>
+        /// Constant PUBLISH for PackageVersionAction
+        /// </summary>
+        public static readonly PackageVersionAction PUBLISH = new PackageVersionAction("PUBLISH");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PackageVersionAction(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PackageVersionAction FindValue(string value)
+        {
+            return FindValue<PackageVersionAction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PackageVersionAction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PackageVersionStatus.
+    /// </summary>
+    public class PackageVersionStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DEPRECATED for PackageVersionStatus
+        /// </summary>
+        public static readonly PackageVersionStatus DEPRECATED = new PackageVersionStatus("DEPRECATED");
+        /// <summary>
+        /// Constant DRAFT for PackageVersionStatus
+        /// </summary>
+        public static readonly PackageVersionStatus DRAFT = new PackageVersionStatus("DRAFT");
+        /// <summary>
+        /// Constant PUBLISHED for PackageVersionStatus
+        /// </summary>
+        public static readonly PackageVersionStatus PUBLISHED = new PackageVersionStatus("PUBLISHED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PackageVersionStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PackageVersionStatus FindValue(string value)
+        {
+            return FindValue<PackageVersionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PackageVersionStatus(string value)
         {
             return FindValue(value);
         }
@@ -3171,6 +3353,10 @@ namespace Amazon.IoT
         /// </summary>
         public static readonly ResourceType IOT_POLICY = new ResourceType("IOT_POLICY");
         /// <summary>
+        /// Constant ISSUER_CERTIFICATE for ResourceType
+        /// </summary>
+        public static readonly ResourceType ISSUER_CERTIFICATE = new ResourceType("ISSUER_CERTIFICATE");
+        /// <summary>
         /// Constant ROLE_ALIAS for ResourceType
         /// </summary>
         public static readonly ResourceType ROLE_ALIAS = new ResourceType("ROLE_ALIAS");
@@ -3204,6 +3390,60 @@ namespace Amazon.IoT
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ResourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RetryableFailureType.
+    /// </summary>
+    public class RetryableFailureType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALL for RetryableFailureType
+        /// </summary>
+        public static readonly RetryableFailureType ALL = new RetryableFailureType("ALL");
+        /// <summary>
+        /// Constant FAILED for RetryableFailureType
+        /// </summary>
+        public static readonly RetryableFailureType FAILED = new RetryableFailureType("FAILED");
+        /// <summary>
+        /// Constant TIMED_OUT for RetryableFailureType
+        /// </summary>
+        public static readonly RetryableFailureType TIMED_OUT = new RetryableFailureType("TIMED_OUT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RetryableFailureType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RetryableFailureType FindValue(string value)
+        {
+            return FindValue<RetryableFailureType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RetryableFailureType(string value)
         {
             return FindValue(value);
         }
@@ -3420,6 +3660,56 @@ namespace Amazon.IoT
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator TargetSelection(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TemplateType.
+    /// </summary>
+    public class TemplateType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FLEET_PROVISIONING for TemplateType
+        /// </summary>
+        public static readonly TemplateType FLEET_PROVISIONING = new TemplateType("FLEET_PROVISIONING");
+        /// <summary>
+        /// Constant JITP for TemplateType
+        /// </summary>
+        public static readonly TemplateType JITP = new TemplateType("JITP");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TemplateType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TemplateType FindValue(string value)
+        {
+            return FindValue<TemplateType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TemplateType(string value)
         {
             return FindValue(value);
         }

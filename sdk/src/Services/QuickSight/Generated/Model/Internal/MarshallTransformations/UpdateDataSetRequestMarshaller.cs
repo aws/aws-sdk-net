@@ -56,7 +56,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.QuickSight");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-04-01";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-04-01";
             request.HttpMethod = "PUT";
 
             if (!publicRequest.IsSetAwsAccountId())
@@ -97,6 +97,22 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 
                         var marshaller = ColumnLevelPermissionRuleMarshaller.Instance;
                         marshaller.Marshall(publicRequestColumnLevelPermissionRulesListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetDatasetParameters())
+                {
+                    context.Writer.WritePropertyName("DatasetParameters");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestDatasetParametersListValue in publicRequest.DatasetParameters)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = DatasetParameterMarshaller.Instance;
+                        marshaller.Marshall(publicRequestDatasetParametersListValue, context);
 
                         context.Writer.WriteObjectEnd();
                     }
@@ -205,7 +221,6 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

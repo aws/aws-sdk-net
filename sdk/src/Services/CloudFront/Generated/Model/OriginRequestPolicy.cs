@@ -33,7 +33,7 @@ namespace Amazon.CloudFront.Model
     /// 
     ///  
     /// <para>
-    /// When it’s attached to a cache behavior, the origin request policy determines the values
+    /// When it's attached to a cache behavior, the origin request policy determines the values
     /// that CloudFront includes in requests that it sends to the origin. Each request that
     /// CloudFront sends to the origin includes the following:
     /// </para>
@@ -54,7 +54,7 @@ namespace Amazon.CloudFront.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// CloudFront sends a request when it can’t find an object in its cache that matches
+    /// CloudFront sends a request when it can't find an object in its cache that matches
     /// the request. If you want to send values to the origin and also include them in the
     /// cache key, use <code>CachePolicy</code>.
     /// </para>

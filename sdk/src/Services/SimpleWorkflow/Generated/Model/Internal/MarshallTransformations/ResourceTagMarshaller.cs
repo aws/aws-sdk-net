@@ -34,7 +34,7 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ResourceTag Marshaller
-    /// </summary>       
+    /// </summary>
     public class ResourceTagMarshaller : IRequestMarshaller<ResourceTag, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ResourceTagMarshaller Instance = new ResourceTagMarshaller();
 
     }

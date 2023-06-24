@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// A complex type that controls whether access logs are written for the distribution.
+    /// A complex type that controls whether access logs are written for the CloudFront distribution.
     /// </summary>
     public partial class AwsCloudFrontDistributionLogging
     {

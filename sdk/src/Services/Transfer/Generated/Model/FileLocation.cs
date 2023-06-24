@@ -39,7 +39,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property EfsFileLocation. 
         /// <para>
-        /// Specifies the Amazon EFS ID and the path for the file being used.
+        /// Specifies the Amazon EFS identifier and the path for the file being used.
         /// </para>
         /// </summary>
         public EfsFileLocation EfsFileLocation
@@ -57,7 +57,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property S3FileLocation. 
         /// <para>
-        /// Specifies the S3 details for the file being used, such as bucket, Etag, and so forth.
+        /// Specifies the S3 details for the file being used, such as bucket, ETag, and so forth.
         /// </para>
         /// </summary>
         public S3FileLocation S3FileLocation

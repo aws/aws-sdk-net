@@ -17,22 +17,22 @@
  * Do not modify this file. This file is generated from the sagemaker-a2i-runtime-2019-11-07.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
-
+using Amazon.AugmentedAIRuntime.Internal;
 
 namespace Amazon.AugmentedAIRuntime
 {
     /// <summary>
     /// Configuration for accessing Amazon AugmentedAIRuntime service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonAugmentedAIRuntimeConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.106");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.147");
 
         private string _userAgent = UserAgentString;
 
@@ -40,8 +40,10 @@ namespace Amazon.AugmentedAIRuntime
         /// Default constructor
         /// </summary>
         public AmazonAugmentedAIRuntimeConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonAugmentedAIRuntimeDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "sagemaker";
+            this.EndpointProvider = new AmazonAugmentedAIRuntimeEndpointProvider();
         }
 
         /// <summary>
@@ -76,5 +78,6 @@ namespace Amazon.AugmentedAIRuntime
                 return _userAgent;
             }
         }
+
     }
 }

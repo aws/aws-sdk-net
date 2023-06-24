@@ -34,7 +34,7 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ResourceDownloadOwnerSetting Marshaller
-    /// </summary>       
+    /// </summary>
     public class ResourceDownloadOwnerSettingMarshaller : IRequestMarshaller<ResourceDownloadOwnerSetting, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ResourceDownloadOwnerSettingMarshaller Instance = new ResourceDownloadOwnerSettingMarshaller();
 
     }

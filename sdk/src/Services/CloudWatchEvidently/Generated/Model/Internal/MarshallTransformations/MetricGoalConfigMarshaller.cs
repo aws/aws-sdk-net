@@ -34,7 +34,7 @@ namespace Amazon.CloudWatchEvidently.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// MetricGoalConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class MetricGoalConfigMarshaller : IRequestMarshaller<MetricGoalConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.CloudWatchEvidently.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static MetricGoalConfigMarshaller Instance = new MetricGoalConfigMarshaller();
 
     }

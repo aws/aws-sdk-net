@@ -1,5 +1,6 @@
 {
   "active": true,
   "synopsis": "This release adds support for Amazon Augmented AI, which makes it easy to build workflows for human review of machine learning predictions.",
-  "generate-client-constructors": true
+  "generate-client-constructors": true,
+  "legacy-service-id": "SageMaker A2I Runtime"
 }

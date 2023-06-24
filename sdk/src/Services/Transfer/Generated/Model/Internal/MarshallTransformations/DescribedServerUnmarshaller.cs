@@ -118,6 +118,18 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
                     unmarshalledObject.LoggingRole = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("PostAuthenticationLoginBanner", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PostAuthenticationLoginBanner = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("PreAuthenticationLoginBanner", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PreAuthenticationLoginBanner = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ProtocolDetails", targetDepth))
                 {
                     var unmarshaller = ProtocolDetailsUnmarshaller.Instance;
@@ -146,6 +158,12 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.State = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("StructuredLogDestinations", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.StructuredLogDestinations = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Tags", targetDepth))

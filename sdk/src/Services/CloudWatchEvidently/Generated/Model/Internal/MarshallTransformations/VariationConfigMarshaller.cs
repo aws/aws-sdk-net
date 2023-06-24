@@ -34,7 +34,7 @@ namespace Amazon.CloudWatchEvidently.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// VariationConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class VariationConfigMarshaller : IRequestMarshaller<VariationConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.CloudWatchEvidently.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static VariationConfigMarshaller Instance = new VariationConfigMarshaller();
 
     }

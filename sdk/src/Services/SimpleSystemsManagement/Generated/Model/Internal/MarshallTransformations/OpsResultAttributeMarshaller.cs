@@ -34,7 +34,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// OpsResultAttribute Marshaller
-    /// </summary>       
+    /// </summary>
     public class OpsResultAttributeMarshaller : IRequestMarshaller<OpsResultAttribute, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static OpsResultAttributeMarshaller Instance = new OpsResultAttributeMarshaller();
 
     }

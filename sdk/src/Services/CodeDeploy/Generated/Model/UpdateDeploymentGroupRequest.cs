@@ -114,9 +114,22 @@ namespace Amazon.CodeDeploy.Model
         /// Gets and sets the property AutoScalingGroups. 
         /// <para>
         /// The replacement list of Auto Scaling groups to be included in the deployment group,
-        /// if you want to change them. To keep the Auto Scaling groups, enter their names. To
-        /// remove Auto Scaling groups, do not enter any Auto Scaling group names.
+        /// if you want to change them.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// To keep the Auto Scaling groups, enter their names or do not specify this parameter.
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To remove Auto Scaling groups, specify a non-null empty list of Auto Scaling group
+        /// names to detach all CodeDeploy-managed Auto Scaling lifecycle hooks. For examples,
+        /// see <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/codedeploy/latest/userguide/troubleshooting-auto-scaling.html#troubleshooting-auto-scaling-heartbeat">Amazon
+        /// EC2 instances in an Amazon EC2 Auto Scaling group fail to launch and receive the error
+        /// "Heartbeat Timeout"</a> in the <i>CodeDeploy User Guide</i>.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public List<string> AutoScalingGroups
         {
@@ -124,10 +137,32 @@ namespace Amazon.CodeDeploy.Model
             set { this._autoScalingGroups = value; }
         }
 
+        /// <summary>
+        /// This property is set to true if the property <seealso cref="AutoScalingGroups"/>
+        /// is set; false otherwise.
+        /// This property can be used to determine if the related property
+        /// was returned by a service response or if the related property
+        /// should be sent to the service during a service call.
+        /// </summary>
+        /// <returns>
+        /// True if the related property was set or will be sent to a service; false otherwise.
+        /// </returns>
+        public bool IsAutoScalingGroupsSet
+        {
+            get
+            {
+                return Amazon.Util.Internal.InternalSDKUtils.GetIsSet(this._autoScalingGroups);
+            }
+            set
+            {
+                Amazon.Util.Internal.InternalSDKUtils.SetIsSet(value, ref this._autoScalingGroups);
+            }
+        }
+
         // Check to see if AutoScalingGroups property is set
         internal bool IsSetAutoScalingGroups()
         {
-            return this._autoScalingGroups != null && this._autoScalingGroups.Count > 0; 
+            return this.IsAutoScalingGroupsSet; 
         }
 
         /// <summary>
@@ -229,7 +264,7 @@ namespace Amazon.CodeDeploy.Model
         /// Gets and sets the property Ec2TagSet. 
         /// <para>
         /// Information about groups of tags applied to on-premises instances. The deployment
-        /// group includes only EC2 instances identified by all the tag groups.
+        /// group includes only Amazon EC2 instances identified by all the tag groups.
         /// </para>
         /// </summary>
         public EC2TagSet Ec2TagSet
@@ -344,19 +379,20 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property OutdatedInstancesStrategy. 
         /// <para>
-        /// Indicates what happens when new EC2 instances are launched mid-deployment and do not
-        /// receive the deployed application revision.
+        /// Indicates what happens when new Amazon EC2 instances are launched mid-deployment and
+        /// do not receive the deployed application revision.
         /// </para>
         ///  
         /// <para>
         /// If this option is set to <code>UPDATE</code> or is unspecified, CodeDeploy initiates
         /// one or more 'auto-update outdated instances' deployments to apply the deployed application
-        /// revision to the new EC2 instances.
+        /// revision to the new Amazon EC2 instances.
         /// </para>
         ///  
         /// <para>
         /// If this option is set to <code>IGNORE</code>, CodeDeploy does not initiate a deployment
-        /// to update the new EC2 instances. This may result in instances having different revisions.
+        /// to update the new Amazon EC2 instances. This may result in instances having different
+        /// revisions.
         /// </para>
         /// </summary>
         public OutdatedInstancesStrategy OutdatedInstancesStrategy
@@ -394,7 +430,7 @@ namespace Amazon.CodeDeploy.Model
         /// <para>
         /// Information about triggers to change when the deployment group is updated. For examples,
         /// see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html">Edit
-        /// a Trigger in a CodeDeploy Deployment Group</a> in the <i>AWS CodeDeploy User Guide</i>.
+        /// a Trigger in a CodeDeploy Deployment Group</a> in the <i>CodeDeploy User Guide</i>.
         /// </para>
         /// </summary>
         public List<TriggerConfig> TriggerConfigurations

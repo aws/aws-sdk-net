@@ -34,7 +34,7 @@ namespace Amazon.Proton.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// TemplateVersionSourceInput Marshaller
-    /// </summary>       
+    /// </summary>
     public class TemplateVersionSourceInputMarshaller : IRequestMarshaller<TemplateVersionSourceInput, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.Proton.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static TemplateVersionSourceInputMarshaller Instance = new TemplateVersionSourceInputMarshaller();
 
     }

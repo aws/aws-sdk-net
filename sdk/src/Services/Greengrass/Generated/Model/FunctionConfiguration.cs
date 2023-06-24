@@ -37,6 +37,7 @@ namespace Amazon.Greengrass.Model
         private FunctionConfigurationEnvironment _environment;
         private string _execArgs;
         private string _executable;
+        private string _functionRuntimeOverride;
         private int? _memorySize;
         private bool? _pinned;
         private int? _timeout;
@@ -100,6 +101,22 @@ namespace Amazon.Greengrass.Model
         internal bool IsSetExecutable()
         {
             return this._executable != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FunctionRuntimeOverride. The Lambda runtime supported by
+        /// Greengrass which is to be used instead of the one specified in the Lambda function.
+        /// </summary>
+        public string FunctionRuntimeOverride
+        {
+            get { return this._functionRuntimeOverride; }
+            set { this._functionRuntimeOverride = value; }
+        }
+
+        // Check to see if FunctionRuntimeOverride property is set
+        internal bool IsSetFunctionRuntimeOverride()
+        {
+            return this._functionRuntimeOverride != null;
         }
 
         /// <summary>

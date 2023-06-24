@@ -37,11 +37,15 @@ namespace Amazon.MQ.Model
         private bool? _autoMinorVersionUpgrade;
         private string _brokerId;
         private ConfigurationId _configuration;
+        private DataReplicationMetadataOutput _dataReplicationMetadata;
+        private DataReplicationMode _dataReplicationMode;
         private string _engineVersion;
         private string _hostInstanceType;
         private LdapServerMetadataOutput _ldapServerMetadata;
         private Logs _logs;
         private WeeklyStartTime _maintenanceWindowStartTime;
+        private DataReplicationMetadataOutput _pendingDataReplicationMetadata;
+        private DataReplicationMode _pendingDataReplicationMode;
         private List<string> _securityGroups = new List<string>();
 
         /// <summary>
@@ -115,6 +119,43 @@ namespace Amazon.MQ.Model
         internal bool IsSetConfiguration()
         {
             return this._configuration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DataReplicationMetadata. 
+        /// <para>
+        /// The replication details of the data replication-enabled broker. Only returned if dataReplicationMode
+        /// is set to CRDR.
+        /// </para>
+        /// </summary>
+        public DataReplicationMetadataOutput DataReplicationMetadata
+        {
+            get { return this._dataReplicationMetadata; }
+            set { this._dataReplicationMetadata = value; }
+        }
+
+        // Check to see if DataReplicationMetadata property is set
+        internal bool IsSetDataReplicationMetadata()
+        {
+            return this._dataReplicationMetadata != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DataReplicationMode. 
+        /// <para>
+        /// Describes whether this broker is a part of a data replication pair.
+        /// </para>
+        /// </summary>
+        public DataReplicationMode DataReplicationMode
+        {
+            get { return this._dataReplicationMode; }
+            set { this._dataReplicationMode = value; }
+        }
+
+        // Check to see if DataReplicationMode property is set
+        internal bool IsSetDataReplicationMode()
+        {
+            return this._dataReplicationMode != null;
         }
 
         /// <summary>
@@ -210,6 +251,43 @@ namespace Amazon.MQ.Model
         internal bool IsSetMaintenanceWindowStartTime()
         {
             return this._maintenanceWindowStartTime != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PendingDataReplicationMetadata. 
+        /// <para>
+        /// The pending replication details of the data replication-enabled broker. Only returned
+        /// if pendingDataReplicationMode is set to CRDR.
+        /// </para>
+        /// </summary>
+        public DataReplicationMetadataOutput PendingDataReplicationMetadata
+        {
+            get { return this._pendingDataReplicationMetadata; }
+            set { this._pendingDataReplicationMetadata = value; }
+        }
+
+        // Check to see if PendingDataReplicationMetadata property is set
+        internal bool IsSetPendingDataReplicationMetadata()
+        {
+            return this._pendingDataReplicationMetadata != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PendingDataReplicationMode. 
+        /// <para>
+        /// Describes whether this broker will be a part of a data replication pair after reboot.
+        /// </para>
+        /// </summary>
+        public DataReplicationMode PendingDataReplicationMode
+        {
+            get { return this._pendingDataReplicationMode; }
+            set { this._pendingDataReplicationMode = value; }
+        }
+
+        // Check to see if PendingDataReplicationMode property is set
+        internal bool IsSetPendingDataReplicationMode()
+        {
+            return this._pendingDataReplicationMode != null;
         }
 
         /// <summary>

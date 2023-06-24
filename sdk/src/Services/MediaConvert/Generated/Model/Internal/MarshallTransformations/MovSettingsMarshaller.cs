@@ -34,7 +34,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// MovSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class MovSettingsMarshaller : IRequestMarshaller<MovSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -79,7 +79,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static MovSettingsMarshaller Instance = new MovSettingsMarshaller();
 
     }

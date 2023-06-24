@@ -17,22 +17,22 @@
  * Do not modify this file. This file is generated from the discovery-2015-11-01.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
-
+using Amazon.ApplicationDiscoveryService.Internal;
 
 namespace Amazon.ApplicationDiscoveryService
 {
     /// <summary>
     /// Configuration for accessing Amazon ApplicationDiscoveryService service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonApplicationDiscoveryServiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.105");
+            InternalSDKUtils.BuildUserAgentString("3.7.102.1");
 
         private string _userAgent = UserAgentString;
 
@@ -40,8 +40,10 @@ namespace Amazon.ApplicationDiscoveryService
         /// Default constructor
         /// </summary>
         public AmazonApplicationDiscoveryServiceConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonApplicationDiscoveryServiceDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "discovery";
+            this.EndpointProvider = new AmazonApplicationDiscoveryServiceEndpointProvider();
         }
 
         /// <summary>
@@ -76,5 +78,6 @@ namespace Amazon.ApplicationDiscoveryService
                 return _userAgent;
             }
         }
+
     }
 }

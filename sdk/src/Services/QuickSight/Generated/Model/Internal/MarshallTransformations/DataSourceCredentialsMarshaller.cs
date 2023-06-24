@@ -34,7 +34,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DataSourceCredentials Marshaller
-    /// </summary>       
+    /// </summary>
     public class DataSourceCredentialsMarshaller : IRequestMarshaller<DataSourceCredentials, JsonMarshallerContext> 
     {
         /// <summary>
@@ -62,11 +62,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetSecretArn())
+            {
+                context.Writer.WritePropertyName("SecretArn");
+                context.Writer.Write(requestObject.SecretArn);
+            }
+
         }
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DataSourceCredentialsMarshaller Instance = new DataSourceCredentialsMarshaller();
 
     }

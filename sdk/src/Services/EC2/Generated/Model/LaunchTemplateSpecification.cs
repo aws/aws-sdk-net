@@ -43,6 +43,11 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The ID of the launch template.
         /// </para>
+        ///  
+        /// <para>
+        /// You must specify the <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>,
+        /// but not both.
+        /// </para>
         /// </summary>
         public string LaunchTemplateId
         {
@@ -61,6 +66,11 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The name of the launch template.
         /// </para>
+        ///  
+        /// <para>
+        /// You must specify the <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>,
+        /// but not both.
+        /// </para>
         /// </summary>
         public string LaunchTemplateName
         {
@@ -77,11 +87,21 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Version. 
         /// <para>
-        /// The version number of the launch template.
+        /// The launch template version number, <code>$Latest</code>, or <code>$Default</code>.
         /// </para>
         ///  
         /// <para>
-        /// Default: The default version for the launch template.
+        /// If the value is <code>$Latest</code>, Amazon EC2 uses the latest version of the launch
+        /// template.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the value is <code>$Default</code>, Amazon EC2 uses the default version of the
+        /// launch template.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: The default version of the launch template.
         /// </para>
         /// </summary>
         public string Version

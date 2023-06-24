@@ -33,7 +33,7 @@ namespace Amazon.ElasticMapReduce.Model
     /// 
     ///  <note> 
     /// <para>
-    /// The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and
+    /// The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and
     /// later, excluding 5.0.x versions.
     /// </para>
     ///  </note>
@@ -44,6 +44,7 @@ namespace Amazon.ElasticMapReduce.Model
         private List<InstanceTypeConfig> _instanceTypeConfigs = new List<InstanceTypeConfig>();
         private InstanceFleetProvisioningSpecifications _launchSpecifications;
         private string _name;
+        private InstanceFleetResizingSpecifications _resizeSpecifications;
         private int? _targetOnDemandCapacity;
         private int? _targetSpotCapacity;
 
@@ -69,7 +70,8 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property InstanceTypeConfigs. 
         /// <para>
-        /// The instance type configurations that define the EC2 instances in the instance fleet.
+        /// The instance type configurations that define the Amazon EC2 instances in the instance
+        /// fleet.
         /// </para>
         /// </summary>
         public List<InstanceTypeConfig> InstanceTypeConfigs
@@ -119,6 +121,24 @@ namespace Amazon.ElasticMapReduce.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResizeSpecifications. 
+        /// <para>
+        /// The resize specification for the instance fleet.
+        /// </para>
+        /// </summary>
+        public InstanceFleetResizingSpecifications ResizeSpecifications
+        {
+            get { return this._resizeSpecifications; }
+            set { this._resizeSpecifications = value; }
+        }
+
+        // Check to see if ResizeSpecifications property is set
+        internal bool IsSetResizeSpecifications()
+        {
+            return this._resizeSpecifications != null;
         }
 
         /// <summary>

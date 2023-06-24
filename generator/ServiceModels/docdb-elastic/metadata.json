@@ -1,0 +1,5 @@
+{
+  "active": true,
+  "synopsis": "Launched Amazon DocumentDB Elastic Clusters. You can now use the SDK to create, list, update and delete Amazon DocumentDB Elastic Cluster resources",
+  "generate-client-constructors": true
+}

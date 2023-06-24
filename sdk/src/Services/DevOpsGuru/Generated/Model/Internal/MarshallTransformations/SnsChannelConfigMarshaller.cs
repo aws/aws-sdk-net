@@ -34,7 +34,7 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SnsChannelConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class SnsChannelConfigMarshaller : IRequestMarshaller<SnsChannelConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SnsChannelConfigMarshaller Instance = new SnsChannelConfigMarshaller();
 
     }

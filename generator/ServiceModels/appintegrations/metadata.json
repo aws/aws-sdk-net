@@ -1,5 +1,6 @@
 {
   "active": true,
   "synopsis": "The Amazon AppIntegrations service (in preview release) enables you to configure and reuse connections to external applications.",
-  "generate-client-constructors": true
+  "generate-client-constructors": true,
+  "legacy-service-id": "AppIntegrations"
 }

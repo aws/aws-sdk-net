@@ -40,7 +40,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        ///  The idempotency token used to make this request idempotent.
+        /// The idempotency token used to make this request idempotent.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=36)]
@@ -59,7 +59,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ImagePipelineArn. 
         /// <para>
-        ///  The Amazon Resource Name (ARN) of the image pipeline that was created by this request.
+        /// The Amazon Resource Name (ARN) of the image pipeline that was created by this request.
         /// </para>
         /// </summary>
         public string ImagePipelineArn
@@ -77,7 +77,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property RequestId. 
         /// <para>
-        ///  The request ID that uniquely identifies this request.
+        /// The request ID that uniquely identifies this request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

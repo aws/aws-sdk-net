@@ -105,7 +105,7 @@ namespace Amazon.Amplify.Model
         ///  The domain name for the domain association. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=255)]
+        [AWSProperty(Required=true, Max=64)]
         public string DomainName
         {
             get { return this._domainName; }
@@ -142,7 +142,7 @@ namespace Amazon.Amplify.Model
         ///  The setting for the subdomain. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=255)]
+        [AWSProperty(Required=true, Max=500)]
         public List<SubDomainSetting> SubDomainSettings
         {
             get { return this._subDomainSettings; }

@@ -34,7 +34,7 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Notifications Marshaller
-    /// </summary>       
+    /// </summary>
     public class NotificationsMarshaller : IRequestMarshaller<Notifications, JsonMarshallerContext> 
     {
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static NotificationsMarshaller Instance = new NotificationsMarshaller();
 
     }

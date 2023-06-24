@@ -34,7 +34,7 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ModelSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class ModelSettingsMarshaller : IRequestMarshaller<ModelSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ModelSettingsMarshaller Instance = new ModelSettingsMarshaller();
 
     }

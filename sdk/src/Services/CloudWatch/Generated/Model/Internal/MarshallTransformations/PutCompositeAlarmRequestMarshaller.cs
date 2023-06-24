@@ -62,6 +62,18 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ActionsEnabled", StringUtils.FromBool(publicRequest.ActionsEnabled));
                 }
+                if(publicRequest.IsSetActionsSuppressor())
+                {
+                    request.Parameters.Add("ActionsSuppressor", StringUtils.FromString(publicRequest.ActionsSuppressor));
+                }
+                if(publicRequest.IsSetActionsSuppressorExtensionPeriod())
+                {
+                    request.Parameters.Add("ActionsSuppressorExtensionPeriod", StringUtils.FromInt(publicRequest.ActionsSuppressorExtensionPeriod));
+                }
+                if(publicRequest.IsSetActionsSuppressorWaitPeriod())
+                {
+                    request.Parameters.Add("ActionsSuppressorWaitPeriod", StringUtils.FromInt(publicRequest.ActionsSuppressorWaitPeriod));
+                }
                 if(publicRequest.IsSetAlarmActions())
                 {
                     int publicRequestlistValueIndex = 1;

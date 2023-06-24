@@ -37,6 +37,15 @@ namespace Amazon.Account.Model
     /// For complete details about how to use the alternate contact operations, see <a href="https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-update-contact.html">Access
     /// or updating the alternate contacts</a>.
     /// </para>
+    ///  <note> 
+    /// <para>
+    /// Before you can update the alternate contact information for an Amazon Web Services
+    /// account that is managed by Organizations, you must first enable integration between
+    /// Amazon Web Services Account Management and Organizations. For more information, see
+    /// <a href="https://docs.aws.amazon.com/accounts/latest/reference/using-orgs-trusted-access.html">Enabling
+    /// trusted access for Amazon Web Services Account Management</a>.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class PutAlternateContactRequest : AmazonAccountRequest
     {
@@ -117,7 +126,7 @@ namespace Amazon.Account.Model
         /// Specifies an email address for the alternate contact. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=64)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=254)]
         public string EmailAddress
         {
             get { return this._emailAddress; }
@@ -136,7 +145,7 @@ namespace Amazon.Account.Model
         /// Specifies a name for the alternate contact.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=64)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=64)]
         public string Name
         {
             get { return this._name; }
@@ -155,7 +164,7 @@ namespace Amazon.Account.Model
         /// Specifies a phone number for the alternate contact.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=25)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=25)]
         public string PhoneNumber
         {
             get { return this._phoneNumber; }
@@ -174,7 +183,7 @@ namespace Amazon.Account.Model
         /// Specifies a title for the alternate contact.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=50)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=50)]
         public string Title
         {
             get { return this._title; }

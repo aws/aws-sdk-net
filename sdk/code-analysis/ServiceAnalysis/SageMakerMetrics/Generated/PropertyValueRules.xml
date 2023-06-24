@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-16"?>
+<property-value-rules>
+  <property-value-rule>
+    <property>Amazon.SageMakerMetrics.Model.BatchPutMetricsRequest.TrialComponentName</property>
+    <min>1</min>
+    <max>120</max>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,119}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMakerMetrics.Model.RawMetricData.MetricName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMakerMetrics.Model.RawMetricData.Step</property>
+    <min>0</min>
+  </property-value-rule>
+</property-value-rules>

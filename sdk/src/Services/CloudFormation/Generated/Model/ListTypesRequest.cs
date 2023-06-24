@@ -58,7 +58,7 @@ namespace Amazon.CloudFormation.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>DEPRECATED</code>: The extension has been deregistered and can no longer be
-        /// used in CloudFormation operations. 
+        /// used in CloudFormation operations.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -124,11 +124,11 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If the previous paginated request didn't return all of the remaining results, the
-        /// response object's <code>NextToken</code> parameter value is set to a token. To retrieve
-        /// the next set of results, call this action again and assign that token to the request
-        /// object's <code>NextToken</code> parameter. If there are no remaining results, the
-        /// previous response object's <code>NextToken</code> parameter is set to <code>null</code>.
+        /// If the previous paginated request didn't return all the remaining results, the response
+        /// object's <code>NextToken</code> parameter value is set to a token. To retrieve the
+        /// next set of results, call this action again and assign that token to the request object's
+        /// <code>NextToken</code> parameter. If there are no remaining results, the previous
+        /// response object's <code>NextToken</code> parameter is set to <code>null</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -162,13 +162,13 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>IMMUTABLE</code>: The resource type does not include an update handler, so
-        /// the type cannot be updated and must instead be replaced during stack update operations.
+        ///  <code>IMMUTABLE</code>: The resource type doesn't include an update handler, so the
+        /// type can't be updated and must instead be replaced during stack update operations.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NON_PROVISIONABLE</code>: The resource type does not include create, read,
-        /// and delete handlers, and therefore cannot actually be provisioned.
+        ///  <code>NON_PROVISIONABLE</code>: The resource type doesn't include create, read, and
+        /// delete handlers, and therefore can't actually be provisioned.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -217,21 +217,21 @@ namespace Amazon.CloudFormation.Model
         ///  <ul> <li> 
         /// <para>
         ///  <code>PRIVATE</code>: Extensions that are visible and usable within this account
-        /// and region. This includes:
+        /// and Region. This includes:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Private extensions you have registered in this account and region.
+        /// Private extensions you have registered in this account and Region.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Public extensions that you have activated in this account and region.
+        /// Public extensions that you have activated in this account and Region.
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
         ///  <code>PUBLIC</code>: Extensions that are publicly visible and available to be activated
-        /// within any Amazon account. This includes extensions from Amazon, as well as third-party
-        /// publishers.
+        /// within any Amazon Web Services account. This includes extensions from Amazon Web Services,
+        /// in addition to third-party publishers.
         /// </para>
         ///  </li> </ul> 
         /// <para>

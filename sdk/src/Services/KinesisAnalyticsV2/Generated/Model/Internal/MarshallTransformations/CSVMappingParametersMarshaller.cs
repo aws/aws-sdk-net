@@ -34,7 +34,7 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CSVMappingParameters Marshaller
-    /// </summary>       
+    /// </summary>
     public class CSVMappingParametersMarshaller : IRequestMarshaller<CSVMappingParameters, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CSVMappingParametersMarshaller Instance = new CSVMappingParametersMarshaller();
 
     }

@@ -63,7 +63,7 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// The name of the channel flow.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=256)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=256)]
         public string Name
         {
             get { return this._name; }

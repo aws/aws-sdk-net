@@ -37,8 +37,10 @@ namespace Amazon.SecurityHub.Model
         private AwsS3BucketBucketLifecycleConfigurationDetails _bucketLifecycleConfiguration;
         private AwsS3BucketLoggingConfiguration _bucketLoggingConfiguration;
         private AwsS3BucketNotificationConfiguration _bucketNotificationConfiguration;
+        private AwsS3BucketBucketVersioningConfiguration _bucketVersioningConfiguration;
         private AwsS3BucketWebsiteConfiguration _bucketWebsiteConfiguration;
         private string _createdAt;
+        private AwsS3BucketObjectLockConfiguration _objectLockConfiguration;
         private string _ownerAccountId;
         private string _ownerId;
         private string _ownerName;
@@ -118,6 +120,24 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
+        /// Gets and sets the property BucketVersioningConfiguration. 
+        /// <para>
+        /// The versioning state of an S3 bucket.
+        /// </para>
+        /// </summary>
+        public AwsS3BucketBucketVersioningConfiguration BucketVersioningConfiguration
+        {
+            get { return this._bucketVersioningConfiguration; }
+            set { this._bucketVersioningConfiguration = value; }
+        }
+
+        // Check to see if BucketVersioningConfiguration property is set
+        internal bool IsSetBucketVersioningConfiguration()
+        {
+            return this._bucketVersioningConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property BucketWebsiteConfiguration. 
         /// <para>
         /// The website configuration parameters for the S3 bucket.
@@ -143,8 +163,8 @@ namespace Amazon.SecurityHub.Model
         ///  
         /// <para>
         /// Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
-        /// 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces.
-        /// For example, <code>2020-03-22T13:22:13.933Z</code>.
+        /// 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces,
+        /// and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.
         /// </para>
         /// </summary>
         public string CreatedAt
@@ -157,6 +177,25 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetCreatedAt()
         {
             return this._createdAt != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ObjectLockConfiguration. 
+        /// <para>
+        ///  Specifies which rule Amazon S3 applies by default to every new object placed in the
+        /// specified bucket. 
+        /// </para>
+        /// </summary>
+        public AwsS3BucketObjectLockConfiguration ObjectLockConfiguration
+        {
+            get { return this._objectLockConfiguration; }
+            set { this._objectLockConfiguration = value; }
+        }
+
+        // Check to see if ObjectLockConfiguration property is set
+        internal bool IsSetObjectLockConfiguration()
+        {
+            return this._objectLockConfiguration != null;
         }
 
         /// <summary>

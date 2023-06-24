@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// Status of the VPC options for the specified domain.
+    /// Status of the VPC options for a specified domain.
     /// </summary>
     public partial class VPCDerivedInfoStatus
     {

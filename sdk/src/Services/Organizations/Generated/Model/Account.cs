@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Organizations.Model
 {
     /// <summary>
-    /// Contains information about an AWS account that is a member of an organization.
+    /// Contains information about an Amazon Web Services account that is a member of an organization.
     /// </summary>
     public partial class Account
     {
@@ -49,7 +49,8 @@ namespace Amazon.Organizations.Model
         ///  
         /// <para>
         /// For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN
-        /// Formats Supported by Organizations</a> in the <i>AWS Service Authorization Reference</i>.
+        /// Formats Supported by Organizations</a> in the <i>Amazon Web Services Service Authorization
+        /// Reference</i>.
         /// </para>
         /// </summary>
         public string Arn
@@ -67,7 +68,7 @@ namespace Amazon.Organizations.Model
         /// <summary>
         /// Gets and sets the property Email. 
         /// <para>
-        /// The email address associated with the AWS account.
+        /// The email address associated with the Amazon Web Services account.
         /// </para>
         ///  
         /// <para>
@@ -75,7 +76,7 @@ namespace Amazon.Organizations.Model
         /// is a string of characters that represents a standard internet email address.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=6, Max=64)]
+        [AWSProperty(Sensitive=true, Min=6, Max=64)]
         public string Email
         {
             get { return this._email; }
@@ -159,7 +160,7 @@ namespace Amazon.Organizations.Model
         /// this parameter is a string of any of the characters in the ASCII character range.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=50)]
+        [AWSProperty(Sensitive=true, Min=1, Max=128)]
         public string Name
         {
             get { return this._name; }

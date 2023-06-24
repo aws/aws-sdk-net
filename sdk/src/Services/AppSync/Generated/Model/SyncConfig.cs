@@ -33,8 +33,8 @@ namespace Amazon.AppSync.Model
     /// 
     ///  
     /// <para>
-    /// Contains information on which Conflict Detection as well as Resolution strategy should
-    /// be performed when the resolver is invoked.
+    /// Specifies which Conflict Detection strategy and Resolution strategy to use when the
+    /// resolver is invoked.
     /// </para>
     /// </summary>
     public partial class SyncConfig
@@ -54,7 +54,7 @@ namespace Amazon.AppSync.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>NONE</b>: Do not detect conflicts when executing this resolver.
+        ///  <b>NONE</b>: Do not detect conflicts when invoking this resolver.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -78,7 +78,7 @@ namespace Amazon.AppSync.Model
         ///  <ul> <li> 
         /// <para>
         ///  <b>OPTIMISTIC_CONCURRENCY</b>: Resolve conflicts by rejecting mutations when versions
-        /// do not match the latest version at the server.
+        /// don't match the latest version at the server.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -86,7 +86,7 @@ namespace Amazon.AppSync.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>LAMBDA</b>: Resolve conflicts with a Lambda function supplied in the LambdaConflictHandlerConfig.
+        ///  <b>LAMBDA</b>: Resolve conflicts with an Lambda function supplied in the <code>LambdaConflictHandlerConfig</code>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -105,8 +105,8 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property LambdaConflictHandlerConfig. 
         /// <para>
-        /// The <code>LambdaConflictHandlerConfig</code> when configuring LAMBDA as the Conflict
-        /// Handler.
+        /// The <code>LambdaConflictHandlerConfig</code> when configuring <code>LAMBDA</code>
+        /// as the Conflict Handler.
         /// </para>
         /// </summary>
         public LambdaConflictHandlerConfig LambdaConflictHandlerConfig

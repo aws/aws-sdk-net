@@ -30,10 +30,7 @@ namespace Amazon.CodeArtifact.Model
 {
     /// <summary>
     /// Container for the parameters to the GetPackageVersionReadme operation.
-    /// Gets the readme file or descriptive text for a package version. For packages that
-    /// do not contain a readme file, CodeArtifact extracts a description from a metadata
-    /// file. For example, from the <code>&lt;description&gt;</code> element in the <code>pom.xml</code>
-    /// file of a Maven package. 
+    /// Gets the readme file or descriptive text for a package version. 
     /// 
     ///  
     /// <para>
@@ -74,8 +71,8 @@ namespace Amazon.CodeArtifact.Model
         /// <summary>
         /// Gets and sets the property DomainOwner. 
         /// <para>
-        ///  The 12-digit account number of the AWS account that owns the domain. It does not
-        /// include dashes or spaces. 
+        ///  The 12-digit account number of the Amazon Web Services account that owns the domain.
+        /// It does not include dashes or spaces. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=12)]
@@ -95,21 +92,8 @@ namespace Amazon.CodeArtifact.Model
         /// Gets and sets the property Format. 
         /// <para>
         ///  A format that specifies the type of the package version with the requested readme
-        /// file. The valid values are: 
+        /// file. 
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>npm</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>pypi</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>maven</code> 
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public PackageFormat Format
@@ -127,21 +111,17 @@ namespace Amazon.CodeArtifact.Model
         /// <summary>
         /// Gets and sets the property Namespace. 
         /// <para>
-        ///  The namespace of the package. The package component that specifies its namespace
-        /// depends on its type. For example: 
+        /// The namespace of the package version with the requested readme file. The package version
+        /// component that specifies its namespace depends on its type. For example:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  The namespace of a Maven package is its <code>groupId</code>. 
+        ///  The namespace of an npm package version is its <code>scope</code>. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  The namespace of an npm package is its <code>scope</code>. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  A Python package does not contain a corresponding component, so Python packages do
-        /// not have a namespace. 
+        ///  Python and NuGet package versions do not contain a corresponding component, package
+        /// versions of those formats do not have a namespace. 
         /// </para>
         ///  </li> </ul>
         /// </summary>

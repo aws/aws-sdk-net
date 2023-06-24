@@ -32,8 +32,8 @@ namespace Amazon.ElasticFileSystem.Model
     /// Container for the parameters to the DeleteTags operation.
     /// <note> 
     /// <para>
-    /// DEPRECATED - DeleteTags is deprecated and not maintained. Please use the API action
-    /// to remove tags from EFS resources.
+    /// DEPRECATED - <code>DeleteTags</code> is deprecated and not maintained. To remove tags
+    /// from EFS resources, use the API action.
     /// </para>
     ///  </note> 
     /// <para>

@@ -35,8 +35,11 @@ namespace Amazon.StepFunctions.Model
     {
         private DateTime? _creationDate;
         private string _definition;
+        private string _description;
+        private string _label;
         private LoggingConfiguration _loggingConfiguration;
         private string _name;
+        private string _revisionId;
         private string _roleArn;
         private string _stateMachineArn;
         private StateMachineStatus _status;
@@ -47,6 +50,11 @@ namespace Amazon.StepFunctions.Model
         /// Gets and sets the property CreationDate. 
         /// <para>
         /// The date the state machine is created.
+        /// </para>
+        ///  
+        /// <para>
+        /// For a state machine version, <code>creationDate</code> is the date the version was
+        /// created.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -69,7 +77,7 @@ namespace Amazon.StepFunctions.Model
         /// States Language</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1048576)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=1048576)]
         public string Definition
         {
             get { return this._definition; }
@@ -80,6 +88,45 @@ namespace Amazon.StepFunctions.Model
         internal bool IsSetDefinition()
         {
             return this._definition != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// The description of the state machine version.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Max=256)]
+        public string Description
+        {
+            get { return this._description; }
+            set { this._description = value; }
+        }
+
+        // Check to see if Description property is set
+        internal bool IsSetDescription()
+        {
+            return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Label. 
+        /// <para>
+        /// A user-defined or an auto-generated string that identifies a <code>Map</code> state.
+        /// This parameter is present only if the <code>stateMachineArn</code> specified in input
+        /// is a qualified state machine ARN.
+        /// </para>
+        /// </summary>
+        public string Label
+        {
+            get { return this._label; }
+            set { this._label = value; }
+        }
+
+        // Check to see if Label property is set
+        internal bool IsSetLabel()
+        {
+            return this._label != null;
         }
 
         /// <summary>
@@ -146,10 +193,35 @@ namespace Amazon.StepFunctions.Model
         }
 
         /// <summary>
+        /// Gets and sets the property RevisionId. 
+        /// <para>
+        /// The revision identifier for the state machine.
+        /// </para>
+        ///  
+        /// <para>
+        /// Use the <code>revisionId</code> parameter to compare between versions of a state machine
+        /// configuration used for executions without performing a diff of the properties, such
+        /// as <code>definition</code> and <code>roleArn</code>.
+        /// </para>
+        /// </summary>
+        public string RevisionId
+        {
+            get { return this._revisionId; }
+            set { this._revisionId = value; }
+        }
+
+        // Check to see if RevisionId property is set
+        internal bool IsSetRevisionId()
+        {
+            return this._revisionId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the IAM role used when creating this state machine.
-        /// (The IAM role maintains security by granting Step Functions access to AWS resources.)
+        /// (The IAM role maintains security by granting Step Functions access to Amazon Web Services
+        /// resources.)
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
@@ -169,6 +241,12 @@ namespace Amazon.StepFunctions.Model
         /// Gets and sets the property StateMachineArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) that identifies the state machine.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specified a state machine version ARN in your request, the API returns the
+        /// version ARN. The version ARN is a combination of state machine ARN and the version
+        /// number separated by a colon (:). For example, <code>stateMachineARN:1</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
@@ -205,7 +283,7 @@ namespace Amazon.StepFunctions.Model
         /// <summary>
         /// Gets and sets the property TracingConfiguration. 
         /// <para>
-        /// Selects whether AWS X-Ray tracing is enabled.
+        /// Selects whether X-Ray tracing is enabled.
         /// </para>
         /// </summary>
         public TracingConfiguration TracingConfiguration

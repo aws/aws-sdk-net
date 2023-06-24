@@ -124,6 +124,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.ProductionVariants = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ShadowProductionVariants", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ProductionVariantSummary, ProductionVariantSummaryUnmarshaller>(ProductionVariantSummaryUnmarshaller.Instance);
+                    unmarshalledObject.ShadowProductionVariants = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Tags", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance);

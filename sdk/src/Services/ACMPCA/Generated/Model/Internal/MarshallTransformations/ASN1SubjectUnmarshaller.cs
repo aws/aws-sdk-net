@@ -76,6 +76,12 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
                     unmarshalledObject.Country = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("CustomAttributes", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<CustomAttribute, CustomAttributeUnmarshaller>(CustomAttributeUnmarshaller.Instance);
+                    unmarshalledObject.CustomAttributes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DistinguishedNameQualifier", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

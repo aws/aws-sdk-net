@@ -29,10 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeDeploy.Model
 {
     /// <summary>
-    /// A revision for an AWS Lambda or Amazon ECS deployment that is a YAML-formatted or
-    /// JSON-formatted string. For AWS Lambda and Amazon ECS deployments, the revision is
-    /// the same as the AppSpec file. This method replaces the deprecated <code>RawString</code>
-    /// data type.
+    /// A revision for an Lambda or Amazon ECS deployment that is a YAML-formatted or JSON-formatted
+    /// string. For Lambda and Amazon ECS deployments, the revision is the same as the AppSpec
+    /// file. This method replaces the deprecated <code>RawString</code> data type.
     /// </summary>
     public partial class AppSpecContent
     {
@@ -46,7 +45,7 @@ namespace Amazon.CodeDeploy.Model
         /// </para>
         ///  
         /// <para>
-        ///  For an AWS Lambda deployment, the content includes a Lambda function name, the alias
+        ///  For an Lambda deployment, the content includes a Lambda function name, the alias
         /// for its original version, and the alias for its replacement version. The deployment
         /// shifts traffic from the original version of the Lambda function to the replacement
         /// version. 

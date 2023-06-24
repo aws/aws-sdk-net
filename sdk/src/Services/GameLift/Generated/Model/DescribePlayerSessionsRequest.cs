@@ -61,16 +61,11 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  
     /// <para>
-    ///  <i>Available in Amazon GameLift Local.</i> 
-    /// </para>
-    ///  
-    /// <para>
     ///  <b>Related actions</b> 
     /// </para>
     ///  
     /// <para>
-    ///  <a>CreatePlayerSession</a> | <a>CreatePlayerSessions</a> | <a>DescribePlayerSessions</a>
-    /// | <a>StartGameSessionPlacement</a> | <a>DescribeGameSessionPlacement</a> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
+    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
     /// APIs by task</a> 
     /// </para>
     /// </summary>
@@ -185,7 +180,9 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property PlayerSessionStatusFilter. 
         /// <para>
-        /// Player session status to filter results on.
+        /// Player session status to filter results on. Note that when a PlayerSessionId or PlayerId
+        /// is provided in a DescribePlayerSessions request, then the PlayerSessionStatusFilter
+        /// has no effect on the response.
         /// </para>
         ///  
         /// <para>

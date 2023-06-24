@@ -30,7 +30,7 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// Container for the parameters to the ListDevices operation.
-    /// Lists the devices.
+    /// Lists the sign-in devices that Amazon Cognito has registered to the current user.
     /// </summary>
     public partial class ListDevicesRequest : AmazonCognitoIdentityProviderRequest
     {
@@ -41,10 +41,11 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AccessToken. 
         /// <para>
-        /// The access tokens for the request to list devices.
+        /// A valid access token that Amazon Cognito issued to the user whose list of devices
+        /// you want to view.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public string AccessToken
         {
             get { return this._accessToken; }

@@ -30,10 +30,16 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the EnableMetricsCollection operation.
-    /// Enables group metrics for the specified Auto Scaling group. For more information,
-    /// see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-monitoring.html">Monitoring
+    /// Enables group metrics collection for the specified Auto Scaling group.
+    /// 
+    ///  
+    /// <para>
+    /// You can use these metrics to track changes in an Auto Scaling group and to set alarms
+    /// on threshold values. You can view group metrics using the Amazon EC2 Auto Scaling
+    /// console or the CloudWatch console. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-cloudwatch-monitoring.html">Monitor
     /// CloudWatch metrics for your Auto Scaling groups and instances</a> in the <i>Amazon
     /// EC2 Auto Scaling User Guide</i>.
+    /// </para>
     /// </summary>
     public partial class EnableMetricsCollectionRequest : AmazonAutoScalingRequest
     {
@@ -63,8 +69,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property Granularity. 
         /// <para>
-        /// The granularity to associate with the metrics to collect. The only valid value is
-        /// <code>1Minute</code>.
+        /// The frequency at which Amazon EC2 Auto Scaling sends aggregated data to CloudWatch.
+        /// The only valid value is <code>1Minute</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
@@ -83,8 +89,11 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property Metrics. 
         /// <para>
-        /// Specifies which group-level metrics to start collecting. You can specify one or more
-        /// of the following metrics:
+        /// Identifies the metrics to enable.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can specify one or more of the following metrics:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -118,11 +127,7 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         ///  <code>GroupTotalInstances</code> 
         /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// The instance weighting feature supports the following additional metrics: 
-        /// </para>
-        ///  <ul> <li> 
+        ///  </li> <li> 
         /// <para>
         ///  <code>GroupInServiceCapacity</code> 
         /// </para>
@@ -142,11 +147,7 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         ///  <code>GroupTotalCapacity</code> 
         /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// The warm pools feature supports the following additional metrics: 
-        /// </para>
-        ///  <ul> <li> 
+        ///  </li> <li> 
         /// <para>
         ///  <code>WarmPoolDesiredCapacity</code> 
         /// </para>
@@ -176,7 +177,13 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If you omit this parameter, all metrics are enabled. 
+        /// If you specify <code>Granularity</code> and don't specify any metrics, all metrics
+        /// are enabled.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-cloudwatch-monitoring.html#as-group-metrics">Auto
+        /// Scaling group metrics</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
         public List<string> Metrics

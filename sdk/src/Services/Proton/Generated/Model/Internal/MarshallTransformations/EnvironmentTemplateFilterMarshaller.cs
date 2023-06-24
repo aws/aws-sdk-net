@@ -34,7 +34,7 @@ namespace Amazon.Proton.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// EnvironmentTemplateFilter Marshaller
-    /// </summary>       
+    /// </summary>
     public class EnvironmentTemplateFilterMarshaller : IRequestMarshaller<EnvironmentTemplateFilter, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Proton.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static EnvironmentTemplateFilterMarshaller Instance = new EnvironmentTemplateFilterMarshaller();
 
     }

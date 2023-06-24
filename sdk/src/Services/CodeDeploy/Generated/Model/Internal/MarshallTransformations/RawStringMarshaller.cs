@@ -34,7 +34,7 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RawString Marshaller
-    /// </summary>       
+    /// </summary>
     public class RawStringMarshaller : IRequestMarshaller<RawString, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RawStringMarshaller Instance = new RawStringMarshaller();
 
     }

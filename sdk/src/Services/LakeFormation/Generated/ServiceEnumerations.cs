@@ -307,13 +307,9 @@ namespace Amazon.LakeFormation
         /// </summary>
         public static readonly Permission ALTER = new Permission("ALTER");
         /// <summary>
-        /// Constant ALTER_TAG for Permission
+        /// Constant ASSOCIATE for Permission
         /// </summary>
-        public static readonly Permission ALTER_TAG = new Permission("ALTER_TAG");
-        /// <summary>
-        /// Constant ASSOCIATE_TAG for Permission
-        /// </summary>
-        public static readonly Permission ASSOCIATE_TAG = new Permission("ASSOCIATE_TAG");
+        public static readonly Permission ASSOCIATE = new Permission("ASSOCIATE");
         /// <summary>
         /// Constant CREATE_DATABASE for Permission
         /// </summary>
@@ -335,17 +331,9 @@ namespace Amazon.LakeFormation
         /// </summary>
         public static readonly Permission DELETE = new Permission("DELETE");
         /// <summary>
-        /// Constant DELETE_TAG for Permission
-        /// </summary>
-        public static readonly Permission DELETE_TAG = new Permission("DELETE_TAG");
-        /// <summary>
         /// Constant DESCRIBE for Permission
         /// </summary>
         public static readonly Permission DESCRIBE = new Permission("DESCRIBE");
-        /// <summary>
-        /// Constant DESCRIBE_TAG for Permission
-        /// </summary>
-        public static readonly Permission DESCRIBE_TAG = new Permission("DESCRIBE_TAG");
         /// <summary>
         /// Constant DROP for Permission
         /// </summary>
@@ -388,6 +376,56 @@ namespace Amazon.LakeFormation
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Permission(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PermissionType.
+    /// </summary>
+    public class PermissionType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CELL_FILTER_PERMISSION for PermissionType
+        /// </summary>
+        public static readonly PermissionType CELL_FILTER_PERMISSION = new PermissionType("CELL_FILTER_PERMISSION");
+        /// <summary>
+        /// Constant COLUMN_PERMISSION for PermissionType
+        /// </summary>
+        public static readonly PermissionType COLUMN_PERMISSION = new PermissionType("COLUMN_PERMISSION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PermissionType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PermissionType FindValue(string value)
+        {
+            return FindValue<PermissionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PermissionType(string value)
         {
             return FindValue(value);
         }

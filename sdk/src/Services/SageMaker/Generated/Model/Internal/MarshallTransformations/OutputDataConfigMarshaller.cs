@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// OutputDataConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class OutputDataConfigMarshaller : IRequestMarshaller<OutputDataConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -45,6 +45,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(OutputDataConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetCompressionType())
+            {
+                context.Writer.WritePropertyName("CompressionType");
+                context.Writer.Write(requestObject.CompressionType);
+            }
+
             if(requestObject.IsSetKmsKeyId())
             {
                 context.Writer.WritePropertyName("KmsKeyId");
@@ -61,7 +67,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static OutputDataConfigMarshaller Instance = new OutputDataConfigMarshaller();
 
     }

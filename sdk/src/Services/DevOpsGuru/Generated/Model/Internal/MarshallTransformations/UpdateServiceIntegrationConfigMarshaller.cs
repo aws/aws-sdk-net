@@ -34,7 +34,7 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// UpdateServiceIntegrationConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class UpdateServiceIntegrationConfigMarshaller : IRequestMarshaller<UpdateServiceIntegrationConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -45,6 +45,28 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(UpdateServiceIntegrationConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetKMSServerSideEncryption())
+            {
+                context.Writer.WritePropertyName("KMSServerSideEncryption");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = KMSServerSideEncryptionIntegrationConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.KMSServerSideEncryption, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetLogsAnomalyDetection())
+            {
+                context.Writer.WritePropertyName("LogsAnomalyDetection");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = LogsAnomalyDetectionIntegrationConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.LogsAnomalyDetection, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetOpsCenter())
             {
                 context.Writer.WritePropertyName("OpsCenter");
@@ -60,7 +82,7 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static UpdateServiceIntegrationConfigMarshaller Instance = new UpdateServiceIntegrationConfigMarshaller();
 
     }

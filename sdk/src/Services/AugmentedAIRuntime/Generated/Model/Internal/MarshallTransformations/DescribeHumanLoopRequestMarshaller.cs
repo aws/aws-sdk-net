@@ -55,7 +55,7 @@ namespace Amazon.AugmentedAIRuntime.Model.Internal.MarshallTransformations
         public IRequest Marshall(DescribeHumanLoopRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.AugmentedAIRuntime");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-11-07";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-11-07";
             request.HttpMethod = "GET";
 
             if (!publicRequest.IsSetHumanLoopName())

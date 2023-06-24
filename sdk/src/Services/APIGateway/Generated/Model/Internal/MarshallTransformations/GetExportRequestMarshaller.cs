@@ -55,7 +55,7 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
         public IRequest Marshall(GetExportRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.APIGateway");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-07-09";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-07-09";
             request.HttpMethod = "GET";
 
             if (!publicRequest.IsSetExportType())
@@ -77,8 +77,10 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
             }
             request.ResourcePath = "/restapis/{restapi_id}/stages/{stage_name}/exports/{export_type}";
         
-            if(publicRequest.IsSetAccepts())
+            if (publicRequest.IsSetAccepts()) 
+            {
                 request.Headers["Accept"] = publicRequest.Accepts;
+            }
             request.UseQueryString = true;
 
             return request;

@@ -32,9 +32,18 @@ namespace Amazon.ECS.Model
     /// An object representing a container health check. Health check parameters that are
     /// specified in a container definition override any Docker health checks that exist in
     /// the container image (such as those specified in a parent image or from the image's
-    /// Dockerfile).
+    /// Dockerfile). This configuration maps to the <code>HEALTHCHECK</code> parameter of
+    /// <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
     /// 
-    ///  
+    ///  <note> 
+    /// <para>
+    /// The Amazon ECS container agent only monitors and reports on the health checks specified
+    /// in the task definition. Amazon ECS does not monitor Docker health checks that are
+    /// embedded in a container image and not specified in the container definition. Health
+    /// check parameters that are specified in a container definition override any Docker
+    /// health checks that exist in the container image.
+    /// </para>
+    ///  </note> 
     /// <para>
     /// You can view the health status of both individual containers and a task with the DescribeTasks
     /// API operation or when viewing the task details in the console.
@@ -59,7 +68,7 @@ namespace Amazon.ECS.Model
     ///  </li> </ul> 
     /// <para>
     /// The following describes the possible <code>healthStatus</code> values for a task.
-    /// The container health check status of nonessential containers do not have an effect
+    /// The container health check status of non-essential containers don't have an effect
     /// on the health status of a task.
     /// </para>
     ///  <ul> <li> 
@@ -75,7 +84,8 @@ namespace Amazon.ECS.Model
     ///  </li> <li> 
     /// <para>
     ///  <code>UNKNOWN</code>-The essential containers within the task are still having their
-    /// health checks evaluated or there are no container health checks defined.
+    /// health checks evaluated, there are only nonessential containers with health checks
+    /// defined, or there are no container health checks defined.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -92,13 +102,13 @@ namespace Amazon.ECS.Model
     /// <para>
     /// Container health checks require version 1.17.0 or greater of the Amazon ECS container
     /// agent. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
-    /// the Amazon ECS Container Agent</a>.
+    /// the Amazon ECS container agent</a>.
     /// </para>
     ///  </li> <li> 
     /// <para>
     /// Container health checks are supported for Fargate tasks if you're using platform version
-    /// 1.1.0 or greater. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
-    /// Platform Versions</a>.
+    /// <code>1.1.0</code> or greater. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
+    /// platform versions</a>.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -119,14 +129,14 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property Command. 
         /// <para>
         /// A string array representing the command that the container runs to determine if it
-        /// is healthy. The string array must start with <code>CMD</code> to execute the command
-        /// arguments directly, or <code>CMD-SHELL</code> to run the command with the container's
-        /// default shell. 
+        /// is healthy. The string array must start with <code>CMD</code> to run the command arguments
+        /// directly, or <code>CMD-SHELL</code> to run the command with the container's default
+        /// shell. 
         /// </para>
         ///  
         /// <para>
         ///  When you use the Amazon Web Services Management Console JSON panel, the Command Line
-        /// Interface, or the APIs, enclose the list of commands in brackets.
+        /// Interface, or the APIs, enclose the list of commands in double quotes and brackets.
         /// </para>
         ///  
         /// <para>
@@ -134,12 +144,12 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// You don't need to include the brackets when you use the Amazon Web Services Management
-        /// Console.
+        /// You don't include the double quotes and brackets when you use the Amazon Web Services
+        /// Management Console.
         /// </para>
         ///  
         /// <para>
-        ///  <code> "CMD-SHELL", "curl -f http://localhost/ || exit 1" </code> 
+        ///  <code> CMD-SHELL, curl -f http://localhost/ || exit 1</code> 
         /// </para>
         ///  
         /// <para>
@@ -205,7 +215,7 @@ namespace Amazon.ECS.Model
         /// <para>
         /// The optional grace period to provide containers time to bootstrap before failed health
         /// checks count towards the maximum number of retries. You can specify between 0 and
-        /// 300 seconds. By default, the <code>startPeriod</code> is disabled.
+        /// 300 seconds. By default, the <code>startPeriod</code> is off.
         /// </para>
         ///  <note> 
         /// <para>

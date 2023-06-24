@@ -34,9 +34,14 @@ namespace Amazon.Inspector2.Model
     public partial class Finding
     {
         private string _awsAccountId;
+        private CodeVulnerabilityDetails _codeVulnerabilityDetails;
         private string _description;
+        private EpssDetails _epss;
+        private ExploitabilityDetails _exploitabilityDetails;
+        private ExploitAvailable _exploitAvailable;
         private string _findingArn;
         private DateTime? _firstObservedAt;
+        private FixAvailable _fixAvailable;
         private double? _inspectorScore;
         private InspectorScoreDetails _inspectorScoreDetails;
         private DateTime? _lastObservedAt;
@@ -70,6 +75,25 @@ namespace Amazon.Inspector2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CodeVulnerabilityDetails. 
+        /// <para>
+        /// Details about the code vulnerability identified in a Lambda function used to filter
+        /// findings.
+        /// </para>
+        /// </summary>
+        public CodeVulnerabilityDetails CodeVulnerabilityDetails
+        {
+            get { return this._codeVulnerabilityDetails; }
+            set { this._codeVulnerabilityDetails = value; }
+        }
+
+        // Check to see if CodeVulnerabilityDetails property is set
+        internal bool IsSetCodeVulnerabilityDetails()
+        {
+            return this._codeVulnerabilityDetails != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
         /// The description of the finding.
@@ -89,12 +113,66 @@ namespace Amazon.Inspector2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Epss. 
+        /// <para>
+        /// The finding's EPSS score.
+        /// </para>
+        /// </summary>
+        public EpssDetails Epss
+        {
+            get { return this._epss; }
+            set { this._epss = value; }
+        }
+
+        // Check to see if Epss property is set
+        internal bool IsSetEpss()
+        {
+            return this._epss != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExploitabilityDetails. 
+        /// <para>
+        /// The details of an exploit available for a finding discovered in your environment.
+        /// </para>
+        /// </summary>
+        public ExploitabilityDetails ExploitabilityDetails
+        {
+            get { return this._exploitabilityDetails; }
+            set { this._exploitabilityDetails = value; }
+        }
+
+        // Check to see if ExploitabilityDetails property is set
+        internal bool IsSetExploitabilityDetails()
+        {
+            return this._exploitabilityDetails != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExploitAvailable. 
+        /// <para>
+        /// If a finding discovered in your environment has an exploit available.
+        /// </para>
+        /// </summary>
+        public ExploitAvailable ExploitAvailable
+        {
+            get { return this._exploitAvailable; }
+            set { this._exploitAvailable = value; }
+        }
+
+        // Check to see if ExploitAvailable property is set
+        internal bool IsSetExploitAvailable()
+        {
+            return this._exploitAvailable != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property FindingArn. 
         /// <para>
         /// The Amazon Resource Number (ARN) of the finding.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1024)]
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string FindingArn
         {
             get { return this._findingArn; }
@@ -124,6 +202,27 @@ namespace Amazon.Inspector2.Model
         internal bool IsSetFirstObservedAt()
         {
             return this._firstObservedAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property FixAvailable. 
+        /// <para>
+        /// Details on whether a fix is available through a version update. This value can be
+        /// <code>YES</code>, <code>NO</code>, or <code>PARTIAL</code>. A <code>PARTIAL</code>
+        /// fix means that some, but not all, of the packages identified in the finding have fixes
+        /// available through updated versions.
+        /// </para>
+        /// </summary>
+        public FixAvailable FixAvailable
+        {
+            get { return this._fixAvailable; }
+            set { this._fixAvailable = value; }
+        }
+
+        // Check to see if FixAvailable property is set
+        internal bool IsSetFixAvailable()
+        {
+            return this._fixAvailable != null;
         }
 
         /// <summary>

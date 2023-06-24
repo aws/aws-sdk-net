@@ -34,7 +34,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DolbyVision Marshaller
-    /// </summary>       
+    /// </summary>
     public class DolbyVisionMarshaller : IRequestMarshaller<DolbyVision, JsonMarshallerContext> 
     {
         /// <summary>
@@ -62,6 +62,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.L6Mode);
             }
 
+            if(requestObject.IsSetMapping())
+            {
+                context.Writer.WritePropertyName("mapping");
+                context.Writer.Write(requestObject.Mapping);
+            }
+
             if(requestObject.IsSetProfile())
             {
                 context.Writer.WritePropertyName("profile");
@@ -72,7 +78,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DolbyVisionMarshaller Instance = new DolbyVisionMarshaller();
 
     }

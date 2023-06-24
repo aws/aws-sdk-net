@@ -58,7 +58,7 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
             string target = "AWSEvents.PutEvents";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-10-07";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-10-07";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -67,6 +67,12 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetEndpointId())
+                {
+                    context.Writer.WritePropertyName("EndpointId");
+                    context.Writer.Write(publicRequest.EndpointId);
+                }
+
                 if(publicRequest.IsSetEntries())
                 {
                     context.Writer.WritePropertyName("Entries");
@@ -83,7 +89,6 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

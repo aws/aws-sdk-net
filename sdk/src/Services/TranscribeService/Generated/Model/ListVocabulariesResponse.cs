@@ -40,11 +40,11 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The <code>ListVocabularies</code> operation returns a page of vocabularies at a time.
-        /// The maximum size of the page is set in the <code>MaxResults</code> parameter. If there
-        /// are more jobs in the list than will fit on the page, Amazon Transcribe returns the
-        /// <code>NextPage</code> token. To return in the next page of jobs, include the token
-        /// in the next request to the <code>ListVocabularies</code> operation.
+        /// If <code>NextToken</code> is present in your response, it indicates that not all results
+        /// are displayed. To view the next set of results, copy the string associated with the
+        /// <code>NextToken</code> parameter in your results output, then run your request again
+        /// including <code>NextToken</code> with the value of the copied string. Repeat as needed
+        /// to view all your results.
         /// </para>
         /// </summary>
         [AWSProperty(Max=8192)]
@@ -63,7 +63,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The requested vocabulary state.
+        /// Lists all custom vocabularies that have the status specified in your request. Vocabularies
+        /// are ordered by creation date, with the newest vocabulary first.
         /// </para>
         /// </summary>
         public VocabularyState Status
@@ -81,8 +82,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property Vocabularies. 
         /// <para>
-        /// A list of objects that describe the vocabularies that match the search criteria in
-        /// the request.
+        /// Provides information about the custom vocabularies that match the criteria specified
+        /// in your request.
         /// </para>
         /// </summary>
         public List<VocabularyInfo> Vocabularies

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GameLift.Model
 {
     /// <summary>
-    /// Represents the returned data in response to a request operation.
+    /// This is the response object from the CreateBuild operation.
     /// </summary>
     public partial class CreateBuildResponse : AmazonWebServiceResponse
     {
@@ -79,9 +79,11 @@ namespace Amazon.GameLift.Model
         /// This element is returned only when the operation is called without a storage location.
         /// It contains credentials to use when you are uploading a build file to an Amazon S3
         /// bucket that is owned by Amazon GameLift. Credentials have a limited life span. To
-        /// refresh these credentials, call <a>RequestUploadCredentials</a>. 
+        /// refresh these credentials, call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_RequestUploadCredentials.html">RequestUploadCredentials</a>.
+        /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public Credentials UploadCredentials
         {
             get { return this._uploadCredentials; }

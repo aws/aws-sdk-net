@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes the credit option for CPU usage of a T2, T3, or T3a instance.
+    /// Describes the credit option for CPU usage of a T instance.
     /// </summary>
     public partial class CreditSpecification
     {
@@ -38,8 +38,11 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property CpuCredits. 
         /// <para>
-        /// The credit option for CPU usage of a T2, T3, or T3a instance. Valid values are <code>standard</code>
-        /// and <code>unlimited</code>.
+        /// The credit option for CPU usage of a T instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values: <code>standard</code> | <code>unlimited</code> 
         /// </para>
         /// </summary>
         public string CpuCredits

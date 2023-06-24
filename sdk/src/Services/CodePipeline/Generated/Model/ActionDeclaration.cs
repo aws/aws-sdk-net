@@ -68,10 +68,10 @@ namespace Amazon.CodePipeline.Model
         /// The action's configuration. These are key-value pairs that specify input values for
         /// an action. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#action-requirements">Action
         /// Structure Requirements in CodePipeline</a>. For the list of configuration properties
-        /// for the AWS CloudFormation action type in CodePipeline, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/continuous-delivery-codepipeline-action-reference.html">Configuration
-        /// Properties Reference</a> in the <i>AWS CloudFormation User Guide</i>. For template
-        /// snippets with examples, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/continuous-delivery-codepipeline-parameter-override-functions.html">Using
-        /// Parameter Override Functions with CodePipeline Pipelines</a> in the <i>AWS CloudFormation
+        /// for the CloudFormation action type in CodePipeline, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/continuous-delivery-codepipeline-action-reference.html">Configuration
+        /// Properties Reference</a> in the <i>CloudFormation User Guide</i>. For template snippets
+        /// with examples, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/continuous-delivery-codepipeline-parameter-override-functions.html">Using
+        /// Parameter Override Functions with CodePipeline Pipelines</a> in the <i>CloudFormation
         /// User Guide</i>.
         /// </para>
         ///  
@@ -178,7 +178,7 @@ namespace Amazon.CodePipeline.Model
         /// <summary>
         /// Gets and sets the property Region. 
         /// <para>
-        /// The action declaration's AWS Region, such as us-east-1.
+        /// The action declaration's Amazon Web Services Region, such as us-east-1.
         /// </para>
         /// </summary>
         [AWSProperty(Min=4, Max=30)]

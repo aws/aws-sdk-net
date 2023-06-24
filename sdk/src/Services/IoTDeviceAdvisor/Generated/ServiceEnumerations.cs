@@ -25,6 +25,114 @@ namespace Amazon.IoTDeviceAdvisor
 {
 
     /// <summary>
+    /// Constants used for properties of type AuthenticationMethod.
+    /// </summary>
+    public class AuthenticationMethod : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SignatureVersion4 for AuthenticationMethod
+        /// </summary>
+        public static readonly AuthenticationMethod SignatureVersion4 = new AuthenticationMethod("SignatureVersion4");
+        /// <summary>
+        /// Constant X509ClientCertificate for AuthenticationMethod
+        /// </summary>
+        public static readonly AuthenticationMethod X509ClientCertificate = new AuthenticationMethod("X509ClientCertificate");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AuthenticationMethod(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AuthenticationMethod FindValue(string value)
+        {
+            return FindValue<AuthenticationMethod>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AuthenticationMethod(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Protocol.
+    /// </summary>
+    public class Protocol : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MqttV3_1_1 for Protocol
+        /// </summary>
+        public static readonly Protocol MqttV3_1_1 = new Protocol("MqttV3_1_1");
+        /// <summary>
+        /// Constant MqttV3_1_1_OverWebSocket for Protocol
+        /// </summary>
+        public static readonly Protocol MqttV3_1_1_OverWebSocket = new Protocol("MqttV3_1_1_OverWebSocket");
+        /// <summary>
+        /// Constant MqttV5 for Protocol
+        /// </summary>
+        public static readonly Protocol MqttV5 = new Protocol("MqttV5");
+        /// <summary>
+        /// Constant MqttV5_OverWebSocket for Protocol
+        /// </summary>
+        public static readonly Protocol MqttV5_OverWebSocket = new Protocol("MqttV5_OverWebSocket");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Protocol(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Protocol FindValue(string value)
+        {
+            return FindValue<Protocol>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Protocol(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Status.
     /// </summary>
     public class Status : ConstantClass
@@ -174,6 +282,134 @@ namespace Amazon.IoTDeviceAdvisor
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SuiteRunStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TestCaseScenarioStatus.
+    /// </summary>
+    public class TestCaseScenarioStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CANCELED for TestCaseScenarioStatus
+        /// </summary>
+        public static readonly TestCaseScenarioStatus CANCELED = new TestCaseScenarioStatus("CANCELED");
+        /// <summary>
+        /// Constant ERROR for TestCaseScenarioStatus
+        /// </summary>
+        public static readonly TestCaseScenarioStatus ERROR = new TestCaseScenarioStatus("ERROR");
+        /// <summary>
+        /// Constant FAIL for TestCaseScenarioStatus
+        /// </summary>
+        public static readonly TestCaseScenarioStatus FAIL = new TestCaseScenarioStatus("FAIL");
+        /// <summary>
+        /// Constant PASS for TestCaseScenarioStatus
+        /// </summary>
+        public static readonly TestCaseScenarioStatus PASS = new TestCaseScenarioStatus("PASS");
+        /// <summary>
+        /// Constant PASS_WITH_WARNINGS for TestCaseScenarioStatus
+        /// </summary>
+        public static readonly TestCaseScenarioStatus PASS_WITH_WARNINGS = new TestCaseScenarioStatus("PASS_WITH_WARNINGS");
+        /// <summary>
+        /// Constant PENDING for TestCaseScenarioStatus
+        /// </summary>
+        public static readonly TestCaseScenarioStatus PENDING = new TestCaseScenarioStatus("PENDING");
+        /// <summary>
+        /// Constant RUNNING for TestCaseScenarioStatus
+        /// </summary>
+        public static readonly TestCaseScenarioStatus RUNNING = new TestCaseScenarioStatus("RUNNING");
+        /// <summary>
+        /// Constant STOPPED for TestCaseScenarioStatus
+        /// </summary>
+        public static readonly TestCaseScenarioStatus STOPPED = new TestCaseScenarioStatus("STOPPED");
+        /// <summary>
+        /// Constant STOPPING for TestCaseScenarioStatus
+        /// </summary>
+        public static readonly TestCaseScenarioStatus STOPPING = new TestCaseScenarioStatus("STOPPING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TestCaseScenarioStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TestCaseScenarioStatus FindValue(string value)
+        {
+            return FindValue<TestCaseScenarioStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TestCaseScenarioStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TestCaseScenarioType.
+    /// </summary>
+    public class TestCaseScenarioType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Advanced for TestCaseScenarioType
+        /// </summary>
+        public static readonly TestCaseScenarioType Advanced = new TestCaseScenarioType("Advanced");
+        /// <summary>
+        /// Constant Basic for TestCaseScenarioType
+        /// </summary>
+        public static readonly TestCaseScenarioType Basic = new TestCaseScenarioType("Basic");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TestCaseScenarioType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TestCaseScenarioType FindValue(string value)
+        {
+            return FindValue<TestCaseScenarioType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TestCaseScenarioType(string value)
         {
             return FindValue(value);
         }

@@ -34,7 +34,7 @@ namespace Amazon.VoiceID.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// EnrollmentJobFraudDetectionConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class EnrollmentJobFraudDetectionConfigMarshaller : IRequestMarshaller<EnrollmentJobFraudDetectionConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -57,11 +57,22 @@ namespace Amazon.VoiceID.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.RiskThreshold);
             }
 
+            if(requestObject.IsSetWatchlistIds())
+            {
+                context.Writer.WritePropertyName("WatchlistIds");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectWatchlistIdsListValue in requestObject.WatchlistIds)
+                {
+                        context.Writer.Write(requestObjectWatchlistIdsListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
         }
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static EnrollmentJobFraudDetectionConfigMarshaller Instance = new EnrollmentJobFraudDetectionConfigMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// MicrosoftSQLServerSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class MicrosoftSQLServerSettingsMarshaller : IRequestMarshaller<MicrosoftSQLServerSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,6 +61,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("DatabaseName");
                 context.Writer.Write(requestObject.DatabaseName);
+            }
+
+            if(requestObject.IsSetForceLobLookup())
+            {
+                context.Writer.WritePropertyName("ForceLobLookup");
+                context.Writer.Write(requestObject.ForceLobLookup);
             }
 
             if(requestObject.IsSetPassword())
@@ -111,6 +117,18 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ServerName);
             }
 
+            if(requestObject.IsSetTlogAccessMode())
+            {
+                context.Writer.WritePropertyName("TlogAccessMode");
+                context.Writer.Write(requestObject.TlogAccessMode);
+            }
+
+            if(requestObject.IsSetTrimSpaceInChar())
+            {
+                context.Writer.WritePropertyName("TrimSpaceInChar");
+                context.Writer.Write(requestObject.TrimSpaceInChar);
+            }
+
             if(requestObject.IsSetUseBcpFullLoad())
             {
                 context.Writer.WritePropertyName("UseBcpFullLoad");
@@ -133,7 +151,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static MicrosoftSQLServerSettingsMarshaller Instance = new MicrosoftSQLServerSettingsMarshaller();
 
     }

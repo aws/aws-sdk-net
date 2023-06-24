@@ -34,7 +34,7 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ConnectAttachmentOptions Marshaller
-    /// </summary>       
+    /// </summary>
     public class ConnectAttachmentOptionsMarshaller : IRequestMarshaller<ConnectAttachmentOptions, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ConnectAttachmentOptionsMarshaller Instance = new ConnectAttachmentOptionsMarshaller();
 
     }

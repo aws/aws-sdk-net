@@ -33,9 +33,29 @@ namespace Amazon.LexModelsV2.Model
     /// </summary>
     public partial class FulfillmentCodeHookSettings
     {
+        private bool? _active;
         private bool? _enabled;
         private FulfillmentUpdatesSpecification _fulfillmentUpdatesSpecification;
         private PostFulfillmentStatusSpecification _postFulfillmentStatusSpecification;
+
+        /// <summary>
+        /// Gets and sets the property Active. 
+        /// <para>
+        /// Determines whether the fulfillment code hook is used. When <code>active</code> is
+        /// false, the code hook doesn't run.
+        /// </para>
+        /// </summary>
+        public bool Active
+        {
+            get { return this._active.GetValueOrDefault(); }
+            set { this._active = value; }
+        }
+
+        // Check to see if Active property is set
+        internal bool IsSetActive()
+        {
+            return this._active.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property Enabled. 

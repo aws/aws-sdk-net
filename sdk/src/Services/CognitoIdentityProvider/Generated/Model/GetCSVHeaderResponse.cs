@@ -30,7 +30,7 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// Represents the response from the server to the request to get the header information
-    /// for the .csv file for the user import job.
+    /// of the CSV file for the user import job.
     /// </summary>
     public partial class GetCSVHeaderResponse : AmazonWebServiceResponse
     {
@@ -40,7 +40,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property CSVHeader. 
         /// <para>
-        /// The header information for the .csv file for the user import job.
+        /// The header information of the CSV file for the user import job.
         /// </para>
         /// </summary>
         public List<string> CSVHeader

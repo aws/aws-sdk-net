@@ -49,7 +49,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// Shows the date-time a block list for query suggestions was created.
+        /// The Unix timestamp when a block list for query suggestions was created.
         /// </para>
         /// </summary>
         public DateTime CreatedAt
@@ -67,7 +67,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// Shows the description for the block list.
+        /// The description for the block list.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1000)]
@@ -86,8 +86,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property ErrorMessage. 
         /// <para>
-        /// Shows the error message with details when there are issues in processing the block
-        /// list.
+        /// The error message containing details if there are issues processing the block list.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
@@ -106,7 +105,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property FileSizeBytes. 
         /// <para>
-        /// Shows the current size of the block list text file in S3.
+        /// The current size of the block list text file in S3.
         /// </para>
         /// </summary>
         public long FileSizeBytes
@@ -124,7 +123,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// Shows the unique identifier of the block list.
+        /// The identifier of the block list.
         /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=36)]
@@ -143,7 +142,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property IndexId. 
         /// <para>
-        /// Shows the identifier of the index for the block list.
+        /// The identifier of the index for the block list.
         /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=36)]
@@ -162,8 +161,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property ItemCount. 
         /// <para>
-        /// Shows the current number of valid, non-empty words or phrases in the block list text
-        /// file.
+        /// The current number of valid, non-empty words or phrases in the block list text file.
         /// </para>
         /// </summary>
         public int ItemCount
@@ -181,7 +179,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Shows the name of the block list.
+        /// The name of the block list.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -200,8 +198,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// Shows the current IAM (Identity and Access Management) role used by Amazon Kendra
-        /// to access the block list text file in S3.
+        /// The IAM (Identity and Access Management) role used by Amazon Kendra to access the
+        /// block list text file in S3.
         /// </para>
         ///  
         /// <para>
@@ -252,7 +250,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// Shows whether the current status of the block list is <code>ACTIVE</code> or <code>INACTIVE</code>.
+        /// The current status of the block list. When the value is <code>ACTIVE</code>, the block
+        /// list is ready for use.
         /// </para>
         /// </summary>
         public QuerySuggestionsBlockListStatus Status
@@ -270,7 +269,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property UpdatedAt. 
         /// <para>
-        /// Shows the date-time a block list for query suggestions was last updated.
+        /// The Unix timestamp when a block list for query suggestions was last updated.
         /// </para>
         /// </summary>
         public DateTime UpdatedAt

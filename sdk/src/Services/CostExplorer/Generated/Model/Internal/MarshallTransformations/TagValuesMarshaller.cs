@@ -34,7 +34,7 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// TagValues Marshaller
-    /// </summary>       
+    /// </summary>
     public class TagValuesMarshaller : IRequestMarshaller<TagValues, JsonMarshallerContext> 
     {
         /// <summary>
@@ -77,7 +77,7 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static TagValuesMarshaller Instance = new TagValuesMarshaller();
 
     }

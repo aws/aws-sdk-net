@@ -39,7 +39,7 @@ namespace Amazon.CodeGuruReviewer.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// The ID of the Amazon Web Services KMS key that is associated with a respository association.
+    /// The ID of the Amazon Web Services KMS key that is associated with a repository association.
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -71,7 +71,7 @@ namespace Amazon.CodeGuruReviewer.Model
         /// <summary>
         /// Gets and sets the property KMSKeyId. 
         /// <para>
-        /// The ID of the Amazon Web Services KMS key that is associated with a respository association.
+        /// The ID of the Amazon Web Services KMS key that is associated with a repository association.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

@@ -162,6 +162,11 @@
     <pattern>^(([^:/?#]+):)?(//([^/?#]*))?([^?#]*)(\?([^#]*))?(#(.*))?</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleEmailV2.Model.BatchGetMetricDataQuery.Id</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleEmailV2.Model.CustomVerificationEmailTemplateMetadata.TemplateName</property>
     <min>1</min>
   </property-value-rule>
@@ -196,6 +201,16 @@
   <property-value-rule>
     <property>Amazon.SimpleEmailV2.Model.ImportJobSummary.JobId</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleEmailV2.Model.MetricDataError.Id</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleEmailV2.Model.MetricDataResult.Id</property>
+    <min>1</min>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleEmailV2.Model.ReplacementTemplate.ReplacementTemplateData</property>

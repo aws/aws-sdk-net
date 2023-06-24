@@ -56,7 +56,7 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.SSMIncidents");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-05-10";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-05-10";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/updateTimelineEvent";
@@ -74,7 +74,7 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
                 else if(!(publicRequest.IsSetClientToken()))
                 {
                     context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());                                                
+                    context.Writer.Write(Guid.NewGuid().ToString());
                 }
                 if(publicRequest.IsSetEventData())
                 {
@@ -86,6 +86,22 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("eventId");
                     context.Writer.Write(publicRequest.EventId);
+                }
+
+                if(publicRequest.IsSetEventReferences())
+                {
+                    context.Writer.WritePropertyName("eventReferences");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestEventReferencesListValue in publicRequest.EventReferences)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = EventReferenceMarshaller.Instance;
+                        marshaller.Marshall(publicRequestEventReferencesListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
                 }
 
                 if(publicRequest.IsSetEventTime())
@@ -106,7 +122,6 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.IncidentRecordArn);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

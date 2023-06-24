@@ -34,7 +34,7 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// FunctionConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class FunctionConfigurationMarshaller : IRequestMarshaller<FunctionConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -74,6 +74,12 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Executable);
             }
 
+            if(requestObject.IsSetFunctionRuntimeOverride())
+            {
+                context.Writer.WritePropertyName("FunctionRuntimeOverride");
+                context.Writer.Write(requestObject.FunctionRuntimeOverride);
+            }
+
             if(requestObject.IsSetMemorySize())
             {
                 context.Writer.WritePropertyName("MemorySize");
@@ -96,7 +102,7 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static FunctionConfigurationMarshaller Instance = new FunctionConfigurationMarshaller();
 
     }

@@ -17,22 +17,22 @@
  * Do not modify this file. This file is generated from the transcribe-2017-10-26.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
-
+using Amazon.TranscribeService.Internal;
 
 namespace Amazon.TranscribeService
 {
     /// <summary>
     /// Configuration for accessing Amazon TranscribeService service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonTranscribeServiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.9.17");
+            InternalSDKUtils.BuildUserAgentString("3.7.104.63");
 
         private string _userAgent = UserAgentString;
 
@@ -40,8 +40,10 @@ namespace Amazon.TranscribeService
         /// Default constructor
         /// </summary>
         public AmazonTranscribeServiceConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonTranscribeServiceDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "transcribe";
+            this.EndpointProvider = new AmazonTranscribeServiceEndpointProvider();
         }
 
         /// <summary>
@@ -76,5 +78,6 @@ namespace Amazon.TranscribeService
                 return _userAgent;
             }
         }
+
     }
 }

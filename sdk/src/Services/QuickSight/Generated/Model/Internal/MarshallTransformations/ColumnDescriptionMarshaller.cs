@@ -34,7 +34,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ColumnDescription Marshaller
-    /// </summary>       
+    /// </summary>
     public class ColumnDescriptionMarshaller : IRequestMarshaller<ColumnDescription, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ColumnDescriptionMarshaller Instance = new ColumnDescriptionMarshaller();
 
     }

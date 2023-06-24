@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GlobalAccelerator.Model
 {
     /// <summary>
-    /// There was an internal error for AWS Global Accelerator.
+    /// There was an internal error for Global Accelerator.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -34,7 +34,7 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// InlineArchiveRule Marshaller
-    /// </summary>       
+    /// </summary>
     public class InlineArchiveRuleMarshaller : IRequestMarshaller<InlineArchiveRule, JsonMarshallerContext> 
     {
         /// <summary>
@@ -74,7 +74,7 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static InlineArchiveRuleMarshaller Instance = new InlineArchiveRuleMarshaller();
 
     }

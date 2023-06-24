@@ -34,7 +34,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Application Marshaller
-    /// </summary>       
+    /// </summary>
     public class ApplicationMarshaller : IRequestMarshaller<Application, JsonMarshallerContext> 
     {
         /// <summary>
@@ -86,7 +86,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ApplicationMarshaller Instance = new ApplicationMarshaller();
 
     }

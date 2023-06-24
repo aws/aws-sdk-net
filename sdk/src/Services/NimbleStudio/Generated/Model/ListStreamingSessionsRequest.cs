@@ -30,7 +30,7 @@ namespace Amazon.NimbleStudio.Model
 {
     /// <summary>
     /// Container for the parameters to the ListStreamingSessions operation.
-    /// Lists the streaming image resources in a studio.
+    /// Lists the streaming sessions in a studio.
     /// </summary>
     public partial class ListStreamingSessionsRequest : AmazonNimbleStudioRequest
     {
@@ -61,7 +61,7 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token to request the next page of results. 
+        /// The token for the next set of results, or null if there are no more results.
         /// </para>
         /// </summary>
         public string NextToken

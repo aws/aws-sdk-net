@@ -17,22 +17,22 @@
  * Do not modify this file. This file is generated from the opsworkscm-2016-11-01.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
-
+using Amazon.OpsWorksCM.Internal;
 
 namespace Amazon.OpsWorksCM
 {
     /// <summary>
     /// Configuration for accessing Amazon OpsWorksCM service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonOpsWorksCMConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.105");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.147");
 
         private string _userAgent = UserAgentString;
 
@@ -40,8 +40,10 @@ namespace Amazon.OpsWorksCM
         /// Default constructor
         /// </summary>
         public AmazonOpsWorksCMConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonOpsWorksCMDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "opsworks-cm";
+            this.EndpointProvider = new AmazonOpsWorksCMEndpointProvider();
         }
 
         /// <summary>
@@ -76,5 +78,6 @@ namespace Amazon.OpsWorksCM
                 return _userAgent;
             }
         }
+
     }
 }

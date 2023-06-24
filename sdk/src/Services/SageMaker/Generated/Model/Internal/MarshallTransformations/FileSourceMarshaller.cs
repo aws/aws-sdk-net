@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// FileSource Marshaller
-    /// </summary>       
+    /// </summary>
     public class FileSourceMarshaller : IRequestMarshaller<FileSource, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static FileSourceMarshaller Instance = new FileSourceMarshaller();
 
     }

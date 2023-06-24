@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// LabelingJobResourceConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class LabelingJobResourceConfigMarshaller : IRequestMarshaller<LabelingJobResourceConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -51,11 +51,22 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.VolumeKmsKeyId);
             }
 
+            if(requestObject.IsSetVpcConfig())
+            {
+                context.Writer.WritePropertyName("VpcConfig");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = VpcConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.VpcConfig, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static LabelingJobResourceConfigMarshaller Instance = new LabelingJobResourceConfigMarshaller();
 
     }

@@ -84,10 +84,6 @@ namespace Amazon.S3.Model
     /// </para>
     ///  </note> 
     /// <para>
-    ///  <b>Responses</b> 
-    /// </para>
-    ///  
-    /// <para>
     /// If the configuration in the request body includes only one <code>TopicConfiguration</code>
     /// specifying only the <code>s3:ReducedRedundancyLostObject</code> event type, the response
     /// will also include the <code>x-amz-sns-test-message-id</code> header containing the
@@ -106,6 +102,7 @@ namespace Amazon.S3.Model
     /// </summary>
     public partial class PutBucketNotificationRequest : AmazonWebServiceRequest
     {
+        private ChecksumAlgorithm _checksumAlgorithm;
         private string expectedBucketOwner;
         private bool? _skipDestinationValidation;
         private EventBridgeConfiguration _eventBridgeConfiguration;
@@ -119,6 +116,21 @@ namespace Amazon.S3.Model
         internal bool IsSetBucketName()
         {
             return this.BucketName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ChecksumAlgorithm.
+        /// </summary>
+        public ChecksumAlgorithm ChecksumAlgorithm
+        {
+            get { return this._checksumAlgorithm; }
+            set { this._checksumAlgorithm = value; }
+        }
+
+        // Check to see if ChecksumAlgorithm property is set
+        internal bool IsSetChecksumAlgorithm()
+        {
+            return this._checksumAlgorithm != null;
         }
 
         /// <summary>

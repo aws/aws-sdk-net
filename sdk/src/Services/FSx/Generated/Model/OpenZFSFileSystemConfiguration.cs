@@ -124,9 +124,8 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property DeploymentType. 
         /// <para>
-        /// Specifies the file-system deployment type. Amazon FSx for OpenZFS supports <code>SINGLE_AZ_1</code>.
-        /// <code>SINGLE_AZ_1</code> is a file system configured for a single Availability Zone
-        /// (AZ) of redundancy. 
+        /// Specifies the file-system deployment type. Amazon FSx for OpenZFS supports&#x2028;
+        /// <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code>.
         /// </para>
         /// </summary>
         public OpenZFSDeploymentType DeploymentType
@@ -178,11 +177,10 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property ThroughputCapacity. 
         /// <para>
-        /// The throughput of an Amazon FSx file system, measured in megabytes per second (MBps),
-        /// in 2 to the nth increments, between 2^3 (8) and 2^11 (2048). 
+        /// The throughput of an Amazon FSx file system, measured in megabytes per second (MBps).
         /// </para>
         /// </summary>
-        [AWSProperty(Min=8, Max=4096)]
+        [AWSProperty(Min=8, Max=100000)]
         public int ThroughputCapacity
         {
             get { return this._throughputCapacity.GetValueOrDefault(); }

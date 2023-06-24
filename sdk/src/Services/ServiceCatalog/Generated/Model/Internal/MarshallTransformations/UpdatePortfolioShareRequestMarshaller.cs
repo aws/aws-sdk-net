@@ -58,7 +58,7 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
             string target = "AWS242ServiceCatalogService.UpdatePortfolioShare";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-12-10";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-12-10";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -96,13 +96,18 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.PortfolioId);
                 }
 
+                if(publicRequest.IsSetSharePrincipals())
+                {
+                    context.Writer.WritePropertyName("SharePrincipals");
+                    context.Writer.Write(publicRequest.SharePrincipals);
+                }
+
                 if(publicRequest.IsSetShareTagOptions())
                 {
                     context.Writer.WritePropertyName("ShareTagOptions");
                     context.Writer.Write(publicRequest.ShareTagOptions);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

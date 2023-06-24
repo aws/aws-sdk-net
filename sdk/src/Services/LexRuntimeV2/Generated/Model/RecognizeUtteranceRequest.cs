@@ -213,6 +213,7 @@ namespace Amazon.LexRuntimeV2.Model
         /// encoded before sending to Amazon Lex V2.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string RequestAttributes
         {
             get { return this._requestAttributes; }
@@ -293,7 +294,7 @@ namespace Amazon.LexRuntimeV2.Model
         /// <para>
         /// If the value begins with <code>audio/</code>, Amazon Lex V2 returns speech in the
         /// response. Amazon Lex V2 uses Amazon Polly to generate the speech using the configuration
-        /// that you specified in the <code>requestContentType</code> parameter. For example,
+        /// that you specified in the <code>responseContentType</code> parameter. For example,
         /// if you specify <code>audio/mpeg</code> as the value, Amazon Lex V2 returns speech
         /// in the MPEG format.
         /// </para>
@@ -373,6 +374,7 @@ namespace Amazon.LexRuntimeV2.Model
         /// encoded before sending to Amazon Lex V2.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string SessionStateValue
         {
             get { return this._sessionStateValue; }

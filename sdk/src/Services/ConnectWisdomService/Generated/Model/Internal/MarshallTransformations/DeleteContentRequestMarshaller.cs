@@ -55,7 +55,7 @@ namespace Amazon.ConnectWisdomService.Model.Internal.MarshallTransformations
         public IRequest Marshall(DeleteContentRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ConnectWisdomService");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-10-19";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-10-19";
             request.HttpMethod = "DELETE";
 
             if (!publicRequest.IsSetContentId())

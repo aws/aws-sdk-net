@@ -49,12 +49,6 @@ namespace Amazon.ComputeOptimizer.Model
         /// <para>
         /// The name of the recommendation preference to delete.
         /// </para>
-        ///  
-        /// <para>
-        /// Enhanced infrastructure metrics (<code>EnhancedInfrastructureMetrics</code>) is the
-        /// only feature that can be activated through preferences. Therefore, it is also the
-        /// only recommendation preference that can be deleted.
-        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public List<string> RecommendationPreferenceNames
@@ -80,6 +74,11 @@ namespace Amazon.ComputeOptimizer.Model
         /// that are part of Auto Scaling groups. The <code>AutoScalingGroup</code> option encompasses
         /// only instances that are part of an Auto Scaling group.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The valid values for this parameter are <code>Ec2Instance</code> and <code>AutoScalingGroup</code>.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Required=true)]
         public ResourceType ResourceType

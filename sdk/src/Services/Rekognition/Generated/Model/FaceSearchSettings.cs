@@ -29,8 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Rekognition.Model
 {
     /// <summary>
-    /// Input face recognition parameters for an Amazon Rekognition stream processor. <code>FaceRecognitionSettings</code>
-    /// is a request parameter for <a>CreateStreamProcessor</a>.
+    /// Input face recognition parameters for an Amazon Rekognition stream processor. Includes
+    /// the collection to use for face recognition and the face attributes to detect. Defining
+    /// the settings is required in the request parameter for <a>CreateStreamProcessor</a>.
     /// </summary>
     public partial class FaceSearchSettings
     {

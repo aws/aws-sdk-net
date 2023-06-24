@@ -30,60 +30,35 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateCustomerGateway operation.
-    /// Provides information to Amazon Web Services about your VPN customer gateway device.
-    /// The customer gateway is the appliance at your end of the VPN connection. (The device
-    /// on the Amazon Web Services side of the VPN connection is the virtual private gateway.)
-    /// You must provide the internet-routable IP address of the customer gateway's external
-    /// interface. The IP address must be static and can be behind a device performing network
-    /// address translation (NAT).
+    /// Provides information to Amazon Web Services about your customer gateway device. The
+    /// customer gateway device is the appliance at your end of the VPN connection. You must
+    /// provide the IP address of the customer gateway device’s external interface. The IP
+    /// address must be static and can be behind a device performing network address translation
+    /// (NAT).
     /// 
     ///  
     /// <para>
     /// For devices that use Border Gateway Protocol (BGP), you can also provide the device's
     /// BGP Autonomous System Number (ASN). You can use an existing ASN assigned to your network.
-    /// If you don't have an ASN already, you can use a private ASN (in the 64512 - 65534
-    /// range).
+    /// If you don't have an ASN already, you can use a private ASN. For more information,
+    /// see <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/cgw-options.html">Customer
+    /// gateway options for your Site-to-Site VPN connection</a> in the <i>Amazon Web Services
+    /// Site-to-Site VPN User Guide</i>.
     /// </para>
-    ///  <note> 
-    /// <para>
-    /// Amazon EC2 supports all 4-byte ASN numbers in the range of 1 - 2147483647, with the
-    /// exception of the following:
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    /// 7224 - reserved in the <code>us-east-1</code> Region
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// 9059 - reserved in the <code>eu-west-1</code> Region
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// 17943 - reserved in the <code>ap-southeast-1</code> Region
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// 10124 - reserved in the <code>ap-northeast-1</code> Region
-    /// </para>
-    ///  </li> </ul> </note> 
-    /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">Amazon
-    /// Web Services Site-to-Site VPN</a> in the <i>Amazon Web Services Site-to-Site VPN User
-    /// Guide</i>.
-    /// </para>
-    ///  <important> 
+    ///  
     /// <para>
     /// To create more than one customer gateway with the same VPN type, IP address, and BGP
-    /// ASN, specify a unique device name for each customer gateway. Identical requests return
-    /// information about the existing customer gateway and do not create new customer gateways.
+    /// ASN, specify a unique device name for each customer gateway. An identical request
+    /// returns information about the existing customer gateway; it doesn't create a new customer
+    /// gateway.
     /// </para>
-    ///  </important>
     /// </summary>
     public partial class CreateCustomerGatewayRequest : AmazonEC2Request
     {
         private int? _bgpAsn;
         private string _certificateArn;
         private string _deviceName;
+        private string _ipAddress;
         private string _publicIp;
         private List<TagSpecification> _tagSpecifications = new List<TagSpecification>();
         private GatewayType _type;
@@ -97,7 +72,7 @@ namespace Amazon.EC2.Model
         /// Instantiates CreateCustomerGatewayRequest with the parameterized properties
         /// </summary>
         /// <param name="type">The type of VPN connection that this customer gateway supports (<code>ipsec.1</code>).</param>
-        /// <param name="publicIp">The Internet-routable IP address for the customer gateway's outside interface. The address must be static.</param>
+        /// <param name="publicIp"> <i>This member has been deprecated.</i> The Internet-routable IP address for the customer gateway's outside interface. The address must be static.</param>
         /// <param name="bgpAsn">For devices that support BGP, the customer gateway's BGP ASN. Default: 65000</param>
         public CreateCustomerGatewayRequest(GatewayType type, string publicIp, int bgpAsn)
         {
@@ -116,7 +91,6 @@ namespace Amazon.EC2.Model
         /// Default: 65000
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public int BgpAsn
         {
             get { return this._bgpAsn.GetValueOrDefault(); }
@@ -170,10 +144,29 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IpAddress. 
+        /// <para>
+        ///  IPv4 address for the customer gateway device's outside interface. The address must
+        /// be static. 
+        /// </para>
+        /// </summary>
+        public string IpAddress
+        {
+            get { return this._ipAddress; }
+            set { this._ipAddress = value; }
+        }
+
+        // Check to see if IpAddress property is set
+        internal bool IsSetIpAddress()
+        {
+            return this._ipAddress != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property PublicIp. 
         /// <para>
-        /// The Internet-routable IP address for the customer gateway's outside interface. The
-        /// address must be static.
+        ///  <i>This member has been deprecated.</i> The Internet-routable IP address for the
+        /// customer gateway's outside interface. The address must be static.
         /// </para>
         /// </summary>
         public string PublicIp

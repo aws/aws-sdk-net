@@ -44,6 +44,22 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeAddressTransfers operation
+        ///</summary>
+        public IDescribeAddressTransfersPaginator DescribeAddressTransfers(DescribeAddressTransfersRequest request) 
+        {
+            return new DescribeAddressTransfersPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeAwsNetworkPerformanceMetricSubscriptions operation
+        ///</summary>
+        public IDescribeAwsNetworkPerformanceMetricSubscriptionsPaginator DescribeAwsNetworkPerformanceMetricSubscriptions(DescribeAwsNetworkPerformanceMetricSubscriptionsRequest request) 
+        {
+            return new DescribeAwsNetworkPerformanceMetricSubscriptionsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribeByoipCidrs operation
         ///</summary>
         public IDescribeByoipCidrsPaginator DescribeByoipCidrs(DescribeByoipCidrsRequest request) 
@@ -156,6 +172,14 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeFastLaunchImages operation
+        ///</summary>
+        public IDescribeFastLaunchImagesPaginator DescribeFastLaunchImages(DescribeFastLaunchImagesRequest request) 
+        {
+            return new DescribeFastLaunchImagesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribeFastSnapshotRestores operation
         ///</summary>
         public IDescribeFastSnapshotRestoresPaginator DescribeFastSnapshotRestores(DescribeFastSnapshotRestoresRequest request) 
@@ -220,6 +244,14 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeImages operation
+        ///</summary>
+        public IDescribeImagesPaginator DescribeImages(DescribeImagesRequest request) 
+        {
+            return new DescribeImagesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribeImportImageTasks operation
         ///</summary>
         public IDescribeImportImageTasksPaginator DescribeImportImageTasks(DescribeImportImageTasksRequest request) 
@@ -233,6 +265,14 @@ namespace Amazon.EC2.Model
         public IDescribeImportSnapshotTasksPaginator DescribeImportSnapshotTasks(DescribeImportSnapshotTasksRequest request) 
         {
             return new DescribeImportSnapshotTasksPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeInstanceConnectEndpoints operation
+        ///</summary>
+        public IDescribeInstanceConnectEndpointsPaginator DescribeInstanceConnectEndpoints(DescribeInstanceConnectEndpointsRequest request) 
+        {
+            return new DescribeInstanceConnectEndpointsPaginator(this.client, request);
         }
 
         /// <summary>
@@ -297,6 +337,22 @@ namespace Amazon.EC2.Model
         public IDescribeIpamPoolsPaginator DescribeIpamPools(DescribeIpamPoolsRequest request) 
         {
             return new DescribeIpamPoolsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeIpamResourceDiscoveries operation
+        ///</summary>
+        public IDescribeIpamResourceDiscoveriesPaginator DescribeIpamResourceDiscoveries(DescribeIpamResourceDiscoveriesRequest request) 
+        {
+            return new DescribeIpamResourceDiscoveriesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeIpamResourceDiscoveryAssociations operation
+        ///</summary>
+        public IDescribeIpamResourceDiscoveryAssociationsPaginator DescribeIpamResourceDiscoveryAssociations(DescribeIpamResourceDiscoveryAssociationsRequest request) 
+        {
+            return new DescribeIpamResourceDiscoveryAssociationsPaginator(this.client, request);
         }
 
         /// <summary>
@@ -692,6 +748,22 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeTransitGatewayPolicyTables operation
+        ///</summary>
+        public IDescribeTransitGatewayPolicyTablesPaginator DescribeTransitGatewayPolicyTables(DescribeTransitGatewayPolicyTablesRequest request) 
+        {
+            return new DescribeTransitGatewayPolicyTablesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeTransitGatewayRouteTableAnnouncements operation
+        ///</summary>
+        public IDescribeTransitGatewayRouteTableAnnouncementsPaginator DescribeTransitGatewayRouteTableAnnouncements(DescribeTransitGatewayRouteTableAnnouncementsRequest request) 
+        {
+            return new DescribeTransitGatewayRouteTableAnnouncementsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribeTransitGatewayRouteTables operation
         ///</summary>
         public IDescribeTransitGatewayRouteTablesPaginator DescribeTransitGatewayRouteTables(DescribeTransitGatewayRouteTablesRequest request) 
@@ -721,6 +793,46 @@ namespace Amazon.EC2.Model
         public IDescribeTrunkInterfaceAssociationsPaginator DescribeTrunkInterfaceAssociations(DescribeTrunkInterfaceAssociationsRequest request) 
         {
             return new DescribeTrunkInterfaceAssociationsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeVerifiedAccessEndpoints operation
+        ///</summary>
+        public IDescribeVerifiedAccessEndpointsPaginator DescribeVerifiedAccessEndpoints(DescribeVerifiedAccessEndpointsRequest request) 
+        {
+            return new DescribeVerifiedAccessEndpointsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeVerifiedAccessGroups operation
+        ///</summary>
+        public IDescribeVerifiedAccessGroupsPaginator DescribeVerifiedAccessGroups(DescribeVerifiedAccessGroupsRequest request) 
+        {
+            return new DescribeVerifiedAccessGroupsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeVerifiedAccessInstanceLoggingConfigurations operation
+        ///</summary>
+        public IDescribeVerifiedAccessInstanceLoggingConfigurationsPaginator DescribeVerifiedAccessInstanceLoggingConfigurations(DescribeVerifiedAccessInstanceLoggingConfigurationsRequest request) 
+        {
+            return new DescribeVerifiedAccessInstanceLoggingConfigurationsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeVerifiedAccessInstances operation
+        ///</summary>
+        public IDescribeVerifiedAccessInstancesPaginator DescribeVerifiedAccessInstances(DescribeVerifiedAccessInstancesRequest request) 
+        {
+            return new DescribeVerifiedAccessInstancesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeVerifiedAccessTrustProviders operation
+        ///</summary>
+        public IDescribeVerifiedAccessTrustProvidersPaginator DescribeVerifiedAccessTrustProviders(DescribeVerifiedAccessTrustProvidersRequest request) 
+        {
+            return new DescribeVerifiedAccessTrustProvidersPaginator(this.client, request);
         }
 
         /// <summary>
@@ -820,6 +932,14 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Paginator for GetAwsNetworkPerformanceData operation
+        ///</summary>
+        public IGetAwsNetworkPerformanceDataPaginator GetAwsNetworkPerformanceData(GetAwsNetworkPerformanceDataRequest request) 
+        {
+            return new GetAwsNetworkPerformanceDataPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for GetGroupsForCapacityReservation operation
         ///</summary>
         public IGetGroupsForCapacityReservationPaginator GetGroupsForCapacityReservation(GetGroupsForCapacityReservationRequest request) 
@@ -841,6 +961,22 @@ namespace Amazon.EC2.Model
         public IGetIpamAddressHistoryPaginator GetIpamAddressHistory(GetIpamAddressHistoryRequest request) 
         {
             return new GetIpamAddressHistoryPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for GetIpamDiscoveredAccounts operation
+        ///</summary>
+        public IGetIpamDiscoveredAccountsPaginator GetIpamDiscoveredAccounts(GetIpamDiscoveredAccountsRequest request) 
+        {
+            return new GetIpamDiscoveredAccountsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for GetIpamDiscoveredResourceCidrs operation
+        ///</summary>
+        public IGetIpamDiscoveredResourceCidrsPaginator GetIpamDiscoveredResourceCidrs(GetIpamDiscoveredResourceCidrsRequest request) 
+        {
+            return new GetIpamDiscoveredResourceCidrsPaginator(this.client, request);
         }
 
         /// <summary>
@@ -884,6 +1020,14 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Paginator for GetNetworkInsightsAccessScopeAnalysisFindings operation
+        ///</summary>
+        public IGetNetworkInsightsAccessScopeAnalysisFindingsPaginator GetNetworkInsightsAccessScopeAnalysisFindings(GetNetworkInsightsAccessScopeAnalysisFindingsRequest request) 
+        {
+            return new GetNetworkInsightsAccessScopeAnalysisFindingsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for GetSpotPlacementScores operation
         ///</summary>
         public IGetSpotPlacementScoresPaginator GetSpotPlacementScores(GetSpotPlacementScoresRequest request) 
@@ -905,6 +1049,14 @@ namespace Amazon.EC2.Model
         public IGetTransitGatewayMulticastDomainAssociationsPaginator GetTransitGatewayMulticastDomainAssociations(GetTransitGatewayMulticastDomainAssociationsRequest request) 
         {
             return new GetTransitGatewayMulticastDomainAssociationsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for GetTransitGatewayPolicyTableAssociations operation
+        ///</summary>
+        public IGetTransitGatewayPolicyTableAssociationsPaginator GetTransitGatewayPolicyTableAssociations(GetTransitGatewayPolicyTableAssociationsRequest request) 
+        {
+            return new GetTransitGatewayPolicyTableAssociationsPaginator(this.client, request);
         }
 
         /// <summary>
@@ -937,6 +1089,14 @@ namespace Amazon.EC2.Model
         public IGetVpnConnectionDeviceTypesPaginator GetVpnConnectionDeviceTypes(GetVpnConnectionDeviceTypesRequest request) 
         {
             return new GetVpnConnectionDeviceTypesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListImagesInRecycleBin operation
+        ///</summary>
+        public IListImagesInRecycleBinPaginator ListImagesInRecycleBin(ListImagesInRecycleBinRequest request) 
+        {
+            return new ListImagesInRecycleBinPaginator(this.client, request);
         }
 
         /// <summary>

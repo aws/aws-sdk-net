@@ -30,10 +30,10 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateModelPackage operation.
-    /// Creates a model package that you can use to create Amazon SageMaker models or list
-    /// on Amazon Web Services Marketplace, or a versioned model that is part of a model group.
-    /// Buyers can subscribe to model packages listed on Amazon Web Services Marketplace to
-    /// create models in Amazon SageMaker.
+    /// Creates a model package that you can use to create SageMaker models or list on Amazon
+    /// Web Services Marketplace, or a versioned model that is part of a model group. Buyers
+    /// can subscribe to model packages listed on Amazon Web Services Marketplace to create
+    /// models in SageMaker.
     /// 
     ///  
     /// <para>
@@ -366,8 +366,11 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property SamplePayloadUrl. 
         /// <para>
-        /// The Amazon Simple Storage Service (Amazon S3) path where the sample payload are stored.
-        /// This path must point to a single gzip compressed tar archive (.tar.gz suffix).
+        /// The Amazon Simple Storage Service (Amazon S3) path where the sample payload is stored.
+        /// This path must point to a single gzip compressed tar archive (.tar.gz suffix). This
+        /// archive can hold multiple files that are all equally used in the load test. Each file
+        /// in the archive must satisfy the size constraints of the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpoint.html#API_runtime_InvokeEndpoint_RequestSyntax">InvokeEndpoint</a>
+        /// call.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]
@@ -426,7 +429,14 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property Task. 
         /// <para>
         /// The machine learning task your model package accomplishes. Common machine learning
-        /// tasks include object detection and image classification.
+        /// tasks include object detection and image classification. The following tasks are supported
+        /// by Inference Recommender: <code>"IMAGE_CLASSIFICATION"</code> | <code>"OBJECT_DETECTION"</code>
+        /// | <code>"TEXT_GENERATION"</code> |<code>"IMAGE_SEGMENTATION"</code> | <code>"FILL_MASK"</code>
+        /// | <code>"CLASSIFICATION"</code> | <code>"REGRESSION"</code> | <code>"OTHER"</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Specify "OTHER" if none of the tasks listed fit your use case.
         /// </para>
         /// </summary>
         public string Task
@@ -444,8 +454,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ValidationSpecification. 
         /// <para>
-        /// Specifies configurations for one or more transform jobs that Amazon SageMaker runs
-        /// to test the model package.
+        /// Specifies configurations for one or more transform jobs that SageMaker runs to test
+        /// the model package.
         /// </para>
         /// </summary>
         public ModelPackageValidationSpecification ValidationSpecification

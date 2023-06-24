@@ -55,7 +55,7 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
         public IRequest Marshall(GetSitesRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.NetworkManager");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-07-05";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-07-05";
             request.HttpMethod = "GET";
 
             if (!publicRequest.IsSetGlobalNetworkId())

@@ -34,7 +34,7 @@ namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CmafEncryption Marshaller
-    /// </summary>       
+    /// </summary>
     public class CmafEncryptionMarshaller : IRequestMarshaller<CmafEncryption, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CmafEncryptionMarshaller Instance = new CmafEncryptionMarshaller();
 
     }

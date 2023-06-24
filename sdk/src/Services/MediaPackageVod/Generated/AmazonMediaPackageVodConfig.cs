@@ -17,22 +17,22 @@
  * Do not modify this file. This file is generated from the mediapackage-vod-2018-11-07.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
-
+using Amazon.MediaPackageVod.Internal;
 
 namespace Amazon.MediaPackageVod
 {
     /// <summary>
     /// Configuration for accessing Amazon MediaPackageVod service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonMediaPackageVodConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.4.23");
+            InternalSDKUtils.BuildUserAgentString("3.7.103.61");
 
         private string _userAgent = UserAgentString;
 
@@ -40,8 +40,10 @@ namespace Amazon.MediaPackageVod
         /// Default constructor
         /// </summary>
         public AmazonMediaPackageVodConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonMediaPackageVodDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "mediapackage-vod";
+            this.EndpointProvider = new AmazonMediaPackageVodEndpointProvider();
         }
 
         /// <summary>
@@ -76,5 +78,6 @@ namespace Amazon.MediaPackageVod
                 return _userAgent;
             }
         }
+
     }
 }

@@ -44,11 +44,19 @@
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Redshift.Model.AssociateDataShareConsumerRequest.ConsumerRegion</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Redshift.Model.AssociateDataShareConsumerRequest.DataShareArn</property>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.AssociateDataShareConsumerResponse.DataShareArn</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.AssociateDataShareConsumerResponse.ManagedBy</property>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
@@ -84,6 +92,10 @@
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Redshift.Model.AuthorizeDataShareResponse.ManagedBy</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Redshift.Model.AuthorizeDataShareResponse.ProducerArn</property>
     <max>2147483647</max>
   </property-value-rule>
@@ -113,6 +125,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.AuthorizeSnapshotAccessRequest.AccountWithRestoreAccess</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.AuthorizeSnapshotAccessRequest.SnapshotArn</property>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
@@ -234,6 +250,10 @@
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Redshift.Model.CreateClusterRequest.LoadSampleData</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Redshift.Model.CreateClusterRequest.MaintenanceTrackName</property>
     <max>2147483647</max>
   </property-value-rule>
@@ -292,6 +312,42 @@
   <property-value-rule>
     <property>Amazon.Redshift.Model.CreateClusterSubnetGroupRequest.Description</property>
     <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.CreateCustomDomainAssociationRequest.ClusterIdentifier</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.CreateCustomDomainAssociationRequest.CustomDomainCertificateArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:[\w+=/,.@-]+:acm:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=,.@-]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.CreateCustomDomainAssociationRequest.CustomDomainName</property>
+    <min>1</min>
+    <max>253</max>
+    <pattern>^((?!-)[A-Za-z0-9-]{1,63}(?&lt;!-)\.)+[A-Za-z]{2,6}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.CreateCustomDomainAssociationResponse.ClusterIdentifier</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.CreateCustomDomainAssociationResponse.CustomDomainCertExpiryTime</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.CreateCustomDomainAssociationResponse.CustomDomainCertificateArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:[\w+=/,.@-]+:acm:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=,.@-]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.CreateCustomDomainAssociationResponse.CustomDomainName</property>
+    <min>1</min>
+    <max>253</max>
+    <pattern>^((?!-)[A-Za-z0-9-]{1,63}(?&lt;!-)\.)+[A-Za-z]{2,6}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.CreateEndpointAccessRequest.ClusterIdentifier</property>
@@ -462,6 +518,10 @@
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Redshift.Model.DeauthorizeDataShareResponse.ManagedBy</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Redshift.Model.DeauthorizeDataShareResponse.ProducerArn</property>
     <max>2147483647</max>
   </property-value-rule>
@@ -501,6 +561,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DeleteClusterSubnetGroupRequest.ClusterSubnetGroupName</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.DeleteCustomDomainAssociationRequest.ClusterIdentifier</property>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
@@ -676,6 +740,10 @@
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Redshift.Model.DescribeClusterSnapshotsRequest.SnapshotArn</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeClusterSnapshotsRequest.SnapshotIdentifier</property>
     <max>2147483647</max>
   </property-value-rule>
@@ -725,6 +793,26 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeClusterVersionsResponse.Marker</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.DescribeCustomDomainAssociationsRequest.CustomDomainCertificateArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:[\w+=/,.@-]+:acm:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=,.@-]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.DescribeCustomDomainAssociationsRequest.CustomDomainName</property>
+    <min>1</min>
+    <max>253</max>
+    <pattern>^((?!-)[A-Za-z0-9-]{1,63}(?&lt;!-)\.)+[A-Za-z]{2,6}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.DescribeCustomDomainAssociationsRequest.Marker</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.DescribeCustomDomainAssociationsResponse.Marker</property>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
@@ -889,6 +977,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeNodeConfigurationOptionsRequest.OwnerAccount</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.DescribeNodeConfigurationOptionsRequest.SnapshotArn</property>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
@@ -1117,11 +1209,19 @@
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Redshift.Model.DisassociateDataShareConsumerRequest.ConsumerRegion</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Redshift.Model.DisassociateDataShareConsumerRequest.DataShareArn</property>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DisassociateDataShareConsumerResponse.DataShareArn</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.DisassociateDataShareConsumerResponse.ManagedBy</property>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
@@ -1169,6 +1269,10 @@
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Redshift.Model.GetClusterCredentialsRequest.CustomDomainName</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Redshift.Model.GetClusterCredentialsRequest.DbName</property>
     <max>2147483647</max>
   </property-value-rule>
@@ -1178,6 +1282,22 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.GetClusterCredentialsResponse.DbUser</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.GetClusterCredentialsWithIAMRequest.ClusterIdentifier</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.GetClusterCredentialsWithIAMRequest.CustomDomainName</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.GetClusterCredentialsWithIAMRequest.DbName</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.GetClusterCredentialsWithIAMResponse.DbUser</property>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
@@ -1343,6 +1463,42 @@
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Redshift.Model.ModifyCustomDomainAssociationRequest.ClusterIdentifier</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.ModifyCustomDomainAssociationRequest.CustomDomainCertificateArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:[\w+=/,.@-]+:acm:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=,.@-]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.ModifyCustomDomainAssociationRequest.CustomDomainName</property>
+    <min>1</min>
+    <max>253</max>
+    <pattern>^((?!-)[A-Za-z0-9-]{1,63}(?&lt;!-)\.)+[A-Za-z]{2,6}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.ModifyCustomDomainAssociationResponse.ClusterIdentifier</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.ModifyCustomDomainAssociationResponse.CustomDomainCertExpiryTime</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.ModifyCustomDomainAssociationResponse.CustomDomainCertificateArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:[\w+=/,.@-]+:acm:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=,.@-]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.ModifyCustomDomainAssociationResponse.CustomDomainName</property>
+    <min>1</min>
+    <max>253</max>
+    <pattern>^((?!-)[A-Za-z0-9-]{1,63}(?&lt;!-)\.)+[A-Za-z]{2,6}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Redshift.Model.ModifyEndpointAccessRequest.EndpointName</property>
     <max>2147483647</max>
   </property-value-rule>
@@ -1467,6 +1623,10 @@
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Redshift.Model.RejectDataShareResponse.ManagedBy</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Redshift.Model.RejectDataShareResponse.ProducerArn</property>
     <max>2147483647</max>
   </property-value-rule>
@@ -1560,6 +1720,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.RestoreFromClusterSnapshotRequest.ReservedNodeId</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.RestoreFromClusterSnapshotRequest.SnapshotArn</property>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
@@ -1659,6 +1823,10 @@
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Redshift.Model.RevokeSnapshotAccessRequest.SnapshotArn</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Redshift.Model.RevokeSnapshotAccessRequest.SnapshotClusterIdentifier</property>
     <max>2147483647</max>
   </property-value-rule>
@@ -1719,6 +1887,10 @@
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Redshift.Model.Association.CustomDomainCertificateArn</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Redshift.Model.AttributeValueTarget.AttributeValue</property>
     <max>2147483647</max>
   </property-value-rule>
@@ -1733,6 +1905,14 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.AvailabilityZone.Name</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.CertificateAssociation.ClusterIdentifier</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.CertificateAssociation.CustomDomainName</property>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
@@ -1773,6 +1953,14 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.Cluster.ClusterVersion</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.Cluster.CustomDomainCertificateArn</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.Cluster.CustomDomainName</property>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
@@ -1941,6 +2129,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DataShareAssociation.ConsumerIdentifier</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.DataShareAssociation.ConsumerRegion</property>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>

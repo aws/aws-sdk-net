@@ -30,10 +30,20 @@ namespace Amazon.LocationService.Model
 {
     /// <summary>
     /// Container for the parameters to the CreatePlaceIndex operation.
-    /// Creates a place index resource in your AWS account. Use a place index resource to
-    /// geocode addresses and other text queries by using the <code>SearchPlaceIndexForText</code>
+    /// Creates a place index resource in your Amazon Web Services account. Use a place index
+    /// resource to geocode addresses and other text queries by using the <code>SearchPlaceIndexForText</code>
     /// operation, and reverse geocode coordinates by using the <code>SearchPlaceIndexForPosition</code>
+    /// operation, and enable autosuggestions by using the <code>SearchPlaceIndexForSuggestions</code>
     /// operation.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// If your application is tracking or routing assets you use in your business, such as
+    /// delivery vehicles or employees, you must not use Esri as your geolocation provider.
+    /// See section 82 of the <a href="http://aws.amazon.com/service-terms">Amazon Web Services
+    /// service terms</a> for more details.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class CreatePlaceIndexRequest : AmazonLocationServiceRequest
     {
@@ -66,6 +76,13 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>Grab</code> – Grab provides place index functionality for Southeast Asia. For
+        /// additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a>'
+        /// coverage, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html#grab-coverage-area">GrabMaps
+        /// countries and areas covered</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>Here</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
         /// Technologies</a>' coverage in your region of interest, see <a href="https://developer.here.com/documentation/geocoder/dev_guide/topics/coverage-geocoder.html">HERE
         /// details on goecoding coverage</a>.
@@ -74,8 +91,8 @@ namespace Amazon.LocationService.Model
         /// <para>
         /// If you specify HERE Technologies (<code>Here</code>) as the data provider, you may
         /// not <a href="https://docs.aws.amazon.com/location-places/latest/APIReference/API_DataSourceConfiguration.html">store
-        /// results</a> for locations in Japan. For more information, see the <a href="https://aws.amazon.com/service-terms/">AWS
-        /// Service Terms</a> for Amazon Location Service.
+        /// results</a> for locations in Japan. For more information, see the <a href="http://aws.amazon.com/service-terms/">Amazon
+        /// Web Services Service Terms</a> for Amazon Location Service.
         /// </para>
         ///  </important> </li> </ul> 
         /// <para>
@@ -173,15 +190,10 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property PricingPlan. 
         /// <para>
-        /// Specifies the pricing plan for your place index resource.
-        /// </para>
-        ///  
-        /// <para>
-        /// For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon
-        /// Location Service pricing</a>.
+        /// No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [Obsolete("Deprecated. If included, the only allowed value is RequestBasedUsage.")]
         public PricingPlan PricingPlan
         {
             get { return this._pricingPlan; }

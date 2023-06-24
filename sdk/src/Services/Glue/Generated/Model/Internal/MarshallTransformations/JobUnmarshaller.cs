@@ -70,6 +70,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     unmarshalledObject.AllocatedCapacity = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("CodeGenConfigurationNodes", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, CodeGenConfigurationNode, StringUnmarshaller, CodeGenConfigurationNodeUnmarshaller>(StringUnmarshaller.Instance, CodeGenConfigurationNodeUnmarshaller.Instance);
+                    unmarshalledObject.CodeGenConfigurationNodes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Command", targetDepth))
                 {
                     var unmarshaller = JobCommandUnmarshaller.Instance;
@@ -98,6 +104,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ExecutionClass", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ExecutionClass = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ExecutionProperty", targetDepth))
@@ -170,6 +182,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SecurityConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SourceControlDetails", targetDepth))
+                {
+                    var unmarshaller = SourceControlDetailsUnmarshaller.Instance;
+                    unmarshalledObject.SourceControlDetails = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Timeout", targetDepth))

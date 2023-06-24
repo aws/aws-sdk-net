@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaTailor.Model
 {
     /// <summary>
-    /// This response includes only the "property" : "type" property.
+    /// The output item response.
     /// </summary>
     public partial class ResponseOutputItem
     {

@@ -94,8 +94,8 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The identifier of the Amazon Connect instance. You can find the instanceId in the
-        /// ARN of the instance.
+        /// The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+        /// the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
@@ -133,7 +133,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property References. 
         /// <para>
-        /// A formatted URL that is shown to an agent in the Contact Control Panel (CCP).
+        /// Well-formed data on contact, shown to agents on Contact Control Panel (CCP).
         /// </para>
         /// </summary>
         public Dictionary<string, Reference> References

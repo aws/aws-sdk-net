@@ -30,12 +30,37 @@ namespace Amazon.Shield.Model
 {
     /// <summary>
     /// Container for the parameters to the ListProtectionGroups operation.
-    /// Retrieves the <a>ProtectionGroup</a> objects for the account.
+    /// Retrieves <a>ProtectionGroup</a> objects for the account. You can retrieve all protection
+    /// groups or you can provide filtering criteria and retrieve just the subset of protection
+    /// groups that match the criteria.
     /// </summary>
     public partial class ListProtectionGroupsRequest : AmazonShieldRequest
     {
+        private InclusionProtectionGroupFilters _inclusionFilters;
         private int? _maxResults;
         private string _nextToken;
+
+        /// <summary>
+        /// Gets and sets the property InclusionFilters. 
+        /// <para>
+        /// Narrows the set of protection groups that the call retrieves. You can retrieve a single
+        /// protection group by its name and you can retrieve all protection groups that are configured
+        /// with specific pattern or aggregation settings. You can provide up to one criteria
+        /// per filter type. Shield Advanced returns the protection groups that exactly match
+        /// all of the search criteria that you provide.
+        /// </para>
+        /// </summary>
+        public InclusionProtectionGroupFilters InclusionFilters
+        {
+            get { return this._inclusionFilters; }
+            set { this._inclusionFilters = value; }
+        }
+
+        // Check to see if InclusionFilters property is set
+        internal bool IsSetInclusionFilters()
+        {
+            return this._inclusionFilters != null;
+        }
 
         /// <summary>
         /// Gets and sets the property MaxResults. 

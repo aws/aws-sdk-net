@@ -61,10 +61,28 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         unmarshalledObject.ActivityMetrics = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("AdvancedCostOptimizationMetrics", targetDepth))
+                    {
+                        var unmarshaller = AdvancedCostOptimizationMetricsUnmarshaller.Instance;
+                        unmarshalledObject.AdvancedCostOptimizationMetrics = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("AdvancedDataProtectionMetrics", targetDepth))
+                    {
+                        var unmarshaller = AdvancedDataProtectionMetricsUnmarshaller.Instance;
+                        unmarshalledObject.AdvancedDataProtectionMetrics = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("BucketLevel", targetDepth))
                     {
                         var unmarshaller = BucketLevelUnmarshaller.Instance;
                         unmarshalledObject.BucketLevel = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("DetailedStatusCodesMetrics", targetDepth))
+                    {
+                        var unmarshaller = DetailedStatusCodesMetricsUnmarshaller.Instance;
+                        unmarshalledObject.DetailedStatusCodesMetrics = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }

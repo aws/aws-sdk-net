@@ -34,7 +34,7 @@ namespace Amazon.CodeArtifact.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// UpstreamRepository Marshaller
-    /// </summary>       
+    /// </summary>
     public class UpstreamRepositoryMarshaller : IRequestMarshaller<UpstreamRepository, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.CodeArtifact.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static UpstreamRepositoryMarshaller Instance = new UpstreamRepositoryMarshaller();
 
     }

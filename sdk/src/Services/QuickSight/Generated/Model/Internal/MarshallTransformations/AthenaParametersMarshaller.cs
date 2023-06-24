@@ -34,7 +34,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AthenaParameters Marshaller
-    /// </summary>       
+    /// </summary>
     public class AthenaParametersMarshaller : IRequestMarshaller<AthenaParameters, JsonMarshallerContext> 
     {
         /// <summary>
@@ -45,6 +45,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AthenaParameters requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetRoleArn())
+            {
+                context.Writer.WritePropertyName("RoleArn");
+                context.Writer.Write(requestObject.RoleArn);
+            }
+
             if(requestObject.IsSetWorkGroup())
             {
                 context.Writer.WritePropertyName("WorkGroup");
@@ -55,7 +61,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AthenaParametersMarshaller Instance = new AthenaParametersMarshaller();
 
     }

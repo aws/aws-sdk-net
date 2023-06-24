@@ -38,9 +38,12 @@ namespace Amazon.DocDB.Model
         private bool? _applyImmediately;
         private bool? _autoMinorVersionUpgrade;
         private string _caCertificateIdentifier;
+        private bool? _copyTagsToSnapshot;
         private string _dbInstanceClass;
         private string _dbInstanceIdentifier;
+        private bool? _enablePerformanceInsights;
         private string _newDBInstanceIdentifier;
+        private string _performanceInsightsKMSKeyId;
         private string _preferredMaintenanceWindow;
         private int? _promotionTier;
 
@@ -112,10 +115,29 @@ namespace Amazon.DocDB.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CopyTagsToSnapshot. 
+        /// <para>
+        /// A value that indicates whether to copy all tags from the DB instance to snapshots
+        /// of the DB instance. By default, tags are not copied.
+        /// </para>
+        /// </summary>
+        public bool CopyTagsToSnapshot
+        {
+            get { return this._copyTagsToSnapshot.GetValueOrDefault(); }
+            set { this._copyTagsToSnapshot = value; }
+        }
+
+        // Check to see if CopyTagsToSnapshot property is set
+        internal bool IsSetCopyTagsToSnapshot()
+        {
+            return this._copyTagsToSnapshot.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property DBInstanceClass. 
         /// <para>
         /// The new compute and memory capacity of the instance; for example, <code>db.r5.large</code>.
-        /// Not all instance classes are available in all Regions. 
+        /// Not all instance classes are available in all Amazon Web Services Regions. 
         /// </para>
         ///  
         /// <para>
@@ -169,6 +191,26 @@ namespace Amazon.DocDB.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EnablePerformanceInsights. 
+        /// <para>
+        /// A value that indicates whether to enable Performance Insights for the DB Instance.
+        /// For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/performance-insights.html">Using
+        /// Amazon Performance Insights</a>.
+        /// </para>
+        /// </summary>
+        public bool EnablePerformanceInsights
+        {
+            get { return this._enablePerformanceInsights.GetValueOrDefault(); }
+            set { this._enablePerformanceInsights = value; }
+        }
+
+        // Check to see if EnablePerformanceInsights property is set
+        internal bool IsSetEnablePerformanceInsights()
+        {
+            return this._enablePerformanceInsights.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property NewDBInstanceIdentifier. 
         /// <para>
         ///  The new instance identifier for the instance when renaming an instance. When you
@@ -208,6 +250,36 @@ namespace Amazon.DocDB.Model
         internal bool IsSetNewDBInstanceIdentifier()
         {
             return this._newDBInstanceIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PerformanceInsightsKMSKeyId. 
+        /// <para>
+        /// The KMS key identifier for encryption of Performance Insights data.
+        /// </para>
+        ///  
+        /// <para>
+        /// The KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS
+        /// key.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you do not specify a value for PerformanceInsightsKMSKeyId, then Amazon DocumentDB
+        /// uses your default KMS key. There is a default KMS key for your Amazon Web Services
+        /// account. Your Amazon Web Services account has a different default KMS key for each
+        /// Amazon Web Services region.
+        /// </para>
+        /// </summary>
+        public string PerformanceInsightsKMSKeyId
+        {
+            get { return this._performanceInsightsKMSKeyId; }
+            set { this._performanceInsightsKMSKeyId = value; }
+        }
+
+        // Check to see if PerformanceInsightsKMSKeyId property is set
+        internal bool IsSetPerformanceInsightsKMSKeyId()
+        {
+            return this._performanceInsightsKMSKeyId != null;
         }
 
         /// <summary>

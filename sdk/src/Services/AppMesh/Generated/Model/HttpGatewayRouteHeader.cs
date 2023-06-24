@@ -57,7 +57,11 @@ namespace Amazon.AppMesh.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Match.
+        /// Gets and sets the property Match. 
+        /// <para>
+        /// An object that represents the method and value to match with the header value sent
+        /// in a request. Specify one match method.
+        /// </para>
         /// </summary>
         public HeaderMatchMethod Match
         {

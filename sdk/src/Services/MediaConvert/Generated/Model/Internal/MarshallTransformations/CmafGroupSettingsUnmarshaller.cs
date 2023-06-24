@@ -88,6 +88,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.CodecSpecification = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("dashManifestStyle", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DashManifestStyle = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("destination", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -148,6 +154,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.MinFinalSegmentLength = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("mpdManifestBandwidthType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.MpdManifestBandwidthType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("mpdProfile", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -188,6 +200,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TargetDurationCompatibilityMode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("videoCompositionOffsets", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.VideoCompositionOffsets = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("writeDashManifest", targetDepth))

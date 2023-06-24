@@ -34,7 +34,7 @@ namespace Amazon.SnowDeviceManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Unlock Marshaller
-    /// </summary>       
+    /// </summary>
     public class UnlockMarshaller : IRequestMarshaller<Unlock, JsonMarshallerContext> 
     {
         /// <summary>
@@ -49,7 +49,7 @@ namespace Amazon.SnowDeviceManagement.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static UnlockMarshaller Instance = new UnlockMarshaller();
 
     }

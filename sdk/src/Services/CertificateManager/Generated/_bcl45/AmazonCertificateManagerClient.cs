@@ -38,12 +38,12 @@ namespace Amazon.CertificateManager
     /// <summary>
     /// Implementation for accessing CertificateManager
     ///
-    /// Amazon Web Services Certificate Manager 
+    /// Certificate Manager 
     /// <para>
-    /// You can use Amazon Web Services Certificate Manager (ACM) to manage SSL/TLS certificates
-    /// for your Amazon Web Services-based websites and applications. For more information
-    /// about using ACM, see the <a href="https://docs.aws.amazon.com/acm/latest/userguide/">Amazon
-    /// Web Services Certificate Manager User Guide</a>.
+    /// You can use Certificate Manager (ACM) to manage SSL/TLS certificates for your Amazon
+    /// Web Services-based websites and applications. For more information about using ACM,
+    /// see the <a href="https://docs.aws.amazon.com/acm/latest/userguide/">Certificate Manager
+    /// User Guide</a>.
     /// </para>
     /// </summary>
     public partial class AmazonCertificateManagerClient : AmazonServiceClient, IAmazonCertificateManager
@@ -235,6 +235,15 @@ namespace Amazon.CertificateManager
         }    
 
         /// <summary>
+        /// Customize the pipeline
+        /// </summary>
+        /// <param name="pipeline"></param>
+        protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
+        {
+            pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonCertificateManagerEndpointResolver());
+        }    
+        /// <summary>
         /// Capture metadata for the service.
         /// </summary>
         protected override IServiceMetadata ServiceMetadata
@@ -410,6 +419,13 @@ namespace Amazon.CertificateManager
         /// <param name="certificateArn">String that contains the ARN of the ACM certificate to be deleted. This must be of the form:  <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>  For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</param>
         /// 
         /// <returns>The response from the DeleteCertificate service method, as returned by CertificateManager.</returns>
+        /// <exception cref="Amazon.CertificateManager.Model.AccessDeniedException">
+        /// You do not have access required to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ConflictException">
+        /// You are trying to update a resource or configuration that is already being created
+        /// or updated. Wait for the previous operation to finish and try again.
+        /// </exception>
         /// <exception cref="Amazon.CertificateManager.Model.InvalidArnException">
         /// The requested Amazon Resource Name (ARN) does not refer to an existing resource.
         /// </exception>
@@ -420,6 +436,9 @@ namespace Amazon.CertificateManager
         /// <exception cref="Amazon.CertificateManager.Model.ResourceNotFoundException">
         /// The specified certificate cannot be found in the caller's account or the caller's
         /// account cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ThrottlingException">
+        /// The request was denied because it exceeded a quota.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/DeleteCertificate">REST API Reference for DeleteCertificate Operation</seealso>
         public virtual DeleteCertificateResponse DeleteCertificate(string certificateArn)
@@ -448,6 +467,13 @@ namespace Amazon.CertificateManager
         /// <param name="request">Container for the necessary parameters to execute the DeleteCertificate service method.</param>
         /// 
         /// <returns>The response from the DeleteCertificate service method, as returned by CertificateManager.</returns>
+        /// <exception cref="Amazon.CertificateManager.Model.AccessDeniedException">
+        /// You do not have access required to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ConflictException">
+        /// You are trying to update a resource or configuration that is already being created
+        /// or updated. Wait for the previous operation to finish and try again.
+        /// </exception>
         /// <exception cref="Amazon.CertificateManager.Model.InvalidArnException">
         /// The requested Amazon Resource Name (ARN) does not refer to an existing resource.
         /// </exception>
@@ -458,6 +484,9 @@ namespace Amazon.CertificateManager
         /// <exception cref="Amazon.CertificateManager.Model.ResourceNotFoundException">
         /// The specified certificate cannot be found in the caller's account or the caller's
         /// account cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ThrottlingException">
+        /// The request was denied because it exceeded a quota.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/DeleteCertificate">REST API Reference for DeleteCertificate Operation</seealso>
         public virtual DeleteCertificateResponse DeleteCertificate(DeleteCertificateRequest request)
@@ -491,6 +520,13 @@ namespace Amazon.CertificateManager
         /// </param>
         /// 
         /// <returns>The response from the DeleteCertificate service method, as returned by CertificateManager.</returns>
+        /// <exception cref="Amazon.CertificateManager.Model.AccessDeniedException">
+        /// You do not have access required to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ConflictException">
+        /// You are trying to update a resource or configuration that is already being created
+        /// or updated. Wait for the previous operation to finish and try again.
+        /// </exception>
         /// <exception cref="Amazon.CertificateManager.Model.InvalidArnException">
         /// The requested Amazon Resource Name (ARN) does not refer to an existing resource.
         /// </exception>
@@ -501,6 +537,9 @@ namespace Amazon.CertificateManager
         /// <exception cref="Amazon.CertificateManager.Model.ResourceNotFoundException">
         /// The specified certificate cannot be found in the caller's account or the caller's
         /// account cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ThrottlingException">
+        /// The request was denied because it exceeded a quota.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/DeleteCertificate">REST API Reference for DeleteCertificate Operation</seealso>
         public virtual Task<DeleteCertificateResponse> DeleteCertificateAsync(string certificateArn, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -532,6 +571,13 @@ namespace Amazon.CertificateManager
         /// </param>
         /// 
         /// <returns>The response from the DeleteCertificate service method, as returned by CertificateManager.</returns>
+        /// <exception cref="Amazon.CertificateManager.Model.AccessDeniedException">
+        /// You do not have access required to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ConflictException">
+        /// You are trying to update a resource or configuration that is already being created
+        /// or updated. Wait for the previous operation to finish and try again.
+        /// </exception>
         /// <exception cref="Amazon.CertificateManager.Model.InvalidArnException">
         /// The requested Amazon Resource Name (ARN) does not refer to an existing resource.
         /// </exception>
@@ -542,6 +588,9 @@ namespace Amazon.CertificateManager
         /// <exception cref="Amazon.CertificateManager.Model.ResourceNotFoundException">
         /// The specified certificate cannot be found in the caller's account or the caller's
         /// account cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ThrottlingException">
+        /// The request was denied because it exceeded a quota.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/DeleteCertificate">REST API Reference for DeleteCertificate Operation</seealso>
         public virtual Task<DeleteCertificateResponse> DeleteCertificateAsync(DeleteCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -560,6 +609,12 @@ namespace Amazon.CertificateManager
 
         /// <summary>
         /// Returns detailed metadata about the specified ACM certificate.
+        /// 
+        ///  
+        /// <para>
+        /// If you have just created a certificate using the <code>RequestCertificate</code> action,
+        /// there is a delay of several seconds before you can retrieve information about it.
+        /// </para>
         /// </summary>
         /// <param name="certificateArn">The Amazon Resource Name (ARN) of the ACM certificate. The ARN must have the following form:  <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>  For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</param>
         /// 
@@ -582,6 +637,12 @@ namespace Amazon.CertificateManager
 
         /// <summary>
         /// Returns detailed metadata about the specified ACM certificate.
+        /// 
+        ///  
+        /// <para>
+        /// If you have just created a certificate using the <code>RequestCertificate</code> action,
+        /// there is a delay of several seconds before you can retrieve information about it.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeCertificate service method.</param>
         /// 
@@ -606,6 +667,12 @@ namespace Amazon.CertificateManager
 
         /// <summary>
         /// Returns detailed metadata about the specified ACM certificate.
+        /// 
+        ///  
+        /// <para>
+        /// If you have just created a certificate using the <code>RequestCertificate</code> action,
+        /// there is a delay of several seconds before you can retrieve information about it.
+        /// </para>
         /// </summary>
         /// <param name="certificateArn">The Amazon Resource Name (ARN) of the ACM certificate. The ARN must have the following form:  <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>  For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</param>
         /// <param name="cancellationToken">
@@ -631,6 +698,12 @@ namespace Amazon.CertificateManager
 
         /// <summary>
         /// Returns detailed metadata about the specified ACM certificate.
+        /// 
+        ///  
+        /// <para>
+        /// If you have just created a certificate using the <code>RequestCertificate</code> action,
+        /// there is a delay of several seconds before you can retrieve information about it.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeCertificate service method.</param>
         /// <param name="cancellationToken">
@@ -929,14 +1002,13 @@ namespace Amazon.CertificateManager
 
 
         /// <summary>
-        /// Imports a certificate into Amazon Web Services Certificate Manager (ACM) to use with
-        /// services that are integrated with ACM. Note that <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-services.html">integrated
+        /// Imports a certificate into Certificate Manager (ACM) to use with services that are
+        /// integrated with ACM. Note that <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-services.html">integrated
         /// services</a> allow only certificate types and keys they support to be associated with
         /// their resources. Further, their support differs depending on whether the certificate
         /// is imported into IAM or into ACM. For more information, see the documentation for
         /// each service. For more information about importing certificates into ACM, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing
-        /// Certificates</a> in the <i>Amazon Web Services Certificate Manager User Guide</i>.
-        /// 
+        /// Certificates</a> in the <i>Certificate Manager User Guide</i>. 
         /// 
         ///  <note> 
         /// <para>
@@ -1056,14 +1128,13 @@ namespace Amazon.CertificateManager
 
 
         /// <summary>
-        /// Imports a certificate into Amazon Web Services Certificate Manager (ACM) to use with
-        /// services that are integrated with ACM. Note that <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-services.html">integrated
+        /// Imports a certificate into Certificate Manager (ACM) to use with services that are
+        /// integrated with ACM. Note that <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-services.html">integrated
         /// services</a> allow only certificate types and keys they support to be associated with
         /// their resources. Further, their support differs depending on whether the certificate
         /// is imported into IAM or into ACM. For more information, see the documentation for
         /// each service. For more information about importing certificates into ACM, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing
-        /// Certificates</a> in the <i>Amazon Web Services Certificate Manager User Guide</i>.
-        /// 
+        /// Certificates</a> in the <i>Certificate Manager User Guide</i>. 
         /// 
         ///  <note> 
         /// <para>
@@ -1200,6 +1271,9 @@ namespace Amazon.CertificateManager
         /// <exception cref="Amazon.CertificateManager.Model.InvalidArgsException">
         /// One or more of of request parameters specified is not valid.
         /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ValidationException">
+        /// The supplied input failed to satisfy constraints of an Amazon Web Services service.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ListCertificates">REST API Reference for ListCertificates Operation</seealso>
         public virtual ListCertificatesResponse ListCertificates()
         {
@@ -1218,6 +1292,9 @@ namespace Amazon.CertificateManager
         /// <returns>The response from the ListCertificates service method, as returned by CertificateManager.</returns>
         /// <exception cref="Amazon.CertificateManager.Model.InvalidArgsException">
         /// One or more of of request parameters specified is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ValidationException">
+        /// The supplied input failed to satisfy constraints of an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ListCertificates">REST API Reference for ListCertificates Operation</seealso>
         public virtual ListCertificatesResponse ListCertificates(ListCertificatesRequest request)
@@ -1244,6 +1321,9 @@ namespace Amazon.CertificateManager
         /// <exception cref="Amazon.CertificateManager.Model.InvalidArgsException">
         /// One or more of of request parameters specified is not valid.
         /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ValidationException">
+        /// The supplied input failed to satisfy constraints of an Amazon Web Services service.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ListCertificates">REST API Reference for ListCertificates Operation</seealso>
         public virtual Task<ListCertificatesResponse> ListCertificatesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1264,6 +1344,9 @@ namespace Amazon.CertificateManager
         /// <returns>The response from the ListCertificates service method, as returned by CertificateManager.</returns>
         /// <exception cref="Amazon.CertificateManager.Model.InvalidArgsException">
         /// One or more of of request parameters specified is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ValidationException">
+        /// The supplied input failed to satisfy constraints of an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ListCertificates">REST API Reference for ListCertificates Operation</seealso>
         public virtual Task<ListCertificatesResponse> ListCertificatesAsync(ListCertificatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1527,8 +1610,8 @@ namespace Amazon.CertificateManager
 
         /// <summary>
         /// Renews an eligible ACM certificate. At this time, only exported private certificates
-        /// can be renewed with this operation. In order to renew your ACM PCA certificates with
-        /// ACM, you must first <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaPermissions.html">grant
+        /// can be renewed with this operation. In order to renew your Amazon Web Services Private
+        /// CA certificates with ACM, you must first <a href="https://docs.aws.amazon.com/privateca/latest/userguide/PcaPermissions.html">grant
         /// the ACM service principal permission to do so</a>. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/manual-renewal.html">Testing
         /// Managed Renewal</a> in the ACM User Guide.
         /// </summary>
@@ -1555,8 +1638,8 @@ namespace Amazon.CertificateManager
 
         /// <summary>
         /// Renews an eligible ACM certificate. At this time, only exported private certificates
-        /// can be renewed with this operation. In order to renew your ACM PCA certificates with
-        /// ACM, you must first <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaPermissions.html">grant
+        /// can be renewed with this operation. In order to renew your Amazon Web Services Private
+        /// CA certificates with ACM, you must first <a href="https://docs.aws.amazon.com/privateca/latest/userguide/PcaPermissions.html">grant
         /// the ACM service principal permission to do so</a>. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/manual-renewal.html">Testing
         /// Managed Renewal</a> in the ACM User Guide.
         /// </summary>
@@ -1605,13 +1688,17 @@ namespace Amazon.CertificateManager
         /// </para>
         ///  <note> 
         /// <para>
-        /// ACM behavior differs from the <a href="https://tools.ietf.org/html/rfc6125#appendix-B.2">https://tools.ietf.org/html/rfc6125#appendix-B.2</a>RFC
-        /// 6125 specification of the certificate validation process. first checks for a subject
-        /// alternative name, and, if it finds one, ignores the common name (CN)
+        /// ACM behavior differs from the <a href="https://datatracker.ietf.org/doc/html/rfc6125#appendix-B.2">RFC
+        /// 6125</a> specification of the certificate validation process. ACM first checks for
+        /// a Subject Alternative Name, and, if it finds one, ignores the common name (CN).
         /// </para>
-        ///  </note>
+        ///  </note> 
+        /// <para>
+        /// After successful completion of the <code>RequestCertificate</code> action, there is
+        /// a delay of several seconds before you can retrieve information about the new certificate.
+        /// </para>
         /// </summary>
-        /// <param name="domainName"> Fully qualified domain name (FQDN), such as www.example.com, that you want to secure with an ACM certificate. Use an asterisk (*) to create a wildcard certificate that protects several sites in the same domain. For example, *.example.com protects www.example.com, site.example.com, and images.example.com.   The first domain name you enter cannot exceed 64 octets, including periods. Each subsequent Subject Alternative Name (SAN), however, can be up to 253 octets in length. </param>
+        /// <param name="domainName">Fully qualified domain name (FQDN), such as www.example.com, that you want to secure with an ACM certificate. Use an asterisk (*) to create a wildcard certificate that protects several sites in the same domain. For example, *.example.com protects www.example.com, site.example.com, and images.example.com.  In compliance with <a href="https://datatracker.ietf.org/doc/html/rfc5280">RFC 5280</a>, the length of the domain name (technically, the Common Name) that you provide cannot exceed 64 octets (characters), including periods. To add a longer domain name, specify it in the Subject Alternative Name field, which supports names up to 253 octets in length. </param>
         /// 
         /// <returns>The response from the RequestCertificate service method, as returned by CertificateManager.</returns>
         /// <exception cref="Amazon.CertificateManager.Model.InvalidArnException">
@@ -1662,11 +1749,15 @@ namespace Amazon.CertificateManager
         /// </para>
         ///  <note> 
         /// <para>
-        /// ACM behavior differs from the <a href="https://tools.ietf.org/html/rfc6125#appendix-B.2">https://tools.ietf.org/html/rfc6125#appendix-B.2</a>RFC
-        /// 6125 specification of the certificate validation process. first checks for a subject
-        /// alternative name, and, if it finds one, ignores the common name (CN)
+        /// ACM behavior differs from the <a href="https://datatracker.ietf.org/doc/html/rfc6125#appendix-B.2">RFC
+        /// 6125</a> specification of the certificate validation process. ACM first checks for
+        /// a Subject Alternative Name, and, if it finds one, ignores the common name (CN).
         /// </para>
-        ///  </note>
+        ///  </note> 
+        /// <para>
+        /// After successful completion of the <code>RequestCertificate</code> action, there is
+        /// a delay of several seconds before you can retrieve information about the new certificate.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RequestCertificate service method.</param>
         /// 
@@ -1721,13 +1812,17 @@ namespace Amazon.CertificateManager
         /// </para>
         ///  <note> 
         /// <para>
-        /// ACM behavior differs from the <a href="https://tools.ietf.org/html/rfc6125#appendix-B.2">https://tools.ietf.org/html/rfc6125#appendix-B.2</a>RFC
-        /// 6125 specification of the certificate validation process. first checks for a subject
-        /// alternative name, and, if it finds one, ignores the common name (CN)
+        /// ACM behavior differs from the <a href="https://datatracker.ietf.org/doc/html/rfc6125#appendix-B.2">RFC
+        /// 6125</a> specification of the certificate validation process. ACM first checks for
+        /// a Subject Alternative Name, and, if it finds one, ignores the common name (CN).
         /// </para>
-        ///  </note>
+        ///  </note> 
+        /// <para>
+        /// After successful completion of the <code>RequestCertificate</code> action, there is
+        /// a delay of several seconds before you can retrieve information about the new certificate.
+        /// </para>
         /// </summary>
-        /// <param name="domainName"> Fully qualified domain name (FQDN), such as www.example.com, that you want to secure with an ACM certificate. Use an asterisk (*) to create a wildcard certificate that protects several sites in the same domain. For example, *.example.com protects www.example.com, site.example.com, and images.example.com.   The first domain name you enter cannot exceed 64 octets, including periods. Each subsequent Subject Alternative Name (SAN), however, can be up to 253 octets in length. </param>
+        /// <param name="domainName">Fully qualified domain name (FQDN), such as www.example.com, that you want to secure with an ACM certificate. Use an asterisk (*) to create a wildcard certificate that protects several sites in the same domain. For example, *.example.com protects www.example.com, site.example.com, and images.example.com.  In compliance with <a href="https://datatracker.ietf.org/doc/html/rfc5280">RFC 5280</a>, the length of the domain name (technically, the Common Name) that you provide cannot exceed 64 octets (characters), including periods. To add a longer domain name, specify it in the Subject Alternative Name field, which supports names up to 253 octets in length. </param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -1781,11 +1876,15 @@ namespace Amazon.CertificateManager
         /// </para>
         ///  <note> 
         /// <para>
-        /// ACM behavior differs from the <a href="https://tools.ietf.org/html/rfc6125#appendix-B.2">https://tools.ietf.org/html/rfc6125#appendix-B.2</a>RFC
-        /// 6125 specification of the certificate validation process. first checks for a subject
-        /// alternative name, and, if it finds one, ignores the common name (CN)
+        /// ACM behavior differs from the <a href="https://datatracker.ietf.org/doc/html/rfc6125#appendix-B.2">RFC
+        /// 6125</a> specification of the certificate validation process. ACM first checks for
+        /// a Subject Alternative Name, and, if it finds one, ignores the common name (CN).
         /// </para>
-        ///  </note>
+        ///  </note> 
+        /// <para>
+        /// After successful completion of the <code>RequestCertificate</code> action, there is
+        /// a delay of several seconds before you can retrieve information about the new certificate.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RequestCertificate service method.</param>
         /// <param name="cancellationToken">

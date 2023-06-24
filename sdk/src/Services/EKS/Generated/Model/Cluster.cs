@@ -40,10 +40,13 @@ namespace Amazon.EKS.Model
         private DateTime? _createdAt;
         private List<EncryptionConfig> _encryptionConfig = new List<EncryptionConfig>();
         private string _endpoint;
+        private ClusterHealth _health;
+        private string _id;
         private Identity _identity;
         private KubernetesNetworkConfigResponse _kubernetesNetworkConfig;
         private Logging _logging;
         private string _name;
+        private OutpostConfigResponse _outpostConfig;
         private string _platformVersion;
         private VpcConfigResponse _resourcesVpcConfig;
         private string _roleArn;
@@ -180,6 +183,45 @@ namespace Amazon.EKS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Health. 
+        /// <para>
+        /// An object representing the health of your local Amazon EKS cluster on an Amazon Web
+        /// Services Outpost. This object isn't available for clusters on the Amazon Web Services
+        /// cloud.
+        /// </para>
+        /// </summary>
+        public ClusterHealth Health
+        {
+            get { return this._health; }
+            set { this._health = value; }
+        }
+
+        // Check to see if Health property is set
+        internal bool IsSetHealth()
+        {
+            return this._health != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Id. 
+        /// <para>
+        /// The ID of your local Amazon EKS cluster on an Amazon Web Services Outpost. This property
+        /// isn't available for an Amazon EKS cluster on the Amazon Web Services cloud.
+        /// </para>
+        /// </summary>
+        public string Id
+        {
+            get { return this._id; }
+            set { this._id = value; }
+        }
+
+        // Check to see if Id property is set
+        internal bool IsSetId()
+        {
+            return this._id != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Identity. 
         /// <para>
         /// The identity provider information for the cluster.
@@ -249,6 +291,26 @@ namespace Amazon.EKS.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OutpostConfig. 
+        /// <para>
+        /// An object representing the configuration of your local Amazon EKS cluster on an Amazon
+        /// Web Services Outpost. This object isn't available for clusters on the Amazon Web Services
+        /// cloud.
+        /// </para>
+        /// </summary>
+        public OutpostConfigResponse OutpostConfig
+        {
+            get { return this._outpostConfig; }
+            set { this._outpostConfig = value; }
+        }
+
+        // Check to see if OutpostConfig property is set
+        internal bool IsSetOutpostConfig()
+        {
+            return this._outpostConfig != null;
         }
 
         /// <summary>

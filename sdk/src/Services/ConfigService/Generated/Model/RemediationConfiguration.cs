@@ -106,7 +106,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property CreatedByService. 
         /// <para>
-        /// Name of the service that owns the service linked rule, if applicable.
+        /// Name of the service that owns the service-linked rule, if applicable.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -232,7 +232,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property TargetId. 
         /// <para>
-        /// Target ID is the name of the public document.
+        /// Target ID is the name of the SSM document.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]

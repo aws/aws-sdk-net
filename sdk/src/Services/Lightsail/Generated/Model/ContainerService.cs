@@ -44,6 +44,7 @@ namespace Amazon.Lightsail.Model
         private string _powerId;
         private string _principalArn;
         private string _privateDomainName;
+        private PrivateRegistryAccess _privateRegistryAccess;
         private Dictionary<string, List<string>> _publicDomainNames = new Dictionary<string, List<string>>();
         private ResourceType _resourceType;
         private int? _scale;
@@ -146,8 +147,8 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property Location. 
         /// <para>
-        /// An object that describes the location of the container service, such as the AWS Region
-        /// and Availability Zone.
+        /// An object that describes the location of the container service, such as the Amazon
+        /// Web Services Region and Availability Zone.
         /// </para>
         /// </summary>
         public ResourceLocation Location
@@ -234,8 +235,9 @@ namespace Amazon.Lightsail.Model
         ///  
         /// <para>
         /// The principal ARN can be used to create a trust relationship between your standard
-        /// AWS account and your Lightsail container service. This allows you to give your service
-        /// permission to access resources in your standard AWS account.
+        /// Amazon Web Services account and your Lightsail container service. This allows you
+        /// to give your service permission to access resources in your standard Amazon Web Services
+        /// account.
         /// </para>
         /// </summary>
         public string PrincipalArn
@@ -271,6 +273,32 @@ namespace Amazon.Lightsail.Model
         internal bool IsSetPrivateDomainName()
         {
             return this._privateDomainName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PrivateRegistryAccess. 
+        /// <para>
+        /// An object that describes the configuration for the container service to access private
+        /// container image repositories, such as Amazon Elastic Container Registry (Amazon ECR)
+        /// private repositories.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-container-service-ecr-private-repo-access">Configuring
+        /// access to an Amazon ECR private repository for an Amazon Lightsail container service</a>
+        /// in the <i>Amazon Lightsail Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        public PrivateRegistryAccess PrivateRegistryAccess
+        {
+            get { return this._privateRegistryAccess; }
+            set { this._privateRegistryAccess = value; }
+        }
+
+        // Check to see if PrivateRegistryAccess property is set
+        internal bool IsSetPrivateRegistryAccess()
+        {
+            return this._privateRegistryAccess != null;
         }
 
         /// <summary>

@@ -32,12 +32,13 @@ namespace Amazon.ConfigService.Model
     /// Container for the parameters to the GetComplianceDetailsByResource operation.
     /// Returns the evaluation results for the specified Amazon Web Services resource. The
     /// results indicate which Config rules were used to evaluate the resource, when each
-    /// rule was last used, and whether the resource complies with each rule.
+    /// rule was last invoked, and whether the resource complies with each rule.
     /// </summary>
     public partial class GetComplianceDetailsByResourceRequest : AmazonConfigServiceRequest
     {
         private List<string> _complianceTypes = new List<string>();
         private string _nextToken;
+        private string _resourceEvaluationId;
         private string _resourceId;
         private string _resourceType;
 
@@ -48,7 +49,9 @@ namespace Amazon.ConfigService.Model
         /// </para>
         ///  
         /// <para>
-        /// The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code>.
+        ///  <code>INSUFFICIENT_DATA</code> is a valid <code>ComplianceType</code> that is returned
+        /// when an Config rule cannot be evaluated. However, <code>INSUFFICIENT_DATA</code> cannot
+        /// be used as a <code>ComplianceType</code> for filtering results.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=3)]
@@ -84,12 +87,38 @@ namespace Amazon.ConfigService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ResourceEvaluationId. 
+        /// <para>
+        /// The unique ID of Amazon Web Services resource execution for which you want to retrieve
+        /// evaluation results. 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// You need to only provide either a <code>ResourceEvaluationID</code> or a <code>ResourceID
+        /// </code>and <code>ResourceType</code>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        [AWSProperty(Min=1, Max=128)]
+        public string ResourceEvaluationId
+        {
+            get { return this._resourceEvaluationId; }
+            set { this._resourceEvaluationId = value; }
+        }
+
+        // Check to see if ResourceEvaluationId property is set
+        internal bool IsSetResourceEvaluationId()
+        {
+            return this._resourceEvaluationId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ResourceId. 
         /// <para>
         /// The ID of the Amazon Web Services resource for which you want compliance information.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=768)]
+        [AWSProperty(Min=1, Max=768)]
         public string ResourceId
         {
             get { return this._resourceId; }
@@ -108,7 +137,7 @@ namespace Amazon.ConfigService.Model
         /// The type of the Amazon Web Services resource for which you want compliance information.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=256)]
+        [AWSProperty(Min=1, Max=256)]
         public string ResourceType
         {
             get { return this._resourceType; }

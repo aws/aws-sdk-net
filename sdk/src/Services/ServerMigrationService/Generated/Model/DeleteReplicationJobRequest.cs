@@ -34,9 +34,9 @@ namespace Amazon.ServerMigrationService.Model
     /// 
     ///  
     /// <para>
-    /// After you delete a replication job, there are no further replication runs. AWS deletes
-    /// the contents of the Amazon S3 bucket used to store AWS SMS artifacts. The AMIs created
-    /// by the replication runs are not deleted.
+    /// After you delete a replication job, there are no further replication runs. Amazon
+    /// Web Services deletes the contents of the Amazon S3 bucket used to store Server Migration
+    /// Service artifacts. The AMIs created by the replication runs are not deleted.
     /// </para>
     /// </summary>
     public partial class DeleteReplicationJobRequest : AmazonServerMigrationServiceRequest

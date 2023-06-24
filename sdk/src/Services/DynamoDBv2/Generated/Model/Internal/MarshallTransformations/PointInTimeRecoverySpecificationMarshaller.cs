@@ -34,7 +34,7 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// PointInTimeRecoverySpecification Marshaller
-    /// </summary>       
+    /// </summary>
     public class PointInTimeRecoverySpecificationMarshaller : IRequestMarshaller<PointInTimeRecoverySpecification, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static PointInTimeRecoverySpecificationMarshaller Instance = new PointInTimeRecoverySpecificationMarshaller();
 
     }

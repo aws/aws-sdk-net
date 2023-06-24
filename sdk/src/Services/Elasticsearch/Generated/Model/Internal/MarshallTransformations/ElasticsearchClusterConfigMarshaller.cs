@@ -34,7 +34,7 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ElasticsearchClusterConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class ElasticsearchClusterConfigMarshaller : IRequestMarshaller<ElasticsearchClusterConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -125,7 +125,7 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ElasticsearchClusterConfigMarshaller Instance = new ElasticsearchClusterConfigMarshaller();
 
     }

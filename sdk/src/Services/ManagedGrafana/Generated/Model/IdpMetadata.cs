@@ -32,7 +32,8 @@ namespace Amazon.ManagedGrafana.Model
     /// A structure containing the identity provider (IdP) metadata used to integrate the
     /// identity provider with this workspace. You can specify the metadata either by providing
     /// a URL to its location in the <code>url</code> parameter, or by specifying the full
-    /// metadata in XML format in the <code>xml</code> parameter.
+    /// metadata in XML format in the <code>xml</code> parameter. Specifying both will cause
+    /// an error.
     /// </summary>
     public partial class IdpMetadata
     {
@@ -42,7 +43,7 @@ namespace Amazon.ManagedGrafana.Model
         /// <summary>
         /// Gets and sets the property Url. 
         /// <para>
-        /// The URL of the location containing the metadata.
+        /// The URL of the location containing the IdP metadata.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
@@ -61,7 +62,7 @@ namespace Amazon.ManagedGrafana.Model
         /// <summary>
         /// Gets and sets the property Xml. 
         /// <para>
-        /// The actual full metadata file, in XML format.
+        /// The full IdP metadata, in XML format.
         /// </para>
         /// </summary>
         public string Xml

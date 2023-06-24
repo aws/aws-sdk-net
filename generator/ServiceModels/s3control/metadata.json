@@ -1,5 +1,6 @@
 {
   "active": true,
   "synopsis": "Add support for new S3 Block Public Access account-level APIs. The Block Public Access settings allow account owners to prevent public access to S3 data via bucket/object ACLs or bucket policies.",
-  "generate-client-constructors": true
+  "generate-client-constructors": true,
+  "legacy-service-id": "S3 Control"
 }

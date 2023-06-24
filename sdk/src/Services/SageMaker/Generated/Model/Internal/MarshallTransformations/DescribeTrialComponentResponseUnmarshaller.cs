@@ -129,6 +129,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     response.Source = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Sources", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<TrialComponentSource, TrialComponentSourceUnmarshaller>(TrialComponentSourceUnmarshaller.Instance);
+                    response.Sources = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("StartTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

@@ -34,7 +34,7 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// EventParameters Marshaller
-    /// </summary>       
+    /// </summary>
     public class EventParametersMarshaller : IRequestMarshaller<EventParameters, JsonMarshallerContext> 
     {
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static EventParametersMarshaller Instance = new EventParametersMarshaller();
 
     }

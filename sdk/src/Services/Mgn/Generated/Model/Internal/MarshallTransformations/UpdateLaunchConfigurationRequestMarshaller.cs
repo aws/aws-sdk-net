@@ -56,7 +56,7 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Mgn");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-02-26";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-02-26";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/UpdateLaunchConfiguration";
@@ -65,6 +65,12 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetBootMode())
+                {
+                    context.Writer.WritePropertyName("bootMode");
+                    context.Writer.Write(publicRequest.BootMode);
+                }
+
                 if(publicRequest.IsSetCopyPrivateIp())
                 {
                     context.Writer.WritePropertyName("copyPrivateIp");
@@ -75,6 +81,12 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("copyTags");
                     context.Writer.Write(publicRequest.CopyTags);
+                }
+
+                if(publicRequest.IsSetEnableMapAutoTagging())
+                {
+                    context.Writer.WritePropertyName("enableMapAutoTagging");
+                    context.Writer.Write(publicRequest.EnableMapAutoTagging);
                 }
 
                 if(publicRequest.IsSetLaunchDisposition())
@@ -94,10 +106,27 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetMapAutoTaggingMpeID())
+                {
+                    context.Writer.WritePropertyName("mapAutoTaggingMpeID");
+                    context.Writer.Write(publicRequest.MapAutoTaggingMpeID);
+                }
+
                 if(publicRequest.IsSetName())
                 {
                     context.Writer.WritePropertyName("name");
                     context.Writer.Write(publicRequest.Name);
+                }
+
+                if(publicRequest.IsSetPostLaunchActions())
+                {
+                    context.Writer.WritePropertyName("postLaunchActions");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = PostLaunchActionsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.PostLaunchActions, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
                 if(publicRequest.IsSetSourceServerID())
@@ -112,7 +141,6 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.TargetInstanceTypeRightSizingMethod);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

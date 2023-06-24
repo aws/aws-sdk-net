@@ -29,5 +29,10 @@ namespace Amazon.DataSync.Model
         /// Enumerable containing all full responses for the operation
         /// </summary>
         IPaginatedEnumerable<ListTaskExecutionsResponse> Responses { get; }
+
+        /// <summary>
+        /// Enumerable containing all of the TaskExecutions
+        /// </summary>
+        IPaginatedEnumerable<TaskExecutionListEntry> TaskExecutions { get; }
     }
 }

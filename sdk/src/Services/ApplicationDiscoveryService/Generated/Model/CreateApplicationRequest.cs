@@ -43,6 +43,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// Description of the application to be created.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1000)]
         public string Description
         {
             get { return this._description; }
@@ -61,7 +62,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// Name of the application to be created.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=127)]
         public string Name
         {
             get { return this._name; }

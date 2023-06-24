@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// This exception is thrown when the specified OAuth flow is invalid.
+    /// This exception is thrown when the specified OAuth flow is not valid.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

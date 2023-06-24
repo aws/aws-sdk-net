@@ -34,7 +34,7 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// WorkGroupConfigurationUpdates Marshaller
-    /// </summary>       
+    /// </summary>
     public class WorkGroupConfigurationUpdatesMarshaller : IRequestMarshaller<WorkGroupConfigurationUpdates, JsonMarshallerContext> 
     {
         /// <summary>
@@ -45,10 +45,33 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(WorkGroupConfigurationUpdates requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAdditionalConfiguration())
+            {
+                context.Writer.WritePropertyName("AdditionalConfiguration");
+                context.Writer.Write(requestObject.AdditionalConfiguration);
+            }
+
             if(requestObject.IsSetBytesScannedCutoffPerQuery())
             {
                 context.Writer.WritePropertyName("BytesScannedCutoffPerQuery");
                 context.Writer.Write(requestObject.BytesScannedCutoffPerQuery);
+            }
+
+            if(requestObject.IsSetCustomerContentEncryptionConfiguration())
+            {
+                context.Writer.WritePropertyName("CustomerContentEncryptionConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = CustomerContentEncryptionConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.CustomerContentEncryptionConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetEnableMinimumEncryptionConfiguration())
+            {
+                context.Writer.WritePropertyName("EnableMinimumEncryptionConfiguration");
+                context.Writer.Write(requestObject.EnableMinimumEncryptionConfiguration);
             }
 
             if(requestObject.IsSetEnforceWorkGroupConfiguration())
@@ -68,6 +91,12 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetExecutionRole())
+            {
+                context.Writer.WritePropertyName("ExecutionRole");
+                context.Writer.Write(requestObject.ExecutionRole);
+            }
+
             if(requestObject.IsSetPublishCloudWatchMetricsEnabled())
             {
                 context.Writer.WritePropertyName("PublishCloudWatchMetricsEnabled");
@@ -78,6 +107,12 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("RemoveBytesScannedCutoffPerQuery");
                 context.Writer.Write(requestObject.RemoveBytesScannedCutoffPerQuery);
+            }
+
+            if(requestObject.IsSetRemoveCustomerContentEncryptionConfiguration())
+            {
+                context.Writer.WritePropertyName("RemoveCustomerContentEncryptionConfiguration");
+                context.Writer.Write(requestObject.RemoveCustomerContentEncryptionConfiguration);
             }
 
             if(requestObject.IsSetRequesterPaysEnabled())
@@ -101,7 +136,7 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static WorkGroupConfigurationUpdatesMarshaller Instance = new WorkGroupConfigurationUpdatesMarshaller();
 
     }

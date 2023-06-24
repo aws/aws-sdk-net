@@ -47,8 +47,7 @@ namespace Amazon.SageMaker.Model
         /// If an AutoML job exceeds the maximum runtime, the job is stopped automatically and
         /// its processing is ended gracefully. The AutoML job identifies the best model whose
         /// training was completed and marks it as the best-performing model. Any unfinished steps
-        /// of the job, such as automatic one-click Autopilot model deployment, will not be completed.
-        /// 
+        /// of the job, such as automatic one-click Autopilot model deployment, are not completed.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -69,8 +68,13 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// The maximum number of times a training job is allowed to run.
         /// </para>
+        ///  
+        /// <para>
+        /// For job V2s (jobs created by calling <code>CreateAutoMLJobV2</code>), the supported
+        /// value is 1.
+        /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
+        [AWSProperty(Min=1, Max=750)]
         public int MaxCandidates
         {
             get { return this._maxCandidates.GetValueOrDefault(); }
@@ -86,8 +90,16 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property MaxRuntimePerTrainingJobInSeconds. 
         /// <para>
-        /// The maximum time, in seconds, that each training job is allowed to run as part of
-        /// a hyperparameter tuning job. For more information, see the used by the action.
+        /// The maximum time, in seconds, that each training job executed inside hyperparameter
+        /// tuning is allowed to run as part of a hyperparameter tuning job. For more information,
+        /// see the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StoppingCondition.html">StoppingCondition</a>
+        /// used by the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateHyperParameterTuningJob.html">CreateHyperParameterTuningJob</a>
+        /// action.
+        /// </para>
+        ///  
+        /// <para>
+        /// For job V2s (jobs created by calling <code>CreateAutoMLJobV2</code>), this field controls
+        /// the runtime of the job candidate.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

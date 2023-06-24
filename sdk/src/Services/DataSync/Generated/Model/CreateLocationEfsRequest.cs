@@ -30,46 +30,46 @@ namespace Amazon.DataSync.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateLocationEfs operation.
-    /// Creates an endpoint for an Amazon EFS file system.
+    /// Creates an endpoint for an Amazon EFS file system that DataSync can access for a transfer.
+    /// For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-efs-location.html">Creating
+    /// a location for Amazon EFS</a>.
     /// </summary>
     public partial class CreateLocationEfsRequest : AmazonDataSyncRequest
     {
+        private string _accessPointArn;
         private Ec2Config _ec2Config;
         private string _efsFilesystemArn;
+        private string _fileSystemAccessRoleArn;
+        private EfsInTransitEncryption _inTransitEncryption;
         private string _subdirectory;
         private List<TagListEntry> _tags = new List<TagListEntry>();
 
         /// <summary>
+        /// Gets and sets the property AccessPointArn. 
+        /// <para>
+        /// Specifies the Amazon Resource Name (ARN) of the access point that DataSync uses to
+        /// access the Amazon EFS file system.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=128)]
+        public string AccessPointArn
+        {
+            get { return this._accessPointArn; }
+            set { this._accessPointArn = value; }
+        }
+
+        // Check to see if AccessPointArn property is set
+        internal bool IsSetAccessPointArn()
+        {
+            return this._accessPointArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Ec2Config. 
         /// <para>
-        /// The subnet and security group that the Amazon EFS file system uses. The security group
-        /// that you provide needs to be able to communicate with the security group on the mount
-        /// target in the subnet specified.
+        /// Specifies the subnet and security groups DataSync uses to access your Amazon EFS file
+        /// system.
         /// </para>
-        ///  
-        /// <para>
-        /// The exact relationship between security group M (of the mount target) and security
-        /// group S (which you provide for DataSync to use at this stage) is as follows: 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  Security group M (which you associate with the mount target) must allow inbound access
-        /// for the Transmission Control Protocol (TCP) on the NFS port (2049) from security group
-        /// S. You can enable inbound connections either by IP address (CIDR range) or security
-        /// group. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Security group S (provided to DataSync to access EFS) should have a rule that enables
-        /// outbound connections to the NFS port on one of the file system’s mount targets. You
-        /// can enable outbound connections either by IP address (CIDR range) or security group.
-        /// </para>
-        ///  
-        /// <para>
-        /// For information about security groups and mount targets, see Security Groups for Amazon
-        /// EC2 Instances and Mount Targets in the <i>Amazon EFS User Guide.</i> 
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public Ec2Config Ec2Config
@@ -87,7 +87,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property EfsFilesystemArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) for the Amazon EFS file system.
+        /// Specifies the ARN for the Amazon EFS file system.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=128)]
@@ -104,15 +104,59 @@ namespace Amazon.DataSync.Model
         }
 
         /// <summary>
+        /// Gets and sets the property FileSystemAccessRoleArn. 
+        /// <para>
+        /// Specifies an Identity and Access Management (IAM) role that DataSync assumes when
+        /// mounting the Amazon EFS file system.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=2048)]
+        public string FileSystemAccessRoleArn
+        {
+            get { return this._fileSystemAccessRoleArn; }
+            set { this._fileSystemAccessRoleArn = value; }
+        }
+
+        // Check to see if FileSystemAccessRoleArn property is set
+        internal bool IsSetFileSystemAccessRoleArn()
+        {
+            return this._fileSystemAccessRoleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InTransitEncryption. 
+        /// <para>
+        /// Specifies whether you want DataSync to use Transport Layer Security (TLS) 1.2 encryption
+        /// when it copies data to or from the Amazon EFS file system.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify an access point using <code>AccessPointArn</code> or an IAM role using
+        /// <code>FileSystemAccessRoleArn</code>, you must set this parameter to <code>TLS1_2</code>.
+        /// </para>
+        /// </summary>
+        public EfsInTransitEncryption InTransitEncryption
+        {
+            get { return this._inTransitEncryption; }
+            set { this._inTransitEncryption = value; }
+        }
+
+        // Check to see if InTransitEncryption property is set
+        internal bool IsSetInTransitEncryption()
+        {
+            return this._inTransitEncryption != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Subdirectory. 
         /// <para>
-        /// A subdirectory in the location’s path. This subdirectory in the EFS file system is
-        /// used to read data from the EFS source location or write data to the EFS destination.
-        /// By default, DataSync uses the root directory.
+        /// Specifies a mount path for your Amazon EFS file system. This is where DataSync reads
+        /// or writes data (depending on if this is a source or destination location). By default,
+        /// DataSync uses the root directory, but you can also include subdirectories.
         /// </para>
         ///  <note> 
         /// <para>
-        ///  <code>Subdirectory</code> must be specified with forward slashes. For example, <code>/path/to/folder</code>.
+        /// You must specify a value with forward slashes (for example, <code>/path/to/folder</code>).
         /// </para>
         ///  </note>
         /// </summary>
@@ -132,9 +176,9 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The key-value pair that represents a tag that you want to add to the resource. The
-        /// value can be an empty string. This value helps you manage, filter, and search for
-        /// your resources. We recommend that you create a name tag for your location.
+        /// Specifies the key-value pair that represents a tag that you want to add to the resource.
+        /// The value can be an empty string. This value helps you manage, filter, and search
+        /// for your resources. We recommend that you create a name tag for your location.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]

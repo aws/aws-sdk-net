@@ -70,6 +70,12 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
                     unmarshalledObject.Amplitude = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("CustomConnector", targetDepth))
+                {
+                    var unmarshaller = CustomConnectorSourcePropertiesUnmarshaller.Instance;
+                    unmarshalledObject.CustomConnector = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Datadog", targetDepth))
                 {
                     var unmarshaller = DatadogSourcePropertiesUnmarshaller.Instance;
@@ -98,6 +104,12 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = MarketoSourcePropertiesUnmarshaller.Instance;
                     unmarshalledObject.Marketo = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Pardot", targetDepth))
+                {
+                    var unmarshaller = PardotSourcePropertiesUnmarshaller.Instance;
+                    unmarshalledObject.Pardot = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("S3", targetDepth))

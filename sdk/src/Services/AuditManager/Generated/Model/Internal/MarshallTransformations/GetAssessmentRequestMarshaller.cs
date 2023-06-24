@@ -55,7 +55,7 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
         public IRequest Marshall(GetAssessmentRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.AuditManager");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-07-25";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-07-25";
             request.HttpMethod = "GET";
 
             if (!publicRequest.IsSetAssessmentId())

@@ -75,6 +75,12 @@ namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
                     response.ServiceArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("VpcDNSTargets", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<VpcDNSTarget, VpcDNSTargetUnmarshaller>(VpcDNSTargetUnmarshaller.Instance);
+                    response.VpcDNSTargets = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

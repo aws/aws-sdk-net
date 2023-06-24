@@ -41,6 +41,7 @@ namespace Amazon.Proton.Model
         private string _description;
         private string _majorVersion;
         private TemplateVersionSourceInput _source;
+        private List<string> _supportedComponentSources = new List<string>();
         private List<Tag> _tags = new List<Tag>();
         private string _templateName;
 
@@ -67,8 +68,9 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property CompatibleEnvironmentTemplates. 
         /// <para>
-        /// An array of compatible environment template objects for the new version of a service
-        /// template.
+        /// An array of environment template objects that are compatible with the new service
+        /// template version. A service instance based on this service template version can run
+        /// in environments based on compatible templates.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=10)]
@@ -90,7 +92,7 @@ namespace Amazon.Proton.Model
         /// A description of the new version of a service template.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=500)]
+        [AWSProperty(Sensitive=true, Min=0, Max=500)]
         public string Description
         {
             get { return this._description; }
@@ -148,9 +150,39 @@ namespace Amazon.Proton.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SupportedComponentSources. 
+        /// <para>
+        /// An array of supported component sources. Components with supported sources can be
+        /// attached to service instances based on this service template version.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+        /// components</a> in the <i>Proton User Guide</i>.
+        /// </para>
+        /// </summary>
+        public List<string> SupportedComponentSources
+        {
+            get { return this._supportedComponentSources; }
+            set { this._supportedComponentSources = value; }
+        }
+
+        // Check to see if SupportedComponentSources property is set
+        internal bool IsSetSupportedComponentSources()
+        {
+            return this._supportedComponentSources != null && this._supportedComponentSources.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Create tags for a new version of a service template.
+        /// An optional list of metadata items that you can associate with the Proton service
+        /// template version. A tag is a key-value pair.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
+        /// resources and tagging</a> in the <i>Proton User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]

@@ -25,6 +25,60 @@ namespace Amazon.CloudWatch
 {
 
     /// <summary>
+    /// Constants used for properties of type ActionsSuppressedBy.
+    /// </summary>
+    public class ActionsSuppressedBy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Alarm for ActionsSuppressedBy
+        /// </summary>
+        public static readonly ActionsSuppressedBy Alarm = new ActionsSuppressedBy("Alarm");
+        /// <summary>
+        /// Constant ExtensionPeriod for ActionsSuppressedBy
+        /// </summary>
+        public static readonly ActionsSuppressedBy ExtensionPeriod = new ActionsSuppressedBy("ExtensionPeriod");
+        /// <summary>
+        /// Constant WaitPeriod for ActionsSuppressedBy
+        /// </summary>
+        public static readonly ActionsSuppressedBy WaitPeriod = new ActionsSuppressedBy("WaitPeriod");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ActionsSuppressedBy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ActionsSuppressedBy FindValue(string value)
+        {
+            return FindValue<ActionsSuppressedBy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ActionsSuppressedBy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AlarmType.
     /// </summary>
     public class AlarmType : ConstantClass
@@ -242,6 +296,52 @@ namespace Amazon.CloudWatch
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ComparisonOperator(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type EvaluationState.
+    /// </summary>
+    public class EvaluationState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PARTIAL_DATA for EvaluationState
+        /// </summary>
+        public static readonly EvaluationState PARTIAL_DATA = new EvaluationState("PARTIAL_DATA");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EvaluationState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EvaluationState FindValue(string value)
+        {
+            return FindValue<EvaluationState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EvaluationState(string value)
         {
             return FindValue(value);
         }
@@ -724,6 +824,10 @@ namespace Amazon.CloudWatch
         /// Constant Complete for StatusCode
         /// </summary>
         public static readonly StatusCode Complete = new StatusCode("Complete");
+        /// <summary>
+        /// Constant Forbidden for StatusCode
+        /// </summary>
+        public static readonly StatusCode Forbidden = new StatusCode("Forbidden");
         /// <summary>
         /// Constant InternalError for StatusCode
         /// </summary>

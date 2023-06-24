@@ -35,6 +35,7 @@ namespace Amazon.LookoutMetrics.Model
     public partial class CreateMetricSetRequest : AmazonLookoutMetricsRequest
     {
         private string _anomalyDetectorArn;
+        private List<MetricSetDimensionFilter> _dimensionFilterList = new List<MetricSetDimensionFilter>();
         private List<string> _dimensionList = new List<string>();
         private List<Metric> _metricList = new List<Metric>();
         private string _metricSetDescription;
@@ -63,6 +64,24 @@ namespace Amazon.LookoutMetrics.Model
         internal bool IsSetAnomalyDetectorArn()
         {
             return this._anomalyDetectorArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DimensionFilterList. 
+        /// <para>
+        /// A list of filters that specify which data is kept for anomaly detection.
+        /// </para>
+        /// </summary>
+        public List<MetricSetDimensionFilter> DimensionFilterList
+        {
+            get { return this._dimensionFilterList; }
+            set { this._dimensionFilterList = value; }
+        }
+
+        // Check to see if DimensionFilterList property is set
+        internal bool IsSetDimensionFilterList()
+        {
+            return this._dimensionFilterList != null && this._dimensionFilterList.Count > 0; 
         }
 
         /// <summary>
@@ -182,7 +201,7 @@ namespace Amazon.LookoutMetrics.Model
         /// Gets and sets the property Offset. 
         /// <para>
         /// After an interval ends, the amount of seconds that the detector waits before importing
-        /// data. Offset is only supported for S3 and Redshift datasources.
+        /// data. Offset is only supported for S3, Redshift, Athena and datasources.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=432000)]

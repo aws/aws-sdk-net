@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// Container for the response returned by the <code> <a>CreatePackage</a> </code> operation.
+    /// Container for the response returned by the <code>CreatePackage</code> operation.
     /// </summary>
     public partial class CreatePackageResponse : AmazonWebServiceResponse
     {
@@ -38,7 +38,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property PackageDetails. 
         /// <para>
-        /// Information about the package. 
+        /// Basic information about an OpenSearch Service package.
         /// </para>
         /// </summary>
         public PackageDetails PackageDetails

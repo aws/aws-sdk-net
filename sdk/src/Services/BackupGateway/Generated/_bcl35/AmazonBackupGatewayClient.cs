@@ -253,6 +253,15 @@ namespace Amazon.BackupGateway
         }
 
         /// <summary>
+        /// Customize the pipeline
+        /// </summary>
+        /// <param name="pipeline"></param>
+        protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
+        {
+            pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonBackupGatewayEndpointResolver());
+        }
+        /// <summary>
         /// Capture metadata for the service.
         /// </summary>
         protected override IServiceMetadata ServiceMetadata
@@ -292,6 +301,10 @@ namespace Amazon.BackupGateway
         /// </exception>
         /// <exception cref="Amazon.BackupGateway.Model.InternalServerException">
         /// The operation did not succeed because an internal error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ThrottlingException">
+        /// TPS has been limited to protect against intentional or unintentional high request
+        /// volumes.
         /// </exception>
         /// <exception cref="Amazon.BackupGateway.Model.ValidationException">
         /// The operation did not succeed because a validation error occurred.
@@ -353,6 +366,10 @@ namespace Amazon.BackupGateway
         /// <returns>The response from the CreateGateway service method, as returned by BackupGateway.</returns>
         /// <exception cref="Amazon.BackupGateway.Model.InternalServerException">
         /// The operation did not succeed because an internal error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ThrottlingException">
+        /// TPS has been limited to protect against intentional or unintentional high request
+        /// volumes.
         /// </exception>
         /// <exception cref="Amazon.BackupGateway.Model.ValidationException">
         /// The operation did not succeed because a validation error occurred.
@@ -417,6 +434,10 @@ namespace Amazon.BackupGateway
         /// <exception cref="Amazon.BackupGateway.Model.ResourceNotFoundException">
         /// A resource that is required for the action wasn't found.
         /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ThrottlingException">
+        /// TPS has been limited to protect against intentional or unintentional high request
+        /// volumes.
+        /// </exception>
         /// <exception cref="Amazon.BackupGateway.Model.ValidationException">
         /// The operation did not succeed because a validation error occurred.
         /// </exception>
@@ -477,11 +498,18 @@ namespace Amazon.BackupGateway
         /// <exception cref="Amazon.BackupGateway.Model.AccessDeniedException">
         /// The operation cannot proceed because you have insufficient permissions.
         /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ConflictException">
+        /// The operation cannot proceed because it is not supported.
+        /// </exception>
         /// <exception cref="Amazon.BackupGateway.Model.InternalServerException">
         /// The operation did not succeed because an internal error occurred. Try again later.
         /// </exception>
         /// <exception cref="Amazon.BackupGateway.Model.ResourceNotFoundException">
         /// A resource that is required for the action wasn't found.
+        /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ThrottlingException">
+        /// TPS has been limited to protect against intentional or unintentional high request
+        /// volumes.
         /// </exception>
         /// <exception cref="Amazon.BackupGateway.Model.ValidationException">
         /// The operation did not succeed because a validation error occurred.
@@ -550,6 +578,10 @@ namespace Amazon.BackupGateway
         /// <exception cref="Amazon.BackupGateway.Model.ResourceNotFoundException">
         /// A resource that is required for the action wasn't found.
         /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ThrottlingException">
+        /// TPS has been limited to protect against intentional or unintentional high request
+        /// volumes.
+        /// </exception>
         /// <exception cref="Amazon.BackupGateway.Model.ValidationException">
         /// The operation did not succeed because a validation error occurred.
         /// </exception>
@@ -599,6 +631,347 @@ namespace Amazon.BackupGateway
 
         #endregion
         
+        #region  GetBandwidthRateLimitSchedule
+
+        /// <summary>
+        /// Retrieves the bandwidth rate limit schedule for a specified gateway. By default, gateways
+        /// do not have bandwidth rate limit schedules, which means no bandwidth rate limiting
+        /// is in effect. Use this to get a gateway's bandwidth rate limit schedule.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetBandwidthRateLimitSchedule service method.</param>
+        /// 
+        /// <returns>The response from the GetBandwidthRateLimitSchedule service method, as returned by BackupGateway.</returns>
+        /// <exception cref="Amazon.BackupGateway.Model.InternalServerException">
+        /// The operation did not succeed because an internal error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ResourceNotFoundException">
+        /// A resource that is required for the action wasn't found.
+        /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ThrottlingException">
+        /// TPS has been limited to protect against intentional or unintentional high request
+        /// volumes.
+        /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ValidationException">
+        /// The operation did not succeed because a validation error occurred.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/GetBandwidthRateLimitSchedule">REST API Reference for GetBandwidthRateLimitSchedule Operation</seealso>
+        public virtual GetBandwidthRateLimitScheduleResponse GetBandwidthRateLimitSchedule(GetBandwidthRateLimitScheduleRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetBandwidthRateLimitScheduleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetBandwidthRateLimitScheduleResponseUnmarshaller.Instance;
+
+            return Invoke<GetBandwidthRateLimitScheduleResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetBandwidthRateLimitSchedule operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetBandwidthRateLimitSchedule operation on AmazonBackupGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetBandwidthRateLimitSchedule
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/GetBandwidthRateLimitSchedule">REST API Reference for GetBandwidthRateLimitSchedule Operation</seealso>
+        public virtual IAsyncResult BeginGetBandwidthRateLimitSchedule(GetBandwidthRateLimitScheduleRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetBandwidthRateLimitScheduleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetBandwidthRateLimitScheduleResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetBandwidthRateLimitSchedule operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBandwidthRateLimitSchedule.</param>
+        /// 
+        /// <returns>Returns a  GetBandwidthRateLimitScheduleResult from BackupGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/GetBandwidthRateLimitSchedule">REST API Reference for GetBandwidthRateLimitSchedule Operation</seealso>
+        public virtual GetBandwidthRateLimitScheduleResponse EndGetBandwidthRateLimitSchedule(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetBandwidthRateLimitScheduleResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetGateway
+
+        /// <summary>
+        /// By providing the ARN (Amazon Resource Name), this API returns the gateway.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetGateway service method.</param>
+        /// 
+        /// <returns>The response from the GetGateway service method, as returned by BackupGateway.</returns>
+        /// <exception cref="Amazon.BackupGateway.Model.InternalServerException">
+        /// The operation did not succeed because an internal error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ResourceNotFoundException">
+        /// A resource that is required for the action wasn't found.
+        /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ThrottlingException">
+        /// TPS has been limited to protect against intentional or unintentional high request
+        /// volumes.
+        /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ValidationException">
+        /// The operation did not succeed because a validation error occurred.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/GetGateway">REST API Reference for GetGateway Operation</seealso>
+        public virtual GetGatewayResponse GetGateway(GetGatewayRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetGatewayRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetGatewayResponseUnmarshaller.Instance;
+
+            return Invoke<GetGatewayResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetGateway operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetGateway operation on AmazonBackupGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetGateway
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/GetGateway">REST API Reference for GetGateway Operation</seealso>
+        public virtual IAsyncResult BeginGetGateway(GetGatewayRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetGatewayRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetGatewayResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetGateway operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetGateway.</param>
+        /// 
+        /// <returns>Returns a  GetGatewayResult from BackupGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/GetGateway">REST API Reference for GetGateway Operation</seealso>
+        public virtual GetGatewayResponse EndGetGateway(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetGatewayResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetHypervisor
+
+        /// <summary>
+        /// This action requests information about the specified hypervisor to which the gateway
+        /// will connect. A hypervisor is hardware, software, or firmware that creates and manages
+        /// virtual machines, and allocates resources to them.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetHypervisor service method.</param>
+        /// 
+        /// <returns>The response from the GetHypervisor service method, as returned by BackupGateway.</returns>
+        /// <exception cref="Amazon.BackupGateway.Model.InternalServerException">
+        /// The operation did not succeed because an internal error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ResourceNotFoundException">
+        /// A resource that is required for the action wasn't found.
+        /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ThrottlingException">
+        /// TPS has been limited to protect against intentional or unintentional high request
+        /// volumes.
+        /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ValidationException">
+        /// The operation did not succeed because a validation error occurred.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/GetHypervisor">REST API Reference for GetHypervisor Operation</seealso>
+        public virtual GetHypervisorResponse GetHypervisor(GetHypervisorRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetHypervisorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetHypervisorResponseUnmarshaller.Instance;
+
+            return Invoke<GetHypervisorResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetHypervisor operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetHypervisor operation on AmazonBackupGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetHypervisor
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/GetHypervisor">REST API Reference for GetHypervisor Operation</seealso>
+        public virtual IAsyncResult BeginGetHypervisor(GetHypervisorRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetHypervisorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetHypervisorResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetHypervisor operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetHypervisor.</param>
+        /// 
+        /// <returns>Returns a  GetHypervisorResult from BackupGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/GetHypervisor">REST API Reference for GetHypervisor Operation</seealso>
+        public virtual GetHypervisorResponse EndGetHypervisor(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetHypervisorResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetHypervisorPropertyMappings
+
+        /// <summary>
+        /// This action retrieves the property mappings for the specified hypervisor. A hypervisor
+        /// property mapping displays the relationship of entity properties available from the
+        /// on-premises hypervisor to the properties available in Amazon Web Services.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetHypervisorPropertyMappings service method.</param>
+        /// 
+        /// <returns>The response from the GetHypervisorPropertyMappings service method, as returned by BackupGateway.</returns>
+        /// <exception cref="Amazon.BackupGateway.Model.InternalServerException">
+        /// The operation did not succeed because an internal error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ResourceNotFoundException">
+        /// A resource that is required for the action wasn't found.
+        /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ThrottlingException">
+        /// TPS has been limited to protect against intentional or unintentional high request
+        /// volumes.
+        /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ValidationException">
+        /// The operation did not succeed because a validation error occurred.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/GetHypervisorPropertyMappings">REST API Reference for GetHypervisorPropertyMappings Operation</seealso>
+        public virtual GetHypervisorPropertyMappingsResponse GetHypervisorPropertyMappings(GetHypervisorPropertyMappingsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetHypervisorPropertyMappingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetHypervisorPropertyMappingsResponseUnmarshaller.Instance;
+
+            return Invoke<GetHypervisorPropertyMappingsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetHypervisorPropertyMappings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetHypervisorPropertyMappings operation on AmazonBackupGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetHypervisorPropertyMappings
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/GetHypervisorPropertyMappings">REST API Reference for GetHypervisorPropertyMappings Operation</seealso>
+        public virtual IAsyncResult BeginGetHypervisorPropertyMappings(GetHypervisorPropertyMappingsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetHypervisorPropertyMappingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetHypervisorPropertyMappingsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetHypervisorPropertyMappings operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetHypervisorPropertyMappings.</param>
+        /// 
+        /// <returns>Returns a  GetHypervisorPropertyMappingsResult from BackupGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/GetHypervisorPropertyMappings">REST API Reference for GetHypervisorPropertyMappings Operation</seealso>
+        public virtual GetHypervisorPropertyMappingsResponse EndGetHypervisorPropertyMappings(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetHypervisorPropertyMappingsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetVirtualMachine
+
+        /// <summary>
+        /// By providing the ARN (Amazon Resource Name), this API returns the virtual machine.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetVirtualMachine service method.</param>
+        /// 
+        /// <returns>The response from the GetVirtualMachine service method, as returned by BackupGateway.</returns>
+        /// <exception cref="Amazon.BackupGateway.Model.InternalServerException">
+        /// The operation did not succeed because an internal error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ResourceNotFoundException">
+        /// A resource that is required for the action wasn't found.
+        /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ThrottlingException">
+        /// TPS has been limited to protect against intentional or unintentional high request
+        /// volumes.
+        /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ValidationException">
+        /// The operation did not succeed because a validation error occurred.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/GetVirtualMachine">REST API Reference for GetVirtualMachine Operation</seealso>
+        public virtual GetVirtualMachineResponse GetVirtualMachine(GetVirtualMachineRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetVirtualMachineRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetVirtualMachineResponseUnmarshaller.Instance;
+
+            return Invoke<GetVirtualMachineResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetVirtualMachine operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetVirtualMachine operation on AmazonBackupGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetVirtualMachine
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/GetVirtualMachine">REST API Reference for GetVirtualMachine Operation</seealso>
+        public virtual IAsyncResult BeginGetVirtualMachine(GetVirtualMachineRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetVirtualMachineRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetVirtualMachineResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetVirtualMachine operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetVirtualMachine.</param>
+        /// 
+        /// <returns>Returns a  GetVirtualMachineResult from BackupGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/GetVirtualMachine">REST API Reference for GetVirtualMachine Operation</seealso>
+        public virtual GetVirtualMachineResponse EndGetVirtualMachine(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetVirtualMachineResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ImportHypervisorConfiguration
 
         /// <summary>
@@ -610,8 +983,15 @@ namespace Amazon.BackupGateway
         /// <exception cref="Amazon.BackupGateway.Model.AccessDeniedException">
         /// The operation cannot proceed because you have insufficient permissions.
         /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ConflictException">
+        /// The operation cannot proceed because it is not supported.
+        /// </exception>
         /// <exception cref="Amazon.BackupGateway.Model.InternalServerException">
         /// The operation did not succeed because an internal error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ThrottlingException">
+        /// TPS has been limited to protect against intentional or unintentional high request
+        /// volumes.
         /// </exception>
         /// <exception cref="Amazon.BackupGateway.Model.ValidationException">
         /// The operation did not succeed because a validation error occurred.
@@ -674,6 +1054,10 @@ namespace Amazon.BackupGateway
         /// <exception cref="Amazon.BackupGateway.Model.InternalServerException">
         /// The operation did not succeed because an internal error occurred. Try again later.
         /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ThrottlingException">
+        /// TPS has been limited to protect against intentional or unintentional high request
+        /// volumes.
+        /// </exception>
         /// <exception cref="Amazon.BackupGateway.Model.ValidationException">
         /// The operation did not succeed because a validation error occurred.
         /// </exception>
@@ -733,6 +1117,10 @@ namespace Amazon.BackupGateway
         /// <returns>The response from the ListHypervisors service method, as returned by BackupGateway.</returns>
         /// <exception cref="Amazon.BackupGateway.Model.InternalServerException">
         /// The operation did not succeed because an internal error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ThrottlingException">
+        /// TPS has been limited to protect against intentional or unintentional high request
+        /// volumes.
         /// </exception>
         /// <exception cref="Amazon.BackupGateway.Model.ValidationException">
         /// The operation did not succeed because a validation error occurred.
@@ -797,6 +1185,10 @@ namespace Amazon.BackupGateway
         /// <exception cref="Amazon.BackupGateway.Model.ResourceNotFoundException">
         /// A resource that is required for the action wasn't found.
         /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ThrottlingException">
+        /// TPS has been limited to protect against intentional or unintentional high request
+        /// volumes.
+        /// </exception>
         /// <exception cref="Amazon.BackupGateway.Model.ValidationException">
         /// The operation did not succeed because a validation error occurred.
         /// </exception>
@@ -857,6 +1249,10 @@ namespace Amazon.BackupGateway
         /// <exception cref="Amazon.BackupGateway.Model.InternalServerException">
         /// The operation did not succeed because an internal error occurred. Try again later.
         /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ThrottlingException">
+        /// TPS has been limited to protect against intentional or unintentional high request
+        /// volumes.
+        /// </exception>
         /// <exception cref="Amazon.BackupGateway.Model.ValidationException">
         /// The operation did not succeed because a validation error occurred.
         /// </exception>
@@ -906,6 +1302,150 @@ namespace Amazon.BackupGateway
 
         #endregion
         
+        #region  PutBandwidthRateLimitSchedule
+
+        /// <summary>
+        /// This action sets the bandwidth rate limit schedule for a specified gateway. By default,
+        /// gateways do not have a bandwidth rate limit schedule, which means no bandwidth rate
+        /// limiting is in effect. Use this to initiate a gateway's bandwidth rate limit schedule.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutBandwidthRateLimitSchedule service method.</param>
+        /// 
+        /// <returns>The response from the PutBandwidthRateLimitSchedule service method, as returned by BackupGateway.</returns>
+        /// <exception cref="Amazon.BackupGateway.Model.InternalServerException">
+        /// The operation did not succeed because an internal error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ResourceNotFoundException">
+        /// A resource that is required for the action wasn't found.
+        /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ThrottlingException">
+        /// TPS has been limited to protect against intentional or unintentional high request
+        /// volumes.
+        /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ValidationException">
+        /// The operation did not succeed because a validation error occurred.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/PutBandwidthRateLimitSchedule">REST API Reference for PutBandwidthRateLimitSchedule Operation</seealso>
+        public virtual PutBandwidthRateLimitScheduleResponse PutBandwidthRateLimitSchedule(PutBandwidthRateLimitScheduleRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutBandwidthRateLimitScheduleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutBandwidthRateLimitScheduleResponseUnmarshaller.Instance;
+
+            return Invoke<PutBandwidthRateLimitScheduleResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutBandwidthRateLimitSchedule operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutBandwidthRateLimitSchedule operation on AmazonBackupGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutBandwidthRateLimitSchedule
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/PutBandwidthRateLimitSchedule">REST API Reference for PutBandwidthRateLimitSchedule Operation</seealso>
+        public virtual IAsyncResult BeginPutBandwidthRateLimitSchedule(PutBandwidthRateLimitScheduleRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutBandwidthRateLimitScheduleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutBandwidthRateLimitScheduleResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutBandwidthRateLimitSchedule operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutBandwidthRateLimitSchedule.</param>
+        /// 
+        /// <returns>Returns a  PutBandwidthRateLimitScheduleResult from BackupGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/PutBandwidthRateLimitSchedule">REST API Reference for PutBandwidthRateLimitSchedule Operation</seealso>
+        public virtual PutBandwidthRateLimitScheduleResponse EndPutBandwidthRateLimitSchedule(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PutBandwidthRateLimitScheduleResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  PutHypervisorPropertyMappings
+
+        /// <summary>
+        /// This action sets the property mappings for the specified hypervisor. A hypervisor
+        /// property mapping displays the relationship of entity properties available from the
+        /// on-premises hypervisor to the properties available in Amazon Web Services.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutHypervisorPropertyMappings service method.</param>
+        /// 
+        /// <returns>The response from the PutHypervisorPropertyMappings service method, as returned by BackupGateway.</returns>
+        /// <exception cref="Amazon.BackupGateway.Model.AccessDeniedException">
+        /// The operation cannot proceed because you have insufficient permissions.
+        /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ConflictException">
+        /// The operation cannot proceed because it is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.InternalServerException">
+        /// The operation did not succeed because an internal error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ResourceNotFoundException">
+        /// A resource that is required for the action wasn't found.
+        /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ThrottlingException">
+        /// TPS has been limited to protect against intentional or unintentional high request
+        /// volumes.
+        /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ValidationException">
+        /// The operation did not succeed because a validation error occurred.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/PutHypervisorPropertyMappings">REST API Reference for PutHypervisorPropertyMappings Operation</seealso>
+        public virtual PutHypervisorPropertyMappingsResponse PutHypervisorPropertyMappings(PutHypervisorPropertyMappingsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutHypervisorPropertyMappingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutHypervisorPropertyMappingsResponseUnmarshaller.Instance;
+
+            return Invoke<PutHypervisorPropertyMappingsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutHypervisorPropertyMappings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutHypervisorPropertyMappings operation on AmazonBackupGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutHypervisorPropertyMappings
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/PutHypervisorPropertyMappings">REST API Reference for PutHypervisorPropertyMappings Operation</seealso>
+        public virtual IAsyncResult BeginPutHypervisorPropertyMappings(PutHypervisorPropertyMappingsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutHypervisorPropertyMappingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutHypervisorPropertyMappingsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutHypervisorPropertyMappings operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutHypervisorPropertyMappings.</param>
+        /// 
+        /// <returns>Returns a  PutHypervisorPropertyMappingsResult from BackupGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/PutHypervisorPropertyMappings">REST API Reference for PutHypervisorPropertyMappings Operation</seealso>
+        public virtual PutHypervisorPropertyMappingsResponse EndPutHypervisorPropertyMappings(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PutHypervisorPropertyMappingsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  PutMaintenanceStartTime
 
         /// <summary>
@@ -922,6 +1462,10 @@ namespace Amazon.BackupGateway
         /// </exception>
         /// <exception cref="Amazon.BackupGateway.Model.ResourceNotFoundException">
         /// A resource that is required for the action wasn't found.
+        /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ThrottlingException">
+        /// TPS has been limited to protect against intentional or unintentional high request
+        /// volumes.
         /// </exception>
         /// <exception cref="Amazon.BackupGateway.Model.ValidationException">
         /// The operation did not succeed because a validation error occurred.
@@ -972,6 +1516,76 @@ namespace Amazon.BackupGateway
 
         #endregion
         
+        #region  StartVirtualMachinesMetadataSync
+
+        /// <summary>
+        /// This action sends a request to sync metadata across the specified virtual machines.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartVirtualMachinesMetadataSync service method.</param>
+        /// 
+        /// <returns>The response from the StartVirtualMachinesMetadataSync service method, as returned by BackupGateway.</returns>
+        /// <exception cref="Amazon.BackupGateway.Model.AccessDeniedException">
+        /// The operation cannot proceed because you have insufficient permissions.
+        /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.InternalServerException">
+        /// The operation did not succeed because an internal error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ResourceNotFoundException">
+        /// A resource that is required for the action wasn't found.
+        /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ThrottlingException">
+        /// TPS has been limited to protect against intentional or unintentional high request
+        /// volumes.
+        /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ValidationException">
+        /// The operation did not succeed because a validation error occurred.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/StartVirtualMachinesMetadataSync">REST API Reference for StartVirtualMachinesMetadataSync Operation</seealso>
+        public virtual StartVirtualMachinesMetadataSyncResponse StartVirtualMachinesMetadataSync(StartVirtualMachinesMetadataSyncRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartVirtualMachinesMetadataSyncRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartVirtualMachinesMetadataSyncResponseUnmarshaller.Instance;
+
+            return Invoke<StartVirtualMachinesMetadataSyncResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartVirtualMachinesMetadataSync operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartVirtualMachinesMetadataSync operation on AmazonBackupGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartVirtualMachinesMetadataSync
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/StartVirtualMachinesMetadataSync">REST API Reference for StartVirtualMachinesMetadataSync Operation</seealso>
+        public virtual IAsyncResult BeginStartVirtualMachinesMetadataSync(StartVirtualMachinesMetadataSyncRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartVirtualMachinesMetadataSyncRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartVirtualMachinesMetadataSyncResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartVirtualMachinesMetadataSync operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartVirtualMachinesMetadataSync.</param>
+        /// 
+        /// <returns>Returns a  StartVirtualMachinesMetadataSyncResult from BackupGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/StartVirtualMachinesMetadataSync">REST API Reference for StartVirtualMachinesMetadataSync Operation</seealso>
+        public virtual StartVirtualMachinesMetadataSyncResponse EndStartVirtualMachinesMetadataSync(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartVirtualMachinesMetadataSyncResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  TagResource
 
         /// <summary>
@@ -985,6 +1599,10 @@ namespace Amazon.BackupGateway
         /// </exception>
         /// <exception cref="Amazon.BackupGateway.Model.ResourceNotFoundException">
         /// A resource that is required for the action wasn't found.
+        /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ThrottlingException">
+        /// TPS has been limited to protect against intentional or unintentional high request
+        /// volumes.
         /// </exception>
         /// <exception cref="Amazon.BackupGateway.Model.ValidationException">
         /// The operation did not succeed because a validation error occurred.
@@ -1053,6 +1671,10 @@ namespace Amazon.BackupGateway
         /// <exception cref="Amazon.BackupGateway.Model.ResourceNotFoundException">
         /// A resource that is required for the action wasn't found.
         /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ThrottlingException">
+        /// TPS has been limited to protect against intentional or unintentional high request
+        /// volumes.
+        /// </exception>
         /// <exception cref="Amazon.BackupGateway.Model.ValidationException">
         /// The operation did not succeed because a validation error occurred.
         /// </exception>
@@ -1115,6 +1737,10 @@ namespace Amazon.BackupGateway
         /// </exception>
         /// <exception cref="Amazon.BackupGateway.Model.ResourceNotFoundException">
         /// A resource that is required for the action wasn't found.
+        /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ThrottlingException">
+        /// TPS has been limited to protect against intentional or unintentional high request
+        /// volumes.
         /// </exception>
         /// <exception cref="Amazon.BackupGateway.Model.ValidationException">
         /// The operation did not succeed because a validation error occurred.
@@ -1183,6 +1809,10 @@ namespace Amazon.BackupGateway
         /// <exception cref="Amazon.BackupGateway.Model.ResourceNotFoundException">
         /// A resource that is required for the action wasn't found.
         /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ThrottlingException">
+        /// TPS has been limited to protect against intentional or unintentional high request
+        /// volumes.
+        /// </exception>
         /// <exception cref="Amazon.BackupGateway.Model.ValidationException">
         /// The operation did not succeed because a validation error occurred.
         /// </exception>
@@ -1232,6 +1862,81 @@ namespace Amazon.BackupGateway
 
         #endregion
         
+        #region  UpdateGatewaySoftwareNow
+
+        /// <summary>
+        /// Updates the gateway virtual machine (VM) software. The request immediately triggers
+        /// the software update.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// When you make this request, you get a <code>200 OK</code> success response immediately.
+        /// However, it might take some time for the update to complete.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateGatewaySoftwareNow service method.</param>
+        /// 
+        /// <returns>The response from the UpdateGatewaySoftwareNow service method, as returned by BackupGateway.</returns>
+        /// <exception cref="Amazon.BackupGateway.Model.InternalServerException">
+        /// The operation did not succeed because an internal error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ResourceNotFoundException">
+        /// A resource that is required for the action wasn't found.
+        /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ThrottlingException">
+        /// TPS has been limited to protect against intentional or unintentional high request
+        /// volumes.
+        /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ValidationException">
+        /// The operation did not succeed because a validation error occurred.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/UpdateGatewaySoftwareNow">REST API Reference for UpdateGatewaySoftwareNow Operation</seealso>
+        public virtual UpdateGatewaySoftwareNowResponse UpdateGatewaySoftwareNow(UpdateGatewaySoftwareNowRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateGatewaySoftwareNowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateGatewaySoftwareNowResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateGatewaySoftwareNowResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateGatewaySoftwareNow operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateGatewaySoftwareNow operation on AmazonBackupGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateGatewaySoftwareNow
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/UpdateGatewaySoftwareNow">REST API Reference for UpdateGatewaySoftwareNow Operation</seealso>
+        public virtual IAsyncResult BeginUpdateGatewaySoftwareNow(UpdateGatewaySoftwareNowRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateGatewaySoftwareNowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateGatewaySoftwareNowResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateGatewaySoftwareNow operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateGatewaySoftwareNow.</param>
+        /// 
+        /// <returns>Returns a  UpdateGatewaySoftwareNowResult from BackupGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/UpdateGatewaySoftwareNow">REST API Reference for UpdateGatewaySoftwareNow Operation</seealso>
+        public virtual UpdateGatewaySoftwareNowResponse EndUpdateGatewaySoftwareNow(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateGatewaySoftwareNowResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  UpdateHypervisor
 
         /// <summary>
@@ -1245,11 +1950,18 @@ namespace Amazon.BackupGateway
         /// <exception cref="Amazon.BackupGateway.Model.AccessDeniedException">
         /// The operation cannot proceed because you have insufficient permissions.
         /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ConflictException">
+        /// The operation cannot proceed because it is not supported.
+        /// </exception>
         /// <exception cref="Amazon.BackupGateway.Model.InternalServerException">
         /// The operation did not succeed because an internal error occurred. Try again later.
         /// </exception>
         /// <exception cref="Amazon.BackupGateway.Model.ResourceNotFoundException">
         /// A resource that is required for the action wasn't found.
+        /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ThrottlingException">
+        /// TPS has been limited to protect against intentional or unintentional high request
+        /// volumes.
         /// </exception>
         /// <exception cref="Amazon.BackupGateway.Model.ValidationException">
         /// The operation did not succeed because a validation error occurred.

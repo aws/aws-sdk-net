@@ -34,7 +34,7 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ServiceCollection Marshaller
-    /// </summary>       
+    /// </summary>
     public class ServiceCollectionMarshaller : IRequestMarshaller<ServiceCollection, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ServiceCollectionMarshaller Instance = new ServiceCollectionMarshaller();
 
     }

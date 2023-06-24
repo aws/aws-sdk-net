@@ -56,7 +56,7 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.IoTWireless");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-11-22";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-11-22";
             request.HttpMethod = "PATCH";
 
             if (!publicRequest.IsSetId())
@@ -86,6 +86,18 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.FirmwareUpdateRole);
                 }
 
+                if(publicRequest.IsSetFragmentIntervalMS())
+                {
+                    context.Writer.WritePropertyName("FragmentIntervalMS");
+                    context.Writer.Write(publicRequest.FragmentIntervalMS);
+                }
+
+                if(publicRequest.IsSetFragmentSizeBytes())
+                {
+                    context.Writer.WritePropertyName("FragmentSizeBytes");
+                    context.Writer.Write(publicRequest.FragmentSizeBytes);
+                }
+
                 if(publicRequest.IsSetLoRaWAN())
                 {
                     context.Writer.WritePropertyName("LoRaWAN");
@@ -103,7 +115,12 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Name);
                 }
 
-        
+                if(publicRequest.IsSetRedundancyPercent())
+                {
+                    context.Writer.WritePropertyName("RedundancyPercent");
+                    context.Writer.Write(publicRequest.RedundancyPercent);
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

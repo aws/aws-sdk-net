@@ -35,14 +35,28 @@ namespace Amazon.CloudWatchLogs.Model
     /// 
     ///  
     /// <para>
+    /// You can specify the log group to search by using either <code>logGroupIdentifier</code>
+    /// or <code>logGroupName</code>. You must include one of these two parameters, but you
+    /// can't include both. 
+    /// </para>
+    ///  
+    /// <para>
     /// This operation has a limit of five transactions per second, after which transactions
     /// are throttled.
+    /// </para>
+    ///  
+    /// <para>
+    /// If you are using CloudWatch cross-account observability, you can use this operation
+    /// in a monitoring account and view data from the linked source accounts. For more information,
+    /// see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html">CloudWatch
+    /// cross-account observability</a>.
     /// </para>
     /// </summary>
     public partial class DescribeLogStreamsRequest : AmazonCloudWatchLogsRequest
     {
         private bool? _descending;
         private int? _limit;
+        private string _logGroupIdentifier;
         private string _logGroupName;
         private string _logStreamNamePrefix;
         private string _nextToken;
@@ -56,7 +70,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Instantiates DescribeLogStreamsRequest with the parameterized properties
         /// </summary>
-        /// <param name="logGroupName">The name of the log group.</param>
+        /// <param name="logGroupName">The name of the log group. <note>  You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both.  </note></param>
         public DescribeLogStreamsRequest(string logGroupName)
         {
             _logGroupName = logGroupName;
@@ -102,12 +116,45 @@ namespace Amazon.CloudWatchLogs.Model
         }
 
         /// <summary>
+        /// Gets and sets the property LogGroupIdentifier. 
+        /// <para>
+        /// Specify either the name or ARN of the log group to view. If the log group is in a
+        /// source account and you are using a monitoring account, you must use the log group
+        /// ARN.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        ///  You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>,
+        /// but not both. 
+        /// </para>
+        ///  </note>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string LogGroupIdentifier
+        {
+            get { return this._logGroupIdentifier; }
+            set { this._logGroupIdentifier = value; }
+        }
+
+        // Check to see if LogGroupIdentifier property is set
+        internal bool IsSetLogGroupIdentifier()
+        {
+            return this._logGroupIdentifier != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property LogGroupName. 
         /// <para>
         /// The name of the log group.
         /// </para>
+        ///  <note> 
+        /// <para>
+        ///  You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>,
+        /// but not both. 
+        /// </para>
+        ///  </note>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=512)]
+        [AWSProperty(Min=1, Max=512)]
         public string LogGroupName
         {
             get { return this._logGroupName; }
@@ -179,9 +226,9 @@ namespace Amazon.CloudWatchLogs.Model
         /// <para>
         ///  <code>lastEventTimestamp</code> represents the time of the most recent log event
         /// in the log stream in CloudWatch Logs. This number is expressed as the number of milliseconds
-        /// after Jan 1, 1970 00:00:00 UTC. <code>lastEventTimestamp</code> updates on an eventual
-        /// consistency basis. It typically updates in less than an hour from ingestion, but in
-        /// rare situations might take longer.
+        /// after <code>Jan 1, 1970 00:00:00 UTC</code>. <code>lastEventTimestamp</code> updates
+        /// on an eventual consistency basis. It typically updates in less than an hour from ingestion,
+        /// but in rare situations might take longer.
         /// </para>
         /// </summary>
         public OrderBy OrderBy

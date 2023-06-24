@@ -30,12 +30,20 @@ namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
     /// Container for the parameters to the UntagLogGroup operation.
+    /// <important> 
+    /// <para>
+    /// The UntagLogGroup operation is on the path to deprecation. We recommend that you use
+    /// <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_UntagResource.html">UntagResource</a>
+    /// instead.
+    /// </para>
+    ///  </important> 
+    /// <para>
     /// Removes the specified tags from the specified log group.
-    /// 
+    /// </para>
     ///  
     /// <para>
-    /// To list the tags for a log group, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListTagsLogGroup.html">ListTagsLogGroup</a>.
-    /// To add tags, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_TagLogGroup.html">TagLogGroup</a>.
+    /// To list the tags for a log group, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListTagsForResource.html">ListTagsForResource</a>.
+    /// To add tags, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_TagResource.html">TagResource</a>.
     /// </para>
     ///  
     /// <para>
@@ -44,6 +52,7 @@ namespace Amazon.CloudWatchLogs.Model
     /// condition keys. 
     /// </para>
     /// </summary>
+    [Obsolete("Please use the generic tagging API model UntagResourceRequest")]
     public partial class UntagLogGroupRequest : AmazonCloudWatchLogsRequest
     {
         private string _logGroupName;

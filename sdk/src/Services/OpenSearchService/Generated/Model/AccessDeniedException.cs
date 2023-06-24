@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// An error occurred because user does not have permissions to access the resource. Returns
-    /// HTTP status code 403.
+    /// An error occurred because you don't have permissions to access the resource.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

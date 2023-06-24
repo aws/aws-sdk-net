@@ -25,32 +25,7 @@ namespace <#=this.Config.Namespace#>.Internal
         {
             get
             {
-<#
-            if(!string.IsNullOrEmpty(this.Config.ServiceId))
-            {
-#>
                 return "<#=this.Config.ServiceId#>";
-<#
-            }
-            else
-            {
-                var result = Utils.DetermineServiceId(this.Config.ServiceModel.ServiceAbbreviation, 
-                this.Config.ServiceModel.ServiceFullName);
-                
-                if(!string.IsNullOrEmpty(result))
-                {
-#>
-                return "<#=result#>";
-<#
-                }
-                else
-                {
-#>
-                return "<#=this.Config.ServiceModel.EndpointPrefix#>";
-<#
-                }
-            }
-#>
             }
         }
 

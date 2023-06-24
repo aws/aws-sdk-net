@@ -117,7 +117,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property IpAddress. 
         /// <para>
-        /// The Internet-routable IP address of the customer gateway's outside interface.
+        /// The IP address of the customer gateway device's outside interface.
         /// </para>
         /// </summary>
         public string IpAddress

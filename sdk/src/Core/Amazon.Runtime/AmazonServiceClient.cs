@@ -25,18 +25,23 @@ using System.IO;
 using System.Reflection;
 using System.Text;
 using System.Linq;
+using System.Threading;
 using Amazon.Util.Internal;
+using ExecutionContext = Amazon.Runtime.Internal.ExecutionContext;
 
 namespace Amazon.Runtime
 {
     public abstract class AmazonServiceClient : IDisposable
     {
+        private static volatile bool _isProtocolUpdated;
+        
         private bool _disposed;
         private Logger _logger;
         protected EndpointDiscoveryResolverBase EndpointDiscoveryResolver { get; private set; }
         protected RuntimePipeline RuntimePipeline { get; set; }
         protected internal AWSCredentials Credentials { get; private set; }
-        public IClientConfig Config { get; private set; }
+        public IClientConfig Config => _config;
+        private readonly ClientConfig _config;
         protected virtual IServiceMetadata ServiceMetadata { get; } = new ServiceMetadata();
         protected virtual bool SupportResponseLogging
         {
@@ -151,11 +156,12 @@ namespace Amazon.Runtime
                 _logger = Logger.GetLogger(this.GetType());
 
             config.Validate();
-            this.Config = config;
             this.Credentials = credentials;
+            _config = config;
             Signer = CreateSigner();
             EndpointDiscoveryResolver = new EndpointDiscoveryResolver(config, _logger);
             Initialize();
+            UpdateSecurityProtocol();
             BuildRuntimePipeline();
         }
 
@@ -195,7 +201,7 @@ namespace Amazon.Runtime
             return Invoke<TResponse>(request, options);
         }
 
-        protected TResponse Invoke<TResponse>(AmazonWebServiceRequest request, InvokeOptionsBase options)            
+        protected TResponse Invoke<TResponse>(AmazonWebServiceRequest request, InvokeOptionsBase options)
             where TResponse : AmazonWebServiceResponse
         {
             ThrowIfDisposed();
@@ -221,9 +227,11 @@ namespace Amazon.Runtime
 #if AWS_ASYNC_API
 
         [Obsolete("InvokeAsync taking marshallers is obsolete. Use InvokeAsync taking InvokeOptionsBase instead.")]
-        protected System.Threading.Tasks.Task<TResponse> InvokeAsync<TRequest, TResponse>(TRequest request, 
-            IMarshaller<IRequest, AmazonWebServiceRequest> marshaller, ResponseUnmarshaller unmarshaller,
-            System.Threading.CancellationToken cancellationToken)            
+        protected System.Threading.Tasks.Task<TResponse> InvokeAsync<TRequest, TResponse>(
+            TRequest request, 
+            IMarshaller<IRequest, AmazonWebServiceRequest> marshaller,
+            ResponseUnmarshaller unmarshaller,
+            System.Threading.CancellationToken cancellationToken)
             where TRequest: AmazonWebServiceRequest
             where TResponse : AmazonWebServiceResponse, new()
         {
@@ -233,11 +241,18 @@ namespace Amazon.Runtime
             return InvokeAsync<TResponse>(request, options, cancellationToken);
         }
 
-        protected System.Threading.Tasks.Task<TResponse> InvokeAsync<TResponse>(AmazonWebServiceRequest request,
-            InvokeOptionsBase options, System.Threading.CancellationToken cancellationToken)            
+        protected System.Threading.Tasks.Task<TResponse> InvokeAsync<TResponse>(
+            AmazonWebServiceRequest request,
+            InvokeOptionsBase options,
+            System.Threading.CancellationToken cancellationToken)
             where TResponse : AmazonWebServiceResponse, new()
         {
             ThrowIfDisposed();
+
+#if AWS_ASYNC_API
+            if (cancellationToken == default(CancellationToken))
+                cancellationToken = _config.BuildDefaultCancellationToken();
+#endif
 
             var executionContext = new ExecutionContext(
                 new RequestContext(this.Config.LogMetrics, Signer)
@@ -249,7 +264,7 @@ namespace Amazon.Runtime
                     IsAsync = true,
                     CancellationToken = cancellationToken,
                     ServiceMetaData = this.ServiceMetadata,
-                    Options = options                    
+                    Options = options
                 },
                 new ResponseContext()
             );
@@ -271,7 +286,7 @@ namespace Amazon.Runtime
         }
 
         protected IAsyncResult BeginInvoke(AmazonWebServiceRequest request,
-            InvokeOptionsBase options, AsyncCallback callback, object state)            
+            InvokeOptionsBase options, AsyncCallback callback, object state)
         {
             ThrowIfDisposed();
 
@@ -413,7 +428,7 @@ namespace Amazon.Runtime
         private void BuildRuntimePipeline()
         {
 #if BCL
-            var httpRequestFactory = new HttpWebRequestFactory(new AmazonSecurityProtocolManager());
+            var httpRequestFactory = new HttpWebRequestFactory();
             var httpHandler = new HttpHandler<Stream>(httpRequestFactory, this);
 #else
             var httpRequestFactory = new HttpRequestMessageFactory(this.Config);
@@ -459,7 +474,7 @@ namespace Amazon.Runtime
                     //EndpointDiscoveryResolver must come after CredentialsRetriever, RetryHander, and EndpointResolver as it depends on
                     //credentials, retrying of requests for 421 web exceptions, and the current set regional endpoint.
                     new EndpointDiscoveryHandler(), 
-                    new CredentialsRetriever(this.Credentials),                                        
+                    new CredentialsRetriever(this.Credentials),
                     new RetryHandler(retryPolicy),
                     postMarshallHandler,
                     new EndpointResolver(),
@@ -481,6 +496,39 @@ namespace Amazon.Runtime
 
             // Apply global pipeline customizations
             RuntimePipelineCustomizerRegistry.Instance.ApplyCustomizations(this.GetType(), this.RuntimePipeline);
+        }
+
+        /// <summary>
+        /// Some AWS services like Cloud 9 require at least TLS 1.1. Version of .NET Framework 4.5 and earlier 
+        /// do not eanble TLS 1.1 and TLS 1.2 by default. This code adds those protocols if using an earlier 
+        /// version of .NET that explicitly set the protocol and didn't have TLS 1.1 and TLS 1.2. 
+        /// </summary>
+        private void UpdateSecurityProtocol()
+        {
+            if (_isProtocolUpdated) return;
+
+            var amazonSecurityProtocolManager = new AmazonSecurityProtocolManager();
+
+            try
+            {
+                if (!amazonSecurityProtocolManager.IsSecurityProtocolSystemDefault())
+                {
+                    amazonSecurityProtocolManager.UpdateProtocolsToSupported();
+                }
+            }
+            catch (Exception ex)
+            {
+                if (ex is NotSupportedException)
+                {
+                    _logger.InfoFormat(ex.Message);
+                }
+                else
+                {
+                    _logger.InfoFormat("Unexpected error " + ex.GetType().Name +
+                                       " encountered when trying to set Security Protocol.\n" + ex);
+                }
+            }
+            _isProtocolUpdated = true;
         }
 
         /// <summary>
@@ -510,7 +558,11 @@ namespace Amazon.Runtime
                 if (resourcePath.StartsWith("/", StringComparison.Ordinal))
                     resourcePath = resourcePath.Substring(1);
 
-                if (AWSSDKUtils.HasBidiControlCharacters(resourcePath) || 
+                // Microsoft added support for unicode bidi control characters to the Uri class in .NET 4.7.2
+                // https://github.com/microsoft/dotnet/blob/master/Documentation/compatibility/uri-unicode-bidirectional-characters.md
+                // However, we only want to support it on .NET Core 3.1 and higher due to not having to deal with .NET Standard support matrix.
+#if BCL || NETSTANDARD20
+                if (AWSSDKUtils.HasBidiControlCharacters(resourcePath) ||
                     (internalRequest.PathResources?.Any(v => AWSSDKUtils.HasBidiControlCharacters(v.Value)) == true))
                 {
                     resourcePath = string.Join("/", AWSSDKUtils.SplitResourcePathIntoSegments(resourcePath, internalRequest.PathResources).ToArray());
@@ -518,6 +570,7 @@ namespace Amazon.Runtime
                         "Target resource path [{0}] has bidirectional characters, which are not supported" +
                         "by System.Uri and thus cannot be handled by the .NET SDK.", resourcePath));
                 }
+#endif
 
                 resourcePath = AWSSDKUtils.ResolveResourcePath(resourcePath, internalRequest.PathResources, skipEncodingValidPathChars);
             }
@@ -554,7 +607,7 @@ namespace Amazon.Runtime
             }
             else
             {
-                if (AWSSDKUtils.HasBidiControlCharacters(resourcePath))                
+                if (AWSSDKUtils.HasBidiControlCharacters(resourcePath))
                         throw new AmazonClientException(string.Format(CultureInfo.InvariantCulture,
                             "Target resource path [{0}] has bidirectional characters, which are not supported" +
                             "by System.Uri and thus cannot be handled by the .NET SDK.", resourcePath));

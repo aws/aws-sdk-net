@@ -55,7 +55,7 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
         public IRequest Marshall(DeleteBrowserSettingsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.WorkSpacesWeb");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-07-08";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-07-08";
             request.HttpMethod = "DELETE";
 
             if (!publicRequest.IsSetBrowserSettingsArn())

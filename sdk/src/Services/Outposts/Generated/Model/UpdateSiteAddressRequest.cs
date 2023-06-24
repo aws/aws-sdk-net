@@ -30,17 +30,17 @@ namespace Amazon.Outposts.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateSiteAddress operation.
-    /// Updates the site address. 
+    /// Updates the address of the specified site.
     /// 
     ///  
     /// <para>
-    ///  To update a site address with an order <code>IN_PROGRESS</code>, you must wait for
-    /// the order to complete or cancel the order. 
+    /// You can't update a site address if there is an order in progress. You must wait for
+    /// the order to complete or cancel the order.
     /// </para>
     ///  
     /// <para>
     /// You can update the operating address before you place an order at the site, or after
-    /// all Outposts that belong to the site have been deactivated. 
+    /// all Outposts that belong to the site have been deactivated.
     /// </para>
     /// </summary>
     public partial class UpdateSiteAddressRequest : AmazonOutpostsRequest
@@ -88,7 +88,10 @@ namespace Amazon.Outposts.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SiteId.
+        /// Gets and sets the property SiteId. 
+        /// <para>
+        ///  The ID or the Amazon Resource Name (ARN) of the site. 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
         public string SiteId

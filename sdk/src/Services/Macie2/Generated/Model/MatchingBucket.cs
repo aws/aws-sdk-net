@@ -30,10 +30,18 @@ namespace Amazon.Macie2.Model
 {
     /// <summary>
     /// Provides statistical data and other information about an S3 bucket that Amazon Macie
-    /// monitors and analyzes for your account. If an error occurs when Macie attempts to
-    /// retrieve and process information about the bucket or the bucket's objects, the value
-    /// for most of these properties is null. Exceptions are accountId and bucketName. To
-    /// identify the cause of the error, refer to the errorCode and errorMessage values.
+    /// monitors and analyzes for your account. By default, object count and storage size
+    /// values include data for object parts that are the result of incomplete multipart uploads.
+    /// For more information, see <a href="https://docs.aws.amazon.com/macie/latest/user/monitoring-s3-how-it-works.html">How
+    /// Macie monitors Amazon S3 data security</a> in the <i>Amazon Macie User Guide</i>.
+    /// 
+    ///  
+    /// <para>
+    /// If an error occurs when Macie attempts to retrieve and process information about the
+    /// bucket or the bucket's objects, the value for most of these properties is null. Key
+    /// exceptions are accountId and bucketName. To identify the cause of the error, refer
+    /// to the errorCode and errorMessage values.
+    /// </para>
     /// </summary>
     public partial class MatchingBucket
     {
@@ -44,8 +52,10 @@ namespace Amazon.Macie2.Model
         private BucketMetadataErrorCode _errorCode;
         private string _errorMessage;
         private JobDetails _jobDetails;
+        private DateTime? _lastAutomatedDiscoveryTime;
         private long? _objectCount;
         private ObjectCountByEncryptionType _objectCountByEncryptionType;
+        private int? _sensitivityScore;
         private long? _sizeInBytes;
         private long? _sizeInBytesCompressed;
         private ObjectLevelStatistics _unclassifiableObjectCount;
@@ -136,11 +146,11 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property ErrorCode. 
         /// <para>
-        /// Specifies the error code for an error that prevented Amazon Macie from retrieving
-        /// and processing information about the bucket and the bucket's objects. If this value
-        /// is ACCESS_DENIED, Macie doesn't have permission to retrieve the information. For example,
-        /// the bucket has a restrictive bucket policy and Amazon S3 denied the request. If this
-        /// value is null, Macie was able to retrieve and process the information.
+        /// The error code for an error that prevented Amazon Macie from retrieving and processing
+        /// information about the bucket and the bucket's objects. If this value is ACCESS_DENIED,
+        /// Macie doesn't have permission to retrieve the information. For example, the bucket
+        /// has a restrictive bucket policy and Amazon S3 denied the request. If this value is
+        /// null, Macie was able to retrieve and process the information.
         /// </para>
         /// </summary>
         public BucketMetadataErrorCode ErrorCode
@@ -195,6 +205,27 @@ namespace Amazon.Macie2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property LastAutomatedDiscoveryTime. 
+        /// <para>
+        /// The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently
+        /// analyzed data in the bucket while performing automated sensitive data discovery for
+        /// your account. This value is null if automated sensitive data discovery is currently
+        /// disabled for your account.
+        /// </para>
+        /// </summary>
+        public DateTime LastAutomatedDiscoveryTime
+        {
+            get { return this._lastAutomatedDiscoveryTime.GetValueOrDefault(); }
+            set { this._lastAutomatedDiscoveryTime = value; }
+        }
+
+        // Check to see if LastAutomatedDiscoveryTime property is set
+        internal bool IsSetLastAutomatedDiscoveryTime()
+        {
+            return this._lastAutomatedDiscoveryTime.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property ObjectCount. 
         /// <para>
         /// The total number of objects in the bucket.
@@ -215,9 +246,9 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property ObjectCountByEncryptionType. 
         /// <para>
-        /// The total number of objects that are in the bucket, grouped by server-side encryption
-        /// type. This includes a grouping that reports the total number of objects that aren't
-        /// encrypted or use client-side encryption.
+        /// The total number of objects in the bucket, grouped by server-side encryption type.
+        /// This includes a grouping that reports the total number of objects that aren't encrypted
+        /// or use client-side encryption.
         /// </para>
         /// </summary>
         public ObjectCountByEncryptionType ObjectCountByEncryptionType
@@ -230,6 +261,26 @@ namespace Amazon.Macie2.Model
         internal bool IsSetObjectCountByEncryptionType()
         {
             return this._objectCountByEncryptionType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SensitivityScore. 
+        /// <para>
+        /// The current sensitivity score for the bucket, ranging from -1 (classification error)
+        /// to 100 (sensitive). This value is null if automated sensitive data discovery is currently
+        /// disabled for your account.
+        /// </para>
+        /// </summary>
+        public int SensitivityScore
+        {
+            get { return this._sensitivityScore.GetValueOrDefault(); }
+            set { this._sensitivityScore = value; }
+        }
+
+        // Check to see if SensitivityScore property is set
+        internal bool IsSetSensitivityScore()
+        {
+            return this._sensitivityScore.HasValue; 
         }
 
         /// <summary>

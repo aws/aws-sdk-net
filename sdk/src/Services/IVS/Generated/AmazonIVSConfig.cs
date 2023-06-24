@@ -17,22 +17,22 @@
  * Do not modify this file. This file is generated from the ivs-2020-07-14.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
-
+using Amazon.IVS.Internal;
 
 namespace Amazon.IVS
 {
     /// <summary>
     /// Configuration for accessing Amazon IVS service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonIVSConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.3.4");
+            InternalSDKUtils.BuildUserAgentString("3.7.103.9");
 
         private string _userAgent = UserAgentString;
 
@@ -40,8 +40,10 @@ namespace Amazon.IVS
         /// Default constructor
         /// </summary>
         public AmazonIVSConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonIVSDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "ivs";
+            this.EndpointProvider = new AmazonIVSEndpointProvider();
         }
 
         /// <summary>
@@ -76,5 +78,6 @@ namespace Amazon.IVS
                 return _userAgent;
             }
         }
+
     }
 }

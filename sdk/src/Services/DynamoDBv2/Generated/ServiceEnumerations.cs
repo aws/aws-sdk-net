@@ -911,6 +911,68 @@ namespace Amazon.DynamoDBv2
 
 
     /// <summary>
+    /// Constants used for properties of type ImportStatus.
+    /// </summary>
+    public class ImportStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CANCELLED for ImportStatus
+        /// </summary>
+        public static readonly ImportStatus CANCELLED = new ImportStatus("CANCELLED");
+        /// <summary>
+        /// Constant CANCELLING for ImportStatus
+        /// </summary>
+        public static readonly ImportStatus CANCELLING = new ImportStatus("CANCELLING");
+        /// <summary>
+        /// Constant COMPLETED for ImportStatus
+        /// </summary>
+        public static readonly ImportStatus COMPLETED = new ImportStatus("COMPLETED");
+        /// <summary>
+        /// Constant FAILED for ImportStatus
+        /// </summary>
+        public static readonly ImportStatus FAILED = new ImportStatus("FAILED");
+        /// <summary>
+        /// Constant IN_PROGRESS for ImportStatus
+        /// </summary>
+        public static readonly ImportStatus IN_PROGRESS = new ImportStatus("IN_PROGRESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ImportStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ImportStatus FindValue(string value)
+        {
+            return FindValue<ImportStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ImportStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type IndexStatus.
     /// </summary>
     public class IndexStatus : ConstantClass
@@ -962,6 +1024,114 @@ namespace Amazon.DynamoDBv2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator IndexStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type InputCompressionType.
+    /// </summary>
+    public class InputCompressionType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant GZIP for InputCompressionType
+        /// </summary>
+        public static readonly InputCompressionType GZIP = new InputCompressionType("GZIP");
+        /// <summary>
+        /// Constant NONE for InputCompressionType
+        /// </summary>
+        public static readonly InputCompressionType NONE = new InputCompressionType("NONE");
+        /// <summary>
+        /// Constant ZSTD for InputCompressionType
+        /// </summary>
+        public static readonly InputCompressionType ZSTD = new InputCompressionType("ZSTD");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InputCompressionType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InputCompressionType FindValue(string value)
+        {
+            return FindValue<InputCompressionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InputCompressionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type InputFormat.
+    /// </summary>
+    public class InputFormat : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CSV for InputFormat
+        /// </summary>
+        public static readonly InputFormat CSV = new InputFormat("CSV");
+        /// <summary>
+        /// Constant DYNAMODB_JSON for InputFormat
+        /// </summary>
+        public static readonly InputFormat DYNAMODB_JSON = new InputFormat("DYNAMODB_JSON");
+        /// <summary>
+        /// Constant ION for InputFormat
+        /// </summary>
+        public static readonly InputFormat ION = new InputFormat("ION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InputFormat(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InputFormat FindValue(string value)
+        {
+            return FindValue<InputFormat>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InputFormat(string value)
         {
             return FindValue(value);
         }

@@ -33,7 +33,8 @@ namespace Amazon.GameLift.Model
     /// Reserves an open player slot in a game session for a player. New player sessions can
     /// be created in any game session with an open slot that is in <code>ACTIVE</code> status
     /// and has a player creation policy of <code>ACCEPT_ALL</code>. You can add a group of
-    /// players to a game session with <a>CreatePlayerSessions</a>. 
+    /// players to a game session with <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreatePlayerSessions.html">CreatePlayerSessions</a>
+    /// . 
     /// 
     ///  
     /// <para>
@@ -42,15 +43,15 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  
     /// <para>
-    /// If successful, a slot is reserved in the game session for the player and a new <a>PlayerSession</a>
+    /// If successful, a slot is reserved in the game session for the player and a new <code>PlayerSessions</code>
     /// object is returned with a player session ID. The player references the player session
     /// ID when sending a connection request to the game session, and the game server can
-    /// use it to validate the player reservation with the GameLift service. Player sessions
-    /// cannot be updated. 
+    /// use it to validate the player reservation with the Amazon GameLift service. Player
+    /// sessions cannot be updated. 
     /// </para>
     ///  
     /// <para>
-    ///  <i>Available in Amazon GameLift Local.</i> 
+    /// The maximum number of players per game session is 200. It is not adjustable. 
     /// </para>
     ///  
     /// <para>
@@ -58,8 +59,7 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  
     /// <para>
-    ///  <a>CreatePlayerSession</a> | <a>CreatePlayerSessions</a> | <a>DescribePlayerSessions</a>
-    /// | <a>StartGameSessionPlacement</a> | <a>DescribeGameSessionPlacement</a> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
+    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
     /// APIs by task</a> 
     /// </para>
     /// </summary>
@@ -91,8 +91,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property PlayerData. 
         /// <para>
-        /// Developer-defined information related to a player. GameLift does not use this data,
-        /// so it can be formatted as needed for use in the game.
+        /// Developer-defined information related to a player. Amazon GameLift does not use this
+        /// data, so it can be formatted as needed for use in the game.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

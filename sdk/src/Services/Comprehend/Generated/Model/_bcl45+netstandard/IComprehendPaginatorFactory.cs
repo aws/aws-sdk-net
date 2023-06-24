@@ -26,6 +26,11 @@ namespace Amazon.Comprehend.Model
     {
 
         /// <summary>
+        /// Paginator for ListDatasets operation
+        ///</summary>
+        IListDatasetsPaginator ListDatasets(ListDatasetsRequest request);
+
+        /// <summary>
         /// Paginator for ListDocumentClassificationJobs operation
         ///</summary>
         IListDocumentClassificationJobsPaginator ListDocumentClassificationJobs(ListDocumentClassificationJobsRequest request);
@@ -44,6 +49,11 @@ namespace Amazon.Comprehend.Model
         /// Paginator for ListDominantLanguageDetectionJobs operation
         ///</summary>
         IListDominantLanguageDetectionJobsPaginator ListDominantLanguageDetectionJobs(ListDominantLanguageDetectionJobsRequest request);
+
+        /// <summary>
+        /// Paginator for ListEndpoints operation
+        ///</summary>
+        IListEndpointsPaginator ListEndpoints(ListEndpointsRequest request);
 
         /// <summary>
         /// Paginator for ListEntitiesDetectionJobs operation
@@ -66,14 +76,34 @@ namespace Amazon.Comprehend.Model
         IListEventsDetectionJobsPaginator ListEventsDetectionJobs(ListEventsDetectionJobsRequest request);
 
         /// <summary>
+        /// Paginator for ListFlywheelIterationHistory operation
+        ///</summary>
+        IListFlywheelIterationHistoryPaginator ListFlywheelIterationHistory(ListFlywheelIterationHistoryRequest request);
+
+        /// <summary>
+        /// Paginator for ListFlywheels operation
+        ///</summary>
+        IListFlywheelsPaginator ListFlywheels(ListFlywheelsRequest request);
+
+        /// <summary>
         /// Paginator for ListKeyPhrasesDetectionJobs operation
         ///</summary>
         IListKeyPhrasesDetectionJobsPaginator ListKeyPhrasesDetectionJobs(ListKeyPhrasesDetectionJobsRequest request);
 
         /// <summary>
+        /// Paginator for ListPiiEntitiesDetectionJobs operation
+        ///</summary>
+        IListPiiEntitiesDetectionJobsPaginator ListPiiEntitiesDetectionJobs(ListPiiEntitiesDetectionJobsRequest request);
+
+        /// <summary>
         /// Paginator for ListSentimentDetectionJobs operation
         ///</summary>
         IListSentimentDetectionJobsPaginator ListSentimentDetectionJobs(ListSentimentDetectionJobsRequest request);
+
+        /// <summary>
+        /// Paginator for ListTargetedSentimentDetectionJobs operation
+        ///</summary>
+        IListTargetedSentimentDetectionJobsPaginator ListTargetedSentimentDetectionJobs(ListTargetedSentimentDetectionJobsRequest request);
 
         /// <summary>
         /// Paginator for ListTopicsDetectionJobs operation

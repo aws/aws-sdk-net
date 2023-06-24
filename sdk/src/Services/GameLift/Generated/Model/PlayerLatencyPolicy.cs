@@ -33,12 +33,7 @@ namespace Amazon.GameLift.Model
     /// policy in force, a game session cannot be placed in a fleet location where a player
     /// reports latency higher than the cap. Latency policies are used only with placement
     /// request that provide player latency information. Player latency policies can be stacked
-    /// to gradually relax latency requirements over time. 
-    /// 
-    ///  
-    /// <para>
-    /// Latency policies are part of a <a>GameSessionQueue</a>.
-    /// </para>
+    /// to gradually relax latency requirements over time.
     /// </summary>
     public partial class PlayerLatencyPolicy
     {

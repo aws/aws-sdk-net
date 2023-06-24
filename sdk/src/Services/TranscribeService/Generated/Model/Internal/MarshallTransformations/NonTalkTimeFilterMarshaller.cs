@@ -34,7 +34,7 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// NonTalkTimeFilter Marshaller
-    /// </summary>       
+    /// </summary>
     public class NonTalkTimeFilterMarshaller : IRequestMarshaller<NonTalkTimeFilter, JsonMarshallerContext> 
     {
         /// <summary>
@@ -83,7 +83,7 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static NonTalkTimeFilterMarshaller Instance = new NonTalkTimeFilterMarshaller();
 
     }

@@ -38,7 +38,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property TranscriptionJob. 
         /// <para>
-        /// An object that contains the results of the transcription job.
+        /// Provides detailed information about the specified transcription job, including job
+        /// status and, if applicable, failure reason.
         /// </para>
         /// </summary>
         public TranscriptionJob TranscriptionJob

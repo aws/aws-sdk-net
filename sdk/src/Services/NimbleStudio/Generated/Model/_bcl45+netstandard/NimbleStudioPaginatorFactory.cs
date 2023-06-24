@@ -76,6 +76,14 @@ namespace Amazon.NimbleStudio.Model
         }
 
         /// <summary>
+        /// Paginator for ListStreamingSessionBackups operation
+        ///</summary>
+        public IListStreamingSessionBackupsPaginator ListStreamingSessionBackups(ListStreamingSessionBackupsRequest request) 
+        {
+            return new ListStreamingSessionBackupsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListStreamingSessions operation
         ///</summary>
         public IListStreamingSessionsPaginator ListStreamingSessions(ListStreamingSessionsRequest request) 

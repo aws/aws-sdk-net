@@ -29,14 +29,16 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Batch.Model
 {
     /// <summary>
-    /// An object representing an Batch compute environment.
+    /// An object that represents an Batch compute environment.
     /// </summary>
     public partial class ComputeEnvironmentDetail
     {
         private string _computeEnvironmentArn;
         private string _computeEnvironmentName;
         private ComputeResource _computeResources;
+        private OrchestrationType _containerOrchestrationType;
         private string _ecsClusterArn;
+        private EksConfiguration _eksConfiguration;
         private string _serviceRole;
         private CEState _state;
         private CEStatus _status;
@@ -44,6 +46,8 @@ namespace Amazon.Batch.Model
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private CEType _type;
         private int? _unmanagedvCpus;
+        private UpdatePolicy _updatePolicy;
+        private string _uuid;
 
         /// <summary>
         /// Gets and sets the property ComputeEnvironmentArn. 
@@ -67,7 +71,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property ComputeEnvironmentName. 
         /// <para>
-        /// The name of the compute environment. It can be up to 128 letters long. It can contain
+        /// The name of the compute environment. It can be up to 128 characters long. It can contain
         /// uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).
         /// </para>
         /// </summary>
@@ -89,7 +93,7 @@ namespace Amazon.Batch.Model
         /// <para>
         /// The compute resources defined for the compute environment. For more information, see
         /// <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
-        /// Environments</a> in the <i>Batch User Guide</i>.
+        /// environments</a> in the <i>Batch User Guide</i>.
         /// </para>
         /// </summary>
         public ComputeResource ComputeResources
@@ -105,13 +109,31 @@ namespace Amazon.Batch.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EcsClusterArn. 
+        /// Gets and sets the property ContainerOrchestrationType. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the underlying Amazon ECS cluster used by the compute
-        /// environment.
+        /// The orchestration type of the compute environment. The valid values are <code>ECS</code>
+        /// (default) or <code>EKS</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        public OrchestrationType ContainerOrchestrationType
+        {
+            get { return this._containerOrchestrationType; }
+            set { this._containerOrchestrationType = value; }
+        }
+
+        // Check to see if ContainerOrchestrationType property is set
+        internal bool IsSetContainerOrchestrationType()
+        {
+            return this._containerOrchestrationType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EcsClusterArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the underlying Amazon ECS cluster that the compute
+        /// environment uses.
+        /// </para>
+        /// </summary>
         public string EcsClusterArn
         {
             get { return this._ecsClusterArn; }
@@ -125,10 +147,29 @@ namespace Amazon.Batch.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EksConfiguration. 
+        /// <para>
+        /// The configuration for the Amazon EKS cluster that supports the Batch compute environment.
+        /// Only specify this parameter if the <code>containerOrchestrationType</code> is <code>EKS</code>.
+        /// </para>
+        /// </summary>
+        public EksConfiguration EksConfiguration
+        {
+            get { return this._eksConfiguration; }
+            set { this._eksConfiguration = value; }
+        }
+
+        // Check to see if EksConfiguration property is set
+        internal bool IsSetEksConfiguration()
+        {
+            return this._eksConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ServiceRole. 
         /// <para>
-        /// The service role associated with the compute environment that allows Batch to make
-        /// calls to Amazon Web Services API operations on your behalf. For more information,
+        /// The service role that's associated with the compute environment that allows Batch
+        /// to make calls to Amazon Web Services API operations on your behalf. For more information,
         /// see <a href="https://docs.aws.amazon.com/batch/latest/userguide/service_IAM_role.html">Batch
         /// service IAM role</a> in the <i>Batch User Guide</i>.
         /// </para>
@@ -155,7 +196,7 @@ namespace Amazon.Batch.Model
         /// <para>
         /// If the state is <code>ENABLED</code>, then the Batch scheduler can attempt to place
         /// jobs from an associated job queue on the compute resources within the environment.
-        /// If the compute environment is managed, then it can scale its instances out or in automatically,
+        /// If the compute environment is managed, then it can scale its instances out or in automatically
         /// based on the job queue demand.
         /// </para>
         ///  
@@ -163,8 +204,22 @@ namespace Amazon.Batch.Model
         /// If the state is <code>DISABLED</code>, then the Batch scheduler doesn't attempt to
         /// place jobs within the environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code>
         /// state continue to progress normally. Managed compute environments in the <code>DISABLED</code>
-        /// state don't scale out. However, they scale in to <code>minvCpus</code> value after
-        /// instances become idle.
+        /// state don't scale out. 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Compute environments in a <code>DISABLED</code> state may continue to incur billing
+        /// charges. To prevent additional charges, turn off and then delete the compute environment.
+        /// For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environment_parameters.html#compute_environment_state">State</a>
+        /// in the <i>Batch User Guide</i>.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// When an instance is idle, the instance scales down to the <code>minvCpus</code> value.
+        /// However, the instance size doesn't change. For example, consider a <code>c5.8xlarge</code>
+        /// instance with a <code>minvCpus</code> value of <code>4</code> and a <code>desiredvCpus</code>
+        /// value of <code>36</code>. This instance doesn't scale down to a <code>c5.large</code>
+        /// instance.
         /// </para>
         /// </summary>
         public CEState State
@@ -201,7 +256,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property StatusReason. 
         /// <para>
-        /// A short, human-readable string to provide additional details about the current status
+        /// A short, human-readable string to provide additional details for the current status
         /// of the compute environment.
         /// </para>
         /// </summary>
@@ -241,7 +296,7 @@ namespace Amazon.Batch.Model
         /// <para>
         /// The type of the compute environment: <code>MANAGED</code> or <code>UNMANAGED</code>.
         /// For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
-        /// Environments</a> in the <i>Batch User Guide</i>.
+        /// environments</a> in the <i>Batch User Guide</i>.
         /// </para>
         /// </summary>
         public CEType Type
@@ -272,6 +327,44 @@ namespace Amazon.Batch.Model
         internal bool IsSetUnmanagedvCpus()
         {
             return this._unmanagedvCpus.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UpdatePolicy. 
+        /// <para>
+        /// Specifies the infrastructure update policy for the compute environment. For more information
+        /// about infrastructure updates, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
+        /// compute environments</a> in the <i>Batch User Guide</i>.
+        /// </para>
+        /// </summary>
+        public UpdatePolicy UpdatePolicy
+        {
+            get { return this._updatePolicy; }
+            set { this._updatePolicy = value; }
+        }
+
+        // Check to see if UpdatePolicy property is set
+        internal bool IsSetUpdatePolicy()
+        {
+            return this._updatePolicy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Uuid. 
+        /// <para>
+        /// Unique identifier for the compute environment.
+        /// </para>
+        /// </summary>
+        public string Uuid
+        {
+            get { return this._uuid; }
+            set { this._uuid = value; }
+        }
+
+        // Check to see if Uuid property is set
+        internal bool IsSetUuid()
+        {
+            return this._uuid != null;
         }
 
     }

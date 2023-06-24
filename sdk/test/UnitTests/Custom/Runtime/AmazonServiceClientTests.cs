@@ -18,7 +18,7 @@ using Amazon;
 using Amazon.Runtime.Internal;
 
 namespace AWSSDK.UnitTests
-{    
+{
     [TestClass]
     public class AmazonServiceClientTests
     {

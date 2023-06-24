@@ -17,22 +17,22 @@
  * Do not modify this file. This file is generated from the databrew-2017-07-25.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
-
+using Amazon.GlueDataBrew.Internal;
 
 namespace Amazon.GlueDataBrew
 {
     /// <summary>
     /// Configuration for accessing Amazon GlueDataBrew service
     /// </summary>
+    [AWSSignerType("v4")]
     public partial class AmazonGlueDataBrewConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.5.4");
+            InternalSDKUtils.BuildUserAgentString("3.7.101.87");
 
         private string _userAgent = UserAgentString;
 
@@ -40,8 +40,10 @@ namespace Amazon.GlueDataBrew
         /// Default constructor
         /// </summary>
         public AmazonGlueDataBrewConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonGlueDataBrewDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "databrew";
+            this.EndpointProvider = new AmazonGlueDataBrewEndpointProvider();
         }
 
         /// <summary>
@@ -76,5 +78,6 @@ namespace Amazon.GlueDataBrew
                 return _userAgent;
             }
         }
+
     }
 }

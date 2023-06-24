@@ -17,16 +17,11 @@
  *
  *  AWS SDK for .NET
  */
-using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Security.Cryptography;
-
 using Amazon.Runtime;
-using ThirdParty.MD5;
+using Amazon.Util.Internal;
+using System;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace Amazon.Util
 {
@@ -34,12 +29,6 @@ namespace Amazon.Util
     {
         partial class CryptoUtil : ICryptoUtil
         {
-            public string HMACSign(string data, string key, SigningAlgorithm algorithmName)
-            {
-                var binaryData = Encoding.UTF8.GetBytes(data);
-                return HMACSign(binaryData, key, algorithmName);
-            }
-
             public string HMACSign(byte[] data, string key, SigningAlgorithm algorithmName)
             {
                 if (String.IsNullOrEmpty(key))
@@ -62,36 +51,6 @@ namespace Amazon.Util
                 {
                     algorithm.Dispose();
                 }
-            }
-
-            public byte[] ComputeSHA1Hash(byte[] data)
-            {
-                using (var sha1 = new SHA1Managed())
-                {
-                    return sha1.ComputeHash(data);
-                }
-            }
-
-            public byte[] ComputeSHA256Hash(byte[] data)
-            {
-                return SHA256HashAlgorithmInstance.ComputeHash(data);
-            }
-
-            public byte[] ComputeSHA256Hash(Stream steam)
-            {
-                return SHA256HashAlgorithmInstance.ComputeHash(steam);
-            }
-
-            public byte[] ComputeMD5Hash(byte[] data)
-            {
-                var hashed = new MD5Managed().ComputeHash(data);
-                return hashed;
-            }
-
-            public byte[] ComputeMD5Hash(Stream steam)
-            {
-                var hashed = new MD5Managed().ComputeHash(steam);
-                return hashed;
             }
 
             public byte[] HMACSignBinary(byte[] data, byte[] key, SigningAlgorithm algorithmName)
@@ -145,10 +104,15 @@ namespace Amazon.Util
                 {
                     if (null == _hashAlgorithm)
                     {
-                        _hashAlgorithm = SHA256.Create();
+                        _hashAlgorithm = CreateSHA256Instance();
                     }
                     return _hashAlgorithm;
                 }
+            }
+
+            internal static HashAlgorithm CreateSHA256Instance()
+            {
+                return SHA256.Create();
             }
         }
     }
